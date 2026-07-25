@@ -289,7 +289,7 @@ pip install -e <span style="color:#e6db74">&#34;.&#34;</span>
 <p>Servers are configured in a <code>server_config.json</code> file, passed via the <code>--config</code> flag or set as the default. Each entry specifies the transport (stdio or SSE), the command, and any arguments. Multiple servers can be listed and all are connected simultaneously when mcp-cli starts.</p>
 <hr>
 <h2 id="project-activity">Project Activity</h2>
-<p>mcp-cli is actively maintained. 50+ PyPI releases since December 2024, last commit March 2026, 4,300+ unit tests with a 60% minimum branch coverage gate. The primary contributor is chrishayuk; Renovate bot handles automated dependency updates. The PyPI release cadence averages roughly three releases per month across the project&rsquo;s lifetime.</p>
+<p>mcp-cli is actively maintained. 50+ PyPI releases since December 2024, last commit March 2026, <a href="https://github.com/IBM/mcp-cli">4,300+ unit tests with a 60% minimum branch coverage gate</a>. The primary contributor is chrishayuk; Renovate bot handles automated dependency updates. The PyPI release cadence averages roughly three releases per month across the project&rsquo;s lifetime.</p>
 <p>One structural note: the project does not publish formal GitHub Releases. All versioning lives on PyPI. This is a minor friction point for users who track projects via GitHub release feeds or want clean changelogs — the history is there, but spread across commit messages rather than collected in release notes.</p>
 <hr>
 <h2 id="known-issues-and-gaps">Known Issues and Gaps</h2>
@@ -306,7 +306,7 @@ pip install -e <span style="color:#e6db74">&#34;.&#34;</span>
 <hr>
 <h2 id="alternatives">Alternatives</h2>
 <p><strong>philschmid/mcp-cli</strong> — A simpler Python CLI by Hugging Face engineer Philipp Schmid. Basic stdio MCP interaction only. No multi-provider support, no session management, no execution plans. Holds a different package name on PyPI. Better if you want minimal dependencies and a quick inspect of a single server.</p>
-<p><strong>mcphost (mark3labs)</strong> — Archived as of early 2026. 1,600 stars at archival. Users directed to migrate to Kit. Not an active alternative.</p>
+<p><strong><a href="https://github.com/mark3labs/mcphost">mcphost (mark3labs)</a></strong> — Archived as of early 2026. ~1,600 stars at archival. Users directed to migrate to Kit. Not an active alternative.</p>
 <p><strong>MCP Inspector</strong> — A development and debugging tool for MCP server authors, not a conversational client. Different target user: someone building a server, not someone using one.</p>
 <p><strong>apify/mcpc</strong> — A newer lightweight universal MCP CLI client. Supports persistent sessions, stdio/HTTP, OAuth 2.1, JSON output, and x402. More minimal than mcp-cli; useful if you want a lighter footprint or proxy functionality.</p>
 <p>IBM mcp-cli is the right choice when you want the full feature set — multiple providers, execution plans, session persistence, a dashboard — and are comfortable with Python&rsquo;s runtime overhead versus a Go binary.</p>

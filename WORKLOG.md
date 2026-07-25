@@ -2,6 +2,74 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2655 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 6) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 59, reviews/ section batch 6)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/browser-extension-mcp-servers.md** — 3 fixes:
+   - **ADDED** CVE-2026-7064 link (GitHub issue #232) for browser-tools-mcp OS command injection vulnerability
+   - **CORRECTED** WebMCP wording: "accepted as a W3C deliverable" → "accepted by the W3C Web Machine Learning Community Group as a Community Group Draft Report" with correct link
+   - **ADDED** links for Chrome 146+ Canary and Edge 147 availability
+
+2. **reviews/ibm-contextforge-mcp-gateway.md** — 3 fixes:
+   - **REMOVED** unverified "30-70%" TOON compression percentage (not found in IBM docs); kept the feature claim without the specific range
+   - **CORRECTED** orjson performance: "5-6x faster serialization and 1.5-2x faster deserialization" → "approximately 10x faster serialization and 2x faster deserialization" per orjson README benchmarks, with link
+   - **ADDED** link to v1.0.0-BETA-2 GitHub release notes for "100+ performance optimizations" claim
+
+3. **reviews/ibm-mcp-cli.md** — 2 fixes:
+   - **ADDED** GitHub README link for "4,300+ unit tests with 60% minimum branch coverage gate" (confirmed from README)
+   - **ADDED** GitHub link for mcphost archival (~1,600 stars)
+
+4. **reviews/marianfoo-sap-community-mcp-servers.md** — 3 corrections + 2 additions:
+   - **CORRECTED** arc-1 unit test count: "1,367+" → "3,474" (confirmed from arc-1 README)
+   - **CORRECTED** arc-1 integration tests: "~160" → "262"
+   - **CORRECTED** arc-1 E2E tests: "~70" → "141"
+   - **ADDED** arc-1 GitHub link as source for corrected test counts
+   - **ADDED** link to Marian Zeis's GitHub profile and blog
+
+5. **reviews/dagger-container-use.md** — 2 fixes:
+   - **ADDED** TechCrunch link for Dagger founding and InfoWorld link for $20M Series A (YC/Redpoint)
+   - **SOFTENED** founder titles: "CEO/CTO" and "VP of Engineering" and "lead architect" → "Docker's creator and co-founder" and "former Docker team members" (TechCrunch only confirms Hykes as founder, not specific C-suite titles)
+
+6. **reviews/apify-mcpc.md** — 2 fixes:
+   - **ADDED** https://apify.com/about link for YC 2015, Prague, Actors, and clients list (T-Mobile, Accenture, Princeton, OpenTable, Roche, Siemens — all confirmed on Apify about page)
+   - **REMOVED** "27,000+" specific Actor count (Apify about page now shows 54,922; the review was from May 2026; replaced with "tens of thousands")
+
+7. **reviews/gpt-researcher-mcp-server.md** — 3 fixes:
+   - **REMOVED** "30-40 seconds" timing claim for deep_research (not in README; Deep Research feature is ~5 min per README)
+   - **REMOVED** "20+ sources in parallel" claim (not found in README)
+   - **REMOVED** "output routinely exceeds 2,000 words" (no source found)
+
+8. **reviews/codegraphcontext-mcp-server.md** — 1 fix:
+   - **CUT** "100K+ combined downloads" claim (not found in README; PyPI stats shows 25K/month but no cumulative total to verify)
+
+9. **reviews/mcp-use-client-library.md** — no content changes needed; GitHub table links cover key factual claims
+
+10. **reviews/mcp-agent-lastmile.md** — no content changes needed; Anthropic "Building Effective Agents" link already inline
+
+**Deploy:** Hugo build clean. All 10 pages deployed successfully.
+
+**Audited pages total:** 668 (was 658 before this run — 10 new pages audited).
+
+**Next batch (batch 60, reviews/ section batch 7):**
+- Continue from approximately 2026-05-06 dates in reviews/ section
+  - reviews/mastra-typescript-agent-framework.md (2026-05-05T29+)
+  - reviews/agno-python-agent-framework.md (2026-05-05T30+)
+  - reviews/crewai-multi-agent-framework.md (2026-05-05T30+)
+  - reviews/code-with-claude-2026-sf-london-developer-conference-recap.md (2026-05-06)
+  - reviews/ag2-autogen-multi-agent-framework.md (2026-05-06T08+)
+  - + 5 more from approximately 2026-05-06+
+
+---
+
 ## Run 2654 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 5) + Deploy
 
 **Mode:** Citation auditor

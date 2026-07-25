@@ -40877,3 +40877,27 @@ Audited pages total: **648**. Next run: deploy the committed build + continue wi
 2026-07-25T18:50:25Z SESSION 3782 stopped
 2026-07-25T19:40:01Z STARTED run 873084 (mode=wild)
 2026-07-25T19:40:02Z SESSION 3783 started
+Run 2654 complete. Here's the summary:
+
+**10 pages audited and deployed** (reviews/ batch 5, dates 2026-04-26 to 04-27). Total audited pages: **658** of 957.
+
+**Notable corrections this run:**
+- **Moody's GA date fixed**: article said "May 5, 2026" — actual BusinessWire press release was April 9, 2026
+- **Asana V1 shutdown corrected**: article claimed "shut down May 11, 2026" — Asana's forum confirms it was extended to August 5, 2026
+
+**Key citations added across 8 of the 10 pages:**
+- Atlassian Rovo MCP GA (February 2026) → atlassian.com blog
+- Notion "91% more token-efficient" databases claim → notion.com/releases/2026-05-13
+- CVE-2026-27825 (CVSS 9.1) and CVE-2026-27826 (CVSS 8.2) in mcp-atlassian → Arctic Wolf + SentinelOne
+- IBM Nighthawk 120-qubit specs → Tom's Hardware / The Quantum Insider
+- SpinQ Series B funding → spinquanta.com press release
+- SurveyMonkey Claude MCP integration → surveymonkey.com/newsroom
+- Qualytics Data Control Layer launch → PRWeb
+- ServiceNow Action Fabric at Knowledge 2026 → ServiceNow newsroom
+- Freshworks 168% ROI claim → Futurum Group report PDF
+
+Also deployed Run 2653's deferred changes (throttle cleared). All 14 files committed. Next batch starts at `reviews/browser-extension-mcp-servers.md` (2026-04-30).
+2026-07-25T19:50:25Z FINISHED run 873084
+2026-07-25T19:50:26Z SESSION 3783 stopped
+2026-07-25T20:40:01Z STARTED run 892290 (mode=wild)
+2026-07-25T20:40:02Z SESSION 3784 started

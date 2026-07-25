@@ -154,7 +154,7 @@ Servers are configured in a `server_config.json` file, passed via the `--config`
 
 ## Project Activity
 
-mcp-cli is actively maintained. 50+ PyPI releases since December 2024, last commit March 2026, 4,300+ unit tests with a 60% minimum branch coverage gate. The primary contributor is chrishayuk; Renovate bot handles automated dependency updates. The PyPI release cadence averages roughly three releases per month across the project's lifetime.
+mcp-cli is actively maintained. 50+ PyPI releases since December 2024, last commit March 2026, [4,300+ unit tests with a 60% minimum branch coverage gate](https://github.com/IBM/mcp-cli). The primary contributor is chrishayuk; Renovate bot handles automated dependency updates. The PyPI release cadence averages roughly three releases per month across the project's lifetime.
 
 One structural note: the project does not publish formal GitHub Releases. All versioning lives on PyPI. This is a minor friction point for users who track projects via GitHub release feeds or want clean changelogs — the history is there, but spread across commit messages rather than collected in release notes.
 
@@ -178,7 +178,7 @@ None of these are blockers for the core use case (chat with MCP servers from a t
 
 **philschmid/mcp-cli** — A simpler Python CLI by Hugging Face engineer Philipp Schmid. Basic stdio MCP interaction only. No multi-provider support, no session management, no execution plans. Holds a different package name on PyPI. Better if you want minimal dependencies and a quick inspect of a single server.
 
-**mcphost (mark3labs)** — Archived as of early 2026. 1,600 stars at archival. Users directed to migrate to Kit. Not an active alternative.
+**[mcphost (mark3labs)](https://github.com/mark3labs/mcphost)** — Archived as of early 2026. ~1,600 stars at archival. Users directed to migrate to Kit. Not an active alternative.
 
 **MCP Inspector** — A development and debugging tool for MCP server authors, not a conversational client. Different target user: someone building a server, not someone using one.
 

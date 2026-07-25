@@ -20,7 +20,7 @@ The headline finding: **vendor participation is exceptional** — 9+ vendors shi
 
 **Confluence** has the strongest MCP coverage of any enterprise collaboration platform, with both an official remote server and the most popular community server in the entire MCP ecosystem.
 
-**Atlassian's official remote MCP server** (776 stars, 74 forks, Apache 2.0) reached **GA in February 2026** and provides a cloud-based bridge to Jira, Confluence, and Compass. Hosted on Cloudflare infrastructure, it supports OAuth 2.1 and API token authentication. Key Confluence capabilities include summarizing and searching Confluence content, creating new pages, and navigating spaces — all with permission-respecting access. Works with Claude, ChatGPT, GitHub Copilot CLI, Gemini CLI, Amazon Quick Suite, and VS Code.
+**Atlassian's official remote MCP server** (776 stars, 74 forks, Apache 2.0) reached [**GA in February 2026**](https://www.atlassian.com/blog/announcements/atlassian-rovo-mcp-ga) and provides a cloud-based bridge to Jira, Confluence, and Compass. Hosted on Cloudflare infrastructure, it supports OAuth 2.1 and API token authentication. Key Confluence capabilities include summarizing and searching Confluence content, creating new pages, and navigating spaces — all with permission-respecting access. Works with Claude, ChatGPT, GitHub Copilot CLI, Gemini CLI, Amazon Quick Suite, and VS Code.
 
 **February 2026 update** added **JSM (Jira Service Management) tools**: on-call schedule queries, schedule management, incident queue access, and ITSM workflow automation. JSM tools currently require API token auth (OAuth support pending). Compass support was also added for real-time component data interaction.
 
@@ -47,7 +47,7 @@ Additional community servers: **jonigl/confluence-mcp-server** (HTTP server expo
 
 **Work IQ SharePoint** — upload files, get metadata, search, manage lists. **Work IQ OneDrive** — manage files and folders in personal OneDrive. **Work IQ Word** — create and read documents, add comments, reply to comments. All authenticate through **Microsoft Entra ID** using agentic user identity or On-Behalf-Of (OBO) delegated permissions.
 
-**Critical limitation:** Work IQ servers require a **Microsoft 365 Copilot license** — this gates enterprise adoption behind significant per-seat costs. The earlier SharePoint & OneDrive Remote MCP Server was **deprecated March 13, 2026** in favor of Work IQ.
+**Critical limitation:** Work IQ servers require a **Microsoft 365 Copilot license** — this gates enterprise adoption behind significant per-seat costs. The earlier SharePoint & OneDrive Remote MCP Server was [**deprecated March 13, 2026**](https://devblogs.microsoft.com/microsoft365dev/work-iq-production-ready-intelligence-for-every-agent/) in favor of Work IQ.
 
 The community has built extensively around SharePoint. **ftaricano/mcp-onedrive-sharepoint** stands out with 32 tools and a CLI (`ods`), using device-code auth. **sekops-ch/sharepoint-mcp-server** (TypeScript) provides comprehensive Graph API integration with structured metadata. **ncdcdev/sharepoint-docs-mcp** supports both stdio and HTTP transports with Azure AD certificate authentication.
 
@@ -79,7 +79,7 @@ Additional community servers: **piotr-agier/google-drive-mcp** (Drive, Docs, She
 
 **Notion's official MCP server** (4,400 stars, 550 forks) is one of the most popular MCP servers overall. Version 2.0 (Notion API 2025-09-03) introduced **data sources as the primary abstraction for databases**, replacing `post-database-query`, `update-a-database`, and `create-a-database` with new tools including `query-data-source`, `create-a-data-source`, and `move-page`. Two transport modes: stdio (default, npm) and Streamable HTTP. Docker deployment available.
 
-**May 13, 2026 update** added Meeting Notes support and block-level comments, and made creating/updating databases **91% more token-efficient**. Workspace-scoped OAuth and personal access tokens are now both supported alongside the previous integration token approach.
+[**May 13, 2026 update**](https://www.notion.com/releases/2026-05-13) added Meeting Notes support and block-level comments, and made creating/updating databases [**91% more token-efficient**](https://www.notion.com/releases/2026-05-13). Workspace-scoped OAuth and personal access tokens are now both supported alongside the previous integration token approach.
 
 The **hosted server at `mcp.notion.com/mcp`** provides zero-config OAuth installation — prioritized by Notion over local installation, which may be sunset. Works with Claude, Cursor, VS Code Copilot, ChatGPT. **Notion Workers** launched as a hosted runtime for deploying custom code alongside Notion MCP integrations.
 

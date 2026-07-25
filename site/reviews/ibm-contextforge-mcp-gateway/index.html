@@ -6,14 +6,14 @@
   <title>IBM ContextForge MCP Gateway — Federation, RBAC, and AI Traffic Control for Enterprise MCP — ChatForest</title>
   <meta name="description" content="IBM ContextForge reviewed: an open source MCP gateway, registry, and proxy federating any MCP, A2A, or REST/gRPC API into a unified endpoint with RBAC, TOON compression, 40&#43; plugins, and Kubernetes HA. Apache-2.0. Rating: 4.0/5.">
   <meta property="og:title" content="IBM ContextForge MCP Gateway — Federation, RBAC, and AI Traffic Control for Enterprise MCP — ChatForest">
-  <meta property="og:description" content="IBM ContextForge (3,655 stars, v1.0.0 GA): MCP gateway and proxy for enterprise AI agents. Federates MCP, A2A, REST, and gRPC. Virtual servers, multi-tenant RBAC, TOON token compression (30-70%), OpenTelemetry, 40&#43; plugins, Kubernetes HA. Apache-2.0. Rating: 4.0/5.">
+  <meta property="og:description" content="IBM ContextForge (3,655 stars, v1.0.0 GA): MCP gateway and proxy for enterprise AI agents. Federates MCP, A2A, REST, and gRPC. Virtual servers, multi-tenant RBAC, TOON token compression, OpenTelemetry, 40&#43; plugins, Kubernetes HA. Apache-2.0. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/ibm-contextforge-mcp-gateway/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="IBM ContextForge MCP Gateway — Federation, RBAC, and AI Traffic Control for Enterprise MCP — ChatForest">
-  <meta name="twitter:description" content="IBM ContextForge (3,655 stars, v1.0.0 GA): MCP gateway and proxy for enterprise AI agents. Federates MCP, A2A, REST, and gRPC. Virtual servers, multi-tenant RBAC, TOON token compression (30-70%), OpenTelemetry, 40&#43; plugins, Kubernetes HA. Apache-2.0. Rating: 4.0/5.">
+  <meta name="twitter:description" content="IBM ContextForge (3,655 stars, v1.0.0 GA): MCP gateway and proxy for enterprise AI agents. Federates MCP, A2A, REST, and gRPC. Virtual servers, multi-tenant RBAC, TOON token compression, OpenTelemetry, 40&#43; plugins, Kubernetes HA. Apache-2.0. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/ibm-contextforge-mcp-gateway/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -120,7 +120,7 @@
 <hr>
 <h2 id="what-contextforge-does">What ContextForge Does</h2>
 <p>ContextForge operates as three gateways in one:</p>
-<p><strong>Tools Gateway</strong> — Aggregates multiple MCP servers behind a single endpoint. AI clients configure one connection; ContextForge manages upstream MCP connections, handles tool routing, and applies policies. REST and gRPC APIs are translated to MCP tools automatically, so existing services become callable by any MCP-compatible agent without code changes. TOON compression reduces LLM token usage by 30-70% by compressing tool schemas and descriptions before sending them to the model context.</p>
+<p><strong>Tools Gateway</strong> — Aggregates multiple MCP servers behind a single endpoint. AI clients configure one connection; ContextForge manages upstream MCP connections, handles tool routing, and applies policies. REST and gRPC APIs are translated to MCP tools automatically, so existing services become callable by any MCP-compatible agent without code changes. <a href="https://github.com/IBM/mcp-context-forge">TOON compression</a> reduces LLM token usage by compressing tool schemas and descriptions before sending them to the model context.</p>
 <p><strong>Agent Gateway</strong> — Routes agent-to-agent (A2A protocol) communication alongside MCP tool calls. Supports OpenAI-compatible and Anthropic agent routing, making ContextForge a neutral protocol bridge across agent frameworks.</p>
 <p><strong>API Gateway</strong> — Provides rate limiting, authentication, retries, and reverse proxy for REST services, turning ContextForge into the policy enforcement layer for all AI agent-to-service traffic in an organization.</p>
 <p>These three modes can run simultaneously or independently, depending on deployment requirements.</p>
@@ -137,7 +137,7 @@
 <h3 id="multi-tenant-rbac">Multi-Tenant RBAC</h3>
 <p>Full multi-tenancy has been available since v0.7.0. The system supports teams, email authentication, role-based access control (RBAC) for Admin UI and API routes, per-virtual-server API keys, and resource visibility controls. Different groups in an organization get isolated tool catalogs with their own policy boundaries, while the gateway provides shared observability.</p>
 <h3 id="toon-compression">TOON Compression</h3>
-<p>TOON (Tool Object Optimization for Networks) compression reduces the token footprint of tool schemas sent to the LLM context window. The 30-70% reduction directly translates to lower API costs and fewer context window pressure issues in agents loading large tool catalogs. No other major MCP gateway has an equivalent feature.</p>
+<p>TOON (Tool Object Optimization for Networks) compression reduces the token footprint of tool schemas sent to the LLM context window, directly translating to lower API costs and fewer context window pressure issues in agents loading large tool catalogs. No other major MCP gateway has an equivalent feature.</p>
 <h3 id="40-plugins">40+ Plugins</h3>
 <p>The plugin ecosystem covers:</p>
 <ul>
@@ -194,9 +194,9 @@
 <li><strong>PgBouncer connection pooling</strong> — eliminates per-request PostgreSQL connection overhead</li>
 <li><strong>L1/L2 caching</strong> — in-memory cache for hot tool calls, Redis for shared cache across instances</li>
 <li><strong>Granian HTTP server</strong> — Rust-powered ASGI server replacing Uvicorn in production</li>
-<li><strong>orjson serialization</strong> — Rust-powered JSON parsing and serialization delivering 5-6x faster serialization and 1.5-2x faster deserialization versus Python&rsquo;s standard library</li>
+<li><strong>orjson serialization</strong> — Rust-powered JSON parsing and serialization delivering <a href="https://github.com/ijl/orjson#performance">approximately 10x faster serialization and 2x faster deserialization</a> versus Python&rsquo;s standard library</li>
 </ul>
-<p>The v1.0.0-BETA-2 release note cited &ldquo;100+ performance optimizations&rdquo; and 80+ bug fixes. The pattern: early releases (v0.4.0–v0.7.0) built enterprise features; later releases (v1.0.0-BETA series) hardened them for production throughput.</p>
+<p>The <a href="https://github.com/IBM/mcp-context-forge/releases/tag/v1.0.0-BETA-2">v1.0.0-BETA-2 release notes</a> cited &ldquo;100+ performance optimizations&rdquo; and 80+ bug fixes. The pattern: early releases (v0.4.0–v0.7.0) built enterprise features; later releases (v1.0.0-BETA series) hardened them for production throughput.</p>
 <hr>
 <h2 id="version-history">Version History</h2>
 <table>

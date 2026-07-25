@@ -22,7 +22,7 @@ The headline finding: **Zeis's collection is the most complete community respons
 
 All four are TypeScript, installable via npm or Docker, and compatible with Claude Desktop, Claude Code, and Cursor. All are Apache-2.0.
 
-**Who is Marian Zeis?** He is not a SAP employee — he runs IT Consulting Marian Zeis independently in Bavaria and has deep roots in the SAP developer community. He is an active SAP Community contributor and maintains a technical blog at blog.zeis.de covering ABAP code generation benchmarks, MCP implementation patterns, and the evolving SAP + AI integration ecosystem. His sap-ai-mcp-servers curated list is referenced in SAP Community posts and external MCP directories as a primary discovery resource.
+**Who is Marian Zeis?** He is not a SAP employee — he runs [IT Consulting Marian Zeis](https://github.com/marianfoo) independently in Bavaria and has deep roots in the SAP developer community. He is an active SAP Community contributor and maintains a technical blog at [blog.zeis.de](https://blog.zeis.de) covering ABAP code generation benchmarks, MCP implementation patterns, and the evolving SAP + AI integration ecosystem. His sap-ai-mcp-servers curated list is referenced in SAP Community posts and external MCP directories as a primary discovery resource.
 
 ---
 
@@ -91,10 +91,10 @@ Multi-auth support is unusual for a community MCP server; most community tools s
 
 ### Test Coverage
 
-arc-1 carries the most rigorous test suite of any server in this collection:
-- **1,367+ unit tests**
-- **~160 integration tests**
-- **~70 end-to-end tests**
+arc-1 carries [the most rigorous test suite](https://github.com/marianfoo/arc-1) of any server in this collection:
+- **3,474 unit tests** across 104 unit test files (mocked HTTP)
+- **262 integration tests** (default integration profile against live SAP systems)
+- **141 end-to-end tests** (default E2E profile executing real MCP tool calls against a running arc-1 server and live SAP system)
 
 For a community-maintained MCP server, this level of test infrastructure is exceptional. The integration and E2E test counts in particular suggest the server has been validated against actual SAP systems, not just mocked. v0.7.2 (released May 2, 2026) is the most recent, indicating active iteration toward a v1.0 stable release.
 
@@ -183,7 +183,7 @@ The list includes SAP's official servers (UI5, CAP, Fiori, MDK), community serve
 
 **mcp-sap-docs fills a real gap.** SAP's official servers don't aggregate cross-product documentation. mcp-sap-docs does, with a zero-install npx command and offline-capable search. The 169-star count reflects genuine adoption by a developer community that needed this.
 
-**arc-1's test infrastructure is exceptional.** 1,367+ unit tests plus integration and E2E coverage for a community-maintained MCP server is rare. It signals Zeis has validated arc-1 against real SAP systems and intends to maintain API stability as the project evolves toward v1.0.
+**arc-1's test infrastructure is exceptional.** [3,474 unit tests plus 262 integration and 141 E2E tests](https://github.com/marianfoo/arc-1) for a community-maintained MCP server is rare. It signals Zeis has validated arc-1 against real SAP systems and intends to maintain API stability as the project evolves toward v1.0.
 
 **Ecosystem curation.** sap-ai-mcp-servers positions Zeis as a knowledge hub for the entire SAP MCP community, not just his own servers. This community role gives his work broader visibility and credibility.
 

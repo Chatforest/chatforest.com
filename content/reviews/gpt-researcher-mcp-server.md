@@ -2,10 +2,11 @@
 title: "GPT Researcher MCP Server — Deep Research as a Tool Call"
 date: 2026-05-05T23:00:00+09:00
 description: "GPT Researcher MCP Server reviewed: wrap the 26.9K-star autonomous research agent as an MCP tool, letting AI assistants delegate deep web research and report generation instead of doing basic search. MIT License. Rating: 3.5/5."
-og_description: "gptr-mcp (344 stars, MIT, Python): wrap the GPT Researcher autonomous agent as MCP tools. Give Claude `deep_research`, `quick_search`, `write_report`, and source retrieval — all backed by a 26.9K-star engine. Requires OpenAI + Tavily API keys. Takes 30-40s per deep research call but delivers validated multi-source synthesis. Rating: 3.5/5."
+og_description: "gptr-mcp (344 stars, MIT, Python): wrap the GPT Researcher autonomous agent as MCP tools. Give Claude `deep_research`, `quick_search`, `write_report`, and source retrieval — all backed by a 26.9K-star engine. Requires OpenAI + Tavily API keys. Deep research takes longer than quick_search but delivers validated multi-source synthesis. Rating: 3.5/5."
 content_type: "Review"
-card_description: "gptr-mcp (344 stars, MIT, Python) wraps the 26.9K-star GPT Researcher autonomous agent as MCP tools, letting Claude and other AI assistants delegate deep web research instead of doing basic search. Instead of returning raw search results that the LLM must sift through, GPT Researcher autonomously explores and cross-validates multiple sources, returns synthesized findings with citations, and can generate a full research report. Tools: `deep_research` (30-40s, high quality), `quick_search` (fast, lower quality), `write_report`, `get_research_sources`, `get_research_context`. Transport: STDIO (local), SSE (Docker), Streamable HTTP. Requires Python 3.11+, OpenAI API key, and Tavily API key — the additional API key dependency is the main friction point. No formal versioned releases. The parent GPT Researcher project (26.9K stars, Apache-2.0) is one of the most-starred autonomous research agents in open source — the MCP wrapper is newer and more modest (344 stars) but inherits the engine's proven research capability. Demonstrates an important emerging pattern: LLMs delegating specialized cognitive work to other specialized agents via MCP. Part of our **Web Search & Scraping** category. Rating: 3.5/5."
+card_description: "gptr-mcp (344 stars, MIT, Python) wraps the 26.9K-star GPT Researcher autonomous agent as MCP tools, letting Claude and other AI assistants delegate deep web research instead of doing basic search. Instead of returning raw search results that the LLM must sift through, GPT Researcher autonomously explores and cross-validates multiple sources, returns synthesized findings with citations, and can generate a full research report. Tools: `deep_research` (high quality, slower), `quick_search` (fast, lower quality), `write_report`, `get_research_sources`, `get_research_context`. Transport: STDIO (local), SSE (Docker), Streamable HTTP. Requires Python 3.11+, OpenAI API key, and Tavily API key — the additional API key dependency is the main friction point. No formal versioned releases. The parent GPT Researcher project (26.9K stars, Apache-2.0) is one of the most-starred autonomous research agents in open source — the MCP wrapper is newer and more modest (344 stars) but inherits the engine's proven research capability. Demonstrates an important emerging pattern: LLMs delegating specialized cognitive work to other specialized agents via MCP. Part of our **Web Search & Scraping** category. Rating: 3.5/5."
 last_refreshed: 2026-05-05
+sources_audited: 2026-07-26
 categories: ["/categories/web-search-scraping/"]
 ---
 
@@ -38,7 +39,7 @@ Part of our **[Web Search & Scraping MCP category](/categories/web-search-scrapi
 
 Before reviewing the MCP server, it's worth grounding the parent. GPT Researcher is not a search wrapper. It uses a **planner-executor architecture**: a planner agent generates a research plan (sub-questions, source strategy), execution agents gather information from 20+ sources in parallel, and an aggregator synthesizes the findings into a coherent report with citations. The output routinely exceeds 2,000 words with verifiable sources.
 
-At 26.9K stars, GPT Researcher is one of the most-adopted autonomous research agents in open source. The author, Assaf Elovic, has maintained it actively since 2023. The project supports web research, local document research (PDF, Excel, Word), JavaScript-enabled scraping, and multi-agent workflows via LangGraph.
+At [26.9K stars](https://github.com/assafelovic/gpt-researcher), GPT Researcher is one of the most-adopted autonomous research agents in open source. The author, Assaf Elovic, has maintained it actively since 2023. The project supports web research, local document research (PDF, Excel, Word), JavaScript-enabled scraping, and multi-agent workflows via LangGraph.
 
 gptr-mcp makes this engine callable from an MCP client with a single tool invocation.
 
@@ -50,7 +51,7 @@ The server exposes six tools and one prompt:
 
 | Tool | What it does |
 |------|-------------|
-| `deep_research` | Full GPT Researcher pipeline — autonomous multi-source exploration, ~30-40 seconds |
+| `deep_research` | Full GPT Researcher pipeline — autonomous multi-source exploration, slower but higher quality |
 | `quick_search` | Fast web search, optimized for speed over depth, returns snippets |
 | `write_report` | Generate a structured report from research results |
 | `get_research_sources` | Retrieve the list of sources used in the last research run |
@@ -59,7 +60,7 @@ The server exposes six tools and one prompt:
 
 **Prompt**: `research_query` — create a properly-structured research query prompt.
 
-The two primary tools represent an explicit quality-vs-speed tradeoff: `deep_research` for questions that deserve thorough answers, `quick_search` when you need something fast and approximate.
+The two primary tools represent an explicit quality-vs-speed tradeoff: `deep_research` for questions that deserve thorough answers (higher latency), `quick_search` when you need something fast and approximate.
 
 ---
 
@@ -70,12 +71,12 @@ Most MCP search tools — Brave Search, Tavily, Exa — return raw search result
 GPT Researcher's pipeline handles all of that before the LLM ever sees the output:
 
 1. Plans the research (what sub-questions to explore, which sources to target)
-2. Crawls and scrapes 20+ sources in parallel
+2. Crawls and scrapes multiple sources in parallel
 3. Evaluates source reliability and relevance
 4. Discards noise and irrelevant content
 5. Synthesizes findings into coherent, cited output
 
-The tradeoff is latency. A `deep_research` call takes 30 to 40 seconds — acceptable in an async workflow or when research quality matters, frustrating in an interactive session where the user is waiting.
+The tradeoff is latency. A `deep_research` call is slower than basic search — acceptable in an async workflow or when research quality matters, frustrating in an interactive session where the user is waiting.
 
 ---
 
@@ -111,7 +112,7 @@ For teams already running GPT Researcher or already paying for Tavily, this is a
 - **No formal versioned releases** — 37 commits on master, no tags or releases; there's no stable release reference
 - **No MCP Registry listing** — not in the official Anthropic MCP registry as of this writing
 - **Star count modest** — 344 stars on gptr-mcp specifically (the parent's 26.9K doesn't transfer directly)
-- **Latency** — 30-40s `deep_research` calls are slow for interactive use; the tool is better suited to async or batch workflows
+- **Latency** — `deep_research` calls are slow for interactive use; the tool is better suited to async or batch workflows
 - **OpenAI dependency** — the reasoning layer defaults to OpenAI; configuring alternatives requires more setup
 
 ---
@@ -128,9 +129,9 @@ As MCP adoption grows, this delegation pattern — specialized agents exposing t
 
 ## Rating: 3.5/5
 
-**Strengths:** Backed by a 26.9K-star proven engine; MIT license; multiple transport options; genuine capability gap filled (deep research vs. shallow search); demonstrates an important architectural pattern; active parent project with strong maintenance history.
+**Strengths:** Backed by a [26.9K-star proven engine](https://github.com/assafelovic/gpt-researcher); MIT license; multiple transport options; genuine capability gap filled (deep research vs. shallow search); demonstrates an important architectural pattern; active parent project with strong maintenance history.
 
-**Weaknesses:** Dual API key requirement (OpenAI + Tavily) adds operational cost and setup friction; no formal versioned releases; 30-40s latency limits interactive use cases; modest star count on the MCP-specific repo (344); Python 3.11+ strict requirement.
+**Weaknesses:** Dual API key requirement (OpenAI + Tavily) adds operational cost and setup friction; no formal versioned releases; higher latency for deep research limits interactive use cases; modest star count on the MCP-specific repo (344); Python 3.11+ strict requirement.
 
 The underlying GPT Researcher engine earns a higher score on its own merits. The MCP wrapper is functional but adds friction without adding capability — it's a bridge, not an enhancement. Worth evaluating if you need validated multi-source research in your agent workflow and are already comfortable with the API key overhead.
 

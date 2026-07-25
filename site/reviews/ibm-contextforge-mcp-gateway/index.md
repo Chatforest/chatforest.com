@@ -31,7 +31,7 @@ This is not an IBM product connector. It does not require IBM Cloud, watsonx, or
 
 ContextForge operates as three gateways in one:
 
-**Tools Gateway** — Aggregates multiple MCP servers behind a single endpoint. AI clients configure one connection; ContextForge manages upstream MCP connections, handles tool routing, and applies policies. REST and gRPC APIs are translated to MCP tools automatically, so existing services become callable by any MCP-compatible agent without code changes. TOON compression reduces LLM token usage by 30-70% by compressing tool schemas and descriptions before sending them to the model context.
+**Tools Gateway** — Aggregates multiple MCP servers behind a single endpoint. AI clients configure one connection; ContextForge manages upstream MCP connections, handles tool routing, and applies policies. REST and gRPC APIs are translated to MCP tools automatically, so existing services become callable by any MCP-compatible agent without code changes. [TOON compression](https://github.com/IBM/mcp-context-forge) reduces LLM token usage by compressing tool schemas and descriptions before sending them to the model context.
 
 **Agent Gateway** — Routes agent-to-agent (A2A protocol) communication alongside MCP tool calls. Supports OpenAI-compatible and Anthropic agent routing, making ContextForge a neutral protocol bridge across agent frameworks.
 
@@ -59,7 +59,7 @@ Full multi-tenancy has been available since v0.7.0. The system supports teams, e
 
 ### TOON Compression
 
-TOON (Tool Object Optimization for Networks) compression reduces the token footprint of tool schemas sent to the LLM context window. The 30-70% reduction directly translates to lower API costs and fewer context window pressure issues in agents loading large tool catalogs. No other major MCP gateway has an equivalent feature.
+TOON (Tool Object Optimization for Networks) compression reduces the token footprint of tool schemas sent to the LLM context window, directly translating to lower API costs and fewer context window pressure issues in agents loading large tool catalogs. No other major MCP gateway has an equivalent feature.
 
 ### 40+ Plugins
 
@@ -113,9 +113,9 @@ Performance engineering became a priority from v1.0.0-BETA-2 onward:
 - **PgBouncer connection pooling** — eliminates per-request PostgreSQL connection overhead
 - **L1/L2 caching** — in-memory cache for hot tool calls, Redis for shared cache across instances
 - **Granian HTTP server** — Rust-powered ASGI server replacing Uvicorn in production
-- **orjson serialization** — Rust-powered JSON parsing and serialization delivering 5-6x faster serialization and 1.5-2x faster deserialization versus Python's standard library
+- **orjson serialization** — Rust-powered JSON parsing and serialization delivering [approximately 10x faster serialization and 2x faster deserialization](https://github.com/ijl/orjson#performance) versus Python's standard library
 
-The v1.0.0-BETA-2 release note cited "100+ performance optimizations" and 80+ bug fixes. The pattern: early releases (v0.4.0–v0.7.0) built enterprise features; later releases (v1.0.0-BETA series) hardened them for production throughput.
+The [v1.0.0-BETA-2 release notes](https://github.com/IBM/mcp-context-forge/releases/tag/v1.0.0-BETA-2) cited "100+ performance optimizations" and 80+ bug fixes. The pattern: early releases (v0.4.0–v0.7.0) built enterprise features; later releases (v1.0.0-BETA series) hardened them for production throughput.
 
 ---
 

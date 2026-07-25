@@ -36,7 +36,7 @@ The headline finding: **Monte Carlo has the most sophisticated MCP integration**
 
 Authentication is **OAuth 2.1** via Monte Carlo's remote MCP server (HTTP transport), with header-based auth for legacy clients. Requires an Editor role or higher on a Monte Carlo account. The plugin bundles the MCP server, hooks, and agent-specific capabilities — no separate configuration needed.
 
-Supported clients: Claude Code, Cursor, Copilot CLI, OpenCode, Codex. Monte Carlo is the most widely deployed data observability platform, using ML to learn normal data patterns and alerting on freshness, volume, schema, distribution, or lineage deviations.
+Supported clients: Claude Code, Cursor, Copilot CLI, OpenCode, Codex. Monte Carlo is a widely deployed data observability platform, using ML to learn normal data patterns and alerting on freshness, volume, schema, distribution, or lineage deviations.
 
 ### Bigeye (Official)
 
@@ -111,7 +111,7 @@ This is the most architecturally ambitious MCP approach in the data quality spac
 |--------|-------|----------|---------|-------|----------|
 | Qualytics MCP Server | — | Hosted (SSE) | Commercial | Multiple | Yes |
 
-**Qualytics** ([qualytics.ai](https://qualytics.ai/)) launched its **Data Control Layer** in April 2026, including AgentQ and MCP server support. The MCP server exposes the entire Qualytics data quality infrastructure as callable tools:
+**Qualytics** ([qualytics.ai](https://qualytics.ai/)) [launched its **Data Control Layer** in April 2026](https://www.prweb.com/releases/qualytics-launches-data-control-layer-to-govern-context-for-ai-systems-302740093.html), including AgentQ and MCP server support. The MCP server exposes the entire Qualytics data quality infrastructure as callable tools:
 
 - **Triggering scans and quality checks**
 - **Retrieving quality scores and anomaly context**

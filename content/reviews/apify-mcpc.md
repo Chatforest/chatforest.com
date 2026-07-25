@@ -6,13 +6,14 @@ og_description: "apify/mcpc (538 stars, v0.2.6, Apache-2.0): a universal MCP CLI
 content_type: "Review"
 card_description: "apify/mcpc (538 stars, v0.2.6, Apache-2.0, TypeScript) is a universal command-line client for MCP servers designed specifically for AI agents operating in code mode. Instead of embedding an LLM, mcpc acts as infrastructure: a thin, shell-composable adapter that exposes MCP servers to any AI coding agent (Claude Code, Cursor, Codex) through standard shell commands. **Persistent named sessions** — prefixed with `@` — survive shell restarts via a lightweight bridge process. **OAuth 2.1 with PKCE** handles authentication, with credentials stored in the OS keychain (Linux Secret Service / macOS Keychain / Windows Credential Manager). An **AI sandbox proxy** lets users authenticate once and expose a local proxy endpoint, so AI-generated code can call MCP tools without ever seeing raw API tokens. **Progressive tool discovery** defers schema loading until a tool is actually needed, cutting token waste in multi-server setups. **JSON output mode** (`--json`) integrates with `jq` and shell pipelines. Full MCP spec support: tools, resources, prompts, async tasks, notifications, pagination, health checks. Experimental **x402 payment support** (USDC on Base blockchain) for Apify Actor runs. Built by Jan Curn, CEO and co-founder of Apify, the web scraping and automation platform (YC 2015, 27,000+ pre-built Actors). Not a replacement for LLM-orchestrating clients like IBM/mcp-cli — mcpc has no LLM integration by design. Part of our **Developer Tools** category. Rating: 3.5/5."
 last_refreshed: 2026-05-05
+sources_audited: 2026-07-26
 ---
 
 Most MCP clients are built around a user experience: you type a prompt, a language model reasons about it, tools get called, and a response arrives in a chat interface. That model works well for humans. It works less well for AI agents operating in code mode — agents that generate shell commands, run them, inspect the output, and iterate. For those workflows, embedding a full LLM chat client inside a larger AI-orchestrated system creates redundancy and friction.
 
 [apify/mcpc](https://github.com/apify/mcpc) takes a different approach. It is not a chat client. It is not an LLM orchestrator. It is a universal command-line adapter for the Model Context Protocol — designed to be called by AI agents, composed into shell pipelines, and integrated into code-mode workflows. The LLM stays in Claude Code, Cursor, or Codex. mcpc handles the MCP layer.
 
-Built by Jan Curn, co-founder and CEO of [Apify](https://apify.com), the project grew from a practical need: Apify runs a hosted MCP server at mcp.apify.com that exposes their 27,000+ web-scraping Actors to AI agents, and they needed a good CLI client to connect to it. Finding none that met their requirements, they built one and open-sourced it. Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
+Built by Jan Curn, co-founder and CEO of [Apify](https://apify.com), the project grew from a practical need: Apify runs a hosted MCP server at mcp.apify.com that exposes their web-scraping Actors to AI agents, and they needed a good CLI client to connect to it. Finding none that met their requirements, they built one and open-sourced it. Part of our **[Developer Tools MCP category](/categories/developer-tools/)**.
 
 ---
 
@@ -184,7 +185,7 @@ None of these are blockers for the core use case, but they are worth knowing bef
 
 ## About Apify
 
-Apify (founded 2015, Y Combinator) is a web scraping and automation platform based in Prague. Their hosted product provides 27,000+ pre-built "Actors" — serverless scraping and automation tasks — accessible via API. Notable clients include T-Mobile, Accenture, Princeton University, OpenTable, Roche, and Siemens. Their MCP server at mcp.apify.com connects AI agents to the Actor marketplace. mcpc was built to make that connection work reliably for AI coding agents, then released as a general-purpose MCP client.
+[Apify](https://apify.com/about) (founded 2015, Y Combinator) is a web scraping and automation platform based in Prague. Their hosted product provides tens of thousands of pre-built "Actors" — serverless scraping and automation tasks — accessible via API. [Notable clients](https://apify.com/about) include T-Mobile, Accenture, Princeton University, OpenTable, Roche, and Siemens. Their MCP server at mcp.apify.com connects AI agents to the Actor marketplace. mcpc was built to make that connection work reliably for AI coding agents, then released as a general-purpose MCP client.
 
 ---
 

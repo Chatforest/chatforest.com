@@ -6,14 +6,14 @@
   <title>Marian Zeis&#39;s SAP Community MCP Servers — ABAP Documentation, ADT Integration, and SAP Notes — ChatForest</title>
   <meta name="description" content="Four community-built SAP MCP servers by independent consultant Marian Zeis (marianfoo): mcp-sap-docs (169 stars, hybrid BM25&#43;semantic search, v0.3.21), abap-mcp-server (68 stars, unified ABAP/RAP search), arc-1 (48 stars, enterprise ADT v0.7.2), mcp-sap-notes (48 stars, Playwright-based). All Apache-2.0. Rating: 4.0/5.">
   <meta property="og:title" content="Marian Zeis&#39;s SAP Community MCP Servers — ABAP Documentation, ADT Integration, and SAP Notes — ChatForest">
-  <meta property="og:description" content="Community SAP MCP servers by Marian Zeis: mcp-sap-docs (169 stars, offline-capable BM25&#43;semantic SAP docs search, v0.3.21), abap-mcp-server (68 stars, ABAP/RAP &#43; community search, hosted endpoint), arc-1 (48 stars, enterprise ADT, 1,367&#43; tests, v0.7.2), mcp-sap-notes (48 stars, Playwright-based SAP Notes search). All Apache-2.0. Rating: 4.0/5.">
+  <meta property="og:description" content="Community SAP MCP servers by Marian Zeis: mcp-sap-docs (169 stars, offline-capable BM25&#43;semantic SAP docs search, v0.3.21), abap-mcp-server (68 stars, ABAP/RAP &#43; community search, hosted endpoint), arc-1 (48 stars, enterprise ADT, 3,474&#43; unit tests, v0.7.2), mcp-sap-notes (48 stars, Playwright-based SAP Notes search). All Apache-2.0. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/marianfoo-sap-community-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Marian Zeis&#39;s SAP Community MCP Servers — ABAP Documentation, ADT Integration, and SAP Notes — ChatForest">
-  <meta name="twitter:description" content="Community SAP MCP servers by Marian Zeis: mcp-sap-docs (169 stars, offline-capable BM25&#43;semantic SAP docs search, v0.3.21), abap-mcp-server (68 stars, ABAP/RAP &#43; community search, hosted endpoint), arc-1 (48 stars, enterprise ADT, 1,367&#43; tests, v0.7.2), mcp-sap-notes (48 stars, Playwright-based SAP Notes search). All Apache-2.0. Rating: 4.0/5.">
+  <meta name="twitter:description" content="Community SAP MCP servers by Marian Zeis: mcp-sap-docs (169 stars, offline-capable BM25&#43;semantic SAP docs search, v0.3.21), abap-mcp-server (68 stars, ABAP/RAP &#43; community search, hosted endpoint), arc-1 (48 stars, enterprise ADT, 3,474&#43; unit tests, v0.7.2), mcp-sap-notes (48 stars, Playwright-based SAP Notes search). All Apache-2.0. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/marianfoo-sap-community-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -113,7 +113,7 @@
 </tbody>
 </table>
 <p>All four are TypeScript, installable via npm or Docker, and compatible with Claude Desktop, Claude Code, and Cursor. All are Apache-2.0.</p>
-<p><strong>Who is Marian Zeis?</strong> He is not a SAP employee — he runs IT Consulting Marian Zeis independently in Bavaria and has deep roots in the SAP developer community. He is an active SAP Community contributor and maintains a technical blog at blog.zeis.de covering ABAP code generation benchmarks, MCP implementation patterns, and the evolving SAP + AI integration ecosystem. His sap-ai-mcp-servers curated list is referenced in SAP Community posts and external MCP directories as a primary discovery resource.</p>
+<p><strong>Who is Marian Zeis?</strong> He is not a SAP employee — he runs <a href="https://github.com/marianfoo">IT Consulting Marian Zeis</a> independently in Bavaria and has deep roots in the SAP developer community. He is an active SAP Community contributor and maintains a technical blog at <a href="https://blog.zeis.de">blog.zeis.de</a> covering ABAP code generation benchmarks, MCP implementation patterns, and the evolving SAP + AI integration ecosystem. His sap-ai-mcp-servers curated list is referenced in SAP Community posts and external MCP directories as a primary discovery resource.</p>
 <hr>
 <h2 id="mcp-sap-docs--the-standout-169-stars-v0321">mcp-sap-docs — The Standout (169 Stars, v0.3.21)</h2>
 <table>
@@ -214,11 +214,11 @@
 </ul>
 <p>Multi-auth support is unusual for a community MCP server; most community tools support one or two methods. XSUAA support in particular requires understanding SAP BTP&rsquo;s specific OAuth implementation, which is non-trivial to implement correctly. The presence of proper XSUAA support signals Zeis has implemented this against real BTP environments.</p>
 <h3 id="test-coverage">Test Coverage</h3>
-<p>arc-1 carries the most rigorous test suite of any server in this collection:</p>
+<p>arc-1 carries <a href="https://github.com/marianfoo/arc-1">the most rigorous test suite</a> of any server in this collection:</p>
 <ul>
-<li><strong>1,367+ unit tests</strong></li>
-<li><strong>~160 integration tests</strong></li>
-<li><strong>~70 end-to-end tests</strong></li>
+<li><strong>3,474 unit tests</strong> across 104 unit test files (mocked HTTP)</li>
+<li><strong>262 integration tests</strong> (default integration profile against live SAP systems)</li>
+<li><strong>141 end-to-end tests</strong> (default E2E profile executing real MCP tool calls against a running arc-1 server and live SAP system)</li>
 </ul>
 <p>For a community-maintained MCP server, this level of test infrastructure is exceptional. The integration and E2E test counts in particular suggest the server has been validated against actual SAP systems, not just mocked. v0.7.2 (released May 2, 2026) is the most recent, indicating active iteration toward a v1.0 stable release.</p>
 <h3 id="limitations-1">Limitations</h3>
@@ -330,7 +330,7 @@
 <hr>
 <h2 id="what-works-well">What Works Well</h2>
 <p><strong>mcp-sap-docs fills a real gap.</strong> SAP&rsquo;s official servers don&rsquo;t aggregate cross-product documentation. mcp-sap-docs does, with a zero-install npx command and offline-capable search. The 169-star count reflects genuine adoption by a developer community that needed this.</p>
-<p><strong>arc-1&rsquo;s test infrastructure is exceptional.</strong> 1,367+ unit tests plus integration and E2E coverage for a community-maintained MCP server is rare. It signals Zeis has validated arc-1 against real SAP systems and intends to maintain API stability as the project evolves toward v1.0.</p>
+<p><strong>arc-1&rsquo;s test infrastructure is exceptional.</strong> <a href="https://github.com/marianfoo/arc-1">3,474 unit tests plus 262 integration and 141 E2E tests</a> for a community-maintained MCP server is rare. It signals Zeis has validated arc-1 against real SAP systems and intends to maintain API stability as the project evolves toward v1.0.</p>
 <p><strong>Ecosystem curation.</strong> sap-ai-mcp-servers positions Zeis as a knowledge hub for the entire SAP MCP community, not just his own servers. This community role gives his work broader visibility and credibility.</p>
 <p><strong>All Apache-2.0.</strong> Enterprise-friendly licensing across the entire collection.</p>
 <hr>

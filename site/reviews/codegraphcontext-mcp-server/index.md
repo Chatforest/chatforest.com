@@ -5,7 +5,7 @@
 
 When an AI assistant needs to understand why a function is failing, the naive approach is to load the file, load its imports, load the callers, and continue up the call chain until context runs out. That works for small codebases. It doesn't work for large ones — and it misses architectural context even when it succeeds. CodeGraphContext was built on a different premise: index the entire repository into a graph database once, then answer structural questions in milliseconds.
 
-At **3.1K stars** and with **100K+ combined downloads**, CodeGraphContext is one of the most-adopted code intelligence tools in the MCP ecosystem. It covers 15 languages, supports three graph database backends, and ships as both a CLI toolkit and an MCP server. Part of our **[Code Intelligence & Codebase Graph category](/categories/developer-tools/)** — a category it helped establish when it launched in August 2025.
+At **3.1K stars**, CodeGraphContext is one of the most-adopted code intelligence tools in the MCP ecosystem. It covers 15 languages, supports three graph database backends, and ships as both a CLI toolkit and an MCP server. Part of our **[Code Intelligence & Codebase Graph category](/categories/developer-tools/)** — a category it helped establish when it launched in August 2025.
 
 ---
 
@@ -205,7 +205,7 @@ For Claude Desktop or Claude Code, `codegraphcontext mcp setup` generates the ap
 
 ## Rating: 3.5 / 5
 
-**What works:** MIT license, `pip install` simplicity, 15-language coverage, three graph DB backends, pre-indexed bundles, live file watching, dual CLI + MCP mode, 100K+ downloads demonstrating real adoption.
+**What works:** MIT license, `pip install` simplicity, 15-language coverage, three graph DB backends, pre-indexed bundles, live file watching, dual CLI + MCP mode.
 
 **What limits it:** 135 open issues at v0.4.x including core query failures and a named prompt injection security concern, Python 3.13 tree-sitter gap, FalkorDB Lite Unix constraint, and a category that has grown considerably since launch — developers starting fresh today have higher-star alternatives to evaluate alongside it.
 

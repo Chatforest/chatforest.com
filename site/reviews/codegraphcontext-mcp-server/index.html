@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>When an AI assistant needs to understand why a function is failing, the naive approach is to load the file, load its imports, load the callers, and continue up the call chain until context runs out. That works for small codebases. It doesn&rsquo;t work for large ones — and it misses architectural context even when it succeeds. CodeGraphContext was built on a different premise: index the entire repository into a graph database once, then answer structural questions in milliseconds.</p>
-<p>At <strong>3.1K stars</strong> and with <strong>100K+ combined downloads</strong>, CodeGraphContext is one of the most-adopted code intelligence tools in the MCP ecosystem. It covers 15 languages, supports three graph database backends, and ships as both a CLI toolkit and an MCP server. Part of our <strong><a href="/categories/developer-tools/">Code Intelligence &amp; Codebase Graph category</a></strong> — a category it helped establish when it launched in August 2025.</p>
+<p>At <strong>3.1K stars</strong>, CodeGraphContext is one of the most-adopted code intelligence tools in the MCP ecosystem. It covers 15 languages, supports three graph database backends, and ships as both a CLI toolkit and an MCP server. Part of our <strong><a href="/categories/developer-tools/">Code Intelligence &amp; Codebase Graph category</a></strong> — a category it helped establish when it launched in August 2025.</p>
 <hr>
 <h2 id="at-a-glance">At a Glance</h2>
 <table>
@@ -321,7 +321,7 @@ codegraphcontext mcp start
 </code></pre></div><p>For Claude Desktop or Claude Code, <code>codegraphcontext mcp setup</code> generates the appropriate MCP configuration block. The server runs locally; no API keys or external services required.</p>
 <hr>
 <h2 id="rating-35--5">Rating: 3.5 / 5</h2>
-<p><strong>What works:</strong> MIT license, <code>pip install</code> simplicity, 15-language coverage, three graph DB backends, pre-indexed bundles, live file watching, dual CLI + MCP mode, 100K+ downloads demonstrating real adoption.</p>
+<p><strong>What works:</strong> MIT license, <code>pip install</code> simplicity, 15-language coverage, three graph DB backends, pre-indexed bundles, live file watching, dual CLI + MCP mode.</p>
 <p><strong>What limits it:</strong> 135 open issues at v0.4.x including core query failures and a named prompt injection security concern, Python 3.13 tree-sitter gap, FalkorDB Lite Unix constraint, and a category that has grown considerably since launch — developers starting fresh today have higher-star alternatives to evaluate alongside it.</p>
 <p>CodeGraphContext is the straightforward, MIT-licensed Python path into code graph intelligence. It covers the fundamentals well, installs easily, and works without external API keys or services. For teams already in the Python ecosystem or wanting maximum install simplicity, it remains the lowest-friction option in the category.</p>
 <hr>

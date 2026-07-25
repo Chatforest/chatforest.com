@@ -2,10 +2,11 @@
 title: "IBM ContextForge MCP Gateway — Federation, RBAC, and AI Traffic Control for Enterprise MCP"
 date: 2026-05-05T20:00:00+09:00
 description: "IBM ContextForge reviewed: an open source MCP gateway, registry, and proxy federating any MCP, A2A, or REST/gRPC API into a unified endpoint with RBAC, TOON compression, 40+ plugins, and Kubernetes HA. Apache-2.0. Rating: 4.0/5."
-og_description: "IBM ContextForge (3,655 stars, v1.0.0 GA): MCP gateway and proxy for enterprise AI agents. Federates MCP, A2A, REST, and gRPC. Virtual servers, multi-tenant RBAC, TOON token compression (30-70%), OpenTelemetry, 40+ plugins, Kubernetes HA. Apache-2.0. Rating: 4.0/5."
+og_description: "IBM ContextForge (3,655 stars, v1.0.0 GA): MCP gateway and proxy for enterprise AI agents. Federates MCP, A2A, REST, and gRPC. Virtual servers, multi-tenant RBAC, TOON token compression, OpenTelemetry, 40+ plugins, Kubernetes HA. Apache-2.0. Rating: 4.0/5."
 content_type: "Review"
-card_description: "IBM ContextForge (3,655 stars, v1.0.0 GA, Apache-2.0, Python) is the highest-starred IBM open source project in the MCP ecosystem — and one of the most architecturally complete MCP gateways available. It sits in front of any MCP, A2A, or REST/gRPC API and federates them into a single unified endpoint with centralized governance, discovery, and observability. **Virtual servers** let you compose tool subsets for different teams or agents from a shared catalog. **Multi-tenant RBAC** (since v0.7.0) provides teams, email auth, and per-virtual-server API keys. **TOON compression** reduces LLM token usage by 30-70% — the only MCP gateway with this capability. **40+ plugins** cover PII detection, content filtering, rate limiting, protocol translation, and custom transports. **A2A protocol support** routes agent-to-agent communication alongside MCP tool calls. **Kubernetes-native HA** with Redis-backed federation, auto-scaling, and Helm charts for production deployments. Supports IBM Z (s390x) and POWER (ppc64le) alongside standard x86_64. OpenTelemetry tracing to Phoenix, Jaeger, Zipkin, and any OTLP backend. Not a connector to IBM products — this is protocol-agnostic MCP infrastructure for any organization. Distinct from covered MCP gateway tools like AgentGateway (2,457 stars) and Kong Agent Gateway. Rating: 4.0/5."
+card_description: "IBM ContextForge (3,655 stars, v1.0.0 GA, Apache-2.0, Python) is the highest-starred IBM open source project in the MCP ecosystem — and one of the most architecturally complete MCP gateways available. It sits in front of any MCP, A2A, or REST/gRPC API and federates them into a single unified endpoint with centralized governance, discovery, and observability. **Virtual servers** let you compose tool subsets for different teams or agents from a shared catalog. **Multi-tenant RBAC** (since v0.7.0) provides teams, email auth, and per-virtual-server API keys. **TOON compression** reduces LLM token usage by compressing tool schemas — the only MCP gateway with this capability. **40+ plugins** cover PII detection, content filtering, rate limiting, protocol translation, and custom transports. **A2A protocol support** routes agent-to-agent communication alongside MCP tool calls. **Kubernetes-native HA** with Redis-backed federation, auto-scaling, and Helm charts for production deployments. Supports IBM Z (s390x) and POWER (ppc64le) alongside standard x86_64. OpenTelemetry tracing to Phoenix, Jaeger, Zipkin, and any OTLP backend. Not a connector to IBM products — this is protocol-agnostic MCP infrastructure for any organization. Distinct from covered MCP gateway tools like AgentGateway (2,457 stars) and Kong Agent Gateway. Rating: 4.0/5."
 last_refreshed: 2026-05-05
+sources_audited: 2026-07-26
 ---
 
 Most MCP deployments start the same way: one AI client, one MCP server, one connection. Then the catalog grows. Three servers, then ten, then thirty. Each with its own auth model, transport config, and tool namespace. Each connection managed individually by every client. Each team maintaining its own copy of the configuration. This is the scaling problem IBM ContextForge was built to solve.
@@ -36,7 +37,7 @@ This is not an IBM product connector. It does not require IBM Cloud, watsonx, or
 
 ContextForge operates as three gateways in one:
 
-**Tools Gateway** — Aggregates multiple MCP servers behind a single endpoint. AI clients configure one connection; ContextForge manages upstream MCP connections, handles tool routing, and applies policies. REST and gRPC APIs are translated to MCP tools automatically, so existing services become callable by any MCP-compatible agent without code changes. TOON compression reduces LLM token usage by 30-70% by compressing tool schemas and descriptions before sending them to the model context.
+**Tools Gateway** — Aggregates multiple MCP servers behind a single endpoint. AI clients configure one connection; ContextForge manages upstream MCP connections, handles tool routing, and applies policies. REST and gRPC APIs are translated to MCP tools automatically, so existing services become callable by any MCP-compatible agent without code changes. [TOON compression](https://github.com/IBM/mcp-context-forge) reduces LLM token usage by compressing tool schemas and descriptions before sending them to the model context.
 
 **Agent Gateway** — Routes agent-to-agent (A2A protocol) communication alongside MCP tool calls. Supports OpenAI-compatible and Anthropic agent routing, making ContextForge a neutral protocol bridge across agent frameworks.
 
@@ -64,7 +65,7 @@ Full multi-tenancy has been available since v0.7.0. The system supports teams, e
 
 ### TOON Compression
 
-TOON (Tool Object Optimization for Networks) compression reduces the token footprint of tool schemas sent to the LLM context window. The 30-70% reduction directly translates to lower API costs and fewer context window pressure issues in agents loading large tool catalogs. No other major MCP gateway has an equivalent feature.
+TOON (Tool Object Optimization for Networks) compression reduces the token footprint of tool schemas sent to the LLM context window, directly translating to lower API costs and fewer context window pressure issues in agents loading large tool catalogs. No other major MCP gateway has an equivalent feature.
 
 ### 40+ Plugins
 
@@ -118,9 +119,9 @@ Performance engineering became a priority from v1.0.0-BETA-2 onward:
 - **PgBouncer connection pooling** — eliminates per-request PostgreSQL connection overhead
 - **L1/L2 caching** — in-memory cache for hot tool calls, Redis for shared cache across instances
 - **Granian HTTP server** — Rust-powered ASGI server replacing Uvicorn in production
-- **orjson serialization** — Rust-powered JSON parsing and serialization delivering 5-6x faster serialization and 1.5-2x faster deserialization versus Python's standard library
+- **orjson serialization** — Rust-powered JSON parsing and serialization delivering [approximately 10x faster serialization and 2x faster deserialization](https://github.com/ijl/orjson#performance) versus Python's standard library
 
-The v1.0.0-BETA-2 release note cited "100+ performance optimizations" and 80+ bug fixes. The pattern: early releases (v0.4.0–v0.7.0) built enterprise features; later releases (v1.0.0-BETA series) hardened them for production throughput.
+The [v1.0.0-BETA-2 release notes](https://github.com/IBM/mcp-context-forge/releases/tag/v1.0.0-BETA-2) cited "100+ performance optimizations" and 80+ bug fixes. The pattern: early releases (v0.4.0–v0.7.0) built enterprise features; later releases (v1.0.0-BETA series) hardened them for production throughput.
 
 ---
 

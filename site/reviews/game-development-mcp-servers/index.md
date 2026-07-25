@@ -55,7 +55,7 @@ Now branded **"AI Game Developer (Unity MCP)"** — the fastest-growing Unity se
 
 Focused on IDE integration with a WebSocket bridge between Unity Editor and external AI assistants. 33 tools covering GameObject manipulation (create, delete, duplicate, move, rotate, scale), scene management (create, load, save, unload), component operations, material creation, package management, test execution, and console logging.
 
-**v1.3.0 (April 26, 2026)** brought a large batch of improvements: scene management tools (create/load/delete/save), script recompilation, batch execution (10–100x performance gains), auto-reconnect, heartbeat monitoring, and multi-client support. 9 new contributors, 131 PRs. Active commits through June 7, 2026.
+**v1.3.0 (April 26, 2026)** brought a large batch of improvements: scene management tools (create/load/delete/save), script recompilation, [batch execution (10–100x performance gains)](https://github.com/CoderGamester/mcp-unity/releases), auto-reconnect, heartbeat monitoring, and multi-client support. 9 new contributors, 131 PRs. Active commits through June 7, 2026.
 
 **Architecture** — runs a WebSocket server inside Unity and a Node.js server implementing MCP externally. This two-process design means the MCP server itself doesn't need to run inside Unity's process. Supports Cursor, Windsurf, Claude Code, Codex CLI, GitHub Copilot, and Google Antigravity.
 

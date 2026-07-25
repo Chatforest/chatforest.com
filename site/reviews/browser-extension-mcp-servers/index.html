@@ -180,7 +180,7 @@
 </tbody>
 </table>
 <p><strong>⚠️ This project has been officially discontinued.</strong> The README now states: &ldquo;THIS PROJECT IS NO LONGER ACTIVE PLEASE USE A DIFFERENT SOLUTION FOR THIS.&rdquo;</p>
-<p>Additionally, an <strong>OS command injection vulnerability</strong> (CWE-78) was reported in April 2026. The flaw allows attacker-controlled path data to be interpolated into a shell command via <code>osascript</code> without escaping, enabling arbitrary OS command execution on macOS deployments where autoPaste is enabled. The vulnerability was not patched before the project was discontinued.</p>
+<p>Additionally, an <strong>OS command injection vulnerability</strong> (<a href="https://github.com/AgentDeskAI/browser-tools-mcp/issues/232">CVE-2026-7064</a>, CWE-78) was reported in April 2026. The flaw allows attacker-controlled path data to be interpolated into a shell command via <code>osascript</code> without escaping, enabling arbitrary OS command execution on macOS deployments where autoPaste is enabled. The vulnerability was not patched before the project was discontinued.</p>
 <p>Previously offered development-focused browser monitoring bridging IDE and browser — console capture, network monitoring, Lighthouse-driven accessibility/performance/SEO audits, and auto-paste screenshots into Cursor. Users should migrate to alternatives like chrome-devtools-mcp or mcp-chrome.</p>
 <h3 id="browsermcpmcp--local-browser-automation">BrowserMCP/mcp — Local Browser Automation</h3>
 <table>
@@ -263,11 +263,11 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Accepted as a W3C deliverable</strong> and transitioning to official web standard development via the <a href="https://github.com/webmachinelearning/webmcp">webmachinelearning/webmcp</a> repository:</p>
+<p><strong>Accepted by the <a href="https://github.com/webmachinelearning/webmcp">W3C Web Machine Learning Community Group</a></strong> as a Community Group Draft Report (published April 2026) and transitioning to official web standard development:</p>
 <ul>
 <li><strong>Websites as MCP servers</strong> — web apps register tools via <code>navigator.modelContext</code> API</li>
 <li><strong>W3C accepted</strong> — formally accepted as a W3C Community Group deliverable, advancing beyond draft status</li>
-<li><strong>Multi-browser support</strong> — available in Chrome 146+ Canary and Microsoft Edge 147 (added March 2026)</li>
+<li><strong>Multi-browser support</strong> — available in <a href="https://github.com/webmachinelearning/webmcp">Chrome 146+ Canary</a> and <a href="https://github.com/webmachinelearning/webmcp">Microsoft Edge 147</a> (added early 2026)</li>
 <li><strong>Chrome DevTools integration</strong> — WebMCP debugging support in Chrome 149+ via <code>--experimentalWebmcp</code> flag</li>
 <li><strong>WebMCP DevTools extension</strong> — dedicated Chrome Web Store extension for inspecting, testing, and monitoring WebMCP tools</li>
 <li><strong>WebMCP-org</strong> — GitHub organization created with core packages, examples, documentation, and userscripts</li>
@@ -532,7 +532,7 @@
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p><strong>Rating: 4.5/5</strong> — Browser extension MCP servers remain one of the strongest categories in the MCP ecosystem. The official Chrome DevTools MCP has surged to 37,700 stars (+31%) with 34 tools and WebMCP debugging support. The category has undergone significant structural changes since the initial review.</p>
 <p><strong>Three major developments define this refresh:</strong> First, the <strong>Safari gap has been filled</strong> — achiya-automation/safari-mcp provides 80 native tools via AppleScript with ~60% less CPU than Chrome on Apple Silicon, addressing the single biggest gap from the initial review. Second, <strong>firefox-devtools-mcp has been adopted by Mozilla</strong> as an official project, growing from 56 to 131 stars with v0.9.2 and a Claude Code plugin. Third, <strong>AgentDeskAI/browser-tools-mcp has been discontinued</strong> after an unpatched OS command injection vulnerability — a cautionary tale about security in browser automation.</p>
-<p><strong>WebMCP is advancing rapidly</strong> — accepted as a W3C deliverable, now available in Edge 147 alongside Chrome, with Chrome DevTools MCP adding WebMCP debugging support for Chrome 149+. The standard is moving from &ldquo;interesting experiment&rdquo; to &ldquo;browser platform feature.&rdquo;</p>
+<p><strong>WebMCP is advancing rapidly</strong> — accepted by the <a href="https://github.com/webmachinelearning/webmcp">W3C Web Machine Learning Community Group</a> as a Draft Community Group Report, now available in Edge 147 alongside Chrome, with Chrome DevTools MCP adding WebMCP debugging support for Chrome 149+. The standard is moving from &ldquo;interesting experiment&rdquo; to &ldquo;browser platform feature.&rdquo;</p>
 <p>The remaining gaps are unified cross-browser automation and mobile browser support. For developers building AI-assisted browser workflows, the ecosystem offers mature options across Chrome, Firefox, and now Safari.</p>
 <p><em>This review was last refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic).</em></p>
 

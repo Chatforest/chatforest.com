@@ -6,6 +6,7 @@ og_description: "IBM/mcp-cli (~2,000 stars, v0.19, Apache-2.0): the most feature
 content_type: "Review"
 card_description: "IBM/mcp-cli (~2,000 stars, v0.19, Apache-2.0, Python) is the most feature-complete open source CLI client for MCP servers — and the only one with built-in support for nine LLM providers. Connect to any number of MCP servers simultaneously, route prompts through Ollama, OpenAI, Anthropic, Azure, Gemini, Groq, Perplexity, IBM watsonx, or Mistral, and switch providers mid-session with `/provider`. Three operating modes — **chat** (streaming conversational interface), **interactive** (direct shell for MCP tool calls), and **command** (pipeline-friendly, scriptable). **Execution plans** let you create, preview, and run multi-step agent workflows. **Session management** saves and loads conversation history. **AI Virtual Memory** (experimental) tracks state across sessions. A **/dashboard** command opens a real-time browser UI. Token usage and cost tracking with `/usage`. Eight display themes. Local-first by design: the default provider is Ollama with gpt-oss — no API key required. Authored by chrishayuk (Chris Hayuk) under the IBM GitHub organization. 4,300+ unit tests, 50+ PyPI releases across 15 months of active development. Not to be confused with the simpler philschmid/mcp-cli or the archived mcphost. Part of our **Developer Tools** category. Rating: 4.0/5."
 last_refreshed: 2026-05-05
+sources_audited: 2026-07-26
 ---
 
 Most MCP guides start with Claude Desktop: download, configure, done. But Claude Desktop is a GUI application. It does not compose into shell pipelines. It does not run without a display. It does not let you switch LLM providers in the middle of a conversation, save sessions for later, or build multi-step execution plans. For users who want the full power of MCP from a terminal — or from a script — a purpose-built CLI client is the better tool.
@@ -159,7 +160,7 @@ Servers are configured in a `server_config.json` file, passed via the `--config`
 
 ## Project Activity
 
-mcp-cli is actively maintained. 50+ PyPI releases since December 2024, last commit March 2026, 4,300+ unit tests with a 60% minimum branch coverage gate. The primary contributor is chrishayuk; Renovate bot handles automated dependency updates. The PyPI release cadence averages roughly three releases per month across the project's lifetime.
+mcp-cli is actively maintained. 50+ PyPI releases since December 2024, last commit March 2026, [4,300+ unit tests with a 60% minimum branch coverage gate](https://github.com/IBM/mcp-cli). The primary contributor is chrishayuk; Renovate bot handles automated dependency updates. The PyPI release cadence averages roughly three releases per month across the project's lifetime.
 
 One structural note: the project does not publish formal GitHub Releases. All versioning lives on PyPI. This is a minor friction point for users who track projects via GitHub release feeds or want clean changelogs — the history is there, but spread across commit messages rather than collected in release notes.
 
@@ -183,7 +184,7 @@ None of these are blockers for the core use case (chat with MCP servers from a t
 
 **philschmid/mcp-cli** — A simpler Python CLI by Hugging Face engineer Philipp Schmid. Basic stdio MCP interaction only. No multi-provider support, no session management, no execution plans. Holds a different package name on PyPI. Better if you want minimal dependencies and a quick inspect of a single server.
 
-**mcphost (mark3labs)** — Archived as of early 2026. 1,600 stars at archival. Users directed to migrate to Kit. Not an active alternative.
+**[mcphost (mark3labs)](https://github.com/mark3labs/mcphost)** — Archived as of early 2026. ~1,600 stars at archival. Users directed to migrate to Kit. Not an active alternative.
 
 **MCP Inspector** — A development and debugging tool for MCP server authors, not a conversational client. Different target user: someone building a server, not someone using one.
 

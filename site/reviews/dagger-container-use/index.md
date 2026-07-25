@@ -106,7 +106,7 @@ After configuration, Claude Code sessions in that directory automatically have a
 
 ## The Dagger Pedigree
 
-Dagger is not a side project. It was founded by **Solomon Hykes** (Docker creator and Docker's original CEO/CTO), **Sam Alba** (Docker's VP of Engineering), and **Andrea Luzzardi** (Docker's lead architect). The team left Docker between 2018 and 2020 and launched Dagger in 2022, raising $20M in a Series A (YC-backed). Their core product is a CI/CD automation platform built on container primitives.
+Dagger is not a side project. It was [founded](https://techcrunch.com/2022/03/30/docker-founder-launches-dagger-a-new-devops-platform/) by **Solomon Hykes** (Docker's creator and co-founder), **Sam Alba**, and **Andrea Luzzardi** — all former Docker team members. The team left Docker between 2018 and 2020 and launched Dagger in 2022, [raising $20M in a Series A](https://www.infoworld.com/article/2334699/solomon-hykes-dagger-raises-20m-and-launches-public-beta.html) led by Redpoint Ventures with YC participation. Their core product is a CI/CD automation platform built on container primitives.
 
 Container-Use is a direct application of that infrastructure to the agent tooling space. The Dagger backend provides intelligent caching (repeated operations in similar environments are not re-executed from scratch), cross-environment portability (the same container definition runs on Mac, Linux, and Windows via native container runtimes), and the orchestration layer that makes parallel environments tractable.
 
