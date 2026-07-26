@@ -54,8 +54,8 @@ Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
 #### Deploy
 
 - Hugo build: clean (4,147 pages)
-- Deploy throttle not yet cleared at commit time (48 min since last deploy); next run should deploy
-- Hugo build verified clean
+- Committed f82f253772; pushed to GitHub (master, 3 commits ahead caught up)
+- Deploy throttle not yet cleared at run end (~50 min since last deploy, need 60 min); next run should deploy to DreamHost
 
 #### Running totals
 
