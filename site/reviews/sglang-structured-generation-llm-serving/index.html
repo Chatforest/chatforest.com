@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>The AI inference market in 2026 has a clear hierarchy: if you need maximum throughput on NVIDIA and can tolerate a 28-minute compilation step, TensorRT-LLM leads on raw numbers. If you want the broadest ecosystem, 79,000-star community, and battle-tested production deployments, vLLM is the default. But if your workload is prefix-heavy — RAG pipelines, multi-turn chat, agent frameworks with shared system prompts — SGLang is likely the fastest engine available in open source, sometimes by a factor of six.</p>
-<p>xAI chose SGLang to serve Grok 3. Microsoft Azure chose SGLang to serve DeepSeek R1 on AMD GPUs. Those decisions were not made casually. Part of our <strong><a href="/categories/developer-tools/">Developer Tools category</a></strong>.</p>
+<p>xAI chose SGLang to serve Grok 3. <a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/accelerating-deepseek-inference-with-amd-mi300-a-collaborative-breakthrough/4407673">Microsoft Azure chose SGLang to serve DeepSeek R1 on AMD GPUs</a>. Those decisions were not made casually. Part of our <strong><a href="/categories/developer-tools/">Developer Tools category</a></strong>.</p>
 <hr>
 <h2 id="at-a-glance">At a Glance</h2>
 <table>
@@ -150,7 +150,7 @@
 <h2 id="structured-output-xgrammar-and-speed">Structured Output: XGrammar and Speed</h2>
 <p>For agent pipelines and any application that parses model outputs programmatically, SGLang&rsquo;s structured output capability is the fastest available.</p>
 <p>SGLang uses <strong>XGrammar</strong> — developed by the MLC-LLM team and now the default structured output backend for vLLM, SGLang, and TensorRT-LLM — with optimizations that put SGLang ahead of the others on this benchmark. XGrammar enforces JSON schema, regex, or EBNF grammar constraints on generation with under 40 microseconds of overhead per token. The grammar FSM is compiled to a masked representation, so constraint checking is pure bitwise operations during sampling.</p>
-<p><strong>XGrammar-2</strong> (released May 4, 2026, just ahead of SGLang v0.5.11) delivers:</p>
+<p><strong><a href="https://blog.mlc.ai/2026/05/04/xgrammar-2-fast-customizable-structured-generation">XGrammar-2</a></strong> (released May 4, 2026, just ahead of SGLang v0.5.11) delivers:</p>
 <ul>
 <li><strong>80x faster grammar compilation</strong> vs the original XGrammar</li>
 <li>Improved handling of nested JSON schemas</li>
@@ -212,11 +212,11 @@
 <li><strong>NVIDIA, AMD, Intel</strong> — hardware validation and co-development</li>
 </ul>
 <p>Academic presence: MIT, UCLA, University of Washington, Stanford, UC Berkeley (origin institution), Tsinghua University.</p>
-<p>Additional recognition: <strong>a16z Open Source AI Grant</strong> (third batch, 2025). SGLang joined the <strong>PyTorch ecosystem</strong> as an official component.</p>
+<p>Additional recognition: <strong>a16z Open Source AI Grant</strong> (third batch, 2025). SGLang <a href="https://pytorch.org/blog/sglang-joins-pytorch/">joined the <strong>PyTorch ecosystem</strong></a> as an official component.</p>
 <hr>
 <h2 id="radixark-the-commercial-story">RadixArk: The Commercial Story</h2>
 <p>SGLang originated at UC Berkeley&rsquo;s LMSYS organization (co-founded by Ion Stoica, who also co-founded Databricks and Apache Spark). The project was led by Ying Sheng and Banghua Zhu, who subsequently moved to xAI and NVIDIA respectively before founding RadixArk.</p>
-<p><strong>RadixArk</strong> launched publicly on May 5, 2026 (coinciding with SGLang v0.5.11):</p>
+<p><strong>RadixArk</strong> <a href="https://www.businesswire.com/news/home/20260505077157/en/RadixArk-Launches-with-$100-Million-in-Seed-Funding-Led-by-Accel-to-Grow-SGLang-and-Democratize-Frontier-AI-Infrastructure">launched publicly on May 5, 2026</a> (coinciding with SGLang v0.5.11):</p>
 <ul>
 <li><strong>Founders</strong>: Ying Sheng (CEO, ex-xAI), Banghua Zhu (CTO, ex-NVIDIA)</li>
 <li><strong>Seed round</strong>: $100 million</li>
@@ -302,13 +302,13 @@
 <hr>
 <h2 id="security-three-critical-cves-in-q1-2026">Security: Three Critical CVEs in Q1 2026</h2>
 <p>SGLang mirrors vLLM&rsquo;s security situation: rapid feature expansion (multimodal, disaggregated serving, diffusion models) is introducing new attack surface, and the no-auth-by-default design creates risk for anyone who exposes the server to a network.</p>
-<p><strong>CVE-2026-5760 (CVSS 9.8 — Critical) — UNPATCHED as of April 2026</strong></p>
+<p><strong><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-5760">CVE-2026-5760</a> (CVSS 9.8 — Critical) — UNPATCHED as of April 2026</strong></p>
 <p>Server-Side Template Injection (SSTI) in the <code>/v1/rerank</code> endpoint. An attacker crafts a GGUF model file with a malicious Jinja2 <code>tokenizer.chat_template</code>. When the rerank endpoint processes a request using that model, the template is rendered with <code>jinja2.Environment()</code> — which allows arbitrary Python code execution — rather than <code>jinja2.ImmutableSandboxedEnvironment</code>, which would block it.</p>
 <p>Attack path: load a malicious GGUF file → send a request to <code>/v1/rerank</code> → arbitrary Python code executes on the server. The fix is one line of code (swap the Jinja2 environment class). Patch status: the researcher reported that the vendor did not provide a fix during coordinated disclosure as of April 2026.</p>
 <p>Mitigation: avoid loading GGUF model files from untrusted sources; restrict access to the <code>/v1/rerank</code> endpoint; or patch the line yourself (<code>serving_rerank.py</code>). Do not expose SGLang to the internet without understanding this issue.</p>
-<p><strong>CVE-2026-3059 (Critical) — Fixed in v0.5.10</strong></p>
+<p><strong><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-3059">CVE-2026-3059</a> (Critical) — Fixed in v0.5.10</strong></p>
 <p>RCE via ZMQ broker in the multimodal generation module. SGLang&rsquo;s internal inter-process communication for multimodal models used ZeroMQ sockets that were bound to network addresses rather than localhost only. Those sockets used <code>pickle.loads()</code> on received data without authentication. Sending a crafted pickle payload to the ZMQ port achieves arbitrary code execution. Fix: bind ZMQ sockets to localhost (PR #21435), merged into v0.5.10.</p>
-<p><strong>CVE-2026-3060 (Critical) — Fixed in v0.5.10</strong></p>
+<p><strong><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-3060">CVE-2026-3060</a> (Critical) — Fixed in v0.5.10</strong></p>
 <p>Identical root cause in the encoder parallel disaggregation system — a different code path with the same <code>pickle.loads()</code> on unauthenticated network input. Same fix as CVE-2026-3059.</p>
 <p><strong>The pattern</strong>: All three CVEs stem from the same architectural philosophy as vLLM — no authentication by default, and internal IPC mechanisms originally designed for single-machine use that weren&rsquo;t hardened before being exposed in multi-node configurations. The responsible deployment posture is the same as for vLLM: place SGLang behind a reverse proxy or AI gateway (LiteLLM, Portkey) that enforces authentication. Never expose SGLang directly to the internet.</p>
 <p>If you are running v0.5.9 or earlier, update to v0.5.10+ to address CVE-2026-3059 and CVE-2026-3060. For CVE-2026-5760, check the release notes of the version you use for the patch; if in doubt, restrict access to the <code>/v1/rerank</code> endpoint.</p>

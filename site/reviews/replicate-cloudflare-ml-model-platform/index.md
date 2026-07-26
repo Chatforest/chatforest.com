@@ -25,7 +25,7 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Total funding** | $57.8M across 3 rounds |
 | **Series B** | $40M (June 2023); lead: a16z; participants: NVentures, Sequoia, Heavybit, YC |
 | **Valuation** | $350M (July 2023, last known) |
-| **Status** | Acquired by Cloudflare, announced November 17, 2025 |
+| **Status** | [Acquired by Cloudflare, announced November 17, 2025](https://www.cloudflare.com/press/press-releases/2025/cloudflare-to-acquire-replicate-to-build-the-most-seamless-ai-cloud-for-developers/) |
 | **Model catalog** | 50,000+ community models |
 | **Open-source tool** | [Cog](https://github.com/replicate/cog) — ML model packaging and containerization |
 | **GPU billing** | Per-second; CPU $0.0001/s through 8x H100 at $0.0122/s |
@@ -140,7 +140,7 @@ Custom training pipelines can also be packaged via Cog. Cog supports both `predi
 
 ## The Cloudflare Acquisition
 
-Cloudflare announced the acquisition of Replicate on November 17, 2025. Financial terms were not disclosed. The deal was expected to close within approximately two months.
+[Cloudflare announced the acquisition of Replicate on November 17, 2025](https://www.cloudflare.com/press/press-releases/2025/cloudflare-to-acquire-replicate-to-build-the-most-seamless-ai-cloud-for-developers/) ([Replicate blog](https://replicate.com/blog/replicate-cloudflare)). Financial terms were not disclosed. The deal was expected to close within approximately two months.
 
 The strategic rationale was clear from both sides' announcements. Cloudflare runs one of the largest edge networks in the world — 330+ cities, 12,500+ interconnects, sub-20ms latency to most internet users. Workers AI, Cloudflare's inference product, already ran curated models on that edge. What it lacked was scale in the model catalog and a packaging technology that let any developer bring a custom model.
 
@@ -178,7 +178,7 @@ For developers already using Replicate, the acquisition is largely transparent i
 
 ## Limitations
 
-**Revenue was modest at acquisition.** The $1.2M revenue figure reported for 2024 suggests Replicate had not yet fully bridged the gap between developer mindshare (large) and commercial scale (smaller). Cloudflare acquired the technology and community, not a large revenue base.
+**Revenue was modest at acquisition.** Replicate had not yet fully bridged the gap between developer mindshare (large) and commercial scale (smaller). Cloudflare acquired the technology and community, not a large revenue base.
 
 **Not optimized for LLM inference at scale.** Developers who need to serve language models at high throughput to production users will find cheaper, faster options at dedicated providers. Replicate's LLM offerings are convenient for experimentation, not optimized for scale.
 
@@ -210,7 +210,7 @@ The platform's core proposition remains compelling: the largest community catalo
 
 The Cloudflare acquisition is a net positive for capability (edge network, resources, GPU snapshotting improvements) but introduces integration-phase uncertainty. For existing users, the API is unchanged and the catalog is intact. For new users evaluating a long-term commitment, the trajectory is toward deeper Cloudflare platform integration — a reasonable destination.
 
-The half-point deduction reflects two things: the revenue traction pre-acquisition was modest (suggesting product-market fit is still developing commercially), and Replicate is not the right tool for the largest use case in the market — high-throughput LLM text inference — which limits its ceiling as a standalone product.
+The half-point deduction reflects two things: revenue traction pre-acquisition was modest by the standards of a $350M-valued company (suggesting product-market fit was still developing commercially), and Replicate is not the right tool for the largest use case in the market — high-throughput LLM text inference — which limits its ceiling as a standalone product.
 
 For what it does — community model access, image generation, Cog-packaged custom models — there is no better place.
 

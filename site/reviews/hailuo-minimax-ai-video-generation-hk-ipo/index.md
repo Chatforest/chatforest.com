@@ -25,7 +25,7 @@ The founding team's SenseTime background is significant context. SenseTime built
 
 **Hailuo AI** is the consumer-facing brand for MiniMax's video generation products. "Hailuo" (海螺, "conch") is used as the brand name on the consumer web platform (`hailuoai.video`), in the product model names (Hailuo 02, Hailuo 2.3), and as the platform's X/Twitter identity (@Hailuo_AI). MiniMax's other products — the Talkie AI companion app, its large language model platform (reviewed separately: **[MiniMax M2.5](/reviews/minimax-m2-5-open-weight-agentic-llm-review/)**), and the Speech-02/2.5/2.6 voice AI product line — do not carry the Hailuo name. When western AI communities discuss "Hailuo," they mean MiniMax's video generation work specifically.
 
-As of December 31, 2025, MiniMax employed 428 full-time staff — a lean headcount for a company generating $79 million in annual revenue, operating at public-market scale, and training video foundation models at consumer-accessible prices.
+As of December 31, 2025, MiniMax [employed 428 full-time staff](https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html) — a lean headcount for a company generating $79 million in annual revenue, operating at public-market scale, and training video foundation models at consumer-accessible prices.
 
 ---
 
@@ -35,9 +35,9 @@ MiniMax's capital story tracks the sharp escalation in AI infrastructure investm
 
 The earliest backing came from **miHoYo** — the Shanghai gaming studio best known for Genshin Impact — which provided seed capital and gave MiniMax an initial platform in the consumer entertainment ecosystem. **Alibaba** and **Tencent** participated in early rounds, a notable combination given that China's two dominant tech giants rarely back the same startup. The two companies' mutual investment signals that both saw MiniMax as credible infrastructure rather than a direct competitive threat.
 
-The March 2024 round — **$600 million led by Alibaba** at a $2.5 billion valuation — was the largest pre-IPO raise in China's generative AI sector at the time. **HongShan Capital** (formerly Sequoia China), **Hillhouse Investment**, **IDG Capital**, and **Yunqi Capital** also participated. Total pre-IPO funding reached approximately $850 million across four disclosed rounds.
+The [March 2024 round — **$600 million led by Alibaba** at a $2.5 billion valuation](https://www.bloomberg.com/news/articles/2024-03-05/alibaba-backs-2-5-billion-ai-startup-in-second-major-2024-deal) — was the largest pre-IPO raise in China's generative AI sector at the time. **HongShan Capital** (formerly Sequoia China), **Hillhouse Investment**, **IDG Capital**, and **Yunqi Capital** also participated. Total pre-IPO funding reached approximately $850 million across four disclosed rounds.
 
-The July 2025 round — $300 million at a $4 billion valuation led by **Shanghai STVC Group**, a state-owned venture capital vehicle — added Chinese government capital to the investor table, a common pattern among Chinese AI companies seeking stable long-term funding as U.S.-China technology tensions made western capital harder to access.
+The [July 2025 round — $300 million at a $4 billion valuation](https://hrone.com/blog/chinas-minimax-secures-300m-funding-valued-at-4b-tech-in-asia/) led by **Shanghai STVC Group**, a state-owned venture capital vehicle — added Chinese government capital to the investor table, a common pattern among Chinese AI companies seeking stable long-term funding as U.S.-China technology tensions made western capital harder to access.
 
 The **Hong Kong Stock Exchange IPO on January 9, 2026** (ticker: 00100) was the financial culmination of this trajectory. MiniMax priced at HK$165 per share — the top of its range — raising approximately **$619 million**. On debut, shares surged more than 70%, briefly pushing the market cap above **HK$90 billion ($11.5 billion)**. Cornerstone investors included the **Abu Dhabi Investment Authority (ADIA)**, Alibaba, South Korea's Mirae Asset Securities, Boyu Capital, IDG Capital, and Perseverance Asset Management, committing a combined $350 million.
 
@@ -52,7 +52,7 @@ The IPO made MiniMax the first Chinese AI foundation model company to go public 
 - Cash position: $1,050.3 million at year-end
 - Annualized run rate (ARR): Exceeded $150 million by late 2025
 
-More than 70% of MiniMax's 2025 revenue came from international markets — a data point that contextualizes both the Hollywood lawsuit and the Anthropic distillation accusation as business-critical legal risks, not peripheral concerns.
+More than [70% of MiniMax's 2025 revenue came from international markets](https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html) — a data point that contextualizes both the Hollywood lawsuit and the Anthropic distillation accusation as business-critical legal risks, not peripheral concerns.
 
 ---
 
@@ -98,7 +98,7 @@ Hailuo 02 was MiniMax's generational upgrade — the model that brought 1080p na
 
 **Noise-aware Compute Redistribution (NCR)** is the key architectural innovation. Traditional diffusion transformers apply consistent compute across the entire generation regardless of how much detail different regions require. NCR dynamically redistributes computation based on noise levels and complexity: a moving human face in motion gets more compute than a static background sky. The result is that compute-intensive elements — facial expressions, physical motion, fine textures on moving objects — receive proportional attention without requiring a global increase in model size.
 
-The efficiency gains from NCR were substantial: 2.5x improvement in both training and inference efficiency at comparable parameter scales. For users, this translates directly to the 30–60 second generation times that distinguish Hailuo from slower competitors and the API pricing that makes production-scale use economically feasible.
+The efficiency gains from NCR were substantial: [2.5x improvement in both training and inference efficiency](https://www.minimax.io/news/minimax-hailuo-02) at comparable parameter scales. For users, this translates directly to the 30–60 second generation times that distinguish Hailuo from slower competitors and the API pricing that makes production-scale use economically feasible.
 
 Hailuo 02's other specifications:
 - 3x total parameters compared to Video-01

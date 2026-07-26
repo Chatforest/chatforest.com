@@ -18,7 +18,7 @@ Anyscale was founded in 2019 in San Francisco by a group of UC Berkeley research
 
 The origin is academic, but the business model is not. Ray started as a tool for distributed reinforcement learning — a way to parallelize Python across a cluster without rewriting your code in a distributed framework. It turns out that problem is identical to the problem of scaling AI training, inference, and data pipelines. Ray became the connective tissue for serious AI infrastructure.
 
-By the time Anyscale transferred Ray to the PyTorch Foundation in October 2025, the framework had accumulated 500 million+ downloads, 41,000+ GitHub stars, and a download growth rate of "nearly 10x" in the prior year. It drives what Anyscale calls "billions of dollars of annual compute consumption."
+By the time [Anyscale transferred Ray to the PyTorch Foundation](https://pytorch.org/blog/pytorch-foundation-welcomes-ray-to-deliver-a-unified-open-source-ai-compute-stack/) in October 2025, the framework had accumulated 500 million+ downloads, 41,000+ GitHub stars, and a download growth rate of "nearly 10x" in the prior year. It drives what Anyscale calls "billions of dollars of annual compute consumption."
 
 ## Funding and Business Status
 
@@ -30,13 +30,13 @@ Anyscale has raised approximately $281 million across three rounds:
 | Series B | October 2020 | $40M | New Enterprise Associates |
 | Series C | October 2021 | $199M | New Enterprise Associates |
 
-The company reached unicorn status ($1B valuation) in December 2021. Notably, no Series D has been announced as of May 2026 — over three years post-raise. This is unusual for a company of Anyscale's scale and profile. It may indicate the company is operating near profitability on its existing runway, or it may signal a deliberate holding pattern ahead of a larger raise or IPO. Revenue figures have not been publicly disclosed.
+The company [reached unicorn status ($1B valuation) in December 2021](https://www.businesswire.com/news/home/20211208005269/en/Anyscale-Secures-%24100M-Series-C-at-%241B-Valuation-to-Radically-Simplify-Scaling-and-Productionizing-AI-Applications). Notably, no Series D has been announced as of May 2026 — over three years post-raise. This is unusual for a company of Anyscale's scale and profile. It may indicate the company is operating near profitability on its existing runway, or it may signal a deliberate holding pattern ahead of a larger raise or IPO. Revenue figures have not been publicly disclosed.
 
 The employee count of roughly 664 (as of early 2026) is lean for a company with this market position, which generally suggests efficient operations rather than a growth-at-all-costs posture.
 
 ## The PyTorch Foundation Transfer: A Databricks Play
 
-On October 22, 2025, Anyscale transferred Ray's governance, intellectual property, and development roadmap to the PyTorch Foundation under the Linux Foundation. The move drew immediate comparisons to HashiCorp/Terraform, Docker, and Kubernetes governance models — all cases where neutralizing open-source ownership accelerated enterprise adoption.
+On October 22, 2025, [Anyscale transferred Ray's governance, intellectual property, and development roadmap](https://pytorch.org/blog/pytorch-foundation-welcomes-ray-to-deliver-a-unified-open-source-ai-compute-stack/) to the PyTorch Foundation under the Linux Foundation. The move drew immediate comparisons to HashiCorp/Terraform, Docker, and Kubernetes governance models — all cases where neutralizing open-source ownership accelerated enterprise adoption.
 
 The Databricks parallel is exact. Ion Stoica co-founded Databricks, which built its multi-billion-dollar business on top of Apache Spark — an open-source project it donated to the Apache Foundation. Anyscale is executing the same play with Ray and the PyTorch Foundation.
 

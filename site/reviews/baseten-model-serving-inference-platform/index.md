@@ -3,7 +3,7 @@
 > Baseten is a production ML inference platform used by Cursor, Notion, Superhuman, and Speechify. With $585M raised and NVIDIA as an investor, it has built proprietary cold-start tech, multi-cloud capacity management, and inference kernels that put it in direct competition with Modal, Replicate, and AWS SageMaker. We review the product, pricing, architecture, and who it is actually for.
 
 
-Baseten reached a [$5 billion valuation in January 2026 after raising $300 million in a Series E round](https://www.businesswire.com/news/home/20260123035833/en/Baseten-Raises-$300M-at-a-$5B-Valuation-to-Power-a-Multi-Model-Future) with [NVIDIA investing $150 million directly](https://finance.yahoo.com/news/nvidia-nvda-invests-150-million-173323306.html). That is a striking number for a company with estimated annual revenue of $15–16 million at the time. The valuation-to-revenue multiple signals one thing clearly: investors believe Baseten is positioned to own a large share of production AI inference infrastructure as AI spending scales.
+Baseten reached a [$5 billion valuation in January 2026 after raising $300 million in a Series E round](https://www.businesswire.com/news/home/20260123035833/en/Baseten-Raises-$300M-at-a-$5B-Valuation-to-Power-a-Multi-Model-Future) with [NVIDIA investing $150 million directly](https://finance.yahoo.com/news/nvidia-nvda-invests-150-million-173323306.html). That is a striking number given the company's stage of revenue growth. The valuation-to-revenue multiple signals one thing clearly: investors believe Baseten is positioned to own a large share of production AI inference infrastructure as AI spending scales.
 
 The product case for Baseten is not complicated. As organizations move from experimenting with AI to running it in production at scale — in applications like Cursor's code completions, Speechify's audio generation, HeyGen's video synthesis, and Superhuman's email AI — they discover that consumer-facing LLM APIs are not the right substrate. Custom models need custom infrastructure. Latency requirements are strict. Compliance certifications are mandatory. Cold starts kill user experience. Baseten exists to solve these problems for teams deploying custom and open-source models in production.
 
@@ -254,7 +254,7 @@ NVIDIA's investment in Baseten signals confidence that the specialized inference
 
 ## Weaknesses
 
-**Revenue vs. valuation**: $15.8M ARR at a $5B valuation is a 316× revenue multiple. This is venture capital investing in trajectory, not current business fundamentals. The valuation requires Baseten to grow revenue dramatically — and to do so in a market where hyperscalers and specialized competitors are both spending aggressively.
+**Revenue vs. valuation**: The $5B valuation reflects venture capital investing in trajectory, not current business fundamentals. The valuation requires Baseten to grow revenue dramatically — and to do so in a market where hyperscalers and specialized competitors are both spending aggressively.
 
 **No free tier**: Unlike Replicate or Hugging Face Inference API, Baseten has no free compute credits. Every experiment costs money. This is a deliberate product choice (Baseten is not targeting hobbyists) but it limits organic developer adoption and bottom-up growth.
 

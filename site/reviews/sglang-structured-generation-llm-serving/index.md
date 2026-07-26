@@ -5,7 +5,7 @@
 
 The AI inference market in 2026 has a clear hierarchy: if you need maximum throughput on NVIDIA and can tolerate a 28-minute compilation step, TensorRT-LLM leads on raw numbers. If you want the broadest ecosystem, 79,000-star community, and battle-tested production deployments, vLLM is the default. But if your workload is prefix-heavy — RAG pipelines, multi-turn chat, agent frameworks with shared system prompts — SGLang is likely the fastest engine available in open source, sometimes by a factor of six.
 
-xAI chose SGLang to serve Grok 3. Microsoft Azure chose SGLang to serve DeepSeek R1 on AMD GPUs. Those decisions were not made casually. Part of our **[Developer Tools category](/categories/developer-tools/)**.
+xAI chose SGLang to serve Grok 3. [Microsoft Azure chose SGLang to serve DeepSeek R1 on AMD GPUs](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/accelerating-deepseek-inference-with-amd-mi300-a-collaborative-breakthrough/4407673). Those decisions were not made casually. Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
 ---
 
@@ -69,7 +69,7 @@ For agent pipelines and any application that parses model outputs programmatical
 
 SGLang uses **XGrammar** — developed by the MLC-LLM team and now the default structured output backend for vLLM, SGLang, and TensorRT-LLM — with optimizations that put SGLang ahead of the others on this benchmark. XGrammar enforces JSON schema, regex, or EBNF grammar constraints on generation with under 40 microseconds of overhead per token. The grammar FSM is compiled to a masked representation, so constraint checking is pure bitwise operations during sampling.
 
-**XGrammar-2** (released May 4, 2026, just ahead of SGLang v0.5.11) delivers:
+**[XGrammar-2](https://blog.mlc.ai/2026/05/04/xgrammar-2-fast-customizable-structured-generation)** (released May 4, 2026, just ahead of SGLang v0.5.11) delivers:
 - **80x faster grammar compilation** vs the original XGrammar
 - Improved handling of nested JSON schemas
 - Better performance on deeply recursive EBNF grammars
@@ -164,7 +164,7 @@ SGLang runs on over **400,000 GPUs worldwide** and generates **trillions of toke
 
 Academic presence: MIT, UCLA, University of Washington, Stanford, UC Berkeley (origin institution), Tsinghua University.
 
-Additional recognition: **a16z Open Source AI Grant** (third batch, 2025). SGLang joined the **PyTorch ecosystem** as an official component.
+Additional recognition: **a16z Open Source AI Grant** (third batch, 2025). SGLang [joined the **PyTorch ecosystem**](https://pytorch.org/blog/sglang-joins-pytorch/) as an official component.
 
 ---
 
@@ -172,7 +172,7 @@ Additional recognition: **a16z Open Source AI Grant** (third batch, 2025). SGLan
 
 SGLang originated at UC Berkeley's LMSYS organization (co-founded by Ion Stoica, who also co-founded Databricks and Apache Spark). The project was led by Ying Sheng and Banghua Zhu, who subsequently moved to xAI and NVIDIA respectively before founding RadixArk.
 
-**RadixArk** launched publicly on May 5, 2026 (coinciding with SGLang v0.5.11):
+**RadixArk** [launched publicly on May 5, 2026](https://www.businesswire.com/news/home/20260505077157/en/RadixArk-Launches-with-$100-Million-in-Seed-Funding-Led-by-Accel-to-Grow-SGLang-and-Democratize-Frontier-AI-Infrastructure) (coinciding with SGLang v0.5.11):
 - **Founders**: Ying Sheng (CEO, ex-xAI), Banghua Zhu (CTO, ex-NVIDIA)
 - **Seed round**: $100 million
 - **Post-money valuation**: $400 million
@@ -224,7 +224,7 @@ On unique-prompt (no prefix reuse) workloads, SGLang and vLLM are near-parity. T
 
 SGLang mirrors vLLM's security situation: rapid feature expansion (multimodal, disaggregated serving, diffusion models) is introducing new attack surface, and the no-auth-by-default design creates risk for anyone who exposes the server to a network.
 
-**CVE-2026-5760 (CVSS 9.8 — Critical) — UNPATCHED as of April 2026**
+**[CVE-2026-5760](https://nvd.nist.gov/vuln/detail/CVE-2026-5760) (CVSS 9.8 — Critical) — UNPATCHED as of April 2026**
 
 Server-Side Template Injection (SSTI) in the `/v1/rerank` endpoint. An attacker crafts a GGUF model file with a malicious Jinja2 `tokenizer.chat_template`. When the rerank endpoint processes a request using that model, the template is rendered with `jinja2.Environment()` — which allows arbitrary Python code execution — rather than `jinja2.ImmutableSandboxedEnvironment`, which would block it.
 
@@ -232,11 +232,11 @@ Attack path: load a malicious GGUF file → send a request to `/v1/rerank` → a
 
 Mitigation: avoid loading GGUF model files from untrusted sources; restrict access to the `/v1/rerank` endpoint; or patch the line yourself (`serving_rerank.py`). Do not expose SGLang to the internet without understanding this issue.
 
-**CVE-2026-3059 (Critical) — Fixed in v0.5.10**
+**[CVE-2026-3059](https://nvd.nist.gov/vuln/detail/CVE-2026-3059) (Critical) — Fixed in v0.5.10**
 
 RCE via ZMQ broker in the multimodal generation module. SGLang's internal inter-process communication for multimodal models used ZeroMQ sockets that were bound to network addresses rather than localhost only. Those sockets used `pickle.loads()` on received data without authentication. Sending a crafted pickle payload to the ZMQ port achieves arbitrary code execution. Fix: bind ZMQ sockets to localhost (PR #21435), merged into v0.5.10.
 
-**CVE-2026-3060 (Critical) — Fixed in v0.5.10**
+**[CVE-2026-3060](https://nvd.nist.gov/vuln/detail/CVE-2026-3060) (Critical) — Fixed in v0.5.10**
 
 Identical root cause in the encoder parallel disaggregation system — a different code path with the same `pickle.loads()` on unauthenticated network input. Same fix as CVE-2026-3059.
 

@@ -161,7 +161,7 @@ response <span style="color:#f92672">=</span> ollama<span style="color:#f92672">
 <p><strong>NVIDIA CUDA</strong>: Detected and used automatically on Linux and Windows. Supports multiple GPUs with automatic memory splitting.</p>
 <p><strong>AMD ROCm</strong>: Supported on Linux. ROCm 5.7+ required.</p>
 <p><strong>Apple Metal</strong>: Used automatically on any Apple Silicon Mac (M1 through M4 Max). Ollama allocates unified memory and routes through Metal without user configuration.</p>
-<p><strong>MLX backend (preview, March 2026)</strong>: Apple released MLX — their machine learning framework optimized for unified memory — and Ollama is now testing an MLX-based execution path alongside Metal. Preliminary results: approximately 1.6x faster prompt processing (prefill speed) and near-2x faster token generation (decode speed) compared to the existing Metal backend on the same hardware. Gemma 4 and Llama-family models are currently supported via MLX; the feature remains in preview as of May 2026.</p>
+<p><strong>MLX backend (preview, March 2026)</strong>: Apple released MLX — their machine learning framework optimized for unified memory — and Ollama is now testing an MLX-based execution path alongside Metal. <a href="https://ollama.com/blog/mlx">Preliminary results: approximately 1.6x faster prompt processing (prefill speed) and near-2x faster token generation (decode speed)</a> compared to the existing Metal backend on the same hardware. Gemma 4 and Llama-family models are currently supported via MLX; the feature remains in preview as of May 2026.</p>
 <p>For CPU-only systems, Ollama uses llama.cpp&rsquo;s optimized CPU paths (SIMD, AVX2/AVX-512 where available) — functional but substantially slower than GPU paths.</p>
 <hr>
 <h2 id="version-06x-what-changed-in-2026">Version 0.6.x: What Changed in 2026</h2>
@@ -192,7 +192,7 @@ response <span style="color:#f92672">=</span> ollama<span style="color:#f92672">
 <h2 id="performance-positioning">Performance Positioning</h2>
 <p>Ollama is designed for single-user ergonomics, not multi-user throughput. It builds a management and API layer on top of llama.cpp, which is the source of both its convenience and its performance tradeoffs.</p>
 <p><strong>Single user</strong>: Excellent. GPU utilization is high, latency is competitive, and the developer workflow is faster than any alternative.</p>
-<p><strong>Multi-user concurrent load</strong>: Not Ollama&rsquo;s domain. Benchmarks show Ollama&rsquo;s throughput drops sharply at 5+ concurrent users — the management layer serializes requests in ways that crush throughput under load. vLLM handles the same concurrent load at 35x higher request throughput (RPS) and 44x higher total tokens per second.</p>
+<p><strong>Multi-user concurrent load</strong>: Not Ollama&rsquo;s domain. Benchmarks show Ollama&rsquo;s throughput drops sharply at 5+ concurrent users — the management layer serializes requests in ways that crush throughput under load. vLLM handles substantially higher concurrent request throughput for multi-user workloads.</p>
 <p><strong>Raw throughput vs. llama.cpp</strong>: Ollama adds approximately 10–30% overhead compared to a vanilla llama.cpp implementation for single-user workloads. Acceptable for development; meaningful at scale.</p>
 <p><strong>Recommended mental model</strong>:</p>
 <table>
@@ -224,9 +224,9 @@ response <span style="color:#f92672">=</span> ollama<span style="color:#f92672">
 <hr>
 <h2 id="security">Security</h2>
 <p>Ollama&rsquo;s security record is the most significant concern for teams considering it beyond local-only use. 20+ CVEs have been filed since April 2024.</p>
-<p><strong>CVE-2026-42248 and CVE-2026-42249</strong> — Windows auto-updater RCE (May 5, 2026)</p>
+<p><strong><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42248">CVE-2026-42248</a> and <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42249">CVE-2026-42249</a></strong> — <a href="https://www.helpnetsecurity.com/2026/05/05/ollama-windows-vulnerabilities-cve-2026-42248-cve-2026-42249/">Windows auto-updater RCE (May 5, 2026)</a></p>
 <ul>
-<li><strong>Severity</strong>: High</li>
+<li><strong>Severity</strong>: High (CVSS 7.7)</li>
 <li><strong>Status</strong>: <strong>Unpatched as of this writing</strong></li>
 <li><strong>Description</strong>: Two flaws in Ollama&rsquo;s Windows auto-updater enable an attacker to plant a persistent executable that runs on every user login. Classified as a persistent Remote Code Execution vector — not just a privilege escalation.</li>
 <li><strong>Mitigation</strong>: Disable auto-updates on Windows until a patch is available; run Ollama in an isolated environment.</li>
@@ -304,7 +304,7 @@ response <span style="color:#f92672">=</span> ollama<span style="color:#f92672">
 <td><strong>Multi-user throughput</strong></td>
 <td>Poor (5+ users)</td>
 <td>Moderate</td>
-<td>Excellent (35x RPS vs llama.cpp)</td>
+<td>Excellent (substantially higher RPS at scale)</td>
 <td>Single user</td>
 </tr>
 <tr>

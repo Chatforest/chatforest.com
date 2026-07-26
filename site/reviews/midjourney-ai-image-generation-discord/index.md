@@ -3,7 +3,7 @@
 > Midjourney is the most profitable and influential consumer AI image generator — no VC investors, no API, no MCP server, and still setting the benchmark for creative quality. Here's the full picture.
 
 
-Midjourney is the quiet giant of AI image generation. No venture capital. No external investors. Approximately 40 employees as of 2023. Estimated $200 million in annual recurring revenue. Product quality that rivals or exceeds offerings from companies with hundreds of engineers and billions in backing.
+Midjourney is the quiet giant of AI image generation. No venture capital. No external investors. [Approximately 40 employees as of 2023](https://sacra.com/c/midjourney/). [Estimated $200 million in annual recurring revenue](https://www.cbinsights.com/research/midjourney-revenue-valuation/). Product quality that rivals or exceeds offerings from companies with hundreds of engineers and billions in backing.
 
 It is also, deliberately, a closed ecosystem: no public API, no official MCP server, no programmatic access for developers. Midjourney operates on its own terms — and the terms are working.
 
@@ -11,13 +11,13 @@ This review examines what Midjourney is, how it achieved its position, what it a
 
 ## The Company
 
-Midjourney was founded in 2022 by David Holz, who previously co-founded Leap Motion — a company that built hand-tracking hardware for gestural computer interfaces. Leap Motion was eventually acquired (after a failed $306 million Ultrahaptics acquisition fell through) and Holz turned to a different question: what could a small team build that actually changed how humans relate to creative work?
+Midjourney was founded in 2022 by [David Holz](https://en.wikipedia.org/wiki/David_Holz), who previously co-founded Leap Motion — a company that built hand-tracking hardware for gestural computer interfaces. [Leap Motion was acquired by Ultrahaptics (now Ultraleap) in 2019 for approximately $30 million](https://siliconangle.com/2019/05/30/leap-motion-sold-fire-sale-price-30m-ultrahaptics/) — a fire-sale price far below the company's peak valuation of over $300 million — and Holz turned to a different question: what could a small team build that actually changed how humans relate to creative work?
 
-The answer was Midjourney — a text-to-image model that launched in open beta in July 2022. Unlike most AI startups of that era, Holz deliberately chose not to raise venture capital. This decision shaped everything that followed.
+The answer was Midjourney — a text-to-image model that [launched in open beta on July 12, 2022](https://en.wikipedia.org/wiki/Midjourney). Unlike most AI startups of that era, Holz deliberately chose not to raise venture capital. This decision shaped everything that followed.
 
 Self-funding means Midjourney answers only to its users. It doesn't optimize for a growth metric that satisfies a board. It doesn't need to ship an enterprise tier to justify a series B valuation. It doesn't need to publish an API to attract developers who will build viral demos. The company can charge directly, operate efficiently, and reinvest at whatever pace Holz decides is right.
 
-The model worked. By early 2023, Midjourney was reportedly generating approximately $200 million in annual recurring revenue with a headcount that would be considered a small startup. That revenue-per-employee ratio — roughly $5 million per person — is extraordinary by any measure in software.
+The model worked. By early 2023, Midjourney was reportedly generating [approximately $200 million in annual recurring revenue](https://www.theinformation.com/briefings/ai-startup-midjourney-expects-200-million-in-revenue) with a headcount that would be considered a small startup. That revenue-per-employee ratio — roughly $5 million per person — is extraordinary by any measure in software.
 
 The founding team draws from art, design, and machine learning communities rather than the conventional Silicon Valley path. Midjourney has cultivated a deliberately community-focused identity, reflected in its Discord-first distribution strategy and the aesthetic sensibility embedded in its default outputs.
 
@@ -31,13 +31,13 @@ The output quality has been the defining characteristic. At its launch, Midjourn
 
 **v1–v4 (2022):** The early versions established Midjourney's distinctive aesthetic — dramatic lighting, compositional richness, a tendency toward the painterly. These versions were technically impressive for 2022 but look dated now.
 
-**v5 (March 2023):** The breakthrough version. v5 dramatically improved photorealism, handled more complex prompts, and achieved a level of detail and coherence that established Midjourney as the quality leader among consumer image generators. Fingers — historically a weakness for image AI — became notably better. Coherent text in images remained difficult but improved.
+**[v5](https://en.wikipedia.org/wiki/Midjourney) (March 2023):** The breakthrough version. v5 dramatically improved photorealism, handled more complex prompts, and achieved a level of detail and coherence that established Midjourney as the quality leader among consumer image generators. Fingers — historically a weakness for image AI — became notably better. Coherent text in images remained difficult but improved.
 
 **v5.1 / v5.2 (May–July 2023):** Refinements to v5. v5.2 introduced zoom-out (outpainting from the edges of an existing image) and made shorten (prompt analysis and simplification) available.
 
 **[v6](https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version) (December 2023):** The second major generational leap. v6 improved prompt adherence substantially — a recurring criticism of earlier versions was that Midjourney would produce beautiful images that ignored significant portions of the prompt. v6 follows detailed, complex prompts more faithfully. Text rendering in images improved meaningfully, though it remains imperfect. Longer prompts became more effective. The model handles multi-element compositions with more specificity.
 
-**v6.1 (July 2024):** A refinement cycle improving image coherence, texture quality, and consistency. The "Consistent Characters" feature — the ability to maintain a character's appearance across multiple generated images — became available, addressing a long-standing limitation for creators who needed character continuity.
+**[v6.1](https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version) (July 2024):** A refinement cycle improving image coherence, texture quality, and consistency. The "Consistent Characters" feature — the ability to maintain a character's appearance across multiple generated images — became available, addressing a long-standing limitation for creators who needed character continuity.
 
 **Niji v6:** A specialized model variant optimized for anime and manga aesthetics, developed in collaboration with Spellbrush. Niji is particularly popular for character design and illustration work in the Japanese visual style.
 
@@ -77,7 +77,7 @@ The web interface also introduced more granular controls — sliders and visual 
 
 ## Business Model
 
-Midjourney operates on direct subscription revenue. There is no free tier (free trials were removed in mid-2023 due to abuse — specifically, use of trial accounts to generate explicit content and deepfakes before abuse controls were in place). Every user pays.
+Midjourney operates on direct subscription revenue. There is no free tier ([free trials were removed in mid-2023 due to abuse](https://en.wikipedia.org/wiki/Midjourney) — specifically, use of trial accounts to generate explicit content and deepfakes before abuse controls were in place). Every user pays.
 
 Subscription tiers as of 2024–2025:
 
@@ -90,7 +90,7 @@ Annual billing offers approximately a 20% discount.
 
 "Relaxed" mode uses spare GPU capacity at no additional fast-hour cost but queues behind fast-mode jobs. For users who don't need immediate results, relaxed mode provides essentially unlimited generation at the Standard+ tier.
 
-Commercial use rights: subscribers can use generated images commercially. The key caveat is that companies with over $1 million in gross annual revenue must be on the Pro or Mega plan for commercial use rights. This has been a source of occasional confusion.
+Commercial use rights: subscribers can use generated images commercially per [Midjourney's terms of service](https://docs.midjourney.com/hc/en-us/articles/16212519501209-Terms-of-Service). The key caveat is that companies with over $1 million in gross annual revenue must be on the Pro or Mega plan for commercial use rights. This has been a source of occasional confusion.
 
 ## Copyright and Training Data
 
@@ -110,8 +110,6 @@ Midjourney has not publicly settled with any artists or established an artist co
 - Fake images of Donald Trump being arrested (March 2023) — generated with Midjourney and spread across social media before being identified as fabricated.
 
 Both incidents sparked widespread media coverage and congressional interest in AI image regulation. Midjourney implemented additional content policies and moderation as a result, though enforcement consistency has been questioned by researchers.
-
-**Congressional Subpoena (May 2024):** The House Judiciary Committee's subcommittee on Courts, Intellectual Property, and the Internet issued a subpoena to Midjourney, seeking documents related to the company's policies on preventing AI-generated child sexual abuse material (CSAM). The subpoena was part of a broader investigation into AI platforms' CSAM prevention measures. Midjourney cooperated with the inquiry.
 
 ## No API, No MCP Server: The Deliberate Closed Garden
 

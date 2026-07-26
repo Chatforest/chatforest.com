@@ -11,9 +11,9 @@ In 2023, HeyGen released a demonstration of its video translation feature — a 
 
 The reaction across the AI and media communities was immediate. This was not text-to-image or text-to-video in the familiar sense. This was something more uncanny and more practically useful: an existing real video, rerendered in a different language, at professional quality, without a dubbing studio, without voice actors, and without re-recording.
 
-That single capability drove a **1,024% year-over-year ARR growth** and took the company from roughly $3M ARR in mid-2023 to **$100M ARR by October 2025**. It also made HeyGen the clearest demonstration that AI avatar technology — talking-head video generation featuring a real or synthetic human presenter — is a category with genuine commercial demand, not just a research curiosity.
+That single capability drove a [**1,024% year-over-year ARR growth**](https://www.arr.club/signal/heygen-arr-hits-100m) and took the company from roughly $3M ARR in mid-2023 to [**$100M ARR by October 2025**](https://www.arr.club/signal/heygen-arr-hits-100m). It also made HeyGen the clearest demonstration that AI avatar technology — talking-head video generation featuring a real or synthetic human presenter — is a category with genuine commercial demand, not just a research curiosity.
 
-By the time HeyGen crossed the $100M mark, it had **31 million registered users** across **239 countries**, **100,000+ paying business customers**, and a $500 million valuation from a Benchmark-led Series A. Unusually for a venture-backed AI startup, it achieved **profitability in Q2 2023** — and maintained it through the growth phase. G2 named it the **#1 Fastest Growing Product of 2025**. Fast Company named it to **Most Innovative Companies 2026** in the video category.
+By the time HeyGen crossed the $100M mark, it had **31 million registered users** across **239 countries**, **100,000+ paying business customers**, and a [$500 million valuation from a Benchmark-led Series A](https://www.heygen.com/blog/announcing-our-series-a). Unusually for a venture-backed AI startup, it achieved **profitability in Q2 2023** — and maintained it through the growth phase.
 
 This review covers how the technology works, what the platform actually offers, how it compares to the field, and what its real limitations are. It is written from public sources, research, and available documentation; we do not test AI video tools hands-on.
 
@@ -41,7 +41,7 @@ HeyGen's funding history reflects both its early frugality and its eventual expl
 |---|---|---|---|---|
 | Seed | Pre-2023 | Undisclosed | Sequoia China (HongShan), ZhenFund | — |
 | Pre-Series A | November 2023 | $5.6M | Conviction (Sarah Guo) | — |
-| Series A | June 2024 | $60M | Benchmark (lead), Bond Capital, Thrive Capital, SV Angel | $500M |
+| [Series A](https://www.heygen.com/blog/announcing-our-series-a) | June 2024 | $60M | Benchmark (lead), Bond Capital, Thrive Capital, SV Angel | $500M |
 
 Total raised: approximately $65.6M. The Series A at $500M valuation was notable for its scale relative to team size (approximately 50–80 employees at that point) and the fact that HeyGen was already profitable. Benchmark's decision to lead a $60M round in a company already generating strong ARR and operating profitably is a different category of investment than the growth-at-any-cost rounds that characterized 2021-era AI funding.
 
@@ -56,9 +56,9 @@ The growth trajectory here is exceptional enough to be worth stating precisely:
 - **Mid-2023**: $3M ARR
 - **End of 2024**: $57.5M ARR (Sacra estimate)
 - **September 2025**: $95M ARR (Sacra estimate)
-- **October 2025**: $100M ARR milestone crossed (company announcement)
+- **October 2025**: [$100M ARR milestone crossed](https://www.arr.club/signal/heygen-arr-hits-100m) (company announcement)
 
-Year-over-year ARR growth from 2023 to 2025: approximately **1,024%**.
+Year-over-year ARR growth from 2023 to 2025: approximately [**1,024%**](https://www.arr.club/signal/heygen-arr-hits-100m).
 
 Supporting metrics:
 - **31 million+ total registered users**
@@ -263,7 +263,7 @@ Tavus targets a narrower but technically adjacent use case: hyper-personalized v
 
 ## Deepfake Risk and Consent Policy
 
-HeyGen has a documented misuse problem. Russian cybersecurity firm Group-IB named HeyGen in its 2023/2024 Hi-Tech Crimes Report as a tool exploited by threat actors for deepfake fraud, consumer scams, health misinformation, and geopolitical propaganda. Group-IB analysts noted growing interest from bad actors in bypassing HeyGen's safety measures.
+HeyGen has a documented misuse problem. Russian cybersecurity firm Group-IB named HeyGen in its [2023/2024 Hi-Tech Crimes Report](https://www.group-ib.com/landing/hi-tech-crime-trends-2023-2024/) as a tool exploited by threat actors for deepfake fraud, consumer scams, health misinformation, and geopolitical propaganda. Group-IB analysts noted growing interest from bad actors in bypassing HeyGen's safety measures.
 
 The platform requires verbal consent and a spoken password for custom avatar creation, and employs automated content filtering plus human moderation. These controls are real. They are also less strict than Synthesia's, which requires more extensive identity verification and consent documentation before a custom avatar is generated. The gap matters: it creates a meaningful difference in misuse potential between the two platforms.
 

@@ -94,7 +94,7 @@ Ollama's defining convenience: GPU acceleration is automatic. Install Ollama, ru
 
 **Apple Metal**: Used automatically on any Apple Silicon Mac (M1 through M4 Max). Ollama allocates unified memory and routes through Metal without user configuration.
 
-**MLX backend (preview, March 2026)**: Apple released MLX — their machine learning framework optimized for unified memory — and Ollama is now testing an MLX-based execution path alongside Metal. Preliminary results: approximately 1.6x faster prompt processing (prefill speed) and near-2x faster token generation (decode speed) compared to the existing Metal backend on the same hardware. Gemma 4 and Llama-family models are currently supported via MLX; the feature remains in preview as of May 2026.
+**MLX backend (preview, March 2026)**: Apple released MLX — their machine learning framework optimized for unified memory — and Ollama is now testing an MLX-based execution path alongside Metal. [Preliminary results: approximately 1.6x faster prompt processing (prefill speed) and near-2x faster token generation (decode speed)](https://ollama.com/blog/mlx) compared to the existing Metal backend on the same hardware. Gemma 4 and Llama-family models are currently supported via MLX; the feature remains in preview as of May 2026.
 
 For CPU-only systems, Ollama uses llama.cpp's optimized CPU paths (SIMD, AVX2/AVX-512 where available) — functional but substantially slower than GPU paths.
 
@@ -136,7 +136,7 @@ Ollama is designed for single-user ergonomics, not multi-user throughput. It bui
 
 **Single user**: Excellent. GPU utilization is high, latency is competitive, and the developer workflow is faster than any alternative.
 
-**Multi-user concurrent load**: Not Ollama's domain. Benchmarks show Ollama's throughput drops sharply at 5+ concurrent users — the management layer serializes requests in ways that crush throughput under load. vLLM handles the same concurrent load at 35x higher request throughput (RPS) and 44x higher total tokens per second.
+**Multi-user concurrent load**: Not Ollama's domain. Benchmarks show Ollama's throughput drops sharply at 5+ concurrent users — the management layer serializes requests in ways that crush throughput under load. vLLM handles substantially higher concurrent request throughput for multi-user workloads.
 
 **Raw throughput vs. llama.cpp**: Ollama adds approximately 10–30% overhead compared to a vanilla llama.cpp implementation for single-user workloads. Acceptable for development; meaningful at scale.
 
@@ -155,8 +155,8 @@ Ollama is designed for single-user ergonomics, not multi-user throughput. It bui
 
 Ollama's security record is the most significant concern for teams considering it beyond local-only use. 20+ CVEs have been filed since April 2024.
 
-**CVE-2026-42248 and CVE-2026-42249** — Windows auto-updater RCE (May 5, 2026)
-- **Severity**: High
+**[CVE-2026-42248](https://nvd.nist.gov/vuln/detail/CVE-2026-42248) and [CVE-2026-42249](https://nvd.nist.gov/vuln/detail/CVE-2026-42249)** — [Windows auto-updater RCE (May 5, 2026)](https://www.helpnetsecurity.com/2026/05/05/ollama-windows-vulnerabilities-cve-2026-42248-cve-2026-42249/)
+- **Severity**: High (CVSS 7.7)
 - **Status**: **Unpatched as of this writing**
 - **Description**: Two flaws in Ollama's Windows auto-updater enable an attacker to plant a persistent executable that runs on every user login. Classified as a persistent Remote Code Execution vector — not just a privilege escalation.
 - **Mitigation**: Disable auto-updates on Windows until a patch is available; run Ollama in an isolated environment.
@@ -191,7 +191,7 @@ Ollama's security record is the most significant concern for teams considering i
 | **Language** | Go | C++ | Python | Electron |
 | **License** | MIT | MIT | Apache 2.0 | Proprietary |
 | **Setup time** | < 1 min | Compile from source | pip + config | GUI installer |
-| **Multi-user throughput** | Poor (5+ users) | Moderate | Excellent (35x RPS vs llama.cpp) | Single user |
+| **Multi-user throughput** | Poor (5+ users) | Moderate | Excellent (substantially higher RPS at scale) | Single user |
 | **GPU acceleration** | CUDA/ROCm/Metal/MLX | AVX, CUDA, Metal | CUDA (primary) | Metal/CUDA |
 | **Native MCP support** | No (bridges exist) | Yes (March 2026) | No | No |
 | **OpenAI-compatible API** | Yes (/v1) | Yes (server mode) | Yes | Yes |

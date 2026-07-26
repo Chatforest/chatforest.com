@@ -7,7 +7,7 @@
 
 Weights & Biases built the experiment tracking platform that OpenAI uses to train its models. When OpenAI says "you simply can't do ambitious, expansive projects without best-in-class tools," they're talking about W&B. That quote alone tells you something about the product's standing in the ML community.
 
-W&B was founded in 2017 by Lukas Biewald, Chris Van Pelt, and Shawn Lewis — working, by company lore, behind a karate studio in San Francisco. After seven years building the dominant MLOps platform with over one million users, [CoreWeave acquired W&B for $1.7 billion in May 2025](https://techcrunch.com/2025/03/04/coreweave-acquires-ai-developer-platform-weights-biases/). The GPU cloud company wanted W&B's developer tooling layer to complete a vertical integration play: you run your training jobs on CoreWeave's H100s, and you track, visualize, and analyze them with W&B.
+W&B was founded in 2017 by Lukas Biewald, Chris Van Pelt, and Shawn Lewis — working, by company lore, behind a karate studio in San Francisco. After seven years building the dominant MLOps platform with over one million users, CoreWeave [announced the acquisition of W&B for $1.7 billion on March 4, 2025](https://www.prnewswire.com/news-releases/coreweave-to-acquire-weights--biases---industry-leading-ai-developer-platform-for-building-and-deploying-ai-applications-302392342.html), with the deal [completing on May 5, 2025](https://www.prnewswire.com/news-releases/coreweave-completes-acquisition-of-weights--biases-302445966.html). The GPU cloud company wanted W&B's developer tooling layer to complete a vertical integration play: you run your training jobs on CoreWeave's H100s, and you track, visualize, and analyze them with W&B.
 
 This review covers the W&B platform, what the CoreWeave acquisition means, the official MCP server, and how it compares to MLflow and TensorBoard.
 
@@ -44,11 +44,11 @@ By 2024, pre-acquisition secondary market transactions valued W&B at roughly **$
 
 ## Revenue and Scale
 
-W&B reported approximately **$100 million ARR** in 2024 — a figure cited across multiple industry sources ahead of the acquisition. At roughly 250 employees, that implies strong revenue-per-head efficiency (~$400K/employee). The company has not disclosed profitability, but the ratio and the nature of SaaS tooling businesses at this scale typically suggest meaningful contribution margins.
+W&B reported approximately **[$100 million ARR](https://remunerationlabs.substack.com/p/coreweave-acquires-ai-developer-platform)** in 2024 — a figure cited across multiple industry sources ahead of the acquisition. At roughly 250 employees, that implies strong revenue-per-head efficiency (~$400K/employee). The company has not disclosed profitability, but the ratio and the nature of SaaS tooling businesses at this scale typically suggest meaningful contribution margins.
 
-The platform had reached:
+The platform had reached ([per CoreWeave's acquisition announcement](https://www.prnewswire.com/news-releases/coreweave-to-acquire-weights--biases---industry-leading-ai-developer-platform-for-building-and-deploying-ai-applications-302392342.html)):
 - **1 million+ active users** as of 2024
-- **1,400+ organizations** (cited in CoreWeave's acquisition announcement)
+- **1,400+ organizations**
 - **10 million+ experiments tracked** on the platform
 - **500,000+ active monthly projects** (Q1 2024)
 - **40% of Fortune 500** penetration

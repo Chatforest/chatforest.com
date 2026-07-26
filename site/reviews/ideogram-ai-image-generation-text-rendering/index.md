@@ -7,7 +7,7 @@
 
 There is a moment every designer has experienced: you open an AI-generated image, it looks gorgeous, and then you zoom in on the text. The sign says "GAND OPING" instead of "GRAND OPENING." The label reads "Cofffe" with a double-f. The poster headline is in a language that does not exist. Every AI image generator has struggled with text rendering — until recently.
 
-Ideogram was founded specifically to solve this problem. The company's founders all worked together on Google Brain's Imagen, the research system widely considered the technical ancestor of modern diffusion-based image generators. They left Google in 2022, incorporated in Toronto, launched publicly in August 2023, and raised $96.5 million to build what is now the most accurate text-rendering image generation platform available. Ideogram 3.0, released March 2025, achieves 90–95% text accuracy in generated images — roughly 2.5–3× better than Midjourney.
+Ideogram was founded specifically to solve this problem. The company's founders all worked together on Google Brain's Imagen, the research system widely considered the technical ancestor of modern diffusion-based image generators. They left Google in 2022, incorporated in Toronto, [launched publicly in August 2023](https://ideogram.ai/launch), and raised $96.5 million to build what is now the most accurate text-rendering image generation platform available. [Ideogram 3.0, released March 26, 2025](https://ideogram.ai/models/3.0/), achieves 90–95% text accuracy in generated images — roughly 2.5–3× better than Midjourney.
 
 That is a real moat. Whether it is a large enough moat to build a durable business on is the central question for Ideogram.
 
@@ -19,7 +19,7 @@ All four Ideogram co-founders were researchers at Google Brain who worked togeth
 
 **Mohammad Norouzi** (CEO) completed his PhD in computer science at the University of Toronto in 2015, supervised by David Fleet — a foundational figure in computer vision. He joined Google Brain in Mountain View in January 2016 and relocated to Google Brain Toronto in January 2018 when that lab opened. At Google Brain, he led the Imagen project and received a NeurIPS 2022 Outstanding Paper Award for his research contributions. He left in 2022 to found Ideogram.
 
-**Jonathan Ho** is perhaps the most cited of the four in the broader AI research community. His 2020 paper *Denoising Diffusion Probabilistic Models* (DDPM), published at NeurIPS, is one of the foundational works of the diffusion model revolution — the technical approach underlying Stable Diffusion, DALL-E, and nearly every modern image generator. Ho, Saharia, and Chan co-authored the Imagen paper together.
+**Jonathan Ho** is perhaps the most cited of the four in the broader AI research community. His 2020 paper [*Denoising Diffusion Probabilistic Models* (DDPM, arXiv:2006.11239)](https://arxiv.org/abs/2006.11239), published at NeurIPS, is one of the foundational works of the diffusion model revolution — the technical approach underlying Stable Diffusion, DALL-E, and nearly every modern image generator. Ho, Saharia, and Chan co-authored the Imagen paper together.
 
 **Chitwan Saharia** and **William Chan** were also members of the Google Brain Imagen team and contributed to the core diffusion model research that made Imagen competitive with DALL-E 2 at the time of Imagen's publication.
 
@@ -31,8 +31,8 @@ This founding team has an unusual characteristic: they are not pivoting from som
 
 Ideogram has raised **$96.5 million** across two disclosed rounds:
 
-- **Seed — August 2023**: $16.5M USD (approximately $22.3M CAD at the time) led by **Andreessen Horowitz** and **Index Ventures**, with participation from Pear VC, SV Angel, and others. This was Ideogram's launch funding — the company raised and launched simultaneously.
-- **Series A — February 28, 2024**: $80M led again by **Andreessen Horowitz** and **Index Ventures**, with additional participation from **Redpoint Ventures**, **Pear VC**, **SV Angel**, and over 15 additional investors. The Series A closed alongside the launch of Ideogram 2.0.
+- **[Seed — August 2023](https://ideogram.ai/launch)**: $16.5M USD (approximately $22.3M CAD at the time) led by **Andreessen Horowitz** and **Index Ventures**, with participation from Pear VC, SV Angel, and others. This was Ideogram's launch funding — the company raised and launched simultaneously.
+- **[Series A — February 28, 2024](https://siliconangle.com/2024/02/29/ideogram-raises-80m-releases-text-image-model/)**: $80M led again by **Andreessen Horowitz** and **Index Ventures**, with additional participation from **Redpoint Ventures**, **Pear VC**, **SV Angel**, and over 15 additional investors. The Series A closed alongside the launch of Ideogram 2.0.
 
 As of May 2026, Ideogram has not announced a Series B. The company is operating on the $96.5M raised in 2023–2024, which suggests either disciplined capital management or that revenue growth has not yet made an additional round compelling on favorable terms. There is no publicly disclosed valuation; the Series A was announced without a stated post-money figure.
 
@@ -64,18 +64,18 @@ Released simultaneously with the Series A, Ideogram 2.0 delivered improved photo
 
 The current flagship. Ideogram 3.0 is the version that put the company on the benchmark leaderboards:
 
-**Text rendering performance**: 90–95% accuracy on English-language text, and initial multilingual support for Spanish, Italian, French, and non-Latin scripts including Chinese and Arabic (non-Latin is described as "still being refined"). This is not just character accuracy — the model understands typography: font styles, kerning, alignment, and how text integrates with surrounding visual elements. A generated poster headline aligns to its anchor points. A generated business card balances whitespace. A generated logo integrates letterforms with graphic elements.
+**Text rendering performance**: [90–95% accuracy on English-language text](https://ideogram.ai/models/3.0/), and initial multilingual support for Spanish, Italian, French, and non-Latin scripts including Chinese and Arabic (non-Latin is described as "still being refined"). This is not just character accuracy — the model understands typography: font styles, kerning, alignment, and how text integrates with surrounding visual elements. A generated poster headline aligns to its anchor points. A generated business card balances whitespace. A generated logo integrates letterforms with graphic elements.
 
 For comparison: Midjourney v7 (released April 2025, Midjourney's current flagship) achieves approximately 30–40% text rendering accuracy. Most AI image generators fall in the 20–50% range on text. Ideogram 3.0 at 90–95% is a different category of performance.
 
-**Technical benchmarks**: Ideogram 3.0 achieves an FID (Fréchet Inception Distance) score of 305.60, ranked #1 among benchmarked models. In independent human preference evaluations, it holds the top ELO rating across diverse prompts. Human testing specifically on text legibility and aesthetic coherence showed Ideogram 3.0 nailing both simultaneously 78% of the time.
+**Technical benchmarks**: Per [Ideogram's self-reported evaluation](https://ideogram.ai/models/3.0/), it holds the top ELO rating across diverse prompts and a 25% improvement over Ideogram 2.0 in human preference tests. Human testing specifically on text legibility and aesthetic coherence showed Ideogram 3.0 nailing both simultaneously 78% of the time (Ideogram-reported; independent third-party validation is pending).
 
 **Model variants**: Three tiers:
 - **Turbo**: fastest generation, optimized for rapid iteration
 - **Balanced**: middle ground between speed and quality
 - **Quality**: highest fidelity, approximately 12 seconds per image, recommended when precision matters
 
-**Style control**: The 3.0 system includes Style Reference (upload up to 3 reference images), access to over 4.3 billion random style options, and savable Style Codes — hashed identifiers that allow users to reproduce and share a consistent visual aesthetic across multiple generations. This is meaningful for brand work: a designer can lock in a visual identity and regenerate elements that match it.
+**Style control**: Per [Ideogram's 3.0 announcement](https://ideogram.ai/models/3.0/), the 3.0 system includes Style Reference (upload up to 3 reference images), access to over 4.3 billion random style options, and savable Style Codes — hashed identifiers that allow users to reproduce and share a consistent visual aesthetic across multiple generations. This is meaningful for brand work: a designer can lock in a visual identity and regenerate elements that match it.
 
 **Overall quality**: The model delivers a 25% improvement over Ideogram 2.0 in human preference tests, with particular strength in complex compositional scenarios — multiple subjects, layered text elements, and scenes with both text and detailed photography.
 
@@ -149,7 +149,7 @@ The AI image generation market has consolidated around a small number of distinc
 
 Ideogram is notably absent from the major copyright lawsuits that have targeted AI image generators.
 
-The *Andersen v. Stability AI* case, filed January 2023 and still ongoing, named Stability AI, Midjourney, and DeviantArt — not Ideogram. Runway is named in that case as well. Ideogram has not been publicly identified as a defendant in a comparable case as of May 2026.
+The [*Andersen v. Stability AI* case](https://techcrunch.com/2023/01/16/a-coalition-of-artists-sues-ai-firms-including-stability-ai-claiming-copyright-infringement/), filed January 2023 and still ongoing, named Stability AI, Midjourney, and DeviantArt — not Ideogram. Runway is named in that case as well. Ideogram has not been publicly identified as a defendant in a comparable case as of May 2026.
 
 This is not necessarily because Ideogram's training data is categorically different. The company has not published detailed training data disclosures. But the absence of litigation is a practical positive for enterprise buyers evaluating risk. Multiple competing products carry active lawsuit exposure; Ideogram currently does not.
 

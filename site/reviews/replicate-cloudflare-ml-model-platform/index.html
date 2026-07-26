@@ -114,7 +114,7 @@
 </tr>
 <tr>
 <td><strong>Status</strong></td>
-<td>Acquired by Cloudflare, announced November 17, 2025</td>
+<td><a href="https://www.cloudflare.com/press/press-releases/2025/cloudflare-to-acquire-replicate-to-build-the-most-seamless-ai-cloud-for-developers/">Acquired by Cloudflare, announced November 17, 2025</a></td>
 </tr>
 <tr>
 <td><strong>Model catalog</strong></td>
@@ -260,7 +260,7 @@
 <p>Custom training pipelines can also be packaged via Cog. Cog supports both <code>predict.py</code> (inference) and <code>train.py</code> (training), meaning you can publish a model on Replicate that other users can fine-tune on their own data. The FLUX fine-tuner itself is open-source at github.com/replicate/flux-fine-tuner — a Cog wrapper around the ostris/ai-toolkit training implementation.</p>
 <hr>
 <h2 id="the-cloudflare-acquisition">The Cloudflare Acquisition</h2>
-<p>Cloudflare announced the acquisition of Replicate on November 17, 2025. Financial terms were not disclosed. The deal was expected to close within approximately two months.</p>
+<p><a href="https://www.cloudflare.com/press/press-releases/2025/cloudflare-to-acquire-replicate-to-build-the-most-seamless-ai-cloud-for-developers/">Cloudflare announced the acquisition of Replicate on November 17, 2025</a> (<a href="https://replicate.com/blog/replicate-cloudflare">Replicate blog</a>). Financial terms were not disclosed. The deal was expected to close within approximately two months.</p>
 <p>The strategic rationale was clear from both sides&rsquo; announcements. Cloudflare runs one of the largest edge networks in the world — 330+ cities, 12,500+ interconnects, sub-20ms latency to most internet users. Workers AI, Cloudflare&rsquo;s inference product, already ran curated models on that edge. What it lacked was scale in the model catalog and a packaging technology that let any developer bring a custom model.</p>
 <p>Replicate provided both.</p>
 <p><strong>What changes (per both companies&rsquo; announcements):</strong></p>
@@ -287,7 +287,7 @@
 <p><strong>vs. RunPod</strong>: RunPod offers SSH access to bare-metal GPUs and serverless endpoints. More control, more operational overhead. Replicate is higher-level abstraction; RunPod is lower-level. Developers who want to manage the full stack prefer RunPod; developers who want to call a function prefer Replicate.</p>
 <hr>
 <h2 id="limitations">Limitations</h2>
-<p><strong>Revenue was modest at acquisition.</strong> The $1.2M revenue figure reported for 2024 suggests Replicate had not yet fully bridged the gap between developer mindshare (large) and commercial scale (smaller). Cloudflare acquired the technology and community, not a large revenue base.</p>
+<p><strong>Revenue was modest at acquisition.</strong> Replicate had not yet fully bridged the gap between developer mindshare (large) and commercial scale (smaller). Cloudflare acquired the technology and community, not a large revenue base.</p>
 <p><strong>Not optimized for LLM inference at scale.</strong> Developers who need to serve language models at high throughput to production users will find cheaper, faster options at dedicated providers. Replicate&rsquo;s LLM offerings are convenient for experimentation, not optimized for scale.</p>
 <p><strong>Community model quality varies.</strong> Among 50,000 models, the range from production-ready to abandoned experiment is wide. Discovery and quality filtering matter; not every model in the catalog is actively maintained.</p>
 <p><strong>Acquisition integration uncertainty.</strong> Being absorbed into a large platform company is historically a mixed outcome for developer-focused products. Cloudflare has stated the brand continues and the API is unchanged — that is the right framing — but integration timelines are uncertain and priorities can shift.</p>
@@ -303,7 +303,7 @@
 <p><strong>Replicate earns a 4/5.</strong></p>
 <p>The platform&rsquo;s core proposition remains compelling: the largest community catalog of packaged ML models, accessible via a four-line API call, with per-second billing and no infrastructure management. For developers who want to experiment with open-source models without running GPUs locally, Replicate remains one of the simplest paths from idea to working inference.</p>
 <p>The Cloudflare acquisition is a net positive for capability (edge network, resources, GPU snapshotting improvements) but introduces integration-phase uncertainty. For existing users, the API is unchanged and the catalog is intact. For new users evaluating a long-term commitment, the trajectory is toward deeper Cloudflare platform integration — a reasonable destination.</p>
-<p>The half-point deduction reflects two things: the revenue traction pre-acquisition was modest (suggesting product-market fit is still developing commercially), and Replicate is not the right tool for the largest use case in the market — high-throughput LLM text inference — which limits its ceiling as a standalone product.</p>
+<p>The half-point deduction reflects two things: revenue traction pre-acquisition was modest by the standards of a $350M-valued company (suggesting product-market fit was still developing commercially), and Replicate is not the right tool for the largest use case in the market — high-throughput LLM text inference — which limits its ceiling as a standalone product.</p>
 <p>For what it does — community model access, image generation, Cog-packaged custom models — there is no better place.</p>
 <table>
 <thead>

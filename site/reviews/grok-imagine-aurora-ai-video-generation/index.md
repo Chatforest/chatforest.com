@@ -26,10 +26,10 @@ The company's financial history is among the most compressed in technology: from
 | Round | Amount | Valuation | Date |
 |-------|--------|-----------|------|
 | Seed/A | ~$134M | ~$18B | 2023 |
-| Series C | ~$6B | $50B | November 2024 |
+| [Series C](https://x.ai/news/series-c) | ~$6B | $40B+ | December 2024 |
 | Series D | ~$6B | $75–80B | July 2025 |
-| Series E | $20B | $230B | January 2026 |
-| SpaceX acquisition | all-stock | $250B (xAI) | February 2026 |
+| [Series E](https://www.theverge.com/2026/1/22/24348835/xai-raises-6-billion-funding-round) | ~$6B | $230B | January 2026 |
+| [SpaceX acquisition](https://www.sullcrom.com/About/Rankings/2026/February/SC-Advises-xAI-Acquisition-SpaceX-Historic-250-Billion-Deal) | all-stock | $250B (xAI) | February 2026 |
 
 In **February 2026**, SpaceX acquired xAI in an all-stock transaction. xAI's $250 billion valuation combined with SpaceX's existing value produced an entity valued at approximately $1.25 trillion at announcement. Michael Nicolls, former SpaceX Starlink VP, became xAI's president following the merger.
 
@@ -37,7 +37,7 @@ In **February 2026**, SpaceX acquired xAI in an all-stock transaction. xAI's $25
 
 ### Colossus: The Hardware Foundation
 
-The defining infrastructure advantage that separates xAI from other AI video companies is **Colossus**, the supercomputer cluster built in Memphis, Tennessee. Phase 1 came online in September 2024 — 100,000 NVIDIA H100 GPUs assembled in 122 days. By February 2026, Colossus had expanded to **555,000+ NVIDIA GPUs**, including the newer GB200 architecture. Colossus 2, a second facility, is under construction with a planned capacity of 550,000 NVIDIA chips on completion.
+The defining infrastructure advantage that separates xAI from other AI video companies is **Colossus**, the supercomputer cluster built in Memphis, Tennessee. [Phase 1 came online in September 2024 — 100,000 NVIDIA H100 GPUs assembled in 122 days](https://x.ai/blog/colossus). By February 2026, Colossus had expanded to **555,000+ NVIDIA GPUs**, including the newer GB200 architecture. Colossus 2, a second facility, is under construction with a planned capacity of 550,000 NVIDIA chips on completion.
 
 No other AI video company — Runway, Kling's Kuaishou, Google DeepMind, or OpenAI — operates inference and training infrastructure at this scale independently. Aurora's quality and generation speed are direct products of that compute advantage.
 

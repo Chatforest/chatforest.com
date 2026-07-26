@@ -4,6 +4,7 @@ date: 2026-05-10
 description: "Captions (by Mirage) is the leading AI-first video editing app for short-form creators, processing 3M+ videos/month. Built by Mirage (formerly Captions Inc.), the app offers AI Eye Contact, AI Twin virtual actors, 116-style AI edits, dubbing in 30+ languages, and an official MCP server launched March 2026. Freemium pricing from $9.99/month. Rating 4/5."
 tags: ["video-ai", "ai-video-editing", "captions-ai", "mirage", "short-form-video", "tiktok", "reels", "youtube-shorts", "ai-dubbing", "lip-sync", "ai-avatar", "creator-tools", "mcp-server", "ugc"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Captions AI — Mirage's Creator Editing App With an Official MCP Server

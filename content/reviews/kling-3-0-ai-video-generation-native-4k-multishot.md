@@ -4,6 +4,7 @@ date: 2026-05-10
 description: "Kling 3.0 launched January 31, 2026 with native 4K at 60fps, multi-shot storyboarding across up to 6 scenes, and fully integrated native audio in one inference pass — reaching $300M annualized revenue and 60 million users by Q1 2026. Kuaishou's AI video platform is no longer a benchmark curiosity. It is a production tool used by 30,000+ enterprises. No official MCP server."
 tags: ["video-ai", "text-to-video", "image-to-video", "generative-video", "kling", "kuaishou", "kling-3-0", "native-4k", "multi-shot", "ai-creative-tools", "ai-video-generation", "lip-sync", "native-audio", "diffusion-transformer"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Kling 3.0 — Native 4K, Multi-Shot Storyboarding, and the $300M ARR Chinese Video AI
@@ -38,7 +39,7 @@ Kling's version history is one of the most aggressive release cadences in the fi
 
 **Kling 3.0 (January 31 / February 5, 2026):** The current generation. This is the focus of this review.
 
-The pace is only explicable by scale. Kuaishou (HKEX: 1024.HK) has over 20,000 employees, approximately $17.4 billion in FY2024 revenue, and committed CNY 26 billion (~$3.8 billion USD) in AI capital expenditure for 2026. This is not a startup iterating quickly on venture capital. It is an established internet giant betting its next decade on AI video generation.
+The pace is only explicable by scale. Kuaishou (HKEX: 1024.HK) has over [20,000 employees and approximately $17.4 billion in FY2024 revenue](https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-technology-announces-fourth-quarter-and-full-year-2024/), and [committed CNY 26 billion (~$3.8 billion USD) in AI capital expenditure for 2026](https://finance.biggo.com/news/-QUtKJ0BvbjfYyetfKnT). This is not a startup iterating quickly on venture capital. It is an established internet giant betting its next decade on AI video generation.
 
 ---
 
@@ -236,8 +237,8 @@ The absence of an official Kling MCP server is a genuine gap for a platform serv
 
 Kling's business trajectory is notable even by AI standards:
 
-- **December 2025:** $240M annualized revenue run rate — confirmed in a Kuaishou IR press release
-- **January 2026:** $300M+ annualized run rate
+- **December 2025:** [$240M annualized revenue run rate](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-annualized-revenue-run-rate-hits-usd240-million/) — confirmed in a Kuaishou IR press release
+- **January 2026:** [$300M+ annualized run rate](https://finance.biggo.com/news/-QUtKJ0BvbjfYyetfKnT)
 - **December 2025 monthly revenue:** >$20 million
 - **Paying user growth:** approximately 350% month-over-month in the period leading to January 2026
 - **Enterprise API users:** 30,000+
@@ -245,7 +246,7 @@ Kling's business trajectory is notable even by AI standards:
 
 For context: Kling launched in June 2024. It crossed $300M ARR in approximately 19 months — a growth trajectory that very few software businesses achieve.
 
-Kuaishou's stock surged approximately 84% in 2025, largely driven by Kling's global success. The market capitalization reached approximately $33–42 billion (USD equivalent) in 2025–2026. The 2026 capex commitment of CNY 26 billion (~$3.8 billion) signals that Kuaishou views Kling as a platform-defining bet, not a product line.
+Kuaishou's stock has risen substantially since Kling's launch, largely driven by its global success. The [2026 capex commitment of CNY 26 billion (~$3.8 billion)](https://finance.biggo.com/news/-QUtKJ0BvbjfYyetfKnT) signals that Kuaishou views Kling as a platform-defining bet, not a product line.
 
 Whether these figures translate to a sustainably profitable business depends on the unit economics of video generation at scale — GPU compute costs, bandwidth, and storage costs at 600M+ videos. Kuaishou has not publicly disclosed margins on Kling specifically. The trajectory is impressive; the long-term profitability of AI video generation at consumer prices remains an open question across all providers.
 

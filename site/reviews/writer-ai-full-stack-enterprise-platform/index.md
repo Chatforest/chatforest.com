@@ -31,7 +31,7 @@ Writer's capital history tells a story of methodical, milestone-driven growth �
 |-------|------|--------|---------------|
 | Seed | 2020 | ~$5M | Aspect Ventures, Upfront Ventures |
 | Series A | 2021 | ~$21M | Insight Partners |
-| Series B | September 2023 | $100M | ICONIQ Growth (lead), Insight Partners, Balderton Capital, Accenture Ventures |
+| [Series B](https://writer.com/blog/series-b-funding-writer/) | September 2023 | $100M | ICONIQ Growth (lead), Insight Partners, Balderton Capital, Accenture Ventures |
 | Series C | November 2024 | $200M | Premji Invest, Radical Ventures, ICONIQ Growth; plus Adobe Ventures, Citi Ventures, IBM Ventures, Salesforce Ventures, Workday Ventures |
 
 **Total raised:** approximately **$326 million**. The [November 2024 Series C valued Writer at **$1.9 billion**](https://techcrunch.com/2024/11/12/generative-ai-startup-writer-raises-200m-at-a-1-9b-valuation/) — unicorn status, achieved in the same month ([Writer press release](https://writer.com/blog/series-c-funding-writer-press-release/)).
@@ -58,7 +58,7 @@ Writer's proprietary models run across several families with distinct purposes.
 
 The Palmyra X line is Writer's competitive stake in the frontier model race.
 
-**Palmyra X4** (released October 2024) was notable for one specific reason: at release, it **topped Berkeley's Tool Calling Leaderboard**, outperforming OpenAI, Anthropic, Meta, and Google on that benchmark. Tool-calling — the ability to reliably invoke external APIs and structured outputs — is critical for agentic enterprise use cases. Leaderboard rankings shift constantly, but landing at #1 at launch was a meaningful statement of technical intent.
+**Palmyra X4** (released October 2024) was notable for one specific reason: at release, it [**topped Berkeley's Tool Calling Leaderboard**](https://gorilla.cs.berkeley.edu/leaderboard.html), outperforming OpenAI, Anthropic, Meta, and Google on that benchmark. Tool-calling — the ability to reliably invoke external APIs and structured outputs — is critical for agentic enterprise use cases. Leaderboard rankings shift constantly, but landing at #1 at launch was a meaningful statement of technical intent.
 
 **Palmyra X5** (released April 28, 2025) is the current flagship. Its headline feature is a **1 million token context window** — enough to process a substantial document corpus in a single prompt. Writer claims:
 

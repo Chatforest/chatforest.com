@@ -4,6 +4,7 @@ date: 2026-05-10
 description: "D-ID started as a GDPR privacy tool and pivoted into one of AI video's most interesting platform plays: V4 Expressive real-time avatars, the September 2025 acquisition of simpleshow (~$60M, 500+ Fortune 1000 customers), and a novel Agentic Videos product that embeds a conversational AI agent inside a video player. This review covers the full arc — the origins, the model stack, the products, the pricing, and where D-ID stands against HeyGen, Synthesia, and Tavus."
 tags: ["video-ai", "ai-avatar", "real-time-video", "d-id", "heygen-alternative", "synthesia-alternative", "tavus-alternative", "api", "developer-tools", "ai-tools-review", "agentic-video"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # D-ID — From Face De-Identification to Expressive Real-Time Avatars and the Agentic Video Category
@@ -47,16 +48,16 @@ D-ID has raised approximately $48 million in disclosed rounds across three prima
 | Round | Date | Amount | Lead Investor |
 |---|---|---|---|
 | Seed | January 2018 | $4M | Pitango Venture Capital |
-| Series A | May 2020 | $13.5M | AXA Venture Partners |
-| Series B | March 2022 | $25M | Macquarie Group |
+| [Series A](https://fintech.global/2020/05/27/d-id-closes-series-a-on-13-5m-to-support-growth/) | May 2020 | $13.5M | AXA Venture Partners |
+| [Series B](https://techcrunch.com/2022/03/22/a-i-creative-platform-d-id-the-tech-behind-those-viral-videos-of-animated-family-photos-raises-25m/) | March 2022 | $25M | Macquarie Group |
 
 **Other investors across rounds:** Y Combinator, Foundation Capital, Fenox Venture Capital, Maverick Ventures, AI Alliance, Hyundai Motor Company, OMRON Ventures, Mindset Ventures, Redds Capital.
 
-**Total disclosed equity:** approximately $48M. Additional undisclosed amounts from grant programs and pitch competitions.
+**Total disclosed equity:** approximately $48M per [D-ID's own announcement](https://www.d-id.com/blog/d-id-closes-25-million-funding-round/). Additional undisclosed amounts from grant programs and pitch competitions.
 
-**simpleshow acquisition financing:** D-ID raised additional capital to fund the ~$60M simpleshow acquisition (announced September 16, 2025). The additional raise amount has not been publicly disclosed. The total equity raised is therefore higher than the $48M in disclosed rounds, though the exact figure is not available.
+**simpleshow acquisition financing:** D-ID raised additional capital to fund the [~$60M simpleshow acquisition (announced September 16, 2025)](https://techcrunch.com/2025/09/16/d-id-acquires-berlin-based-video-startup-simpleshow/). The additional raise amount has not been publicly disclosed. The total equity raised is therefore higher than the $48M in disclosed rounds, though the exact figure is not available.
 
-**Revenue:** D-ID has not publicly disclosed its ARR or revenue figures. Third-party revenue estimators (notably Latka.com) have published estimates — including a reported $17.6M for October 2024 and $33.6M for November 2024. The near-doubling between those two months is anomalous and likely reflects a methodology change or one-time accounting event rather than actual performance. These figures should be treated as rough estimates from a third-party data collector, not as official company disclosures. No confirmed ARR figure is available.
+**Revenue:** D-ID has not publicly disclosed its ARR or revenue figures. Third-party revenue estimators (notably Latka.com) have published estimates — these figures should be treated as rough estimates from a third-party data collector, not as official company disclosures. No confirmed ARR figure is available.
 
 ---
 
@@ -134,7 +135,7 @@ These are not startup customers. These are companies with procurement teams, leg
 
 The acquisition price was approximately $60 million (per Calcalist/Ctech reporting). D-ID raised additional capital to fund the acquisition; the amount was not disclosed.
 
-The strategic logic is clear: D-ID brings the AI model technology (real-time avatars, V4 Expressive, interactive agents); simpleshow brings the enterprise customer relationships, the video production workflow, and the L&D market credibility. The resulting entity claims to target what it describes as a "$50 billion interactive AI market" (a figure sourced from a Forbes-cited market estimate, not from D-ID's own financial projections).
+The strategic logic is clear: D-ID brings the AI model technology (real-time avatars, V4 Expressive, interactive agents); simpleshow brings the enterprise customer relationships, the video production workflow, and the L&D market credibility. The resulting entity claims to target what it describes as a "$50 billion interactive AI market" (a market estimate figure, not from D-ID's own financial projections).
 
 The Agentic Videos product — launched April 2026 — is the first direct output of the combined company. It uses the simpleshow platform as its delivery infrastructure and targets the L&D use cases that simpleshow's customer base already purchases video content for.
 
@@ -146,9 +147,9 @@ D-ID markets 120+ language support. This figure requires unpacking.
 
 **TTS voice generation:** D-ID can generate audio in 120+ languages using text-to-speech synthesis. If the input text is in a supported language and a TTS voice exists for it, D-ID can produce voiced audio in that language.
 
-**Lip-synced video output:** The visible mouth movements in D-ID's avatar videos are trained to match specific phoneme patterns. Not all languages have equivalent lip-sync quality. Third-party comparative testing (specifically VEED's talking head API comparison) found approximately 29 languages with verified full lip-sync accuracy — where the mouth movements convincingly match the spoken language.
+**Lip-synced video output:** The visible mouth movements in D-ID's avatar videos are trained to match specific phoneme patterns. Not all languages have equivalent lip-sync quality. A subset of D-ID's 120+ language figure have verified full lip-sync accuracy — where the mouth movements convincingly match the spoken language.
 
-For multilingual content production where visual credibility matters (customer-facing videos, compliance training, marketing), the relevant number is 29, not 120. The 120+ figure describes an audio capability, not a visual one.
+For multilingual content production where visual credibility matters (customer-facing videos, compliance training, marketing), the full 120+ figure describes an audio capability, not necessarily visual lip-sync quality. The distinction matters most for buyers comparing D-ID to HeyGen. HeyGen's 175+ language support encompasses both voice and lip-sync quality across a broader range.
 
 This distinction matters most for buyers comparing D-ID to HeyGen. HeyGen's 175+ language support encompasses both voice and lip-sync quality across a broader range. For global enterprises prioritizing multilingual video at scale, HeyGen's language coverage is a genuine competitive advantage over D-ID.
 

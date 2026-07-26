@@ -103,7 +103,7 @@
 </tr>
 <tr>
 <td><strong>Funding</strong></td>
-<td>$305M Series B (Feb 2025) — $3.3B valuation; $554M total</td>
+<td><a href="https://www.prnewswire.com/news-releases/together-ai-raises-305m-series-b-to-scale-ai-acceleration-cloud-for-open-source-and-enterprise-ai-302380967.html">$305M Series B (Feb 2025)</a> — $3.3B valuation; $554M total</td>
 </tr>
 <tr>
 <td><strong>Investors</strong></td>
@@ -111,7 +111,7 @@
 </tr>
 <tr>
 <td><strong>Revenue</strong></td>
-<td>~$300M ARR (Sept 2025), +130% YoY from $130M end of 2024</td>
+<td><a href="https://www.linkedin.com/posts/katieroof_together-ai-crossed-300m-arr-this-summer-activity-7384039851802886145-S7PK">~$300M ARR (Sept 2025)</a>, +130% YoY</td>
 </tr>
 <tr>
 <td><strong>Model catalog</strong></td>
@@ -119,7 +119,7 @@
 </tr>
 <tr>
 <td><strong>Infrastructure</strong></td>
-<td>36,000 NVIDIA GB200 NVL72 GPUs (Hypertec); 200 MW power capacity</td>
+<td><a href="https://www.together.ai/blog/nvidia-gb200-together-gpu-cluster-36k">36,000 NVIDIA GB200 NVL72 GPUs (Hypertec)</a>; 200 MW power capacity</td>
 </tr>
 <tr>
 <td><strong>GPU tiers</strong></td>
@@ -148,12 +148,12 @@
 <p>To understand Together AI&rsquo;s technical advantage, start with attention. The attention mechanism in a transformer reads every token&rsquo;s key-value pair against every other token&rsquo;s query — an O(n²) operation that dominates both latency and memory consumption as context length grows. The naive implementation writes large intermediate matrices to GPU global memory (HBM) and reads them back. Memory bandwidth, not arithmetic, becomes the bottleneck.</p>
 <p>FlashAttention, first released in 2022, reordered the attention computation to keep the intermediate matrices in the GPU&rsquo;s on-chip SRAM — drastically reducing HBM reads and writes. The arithmetic is identical; the memory access pattern is not. The result: faster inference, longer contexts, and the ability to run attention without materializing O(n²) tensors. FlashAttention became the default attention kernel for most serious inference providers within a year of publication. It ships inside PyTorch, Hugging Face Transformers, and the inference stacks at many of Together&rsquo;s direct competitors.</p>
 <p><strong>FlashAttention-3</strong> (2024) targeted the NVIDIA H100&rsquo;s new hardware features: the Tensor Memory Accelerator (TMA), warp specialization, and FP8 precision. On H100 with BF16, it reaches 840 TFLOPs/s — roughly 1.5–2x faster than FlashAttention-2 in the same configuration.</p>
-<p><strong>FlashAttention-4</strong> (March 2026) was designed specifically for NVIDIA Blackwell&rsquo;s asymmetric hardware scaling: tensor core throughput doubled from H100 to B200, but other functional units — shared memory bandwidth, exponential units — scaled more slowly or not at all. The naive port of FlashAttention-3 to Blackwell would leave tensor cores underutilized half the time. FlashAttention-4 introduces algorithm and kernel pipelining co-design: it overlaps matmul and softmax operations, hides the asymmetric bottlenecks behind compute pipelining, and is implemented entirely in CuTe-DSL embedded in Python (avoiding the 20–30× slower compile times of traditional C++ template-based CUDA). On B200 with BF16: <strong>1605 TFLOPs/s</strong> (71% utilization), <strong>1.3× faster than cuDNN</strong>, <strong>2.7× faster than Triton</strong>.</p>
+<p><strong><a href="https://arxiv.org/abs/2603.05451">FlashAttention-4</a></strong> (<a href="https://www.together.ai/blog/flashattention-4">Together AI blog</a>, March 2026) was designed specifically for NVIDIA Blackwell&rsquo;s asymmetric hardware scaling: tensor core throughput doubled from H100 to B200, but other functional units — shared memory bandwidth, exponential units — scaled more slowly or not at all. The naive port of FlashAttention-3 to Blackwell would leave tensor cores underutilized half the time. FlashAttention-4 introduces algorithm and kernel pipelining co-design: it overlaps matmul and softmax operations, hides the asymmetric bottlenecks behind compute pipelining, and is implemented entirely in CuTe-DSL embedded in Python. On B200 with BF16: <strong>1605 TFLOPs/s</strong> (71% utilization), <strong>1.3× faster than cuDNN</strong>, <strong>2.7× faster than Triton</strong>.</p>
 <p>Together bundles these kernels with additional optimizations into the <strong>Together Kernel Collection (TKC)</strong>, deployed across all Together GPU clusters. Every GPU-hour purchased on Together runs on software that Together&rsquo;s own researchers wrote and continue to improve.</p>
 <hr>
 <h2 id="infrastructure-the-cluster-bet">Infrastructure: The Cluster Bet</h2>
 <p>Together made an early and large commitment to GPU hardware at a time when allocation was constrained. By 2025, they had secured access to 100,000+ GPUs across North American data centers and 200 MW of power capacity — enough to run one of the largest AI compute footprints outside the hyperscalers.</p>
-<p>The headline is the <strong>Hypertec partnership</strong>: Together and Hypertec Cloud are co-building a cluster of <strong>36,000 NVIDIA GB200 NVL72 GPUs</strong>, starting Q1 2025. GB200 NVL72 is NVIDIA&rsquo;s rack-scale architecture — 72 Grace Blackwell Superchips per rack, connected by fifth-generation NVLink, liquid-cooled, with 30× faster real-time inference for trillion-parameter models compared to H100. This is not a future roadmap item; it is NVIDIA&rsquo;s current production flagship, and Together is operating it at cluster scale.</p>
+<p>The headline is the <strong><a href="https://www.prnewswire.com/news-releases/together-ai-and-hypertec-cloud-join-forces-to-co-build-turbocharged-nvidia-gb200-cluster-of-36k-blackwell-gpus-302308267.html">Hypertec partnership</a></strong>: Together and Hypertec Cloud are co-building a cluster of <strong>36,000 NVIDIA GB200 NVL72 GPUs</strong>, starting Q1 2025. GB200 NVL72 is NVIDIA&rsquo;s rack-scale architecture — 72 Grace Blackwell Superchips per rack, connected by fifth-generation NVLink, liquid-cooled, with 30× faster real-time inference for trillion-parameter models compared to H100. This is not a future roadmap item; it is NVIDIA&rsquo;s current production flagship, and Together is operating it at cluster scale.</p>
 <p>The full GPU lineup available on Together today:</p>
 <ul>
 <li><strong>H100 SXM</strong>: available on-demand at $3.49/hr; reserved down to $2.25/hr</li>
