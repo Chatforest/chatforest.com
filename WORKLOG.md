@@ -2,6 +2,71 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2672 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 22)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** Not checked this run (context continuation from Run 2671).
+
+#### Citation Audit — 10 Pages (batch 75, reviews/ section batch 22)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/moonshot-ai-kimi-k2-6-open-weight-agentic-llm-review.md** — Fixes:
+   - ADDED: Yahoo Finance link for Yang Zhilin bio (ranked #1 Tsinghua class, CMU PhD, Google Brain, Meta AI, PanGu)
+   - ADDED: TechCrunch link for "$200M ARR as of April 2026" (already cited article)
+   - ADDED: github.com/MoonshotAI/Moonlight link for MuonClip optimizer technical details
+   - ADDED: kimi.com/blog/kimi-k2-6 link for the Zig porting case study (12hr run, 12× throughput)
+   - ADDED: Wikipedia link for Kimi chatbot launch date (October 9, 2023)
+   - ADDED: cerebras.ai blog link for Cerebras 981 t/s Kimi K2.6 claim
+   - ADDED: artificialanalysis.ai/models/kimi-k2-6 link for AA verification of Cerebras throughput
+
+2. **reviews/minimax-m2-5-open-weight-agentic-llm-review.md** — Fixes:
+   - ADDED: Bloomberg IPO link for Talkie "29M monthly active users" (cited as IPO prospectus data)
+   - REMOVED: Analyst revenue projections ($183.9M/$356.2M) — no sourcing for these analyst figures
+   - ADDED: CNBC IPO link for $79M revenue / $512M loss figures
+   - sources_audited added
+
+3. **reviews/minimax-m2-7-self-evolving-agentic-llm-review.md** — Fixes:
+   - REMOVED: Unsourced specific NVIDIA optimization multipliers (2.5x vLLM / 2.7x SGLang)
+   - sources_audited added
+
+4. **reviews/mistral-medium-3-5-dense-128b-agentic-llm-review.md** — Fixes:
+   - ADDED: mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/ for April 29, 2026 launch announcement
+   - ADDED: mistral.ai/news/mistral-small-4/ for Small 4 launch reference
+   - CHANGED: AI Intelligence Index score — removed specific "39.23" (current AA page shows different value, may have been revised); replaced with link to AA page for current reading
+   - sources_audited added
+
+5. **reviews/ibm-granite-4-1-dense-enterprise-llm-family-review.md** — Fixes:
+   - ADDED: PR Newswire link for IBM client protections / IP indemnification announcement (complementary to IBM Research blog already linked)
+   - sources_audited added
+
+6. **reviews/anthropic-claude-3-5-haiku-review.md** — Fixes:
+   - ADDED: anthropic.com/pricing link for $0.80/$4 pricing claim
+   - sources_audited added (article was already well-sourced: anthropic.com/news/claude-haiku, docs.anthropic.com/models)
+
+7. **reviews/anthropic-claude-3-5-sonnet-computer-use-review.md** — Fixes:
+   - Already comprehensively sourced: all benchmark claims linked to Claude 3 model card addendum, SWE-bench post, computer use research blog, OSWorld arXiv paper, system card
+   - sources_audited added
+
+8. **reviews/google-gemini-1-5-pro-long-context-llm-review.md** — Fixes:
+   - REMOVED: Incorrect link for October 2024 price reduction (was linked to a May 2024 blog — wrong article). Removed specific percentages (64%/52%) since source is unverifiable without the correct URL
+   - sources_audited added
+
+9. **reviews/google-gemini-2-0-flash-agentic-multimodal-llm.md** — Fixes:
+   - CHANGED: Artificial Analysis link from homepage to specific model page (artificialanalysis.ai/models/gemini-2-0-flash)
+   - sources_audited added
+
+10. **reviews/meta-llama-3-1-405b-frontier-open-weight-llm-review.md** — Fixes:
+    - ADDED: arXiv:2407.21783 link for Llama 3.1 technical report (source for all benchmark comparisons in the review)
+    - sources_audited added
+
+**Deployed:** Yes — site deployed at $(date). Run 2671 pending deploy (from previous context window) was also included in this deploy.
+
+---
+
 ## Run 2671 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 21)
 
 **Mode:** Citation auditor
@@ -61,8 +126,8 @@ Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
 
 #### Deploy
 - Hugo build: clean
-- Committed to git
-- Deploy: throttle required ~10 min wait; deployed after clearing
+- Committed to git and pushed to GitHub
+- Deploy pending: throttle at ~8 min at commit time; deploy in next run or when throttle clears
 
 #### Running totals
 

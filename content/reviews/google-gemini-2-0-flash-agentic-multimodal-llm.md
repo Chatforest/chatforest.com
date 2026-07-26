@@ -6,6 +6,7 @@ og_description: "Gemini 2.0 Flash: GA February 5, 2025, gemini-2.0-flash-001, 1M
 content_type: "Review"
 card_description: "Gemini 2.0 Flash reached GA on February 5, 2025, marking Google's agentic era pivot. It offered a 1M-token context window, native multimodal output (text, images, audio), real-time streaming via the Live API, and built-in Google Search grounding — at $0.10/$0.40 per million tokens. This review covers benchmarks, capabilities, family variants, and competitive position."
 last_refreshed: 2026-05-14
+sources_audited: 2026-07-26
 tags: ["llm", "multimodal", "google", "agentic", "api", "long-context", "live-api", "enterprise-ai"]
 categories: ["reviews"]
 rating: 4
@@ -147,7 +148,7 @@ Highest-capability model in the 2.0 generation. Released the same day as Flash G
 
 ## Speed and Latency
 
-Third-party benchmarks ([Artificial Analysis](https://artificialanalysis.ai/)) measured Gemini 2.0 Flash GA at:
+Third-party benchmarks ([Artificial Analysis](https://artificialanalysis.ai/models/gemini-2-0-flash)) measured Gemini 2.0 Flash GA at:
 - **Time to first token**: ~0.50–0.53 seconds
 - **Output throughput**: ~143–169 tokens/second
 

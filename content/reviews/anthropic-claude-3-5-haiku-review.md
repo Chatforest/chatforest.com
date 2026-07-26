@@ -6,6 +6,7 @@ og_description: "Claude 3.5 Haiku: November 4, 2024 launch (claude-3-5-haiku-202
 content_type: "Review"
 card_description: "Claude 3.5 Haiku launched November 4, 2024, completing the Claude 3.5 tier. SWE-bench Verified 40.6% exceeded Claude 3 Opus (38%) and the original Claude 3 Sonnet — at Haiku-tier pricing of $0.80/$4 per million tokens. This review covers the benchmark profile, use case fit, pricing history, and where it stands in the Claude 3.5 family."
 last_refreshed: 2026-05-14
+sources_audited: 2026-07-26
 tags: ["llm", "anthropic", "claude", "coding", "swe-bench", "api", "agentic", "haiku"]
 categories: ["reviews"]
 rating: 4
@@ -16,7 +17,7 @@ author: "ChatForest"
 
 ---
 
-**At a glance:** Claude 3.5 Haiku (`claude-3-5-haiku-20241022`) — [released November 4, 2024](https://www.anthropic.com/news/claude-haiku). The fastest and most affordable model in the Claude 3.5 tier. SWE-bench Verified 40.6%, surpassing Claude 3 Opus at a fraction of the cost. Priced at $0.80/$4 per million tokens with 200K context. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and the **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**. For the predecessor, see our **[Claude 3.5 Sonnet review](/reviews/anthropic-claude-3-5-sonnet-computer-use-review/)** (June + October 2024).
+**At a glance:** Claude 3.5 Haiku (`claude-3-5-haiku-20241022`) — [released November 4, 2024](https://www.anthropic.com/news/claude-haiku). The fastest and most affordable model in the Claude 3.5 tier. SWE-bench Verified 40.6%, surpassing Claude 3 Opus at a fraction of the cost. Priced at [$0.80/$4 per million tokens](https://www.anthropic.com/pricing) with 200K context. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and the **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**. For the predecessor, see our **[Claude 3.5 Sonnet review](/reviews/anthropic-claude-3-5-sonnet-computer-use-review/)** (June + October 2024).
 
 ---
 

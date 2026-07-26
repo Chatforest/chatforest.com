@@ -19,7 +19,7 @@ Whether it's worth a 3.75× price increase over its predecessor — and a Modifi
 
 ## Release Context
 
-Mistral Medium 3.5 was announced on **April 29, 2026** in a blog post titled "Remote agents in Vibe. Powered by Mistral Medium 3.5." The release was bundled with two product announcements:
+Mistral Medium 3.5 was [announced on **April 29, 2026**](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/) in a blog post titled "Remote agents in Vibe. Powered by Mistral Medium 3.5." The release was bundled with two product announcements:
 
 1. **Vibe Remote Agents** — the Vibe CLI coding agent now runs cloud-based sessions with parallel execution, GitHub integration, and the ability to continue work asynchronously
 2. **Le Chat Work Mode** — a new agentic mode in Mistral's consumer chat product enabling cross-tool workflows across email, calendar, and documents
@@ -36,7 +36,7 @@ This release structure — model and product together — signals that Medium 3.
 
 The Devstral 2 supersession is the most noteworthy: Devstral 2 was Apache 2.0 with no commercial restrictions. Medium 3.5 is Modified MIT with a $20M/month revenue cap. Developers who chose Devstral 2 specifically for its license terms now have an upstream model that's less permissive. That's a strategic shift, not a coincidence.
 
-**One month earlier:** Mistral Small 4 (119B MoE, 6B active, Apache 2.0) launched March 16, 2026. Understanding why Medium 3.5 and Small 4 coexist — despite similar parameter counts — requires looking at the architecture.
+**One month earlier:** [Mistral Small 4](https://mistral.ai/news/mistral-small-4/) (119B MoE, 6B active, Apache 2.0) launched March 16, 2026. Understanding why Medium 3.5 and Small 4 coexist — despite similar parameter counts — requires looking at the architecture.
 
 ---
 
@@ -125,9 +125,9 @@ Independent evaluation by Artificial Analysis provides the broader view:
 | Claude Opus 4.7 | 57.28 | — |
 | Gemini 3.1 Pro | 57.18 | — |
 | Qwen 3.6 Max Preview | 51.81 | — |
-| **Mistral Medium 3.5** | **39.23** | **163.4** |
+| **Mistral Medium 3.5** | **see [AA page](https://artificialanalysis.ai/models/mistral-medium-3-5)** | **163.4** |
 
-The 39.23 Intelligence Index places Medium 3.5 approximately **20th overall** in the Artificial Analysis ranking — well below the frontier tier where its SWE-Bench number might suggest it belongs. The Artificial Analysis index incorporates a broader evaluation suite (GPQA Diamond, HLE, SciCode, and others) that reveals the narrow benchmark selection in Mistral's announcement.
+The [Artificial Analysis Intelligence Index for Mistral Medium 3.5](https://artificialanalysis.ai/models/mistral-medium-3-5) places it well below the frontier tier (GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro) — consistent with Mistral's narrow SWE-Bench and τ³-Telecom benchmark selection omitting GPQA, MMLU, and science evals. The Artificial Analysis index incorporates a broader evaluation suite (GPQA Diamond, HLE, SciCode, and others) that reveals the narrow benchmark selection in Mistral's announcement.
 
 Speed is a genuine advantage: 163.4 tokens/second ranks 9th fastest among the 61 models in the evaluation. For latency-sensitive agentic applications, that's a meaningful differentiator against slower frontier models.
 
@@ -313,7 +313,7 @@ For teams already in the Mistral ecosystem building with Vibe or Le Chat: the co
 | **Reasoning** | Adjustable (`reasoning_effort` param) |
 | **SWE-Bench Verified** | 77.6% |
 | **τ³-Telecom** | 91.4% |
-| **AI Intelligence Index** | 39.23 (~#20 overall, Artificial Analysis) |
+| **AI Intelligence Index** | [Below frontier tier](https://artificialanalysis.ai/models/mistral-medium-3-5) (Artificial Analysis) |
 | **API speed** | 163.4 t/s (9th fastest) |
 | **API pricing** | $1.50 input / $7.50 output per M tokens |
 | **License** | Modified MIT ($20M/month revenue cap) |

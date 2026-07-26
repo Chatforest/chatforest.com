@@ -9,6 +9,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** MiniMax M2.5, released February 12, 2026. Architecture: 229B total parameters, 10B active (Sparse MoE). 200K context. Forge RL training on 200,000+ real-world environments. Open-weight under Modified MIT. API at $0.15/$1.15 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -196,14 +197,14 @@ Understanding MiniMax M2.5 requires understanding the company, because the compa
 
 **MiniMax** was founded in December 2021 in Shanghai by Yan Junjie (CEO, CTO, Chairman), Zhou Yucong (visual model R&D), and Yang Bin — all from SenseTime, China's largest AI company and one that drew U.S. sanctions in 2021 for its surveillance work. The founders left SenseTime before its sanctions period and built MiniMax in a different direction: consumer AI products and general-purpose foundation models.
 
-The company's consumer products have real scale. **Talkie** — MiniMax's AI character/companion app for international markets — reports approximately 29 million monthly active users, ranking in the global top 3 alongside Character.AI and Replika. **Xing Ye** serves the domestic Chinese market. **Hailuo AI** is MiniMax's video generation platform, reviewed separately [here](/reviews/hailuo-minimax-ai-video-generation-hk-ipo/).
+The company's consumer products have real scale. **Talkie** — MiniMax's AI character/companion app for international markets — reports approximately 29 million monthly active users (per [IPO prospectus data via Bloomberg](https://www.bloomberg.com/news/articles/2026-01-08/ai-firm-minimax-set-for-hong-kong-debut-after-619-million-ipo)), ranking in the global top 3 alongside Character.AI and Replika. **Xing Ye** serves the domestic Chinese market. **Hailuo AI** is MiniMax's video generation platform, reviewed separately [here](/reviews/hailuo-minimax-ai-video-generation-hk-ipo/).
 
 **Funding trajectory:**
 - March 2024: $600M Series B at $2.5B valuation (led by Alibaba)
 - July 2025: $300M Series B extension at $4B valuation (led by Shanghai state capital)
 - January 9, 2026: **[IPO on Hong Kong Stock Exchange](https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html)** — debut day close of HK$345 (109% gain vs. HK$165 IPO price), HK$106.7B (~$13.7B) debut market cap ([Bloomberg](https://www.bloomberg.com/news/articles/2026-01-08/ai-firm-minimax-set-for-hong-kong-debut-after-619-million-ipo)). The IPO was 1,837x oversubscribed on the Hong Kong retail tranche. Jensen Huang (NVIDIA CEO) publicly praised the company in proximity to the listing.
 
-**Revenue:** MiniMax reported approximately $79M in revenue in 2025 — significant for an AI company at this stage, though the net loss for the first three quarters of 2025 was $512M. Projections from analysts estimate $183.9M in 2026 revenue, growing to $356.2M in 2027.
+**Revenue:** MiniMax reported approximately $79M in revenue in 2025 — significant for an AI company at this stage, though the net loss for the first three quarters of 2025 was $512M (per [CNBC IPO coverage](https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html) and IPO prospectus data).
 
 The IPO, the company's consumer scale, and the Forge framework are the structural context behind M2.5. MiniMax is not a pure research lab releasing weights as an academic gesture — it is a commercially operating company with public investors, a consumer product base, and an enterprise API business. The open-weight release is a developer acquisition and ecosystem strategy.
 

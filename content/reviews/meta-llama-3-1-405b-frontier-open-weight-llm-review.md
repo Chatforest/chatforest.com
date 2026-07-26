@@ -6,6 +6,7 @@ og_description: "Meta Llama 3.1 405B (July 23, 2024): 405B dense parameters, 128
 content_type: "Review"
 card_description: "Meta Llama 3.1 405B (July 23, 2024) is the first open-weight model to reach GPT-4-level performance on standard benchmarks. It offers 405 billion dense parameters, a 128K-token context window (16× the Llama 3 limit), built-in tool use, and an 8-language multilingual capability — all under a community license that permits commercial deployment. The tradeoff: full-precision inference requires ~810GB VRAM, making self-hosting accessible only to organizations with serious GPU infrastructure."
 last_refreshed: 2026-05-14
+sources_audited: 2026-07-26
 tags: ["llm", "open-weight", "meta", "llama", "text-generation", "multilingual", "local-llm", "long-context", "function-calling"]
 categories: ["reviews"]
 rating: 4
@@ -73,7 +74,7 @@ The attention mechanism uses **Grouped-Query Attention (GQA)**, which reduces th
 
 ## Benchmarks
 
-Meta published detailed benchmark comparisons in the Llama 3.1 technical report, comparing the 405B against contemporaneous frontier models at the time of release.
+Meta published detailed benchmark comparisons in the [Llama 3.1 technical report (arXiv:2407.21783)](https://arxiv.org/abs/2407.21783), comparing the 405B against contemporaneous frontier models at the time of release.
 
 ### Core Benchmark Scores
 

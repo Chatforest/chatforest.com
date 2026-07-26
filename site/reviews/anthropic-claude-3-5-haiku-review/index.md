@@ -7,7 +7,7 @@
 
 ---
 
-**At a glance:** Claude 3.5 Haiku (`claude-3-5-haiku-20241022`) — [released November 4, 2024](https://www.anthropic.com/news/claude-haiku). The fastest and most affordable model in the Claude 3.5 tier. SWE-bench Verified 40.6%, surpassing Claude 3 Opus at a fraction of the cost. Priced at $0.80/$4 per million tokens with 200K context. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and the **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**. For the predecessor, see our **[Claude 3.5 Sonnet review](/reviews/anthropic-claude-3-5-sonnet-computer-use-review/)** (June + October 2024).
+**At a glance:** Claude 3.5 Haiku (`claude-3-5-haiku-20241022`) — [released November 4, 2024](https://www.anthropic.com/news/claude-haiku). The fastest and most affordable model in the Claude 3.5 tier. SWE-bench Verified 40.6%, surpassing Claude 3 Opus at a fraction of the cost. Priced at [$0.80/$4 per million tokens](https://www.anthropic.com/pricing) with 200K context. Part of our **[AI Companies & Models category](/categories/ai-tools/)** and the **[Anthropic Claude review series](/reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review/)**. For the predecessor, see our **[Claude 3.5 Sonnet review](/reviews/anthropic-claude-3-5-sonnet-computer-use-review/)** (June + October 2024).
 
 ---
 

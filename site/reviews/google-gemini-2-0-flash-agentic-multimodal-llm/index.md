@@ -138,7 +138,7 @@ Highest-capability model in the 2.0 generation. Released the same day as Flash G
 
 ## Speed and Latency
 
-Third-party benchmarks ([Artificial Analysis](https://artificialanalysis.ai/)) measured Gemini 2.0 Flash GA at:
+Third-party benchmarks ([Artificial Analysis](https://artificialanalysis.ai/models/gemini-2-0-flash)) measured Gemini 2.0 Flash GA at:
 - **Time to first token**: ~0.50–0.53 seconds
 - **Output throughput**: ~143–169 tokens/second
 

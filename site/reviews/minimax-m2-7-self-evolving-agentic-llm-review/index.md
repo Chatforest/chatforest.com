@@ -214,7 +214,7 @@ M2.7 is approximately **45% slower** than M2.5 in measured output throughput. Mi
 
 The slowdown is attributable to M2.7's extended reasoning (thinking) time. Artificial Analysis reports approximately 42.4 seconds of reasoning time before output begins, compared to M2.5's ~18.78 seconds. M2.7 does more thinking per query — a behavior that emerged from training, not architectural changes. Models that reason longer often produce higher-quality outputs on hard tasks, but the throughput cost is real and shows up in pipeline latency.
 
-NVIDIA has published throughput optimizations for M2.7 on Blackwell Ultra GPUs using vLLM (2.5x improvement) and SGLang (2.7x improvement). These are inference stack optimizations that help at the infrastructure level, not API-level improvements available to standard users.
+NVIDIA has published throughput optimizations for M2.7 on Blackwell Ultra GPUs using vLLM and SGLang. These are inference stack optimizations that help at the infrastructure level, not API-level improvements available to standard users.
 
 ---
 

@@ -222,7 +222,7 @@ This matches the licensing of other IBM Granite models (3.x series) and aligns I
 
 This is Granite 4.1's most distinctive enterprise feature, and it is not discussed in most coverage of the release.
 
-IBM provides [**uncapped third-party intellectual property indemnification**](https://research.ibm.com/blog/granite-4-1-ai-foundation-models) for content generated through Granite models on watsonx. If a customer is sued because AI-generated content from a Granite model infringes on a third party's IP — copyright, patents, trade secrets — IBM will defend the customer and cover the costs, without a cap on IBM's liability.
+IBM provides [**uncapped third-party intellectual property indemnification**](https://research.ibm.com/blog/granite-4-1-ai-foundation-models) for content generated through Granite models on watsonx (also described in IBM's [client protections announcement](https://www.prnewswire.com/news-releases/ibm-announces-availability-of-watsonx-granite-model-series-client-protections-for-ibm-watsonx-models-301941186.html)). If a customer is sued because AI-generated content from a Granite model infringes on a third party's IP — copyright, patents, trade secrets — IBM will defend the customer and cover the costs, without a cap on IBM's liability.
 
 This is genuinely unusual. Most LLM providers (OpenAI, Anthropic, Google, Mistral) provide limited or no IP indemnification, or cap their liability at the customer's contract value. IBM offers this because:
 

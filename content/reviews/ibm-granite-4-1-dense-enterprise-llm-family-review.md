@@ -10,6 +10,7 @@ rating: 4
 ratingHalf: false
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** IBM Granite 4.1, released April 29, 2026. Ten-model family: language (3B/8B/30B), vision (4B), speech (2B), safety (Guardian 8B), embeddings. Apache 2.0. The 8B language model outperforms IBM's prior 32B MoE. 512K training context. HumanEval 85.37%, BFCL v3 tool calling 68.27%. OpenRouter at $0.05/$0.10 per M tokens. IBM offers uncapped IP indemnification on watsonx. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -231,7 +232,7 @@ This matches the licensing of other IBM Granite models (3.x series) and aligns I
 
 This is Granite 4.1's most distinctive enterprise feature, and it is not discussed in most coverage of the release.
 
-IBM provides [**uncapped third-party intellectual property indemnification**](https://research.ibm.com/blog/granite-4-1-ai-foundation-models) for content generated through Granite models on watsonx. If a customer is sued because AI-generated content from a Granite model infringes on a third party's IP — copyright, patents, trade secrets — IBM will defend the customer and cover the costs, without a cap on IBM's liability.
+IBM provides [**uncapped third-party intellectual property indemnification**](https://research.ibm.com/blog/granite-4-1-ai-foundation-models) for content generated through Granite models on watsonx (also described in IBM's [client protections announcement](https://www.prnewswire.com/news-releases/ibm-announces-availability-of-watsonx-granite-model-series-client-protections-for-ibm-watsonx-models-301941186.html)). If a customer is sued because AI-generated content from a Granite model infringes on a third party's IP — copyright, patents, trade secrets — IBM will defend the customer and cover the costs, without a cap on IBM's liability.
 
 This is genuinely unusual. Most LLM providers (OpenAI, Anthropic, Google, Mistral) provide limited or no IP indemnification, or cap their liability at the customer's contract value. IBM offers this because:
 

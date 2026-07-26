@@ -25,9 +25,9 @@ Kimi K2.6 was released on April 20, 2026 by Moonshot AI (Beijing), the company b
 
 The model ID on the official Kimi API platform is `kimi-k2.6-20260420`. The Hugging Face repository is [`moonshotai/Kimi-K2.6`](https://huggingface.co/moonshotai/Kimi-K2.6). A [GitHub repository (`MoonshotAI/Kimi-K2`)](https://github.com/MoonshotAI/Kimi-K2) covers the broader K2 series, including technical documentation.
 
-The release coincided with a fundraising milestone: on May 7, 2026 — seventeen days after the model launch — Moonshot AI [raised $2 billion at a $20 billion valuation](https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/) in a round led by Meituan's Long-Z Investments, with participation from Tsinghua Capital, China Mobile, and CPE Yuanfeng ([Bloomberg coverage](https://www.bloomberg.com/news/articles/2026-05-07/kimi-chatbot-maker-moonshot-ai-valued-at-20-billion-in-meituan-led-round)). The company's valuation grew approximately 5x in six months ($4.3B → $20B). Reported annual recurring revenue exceeded $200 million as of April 2026.
+The release coincided with a fundraising milestone: on May 7, 2026 — seventeen days after the model launch — Moonshot AI [raised $2 billion at a $20 billion valuation](https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/) in a round led by Meituan's Long-Z Investments, with participation from Tsinghua Capital, China Mobile, and CPE Yuanfeng ([Bloomberg coverage](https://www.bloomberg.com/news/articles/2026-05-07/kimi-chatbot-maker-moonshot-ai-valued-at-20-billion-in-meituan-led-round)). The company's valuation grew approximately 5x in six months ($4.3B → $20B). Reported annual recurring revenue [exceeded $200 million as of April 2026](https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/).
 
-For context: Moonshot AI was founded in March 2023 by Yang Zhilin — a Tsinghua computer science graduate (ranked #1 in class), Carnegie Mellon Ph.D., and former Google Brain researcher — alongside Tsinghua University alumni who are also his former bandmates in the group "Splay." The company name is a nod to the 50th anniversary of Pink Floyd's *The Dark Side of the Moon*, Yang's stated favorite album.
+For context: Moonshot AI was founded in March 2023 by [Yang Zhilin](https://finance.yahoo.com/news/meet-yang-zhilin-moonshot-ai-093000045.html) — a Tsinghua computer science graduate (ranked #1 in class), Carnegie Mellon Ph.D., and former Google Brain researcher — alongside Tsinghua University alumni who are also his former bandmates in the group "Splay." The company name is a nod to the 50th anniversary of Pink Floyd's *The Dark Side of the Moon*, Yang's stated favorite album.
 
 ---
 
@@ -72,7 +72,7 @@ This is not merely a memory optimization. MLA is a prerequisite for making long-
 
 ### The MuonClip Optimizer
 
-Training a 1-trillion-parameter MoE model is not straightforward. Standard training optimizers (Adam, AdamW) can exhibit instability — attention logit explosions, loss spikes — at this scale. Moonshot developed **MuonClip**, a variant of the Muon optimizer with additional gradient clipping and stabilization to handle trillion-parameter MoE dynamics. The technical blog notes that MuonClip was the key ingredient that made the K2.6 training run proceed without catastrophic loss events.
+Training a 1-trillion-parameter MoE model is not straightforward. Standard training optimizers (Adam, AdamW) can exhibit instability — attention logit explosions, loss spikes — at this scale. Moonshot developed **MuonClip**, a variant of the Muon optimizer with additional gradient clipping and stabilization to handle trillion-parameter MoE dynamics. The [MuonClip technical write-up (MoonshotAI/Moonlight)](https://github.com/MoonshotAI/Moonlight) notes that MuonClip was the key ingredient that made the K2.6 training run proceed without catastrophic loss events.
 
 This is worth noting because it represents genuine training infrastructure innovation, not just scaling existing recipes.
 
@@ -104,7 +104,7 @@ The system ships directly in the Kimi API and Kimi Code CLI — it is not a thir
 
 ### What It Can Do in Practice
 
-Moonshot AI's published case study, which has been cited by multiple independent sources without being widely disputed on its core claims:
+Moonshot AI's [published case study](https://www.kimi.com/blog/kimi-k2-6), which has been cited by multiple independent sources without being widely disputed on its core claims:
 
 A K2.6 agentic run lasting over 12 hours autonomously ported and optimized a Qwen3.5-0.8B inference engine to Zig (a low-level systems language) on a Mac. The run involved:
 - 4,000+ tool calls across 14 iterations
@@ -254,9 +254,9 @@ This is not a quality concern about the model itself, but it is a real considera
 
 Moonshot AI was founded in March 2023 by **Yang Zhilin** alongside Tsinghua University alumni (who are also his former bandmates in the group "Splay"). The company name is a reference to the 50th anniversary of Pink Floyd's *The Dark Side of the Moon* — Yang's stated favorite album.
 
-Yang's background: ranked #1 in his Tsinghua computer science class, completed his CMU Ph.D. in under four years, worked at Google Brain and Meta AI Research during doctoral studies, contributed to large-scale LLM development at Huawei PanGu and the Beijing Academy of Artificial Intelligence. He founded Moonshot at 31 with technical credibility from both academia and industry.
+Yang's background ([profile via Yahoo Finance](https://finance.yahoo.com/news/meet-yang-zhilin-moonshot-ai-093000045.html)): ranked #1 in his Tsinghua computer science class, completed his CMU Ph.D. in under four years, worked at Google Brain and Meta AI Research during doctoral studies, contributed to large-scale LLM development at Huawei PanGu and the Beijing Academy of Artificial Intelligence. He founded Moonshot at 31 with technical credibility from both academia and industry.
 
-The company's initial product — the Kimi chatbot, launched October 2023 — became known in China primarily for a 200,000-character long-context capability that was novel at the time. The K2 series expanded the focus to open-weight agentic coding models for the international developer market.
+The company's initial product — the [Kimi chatbot, launched October 9, 2023](https://en.wikipedia.org/wiki/Kimi_(chatbot)) — became known in China primarily for a 200,000-character long-context capability that was novel at the time. The K2 series expanded the focus to open-weight agentic coding models for the international developer market.
 
 Funding trajectory:
 - End-2025: ~$4.3B valuation
@@ -303,7 +303,7 @@ For teams doing open-ended agentic coding, long-horizon software engineering, or
 
 ---
 
-**May 2026 update:** Following [Cerebras Systems' IPO on May 14, 2026](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/) (largest tech IPO of 2026), Cerebras announced enterprise trials running Kimi K2.6 at **~981 tokens/second** — measured independently by Artificial Analysis. That figure is 6.7× faster than the next-fastest GPU cloud and 23× faster than the median inference provider. For a standard agentic coding request (10K input tokens, 500 output tokens), Cerebras delivers the full response in **5.6 seconds** versus 163.7 seconds on the official Kimi API endpoint. At this speed, K2.6's Agent Swarm architecture becomes qualitatively more practical for interactive agentic loops — the latency tax that limits multi-agent pipelines largely disappears. Cerebras Kimi K2.6 access is in enterprise trials as of late May 2026; general availability timeline not confirmed.
+**May 2026 update:** Following [Cerebras Systems' IPO on May 14, 2026](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/) (largest tech IPO of 2026), Cerebras announced enterprise trials running Kimi K2.6 at [**~981 tokens/second**](https://www.cerebras.ai/blog/cerebras-kimi-k2-Enterprise) — measured independently by [Artificial Analysis](https://artificialanalysis.ai/models/kimi-k2-6). That figure is 6.7× faster than the next-fastest GPU cloud and 23× faster than the median inference provider. For a standard agentic coding request (10K input tokens, 500 output tokens), Cerebras delivers the full response in **5.6 seconds** versus 163.7 seconds on the official Kimi API endpoint. At this speed, K2.6's Agent Swarm architecture becomes qualitatively more practical for interactive agentic loops — the latency tax that limits multi-agent pipelines largely disappears. Cerebras Kimi K2.6 access is in enterprise trials as of late May 2026; general availability timeline not confirmed.
 
 ---
 

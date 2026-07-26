@@ -10,6 +10,7 @@ rating: 3
 ratingHalf: true
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** MiniMax M2.7, released March 18, 2026 (API) and April 12, 2026 (weights). Architecture: same 229B total / 10B active Sparse MoE as M2.5. Self-evolution training. API at $0.30/$1.20 per million tokens. Commercial-authorization-required license. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -223,7 +224,7 @@ M2.7 is approximately **45% slower** than M2.5 in measured output throughput. Mi
 
 The slowdown is attributable to M2.7's extended reasoning (thinking) time. Artificial Analysis reports approximately 42.4 seconds of reasoning time before output begins, compared to M2.5's ~18.78 seconds. M2.7 does more thinking per query — a behavior that emerged from training, not architectural changes. Models that reason longer often produce higher-quality outputs on hard tasks, but the throughput cost is real and shows up in pipeline latency.
 
-NVIDIA has published throughput optimizations for M2.7 on Blackwell Ultra GPUs using vLLM (2.5x improvement) and SGLang (2.7x improvement). These are inference stack optimizations that help at the infrastructure level, not API-level improvements available to standard users.
+NVIDIA has published throughput optimizations for M2.7 on Blackwell Ultra GPUs using vLLM and SGLang. These are inference stack optimizations that help at the infrastructure level, not API-level improvements available to standard users.
 
 ---
 

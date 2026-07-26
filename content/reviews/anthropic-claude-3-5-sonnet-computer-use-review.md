@@ -6,6 +6,7 @@ og_description: "Claude 3.5 Sonnet: June 2024 launch (GPQA 59.4%, HumanEval 92%,
 content_type: "Review"
 card_description: "Claude 3.5 Sonnet's June 2024 launch outperformed Claude 3 Opus on reasoning, coding, and mathematics benchmarks at roughly one-fifth the cost. The October 22, 2024 update set a new SWE-bench Verified record at 49.0% — the first model to break 40% on that benchmark — and introduced computer use, a public beta for GUI automation. This review covers both versions, the era they defined, and why Claude 3.5 Sonnet became the default model for serious coding work."
 last_refreshed: 2026-05-14
+sources_audited: 2026-07-26
 tags: ["llm", "anthropic", "claude", "computer-use", "coding", "swe-bench", "api", "agentic"]
 categories: ["reviews"]
 rating: 5

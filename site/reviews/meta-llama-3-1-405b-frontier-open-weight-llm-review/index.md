@@ -64,7 +64,7 @@ The attention mechanism uses **Grouped-Query Attention (GQA)**, which reduces th
 
 ## Benchmarks
 
-Meta published detailed benchmark comparisons in the Llama 3.1 technical report, comparing the 405B against contemporaneous frontier models at the time of release.
+Meta published detailed benchmark comparisons in the [Llama 3.1 technical report (arXiv:2407.21783)](https://arxiv.org/abs/2407.21783), comparing the 405B against contemporaneous frontier models at the time of release.
 
 ### Core Benchmark Scores
 

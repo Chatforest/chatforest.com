@@ -129,7 +129,7 @@ All four modalities could be **interleaved in a single context** — a request m
 
 The tiered input pricing reflected the compute cost of longer contexts — processing a 500K-token document costs more than processing a 50K-token document, and Google passed part of that cost through to the user.
 
-**October 2024 price reductions** brought the [input prices down approximately 64% and output prices down approximately 52%](https://blog.google/products/gemini/google-gemini-update-may-2024/), responding to competitive pressure from models like Claude 3.5 Sonnet and GPT-4o Mini.
+**October 2024 price reductions** brought input and output prices down significantly, responding to competitive pressure from models like Claude 3.5 Sonnet and GPT-4o Mini.
 
 ### Platforms
 
