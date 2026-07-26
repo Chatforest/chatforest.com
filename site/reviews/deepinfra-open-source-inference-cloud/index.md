@@ -3,11 +3,11 @@
 > DeepInfra runs 5 trillion tokens per week across 150+ open-source models, owns its own GPUs, and just raised $107M Series B with NVIDIA as an investor. We review the inference platform built by the team behind imo messenger.
 
 
-Three ex-engineers from imo messenger — a messaging app with over a billion Play Store downloads — looked at the AI inference landscape in 2022 and saw a systems problem, not a research problem.
+Three ex-engineers from imo messenger — [a messaging app used by 200M+ people worldwide](https://deepinfra.com/blog/deepinfra-series-b) — looked at the AI inference landscape in 2022 and saw a systems problem, not a research problem.
 
 Running large language models in production was expensive, slow, and complicated. Every team that wanted to use open-source models had to provision their own GPU clusters, manage batching, handle scaling, and negotiate with cloud providers. The people best positioned to fix this weren't ML researchers. They were infrastructure engineers who had spent years figuring out how to handle billions of messages cheaply.
 
-That's the origin story of DeepInfra. Four years later, the company processes nearly five trillion tokens per week across more than 150 open-source models, owns its own data centers, and just closed a $107 million Series B round with NVIDIA as one of the investors.
+That's the origin story of DeepInfra. Four years later, the company processes [nearly five trillion tokens per week across more than 150 open-source models](https://deepinfra.com/blog/deepinfra-series-b), owns its own data centers, and just closed a [$107 million Series B round](https://deepinfra.com/blog/deepinfra-series-b) with NVIDIA as one of the investors.
 
 ---
 
@@ -19,17 +19,17 @@ Borisov spent a decade at imo (2010–2020), eventually serving as Director of E
 
 The thesis when DeepInfra launched was simple: **inference, not training, would become the dominant driver of enterprise AI workloads**. The compute required to run models in production would eventually dwarf the compute used to train them. Building infrastructure optimized for inference from day one — rather than retrofitting training infrastructure — would be a durable competitive advantage.
 
-That thesis looks prescient in 2026. Nearly 30% of DeepInfra's token volume is now driven by autonomous agents running without human oversight.
+That thesis looks prescient in 2026. [Nearly 30% of DeepInfra's token volume is now driven by autonomous agents running without human oversight.](https://deepinfra.com/blog/deepinfra-series-b)
 
 ### Funding
 
 - **Seed**: $8 million (2023), led by A.Capital Ventures and Felicis
-- **Series B**: $107 million (May 4, 2026), co-led by 500 Global and Georges Harik (former Google VP of Engineering), with participation from A.Capital Ventures, Crescent Cove, Felicis, **NVIDIA**, Peak6, Samsung Next, Supermicro, and Upper90
+- **[Series B](https://deepinfra.com/blog/deepinfra-series-b)**: $107 million (May 4, 2026), co-led by 500 Global and Georges Harik (former Google VP of Engineering), with participation from A.Capital Ventures, Crescent Cove, Felicis, **NVIDIA**, Peak6, Samsung Next, Supermicro, and Upper90
 - **Total funding**: $133 million+
 
-The NVIDIA participation matters more than the dollar figure. NVIDIA is not a passive financial investor — the company has designated DeepInfra as an early infrastructure collaborator in its open AI ecosystem. That means early access to new hardware and software frameworks, including NVIDIA Dynamo (discussed below).
+The NVIDIA participation matters more than the dollar figure. [NVIDIA is not a passive financial investor — the company has designated DeepInfra as an early infrastructure collaborator in its open AI ecosystem.](https://deepinfra.com/blog/deepinfra-series-b) That means early access to new hardware and software frameworks, including NVIDIA Dynamo (discussed below).
 
-DeepInfra has scaled token volume 25x since its Series A and 8,000x since its seed round. Revenue tripled in the first months of 2026 alone, though absolute figures are not disclosed.
+[DeepInfra has scaled token volume 25x since its Series A](https://deepinfra.com/blog/deepinfra-series-b). Revenue tripled in the first months of 2026 alone, though absolute figures are not disclosed.
 
 ---
 

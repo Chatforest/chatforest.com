@@ -17,7 +17,7 @@ To understand Nebius, you have to understand where it came from.
 
 Then Russia invaded Ukraine in February 2022. NASDAQ halted YNDX trading almost immediately. The EU sanctioned Volozh personally in June 2022, despite him publicly calling the invasion "barbaric." The company entered a years-long restructuring to separate its Russian operations from its international ones.
 
-In July 2024, the restructuring concluded: a Russian consortium paid $5.4 billion to acquire all Russia-based Yandex assets. The Dutch holding company — Yandex N.V. — retained the cloud and data center infrastructure, AI projects, autonomous vehicle research, and international businesses. It renamed itself **Nebius Group N.V.** in August 2024. EU sanctions on Volozh were lifted in March 2024 after an independent review. NASDAQ trading resumed under ticker **NBIS** on October 21, 2024. Volozh renounced Russian citizenship in February 2026.
+In July 2024, the restructuring concluded: [a Russian consortium paid $5.4 billion to acquire all Russia-based Yandex assets](https://money.usnews.com/investing/news/articles/2024-08-16/yandex-nv-renamed-nebius-group-after-russia-split). The Dutch holding company — Yandex N.V. — retained the cloud and data center infrastructure, AI projects, autonomous vehicle research, and international businesses. It renamed itself **Nebius Group N.V.** in August 2024. EU sanctions on Volozh were lifted in March 2024 after an independent review. [NASDAQ trading resumed under ticker **NBIS** on October 21, 2024](https://money.usnews.com/investing/news/articles/2024-10-21/investors-expect-volatile-nasdaq-return-with-ai-firm-split-from-russias-yandex). Volozh renounced Russian citizenship in February 2026.
 
 What Nebius inherited from Yandex was significant: hundreds of experienced infrastructure engineers who had been building and operating GPU clusters and large-scale data centers since 2018, plus the physical data center infrastructure itself. Most AI infrastructure startups begin with a few engineers and a vision. Nebius began with operational depth.
 
@@ -45,7 +45,7 @@ Nebius Group is a holding company with several distinct businesses. Understandin
 
 The growth numbers are legitimately impressive.
 
-**Q4 2025:** Revenue of $228 million — **547% year-over-year growth**. The core AI cloud business alone grew 830% year-over-year. Adjusted EBITDA margin: 24%. Operating cash flow: $834 million.
+**[Q4 2025](https://finance.yahoo.com/news/nebius-group-nv-nbis-q4-190214815.html):** Revenue of $228 million — **547% year-over-year growth**. The core AI cloud business alone grew 830% year-over-year. Adjusted EBITDA margin: 24%. Operating cash flow: $834 million.
 
 **Full Year 2025:** Annual recurring revenue (ARR) reached $1.25 billion at year-end, exceeding guidance.
 
@@ -61,9 +61,9 @@ The caveat: Nebius is not profitable. Net loss in Q4 2025 was $249.6 million. Th
 
 The two landmark customer deals define Nebius's near-term trajectory.
 
-**Microsoft — $19.4 billion over five years.** Announced September 2025. The first compute tranche was delivered in November 2025; the second in February 2026. The agreement includes $7 billion in upfront payments and covers 100,000+ NVIDIA GB300 accelerators. This is one of the largest AI infrastructure commitments from a hyperscaler to a third-party neocloud on record.
+**[Microsoft — $19.4 billion over five years.](https://nebius.com/newsroom/nebius-announces-multi-billion-dollar-agreement-with-microsoft-for-ai-infrastructure)** Announced September 2025. The first compute tranche was delivered in November 2025; the second in February 2026. The agreement includes $7 billion in upfront payments and covers 100,000+ NVIDIA GB300 accelerators. This is one of the largest AI infrastructure commitments from a hyperscaler to a third-party neocloud on record.
 
-**Meta — up to $27 billion over five years.** The Meta relationship began with a $3 billion deal in November 2025, expanded to $12 billion of dedicated infrastructure in early 2026, and potentially scales to $27 billion. Meta is using Nebius capacity for AI training at scale.
+**[Meta — up to $27 billion over five years.](https://www.cnbc.com/2026/03/16/meta-nebius-ai-infrastructure.html)** The Meta relationship began with a [$3 billion deal in November 2025](https://nebius.com/blog/posts/digest-november-2025), expanded to $12 billion of dedicated infrastructure in early 2026, and potentially scales to $27 billion. Meta is using Nebius capacity for AI training at scale.
 
 These two relationships represent a concentrated revenue dependency risk — if either deal were renegotiated or terminated, Nebius's revenue trajectory would change dramatically. That said, both Microsoft and Meta have strong incentives to see Nebius succeed: they have prepaid significant capital for GPU capacity that does not yet exist.
 
@@ -133,7 +133,7 @@ Token Factory, launched November 2025, targets production AI teams that need mor
 - **Transparent $/token pricing**: no idle GPU costs
 - **EU or US regional deployment** at model-level granularity
 
-The May 2026 Eigen AI acquisition ($643 million for ~20 engineers) positions Token Factory at the frontier of inference optimization. Eigen AI specializes in model compilation and kernel-level inference acceleration — the kind of deep work that Groq built custom hardware to achieve, but done in software on standard NVIDIA GPUs.
+The [May 2026 Eigen AI acquisition ($643 million for ~20 engineers)](https://nebius.com/newsroom/nebius-agrees-to-acquire-eigen-ai-strengthening-nebius-token-factory-as-a-frontier-inference-platform) positions Token Factory at the frontier of inference optimization. Eigen AI specializes in model compilation and kernel-level inference acceleration — the kind of deep work that Groq built custom hardware to achieve, but done in software on standard NVIDIA GPUs.
 
 ---
 
@@ -173,7 +173,7 @@ Nebius has two distinct NVIDIA investment tranches:
 
 **December 2024 — ~0.5% equity stake.** NVIDIA participated in Nebius's $700 million strategic equity raise alongside Accel and Orbis Investments. This established the relationship.
 
-**March 2026 — $2 billion strategic investment.** NVIDIA committed $2 billion to Nebius, announced March 11, 2026 (shares jumped 16% on the news). The partnership covers the full AI stack: AI factory architecture co-design, production software collaboration, and early access to the latest NVIDIA GPU generations. The stated goal: enable Nebius to deploy more than 5 GW of capacity by end of 2030.
+**[March 2026 — $2 billion strategic investment.](https://nvidianews.nvidia.com/news/nvidia-and-nebius-partner-to-scale-full-stack-ai-cloud)** NVIDIA committed $2 billion to Nebius, announced March 11, 2026 (shares jumped 16% on the news). The partnership covers the full AI stack: AI factory architecture co-design, production software collaboration, and early access to the latest NVIDIA GPU generations. The stated goal: enable Nebius to deploy more than 5 GW of capacity by end of 2030.
 
 This kind of relationship — equity investment plus co-engineering plus preferred GPU access — is what separates Nebius from generic GPU resellers. CoreWeave has a similar strategic NVIDIA relationship. Few others do.
 

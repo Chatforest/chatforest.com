@@ -6,6 +6,7 @@ og_description: "Novita AI (novita.ai): a developer-first serverless inference A
 card_description: "Novita AI (novita.ai) is a bootstrapped developer-first inference platform offering 120+ LLMs and 10,000+ open-source image models via a single OpenAI-compatible API. Founded in late 2023 in San Francisco, the team of ~10 people reached $1.1M ARR without external venture funding. **Price leader on LLMs**: cheapest or near-cheapest on 70%+ of models compared to Fireworks AI; DeepSeek V4 Pro at $1.74/$3.48 per million tokens with **1M token context window** (vs. DeepInfra's 66k). **GPQA Diamond #1** accuracy across all inference providers (April 2026, Artificial Analysis). **10,000+ image models** including SDXL, FLUX, LoRAs, ControlNet variants — by far the largest open-source image model catalog available via API. **Agent Sandbox** launched April 28, 2026 — Firecracker microVMs with sub-200ms startup for secure autonomous agent execution. Official Hugging Face Inference Provider (April 2026). Partners: vLLM, SGLang. Customers include Quora, Fish Audio, beBee, Genspark, Kilo Code, Vercel. Weakness: slower throughput on large MoEs (33.5 t/s vs. Fireworks's 174 t/s on DeepSeek V4 Pro); no managed fine-tuning pipeline; ~10-person team creates execution risk. Part of our **AI/ML Tools** and **Developer Tools** categories. Rating: 4/5."
 last_refreshed: 2026-05-08
 categories: ["/categories/ai-ml-tools/", "/categories/developer-tools/"]
+sources_audited: 2026-07-26
 ---
 
 The inference API space is crowded with well-funded companies. Together AI raised $228 million. Fireworks AI closed a $52 million Series B. DeepInfra just landed a $107 million Series B last week, with NVIDIA as a strategic investor.
@@ -101,7 +102,7 @@ Novita has cultivated a reputation for "Day 0" availability — listing new open
 
 ### Accuracy: GPQA Diamond #1
 
-Speed and price are obvious competitive metrics. Accuracy is harder to measure and easier to ignore. Artificial Analysis's April 2026 evaluation placed Novita at the top of all inference providers on GPQA Diamond — a benchmark testing graduate-level scientific reasoning — at 79.0% (16 runs). On AIME 2025 (advanced mathematics), Novita scored 93.3% across 32 runs, matching top providers.
+Speed and price are obvious competitive metrics. Accuracy is harder to measure and easier to ignore. [Artificial Analysis's April 2026 evaluation placed Novita at the top of all inference providers on GPQA Diamond](https://www.prnewswire.com/news-releases/novita-ai-ranked-as-the-best-performing--reliable-inference-layer-302748913.html) — a benchmark testing graduate-level scientific reasoning — at 79.0% (16 runs). On AIME 2025 (advanced mathematics), Novita scored 93.3% across 32 runs, matching top providers.
 
 For developers building research assistants, scientific tools, or any application where factual precision matters, this is worth knowing. You are not sacrificing accuracy to get lower prices.
 
@@ -206,7 +207,7 @@ This launch signals Novita's ambition beyond pure inference. An inference API is
 
 ## The Hugging Face Partnership
 
-On April 14, 2026, Novita became an official Hugging Face Inference Partner — the same designation that DeepInfra received in the same month.
+On [April 14, 2026, Novita became an official Hugging Face Inference Partner](https://www.prnewswire.com/news-releases/novita-ai-joins-hugging-face-as-official-inference-partner-302741097.html) — the same designation that DeepInfra received in the same month.
 
 The mechanics: on any supported model's Hugging Face page, a "Deploy on Novita" button appears alongside similar options for other partner providers. The five million-plus monthly visitors to Hugging Face — researchers, developers, and students exploring open-source models — see Novita as a first-class deployment option.
 

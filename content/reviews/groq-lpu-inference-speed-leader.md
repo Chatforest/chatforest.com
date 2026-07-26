@@ -6,6 +6,7 @@ og_description: "Groq (groq.com): LPU-powered inference provider delivering 276 
 card_description: "Groq (groq.com) is the speed leader of open-model inference, powered by its proprietary **Language Processing Unit (LPU)** — custom silicon designed from the ground up for linear algebra workloads. **276 t/s on Llama 3.3 70B** (Artificial Analysis benchmark) — roughly **3x faster than Fireworks AI** and **5x faster than Together AI** on equivalent models. **840 t/s on Llama 3.1 8B**. Founded 2016 by **Jonathan Ross**, designer of Google's original TPU. **$750M Series E (September 2025)** at **$6.9B valuation**; then December 2025: **Nvidia agreed to license Groq's inference technology for ~$20B** — Nvidia's largest-ever deal, while GroqCloud continues as an independent operation. Saudi Arabia committed **$1.5B** for Groq-powered infrastructure (February 2025). GroqCloud serves **360,000+ developers** and **75% of Fortune 100** companies. Official **MCP server** (plus a Compound-specific server). **Compound** agentic AI system (GA October 2025): web search + code execution, claims 25% higher accuracy than OpenAI Web Search Preview. **SOC 2 Type II, HIPAA**. Weakness: narrow catalog (~12 models — no DeepSeek V4 Pro, no image generation, no fine-tuning, no custom model deployment); 2025 revenue projection cut from $2B+ to $500M+. Part of our **AI/ML Tools** and **Developer Tools** categories. Rating: 4/5."
 last_refreshed: 2026-05-08
 categories: ["/categories/ai-ml-tools/", "/categories/developer-tools/"]
+sources_audited: 2026-07-26
 ---
 
 Every provider comparison starts with DeepSeek V4 Pro throughput numbers, and Fireworks AI keeps anchoring the GPU-based leaderboard at 167–174 t/s. That gap looked definitive until you remember that Groq does not run DeepSeek V4 Pro.
@@ -28,14 +29,14 @@ Part of our **[AI/ML Tools category](/categories/ai-ml-tools/)** and **[Develope
 | **Founded** | 2016, Mountain View, California |
 | **Founder / CEO** | Jonathan Ross (founder; moved to Nvidia December 2025). Simon Edwards (current CEO) |
 | **LPU origin** | Tensor Streaming Processor (TSP), originally codenamed "Alan" — rebranded LPU post-ChatGPT |
-| **Series D** | $640M (August 2024, BlackRock Private Equity lead, $2.8B valuation) |
-| **Series E** | $750M (September 2025, Disruptive + BlackRock lead, $6.9B valuation) |
+| **Series D** | [$640M (August 2024)](https://groq.com/newsroom/groq-raises-640m-to-meet-soaring-demand-for-fast-ai-inference), BlackRock Private Equity lead, $2.8B valuation |
+| **Series E** | [$750M (September 2025)](https://techcrunch.com/2025/09/17/nvidia-ai-chip-challenger-groq-raises-even-more-than-expected-hits-6-9b-valuation/), Disruptive + BlackRock lead, $6.9B valuation |
 | **Total raised** | ~$1.75B |
 | **Nvidia deal** | ~$20B technology licensing agreement (December 2025, non-exclusive, non-acquisition) |
 | **Saudi Arabia** | $1.5B infrastructure commitment (February 2025, LEAP conference) |
 | **Revenue (2025)** | ~$500M+ (revised projection; originally $2B+) |
-| **Developers** | 360,000+ registered on GroqCloud |
-| **Enterprise reach** | 75% of Fortune 100 companies maintain GroqCloud accounts |
+| **Developers** | [360,000+ registered on GroqCloud](https://techcrunch.com/2024/08/05/ai-chip-startup-groq-lands-640m-to-challenge-nvidia/) |
+| **Enterprise reach** | [75% of Fortune 100 companies maintain GroqCloud accounts](https://techcrunch.com/2024/08/05/ai-chip-startup-groq-lands-640m-to-challenge-nvidia/) |
 | **Model catalog** | ~12 actively supported models (Llama, Qwen, gpt-oss variants, Whisper) |
 | **Top throughput** | 840 t/s (Llama 3.1 8B), 276 t/s (Llama 3.3 70B) — Artificial Analysis benchmark |
 | **TTFT** | 0.6–0.9s consistently across catalog |
@@ -88,14 +89,14 @@ Groq's funding history spans nearly a decade:
 |---|---|---|---|---|
 | Series A–B | 2017–2020 | Not publicized | Various | — |
 | Series C | April 2021 | $300M | Tiger Global, D1 Capital | — |
-| Series D | August 2024 | $640M | BlackRock Private Equity | $2.8B |
-| Series E | September 2025 | $750M | Disruptive, BlackRock, Neuberger Berman, Samsung, Cisco, Altimeter | $6.9B |
+| [Series D](https://groq.com/newsroom/groq-raises-640m-to-meet-soaring-demand-for-fast-ai-inference) | August 2024 | $640M | BlackRock Private Equity | $2.8B |
+| [Series E](https://techcrunch.com/2025/09/17/nvidia-ai-chip-challenger-groq-raises-even-more-than-expected-hits-6-9b-valuation/) | September 2025 | $750M | Disruptive, BlackRock, Neuberger Berman, Samsung, Cisco, Altimeter | $6.9B |
 
 Total raised: approximately **$1.75 billion** across six rounds.
 
-**Saudi Arabia infrastructure commitment (February 2025):** At LEAP 2025, Saudi Arabia announced a $1.5 billion commitment for Groq-powered AI infrastructure. This was a deployment and infrastructure contract — not equity — with Aramco Digital ordering hundreds of GroqRacks. A Dammam data center went operational, described as the region's largest inference cluster at time of deployment. It was reportedly built in eight days.
+**[Saudi Arabia infrastructure commitment (February 2025)](https://groq.com/newsroom/saudi-arabia-announces-1-5-billion-expansion-to-fuel-ai-powered-economy-with-ai-tech-leader-groq):** At LEAP 2025, Saudi Arabia announced a $1.5 billion commitment for Groq-powered AI infrastructure. This was a deployment and infrastructure contract — not equity — with Aramco Digital ordering hundreds of GroqRacks. A Dammam data center went operational, described as the region's largest inference cluster at time of deployment. It was reportedly built in eight days.
 
-**The Nvidia deal (December 2025):** The most consequential event in Groq's history came at the end of 2025. Nvidia agreed to license Groq's AI inference technology and assets for approximately **$20 billion** — Nvidia's largest-ever single deal. The structure was a non-exclusive licensing agreement, not an acquisition. Groq's GroqCloud business is not part of the transaction.
+**[The Nvidia deal (December 2025)](https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale):** The most consequential event in Groq's history came at the end of 2025. [Nvidia agreed to license Groq's AI inference technology and assets for approximately **$20 billion**](https://www.cnbc.com/2025/12/24/nvidia-buying-ai-chip-startup-groq-for-about-20-billion-biggest-deal.html) — Nvidia's largest-ever single deal. The structure was a non-exclusive licensing agreement, not an acquisition. Groq's GroqCloud business is not part of the transaction.
 
 Jonathan Ross and President Sunny Madra moved to Nvidia. Simon Edwards became Groq's new CEO. Nvidia paid approximately 2.9× the September 2025 $6.9B valuation for the technology rights.
 
@@ -164,7 +165,7 @@ On Llama 3.1 8B at $0.05/1M, Groq delivers ~840 t/s — making it simultaneously
 
 In April 2025, Groq launched **Compound Beta** — a compound AI system that combines LLM inference with built-in agentic tools: web search and code execution. In October 2025, it moved to general availability as **Compound**.
 
-Compound is built on gpt-oss-120B and Llama models, running on GroqCloud's LPU infrastructure. Groq claims approximately **25% higher accuracy and 50% fewer mistakes** compared to OpenAI's Web Search Preview and Perplexity Sonar on accuracy benchmarks.
+Compound is built on gpt-oss-120B and Llama models, running on GroqCloud's LPU infrastructure. [Groq claims approximately **25% higher accuracy and 50% fewer mistakes**](https://groq.com/blog/introducing-the-next-generation-of-compound-on-groqcloud) compared to OpenAI's Web Search Preview and Perplexity Sonar on accuracy benchmarks.
 
 Independent evaluation of these claims is limited, but the architectural premise is sound: running retrieval-augmented generation and tool-calling inference on LPU hardware means the compound AI system benefits from the same TTFT advantages as raw inference. An agent that can search the web and execute code with sub-second response latency per step is qualitatively different from one that takes 8+ seconds per step.
 
@@ -212,7 +213,7 @@ Enterprise SLA specifics are not publicly documented — available through enter
 
 ## The Revenue Projection Cut
 
-In July 2025, Groq cut its 2025 revenue projection from **$2B+ to approximately $500M+** — a $1.5 billion reduction. The reported cause: data center capacity constraints and manufacturing delays (Samsung Foundry manufactures the LPU chips). The revision reportedly affected Samsung's foundry business, which had planned capacity around Groq's original projections.
+In July 2025, [Groq cut its 2025 revenue projection from **$2B+ to approximately $500M+**](https://www.investing.com/news/company-news/groq-slashes-2025-revenue-projections-to-500-million--the-information-93CH-4158309) — a $1.5 billion reduction. The reported cause: data center capacity constraints and manufacturing delays (Samsung Foundry manufactures the LPU chips). The revision reportedly affected Samsung's foundry business, which had planned capacity around Groq's original projections.
 
 One independent estimate (Latka) puts 2025 annualized revenue at ~$172.5M — though this appears to be a mid-year run-rate snapshot, not full-year revenue.
 

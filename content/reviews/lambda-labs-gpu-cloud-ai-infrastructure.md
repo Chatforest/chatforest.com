@@ -6,9 +6,10 @@ og_description: "Lambda is the GPU cloud behind foundation model training at ent
 content_type: "Review"
 card_description: "Lambda (lambda.ai) is an enterprise GPU cloud purpose-built for large-scale AI training and inference. Founded 2012 by Stephen and Michael Balaban in San Francisco. Raised $1.5B Series E (TWG Global) in November 2025 at $5.9B valuation. Closed a $1B senior secured credit facility in May 2026. Signed a multibillion-dollar multi-year AI infrastructure agreement with Microsoft. NVIDIA is simultaneously an investor, GPU supplier, and Lambda's largest single customer via an $1.5B, 18,000-GPU leaseback. 1-Click Clusters provide multi-node H100/H200/B200 GPU clusters with 400 Gb/s NVIDIA Quantum-2 InfiniBand. IPO targeting H2 2026."
 last_refreshed: 2026-05-08
+sources_audited: 2026-07-26
 ---
 
-**At a glance:** Lambda ([lambda.ai](https://lambda.ai/)) is a San Francisco-based GPU cloud that has repositioned itself as the "Superintelligence Cloud" — infrastructure designed for foundation model training, large-scale distributed inference, and frontier AI workloads. Founded in 2012 by brothers **Stephen Balaban** (now CTO) and **Michael Balaban** (now CPO), Lambda raised a **$1.5 billion Series E** led by TWG Global in November 2025 at a **$5.9 billion valuation**. In May 2026, the company closed an additional **$1 billion senior secured credit facility**. The company has secured a **multibillion-dollar, multi-year deal with Microsoft** and maintains a uniquely intertwined relationship with **NVIDIA** — which is simultaneously an investor, the company's primary GPU supplier, and its single largest customer via a $1.5 billion, 18,000-GPU leaseback. **Rating: 4/5.**
+**At a glance:** Lambda ([lambda.ai](https://lambda.ai/)) is a San Francisco-based GPU cloud that has repositioned itself as the "Superintelligence Cloud" — infrastructure designed for foundation model training, large-scale distributed inference, and frontier AI workloads. Founded in 2012 by brothers **Stephen Balaban** (now CTO) and **Michael Balaban** (now CPO), Lambda raised a **[$1.5 billion Series E](https://lambda.ai/blog/lambda-raises-over-1.5b-from-twg-global-usit-to-build-superintelligence-cloud-infrastructure)** led by TWG Global in November 2025 at a **$5.9 billion valuation**. In May 2026, the company closed an additional **[$1 billion senior secured credit facility](https://lambda.ai/blog/lambda-closes-1-billion-senior-secured-credit-facility)**. The company has secured a **[multibillion-dollar, multi-year deal with Microsoft](https://lambda.ai/blog/lambda-announces-multibillion-dollar-agreement-with-microsoft-to-deploy-ai-infrastructure-powered-by-tens-of-thousands-of-nvidia-gpus)** and maintains a uniquely intertwined relationship with **NVIDIA** — which is simultaneously an investor, the company's primary GPU supplier, and its single largest customer via a [$1.5 billion, 18,000-GPU leaseback](https://www.datacenterdynamics.com/en/news/nvidia-signs-15bn-deal-to-lease-its-gpus-back-from-lambda-report/). **Rating: 4/5.**
 
 Lambda is part of our **[GPU Cloud category](/categories/gpu-cloud/)**.
 
@@ -36,7 +37,7 @@ Lambda's relationship with NVIDIA is unlike any other GPU cloud's — and unders
 
 **NVIDIA is Lambda's primary GPU supplier.** This is true of every GPU cloud, but Lambda has moved to formalize and deepen this dependency at each funding round, securing allocation of H100s, H200s, B200s, and GB300s ahead of competitors.
 
-**NVIDIA is Lambda's single largest customer.** In a notable $1.5 billion leaseback arrangement, NVIDIA signed a four-year agreement to lease back 18,000 GPUs from Lambda. NVIDIA needed GPU capacity (to run its own AI models and developer programs) and chose to lease it from Lambda rather than buy the hardware itself. Lambda gets a major, creditworthy anchor customer. NVIDIA gets infrastructure capacity without balance sheet hardware.
+**NVIDIA is Lambda's single largest customer.** In a [notable $1.5 billion leaseback arrangement](https://www.datacenterdynamics.com/en/news/nvidia-signs-15bn-deal-to-lease-its-gpus-back-from-lambda-report/), NVIDIA signed a four-year agreement to lease back 18,000 GPUs from Lambda. NVIDIA needed GPU capacity (to run its own AI models and developer programs) and chose to lease it from Lambda rather than buy the hardware itself. Lambda gets a major, creditworthy anchor customer. NVIDIA gets infrastructure capacity without balance sheet hardware.
 
 This three-way entanglement — investment, supply, and revenue — is both Lambda's greatest advantage and a concentration risk worth acknowledging. Lambda has unparalleled access to NVIDIA hardware roadmaps and supply chain. But if NVIDIA's business relationships shift, or if NVIDIA decides to compete more directly in cloud, Lambda's position could be affected.
 
@@ -105,18 +106,18 @@ Lambda's financial trajectory is one of the more striking in the GPU cloud categ
 
 **Revenue growth:**
 - 2022: ~$20M estimated annual revenue
-- H1 2025: $250M+
-- Trailing twelve months through H1 2025: $520M+
+- [H1 2025: $250M+](https://lambda.ai/blog/lambda-raises-over-1.5b-from-twg-global-usit-to-build-superintelligence-cloud-infrastructure)
+- [Trailing twelve months through H1 2025: $520M+](https://lambda.ai/blog/lambda-raises-over-1.5b-from-twg-global-usit-to-build-superintelligence-cloud-infrastructure)
 - Q3 2025: ~80% YoY growth rate
 
-**Gross margins:** ~50% overall; ~61% on cloud-only revenue. These are strong margins for infrastructure — a sign that Lambda's reserved cluster agreements command meaningful pricing power above raw GPU leasing costs.
+**[Gross margins: ~50% overall; ~61% on cloud-only revenue.](https://lambda.ai/blog/lambda-raises-over-1.5b-from-twg-global-usit-to-build-superintelligence-cloud-infrastructure)** These are strong margins for infrastructure — a sign that Lambda's reserved cluster agreements command meaningful pricing power above raw GPU leasing costs.
 
-**Net loss:** ~$175M trailing twelve months through H1 2025. Lambda is not profitable. At $520M+ revenue, the ~$175M loss reflects capital expenditure and lease costs as Lambda scales GPU fleet and data center capacity.
+**[Net loss: ~$175M trailing twelve months through H1 2025.](https://lambda.ai/blog/lambda-raises-over-1.5b-from-twg-global-usit-to-build-superintelligence-cloud-infrastructure)** Lambda is not profitable. At $520M+ revenue, the ~$175M loss reflects capital expenditure and lease costs as Lambda scales GPU fleet and data center capacity.
 
 **Funding history:**
-- Series D: $480M, February 2025, NVIDIA + B Capital, $2.5B valuation
-- Series E: $1.5B, November 2025, TWG Global + US Innovative Technology Fund, $5.9B valuation
-- Credit facility: $1B senior secured, May 2026
+- [Series D: $480M, February 2025](https://lambda.ai/blog/lambda-raises-480m-to-expand-ai-cloud-platform), led by Andra Capital and SGW, $2.5B valuation
+- [Series E: $1.5B, November 2025](https://lambda.ai/blog/lambda-raises-over-1.5b-from-twg-global-usit-to-build-superintelligence-cloud-infrastructure), TWG Global + US Innovative Technology Fund, $5.9B valuation
+- [Credit facility: $1B senior secured, May 2026](https://lambda.ai/blog/lambda-closes-1-billion-senior-secured-credit-facility)
 - Pre-IPO round: ~$350M reportedly in discussion, Mubadala Capital (as of early 2026)
 
 **IPO:** Lambda is targeting an H2 2026 public offering. Secondary market share prices have appreciated ~12% in the 90 days prior to the credit facility announcement.
@@ -127,7 +128,7 @@ The $1B credit facility (closed May 2026) was framed explicitly as fueling "giga
 
 ## Major Deals and Customers
 
-**Microsoft:** In November 2025, Lambda announced a multibillion-dollar, multi-year agreement with Microsoft to deploy tens of thousands of NVIDIA GPUs — including GB300 NVL72 systems — in Lambda's liquid-cooled U.S. data centers. Microsoft has reportedly worked with Lambda for 8+ years; this deal formalizes and dramatically scales that relationship. Microsoft uses Lambda's infrastructure for its own AI workloads and model training.
+**Microsoft:** [In November 2025, Lambda announced a multibillion-dollar, multi-year agreement with Microsoft](https://lambda.ai/blog/lambda-announces-multibillion-dollar-agreement-with-microsoft-to-deploy-ai-infrastructure-powered-by-tens-of-thousands-of-nvidia-gpus) to deploy tens of thousands of NVIDIA GPUs — including GB300 NVL72 systems — in Lambda's liquid-cooled U.S. data centers. Microsoft has reportedly worked with Lambda for 8+ years; this deal formalizes and dramatically scales that relationship. Microsoft uses Lambda's infrastructure for its own AI workloads and model training.
 
 **NVIDIA:** The $1.5B, 18,000-GPU leaseback described above. NVIDIA uses Lambda compute for developer programs, model testing, and inference at scale.
 
@@ -159,7 +160,7 @@ Lambda's infrastructure buildout parallels CoreWeave's approach: own or control 
 
 Lambda underwent a significant leadership transition in early-mid 2026:
 
-- **Michel Combes** — appointed CEO effective May 2026 (former CEO of SoftBank Group International, former CEO of Altice)
+- **[Michel Combes](https://www.businesswire.com/news/home/20260505895594/en/Lambda-Assembles-Leadership-Team-to-Power-Gigawatt-Scale-AI-Infrastructure-for-the-Superintelligence-Era)** — appointed CEO effective May 2026 (former CEO of SoftBank Group International, former CEO of Altice)
 - **Stephen Balaban** — co-founder, moved to CTO role full-time with Combes' appointment
 - **Michael Balaban** — co-founder, Chief Product Officer
 - **John Donovan** — Chairman of the Board (former CEO of AT&T Communications)

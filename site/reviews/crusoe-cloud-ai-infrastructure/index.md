@@ -22,14 +22,14 @@ The first product was **Digital Flare Mitigation (DFM)**: modular computing unit
 By 2023, Crusoe launched **Crusoe Cloud** as a full public cloud platform — GPU clusters for AI training, inference, and batch workloads. The pitch to customers: NVIDIA's best hardware, running on energy that would have been wasted or flared, at costs that could undercut hyperscalers.
 
 The company has raised over $2 billion in known funding in the past two years alone:
-- **Series D**: $600 million (December 2024), led by Founders Fund
-- **Series E**: $1.375 billion (October 2025) at a valuation above $10 billion, co-led by Valor Equity Partners and Mubadala Capital, with participation from NVIDIA, Founders Fund, and Fidelity
+- **Series D**: [$600 million (December 2024)](https://www.globenewswire.com/news-release/2024/12/12/2996138/0/en/Crusoe-Closes-600M-in-Series-D-Round-at-2-8-Billion-Valuation-to-Power-AI.html), led by Founders Fund
+- **Series E**: [$1.375 billion (October 2025)](https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-e-funding) at a valuation above $10 billion, co-led by Valor Equity Partners and Mubadala Capital, with participation from NVIDIA, Founders Fund, and Fidelity
 
 Earlier rounds aren't all public, but the recent capital raise trajectory tells the story: Crusoe grew fast enough that some of the sharpest infrastructure investors — including NVIDIA itself — bet on it at a $10 billion valuation.
 
-Crusoe reported approximately $276 million in revenue for 2024. For 2025, the company projected approximately $998 million — a 262% increase. In a February 2026 update, Crusoe reported approximately 17x year-over-year growth in total contract value added, 150% growth in cloud ARR, and 70% growth in new customer logos. Cloud bookings grew 5x in the first three quarters of 2025 compared to the prior year.
+Crusoe [reported approximately $276 million in revenue for 2024](https://www.globenewswire.com/news-release/2024/12/12/2996138/0/en/Crusoe-Closes-600M-in-Series-D-Round-at-2-8-Billion-Valuation-to-Power-AI.html). For 2025, the company projected [approximately $998 million — a 262% increase](https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-e-funding). In a [February 2026 update](https://www.crusoe.ai/resources/newsroom), Crusoe reported approximately 17x year-over-year growth in total contract value added, 150% growth in cloud ARR, and 70% growth in new customer logos. [Cloud bookings grew 5x in the first three quarters of 2025](https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-e-funding) compared to the prior year.
 
-Fast Company ranked Crusoe on its **2026 Most Innovative Companies** list. Semianalysis awarded Crusoe Cloud its **"Gold" designation** in the GPU Cloud Cluster Max Rating system — a rigorous third-party assessment of cluster quality.
+[Fast Company ranked Crusoe](https://www.crusoe.ai/resources/newsroom/crusoe-named-to-fast-companys-list-of-the-worlds-most-innovative-companies-of-2026) on its **2026 Most Innovative Companies** list. [Semianalysis awarded Crusoe Cloud its **"Gold" designation**](https://www.globenewswire.com/news-release/2025/03/28/3051391/0/en/Crusoe-Cloud-Achieves-Gold-Status-in-The-GPU-Cloud-Cluster-Max-Rating-System-from-SemiAnalysis.html) in the GPU Cloud Cluster Max Rating system — a rigorous third-party assessment of cluster quality.
 
 ---
 
@@ -37,9 +37,9 @@ Fast Company ranked Crusoe on its **2026 Most Innovative Companies** list. Semia
 
 Crusoe's most prominent contract is the build-out of the **Abilene, Texas Stargate site** — the flagship campus of the OpenAI/Oracle/SoftBank AI infrastructure initiative announced in January 2025.
 
-Crusoe built what has been described as the most complete Stargate site to date: a 1.2 gigawatt campus with 8 planned buildings on Lancium's Clean Campus. Four buildings were operational as of early 2026, housing NVIDIA Blackwell (GB200) chips. The campus received $11.6 billion in financing — one of the largest data center financing packages in history.
+Crusoe built what has been described as the most complete Stargate site to date: a [1.2 gigawatt campus with 8 planned buildings on Lancium's Clean Campus](https://www.datacenterdynamics.com/en/news/crusoe-secures-116bn-in-debt-and-equity-for-openais-stargate-data-center-campus-in-abilene-texas/). Four buildings were operational as of early 2026, housing NVIDIA Blackwell (GB200) chips. The campus received [$11.6 billion in financing](https://www.datacenterdynamics.com/en/news/crusoe-secures-116bn-in-debt-and-equity-for-openais-stargate-data-center-campus-in-abilene-texas/) — one of the largest data center financing packages in history.
 
-The relationship hit turbulence in 2026. A multi-day outage caused by winter weather affecting liquid cooling equipment reportedly strained relations between Crusoe and OpenAI. Oracle and OpenAI subsequently canceled plans to expand the Abilene campus further. However, Microsoft stepped in: Crusoe is building two new "AI factory" buildings and an attached 900 megawatt power plant for Microsoft in Abilene, adjacent to the Stargate campus.
+The relationship hit turbulence in 2026. [A multi-day outage caused by winter weather affecting liquid cooling equipment reportedly strained relations between Crusoe and OpenAI.](https://www.datacenterdynamics.com/en/news/oracleopenai-drop-plans-to-expand-flagship-abilene-stargate-site-meta-in-talks-to-pick-up-crusoe-capacity-with-nvidias-help/) [Oracle and OpenAI subsequently canceled plans to expand the Abilene campus further.](https://www.tomshardware.com/tech-industry/oracle-and-openai-scrap-planned-600mw-abilene-expansion) However, Microsoft stepped in: [Crusoe is building two new "AI factory" buildings and an attached 900 megawatt power plant for Microsoft in Abilene](https://www.globenewswire.com/news-release/2026/03/27/3263786/0/en/crusoe-announces-new-900-mw-ai-factory-campus-in-abilene-texas-to-support-microsoft-ai-infrastructure), adjacent to the Stargate campus.
 
 The transition from OpenAI to Microsoft as the anchor tenant is notable in both directions. It reflects OpenAI's frequently shifting demand forecasts creating tension with infrastructure partners. It also demonstrates Crusoe's position as a trusted tier-1 builder for multiple hyperscalers — not a one-customer story.
 
@@ -83,8 +83,8 @@ This is Crusoe's direct play against Groq, Together AI, Fireworks AI, and simila
 
 Crusoe built proprietary inference infrastructure on top of standard vLLM:
 
-- **MemoryAlloy**: A cluster-wide KV cache system that stores and reuses prompt prefills across requests. When multiple users send the same or similar system prompts (a common pattern in production applications), MemoryAlloy eliminates redundant prefill computation. The company claims up to **9.9x faster time-to-first-token** for real-world workloads compared to baseline vLLM.
-- **Speculative decoding + dynamic batching**: Increases throughput up to **5x tokens/second** versus baseline vLLM for the same hardware, according to Crusoe's benchmarks (tested on Llama 3.3 70B).
+- **MemoryAlloy**: A cluster-wide KV cache system that stores and reuses prompt prefills across requests. When multiple users send the same or similar system prompts (a common pattern in production applications), MemoryAlloy eliminates redundant prefill computation. The company claims [up to **9.9x faster time-to-first-token**](https://www.crusoe.ai/resources/blog/crusoe-managed-inference-optimize-performance-for-demanding-ai-workloads) for real-world workloads compared to baseline vLLM.
+- **Speculative decoding + dynamic batching**: [Increases throughput up to **5x tokens/second** versus baseline vLLM](https://www.crusoe.ai/resources/newsroom/crusoe-launches-managed-inference-delivering-breakthrough-speed-for-production-ai) for the same hardware, according to Crusoe's benchmarks (tested on Llama 3.3 70B).
 
 These are meaningful optimizations for production workloads — the KV cache sharing in particular addresses a real inefficiency that most inference providers ignore.
 

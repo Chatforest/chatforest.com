@@ -6,6 +6,7 @@ og_description: "Fireworks AI (fireworks.ai): enterprise inference and fine-tuni
 card_description: "Fireworks AI (fireworks.ai) is an enterprise inference and fine-tuning platform built by seven co-founders from Meta's PyTorch team — five of whom were core PyTorch contributors. **$250M Series C (October 2025)** at a **$4 billion valuation** led by Lightspeed and Sequoia; **$280M+ ARR**; 10,000+ enterprise customers including Uber, Samsung, Notion, Shopify, Cursor, Vercel, and DoorDash. Custom **FireAttention** CUDA kernels achieve **167–174 t/s on DeepSeek V4 Pro** — 5x faster than DeepInfra and Novita AI at identical pricing, with the full **1M token context window** that DeepInfra truncates to 66k. Full managed fine-tuning pipeline: SFT, DPO, Reinforcement Fine-Tuning (November 2025), vision-language fine-tuning. 400+ models — serverless API, dedicated deployments (H100–B300), batch inference (50% discount), and prompt caching. Strategic investors include NVIDIA and AMD. Weakness: not the price leader (Novita underbids on most shared models); modest image generation catalog vs. Novita's 10,000+; no meaningful free tier; Hathora acquisition too recent to evaluate. Part of our **AI/ML Tools** and **Developer Tools** categories. Rating: 4/5."
 last_refreshed: 2026-05-08
 categories: ["/categories/ai-ml-tools/", "/categories/developer-tools/"]
+sources_audited: 2026-07-26
 ---
 
 Every recent inference provider review has a Fireworks problem. Not with the product — with the benchmark. When comparing providers on DeepSeek V4 Pro throughput, Fireworks keeps showing up as the number nobody else can match.
@@ -34,12 +35,12 @@ Part of our **[AI/ML Tools category](/categories/ai-ml-tools/)** and **[Develope
 | **Co-founders** | 7 total — 5 from Meta PyTorch team, 1 Meta ads infrastructure, 1 Google Vertex AI |
 | **Series A** | $25M (June 2023, Benchmark + Sequoia) |
 | **Series B** | $52M (March 2024) |
-| **Series C** | $250M (October 2025, Lightspeed lead + Index Ventures + Sequoia + NVIDIA + AMD + MongoDB + Databricks) |
+| **Series C** | [$250M (October 2025)](https://www.businesswire.com/news/home/20251028604819/en/Fireworks-AI-Raises-$250M-Series-C-to-Lead-the-AI-Inference-Market), Lightspeed lead + Index Ventures + Sequoia + NVIDIA + AMD + MongoDB + Databricks |
 | **Total raised** | $327M+ (including secondary) |
-| **Valuation** | $4 billion (October 2025) |
-| **ARR** | $280M+ (October 2025) |
-| **Customers** | 10,000+ enterprise (10x growth from Series B to Series C) |
-| **Tokens processed** | 10+ trillion per day (October 2025) |
+| **Valuation** | [$4 billion (October 2025)](https://www.businesswire.com/news/home/20251028604819/en/Fireworks-AI-Raises-$250M-Series-C-to-Lead-the-AI-Inference-Market) |
+| **ARR** | [$280M+ (October 2025)](https://www.businesswire.com/news/home/20251028604819/en/Fireworks-AI-Raises-$250M-Series-C-to-Lead-the-AI-Inference-Market) |
+| **Customers** | [10,000+ enterprise (10x growth from Series B to Series C)](https://fireworks.ai/blog/series-c) |
+| **Tokens processed** | [10+ trillion per day (October 2025)](https://fireworks.ai/blog/series-c) |
 | **Model catalog** | 400+ models (150+ LLMs, plus vision, image, audio, embeddings, rerankers) |
 | **API compatibility** | OpenAI-compatible drop-in |
 | **Context window** | Up to 1M tokens (DeepSeek V4 Pro, Llama 4 Maverick/Scout) |
@@ -65,9 +66,9 @@ That turned out to be true.
 
 ## FireAttention: Why the Speed Gap Is Real
 
-In January 2024, Fireworks published details on FireAttention V1 — custom CUDA kernels for the attention computation at the heart of transformer models. The claim: 4x faster than vLLM through quantization-aware kernel design with "~no quality tradeoffs."
+In January 2024, Fireworks published details on [FireAttention V1](https://fireworks.ai/blog/fire-attention-serving-open-source-models-4x-faster-than-vllm-by-quantizing-with-no-tradeoffs) — custom CUDA kernels for the attention computation at the heart of transformer models. The claim: [4x faster than vLLM](https://fireworks.ai/blog/fire-attention-serving-open-source-models-4x-faster-than-vllm-by-quantizing-with-no-tradeoffs) through quantization-aware kernel design with "~no quality tradeoffs."
 
-In June 2024, FireAttention V2 extended the advantage to long-context inference: 12x faster for long-context workloads compared to prior approaches. This matters because attention computation scales quadratically with sequence length — the longer the context window, the more expensive each token becomes. FireAttention V2 made real-time, online inference practical at context lengths that previously only worked in batch processing.
+In June 2024, [FireAttention V2](https://fireworks.ai/blog/fireattention-v2-long-context-inference) extended the advantage to long-context inference: [12x faster for long-context workloads](https://fireworks.ai/blog/fireattention-v2-long-context-inference) compared to prior approaches. This matters because attention computation scales quadratically with sequence length — the longer the context window, the more expensive each token becomes. FireAttention V2 made real-time, online inference practical at context lengths that previously only worked in batch processing.
 
 The combination of custom kernels, hardware-specific quantization (FP8/FP4 where quality-appropriate), speculative decoding, and predicted outputs produces the throughput benchmarks that show up in third-party measurements. For DeepSeek V4 Pro — a 671B parameter mixture-of-experts model — Artificial Analysis' 72-hour measurements consistently show:
 
@@ -175,10 +176,10 @@ DeepSeek V4 Pro pricing ($1.74/$3.48) matches DeepInfra and Novita at the market
 
 ### Fireworks-Native Models
 
-- **FireFunction V2** (June 2024) — function-calling optimized model claimed to match GPT-4o on function calling benchmarks at 2.5x speed and 10% of the cost
+- **[FireFunction V2](https://fireworks.ai/blog/firefunction-v2-launch-post)** (June 2024) — function-calling optimized model claimed to [match GPT-4o on function calling benchmarks at 2.5x speed and 10% of the cost](https://fireworks.ai/blog/firefunction-v2-launch-post)
 - **FireLLaVA 13B** — "first commercially permissive open-source LLaVA model" (January 2024)
 - **Fireworks f1** — reasoning model (November 2024)
-- **Whisper inference** — claimed 20x faster than OpenAI's own Whisper API (December 2024)
+- **[Whisper inference](https://fireworks.ai/blog/audio-transcription-launch)** — claimed [20x faster than OpenAI's own Whisper API](https://fireworks.ai/blog/audio-transcription-launch) (December 2024)
 
 ### Day-0 and Exclusive Access
 
@@ -240,7 +241,7 @@ These integrations matter for enterprises with existing cloud commitments. If a 
 
 ### Infrastructure Expansion: The Hathora Acquisition
 
-In March 2026, Fireworks acquired Hathora, a gaming-grade container orchestration platform covering 14 regions across multiple bare-metal providers and 4 clouds. The stated goal: smarter global request routing and sub-second latency globally.
+In March 2026, [Fireworks acquired Hathora](https://fireworks.ai/blog/fireworks-acquires-hathora), a gaming-grade container orchestration platform covering 14 regions across multiple bare-metal providers and 4 clouds. The stated goal: smarter global request routing and sub-second latency globally.
 
 The acquisition is recent enough that benchmark data does not yet reflect the Hathora integration. Fireworks' current Artificial Analysis measurements are strong — the impact, positive or negative, has not been measured.
 
@@ -306,7 +307,7 @@ The October 2025 Series C closed at $250 million, valuing Fireworks at $4 billio
 
 The metrics disclosed alongside the raise were the more telling data point: $280M+ annualized revenue, 10,000+ enterprise customers, 10 trillion tokens processed daily. In a category where many well-funded startups are still pre-revenue, Fireworks is operating at meaningful commercial scale. The $4B valuation at $280M ARR implies a ~14x revenue multiple — high, but not exceptional for a category leader at this growth rate.
 
-The customer list confirms the enterprise positioning. Notion reduced latency from ~2 seconds to 350 milliseconds. Vercel reported 40x faster performance on their code-fixing model. Quora achieved 3x response-time improvement. These are production benchmarks from named enterprise customers at scale — not lab results.
+The customer list confirms the enterprise positioning. [Notion reduced latency from ~2 seconds to 350 milliseconds. Vercel reported 40x faster performance on their code-fixing model. Quora achieved 3x response-time improvement.](https://fireworks.ai/blog/series-c) These are production benchmarks from named enterprise customers at scale — not lab results.
 
 ---
 

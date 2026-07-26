@@ -6,9 +6,10 @@ og_description: "Modal turns GPU infrastructure into Python functions. $87M Seri
 content_type: "Review"
 card_description: "Modal is the serverless GPU cloud where infrastructure is defined in Python decorators — no Dockerfiles, no Kubernetes, no instance management. Founded by ex-Spotify and Better.com CTO Erik Bernhardsson. $87M Series B led by Lux Capital (October 2025). 20,000+ concurrent GPUs across AWS, GCP, Azure, and OCI. GPU memory snapshotting slashes cold starts from 118 seconds to 12. OpenAI chose Modal Sandboxes as the official execution environment for the OpenAI Agents SDK. Customers include Runway, Ramp, Suno, Harvey AI, Physical Intelligence, and Quora."
 last_refreshed: 2026-05-08
+sources_audited: 2026-07-26
 ---
 
-**At a glance:** Modal ([modal.com](https://modal.com/)) is a serverless cloud computing platform purpose-built for AI and ML workloads. The defining feature: infrastructure is declared as Python decorators — no Dockerfiles to write, no Kubernetes to configure, no cloud accounts to manage. Users annotate functions with `@app.function()`, specify GPU type and dependencies in Python, and Modal handles containerization, scheduling, and billing per second. Founded by **Erik Bernhardsson** (former CTO of Better.com, longtime ML lead at Spotify), Modal raised an **$87 million Series B** led by Lux Capital in October 2025. The platform runs **20,000+ concurrent GPUs** pooled across four major cloud hyperscalers. In April 2026, **OpenAI chose Modal Sandboxes as the official execution environment** for the OpenAI Agents SDK. **Rating: 4/5.**
+**At a glance:** Modal ([modal.com](https://modal.com/)) is a serverless cloud computing platform purpose-built for AI and ML workloads. The defining feature: infrastructure is declared as Python decorators — no Dockerfiles to write, no Kubernetes to configure, no cloud accounts to manage. Users annotate functions with `@app.function()`, specify GPU type and dependencies in Python, and Modal handles containerization, scheduling, and billing per second. Founded by **Erik Bernhardsson** (former CTO of Better.com, longtime ML lead at Spotify), Modal raised an **[$87 million Series B](https://modal.com/blog/announcing-our-series-b)** led by Lux Capital in October 2025. The platform runs **20,000+ concurrent GPUs** pooled across four major cloud hyperscalers. In April 2026, **OpenAI chose Modal Sandboxes as the official execution environment** for the OpenAI Agents SDK. **Rating: 4/5.**
 
 Modal is part of our **[GPU Cloud category](/categories/gpu-cloud/)**.
 
@@ -75,7 +76,7 @@ Cold starts are the original sin of serverless GPU compute. Loading a 70-billion
 
 Modal's answer, launched in late 2025, is **GPU Memory Snapshotting**. After a container completes its initialization — model weights loaded into VRAM, inference engine warmed up, KV caches initialized — Modal captures a snapshot of the full GPU and CPU memory state. On subsequent cold starts, instead of repeating the entire initialization sequence, Modal restores from snapshot.
 
-The results are significant. For Ministral 3 3B:
+The results are significant. [For Ministral 3 3B](https://modal.com/blog/gpu-mem-snapshots):
 - Cold start without snapshotting: ~118 seconds median
 - Cold start with snapshotting: ~12 seconds median
 - Improvement: ~10× faster
@@ -100,7 +101,7 @@ A Sandbox is a programmable, isolated Linux execution environment. It supports:
 
 The intended use case: AI coding agents that need to run the code they generate. Instead of agents hallucinating results, they execute code in an isolated environment and observe real output.
 
-**In April 2026, OpenAI integrated Modal Sandboxes as the official execution environment for the OpenAI Agents SDK.** This is a meaningful endorsement — OpenAI evaluated available sandbox providers and chose Modal for its combination of isolation, GPU access, programmability, and latency. When a developer builds an agent with the OpenAI Agents SDK and needs code execution, Modal is the default path.
+**In April 2026, [OpenAI integrated Modal Sandboxes as the official execution environment for the OpenAI Agents SDK](https://modal.com/blog/building-with-modal-and-the-openai-agent-sdk).** This is a meaningful endorsement — OpenAI evaluated available sandbox providers and chose Modal for its combination of isolation, GPU access, programmability, and latency. When a developer builds an agent with the OpenAI Agents SDK and needs code execution, Modal is the default path.
 
 Other Sandbox customers include Quora (saving "2 engineers' worth of ongoing time"), Ramp (whose Ramp Inspect coding agent now initiates over 50% of all merged PRs at the company), and Mistral AI (code interpreter infrastructure).
 

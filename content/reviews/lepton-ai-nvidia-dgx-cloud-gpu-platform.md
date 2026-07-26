@@ -6,6 +6,7 @@ og_description: "Lepton AI was acquired by NVIDIA in April 2025 for 'hundreds of
 content_type: "Review"
 card_description: "Lepton AI started in 2023 as a 'Heroku for AI' — a Python-native platform for deploying GPU-backed AI services with minimal infrastructure overhead. Its open-source Photon framework and viral search_with_lepton demo made it a developer darling. In April 2025, NVIDIA acquired the ~20-person team for hundreds of millions of dollars, rebranding the platform as NVIDIA DGX Cloud Lepton in May 2025. It now aggregates compute from 25+ cloud partners including CoreWeave, Lambda, AWS, Nebius, and Crusoe under a unified developer API backed by NVIDIA NIM microservices."
 last_refreshed: 2026-05-08
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** Lepton AI ([lepton.ai](https://www.nvidia.com/en-us/data-center/dgx-cloud-lepton/)) no longer exists as an independent company. In April 2025, NVIDIA acquired the San Francisco–based startup for "several hundred million dollars" — one of the largest acqui-hires in AI infrastructure history on a per-employee basis. The platform, launched in 2023 by **Yangqing Jia** (creator of the Caffe deep learning framework) and **Junjie Bai** (former AI Platform Director at Alibaba Cloud), has been rebranded as **NVIDIA DGX Cloud Lepton**: a unified developer platform that aggregates GPU compute from more than 25 cloud providers, runs NVIDIA NIM microservices, and gives teams access to tens of thousands of GPUs — H100s, H200s, B200s — without committing to a single cloud. **Rating: 4/5.**
@@ -92,7 +93,7 @@ gpud remains open source (Apache 2.0) at its original GitHub repository, with 47
 
 ## The NVIDIA Acquisition: April 2025
 
-In April 2025, NVIDIA completed its acquisition of Lepton AI for **"several hundred million dollars"** — the exact figure was not publicly disclosed, though analysts placed estimates in the $300–500M range. The deal closed April 8, 2025, with reports surfacing roughly two weeks earlier.
+In April 2025, [NVIDIA completed its acquisition of Lepton AI](https://technode.com/2025/04/09/nvidia-acquires-chinese-gpu-cloud-startup-lepton-ai-report/) for **"several hundred million dollars"** — the exact figure was not publicly disclosed, though analysts placed estimates in the $300–500M range. The deal closed April 8, 2025, with reports surfacing roughly two weeks earlier.
 
 For context: Lepton AI had approximately 20 employees at the time of acquisition. That implies a per-employee acquisition price of roughly $15–25M — a striking outcome for a two-year-old startup.
 
@@ -108,7 +109,7 @@ NVIDIA is the dominant GPU hardware vendor, but it had historically been a compo
 
 The strategic logic was also careful: a marketplace model where Lepton aggregated CoreWeave, Lambda, AWS, and others meant NVIDIA wasn't competing with its own cloud customers — it was sitting above them, providing the developer experience layer while hardware revenues continued to flow to its ecosystem.
 
-Jensen Huang described the move in infrastructure terms: "Together with our NCPs, we're building a planetary-scale AI factory."
+[Jensen Huang described the move in infrastructure terms](https://nvidianews.nvidia.com/news/nvidia-announces-dgx-cloud-lepton-to-connect-developers-to-nvidias-global-compute-ecosystem): "Together with our NCPs, we're building a planetary-scale AI factory."
 
 ---
 

@@ -87,7 +87,7 @@ gpud remains open source (Apache 2.0) at its original GitHub repository, with 47
 
 ## The NVIDIA Acquisition: April 2025
 
-In April 2025, NVIDIA completed its acquisition of Lepton AI for **"several hundred million dollars"** — the exact figure was not publicly disclosed, though analysts placed estimates in the $300–500M range. The deal closed April 8, 2025, with reports surfacing roughly two weeks earlier.
+In April 2025, [NVIDIA completed its acquisition of Lepton AI](https://technode.com/2025/04/09/nvidia-acquires-chinese-gpu-cloud-startup-lepton-ai-report/) for **"several hundred million dollars"** — the exact figure was not publicly disclosed, though analysts placed estimates in the $300–500M range. The deal closed April 8, 2025, with reports surfacing roughly two weeks earlier.
 
 For context: Lepton AI had approximately 20 employees at the time of acquisition. That implies a per-employee acquisition price of roughly $15–25M — a striking outcome for a two-year-old startup.
 
@@ -103,7 +103,7 @@ NVIDIA is the dominant GPU hardware vendor, but it had historically been a compo
 
 The strategic logic was also careful: a marketplace model where Lepton aggregated CoreWeave, Lambda, AWS, and others meant NVIDIA wasn't competing with its own cloud customers — it was sitting above them, providing the developer experience layer while hardware revenues continued to flow to its ecosystem.
 
-Jensen Huang described the move in infrastructure terms: "Together with our NCPs, we're building a planetary-scale AI factory."
+[Jensen Huang described the move in infrastructure terms](https://nvidianews.nvidia.com/news/nvidia-announces-dgx-cloud-lepton-to-connect-developers-to-nvidias-global-compute-ecosystem): "Together with our NCPs, we're building a planetary-scale AI factory."
 
 ---
 

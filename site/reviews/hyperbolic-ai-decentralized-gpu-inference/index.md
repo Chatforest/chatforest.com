@@ -9,7 +9,7 @@ Jasper Zhang's UC Berkeley dissertation studied hyperbolic manifolds — curved 
 
 That company, Hyperbolic, launched its public platform in 2024 with a simple premise: **"We already have enough GPUs. We just need to share them better."** Data centers sit partially idle at night. GPU clusters reserved for training jobs go unused during off-peak hours. Consumer machines with RTX 4090s wait dormant. Hyperbolic's thesis is that aggregating this underutilized capacity — rather than building new data centers — is the correct answer to AI infrastructure's scaling problem.
 
-Whether that thesis proves out at scale is still an open question. But along the way, Hyperbolic has built something that Andrej Karpathy — the former Tesla AI Director and OpenAI co-founder — called his favorite place to interact with base language models. That's not a claim most inference startups can make.
+Whether that thesis proves out at scale is still an open question. But along the way, Hyperbolic has built something that Andrej Karpathy — the former Tesla AI Director and OpenAI co-founder — [called his favorite place to interact with base language models](https://www.hyperbolic.ai/blog/february-2025-monthly-recap). That's not a claim most inference startups can make.
 
 ---
 
@@ -30,8 +30,8 @@ The founding story involves a specific frustration Jin encountered: reading an a
 Hyperbolic has raised $20 million across three rounds:
 
 - **Pre-seed**: $725K (November 2022). Early backers included Chapter One, Samsung Next, and Modular Capital.
-- **Seed**: $7 million (July 2024). Led by Polychain Capital and Lightspeed Faction, with angels including Balaji Srinivasan, Illia Polosukhin (NEAR Protocol), and Sandeep Nailwal (Polygon co-founder).
-- **Series A**: $12 million (December 2024). Led by Variant Fund and Polychain Capital, with participation from Chapter One, Lightspeed Faction, Bankless Ventures, Alumni Ventures, and others.
+- **[Seed: $7 million (July 2024)](https://www.hyperbolic.ai/blog/hyperbolic-secures-7-million-seed-funding-round)**. Led by Polychain Capital and Lightspeed Faction, with angels including Balaji Srinivasan, Illia Polosukhin (NEAR Protocol), and Sandeep Nailwal (Polygon co-founder).
+- **[Series A: $12 million (December 2024)](https://finance.yahoo.com/news/ai-company-hyperbolic-raises-12-160000493.html)**. Led by Variant Fund and Polychain Capital, with participation from Chapter One, Lightspeed Faction, Bankless Ventures, Alumni Ventures, and others.
 
 One thing stands out in that investor list: it is heavily weighted toward Web3 and blockchain-native funds. Polychain Capital (crypto fund), Variant Fund (crypto/Web3 focus), Bankless Ventures (crypto media and investing), Wintermute Ventures (crypto market maker), and Balaji Srinivasan (former a16z partner, prominent crypto advocate) are not the typical backers of an AI infrastructure startup.
 
@@ -164,8 +164,8 @@ Hyperbolic has published monthly recaps with specific metrics:
 
 - **End of 2024**: 98,000 total users, 25,000+ inference users
 - **January 2025**: ~57,000 monthly active users
-- **February 2025**: 100,000+ total developers; 57,000 new users in that month alone (78% MoM growth); 32B tokens processed; 22,000 inference users
-- **April 2025**: 195,000+ developers; 112B+ tokens processed (320% growth from March); 6,500+ GPU rentals; 127,000+ GPU hours
+- **[February 2025](https://www.hyperbolic.ai/blog/february-2025-monthly-recap)**: 100,000+ total developers; 57,000 new users in that month alone (78% MoM growth); 32B tokens processed; 22,000 inference users
+- **[April 2025](https://www.hyperbolic.ai/blog/monthly-recap-may-2025)**: 195,000+ developers; 112B+ tokens processed (320% growth from March); 6,500+ GPU rentals; 127,000+ GPU hours
 
 The 320% month-over-month token growth in March→April 2025 is striking. Much of that was driven by the DeepSeek R1 wave — Hyperbolic's position as an early BF16 R1 provider captured significant overflow demand from developers who couldn't get access through other providers during the R1 launch surge.
 
