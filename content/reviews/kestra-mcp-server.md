@@ -6,11 +6,12 @@ og_description: "Kestra MCP server: two variants for workflow orchestration — 
 content_type: "Review"
 card_description: "Kestra provides two official MCP servers: a Python/Docker server for controlling a live Kestra instance (flow execution, backfill, KV store) and a remote HTTP server at api.kestra.io/v1/mcp for read-only plugin and Blueprint catalog access — no auth required."
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** Kestra provides **two official MCP servers** — a Python/Docker server ([kestra-io/mcp-server-python](https://github.com/kestra-io/mcp-server-python)) for controlling a live Kestra instance, and a remote HTTP endpoint (`https://api.kestra.io/v1/mcp`) for read-only access to Kestra's plugin and Blueprint catalog. Both are **Apache 2.0** licensed. Currently in **Beta**. Part of our **[Data & Analytics MCP category](/categories/data-analytics/)**.
 
-[Kestra](https://kestra.io/) is an **open-source, event-driven workflow orchestration and scheduling platform** — a modern alternative to Apache Airflow. Where Airflow requires Python DAG code, Kestra uses **declarative YAML workflows** that can orchestrate tasks in any language: Python, R, Node.js, Go, Rust, shell, SQL, or containerized jobs. With **26.9k GitHub stars** on the main repository (as of May 2026), a $8M funding announcement in late 2024, and 1,200+ plugins spanning AWS, GCP, Azure, databases, messaging systems, and scripting runtimes, Kestra has established itself as a serious contender in the orchestration space.
+[Kestra](https://kestra.io/) is an **open-source, event-driven workflow orchestration and scheduling platform** — a modern alternative to Apache Airflow. Where Airflow requires Python DAG code, Kestra uses **declarative YAML workflows** that can orchestrate tasks in any language: Python, R, Node.js, Go, Rust, shell, SQL, or containerized jobs. With **26.9k GitHub stars** on the main repository (as of May 2026), a [$8M funding announcement in late 2024](https://www.prnewswire.com/news-releases/kestra-raises-8m-to-lead-the-future-of-orchestration-for-business-critical-workflows-302253610.html), and 1,200+ plugins spanning AWS, GCP, Azure, databases, messaging systems, and scripting runtimes, Kestra has established itself as a serious contender in the orchestration space.
 
 The MCP server — announced as part of Kestra 1.0 (the "Declarative Agentic Orchestration Platform") — brings AI agents into that orchestration layer, enabling agents to discover plugins, generate flow YAML, trigger executions, and manage workflow state entirely through conversation.
 

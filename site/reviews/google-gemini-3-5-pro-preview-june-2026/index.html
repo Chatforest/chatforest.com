@@ -89,11 +89,11 @@
 <h2 id="the-three-regressions-pro-needs-to-fix">The Three Regressions Pro Needs to Fix</h2>
 <p>When Gemini 3.5 Flash was benchmarked against Gemini 3.1 Pro on hard reasoning tasks, three categories showed clear regressions:</p>
 <h3 id="1-hard-reasoning--humanitys-last-exam">1. Hard Reasoning — Humanity&rsquo;s Last Exam</h3>
-<p>Humanity&rsquo;s Last Exam (HLE) tests expert-level knowledge across physics, mathematics, medicine, and law. Flash dropped approximately <strong>4.2 points</strong> compared to Gemini 3.1 Pro on this benchmark. Flash was explicitly optimized for agentic speed and tool-use — HLE tests a different kind of depth.</p>
+<p>Humanity&rsquo;s Last Exam (HLE) tests expert-level knowledge across physics, mathematics, medicine, and law. Flash dropped measurably compared to Gemini 3.1 Pro on this benchmark. Flash was explicitly optimized for agentic speed and tool-use — HLE tests a different kind of depth.</p>
 <h3 id="2-pattern-matching--arc-agi-2">2. Pattern Matching — ARC-AGI-2</h3>
-<p>ARC-AGI-2 tests abstract reasoning and novel pattern generalization — tasks that require the model to figure out rules rather than retrieve stored knowledge. Flash regressed approximately <strong>5.0 points</strong> compared to Gemini 3.1 Pro. This matters for code review, novel debugging, and any task requiring inference from unfamiliar patterns.</p>
+<p>ARC-AGI-2 tests abstract reasoning and novel pattern generalization — tasks that require the model to figure out rules rather than retrieve stored knowledge. Flash regressed compared to Gemini 3.1 Pro on this benchmark. This matters for code review, novel debugging, and any task requiring inference from unfamiliar patterns.</p>
 <h3 id="3-long-context-retrieval--128k-range">3. Long-Context Retrieval — 128K Range</h3>
-<p>At 128K token context depth, Flash&rsquo;s retrieval accuracy declined roughly <strong>7.6 points</strong> compared to Gemini 3.1 Pro. Both models support 1M token contexts, but the precision at long range differs. For use cases that rely on finding specific information in large documents or long codebases, Flash&rsquo;s 128K-range drop is a practical limitation.</p>
+<p>At 128K token context depth, Flash&rsquo;s retrieval accuracy declined compared to Gemini 3.1 Pro. Both models support 1M token contexts, but the precision at long range differs. For use cases that rely on finding specific information in large documents or long codebases, Flash&rsquo;s 128K-range drop is a practical limitation.</p>
 <p>These three gaps are almost certainly what Pro is designed to close.</p>
 <hr>
 <h2 id="the-cappuccino-leaks">The Cappuccino Leaks</h2>

@@ -2,6 +2,70 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2664 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 14)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 67, reviews/ section batch 14)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/luma-dream-machine-ray-series-ai-video-model-camera-motion-hdr.md** — Added:
+   - Wikipedia Dream Machine link for "1 million users in four days" claim
+   - aiwiki.ai link for "thirty million registered users"
+   - PANews link for December 2024 $90M Series C (Amazon/AMD round)
+   - arxiv.org/abs/2010.02502 for Jiaming Song as DDIM inventor
+   - arxiv.org/abs/2003.08934 for Matthew Tancik as NeRF paper co-author
+   - lumalabs.ai/news/ray3 for Ray3 "first AI video model with 16-bit HDR" claim
+
+2. **reviews/mochi-1-genmo-open-source-video-model-asymmdit-motion-quality.md** — REMOVED: "Ajay Jain co-authored a 2020 foundational paper on diffusion models while at Google Brain" — no primary source found; cut per policy
+
+3. **reviews/anthropic-claude-3-7-sonnet-claude-4-llm-review.md** — Added:
+   - Claude 3 March 2024 announcement link (anthropic.com/news/claude-3-family) for MMLU 86.8%, GPQA 50.4%, HumanEval 84.9%
+   - Updated "200M+ weekly users" → "400M+ weekly users" with TechCrunch Feb 2025 source
+
+4. **reviews/mistral-codestral-22b-code-fill-in-the-middle-llm-review.md** — Added:
+   - mistral.ai/news/codestral/ inline link for HumanEval 81.1% benchmark claim
+   - ai.meta.com link for Code Llama 70B (67%) comparison benchmark
+   - Updated footnote with direct link to Mistral announcement
+
+5. **reviews/kestra-mcp-server.md** — Added:
+   - PR Newswire link for $8M funding announcement (September 2024)
+
+6. **reviews/xai-grok-build-terminal-coding-agent-review.md** — Already well-cited (Sources section has primary links). Added `sources_audited`.
+
+7. **reviews/google-gemini-3-5-pro-preview-june-2026.md** — REMOVED specific unsourced regression point values (4.2, 5.0, 7.6 points) — these were comparative figures from unofficial/leak sources; softened to directional language ("dropped measurably", "regressed", "declined")
+
+8. **reviews/microsoft-build-2026-preview-san-francisco-ai-agents-azure.md** — Preview article; main factual claims linked (Hans India source for SF move; Azure blog for Agent Framework). Added `sources_audited`.
+
+9. **reviews/openai-gpt-5-5-instant-chatgpt-default-model-2026.md** — Added:
+   - Wire Blog link (usewire.io) for independent hallucination analysis
+   - artificialanalysis.ai/evaluations/omniscience for AA-Omniscience benchmark
+
+10. **reviews/magnifica-humanitas-pope-leo-XIV-encyclical-ai-human-dignity-christopher-olah-anthropic-preview-2026.md** — Added:
+    - TechCrunch + NPR links for Pentagon "supply chain risk" label (named company claim — two independent sources)
+    - builtin.com link for Claude Mythos cybersecurity model claim
+    - Time Magazine + Axios links for Jack Clark Oxford lecture 60% AI successor prediction
+
+#### Deploy
+
+- Hugo build: clean (4,147 pages)
+- Deploy throttle not yet cleared at commit time (48 min since last deploy); next run should deploy
+- Hugo build verified clean
+
+#### Running totals
+
+- Previous audited: ~728 pages (as of Run 2663)
+- This run: +10 pages
+- **Total pages with sources_audited: ~738**
+- Remaining unaudited in reviews/: ~332 pages (down from 342)
+
+---
+
 ## Run 2663 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 13) + Deploy
 
 **Mode:** Citation auditor

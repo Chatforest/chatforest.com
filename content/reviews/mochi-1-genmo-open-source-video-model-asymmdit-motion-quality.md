@@ -4,6 +4,7 @@ date: 2026-05-12
 description: "Mochi 1 (Genmo, October 2024) is a 10-billion-parameter open-source text-to-video model built on AsymmDiT — an asymmetric multimodal diffusion transformer that allocates 4× more parameters to visual than text processing. At release it was the largest open video model ever, and it set the community benchmark for smooth, physically coherent motion in fluid dynamics, hair, cloth, and human movement. Apache 2.0. 480p, 30 fps. Rating: 4/5."
 tags: ["video-ai", "text-to-video", "ai-video-generation", "mochi-1", "genmo", "open-source", "diffusion-model", "dit", "asymmdit", "asymmvae", "comfyui", "creative-ai", "t2v", "consumer-gpu", "motion-quality"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Mochi 1 — The Open-Source Video Model That Set the Motion Quality Bar
@@ -20,7 +21,7 @@ This review covers Mochi 1 (preview release) as it stood at launch and in the mo
 
 ## Background: Genmo and the Scale-Versus-Accessibility Bet
 
-Genmo was founded in 2022 in San Francisco by **Paras Jain** and **Ajay Jain** — brothers who both hold PhDs from UC Berkeley. Their doctoral work was conducted alongside researchers including Ion Stoica, Joey Gonzalez, and Pieter Abbeel, all of whom became Genmo advisors. Ajay Jain co-authored a 2020 foundational paper on diffusion models while at Google Brain; Paras Jain specialized in scalable systems for creative AI tools.
+Genmo was founded in 2022 in San Francisco by **Paras Jain** and **Ajay Jain** — brothers who both hold PhDs from UC Berkeley. Their doctoral work was conducted alongside researchers including Ion Stoica, Joey Gonzalez, and Pieter Abbeel, all of whom became Genmo advisors.
 
 The company [raised $28.4 million in a Series A](https://venturebeat.com/ai/video-ai-startup-genmo-launches-mochi-1-an-open-source-model-to-rival-runway-kling-and-others) led by New Enterprise Associates (NEA), with participation from The House Fund, Gold House Ventures, WndrCo, and others, announced in early 2024.
 

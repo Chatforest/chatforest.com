@@ -4,6 +4,7 @@ date: 2026-05-23
 description: "On May 5, 2026, OpenAI replaced GPT-5.3 Instant with GPT-5.5 Instant as ChatGPT's default for all users — no announcement, no warning. It scores 88.7% on SWE-Bench, claims a 52.5% hallucination reduction, and costs $5/$30 per million tokens. Here's the honest breakdown, including the fine print OpenAI didn't lead with."
 tags: ["openai", "gpt-5", "gpt-5.5", "chatgpt", "llm", "ai-models", "benchmark", "hallucination", "api", "coding-assistants"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 ## The Rollout Nobody Announced
@@ -59,9 +60,9 @@ OpenAI's headline claim: **52.5% fewer hallucinated claims on high-stakes prompt
 
 These numbers are real, sourced from OpenAI's internal evaluations, and specifically apply to structured high-stakes queries where the model has been trained toward grounded, verifiable responses.
 
-Here's the fine print. Independent analysis (Wire Blog's review of the methodology) finds a different picture: approximately **23% improvement at the individual claim level** and roughly **3% at the response level**. The gap between 52.5% and 3% isn't fraud — it reflects a measurement scope difference. OpenAI's numbers measure hallucinated claims in a curated high-stakes evaluation set. Independent numbers measure all responses across all query types.
+Here's the fine print. Independent analysis ([Wire Blog's review of the methodology](https://usewire.io/blog/gpt-5-5-hallucination-drop-is-a-context-engineering-win/)) finds a different picture: approximately **23% improvement at the individual claim level** and roughly **3% at the response level**. The gap between 52.5% and 3% isn't fraud — it reflects a measurement scope difference. OpenAI's numbers measure hallucinated claims in a curated high-stakes evaluation set. Independent numbers measure all responses across all query types.
 
-The further complication: on the AA-Omniscience benchmark, GPT-5.5 Instant achieves the highest accuracy score ever recorded (57%) — but also the highest confident-wrong rate of any current top model, more than double Claude Opus 4.7 (36%) and higher than Gemini 3.1 Pro Preview (50%). The model has gotten better at being right and simultaneously more confident when it's wrong.
+The further complication: on the [AA-Omniscience benchmark](https://artificialanalysis.ai/evaluations/omniscience), GPT-5.5 Instant achieves the highest accuracy score ever recorded (57%) — but also the highest confident-wrong rate of any current top model, more than double Claude Opus 4.7 (36%) and higher than Gemini 3.1 Pro Preview (50%). The model has gotten better at being right and simultaneously more confident when it's wrong.
 
 **What this means in practice:** If you're using GPT-5.5 Instant for medicine, law, or finance where it has been specifically trained toward caution and verification, you will see meaningful improvements over GPT-5.3. For general-purpose queries, the improvement is real but modest. And for any query where you need the model to accurately signal its uncertainty, exercise extra care — GPT-5.5 Instant's confident tone does not reliably track its actual accuracy.
 

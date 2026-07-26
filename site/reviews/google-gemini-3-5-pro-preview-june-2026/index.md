@@ -43,15 +43,15 @@ When Gemini 3.5 Flash was benchmarked against Gemini 3.1 Pro on hard reasoning t
 
 ### 1. Hard Reasoning — Humanity's Last Exam
 
-Humanity's Last Exam (HLE) tests expert-level knowledge across physics, mathematics, medicine, and law. Flash dropped approximately **4.2 points** compared to Gemini 3.1 Pro on this benchmark. Flash was explicitly optimized for agentic speed and tool-use — HLE tests a different kind of depth.
+Humanity's Last Exam (HLE) tests expert-level knowledge across physics, mathematics, medicine, and law. Flash dropped measurably compared to Gemini 3.1 Pro on this benchmark. Flash was explicitly optimized for agentic speed and tool-use — HLE tests a different kind of depth.
 
 ### 2. Pattern Matching — ARC-AGI-2
 
-ARC-AGI-2 tests abstract reasoning and novel pattern generalization — tasks that require the model to figure out rules rather than retrieve stored knowledge. Flash regressed approximately **5.0 points** compared to Gemini 3.1 Pro. This matters for code review, novel debugging, and any task requiring inference from unfamiliar patterns.
+ARC-AGI-2 tests abstract reasoning and novel pattern generalization — tasks that require the model to figure out rules rather than retrieve stored knowledge. Flash regressed compared to Gemini 3.1 Pro on this benchmark. This matters for code review, novel debugging, and any task requiring inference from unfamiliar patterns.
 
 ### 3. Long-Context Retrieval — 128K Range
 
-At 128K token context depth, Flash's retrieval accuracy declined roughly **7.6 points** compared to Gemini 3.1 Pro. Both models support 1M token contexts, but the precision at long range differs. For use cases that rely on finding specific information in large documents or long codebases, Flash's 128K-range drop is a practical limitation.
+At 128K token context depth, Flash's retrieval accuracy declined compared to Gemini 3.1 Pro. Both models support 1M token contexts, but the precision at long range differs. For use cases that rely on finding specific information in large documents or long codebases, Flash's 128K-range drop is a practical limitation.
 
 These three gaps are almost certainly what Pro is designed to close.
 

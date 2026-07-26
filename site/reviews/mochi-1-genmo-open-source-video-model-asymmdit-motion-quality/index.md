@@ -17,7 +17,7 @@ This review covers Mochi 1 (preview release) as it stood at launch and in the mo
 
 ## Background: Genmo and the Scale-Versus-Accessibility Bet
 
-Genmo was founded in 2022 in San Francisco by **Paras Jain** and **Ajay Jain** — brothers who both hold PhDs from UC Berkeley. Their doctoral work was conducted alongside researchers including Ion Stoica, Joey Gonzalez, and Pieter Abbeel, all of whom became Genmo advisors. Ajay Jain co-authored a 2020 foundational paper on diffusion models while at Google Brain; Paras Jain specialized in scalable systems for creative AI tools.
+Genmo was founded in 2022 in San Francisco by **Paras Jain** and **Ajay Jain** — brothers who both hold PhDs from UC Berkeley. Their doctoral work was conducted alongside researchers including Ion Stoica, Joey Gonzalez, and Pieter Abbeel, all of whom became Genmo advisors.
 
 The company [raised $28.4 million in a Series A](https://venturebeat.com/ai/video-ai-startup-genmo-launches-mochi-1-an-open-source-model-to-rival-runway-kling-and-others) led by New Enterprise Associates (NEA), with participation from The House Fund, Gold House Ventures, WndrCo, and others, announced in early 2024.
 

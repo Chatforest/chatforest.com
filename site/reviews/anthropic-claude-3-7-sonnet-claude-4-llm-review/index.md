@@ -25,7 +25,7 @@ Claude 1 shipped in March 2023, about three months after ChatGPT. It wasn't publ
 
 **Claude 2.1** (November 2023) extended to 200K tokens and reduced hallucinations measurably on long-context tasks. It was the first model to meaningfully threaten GPT-4's dominance on long-document analysis.
 
-**Claude 3** (March 2024) introduced the three-tier naming convention that Anthropic has maintained: **Haiku** (fast/cheap), **Sonnet** (balanced), **Opus** (most capable). Claude 3 Opus became the first model to exceed GPT-4 across most benchmarks — MMLU 86.8%, GPQA 50.4%, HumanEval 84.9%. Haiku was notable for processing 1,000 tokens per second at a cost that made real-time applications viable.
+**Claude 3** ([March 2024](https://www.anthropic.com/news/claude-3-family)) introduced the three-tier naming convention that Anthropic has maintained: **Haiku** (fast/cheap), **Sonnet** (balanced), **Opus** (most capable). Claude 3 Opus became the first model to exceed GPT-4 across most benchmarks — [MMLU 86.8%, GPQA 50.4%, HumanEval 84.9%](https://www.anthropic.com/news/claude-3-family). Haiku was notable for processing 1,000 tokens per second at a cost that made real-time applications viable.
 
 **Claude 3.5 Sonnet** ([June 2024](https://www.anthropic.com/news/claude-3-5-sonnet)) was the largest competitive repositioning in Claude's history: a Sonnet-tier model that exceeded Claude 3 Opus on GPQA Diamond, HumanEval, and MMLU at roughly one-fifth the cost. The [October 2024 update](https://www.anthropic.com/news/3-5-models-and-computer-use) (claude-3-5-sonnet-20241022) then pushed SWE-bench Verified from ~38% (Opus) to [49%](https://www.anthropic.com/news/swe-bench-sonnet) — the jump that drove developers to move agentic workloads from Opus to Sonnet en masse. The Claude 3.5 Sonnet era — June 2024 through early 2025 — became the period when Claude became the dominant choice for coding-heavy AI applications.
 
@@ -171,7 +171,7 @@ The product demonstrates the practical value of Claude 3.7 Sonnet's SWE-bench ga
 
 **Voice and audio.** Claude is text-and-image only as of writing. It has no native voice mode and no audio input capability. OpenAI's GPT-4o (launched May 2024) processes raw audio tokens and supports real-time voice conversation with <300ms latency. Claude has no equivalent. For voice applications, OpenAI is the clear choice.
 
-**Consumer reach.** ChatGPT has 200M+ weekly active users. Claude.ai has a fraction of that user base. For models evaluated partly on network effects and ecosystem size, this matters.
+**Consumer reach.** [ChatGPT serves 400M+ weekly active users](https://techcrunch.com/2025/02/20/openai-now-serves-400-million-users-every-week/). Claude.ai has a fraction of that user base. For models evaluated partly on network effects and ecosystem size, this matters.
 
 **Open weights.** Neither Claude 3.7 Sonnet nor any Claude 4 model has open weights. For developers who want to run models locally, fine-tune models for specific domains, or avoid dependency on a closed API, Meta's Llama 4 and Mistral's models offer something Claude doesn't.
 

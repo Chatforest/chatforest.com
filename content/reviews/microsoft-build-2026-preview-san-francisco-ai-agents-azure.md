@@ -4,6 +4,7 @@ date: 2026-05-23
 description: "Microsoft Build 2026 heads to Fort Mason, San Francisco (June 2–3) with AI agents as the central theme. Here's what developers can expect from Satya Nadella's keynote, Azure AI Foundry, GitHub Copilot, and the multi-model Copilot platform."
 tags: ["microsoft", "build", "azure", "github-copilot", "ai-agents", "preview"]
 slug: "microsoft-build-2026-preview"
+sources_audited: 2026-07-26
 ---
 
 Microsoft's biggest developer conference [returns to San Francisco](https://www.thehansindia.com/technology/tech-news/microsoft-build-2026-moves-to-san-francisco-set-for-june-23-1053685) on **June 2–3, 2026** — the first time Build has been held in the city since 2017. This year's theme is AI agents, and Microsoft is treating the event less like a product launch parade and more like a hands-on engineering summit. Here's what we know heading in.

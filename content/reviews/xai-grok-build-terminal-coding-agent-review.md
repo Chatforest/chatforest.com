@@ -10,6 +10,7 @@ rating: 3
 ratingHalf: true
 author: "ChatForest"
 last_refreshed: 2026-05-26
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** [Grok Build launched in May 2026](https://x.ai/news/grok-build-cli) as an early access release — xAI's entry into the terminal-native agentic coding market. Powered by [Grok Build 0.1](https://x.ai/news/grok-build-0-1) (a purpose-built agentic coding model) with 256K token context. Up to 8 parallel subagents, each isolated in its own Git worktree. **Access expanded May 24, 2026 to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers** — a significant drop from the original SuperGrok Heavy-only requirement. SWE-Bench Verified: 70.8%. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.

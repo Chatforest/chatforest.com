@@ -4,13 +4,14 @@ date: 2026-05-12
 description: "Dream Machine (Luma AI, June 2024) is a closed-source commercial text-to-video and image-to-video platform built on a 3D volumetric latent architecture inherited from Luma's NeRF work. The Ray series of model generations — Ray2 (Jan 2025), Ray Flash 2 (Mar 2025), Ray3 (Sep 2025), Ray3.14 (Jan 2026) — has progressively improved resolution, speed, and cinematic precision, with Ray3 being the first video AI to produce native 16-bit HDR in professional color pipelines. Best known for physically grounded camera motion, now with 30M+ registered users, $4B+ valuation. Closed-source, subscription-based, no open weights. Rating: 4/5."
 tags: ["video-ai", "text-to-video", "image-to-video", "ai-video-generation", "luma-ai", "dream-machine", "ray2", "ray3", "commercial-ai", "diffusion-model", "camera-motion", "hdr-video", "creative-ai", "t2v", "i2v", "cinematic-ai"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Luma Dream Machine — Where 3D NeRF Heritage Meets Cinematic Video Generation
 
 Before Dream Machine, Luma AI was the company that let you scan a room with your iPhone and get a Neural Radiance Field back. Before AI video was a mass-market product category, Luma was building tools for filmmakers and engineers who needed spatially coherent 3D representations from ordinary camera captures. That heritage matters. When Luma entered the video generation market in June 2024, it did not arrive as a pure language-model shop pivoting into video. It arrived as an organization that had spent two years thinking about latent 3D space, scene geometry, and camera movement as first-class concerns.
 
-The result was **Dream Machine** — and more specifically, the Ray family of model generations that has evolved through four major releases between January 2025 and January 2026. Dream Machine reached one million users in four days. It now claims thirty million registered users. Luma raised $900 million in a November 2025 Series C at a valuation exceeding $4 billion. Its Ray3 generation was the first video AI system to produce native 16-bit HDR output in a professional film color pipeline. None of this makes it the universal best choice in AI video — but it makes it one of the three or four platforms that define the competitive frontier.
+The result was **Dream Machine** — and more specifically, the Ray family of model generations that has evolved through four major releases between January 2025 and January 2026. Dream Machine [reached one million users in four days](https://en.wikipedia.org/wiki/Dream_Machine_(text-to-video_model)). It now claims [thirty million registered users](https://aiwiki.ai/wiki/luma_ai). Luma raised $900 million in a November 2025 Series C at a valuation exceeding $4 billion. Its Ray3 generation was the first video AI system to produce native 16-bit HDR output in a professional film color pipeline. None of this makes it the universal best choice in AI video — but it makes it one of the three or four platforms that define the competitive frontier.
 
 We write from public sources — Luma engineering blog, press releases, third-party benchmarks, pricing documentation, and community evaluations. We do not test AI video models hands-on.
 
@@ -22,11 +23,11 @@ Luma AI was founded in 2021 in Palo Alto by Amit Jain (formerly Apple, Apple Vis
 
 This was a credible but niche product line. The pivot to video generation in mid-2024 was the strategic bet that changed the company's scale.
 
-Two hires are worth noting for what they signal about the technical direction. **Jiaming Song**, who joined as Chief Scientist, is the inventor of DDIM — Denoising Diffusion Implicit Models — the algorithm that underlies efficient inference in virtually every modern diffusion model. **Matthew Tancik**, who joined in June 2023, is co-author of the original NeRF paper and co-founder of the nerfstudio framework. The architecture that would become Dream Machine drew from both lines of work.
+Two hires are worth noting for what they signal about the technical direction. **Jiaming Song**, who joined as Chief Scientist, is the inventor of [DDIM — Denoising Diffusion Implicit Models](https://arxiv.org/abs/2010.02502) — the algorithm that underlies efficient inference in virtually every modern diffusion model. **Matthew Tancik**, who joined in June 2023, is co-author of the [original NeRF paper](https://arxiv.org/abs/2003.08934) and co-founder of the nerfstudio framework. The architecture that would become Dream Machine drew from both lines of work.
 
 **Funding timeline:**
 - January 2024: [$43M Series B](https://techcrunch.com/2024/01/09/luma-raises-43m-to-build-ai-that-crafts-3d-models/), [a16z leading](https://a16z.com/announcement/investing-in-luma-ai/)
-- December 2024: $90M Series C, with Amazon and AMD as strategic participants
+- December 2024: [$90M Series C](https://www.panewslab.com/en/articles/8obznqms), with Amazon and AMD as strategic participants
 - November 2025: [$900M Series C extension](https://www.cnbc.com/2025/11/19/luma-ai-raises-900-million-in-funding-led-by-saudi-ai-firm-humain.html), led by HUMAIN (Saudi Arabia's Public Investment Fund), [valuing the company at over $4 billion](https://www.businesswire.com/news/home/20251119678010/en/Luma-AI-Raises-%24900-Million-Series-C-Led-by-HUMAIN-And-Partners-on-2-Gigawatt-AI-Supercluster-in-Saudi-Arabia)
 - Total raised: approximately $1.07 billion across six rounds; investors include Amazon, AMD, General Catalyst, NVentures, Amplify Partners, a16z, and HUMAIN
 
@@ -86,7 +87,7 @@ A speed/cost variant of Ray2: 3× faster than Ray2, approximately one-third the 
 
 The flagship release of 2025:
 - Native 1080p, neural upscaler to 4K
-- **First AI video model to produce native 10-, 12-, and 16-bit HDR output in ACES2065-1 EXR format** — usable directly in professional film/broadcast color pipelines
+- **[First AI video model to produce native 10-, 12-, and 16-bit HDR output in ACES2065-1 EXR format](https://lumalabs.ai/news/ray3)** — usable directly in professional film/broadcast color pipelines
 - Reasoning generation layer (see Architecture section above)
 - Draft Mode: up to 20× faster generation for storyboarding
 - Character reference, keyframe control, video-to-video, seamless Loop creation, Extend

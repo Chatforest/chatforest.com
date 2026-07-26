@@ -9,7 +9,7 @@
 
 Mistral Codestral is [Mistral AI's](/reviews/mistral-ai-open-weight-llm-european-ai/) first code-specialized model, released May 29, 2024. Its central claims are two: first, that a 22-billion-parameter specialist can outperform 33–70B general-purpose models on code tasks; second, that fill-in-the-middle (FIM) capability, baked into pretraining rather than added post-hoc, makes it more useful than autoregressive-only models for the real-world developer workflow of IDE tab completion.
 
-Both claims hold up. Codestral's HumanEval pass@1 of 81.1% outperformed Code Llama 70B (67%) and DeepSeek Coder 33B (~79%) at launch — a striking result for a model less than a third the size. Its RepoBench exact-match score of 34.0% was the best at launch, which Mistral attributed directly to the 32K context window (large enough to hold entire files). FIM worked as advertised in IDE integrations: Continue.dev and Tabnine added Codestral support at launch.
+Both claims hold up. Codestral's [HumanEval pass@1 of 81.1%](https://mistral.ai/news/codestral/) outperformed [Code Llama 70B (67%)](https://ai.meta.com/blog/code-llama-large-language-model-coding/) and DeepSeek Coder 33B (~79%) at launch — a striking result for a model less than a third the size. Its RepoBench exact-match score of 34.0% was the best at launch, which Mistral attributed directly to the 32K context window (large enough to hold entire files). FIM worked as advertised in IDE integrations: Continue.dev and Tabnine added Codestral support at launch.
 
 The complication is the license. Codestral ships under the **Mistral AI Non-Production License (MNPL)**, which allows research and testing but prohibits commercial use — including free-of-charge SaaS — without a separate paid agreement. This was a deliberate commercial decision by Mistral, and it sets Codestral apart from the Apache 2.0 models in their lineup. For individuals and researchers, the weights are accessible on Hugging Face. For production use, a commercial arrangement is required.
 
@@ -196,5 +196,5 @@ For research, personal use, or organizations with a Mistral commercial agreement
 
 ---
 
-*This review covers Mistral Codestral 22B v0.1 (May 29, 2024). For Codestral 25.01 and later API versions, refer to Mistral's official release notes. Benchmark figures sourced from Mistral AI's launch announcement and independent evaluations at release time. See also our [Mistral AI company overview](/reviews/mistral-ai-open-weight-llm-european-ai/).*
+*This review covers Mistral Codestral 22B v0.1 (May 29, 2024). For Codestral 25.01 and later API versions, refer to Mistral's official release notes. Benchmark figures sourced from [Mistral AI's launch announcement](https://mistral.ai/news/codestral/) and independent evaluations at release time. See also our [Mistral AI company overview](/reviews/mistral-ai-open-weight-llm-european-ai/).*
 
