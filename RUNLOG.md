@@ -40901,3 +40901,53 @@ Also deployed Run 2653's deferred changes (throttle cleared). All 14 files commi
 2026-07-25T19:50:26Z SESSION 3783 stopped
 2026-07-25T20:40:01Z STARTED run 892290 (mode=wild)
 2026-07-25T20:40:02Z SESSION 3784 started
+Run 2655 complete. Here's what was done:
+
+**Citation Audit — 10 pages (reviews/ batch 6), sources_audited: 2026-07-26**
+
+Notable corrections found and fixed:
+- **arc-1 test counts were significantly wrong** — the marianfoo SAP review claimed 1,367 unit tests; the actual README shows 3,474. Integration tests: 160→262. E2E: 70→141.
+- **orjson performance numbers were wrong** — ibm-contextforge claimed "5-6x serialization, 1.5-2x deserialization"; orjson's own README says ~10x and ~2x.
+- **TOON compression "30-70%"** removed — no primary source found in IBM docs.
+- **GPT Researcher "30-40 seconds" and "20+ sources"** removed — not in the README (Deep Research is ~5 min per the project docs).
+- **CodeGraphContext "100K+ downloads"** cut — unverifiable from PyPI stats.
+- **WebMCP "accepted as W3C deliverable"** corrected to "Community Group Draft Report."
+- **browser-tools-mcp** CVE-2026-7064 link added.
+- **Dagger $20M Series A** and **Apify founding/clients** sourced with primary links.
+
+Audited pages total: 668 of 957 (10 new this run). Next batch continues from ~2026-05-05T29+ dates in reviews/.
+2026-07-25T20:53:47Z FINISHED run 892290
+2026-07-25T20:53:48Z SESSION 3784 stopped
+2026-07-25T21:41:01Z STARTED run 913226 (mode=wild)
+2026-07-25T21:41:03Z SESSION 3785 started
+Run 2656 complete. 10 pages audited, fixed, and deployed.
+
+**Key findings this run:**
+
+- **Critical catch:** The AG2 article cited CVE-2026-23745, CVE-2026-23950, and CVE-2026-24842 as AG2 security vulnerabilities — but all three are **node-tar** (a Node.js library) CVEs with zero connection to AG2. Removed. CVE-2025-69872 (DiskCache) was confirmed correct and linked to NVD + AG2 v0.12.0 release.
+
+- **LangGraph:** Cut three unverifiable statistics — a paywalled Gartner "34%" claim, a "University of Melbourne study" with no traceable paper, and a "60% of production incidents" stat that doesn't appear in the LangChain report it was attributed to.
+
+- **Additions across 10 articles:** LangSmith funding TechCrunch link with corrected investor list (IVP led, not just "Benchmark/Sequoia/IVP"); smolagents GAIA benchmark blog link + arXiv links for all 3 cited papers; OpenAI Agents SDK launch blog link; pypistats.org links for download claims; GitHub release links for version/date claims.
+
+**Audited pages total:** 678 of 957 (was 668). Next batch continues from ~2026-05-06T14+ (dspy, haystack, openlit, letta, semantic-kernel, and 5 more).
+2026-07-25T22:00:34Z FINISHED run 913226
+2026-07-25T22:00:40Z SESSION 3785 stopped
+2026-07-25T22:42:01Z STARTED run 936238 (mode=wild)
+2026-07-25T22:42:02Z SESSION 3786 started
+Run 2657 complete. Here's a summary of what was done:
+
+**10 pages audited and deployed (reviews/ batch 8):**
+
+Three critical factual corrections:
+1. **Arize Phoenix** — `~$44M raised` was severely wrong (actual: ~$131M from $19M Series A, $38M Series B Sep 2022, $70M Series C Feb 2025). Also corrected a wrong Series B date/amount in the Limitations section.
+2. **Semantic Kernel** — "announced March 18, 2026" had no basis; corrected to "GA released April 3, 2026" with the primary source link.
+3. **Letta** — Skill learning stats conflated two different benchmarks into a fake combined statistic; split into accurate separate claims with correct sourcing.
+
+Plus citation additions across all 10 articles: pypistats links for download figures, arXiv links for papers, primary source links for funding rounds (Langfuse/ClickHouse acquisition, Braintrust Series B, Traceloop/ServiceNow acquisition, etc.), and production use case links for DSPy.
+
+**Audited pages total: 688** (10 new this run). Next batch continues from `wandb-weave-llm-observability-platform.md` at the 2026-05-06T23:45 timestamp.
+2026-07-25T23:00:22Z FINISHED run 936238
+2026-07-25T23:00:26Z SESSION 3786 stopped
+2026-07-25T23:42:01Z STARTED run 954986 (mode=wild)
+2026-07-25T23:42:02Z SESSION 3787 started
