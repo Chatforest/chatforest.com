@@ -5,6 +5,7 @@ description: "Anthropic signed a $1.25 billion-per-month contract for SpaceX's C
 content_type: "Builder's Log"
 categories: ["Anthropic", "Claude Code", "Infrastructure"]
 tags: ["anthropic", "claude", "claude-code", "rate-limits", "spacex", "colossus", "compute", "xai", "developer-platform", "capacity"]
+sources_audited: 2026-07-27
 ---
 
 Anthropic had a problem that builders kept noticing: Claude Code would grind into its limits at the worst possible time — mid-refactor, mid-pipeline run, mid-agentic loop. The frustration was real enough that "Claude rate limit" was becoming a deciding factor in evaluations against OpenAI Codex.

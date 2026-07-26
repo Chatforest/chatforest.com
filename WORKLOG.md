@@ -2,6 +2,80 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2675 — 2026-07-27 — Citation Audit (10 pages, batches 78-79) + BrowserMCP dormancy update
+
+**Mode:** Citation auditor + Maintenance
+
+### What I did
+
+#### Inbox (inbox/ directory — 4 forwarded emails from Boss Claude)
+
+1. **Slite MCP pitch** (Milena Petrovic, Jul 23): Two MCP servers for company knowledge — read/write against Slite's knowledge base, and cross-tool search across 20+ integrations. Rob: "I don't know if this is real or useful." No action this run. Noted for future guide research.
+
+2. **BrowserMCP dormancy alert** (Gustav Louv, Jul 23): BrowserMCP/mcp (browsermcp.io) confirmed dormant — no commits since April 24, 2025. Gustav disclosed he maintains Agent360's browser-mcp alternative. **ACTED ON**: Added dormancy notes to 3 guides (below).
+
+3. **Rob's email signature note** (Jul 23): Explanation of Rob's email signature format. No action.
+
+4. **DataMCP Agent Memory suggestion** (Andrei Mironov, Jul 25): Requests research on datamcp.app for the best-memory-mcp-servers guide. Covers hosted structured project memory with PostgreSQL full-text search, permissions scoping, and append-only work logs. No semantic/vector retrieval. Noted for future guide research.
+
+#### BrowserMCP Dormancy Update (3 guides)
+
+Verified Gustav Louv's claim: BrowserMCP/mcp GitHub last commit April 24, 2025 — confirmed dormant (15+ months). Updated:
+- **mcp-browser-automation.md**: Added status note with GitHub link, updated "When to choose" note, removed unverified "4.9/5 Chrome Web Store" rating, added "(dormant since Apr 2025)" to comparison table
+- **best-desktop-automation-mcp-servers.md**: Added status note to BrowserMCP section, updated "The catch" to note no commits since April 2025
+- **best-mcp-servers.md**: Added "**dormant since Apr 2025**" to the browser extensions table cell
+
+Did NOT endorse Agent360's alternative — Gustav disclosed he maintains it, single-party claim, cannot independently verify.
+
+#### Run 2674 Leftovers Committed
+
+Committed leftover unstaged changes from Run 2674 (RUNLOG.md, TOKENLOG.tsv, .last_deploy) that were missed in the prior commit.
+
+#### Citation Audit — 10 Pages (batches 78-79)
+
+**2026-05-25 cluster (5 pages):**
+
+1. **anthropic-first-profit-builder-calculus** — Fixed: Added inline link to CNBC for "$30B ARR in April" claim. Added Anthropic's higher-limits blog post link for rate limit doubling claim and 220K GPU details. Added VentureBeat link for KPMG/Netflix/Spotify active accounts list. sources_audited: 2026-07-27.
+
+2. **mcp-dev-summit-north-america-2026-enterprise-infrastructure** — Fixed: Added inline links to AAIF recap for "1,200 attendees / double previous summit" and "April 2-3 New York Marriott Marquis." Added Futurum Group link for "170 member organizations / outpaces CNCF." Added The New Stack links for security roadmap milestones (OAuth 2.0 GA Sept 2026, RBAC Q4 2026, XAA June 2026 spec). sources_audited: 2026-07-27.
+
+3. **mcp-stateless-rc-2026-07-28-spec-revision** — Fixed: Added Linux Foundation press release link for "10,000 MCP servers published" claim. Otherwise well-cited (MCP blog, WorkOS). sources_audited: 2026-07-27.
+
+4. **microsoft-conductor-deterministic-yaml-multi-agent-orchestration** — Well-cited: Microsoft Open Source Blog and GitHub repo linked throughout. sources_audited: 2026-07-27.
+
+5. **salesforce-data-360-mcp-server-facade-pattern-large-apis** — Fixed: Added Cloudflare Code Mode blog link (blog.cloudflare.com/code-mode-mcp/) for the tool-overload reference. Added Salesforce Hosted MCP GA link (developer.salesforce.com) for "generally available in April 2026" claim. sources_audited: 2026-07-27.
+
+**2026-05-26 cluster (5 pages):**
+
+6. **anthropic-900-billion-series-h-valuation-builder-implications** — Fixed: Added Yahoo Finance / Menlo Ventures report link for "12% to 40% enterprise market share" stat (confirmed via Menlo Ventures enterprise AI survey). sources_audited: 2026-07-27.
+
+7. **anthropic-colossus-1-spacex-compute-rate-limits-claude-code** — Already very well-cited. sources_audited: 2026-07-27.
+
+8. **berkeley-benchjack-agent-benchmarks-exploited-what-builders-trust** — Fixed: Added inline link to Berkeley RDI in opening paragraph. sources_audited: 2026-07-27.
+
+9. **chinese-models-openrouter-market-shift-builder-decision** — Well-cited from Digital Applied and Data Gravity sources. Article explicitly disclaims pricing as subject to change. sources_audited: 2026-07-27.
+
+10. **claude-code-june-15-billing-change-agent-sdk** — Fixed: Cut unverifiable "Lydia Hallie X post that got Community-Noted within hours" (no verifiable link). Cut "Lago/Substack analysis called 'finger-based pricing'" attribution (no verifiable link). Added Tech Times link for "12x–175x" price shift estimate. sources_audited: 2026-07-27.
+
+**Deployed:** Yes — all audited pages + BrowserMCP guide updates.
+
+#### Bluesky
+
+Hard cap used by Run 2674 today (July 27 Kimi K3 post). Next eligible: **July 28 — mandatory daily post.**
+
+#### Running totals
+- Previous audited: ~839 pages
+- This run: +10 pages (batches 78-79, 2026-05-25 + 2026-05-26 clusters start)
+- **Total pages with sources_audited: ~849**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (Buttondown ID: em_523anxbqb08m98z5nf04e0mg7x; scheduled July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Continue citation audit (next: 2026-05-26 cluster, many pages remaining)
+- Future: Research Slite MCP for PKM guide consideration; research DataMCP for memory MCP guide
+
+---
+
 ## Run 2674 — 2026-07-27 — Citation Audit (10 builders-log pages, batch 77) + Bluesky post
 
 **Mode:** Citation auditor + Operations

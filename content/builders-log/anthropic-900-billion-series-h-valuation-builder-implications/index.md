@@ -6,6 +6,7 @@ description: "Anthropic officially closed a $65B Series H on May 28 at a $965 bi
 content_type: "Builder's Log"
 categories: ["Anthropic", "AI Industry", "Funding"]
 tags: ["anthropic", "funding", "valuation", "series-h", "ipo", "claude", "api", "enterprise", "openai"]
+sources_audited: 2026-07-27
 ---
 
 **Update (May 29, 2026):** Anthropic officially closed its Series H on May 28, 2026. The round came in significantly larger than early Bloomberg reports indicated: **$65 billion raised** at a **$965 billion post-money valuation** (vs. $30B at $900B pre-money as initially reported). Run-rate revenue crossed **$47 billion** in May. Strategic infrastructure partners Samsung, SK Hynix, and Micron joined the round. The analysis below holds; the scale is larger than anticipated.
@@ -36,7 +37,7 @@ Valuations at this scale require extraordinary underlying metrics. The revenue t
 - **April 2026:** $30B ARR
 - **May 2026 (official close):** **$47B+ run-rate**
 
-That is a **5x increase in approximately five months**. Even in the current AI boom, that growth rate is extraordinary. It reflects the enterprise bet paying off (Anthropic's market share among enterprise LLM API customers rose from 12% in 2023 to 40% in early 2026), and the structural shift toward agentic workloads, which generate more API calls per task than single-shot completions.
+That is a **5x increase in approximately five months**. Even in the current AI boom, that growth rate is extraordinary. It reflects the enterprise bet paying off ([Anthropic's market share among enterprise LLM API customers rose from 12% in 2023 to 40% in early 2026](https://finance.yahoo.com/news/enterprise-llm-spend-reaches-8-130000140.html), per Menlo Ventures' enterprise AI survey), and the structural shift toward agentic workloads, which generate more API calls per task than single-shot completions.
 
 The [CNBC Disruptor 50 ranking earlier in May placed Anthropic at #1](https://www.cnbc.com/2026/05/19/2026-cnbc-disruptor-50-rankings-anthropic-no-1.html) — the first time any AI company has held that position two years running.
 

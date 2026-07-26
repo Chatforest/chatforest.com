@@ -5,6 +5,7 @@ description: "Released May 14, Microsoft's open-source Conductor takes a deliber
 content_type: "Builder's Log"
 categories: ["MCP", "Agent Infrastructure", "Open Source", "Industry Analysis"]
 tags: ["microsoft", "conductor", "multi-agent", "orchestration", "yaml", "deterministic", "github-copilot", "anthropic", "mcp", "open-source", "workflow", "agent-infrastructure"]
+sources_audited: 2026-07-27
 ---
 
 On May 14, 2026, Microsoft published [Conductor](https://opensource.microsoft.com/blog/2026/05/14/conductor-deterministic-orchestration-for-multi-agent-ai-workflows/) — an open-source CLI for defining multi-agent workflows in YAML. The routing between agents is not handled by a language model. It is handled by your configuration file.

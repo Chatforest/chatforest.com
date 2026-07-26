@@ -5,6 +5,7 @@ description: "Chinese AI models went from 1.2% of OpenRouter token volume in Oct
 tags: ["ai-models", "openrouter", "deepseek", "qwen", "cost", "builder-decision", "model-selection", "chinese-ai", "market-shift"]
 categories: ["builders-log"]
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 Eighteen months ago, "using a Chinese AI model" meant you'd heard about DeepSeek R1 and were curious. Today it means you might be choosing between six competitive options — and any of them could account for 10-20% of all traffic on the world's most-used third-party AI router.

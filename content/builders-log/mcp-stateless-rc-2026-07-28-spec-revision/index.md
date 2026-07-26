@@ -5,6 +5,7 @@ description: "The MCP spec release candidate locked May 21 removes protocol-leve
 content_type: "Builder's Log"
 categories: ["MCP", "Agent Infrastructure", "Open Standards", "Industry Analysis"]
 tags: ["mcp", "model-context-protocol", "stateless", "spec", "release-candidate", "protocol", "deployment", "oauth", "tasks-extension", "mcp-apps", "aaif", "linux-foundation", "agent-infrastructure"]
+sources_audited: 2026-07-27
 ---
 
 On [May 21, 2026, the Model Context Protocol team locked the release candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) for the next spec version — designated 2026-07-28 for the date it goes final. It is the largest revision to the protocol since MCP launched in November 2024. The headline change is one sentence: MCP is now stateless at the protocol layer.
@@ -67,7 +68,7 @@ The stateless change also matters for agent-to-agent workflows, which are the cu
 
 The RC does not solve everything.
 
-Server quality remains a distribution problem, not a protocol problem. 10,000 MCP servers are published; the quality range from production-grade to abandoned prototype is wide. Neutral governance of the spec does not mean quality control of the ecosystem.
+Server quality remains a distribution problem, not a protocol problem. [10,000 MCP servers are published](https://www.linuxfoundation.org/press/anthropic-donates-model-context-protocol-to-the-linux-foundation); the quality range from production-grade to abandoned prototype is wide. Neutral governance of the spec does not mean quality control of the ecosystem.
 
 The Tasks extension and MCP Apps are new primitives. Client support will lag server support, as it always does when the spec adds capability ahead of the ecosystem. The MCP Apps rendering model in particular depends on client developers choosing to implement it. Builders should not ship product decisions against primitives that do not yet have broad client support.
 
