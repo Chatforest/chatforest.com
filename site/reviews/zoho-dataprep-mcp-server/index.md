@@ -5,7 +5,7 @@
 
 **At a glance:** Zoho DataPrep's MCP server is a **cloud-hosted HTTP MCP integration** delivered through Zoho's `mcp.zoho.com` platform. It exposes **~30 tools** covering the full ETL pipeline lifecycle: create and update pipelines, trigger and retry runs, manage schedules, handle workspace organization, inspect datasets, manage connections, and monitor subscription usage. **No open-source code, no GitHub repository, no local install** — this is a proprietary cloud service. Requires **Claude Teams or Enterprise** (organization admin setup). Part of our **[Data & Analytics category](/categories/data-analytics/)**.
 
-[Zoho DataPrep](https://www.zoho.com/dataprep/) is Zoho's **AI-powered ETL and data preparation platform**. The product underwent a significant rebrand and architecture refresh with **DataPrep 2.0** (DataPrep 1.0 deprecated June 30, 2025), and now positions itself as a no-code, natural-language-driven alternative to Fivetran, Airbyte, and Alteryx for teams that need enterprise-grade data pipelines without requiring Python or SQL expertise. The platform supports **90+ connectors**, **250+ transformation functions**, and an AI copilot called **Ask Zia** for natural language pipeline creation.
+[Zoho DataPrep](https://www.zoho.com/dataprep/) is Zoho's **AI-powered ETL and data preparation platform**. The product underwent a significant rebrand and architecture refresh with **DataPrep 2.0** (DataPrep 1.0 deprecated in 2025), and now positions itself as a no-code, natural-language-driven alternative to Fivetran, Airbyte, and Alteryx for teams that need enterprise-grade data pipelines without requiring Python or SQL expertise. The platform supports [**90+ connectors** and **250+ transformation functions**](https://www.zoho.com/dataprep/), and an AI copilot called **Ask Zia** for natural language pipeline creation.
 
 The MCP server — listed in DataPrep's What's New page under December 2025 and publicly announced via LinkedIn on January 19, 2026 — extends that natural-language vision further: instead of using Ask Zia within the DataPrep UI, AI agents in external tools (Claude, Cursor, Windsurf) can now orchestrate DataPrep pipelines directly.
 
@@ -16,15 +16,13 @@ Before covering the MCP server, context on the underlying platform matters for e
 Zoho DataPrep is an **Extract, Transform, Load (ETL) and data preparation platform** targeting four audiences: data analysts, business/non-technical users, data engineers, and data scientists. Its core value proposition is democratizing data pipeline work — enabling non-engineers to build and maintain production data pipelines through a visual interface and, now, natural language.
 
 **Key platform capabilities:**
-- **250+ transformation functions** — join, pivot, split, deduplication, sentiment analysis, geocoding, currency conversion, and more
-- **90+ connectors** — files (CSV, JSON, XLS), cloud storage (Google Drive, S3, Dropbox), databases (MySQL, PostgreSQL, Snowflake, Redshift, BigQuery), SaaS apps (Salesforce, HubSpot, Zoho CRM, Mixpanel, Google Analytics, Xero)
-- **Ask Zia AI copilot** — natural language pipeline creation, launched May 2025
-- **Code Studio** — Python-based custom transforms, launched February 2026 (US, IN, EU data centers)
-- **WebAssembly (WASM) engine** — 25x faster join previews, launched January 2026
+- [**250+ transformation functions**](https://www.zoho.com/dataprep/) — join, pivot, split, deduplication, sentiment analysis, geocoding, currency conversion, and more
+- [**90+ connectors**](https://www.zoho.com/dataprep/) — files (CSV, JSON, XLS), cloud storage (Google Drive, S3, Dropbox), databases (MySQL, PostgreSQL, Snowflake, Redshift, BigQuery), SaaS apps (Salesforce, HubSpot, Zoho CRM, Mixpanel, Google Analytics, Xero)
+- **Ask Zia AI copilot** — natural language pipeline creation
+- **Code Studio** — Python-based custom transforms
+- **WebAssembly (WASM) engine** — improved join preview performance
 - **Automated scheduling** — cron-style scheduling, backfill support, auto-retry, version control
 - **Compliance** — PII/ePHI marking, GDPR, HIPAA, role-based access control
-
-Scale-wise, the platform processes up to 25M+ rows per batch on standard plans, with enterprise tiers scaling to billions of rows per month.
 
 ## The MCP Server: Architecture
 
@@ -164,7 +162,7 @@ The MCP server is an add-on capability for a paid Zoho DataPrep subscription. Th
 
 Add-ons are available for additional sources, destinations, users, and row capacity (5M, 10M, 25M row packs). A 15-day free trial on paid plans requires no credit card.
 
-Pricing is dynamic and not published as fixed dollar amounts on the pricing page. Third-party aggregators cite starting prices around $28–$40/month for Standard, but contacting Zoho directly for current pricing is advisable. Enterprise pricing is quote-based.
+Pricing is dynamic and not published as fixed dollar amounts on the pricing page. Contact Zoho directly for current rates. Enterprise pricing is quote-based.
 
 **Important:** The Free plan has no scheduling and no AI features. The MCP server's utility for automated pipeline management requires at minimum a Standard plan with scheduling enabled.
 
@@ -180,7 +178,7 @@ Pricing is dynamic and not published as fixed dollar amounts on the pricing page
 
 **5. Platform row limits cap operational scale.** The Free plan's 20,000 rows/month and absence of scheduling make it unsuitable for production pipelines. Standard plan row limits (2M–100M, slider-based) add-ons can get expensive at scale compared to warehouse-native ETL tools.
 
-**6. Low community awareness.** The LinkedIn announcement (January 19, 2026) accumulated 54 likes and no comments as of research time. There is no discussion in MCP community forums, Reddit threads, or developer blogs. This is either a sign of early adoption or limited reach outside Zoho's existing customer base.
+**6. Low community awareness.** The LinkedIn announcement (January 19, 2026) attracted minimal engagement. There is no discussion in MCP community forums, Reddit threads, or developer blogs. This is either a sign of early adoption or limited reach outside Zoho's existing customer base.
 
 **7. No public benchmarks.** Performance data for the MCP server itself (latency, throughput, concurrent tool calls) is not published.
 
@@ -210,6 +208,11 @@ Outside that intersection, the value proposition weakens significantly. The **Cl
 Zoho is a legitimate enterprise SaaS vendor with a large existing customer base — teams already in the Zoho ecosystem will find this a natural extension. For teams not already on DataPrep 2.0, the MCP server is not a reason to adopt the platform; the platform itself would need to earn its place first, and then the MCP server adds convenient operational control.
 
 **Rating: 3 / 5** — Solid functional coverage of the ETL pipeline lifecycle with ~30 well-organized tools; genuine operational utility for existing DataPrep customers; early mover in MCP-based ETL management. Held back by the Claude Teams/Enterprise-only access requirement (excluding most individual developers), closed-source cloud-only architecture with no self-hosting option, pricing opacity, low community adoption signal, and the fundamental prerequisite of an active DataPrep subscription at a paid tier. Best suited for organizations already standardized on Zoho DataPrep who want to reduce operational friction through natural language pipeline management in Claude.
+
+## Sources
+
+- [Zoho DataPrep — product overview and features](https://www.zoho.com/dataprep/)
+- [Zoho MCP platform (mcp.zoho.com setup)](https://www.zoho.com/mcp/)
 
 *This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Information is current as of May 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*
 

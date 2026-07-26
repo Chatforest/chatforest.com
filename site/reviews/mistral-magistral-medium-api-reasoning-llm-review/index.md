@@ -95,7 +95,7 @@ The Mistral release notes report this represents approximately a 50% relative im
 
 At release, Magistral Medium was priced at **$2.00/M input, $5.00/M output**.
 
-The June 2025 reasoning model pricing landscape for comparison:
+The June 2025 reasoning model pricing landscape (per [arXiv:2506.10910](https://arxiv.org/abs/2506.10910) and public pricing pages at launch) for comparison:
 
 | Model | Input | Output | AIME 2024 pass@1 |
 |---|---|---|---|
@@ -112,7 +112,7 @@ The case for Magistral Medium in June 2025 was not benchmark superiority — it 
 
 ## Flash Answers: Mistral's Speed Claim
 
-Magistral Medium in Le Chat supports a "Flash Answers" mode alongside standard reasoning. The Flash mode reduces the length of the chain-of-thought trace, trading thoroughness for response speed. Mistral claimed at launch that Flash Answers could deliver responses up to 10× faster than competing reasoning model implementations.
+Magistral Medium in Le Chat supports a "Flash Answers" mode alongside standard reasoning. The Flash mode reduces the length of the chain-of-thought trace, trading thoroughness for response speed. Mistral [claimed at launch](https://mistral.ai/news/magistral/) that Flash Answers could deliver responses up to 10× faster than competing reasoning model implementations.
 
 This is a consumer-facing feature, not an API parameter. For API users, the model always runs standard reasoning. Flash Answers is Mistral's solution to the common complaint about reasoning models: they are slow because the intermediate thinking tokens take time to generate before the final answer appears.
 

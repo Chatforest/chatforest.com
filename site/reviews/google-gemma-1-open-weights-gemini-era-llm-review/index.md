@@ -90,7 +90,7 @@ The most structurally distinctive choice is the vocabulary size: **256,128 token
 
 These token counts are substantially higher than comparable open-weight models at the time. Llama 2 7B trained on 2 trillion tokens; Mistral 7B's training token count was not disclosed publicly. Training Gemma 7B on 6 trillion tokens (far beyond the Chinchilla-optimal ~140B tokens for a 7B model) reflects a deliberate "inference-optimal" strategy: spending more compute at training time to improve the model's performance per inference call.
 
-**Training infrastructure:** TPUv5e clusters. The 7B model was trained on 4,096 TPUv5e chips. Google disclosed an estimated training carbon footprint of approximately 131 tCO₂eq for pretraining.
+**Training infrastructure:** TPUv5e clusters. The 7B model was trained on 4,096 TPUv5e chips. Google disclosed an estimated training carbon footprint of approximately 131 tCO₂eq for pretraining (per [Gemma technical report, Section 3.1](https://arxiv.org/abs/2403.08295)).
 
 ### Data Composition
 

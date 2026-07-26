@@ -62,7 +62,7 @@ Mistral NeMo is a dense decoder-only Transformer. The architecture follows the M
 
 Tekken is the most technically durable contribution from the NeMo release — it subsequently became the standard tokenizer for the Mistral Small 3.x series and later models.
 
-Previous Mistral models (7B, Mixtral 8x7B) used SentencePiece tokenizers with a 32K vocabulary. Tekken switches to a **Tiktoken-based byte-pair encoding** with a **131,072-token vocabulary**, trained on a dataset spanning **100+ languages**. The compression efficiency improvements are substantial:
+Previous Mistral models (7B, Mixtral 8x7B) used SentencePiece tokenizers with a 32K vocabulary. Tekken switches to a **Tiktoken-based byte-pair encoding** with a **131,072-token vocabulary**, trained on a dataset spanning **100+ languages**, [per the NeMo announcement](https://mistral.ai/news/mistral-nemo/). The compression efficiency improvements are substantial:
 
 | Language / Domain | Compression improvement vs. SentencePiece |
 |---|---|

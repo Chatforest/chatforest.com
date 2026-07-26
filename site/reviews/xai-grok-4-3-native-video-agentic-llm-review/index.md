@@ -3,7 +3,7 @@
 > Grok 4.3 (April 30, 2026 API) is xAI's current production flagship. Native video input (5 min, 1080p), always-on chain-of-thought, AI Intelligence Index 53 (#10/146), GDPval-AA ELO +321 pts over Grok 4.20, $1.25/$2.50/M (40–58% cheaper), 1M context. Custom Voices API. Rating: 4/5.
 
 
-**At a glance:** Grok 4.3, released to API on April 30, 2026 by xAI. Native video input (5 min, 1080p). Always-on chain-of-thought — reasoning is no longer a toggle. AI Intelligence Index: 53 (#10/146 models). GDPval-AA ELO: 1,500 (+321 vs Grok 4.20). Pricing: $1.25/$2.50/M — 40–58% cheaper than its predecessor. Context: 1M tokens (halved from 4.20's 2M). The current xAI production model as of May 2026. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context on the Grok 4.x lineage, see our **[Grok 4.20 review](/reviews/xai-grok-4-20-multi-agent-hallucination-record-llm-review/)** and **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
+**At a glance:** Grok 4.3, [released to API on April 30, 2026](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing) by xAI. Native video input (5 min, 1080p). Always-on chain-of-thought — reasoning is no longer a toggle. [AI Intelligence Index: 53 (#10/146 models)](https://artificialanalysis.ai/models/grok-4-3). [GDPval-AA ELO: 1,500 (+321 vs Grok 4.20)](https://artificialanalysis.ai/models/grok-4-3). [Pricing: $1.25/$2.50/M](https://docs.x.ai/developers/migration/may-15-retirement) — 40–58% cheaper than its predecessor. Context: 1M tokens (halved from 4.20's 2M). The current xAI production model as of May 2026. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context on the Grok 4.x lineage, see our **[Grok 4.20 review](/reviews/xai-grok-4-20-multi-agent-hallucination-record-llm-review/)** and **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
 
 ---
 
@@ -31,7 +31,7 @@ In Grok 4.20, reasoning was a mode: the model could either reason through a prob
 
 The tradeoff is explicit: time to first token averages ~9.9 seconds, above the benchmark median for frontier models. For interactive consumer use this is noticeable but acceptable. For latency-sensitive production paths — real-time autocomplete, synchronous user-facing pipelines — it warrants testing. Grok 4.20's `grok-4-20-0309` endpoints remain accessible for teams with strict latency requirements; they did not disappear from the API.
 
-The intelligence gain is measurable. Grok 4.3 scores 53 on the AI Intelligence Index, up from Grok 4.20's 49. Four points on a composite of 10 evaluations represents meaningful consistent improvement across task types, not just a single benchmark where prompting optimization happened to align.
+The intelligence gain is measurable. [Grok 4.3 scores 53 on the AI Intelligence Index](https://artificialanalysis.ai/models/grok-4-3), up from Grok 4.20's 49. Four points on a composite of 10 evaluations represents meaningful consistent improvement across task types, not just a single benchmark where prompting optimization happened to align.
 
 ### File Generation
 
@@ -53,11 +53,11 @@ Grok 4.3 can produce downloadable output files natively — PDFs, XLSX spreadshe
 
 **Benchmark context:**
 
-The GDPval-AA result is the most important single number in this table. GDPval-AA (Gross Domestic Product value, Artificial Analysis) measures real-world agentic task performance — multi-step workflows involving tool use, retrieval, and task execution. A 321 ELO gain is large. Artificial Analysis used the phrase "large increase in real world agentic task performance" without hedging. For the developer audience xAI is explicitly targeting — the $1.25/$2.50 pricing is not a consumer-level signal — this benchmark measures the workflows they care about.
+The GDPval-AA result is the most important single number in this table. GDPval-AA (Gross Domestic Product value, Artificial Analysis) measures real-world agentic task performance — multi-step workflows involving tool use, retrieval, and task execution. A 321 ELO gain is large. [Artificial Analysis used the phrase "large increase in real world agentic task performance"](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing) without hedging. For the developer audience xAI is explicitly targeting — the $1.25/$2.50 pricing is not a consumer-level signal — this benchmark measures the workflows they care about.
 
 The Intelligence Index position (53, #10/146) tells a different story. Grok 4.3 is genuinely good; ranked 10th globally out of 146 models is a frontier position. But GPT-5.5 scores 60, and Claude Opus 4.7 scores 57. The gap to the top of the intelligence composite is 7 points — meaningful for reasoning-intensive tasks. Reviewers running head-to-head complex reasoning tests have described Grok 4.3 as "strong but not the leader" for tasks requiring depth of inference.
 
-The AA-Omniscience regression is worth noting explicitly: Grok 4.3 scores lower than Grok 4.20 on hallucination resistance. Grok 4.20's 78% accuracy record came from the four-agent Heavy architecture — Harper, Benjamin, Lucas, and Grok debating before output. Grok 4.3 does not replicate that architecture. Teams for whom hallucination resistance is the primary constraint should note that Grok 4.20 remains accessible on the `grok-4-20-0309` endpoint.
+The [AA-Omniscience regression](https://artificialanalysis.ai/models/grok-4-3) is worth noting explicitly: Grok 4.3 scores lower than Grok 4.20 on hallucination resistance. Grok 4.20's 78% accuracy record came from the four-agent Heavy architecture — Harper, Benjamin, Lucas, and Grok debating before output. Grok 4.3 does not replicate that architecture. Teams for whom hallucination resistance is the primary constraint should note that Grok 4.20 remains accessible on the `grok-4-20-0309` endpoint.
 
 ---
 
@@ -82,11 +82,11 @@ The cache hit price ($0.20/M, 84% discount) matters for applications with stable
 
 ## Custom Voices API
 
-Launched May 2, 2026, Custom Voices is a separate capability released alongside Grok 4.3's rollout to broader tiers. It is technically distinct from the language model itself — a voice-cloning system integrated into the xAI platform — but its timing and positioning tie it to the 4.3 generation.
+[Launched May 2, 2026](https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/), Custom Voices is a separate capability released alongside Grok 4.3's rollout to broader tiers. It is technically distinct from the language model itself — a voice-cloning system integrated into the xAI platform — but its timing and positioning tie it to the 4.3 generation.
 
 The specification: clone a user's voice from approximately 1 minute of source speech; delivery in under 2 minutes. Two-stage verification: real-time speech-to-text phrase matching (the user reads a presented phrase) plus speaker embedding comparison. Free on xAI Console.
 
-The broader audio platform — launched simultaneously — includes Speech-to-Text (25 languages, batch at $0.10/hr, streaming at $0.20/hr) with a 5.0% entity recognition error rate (vs. 12–13.5% for ElevenLabs and Deepgram), and Text-to-Speech at $4.20/M characters.
+The broader audio platform — launched simultaneously — includes Speech-to-Text (25 languages, batch at $0.10/hr, streaming at $0.20/hr) and Text-to-Speech at $4.20/M characters.
 
 These are infrastructure components for voice-integrated applications rather than differentiators for the language model's text capability. For teams building voice interfaces on top of Grok, the economics and the tight API integration matter. For teams evaluating Grok 4.3 as a language model, these do not affect the core evaluation.
 
@@ -128,7 +128,7 @@ This is meaningfully different from single-shot creative generation. An AI that 
 
 ## Migration Context: May 15, 2026
 
-On May 15, 2026, xAI retired a set of Grok API slugs: `grok-4-1-fast-reasoning`, `grok-4-1-fast-non-reasoning`, `grok-4-fast-reasoning`, `grok-4-fast-non-reasoning`, `grok-4-0709`, `grok-code-fast-1`, `grok-3`, and `grok-imagine-image-pro`. These now redirect to `grok-4.3` — with `non-reasoning` slugs mapping to `grok-4.3` with `reasoning_effort: none`.
+On [May 15, 2026, xAI retired](https://docs.x.ai/developers/migration/may-15-retirement) a set of Grok API slugs: `grok-4-1-fast-reasoning`, `grok-4-1-fast-non-reasoning`, `grok-4-fast-reasoning`, `grok-4-fast-non-reasoning`, `grok-4-0709`, `grok-code-fast-1`, `grok-3`, and `grok-imagine-image-pro`. These now redirect to `grok-4.3` — with `non-reasoning` slugs mapping to `grok-4.3` with `reasoning_effort: none`.
 
 Teams that had not yet migrated off Grok 3 or Grok 4.0 as of this date have been automatically moved to Grok 4.3. The redirect semantics should be verified against your specific use case, particularly for applications that relied on non-reasoning behavior.
 
@@ -181,7 +181,14 @@ What Grok 4.3 is best described as: the obvious choice for cost-conscious agenti
 
 ---
 
-**May 2026 platform updates:** Since the Grok 4.3 API launch, xAI has shipped two notable platform additions. **Grok Skills** (May 2026) enables persistent custom expertise: users define workflows, preferences, and document-handling routines once through natural language or file uploads, and Grok applies them automatically across all future conversations without re-prompting. Available on grok.com, iOS, and Android. **Third-party connectors** expanded on May 22, 2026 to include Vercel (site deployment), Canva (design), Gamma (presentations), and S&P Global (live market data) — accessible directly inside the Grok interface. These are platform-level additions that don't affect the model benchmarks above but expand the surface area of what Grok 4.3 can accomplish in a single session.
+---
+
+## Sources
+
+- [Artificial Analysis — Grok 4.3 launch analysis](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing)
+- [Artificial Analysis — Grok 4.3 model benchmarks](https://artificialanalysis.ai/models/grok-4-3)
+- [xAI — May 15, 2026 API migration guide and pricing](https://docs.x.ai/developers/migration/may-15-retirement)
+- [The Decoder — xAI Custom Voices API launch (May 2, 2026)](https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/)
 
 ---
 

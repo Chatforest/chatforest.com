@@ -76,7 +76,7 @@ All figures are for the instruct variant (`Mistral-Large-Instruct-2407`) unless 
 | GSM8K | 93.0% | Grade school math word problems |
 | MATH | 71.5% | Competition-level mathematics |
 
-### Competitive context (July 2024)
+### Competitive context (July 2024, per [Mistral's Large Enough announcement](https://mistral.ai/news/mistral-large-2/))
 
 | Model | Params | MMLU | HumanEval | GSM8K | License |
 |---|---|---|---|---|---|

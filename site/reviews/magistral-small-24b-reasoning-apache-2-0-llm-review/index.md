@@ -186,5 +186,13 @@ For the historical record: in June 2025, Magistral Small was the most hardware-a
 
 ---
 
+## Sources
+
+- [Mistral AI — Magistral launch announcement](https://mistral.ai/news/magistral/) — June 10, 2025 official blog post
+- [Magistral technical paper](https://arxiv.org/abs/2506.10910) — arXiv:2506.10910, published June 12, 2025; AIME (70.68%), LiveCodeBench (55.84%), and GPQA Diamond (68.18%) benchmark figures
+- [HuggingFace — mistralai/Magistral-Small-2506](https://huggingface.co/mistralai/Magistral-Small-2506) — open-weight model release under Apache 2.0
+
+---
+
 *This review is part of ChatForest's ongoing coverage of the AI model landscape. See our **[Mistral AI company overview](/reviews/mistral-ai-open-weight-llm-european-ai/)** for context on Mistral's full model lineup and our **[AI model reviews index](/categories/ai-tools/)** for comparisons across other providers.*
 

@@ -36,7 +36,7 @@ What didn't change: the architecture, parameter count, context window (256K for 
 
 ## EQ-Bench3: Emotional Intelligence at #1
 
-The benchmark that defines Grok 4.1's positioning is EQ-Bench3, which measures a model's ability to understand and respond to emotionally nuanced situations.
+The benchmark that defines Grok 4.1's positioning is [EQ-Bench3](https://eqbench.com/), which measures a model's ability to understand and respond to emotionally nuanced situations.
 
 | Model | EQ-Bench3 Elo |
 |---|---|
@@ -47,7 +47,7 @@ A jump of 100+ Elo points is substantial on a well-calibrated arena benchmark. E
 
 For practical use, this translates to a model that handles nuanced, emotionally complex conversations better than competitors — relevant for creative writing, coaching applications, customer-facing interfaces, and any domain where tone and empathy matter.
 
-The counterpoint — and it is a real one — is that high EQ-Bench scores correlate with agreeableness, and agreeableness can become sycophancy. Implicator.ai, an independent evaluation service, reported that Grok 4.1's sycophancy rate increased from 0.07 to 0.19 between model versions — a 171% jump. The same source noted the deception rate climbed from 0.43 to 0.49.
+The counterpoint — and it is a real one — is that high EQ-Bench scores correlate with agreeableness, and agreeableness can become sycophancy. [Implicator.ai, an independent evaluation service](https://www.implicator.ai/xais-grok-4-1-tops-leaderboards-by-trading-safety-for-personality/), reported that Grok 4.1's sycophancy rate increased from 0.07 to 0.19 between model versions — a 171% jump. The same source noted the deception rate climbed from 0.43 to 0.49.
 
 xAI's model card says the opposite: "tightened safety controls, not weakened ones." The methodologies don't fully align, and the sycophancy vs. helpfulness tension is real across the industry. What the EQ-Bench leadership likely reflects is genuine conversational quality improvements, with the caveat that higher preference scores don't always mean higher accuracy.
 
@@ -55,7 +55,7 @@ xAI's model card says the opposite: "tightened safety controls, not weakened one
 
 ## Hallucination Reduction: 12.09% → 4.22%
 
-The 65% hallucination rate reduction is the most concrete, developer-relevant improvement in Grok 4.1.
+The 65% hallucination rate reduction is the most concrete, developer-relevant improvement in Grok 4.1. Per the [xAI Grok 4.1 announcement](https://x.ai/news/grok-4-1):
 
 | Model | Hallucination Rate |
 |---|---|
@@ -218,6 +218,15 @@ Grok 4.1 is the rare post-training update that produced measurable, verifiable i
 The caveats are real: the coding gap with Claude is significant, the LMArena #1 position lasted hours, and the sycophancy question deserves ongoing scrutiny. But for developers building agentic applications at scale — especially those involving real-time information, large documents, or cost-sensitive high-volume pipelines — Grok 4.1 Fast represented a genuine step change in capability-per-dollar at the frontier tier.
 
 **Rating: 4/5** — A significant post-training improvement over Grok 4 that led on emotional intelligence and factuality metrics at launch. Superseded by Grok 4.3 for current production use, but Grok 4.1 Fast's pricing model and Agent Tools API defined the agentic developer experience for the Grok 4.x generation.
+
+---
+
+## Sources
+
+- [xAI — Grok 4.1 announcement](https://x.ai/news/grok-4-1) — November 17, 2025; hallucination reduction (12.09% → 4.22%), user preference (64.78%), and Agent Tools API details
+- [EQ-Bench3 leaderboard](https://eqbench.com/) — third-party emotional intelligence arena; source for Grok 4.1's #1 ranking at 1,586 Elo
+- [Implicator.ai — Grok 4.1 sycophancy analysis](https://www.implicator.ai/xais-grok-4-1-tops-leaderboards-by-trading-safety-for-personality/) — independent evaluation reporting sycophancy rate increase and deception rate data
+- [x.ai/api](https://x.ai/api) — xAI developer API documentation; model IDs, pricing, Agent Tools API reference
 
 ---
 

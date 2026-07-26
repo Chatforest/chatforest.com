@@ -3,9 +3,9 @@
 > Voxtral Transcribe 2 pairs a batch model with word-level timestamps and speaker diarization against an open-weight real-time streaming model that hits sub-200ms latency — both released February 4, 2026.
 
 
-**At a glance:** Two-model family released February 4, 2026 — **Voxtral Mini Transcribe V2** (`voxtral-mini-2602`, batch transcription with word-level timestamps, speaker diarization, and context biasing) and **Voxtral Realtime** (`mistralai/Voxtral-Mini-4B-Realtime-2602`, Apache 2.0 open-weight 4B streaming model, sub-200ms configurable latency). Pricing: $0.003/min batch, $0.006/min realtime API. Beats Whisper large-v3 on FLEURS multilingual WER (~5.9% vs 7.4%). 13 languages. arXiv paper for Realtime architecture: [2602.11298](https://arxiv.org/abs/2602.11298). Follows the original [Voxtral Small & Mini](/reviews/mistral-voxtral-small-speech-understanding/) (July 2025). Part of our **[AI Models & LLM Reviews](/categories/llm-reviews/)** section.
+**At a glance:** Two-model family [released February 4, 2026](https://mistral.ai/news/voxtral-transcribe-2/) — **Voxtral Mini Transcribe V2** (`voxtral-mini-2602`, batch transcription with word-level timestamps, speaker diarization, and context biasing) and **Voxtral Realtime** (`mistralai/Voxtral-Mini-4B-Realtime-2602`, Apache 2.0 open-weight 4B streaming model, sub-200ms configurable latency). Pricing: [$0.003/min batch, $0.006/min realtime API](https://mistral.ai/news/voxtral-transcribe-2/). Beats Whisper large-v3 on FLEURS multilingual WER (~5.9% vs 7.4%). 13 languages. arXiv paper for Realtime architecture: [2602.11298](https://arxiv.org/abs/2602.11298). Follows the original [Voxtral Small & Mini](/reviews/mistral-voxtral-small-speech-understanding/) (July 2025). Part of our **[AI Models & LLM Reviews](/categories/llm-reviews/)** section.
 
-Mistral AI's Voxtral Transcribe 2, announced February 4, 2026 under the headline "Voxtral transcribes at the speed of sound," is a deliberate pivot from the original Voxtral's broad audio understanding mission toward production ASR. The July 2025 Voxtral Small and Mini were versatile: transcription, translation, audio Q&A, voice function-calling. Voxtral Transcribe 2 narrows that scope and deepens it — two specialized models optimized for the specific needs of transcription pipelines: speaker attribution, precise timing, domain vocabulary, and real-time streaming.
+Mistral AI's [Voxtral Transcribe 2, announced February 4, 2026](https://mistral.ai/news/voxtral-transcribe-2/) under the headline "Voxtral transcribes at the speed of sound," is a deliberate pivot from the original Voxtral's broad audio understanding mission toward production ASR. The July 2025 Voxtral Small and Mini were versatile: transcription, translation, audio Q&A, voice function-calling. Voxtral Transcribe 2 narrows that scope and deepens it — two specialized models optimized for the specific needs of transcription pipelines: speaker attribution, precise timing, domain vocabulary, and real-time streaming.
 
 The result is one of the most cost-competitive ASR offerings available as of this writing, with the notable distinction that the Realtime model runs fully open-weight under Apache 2.0.
 
@@ -106,7 +106,7 @@ Mistral's benchmark reporting for Voxtral Transcribe 2:
 
 **Voxtral Realtime (at 960ms delay):** Exceeds ElevenLabs Scribe v2 Realtime accuracy.
 
-**Important caveat:** These benchmarks are sourced from Mistral's own reporting. Independent third-party evaluations had not been published at the time of this research. Benchmark conditions (audio quality, noise levels, speaker demographics) can significantly affect real-world results. The LibriSpeech Clean benchmark is a particularly favorable test condition (read speech, clean recording environment) that rarely reflects production audio quality.
+**Important caveat:** These benchmarks are sourced from [Mistral's own reporting](https://mistral.ai/news/voxtral-transcribe-2/). Independent third-party evaluations had not been published at the time of this research. Benchmark conditions (audio quality, noise levels, speaker demographics) can significantly affect real-world results. The LibriSpeech Clean benchmark is a particularly favorable test condition (read speech, clean recording environment) that rarely reflects production audio quality.
 
 ## Pricing Comparison
 
@@ -182,6 +182,13 @@ Voxtral Transcribe 2 delivers on its production-ASR mandate. The batch model's c
 The one-point deduction reflects real gaps: diarization cannot be streamed, context biasing works reliably only in English, the batch model lacks open weights, and language coverage (13 languages) is meaningfully narrower than alternatives. For global or multi-speaker live use cases, these gaps matter.
 
 For English-first transcription pipelines or teams building streaming voice applications who value vendor independence, Voxtral Transcribe 2 is among the most compelling options available at this price point.
+
+---
+
+## Sources
+
+- [Mistral AI — Voxtral Transcribe 2 announcement (February 4, 2026)](https://mistral.ai/news/voxtral-transcribe-2/) — pricing, benchmark claims, language support, and feature descriptions
+- [arXiv 2602.11298 — Voxtral Realtime architecture paper](https://arxiv.org/abs/2602.11298)
 
 ---
 

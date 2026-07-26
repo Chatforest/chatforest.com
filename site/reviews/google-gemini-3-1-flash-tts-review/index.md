@@ -3,9 +3,9 @@
 > Gemini 3.1 Flash TTS launched April 15, 2026 as a Preview model offering prompt-steerable text-to-speech, inline audio tags for expressive control, 30 prebuilt voices, 100+ auto-detected languages, and $1.00/$20.00 per million token pricing — with no native streaming and PCM-only output.
 
 
-**At a glance:** Preview since April 15, 2026. Model ID: `gemini-3.1-flash-tts-preview`. 30 voices (astronomically named), 100+ languages auto-detected from input text, $1.00/1M input tokens / $20.00/1M output tokens ($0.03 per minute of audio output). PCM-only output (24kHz mono). No streaming — use Live API for real-time. Max 2 speakers per session. Part of our **[AI Models & LLM Reviews](/categories/llm-reviews/)** section.
+**At a glance:** [Preview since April 15, 2026](https://ai.google.dev/gemini-api/docs/speech-gen). Model ID: `gemini-3.1-flash-tts-preview`. 30 voices (astronomically named), 100+ languages auto-detected from input text, [$1.00/1M input tokens / $20.00/1M output tokens](https://ai.google.dev/pricing) ($0.03 per minute of audio output). PCM-only output (24kHz mono). No streaming — use Live API for real-time. Max 2 speakers per session. Part of our **[AI Models & LLM Reviews](/categories/llm-reviews/)** section.
 
-Gemini 3.1 Flash TTS, launched April 15, 2026, is Google's third-generation API-native text-to-speech model. It follows `gemini-2.5-flash-preview-tts` and `gemini-2.5-pro-preview-tts` (both launched May 2025) with a stated focus on improved naturalness, multilingual coverage, and a novel inline control mechanism called audio tags. The fundamental design philosophy separates it from every major TTS competitor: instead of SSML parameters or numeric pitch/rate controls, you steer performance using natural language instructions and bracket-style tags embedded directly in your transcript.
+[Gemini 3.1 Flash TTS](https://ai.google.dev/gemini-api/docs/speech-gen), launched April 15, 2026, is Google's third-generation API-native text-to-speech model. It follows `gemini-2.5-flash-preview-tts` and `gemini-2.5-pro-preview-tts` with a stated focus on improved naturalness, multilingual coverage, and a novel inline control mechanism called audio tags. The fundamental design philosophy separates it from every major TTS competitor: instead of SSML parameters or numeric pitch/rate controls, you steer performance using natural language instructions and bracket-style tags embedded directly in your transcript.
 
 This approach has real advantages for LLM-native workflows and significant tradeoffs for production applications that need streaming, format flexibility, or deterministic voice consistency. This review covers both.
 
@@ -22,7 +22,7 @@ Google has operated two parallel text-to-speech product lines for years:
 
 These lines are not converging on the same architecture. Cloud TTS remains the enterprise choice for applications that need streaming, format control, and contractual uptime guarantees. Gemini TTS is the experimentation-forward choice for developers who want to express voice performance in plain language rather than XML.
 
-`gemini-3.1-flash-tts-preview` is positioned as the cost-efficient tier of the new line, analogous to `gemini-3.1-flash` in the text model family. Google's announcement described it as "cost-efficient, expressive, and steerable" — the same adjectives used to position Flash models relative to Pro across the Gemini lineup.
+`gemini-3.1-flash-tts-preview` is positioned as the cost-efficient tier of the new line, analogous to `gemini-3.1-flash` in the text model family. The model is positioned as cost-efficient — the same pricing tier relationship as Flash models to Pro across the Gemini lineup.
 
 ---
 
@@ -103,13 +103,15 @@ The documented range includes:
 
 Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Bengali, Bulgarian, Catalan, Chinese (Mandarin), Croatian, Czech, Danish, Dutch, English, Estonian, Filipino, Finnish, French, Georgian, German, Greek, Gujarati, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Japanese, Javanese, Kannada, Korean, Lao, Latvian, Lithuanian, Malay, Malayalam, Marathi, Mongolian, Nepali, Norwegian, Odia, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Serbian, Sinhala, Slovak, Slovenian, Spanish, Swahili, Swedish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Vietnamese — and more.
 
-This breadth is one of the strongest differentiators against ElevenLabs (28 languages), OpenAI TTS (approximately 50+), and Google's own Cloud TTS legacy system (30+ with WaveNet coverage varying significantly by language).
+This breadth is one of the strongest differentiators against [ElevenLabs](https://elevenlabs.io/docs/introduction) (28 languages), [OpenAI TTS](https://platform.openai.com/docs/guides/text-to-speech) (approximately 50+), and Google's own Cloud TTS legacy system (30+ with WaveNet coverage varying significantly by language).
 
 **Audio tag language note:** For non-English input, Google recommends writing audio tags in English for best results. The expressive control system appears trained primarily on English-language performance data.
 
 ---
 
 ## Pricing
+
+Pricing from [Google AI pricing page](https://ai.google.dev/pricing):
 
 | Mode | Input (per 1M tokens) | Output (per 1M tokens) |
 |---|---|---|
@@ -262,14 +264,14 @@ The two systems are architecturally distinct and optimized for different users. 
 
 ### vs. ElevenLabs
 
-ElevenLabs offers voice cloning from 3-second reference clips, 28 languages, native MP3/WAV/PCM output, streaming via WebSockets, and fine-grained latency settings. The Creator plan ($11/mo for 121,000 credits) is competitive for moderate-volume use cases. At high volume, Gemini TTS's Batch API pricing ($0.90/hour of audio output) undercuts ElevenLabs significantly.
+[ElevenLabs](https://elevenlabs.io/pricing) offers voice cloning from short reference clips, 28 languages, native MP3/WAV/PCM output, streaming via WebSockets, and fine-grained latency settings. At high volume, Gemini TTS's Batch API pricing undercuts ElevenLabs significantly.
 
 ElevenLabs wins on: voice cloning, format support, streaming, production stability.  
 Gemini TTS wins on: language range, audio tag expressiveness, cost at scale.
 
 ### vs. OpenAI TTS
 
-OpenAI TTS (`gpt-4o-mini-tts`) supports streaming, multiple native output formats, and approximately 50+ languages. It uses a similar natural-language prompting model for voice performance. OpenAI has 6 built-in voices versus Gemini's 30.
+[OpenAI TTS](https://platform.openai.com/docs/guides/text-to-speech) (`gpt-4o-mini-tts`) supports streaming, multiple native output formats, and approximately 50+ languages. It uses a similar natural-language prompting model for voice performance. OpenAI has 6 built-in voices versus Gemini's 30.
 
 ---
 
@@ -298,6 +300,14 @@ The deductions are real, though. PCM-only output adds operational friction to ev
 For teams building LLM-native content pipelines — audiobooks, podcasts, multilingual narration — this is worth evaluating today. For anything requiring streaming, format flexibility, or guaranteed uptime, it's a model to watch rather than deploy.
 
 ---
+
+## Sources
+
+- [Google AI — Gemini TTS API documentation](https://ai.google.dev/gemini-api/docs/speech-gen)
+- [Google AI — pricing page (TTS token rates)](https://ai.google.dev/pricing)
+- [Google DeepMind — SynthID technology overview](https://deepmind.google/technologies/synthid/)
+- [OpenAI — Text-to-speech API documentation](https://platform.openai.com/docs/guides/text-to-speech)
+- [ElevenLabs — pricing and plans](https://elevenlabs.io/pricing)
 
 *This is a research-based review. ChatForest has not tested Gemini 3.1 Flash TTS hands-on. Information is sourced from Google's official API documentation, pricing pages, and changelog entries as of May 2026.*
 

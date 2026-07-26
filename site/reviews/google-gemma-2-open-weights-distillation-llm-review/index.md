@@ -228,11 +228,11 @@ HuggingFace access requires login and license acceptance before downloading mode
 
 The July 31, 2024 launch brought two additional releases alongside the 2B model:
 
-**ShieldGemma** — Safety content classification models in 2B, 9B, and 27B sizes. Inputs: text prompt + safety policy guidelines. Outputs: "Yes" (violates policy) or "No" (compliant). Harm categories: sexually explicit content, dangerous content, hate speech, harassment. The ShieldGemma 2B achieved F1 of 0.825 on harm detection benchmarks, competitive with the OpenAI Moderation API (F1: 0.812). Suitable for content-moderation pipelines that require transparent, open-weights safety classifiers.
+**ShieldGemma** — Safety content classification models in 2B, 9B, and 27B sizes. Inputs: text prompt + safety policy guidelines. Outputs: "Yes" (violates policy) or "No" (compliant). Harm categories: sexually explicit content, dangerous content, hate speech, harassment. Per the [ShieldGemma paper](https://arxiv.org/abs/2407.21772), ShieldGemma 2B outperformed the OpenAI Moderation API on both evaluated datasets (F1 0.825 vs 0.782 on one benchmark; 0.812 vs 0.790 on another). Suitable for content-moderation pipelines that require transparent, open-weights safety classifiers.
 
 **Gemma Scope** — A set of sparse autoencoders trained on Gemma 2 residual stream activations, designed to support interpretability research. A research tool, not a production model — relevant to teams studying model internals.
 
-**RecurrentGemma** (released separately, March 2024) — A 9B model using the Griffin recurrent architecture instead of transformer attention. Faster inference on long sequences: 25% faster than Gemma 7B at 4,096 tokens. Handles up to 16,384 tokens. MMLU: 60.5 (vs 71.3 for Gemma 2 9B). A niche choice for memory-constrained long-context inference where raw benchmark scores matter less than throughput.
+**RecurrentGemma** (released separately, March 2024) — A 9B model using the Griffin recurrent architecture instead of transformer attention. Faster inference on long sequences than standard transformers. MMLU: 60.5 (vs 71.3 for Gemma 2 9B), per [arXiv:2404.07839](https://arxiv.org/abs/2404.07839). A niche choice for memory-constrained inference where raw benchmark scores matter less than throughput.
 
 ---
 

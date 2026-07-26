@@ -3,9 +3,9 @@
 > The official dbt Labs MCP server gives AI agents deep access to dbt's full stack: SQL execution, natural language to SQL, semantic layer queries, 19 Discovery API tools for lineage and model health, dbt CLI commands, job orchestration, and code generation — 50+ tools across 9 categories. Apache-2.0 license. Active weekly releases.
 
 
-**At a glance:** The official `dbt-labs/dbt-mcp` server gives AI agents comprehensive access to dbt's full data transformation stack — **50+ tools across 9 categories** including SQL execution, natural language to SQL conversion, semantic layer queries, 19 Discovery API tools for model lineage and health, 11 dbt CLI commands, job orchestration, and YAML code generation. Open source under Apache-2.0 with **561 GitHub stars**, 119 forks, and weekly releases reaching v1.19.1 as of May 14, 2026. Free to use for **dbt Core** (open-source) local workflows; cloud-connected features require a paid **dbt Cloud** subscription. There are important gotchas around pricing and the `text_to_sql` tool that every user should read before deploying.
+**At a glance:** The official [`dbt-labs/dbt-mcp`](https://github.com/dbt-labs/dbt-mcp) server gives AI agents comprehensive access to dbt's full data transformation stack — **50+ tools across 9 categories** including SQL execution, natural language to SQL conversion, semantic layer queries, 19 Discovery API tools for model lineage and health, 11 dbt CLI commands, job orchestration, and YAML code generation. Open source under Apache-2.0 with **561 GitHub stars**, 119 forks, and weekly releases reaching v1.19.1 as of May 14, 2026. Free to use for **dbt Core** (open-source) local workflows; cloud-connected features require a paid **dbt Cloud** subscription. There are important gotchas around pricing and the `text_to_sql` tool that every user should read before deploying.
 
-[dbt](https://www.getdbt.com/) (data build tool) is the de facto standard for SQL-based data transformation in modern data stacks. Maintained by dbt Labs, the open-source `dbt-core` project has become the transformation layer of choice in analytics engineering, pairing with ELT tools like Airbyte and Fivetran and warehouses like Snowflake, BigQuery, and Redshift. The MCP server ships with an OpenSSF Best Practices badge and a community Slack channel (`#tools-dbt-mcp`), signaling dbt Labs treats this as a production-grade integration rather than an experiment. Part of our **[ETL & Data Integration category](/categories/etl-data-integration/)**.
+[dbt](https://www.getdbt.com/) (data build tool) is the de facto standard for SQL-based data transformation in modern data stacks. Maintained by dbt Labs, the open-source `dbt-core` project has become the transformation layer of choice in analytics engineering, pairing with ELT tools like Airbyte and Fivetran and warehouses like Snowflake, BigQuery, and Redshift. The MCP server ships with an [OpenSSF Best Practices badge](https://best.openssf.org/) and a community Slack channel (`#tools-dbt-mcp`), signaling dbt Labs treats this as a production-grade integration rather than an experiment. Part of our **[ETL & Data Integration category](/categories/etl-data-integration/)**.
 
 ## What dbt Is
 
@@ -206,7 +206,7 @@ Credentials are kept in environment variables and never passed through the chat 
 | Plan | Price | API Access | dbt Copilot |
 |------|-------|-----------|-------------|
 | Developer (Free) | $0 | **No** | No |
-| Starter | ~$100/user/month | Yes | Yes (limited) |
+| [Starter](https://www.getdbt.com/pricing) | ~$100/user/month | Yes | Yes (limited) |
 | Enterprise | Custom | Yes | Yes (full) |
 | Enterprise+ | Custom | Yes | Yes (full) |
 
@@ -302,6 +302,14 @@ The caveats are real but manageable. The **free tier limitation** is the most im
 For dbt Core users who want CLI automation and code generation at zero cost, the value is immediate and carries no subscription risk. For dbt Cloud users on paid plans, this is a straightforward win: the integration is well-maintained, well-documented, and covers more ground than most comparable MCP servers.
 
 **Rating: 4/5** — broad, production-grade coverage of the dbt ecosystem with strong open-source credentials and active development; held back by a misleading free tier, the Copilot credit block affecting all tools, and CLI tools that require careful access control.
+
+---
+
+## Sources
+
+- [dbt-labs/dbt-mcp — GitHub repository](https://github.com/dbt-labs/dbt-mcp) — tool definitions, release history, star/fork counts, feature flags
+- [dbt Cloud pricing page](https://www.getdbt.com/pricing) — Starter plan pricing (~$100/user/month), Developer free tier API limitations
+- [OpenSSF Best Practices](https://best.openssf.org/) — certification program referenced by repository badge
 
 ---
 

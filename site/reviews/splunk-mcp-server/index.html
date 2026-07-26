@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p><strong>At a glance:</strong> <a href="https://splunkbase.splunk.com/app/7931">Splunkbase App #7931</a> — 12,334 downloads, 5-star rating (12 reviews), #6 in Splunkbase AI category. Official Cisco/Splunk product (Splunk LLC, &ldquo;Splunk Supported&rdquo; tier). GA February 4, 2026. Current version: <strong>1.1.2</strong> (May 12, 2026). <a href="https://github.com/CiscoDevNet/Splunk-MCP-Server-official">CiscoDevNet GitHub mirror</a>: 4 stars, 3 commits (thin reference only; actual distribution is via Splunkbase <code>.spl</code> package). 14 tools across two namespaced prefixes. Closed source, Splunk General Terms.</p>
-<p>Splunk is the platform that ingests machine data at scale — logs, metrics, events, security telemetry — and makes it searchable via SPL (Search Processing Language). After Cisco&rsquo;s $28B acquisition closed in early 2024, the combined Cisco/Splunk AI roadmap accelerated significantly. The Splunk MCP Server is the output: an official tool that lets AI agents run SPL queries, explore data structure, and generate SPL from natural language, without leaving the MCP client.</p>
+<p>Splunk is the platform that ingests machine data at scale — logs, metrics, events, security telemetry — and makes it searchable via SPL (Search Processing Language). After Cisco&rsquo;s acquisition of Splunk closed in 2024, the combined Cisco/Splunk AI roadmap accelerated significantly. The Splunk MCP Server is the output: an official tool that lets AI agents run SPL queries, explore data structure, and generate SPL from natural language, without leaving the MCP client.</p>
 <p>This is the second dedicated observability MCP server review in this series after <a href="/reviews/honeycomb-mcp-server/">Honeycomb</a> (4/5). See also our <a href="/reviews/monitoring-observability-mcp-servers/">Monitoring &amp; Observability MCP Servers category review</a> for how Splunk fits against Grafana, Datadog, Sentry, PagerDuty, and others.</p>
 <h2 id="architecture-hosted-inside-splunk">Architecture: Hosted Inside Splunk</h2>
 <p>Most MCP servers are separate processes — you run <code>npx some-server</code> or <code>python server.py</code>, and the process communicates with your MCP client via stdio. The Splunk MCP Server is different: <strong>it runs as a Splunk app inside your Splunk instance</strong>, served over the existing Splunk management port (default: 8089) at the endpoint <code>/services/mcp</code>.</p>
@@ -233,6 +233,13 @@
 <p>But if you&rsquo;re already a Splunk shop — which means you&rsquo;re paying for a platform purpose-built for machine data search — the MCP Server closes the gap to AI-assisted Splunk workflows with minimal additional infrastructure cost.</p>
 <p><strong>Rating: 4 out of 5</strong> — Official, battle-proven architecture, RBAC-native, genuinely useful <code>saia_</code> tools. Minus one for complex setup, closed source, beta OAuth, and the event cap that complicates large result set handling.</p>
 <p><strong>Category</strong>: <a href="/categories/developer-tools/">Developer Tools MCP Servers</a> | <a href="/reviews/monitoring-observability-mcp-servers/">Monitoring &amp; Observability</a></p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://splunkbase.splunk.com/app/7931">Splunkbase App #7931 — Splunk MCP Server (official)</a></li>
+<li><a href="https://github.com/CiscoDevNet/Splunk-MCP-Server-official">CiscoDevNet GitHub — Splunk-MCP-Server-official (reference mirror)</a></li>
+<li><a href="https://github.com/livehybrid/splunk-mcp">Community server: livehybrid/splunk-mcp</a></li>
+<li><a href="https://github.com/splunk/splunk-mcp-server2">Community server: splunk/splunk-mcp-server2</a></li>
+</ul>
 
       </div>
 

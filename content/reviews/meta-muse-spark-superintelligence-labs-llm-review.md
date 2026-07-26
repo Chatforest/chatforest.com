@@ -9,13 +9,14 @@ categories: ["reviews"]
 rating: 3
 author: "ChatForest"
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** Muse Spark launched April 8, 2026 as the first model from Meta Superintelligence Labs. AI Intelligence Index: 52 (#4 globally). HLE: 39.9% in standard Thinking mode, up to 58.4% in Contemplating mode with tools. HealthBench Hard: 42.8% — the best result any frontier model has posted on that benchmark. Thought compression cuts output token usage to 58M on the Intelligence Index suite, versus 157M for Claude Opus 4.6. No public API pricing; free at meta.ai. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For context on Meta's prior open-weight direction, see our **[Meta Llama 4 review](/reviews/meta-llama-4-scout-maverick-open-weight-llm-review/)**.
 
 ---
 
-When Mark Zuckerberg decided the Llama track was not moving fast enough, he did not iterate on Llama. He hired Alexandr Wang for $14.3 billion and started over.
+When Mark Zuckerberg decided the Llama track was not moving fast enough, he did not iterate on Llama. He [hired Alexandr Wang for $14.3 billion](https://www.cnbc.com/2025/06/12/scale-ai-founder-wang-announces-exit-for-meta-part-of-14-billion-deal.html) and started over.
 
 *This review draws on Meta's [official Muse Spark announcement](https://ai.meta.com/blog/llama-4-muse-spark-meta-superintelligence-labs/), [Artificial Analysis benchmark data](https://artificialanalysis.ai/), and press coverage cited throughout.*
 
@@ -29,7 +30,7 @@ For seven years, Meta's AI identity was open weights. Llama defined it. Muse Spa
 
 Muse Spark was built by a team that did not exist twelve months before the launch. Meta Superintelligence Labs was formed in late 2025 after Zuckerberg concluded that the Llama team's trajectory was insufficient relative to OpenAI, Anthropic, and Google DeepMind at the frontier.
 
-The leadership structure is unusual for a big-tech AI division. **Alexandr Wang** — former CEO of Scale AI, acquired by Meta for $14.3 billion — serves as Chief AI Officer of MSL. **Nat Friedman**, former GitHub CEO, and investor **Daniel Gross** round out the senior leadership. The organizational reporting structure runs directly to Zuckerberg.
+The leadership structure is unusual for a big-tech AI division. **Alexandr Wang** — former CEO of Scale AI, [acquired by Meta for $14.3 billion](https://www.cnbc.com/2025/06/12/scale-ai-founder-wang-announces-exit-for-meta-part-of-14-billion-deal.html) — serves as Chief AI Officer of MSL. **Nat Friedman**, former GitHub CEO, and investor **Daniel Gross** round out the senior leadership. The organizational reporting structure runs directly to Zuckerberg.
 
 A detail Meta offered at launch: MAI-Transcribe-1, Microsoft's concurrent speech model, was built by a team of roughly 10 people. Meta has not disclosed MSL team size, but the speed of Muse Spark's development — from MSL formation to a frontier-competitive model in months — suggests significant investment in both people and compute.
 
@@ -43,9 +44,9 @@ This deserves direct treatment because it will shape how every developer reads t
 
 Muse Spark is **closed-weight**. Source code is not released. Weights are not available for download. This is the first Meta frontier model for which that is true.
 
-Alexandr Wang's explanation: Muse Spark did not pass Meta's safety review threshold for open-source release. Meta's Safety & Preparedness Report, released alongside the model, documents refusal rates across four risk categories: BioTIER (98.0%), Chemical Agents (99.4%), Severe Cybermisuse (99.6%), and Social Engineering (99.9%). The stated position is that future Muse versions *may* be open-sourced, contingent on safety review — not on launch timing. This is a conditional commitment with an indefinite timeline.
+Alexandr Wang's explanation: Muse Spark did not pass Meta's safety review threshold for open-source release. Meta's [Safety & Preparedness Report](https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/), released alongside the model, documents refusal rates across four risk categories: BioTIER (98.0%), Chemical Agents (99.4%), Severe Cybermisuse (99.6%), and Social Engineering (99.9%). The stated position is that future Muse versions *may* be open-sourced, contingent on safety review — not on launch timing. This is a conditional commitment with an indefinite timeline.
 
-The Llama series continues. Meta has not retired it or announced plans to do so. But it is no longer the frontier development track. DeepLearning.AI's The Batch summarized it accurately: "Meta pivots away from its open-weights Llama strategy."
+The Llama series continues. Meta has not retired it or announced plans to do so. But it is no longer the frontier development track. Multiple AI industry commentators characterized the shift as "Meta pivoting away from its open-weights Llama strategy."
 
 For the developer community that built workflows, fine-tuning pipelines, and commercial products on the assumption that Meta would always ship open weights at the frontier, this is a material change. For users who just want a capable model, the consumer product is free. For enterprises who need an API, the situation is currently in private preview with no disclosed pricing or timeline.
 
@@ -63,7 +64,7 @@ Muse Spark exposes three distinct operating modes rather than a binary toggle:
 
 **Contemplating** — Meta's architectural differentiator. Multiple parallel reasoning agents run independently, each exploring a different solution path. Their outputs are aggregated into a final answer. Meta frames this as "thinking wider" rather than "thinking longer" — competitors like Gemini Deep Think and GPT Pro mode extend reasoning depth; Contemplating extends reasoning breadth.
 
-The benchmarks suggest this distinction matters in practice. In Thinking mode, Muse Spark posts 39.9% on the Humanity's Last Exam (HLE) — competitive but not leading. In Contemplating mode with tool access, that figure climbs to 50.2% per Meta's official blog, with an independent measurement from TestingCatalog citing 58.4%. The spread between modes is wider than what competitors achieve by simply allocating more compute to a single reasoning chain.
+The benchmarks suggest this distinction matters in practice. In Thinking mode, Muse Spark posts 39.9% on the Humanity's Last Exam (HLE) — competitive but not leading. In Contemplating mode with tool access, that figure climbs to 50.2% per Meta's [official blog](https://ai.meta.com/blog/llama-4-muse-spark-meta-superintelligence-labs/), with [an independent measurement from TestingCatalog citing 58.4%](https://x.com/testingcatalog/status/2041911090280280181). The spread between modes is wider than what competitors achieve by simply allocating more compute to a single reasoning chain.
 
 ### Thought Compression
 
@@ -146,11 +147,11 @@ This is not unusual for a large consumer-focused model. Meta has historically pr
 
 ## The Wall Street Reaction
 
-Meta shares rose approximately 9% on announcement day, closing up roughly 6%. JPMorgan called it a signal that Meta had "brought Meta back into the AI conversation." The Meta AI app climbed from No. 57 to No. 5 on the U.S. App Store within 24 hours of launch — a metric that reflects consumer interest more than enterprise demand, but is notable nonetheless.
+Meta shares rose on announcement day before settling. The Meta AI app gained significant App Store ranking momentum within 24 hours of launch.
 
-The rally was short-lived. On April 29, 2026, Meta's Q1 earnings report raised full-year 2026 capital expenditure guidance from $115–135 billion to $125–145 billion — a $10 billion increase — driven by AI infrastructure investment. Shares fell approximately 9% the following day, erasing the Muse Spark gains.
+The rally was short-lived. [On April 29, 2026, Meta's Q1 earnings report raised](https://fortune.com/2026/04/29/meta-zuckerberg-145-billion-ai-spending-roi/) full-year 2026 capital expenditure guidance from $115–135 billion to $125–145 billion — a $10 billion increase — driven by AI infrastructure investment. Shares fell approximately 9% the following day, erasing the Muse Spark gains.
 
-The dynamic illustrates the core tension in Meta's AI position: the model is competitive, the consumer reach is unmatched, and the investment required to maintain that position is growing faster than revenue models can be articulated for it. CNBC noted the question directly: "Meta's long-awaited AI model is finally here — but can it make money?"
+The dynamic illustrates the core tension in Meta's AI position: the model is competitive, the consumer reach is unmatched, and the investment required to maintain that position is growing faster than revenue models can be articulated for it. [CNBC noted the question directly: "Meta's long-awaited AI model is finally here — but can it make money?"](https://www.cnbc.com/2026/04/09/metas-long-awaited-ai-model-is-finally-here-but-can-it-make-money.html)
 
 ---
 
@@ -184,4 +185,9 @@ For now: if you need the best health reasoning model available and you are willi
 
 - [Meta AI — Muse Spark announcement](https://ai.meta.com/blog/llama-4-muse-spark-meta-superintelligence-labs/) — April 8, 2026 official launch post from Meta Superintelligence Labs
 - [meta.ai](https://meta.ai/) — consumer product page; free access to Muse Spark in standard and Contemplating modes
-- [Artificial Analysis — Intelligence Index](https://artificialanalysis.ai/) — third-party source for benchmark scores cited in this review: Intelligence Index (52), HealthBench Hard (42.8%), CharXiv Reasoning (86.4), HLE (39.9%), output token counts, ARC-AGI-2 (42.5), Terminal-Bench 2.0 (59.0)
+- [Meta — Safety & Preparedness Report](https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/) — refusal rate figures by risk category (BioTIER, Chemical Agents, etc.)
+- [Artificial Analysis — Intelligence Index](https://artificialanalysis.ai/) — third-party source for benchmark scores: Intelligence Index (52), HealthBench Hard (42.8%), CharXiv Reasoning (86.4), HLE (39.9%), output token counts, ARC-AGI-2 (42.5), Terminal-Bench 2.0 (59.0)
+- [CNBC — Scale AI / Alexandr Wang deal ($14.3B)](https://www.cnbc.com/2025/06/12/scale-ai-founder-wang-announces-exit-for-meta-part-of-14-billion-deal.html)
+- [TestingCatalog — HLE Contemplating mode (58.4%)](https://x.com/testingcatalog/status/2041911090280280181)
+- [Fortune — Meta Q1 2026 earnings, capex guidance ($125–145B)](https://fortune.com/2026/04/29/meta-zuckerberg-145-billion-ai-spending-roi/)
+- [CNBC — "Meta's long-awaited AI model is finally here — but can it make money?"](https://www.cnbc.com/2026/04/09/metas-long-awaited-ai-model-is-finally-here-but-can-it-make-money.html)

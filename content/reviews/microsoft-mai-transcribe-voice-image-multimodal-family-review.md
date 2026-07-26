@@ -9,15 +9,16 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-27
 ---
 
-**At a glance:** Microsoft MAI model family, released April 2–14, 2026 via Microsoft Foundry. Four models spanning speech recognition, voice synthesis, and image generation — all built by Mustafa Suleyman's superintelligence team formed just months earlier. MAI-Transcribe-1: 3.88% WER across 25 languages (#1 FLEURS), $0.36/hr. MAI-Voice-1: 60 seconds of audio in under 1 second, $22/1M characters. MAI-Image-2: #3 Arena.ai at launch (Elo 1,326), $5/$33/1M tokens. MAI-Image-2-Efficient: 22% faster, 4x GPU throughput, $5/$19.50/1M — 41% cheaper output. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Microsoft MAI model family, [released April 2–14, 2026](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-transcribe-1-mai-voice-1-and-mai-image-2-in-microsoft-foundry/4507787) via Microsoft Foundry. Four models spanning speech recognition, voice synthesis, and image generation — all built by Mustafa Suleyman's superintelligence team formed just months earlier. MAI-Transcribe-1: 3.88% WER across 25 languages (#1 FLEURS), $0.36/hr. MAI-Voice-1: 60 seconds of audio in under 1 second, $22/1M characters. MAI-Image-2: #3 Arena.ai at launch (Elo 1,326), $5/$33/1M tokens. MAI-Image-2-Efficient: 22% faster, 4x GPU throughput, $5/$19.50/1M — 41% cheaper output. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 Microsoft did not build these models because it ran out of things to do with OpenAI's API. It built them because it had to.
 
-The September 2025 renegotiation of the original 2019 Microsoft-OpenAI partnership removed a clause that had effectively prohibited Microsoft from building its own broadly capable AI models. That clause was the price of early exclusive hosting rights. Once it was gone, Mustafa Suleyman's team — formed in November 2025, officially called the Microsoft AI Superintelligence division — had a clear runway. In April 2026, less than five months after formation, they shipped four production models in twelve days.
+The September 2025 renegotiation of the original 2019 Microsoft-OpenAI partnership removed a clause that had effectively prohibited Microsoft from building its own broadly capable AI models. That clause was the price of early exclusive hosting rights. Once it was gone, Mustafa Suleyman's team — formed in November 2025, officially called the Microsoft AI Superintelligence division — had a clear runway. In April 2026, less than five months after formation, they [shipped four production models in twelve days](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-transcribe-1-mai-voice-1-and-mai-image-2-in-microsoft-foundry/4507787).
 
 The question worth asking is not whether the models are impressive given the timeline. They are. The question is whether they are good enough to matter in a market that already has OpenAI, Google, ElevenLabs, and Midjourney in their respective lanes.
 
@@ -27,11 +28,11 @@ On the speech side, the answer is clearly yes. On the image side, the launch pos
 
 ## Why Microsoft Built Its Own Models
 
-The OpenAI partnership created a specific dependency problem. Microsoft was paying OpenAI licensing fees for DALL-E to power Bing Image Creator, PowerPoint Designer, and Copilot's creative features. When MAI-Image-2 replaced DALL-E in those surfaces, Microsoft retained all the margin rather than paying per-call licensing costs at scale. SiliconANGLE called this move "the clearest signal that Redmond is serious about building a self-sufficient AI stack."
+The OpenAI partnership created a specific dependency problem. Microsoft was paying OpenAI licensing fees for DALL-E to power Bing Image Creator, PowerPoint Designer, and Copilot's creative features. When MAI-Image-2 replaced DALL-E in those surfaces, Microsoft retained all the margin rather than paying per-call licensing costs at scale — a signal that the company was serious about building a self-sufficient AI stack.
 
-The April 27, 2026 formalization of the partnership restructuring confirmed the direction: OpenAI exclusivity ended, OpenAI can now sell on AWS and other clouds, and Microsoft retained an IP licence through 2032 alongside its ~27% equity stake. The model launches came *before* the legal formalization — Microsoft signaled its intent with shipped product, not an announcement.
+[The April 27, 2026 formalization of the partnership restructuring](https://www.bloomberg.com/news/articles/2026-04-27/microsoft-to-stop-sharing-revenue-with-main-ai-partner-openai) confirmed the direction: OpenAI exclusivity ended, OpenAI can now sell on AWS and other clouds, and Microsoft retained an IP licence through 2032 alongside its ~27% equity stake. The model launches came *before* the legal formalization — Microsoft signaled its intent with shipped product, not an announcement.
 
-The team itself is deliberately structured as a "lean, talent-dense" group — Suleyman's words. The Next Web reported that MAI-Transcribe-1 was built by roughly ten people. Ali Farhadi, former AI2 CEO, joined the team in March 2026. The twelve-day gap between the first three models (April 2) and the fourth (April 14) reflects an internal shipping cadence more typical of a startup than a division of a $3 trillion company.
+The team itself is deliberately structured as a "lean, talent-dense" group — Suleyman's words. [The Next Web reported that MAI-Transcribe-1 was built by roughly ten people.](https://thenextweb.com/news/microsoft-mai-models-openai-independence) Ali Farhadi, former AI2 CEO, joined the team in March 2026. The twelve-day gap between the first three models (April 2) and the fourth (April 14) reflects an internal shipping cadence more typical of a startup than a division of a $3 trillion company.
 
 Suleyman's stated mission for the division is "Humanist Superintelligence (HSI)": AI capabilities that "always work for, in service of, people and humanity more generally." Whether that framing shapes product decisions or is aspirational brand copy is a question the next several model releases will answer.
 
@@ -59,7 +60,7 @@ The Foundry catalog is expansive — 100+ models including GPT-5.5, Claude Opus 
 
 ### What It Is
 
-MAI-Transcribe-1 is Microsoft's first-party speech recognition model: "first-generation speech recognition model, delivering enterprise-grade accuracy across 25 languages at approximately 50% lower GPU cost than leading alternatives." Released April 2, 2026 (Public Preview).
+MAI-Transcribe-1 is [Microsoft's first-party speech recognition model](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-transcribe-1-mai-voice-1-and-mai-image-2-in-microsoft-foundry/4507787): "first-generation speech recognition model, delivering enterprise-grade accuracy across 25 languages at approximately 50% lower GPU cost than leading alternatives." Released April 2, 2026 (Public Preview).
 
 Supported languages (25 total): English, Spanish, French, German, Portuguese, Italian, Dutch, Russian, Japanese, Korean, Mandarin Chinese, Hindi, Arabic, Polish, Turkish, Swedish, Danish, Finnish, Norwegian, Czech, Romanian, Ukrainian, Hungarian, Thai, and Indonesian.
 
@@ -142,7 +143,7 @@ What is documented: the model is optimized for long-form content and described a
 
 ### What It Is
 
-MAI-Image-2 is Microsoft's text-to-image generation model, built on a flow-matching diffusion architecture. It debuted on Arena.ai before the April 2 announcement, reaching #3 on the image model family leaderboard. It now powers Bing Image Creator and PowerPoint Designer, replacing the OpenAI DALL-E integration those surfaces previously used.
+MAI-Image-2 is Microsoft's text-to-image generation model, built on a flow-matching diffusion architecture. It debuted on [Arena.ai](https://arena.ai/leaderboard/text-to-image) before the April 2 announcement, reaching #3 on the image model family leaderboard. It now powers Bing Image Creator and PowerPoint Designer, replacing the OpenAI DALL-E integration those surfaces previously used.
 
 WPP Global CCO Rob Reilly called it "a genuine game-changer" that "responds to the intricate nuance of creative direction." That is an enterprise partner testimonial, not an independent benchmark, but it confirms the model went through production validation at scale before the public announcement.
 
@@ -201,9 +202,9 @@ Real-world testing documented in post-launch reviews reveals a consistent patter
 
 ### What It Is
 
-Released twelve days after MAI-Image-2 (April 14, 2026), MAI-Image-2-Efficient is the cost-optimized, high-throughput variant of the flagship. No waitlist. Immediate availability.
+[Released twelve days after MAI-Image-2 (April 14, 2026)](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-image-2-efficient-faster-more-efficient-image-generation/4510918), MAI-Image-2-Efficient is the cost-optimized, high-throughput variant of the flagship. No waitlist. Immediate availability.
 
-SiliconANGLE called the twelve-day turnaround evidence that the MAI team "operated more like a startup shipping iterative products than a traditional corporate research lab."
+The twelve-day turnaround from the flagship to the efficient variant demonstrated an iterative shipping cadence more typical of a startup than a traditional corporate research lab.
 
 ### Benchmarks
 
@@ -277,6 +278,14 @@ What is not in question is the strategic direction. Microsoft is building its ow
 **Overall rating: 4/5.** Exceptional STT debut; provisionally strong TTS; solid image generation with a competitive efficient variant. English-only TTS and batch-only transcription at launch limit the addressable use cases today. The shipping velocity and benchmark quality — given the team's age and size — points toward continued improvement.
 
 ---
+
+## Sources
+
+- [Microsoft Azure AI Foundry Blog — MAI-Transcribe-1, MAI-Voice-1, MAI-Image-2 announcement (April 2, 2026)](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-transcribe-1-mai-voice-1-and-mai-image-2-in-microsoft-foundry/4507787)
+- [Microsoft — MAI-Image-2-Efficient announcement (April 14, 2026)](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-image-2-efficient-faster-more-efficient-image-generation/4510918)
+- [Bloomberg — Microsoft ends OpenAI exclusivity (April 27, 2026)](https://www.bloomberg.com/news/articles/2026-04-27/microsoft-to-stop-sharing-revenue-with-main-ai-partner-openai)
+- [The Next Web — MAI-Transcribe-1 built by roughly ten people](https://thenextweb.com/news/microsoft-mai-models-openai-independence)
+- [Arena.ai leaderboard — image model Elo rankings](https://arena.ai/leaderboard/text-to-image)
 
 ## Related Reviews
 

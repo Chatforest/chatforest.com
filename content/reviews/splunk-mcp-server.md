@@ -7,11 +7,12 @@ content_type: "Review"
 card_description: "The official Splunk MCP Server (Splunkbase App ID 7931) lets AI agents run SPL searches, explore indexes and knowledge objects, and generate SPL from natural language. Hosted inside the Splunk instance itself — no separate process needed. Official Cisco/Splunk product, GA since February 2026, v1.1.2, 12,334 downloads, 5-star rating. Requires careful setup (role naming, token generation, IP allowlisting). Rating: 4/5."
 categories: ["/categories/developer-tools/"]
 last_refreshed: 2026-05-16
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** [Splunkbase App #7931](https://splunkbase.splunk.com/app/7931) — 12,334 downloads, 5-star rating (12 reviews), #6 in Splunkbase AI category. Official Cisco/Splunk product (Splunk LLC, "Splunk Supported" tier). GA February 4, 2026. Current version: **1.1.2** (May 12, 2026). [CiscoDevNet GitHub mirror](https://github.com/CiscoDevNet/Splunk-MCP-Server-official): 4 stars, 3 commits (thin reference only; actual distribution is via Splunkbase `.spl` package). 14 tools across two namespaced prefixes. Closed source, Splunk General Terms.
 
-Splunk is the platform that ingests machine data at scale — logs, metrics, events, security telemetry — and makes it searchable via SPL (Search Processing Language). After Cisco's $28B acquisition closed in early 2024, the combined Cisco/Splunk AI roadmap accelerated significantly. The Splunk MCP Server is the output: an official tool that lets AI agents run SPL queries, explore data structure, and generate SPL from natural language, without leaving the MCP client.
+Splunk is the platform that ingests machine data at scale — logs, metrics, events, security telemetry — and makes it searchable via SPL (Search Processing Language). After Cisco's acquisition of Splunk closed in 2024, the combined Cisco/Splunk AI roadmap accelerated significantly. The Splunk MCP Server is the output: an official tool that lets AI agents run SPL queries, explore data structure, and generate SPL from natural language, without leaving the MCP client.
 
 This is the second dedicated observability MCP server review in this series after [Honeycomb](/reviews/honeycomb-mcp-server/) (4/5). See also our [Monitoring & Observability MCP Servers category review](/reviews/monitoring-observability-mcp-servers/) for how Splunk fits against Grafana, Datadog, Sentry, PagerDuty, and others.
 
@@ -159,3 +160,10 @@ But if you're already a Splunk shop — which means you're paying for a platform
 **Rating: 4 out of 5** — Official, battle-proven architecture, RBAC-native, genuinely useful `saia_` tools. Minus one for complex setup, closed source, beta OAuth, and the event cap that complicates large result set handling.
 
 **Category**: [Developer Tools MCP Servers](/categories/developer-tools/) | [Monitoring & Observability](/reviews/monitoring-observability-mcp-servers/)
+
+## Sources
+
+- [Splunkbase App #7931 — Splunk MCP Server (official)](https://splunkbase.splunk.com/app/7931)
+- [CiscoDevNet GitHub — Splunk-MCP-Server-official (reference mirror)](https://github.com/CiscoDevNet/Splunk-MCP-Server-official)
+- [Community server: livehybrid/splunk-mcp](https://github.com/livehybrid/splunk-mcp)
+- [Community server: splunk/splunk-mcp-server2](https://github.com/splunk/splunk-mcp-server2)

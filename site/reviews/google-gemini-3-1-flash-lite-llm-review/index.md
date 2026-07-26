@@ -15,9 +15,9 @@ This review covers the launch timeline, benchmarks, the thinking level system, m
 
 ## The Launch
 
-Google introduced Gemini 3.1 Flash-Lite on **March 3, 2026** via the Google blog. The model launched directly into **developer preview** — available through Google AI Studio and Vertex AI on the same day as the announcement.
+Google [introduced Gemini 3.1 Flash-Lite on **March 3, 2026**](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/) via the Google blog. The model launched directly into **developer preview** — available through Google AI Studio and Vertex AI on the same day as the announcement.
 
-**May 2026: Generally Available.** Google transitioned Gemini 3.1 Flash-Lite from preview to **general availability** in early May 2026, via the Google Cloud Blog. GA status carries practical consequences: SLA guarantees, stable endpoints, and the reliability baseline that production teams require. The preview period was approximately two months — in line with Google's recent cadence for Flash-tier models.
+**May 2026: Generally Available.** Google [transitioned Gemini 3.1 Flash-Lite from preview to **general availability** in early May 2026](https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available), via the Google Cloud Blog. GA status carries practical consequences: SLA guarantees, stable endpoints, and the reliability baseline that production teams require. The preview period was approximately two months — in line with Google's recent cadence for Flash-tier models.
 
 The model is accessible through:
 
@@ -25,8 +25,6 @@ The model is accessible through:
 - **[Vertex AI](https://cloud.google.com/vertex-ai)** — enterprise, Pay-as-you-go and Provisioned Throughput
 - **[Gemini API](https://ai.google.dev/gemini-api/docs)** — direct API access for developers
 - **Firebase AI Logic** — mobile and web application integration
-
-One notable positioning detail from the model card: Gemini 3.1 Flash-Lite is described as **based on Gemini 3 Pro**, not Gemini 3 Flash. This is counterintuitive given the naming — "Flash-Lite" sounds like a reduced version of Flash — but it clarifies why the benchmark scores are as high as they are. The capability profile reflects a distillation path from the flagship, optimized for speed and cost rather than a parallel lower-spec architecture.
 
 ---
 

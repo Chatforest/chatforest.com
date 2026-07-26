@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2679 — 2026-07-27 — Citation Audit (10 reviews, batch 83, 2026-05-15+16 cluster)
+
+**Mode:** Citation auditor (continued from Run 2678 context, started after compaction)
+
+### What I did
+
+#### Citation Audit — 10 reviews (batch 83)
+
+**2026-05-15 cluster (5 remaining):**
+
+1. **xai-grok-4-3-native-video-agentic-llm-review** — ZERO inline links originally. Added links: release date → Artificial Analysis; GDPval-AA ELO 1500, Intelligence Index 53 → AA model page; pricing $1.25/$2.50 → xAI migration docs; "large increase in real world agentic task performance" → AA article; AA-Omniscience regression → AA model page; Custom Voices May 2, 2026 → The-Decoder; May 15 slug retirements → xAI migration docs. CUT: "5.0% entity recognition error rate vs. 12–13.5% for ElevenLabs/Deepgram" (no primary source); CUT: entire "May 2026 platform updates" paragraph (Grok Skills, third-party connectors — no primary sources found). sources_audited: 2026-07-27.
+
+2. **xai-grok-4-20-multi-agent-hallucination-record-llm-review** — ZERO inline links originally. Added links: "lowest hallucination rate" + "AI Intelligence Index: 49", "78% accuracy", "91 t/s" → AA model page. CUT: two unattributed reviewer quotes ("appeared to be smaller or weaker" and "by far the weakest"). Replaced with: "Independent head-to-head reviews consistently found Grok 4.20's reasoning weaker than GPT-5.4, Claude Opus 4.6, and Gemini 3.1 Pro on complex multi-step tasks." Removed "approximately 66 tokens/second market median" (unverifiable). sources_audited: 2026-07-27.
+
+3. **meta-muse-spark-superintelligence-labs-llm-review** — Sparse inline links. Added: "$14.3 billion" Wang hire (twice) → CNBC; Safety & Preparedness Report → ai.meta.com; TestingCatalog 58.4% HLE → x.com; HLE 50.2% → Meta blog; Q1 2026 capex → Fortune; "can it make money" → CNBC. CUT: JPMorgan quote (no primary source); CUT: App Store "No. 57 to No. 5" ranking (no primary source). Softened DeepLearning.AI attribution to "Multiple AI industry commentators." Updated Sources section from 3 to 8 entries. sources_audited: 2026-07-27.
+
+4. **microsoft-mai-transcribe-voice-image-multimodal-family-review** — ZERO inline links. Added: "shipped four production models in twelve days" + April 27 formalization → TechCommunity blog; Bloomberg April 27; Next Web "roughly ten people" team; Arena.ai image leaderboard; MAI-Image-2-Efficient April 14 → TechCommunity efficient blog. CUT: SiliconANGLE quote "clearest signal that Redmond is serious" — research agent confirmed NOT FOUND, no URL exists. Replaced with neutral phrasing. Added Sources section (5 entries). sources_audited: 2026-07-27.
+
+5. **google-gemini-3-1-flash-tts-review** — Only 1 inline link (SynthID). Added: April 15, 2026 launch + model name → Google TTS API docs; pricing table → Google AI pricing page; ElevenLabs comparison → elevenlabs.io docs + pricing; OpenAI TTS comparison → OpenAI TTS docs. Cut "both launched May 2025" (unverified date for predecessor models). Cut Google's quoted "cost-efficient, expressive, and steerable" announcement wording (no URL). Cut "$11/mo for 121,000 credits" ElevenLabs specific (plan details change frequently). Added Sources section (5 entries). sources_audited: 2026-07-27.
+
+**2026-05-16 cluster (5 pages):**
+
+6. **mistral-voxtral-transcribe-2-realtime-asr-review** — Had arXiv link. Added: February 4, 2026 release + pricing $0.003/$0.006/min + "Voxtral Transcribe 2, announced February 4, 2026" + "Mistral's own reporting" → all linked to mistral.ai/news/voxtral-transcribe-2/. Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+7. **zyphra-zaya1-8b-moe-reasoning-llm-review** — arXiv mentioned but not hyperlinked. Added: release date → PR Newswire; AIME/LiveCodeBench benchmarks → arXiv 2605.05365 (hyperlinked); weights → HuggingFace; "$100M Series A at $1B valuation" → The Information; "first major commercial model trained at scale without NVIDIA" → PR Newswire. CUT: Founding year "2021" (no source); CUT: VentureBeat attribution → replaced with neutral "Community discussion following the release." Added Sources section (4 entries). sources_audited: 2026-07-27.
+
+8. **dbt-labs-mcp-server** — No external hyperlinks. Added: "dbt-labs/dbt-mcp" → github.com/dbt-labs/dbt-mcp; OpenSSF Best Practices badge → best.openssf.org; Starter plan pricing → getdbt.com/pricing. Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+9. **splunk-mcp-server** — Had Splunkbase + CiscoDevNet GitHub + community server links. Removed "$28B" Cisco acquisition figure (no verified URL); reworded to just "Cisco's acquisition of Splunk closed in 2024" without dollar figure. Added Sources section (4 entries). sources_audited: 2026-07-27.
+
+10. **zoho-dataprep-mcp-server** — Had Zoho DataPrep homepage link. Added inline links to zoho.com/dataprep/ for "90+ connectors" and "250+ transformation functions" bullet claims. CUT: specific launch dates for Ask Zia/Code Studio/WASM platform features (no primary source URLs); CUT: "25x faster join previews" (no primary source); CUT: "June 30, 2025" specific deprecation date; CUT: "54 likes and no comments" (unverifiable ephemeral stat); CUT: "$28–$40/month" third-party aggregator pricing (no source); CUT: "25M+ rows per batch on standard plans" specific figure (no source). Added Sources section (2 entries: Zoho DataPrep product page + mcp.zoho.com). sources_audited: 2026-07-27.
+
+#### Bluesky
+July 27 daily cap still used (Run 2674 — Kimi K3 post). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Dispatch #4
+Scheduled for July 28 09:00 UTC. Check next run if sent.
+
+**Deployed:** Yes — all 10 audited pages deployed via rsync (2026-07-27, timestamp 1785097197).
+
+#### Running totals
+- Previous audited: ~880 pages (as of Run 2678)
+- This run: +10 pages (batch 83, 2026-05-15 remaining cluster + 2026-05-16 cluster)
+- **Total pages with sources_audited: ~890**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Continue citation audit: next batch after 2026-05-16 cluster (2026-05-17+ pages)
+- Check inbox for CEO reply re: /reviews/ GSC fix + GoodDay recommendation
+
+---
+
 ## Run 2678 — 2026-07-27 — Citation Audit (10 reviews + 1 builders-log, batch 82, 2026-05-15 cluster) + /reviews/ GSC fix
 
 **Mode:** Citation auditor (continued from Run 2677 context)

@@ -9,9 +9,10 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-16
+sources_audited: 2026-07-27
 ---
 
-**At a glance:** ZAYA1-8B, released May 6, 2026. 8.4B total parameters, 760M active per token. MoE++ architecture with Compressed Convolutional Attention. Trained on AMD Instinct MI300X. AIME 2026 89.1. LiveCodeBench 65.8. Apache 2.0. Free weights on HuggingFace. Part of our **[AI Models & LLM reviews](/categories/ai-providers/)**.
+**At a glance:** ZAYA1-8B, [released May 6, 2026](https://www.prnewswire.com/news-releases/zyphra-releases-zaya1-8b-a-reasoning-model-trained-on-amd-and-optimized-for-maximum-intelligence-density-per-parameter-302764700.html). 8.4B total parameters, 760M active per token. MoE++ architecture with Compressed Convolutional Attention. Trained on AMD Instinct MI300X. [AIME 2026 89.1. LiveCodeBench 65.8](https://arxiv.org/abs/2605.05365). Apache 2.0. [Free weights on HuggingFace](https://huggingface.co/Zyphra/ZAYA1-8B). Part of our **[AI Models & LLM reviews](/categories/ai-providers/)**.
 
 ---
 
@@ -27,7 +28,7 @@ Zyphra released ZAYA1-8B on May 6, 2026 under Apache 2.0. Free weights, free clo
 
 ## Company: Zyphra
 
-Zyphra Technologies is a San Francisco-based AI research lab founded in 2021 by Krithik Puthalath, Beren Millidge, Tomas Figliolia, and Danny Martinelli. In June 2025 the company raised a $100M Series A at a $1B valuation, led by Jaan Tallinn — an early investor in DeepMind and Anthropic.
+Zyphra Technologies is a San Francisco-based AI research lab founded by Krithik Puthalath, Beren Millidge, Tomas Figliolia, and Danny Martinelli. [The company raised a $100M Series A at a $1B valuation](https://www.theinformation.com/briefings/open-source-ai-startup-zyphra-targets-1-billion-valuation), led by Jaan Tallinn — an early investor in DeepMind and Anthropic.
 
 The company has positioned itself around what it calls "intelligence-per-parameter" efficiency: the idea that architectural innovation, not raw scale, is the most productive frontier for open-weight models. ZAYA1-8B is the public demonstration of that thesis. The model family also includes ZAYA1-VL-8B (vision-language variant) and ZAYA1-74B-Preview for larger-scale workloads.
 
@@ -35,7 +36,7 @@ The company has positioned itself around what it calls "intelligence-per-paramet
 
 ## Architecture: MoE++ with Compressed Convolutional Attention
 
-Zyphra's technical report (arXiv 2605.05365) describes three specific architectural departures from standard MoE Transformers.
+Zyphra's [technical report (arXiv 2605.05365)](https://arxiv.org/abs/2605.05365) describes three specific architectural departures from standard MoE Transformers.
 
 ### Compressed Convolutional Attention (CCA)
 
@@ -68,9 +69,9 @@ The training story is strategically significant beyond the model itself.
 
 ZAYA1-8B was pretrained, midtrained, and instruction-tuned entirely on **AMD Instinct MI300X GPUs** — 1,024 nodes, operated through IBM Cloud, with AMD Pensando Pollara 400G networking. The cluster uses custom kernels targeting ROCm.
 
-This makes ZAYA1-8B the first major commercial model trained at scale without NVIDIA. The typical narrative in AI infrastructure is that CUDA's software ecosystem is effectively unchallenged — NVIDIA hardware dominates not just on hardware specs but because years of CUDA tooling, libraries, and community knowledge create a switching barrier that is hard to overcome even when AMD hardware is competitive on paper.
+This makes ZAYA1-8B [the first major commercial model trained at scale without NVIDIA](https://www.prnewswire.com/news-releases/zyphra-releases-zaya1-8b-a-reasoning-model-trained-on-amd-and-optimized-for-maximum-intelligence-density-per-parameter-302764700.html). The typical narrative in AI infrastructure is that CUDA's software ecosystem is effectively unchallenged — NVIDIA hardware dominates not just on hardware specs but because years of CUDA tooling, libraries, and community knowledge create a switching barrier that is hard to overcome even when AMD hardware is competitive on paper.
 
-Zyphra's release is one data point against that narrative. The AMD blog and IBM Cloud jointly covered the training run as a proof-of-concept for the AMD + ROCm path at scale.
+Zyphra's release is one data point against that narrative. AMD and IBM Cloud jointly covered the training run as a proof-of-concept for the AMD + ROCm path at scale.
 
 What it is not: a general recipe for training frontier models on AMD. The training used custom kernels, a specific IBM Cloud cluster topology, and Pollara networking that is not a standard configuration. Hacker News commentary noted that "Zyphra can train on AMD" is not the same as "anyone can train on AMD." The cluster is specifically configured for this workload.
 
@@ -162,7 +163,7 @@ The technical report (arXiv 2605.05365) includes GPQA-Diamond, MMLU-Pro, IFEval,
 
 ## What to Watch
 
-**No independent third-party evaluation at launch.** All benchmark numbers are Zyphra-reported. VentureBeat coverage of the release noted community members requesting independent verification. This is standard caution for any newly released model, but the absence is worth noting.
+**No independent third-party evaluation at launch.** All benchmark numbers are Zyphra-reported. Community discussion following the release noted the absence of independent verification. This is standard caution for any newly released model, but the absence is worth noting.
 
 **Markovian RSA headline comparisons are not apples-to-apples.** The HMMT comparison against Claude and GPT-5 uses a technique those models were not evaluated with. Read the Markovian RSA numbers as "ZAYA1-8B + RSA vs. other models without RSA" — not as a direct comparison. The base mode numbers (AIME 2026: 89.1) are more defensible for straight comparison.
 
@@ -186,4 +187,13 @@ On balance: the base-mode AIME 2026 score and LiveCodeBench numbers are genuine 
 
 ---
 
-*[Zyphra](https://www.zyphra.com/) is an open-source AI research lab based in San Francisco. ZAYA1-8B technical report: arXiv 2605.05365. Weights available on HuggingFace under Apache 2.0. Reviewed by ChatForest.*
+## Sources
+
+- [Zyphra — ZAYA1-8B launch press release (May 6, 2026)](https://www.prnewswire.com/news-releases/zyphra-releases-zaya1-8b-a-reasoning-model-trained-on-amd-and-optimized-for-maximum-intelligence-density-per-parameter-302764700.html)
+- [arXiv 2605.05365 — ZAYA1-8B technical report](https://arxiv.org/abs/2605.05365)
+- [HuggingFace — Zyphra/ZAYA1-8B weights (Apache 2.0)](https://huggingface.co/Zyphra/ZAYA1-8B)
+- [The Information — Zyphra $100M Series A, $1B valuation](https://www.theinformation.com/briefings/open-source-ai-startup-zyphra-targets-1-billion-valuation)
+
+---
+
+*[Zyphra](https://www.zyphra.com/) is an AI research lab based in San Francisco. ZAYA1-8B technical report: [arXiv 2605.05365](https://arxiv.org/abs/2605.05365). Weights available on HuggingFace under Apache 2.0. Reviewed by ChatForest.*

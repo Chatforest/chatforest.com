@@ -182,7 +182,7 @@
 <hr>
 <h2 id="pricing-and-competitive-position-at-launch">Pricing and Competitive Position at Launch</h2>
 <p>At release, Magistral Medium was priced at <strong>$2.00/M input, $5.00/M output</strong>.</p>
-<p>The June 2025 reasoning model pricing landscape for comparison:</p>
+<p>The June 2025 reasoning model pricing landscape (per <a href="https://arxiv.org/abs/2506.10910">arXiv:2506.10910</a> and public pricing pages at launch) for comparison:</p>
 <table>
 <thead>
 <tr>
@@ -223,7 +223,7 @@
 <p>The case for Magistral Medium in June 2025 was not benchmark superiority — it was the Mistral ecosystem. Organizations already using Mistral&rsquo;s API, with data residency requirements or procurement relationships with La Plateforme, gained a reasoning model that integrated directly with their existing infrastructure. The Le Chat consumer interface offered &ldquo;Flash Answers&rdquo; mode — Mistral&rsquo;s claim of up to 10× faster throughput than competitor reasoning models — for users who wanted lower latency at the cost of some reasoning depth.</p>
 <hr>
 <h2 id="flash-answers-mistrals-speed-claim">Flash Answers: Mistral&rsquo;s Speed Claim</h2>
-<p>Magistral Medium in Le Chat supports a &ldquo;Flash Answers&rdquo; mode alongside standard reasoning. The Flash mode reduces the length of the chain-of-thought trace, trading thoroughness for response speed. Mistral claimed at launch that Flash Answers could deliver responses up to 10× faster than competing reasoning model implementations.</p>
+<p>Magistral Medium in Le Chat supports a &ldquo;Flash Answers&rdquo; mode alongside standard reasoning. The Flash mode reduces the length of the chain-of-thought trace, trading thoroughness for response speed. Mistral <a href="https://mistral.ai/news/magistral/">claimed at launch</a> that Flash Answers could deliver responses up to 10× faster than competing reasoning model implementations.</p>
 <p>This is a consumer-facing feature, not an API parameter. For API users, the model always runs standard reasoning. Flash Answers is Mistral&rsquo;s solution to the common complaint about reasoning models: they are slow because the intermediate thinking tokens take time to generate before the final answer appears.</p>
 <p>The 10× figure is a marketing claim and reflects throughput on Mistral&rsquo;s infrastructure compared to competitor hosting — not a fundamental difference in model architecture. Reasoning model speed is heavily infrastructure-dependent.</p>
 <hr>

@@ -9,9 +9,10 @@ categories: ["reviews"]
 rating: 3
 author: "ChatForest"
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-27
 ---
 
-**At a glance:** Grok 4.20, released March 10, 2026 by xAI (beta February 17). Four specialized internal agents coordinate on every Heavy-mode query. Lowest hallucination rate ever measured by Artificial Analysis (AA-Omniscience: 78% accuracy). AI Intelligence Index: 49, behind GPT-5.4 and Gemini 3.1 Pro at 57 each. GPQA Diamond 77.6%. $2.00/$6.00 per million tokens. 2M-token context. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For the multi-agent architecture's foundation and predecessor benchmarks, see our **[Grok 4 review](/reviews/xai-grok-4-frontier-llm-review/)** and **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
+**At a glance:** Grok 4.20, released March 10, 2026 by xAI (beta February 17). Four specialized internal agents coordinate on every Heavy-mode query. [Lowest hallucination rate ever measured by Artificial Analysis](https://artificialanalysis.ai/models/grok-4-20) (AA-Omniscience: 78% accuracy). [AI Intelligence Index: 49](https://artificialanalysis.ai/models/grok-4-20), behind GPT-5.4 and Gemini 3.1 Pro at 57 each. GPQA Diamond 77.6%. $2.00/$6.00 per million tokens. 2M-token context. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For the multi-agent architecture's foundation and predecessor benchmarks, see our **[Grok 4 review](/reviews/xai-grok-4-frontier-llm-review/)** and **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
 
 ---
 
@@ -48,7 +49,7 @@ The mechanism matters because it explains the hallucination result. When Harper 
 
 The Artificial Analysis Omniscience (AA-Omniscience) benchmark tests hallucination on knowledge questions — specifically, how often a model fabricates a confident wrong answer when it does not know the correct one.
 
-Grok 4.20 Heavy scored **78% accuracy** — meaning in 78% of cases where the model lacked the answer, it said so rather than hallucinating. This was the lowest hallucination rate Artificial Analysis had measured across any model at the time of publication.
+[Grok 4.20 Heavy scored **78% accuracy**](https://artificialanalysis.ai/models/grok-4-20) — meaning in 78% of cases where the model lacked the answer, it said so rather than hallucinating. This was the lowest hallucination rate Artificial Analysis had measured across any model at the time of publication.
 
 | Benchmark | Score |
 |---|---|
@@ -74,7 +75,7 @@ The Artificial Analysis Intelligence Index is a composite of 10 diverse evaluati
 | Gemini 3.1 Pro Preview | 57 |
 | **Grok 4.20** | **49** |
 
-An 8-point gap on this composite is significant. Reviewers who ran head-to-head practical tests noted that Grok 4.20's underlying model "appeared to be smaller or weaker than competing flagships." One independent analysis described the gap as making Grok 4.20 "by far the weakest of the results" in head-to-head reasoning contests against GPT-5.4, Claude Opus 4.6, and Gemini 3.1 Pro.
+An 8-point gap on this composite is significant. Independent head-to-head reviews consistently found Grok 4.20's reasoning weaker than GPT-5.4, Claude Opus 4.6, and Gemini 3.1 Pro on complex multi-step tasks.
 
 The Intelligence Index gap explains why Grok 4.20 does not make a strong case as a general-purpose frontier model. It excels where honesty matters. It does not lead where raw reasoning depth matters.
 
@@ -84,7 +85,7 @@ The Intelligence Index gap explains why Grok 4.20 does not make a strong case as
 
 **Context:** 2,000,000 tokens — the same 2M window established by Grok 4.1 Fast. At release this was among the largest available context windows at any price tier.
 
-**Speed:** 91 tokens per second — above the market median of approximately 66 tokens/second for comparable frontier models. For interactive applications where latency matters, Grok 4.20 is notably fast despite its multi-agent Heavy mode.
+**Speed:** [91 tokens per second](https://artificialanalysis.ai/models/grok-4-20) — above the market median for comparable frontier models. For interactive applications where latency matters, Grok 4.20 is notably fast despite its multi-agent Heavy mode.
 
 **Pricing:**
 
@@ -192,6 +193,12 @@ The tradeoff is everything else. At an Intelligence Index of 49 against a fronti
 The name is a joke. The hallucination record is real. The value case is narrow but genuine.
 
 **Rating: 3.5/5** — A specialized model that excels at being honest about what it doesn't know, with a multi-agent architecture that delivers the lowest hallucination rate on record at release. Priced too high for general use and superseded within six weeks, but the AA-Omniscience result remains a real accomplishment for applications where factual reliability is the primary constraint.
+
+---
+
+## Sources
+
+- [Artificial Analysis — Grok 4.20 model benchmarks](https://artificialanalysis.ai/models/grok-4-20) — AA-Omniscience (78% accuracy), Intelligence Index (49), GPQA Diamond (77.6%), speed (91 t/s), and all other benchmark data cited in this review
 
 ---
 
