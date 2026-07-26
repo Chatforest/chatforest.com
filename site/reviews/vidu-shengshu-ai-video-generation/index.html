@@ -67,14 +67,14 @@
 
       <div class="article-body">
         <p>When Shengshu AI launched Vidu 1.0 in April 2024, it made history as the first Chinese AI video generation model. At the time, the rest of the world was still processing Sora&rsquo;s February 2024 reveal, and no non-Western lab had publicly demonstrated comparable video generation capabilities. The timing was deliberate — and the company behind it had been building toward this moment since March 2023.</p>
-<p>Two years later, Vidu Q3 ranks #2 globally on the Artificial Analysis video arena leaderboard, has surpassed Runway Gen-4.5 and Kling 2.5 Turbo in blind user preference voting, has 30 million users across 200+ countries, and just closed a $290M Series B led by Alibaba Cloud. The story arc from &ldquo;first Chinese video model&rdquo; to genuine global contender is worth examining in detail.</p>
+<p>Two years later, Vidu Q3 ranks among the top models on the <a href="https://artificialanalysis.ai/video/leaderboard/text-to-video">Artificial Analysis video arena leaderboard</a>, has surpassed Runway Gen-4.5 and Kling 2.5 Turbo in blind user preference voting, has 30 million users across 200+ countries, and <a href="https://www.cnbc.com/2026/04/10/alibaba-cloud-invests-world-model-ai-shengshu-vidu.html">closed a $290M Series B led by Alibaba Cloud</a>. The story arc from &ldquo;first Chinese video model&rdquo; to genuine global contender is worth examining in detail.</p>
 <h2 id="the-company-shengshu-ai-生数科技">The Company: Shengshu AI (生数科技)</h2>
 <p>Shengshu AI (生数科技, roughly &ldquo;creative generative technology&rdquo;) was founded in March 2023 in Beijing&rsquo;s Zhongguancun science district — China&rsquo;s closest equivalent to Silicon Valley. The founding team is academic in origin: Jun Zhu (朱军), founder and chief scientist, is a Tsinghua University professor whose lab developed U-ViT (Universal Vision Transformer) in 2022, the architectural backbone that Vidu is built on. CEO Yihang Luo leads the commercial operation.</p>
 <p>The Tsinghua lineage matters technically. Shengshu claims the U-ViT architecture predates OpenAI&rsquo;s DiT (Diffusion Transformer) work — meaning they built the foundational architectural idea before Sora popularized it. Whether that framing holds up to technical scrutiny is debatable, but the underlying research credentials are genuine.</p>
 <p><strong>Funding timeline:</strong></p>
 <ul>
 <li><strong>Series A+ (early 2026):</strong> RMB 600 million (~$86M), co-led by Zhongguancun Science City and LINK-X CAPITAL, with strategic investors including Wondershare (Filmora), Visual China Group (China&rsquo;s largest stock media company), and returning investors Qiming Venture Partners</li>
-<li><strong>Series B (April 2026):</strong> RMB 2 billion (~$290M), led by <strong>Alibaba Cloud</strong>, with Baidu Ventures, China Internet Investment Fund, TAL Education Group, and others participating</li>
+<li><strong><a href="https://www.cnbc.com/2026/04/10/alibaba-cloud-invests-world-model-ai-shengshu-vidu.html">Series B (April 2026)</a>:</strong> RMB 2 billion (~$290M), led by <strong>Alibaba Cloud</strong>, with Baidu Ventures, China Internet Investment Fund, TAL Education Group, and others participating</li>
 <li><strong>Total raised:</strong> $380M+</li>
 </ul>
 <p>The Series B is the most consequential development. Alibaba Cloud&rsquo;s investment is not passive capital — Vidu Q3 is now integrated into Alibaba Cloud Model Studio, giving it enterprise distribution through China&rsquo;s dominant cloud platform. Alibaba also backs Wan2.1 (open-source video generation), which creates a dual-track strategy: the commercial cloud offering (Vidu) and the open ecosystem play (Wan) both benefit from Alibaba&rsquo;s ecosystem.</p>
@@ -95,7 +95,7 @@
 <li>Variable-length sequence handling allows variable-duration generation natively</li>
 <li>Unified token processing means temporal coherence is a structural property, not an add-on</li>
 </ol>
-<p>The arXiv paper (2405.04233, May 2024) explains the architecture but compares qualitatively to Sora rather than providing benchmark numbers — a limitation worth noting for technical readers.</p>
+<p>The <a href="https://arxiv.org/abs/2405.04233">arXiv paper (2405.04233, May 2024)</a> explains the architecture but compares qualitatively to Sora rather than providing benchmark numbers — a limitation worth noting for technical readers.</p>
 <p><strong>TurboDiffusion (December 2025):</strong> Shengshu and Tsinghua&rsquo;s TSAIL Lab jointly released TurboDiffusion, a sparse linear attention acceleration framework (GitHub: <code>thu-ml/TurboDiffusion</code>). On a single RTX 5090, TurboDiffusion generates a 5-second 720p video from a 14B text-to-video model at 200× the baseline speed — real-time generation territory. This is currently positioned as open-source research infrastructure rather than a Vidu cloud product feature, but it signals what&rsquo;s coming.</p>
 <h2 id="reference-to-video-the-differentiator">Reference-to-Video: The Differentiator</h2>
 <p>The single most distinctive capability in Vidu&rsquo;s current lineup is Reference-to-Video (R2V). Most video generation models accept one optional reference image, with unpredictable consistency. Vidu Q2 and Q3 accept <strong>up to 7 reference images simultaneously</strong> — faces, costumes, props, locations, visual styles — and maintain consistency across all of them throughout the generated video.</p>
@@ -105,16 +105,15 @@
 <li>An advertiser can produce product videos with exact product appearance matching reference photos</li>
 <li>A filmmaker can maintain character consistency across multiple shots without manual correction</li>
 </ul>
-<p>Vidu Q3 ranks <strong>#1 globally on the SuperCLUE Reference-to-Video leaderboard</strong> (April 2026), the first evaluation of this specific capability. No Western model currently targets this use case as explicitly.</p>
+<p>Vidu Q3 has led reference-to-video evaluations as of April 2026 per company reporting. No Western model currently targets this use case as explicitly.</p>
 <h2 id="audio-video-single-pass-native-generation">Audio-Video: Single-Pass Native Generation</h2>
 <p>Vidu Q3 generates synchronized audio and video in a single generation pass — including ambient sound, foley effects, background music, atmospheric audio layers, and multilingual dialogue with lip sync. This is similar to what Google&rsquo;s Veo 3 introduced, but with multilingual lip sync as a distinguishing feature (Google targets English-first; Vidu supports multiple languages at launch).</p>
 <p>The audio-video architecture is not separately described in public documentation — unlike LTX Video, which published technical details of its dual-stream approach. Shengshu describes the capability as a &ldquo;unified audio-video generation engine&rdquo; without further architecture disclosure. What is confirmed: the output combines video motion and synchronized audio coherently in one generation call, with a 16-second duration ceiling.</p>
 <h2 id="benchmark-standing">Benchmark Standing</h2>
-<p><strong>Artificial Analysis Video Arena (blind Elo, user preference voting, April 2026):</strong></p>
+<p><strong><a href="https://artificialanalysis.ai/video/leaderboard/text-to-video">Artificial Analysis Video Arena</a> (blind Elo, user preference voting, April 2026):</strong></p>
 <ul>
-<li>Vidu Q3 Pro: <strong>#2 globally in Text-to-Video</strong> (behind only xAI&rsquo;s Grok Imagine)</li>
-<li>Surpassing Runway Gen-4.5 and Kling 2.5 Turbo</li>
-<li>Image-to-Video: approximately #4 globally</li>
+<li>Vidu Q3 Pro: among the top-ranked models in Text-to-Video, surpassing Runway Gen-4.5 and Kling 2.5 Turbo per company reporting</li>
+<li>Image-to-Video: competitive globally</li>
 </ul>
 <p>The Artificial Analysis arena uses blind pairwise comparisons where human raters vote on which video they prefer — making it a measure of perceived output quality rather than academic benchmark scores. As a company-framed datapoint, treat the #2 ranking as meaningful signal rather than ground truth, but Artificial Analysis is a credible third-party measurement service.</p>
 <p><strong>VBench:</strong> No published Vidu VBench score in current sources. The open-source leader Wan 2.2 scores 84.7% overall on VBench for comparison. Vidu&rsquo;s competitive positioning emphasizes the Artificial Analysis arena and the R2V category rather than academic video benchmarks.</p>
@@ -207,7 +206,7 @@
 </ul>
 <p>The ComfyUI integration is notable for users who prefer node-based workflows over direct API calls. Together AI and fal.ai access allows developers to consolidate Vidu calls alongside other models in multi-provider setups.</p>
 <h2 id="market-position-and-partnerships">Market Position and Partnerships</h2>
-<p>Shengshu claims <strong>90% of stakeholders in China&rsquo;s film and entertainment industry work with Vidu</strong> — a figure that is difficult to independently verify but aligns with the Visual China Group strategic investment and reported enterprise adoption patterns. Documented partnerships include:</p>
+<p>Shengshu has documented partnerships with major players across China&rsquo;s media and technology sectors, including:</p>
 <ul>
 <li><strong>Alibaba Cloud:</strong> Distribution through Model Studio (investment + integration)</li>
 <li><strong>Wondershare:</strong> Strategic investor; Filmora integration pipeline</li>
@@ -216,8 +215,7 @@
 <li><strong>Aura Productions:</strong> 50-episode AI-generated anime series for North American social media</li>
 <li><strong>TAL Education Group:</strong> EdTech applications pipeline</li>
 </ul>
-<p>A case study cited in company materials: a &ldquo;leading international app&rdquo; achieved over $1M revenue in three months using Vidu&rsquo;s I2V API, with 10,000+ daily downloads at peak. The app is unnamed, but the metric suggests real commercial traction in consumer-facing AI applications.</p>
-<p><strong>30 million users</strong> across 200+ countries. Discord has ~16,600 members — modest relative to user count, suggesting most engagement is product-first rather than community-first.</p>
+<p><strong>30 million users</strong> across 200+ countries per company reporting. Discord has ~16,600 members — modest relative to user count, suggesting most engagement is product-first rather than community-first.</p>
 <h2 id="competitive-landscape">Competitive Landscape</h2>
 <p>Vidu&rsquo;s positioning has matured significantly from &ldquo;first Chinese video model&rdquo; to a genuine multi-axis competitor:</p>
 <p><strong>vs. Kling (Kuaishou):</strong> Kling has breadth (18+ video tasks, unified multimodal workflow) and very strong motion fluidity. Vidu Q3 now surpasses Kling 2.5 Turbo on Artificial Analysis T2V. The Alibaba/Kling rivalry is now also an investor rivalry — Alibaba backs Vidu while Kling is from Kuaishou (a ByteDance competitor in China&rsquo;s short video market).</p>

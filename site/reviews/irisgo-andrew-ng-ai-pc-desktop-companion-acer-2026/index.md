@@ -63,7 +63,7 @@ The enterprise IT counterpart to this is the question of device management. Prel
 
 ## What the Critics Say
 
-**$2.8 million is a small bet.** The seed round positions IrisGo against Microsoft (market cap ~$3.5T), Google (Alphabet, ~$2.1T), and Apple (market cap ~$3.5T), all of which are shipping or will soon ship on-device ambient AI products. The AI Fund's endorsement is valuable signal, but signal without capital is not a moat.
+**$2.8 million is a small bet.** The seed round positions IrisGo against Microsoft, Google, and Apple — trillion-dollar companies all shipping or preparing on-device ambient AI products. The AI Fund's endorsement is valuable signal, but signal without capital is not a moat.
 
 **The privacy framing needs verification.** "On-device with authorized cloud sync" is a reasonable architecture, but IrisGo's privacy claims have not yet been independently audited. Enterprise buyers will not take vendor attestation at face value. The company will need third-party security reviews before it can seriously compete for managed enterprise deployments.
 

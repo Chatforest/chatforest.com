@@ -19,7 +19,7 @@ We write from public sources — Kuaishou investor relations, arXiv technical re
 
 Kuaishou was founded in 2011 by Hua Su and Cheng Yixiao in Beijing, originally as a tool for sharing animated GIFs. By 2013 it had pivoted to short-form video. By 2016 it had added livestreaming and was growing rapidly as China's first large-scale short-video platform — several years before TikTok's international expansion would introduce that format to Western markets. Kuaishou [IPO'd on the Hong Kong Stock Exchange in February 2021](https://www.cnbc.com/2021/02/05/kuaishou-ipo-hong-kong-shares-rise-on-debut.html) (ticker: 1024.HK), [briefly hitting a market capitalization of over HK$1.39 trillion (~USD 179 billion)](https://www.forbes.com/sites/palashghosh/2021/02/05/tiktok-rival-kuaishous-shares-surge-160-in-hong-kong-stock-exchange-debut/) on its debut day.
 
-Today Kuaishou is China's second-largest short-video platform, behind ByteDance's Douyin/TikTok. Revenue runs approximately 124 billion CNY (~USD 17 billion) annually, split across advertising, livestreaming gifts, and e-commerce commissions. The international app is branded **Kwai** (briefly called Snack Video in South and Southeast Asian markets before India banned it in 2020 alongside a broad set of Chinese apps).
+Today Kuaishou is China's second-largest short-video platform, behind ByteDance's Douyin/TikTok. Revenue runs in the tens of billions of USD annually, split across advertising, livestreaming gifts, and e-commerce commissions. The international app is branded **Kwai** (briefly called Snack Video in South and Southeast Asian markets before India banned it in 2020 alongside a broad set of Chinese apps).
 
 Kling is Kuaishou's entry into the generative AI layer of that business. The logic is straightforward: a platform that processes, stores, and serves video at planetary scale is well-positioned to build tools that generate video. The infrastructure investment, the model training compute, the data flywheel from billions of user-created clips — all of it compounds.
 
@@ -183,7 +183,7 @@ The business numbers are unusual for an AI product in this category.
 
 Kling reached USD 100M ARR in March 2025 — ten months after launch. It crossed USD 240M ARR in December 2025, with monthly revenue above USD 20 million. The full-year 2025 revenue was approximately USD 150 million. As of that same month: 60 million registered creators, 600 million videos generated, 30,000 enterprise users, API services to 10,000 corporate clients worldwide.
 
-Kuaishou management has publicly guided for 100%+ year-over-year revenue growth in 2026. Kling was showcased at CES 2026 — a notable move for a Chinese AI company asserting global positioning — and Kling 3.0 shipped one month later.
+Kling 3.0 shipped in February 2026, one month after Kling's appearance at CES 2026.
 
 These figures place Kling in a different commercial category than its open-source video contemporaries (HunyuanVideo, Wan, CogVideoX) and in the same league as Runway in terms of commercial validation. The iteration cadence — a major version roughly every 1–3 months since launch — is also consistent with a well-resourced engineering organization, not a research lab releasing annual checkpoints.
 

@@ -96,7 +96,7 @@
 <h3 id="reasoning-gpqa-diamond-and-aime">Reasoning: GPQA Diamond and AIME</h3>
 <p><strong>GPQA Diamond</strong> — graduate-level &ldquo;Google-proof&rdquo; science questions across biology, chemistry, and physics — is one of the strongest proxies for scientific reasoning among current benchmarks. Questions are written to be verifiable only by domain experts and resistant to search. Opus 4.7 scores <strong>94.2%</strong> (<a href="https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf">Opus 4.7 system card</a>).</p>
 <p>For context on what that score means: Claude Mythos Preview (unreleased) scores 94.6%; Gemini 3.1 Pro scores 94.3%; Opus 4.7 is at 94.2%. The top three models are separated by 0.4 percentage points, which is within normal variance. At this benchmark level, &ldquo;leading&rdquo; and &ldquo;near-leading&rdquo; are effectively equivalent.</p>
-<p>On <strong>AIME 2024</strong> (competition mathematics), Opus 4.7 scores <strong>91.5%</strong>. One third-party source reported a 100% AIME 2025 score; we treat that figure with caution pending verification from Anthropic&rsquo;s official model card, as 100% is an extraordinary claim.</p>
+<p>On <strong>AIME 2024</strong> (competition mathematics), Opus 4.7 scores <strong>91.5%</strong>.</p>
 <p><strong>MATH benchmark</strong> (college-level and competition mathematics): approximately <strong>94.8%</strong>, with some variance across evaluators (94.1% reported elsewhere, likely reflecting different prompt formats or pass@1 vs pass@k methodology).</p>
 <h3 id="hallucination-aa-omniscience">Hallucination: AA-Omniscience</h3>
 <p>The most important benchmark for enterprise buyers — and the one most AI vendors discuss least — is hallucination rate. How often does the model produce confident wrong answers?</p>
@@ -133,7 +133,7 @@
 </tbody>
 </table>
 <p>Opus 4.7&rsquo;s improvement from Opus 4.6 (14 → 26 on AA-Omniscience; 61% → 36% hallucination rate) is described by Artificial Analysis as one of the largest single-generation hallucination improvements from any major AI lab. The mechanism: Opus 4.7 answers a smaller percentage of questions (attempt rate fell from ~82% to ~70%) — but when it answers, it&rsquo;s more accurate. When uncertain, it abstains rather than guessing.</p>
-<p>The comparison with GPT-5.5 (86% hallucination rate) is stark and requires careful interpretation. OpenAI claims GPT-5.5 reduced hallucinations by 52.5% compared to GPT-5.3 Instant — in medicine, law, and finance specifically. That&rsquo;s a different benchmark from AA-Omniscience, which evaluates broad factual knowledge including domains outside those three areas. The two numbers are not in direct conflict, but they measure different things. For broad-domain factual reliability, the AA-Omniscience data favors Opus 4.7 decisively.</p>
+<p>The comparison with GPT-5.5 (86% hallucination rate) is stark. For broad-domain factual reliability, the AA-Omniscience data favors Opus 4.7 decisively.</p>
 <hr>
 <h2 id="context-window-and-output">Context Window and Output</h2>
 <p><strong>1 million tokens</strong> input context window — at standard pricing, with no long-context surcharge. This matches Gemini 2.5 Pro and puts Opus 4.7 among the small group of production-deployed frontier models that can ingest entire large codebases, multi-year archives, or very long legal documents in a single call.</p>
@@ -144,7 +144,7 @@
 <p>A specific technical upgrade in Opus 4.7 is image resolution: <strong>2576×2576 pixels, 3.75 megapixels</strong> — up from 1568px / 1.15MP in Opus 4.6. The difference is significant for practical use cases:</p>
 <ul>
 <li><strong>Computer use</strong>: Screenshots of modern high-DPI displays contain fine text (notifications, status bars, small labels) that was previously blurry or unreadable at lower resolution. At 3.75MP, Opus 4.7 processes these at something closer to human visual acuity.</li>
-<li><strong>Document analysis</strong>: Dense technical documents — circuit schematics, financial tables, academic papers with small figures — are more legible. Reported improvement: 21% fewer errors on enterprise document benchmarks versus Opus 4.6.</li>
+<li><strong>Document analysis</strong>: Dense technical documents — circuit schematics, financial tables, academic papers with small figures — are more legible at 3.75MP versus Opus 4.6&rsquo;s 1.15MP.</li>
 <li><strong>Coordinate accuracy</strong>: Computer-use pixel coordinates now map 1:1 to actual screen positions. Developers no longer need to apply scale-factor corrections when feeding screenshots.</li>
 </ul>
 <hr>
@@ -201,13 +201,13 @@
 <li>Long-form prose quality: described as &ldquo;more mechanical&rdquo; or &ldquo;slide-deck formatted&rdquo; — more bullet points and headers, less narrative flow. This is a reasonable trade for many professional use cases, but a genuine limitation for literary or narrative work.</li>
 <li>Adaptive Thinking&rsquo;s behavior on non-coding tasks is less transparent than the old explicit thinking budget system. Some users report that without specific prompting, the model &ldquo;never thinks&rdquo; on tasks where extended reasoning would help.</li>
 <li>The tokenizer cost increase is widely viewed as a hidden price increase, with significant developer community pushback.</li>
-<li><em>The New Stack</em> published a piece titled &ldquo;Claude Opus 4.7, flaky performance&rdquo; citing inconsistent results compared to Opus 4.6 in some workflows — worth noting as a counterpoint to positive agentic reports.</li>
+<li>Some enterprise reviewers have reported inconsistent results compared to Opus 4.6 in certain workflows — worth noting as a counterpoint to positive agentic reports.</li>
 </ul>
 <p><strong>Developer consensus:</strong> Opus 4.7 is the right choice for hard agentic coding, vision workflows, complex document analysis, and high-stakes professional tasks where hallucination resistance matters. For creative writing, general chat, or cost-sensitive production workloads, Sonnet 4.6 is preferred. For very high-volume, latency-tolerant workloads, the batch API pricing makes Opus 4.7 more accessible.</p>
 <hr>
 <h2 id="how-it-fits-positioning-in-the-2026-frontier">How It Fits: Positioning in the 2026 Frontier</h2>
 <p>The three-way comparison at the frontier in May 2026 is between Opus 4.7, GPT-5.5, and Gemini 3.1 Pro. A few honest comparisons:</p>
-<p><strong>Coding (SWE-bench Verified):</strong> Opus 4.7 (87.6%) vs GPT-5.5 (58.6% SWE-bench Pro, different scale) — Opus 4.7 leads on Verified; GPT-5.5 leads on terminal and CLI-style coding tasks.</p>
+<p><strong>Coding (SWE-bench Verified):</strong> Opus 4.7 (87.6%) vs <a href="/reviews/openai-gpt-5-5-llm-review/">GPT-5.5</a> — Opus 4.7 leads on SWE-bench Verified; GPT-5.5 leads on terminal and CLI-style coding tasks.</p>
 <p><strong>Scientific reasoning (GPQA Diamond):</strong> Gemini 3.1 Pro (94.3%), Opus 4.7 (94.2%), GPT-5.5 (~90+%) — effectively tied at the top.</p>
 <p><strong>Hallucination (AA-Omniscience):</strong> Gemini 3.1 Pro leads on the composite <strong>Omniscience Index</strong> (33 vs. 26 vs. ~20), but Opus 4.7 has the lower <strong>hallucination rate</strong> (36% vs. 50% vs. 86%). Gemini confabulates less often than GPT-5.5 but more often than Opus 4.7 when the model doesn&rsquo;t know something. For hallucination-sensitive professional work, Opus 4.7&rsquo;s calibration profile is the more conservative choice.</p>
 <p><strong>Context window:</strong> Opus 4.7 (1M), Gemini 3.1 Pro (1M), GPT-5.5 (1M) — effectively equivalent across all three.</p>

@@ -199,7 +199,7 @@ Imagen 3 is not competing in that space. The target users are Google Workspace e
 
 **Person generation restrictions**: Generating realistic images of named public figures is strictly restricted. The `personGeneration` API parameter defaults to `allow_adult` (realistic adult faces allowed in generic portraits), with options for `dont_allow` (no recognizable faces). Enterprise customers can configure this within the bounds Google permits. The restrictions are stricter than some competitors, which matters for use cases like AI-generated headshots or editorial illustration.
 
-**End-of-life**: Imagen 3 retires June 30, 2026. Applications and workflows built on Imagen 3 Vertex AI model IDs require migration to Imagen 4. The deprecation timeline is relatively short for enterprise software — the December 2024 GA date to June 2026 retirement is 18 months — which means some organizations that built around Imagen 3 faced migration work shortly after deployment.
+**End-of-life**: [Imagen 3 retires June 30, 2026](https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/overview). Applications and workflows built on Imagen 3 Vertex AI model IDs require migration to Imagen 4. The deprecation timeline is relatively short for enterprise software — the December 2024 GA date to June 2026 retirement is 18 months — which means some organizations that built around Imagen 3 faced migration work shortly after deployment.
 
 **No fine-tuning for standard access**: Unlike open-weight models, there's no fine-tuning of the base Imagen 3 model by API users. Subject customization and style customization in `capability-001` provide customization within defined workflows, but full fine-tuning on proprietary datasets is not available.
 

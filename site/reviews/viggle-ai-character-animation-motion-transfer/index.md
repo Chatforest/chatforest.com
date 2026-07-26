@@ -26,9 +26,8 @@ The tool went viral in early 2024 when users made videos of Joaquin Phoenix's Jo
 - **Founded:** 2022, Toronto, Canada
 - **CEO/Founder:** Hang Chu — computer vision researcher, former PhD candidate at the University of Toronto under Raquel Urtasun (later of Waabi) and Sanja Fidler (NVIDIA). Prior research roles at Autodesk, Meta, NVIDIA, and Google.
 - **Team:** 31–36 employees as of early 2026
-- **Funding:** ~$27M CAD (~$20M USD) total
-  - Series A (August 2024): $26M CAD led by **Andreessen Horowitz (a16z)**, with Two Small Fish Ventures. Additional investors include Alphabet, AI Futures Fund, Chapter One, and Golden Ventures.
-- **Post-Series A valuation:** approximately $150M (one source; not officially confirmed)
+- **Funding:** ~$26M CAD (~$19M USD) total
+  - [Series A (August 2024)](https://www.businesswire.com/news/home/20240826353941/en/Viggle-AI-Secures-$19-Million-in-Series-A-Funding-Led-by-Andreessen-Horowitz): $26M CAD (~$19M USD) led by **Andreessen Horowitz (a16z)**, with Two Small Fish Ventures. Additional investors include Alphabet, AI Futures Fund, Chapter One, and Golden Ventures.
 
 The a16z Series A signals a thesis that "controllable character animation" is a distinct and defensible product category, not simply a feature that general video generators will absorb. Whether that thesis holds as Runway, Kling, and others develop more precise motion control will define Viggle's competitive position over the next several years.
 
@@ -48,7 +47,7 @@ Hang Chu described the approach in a post-Series A interview: "We are essentiall
 
 No academic paper has been published for JST-1 as of this writing. Technical details are drawn from product documentation and press coverage. One statistics-aggregation source cites 1.2B parameters; this is unverified.
 
-**Training data controversy:** In August 2024, concurrent with the Series A announcement, CEO Hang Chu told TechCrunch that training data included YouTube videos. YouTube's terms of service prohibit this use. A Viggle spokesperson subsequently stated Chu "spoke too soon," but confirmed YouTube was used as a data source with "careful curation." The AI Accountability and Artificial Intelligence Corruption (AIAAIC) repository logged this as an incident.
+**Training data controversy:** In August 2024, concurrent with the Series A announcement, [CEO Hang Chu told TechCrunch](https://techcrunch.com/2024/08/26/viggle-makes-controllable-ai-characters-for-memes-and-visualizing-ideas/) that training data included YouTube videos. YouTube's terms of service prohibit this use. A Viggle spokesperson subsequently stated Chu "spoke too soon," but confirmed YouTube was used as a data source with "careful curation." The AI Accountability and Artificial Intelligence Corruption (AIAAIC) repository logged this as an incident.
 
 ---
 
@@ -85,12 +84,7 @@ No academic paper has been published for JST-1 as of this writing. Technical det
 
 Viggle **does not appear on the Artificial Analysis text-to-video or image-to-video leaderboards**. This is expected: Artificial Analysis benchmarks general-purpose video generation quality (cinematic fidelity, prompt adherence, aesthetic quality). Viggle's motion transfer precision is not what those benchmarks measure.
 
-Third-party analyses of Viggle's motion transfer accuracy claim:
-- Foot contact accuracy: 95%+ (vs. ~75% for Runway Gen-4 and ~80% for Kling AI 2.0, per Flowith analysis)
-- Joint constraint violations: "Rare" for Viggle vs. "Occasional" for Runway and Kling
-- Motion transfer accuracy: 92.4% claimed (WorldMetrics statistics aggregator — treat with caution; methodology is not disclosed)
-
-We cannot independently verify these figures. The absence of an academic paper or public benchmark suite for motion transfer quality is a transparency gap. That said, Viggle's community reputation for motion transfer precision is strong among creators who have directly compared it to alternatives.
+No published academic benchmark exists for motion transfer accuracy, and the primary source for motion precision evaluation is community comparison testing rather than standardized leaderboards. The absence of a peer-reviewed evaluation suite is a transparency gap. That said, Viggle's community reputation for motion transfer precision is consistently noted by creators who have directly compared it to alternatives.
 
 ---
 
@@ -143,13 +137,7 @@ No desktop application. No native integration with video editing software (Premi
 ## Community and Usage
 
 - **4M+ Discord members** within first five months; server currently second-largest AI Discord globally
-- **~1.4M monthly active creators** (per one source; methodology not disclosed)
-- **~350,000 Pro subscribers** (Q2 2024 figure; likely higher now)
-- **65% of initial users** came from TikTok
 - App Store peak: #1 in entertainment subcategory
-- NPS: 78 (cited vs. industry average 55; source: company-adjacent)
-
-Revenue figures in public coverage range widely ($3M–$3.4M actual ARR vs. $45M projected ARR vs. $200M in one 2025 forecast). The $3–3.4M actual figure is more credible given team size and funding stage; the higher projections appear speculative.
 
 ---
 

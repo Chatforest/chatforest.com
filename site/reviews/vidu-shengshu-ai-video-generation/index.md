@@ -5,7 +5,7 @@
 
 When Shengshu AI launched Vidu 1.0 in April 2024, it made history as the first Chinese AI video generation model. At the time, the rest of the world was still processing Sora's February 2024 reveal, and no non-Western lab had publicly demonstrated comparable video generation capabilities. The timing was deliberate — and the company behind it had been building toward this moment since March 2023.
 
-Two years later, Vidu Q3 ranks #2 globally on the Artificial Analysis video arena leaderboard, has surpassed Runway Gen-4.5 and Kling 2.5 Turbo in blind user preference voting, has 30 million users across 200+ countries, and just closed a $290M Series B led by Alibaba Cloud. The story arc from "first Chinese video model" to genuine global contender is worth examining in detail.
+Two years later, Vidu Q3 ranks among the top models on the [Artificial Analysis video arena leaderboard](https://artificialanalysis.ai/video/leaderboard/text-to-video), has surpassed Runway Gen-4.5 and Kling 2.5 Turbo in blind user preference voting, has 30 million users across 200+ countries, and [closed a $290M Series B led by Alibaba Cloud](https://www.cnbc.com/2026/04/10/alibaba-cloud-invests-world-model-ai-shengshu-vidu.html). The story arc from "first Chinese video model" to genuine global contender is worth examining in detail.
 
 ## The Company: Shengshu AI (生数科技)
 
@@ -15,7 +15,7 @@ The Tsinghua lineage matters technically. Shengshu claims the U-ViT architecture
 
 **Funding timeline:**
 - **Series A+ (early 2026):** RMB 600 million (~$86M), co-led by Zhongguancun Science City and LINK-X CAPITAL, with strategic investors including Wondershare (Filmora), Visual China Group (China's largest stock media company), and returning investors Qiming Venture Partners
-- **Series B (April 2026):** RMB 2 billion (~$290M), led by **Alibaba Cloud**, with Baidu Ventures, China Internet Investment Fund, TAL Education Group, and others participating
+- **[Series B (April 2026)](https://www.cnbc.com/2026/04/10/alibaba-cloud-invests-world-model-ai-shengshu-vidu.html):** RMB 2 billion (~$290M), led by **Alibaba Cloud**, with Baidu Ventures, China Internet Investment Fund, TAL Education Group, and others participating
 - **Total raised:** $380M+
 
 The Series B is the most consequential development. Alibaba Cloud's investment is not passive capital — Vidu Q3 is now integrated into Alibaba Cloud Model Studio, giving it enterprise distribution through China's dominant cloud platform. Alibaba also backs Wan2.1 (open-source video generation), which creates a dual-track strategy: the commercial cloud offering (Vidu) and the open ecosystem play (Wan) both benefit from Alibaba's ecosystem.
@@ -47,7 +47,7 @@ For video generation specifically, this means:
 2. Variable-length sequence handling allows variable-duration generation natively
 3. Unified token processing means temporal coherence is a structural property, not an add-on
 
-The arXiv paper (2405.04233, May 2024) explains the architecture but compares qualitatively to Sora rather than providing benchmark numbers — a limitation worth noting for technical readers.
+The [arXiv paper (2405.04233, May 2024)](https://arxiv.org/abs/2405.04233) explains the architecture but compares qualitatively to Sora rather than providing benchmark numbers — a limitation worth noting for technical readers.
 
 **TurboDiffusion (December 2025):** Shengshu and Tsinghua's TSAIL Lab jointly released TurboDiffusion, a sparse linear attention acceleration framework (GitHub: `thu-ml/TurboDiffusion`). On a single RTX 5090, TurboDiffusion generates a 5-second 720p video from a 14B text-to-video model at 200× the baseline speed — real-time generation territory. This is currently positioned as open-source research infrastructure rather than a Vidu cloud product feature, but it signals what's coming.
 
@@ -60,7 +60,7 @@ The practical implications are significant:
 - An advertiser can produce product videos with exact product appearance matching reference photos
 - A filmmaker can maintain character consistency across multiple shots without manual correction
 
-Vidu Q3 ranks **#1 globally on the SuperCLUE Reference-to-Video leaderboard** (April 2026), the first evaluation of this specific capability. No Western model currently targets this use case as explicitly.
+Vidu Q3 has led reference-to-video evaluations as of April 2026 per company reporting. No Western model currently targets this use case as explicitly.
 
 ## Audio-Video: Single-Pass Native Generation
 
@@ -70,10 +70,9 @@ The audio-video architecture is not separately described in public documentation
 
 ## Benchmark Standing
 
-**Artificial Analysis Video Arena (blind Elo, user preference voting, April 2026):**
-- Vidu Q3 Pro: **#2 globally in Text-to-Video** (behind only xAI's Grok Imagine)
-- Surpassing Runway Gen-4.5 and Kling 2.5 Turbo
-- Image-to-Video: approximately #4 globally
+**[Artificial Analysis Video Arena](https://artificialanalysis.ai/video/leaderboard/text-to-video) (blind Elo, user preference voting, April 2026):**
+- Vidu Q3 Pro: among the top-ranked models in Text-to-Video, surpassing Runway Gen-4.5 and Kling 2.5 Turbo per company reporting
+- Image-to-Video: competitive globally
 
 The Artificial Analysis arena uses blind pairwise comparisons where human raters vote on which video they prefer — making it a measure of perceived output quality rather than academic benchmark scores. As a company-framed datapoint, treat the #2 ranking as meaningful signal rather than ground truth, but Artificial Analysis is a credible third-party measurement service.
 
@@ -130,7 +129,7 @@ The ComfyUI integration is notable for users who prefer node-based workflows ove
 
 ## Market Position and Partnerships
 
-Shengshu claims **90% of stakeholders in China's film and entertainment industry work with Vidu** — a figure that is difficult to independently verify but aligns with the Visual China Group strategic investment and reported enterprise adoption patterns. Documented partnerships include:
+Shengshu has documented partnerships with major players across China's media and technology sectors, including:
 
 - **Alibaba Cloud:** Distribution through Model Studio (investment + integration)
 - **Wondershare:** Strategic investor; Filmora integration pipeline
@@ -139,9 +138,7 @@ Shengshu claims **90% of stakeholders in China's film and entertainment industry
 - **Aura Productions:** 50-episode AI-generated anime series for North American social media
 - **TAL Education Group:** EdTech applications pipeline
 
-A case study cited in company materials: a "leading international app" achieved over $1M revenue in three months using Vidu's I2V API, with 10,000+ daily downloads at peak. The app is unnamed, but the metric suggests real commercial traction in consumer-facing AI applications.
-
-**30 million users** across 200+ countries. Discord has ~16,600 members — modest relative to user count, suggesting most engagement is product-first rather than community-first.
+**30 million users** across 200+ countries per company reporting. Discord has ~16,600 members — modest relative to user count, suggesting most engagement is product-first rather than community-first.
 
 ## Competitive Landscape
 

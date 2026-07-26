@@ -2,6 +2,90 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2669 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 19)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 72, reviews/ section batch 19)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/veo-3-google-deepmind-video-generation.md** — Fixes:
+   - REMOVED: Specific VBench 2.0 scores (8.9/10, 8.7/10, 9.1/10) — no primary source found; replaced with general note about VBench 2.0 inclusion
+   - REMOVED: Pixflow May 2026 benchmark (87%/72%/68%) — unverifiable
+   - REMOVED: "approximately 25% of first-attempt generations" — no source
+   - REMOVED: DISA specific citation — no verifiable link; replaced with general reference
+   - ADDED: Veo model card link (deepmind.google/models/veo/) for audio sync claim
+   - ADDED: Gemini API pricing page link (ai.google.dev/gemini-api/docs/pricing) for pricing table
+   - ADDED: Veo 3 Vertex AI announcement link for training data claim
+
+2. **reviews/vidu-shengshu-ai-video-generation.md** — Fixes:
+   - ADDED: CNBC link for $290M Series B Alibaba Cloud (confirmed)
+   - ADDED: arXiv:2405.04233 link for U-ViT architecture paper
+   - ADDED: Artificial Analysis leaderboard link for rankings claim
+   - REMOVED: "90% of stakeholders in China's film and entertainment industry" — unverifiable
+   - REMOVED: "leading international app $1M revenue in 3 months" — unverifiable (unnamed source)
+   - SOFTENED: "#2 globally" ranking to "among top models" (specific rank not independently confirmed)
+   - REMOVED: SuperCLUE R2V #1 claim — no independent link found
+
+3. **reviews/viggle-ai-character-animation-motion-transfer.md** — Fixes:
+   - ADDED: BusinessWire link for Series A $19M USD ($26M CAD) funding
+   - FIXED: Amount corrected to "$19M USD" per official press release (was "$20M USD")
+   - REMOVED: Post-Series A valuation ($150M) — "not officially confirmed"
+   - ADDED: TechCrunch link for YouTube training data controversy
+   - REMOVED: Foot contact accuracy (95%) — "Flowith analysis" not a primary source
+   - REMOVED: WorldMetrics 92.4% accuracy claim — methodology undisclosed
+   - REMOVED: Revenue figures ($3M-$3.4M vs $45M projected) — no linked source
+   - REMOVED: NPS 78 claim — company-adjacent source
+
+4. **reviews/google-gemini-2-5-pro-multimodal-llm.md** — Fixes:
+   - ADDED: blog.google link for March 25, 2025 release
+   - ADDED: ai.google.dev/gemini-api/docs/pricing link for pricing table
+   - UPDATED: DeepMind acquisition price — clarified as unconfirmed, TechCrunch "more than $500M"
+
+5. **reviews/google-imagen-3-text-to-image-generation-deepmind.md** — Minor:
+   - ADDED: cloud.google.com deprecation link for "Imagen 3 retires June 30, 2026" claim
+
+6. **reviews/google-veo-2-ai-video-generation-deepmind.md** — Fixes:
+   - ADDED: Gemini API pricing page link for pricing table
+   - QUALIFIED: 33× energy reduction as Google's own claim (not independently verified)
+
+7. **reviews/kling-kuaishou-commercial-ai-video-model-t2v-i2v-camera-controls.md** — Minor:
+   - REMOVED: "124 billion CNY ($17B)" revenue figure — no linked source; replaced with "tens of billions USD"
+   - REMOVED: "100%+ year-over-year growth guidance" — no linked source
+
+8. **reviews/openai-dall-e-gpt4o-image-generation-chatgpt-native.md** — Fixes:
+   - ADDED: openai.com link for DALL-E 3 October 2023 launch
+   - ADDED: c2pa.org link for C2PA watermarking description
+
+9. **reviews/openai-gpt-4o-gpt-4-1-llm-review.md** — Fixes:
+   - ADDED: openai.com/about link for OpenAI founding
+   - ADDED: CNBC link for Microsoft $13B investment
+   - REMOVED: "400+ artists including Paul McCartney, Ben Stiller, and Cate Blanchett" specific names and count — no link found; replaced with general reference
+
+10. **reviews/pika-labs-ai-video-generator-pikaframes-pikaffects-consumer-t2v.md** — Fixes:
+    - ADDED: finsmes link for Series A $35M (Lightspeed)
+    - ADDED: maginative link for Series B $80M (Spark Capital)
+    - ADDED: maginative link for Series B valuation
+
+#### Deploy
+- Hugo build: clean
+- Committed to git
+- Deploy pending (throttle at ~50 min at commit time; run next run or when throttle clears)
+
+#### Running totals
+
+- Previous audited: ~778 pages (as of Run 2668)
+- This run: +10 pages
+- **Total pages with sources_audited: ~788**
+- Remaining unaudited in reviews/: ~282 pages (down from 292)
+
+---
+
 ## Run 2668 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 18)
 
 **Mode:** Citation auditor

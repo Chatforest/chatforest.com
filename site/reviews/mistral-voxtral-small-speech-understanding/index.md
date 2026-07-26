@@ -107,7 +107,7 @@ Both are also available on [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/
 
 **Voxtral Mini:** Lower audio pricing than Small; exact current rate should be confirmed via Mistral's documentation or API pricing page.
 
-**Context:** For comparison, ElevenLabs Scribe v2 charges approximately $0.019/min for transcription. If Voxtral Small's API price is near the lower end of cited figures ($0.001–$0.004/min), it represents substantial savings for high-volume transcription workloads — on top of the quality advantage.
+**Context:** Competitor transcription APIs typically charge significantly more per minute. If Voxtral Small's API price is near the lower end of cited figures ($0.001–$0.004/min), it represents substantial savings for high-volume transcription workloads — on top of the quality advantage.
 
 **Self-hosted:** Running either model on your own GPU infrastructure eliminates per-minute API charges entirely, at the cost of hardware and ops overhead. For Voxtral Mini on a consumer GPU, this can be cost-effective at moderate to high volumes.
 

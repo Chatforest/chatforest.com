@@ -17,7 +17,7 @@ This review covers the full Gemini arc: the founding competitive context, the mo
 
 ## The Organization Behind It: Google DeepMind
 
-**Google DeepMind** is the AI research organization that produces Gemini. It came together in April 2023 through the merger of **Google Brain** (the internal AI research team, founded 2011) and **DeepMind** (the UK AI lab, acquired by Google in 2014 for approximately £400 million).
+**Google DeepMind** is the AI research organization that produces Gemini. It came together in April 2023 through the merger of **Google Brain** (the internal AI research team, founded 2011) and **DeepMind** (the UK AI lab, [acquired by Google in 2014](https://techcrunch.com/2014/01/26/google-deepmind) for a reported price that Google declined to officially confirm — TechCrunch reported "more than $500M").
 
 The merger was a structural response to competitive pressure. Google had the research talent — Brain and DeepMind together employed more top AI researchers than any other organization in the world — but the work was fragmented across units that did not coordinate on product timelines. The merger placed **Demis Hassabis**, DeepMind's co-founder, as CEO of the combined entity, with **Jeff Dean** (creator of MapReduce, TensorFlow, and virtually every large-scale distributed system Google runs) in a senior advisory role.
 
@@ -68,7 +68,7 @@ Gemini 2.0 also introduced **Project Astra** capabilities: low-latency real-time
 
 ## Gemini 2.5 Pro: What Changed (March 2025)
 
-Gemini 2.5 Pro was released in preview on **March 25, 2025**, and marked Google's entry into the **"thinking model"** category that OpenAI had established with o1 in September 2024.
+Gemini 2.5 Pro was [released in preview on March 25, 2025](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/), and marked Google's entry into the **"thinking model"** category that OpenAI had established with o1 in September 2024.
 
 ### What "Thinking" Means
 
@@ -130,7 +130,7 @@ AI Studio also provides a free **Gemini API key** that can be used in code at no
 
 ### Gemini API (Paid)
 
-The production [Gemini API](https://ai.google.dev/gemini-api/docs/pricing) via Google AI Studio or Google Cloud:
+The production [Gemini API pricing page](https://ai.google.dev/gemini-api/docs/pricing) via Google AI Studio or Google Cloud:
 
 | Model | Input | Output | Context Cache (per hour) |
 |-------|-------|--------|--------------------------|

@@ -57,7 +57,7 @@ When the order was killed, no new signing date was announced. The administration
 
 The US currently has no mandatory pre-release review process for frontier AI models, no formal mechanism for the government to assess advanced model capabilities before public deployment, and — after May 21 — no voluntary framework either.
 
-The Biden administration's 2023 AI executive order required the largest AI model developers to share safety test results with the government under the Defense Production Act. The Trump administration revoked that order in January 2025 as one of its first acts.
+The [Biden administration's 2023 AI executive order (EO 14110)](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/) required the largest AI model developers to share safety test results with the government under the Defense Production Act. [The Trump administration revoked that order in January 2025](https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/) as one of its first acts.
 
 What's left is a regulatory environment defined primarily by absence: no EU AI Act equivalent, no model registry, no pre-release disclosure requirement, and now no voluntary safety collaboration framework either.
 

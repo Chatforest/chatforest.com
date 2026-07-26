@@ -13,6 +13,7 @@ free_tier: false
 pricing_model: "per-second"
 company_hq: "London, UK / Mountain View, CA"
 founded: 2010
+sources_audited: 2026-07-26
 ---
 
 # Veo 3 (Google DeepMind): The Model That Ended the Silent Era of AI Video
@@ -78,7 +79,7 @@ Like Sora, Veo 3 uses spacetime patch tokenization — compressed visual latents
 
 ### Training data pipeline
 
-The official tech report notes that Google uses "multiple Gemini models" to generate enriched captions at varying levels of detail as proprietary training conditioning data. The pipeline includes semantic deduplication, compliance filtering, and pre-training risk area filtering. Training data sources are not disclosed.
+The [official Veo tech report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-veo-3-imagen-4-and-lyria-2-on-vertex-ai) notes that Google uses "multiple Gemini models" to generate enriched captions at varying levels of detail as proprietary training conditioning data. The pipeline includes semantic deduplication, compliance filtering, and pre-training risk area filtering. Training data sources are not disclosed.
 
 ## Capabilities
 
@@ -106,7 +107,7 @@ Veo 3's native audio covers:
 - **Ambient noise** — room tone, outdoor ambience, crowd sound appropriate to scene content
 - **Background music** — mood-appropriate music generated to match scene tone
 
-The model card notes that "creating videos with natural and consistent spoken audio, particularly for shorter speech segments, remains an area of active development." Independent user testing has found audio sync works reliably on roughly 25% of first-attempt generations for complex speech scenes, though simpler ambient audio performs better.
+The [Veo 3 model card](https://deepmind.google/models/veo/) notes that "creating videos with natural and consistent spoken audio, particularly for shorter speech segments, remains an area of active development." Audio sync reliability varies by complexity of the speech content; ambient and environmental audio generally performs better than dialogue synchronization.
 
 ### Camera and composition controls
 
@@ -149,8 +150,7 @@ The ranking evolution tells an important story: Veo 3 led at launch (May 2025) a
 
 **Additional benchmark results:**
 
-- **VBench 2.0**: Temporal Consistency 8.9/10 (industry average ~6.2); Audio-Visual Synchronization 8.7/10; Anatomy Accuracy 9.1/10
-- **Pixflow May 2026 prompt adherence benchmark**: Veo 3.1 followed complex prompts correctly 87% of the time vs. 72% for Runway Gen-4.5 and 68% for Kling 3.0
+- **VBench 2.0**: Veo 3 appears in the [VBench 2.0 benchmark evaluation suite](https://arxiv.org/abs/2503.21755) alongside other leading models; specific per-metric scores for Veo 3 are not publicly confirmed in primary documentation at the time of this review.
 - **MovieGenBench**: Veo 3.1 reached state-of-the-art on overall preference and prompt-following accuracy against Meta MovieGen, Kling 2.0, and Sora comparisons
 
 ## Pricing
@@ -162,7 +162,7 @@ The ranking evolution tells an important story: Veo 3 led at launch (May 2025) a
 | Google AI Ultra | $249.99/month | Full Veo 3 + audio, highest limits, early access |
 | Google AI Pro | $19.99/month | Veo 3 Fast via Gemini app and Flow; limited audio |
 
-**Gemini API / Vertex AI (per second of generated video):**
+**[Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing) / Vertex AI (per second of generated video):**
 
 | Model | 720p | 1080p | 4K |
 |-------|------|-------|-----|
@@ -225,7 +225,7 @@ Within the first week of public availability in June 2025, [TIME Magazine resear
 - A fake news anchor announcing J.K. Rowling's death
 - Fabricated news segments in multiple languages
 
-Users on social platforms had independently posted similar fake news clips before TIME published its investigation. The U.S. Defense Intelligence and Security Agency (DISA) published a formal analysis of misuse risk within weeks of Veo 3's launch.
+Users on social platforms had independently posted similar fake news clips before TIME published its investigation. Multiple government and intelligence agencies published assessments of AI video misuse risk in the months following Veo 3's launch.
 
 Google's response was reactive: after TIME's inquiry, the company announced it would add a **visible watermark** to Veo 3-generated videos. Previously, only SynthID (Google's invisible AI watermark technology) had been applied.
 

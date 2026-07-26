@@ -77,7 +77,7 @@ Telegram was founded in 2013 by Pavel Durov and his brother Nikolai Durov. As of
 
 The platform monetizes primarily through Telegram Premium subscriptions and ad placements in public channels. It does not have a separate developer API tier or paid rate plan — bots operate under the standard Bot API with rate limits but no per-call fees.
 
-Pavel Durov was arrested in France in August 2024 on charges related to platform moderation. He was released under supervision and the case remains in progress. The platform's headquarters and legal structure have shifted as a result.
+[Pavel Durov was arrested in France in August 2024](https://en.wikipedia.org/wiki/Pavel_Durov#2024_arrest) on charges related to platform moderation. He was released under supervision and the case remains in progress. The platform's headquarters and legal structure have shifted as a result.
 
 The May 2026 bot update was announced via the official Telegram blog and applies to all users and bot operators immediately.
 

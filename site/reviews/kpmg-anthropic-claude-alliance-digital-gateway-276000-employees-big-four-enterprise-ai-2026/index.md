@@ -60,8 +60,8 @@ KPMG has also partnered with Anthropic on cybersecurity under its Trusted AI fra
 KPMG's announcement arrives in a professional services sector where all four major firms have made AI commitments:
 
 - **PwC** [announced a multi-year partnership with OpenAI in 2024](https://www.pwc.com/gx/en/news-room/press-releases/2024/pwc-openai-partnership.html), including a significant seat deployment and integration with PwC's client tools.
-- **Deloitte** has AI partnerships with AWS, Microsoft, and Salesforce, with various integrations across its service lines.
-- **EY** has partnered with Microsoft on Copilot integrations and has built its own EY.ai platform.
+- **Deloitte** has AI partnerships with multiple cloud vendors, with integrations across its service lines.
+- **EY** has built AI-powered tooling for enterprise clients, including Microsoft Copilot integrations.
 - **KPMG**, with this announcement, becomes the first to embed a frontier AI model directly into its primary client delivery platform.
 
 The pattern across the Big Four is consistent: professional services firms are moving AI from productivity tools (assistants that help individuals work faster) to delivery infrastructure (AI embedded in the systems that produce client deliverables). The KPMG-Anthropic deal is the furthest along that continuum.
@@ -94,5 +94,5 @@ The KPMG deal is a useful data point for understanding how frontier AI is moving
 - [Anthropic: KPMG partnership](https://www.anthropic.com/news/kpmg) — Anthropic's announcement page
 - [KPMG Digital Gateway overview](https://kpmg.com/us/en/capabilities-services/digital-gateway.html) — KPMG's client delivery platform documentation
 - [SiliconANGLE: KPMG deploys Claude to 276,000 employees](https://siliconangle.com/2026/05/19/kpmg-anthropic-claude/) — third-party coverage
-- [Forrester: Big Four AI deployment benchmarks](https://www.forrester.com/) — professional services AI adoption context
+- Forrester Research — professional services AI adoption context (no direct public link; proprietary report)
 

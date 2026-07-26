@@ -77,7 +77,7 @@ Veo 1 (announced at Google I/O, May 2024) was the research predecessor. It produ
 - Anatomy improvements: human figures show more consistent joint structure and natural motion
 - Camera model improvements: the model more accurately interprets cinematographic vocabulary in text prompts
 
-**Energy efficiency**: Google reported a **33× reduction in energy per video generated** compared to earlier versions, attributed to combined architecture improvements and custom TPU serving infrastructure optimization. This is a significant compute efficiency gain that enabled the broader rollout.
+**Energy efficiency**: Google reported a 33× reduction in energy per video generated compared to earlier versions, attributed to combined architecture improvements and custom TPU serving infrastructure optimization. (Specific energy efficiency claims are from Google's own announcement materials and have not been independently verified.) This is a significant compute efficiency gain that enabled the broader rollout.
 
 No independent technical verification of the architecture exists beyond what Google has disclosed. Any Veo 2 parameter count encountered online should be treated as speculation.
 
@@ -157,7 +157,7 @@ Starting **April 15, 2025**, Veo 2 became available to Gemini Advanced subscribe
 | Access Tier | Price |
 |---|---|
 | Vertex AI API | $0.50 per second of generated video |
-| Gemini Developer API | $0.35 per second |
+| [Gemini Developer API](https://ai.google.dev/gemini-api/docs/pricing) | $0.35 per second |
 | Gemini Advanced (Google One AI Premium) | Included ($20/month subscription) |
 | VideoFX (Google Labs) | Free (waitlisted, capped at 720p / 8s) |
 

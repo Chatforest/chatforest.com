@@ -4,6 +4,7 @@ date: 2026-05-12
 description: "Google's Imagen series traces the arc from a 2022 research paper that beat DALL-E 2 on FID scores to a widely-deployed enterprise product embedded in Gemini, Google Workspace, and Vertex AI. Imagen 3 (GA December 2024) shifted to latent diffusion, improved photorealism and text rendering, and supports a full editing API including inpainting, outpainting, and subject customization. SynthID watermarking is on by default. Imagen 3 is now end-of-life (retiring June 2026), superseded by Imagen 4, but remains the most-documented standalone Imagen generation and the foundation for Google's current image AI ecosystem. Rating: 4/5."
 tags: ["image-generation", "text-to-image", "google", "google-deepmind", "imagen", "imagen-2", "imagen-3", "gemini", "vertex-ai", "imagefx", "diffusion", "latent-diffusion", "t5", "synthhid", "watermarking", "inpainting", "enterprise", "api", "google-workspace", "creative-ai"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Google Imagen 3 — DeepMind's Enterprise Image Generator, From Research Curiosity to Gemini's Core
@@ -202,7 +203,7 @@ Imagen 3 is not competing in that space. The target users are Google Workspace e
 
 **Person generation restrictions**: Generating realistic images of named public figures is strictly restricted. The `personGeneration` API parameter defaults to `allow_adult` (realistic adult faces allowed in generic portraits), with options for `dont_allow` (no recognizable faces). Enterprise customers can configure this within the bounds Google permits. The restrictions are stricter than some competitors, which matters for use cases like AI-generated headshots or editorial illustration.
 
-**End-of-life**: Imagen 3 retires June 30, 2026. Applications and workflows built on Imagen 3 Vertex AI model IDs require migration to Imagen 4. The deprecation timeline is relatively short for enterprise software — the December 2024 GA date to June 2026 retirement is 18 months — which means some organizations that built around Imagen 3 faced migration work shortly after deployment.
+**End-of-life**: [Imagen 3 retires June 30, 2026](https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/overview). Applications and workflows built on Imagen 3 Vertex AI model IDs require migration to Imagen 4. The deprecation timeline is relatively short for enterprise software — the December 2024 GA date to June 2026 retirement is 18 months — which means some organizations that built around Imagen 3 faced migration work shortly after deployment.
 
 **No fine-tuning for standard access**: Unlike open-weight models, there's no fine-tuning of the base Imagen 3 model by API users. Subject customization and style customization in `capability-001` provide customization within defined workflows, but full fine-tuning on proprietary datasets is not available.
 

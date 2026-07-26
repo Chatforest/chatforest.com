@@ -46,7 +46,7 @@ Microsoft still has an enormous stake in OpenAI's success through its equity pos
 
 ## The Anthropic Wrinkle
 
-Amazon has been OpenAI's rival's largest backer. Amazon has invested $8 billion in Anthropic across two tranches, and Anthropic runs almost exclusively on AWS infrastructure. Claude is deeply integrated into Amazon Bedrock — it has been for years.
+Amazon has been OpenAI's rival's largest backer. [Amazon committed up to $4 billion in Anthropic in September 2023](https://www.anthropic.com/news/anthropic-amazon), with additional investment tranches since, and Anthropic runs almost exclusively on AWS infrastructure. Claude is deeply integrated into Amazon Bedrock — it has been for years.
 
 Now the same Bedrock console that surfaces Claude 4 Opus also surfaces GPT-5.5.
 

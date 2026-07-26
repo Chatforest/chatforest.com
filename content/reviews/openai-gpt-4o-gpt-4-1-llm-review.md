@@ -6,6 +6,7 @@ tags: ["llm", "multimodal", "openai", "gpt-4o", "gpt-4.1", "api", "agentic-ai", 
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 *This review covers the GPT-4o/4.1 generation (May 2024 – April 2025). For the large-scale pretraining experiment that briefly occupied the gap between GPT-4o and GPT-4.1, see our [GPT-4.5 review](/reviews/openai-gpt-4-5-research-preview-llm-review/). For the o-series reasoning models released alongside GPT-4.1, see our [o3 and o4-mini review](/reviews/openai-o3-o4-mini-reasoning-models-review/). For OpenAI's current flagship models, see our [GPT-5 and GPT-5.5 review](/reviews/openai-gpt-5-5-llm-review/).*
@@ -26,7 +27,7 @@ This review covers both models together, because together they represent OpenAI'
 
 ## OpenAI: The Organization Behind the Models
 
-**OpenAI** was founded in December 2015 as a nonprofit by Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, and others, with a stated mission to ensure artificial general intelligence benefits all of humanity. It transitioned to a "capped-profit" structure in 2019 to attract investment, and its relationship with Microsoft deepened over multiple funding rounds — Microsoft committed $13 billion over several years and integrated OpenAI models into Azure, Bing, GitHub Copilot, and the Microsoft 365 suite.
+**[OpenAI](https://openai.com/about/)** was founded in December 2015 as a nonprofit by Sam Altman, Elon Musk, Greg Brockman, Ilya Sutskever, and others, with a stated mission to ensure artificial general intelligence benefits all of humanity. It transitioned to a "capped-profit" structure in 2019 to attract investment, and its relationship with Microsoft deepened over multiple funding rounds — [Microsoft committed approximately $13 billion](https://www.cnbc.com/2023/04/08/microsofts-complex-bet-on-openai-brings-potential-and-uncertainty.html) over several years and integrated OpenAI models into Azure, Bing, GitHub Copilot, and the Microsoft 365 suite.
 
 By 2024, OpenAI had become the most widely recognized AI brand in the world. [ChatGPT crossed 100 million users in two months](https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/) after its November 2022 launch — the fastest consumer adoption of any software product in history. That consumer recognition gave OpenAI something its competitors had to work to acquire: default awareness. When non-technical users worldwide thought of "AI chat," they typically thought of ChatGPT.
 
@@ -125,7 +126,7 @@ The copyright questions were immediate and pointed:
 
 **The core contradiction**: OpenAI stated ChatGPT "refuses to replicate the style of individual living artists" but permits replication of "broader studio styles." Studio Ghibli is not merely a studio — it is the life's work of **Hayao Miyazaki**, who in a 2016 documentary called AI-generated animation "an insult to life itself." Miyazaki, as of the feature's launch, was alive. The system card for GPT Image 1 acknowledged a refusal policy for living artist styles, but the Ghibli style was generated freely until the policy was partially tightened.
 
-More broadly: 400+ artists including Paul McCartney, Ben Stiller, and Cate Blanchett had signed a letter in early March 2025 urging Congress to act against AI companies using copyrighted material without permission. The Ghibli moment arrived weeks later, demonstrating exactly what that letter had warned about.
+More broadly: hundreds of artists had signed letters in early 2025 urging Congress to act against AI companies using copyrighted material without permission. The Ghibli moment arrived weeks later, demonstrating exactly what that letter had warned about.
 
 OpenAI later restricted Ghibli-style image generation in some contexts. The episode did not generate a legal resolution, and similar copyright questions apply to every artist-named style the model can produce.
 
