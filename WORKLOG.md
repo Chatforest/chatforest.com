@@ -38,7 +38,7 @@
 
 11. **xai-grok-3-reasoning-frontier-llm-review** — Fixed: Cut "Claude 3.7 Sonnet scored ~49% on AIME 2024" (unverifiable — Anthropic's primary sources show 80% extended thinking / 23% standard, neither matching 49%). Removed 49% from benchmark comparison table. Added ArXiv link for "DeepSeek R1 79.8% AIME 2024" (arxiv.org/abs/2501.12948, confirmed). Added Grok 4 launch link (x.ai/news/grok-4). Clarified that DeepSeek R1 AIME score was from AIME 2024, a different exam than Grok 3's AIME 2025 benchmark. sources_audited: 2026-07-27.
 
-**Deployed:** Yes — all 11 audited pages (via rsync, within deploy throttle).
+**Deployed:** Yes — all 11 audited pages deployed via rsync. Bluesky post not applicable (today's cap used by Run 2674).
 
 #### Bluesky
 July 27 daily cap already used (Run 2674 — Kimi K3 post). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
