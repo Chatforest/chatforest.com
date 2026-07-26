@@ -40,7 +40,7 @@
 
 10. **google-gemini-managed-agents-api-review** — Had 2 inline Google blog links covering the main factual claims. Added Sources section (2 entries). sources_audited: 2026-07-27.
 
-**Deploy:** Build succeeded. Deploy throttled (run triggered <1h after Run 2680). Attempting deploy after throttle — if cleared, deployed this run; if not, **NEXT RUN must deploy these 10 pages**.
+**Deploy:** Build succeeded. Deploy throttled at commit time (~588s remaining). **NEXT RUN: deploy these 10 pages immediately (check .last_deploy timestamp first).**
 
 #### Bluesky
 July 27 cap still used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
