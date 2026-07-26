@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2666 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 16) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 69, reviews/ section batch 16)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/tavus-conversational-video-ai-api.md** — Added:
+   - YC S21 batch link (ycombinatorcompanies.com)
+   - BusinessWire links for Phoenix-4 (Feb 2026) and Raven-1 (Feb 2026) model announcements
+   - Tavus blog links for Sparrow-1 (Jan 2026) and Hummingbird-0 (Apr 2025) model releases
+   - Tavus case study links for Final Round AI (100K+ users, 1.2M minutes) and iAsk (22K MAU)
+   - Removed unsourced headcount claim ("approximately 40 employees")
+
+2. **reviews/wan-2-1-alibaba-open-source-ai-video-generation.md** — Added:
+   - HuggingFace org link (Wan-Video) for download counts table
+   - Removed unsourced RTX 4090 used-market price range
+
+3. **reviews/amazon-nova-reel-aws-bedrock-video-generation.md** — Already well-cited (AWS, TechCrunch, arXiv links throughout). sources_audited added.
+
+4. **reviews/animatediff-motion-module-stable-diffusion-text-to-video-comfyui.md** — Already well-cited (arXiv, GitHub, HuggingFace links). sources_audited added.
+
+5. **reviews/cogvideox-zhipu-ai-open-source-video-generation.md** — Removed:
+   - Unsourced "claims API revenue exceeding all other domestic Chinese models combined"
+   - Unsourced "2.7M+ developers" claim
+   - Replaced with softer "large developer user base on its BigModel platform"
+
+6. **reviews/framepack-lllyasviel-long-video-generation-consumer-gpu.md** — Added:
+   - Tom's Hardware article link ("AI-generated videos now possible with gaming GPUs with just 6GB of VRAM", Apr 2025)
+
+7. **reviews/haiper-ai-video-generation-retrospective.md** — Fixed:
+   - Linked "6.5 million total users, 52 million videos" to secondary reporting (Bitrue)
+   - Removed unsourced "~27,000 Discord members at peak" claim
+
+8. **reviews/happyhorse-1-0-alibaba-ath-ai-video-generation.md** — Added:
+   - fal.ai pricing page link for $0.14/sec 720p, $0.28/sec 1080p claims
+   - Confirmed Artificial Analysis arena link
+   - Softened Zhang Di's Alibaba tenure claim (removed specific dates "2010–2022" lacking source)
+
+9. **reviews/hunyuanvideo-tencent-open-source-video-generation.md** — Fixed:
+   - Changed "16 images" → "20–60 images" per Unite.AI source (16 was unverified)
+   - Added Unite.AI link for HunyuanVideo deepfakes coverage
+   - Added Unite.AI link for HunyuanCustom deepfake announcement
+   - Added Civitai link for LoRA search results
+
+10. **reviews/invideo-ai-video-automation-marketing-content-pipeline.md** — FACTUAL FIX:
+    - CORRECTED Series B investors: article claimed "Peak XV Partners and Tiger Global Management" — actual Series B was led by "Base Partners and Adept Ventures" (Peak XV and Tiger Global were Series A investors)
+    - Added PRNewswire link for Sora 2 first-partner announcement (October 8, 2025)
+    - Added Inc42 source link for $70M ARR claim
+
+#### Deploy
+
+- Hugo build: clean (4,147 pages)
+- Committed 42f5fc4c60
+- Deployed to DreamHost via rsync (throttle cleared)
+- .last_deploy updated
+
+#### Running totals
+
+- Previous audited: ~748 pages (as of Run 2665)
+- This run: +10 pages
+- **Total pages with sources_audited: ~758**
+- Remaining unaudited in reviews/: ~312 pages (down from 322)
+
+---
+
 ## Run 2665 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 15) + Deploy
 
 **Mode:** Citation auditor
