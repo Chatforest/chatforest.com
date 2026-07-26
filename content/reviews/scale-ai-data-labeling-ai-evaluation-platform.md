@@ -6,6 +6,7 @@ tags: ["data-labeling", "rlhf", "ai-evaluation", "defense", "enterprise", "revie
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 In 2016, a 19-year-old MIT dropout named Alexandr Wang noticed something broken about how machine learning teams got their data labeled. Companies with autonomous vehicle programs were hiring armies of contractors in piecemeal fashion, tracking annotations in spreadsheets, and rebuilding quality-control processes from scratch for every project. The tooling was custom, slow, expensive, and not particularly reliable.

@@ -4,6 +4,7 @@ date: 2026-05-09
 description: "Runway invented commercial AI video generation in 2019 — years before Sora or Kling existed. Gen-4.5 currently tops the independent Video Arena leaderboard. Lionsgate, IMAX, and AMC Networks are enterprise partners. Now the company is betting $315M on world models for robotics, simulation, and beyond. We review the platform, the controversy, and the competitive landscape."
 tags: ["video-generation", "ai-video", "creative-tools", "world-models", "mcp-server", "computer-vision", "generative-ai"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Runway — AI Video Generation Pioneer Pivoting to World Models
@@ -33,8 +34,8 @@ The company's first milestone came quickly: Runway was among the first companies
 Runway has raised approximately **$1.05 billion** across multiple rounds, with the trajectory accelerating sharply in 2025–2026:
 
 - **Early rounds** (2019–2023): Multiple seed and Series A/B rounds from investors including NVIDIA, Google, and Salesforce Ventures. Total in this period: several hundred million across tranches not all publicly disclosed.
-- **April 2025** — **$308M Series D** led by **General Atlantic** at a valuation exceeding **$3 billion**. This was the round that confirmed Runway as a major independent player rather than an acquisition target.
-- **February 2026** — **$315M Series E** led again by **General Atlantic** at a valuation of **$5.3 billion** — nearly doubling the valuation in under a year. Co-investors included **NVIDIA**, **Fidelity Management & Research**, **AllianceBernstein**, **Adobe Ventures**, **Mirae Asset**, **Emphatic Capital**, **Felicis**, **Premji Invest**, and **AMD Ventures**.
+- **[April 2025](https://techcrunch.com/2025/04/03/runway-best-known-for-its-video-generating-models-raises-308m/)** — **$308M Series D** led by **General Atlantic** at a valuation exceeding **$3 billion**. This was the round that confirmed Runway as a major independent player rather than an acquisition target.
+- **[February 2026](https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/)** — **$315M Series E** led again by **General Atlantic** at a valuation of **$5.3 billion** — nearly doubling the valuation in under a year. Co-investors included **NVIDIA**, **Fidelity Management & Research**, **AllianceBernstein**, **Adobe Ventures**, **Mirae Asset**, **Emphatic Capital**, **Felicis**, **Premji Invest**, and **AMD Ventures**.
 
 The February 2026 round was explicitly framed around world models. Valenzuela described the funding as enabling Runway to "build the most capable simulation models in the world" — not just better video generation, but general AI systems that understand how reality behaves over time.
 
@@ -127,7 +128,7 @@ The MCP server requires a Runway API key. Credits are consumed at standard rates
 
 Runway's enterprise partnerships in entertainment are more structurally interesting than typical "we work with major brands" announcements. Three deals stand out:
 
-### Lionsgate (September 2024)
+### [Lionsgate (September 2024)](https://investors.lionsgate.com/news-events/news/news-details/2024/Runway-Partners-with-Lionsgate-in-First-of-its-Kind-AI-Collaboration/default.aspx)
 
 The Lionsgate deal was the first formal partnership between a major AI video provider and a major Hollywood studio — a genuine market first. The structure matters: Runway did not simply sell Lionsgate a subscription. Instead, Runway built a **custom model fine-tuned on Lionsgate's film and television archive** — a model that only Lionsgate's own filmmakers can access.
 
@@ -180,7 +181,7 @@ The AI video generation market has evolved into a genuinely multi-polar competit
 
 **Seedance 2.0** (ByteDance) — Released February 2026. Claims unified audio-video joint generation (not post-processed), multi-shot storytelling from a single prompt, and phoneme-level lip-sync in 8+ languages. ByteDance's content distribution network gives Seedance potential reach that pure AI companies cannot match.
 
-**Sora 2** (OpenAI) — Superior physics simulation (water, cloth, rigid body dynamics) in evaluations. OpenAI announced in March 2026 that the standalone Sora product (web and app) would be discontinued April 26, 2026, with API discontinuation on September 24, 2026. This appears to be a strategic consolidation rather than an acknowledgment of product failure — but the effect is that Sora is exiting the consumer video generation market that Runway operates in.
+**Sora 2** (OpenAI) — Superior physics simulation (water, cloth, rigid body dynamics) in evaluations. [OpenAI announced in March 2026 that the standalone Sora product (web and app) would be discontinued April 26, 2026](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation), with API discontinuation on September 24, 2026. This appears to be a strategic consolidation rather than an acknowledgment of product failure — but the effect is that Sora is exiting the consumer video generation market that Runway operates in.
 
 **Luma Dream Machine** — Strong image-to-video quality, particularly for photorealistic content. Smaller than Runway but competitive in specific use cases.
 

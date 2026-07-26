@@ -6,6 +6,7 @@ tags: ["data-labeling", "rlhf", "evaluation", "llm", "review", "enterprise", "de
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 Every large language model you've used was trained on human-annotated data. Someone — usually a contractor in Kenya, the Philippines, Pakistan, or Venezuela — read through thousands of AI-generated responses, ranked them from best to worst, flagged harmful outputs, wrote the feedback that shaped what the model would say next. Scale AI built the API that organized that labor, charged the AI labs a premium for it, and grew into one of the most quietly essential companies in the entire AI industry.
@@ -74,7 +75,7 @@ Scale's funding rounds track the AI investment cycle almost exactly:
 | Series B | 2019 | $18M | Accel, Tiger Global | — |
 | Series C | 2020 | $100M | Index Ventures, Accel, Tiger Global | ~$1B |
 | Series D | 2021 | $325M | Tiger Global, Dragoneer, Coatue | $7.3B |
-| Series E/F | 2024 | [$1B](https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b/) | Accel (lead), Nvidia, Meta, Amazon + others | ~$13.8B |
+| [Series E/F](https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b/) | 2024 | $1B | Accel (lead), Nvidia, Meta, Amazon + others | ~$13.8B |
 
 The Series E round in 2024 raised $1 billion at a valuation reported between $13.8B and $14B. Revenue for fiscal 2023 was reported at approximately $675 million, with significant year-over-year growth driven by the generative AI wave. Scale is not yet public as of early 2026.
 

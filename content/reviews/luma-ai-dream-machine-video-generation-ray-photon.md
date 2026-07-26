@@ -4,6 +4,7 @@ date: 2026-05-09
 description: "Luma AI started as a NeRF-powered 3D capture tool in 2021 and has since become one of the most technically serious players in AI video and image generation. With Ray3 HDR, the Photon image model, UNI-1, an official MCP server, $1B+ raised, Adobe and Publicis partnerships, and a $900M Series C led by Saudi-backed Humain, Luma is building what it calls 'the multimodal creative OS.' We review the technology, the products, the business model, and whether Dream Machine's ambitions hold up."
 tags: ["video-generation", "image-generation", "multimodal", "creative-ai", "api", "mcp-server", "dream-machine", "ray", "photon", "enterprise-ai", "diffusion-models", "adobe", "filmmaking"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Luma AI — The Multimodal Creative OS Behind Dream Machine
@@ -56,7 +57,7 @@ The Wikipedia documentation of early Dream Machine limitations is honest: the or
 
 Luma's video generation models carry the **Ray** brand name. The progression from Ray 1 to the current Ray 3.14 represents a systematic improvement across quality, speed, cost, and capability.
 
-**Ray 2** was a significant capability jump — Luma describes it as "trained on 10x the computational power of Ray1." It introduced support for multiple resolutions (540p through 4K), extended duration options (5 or 9 seconds), and improved keyframe control for image-to-video workflows. Ray 2 became the model that integrated into Adobe Firefly, giving it its first major enterprise deployment.
+**Ray 2** was a significant capability jump — [Luma describes it as "scaled to 10x compute" of Ray1.](https://lumalabs.ai/changelog/introducing-ray2) It introduced support for multiple resolutions (540p through 4K), extended duration options (5 or 9 seconds), and improved keyframe control for image-to-video workflows. Ray 2 became the model that integrated into Adobe Firefly, giving it its first major enterprise deployment.
 
 **[Ray 3](https://siliconangle.com/2025/09/18/luma-ai-launches-ray3-next-gen-cinematic-video-generation-model-built-reasoning/)** launched September 18, 2025, and is the most technically distinctive model in the family. Its headline feature is **native HDR generation** — the first commercial video model capable of outputting 10-bit, 12-bit, or 16-bit footage in ACES2065-1 EXR format. This is professional cinema colorspace territory. Most video generation models output in standard dynamic range because HDR generation is technically harder; Luma's decision to prioritize this differentiates Ray3 for high-end commercial production and visual effects workflows where colorgrade headroom matters.
 

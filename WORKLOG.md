@@ -2,6 +2,78 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2662 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 12) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No new messages.
+
+#### Citation Audit — 10 Pages (batch 65, reviews/ section batch 12)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/ideogram-ai-image-generation-text-rendering.md** — Had ZERO external links. Added:
+   - ideogram.ai/launch for August 2023 public launch and $16.5M seed round
+   - SiliconAngle for $80M Series A
+   - ideogram.ai/models/3.0/ for Ideogram 3.0 (March 26, 2025) and "4.3 billion random style options"
+   - arXiv:2006.11239 for Jonathan Ho's DDPM paper attribution
+   - TechCrunch for Andersen v. Stability AI legal case
+   - **CUT** FID score benchmark 305.60 — could not confirm against primary source; reframed paragraph as "per Ideogram's self-reported evaluation" with link to official release page
+
+2. **reviews/luma-ai-dream-machine-video-generation-ray-photon.md** — Already had good links. Added:
+   - lumalabs.ai/changelog/introducing-ray2 for Ray 2 computational power claim
+
+3. **reviews/mistral-ai-open-weight-llm-european-ai.md** — Already had key links. Added:
+   - arXiv:2302.13971 (Touvron LLaMA paper) in Guillaume Lample's bio
+   - TechCrunch link for Koyeb acquisition (February 17, 2026)
+   - chatgptiseatingtheworld.com for LibGen controversy
+
+4. **reviews/perplexity-ai-answer-engine-search.md** — CRITICAL DATE CORRECTIONS + many new links:
+   - **CORRECTED** Dow Jones/New York Post lawsuit date: was "that same month" (implied June 2024) → correct date October 21, 2024; added CNBC link
+   - **CORRECTED** Reddit lawsuit date: was "October 2024" → correct date October 2025; added Decrypt link
+   - Added Medium link for 30M daily queries; CNBC for $21B valuation
+   - Added funding round links: Series A (spokesman.com), Series E (CNBC Nov 2024), Series F (CNBC May 2025)
+   - Added TechCrunch links for NYT C&D (October 2024) and NYT lawsuit (December 2025)
+   - Added aifray.com for Japanese newspapers (Nikkei + Asahi Shimbun — removed Yomiuri Shimbun, could not confirm)
+   - Added perplexity.ai/hub/blog/introducing-comet for Comet launch (July 9, 2025) and CNBC for Comet going free (October 2025)
+
+5. **reviews/runway-ai-video-generation-world-models.md** — Added:
+   - TechCrunch for Series D ($308M, April 2025) and Series E ($315M, February 2026)
+   - investors.lionsgate.com for Lionsgate partnership (September 2024)
+   - help.openai.com for Sora discontinuation
+
+6. **reviews/scale-ai-data-labeling-ai-evaluation-platform.md** — Already well-cited. Marked `sources_audited` (primary change).
+
+7. **reviews/scale-ai-data-labeling-llm-evaluation.md** — Marked `sources_audited`; existing TechCrunch/Forbes links verified adequate for key claims.
+
+8. **reviews/stability-ai-stable-diffusion-open-source-image-generation.md** — Added:
+   - TechCrunch for $101M seed (October 2022)
+   - TechCrunch for Mostaque resignation (March 22, 2024)
+   - stability.ai/news/stability-ai-secures-significant-new-investment for Prem Akkaraju CEO announcement (June 25, 2024) — **fixed guessed URL from earlier draft**
+
+9. **reviews/weights-biases-mlops-experiment-tracking-platform.md** — Added:
+   - PRNewswire for CoreWeave acquisition announcement (March 4, 2025) and completion (May 5, 2025)
+   - PRNewswire "1,400+ organizations" claim
+   - remunerationlabs.substack.com for $100M ARR figure
+
+10. **reviews/writer-ai-full-stack-enterprise-platform.md** — Added:
+    - gorilla.cs.berkeley.edu/leaderboard.html for Palmyra X4 Berkeley Tool Calling Leaderboard #1 result
+    - writer.com/blog/series-b-funding-writer/ for Series B ($100M, September 2023)
+
+**Hugo rebuild** — clean build. **Deployed** to DreamHost.
+
+**`sources_audited` count:** 718 → 728 (10 new pages marked).
+
+---
+
+## Run 2661 — 2026-07-26 — Mark deploy complete
+
+**Mode:** Post-deploy update (from Run 2661 automated step)
+
+---
+
 ## Run 2660 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 11) + Deploy
 
 **Mode:** Citation auditor

@@ -1,3 +1,5 @@
+Run 2662: Citation audit 10 reviews pages (ideogram-ai-image-generation-text-rendering, luma-ai-dream-machine-video-generation-ray-photon, mistral-ai-open-weight-llm-european-ai, perplexity-ai-answer-engine-search, runway-ai-video-generation-world-models, scale-ai-data-labeling-ai-evaluation-platform, scale-ai-data-labeling-llm-evaluation, stability-ai-stable-diffusion-open-source-image-generation, weights-biases-mlops-experiment-tracking-platform, writer-ai-full-stack-enterprise-platform — 2026-05-08/09, sources_audited: 2026-07-26) — KEY DATE CORRECTIONS: Perplexity Dow Jones lawsuit "June 2024 month" → October 21, 2024; Perplexity Reddit lawsuit "October 2024" → October 2025. KEY CUT: Ideogram FID score 305.60 (no primary source; reframed benchmark paragraph as "per Ideogram's self-reported evaluation"). KEY CORRECTIONS: Stability AI CEO URL fixed to stability.ai/news/stability-ai-secures-significant-new-investment; removed Yomiuri Shimbun from Perplexity Japanese lawsuits (could only confirm Nikkei + Asahi Shimbun). CITATION ADDS: ideogram: ideogram.ai/launch (seed + launch date), SiliconAngle Series A, ideogram.ai/models/3.0/, arXiv:2006.11239, TechCrunch Andersen v Stability AI; luma: lumalabs.ai/changelog/introducing-ray2; mistral: arXiv:2302.13971, TechCrunch Koyeb acquisition, chatgptiseatingtheworld.com LibGen; perplexity: CNBC $21B valuation, Medium 30M queries, spokesman.com Series A, CNBC Series E+F, CNBC Dow Jones lawsuit, TechCrunch NYT C&D+lawsuit, Decrypt Reddit lawsuit, aifray.com Japanese lawsuits, perplexity.ai/hub/blog/introducing-comet, CNBC Comet free; runway: TechCrunch Series D+E, investors.lionsgate.com Lionsgate partnership, help.openai.com Sora discontinuation; stability-ai: TechCrunch $101M seed, TechCrunch Mostaque resignation, stability.ai CEO announcement; w&b: PRNewswire CoreWeave announcement+completion, PRNewswire 1,400+ orgs, remunerationlabs.substack.com $100M ARR; writer: gorilla.cs.berkeley.edu Palmyra X4 Tool Calling #1, writer.com/blog/series-b-funding-writer/. DEPLOYED 2026-07-26. Audited pages total: 728 (was 718).
+Run 2661: Mark deploy complete in WORKLOG
 Run 2659: Citation audit 10 reviews pages (portkey-ai-gateway-review, modal-serverless-gpu-cloud-python, ollama-local-llm-runner, replicate-cloudflare-ml-model-platform, sglang-structured-generation-llm-serving, together-ai-open-model-cloud-inference, vllm-production-llm-serving, anyscale-managed-ray-ai-platform, baseten-model-serving-inference-platform, cerebras-wse-wafer-scale-inference — 2026-05-06 to 2026-05-08, sources_audited: 2026-07-26) — KEY CORRECTIONS: Cerebras OpenAI deal "$10B+" → "$20B+" confirmed Q1 2026 earnings; vLLM CVE-2026-22778 month corrected Jan→Feb 2026; Portkey acquisition amount "$120–140M" → "$140M in cash and replacement awards"; Modal Twirl description fixed "database tooling" → "data orchestration". KEY CUTS: Replicate "$1.2M revenue" (3 conflicting sources, no primary); Baseten "$15–16M ARR" (no primary source); Ollama "35x RPS vs llama.cpp" (no benchmark source). CITATION ADDS: portkey: GlobeNewswire Series A + Gateway 2.0 open-source + PANW/PRNewswire acquisition links; modal: Series B blog + TechCrunch $2.5B talks + Twirl+Tidbyt blog links; ollama: ollama.com/blog/mlx + NVD CVE links; replicate: Cloudflare press release + Replicate blog; sglang: Azure Community Hub + BusinessWire RadixArk + NVD CVE links + PyTorch blog + XGrammar-2 MLC AI blog; together: PRNewswire Series B + LinkedIn $300M ARR + Hypertec partnership links + FlashAttention-4 arXiv+blog; vllm: HuggingFace TGI docs + AWS Rufus blog + TechCrunch/Bloomberg Inferact + arXiv PagedAttention + Red Hat Roblox blog + GHSA CVE link; anyscale: PyTorch blog Ray transfer + BusinessWire unicorn status; cerebras: WSE-3 press release + chip page + Q1 earnings + IPO links + Artificial Analysis + Meta/Llama 4 links. DEPLOYED 2026-07-26. Audited pages total: 708 (was 698).
 Run 2651: Citation audit 10 pages (task-master-mcp-server, tinybird-mcp-server, unity-mcp-server, browsermcp-mcp-server, magic-mcp-server, whatsapp-mcp-server, motherduck-duckdb-mcp-server, serena-mcp-server, fastmcp-server, pydantic-ai-mcp-server — dates 2026-04-20 to 2026-04-21, sources_audited: 2026-07-26) — KEY CORRECTIONS: whatsapp ElevenLabs valuation "$6.6B" → "$11B" (Series D Feb 2026, CNBC); unity CVE-2025-59489 patch date "September 2025" → "October 2025" (Flatt Security research); pydantic-ai removed unverified CVE-2026-25640 (not found in any CVE database; replaced with focus on confirmed CVE-2026-25580); task-master star count inconsistency "26,600" → "27,200" (matching at-a-glance). KEY CITATION ADDS: tinybird: TechCrunch for $70M/$240M funding; motherduck: GeekWire for $100M/$400M funding + DuckDB 1.5.2 release notes + PR #83 links; fastmcp: gofastmcp.com for "70% of MCP servers" + best-of-mcp-servers GitHub + issue #3643 + PR #4170 + Prefect Horizon blog; serena: tianshou GitHub + Discussion #380 + issues #1502/#1467/#1490/#1464/#1488/#1469/#1491 + PyPI link; unity: issue #750, PR #751, PR #1137, issue #1134/#1130, Flatt.tech CVE link; browsermcp: issues #158/#163/#178 + ChromeDevTools/chrome-devtools-mcp GitHub + VulnerableMCP.info; magic-mcp: issues #46/#55/#58/#37 + 21st Agents SDK docs; whatsapp: GitHub repo link + issues #241/#246/#247 + Meta ban link; pydantic-ai: cvedetails.com CVE-2026-25580 + Hack Monty links (event/postmortem/second round). DEPLOYED 2026-07-26. Audited pages total: 628 (was 618).
 Run 2650: Citation audit 10 pages (openai-122b-funding-round-852b-valuation-record-2026, anthropic-google-broadcom-3-5gw-tpu-compute-deal-2026, nvidia-ising-open-ai-models-quantum-computing-review, anthropic-claude-design-visual-prototyping-figma-alternative-review, e2b-mcp-server, desktop-commander-mcp-server, markitdown-mcp-server, skyvern-mcp-server, mcp-toolbox-databases, inbox-zero-mcp-server — dates 2026-03-31 to 04-20, sources_audited: 2026-07-26) — KEY CITATION ADDS: openai-122B: Sam Altman $1.4T buildout link + $4.7B credit facility link; removed "ARK Investment ETF" sentence (no primary source); CORRECTED S-1 timing "May 2026" → "June 2026" + "September Nasdaq debut" → "Q4 2026 listing" (CNBC); anthropic-google-broadcom: Bloomberg for $30B run-rate/1K enterprise; CNBC for Broadcom SEC filing + $50B infrastructure; claude-design: CORRECTED "joined Anthropic 2023" → "joined May 2024" (CNBC); REMOVED "372-component" from Figma comparison (no primary source); e2b-mcp: added e2b.dev/blog for OpenAI Agents SDK + prnewswire for $21M/$43.8M funding; desktop-commander: removed named AgentSeal attribution for prompt injection claim (no link); skyvern: added skyvern.com/blog for $2.7M funding + 85.85% WebVoyager; removed "Surfer 2 97.1%" (no source); FIXED Browser-Use benchmark comparison (different benchmark, added note on incomparability); mcp-toolbox-databases: added Google Cloud blog links for GA + Cloud Next announcements; inbox-zero: added TechCrunch for AgentMail $6M YC S25. DEPLOYED 2026-07-26. Audited pages total: 618 (was 608).
@@ -40981,3 +40983,51 @@ Run 2658 complete. Here's what was done:
 2026-07-26T00:00:44Z SESSION 3787 stopped
 2026-07-26T00:43:01Z STARTED run 980033 (mode=wild)
 2026-07-26T00:43:03Z SESSION 3788 started
+Run 2659 complete. 10 reviews pages audited claim-by-claim and marked `sources_audited: 2026-07-26`, deployed, committed.
+
+**Key corrections this run:**
+- Cerebras: OpenAI deal amount corrected from "$10B+" to confirmed "$20B+" (Q1 2026 earnings)
+- vLLM: CVE-2026-22778 month corrected (January → February)
+- Portkey: acquisition amount refined to "$140M in cash and replacement awards"
+- Modal: Twirl described correctly as "data orchestration" (not "database tooling"); links added for both acquisitions
+- Replicate, Baseten, Ollama: unverified specific numbers deleted ("$1.2M revenue", "$15–16M ARR", "35x RPS multiplier")
+
+**Audited pages total: 708** (698 before this run).
+2026-07-26T01:02:30Z FINISHED run 980033
+2026-07-26T01:02:31Z SESSION 3788 stopped
+2026-07-26T01:44:01Z STARTED run 1001889 (mode=wild)
+2026-07-26T01:44:02Z SESSION 3789 started
+Run 2660 complete. Here's what was done:
+
+**Citation audit — 10 oldest unaudited reviews pages (batch 11), all dated 2026-05-08:**
+
+1. **crusoe** — All Series D/E, Stargate, revenue, MemoryAlloy claims linked
+2. **deepinfra** — Fixed imo messenger stat (1B Play Store → 200M+ users per primary source); cut unsourced "8,000x" claim; Series B, token volume, NVIDIA collaboration linked
+3. **fireworks** — Series C, FireAttention V1/V2, Hathora acquisition, FireFunction V2, Whisper 20x, customer metrics all linked
+4. **groq** — Series D/E, Saudi Arabia $1.5B, NVIDIA $20B deal, revenue cut, Compound accuracy benchmark all linked
+5. **hyperbolic** — Seed, Series A, Karpathy endorsement, traction monthly recaps all linked
+6. **lambda** — **FIXED** Series D lead investors (was "NVIDIA + B Capital", correct is "Andra Capital and SGW"); Series E, credit facility, Microsoft deal, NVIDIA leaseback, Combes CEO, revenue figures all linked
+7. **lepton** — NVIDIA acquisition, Jensen Huang quote linked
+8. **modal** — Series B, OpenAI sandbox partnership, cold start snapshotting benchmark linked
+9. **nebius** — Microsoft $19.4B, Meta deals, NVIDIA $2B, Eigen AI $643M, Q4 2025 results, Yandex split all linked
+10. **novita** — Hugging Face Inference Partner, GPQA Diamond #1 linked
+
+`sources_audited` count: 708 → 718. Deployed to DreamHost, committed and pushed.
+2026-07-26T02:10:04Z FINISHED run 1001889
+2026-07-26T02:10:05Z SESSION 3789 stopped
+2026-07-26T02:45:01Z STARTED run 1029189 (mode=wild)
+2026-07-26T02:45:02Z SESSION 3790 started
+Run 2661 is complete. Here's the summary:
+
+**10 reviews pages audited** (batch 12, dates 2026-05-08/09), `sources_audited` count: 718 → 728.
+
+**Key changes:**
+- **Databricks** — Fixed critical factual error: article falsely claimed Spark paper won the "ACM SIGOPS Hall of Fame Award in 2023 — the Turing Award of systems research." The 2023 Hall of Fame went to the Xen paper, not Spark. Corrected to: Zaharia received the **ACM SIGOPS Mark Weiser Award** in 2023. Also updated Tabular acquisition from ">$1B" to "approximately $2B" per TechCrunch.
+- **Character.AI** — Unverifiable "194 million visitors in January 2026" softened in both occurrences to "approximately 180–185 million monthly visitors" (sources showed 180–185M range, not 194M and not specifically January 2026).
+- **All 10 pages** — Inline primary-source links added for specific facts: xAI Series E, SpaceX acquisition, Colossus H100 specs, Together AI Series A/B/$1B ARR/CodeSandbox, AI21 Series C/Maestro accuracy, FLUX 1.1 Pro speed, Kontext editing speed, Character.AI session stats/revenue, Cohere Series A, DeepSeek A100 stockpile, ElevenLabs Scribe accuracy and 4chan incident.
+
+**Deployed** to DreamHost. Committed and pushed to GitHub.
+2026-07-26T03:09:23Z FINISHED run 1029189
+2026-07-26T03:09:23Z SESSION 3790 stopped
+2026-07-26T03:45:01Z STARTED run 1052768 (mode=wild)
+2026-07-26T03:45:02Z SESSION 3791 started
