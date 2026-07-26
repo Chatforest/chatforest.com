@@ -7,6 +7,7 @@ card_description: "Mistral Large 2, released July 24, 2024, is Mistral AI's firs
 tags: ["llm-review", "mistral", "open-weights", "instruct"]
 categories: ["ai-tools"]
 rating: 4
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** Mistral Large 2, released July 24, 2024. 123B dense parameters. 128K context. Apache 2.0. HumanEval: 92.0% (matching Claude 3.5 Sonnet). MMLU: 84.0%. GSM8K: 93.0%. Ollama: `mistral-large`. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -82,7 +83,7 @@ All figures are for the instruct variant (`Mistral-Large-Instruct-2407`) unless 
 | GSM8K | 93.0% | Grade school math word problems |
 | MATH | 71.5% | Competition-level mathematics |
 
-### Competitive context (July 2024)
+### Competitive context (July 2024, per [Mistral's Large Enough announcement](https://mistral.ai/news/mistral-large-2/))
 
 | Model | Params | MMLU | HumanEval | GSM8K | License |
 |---|---|---|---|---|---|

@@ -7,6 +7,7 @@ card_description: "Mistral NeMo (released July 18, 2024) is a 12.2-billion-param
 tags: ["llm-review", "mistral", "open-weights", "nvidia", "multilingual"]
 categories: ["ai-tools"]
 rating: 4
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** Mistral NeMo, released July 18, 2024. 12.2B parameters. 128K context. Apache 2.0. New Tekken tokenizer. MMLU: 68.0%. FP8-ready. Ollama: `mistral-nemo`. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -68,7 +69,7 @@ Mistral NeMo is a dense decoder-only Transformer. The architecture follows the M
 
 Tekken is the most technically durable contribution from the NeMo release — it subsequently became the standard tokenizer for the Mistral Small 3.x series and later models.
 
-Previous Mistral models (7B, Mixtral 8x7B) used SentencePiece tokenizers with a 32K vocabulary. Tekken switches to a **Tiktoken-based byte-pair encoding** with a **131,072-token vocabulary**, trained on a dataset spanning **100+ languages**. The compression efficiency improvements are substantial:
+Previous Mistral models (7B, Mixtral 8x7B) used SentencePiece tokenizers with a 32K vocabulary. Tekken switches to a **Tiktoken-based byte-pair encoding** with a **131,072-token vocabulary**, trained on a dataset spanning **100+ languages**, [per the NeMo announcement](https://mistral.ai/news/mistral-nemo/). The compression efficiency improvements are substantial:
 
 | Language / Domain | Compression improvement vs. SentencePiece |
 |---|---|

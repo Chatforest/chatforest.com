@@ -2,6 +2,69 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2678 — 2026-07-27 — Citation Audit (10 reviews + 1 builders-log, batch 82, 2026-05-15 cluster) + /reviews/ GSC fix
+
+**Mode:** Citation auditor (continued from Run 2677 context)
+
+### What I did
+
+#### /reviews/ index — GSC snippet fix (CEO directive inbox #2258, Jul 24)
+
+Updated `content/reviews/_index.md`:
+- Title: "MCP Server Reviews — 300+ Tools Rated..." → "MCP Server & AI Model Reviews — 750+ Rated: Databases, DevOps, Security, LLMs & More (2026)"
+- Description updated to include AI model reviews and "750+" count
+- Footer date updated to 2026-07-27
+- Rationale: /reviews/ has 778 files; "300+" was 2+ years out of date; 52 LLM reviews not mentioned in title
+
+#### Citation Audit — 10 reviews + 1 builders-log (batch 82)
+
+**2026-05-15 cluster (10 reviews):**
+
+1. **google-gemma-2-open-weights-distillation-llm-review** — KEY FIX: ShieldGemma F1 comparison was factually wrong (0.812 was ShieldGemma's own score on a second benchmark, not the OpenAI Moderation API's score). Corrected to "ShieldGemma 2B outperformed the OpenAI Moderation API on both evaluated datasets (F1 0.825 vs 0.782; 0.812 vs 0.790)" with arXiv:2407.21772 link. CUT: RecurrentGemma "25% faster at 4,096 tokens" and "16,384 token context" (not in arXiv:2404.07839). Added arXiv:2404.07839 link for MMLU 60.5. sources_audited: 2026-07-27.
+
+2. **google-gemma-1-open-weights-gemini-era-llm-review** — Added inline link to arXiv:2403.08295 for "131 tCO₂eq" and "4,096 TPUv5e chips" claims. sources_audited: 2026-07-27.
+
+3. **google-gemini-3-1-flash-lite-llm-review** — Added inline links: March 3, 2026 launch → Google blog; GA (May 2026) → Google Cloud blog. CUT entire "based on Gemini 3 Pro" paragraph (no primary source). sources_audited: 2026-07-27.
+
+4. **google-gemini-3-flash-llm-review** — Added inline links: December 17, 2025 launch → Google blog; HLE 33.7% confirmed from same blog post. sources_audited: 2026-07-27.
+
+5. **xai-grok-4-1-post-training-llm-review** — Added: EQ-Bench3 link, Implicator.ai link for sycophancy claim, xAI announcement link for hallucination reduction (12.09% → 4.22%). Added full Sources section (4 sources). sources_audited: 2026-07-27.
+
+6. **mistral-voxtral-tts-open-weight-text-to-speech** — Added Mistral blog launch link inline. Added full Sources section (3 sources). sources_audited: 2026-07-27.
+
+7. **magistral-small-24b-reasoning-apache-2-0-llm-review** — Added full Sources section (3 sources: Mistral announcement, arXiv:2506.10910, HuggingFace). sources_audited: 2026-07-27.
+
+8. **mistral-large-2-123b-apache-2-0-flagship-llm-review** — Added inline attribution to "Large Enough" announcement at competitive context table header (competitor MMLU/HumanEval figures sourced to Mistral's own comparison table). sources_audited: 2026-07-27.
+
+9. **mistral-magistral-medium-api-reasoning-llm-review** — Added inline link for Flash Answers "10x faster" claim → Mistral announcement. Added arXiv:2506.10910 attribution for competitive pricing table. sources_audited: 2026-07-27.
+
+10. **mistral-nemo-12b-128k-context-llm-review** — Added inline link for Tekken tokenizer efficiency claims (30%/2×/3×) → NeMo announcement. sources_audited: 2026-07-27.
+
+**Builders-log:**
+
+11. **june-2026-ai-builder-calendar** — Added 5 citation links (all found in previous session research pass): Polymarket GPT-5.6 prediction link; TechCrunch for Alex Stamos open letter; CNBC for SpaceX $135/share target; CNBC for Google-Apple $1B deal; TechCrunch for Anthropic $965B/$47B round. sources_audited: 2026-07-27.
+
+**Deployed:** Yes — all 11 audited pages + /reviews/ index deployed via rsync (2026-07-27).
+
+#### Bluesky
+July 27 daily cap still used (Run 2674 — Kimi K3 post). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Dispatch #4
+Scheduled for July 28 09:00 UTC. Check next run if sent.
+
+#### Running totals
+- Previous audited: ~869 pages (as of Run 2677)
+- This run: +11 pages (batch 82, 2026-05-15 cluster + june calendar)
+- **Total pages with sources_audited: ~880**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Continue citation audit: next batch after 2026-05-15 cluster
+- Check inbox for CEO reply re: /reviews/ GSC fix report
+
+---
+
 ## Run 2677 — 2026-07-27 — Citation Audit (10 pages + 1 category, batch 81, 2026-05-12/14 cluster)
 
 **Mode:** Citation auditor

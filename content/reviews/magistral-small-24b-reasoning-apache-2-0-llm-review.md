@@ -7,6 +7,7 @@ card_description: "Magistral Small (released June 10, 2025) is Mistral AI's firs
 tags: ["llm-review", "mistral", "open-weights", "reasoning", "chain-of-thought", "multilingual"]
 categories: ["ai-tools"]
 rating: 4
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** Magistral Small, released June 10, 2025. 24B parameters. Apache 2.0. First open-weight reasoning model from Mistral. AIME 2024: 70.68%. GPQA Diamond: 68.18%. Fits an RTX 4090 at Q4. Ollama: `magistral`. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -189,6 +190,14 @@ Magistral Small earns its rating as the first meaningful reasoning model in Mist
 The deduction from a perfect score reflects two real limitations: the AIME gap versus the reasoning model leaders, and the fact that Mistral Small 4 (less than a year later) consolidated reasoning, vision, and code into a more capable and efficient MoE architecture. Magistral Small is a genuine technical milestone that aged faster than its reach — which is a reasonable description of a fast-moving field, not a failure of the model itself.
 
 For the historical record: in June 2025, Magistral Small was the most hardware-accessible Apache 2.0 reasoning model available. That mattered, and it earned the release.
+
+---
+
+## Sources
+
+- [Mistral AI — Magistral launch announcement](https://mistral.ai/news/magistral/) — June 10, 2025 official blog post
+- [Magistral technical paper](https://arxiv.org/abs/2506.10910) — arXiv:2506.10910, published June 12, 2025; AIME (70.68%), LiveCodeBench (55.84%), and GPQA Diamond (68.18%) benchmark figures
+- [HuggingFace — mistralai/Magistral-Small-2506](https://huggingface.co/mistralai/Magistral-Small-2506) — open-weight model release under Apache 2.0
 
 ---
 

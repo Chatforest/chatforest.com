@@ -6,11 +6,12 @@ og_description: "Voxtral TTS beats ElevenLabs Flash v2.5 in 68.4% of voice-cloni
 content_type: "Review"
 card_description: "Mistral's 4B open-weight TTS model outperforms ElevenLabs Flash v2.5 at voice cloning (68.4% preference) with as little as 3 seconds of reference audio. Nine languages, 70ms latency, $0.016/1k chars API, CC BY-NC open weights on Hugging Face. A genuine ElevenLabs challenger with a commercial-use asterisk."
 last_refreshed: 2026-05-15
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** 4B parameters (3.4B decoder + 390M acoustic transformer + 300M codec), released March 26, 2026, 9 languages, 70ms latency, 9.7x real-time factor, $0.016/1k chars API, CC BY-NC 4.0 open weights on [Hugging Face](https://huggingface.co/mistralai/Voxtral-4B-TTS-2603), beats ElevenLabs Flash v2.5 in 68.4% of voice-cloning comparisons, runs on a single 16 GB GPU. Part of our **[AI Models & LLM Reviews](/categories/llm-reviews/)** section.
 
-Voxtral TTS is Mistral AI's first text-to-speech model, launched March 26, 2026. It clones a voice from as little as three seconds of reference audio, generates speech in nine languages at 70ms model latency, and ships as open weights on Hugging Face — or as a $0.016/1k character API. In Mistral's own human evaluation, Voxtral TTS was preferred over ElevenLabs Flash v2.5 in 68.4% of voice-cloning comparisons and reached quality parity with ElevenLabs v3 when emotion-steering is factored in.
+Voxtral TTS is Mistral AI's [first text-to-speech model, launched March 26, 2026](https://mistral.ai/news/voxtral-tts/). It clones a voice from as little as three seconds of reference audio, generates speech in nine languages at 70ms model latency, and ships as open weights on Hugging Face — or as a $0.016/1k character API. In Mistral's own human evaluation, Voxtral TTS was preferred over ElevenLabs Flash v2.5 in 68.4% of voice-cloning comparisons and reached quality parity with ElevenLabs v3 when emotion-steering is factored in.
 
 The timing is notable. Mistral launched this alongside a separate [Voxtral speech understanding family](/reviews/mistral-voxtral-small-speech-understanding/) (24B and 3B variants for transcription and audio comprehension). Together, they represent Mistral's push into the full voice stack — transcription, understanding, and synthesis — within a single product line.
 
@@ -143,6 +144,14 @@ It loses a point for the absence of independent benchmark validation (all publis
 **Use this if:** You need voice cloning in the nine supported languages, want open-weight access for research or non-commercial development, or are building multilingual voice applications in European + Hindi + Arabic markets where Voxtral's cloning quality benchmark advantage is largest.
 
 **Skip this if:** You need more than nine languages, require validated independent benchmarks before committing to a production voice stack, need commercial self-hosting without per-character API costs, or are building English-only applications where [MAI-Voice-1](/reviews/microsoft-mai-transcribe-voice-image-multimodal-family-review/) (60s audio <1s, six preset voices) or ElevenLabs' larger ecosystem may fit better.
+
+## Sources
+
+- [Mistral AI — Voxtral TTS announcement](https://mistral.ai/news/voxtral-tts/) — March 26, 2026 launch blog post; benchmark figures (68.4% win rate, language-specific win rates, 70ms latency, $0.016/1k chars pricing)
+- [HuggingFace — mistralai/Voxtral-4B-TTS-2603](https://huggingface.co/mistralai/Voxtral-4B-TTS-2603) — open-weight model release under CC BY-NC 4.0
+- [Ministral 3B announcement](https://mistral.ai/news/ministraux) — base decoder backbone for Voxtral TTS architecture
+
+---
 
 **Related reviews:** [Microsoft MAI Model Family](/reviews/microsoft-mai-transcribe-voice-image-multimodal-family-review/) | [Mistral Small 3.2](/reviews/mistral-small-3-2-llm-review/) | [Magistral Medium](/reviews/magistral-medium-mistral-reasoning-llm-review/)
 

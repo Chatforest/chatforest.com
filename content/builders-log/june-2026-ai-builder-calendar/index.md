@@ -7,6 +7,7 @@ og_description: "June 2026 AI calendar updated June 17: Gemini CLI deprecated TO
 content_type: "Builder's Log"
 categories: ["AI Planning", "Developer Tools", "AI Industry"]
 tags: ["microsoft-build", "wwdc", "spacex", "claude-code", "gemini", "grok", "gpt", "anthropic", "planning", "june-2026", "databricks", "dais-2026"]
+sources_audited: 2026-07-27
 ---
 
 June 2026 has more scheduled AI events than most quarters. Within 30 days: a major developer conference, a historic IPO, five separate API deprecation cutoffs, multiple billing model changes, and two frontier models that prediction markets think are likely. This is not a news roundup. It is a planning document.
@@ -65,7 +66,7 @@ The closing keynote typically carries the biggest product GA announcements that 
 The 14-day free trial for Fable 5 and Mythos 5 was set to end June 22. Both models remain suspended. Anthropic has not announced whether the free period will be extended, credited, or voided. Status: **suspended, ongoing Commerce Department negotiations**.
 
 **June 22–28 — GPT-5.6 expected window**
-Polymarket prices GPT-5.6 at 83–89% probability by June 30. OpenAI's chief scientist has confirmed it is a "meaningful leap" over GPT-5.5. Codenames `iris-alpha`, `ember-alpha`, and `beacon-alpha` surfaced in backend logs. No official release date or model card. If you are building on GPT-5.5, plan for a 4-to-6-week evaluation cycle; with sub-60-day release cadence, continuous benchmarking infrastructure is more durable than chasing each new model manually.
+[Polymarket](https://polymarket.com/event/gpt-5pt6-released-by) prices GPT-5.6 at 83–89% probability by June 30. OpenAI's chief scientist has confirmed it is a "meaningful leap" over GPT-5.5. Codenames `iris-alpha`, `ember-alpha`, and `beacon-alpha` surfaced in backend logs. No official release date or model card. If you are building on GPT-5.5, plan for a 4-to-6-week evaluation cycle; with sub-60-day release cadence, continuous benchmarking infrastructure is more durable than chasing each new model manually.
 
 **June 24 — Vertex AI Gemini SDK migration (action required)**
 Google is removing the old `google.generativeai` and `vertexai.preview.generative_models` Python import paths. Migrate to `google-genai` (`pip install google-genai`). This is a dependency swap — method signatures are largely compatible. Deadline is hard with no fallback.
@@ -83,7 +84,7 @@ All Vertex AI Imagen model endpoints removed: `imagegeneration@002` through `@00
 
 ### "Expected in June" Model Status — June 17
 
-**Fable 5 / Mythos 5:** Still suspended. Anthropic's senior technical staff met with Commerce Department officials in Washington on June 16 — the first face-to-face negotiation since the June 12 directive. Over 100 cybersecurity professionals including former Facebook CSO Alex Stamos signed an open letter demanding the ban be reversed. No restoration date announced. Polymarket prices restoration by July 1 at 75–81%. Operational fallback: `claude-opus-4-8` and `claude-sonnet-4-6` remain fully available. See [the June 16 Commerce Department update](/builders-log/anthropic-fable-5-mythos-5-commerce-department-june-16-restoration-talks-builder-guide/) for restoration scenarios.
+**Fable 5 / Mythos 5:** Still suspended. Anthropic's senior technical staff met with Commerce Department officials in Washington on June 16 — the first face-to-face negotiation since the June 12 directive. [Over 100 cybersecurity professionals](https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/) including former Facebook CSO Alex Stamos signed an open letter demanding the ban be reversed. No restoration date announced. Polymarket prices restoration by July 1 at 75–81%. Operational fallback: `claude-opus-4-8` and `claude-sonnet-4-6` remain fully available. See [the June 16 Commerce Department update](/builders-log/anthropic-fable-5-mythos-5-commerce-department-june-16-restoration-talks-builder-guide/) for restoration scenarios.
 
 **Claude Sonnet 4.8:** Not released. The predicted June 16–18 window (based on pattern timing from Opus 4.8's May 28 release) has passed with no announcement. Current Sonnet-tier model remains `claude-sonnet-4-6`. No official timeline from Anthropic.
 
@@ -227,7 +228,7 @@ If you have been evaluating open-weights vs. closed-API economics for production
 
 The SPCX roadshow opened today, not June 8 as originally projected in this calendar. The syndicate (Goldman, Morgan Stanley, BofA, Citi, JPMorgan) is meeting with anchor institutional investors this week. Retail order windows open June 7-8. Price range announcement expected June 7-9. Pricing June 11. Trading June 12.
 
-The $135/share target price was confirmed in CNBC's June 3 reporting from lead underwriter sources. That implies a $1.77 trillion valuation at close — above the $1.75T initial target. No builder action required; track as AI infrastructure context.
+The [$135/share target price was confirmed in CNBC's June 3 reporting](https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html) from lead underwriter sources. That implies a $1.77 trillion valuation at close — above the $1.75T initial target. No builder action required; track as AI infrastructure context.
 
 ---
 
@@ -245,7 +246,7 @@ Verify your Gemini integrations now. If you use a Gemini SDK wrapper, check whet
 
 WWDC reveals iOS 27, macOS, and the next iteration of Apple Intelligence. The practical builder interest is the **Apple-Google Gemini partnership** going live: Siri is integrating Gemini for queries it cannot handle natively, and iOS 27 is the first shipping version with this capability.
 
-The $1 billion annual deal (Google paying Apple) positions Gemini as the default AI assistant layer across Apple's user base. For builders targeting iOS, iOS 27 is the first release where users will have Gemini-class reasoning available through system APIs.
+The [$1 billion annual deal](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html) (Google paying Apple) positions Gemini as the default AI assistant layer across Apple's user base. For builders targeting iOS, iOS 27 is the first release where users will have Gemini-class reasoning available through system APIs.
 
 Also at WWDC: expect Apple to reveal the **Siri Extensions API** — iOS 27 opens Siri to Claude, ChatGPT, Grok, and other AI assistants as routing targets. Users will be able to direct Siri queries to their preferred AI via a new Extensions setting. If you are building AI assistant integrations, this is the API to evaluate this week.
 
@@ -348,7 +349,7 @@ If OpenAI's recent cadence holds (GPT-5.4 → 5.5 → 5.5 Instant in rapid succe
 
 **Anthropic $965B funding round** *(closed May 28)*
 
-The round closed at $65 billion at a $965 billion post-money valuation — larger than initially reported. Run-rate revenue hit $47B. Same conclusion as before: nothing changes for builders in the short term. API availability, pricing, and rate limits are unaffected. The valuation tells you Anthropic is not going anywhere; it does not tell you anything about what to build.
+The round [closed at $65 billion at a $965 billion post-money valuation](https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/) — larger than initially reported. Run-rate revenue hit $47B. Same conclusion as before: nothing changes for builders in the short term. API availability, pricing, and rate limits are unaffected. The valuation tells you Anthropic is not going anywhere; it does not tell you anything about what to build.
 
 **SpaceX IPO market performance**
 

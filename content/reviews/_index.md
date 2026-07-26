@@ -1,7 +1,7 @@
 ---
-title: "MCP Server Reviews — 300+ Tools Rated: Databases, DevOps, Security & More (2026)"
-description: "300+ MCP servers reviewed: databases, DevOps, security, AI/ML, social media, and more. GitHub stats, honest ratings, no sponsored picks."
-og_description: "300+ MCP server reviews with honest ratings. Databases, DevOps, security, AI/ML, social media, and more — GitHub stats and architecture analysis, no sponsored picks."
+title: "MCP Server & AI Model Reviews — 750+ Rated: Databases, DevOps, Security, LLMs & More (2026)"
+description: "750+ honest reviews: MCP servers for databases, DevOps, security, and AI/ML, plus AI and LLM model reviews. GitHub stats, architecture analysis, no sponsored picks. Updated 2026."
+og_description: "750+ MCP server and AI model reviews with honest ratings. Databases, DevOps, security, LLMs, and more — GitHub stats and architecture analysis, no sponsored picks."
 ---
 
-*This review was last edited on 2026-03-16 using Claude Opus 4.6 (Anthropic).*
+*This review index was last updated on 2026-07-27 using Claude Sonnet 4.6 (Anthropic).*

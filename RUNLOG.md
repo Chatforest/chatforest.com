@@ -1,3 +1,4 @@
+Run 2678: /reviews/ index GSC fix (title "300+" → "750+" with LLM reviews added; CEO directive inbox #2258). Citation audit 10 reviews + 1 builders-log (batch 82, 2026-05-15 cluster): gemma-2 ShieldGemma F1 comparison corrected (0.812 was ShieldGemma's own score, not OpenAI API's — rewrote comparison accurately with arXiv:2407.21772); gemma-1 training carbon/chips sourced to arXiv:2403.08295; gemini-3-1-flash-lite "based on Gemini 3 Pro" paragraph CUT (no source) + launch links added; gemini-3-flash launch + HLE 33.7% linked; grok-4-1 EQ-Bench/sycophancy/hallucination-reduction sourced; voxtral-tts launch link + Sources section added; magistral-small Sources section added (arXiv:2506.10910); mistral-large-2 competitor table attributed to "Large Enough" announcement; magistral-medium Flash Answers "10x" linked + competitive table attributed to arXiv:2506.10910; mistral-nemo Tekken efficiency claims linked; june-2026-ai-builder-calendar: 5 citation links added (Polymarket GPT-5.6, TechCrunch Stamos open letter, CNBC SpaceX $135/share, CNBC Google-Apple $1B deal, TechCrunch Anthropic $965B/$47B). DEPLOYED 2026-07-27. Audited pages total: ~880 (was 869).
 Run 2676: Citation audit 9 pages (batch 80, 2026-05-26 cluster) — KEY FIXES: claude-mythos CVE comparison cut ("few thousand/yr" is ~12x wrong — actual 40-48K/yr NVD); cursor-composer-2-5 VP title corrected (Developer Education not Experience) + eWeek source added; openai-s1 $25B ARR date corrected Feb→Feb 2026 (not March) + CNBC/OpenAI funding links added; google-3-2-quadrillion all 4 keynote stats (375+ customers, 8.5M devs, $180-190B capex, $1B savings) linked to Google I/O blog (confirmed verbatim) + Anthropic revenue CNBC link; four-agentic-coding-clis Locked Use MacRumors link + Antigravity 289 t/s secondary source; caisi "40+" evaluation count removed (uncited); anthropic-mcp-tunnels providers list linked; microsoft-build memory billing table linked; ibm-global-ceo-study well cited (marked audited). june-2026-ai-calendar SKIPPED (30+ claims/15+ events — too complex for single run; flagged for dedicated pass). Also swept in new RingS /ai/ entries. DEPLOYED 2026-07-27. Audited pages total: ~858 (was 849).
 Run 2673: CEO directives (Bluesky 5-day gap fixed, CLAUDE.md updated with daily duty + follow policy, 1→12 Bluesky follows, CEO report sent aiu 67 inbox #2265, Dispatch #4 scheduled Tuesday July 28 09:00 UTC — subject "AI Ransomware Arrives, Kimi K3, $880B Semiconductors"). Bluesky: posted JADEPUFFER https://bsky.app/profile/chatforest.bsky.social/post/3mrkjuuo5fv2u. Citation audit 11 pages (10 builders-log batch 76 + JADEPUFFER review, dates 2026-05-13 to 2026-07-21, sources_audited: 2026-07-26). CRITICAL FIXES: cerebras-ipo free tier "24M tokens/day" → "1M tokens/day" (24M is paid tier); sap-sapphire "$40B+ customer base" → "425,000 customers" (40B was revenue); karpathy "vibe coding coined January 2025" → "February 6, 2025" + CFO Krishna Rao 90%+ code attribution; wordpress-7 added MCP Adapter is NOT bundled in WP core clarification; replit-agent-4 named CEO Amjad Masad (was anonymous). DEPLOYED 2026-07-26. Audited pages total: ~829 (was 818).
 Run 2672: Citation audit 10 reviews pages (moonshot-ai-kimi-k2-6, minimax-m2-5, minimax-m2-7, mistral-medium-3-5, ibm-granite-4-1, anthropic-claude-3-5-haiku, anthropic-claude-3-5-sonnet-computer-use, google-gemini-1-5-pro, google-gemini-2-0-flash, meta-llama-3-1-405b — dates 2026-05-13T18:30:00 to 2026-05-14, sources_audited: 2026-07-26). KEY FIXES: Mistral Medium 3.5 AI Intelligence Index score "39.23" removed (AA page shows different value — replaced with link); Gemini 1.5 Pro Oct-2024 price reduction link was wrong blog URL + percentages unverifiable — removed; MiniMax M2.7 NVIDIA vLLM/SGLang multipliers (2.5x/2.7x) removed (no source); MiniMax M2.5 analyst revenue projections ($183.9M/$356.2M) removed (no source). CITATION ADDS: kimi-k2-6: Yahoo Finance Yang Zhilin bio + TechCrunch $200M ARR + github.com/MoonshotAI/Moonlight MuonClip + kimi.com/blog Zig case study + Wikipedia Kimi chatbot Oct 9 2023 + cerebras.ai 981 t/s blog + artificialanalysis.ai/models/kimi-k2-6; m2-5: Bloomberg IPO for 29M MAU Talkie + CNBC IPO for $79M revenue/$512M loss; mistral-medium-3-5: mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/ + mistral.ai/news/mistral-small-4/ + AA model page; ibm-granite-4-1: PR Newswire IP indemnification; claude-3-5-haiku: anthropic.com/pricing; gemini-2-0-flash: AA model page (not homepage); llama-3-1-405b: arXiv:2407.21783. DEPLOYED 2026-07-26. Audited pages total: 818 (was 808).
@@ -41292,3 +41293,27 @@ Key fixes found via research agent:
 **Total audited:** ~869 pages.
 
 **Next run**: Mandatory Bluesky post (July 28), check Dispatch #4 status, audit june-2026-ai-builder-calendar (complex standalone pass), continue next batch after 2026-05-14 cluster.
+Run 2677 complete.
+
+**What was done this run:**
+
+**Inbox:** Forwarded email from GoodDay (victor.k@goodday.work) requesting content collaboration on the PM/roadmapping MCP review. Assessed as a paid-placement pitch. Messaged Rob (inbox #2267) recommending decline or clarification — it's his call.
+
+**Citation audit — 11 pages (batch 81):**
+- 1 category index page (cloud-storage-file-sync) — audited, sources confirmed via linked GitHub repos
+- 10 LLM reviews (2026-05-14 cluster): Meta Llama 3/3.2/3.3, Mistral Small 3.2, GPT-4.5, OpenAI o1, o3-mini, o3+o4-mini, Falcon 3, Grok 3
+
+**Key fixes:**
+- Llama 3.2: Corrected "2.5 billion image-text pairs" → **6 billion** (source: HuggingFace model card)
+- Grok 3: Cut unverifiable "Claude 3.7 scored ~49% AIME 2024" (primary sources show 80% extended/23% standard, neither matching 49%); added ArXiv citation for DeepSeek R1 79.8% AIME 2024
+- o1: Deliberative alignment re-attributed to system card (not TechCrunch)
+- Llama 3: Cut unsourced "24,000 H100s" claim
+- Multiple articles: Added primary source links (Mistral docs, TechCrunch Orion, OpenAI o4-mini retirement, Grok 4)
+
+**Running total: ~869 pages audited.**
+
+**Next run (July 28):** Mandatory Bluesky post, check Dispatch #4 status, audit `june-2026-ai-builder-calendar` (complex standalone), continue next audit batch.
+2026-07-26T18:07:34Z FINISHED run 1347060
+2026-07-26T18:07:35Z SESSION 3805 stopped
+2026-07-26T18:54:01Z STARTED run 1369053 (mode=wild)
+2026-07-26T18:54:02Z SESSION 3806 started
