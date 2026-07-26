@@ -68,7 +68,7 @@
       <div class="article-body">
         <p>When you install a package from npm, you can run <code>npm audit</code>. You get a dependency graph, known CVEs, severity scores. You can make an informed decision about whether to ship it.</p>
 <p>AI agent skills have had no equivalent. You get a SKILL.md file and some documentation and you trust that the capability does what it says. For personal projects, that&rsquo;s fine. For enterprise deployments where an agent skill might have access to customer data, internal APIs, or production systems — it&rsquo;s a gap that shows up fast in security reviews.</p>
-<p>On May 22, 2026, NVIDIA shipped an answer: <strong>Verified Agent Skills</strong>, a framework that brings catalog, scan, sign, and document infrastructure to portable agent capabilities.</p>
+<p>On May 22, 2026, <a href="https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/">NVIDIA shipped an answer: <strong>Verified Agent Skills</strong></a>, a framework that brings catalog, scan, sign, and document infrastructure to portable agent capabilities.</p>
 <hr>
 <h2 id="what-agent-skills-are-and-why-governance-matters">What Agent Skills Are (and Why Governance Matters)</h2>
 <p>NVIDIA&rsquo;s verified skills are built on the open <a href="https://agentskills.io">agentskills.io</a> specification — the SKILL.md format that defines portable agent capabilities that work across Claude Code, Codex, Cursor, and other agentic coding environments. The same skill designed for one platform reliably deploys across others.</p>
@@ -107,7 +107,7 @@
 <li>Mismatches between a skill&rsquo;s declared purpose, the access it requests, and the behavior bundled in</li>
 </ul>
 <p>That last category — declared-versus-actual mismatch — is the hardest to catch with conventional tooling. A skill that says &ldquo;I optimize routing&rdquo; but also requests read access to the user&rsquo;s credential store is a red flag that wouldn&rsquo;t show up in a dependency audit. SkillSpector scans for it explicitly.</p>
-<p>NVIDIA grounds the scanning methodology in OWASP LLM guidance, agentic AI risk frameworks, and MITRE ATLAS — the adversarial threat landscape for AI systems.</p>
+<p>NVIDIA grounds the scanning methodology in <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP LLM guidance</a>, agentic AI risk frameworks, and <a href="https://atlas.mitre.org/">MITRE ATLAS</a> — the adversarial threat landscape for AI systems.</p>
 <hr>
 <h2 id="skill-cards-machine-readable-trust-records">Skill Cards: Machine-Readable Trust Records</h2>
 <p>After scanning, each verified skill gets a <strong>skill card</strong> — a structured, machine-readable document that answers the questions an enterprise team asks before deployment:</p>
@@ -164,6 +164,8 @@
 <p>The question for builders is whether this infrastructure arrives fast enough to unlock enterprise deployments that are currently stuck at the security review stage. Based on what&rsquo;s in the NVIDIA catalog now, the answer depends on what skills your agents actually need.</p>
 <hr>
 <p><em>ChatForest researches and writes about AI infrastructure and developer tools. We have not tested NVIDIA Verified Agent Skills or SkillSpector directly; this article is based on NVIDIA&rsquo;s published technical documentation. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest.</em></p>
+<hr>
+<p><strong>Sources:</strong> <a href="https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/">NVIDIA Verified Agent Skills Provide Capability Governance for AI Agents (NVIDIA Developer Blog)</a> · <a href="https://agentskills.io">agentskills.io open specification</a> · <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP Top 10 for Large Language Model Applications</a> · <a href="https://atlas.mitre.org/">MITRE ATLAS — Adversarial Threat Landscape for AI Systems</a></p>
 
       </div>
 

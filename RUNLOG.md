@@ -41184,3 +41184,50 @@ Deploy from Run 2671 (previously throttled) was also included. Audited pages tot
 2026-07-26T13:16:00Z SESSION 3800 stopped
 2026-07-26T13:52:01Z STARTED run 1254677 (mode=wild)
 2026-07-26T13:52:02Z SESSION 3801 started
+The throttle poller is running in background. I'll be notified when it clears. Here's a summary of everything completed this run:
+
+---
+
+**Run 2673 — complete summary:**
+
+**CEO directives (all addressed):**
+- **Bluesky gap (5 days) fixed** — cause: citation audit runs consumed all capacity, cap read as optional. CLAUDE.md now makes daily posting an explicit standing duty.
+- **Posted today**: JADEPUFFER (first autonomous AI ransomware) — https://bsky.app/profile/chatforest.bsky.social/post/3mrkjuuo5fv2u
+- **CLAUDE.md updated**: daily duty language, content guidance (lead with concrete number), full follow policy added
+- **Follows: 1 → 12** (Simon Willison, Ethan Mollick, Anthropic, Jeremy Howard, LangChain, Sysdig, tldraw, and more)
+- **CEO report sent**: Jikan inbox #2265 (all 5 requested points)
+- **Dispatch #4 scheduled**: Tuesday July 28 09:00 UTC — covers JADEPUFFER, Kimi K3 open weights, Glean $300M ARR, Gemini 3.6 Flash, Anthropic-Samsung chip, South Korea $880B
+
+**Citation audit — 11 pages:**
+- Critical fix: Cerebras free tier `24M tokens/day → 1M tokens/day` (huge factual error)
+- Fix: SAP "$40B+ customer base" was revenue, not customers — corrected to 425K customers
+- Fix: Karpathy "vibe coding coined January" → February 6, 2025
+- Fix: WordPress MCP Adapter is NOT bundled in core — added explicit clarification
+- Fix: Replit CEO named (was anonymous)
+- Fix: JADEPUFFER CVE-2021-29441 NVD link added
+- All 11 pages marked `sources_audited: 2026-07-26`
+
+Deploy will execute as soon as the throttle clears (~5 min).
+2026-07-26T14:09:50Z FINISHED run 1254677
+2026-07-26T14:09:51Z SESSION 3801 stopped
+2026-07-26T14:52:01Z STARTED run 1275869 (mode=wild)
+2026-07-26T14:52:02Z SESSION 3802 started
+Run 2674 complete. Here's a summary of what was accomplished:
+
+**Citation Audit — 10 builders-log pages (batch 77, all 2026-05-22):**
+
+- **NVIDIA Verified Agent Skills** — most critical fix: article had zero sources. Added the official NVIDIA developer blog URL as primary source, plus inline links for agentskills.io, OWASP LLM Top 10, and MITRE ATLAS.
+- **MCP Linux Foundation** — restored confirmed "10,000 MCP servers" and "60,000 AGENTS.md projects" figures with Linux Foundation press release citation; removed uncited "2 million starting installs" claim.
+- **FIS AML Agent** — softened "95-97% false positive rate" to "approaching 95%" with BPI/Unit21 source; added FIS press release link for "3,000+ institutions" claim.
+- **IBM Think 2026** — restored "40% of Fortune 500" for Confluent (confirmed in IBM acquisition announcement from March 2026).
+- **Anthropic Vertical MCP** — corrected Cowork launch citation (confirmed January 12, 2026); removed unverifiable Legal Data Hunter document count (sources disagree: 23M+ vs 32M+).
+- **OpenAI Deployment Company** — added The Next Web inline link for Supercell 110M users.
+- **Atlassian, Google I/O, Microsoft Agent 365, Notion** — verified well-cited, marked audited. (OpenClaw confirmed as a real product in Microsoft's primary source.)
+
+**Bluesky:** Posted Kimi K3 open-weights release today (July 27 — the day weights dropped). Hard cap used for July 27.
+
+**Running total:** ~839 pages with `sources_audited` (~118 remaining in builders-log).
+2026-07-26T15:03:47Z FINISHED run 1275869
+2026-07-26T15:03:48Z SESSION 3802 stopped
+2026-07-26T15:53:01Z STARTED run 1303420 (mode=wild)
+2026-07-26T15:53:02Z SESSION 3803 started

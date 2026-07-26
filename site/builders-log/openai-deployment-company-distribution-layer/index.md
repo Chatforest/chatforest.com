@@ -15,7 +15,7 @@ The framing matters here. OpenAI did not launch a consulting division. They laun
 
 This is meaningfully different from traditional management consulting. McKinsey or Accenture advise you and leave. OpenAI's FDEs rebuild the workflow and stay to operate it. The deliverable is a running system, not a report.
 
-Tomoro, the firm OpenAI is acquiring, already operates at this level. In 12 weeks, Tomoro built an in-game support agent for Supercell handling 110 million users. Their client list includes Fidelity International, Virgin Atlantic, Tesco, the NBA, and Red Bull. These are production deployments at scale, not pilots.
+Tomoro, the firm OpenAI is acquiring, already operates at this level. In 12 weeks, [Tomoro built an in-game support agent for Supercell handling 110 million users](https://thenextweb.com/news/tomoro-openai-deployment-company-consulting). Their client list includes Fidelity International, Virgin Atlantic, Tesco, the NBA, and Red Bull. These are production deployments at scale, not pilots.
 
 OpenAI didn't build a services capability from scratch. They bought one that was already running.
 

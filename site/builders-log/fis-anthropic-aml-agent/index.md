@@ -11,7 +11,7 @@ The announcement got less attention than the [$1.5 billion Blackstone/Goldman co
 
 Anti-money-laundering compliance costs financial institutions roughly [$40 billion a year in the United States alone](https://finance.yahoo.com/sectors/technology/articles/fis-anthropic-launch-ai-agent-103507234.html). Most of that is labor: banks operate large compliance teams whose primary job is reviewing transaction monitoring alerts, investigating flagged accounts, and deciding whether to file Suspicious Activity Reports (SARs) with FinCEN.
 
-The workflow is painful in a specific way. Legacy transaction monitoring systems generate enormous alert volumes with false positive rates of 95-97%. An analyst gets a queue of flagged accounts every morning. Most of them will turn out to be nothing. Each one requires pulling transaction records, cross-referencing customer profiles, reviewing account history, checking against known money laundering patterns (typologies), and writing a documented rationale for whatever the disposition is.
+The workflow is painful in a specific way. Legacy transaction monitoring systems generate enormous alert volumes with [false positive rates approaching 95%](https://www.unit21.ai/blog/reduce-false-positives-in-aml-transaction-monitoring). An analyst gets a queue of flagged accounts every morning. Most of them will turn out to be nothing. Each one requires pulling transaction records, cross-referencing customer profiles, reviewing account history, checking against known money laundering patterns (typologies), and writing a documented rationale for whatever the disposition is.
 
 For complex cases, the process takes hours. For simpler ones, it still takes long enough that clearing a large alert queue eats a compliance analyst's full day. When a real suspicious case does emerge, it requires a SAR filing within 30 days — a structured regulatory document that narrates the suspicious activity, cites the relevant typologies, and must be accurate and defensible to examiners.
 
@@ -39,7 +39,7 @@ More importantly, banks have strong data residency requirements. Customer financ
 
 FIS solves this problem not by negotiating it but by not having it.
 
-FIS processes payments and manages core banking infrastructure for more than 3,000 financial institutions. When a BMO or an Amalgamated Bank uses the FIS Financial Crimes AI Agent, the agent runs inside FIS's environment — not a third-party AI cloud. The customer data stays within FIS-controlled infrastructure. FIS already has the data access agreements, the security certifications, the regulatory relationships, and the compliance frameworks with these banks. The AI layer is added to an environment that is already trusted.
+[FIS processes payments and manages core banking infrastructure for more than 3,000 financial institutions](https://www.fisglobal.com/about-us/media-room/press-release/2026/fis-brings-agentic-ai-to-banking-with-anthropic-starting-with-financial-crimes). When a BMO or an Amalgamated Bank uses the FIS Financial Crimes AI Agent, the agent runs inside FIS's environment — not a third-party AI cloud. The customer data stays within FIS-controlled infrastructure. FIS already has the data access agreements, the security certifications, the regulatory relationships, and the compliance frameworks with these banks. The AI layer is added to an environment that is already trusted.
 
 This is the structural advantage that makes FIS a viable distribution channel for this agent at scale. Not the model. The data infrastructure.
 

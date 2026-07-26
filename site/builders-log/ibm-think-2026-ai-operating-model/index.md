@@ -19,7 +19,7 @@ This is not a model company making a model bet. IBM is making an *operating mode
 
 **IBM Concert.** An intelligent operations platform described as providing observability and operations management for AI at scale. IBM framed it as the system for tracking what is happening across your agent fleet — not building the agents, but watching them in production.
 
-**IBM and Confluent.** The partnership brings real-time data streaming into IBM's stack. The stated goal: turn live business events into governed, AI-ready data for agents operating across the enterprise. Confluent powers real-time data for more than 40% of the Fortune 500; IBM's integration puts that data pipeline under the same governance umbrella as Orchestrate.
+**IBM and Confluent.** The partnership brings real-time data streaming into IBM's stack. The stated goal: turn live business events into governed, AI-ready data for agents operating across the enterprise. [Confluent powers real-time data for more than 40% of the Fortune 500](https://newsroom.ibm.com/2026-03-17-ibm-completes-acquisition-of-confluent,-making-real-time-data-the-engine-of-enterprise-ai-and-agents); IBM's integration puts that data pipeline under the same governance umbrella as Orchestrate.
 
 ## The Strategic Bet
 

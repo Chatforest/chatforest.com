@@ -18,7 +18,7 @@ This is not API evolution. This is Anthropic entering the vertical software busi
 
 ## The Platform Underneath
 
-Claude Cowork launched in January 2026 — relatively quietly, framed as a productivity tool. It can carry out multistep tasks spanning multiple applications and repeat those tasks at user-defined intervals. Users initiate each workflow and sign off before anything is sent, posted, or paid. It is available at no extra cost to Pro, Max, and Teams subscribers.
+[Claude Cowork launched in January 2026](https://claude.com/blog/cowork-research-preview) — relatively quietly, framed as a productivity tool. It can carry out multistep tasks spanning multiple applications and repeat those tasks at user-defined intervals. Users initiate each workflow and sign off before anything is sent, posted, or paid. It is available at no extra cost to Pro, Max, and Teams subscribers.
 
 That January launch was foundation-laying. The vertical bundles started shipping in April.
 
@@ -46,7 +46,7 @@ Prior to MCP, building AI integrations into professional software required custo
 
 Anthropic's first-party connectors benefit from this in two directions. Toward tool vendors: Relativity, iManage, and Thomson Reuters can maintain one MCP server that serves multiple AI clients, not just Claude. Toward users: a connector that works in Claude Cowork works (in principle) in any MCP-compatible agent runtime. Anthropic is not trying to lock the ecosystem; they are trying to lead it.
 
-The trade-off is that the same connectors can be wired to competing models. Harvey, which connects to Claude via the Legal bundle, also has its own AI and its own model relationships. The Legal Data Hunter corpus with 31 million documents from 160-plus jurisdictions will not be exclusive to Anthropic. Openness is the bet, not exclusivity.
+The trade-off is that the same connectors can be wired to competing models. Harvey, which connects to Claude via the Legal bundle, also has its own AI and its own model relationships. The [Legal Data Hunter](https://claude.com/blog/claude-for-the-legal-industry) corpus spanning multiple jurisdictions will not be exclusive to Anthropic. Openness is the bet, not exclusivity.
 
 What Anthropic controls is the quality of the first-party integration, the depth of practice-area plugins, and the platform experience. The iManage connector is not just a read operation — it understands matter structure, version history, and workspace navigation. That kind of depth takes deliberate work with the tool vendor. First-party connectors built through partnership are likely to be more capable than connectors built by scraping public APIs.
 
