@@ -4,6 +4,7 @@ date: 2026-05-09
 description: "ElevenLabs turned frustration with bad dubbing into a $11B voice AI company in three years. From two Polish founders — one ex-Palantir, one ex-Google — the company now sits at $500M ARR, $811M raised, official MCP server, Adobe and IBM integrations, and an IPO trajectory. We review the technology, the products, the controversies, and whether the voice realism lives up to the hype."
 tags: ["voice-ai", "text-to-speech", "voice-cloning", "dubbing", "conversational-ai", "api", "mcp-server", "speech-to-text", "audio-ai", "enterprise-ai", "adobe", "ibm", "elevenlabs"]
 rating: 5
+sources_audited: 2026-07-26
 ---
 
 # ElevenLabs — The Voice AI Platform That Built a Category
@@ -122,7 +123,7 @@ Enterprise-grade conversational voice agents are a genuine market gap that Eleve
 
 ElevenLabs' STT product launched in April 2025 and is distinct from TTS in that it directly competes with Deepgram, OpenAI Whisper, and Google's speech recognition infrastructure.
 
-**Scribe v1** — April 7, 2025. English accuracy rate 96.7% at launch, the highest reported by VentureBeat at the time.
+**Scribe v1** — April 7, 2025. [English accuracy rate 96.7% at launch, the highest reported by VentureBeat at the time](https://venturebeat.com/ai/elevenlabs-new-speech-to-text-model-scribe-is-here-with-highest-accuracy-rate-so-far-96-7-for-english/).
 
 **Scribe v2** — August 2025. Supports 90+ languages, word-level timestamps, speaker diarization for up to 32 simultaneous speakers, and dynamic audio tagging that identifies non-speech sounds (laughter, applause, footsteps) in the transcript.
 
@@ -215,7 +216,7 @@ The free tier at 10,000 credits per month (approximately 10 minutes of TTS) is w
 
 ElevenLabs' product is, almost by definition, a misuse surface. A technology that can clone any voice from a short audio sample and speak anything in that voice is useful for audiobook narration and enterprise customer service. It is equally useful for fraud, disinformation, and harassment.
 
-**January 2023 — 4chan deepfakes at launch:** Within days of ElevenLabs' public beta, users on 4chan were generating audio of Emma Watson, Joe Rogan, and other public figures saying offensive and racist things. Motherboard/Vice covered it; ElevenLabs implemented its first safety controls in direct response.
+**January 2023 — 4chan deepfakes at launch:** Within days of ElevenLabs' public beta, [users on 4chan were generating audio of Emma Watson, Joe Rogan, and other public figures saying offensive and racist things](https://www.vice.com/en/article/ai-voice-firm-4chan-celebrity-voices-emma-watson-joe-rogan-elevenlabs/). ElevenLabs implemented its first safety controls in direct response.
 
 **Early 2024 — Biden robocall:** A deepfake robocall using a convincing imitation of President Biden's voice instructed New Hampshire voters to stay home from the primary. ElevenLabs was named as a suspected source in reporting, though the company was never publicly confirmed as the provider of the voice synthesis.
 

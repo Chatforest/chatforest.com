@@ -6,6 +6,7 @@ tags: ["ai-infrastructure", "inference", "api", "acquisition", "cautionary-tale"
 categories: ["reviews"]
 rating: 0
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 On September 26, 2024, thousands of developers received an email from a company they'd built production applications on top of. The subject line and body varied slightly by account, but the core message was the same:
@@ -44,8 +45,8 @@ OctoML raised at an aggressive clip during the 2020–2021 ML investment boom:
 |---|---|---|---|
 | Seed | October 2019 | ~$3.9M | — |
 | Series A | April 2020 | $15M | Amplify Partners |
-| Series B | March 2021 | $28M | Addition |
-| Series C | November 2021 | $85M | Tiger Global Management |
+| [Series B](https://techcrunch.com/2021/03/17/octoml-raises-28m-series-b-for-its-machine-learning-acceleration-platform/) | March 2021 | $28M | Addition |
+| [Series C](https://techcrunch.com/2021/11/01/octoml-raises-85m-for-it-for-its-machine-learning-acceleration-platform/) | November 2021 | $85M | Tiger Global Management |
 
 **Total raised: ~$132 million.** Post-Series C valuation: approximately **$900 million**.
 
@@ -91,17 +92,17 @@ The product suite included:
 
 The positioning shifted from "ML optimization for specialists" to "accessible inference for any developer." The target audience expanded beyond ML teams to product engineers who wanted to integrate open-source models without managing GPU infrastructure.
 
-The traction was real. Within 10 months of the OctoAI product launch, the platform had attracted **25,000+ developers** and **100+ high-growth businesses**. The company claimed to have served over **1 billion customer inferences**, with individual customers running over 1 million inferences per day. Usage surges of 10x were absorbed without service disruption.
+The traction was real. Within 10 months of the OctoAI product launch, the platform had attracted [**25,000+ developers** and **100+ high-growth businesses**, serving over **1 billion customer inferences**](https://www.prnewswire.com/news-releases/octoml-launches-octoai-text-gen-solution-301999120.html), with individual customers running over 1 million inferences per day. Usage surges of 10x were absorbed without service disruption.
 
 ### The January 2024 Rename
 
-In January 2024, OctoML the company officially renamed itself **OctoAI**, aligning the corporate name with the product name. CEO Luis Ceze cited the obvious reason: "eliminate potential confusion between our product and corporate name."
+In January 2024, [OctoML the company officially renamed itself **OctoAI**](https://www.geekwire.com/2024/heres-why-seattle-startup-octoml-changed-its-name-to-octoai/), aligning the corporate name with the product name. CEO Luis Ceze cited the obvious reason: "eliminate potential confusion between our product and corporate name."
 
 The rename also signaled strategic commitment to the new direction. OctoML, the compiler company, was a chapter; OctoAI, the inference platform, was the bet going forward.
 
 ### OctoStack: The Enterprise Play (April 2024)
 
-In April 2024, just five months before the acquisition, OctoAI launched **OctoStack** — billed as the "industry-first complete technology stack to serve generative AI models anywhere."
+In April 2024, just five months before the acquisition, OctoAI launched **OctoStack** — [billed as the "industry-first complete technology stack to serve generative AI models anywhere."](https://www.prnewswire.com/news-releases/octoai-unveils-industry-first-generative-ai-production-stack-for-the-enterprise-302105751.html)
 
 OctoStack was a private deployment product: enterprises could run the OctoAI inference stack in their own cloud environment (AWS, GCP, Azure, CoreWeave, Lambda Labs, Snowflake, or on-premises). The pitch was privacy and control — sensitive-data industries like healthcare, finance, and government could use the same underlying technology without sending data to OctoAI's servers.
 

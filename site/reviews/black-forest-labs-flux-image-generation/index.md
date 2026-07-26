@@ -97,7 +97,7 @@ The three-tier structure — closed/non-commercial/permissive — has become BFL
 
 ### FLUX 1.1 Pro (October 2024)
 
-Enhanced version with **6x faster generation** than the original FLUX.1 [pro] with improved image quality, prompt adherence, and output diversity. This was the first API-only release after the initial launch.
+Enhanced version with [**6x faster generation**](https://bfl.ai/announcing-flux-1-1-pro-and-the-bfl-api/) than the original FLUX.1 [pro] with improved image quality, prompt adherence, and output diversity. This was the first API-only release after the initial launch.
 
 ### FLUX 1.1 Pro Ultra and Raw (November 2024)
 
@@ -114,7 +114,7 @@ The implications are substantial. Standard image generation models create from s
 - Perform iterative editing — apply a series of modifications while preserving identity and context
 - Target local edits precisely rather than regenerating the whole image
 
-Benchmarks showed Kontext performing **8x faster than GPT Image** at comparable editing tasks. Adobe judged this quality sufficient to integrate FLUX.1 Kontext [pro] into **Photoshop's Generative Fill** feature in a September 2025 beta. This integration is notable: Adobe has its own Firefly model family and could have chosen to expand Firefly's capabilities instead. Choosing to integrate a third-party model suggests BFL's quality in this specific task was competitive enough to complement rather than replace internal development.
+Benchmarks showed Kontext performing [**8x faster than GPT Image**](https://bfl.ai/blog/flux-1-kontext) at comparable editing tasks. [Adobe judged this quality sufficient to integrate FLUX.1 Kontext [pro] into **Photoshop's Generative Fill** feature](https://bfl.ai/blog/flux-1-kontext) in a September 2025 beta. This integration is notable: Adobe has its own Firefly model family and could have chosen to expand Firefly's capabilities instead. Choosing to integrate a third-party model suggests BFL's quality in this specific task was competitive enough to complement rather than replace internal development.
 
 Kontext [dev] was released as open weights, maintaining the three-tier distribution pattern.
 

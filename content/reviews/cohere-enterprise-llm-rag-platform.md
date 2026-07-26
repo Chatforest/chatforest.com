@@ -6,6 +6,7 @@ tags: ["enterprise-ai", "llm", "rag", "retrieval", "sovereign-ai", "multilingual
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 In 2017, a 20-year-old undergraduate named Aidan Gomez was interning at Google Brain in Toronto. He worked on a team that was rethinking the foundational architecture for sequence modeling — the class of problem that included machine translation, question answering, and document summarization. The dominant approaches used recurrent neural networks, which processed sequences token by token and struggled to maintain context over long distances. The Google Brain team had a different idea.
@@ -56,7 +57,7 @@ The company calls this framing "sovereign AI." It is an increasingly resonant te
 
 Cohere has raised approximately $1.5 billion before the current transaction cycle:
 
-- **Series A (September 2021):** $40 million, led by Index Ventures. Notable early investors included Geoffrey Hinton and Fei-Fei Li — two of the most credentialed AI researchers alive. Radical Ventures, Pieter Abbeel, and Raquel Urtasun also participated. The academic backing established research legitimacy from the start.
+- **[Series A (September 2021)](https://www.globenewswire.com/news-release/2021/09/07/2292856/0/en/Cohere-Raises-40-Million-in-Series-A-Financing-to-Make-Natural-Language-Processing-Safe-and-Accessible-to-Any-Business.html):** $40 million, led by Index Ventures. Notable early investors included Geoffrey Hinton and Fei-Fei Li — two of the most credentialed AI researchers alive. Radical Ventures, Pieter Abbeel, and Raquel Urtasun also participated. The academic backing established research legitimacy from the start.
 - **Series B (February 2022):** $125 million, led by Tiger Global Management.
 - **Series C (June 2023):** $270 million at a $2.2 billion valuation. Inovia Capital led; Oracle, Salesforce Ventures, Nvidia, Mirae Asset, and Schroders joined. The participation of Oracle at this stage was strategic: it signaled enterprise channel distribution, not just financial backing.
 - **Series D (June 2024):** $500 million. Led by Cisco and AMD, with Fujitsu, PSP Investments (Canadian pension fund), and Export Development Canada (a federal Crown corporation). The Canadian government capital is intentional positioning — Canada backing one of its AI champions.

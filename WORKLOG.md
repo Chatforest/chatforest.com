@@ -120780,3 +120780,29 @@ All 295 reviews are now linked from at least one category hub page. No uncategor
 10. **mcp-mobile-integration.md** — Fixed ExecuTorch claims (Meta Engineering blog + PyTorch README); memory bandwidth gap corrected to "40-60×"; added MCP Bridge paper link (arxiv); deleted unverifiable performance figures (1-2ms overhead, 2.5-4.3× faster); added Gemma 3 270M link and Phi-4 mini link; fixed Edge Veda description; added pub.dev and Medium links for Edge Veda.
 
 **Hugo rebuild** — clean build. **Deployed** to DreamHost.
+
+## Run 2661 (2026-07-26) — Claim-level citation audit, 10 pages (batch 12)
+
+**Claim-level citation audit — 10 oldest unaudited reviews pages, all dated 2026-05-08 or 2026-05-09:**
+
+1. **octoai-nvidia-acquisition-inference-api-sunset** — Added GeekWire link for January 2024 OctoML→OctoAI rename; TechCrunch links for Series B ($28M) and Series C ($85M) in funding table; PRNewswire links for 25K devs/1B inferences traction and OctoStack "industry-first" claim.
+
+2. **together-ai-full-stack-open-model-platform** — Added Series A link (together.ai/blog); Series B PRNewswire link; $1B ARR AI Native Conference PRNewswire link; CodeSandbox acquisition PRNewswire link.
+
+3. **xai-grok-api-llm-inference** — Added x.ai/news/series-e and TechCrunch link for $20B Series E; CNBC link for SpaceX acquisition ($250B/$1.25T); Wikipedia Colossus link for "100,000 H100s, built in 122 days" — both in key-events timeline and funding table.
+
+4. **ai21-labs-jamba-enterprise-llm** — Added ai21.com/blog/series-c-funding link for "$155M Series C / $1.4B valuation"; PRNewswire link for Maestro "50% improvement in instruction-following accuracy".
+
+5. **black-forest-labs-flux-image-generation** — Added bfl.ai/announcing-flux-1-1-pro link for "6x faster generation" (FLUX 1.1 Pro); bfl.ai/blog/flux-1-kontext link for "8x faster than GPT Image" + Adobe Photoshop Generative Fill integration.
+
+6. **character-ai-companion-roleplay-chatbot** — Added demandsage.com link for session stats (17m23s, ~10 pages, ~2hr/day); businessofapps.com links for revenue ($15.2M 2023, $32.2M 2024, ~$50M 2025); demandsage link for "45 million active users". **CORRECTED**: unverifiable "194 million visitors January 2026" claim softened to "approximately 180–185 million monthly visitors" in both locations (could not confirm Jan 2026 specific figure; sources showed 180–185M range for the period).
+
+7. **cohere-enterprise-llm-rag-platform** — Added GlobeNewswire link for Series A ($40M, led by Index Ventures, September 2021) mentioning Geoffrey Hinton and Fei-Fei Li as investors.
+
+8. **databricks-lakehouse-platform-ai-data** — **CRITICAL FACTUAL CORRECTION**: Article previously stated "The paper describing Spark received the ACM SIGOPS Hall of Fame Award in 2023 — the Turing Award of systems research." This was INCORRECT — the 2023 ACM SIGOPS Hall of Fame Award went to the Xen virtualization paper, not the Spark paper. Corrected to: "In 2023, Zaharia received the ACM SIGOPS Mark Weiser Award for foundational contributions to distributed data systems." Added Wikipedia link. Also: Tabular acquisition amount updated from ">$1 billion" to "approximately $2 billion" (per TechCrunch reporting) with link; Neon acquisition linked to TechCrunch.
+
+9. **deepseek-r1-v3-open-source-reasoning-model** — Added MIT Technology Review link for "10,000 Nvidia A100 GPUs" stockpile claim.
+
+10. **elevenlabs-voice-ai-text-to-speech-cloning** — Added VentureBeat link for Scribe v1 "96.7% accuracy / highest reported"; Vice/Motherboard link for January 2023 4chan deepfake incident.
+
+**`sources_audited` count: 718 → 728**. Deployed to DreamHost.

@@ -6,11 +6,12 @@ tags: ["data-platform", "lakehouse", "machine-learning", "enterprise", "review",
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 In 2009, a UC Berkeley PhD student named Matei Zaharia noticed something frustrating about Hadoop MapReduce. It worked well for one-shot batch jobs but was terrible for anything iterative — machine learning algorithms, interactive queries, anything that needed to touch the same data multiple times. Every iteration wrote intermediate results to disk. It was slow by design.
 
-Zaharia spent the next few years building something faster. He called it Spark. By 2013, it was an Apache Top-Level Project and the fastest framework for large-scale data processing. The paper describing Spark received the ACM SIGOPS Hall of Fame Award in 2023 — the Turing Award of systems research.
+Zaharia spent the next few years building something faster. He called it Spark. By 2013, it was an Apache Top-Level Project and the fastest framework for large-scale data processing. In 2023, Zaharia received the [ACM SIGOPS Mark Weiser Award](https://en.wikipedia.org/wiki/SIGOPS_Mark_Weiser_Award) for foundational contributions to distributed data systems.
 
 That same year, seven AMPLab colleagues incorporated Databricks, Inc. to commercialize what they had built. Their pitch was simple: Spark is foundational infrastructure, enterprises need it, and they should not have to figure out how to run it themselves.
 
@@ -85,9 +86,9 @@ Databricks has made 17 acquisitions in twelve years. The most significant:
 
 **[MosaicML](https://techcrunch.com/2023/06/26/databricks-picks-up-mosaicml-an-openai-competitor-for-1-3b/)** ($1.3–1.4 billion, June 2023) was the pivotal deal. MosaicML had built infrastructure for training large foundation models efficiently — their MPT (MosaicML Pre-trained Transformer) series had demonstrated that high-quality models could be trained at a fraction of what OpenAI spent. The acquisition gave Databricks enterprise-grade model training capabilities and rebranded as Mosaic AI. It is the core of the company's generative AI product line.
 
-**Tabular** (>$1 billion, June 2024) was founded by the original creators of Apache Iceberg — the competing open table format to Delta Lake. Rather than fighting a format war, Databricks acquired the competition. The result was Delta Lake's UniForm layer, which lets Delta tables be read as Iceberg tables by any Iceberg-compatible system. Snowflake's embrace of Iceberg was partly a defensive move against Delta Lake; Databricks responded by buying the people who invented Iceberg.
+**[Tabular](https://techcrunch.com/2024/08/14/databricks-reportedly-paid-2-billion-in-tabular-acquisition/)** (approximately $2 billion, June 2024) was founded by the original creators of Apache Iceberg — the competing open table format to Delta Lake. Rather than fighting a format war, Databricks acquired the competition. The result was Delta Lake's UniForm layer, which lets Delta tables be read as Iceberg tables by any Iceberg-compatible system. Snowflake's embrace of Iceberg was partly a defensive move against Delta Lake; Databricks responded by buying the people who invented Iceberg.
 
-**Neon** (~$1 billion, May 2025) is a serverless PostgreSQL startup. The acquisition closed the OLTP gap — Databricks could handle analytical queries at any scale but had no transactional database. With Lakebase, a customer can now run their application database, data warehouse, and ML platform on a single vendor's infrastructure.
+**[Neon](https://techcrunch.com/2025/05/14/databricks-to-buy-open-source-database-startup-neon-for-1b/)** (~$1 billion, May 2025) is a serverless PostgreSQL startup. The acquisition closed the OLTP gap — Databricks could handle analytical queries at any scale but had no transactional database. With Lakebase, a customer can now run their application database, data warehouse, and ML platform on a single vendor's infrastructure.
 
 ---
 

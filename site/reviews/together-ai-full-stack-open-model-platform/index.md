@@ -59,13 +59,13 @@ What this group built from 2022 forward is not what most people assume from the 
 
 The trajectory here is notable even by AI infrastructure standards.
 
-In early 2024, when Together AI raised its $106M Series A round at a $1.25 billion valuation, Salesforce Ventures' announcement disclosed approximately $30M in annualized revenue. The round itself was unusual — $106M at $1.25B implied investors believed the company was already at meaningful scale.
+In early 2024, when Together AI raised its [$106M Series A round](https://www.together.ai/blog/series-a2) at a $1.25 billion valuation, Salesforce Ventures' announcement disclosed approximately $30M in annualized revenue. The round itself was unusual — $106M at $1.25B implied investors believed the company was already at meaningful scale.
 
-A year later, the February 2025 Series B press release disclosed that Together AI had "surpassed $100M in annualized revenue." The valuation had grown from $1.25B to $3.3B — a 164% increase in less than twelve months.
+A year later, the [February 2025 Series B press release](https://www.prnewswire.com/news-releases/together-ai-raises-305m-series-b-to-scale-ai-acceleration-cloud-for-open-source-and-enterprise-ai-302380967.html) disclosed that Together AI had "surpassed $100M in annualized revenue." The valuation had grown from $1.25B to $3.3B — a 164% increase in less than twelve months.
 
 By September 2025, Sacra's analysis placed ARR at approximately $300M.
 
-At the March 2026 AI Native Conference — Together AI's first official annual developer conference — the company announced $1B ARR. One billion dollars in annualized revenue, from a starting point of $30M in early 2024, in approximately 24 months.
+At the March 2026 AI Native Conference — Together AI's first official annual developer conference — the company [announced $1B ARR](https://www.prnewswire.com/news-releases/together-ai-announces-business-and-product-milestones-at-first-ai-native-conference-302705505.html). One billion dollars in annualized revenue, from a starting point of $30M in early 2024, in approximately 24 months.
 
 For context: Fireworks AI, which reviewed as a category leader with strong enterprise credentials, disclosed $280M ARR at its October 2025 Series C. Together AI is the larger revenue business.
 
@@ -85,7 +85,7 @@ The phrase "AI Native Cloud" on Together AI's homepage is not positioning for it
 
 **Fine-tuning platform** — Managed training for SFT, DPO (plus DPO variants), and RL workloads. Hugging Face Hub integration — load from Hub, save back to Hub after training.
 
-**Code interpreter** (via CodeSandbox acquisition, December 2024) — Sandboxed VM execution within Together's platform. CodeSandbox brought 4.5M developer users and a well-established product for running untrusted code safely. Together rebranded and integrated it as Together Code Interpreter.
+**Code interpreter** (via [CodeSandbox acquisition](https://www.prnewswire.com/news-releases/together-ai-acquires-codesandbox-to-launch-first-of-its-kind-code-interpreter-for-generative-ai-302330074.html), December 2024) — Sandboxed VM execution within Together's platform. CodeSandbox brought 4.5M developer users and a well-established product for running untrusted code safely. Together rebranded and integrated it as Together Code Interpreter.
 
 **Data structuring** (via Refuel.ai acquisition, May 2025) — Refuel built tooling for cleaning, labeling, and structuring training data. Refuel had raised $5.2M prior to acquisition. The integration closes the loop from raw data through structured training sets through model training through deployment.
 

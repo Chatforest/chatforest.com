@@ -7,7 +7,7 @@
 
 No other AI product holds attention like Character.AI.
 
-The session length statistics are consistent across sources: the average Character.AI user spends roughly **17 minutes and 23 seconds per session**, viewing nearly 10 pages of content, and returns often enough that aggregate per-user time on the platform runs around **two hours per day**. For comparison, ChatGPT — the most widely discussed AI product in history — averages approximately seven minutes per session. Character.AI's engagement is more than double. In the attention economy, that is a product category difference, not a feature gap.
+The session length statistics are consistent across sources: the average Character.AI user spends roughly [**17 minutes and 23 seconds per session**, viewing nearly 10 pages of content, and returns often enough that aggregate per-user time on the platform runs around **two hours per day**](https://www.demandsage.com/character-ai-statistics/). For comparison, ChatGPT — the most widely discussed AI product in history — averages approximately seven minutes per session. Character.AI's engagement is more than double. In the attention economy, that is a product category difference, not a feature gap.
 
 What does that engagement represent? Mostly: people talking to characters. Fictional characters. Historical figures. Original personas created by the platform's 18 million user-built chatbots. Companions, mentors, antagonists, romantic interests, therapists, teachers, video game characters come to life. For millions of users — most of them young adults and teenagers — these conversations are not a utility. They are a relationship.
 
@@ -123,13 +123,13 @@ The subscription model is the company's core revenue driver. There is no adverti
 Character.AI's revenue numbers are notable in the context of its engagement metrics — both impressive in absolute terms and surprisingly modest relative to the scale of usage.
 
 Estimated revenue trajectory:
-- **2023**: ~$15.2 million
-- **2024**: ~$32.2 million
-- **2025**: ~$50 million (approximately 66% year-over-year growth)
+- **2023**: [~$15.2 million](https://www.businessofapps.com/data/character-ai-statistics/)
+- **2024**: [~$32.2 million](https://www.businessofapps.com/data/character-ai-statistics/)
+- **2025**: [~$50 million](https://www.businessofapps.com/data/character-ai-statistics/) (approximately 66% year-over-year growth)
 
 The company has reached $50 million ARR on the back of its subscription tier, with essentially no enterprise revenue stream — Character.AI is almost entirely a consumer business.
 
-For context against the engagement metrics: **194 million people visited Character.AI in January 2026 alone**. The conversion from visitor to paying subscriber is evidently quite low — single-digit percentage territory. This is a common pattern in consumer AI products, but it highlights a structural tension: Character.AI has extraordinary reach and engagement but has not yet found a monetization mechanism that captures the value of that attention at scale.
+For context against the engagement metrics: [Character.AI reached approximately **180–185 million monthly visitors**](https://www.demandsage.com/character-ai-statistics/) in early 2026. The conversion from visitor to paying subscriber is evidently quite low — single-digit percentage territory. This is a common pattern in consumer AI products, but it highlights a structural tension: Character.AI has extraordinary reach and engagement but has not yet found a monetization mechanism that captures the value of that attention at scale.
 
 The advertising path is not available as a role model — Perplexity abandoned advertising in February 2026 (though for different structural reasons). Additional monetization levers that haven't been fully deployed include:
 - Enterprise licensing of the character platform for brand/entertainment use cases
@@ -139,11 +139,11 @@ The advertising path is not available as a role model — Perplexity abandoned a
 New CEO Karandeep Anand has signaled interest in expanded monetization, particularly through the entertainment and social feed repositioning, but specific mechanisms beyond the existing subscription haven't been publicly detailed.
 
 The **user base** as of late 2025 and early 2026:
-- **45 million active users** (September 2025)
-- **194 million unique visitors** in January 2026
+- [**45 million active users**](https://www.demandsage.com/character-ai-statistics/) (September 2025)
+- Approximately **180–185 million monthly visitors** (early 2026)
 - Approximately **75% aged 18–34**; roughly equal gender split
 - **10 billion messages per month** across all conversations
-- Average session: **17 minutes 23 seconds**, ~9.86 pages viewed (versus ChatGPT's ~7 minutes)
+- Average session: [**17 minutes 23 seconds**, ~9.86 pages viewed](https://www.demandsage.com/character-ai-statistics/) (versus ChatGPT's ~7 minutes)
 
 These engagement numbers are genuinely remarkable. In the competitive landscape of consumer AI, no product generates this level of per-session time. The closest comparison is social media rather than AI tools.
 

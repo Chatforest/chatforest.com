@@ -2,6 +2,7 @@
 title: "Together AI — The Open-Model Platform That Employs FlashAttention's Creator (2026 Review)"
 date: 2026-05-08T14:00:00+09:00
 description: "Together AI reviewed: $1B ARR, $3.3B valuation, founded by Stanford/ETH Zurich professors. FlashAttention author Tri Dao as Chief Scientist. GPU clusters, fine-tuning, CodeSandbox acquisition. Full-stack AI platform beyond inference. Rating: 4/5."
+sources_audited: 2026-07-26
 og_description: "Together AI (together.ai): full-stack open-model AI platform — serverless inference, GPU clusters, fine-tuning, code interpreter. Founded 2022 by Vipul Ved Prakash (CEO), Chris Ré, Percy Liang, Ce Zhang, and Tri Dao (Chief Scientist, creator of FlashAttention). $305M Series B (February 2025, General Catalyst + Prosperity7, $3.3B valuation); reportedly closing ~$1B Series C at $7.5B valuation. $1B ARR milestone announced March 2026 — up from $30M ARR in early 2024. 450,000+ developers, 1M+ registered by March 2026. 200+ open-source models including Llama 4 Maverick (10M context), DeepSeek V4 Pro, Qwen3-Coder-480B. DeepSeek V4 Pro: 52–60 t/s serverless with best-in-class 0.99s TTFT; 334 t/s serverless on DeepSeek R1-0528 (B200 hardware, claimed fastest serverless July 2025). GPU clusters: on-demand 8–1,000s of GPUs, ~4x lower TCO vs hyperscalers. Fine-tuning: SFT, DPO (+ LN-DPO, SimPO variants), RL API. CodeSandbox acquisition (Dec 2024) adds code interpreter. Refuel.ai acquisition (May 2025) adds data structuring. FlashAttention-4 announced March 2026. Weakness: DeepSeek V4 Pro priced ~23% above Fireworks/DeepInfra; 52–60 t/s serverless throughput on that model trails Fireworks' 174 t/s. Rating: 4/5."
 card_description: "Together AI (together.ai) is the full-stack open-model AI platform — serverless inference, on-demand GPU clusters, fine-tuning, code interpreter, and data structuring — built by five academic co-founders including Tri Dao, creator of **FlashAttention**, the kernel powering virtually every LLM inference stack on the planet. **$305M Series B (February 2025)** at a **$3.3B valuation**; reportedly closing a ~**$1B Series C at $7.5B** in Q1 2026. **$1B ARR** milestone announced March 2026 — from $30M ARR in early 2024, a 33x ARR expansion in two years. 1M+ developers, 450,000+ on-platform. 200+ open-source models: Llama 4 Maverick (10M context), DeepSeek V4 Pro, Qwen3-Coder-480B. DeepSeek V4 Pro at **0.99s TTFT** — fastest among all tracked providers. Research contributions: FlashAttention-4 (announced March 2026), RedPajama (largest open pretraining dataset), Mamba-3, ThunderAgent. SOC 2 Type II, HIPAA, GDPR (Sweden region). GPU clusters from 8 to thousands of GPUs, on-demand via API. **CodeSandbox acquisition** (Dec 2024, 4.5M users) adds sandboxed code interpreter. Weaknesses: DeepSeek V4 Pro ~23% more expensive than Fireworks AI and DeepInfra at the same price tier; 52–60 t/s throughput vs. Fireworks AI's 174 t/s on that model; no official MCP server. Part of our **AI/ML Tools** and **Developer Tools** categories. Rating: 4/5."
 last_refreshed: 2026-05-08
@@ -64,13 +65,13 @@ What this group built from 2022 forward is not what most people assume from the 
 
 The trajectory here is notable even by AI infrastructure standards.
 
-In early 2024, when Together AI raised its $106M Series A round at a $1.25 billion valuation, Salesforce Ventures' announcement disclosed approximately $30M in annualized revenue. The round itself was unusual — $106M at $1.25B implied investors believed the company was already at meaningful scale.
+In early 2024, when Together AI raised its [$106M Series A round](https://www.together.ai/blog/series-a2) at a $1.25 billion valuation, Salesforce Ventures' announcement disclosed approximately $30M in annualized revenue. The round itself was unusual — $106M at $1.25B implied investors believed the company was already at meaningful scale.
 
-A year later, the February 2025 Series B press release disclosed that Together AI had "surpassed $100M in annualized revenue." The valuation had grown from $1.25B to $3.3B — a 164% increase in less than twelve months.
+A year later, the [February 2025 Series B press release](https://www.prnewswire.com/news-releases/together-ai-raises-305m-series-b-to-scale-ai-acceleration-cloud-for-open-source-and-enterprise-ai-302380967.html) disclosed that Together AI had "surpassed $100M in annualized revenue." The valuation had grown from $1.25B to $3.3B — a 164% increase in less than twelve months.
 
 By September 2025, Sacra's analysis placed ARR at approximately $300M.
 
-At the March 2026 AI Native Conference — Together AI's first official annual developer conference — the company announced $1B ARR. One billion dollars in annualized revenue, from a starting point of $30M in early 2024, in approximately 24 months.
+At the March 2026 AI Native Conference — Together AI's first official annual developer conference — the company [announced $1B ARR](https://www.prnewswire.com/news-releases/together-ai-announces-business-and-product-milestones-at-first-ai-native-conference-302705505.html). One billion dollars in annualized revenue, from a starting point of $30M in early 2024, in approximately 24 months.
 
 For context: Fireworks AI, which reviewed as a category leader with strong enterprise credentials, disclosed $280M ARR at its October 2025 Series C. Together AI is the larger revenue business.
 
@@ -90,7 +91,7 @@ The phrase "AI Native Cloud" on Together AI's homepage is not positioning for it
 
 **Fine-tuning platform** — Managed training for SFT, DPO (plus DPO variants), and RL workloads. Hugging Face Hub integration — load from Hub, save back to Hub after training.
 
-**Code interpreter** (via CodeSandbox acquisition, December 2024) — Sandboxed VM execution within Together's platform. CodeSandbox brought 4.5M developer users and a well-established product for running untrusted code safely. Together rebranded and integrated it as Together Code Interpreter.
+**Code interpreter** (via [CodeSandbox acquisition](https://www.prnewswire.com/news-releases/together-ai-acquires-codesandbox-to-launch-first-of-its-kind-code-interpreter-for-generative-ai-302330074.html), December 2024) — Sandboxed VM execution within Together's platform. CodeSandbox brought 4.5M developer users and a well-established product for running untrusted code safely. Together rebranded and integrated it as Together Code Interpreter.
 
 **Data structuring** (via Refuel.ai acquisition, May 2025) — Refuel built tooling for cleaning, labeling, and structuring training data. Refuel had raised $5.2M prior to acquisition. The integration closes the loop from raw data through structured training sets through model training through deployment.
 
