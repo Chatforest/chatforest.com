@@ -5,6 +5,7 @@ description: "Microsoft Build 2026 runs June 2-3 in San Francisco. Here's what m
 content_type: "Builder's Log"
 categories: ["Microsoft", "Developer Tools", "AI Infrastructure"]
 tags: ["microsoft", "github-copilot", "azure", "mcp", "foundry", "agent-service", "developer-tools", "build-2026"]
+sources_audited: 2026-07-27
 ---
 
 [Microsoft Build 2026](https://build.microsoft.com/en-US/home) runs **June 2–3** at Fort Mason Center in San Francisco — and this year the developer conference is arriving with a fully assembled agent platform underneath it. Not a roadmap. Not a preview. A GA platform with memory, MCP integration, private networking, and billing that starts the day before the conference doors open.
@@ -47,7 +48,7 @@ This is the most immediately actionable item for anyone running Foundry agents i
 
 Foundry memory is in public preview and provides **managed long-term memory** across agent sessions: it extracts facts and preferences from each conversation turn, consolidates them across sessions using LLM merging (resolving duplicates and conflicts), and retrieves relevant context at the start of each new session via hybrid search.
 
-**Memory billing starts June 1, 2026** — the day before Build opens. The pricing:
+**Memory billing starts June 1, 2026** — the day before Build opens. [The pricing](https://devblogs.microsoft.com/foundry/foundry-agent-service-ga/):
 
 | Service | Price |
 |---------|-------|

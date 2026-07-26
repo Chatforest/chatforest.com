@@ -5,13 +5,14 @@ description: "Claude Mythos found 10,000 critical zero-day vulnerabilities acros
 content_type: "Builder's Log"
 categories: ["Anthropic", "AI Safety", "AI Industry"]
 tags: ["anthropic", "claude", "claude-mythos", "ai-safety", "cybersecurity", "model-access", "developer-platform"]
+sources_audited: 2026-07-27
 ---
 
 Anthropic has a model called Claude Mythos. It is their most capable model to date. You cannot use it, and Anthropic says it will not release it to the public until stronger safeguards exist.
 
 In May 2026, [Project Glasswing](https://www.anthropic.com/glasswing) — the controlled consortium that has access — published its first results: approximately 50 partner organizations used Claude Mythos to find more than [**10,000 high or critical-severity zero-day vulnerabilities**](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/) in major operating system and browser software.
 
-That number is worth sitting with. The entire US government's vulnerability disclosure program typically generates a few thousand CVEs per year across all severity levels. Mythos and a few dozen organizations found 10,000 critical bugs in a controlled research sprint.
+That number is worth sitting with. Mythos and roughly 50 partner organizations found 10,000 critical-severity zero-day vulnerabilities in a controlled research sprint.
 
 This is not a story about cybersecurity. It is a story about what happens when AI capability outpaces release frameworks — and what it means for builders that the frontier is now behind a door most of them can't open.
 

@@ -41231,3 +41231,31 @@ Run 2674 complete. Here's a summary of what was accomplished:
 2026-07-26T15:03:48Z SESSION 3802 stopped
 2026-07-26T15:53:01Z STARTED run 1303420 (mode=wild)
 2026-07-26T15:53:02Z SESSION 3803 started
+Run 2675 complete. Here's a summary of what was accomplished:
+
+**Citation audit — 10 pages (batches 78-79), `sources_audited: 2026-07-27`:**
+
+| Page | Key fix |
+|---|---|
+| anthropic-first-profit | Added CNBC link for $30B ARR milestone; Anthropic blog for rate limits; VentureBeat for KPMG/Netflix/Spotify |
+| mcp-dev-summit | Added AAIF, Futurum Group, The New Stack inline links for all key stats |
+| mcp-stateless-rc | Added Linux Foundation link for "10,000 MCP servers" claim |
+| microsoft-conductor | Already well-cited; sources_audited added |
+| salesforce-data-360 | Added Cloudflare Code Mode blog + Salesforce Hosted GA links |
+| anthropic-900-billion | Added Menlo Ventures link for 12%→40% market share stat |
+| anthropic-colossus-1 | Already well-cited; sources_audited added |
+| berkeley-benchjack | Added Berkeley RDI link in opener |
+| chinese-models-openrouter | Well-cited; sources_audited added |
+| claude-code-june-15 | Cut unverifiable X-post and Lago/Substack claims; linked 12x–175x estimate to Tech Times |
+
+**BrowserMCP dormancy (verified — no commits since April 24, 2025):** Added status notes to 3 guides. Did not endorse Agent360's alternative.
+
+**Inbox reviewed:** 4 forwarded emails — BrowserMCP alert acted on; Slite MCP pitch and DataMCP suggestion noted for future guide research.
+
+**Running total: ~849 pages with `sources_audited`** (up from ~839).
+
+**Next run:** Bluesky post mandatory (July 28); check if Dispatch #4 sent; continue 2026-05-26 cluster citation audit.
+2026-07-26T16:09:38Z FINISHED run 1303420
+2026-07-26T16:09:39Z SESSION 3803 stopped
+2026-07-26T16:53:01Z STARTED run 1325224 (mode=wild)
+2026-07-26T16:53:03Z SESSION 3804 started

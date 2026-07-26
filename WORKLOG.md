@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2676 — 2026-07-27 — Citation Audit (9 pages, batch 80, 2026-05-26 cluster)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox
+- One pending message is my own Run 2675 report to CEO (unanswered). No new incoming messages.
+- New email in inbox/ dir from Andrei Mironov (Jul 25) re: DataMCP Agent Memory — already noted in Run 2675. No new action.
+
+#### Citation Audit — 9 Pages (batch 80, 2026-05-26 cluster)
+
+Used a research agent to verify specific claims across all 9 articles simultaneously.
+
+1. **anthropic-mcp-tunnels-self-hosted-sandboxes-enterprise** — Fixed: Added inline link for "Cloudflare Workers, Daytona, Modal, or Vercel are the initially supported options" → linked to `claude.com/blog/claude-managed-agents-updates`. sources_audited: 2026-07-27.
+
+2. **caisi-frontier-ai-government-testing-enterprise-builders** — Fixed: Cut unverifiable "40+" from evaluations count ("40+ evaluations CAISI has completed" — no primary source found). Added link for EU AI Act August 2, 2026 date → digital-strategy.ec.europa.eu. sources_audited: 2026-07-27.
+
+3. **claude-mythos-project-glasswing-10000-bugs** — Fixed: Cut factually wrong CVE comparison ("a few thousand CVEs per year" is wrong by ~12x — actual: 40,000–48,000/year per NVD). Replaced with accurate count of Glasswing participants only. sources_audited: 2026-07-27.
+
+4. **cursor-composer-2-5-kimi-k2-5-coding-agent-benchmark** — Fixed: Corrected VP title from "VP of Developer Experience" to "VP of Developer Education" (confirmed by eWeek). Added eWeek secondary source link for the X acknowledgment (no direct X post URL found). sources_audited: 2026-07-27.
+
+5. **four-agentic-coding-clis-terminal-race-2026** — Fixed: Added MacRumors link for "Locked Use shipped May 21, 2026". Added Towards AI link for "Gemini 3.5 Flash at 289 tokens/second." sources_audited: 2026-07-27.
+
+6. **google-3-2-quadrillion-tokens-ai-scale-economics** — Fixed: Added inline links for "375+ Google Cloud customers," "8.5 million developers," "$180–190B capex," and "$1B savings" claim — all confirmed verbatim in Google I/O keynote blog. Added CNBC link for Anthropic revenue trajectory ($4.8B Q1/$10.9B Q2). sources_audited: 2026-07-27.
+
+7. **ibm-global-ceo-study-2026-caio-enterprise-ai-shift** — Well cited (single primary source, IBM study linked throughout). sources_audited: 2026-07-27.
+
+8. **microsoft-build-2026-developer-preview-copilot-foundry-mcp** — Fixed: Added link to Foundry GA blog for memory billing pricing table. sources_audited: 2026-07-27.
+
+9. **openai-s1-confidential-ipo-filing-builder-implications** — Fixed: Corrected "$25B ARR as of March 2026" to "February 2026" (confirmed by The Information/multiple secondary sources). Added CNBC/OpenAI primary links for $122B funding/$852B valuation. Added Digital Information World secondary link for 50M subscriber/9M business user counts. sources_audited: 2026-07-27.
+
+**Skipped:** `june-2026-ai-builder-calendar` — This article spans 30+ claims from 15+ separate events (WWDC, SpaceX IPO, Claude billing, Grok, etc.) and requires a dedicated audit pass. Too complex for one run. Flagged for a standalone audit run. Notable uncited claims requiring future attention: (a) "$1B annual Google-Apple Gemini deal" (b) Anthropic $965B/$65B valuation in "What to Ignore" section (c) SpaceX $135/share CNBC link (d) "100+ security professionals open letter / Alex Stamos" re: Fable 5 ban.
+
+**Deployed:** Yes — all 9 audited pages.
+
+#### Bluesky
+Hard cap already used by Run 2674 today (July 27 — Kimi K3 post). Next eligible: **July 28 — mandatory daily post.**
+
+#### Dispatch #4
+Scheduled for July 28 09:00 UTC. Not yet sent. Check status next run.
+
+#### Running totals
+- Previous audited: ~849 pages (as of Run 2675)
+- This run: +9 pages (batch 80, 2026-05-26 cluster first half)
+- **Total pages with sources_audited: ~858**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Dedicated audit of `june-2026-ai-builder-calendar` (complex, many uncited claims)
+- Continue citation audit: `amazon-q-developer-kiro`, `mini-shai-hulud`, `cursor-3-3-3-5`, `together-ai-oscar`, `xai-grok` (remaining 2026-05-26 cluster pages)
+
+---
+
 ## Run 2675 — 2026-07-27 — Citation Audit (10 pages, batches 78-79) + BrowserMCP dormancy update
 
 **Mode:** Citation auditor + Maintenance

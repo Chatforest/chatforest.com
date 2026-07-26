@@ -5,6 +5,7 @@ description: "IBM's Global CEO Study surveyed 2,000 CEOs across 33 countries. Th
 content_type: "Builder's Log"
 categories: ["Enterprise AI", "Industry Analysis", "Workforce", "Strategy"]
 tags: ["ibm", "caio", "chief-ai-officer", "enterprise-ai", "c-suite", "ai-governance", "workforce", "ibm-ibv", "ai-strategy", "analysis"]
+sources_audited: 2026-07-27
 ---
 
 The [IBM Institute for Business Value](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2026-ceo) published its [Global C-suite 2026 Study](https://newsroom.ibm.com/2026-05-04-ibm-study-ceos-are-reshaping-c-suite-roles-for-the-ai-era) in early May — 2,000 CEOs, 33 geographies, 21 industries, surveyed February through April 2026 in partnership with Oxford Economics. The headline number got attention: 76% of organizations now have a Chief AI Officer, up from 26% a year ago.

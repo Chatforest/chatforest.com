@@ -17,11 +17,11 @@ No prospectus is public yet. That's what "confidential filing" means: the SEC re
 
 Before the S-1 details become public, here's what OpenAI has already disclosed or that analysts have triangulated from funding rounds:
 
-- **$25B ARR** as of March 2026 (annualized run rate), roughly **$2B/month in revenue**
+- **[$25B ARR](https://www.digitalinformationworld.com/2026/02/openai-reports-900m-weekly-chatgpt.html)** as of February 2026 (annualized run rate), roughly **$2B/month in revenue**
 - **900 million weekly active users** across all ChatGPT tiers (per June 8 public S-1 announcement)
-- **50 million consumer subscribers** (ChatGPT Plus, Pro, Team plans)
-- **9 million business users** across enterprise and API tiers
-- **$122 billion raised** in the March 2026 funding round at an **$852B post-money valuation** — the largest private funding round on record
+- **[50 million consumer subscribers](https://www.digitalinformationworld.com/2026/02/openai-reports-900m-weekly-chatgpt.html)** (ChatGPT Plus, Pro, Team plans)
+- **[9 million business users](https://www.digitalinformationworld.com/2026/02/openai-reports-900m-weekly-chatgpt.html)** across enterprise and API tiers
+- **[$122 billion raised](https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html)** in the [March 2026 funding round](https://openai.com/index/accelerating-the-next-phase-ai/) at an **$852B post-money valuation** — the largest private funding round on record
 - Targeted IPO valuation: **$852B to over $1 trillion**, depending on market conditions at listing
 
 Goldman and Morgan Stanley are the same banks Anthropic has in early IPO discussions, per recent Bloomberg reporting — a coincidence that underscores how compressed the AI IPO window is expected to be.

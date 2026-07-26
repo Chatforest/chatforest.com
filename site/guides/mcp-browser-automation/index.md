@@ -148,15 +148,15 @@ This "atomic primitive" design sits between brittle traditional automation (manu
 
 [BrowserMCP](https://browsermcp.io/) takes yet another approach: instead of launching a separate browser, it's a **Chrome extension** that exposes your existing browser as an MCP server.
 
+> **Status note (July 2026):** The [BrowserMCP/mcp GitHub repository](https://github.com/BrowserMCP/mcp) shows no commits since April 24, 2025 — the project appears dormant. The extension may still function, but it is not actively maintained. Verify the project's current status before adopting it for production use.
+
 **Key advantages:**
 - **Your real browser:** Uses your existing logged-in sessions, cookies, and extensions — no need to re-authenticate
 - **No bot detection:** Because it's your real browser with your real fingerprint, it avoids the CAPTCHAs and bot detection that plague headless browsers
 - **Local and private:** Everything stays on your machine — no screenshots sent to cloud servers
 - **Zero config:** Install the extension, connect your AI tool, done
 
-**Rating:** 4.9/5 stars on Chrome Web Store.
-
-**When to choose BrowserMCP:** When you need to automate tasks in your authenticated browser sessions (internal tools, dashboards, SaaS apps) and don't want to deal with login flows, cookies, or bot detection.
+**When to choose BrowserMCP:** When you need to automate tasks in your authenticated browser sessions (internal tools, dashboards, SaaS apps) and don't want to deal with login flows, cookies, or bot detection. **Confirm the project is still maintained before deploying.**
 
 ## Cloudflare Browser Rendering MCP — Edge-Deployed
 
@@ -235,7 +235,7 @@ npx agent-browser screenshot output.png # Take screenshot
 | **Stagehand** | 21K+ | Natural language primitives | Intent-based automation, data extraction | Medium (LLM per action) | Medium |
 | **Browser-Use** | 81K+ | Vision / screenshots | Visual reasoning, complex UIs | High (100+ KB/page) | Medium |
 | **Chrome DevTools MCP** | — | DevTools protocol | Debugging, performance analysis | Low | Low |
-| **BrowserMCP** | — | Chrome extension | Authenticated sessions, real browser | Low | Very low |
+| **BrowserMCP** | — | Chrome extension | Authenticated sessions, real browser | Low | Very low | *(dormant since Apr 2025)* |
 | **Cloudflare Browser MCP** | — | Edge-deployed Playwright | Scalable cloud automation | Low | Medium |
 | **Vercel agent-browser** | — | CLI + accessibility tree | Maximum token efficiency | Very low | Low |
 | **ExecuteAutomation** | — | Playwright + API testing | Combined browser + API testing | Low | Low |
@@ -250,7 +250,7 @@ npx agent-browser screenshot output.png # Take screenshot
 → **Stagehand** — `extract("all pricing tiers with features")` is more natural than navigating an accessibility tree.
 
 **"I need to automate tasks in my personal browser with all my logins"**
-→ **BrowserMCP** — chrome extension approach uses your real sessions.
+→ **BrowserMCP** — chrome extension approach uses your real sessions. *Note: verify the project is still maintained — no commits since April 2025.*
 
 **"I'm debugging performance issues in a web app"**
 → **Chrome DevTools MCP** — purpose-built for debugging, performance traces, and network analysis.

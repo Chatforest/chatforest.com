@@ -65,11 +65,13 @@ Browser automation is the most mature subcategory. Two tech giants — Microsoft
 
 [BrowserMCP/mcp](https://github.com/BrowserMCP/mcp) — 6,100 stars, TypeScript, Apache-2.0. Automates the user's existing browser through a Chrome extension.
 
+> **Status note (July 2026):** No commits since April 24, 2025 — this project appears dormant. The approach works in principle, but verify the project is still functional before adopting it.
+
 **Why it wins this category:** Instead of launching new browser instances, BrowserMCP automates the **user's existing browser** — preserving logged-in sessions, existing cookies, and real browser fingerprints. No credentials need to be passed to the MCP server. Basic bot detection is circumvented by using a real browser profile.
 
 Adapted from Microsoft's Playwright MCP, this is ideal for interacting with authenticated services — dashboards, admin panels, internal tools — without re-implementing authentication flows.
 
-**The catch:** Only 6 commits — more of an adaptation than a deeply developed project. Chrome-only. No headless or CI/CD support.
+**The catch:** Only 6 commits total, no new commits since April 2025 — more of an adaptation than a maintained project. Chrome-only. No headless or CI/CD support.
 
 ### Device emulation: executeautomation/mcp-playwright
 

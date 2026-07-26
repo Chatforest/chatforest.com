@@ -72,7 +72,7 @@
 <h2 id="what-each-feature-does">What Each Feature Does</h2>
 <h3 id="self-hosted-sandboxes">Self-Hosted Sandboxes</h3>
 <p>When Claude Managed Agents execute tools — running code, reading files, calling APIs — those executions normally happen inside Anthropic&rsquo;s managed infrastructure. Self-hosted sandboxes move that execution to infrastructure you control.</p>
-<p>You point the sandbox configuration at your preferred provider — Cloudflare Workers, Daytona, Modal, or Vercel are the initially supported options — and tool execution runs there. The agent loop itself (orchestration, context management, error recovery, memory) stays on Anthropic&rsquo;s side. The compute and the data stay on yours.</p>
+<p>You point the sandbox configuration at your preferred provider — <a href="https://claude.com/blog/claude-managed-agents-updates">Cloudflare Workers, Daytona, Modal, or Vercel are the initially supported options</a> — and tool execution runs there. The agent loop itself (orchestration, context management, error recovery, memory) stays on Anthropic&rsquo;s side. The compute and the data stay on yours.</p>
 <p>The split matters. If you are operating under data residency requirements — healthcare, financial services, EU GDPR, regulated government contexts — tool execution on Anthropic&rsquo;s infrastructure may be a blocker. If execution happens inside your own cloud account or your own VPC, that blocker goes away for many compliance frameworks.</p>
 <p>The deliverable is not just security theater. You also get your existing network policies, audit logs, and security tooling applied automatically to everything that executes. The agent is doing work in an environment you already govern.</p>
 <h3 id="mcp-tunnels">MCP Tunnels</h3>

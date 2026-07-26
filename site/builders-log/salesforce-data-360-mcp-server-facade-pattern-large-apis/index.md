@@ -13,7 +13,7 @@ MCP gives LLMs access to external capabilities through tools. Each tool has a na
 
 When a REST API has 190 distinct operations, the naive MCP implementation registers 190 tools. The problem: the full tool list goes into the LLM's context window on each request. At 190 tools, each with a description and parameter schema, you have consumed a significant portion of a context window before the LLM has done any work. The model may also struggle to select accurately from such a large flat list of options.
 
-Cloudflare's engineering team wrote about this problem when building their own MCP server. The Salesforce Data 360 team referenced that research explicitly when designing their solution.
+[Cloudflare's engineering team wrote about this problem](https://blog.cloudflare.com/code-mode-mcp/) when building their own MCP server — their Code Mode approach gives agents access to the entire Cloudflare API via just two tools (search and execute), consuming only ~1,000 tokens. The Salesforce Data 360 team referenced that research explicitly when designing their solution.
 
 ## Three Tools Instead of 190
 
@@ -48,7 +48,7 @@ It runs locally via stdio transport, not as a remotely hosted service. Each runn
 
 Requirements are Java 17 or later and Maven 3.9 or later, plus a Salesforce org with Data 360 enabled.
 
-When the server reaches general availability, Salesforce plans to offer it as a Salesforce Hosted MCP Server — the same distribution channel as their other product integration MCP servers, which became generally available in April 2026.
+When the server reaches general availability, Salesforce plans to offer it as a Salesforce Hosted MCP Server — the same distribution channel as [their other product integration MCP servers, which became generally available in April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available).
 
 ## The Pattern Is Worth Generalizing
 

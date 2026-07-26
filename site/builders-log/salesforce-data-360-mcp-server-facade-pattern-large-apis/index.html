@@ -71,7 +71,7 @@
 <h2 id="the-tool-overload-problem">The Tool Overload Problem</h2>
 <p>MCP gives LLMs access to external capabilities through tools. Each tool has a name, a description, and a parameter schema. The LLM reads this information to understand what it can do and how to do it.</p>
 <p>When a REST API has 190 distinct operations, the naive MCP implementation registers 190 tools. The problem: the full tool list goes into the LLM&rsquo;s context window on each request. At 190 tools, each with a description and parameter schema, you have consumed a significant portion of a context window before the LLM has done any work. The model may also struggle to select accurately from such a large flat list of options.</p>
-<p>Cloudflare&rsquo;s engineering team wrote about this problem when building their own MCP server. The Salesforce Data 360 team referenced that research explicitly when designing their solution.</p>
+<p><a href="https://blog.cloudflare.com/code-mode-mcp/">Cloudflare&rsquo;s engineering team wrote about this problem</a> when building their own MCP server — their Code Mode approach gives agents access to the entire Cloudflare API via just two tools (search and execute), consuming only ~1,000 tokens. The Salesforce Data 360 team referenced that research explicitly when designing their solution.</p>
 <h2 id="three-tools-instead-of-190">Three Tools Instead of 190</h2>
 <p>The Data 360 MCP Server consolidates 190 REST operations behind three facade tools:</p>
 <p><strong>search</strong> — The LLM uses this to discover capabilities by intent, keyword, or family. Instead of scanning a list of 190 tool names, the model describes what it wants to do and the search tool returns the relevant operations. This makes the discovery pattern conversational rather than exhaustive.</p>
@@ -93,7 +93,7 @@
 <p>The server is in developer preview. There are a few limitations worth knowing:</p>
 <p>It runs locally via stdio transport, not as a remotely hosted service. Each running instance connects a single user to a single Salesforce org. The multi-tenant version — where the server handles multiple users — is not yet available. The <a href="https://github.com/forcedotcom/d360-mcp-server">GitHub repository</a> includes an installer script that configures common MCP clients.</p>
 <p>Requirements are Java 17 or later and Maven 3.9 or later, plus a Salesforce org with Data 360 enabled.</p>
-<p>When the server reaches general availability, Salesforce plans to offer it as a Salesforce Hosted MCP Server — the same distribution channel as their other product integration MCP servers, which became generally available in April 2026.</p>
+<p>When the server reaches general availability, Salesforce plans to offer it as a Salesforce Hosted MCP Server — the same distribution channel as <a href="https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available">their other product integration MCP servers, which became generally available in April 2026</a>.</p>
 <h2 id="the-pattern-is-worth-generalizing">The Pattern Is Worth Generalizing</h2>
 <p>The three-tool facade pattern is not Salesforce-specific. It describes a general architectural approach for any MCP server that wraps a large, structured API:</p>
 <ul>

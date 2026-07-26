@@ -23,7 +23,7 @@ CAISI is not a certification authority. It does not approve or block model relea
 
 CAISI is not looking at whether the model is accurate, helpful, or worth buying. It is specifically assessing what a determined bad actor could do with unreleased capabilities.
 
-The 40+ evaluations CAISI has completed since 2024 have been under the hood. The results are not published. The agreements are formal, not voluntary pledges, but they are also not enforced by law. Labs participate because the alternative — being seen as the company that refused government safety review — is worse for enterprise sales than cooperating.
+CAISI's evaluations since 2024 have been under the hood. The results are not published. The agreements are formal, not voluntary pledges, but they are also not enforced by law. Labs participate because the alternative — being seen as the company that refused government safety review — is worse for enterprise sales than cooperating.
 
 ---
 
@@ -69,7 +69,7 @@ But that is changing, from multiple directions at once.
 
 The fact that the government is probing these specific capability areas — before models are public — means these will become the first areas where enterprise compliance programs focus when adopting new models.
 
-**The EU AI Act arriving in August.** CAISI is a US-only program. But August 2, 2026, the EU AI Act reaches full applicability for high-risk AI systems. Systems in healthcare, education, critical infrastructure, employment, law enforcement, and border control will require conformity assessments, technical documentation, human oversight measures, and audit logging. US-based builders deploying into European markets need to have these frameworks in place now.
+**The EU AI Act arriving in August.** CAISI is a US-only program. But [August 2, 2026, the EU AI Act reaches full applicability for high-risk AI systems](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai). Systems in healthcare, education, critical infrastructure, employment, law enforcement, and border control will require conformity assessments, technical documentation, human oversight measures, and audit logging. US-based builders deploying into European markets need to have these frameworks in place now.
 
 The CAISI agreements and the EU AI Act are separate tracks, but they are converging on the same practical requirement: frontier AI systems require documented evaluation against capability and risk criteria before enterprise deployment.
 

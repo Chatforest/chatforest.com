@@ -5,6 +5,7 @@ description: "Cursor's new coding agent matches Claude Opus 4.7 on most benchmar
 tags: ["cursor", "coding-agents", "kimi", "moonshot-ai", "benchmarks", "open-source", "model-selection", "ai-supply-chain", "developer-tools"]
 categories: ["builders-log"]
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 On [May 18, 2026, Cursor released Composer 2.5](https://cursor.com/blog/composer-2-5) — an agentic coding model purpose-built for long, tool-heavy IDE sessions. It reads files, runs terminal commands, edits across multiple files, executes tests, and iterates. The headline: it posts near-frontier coding benchmark scores at roughly one-tenth the API cost of Claude Opus 4.7 or GPT-5.5, depending on which pricing tier you use.
@@ -58,7 +59,7 @@ When Cursor launched Composer 2 on March 19, 2026, they described their training
 
 [Kimi K2.5](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5) is a coding and reasoning model released by Moonshot AI, a Beijing-based lab. It is open-source, released under a license that permits commercial use with attribution requirements for products exceeding 100M MAU or $20M/month revenue. Cursor had used it as the base model, accessed via Fireworks AI under a valid commercial license — the usage was authorized. The attribution was not included.
 
-Cursor's VP of Developer Experience eventually acknowledged on X: "Not mentioning Kimi as the base in the blog post from the start was a mistake."
+Cursor's VP of Developer Education [eventually acknowledged the omission](https://www.eweek.com/news/cursor-ai-composer-2-moonshot-kimi-tech/): "Not mentioning Kimi as the base in the blog post from the start was a mistake."
 
 The Composer 2.5 blog post corrects the record explicitly. Cursor states directly that Composer 2.5 is "built on the same open-source checkpoint as Composer 2, Moonshot's Kimi K2.5." From there, they applied 25x more synthetic coding tasks than Composer 2, a new textual-feedback reinforcement learning technique, and partial training on Colossus 2 infrastructure.
 

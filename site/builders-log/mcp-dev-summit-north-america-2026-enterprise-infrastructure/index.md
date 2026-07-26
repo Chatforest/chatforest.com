@@ -5,7 +5,7 @@
 
 Conferences tell you where the center of gravity is. Not because the talks are always technically deep — because the *attendees* are.
 
-At the MCP Dev Summit North America 2026, held April 2-3 at the New York Marriott Marquis, roughly 1,200 people showed up. That's double the attendance from the previous summit. The Agentic AI Foundation, which organized it through the Linux Foundation, now has 170 member organizations — a growth rate that outpaces CNCF at the same stage of its life.
+At the [MCP Dev Summit North America 2026](https://aaif.io/blog/mcp-is-now-enterprise-infrastructure-everything-that-happened-at-mcp-dev-summit-north-america-2026/), held April 2-3 at the New York Marriott Marquis, [roughly 1,200 people showed up — double the attendance from the previous summit](https://aaif.io/blog/mcp-is-now-enterprise-infrastructure-everything-that-happened-at-mcp-dev-summit-north-america-2026/). The Agentic AI Foundation, which organized it through the Linux Foundation, [now has 170 member organizations — a growth rate that outpaces CNCF at the same stage of its life](https://futurumgroup.com/insights/mcp-dev-summit-2026-aaif-sets-a-clear-direction-with-disciplined-guardrails/).
 
 More telling than the headcount: the people at the podium. Uber. Nordstrom. Bloomberg. Duolingo. PwC.
 
@@ -64,11 +64,11 @@ This is still early. Most of the case studies were honest about the fact that te
 
 The 2026 roadmap announced at the summit addressed the security and scale gaps most frequently cited by enterprise critics. Key milestones from the roadmap:
 
-**OAuth 2.0 GA — September 2026**: The current OAuth implementation in MCP is in preview. The September target gives teams a stable auth foundation to build on. This matters for any deployment where MCP servers need to act on behalf of authenticated users.
+**[OAuth 2.0 GA — September 2026](https://thenewstack.io/mcp-maintainers-enterprise-roadmap/)**: The current OAuth implementation in MCP is in preview. The September target gives teams a stable auth foundation to build on. This matters for any deployment where MCP servers need to act on behalf of authenticated users.
 
-**RBAC and Audit Logging — Q4 2026 preview**: Role-based access control and audit logging are the baseline requirements for any enterprise security team signing off on production AI infrastructure. These coming to preview in Q4 means there's a path to GA in early 2027.
+**[RBAC and Audit Logging — Q4 2026 preview](https://thenewstack.io/mcp-maintainers-enterprise-roadmap/)**: Role-based access control and audit logging are the baseline requirements for any enterprise security team signing off on production AI infrastructure. These coming to preview in Q4 means there's a path to GA in early 2027.
 
-**Cross-App Access (XAA) — June 2026 spec**: XAA addresses the multi-agent scenario where one agent needs to call an MCP server that belongs to a different application or tenant. This is the enterprise auth challenge that gets complicated fast: how do you manage identity and trust when the call chain spans organizational boundaries?
+**[Cross-App Access (XAA) — June 2026 spec](https://thenewstack.io/mcp-maintainers-enterprise-roadmap/)**: XAA addresses the multi-agent scenario where one agent needs to call an MCP server that belongs to a different application or tenant. This is the enterprise auth challenge that gets complicated fast: how do you manage identity and trust when the call chain spans organizational boundaries?
 
 **Stateless Transport by Default**: Already covered in the June spec RC (see our [earlier analysis](/builders-log/mcp-stateless-rc-2026-07-28-spec-revision/)), but the summit confirmed the enterprise motivation clearly — stateless transport is what makes MCP deployable on serverless runtimes like AWS Lambda and Cloudflare Workers without session affinity hacks.
 

@@ -5,6 +5,7 @@ description: "On May 19, Anthropic shipped self-hosted sandboxes and MCP tunnels
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "Anthropic", "MCP", "Industry Analysis"]
 tags: ["anthropic", "mcp", "mcp-tunnels", "managed-agents", "sandboxes", "enterprise-ai", "security", "private-network", "agent-architecture"]
+sources_audited: 2026-07-27
 ---
 
 On May 6, Anthropic shipped Dreaming, Outcomes, and Multiagent Orchestration for Claude Managed Agents. The pattern was clear: if you had been building agent memory systems, eval frameworks, or multi-agent topologies yourself, Anthropic now offered to manage all of that for you. Your infrastructure, absorbed into theirs.
@@ -19,7 +20,7 @@ Where the May 6 features pulled agent infrastructure toward Anthropic, the May 1
 
 When Claude Managed Agents execute tools — running code, reading files, calling APIs — those executions normally happen inside Anthropic's managed infrastructure. Self-hosted sandboxes move that execution to infrastructure you control.
 
-You point the sandbox configuration at your preferred provider — Cloudflare Workers, Daytona, Modal, or Vercel are the initially supported options — and tool execution runs there. The agent loop itself (orchestration, context management, error recovery, memory) stays on Anthropic's side. The compute and the data stay on yours.
+You point the sandbox configuration at your preferred provider — [Cloudflare Workers, Daytona, Modal, or Vercel are the initially supported options](https://claude.com/blog/claude-managed-agents-updates) — and tool execution runs there. The agent loop itself (orchestration, context management, error recovery, memory) stays on Anthropic's side. The compute and the data stay on yours.
 
 The split matters. If you are operating under data residency requirements — healthcare, financial services, EU GDPR, regulated government contexts — tool execution on Anthropic's infrastructure may be a blocker. If execution happens inside your own cloud account or your own VPC, that blocker goes away for many compliance frameworks.
 

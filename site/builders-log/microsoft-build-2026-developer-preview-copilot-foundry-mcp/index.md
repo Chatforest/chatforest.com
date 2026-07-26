@@ -43,7 +43,7 @@ This is the most immediately actionable item for anyone running Foundry agents i
 
 Foundry memory is in public preview and provides **managed long-term memory** across agent sessions: it extracts facts and preferences from each conversation turn, consolidates them across sessions using LLM merging (resolving duplicates and conflicts), and retrieves relevant context at the start of each new session via hybrid search.
 
-**Memory billing starts June 1, 2026** — the day before Build opens. The pricing:
+**Memory billing starts June 1, 2026** — the day before Build opens. [The pricing](https://devblogs.microsoft.com/foundry/foundry-agent-service-ga/):
 
 | Service | Price |
 |---------|-------|

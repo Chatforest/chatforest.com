@@ -6,6 +6,7 @@ og_description: "Anthropic, OpenAI, Google, and xAI all shipped agentic coding C
 content_type: "Builder's Log"
 categories: ["Developer Tools", "Agentic AI", "Industry Analysis"]
 tags: ["claude-code", "codex", "antigravity", "grok-build", "agentic-cli", "terminal-agent", "developer-tools", "competitive-landscape", "analysis"]
+sources_audited: 2026-07-27
 ---
 
 Twelve months ago, there was one serious agentic coding CLI.
@@ -20,9 +21,9 @@ That convergence is worth pausing on.
 
 **[Claude Code](https://claude.com/product/claude-code)** (Anthropic) — shipped May 2025 as an early preview; went broadly available in late 2025. Built around the principle of a coding agent that runs in your terminal, reads your full repo, edits files, runs commands, and operates in long multi-step sessions. Subscription model tied to Claude Max ($100/mo). Agent SDK billing split coming June 15, 2026.
 
-**[Codex CLI](https://github.com/openai/codex)** (OpenAI) — January 2026, open-sourced under Apache 2.0 license, built on codex-1. Subsequently merged into Codex Cloud, which runs agents server-side and lets them operate while your laptop is closed. Locked Use (agents working while your Mac screen is locked) shipped May 21, 2026. Pricing: $100–200/month real cost at the Pro tier.
+**[Codex CLI](https://github.com/openai/codex)** (OpenAI) — January 2026, open-sourced under Apache 2.0 license, built on codex-1. Subsequently merged into Codex Cloud, which runs agents server-side and lets them operate while your laptop is closed. [Locked Use (agents working while your Mac screen is locked) shipped May 21, 2026](https://www.macrumors.com/2026/05/22/codex-use-mac-apps-when-locked/). Pricing: $100–200/month real cost at the Pro tier.
 
-**[Antigravity CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)** (Google) — [May 19, 2026 at I/O](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/). A Go-based terminal tool rewritten from scratch, replacing the older Gemini CLI which Google is deprecating. Powered by Gemini 3.5 Flash at 289 tokens/second. Part of the Antigravity 2.0 platform alongside a desktop app and SDK. Native voice command support. Pricing: included in Google AI Pro ($20/mo) or AI Ultra ($100–200/mo).
+**[Antigravity CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)** (Google) — [May 19, 2026 at I/O](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/). A Go-based terminal tool rewritten from scratch, replacing the older Gemini CLI which Google is deprecating. [Powered by Gemini 3.5 Flash at 289 tokens/second](https://pub.towardsai.net/google-killed-gemini-cli-antigravity-2-0-users-got-a-whole-new-platform-44e6ca94c943). Part of the Antigravity 2.0 platform alongside a desktop app and SDK. Native voice command support. Pricing: included in Google AI Pro ($20/mo) or AI Ultra ($100–200/mo).
 
 **[Grok Build](https://x.ai/news/grok-build-cli)** (xAI) — May 14, 2026, currently in early beta. Plan mode, up to 8 parallel subagents, each running in its own Git worktree. Powered by Grok 4.3 (16-agent Heavy architecture, 2M token context). Access gated to SuperGrok Heavy subscribers: $99/mo introductory, $300/mo list price after six months.
 

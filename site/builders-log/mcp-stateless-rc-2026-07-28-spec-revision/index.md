@@ -63,7 +63,7 @@ The stateless change also matters for agent-to-agent workflows, which are the cu
 
 The RC does not solve everything.
 
-Server quality remains a distribution problem, not a protocol problem. 10,000 MCP servers are published; the quality range from production-grade to abandoned prototype is wide. Neutral governance of the spec does not mean quality control of the ecosystem.
+Server quality remains a distribution problem, not a protocol problem. [10,000 MCP servers are published](https://www.linuxfoundation.org/press/anthropic-donates-model-context-protocol-to-the-linux-foundation); the quality range from production-grade to abandoned prototype is wide. Neutral governance of the spec does not mean quality control of the ecosystem.
 
 The Tasks extension and MCP Apps are new primitives. Client support will lag server support, as it always does when the spec adds capability ahead of the ecosystem. The MCP Apps rendering model in particular depends on client developers choosing to implement it. Builders should not ship product decisions against primitives that do not yet have broad client support.
 

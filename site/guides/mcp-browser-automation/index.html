@@ -296,6 +296,9 @@
 <p><strong>Limitation:</strong> Officially supports Google Chrome and Chrome for Testing only — no Firefox or WebKit.</p>
 <h2 id="browsermcp--chrome-extension-approach">BrowserMCP — Chrome Extension Approach</h2>
 <p><a href="https://browsermcp.io/">BrowserMCP</a> takes yet another approach: instead of launching a separate browser, it&rsquo;s a <strong>Chrome extension</strong> that exposes your existing browser as an MCP server.</p>
+<blockquote>
+<p><strong>Status note (July 2026):</strong> The <a href="https://github.com/BrowserMCP/mcp">BrowserMCP/mcp GitHub repository</a> shows no commits since April 24, 2025 — the project appears dormant. The extension may still function, but it is not actively maintained. Verify the project&rsquo;s current status before adopting it for production use.</p>
+</blockquote>
 <p><strong>Key advantages:</strong></p>
 <ul>
 <li><strong>Your real browser:</strong> Uses your existing logged-in sessions, cookies, and extensions — no need to re-authenticate</li>
@@ -303,8 +306,7 @@
 <li><strong>Local and private:</strong> Everything stays on your machine — no screenshots sent to cloud servers</li>
 <li><strong>Zero config:</strong> Install the extension, connect your AI tool, done</li>
 </ul>
-<p><strong>Rating:</strong> 4.9/5 stars on Chrome Web Store.</p>
-<p><strong>When to choose BrowserMCP:</strong> When you need to automate tasks in your authenticated browser sessions (internal tools, dashboards, SaaS apps) and don&rsquo;t want to deal with login flows, cookies, or bot detection.</p>
+<p><strong>When to choose BrowserMCP:</strong> When you need to automate tasks in your authenticated browser sessions (internal tools, dashboards, SaaS apps) and don&rsquo;t want to deal with login flows, cookies, or bot detection. <strong>Confirm the project is still maintained before deploying.</strong></p>
 <h2 id="cloudflare-browser-rendering-mcp--edge-deployed">Cloudflare Browser Rendering MCP — Edge-Deployed</h2>
 <p><a href="https://developers.cloudflare.com/browser-rendering/playwright/playwright-mcp/">Cloudflare&rsquo;s Browser Rendering MCP</a> brings browser automation to the edge, running headless browsers on Cloudflare&rsquo;s global network.</p>
 <p><strong>Architecture:</strong> A fork of Playwright MCP (<code>@cloudflare/playwright-mcp</code>) that connects to Cloudflare&rsquo;s Browser Rendering API instead of a local browser. Runs as a Cloudflare Worker, giving you browser automation at edge locations worldwide.</p>
@@ -463,7 +465,7 @@ npx agent-browser screenshot output.png <span style="color:#75715e"># Take scree
 <p><strong>&ldquo;I need to extract data from websites using natural language&rdquo;</strong>
 → <strong>Stagehand</strong> — <code>extract(&quot;all pricing tiers with features&quot;)</code> is more natural than navigating an accessibility tree.</p>
 <p><strong>&ldquo;I need to automate tasks in my personal browser with all my logins&rdquo;</strong>
-→ <strong>BrowserMCP</strong> — chrome extension approach uses your real sessions.</p>
+→ <strong>BrowserMCP</strong> — chrome extension approach uses your real sessions. <em>Note: verify the project is still maintained — no commits since April 2025.</em></p>
 <p><strong>&ldquo;I&rsquo;m debugging performance issues in a web app&rdquo;</strong>
 → <strong>Chrome DevTools MCP</strong> — purpose-built for debugging, performance traces, and network analysis.</p>
 <p><strong>&ldquo;I need to handle visually complex pages (charts, maps, non-standard UIs)&quot;</strong>

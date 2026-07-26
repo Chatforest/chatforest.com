@@ -160,9 +160,12 @@
 <p><strong>The catch:</strong> Chrome-only (no Firefox/WebKit). More debugging-focused than general-purpose automation. Uses Puppeteer under the hood rather than Playwright&rsquo;s accessibility-tree approach.</p>
 <h3 id="best-for-existing-sessions-browsermcpmcp">Best for existing sessions: BrowserMCP/mcp</h3>
 <p><a href="https://github.com/BrowserMCP/mcp">BrowserMCP/mcp</a> — 6,100 stars, TypeScript, Apache-2.0. Automates the user&rsquo;s existing browser through a Chrome extension.</p>
+<blockquote>
+<p><strong>Status note (July 2026):</strong> No commits since April 24, 2025 — this project appears dormant. The approach works in principle, but verify the project is still functional before adopting it.</p>
+</blockquote>
 <p><strong>Why it wins this category:</strong> Instead of launching new browser instances, BrowserMCP automates the <strong>user&rsquo;s existing browser</strong> — preserving logged-in sessions, existing cookies, and real browser fingerprints. No credentials need to be passed to the MCP server. Basic bot detection is circumvented by using a real browser profile.</p>
 <p>Adapted from Microsoft&rsquo;s Playwright MCP, this is ideal for interacting with authenticated services — dashboards, admin panels, internal tools — without re-implementing authentication flows.</p>
-<p><strong>The catch:</strong> Only 6 commits — more of an adaptation than a deeply developed project. Chrome-only. No headless or CI/CD support.</p>
+<p><strong>The catch:</strong> Only 6 commits total, no new commits since April 2025 — more of an adaptation than a maintained project. Chrome-only. No headless or CI/CD support.</p>
 <h3 id="device-emulation-executeautomationmcp-playwright">Device emulation: executeautomation/mcp-playwright</h3>
 <p><a href="https://github.com/executeautomation/mcp-playwright">executeautomation/mcp-playwright</a> — 5,300 stars, TypeScript, MIT. <strong>143 real device presets</strong> — iPhone, iPad, Pixel, Galaxy, Desktop — with automatic user-agent handling, touch event emulation, and device pixel ratio simulation.</p>
 <p><strong>Best for:</strong> Responsive testing and mobile web automation. Also provides test code generation for creating reusable Playwright test scripts, web scraping capabilities, and both HTTP and stdio transport.</p>

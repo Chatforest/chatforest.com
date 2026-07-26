@@ -26,8 +26,8 @@ The headline figure is a platform total — every product that runs on Gemini, i
 The API-specific numbers are smaller but still striking:
 
 - **[19 billion tokens per minute](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)** through the Gemini Developer API
-- **375+ Google Cloud customers** each processed more than 1 trillion tokens over the past 12 months — roughly 85 billion tokens per customer per month
-- **8.5 million developers** building new apps and experiences with Gemini models monthly
+- **[375+ Google Cloud customers](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)** each processed more than 1 trillion tokens over the past 12 months — roughly 85 billion tokens per customer per month
+- **[8.5 million developers](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)** building new apps and experiences with Gemini models monthly
 
 The 375-customer figure is the one worth focusing on. These are organizations — not individuals — running production workloads at a trillion tokens or more per year. That is a new class of AI user that did not exist two years ago. Their workloads are not chatbots. They are pipelines: ingestion, classification, extraction, synthesis, code generation, agent loops running continuously.
 
@@ -59,7 +59,7 @@ For builders with high-volume agent workloads, the effective cost reductions com
 - **Context caching**: up to 90% reduction on cached prompt tokens for large repeated context windows
 - **Committed use**: enterprise contracts at scale trigger additional negotiated discounts
 
-Google cited that if top companies shifted 80% of their frontier-model workloads to Gemini 3.5 Flash, they would save over **$1 billion annually**. That figure is an internal calculation, but it reflects the order-of-magnitude cost gap that now exists between frontier-class and mid-tier-class models — and mid-tier-class models in May 2026 outperform frontier-class models from eighteen months ago.
+[Google cited](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/) that if top companies shifted 80% of their frontier-model workloads to Gemini 3.5 Flash, they would save over **$1 billion annually**. That figure is an internal calculation, but it reflects the order-of-magnitude cost gap that now exists between frontier-class and mid-tier-class models — and mid-tier-class models in May 2026 outperform frontier-class models from eighteen months ago.
 
 ---
 
@@ -71,7 +71,7 @@ Google cited that if top companies shifted 80% of their frontier-model workloads
 
 **Agentic workload economics are different from chat economics.** The standard "tokens per user per day" metric that made sense for chat interfaces does not port to agent pipelines. Capacity planning for agent workloads requires estimating task-level token consumption — context window utilization per agent invocation, loop depth, tool call overhead — not per-user averages. The builders running trillion-token organizations are almost certainly doing this per-pipeline, not per-seat.
 
-**Google's scale commitment is a signal about infrastructure stability.** $180–190 billion in annual capex, TPU 8th generation, 3.2 quadrillion tokens of monthly throughput — these numbers indicate that Gemini's infrastructure is not going to experience the capacity constraints that plagued early GPT-4 deployments. For workloads where predictable latency and availability matter more than lowest-possible cost, this matters as much as pricing.
+**Google's scale commitment is a signal about infrastructure stability.** [$180–190 billion in annual capex](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/), TPU 8th generation, 3.2 quadrillion tokens of monthly throughput — these numbers indicate that Gemini's infrastructure is not going to experience the capacity constraints that plagued early GPT-4 deployments. For workloads where predictable latency and availability matter more than lowest-possible cost, this matters as much as pricing.
 
 ---
 
@@ -79,7 +79,7 @@ Google cited that if top companies shifted 80% of their frontier-model workloads
 
 Google's 3.2 quadrillion tokens figure is also a proxy for competitive moat. The company is not just processing tokens — it is accumulating usage patterns, feedback loops, and implicit preference data at a scale that no competitor processes from a single product surface.
 
-OpenAI does not publish equivalent aggregate figures. Anthropic's revenue trajectory ($4.8B Q1 2026 → projected $10.9B Q2 2026) suggests significant volume, but their token throughput is not disclosed. The competitive picture is not "Google processes the most tokens." It is "Google is the only company that has disclosed a platform-level figure in the quadrillions, at the moment when that scale begins to produce qualitatively different infrastructure economics."
+OpenAI does not publish equivalent aggregate figures. [Anthropic's revenue trajectory ($4.8B Q1 2026 → projected $10.9B Q2 2026)](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) suggests significant volume, but their token throughput is not disclosed. The competitive picture is not "Google processes the most tokens." It is "Google is the only company that has disclosed a platform-level figure in the quadrillions, at the moment when that scale begins to produce qualitatively different infrastructure economics."
 
 Whether that matters depends on what you're building. For most developers, the practical implication is simpler: **the token economy is real, it is large, and the pricing direction is down**. Build accordingly.
 
