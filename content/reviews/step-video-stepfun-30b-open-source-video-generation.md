@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "Step-Video-T2V (February 2025) by Stepfun is a 30B-parameter open-source text-to-video model — the largest publicly released video generation model at launch. MIT license. Custom benchmark claims state-of-the-art. VBench-I2V #1 for the image-to-video variant. Hardware requirement: 72-78 GB VRAM. 3,200 GitHub stars. Bilingual (English + Chinese). Rating 3/5."
 tags: ["video-ai", "text-to-video", "image-to-video", "ai-video-generation", "step-video", "stepfun", "open-source", "diffusion-transformer", "flow-matching", "mit-license", "bilingual", "chinese-ai", "comfyui", "vbench"]
 rating: 3
+sources_audited: 2026-07-26
 ---
 
 # Step-Video — Stepfun's 30B Open-Source Video Model: The Largest Publicly Available Video Generator (and What That Costs)

@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "Seedance 2.0 debuted in February 2026 as the top-ranked AI video model on Artificial Analysis — the first major platform to co-generate native audio and video in a single unified pass at scale. Within days, Disney, Paramount, Warner Bros., Netflix, and U.S. senators were demanding it be shut down. ByteDance paused the global launch, hardened safeguards, and resumed rollout via CapCut in March. The model now ranks #2 on both T2V and I2V leaderboards. No official MCP server. Rating: 4/5."
 tags: ["video-ai", "text-to-video", "image-to-video", "generative-video", "seedance", "bytedance", "dreamina", "capcut", "jimeng", "native-audio", "diffusion-transformer", "flow-matching", "ai-video-generation", "copyright", "hollywood", "ai-creative-tools", "multimodal-video"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # Seedance 2.0 Review — ByteDance's #2-Ranked AI Video Model, a Hollywood Copyright Crisis, and 200 Million CapCut Users
@@ -28,7 +29,7 @@ This review is researched from public sources, official documentation, arXiv tec
 
 Seedance is a product of ByteDance Seed — ByteDance's internal AI research division. ByteDance itself is the parent company of TikTok, Douyin, CapCut, Jianying, Doubao, and a portfolio of applications with cumulative monthly active users numbering in the billions. Seed was established around 2023 and operates across eight research tracks: large language models, infrastructure, vision, speech and audio, multimodal interaction and world models, AI for science, robotics, and responsible AI.
 
-ByteDance is not a startup. It is one of the world's most resourced AI companies, with revenue estimated above $100 billion annually. Seed draws on that infrastructure. The Seedance 1.0 technical paper listed 67 named core contributors — a staffing density that most pure-play AI video startups cannot approximate.
+ByteDance is not a startup. It is one of the world's most resourced AI companies. Seed draws on that infrastructure. The Seedance 1.0 technical paper listed 67 named core contributors — a staffing density that most pure-play AI video startups cannot approximate.
 
 The product family branching from Seed includes:
 - **Seedance** — the commercial AI video generation product line
@@ -83,7 +84,7 @@ The parameter count for Seedance 2.0 has not been publicly disclosed by ByteDanc
 
 ## Quality and Benchmarks
 
-As of May 2026, on the Artificial Analysis video generation leaderboard:
+As of May 2026, on the [Artificial Analysis video generation leaderboard](https://artificialanalysis.ai/text-to-video):
 
 **Text-to-Video (No Audio):**
 

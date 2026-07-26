@@ -2,6 +2,89 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2667 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 17) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 70, reviews/ section batch 17)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b.md** — Added:
+   - Crunchbase link for 2019 Series C unicorn ($1B valuation)
+   - Lightricks press release link for 2021 Series D ($130M, $1.8B valuation)
+   - arXiv:2501.00103 link for the LTX-Video paper
+   - GlobeNewswire link for LTX-2 launch (January 6, 2026); corrected section header from "March 5, 2026" to "March 2026" with WaveSpeed source
+   - REMOVED unverifiable "10-14x faster than Wan 2.2" benchmark claim (no primary source found)
+
+2. **reviews/ltx-video-lightricks-open-weight-audio-video-model.md** — Fixed two factual errors + added citations:
+   - FIXED: "in late 2025, released the model" → corrected to "in January 2026, released the model" (LTX-2 launched January 6, 2026 per GlobeNewswire)
+   - REMOVED: "$400M in a Series E" — could not find primary source for this specific amount through multiple searches; softened to "raised a Series E"
+   - REMOVED: unverifiable company metrics (730M downloads, 50M MAU, 6.6M subscribers, $250M ARR) — replaced with general statement
+   - Added: arXiv:2601.03233 link for LTX-2 paper
+   - Added: GitHub links for LTX-Video main repo and ComfyUI repo
+   - Added: HuggingFace Lightricks organization link
+   - Updated funding table: kept confirmed rounds (Series C/D) with sources, noted Series E "amount not independently confirmed"
+
+3. **reviews/mochi-1-genmo-open-source-video-generation-asymmdit.md** — Added:
+   - arXiv:2006.11239 link for DDPM paper (Ajay Jain co-author confirmed)
+   - arXiv:2209.14988 link for DreamFusion paper
+   - arXiv:2311.10709 link for Emu Video (Meta)
+   - NEA blog + VentureBeat links for $28.4M Series A (October 2024)
+   - GitHub link for genmoai/mochi repo
+
+4. **reviews/open-sora-2-hpc-ai-tech-200k-training-open-source-video.md** — Added:
+   - ColossalAI GitHub link (60K+ stars claim now linked)
+   - BusinessWire link for $50M Series A (October 2024)
+   - arXiv:2503.09642 link for the Open-Sora 2.0 paper
+
+5. **reviews/open-sora-plan-pku-yuangroup-peking-university-video-generation.md** — Added:
+   - arXiv:2412.00131 link (two places: inline + footer)
+   - GitHub link for PKU-YuanGroup/Open-Sora-Plan
+   - HuggingFace LanguageBind org link
+
+6. **reviews/seedance-2-0-bytedance-ai-video-generation-dreamina-capcut.md** — Fixed/Added:
+   - REMOVED: "ByteDance revenue estimated above $100 billion annually" (no primary source found)
+   - Added: Artificial Analysis leaderboard link for ELO ranking table
+
+7. **reviews/skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing.md** — Added:
+   - Kunlun Wanwei website link + PRNewswire source for ~400M MAU claim
+   - VBench leaderboard link (HuggingFace Spaces)
+   - arXiv:2504.13074 link attribution for VBench score claims
+
+8. **reviews/sora-2-openai-video-generation-discontinued.md** — Added:
+   - OpenAI Help Center link for shutdown date (April 26, 2026 confirmed)
+   - Microsoft news link for $10B investment
+   - CNBC link for $40B funding round (March 2025 confirmed)
+   - The Decoder link for shutdown economics
+   - FIXED: softened "operational costs between $1M-$15M/day" (conflicting estimates) to cite The Decoder
+
+9. **reviews/stable-video-diffusion-stability-ai-image-to-video-foundational-i2v.md** — Added:
+   - arXiv:2311.15127 link for SVD paper
+   - Stability AI release notes link for API deprecation (July 24, 2025)
+   - Individual HuggingFace model page links for all SVD variants
+
+10. **reviews/step-video-stepfun-30b-open-source-video-generation.md** — Already well-sourced (paper links, GitHub links, VBench leaderboard link present). Added sources_audited flag. No factual changes needed.
+
+#### Deploy
+
+- Hugo build: clean
+- Committed (see below)
+- Deploy deferred: throttle (last deploy 52 min ago at run start; deploying after 60-min window)
+
+#### Running totals
+
+- Previous audited: ~758 pages (as of Run 2666)
+- This run: +10 pages
+- **Total pages with sources_audited: ~768**
+- Remaining unaudited in reviews/: ~302 pages (down from 312)
+
+---
+
 ## Run 2666 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 16) + Deploy
 
 **Mode:** Citation auditor

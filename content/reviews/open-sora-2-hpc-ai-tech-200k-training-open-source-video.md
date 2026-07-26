@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "Open-Sora 2.0 (HPC-AI Tech, March 2025) trained an 11B-parameter video generation model for ~$200,000 — matching HunyuanVideo (11B) and Step-Video (30B) on VBench while releasing full weights, training code, and data pipeline under Apache 2.0. Reducing the VBench gap with OpenAI's Sora from 4.52% to 0.69%, it's the most cost-efficient open-source video model of its size class. High VRAM requirements (52–60GB) and a 768px resolution ceiling limit practical deployment. No MCP server. Rating 3/5."
 tags: ["video-ai", "open-source", "text-to-video", "image-to-video", "hpc-ai-tech", "singapore", "apache-license", "diffusion-transformer", "colossal-ai", "ai-video-generation", "research", "huggingface", "comfyui", "efficient-training"]
 rating: 3
+sources_audited: 2026-07-26
 ---
 
 # Open-Sora 2.0 — HPC-AI Tech's $200K Open-Source Video Model That Matches Commercial Giants
@@ -22,11 +23,11 @@ This review is researched from the published arXiv paper (2503.09642), GitHub re
 
 HPC-AI Tech has two primary products:
 
-**ColossalAI** — a distributed training framework designed to make large model training cheaper and more accessible. ColossalAI provides tensor parallelism, pipeline parallelism, and sequence parallelism for training LLMs and diffusion models across GPU clusters. It has been used by organizations ranging from AWS to Alibaba to Grab. The GitHub repository has accumulated over 60,000 stars.
+**[ColossalAI](https://github.com/hpcaitech/ColossalAI)** — a distributed training framework designed to make large model training cheaper and more accessible. ColossalAI provides tensor parallelism, pipeline parallelism, and sequence parallelism for training LLMs and diffusion models across GPU clusters. It has been used by organizations ranging from AWS to Alibaba to Grab. The GitHub repository has [accumulated over 60,000 stars](https://github.com/hpcaitech/ColossalAI).
 
 **Open-Sora** — an open-source video generation project that began in early 2024 as an attempt to openly reproduce and democratize what OpenAI's Sora represented. The Open-Sora initiative is built on ColossalAI's distributed training infrastructure, which is a key reason the training cost numbers are substantially lower than industry baselines.
 
-The company raised a $50 million Series A in 2024, following $6 million in seed funding. The team of approximately 70 employees operates from Singapore. Core team members hold graduate credentials from UC Berkeley, Stanford, Tsinghua, Peking University, NUS, and NTU.
+The company raised a [$50 million Series A in 2024](https://www.businesswire.com/news/home/20240930418520/en/HPC-AI-Tech-Secures-$50-Million-in-Series-A-Funding-to-Enhance-Video-Generation-AI-and-GPU-Platforms), following $6 million in seed funding. The team of approximately 70 employees operates from Singapore. Core team members hold graduate credentials from UC Berkeley, Stanford, Tsinghua, Peking University, NUS, and NTU.
 
 HPC-AI Tech's identity is distinct from the consumer video platforms reviewed elsewhere on this site. It is not competing for Kling or Runway's end-user market. Its competitive frame is research infrastructure and enterprise fine-tuning — releasing capable open models that organizations can build upon using their own data.
 
@@ -104,7 +105,7 @@ The comparison benchmarks are instructive: HunyuanVideo (also 11B) is estimated 
 
 ## Performance: VBench and Human Evaluation
 
-The paper evaluates Open-Sora 2.0 on the VBench benchmark and via human preference evaluation on 100 prompts.
+The [paper (arXiv:2503.09642)](https://arxiv.org/abs/2503.09642) evaluates Open-Sora 2.0 on the VBench benchmark and via human preference evaluation on 100 prompts.
 
 **VBench**: Open-Sora 2.0 substantially narrows the performance gap with OpenAI's closed-source Sora model from **4.52%** (Open-Sora 1.2 baseline) to **0.69%** — a major reduction. It outperforms CogVideoX1.5-5B and is on par with HunyuanVideo on VBench metrics.
 

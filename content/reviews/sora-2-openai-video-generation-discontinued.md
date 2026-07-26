@@ -13,11 +13,12 @@ free_tier: false
 pricing_model: "discontinued"
 company_hq: "San Francisco, CA"
 founded: 2015
+sources_audited: 2026-07-26
 ---
 
 # Sora 2 (OpenAI): The Model That Made Video AI Famous, Then Quietly Closed
 
-> **Status notice**: OpenAI shut down the Sora consumer application on **April 26, 2026**. The API (`sora-2`) is planned for discontinuation on **September 24, 2026**. New users cannot sign up. Existing API users have until September 24 to complete any in-progress integrations before the service ends. This review is a retrospective.
+> **Status notice**: OpenAI [shut down the Sora consumer application on **April 26, 2026**](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation). The API (`sora-2`) is planned for discontinuation on **September 24, 2026**. New users cannot sign up. Existing API users have until September 24 to complete any in-progress integrations before the service ends. This review is a retrospective.
 
 In February 2024, OpenAI released a two-minute video that changed how the world thought about artificial intelligence.
 
@@ -33,7 +34,7 @@ This review covers what Sora 2 built, what it delivered, where it failed, and wh
 
 ## Company Background
 
-OpenAI was founded in December 2015 as a nonprofit AI research organization. Cofounders included Sam Altman, Greg Brockman, Ilya Sutskever, Elon Musk, and others. It restructured as a "capped-profit" company in 2019 and has since raised tens of billions of dollars, including a $10 billion investment from Microsoft and a $40 billion funding round in early 2025.
+OpenAI was founded in December 2015 as a nonprofit AI research organization. Cofounders included Sam Altman, Greg Brockman, Ilya Sutskever, Elon Musk, and others. It restructured as a "capped-profit" company in 2019 and has since raised tens of billions of dollars, including a [$10 billion investment from Microsoft](https://news.microsoft.com/2023/01/23/microsoftandopenaiextendpartnership/) and a [$40 billion funding round in March 2025](https://www.cnbc.com/2025/03/31/openai-closes-40-billion-in-funding-the-largest-private-fundraise-in-history-softbank-chatgpt.html).
 
 By revenue, OpenAI is the dominant commercial AI company, primarily from ChatGPT subscriptions and API access to language models. The video generation effort — Sora — was a significant departure from its core text and image product lines.
 
@@ -181,9 +182,9 @@ These controversies did not directly cause the shutdown — the operational cost
 
 ## Why It Shut Down
 
-The proximate cause was economics. Generating video requires substantially more compute than generating text or images. Reports from multiple outlets cited operational costs between $1 million and $15 million per day — figures vary by methodology, but the direction is consistent: Sora was deeply unprofitable.
+The proximate cause was economics. Generating video requires substantially more compute than generating text or images. Per [The Decoder](https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/) and other outlets, Sora was deeply unprofitable at its usage levels.
 
-User numbers peaked at approximately 1 million at launch and had declined to under 500,000 before the shutdown. At $20–200/month consumer pricing with substantial generation limits, subscription revenue couldn't approach the compute costs.
+Active users peaked at approximately 1 million before declining to under 500,000 before the shutdown. At $20–200/month consumer pricing with substantial generation limits, subscription revenue couldn't approach the compute costs.
 
 The decision to shut down the consumer product in April 2026 — while retaining API access through September — reflects a typical OpenAI wind-down pattern: give enterprise developers time to migrate rather than cut access immediately, while stopping the subscriber-level subsidized compute bleed.
 

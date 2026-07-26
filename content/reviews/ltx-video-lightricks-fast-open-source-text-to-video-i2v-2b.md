@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "LTX-Video (Lightricks, November 2024) is a 2B-parameter DiT video model built on a radical VAE with 1:192 compression — 32× spatial, 8× temporal — that lets the transformer work on 8,192 times fewer tokens than raw video pixels. The result is the fastest open-source text-to-video model at its quality tier, with I2V, Apache 2.0, and official ComfyUI support. Paper: arXiv:2501.00103. Rating: 4/5."
 tags: ["video-ai", "text-to-video", "image-to-video", "ai-video-generation", "ltx-video", "lightricks", "open-source", "comfyui", "diffusion-model", "dit", "vae", "creative-ai", "t2v", "i2v", "consumer-gpu"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # LTX-Video — The Speed Architecture Behind Lightricks's Open-Source Video Model
@@ -18,7 +19,7 @@ This review covers LTX-Video v0.9 through v0.9.8 (the 2B-parameter family), with
 
 ## Background: Lightricks and the Commercial Stakes of Open-Source
 
-Lightricks is an Israeli software company founded in January 2013 by a group of Hebrew University researchers — Dr. Zeev Farbman, Nir Pochter, Yaron Inger, Amit Goldstein, and Itai Tsiddon. The company built its reputation on consumer photo and video editing apps: **Facetune** (portrait retouching), Videoleap (mobile video editor), and Photoleap. By 2019 it had reached unicorn status with a $1 billion valuation; a 2021 Series D pushed that to $1.8 billion.
+Lightricks is an Israeli software company founded in January 2013 by a group of Hebrew University researchers — Dr. Zeev Farbman, Nir Pochter, Yaron Inger, Amit Goldstein, and Itai Tsiddon. The company built its reputation on consumer photo and video editing apps: **Facetune** (portrait retouching), Videoleap (mobile video editor), and Photoleap. By 2019 it had [reached unicorn status with a $1 billion valuation](https://news.crunchbase.com/news/facetune-maker-lightricks-lands-135-million-series-c-at-a-1-billion-valuation/); [a 2021 Series D raised $130M and pushed that to $1.8 billion](https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy).
 
 In 2022, Lightricks began integrating generative AI into its consumer apps. In February 2024 it launched **LTX Studio**, a full-stack AI video production platform for professionals. LTX-Video, released November 2024, is the open-source research artifact underlying that commercial product — released under Apache 2.0, with full weights available on HuggingFace and inference code on GitHub.
 
@@ -42,7 +43,7 @@ At 1:192, a 768×512×25-frame clip becomes approximately 24×16×3 = 1,152 late
 
 ### The Patchifying Trick
 
-The VAE compression alone does not explain the full approach. The paper (*"LTX-Video: Realtime Video Latent Diffusion"*, arXiv:2501.00103, January 2025) describes a crucial architectural modification: the **patchifying operation** — which in standard transformers converts the latent grid into non-overlapping patches as the first step of the DiT — is relocated from the transformer's input to the VAE's input.
+The VAE compression alone does not explain the full approach. The paper ([*"LTX-Video: Realtime Video Latent Diffusion"*, arXiv:2501.00103](https://arxiv.org/abs/2501.00103), January 2025) describes a crucial architectural modification: the **patchifying operation** — which in standard transformers converts the latent grid into non-overlapping patches as the first step of the DiT — is relocated from the transformer's input to the VAE's input.
 
 In standard video DiTs, the patchifying happens after VAE decoding: encode → VAE latent → patchify → transformer. By integrating patchifying into the VAE encoder, Lightricks allows the VAE's learned convolutions to operate on patches from the start, preserving spatiotemporal correlations that would otherwise be lost when patches are treated as independent tokens. The VAE learns to encode patches in a way that is inherently aware of their spatial and temporal neighbors.
 
@@ -95,9 +96,9 @@ Iterative improvements to the 2B family. v0.9.5 and v0.9.6 addressed specific mo
 
 A 13B-parameter model on the same architectural foundation. Substantially improved quality, particularly on complex scenes, at the cost of returning to higher VRAM requirements. The 13B became the recommended model for quality-focused workflows.
 
-### LTX-2 (January 6, 2026) and LTX-2.3 (March 5, 2026)
+### [LTX-2 (January 6, 2026)](https://www.globenewswire.com/news-release/2026/01/06/3213304/0/en/Lightricks-Open-Sources-LTX-2-the-First-Production-Ready-Audio-and-Video-Generation-Model-With-Truly-Open-Weights.html) and LTX-2.3 (March 2026)
 
-The architecture expanded significantly. LTX-2 introduced 19B total parameters (approximately 14B video + 5B audio) with audio generation, and extended maximum duration to 60 seconds. LTX-2.3 added 22B parameters, native 4K resolution (up to 3840×2160), 50 FPS support, portrait formats (1080×1920 natively trained, not cropped), and duration up to 20 seconds at 4K. Benchmarks show LTX-2.3 generating video 10–14× faster than Wan 2.2.
+The architecture expanded significantly. LTX-2 introduced 19B total parameters (approximately 14B video + 5B audio) with audio generation, and extended maximum duration to 60 seconds. [LTX-2.3 added 22B parameters](https://wavespeed.ai/blog/posts/ltx-2-3-whats-new-2026/), native 4K resolution (up to 3840×2160), 50 FPS support, portrait formats (1080×1920 natively trained, not cropped), and duration up to 20 seconds at 4K.
 
 *This review focuses primarily on the 2B family (v0.9–v0.9.8), which established the model and its community. LTX-2 and LTX-2.3 are architectural successors under continuing development.*
 
