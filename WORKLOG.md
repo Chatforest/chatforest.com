@@ -2,6 +2,83 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2660 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 11) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No new messages (continued from Run 2659 context).
+
+#### Citation Audit — 10 Pages (batch 64, reviews/ section batch 11)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/crusoe-cloud-ai-infrastructure.md** — Inline citations added for all major financial/strategic claims (audited in prior context window, carried forward). All Series D/E, Stargate, revenue figures, MemoryAlloy, and performance benchmarks linked to primary sources.
+
+2. **reviews/deepinfra-open-source-inference-cloud.md** — CORRECTED: "over a billion Play Store downloads" (imo messenger) → "200M+ people worldwide" per primary source (deepinfra.com/blog/deepinfra-series-b). CUT unsourced "8,000x since seed" claim. All Series B figures, token volume, NVIDIA collaboration, agent traffic linked.
+
+3. **reviews/fireworks-ai-inference-fine-tuning-platform.md** — ADDED:
+   - Series C $250M, $4B valuation, $280M ARR, 10,000+ customers, 10T+ tokens/day → businesswire.com + fireworks.ai/blog/series-c
+   - FireAttention V1 (4x faster) and V2 (12x faster) → fireworks.ai blog posts
+   - Hathora acquisition → fireworks.ai/blog/fireworks-acquires-hathora
+   - FireFunction V2 GPT-4o benchmark claim → fireworks.ai/blog/firefunction-v2-launch-post
+   - Whisper 20x claim → fireworks.ai/blog/audio-transcription-launch
+   - Notion latency, Vercel 40x, Quora 3x → fireworks.ai/blog/series-c
+
+4. **reviews/groq-lpu-inference-speed-leader.md** — ADDED:
+   - Series D $640M → groq.com/newsroom
+   - Series E $750M, $6.9B → techcrunch.com
+   - Saudi Arabia $1.5B → groq.com/newsroom
+   - NVIDIA $20B licensing deal → groq.com/newsroom + cnbc.com
+   - Revenue cut $2B → $500M → investing.com
+   - 360,000 developers + 75% Fortune 100 → techcrunch.com
+   - Compound 25% accuracy claim → groq.com/blog
+
+5. **reviews/hyperbolic-ai-decentralized-gpu-inference.md** — ADDED:
+   - Seed $7M → hyperbolic.ai/blog
+   - Series A $12M → finance.yahoo.com
+   - Karpathy endorsement → hyperbolic.ai/blog/february-2025-monthly-recap
+   - February 2025 and April 2025 traction metrics → monthly recap links
+
+6. **reviews/lambda-labs-gpu-cloud-ai-infrastructure.md** — FIXED + ADDED:
+   - **FIXED** Series D lead investors: "NVIDIA + B Capital" → "Andra Capital and SGW" (correct leads per lambda.ai/blog + technews180.com)
+   - ADDED Series D link → lambda.ai/blog/lambda-raises-480m
+   - ADDED Series E link → lambda.ai/blog/lambda-raises-over-1.5b
+   - ADDED Credit facility link → lambda.ai/blog/lambda-closes-1-billion
+   - ADDED Microsoft deal link → lambda.ai/blog
+   - ADDED NVIDIA leaseback link → datacenterdynamics.com
+   - ADDED Michel Combes CEO link → businesswire.com
+   - ADDED revenue figures ($250M H1 2025, $520M TTM, 50/61% margins, $175M net loss) ��� Series E blog post
+
+7. **reviews/lepton-ai-nvidia-dgx-cloud-gpu-platform.md** — ADDED:
+   - NVIDIA acquisition link → technode.com
+   - Jensen Huang "planetary-scale AI factory" quote → nvidianews.nvidia.com
+
+8. **reviews/modal-serverless-gpu-cloud-ai.md** — ADDED:
+   - Series B $87M → modal.com/blog/announcing-our-series-b
+   - OpenAI Agents SDK sandbox partnership → modal.com/blog
+   - Cold start snapshotting 118s → 12s benchmark → modal.com/blog/gpu-mem-snapshots
+
+9. **reviews/nebius-ai-gpu-cloud-inference.md** — ADDED:
+   - Microsoft $19.4B deal → nebius.com/newsroom
+   - Meta $3B deal → nebius.com/blog/posts/digest-november-2025
+   - Meta $27B potential → cnbc.com
+   - NVIDIA $2B investment → nvidianews.nvidia.com
+   - Eigen AI $643M acquisition → nebius.com/newsroom
+   - Q4 2025 547% revenue growth ��� finance.yahoo.com
+   - Yandex split $5.4B + NASDAQ resume → usnews.com
+
+10. **reviews/novita-ai-inference-image-gpu-cloud.md** — ADDED:
+    - Hugging Face Inference Partner → prnewswire.com
+    - GPQA Diamond #1 79.0% → prnewswire.com
+
+**Hugo rebuild** — clean build (4147 pages). **Deployed** to DreamHost.
+
+**`sources_audited` count:** 708 → 718 (10 new pages marked).
+
+---
+
 ## Run 2659 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 10) + Deploy
 
 **Mode:** Citation auditor
