@@ -1,6 +1,7 @@
 ---
 title: "Qwen3.7-Max Review: #1 Chinese Model, Anthropic API Compatible, 35-Hour Autonomous Run"
 date: 2026-05-22T11:00:00+09:00
+sources_audited: 2026-07-27
 description: "Alibaba's Qwen3.7-Max (May 19, 2026) is a reasoning-first agentic model with a 1M-token context window, $2.50/$7.50 API pricing, and native Anthropic API protocol compatibility. Benchmarks challenge Claude Opus-4.6 on GPQA Diamond (92.4 vs 91.3), HLE (41.4 vs 40.0), and SWE-Verified (80.4 vs 80.8). Highest-ranked Chinese model on the Artificial Analysis Intelligence Index at 56.6. Self-reported 35-hour fully autonomous kernel optimization demo. No open weights yet. Rating: 4/5."
 og_description: "Qwen3.7-Max (May 19, 2026): 1M context, $2.50/$7.50 per M tokens, Anthropic API protocol compatible. GPQA Diamond 92.4, HLE 41.4, SWE-Verified 80.4 — statistically competitive with Claude Opus-4.6. AA Intelligence Index 56.6 (#1 Chinese model, #5 overall). 35-hour autonomous run: 1,158 tool calls, 10x chip optimization. Text-only. No open weights at launch. Rating: 4/5."
 card_description: "Alibaba's Qwen3.7-Max (released May 19, 2026) is the strongest reasoning and agentic model out of China to date and the first to claim near-parity with Claude Opus-4.6 on head-to-head benchmarks. Key specification: 1,000,000 token context window with 65,536 max output. Pricing: $2.50 input / $7.50 output per million tokens — 25% cheaper on output than Cohere Command A+ and substantially below Opus-4.6 tier pricing. Architecture: MoE-lineage reasoning model (specific parameter count undisclosed for Max tier); chain-of-thought reasoning before every response. The builder story: Qwen3.7-Max supports the Anthropic API protocol natively, meaning it works as a drop-in swap inside Claude Code, OpenClaw, and any tool built against the Anthropic SDK. No SDK changes required. Benchmarks that matter: GPQA Diamond 92.4 (Opus-4.6: 91.3), HLE 41.4 (Opus-4.6: 40.0), SWE-Verified 80.4 (Opus-4.6 Max: 80.8 — statistically tied), Apex Math Reasoning 44.5 (Opus-4.6 Max: 34.5, a 29% margin). Artificial Analysis Intelligence Index 56.6 — 5th globally, first Chinese model ahead of Gemini 3.5 Flash (55.3). Gains vs predecessor Qwen3.6 Max Preview (51.8): +4.8 Index points, with CritPt +9.7pp, HLE +9.2pp, Terminal-Bench Hard +6.9pp. The 35-hour story: Qwen3.7-Max ran fully autonomously for 35 hours on a Pingtouge Zhenwu M890 (T-Head ZW-M890 PPU) domestic Chinese chip it had never seen in training, executed 1,158 tool calls, 432 kernel evaluations, and achieved 10x Triton operator speedup — self-reported, not third-party verified. Text-only (no vision/audio). No open weights available at launch (Qwen3.6 series had Apache 2.0; Max tier is API-only). Prompt caching supported. For builders wanting near-Opus-4.6 agentic capability at significantly lower cost and with existing Anthropic SDK tooling: Qwen3.7-Max is the most credible alternative in the market. Rating: 4/5."
@@ -102,7 +103,7 @@ The SWE-Verified tie at 80.4/80.8 (within margin of error) means that for softwa
 
 Alibaba's most striking capability demonstration for Qwen3.7-Max doesn't involve a leaderboard. It involves a domestic Chinese chip.
 
-The demo: Qwen3.7-Max was given access to an isolated server running a Pingtouge Zhenwu M890 processor (T-Head ZW-M890 PPU) — a hardware architecture the model had never encountered during training. Its task: autonomously optimize Triton operators for this chip.
+[Described in Alibaba Cloud's announcement](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154): Qwen3.7-Max was given access to an isolated server running a Pingtouge Zhenwu M890 processor (T-Head ZW-M890 PPU) — a hardware architecture the model had never encountered during training. Its task: autonomously optimize Triton operators for this chip.
 
 Over **35 continuous hours**, the model:
 - Executed **1,158 distinct tool calls**
@@ -120,6 +121,8 @@ The result was working, optimized software for a chip it had never trained on, p
 ---
 
 ## Pricing
+
+Pricing per the [Alibaba Cloud announcement](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154):
 
 | Tier | Price per M tokens |
 |---|---|
@@ -172,6 +175,15 @@ The combination of near-Opus-4.6 performance on GPQA Diamond and HLE, SWE-Verifi
 The gaps are real: text-only, no open weights, and a 35-hour flagship demo that is self-reported. But for software engineering and mathematical reasoning workloads running through Claude Code-compatible infrastructure, Qwen3.7-Max is worth testing against your actual tasks.
 
 **Rating: 4/5.** Strong benchmarks, strong price, strong builder compatibility. Held back one point by text-only limitation, no open weights, and the self-reported nature of the headline demo.
+
+---
+
+---
+
+## Sources
+
+- [Qwen3.7: The Agent Frontier — Alibaba Cloud blog](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154) — official announcement: release date, benchmarks, 35-hour chip demo, pricing
+- [Qwen3.7-Max — Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/qwen3-7-max) — third-party aggregate benchmark scores (56.6 index, GPQA Diamond 92.4, HLE 41.4, SWE-Verified 80.4)
 
 ---
 

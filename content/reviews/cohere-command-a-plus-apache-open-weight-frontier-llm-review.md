@@ -1,6 +1,7 @@
 ---
 title: "Cohere Command A+ Review: 218B Sparse MoE, Apache 2.0, and Native Citations Built In"
 date: 2026-05-22T10:00:00+09:00
+sources_audited: 2026-07-27
 description: "Cohere Command A+ (May 20, 2026) is a 218B sparse MoE model with 25B active parameters per token, Apache 2.0 license, and native citation generation built into the architecture. First multimodal Cohere model. Runs on 2×H100 or 1×B200 GPU. API at $2.50/$10.00 per million tokens. Artificial Analysis Intelligence Index: 37. Knowledge cutoff April 2025. The Apache 2.0 licensing and enterprise citation feature are the headline story. Rating: 3.5/5."
 og_description: "Cohere Command A+ (May 20, 2026): 218B sparse MoE, 25B active parameters. Apache 2.0 — full commercial use, no revenue cap. Native citations via <co> tags link every factual claim to source documents. Runs on 2×H100 (W4A4) or 1×B200. 128K input / 64K output context. $2.50/$10.00 per M tokens on API. AA Intelligence Index: 37. Knowledge cutoff April 2025. First multimodal Cohere model. Rating: 3.5/5."
 card_description: "Cohere Command A+ (released May 20, 2026) is Cohere's first fully open-weight frontier model under Apache 2.0 — no commercial restrictions. 218B sparse Mixture-of-Experts architecture with 128 experts (8 active per token + 1 shared expert), meaning only 25 billion parameters activate per token. This is the Cohere model that enterprise teams with data sovereignty requirements have been waiting for: deploy on air-gapped networks, fine-tune on classified data, no vendor lock-in. Key innovation: Quantization-Aware Distillation (QAD) achieves near-lossless W4A4 quantization by preserving attention pathway precision while quantizing only the MoE experts, enabling 2×H100 or 1×B200 GPU deployment at 375 tokens/second output throughput. First multimodal Cohere model — vision + text input, though multimodal capability is focused on document/spreadsheet processing rather than general image understanding. Native citations are the genuinely unique feature: built into the architecture via co tags that link every factual claim to a source document or database row, without post-processing. API pricing: $2.50 input / $10.00 output per million tokens. Artificial Analysis Intelligence Index: 37 (below Mistral Medium 3.5 at 39.23, well below frontier tier at 57-60). Knowledge cutoff April 1, 2025 — 13 months old at release. τ²-Bench Telecom: 85% (from 37% in Command A Reasoning). AIME 25: 90%. MMMU: 75.1%. Coding: Cohere explicitly recommends GPT-5.5 or Claude 4.7 for code-heavy applications. Predecessor Command R+ was CC-BY-NC 4.0; this is the licensing shift that matters. Rating: 3.5/5."
@@ -277,6 +278,16 @@ Command A+ is the right model for a specific buyer profile: enterprise teams who
 | **Min. hardware** | 2×H100 80GB (W4A4) or 1×B200 |
 | **Knowledge cutoff** | April 1, 2025 |
 | **Rating** | 3.5 / 5 |
+
+---
+
+---
+
+## Sources
+
+- [Introducing Command A+: Our Most Open, Capable, and Efficient Model Yet — Cohere blog, May 20, 2026](https://cohere.com/blog/command-a-plus) — architecture, benchmarks, licensing, pricing, hardware requirements
+- [CohereLabs/command-a-plus-05-2026 — HuggingFace](https://huggingface.co/CohereLabs/command-a-plus-05-2026) — 375 tok/s throughput, 113ms TTFT, W4A4 quantization details
+- [Command A+ — Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/command-a-plus) — third-party composite score (37)
 
 ---
 

@@ -4,6 +4,7 @@ date: 2026-05-16T20:00:00+09:00
 description: "MCP servers for ETL pipelines, ELT data integration, and data transformation. Covers Airbyte, Fivetran, dbt Labs, and Zoho DataPrep — with ratings, tool inventories, and architecture comparisons."
 og_description: "ETL & Data Integration MCP servers: Airbyte (4/5, Context Store, 50+ connectors), dbt Labs (4/5, 50+ tools, Apache-2.0), Fivetran (3/5, 161 tools, write-protected), Zoho DataPrep (3/5, 30 tools, enterprise-only). Covers managed ELT, open-source pipelines, and data transformation."
 content_type: "Category"
+sources_audited: 2026-07-27
 ---
 
 The ETL & Data Integration category covers MCP servers that connect AI agents to **data pipeline tooling** — moving data between sources and destinations, transforming it in transit or at the destination, and managing the orchestration of those workflows. This is one of the more mature segments of the MCP ecosystem: Airbyte, Fivetran, and dbt Labs all have official servers, and the Fivetran → Snowflake pipeline is a common production pattern with MCP coverage at both ends.
@@ -35,7 +36,7 @@ For a broader view covering dbt, Airflow, Kafka, Snowflake, Databricks, and the 
 
 ## Key Patterns
 
-**Managed vs. open-source ELT.** The sharpest divide in this category is between Fivetran (fully managed, paid SaaS, 700+ connectors, no infrastructure) and Airbyte (open-source, self-hosted or cloud, 600+ connectors, Context Store for agentic access). For teams choosing between them, the MCP maturity reflects the platform positioning: Airbyte's Context Store architecture is more agent-native; Fivetran's server is a direct API proxy.
+**Managed vs. open-source ELT.** The sharpest divide in this category is between Fivetran (fully managed, paid SaaS, [700+ connectors](https://fivetran.com/docs/connectors), no infrastructure) and Airbyte (open-source, self-hosted or cloud, [600+ connectors](https://airbyte.com/connectors), Context Store for agentic access). For teams choosing between them, the MCP maturity reflects the platform positioning: Airbyte's Context Store architecture is more agent-native; Fivetran's server is a direct API proxy.
 
 **Transformation vs. integration.** dbt Labs MCP is a transformation tool — it operates on data already in a warehouse, turning raw tables into curated models. Airbyte and Fivetran are integration tools — they move data from sources to destinations. These are complementary layers, not alternatives.
 

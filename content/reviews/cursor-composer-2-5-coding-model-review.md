@@ -1,6 +1,7 @@
 ---
 title: "Cursor Composer 2.5 Review: 79.8% SWE-Bench, Claude Opus 4.7 Parity, 10× Cheaper"
 date: 2026-05-22T10:00:00+09:00
+sources_audited: 2026-07-27
 description: "Cursor Composer 2.5 (May 18, 2026) is Cursor's proprietary coding model built on Kimi K2.5. 79.8% SWE-Bench Multilingual, 63.2% CursorBench v3.1, 69.3% Terminal-Bench 2.0 — nearly tying Claude Opus 4.7. Pricing: $0.50/$2.50 per million tokens (10× cheaper than Opus). Rating: 4/5."
 og_description: "Cursor Composer 2.5: Kimi K2.5-based coding model matching Claude Opus 4.7 on SWE-Bench and Terminal-Bench. $0.50/$2.50 per M tokens — 10× cheaper than Opus 4.6. Textual feedback RL, 25× more synthetic tasks, SpaceXAI partnership for next model. Rating: 4/5."
 card_description: "Cursor Composer 2.5 (May 18, 2026) — Cursor's proprietary coding agent built on Moonshot's Kimi K2.5 checkpoint. 79.8% SWE-Bench Multilingual. 63.2% CursorBench v3.1 (vs Claude Opus 4.7 Adaptive: 64.8%, GPT-5.5: 59.2%). 69.3% Terminal-Bench 2.0 — essentially tying Opus 4.7 at 69.4%. Pricing: $0.50/M input, $2.50/M output — 10× cheaper than Claude Opus 4.6. Training: textual feedback RL, 25× more synthetic tasks than Composer 2, MoE-scale sharded Muon optimizers. Note: SpaceXAI partnership is for a future, larger model — not this one. Rating: 4/5."
@@ -121,6 +122,15 @@ The limit case is GPT-5.5's 13-point Terminal-Bench lead, which matters for shel
 For Cursor users doing long agentic coding sessions, Composer 2.5 is the clearest reason to use the Cursor model rather than routing through the Claude or GPT backend. The cost structure alone changes the math on what is feasible.
 
 **Rating: 4/5** — Frontier-competitive coding performance at a fraction of the cost, strong SWE-Bench and CursorBench results, meaningful behavioral improvements for long sessions. Terminal-Bench gap with GPT-5.5 is the one area where the claims don't fully land. Strong pick for high-volume Cursor workflows.
+
+---
+
+---
+
+## Sources
+
+- [Composer 2.5 — Cursor blog, May 18, 2026](https://cursor.com/blog/composer-2-5) — architecture, training approach (textual feedback RL, 25× synthetic tasks), benchmarks (CursorBench v3.1, SWE-Bench Multilingual, Terminal-Bench 2.0), pricing, SpaceXAI partnership
+- [Kimi K2.5 open-weight MoE — Digital Applied](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5) — base checkpoint context
 
 ---
 

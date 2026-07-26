@@ -2,6 +2,62 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2682 — 2026-07-27 — Citation Audit (10 reviews + 1 category, batch 86, 2026-05-22 cluster)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): both still pending Rob's read. No new inbox messages for Grove. No action needed.
+
+#### Deploy: Batch 85
+Deployed batch 85 (10 pages from Run 2681) immediately — throttle was clear (~95 min since Run 2681 deploy). Build succeeded. Deployed at timestamp 1785106626.
+
+#### Citation Audit — 10 reviews + 1 category (batch 86)
+
+**2026-05-16 (1 category page):**
+
+1. **categories/etl-data-integration** — Category page. Added inline links for "700+ connectors" (Fivetran: fivetran.com/docs/connectors) and "600+ connectors" (Airbyte: airbyte.com/connectors). Has Sources section. sources_audited: 2026-07-27.
+
+**2026-05-22 cluster (10 reviews):**
+
+2. **alibaba-qwen3-7-max-agentic-reasoning-model-review** — Added inline link to Alibaba announcement for 35-hour chip demo claims (was missing a link despite being Alibaba's self-reported result). Added inline link for $2.50/$7.50 pricing. Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+3. **anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review** — Already had a comprehensive Sources section (6 entries). Added inline links: SWE-bench 87.6%/93.9% → red.anthropic.com/2026/mythos-preview; financial commitments ($100M, $4M, $2.5M, $1.5M) → anthropic.com/glasswing inline; "99% unpatched" → glasswing-initial-update inline. CUT: Schneier on Security attribution (no verifiable URL). sources_audited: 2026-07-27.
+
+4. **atlassian-rovo-ai-platform-review** — Added inline links for "14M+ Rovo-assisted actions" and "7x increase in agentic automations" (both → Team '26 blog). Added inline link for Rovo Dev $20/dev pricing. Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+5. **claude-for-financial-services-review** — Added inline link for May 5 launch → anthropic.com/news/claude-for-financial-services. Added inline link for Moody's 600M companies claim → same announcement. **KEY FIX**: Bloomberg Terminal price updated from ~$25,000 to ~$28,000–$32,000/year (research confirmed 2026 pricing is higher). Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+6. **claude-for-legal-review** — Added inline link for May 12 launch → law.com/legaltechnews. Added inline link for Heppner case → debevoisedatablog.com (Feb 2026, Judge Rakoff ruling confirmed). CUT: "80% of civil litigants" stat (no primary source found; softened to "civil litigants who lack representation"). Added Sources section (4 entries: Law.com, Debevoise blog, Inside Privacy, GitHub repo). sources_audited: 2026-07-27.
+
+7. **cohere-command-a-plus-apache-open-weight-frontier-llm-review** — Already had good inline links (Cohere blog, HuggingFace, AA). Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+8. **cursor-composer-2-5-coding-model-review** — Already had good inline links (cursor.com/blog, digitalapplied.com). Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+9. **google-antigravity-2-0-agent-platform-review** — Added inline link for A2A protocol "April 2025, 150+ organizations" → developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability. Softened "thread on Google AI Developers Forum" to "community reports" (no URL available). Added Sources section (4 entries). sources_audited: 2026-07-27.
+
+10. **google-gemini-for-science-research-ai-platform-review** — Already had Sources section. Added inline links for James Manyika (blog.google/authors/james-manyika/) and Pushmeet Kohli (research.google/people/105667/) roles. Added inline BASF link (Google Cloud blog) and Klarna link (Klarna Engineering Medium blog) for AlphaEvolve case study claims. sources_audited: 2026-07-27.
+
+**Deploy:** Build succeeded. Deploy throttled (~502 seconds remaining). **NEXT RUN: deploy batch 86 immediately (check .last_deploy timestamp first).**
+
+#### Bluesky
+July 27 cap already used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Running totals
+- Previous audited: ~910 pages (as of Run 2681)
+- This run: +11 pages (batch 86, 2026-05-16 category + 2026-05-22 cluster)
+- **Total pages with sources_audited: ~921**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled July 28 09:00 UTC)
+- Deploy batch 86 immediately (check .last_deploy timestamp)
+- Continue citation audit: next batch after 2026-05-22 (google-gemini-omni-flash, google-gemini-spark, google-pics-ai-design, google-webmcp, openai-chatgpt-ads-manager, openai-codex-cloud, openai-daybreak, openai-ipo-2026, xai-grok-speech-to-text)
+
+---
+
 ## Run 2681 — 2026-07-27 — Citation Audit (10 reviews, batch 85, 2026-05-19+21+22 cluster)
 
 **Mode:** Citation auditor

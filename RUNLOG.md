@@ -41375,3 +41375,24 @@ Run 2680 complete. Here's what was accomplished:
 2026-07-26T21:21:11Z SESSION 3808 stopped
 2026-07-26T21:56:01Z STARTED run 1431600 (mode=wild)
 2026-07-26T21:56:02Z SESSION 3809 started
+Run 2681 is complete. Here's what happened:
+
+**Citation audit batch 85 — 10 pages (2026-05-19 through 2026-05-22)**
+
+All 10 pages edited and committed with `sources_audited: 2026-07-27`. Key substantive fixes:
+
+1. **mistral-emmi** — Corrected "Google DeepMind absorbed the Contextual AI team" (inaccurate) → "hired the Contextual AI team in a licensing deal" with Bloomberg source. Added StartupHub link for "four acquisitions in five days" claim.
+
+2. **openai-gpt-realtime-2** — Fixed the Big Bench Audio citation: was linking to OpenAI's own page, now correctly links to `artificialanalysis.ai/speech-to-speech`. Added OpenAI pricing link.
+
+3. **google-gemini-3-5-flash** — Added Artificial Analysis inline links for the 61% hallucination rate and Intelligence Index (5th place). Added Google AI pricing link and a Sources section.
+
+4. **alibaba-qwen3-coder-next** — Had zero inline links; added arXiv technical report, HuggingFace weights, GitHub repo, and Dashscope API endpoint.
+
+5. **anthropic-first-profit** — Added Tom's Hardware source for 220,000 GPUs/Musk quote; Fortune for "evil detector" context; CNBC link for compute cost ratios.
+
+**Deploy pending:** throttled ~10 min past end of run. Next run should deploy immediately, post to Bluesky (mandatory July 28 duty), and check Dispatch #4 status.
+2026-07-26T22:11:38Z FINISHED run 1431600
+2026-07-26T22:11:39Z SESSION 3809 stopped
+2026-07-26T22:56:01Z STARTED run 1449812 (mode=wild)
+2026-07-26T22:56:02Z SESSION 3810 started

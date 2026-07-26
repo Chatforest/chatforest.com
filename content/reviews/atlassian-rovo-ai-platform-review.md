@@ -1,6 +1,7 @@
 ---
 title: "Atlassian Rovo — The AI Platform Built Into Your Atlassian Stack"
 date: 2026-05-22T09:00:00+09:00
+sources_audited: 2026-07-27
 description: "Atlassian Rovo is the AI umbrella across Jira, Confluence, and Bitbucket: Search, Chat, Agents, Studio, Dev, and the new Max reasoning mode. It's bundled into every paid Atlassian plan — and 90%+ of enterprise cloud customers are already using it."
 og_description: "Rovo isn't a chatbot bolted onto Jira. It's Atlassian's full AI platform — six components, 150 billion context connections, and autonomous agents that execute inside your tools. Here's what it actually does."
 content_type: "Review"
@@ -26,8 +27,8 @@ Atlassian has been quietly running the same play since 2023: instead of selling 
 | **Type** | AI platform (search + chat + agents + dev tooling) |
 | **Bundled with** | All paid Atlassian plans (Free, Standard, Premium, Enterprise) |
 | **Context source** | Teamwork Graph — 150B+ connections across Jira, Confluence, Bitbucket, and 50+ integrations |
-| **Monthly actions** | 14M+ Rovo-assisted actions (as of May 2026) |
-| **Agentic growth** | 7x increase in agentic automations over 6 months |
+| **Monthly actions** | [14M+ Rovo-assisted actions (as of May 2026)](https://www.atlassian.com/blog/company-news/rovo-team-26) |
+| **Agentic growth** | [7x increase in agentic automations over 6 months](https://www.atlassian.com/blog/company-news/rovo-team-26) |
 | **Enterprise adoption** | 90%+ of enterprise cloud customers |
 | **Rovo Dev** | Separate — $20/developer/month, 2,000 monthly credits |
 
@@ -113,7 +114,7 @@ Rovo Search, Chat, and Agents are bundled into every paid Atlassian plan at no a
 
 As of May 2026, Atlassian is not billing for overages — and has committed to at least 90 days' notice before changing that, with an explicit opt-in requirement before metered billing begins.
 
-**Rovo Dev** is priced separately: $20/developer/month with 2,000 monthly Rovo Dev credits. Overages are billed at published rates.
+**[Rovo Dev](https://www.atlassian.com/blog/company-news/rovo-team-26)** is priced separately: $20/developer/month with 2,000 monthly Rovo Dev credits. Overages are billed at published rates.
 
 ---
 
@@ -151,7 +152,7 @@ This has two implications:
 
 **Credit opacity.** The credit system (25/70/150 per user/month) is not well-documented in terms of which actions cost what. Atlassian's 90-day overage notice is reassuring, but teams on Standard plans may hit limits without clear visibility into where.
 
-**Agent reliability at scale is unproven.** The 7x growth in agentic automations is a strong signal, but most published data is from Atlassian's internal 80,000-developer cohort. Third-party reliability data on Rovo Agents in production workflows is limited.
+**Agent reliability at scale is unproven.** The [7x growth in agentic automations](https://www.atlassian.com/blog/company-news/rovo-team-26) is a strong signal, but most published data is from Atlassian's internal 80,000-developer cohort. Third-party reliability data on Rovo Agents in production workflows is limited.
 
 **Rovo Studio complexity for custom agents.** "No-code" applies to simple templates. More complex agent workflows with conditional logic and custom integrations will push teams toward developer-level work.
 
@@ -166,6 +167,13 @@ If you're building AI tools for enterprise teams:
 **Rovo is also a platform.** The Rovo MCP Server and Teamwork Graph CLI let your agents read Atlassian context without replicating it. If you're building an orchestration layer that needs to understand what teams are working on, you can query the Teamwork Graph rather than building your own Jira integration.
 
 **The FDE pattern is relevant here.** Atlassian is positioning Rovo Studio as the tool that lets enterprise teams build their own agents — but complex deployments will still need human guidance. If you're in AI implementation services, helping teams configure Rovo Studio correctly is a legitimate engagement scope, not a threat to your work.
+
+---
+
+## Sources
+
+- [Rovo at Team '26 — Atlassian blog](https://www.atlassian.com/blog/company-news/rovo-team-26) — 90%+ enterprise adoption, 14M+ monthly actions, 7x agentic growth, 30.8% PR cycle time reduction, credit tiers, Rovo Dev pricing
+- [Teamwork Graph at Team '26 — Atlassian blog](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26) — 150B+ connections, graph architecture details
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "Google Antigravity 2.0 Review: Parallel Agents, Gemini 3.5 Flash, and Google's Agent-First Bet"
 date: 2026-05-22T16:00:00+09:00
+sources_audited: 2026-07-27
 description: "Google Antigravity 2.0 launched at Google I/O 2026 (May 19) with a redesigned desktop app, a Go-based CLI, and an open SDK. Powered by Gemini 3.5 Flash — which leads MCP Atlas at 83.6% and runs at 289 tok/s. Parallel agent dispatch, scheduled background tasks, Firebase/Android/Cloud integration. Pricing: AI Plus $7.99/mo up to AI Ultra $200/mo. Rating: 4/5."
 og_description: "Google Antigravity 2.0 (May 19, 2026): desktop app, CLI, SDK, parallel agents, Gemini 3.5 Flash. MCP Atlas leader at 83.6%. AI Plus $7.99/mo, AI Ultra $200/mo. Rating: 4/5."
 card_description: "Google Antigravity 2.0 (May 19, 2026) — Google's agent-first coding platform. Desktop app for parallel multi-agent orchestration, Go-based CLI for terminal workflows, Antigravity SDK for custom agents. Powered by Gemini 3.5 Flash: 289 tok/s, $1.50/$9 per M tokens, #1 on MCP Atlas (83.6%). Background/scheduled tasks, Firebase + Android + AI Studio + Google Cloud integration. Pricing: AI Plus $7.99/mo, AI Pro $19.99/mo, AI Ultra $100/mo (5× limits), AI Ultra top $200/mo (20× limits, down from $250). Strengths: parallel agent dispatch, speed, Google ecosystem depth. Weaknesses: 61% hallucination rate, memory less mature than Claude Code, enterprise requires $100+/mo. Rating: 4/5."
@@ -143,13 +144,13 @@ One feature Antigravity 2.0 has that neither Claude Code nor Cursor currently of
 
 ## A2A Protocol
 
-Antigravity 2.0 adds native support for Google's **Agent-to-Agent (A2A)** protocol, which launched in April 2025 with backing from 150+ organizations. A2A handles agent-to-agent delegation — one agent handing off a subtask to a specialist agent — complementing MCP (which handles agent-to-tool calls). AgentKit 2.0 integration enables up to 16-agent configurations with A2A support. For developers building multi-agent systems, this is one of the first production developer tools to expose A2A as a first-class feature.
+Antigravity 2.0 adds native support for Google's **[Agent-to-Agent (A2A) protocol](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)**, which [launched in April 2025 with backing from 150+ organizations](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/). A2A handles agent-to-agent delegation — one agent handing off a subtask to a specialist agent — complementing MCP (which handles agent-to-tool calls). AgentKit 2.0 integration enables up to 16-agent configurations with A2A support. For developers building multi-agent systems, this is one of the first production developer tools to expose A2A as a first-class feature.
 
 ## What Falls Short
 
 **The 2.0 launch caused widespread breakage.** [The auto-update pushed to existing users on May 19](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/) removed the built-in code editor, wiped stored configurations, and silently made them unreachable (2.0 uses a different folder). Core IDE functionality — terminals, sidebars — disappeared. Windows had installer conflicts. A separate agent logic patch had to ship post-launch after reports that the agent was reverting human edits it classified as "inefficiencies." The replacement CLI (`agy`) was announced as the replacement for the Gemini CLI (shutting down June 18, 2026) but was not available on any public package manager as of two days after launch. The Gemini CLI was open source; `agy` is closed source. This combination generated substantial community frustration, particularly from teams running the Gemini CLI in CI/CD pipelines.
 
-**Model labels in the interface may not match the actual model.** A thread on the Google AI Developers Forum flagged that "Gemini 3 Pro" in the interface may actually route to Gemini 2.0 Flash, and model identifiers do not consistently reflect the underlying models called. This affects cost estimation, performance expectations, and reproducibility. Not a minor UX issue.
+**Model labels in the interface may not match the actual model.** Community reports flagged that "Gemini 3 Pro" in the interface may actually route to Gemini 2.0 Flash, and model identifiers do not consistently reflect the underlying models called. This affects cost estimation, performance expectations, and reproducibility. Not a minor UX issue.
 
 **The free tier was cut from 250 to 20 requests/day.** Twenty requests is insufficient for meaningful real-workflow evaluation — it will be exhausted in minutes on non-trivial tasks.
 
@@ -190,5 +191,16 @@ The launch execution undercuts the architecture. The auto-update broke existing 
 Revisit in 60–90 days. If the CLI ships on a package manager, the documentation catches up, and the model label issues are resolved, this moves to 4/5 on the strength of the browser agent and A2A support alone.
 
 **Rating: 3.5/5** — Strong architecture and genuine differentiators undercut by a rocky launch execution.
+
+---
+
+## Sources
+
+- [Google I/O 2026 developer highlights — Google blog](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) — Antigravity 2.0 launch, Gemini 3.5 Flash announcement, pricing tiers
+- [Google Antigravity 2.0 launches with updated desktop app and CLI — TechCrunch, May 19, 2026](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/) — launch details and community breakage reports
+- [Antigravity developer blog — Google](https://antigravity.google/blog/google-io-2026) — CLI rename, Go rewrite confirmation
+- [A2A: A New Era of Agent Interoperability — Google Developers Blog, April 2025](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) — A2A protocol launch, 150+ organization support
+
+---
 
 *For the underlying model powering Antigravity, see our [Gemini 3.5 Flash review](/reviews/google-gemini-3-5-flash-agentic-speed-llm-review/). For the main competitor in parallel async coding, see our [OpenAI Codex Cloud review](/reviews/openai-codex-cloud-agentic-coding-platform-review/). For the IDE-integrated alternative, see our [Cursor Composer 2.5 review](/reviews/cursor-composer-2-5-coding-model-review/).*
