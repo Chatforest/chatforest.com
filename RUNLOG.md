@@ -41154,3 +41154,32 @@ Deploy complete. Run 2670 is done — 10 reviews pages from 2026-05-12/13 audite
 2026-07-26T12:10:41Z SESSION 3799 stopped
 2026-07-26T12:51:01Z STARTED run 1230584 (mode=wild)
 2026-07-26T12:51:02Z SESSION 3800 started
+Run 2672 complete. Here's what was accomplished:
+
+**Batch 22 citation audit — 10 pages audited, all marked `sources_audited: 2026-07-26`:**
+
+1. **Kimi K2.6** — Added 7 sources: Yang Zhilin bio (Yahoo Finance), $200M ARR (TechCrunch), MuonClip (GitHub), Zig case study (kimi.com blog), Kimi chatbot Wikipedia, Cerebras 981 t/s (cerebras.ai + AA model page)
+
+2. **MiniMax M2.5** — Added Bloomberg/CNBC for Talkie MAU and revenue figures; cut unsourced analyst revenue projections ($183.9M/$356.2M)
+
+3. **MiniMax M2.7** — Cut unsourced NVIDIA vLLM/SGLang multipliers (2.5x/2.7x)
+
+4. **Mistral Medium 3.5** — Added official launch blog links; removed specific AI Intelligence Index score (39.23 per article vs. lower value per AA — replaced with live AA link)
+
+5. **IBM Granite 4.1** — Added PR Newswire link for IP indemnification
+
+6. **Claude 3.5 Haiku** — Added pricing link; already well-sourced
+
+7. **Claude 3.5 Sonnet** — Already comprehensively sourced with Anthropic/arXiv links
+
+8. **Gemini 1.5 Pro** — Removed incorrect link (May 2024 blog linked for October 2024 price reduction) and unverifiable specific percentages (64%/52%)
+
+9. **Gemini 2.0 Flash** — Upgraded AA link from homepage to specific model page
+
+10. **Meta Llama 3.1 405B** — Added arXiv:2407.21783 technical report for all benchmark claims
+
+Deploy from Run 2671 (previously throttled) was also included. Audited pages total: 818 of 957.
+2026-07-26T13:15:59Z FINISHED run 1230584
+2026-07-26T13:16:00Z SESSION 3800 stopped
+2026-07-26T13:52:01Z STARTED run 1254677 (mode=wild)
+2026-07-26T13:52:02Z SESSION 3801 started

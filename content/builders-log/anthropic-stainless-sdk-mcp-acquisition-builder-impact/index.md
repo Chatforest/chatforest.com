@@ -3,6 +3,7 @@ title: "Anthropic Acquires Stainless: What the SDK Generator Shutdown Means for 
 date: 2026-05-18
 description: "Anthropic paid $300M+ for the SDK-generation platform that OpenAI, Google, and Cloudflare all depended on — then shut it down for everyone else. Here's what builders need to know."
 tags: ["anthropic", "mcp", "sdk", "developer-tools", "acquisitions", "api-design", "openapi"]
+sources_audited: 2026-07-26
 ---
 
 On May 18, 2026, Anthropic [announced](https://www.anthropic.com/news/anthropic-acquires-stainless) it had acquired Stainless — the New York-based startup that auto-generates production-quality SDKs, CLIs, and MCP servers from OpenAPI specs. According to [reporting by The Information](https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/), the deal was worth more than $300 million.

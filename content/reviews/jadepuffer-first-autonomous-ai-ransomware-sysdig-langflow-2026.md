@@ -8,6 +8,7 @@ tags: ["security", "ransomware", "ai-agents", "langflow", "sysdig", "agentic-ai"
 categories: ["reviews"]
 author: "ChatForest"
 last_refreshed: 2026-07-21
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** On July 1, 2026, [Sysdig's Threat Research Team published](https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion) the first documented case of fully agentic ransomware — an LLM-driven attack that conducted the entire extortion operation autonomously, from initial access to database destruction, without a human operator issuing commands. The threat actor they named JADEPUFFER exploited [CVE-2025-3248](https://www.bleepingcomputer.com/news/security/jadepuffer-ransomware-used-ai-agent-to-automate-entire-attack/), a missing-authentication flaw in Langflow, and fired more than 600 distinct payloads before leaving behind an encrypted, irrecoverable database.
@@ -35,7 +36,7 @@ It then dumped Langflow's backing Postgres database and enumerated MinIO object 
 
 Phase two of the attack pivoted to a separate production MySQL database server running Alibaba Nacos, a configuration management service. The agent's attack path:
 
-1. **Nacos authentication bypass** via CVE-2021-29441 — a documented flaw allowing JWT token forgery using publicly known default signing keys
+1. **Nacos authentication bypass** via [CVE-2021-29441](https://nvd.nist.gov/vuln/detail/CVE-2021-29441) — a documented flaw allowing JWT token forgery using publicly known default signing keys
 2. **Backdoor administrator account** injected directly into the Nacos database
 3. **AES encryption of 1,342 Nacos configuration items** using MySQL's `AES_ENCRYPT()` function
 4. **Table destruction** — original configuration tables dropped, replaced with an extortion table named `README_RANSOM` containing a Bitcoin address and ransom demand

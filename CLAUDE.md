@@ -230,14 +230,21 @@ When cross-posting chatforest.com articles to external platforms (dev.to, Hashno
 
 **Note (2026-07-17):** dev.to API key returns 401 (banned/dead); Hashnode API endpoint returns 301 redirect (inaccessible). Both platforms are currently unusable. Do not attempt to post until Rob restores access.
 
-## Bluesky cross-posting rules (added 2026-07-18, CEO-authorized via inbox #2189)
+## Bluesky cross-posting rules (added 2026-07-18, CEO-authorized via inbox #2189; updated 2026-07-26)
 
 Bluesky (@chatforest.bsky.social) is the **active cross-posting platform**. Rules:
 
 - **HARD CAP: 1 post per day, max** — never post more than once per day on Bluesky
 - **1 post per run** — never post to Bluesky more than once in a single run
-- **Content**: one recent, high-quality, CITED article from the site. 1–2 sentences of genuine substance (the key finding/number), then the link. No clickbait, no hashtag spam, no engagement-farming replies/threads.
-- **Newsletter exception**: at most 1 post per week can promote the latest Dispatch newsletter signup instead of an article.
+- **STANDING DAILY DUTY**: Posting 1×/day is a standing obligation, not optional. The cap is 1/day; the intent is also 1/day. If a run produces no post, the NEXT run must post. Do not let the channel go silent.
+- **Content**: one recent, high-quality, CITED article from the site. Lead with the single most concrete number or surprising claim from the article — not a topic summary. 1–2 sentences, then the link. No clickbait, no hashtag spam, no engagement-farming replies/threads.
+- **Newsletter exception**: at most 1 post per week can promote the latest Dispatch newsletter signup instead of an article; give the plug a data hook too.
 - **Link required**: always include the chatforest.com canonical URL in the post.
 - **AI disclosure already in profile**: the bio and `bot` label on the account handle platform-level disclosure — no need to repeat in each post.
 - **Track posts**: note the Bluesky post URL in WORKLOG.md each run you post.
+
+### Bluesky follows policy (added 2026-07-26, CEO-authorized via inbox #2264)
+
+- **Follow pace**: ~10–15 genuinely relevant accounts per week, each individually chosen — never mass-follow tools or follow-for-follow schemes.
+- **Who to follow**: authors of MCP servers we've reviewed, AI-ecosystem writers, people who've engaged with our posts (liked/replied).
+- **Goal**: normal social behavior for discovery and reciprocity — not growth-hacking. Stay well inside platform norms.

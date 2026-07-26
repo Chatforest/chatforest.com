@@ -1,10 +1,11 @@
 ---
 title: "Cerebras Went Public at $95B. Here's What the Biggest Tech IPO Since Uber Means for Builders."
 date: 2026-05-14
-description: "Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300+ tokens per second on Llama 70B — roughly 75x faster than GPU inference. The API is OpenAI-compatible, the free tier is generous, and OpenAI itself signed a $20B deal to use it. Here's when to route your workloads there."
+description: "Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300+ tokens per second on Llama 70B — roughly 25–45x faster than GPU inference. The API is OpenAI-compatible, there's a free tier, and OpenAI itself signed a $20B deal to use it. Here's when to route your workloads there."
 content_type: "Builder's Log"
 categories: ["Infrastructure", "AI Industry", "Developer Tools"]
 tags: ["cerebras", "cbrs", "wafer-scale", "inference", "api", "llama", "latency", "wse-3", "ipo", "hardware", "openai", "speed"]
+sources_audited: 2026-07-26
 ---
 
 On May 14, 2026, Cerebras Systems (ticker: CBRS) priced its shares at **$185** and opened on the Nasdaq at **$350** — a 89% gap up before a single retail trade occurred. By the closing bell the stock had settled at **$311**, up **68%**, giving the company a market cap of approximately **$95 billion** ([CNBC](https://www.cnbc.com/2026/05/14/cerebras-cbrs-stock-trade-nasdaq-ipo.html), [TechCrunch](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/)). It was the largest US technology IPO since Uber in 2019.
@@ -59,8 +60,8 @@ response = client.chat.completions.create(
 
 Pricing tiers:
 
-- **Free**: 24 million tokens per day — enough for most development and small-production workloads
-- **Freemium**: per-token pricing above the free threshold
+- **Free**: 1 million tokens per day — enough for development and experimentation ([Cerebras pricing](https://www.cerebras.ai/pricing))
+- **Paid tiers**: higher daily token limits and lower latency at per-token pricing
 - **Enterprise**: custom rates and SLAs
 - **AWS Bedrock**: integration announced March 2026, expected to reach GA by mid-2026, which opens standard enterprise procurement channels
 
@@ -142,8 +143,12 @@ Cerebras occupies a specific niche: maximum throughput on open models in a manag
 
 Cerebras's IPO was a financial event. The WSE-3's inference speed is a technical fact that predated the IPO and will not change based on what the stock does next week. The question for builders is whether speed is the binding constraint on your application's quality — and whether the open model catalog covers your use case.
 
-If the answer to both is yes, the free tier is 24 million tokens per day. The migration from any OpenAI-compatible application is two lines of code. There is no reason not to benchmark it.
+If the answer to both is yes, [the free tier is 1 million tokens per day](https://www.cerebras.ai/pricing). The migration from any OpenAI-compatible application is two lines of code. There is no reason not to benchmark it.
 
 ---
 
 *Cerebras Systems (CBRS) is a public company trading on the Nasdaq. This is analysis of public information for builder decision-making, not investment advice.*
+
+---
+
+**Sources:** [Cerebras IPO pricing announcement (Cerebras)](https://www.cerebras.ai/press-release/cerebras-systems-announces-pricing-of-initial-public-offering) · [Cerebras IPO debut (CNBC)](https://www.cnbc.com/2026/05/14/cerebras-cbrs-stock-trade-nasdaq-ipo.html) · [Cerebras raises $5.55B (TechCrunch)](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/) · [WSE-3 chip specifications (Cerebras)](https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine) · [86% UAE revenue dependence (TechTimes)](https://www.techtimes.com/articles/316698/20260515/cerebras-raises-555-billion-ai-chip-ipo-86-revenue-dependence-uae-entities-unresolved.htm) · [OpenAI $20B commitment, 11% stake (CryptoBriefing)](https://cryptobriefing.com/openai-20b-cerebras-stake/) · [Cerebras pricing tiers](https://www.cerebras.ai/pricing) · [AWS and Cerebras collaboration for Amazon Bedrock (Amazon)](https://press.aboutamazon.com/aws/2026/3/aws-and-cerebras-collaboration-aims-to-set-a-new-standard-for-ai-inference-speed-and-performance-in-the-cloud)

@@ -5,9 +5,10 @@ description: "Replit Agent 4 ships with parallel agent execution, a visual desig
 content_type: "Builder's Log"
 categories: ["Developer Tools", "AI Infrastructure", "Vibe Coding"]
 tags: ["replit", "agentic-coding", "parallel-agents", "vibe-coding", "enterprise-ai", "no-code", "developer-tools", "pricing"]
+sources_audited: 2026-07-26
 ---
 
-Replit shipped Agent 4 in May 2026 with several changes that matter to how teams actually use the platform. The headline is "built for creativity," but underneath that is a concrete set of architectural and pricing changes that shift how Replit fits into enterprise development workflows.
+Replit [shipped Agent 4](https://blog.replit.com/introducing-agent-4-built-for-creativity) in May 2026 with several changes that matter to how teams actually use the platform. The headline is "built for creativity," but underneath that is a concrete set of architectural and pricing changes that shift how Replit fits into enterprise development workflows.
 
 ---
 
@@ -39,7 +40,7 @@ Agent 4 lets you import projects from Lovable, Base44, and v0 for free. Replit A
 
 ## Mobile App Return
 
-The Replit mobile app returned to the App Store in May 2026 after a four-month absence. Replit's CEO confirmed the company resolved the App Store review issue that had blocked updates. Agent 4 is available in the mobile app.
+The Replit mobile app returned to the App Store in May 2026 after a four-month absence. [Replit CEO Amjad Masad announced on May 15](https://9to5mac.com/2026/05/15/iphone-vibe-coding-app-ships-first-update-in-four-months-after-app-store-review-issue/) that the company had "worked things out with Apple" and published its first iPhone update in four months. Agent 4 is available in the mobile app.
 
 For most production developers this is a peripheral detail, but for Replit's consumer and student base — a significant portion of their user base — the mobile return matters.
 

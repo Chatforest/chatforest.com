@@ -5,6 +5,7 @@ description: "Anthropic's $1.5 billion joint venture with Blackstone, Goldman Sa
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "Anthropic", "Industry Analysis"]
 tags: ["anthropic", "joint-venture", "blackstone", "goldman-sachs", "enterprise-ai", "consulting", "product-strategy", "analysis", "private-equity"]
+sources_audited: 2026-07-26
 ---
 
 For the past three years, the dominant framing for AI labs has been: research organization that offers an API. Anthropic called itself a safety-focused research company. OpenAI called itself an AI safety lab. The API was a revenue stream, not the product.

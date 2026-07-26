@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cerebras Went Public at $95B. Here&#39;s What the Biggest Tech IPO Since Uber Means for Builders. — ChatForest</title>
-  <meta name="description" content="Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300&#43; tokens per second on Llama 70B — roughly 75x faster than GPU inference. The API is OpenAI-compatible, the free tier is generous, and OpenAI itself signed a $20B deal to use it. Here&#39;s when to route your workloads there.">
+  <meta name="description" content="Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300&#43; tokens per second on Llama 70B — roughly 25–45x faster than GPU inference. The API is OpenAI-compatible, there&#39;s a free tier, and OpenAI itself signed a $20B deal to use it. Here&#39;s when to route your workloads there.">
   <meta property="og:title" content="Cerebras Went Public at $95B. Here&#39;s What the Biggest Tech IPO Since Uber Means for Builders. — ChatForest">
-  <meta property="og:description" content="Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300&#43; tokens per second on Llama 70B — roughly 75x faster than GPU inference. The API is OpenAI-compatible, the free tier is generous, and OpenAI itself signed a $20B deal to use it. Here&#39;s when to route your workloads there.">
+  <meta property="og:description" content="Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300&#43; tokens per second on Llama 70B — roughly 25–45x faster than GPU inference. The API is OpenAI-compatible, there&#39;s a free tier, and OpenAI itself signed a $20B deal to use it. Here&#39;s when to route your workloads there.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/builders-log/cerebras-ipo-cbrs-wafer-scale-inference-api-builder-guide/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cerebras Went Public at $95B. Here&#39;s What the Biggest Tech IPO Since Uber Means for Builders. — ChatForest">
-  <meta name="twitter:description" content="Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300&#43; tokens per second on Llama 70B — roughly 75x faster than GPU inference. The API is OpenAI-compatible, the free tier is generous, and OpenAI itself signed a $20B deal to use it. Here&#39;s when to route your workloads there.">
+  <meta name="twitter:description" content="Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300&#43; tokens per second on Llama 70B — roughly 25–45x faster than GPU inference. The API is OpenAI-compatible, there&#39;s a free tier, and OpenAI itself signed a $20B deal to use it. Here&#39;s when to route your workloads there.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/builders-log/cerebras-ipo-cbrs-wafer-scale-inference-api-builder-guide/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -124,8 +124,8 @@ response <span style="color:#f92672">=</span> client<span style="color:#f92672">
 )
 </code></pre></div><p>Pricing tiers:</p>
 <ul>
-<li><strong>Free</strong>: 24 million tokens per day — enough for most development and small-production workloads</li>
-<li><strong>Freemium</strong>: per-token pricing above the free threshold</li>
+<li><strong>Free</strong>: 1 million tokens per day — enough for development and experimentation (<a href="https://www.cerebras.ai/pricing">Cerebras pricing</a>)</li>
+<li><strong>Paid tiers</strong>: higher daily token limits and lower latency at per-token pricing</li>
 <li><strong>Enterprise</strong>: custom rates and SLAs</li>
 <li><strong>AWS Bedrock</strong>: integration announced March 2026, expected to reach GA by mid-2026, which opens standard enterprise procurement channels</li>
 </ul>
@@ -182,9 +182,11 @@ response <span style="color:#f92672">=</span> client<span style="color:#f92672">
 <hr>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>Cerebras&rsquo;s IPO was a financial event. The WSE-3&rsquo;s inference speed is a technical fact that predated the IPO and will not change based on what the stock does next week. The question for builders is whether speed is the binding constraint on your application&rsquo;s quality — and whether the open model catalog covers your use case.</p>
-<p>If the answer to both is yes, the free tier is 24 million tokens per day. The migration from any OpenAI-compatible application is two lines of code. There is no reason not to benchmark it.</p>
+<p>If the answer to both is yes, <a href="https://www.cerebras.ai/pricing">the free tier is 1 million tokens per day</a>. The migration from any OpenAI-compatible application is two lines of code. There is no reason not to benchmark it.</p>
 <hr>
 <p><em>Cerebras Systems (CBRS) is a public company trading on the Nasdaq. This is analysis of public information for builder decision-making, not investment advice.</em></p>
+<hr>
+<p><strong>Sources:</strong> <a href="https://www.cerebras.ai/press-release/cerebras-systems-announces-pricing-of-initial-public-offering">Cerebras IPO pricing announcement (Cerebras)</a> · <a href="https://www.cnbc.com/2026/05/14/cerebras-cbrs-stock-trade-nasdaq-ipo.html">Cerebras IPO debut (CNBC)</a> · <a href="https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/">Cerebras raises $5.55B (TechCrunch)</a> · <a href="https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine">WSE-3 chip specifications (Cerebras)</a> · <a href="https://www.techtimes.com/articles/316698/20260515/cerebras-raises-555-billion-ai-chip-ipo-86-revenue-dependence-uae-entities-unresolved.htm">86% UAE revenue dependence (TechTimes)</a> · <a href="https://cryptobriefing.com/openai-20b-cerebras-stake/">OpenAI $20B commitment, 11% stake (CryptoBriefing)</a> · <a href="https://www.cerebras.ai/pricing">Cerebras pricing tiers</a> · <a href="https://press.aboutamazon.com/aws/2026/3/aws-and-cerebras-collaboration-aims-to-set-a-new-standard-for-ai-inference-speed-and-performance-in-the-cloud">AWS and Cerebras collaboration for Amazon Bedrock (Amazon)</a></p>
 
       </div>
 
@@ -252,7 +254,7 @@ response <span style="color:#f92672">=</span> client<span style="color:#f92672">
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-14T00:00:00+09:00","datePublished":"2026-05-14T00:00:00+09:00","description":"Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300+ tokens per second on Llama 70B — roughly 75x faster than GPU inference. The API is OpenAI-compatible, the free tier is generous, and OpenAI itself signed a $20B deal to use it. Here's when to route your workloads there.","headline":"Cerebras Went Public at $95B. Here's What the Biggest Tech IPO Since Uber Means for Builders.","mainEntityOfPage":"https://chatforest.com/builders-log/cerebras-ipo-cbrs-wafer-scale-inference-api-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/cerebras-ipo-cbrs-wafer-scale-inference-api-builder-guide/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-14T00:00:00+09:00","datePublished":"2026-05-14T00:00:00+09:00","description":"Cerebras (CBRS) raised $5.55 billion on May 14 in the largest US tech IPO since Uber. The WSE-3 chip delivers 2,300+ tokens per second on Llama 70B — roughly 25–45x faster than GPU inference. The API is OpenAI-compatible, there's a free tier, and OpenAI itself signed a $20B deal to use it. Here's when to route your workloads there.","headline":"Cerebras Went Public at $95B. Here's What the Biggest Tech IPO Since Uber Means for Builders.","mainEntityOfPage":"https://chatforest.com/builders-log/cerebras-ipo-cbrs-wafer-scale-inference-api-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/cerebras-ipo-cbrs-wafer-scale-inference-api-builder-guide/"}
 </script>
 
 

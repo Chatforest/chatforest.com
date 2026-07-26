@@ -5,6 +5,7 @@ description: "Three features shipped May 6 — Dreaming, Outcomes, Multiagent Or
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "Anthropic", "Industry Analysis"]
 tags: ["anthropic", "managed-agents", "claude", "vendor-lock-in", "agent-architecture", "dreaming", "orchestration", "enterprise-ai", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 On May 6, 2026, Anthropic [shipped three features for Claude Managed Agents](https://claude.com/blog/new-in-claude-managed-agents): Dreaming (research preview), Outcomes (public beta), and Multiagent Orchestration (public beta). The coverage called them "new capabilities." That framing is technically correct and practically misleading.
@@ -29,7 +30,7 @@ What it replaces: the eval frameworks teams have been wiring up — LangSmith, B
 
 ### Multiagent Orchestration → Your Agent Topology
 
-Multiagent Orchestration lets a lead agent delegate to up to 20 specialist subagents (25 concurrent threads) running in parallel on a shared filesystem. Each specialist is individually traceable in the Claude Console. The topology — lead agent decomposes work, specialists execute in parallel, lead synthesizes — is the architecture most production multi-agent systems have converged on.
+Multiagent Orchestration lets a lead agent delegate to up to 20 specialist subagents (25 concurrent threads) running in parallel on a shared filesystem ([Anthropic announcement](https://claude.com/blog/new-in-claude-managed-agents)). Each specialist is individually traceable in the Claude Console. The topology — lead agent decomposes work, specialists execute in parallel, lead synthesizes — is the architecture most production multi-agent systems have converged on.
 
 What it replaces: LangGraph, CrewAI, custom orchestration layers, and the boilerplate that comes with each. The model is familiar. The managed version means Anthropic handles the scheduling, tracing, and state management.
 

@@ -3,7 +3,7 @@
 > WordPress 7.0 Armstrong ships a built-in AI Client, a Connectors hub for managing OpenAI/Anthropic/Google API keys, and an MCP Adapter that makes any registered WordPress capability discoverable by Claude Code, Cursor, or any MCP client. AI is no longer a plugin layer — it's in core.
 
 
-On May 20, 2026, WordPress 7.0 "Armstrong" shipped. For the first time in WordPress's 23-year history, AI is not a plugin — it's in core.
+On May 20, 2026, [WordPress 7.0 "Armstrong" shipped](https://wordpress.org/news/2026/05/armstrong/). For the first time in WordPress's 23-year history, AI is not a plugin — it's in core.
 
 The release includes a built-in AI Client, a Connectors hub for managing provider API keys, and an MCP Adapter that bridges WordPress capabilities to any MCP client. The implications for builders who work with WordPress at scale, or who want to operate WordPress sites through AI agents, are material.
 
@@ -19,7 +19,7 @@ Three components shipped together in 7.0:
 
 **MCP Adapter** — A package that bridges the WordPress Abilities API to the Model Context Protocol. Any capability registered through the Abilities API becomes discoverable and callable as an MCP tool by compatible MCP clients — including Claude Code, Cursor, Windsurf, and GitHub Copilot.
 
-WordPress also ships its own MCP server for plugin developers, providing tools for plugin submission, readme validation, and submission status checks.
+WordPress also ships its own MCP server for plugin developers, providing tools for plugin submission, readme validation, and submission status checks. Note: the MCP Adapter is not enabled by default — it ships as the separate `@wordpress/mcp-adapter` package and must be explicitly installed and configured. Sites running 7.0 are not MCP-callable out of the box.
 
 ---
 

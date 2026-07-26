@@ -5,6 +5,7 @@ description: "Vercel Labs released Zero, an experimental systems language whose 
 content_type: "Builder's Log"
 categories: ["Developer Tools", "AI Infrastructure", "Programming Languages"]
 tags: ["vercel", "programming-languages", "ai-agents", "agentic-coding", "compiler", "developer-tools", "vercel-labs", "experimental"]
+sources_audited: 2026-07-26
 ---
 
 On May 15, 2026, Vercel Labs released Zero — an experimental systems programming language with one unusual design constraint: its compiler was built for AI agents, not human engineers.

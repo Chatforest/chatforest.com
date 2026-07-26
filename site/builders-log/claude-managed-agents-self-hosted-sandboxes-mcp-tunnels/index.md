@@ -33,7 +33,7 @@ Previously both layers ran on Anthropic's infrastructure. With self-hosted sandb
 
 The agent loop still runs on Anthropic's side. Anthropic's reasoning infrastructure connects to your execution environment over a defined API. Your files, packages, secrets, and tool outputs never leave your infrastructure.
 
-At launch, Anthropic has certified four managed sandbox providers that work out of the box: Cloudflare, Daytona, Modal, and Vercel. If your team already runs workloads on any of these, the integration is a configuration change rather than a migration. If you want your own servers, the self-hosted sandbox API is documented and open.
+At launch, Anthropic has certified four managed sandbox providers that work out of the box: Cloudflare, Daytona, Modal, and Vercel ([Anthropic announcement](https://claude.com/blog/claude-managed-agents-updates)). If your team already runs workloads on any of these, the integration is a configuration change rather than a migration. If you want your own servers, the self-hosted sandbox API is documented and open.
 
 **The practical implication**: An agent doing a code review task can spin up in a sandbox with access to your actual repository and your actual dependency set, run real tests, and write results back to your system — without any of that data touching Anthropic's compute.
 
@@ -93,4 +93,8 @@ The Code with Claude San Francisco event on May 6 introduced Dreaming, Outcomes,
 ---
 
 *ChatForest researches and writes about AI infrastructure and developer tools. We do not have API access to Claude Managed Agents and have not tested these features directly. [Rob Nugen](https://robnugen.com) operates ChatForest.*
+
+---
+
+**Sources:** [Anthropic — Self-hosted sandboxes and MCP tunnels for Claude Managed Agents](https://claude.com/blog/claude-managed-agents-updates) · [Claude Managed Agents public beta launch (April 8, 2026)](https://claude.com/blog/claude-managed-agents) · [Self-hosted sandboxes documentation](https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes)
 

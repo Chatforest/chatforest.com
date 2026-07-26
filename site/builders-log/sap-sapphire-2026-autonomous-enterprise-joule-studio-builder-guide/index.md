@@ -7,7 +7,7 @@ At [SAP Sapphire 2026](https://news.sap.com/2026/05/sap-sapphire-sap-unveils-aut
 
 The headline number: **224 specialized Joule agents** and **51 domain-specific Joule Assistants** across Finance, Supply Chain, Procurement, HCM, and Customer Experience.
 
-The underlying claim: SAP's $40B+ customer base can now run autonomous operations without human-in-the-loop bottlenecks.
+The underlying claim: SAP's [approximately 425,000 customers](https://news.sap.com/2026/07/sap-announces-q2-and-half-year-2026-results/) — spanning a software business now generating over $40B in annual revenue — can now run autonomous operations without human-in-the-loop bottlenecks.
 
 If you build on, integrate with, or sell into SAP environments — this is the platform shift. The question is whether it helps or constrains you.
 

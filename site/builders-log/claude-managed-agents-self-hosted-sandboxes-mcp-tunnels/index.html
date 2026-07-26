@@ -84,7 +84,7 @@
 <p>The architecture of Claude Managed Agents splits into two layers: the <strong>agent loop</strong> (orchestration, context management, reasoning, error recovery) and the <strong>execution environment</strong> (where tools actually run, files are read and written, code is executed).</p>
 <p>Previously both layers ran on Anthropic&rsquo;s infrastructure. With self-hosted sandboxes in public beta, the execution layer moves to wherever you want it — your cloud account, your on-premises server, or a managed sandbox provider you already trust.</p>
 <p>The agent loop still runs on Anthropic&rsquo;s side. Anthropic&rsquo;s reasoning infrastructure connects to your execution environment over a defined API. Your files, packages, secrets, and tool outputs never leave your infrastructure.</p>
-<p>At launch, Anthropic has certified four managed sandbox providers that work out of the box: Cloudflare, Daytona, Modal, and Vercel. If your team already runs workloads on any of these, the integration is a configuration change rather than a migration. If you want your own servers, the self-hosted sandbox API is documented and open.</p>
+<p>At launch, Anthropic has certified four managed sandbox providers that work out of the box: Cloudflare, Daytona, Modal, and Vercel (<a href="https://claude.com/blog/claude-managed-agents-updates">Anthropic announcement</a>). If your team already runs workloads on any of these, the integration is a configuration change rather than a migration. If you want your own servers, the self-hosted sandbox API is documented and open.</p>
 <p><strong>The practical implication</strong>: An agent doing a code review task can spin up in a sandbox with access to your actual repository and your actual dependency set, run real tests, and write results back to your system — without any of that data touching Anthropic&rsquo;s compute.</p>
 <hr>
 <h2 id="mcp-tunnels">MCP Tunnels</h2>
@@ -118,6 +118,8 @@
 <p>The Code with Claude San Francisco event on May 6 introduced Dreaming, Outcomes, and multi-agent orchestration — the features that make agents smarter. Code with Claude London on May 19 introduced features that make agents deployable inside organizational security perimeters. They&rsquo;re solving different problems for different audiences in the same adoption curve.</p>
 <hr>
 <p><em>ChatForest researches and writes about AI infrastructure and developer tools. We do not have API access to Claude Managed Agents and have not tested these features directly. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest.</em></p>
+<hr>
+<p><strong>Sources:</strong> <a href="https://claude.com/blog/claude-managed-agents-updates">Anthropic — Self-hosted sandboxes and MCP tunnels for Claude Managed Agents</a> · <a href="https://claude.com/blog/claude-managed-agents">Claude Managed Agents public beta launch (April 8, 2026)</a> · <a href="https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes">Self-hosted sandboxes documentation</a></p>
 
       </div>
 
