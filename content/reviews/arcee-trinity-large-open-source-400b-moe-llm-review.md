@@ -6,6 +6,7 @@ tags: ["llm", "open-source", "reasoning", "enterprise-ai", "api", "thinking-mode
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-26
 ---
 
 Thirty people. Twenty million dollars. Thirty-three days.
@@ -24,7 +25,7 @@ Arcee AI was founded in 2023 by **Jacob Solawetz**, **Brian Benedict**, and **Ma
 
 That background matters. Arcee built deep expertise in the techniques that turn a capable pre-trained model into a production-grade enterprise system — and then applied those techniques to a model they trained from scratch.
 
-Funding: Arcee raised a **$24M Series A** led by Emergence Capital, followed by a strategic round from **Prosperity7 Ventures** (Aramco's fund), **M12** (Microsoft's Venture Fund), Hitachi Ventures, Wipro, JC2 Ventures, and Samsung Next. Total disclosed capital is approximately **$50M**. The company's investors are notable: M12 makes Microsoft a strategic backer, Prosperity7 adds Gulf sovereign capital, and Aramco Ventures signals interest from the energy sector for sovereign AI infrastructure.
+Funding: Arcee raised a [**$24M Series A** led by Emergence Capital](https://www.arcee.ai/blog/arcee-ai-secures-24m-series-a-to-transform-the-landscape-of-small-language-models), followed by a [strategic round from **Prosperity7 Ventures** (Aramco's fund), **M12** (Microsoft's Venture Fund), Hitachi Ventures, Wipro, JC2 Ventures, and Samsung Next](https://www.arcee.ai/blog/arcee-ai-announces-new-strategic-funding-round). Total disclosed capital is approximately **$50M**. The company's investors are notable: M12 makes Microsoft a strategic backer, Prosperity7 adds Gulf sovereign capital, and Aramco Ventures signals interest from the energy sector for sovereign AI infrastructure.
 
 At the time Trinity Large launched in January 2026, Arcee had approximately **30 employees**. That headcount figure drew significant attention in the press — TechCrunch ran a piece titled ["Tiny startup Arcee AI built a 400B-parameter open source LLM from scratch to best Meta's Llama"](https://techcrunch.com/2026/01/28/tiny-startup-arcee-ai-built-a-400b-open-source-llm-from-scratch-to-best-metas-llama/) within days of launch.
 

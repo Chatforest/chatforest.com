@@ -11,7 +11,7 @@ If you have read a comparative evaluation of AI video tools in 2025 or 2026, you
 
 Runway's cultural positioning has always been different from pure-engineering shops. The platform was used in post-production workflows for the film *Everything Everywhere All at Once* (2022), an unusual early validation that put Runway in the same conversation as professional editing tools rather than experimental toys. From 2022 through 2024, the company built its reputation in two directions simultaneously: advancing raw video generation quality through a steady generation cadence (Gen-1, Gen-2, Gen-3), and maintaining a usable product that professional editors and directors could actually integrate into real workflows.
 
-**Gen-4** (March 2025) marked a decisive capability jump. The central innovation was character and world consistency — the ability to generate multiple clips featuring the same characters, locations, and objects in different scenes without per-generation fine-tuning, using only a single reference image. **Gen-4.5** (December 2025) extended this with improved physics realism, motion coherence, and prompt adherence, holding the top position on the independent Video Arena Elo leaderboard at launch.
+**Gen-4** ([March 2025](https://runway.com/research/introducing-runway-gen-4)) marked a decisive capability jump. The central innovation was character and world consistency — the ability to generate multiple clips featuring the same characters, locations, and objects in different scenes without per-generation fine-tuning, using only a single reference image. **Gen-4.5** ([December 2025](https://runway.com/research/introducing-runway-gen-4.5)) extended this with improved physics realism, motion coherence, and prompt adherence, holding the top position on the independent Video Arena Elo leaderboard at launch.
 
 Total funding: $860 million. Valuation at the February 2026 Series E: [$5.3 billion](https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/).
 
@@ -88,7 +88,7 @@ The generation where Runway addressed the problem that had been the central obst
 
 Gen-4 introduced **Reference images** — a system allowing users to upload one to three reference images (characters, objects, locations) that the model commits to maintaining throughout generated video. The world consistency capability means characters look the same across all clips generated with the same reference, and locations maintain their defining visual features across scenes. This is the "world consistency" naming Runway used in its March 2025 launch announcement.
 
-The practical implication is a step toward AI video that can maintain a consistent fictional world across sequences — a prerequisite for anything resembling narrative filmmaking rather than single-shot demonstrations. Runway described the benchmark as 95%+ facial consistency across 10+ second clips.
+The practical implication is a step toward AI video that can maintain a consistent fictional world across sequences — a prerequisite for anything resembling narrative filmmaking rather than single-shot demonstrations. Runway [described the benchmark as 95%+ facial consistency](https://runway.com/research/introducing-runway-gen-4) across 10+ second clips.
 
 Output specifications at Gen-4: 720p or 1080p, 24fps, 5-second or 10-second clips, 4K rendering available on Pro and Unlimited plans.
 
@@ -98,7 +98,7 @@ Released approximately one month after Gen-4. Maintains comparable output qualit
 
 **Gen-4.5 — December 1, 2025**
 
-Runway's most capable model at the time of this review's writing, and the generation that briefly held the top position on the independent Video Arena Elo leaderboard — the most widely cited third-party ranking for AI video models — at launch in December 2025, with an Elo rating in the ~1,247 range at peak.
+Runway's most capable model at the time of this review's writing, and the generation that briefly held the top position on the independent [Video Arena Elo leaderboard](https://www.etcentric.org/runway-gen-4-5-video-debuts-at-no-1-on-video-arena-chart/) — the most widely cited third-party ranking for AI video models — at launch in December 2025, with an [Elo rating in the ~1,247 range](https://www.cnbc.com/2025/12/01/runway-gen-4-5-video-model-google-open-ai.html) at peak.
 
 Key improvements over Gen-4:
 - **Motion coherence**: objects, people, and environments move with more physically plausible weight, momentum, and trajectory
@@ -128,7 +128,7 @@ Gen-4.5 is available on Standard, Pro, Unlimited, and Enterprise plans. Credit c
 
 ## Pricing: Competitively Positioned for Professionals
 
-Runway's pricing structure is broadly comparable to Pika and Luma Dream Machine at the consumer tier, with professional and enterprise tiers that reflect the platform's positioning toward production workflows.
+Runway's [pricing structure](https://runway.com/pricing) is broadly comparable to Pika and Luma Dream Machine at the consumer tier, with professional and enterprise tiers that reflect the platform's positioning toward production workflows.
 
 **Free plan**
 125 one-time credits (not recurring). Access to Gen-4 Turbo for image-to-video. 720p, watermarked exports. No recurring access — the free tier is a trial, not a sustained free option.
@@ -148,7 +148,7 @@ At Gen-4.5 pricing (25 credits/second), 625 credits per month supports approxima
 Pricing by negotiation; contact through runwayml.com/enterprise. Includes everything in Unlimited plus: developer API access, SSO/SAML, dedicated account management, custom SLAs, negotiated credit volumes. Publicly reported enterprise contracts range from $500 to $3,000+/month depending on volume.
 
 **API (developer access)**
-$0.12 per second of generated video. This maps to approximately $0.60 for a 5-second clip and $1.20 for a 10-second clip. Gen-4.5 at API pricing is meaningfully more expensive per second than Gen-4 Turbo — for high-volume production, the choice between quality tiers has material cost implications. Runway's API documentation is available through docs.dev.runwayml.com.
+$0.12 per second of generated video. This maps to approximately $0.60 for a 5-second clip and $1.20 for a 10-second clip. Gen-4.5 at API pricing is meaningfully more expensive per second than Gen-4 Turbo — for high-volume production, the choice between quality tiers has material cost implications. Runway's [API documentation and pricing](https://docs.dev.runwayml.com/guides/pricing/) are available through docs.dev.runwayml.com.
 
 **Enterprise integrations:**
 - **Adobe Firefly**: Gen-4.5 available within the Adobe Firefly application for Pro-tier subscribers; direct export to Premiere Pro and After Effects. This is the integration that gives Runway the clearest path into professional post-production workflows.

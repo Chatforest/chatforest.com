@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-12
+sources_audited: 2026-07-26
 ---
 
 On December 12, 2024, Microsoft Research published [the Phi-4 technical report (arXiv:2412.08905)](https://arxiv.org/abs/2412.08905) alongside model weights on Hugging Face. The 14-billion-parameter model had benchmark numbers that looked improbable: 80.4% on MATH competition problems, outperforming GPT-4o on GPQA Diamond, and matching or beating LLaMA 3.3 70B on most benchmarks — with less than one-fifth the parameters.
@@ -24,7 +25,7 @@ This review covers the Phi-4 family — the 14B base, the 3.8B mini, the multimo
 
 The Phi series did not start with a product ambition. It started with a research question: how much does data quality matter?
 
-**Microsoft Research** is one of the largest corporate AI research labs in the world, operating since 1991 with locations in Redmond, Cambridge, Beijing, Montreal, and New York. The lab has historically published openly and contributed to foundational research across machine learning, natural language processing, and computer vision. The relationship with OpenAI — in which Microsoft invested approximately $13 billion in tranches from 2019 through 2023 — gave Microsoft access to the world's leading frontier models while Microsoft Research continued its own independent work.
+**Microsoft Research** is one of the largest corporate AI research labs in the world, operating since 1991 with locations in Redmond, Cambridge, Beijing, Montreal, and New York. The lab has historically published openly and contributed to foundational research across machine learning, natural language processing, and computer vision. The relationship with OpenAI — in which [Microsoft invested approximately $13 billion in tranches from 2019 through 2023](https://www.cnbc.com/2024/08/10/rise-of-openai-microsofts-13-billion-artificial-intelligence-bet.html) — gave Microsoft access to the world's leading frontier models while Microsoft Research continued its own independent work.
 
 The Phi project began in this context as a small-scale experiment that turned into a consistent research program. The name is not an acronym — it was chosen with deliberate simplicity.
 
@@ -132,7 +133,7 @@ The unified multimodal member — text, image, and audio in a single model.
 
 The Mixture-of-LoRAs design is architecturally interesting. Rather than training separate models for each modality or a single joint model, Phi-4-multimodal uses a shared Phi-4-mini backbone with switchable LoRA adapters that activate per modality. This allows the base language model to remain coherent while giving each modality specialized processing.
 
-**Performance highlight:** On the HuggingFace Open ASR leaderboard (March 2025), Phi-4-multimodal ranked first among all models with a word error rate of 6.14%, surpassing WhisperV3 and SeamlessM4T-v2-Large. The speech recognition performance in particular stood out as a practical deployment differentiator.
+**Performance highlight:** On the [HuggingFace Open ASR leaderboard](https://huggingface.co/microsoft/Phi-4-multimodal-instruct) (March 2025), Phi-4-multimodal ranked first among all models with a word error rate of 6.14%, surpassing WhisperV3 and SeamlessM4T-v2-Large. The speech recognition performance in particular stood out as a practical deployment differentiator.
 
 ---
 

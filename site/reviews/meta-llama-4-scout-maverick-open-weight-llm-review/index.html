@@ -77,7 +77,7 @@
 <p>The business logic for open weights is multi-layered:</p>
 <p><strong>Commoditize the competitors&rsquo; moat.</strong> If frontier models are freely available, the closed-API providers lose their primary competitive advantage. Meta doesn&rsquo;t sell AI APIs and doesn&rsquo;t need to. Making AI a commodity benefits Meta&rsquo;s actual revenue lines.</p>
 <p><strong>Ecosystem branding.</strong> The Llama 4 Community License requires &ldquo;Built with Llama&rdquo; attribution in products. Every startup that builds on Llama becomes a marketing vehicle for Meta&rsquo;s AI capabilities.</p>
-<p><strong>Platform positioning.</strong> Meta AI, powered by Llama 4, is now deployed across 3+ billion users — the largest AI deployment by user count, exceeding ChatGPT&rsquo;s 500+ million reported users. The open release validates quality through community scrutiny in a way proprietary releases cannot.</p>
+<p><strong>Platform positioning.</strong> Meta AI, powered by Llama 4, is now deployed across <a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence/">3+ billion users</a> — the largest AI deployment by user count. The open release validates quality through community scrutiny in a way proprietary releases cannot.</p>
 <p><strong>Talent attraction.</strong> Open-weight models attract researchers who want their work to have public impact. Publishing weights at scale is a recruiting tool.</p>
 <hr>
 <h2 id="what-llama-4-actually-is-the-model-architecture">What Llama 4 Actually Is: The Model Architecture</h2>
@@ -245,7 +245,7 @@
 </table>
 <h3 id="what-the-benchmarks-actually-mean">What the Benchmarks Actually Mean</h3>
 <p>Maverick is a genuinely capable model. Its GPQA Diamond score of <strong>69.8%</strong> is meaningful — exceeding GPT-4o&rsquo;s ~53.6% by a substantial margin and sitting between GPT-4.1 (~66%) and Gemini 2.5 Pro (~86%). The MMMU scores are real multimodal capability. LiveCodeBench at 43.4% is respectable for an open-weight model.</p>
-<p>But it is not a frontier model in the sense that Gemini 2.5 Pro or Claude 3.7 Sonnet with extended thinking are frontier. <strong>Artificial Analysis&rsquo;s Intelligence Index</strong> — an independent multi-benchmark composite — scored Maverick <strong>18/100</strong> (ranked 27th of 43 systems; median was 23) versus Gemini 2.5 Pro&rsquo;s <strong>35/100</strong>. That gap is real, not a rounding difference.</p>
+<p>But it is not a frontier model in the sense that Gemini 2.5 Pro or Claude 3.7 Sonnet with extended thinking are frontier. <a href="https://artificialanalysis.ai/models/llama-4-maverick"><strong>Artificial Analysis&rsquo;s Intelligence Index</strong></a> — an independent multi-benchmark composite — scored Maverick <strong>18/100</strong> (ranked 27th of 43 systems; median was 23) versus Gemini 2.5 Pro&rsquo;s <strong>35/100</strong>. That gap is real, not a rounding difference.</p>
 <p>The honest framing: Maverick is the best open-weight model available when it launched (DeepSeek V3 is a reasonable comparison, and Meta&rsquo;s claim that Maverick achieves &ldquo;comparable results to DeepSeek V3 on reasoning and coding&rdquo; is broadly credible). It is not the best model overall. The distinction matters for users who might accept inference cost and privacy compromises of closed APIs in exchange for better quality — and for users where the open-weight availability itself is the point.</p>
 <hr>
 <h2 id="the-lmarena-controversy">The LMArena Controversy</h2>
@@ -307,7 +307,7 @@
 </tbody>
 </table>
 <p>At $0.15/$0.60, Maverick is priced comparably to commodity tiers and significantly below GPT-4o ($2.50/$10) or Claude Sonnet equivalents. For high-volume workloads where quality is &ldquo;good enough,&rdquo; this price point is genuinely attractive.</p>
-<p><strong>Inference speed</strong> (Artificial Analysis measurements): Scout averages <strong>143 tokens/second</strong> output (top 5 among all evaluated systems); Maverick averages <strong>109 tokens/second</strong> (top 3). MoE architectures are fast at inference because only the active parameters participate per token — the routing mechanism effectively makes inference cheaper than a dense model of equivalent total scale.</p>
+<p><strong>Inference speed</strong> (<a href="https://artificialanalysis.ai/models">Artificial Analysis</a> measurements): Scout averages <strong>143 tokens/second</strong> output (top 5 among all evaluated systems); Maverick averages <strong>109 tokens/second</strong> (top 3). MoE architectures are fast at inference because only the active parameters participate per token — the routing mechanism effectively makes inference cheaper than a dense model of equivalent total scale.</p>
 <h3 id="the-license-what-you-can-and-cant-do">The License: What You Can and Can&rsquo;t Do</h3>
 <p>The <strong>Llama 4 Community License Agreement</strong> is not an open-source license by OSI definition. Key terms:</p>
 <ul>

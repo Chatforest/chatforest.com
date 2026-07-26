@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-12
+sources_audited: 2026-07-26
 ---
 
 On the morning of January 27, 2025, DeepSeek's iOS and Android apps climbed to the top of the US App Store. By the close of trading that day, NVIDIA's stock had fallen 17%. At that point, it was the largest single-day market cap loss for any company in US stock market history — [approximately $589 billion erased](https://www.cnbc.com/2025/01/27/nvidia-sheds-almost-600-billion-in-market-cap-biggest-drop-ever.html) ([Forbes also confirmed the historic loss](https://www.forbes.com/sites/dereksaul/2025/01/27/biggest-market-loss-in-history-nvidia-stock-sheds-nearly-600-billion-as-deepseek-shakes-ai-darling/)). The trigger was not a product failure or an earnings miss. It was a research paper and a cost disclosure: DeepSeek had trained a frontier-class language model for approximately $5.57 million.
@@ -254,8 +255,8 @@ The R1 paper is significant beyond the model's benchmark performance. It demonst
 
 | Model | Input | Output | Notes |
 |-------|-------|--------|-------|
-| DeepSeek V3 (API) | $0.27/M | $1.10/M | General-purpose |
-| DeepSeek R1 (API) | $0.55/M | $2.19/M | Reasoning model |
+| [DeepSeek V3 (API)](https://platform.deepseek.com/api-docs/pricing) | $0.27/M | $1.10/M | General-purpose |
+| [DeepSeek R1 (API)](https://platform.deepseek.com/api-docs/pricing) | $0.55/M | $2.19/M | Reasoning model |
 | OpenAI o1 | $15/M | $60/M | Closed weights |
 | Claude 3.7 Sonnet | $3/M | $15/M | Closed weights |
 | GPT-4o | $2.50/M | $10/M | Closed weights |

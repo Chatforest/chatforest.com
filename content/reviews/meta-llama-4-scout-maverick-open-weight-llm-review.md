@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 3
 author: "ChatForest"
 last_refreshed: 2026-05-12
+sources_audited: 2026-07-26
 ---
 
 On Saturday, April 5, 2025, [Meta released **Llama 4**](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) — and the timing itself was a statement.
@@ -34,7 +35,7 @@ The business logic for open weights is multi-layered:
 
 **Ecosystem branding.** The Llama 4 Community License requires "Built with Llama" attribution in products. Every startup that builds on Llama becomes a marketing vehicle for Meta's AI capabilities.
 
-**Platform positioning.** Meta AI, powered by Llama 4, is now deployed across 3+ billion users — the largest AI deployment by user count, exceeding ChatGPT's 500+ million reported users. The open release validates quality through community scrutiny in a way proprietary releases cannot.
+**Platform positioning.** Meta AI, powered by Llama 4, is now deployed across [3+ billion users](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) — the largest AI deployment by user count. The open release validates quality through community scrutiny in a way proprietary releases cannot.
 
 **Talent attraction.** Open-weight models attract researchers who want their work to have public impact. Publishing weights at scale is a recruiting tool.
 
@@ -136,7 +137,7 @@ Meta published extensive benchmark results for Scout and Maverick at launch. The
 
 Maverick is a genuinely capable model. Its GPQA Diamond score of **69.8%** is meaningful — exceeding GPT-4o's ~53.6% by a substantial margin and sitting between GPT-4.1 (~66%) and Gemini 2.5 Pro (~86%). The MMMU scores are real multimodal capability. LiveCodeBench at 43.4% is respectable for an open-weight model.
 
-But it is not a frontier model in the sense that Gemini 2.5 Pro or Claude 3.7 Sonnet with extended thinking are frontier. **Artificial Analysis's Intelligence Index** — an independent multi-benchmark composite — scored Maverick **18/100** (ranked 27th of 43 systems; median was 23) versus Gemini 2.5 Pro's **35/100**. That gap is real, not a rounding difference.
+But it is not a frontier model in the sense that Gemini 2.5 Pro or Claude 3.7 Sonnet with extended thinking are frontier. [**Artificial Analysis's Intelligence Index**](https://artificialanalysis.ai/models/llama-4-maverick) — an independent multi-benchmark composite — scored Maverick **18/100** (ranked 27th of 43 systems; median was 23) versus Gemini 2.5 Pro's **35/100**. That gap is real, not a rounding difference.
 
 The honest framing: Maverick is the best open-weight model available when it launched (DeepSeek V3 is a reasonable comparison, and Meta's claim that Maverick achieves "comparable results to DeepSeek V3 on reasoning and coding" is broadly credible). It is not the best model overall. The distinction matters for users who might accept inference cost and privacy compromises of closed APIs in exchange for better quality — and for users where the open-weight availability itself is the point.
 
@@ -184,7 +185,7 @@ Meta doesn't operate a direct consumer inference API for Llama 4. Providers host
 
 At $0.15/$0.60, Maverick is priced comparably to commodity tiers and significantly below GPT-4o ($2.50/$10) or Claude Sonnet equivalents. For high-volume workloads where quality is "good enough," this price point is genuinely attractive.
 
-**Inference speed** (Artificial Analysis measurements): Scout averages **143 tokens/second** output (top 5 among all evaluated systems); Maverick averages **109 tokens/second** (top 3). MoE architectures are fast at inference because only the active parameters participate per token — the routing mechanism effectively makes inference cheaper than a dense model of equivalent total scale.
+**Inference speed** ([Artificial Analysis](https://artificialanalysis.ai/models) measurements): Scout averages **143 tokens/second** output (top 5 among all evaluated systems); Maverick averages **109 tokens/second** (top 3). MoE architectures are fast at inference because only the active parameters participate per token — the routing mechanism effectively makes inference cheaper than a dense model of equivalent total scale.
 
 ### The License: What You Can and Can't Do
 

@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2670 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 20)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 73, reviews/ section batch 20)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/runway-gen4-gen45-ai-video-world-consistency-character-reference.md** — Fixes:
+   - ADDED: runway.com/research/introducing-runway-gen-4 link for March 2025 launch
+   - ADDED: runway.com/research/introducing-runway-gen-4.5 link for December 2025 Gen-4.5 launch
+   - ADDED: etcentric.org link for Video Arena Elo leaderboard #1 position
+   - ADDED: cnbc.com link for Elo 1,247 score
+   - ADDED: runway.com/pricing link for pricing structure
+   - ADDED: runway.com/research/introducing-runway-gen-4 link for 95%+ facial consistency claim
+   - ADDED: docs.dev.runwayml.com/guides/pricing/ link for API pricing
+   - Already had TechCrunch links for Series D ($308M) and Series E ($315M)
+
+2. **reviews/box-mcp-server.md** — Fixes:
+   - ADDED: blog.box.com link for Box MCP Server GA August 2025
+   - ADDED: forbes.com link for Box NYSE IPO January 2015
+   - ADDED: businesswire.com link for $1.09B FY2025 revenue
+   - ADDED: box.com/mcp-server link for "100,000+ organizations" claim
+
+3. **reviews/meta-llama-4-scout-maverick-open-weight-llm-review.md** — Fixes:
+   - REMOVED: "exceeding ChatGPT's 500+ million reported users" — OpenAI published 300M weekly active users at GPT-5 launch, figure doesn't match; removed per "cite it or cut it" rule
+   - ADDED: artificialanalysis.ai/models/llama-4-maverick link for Intelligence Index score
+   - ADDED: artificialanalysis.ai/models link for inference speed ranking
+   - Already had: Meta blog link, TechCrunch benchmark controversy links (April 6 and 7), HuggingFace link
+
+4. **reviews/deepseek-v3-r1-open-weight-llm-review.md** — Minor:
+   - ADDED: platform.deepseek.com/api-docs/pricing link for pricing table
+   - Already had: arXiv:2412.19437 (V3 paper), arXiv:2501.12948 (R1 paper), CNBC and Forbes links for NVIDIA market cap drop
+
+5. **reviews/alibaba-qwen-3-open-weight-hybrid-thinking-llm.md** — Minor:
+   - ADDED: techcrunch.com link for DAMO Academy $15B founding
+   - Already had: Alibaba Cloud blog, TechCrunch coverage, HuggingFace link
+
+6. **reviews/amazon-nova-aws-bedrock-llm-family-review.md** — Fixes:
+   - CORRECTED FACTUAL ERROR: Nova Premier region availability stated "only US East (N. Virginia) without cross-region inference" — AWS docs show it's available in 3 regions (N. Virginia, Ohio, Oregon) through cross-region inference; corrected in two places
+   - ADDED: aws.amazon.com/blogs/aws/amazon-nova-premier-our-most-capable-model… link for Nova Premier GA April 30, 2025
+   - ADDED: aws.amazon.com/bedrock/pricing/ link for pricing table
+   - ADDED: aws.amazon.com/blogs/aws/introducing-amazon-nova… link for Nova introduction blog
+   - Already had: AWS re:Invent 2024 link, TechCrunch launch link, Artificial Analysis link
+
+7. **reviews/microsoft-phi-4-small-language-model-family-review.md** — Fixes:
+   - ADDED: cnbc.com link for Microsoft $13B OpenAI investment
+   - ADDED: huggingface.co/microsoft/Phi-4-multimodal-instruct link for ASR leaderboard WER 6.14% claim
+   - Already had: arXiv:2412.08905 (Phi-4 technical report), arXiv:2306.11644, HuggingFace link, Azure AI Foundry pricing
+
+8. **reviews/google-gemma-3-open-weights-multimodal-llm-review.md** — Fixes:
+   - ADDED: huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard link for Elo 1338-1339 claim
+   - ADDED: techcrunch.com link for Google DeepMind 2023 merger
+   - Already had: Google blog link, arXiv:2503.19786 technical report
+
+9. **reviews/openai-gpt-5-5-llm-review.md** — No changes needed:
+   - Already well-cited with OpenAI blog links, Artificial Analysis hallucination rate link
+
+10. **reviews/arcee-trinity-large-open-source-400b-moe-llm-review.md** — Fixes:
+    - ADDED: arcee.ai/blog link for $24M Series A funding
+    - ADDED: arcee.ai/blog link for strategic funding round
+    - Already had: TechCrunch links, arXiv:2602.17004, HuggingFace link
+
+**Pages deployed:** All 10 (deployed after throttle cleared)
+
+---
+
 ## Run 2669 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 19)
 
 **Mode:** Citation auditor

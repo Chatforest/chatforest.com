@@ -15,7 +15,7 @@ The result is the most capable open-weight model family as of mid-2025: matching
 
 **Alibaba** is China's largest e-commerce company and one of its largest cloud providers. Alibaba Cloud (阿里云, Aliyun) is roughly equivalent to AWS in China's domestic market — dominant in cloud infrastructure, with significant international presence across Southeast Asia, the Middle East, and Europe. The company is publicly traded on the New York Stock Exchange and the Hong Kong Stock Exchange.
 
-The **Qwen Team** operates within DAMO Academy (达摩院, Discovery, Adventure, Momentum and Outlook), Alibaba's research organization founded in 2017 with an initial $15 billion commitment over three years. DAMO Academy has published research across AI, quantum computing, fintech, and human-computer interaction. It is not a startup or spin-off — it is a well-resourced corporate research lab with access to Alibaba's cloud infrastructure and business use cases.
+The **Qwen Team** operates within DAMO Academy (达摩院, Discovery, Adventure, Momentum and Outlook), [Alibaba's research organization founded in 2017 with an initial $15 billion commitment over three years](https://techcrunch.com/2017/10/10/alibaba-group-will-invest-15b-into-a-new-global-research-and-development-program/). DAMO Academy has published research across AI, quantum computing, fintech, and human-computer interaction. It is not a startup or spin-off — it is a well-resourced corporate research lab with access to Alibaba's cloud infrastructure and business use cases.
 
 Alibaba has strong competitive motivation to invest in frontier AI. Its domestic rivals — ByteDance (Doubao), Baidu (ERNIE Bot), and Tencent (Hunyuan) — all have competing model families. Internationally, Alibaba Cloud's ability to offer competitive AI capabilities matters for its positioning against AWS Bedrock, Google Cloud Vertex AI, and Azure OpenAI Service. The Qwen models are both a research project and a commercial product line.
 
@@ -111,7 +111,7 @@ The MoE architecture follows the pattern established by DeepSeek's work, though 
 
 ### Training Data and Scale
 
-Qwen 3's largest models were pretrained on approximately **[36 trillion tokens](https://www.alibabacloud.com/en/press-room/alibaba-introduces-qwen3-setting-new-benchmark)** — more than double the Qwen 2.5 series and nearly 2.5x DeepSeek V3's 14.8 trillion tokens.
+Qwen 3's largest models were pretrained on approximately [**36 trillion tokens**](https://www.alibabacloud.com/en/press-room/alibaba-introduces-qwen3-setting-new-benchmark) — more than double the Qwen 2.5 series and nearly 2.5x DeepSeek V3's 14.8 trillion tokens.
 
 The training data spans **100+ languages**, with a deliberate emphasis on STEM content, code, and multilingual coverage. Alibaba disclosed that the data pipeline included extensive deduplication, quality filtering, and synthetic data generation for underrepresented domains. The multilingual depth is reflected in the benchmark results: Qwen 3 models perform strongly on Chinese, Japanese, Korean, Arabic, and other non-English evaluations where many Western labs have thinner coverage.
 

@@ -10,9 +10,10 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-12
+sources_audited: 2026-07-26
 ---
 
-On March 12, 2025, [Google released Gemma 3](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/) with a claim that needed unpacking: a 27-billion-parameter open-weights model comparable to Gemini 1.5 Pro. On LMArena's competitive text-only arena, the 27B reached an Elo of 1338–1339, placing it ninth globally and ahead of both Meta's LLaMA 3.1 405B (Elo 1269) and Alibaba's Qwen 72B (Elo 1257).
+On March 12, 2025, [Google released Gemma 3](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/) with a claim that needed unpacking: a 27-billion-parameter open-weights model comparable to Gemini 1.5 Pro. On [LMArena](https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard)'s competitive text-only arena, the 27B reached an Elo of 1338–1339, placing it ninth globally and ahead of both Meta's LLaMA 3.1 405B (Elo 1269) and Alibaba's Qwen 72B (Elo 1257).
 
 That is a meaningful result. A 27B model outperforming a 405B model on blind human preference evaluation is not primarily a story about benchmark engineering — it reflects genuine instruction-following capability and conversational quality.
 
@@ -30,7 +31,7 @@ The Gemma name was first used in February 2024 with the release of Gemma 1 — G
 
 **Gemma 3**, released March 12, 2025, built on this foundation with several additions: 128K context across the mid-to-large sizes, multimodal vision-language capability, a refreshed 256K-vocabulary tokenizer shared with Gemini 2.0, and official quantization-aware training (QAT) variants. It also added smaller sizes — the 270M and 1B — extending the family downward toward edge deployment.
 
-The models are developed and maintained by **Google DeepMind**, the combined research organization formed by the 2023 merger of Google Brain and DeepMind. The [Gemma 3 technical report (arXiv:2503.19786)](https://arxiv.org/abs/2503.19786) describes training on Google's TPU v4p, v5p, and v5e clusters using JAX and ML Pathways.
+The models are developed and maintained by **Google DeepMind**, the combined research organization formed by the [2023 merger of Google Brain and DeepMind](https://techcrunch.com/2023/04/20/google-consolidates-ai-research-divisions-into-google-deepmind/). The [Gemma 3 technical report (arXiv:2503.19786)](https://arxiv.org/abs/2503.19786) describes training on Google's TPU v4p, v5p, and v5e clusters using JAX and ML Pathways.
 
 ---
 

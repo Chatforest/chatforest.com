@@ -245,8 +245,8 @@ The R1 paper is significant beyond the model's benchmark performance. It demonst
 
 | Model | Input | Output | Notes |
 |-------|-------|--------|-------|
-| DeepSeek V3 (API) | $0.27/M | $1.10/M | General-purpose |
-| DeepSeek R1 (API) | $0.55/M | $2.19/M | Reasoning model |
+| [DeepSeek V3 (API)](https://platform.deepseek.com/api-docs/pricing) | $0.27/M | $1.10/M | General-purpose |
+| [DeepSeek R1 (API)](https://platform.deepseek.com/api-docs/pricing) | $0.55/M | $2.19/M | Reasoning model |
 | OpenAI o1 | $15/M | $60/M | Closed weights |
 | Claude 3.7 Sonnet | $3/M | $15/M | Closed weights |
 | GPT-4o | $2.50/M | $10/M | Closed weights |

@@ -5,7 +5,7 @@
 
 Amazon's AI strategy has long looked like a distribution play more than a research bet. AWS hosts Claude via Anthropic's partnership, GPT-4o through Azure's equivalent arrangement, and Llama 4 through Meta's open-weight releases. For years, the implicit message was that AWS customers could access any frontier model — as long as they stayed in the cloud. Amazon was the platform, not the lab.
 
-That posture shifted at [AWS re:Invent 2024](https://aws.amazon.com/blogs/aws/top-announcements-of-aws-reinvent-2024/), when Amazon launched **Amazon Nova**: four in-house language models trained on infrastructure that powers Alexa, Amazon.com search, Amazon Ads, and AWS Marketplace catalog systems. Nova was not a research announcement. It was [a product launch](https://techcrunch.com/2024/12/03/amazon-announces-nova-a-new-family-of-multimodal-ai-models/) backed by years of internal deployment and accompanied by pricing that undercut every comparable model at the time.
+That posture shifted at [AWS re:Invent 2024](https://aws.amazon.com/blogs/aws/top-announcements-of-aws-reinvent-2024/), when Amazon launched **Amazon Nova**: four in-house language models trained on infrastructure that powers Alexa, Amazon.com search, Amazon Ads, and AWS Marketplace catalog systems. Nova was not a research announcement. It was [a product launch](https://techcrunch.com/2024/12/03/amazon-announces-nova-a-new-family-of-multimodal-ai-models/) backed by years of internal deployment and accompanied by [pricing that undercut every comparable model at the time](https://aws.amazon.com/blogs/aws/introducing-amazon-nova-frontier-intelligence-and-industry-leading-price-performance/).
 
 The question Nova raises is not whether Amazon can build competitive models. The question is whether Nova's integration depth with AWS compensates for intelligence benchmarks that trail the frontier. This review examines both sides.
 
@@ -37,7 +37,7 @@ The models were built by Amazon's internal AI teams, not Anthropic or any acquir
 
 **Amazon Nova Pro** is the full-featured mid-range model. 300K context. Text, image, and video input. $0.80 per million input tokens and $3.20 output. Supports supervised fine-tuning and can serve as a student in model distillation pipelines (see below). Speed is adequate for production workloads.
 
-**Amazon Nova Premier** is the flagship, released for general availability on April 30, 2025 — five months after the initial Nova launch. 1M context window. Text, image, and video input. $2.50 per million input tokens and $12.50 output. The pricing places it in the Claude 3.7 Sonnet / GPT-4o tier. Unlike the other v1 models, Premier does **not** support fine-tuning or provisioned throughput — it is the teacher model for distillation, not the student. Available only in US East (N. Virginia) without cross-region inference.
+**Amazon Nova Premier** is the flagship, [released for general availability on April 30, 2025](https://aws.amazon.com/blogs/aws/amazon-nova-premier-our-most-capable-model-for-complex-tasks-and-teacher-for-model-distillation/) — five months after the initial Nova launch. 1M context window. Text, image, and video input. [$2.50 per million input tokens and $12.50 output](https://aws.amazon.com/bedrock/pricing/). The pricing places it in the Claude 3.7 Sonnet / GPT-4o tier. Unlike the other v1 models, Premier does **not** support fine-tuning or provisioned throughput — it is the teacher model for distillation, not the student. Available in US East (N. Virginia), US East (Ohio), and US West (Oregon) through cross-region inference.
 
 | Model | Context | Modalities In | Input Price | Output Price | Speed |
 |-------|---------|--------------|-------------|--------------|-------|
@@ -182,7 +182,7 @@ The strategic bet is on integration lock-in: if an organization's AI pipelines a
 
 2. **10,000-token output cap (v1)**: Restrictive for long-form generation, multi-step reasoning, and complex code generation. Nova 2 Lite addresses this at 65,536 tokens; v1 Pro and Premier do not.
 
-3. **Nova Premier availability**: US East (N. Virginia) only. No cross-region inference. No fine-tuning. Limited to API access.
+3. **Nova Premier availability**: Available in US East (N. Virginia), US East (Ohio), and US West (Oregon) via cross-region inference. No fine-tuning. Limited to API access.
 
 4. **Nova Premier is slow**: 30 tokens/second places it in the bottom quartile across 71 non-reasoning models. Not suitable for real-time applications.
 

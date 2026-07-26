@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-12
+sources_audited: 2026-07-26
 ---
 
 On August 7, 2025, [OpenAI released GPT-5](https://openai.com/index/introducing-gpt-5/) — the first model in the company's history billed as a unified system rather than a single model. The announcement described something architecturally distinct from prior GPT releases: a fast, efficient mode for everyday questions and a deeper reasoning mode for harder problems, with a **real-time router** that decides which to invoke based on conversation type, complexity, tool requirements, and the user's explicit intent. This was not a new idea — other labs had shipped fast and slow variants — but it was OpenAI's first public commitment to this pattern as the base design of their flagship.
