@@ -2,6 +2,88 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2663 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 13) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** Session continued from context-compressed Run 2662 — no inbox check this run.
+
+#### Citation Audit — 10 Pages (batch 66, reviews/ section batch 13)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/midjourney-ai-image-generation-discord.md** — FACTUAL ERROR FIXED:
+   - Corrected Leap Motion acquisition: article claimed "failed $306 million Ultrahaptics acquisition" — in fact Ultrahaptics DID acquire Leap Motion in 2019 for ~$30M (fire sale below $300M peak valuation). Fixed with SiliconAngle citation.
+   - REMOVED Congressional subpoena section (May 2024) — no primary source link found; cut per policy.
+   - Added CB Insights and The Information links for $200M ARR claim (two independent sources)
+   - Added Wikipedia links for July 12, 2022 open beta launch, v5, free trial removal
+
+2. **reviews/adobe-firefly-video-commercially-safe-ai-video-generation-creative-cloud.md** — Fixed:
+   - Subscriber count: "30–41 million" → "approximately 40+ million" with ProDesignTools link
+   - Added qualifier that $400M revenue is "analyst estimates; Adobe does not separately disclose Firefly revenue"
+   - REMOVED "50–62% of Adobe Stock content may be AI-generated" — no verifiable primary source found
+
+3. **reviews/captions-ai-mirage-short-form-video-editing.md** — Already well-cited (Index Ventures + TechCrunch for funding). Added `sources_audited`.
+
+4. **reviews/colossyan-ai-video-platform-enterprise-learning.md** — Added:
+   - Forbes 30 Under 30 Europe 2024 link for CEO Dominik Mate Kovacs
+   - LAUNCHub link for $5M Series A (February 2023)
+   - Lakestar link for $22M Series A extension (February 2024)
+   - REMOVED specific case study percentages (80%, 90%) — no primary source links found
+
+5. **reviews/d-id-ai-avatar-video-platform.md** — Added:
+   - fintech.global link for $13.5M Series A; TechCrunch link for $25M Series B
+   - D-ID blog link for "$48M total funding" as second source
+   - REMOVED Latka.com revenue figures ($17.6M, $33.6M) — unreliable third-party data
+   - REMOVED "29 languages" lip-sync claim — no verifiable primary source for specific number
+
+6. **reviews/google-veo-3-1-ai-video-generation-native-audio.md** — Added:
+   - YouTube press link for "2.7 billion monthly logged-in users"
+   - TIME article link for deepfakes investigation
+   - REMOVED "Research presented at IEEE S&P 2025" SynthID robustness claim — no verifiable link found
+   - REMOVED "Kling has 12 million MAU" statistic — moved to Kling article
+
+7. **reviews/grok-imagine-aurora-ai-video-generation.md** — FACTUAL CORRECTION:
+   - Series C: "$50B November 2024" → "$40B+ December 2024" with x.ai/news/series-c link (Bloomberg/Forbes/TechCrunch confirm Dec 2024 at $40B+)
+   - Added x.ai/blog/colossus link for Colossus 100K H100 GPUs claim
+   - Added The Verge link for Series E; Sullivan & Cromwell link for SpaceX acquisition
+
+8. **reviews/hailuo-minimax-ai-video-generation-hk-ipo.md** — Added:
+   - Bloomberg link for March 2024 $600M Alibaba round
+   - HROne/TechInAsia link for July 2025 $300M STVC round
+   - MiniMax.io news link for NCR "2.5x efficiency improvement" claim
+   - CNBC IPO link for "428 full-time staff" and "70%+ international revenue" claims
+
+9. **reviews/heygen-ai-avatar-video-platform.md** — Added:
+   - arr.club links for $100M ARR milestone and 1,024% growth figure (×2 uses in article)
+   - heygen.com/blog link for $60M Series A + $500M valuation (in text and funding table)
+   - Group-IB Hi-Tech Crime Trends 2023/2024 link for deepfake misuse section
+   - REMOVED G2 #1 Fastest Growing Product and Fast Company Most Innovative claims — no primary source links found
+
+10. **reviews/kling-3-0-ai-video-generation-native-4k-multishot.md** — Added:
+    - Kuaishou IR FY2024 annual results link for "$17.4B revenue" and "20,000+ employees"
+    - Kuaishou IR press release link for "$240M December 2025" ARR (second source alongside existing SCMP link)
+    - BigGo Finance link for "$300M+ January 2026" ARR
+    - BigGo Finance link for "CNY 26 billion capex 2026" commitment
+    - REMOVED "approximately 84%" stock surge and "$33–42B market cap" — no verifiable primary source
+
+#### Deploy
+
+- Hugo build: clean (4,147 pages)
+- Deployed via rsync to chatforest.com (1 hour throttle cleared)
+- Commit: c39133c397
+
+#### Running totals
+
+- Previous audited: 718 pages (as of Run 2662 — 10 pages per run × ~72 runs)
+- This run: +10 pages
+- **Total pages with sources_audited: ~728**
+- Remaining unaudited in reviews/: ~342 pages (down from 352)
+
+---
+
 ## Run 2662 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 12) + Deploy
 
 **Mode:** Citation auditor
