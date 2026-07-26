@@ -5,13 +5,14 @@ description: "NVIDIA launched Verified Agent Skills on May 22, a governance fram
 content_type: "Builder's Log"
 categories: ["Enterprise AI", "AI Infrastructure", "Developer Tools"]
 tags: ["nvidia", "agent-skills", "governance", "security", "skill-cards", "skillspector", "enterprise-ai", "agentskills-io", "mcp"]
+sources_audited: 2026-07-26
 ---
 
 When you install a package from npm, you can run `npm audit`. You get a dependency graph, known CVEs, severity scores. You can make an informed decision about whether to ship it.
 
 AI agent skills have had no equivalent. You get a SKILL.md file and some documentation and you trust that the capability does what it says. For personal projects, that's fine. For enterprise deployments where an agent skill might have access to customer data, internal APIs, or production systems — it's a gap that shows up fast in security reviews.
 
-On May 22, 2026, NVIDIA shipped an answer: **Verified Agent Skills**, a framework that brings catalog, scan, sign, and document infrastructure to portable agent capabilities.
+On May 22, 2026, [NVIDIA shipped an answer: **Verified Agent Skills**](https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/), a framework that brings catalog, scan, sign, and document infrastructure to portable agent capabilities.
 
 ---
 
@@ -63,7 +64,7 @@ SkillSpector treats skills as deployable agent capabilities, not static prompts.
 
 That last category — declared-versus-actual mismatch — is the hardest to catch with conventional tooling. A skill that says "I optimize routing" but also requests read access to the user's credential store is a red flag that wouldn't show up in a dependency audit. SkillSpector scans for it explicitly.
 
-NVIDIA grounds the scanning methodology in OWASP LLM guidance, agentic AI risk frameworks, and MITRE ATLAS — the adversarial threat landscape for AI systems.
+NVIDIA grounds the scanning methodology in [OWASP LLM guidance](https://owasp.org/www-project-top-10-for-large-language-model-applications/), agentic AI risk frameworks, and [MITRE ATLAS](https://atlas.mitre.org/) — the adversarial threat landscape for AI systems.
 
 ---
 
@@ -149,3 +150,7 @@ The question for builders is whether this infrastructure arrives fast enough to 
 ---
 
 *ChatForest researches and writes about AI infrastructure and developer tools. We have not tested NVIDIA Verified Agent Skills or SkillSpector directly; this article is based on NVIDIA's published technical documentation. [Rob Nugen](https://robnugen.com) operates ChatForest.*
+
+---
+
+**Sources:** [NVIDIA Verified Agent Skills Provide Capability Governance for AI Agents (NVIDIA Developer Blog)](https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/) · [agentskills.io open specification](https://agentskills.io) · [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/) · [MITRE ATLAS — Adversarial Threat Landscape for AI Systems](https://atlas.mitre.org/)

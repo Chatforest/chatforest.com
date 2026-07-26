@@ -5,6 +5,7 @@ description: "MCP crossed 97 million monthly installs and moved to a neutral Lin
 content_type: "Builder's Log"
 categories: ["MCP", "Agent Infrastructure", "Open Standards", "Industry Analysis"]
 tags: ["mcp", "model-context-protocol", "linux-foundation", "aaif", "anthropic", "openai", "block", "agents-md", "goose", "open-standards", "protocol-governance", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 In November 2024, Anthropic released the Model Context Protocol as an open standard. It was their protocol — their spec, their GitHub repo, their call whether to accept or reject contributions. Eighteen months later, [MCP crossed 97 million monthly SDK downloads](https://ai2.work/blog/model-context-protocol-hits-97m-installs-as-linux-foundation-takes-over) and [Anthropic handed the keys to a neutral foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation).
@@ -25,9 +26,9 @@ This is the same governance pattern that made HTTP, Linux, and Kubernetes durabl
 
 ## The Growth Numbers Behind the Decision
 
-MCP launched in November 2024 with roughly 2 million monthly SDK downloads. By March 2026 — sixteen months — that figure crossed 97 million. That is one of the fastest open-source protocol adoption curves on record.
+MCP launched in November 2024. By early 2026, [that figure crossed 97 million monthly SDK downloads](https://ai2.work/blog/model-context-protocol-hits-97m-installs-as-linux-foundation-takes-over) — one of the fastest open-source protocol adoption curves on record.
 
-By the time of the AAIF announcement, every major AI provider was shipping MCP-compatible tooling. The count of published MCP servers crossed 10,000. Enterprise deployments at Fortune 500 companies had moved from pilots to production. The [Atlassian Teamwork Graph](/builders-log/atlassian-teamwork-graph-context-layer/) runs over MCP. Microsoft's [Agent 365 governance layer](/builders-log/microsoft-agent-365-enterprise-governance-layer/) ships MCP-compatible tooling. Notion's External Agent API uses it.
+By the time of the AAIF announcement, every major AI provider was shipping MCP-compatible tooling. [More than 10,000 MCP servers had been published](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation). Enterprise deployments at Fortune 500 companies had moved from pilots to production. The [Atlassian Teamwork Graph](/builders-log/atlassian-teamwork-graph-context-layer/) runs over MCP. Microsoft's [Agent 365 governance layer](/builders-log/microsoft-agent-365-enterprise-governance-layer/) ships MCP-compatible tooling. Notion's External Agent API uses it.
 
 At 97 million monthly installs, MCP had already won. The Linux Foundation move was not a pivot — it was the ratification of a fait accompli. You don't move something to neutral governance unless it's valuable enough that other parties will contribute to its upkeep.
 
@@ -39,7 +40,7 @@ The number also explains the timing. Early in a standard's life, keeping control
 
 **goose**, from Block, is an open-source agent runtime that builds on MCP. It is local-first, extensible, and explicitly designed as a reference implementation for what an MCP-native agent looks like. The AAIF contribution positions goose as the canonical example of building on the protocol rather than around it.
 
-**AGENTS.md** is the quieter contribution, and arguably the most immediately practical for most builders. It is a file-based convention — you put an `AGENTS.md` in your repository root, and AI coding agents that support it read it for project-specific context: how to run tests, which directories to avoid, how the codebase is organized, what conventions apply. More than 60,000 open-source projects had adopted it by the time it moved to AAIF. Agent frameworks that support it include Amp, Codex, Cursor, Devin, Factory, Gemini CLI, GitHub Copilot, Jules, and VS Code.
+**AGENTS.md** is the quieter contribution, and arguably the most immediately practical for most builders. It is a file-based convention — you put an `AGENTS.md` in your repository root, and AI coding agents that support it read it for project-specific context: how to run tests, which directories to avoid, how the codebase is organized, what conventions apply. [More than 60,000 open-source projects](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) had adopted it by the time it moved to AAIF. Agent frameworks that support it include Amp, Codex, Cursor, Devin, Factory, Gemini CLI, GitHub Copilot, Jules, and VS Code.
 
 The parallel to `.gitignore` or `.editorconfig` is apt. A simple file format that solves a coordination problem, adopted fast because it costs nothing to add and immediately helps any agent that reads the repo.
 

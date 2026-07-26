@@ -5,6 +5,7 @@ description: "At Team '26, Atlassian opened its 150-billion-connection Teamwork 
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "MCP", "Industry Analysis"]
 tags: ["atlassian", "rovo", "mcp", "teamwork-graph", "enterprise-ai", "context-layer", "jira", "agent-architecture", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 On May 6, 2026 — the same day Anthropic shipped Dreaming, Outcomes, and Multiagent Orchestration — [Atlassian announced](https://www.atlassian.com/blog/company-news/teamwork-graph-team-26) something quieter but strategically significant: they opened the Teamwork Graph to external AI agents.

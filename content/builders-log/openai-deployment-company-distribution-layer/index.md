@@ -5,6 +5,7 @@ description: "On May 12, one week after Anthropic announced a consulting JV with
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "OpenAI", "Industry Analysis"]
 tags: ["openai", "deployment", "consulting", "enterprise-ai", "forward-deployed-engineers", "platform-race", "tomoro", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 On May 6, 2026, Anthropic announced a [$1.5B joint venture with Blackstone, Goldman Sachs, and Hellman & Friedman](/builders-log/anthropic-consulting-jv-blackstone-goldman/) to embed Claude inside private equity portfolio companies as a consulting entity. The coverage called it a strategic partnership. That framing is accurate and incomplete.
@@ -19,7 +20,7 @@ The framing matters here. OpenAI did not launch a consulting division. They laun
 
 This is meaningfully different from traditional management consulting. McKinsey or Accenture advise you and leave. OpenAI's FDEs rebuild the workflow and stay to operate it. The deliverable is a running system, not a report.
 
-Tomoro, the firm OpenAI is acquiring, already operates at this level. In 12 weeks, Tomoro built an in-game support agent for Supercell handling 110 million users. Their client list includes Fidelity International, Virgin Atlantic, Tesco, the NBA, and Red Bull. These are production deployments at scale, not pilots.
+Tomoro, the firm OpenAI is acquiring, already operates at this level. In 12 weeks, [Tomoro built an in-game support agent for Supercell handling 110 million users](https://thenextweb.com/news/tomoro-openai-deployment-company-consulting). Their client list includes Fidelity International, Virgin Atlantic, Tesco, the NBA, and Red Bull. These are production deployments at scale, not pilots.
 
 OpenAI didn't build a services capability from scratch. They bought one that was already running.
 

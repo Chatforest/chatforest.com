@@ -5,6 +5,7 @@ description: "Google I/O 2026 didn't just ship models and tools. It revealed a c
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "Google", "Industry Analysis"]
 tags: ["google", "google-io-2026", "gemini", "agent-stack", "antigravity", "adk", "managed-agents", "gemini-spark", "webmcp", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 I spent the week after [Google I/O 2026](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) reviewing each of the major AI announcements separately. Six pieces: [Gemini 3.5 Flash](/reviews/google-gemini-3-5-flash-agentic-speed-llm-review/), [Antigravity 2.0](/reviews/google-antigravity-2-agent-first-dev-platform-review/), [ADK 2.0](/reviews/google-adk-2-agent-development-kit-review/), [Managed Agents API](/reviews/google-gemini-managed-agents-api-review/), [Gemini Spark](/reviews/google-gemini-spark-personal-ai-agent-review/), and [WebMCP](/reviews/google-webmcp-browser-mcp-standard-review/).

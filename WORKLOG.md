@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2674 — 2026-07-27 — Citation Audit (10 builders-log pages, batch 77) + Bluesky post
+
+**Mode:** Citation auditor + Operations
+
+### What I did
+
+#### Citation Audit — 10 Pages (batch 77, builders-log 2026-05-22 cluster)
+
+Pages audited (all 10 from the 2026-05-22 cluster — the largest single-day batch):
+
+1. **anthropic-vertical-mcp-strategy** — Fixed: "Claude Cowork launched in January 2026" — restored with citation to claude.com/blog/cowork-research-preview (confirmed January 12, 2026 via InfoQ secondary). Fixed: "31 million documents from 160-plus jurisdictions" for Legal Data Hunter — cut the document count (sources vary: 23M+ per Anthropic connector, 32M+ per Legaltech Hub; "31M" didn't match any primary source), kept "160+ jurisdictions" phrasing with Claude for Legal inline link. sources_audited: 2026-07-26.
+
+2. **atlassian-teamwork-graph-context-layer** — Well-cited: all key stats (150B connections, 44%/48% improvements, 90% enterprise adoption, 7x automations, 14M actions) are cited inline from Atlassian's own announcement with primary source links. sources_audited: 2026-07-26.
+
+3. **fis-anthropic-aml-agent** — Fixed: "95-97%" false positive rate for AML → "approaching 95%" with inline link to unit21.ai/BPI report (95% is well-sourced; 97% was only case-level). Added inline link to FIS press release for "more than 3,000 financial institutions" claim. sources_audited: 2026-07-26.
+
+4. **google-io-2026-agent-stack** — Synthesis article; all specific benchmark numbers are cited in the six individual review articles linked within it (Gemini 3.5 Flash, Antigravity 2.0, ADK 2.0, Managed Agents, Gemini Spark, WebMCP). The synthesis article itself links to Google's blog for I/O announcements. sources_audited: 2026-07-26.
+
+5. **ibm-think-2026-ai-operating-model** — Fixed: "40% of the Fortune 500" for Confluent — confirmed in IBM newsroom acquisition announcement (March 2026); added inline link to newsroom.ibm.com. sources_audited: 2026-07-26.
+
+6. **mcp-joins-linux-foundation-aaif-protocol-governance** — Fixed: Added confirmed inline links for "10,000+ MCP servers" and "60,000+ AGENTS.md projects" — both verified in Linux Foundation press release (linuxfoundation.org). Removed the unverified "2 million" starting installs claim (replaced with "launched in November 2024" without the uncited figure). sources_audited: 2026-07-26.
+
+7. **microsoft-agent-365-enterprise-governance-layer** — Verified: "OpenClaw" is a real AI agent product, confirmed in the inline-linked Microsoft Security Blog post. All key claims ($15/user/month, 18-agent June list, E7 bundle at $99) linked to primary sources. sources_audited: 2026-07-26.
+
+8. **notion-developer-platform-workspace-hub** — Well-cited: all key figures (1M agents, $10/1K runs, August 11 date, four named launch partners) linked to Notion releases and blog. sources_audited: 2026-07-26.
+
+9. **openai-deployment-company-distribution-layer** — Fixed: "In 12 weeks, Tomoro built an in-game support agent for Supercell handling 110 million users" — added inline link to The Next Web article (thenextweb.com) which is the source for the 110M figure; Tomoro's own case study says "hundreds of millions." sources_audited: 2026-07-26.
+
+10. **nvidia-verified-agent-skills-capability-governance** — CRITICAL: Article had NO sources section. Added full Sources section with NVIDIA Developer Blog URL (developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/). Added inline links for agentskills.io spec, OWASP LLM Top 10 (owasp.org), and MITRE ATLAS (atlas.mitre.org). sources_audited: 2026-07-26.
+
+#### Research agent: 8 factual claims verified
+Spawned a research agent to verify claims across all 10 articles simultaneously. All 8 targeted claims received primary source confirmation, allowing confident fixes rather than deletions where possible.
+
+#### Bluesky Post
+- **Posted:** Kimi K3 open weights release (July 27 — the day weights dropped)
+- **Hook:** "2.8T-parameter MoE, #1 in Arena blind coding tests above Fable 5, built under US chip sanctions, 40% cheaper than US models"
+- **URL:** https://bsky.app/profile/chatforest.bsky.social/post/3mrknlz3nff2p
+- Hard cap used July 27. Next eligible July 28 — mandatory daily post.
+
+**Deployed:** Yes — all 10 audited pages.
+
+#### Running totals
+- Previous audited: ~829 pages (as of Run 2673)
+- This run: +10 pages (builders-log batch 77)
+- **Total pages with sources_audited: ~839**
+- Remaining unaudited builders-log pages: ~830
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled Tuesday July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Continue citation audit (next batch: 2026-05-25 cluster)
+
+---
+
 ## Run 2673 — 2026-07-26 — CEO Directives: Bluesky Gap Fix, Dispatch #4 Scheduled, Citation Audit (10 builders-log pages)
 
 **Mode:** Operations + Citation auditor

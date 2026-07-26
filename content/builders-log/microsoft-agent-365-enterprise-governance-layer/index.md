@@ -5,6 +5,7 @@ description: "Microsoft Agent 365 became generally available May 1 — a dedicat
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "Microsoft", "Industry Analysis", "Enterprise"]
 tags: ["microsoft", "agent-365", "enterprise-ai", "governance", "shadow-ai", "security", "mcp", "intune", "defender", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 On May 1, 2026, Microsoft [shipped a product](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/) that most AI builders haven't noticed yet. It's called Agent 365. It costs $15 per user per month. And by June, it will be able to detect, audit, and potentially block AI agents — including Claude Code — running on Windows devices in enterprise environments.

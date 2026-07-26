@@ -5,6 +5,7 @@ description: "On May 13, Notion shipped its Developer Platform — Workers, an E
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "Notion", "Industry Analysis", "Developer Tools"]
 tags: ["notion", "developer-platform", "workers", "external-agent-api", "database-sync", "claude-code", "cursor", "codex", "workspace", "coordination-layer", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 On May 13, 2026, Notion [shipped version 3.5 of its platform](https://www.notion.com/releases/2026-05-13). If you use Notion as a docs-and-databases tool, the announcement looked like a developer feature drop. If you are building agents, it looked like Notion staking a claim on territory everyone is fighting over right now: the coordination layer.

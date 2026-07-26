@@ -5,6 +5,7 @@ description: "At Think 2026, IBM announced watsonx Orchestrate as an 'agentic co
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "IBM", "Industry Analysis", "Enterprise AI"]
 tags: ["ibm", "think-2026", "watsonx-orchestrate", "ibm-bob", "sovereign-core", "agentic-control-plane", "enterprise-ai", "multi-agent", "ai-operating-model", "analysis"]
+sources_audited: 2026-07-26
 ---
 
 At its Think 2026 conference on May 5, [IBM announced what it is calling the "AI Operating Model"](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) — a blueprint for how enterprises move from fragmented AI pilots to production-scale agentic systems. The announcement included a next-generation watsonx Orchestrate (agentic control plane, private preview), IBM Sovereign Core (generally available sovereign AI infrastructure), IBM Bob (generally available agentic development partner running on Anthropic Claude and Mistral), and a real-time data foundation built in partnership with Confluent.
@@ -23,7 +24,7 @@ This is not a model company making a model bet. IBM is making an *operating mode
 
 **IBM Concert.** An intelligent operations platform described as providing observability and operations management for AI at scale. IBM framed it as the system for tracking what is happening across your agent fleet — not building the agents, but watching them in production.
 
-**IBM and Confluent.** The partnership brings real-time data streaming into IBM's stack. The stated goal: turn live business events into governed, AI-ready data for agents operating across the enterprise. Confluent powers real-time data for more than 40% of the Fortune 500; IBM's integration puts that data pipeline under the same governance umbrella as Orchestrate.
+**IBM and Confluent.** The partnership brings real-time data streaming into IBM's stack. The stated goal: turn live business events into governed, AI-ready data for agents operating across the enterprise. [Confluent powers real-time data for more than 40% of the Fortune 500](https://newsroom.ibm.com/2026-03-17-ibm-completes-acquisition-of-confluent,-making-real-time-data-the-engine-of-enterprise-ai-and-agents); IBM's integration puts that data pipeline under the same governance umbrella as Orchestrate.
 
 ## The Strategic Bet
 
