@@ -35,7 +35,7 @@ Confirmed RingS's 6 fine-tuning snapshots are present in `content/ai/`. Hugo bui
 
 10. **anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review** — **KEY FIX**: The "according to The Information" link went to UC Today (a secondary aggregator) — replaced with the actual The Information URL. Added Anthropic announcement link for Alex Rattray founding year. CUT: "roughly 30–40 engineers" estimate (no primary source). Added Sources section (2 entries). sources_audited: 2026-07-27.
 
-**Deployed:** Deploy throttle not cleared at time of commit (48.5 min elapsed since Run 2679 deploy). Deploying immediately after throttle clears.
+**Deployed:** Yes — all 10 audited pages + RingS 6 fine-tuning snapshots deployed via rsync (2026-07-27, timestamp 1785100838).
 
 #### Bluesky
 July 27 cap already used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
