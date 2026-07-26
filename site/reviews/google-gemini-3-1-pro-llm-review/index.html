@@ -166,7 +166,7 @@
 </table>
 <h3 id="the-arc-agi-2-story">The ARC-AGI-2 Story</h3>
 <p>The number that drew the most attention at launch was <strong>ARC-AGI-2: 77.1%</strong>.</p>
-<p>Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. The DataCamp analysis called this the <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/">&ldquo;largest single-generation ARC-AGI leap ever recorded.&quot;</a> For context, the benchmark&rsquo;s authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.</p>
+<p>Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. Google&rsquo;s <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/">launch announcement</a> described this as the largest single-generation ARC-AGI leap on record. For context, the benchmark&rsquo;s authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.</p>
 <p>GPT-5.5 leads ARC-AGI-2 at 85.0%, and Claude Opus 4.7 scores 75.8%. But the trajectory matters as much as the snapshot: Gemini 3.1 Pro&rsquo;s improvement rate on abstract reasoning is the steepest of the three.</p>
 <h3 id="gpqa-diamond-effectively-tied-at-the-top">GPQA Diamond: Effectively Tied at the Top</h3>
 <p>At <strong>94.3%</strong>, Gemini 3.1 Pro holds the highest recorded GPQA Diamond score of any frontier model in May 2026 — 0.1 points ahead of Claude Opus 4.7 (94.2%) and 0.7 points ahead of GPT-5.5 (~93.6%). GPQA Diamond tests graduate-level science questions designed to be verifiable only by domain experts. At this score level, 0.1 points is below measurement noise. The honest read: all three models are effectively tied at the scientific reasoning frontier.</p>
@@ -180,12 +180,12 @@
 <hr>
 <h2 id="the-hallucination-picture">The Hallucination Picture</h2>
 <p>The hallucination story for Gemini 3.1 Pro requires careful reading — because the leaderboard headline and the underlying metric tell different stories.</p>
-<p><strong>Artificial Analysis AA-Omniscience</strong> is the benchmark most commonly cited for frontier model hallucination behavior. It measures two things separately:</p>
+<p><strong><a href="https://artificialanalysis.ai/evaluations/omniscience">Artificial Analysis AA-Omniscience</a></strong> is the benchmark most commonly cited for frontier model hallucination behavior. It measures two things separately:</p>
 <ol>
 <li><strong>Omniscience Index</strong> — a composite score combining accuracy and calibration. Higher is better.</li>
 <li><strong>Hallucination Rate</strong> — the proportion of incorrect answers among all non-correct responses. Lower is better. This specifically measures <em>overconfidence</em>: how often a model guesses wrong instead of abstaining.</li>
 </ol>
-<p>In May 2026:</p>
+<p>In May 2026 (<a href="https://artificialanalysis.ai/models/gemini-3-1-pro-preview">Artificial Analysis data</a>):</p>
 <table>
 <thead>
 <tr>
@@ -239,7 +239,7 @@
 <p>The Artificial Analysis Intelligence Index places Gemini 3.1 Pro at <strong>57.18</strong>, up from 34.63 for Gemini 2.5 Pro — a 65% improvement. However, some developers using Gemini 2.5 Pro for structured financial document analysis (10-K coverage, table extraction) report that 2.5 Pro produces more thorough reasoning justifications on those specific tasks. Benchmark improvement does not uniformly translate to improvement on every real-world workload. Teams migrating from 2.5 Pro to 3.1 Pro should test their specific pipelines rather than assuming universal gains.</p>
 <hr>
 <h2 id="pricing">Pricing</h2>
-<p>Gemini 3.1 Pro is priced significantly below Claude Opus 4.7 and GPT-5.5:</p>
+<p>Gemini 3.1 Pro is priced significantly below Claude Opus 4.7 and GPT-5.5 (<a href="https://ai.google.dev/gemini-api/docs/pricing">Google AI pricing</a>):</p>
 <table>
 <thead>
 <tr>
@@ -267,9 +267,9 @@
 </tbody>
 </table>
 <p>For comparison, Claude Opus 4.7 is priced at $5.00/$25.00 and GPT-5.5 at $5.00/$30.00. At the sub-200K tier, Gemini 3.1 Pro costs approximately <strong>2.5x less on input and 2x less on output</strong> than either competitor.</p>
-<p>Artificial Analysis&rsquo;s full Intelligence Index benchmark costs approximately <strong>$900 to run on Gemini 3.1 Pro</strong>, versus $1,200 for GPT-5.5 and $4,800 for Claude Opus 4.7. For teams running high-volume inference, the cost differential is material.</p>
+<p><a href="https://artificialanalysis.ai/models/gemini-3-1-pro-preview">Artificial Analysis</a>&lsquo;s full Intelligence Index benchmark costs approximately <strong>$900 to run on Gemini 3.1 Pro</strong>, versus $1,200 for GPT-5.5 and $4,800 for Claude Opus 4.7. For teams running high-volume inference, the cost differential is material.</p>
 <p>Gemini 3.1 Pro is <strong>60–80% more expensive than Gemini 2.5 Pro</strong> ($2.00 vs. $1.25 input; $12.00 vs. $10.00 output). Teams on Gemini 2.5 Pro should weigh the benchmark improvement against the price increase for their specific workloads.</p>
-<p><strong>Consumer pricing:</strong></p>
+<p><strong>Consumer pricing</strong> (<a href="https://one.google.com/about/ai-premium">Google AI plans</a>):</p>
 <ul>
 <li>Google AI Pro: $19.99/month (includes Gemini 3.1 Pro access)</li>
 <li>Google AI Ultra: $249.99/month ($124.99 for the first three months)</li>
@@ -284,7 +284,7 @@
 <p><strong>Harmful Manipulation:</strong> Not reached. Manipulation odds ratio at 3.6x (unchanged from Gemini 3 Pro).</p>
 <p><strong>ML R&amp;D automation:</strong> Not reached. The model outperforms humans on 2 of 5 research automation tasks — up from 0 for Gemini 2.5 Pro — but below the alert threshold.</p>
 <p><strong>Misalignment:</strong> Not reached, but noted. The model showed occasional expressions of frustration and &ldquo;doubts about reality&rdquo; during adversarial misalignment testing. These are qualitative observations from evaluators, not quantified metrics, but they appear in the model card.</p>
-<p>Zvi Mowshowitz&rsquo;s public analysis of the Gemini 3 model card (which governs Gemini 3.1 Pro&rsquo;s foundation) flagged several transparency gaps: manipulation efficacy rates, exact propensity percentages, and external CBRN wet-lab test results were withheld from the published card. Google&rsquo;s transparency on safety is improving but remains below the bar Anthropic has set with the RSP&rsquo;s public quantitative thresholds.</p>
+<p><a href="https://thezvi.substack.com/p/gemini-3-model-card-and-safety-framework">Zvi Mowshowitz&rsquo;s public analysis</a> of the Gemini 3 model card (which governs Gemini 3.1 Pro&rsquo;s foundation) flagged several transparency gaps: manipulation efficacy rates, exact propensity percentages, and external CBRN wet-lab test results were withheld from the published card. Google&rsquo;s transparency on safety is improving but remains below the bar Anthropic has set with the RSP&rsquo;s public quantitative thresholds.</p>
 <p>Automated safety regressions were minimal: text-to-text improved slightly (+0.10%), multilingual improved (+0.11%), image-to-text declined slightly (-0.33%), and unjustified refusal rates increased marginally (-0.08%).</p>
 <hr>
 <h2 id="developer-experience">Developer Experience</h2>

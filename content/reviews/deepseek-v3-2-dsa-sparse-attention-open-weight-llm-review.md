@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** DeepSeek V3.2 — released December 1, 2025. 671B total parameters / 37B active per token. MoE. 128K context. DSA sparse attention (50% lower long-context API cost vs V3.1). First DeepSeek model to support reasoning-in-tool-use. SWE-bench Verified: 67.8%. LiveCodeBench: 74.1%. AIME 2025: 89.3%. MMLU-Pro: 85.0%. MIT license, open weights on HuggingFace. Pricing: $0.028/M input via DeepSeek API; $0.252/$0.378/M via OpenRouter. Companion to our **[DeepSeek V3 and R1 review](/reviews/deepseek-v3-r1-open-weight-llm-review/)** and **[DeepSeek V4 review](/reviews/deepseek-v4-open-weight-llm-review/)**.
@@ -30,7 +31,7 @@ This review covers V3.2 in full: what it does, what it changed, what V3.2-Specia
 
 Before V3.2, there were four earlier entries in what became the V3 line. Understanding V3.2 requires knowing what preceded it.
 
-**DeepSeek V3 (V3.0)** — December 26, 2024. The original. 671B total / 37B active. Multi-Head Latent Attention (MLA), DeepSeekMoE with 256 experts, DualPipe parallelism, FP8 training, Multi-Token Prediction. 64K context window at launch. MIT license. Training cost: ~$5.57M in disclosed GPU-hours. Benchmarks competitive with GPT-4o and Claude 3.5 Sonnet.
+**DeepSeek V3 (V3.0)** — December 26, 2024. The original. 671B total / 37B active. Multi-Head Latent Attention (MLA), DeepSeekMoE with 256 experts, DualPipe parallelism, FP8 training, Multi-Token Prediction. 64K context window at launch. MIT license. Training cost: [~$5.57M in disclosed GPU-hours](https://arxiv.org/abs/2412.19437) (per the V3 technical report, arXiv:2412.19437). Benchmarks competitive with GPT-4o and Claude 3.5 Sonnet.
 
 **DeepSeek V3.1** — early-to-mid 2025. Context window expanded from 64K to 128K tokens. Post-training optimized for tool use and agent tasks. Stronger multi-step reasoning and tool-augmented capabilities than V3.0. Available via DeepSeek API and HuggingFace.
 

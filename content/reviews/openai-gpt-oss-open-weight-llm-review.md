@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** gpt-oss — released August 5, 2025 by OpenAI. Two sizes: gpt-oss-120b (117B total / 5.1B active per token) and gpt-oss-20b (21B total / 3.6B active per token). MoE architecture. 128K context. Apache 2.0 license. MMLU-Pro: 90.0%. AIME 2025: 97.9% (with tools). SWE-bench Verified: 62.4%. Matches/surpasses o4-mini on several benchmarks. Weights free on Hugging Face; API via OpenRouter at $0.039/$0.18 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -20,7 +21,7 @@ OpenAI went six years without releasing open model weights.
 
 From 2019's GPT-2 — released with staged caution over concerns about misuse — to 2025's gpt-oss, the company's approach to openness was consistent: proprietary weights, API-only access, safety arguments for closed distribution. During that same period, Meta released every version of Llama, Mistral released open weights at frontier scale, DeepSeek open-sourced V3 and R1, and Alibaba's Qwen 3 became a community staple. The open-weight ecosystem built without OpenAI.
 
-Then on August 5, 2025, OpenAI released two models — gpt-oss-120b and gpt-oss-20b — under the Apache 2.0 license. No API required. No usage restrictions beyond the license. Free weights on Hugging Face, same day.
+Then on August 5, 2025, OpenAI [released two models](https://openai.com/index/introducing-gpt-oss/) — gpt-oss-120b and gpt-oss-20b — under the Apache 2.0 license. No API required. No usage restrictions beyond the license. Free weights on Hugging Face, same day. The [official model card](https://arxiv.org/html/2508.10925v1) contains full benchmark details.
 
 The community's reaction was immediate and divided. The models were real and capable. Whether they were enough — after six years — was a different question.
 
@@ -30,7 +31,7 @@ The community's reaction was immediate and divided. The models were real and cap
 
 OpenAI's decision to release open weights in 2025 was not a change of heart. It was a competitive response.
 
-In January 2025, DeepSeek released R1 — a chain-of-thought reasoning model that matched o1-mini on several benchmarks, ran locally on consumer hardware, and was fully open-source under MIT. The release landed like a disruption event in both AI circles and financial markets. Nvidia's stock fell 17% in a single day. OpenAI's API-only business model looked more exposed than it had since GPT-4's release.
+In January 2025, DeepSeek released R1 — a chain-of-thought reasoning model that matched o1-mini on several benchmarks, ran locally on consumer hardware, and was fully open-source under MIT. The release landed like a disruption event in both AI circles and financial markets. [Nvidia's stock fell ~17% in a single day](https://www.cnbc.com/2025/01/27/nvidia-nvda-stock-sell-off-deepseek-ai.html). OpenAI's API-only business model looked more exposed than it had since GPT-4's release.
 
 Qwen 3, released by Alibaba in April 2025, compounded the pressure. A diverse family of open-weight models from a Chinese lab was matching or exceeding many of OpenAI's mid-tier offerings on STEM benchmarks — and running locally.
 

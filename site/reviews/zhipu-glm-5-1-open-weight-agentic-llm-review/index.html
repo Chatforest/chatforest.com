@@ -105,7 +105,7 @@
 <p>SWE-Bench Verified (the older benchmark) tests whether a model can write code that passes an automated test suite for GitHub issues from real open-source repositories. It has been criticized for data contamination risk and for using relatively shallow test coverage.</p>
 <p>SWE-Bench Pro, introduced in late 2025, addresses both complaints: harder issues, more comprehensive test coverage, and a narrower gap between automated-test pass and genuine human judgment. A model that scores well on SWE-Bench Pro is more credibly a good software engineer than one that only scores well on the Verified variant.</p>
 <h3 id="glm-51s-score">GLM-5.1&rsquo;s Score</h3>
-<p>GLM-5.1 scored <strong>58.4% on SWE-Bench Pro</strong> at release on April 7, 2026 — the highest score of any model, closed or open, at that moment.</p>
+<p>GLM-5.1 scored <strong>58.4% on SWE-Bench Pro</strong> at release on April 7, 2026 — the highest score of any model, closed or open, at that moment, per <a href="https://huggingface.co/zai-org/GLM-5.1">the HuggingFace model card</a> and <a href="https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/">MarkTechPost&rsquo;s coverage</a>.</p>
 <p>For context:</p>
 <ul>
 <li>GPT-5.4: 57.7%</li>
@@ -125,6 +125,7 @@
 <p>This aligns with the benchmark profile. The <strong>Terminal-Bench 2.0</strong> score of 63.5% (or 66.5% when scaffolded with Claude Code tools) reflects autonomous terminal task execution — not chatting, not answering questions, but operating in a shell environment across extended sessions. The <strong>NL2Repo</strong> score of 42.7% (vs. GPT-5.4&rsquo;s 41.3% and Claude Opus 4.6&rsquo;s 33.4%) measures generating a complete code repository from a natural-language description — a task that rewards long-horizon consistency.</p>
 <hr>
 <h2 id="full-benchmark-profile">Full Benchmark Profile</h2>
+<p>Benchmark scores per the <a href="https://arxiv.org/abs/2602.15763">GLM-5.1 technical paper (arXiv:2602.15763)</a> and <a href="https://huggingface.co/zai-org/GLM-5.1">HuggingFace model card</a>:</p>
 <table>
 <thead>
 <tr>

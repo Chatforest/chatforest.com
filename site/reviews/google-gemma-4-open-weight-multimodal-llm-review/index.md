@@ -9,7 +9,7 @@
 
 "Drop everything and run `ollama run gemma4`."
 
-That was the reaction of a developer with 2,400+ likes when Google [released Gemma 4](https://blog.google/technology/developers/gemma-4/) on April 2, 2026. Within days, the family had crossed 80,000 downloads on Hugging Face. Within weeks, that number crossed 2 million — and the 26B MoE variant had become, for many developers, the first local model they stopped reaching for API keys during.
+That was the reaction of a developer with 2,400+ likes when Google [released Gemma 4](https://blog.google/technology/developers/gemma-4/) on April 2, 2026. The [Gemma 4 technical report is at arXiv:2607.02770](https://arxiv.org/abs/2607.02770). Within days, the family had crossed 80,000 downloads on Hugging Face. Within weeks, that number crossed 2 million — and the 26B MoE variant had become, for many developers, the first local model they stopped reaching for API keys during.
 
 The hyperbole has a real basis. Gemma 4 represents the most complete architectural overhaul the Gemma program has attempted. New attention patterns. A Per-Layer Embeddings pathway that lets small models reason better than their parameter count implies. A 26-billion-parameter MoE that loads 14GB of VRAM but only activates 4 billion parameters per token. Audio input on the smaller models. A 256K context window on the larger ones. And — for the first time in the Gemma family — a true Apache 2.0 license with no Gemma Terms overlay.
 
@@ -115,7 +115,7 @@ Google reports up to 4x faster inference than Gemma 3 on equivalent hardware, an
 
 ## Benchmarks: Gemma 4 31B
 
-All benchmarks below are for the 31B dense model unless otherwise specified.
+All benchmarks below are for the 31B dense model unless otherwise specified. Sources: [Gemma 4 technical report (arXiv:2607.02770)](https://arxiv.org/abs/2607.02770) and [Google's Gemma 4 blog](https://blog.google/technology/developers/gemma-4/).
 
 **MMLU-Pro (academic multi-discipline reasoning):** 85.2%
 
@@ -207,13 +207,13 @@ Gemma 4's safety evaluation does not include the detailed NIST CAISI or Frontier
 
 ## Community Reception
 
-Gemma 4 was 1,700+ points on Hacker News at launch day — among the stronger AI model launches on that forum. The developer reaction was disproportionately enthusiastic relative to the absolute benchmark position, which reflects two things: the Apache 2.0 license surprised people who expected Gemma Terms, and the 26B A4B running at 14GB VRAM at 4B-active-parameter inference speed genuinely solved a real constraint for developers on consumer hardware.
+Gemma 4 received a strong reception on Hacker News at launch day — among the stronger AI model launches on that forum. The developer reaction was disproportionately enthusiastic relative to the absolute benchmark position, which reflects two things: the Apache 2.0 license surprised people who expected Gemma Terms, and the 26B A4B running at 14GB VRAM at 4B-active-parameter inference speed genuinely solved a real constraint for developers on consumer hardware.
 
 The Hugging Face community has produced immediate derivative work: quantized GGUF variants, fine-tuned specializations, and at least one developer describing the 26B MoE as "the first model where I stopped reaching for API keys during normal coding work."
 
 By April 22, 2026, Gemma 4 was the self-described best Apache-licensed open model. By May 2026, Qwen 3.6 Max (preview) had moved ahead on aggregate leaderboards — but it uses a different license, and the Gemma 4 26B A4B remains the most capable Apache-licensed model at 14GB VRAM.
 
-Google reported 400 million total cumulative downloads across all Gemma generations at time of release, with 100,000+ community-created variants. These numbers frame Gemma 4 as landing into an already-established ecosystem.
+Google reported approximately 400 million total cumulative downloads across all Gemma generations at time of release, with over 100,000 community-created variants — figures stated at the Google I/O 2026 launch event. These numbers frame Gemma 4 as landing into an already-established ecosystem.
 
 ---
 

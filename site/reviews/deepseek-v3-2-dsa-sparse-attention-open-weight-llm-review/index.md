@@ -21,7 +21,7 @@ This review covers V3.2 in full: what it does, what it changed, what V3.2-Specia
 
 Before V3.2, there were four earlier entries in what became the V3 line. Understanding V3.2 requires knowing what preceded it.
 
-**DeepSeek V3 (V3.0)** — December 26, 2024. The original. 671B total / 37B active. Multi-Head Latent Attention (MLA), DeepSeekMoE with 256 experts, DualPipe parallelism, FP8 training, Multi-Token Prediction. 64K context window at launch. MIT license. Training cost: ~$5.57M in disclosed GPU-hours. Benchmarks competitive with GPT-4o and Claude 3.5 Sonnet.
+**DeepSeek V3 (V3.0)** — December 26, 2024. The original. 671B total / 37B active. Multi-Head Latent Attention (MLA), DeepSeekMoE with 256 experts, DualPipe parallelism, FP8 training, Multi-Token Prediction. 64K context window at launch. MIT license. Training cost: [~$5.57M in disclosed GPU-hours](https://arxiv.org/abs/2412.19437) (per the V3 technical report, arXiv:2412.19437). Benchmarks competitive with GPT-4o and Claude 3.5 Sonnet.
 
 **DeepSeek V3.1** — early-to-mid 2025. Context window expanded from 64K to 128K tokens. Post-training optimized for tool use and agent tasks. Stronger multi-step reasoning and tool-augmented capabilities than V3.0. Available via DeepSeek API and HuggingFace.
 

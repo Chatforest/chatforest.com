@@ -124,7 +124,7 @@ Every fourth layer reverts to standard full softmax attention — this is the 3:
 
 ## Benchmarks
 
-All benchmark data for Qwen3.5-397B-A17B unless noted. Sources: Hugging Face model cards, Alibaba Cloud blog, Serenities AI analysis, mlabonne HF blog.
+All benchmark data for Qwen3.5-397B-A17B unless noted. Sources: [Hugging Face model card](https://huggingface.co/Qwen/Qwen3.5-397B-A17B-Instruct), [VentureBeat coverage](https://venturebeat.com/technology/alibabas-qwen-3-5-397b-a17-beats-its-larger-trillion-parameter-model-at-a), and Serenities AI analysis.
 
 ### Flagship 397B — Text and Reasoning
 

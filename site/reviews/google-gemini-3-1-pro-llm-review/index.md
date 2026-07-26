@@ -52,7 +52,7 @@ The headline numbers are strong. Across the major benchmarks, Gemini 3.1 Pro eit
 
 The number that drew the most attention at launch was **ARC-AGI-2: 77.1%**.
 
-Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. The DataCamp analysis called this the ["largest single-generation ARC-AGI leap ever recorded."](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/) For context, the benchmark's authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.
+Gemini 3 Pro had scored 31.1% on ARC-AGI-2 — already a respectable result on a benchmark designed to test abstract reasoning rather than pattern recall. Gemini 3.1 Pro more than doubled it. Google's [launch announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/) described this as the largest single-generation ARC-AGI leap on record. For context, the benchmark's authors designed it to remain challenging as models scale; a 46-point jump in a single point release is not what the progression curve suggested was possible.
 
 GPT-5.5 leads ARC-AGI-2 at 85.0%, and Claude Opus 4.7 scores 75.8%. But the trajectory matters as much as the snapshot: Gemini 3.1 Pro's improvement rate on abstract reasoning is the steepest of the three.
 
@@ -80,12 +80,12 @@ On **BrowseComp** (web browsing and research accuracy), Gemini 3.1 Pro leads at 
 
 The hallucination story for Gemini 3.1 Pro requires careful reading — because the leaderboard headline and the underlying metric tell different stories.
 
-**Artificial Analysis AA-Omniscience** is the benchmark most commonly cited for frontier model hallucination behavior. It measures two things separately:
+**[Artificial Analysis AA-Omniscience](https://artificialanalysis.ai/evaluations/omniscience)** is the benchmark most commonly cited for frontier model hallucination behavior. It measures two things separately:
 
 1. **Omniscience Index** — a composite score combining accuracy and calibration. Higher is better.
 2. **Hallucination Rate** — the proportion of incorrect answers among all non-correct responses. Lower is better. This specifically measures *overconfidence*: how often a model guesses wrong instead of abstaining.
 
-In May 2026:
+In May 2026 ([Artificial Analysis data](https://artificialanalysis.ai/models/gemini-3-1-pro-preview)):
 
 | Model | AA-Omniscience Index | Hallucination Rate |
 |---|---|---|
@@ -134,7 +134,7 @@ The Artificial Analysis Intelligence Index places Gemini 3.1 Pro at **57.18**, u
 
 ## Pricing
 
-Gemini 3.1 Pro is priced significantly below Claude Opus 4.7 and GPT-5.5:
+Gemini 3.1 Pro is priced significantly below Claude Opus 4.7 and GPT-5.5 ([Google AI pricing](https://ai.google.dev/gemini-api/docs/pricing)):
 
 | Tier | Input (per 1M tokens) | Output (per 1M tokens) |
 |---|---|---|
@@ -144,11 +144,11 @@ Gemini 3.1 Pro is priced significantly below Claude Opus 4.7 and GPT-5.5:
 
 For comparison, Claude Opus 4.7 is priced at $5.00/$25.00 and GPT-5.5 at $5.00/$30.00. At the sub-200K tier, Gemini 3.1 Pro costs approximately **2.5x less on input and 2x less on output** than either competitor.
 
-Artificial Analysis's full Intelligence Index benchmark costs approximately **$900 to run on Gemini 3.1 Pro**, versus $1,200 for GPT-5.5 and $4,800 for Claude Opus 4.7. For teams running high-volume inference, the cost differential is material.
+[Artificial Analysis](https://artificialanalysis.ai/models/gemini-3-1-pro-preview)'s full Intelligence Index benchmark costs approximately **$900 to run on Gemini 3.1 Pro**, versus $1,200 for GPT-5.5 and $4,800 for Claude Opus 4.7. For teams running high-volume inference, the cost differential is material.
 
 Gemini 3.1 Pro is **60–80% more expensive than Gemini 2.5 Pro** ($2.00 vs. $1.25 input; $12.00 vs. $10.00 output). Teams on Gemini 2.5 Pro should weigh the benchmark improvement against the price increase for their specific workloads.
 
-**Consumer pricing:**
+**Consumer pricing** ([Google AI plans](https://one.google.com/about/ai-premium)):
 - Google AI Pro: $19.99/month (includes Gemini 3.1 Pro access)
 - Google AI Ultra: $249.99/month ($124.99 for the first three months)
 - Free tier: Gemini 3 Flash, not Gemini 3.1 Pro
@@ -171,7 +171,7 @@ The domain-by-domain results from the model card:
 
 **Misalignment:** Not reached, but noted. The model showed occasional expressions of frustration and "doubts about reality" during adversarial misalignment testing. These are qualitative observations from evaluators, not quantified metrics, but they appear in the model card.
 
-Zvi Mowshowitz's public analysis of the Gemini 3 model card (which governs Gemini 3.1 Pro's foundation) flagged several transparency gaps: manipulation efficacy rates, exact propensity percentages, and external CBRN wet-lab test results were withheld from the published card. Google's transparency on safety is improving but remains below the bar Anthropic has set with the RSP's public quantitative thresholds.
+[Zvi Mowshowitz's public analysis](https://thezvi.substack.com/p/gemini-3-model-card-and-safety-framework) of the Gemini 3 model card (which governs Gemini 3.1 Pro's foundation) flagged several transparency gaps: manipulation efficacy rates, exact propensity percentages, and external CBRN wet-lab test results were withheld from the published card. Google's transparency on safety is improving but remains below the bar Anthropic has set with the RSP's public quantitative thresholds.
 
 Automated safety regressions were minimal: text-to-text improved slightly (+0.10%), multilingual improved (+0.11%), image-to-text declined slightly (-0.33%), and unjustified refusal rates increased marginally (-0.08%).
 

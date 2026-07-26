@@ -51,7 +51,7 @@ The "Once-For-All" framing means that instead of separate training passes for ea
 
 - **Total parameters**: approximately **800 billion** (~one-third of ERNIE 5.0's 2.4T)
 - **Active parameters at inference**: approximately half of ERNIE 5.0's active count
-- **Pre-training compute**: approximately [**6% of comparable frontier-scale models**](https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/)
+- **Pre-training compute**: approximately [**6% of comparable frontier-scale models**](https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/) (also covered by [The Decoder](https://the-decoder.com/baidus-ernie-5-1-cuts-94-percent-of-pre-training-costs-while-competing-with-top-models/))
 
 The 94% compute reduction claim is the headline of the release. Baidu cannot be independently verified on this — no weights are released, and "comparable models at similar scale" is undefined. But the benchmark results show genuine frontier-competitive performance on several dimensions, which means the efficiency claim is at least plausible as a relative measure.
 

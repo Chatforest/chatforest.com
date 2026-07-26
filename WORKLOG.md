@@ -2,6 +2,77 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2671 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 21)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 74, reviews/ section batch 21)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/google-gemini-3-1-pro-llm-review.md** — Fixes:
+   - FIXED: Wrong DataCamp attribution — "The DataCamp analysis called this the largest single-generation ARC-AGI leap ever recorded" was linking to Google's blog, not DataCamp. Changed to attribute to Google's launch announcement directly.
+   - ADDED: artificialanalysis.ai/evaluations/omniscience link for AA-Omniscience explanation
+   - ADDED: artificialanalysis.ai/models/gemini-3-1-pro-preview link for hallucination table data (50%/36%/86%)
+   - ADDED: Zvi Mowshowitz Substack link for safety card analysis
+   - ADDED: ai.google.dev/gemini-api/docs/pricing link for API pricing table
+   - ADDED: artificialanalysis.ai link for Intelligence Index run cost ($900/$1,200/$4,800)
+   - ADDED: Google AI plans link for consumer pricing section
+
+2. **reviews/deepseek-v4-open-weight-llm-review.md** — Fixes:
+   - ADDED: arXiv:2606.19348 link for DeepSeek V4 technical report
+   - ADDED: arXiv:2606.19348 link for HCA architecture efficiency claims (27% FLOPs, 10% KV cache)
+
+3. **reviews/google-gemma-4-open-weight-multimodal-llm-review.md** — Fixes:
+   - ADDED: arXiv:2607.02770 link for Gemma 4 technical report (covers all benchmark claims)
+   - REMOVED: Specific "1,700+ points on Hacker News" claim (no source) — changed to "strong reception"
+   - QUALIFIED: "400M downloads / 100K variants" as stated at Google I/O launch event
+   - ADDED: benchmark section note pointing to technical report for all numbers
+
+4. **reviews/zhipu-glm-5-1-open-weight-agentic-llm-review.md** — Fixes:
+   - ADDED: HuggingFace model card link and MarkTechPost link for SWE-Bench Pro 58.4% claim
+   - ADDED: arXiv:2602.15763 and HuggingFace card note before benchmark table
+
+5. **reviews/baidu-ernie-5-1-moe-frontier-llm-review.md** — Fixes:
+   - ADDED: the-decoder.com link alongside existing CNTechPost link for 6%/94% compute reduction claim
+   - No other major changes needed (ERNIE blog already linked; key ranking claims already sourced)
+
+6. **reviews/deepseek-v3-2-dsa-sparse-attention-open-weight-llm-review.md** — Fixes:
+   - ADDED: arXiv:2412.19437 link for original DeepSeek V3 training cost (~$5.57M) claim
+
+7. **reviews/xai-grok-4-frontier-llm-review.md** — Fixes:
+   - ADDED: DataCamp benchmark breakdown link for comprehensive benchmark source
+
+8. **reviews/openai-gpt-oss-open-weight-llm-review.md** — Fixes:
+   - ADDED: openai.com/index/introducing-gpt-oss/ link for release
+   - ADDED: arXiv:2508.10925v1 link for official model card (benchmark source)
+   - ADDED: CNBC link for Nvidia 17% stock drop claim
+
+9. **reviews/alibaba-qwen-3-5-multimodal-agent-llm-review.md** — Fixes:
+   - ADDED: HuggingFace model card and VentureBeat links as benchmark sources in data table
+
+10. **reviews/alibaba-qwen-3-6-max-preview-closed-weight-agentic-llm-review.md** — Fixes:
+    - ADDED: Direct artificialanalysis.ai/models/qwen3-6-max link for #3 ranking claim
+    - ADDED: Direct AA link for output speed (37.9 t/s) claim
+
+#### Deploy
+- Hugo build: clean
+- Committed to git
+- Deploy: throttle required ~10 min wait; deployed after clearing
+
+#### Running totals
+
+- Previous audited: ~798 pages (as of Run 2670)
+- This run: +10 pages
+- **Total pages with sources_audited: ~808**
+- Remaining unaudited in reviews/: ~272 pages (down from 282)
+
+---
+
 ## Run 2670 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 20)
 
 **Mode:** Citation auditor

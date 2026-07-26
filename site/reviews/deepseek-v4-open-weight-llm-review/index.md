@@ -9,7 +9,7 @@
 
 DeepSeek did it again.
 
-In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA's market cap in a single session. In December 2025, V3.2 extended the lead on open-weight coding benchmarks with DeepSeek Sparse Attention and reasoning-in-tool-use. On April 24, 2026, DeepSeek [released V4](https://api-docs.deepseek.com/news/news260424/) — a step-change in scale and a more controversial release than any of its predecessors.
+In December 2024, the Shenzhen AI lab released V3 alongside a detailed cost disclosure: a frontier-class language model for approximately $5.57 million in disclosed compute. The iOS app launch in January 2025 erased $600 billion from NVIDIA's market cap in a single session. In December 2025, V3.2 extended the lead on open-weight coding benchmarks with DeepSeek Sparse Attention and reasoning-in-tool-use. On April 24, 2026, DeepSeek [released V4](https://api-docs.deepseek.com/news/news260424/) — a step-change in scale and a more controversial release than any of its predecessors. The [technical report is available at arXiv:2606.19348](https://arxiv.org/abs/2606.19348).
 
 The benchmark numbers are strong. The architecture is genuinely novel. The pricing is competitive. And surrounding it all is a US Congressional investigation alleging the model was trained on export-controlled American semiconductors.
 
@@ -43,7 +43,7 @@ The biggest architectural departure is **Hybrid Compressed Attention (HCA)**, wh
 
 **Heavily Compressed Attention (HCA)** applies stronger compression at greater depth — optimized for layers where global context matters more than local detail.
 
-The practical result: at 1 million tokens of context, V4 Pro uses **27% of V3.2's inference FLOPs** and only **10% of V3.2's KV cache memory**. This is not a minor efficiency gain. It means running V4 Pro at 1M context is roughly four times cheaper in compute and ten times cheaper in memory than running V3.2 at 1M context. The long-context window becomes economically viable in a way that V3's architecture did not fully support.
+The practical result, per the [V4 technical report](https://arxiv.org/abs/2606.19348): at 1 million tokens of context, V4 Pro uses **27% of V3.2's inference FLOPs** and only **10% of V3.2's KV cache memory**. This is not a minor efficiency gain. It means running V4 Pro at 1M context is roughly four times cheaper in compute and ten times cheaper in memory than running V3.2 at 1M context. The long-context window becomes economically viable in a way that V3's architecture did not fully support.
 
 DeepSeek V3 used Multi-Head Latent Attention (MLA) to compress the KV cache — V4's HCA architecture takes this further, compressing not just the cache representation but the attention pattern itself.
 

@@ -61,7 +61,7 @@ The trajectory is notable for price direction: the original Grok 4 API was price
 
 ## Benchmarks: Leaderboard Leader with Caveats
 
-Grok 4's benchmark profile at launch was the strongest ever published for a frontier model across several categories simultaneously.
+Grok 4's benchmark profile at launch was the strongest ever published for a frontier model across several categories simultaneously. See [DataCamp's benchmark breakdown](https://www.datacamp.com/blog/grok-4) for a comprehensive overview.
 
 ### Mathematics
 

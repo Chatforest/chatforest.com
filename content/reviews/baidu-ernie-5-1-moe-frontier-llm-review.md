@@ -10,6 +10,7 @@ rating: 3
 ratingHalf: true
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** Baidu ERNIE 5.1, released May 8, 2026. Closed MoE model, ~800B total parameters, ~6% of typical pre-training compute. LMArena Search #4 globally (#1 Chinese model). AIME26 math: 99.6 (#2 globally). MMLU-Pro: last among frontier comparisons. No open weights. $0.59/$2.65 per M tokens on Qianfan API. 128K context window. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -60,7 +61,7 @@ The "Once-For-All" framing means that instead of separate training passes for ea
 
 - **Total parameters**: approximately **800 billion** (~one-third of ERNIE 5.0's 2.4T)
 - **Active parameters at inference**: approximately half of ERNIE 5.0's active count
-- **Pre-training compute**: approximately [**6% of comparable frontier-scale models**](https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/)
+- **Pre-training compute**: approximately [**6% of comparable frontier-scale models**](https://cntechpost.com/2026/05/09/baidu-releases-ernie-5-1-pre-training-cost-at-only-6-industry-peers/) (also covered by [The Decoder](https://the-decoder.com/baidus-ernie-5-1-cuts-94-percent-of-pre-training-costs-while-competing-with-top-models/))
 
 The 94% compute reduction claim is the headline of the release. Baidu cannot be independently verified on this — no weights are released, and "comparable models at similar scale" is undefined. But the benchmark results show genuine frontier-competitive performance on several dimensions, which means the efficiency claim is at least plausible as a relative measure.
 

@@ -71,7 +71,7 @@ SWE-Bench Pro, introduced in late 2025, addresses both complaints: harder issues
 
 ### GLM-5.1's Score
 
-GLM-5.1 scored **58.4% on SWE-Bench Pro** at release on April 7, 2026 — the highest score of any model, closed or open, at that moment.
+GLM-5.1 scored **58.4% on SWE-Bench Pro** at release on April 7, 2026 — the highest score of any model, closed or open, at that moment, per [the HuggingFace model card](https://huggingface.co/zai-org/GLM-5.1) and [MarkTechPost's coverage](https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/).
 
 For context:
 - GPT-5.4: 57.7%
@@ -103,6 +103,8 @@ This aligns with the benchmark profile. The **Terminal-Bench 2.0** score of 63.5
 ---
 
 ## Full Benchmark Profile
+
+Benchmark scores per the [GLM-5.1 technical paper (arXiv:2602.15763)](https://arxiv.org/abs/2602.15763) and [HuggingFace model card](https://huggingface.co/zai-org/GLM-5.1):
 
 | Benchmark | Score | Notes |
 |---|---|---|

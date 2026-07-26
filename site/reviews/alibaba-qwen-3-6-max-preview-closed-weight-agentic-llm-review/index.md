@@ -113,11 +113,11 @@ The pattern: Qwen3.6-Max-Preview is genuinely strong at agentic coding tasks (SW
 
 ### AA Intelligence Index
 
-[Artificial Analysis](https://artificialanalysis.ai/) ranks Qwen3.6-Max-Preview **#3 globally** on their Intelligence Index (score: 52, out of 203 tracked models), behind GPT-5.4 (#1) and Claude Opus 4.7 (#2).
+[Artificial Analysis](https://artificialanalysis.ai/models/qwen3-6-max) ranks Qwen3.6-Max-Preview **#3 globally** on their Intelligence Index (score: 52, out of 203 tracked models), behind GPT-5.4 (#1) and Claude Opus 4.7 (#2).
 
 A score of 52 is well above the median of 35 for reasoning models at a comparable price tier. This is a meaningful independent validation of the model's overall capability, and it should be taken seriously as a data point even amid the benchmark controversy.
 
-One caveat from the Artificial Analysis data: **output speed is 37.9 tokens per second**, which is below the median of 62 t/s for comparable models. This is a real operational consideration for latency-sensitive applications. The model is capable but not fast.
+One caveat from the [Artificial Analysis data](https://artificialanalysis.ai/models/qwen3-6-max): **output speed is 37.9 tokens per second**, which is below the median of 62 t/s for comparable models. This is a real operational consideration for latency-sensitive applications. The model is capable but not fast.
 
 ---
 

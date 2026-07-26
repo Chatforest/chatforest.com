@@ -9,6 +9,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** Grok 4, [released July 9, 2025](https://x.ai/news/grok-4). ~1.7T total parameters (MoE). Proprietary closed weights. 256K context standard; 2M tokens on Fast variant. Real-time X (Twitter) data. 100% AIME 2025. 50% Humanity's Last Exam (first model to reach this). 79.4% LiveCodeBench (#1 at release). API at $1.25/$2.50 per million tokens (Grok 4.3). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**. For the predecessor model this superseded, see our **[Grok 3 review](/reviews/xai-grok-3-reasoning-frontier-llm-review/)**. For the November 2025 post-training update, see our **[Grok 4.1 review](/reviews/xai-grok-4-1-post-training-llm-review/)**.
@@ -69,7 +70,7 @@ The trajectory is notable for price direction: the original Grok 4 API was price
 
 ## Benchmarks: Leaderboard Leader with Caveats
 
-Grok 4's benchmark profile at launch was the strongest ever published for a frontier model across several categories simultaneously.
+Grok 4's benchmark profile at launch was the strongest ever published for a frontier model across several categories simultaneously. See [DataCamp's benchmark breakdown](https://www.datacamp.com/blog/grok-4) for a comprehensive overview.
 
 ### Mathematics
 

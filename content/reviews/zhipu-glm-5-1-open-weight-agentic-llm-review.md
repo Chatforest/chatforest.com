@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** GLM-5.1 — released April 7, 2026 by Z.ai (formerly Zhipu AI). 754B total parameters / 40B active per token. SWE-Bench Pro: 58.4% (#1 open-weight; held for nine days). SWE-Bench Verified: 77.8%. GPQA Diamond: 86.2%. AIME 2026: 95.3%. Context: 200K tokens. MIT license. Pricing: $1.05/M input, $3.50/M output (Z.ai native). Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -80,7 +81,7 @@ SWE-Bench Pro, introduced in late 2025, addresses both complaints: harder issues
 
 ### GLM-5.1's Score
 
-GLM-5.1 scored **58.4% on SWE-Bench Pro** at release on April 7, 2026 — the highest score of any model, closed or open, at that moment.
+GLM-5.1 scored **58.4% on SWE-Bench Pro** at release on April 7, 2026 — the highest score of any model, closed or open, at that moment, per [the HuggingFace model card](https://huggingface.co/zai-org/GLM-5.1) and [MarkTechPost's coverage](https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/).
 
 For context:
 - GPT-5.4: 57.7%
@@ -112,6 +113,8 @@ This aligns with the benchmark profile. The **Terminal-Bench 2.0** score of 63.5
 ---
 
 ## Full Benchmark Profile
+
+Benchmark scores per the [GLM-5.1 technical paper (arXiv:2602.15763)](https://arxiv.org/abs/2602.15763) and [HuggingFace model card](https://huggingface.co/zai-org/GLM-5.1):
 
 | Benchmark | Score | Notes |
 |---|---|---|

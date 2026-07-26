@@ -9,6 +9,7 @@ categories: ["reviews"]
 rating: 5
 author: "ChatForest"
 last_refreshed: 2026-05-13
+sources_audited: 2026-07-26
 ---
 
 **At a glance:** Qwen 3.5, released February–March 2026. Nine model sizes. Flagship: 397B total / 17B active (MoE). Hybrid linear+sparse attention. Native image and video input. 262K context (1M extended). 201 languages. Apache 2.0. API flagship at $0.39/$0.90 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -132,7 +133,7 @@ Every fourth layer reverts to standard full softmax attention — this is the 3:
 
 ## Benchmarks
 
-All benchmark data for Qwen3.5-397B-A17B unless noted. Sources: Hugging Face model cards, Alibaba Cloud blog, Serenities AI analysis, mlabonne HF blog.
+All benchmark data for Qwen3.5-397B-A17B unless noted. Sources: [Hugging Face model card](https://huggingface.co/Qwen/Qwen3.5-397B-A17B-Instruct), [VentureBeat coverage](https://venturebeat.com/technology/alibabas-qwen-3-5-397b-a17-beats-its-larger-trillion-parameter-model-at-a), and Serenities AI analysis.
 
 ### Flagship 397B — Text and Reasoning
 
