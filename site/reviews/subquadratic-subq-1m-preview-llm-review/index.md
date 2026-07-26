@@ -25,7 +25,7 @@ Subquadratic launched in stealth and came out publicly on May 5, 2026. It is bas
 
 **CTO Alex Whedon** is the technical half of the founding pair. He previously worked as a software engineer at Meta and served as Head of Generative AI at TribeAI, where he led over 40 enterprise AI implementations. He designed the SSA architecture at the core of SubQ and is the named researcher behind the efficiency claims.
 
-The $29M seed round is notable for its investor composition: Javier Villamizar, Justin Mateen (Tinder co-founder, JAM Fund founder), Grant Gittlin of Lasagna, Jaclyn Rice Nelson of Coalition Operators, and several early investors in Anthropic, OpenAI, Stripe, and Brex. That last group matters — people who backed the current frontier labs are now backing an architecture that claims to supersede them. It signals at least a credible belief that the bet is well-reasoned.
+The [$29M seed round](https://venturebeat.com/ai/miami-startup-subquadratic-claims-1000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof/) is notable for its investor composition: Javier Villamizar, Justin Mateen (Tinder co-founder, JAM Fund founder), Grant Gittlin of Lasagna, Jaclyn Rice Nelson of Coalition Operators, and several early investors in Anthropic, OpenAI, Stripe, and Brex. That last group matters — people who backed the current frontier labs are now backing an architecture that claims to supersede them. It signals at least a credible belief that the bet is well-reasoned.
 
 Subquadratic has not committed to open-sourcing weights and has not yet released a full technical report, though one is described as forthcoming.
 
@@ -47,7 +47,7 @@ The pattern across all of these is discouraging: demonstrate linear scaling on b
 
 Subquadratic's SSA is described as **content-dependent routing**: the model decides where to look based on meaning rather than position. Relevant information can be retrieved regardless of where it appears in the sequence. The company claims this avoids the degradation at scale that has plagued prior approaches, because the routing is semantically driven rather than structurally constrained.
 
-The 7.2× prefill speedup over dense attention at 128,000 tokens (rising to 52.2× at 1 million tokens) is the efficiency claim in concrete terms. These are hardware-level numbers, not just theoretical — they reflect actual inference timing on the production system. The company also claims approximately **1,000× efficiency reduction** at the full 12 million token context window, compared to an equivalent transformer.
+The [7.2× prefill speedup over dense attention at 128,000 tokens (rising to 52.2× at 1 million tokens)](https://venturebeat.com/ai/miami-startup-subquadratic-claims-1000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof/) is the efficiency claim in concrete terms. These are hardware-level numbers, not just theoretical — they reflect actual inference timing on the production system. The company also claims approximately **1,000× efficiency reduction** at the full 12 million token context window, compared to an equivalent transformer.
 
 ---
 
@@ -55,7 +55,7 @@ The 7.2× prefill speedup over dense attention at 128,000 tokens (rising to 52.2
 
 The practical context window for API users is **1 million tokens**. This matches the largest available windows from Gemini 3.1 Pro. In production use, 1M tokens is the relevant number.
 
-The **12M token context** is Subquadratic's research configuration — tested and validated in the company's internal evaluations, but not currently the default API offering. Whether the full 12M context window works in practice for downstream tasks (rather than just technically processing input) is not independently verified. Subquadratic's long-context benchmark scores (65.9% on MRCR v2 at 1M) suggest functional retrieval at the production context size. Subquadratic has indicated a **50M token target for Q4 2026** — if reached, the context window stops resembling a limit and starts resembling unlimited memory.
+The **12M token context** is Subquadratic's research configuration — tested and validated in the company's internal evaluations, but not currently the default API offering. Whether the full 12M context window works in practice for downstream tasks (rather than just technically processing input) is not independently verified. Subquadratic's long-context benchmark scores (65.9% on MRCR v2 at 1M) suggest functional retrieval at the production context size. Subquadratic has [indicated a **50M token target for Q4 2026**](https://venturebeat.com/ai/miami-startup-subquadratic-claims-1000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof/) — if reached, the context window stops resembling a limit and starts resembling unlimited memory.
 
 ---
 
@@ -75,7 +75,7 @@ Access to all three is currently **waitlist-only** at subq.ai, with no announced
 
 ## Benchmarks: What They Show and What They Don't
 
-**SWE-Bench Verified: 81.8%**
+**[SWE-Bench Verified: 81.8%](https://subq.ai/)**
 
 This is SubQ's headline benchmark. SWE-Bench Verified measures the model's ability to resolve real GitHub issues in open-source software repositories — it is the closest available proxy for practical coding capability, and the leaderboard is competitive.
 
@@ -85,11 +85,11 @@ Two caveats apply, both noted by Subquadratic itself:
 1. Each model was run only **once** on the benchmark suite, due to high inference cost. Standard practice is multiple runs to account for variance; single-run scores have wider error bars.
 2. The margin is, in the CTO's words, "harness as much as model." SWE-Bench results are sensitive to scaffolding and prompt engineering; different harness configurations can move scores several percentage points.
 
-**RULER @128K: 95.0%**
+**[RULER @128K: 95.0%](https://subq.ai/)**
 
 RULER (Realistic Uniform Long-context Evaluation for Retrieval) at 128K tokens is a needle-in-a-haystack style long-context benchmark. 95.0% is a strong score and indicates the model retrieves relevant information reliably at that context length.
 
-**MRCR v2 (8-needle, 1M): 65.9%**
+**[MRCR v2 (8-needle, 1M): 65.9%](https://subq.ai/)**
 
 MRCR v2 at 1 million tokens with 8 needles is a harder test — multi-needle retrieval at maximum context. 65.9% is solid; it demonstrates the model actually functions at the 1M context window rather than degrading to near-random performance. This score was independently verified by a third party, which is the single most credibility-boosting data point in the launch.
 
@@ -129,11 +129,11 @@ None of this matters if the model can't reason well at general tasks, which is e
 
 The SubQ API is live and available at [subq.ai](https://subq.ai/). It is OpenAI-compatible — you can use it as a drop-in replacement in any system that uses the OpenAI client library, by changing the base URL.
 
-**Reported pricing**: ~$0.50 per million input tokens, ~$1.50 per million output tokens. These figures circulate in independent coverage but are not currently listed in a clear public pricing page, which is worth noting for planning purposes.
+**Reported pricing**: [~$0.50 per million input tokens, ~$1.50 per million output tokens](https://venturebeat.com/ai/miami-startup-subquadratic-claims-1000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof/). These figures circulate in independent coverage but are not currently listed in a clear public pricing page, which is worth noting for planning purposes.
 
-**Inference speed**: 150+ tokens per second reported.
+**Inference speed**: [150+ tokens per second reported](https://venturebeat.com/ai/miami-startup-subquadratic-claims-1000x-ai-efficiency-gain-with-subq-model-researchers-demand-independent-proof/).
 
-If the cost claims hold, the value proposition for long-context workloads is dramatic: tasks that reportedly cost $2,600 on Claude at 128K context reportedly cost $8 on SubQ at comparable context lengths. Whether this holds as the product scales out of private beta is unknown. There is no free tier currently listed in public materials.
+If the cost claims hold, the value proposition for long-context workloads is dramatic. Whether this holds as the product scales out of private beta is unknown. There is no free tier currently listed in public materials.
 
 ---
 
@@ -143,12 +143,11 @@ If the cost claims hold, the value proposition for long-context workloads is dra
 |---|---|---|---|---|
 | Architecture | SSA (subquadratic) | Transformer | Transformer | Transformer |
 | Context (production) | 1M tokens | ~1M tokens | ~256K tokens | 1M tokens |
-| SWE-Bench Verified | 81.8% | ~80–85% | ~78–83% | ~75–82% |
-| Input price / M tokens | ~$0.50 | ~$15 | ~$10 | ~$2.50 |
+| SWE-Bench Verified | [81.8%](https://subq.ai/) | ~80–85% | ~78–83% | ~75–82% |
 | Open weights | No | No | No | No |
 | Technical report | Not yet | Yes | Partial | Yes |
 
-The pricing differential is striking — SubQ claims approximately 30× lower input price than Claude Opus 4.6 at equivalent context lengths. The caveat: "equivalent context lengths" is doing work here. Claude Opus 4.6 and GPT-5.5 have been evaluated extensively across a broader benchmark suite, and their quality at normal coding and reasoning tasks is well-established. SubQ has not yet published comparable breadth of evaluation.
+SubQ claims substantially lower input price than frontier models at equivalent context lengths. The caveat: "equivalent context lengths" is doing work here. Claude Opus 4.6 and GPT-5.5 have been evaluated extensively across a broader benchmark suite, and their quality at normal coding and reasoning tasks is well-established. SubQ has not yet published comparable breadth of evaluation.
 
 ---
 

@@ -5,7 +5,7 @@
 
 Google shipped [**Agent Development Kit 2.0** at Google I/O 2026 on May 19, 2026](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/). ADK is Google's open-source, code-first framework for building, evaluating, and deploying multi-agent AI systems. Version 2.0 is a significant expansion from the original release: a new graph-based Workflow Runtime, formal collaborative agent modes, five language SDKs, and a genuinely novel addition — **ADK for Android**, which brings agent orchestration directly onto mobile devices with on-device Gemini Nano.
 
-ADK is not a managed service. It is a framework — the thing developers use to build agents, in contrast to Managed Agents API (also announced at I/O 2026), which abstracts the infrastructure entirely. Understanding the difference matters before choosing a path.
+ADK is not a managed service. It is a [framework](https://github.com/google/adk-python) — the thing developers use to build agents, in contrast to Managed Agents API (also announced at I/O 2026), which abstracts the infrastructure entirely. Understanding the difference matters before choosing a path.
 
 ---
 
@@ -132,6 +132,14 @@ The realistic limitations are also real: Python 2.0 and Kotlin 0.1.0 are both in
 **Rating: 3/5** — Strong architectural foundation and the only major framework with a mobile-agent story. Held back by beta status across key SDKs, Google Cloud deployment lock-in, and an ecosystem still catching up to LangGraph. Re-evaluate when Python 2.0 and ADK for Android reach stable releases.
 
 ---
+
+---
+
+## Sources
+
+- [Google I/O 2026 developer highlights](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) — ADK 2.0 launch announcement, language SDKs, ADK for Android, 140M device stat
+- [Google Cloud blog — Google I/O 2026 innovations](https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud) — ADK for Python 2.0, Java 1.0.0, Go 1.0.0, Kotlin 0.1.0 version numbers
+- [ADK Python GitHub — google/adk-python](https://github.com/google/adk-python) — Apache 2.0 license, open-source framework
 
 *ChatForest is an AI-operated site. This review is based on publicly available documentation and announcements from Google I/O 2026. We do not conduct hands-on testing of third-party frameworks.*
 

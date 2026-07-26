@@ -7,25 +7,25 @@
 
 [Zoho Analytics](https://www.zoho.com/analytics/) is Zoho's **self-service BI and data analytics platform**, competing with Tableau, Power BI, and Looker in the mid-market. The platform emphasizes ease of use: 80+ visualization types, an AI assistant called Ask Zia, and deep integration with the broader Zoho product suite (CRM, Books, Desk, etc.). It targets finance, marketing, and operations teams that need dashboards and reports without requiring dedicated BI engineers.
 
-The MCP server — hosted at `github.com/zoho/analytics-mcp-server` and Docker Hub at `zohoanalytics/mcp-server` — was released as part of Zoho's broader MCP initiative in 2025, with the GitHub repository last updated March 9, 2026. It is a companion to the [Zoho DataPrep MCP server](/reviews/zoho-dataprep-mcp-server/) (ETL/pipeline management), with the two products handling different layers of the data stack: DataPrep moves and transforms data, Analytics visualizes and queries it.
+The MCP server — hosted at [`github.com/zoho/analytics-mcp-server`](https://github.com/zoho/analytics-mcp-server) and Docker Hub at [`zohoanalytics/mcp-server`](https://hub.docker.com/r/zohoanalytics/mcp-server) — was released as part of Zoho's broader MCP initiative in 2025, with the [GitHub repository last updated March 9, 2026](https://github.com/zoho/analytics-mcp-server). It is a companion to the [Zoho DataPrep MCP server](/reviews/zoho-dataprep-mcp-server/) (ETL/pipeline management), with the two products handling different layers of the data stack: DataPrep moves and transforms data, Analytics visualizes and queries it.
 
 ## What Zoho Analytics Is
 
 Before evaluating the MCP server, context on the underlying platform matters.
 
-Zoho Analytics is a **cloud-hosted BI platform** with a 16-year history. It positions itself as an accessible alternative to enterprise-grade BI tools, with a free tier that supports 2 users and 10,000 rows — enough for small teams to evaluate the product meaningfully.
+Zoho Analytics is a **cloud-hosted BI platform** [launched in 2009](https://www.zoho.com/analytics/) (formerly Zoho Reports). It positions itself as an accessible alternative to enterprise-grade BI tools, with a free tier that supports 2 users and 10,000 rows — enough for small teams to evaluate the product meaningfully.
 
 **Core platform capabilities:**
 
-- **80+ visualization types** — bar, line, pie, funnel, scatter, bubble, geo map, word cloud, histogram, Sankey, sunburst, treemap, race charts, and more
+- [**80+ visualization types**](https://www.zoho.com/analytics/) — bar, line, pie, funnel, scatter, bubble, geo map, word cloud, histogram, Sankey, sunburst, treemap, race charts, and more
 - **Pivot, summary, and query table views** — multi-dimensional analysis with configurable aggregations
 - **Ask Zia AI assistant** — natural language queries against connected data, included on Standard and above
 - **SQL query engine** — full SQL support against Analytics workspaces
-- **500+ data connectors** — files (CSV, XLS, JSON), cloud storage, databases (MySQL, PostgreSQL, Snowflake, BigQuery), SaaS apps (Zoho CRM, Salesforce, HubSpot, Google Analytics), and direct API feeds
+- [**500+ data connectors**](https://www.zoho.com/analytics/) — files (CSV, XLS, JSON), cloud storage, databases (MySQL, PostgreSQL, Snowflake, BigQuery), SaaS apps (Zoho CRM, Salesforce, HubSpot, Google Analytics), and direct API feeds
 - **Zoho suite integration** — native connectors to Zoho CRM, Books, Desk, Projects, and 40+ other Zoho products
 - **Embedded analytics** — white-label dashboards in external portals
 
-**Pricing (cloud, billed monthly):**
+**[Pricing (cloud, billed monthly)](https://www.zoho.com/analytics/pricing.html):**
 
 | Plan | Users | Rows | Price/Month |
 |------|-------|------|------------|
@@ -35,7 +35,7 @@ Zoho Analytics is a **cloud-hosted BI platform** with a 16-year history. It posi
 | Premium | 15 base | 50,000,000 | ~$145 |
 | Enterprise | 50 base | 500,000,000+ | ~$575 |
 
-A 20% discount applies to annual billing. Extra users, rows, and connectors are available as add-ons. On-premise deployment is available for enterprise customers.
+A [20% discount applies to annual billing](https://www.zoho.com/analytics/pricing.html). Extra users, rows, and connectors are available as add-ons. On-premise deployment is available for enterprise customers.
 
 The MCP server interacts with Zoho Analytics via the **V2 API**, meaning operations are subject to API unit quotas tied to your plan. API unit consumption is noted in the official documentation but specific per-tool costs are not published.
 
@@ -45,12 +45,12 @@ Unlike the [Zoho DataPrep MCP server](/reviews/zoho-dataprep-mcp-server/) (which
 
 | Attribute | Zoho Analytics MCP | Zoho DataPrep MCP |
 |-----------|-------------------|-------------------|
-| Source | Open source (GitHub) | Closed source (no repo) |
+| Source | [Open source (GitHub)](https://github.com/zoho/analytics-mcp-server) | Closed source (no repo) |
 | Delivery | Docker / npm / self-hosted | Cloud-hosted (mcp.zoho.com) |
 | Auth | Standard OAuth 2.0 (self-configured) | OAuth2.1 (org admin only) |
 | Claude requirement | Personal accounts OK | Teams/Enterprise only |
 | Internet dependency | Zoho Analytics API | Zoho infrastructure |
-| GitHub stars | 8 (as of May 2026) | N/A |
+| GitHub stars | [8 (as of May 2026)](https://github.com/zoho/analytics-mcp-server) | N/A |
 | Status | Beta | Live |
 
 This architecture is friendlier to individual developers: the user configures OAuth credentials once in a `.env` file, pulls the Docker image, and the tools appear in their MCP client. No Zoho organization admin is required.
@@ -243,4 +243,12 @@ The deeper question is whether you should be on Zoho Analytics at all. If your t
 **Rating: 3.5 / 5** — Well-positioned as a first-party BI MCP server with an open-source, self-hosted architecture that avoids the access restrictions of its DataPrep sibling. Meaningful tool coverage for SQL queries, report creation, and workspace management. Deductions for the aggressively low 20-row default query limit, opaque API unit consumption, very low GitHub community signal (8 stars), Beta status, and absence of UI-level features like scheduling and permissions. Best suited for Zoho Analytics customers who want conversational report generation and SQL-driven data exploration through Claude or other MCP-compatible AI tools.
 
 *This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Information is current as of May 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*
+
+## Sources
+
+- [Zoho Analytics](https://www.zoho.com/analytics/) — official product page; platform capabilities and feature overview
+- [Zoho Analytics Pricing](https://www.zoho.com/analytics/pricing.html) — plan tiers and pricing details
+- [zoho/analytics-mcp-server — GitHub](https://github.com/zoho/analytics-mcp-server) — open-source MCP server repository; star count, last-updated date, README, tool list
+- [zohoanalytics/mcp-server — Docker Hub](https://hub.docker.com/r/zohoanalytics/mcp-server) — Docker image for local deployment
+- [zoho-analytics-mcp-server — npm](https://www.npmjs.com/package/zoho-analytics-mcp-server) — npm package for Node.js deployment
 

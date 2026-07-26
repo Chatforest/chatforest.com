@@ -231,7 +231,7 @@
 <hr>
 <h2 id="competitive-position">Competitive Position</h2>
 <h3 id="vs-suno-v55">vs. Suno v5.5</h3>
-<p>Suno v5.5 (March 2026) is the current consumer music AI market leader by awareness and polish. It supports custom voice models, stem generation, MIDI export, and multitrack editing at the Pro/Premier tier. Suno is a hosted platform — no weights, no self-hosting, no fine-tuning of the base model.</p>
+<p><a href="https://suno.com/blog/v5-5">Suno v5.5</a> (March 26, 2026) is the current consumer music AI market leader by awareness and polish. It supports custom voice models, stem generation, MIDI export, and multitrack editing at the Pro/Premier tier. Suno is a hosted platform — no weights, no self-hosting, no fine-tuning of the base model.</p>
 <p>Stable Audio 3&rsquo;s advantages over Suno:</p>
 <ul>
 <li>Open weights (self-hosting, air-gapped deployment)</li>
@@ -254,7 +254,7 @@
 <p><strong>No vocal generation</strong>: Stable Audio 3 generates instrumental music and sound effects. It does not generate singing, lyrics, or voice. Teams that need vocal AI music generation should look at Suno v5.5 or Udio.</p>
 <p><strong>Large model is API-only</strong>: The highest-capability variant is not yet available for self-hosting. Teams that need the full 2.7B model on their own infrastructure will need to wait.</p>
 <p><strong>Community license commercial restriction</strong>: Self-hosting for commercial applications requires contacting Stability AI for a separate license agreement. This is a real procurement step that pure open-source models (Apache 2.0) do not require.</p>
-<p><strong>Limited community validation</strong>: At launch (106 GitHub stars, 7 forks), Stable Audio 3 has minimal community testing compared to established tools. Quality assessments from the broader audio AI community will accumulate over the coming months.</p>
+<p><strong>Limited community validation</strong>: At launch (<a href="https://github.com/Stability-AI/stable-audio-3">106 GitHub stars, 7 forks</a>), Stable Audio 3 has minimal community testing compared to established tools. Quality assessments from the broader audio AI community will accumulate over the coming months.</p>
 <p><strong>No quality benchmarks published in the abstract</strong>: The research paper&rsquo;s arXiv abstract does not include comparative benchmark numbers against other audio generation models. Community evaluations will fill this gap, but the absence of published head-to-head metrics at launch makes it harder to evaluate quality claims.</p>
 <hr>
 <h2 id="who-this-is-for">Who This Is For</h2>
@@ -276,6 +276,16 @@
 <p>Stable Audio 3 is a technically solid open-weight release that fills a real gap: self-hostable, fine-tunable audio generation with documented training data. The variable-length architecture, inpainting support, CPU-only small models, and LoRA fine-tuning make it genuinely useful for production pipelines rather than just demo-worthy. The fully licensed training data is a meaningful compliance differentiator.</p>
 <p>The -1 from a perfect score reflects three genuine limitations: the large model is API-only at launch, the community license requires a separate commercial agreement for self-hosting at scale, and there are no published head-to-head quality benchmarks yet. These are solvable over time — particularly as community testing accumulates — but they are real constraints at the May 2026 release date.</p>
 <p>For teams that need self-hosted audio generation with fine-tuning capability and clean training data provenance, Stable Audio 3 is the strongest option available.</p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models">Stability AI — Stable Audio 3 announcement</a> — May 20, 2026 official release announcement; hardware performance claims, model family details</li>
+<li><a href="https://github.com/Stability-AI/stable-audio-3">Stable Audio 3 GitHub repository</a> — weights, training code, and star/fork counts</li>
+<li><a href="https://arxiv.org/abs/2605.17991">arXiv:2605.17991</a> — Stable Audio 3 research paper released simultaneously with the model</li>
+<li><a href="https://huggingface.co/stabilityai">Stable Audio 3 on Hugging Face</a> — model weights for small and medium variants</li>
+<li><a href="https://www.musicbusinessworldwide.com/stability-ai-launches-new-audio-models-that-can-generate-6-minute-music-tracks/">Music Business Worldwide — Stability AI WMG/UMG partnerships</a> — Warner Music Group and Universal Music Group partnership context</li>
+<li><a href="https://suno.com/blog/v5-5">Suno v5.5 — official launch post</a> — March 26, 2026; features, capabilities used for competitive comparison</li>
+</ul>
 
       </div>
 

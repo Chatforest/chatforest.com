@@ -87,7 +87,7 @@ Both components require API keys for whichever model provider you choose to use.
 
 ## What's Not
 
-**ByteDance provenance raises legitimate concerns.** An AI agent that screenshots your entire screen has access to everything — passwords, documents, messages, financial data. ByteDance reached a deal with Oracle in January 2026 to create a new US-based TikTok entity, partially stabilizing the regulatory situation. But the underlying algorithmic control remains with ByteDance, and the broader trust question for a screen-reading agent remains real. The code is auditable; the business relationship is less so.
+**ByteDance provenance raises legitimate concerns.** An AI agent that screenshots your entire screen has access to everything — passwords, documents, messages, financial data. ByteDance [reached a deal with Oracle in January 2026](https://techcrunch.com/2026/01/23/heres-whats-you-should-know-about-the-us-tiktok-deal/) to create a new US-based TikTok entity, partially stabilizing the regulatory situation. But the underlying algorithmic control remains with ByteDance, and the broader trust question for a screen-reading agent remains real. The code is auditable; the business relationship is less so.
 
 **Reliability is poor.** GitHub issues paint a stark picture: one user reports "browser operations fail about 9 out of 10 times." Model deprecation (Volcengine pulled Doubao-1.5-UI-TARS in April 2026), connection failures, and platform-specific bugs are common complaints. 317 open issues for a project at this stage is a lot.
 
@@ -111,7 +111,7 @@ The computer-use agent space is rapidly evolving — and the gap between UI-TARS
 
 **Claude Computer Use** (Anthropic) — the most polished commercial offering. Integrated into Claude's API, no setup required, but closed-source and usage-priced. UI-TARS aims to be the open-source alternative.
 
-**[Browser Use](https://github.com/browser-use/browser-use)** — now at **94,600 GitHub stars** (was ~52K a month ago, +82% growth). Focused specifically on browser automation with DOM-aware targeting. Actively releasing — v0.12.7 shipped May 19, 2026 with security patches, per-session auth tokens, and video recording. v0.12.3 added CLI 2.0 with ~50ms daemon latency. Far more actively maintained than UI-TARS and now nearly triple the star count. More reliable for browser tasks but doesn't handle desktop applications.
+**[Browser Use](https://github.com/browser-use/browser-use)** — now at **94,600 GitHub stars** (was ~52K a month ago, +82% growth). Focused specifically on browser automation with DOM-aware targeting. Actively releasing — [v0.12.7 shipped May 19, 2026](https://github.com/browser-use/browser-use/releases/tag/0.12.7) with security patches, per-session auth tokens, and video recording. v0.12.3 added CLI 2.0 with ~50ms daemon latency. Far more actively maintained than UI-TARS and now nearly triple the star count. More reliable for browser tasks but doesn't handle desktop applications.
 
 **Open Interpreter** — terminal-based agent that can execute code and interact with the OS. Different approach (code execution vs. visual control) but overlapping use cases.
 
@@ -119,7 +119,7 @@ The computer-use agent space is rapidly evolving — and the gap between UI-TARS
 
 **ChatGPT Agent** (OpenAI) — uses a virtual computer to execute workflows. Commercial, closed-source, but doesn't require local installation.
 
-**Microsoft OmniParser** — 24,800 stars, v2.0.1 (September 2025), no 2026 release.
+**[Microsoft OmniParser](https://github.com/microsoft/OmniParser/releases)** — 24,800 stars, v2.0.1 (September 2025), no 2026 release.
 
 **Simular AI, Ace** — commercial desktop automation agents with varying capabilities.
 

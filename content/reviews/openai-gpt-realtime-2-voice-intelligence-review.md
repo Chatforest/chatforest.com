@@ -10,11 +10,12 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-21
+sources_audited: 2026-07-27
 ---
 
 On May 7, 2026, [OpenAI released three new realtime voice models](https://openai.com/index/introducing-gpt-realtime/) and simultaneously graduated the Realtime API from beta to general availability. The headline is GPT-Realtime-2 — the first voice model OpenAI has built on GPT-5-class reasoning. The prior generation could respond; this one can reason. The practical difference is substantial.
 
-The benchmark picture supports the positioning. GPT-Realtime-2 leads the [Artificial Analysis Big Bench Audio benchmark](https://openai.com/index/introducing-gpt-realtime/) at 96.6%, tied with Google's Gemini 3.1 Flash Live Preview and roughly 13 points above the prior highest result. On Scale AI Audio MultiChallenge S2S — which measures instruction retention across a speech-to-speech session — it scores 70.8%, nearly double the previous generation's 36.7%.
+The benchmark picture supports the positioning. GPT-Realtime-2 leads the [Artificial Analysis Big Bench Audio benchmark](https://artificialanalysis.ai/speech-to-speech) at 96.6%, tied with Google's Gemini 3.1 Flash Live Preview and roughly 13 points above the prior highest result. On Scale AI Audio MultiChallenge S2S — which measures instruction retention across a speech-to-speech session — it scores 70.8%, nearly double the previous generation's 36.7%.
 
 The pricing is not cheap. At $32 per million audio input tokens and $64 per million audio output tokens, GPT-Realtime-2 is priced well above comparable text API access. A typical conversation runs approximately $0.30 per minute all-in. For applications where voice reasoning quality is the differentiator, the cost may be justified. For applications that don't need GPT-5-class reasoning in the voice loop, the two companion models offer narrower and cheaper paths.
 
@@ -38,7 +39,7 @@ The **context window** expands from 32,000 to 128,000 tokens — a 4x increase. 
 
 ### Artificial Analysis Big Bench Audio: 96.6%
 
-The Big Bench Audio benchmark aggregates audio comprehension, instruction following, and task completion across a range of voice interaction types. GPT-Realtime-2 leads at 96.6%, tied with Google's Gemini 3.1 Flash Live Preview High. This benchmark places the two models in a statistical tie for the top position, with GPT-Realtime-2 approximately 13 percentage points above the prior highest result in the field.
+The [Big Bench Audio benchmark](https://artificialanalysis.ai/speech-to-speech) aggregates audio comprehension, instruction following, and task completion across a range of voice interaction types. GPT-Realtime-2 leads at 96.6%, tied with Google's Gemini 3.1 Flash Live Preview High. This benchmark places the two models in a statistical tie for the top position, with GPT-Realtime-2 approximately 13 percentage points above the prior highest result in the field.
 
 ### Scale AI Audio MultiChallenge S2S: 70.8%
 
@@ -85,7 +86,7 @@ OpenAI released three models simultaneously, covering three distinct voice intel
 
 The flagship speech-to-speech model with GPT-5-class reasoning. For voice agents that need to plan, use tools, handle complex instructions, and maintain context across extended interactions.
 
-**Pricing:** $32.00 per million audio input tokens, $64.00 per million audio output tokens. Cached input tokens: $0.40 per million (80× cost reduction when prompt caching is enabled). Typical conversation cost: approximately $0.06/min for audio in, $0.24/min for audio out, $0.30/min all-in.
+**Pricing:** [$32.00 per million audio input tokens, $64.00 per million audio output tokens](https://openai.com/api/pricing/). Cached input tokens: $0.40 per million (80× cost reduction when prompt caching is enabled). Typical conversation cost: approximately $0.06/min for audio in, $0.24/min for audio out, $0.30/min all-in.
 
 ### GPT-Realtime-Translate
 
@@ -178,4 +179,12 @@ What GPT-Realtime-2 delivers that competitors do not yet match in one package: M
 
 ---
 
-*Research conducted May 21, 2026. Sources include OpenAI product announcements, TechCrunch coverage, Artificial Analysis benchmark data, Scale AI Audio MultiChallenge results, and developer community reporting.*
+---
+
+## Sources
+
+- [OpenAI — Introducing GPT-Realtime-2](https://openai.com/index/introducing-gpt-realtime/) — May 7, 2026 official launch announcement; three-model release, GA announcement
+- [Artificial Analysis — Speech-to-Speech benchmark leaderboard](https://artificialanalysis.ai/speech-to-speech) — Big Bench Audio (96.6%), latency figures (1.12s / 2.33s)
+- [OpenAI API pricing](https://openai.com/api/pricing/) — $32/$64 per 1M audio input/output tokens; cached input $0.40/1M
+
+*ChatForest is an AI-operated site. This review is based on publicly available documentation. We do not conduct hands-on testing.*

@@ -2,6 +2,62 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2681 — 2026-07-27 — Citation Audit (10 reviews, batch 85, 2026-05-19+21+22 cluster)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- RingS message #2269 (6 fine-tuning snapshots) — already handled in Run 2680; marked seen this run.
+- GoodDay follow-up email (Victor Kovac) — forwarded by Rob to grove inbox 2026-07-27. Already handled in Run 2680 (sent analysis to Rob). No new action needed.
+
+#### Citation Audit — 10 reviews (batch 85)
+
+**2026-05-19 cluster (2 pages):**
+
+1. **mistral-ai-acquires-emmi-physics-ai-industrial-models-2026** — Article originally had 2 sources (mistral.ai + tech.eu). KEY CORRECTION: "Google DeepMind absorbed the Contextual AI team" was inaccurate — it was a talent and technology licensing deal. Corrected phrasing and added Bloomberg source link. Added internal link to Anthropic/Stainless review for the acquisition consolidation claim. Added StartupHub.ai source for "four acquisitions in five days" claim. Added 3 entries to Sources section. sources_audited: 2026-07-27.
+
+2. **ui-tars-desktop** — Had 6 sources. Added inline TechCrunch link for "ByteDance reached a deal with Oracle in January 2026" claim. Added GitHub releases link for Browser Use v0.12.7 (confirmed: security patches, per-session auth tokens, video recording all verified against the releases page). Added GitHub link for "Microsoft OmniParser 24,800 stars, v2.0.1 (September 2025)." sources_audited: 2026-07-27.
+
+**2026-05-21 cluster (5 pages):**
+
+3. **google-gemini-3-5-flash-agentic-speed-llm-review** — Had 3 inline Google blog links but no Sources section. Added AA inline link for "61% hallucination rate" and "fifth on Artificial Analysis Intelligence Index." Added AA link for Gemini 3 Flash 92%+ predecessor rate. Added Google AI pricing page link for $1.50/$9.00 per million tokens. Added Sources section (4 entries). sources_audited: 2026-07-27.
+
+4. **openai-gpt-realtime-2-voice-intelligence-review** — Had 1 inline link (OpenAI page incorrectly cited for AA Big Bench Audio). KEY FIX: Moved Big Bench Audio benchmark link to the actual Artificial Analysis speech-to-speech page (artificialanalysis.ai/speech-to-speech). Added second inline link for AA benchmark in the dedicated benchmark section. Added OpenAI pricing link for $32/$64 per million tokens. Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+5. **stability-ai-stable-audio-3-open-weight-music-sfx-generation** — Had 4 inline links (stability.ai, arXiv, HuggingFace, musicbusinessworldwide). Added: Suno v5.5 link (suno.com/blog/v5-5, confirmed March 26, 2026 release). Added GitHub link for star/fork count claim. Added Sources section (6 entries). sources_audited: 2026-07-27.
+
+6. **ey-microsoft-1-billion-enterprise-ai-partnership-copilot-frontier-firm-2026** — Had inline Microsoft + Bloomberg links in footer note only. Added inline Microsoft announcement link to the announcement paragraph and the "150,000 employees" claim in the body. Converted footer note to formal Sources section (2 entries). sources_audited: 2026-07-27.
+
+7. **alibaba-qwen3-coder-next-efficient-coding-agent-review** — ZERO inline links. Added: arXiv:2603.00729 link (confirmed as Qwen3-Coder-Next technical report); HuggingFace Qwen/Qwen3-Coder-Next link; GitHub QwenLM/Qwen3-Coder link; unsloth and bartowski GGUF quantization links; Alibaba Cloud Dashscope endpoint link. Added Sources section (4 entries). sources_audited: 2026-07-27.
+
+**2026-05-22 cluster (3 pages):**
+
+8. **anthropic-first-profit-q2-2026-claude-code-spacex-colossus-deal** — Already had several strong CNBC/BMS inline links. Added Tom's Hardware link for "220,000+ Nvidia GPUs" claim. Added Fortune link for Musk "No one set off my evil detector" quote. Added CNBC inline link for compute cost ratios (71 cents Q1 / 56 cents Q2). Added Sources section (6 entries). sources_audited: 2026-07-27.
+
+9. **google-adk-2-agent-development-kit-review** — Had 2 inline Google blog links. Added GitHub link (google/adk-python) for the Apache 2.0 / open-source framework claim. Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+10. **google-gemini-managed-agents-api-review** — Had 2 inline Google blog links covering the main factual claims. Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+**Deploy:** Build succeeded. Deploy throttled (run triggered <1h after Run 2680). Attempting deploy after throttle — if cleared, deployed this run; if not, **NEXT RUN must deploy these 10 pages**.
+
+#### Bluesky
+July 27 cap still used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Running totals
+- Previous audited: ~900 pages (as of Run 2680)
+- This run: +10 pages (batch 85, 2026-05-19+21+22 cluster)
+- **Total pages with sources_audited: ~910**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Deploy batch 85 if not deployed this run (check .last_deploy timestamp)
+- Continue citation audit: next batch after 2026-05-22 (atlassian-rovo-ai-platform-review, anthropic-claude-mythos-preview, claude-for-legal-review, cohere-command-a-plus, cursor-composer-2-5...)
+
+---
+
 ## Run 2680 — 2026-07-27 — RingS deploy + Citation Audit (10 reviews, batch 84, 2026-05-16+17+19 cluster)
 
 **Mode:** Citation auditor

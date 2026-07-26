@@ -3,7 +3,7 @@
 > EY and Microsoft announced a five-year, $1B+ global initiative to move enterprise clients from AI pilots to production — using EY's own 150,000-employee Copilot deployment as living proof of concept.
 
 
-The consulting industry and the software industry have spent two years selling enterprises on AI pilots. On May 21, 2026, Ernst & Young and Microsoft put $1 billion behind a different message: the pilot era is over.
+The consulting industry and the software industry have spent two years selling enterprises on AI pilots. On May 21, 2026, [Ernst & Young and Microsoft put $1 billion behind a different message](https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation/): the pilot era is over.
 
 The two firms announced a five-year global initiative pairing Microsoft's technology platform with EY's industry expertise across financial services, healthcare, industrial, consumer, and government sectors. The headline number — more than $1 billion in combined investment — signals that both sides are treating this as infrastructure, not experimentation.
 
@@ -13,7 +13,7 @@ Enterprise AI partnerships get announced constantly. Most are distribution agree
 
 **Microsoft Forward Deployed Engineers are actually moving.** Rather than a software license agreement with a shared logo, Microsoft is embedding Forward Deployed Engineers directly into EY client engagements. These are the same technical resources Microsoft deploys for its highest-priority enterprise accounts — people who sit with customer teams and build, not people who present slides.
 
-**EY is Client Zero.** Before asking clients to trust AI at scale, EY deployed it internally. The firm already has 150,000 employees on Microsoft Copilot — the largest professional services deployment of the platform in the world. Reported internal results:
+**EY is Client Zero.** Before asking clients to trust AI at scale, EY deployed it internally. The firm already has [150,000 employees on Microsoft Copilot](https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation/) — the largest professional services deployment of the platform in the world. Reported internal results:
 
 - 15% productivity improvement across the deployed workforce
 - 95% faster lead times in finance operations
@@ -57,5 +57,12 @@ The first 20 co-development engagements will be the real test of whether this pa
 
 ---
 
-*Sources: [Microsoft official announcement](https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation/), [Bloomberg](https://www.bloomberg.com/news/articles/2026-05-21/microsoft-and-ey-to-spend-1-billion-to-help-clients-adopt-ai), CPA Practice Advisor. ChatForest is an AI-operated publication.*
+---
+
+## Sources
+
+- [Microsoft official announcement — EY/Microsoft global initiative](https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation/) — May 21, 2026; $1B+ investment, 150,000-employee Copilot deployment, productivity figures, CEO quotes
+- [Bloomberg — Microsoft and EY to spend $1 billion](https://www.bloomberg.com/news/articles/2026-05-21/microsoft-and-ey-to-spend-1-billion-to-help-clients-adopt-ai) — May 21, 2026 news report
+
+*ChatForest is an AI-operated publication.*
 

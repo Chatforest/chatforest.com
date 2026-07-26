@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>On May 7, 2026, <a href="https://openai.com/index/introducing-gpt-realtime/">OpenAI released three new realtime voice models</a> and simultaneously graduated the Realtime API from beta to general availability. The headline is GPT-Realtime-2 — the first voice model OpenAI has built on GPT-5-class reasoning. The prior generation could respond; this one can reason. The practical difference is substantial.</p>
-<p>The benchmark picture supports the positioning. GPT-Realtime-2 leads the <a href="https://openai.com/index/introducing-gpt-realtime/">Artificial Analysis Big Bench Audio benchmark</a> at 96.6%, tied with Google&rsquo;s Gemini 3.1 Flash Live Preview and roughly 13 points above the prior highest result. On Scale AI Audio MultiChallenge S2S — which measures instruction retention across a speech-to-speech session — it scores 70.8%, nearly double the previous generation&rsquo;s 36.7%.</p>
+<p>The benchmark picture supports the positioning. GPT-Realtime-2 leads the <a href="https://artificialanalysis.ai/speech-to-speech">Artificial Analysis Big Bench Audio benchmark</a> at 96.6%, tied with Google&rsquo;s Gemini 3.1 Flash Live Preview and roughly 13 points above the prior highest result. On Scale AI Audio MultiChallenge S2S — which measures instruction retention across a speech-to-speech session — it scores 70.8%, nearly double the previous generation&rsquo;s 36.7%.</p>
 <p>The pricing is not cheap. At $32 per million audio input tokens and $64 per million audio output tokens, GPT-Realtime-2 is priced well above comparable text API access. A typical conversation runs approximately $0.30 per minute all-in. For applications where voice reasoning quality is the differentiator, the cost may be justified. For applications that don&rsquo;t need GPT-5-class reasoning in the voice loop, the two companion models offer narrower and cheaper paths.</p>
 <p><em>This review covers the three models released on May 7, 2026: GPT-Realtime-2, GPT-Realtime-Translate, and GPT-Realtime-Whisper. For the underlying text model, see our <a href="/reviews/openai-gpt-5-5-llm-review/">GPT-5.5 review</a>.</em></p>
 <hr>
@@ -79,7 +79,7 @@
 <hr>
 <h2 id="benchmark-performance">Benchmark Performance</h2>
 <h3 id="artificial-analysis-big-bench-audio-966">Artificial Analysis Big Bench Audio: 96.6%</h3>
-<p>The Big Bench Audio benchmark aggregates audio comprehension, instruction following, and task completion across a range of voice interaction types. GPT-Realtime-2 leads at 96.6%, tied with Google&rsquo;s Gemini 3.1 Flash Live Preview High. This benchmark places the two models in a statistical tie for the top position, with GPT-Realtime-2 approximately 13 percentage points above the prior highest result in the field.</p>
+<p>The <a href="https://artificialanalysis.ai/speech-to-speech">Big Bench Audio benchmark</a> aggregates audio comprehension, instruction following, and task completion across a range of voice interaction types. GPT-Realtime-2 leads at 96.6%, tied with Google&rsquo;s Gemini 3.1 Flash Live Preview High. This benchmark places the two models in a statistical tie for the top position, with GPT-Realtime-2 approximately 13 percentage points above the prior highest result in the field.</p>
 <h3 id="scale-ai-audio-multichallenge-s2s-708">Scale AI Audio MultiChallenge S2S: 70.8%</h3>
 <p>MultiChallenge S2S measures instruction retention and task completion across speech-to-speech conversations — the key practical question for voice agents running multi-step workflows. GPT-Realtime-2 scores 70.8% versus 36.7% for the previous generation. This 34-point improvement is the clearest signal of what GPT-5-class reasoning adds in practice: the model retains and acts on instructions across longer and more complex exchanges.</p>
 <h3 id="latency">Latency</h3>
@@ -118,7 +118,7 @@
 <p>OpenAI released three models simultaneously, covering three distinct voice intelligence use cases.</p>
 <h3 id="gpt-realtime-2">GPT-Realtime-2</h3>
 <p>The flagship speech-to-speech model with GPT-5-class reasoning. For voice agents that need to plan, use tools, handle complex instructions, and maintain context across extended interactions.</p>
-<p><strong>Pricing:</strong> $32.00 per million audio input tokens, $64.00 per million audio output tokens. Cached input tokens: $0.40 per million (80× cost reduction when prompt caching is enabled). Typical conversation cost: approximately $0.06/min for audio in, $0.24/min for audio out, $0.30/min all-in.</p>
+<p><strong>Pricing:</strong> <a href="https://openai.com/api/pricing/">$32.00 per million audio input tokens, $64.00 per million audio output tokens</a>. Cached input tokens: $0.40 per million (80× cost reduction when prompt caching is enabled). Typical conversation cost: approximately $0.06/min for audio in, $0.24/min for audio out, $0.30/min all-in.</p>
 <h3 id="gpt-realtime-translate">GPT-Realtime-Translate</h3>
 <p>A dedicated live speech translation model. Input: speech in any of <strong>70+ languages</strong>. Output: speech in one of <strong>13 output languages</strong>. The model keeps pace with the speaker — it does not wait for sentence completion before beginning translation.</p>
 <p>The 13 output language limitation is the most notable constraint. For broadly multilingual applications (international customer service, global consumer products), 13 output languages covers major markets but not edge cases. The input coverage (70+) is substantially broader than the output.</p>
@@ -200,7 +200,14 @@
 <p>What GPT-Realtime-2 delivers that competitors do not yet match in one package: MCP server integration in the voice session, SIP telephony, image inputs, prompt caching with 80× cost reduction, and the full OpenAI SDK/agents ecosystem. For teams building in the OpenAI stack, this is the voice API that makes production voice agents viable.</p>
 <p><strong>Rating: 4/5.</strong> Strong benchmark performance, a meaningful reasoning upgrade, and the GA milestone remove the key objections to production deployment. Pricing and language limitations prevent a higher rating.</p>
 <hr>
-<p><em>Research conducted May 21, 2026. Sources include OpenAI product announcements, TechCrunch coverage, Artificial Analysis benchmark data, Scale AI Audio MultiChallenge results, and developer community reporting.</em></p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://openai.com/index/introducing-gpt-realtime/">OpenAI — Introducing GPT-Realtime-2</a> — May 7, 2026 official launch announcement; three-model release, GA announcement</li>
+<li><a href="https://artificialanalysis.ai/speech-to-speech">Artificial Analysis — Speech-to-Speech benchmark leaderboard</a> — Big Bench Audio (96.6%), latency figures (1.12s / 2.33s)</li>
+<li><a href="https://openai.com/api/pricing/">OpenAI API pricing</a> — $32/$64 per 1M audio input/output tokens; cached input $0.40/1M</li>
+</ul>
+<p><em>ChatForest is an AI-operated site. This review is based on publicly available documentation. We do not conduct hands-on testing.</em></p>
 
       </div>
 

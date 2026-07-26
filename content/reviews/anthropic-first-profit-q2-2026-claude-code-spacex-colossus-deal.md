@@ -4,6 +4,7 @@ date: 2026-05-22
 description: "Anthropic is on track for its first operating profit in Q2 2026, projecting $10.9B revenue — more than double Q1. Here's what's driving the growth and what it means for Claude users."
 tags: ["anthropic", "claude", "business", "ai-industry", "claude-code", "compute"]
 rating: 4
+sources_audited: 2026-07-27
 ---
 
 ## The Headline
@@ -36,13 +37,13 @@ In March 2026, Anthropic was nearing a $20 billion annual run rate. By April, th
 Alongside the financial news, SpaceX's public S-1 filing revealed a key infrastructure deal: [**Anthropic is paying SpaceX $1.25 billion per month**](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) — through May 2029 — for exclusive access to the entire capacity of **Colossus 1**, SpaceX's AI supercomputer facility in Memphis, Tennessee. [TechCrunch confirmed the deal terms](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/).
 
 The deal gives Anthropic access to:
-- **220,000+ Nvidia GPUs** — H100, H200, and next-generation GB200 accelerators
+- [**220,000+ Nvidia GPUs**](https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers) — H100, H200, and next-generation GB200 accelerators
 - **300 megawatts** of compute capacity
 - SpaceX's fiber, cooling, and power infrastructure
 
 In exchange, **SpaceX earns an estimated $3–4 billion annually** from the deal — one of the most lucrative compute contracts in AI infrastructure history.
 
-Elon Musk, who runs xAI (a direct competitor to Anthropic), reportedly approved the deal personally, saying "No one set off my evil detector."
+Elon Musk, who runs xAI (a direct competitor to Anthropic), [reportedly approved the deal personally](https://fortune.com/2026/05/07/spacex-anthropic-deal-elon-musk-ai-landlord-evil/), saying "No one set off my evil detector."
 
 ### What Users Got From It
 
@@ -63,7 +64,7 @@ The two quarters in which Anthropic is claiming an operating profit happen to be
 
 This isn't necessarily a red flag — compute costs have been falling broadly, and Anthropic's revenue growth trajectory appears genuine. But it does mean the $559M profit figure should be understood as a best-case snapshot rather than a locked-in baseline.
 
-Compute costs consumed 71 cents of every revenue dollar in Q1. That's projected to drop to 56 cents in Q2 — driven partly by the ramp-up discount and partly by improved infrastructure efficiency.
+[Compute costs consumed 71 cents of every revenue dollar in Q1. That's projected to drop to 56 cents in Q2](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) — driven partly by the ramp-up discount and partly by improved infrastructure efficiency.
 
 ---
 
@@ -92,5 +93,17 @@ The caveats are real: the profitability window coincides with discounted compute
 **What we're watching:** Whether Anthropic can sustain operating profit at full Colossus pricing in Q3 and Q4 2026 — that's when the real test begins.
 
 ---
+
+---
+
+## Sources
+
+- [CNBC �� Anthropic Q2 2026 revenue $10.9B](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) — Q1 $4.8B, $30B+ annualized run rate, compute cost ratios (71 cents Q1 / 56 cents Q2), enterprise customer list
+- [Let's Data Science — $559M operating profit](https://letsdatascience.com/blog/anthropic-first-operating-profit-q2-2026-559-million) — Q2 operating profit figure
+- [Bristol Myers Squibb press release — Anthropic enterprise deal](https://news.bms.com/news/details/2026/Bristol-Myers-Squibb-Announces-Strategic-Agreement-with-Anthropic-to-Position-Claude-Enterprise-as-the-Shared-Intelligence-Platform-Across-Its-Global-Operations/default.aspx) — 30,000+ employee deployment
+- [CNBC — SpaceX Colossus deal $1.25B/month](https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html) — deal terms, monthly cost
+- [TechCrunch — Anthropic SpaceX deal confirmation](https://techcrunch.com/2026/05/20/anthropic-will-pay-xai-1-25-billion-per-month-for-compute/) — deal verification, GPU count
+- [Tom's Hardware — 220,000 GPUs, Musk "evil detector"](https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers) — GPU count, 300MW, Musk quote
+- [Fortune — Musk approves Anthropic deal](https://fortune.com/2026/05/07/spacex-anthropic-deal-elon-musk-ai-landlord-evil/) — Musk "evil detector" quote context
 
 *ChatForest reviews AI tools and industry developments. We research publicly available sources and do not have insider access to Anthropic's financials.*

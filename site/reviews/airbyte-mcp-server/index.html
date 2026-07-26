@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p><strong>At a glance:</strong> Airbyte ships <strong>four distinct MCP implementations</strong>, each targeting a different user and use case. The flagship <strong>Airbyte Agent MCP</strong> — launched May 4, 2026 — is a cloud-hosted remote MCP server that gives AI agents unified access to 50+ business data sources (Salesforce, HubSpot, Zendesk, GitHub, Slack, Stripe, and more) through a &ldquo;Context Store&rdquo; that reportedly reduces token usage by 40–90% compared to vendor-specific MCPs. The <strong>PyAirbyte MCP</strong> is a local tool for developers managing connectors. The <strong>Airbyte Knowledge MCP</strong> searches Airbyte&rsquo;s documentation. The <strong>Connector Builder MCP</strong> (beta) lets agents build new connectors from scratch. Free tier available for the Agent MCP. Part of our <strong><a href="/categories/etl-data-integration/">ETL &amp; Data Integration category</a></strong>.</p>
-<p><a href="https://airbyte.com/">Airbyte</a> is one of the most established open-source ELT (Extract, Load, Transform) platforms in the data engineering ecosystem. The main repository (<code>airbytehq/airbyte</code>) has over <strong>21,300 GitHub stars</strong>, supports <strong>600+ data connectors</strong>, and competes directly with Fivetran and Stitch in the managed data pipeline market. The company launched <strong>Airbyte 2.0 on October 15, 2025</strong>, and followed with the Airbyte Agents platform — including MCP support — in May 2026.</p>
+<p><a href="https://airbyte.com/">Airbyte</a> is one of the most established open-source ELT (Extract, Load, Transform) platforms in the data engineering ecosystem. The main repository (<a href="https://github.com/airbytehq/airbyte"><code>airbytehq/airbyte</code></a>) has over <strong>21,300 GitHub stars</strong>, supports <strong>600+ data connectors</strong>, and competes directly with Fivetran and Stitch in the managed data pipeline market. The company launched <strong>Airbyte 2.0 on October 15, 2025</strong>, and followed with the <a href="https://airbyte.com/blog/agent-mcp">Airbyte Agents platform — including MCP support</a> — in May 2026.</p>
 <p>The MCP layer is not a single server but a <strong>deliberately segmented product family</strong>: the Agent MCP handles production agentic data access, PyAirbyte MCP handles developer workflows, the Knowledge MCP handles documentation, and the Connector Builder MCP handles connector creation. Understanding which server applies to your use case is the first challenge.</p>
 <h2 id="what-airbyte-is">What Airbyte Is</h2>
 <p>Airbyte is an <strong>ELT data integration platform</strong> — it extracts data from source systems, loads it into destination data warehouses and lakes, and optionally applies transformations. Unlike traditional ETL tools that transform data in transit, the ELT model loads raw data first and transforms in the destination (typically via dbt or a SQL layer).</p>
@@ -88,7 +88,7 @@ Airbyte Cloud pricing is connector-volume based with credits that scale by data 
 <h3 id="1-airbyte-agent-mcp-flagship">1. Airbyte Agent MCP (Flagship)</h3>
 <p><strong>URL:</strong> <code>https://mcp.airbyte.ai/mcp</code><br>
 <strong>Architecture:</strong> Cloud-hosted remote HTTP — nothing to install<br>
-<strong>Launched:</strong> May 4, 2026</p>
+<strong><a href="https://airbyte.com/blog/agent-mcp">Launched: May 4, 2026</a></strong></p>
 <p>This is the primary commercial MCP offering and the most interesting from an agentic standpoint. Instead of connecting each AI agent tool directly to vendor APIs (one MCP per SaaS tool), the Airbyte Agent MCP creates a single connection point that consolidates business data from 50+ sources into a <strong>Context Store</strong> — a pre-indexed, search-optimized data layer.</p>
 <p><strong>How the Context Store works:</strong></p>
 <p>When an agent needs data (e.g., &ldquo;What are the open Zendesk tickets for Enterprise customers?&quot;), the standard approach is to query the Zendesk API directly during inference — which burns tokens on raw API responses. With the Context Store, Airbyte runs scheduled ELT pipelines to pull and index business data, and the MCP server retrieves from that pre-processed layer instead of live APIs. According to Airbyte&rsquo;s benchmarks:</p>
@@ -122,7 +122,7 @@ Airbyte Cloud pricing is connector-volume based with credits that scale by data 
 </tr>
 </tbody>
 </table>
-<p>These figures come from Airbyte&rsquo;s own benchmarks and have not been independently verified. However, the architectural argument is sound: pre-processed, indexed data is inherently more token-efficient than raw API responses with verbose JSON structures.</p>
+<p>These figures come from <a href="https://airbyte.com/blog/agent-mcp">Airbyte&rsquo;s own benchmarks</a> and have not been independently verified. However, the architectural argument is sound: pre-processed, indexed data is inherently more token-efficient than raw API responses with verbose JSON structures.</p>
 <p><strong>Supported connectors (50+ agent-optimized):</strong><br>
 Salesforce, HubSpot, Zendesk, Jira, Slack, GitHub, Stripe, Gong, Linear, Intercom, Asana, Notion, Airtable, Shopify, QuickBooks, and more. Note that these 50 agent-optimized connectors are a subset of the 600+ connectors available for ELT replication — not all replication connectors have been adapted for agentic access yet.</p>
 <p><strong>Write support:</strong> Many connectors support write actions, not just read. Agents can update Salesforce records, create Jira tickets, post Slack messages, and perform other write operations — making this a two-way data access layer, not just a read-only query interface.</p>
@@ -167,7 +167,7 @@ Claude Desktop, Claude Code, ChatGPT, Codex, Cursor, VS Code, Windsurf, and any 
 Add via the Custom Connectors menu in Claude Desktop → enter URL <code>https://mcp.airbyte.ai/mcp</code>. No configuration file editing needed for the remote server.</p>
 <hr>
 <h3 id="2-pyairbyte-mcp-server-localdeveloper">2. PyAirbyte MCP Server (Local/Developer)</h3>
-<p><strong>GitHub:</strong> <code>airbytehq/PyAirbyte</code> (332 stars)<br>
+<p><strong>GitHub:</strong> <a href="https://github.com/airbytehq/PyAirbyte"><code>airbytehq/PyAirbyte</code></a> (332 stars)<br>
 <strong>Architecture:</strong> Local MCP server, runs on your machine<br>
 <strong>Status:</strong> Experimental — &ldquo;may change without notice between minor versions&rdquo;<br>
 <strong>Released:</strong> August 5, 2025 (PyAirbyte v0.29.0), latest v0.45.0 (May 6, 2026)</p>
@@ -411,6 +411,12 @@ uvx --python<span style="color:#f92672">=</span>3.11 --from<span style="color:#f
 <p><strong>Rating: 4/5</strong> — Architecturally innovative Context Store model with genuine token efficiency advantages; strong open-source platform backing (21,000+ stars); free tier available. Held back by very recent launch (May 2026), 50 vs. 600 connector gap in the agentic layer, AO pricing complexity, no claude.ai browser support, and unverified benchmark claims.</p>
 <hr>
 <p><em>Researched May 2026. The Airbyte Agent MCP launched May 4, 2026 — this is a very recent product. We will update this review as community feedback accumulates and the connector catalog expands.</em></p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://airbyte.com/blog/agent-mcp">Airbyte Agent MCP launch announcement</a> — May 4, 2026 blog post; Context Store architecture, token reduction benchmarks, pricing, connector list</li>
+<li><a href="https://github.com/airbytehq/airbyte">airbytehq/airbyte — GitHub</a> — main open-source platform repository; star count and community metrics</li>
+<li><a href="https://github.com/airbytehq/PyAirbyte">airbytehq/PyAirbyte — GitHub</a> — PyAirbyte MCP server repository; star count, version history</li>
+</ul>
 
       </div>
 

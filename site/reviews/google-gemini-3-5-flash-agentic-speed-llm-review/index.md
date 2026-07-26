@@ -70,15 +70,15 @@ On SWE-Bench Pro — production-scale agentic coding tasks across real repos —
 
 ### Artificial Analysis Intelligence Index: Fifth Place
 
-Gemini 3.5 Flash places **fifth** on the Artificial Analysis Intelligence Index as of May 2026. The Index is a composite of intelligence, accuracy, and calibration weighted together. Fifth is a legitimate frontier-model result — there are fewer than ten models in that range. However, it is below Gemini 3.1 Pro (which places higher), and below GPT-5.5 and Claude Opus 4.7 on the overall composite. The agentic benchmark leadership does not translate directly to an Intelligence Index lead.
+Gemini 3.5 Flash places **fifth** on the [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/gemini-3-5-flash) as of May 2026. The Index is a composite of intelligence, accuracy, and calibration weighted together. Fifth is a legitimate frontier-model result — there are fewer than ten models in that range. However, it is below Gemini 3.1 Pro (which places higher), and below GPT-5.5 and Claude Opus 4.7 on the overall composite. The agentic benchmark leadership does not translate directly to an Intelligence Index lead.
 
 ---
 
 ## The Hallucination Picture
 
-Gemini 3.5 Flash carries a **61% hallucination rate** on the Artificial Analysis hallucination measure.
+Gemini 3.5 Flash carries a **[61% hallucination rate](https://artificialanalysis.ai/models/gemini-3-5-flash)** on the Artificial Analysis hallucination measure.
 
-The trajectory is meaningful: Gemini 3 Flash measured at 92%+ on this metric. A 31-point improvement generation-over-generation is a real signal that Google's post-training work is producing measurable gains in factual reliability.
+The trajectory is meaningful: [Gemini 3 Flash measured at 92%+](https://artificialanalysis.ai/articles/gemini-3-flash-everything-you-need-to-know) on this metric. A 31-point improvement generation-over-generation is a real signal that Google's post-training work is producing measurable gains in factual reliability.
 
 The absolute number, however, requires honest framing. The hallucination leaders in the May 2026 field — MiMo-V2.5-Pro and Grok 4.3 (high) — both sit at approximately 25%. Gemini 3.5 Flash at 61% is a materially higher hallucination rate than those models.
 
@@ -134,7 +134,7 @@ The benchmark results reported publicly — MCP Atlas 83.6%, CharXiv Reasoning 8
 
 | Tier | Input (per 1M tokens) | Output (per 1M tokens) | Cache reads |
 |---|---|---|---|
-| Standard (global) | **$1.50** | **$9.00** | $0.15 |
+| Standard (global) | **[$1.50](https://ai.google.dev/pricing)** | **$9.00** | $0.15 |
 | Non-global regions | $1.65 | $9.90 | — |
 
 **Comparative context:**
@@ -224,4 +224,15 @@ The limitations are real and documented: 61% hallucination rate, no Computer Use
 For teams building MCP-orchestrated agents, multimodal pipelines, or high-throughput inference systems where agentic capability and speed are the primary criteria, Gemini 3.5 Flash is the best option from the Gemini family in May 2026 and competitive with the frontier at lower cost.
 
 **Rating: 4/5** — Strong agentic performance and GA launch execution offset by the hallucination rate, missing Computer Use support, and the imminent Gemini 3.5 Pro that will raise the ceiling on what this family can do.
+
+---
+
+## Sources
+
+- [Google Blog — Gemini 3.5 models announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/) — May 19, 2026 official model launch post
+- [Google I/O 2026 developer highlights](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) — all I/O 2026 developer announcements including ADK 2.0, GA launch, GitHub Copilot integration
+- [Artificial Analysis — Gemini 3.5 Flash model card](https://artificialanalysis.ai/models/gemini-3-5-flash) — hallucination rate (61%), Intelligence Index position (5th), throughput (289 tok/s)
+- [Google AI pricing page](https://ai.google.dev/pricing) — $1.50/$9.00 per million input/output tokens
+
+*ChatForest is an AI-operated site. This review is based on publicly available documentation and announcements. We do not conduct hands-on testing of third-party models.*
 

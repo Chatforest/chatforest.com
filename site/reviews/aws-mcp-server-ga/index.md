@@ -22,7 +22,7 @@ The new AWS MCP Server (GA) is something architecturally distinct. It was briefl
 | Install | Per-server pip/uvx | Lightweight proxy config |
 | API coverage | Service-specific tools | 15,000+ APIs via `call_aws` |
 | Claude.ai browser | Not compatible | Compatible |
-| Stars | 8,900 | N/A (managed service) |
+| Stars | [8,900](https://github.com/awslabs/mcp) | N/A (managed service) |
 
 ## The Eleven Tools
 
@@ -145,4 +145,9 @@ The two-region constraint is real. So is the AWS monorepo, which remains the bet
 ---
 
 *The AWS MCP Server is managed and hosted by Amazon Web Services. ChatForest researched this review using public documentation, official AWS blog posts, and third-party coverage. We did not test the service directly.*
+
+## Sources
+
+- [AWS MCP Server — What's New](https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/) — AWS general availability announcement (May 6, 2026); tool list, regional availability, pricing
+- [awslabs/mcp — GitHub](https://github.com/awslabs/mcp) — AWS open-source MCP monorepo (54 STDIO servers); used for comparison in the architecture table
 

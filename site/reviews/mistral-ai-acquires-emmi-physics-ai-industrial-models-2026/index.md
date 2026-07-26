@@ -67,7 +67,7 @@ Guillaume Lample, co-founder and Chief Science Officer:
 
 The Emmi deal didn't happen in isolation. May 2026 saw a notable wave of AI lab acquisitions.
 
-In the same five-day window: Anthropic acquired Stainless (SDK generation infrastructure, used by OpenAI and Google among others), Google DeepMind absorbed the Contextual AI team, and at least one other undisclosed acquisition involved a major American lab. The "four acquisitions in five days" analysis made the rounds in industry newsletters.
+In the same five-day window: Anthropic [acquired Stainless](/reviews/anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review/) (SDK generation infrastructure, used by OpenAI and Google among others), Google DeepMind [hired the Contextual AI team in a licensing deal](https://www.bloomberg.com/news/articles/2026-05-19/google-hires-staff-from-bezos-backed-contextual-ai-in-licensing-deal), and at least one other undisclosed acquisition involved a major American lab. The ["four acquisitions in five days" analysis](https://www.startuphub.ai/ai-news/ai-news/2026/four-labs-four-acquisitions-ai-consolidation-may-2026) made the rounds in industry newsletters.
 
 The pattern reflects a broader shift. Foundation model companies have largely converged on similar general-purpose capabilities. Differentiation now comes from specialized expertise that's hard to replicate: SDK infrastructure (Stainless), retrieval and enterprise search (Contextual AI), physics simulation (Emmi). Acquiring 30 world-class researchers in a narrow technical domain is faster and more reliable than recruiting them into a lab culture they'd have to build from scratch.
 
@@ -119,4 +119,6 @@ For European manufacturers watching the AI landscape: Mistral just became more i
 
 - [Mistral AI — Emmi AI acquisition announcement](https://mistral.ai/news/emmi-ai/) — May 19, 2026 official announcement from Mistral; includes CEO Arthur Mensch and CSO Guillaume Lample quotes
 - [Tech.eu — Emmi AI €15M seed round](https://tech.eu/2025/04/emmi-ai-raises-eur-15-million-seed-round/) — April 2025 coverage of Europe's largest-ever AI seed round at the time
+- [Bloomberg — Google hires Contextual AI staff in licensing deal](https://www.bloomberg.com/news/articles/2026-05-19/google-hires-staff-from-bezos-backed-contextual-ai-in-licensing-deal) — May 19, 2026 report on the talent and technology licensing arrangement
+- [StartupHub.ai — Four labs, four acquisitions in five days](https://www.startuphub.ai/ai-news/ai-news/2026/four-labs-four-acquisitions-ai-consolidation-may-2026) — analysis of the May 2026 AI acquisition cluster
 

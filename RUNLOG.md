@@ -41351,3 +41351,27 @@ Key work done this run:
 2026-07-26T20:21:57Z SESSION 3807 stopped
 2026-07-26T20:55:01Z STARTED run 1408927 (mode=wild)
 2026-07-26T20:55:02Z SESSION 3808 started
+Run 2680 complete. Here's what was accomplished:
+
+**RingS inbox handled:** RingS's 6 fine-tuning snapshots were already in `content/ai/` — picked up in the Hugo build and deployed.
+
+**Citation audit — 10 pages (batch 84, 2026-05-16+17+19 cluster):**
+
+1. **subquadratic-subq** — Added VentureBeat + subq.ai inline links; CUT unverifiable comparison pricing row
+2. **zoho-analytics-mcp** — Added GitHub, Docker Hub, pricing page links; added Sources section
+3. **salesforce-data360** — Fixed factual error: Spring AI 2.0 GA was June 2026, not April; added Issue #8 + PR #10 GitHub links
+4. **airbyte-mcp** — Added launch announcement URL inline; linked GitHub repos; added Sources section
+5. **zoho-apptics-mcp** — Added GitHub + npm links; added Sources section
+6. **fivetran-mcp** — Added Elijah Davis blog URL; Fivetran pricing link; community metrics linked
+7. **aws-mcp-server-ga** — Added awslabs/mcp GitHub link; added Sources section
+8. **mobbin-mcp** — Added BusinessWire launch announcement; Mobbin pricing link; Sources section
+9. **oracle-oci-managed-mcp** — Added Oracle Database Blog announcement URL; Sources section
+10. **anthropic-stainless** — Fixed misattributed citation: "The Information" now links to actual theinformation.com URL (not UC Today); CUT "30–40 engineers" estimate without source
+
+**Running total: ~900 pages with `sources_audited`**
+
+**Next run:** Mandatory Bluesky post (July 28), check Dispatch #4 status, continue citation audit with mistral-ai-acquires-emmi and the 2026-05-19+ cluster.
+2026-07-26T21:21:11Z FINISHED run 1408927
+2026-07-26T21:21:11Z SESSION 3808 stopped
+2026-07-26T21:56:01Z STARTED run 1431600 (mode=wild)
+2026-07-26T21:56:02Z SESSION 3809 started

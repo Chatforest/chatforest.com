@@ -19,11 +19,11 @@ Fivetran is a **fully managed ELT data pipeline service**. It connects source sy
 - **Sync frequencies** — 5-minute sync intervals on paid plans; 1-minute on Enterprise; scheduled syncs on Free
 - **Monthly Active Rows (MAR) pricing** — cost is based on rows synced; the Free plan includes 500,000 MAR/month, access to 5,000 monthly model runs (Fivetran Transformations), and REST API access
 
-**Pricing implications for MCP users:** As of 2026, the Fivetran Free Plan explicitly includes REST API access. This means users can authenticate the MCP server and use its read tools without a paid subscription. Write operations (creating connections, triggering syncs) will consume MAR against whatever plan you're on — on the Free tier, heavy sync triggering could exhaust the monthly allowance.
+**Pricing implications for MCP users:** As of 2026, the [Fivetran Free Plan](https://www.fivetran.com/pricing) explicitly includes REST API access. This means users can authenticate the MCP server and use its read tools without a paid subscription. Write operations (creating connections, triggering syncs) will consume MAR against whatever plan you're on — on the Free tier, heavy sync triggering could exhaust the monthly allowance.
 
 ## The MCP Server — Overview
 
-The official Fivetran MCP server lives at `github.com/fivetran/fivetran-mcp`. It was published by the Fivetran organization, though an official November 2025 Fivetran blog post (by Lead Solution Architect Elijah Davis) stated at the time that "Fivetran does not currently have an officially supported MCP Server" — the org-level repo appears to have arrived after that post. As of May 2026, the repo exists and is functional, but its **official support status is somewhat ambiguous**: the repo has only 28 commits and 0 open issues, suggesting it may be more "published but experimental" than "officially supported."
+The official Fivetran MCP server lives at [`github.com/fivetran/fivetran-mcp`](https://github.com/fivetran/fivetran-mcp). It was published by the Fivetran organization, though an [official November 2025 Fivetran blog post](https://www.fivetran.com/blog/integrate-data-faster-using-natural-language-fivetran-and-mcp) (by Lead Solution Architect Elijah Davis) stated at the time that "Fivetran does not currently have an officially supported MCP Server" — the org-level repo appears to have arrived after that post. As of May 2026, the repo exists and is functional, but its **official support status is somewhat ambiguous**: the repo has only 28 commits and 0 open issues, suggesting it may be more "published but experimental" than "officially supported."
 
 **Key technical facts:**
 
@@ -172,7 +172,7 @@ Both Fivetran and Airbyte are ELT platforms with MCP integrations, but they serv
 
 6. **License unclear** — The official `fivetran/fivetran-mcp` repo does not appear to have an explicit LICENSE file, creating ambiguity for enterprise users with open-source license requirements. Community forks are MIT.
 
-7. **Low community activity** — 15 stars, 6 forks, 28 commits, 0 open issues. This either means the server works perfectly (unlikely for a young project) or engagement is very low. There is little community feedback to gauge real-world reliability.
+7. **Low community activity** — [15 stars, 6 forks, 28 commits](https://github.com/fivetran/fivetran-mcp), 0 open issues. This either means the server works perfectly (unlikely for a young project) or engagement is very low. There is little community feedback to gauge real-world reliability.
 
 8. **Ambiguous official status** — Fivetran's own blog said no official server existed (November 2025); the org repo appeared later. Whether the repo represents a supported product or an experimental project is unclear from the repo signals alone.
 
@@ -211,4 +211,10 @@ If you use [Snowflake](/reviews/snowflake-mcp-server/) as your destination wareh
 ---
 
 *Researched May 2026. Community implementations vary; see the [fivetran/fivetran-mcp GitHub repo](https://github.com/fivetran/fivetran-mcp) for current status. For a comparison in the ETL space, see our [Airbyte MCP review](/reviews/airbyte-mcp-server/).*
+
+## Sources
+
+- [fivetran/fivetran-mcp — GitHub](https://github.com/fivetran/fivetran-mcp) — official repository; README, star/fork counts, commit history
+- [Fivetran Pricing](https://www.fivetran.com/pricing) — Free plan MAR limits, REST API access, plan tiers
+- [Fivetran blog: Integrate data faster using natural language (Elijah Davis, Nov 2025)](https://www.fivetran.com/blog/integrate-data-faster-using-natural-language-fivetran-and-mcp) — Fivetran's own statement on MCP server status at the time
 
