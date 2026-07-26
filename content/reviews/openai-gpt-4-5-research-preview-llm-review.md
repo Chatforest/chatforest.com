@@ -6,6 +6,7 @@ og_description: "GPT-4.5 (gpt-4.5-preview), released February 27, 2025, deprecat
 content_type: "Review"
 card_description: "OpenAI GPT-4.5 (February 27, 2025) was the largest non-reasoning model OpenAI had ever trained at the time — and the shortest-lived. SimpleQA factual accuracy improved dramatically over GPT-4o (62.5% vs 38.2%), GPQA Diamond hit 71.4%, and conversational quality was meaningfully better. But at $75/$150 per million tokens and with SWE-bench coding at only 38%, it was made redundant by GPT-4.1 in April 2025 and deprecated in July. A model worth understanding historically even if you can no longer use it."
 last_refreshed: 2026-05-14
+sources_audited: 2026-07-27
 tags: ["llm", "openai", "gpt-4.5", "conversational-ai", "factual-accuracy", "deprecated", "api"]
 categories: ["reviews"]
 rating: 3
@@ -46,7 +47,7 @@ The model was initially available to **ChatGPT Pro** users first ($200/month sub
 | **Pricing at launch** | $75 input / $150 output per million tokens |
 | **Commercial lifespan** | ~4.5 months in the API |
 
-The codename "Orion" had circulated in industry reporting for months before the announcement. GPT-4.5 was described by OpenAI as the largest model in terms of training compute that they had built to that point — though no specific parameter count was disclosed.
+The codename "Orion" [had circulated in industry reporting](https://techcrunch.com/2025/02/27/openai-unveils-gpt-4-5-orion-its-largest-ai-model-yet/) for months before the announcement. GPT-4.5 was described by OpenAI as the largest model in terms of training compute that they had built to that point — though no specific parameter count was disclosed.
 
 ---
 

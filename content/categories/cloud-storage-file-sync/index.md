@@ -4,6 +4,7 @@ date: 2026-05-12T10:00:00+09:00
 description: "Comprehensive reviews of 6 cloud storage and file access MCP server categories — from major cloud storage platforms (Box, Dropbox, Google Drive, OneDrive, iCloud) to the reference Filesystem server."
 og_description: "6 cloud storage MCP server reviews covering Box (official remote mcp.box.com, OAuth 2.1, 13 tool categories), Google Drive (3.4K stars, official + 1.9K-star community), Dropbox (official remote + Dash search, 30+ apps), OneDrive (official Work IQ, 552-star community), iCloud (3K-star archived, CalDAV/CardDAV), and Filesystem (81.6K monorepo, 14 tools, 137K weekly npm). 40+ servers evaluated."
 content_type: "Category"
+sources_audited: 2026-07-27
 ---
 
 We've reviewed **6 categories** of cloud storage and file access MCP servers, evaluating over **45 individual servers** across the major consumer and enterprise platforms plus the foundational local filesystem. Each review covers architecture patterns, star counts, tool inventories, known issues, and honest ratings.

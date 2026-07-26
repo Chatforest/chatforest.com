@@ -3,6 +3,7 @@ title: "OpenAI o3-mini Review — The Reasoning Model That Reached the Free Tier
 date: 2026-05-14
 description: "Released January 31, 2025, o3-mini was OpenAI's first reasoning model available on ChatGPT's free tier — and the first to offer explicit reasoning effort control (low/medium/high). At high effort, it scored 87.3% on AIME 2024 and 79.7% on GPQA Diamond, matching or beating o1 at 93% lower cost. We review the architecture, benchmark breakdown by effort level, pricing, safety evaluation, and what o3-mini proved about the democratization of inference-time reasoning."
 tags: ["llm", "reasoning", "openai", "o3-mini", "chain-of-thought", "inference-time-compute", "api", "stem"]
+sources_audited: 2026-07-27
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"

@@ -6,6 +6,7 @@ og_description: "Meta Llama 3 (April 18, 2024): 8B and 70B open-weight models, 1
 content_type: "Review"
 card_description: "Meta Llama 3 (April 18, 2024) introduced 8B and 70B open-weight models trained on 15 trillion tokens — more than six times Llama 2's dataset. With a 128K-token vocabulary, Grouped-Query Attention, and benchmarks that surpassed Mistral 7B and Gemma 7B across the board, it set a new baseline for what open-weight models at the 8B scale could do. The 8,192-token context window was a genuine constraint that Llama 3.1 resolved three months later, but the underlying model quality made Llama 3 the dominant open-weight choice for much of 2024."
 last_refreshed: 2026-05-14
+sources_audited: 2026-07-27
 tags: ["llm", "open-weight", "meta", "llama", "text-generation", "local-llm", "efficient-ai", "code-generation"]
 categories: ["reviews"]
 rating: 4
@@ -123,7 +124,7 @@ The result was a smaller-than-raw but higher-quality effective dataset than pure
 
 ### Training Infrastructure
 
-Meta trained Llama 3 on clusters of NVIDIA H100 GPUs — the 70B ran across 24,000 H100s according to the technical documentation. At the time of release, this represented the largest training run Meta had disclosed for an open-weight model.
+Meta trained Llama 3 on clusters of NVIDIA H100 GPUs. At the time of release, this represented the largest training run Meta had disclosed for an open-weight model.
 
 ### Post-Training: SFT, RLHF, and DPO
 
@@ -137,7 +138,7 @@ The `-Instruct` variants were produced via:
 
 4. **Direct Preference Optimization (DPO)**: Applied in later post-training stages — DPO is more compute-efficient than PPO and effective for alignment fine-tuning.
 
-Meta released **Llama Guard 2** alongside Llama 3 — a safety classifier fine-tuned from the Llama 3 8B model for detecting violating content in model inputs and outputs. Llama Guard 2 was designed to be deployed as a companion to Llama 3 in production pipelines requiring safety filtering.
+Meta released [**Llama Guard 2**](https://ai.meta.com/blog/meta-llama-3/) alongside Llama 3 — a safety classifier fine-tuned from the Llama 3 8B model for detecting violating content in model inputs and outputs. Llama Guard 2 was designed to be deployed as a companion to Llama 3 in production pipelines requiring safety filtering.
 
 ---
 

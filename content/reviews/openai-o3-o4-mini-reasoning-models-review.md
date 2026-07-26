@@ -3,6 +3,7 @@ title: "OpenAI o3 and o4-mini Review — Reasoning Models That Think With Images
 date: 2026-05-14
 description: "Released April 16, 2025, o3 and o4-mini were OpenAI's most capable models at launch — the first reasoning models to natively use tools, incorporate images into chain-of-thought, and match human performance on graduate-level science. o3 scored 87.5% on ARC-AGI; o4-mini achieved 99.5% on AIME 2025 with code execution. We review architecture, benchmarks, pricing, the FrontierMath controversy, agentic design, and how these models look from 2026."
 tags: ["llm", "reasoning", "openai", "o3", "o4-mini", "chain-of-thought", "multimodal", "agentic-ai", "api"]
+sources_audited: 2026-07-27
 categories: ["reviews"]
 rating: 5
 author: "ChatForest"
@@ -179,7 +180,7 @@ The combination of tool use and long-context reasoning opens specific use cases 
 
 **Benchmark gap (development vs. production)**: As discussed above, the development-time benchmark scores (FrontierMath 25.2%, etc.) were measured on a different compute configuration than the publicly released models. Practical performance, while still excellent, should be calibrated against the confirmed public-model benchmark numbers.
 
-**o4-mini ChatGPT retirement**: As of February 13, 2026, OpenAI retired o4-mini from the ChatGPT interface (replaced by GPT-5.2). The model remains available in the API. Users of the ChatGPT product no longer have direct access to o4-mini; API developers do.
+**o4-mini ChatGPT retirement**: [As of February 13, 2026, OpenAI retired o4-mini](https://openai.com/index/retiring-gpt-4o-and-older-models/) from the ChatGPT interface (replaced by GPT-5.2). The model remains available in the API. Users of the ChatGPT product no longer have direct access to o4-mini; API developers do.
 
 ---
 
