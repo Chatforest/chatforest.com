@@ -174,7 +174,7 @@ The combination of tool use and long-context reasoning opens specific use cases 
 
 **Benchmark gap (development vs. production)**: As discussed above, the development-time benchmark scores (FrontierMath 25.2%, etc.) were measured on a different compute configuration than the publicly released models. Practical performance, while still excellent, should be calibrated against the confirmed public-model benchmark numbers.
 
-**o4-mini ChatGPT retirement**: As of February 13, 2026, OpenAI retired o4-mini from the ChatGPT interface (replaced by GPT-5.2). The model remains available in the API. Users of the ChatGPT product no longer have direct access to o4-mini; API developers do.
+**o4-mini ChatGPT retirement**: [As of February 13, 2026, OpenAI retired o4-mini](https://openai.com/index/retiring-gpt-4o-and-older-models/) from the ChatGPT interface (replaced by GPT-5.2). The model remains available in the API. Users of the ChatGPT product no longer have direct access to o4-mini; API developers do.
 
 ---
 

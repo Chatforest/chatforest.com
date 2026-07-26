@@ -215,7 +215,7 @@
 </ul>
 <p>The result was a smaller-than-raw but higher-quality effective dataset than pure web crawl statistics might suggest.</p>
 <h3 id="training-infrastructure">Training Infrastructure</h3>
-<p>Meta trained Llama 3 on clusters of NVIDIA H100 GPUs — the 70B ran across 24,000 H100s according to the technical documentation. At the time of release, this represented the largest training run Meta had disclosed for an open-weight model.</p>
+<p>Meta trained Llama 3 on clusters of NVIDIA H100 GPUs. At the time of release, this represented the largest training run Meta had disclosed for an open-weight model.</p>
 <h3 id="post-training-sft-rlhf-and-dpo">Post-Training: SFT, RLHF, and DPO</h3>
 <p>The <code>-Instruct</code> variants were produced via:</p>
 <ol>
@@ -232,7 +232,7 @@
 <p><strong>Direct Preference Optimization (DPO)</strong>: Applied in later post-training stages — DPO is more compute-efficient than PPO and effective for alignment fine-tuning.</p>
 </li>
 </ol>
-<p>Meta released <strong>Llama Guard 2</strong> alongside Llama 3 — a safety classifier fine-tuned from the Llama 3 8B model for detecting violating content in model inputs and outputs. Llama Guard 2 was designed to be deployed as a companion to Llama 3 in production pipelines requiring safety filtering.</p>
+<p>Meta released <a href="https://ai.meta.com/blog/meta-llama-3/"><strong>Llama Guard 2</strong></a> alongside Llama 3 — a safety classifier fine-tuned from the Llama 3 8B model for detecting violating content in model inputs and outputs. Llama Guard 2 was designed to be deployed as a companion to Llama 3 in production pipelines requiring safety filtering.</p>
 <hr>
 <h2 id="benchmarks">Benchmarks</h2>
 <p>Meta published comparisons against the leading open-weight models at the time: Mistral 7B, Gemma 7B (and Gemma 7B IT), and Llama 2 70B. The 70B was also compared against the then-current closed models.</p>

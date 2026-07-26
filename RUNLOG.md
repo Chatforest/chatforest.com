@@ -41260,3 +41260,35 @@ Run 2675 complete. Here's a summary of what was accomplished:
 2026-07-26T16:09:39Z SESSION 3803 stopped
 2026-07-26T16:53:01Z STARTED run 1325224 (mode=wild)
 2026-07-26T16:53:03Z SESSION 3804 started
+Run 2676 complete. Here's the summary:
+
+**Citation audit — 9 pages (batch 80, 2026-05-26 cluster):**
+
+Key fixes found via research agent:
+- **claude-mythos**: Cut a factually wrong CVE comparison — "a few thousand CVEs per year" is off by ~12x (actual: 40,000–48,000/year per NVD)
+- **cursor-composer-2-5**: Corrected VP title (Developer Education, not Developer Experience) and added eWeek secondary link instead of a missing X post URL
+- **openai-s1**: Fixed $25B ARR date from "March" to "February 2026"; added CNBC/OpenAI links for $122B funding round
+- **google-3-2-quadrillion**: All four keynote stats (375+ customers, 8.5M devs, $180–190B capex, $1B savings) confirmed verbatim in Google I/O blog and linked inline; added Anthropic revenue CNBC link
+- **four-agentic-coding-clis**: Added MacRumors source for Codex Locked Use launch date; Towards AI source for Antigravity 289 t/s
+- **caisi-frontier-ai**: Removed uncited "40+" evaluation count; added EU AI Act date link
+- **anthropic-mcp-tunnels**, **microsoft-build-2026**, **ibm-global-ceo-study**: Minor fixes and source links added
+
+**Skipped**: `june-2026-ai-builder-calendar` — 30+ claims across 15+ separate events; flagged for a dedicated future audit pass.
+
+**Next run**: Mandatory Bluesky post (July 28), check Dispatch #4 status, continue 2026-05-26 cluster audit (remaining pages: amazon-q-kiro, mini-shai-hulud, cursor-3-3-3-5, together-ai-oscar, xai-grok).
+2026-07-26T17:09:50Z FINISHED run 1325224
+2026-07-26T17:09:51Z SESSION 3804 stopped
+2026-07-26T17:54:01Z STARTED run 1347060 (mode=wild)
+2026-07-26T17:54:02Z SESSION 3805 started
+
+## Run 2677 — 2026-07-26T18:05:55Z
+
+**Mode:** Citation auditor (batch 81)
+**Pages audited:** 11 (1 category + 10 LLM reviews, 2026-05-12/14 cluster)
+**Key fixes:** Corrected Llama 3.2 vision pretraining figure (2.5B → 6B); cut unverifiable Claude 3.7 AIME 49% claim from Grok 3 article; added primary source links (Mistral docs, TechCrunch Orion, OpenAI o4-mini retirement, Grok 4 launch, DeepSeek R1 ArXiv paper); o1 deliberative alignment re-attributed to system card vs TechCrunch.
+**Inbox:** GoodDay partnership pitch (Rob-forwarded). Assessed as paid-placement request; messaged Rob (inbox #2267) for his call.
+**Bluesky:** Skipped (July 27 cap used by Run 2674). MANDATORY next run (July 28).
+**Dispatch #4:** Scheduled July 28 09:00 UTC — check next run.
+**Total audited:** ~869 pages.
+
+**Next run**: Mandatory Bluesky post (July 28), check Dispatch #4 status, audit june-2026-ai-builder-calendar (complex standalone pass), continue next batch after 2026-05-14 cluster.

@@ -57,7 +57,7 @@ The key engineering achievement is the **128K context window at 1B and 3B scale*
 
 The vision models use a fundamentally different approach. Rather than training a multimodal model from scratch, Meta chose to preserve the Llama 3.1 text weights and add vision capability through an adapter.
 
-The vision encoder is a **630-million-parameter ViT-H/14** (Vision Transformer, large variant). It processes input images in two stages: 32 transformer layers generate intermediate image representations, followed by 8 additional global encoder layers with gated attention — 40 layers total. This encoder was pretrained on approximately 2.5 billion image-text pairs in a CLIP-style contrastive objective.
+The vision encoder is a **ViT-H/14** (Vision Transformer, large variant). It processes input images in two stages: initial transformer layers generate intermediate image representations, followed by additional global encoder layers with gated attention. Per [Meta's Llama 3.2 Vision model card](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision), this encoder was pretrained on **6 billion** image and text pairs in a CLIP-style contrastive objective.
 
 Vision information is injected into the language model through **cross-attention adapter layers** inserted after every 4th self-attention block in the LLM. During vision training, the text model weights are **frozen** — only the cross-attention adapters and the vision encoder's global layers are updated. This design prevents catastrophic forgetting: the text capabilities of Llama 3.1 are preserved exactly, while image understanding is grafted in without degradation.
 

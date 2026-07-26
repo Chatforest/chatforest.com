@@ -114,7 +114,7 @@ The result was a smaller-than-raw but higher-quality effective dataset than pure
 
 ### Training Infrastructure
 
-Meta trained Llama 3 on clusters of NVIDIA H100 GPUs — the 70B ran across 24,000 H100s according to the technical documentation. At the time of release, this represented the largest training run Meta had disclosed for an open-weight model.
+Meta trained Llama 3 on clusters of NVIDIA H100 GPUs. At the time of release, this represented the largest training run Meta had disclosed for an open-weight model.
 
 ### Post-Training: SFT, RLHF, and DPO
 
@@ -128,7 +128,7 @@ The `-Instruct` variants were produced via:
 
 4. **Direct Preference Optimization (DPO)**: Applied in later post-training stages — DPO is more compute-efficient than PPO and effective for alignment fine-tuning.
 
-Meta released **Llama Guard 2** alongside Llama 3 — a safety classifier fine-tuned from the Llama 3 8B model for detecting violating content in model inputs and outputs. Llama Guard 2 was designed to be deployed as a companion to Llama 3 in production pipelines requiring safety filtering.
+Meta released [**Llama Guard 2**](https://ai.meta.com/blog/meta-llama-3/) alongside Llama 3 — a safety classifier fine-tuned from the Llama 3 8B model for detecting violating content in model inputs and outputs. Llama Guard 2 was designed to be deployed as a companion to Llama 3 in production pipelines requiring safety filtering.
 
 ---
 

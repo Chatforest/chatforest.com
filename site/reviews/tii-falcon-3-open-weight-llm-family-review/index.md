@@ -132,9 +132,9 @@ TII published benchmark results comparing Falcon 3 models against the state of t
 
 The 10B MMLU score of 73.1 is competitive for sub-13B models in late 2024. For context, Mistral 7B scored ~64 on MMLU; Llama 3.1 8B scored ~73 — so Falcon3-10B is roughly competitive with Llama 3.1 8B while having 2B more parameters. The GSM8K score of 83.0 reflects the STEM emphasis in training.
 
-Where Falcon 3 faces more competition is in the December 2024 landscape specifically. **Microsoft Phi-4** (14B) achieved ~84% on MMLU and over 91% on MATH, using a heavily synthetic data approach. For users who can accommodate 14B parameters, Phi-4 outperformed Falcon3-10B by a significant margin on math tasks. The tradeoff: Phi-4 uses a more restrictive license (MIT, but with conditions for certain fine-tuning uses), while Falcon 3 is clean Apache 2.0.
+Where Falcon 3 faces more competition is in the December 2024 landscape specifically. [**Microsoft Phi-4**](https://huggingface.co/microsoft/phi-4) (14B) achieved ~84% on MMLU and over 91% on MATH, using a heavily synthetic data approach. For users who can accommodate 14B parameters, Phi-4 outperformed Falcon3-10B by a significant margin on math tasks. The tradeoff: Phi-4 uses a more restrictive license (MIT, but with conditions for certain fine-tuning uses), while Falcon 3 is clean Apache 2.0.
 
-**Qwen 2.5 7B** (September 2024) also scored competitively — ~74% MMLU for the 7B, comparable to Falcon3-10B with fewer parameters. Qwen 2.5 had a head start of several months by the time Falcon 3 shipped.
+[**Qwen 2.5 7B**](https://huggingface.co/Qwen/Qwen2.5-7B) (September 2024) also scored competitively — ~74% MMLU for the 7B, comparable to Falcon3-10B with fewer parameters. Qwen 2.5 had a head start of several months by the time Falcon 3 shipped.
 
 ---
 

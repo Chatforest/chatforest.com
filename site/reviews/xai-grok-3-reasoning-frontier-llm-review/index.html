@@ -160,7 +160,6 @@
 <th>Benchmark</th>
 <th>Grok 3 (Think)</th>
 <th>Grok 3</th>
-<th>Claude 3.7</th>
 <th>GPT-4o</th>
 <th>Notes</th>
 </tr>
@@ -170,7 +169,6 @@
 <td><strong>AIME 2025</strong></td>
 <td><strong>93.3%</strong> (cons@64)</td>
 <td>—</td>
-<td>49%</td>
 <td>—</td>
 <td>Mathematics olympiad; Grok 3 Think led at launch</td>
 </tr>
@@ -180,7 +178,6 @@
 <td>—</td>
 <td>~65%</td>
 <td>53.6%</td>
-<td>Expert-level science (physics, chem, bio)</td>
 </tr>
 <tr>
 <td><strong>LiveCodeBench</strong></td>
@@ -188,7 +185,6 @@
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td>Competitive programming / coding</td>
 </tr>
 <tr>
 <td><strong>LMArena Elo</strong></td>
@@ -196,7 +192,6 @@
 <td>—</td>
 <td>~1390</td>
 <td>~1370</td>
-<td>#1 overall at launch; first model &gt;1400</td>
 </tr>
 <tr>
 <td><strong>Grok 3 Mini: AIME 2024</strong></td>
@@ -204,7 +199,6 @@
 <td>95.8%</td>
 <td>—</td>
 <td>—</td>
-<td>Mini outperforms on some math benchmarks</td>
 </tr>
 <tr>
 <td><strong>Grok 3 Mini: LiveCodeBench</strong></td>
@@ -212,11 +206,10 @@
 <td>80.4%</td>
 <td>—</td>
 <td>—</td>
-<td>Cheaper Mini competitive on coding</td>
 </tr>
 </tbody>
 </table>
-<p>The AIME 2025 result — 93.3% at the highest test-time compute level (cons@64) — was the headline number at launch. For context: AIME (American Invitational Mathematics Examination) is a competition math test that graduate-level students regularly fail to complete. A 93.3% pass rate from a language model, achieved through extended chain-of-thought reasoning rather than memorization, was a meaningful result. Claude 3.7 Sonnet scored ~49% on AIME 2024 in its launch comparisons; DeepSeek R1 had posted 79.8% on AIME 2024.</p>
+<p>The AIME 2025 result — 93.3% at the highest test-time compute level (cons@64) — was the headline number at launch. For context: AIME (American Invitational Mathematics Examination) is a competition math test that graduate-level students regularly fail to complete. A 93.3% pass rate from a language model, achieved through extended chain-of-thought reasoning rather than memorization, was a meaningful result. For comparison, <a href="https://arxiv.org/abs/2501.12948">DeepSeek R1 had posted 79.8% on AIME 2024</a> (a different exam year) at its January 2025 launch.</p>
 <p>GPQA Diamond at 84.6% is similarly impressive in context. This benchmark tests expert-level scientific reasoning across physics, chemistry, and biology. GPT-4o had scored 53.6% at its launch. Claude 3.7 Sonnet improved substantially over prior Claude models but remained below Grok 3 Think on this benchmark at launch.</p>
 <p>The <a href="https://x.ai/news/grok-3">LMArena</a> Elo of 1402 — first model ever to break 1400 — is notable because LMArena scores are based on blind human preference votes, not automated benchmark runs. It means real users, choosing between responses without knowing which model produced them, preferred Grok 3 to all prior alternatives. This is a different signal than AIME: it captures conversational quality, clarity, helpfulness, and response character.</p>
 <h3 id="the-grok-3-mini-surprise">The Grok 3 Mini Surprise</h3>
@@ -308,7 +301,7 @@
 <p>By the time Grok 4 launched in July, the developer community had largely reached a consensus: Grok 3 was the right model for math/science reasoning and real-time X-aware research, but not the default choice for production software or general-purpose API use.</p>
 <hr>
 <h2 id="the-grok-3--grok-4-transition">The Grok 3 → Grok 4 Transition</h2>
-<p>Grok 4 arrived on July 9, 2025 — built on Phase 2 of Colossus (200,000 GPUs with higher-performance interconnects) and trained with approximately 100x the compute of Grok 2 (and roughly 10x the compute of Grok 3). The benchmarks made the generational gap clear:</p>
+<p><a href="https://x.ai/news/grok-4">Grok 4 arrived on July 9, 2025</a> — built on Phase 2 of Colossus (200,000 GPUs with higher-performance interconnects) and trained with approximately 100x the compute of Grok 2 (and roughly 10x the compute of Grok 3). The benchmarks made the generational gap clear:</p>
 <ul>
 <li>AIME 2025: Grok 4 scored 100% (vs Grok 3&rsquo;s 93.3%)</li>
 <li>Humanity&rsquo;s Last Exam: Grok 4 Heavy first to break 50% (Grok 3 had no comparable result)</li>

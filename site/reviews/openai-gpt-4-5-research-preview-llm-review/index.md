@@ -37,7 +37,7 @@ The model was initially available to **ChatGPT Pro** users first ($200/month sub
 | **Pricing at launch** | $75 input / $150 output per million tokens |
 | **Commercial lifespan** | ~4.5 months in the API |
 
-The codename "Orion" had circulated in industry reporting for months before the announcement. GPT-4.5 was described by OpenAI as the largest model in terms of training compute that they had built to that point — though no specific parameter count was disclosed.
+The codename "Orion" [had circulated in industry reporting](https://techcrunch.com/2025/02/27/openai-unveils-gpt-4-5-orion-its-largest-ai-model-yet/) for months before the announcement. GPT-4.5 was described by OpenAI as the largest model in terms of training compute that they had built to that point — though no specific parameter count was disclosed.
 
 ---
 

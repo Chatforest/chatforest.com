@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2677 — 2026-07-27 — Citation Audit (10 pages + 1 category, batch 81, 2026-05-12/14 cluster)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox
+- One pending message: GoodDay (victor.k@goodday.work) forwarded by Rob, following up on content collaboration request for the PM/roadmapping MCP review. Assessed as promotional/paid-placement pitch (not an MCP review request). Messaged Rob (inbox #2267) with recommendation to decline or ask if they have a genuine MCP server. Awaiting his call.
+
+#### Citation Audit — 10 pages + 1 category page (batch 81)
+
+**2026-05-12 cluster (1 page):**
+1. **categories/cloud-storage-file-sync/index.md** — Category index page. Primary GitHub sources linked in the Sources section. Factual claims (star counts, tools) backed by individual reviews. Added `sources_audited: 2026-07-27`.
+
+**2026-05-14 cluster (10 pages):**
+
+2. **meta-llama-3-2-vision-edge-multimodal-llm-review** — Fixed: Corrected "2.5 billion image-text pairs" (WRONG) to "6 billion" with HuggingFace model card link (actual documented figure from meta-llama/Llama-3.2-11B-Vision). Removed unverified architecture specifics (630M params, exact layer counts) since the blog doesn't include these details. sources_audited: 2026-07-27.
+
+3. **meta-llama-3-3-70b-efficient-open-weight-llm-review** — Fixed: Added link to Meta's year-in-review announcement (ai.meta.com/blog/future-of-ai-built-with-llama/) for the Llama 3.3 launch. Added HuggingFace model card link for benchmark table source. Removed unsourced "15–20% accuracy drop" community benchmark claim. sources_audited: 2026-07-27.
+
+4. **meta-llama-3-8b-70b-open-weight-llm-review** — Fixed: Removed "24,000 H100 GPUs" claim (Meta blog says "24K GPU clusters" without specifying H100 or attributing to 70B alone). Added Llama Guard 2 link to Meta blog. sources_audited: 2026-07-27.
+
+5. **mistral-small-3-2-24b-instruct-refinement-llm-review** — Fixed: Added Mistral's official model card link (docs.mistral.ai/models/model-cards/mistral-small-3-2-25-06) as primary source. sources_audited: 2026-07-27.
+
+6. **openai-gpt-4-5-research-preview-llm-review** — Fixed: Added TechCrunch link for "Orion" codename (techcrunch.com/2025/02/27/openai-unveils-gpt-4-5-orion-its-largest-ai-model-yet/). sources_audited: 2026-07-27.
+
+7. **openai-o1-o1-pro-reasoning-model-review** — Fixed: Replaced "TechCrunch reported" attribution for deliberative alignment with direct link to o1 system card (already linked elsewhere in article). sources_audited: 2026-07-27.
+
+8. **openai-o3-mini-reasoning-model-review** — Well cited (system card PDF confirmed live at cdn.openai.com). sources_audited: 2026-07-27.
+
+9. **openai-o3-o4-mini-reasoning-models-review** — Fixed: Added link to OpenAI's retirement announcement (openai.com/index/retiring-gpt-4o-and-older-models/) for "February 13, 2026, OpenAI retired o4-mini." sources_audited: 2026-07-27.
+
+10. **tii-falcon-3-open-weight-llm-family-review** — Fixed: Added HuggingFace links for Phi-4 (microsoft/phi-4) and Qwen 2.5 7B (Qwen/Qwen2.5-7B) comparison benchmarks. sources_audited: 2026-07-27.
+
+11. **xai-grok-3-reasoning-frontier-llm-review** — Fixed: Cut "Claude 3.7 Sonnet scored ~49% on AIME 2024" (unverifiable — Anthropic's primary sources show 80% extended thinking / 23% standard, neither matching 49%). Removed 49% from benchmark comparison table. Added ArXiv link for "DeepSeek R1 79.8% AIME 2024" (arxiv.org/abs/2501.12948, confirmed). Added Grok 4 launch link (x.ai/news/grok-4). Clarified that DeepSeek R1 AIME score was from AIME 2024, a different exam than Grok 3's AIME 2025 benchmark. sources_audited: 2026-07-27.
+
+**Deployed:** Yes — all 11 audited pages (via rsync, within deploy throttle).
+
+#### Bluesky
+July 27 daily cap already used (Run 2674 — Kimi K3 post). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Dispatch #4
+Scheduled for July 28 09:00 UTC. Check next run if sent.
+
+#### Running totals
+- Previous audited: ~858 pages (as of Run 2676)
+- This run: +11 pages (batch 81, 2026-05-12/14 cluster)
+- **Total pages with sources_audited: ~869**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Audit `june-2026-ai-builder-calendar` (standalone dedicated pass — 30+ claims, flagged complex)
+- Continue citation audit: next batch after 2026-05-14 cluster (check what comes next)
+
+---
+
 ## Run 2676 — 2026-07-27 — Citation Audit (9 pages, batch 80, 2026-05-26 cluster)
 
 **Mode:** Citation auditor

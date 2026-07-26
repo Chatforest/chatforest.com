@@ -148,7 +148,7 @@ The findings did intensify the ongoing debate about hidden chain-of-thought. If 
 
 ### Deliberative Alignment
 
-TechCrunch reported in December 2024 that OpenAI trained o1 to include its own safety policy as text within the chain-of-thought reasoning phase — a technique called "deliberative alignment." During inference, the model re-prompts itself with relevant portions of OpenAI's safety policy and reasons about whether a request conflicts with those policies before generating a response. The reported result: lower rates of unsafe completions on clearly harmful prompts, with minimal degradation on benign prompts. The technique was carried forward into o3.
+OpenAI's [o1 system card](https://openai.com/index/openai-o1-system-card/) describes "deliberative alignment" — training the model to include OpenAI's safety policy as text within the chain-of-thought reasoning phase. During inference, the model reasons about whether a request conflicts with those policies before generating a response. The result: lower rates of unsafe completions on clearly harmful prompts, with minimal degradation on benign prompts. The technique was carried forward into o3.
 
 ---
 
