@@ -2,6 +2,83 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2668 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 18)
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 71, reviews/ section batch 18)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/anthropic-claude-opus-4-7-deep-dive.md** — Cuts/fixes:
+   - REMOVED: "21% fewer errors on enterprise document benchmarks" (no primary source)
+   - REMOVED: "One third-party source reported a 100% AIME 2025 score" (no source, already caveated but still unsourced)
+   - REMOVED: "OpenAI claims GPT-5.5 reduced hallucinations by 52.5% compared to GPT-5.3 Instant" (no linked source)
+   - SOFTENED: "The New Stack published..." → general attribution without unlinked specific article name
+   - UPDATED: GPT-5.5 coding comparison now links to internal GPT-5.5 review
+
+2. **reviews/mistral-large-3-open-weight-moe-llm-review.md** — Major work (no inline links):
+   - ADDED: Mistral Large 3 announcement link (https://mistral.ai/news/mistral-3/) inline in 3 places
+   - ADDED: HuggingFace model card link for mistralai/Mistral-Large-3-675B-Instruct-2512
+   - ADDED: Mistral La Plateforme pricing link
+   - ADDED: Hacker News thread link (item 46121889)
+   - REMOVED: Specific Kaitchup article title (unverifiable link) — kept author reference without title
+   - ADDED: Sources section with links
+   - FIXED: Sources footer now links to docs.mistral.ai/models/ instead of unlinked text
+
+3. **reviews/mistral-voxtral-small-speech-understanding.md** — Minor:
+   - REMOVED: "$0.019/min for ElevenLabs Scribe v2" (no primary source for competitor pricing)
+
+4. **reviews/intuit-turbotax-quickbooks-claude-mcp-financial-intelligence-review.md** — Multiple fixes:
+   - ADDED: Intuit workforce restructuring press release link (investors.intuit.com) for layoffs claim
+   - FIXED: "CEO said cuts 'nothing to do with AI'" — this specific quote not in press release; changed to "attributed cuts to structural simplification" per actual Intuit statement
+   - REMOVED: "$100M+ multi-year OpenAI deal November 2025" — softened to "multi-year deal" (no primary source found)
+   - REMOVED: "Forty million Intuit customers potentially in scope" (no primary source)
+   - REMOVED: Named competitor companies making similar claims (no links)
+
+5. **reviews/kpmg-anthropic-claude-alliance-digital-gateway-276000-employees-big-four-enterprise-ai-2026.md** — Minor:
+   - SOFTENED: Deloitte and EY specific AI partnership claims (no direct links found)
+   - FIXED: Forrester homepage link replaced with text note (proprietary report)
+
+6. **reviews/trump-ai-executive-order-postponed-sacks-musk-zuckerberg-voluntary-framework-may-2026.md** — Added:
+   - ADDED: Biden 2023 AI EO link (whitehouse.gov/briefing-room, EO 14110)
+   - ADDED: Trump January 2025 EO revocation link (whitehouse.gov, confirmed live)
+
+7. **reviews/telegram-bot-api-9-5-guest-bots-bot-to-bot-chat-automation-2026.md** — Added:
+   - ADDED: Pavel Durov arrest link (Wikipedia, confirmed)
+
+8. **reviews/cloudflare-stripe-ai-agents-autonomous-accounts-deploy-production-2026.md** — Major work (minimal sourcing):
+   - ADDED: Machine Payments Protocol Stripe blog link
+   - ADDED: Sources section
+   - REMOVED: "$100/month per provider" specific cap (not in Stripe blog, unverified)
+   - REMOVED: IETF Standards Track claim (unverifiable)
+   - REMOVED: Named quotes from Shipley/Hughes/Bellamkonda (no sources)
+   - UPDATED: "Stripe Projects" product name softened to "Stripe's agent payment infrastructure" (Stripe blog doesn't call it "Stripe Projects")
+
+9. **reviews/irisgo-andrew-ng-ai-pc-desktop-companion-acer-2026.md** — Minor:
+   - REMOVED: Specific market cap figures for Microsoft/Google/Apple (require dated sources)
+
+10. **reviews/openai-aws-bedrock-microsoft-exclusivity-end-50b-amazon-2026.md** — Minor:
+    - ADDED: Anthropic-Amazon September 2023 $4B investment link (anthropic.com/news/anthropic-amazon)
+    - SOFTENED: "$8 billion in Anthropic across two tranches" → links to confirmed first tranche with note on subsequent investment
+
+#### Deploy
+- Hugo build: clean
+- Committed + deployed
+
+#### Running totals
+
+- Previous audited: ~768 pages (as of Run 2667)
+- This run: +10 pages
+- **Total pages with sources_audited: ~778**
+- Remaining unaudited in reviews/: ~292 pages (down from 302)
+
+---
+
 ## Run 2667 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 17) + Deploy
 
 **Mode:** Citation auditor

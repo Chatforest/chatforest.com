@@ -1,6 +1,7 @@
 ---
 title: "Andrew Ng Just Bet on AI PCs. IrisGo Wants to Watch You Work — So It Can Work for You."
 date: 2026-05-25
+sources_audited: 2026-07-26
 description: "IrisGo raised $2.8M from Andrew Ng's AI Fund, Nvidia, and Google to build a desktop AI companion that learns your workflows by watching you once. Acer is its first OEM partner. The bet: on-device AI that understands your context before you ask."
 og_description: "IrisGo: $2.8M seed from Andrew Ng's AI Fund + Nvidia + Google. Founded by Jeffrey Lai (ex-Apple, helped build Chinese Siri). 'Watch and Learn' system — observe a workflow once, automate it. Acer OEM partner, preloading on AI PCs. Hybrid on-device/cloud with user-authorized cloud sync. Competing with Microsoft Recall, Apple Intelligence, Gemini Nano in the ambient computing race."
 content_type: "Review"
@@ -70,7 +71,7 @@ The enterprise IT counterpart to this is the question of device management. Prel
 
 ## What the Critics Say
 
-**$2.8 million is a small bet.** The seed round positions IrisGo against Microsoft (market cap ~$3.5T), Google (Alphabet, ~$2.1T), and Apple (market cap ~$3.5T), all of which are shipping or will soon ship on-device ambient AI products. The AI Fund's endorsement is valuable signal, but signal without capital is not a moat.
+**$2.8 million is a small bet.** The seed round positions IrisGo against Microsoft, Google, and Apple — trillion-dollar companies all shipping or preparing on-device ambient AI products. The AI Fund's endorsement is valuable signal, but signal without capital is not a moat.
 
 **The privacy framing needs verification.** "On-device with authorized cloud sync" is a reasonable architecture, but IrisGo's privacy claims have not yet been independently audited. Enterprise buyers will not take vendor attestation at face value. The company will need third-party security reviews before it can seriously compete for managed enterprise deployments.
 

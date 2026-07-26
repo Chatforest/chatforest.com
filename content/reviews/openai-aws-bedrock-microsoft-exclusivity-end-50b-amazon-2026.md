@@ -1,6 +1,7 @@
 ---
 title: "The Day After: OpenAI Joined Amazon Bedrock the Moment Microsoft's Exclusivity Ended"
 date: 2026-05-25
+sources_audited: 2026-07-26
 description: "On April 27, Microsoft's exclusive license to OpenAI's models expired. On April 28, OpenAI launched GPT-5.5, Codex, and Managed Agents on Amazon Bedrock. Amazon's $50B investment and the quiet restructuring of the deal that shaped modern AI are now complete."
 og_description: "Microsoft exclusivity ends April 27. OpenAI on AWS April 28. The $50B Amazon investment includes GPT-5.5 + GPT-5.4 on Bedrock, Codex via CLI/VS Code/desktop, Managed Agents for production workflows — all in limited preview. Microsoft retains non-exclusive license through 2032, ends revenue share. Anthropic remains AWS's anchor AI tenant."
 content_type: "Review"
@@ -53,7 +54,7 @@ Microsoft still has an enormous stake in OpenAI's success through its equity pos
 
 ## The Anthropic Wrinkle
 
-Amazon has been OpenAI's rival's largest backer. Amazon has invested $8 billion in Anthropic across two tranches, and Anthropic runs almost exclusively on AWS infrastructure. Claude is deeply integrated into Amazon Bedrock — it has been for years.
+Amazon has been OpenAI's rival's largest backer. [Amazon committed up to $4 billion in Anthropic in September 2023](https://www.anthropic.com/news/anthropic-amazon), with additional investment tranches since, and Anthropic runs almost exclusively on AWS infrastructure. Claude is deeply integrated into Amazon Bedrock — it has been for years.
 
 Now the same Bedrock console that surfaces Claude 4 Opus also surfaces GPT-5.5.
 

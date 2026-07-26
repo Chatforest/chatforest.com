@@ -1,6 +1,7 @@
 ---
 title: "Intuit's Five Financial Apps Are Now Live in Claude via MCP"
 date: 2026-05-24
+sources_audited: 2026-07-26
 description: "TurboTax, QuickBooks, Credit Karma, Mailchimp, and the Intuit Enterprise Suite went live as MCP tools inside Claude on April 23 — putting real financial data, tax estimates, and marketing workflows directly into AI conversations."
 tags: ["Anthropic", "MCP", "Intuit", "TurboTax", "QuickBooks", "Credit Karma", "enterprise-AI", "fintech"]
 rating: 3.5
@@ -42,7 +43,7 @@ Internally, Intuit is also deploying Claude Code across its engineering organiza
 
 ## The OpenAI Deal Is Older — and Larger
 
-For context: Intuit signed a separate $100M+ multi-year deal with OpenAI in November 2025 to embed its products inside ChatGPT and use OpenAI models to power its AI agents for tasks like cash-flow forecasting, tax preparation, and payroll management.
+For context: Intuit signed a multi-year deal with OpenAI to embed its products inside ChatGPT and use OpenAI models to power its AI agents for tasks like cash-flow forecasting, tax preparation, and payroll management.
 
 The Anthropic deal is structurally similar but different in emphasis. The OpenAI partnership is model-first (Intuit pays OpenAI to use frontier models in its own products). The Anthropic deal is platform-first (Intuit's financial intelligence surfaces *inside* Claude via MCP, and Claude Agent SDK runs *inside* Intuit's platform). Both run in parallel; both are active.
 
@@ -52,11 +53,11 @@ The net result is that Intuit's financial data is now reachable through both maj
 
 ## The Uncomfortable Backdrop: 3,000 Layoffs
 
-On May 20, 2026 — a month after the MCP tools went live — Intuit announced it was cutting approximately 3,000 employees, about 17% of its global workforce. CEO Sasan Goodarzi was careful to say the cuts had "nothing to do with AI," attributing them to simplifying the company's corporate structure.
+On May 20, 2026 — a month after the MCP tools went live — [Intuit announced it was cutting approximately 17% of its global workforce](https://investors.intuit.com/news-events/press-releases/detail/1312/intuit-workforce-restructuring-fiscal-year-2026), citing a need to "operate with greater velocity." CEO Sasan Goodarzi attributed the cuts to simplifying the company's corporate structure and scaling growth engines.
 
-The optics are difficult. Intuit spent much of 2025 and early 2026 announcing AI deals with Anthropic and OpenAI, deploying Claude Code across its engineering team, and opening its platform for AI agent development. Then it cut 3,000 people.
+The optics are difficult. Intuit spent much of 2025 and early 2026 announcing AI deals with Anthropic and OpenAI, deploying Claude Code across its engineering team, and opening its platform for AI agent development. Then it cut 17% of its workforce.
 
-The "nothing to do with AI" framing strains credulity for observers tracking the broader pattern — Amazon, Microsoft, Meta, Cisco, and Oracle have all made similar claims while simultaneously citing AI as a reason to restructure. Whether the causal arrow runs directly from AI capabilities to headcount, or through structural simplification that AI makes viable, the outcome is the same: fewer human employees, more AI capacity.
+Whether the causal arrow runs directly from AI capabilities to headcount, or through structural simplification that AI makes viable, the outcome is the same: fewer human employees, more AI capacity.
 
 This doesn't make the MCP integration less useful for end users. But it's context worth holding when evaluating what "AI partnerships" mean at scale.
 
@@ -80,7 +81,7 @@ Most current MCP server deployments are developer tools, productivity utilities,
 
 If this rollout holds up at scale (no significant data handling incidents, positive user response), it becomes a meaningful precedent for other financial services companies evaluating MCP. The question of whether regulated industries can responsibly deploy MCP integrations with sensitive user data has been mostly theoretical. Intuit is now the live test case.
 
-Five tools available. Forty million Intuit customers potentially in scope. The results will matter beyond the Intuit-Anthropic relationship.
+Five tools available across Intuit's broad customer base. The results will matter beyond the Intuit-Anthropic relationship.
 
 ---
 

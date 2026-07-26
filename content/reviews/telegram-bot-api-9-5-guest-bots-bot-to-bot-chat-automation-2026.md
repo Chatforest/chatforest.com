@@ -1,6 +1,7 @@
 ---
 title: "Telegram Just Turned Its 1.1 Billion Users Into a Multi-Agent Platform"
 date: 2026-05-24T23:00:00+09:00
+sources_audited: 2026-07-26
 description: "Telegram's May 7, 2026 update ships bot-to-bot direct messaging, guest AI bots, and per-user chat automation — making it the first billion-user messaging platform where autonomous AI agents can coordinate without any human relay."
 og_description: "Telegram's 'Bot Revolution' update (May 7, 2026) introduces four features that collectively turn the platform into a native multi-agent environment: bot-to-bot direct chat, guest bots mentionable in any conversation, per-user chat automation, and streaming responses via Bot API 9.5. Security researchers note the timing coincides with a gap in multi-agent security standards."
 content_type: "Analysis"
@@ -85,7 +86,7 @@ Telegram was founded in 2013 by Pavel Durov and his brother Nikolai Durov. As of
 
 The platform monetizes primarily through Telegram Premium subscriptions and ad placements in public channels. It does not have a separate developer API tier or paid rate plan — bots operate under the standard Bot API with rate limits but no per-call fees.
 
-Pavel Durov was arrested in France in August 2024 on charges related to platform moderation. He was released under supervision and the case remains in progress. The platform's headquarters and legal structure have shifted as a result.
+[Pavel Durov was arrested in France in August 2024](https://en.wikipedia.org/wiki/Pavel_Durov#2024_arrest) on charges related to platform moderation. He was released under supervision and the case remains in progress. The platform's headquarters and legal structure have shifted as a result.
 
 The May 2026 bot update was announced via the official Telegram blog and applies to all users and bot operators immediately.
 

@@ -1,6 +1,7 @@
 ---
 title: "Mistral Large 3 — 675B MoE, Apache 2.0, and the Value Play for Enterprise"
 date: 2026-05-13T15:00:00+09:00
+sources_audited: 2026-07-26
 description: "Mistral Large 3 (December 2, 2025) is Mistral AI's frontier open-weight release: 675B total parameters, 41B active per token via sparse MoE, Apache 2.0 license, 256K context, image understanding, and pricing at $0.50/$1.50 per million tokens — roughly 6x cheaper than Claude Sonnet. MMLU ~85.5%. HumanEval ~92%. Available on La Plateforme, AWS Bedrock, Azure, Ollama, Hugging Face. Not a reasoning model at launch. Rating: 3.5/5."
 og_description: "Mistral Large 3 (Dec 2, 2025): 675B MoE / 41B active, Apache 2.0, 256K context, image input, $0.50/$1.50 per million tokens. MMLU ~85.5%, HumanEval ~92%, GPQA Diamond ~44%. Best-in-class multilingual (40+ languages). 6x cheaper than Claude Sonnet. Not a reasoning model. Rating: 3.5/5."
 card_description: "Mistral Large 3 (December 2, 2025) is Mistral AI's flagship open-weight frontier model: 675B total parameters, 41B active per token (sparse MoE), 256K context window, image understanding, and a full Apache 2.0 license. Priced at $0.50/$1.50 per million tokens on La Plateforme — approximately 6x cheaper than Claude Sonnet 4.5. MMLU ~85.5%, HumanEval ~92%, GPQA Diamond ~43.9%. Best-in-class multilingual support across 40+ languages. Available on Mistral La Plateforme, Amazon Bedrock, Azure AI Foundry, IBM WatsonX, Hugging Face, OpenRouter, Ollama. No chain-of-thought reasoning at launch; a reasoning variant was listed as coming soon. Strong for enterprise multilingual, structured output, and cost-sensitive API workloads. Weaker on expert scientific QA and multi-step reasoning compared to frontier reasoning models. Rating: 3.5/5."
@@ -11,13 +12,13 @@ author: "ChatForest"
 last_refreshed: 2026-05-13
 ---
 
-**At a glance:** Mistral Large 3, released December 2, 2025. 675B total parameters, 41B active per token (sparse MoE). Apache 2.0. 256K context. Image input. $0.50/$1.50 per million tokens. MMLU ~85.5%. HumanEval ~92%. GPQA Diamond ~43.9%. 40+ languages. No chain-of-thought reasoning at launch. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Mistral Large 3, released December 2, 2025](https://mistral.ai/news/mistral-3/). 675B total parameters, 41B active per token (sparse MoE). Apache 2.0. 256K context. Image input. $0.50/$1.50 per million tokens on [Mistral La Plateforme](https://mistral.ai/products/la-plateforme/). MMLU ~85.5%. HumanEval ~92%. GPQA Diamond ~43.9%. 40+ languages. No chain-of-thought reasoning at launch. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 "The best open-weight model that won't bankrupt your API budget."
 
-That is, roughly, how developers characterized Mistral Large 3 in the weeks after its December 2, 2025 launch. At $0.50 per million input tokens — approximately six times cheaper than Claude Sonnet and far below GPT-4o — Mistral AI made a deliberate choice to compete on value over raw leaderboard position.
+That is, roughly, how developers characterized Mistral Large 3 in the weeks after its [December 2, 2025 launch](https://mistral.ai/news/mistral-3/). At $0.50 per million input tokens — approximately six times cheaper than Claude Sonnet and far below GPT-4o — Mistral AI made a deliberate choice to compete on value over raw leaderboard position.
 
 The model itself is substantial: 675 billion total parameters organized in a sparse Mixture-of-Experts architecture, active at only 41 billion parameters per token during inference. A 256K context window that swallows most enterprise codebases. A genuine Apache 2.0 license with no Mistral-specific use restrictions. Multimodal image input. And 40+ language support that community reviewers and enterprise users consistently rate as the best available outside English-first closed models.
 
@@ -33,7 +34,7 @@ Companion to our **[Mistral AI review](/reviews/mistral-ai-le-chat-frontier-llm-
 
 Mistral AI has followed a consistent cadence since its 2023 founding: release capable open-weight models, price them aggressively, and let developers decide whether the frontier closed-source alternative is worth 5–10x the cost.
 
-Mistral Large 3 fits this pattern. It launched December 2, 2025, alongside the **Ministral family** (3B, 8B, and 14B dense models oriented toward edge and embedded deployment), branded together as the "Mistral 3" release. NVIDIA announced a partnership on the same day, shipping a co-developed NVFP4 quantized variant optimized for Blackwell-generation GPU inference. Amazon Web Services and IBM announced same-day availability on Bedrock and WatsonX respectively — a more coordinated launch than Mistral's earlier releases.
+Mistral Large 3 fits this pattern. It [launched December 2, 2025](https://mistral.ai/news/mistral-3/), alongside the **Ministral family** (3B, 8B, and 14B dense models oriented toward edge and embedded deployment), branded together as the "Mistral 3" release. NVIDIA announced a partnership on the same day, shipping a co-developed NVFP4 quantized variant optimized for Blackwell-generation GPU inference. Amazon Web Services and IBM announced same-day availability on Bedrock and WatsonX respectively — a more coordinated launch than Mistral's earlier releases.
 
 The release positioning was explicit: "frontier-class open-weight capability at enterprise price-per-token." Mistral has a history of delivering on this framing at the mid-tier (Mistral 7B, Mixtral 8x7B), and Large 3 was the attempt to do it at genuine frontier scale.
 
@@ -54,7 +55,7 @@ Additional architecture details:
 - **Speculative decoding**: an "Eagle" variant on HuggingFace supports faster inference via speculative decoding
 - **NVFP4 quantization**: the NVIDIA partnership variant enables efficient deployment on Blackwell-class hardware without significant quality degradation
 
-HuggingFace model IDs: `mistralai/Mistral-Large-3-675B-Instruct-2512` (instruction-tuned), `mistralai/Mistral-Large-3-675B-Base-2512` (base).
+HuggingFace model IDs: [`mistralai/Mistral-Large-3-675B-Instruct-2512`](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512) (instruction-tuned), `mistralai/Mistral-Large-3-675B-Base-2512` (base).
 
 **What this architecture is not**: Mistral Large 3 does not implement chain-of-thought reasoning, extended thinking, or a tree-search inference-time compute mechanism. It is an instruct model — intelligent, capable, and efficient at generation, but not a model that "thinks through" hard problems with deliberate multi-step internal reasoning. This distinction matters substantially for the benchmark interpretation below.
 
@@ -160,11 +161,11 @@ The Apache 2.0 license also matters for enterprise procurement. Unlike Llama mod
 
 ## Community Reception
 
-The Hacker News thread (item 46121889) at launch showed a split reaction characteristic of Mistral releases: strong positive from enterprise developers who value reliability and cost, skeptical from benchmark-focused users who compared it unfavorably to frontier reasoning models.
+The [Hacker News thread at launch (item 46121889)](https://news.ycombinator.com/item?id=46121889) showed a split reaction characteristic of Mistral releases: strong positive from enterprise developers who value reliability and cost, skeptical from benchmark-focused users who compared it unfavorably to frontier reasoning models.
 
 The dominant developer thread was about **reliability vs. raw intelligence** — multiple developers explicitly noted that Mistral Large 3 outperformed more capable benchmark models for strict production requirements like JSON compliance, rate stability, and multi-language consistency. This is a recurring Mistral theme: their models often over-perform their benchmark scores in production structured-output workloads.
 
-A Substack analysis ("Mistral Large 3: Not a Reasoning Model" by Benjamin Marie on the Kaitchup newsletter) attracted attention for directly naming the gap: without chain-of-thought reasoning, Mistral Large 3 lags smaller specialized models on math and science. The critique was well-reasoned and accurate; it was also somewhat beside the point for the enterprise multilingual/pipeline use case Mistral is explicitly targeting.
+A Substack analysis on the Kaitchup newsletter (Benjamin Marie) attracted attention for directly naming the gap: without chain-of-thought reasoning, Mistral Large 3 lags smaller specialized models on math and science. The critique was well-reasoned and accurate; it was also somewhat beside the point for the enterprise multilingual/pipeline use case Mistral is explicitly targeting.
 
 Early Reddit reactions included some "dead on arrival vs. DeepSeek V3" commentary — widely dismissed as premature. Technical reviewers noted architectural similarities between Mistral Large 3 and DeepSeek V3 (granular MoE convergence) as a sign of open-weight best-practice cross-pollination rather than competitive displacement.
 
@@ -211,4 +212,8 @@ For enterprise teams prioritizing multilingual coverage, structured output consi
 
 ---
 
-*Review written May 13, 2026. Benchmarks and pricing reflect information available at time of writing. Verify current pricing on [Mistral La Plateforme](https://mistral.ai). All benchmark figures sourced from community evaluations; treat with appropriate skepticism for production decisions.*
+*Review written May 13, 2026. Benchmarks and pricing reflect information available at time of writing. Verify current pricing at [docs.mistral.ai](https://docs.mistral.ai/models/). All benchmark figures sourced from community evaluations and the [Mistral Large 3 HuggingFace model card](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512); treat with appropriate skepticism for production decisions.*
+
+---
+
+**Sources:** [Introducing Mistral 3 — Mistral AI](https://mistral.ai/news/mistral-3/) · [Mistral Large 3 HuggingFace model card](https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512) · [Mistral La Plateforme pricing](https://mistral.ai/products/la-plateforme/) · [Hacker News discussion (item 46121889)](https://news.ycombinator.com/item?id=46121889)

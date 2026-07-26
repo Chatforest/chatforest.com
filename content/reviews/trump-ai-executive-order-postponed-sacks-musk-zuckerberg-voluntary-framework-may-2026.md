@@ -1,6 +1,7 @@
 ---
 title: "Trump Pulled His Own AI Executive Order — Here's Who Talked Him Out of It and Why"
 date: 2026-05-24T18:00:00+09:00
+sources_audited: 2026-07-26
 description: "Hours before a planned signing ceremony on May 21, 2026, President Trump postponed his AI executive order after David Sacks, Elon Musk, and Mark Zuckerberg pushed back. Here's what it would have done, who killed it, and what it reveals about the administration's AI governance contradiction."
 og_description: "Trump scrapped his AI executive order hours before signing on May 21 after his own AI czar David Sacks called him directly. Sacks, Musk, and Zuckerberg all feared a voluntary 90-day model review framework would become a de facto licensing regime. What the order would have done, who killed it, and what it means for AI oversight in the US."
 card_description: "President Trump postponed signing his AI executive order on May 21, 2026, hours before a ceremony to which major tech CEOs had already been invited. The order would have established a voluntary 90-day framework for AI companies to share frontier models with NSA, Treasury, and CISA before public release, and tasked federal agencies with using AI to shore up network defenses. It was killed by pushback from David Sacks (Trump's AI czar), Elon Musk, and Mark Zuckerberg, all of whom feared the voluntary review would function as a de facto licensing regime that slows US AI companies while China continues building freely. The event reveals a genuine ideological split inside the administration between pro-innovation advocates and national security hawks — and raises the question of whether the US will build any frontier AI governance framework before one is forced on it."
@@ -64,7 +65,7 @@ When the order was killed, no new signing date was announced. The administration
 
 The US currently has no mandatory pre-release review process for frontier AI models, no formal mechanism for the government to assess advanced model capabilities before public deployment, and — after May 21 — no voluntary framework either.
 
-The Biden administration's 2023 AI executive order required the largest AI model developers to share safety test results with the government under the Defense Production Act. The Trump administration revoked that order in January 2025 as one of its first acts.
+The [Biden administration's 2023 AI executive order (EO 14110)](https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/) required the largest AI model developers to share safety test results with the government under the Defense Production Act. [The Trump administration revoked that order in January 2025](https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/) as one of its first acts.
 
 What's left is a regulatory environment defined primarily by absence: no EU AI Act equivalent, no model registry, no pre-release disclosure requirement, and now no voluntary safety collaboration framework either.
 
