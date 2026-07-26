@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "On April 7, 2026, a video model appeared on Artificial Analysis's arena under no name, no company, no affiliation. Within 48 hours it had climbed to #1 in all four categories. Three days later, Alibaba's ATH unit confirmed ownership. The model was HappyHorse-1.0 — a 15B-parameter unified Transformer built by the architect of Kling AI. We review the technology, the anonymous debut strategy, the open-source credibility gap, and what the leaderboard dominance actually means for developers and enterprises."
 tags: ["video-ai", "ai-video-generation", "text-to-video", "image-to-video", "alibaba", "happyhorse", "ath", "world-model", "enterprise-video", "fal-ai", "audio-video", "china-ai", "artificial-analysis", "open-source"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # HappyHorse-1.0 — The #1 Video Model That Entered Anonymously and Shook the Leaderboard
@@ -24,7 +25,7 @@ We research from public sources and documentation. We do not test AI video tools
 
 The AI video industry's bench of senior talent is not large. The researcher who designed the core architecture for Kling — the Kuaishou-developed model that dominated AI video leaderboards through much of 2025 — is **Zhang Di**.
 
-Zhang Di spent over a decade at Alibaba Group (2010–2022), rising to Director. He then joined Kuaishou as Vice President, where he became the technical lead on **Kling AI**. Kling's performance record through 2024–2025 is well-documented: it held top positions on multiple benchmarks for months, was one of the earliest models to offer native 5-second and 10-second generation at high resolution, and became a serious commercial product with a significant enterprise customer base.
+Zhang Di previously held a senior Director role at Alibaba Group before joining Kuaishou as Vice President, where he became the technical lead on **Kling AI**. Kling's performance record through 2024–2025 is well-documented: it held top positions on multiple benchmarks for months, was one of the earliest models to offer native 5-second and 10-second generation at high resolution, and became a serious commercial product with a significant enterprise customer base.
 
 At the end of 2025, Zhang Di returned to Alibaba. The team he joined was the **Taotian Future Life Lab** — the AI R&D arm of Taotian Group (Alibaba's e-commerce platform, formerly Taobao/Tmall). The lab had been publishing research at top international conferences since its founding and sat on one of the world's largest sources of visual data: the product imagery, user-generated video, and social content from China's largest e-commerce ecosystem.
 
@@ -77,7 +78,7 @@ The result is a model that processes the relationships between video content, au
 
 ## Benchmark Performance: All Four Categories, First Place
 
-As of May 2026, HappyHorse-1.0 holds the top position in all four video arena categories on **[Artificial Analysis](https://artificialanalysis.ai/video)**:
+As of May 2026, HappyHorse-1.0 holds the top position in all four video arena categories on **[Artificial Analysis's video arena](https://artificialanalysis.ai/video)**:
 
 | Category | Elo Score |
 |---|---|
@@ -149,7 +150,7 @@ HappyHorse-1.0 is an API-first product. There is no standalone Alibaba consumer 
 - Python and JavaScript SDKs
 - Pay-per-use billing with no minimum spend
 
-**Pricing via fal.ai:**
+**[Pricing via fal.ai](https://fal.ai/models/alibaba/happy-horse/text-to-video):**
 - 720p: **$0.14/second** of generated video
 - 1080p: **$0.28/second** of generated video
 

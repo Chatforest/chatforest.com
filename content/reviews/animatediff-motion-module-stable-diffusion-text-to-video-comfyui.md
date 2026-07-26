@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "AnimateDiff (guoyww, 2023) adds plug-and-play temporal attention layers to any Stable Diffusion 1.5 or SDXL checkpoint, enabling text-to-video without retraining. Supports MotionLoRA, SparseCtrl, sliding window for longer clips, and has massive ComfyUI integration via ComfyUI-AnimateDiff-Evolved. Apache 2.0. 8 GB VRAM for SD1.5 variants. Not a standalone model — a motion module paradigm. Rating: 4/5 for its ecosystem; 3/5 for raw quality vs. 2025-era DiT models."
 tags: ["video-ai", "text-to-video", "ai-video-generation", "animatediff", "stable-diffusion", "open-source", "comfyui", "motion-module", "diffusion-model", "unet", "creative-ai", "t2v", "lora"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # AnimateDiff — When Stable Diffusion Learned to Move

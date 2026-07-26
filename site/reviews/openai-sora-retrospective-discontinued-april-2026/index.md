@@ -73,13 +73,11 @@ There was no standalone Sora subscription. No API at launch. Access was entirely
 
 OpenAI released Sora 2 as an iOS app in September 2025, with an Android app following in November 2025. The mobile launch represented a consumer-facing bet — positioning Sora against Pika's iPhone app, Runway's mobile interface, and the growing short-form AI video market dominated by social platforms.
 
-Sora 2 brought improved motion realism, better text rendering in-scene, longer clip support, and a revised content moderation system. **By default, Sora 2 used copyrighted material unless rights holders opted out** — a decision that drew immediate formal opposition from the Motion Picture Association and from Japan's Content Overseas Distribution Association (CODA), which demanded specific protections for Studio Ghibli and Square Enix content.
-
-Within one week of Sora 2's launch, third-party watermark removal tools capable of stripping Sora's output watermark were publicly available. The tools circulated widely on social media, undermining one of OpenAI's stated safety mechanisms.
+Sora 2 brought improved motion realism, better text rendering in-scene, longer clip support, and a revised content moderation system. **By default, Sora 2 used copyrighted material unless rights holders opted out** — a decision that drew immediate formal opposition from the Motion Picture Association, which argued that the burden of protection should fall on OpenAI rather than rights holders.
 
 ### December 2025 — Disney Partnership
 
-In December 2025, The Walt Disney Company announced a **$1 billion strategic investment in OpenAI**. The partnership included a specific creative component: Disney licensed access to more than 200 of its copyrighted characters — from Disney Animation, Pixar, Marvel, and Star Wars properties — for use in Sora-generated content.
+In December 2025, [The Walt Disney Company announced a **$1 billion strategic investment in OpenAI**](https://www.cnbc.com/2025/12/11/disney-openai-sora-characters-video.html) ([confirmed by both companies](https://openai.com/index/disney-sora-agreement/)). The partnership included a specific creative component: Disney licensed access to more than 200 of its copyrighted characters — from Disney Animation, Pixar, Marvel, and Star Wars properties — for use in Sora-generated content.
 
 The timing of the announcement, just months before Sora's discontinuation, made the partnership retrospectively ironic. OpenAI had secured one of the most significant entertainment IP licensing agreements in AI history for a product it was preparing to shut down.
 
@@ -97,7 +95,7 @@ OpenAI revoked all early-access credentials within three hours and issued a stat
 
 Sora arrived sixteen months after the WGA and SAG-AFTRA strikes that had already put AI-generated content at the center of entertainment labor negotiations. The February 2024 announcement landed like a second shock.
 
-**Tyler Perry** was the most immediate and concrete responder. He had been in final planning stages for an $800 million expansion of Tyler Perry Studios in Atlanta. Within days of the Sora announcement, he paused the expansion, stating publicly that AI video generation threatened the jobs the studio was designed to create. The Brookings Institution would later estimate potential losses of over 100,000 entertainment industry jobs by 2026 attributable to generative video AI.
+[**Tyler Perry**](https://variety.com/2024/film/news/tyler-perry-studio-expansion-openai-sora-concerns-1235920007/) was the most immediate and concrete responder. He had been in final planning stages for an $800 million expansion of Tyler Perry Studios in Atlanta. Within days of the Sora announcement, he [paused the expansion](https://www.forbes.com/sites/elijahclark/2024/02/23/tyler-perry-warns-of-ai-threat-to-jobs-after-viewing-openai-sora/), stating publicly that AI video generation threatened the jobs the studio was designed to create.
 
 **SAG-AFTRA** and the **Writers Guild of America** had secured some AI protections in their 2023 contracts, but those contracts were written around existing AI capabilities. Sora represented capabilities that the contracts had not anticipated.
 
@@ -105,19 +103,19 @@ Sora arrived sixteen months after the WGA and SAG-AFTRA strikes that had already
 
 ### Celebrity Likeness Concerns
 
-Sora's announced ability to generate realistic human video raised immediate concerns about unauthorized use of celebrity likenesses. The estates and families of **Robin Williams**, **Kobe Bryant**, **Paul Paul Walker**, and **George Carlin** publicly urged OpenAI to implement explicit restrictions against generating content based on deceased celebrities. MLK-based deepfakes were subsequently restricted after examples circulated publicly.
+Sora's announced ability to generate realistic human video raised immediate concerns about unauthorized use of celebrity likenesses. The families of **Robin Williams** and **George Carlin** [publicly condemned AI-generated deepfakes of their deceased relatives](https://www.axios.com/2025/10/08/openai-sora-deepfakes-robin-williams-george-carlin) that appeared on Sora, with OpenAI subsequently [strengthening restrictions on celebrity likeness replication](https://www.macrumors.com/2025/10/20/openai-sora-deepfake-restrictions/).
 
 OpenAI's celebrity likeness policy was a notable gap at launch — generating content depicting living public figures was technically prohibited but inconsistently enforced.
 
 ### "SlopTok" and the Quality Problem
 
-As Sora-generated content spread to social media platforms, a counter-narrative emerged. Content creator and science communicator **Hank Green** coined the term **"SlopTok"** to describe Sora's TikTok-style feed of AI-generated content — low-effort, formulaic clips that lacked any creative intent beyond the prompt. The term gained broad traction and became shorthand for the AI video quality problem industrywide. Critics noted that accessibility had lowered the floor on content quality while leaving the ceiling at the same height.
+As Sora-generated content spread to social media platforms, a counter-narrative emerged. Content creator and science communicator **Hank Green** [popularized the term **"SlopTok"**](https://www.dailydot.com/news/hank-green-sora-2-sloptok/) to describe Sora's TikTok-style feed of AI-generated content — low-effort, formulaic clips that lacked any creative intent beyond the prompt. The term gained broad traction and became shorthand for the AI video quality problem industrywide. Critics noted that accessibility had lowered the floor on content quality while leaving the ceiling at the same height.
 
 This was not unique to Sora — Runway, Pika, and Kling all contributed to the same dynamic — but Sora, as the most visible and hyped of the platforms, absorbed disproportionate criticism.
 
 ### The Operating Cost Problem
 
-Sora's operating costs reportedly reached approximately **$1 million per day** at peak usage — a figure attributed to the computational intensity of generating high-quality video via diffusion transformer at scale. At $20/month for Plus and $200/month for Pro subscriptions, the math was difficult. A Plus subscriber generating their full 50-video monthly allocation created generation costs that substantially exceeded their subscription revenue at any plausible marginal cost per generation.
+Sora's operating costs [reportedly reached approximately **$1 million per day**](https://80.lv/articles/sora-was-reportedly-costing-openai-usd1-million-per-day) at peak usage — a figure attributed to the computational intensity of generating high-quality video via diffusion transformer at scale. At $20/month for Plus and $200/month for Pro subscriptions, the math was difficult. A Plus subscriber generating their full 50-video monthly allocation created generation costs that substantially exceeded their subscription revenue at any plausible marginal cost per generation.
 
 The subscription pricing reflected the competitive market — Pika charged $8/month for standard, Runway $15/month — but it also reflected the consumer-AI platform logic of acquiring users with subsidized pricing, then converting through upsells or enterprise deals. For Sora, neither path materialized before the economics became unsustainable.
 
@@ -131,13 +129,13 @@ The subscription pricing reflected the competitive market — Pika charged $8/mo
 - **April 26, 2026:** Sora mobile and web applications were shut down.
 - **September 24, 2026:** API deprecation scheduled (at time of writing, not yet reached).
 
-OpenAI provided no detailed public explanation for the discontinuation. Reports attributed the shutdown to **"computation shortages, cost pressures, and broader enterprise focus."** In April 2026 — the same month Sora went dark — **Kevin Weil** (OpenAI Chief Product Officer) and **Bill Peebles** (the research lead most directly associated with Sora's architecture) both departed the company. TechCrunch reported OpenAI was explicitly "pivoting away from consumer moonshots toward enterprise AI," shedding what insiders described as "side quests." Sora — a consumer-facing, resource-intensive, declining-user-count product — fit every criterion for the cut.
+OpenAI provided no detailed public explanation for the discontinuation. Reports attributed the shutdown to **"computation shortages, cost pressures, and broader enterprise focus."** In April 2026 — the same month Sora went dark — **Kevin Weil** (OpenAI Chief Product Officer) and **Bill Peebles** (the research lead most directly associated with Sora's architecture) both departed the company. [TechCrunch reported](https://techcrunch.com/2026/04/17/kevin-weil-and-bill-peebles-exit-openai-as-company-continues-to-shed-side-quests/) OpenAI was explicitly "pivoting away from consumer moonshots toward enterprise AI," shedding what insiders described as "side quests." Sora — a consumer-facing, resource-intensive, declining-user-count product — fit every criterion for the cut.
 
-At the time of shutdown, **Artificial Analysis ranked Sora 2 Pro below ByteDance Seedance 2.0, Runway Gen-4.5, and KlingAI Kling 3.0** on their video generation leaderboard. The pioneer had become a laggard.
+At the time of shutdown, [**Artificial Analysis ranked Sora 2 Pro below ByteDance Seedance 2.0, Runway Gen-4.5, and KlingAI Kling 3.0**](https://artificialanalysis.ai/text-to-video) on their video generation leaderboard. The pioneer had become a laggard.
 
 ### User Impact
 
-Peak Sora usage reached approximately **one million active users** — a substantial number for a product that had only launched publicly fourteen months before shutdown. Usage had declined to below **500,000** before the discontinuation announcement, suggesting the product had already experienced significant churn before OpenAI's decision.
+[Peak Sora usage reached approximately **one million active users**](https://the-decoder.com/openais-sora-burned-a-million-dollars-a-day-while-losing-half-its-users-in-record-time/) — a substantial number for a product that had only launched publicly fourteen months before shutdown. Usage had declined to below **500,000** before the discontinuation announcement, suggesting the product had already experienced significant churn before OpenAI's decision.
 
 No formal refund program was announced for subscribers who had paid for plans. The Disney partnership IP licensing deal became effectively moot for consumer use cases within months of its announcement.
 
@@ -171,7 +169,7 @@ Sora had no API at launch (addressing this only later), no MCP integration, no a
 
 Before the autopsy, the achievements deserve acknowledgment.
 
-**It earned recognition.** Sora won **Product Hunt's Golden Kitty Award for "AI for Video" (2024)** with an average rating of 3.86/5 — consumer recognition of a product that genuinely impressed its early users. South Park dedicated an episode — "Sora Not Sorry" — to satirizing the AI deepfake and copyright debates that Sora had ignited. Cultural impact is not nothing.
+**It earned recognition.** Sora won [**Product Hunt's Golden Kitty Award for "AI for Video" (2024)**](https://www.producthunt.com/golden-kitty-awards/hall-of-fame?year=2024) — consumer recognition of a product that genuinely impressed its early users. [South Park dedicated an episode — "Sora Not Sorry" —](https://www.hollywoodreporter.com/tv/tv-news/south-park-fake-ai-videos-1236424181/) to satirizing the AI deepfake and copyright debates that Sora had ignited. Cultural impact is not nothing.
 
 **It moved the field.** The February 2024 announcement set the technical benchmark that every competitor measured against for the following twelve months. Runway, Pika, Kling, and Luma all accelerated their roadmaps in direct response to Sora's announcement. The woolly mammoth clip alone probably added six months to the AI video arms race timeline.
 

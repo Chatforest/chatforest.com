@@ -7,6 +7,7 @@ tags: ["video generation", "text-to-video", "image-to-video", "AI startup", "ret
 categories: ["reviews"]
 description: "Haiper AI raised $19M, built a 30B-parameter video model, hit 6.5M users — then shut down in February 2025 when Microsoft hired its founders. A retrospective on one of AI video's most technically ambitious early startups."
 rating: 0
+sources_audited: 2026-07-26
 status: "defunct"
 mcp_server: false
 api_available: false
@@ -59,7 +60,7 @@ The product line:
 
 The product was competitive but not dominant. Third-party review scores ranged around 3.8/5, with consistent criticism of clip length limitations (maximum around 6–8 seconds, with 30 seconds as a stated roadmap goal that was never reached) and the video repainting feature's inconsistency. Haiper did not appear on Artificial Analysis leaderboards — not because it was excluded, but likely because the shutdown preceded rigorous third-party benchmarking.
 
-By December 2024: **6.5 million total users, 52 million videos and images generated**.
+By December 2024: [**6.5 million total users, 52 million videos and images generated**](https://www.bitrue.com/blog/haiper-ai-and-how-it-worked).
 
 ## The Business
 
@@ -96,7 +97,7 @@ The parallel with **Inflection AI** (where Microsoft hired most of the team in M
 
 ## What Was Lost
 
-The community was small but genuine: ~27,000 Discord members at peak, with regular Friday AMAs from the founders. Spotlight, their in-platform gallery, surfaced genuinely impressive user work.
+The community was small but genuine, with regular Friday AMAs from the founders. Spotlight, their in-platform gallery, surfaced genuinely impressive user work.
 
 The Keyframe Conditioning Timeline feature — the ability to steer video generation through multiple reference images — was ahead of many contemporaries at the time. Several larger platforms have since added similar capabilities; Haiper did not survive to see its differentiation become standard.
 

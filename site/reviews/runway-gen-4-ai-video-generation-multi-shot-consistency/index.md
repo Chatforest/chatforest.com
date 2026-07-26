@@ -341,13 +341,13 @@ The lawsuit is significant beyond Runway specifically. Andersen v. Stability AI 
 
 ### YouTube Training Data Allegations
 
-In 2024, reporting emerged that Runway allegedly used over **100,000 YouTube videos** — including some pirated content — to train Gen-3 Alpha, in violation of YouTube's Terms of Service. A leaked company spreadsheet revealed plans to categorize and train on content from over **3,900 individual YouTube channels**, ranging from major media organizations (Netflix, The New Yorker, VICE News) to prominent individual creators (Casey Neistat, Marques Brownlee).
+In 2024, [reporting emerged](https://www.404media.co/runway-ai-image-generator-training-data-youtube/) that Runway allegedly used over **100,000 YouTube videos** — including some pirated content — to train Gen-3 Alpha, in violation of YouTube's Terms of Service. [A leaked company spreadsheet](https://futurism.com/leak-runway-ai-video-training) revealed plans to categorize and train on content from over **3,900 individual YouTube channels**, ranging from major media organizations (Netflix, The New Yorker, VICE News) to prominent individual creators (Casey Neistat, Marques Brownlee).
 
 Runway has not publicly confirmed or denied the specifics of this reporting. The allegation, if accurate, represents both a ToS violation with YouTube and a data provenance question for the trained model — though the legal status of training on ToS-violating data, absent copyright claims, remains untested.
 
 ### The Lionsgate Complication
 
-The September 2024 Lionsgate partnership encountered what The Wrap described as "unforeseen complications." Specifically: questions about the limited capabilities of the resulting model relative to commercial expectations, copyright concerns involving Lionsgate's own library (which contains licensed third-party content), and questions about the **ancillary rights of actors** whose recorded performances were in the training data.
+The September 2024 Lionsgate partnership encountered [what The Wrap described as "unforeseen complications"](https://www.thewrap.com/lionsgate-runway-ai-deal-ip-model-concerns/). Specifically: questions about the limited capabilities of the resulting model relative to commercial expectations, copyright concerns involving Lionsgate's own library (which contains licensed third-party content), and questions about the **ancillary rights of actors** whose recorded performances were in the training data.
 
 The actor rights question is particularly complex. SAG-AFTRA's 2023 contract negotiations centered substantially on consent provisions for AI training on performer likenesses and vocal characteristics. A model trained on 20,000+ feature films necessarily contains recorded performances by actors who may not have individually consented to their performances being used in generative AI training. The Lionsgate complication illustrates that studio-level IP licensing doesn't automatically resolve performer rights questions.
 

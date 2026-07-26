@@ -181,7 +181,7 @@ FramePack occupies a specific niche in the video generation landscape:
 The efficient training afforded by FramePack's fixed context has enabled single-GPU LoRA experiments. Camera control LoRAs trained on single video sequences have been shared on Hugging Face. Civitai has FramePack LoRA entries. Fine-tuning with consumer hardware is more accessible than with standard HunyuanVideo.
 
 **Media coverage:**
-- Tom's Hardware headline: "AI-generated videos now possible with gaming GPUs with just 6GB of VRAM" — the article that drove initial viral reach
+- [Tom's Hardware: "AI-generated videos now possible with gaming GPUs with just 6GB of VRAM"](https://www.tomshardware.com/tech-industry/artificial-intelligence/framepack-can-generate-ai-videos-locally-with-just-6gb-of-vram) — the article that drove initial viral reach
 - TechSpot and similar outlets followed with similar coverage
 - r/StableDiffusion and r/LocalLLaMA included FramePack in 2025 community year-in-review discussions
 

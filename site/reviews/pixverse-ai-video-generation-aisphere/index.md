@@ -264,7 +264,7 @@ Unlike several AI video and image competitors — Stability AI, Adobe (Books3 cl
 
 ### No Distillation Controversies
 
-Unlike Hailuo/MiniMax (accused of distilling Anthropic models) or certain other Chinese AI products, no equivalent distillation or IP appropriation controversies were found for PixVerse.
+Unlike Hailuo/MiniMax ([accused by Anthropic of distilling Claude at scale](https://www.cnbc.com/2026/02/24/anthropic-openai-china-firms-distillation-deepseek.html) in a [February 2026 allegation](https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/)) or certain other Chinese AI products, no equivalent distillation or IP appropriation controversies were found for PixVerse.
 
 ---
 

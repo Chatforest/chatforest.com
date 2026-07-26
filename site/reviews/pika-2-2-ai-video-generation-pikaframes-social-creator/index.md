@@ -272,7 +272,7 @@ The broader AI video generation category carries inherent legal risk around trai
 
 Pika's capabilities — especially Pikaswaps (face and object modification), Pikadditions (inserting people into video), and Scene Ingredients (using custom reference images) — have clear deepfake misuse potential. Pika's Acceptable Use Policy prohibits non-consensual intimate imagery and deceptive impersonation, and the platform requires agreement to these terms. The enforcement mechanisms are not publicly documented.
 
-The contrast with the **Grok Imagine Spicy Mode deepfake scandal** — which involved xAI explicitly enabling NSFW generation that resulted in non-consensual sexual imagery of real people and triggered regulatory investigations in four jurisdictions — is worth noting. Pika has not had an equivalent incident. The risk class is the same; the execution history differs.
+The contrast with the [**Grok Imagine Spicy Mode deepfake scandal**](https://www.nbcnews.com/tech/tech-news/musks-ai-chatbot-grok-xai-making-sexual-deepfakes-imagine-rcna265855) — which involved xAI explicitly enabling NSFW generation that resulted in non-consensual sexual imagery of real people and [triggered regulatory investigations in multiple jurisdictions](https://www.aljazeera.com/amp/news/2026/1/15/musks-grok-to-bar-users-from-generating-sexual-images-of-real-people) — is worth noting. Pika has not had an equivalent incident. The risk class is the same; the execution history differs.
 
 ### User Base and Scale of Impact
 

@@ -70,7 +70,7 @@
 <p>In the spring of 2024, the global AI video conversation was almost entirely American. OpenAI had just stunned the world with Sora&rsquo;s February preview — cinematic clips of unprecedented quality, generated from text prompts. Runway was the established professional tool. Pika was the scrappy consumer upstart. The field felt like a West Coast technology race.</p>
 <p>Then, on June 6, 2024, a Beijing-based company called <strong>Kuaishou Technology</strong> launched something nobody outside China had expected: a video generation model that could produce <strong>1080p clips up to two minutes long</strong>, running from natural language prompts, available to the public on day one of its global beta. The model was called <strong>Kling</strong>.</p>
 <p>Within 10 months of launch, Kling had reached <strong>$100 million in annualized revenue run rate</strong>. By December 2025 — 19 months in — that figure had reached <strong>$240 million</strong>. By early 2026, it had <a href="https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300">surpassed <strong>$300 million</strong></a>. No AI video platform had commercialized this fast.</p>
-<p>The February 2026 release of <strong>Kling 3.0 Omni</strong> raised the stakes further: native audio synthesis in six languages with regional accents, phoneme-level lip-sync for multi-character dialogue, 4K output, up to 15-second clips, and Chain-of-Thought reasoning for scene coherence. Independent benchmarks briefly ranked it #1 among all AI video models by ELO score.</p>
+<p>The <a href="https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/">February 2026 release of <strong>Kling 3.0 Omni</strong></a> raised the stakes further: native audio synthesis in six languages with regional accents, phoneme-level lip-sync for multi-character dialogue, 4K output, up to 15-second clips, and Chain-of-Thought reasoning for scene coherence. Independent benchmarks briefly ranked it #1 among all AI video models by ELO score.</p>
 <p>Kling is not a startup. It is a product line inside one of China&rsquo;s largest technology companies, backed by billions in infrastructure spending, serving 60 million creators worldwide, and producing the best character-driven dialogue of any AI video model currently available. It also comes with real concerns: political censorship built into the generation pipeline, data sovereignty questions for enterprise users, and no official MCP server despite competitors shipping them.</p>
 <p>This is a research-based review of what Kling AI has built, where it leads the field, and where prospective users should think carefully. We do not test AI video tools hands-on; we analyze from public sources, company announcements, independent benchmarks, and technical documentation.</p>
 <hr>
@@ -146,42 +146,32 @@
 </thead>
 <tbody>
 <tr>
-<td>ARR $100M</td>
-<td>April 2025</td>
+<td><a href="https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-celebrates-first-anniversary-achieves-annualized/">ARR $100M</a></td>
+<td>March 2025</td>
 <td>10 months after launch</td>
 </tr>
 <tr>
-<td>ARR $240M</td>
+<td><a href="https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-annualized-revenue-run-rate-hits-usd240-million/">ARR $240M</a></td>
 <td>December 2025</td>
 <td>19 months after launch</td>
 </tr>
 <tr>
-<td>2025 total revenue</td>
-<td>Full year 2025</td>
-<td>$150M (1.04B yuan)</td>
-</tr>
-<tr>
-<td>ARR $300M+</td>
+<td><a href="https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300">ARR $300M+</a></td>
 <td>Early 2026</td>
 <td>Surpassed $300M ARR</td>
 </tr>
 <tr>
-<td>Monthly users</td>
-<td>December 2025</td>
-<td>12 million MAU</td>
-</tr>
-<tr>
-<td>Total creators served</td>
+<td><a href="https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/">Total creators served</a></td>
 <td>2026</td>
 <td>60 million+ worldwide</td>
 </tr>
 <tr>
-<td>Videos generated</td>
+<td><a href="https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/">Videos generated</a></td>
 <td>2026</td>
 <td>600 million+</td>
 </tr>
 <tr>
-<td>Enterprise users</td>
+<td><a href="https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/">Enterprise users</a></td>
 <td>2026</td>
 <td>30,000+</td>
 </tr>
@@ -283,14 +273,14 @@
 <li>&ldquo;Tiananmen Square protests&rdquo;</li>
 </ul>
 <p>&hellip;produce nonspecific error messages rather than generated output. This is not a content safety filter in the ordinary sense — it is a compliance mechanism reflecting Chinese regulatory requirements for generative AI services operating in China.</p>
-<p>TechCrunch reported on this in July 2024, shortly after launch. Kuaishou acknowledged the filters without offering detail.</p>
+<p>This was <a href="https://dig.watch/updates/chinas-new-video-generating-ai-faces-limitations-due-to-political-censorship">documented in July 2024</a> shortly after launch. Kuaishou acknowledged the filters without offering detail.</p>
 <p>The practical implications vary by use case. For the vast majority of creative and commercial uses — product marketing, entertainment, social media, character-driven stories — the censorship filters are irrelevant. For journalism, political commentary, documentary production, or historical content involving China, the filters are a real limitation and not one that can be disabled by the user.</p>
 <h3 id="data-sovereignty-for-enterprise">Data Sovereignty for Enterprise</h3>
 <p>Kuaishou is a Chinese-domiciled public company subject to the <strong>People&rsquo;s Republic of China&rsquo;s data localization and national security laws</strong>, including the Data Security Law (2021) and the Personal Information Protection Law (2021). These laws require Chinese technology companies to store data on Chinese citizens within China and grant Chinese government authorities access to data upon request.</p>
 <p>For enterprise users outside China generating proprietary creative content — product development materials, brand assets, marketing campaigns — the data sovereignty question is not hypothetical. The generated videos and input prompts pass through Kuaishou&rsquo;s infrastructure. What is stored, for how long, and under what legal framework is governed by Chinese law, not the user&rsquo;s home jurisdiction.</p>
 <p>This concern is less pressing for individual creators generating short social media clips. It is a real evaluation criterion for enterprise procurement in regulated industries, government-adjacent organizations, or any company generating competitively sensitive creative assets.</p>
 <h3 id="malware-campaign-targeting-the-brand">Malware Campaign Targeting the Brand</h3>
-<p>In early 2025, <strong>Check Point Research</strong> identified a coordinated malware campaign exploiting Kling AI&rsquo;s reputation. Threat actors created fake Facebook pages and advertisements impersonating klingai.com, distributing files that executed a <strong>Remote Access Trojan (RAT)</strong> on victims&rsquo; machines. The attack exploited the growing search volume around Kling AI — users searching for the platform found convincing impersonation sites.</p>
+<p>In early 2025, <a href="https://blog.checkpoint.com/security/exploiting-the-ai-boom-how-threat-actors-are-targeting-trust-in-generative-platforms-like-kling-ai/"><strong>Check Point Research</strong> identified a coordinated malware campaign</a> exploiting Kling AI&rsquo;s reputation. Threat actors created fake Facebook pages and advertisements impersonating klingai.com, <a href="https://thehackernews.com/2025/05/fake-kling-ai-facebook-ads-deliver-rat.html">distributing files that executed a <strong>Remote Access Trojan (RAT)</strong> on victims&rsquo; machines</a>. The attack exploited the growing search volume around Kling AI — users searching for the platform found convincing impersonation sites.</p>
 <p>This is not a flaw in Kling AI&rsquo;s product. It is an indication of how valuable the brand had become as a social engineering target. The incident highlights the need for users to access Kling only via klingai.com directly, rather than via advertisements or third-party links from unverified sources.</p>
 <h3 id="deepseek-integration">DeepSeek Integration</h3>
 <p>Kuaishou integrated <strong>DeepSeek</strong> (ByteDance&rsquo;s open-source LLM) into Kling AI in early 2026, using it to lower the entry barrier for prompt construction — users can describe their intent in natural language and DeepSeek translates it into an optimized Kling prompt. The integration itself is a reasonable UX decision. It also means that Kling&rsquo;s prompt pipeline now routes through a ByteDance model, adding another data flow consideration for enterprise security reviewers.</p>

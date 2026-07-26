@@ -214,7 +214,7 @@ ComfyUI added native HunyuanVideo support in January 2025. Community wrappers:
 **LoRA Ecosystem:**
 Tencent released official LoRA training scripts on December 5, 2025, using the Muon optimizer. Kohya-ss independently added HunyuanVideo LoRA support via his widely-used training GUI.
 
-Civitai hosts **128+ search results** for "Hunyuan" LoRAs. The majority target character consistency, style transfer, and — significantly — NSFW applications. LoRA files are approximately 100× smaller than base model weights, making distribution trivial.
+[Civitai](https://civitai.com/) hosts **128+ search results** for "Hunyuan" LoRAs. The majority target character consistency, style transfer, and — significantly — NSFW applications. LoRA files are approximately 100× smaller than base model weights, making distribution trivial.
 
 ---
 
@@ -223,9 +223,9 @@ Civitai hosts **128+ search results** for "Hunyuan" LoRAs. The majority target c
 HunyuanVideo's open-source nature removes the content filters and identity detection systems that commercial platforms apply. The result: a documented misuse pattern.
 
 **LoRA training from minimal images:**
-Research published in early 2025 found that convincing celebrity-likeness LoRAs can be trained from as few as **16 images** — a screenshot set small enough to extract from a single TV episode. The resulting LoRA (~307MB) runs without any content filter on a locally deployed HunyuanVideo instance.
+[Research and community guides published in early 2025](https://www.unite.ai/the-rise-of-hunyuan-video-deepfakes/) found that convincing celebrity-likeness LoRAs can be trained from as few as 20–60 images — a dataset small enough to extract from a TV episode. The resulting LoRA runs without any content filter on a locally deployed HunyuanVideo instance.
 
-**HunyuanCustom (May 9, 2025):**
+**[HunyuanCustom (May 9, 2025)](https://www.unite.ai/hunyuancustom-brings-single-image-video-deepfakes-with-audio-and-lip-sync/):**
 The most significant escalation. HunyuanCustom enables single-image-to-video generation with **synchronized audio and lip-sync**. The input: one photograph of a person. The output: a video of that person speaking, with audio synchronized to their mouth movements.
 
 This capability was released as an official Tencent open-source model. The deepfake use case is explicit in the architecture — a single reference image drives appearance consistency across the generated video, while text drives dialogue and motion. No identity verification or consent mechanism is included.

@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "FramePack (April 2025) by Lvmin Zhang (lllyasviel, creator of ControlNet) applies context compression and inverted anti-drifting sampling to HunyuanVideo, enabling 60-120 second video generation on as little as 6GB VRAM. The key innovation is O(1) compute cost regardless of video length. Apache 2.0 license. 16,800 GitHub stars. No official MCP server. Rating 4/5."
 tags: ["video-ai", "image-to-video", "ai-video-generation", "framepack", "lllyasviel", "controlnet", "open-source", "long-video", "consumer-gpu", "hunyuanvideo", "diffusion-transformer", "comfyui", "lora", "local-ai"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # FramePack — O(1) Long Video Generation on 6GB VRAM: ControlNet Creator's Architecture That Changes What Consumer GPUs Can Do
@@ -184,7 +185,7 @@ FramePack occupies a specific niche in the video generation landscape:
 The efficient training afforded by FramePack's fixed context has enabled single-GPU LoRA experiments. Camera control LoRAs trained on single video sequences have been shared on Hugging Face. Civitai has FramePack LoRA entries. Fine-tuning with consumer hardware is more accessible than with standard HunyuanVideo.
 
 **Media coverage:**
-- Tom's Hardware headline: "AI-generated videos now possible with gaming GPUs with just 6GB of VRAM" — the article that drove initial viral reach
+- [Tom's Hardware: "AI-generated videos now possible with gaming GPUs with just 6GB of VRAM"](https://www.tomshardware.com/tech-industry/artificial-intelligence/framepack-can-generate-ai-videos-locally-with-just-6gb-of-vram) — the article that drove initial viral reach
 - TechSpot and similar outlets followed with similar coverage
 - r/StableDiffusion and r/LocalLLaMA included FramePack in 2025 community year-in-review discussions
 

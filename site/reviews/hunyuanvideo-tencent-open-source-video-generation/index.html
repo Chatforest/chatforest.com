@@ -277,13 +277,13 @@ ComfyUI added native HunyuanVideo support in January 2025. Community wrappers:</
 </ul>
 <p><strong>LoRA Ecosystem:</strong>
 Tencent released official LoRA training scripts on December 5, 2025, using the Muon optimizer. Kohya-ss independently added HunyuanVideo LoRA support via his widely-used training GUI.</p>
-<p>Civitai hosts <strong>128+ search results</strong> for &ldquo;Hunyuan&rdquo; LoRAs. The majority target character consistency, style transfer, and — significantly — NSFW applications. LoRA files are approximately 100× smaller than base model weights, making distribution trivial.</p>
+<p><a href="https://civitai.com/">Civitai</a> hosts <strong>128+ search results</strong> for &ldquo;Hunyuan&rdquo; LoRAs. The majority target character consistency, style transfer, and — significantly — NSFW applications. LoRA files are approximately 100× smaller than base model weights, making distribution trivial.</p>
 <hr>
 <h2 id="the-deepfake-and-nsfw-controversy">The Deepfake and NSFW Controversy</h2>
 <p>HunyuanVideo&rsquo;s open-source nature removes the content filters and identity detection systems that commercial platforms apply. The result: a documented misuse pattern.</p>
 <p><strong>LoRA training from minimal images:</strong>
-Research published in early 2025 found that convincing celebrity-likeness LoRAs can be trained from as few as <strong>16 images</strong> — a screenshot set small enough to extract from a single TV episode. The resulting LoRA (~307MB) runs without any content filter on a locally deployed HunyuanVideo instance.</p>
-<p><strong>HunyuanCustom (May 9, 2025):</strong>
+<a href="https://www.unite.ai/the-rise-of-hunyuan-video-deepfakes/">Research and community guides published in early 2025</a> found that convincing celebrity-likeness LoRAs can be trained from as few as 20–60 images — a dataset small enough to extract from a TV episode. The resulting LoRA runs without any content filter on a locally deployed HunyuanVideo instance.</p>
+<p><strong><a href="https://www.unite.ai/hunyuancustom-brings-single-image-video-deepfakes-with-audio-and-lip-sync/">HunyuanCustom (May 9, 2025)</a>:</strong>
 The most significant escalation. HunyuanCustom enables single-image-to-video generation with <strong>synchronized audio and lip-sync</strong>. The input: one photograph of a person. The output: a video of that person speaking, with audio synchronized to their mouth movements.</p>
 <p>This capability was released as an official Tencent open-source model. The deepfake use case is explicit in the architecture — a single reference image drives appearance consistency across the generated video, while text drives dialogue and motion. No identity verification or consent mechanism is included.</p>
 <p><strong>NSFW scale:</strong>

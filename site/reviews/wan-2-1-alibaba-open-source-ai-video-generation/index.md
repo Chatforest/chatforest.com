@@ -191,7 +191,7 @@ One of Wan's most significant differentiators versus closed-source competitors i
 
 The **T2V-1.3B at 8.19 GB VRAM** is the headline number. It means a developer or researcher with an RTX 3070 or an 8GB M1 MacBook Pro (with appropriate attention to quantization and memory-efficient attention) can run a video generation model locally with no API costs. Generation speed is slow — a 5-second 480P clip takes approximately 4 minutes on an RTX 4090, which scales proportionally worse on smaller GPUs — but the capability exists on consumer hardware.
 
-The **Wan2.2 TI2V-5B** closes the quality-accessibility gap: it offers the full unified T2V/I2V capability of the 2.2 architecture at a VRAM requirement that an RTX 4090 (currently ~$1,500–$2,500 on the used market) can handle. At 9 minutes per clip, it's a research and creative tool rather than a production pipeline, but it's usable.
+The **Wan2.2 TI2V-5B** closes the quality-accessibility gap: it offers the full unified T2V/I2V capability of the 2.2 architecture at a VRAM requirement that an RTX 4090 can handle. At 9 minutes per clip, it's a research and creative tool rather than a production pipeline, but it's usable.
 
 ---
 
@@ -215,7 +215,7 @@ Over 15,000 stars each for Wan2.1 and Wan2.2 within months of launch indicates s
 
 ### HuggingFace Downloads
 
-The Wan-AI organization on HuggingFace has **10,161 followers** and 23 public models. Monthly download counts reflect where developer activity has concentrated:
+The [Wan-AI organization on HuggingFace](https://huggingface.co/Wan-Video) has **10,161 followers** and 23 public models. Monthly download counts reflect where developer activity has concentrated:
 
 - Wan2.2-I2V-A14B-Diffusers: **150,000/month**
 - Wan2.2-TI2V-5B-Diffusers: **108,000/month**

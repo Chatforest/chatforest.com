@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "Amazon Nova Reel (December 2024, v1.1 April 2025) is AWS's cloud-native video generation model available via Amazon Bedrock. Generates 720p / 24fps video up to 2 minutes via multi-shot storyboarding. Priced at $0.08/second. Beats Runway Gen-3 Alpha in A/B testing. Adds C2PA Content Credentials and invisible watermarking. No open weights, US East only, no audio. Rating 3/5."
 tags: ["video-ai", "ai-video-generation", "amazon", "aws", "bedrock", "cloud-ai", "text-to-video", "image-to-video", "enterprise-ai", "nova", "responsible-ai", "c2pa", "mcp-server", "commercial-model"]
 rating: 3
+sources_audited: 2026-07-26
 ---
 
 # Amazon Nova Reel — AWS Bedrock's Video Generation Model: Multi-Shot, C2PA Credentials, and the Enterprise Pipeline Play

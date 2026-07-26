@@ -78,8 +78,8 @@
 <h2 id="the-founders-yc-summer-2021-a-thesis-about-machines-and-humans">The Founders: YC Summer 2021, a Thesis About Machines and Humans</h2>
 <p>Tavus was founded in 2021 by two people whose backgrounds converge on the same problem from different angles.</p>
 <p><strong>Hassaan Raza</strong> (Co-Founder &amp; CEO) brings the commercial and product perspective. He has led Tavus through its Y Combinator batch, its Series A, and its repositioning from a personalized video tool for sales teams into a foundational infrastructure layer for real-time human-like AI.</p>
-<p><strong>Quinn Favret</strong> (Co-Founder &amp; COO) provides the operational and go-to-market depth that converts research output into deployable products. Together, they have kept Tavus lean — approximately 40 employees as of 2025, a small team relative to the technical ambition.</p>
-<p>The company is headquartered in San Francisco and emerged from the YC Summer 2021 cohort. Their GitHub organization describes their mission as &ldquo;Teaching machines how to be human&rdquo; — which reads like a tagline but is also a precise description of their technical roadmap. Phoenix-4, Raven-1, Sparrow-1, and Hummingbird-0 are not product names chosen for marketing resonance. They are the components of a machine perception-and-expression system: rendering, perception, timing, and lip synchronization, each built as a named research artifact with published benchmark results.</p>
+<p><strong>Quinn Favret</strong> (Co-Founder &amp; COO) provides the operational and go-to-market depth that converts research output into deployable products. Together, they have kept Tavus lean — a small team relative to the technical ambition.</p>
+<p>The company is headquartered in San Francisco and emerged from the <a href="https://www.ycombinatorcompanies.com/company/tavus">YC Summer 2021 cohort</a>. Their GitHub organization describes their mission as &ldquo;Teaching machines how to be human&rdquo; — which reads like a tagline but is also a precise description of their technical roadmap. Phoenix-4, Raven-1, Sparrow-1, and Hummingbird-0 are not product names chosen for marketing resonance. They are the components of a machine perception-and-expression system: rendering, perception, timing, and lip synchronization, each built as a named research artifact with published benchmark results.</p>
 <p>The research-first posture is characteristic of YC alumni who build infrastructure rather than applications. Tavus has published technical blog posts for each model release rather than only press announcements. Whether this reflects genuine technical depth or good developer marketing is a question that the benchmarks — and the customers — are beginning to answer.</p>
 <hr>
 <h2 id="funding-history">Funding History</h2>
@@ -123,7 +123,7 @@
 <p>What distinguishes Tavus most clearly from HeyGen and Synthesia is not the avatar quality or the pricing or the enterprise certifications. It is the model stack.</p>
 <p>Tavus has built and named four distinct research systems, each solving a specific subproblem of real-time conversational video AI. This is not a vendor assembling commodity models from third-party APIs. It is a research organization building proprietary layers and publishing benchmarks for each.</p>
 <h3 id="phoenix-4-real-time-rendering-with-emotional-intelligence">Phoenix-4: Real-Time Rendering with Emotional Intelligence</h3>
-<p>Released February 2026, Phoenix-4 is Tavus&rsquo;s visual rendering model. Its specifications:</p>
+<p>Released <a href="https://www.businesswire.com/news/home/20260218278213/en/Tavus-Launches-Phoenix-4-the-First-Real-Time-Human-Rendering-Model-with-Emotional-Intelligence">February 2026</a>, Phoenix-4 is Tavus&rsquo;s visual rendering model. Its specifications:</p>
 <ul>
 <li><strong>40 frames per second</strong> at 1080p resolution</li>
 <li><strong>Full-duplex operation</strong>: the model simultaneously listens and speaks, generating visual responses while audio input is still arriving</li>
@@ -135,7 +135,7 @@
 <p>The Gaussian Splatting approach is technically significant. Traditional avatar rendering applies geometric transformations to a 3D mesh — it is fast and controllable, but the mesh creates constraints on what expressions and angles are achievable. Gaussian Splatting is volumetric: it represents the face as a point cloud, and every frame is synthesized rather than deformed. The tradeoff is computational cost; the benefit is expressiveness.</p>
 <p>The previous generation — Phoenix-3 — ran at 30fps at 1080p with no emotion control. Phoenix-4&rsquo;s addition of 10+ emotion states represents a meaningful capability step, not just a performance improvement.</p>
 <h3 id="raven-1-multimodal-perception">Raven-1: Multimodal Perception</h3>
-<p>Released simultaneously with Phoenix-4 in February 2026, Raven-1 is the perception layer — the component that processes what a human is saying, how they are saying it, and what their face is doing, then translates that into information downstream models can act on.</p>
+<p>Released simultaneously with Phoenix-4 in <a href="https://www.businesswire.com/news/home/20260211633777/en/Tavus-Introduces-Raven-1-Bringing-Multimodal-Perception-to-Real-Time-Conversational-AI">February 2026</a>, Raven-1 is the perception layer — the component that processes what a human is saying, how they are saying it, and what their face is doing, then translates that into information downstream models can act on.</p>
 <p>Raven-1 processes three signal streams simultaneously:</p>
 <ul>
 <li><strong>Audio signals</strong>: tone, prosody, sarcasm, hesitation, sighs, emphasis patterns</li>
@@ -148,13 +148,13 @@
 <p>This is not a disqualifying flaw for most use cases. But it is a real limitation for global enterprise deployments or clinical contexts where emotional misclassification has consequences.</p>
 <p>The EU AI Act is also relevant here. Restrictions on AI-based emotion detection in workplaces took effect in February 2025. Tavus explicitly calls out this regulatory risk in their own content for hiring applications. Buyers deploying Raven-1 in EU employment contexts should get legal review before going live.</p>
 <h3 id="sparrow-1-conversational-timing">Sparrow-1: Conversational Timing</h3>
-<p>Released January 2026, Sparrow-1 solves a problem that most conversational AI systems handle badly: knowing when a human is done speaking.</p>
+<p>Released <a href="https://www.tavus.io/blog/sparrow-1-human-level-conversational-timing-in-real-time-voice">January 2026</a>, Sparrow-1 solves a problem that most conversational AI systems handle badly: knowing when a human is done speaking.</p>
 <p>Traditional systems use silence detection: a timer runs, and when silence exceeds a threshold, the AI starts responding. This produces the characteristic awkward pauses of voice interfaces — the system cuts in after a beat of silence, interrupts mid-thought, or fails to respond when someone pauses to think.</p>
 <p>Sparrow-1 is an audio-native turn-taking model that operates at <strong>40ms frame-level granularity</strong>. It models floor ownership probabilistically — estimating in real time who should be speaking next, based on prosodic signals, completeness of thought, and individual speaker patterns. It adapts to individual speaking styles during the conversation.</p>
 <p>Published benchmarks: <strong>55ms median latency, 100% precision, 100% recall, zero interruptions</strong> across 28 real-world test samples.</p>
 <p>The significance of zero interruptions is harder to appreciate without having experienced conversational AI that interrupts constantly. In high-stakes contexts — a patient asking a medical AI about their diagnosis, a job candidate practicing an interview response, a customer discussing a billing dispute — being interrupted is not just annoying. It is trust-destroying.</p>
 <h3 id="hummingbird-0-zero-shot-lip-synchronization">Hummingbird-0: Zero-Shot Lip Synchronization</h3>
-<p>Released April 2025, Hummingbird-0 is the lip-sync layer. Its key differentiator: <strong>zero-shot operation</strong>, meaning it does not require per-person fine-tuning to synchronize lip movements with audio for a new speaker.</p>
+<p>Released <a href="https://www.tavus.io/blog/hummingbird-0-advancing-zero-shot-lip-synchronization-in-ai-generated-video">April 2025</a>, Hummingbird-0 is the lip-sync layer. Its key differentiator: <strong>zero-shot operation</strong>, meaning it does not require per-person fine-tuning to synchronize lip movements with audio for a new speaker.</p>
 <p>Most alternative lip-sync systems require training a person-specific model before accurate synchronization is possible. Hummingbird-0 achieves state-of-the-art benchmarks without this prerequisite:</p>
 <table>
 <thead>
@@ -335,9 +335,9 @@
 <hr>
 <h2 id="customers-use-cases-and-verticals">Customers, Use Cases, and Verticals</h2>
 <p>Tavus does not publish an ARR figure or a total customer count. What they have published are named case studies:</p>
-<p><strong>Final Round AI</strong> — AI-powered job interview preparation. 100,000+ active users. 1.2 million+ practice interview minutes logged via Tavus. Average session length of 12 minutes. CMO quoted: &ldquo;Tavus has speed, reliability, flexibility, and the best product on the market.&rdquo;</p>
+<p><strong><a href="https://www.tavus.io/post/final-round-ai">Final Round AI</a></strong> — AI-powered job interview preparation. 100,000+ active users. 1.2 million+ practice interview minutes logged via Tavus. Average session length of 12 minutes. CMO quoted: &ldquo;Tavus has speed, reliability, flexibility, and the best product on the market.&rdquo;</p>
 <p>This is the clearest validation of Tavus&rsquo;s real-time thesis in action. Interview practice is a context where the conversational video format is not a novelty — it is the product. You cannot practice job interview responses with a text chatbot in a meaningful way. The video format, the eye contact, the timing, the ability to see your own expression in the frame — these are what make interview prep useful. Tavus is not competing with text here. It is competing with human mock-interviewers.</p>
-<p><strong>iAsk</strong> — AI tutoring platform. 22,000+ monthly active users of the Tavus-powered video tutor feature. 1.5 million daily queries across the platform. 75% Gen Z user base. Deployed in 1–2 days.</p>
+<p><strong><a href="https://www.tavus.io/post/how-iask-brings-ai-tutors-to-students-across-the-globe">iAsk</a></strong> — AI tutoring platform. 22,000+ monthly active users of the Tavus-powered video tutor feature. 1.5 million daily queries across the platform. 75% Gen Z user base. Deployed in 1–2 days.</p>
 <p><strong>VEED</strong> — Video editing platform with 12 million users. Integrated Tavus replicas into VEED&rsquo;s editor alongside OpenAI, Nvidia, ElevenLabs, and DeepL capabilities. 76% Fortune 500 reach through VEED&rsquo;s enterprise customer base.</p>
 <p><strong>Work Trial AI</strong> — AI-powered hiring platform that has generated 10,000+ work trials. Customers include Linear, PostHog, and Automattic. Work Trial uses Tavus for candidate interaction interfaces.</p>
 <p><strong>Orum</strong> — Series B AI conversation platform for sales coaching.</p>

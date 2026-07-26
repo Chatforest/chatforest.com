@@ -4,6 +4,7 @@ date: 2026-05-11
 description: "HunyuanVideo launched December 3, 2024 as the largest open-source video generation model ever released, topping VBench and building a 12,000-star GitHub community within weeks. HunyuanVideo-1.5 (November 2025, 8.3B params) democratized access to consumer GPUs with 1080p super-resolution and 10-second generation. The model family's Tencent Hunyuan Community License explicitly excludes the EU, UK, and South Korea. No official MCP server. Rating 4/5."
 tags: ["video-ai", "text-to-video", "image-to-video", "ai-video-generation", "hunyuanvideo", "tencent", "open-source", "hugging-face", "comfyui", "lora", "diffusion-transformer", "full-attention", "chinese-ai", "creative-ai", "multimodal-ai"]
 rating: 4
+sources_audited: 2026-07-26
 ---
 
 # HunyuanVideo — Tencent's 13B Open-Source Video Model: VBench SOTA at Launch, 12,000 GitHub Stars, and a License That Excludes Europe
@@ -217,7 +218,7 @@ ComfyUI added native HunyuanVideo support in January 2025. Community wrappers:
 **LoRA Ecosystem:**
 Tencent released official LoRA training scripts on December 5, 2025, using the Muon optimizer. Kohya-ss independently added HunyuanVideo LoRA support via his widely-used training GUI.
 
-Civitai hosts **128+ search results** for "Hunyuan" LoRAs. The majority target character consistency, style transfer, and — significantly — NSFW applications. LoRA files are approximately 100× smaller than base model weights, making distribution trivial.
+[Civitai](https://civitai.com/) hosts **128+ search results** for "Hunyuan" LoRAs. The majority target character consistency, style transfer, and — significantly — NSFW applications. LoRA files are approximately 100× smaller than base model weights, making distribution trivial.
 
 ---
 
@@ -226,9 +227,9 @@ Civitai hosts **128+ search results** for "Hunyuan" LoRAs. The majority target c
 HunyuanVideo's open-source nature removes the content filters and identity detection systems that commercial platforms apply. The result: a documented misuse pattern.
 
 **LoRA training from minimal images:**
-Research published in early 2025 found that convincing celebrity-likeness LoRAs can be trained from as few as **16 images** — a screenshot set small enough to extract from a single TV episode. The resulting LoRA (~307MB) runs without any content filter on a locally deployed HunyuanVideo instance.
+[Research and community guides published in early 2025](https://www.unite.ai/the-rise-of-hunyuan-video-deepfakes/) found that convincing celebrity-likeness LoRAs can be trained from as few as 20–60 images — a dataset small enough to extract from a TV episode. The resulting LoRA runs without any content filter on a locally deployed HunyuanVideo instance.
 
-**HunyuanCustom (May 9, 2025):**
+**[HunyuanCustom (May 9, 2025)](https://www.unite.ai/hunyuancustom-brings-single-image-video-deepfakes-with-audio-and-lip-sync/):**
 The most significant escalation. HunyuanCustom enables single-image-to-video generation with **synchronized audio and lip-sync**. The input: one photograph of a person. The output: a video of that person speaking, with audio synchronized to their mouth movements.
 
 This capability was released as an official Tencent open-source model. The deepfake use case is explicit in the architecture — a single reference image drives appearance consistency across the generated video, while text drives dialogue and motion. No identity verification or consent mechanism is included.

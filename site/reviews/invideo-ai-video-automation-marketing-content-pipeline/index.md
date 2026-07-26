@@ -28,9 +28,9 @@ As of August 2025, InVideo had **91 employees**, reflecting 13% year-over-year g
 InVideo has raised **$52.5 million** over three rounds from 39 investors:
 
 - **Early rounds** (2019–2021): Seed and Series A backing
-- **Series B** (2022): **$35M** led by **Peak XV Partners** (formerly Sequoia Capital India) and **Tiger Global Management**
+- **Series B** (2022): **$35M** led by **Base Partners** and **Adept Ventures** (Peak XV and Tiger Global were Series A investors)
 
-That $52.5M total is the full lifetime funding — and as of early 2026, the company has crossed **$70 million in annual recurring revenue**. That $70M ARR on $52.5M total funding makes InVideo one of the most capital-efficient AI SaaS companies to have emerged from India.
+That $52.5M total is the full lifetime funding — and as of early 2026, the company has crossed [**$70 million in annual recurring revenue**](https://inc42.com/startups/decoding-genai-startup-invideos-explosive-30-mn-revenue-run-4x-user-growth/). That $70M ARR on $52.5M total funding makes InVideo one of the most capital-efficient AI SaaS companies to have emerged from India.
 
 CEO Sanket Shah has publicly stated he is deliberately not raising additional capital. His position: investors are undervaluing the company relative to its revenue trajectory. With approximately **$30M+ cash in the bank**, he has room to wait. No new round has been announced as of this review.
 
@@ -80,7 +80,7 @@ The agent supports **conversational editing**: instructions like "make the intro
 
 The biggest story in InVideo's 2025–2026 product cycle is its model integration strategy. The platform now provides access to **200+ image, video, audio, and music models**, including:
 
-- **Sora 2** (OpenAI) — InVideo became the first platform to offer unrestricted global access to Sora 2, removing waitlists, invite codes, VPN requirements, and 10-second clip limits. Integration announced October 2025.
+- **Sora 2** (OpenAI) — [InVideo became OpenAI's first official partner for Sora 2](https://www.prnewswire.com/news-releases/invideo-becomes-openais-first-official-partner-for-sora-2-bringing-cinematic-ai-video-creation-to-everyone-302578416.html), removing waitlists, invite codes, VPN requirements, and 10-second clip limits. Integration announced October 8, 2025.
 - **VEO 3.1** (Google DeepMind) — Google's latest video generation model with native audio generation, integrated into InVideo's pipeline.
 - **Kling 3.0** (Kuaishou) — the 4K-capable, multi-shot video generation model.
 - **Nano Banana Pro** — image generation backend.
@@ -154,7 +154,7 @@ The Beta status is worth noting. MCP tooling at this stage typically means the A
 
 ## User Scale and Traction
 
-InVideo's user metrics are substantial:
+InVideo's user metrics are substantial, per the company's public figures:
 
 - **50 million+ users** across 190+ countries
 - **8 million videos created monthly**

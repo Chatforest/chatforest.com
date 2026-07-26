@@ -11,7 +11,7 @@ That gap between what AI could theoretically do and what a skilled practitioner 
 
 Guo and her Stanford colleague **Chenlin Meng** — a diffusion model researcher with a deep background in generative AI and a Grand Prize win at the Stanford CS348B Rendering Competition — dropped out of their PhD programs and started building in April 2023. The company began life as "Mellis Labs" before settling on Pika, and within months of launching they had built a Discord community of hundreds of thousands of early users generating millions of clips. They were not chasing Hollywood or enterprise contracts. They were building for the person who had an idea and wanted to make it real — now, not after a 20-minute queue.
 
-By mid-2026, Pika Labs had raised **$135 million** at a **$470 million valuation**, launched a consumer iPhone app, integrated with **Adobe Firefly**, shipped an official **MCP server**, and released **Pika 2.5** — a model that delivers 1080p video in roughly 60–90 seconds with native sound effects, 25-second clips, and better prompt adherence than any previous version. The company estimates **$85 million or more in annualized revenue** from its credit-based subscription model, and employs around 102 people as of early 2026.
+By mid-2026, Pika Labs had raised **$135 million** at a **$470 million valuation**, launched a consumer iPhone app, integrated with **Adobe Firefly**, shipped an official **MCP server**, and released **Pika 2.5** — a model that delivers 1080p video in roughly 60–90 seconds with native sound effects, 25-second clips, and better prompt adherence than any previous version. Third-party analysts estimate **$85 million or more in annualized revenue** from its credit-based subscription model, and the company employs around 102 people as of early 2026.
 
 This is a review of what Pika Labs has built, where it differentiates from better-funded competitors, and where it still has gaps. We research from public sources and documentation; we do not test AI video tools hands-on.
 
@@ -39,7 +39,7 @@ Pika's fundraising trajectory moved quickly through a compressed window.
 
 **Series B (June 2024):** **$80 million** led by Spark Capital, bringing total raised to approximately **$135 million** at a **$470 million post-money valuation**. This was the round that validated Pika as a standalone business and not merely an AI demo. The company used the capital to expand from web to mobile (launching the iPhone app in July 2025), deepen model development, and pursue distribution partnerships.
 
-A meaningful signal came in July 2025: **Meta held acquisition discussions with Pika**. The talks did not result in a deal, but the interest from Meta — which controls Instagram Reels and is a primary distribution platform for short-form video — underscores how the major social platforms are assessing AI video startups. Pika's consumer orientation and short-form focus made it a more natural fit for Meta's distribution network than competitors oriented toward enterprise L&D or Hollywood production.
+A meaningful signal came in July 2025: [**Meta held acquisition discussions with Pika**](https://mashdigi.com/en/meta-is-in-talks-to-acquire-ai-video-startup-pika-labs-to-expand-its-ai-production-capabilities/), reportedly at a [valuation near $500 million](https://securityonline.info/meta-eyes-pika-labs-a-potential-500m-acquisition-to-accelerate-ai-video-generation/). The talks did not result in a deal, but the interest from Meta — which controls Instagram Reels and is a primary distribution platform for short-form video — underscores how the major social platforms are assessing AI video startups. Pika's consumer orientation and short-form focus made it a more natural fit for Meta's distribution network than competitors oriented toward enterprise L&D or Hollywood production.
 
 The company has not disclosed post-Series B funding as of mid-2026, and there is no announced Series C.
 
@@ -47,7 +47,7 @@ The company has not disclosed post-Series B funding as of mid-2026, and there is
 
 ## Revenue and Scale
 
-Pika has not published official revenue figures. Third-party estimates, based on app store data, subscription pricing, and API usage modeling, suggest the company reached **approximately $85 million in annualized recurring revenue** in 2026 — an aggressive growth trajectory from essentially zero in 2023.
+Pika has not published official revenue figures. Third-party estimates, based on app store data, subscription pricing, and API usage modeling, suggest the company reached **approximately $85 million in annualized recurring revenue** in 2026 — an aggressive growth trajectory from essentially zero in 2023. (Revenue estimates vary across sources; [Sacra](https://sacra.com/c/pika/) and [Fueler.io](https://fueler.io/blog/pika-labs-usage-revenue-valuation-growth-statistics) each publish independent models.)
 
 At a $470 million valuation against ~$85M ARR, Pika is trading at roughly **5.5x revenue** — far more defensible than the $4B/~$8M ARR multiple at Luma AI or the $5.3B against Runway's more documented $121M 2024 revenue. Pika's valuation math is conservative relative to the field; the company is priced more like a growing SaaS business than an AI moonshot.
 
