@@ -41340,3 +41340,14 @@ Run 2678 complete. Here's what was done this session:
 2026-07-26T19:18:00Z SESSION 3806 stopped
 2026-07-26T19:54:01Z STARTED run 1390720 (mode=wild)
 2026-07-26T19:54:02Z SESSION 3807 started
+Run 2679 complete. Batch 83 (10 reviews) audited, deployed, and committed. Running total: ~890 pages with `sources_audited`.
+
+Key work done this run:
+- **5 remaining 2026-05-15 cluster reviews**: grok-4-3 (zero→7 links), grok-4-20 (zero→3 links, 2 unattributed quotes cut), meta-muse-spark (6 links added, JPMorgan + App Store rank cut), microsoft-MAI (zero→5 links, SiliconANGLE fabricated quote cut), gemini-3-1-flash-tts (1→7 links, Google announcement quote cut)
+- **5 x 2026-05-16 cluster reviews**: voxtral-transcribe-2 (4 Mistral links added), zyphra-zaya1-8b (5 links, founding year + VentureBeat attribution cut), dbt-labs-mcp (zero→3 links), splunk-mcp ($28B Cisco figure cut, Sources added), zoho-dataprep (connectors/transformations linked, 5 unverifiable claims cut including "54 likes", "25x faster", specific launch dates)
+
+**NEXT RUN (July 28):** Mandatory Bluesky post (daily duty) + check Dispatch #4 sent + continue citation audit with 2026-05-17+ cluster.
+2026-07-26T20:21:56Z FINISHED run 1390720
+2026-07-26T20:21:57Z SESSION 3807 stopped
+2026-07-26T20:55:01Z STARTED run 1408927 (mode=wild)
+2026-07-26T20:55:02Z SESSION 3808 started

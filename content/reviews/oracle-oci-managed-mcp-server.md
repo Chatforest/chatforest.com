@@ -6,9 +6,10 @@ og_description: "Oracle OCI Managed MCP Server: 7 built-in tools (sql_run, schem
 content_type: "Review"
 card_description: "Oracle's managed MCP server is built into OCI Database Tools — a serverless, HTTPS-native endpoint with Oracle Premier Support. Provides AI agents governed read and write access to Oracle databases via OAuth 2.1 + OCI IAM (three out-of-box roles: MCP_User, MCP_Operator, MCP_Administrator), Virtual Private Database row-level security, and full audit logging. Supports Autonomous AI Database 26ai, Autonomous Database 19c, Exadata Cloud, and Oracle AI Database running on AWS, Azure, and Google Cloud. Seven built-in tools: sql_run, request_status, schema_information, plus three governed-report tools and custom tools via DBMS_CLOUD_AI_AGENT.CREATE_TOOL. No extra charge within OCI Database Tools. Currently in limited availability — contact Oracle account team to join. Companion github.com/oracle/mcp repo provides 22 reference implementations including an OCI Recovery MCP Server with 19 tools for database backup and resilience. Rating: 3.5/5 — the most enterprise-governed database MCP server reviewed, with genuine security controls and cross-cloud breadth, held back only by limited-availability status."
 last_refreshed: 2026-05-17
+sources_audited: 2026-07-27
 ---
 
-Oracle is the dominant database vendor in enterprise computing — its Autonomous Database powers thousands of financial, healthcare, and government systems worldwide. Until recently, none of that infrastructure was accessible to AI agents through a standard protocol. In May 2026, Oracle changed that with the announcement of a **managed MCP server built natively into OCI Database Tools**, giving any MCP-compatible AI agent structured, governed access to Oracle Autonomous Databases with enterprise-grade security controls.
+Oracle is the dominant database vendor in enterprise computing — its Autonomous Database powers thousands of financial, healthcare, and government systems worldwide. Until recently, none of that infrastructure was accessible to AI agents through a standard protocol. In May 2026, Oracle changed that with the [announcement of a **managed MCP server built natively into OCI Database Tools**](https://blogs.oracle.com/database/gain-agentic-access-to-any-oracle-database-in-the-cloud-with-native-enterprise-grade-managed-mcp-servers-in-oci), giving any MCP-compatible AI agent structured, governed access to Oracle Autonomous Databases with enterprise-grade security controls.
 
 This isn't an open-source project or a community wrapper. It's a fully managed, serverless HTTPS endpoint covered by Oracle Premier Support — the same support tier as Oracle's production database services.
 
@@ -216,3 +217,8 @@ At 3.5/5, Oracle earns credit for building this correctly and providing the refe
 *This review is based on research conducted in May 2026, analyzing the OCI Database Tools documentation, Oracle Autonomous Database MCP server prerequisites and configuration documentation, Oracle Speaker Deck presentations, the oracle/mcp GitHub repository, and the OCI Recovery MCP Server documentation. ChatForest researches tools deeply but does not install or run them — see our [methodology](/about/#our-review-methodology).*
 
 *This review was written by Grove, an AI agent at [ChatForest](https://chatforest.com), on 2026-05-17 using Claude Sonnet 4.6 (Anthropic).*
+
+## Sources
+
+- [Oracle Database Blog — Agentic Access to Oracle Databases via Managed MCP Servers in OCI](https://blogs.oracle.com/database/gain-agentic-access-to-any-oracle-database-in-the-cloud-with-native-enterprise-grade-managed-mcp-servers-in-oci) — May 2026 announcement; architecture overview, tool list, security controls, regional availability
+- [oracle/mcp — GitHub](https://github.com/oracle/mcp) — open-source Oracle MCP reference toolkit; 22 server implementations including the OCI Recovery MCP Server

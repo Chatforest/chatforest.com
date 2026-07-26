@@ -6,13 +6,14 @@ og_description: "Zoho Apptics MCP server: 14 open-source tools for mobile analyt
 content_type: "Review"
 card_description: "Open-source MCP server for the Zoho Apptics mobile/product analytics platform — 14 tools for crash diagnostics, event analytics, screen flow analysis, API performance monitoring, and device tracking. Local npm install or remote HTTP via mcp.zoho.com. Standard OAuth 2.0; works with personal Claude.ai accounts."
 last_refreshed: 2026-05-16
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** The Zoho Apptics MCP server is an **open-source integration** connecting AI agents to Zoho's mobile and product analytics platform. It exposes **14 tools** across four functional areas: crash diagnostics (stack traces, crash summaries, trends by date), event analytics (event counts, geographic breakdowns, device reach), screen and API performance statistics, and project access. Installable via **npm** (`npx @zoho_apptics/apptics-mcp`) or accessible as a **cloud-hosted remote MCP** at `mcp.zoho.com`. Uses **standard OAuth 2.0** — no Claude Teams or Enterprise requirement. The third and most specialized entry in Zoho's MCP server series, following the [DataPrep MCP](/reviews/zoho-dataprep-mcp-server/) (ETL pipelines) and the [Analytics MCP](/reviews/zoho-analytics-mcp-server/) (BI reporting). Part of our **[Data & Analytics category](/categories/data-analytics/)**.
 
 [Zoho Apptics](https://www.zoho.com/apptics/) is Zoho's **multi-platform product analytics suite** targeting developers, product managers, and marketers who build mobile, web, and desktop applications. Where Zoho Analytics focuses on business intelligence from structured data, Apptics focuses on **application telemetry**: what crashes, what users do, where they drop off, and how individual features perform in production.
 
-The MCP server — hosted at `github.com/zoho/apptics-mcp-server` under an MIT license — was announced in **November 2025** as part of Zoho's broader MCP initiative. The repository was last updated **May 5, 2026**, indicating active (if quiet) development.
+The MCP server — hosted at [`github.com/zoho/apptics-mcp-server`](https://github.com/zoho/apptics-mcp-server) under an MIT license — was [announced in **November 2025**](https://www.zoho.com/apptics/mcp.html) as part of Zoho's broader MCP initiative. The [repository was last updated **May 5, 2026**](https://github.com/zoho/apptics-mcp-server), indicating active (if quiet) development.
 
 ## What Zoho Apptics Is
 
@@ -51,14 +52,14 @@ The Apptics MCP server fits an intermediate position in the Zoho MCP server fami
 | Delivery | npm local + remote HTTP | Docker + npm local + remote self-hosted | Remote HTTP only |
 | Auth | OAuth 2.0 (local) / API key (remote) | OAuth 2.0 | OAuth2.1 (org admin only) |
 | Claude requirement | Personal accounts OK | Personal accounts OK | Teams/Enterprise required |
-| GitHub stars | 1 (as of May 2026) | 8 (as of May 2026) | N/A |
+| GitHub stars | [1 (as of May 2026)](https://github.com/zoho/apptics-mcp-server) | [8 (as of May 2026)](https://github.com/zoho/analytics-mcp-server) | N/A |
 | Language | TypeScript | (not published) | N/A |
 | Status | Beta | Beta | Beta |
 
 **Two deployment modes:**
 
 **1. Local STDIO (npm)**
-The primary local deployment path uses the npm package `@zoho_apptics/apptics-mcp` (current stable: v0.2.2; active beta: v0.3.0-beta.1). No Docker image is published — this is a notable difference from Zoho Analytics MCP, which provides Docker as the primary local path. Node.js 18 or higher is required.
+The primary local deployment path uses the npm package [`@zoho_apptics/apptics-mcp`](https://www.npmjs.com/package/@zoho_apptics/apptics-mcp) (current stable: v0.2.2; active beta: v0.3.0-beta.1). No Docker image is published — this is a notable difference from Zoho Analytics MCP, which provides Docker as the primary local path. Node.js 18 or higher is required.
 
 ```bash
 npx @zoho_apptics/apptics-mcp
@@ -180,7 +181,7 @@ Request access at `zoho.com/mcp`, receive an integration URL, and configure it i
 
 ## Known Limitations
 
-**1. Very low community adoption.** The GitHub repository has **1 star** and 0 forks as of May 2026 — the lowest community signal of any Zoho MCP server reviewed. There are no third-party tutorials, no community discussion in MCP forums, and no developer blog posts outside Zoho's own content. When you encounter an issue, you are effectively on your own.
+**1. Very low community adoption.** The [GitHub repository](https://github.com/zoho/apptics-mcp-server) has **1 star** and 0 forks as of May 2026 — the lowest community signal of any Zoho MCP server reviewed. There are no third-party tutorials, no community discussion in MCP forums, and no developer blog posts outside Zoho's own content. When you encounter an issue, you are effectively on your own.
 
 **2. No Docker deployment.** Unlike the Zoho Analytics MCP server, which offers a Docker image (`zohoanalytics/mcp-server:latest`), the Apptics MCP server is npm-only for local deployment. Teams that standardize on Docker for local tooling will need to wrap the npm package themselves.
 
@@ -188,7 +189,7 @@ Request access at `zoho.com/mcp`, receive an integration URL, and configure it i
 
 **4. Pro plan pricing is undisclosed.** The platform pricing page does not publish Pro plan monthly costs. Teams evaluating Apptics as a platform must contact Zoho sales to understand total cost — a friction point for teams with limited vendor-evaluation bandwidth.
 
-**5. Beta status with 12 total commits.** The repository has 12 commits across ~7 months (October 2025 – May 2026). Active development is occurring (the May 5, 2026 update added SDK integration), but the pace is modest and stability guarantees are absent.
+**5. Beta status with 12 total commits.** The [repository](https://github.com/zoho/apptics-mcp-server) has 12 commits across ~7 months (October 2025 – May 2026). Active development is occurring (the May 5, 2026 update added SDK integration), but the pace is modest and stability guarantees are absent.
 
 **6. Remote HTTP personal-account compatibility is unconfirmed.** Unlike Zoho DataPrep MCP, which explicitly restricts to Claude Teams/Enterprise, the Apptics MCP documentation does not state any such restriction — suggesting personal Claude.ai accounts should work. However, there is no explicit confirmation of this, and behavior may depend on how Zoho's MCP gateway validates tokens.
 
@@ -226,3 +227,10 @@ The verdict depends entirely on whether you are already a Zoho Apptics user. If 
 **Rating: 3 / 5** — Addresses a real gap in the MCP server ecosystem with crash diagnostics and behavioral event analytics that other platforms have not yet provided. Open source, MIT licensed, free during beta, and personal Claude.ai compatible. Deductions for the single GitHub star (weakest community signal in our coverage), narrow 14-tool surface missing funnel/retention/A/B analytics, no Docker deployment, opaque Pro plan pricing, and 12-commit development pace. Best suited for existing Zoho Apptics customers who want conversational crash triage and event analysis through Claude or other MCP-compatible AI tools.
 
 *This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Information is current as of May 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*
+
+## Sources
+
+- [Zoho Apptics](https://www.zoho.com/apptics/) — official product page; platform capabilities overview
+- [Zoho Apptics MCP](https://www.zoho.com/apptics/mcp.html) — official Zoho MCP integration page; announcement and remote HTTP access
+- [zoho/apptics-mcp-server — GitHub](https://github.com/zoho/apptics-mcp-server) — open-source MCP server repository; star count, commit history, README, tool list
+- [@zoho_apptics/apptics-mcp — npm](https://www.npmjs.com/package/@zoho_apptics/apptics-mcp) — npm package; version history and installation

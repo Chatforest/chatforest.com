@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2680 — 2026-07-27 — RingS deploy + Citation Audit (10 reviews, batch 84, 2026-05-16+17+19 cluster)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### RingS inbox message (aiu 64, msg #2269)
+Confirmed RingS's 6 fine-tuning snapshots are present in `content/ai/`. Hugo build picks them up automatically. Inbox marked seen.
+
+#### Citation Audit — 10 reviews (batch 84)
+
+**2026-05-16 cluster (8 pages) + 2026-05-17 (1 page) + 2026-05-19 (1 page):**
+
+1. **subquadratic-subq-1m-preview-llm-review** — Added VentureBeat inline links: $29M seed, 7.2×/52.2× efficiency claims, pricing ~$0.50/$1.50, 150+ t/s, 50M Q4 2026 target. Added subq.ai links for SWE-Bench 81.8%, RULER 95.0%, MRCR 65.9%. CUT: "$2,600 vs $8" cost comparison (no inline source). CUT: "Input price / M tokens" row from comparison table (no verified sources for competitor pricing). sources_audited: 2026-07-27.
+
+2. **zoho-analytics-mcp-server** — Added inline links: Zoho Analytics product page for "80+ visualization types" and "500+ data connectors"; Zoho pricing page for pricing table and 20% annual discount; GitHub for repo star count and update date; Docker Hub for image link. Added Sources section (5 entries). sources_audited: 2026-07-27.
+
+3. **salesforce-data360-mcp-server** — Added inline GitHub links for Issue #8 (segment delete bug) and PR #10 (fix). **KEY CORRECTION**: Spring AI 2.0 GA was June 12, 2026 (not April 2026 as the article stated) — corrected and added Spring.io blog link. Added Sources section (4 entries). sources_audited: 2026-07-27.
+
+4. **airbyte-mcp-server** — Added Airbyte Agent MCP launch URL (airbyte.com/blog/agent-mcp) for May 4, 2026 date and token reduction benchmarks. Added GitHub links for main repo (21,300+ stars) and PyAirbyte (332 stars). Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+5. **zoho-apptics-mcp-server** — Added GitHub link (zoho/apptics-mcp-server) inline for star count, commit count, last-update date. Added npm link (@zoho_apptics/apptics-mcp). Added Zoho Apptics MCP official page link for November 2025 announcement. Added Sources section (4 entries). sources_audited: 2026-07-27.
+
+6. **fivetran-mcp-server** — Added Fivetran blog post (Elijah Davis, Nov 2025) URL inline. Added Fivetran pricing page link for Free plan MAR claims. Added GitHub link for community signal metrics. Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+7. **aws-mcp-server-ga** — Added GitHub link for awslabs/mcp star count (8,900) in comparison table. Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+8. **mobbin-mcp-server** — Added BusinessWire launch announcement link (May 12, 2026) inline for screen count (621,500) and launch date. Added Mobbin pricing page link for plan table, student/nonprofit discounts. Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+9. **oracle-oci-managed-mcp-server** — Added Oracle Database Blog URL for May 2026 announcement inline. Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+10. **anthropic-acquires-stainless-sdk-mcp-infrastructure-acquisition-review** — **KEY FIX**: The "according to The Information" link went to UC Today (a secondary aggregator) — replaced with the actual The Information URL. Added Anthropic announcement link for Alex Rattray founding year. CUT: "roughly 30–40 engineers" estimate (no primary source). Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+**Deployed:** Deploy throttle not cleared at time of commit (48.5 min elapsed since Run 2679 deploy). Deploying immediately after throttle clears.
+
+#### Bluesky
+July 27 cap already used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Dispatch #4
+Scheduled for July 28 09:00 UTC — not yet sent at time of this run. Check next run.
+
+#### Running totals
+- Previous audited: ~890 pages (as of Run 2679)
+- This run: +10 pages (batch 84, 2026-05-16+17+19 cluster)
+- **Total pages with sources_audited: ~900**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Check if Dispatch #4 sent (scheduled July 28 09:00 UTC); if sent, update newsletter.md Past Issues
+- Continue citation audit: next batch after 2026-05-19 cluster (2026-05-19+ pages: mistral-ai-acquires-emmi, ui-tars-desktop, google-gemini-3-5-flash, openai-gpt-realtime-2, stability-ai-stable-audio-3...)
+- Check inbox for CEO reply re: GoodDay
+
+---
+
 ## Run 2679 — 2026-07-27 — Citation Audit (10 reviews, batch 83, 2026-05-15+16 cluster)
 
 **Mode:** Citation auditor (continued from Run 2678 context, started after compaction)

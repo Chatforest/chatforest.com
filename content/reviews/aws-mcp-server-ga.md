@@ -6,6 +6,7 @@ og_description: "AWS MCP Server GA: 11 tools, 15,000+ AWS API operations, IAM au
 content_type: "Review"
 card_description: "AWS's managed remote MCP server — 11 tools covering documentation search, API execution, sandboxed scripting, and presigned S3 URLs. IAM-authenticated, CloudTrail-logged, no local installation required. Access all 15,000+ AWS APIs. Free (pay only for resources consumed). Part of the Cloud & Infrastructure MCP category."
 last_refreshed: 2026-05-16
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** The AWS MCP Server reached general availability on May 6, 2026 — a managed, cloud-hosted MCP server that gives AI agents authenticated access to virtually all of AWS's API surface through eleven tools. Unlike the [awslabs/mcp monorepo's](/reviews/aws-mcp-servers/) 54 separate STDIO-based servers, this is a single remote endpoint: no `uv pip install`, no local daemon, no STDIO subprocess. Authentication is IAM-based (SigV4), every action is logged to CloudTrail, and the server is offered at no additional charge — you pay for the AWS resources your agent creates and nothing more. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
@@ -27,7 +28,7 @@ The new AWS MCP Server (GA) is something architecturally distinct. It was briefl
 | Install | Per-server pip/uvx | Lightweight proxy config |
 | API coverage | Service-specific tools | 15,000+ APIs via `call_aws` |
 | Claude.ai browser | Not compatible | Compatible |
-| Stars | 8,900 | N/A (managed service) |
+| Stars | [8,900](https://github.com/awslabs/mcp) | N/A (managed service) |
 
 ## The Eleven Tools
 
@@ -150,3 +151,8 @@ The two-region constraint is real. So is the AWS monorepo, which remains the bet
 ---
 
 *The AWS MCP Server is managed and hosted by Amazon Web Services. ChatForest researched this review using public documentation, official AWS blog posts, and third-party coverage. We did not test the service directly.*
+
+## Sources
+
+- [AWS MCP Server — What's New](https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/) — AWS general availability announcement (May 6, 2026); tool list, regional availability, pricing
+- [awslabs/mcp — GitHub](https://github.com/awslabs/mcp) — AWS open-source MCP monorepo (54 STDIO servers); used for comparison in the architecture table

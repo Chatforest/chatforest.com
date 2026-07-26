@@ -6,17 +6,18 @@ og_description: "Mobbin MCP: 621,500+ real app screens, 142,200+ flows, remote H
 content_type: "Review"
 card_description: "Mobbin's official MCP server brings 621,500+ real app screens and 142,200+ flows into AI coding and design workflows. Search by feature pattern, retrieve flows, and view actual screen images. Remote HTTP endpoint, browser OAuth, no local install. Available on all paid Mobbin plans (Pro from €10/mo). Currently in beta. Part of our Design & Creative MCP category."
 last_refreshed: 2026-05-16
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** Official Mobbin MCP server, launched May 12, 2026. Remote HTTP endpoint at `https://api.mobbin.com/mcp`. Browser OAuth authentication. **621,500+ screens**, **142,200+ flows** from shipped apps across fintech, e-commerce, health, productivity, social, and SaaS. Requires a paid Mobbin plan (Pro from €10/month billed yearly). Currently in beta. Part of our **[Design & Creative MCP category](/categories/design-creative/)**.
 
-Mobbin is a design reference library — a curated catalog of real screens from real apps that shipped. Designers use it to answer questions like: how does Duolingo handle streak recovery? What does Robinhood's onboarding look like? How do the best fintech apps structure their paywall? The library has existed as a web product for years. The MCP server, launched May 12, 2026, makes that reference library available to AI agents mid-workflow.
+Mobbin is a design reference library — a curated catalog of real screens from real apps that shipped. Designers use it to answer questions like: how does Duolingo handle streak recovery? What does Robinhood's onboarding look like? How do the best fintech apps structure their paywall? The library has existed as a web product for years. The [MCP server, launched May 12, 2026](https://www.businesswire.com/news/home/20260511053592/en/Mobbin-Launches-MCP-Server-Giving-AI-Tools-621500-Real-App-Screens-to-Reference), makes that reference library available to AI agents mid-workflow.
 
 This is architecturally different from design-to-code servers like [Framelink](/reviews/framelink-figma-mcp-server/) or the [Figma Dev Mode MCP Server](/reviews/figma-dev-mode-mcp-server/). Those translate your own designs into code. Mobbin MCP gives your AI agent access to how other teams solved the same design problems — grounded in what actually shipped.
 
 ## The Library
 
-621,500 screens is not a small number. The library spans:
+[621,500 screens](https://www.businesswire.com/news/home/20260511053592/en/Mobbin-Launches-MCP-Server-Giving-AI-Tools-621500-Real-App-Screens-to-Reference) is not a small number. The library spans:
 
 - **App categories:** Fintech, e-commerce, health, productivity, social, SaaS, lifestyle
 - **Coverage depth:** Includes subscription-only products, region-locked finance apps, and niche vertical apps that are difficult to find through casual research
@@ -67,14 +68,14 @@ The standout tool is **`get_screen_detail`**: it returns the actual screen image
 
 MCP access is included on all paid Mobbin plans. The free plan does not include MCP.
 
-| Plan | Price | MCP Access |
+| Plan | [Price](https://mobbin.com/pricing) | MCP Access |
 |------|-------|-----------|
 | Free | €0 | No — limited to 4 apps, 3 collections |
 | Pro | €10/mo (billed yearly) | Yes |
 | Team | €12/member/mo (billed yearly) | Yes |
 | Enterprise | Custom | Yes |
 
-Students receive 50% off Pro for up to two years. Nonprofits are also eligible for 50% off the Pro plan.
+[Students receive 50% off Pro for up to two years. Nonprofits are also eligible for 50% off the Pro plan.](https://mobbin.com/pricing)
 
 The paywall is real. For individual developers, €10/month is a reasonable tool cost. For teams already using Mobbin for manual design research, MCP access is an incremental benefit — the subscription pays for itself in the base product.
 
@@ -110,3 +111,8 @@ The beta limitations (no collection item retrieval) and the paid-only requiremen
 ---
 
 *Mobbin MCP is an official product of Mobbin. ChatForest researched this review using the official Mobbin launch announcement, public documentation at docs.mobbin.com, and third-party coverage. We did not test the MCP server directly.*
+
+## Sources
+
+- [Mobbin Launches MCP Server — BusinessWire](https://www.businesswire.com/news/home/20260511053592/en/Mobbin-Launches-MCP-Server-Giving-AI-Tools-621500-Real-App-Screens-to-Reference) — May 2026 launch announcement; screen/flow counts, MCP feature description
+- [Mobbin Pricing](https://mobbin.com/pricing) — plan tiers, MCP access availability, student/nonprofit discounts
