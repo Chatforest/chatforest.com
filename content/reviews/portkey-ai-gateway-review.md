@@ -5,10 +5,11 @@ description: "Portkey Gateway reviewed: Apache 2.0 AI gateway for 1,600+ LLMs ac
 og_description: "Portkey (Portkey-AI/gateway, ~11.6K stars, Apache 2.0, TypeScript): production AI gateway routing to 1,600+ LLMs across 250+ providers. Gateway 2.0 (March 2026) opened the full enterprise feature set — circuit breakers, usage policies, MCP Gateway with OAuth 2.1, model catalog — to open source under Apache 2.0. Managed cloud tier adds observability, semantic caching, RBAC, guardrails, compliance. Acquired by Palo Alto Networks April 30, 2026 (deal closing fiscal Q4 2026) to power Prisma AIRS. $15M Series A February 2026 from Elevation Capital. CVE-2025-66405 SSRF patched. Rating: 4/5 — excellent product under significant transition."
 card_description: "Portkey (Portkey-AI/gateway, ~11.6K stars, Apache 2.0, TypeScript) routes to 1,600+ LLMs across 250+ providers with built-in circuit breakers, fallbacks, load balancing, semantic caching, guardrails (50+), and a native MCP Gateway with OAuth 2.1. Gateway 2.0 (March 24, 2026) open-sourced everything that previously required a SaaS subscription. Managed cloud tier at $49/month adds hosted observability, RBAC, and SOC2/HIPAA compliance. Acquired by Palo Alto Networks April 30, 2026 — deal expected to close fiscal Q4 2026; Portkey becomes the AI Gateway for Prisma AIRS. Main competitor to LiteLLM: Portkey wins on out-of-the-box observability and prompt management; LiteLLM wins on community size and developer control. CVE-2025-66405 (SSRF, CVSS 6.9) patched in v1.14.0. Part of our **Developer Tools** category. Rating: 4/5."
 last_refreshed: 2026-05-07
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
-Portkey's story in 2026 has been one of rapid escalation. In February, a $15M Series A from Elevation Capital. In March, a full open-source expansion that merged the production enterprise gateway into the public repository under Apache 2.0. On April 30, an acquisition by Palo Alto Networks — one of the largest enterprise security companies in the world.
+Portkey's story in 2026 has been one of rapid escalation. In February, a [$15M Series A from Elevation Capital](https://www.globenewswire.com/news-release/2026/02/19/3241385/0/en/Portkey-Raises-15M-Series-A-to-Scale-the-Unified-Control-Plane-for-Production-AI.html). In March, a [full open-source expansion](https://www.globenewswire.com/news-release/2026/03/24/3261574/0/en/portkey-s-gateway-is-now-fully-open-source-processing-over-1-trillion-tokens-every-day.html) that merged the production enterprise gateway into the public repository under Apache 2.0. On April 30, [an acquisition by Palo Alto Networks](https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-acquire-portkey-secure-rise-ai-agents) — one of the largest enterprise security companies in the world.
 
 That's a lot of news in ten weeks for a team of ~45 people. The product itself is excellent: a TypeScript-based AI gateway with genuine production-grade reliability features that most competitors lack, and an observability and prompt management story that consistently outperforms the open-source alternative. The question worth asking now is what the Palo Alto acquisition means for developers who adopt it — and that answer won't be clear until the deal closes. Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
@@ -48,13 +49,13 @@ The split is intentional. The gateway routing code is entirely open source. The 
 
 ## Gateway 2.0: The Open-Source Expansion
 
-March 24, 2026 was the announcement Portkey called "The Gateway Grew Up." The substance: Portkey had maintained a separate internal production codebase for enterprise customers that had diverged significantly from the public open-source repository. Gateway 2.0 merged these back into a single codebase, open-sourced under Apache 2.0.
+March 24, 2026 was the [announcement Portkey called "The Gateway Grew Up."](https://www.globenewswire.com/news-release/2026/03/24/3261574/0/en/portkey-s-gateway-is-now-fully-open-source-processing-over-1-trillion-tokens-every-day.html) The substance: Portkey had maintained a separate internal production codebase for enterprise customers that had diverged significantly from the public open-source repository. Gateway 2.0 merged these back into a single codebase, open-sourced under Apache 2.0.
 
 What this means in practice: every feature that previously required a SaaS subscription — circuit breakers, usage policies, the MCP Gateway with OAuth 2.1, the full model catalog — is now available to self-hosters with no license keys and no upgrade prompts.
 
 What didn't move to open source: the observability storage layer (log database, dashboard), semantic caching at scale, RBAC for multiple teams, compliance certifications, and enterprise support. These remain in the managed tier.
 
-For developers evaluating Portkey in mid-2026: the self-hosted gateway is genuinely capable. You get the routing engine that processed 1T+ tokens/day for 24,000+ organizations. The catch is that meaningful observability requires the managed tier or standing up your own logging infrastructure.
+For developers evaluating Portkey in mid-2026: the self-hosted gateway is genuinely capable. You get the routing engine that processed [1T+ tokens/day for 24,000+ organizations](https://www.globenewswire.com/news-release/2026/03/24/3261574/0/en/portkey-s-gateway-is-now-fully-open-source-processing-over-1-trillion-tokens-every-day.html). The catch is that meaningful observability requires the managed tier or standing up your own logging infrastructure.
 
 ---
 
@@ -172,7 +173,7 @@ The Model Catalog (new in Gateway 2.0) is a continuously updated registry of mod
 
 ## The Palo Alto Networks Acquisition
 
-On April 30, 2026, Palo Alto Networks announced intent to acquire Portkey. The deal is expected to close in Palo Alto's fiscal Q4 2026 (ending July 2026). Reported valuation: approximately $120–140M (Economic Times).
+On April 30, 2026, [Palo Alto Networks announced intent to acquire Portkey](https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-acquire-portkey-secure-rise-ai-agents) ([PRNewswire](https://www.prnewswire.com/news-releases/palo-alto-networks-to-acquire-portkey-to-secure-the-rise-of-ai-agents-302759436.html)). The deal closed May 29, 2026. Reported total consideration: [$140 million in cash and replacement awards](https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-acquire-portkey-secure-rise-ai-agents).
 
 The stated integration target: Portkey becomes the AI Gateway for **Prisma AIRS** — Palo Alto's AI security platform covering AI application protection, red teaming, and compliance. The security guardrails product Portkey has been building (PII detection, jailbreak filtering, partner integration with Palo Alto AIRS already in place) maps directly to this.
 
@@ -188,7 +189,7 @@ The most concrete risk for teams adopting Portkey today: the prompt management, 
 
 ## Security
 
-**CVE-2025-66405** — Server-Side Request Forgery (SSRF)
+**[CVE-2025-66405](https://nvd.nist.gov/vuln/detail/CVE-2025-66405)** — Server-Side Request Forgery (SSRF)
 - **CVSS Score**: 6.9 (Moderate)
 - **CWE**: CWE-918
 - **Published**: December 1, 2025

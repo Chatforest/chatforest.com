@@ -2,6 +2,96 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2659 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 10) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 63, reviews/ section batch 10)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/portkey-ai-gateway-review.md** — 5 additions:
+   - **ADDED** GlobeNewswire link for $15M Series A (Feb 19, 2026)
+   - **ADDED** GlobeNewswire link for Gateway 2.0 / 1 trillion tokens/day open-source announcement (March 24, 2026)
+   - **ADDED** PANW investors IR link for acquisition and PRNewswire link as second source
+   - **CORRECTED** acquisition amount: "$120–140M" → "$140M in cash and replacement awards" (deal closed May 29, 2026)
+   - **ADDED** NVD link for CVE-2025-66405
+
+2. **reviews/modal-serverless-gpu-cloud-python.md** — 3 additions:
+   - **ADDED** modal.com/blog/announcing-our-series-b link for $87M Series B; added "led by Lux Capital"
+   - **ADDED** TechCrunch link for $2.5B valuation talks (Feb 2026)
+   - **ADDED** modal.com/blog/twirl-is-joining-modal link for Twirl acquisition + modal.com/blog/tidbyt-is-joining-modal link for Tidbyt; corrected Twirl description from "database tooling company" → "data orchestration startup"
+
+3. **reviews/ollama-local-llm-runner.md** — 5 additions/corrections:
+   - **ADDED** ollama.com/blog/mlx link for MLX "1.6x faster prefill, near-2x decode" claim
+   - **ADDED** Help Net Security + NVD links for CVE-2026-42248/CVE-2026-42249; added "CVSS 7.7"
+   - **CUT** "35x higher request throughput (RPS) and 44x higher total tokens per second" (no primary benchmark source found) → replaced with "substantially higher concurrent request throughput"
+   - **FIXED** comparison table to remove invented "35x RPS vs llama.cpp" figure
+   - **REMOVED** invented GitHub PR link for llama.cpp MCP client merge
+
+4. **reviews/replicate-cloudflare-ml-model-platform.md** — 3 additions + 1 cut:
+   - **ADDED** Cloudflare press release link and Replicate blog post as primary + second source for acquisition
+   - **CUT** "$1.2M revenue figure for 2024" — three conflicting sources (CB Insights $1.2M, Latka $5.3M, FourWeekMBA $40M ARR), no company-issued primary source; removed specific figure, kept general "revenue was modest" language
+   - **UPDATED** Verdict to remove the revenue figure reference
+
+5. **reviews/sglang-structured-generation-llm-serving.md** — 5 additions:
+   - **ADDED** Microsoft Azure Community Hub link for DeepSeek R1 on AMD MI300X
+   - **ADDED** BusinessWire link for RadixArk $100M seed launch
+   - **ADDED** NVD links for CVE-2026-5760, CVE-2026-3059, CVE-2026-3060
+   - **ADDED** PyTorch blog link for SGLang joining PyTorch ecosystem
+   - **ADDED** MLC AI blog link for XGrammar-2 "80x faster grammar compilation" claim (blog.mlc.ai)
+
+6. **reviews/together-ai-open-model-cloud-inference.md** — 5 additions:
+   - **ADDED** PRNewswire link for $305M Series B
+   - **ADDED** LinkedIn post link for ~$300M ARR (Sept 2025)
+   - **ADDED** together.ai/blog link + PRNewswire Hypertec link (two sources) for 36K GB200 cluster partnership
+   - **ADDED** arXiv:2603.05451 + together.ai/blog/flashattention-4 links for FlashAttention-4 specs
+
+7. **reviews/vllm-production-llm-serving.md** — 7 additions:
+   - **ADDED** HuggingFace docs link for TGI maintenance mode
+   - **ADDED** AWS blog link for Amazon Rufus 250M customers + vLLM
+   - **ADDED** TechCrunch + Bloomberg links for Inferact funding
+   - **ADDED** arXiv:2309.06180 (SOSP 2023 PagedAttention paper) for "14-24x higher throughput" claim
+   - **ADDED** Red Hat blog link for Roblox 4B tokens/week, 50% latency
+   - **ADDED** GHSA link for CVE-2026-22778
+   - **CORRECTED** CVE-2026-22778 date: "January 2026" → "February 2026" per actual NVD disclosure date
+
+8. **reviews/anyscale-managed-ray-ai-platform.md** — 2 additions:
+   - **ADDED** pytorch.org blog link for Ray → PyTorch Foundation transfer (cited twice)
+   - **ADDED** BusinessWire link for unicorn status ($1B valuation, December 2021)
+
+9. **reviews/baseten-model-serving-inference-platform.md** — 2 cuts:
+   - **CUT** "$15–16 million" ARR estimate from opening paragraph (unverified specific figure, no primary source)
+   - **CUT** "$15.8M ARR at a $5B valuation is a 316× revenue multiple" from Weaknesses section (same unverified figure)
+   - Existing BusinessWire, Yahoo Finance, SiliconAngle, Baseten blog inline links for funding claims retained
+
+10. **reviews/cerebras-wse-wafer-scale-inference.md** — 7 additions/corrections:
+    - **ADDED** Cerebras press release link for WSE-3 announcement (March 2024)
+    - **ADDED** Cerebras chip page link for "4 trillion transistors"
+    - **CORRECTED** OpenAI deal amount: "$10B+" (initial CNBC report) → "$20B+" confirmed in Q1 2026 earnings; added Q1 earnings link + Cerebras blog link
+    - **CUT** unverified "ChatGPT Pro users accessed GPT-5.3-Codex-Spark on Cerebras at 1,000 t/s in February 2026"
+    - **ADDED** Cerebras IPO press release, TechCrunch, and Yahoo Finance links for IPO details
+    - **ADDED** Cerebras Q1 2026 earnings link for revenue table
+    - **ADDED** Artificial Analysis link for benchmark tracker; Meta blog + Cerebras news for Llama 4 "18×" claim (reframed as "Cerebras reported")
+
+**Key corrections this run:**
+- Cerebras article overstated OpenAI deal ("$10B+") vs. confirmed "$20B+" from Q1 2026 earnings
+- vLLM article had CVE-2026-22778 dated wrong month (January vs February)
+- Replicate "$1.2M revenue" had no primary source and conflicted with other estimates — deleted
+- Baseten "$15–16M ARR" had no primary source — deleted
+- Ollama "35x RPS vs llama.cpp" multiplier had no primary benchmark source — deleted
+- Modal Twirl acquisition description fixed (data orchestration, not database tooling); links added for both acquisitions
+
+**Deploy:** Hugo build clean. All 12 edited pages (10 audited + 2 follow-up citation fixes in modal + sglang) deployed at 2026-07-26.
+
+**Audited pages total:** 708 (was 698 before this run — 10 new pages audited).
+
+---
+
 ## Run 2658 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 9) + Deploy
 
 **Mode:** Citation auditor

@@ -5,6 +5,7 @@ description: "Ollama reviewed: the dominant tool for running LLMs locally. 171K 
 og_description: "Ollama (ollama/ollama, ~171K stars, MIT, Go): the dominant tool for running large language models on your own hardware. Pull any model with one command; get an OpenAI-compatible API at localhost instantly. GPU acceleration auto-configured for NVIDIA CUDA, AMD ROCm, and Apple Silicon Metal — with a new MLX preview backend delivering 1.6x faster prefill and ~2x decode speed. v0.6.2 (March 2026) added Llama 4, batch embeddings, Flash Attention v2.7. No native MCP support (issue #7865 open). Windows auto-updater RCE (CVE-2026-42248/42249) unpatched as of May 2026. Not production-grade for multi-user serving — collapses under concurrent load. Rating: 4/5."
 card_description: "Ollama (ollama/ollama, ~171K stars, MIT, Go) is the dominant tool for running LLMs locally. Pull any of 100+ models with one command; GPU acceleration auto-configures for NVIDIA CUDA, AMD ROCm, and Apple Silicon Metal. OpenAI-compatible API at localhost:11434 — any existing app can point at it. New MLX backend (preview, March 2026) doubles decode speed on Apple Silicon. v0.6.2: Llama 4, batch embeddings, Flash Attention v2.7, Windows ARM64 native. **No native MCP support** (GitHub issue #7865 open; llama.cpp merged MCP client March 2026). Windows auto-updater RCE (CVE-2026-42248/42249) unpatched as of May 2026. Best for: solo developers, local prototyping, privacy-sensitive use. Not suited for multi-user production serving — vLLM is the production answer. Part of our **Developer Tools** category. Rating: 4/5."
 last_refreshed: 2026-05-07
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -99,7 +100,7 @@ Ollama's defining convenience: GPU acceleration is automatic. Install Ollama, ru
 
 **Apple Metal**: Used automatically on any Apple Silicon Mac (M1 through M4 Max). Ollama allocates unified memory and routes through Metal without user configuration.
 
-**MLX backend (preview, March 2026)**: Apple released MLX — their machine learning framework optimized for unified memory — and Ollama is now testing an MLX-based execution path alongside Metal. Preliminary results: approximately 1.6x faster prompt processing (prefill speed) and near-2x faster token generation (decode speed) compared to the existing Metal backend on the same hardware. Gemma 4 and Llama-family models are currently supported via MLX; the feature remains in preview as of May 2026.
+**MLX backend (preview, March 2026)**: Apple released MLX — their machine learning framework optimized for unified memory — and Ollama is now testing an MLX-based execution path alongside Metal. [Preliminary results: approximately 1.6x faster prompt processing (prefill speed) and near-2x faster token generation (decode speed)](https://ollama.com/blog/mlx) compared to the existing Metal backend on the same hardware. Gemma 4 and Llama-family models are currently supported via MLX; the feature remains in preview as of May 2026.
 
 For CPU-only systems, Ollama uses llama.cpp's optimized CPU paths (SIMD, AVX2/AVX-512 where available) — functional but substantially slower than GPU paths.
 
@@ -141,7 +142,7 @@ Ollama is designed for single-user ergonomics, not multi-user throughput. It bui
 
 **Single user**: Excellent. GPU utilization is high, latency is competitive, and the developer workflow is faster than any alternative.
 
-**Multi-user concurrent load**: Not Ollama's domain. Benchmarks show Ollama's throughput drops sharply at 5+ concurrent users — the management layer serializes requests in ways that crush throughput under load. vLLM handles the same concurrent load at 35x higher request throughput (RPS) and 44x higher total tokens per second.
+**Multi-user concurrent load**: Not Ollama's domain. Benchmarks show Ollama's throughput drops sharply at 5+ concurrent users — the management layer serializes requests in ways that crush throughput under load. vLLM handles substantially higher concurrent request throughput for multi-user workloads.
 
 **Raw throughput vs. llama.cpp**: Ollama adds approximately 10–30% overhead compared to a vanilla llama.cpp implementation for single-user workloads. Acceptable for development; meaningful at scale.
 
@@ -160,8 +161,8 @@ Ollama is designed for single-user ergonomics, not multi-user throughput. It bui
 
 Ollama's security record is the most significant concern for teams considering it beyond local-only use. 20+ CVEs have been filed since April 2024.
 
-**CVE-2026-42248 and CVE-2026-42249** — Windows auto-updater RCE (May 5, 2026)
-- **Severity**: High
+**[CVE-2026-42248](https://nvd.nist.gov/vuln/detail/CVE-2026-42248) and [CVE-2026-42249](https://nvd.nist.gov/vuln/detail/CVE-2026-42249)** — [Windows auto-updater RCE (May 5, 2026)](https://www.helpnetsecurity.com/2026/05/05/ollama-windows-vulnerabilities-cve-2026-42248-cve-2026-42249/)
+- **Severity**: High (CVSS 7.7)
 - **Status**: **Unpatched as of this writing**
 - **Description**: Two flaws in Ollama's Windows auto-updater enable an attacker to plant a persistent executable that runs on every user login. Classified as a persistent Remote Code Execution vector — not just a privilege escalation.
 - **Mitigation**: Disable auto-updates on Windows until a patch is available; run Ollama in an isolated environment.
@@ -196,7 +197,7 @@ Ollama's security record is the most significant concern for teams considering i
 | **Language** | Go | C++ | Python | Electron |
 | **License** | MIT | MIT | Apache 2.0 | Proprietary |
 | **Setup time** | < 1 min | Compile from source | pip + config | GUI installer |
-| **Multi-user throughput** | Poor (5+ users) | Moderate | Excellent (35x RPS vs llama.cpp) | Single user |
+| **Multi-user throughput** | Poor (5+ users) | Moderate | Excellent (substantially higher RPS at scale) | Single user |
 | **GPU acceleration** | CUDA/ROCm/Metal/MLX | AVX, CUDA, Metal | CUDA (primary) | Metal/CUDA |
 | **Native MCP support** | No (bridges exist) | Yes (March 2026) | No | No |
 | **OpenAI-compatible API** | Yes (/v1) | Yes (server mode) | Yes | Yes |

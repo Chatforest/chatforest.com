@@ -5,6 +5,7 @@ last_refreshed: 2026-05-23
 description: "Cerebras built the largest chip ever made — a silicon wafer the size of a plate — and the results are extraordinary. gpt-oss-120B at 3,000 t/s. Llama 4 Scout at 2,600 t/s. Backed by a $20B OpenAI compute deal. Completed the largest tech IPO of 2026 on May 14 ($185/share, 70% first-day surge, $70B market cap). The catch: a catalog of ~5 models and no fine-tuning on the public API."
 categories: ["reviews"]
 tags: ["inference", "llm-providers", "hardware", "ai-infrastructure", "speed"]
+sources_audited: 2026-07-26
 provider: "Cerebras"
 providerUrl: "https://cerebras.ai"
 rating: 4
@@ -37,9 +38,9 @@ This review covers Cerebras from every angle: what the hardware actually is, how
 
 ### The Chip: WSE-3
 
-The Wafer Scale Engine is exactly what the name suggests — an entire silicon wafer, processed as a single chip rather than diced into individual dies. The WSE-3, announced in 2024 and recognized by TIME Magazine as one of the Best Inventions of 2024, has:
+The Wafer Scale Engine is exactly what the name suggests — an entire silicon wafer, processed as a single chip rather than diced into individual dies. The WSE-3, [announced in March 2024](https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine) and recognized by TIME Magazine as one of the Best Inventions of 2024, has:
 
-- **4 trillion transistors** — the most of any chip ever built
+- **[4 trillion transistors](https://www.cerebras.ai/chip)** — the most of any chip ever built
 - **900,000 AI-optimized cores** distributed across the entire wafer
 - **44 GB of on-chip SRAM** — not cache, not off-chip HBM, but SRAM sitting immediately adjacent to compute
 - **21 petabytes/second of memory bandwidth** — 7,000× an NVIDIA H100
@@ -78,9 +79,9 @@ Total private equity raised: approximately $2.8B across all rounds.
 
 The company filed its initial S-1 in September 2024, then withdrew it in October 2025 when CFIUS opened a national security review over G42 (a UAE AI firm) having a minority stake, citing concerns about technology transfer risks. The review concluded in October 2025; G42's stake was restructured to non-voting shares. Cerebras refiled a second S-1 on April 17, 2026, seeking to raise $3.5 billion at $115–$125 per share — targeting a $26.6 billion valuation at the high end under the ticker CBRS on Nasdaq.
 
-**IPO completed May 14, 2026.** Cerebras priced above its expected range at **$185/share** on May 13, then opened at **$350/share** on May 14 — the largest tech IPO of 2026. First-day trading saw the stock surge ~70%, pushing the market capitalization to nearly $70 billion at peak. The stock gave back roughly 10% on the second day of trading, settling into the $280–$330 range in subsequent sessions. Total capital raised: approximately **$5.55 billion**. The market validated the hardware story: a wafer-scale AI company with a $20 billion compute deal and actual profitability commands a premium that far exceeded the S-1 filing range.
+**[IPO completed May 14, 2026.](https://www.cerebras.ai/press-release/cerebras-systems-announces-pricing-of-initial-public-offering)** Cerebras priced above its expected range at **$185/share** on May 13, then opened at **$350/share** on May 14 — [the largest tech IPO of 2026](https://techcrunch.com/2026/05/14/cerebras-raises-5-5b-kicking-off-2026s-ipo-season-with-a-bang/). First-day trading saw the stock surge ~70%, pushing the market capitalization to [nearly $70 billion at peak](https://finance.yahoo.com/markets/article/cerebras-stock-slides-after-near-70-surge-in-biggest-ipo-of-2026-130757084.html). Total capital raised: approximately **$5.55 billion**.
 
-**Revenue is real and growing:**
+**Revenue is real and growing** (from [Cerebras S-1 and Q1 2026 earnings](https://investors.cerebras.ai/news-releases/news-release-details/cerebras-systems-announces-strong-first-quarter-2026-results)):
 
 | Year | Revenue | Change |
 |------|---------|--------|
@@ -97,9 +98,9 @@ The caveat the S-1 must disclose: before the OpenAI deal, G42 (UAE) was a domina
 
 ## The OpenAI Deal
 
-In January 2026, OpenAI committed to spend more than $20 billion with Cerebras over three years (2026–2028) for 750 MW of compute, with options to purchase up to 1.25 additional gigawatts through 2030. OpenAI also provided approximately $1 billion to help fund Cerebras data center buildout and received warrants for a minority equity stake.
+In January 2026, [OpenAI announced a partnership with Cerebras](https://www.cerebras.ai/blog/openai-partners-with-cerebras-to-bring-high-speed-inference-to-the-mainstream) for 750 MW of compute, with options through 2030. OpenAI also provided approximately $1 billion to help fund Cerebras data center buildout and received warrants for a minority equity stake. [The deal's total value was confirmed at over $20 billion](https://investors.cerebras.ai/news-releases/news-release-details/cerebras-systems-announces-strong-first-quarter-2026-results) in Cerebras's first post-IPO earnings report.
 
-This is not a research collaboration or a small-scale pilot. OpenAI is betting a substantial fraction of its infrastructure spend on Cerebras hardware. ChatGPT Pro users began accessing GPT-5.3-Codex-Spark running on Cerebras at over 1,000 t/s in February 2026. The open-weight gpt-oss-120B model is available on Cerebras Cloud at 3,000 t/s.
+This is not a research collaboration or a small-scale pilot. OpenAI is betting a substantial fraction of its infrastructure spend on Cerebras hardware. The open-weight [gpt-oss-120B model is available on Cerebras Cloud at ~3,000 t/s](https://cerebras.ai/inference).
 
 The deal answers the question of whether wafer-scale inference can scale commercially. The answer is yes.
 
@@ -119,9 +120,9 @@ This is where Cerebras has no competition. The numbers are not small improvement
 | Llama 3.1 8B | ~2,336 t/s | Groq ~840 t/s | ~2.8× |
 | DeepSeek R1 Distill Llama 70B | >1,500 t/s | GPU-based solutions ~26 t/s | ~57× (Cerebras claim) |
 
-The Artificial Analysis benchmark tracker independently confirms Cerebras's Llama 3.1 8B at 2,336 t/s and gpt-oss-120B at approximately 1,760–1,797 t/s (the lower figure is likely due to rate-limited conditions on the free tier; dedicated access reaches ~3,000 t/s).
+The [Artificial Analysis](https://artificialanalysis.ai/providers/cerebras) benchmark tracker independently confirms Cerebras's Llama 3.1 8B at 2,336 t/s and gpt-oss-120B at approximately 1,760–1,797 t/s (the lower figure is likely due to rate-limited conditions on the free tier; dedicated access reaches ~3,000 t/s).
 
-The Meta Llama API, when announced in April 2025, selected Cerebras to power Llama 4 Scout and Maverick. Meta benchmarked it at 18× faster than OpenAI-hosted alternatives for the same models. A coding prompt that takes 22 seconds on competing infrastructure takes 1.5 seconds on Cerebras.
+The [Meta Llama API](https://ai.meta.com/blog/llamacon-llama-news/), announced in April 2025, selected Cerebras to power Llama 4 Scout and Maverick. [Cerebras reported the solution ran 18× faster than traditional GPU alternatives](https://www.cerebras.ai/news/meta-unleashes-llama-api-running-18x-faster-than-openai-cerebras-partnership-delivers-2-600), delivering over 2,600 tokens per second for Llama 4 Scout.
 
 **Important caveat on multiplier figures:** Speed comparisons like "57× faster than GPU-based solutions" come from Cerebras marketing materials. The direction of the advantage is confirmed by independent benchmarks; the specific multipliers should be understood as Cerebras-favorable measurements rather than neutral third-party assessments. The raw t/s numbers from Artificial Analysis are the most reliable reference.
 

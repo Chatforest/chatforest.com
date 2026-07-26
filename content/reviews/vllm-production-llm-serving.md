@@ -5,10 +5,11 @@ description: "vLLM reviewed: the dominant production LLM serving engine. 79K sta
 og_description: "vLLM (vllm-project/vllm, ~79K stars, Apache 2.0, Python): the production standard for serving open-weight LLMs at scale. PagedAttention nearly eliminates GPU memory fragmentation, enabling continuous batching that delivers 14-24x higher throughput than naive HuggingFace Transformers inference. v0.20.1 (May 2026). Powers Amazon Rufus (250M customers), LinkedIn, Roblox, Meta, Mistral. Inferact Inc. launched January 2026: $150M seed at $800M valuation from a16z + Lightspeed. Disaggregated prefill, multi-LoRA, 200+ model architectures, OpenAI-compatible API. 10+ security advisories in Q1 2026 including a critical pre-auth RCE (CVE-2026-22778, patched v0.14.1). No built-in authentication. Rating: 4.5/5."
 card_description: "vLLM (vllm-project/vllm, ~79K stars, Apache 2.0, Python) is the production standard for high-throughput LLM serving. PagedAttention manages GPU KV cache like OS virtual memory — near-zero memory waste, 14-24x throughput vs naive HuggingFace Transformers, continuous batching, prefix caching, chunked prefill, 7 speculative decoding methods. v0.20.1 (May 2026): FlashAttention 4, DeepSeek V4, CUDA 13.0, TurboQuant 2-bit KV cache. Disaggregated prefill via NIXL (2.5-3.8x throughput gains). **Inferact Inc. (January 2026): $150M seed, $800M valuation, a16z + Lightspeed** to commercialize vLLM. Powers Amazon Rufus, LinkedIn Hiring Assistant, Roblox. Hugging Face TGI in maintenance mode — recommends vLLM. 10+ CVEs in Q1 2026 including critical pre-auth RCE (patched). No auth by default. Not suitable for Apple Silicon or edge/local dev — use Ollama/llama.cpp there. Part of our **Developer Tools** category. Rating: 4.5/5."
 last_refreshed: 2026-05-07
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
-When Hugging Face formally put Text Generation Inference (TGI) into maintenance mode in late 2025 and recommended users migrate to vLLM, it was a public acknowledgment of what the industry had already decided: vLLM is the default production LLM serving engine for open-weight models. 79,000 GitHub stars. Amazon's Rufus AI assistant serving 250 million customers. LinkedIn's hiring assistant. Roblox processing 4 billion tokens per week. The core research team launched a company — Inferact — at an $800 million valuation in January 2026.
+When Hugging Face [formally put Text Generation Inference (TGI) into maintenance mode in December 2025](https://huggingface.co/docs/inference-endpoints/engines/tgi) and recommended users migrate to vLLM, it was a public acknowledgment of what the industry had already decided: vLLM is the default production LLM serving engine for open-weight models. 79,000 GitHub stars. [Amazon's Rufus AI assistant serving 250 million customers](https://aws.amazon.com/blogs/machine-learning/how-amazon-scaled-rufus-by-building-multi-node-inference-using-aws-trainium-chips-and-vllm/) (via vLLM). LinkedIn's hiring assistant. Roblox processing 4 billion tokens per week. The core research team [launched a company — Inferact — at an $800 million valuation in January 2026](https://techcrunch.com/2026/01/22/inference-startup-inferact-lands-150m-to-commercialize-vllm/).
 
 This is not a niche tool. If you are deploying an LLM in production that needs to serve multiple concurrent users, vLLM is the first thing you should evaluate. Part of our **[Developer Tools category](/categories/developer-tools/)**.
 
@@ -60,7 +61,7 @@ The practical result:
 - Far more concurrent requests per GPU
 - Prefix sharing eliminates redundant computation for shared context
 
-Combined with **continuous batching** — which adds new requests to in-flight batches as slots open rather than waiting for an entire batch to complete — PagedAttention is why vLLM delivers 14-24x higher throughput than naive HuggingFace Transformers inference at equivalent latency, as demonstrated in the original SOSP 2023 paper by Woosuk Kwon, Simon Mo, and collaborators.
+Combined with **continuous batching** — which adds new requests to in-flight batches as slots open rather than waiting for an entire batch to complete — PagedAttention is why [vLLM delivers 14-24x higher throughput than naive HuggingFace Transformers inference](https://arxiv.org/abs/2309.06180) at equivalent latency, as demonstrated in the original SOSP 2023 paper by Woosuk Kwon, Simon Mo, and collaborators.
 
 ---
 
@@ -161,9 +162,9 @@ JSON schema and regex-constrained generation via xgrammar and guidance backends.
 
 vLLM's production deployment record is extensive:
 
-- **Amazon** — powers Rufus AI shopping assistant (250 million customers, 2025); multi-node vLLM cluster; Amazon cited as an existing customer relationship in Inferact's funding announcement
+- **Amazon** — [powers Rufus AI shopping assistant (250 million customers)](https://aws.amazon.com/blogs/machine-learning/how-amazon-scaled-rufus-by-building-multi-node-inference-using-aws-trainium-chips-and-vllm/) using multi-node vLLM on Trainium chips
 - **LinkedIn** — 50+ generative AI use cases including LinkedIn Hiring Assistant; 7% TPOT improvement reported after vLLM adoption
-- **Roblox** — primary LLM inference engine across the platform; 50% latency reduction; 4 billion tokens per week
+- **Roblox** — primary LLM inference engine; [50% latency reduction; 4 billion tokens per week](https://www.redhat.com/en/topics/ai/how-vllm-accelerates-ai-inference-3-enterprise-use-cases)
 - **Meta** — production inference
 - **Mistral AI** — production inference for their own models
 - **Cohere** — production inference
@@ -177,7 +178,7 @@ Compute platform sponsorship: NVIDIA, AMD, Google Cloud, AWS, Alibaba Cloud, Int
 
 vLLM was created at UC Berkeley's Sky Computing Lab in 2023 by PhD students Woosuk Kwon and Zhuohan Li under Professor Ion Stoica (also a co-founder of Databricks and Apache Spark). The project has operated as a community-driven open-source project under the PyTorch Foundation.
 
-On January 22, 2026, the core maintainers — Simon Mo (CEO), Woosuk Kwon, Kaichao You, and Roger Wang — launched **Inferact Inc.** to build a commercial managed vLLM service.
+On January 22, 2026, the core maintainers — Simon Mo (CEO), Woosuk Kwon, Kaichao You, and Roger Wang — launched **Inferact Inc.** to build a commercial managed vLLM service ([Bloomberg](https://www.bloomberg.com/news/articles/2026-01-22/andreessen-backed-inferact-raises-150-million-in-seed-round), [TechCrunch](https://techcrunch.com/2026/01/22/inference-startup-inferact-lands-150m-to-commercialize-vllm/)).
 
 - **Seed round**: $150 million
 - **Valuation**: $800 million
@@ -195,7 +196,7 @@ Separately, cash donors to the open-source project include a16z, Sequoia Capital
 vLLM's rapid expansion into multimodal features (image, video, audio inputs) in 2025-2026 introduced significant new attack surface. 10+ security advisories were filed in Q1 2026 alone.
 
 **Critical:**
-- **CVE-2026-22778** (CVSS 9.8, January 2026): Pre-authenticated RCE. Chains an information disclosure flaw with a heap buffer overflow in a bundled FFmpeg JPEG2000 decoder, triggerable via a malicious video URL without any authentication. Fixed in **v0.14.1** (January 24, 2026). If you are running a version older than v0.14.1 and your vLLM instance is network-accessible, patch immediately.
+- **[CVE-2026-22778](https://github.com/advisories/GHSA-4r2x-xpjr-7cvv)** (CVSS 9.8, February 2026): Pre-authenticated RCE. Chains an information disclosure flaw with a heap buffer overflow in a bundled FFmpeg JPEG2000 decoder, triggerable via a malicious video URL without any authentication. Fixed in **v0.14.1**. If you are running a version older than v0.14.1 and your vLLM instance is network-accessible, patch immediately.
 
 **High severity:**
 - **CVE-2026-27893** (CVSS 8.8, March 2026): `trust_remote_code` bypass. vLLM hardcoded `trust_remote_code=True` in some code paths, allowing malicious HuggingFace model repositories to execute arbitrary code even when the user had explicitly disabled this option. Fixed in v0.15+.

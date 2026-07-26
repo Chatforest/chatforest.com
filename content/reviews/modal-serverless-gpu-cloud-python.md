@@ -5,6 +5,7 @@ description: "Modal reviewed: Python-native serverless GPU cloud with sub-second
 og_description: "Modal (modal.com): serverless GPU cloud built for Python developers. Founded 2021 by Erik Bernhardsson (Spotify ML, Better.com CTO) and Akshat Bubna. Custom container runtime in Rust, custom lazy-loading filesystem, sub-second cold starts. Multi-cloud scheduler across AWS, GCP, OCI. Python decorator SDK — no Docker, no YAML, no Kubernetes. Inference, training, batch jobs, scheduled functions, web endpoints in one platform. GPUs: T4, A10G, A100, H100, B200 ($6.25/hr). Per-second billing, zero idle costs. $87M Series B (Sept 2025) at $1.1B. Targeting $2.5B valuation (Feb 2026, General Catalyst). ~$50M ARR. Rating: 4/5."
 card_description: "Modal (modal.com) is the serverless GPU cloud built around one idea: Python code should run in the cloud exactly as it runs locally. **Founded 2021** by Erik Bernhardsson (built Spotify's music recommendation system; CTO of Better.com) and Akshat Bubna. The platform uses a custom container runtime written in Rust (not Docker), a custom lazy-loading filesystem (not overlayfs), and a multi-cloud scheduler across AWS, GCP, and Oracle Cloud — all designed to achieve **sub-second cold starts**. You decorate a Python function with `@modal.function()` and it runs on a GPU in the cloud; no Dockerfile, no YAML, no Kubernetes. Supports inference, training, batch jobs, scheduled functions, streaming, and web endpoints. GPUs include T4, A10G, A100, H100, and **B200 at $6.25/hr**. Per-second billing; zero idle cost. **$87M Series B** (Sept 2025) at $1.1B valuation. Reported **$2.5B valuation** in new funding talks (Feb 2026), led by General Catalyst. **~$50M ARR**. Part of our **Developer Tools** category. Rating: 4/5."
 last_refreshed: 2026-05-07
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -28,8 +29,8 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **Founded** | 2021, New York, NY |
 | **CEO** | Erik Bernhardsson (co-founder; prev. Spotify ML, Better.com CTO) |
 | **CTO** | Akshat Bubna (co-founder) |
-| **Funding** | $87M Series B (Sept 2025) — $1.1B valuation |
-| **New round (talks)** | Targeting ~$2.5B valuation (Feb 2026); General Catalyst expected to lead |
+| **Funding** | [$87M Series B (Sept 2025)](https://modal.com/blog/announcing-our-series-b) — $1.1B valuation |
+| **New round (talks)** | [Targeting ~$2.5B valuation (Feb 2026)](https://techcrunch.com/2026/02/11/ai-inference-startup-modal-labs-in-talks-to-raise-at-2-5b-valuation-sources-say/); General Catalyst expected to lead |
 | **Revenue** | ~$50M ARR (reported at time of $2.5B talks) |
 | **Investors** | Amplify Partners, Redpoint, Threshold Ventures; General Catalyst (incoming) |
 | **GPU catalog** | T4, A10G, A100 (40GB/80GB), H100 (80GB), B200 |
@@ -192,13 +193,13 @@ Modal was founded in 2021 by Erik Bernhardsson and Akshat Bubna. Bernhardsson bu
 
 **Funding history**:
 - Seed rounds supported by Amplify Partners and others (2021–2023)
-- **Series B**: $87M (September 2025) at $1.1B valuation
+- **[Series B: $87M (September 2025)](https://modal.com/blog/announcing-our-series-b)** at $1.1B valuation, led by Lux Capital
 
-**New round (Feb 2026)**: TechCrunch and other outlets reported that Modal was in early discussions to raise a new round at approximately $2.5B valuation, more than double the September valuation. General Catalyst was reported as the expected lead. Bernhardsson publicly downplayed the reports as premature, while sources confirmed active conversations. If completed, the round would represent a 2.3x step-up in valuation in less than six months.
+**New round (Feb 2026)**: [TechCrunch reported](https://techcrunch.com/2026/02/11/ai-inference-startup-modal-labs-in-talks-to-raise-at-2-5b-valuation-sources-say/) that Modal was in early discussions to raise a new round at approximately $2.5B valuation, more than double the September valuation. General Catalyst was reported as the expected lead. Bernhardsson publicly downplayed the reports as premature, while sources confirmed active conversations.
 
-**Revenue**: approximately $50M ARR, as reported in conjunction with the $2.5B valuation discussions. This implies a revenue multiple of roughly 50x ARR at $2.5B — elevated, but consistent with comparable AI infrastructure companies in current fundraising markets.
+**Revenue**: approximately $50M ARR, as reported in conjunction with the $2.5B valuation discussions.
 
-Modal is a small company (roughly 58 employees) generating meaningful revenue relative to headcount. It made two notable acquisitions: Twirl (a database tooling company) and Tidbyt (a consumer electronics company making programmable pixel-art displays) — the strategic rationale for Tidbyt is not obvious from public information, but Twirl suggests interest in data infrastructure adjacent to compute.
+Modal is a small company (roughly 58 employees) generating meaningful revenue relative to headcount. It made two notable acquisitions: [Twirl](https://modal.com/blog/twirl-is-joining-modal) (a data orchestration startup that Modal describes as solving the same problem from the data transformation layer) and [Tidbyt](https://modal.com/blog/tidbyt-is-joining-modal) (a consumer electronics company that had shipped 100,000 programmable pixel-art displays to consumers) — the strategic rationale for Tidbyt is not obvious from public information, but Twirl suggests interest in data infrastructure adjacent to compute.
 
 ---
 

@@ -5,6 +5,7 @@ description: "Together AI reviewed: 200+ open models, FlashAttention-4 on Blackw
 og_description: "Together AI (together.ai): the AI-native cloud for open-model inference, fine-tuning, and dedicated GPU clusters. Founded 2022 by Percy Liang, Chris Ré, Ce Zhang, and Vipul Ved Prakash — leading AI researchers from Stanford and ETH Zürich. Chief Scientist Tri Dao created FlashAttention, the attention kernel used by most inference providers. FlashAttention-4 for Blackwell: 1605 TFLOPs/s BF16, 1.3x faster than cuDNN. 200+ open-source models including Llama 4 Scout (10M context), DeepSeek V4, Qwen3. Full inference + fine-tuning + dedicated GPU clusters. 36,000 NVIDIA GB200 NVL72 GPUs via Hypertec partnership. $300M ARR (Sept 2025), +130% YoY. $305M Series B at $3.3B valuation. $25 free credits; $15K–$50K startup credits via AI Perks. OpenAI-compatible API. Rating: 4.5/5."
 card_description: "Together AI (together.ai) is the AI-native cloud built by the researchers who created FlashAttention and trained the Stanford CRFM models. **Chief Scientist Tri Dao** invented FlashAttention; the four co-founders include Percy Liang (Stanford CRFM), Chris Ré (Stanford NLP), and Ce Zhang (ETH Zürich) — some of the most cited ML researchers alive. FlashAttention-4 reaches **1605 TFLOPs/s on NVIDIA Blackwell**, 1.3x faster than cuDNN. **200+ open-source models** including Llama 4 Scout (10M context), DeepSeek V4, Qwen3 variants. Full stack: serverless inference, SFT fine-tuning, and dedicated GPU clusters (H100/H200/B200/GB200). **36,000 NVIDIA GB200 NVL72 GPUs** co-built with Hypertec. **$300M ARR** (Sept 2025), +130% YoY. $305M Series B at $3.3B valuation (Feb 2025). $25 free credits for new users; $15K–$50K startup credits via AI Perks. Batch API available at 50% discount. Part of our **Developer Tools** category. Rating: 4.5/5."
 last_refreshed: 2026-05-07
+sources_audited: 2026-07-26
 categories: ["/categories/developer-tools/"]
 ---
 
@@ -29,11 +30,11 @@ Part of our **[Developer Tools category](/categories/developer-tools/)**.
 | **CEO** | Vipul Ved Prakash (co-founder; prev. Topsy → Apple, Cloudmark → Proofpoint) |
 | **Co-founders** | Percy Liang (Stanford CRFM), Chris Ré (Stanford NLP), Ce Zhang (ETH Zürich) |
 | **Chief Scientist** | Tri Dao (creator of FlashAttention; Princeton PhD) |
-| **Funding** | $305M Series B (Feb 2025) — $3.3B valuation; $554M total |
+| **Funding** | [$305M Series B (Feb 2025)](https://www.prnewswire.com/news-releases/together-ai-raises-305m-series-b-to-scale-ai-acceleration-cloud-for-open-source-and-enterprise-ai-302380967.html) — $3.3B valuation; $554M total |
 | **Investors** | General Catalyst, Prosperity7, Salesforce Ventures, NVIDIA, Coatue |
-| **Revenue** | ~$300M ARR (Sept 2025), +130% YoY from $130M end of 2024 |
+| **Revenue** | [~$300M ARR (Sept 2025)](https://www.linkedin.com/posts/katieroof_together-ai-crossed-300m-arr-this-summer-activity-7384039851802886145-S7PK), +130% YoY |
 | **Model catalog** | 200+ open-source models (all modalities) |
-| **Infrastructure** | 36,000 NVIDIA GB200 NVL72 GPUs (Hypertec); 200 MW power capacity |
+| **Infrastructure** | [36,000 NVIDIA GB200 NVL72 GPUs (Hypertec)](https://www.together.ai/blog/nvidia-gb200-together-gpu-cluster-36k); 200 MW power capacity |
 | **GPU tiers** | Serverless, dedicated H100/H200/B200/GB200, instant clusters |
 | **API** | OpenAI-compatible (`api.together.ai/v1`) |
 | **Fine-tuning** | SFT; per-training-token billing |
@@ -50,7 +51,7 @@ FlashAttention, first released in 2022, reordered the attention computation to k
 
 **FlashAttention-3** (2024) targeted the NVIDIA H100's new hardware features: the Tensor Memory Accelerator (TMA), warp specialization, and FP8 precision. On H100 with BF16, it reaches 840 TFLOPs/s — roughly 1.5–2x faster than FlashAttention-2 in the same configuration.
 
-**FlashAttention-4** (March 2026) was designed specifically for NVIDIA Blackwell's asymmetric hardware scaling: tensor core throughput doubled from H100 to B200, but other functional units — shared memory bandwidth, exponential units — scaled more slowly or not at all. The naive port of FlashAttention-3 to Blackwell would leave tensor cores underutilized half the time. FlashAttention-4 introduces algorithm and kernel pipelining co-design: it overlaps matmul and softmax operations, hides the asymmetric bottlenecks behind compute pipelining, and is implemented entirely in CuTe-DSL embedded in Python (avoiding the 20–30× slower compile times of traditional C++ template-based CUDA). On B200 with BF16: **1605 TFLOPs/s** (71% utilization), **1.3× faster than cuDNN**, **2.7× faster than Triton**.
+**[FlashAttention-4](https://arxiv.org/abs/2603.05451)** ([Together AI blog](https://www.together.ai/blog/flashattention-4), March 2026) was designed specifically for NVIDIA Blackwell's asymmetric hardware scaling: tensor core throughput doubled from H100 to B200, but other functional units — shared memory bandwidth, exponential units — scaled more slowly or not at all. The naive port of FlashAttention-3 to Blackwell would leave tensor cores underutilized half the time. FlashAttention-4 introduces algorithm and kernel pipelining co-design: it overlaps matmul and softmax operations, hides the asymmetric bottlenecks behind compute pipelining, and is implemented entirely in CuTe-DSL embedded in Python. On B200 with BF16: **1605 TFLOPs/s** (71% utilization), **1.3× faster than cuDNN**, **2.7× faster than Triton**.
 
 Together bundles these kernels with additional optimizations into the **Together Kernel Collection (TKC)**, deployed across all Together GPU clusters. Every GPU-hour purchased on Together runs on software that Together's own researchers wrote and continue to improve.
 
@@ -60,7 +61,7 @@ Together bundles these kernels with additional optimizations into the **Together
 
 Together made an early and large commitment to GPU hardware at a time when allocation was constrained. By 2025, they had secured access to 100,000+ GPUs across North American data centers and 200 MW of power capacity — enough to run one of the largest AI compute footprints outside the hyperscalers.
 
-The headline is the **Hypertec partnership**: Together and Hypertec Cloud are co-building a cluster of **36,000 NVIDIA GB200 NVL72 GPUs**, starting Q1 2025. GB200 NVL72 is NVIDIA's rack-scale architecture — 72 Grace Blackwell Superchips per rack, connected by fifth-generation NVLink, liquid-cooled, with 30× faster real-time inference for trillion-parameter models compared to H100. This is not a future roadmap item; it is NVIDIA's current production flagship, and Together is operating it at cluster scale.
+The headline is the **[Hypertec partnership](https://www.prnewswire.com/news-releases/together-ai-and-hypertec-cloud-join-forces-to-co-build-turbocharged-nvidia-gb200-cluster-of-36k-blackwell-gpus-302308267.html)**: Together and Hypertec Cloud are co-building a cluster of **36,000 NVIDIA GB200 NVL72 GPUs**, starting Q1 2025. GB200 NVL72 is NVIDIA's rack-scale architecture — 72 Grace Blackwell Superchips per rack, connected by fifth-generation NVLink, liquid-cooled, with 30× faster real-time inference for trillion-parameter models compared to H100. This is not a future roadmap item; it is NVIDIA's current production flagship, and Together is operating it at cluster scale.
 
 The full GPU lineup available on Together today:
 
