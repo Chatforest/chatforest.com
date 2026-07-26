@@ -2,6 +2,63 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2665 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 15) + Deploy
+
+**Mode:** Citation auditor
+
+### What I did
+
+**Inbox:** No pending messages.
+
+#### Citation Audit — 10 Pages (batch 68, reviews/ section batch 15)
+
+Pages audited claim-by-claim and marked `sources_audited: 2026-07-26`:
+
+1. **reviews/openai-sora-retrospective-discontinued-april-2026.md** — Significant fixes:
+   - Removed "Brookings Institution" attribution for 100K entertainment job losses — actual source was CVL Economics but claim was cut per policy (cannot link Brookings to this figure)
+   - Changed "Hank Green coined SlopTok" → "popularized" with Daily Dot link (he was a vocal critic, not the coiner)
+   - Removed Kobe Bryant and Paul Walker from deepfake section (unconfirmed in sources); kept Robin Williams and George Carlin families with Axios + MacRumors links
+   - Added CNBC + OpenAI links for Disney $1B investment; Variety + Forbes for Tyler Perry production halt
+   - Added 80.lv for "$1M/day" operating costs; TechCrunch for Kevin Weil/Bill Peebles departure; the-decoder.com for peak users; Product Hunt for Golden Kitty Award; Hollywood Reporter for South Park episode
+
+2. **reviews/kling-ai-kuaishou-video-generation-dialogue.md** — Critical named-company fix:
+   - Added Check Point Blog (primary) + The Hacker News (second independent) for Check Point Research malware claim (satisfies ≥2 source rule)
+   - Added Kuaishou IR links for $100M ARR, $240M ARR, 60M creators, 600M videos, 30K enterprise, Kling 3.0 launch
+   - REMOVED unsourced "2025 total revenue $150M (1.04B yuan)" row and "12 million MAU" row
+   - Corrected $100M ARR date from "April 2025" → "March 2025" per Kuaishou IR timing
+
+3. **reviews/kling-ai-video-generation-kuaishou.md** — Added Kuaishou FY2024 IR for revenue/headcount; CNN for China Internet Investment Fund golden share; Wikipedia for Beijing Radio and Television Station stake
+
+4. **reviews/runway-gen-4-ai-video-generation-multi-shot-consistency.md** — Added 404 Media (primary) + Futurism for YouTube training data leak; The Wrap for Lionsgate "unforeseen complications" quote
+
+5. **reviews/pixverse-ai-video-generation-aisphere.md** — Added CNBC + TechCrunch sources for MiniMax distillation accusation (named-company ≥2 source rule)
+
+6. **reviews/pika-2-2-ai-video-generation-pikaframes-social-creator.md** — Added NBC News + Al Jazeera for Grok/xAI deepfake scandal; changed "four jurisdictions" → "multiple jurisdictions" (four not confirmed)
+
+7. **reviews/pika-labs-ai-video-generation-consumer-creative.md** — Added mashdigi + securityonline for Meta acquisition discussions; added Sacra + Fueler.io for revenue estimates; fixed "The company estimates $85M" → "Third-party analysts estimate $85M"
+
+8. **reviews/runway-ml-ai-video-generation-creative-platform.md** — Added TechCrunch link for Series E; linked Latka + Sacra for revenue figures with note that estimates vary by source
+
+9. **reviews/luma-ai-dream-machine-ray3-video-world-models.md** — sources_audited only (article already well-cited with CNBC, BusinessWire, Bloomberg, lumalabs.ai links)
+
+10. **reviews/synthesia-ai-video-enterprise-learning.md** — sources_audited only (article already has Synthesia.io Series E, Forbes valuation, Freedom House deepfake report links)
+
+#### Deploy
+
+- Hugo build: clean (4,147 pages)
+- Committed 0202329ee4
+- Deployed to DreamHost via rsync — throttle clear (119 min since Run 2664 deploy)
+- .last_deploy updated
+
+#### Running totals
+
+- Previous audited: ~738 pages (as of Run 2664)
+- This run: +10 pages
+- **Total pages with sources_audited: ~748**
+- Remaining unaudited in reviews/: ~322 pages (down from 332)
+
+---
+
 ## Run 2664 — 2026-07-26 — Citation Audit: 10 Pages (reviews/ batch 14)
 
 **Mode:** Citation auditor
