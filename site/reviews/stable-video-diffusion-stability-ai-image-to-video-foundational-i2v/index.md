@@ -15,7 +15,7 @@ This review covers SVD and SVD-XT as of May 2026. We write from public sources �
 
 ## Background: Stability AI and the SVD Paper
 
-**Stability AI** is a UK-based AI company most known for Stable Diffusion, the open-source image generation model that launched in August 2022 and catalyzed the modern AI art movement. SVD was released as a research preview on **November 21, 2023**, accompanied by the paper *"Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets"* (arXiv: 2311.15127, submitted November 25, 2023).
+**Stability AI** is a UK-based AI company most known for Stable Diffusion, the open-source image generation model that launched in August 2022 and catalyzed the modern AI art movement. SVD was released as a research preview on **November 21, 2023**, accompanied by the paper [*"Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets"* (arXiv:2311.15127)](https://arxiv.org/abs/2311.15127), submitted November 25, 2023.
 
 The paper's core contribution was not just the model — it was the systematic study of **data curation** for video generation. The authors argue, convincingly, that the training data pipeline matters more than architectural choices for video quality. Their Large Video Dataset (LVD) and the curation filters they developed became a reference point for subsequent open-source video model research.
 
@@ -178,10 +178,10 @@ The commercial licensing restriction has been a persistent friction point for de
 ## HuggingFace
 
 All SVD variants are hosted at `stabilityai/` on HuggingFace:
-- `stabilityai/stable-video-diffusion-img2vid`
-- `stabilityai/stable-video-diffusion-img2vid-xt`
-- `stabilityai/stable-video-diffusion-img2vid-xt-1-1`
-- `stabilityai/stable-video-diffusion-img2vid-xt-1-1-tensorrt`
+- [`stabilityai/stable-video-diffusion-img2vid`](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid)
+- [`stabilityai/stable-video-diffusion-img2vid-xt`](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt)
+- [`stabilityai/stable-video-diffusion-img2vid-xt-1-1`](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1)
+- [`stabilityai/stable-video-diffusion-img2vid-xt-1-1-tensorrt`](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1-tensorrt)
 
 Models require accepting a license agreement before download — this gates the visible download counter. The HuggingFace Diffusers documentation includes a dedicated [SVD usage guide](https://huggingface.co/docs/diffusers/using-diffusers/svd) covering pipeline setup, VRAM optimization, and video export.
 
@@ -213,7 +213,7 @@ The ComfyUI ecosystem around SVD remains active despite the API deprecation — 
 
 ## Hosted Inference — Deprecated
 
-Stability AI's developer API previously offered SVD video generation as a paid endpoint. That API was **deprecated on July 24, 2025**, with Stability AI directing users toward their image generation products (Stable Image Core, Stable Image Ultra, and SD 3.5-based APIs). There is no replacement video API from Stability AI.
+Stability AI's developer API previously offered SVD video generation as a paid endpoint. That API was [**deprecated on July 24, 2025**](https://platform.stability.ai/docs/release-notes), with Stability AI directing users toward their image generation products (Stable Image Core, Stable Image Ultra, and SD 3.5-based APIs). There is no replacement video API from Stability AI.
 
 Remaining hosted options as of May 2026:
 - **Third-party services**: ModelsLab and similar services have offered SVD endpoints at $0.05–$0.20 per video clip; availability varies

@@ -77,7 +77,7 @@
 <p>The founders are brothers:</p>
 <ul>
 <li><strong>Paras Jain</strong> (CEO): PhD from UC Berkeley, RISE Lab and BAIR Lab. Researcher in distributed systems and deep learning.</li>
-<li><strong>Ajay Jain</strong> (CTO): PhD from UC Berkeley. Co-author of <strong>DDPM</strong> (Denoising Diffusion Probabilistic Models, 2020) — the foundational paper that established the modern diffusion model paradigm — and co-creator of <strong>DreamFusion</strong> (2022), one of the first methods for 3D content generation using 2D diffusion models. Also contributed to <strong>Emu Video</strong> (Meta&rsquo;s video generation work).</li>
+<li><strong>Ajay Jain</strong> (CTO): PhD from UC Berkeley. Co-author of <a href="https://arxiv.org/abs/2006.11239"><strong>DDPM</strong> (Denoising Diffusion Probabilistic Models, 2020)</a> — the foundational paper that established the modern diffusion model paradigm — and co-creator of <a href="https://arxiv.org/abs/2209.14988"><strong>DreamFusion</strong> (2022)</a>, one of the first methods for 3D content generation using 2D diffusion models. Also contributed to <a href="https://arxiv.org/abs/2311.10709"><strong>Emu Video</strong> (Meta&rsquo;s video generation work)</a>.</li>
 </ul>
 <p>Their shared advisors at Berkeley — Ion Stoica, Joey Gonzalez, and Pieter Abbeel — became advisors to the company. This lineage is unusually strong: the CTO helped write the paper that made modern image generation possible.</p>
 <p><strong>Funding history:</strong></p>
@@ -100,12 +100,12 @@
 <tr>
 <td>Series A</td>
 <td>October 2024</td>
-<td>~$28–30M</td>
+<td><a href="https://www.nea.com/blog/genmos-open-source-genai-model-aims-to-power-the-future-of-video">$28.4M</a></td>
 <td>NEA</td>
 </tr>
 </tbody>
 </table>
-<p>The Series A was announced on the same day as the Mochi-1 release — a deliberate double-launch designed to signal that the company&rsquo;s research had graduated into product.</p>
+<p><a href="https://venturebeat.com/ai/video-ai-startup-genmo-launches-mochi-1-an-open-source-model-to-rival-runway-kling-and-others/">The Series A was announced on the same day as the Mochi-1 release</a> — a deliberate double-launch designed to signal that the company&rsquo;s research had graduated into product.</p>
 <p>NEA led the round. Other investors included The House Fund, Gold House Ventures, WndrCo, Eastlink Capital Partners, and Essence VC.</p>
 <p>The company&rsquo;s stated mission: &ldquo;Put a tiny filmmaker in the pockets of a billion people.&rdquo;</p>
 <h2 id="the-architecture-asymmdit-and-asymmvae">The Architecture: AsymmDiT and AsymmVAE</h2>
@@ -190,7 +190,7 @@
 <p>Mochi-1&rsquo;s open-source story is genuinely strong:</p>
 <ul>
 <li><strong>License</strong>: Apache 2.0 — permissive, commercial-friendly, no special terms or agreements required. This matches Wan2.1 and LTX-Video 0.9.x; HunyuanVideo has a custom license with more restrictions.</li>
-<li><strong>GitHub</strong>: <code>genmoai/mochi</code> — approximately 3,500 stars and 470 forks</li>
+<li><strong>GitHub</strong>: <a href="https://github.com/genmoai/mochi"><code>genmoai/mochi</code></a> — approximately 3,500 stars and 470 forks</li>
 <li><strong>HuggingFace</strong>: <code>genmo/mochi-1-preview</code> — weights publicly available, community forks including quantized variants (e.g., <code>imnotednamode/mochi-1-preview-mix-nf4</code> for lower VRAM usage)</li>
 <li><strong>Official LoRA fine-tuner</strong>: Included in the GitHub repo (<code>demos/fine_tuner/</code>) — can fine-tune on a single H100 or A100 80GB GPU. Modal.com has a dedicated tutorial. Community LoRAs exist and are encouraged.</li>
 </ul>

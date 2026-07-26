@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <h1 id="skyreels-v2--kunluns-open-source-video-model-diffusion-forcing-infinite-length-generation-and-the-highest-open-source-i2v-score">SkyReels V2 — Kunlun&rsquo;s Open-Source Video Model: Diffusion Forcing, Infinite-Length Generation, and the Highest Open-Source I2V Score</h1>
-<p>There is a persistent and widespread misconception worth correcting immediately: <strong>SkyReels is not made by Kuaishou.</strong> Kuaishou makes Kling. SkyReels V2 is the product of <strong>Skywork AI</strong>, the research division of <strong>Kunlun Wanwei</strong> (昆仑万维, Shenzhen: 300418) — a completely separate Chinese technology company with 400 million monthly active users, a listed Shenzhen subsidiary, and a research division focused on open foundation models. The two companies compete in the AI video generation space, which likely explains the confusion, but they have no corporate relationship.</p>
+<p>There is a persistent and widespread misconception worth correcting immediately: <strong>SkyReels is not made by Kuaishou.</strong> Kuaishou makes Kling. SkyReels V2 is the product of <strong>Skywork AI</strong>, the research division of <strong><a href="https://www.kunlun.com/en/">Kunlun Wanwei</a></strong> (昆仑万维, Shenzhen: 300418) — a completely separate Chinese technology company with <a href="https://www.prnewswire.com/news-releases/kunlun-tech-launched-the-skywork-large-language-model-and-was-selected-into-the-list-of-chinas-next-tens-of-billions-of-aigc-products-301836921.html">approximately 400 million monthly active users across its platforms</a>, a listed Shenzhen subsidiary, and a research division focused on open foundation models. The two companies compete in the AI video generation space, which likely explains the confusion, but they have no corporate relationship.</p>
 <p>SkyReels V2 launched on arXiv April 17, 2025 (<a href="https://arxiv.org/abs/2504.13074">paper 2504.13074</a>) and released weights and inference code on April 21–24, 2025. Its headline claim: the first open-source video model to achieve genuinely unlimited-length video generation through a framework called <strong>Diffusion Forcing</strong>, while simultaneously scoring higher than any prior open-source image-to-video model on human evaluation.</p>
 <p>This review is based on the published arXiv paper, GitHub repository, HuggingFace model cards, Diffusers documentation, and community reports. We do not test AI tools hands-on.</p>
 <hr>
@@ -205,7 +205,7 @@
 <p><strong>Runtime requirements</strong>: NVIDIA GPU with CUDA, Python 3.10.12+.</p>
 <hr>
 <h2 id="benchmarks">Benchmarks</h2>
-<p><strong>VBench 1.0:</strong></p>
+<p><strong><a href="https://huggingface.co/spaces/Vchitect/VBench_Leaderboard">VBench 1.0</a>:</strong></p>
 <table>
 <thead>
 <tr>
@@ -237,7 +237,7 @@
 </tr>
 </tbody>
 </table>
-<p>SkyReels V2 outperforms both HunyuanVideo-13B and Wan2.1-14B on all VBench dimensions.</p>
+<p>Per the <a href="https://arxiv.org/abs/2504.13074">SkyReels V2 paper (arXiv:2504.13074)</a>, V2 outperforms both HunyuanVideo-13B and Wan2.1-14B on all VBench dimensions.</p>
 <p><strong>Human evaluation (SkyReels-Bench):</strong></p>
 <p>The paper introduces SkyReels-Bench, a human evaluation protocol covering instruction adherence, visual quality, motion quality, and consistency. Scores on a 1–5 scale:</p>
 <table>

@@ -22,7 +22,7 @@ Genmo AI was founded in late 2022 in San Francisco. The company's first code was
 The founders are brothers:
 
 - **Paras Jain** (CEO): PhD from UC Berkeley, RISE Lab and BAIR Lab. Researcher in distributed systems and deep learning.
-- **Ajay Jain** (CTO): PhD from UC Berkeley. Co-author of **DDPM** (Denoising Diffusion Probabilistic Models, 2020) — the foundational paper that established the modern diffusion model paradigm — and co-creator of **DreamFusion** (2022), one of the first methods for 3D content generation using 2D diffusion models. Also contributed to **Emu Video** (Meta's video generation work).
+- **Ajay Jain** (CTO): PhD from UC Berkeley. Co-author of [**DDPM** (Denoising Diffusion Probabilistic Models, 2020)](https://arxiv.org/abs/2006.11239) — the foundational paper that established the modern diffusion model paradigm — and co-creator of [**DreamFusion** (2022)](https://arxiv.org/abs/2209.14988), one of the first methods for 3D content generation using 2D diffusion models. Also contributed to [**Emu Video** (Meta's video generation work)](https://arxiv.org/abs/2311.10709).
 
 Their shared advisors at Berkeley — Ion Stoica, Joey Gonzalez, and Pieter Abbeel — became advisors to the company. This lineage is unusually strong: the CTO helped write the paper that made modern image generation possible.
 
@@ -31,9 +31,9 @@ Their shared advisors at Berkeley — Ion Stoica, Joey Gonzalez, and Pieter Abbe
 | Round | Date | Amount | Lead Investor |
 |-------|------|--------|---------------|
 | Seed | 2022–2023 | Undisclosed | — |
-| Series A | October 2024 | ~$28–30M | NEA |
+| Series A | October 2024 | [$28.4M](https://www.nea.com/blog/genmos-open-source-genai-model-aims-to-power-the-future-of-video) | NEA |
 
-The Series A was announced on the same day as the Mochi-1 release — a deliberate double-launch designed to signal that the company's research had graduated into product.
+[The Series A was announced on the same day as the Mochi-1 release](https://venturebeat.com/ai/video-ai-startup-genmo-launches-mochi-1-an-open-source-model-to-rival-runway-kling-and-others/) — a deliberate double-launch designed to signal that the company's research had graduated into product.
 
 NEA led the round. Other investors included The House Fund, Gold House Ventures, WndrCo, Eastlink Capital Partners, and Essence VC.
 
@@ -114,7 +114,7 @@ By late 2025, Wan2.1 had "matched or exceeded" Mochi-1's motion quality per comp
 Mochi-1's open-source story is genuinely strong:
 
 - **License**: Apache 2.0 — permissive, commercial-friendly, no special terms or agreements required. This matches Wan2.1 and LTX-Video 0.9.x; HunyuanVideo has a custom license with more restrictions.
-- **GitHub**: `genmoai/mochi` — approximately 3,500 stars and 470 forks
+- **GitHub**: [`genmoai/mochi`](https://github.com/genmoai/mochi) — approximately 3,500 stars and 470 forks
 - **HuggingFace**: `genmo/mochi-1-preview` — weights publicly available, community forks including quantized variants (e.g., `imnotednamode/mochi-1-preview-mix-nf4` for lower VRAM usage)
 - **Official LoRA fine-tuner**: Included in the GitHub repo (`demos/fine_tuner/`) — can fine-tune on a single H100 or A100 80GB GPU. Modal.com has a dedicated tutorial. Community LoRAs exist and are encouraged.
 

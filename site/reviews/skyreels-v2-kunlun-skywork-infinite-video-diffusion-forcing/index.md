@@ -5,7 +5,7 @@
 
 # SkyReels V2 — Kunlun's Open-Source Video Model: Diffusion Forcing, Infinite-Length Generation, and the Highest Open-Source I2V Score
 
-There is a persistent and widespread misconception worth correcting immediately: **SkyReels is not made by Kuaishou.** Kuaishou makes Kling. SkyReels V2 is the product of **Skywork AI**, the research division of **Kunlun Wanwei** (昆仑万维, Shenzhen: 300418) — a completely separate Chinese technology company with 400 million monthly active users, a listed Shenzhen subsidiary, and a research division focused on open foundation models. The two companies compete in the AI video generation space, which likely explains the confusion, but they have no corporate relationship.
+There is a persistent and widespread misconception worth correcting immediately: **SkyReels is not made by Kuaishou.** Kuaishou makes Kling. SkyReels V2 is the product of **Skywork AI**, the research division of **[Kunlun Wanwei](https://www.kunlun.com/en/)** (昆仑万维, Shenzhen: 300418) — a completely separate Chinese technology company with [approximately 400 million monthly active users across its platforms](https://www.prnewswire.com/news-releases/kunlun-tech-launched-the-skywork-large-language-model-and-was-selected-into-the-list-of-chinas-next-tens-of-billions-of-aigc-products-301836921.html), a listed Shenzhen subsidiary, and a research division focused on open foundation models. The two companies compete in the AI video generation space, which likely explains the confusion, but they have no corporate relationship.
 
 SkyReels V2 launched on arXiv April 17, 2025 ([paper 2504.13074](https://arxiv.org/abs/2504.13074)) and released weights and inference code on April 21–24, 2025. Its headline claim: the first open-source video model to achieve genuinely unlimited-length video generation through a framework called **Diffusion Forcing**, while simultaneously scoring higher than any prior open-source image-to-video model on human evaluation.
 
@@ -118,7 +118,7 @@ The 1.3B model fits on a single high-end consumer GPU (RTX 3090/4090). The 14B m
 
 ## Benchmarks
 
-**VBench 1.0:**
+**[VBench 1.0](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard):**
 
 | Model | Total | Quality |
 |-------|-------|---------|
@@ -127,7 +127,7 @@ The 1.3B model fits on a single high-end consumer GPU (RTX 3090/4090). The 14B m
 | Wan2.1 (14B) | ~82% | — |
 | SkyReels V1 | 82.43% | — |
 
-SkyReels V2 outperforms both HunyuanVideo-13B and Wan2.1-14B on all VBench dimensions.
+Per the [SkyReels V2 paper (arXiv:2504.13074)](https://arxiv.org/abs/2504.13074), V2 outperforms both HunyuanVideo-13B and Wan2.1-14B on all VBench dimensions.
 
 **Human evaluation (SkyReels-Bench):**
 

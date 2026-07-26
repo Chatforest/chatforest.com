@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <h1 id="ltx-video-lightricks-the-open-weight-video-model-that-added-audio-first">LTX Video (Lightricks): The Open-Weight Video Model That Added Audio First</h1>
-<p>Lightricks is best known for Facetune — the selfie-editing app with 200M+ downloads that defined a category of mobile image tools. In November 2024, the company raised $400M in a Series E explicitly framed as an &ldquo;AI-First&rdquo; pivot, and in late 2025, released the model that makes that pivot legible: <strong>LTX-2</strong>, the first open-weight video generation model to natively produce synchronized audio alongside video.</p>
+<p>Lightricks is best known for Facetune — the selfie-editing app that defined a category of mobile image tools. In late 2024, the company raised a Series E to fund its AI-first pivot, and in <a href="https://www.globenewswire.com/news-release/2026/01/06/3213304/0/en/Lightricks-Open-Sources-LTX-2-the-First-Production-Ready-Audio-and-Video-Generation-Model-With-Truly-Open-Weights.html">January 2026, released the model</a> that makes that pivot legible: <strong>LTX-2</strong>, the first open-weight video generation model to natively produce synchronized audio alongside video.</p>
 <p>The current iteration is <strong>LTX-2.3</strong>, a 22B-parameter joint audio-video model with a ComfyUI integration at 3,600+ stars and 1.73 million HuggingFace downloads per month. For developers building video pipelines, it sits in a distinctive position: open weights, native audio, real-time-class speed, and IC-LoRA controls — a combination no other open-weight model currently offers.</p>
 <p>This review covers the full LTX Video model family: what was built, how it evolved, what it does well, and where the tradeoffs are.</p>
 <h2 id="company-background">Company Background</h2>
@@ -81,8 +81,8 @@
 <li><strong>LTX Studio</strong> — AI filmmaking platform (launched February 2024)</li>
 <li><strong>LTX Video</strong> — open-weight video generation model family (launched late 2024)</li>
 </ul>
-<p>As of 2025/2026, Lightricks reports 730M+ total app downloads, 50M+ monthly active users, 6.6M+ subscribers, and approximately $250M ARR — figures that position this as one of Israel&rsquo;s most substantial AI companies. Total funding exceeds $735M across five rounds.</p>
-<p><strong>Funding history:</strong></p>
+<p>Lightricks has grown into one of Israel&rsquo;s most substantial AI companies through multiple funding rounds.</p>
+<p><strong>Confirmed funding history:</strong></p>
 <table>
 <thead>
 <tr>
@@ -93,33 +93,23 @@
 </thead>
 <tbody>
 <tr>
-<td>Series A</td>
-<td>2015</td>
-<td>$10M</td>
-</tr>
-<tr>
-<td>Series B</td>
-<td>2018</td>
-<td>$60M</td>
-</tr>
-<tr>
 <td>Series C</td>
 <td>2019</td>
-<td>$135M (unicorn)</td>
+<td><a href="https://news.crunchbase.com/news/facetune-maker-lightricks-lands-135-million-series-c-at-a-1-billion-valuation/">$135M</a> (unicorn, $1B valuation)</td>
 </tr>
 <tr>
 <td>Series D</td>
 <td>2021</td>
-<td>$130M</td>
+<td><a href="https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy">$130M</a> ($1.8B valuation)</td>
 </tr>
 <tr>
 <td>Series E</td>
-<td>Nov 2024</td>
-<td>$400M</td>
+<td>2024</td>
+<td>Amount not independently confirmed</td>
 </tr>
 </tbody>
 </table>
-<p>The Series E investors included Goldman Sachs Growth Equity, Insight Partners, Viola Ventures, ClalTech, Greycroft, and Hanaco Venture Capital. The strategic framing was explicit: Lightricks would transform from a mobile app company into an AI platform company. LTX Video is the technical centerpiece of that transformation.</p>
+<p>The <a href="https://www.lightricks.com/post/lightricks-award-winning-app-developer-raises-130m-series-d-to-power-expansion-and-champion-creator-economy">Series D</a> investors included Goldman Sachs Growth Equity, Insight Partners, Viola Ventures, ClalTech, Greycroft, and Hanaco Venture Capital. The strategic framing was explicit: Lightricks would transform from a mobile app company into an AI platform company. LTX Video is the technical centerpiece of that transformation.</p>
 <h2 id="the-model-family">The Model Family</h2>
 <p>LTX Video has gone through two distinct generations with three main versions worth understanding.</p>
 <h3 id="generation-1-ltx-video-ltxv-09x">Generation 1: LTX-Video (LTXV 0.9.x)</h3>
@@ -140,7 +130,7 @@
 </ul>
 <p>All 0.9.x models are licensed under <strong>OpenRail-M</strong> (commercial use permitted). This is a permissive standard for open-weight AI models.</p>
 <h3 id="generation-2-ltx-2-october-2025">Generation 2: LTX-2 (October 2025)</h3>
-<p>LTX-2 is architecturally distinct from LTXV 0.9.x. The paper (&ldquo;LTX-2: Efficient Joint Audio-Visual Foundation Model,&rdquo; arXiv:2601.03233, 29 authors) describes an <strong>asymmetric dual-stream transformer with bidirectional cross-attention</strong>: a 14B-parameter video stream and a 5B-parameter audio stream that attend to each other during generation.</p>
+<p>LTX-2 is architecturally distinct from LTXV 0.9.x. The paper (<a href="https://arxiv.org/abs/2601.03233"><em>&ldquo;LTX-2: Efficient Joint Audio-Visual Foundation Model,&quot;</em> arXiv:2601.03233</a>, 29 authors) describes an <strong>asymmetric dual-stream transformer with bidirectional cross-attention</strong>: a 14B-parameter video stream and a 5B-parameter audio stream that attend to each other during generation.</p>
 <p><strong>This made LTX-2 the first open-weight video model to natively generate synchronized audio.</strong> The audio is not post-processed or added from a separate pipeline — it is generated jointly with the video, conditioned on the same text prompt. Speech, background sounds, and foley are all within scope.</p>
 <p>The claimed efficiency: &ldquo;up to 50% lower compute cost than competing models&rdquo; with &ldquo;state-of-the-art audiovisual quality and prompt adherence among open-source systems&rdquo; and results &ldquo;comparable to proprietary models at a fraction of computational cost.&rdquo; These are Lightricks&rsquo; claims; independent benchmark verification was not accessible at review time.</p>
 <p>Key specs:</p>
@@ -169,14 +159,14 @@
 <p>LTX Video is available through multiple access paths:</p>
 <p><strong>Self-hosted:</strong></p>
 <ul>
-<li>HuggingFace: 38 model checkpoints at the Lightricks organization page, including base models, FP8 quantized variants, IC-LoRA adapters, and upscalers</li>
-<li>GitHub: <a href="https://github.com/Lightricks/LTX-Video">Lightricks/LTX-Video</a> — 10,200 stars, 1,000 forks</li>
+<li><a href="https://huggingface.co/Lightricks">HuggingFace: Lightricks organization</a> — 38+ model checkpoints, including base models, FP8 quantized variants, IC-LoRA adapters, and upscalers</li>
+<li>GitHub: <a href="https://github.com/Lightricks/LTX-Video">Lightricks/LTX-Video</a> — 10,200+ stars, 1,000+ forks</li>
 <li>Requires Python 3.12+, CUDA 12.7+, PyTorch 2.7+ for LTX-2.3</li>
 <li>VRAM: 8GB estimated for 2B distilled; 24GB+ recommended for 13B distilled; 32GB+ for 13B dev workflows</li>
 </ul>
 <p><strong>ComfyUI:</strong></p>
 <ul>
-<li><a href="https://github.com/Lightricks/ComfyUI-LTXVideo">Lightricks/ComfyUI-LTXVideo</a> — 3,600 stars, 392 forks</li>
+<li><a href="https://github.com/Lightricks/ComfyUI-LTXVideo">Lightricks/ComfyUI-LTXVideo</a> — 3,600+ stars, 390+ forks</li>
 <li>Available via ComfyUI Manager</li>
 <li>Supports all model variants, IC-LoRA adapters, HDR workflows, tiled VAE, two-stage upscaling pipelines</li>
 <li>Active maintenance with dedicated workflow examples</li>
@@ -298,7 +288,7 @@
 <h2 id="assessment">Assessment</h2>
 <p>LTX Video is the most technically ambitious open-weight video model currently available. The 1:192 VAE compression that enabled real-time generation in 2024, the dual-stream audio-video transformer in LTX-2, and the IC-LoRA control system represent genuine architectural contributions rather than scale-only improvements. The 1.73M monthly HuggingFace downloads and 10,200+ GitHub stars indicate real developer adoption.</p>
 <p>The primary limitation is that &ldquo;best open-weight model&rdquo; is a competitive position that shifts. Wan2.1 and HunyuanVideo are competitive on visual quality for video-only use cases. What LTX Video has that they don&rsquo;t is audio — and that gap may close as other labs release audio-capable open-weight models.</p>
-<p>The business model is coherent: open weights build developer community and trust, which funnels into LTX Studio subscriptions. Lightricks&rsquo; 730M download base and $250M ARR suggest the company is executing well, and the $400M Series E gives runway to keep the model family competitive.</p>
+<p>The business model is coherent: open weights build developer community and trust, which funnels into LTX Studio subscriptions. Lightricks has demonstrated consistent growth across its app portfolio and multiple funding rounds, positioning it to keep the model family competitive.</p>
 <p><strong>Rating: 4/5.</strong> The audio-video architecture is genuinely differentiated. The ComfyUI ecosystem is mature. The distilled variants make real-time generation accessible on consumer hardware. Deductions for the custom license (not OSI), visual quality that trails Wan2.1/HunyuanVideo on raw benchmarks, audio limited to 10-second clips, and lack of an official MCP server for AI agent integration.</p>
 <hr>
 <p><em>ChatForest reviews AI tools based on publicly available research. We do not conduct hands-on testing. This review reflects information available as of May 2026.</em></p>

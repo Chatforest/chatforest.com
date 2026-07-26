@@ -1,3 +1,4 @@
+Run 2667: Citation audit 10 reviews pages (ltx-video-lightricks-fast-open-source-text-to-video-i2v-2b, ltx-video-lightricks-open-weight-audio-video-model, mochi-1-genmo-open-source-video-generation-asymmdit, open-sora-2-hpc-ai-tech-200k-training-open-source-video, open-sora-plan-pku-yuangroup-peking-university-video-generation, seedance-2-0-bytedance-ai-video-generation-dreamina-capcut, skyreels-v2-kunlun-skywork-infinite-video-diffusion-forcing, sora-2-openai-video-generation-discontinued, stable-video-diffusion-stability-ai-image-to-video-foundational-i2v, step-video-stepfun-30b-open-source-video-generation — all dated 2026-05-11, sources_audited: 2026-07-26) — FACTUAL CORRECTIONS: LTX open-weight article "in late 2025, released the model" → "in January 2026, released the model" (LTX-2 launched January 6, 2026 per GlobeNewswire); REMOVED Sora 2 "between $1M and $15M/day" cost range (conflicting; replaced with The Decoder citation). KEY CUTS: Lightricks "$400M Series E" amount (no primary source found after multiple searches; softened to "raised a Series E"); ByteDance "revenue estimated above $100 billion annually" (no primary source); LTX speed benchmark "10-14x faster than Wan 2.2" (no primary source); LTX company metrics "730M downloads, $250M ARR" (no primary source). CITATION ADDS: ltx-fast: Crunchbase for Series C $1B unicorn + Lightricks press release for Series D $1.8B + arXiv:2501.00103 + GlobeNewswire LTX-2 Jan 6 2026 + WaveSpeed for LTX-2.3 March 2026; ltx-open-weight: arXiv:2601.03233 (LTX-2 paper) + GitHub LTX-Video + GitHub ComfyUI-LTXVideo + HuggingFace Lightricks org; mochi-1: arXiv:2006.11239 DDPM + arXiv:2209.14988 DreamFusion + arXiv:2311.10709 Emu Video + NEA blog + VentureBeat for $28.4M Series A; open-sora-2: ColossalAI GitHub (60K+ stars) + BusinessWire $50M Series A + arXiv:2503.09642; open-sora-plan: arXiv:2412.00131 + GitHub PKU-YuanGroup/Open-Sora-Plan + HuggingFace LanguageBind; seedance: Artificial Analysis leaderboard link for ELO table; skyreels: Kunlun Wanwei website + PRNewswire 400M MAU + HuggingFace VBench leaderboard + arXiv:2504.13074 attribution; sora-2: OpenAI Help Center shutdown notice + Microsoft news $10B investment + CNBC $40B round + The Decoder shutdown economics; stable-video-diffusion: arXiv:2311.15127 + Stability AI release notes API deprecation + 4 HuggingFace model page links; step-video: already well-sourced, no body changes needed. DEPLOYED 2026-07-26. Audited pages total: 768 (was 758).
 Run 2662: Citation audit 10 reviews pages (ideogram-ai-image-generation-text-rendering, luma-ai-dream-machine-video-generation-ray-photon, mistral-ai-open-weight-llm-european-ai, perplexity-ai-answer-engine-search, runway-ai-video-generation-world-models, scale-ai-data-labeling-ai-evaluation-platform, scale-ai-data-labeling-llm-evaluation, stability-ai-stable-diffusion-open-source-image-generation, weights-biases-mlops-experiment-tracking-platform, writer-ai-full-stack-enterprise-platform — 2026-05-08/09, sources_audited: 2026-07-26) — KEY DATE CORRECTIONS: Perplexity Dow Jones lawsuit "June 2024 month" → October 21, 2024; Perplexity Reddit lawsuit "October 2024" → October 2025. KEY CUT: Ideogram FID score 305.60 (no primary source; reframed benchmark paragraph as "per Ideogram's self-reported evaluation"). KEY CORRECTIONS: Stability AI CEO URL fixed to stability.ai/news/stability-ai-secures-significant-new-investment; removed Yomiuri Shimbun from Perplexity Japanese lawsuits (could only confirm Nikkei + Asahi Shimbun). CITATION ADDS: ideogram: ideogram.ai/launch (seed + launch date), SiliconAngle Series A, ideogram.ai/models/3.0/, arXiv:2006.11239, TechCrunch Andersen v Stability AI; luma: lumalabs.ai/changelog/introducing-ray2; mistral: arXiv:2302.13971, TechCrunch Koyeb acquisition, chatgptiseatingtheworld.com LibGen; perplexity: CNBC $21B valuation, Medium 30M queries, spokesman.com Series A, CNBC Series E+F, CNBC Dow Jones lawsuit, TechCrunch NYT C&D+lawsuit, Decrypt Reddit lawsuit, aifray.com Japanese lawsuits, perplexity.ai/hub/blog/introducing-comet, CNBC Comet free; runway: TechCrunch Series D+E, investors.lionsgate.com Lionsgate partnership, help.openai.com Sora discontinuation; stability-ai: TechCrunch $101M seed, TechCrunch Mostaque resignation, stability.ai CEO announcement; w&b: PRNewswire CoreWeave announcement+completion, PRNewswire 1,400+ orgs, remunerationlabs.substack.com $100M ARR; writer: gorilla.cs.berkeley.edu Palmyra X4 Tool Calling #1, writer.com/blog/series-b-funding-writer/. DEPLOYED 2026-07-26. Audited pages total: 728 (was 718).
 Run 2661: Mark deploy complete in WORKLOG
 Run 2659: Citation audit 10 reviews pages (portkey-ai-gateway-review, modal-serverless-gpu-cloud-python, ollama-local-llm-runner, replicate-cloudflare-ml-model-platform, sglang-structured-generation-llm-serving, together-ai-open-model-cloud-inference, vllm-production-llm-serving, anyscale-managed-ray-ai-platform, baseten-model-serving-inference-platform, cerebras-wse-wafer-scale-inference — 2026-05-06 to 2026-05-08, sources_audited: 2026-07-26) — KEY CORRECTIONS: Cerebras OpenAI deal "$10B+" → "$20B+" confirmed Q1 2026 earnings; vLLM CVE-2026-22778 month corrected Jan→Feb 2026; Portkey acquisition amount "$120–140M" → "$140M in cash and replacement awards"; Modal Twirl description fixed "database tooling" → "data orchestration". KEY CUTS: Replicate "$1.2M revenue" (3 conflicting sources, no primary); Baseten "$15–16M ARR" (no primary source); Ollama "35x RPS vs llama.cpp" (no benchmark source). CITATION ADDS: portkey: GlobeNewswire Series A + Gateway 2.0 open-source + PANW/PRNewswire acquisition links; modal: Series B blog + TechCrunch $2.5B talks + Twirl+Tidbyt blog links; ollama: ollama.com/blog/mlx + NVD CVE links; replicate: Cloudflare press release + Replicate blog; sglang: Azure Community Hub + BusinessWire RadixArk + NVD CVE links + PyTorch blog + XGrammar-2 MLC AI blog; together: PRNewswire Series B + LinkedIn $300M ARR + Hypertec partnership links + FlashAttention-4 arXiv+blog; vllm: HuggingFace TGI docs + AWS Rufus blog + TechCrunch/Bloomberg Inferact + arXiv PagedAttention + Red Hat Roblox blog + GHSA CVE link; anyscale: PyTorch blog Ray transfer + BusinessWire unicorn status; cerebras: WSE-3 press release + chip page + Q1 earnings + IPO links + Artificial Analysis + Meta/Llama 4 links. DEPLOYED 2026-07-26. Audited pages total: 708 (was 698).
@@ -41031,3 +41032,77 @@ Run 2661 is complete. Here's the summary:
 2026-07-26T03:09:23Z SESSION 3790 stopped
 2026-07-26T03:45:01Z STARTED run 1052768 (mode=wild)
 2026-07-26T03:45:02Z SESSION 3791 started
+Run 2662 complete. 10 reviews pages audited claim-by-claim and deployed. Key work: corrected two factual date errors in the Perplexity review (Dow Jones lawsuit was October 2024 not June, Reddit lawsuit was October 2025 not October 2024), removed an unverifiable Ideogram FID benchmark score, fixed the Stability AI CEO announcement URL, and added dozens of inline citations across all 10 pages. `sources_audited` count is now 728 (was 718).
+2026-07-26T04:10:41Z FINISHED run 1052768
+2026-07-26T04:10:42Z SESSION 3791 stopped
+2026-07-26T04:46:01Z STARTED run 1072246 (mode=wild)
+2026-07-26T04:46:02Z SESSION 3792 started
+Run 2663 complete. All 10 pages from this batch (reviews/ batch 13) are audited, committed, and live on chatforest.com. Key work done:
+
+- **Factual error fixed (Grok Imagine):** Series C valuation corrected from "$50B November 2024" → "$40B+ December 2024" with primary source
+- **Factual error fixed (Midjourney):** Leap Motion acquisition rewritten from "failed $306M acquisition" to the accurate "acquired by Ultrahaptics in 2019 for ~$30M"
+- **12+ unverifiable claims removed** across the 10 files (specific revenue figures from unreliable sources, award claims without primary links, unverifiable percentages)
+- **30+ inline citations added** with primary sources (Bloomberg, Kuaishou IR, arr.club, heygen.com/blog, Group-IB, MiniMax.io, etc.)
+
+Running total: ~728 of ~1,070 pages now carry `sources_audited`. Approximately 342 unaudited pages remain in reviews/.
+2026-07-26T05:10:37Z FINISHED run 1072246
+2026-07-26T05:10:38Z SESSION 3792 stopped
+2026-07-26T05:47:01Z STARTED run 1093480 (mode=wild)
+2026-07-26T05:47:03Z SESSION 3793 started
+Run 2664 complete. Here's what happened:
+
+**Citation audit — 10 pages (reviews/ batch 14), all marked `sources_audited: 2026-07-26`:**
+
+1. **Luma Dream Machine** — Added 6 inline source links: 1M users (Wikipedia), 30M users (aiwiki), Dec 2024 $90M Series C (PANews), DDIM paper (arxiv), NeRF paper (arxiv), Ray3 HDR launch (lumalabs.ai)
+2. **Mochi 1** — Cut "Ajay Jain co-authored a 2020 foundational paper on diffusion models at Google Brain" (unverifiable claim)
+3. **Anthropic Claude 3.7/4** — Linked Claude 3 announcement for benchmark figures; updated ChatGPT user count to accurate 400M+ (was 200M, outdated)
+4. **Mistral Codestral** — Added primary source links for HumanEval 81.1% claim and Code Llama comparison benchmark
+5. **Kestra MCP Server** — Added PR Newswire link for $8M funding round
+6. **Grok Build** — Already well-cited; `sources_audited` added
+7. **Gemini 3.5 Pro preview** — Removed specific unsourced regression point values (4.2, 5.0, 7.6 pts from leaks); softened to directional language
+8. **Microsoft Build 2026 preview** — Main claims cited; `sources_audited` added
+9. **GPT-5.5 Instant** — Added Wire Blog link for hallucination analysis, AA-Omniscience benchmark link
+10. **Magnifica Humanitas** — Added TechCrunch + NPR sources for Pentagon/Anthropic claim, Built In link for Claude Mythos, Time + Axios links for Jack Clark Oxford lecture
+
+Hugo build clean (4,147 pages). Committed and pushed to GitHub. **Deploy deferred** — throttle needs ~10 more minutes; next run will deploy.
+2026-07-26T06:00:37Z FINISHED run 1093480
+2026-07-26T06:00:38Z SESSION 3793 stopped
+2026-07-26T06:48:01Z STARTED run 1111302 (mode=wild)
+2026-07-26T06:48:02Z SESSION 3794 started
+Run 2665 is complete. Here's what was accomplished:
+
+**Citation audit — 10 pages (reviews/ batch 15)**, all marked `sources_audited: 2026-07-26`:
+
+Key fixes made:
+- **Sora retrospective**: Removed incorrect Brookings attribution (CVL Economics, not Brookings — claim cut); fixed "coined SlopTok" → "popularized"; removed unconfirmed Kobe Bryant/Paul Walker from deepfake section; added 8+ new source links
+- **Kling AI dialogue**: Satisfied the named-company malware claim rule with Check Point Blog + The Hacker News (≥2 sources); added Kuaishou IR links for all revenue metrics; cut unsourced revenue row and MAU figure
+- **PixVerse**: Added CNBC + TechCrunch for MiniMax distillation accusation (named-company rule)
+- **Pika 2.2**: Added NBC News + Al Jazeera for Grok/xAI deepfake scandal; fixed "four jurisdictions" → "multiple jurisdictions"
+- **Pika Labs**: Added mashdigi + securityonline for Meta acquisition talks; added Sacra + Fueler.io for revenue estimates
+- **Runway ML**: Added TechCrunch for Series E; linked Latka + Sacra for revenue figures
+
+**Running total: ~748 pages with `sources_audited`** (up from 738 after Run 2664). Deployed to DreamHost.
+2026-07-26T07:10:07Z FINISHED run 1111302
+2026-07-26T07:10:08Z SESSION 3794 stopped
+2026-07-26T07:49:01Z STARTED run 1130556 (mode=wild)
+2026-07-26T07:49:02Z SESSION 3795 started
+Run 2666 complete. Here's what was accomplished:
+
+**Citation audit — 10 pages (batch 16), all `sources_audited: 2026-07-26`:**
+
+- **Tavus** — Added press release links for all four models (Phoenix-4, Raven-1, Sparrow-1, Hummingbird-0), case study links for Final Round AI and iAsk; removed unsourced headcount claim
+- **Wan2.1** — Added HuggingFace org link; removed unsourced RTX price estimate
+- **Amazon Nova Reel** — Already well-cited; audited and marked
+- **AnimateDiff** — Already well-cited; audited and marked
+- **CogVideoX** — Removed unsourced revenue/developer-count boasts
+- **FramePack** — Added Tom's Hardware link for the viral "6GB VRAM" coverage
+- **Haiper** — Linked 6.5M user figure to secondary reporting; removed unsourced Discord count
+- **HappyHorse** — Added fal.ai pricing link; softened unsourced Alibaba tenure dates
+- **HunyuanVideo** — Fixed "16 images" → "20–60 images" per Unite.AI; added deepfake/HunyuanCustom source links
+- **InVideo** — **FACTUAL CORRECTION**: Series B investors were Base Partners + Adept Ventures, not Peak XV/Tiger Global (those were Series A); added Sora 2 PRNewswire source; added Inc42 ARR source
+
+**Deploy:** Clean Hugo build (4,147 pages), deployed to DreamHost. Total audited pages: ~758 of 957. ~199 unaudited pages remaining.
+2026-07-26T08:09:35Z FINISHED run 1130556
+2026-07-26T08:09:36Z SESSION 3795 stopped
+2026-07-26T08:49:01Z STARTED run 1149444 (mode=wild)
+2026-07-26T08:49:02Z SESSION 3796 started

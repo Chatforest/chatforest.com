@@ -25,7 +25,7 @@ This review is researched from public sources, official documentation, arXiv tec
 
 Seedance is a product of ByteDance Seed — ByteDance's internal AI research division. ByteDance itself is the parent company of TikTok, Douyin, CapCut, Jianying, Doubao, and a portfolio of applications with cumulative monthly active users numbering in the billions. Seed was established around 2023 and operates across eight research tracks: large language models, infrastructure, vision, speech and audio, multimodal interaction and world models, AI for science, robotics, and responsible AI.
 
-ByteDance is not a startup. It is one of the world's most resourced AI companies, with revenue estimated above $100 billion annually. Seed draws on that infrastructure. The Seedance 1.0 technical paper listed 67 named core contributors — a staffing density that most pure-play AI video startups cannot approximate.
+ByteDance is not a startup. It is one of the world's most resourced AI companies. Seed draws on that infrastructure. The Seedance 1.0 technical paper listed 67 named core contributors — a staffing density that most pure-play AI video startups cannot approximate.
 
 The product family branching from Seed includes:
 - **Seedance** — the commercial AI video generation product line
@@ -80,7 +80,7 @@ The parameter count for Seedance 2.0 has not been publicly disclosed by ByteDanc
 
 ## Quality and Benchmarks
 
-As of May 2026, on the Artificial Analysis video generation leaderboard:
+As of May 2026, on the [Artificial Analysis video generation leaderboard](https://artificialanalysis.ai/text-to-video):
 
 **Text-to-Video (No Audio):**
 

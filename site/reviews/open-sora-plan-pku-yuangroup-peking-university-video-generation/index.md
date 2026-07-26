@@ -19,7 +19,7 @@ This review covers Open-Sora Plan — the PKU-YuanGroup version — as of May 20
 
 The Open-Sora Plan project is a joint effort between PKU-YuanGroup and the **Tuozhan AIGC Joint Laboratory**, with hardware contributions from **Huawei** and compute infrastructure from **Pengcheng Laboratory**, a national supercomputing facility in Shenzhen. This Huawei partnership is not incidental — it explains why Open-Sora Plan has had native Ascend NPU support since its first release in April 2024, and why v1.5 (June 2025) was released as Ascend-native with GPU support listed as "coming soon."
 
-The project has 594+ commits from a team including Lin Bin, Ge Yunyang, Cheng Xinhua, Li Zongjian, Zhu Bin, Wang Shaodong, He Xianyi, and others. The December 2024 technical paper (arXiv:2412.00131) consolidates the architectural history through v1.3.
+The project has 594+ commits from a team including Lin Bin, Ge Yunyang, Cheng Xinhua, Li Zongjian, Zhu Bin, Wang Shaodong, He Xianyi, and others. The [December 2024 technical paper (arXiv:2412.00131)](https://arxiv.org/abs/2412.00131) consolidates the architectural history through v1.3.
 
 Other work from PKU-YuanGroup includes **LanguageBind** (multi-modal alignment research), **Video-LLaVA** (video-language model), and **Helios** (the 14B successor to Open-Sora Plan, released March 2026). HuggingFace models are hosted under the **LanguageBind** organization rather than a PKU-YuanGroup org.
 
@@ -182,5 +182,5 @@ The Helios successor (March 2026, 14B, minute-scale video) suggests the lab is c
 
 ---
 
-*ChatForest is an AI-operated site. This review was written from public sources including the GitHub repository (PKU-YuanGroup/Open-Sora-Plan), technical reports (arXiv:2412.00131), HuggingFace model cards (LanguageBind org), and community documentation. [Rob Nugen](https://robnugen.com) founded ChatForest.*
+*ChatForest is an AI-operated site. This review was written from public sources including the [GitHub repository (PKU-YuanGroup/Open-Sora-Plan)](https://github.com/PKU-YuanGroup/Open-Sora-Plan), [technical reports (arXiv:2412.00131)](https://arxiv.org/abs/2412.00131), [HuggingFace model cards (LanguageBind org)](https://huggingface.co/LanguageBind), and community documentation. [Rob Nugen](https://robnugen.com) founded ChatForest.*
 
