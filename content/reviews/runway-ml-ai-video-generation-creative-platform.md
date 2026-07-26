@@ -1,6 +1,7 @@
 ---
 title: "Runway Review — The $5.3B Creative AI Video Platform Building World Models for Hollywood and Robotics"
 date: 2026-05-10
+sources_audited: 2026-07-26
 description: "Three NYU researchers founded Runway in 2018 as an ML model marketplace for artists. By 2026 it had raised $315M at a $5.3B valuation, launched Gen-4.5 to top video benchmarks, partnered with Getty Images, Lionsgate, and Adobe, and introduced GWM-1 — a general world model for simulating reality. We review the full model stack, the official MCP server, the creative vs. enterprise divide, and what makes Runway's trajectory unlike anything else in AI video."
 tags: ["video-ai", "ai-video-generation", "creative-ai", "text-to-video", "image-to-video", "world-model", "gen-4", "runway-ml", "film-production", "mcp-server", "enterprise-video", "lionsgate", "getty-images", "adobe"]
 rating: 4
@@ -16,7 +17,7 @@ One of those tools was a rotoscoping model. Rotoscoping — the frame-by-frame i
 
 That observation — that creative professionals have specific, recurring pain points, and that AI can address those pain points even before it can compete on general quality — became the operating thesis for **Runway**. The three founders refocused the company on video production tooling, built deeper into the space, and spent the next six years compounding that initial insight into one of the most technically ambitious AI companies in the world.
 
-By February 2026, Runway had raised a **$315 million Series E** at a **$5.3 billion valuation**, led by General Atlantic, with co-investors including NVIDIA, Adobe Ventures, AllianceBernstein, AMD Ventures, Fidelity, Mirae Asset, Emphatic Capital, Felicis, and Premji Invest. It had built and shipped **Gen-4.5**, a video generation model that sits at the top of competitive video benchmarks against Veo 3.1 and Kling 3.0. It had launched **GWM-1**, a real-time interactive general world model for simulating environments, robotics, and avatars. And it had partnered with **Getty Images**, **Lionsgate**, and **Adobe** — converting major potential adversaries into strategic allies.
+By February 2026, Runway had [raised a **$315 million Series E**](https://techcrunch.com/2026/02/10/ai-video-startup-runway-raises-315m-at-5-3b-valuation-eyes-more-capable-world-models/) at a **$5.3 billion valuation**, led by General Atlantic, with co-investors including NVIDIA, Adobe Ventures, AllianceBernstein, AMD Ventures, Fidelity, Mirae Asset, Emphatic Capital, Felicis, and Premji Invest. It had built and shipped **Gen-4.5**, a video generation model that sits at the top of competitive video benchmarks against Veo 3.1 and Kling 3.0. It had launched **GWM-1**, a real-time interactive general world model for simulating environments, robotics, and avatars. And it had partnered with **Getty Images**, **Lionsgate**, and **Adobe** — converting major potential adversaries into strategic allies.
 
 This is a review of what Runway is, what it has built, how it compares to the field, and where it still falls short. It is written from public sources, research, and available documentation; we do not test AI video tools hands-on.
 
@@ -164,7 +165,7 @@ Runway's financial trajectory over 2024-2025 reflects the broader acceleration i
 - **Enterprise revenue**: ~25% of total revenue; enterprise clients pay $3,000-$30,000/year
 - **YoY growth**: 200%+ year-over-year growth cited at Series E
 
-These figures are third-party estimates from sources including Latka, Sacra, and investment research; Runway does not publicly disclose its financials. The trajectory is directionally consistent across sources and matches the growth pattern of the Series E valuation jump from prior fundraises.
+These figures are third-party estimates from sources including [Latka](https://getlatka.com/companies/runwayml.com) and [Sacra](https://sacra.com/c/runway/); Runway does not publicly disclose its financials. Note that estimates vary across sources — Sacra's model differs from Latka's in methodology and produces different figures. The trajectory is directionally consistent across sources and matches the growth pattern of the Series E valuation jump from prior fundraises.
 
 ---
 

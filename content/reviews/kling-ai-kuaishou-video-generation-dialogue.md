@@ -1,6 +1,7 @@
 ---
 title: "Kling AI Review — Kuaishou's $300M ARR AI Video Powerhouse With Best-in-Class Dialogue and 4K Output"
 date: 2026-05-10
+sources_audited: 2026-07-26
 description: "Kuaishou's Kling AI launched in June 2024 and became the highest-revenue AI video platform by end of 2025 — $240M ARR in 19 months. Kling 3.0 Omni (February 2026) delivers native audio in 6+ languages, phoneme-level lip-sync for multi-character dialogue, 4K output, and 15-second clips. We review the full version history, pricing, the unofficial MCP ecosystem, censorship concerns, and how Kling stacks up against Runway, Veo, Seedance, and Pika."
 tags: ["video-ai", "ai-video-generation", "kling-ai", "kuaishou", "text-to-video", "image-to-video", "native-audio", "lip-sync", "4k-video", "dialogue-ai", "chinese-ai", "creative-ai", "enterprise-video"]
 rating: 4
@@ -14,7 +15,7 @@ Then, on June 6, 2024, a Beijing-based company called **Kuaishou Technology** la
 
 Within 10 months of launch, Kling had reached **$100 million in annualized revenue run rate**. By December 2025 — 19 months in — that figure had reached **$240 million**. By early 2026, it had [surpassed **$300 million**](https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300). No AI video platform had commercialized this fast.
 
-The February 2026 release of **Kling 3.0 Omni** raised the stakes further: native audio synthesis in six languages with regional accents, phoneme-level lip-sync for multi-character dialogue, 4K output, up to 15-second clips, and Chain-of-Thought reasoning for scene coherence. Independent benchmarks briefly ranked it #1 among all AI video models by ELO score.
+The [February 2026 release of **Kling 3.0 Omni**](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/) raised the stakes further: native audio synthesis in six languages with regional accents, phoneme-level lip-sync for multi-character dialogue, 4K output, up to 15-second clips, and Chain-of-Thought reasoning for scene coherence. Independent benchmarks briefly ranked it #1 among all AI video models by ELO score.
 
 Kling is not a startup. It is a product line inside one of China's largest technology companies, backed by billions in infrastructure spending, serving 60 million creators worldwide, and producing the best character-driven dialogue of any AI video model currently available. It also comes with real concerns: political censorship built into the generation pipeline, data sovereignty questions for enterprise users, and no official MCP server despite competitors shipping them.
 
@@ -121,14 +122,12 @@ Kling's commercial metrics are the most impressive of any standalone AI video pl
 
 | Milestone | Date | Value |
 |---|---|---|
-| ARR $100M | April 2025 | 10 months after launch |
-| ARR $240M | December 2025 | 19 months after launch |
-| 2025 total revenue | Full year 2025 | $150M (1.04B yuan) |
-| ARR $300M+ | Early 2026 | Surpassed $300M ARR |
-| Monthly users | December 2025 | 12 million MAU |
-| Total creators served | 2026 | 60 million+ worldwide |
-| Videos generated | 2026 | 600 million+ |
-| Enterprise users | 2026 | 30,000+ |
+| [ARR $100M](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-celebrates-first-anniversary-achieves-annualized/) | March 2025 | 10 months after launch |
+| [ARR $240M](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-annualized-revenue-run-rate-hits-usd240-million/) | December 2025 | 19 months after launch |
+| [ARR $300M+](https://www.scmp.com/tech/article/3355027/kuaishou-beats-estimates-kling-ai-video-generators-revenue-jumps-300) | Early 2026 | Surpassed $300M ARR |
+| [Total creators served](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/) | 2026 | 60 million+ worldwide |
+| [Videos generated](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/) | 2026 | 600 million+ |
+| [Enterprise users](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be/) | 2026 | 30,000+ |
 
 For context: Runway's 2024 revenue was ~$121 million, at a $5.3 billion valuation. Kling reached $150 million in 2025 with substantially less venture capital and a fraction of the press coverage. The revenue-to-valuation multiple for Kuaishou as a whole is considerably more conservative than Western AI video pure-plays — Kuaishou is a profitable technology company, not a pre-revenue AI startup.
 
@@ -220,7 +219,7 @@ Kling AI censors a specific class of content: topics deemed politically sensitiv
 
 ...produce nonspecific error messages rather than generated output. This is not a content safety filter in the ordinary sense — it is a compliance mechanism reflecting Chinese regulatory requirements for generative AI services operating in China.
 
-TechCrunch reported on this in July 2024, shortly after launch. Kuaishou acknowledged the filters without offering detail.
+This was [documented in July 2024](https://dig.watch/updates/chinas-new-video-generating-ai-faces-limitations-due-to-political-censorship) shortly after launch. Kuaishou acknowledged the filters without offering detail.
 
 The practical implications vary by use case. For the vast majority of creative and commercial uses — product marketing, entertainment, social media, character-driven stories — the censorship filters are irrelevant. For journalism, political commentary, documentary production, or historical content involving China, the filters are a real limitation and not one that can be disabled by the user.
 
@@ -234,7 +233,7 @@ This concern is less pressing for individual creators generating short social me
 
 ### Malware Campaign Targeting the Brand
 
-In early 2025, **Check Point Research** identified a coordinated malware campaign exploiting Kling AI's reputation. Threat actors created fake Facebook pages and advertisements impersonating klingai.com, distributing files that executed a **Remote Access Trojan (RAT)** on victims' machines. The attack exploited the growing search volume around Kling AI — users searching for the platform found convincing impersonation sites.
+In early 2025, [**Check Point Research** identified a coordinated malware campaign](https://blog.checkpoint.com/security/exploiting-the-ai-boom-how-threat-actors-are-targeting-trust-in-generative-platforms-like-kling-ai/) exploiting Kling AI's reputation. Threat actors created fake Facebook pages and advertisements impersonating klingai.com, [distributing files that executed a **Remote Access Trojan (RAT)** on victims' machines](https://thehackernews.com/2025/05/fake-kling-ai-facebook-ads-deliver-rat.html). The attack exploited the growing search volume around Kling AI — users searching for the platform found convincing impersonation sites.
 
 This is not a flaw in Kling AI's product. It is an indication of how valuable the brand had become as a social engineering target. The incident highlights the need for users to access Kling only via klingai.com directly, rather than via advertisements or third-party links from unverified sources.
 

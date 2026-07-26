@@ -1,6 +1,7 @@
 ---
 title: "Synthesia Review — The Enterprise AI Video Platform That Hit $100M ARR, Rejected Adobe's $3B Offer, and Now Trains 70% of the FTSE 100"
 date: 2026-05-10
+sources_audited: 2026-07-26
 description: "Four researchers from Cambridge, UCL, TU Munich, and Stanford founded Synthesia in 2017 as a research project in neural video synthesis. By October 2025 it had crossed $100M ARR, raised $200M at a $4B valuation, achieved ISO 42001 as the world's first AI video company, and deployed its platform inside 90%+ of Fortune 100 companies. We review the enterprise governance features, the SCORM export that HeyGen doesn't offer, the L&D integrations, and what it means that Synthesia rejected a $3 billion acquisition."
 tags: ["video-ai", "ai-avatar", "enterprise-video", "l&d", "e-learning", "synthesia", "heygen-alternative", "mcp-server", "scorm", "corporate-training", "ai-tools-review"]
 rating: 4

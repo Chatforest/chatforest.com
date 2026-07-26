@@ -1,6 +1,7 @@
 ---
 title: "Pika 2.2 Review — Pikaframes, Creator-First Toolkit, and the Case for Social Video AI"
 date: 2026-05-10
+sources_audited: 2026-07-26
 description: "Pika 2.2 (February 2025) introduced Pikaframes — keyframe interpolation from start to end image — plus a Timeline Editor and 10-second clips at 1080p. Founded by Stanford dropouts Demi Guo and Chenlin Meng, $135M raised, Adobe Premiere Pro integration, ElevenLabs lip sync. No official MCP server. fal.ai-exclusive API. Artificial Analysis ELO ~950 for 2.2, rising to ~1,088 with Pika 2.5. Rating 3.5/5."
 tags: ["video-ai", "ai-video-generation", "pika", "pika-labs", "pika-2-2", "pikaframes", "pikaffects", "text-to-video", "image-to-video", "social-creator", "adobe-premiere", "elevenlabs", "keyframe-interpolation", "creative-ai", "multimodal-ai"]
 rating: 3
@@ -275,7 +276,7 @@ The broader AI video generation category carries inherent legal risk around trai
 
 Pika's capabilities — especially Pikaswaps (face and object modification), Pikadditions (inserting people into video), and Scene Ingredients (using custom reference images) — have clear deepfake misuse potential. Pika's Acceptable Use Policy prohibits non-consensual intimate imagery and deceptive impersonation, and the platform requires agreement to these terms. The enforcement mechanisms are not publicly documented.
 
-The contrast with the **Grok Imagine Spicy Mode deepfake scandal** — which involved xAI explicitly enabling NSFW generation that resulted in non-consensual sexual imagery of real people and triggered regulatory investigations in four jurisdictions — is worth noting. Pika has not had an equivalent incident. The risk class is the same; the execution history differs.
+The contrast with the [**Grok Imagine Spicy Mode deepfake scandal**](https://www.nbcnews.com/tech/tech-news/musks-ai-chatbot-grok-xai-making-sexual-deepfakes-imagine-rcna265855) — which involved xAI explicitly enabling NSFW generation that resulted in non-consensual sexual imagery of real people and [triggered regulatory investigations in multiple jurisdictions](https://www.aljazeera.com/amp/news/2026/1/15/musks-grok-to-bar-users-from-generating-sexual-images-of-real-people) — is worth noting. Pika has not had an equivalent incident. The risk class is the same; the execution history differs.
 
 ### User Base and Scale of Impact
 

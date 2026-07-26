@@ -1,6 +1,7 @@
 ---
 title: "Luma AI Review — The $4B Video-to-World-Model Company Behind Dream Machine, Ray3, and Luma Agents"
 date: 2026-05-10
+sources_audited: 2026-07-26
 description: "Amit Jain left Apple's Vision Pro team in 2021 to build AI that understands physical reality. By 2026, Luma AI had raised $1.06B at a $4B valuation, launched Ray3 — the first reasoning video model — and shipped Luma Agents on a Unified Intelligence architecture. We review the full product stack, the community MCP ecosystem, the Hollywood partnerships, and what separates Luma from the crowded video generation field."
 tags: ["video-ai", "ai-video-generation", "creative-ai", "text-to-video", "dream-machine", "luma-ai", "ray3", "world-model", "luma-agents", "3d-generation", "film-production", "mcp-server", "enterprise-video", "adobe", "ai-agents"]
 rating: 4

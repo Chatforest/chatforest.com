@@ -1,6 +1,7 @@
 ---
 title: "PixVerse Review — The $40M ARR Unicorn With an Official MCP Server and the Most Generous Free Tier in AI Video"
 date: 2026-05-10
+sources_audited: 2026-07-26
 description: "PixVerse V6 and C1 launched in March–April 2026, bringing 15-second 1080p single-pass generation with native audio, multi-shot storyboarding, and full lens controls. The platform has 100M+ users, 16M monthly actives, $40M ARR, and unicorn valuation after a $300M Series C. Notably for AI workflows: PixVerse has an official MCP server — one of the few AI video platforms that does. Rating: 4/5."
 tags: ["video-ai", "text-to-video", "image-to-video", "generative-video", "pixverse", "aisphere", "ai-video-generation", "mcp-server", "character-consistency", "real-time-video", "diffusion-transformer", "ai-creative-tools", "pixverse-v6", "r1-world-model"]
 rating: 4
@@ -267,7 +268,7 @@ Unlike several AI video and image competitors — Stability AI, Adobe (Books3 cl
 
 ### No Distillation Controversies
 
-Unlike Hailuo/MiniMax (accused of distilling Anthropic models) or certain other Chinese AI products, no equivalent distillation or IP appropriation controversies were found for PixVerse.
+Unlike Hailuo/MiniMax ([accused by Anthropic of distilling Claude at scale](https://www.cnbc.com/2026/02/24/anthropic-openai-china-firms-distillation-deepseek.html) in a [February 2026 allegation](https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/)) or certain other Chinese AI products, no equivalent distillation or IP appropriation controversies were found for PixVerse.
 
 ---
 
