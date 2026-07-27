@@ -9,6 +9,7 @@ tags: ["mcp", "ai-agents", "open-source", "anthropic", "openai", "linux-foundati
 categories: ["reviews"]
 rating: 5
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** [Agentic AI Foundation (AAIF)](https://aaif.io/). [Founded December 9, 2025](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation). Under the Linux Foundation. Governs [MCP](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/), AGENTS.md, goose. 170 member organizations in under 4 months. 110M+ monthly MCP SDK downloads. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
@@ -29,7 +30,7 @@ The AAIF launched with three founding project contributions:
 
 **Model Context Protocol (MCP)** — Originally developed by Anthropic and released November 2024, MCP is the universal standard for connecting AI models to external tools and data sources. By December 2025, it had achieved first-class client support across Claude, ChatGPT, Cursor, Gemini, Microsoft Copilot, VS Code, and more. Anthropic's decision to donate it to the Linux Foundation — rather than keep it under unilateral control — signals a deliberate choice to treat it as infrastructure rather than competitive advantage. The analogy is HTTP: no company owns it, which is why the web works.
 
-**AGENTS.md** — OpenAI's contribution. Released August 2025, AGENTS.md is a simple convention: a file at the root of a code repository that tells AI coding agents project-specific context — how the repo is structured, what coding conventions to follow, what tools are available, what tests to run. By December 2025, 60,000+ open-source projects had adopted it. Coding agents from Cursor, Codex, Devin, Factory, Gemini CLI, GitHub Copilot, Jules, and VS Code all read AGENTS.md files. It is trivially simple and nearly universally adopted — which is the point.
+**AGENTS.md** — OpenAI's contribution. Released August 2025, AGENTS.md is a simple convention: a file at the root of a code repository that tells AI coding agents project-specific context — how the repo is structured, what coding conventions to follow, what tools are available, what tests to run. By December 2025, [60,000+ open-source projects had adopted it](https://openai.com/index/agentic-ai-foundation/). Coding agents from Cursor, Codex, Devin, Factory, Gemini CLI, GitHub Copilot, Jules, and VS Code all read AGENTS.md files. It is trivially simple and nearly universally adopted — which is the point.
 
 **goose** — Block's open-source local-first AI agent framework. Less known than MCP or AGENTS.md, but deliberately opinionated: goose runs locally, integrates any LLM, and treats MCP as its primary integration layer. It represents the AAIF's commitment to developer-controlled, privacy-respecting agent execution — a counterpoint to cloud-only agent services.
 
@@ -71,11 +72,11 @@ The trajectory is unambiguous. MCP is not an Anthropic product that others adopt
 
 ## MCP Dev Summit North America 2026
 
-On April 2–3, 2026, the AAIF held the MCP Dev Summit North America at the New York Marriott Marquis. 1,200 developers attended in person. Seventeen keynotes. 95+ technical sessions. This is what a protocol becoming infrastructure looks like — it graduates from blog posts to conference tracks to conference keynoters.
+On April 2–3, 2026, [the AAIF held the MCP Dev Summit North America](https://aaif.io/blog/mcp-is-now-enterprise-infrastructure-everything-that-happened-at-mcp-dev-summit-north-america-2026/) at the New York Marriott Marquis. 1,200 developers attended in person. Seventeen keynotes. 95+ technical sessions. This is what a protocol becoming infrastructure looks like — it graduates from blog posts to conference tracks to conference keynoters.
 
 Key announcements from the summit:
 
-**New Executive Director.** Jim Zemlin (who had served as interim ED) stepped down. His replacement: **Mazin Gilbert** — PhD in neural networks, MBA from Wharton, five years building AI solutions at Google. The choice signals that the AAIF is entering its operational phase: less formation, more execution.
+**New Executive Director.** Jim Zemlin (who had served as interim ED) stepped down. His replacement: [**Mazin Gilbert**](https://aaif.io/blog/mcp-is-now-enterprise-infrastructure-everything-that-happened-at-mcp-dev-summit-north-america-2026/) — PhD in neural networks, MBA from Wharton, five years building AI solutions at Google. The choice signals that the AAIF is entering its operational phase: less formation, more execution.
 
 **Formal project lifecycle.** The Technical Steering Committee approved a three-stage project lifecycle policy — Growth, Impact, and Emeritus — modeled on CNCF's sandbox/incubating/graduated structure. This opens the door for projects beyond MCP, goose, and AGENTS.md to formally join the foundation.
 
@@ -93,11 +94,11 @@ Key announcements from the summit:
 
 At Open Source Summit North America on May 18, Microsoft made a set of announcements that effectively formalized its institutional commitment to the AAIF's agenda:
 
-**Azure Linux 4.0** — Public preview announced for Azure Virtual Machines. Azure Container Linux — an immutable, container-optimized OS — reached general availability. These are hardened Linux distributions purpose-built for cloud-native and AI workloads. The framing: the agent infrastructure stack runs on Linux, and Microsoft is investing in making that layer enterprise-ready.
+**Azure Linux 4.0** — [Public preview announced for Azure Virtual Machines](https://opensource.microsoft.com/blog/2026/05/18/from-open-source-to-agentic-systems-microsoft-at-open-source-summit-north-america-2026/). Azure Container Linux — an immutable, container-optimized OS — reached general availability. These are hardened Linux distributions purpose-built for cloud-native and AI workloads. The framing: the agent infrastructure stack runs on Linux, and Microsoft is investing in making that layer enterprise-ready.
 
 **Agent Governance Toolkit** — Microsoft released an open-source toolkit providing identity, policy, audit, and access control primitives for responsible enterprise agent deployment. This is the governance layer above MCP: not how agents connect to tools, but how enterprises control which agents can do what, and how they audit it.
 
-**OAGF specification donation to CNCF** — Microsoft committed to donating its Open Agent Governance Framework (OAGF) specification and reference implementation to the Cloud Native Computing Foundation by end of 2026. The goal: a multi-vendor governance standard that any enterprise can adopt, regardless of which AI platform they use.
+**OAGF specification** — Microsoft's Open Agent Governance Framework (OAGF) reference implementation entered beta on May 22, 2026, with a production-ready release planned for later in 2026. The goal: a multi-vendor governance standard that any enterprise can adopt, regardless of which AI platform they use.
 
 Microsoft's track record with open standards — TypeScript, VS Code, .NET — is long enough that these commitments carry weight. When Microsoft donates infrastructure to a foundation, it typically stays donated.
 
@@ -107,7 +108,7 @@ Microsoft's track record with open standards — TypeScript, VS Code, .NET — i
 
 The AAIF governs MCP (model-to-tool connectivity), but the agent interoperability stack has a second layer: **A2A — Agent-to-Agent Protocol**, originally developed by Google.
 
-A2A was formally donated to the Linux Foundation in June 2025 and has grown to 150+ participating organizations. Where MCP handles how a single agent connects to tools, A2A handles how agents coordinate with each other — orchestration, delegation, result-passing across agent boundaries.
+A2A was [formally donated to the Linux Foundation in June 2025](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents) and has grown to 150+ participating organizations. Where MCP handles how a single agent connects to tools, A2A handles how agents coordinate with each other — orchestration, delegation, result-passing across agent boundaries.
 
 The AAIF and A2A are complementary, not competing. By Q3 2026, a joint MCP/A2A interoperability specification is targeted, which would define how the two protocols interact at the boundary between tool integration and agent orchestration. That specification would complete the open infrastructure stack: A2A handles agent-to-agent coordination; MCP handles agent-to-tool integration; AGENTS.md handles agent-to-codebase context.
 

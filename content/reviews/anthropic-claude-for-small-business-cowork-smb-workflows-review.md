@@ -9,6 +9,7 @@ tags: ["anthropic", "claude", "small-business", "smb", "cowork", "quickbooks", "
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** Claude for Small Business. Launched May 13, 2026. Plugin for Claude Cowork. 15 agent workflows. 7 third-party connectors (QuickBooks, PayPal, HubSpot, Canva, Docusign, Google Workspace, Microsoft 365). No extra charge on paid Claude plans. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -71,9 +72,9 @@ The practical implication: if you already pay for Claude Pro, you get Claude for
 
 The PayPal partnership is the most strategically interesting part of the launch, and it goes beyond a software connector.
 
-Anthropic and PayPal co-developed a free **AI Fluency for Small Business** course covering a four-part framework they call the 4D model: Delegation (which tasks to hand to AI), Description (how to prompt effectively), Discernment (how to catch errors and hallucinations), and Deployment Safety (when and how to let agents act autonomously).
+Anthropic and PayPal co-developed a free [**AI Fluency for Small Business**](https://www.anthropic.com/news/claude-for-small-business) course covering a four-part framework they call the 4D model: Delegation (which tasks to hand to AI), Description (how to prompt effectively), Discernment (how to catch errors and hallucinations), and Deployment Safety (when and how to let agents act autonomously).
 
-The course is free and on-demand. Anthropic is also running a **10-city U.S. workshop tour** with PayPal, starting May 14 in Chicago with subsequent stops in Tulsa, Dallas, Baton Rouge, Salt Lake City, Baltimore, San Jose, Indianapolis, Birmingham, and a New Jersey location. Each stop is a free half-day workshop for up to 100 local small business owners. Every attendee gets one month of Claude Max.
+The course is free and on-demand. Anthropic is also running a [**10-city U.S. workshop tour**](https://www.anthropic.com/news/claude-for-small-business) with PayPal, starting May 14 in Chicago with subsequent stops in Tulsa, Dallas, Baton Rouge, Salt Lake City, Baltimore, San Jose, Indianapolis, Birmingham, and a New Jersey location. Each stop is a free half-day workshop for up to 100 local small business owners. Every attendee gets one month of Claude Max.
 
 The physical tour is unusual for an AI company. It suggests Anthropic understands something that most AI toolmakers miss: many of the businesses that stand to gain the most from agentic AI aren't reading TechCrunch. They need someone to show them, in person, that this works.
 
@@ -81,7 +82,7 @@ The physical tour is unusual for an AI company. It suggests Anthropic understand
 
 ## The Strategic Read
 
-Anthropic is making a distribution bet. Rather than building a small-business-specific product from scratch, they are inserting Claude into the existing operational stack — the tools that 30+ million U.S. small businesses already use, already pay for, and already open every morning.
+Anthropic is making a distribution bet. Rather than building a small-business-specific product from scratch, they are inserting Claude into the existing operational stack — the tools that U.S. small businesses already use, already pay for, and already open every morning.
 
 This mirrors what Microsoft did with Copilot for Microsoft 365, but at a lower entry price and with more granular, task-specific scaffolding. The QuickBooks and PayPal integrations are particularly pointed: those two products touch the financial nervous system of most U.S. small businesses. If Claude can read your QuickBooks data and your PayPal settlements, it has access to the full picture of what a business owes and is owed.
 

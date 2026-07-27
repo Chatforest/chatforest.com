@@ -9,6 +9,7 @@ tags: ["apple", "wwdc", "wwdc-2026", "siri", "ios-27", "macos-27", "apple-intell
 categories: ["reviews"]
 rating: 0
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 **Editorial note:** This is a preview article. Apple's WWDC 2026 keynote runs June 8, 2026 at 10 a.m. Pacific. Specific feature announcements are unconfirmed as of publication (May 23, 2026). Information comes from Apple's official event communications, Bloomberg reporting from Mark Gurman, MacRumors coverage, and pre-event developer community discussions. A post-keynote update will be published after June 8.
@@ -126,7 +127,7 @@ Apple's 2025 deal to route certain Siri requests to ChatGPT (and reportedly Anth
 
 ## Why This Matters for the AI Industry
 
-Apple's moves are structurally different from those of OpenAI, Google, or Anthropic. Apple does not sell API access. It ships software to 1.5 billion active devices. When Apple Intelligence improves, it improves for those users by default — no subscription required, no app to download.
+Apple's moves are structurally different from those of OpenAI, Google, or Anthropic. Apple does not sell API access. It ships software to [2.5 billion active devices](https://9to5mac.com/2026/01/29/apple-reveals-it-has-2-5-billion-active-devices-around-the-world/) (as of January 2026). When Apple Intelligence improves, it improves for those users by default — no subscription required, no app to download.
 
 The competitive implication: if Siri Campos is genuinely useful, it does not need to win in benchmarks. It wins by being present. By being the assistant users already have.
 

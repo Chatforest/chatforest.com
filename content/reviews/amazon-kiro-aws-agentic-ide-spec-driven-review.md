@@ -9,6 +9,7 @@ tags: ["amazon", "aws", "kiro", "agentic-coding", "ide", "claude", "bedrock", "d
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 Most AI coding tools start with code. Amazon Kiro starts with a plan.
@@ -164,7 +165,7 @@ The spec-first model is a genuine workflow change, not just a UI difference. Tea
 | **Spec artifact** | Version-controlled requirements | None | None |
 | **Hooks** | Yes (event-driven) | Limited | No |
 | **Steering rules** | Yes (project + global) | Cursor rules | No |
-| **Enterprise market share** | Growing, AWS-native segment | Strong | 42%, Fortune 100 default |
+| **Enterprise market share** | Growing, AWS-native segment | Strong | [42% of paid AI coding tools; 90% of Fortune 100](https://www.getpanto.ai/blog/github-copilot-statistics) |
 
 ---
 

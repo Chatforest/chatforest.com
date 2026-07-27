@@ -5,6 +5,7 @@ last_refreshed: 2026-05-29
 description: "Anthropic closed a $65 billion Series H on May 28, 2026 at a $965 billion post-money valuation — eclipsing OpenAI as the most valuable private AI company. Run-rate revenue hit $47 billion. Here's the full 2026 funding story and what it means for builders."
 tags: ["anthropic", "claude", "business", "ai-industry", "funding", "ipo", "amazon", "aws"]
 rating: 5
+sources_audited: 2026-07-27
 ---
 
 ## The Headline
@@ -38,7 +39,7 @@ Microsoft and Nvidia had pledged investments in late 2025 (up to $5B and $10B re
 
 ### April 20, 2026 — The Amazon Mega-Deal
 
-The most structurally significant event of 2026 had nothing to do with a valuation number. Amazon agreed to:
+The most structurally significant event of 2026 had nothing to do with a valuation number. [Amazon agreed to](https://www.aboutamazon.com/news/company-news/amazon-invests-additional-5-billion-anthropic-ai):
 
 - **$5 billion in fresh equity** at a $350 billion pre-money valuation
 - **Up to $20 billion more** in additional investment tied to commercial milestones
@@ -107,7 +108,7 @@ Anthropic frames its valuation against OpenAI's ($852 billion), but the competit
 - OpenAI has GPT-5, a consumer brand, and a headstart in API market share
 - Anthropic has **Claude Code** — the fastest-growing enterprise AI tool in the market, accounting for $2.5 billion in annualized revenue alone — and a lead in safety infrastructure that many enterprises require for compliance
 - The Amazon deal provides committed infrastructure at scale that most competitors cannot match
-- The **[Ramp AI Index](https://ramp.com/data/ai-index)** (May 2026, based on actual spending by 50,000+ U.S. businesses) showed Anthropic at **34.4% business adoption vs. OpenAI at 32.3%** — the first time Anthropic has led OpenAI in enterprise spending share. Anthropic's share grew 3.8 points month-over-month; OpenAI's fell 2.9. Year-over-year, Anthropic's enterprise adoption rose 26% (from 9%); OpenAI's declined 1%.
+- The **[Ramp AI Index](https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/)** (May 2026, based on actual spending by 50,000+ U.S. businesses) showed Anthropic at **34.4% business adoption vs. OpenAI at 32.3%** — the first time Anthropic has led OpenAI in enterprise spending share. Anthropic's share grew 3.8 points month-over-month; OpenAI's fell 2.9. Year-over-year, Anthropic's enterprise adoption rose 26 percentage points (from 9%); OpenAI's declined 1 percentage point.
 
 ### The IPO Case
 
