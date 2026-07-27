@@ -25,7 +25,7 @@ YouTube's system combines three signal types:
 
 **SynthID watermarks** — Google DeepMind's imperceptible watermarking technology, embedded during the AI generation process (specifically in the latent diffusion stage, before final decoding). Unlike a metadata tag, SynthID lives in the pixel data itself. It survives most image manipulations — compression, cropping, color grading — because it's embedded in the statistical structure of the frames, not in a file header. Google has embedded SynthID in over **100 billion images and videos** across its products. As of Google I/O 2026, [SynthID adopters now include OpenAI, Nvidia, Kakao, and ElevenLabs](https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/).
 
-**C2PA metadata** — the Coalition for Content Provenance and Authenticity standard, which embeds a cryptographically signed manifest into the file itself. The manifest records origin tool, creation timestamp, editing history, and authorship claims. C2PA members include Adobe, Amazon, BBC, Google, Intel, Meta, Microsoft, OpenAI, Sony, and Truepic. When a file contains C2PA metadata indicating it was fully AI-generated, YouTube reads that signal and applies a label.
+**C2PA metadata** — the [Coalition for Content Provenance and Authenticity](https://c2pa.org/about/) standard, [founded in February 2021](https://c2pa.org/c2pa-founding-press-release/), which embeds a cryptographically signed manifest into the file itself. The manifest records origin tool, creation timestamp, editing history, and authorship claims. C2PA members include Adobe, Amazon, BBC, Google, Intel, Meta, Microsoft, OpenAI, Sony, and Truepic. When a file contains C2PA metadata indicating it was fully AI-generated, YouTube reads that signal and applies a label.
 
 We covered C2PA and SynthID in depth when OpenAI joined the C2PA steering committee and began embedding SynthID in all ChatGPT-generated images in May 2026 — see our **[OpenAI C2PA/SynthID review](/reviews/openai-c2pa-synthid-verify-content-provenance-ai-images-review/)** for the technical breakdown of how each system works.
 
@@ -48,7 +48,7 @@ The distinction reveals what YouTube is actually doing: they're not trying to ca
 
 ## Why C2PA Becoming Enforcement Infrastructure Matters
 
-C2PA has existed since 2021. For years it was a standard that several major vendors implemented. But "implementation" and "enforcement" are different things.
+[C2PA has existed since 2021](https://c2pa.org/c2pa-founding-press-release/). For years it was a standard that several major vendors implemented. But "implementation" and "enforcement" are different things.
 
 YouTube's announcement is the first time a major platform has said: **if C2PA metadata says you're AI-generated, the label is irremovable.** That's not just reading the standard — it's using the standard as adjudication. The signed C2PA manifest becomes legally and operationally binding on the platform.
 
@@ -78,7 +78,7 @@ If your tool generates AI video without embedding C2PA metadata (either because 
 
 Some builders or users might look at this situation and ask: can we remove the C2PA metadata before uploading? Technically, for some export formats, you can strip header metadata. But:
 - Breaking the C2PA signature (by modifying the file) is visible to compliant readers as tampering
-- Stripping AI provenance metadata is exactly the behavior that EU AI Act Article 50 prohibits for deepfake content — penalties reach €15M or 3% of global revenue
+- Stripping AI provenance metadata is exactly the behavior that [EU AI Act Article 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) prohibits for deepfake content — [penalties reach €15M or 3% of global revenue](https://bennetrey.com/article-50-eu-ai-act-transparency-fines/)
 - YouTube and similar platforms may respond to stripped/broken manifests with increased scrutiny, not less
 - SynthID doesn't live in the file header — it lives in the pixel data and survives most manipulations
 

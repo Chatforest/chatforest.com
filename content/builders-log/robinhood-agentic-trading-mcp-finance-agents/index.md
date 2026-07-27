@@ -4,6 +4,7 @@ date: 2026-05-29
 description: "Robinhood launched Agentic Trading and an Agentic Credit Card on May 27, both built on MCP servers. Any agent — Claude, ChatGPT, Cursor, or yours — can now trade equities and make purchases autonomously for 27 million users."
 tags: ["mcp", "agents", "finance", "robinhood", "agentic"]
 categories: ["builders-log"]
+sources_audited: 2026-07-27
 ---
 
 On May 27, 2026, Robinhood [did something no major consumer finance platform had done before](https://robinhood.com/us/en/newsroom/robinhood-is-now-open-to-agents/): it opened itself to AI agents as a first-class use case, not a hack. Two products launched simultaneously — **Agentic Trading** and an **Agentic Credit Card** — both built directly on Robinhood's own MCP servers. [Fortune](https://fortune.com/2026/05/27/robinhood-ai-agents/) and [TechCrunch](https://techcrunch.com/2026/05/27/robinhood-now-lets-your-ai-agents-trade-stocks/) covered the launch. Any agent that can connect to an MCP server can use them.
@@ -16,7 +17,7 @@ CEO Vlad Tenev put it plainly: "Our mission has always been to democratize finan
 
 From within the account, an agent gets a real-time activity feed, P&L tracking, push notifications per trade, and a kill switch — the user can disconnect an agent instantly at any point.
 
-**The Agentic Credit Card** is a virtual card issued specifically for agent use. It's not the user's primary Robinhood Gold card number. Spending limits, monthly caps, and a manual-approval toggle are all configurable. The card earns 3% cash back on agent-placed purchases. Robinhood Gold cardholders can enable it today; Platinum Card support is coming later in 2026.
+**The [Agentic Credit Card](https://robinhood.com/us/en/newsroom/robinhood-is-now-open-to-agents/)** is a virtual card issued specifically for agent use. It's not the user's primary Robinhood Gold card number. Spending limits, monthly caps, and a manual-approval toggle are all configurable. The card earns 3% cash back on agent-placed purchases. Robinhood Gold cardholders can enable it today; Platinum Card support is coming later in 2026.
 
 ## The MCP Architecture
 
@@ -59,7 +60,7 @@ For builders specifically, the MCP-native architecture is a strong signal: **Rob
 
 [American Banker called this](https://www.americanbanker.com/payments/news/robinhood-launches-agentic-trading-and-an-agentic-credit-card) a "wake-up call" for traditional banks. The framing is apt. Most financial institutions are still treating AI as a chatbot layer on top of existing apps. Robinhood skipped that stage entirely and built the agent interface first.
 
-Robinhood has 27 million users. That's 27 million people who could, in theory, hand a portion of their portfolio to an AI agent today. Most won't. But the infrastructure now exists at consumer scale, and the design decisions Robinhood made — MCP-native, isolated accounts, virtual cards, kill switches — are a functional blueprint for what agentic finance infrastructure looks like.
+Robinhood has [approximately 27 million funded accounts](https://www.fool.com/investing/2026/05/27/robinhood-markets-now-has-nearly-27-million-funded/). That's 27 million people who could, in theory, hand a portion of their portfolio to an AI agent today. Most won't. But the infrastructure now exists at consumer scale, and the design decisions Robinhood made — MCP-native, isolated accounts, virtual cards, kill switches — are a functional blueprint for what agentic finance infrastructure looks like.
 
 Whether this model moves upstream to traditional brokerages and banks depends partly on regulatory comfort with autonomous trading and partly on user demand. Robinhood chose to find out.
 

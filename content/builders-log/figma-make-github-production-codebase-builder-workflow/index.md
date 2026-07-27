@@ -1,6 +1,7 @@
 ---
 title: "Figma Make Now Edits Your Production Codebase: The Design-Code Loop Closes"
 date: 2026-05-29
+sources_audited: 2026-07-27
 description: "Figma Make launched a limited beta on May 28 that connects directly to live Git repos, lets designers edit production UI code visually, and pushes changes back as GitHub PRs. Paired with Claude Code's Figma MCP, the design-to-code pipeline is now genuinely bidirectional."
 og_description: "Figma Make can now import your actual Git repo, let a designer change a button color by clicking it, and open a GitHub PR with the code change. It's Mac-only and limited beta — but it marks the end of design handoff as a separate step. Here's what the shift means for how AI-native teams build."
 content_type: "Builder's Log"

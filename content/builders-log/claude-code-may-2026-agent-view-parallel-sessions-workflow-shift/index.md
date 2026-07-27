@@ -1,6 +1,7 @@
 ---
 title: "Claude Code's Quiet May Overhaul: Agent View, Parallel Sessions, and a Platform Shift Builders Should Notice"
 date: 2026-05-29
+sources_audited: 2026-07-27
 description: "Across a dozen patch releases in May 2026, Claude Code added Agent View, pinned background sessions, a /goal command, /code-review replacing /simplify, fast mode on Opus 4.7, and worktree flexibility for non-standard repos. Individually they're changelog footnotes. Together they mark a shift from 'AI coding assistant' to 'multi-agent development platform.'"
 content_type: "Builder's Log"
 categories: ["Anthropic", "Claude Code", "Developer Tools"]
@@ -45,7 +46,7 @@ The addition that matters for CI integration: `--comment` posts findings as inli
 
 ## Fast Mode Default: Opus 4.7 Instead of 4.6
 
-Fast mode — Claude Code's high-speed configuration — now defaults to Opus 4.7 rather than Opus 4.6. At approximately 2.5x the speed of the standard Opus configuration at higher per-token cost, fast mode on 4.7 shifts the cost-speed tradeoff again.
+Fast mode — Claude Code's high-speed configuration — now defaults to Opus 4.7 rather than Opus 4.6. At significantly higher speed than the standard Opus configuration at higher per-token cost, fast mode on 4.7 shifts the cost-speed tradeoff again.
 
 For builders who use fast mode for rapid iteration and live debugging, this is mostly a free upgrade — same speed profile with the model improvements that 4.7 carries over 4.6. For cost-sensitive workloads, it's worth checking whether your fast-mode usage economics still hold. The higher per-token rate on 4.7 means heavy fast-mode users may see costs rise.
 

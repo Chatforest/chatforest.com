@@ -3,11 +3,11 @@
 > KPMG embedded Claude Cowork and Managed Agents inside its proprietary Digital Gateway platform for 276,000 employees across 138 countries. The headline number is big, but the architecture pattern is what builders actually need to understand.
 
 
-Rema Serafi, Vice Chair of Tax at KPMG US, offered the most clarifying sentence about KPMG's Claude deployment in the May 20 announcement:
+Rema Serafi, [Vice Chair of Tax at KPMG US](https://kpmg.com/xx/en/media/press-releases/2026/05/kpmg-and-anthropic-sign-global-alliance-and-launch-digital-gateway-powered-by-claude.html), offered the most clarifying sentence about KPMG's Claude deployment in the [May 20 announcement](https://www.anthropic.com/news/anthropic-kpmg):
 
 > "Building an AI agent to help clients adjust to changing tax regulations used to take weeks and required teams to switch between multiple tools and chat windows. With Cowork and Managed Agents integrated in Digital Gateway, that same capability takes minutes."
 
-If you strip away the scale (276,000 employees, 138 countries, global alliance with Anthropic), that sentence is the entire story. Weeks to minutes. Agent-building time, not agent-running time. The ability to construct the thing that does the work — interactively, inside the platform where the work already happens.
+If you strip away the scale ([276,000 employees, 138 countries](https://kpmg.com/xx/en/media/press-releases/2026/05/kpmg-and-anthropic-sign-global-alliance-and-launch-digital-gateway-powered-by-claude.html), global alliance with Anthropic), that sentence is the entire story. Weeks to minutes. Agent-building time, not agent-running time. The ability to construct the thing that does the work — interactively, inside the platform where the work already happens.
 
 That's the pattern worth understanding.
 
@@ -45,7 +45,7 @@ This use case is notable because it's not agentic in the conversational sense �
 
 ### 3. Private Equity Portfolio Company Support
 
-Anthropic named KPMG a preferred partner for private equity work. The planned model: co-develop Claude-powered products for PE firms and their portfolio companies. KPMG brings sector expertise and proprietary due diligence frameworks; Anthropic brings the models; the platform is Digital Gateway.
+[Anthropic named KPMG a preferred partner](https://www.anthropic.com/news/anthropic-kpmg) for private equity work. The planned model: co-develop Claude-powered products for PE firms and their portfolio companies. KPMG brings sector expertise and proprietary due diligence frameworks; Anthropic brings the models; the platform is Digital Gateway.
 
 This matters because it defines how the relationship between a large professional services firm and a foundation model provider is supposed to work in 2026. KPMG isn't just buying API access. It's building proprietary workflows on top of Claude and selling those workflows as services. Anthropic isn't just selling usage — it's investing in co-development relationships with domain-expertise holders.
 

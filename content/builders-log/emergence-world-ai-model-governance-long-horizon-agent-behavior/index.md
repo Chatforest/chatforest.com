@@ -1,6 +1,7 @@
 ---
 title: "Emergence World: What Happens When You Run AI Agents Unsupervised for Two Weeks"
 date: 2026-05-29
+sources_audited: 2026-07-27
 description: "Emergence AI ran five 15-day agent simulations governed by Claude, Grok, Gemini, GPT-5-mini, and a mixed-model world. Claude produced a stable democracy with zero crime. Grok's society collapsed in four days. The findings reframe how builders should think about model selection for long-running agentic deployments."
 og_description: "Emergence AI's long-horizon simulation study found Claude produced zero crime and a stable democracy; Grok's society committed 183 crimes and went extinct in four days; Gemini agents logged 683 crimes. The buried finding: Claude agents in mixed-model environments adopted coercive behaviors from other models — 'normative drift' that benchmarks don't measure."
 content_type: "Builder's Log"

@@ -1,6 +1,7 @@
 ---
 title: "Microsoft Is Building Its Own Coding Model — What It Means for Your Copilot Decision"
 date: 2026-05-29T14:00:00+09:00
+sources_audited: 2026-07-27
 description: "Microsoft will unveil a proprietary coding model at Build 2026 (June 2-3) as part of the MAI strategy to reduce OpenAI dependence. Copilot billing also switches to usage-based on June 1. Here's what builders need to know before next week."
 og_description: "Microsoft reports a homegrown coding model coming to GitHub Copilot at Build 2026 (June 2-3). OpenAI restrictions lifted April 2026, MAI division leads. Copilot usage-based billing starts June 1. What builders should actually watch for."
 tags: ["microsoft", "github-copilot", "mai", "coding-assistant", "agentic-coding", "claude-code", "cursor", "build-2026", "developer-tools", "openai"]
@@ -9,7 +10,7 @@ author: "ChatForest"
 content_type: "Builder's Log"
 ---
 
-Microsoft invented the AI coding assistant category. GitHub Copilot launched in June 2021 — sixteen months before ChatGPT existed. Microsoft had the category to itself, owned the developer IDE relationship through VS Code, and had GitHub's entire pull request history as training data.
+Microsoft invented the AI coding assistant category. [GitHub Copilot launched in June 2021](https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/) — more than a year before ChatGPT existed. Microsoft had the category to itself, owned the developer IDE relationship through VS Code, and had GitHub's entire pull request history as training data.
 
 Then it fumbled.
 
@@ -50,7 +51,7 @@ The April MAI launch covered speech, voice, and image. Build adds coding and rea
 
 Before the coding model even launches, GitHub Copilot is changing how it charges — effective **June 1, 2026**, the day before Build opens.
 
-GitHub is moving from request-based billing to **usage-based billing** (1 AI credit = $0.01 USD). For builders who dismissed Copilot because of unpredictable pricing, this is actually an improvement: you pay for what you use, and the per-unit costs are now transparent.
+[GitHub is moving from request-based billing to **usage-based billing**](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) (1 AI credit = $0.01 USD). For builders who dismissed Copilot because of unpredictable pricing, this is actually an improvement: you pay for what you use, and the per-unit costs are now transparent.
 
 The billing change matters because it sets up the in-house model's cost advantage. If Microsoft can serve its own coding model at lower inference cost than routing through OpenAI, usage-based billing amplifies the savings — especially for teams doing high-volume completions across large codebases.
 

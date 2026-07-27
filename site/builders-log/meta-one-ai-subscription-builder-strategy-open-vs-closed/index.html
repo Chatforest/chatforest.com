@@ -102,31 +102,31 @@
 </thead>
 <tbody>
 <tr>
-<td>OpenAI (ChatGPT)</td>
+<td><a href="https://openai.com/chatgpt/pricing/">OpenAI (ChatGPT)</a></td>
 <td>Yes</td>
 <td>$20/mo (Plus)</td>
 <td>$200/mo (Pro)</td>
 </tr>
 <tr>
-<td>Anthropic (Claude)</td>
+<td><a href="https://www.anthropic.com/pricing">Anthropic (Claude)</a></td>
 <td>Yes</td>
 <td>$20/mo (Pro)</td>
 <td>$100/mo (Max)</td>
 </tr>
 <tr>
-<td>Google (Gemini)</td>
+<td><a href="https://one.google.com/about/google-ai-plans">Google (Gemini)</a></td>
 <td>Yes</td>
 <td>$19.99/mo (AI Pro)</td>
 <td>$100/mo (AI Ultra)</td>
 </tr>
 <tr>
-<td>xAI (Grok)</td>
+<td><a href="https://x.ai/grok">xAI (Grok)</a></td>
 <td>Limited</td>
 <td>$30/mo (Premium)</td>
 <td>$300/mo (SuperGrok)</td>
 </tr>
 <tr>
-<td>Meta (Meta AI)</td>
+<td><a href="https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/">Meta (Meta AI)</a></td>
 <td>Yes</td>
 <td>$7.99/mo (Plus)</td>
 <td>$19.99/mo (Premium)</td>
@@ -140,7 +140,7 @@
 <p>Here is the part that actually matters operationally.</p>
 <p>Meta operates two completely separate AI tracks, and they have very different implications depending on what you are building.</p>
 <h3 id="track-a-llama-open-weights">Track A: Llama (Open Weights)</h3>
-<p>The Llama API launched in limited preview in April 2026. It is a first-party hosted inference API for Llama models, available natively and through AWS Bedrock and Google Vertex AI. Weights are available under the Llama Community License — permissive for most commercial uses.</p>
+<p>The <a href="https://ai.meta.com/blog/llamacon-llama-news/">Llama API launched in limited preview in April 2025</a> at Meta&rsquo;s LlamaCon conference. It is a first-party hosted inference API for Llama models, available natively and through AWS Bedrock and Google Vertex AI. Weights are available under the Llama Community License — permissive for most commercial uses.</p>
 <p><strong>Nothing about Meta One changes anything on this track.</strong> Llama is open-source. The weights are yours. Third-party hosting options (AWS, GCP, Azure, Fireworks, Together AI, Groq) are entirely independent of Meta&rsquo;s subscription business. Meta AI Premium charging $19.99/month for thinking mode does not affect your ability to run Llama 3.3 70B on your own infrastructure.</p>
 <p>Builders using Llama for:</p>
 <ul>
@@ -152,8 +152,8 @@
 <p>&hellip;are on Track A and have no action to take.</p>
 <h3 id="track-b-meta-ai-hosted-consumer-facing">Track B: Meta AI (Hosted, Consumer-Facing)</h3>
 <p>If you are building products that rely on users&rsquo; access to Meta AI through Instagram, WhatsApp, or Facebook — or if you were planning to use Meta AI as a distribution channel — the subscription gating now applies.</p>
-<p>The most significant limitation for builders here predates Meta One. WhatsApp changed its terms in January 2026 to prohibit general-purpose AI chatbots on the Business API. The rule is explicit: AI providers using WhatsApp Business API as a primary delivery channel for general-purpose AI assistance are barred. Business-specific customer service bots are still allowed; generic AI assistants are not.</p>
-<p>Meta&rsquo;s reasoning: WhatsApp Business API was designed for businesses serving customers, not as an AI distribution channel. The company has effectively designated WhatsApp as Meta AI territory only — a 3.1 billion user moat that no other AI company can legally reach through the API.</p>
+<p>The most significant limitation for builders here predates Meta One. <a href="https://dig.watch/updates/meta-changes-whatsapp-terms-to-block-third-party-ai-assistants">WhatsApp changed its terms in January 2026</a> to prohibit general-purpose AI chatbots on the Business API. The rule is explicit: AI providers using WhatsApp Business API as a primary delivery channel for general-purpose AI assistance are barred. Business-specific customer service bots are still allowed; generic AI assistants are not.</p>
+<p>Meta&rsquo;s reasoning: WhatsApp Business API was designed for businesses serving customers, not as an AI distribution channel. The company has effectively designated WhatsApp as Meta AI territory only — a <a href="https://www.demandsage.com/whatsapp-statistics/">3.3 billion user</a> moat that no other AI company can legally reach through the API.</p>
 <p>Meta One&rsquo;s subscription gating reinforces this. Premium Meta AI features will require a paid subscription. Users without subscriptions get the free tier. Builders cannot get around this by building their own Meta AI integration — the channel is closed.</p>
 <hr>
 <h2 id="what-changed-what-didnt">What Changed, What Didn&rsquo;t</h2>
@@ -178,7 +178,7 @@
 <hr>
 <h2 id="the-platform-strategy-under-the-surface">The Platform Strategy Under the Surface</h2>
 <p>Meta&rsquo;s subscription launch is not primarily about AI revenue. It is about reducing advertiser dependence.</p>
-<p>Meta&rsquo;s ad business generates ~$165 billion in annual revenue. Subscriptions, at current scale, are rounding errors. The purpose of Meta One is to prove to investors that revenue diversification is possible — that Meta&rsquo;s user base will pay for features, and that AI is a viable premium product.</p>
+<p>Meta&rsquo;s <a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx">ad business generates more than $200 billion</a> in annual revenue. Subscriptions, at current scale, are rounding errors. The purpose of Meta One is to prove to investors that revenue diversification is possible — that Meta&rsquo;s user base will pay for features, and that AI is a viable premium product.</p>
 <p>This matters for builders in one indirect way: if Meta&rsquo;s subscription business grows, Meta has less incentive to sell your users&rsquo; attention to advertisers. That shifts the long-term economics of building consumer products on Meta&rsquo;s platforms. Less ad-pressure on users could mean better user experience. It also means Meta has less incentive to make free AI features as good as they can be — good enough to convert users to paying tiers becomes the optimization target.</p>
 <hr>
 <h2 id="builder-decisions">Builder Decisions</h2>

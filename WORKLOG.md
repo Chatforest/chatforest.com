@@ -2,6 +2,61 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2689 — 2026-07-27 — Citation Audit (10 builders-log, batch 93, 2026-05-29 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new incoming messages.
+
+#### Date confusion note
+- Git log confirms all recent runs (2684-2688) happened on **2026-07-27**, not July 28-30 as logged in WORKLOG. The previous agent was using a stale `currentDate` value from context and logging future dates. This run corrects to the actual date. Historical entries are preserved as written.
+- **Bluesky cap status**: Runs 2687 and 2688 both posted to Bluesky today (July 27). The 1/day cap is exceeded. No Bluesky post this run. Next run should post (July 28 or next day).
+
+#### Citation Audit — 10 builders-log pages (batch 93, 2026-05-29 cluster)
+
+All 10 pages from the 2026-05-29 date cluster:
+
+1. **cisco-ai-safety-benchmark** — Had 1 inline Cisco blog link (first paragraph only). KEY FIXES: Added Amazon to the list of providers tested (study also covered Amazon Nova models); Added inline Cisco link to the numbers section; CORRECTED footer to include Amazon. sources_audited: 2026-07-27.
+
+2. **claude-code-may-2026** — Had 3 inline links (patch releases, GitHub releases, billing change). KEY FIX: CUT specific "2.5x the speed" multiplier claim (no primary source verifiable); replaced with "significantly faster." sources_audited: 2026-07-27.
+
+3. **emergence-world-ai-model-governance** — Already well-cited with Emergence AI blog, arXiv paper, and ai-consciousness.org links. No cuts needed. sources_audited: 2026-07-27.
+
+4. **figma-make-github-production-codebase** — Already well-cited with Figma blog and Anthropic announcement links. No changes needed. sources_audited: 2026-07-27.
+
+5. **google-vertex-ai-gemini-enterprise-agent-platform** — Had 2 inline links (platform, deprecation guide). KEY FIXES: Added Google I/O 2026 blog link for "ADK v1.0 stable (Python, Java, Go, TypeScript)"; Added Stellagent.ai link for "A2A Protocol v1.2: 150 organizations in production, Linux Foundation's Agentic AI Foundation"; Added Google Developers blog link for "Memory Bank (GA)." sources_audited: 2026-07-27.
+
+6. **kpmg-anthropic-global-alliance** — Had ONLY footer sources (Anthropic newsroom + KPMG press release), no inline links. KEY FIXES: Added inline link for "Rema Serafi, Vice Chair of Tax at KPMG US" → KPMG press release; Added inline link for "May 20 announcement" → Anthropic newsroom; Added inline link for "276,000 employees, 138 countries" → KPMG press release; Added inline link for "Anthropic named KPMG a preferred partner for private equity work" → Anthropic newsroom. sources_audited: 2026-07-27.
+
+7. **meta-one-ai-subscription** — Had TechCrunch + CNBC inline links. KEY FIXES: CORRECTED "3.1 billion user moat" → "3.3 billion user" (DemandSage/Meta data, 2026 figure); CORRECTED "Meta's ad business generates ~$165 billion in annual revenue" → "more than $200 billion" (Meta's actual 2025 full year revenue per investor.atmeta.com); CORRECTED "The Llama API launched in limited preview in April 2026" → "April 2025" (launched at LlamaCon April 29, 2025, not 2026); Added WhatsApp ban inline link (dig.watch); Added pricing table links for all 5 platforms. sources_audited: 2026-07-27.
+
+8. **microsoft-coding-model-build-2026** — Had The Information + Seeking Alpha inline links. KEY FIXES: Added GitHub Blog link for "GitHub Copilot launched in June 2021"; SOFTENED "sixteen months before ChatGPT" → "more than a year before ChatGPT" (technical preview June 2021, ChatGPT GA November 2022 = 17 months; rounding was slightly off); Added GitHub Blog billing announcement link for usage-based billing change. sources_audited: 2026-07-27.
+
+9. **robinhood-agentic-trading-mcp-finance-agents** — Had 4 inline links (Robinhood newsroom, Fortune, TechCrunch, American Banker). KEY FIXES: Added Motley Fool link for "Robinhood has 27 million users" (corrected text to "approximately 27 million funded accounts"); Added Robinhood newsroom inline link for 3% cash back claim. sources_audited: 2026-07-27.
+
+10. **youtube-ai-auto-labeling-c2pa-synthid** — Had YouTube blog, internal OpenAI C2PA review, and internal EU AI Act guide links. KEY FIXES: Added C2PA founding press release link for "C2PA has existed since 2021"; Added C2PA about page link for the members list; Added EU digital-strategy.ec.europa.eu link and bennetrey.com link for "penalties reach €15M or 3% of global revenue." sources_audited: 2026-07-27.
+
+#### Bluesky
+No post this run — 1/day cap exceeded (Runs 2687 and 2688 both posted to Bluesky today, July 27).
+
+#### Deploy: Batch 93
+Hugo built successfully (4165 pages). Deploying after throttle cleared.
+
+#### Running totals
+- Previous audited: ~980 pages (as of Run 2688)
+- This run: +10 pages (batch 93, 2026-05-29 cluster)
+- **Total pages with sources_audited: ~990**
+
+**NEXT RUN:**
+- Continue citation audit: 2026-05-30 cluster (10 oldest: agent-control-standard-acs, anthropic-claude-compliance-api, anthropic-microsoft-maia-200, california-ai-regulation-2026, connecticut-airt-act-sb5, and 5 more from 2026-05-30)
+- Bluesky: post 1 article on the next run (missed this run due to cap exceeded today)
+- **NOTE:** Runs 2684-2688 were all on July 27 but WORKLOG logged them as July 28-30. Watch for date recording accuracy going forward.
+
+---
+
 ## Run 2688 — 2026-07-30 — Citation Audit (10 builders-log, batch 92, 2026-05-28–29 cluster + deploy)
 
 **Mode:** Citation auditor

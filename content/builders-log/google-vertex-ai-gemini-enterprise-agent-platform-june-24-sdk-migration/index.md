@@ -3,6 +3,7 @@ title: "Vertex AI Is Gone — and Your Code Has 26 Days to Catch Up"
 date: 2026-05-29
 description: "Google's Vertex AI SDK modules are removed June 24, 2026. Here's exactly what breaks, what doesn't, and the 10-point codebase audit every builder on Google Cloud needs to run this week."
 tags: ["google-cloud", "vertex-ai", "gemini", "sdk-migration", "agent-platform", "builders-log"]
+sources_audited: 2026-07-27
 ---
 
 Google Cloud completed its most significant developer-facing reorganization since the original Vertex AI launch. The product is now called [**Gemini Enterprise Agent Platform**](https://cloud.google.com/products/gemini-enterprise-agent-platform). The Vertex AI SDK's generative AI modules are gone on **June 24, 2026** — 26 days from this writing, per [Google's official deprecation guide](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/genai-vertexai-sdk). This is not a deprecation warning. It is a hard removal date that will break production code if you ignore it.
@@ -137,11 +138,11 @@ The migration is not purely defensive. The new `google-genai` SDK adds capabilit
 
 The rebrand surfaces capabilities that were already released but buried in the old console navigation:
 
-**ADK v1.0 (stable, open-source):** Python, Java, Go, TypeScript all at stable v1.0. Model-agnostic — supports Gemini, OpenAI, and Anthropic models. Native A2A protocol support, BaseToolset class for dynamic tool provision, workflow runtime with graph-based execution including fan-out, fan-in, loops, retry, and human-in-the-loop.
+**[ADK v1.0](https://developers.googleblog.com/agents-adk-agent-engine-a2a-enhancements-google-io/) (stable, open-source):** Python, Java, Go, TypeScript all at stable v1.0. Model-agnostic — supports Gemini, OpenAI, and Anthropic models. Native A2A protocol support, BaseToolset class for dynamic tool provision, workflow runtime with graph-based execution including fan-out, fan-in, loops, retry, and human-in-the-loop.
 
-**Agent2Agent (A2A) Protocol v1.2:** 150 organizations in production. Now governed by the Linux Foundation's Agentic AI Foundation. Cryptographic signature verification added in v1.2. The relationship to MCP: MCP handles agent-to-tools connections; A2A handles agent-to-agent connections. They are complementary, not competing.
+**[Agent2Agent (A2A) Protocol v1.2](https://stellagent.ai/insights/a2a-protocol-google-agent-to-agent):** 150 organizations in production. Now governed by the Linux Foundation's Agentic AI Foundation. Cryptographic signature verification added in v1.2. The relationship to MCP: MCP handles agent-to-tools connections; A2A handles agent-to-agent connections. They are complementary, not competing.
 
-**Memory Bank (GA):** Long-term cross-session context. Sessions (conversation state management) also GA. These were preview features under Vertex AI and are now stable.
+**[Memory Bank (GA)](https://developers.googleblog.com/agents-adk-agent-engine-a2a-enhancements-google-io/):** Long-term cross-session context. Sessions (conversation state management) also GA. These were preview features under Vertex AI and are now stable.
 
 **Agent Identity:** Cryptographic agent IDs for auditable action trails. Identity propagation lets agents inherit the triggering user's permissions — this is Google's enterprise differentiator for row-level data security in multi-agent systems.
 

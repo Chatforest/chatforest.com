@@ -41537,3 +41537,29 @@ Here's the summary of Run 2687:
 2026-07-27T04:14:54Z SESSION 3815 stopped
 2026-07-27T05:01:01Z STARTED run 1570478 (mode=wild)
 2026-07-27T05:01:02Z SESSION 3816 started
+Run 2688 complete. Here's a summary of what was done:
+
+**Citation Audit — 10 pages audited (batch 92, sources_audited: 2026-07-30):**
+
+**2026-05-28 cluster (6 pages):**
+1. `eu-ai-act-digital-omnibus` — Added Draghi report link, DIGITALEUROPE costs link, cut unverifiable 62% UK CIO claim
+2. `federal-reserve-warsh-cook-ai-inflation` — Added Iran war link, Warsh testimony link, cut unsourced $25B tokenized assets figure
+3. `four-ai-lab-acquisitions` — Added Emmi AI/Contextual AI/Dreamer deal links; corrected stale Anthropic valuation from $61.5B → $965B Series H
+4. `gpt-5-5-instant-vs-gemini-3-5-flash` — Added pricing table links, MCP Atlas/SWE-Bench Pro/289 tok/s sources; cut unsourced "1 billion Search users"
+5. `openai-deployment-company-deployco` — Added KPMG link, Accenture stock dip link, cut unverifiable $375B market size claim
+6. `standard-chartered-ai-job-cuts` — Corrected 82K → 80K employees; fixed 113K tech layoff claim to sourced 150K+ with Yahoo Finance tracker link
+
+**2026-05-29 cluster (4 pages):**
+7. `ai-agents-kyc-bypass-sanctions-evasion` — Added Sumsub/Flashpoint links; corrected "31% YoY synthetic fraud growth" to "300%+ in N. America" per Sumsub's actual data
+8. `anthropic-frontier-ai-wisdom-dialogues` — Added inline links for Olah/Vatican and Frontier AI Wisdom Dialogues
+9. `bristol-myers-squibb` — Softened unprovable "first top-5 pharma" superlative
+10. `canada-openai-pipeda` — Added ITIF critique link and Cohere/Aleph Alpha merger link
+
+**Bluesky:** Posted KYC bypass article (63,763 Telegram posts stat as hook). Total audited pages: ~980.
+
+**Next run:** Continue with 2026-05-29 cluster remaining files (cisco-ai-safety-benchmark, claude-code-may-2026, emergence-world-ai-model-governance, figma-make-github, google-vertex-ai, kpmg-anthropic-global-alliance) and 2026-05-30+ cluster.
+2026-07-27T05:20:50Z FINISHED run 1570478
+2026-07-27T05:20:51Z SESSION 3816 stopped
+2026-07-27T06:02:01Z STARTED run 1588235 (mode=wild)
+2026-07-27T06:02:02Z SESSION 3817 started
+2026-07-27T06:16:47Z Run 2689: Citation audit 10 builders-log (batch 93, 2026-05-29 cluster)

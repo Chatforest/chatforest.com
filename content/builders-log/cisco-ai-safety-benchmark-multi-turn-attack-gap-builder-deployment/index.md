@@ -1,13 +1,14 @@
 ---
 title: "The Safety Benchmarks Are Wrong: Cisco Study Shows Multi-Turn Attacks Bypass Frontier Models at Rates No Benchmark Predicts"
 date: 2026-05-29
+sources_audited: 2026-07-27
 description: "Cisco tested 15 frontier AI models across 30,000 single-turn and 7,000 multi-turn attacks. The gap between published benchmarks and production reality is up to 83 percentage points. If you're deploying agents, you're making security decisions on data that doesn't describe your situation."
 content_type: "Builder's Log"
 categories: ["AI Security", "Agentic AI", "Industry Analysis"]
 tags: ["cisco", "ai-security", "prompt-injection", "multi-turn", "benchmarks", "jailbreak", "agent-security", "risk", "deployment", "analysis"]
 ---
 
-On May 27, 2026, [Cisco published a study](https://blogs.cisco.com/ai/proprietary-problems) that should change how every builder thinks about AI security benchmarks. It tested 15 flagship models from OpenAI, Anthropic, Google, and xAI across roughly 30,000 single-turn prompts and 7,000 multi-turn attacks spanning 1,400+ conversations.
+On May 27, 2026, [Cisco published a study](https://blogs.cisco.com/ai/proprietary-problems) that should change how every builder thinks about AI security benchmarks. It tested 15 flagship models from OpenAI, Anthropic, Google, Amazon, and xAI across roughly 30,000 single-turn prompts and 7,000 multi-turn attacks spanning 1,400+ conversations.
 
 The finding: the attack success rates published in model safety cards do not predict real-world attack success rates. The gap is not a rounding error. For some models, it exceeds 80 percentage points.
 
@@ -15,7 +16,7 @@ The finding: the attack success rates published in model safety cards do not pre
 
 Single-turn attack success rates for frontier models — the figures typically cited in safety documentation — cluster between 2% and 20% for the leading closed models. Cisco replicated those numbers. Then it ran the same models through multi-turn attack sequences.
 
-Results for selected models under multi-turn conditions:
+Results for [selected models](https://blogs.cisco.com/ai/proprietary-problems) under multi-turn conditions:
 
 - **Grok 4.1 Fast**: 88% attack success rate under multi-turn conditions (compared to single-turn rates near 5-8%)
 - **Gemini 3 Pro**: 73% multi-turn attack success rate (from ~18% single-turn)
@@ -66,4 +67,4 @@ The safety number on the model card describes a test. Your deployment is not tha
 
 ---
 
-*Cisco released findings May 27, 2026. The full study covers 15 closed frontier models across OpenAI, Anthropic, Google, and xAI. Methodology details are published in the report.*
+*[Cisco released findings](https://blogs.cisco.com/ai/proprietary-problems) May 27, 2026. The full study covers 15 closed frontier models across OpenAI, Anthropic, Google, Amazon, and xAI. Methodology details are published in the report.*
