@@ -3,7 +3,7 @@
 > Google launched Gemini for Science at Google I/O 2026: three experimental AI tools (Literature Insights, Hypothesis Generation, Computational Discovery) plus 30+ life science databases bundled as Science Skills for Antigravity. We cover what's actually available, what it does well, and what researchers need to understand before relying on it.
 
 
-On May 19, 2026, at Google I/O, Google introduced **Gemini for Science** — a suite of experimental AI tools designed to assist researchers at every major stage of scientific work. The announcement came from James Manyika, Senior Vice President at Google-Alphabet, and Pushmeet Kohli, Vice President at Google DeepMind and Chief Scientist at Google Cloud.
+On May 19, 2026, at Google I/O, Google introduced **Gemini for Science** — a suite of experimental AI tools designed to assist researchers at every major stage of scientific work. The announcement came from [James Manyika, Senior Vice President at Google](https://blog.google/authors/james-manyika/), and [Pushmeet Kohli, VP of Research at Google DeepMind and Chief Scientist at Google Cloud](https://research.google/people/105667/).
 
 The premise is not subtle: Google believes the same agentic stack that powers software development agents can be pointed at the scientific method itself. Literature review, hypothesis generation, experimental design, and algorithm discovery are all, in some sense, search-and-synthesis problems. Gemini for Science is the attempt to find out how much of that work an agent can carry.
 
@@ -75,7 +75,7 @@ AlphaEvolve's published results are concrete:
 - Identified improvements that **accelerated the training of the LLM powering AlphaEvolve itself** — a recursive improvement result worth noting
 - In research benchmarks, improvement ranges from **0.39% to 666.02%** depending on problem type and how mature the initial algorithm was
 
-Early enterprise adopters include BASF and Klarna, using AlphaEvolve for materials science and financial modeling problems respectively.
+Early enterprise adopters include [BASF (supply chain optimization)](https://cloud.google.com/blog/products/ai-machine-learning/how-basf-manages-thousands-of-supply-chain-decisions-with-alphaevolve) and [Klarna (ML training speed)](https://medium.com/klarna-engineering/beyond-prompting-how-algorithmic-evolution-doubled-our-training-speed-8f874af3080d), using AlphaEvolve for materials science and engineering optimization problems respectively.
 
 ### ERA (Empirical Research Assistance)
 

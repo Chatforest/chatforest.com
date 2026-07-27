@@ -3,7 +3,7 @@
 > xAI launched standalone Grok Speech-to-Text and Text-to-Speech APIs on April 18, 2026. STT prices at $0.10/hr batch and $0.20/hr streaming — below ElevenLabs, Deepgram, and AssemblyAI — and claims 5.0% error on phone call entity recognition vs. 12–21% for rivals. TTS delivers five voices across 20 languages at $4.20/M characters. We review the specs, pricing, and what this means for the voice developer market.
 
 
-On April 18, 2026, xAI launched two standalone APIs that most observers had not anticipated: a **Speech-to-Text (STT) API** and a **Text-to-Speech (TTS) API**, available immediately via the same `api.x.ai` endpoint as the Grok LLM API. No waitlist, no staged rollout — both live on launch day.
+On [April 18, 2026, xAI launched two standalone APIs](https://www.marktechpost.com/2026/04/18/xai-launches-standalone-grok-speech-to-text-and-text-to-speech-apis-targeting-enterprise-voice-developers/) that most observers had not anticipated: a **Speech-to-Text (STT) API** and a **Text-to-Speech (TTS) API**, available immediately via the same `api.x.ai` endpoint as the Grok LLM API. No waitlist, no staged rollout — both live on launch day.
 
 The move signals something beyond a product release. xAI has operated one of the largest voice inference deployments in the world without ever selling access to it: the Grok Voice system embedded in Tesla vehicles and handling Starlink customer support at scale. The STT and TTS APIs are that production stack, externalized. For developers who care about infrastructure provenance — who want to build on something that has already processed billions of audio tokens in adversarial, real-world conditions — this is a meaningful credential.
 
@@ -182,6 +182,13 @@ AssemblyAI at $0.37/hr and 21.3% phone call entity recognition error in xAI's be
 ## Rating
 
 **3.5 / 5** — The pricing is genuinely aggressive and the production infrastructure story is credible. The benchmarks need independent verification, the TTS voice library is thin, and regional coverage is limited to us-east-1. For teams already in the xAI ecosystem or running high-volume transcription at a cost-constrained point in the stack, this is worth a structured evaluation against your own data. For teams making a primary voice infrastructure bet, wait for independent benchmark reproduction before committing.
+
+---
+
+## Sources
+
+- [xAI launches standalone Grok STT and TTS APIs — MarkTechPost, April 18, 2026](https://www.marktechpost.com/2026/04/18/xai-launches-standalone-grok-speech-to-text-and-text-to-speech-apis-targeting-enterprise-voice-developers/) — launch announcement, pricing, benchmark claims, Tesla/Starlink deployment history
+- [Grok Voice API: xAI undercuts Deepgram and ElevenLabs — Dapta AI](https://dapta.ai/blog-posts/ai-news-week-16-grok-voice-apis/) — competitive pricing analysis
 
 ---
 

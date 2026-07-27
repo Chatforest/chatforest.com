@@ -32,7 +32,7 @@ For a broader view covering dbt, Airflow, Kafka, Snowflake, Databricks, and the 
 
 ## Key Patterns
 
-**Managed vs. open-source ELT.** The sharpest divide in this category is between Fivetran (fully managed, paid SaaS, 700+ connectors, no infrastructure) and Airbyte (open-source, self-hosted or cloud, 600+ connectors, Context Store for agentic access). For teams choosing between them, the MCP maturity reflects the platform positioning: Airbyte's Context Store architecture is more agent-native; Fivetran's server is a direct API proxy.
+**Managed vs. open-source ELT.** The sharpest divide in this category is between Fivetran (fully managed, paid SaaS, [700+ connectors](https://fivetran.com/docs/connectors), no infrastructure) and Airbyte (open-source, self-hosted or cloud, [600+ connectors](https://airbyte.com/connectors), Context Store for agentic access). For teams choosing between them, the MCP maturity reflects the platform positioning: Airbyte's Context Store architecture is more agent-native; Fivetran's server is a direct API proxy.
 
 **Transformation vs. integration.** dbt Labs MCP is a transformation tool — it operates on data already in a warehouse, turning raw tables into curated models. Airbyte and Fivetran are integration tools — they move data from sources to destinations. These are complementary layers, not alternatives.
 

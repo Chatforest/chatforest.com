@@ -3,7 +3,7 @@
 > Google WebMCP is a proposed open web standard, announced at Google I/O 2026, that lets any website expose structured tools to in-browser AI agents without a backend. Two API surfaces — Declarative (HTML form annotations) and Imperative (navigator.modelContext) — let developers register MCP-style tools that Gemini in Chrome can call directly. The Chrome 149 origin trial is open to developers now. We cover what WebMCP is, how it compares to server-side MCP, who is backing it, its limitations, and whether it matters.
 
 
-At Google I/O 2026 on May 19, Google announced **WebMCP** — a proposed web standard that brings MCP-style tool exposure to the browser. The premise is simple: instead of requiring a backend MCP server to give an AI agent access to a website's capabilities, WebMCP lets the website itself expose tools directly in client-side JavaScript (or via HTML annotations), where an in-browser AI agent can call them.
+At [Google I/O 2026 on May 19](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/), Google announced **WebMCP** — a proposed web standard that brings MCP-style tool exposure to the browser. The premise is simple: instead of requiring a backend MCP server to give an AI agent access to a website's capabilities, WebMCP lets the website itself expose tools directly in client-side JavaScript (or via HTML annotations), where an in-browser AI agent can call them.
 
 The Chrome 149 origin trial is open to registered developers now. The spec lives in the [W3C Web Machine Learning Community Group](https://github.com/webmachinelearning/webmcp), not yet on the W3C official Standards Track.
 
@@ -149,6 +149,13 @@ WebMCP is a genuine step forward for browser agents, and the industry backing is
 The 3/5 reflects where the standard is today, not where it could be. Chrome 149+ only, Gemini in Chrome as the sole consumer, Community Group draft status, and an opt-in adoption model that requires publisher effort are all real constraints. For most developers, WebMCP is a technology to track and implement when it reaches broader browser support — not something to build production workflows around in May 2026.
 
 If Google delivers on the standard (cross-browser support, at least one additional browser agent consumer, W3C Standards Track adoption), WebMCP's potential rating is 4–5/5. The core idea — structured, schema-defined tool exposure in the browser without a backend — is the right answer to the browser agent problem. Check back when Chrome 150+ ships and when adoption data from the origin trial partners becomes public.
+
+---
+
+## Sources
+
+- [100 things we announced at Google I/O 2026 — Google Blog](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/) — WebMCP announcement, partner companies (Booking.com, Expedia, Instacart, Intuit, Shopify, Redfin), Chrome 149 origin trial
+- [WebMCP spec — W3C Web Machine Learning Community Group on GitHub](https://github.com/webmachinelearning/webmcp) — spec source, API definitions, Permissions Policy details
 
 ---
 

@@ -271,5 +271,15 @@ Command A+ is the right model for a specific buyer profile: enterprise teams who
 
 ---
 
+---
+
+## Sources
+
+- [Introducing Command A+: Our Most Open, Capable, and Efficient Model Yet — Cohere blog, May 20, 2026](https://cohere.com/blog/command-a-plus) — architecture, benchmarks, licensing, pricing, hardware requirements
+- [CohereLabs/command-a-plus-05-2026 — HuggingFace](https://huggingface.co/CohereLabs/command-a-plus-05-2026) — 375 tok/s throughput, 113ms TTFT, W4A4 quantization details
+- [Command A+ — Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/command-a-plus) — third-party composite score (37)
+
+---
+
 *Related ChatForest reviews: [Cohere Enterprise Platform](/reviews/cohere-enterprise-llm-rag-platform/) · [Mistral Medium 3.5](/reviews/mistral-medium-3-5-dense-128b-agentic-llm-review/) · [Mistral Large 3](/reviews/mistral-large-3-open-weight-moe-llm-review/) · [DeepSeek V4](/reviews/deepseek-v4-open-weight-llm-review/) · [Mistral Small 4](/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review/)*
 

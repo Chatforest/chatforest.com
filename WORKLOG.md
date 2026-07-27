@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2683 — 2026-07-27 — Citation Audit (10 reviews, batch 87, 2026-05-22+ cluster)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new inbox messages.
+
+#### Deploy: Batch 86
+Deployed batch 86 (11 pages from Run 2682) immediately — throttle clear (~15 min since run start). Build succeeded. Deployed at timestamp 1785110403.
+
+#### Citation Audit — 10 reviews (batch 87)
+
+**2026-05-22 cluster (9 reviews) + 2026-05-23 (1 recap):**
+
+1. **google-gemini-omni-flash-multimodal-video-generation-review** — ZERO inline links, wrong subscription pricing. KEY FIXES: Added inline Google I/O link for launch announcement; fixed pricing from "Plus $20 / Pro $30 / Ultra $100" to "Pro $20 / Ultra $100" (Engadget source confirmed correct pricing); CUT "500M+ monthly Shorts creators" stat (wrong — 500M+ are viewers, not creators; ~6.5M monthly uploading creators); CUT "pre-launch leak from May 11" (unverifiable) → "pre-launch coverage"; Added Artificial Analysis links for Seedance 2 and Kling 3.0 leaderboard claims; Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+2. **google-gemini-spark-personal-ai-agent-review** — Had 2 inline links and Sources section. KEY FIX: "OpenClaw Pro" → "OpenAI Pro" (hallucinated product name). Added inline Google Blog link for Canva/OpenTable/Instacart day-one integrations. Added inline Forbes link for adversarial prompt security claim (softened to remove unverifiable direct quote). sources_audited: 2026-07-27.
+
+3. **google-pics-ai-design-image-generation-workspace-review** — Had Sources section and 2 inline links. CORRECTION: Updated Canva user count from "approximately 200 million" to "approximately 265 million monthly active users" (Backlinko 2026 data: 265M+, the 200M figure was from 2024). Added inline Engadget link for "AI Ultra price was cut from $250 to $100." sources_audited: 2026-07-27.
+
+4. **google-webmcp-browser-mcp-standard-review** — Had only the W3C GitHub inline link. Added Google I/O announcement link for WebMCP launch + partner list (Booking.com, Expedia, Instacart, Intuit, Shopify, Redfin). Added Sources section (2 entries: Google Blog, W3C GitHub). sources_audited: 2026-07-27.
+
+5. **openai-chatgpt-ads-manager-self-serve-advertising-review** — Had inline OpenAI links. CORRECTION: "800M monthly active users" → "800M+ weekly active users by late 2025" (the 800M figure was WAU not MAU; MAU was ~1B+ by mid-2026). Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+6. **openai-codex-cloud-agentic-coding-platform-review** — Had multiple inline links. Added inline link for "$122 billion in capital committed" claim → TechTimes. Added Sources section (3 entries). sources_audited: 2026-07-27.
+
+7. **openai-daybreak-gpt-5-5-cyber-codex-security-cybersecurity-review** — Had multiple inline OpenAI links. CUT specific Oracle Cloud partnership claim ("separate partnership in early 2026") — no source found. CUT "CVE-2026-4747, the 17-year FreeBSD RCE" specific CVE attribution → redirected to Glasswing review (which has the sourced details). Added Sources section (2 entries). sources_audited: 2026-07-27.
+
+8. **openai-ipo-2026-s1-filing-valuation-risks-guide** — Had Sources section with 4 links. Added inline PYMNTS links for $25B revenue and $14B operating loss claims. Added inline TechCrunch link for Anthropic $900B IPO valuation. Added inline Stackmatix link for market share table (ChatGPT 64.5%, Gemini 21.5% — confirmed March 2026 data). Expanded Sources section from 4 to 7 entries. sources_audited: 2026-07-27.
+
+9. **xai-grok-speech-to-text-tts-api-review** — ZERO Sources section. Added inline MarkTechPost link for April 18 launch. Added Sources section (2 entries: MarkTechPost, Dapta AI). sources_audited: 2026-07-27.
+
+10. **google-io-2026-gemini-spark-intelligent-eyewear-search-agents-review** — Had Sources section. KEY FIX: "Ultra costs $24.99/month" → "$100/month" (major factual error — the actual price confirmed at $99.99/month). Had inline links already. sources_audited: 2026-07-27.
+
+**Deploy:** Build succeeded. Deploy throttled (527 seconds elapsed at commit time; throttle clears ~51 min after batch 86 deploy). **NEXT RUN: deploy batch 87 immediately (check .last_deploy timestamp first).**
+
+#### Bluesky
+July 27 cap already used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Running totals
+- Previous audited: ~921 pages (as of Run 2682)
+- This run: +10 pages (batch 87, 2026-05-22+ cluster)
+- **Total pages with sources_audited: ~931**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Deploy batch 87 immediately (check .last_deploy timestamp)
+- Continue citation audit: next batch after 2026-05-23 (openai-ipo-filing-anthropic-q2, google-ai-pro-plan, and others in the 2026-05-23 to 2026-05-24 cluster)
+
+---
+
 ## Run 2682 — 2026-07-27 — Citation Audit (10 reviews + 1 category, batch 86, 2026-05-22 cluster)
 
 **Mode:** Citation auditor

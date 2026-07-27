@@ -93,7 +93,7 @@ The SWE-Verified tie at 80.4/80.8 (within margin of error) means that for softwa
 
 Alibaba's most striking capability demonstration for Qwen3.7-Max doesn't involve a leaderboard. It involves a domestic Chinese chip.
 
-The demo: Qwen3.7-Max was given access to an isolated server running a Pingtouge Zhenwu M890 processor (T-Head ZW-M890 PPU) — a hardware architecture the model had never encountered during training. Its task: autonomously optimize Triton operators for this chip.
+[Described in Alibaba Cloud's announcement](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154): Qwen3.7-Max was given access to an isolated server running a Pingtouge Zhenwu M890 processor (T-Head ZW-M890 PPU) — a hardware architecture the model had never encountered during training. Its task: autonomously optimize Triton operators for this chip.
 
 Over **35 continuous hours**, the model:
 - Executed **1,158 distinct tool calls**
@@ -111,6 +111,8 @@ The result was working, optimized software for a chip it had never trained on, p
 ---
 
 ## Pricing
+
+Pricing per the [Alibaba Cloud announcement](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154):
 
 | Tier | Price per M tokens |
 |---|---|
@@ -163,6 +165,15 @@ The combination of near-Opus-4.6 performance on GPQA Diamond and HLE, SWE-Verifi
 The gaps are real: text-only, no open weights, and a 35-hour flagship demo that is self-reported. But for software engineering and mathematical reasoning workloads running through Claude Code-compatible infrastructure, Qwen3.7-Max is worth testing against your actual tasks.
 
 **Rating: 4/5.** Strong benchmarks, strong price, strong builder compatibility. Held back one point by text-only limitation, no open weights, and the self-reported nature of the headline demo.
+
+---
+
+---
+
+## Sources
+
+- [Qwen3.7: The Agent Frontier — Alibaba Cloud blog](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154) — official announcement: release date, benchmarks, 35-hour chip demo, pricing
+- [Qwen3.7-Max — Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/qwen3-7-max) — third-party aggregate benchmark scores (56.6 index, GPQA Diamond 92.4, HLE 41.4, SWE-Verified 80.4)
 
 ---
 

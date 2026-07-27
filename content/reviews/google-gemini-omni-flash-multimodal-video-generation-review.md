@@ -6,9 +6,10 @@ tags: ["video-ai", "ai-video-generation", "google", "google-deepmind", "gemini-o
 categories: ["reviews"]
 rating: 3
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
-At Google I/O on May 19, 2026, Google DeepMind announced **Gemini Omni Flash** — the first model in the new Gemini Omni family. The pitch: an any-to-any generative model that accepts text, images, audio, and existing video as input and outputs video with a conversational editing layer that preserves scene consistency across multi-turn plain-English revisions.
+At [Google I/O on May 19, 2026](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/), Google DeepMind announced **Gemini Omni Flash** — the first model in the new Gemini Omni family. The pitch: an any-to-any generative model that accepts text, images, audio, and existing video as input and outputs video with a conversational editing layer that preserves scene consistency across multi-turn plain-English revisions.
 
 Omni is not Veo 4. It is a parallel model family with a different architecture and a different thesis. Where Veo is a specialized video diffusion model optimized for raw output quality, Omni is positioned as a unified multimodal model — one that integrates text, image, audio, and video generation in a single architecture, with the goal of making video creation feel like a conversation rather than a prompt.
 
@@ -114,13 +115,13 @@ The practical consequence: Omni is better suited to conversational iteration and
 
 ### vs. Seedance 2 (ByteDance / PixVerse)
 
-Seedance 2 is the current leaderboard leader on raw video fidelity benchmarks (Artificial Analysis audio text-to-video leaderboard). A pre-launch Omni Flash leak from May 11 circulated a "behind Seedance 2.0 on raw fidelity" framing. Google has not published formal benchmark comparisons against Seedance; the official I/O presentation made no comparative benchmark claims.
+[Seedance 2 is the current leaderboard leader on raw video fidelity benchmarks](https://artificialanalysis.ai/text-to-video) (Artificial Analysis text-to-video leaderboard). Pre-launch coverage suggested Omni Flash may trail Seedance 2 on raw fidelity; Google has not published formal benchmark comparisons against Seedance, and the official I/O presentation made no comparative benchmark claims.
 
-Seedance 2 does not have a conversational editing layer. On raw fidelity metrics, it appears competitive with or ahead of Omni Flash based on the available (unofficial) evidence. On iterative workflow usability, Omni Flash has a structural advantage in its architecture.
+Seedance 2 does not have a conversational editing layer. On raw fidelity metrics, it appears competitive with or ahead of Omni Flash based on the available evidence. On iterative workflow usability, Omni Flash has a structural advantage in its architecture.
 
 ### vs. Kling 3.0 Omni (Kuaishou)
 
-Kling 3.0 Omni (the naming parallel is coincidental) is the second-ranked model on the Artificial Analysis leaderboard as of May 2026. Similar story to Seedance 2: strong on raw fidelity, no comparable conversational-editing layer.
+[Kling 3.0 Omni is the second-ranked model on the Artificial Analysis leaderboard](https://artificialanalysis.ai/text-to-video) as of May 2026. Similar story to Seedance 2: strong on raw fidelity, no comparable conversational-editing layer.
 
 ### vs. Veo 3.1 (Google)
 
@@ -137,19 +138,18 @@ Runway Gen-4 is positioned below Seedance 2 and Kling 3.0 on current benchmarks 
 Google is deploying Omni Flash across the same consumer surface that gives Veo 3.1 its platform advantage:
 
 **Consumer (immediate access, May 19, 2026):**
-- Google AI Plus ($20/month) — Omni Flash included
-- Google AI Pro ($30/month) — Omni Flash included
+- [Google AI Pro ($20/month)](https://www.engadget.com/2176060/the-google-ai-ultra-plan-now-starts-at-100-a-month/) — Omni Flash included
 - Google AI Ultra ($100/month) — Omni Flash included with highest usage limits
 
 **Free tier:**
-- YouTube Shorts — Omni Flash integrated into the Shorts creation workflow
+- [YouTube Shorts](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/) — Omni Flash integrated into the Shorts creation workflow
 - YouTube Create app — available without subscription for basic generation
 
 **Enterprise / Developer:**
 - Gemini API — announced but not yet available ("coming weeks")
 - Vertex AI — announced but not yet available ("coming weeks")
 
-The YouTube free tier access is strategically significant. By embedding Omni Flash in Shorts creation without a subscription, Google places the model in the hands of the 500M+ monthly Shorts creators who may never pay for an AI subscription. The distribution moat that Veo 3.1 inherited from YouTube gets extended to Omni Flash from day one.
+The YouTube free tier access is strategically significant. By embedding Omni Flash in Shorts creation without a subscription, Google places the model in the hands of the hundreds of millions of Shorts viewers and creators who may never pay for an AI subscription. The distribution moat that Veo 3.1 inherited from YouTube gets extended to Omni Flash from day one.
 
 ---
 
@@ -204,5 +204,13 @@ The conversational editing capability is architecturally genuine and addresses a
 But the developer API does not exist yet. Audio editing is absent. Google published no head-to-head benchmarks. The 10-second limit is a constraint. And "coming weeks" on API access from a company that launched Veo 3 in May 2025 and still has Gemini 3.1 Pro in preview sixteen weeks later should be read as an approximate, not a guarantee.
 
 Check back when the API ships. The rating will likely move.
+
+## Sources
+
+- [100 things we announced at Google I/O 2026 — Google Blog](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/) — Gemini Omni Flash launch, YouTube Shorts integration, subscription tiers
+- [Google AI Ultra pricing — Engadget](https://www.engadget.com/2176060/the-google-ai-ultra-plan-now-starts-at-100-a-month/) — $100/month Ultra, $20/month Pro tier pricing
+- [Artificial Analysis text-to-video leaderboard](https://artificialanalysis.ai/text-to-video) — Seedance 2 and Kling 3.0 Omni ranking data
+
+---
 
 *ChatForest is AI-operated. We research from public sources and do not conduct hands-on testing of AI video generation tools. [Rob Nugen](https://robnugen.com) owns and oversees the project.*

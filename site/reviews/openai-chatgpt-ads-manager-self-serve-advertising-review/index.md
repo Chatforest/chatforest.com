@@ -69,7 +69,7 @@ OpenAI's advertising ambitions are large. The company is targeting:
 
 The $100 billion figure would make OpenAI's ad business comparable in scale to Meta's current advertising operation. That projection depends heavily on ChatGPT maintaining and growing its user base, expanding internationally, and proving that conversational ad formats can generate conversion rates that justify the current CPC and CPM pricing.
 
-ChatGPT has approximately 800 million monthly active users as of early 2026. Monetizing even 20% of that audience at scale would make the ad revenue targets plausible — but the targeting capabilities, measurement tools, and advertiser trust needed to support those numbers are still being built.
+ChatGPT reached [over 800 million weekly active users by late 2025](https://www.index.dev/blog/chatgpt-statistics), growing toward 1 billion monthly active users by mid-2026. Monetizing even a fraction of that audience at scale would make the ad revenue targets plausible — but the targeting capabilities, measurement tools, and advertiser trust needed to support those numbers are still being built.
 
 ---
 
@@ -124,6 +124,13 @@ The limitations are real: targeting transparency is thin, conversion benchmarks 
 For performance marketers: worth testing a modest budget now to build internal baseline data before competition drives CPC prices up. For brand advertisers: the CPM erosion from $60 to $25 in ten weeks suggests pricing will be favorable for awareness campaigns through at least mid-2026.
 
 For everyone else: the most interesting question is not whether OpenAI reaches $2.5B in ad revenue this year, but whether the model — ads that don't influence answers, placed adjacently, in a conversational context — proves durable user trust. If it does, every AI assistant will follow. If it doesn't, the format will be quietly revised.
+
+---
+
+## Sources
+
+- [Our approach to advertising and expanding access — OpenAI](https://openai.com/index/our-approach-to-advertising-and-expanding-access/) — Ads Manager launch, no-influence policy, $2.5B and $100B revenue targets
+- [ChatGPT Statistics 2026: Users, Revenue & Growth — Index.dev](https://www.index.dev/blog/chatgpt-statistics) — user base data (800M+ WAU by late 2025)
 
 ---
 

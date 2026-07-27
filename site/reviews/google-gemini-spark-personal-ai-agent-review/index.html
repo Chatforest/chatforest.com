@@ -81,7 +81,7 @@
 <li><strong>Google Maps</strong> — location context for scheduling and logistics</li>
 <li><strong>YouTube</strong> — research and content context</li>
 </ul>
-<p>Third-party integrations shipping on day one include <strong>Canva</strong>, <strong>OpenTable</strong>, and <strong>Instacart</strong>. MCP-based integrations covering GitHub, Notion, and Slack are announced for &ldquo;over the summer&rdquo; 2026.</p>
+<p>Third-party integrations shipping on day one include <a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"><strong>Canva</strong>, <strong>OpenTable</strong>, and <strong>Instacart</strong></a>. MCP-based integrations covering GitHub, Notion, and Slack are announced for &ldquo;over the summer&rdquo; 2026.</p>
 <p>Spark also supports <strong>sub-agent creation</strong>: users can spin up specialized sub-agents — a &ldquo;travel Spark&rdquo; for itinerary research, a &ldquo;shopping Spark&rdquo; for price tracking, a &ldquo;news Spark&rdquo; for morning briefings. These lightweight instances report back to the primary Spark instance, allowing users to delegate entire domains of recurring work rather than individual tasks.</p>
 <hr>
 <h2 id="the-antigravity-platform">The Antigravity Platform</h2>
@@ -121,7 +121,7 @@
 </tr>
 </tbody>
 </table>
-<p>The Ultra plan dropped from $250/month — a significant price cut that appears aimed at making the tier competitive with OpenClaw Pro and other premium consumer AI subscriptions.</p>
+<p>The Ultra plan dropped from $250/month — a significant price cut that appears aimed at making the tier competitive with OpenAI Pro and other premium consumer AI subscriptions.</p>
 <p>Google is also moving from daily prompt limits to a <strong>compute-based usage model</strong>. A simple text message consumes a small portion of your monthly compute budget; a complex multi-step agentic task with many API calls consumes proportionally more. When you approach your monthly cap, Spark falls back to Gemini 3.5 Flash rather than cutting off access entirely.</p>
 <p><strong>Current availability:</strong> US only, over 18.</p>
 <hr>
@@ -132,7 +132,7 @@
 <hr>
 <h2 id="security-and-privacy-concerns">Security and Privacy Concerns</h2>
 <p>Gemini Spark requires more trust than any previous Google product, and the trust story at launch is incomplete.</p>
-<p><strong>Prompt injection is a real attack surface.</strong> A persistent agent that reads arbitrary web content, emails, and documents on your behalf is a high-value target for adversarial instructions embedded in those sources. Malicious websites and emails can contain hidden text designed to hijack an AI agent&rsquo;s actions — redirecting purchases, exfiltrating data, or executing unauthorized tasks. Google said in May 2026 that malicious websites are actively targeting AI agents via hidden prompts, and stated that Spark includes &ldquo;adversarial prompt detection.&rdquo; No one has fully solved prompt injection. Running a 24/7 agent that reads arbitrary external content is a meaningful attack surface, and users should treat it as such.</p>
+<p><strong>Prompt injection is a real attack surface.</strong> A persistent agent that reads arbitrary web content, emails, and documents on your behalf is a high-value target for adversarial instructions embedded in those sources. Malicious websites and emails can contain hidden text designed to hijack an AI agent&rsquo;s actions — redirecting purchases, exfiltrating data, or executing unauthorized tasks. <a href="https://www.forbes.com/sites/janakirammsv/2026/05/21/google-io-2026-turned-gemini-into-an-agent-platform/">Google noted in May 2026 that malicious websites are actively targeting AI agents via hidden prompts</a>, and that Spark includes prompt detection layers as part of its security design. No one has fully solved prompt injection. Running a 24/7 agent that reads arbitrary external content is a meaningful attack surface, and users should treat it as such.</p>
 <p>A leaked onboarding screen from an early Gemini app beta disclosed that Spark &ldquo;may do things like share your info or make purchases without asking.&rdquo; Google has acknowledged the screen but clarified that high-stakes actions require approval before Spark will execute them. The framing of the leaked text, however, suggests the eventual steady-state — particularly after the Agents Payment Protocol launches — involves a meaningfully larger autonomous surface than today&rsquo;s consent patterns train users to expect.</p>
 <p>As of the I/O keynote, <strong>Google has not published a Spark-specific privacy policy</strong>. The standard Google Privacy Policy applies, but it predates a product category where an AI agent has persistent access to your full email, files, and calendar and is authorized to take actions on your behalf.</p>
 <p>The absence of a Spark privacy policy is not unusual for a product in trust-tester rollout — but it is notable that the commercial launch timeline for Ultra subscribers does not appear to be gated on publishing one.</p>

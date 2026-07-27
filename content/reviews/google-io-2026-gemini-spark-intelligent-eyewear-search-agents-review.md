@@ -4,6 +4,7 @@ date: 2026-05-23
 description: "Google's I/O 2026 keynote (May 19) introduced Gemini Spark, a 24/7 personal AI agent; a full Search redesign with background information agents; Android XR smart glasses; and Gemini 3.5 Flash. Here's everything that matters."
 tags: ["google", "gemini", "ai-agents", "android", "search", "hardware", "google-io"]
 rating: 4
+sources_audited: 2026-07-27
 ---
 
 ## The Headline
@@ -156,7 +157,7 @@ Antigravity 2.0 — Google's AI developer platform — received updates alongsid
 ### Weaknesses
 
 - **Privacy questions** around Spark are unanswered at launch. Persistent agents with Gmail access are a serious trust commitment; Google has not published clear policies.
-- **Availability bottleneck**: Spark is Ultra-only at launch. Ultra costs $24.99/month. Most users will not see these features for months or longer.
+- **Availability bottleneck**: Spark is Ultra-only at launch. [Ultra costs $100/month](https://www.engadget.com/2176060/the-google-ai-ultra-plan-now-starts-at-100-a-month/) (down from $250 before I/O). Most users will not see these features for months or longer.
 - **No pricing on eyewear**: Fall 2026 launch without pricing makes it impossible to assess consumer viability.
 - **Gemini 3.5 Pro** was teased with no details. Announcing a model without benchmarks or an availability date is more hype than substance.
 

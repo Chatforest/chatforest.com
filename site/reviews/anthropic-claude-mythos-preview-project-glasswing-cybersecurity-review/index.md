@@ -21,9 +21,9 @@ This review covers what Mythos Preview is, what it demonstrated it can do, how P
 
 ## Background: The Capability That Prompted Restricted Deployment
 
-Claude Opus 4.7, released nine days after Project Glasswing (April 16, 2026), is Anthropic's strongest publicly deployed model. Its SWE-bench Verified score of 87.6% is the highest of any available model. On Artificial Analysis's hallucination benchmark, it scores 36% — the lowest (best) of any frontier LLM.
+Claude Opus 4.7, released nine days after Project Glasswing (April 16, 2026), is Anthropic's strongest publicly deployed model. Its [SWE-bench Verified score of 87.6%](https://red.anthropic.com/2026/mythos-preview/) is the highest of any available model. On Artificial Analysis's hallucination benchmark, it scores 36% — the lowest (best) of any frontier LLM.
 
-But Anthropic simultaneously disclosed that Opus 4.7 is not their most capable model. Mythos Preview exists above it on the capability curve — scoring **93.9% on SWE-Bench Verified** (vs. Opus 4.7's 87.6%) and **97.6% on USAMO** (mathematics competition benchmark) — and the company chose not to release it.
+But Anthropic simultaneously disclosed that Opus 4.7 is not their most capable model. Mythos Preview exists above it on the capability curve — scoring [**93.9% on SWE-Bench Verified**](https://red.anthropic.com/2026/mythos-preview/) (vs. Opus 4.7's 87.6%) and **97.6% on USAMO** (mathematics competition benchmark) — and the company chose not to release it.
 
 The reason was cybersecurity.
 
@@ -35,7 +35,7 @@ The company's conclusion: releasing Mythos publicly would hand that capability t
 
 ## What Claude Mythos Preview Can Do
 
-Anthropic published detailed performance figures in April 2026. The numbers are specific enough to understand what "strikingly capable at computer security tasks" means in practice.
+Anthropic published detailed performance figures in April 2026. The numbers are specific enough to understand what "strikingly capable at computer security tasks" means in practice. ([Full technical assessment — Anthropic Red Team](https://red.anthropic.com/2026/mythos-preview/))
 
 **CyberGym benchmark:** Mythos Preview scored 83.1% on vulnerability reproduction tasks, versus 66.6% for Claude Opus 4.6. This is the gap between a model that can identify vulnerabilities effectively and one that can reliably build working exploits from them.
 
@@ -57,7 +57,7 @@ The UK AI Safety Institute (AISI) conducted an independent evaluation of Mythos 
 
 A key finding from Anthropic's evaluation: these capabilities "emerged as a downstream consequence of general improvements in code, reasoning, and autonomy" — they were not the result of explicit security-focused training. The same improvements that make Mythos better at writing and debugging code also make it better at finding and exploiting vulnerabilities.
 
-Over 99% of the vulnerabilities found by Project Glasswing remain unpatched as of the announcement. Anthropic committed to coordinated disclosure: 90 days for vendors to patch, plus 45 additional days if needed, then public disclosure. They published SHA-3 cryptographic hashes of undisclosed vulnerabilities at announcement time — a commitment device that allows future proof of prior discovery without revealing exploit details during the patching window.
+[Over 99% of the vulnerabilities found by Project Glasswing remain unpatched](https://www.anthropic.com/research/glasswing-initial-update) as of the announcement. Anthropic committed to coordinated disclosure: 90 days for vendors to patch, plus 45 additional days if needed, then public disclosure. They published SHA-3 cryptographic hashes of undisclosed vulnerabilities at announcement time — a commitment device that allows future proof of prior discovery without revealing exploit details during the patching window.
 
 ---
 
@@ -69,7 +69,7 @@ Project Glasswing is the mechanism Anthropic created to deploy Mythos Preview wi
 
 **Additional access:** 40+ organizations maintaining critical software infrastructure granted access — open-source security maintainers, critical infrastructure operators, enterprise security teams.
 
-**Financial commitments:**
+**Financial commitments** (per [Anthropic's Project Glasswing announcement](https://www.anthropic.com/glasswing)):
 - $100 million in Mythos Preview usage credits committed to Project Glasswing participants
 - $4 million in direct donations to open-source security organizations
 - $2.5 million to Alpha-Omega and the OpenSSF (Open Source Security Foundation)
@@ -91,7 +91,7 @@ The same model that can patch vulnerabilities can exploit them. The same autonom
 
 The alternative framing is also explicit in the Glasswing documents: if Mythos Preview can find thousands of zero-day vulnerabilities autonomously, so can any comparable model developed by a well-resourced adversary. The question is not whether this class of capability exists in the world — it is whether it gets deployed on the defensive side before the vulnerabilities are exploited.
 
-Schneier on Security noted the pattern: Anthropic is essentially arguing that the offensive AI capability race is already underway, and the question is whether defensive AI deployment can keep pace. Project Glasswing is a structured bet that a coordinated defensive coalition — with controlled access and coordinated disclosure — can outrun the offensive side, at least on critical infrastructure.
+Anthropic is essentially arguing that the offensive AI capability race is already underway, and the question is whether defensive AI deployment can keep pace. Project Glasswing is a structured bet that a coordinated defensive coalition — with controlled access and coordinated disclosure — can outrun the offensive side, at least on critical infrastructure.
 
 Whether that bet holds depends on factors outside Glasswing's control: how fast adversarial capability advances, how quickly vendors patch disclosed vulnerabilities, and whether the Cyber Verification Program's access controls prove durable over time.
 

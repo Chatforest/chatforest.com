@@ -116,5 +116,14 @@ For Cursor users doing long agentic coding sessions, Composer 2.5 is the cleares
 
 ---
 
+---
+
+## Sources
+
+- [Composer 2.5 — Cursor blog, May 18, 2026](https://cursor.com/blog/composer-2-5) — architecture, training approach (textual feedback RL, 25× synthetic tasks), benchmarks (CursorBench v3.1, SWE-Bench Multilingual, Terminal-Bench 2.0), pricing, SpaceXAI partnership
+- [Kimi K2.5 open-weight MoE — Digital Applied](https://www.digitalapplied.com/blog/kimi-k2-5-open-weight-moe-composer-2-5) — base checkpoint context
+
+---
+
 *Cursor Composer 2.5 launched May 18, 2026. This review is based on Cursor's release announcement, public benchmark data (CursorBench v3.1, SWE-Bench Multilingual, Terminal-Bench 2.0), and third-party coverage. ChatForest has not run independent model evaluations.*
 

@@ -71,7 +71,7 @@ Google Pics is currently available to a limited group of **Trusted Testers**. Br
 | Google AI Ultra Premium | $200/mo | Included (summer) |
 | Google Workspace Business | Preview access | TBD |
 
-The AI Ultra price was cut from $250/month to $100/month at I/O 2026, making the tier that includes both Pics and Gemini Spark substantially more accessible than it was. The $20 AI Pro tier represents the broadest addressable market — that price point is comparable to a Canva Pro subscription ($15–$20/month depending on billing).
+The [AI Ultra price was cut from $250/month to $100/month at I/O 2026](https://www.engadget.com/2176060/the-google-ai-ultra-plan-now-starts-at-100-a-month/), making the tier that includes both Pics and Gemini Spark substantially more accessible than it was. The $20 AI Pro tier represents the broadest addressable market — that price point is comparable to a Canva Pro subscription ($15–$20/month depending on billing).
 
 There is no announced free tier for Pics.
 
@@ -101,7 +101,7 @@ Based on the announcement, the following capabilities are absent or unconfirmed:
 
 ## Competitive Context
 
-Google's two primary competitors in this space are Canva and Adobe Firefly within Adobe Express. Canva had approximately 200 million users as of early 2026, with strong network effects from its template sharing community. Adobe Firefly benefits from deep integration with Creative Cloud for users who move between Express and Photoshop or Illustrator.
+Google's two primary competitors in this space are Canva and Adobe Firefly within Adobe Express. [Canva had approximately 265 million monthly active users as of early 2026](https://backlinko.com/canva-users), with strong network effects from its template sharing community. Adobe Firefly benefits from deep integration with Creative Cloud for users who move between Express and Photoshop or Illustrator.
 
 Google Pics' edge is distribution: if AI Pro reaches meaningful subscriber scale, Pics arrives already installed for those users inside Workspace. This is the same playbook Google used to grow Google Meet during the pandemic — not the best product in a category, but the one already open on the screen.
 

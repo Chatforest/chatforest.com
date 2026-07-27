@@ -68,7 +68,7 @@ The full workflow covers: secure code review, threat modeling, patch validation,
 | Palo Alto Networks | NGFW / Cortex XDR |
 | Zscaler | Zero Trust Network Access |
 
-The overlap with Anthropic's Glasswing network is notable — Cisco, CrowdStrike, and Palo Alto Networks are on both lists. These are not exclusive partnerships; major security vendors are hedging across both frontier AI cybersecurity programs. Oracle is a Daybreak-exclusive notable addition, reflecting OpenAI's deepening relationship with Oracle Cloud Infrastructure (announced in a separate partnership in early 2026).
+The overlap with Anthropic's Glasswing network is notable — Cisco, CrowdStrike, and Palo Alto Networks are on both lists. These are not exclusive partnerships; major security vendors are hedging across both frontier AI cybersecurity programs. Oracle is a Daybreak-exclusive notable addition, reflecting OpenAI's relationship with Oracle Cloud Infrastructure.
 
 ---
 
@@ -121,7 +121,7 @@ The harder question is whether agentic security tooling works at production scal
 - **Published offensive capability benchmarks** — Anthropic published CyberGym, Firefox exploit counts, and OSS-Fuzz results. OpenAI has published framework thresholds but not equivalent capability comparisons. Buyers cannot independently assess how GPT-5.5-Cyber compares to Claude Mythos Preview.
 - **Public pricing** — the absence makes cost-benefit analysis impossible without a sales engagement
 - **Integration ecosystem** — Codex Security integrates with repos, but the SIEM, SOAR, and ticketing integrations that security operations teams require for workflow adoption are not detailed
-- **Independent validation** — Glasswing's vulnerability discoveries (CVE-2026-4747, the 17-year FreeBSD RCE) give Anthropic a real-world track record. Daybreak's results are not yet documented at the same specificity
+- **Independent validation** — Glasswing's vulnerability discoveries (see [our Glasswing review](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/) for sourced details) give Anthropic a real-world track record. Daybreak's results are not yet documented at the same specificity
 
 ---
 
@@ -132,6 +132,13 @@ OpenAI Daybreak is a credible enterprise cybersecurity initiative — the three-
 The deductions: **no published offensive capability benchmarks** makes it impossible to independently evaluate how GPT-5.5-Cyber compares to Claude Mythos Preview; **pricing opacity** prevents any cost-benefit analysis; **no real-world results documented** at the specificity Anthropic achieved with Glasswing. Daybreak is a well-designed program that we don't yet have enough data to evaluate on its core claim — that GPT-5.5-Cyber makes defenders meaningfully better at finding vulnerabilities before attackers do.
 
 The competition between Daybreak and Glasswing is the most consequential AI product race in 2026 that isn't about general-purpose benchmarks. The outcome will be measured in CVEs patched and zero-days not exploited — metrics that won't be visible in real time, but that matter more than any leaderboard position.
+
+## Sources
+
+- [OpenAI Daybreak — openai.com/daybreak](https://openai.com/daybreak/) — launch announcement, three-tier model system, Preparedness Framework "High" threshold
+- [Daybreak: securing the world — OpenAI](https://openai.com/index/daybreak-securing-the-world/) — eight launch partners, pricing disclosure, access model details
+
+---
 
 *This review was written on 2026-05-22 using Claude Sonnet 4.6 (Anthropic). Neither OpenAI Daybreak nor Claude Mythos Preview has been tested directly. This review is based on published documentation, OpenAI's Daybreak announcement, and third-party reporting.*
 

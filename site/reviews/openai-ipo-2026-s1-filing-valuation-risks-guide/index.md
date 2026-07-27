@@ -15,13 +15,13 @@ If it gets there, OpenAI would be the most valuable U.S. company to ever go publ
 
 ### Revenue
 
-OpenAI reached approximately **$25 billion in annualized revenue** as of February 2026, up from $20 billion at year-end 2025. That is impressive growth. Enterprise now represents roughly **40% of revenue** and is on track to match consumer (ChatGPT subscriptions) by year-end.
+OpenAI reached approximately [**$25 billion in annualized revenue** as of February 2026](https://www.pymnts.com/news/investment-tracker/ipo/2026/openai-eyes-september-ipo-despite-14-billion-projected-loss/), up from $20 billion at year-end 2025. That is impressive growth. Enterprise now represents roughly **40% of revenue** and is on track to match consumer (ChatGPT subscriptions) by year-end.
 
 The company's ad business — the ChatGPT Ads Manager launched May 5 — crossed **$100 million in annualized revenue in under six weeks**. Internal projections call for $2.5 billion in ad revenue in 2026, $11 billion in 2027, and $100 billion by 2030. If those projections hold, ads alone could anchor the IPO story.
 
 ### Losses
 
-Here is the tension at the center of the OpenAI IPO story: the company is **not profitable and does not expect to be until around 2030**. Internal projections show a **$14 billion operating loss in 2026** — a year in which the company will also commit $600 billion in five-year spending on semiconductors and data centers.
+Here is the tension at the center of the OpenAI IPO story: the company is **not profitable and does not expect to be until around 2030**. [Internal projections show a **$14 billion operating loss in 2026**](https://www.pymnts.com/news/investment-tracker/ipo/2026/openai-eyes-september-ipo-despite-14-billion-projected-loss/) — a year in which the company will also commit $600 billion in five-year spending on semiconductors and data centers.
 
 For context, this is a company burning ~$14B to generate ~$25B. The compute costs are staggering, and the path to profitability depends almost entirely on whether AI usage — and willingness to pay — keeps scaling as fast as infrastructure costs do.
 
@@ -53,9 +53,9 @@ OpenAI is going public at a moment when its market share is slipping, at least b
 | Gemini (Google) | 5.7% | 21.5% |
 | Others | 7.6% | 14.0% |
 
-ChatGPT remains dominant, but Gemini's trajectory — from near-zero to 21.5% in one year — is a material risk to disclose in any S-1. Google has distribution advantages (Search, Android, Workspace) that no startup can replicate, and has been closing the capability gap with every Gemini release.
+ChatGPT remains dominant, but [Gemini's trajectory — from near-zero to 21.5% in one year](https://www.stackmatix.com/blog/ai-search-market-share-2026) — is a material risk to disclose in any S-1. Google has distribution advantages (Search, Android, Workspace) that no startup can replicate, and has been closing the capability gap with every Gemini release.
 
-Anthropic, meanwhile, is targeting its own IPO in **October 2026 at a $900 billion valuation**, meaning both of the two leading AI labs will be competing in public markets simultaneously within a quarter of each other.
+Anthropic, meanwhile, is targeting its own IPO in [**October 2026 at a $900 billion valuation**](https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/), meaning both of the two leading AI labs will be competing in public markets simultaneously within a quarter of each other.
 
 ---
 
@@ -106,6 +106,9 @@ For developers and power users: nothing changes on May 23, 2026. But by Q4, the 
 - [OpenAI Targets An IPO As Soon As September At Up To $850 Billion — TechTimes](https://www.techtimes.com/articles/317955/20260607/openai-targets-ipo-soon-september-850-billion.htm) — valuation and timeline details
 - [OpenAI Files Confidential IPO With Goldman Sachs — Abhishek Gautam](https://www.abhs.in/blog/openai-ipo-september-2026-goldman-sachs-850-billion-valuation-filing) — Goldman Sachs lead underwriter detail
 - [OpenAI IPO S-1 Filing 2026: $852B Valuation Analysis — BuildMVPFast](https://www.buildmvpfast.com/blog/openai-ipo-filing-valuation-s1-2026) — financial structure and nonprofit governance details
+- [OpenAI eyes September IPO despite $14 billion projected loss — PYMNTS](https://www.pymnts.com/news/investment-tracker/ipo/2026/openai-eyes-september-ipo-despite-14-billion-projected-loss/) — revenue and operating loss figures
+- [AI search market share 2026 — Stackmatix](https://www.stackmatix.com/blog/ai-search-market-share-2026) — ChatGPT/Gemini market share data (March 2026)
+- [Anthropic potential $900B valuation round — TechCrunch](https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/) — Anthropic IPO valuation
 
 ---
 

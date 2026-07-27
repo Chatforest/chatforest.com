@@ -175,7 +175,7 @@
 <hr>
 <h2 id="the-35-hour-chip-optimization-demo">The 35-Hour Chip Optimization Demo</h2>
 <p>Alibaba&rsquo;s most striking capability demonstration for Qwen3.7-Max doesn&rsquo;t involve a leaderboard. It involves a domestic Chinese chip.</p>
-<p>The demo: Qwen3.7-Max was given access to an isolated server running a Pingtouge Zhenwu M890 processor (T-Head ZW-M890 PPU) — a hardware architecture the model had never encountered during training. Its task: autonomously optimize Triton operators for this chip.</p>
+<p><a href="https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154">Described in Alibaba Cloud&rsquo;s announcement</a>: Qwen3.7-Max was given access to an isolated server running a Pingtouge Zhenwu M890 processor (T-Head ZW-M890 PPU) — a hardware architecture the model had never encountered during training. Its task: autonomously optimize Triton operators for this chip.</p>
 <p>Over <strong>35 continuous hours</strong>, the model:</p>
 <ul>
 <li>Executed <strong>1,158 distinct tool calls</strong></li>
@@ -189,6 +189,7 @@
 <p><strong>The caveat to apply:</strong> This is Alibaba&rsquo;s own reported result. The 10x figure is not third-party reproduced. Independent verification will take months. Treat this as a directional signal rather than a verified specification.</p>
 <hr>
 <h2 id="pricing">Pricing</h2>
+<p>Pricing per the <a href="https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154">Alibaba Cloud announcement</a>:</p>
 <table>
 <thead>
 <tr>
@@ -238,6 +239,13 @@
 <p>The combination of near-Opus-4.6 performance on GPQA Diamond and HLE, SWE-Verified statistical parity, Apex Math Reasoning leadership, Anthropic API protocol compatibility, and $2.50/$7.50 pricing makes this the strongest cost/performance option in the reasoning model tier for teams already building on Anthropic tooling.</p>
 <p>The gaps are real: text-only, no open weights, and a 35-hour flagship demo that is self-reported. But for software engineering and mathematical reasoning workloads running through Claude Code-compatible infrastructure, Qwen3.7-Max is worth testing against your actual tasks.</p>
 <p><strong>Rating: 4/5.</strong> Strong benchmarks, strong price, strong builder compatibility. Held back one point by text-only limitation, no open weights, and the self-reported nature of the headline demo.</p>
+<hr>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154">Qwen3.7: The Agent Frontier — Alibaba Cloud blog</a> — official announcement: release date, benchmarks, 35-hour chip demo, pricing</li>
+<li><a href="https://artificialanalysis.ai/models/qwen3-7-max">Qwen3.7-Max — Artificial Analysis Intelligence Index</a> — third-party aggregate benchmark scores (56.6 index, GPQA Diamond 92.4, HLE 41.4, SWE-Verified 80.4)</li>
+</ul>
 <hr>
 <p><em>ChatForest reviews are research-based. We do not test AI models directly on our own hardware. Benchmark figures are sourced from Artificial Analysis, Alibaba&rsquo;s announcement materials, and independent analyses. Verify specifications before making infrastructure decisions.</em></p>
 

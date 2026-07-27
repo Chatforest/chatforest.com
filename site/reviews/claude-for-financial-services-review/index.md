@@ -7,7 +7,7 @@
 
 ---
 
-**At a glance:** Claude for Financial Services launched May 5, 2026 at an invite-only briefing in New York. Ten agent templates across research, client coverage, and finance operations. MCP connectors to FactSet, PitchBook, S&P Capital IQ, Morningstar, MSCI, Chronograph, LSEG, Daloopa, and more. An "Advancing" update added IBISWorld, SS&C IntraLinks, Third Bridge, Verisk (insurance), and a Moody's MCP app covering 600+ million companies. Microsoft 365 integration across Excel, PowerPoint, Outlook, and SharePoint. No training on customer data (Enterprise commitment). Rating: **4/5.** See our **[guide to all ten agent templates](/guides/anthropic-finance-agents-financial-services-templates/)** and our **[analysis of Anthropic's vertical MCP strategy](/builders-log/anthropic-vertical-mcp-strategy/)** for broader context.
+**At a glance:** Claude for Financial Services [launched May 5, 2026](https://www.anthropic.com/news/claude-for-financial-services) at an invite-only briefing in New York. Ten agent templates across research, client coverage, and finance operations. MCP connectors to FactSet, PitchBook, S&P Capital IQ, Morningstar, MSCI, Chronograph, LSEG, Daloopa, and more. Per the [Anthropic announcement](https://www.anthropic.com/news/claude-for-financial-services), an "Advancing" update added IBISWorld, SS&C IntraLinks, Third Bridge, Verisk (insurance), and a Moody's MCP app covering 600+ million companies. Microsoft 365 integration across Excel, PowerPoint, Outlook, and SharePoint. No training on customer data (Enterprise commitment). Rating: **4/5.** See our **[guide to all ten agent templates](/guides/anthropic-finance-agents-financial-services-templates/)** and our **[analysis of Anthropic's vertical MCP strategy](/builders-log/anthropic-vertical-mcp-strategy/)** for broader context.
 
 ---
 
@@ -17,7 +17,7 @@ Claude for Financial Services is the most ambitious attempt yet to wire a genera
 
 The connector architecture means Claude can pull a company's financials from FactSet, check credit ratings from Moody's, run a comp set from PitchBook, and assemble the output into a PowerPoint pitchbook in a single workflow — without any of the manual re-keying that currently makes this a half-day analyst task. The Moody's MCP app goes further still, embedding Moody's proprietary UI directly inside Claude for compliance and credit analysis on more than 600 million public and private companies.
 
-The pricing comparison to legacy financial data tools inverts expectations. Bloomberg Terminal runs roughly $25,000 per seat per year. FactSet and S&P Capital IQ run at comparable levels. Claude for Financial Services is priced as an Enterprise seat ($60+/month estimated, token costs separate) with the connectors on top — a fraction of what dedicated financial data products cost, and one that includes agentic execution rather than just data access. The catch is that Claude is not a deterministic calculator, and a model with a hallucinated number in it is still a model with a wrong number in it. That risk is real and not fully managed by Anthropic's tooling alone.
+The pricing comparison to legacy financial data tools inverts expectations. Bloomberg Terminal runs roughly $28,000–$32,000 per seat per year. FactSet and S&P Capital IQ run at comparable levels. Claude for Financial Services is priced as an Enterprise seat ($60+/month estimated, token costs separate) with the connectors on top — a fraction of what dedicated financial data products cost, and one that includes agentic execution rather than just data access. The catch is that Claude is not a deterministic calculator, and a model with a hallucinated number in it is still a model with a wrong number in it. That risk is real and not fully managed by Anthropic's tooling alone.
 
 ---
 
@@ -25,7 +25,7 @@ The pricing comparison to legacy financial data tools inverts expectations. Bloo
 
 ### Ten Agent Templates
 
-Anthropic organized the ten templates into two tracks, announced at the May 5 New York briefing and confirmed by early access partners including JPMorgan Chase, Goldman Sachs, Citadel, and Walleye Capital.
+Anthropic [organized the ten templates](https://www.anthropic.com/news/claude-for-financial-services) into two tracks, announced at the May 5 New York briefing and confirmed by early access partners including JPMorgan Chase, Goldman Sachs, Citadel, and Walleye Capital.
 
 **Research and Client Coverage:**
 - **Pitch builder** — target lists, comparable analyses, and pitchbook assembly end-to-end; outputs Excel comps, PowerPoint deck, and Outlook cover note
@@ -72,7 +72,7 @@ Claude for Financial Services pricing has two layers: the seat license and the t
 
 | Tool | Annual seat cost | Agentic execution? | Data access |
 |------|-----------------|-------------------|-------------|
-| Bloomberg Terminal | ~$25,000/seat | No | Proprietary terminal |
+| Bloomberg Terminal | ~$28,000–32,000/seat | No | Proprietary terminal |
 | FactSet | ~$15,000–25,000/seat | No | Proprietary platform |
 | S&P Capital IQ | ~$12,000–20,000/seat | No | Proprietary platform |
 | Claude for Financial Services (Enterprise) | ~$720–3,000/seat + tokens | Yes | MCP connectors to multiple providers |
@@ -149,6 +149,15 @@ The pricing disruption is real but requires careful total-cost modeling — toke
 For research teams, asset managers, and PE/VC firms doing high-volume analyst work, the ROI case is strong enough to warrant a pilot now. For retail banking, HIPAA-adjacent workflows, and Salesforce-native relationship teams, the gaps are real enough to wait for the next wave of connectors.
 
 **Rating: 4/5** — The agents are real, the connectors are deep, and the pricing model disrupts the status quo. The hallucination risk and beta components keep it from a 5.
+
+---
+
+---
+
+## Sources
+
+- [Introducing Claude for Financial Services — Anthropic](https://www.anthropic.com/news/claude-for-financial-services) — launch announcement: agent templates, MCP connectors, partner list, Moody's 600M company coverage, advancing update details
+- [Claude Enterprise — Anthropic](https://www.anthropic.com/enterprise) — enterprise pricing, SOC 2 / ISO 27001 certifications, no-training data commitment
 
 ---
 

@@ -7,7 +7,7 @@
 
 ---
 
-**At a glance:** Claude for Legal launched May 12, 2026. 20+ MCP connectors across contracts, document management, eDiscovery, litigation, and legal research. 12 practice-area plugins (commercial, corporate M&A, employment, privacy, product, regulatory, AI governance, IP, litigation, and others). Available on Claude Pro/Max/Enterprise. Add-on approximately $20/seat/month. Access-to-justice partnerships for pro se litigants. Rating: **4/5.** See our **[full guide to Claude for Legal connectors and plugins](/guides/claude-connectors-legal/)** and our **[analysis of Anthropic's vertical MCP strategy](/builders-log/anthropic-vertical-mcp-strategy/)** for context.
+**At a glance:** Claude for Legal [launched May 12, 2026](https://www.law.com/legaltechnews/2026/05/12/anthropic-announces-legal-practice-plug-ins-for-claude-legal-tech-integrations/). 20+ MCP connectors across contracts, document management, eDiscovery, litigation, and legal research. 12 practice-area plugins (commercial, corporate M&A, employment, privacy, product, regulatory, AI governance, IP, litigation, and others). Available on Claude Pro/Max/Enterprise. Add-on approximately $20/seat/month. Access-to-justice partnerships for pro se litigants. Rating: **4/5.** See our **[full guide to Claude for Legal connectors and plugins](/guides/claude-connectors-legal/)** and our **[analysis of Anthropic's vertical MCP strategy](/builders-log/anthropic-vertical-mcp-strategy/)** for context.
 
 ---
 
@@ -106,7 +106,7 @@ The 30x cost difference between Claude for Legal and Harvey is significant enoug
 
 **Pricing point.** At $40/seat/month on the Pro plan, Claude for Legal is accessible to small firms and solo practitioners who cannot justify Harvey's pricing. This is the broadest addressable market in legal AI.
 
-**Access-to-justice component.** The public-interest connectors — Courtroom5 for pro se litigants, CourtListener for free law access — are not a core revenue play, but they extend the reach of the product to the 80% of civil litigants who currently navigate courts without representation. That alignment matters both ethically and for regulatory positioning.
+**Access-to-justice component.** The public-interest connectors — Courtroom5 for pro se litigants, CourtListener for free law access — are not a core revenue play, but they extend the reach of the product to civil litigants who lack representation. That alignment matters both ethically and for regulatory positioning.
 
 **Open MCP standard.** Tool vendors build one MCP server and connect to any MCP-compatible host. This creates an incentive structure where legal software vendors are motivated to maintain and improve their connectors continuously, rather than waiting for Anthropic to build point-to-point integrations.
 
@@ -116,7 +116,7 @@ The 30x cost difference between Claude for Legal and Harvey is significant enoug
 
 **The privilege problem.** This is the most important concern and it requires direct treatment.
 
-In *United States v. Heppner* (February 17, 2026), U.S. District Judge Jed S. Rakoff ruled that documents generated using Claude were not protected by attorney-client privilege. The reasoning: Anthropic's privacy policy explicitly states that the company collects both user inputs and Claude outputs, uses that data to train models, and reserves the right to disclose data to governmental regulatory authorities. Judge Rakoff found that because communications with Claude are not confidential under these terms, the attorney-client privilege — which requires confidentiality — does not attach.
+In [*United States v. Heppner* (February 17, 2026)](https://www.debevoisedatablog.com/2026/02/11/district-court-rules-ai-generated-documents-are-not-protected-by-privilege/), U.S. District Judge Jed S. Rakoff ruled that documents generated using Claude were not protected by attorney-client privilege. The reasoning: Anthropic's privacy policy explicitly states that the company collects both user inputs and Claude outputs, uses that data to train models, and reserves the right to disclose data to governmental regulatory authorities. Judge Rakoff found that because communications with Claude are not confidential under these terms, the attorney-client privilege — which requires confidentiality — does not attach.
 
 The ruling is not yet circuit precedent and applies to specific fact patterns. But the underlying logic — that Anthropic's data retention and disclosure terms are incompatible with privilege — applies to any Claude plan that does not have explicit contractual data protections in place.
 
@@ -178,6 +178,17 @@ The privilege ruling from *United States v. Heppner* is unresolved and should no
 If your firm has resolved the data and privilege questions — or is operating on Enterprise with appropriate DPA protections — Claude for Legal at the Max or Enterprise tier is a compelling evaluation. At the Pro tier, it is the most accessible serious legal AI product in the market.
 
 **Rating: 4/5** — Strong connector depth, meaningful practice-area calibration, disruptive price point. Privilege concern and verification requirement are real costs that keep this from a perfect score.
+
+---
+
+---
+
+## Sources
+
+- [Anthropic Announces Legal Practice Plug-ins for Claude — Law.com Legal Tech News, May 12, 2026](https://www.law.com/legaltechnews/2026/05/12/anthropic-announces-legal-practice-plug-ins-for-claude-legal-tech-integrations/) — launch coverage: 20+ connectors, 12 plugins, May 12 date
+- [District Court Rules AI-Generated Documents Are Not Protected by Privilege — Debevoise Data Blog, Feb 2026](https://www.debevoisedatablog.com/2026/02/11/district-court-rules-ai-generated-documents-are-not-protected-by-privilege/) — *United States v. Heppner* ruling, Judge Rakoff analysis
+- [AI and Legal Privilege: Key Takeaways from US v. Heppner — Inside Privacy](https://www.insideprivacy.com/artificial-intelligence/ai-and-legal-privilege-key-takeaways-from-us-v-heppner/) — additional ruling analysis
+- [Claude for Legal on GitHub — Anthropic](https://github.com/anthropics/claude-for-legal) — practice-area plugins, connector list, open-source repository
 
 ---
 

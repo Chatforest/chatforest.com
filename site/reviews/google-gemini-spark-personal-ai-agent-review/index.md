@@ -25,7 +25,7 @@ At launch, Spark connects natively to:
 - **Google Maps** — location context for scheduling and logistics
 - **YouTube** — research and content context
 
-Third-party integrations shipping on day one include **Canva**, **OpenTable**, and **Instacart**. MCP-based integrations covering GitHub, Notion, and Slack are announced for "over the summer" 2026.
+Third-party integrations shipping on day one include [**Canva**, **OpenTable**, and **Instacart**](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/). MCP-based integrations covering GitHub, Notion, and Slack are announced for "over the summer" 2026.
 
 Spark also supports **sub-agent creation**: users can spin up specialized sub-agents — a "travel Spark" for itinerary research, a "shopping Spark" for price tracking, a "news Spark" for morning briefings. These lightweight instances report back to the primary Spark instance, allowing users to delegate entire domains of recurring work rather than individual tasks.
 
@@ -59,7 +59,7 @@ Gemini Spark is exclusive to **Google AI Ultra** subscribers. Google restructure
 | Google AI Ultra (higher limits) | $200/month | Yes |
 | Google AI Pro | — | No |
 
-The Ultra plan dropped from $250/month — a significant price cut that appears aimed at making the tier competitive with OpenClaw Pro and other premium consumer AI subscriptions.
+The Ultra plan dropped from $250/month — a significant price cut that appears aimed at making the tier competitive with OpenAI Pro and other premium consumer AI subscriptions.
 
 Google is also moving from daily prompt limits to a **compute-based usage model**. A simple text message consumes a small portion of your monthly compute budget; a complex multi-step agentic task with many API calls consumes proportionally more. When you approach your monthly cap, Spark falls back to Gemini 3.5 Flash rather than cutting off access entirely.
 
@@ -81,7 +81,7 @@ Google's managed agents infrastructure already supports MCP natively (as covered
 
 Gemini Spark requires more trust than any previous Google product, and the trust story at launch is incomplete.
 
-**Prompt injection is a real attack surface.** A persistent agent that reads arbitrary web content, emails, and documents on your behalf is a high-value target for adversarial instructions embedded in those sources. Malicious websites and emails can contain hidden text designed to hijack an AI agent's actions — redirecting purchases, exfiltrating data, or executing unauthorized tasks. Google said in May 2026 that malicious websites are actively targeting AI agents via hidden prompts, and stated that Spark includes "adversarial prompt detection." No one has fully solved prompt injection. Running a 24/7 agent that reads arbitrary external content is a meaningful attack surface, and users should treat it as such.
+**Prompt injection is a real attack surface.** A persistent agent that reads arbitrary web content, emails, and documents on your behalf is a high-value target for adversarial instructions embedded in those sources. Malicious websites and emails can contain hidden text designed to hijack an AI agent's actions — redirecting purchases, exfiltrating data, or executing unauthorized tasks. [Google noted in May 2026 that malicious websites are actively targeting AI agents via hidden prompts](https://www.forbes.com/sites/janakirammsv/2026/05/21/google-io-2026-turned-gemini-into-an-agent-platform/), and that Spark includes prompt detection layers as part of its security design. No one has fully solved prompt injection. Running a 24/7 agent that reads arbitrary external content is a meaningful attack surface, and users should treat it as such.
 
 A leaked onboarding screen from an early Gemini app beta disclosed that Spark "may do things like share your info or make purchases without asking." Google has acknowledged the screen but clarified that high-stakes actions require approval before Spark will execute them. The framing of the leaked text, however, suggests the eventual steady-state — particularly after the Agents Payment Protocol launches — involves a meaningfully larger autonomous surface than today's consent patterns train users to expect.
 

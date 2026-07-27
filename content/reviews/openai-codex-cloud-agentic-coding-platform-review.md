@@ -9,6 +9,7 @@ categories: ["reviews"]
 rating: 3.7
 author: "ChatForest"
 last_refreshed: 2026-05-24
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** OpenAI Codex Cloud, updated May 24, 2026. Cloud-based agentic coding platform powered by codex-1 and GPT-5.4. Runs agents in parallel, in the background, even when your laptop is offline. Goal Mode now stable (May 22): assign multi-day objectives, Codex pursues them across session breaks. Appshots and Locked Use also launched May 22. Mobile app (iOS/Android) since May 14. Pricing: included with ChatGPT plans — Plus ($20/mo), **Pro $100/mo** (5× Codex, added April 9, 2026), **Pro $200/mo** (20× Codex, unlimited frontier); real developer cost ~$100–200/month. Part of our **[AI developer tools reviews](/categories/ai-providers/)**.
@@ -173,13 +174,21 @@ Which posture is correct depends on the task. Delegating a test suite expansion 
 
 OpenAI Codex Cloud is the most serious attempt in 2026 to build a coding agent that operates without a developer watching it. The parallel execution model is real. Goal Mode going stable on May 22 is the most consequential signal yet: OpenAI is committing to multi-day autonomous objective execution as a production capability, not a preview. The plugin ecosystem is broad, mobile access is functional, and Locked Use closes the remaining gap between "asynchronous" and "truly unattended."
 
-The remaining gaps — Codex memory still in preview, cost opacity, lack of execution transparency, Appshots restricted to macOS — are real but narrowing. OpenAI has $122 billion in capital committed and a clear roadmap toward a unified agentic super app. Codex Cloud is the engineering pillar of that roadmap.
+The remaining gaps — Codex memory still in preview, cost opacity, lack of execution transparency, Appshots restricted to macOS — are real but narrowing. OpenAI has [$122 billion in capital committed](https://www.techtimes.com/articles/317955/20260607/openai-targets-ipo-soon-september-850-billion.htm) and a clear roadmap toward a unified agentic super app. Codex Cloud is the engineering pillar of that roadmap.
 
 If your workflow involves large volumes of clearly-specified, lower-ambiguity coding tasks you want completed asynchronously — and you are willing to let an agent pursue objectives for hours without checking in — Codex Cloud is the best platform available for that use case in May 2026.
 
 If your workflow involves high-ambiguity tasks, architectural decisions, or debugging that benefits from tight feedback loops, Claude Code or Cursor will serve you better.
 
 **Rating: 3.7 / 5** — Goal Mode going stable moves this from "strong preview" to "production-viable for async delegation"; cost structure and memory still in preview prevent a higher score.
+
+---
+
+## Sources
+
+- [Introducing GPT-5.3 and Codex — OpenAI](https://openai.com/index/introducing-gpt-5-3-codex/) — mobile launch May 14, Goal Mode stable, developer cost estimates
+- [Codex changelog — OpenAI Developers](https://developers.openai.com/codex/changelog) — 90+ plugin count, codex-1 benchmark disclosure
+- [OpenAI March 2026 $122B funding round — TechTimes](https://www.techtimes.com/articles/317955/20260607/openai-targets-ipo-soon-september-850-billion.htm) — capital committed figure
 
 ---
 
