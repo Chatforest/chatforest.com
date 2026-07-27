@@ -3,7 +3,7 @@
 > Koog 1.0 landed at KotlinConf '26 with a 1-year API stability guarantee, Spring Boot integration, multiplatform observability, and Anthropic prompt caching. Paired with the Agent Client Protocol (ACP), it's the most production-ready JVM agent framework available. Here's what changed and when JVM builders should use it.
 
 
-At KotlinConf '26 on May 27, 2026, JetBrains shipped Koog 1.0 — a stable release of their open-source JVM agent framework — alongside new features across interoperability, observability, and the Agent Client Protocol (ACP) ecosystem. If you're building agents in Kotlin, Java, or anywhere on the JVM, this is the most consequential framework release of the year. Here's what changed, what it means, and when it's the right tool.
+At KotlinConf '26 on May 27, 2026, JetBrains [shipped Koog 1.0](https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/) — a stable release of their open-source JVM agent framework — alongside new features across interoperability, observability, and the Agent Client Protocol (ACP) ecosystem. If you're building agents in Kotlin, Java, or anywhere on the JVM, this is the most consequential framework release of the year. Here's what changed, what it means, and when it's the right tool.
 
 ## What Koog Is
 
@@ -50,7 +50,7 @@ This is a meaningful shift. Teams that already have observability infrastructure
 
 ### Anthropic Prompt Caching
 
-Koog 1.0 adds Anthropic prompt caching support. For agents with long system prompts, tool schemas, or context documents, caching the prefix can cut input token costs by 90% on repeated calls. At scale, this is the difference between an agent being economically viable and not.
+Koog 1.0 adds Anthropic prompt caching support. For agents with long system prompts, tool schemas, or context documents, caching the prefix can [cut input token costs by 90%](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) on repeated calls. At scale, this is the difference between an agent being economically viable and not.
 
 This requires Anthropic as your model backend — Claude Sonnet 4.6 or Opus 4.8 via the Anthropic API, Bedrock, or Vertex AI.
 
@@ -79,7 +79,7 @@ The spec uses JSON-RPC 2.0 over stdin/stdout. Official SDKs ship for Python, Typ
 
 ### The ACP Agent Registry
 
-JetBrains and Zed Industries jointly launched the **ACP Agent Registry** on January 28, 2026 — a curated marketplace of ACP-compatible agents installable with one click from IntelliJ IDEA, PyCharm, WebStorm, or Zed.
+JetBrains and Zed Industries jointly launched the [**ACP Agent Registry**](https://blog.jetbrains.com/ai/2026/01/acp-agent-registry/) on January 28, 2026 — a curated marketplace of ACP-compatible agents installable with one click from IntelliJ IDEA, PyCharm, WebStorm, or Zed.
 
 Agents confirmed in the registry at launch: Kimi CLI, goose (by Block), and Augment Code. Additional agents include Gemini CLI, Claude Code, Auggie, OpenCode, and GitHub Copilot.
 
@@ -129,7 +129,7 @@ For JVM-shop builders evaluating agent frameworks, that guarantee may matter mor
 
 ## Getting Started
 
-Koog is open source under the Apache 2.0 license. The 1.0.0 release is on GitHub at [JetBrains/koog](https://github.com/JetBrains/koog). The release blog post on the JetBrains AI Blog covers the full 1.0 changelog.
+Koog is open source under the Apache 2.0 license. The 1.0.0 release is on GitHub at [JetBrains/koog](https://github.com/JetBrains/koog). The [release blog post on the JetBrains AI Blog](https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/) covers the full 1.0 changelog.
 
 ACP documentation and the agent registry are at [jetbrains.com/acp](https://www.jetbrains.com/acp/).
 

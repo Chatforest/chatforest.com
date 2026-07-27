@@ -6,6 +6,7 @@ og_description: "95% of engineers use AI weekly. Claude Code topped the 2026 Pra
 content_type: "Builder's Log"
 categories: ["Developer Tools", "Industry Analysis", "AI Productivity"]
 tags: ["claude-code", "pragmatic-engineer", "metr", "productivity", "survey", "ai-tools", "software-engineering", "agents", "developer-tools", "2026"]
+sources_audited: 2026-07-27
 ---
 
 Two major surveys landed in early-to-mid 2026 that every builder should read together — not because they agree, but because their tension reveals something important about where AI tools actually stand.
@@ -39,7 +40,7 @@ When asked which tool they love most:
 | Cursor | 19% |
 | GitHub Copilot | 9% |
 
-Claude Code launched in May 2025. The survey ran in early 2026 — eight months later. In that time it went from not existing to being the most-loved coding tool in the industry, overtaking Copilot (which had a three-year head start and Microsoft's distribution) and Cursor (which had years of IDE refinement).
+[Claude Code launched in May 2025](https://www.anthropic.com/news/claude-code). The survey ran in early 2026 — eight months later. In that time it went from not existing to being the most-loved coding tool in the industry, overtaking Copilot (which had a three-year head start and Microsoft's distribution) and Cursor (which had years of IDE refinement).
 
 Anthropic's underlying models also dominate: Opus and Sonnet received more mentions for coding tasks combined than all other models together.
 

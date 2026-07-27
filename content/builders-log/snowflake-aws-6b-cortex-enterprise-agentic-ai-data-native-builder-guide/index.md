@@ -3,6 +3,7 @@ title: "Snowflake Bets $6B on AWS: The Enterprise AI Architecture Shift Builders
 date: 2026-05-30
 description: "Snowflake's $6 billion multi-year AWS commitment signals that enterprise AI has crossed from experimentation to infrastructure. The architectural principle behind the deal — bring AI to the data, not data to the AI — should reshape how every builder pitches, designs, and prices for enterprise."
 tags: ["enterprise-ai", "snowflake", "aws", "agentic-ai", "data-governance", "cortex", "mcp"]
+sources_audited: 2026-07-27
 ---
 
 When a data company bets $6 billion on a single cloud provider, builders should pay attention. When its [stock jumps 36%](https://www.cnbc.com/2026/05/27/snowflake-amazon-graviton-cloud-chips.html) the same day — the best single-day move in Snowflake's public history — it is worth asking what that market reaction is actually pricing in.
@@ -23,7 +24,7 @@ The $6B commitment is underwriting two parallel product bets:
 
 Skills — launching in general availability soon — let business users describe workflows in natural language once, then hand those workflows off to the agent to execute on a recurring or triggered basis. No prompt engineering, no API knowledge required.
 
-**Cortex Code** is Snowflake's builder-facing layer: an AI coding agent trained to understand enterprise data context rather than generic code patterns. Launched in November 2025, Cortex Code crossed 50% customer adoption in roughly six months — an unusually fast enterprise platform curve. It integrates natively with VS Code and Claude Code, ships Python and TypeScript Agent SDKs for custom agent development, and has expanded external data support to include AWS Glue, Databricks, and Postgres.
+**Cortex Code** is Snowflake's builder-facing layer: an AI coding agent trained to understand enterprise data context rather than generic code patterns. [Launched in November 2025, Cortex Code crossed 50% customer adoption](https://www.snowflake.com/en/news/press-releases/snowflake-expands-snowflake-intelligence-and-cortex-code-to-power-the-control-plane-for-the-agentic-enterprise/) in roughly six months — an unusually fast enterprise platform curve. It integrates natively with VS Code and Claude Code, ships Python and TypeScript Agent SDKs for custom agent development, and has expanded external data support to include AWS Glue, Databricks, and Postgres.
 
 The broader **Cortex AI** capability stack beneath both products handles the AI operations that enterprise applications actually need: text-to-SQL, document summarization, sentiment analysis, and entity extraction — all executed directly within the Snowflake environment, with the data staying where governance requires.
 

@@ -41,7 +41,7 @@ Understanding the five-layer cake helps you predict pricing cycles, not just abs
 
 NVIDIA unveiled the [Vera Rubin platform](https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-ceo-confirms-vera-rubin-nvl72-is-now-in-production-jensen-huang-uses-ces-keynote-to-announce-the-milestone) in detail earlier this year. GTC Taipei is where H2 deployment timelines and partner commitments will be formalized.
 
-**The hardware:**
+**The hardware** ([full NVL72 specs via VideoCardz](https://videocardz.com/newz/nvidia-vera-rubin-nvl72-detailed-72-gpus-36-cpus-260-tb-s-scale-up-bandwidth)):
 
 - 72 Rubin GPUs + 36 Vera CPUs in a single liquid-cooled rack
 - 3.6 EFLOPS of NVFP4 inference throughput at the rack level
@@ -73,7 +73,7 @@ HBM4's bandwidth jump is also significant for context-heavy workloads. Long-cont
 
 The N1X is the announcement most covered by consumer tech press and most consistently underframed for builders.
 
-**What it is:**
+**What it is** ([N1X specs confirmed via VideoCardz](https://videocardz.com/newz/nvidia-n1x-n1-laptop-chip-specifications)):
 
 - ARM-based SoC co-developed with MediaTek
 - 20 ARM cores in a hybrid config: 10 Cortex-X925 performance cores + 10 Cortex-A725 efficiency cores, boosting to ~4.0–4.2 GHz

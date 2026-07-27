@@ -34,7 +34,7 @@ When asked which tool they love most:
 | Cursor | 19% |
 | GitHub Copilot | 9% |
 
-Claude Code launched in May 2025. The survey ran in early 2026 — eight months later. In that time it went from not existing to being the most-loved coding tool in the industry, overtaking Copilot (which had a three-year head start and Microsoft's distribution) and Cursor (which had years of IDE refinement).
+[Claude Code launched in May 2025](https://www.anthropic.com/news/claude-code). The survey ran in early 2026 — eight months later. In that time it went from not existing to being the most-loved coding tool in the industry, overtaking Copilot (which had a three-year head start and Microsoft's distribution) and Cursor (which had years of IDE refinement).
 
 Anthropic's underlying models also dominate: Opus and Sonnet received more mentions for coding tasks combined than all other models together.
 

@@ -75,7 +75,7 @@ Builders who understand both layers can explain them to enterprise buyers in ter
 ## Timeline
 
 - **May 27, 2026** — Snowflake signs definitive agreement to acquire Natoma. Financial terms undisclosed. ([Forbes coverage](https://www.forbes.com/sites/janakirammsv/2026/05/31/snowflake-buys-natoma-to-govern-the-agents-acting-on-its-data/))
-- **June 1–4, 2026** — Snowflake Summit 26, San Francisco. June 1 keynote features Daniela Amodei (Anthropic) and CEO Sridhar Ramaswamy. June 3 Builder Keynote expected to show Natoma integration in depth.
+- **June 1–4, 2026** — Snowflake Summit 26, San Francisco. June 1 keynote features [Daniela Amodei (Anthropic President)](https://www.businesswire.com/news/home/20260422291081/en/Snowflake-Makes-AI-Real-for-Businesses-at-Snowflake-Summit-26-Featuring-Anthropics-Daniela-Amodei-and-Other-Industry-Leaders) and CEO Sridhar Ramaswamy. June 3 Builder Keynote expected to show Natoma integration in depth.
 - **Closing date** — Not disclosed. Subject to standard regulatory review.
 
 ---

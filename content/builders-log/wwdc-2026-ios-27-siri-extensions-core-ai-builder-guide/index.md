@@ -5,6 +5,7 @@ description: "WWDC keynote is June 8. What builders actually need to know: Siri'
 content_type: "Builder's Log"
 categories: ["Apple", "Platform Strategy", "Agent Infrastructure"]
 tags: ["wwdc-2026", "ios-27", "apple", "siri", "gemini", "claude", "extensions-framework", "core-ai", "core-ml", "on-device-ai", "builder-guide"]
+sources_audited: 2026-07-27
 ---
 
 Apple's WWDC keynote is June 8 at 10am PT. The conference runs June 8–12. If you build on iOS, ship an AI product, or want access to two billion active Apple devices, three things announced or confirmed this week should be on your radar before the keynote drops.
@@ -13,7 +14,7 @@ Apple's WWDC keynote is June 8 at 10am PT. The conference runs June 8–12. If y
 
 These are not rumors. They are confirmed announcements, code found in developer betas, or official joint statements:
 
-**Siri runs on Google Gemini.** Apple and Google published a joint statement in January 2026 confirming a multi-year deal — [confirmed at WWDC 2026](https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/). Apple pays roughly $1B per year for access to a custom 1.2 trillion parameter Gemini model. The model runs through Apple's Private Cloud Compute infrastructure — end-to-end encrypted, hardware-isolated, no data stored by Google after processing. Siri 2.0 in iOS 27 is a full chatbot with web search, image generation, coding assistance, file analysis, and multi-step execution. It is not a wrapper on the existing Siri. The old Siri is gone.
+**Siri runs on Google Gemini.** Apple and Google [published a joint statement in January 2026](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/) confirming a multi-year deal — [confirmed at WWDC 2026](https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/). Apple pays roughly $1B per year for access to a custom 1.2 trillion parameter Gemini model. The model runs through Apple's Private Cloud Compute infrastructure — end-to-end encrypted, hardware-isolated, no data stored by Google after processing. Siri 2.0 in iOS 27 is a full chatbot with web search, image generation, coding assistance, file analysis, and multi-step execution. It is not a wrapper on the existing Siri. The old Siri is gone.
 
 **iOS 27 has an Extensions framework for third-party AI providers.** [Code found in iOS 27 test builds on May 5, 2026](https://thenextweb.com/news/apple-siri-extensions-third-party-ai-missing-wwdc) — with Apple's own description language — shows a framework that lets users route Apple Intelligence requests to Claude, Gemini (the standalone app, separate from the Siri backend), or ChatGPT. Extensions live in App Store apps. A provider adds Extensions support to their existing app; users pick one in Settings; the choice routes Siri, Writing Tools, and Image Playground requests to that model system-wide. The framework spans iOS 27, iPadOS 27, and macOS 27.
 

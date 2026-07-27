@@ -3,11 +3,12 @@ title: "Zuckerberg Says Meta Cloud Is 'Definitely on the Table' — What a First
 date: 2026-05-30
 description: "At Meta's May 27 shareholder meeting, Zuckerberg said selling compute and API access to other companies is 'definitely on the table.' If it happens, a first-party Meta inference API would undercut the entire Llama reseller market and restructure how builders price open-weight model workloads."
 tags: ["meta", "llama", "inference", "cloud", "api", "compute", "zuckerberg", "open-source"]
+sources_audited: 2026-07-27
 ---
 
 At Meta's annual shareholder meeting on May 27, 2026, Mark Zuckerberg said something builders who use Llama models should pay attention to.
 
-Asked whether Meta would compete with Amazon and Microsoft in cloud computing, Zuckerberg replied: **"It's definitely on the table."**
+Asked whether Meta would compete with Amazon and Microsoft in cloud computing, Zuckerberg replied: [**"It's definitely on the table."**](https://www.cnbc.com/2026/05/27/mark-zuckerberg-says-meta-starting-cloud-business-on-the-table.html)
 
 He continued: "Almost every week there are different companies that come to us from outside asking us to both stand up an API service or asking if we have compute that they could buy from us at some premium to what we've bought it at."
 
@@ -21,14 +22,14 @@ This is not a product announcement. There is no timeline, no pricing, no API doc
 
 ## What Meta's Infrastructure Looks Like Right Now
 
-Meta's 2026 capital expenditure guidance is $125 to $145 billion — the largest AI infrastructure bet of any company that doesn't derive revenue directly from cloud services. This is capital going toward:
+Meta's [2026 capital expenditure guidance is $125 to $145 billion](https://finance.yahoo.com/sectors/technology/article/meta-stock-sinks-after-q1-earnings-as-company-raises-2026-ai-spending-forecast-to-125-billion-145-billion-160136308.html) — the largest AI infrastructure bet of any company that doesn't derive revenue directly from cloud services. This is capital going toward:
 
 - Training Llama 6 and future model generations
 - Inference at scale for Facebook, Instagram, WhatsApp, Meta AI assistant (3.5 billion monthly active users)
 - Meta Ray-Ban and wearable AI features
 - Internal research and lab infrastructure
 
-To support this buildout, Meta has also contracted externally. CoreWeave and Meta signed an agreement in early 2026 for approximately $21 billion in AI cloud capacity through December 2032. That means Meta is simultaneously building its own infrastructure *and* leasing capacity from others — which suggests their own build is still working to catch up with compute demand.
+To support this buildout, Meta has also contracted externally. [CoreWeave and Meta signed an agreement](https://www.coreweave.com/news/coreweave-and-meta-announce-21-billion-expanded-ai-infrastructure-agreement) in early 2026 for approximately $21 billion in AI cloud capacity through December 2032. That means Meta is simultaneously building its own infrastructure *and* leasing capacity from others — which suggests their own build is still working to catch up with compute demand.
 
 The "overbuilt" trigger Zuckerberg referenced implies Meta believes it may eventually surpass what it needs internally. At $125-145B capex, even a modest oversupply at the margin would represent massive compute available for external monetization.
 

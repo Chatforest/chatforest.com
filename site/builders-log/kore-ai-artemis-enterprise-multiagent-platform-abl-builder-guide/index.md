@@ -47,6 +47,8 @@ They're complementary, not competitive: a builder could run ACS-compatible guard
 
 ## Scale: What Artemis Brings Out of the Box
 
+Per [Kore.ai's launch announcement](https://www.businesswire.com/news/home/20260521284219/en/Kore.ai-Launches-Artemis-the-New-Generation-of-the-Kore.ai-Agent-Platform-for-Building-Governing-and-Optimizing-Enterprise-AI):
+
 - **175 AI models** — OpenAI, Anthropic (Claude), Mistral, Llama, and other open-source models, with model routing built in
 - **150+ enterprise connectors** — SAP, Salesforce, ServiceNow, Microsoft 365, Workday, and others; agents can immediately interact with real business data
 - **40+ voice and digital channels** — voice, chat, email, Teams, Slack, and others

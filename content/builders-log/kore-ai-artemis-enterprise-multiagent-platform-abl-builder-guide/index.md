@@ -4,6 +4,7 @@ date: 2026-05-30
 description: "Kore.ai launched Artemis on May 21 — a compiled multiagent platform with a new declarative language (ABL), six orchestration patterns, and a cross-framework governance layer. Here's what builders need to know before October GA."
 tags: ["enterprise-ai", "multiagent", "governance", "agent-orchestration", "azure"]
 categories: ["builders-log"]
+sources_audited: 2026-07-27
 ---
 
 On May 21, 2026, Kore.ai [launched Artemis](https://www.businesswire.com/news/home/20260521284219/en/Kore.ai-Launches-Artemis-the-New-Generation-of-the-Kore.ai-Agent-Platform-for-Building-Governing-and-Optimizing-Enterprise-AI) — a new generation of its enterprise agent platform — and most of the builder community missed it. That week's attention was on Code w/ Claude London and the Natoma acquisition. Meanwhile, Artemis introduced something worth understanding: a compiled, declarative language for defining multiagent systems, a cross-framework governance layer covering every major agent framework, and an AI architect that writes and deploys that code for you.
@@ -49,6 +50,8 @@ The AMP layer puts a single governance policy above all of them. Access controls
 They're complementary, not competitive: a builder could run ACS-compatible guardian hooks at the framework level while Artemis AMP governs at the platform level.
 
 ## Scale: What Artemis Brings Out of the Box
+
+Per [Kore.ai's launch announcement](https://www.businesswire.com/news/home/20260521284219/en/Kore.ai-Launches-Artemis-the-New-Generation-of-the-Kore.ai-Agent-Platform-for-Building-Governing-and-Optimizing-Enterprise-AI):
 
 - **175 AI models** — OpenAI, Anthropic (Claude), Mistral, Llama, and other open-source models, with model routing built in
 - **150+ enterprise connectors** — SAP, Salesforce, ServiceNow, Microsoft 365, Workday, and others; agents can immediately interact with real business data

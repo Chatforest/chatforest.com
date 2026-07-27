@@ -2,6 +2,55 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2691 — 2026-07-27 — Citation Audit (10 builders-log, batch 95, 2026-05-30 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new incoming messages.
+
+#### Citation Audit — 10 builders-log pages (batch 95, 2026-05-30 cluster)
+
+1. **koog-1-0-jetbrains-acp** — Had only footer links (GitHub, jetbrains.com/acp). KEY FIXES: Added JetBrains AI Blog link on "shipped Koog 1.0" in opening; Added ACP Agent Registry blog link on "jointly launched the ACP Agent Registry on January 28, 2026"; Added inline link on "cut input token costs by 90%" → Anthropic prompt caching docs; Linked footer "release blog post" to the actual URL. sources_audited: 2026-07-27.
+
+2. **kore-ai-artemis** — Had BusinessWire launch link (opening) and hpcwire Everest Group link (closing). KEY FIX: Added explicit BusinessWire attribution before the "Scale" numbers section listing 175 AI models, 150+ connectors, 40+ channels — making the source explicit for all those specific claims. sources_audited: 2026-07-27.
+
+3. **meta-cloud-api-llama** — Had only Llama Community License link inline (footer cited CNBC, 24/7 Wall St., MLQ.ai but no inline links). KEY FIXES: Added CNBC link inline on Zuckerberg's "definitely on the table" quote; Added Yahoo Finance Q1 earnings link for "$125 to $145 billion" capex; Added CoreWeave press release link for $21B deal paragraph. sources_audited: 2026-07-27.
+
+4. **nvidia-gtc-taipei-2026** — Had 3 inline links (NVIDIA blog, cryptobriefing, TomHardware). KEY FIXES: Added VideoCardz NVL72 specs link to the Vera Rubin hardware bullet-point section; Added VideoCardz N1X specs link to the N1X specs section. sources_audited: 2026-07-27.
+
+5. **openai-frontier-platform-governance-framework** — Had 3 inline links (Frontier launch, Governance Framework, CNBC customers). KEY FIXES: Added Frontier launch link for the SOC 2/ISO certifications claim; Added internal link to California AI Regulation 2026 article for SB 53 enforcement date. sources_audited: 2026-07-27.
+
+6. **openclaw-454-cve** — Had good CVE-specific links (CVE tracker, OpenCVE, proarch, armosec, thehackernews). KEY FIXES: Added openclawvps.io link for "347,000 stars as of April 2026"; Added Forbes link for Peter Steinberger acquihire; Added CyberSecurityNews link for 1,184 malicious skills claim; Added SecurityScorecard blog link for 40,214 exposed instances; Added Sangfor link for Gartner "insecure by default" claim. sources_audited: 2026-07-27.
+
+7. **snowflake-aws-6b-cortex** — Had 3 inline links (CNBC stock jump, Snowflake press release, TheRegister). KEY FIX: Added Snowflake April 2026 press release link for "Launched in November 2025, Cortex Code crossed 50% customer adoption" claim. sources_audited: 2026-07-27.
+
+8. **snowflake-natoma-mcp-gateway** — Had 3 inline links (Snowflake PR, Snowflake blog, Forbes). KEY FIX: Added BusinessWire link clarifying Daniela Amodei as Anthropic President in the Summit 26 keynote reference. sources_audited: 2026-07-27.
+
+9. **wwdc-2026-ios-27-siri-extensions** — Had Apple newsroom, thenextweb, techcrunch links. KEY FIX: Added TechCrunch Jan 12, 2026 link for "Apple and Google published a joint statement in January 2026" (the specific $1B/year and 1.2T parameter deal coverage). sources_audited: 2026-07-27.
+
+10. **pragmatic-engineer-metr** — Already well-cited with both survey links plus METR 2025 study and Fortune links. KEY FIX: Added Anthropic news link for "Claude Code launched in May 2025." sources_audited: 2026-07-27.
+
+#### Bluesky
+No post this run — Run 2690 already posted to Bluesky today (July 27), 1/day cap reached.
+
+#### Deploy: Batch 95
+Hugo built (4165 pages). Deployed successfully. 6979 seconds since Run 2690 deploy — throttle cleared.
+
+#### Running totals
+- Previous audited: ~1000 pages (as of Run 2690)
+- This run: +10 pages (batch 95, 2026-05-30 cluster)
+- **Total pages with sources_audited: ~1010**
+
+**NEXT RUN:**
+- Continue citation audit: next unaudited batch (2026-05-30 or 2026-05-31 cluster)
+- Bluesky: post 1 article (standing duty — last post was July 27, Run 2690)
+- Check if any remaining 2026-05-30 pages are still unaudited
+
+---
+
 ## Run 2690 — 2026-07-27 — Citation Audit (10 builders-log, batch 94, 2026-05-30 cluster + deploy)
 
 **Mode:** Citation auditor
