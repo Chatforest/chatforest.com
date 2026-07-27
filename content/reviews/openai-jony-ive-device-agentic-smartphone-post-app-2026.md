@@ -4,6 +4,7 @@ date: 2026-05-23
 description: "A screenless companion launching late 2026 and an agentic smartphone targeting 2027. OpenAI's $6.5 billion hardware bet isn't about putting AI on your phone — it's about replacing the phone entirely."
 tags: ["openai", "hardware", "jony-ive", "smartphone", "ai-agents", "devices"]
 draft: false
+sources_audited: 2026-07-27
 ---
 
 The smartphone paradigm is roughly 19 years old. OpenAI thinks it's time for a replacement.
@@ -50,13 +51,13 @@ The more recent and more surprising development: OpenAI is also building a **ful
 
 Reports from April–May 2026 indicate:
 
-- OpenAI is developing **custom smartphone chips** in partnership with **MediaTek** and **Qualcomm**, with MediaTek reportedly selected as the primary supplier
+- OpenAI is [developing **custom smartphone chips** in partnership with **MediaTek** and **Qualcomm**](https://thenextweb.com/news/openai-qualcomm-ai-phone-agents-replace-apps), with MediaTek reportedly selected as the primary supplier
 - **Foxconn** is the manufacturing partner (with production planned for the US and Vietnam)
 - The interface replaces the traditional app grid with a **task-based model**: users describe what they want to accomplish; AI agents handle execution in the background
 - **On-device + cloud hybrid**: Small models run locally for speed and privacy; complex tasks route to cloud models
-- Mass production **could begin H1 2027** per the most aggressive timeline, with full-scale production targeting **300–400 million annual shipments by 2028**
+- Mass production **could begin H1 2027** per the most aggressive timeline; analyst Ming-Chi Kuo's early long-term projection placed full-scale production at [300–400 million annual shipments by 2028](https://thenextweb.com/news/openai-qualcomm-ai-phone-agents-replace-apps), though later Kuo reporting revised the initial 2027–2028 production window to approximately 30 million units combined
 
-The "300-400 million units" figure is striking. For reference, Apple ships roughly 230 million iPhones per year. OpenAI is projecting a device that, in a few years, ships more units than the iPhone.
+The 300–400 million figure is Kuo's long-term aspirational estimate, not a confirmed OpenAI target. Near-term production forecasts are far more conservative. For reference, Apple ships roughly 230 million iPhones per year — the scale implied by Kuo's long-term projection would be extraordinary if achieved.
 
 That's either extraordinary ambition or extraordinary delusion. Possibly both.
 

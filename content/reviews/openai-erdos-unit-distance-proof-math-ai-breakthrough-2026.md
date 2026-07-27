@@ -4,6 +4,7 @@ date: 2026-05-23
 description: "On May 20, 2026, OpenAI announced that a general-purpose reasoning model autonomously disproved Erdős's unit distance conjecture — an open problem in discrete geometry since 1946. Verified by Fields Medalist Tim Gowers. This is the first time AI has produced original mathematics worthy of a top journal."
 tags: ["openai", "math", "research", "reasoning-models", "ai-capabilities", "science"]
 rating: 5
+sources_audited: 2026-07-27
 ---
 
 ## The Headline
@@ -75,7 +76,7 @@ The implications of this for how we think about AI capability are substantial. I
 
 ## The "For Real This Time" Context
 
-TechCrunch's headline on this story included a notable parenthetical: "for real this time." That framing deserves acknowledgment.
+[TechCrunch's headline on this story](https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/) included a notable parenthetical: "for real this time." That framing deserves acknowledgment.
 
 OpenAI has made claims about AI mathematical achievements before that did not hold up to scrutiny. Earlier this year there were reports of reasoning models producing confident but subtly incorrect proofs. The AI mathematics field has had enough false starts that expert skepticism is warranted.
 

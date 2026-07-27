@@ -19,7 +19,7 @@ The OpenAI Deployment Company is not a typical startup. Its financial architectu
 
 - **$4 billion** raised from 19 external investors
 - **$500 million** committed by OpenAI itself, with an option to deploy an additional $1 billion (up to **$1.5 billion total**)
-- OpenAI pledged a **minimum 17.5% return** to external investors, with a profit cap limiting upside
+- OpenAI pledged a **minimum guaranteed return** to external investors, with a profit cap limiting upside
 - OpenAI retains **majority control** of the venture
 
 The 17.5% guaranteed return is unusual in tech — it signals that OpenAI is treating this less as a product bet and more as an enterprise services business with predictable, contractual cash flows. The profit cap ensures investors get a bond-like floor but don't capture runaway upside if the venture becomes unexpectedly large.
@@ -64,13 +64,13 @@ The pitch is that OpenAI can't let enterprise customers fail at deployment and b
 
 ## Tomoro: The Founding Acquisition
 
-**Tomoro** was founded in 2023 — explicitly in alliance with OpenAI — by a team of seven co-founders: Rishabh Sagar, Albert Phelps, Chris Spencer, Ed Broussard, Chloe Kelleher, Ash Garner, and Sandi Chanda.
+**Tomoro** was [founded in 2023](https://thenextweb.com/news/openai-deployment-company-4bn-tpg-tomoro) — explicitly in alliance with OpenAI — by a team of seven co-founders: Rishabh Sagar, Albert Phelps, Chris Spencer, Ed Broussard, Chloe Kelleher, Ash Garner, and Sandi Chanda.
 
 The firm's premise was simple: the gap between AI *access* and AI *deployment* was a business in itself. Most enterprises could get an API key. Almost none had the internal expertise to turn that into a production system that worked in mission-critical workflows.
 
 In two and a half years, Tomoro:
-- Grew monthly revenue **tenfold** in 12 months
-- Built a client roster including **Tesco**, **Virgin Atlantic**, and **Supercell**
+- Grew monthly revenue [**tenfold** in 12 months](https://thenextweb.com/news/openai-deployment-company-4bn-tpg-tomoro)
+- Built a client roster including **Virgin Atlantic** and **Supercell**
 - Assembled approximately **150 Forward Deployed Engineers and Deployment Specialists**
 
 The acquisition terms were not disclosed. The deal is subject to regulatory approval and was expected to close in the coming months as of the May 11 announcement.
@@ -105,7 +105,7 @@ AI consulting typically bills at $300–600 per hour for specialized talent. 150
 
 The FDE concept didn't originate with OpenAI — it was pioneered by Palantir, which built much of its early business by embedding engineers inside defense and intelligence agencies. Palantir's FDEs were famous (or notorious) for effectively becoming indispensable to the agencies they served.
 
-OpenAI is replicating that playbook for commercial enterprises, and they're not alone. As of mid-2026, Anthropic and Google are also actively hiring FDEs, with MarkTechPost noting it has become "AI's hottest job."
+OpenAI is replicating that playbook for commercial enterprises, and they're not alone. As of mid-2026, Anthropic and Google are also actively hiring FDEs for enterprise deployments.
 
 The FDE model works well for AI specifically because:
 - Production AI systems require custom integration that generic APIs can't provide out-of-the-box
@@ -127,7 +127,7 @@ The downside is that it doesn't scale the way software does. 150 engineers can o
 
 **Regulatory and integration timeline.** The Tomoro acquisition is pending regulatory approval. Until it closes, the 150 FDEs remain technically separate from the Deployment Company's operations.
 
-**The Register put it bluntly** in their headline: "OpenAI can't have incompetent AI consultants ruining the market, so bought its own." The subtext is real — bad implementations from third parties reflect on the model provider. Vertical integration solves that, but only if the acquired team maintains quality at scale.
+The underlying concern is real: bad implementations from third parties reflect on the model provider. Vertical integration solves that, but only if the acquired team maintains quality at scale.
 
 ---
 

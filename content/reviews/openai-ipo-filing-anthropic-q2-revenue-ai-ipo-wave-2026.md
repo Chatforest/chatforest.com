@@ -4,6 +4,7 @@ date: 2026-05-23
 last_refreshed: 2026-06-09
 description: "OpenAI confidentially filed for IPO on May 22 targeting a $852B–$1T valuation. The same week, Anthropic projected $10.9B in Q2 revenue and its first-ever operating profit. This is not a bubble story. It is a capital markets transformation story."
 tags: ["openai", "anthropic", "ipo", "ai-industry", "finance", "spacex"]
+sources_audited: 2026-07-27
 ---
 
 ## Two Filings, One Week, One Trillion Dollars
@@ -48,7 +49,7 @@ Coverage has flagged several structural concerns that will almost certainly appe
 
 **CFO skepticism.** Multiple outlets have reported that CFO Sarah Friar has cautioned internally that OpenAI "isn't ready to be a public company." Whether that quote survives scrutiny or was taken out of context, it will be asked about in the roadshow.
 
-**Talent.** This one is topical: Andrej Karpathy, an OpenAI co-founder, joined Anthropic four days before the S-1 was filed. The timing is uncomfortable. It will be in the risk factors.
+**Talent.** This one is topical: [Andrej Karpathy, an OpenAI co-founder](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/), joined Anthropic three days before the S-1 was filed. The timing is uncomfortable. It will be in the risk factors.
 
 ---
 
@@ -109,7 +110,7 @@ The harder question is what happens if either company misses its first quarterly
 
 ## Update: SpaceX Prices at $135 — Largest IPO in History (June 11, 2026)
 
-SpaceX priced SPCX at **$135 per share** on June 11, 2026, confirming the $1.75 trillion valuation and a **$75 billion raise** — the largest US IPO in history, more than triple the size of Alibaba's 2014 $25B record. Trading opens on Nasdaq at 9:30 AM ET on June 12. Goldman Sachs led the book; Morgan Stanley, Bank of America, Citigroup, and JPMorgan are co-underwriters. The retail tranche — 30% of shares, approximately $22.5 billion — has been distributed to Robinhood, Fidelity, Schwab, SoFi, and E*TRADE. This article will be updated after June 12's first trading day.
+[SpaceX priced SPCX at **$135 per share**](https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/) on June 11, 2026, confirming the $1.77 trillion valuation and a **$75 billion raise** — the largest US IPO in history, more than triple the size of Alibaba's 2014 record. Trading opens on Nasdaq at 9:30 AM ET on June 12. Goldman Sachs led the book; Morgan Stanley, Bank of America, Citigroup, and JPMorgan are co-underwriters. The retail tranche — 30% of shares, approximately $22.5 billion — has been distributed to Robinhood, Fidelity, Schwab, SoFi, and E*TRADE. This article will be updated after June 12's first trading day.
 
 ---
 
@@ -117,7 +118,7 @@ SpaceX priced SPCX at **$135 per share** on June 11, 2026, confirming the $1.75 
 
 Nine days after publication, Anthropic filed its own confidential S-1 with the SEC on June 1, 2026 — completing the picture this article outlined.
 
-Key details from that filing: Anthropic is targeting a fully-diluted valuation of $1.10 to $1.25 trillion, an IPO issuance of $25–35 billion (one of the largest in US history at midpoint), and pricing between October 15 and November 15. Underwriters are Goldman Sachs, JPMorgan, and Morgan Stanley. Legal counsel is Wilson Sonsini, which handled Google's 2004 IPO.
+Key details from that filing: Anthropic is targeting a [trillion-dollar valuation](https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/) with pricing between October 15 and November 15. Underwriters are Goldman Sachs, JPMorgan, and Morgan Stanley. Legal counsel is [Wilson Sonsini](https://www.cnbc.com/2025/12/03/anthropic-claude-reportedly-preparing-ipo-race-openai-chatgpt-ft-wilson-sonsini-goodrich-rosati.html), which handled Google's 2004 IPO.
 
 The $965B figure from the Series H close on May 28 is the pre-IPO post-money valuation. The higher $1.10–$1.25T target assumes continued revenue growth between now and the roadshow. Annualized run rate is confirmed at $47 billion.
 

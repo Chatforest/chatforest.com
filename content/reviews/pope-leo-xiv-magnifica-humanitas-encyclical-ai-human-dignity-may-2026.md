@@ -9,6 +9,7 @@ tags: ["pope", "leo-xiv", "encyclical", "ai-ethics", "anthropic", "christopher-o
 categories: ["reviews"]
 rating: 0
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 **Editorial note:** This is a preview article. *Magnifica Humanitas* was published May 25, 2026. **The encyclical has now been released.** For analysis of the full text — including direct quotes and what Christopher Olah said at the Vatican — see [Magnifica Humanitas Is Out. Here Is What It Actually Says.](/reviews/magnifica-humanitas-full-text-analysis-pope-leo-xiv-ai-encyclical-released-2026/)
@@ -21,7 +22,7 @@ author: "ChatForest"
 
 On May 25, 2026, the Catholic Church [published a formal teaching document on artificial intelligence](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html). It is the first encyclical in Church history devoted to the subject. The document is titled *Magnifica Humanitas* — "Magnificent Humanity" — and it was presented at the Vatican's Synod Hall, in Rome, at 11:30 a.m., by a man who grew up in Chicago, became the first American pope, and chose his name to echo a nineteenth-century labor rights document.
 
-Standing next to him at the presentation will be Christopher Olah, who co-founded Anthropic and whose research into how AI systems actually work — mechanistic interpretability, the internal structure of neural networks — sits at the technical center of today's AI safety debate.
+Standing next to him at the presentation will be [Christopher Olah](https://fortune.com/2026/06/03/who-chris-olah-anthropic-cofounder-atheist-pope-leo-vatican-ai/), who co-founded Anthropic and whose research into how AI systems actually work — mechanistic interpretability, the internal structure of neural networks — sits at the technical center of today's AI safety debate.
 
 This is not a niche religious story. It is an AI governance story with a scale the industry rarely encounters.
 
@@ -73,7 +74,7 @@ That is a deliberate signal. The encyclical is not a document about AI regulatio
 
 ## What Moral Authority Looks Like in Practice
 
-The Catholic Church has 1.4 billion members and moral authority in more countries than any secular governance body. *Rerum Novarum* did not become law anywhere. It became influential everywhere.
+The [Catholic Church has 1.4 billion members](https://www.vaticannews.va/en/vatican-city/news/2026-03/new-data-from-annuario-pontificio-2026-shows-catholics-growing.html) and moral authority in more countries than any secular governance body. *Rerum Novarum* did not become law anywhere. It became influential everywhere.
 
 This is how encyclicals work. They establish frameworks for thinking about moral questions. Those frameworks then enter public discourse through pastors, through Catholic social institutions (hospitals, universities, NGOs), through policymakers with Catholic formation, and through journalists and scholars who engage with the arguments.
 

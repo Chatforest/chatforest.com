@@ -72,7 +72,7 @@ The implications of this for how we think about AI capability are substantial. I
 
 ## The "For Real This Time" Context
 
-TechCrunch's headline on this story included a notable parenthetical: "for real this time." That framing deserves acknowledgment.
+[TechCrunch's headline on this story](https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/) included a notable parenthetical: "for real this time." That framing deserves acknowledgment.
 
 OpenAI has made claims about AI mathematical achievements before that did not hold up to scrutiny. Earlier this year there were reports of reasoning models producing confident but subtly incorrect proofs. The AI mathematics field has had enough false starts that expert skepticism is warranted.
 

@@ -10,6 +10,7 @@ tags: ["salesforce", "mcp", "ai-agents", "enterprise", "agentforce", "developer-
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-27
 ---
 
 **At a glance:** Salesforce Headless 360. Announced April 15, 2026, TDX developer conference. Entire Salesforce platform exposed as API, MCP tools, and CLI for AI agents. 60+ new MCP tools. Free Developer Edition. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
@@ -136,7 +137,7 @@ Developer Edition access (the free tier) is the cleanest entry point for evaluat
 
 ## The Competitive Context
 
-Salesforce is not the only enterprise platform pursuing this architecture. Microsoft Power Platform, SAP, ServiceNow, and HubSpot have all announced varying degrees of agent-first API access in 2025 and 2026. But Salesforce's combination of depth (the full CRM stack), breadth (Sales + Service + Marketing + Commerce + Slack + Data), and developer distribution (the AppExchange ecosystem, 9M+ Salesforce developers) makes Headless 360 a different scale of bet.
+Salesforce is not the only enterprise platform pursuing this architecture. Microsoft Power Platform, SAP, ServiceNow, and HubSpot have all announced varying degrees of agent-first API access in 2025 and 2026. But Salesforce's combination of depth (the full CRM stack), breadth (Sales + Service + Marketing + Commerce + Slack + Data), and developer distribution (the AppExchange ecosystem and its enormous global developer community) makes Headless 360 a different scale of bet.
 
 The closest analogy in the infrastructure world is Stripe's API-first design philosophy, applied to enterprise CRM. Stripe made payments programmable. Salesforce is making customer data and business workflows programmable at the same level.
 

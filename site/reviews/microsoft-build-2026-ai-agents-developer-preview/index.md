@@ -39,7 +39,7 @@ Build 2026 sessions will dig into things Microsoft has already released. Underst
 
 **Copilot Studio** (April 2026 update) added governance tooling: admins can discover and manage agents across a subscription via Foundry Control Plane. Intelligent workflows handle multi-step orchestration with decision logic.
 
-**Phi-4 Reasoning Vision 15B** is now part of the Phi family — a 15B-parameter model with visual understanding and chain-of-thought reasoning, designed for edge and CPU deployment. The broader Phi family now has over 60 million downloads across Foundry and Hugging Face.
+**Phi-4 Reasoning Vision 15B** is now part of the Phi family — a 15B-parameter model with visual understanding and chain-of-thought reasoning, designed for edge and CPU deployment. The broader Phi family now has [over 60 million downloads](https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q1) across Foundry and Hugging Face.
 
 ---
 
@@ -68,13 +68,11 @@ Microsoft is one of the key proponents of the A2A protocol (alongside Google and
 
 Beyond Nadella, the confirmed speaker list includes names with strong technical credibility in the developer AI space:
 
-**Simon Willison** (Datasette founder) — known for his rigorous, skepticism-forward writing on AI tooling and LLMs. His presence signals that Build 2026 is trying to speak to developers who want depth over marketing.
+**[Simon Willison](https://simonwillison.net/)** ([Datasette](https://datasette.io/) founder) — known for his rigorous, skepticism-forward writing on AI tooling and LLMs. His presence signals that Build 2026 is trying to speak to developers who want depth over marketing.
 
-**Shawn Wang (swyx)** — founder of smol.ai, prolific writer on AI engineering. A core voice in the "LLM engineering" community. His sessions tend to be opinionated and practical.
+**[Shawn Wang (swyx)](https://www.swyx.io/)** — founder of [smol.ai](https://smol.ai/), prolific writer on AI engineering. A core voice in the "LLM engineering" community. His sessions tend to be opinionated and practical.
 
-**Chip Huyen** — author of *AI Engineering* and *Designing Machine Learning Systems*, Stanford lecturer, widely read on ML production systems. Her presence alongside the "production systems" track is not accidental.
-
-**Priyanka Sharma** — Interim SVP of Product at Thiink, focused on enterprise AI product deployment.
+**[Chip Huyen](https://huyenchip.com/)** — author of *[AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098166298/)* and *Designing Machine Learning Systems*, Stanford lecturer, widely read on ML production systems. Her presence alongside the "production systems" track is not accidental.
 
 ---
 

@@ -93,7 +93,7 @@ When contaminated outputs from GPT-5.1 became training data for GPT-5.2, and GPT
 
 The Codex system prompt patch is the starkest illustration. The behavior was baked into the model's weights. The only available tool for suppressing it at deployment time was a written instruction telling the model not to do it. That works — until it doesn't. System prompt instructions can be overridden by sufficiently compelling context, adversarial prompting, or downstream model updates that don't preserve the instruction.
 
-This connects to OpenAI's March 2026 research on **chain-of-thought controllability**: across frontier models tested, controllability scores ranged from 0.1% to 15.4%. The finding is that reasoning models cannot reliably control their own chains of thought in ways that reduce monitorability. The goblin incident and the chain-of-thought research point in the same direction: the behaviors models learn during training are often harder to modify later than the behaviors we try to impose through instructions.
+This connects to [OpenAI's March 2026 research on **chain-of-thought controllability**](https://openai.com/index/reasoning-models-chain-of-thought-controllability/): across frontier models tested, controllability scores ranged from 0.1% to 15.4%. The finding is that reasoning models cannot reliably control their own chains of thought in ways that reduce monitorability. The goblin incident and the chain-of-thought research point in the same direction: the behaviors models learn during training are often harder to modify later than the behaviors we try to impose through instructions.
 
 **Alignment problem 4: Scale makes this harder, not easier.**
 

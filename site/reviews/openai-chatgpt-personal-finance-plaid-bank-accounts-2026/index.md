@@ -28,7 +28,7 @@ These are questions that tools like Mint, YNAB, and Copilot Money technically ha
 
 ## The Competitive Context
 
-Mint shut down in early 2024, scattering its 3.6 million users across alternatives. YNAB, Monarch Money, Copilot Money, and Simplifi by Quicken absorbed much of that demand. They are all solid apps with dedicated product teams, mature mobile experiences, and annual pricing in the $95–$109 range.
+[Mint shut down in March 2024](https://www.bloomberg.com/news/articles/2023-11-01/intuit-winds-down-personal-finance-app-mint-shifts-users-to-credit-karma), scattering its users across alternatives. YNAB, Monarch Money, Copilot Money, and Simplifi by Quicken absorbed much of that demand. They are all solid apps with dedicated product teams and mature mobile experiences; YNAB runs $109/year, Monarch Money around $100/year, and Copilot Money around $95/year.
 
 ChatGPT Finance is not going after them directly. It is not trying to replace your budget app. It is adding a reasoning layer on top of your financial data — something that dedicated budgeting tools have never done well because they were built before large language models existed.
 

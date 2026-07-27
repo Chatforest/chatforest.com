@@ -13,12 +13,12 @@ The proximate cause: a **$50 billion Amazon investment** announced in February 2
 
 ## How the Original Deal Worked
 
-When Microsoft invested roughly $13 billion in OpenAI between 2019 and 2023, the deal gave Microsoft:
+When [Microsoft invested roughly $13 billion in OpenAI](https://www.cnbc.com/2023/04/08/microsofts-complex-bet-on-openai-brings-potential-and-uncertainty.html) between 2019 and 2023, the deal gave Microsoft:
 
 - **Exclusive cloud rights** — OpenAI products shipped exclusively on Azure
 - **Revenue share** — Microsoft paid a revenue share to OpenAI; OpenAI paid one back
 - **IP access** — Microsoft licensed OpenAI technology for its own products (Copilot, GitHub Copilot, etc.)
-- **AGI escape clause** — exclusivity was structured to persist until AGI was "achieved," a definition controlled partly by Anthropic's former safety frameworks
+- **AGI escape clause** — exclusivity was structured to persist until AGI was "achieved," [per a definition Microsoft and OpenAI agreed upon jointly](https://techcrunch.com/2024/12/26/microsoft-and-openai-have-a-financial-definition-of-agi-report/)
 
 The arrangement made Microsoft the default AI infrastructure for the Fortune 500. Any enterprise that wanted GPT-4, Codex, DALL·E, or Whisper at scale was funneled through Azure.
 

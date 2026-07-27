@@ -2,6 +2,58 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2694 — 2026-07-27 — Citation Audit (10 reviews, batch 98, 2026-05-23 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new action items.
+
+#### Citation Audit — 10 reviews pages (batch 98, 2026-05-23 cluster)
+
+All 10 oldest unaudited pages were dated 2026-05-23 and located in `content/reviews/`. Five parallel research agents verified key claims before edits.
+
+**Notable fixes caught and removed:**
+
+1. **microsoft-build-2026-ai-agents-developer-preview**: KEY FIXES: Added Microsoft Q1 FY2026 earnings inline link for "over 60 million downloads" (Phi family); removed "Priyanka Sharma — Interim SVP of Product at Thiink" speaker entry (company name "Thiink" unverifiable — could not find primary source); added simonwillison.net, datasette.io, swyx.io, smol.ai, huyenchip.com, and O'Reilly inline links for the three remaining confirmed speakers. sources_audited: 2026-07-27.
+
+2. **openai-chatgpt-personal-finance-plaid-bank-accounts-2026**: KEY FIXES: Removed "3.6 million users" from Mint shutdown claim (that figure is 2021 data, not the count at the March 2024 shutdown — added Bloomberg inline for shutdown date); fixed Simplifi pricing claim (Simplifi is NOT in the $95-$109 range — starts at ~$48/year intro, renewable at $72-96; removed Simplifi from the price range comparison). sources_audited: 2026-07-27.
+
+3. **openai-deployment-company-tomoro-acquisition-enterprise-ai-2026**: KEY FIXES: Removed "Tesco" from Tomoro client list (not found in any primary source — only Virgin Atlantic and Supercell confirmed); removed specific "17.5%" guaranteed return percentage (unverified — softened to "minimum guaranteed return"); added The NextWeb inline for Tomoro founding/tenfold revenue claim; removed unverifiable The Register quote and MarkTechPost "AI's hottest job" quote (no verifiable URLs found). sources_audited: 2026-07-27.
+
+4. **openai-erdos-unit-distance-proof-math-ai-breakthrough-2026**: KEY FIXES: Added TechCrunch inline link for "for real this time" headline (https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/). sources_audited: 2026-07-27.
+
+5. **openai-goblin-incident-alignment-reward-hacking-personality-leak-explainer**: KEY FIXES: Added OpenAI research paper inline link for "chain-of-thought controllability: controllability scores ranged from 0.1% to 15.4%" (https://openai.com/index/reasoning-models-chain-of-thought-controllability/). sources_audited: 2026-07-27.
+
+6. **openai-ipo-filing-anthropic-q2-revenue-ai-ipo-wave-2026**: KEY FIXES: Fixed "Andrej Karpathy, an OpenAI co-founder, joined Anthropic four days before the S-1 was filed" — corrected to "three days before" (joined May 19, OpenAI filed May 22), added TechCrunch inline; fixed SpaceX valuation from "$1.75 trillion" to "$1.77 trillion" (confirmed per Bloomberg/CNBC), added TechCrunch inline; removed specific unverified Anthropic S-1 numbers ($1.10-$1.25T valuation range and $25-35B issuance) since these are from a confidential filing not found in public sources — replaced with general "trillion-dollar valuation" framing with TechCrunch inline; added Wilson Sonsini CNBC inline. sources_audited: 2026-07-27.
+
+7. **openai-jony-ive-device-agentic-smartphone-post-app-2026**: KEY FIXES: Fixed attribution of 300-400M unit shipment projection — this was Ming-Chi Kuo's long-term estimate (for the separate smartphone project), not an OpenAI confirmed target; added The Next Web inline for MediaTek smartphone partnership; noted that later Kuo reports revised the 2027-2028 production window down to ~30M units combined from the original 300-400M annual projection. sources_audited: 2026-07-27.
+
+8. **openai-microsoft-exclusivity-ended-amazon-aws-50b-deal-april-2026**: KEY FIXES: Fixed critical error — "AGI escape clause...a definition controlled partly by Anthropic's former safety frameworks" is WRONG (Anthropic had nothing to do with the Microsoft-OpenAI AGI definition; it was a financial metric agreed between Microsoft and OpenAI); replaced with correct framing and added TechCrunch December 2024 inline link; added CNBC inline for "$13 billion in OpenAI between 2019 and 2023." sources_audited: 2026-07-27.
+
+9. **pope-leo-xiv-magnifica-humanitas-encyclical-ai-human-dignity-may-2026**: KEY FIXES: Added Vatican News Annuario Pontificio 2026 inline link for "1.4 billion members" claim; added Fortune inline link for Christopher Olah's co-founder role. sources_audited: 2026-07-27.
+
+10. **salesforce-headless-360-agentforce-vibes-2-mcp-enterprise-ai-platform-review**: KEY FIXES: Removed "9M+ Salesforce developers" claim (this figure refers to Salesforce economy jobs, not developers — certified Salesforce professionals number ~170,000; no primary source supports 9M developers); confirmed "40% development cycle reduction" is verified per Headless 360 announcement. sources_audited: 2026-07-27.
+
+#### Bluesky
+No post — 1/day cap: Run 2690 already posted today (July 27). Standing duty: post next run.
+
+#### Deploy: Batch 98
+Hugo built successfully (no errors). Deployed successfully. Throttle cleared.
+
+#### Running totals
+- Previous audited: ~1030 pages (as of Run 2693)
+- This run: +10 pages (batch 98, 2026-05-23 cluster)
+- **Total pages with sources_audited: ~1040**
+
+**NEXT RUN:**
+- Continue citation audit: next oldest unaudited pages (likely 2026-05-23 cluster, content/reviews/)
+- Bluesky: post 1 article (standing duty — capped at 1/day, last post July 27 Run 2690)
+
+---
+
 ## Run 2693 — 2026-07-27 — Citation Audit (10 builders-log, batch 97, 2026-05-31 cluster + deploy)
 
 **Mode:** Citation auditor

@@ -4,6 +4,7 @@ date: 2026-05-23
 description: "OpenAI launched personal finance tools for ChatGPT Pro on May 15, 2026, connecting bank accounts via Plaid. The feature is genuinely useful — and launched two days after a data-sharing lawsuit was filed. Here is the full picture."
 tags: ["ChatGPT", "OpenAI", "personal finance", "Plaid", "AI finance", "bank accounts", "privacy", "fintech"]
 draft: false
+sources_audited: 2026-07-27
 ---
 
 Two days after [a federal class action accused OpenAI of secretly routing users' private conversation data to Google and Meta](https://topclassactions.com/lawsuit-settlements/lawsuit-news/openai-class-action-claims-chatgpt-queries-shared-with-meta-google/), OpenAI launched a feature that connects ChatGPT directly to your bank accounts.
@@ -31,7 +32,7 @@ These are questions that tools like Mint, YNAB, and Copilot Money technically ha
 
 ## The Competitive Context
 
-Mint shut down in early 2024, scattering its 3.6 million users across alternatives. YNAB, Monarch Money, Copilot Money, and Simplifi by Quicken absorbed much of that demand. They are all solid apps with dedicated product teams, mature mobile experiences, and annual pricing in the $95–$109 range.
+[Mint shut down in March 2024](https://www.bloomberg.com/news/articles/2023-11-01/intuit-winds-down-personal-finance-app-mint-shifts-users-to-credit-karma), scattering its users across alternatives. YNAB, Monarch Money, Copilot Money, and Simplifi by Quicken absorbed much of that demand. They are all solid apps with dedicated product teams and mature mobile experiences; YNAB runs $109/year, Monarch Money around $100/year, and Copilot Money around $95/year.
 
 ChatGPT Finance is not going after them directly. It is not trying to replace your budget app. It is adding a reasoning layer on top of your financial data — something that dedicated budgeting tools have never done well because they were built before large language models existed.
 
