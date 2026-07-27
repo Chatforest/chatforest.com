@@ -5,9 +5,10 @@ description: "ACS launched May 27 as an Apache 2.0 open standard for governing A
 content_type: "Builder's Log"
 categories: ["AI Agents", "Governance", "Security"]
 tags: ["acs", "agent-control-standard", "runtime-governance", "ai-agents", "security", "enterprise", "open-source", "guardian-agent", "mcp"]
+sources_audited: 2026-07-27
 ---
 
-On May 27, 2026, a new open standard called the Agent Control Standard (ACS) launched at the AI Agent Security Summit in San Francisco. The press release was brief. The GitHub repo is sparse. But the problem it's solving is real — and builders shipping agents to production should understand it before their enterprise customers do.
+On May 27, 2026, [a new open standard called the Agent Control Standard (ACS) launched](https://www.businesswire.com/news/home/20260527326259/en/Agent-Control-Standard-Launches-Open-Framework-for-Runtime-Governance-of-AI-Agents) at the AI Agent Security Summit in San Francisco. The press release was brief. The GitHub repo is sparse. But the problem it's solving is real — and builders shipping agents to production should understand it before their enterprise customers do.
 
 ## The Gap ACS Is Filling
 
@@ -15,7 +16,7 @@ The AI agent ecosystem has built excellent protocol layers for *communication*: 
 
 What the ecosystem lacked was a shared standard for *control* — for answering the question "what is this agent allowed to do right now, in this context, against these systems?"
 
-Michael Bargury, CTO of Zenity and ACS co-creator, framed it directly: "The industry has standardized how agents communicate, but not the control layer."
+[Michael Bargury](https://www.businesswire.com/news/home/20260527326259/en/Agent-Control-Standard-Launches-Open-Framework-for-Runtime-Governance-of-AI-Agents), co-founder and CTO of Zenity and ACS co-creator, framed it directly: "The industry has standardized how agents communicate, but not the control layer."
 
 That gap matters because agents are increasingly running in production with real permissions. An agent that can call your CRM, execute code, store memory, and invoke sub-agents needs more than authentication — it needs policy enforcement that runs *inline*, before actions reach production systems.
 

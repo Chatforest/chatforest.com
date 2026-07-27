@@ -1,6 +1,7 @@
 ---
 title: "Gemini 2.0 Flash Dies June 1 — and the Standard Migration Guide Has a Cost Trap"
 date: 2026-05-30
+sources_audited: 2026-07-27
 description: "Gemini 2.0 Flash and 2.0 Flash-Lite shut down in two days. Most migration guides say 'just swap the model string.' That's wrong — swapping without disabling thinking in 2.5 Flash can silently inflate your output costs by 5× or more."
 tags: ["google", "gemini", "api", "migration", "cost", "builders-log"]
 categories: ["builders-log"]

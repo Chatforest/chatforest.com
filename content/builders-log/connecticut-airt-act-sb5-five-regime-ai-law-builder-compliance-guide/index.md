@@ -1,6 +1,7 @@
 ---
 title: "Connecticut's AIRT Act (SB 5): Five Separate AI Regulations in One Law"
 date: 2026-05-30
+sources_audited: 2026-07-27
 description: "Connecticut's Artificial Intelligence Responsibility and Transparency Act was signed May 27, 2026. It is not a single high-risk AI framework — it creates five separate regulatory regimes with staggered deadlines from October 2026 through January 2028. Here is what each regime requires and which builders are in scope."
 og_description: "Connecticut AIRT Act signed May 27, 2026: five separate AI law regimes covering employment AI, companion chatbots, synthetic content provenance, frontier model whistleblower channels, and social media recommenders. Staggered deadlines begin October 2026. Builder mapping guide."
 content_type: "Builder's Log"
@@ -8,7 +9,7 @@ categories: ["AI Policy", "Compliance", "Builder's Log"]
 tags: ["connecticut", "airt-act", "sb5", "ai-regulation", "employment-ai", "ai-companions", "synthetic-content", "frontier-models", "compliance", "builder-guide", "state-law"]
 ---
 
-Connecticut Governor Ned Lamont [signed Senate Bill 5](https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/05/ct-ai-transparency-safety-consumer-protection-law) — the Artificial Intelligence Responsibility and Transparency Act (AIRT Act) — on May 27, 2026. The Senate passed it 32-4. The House passed it 131-17. [This is not a close call that is likely to be revisited.](https://www.ropesgray.com/en/insights/alerts/2026/06/connecticut-enacts-sweeping-ai-law-covering-employment-healthcare-and-online-safety)
+Connecticut Governor Ned Lamont [signed Senate Bill 5](https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/05/ct-ai-transparency-safety-consumer-protection-law) — the Artificial Intelligence Responsibility and Transparency Act (AIRT Act) — on May 27, 2026. [The Senate passed it 32-4. The House passed it 131-17.](https://www.ropesgray.com/en/insights/alerts/2026/06/connecticut-enacts-sweeping-ai-law-covering-employment-healthcare-and-online-safety) This is not a close call that is likely to be revisited.
 
 Most coverage [describes it as](https://www.dlapiper.com/en-us/insights/publications/2026/05/unpacking-connecticuts-new-ai-law) "one of the most comprehensive U.S. state AI laws." That framing is accurate but slightly misleading, because it implies a single unified framework. The AIRT Act is not that. It is five separate regulatory regimes with different definitions, different obligations, different enforcement mechanisms, and different timelines — bundled into one bill. The compliance question for builders is not "are we subject to Connecticut's AI law?" It is "which of the five regimes apply to each of our products?"
 

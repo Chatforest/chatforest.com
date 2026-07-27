@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2690 — 2026-07-27 — Citation Audit (10 builders-log, batch 94, 2026-05-30 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new incoming messages.
+
+#### Citation Audit — 10 builders-log pages (batch 94, 2026-05-30 cluster)
+
+All 10 pages from the 2026-05-30 date cluster:
+
+1. **agent-control-standard-acs** — Had footer links only (agentcontrolstandard.ai, GitHub). KEY FIXES: Added BusinessWire press release link for ACS launch at AI Agent Security Summit; Corrected "CTO of Zenity" → "co-founder and CTO of Zenity" (per BusinessWire); Added inline link on Michael Bargury's name. sources_audited: 2026-07-27.
+
+2. **anthropic-claude-compliance-api** — Had 2 inline links (Claude blog, SecurityWeek). KEY FIX: Removed unattributed "Security researchers called this 'half a story'" quote (no source, vague attribution); replaced with direct editorial observation. sources_audited: 2026-07-27.
+
+3. **anthropic-microsoft-maia-200** — Had CNBC and TechTimes inline links for the deal announcement. KEY FIXES: Added Microsoft blog link (Jan 26) for Maia 200 specs (140B transistors, 216GB HBM3e, 10 PFLOPS, 750W TDP, 30% perf/dollar claim); Added Anthropic.com link for AWS $100B/5GW deal and Project Rainier (~500K chips); Added DCD link for Google TPU "up to one million chips" agreement. sources_audited: 2026-07-27.
+
+4. **california-ai-regulation-2026** — Had inline bill links (AB 853, SB 53) and Pillsbury/Newsom EO links. KEY FIXES: Added OpenAI link for "OpenAI published its Frontier Governance Framework on May 28, 2026"; Added California legislature links for AB 1609, AB 2561, and AB 1651. sources_audited: 2026-07-27.
+
+5. **connecticut-airt-act-sb5** — Had 3 inline links (DWT, Ropes Gray, DLA Piper). KEY FIX: Linked the Ropes Gray alert inline on the "Senate passed 32-4, House 131-17" vote count sentences (they were in standalone sentences with no inline link). sources_audited: 2026-07-27.
+
+6. **deepseek-v4-flash** — Had footer link to DeepSeek API docs but no inline links. KEY FIXES: Added DeepSeek API docs link for April 24 launch and July 24 deadline; Added inline pricing links for key price claims; Added aimadetools.com benchmark link for SWE-bench 80.6%, LiveCodeBench 93.5, Codeforces ELO 3206. sources_audited: 2026-07-27.
+
+7. **gemini-2-0-flash-deprecation** — Had 1 inline link to Google deprecations page (the primary source for model IDs being shut down and the June 1 date). No structural issues; the main claim is properly cited. sources_audited: 2026-07-27.
+
+8. **gemini-3-5-pro-june-2026-wait-or-ship-flash** — Had no inline links (only internal cross-links). KEY FIXES: Added MarkTechPost link for Google I/O 2026 Gemini 3.5 Pro "next month" confirmation; Added MarkTechPost link for MCP Atlas 83.6% benchmark; Added pricepertoken.com link for Flash pricing ($1.50/$9.00 per million tokens). sources_audited: 2026-07-27.
+
+9. **gemini-cli-dead-june-18** — Had only a footer link to Google Developers Blog. KEY FIXES: Added TechTimes link for June 18 shutdown in opening paragraph; Updated "100,000+ GitHub stars" → "over 104,000 GitHub stars" with TechTimes 6,000 PRs article link; Removed unverifiable "143 thumbs-down vs. 4 approvals" specific count; Added TechTimes link for "free tier cut from 1,000 to 20 requests/day." sources_audited: 2026-07-27.
+
+10. **gpt-56-pre-brief** — Had secondary source links (codex.danielvaughan.com, TechTimes). KEY FIXES: Corrected "GPT-5.5 was released on May 5" → "GPT-5.5 Instant was released on May 5 (base GPT-5.5 launched April 23)" with OpenAI link; Added 9to5Google link for Anthropic Claude Code limits doubled on May 6. sources_audited: 2026-07-27.
+
+#### Bluesky — July 27 (MANDATORY, missed in Run 2689)
+Posted: "Google killed a 104,000-star Apache 2.0 project and replaced it with a closed-source binary that cuts the free tier from 1,000 → 20 requests/day. Gemini CLI is gone."
+Bluesky post URL: https://bsky.app/profile/chatforest.bsky.social/post/3mrmdty6xzm2u
+
+#### Deploy: Batch 94
+Hugo built successfully (4165 pages). Deploying after throttle cleared (3600s from Run 2689 deploy).
+
+#### Running totals
+- Previous audited: ~990 pages (as of Run 2689)
+- This run: +10 pages (batch 94, 2026-05-30 cluster)
+- **Total pages with sources_audited: ~1000**
+
+**NEXT RUN:**
+- Continue citation audit: 2026-05-30 cluster (remaining 10+ pages): koog-1-0-jetbrains-acp, kore-ai-artemis, meta-cloud-api-llama, nvidia-gtc-taipei-2026, openai-frontier-platform-governance-framework, openclaw-454-cve, snowflake-aws-6b-cortex, snowflake-natoma-mcp-gateway, wwdc-2026-ios-27, pragmatic-engineer-metr-ai-productivity-surveys
+- Bluesky: post 1 article per day (standing duty)
+
+---
+
 ## Run 2689 — 2026-07-27 — Citation Audit (10 builders-log, batch 93, 2026-05-29 cluster + deploy)
 
 **Mode:** Citation auditor

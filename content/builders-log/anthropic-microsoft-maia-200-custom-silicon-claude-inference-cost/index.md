@@ -1,6 +1,7 @@
 ---
 title: "Anthropic Eyes Microsoft's Maia 200 — What Custom Silicon Could Mean for Claude API Costs"
 date: 2026-05-30
+sources_audited: 2026-07-27
 description: "Anthropic is in early talks to run Claude inference on Microsoft's custom Maia 200 chip via Azure. If the deal closes, it would be the first major frontier model from outside Microsoft to publicly test the chip — and could push Claude API prices lower."
 tags: ["anthropic", "microsoft", "maia", "compute", "inference", "claude-api", "silicon", "azure"]
 ---
@@ -15,15 +16,15 @@ For builders using Claude through the API: this is worth watching, because it co
 
 ## What Maia 200 Actually Is
 
-Microsoft announced the Maia 200 in January 2026. The chip is built on TSMC's 3nm process and is designed specifically for inference — not training.
+[Microsoft announced the Maia 200 on January 26, 2026](https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/). The chip is built on TSMC's 3nm process and is designed specifically for inference — not training.
 
-Key specs:
+Key specs ([Tom's Hardware](https://www.tomshardware.com/pc-components/cpus/microsoft-introduces-newest-in-house-ai-chip-maia-200-is-faster-than-other-bespoke-nvidia-competitors-built-on-tsmc-3nm-with-216gb-of-hbm3e), [Microsoft blog](https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/)):
 - **140 billion transistors** on TSMC 3nm
 - **216GB HBM3e** with ~7TB/s memory bandwidth (nearly 3x a standard H100's capacity)
 - **10 petaFLOPS FP4** compute at 750W TDP
 - Inference-optimized, not a general-purpose accelerator
 
-Microsoft's own claim: the Maia 200 delivers 30% better performance per dollar than rival silicon. The chip is already live in Microsoft's US Central datacenter (Des Moines, Iowa), with US West 3 (Phoenix) next in 2026. Since early 2026, Maia 200 has been running inference for OpenAI's GPT-5.2 model through Microsoft Foundry and Microsoft 365 Copilot — but only for Microsoft's own models.
+[Microsoft's own claim](https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/): the Maia 200 delivers 30% better performance per dollar than rival silicon. The chip is already live in Microsoft's US Central datacenter (Des Moines, Iowa), with US West 3 (Phoenix) next in 2026. Since early 2026, Maia 200 has been running inference for OpenAI's GPT-5.2 model through Microsoft Foundry and Microsoft 365 Copilot — but only for Microsoft's own models.
 
 The Anthropic talks would change that. They would make Claude the first frontier model it didn't build, running under latency requirements set by someone else. That's a materially different test than running your own model in your own products.
 
@@ -31,9 +32,9 @@ The Anthropic talks would change that. They would make Claude the first frontier
 
 ## Why Anthropic Would Want This
 
-Anthropic signed a massive compute commitment with AWS in April 2026: up to $100 billion over 10 years for AWS technologies, covering Trainium2, Trainium3, and the still-unannounced Trainium4. The deal also scales Project Rainier — the joint Trainium cluster already running close to 500,000 chips — and secures 5 gigawatts of compute capacity for training and serving Claude.
+Anthropic [signed a massive compute commitment with AWS in April 2026](https://www.anthropic.com/news/anthropic-amazon-compute): up to $100 billion over 10 years for AWS technologies, covering Trainium2, Trainium3, and the still-unannounced Trainium4. The deal also [scales Project Rainier](https://www.anthropic.com/news/anthropic-amazon-compute) — the joint Trainium cluster already running close to 500,000 chips — and secures [5 gigawatts of compute capacity](https://www.anthropic.com/news/anthropic-amazon-compute) for training and serving Claude.
 
-Separately, Anthropic has locked in roughly one million Google TPU chips over the life of its Google Cloud agreement.
+Separately, Anthropic has [locked in up to one million Google TPU chips](https://www.datacenterdynamics.com/en/news/google-and-anthropic-confirm-massive-1gw-cloud-deal-with-up-to-one-million-google-tpus/) over the life of its Google Cloud agreement.
 
 So why also talk to Microsoft?
 

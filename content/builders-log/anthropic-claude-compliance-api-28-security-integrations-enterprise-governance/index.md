@@ -1,6 +1,7 @@
 ---
 title: "Anthropic's Claude Compliance API: How Enterprise AI Governance Actually Works Now"
 date: 2026-05-30
+sources_audited: 2026-07-27
 description: "Anthropic launched 28 security integrations for Claude on May 21, exposing conversation data and activity logs to the SIEM, DLP, and identity tools enterprises already use. Here's what the Compliance API actually does, who the 28 partners are, and the one gap that matters for builders."
 content_type: "Builder's Log"
 categories: ["Enterprise AI", "Anthropic", "Security & Compliance"]
@@ -57,7 +58,7 @@ The Compliance API has a clearly documented scope boundary: **Claude Cowork is n
 
 Claude Cowork is Anthropic's desktop agent product. Unlike Claude Enterprise's web interface, Cowork operates with access to the local machine — reading files, executing code, running browser automation. That surface area is significantly larger than a chat session, and it sits entirely outside the Compliance API's visibility.
 
-Security researchers assessing the May 21 launch called this "half a story." Their framing is accurate. If your enterprise deploys both Claude Enterprise for general AI work and Cowork for agent-assisted task execution, the Compliance API covers the former and leaves the latter as a blind spot.
+This gap is significant: if your enterprise deploys both Claude Enterprise for general AI work and Cowork for agent-assisted task execution, the Compliance API covers the former and leaves the latter as a blind spot.
 
 For builders, this has two implications depending on where you sit:
 

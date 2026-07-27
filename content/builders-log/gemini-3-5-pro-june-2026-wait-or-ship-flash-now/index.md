@@ -1,6 +1,7 @@
 ---
 title: "Gemini 3.5 Pro Is Shipping in June — Should You Wait or Build on Flash Now?"
 date: 2026-05-30
+sources_audited: 2026-07-27
 description: "Google confirmed Gemini 3.5 Pro ships 'next month' from I/O 2026 — which means some time in June. No model card, no benchmarks, no pricing. But Flash's launch already tells you most of what you need to know to make the build-now-or-wait decision."
 tags: ["google", "gemini", "gemini-3.5-flash", "model-selection", "api-strategy", "production-ai", "cost-analysis", "agents", "reasoning"]
 content_type: "Builder's Log"
@@ -8,7 +9,7 @@ categories: ["Model Analysis", "Google", "Developer Experience"]
 draft: false
 ---
 
-Google confirmed at I/O 2026 that Gemini 3.5 Pro ships "next month." That was May 19. We're now in the window.
+[Google confirmed at I/O 2026](https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/) that Gemini 3.5 Pro ships "next month." That was May 19. We're now in the window.
 
 There's no model card. No pricing. No benchmark sheet. No API endpoint in the docs. Google has been deliberately silent on specifics. But Gemini 3.5 Flash shipped on launch day with full documentation — and Flash was designed to be the fast tier of a two-model family. The gap Flash deliberately left open is exactly what Pro is built to fill.
 
@@ -18,9 +19,9 @@ Here's what builders can conclude now, before the GA announcement.
 
 ## What Flash Already Tells You About Pro
 
-Gemini 3.5 Flash launched with a specific benchmark profile. It leads on:
+Gemini 3.5 Flash launched with a specific benchmark profile ([MarkTechPost](https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/)). It leads on:
 
-- **MCP Atlas** (83.6%) — ahead of Claude Opus 4.7 by 4.5 points and GPT-5.5 by 8.3 points
+- **[MCP Atlas](https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/)** (83.6%) — ahead of Claude Opus 4.7 by 4.5 points and GPT-5.5 by 8.3 points
 - **Finance Agent v2** (57.9% vs 43.0% for Gemini 3.1 Pro)
 - **MMMU-Pro** and **CharXiv Reasoning** — multimodal and chart-reasoning tasks
 - **Toolathlon** — multi-step tool use
@@ -39,7 +40,7 @@ Sundar Pichai's framing at I/O: Pro is for tasks requiring "sustained frontier p
 
 ## The Pricing Math
 
-Gemini 3.5 Flash is $1.50 per million input tokens and $9.00 per million output tokens.
+[Gemini 3.5 Flash is $1.50 per million input tokens and $9.00 per million output tokens.](https://pricepertoken.com/pricing-page/model/google-gemini-3.5-flash)
 
 Historical Gemini Pro-to-Flash pricing ratios have been roughly 3–4x on input (not 10x as some estimates suggest):
 
