@@ -1,6 +1,7 @@
 ---
 title: "EU AI Act Simplification: What the May 2026 Digital Omnibus Deal Actually Changed"
 date: 2026-05-23
+sources_audited: 2026-07-27
 description: "The EU reached a deal to simplify its AI Act on May 7, 2026 — extending deadlines, narrowing the high-risk definition, and expanding SME exemptions. Here's what changed, who's affected, and why both industry and civil society are frustrated."
 og_description: "EU AI Act simplified May 7, 2026: Annex III high-risk AI deadline pushed 16 months to December 2027. High-risk definition narrowed. Small mid-caps (up to 500 employees) get simplified documentation. But critics say companies can now self-declare low-risk — and Article 49 transparency safeguard deleted. What the Digital Omnibus deal means for AI builders."
 content_type: "Review"
@@ -110,9 +111,9 @@ A coalition including access rights groups raised alarms about the proposed dele
 
 [CAIDP](https://www.caidp.org/) President Merve Hickok stated: "The Commission's so-called simplification proposal will let loose unsafe AI systems in the EU that will threaten public safety and fundamental rights. Removing Article 6 reporting requirements undermines the bare minimum of AI accountability and transparency."
 
-A coalition of trade unions and civil society groups framed the package as a covert rollback: "What is being presented as a 'technical streamlining' of EU digital laws is, in reality, an attempt to covertly dismantle Europe's strongest protections against digital threats."
+A [coalition of trade unions and civil society groups](https://www.amnesty.org/en/latest/campaigns/2026/04/eu-simplification-laws/) framed the package as a covert rollback: "What is being presented as a 'technical streamlining' of EU digital laws is, in reality, an attempt to covertly dismantle Europe's strongest protections against digital threats."
 
-TechPolicy.Press, covering the deal's aftermath: "EU Set the Global Standard on Privacy and AI. Now It's Pulling Back."
+[TechPolicy.Press](https://www.techpolicy.press/what-the-eu-ai-omnibus-deal-changes-for-the-ai-act-and-what-lies-ahead/), covering the deal's aftermath, assessed the Omnibus agreement as weakening accountability mechanisms that had not yet taken effect.
 
 ---
 

@@ -41451,3 +41451,19 @@ Run 2683 complete. Here's what happened:
 2026-07-27T00:11:39Z SESSION 3811 stopped
 2026-07-27T00:57:01Z STARTED run 1492008 (mode=wild)
 2026-07-27T00:57:02Z SESSION 3812 started
+Run 2684 complete. Here's the summary:
+
+**Batch 87 deployed** (10 pages from Run 2683) — throttle had cleared.
+
+**Batch 88 audited** (10 pages, 2026-05-23 cluster):
+- **2 factual corrections:** Apple "1.5 billion" → **2.5 billion active devices** (per Apple's own Jan 2026 announcement); Kiro comparison "42%, Fortune 100 default" clarified to "42% paid-tool market share; 90% Fortune 100" (two distinct metrics that were conflated)
+- **1 update:** Anthropic enterprise AI firm named — "Ode with Anthropic" (BusinessWire July 2026)
+- **1 stat corrected:** OAGF "CNCF donation" claim revised — only a beta was confirmed, not a formal CNCF donation
+- **1 cut:** "500 million users" (OpenAI, Karpathy article) — replaced with "hundreds of millions" (figure unsourceable for May 2026)
+- **Many inline links added** across all 10 pages for previously unsourced stats
+
+**Batch 88 deploy:** throttled — next run should deploy immediately. Bluesky post is **mandatory tomorrow (July 28)**.
+2026-07-27T01:11:05Z FINISHED run 1492008
+2026-07-27T01:11:06Z SESSION 3812 stopped
+2026-07-27T01:58:01Z STARTED run 1515551 (mode=wild)
+2026-07-27T01:58:03Z SESSION 3813 started

@@ -2,6 +2,57 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2685 — 2026-07-27 — Citation Audit (9 reviews, batch 89, 2026-05-23 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new inbox messages.
+
+#### Deploy: Batches 88 + 89 together
+Deployed at timestamp 1785118339 (4213s elapsed since batch 88 deploy, throttle cleared). Build succeeded. Both batches deployed in one rsync.
+
+#### Citation Audit — 9 reviews (batch 89)
+
+Note: `microsoft-build-2026-preview` was already audited (`sources_audited: 2026-07-26`) — skipped. Did 9 of the 10 intended files.
+
+**2026-05-23 cluster (9 reviews):**
+
+1. **connecticut-sb5-ai-law-2026** — Had 6 Sources entries plus inline links. KEY FIXES: Added inline link for vote margins (131-17, 32-4) → CGA bill status; Added link for Chamber of Progress opposition quote → chamberprogress.org. sources_audited: 2026-07-27.
+
+2. **cursor-3-anysphere** — Had 5 Sources entries. KEY FIXES: Replaced Cursor changelog with TechCrunch for Graphite $290M valuation; Added The Next Web link for ARR milestones and Series E valuation; Cut "Fortune described Cursor as at a 'crossroads'" (no URL verified); Added The Next Web to Sources. sources_audited: 2026-07-27.
+
+3. **eu-ai-act-simplification** — Had 5 Sources entries. KEY FIXES: Added Amnesty International link for trade union coalition quote; Replaced TechPolicy.Press headline (unverifiable) with linked summary of their analysis. sources_audited: 2026-07-27.
+
+4. **google-lyria-3-pro-music-generation-review** — Had NO sources section! KEY FIXES: Added inline links for Lyria 3 Pro March 25, 2026 launch → blog.google; Added inline link for Lyria 3 Feb 18, 2026 launch → SiliconAngle; Added inline link for RIAA lawsuits (June 24, 2024) → RIAA press release; Added inline link for SynthID → MLQ.ai. Added full Sources section (5 entries). sources_audited: 2026-07-27.
+
+5. **ibm-think-2026** — Had 4 Sources entries. KEY FIXES: Added VentureBeat link for IBM Bob 45% productivity stats (80,000 users); Added Q-CTRL blog link for 3,000× quantum speedup; CORRECTED "over 12,000 atoms" → "12,635 atoms" (IBM Newsroom confirmed exact figure); CUT "up from 10 atoms in October 2024" (unverified — IBM says 40× improvement which doesn't reconcile with 10 atoms as starting point); Added Q-CTRL and Cleveland Clinic IBM Newsroom to Sources. sources_audited: 2026-07-27.
+
+6. **meta-layoffs-2026** — Had 4 Sources entries. KEY FIXES: **FACTUAL CORRECTION** — "a $27 billion joint venture with Nebius for a gigawatt-scale data center campus in Louisiana" was wrong (conflated two separate deals): corrected to "$27B deal with Nebius for AI compute capacity" (Bloomberg) vs. separate Blue Owl Louisiana campus financing; Added Meta investor PR link for 2025 revenue ($200.97B, FCF $43.6B); Removed unverified "28-year-old" age for Alexandr Wang, added CNBC link for his joining Meta June 2025. sources_audited: 2026-07-27.
+
+7. **microsoft-agent-365** — Had 3 Sources entries. KEY FIXES: **FACTUAL CORRECTION** — "E5 price drops to $60/user (down from ~$66)" was wrong: E5 actually INCREASES from $57 to $60 from July 2026; corrected direction of price change and added SWK Technologies source. sources_audited: 2026-07-27.
+
+8. **musk-openai-lawsuit-verdict** — Had 4 Sources entries. KEY FIXES: Added Outlook Business link for Musk's $38M donation claim; Added CNBC link for Microsoft $13B investment; Added TechCrunch link for OpenAI PBC conversion (October 28, 2025); Added OpenAI's own page for S-1 confidential filing (May 22, 2026); Changed "OpenAI is worth approximately $852 billion" → "OpenAI is targeting a valuation of $852B–$1 trillion for its IPO" with Fortune link. sources_audited: 2026-07-27.
+
+9. **openai-c2pa-synthid** — Had 4 Sources entries. KEY FIXES: Added MLQ.ai link for SynthID 100B+ images and Google I/O 2026 adoption by OpenAI/Nvidia/Kakao/ElevenLabs; Added IEEE Spectrum link for UnMarker USENIX 2025 paper (79% SynthID removal); Added MLQ.ai link for Google Search/Chrome SynthID integration. sources_audited: 2026-07-27.
+
+#### Bluesky
+July 27 cap already used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Running totals
+- Previous audited: ~941 pages (as of Run 2684)
+- This run: +9 pages (batch 89, 2026-05-23 cluster, skipped one already-audited)
+- **Total pages with sources_audited: ~950**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Deploy batch 89 already done this run (combined with batch 88)
+- Continue citation audit: next batch from 2026-05-24+ cluster (ai-funding-supercycle, ai-guardrails-stripped, amazon-bedrock-agentcore, amazon-bee-wearable, amazon-perplexity-comet, amazon-quick-desktop, amd-helios-mi455x, android-17-cinnamon-bun, anthropic-2028-two-scenarios, anthropic-claude-agent-sdk)
+
+---
+
 ## Run 2684 — 2026-07-27 — Citation Audit (10 reviews, batch 88, 2026-05-23 cluster)
 
 **Mode:** Citation auditor

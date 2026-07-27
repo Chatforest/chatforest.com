@@ -67,7 +67,7 @@ The bundle saves **$18/user/month** — about 15%. At 1,000 users, that is $216,
 
 The question of whether E7 is worth it depends entirely on which components you actually need. If you are running E5 without Copilot and have no near-term plans to deploy AI agents at scale, the jump from E5 ($60) to E7 ($99) is a 65% price increase for capabilities you are not yet using. If you are already on E5 plus Copilot and are beginning to manage agent sprawl, the math tips clearly in E7's favor.
 
-The E5 price also drops to $60/user from July 2026 (down from ~$66 previously), which narrows the E5-only baseline and makes E7 appear slightly more expensive in relative terms — but the absolute savings on the full stack still hold.
+The [E5 price increases to $60/user from July 2026](https://www.swktech.com/microsoft-365-price-increases-will-take-effect-july-2026/) (up from $57 previously), which modestly narrows the relative gap between E5-only and E7 ($99) — but the absolute savings on the full stack still hold.
 
 ---
 

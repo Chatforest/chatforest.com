@@ -1,6 +1,7 @@
 ---
 title: "OpenAI Verify Review — C2PA + SynthID Dual Watermarking for AI Image Provenance"
 date: 2026-05-23
+sources_audited: 2026-07-27
 description: "On May 19, 2026, OpenAI joined the C2PA steering committee and began embedding Google DeepMind's SynthID watermark in all images generated via ChatGPT, the API, and Codex. The Verify research preview tool lets anyone check whether an image carries these signals. We explain what it does, how C2PA and SynthID differ, and what the initiative actually accomplishes — and what it doesn't."
 tags: ["openai", "content-authenticity", "watermarking", "c2pa", "synthid", "ai-safety", "media", "disinformation"]
 categories: ["reviews"]
@@ -31,6 +32,8 @@ As of May 2026, the C2PA steering committee includes Adobe, Amazon, BBC, Google,
 ## What SynthID Is
 
 [SynthID was developed by Google DeepMind](https://c2paviewer.com/articles/openai-google-c2pa-synthid-2026) and first publicly demonstrated in 2023. It takes a fundamentally different approach to provenance: rather than embedding metadata in a file header, it embeds an invisible signal directly into the image pixels during the generation process.
+
+[Google has embedded SynthID in more than 100 billion images and videos](https://mlq.ai/news/google-expands-synthid-and-confirms-openai-nvidia-and-others-as-watermarking-partners/) across its own products. As of Google I/O 2026, new SynthID adopters include OpenAI, Nvidia, Kakao, and ElevenLabs.
 
 In latent diffusion models — the architecture underlying most modern image generators — SynthID embeds the watermark during the diffusion process itself, before the final decoding step. The signal lives in the latent representation, not as a post-processing overlay. Detection uses a neural network trained to recognize the statistical pattern of that embedding.
 
@@ -78,7 +81,7 @@ Verify is a research preview, not a finalized product. OpenAI has stated plans t
 
 **OpenAI adopting Google's watermark is notable.** SynthID is a proprietary Google DeepMind system. OpenAI, the most direct Google competitor in consumer AI, chose to implement Google's watermarking infrastructure rather than build its own. Industry analysts describe this as a signal that provenance is being treated as collaborative infrastructure rather than competitive differentiation — at least for now.
 
-**Detection will reach scale.** Google is integrating SynthID detection natively into Google Search and Chrome. This means detection infrastructure will reach users as part of their existing browsing experience, without requiring them to seek out a dedicated tool. That scale matters for actually changing how disinformation is detected in practice.
+**Detection will reach scale.** [Google is integrating SynthID detection natively into Google Search and Chrome](https://mlq.ai/news/google-expands-synthid-and-confirms-openai-nvidia-and-others-as-watermarking-partners/). This means detection infrastructure will reach users as part of their existing browsing experience, without requiring them to seek out a dedicated tool. That scale matters for actually changing how disinformation is detected in practice.
 
 ---
 
@@ -88,7 +91,7 @@ Verify is a research preview, not a finalized product. OpenAI has stated plans t
 
 **SynthID has been bypassed.** This is the most significant technical limitation. Published research and open-source tools have demonstrated removal attacks:
 - The "reverse-SynthID" repository claims 91% removal of watermark energy with minimal image quality loss (PSNR 43.5 dB, SSIM 0.997)
-- UnMarker, a USENIX Security 2025 paper, claims 79% removal against SynthID
+- [UnMarker, a USENIX Security 2025 paper, claims 79% removal against SynthID](https://spectrum.ieee.org/ai-watermark-remover)
 - A GitHub repository (`wiltodelta/remove-ai-watermarks`) explicitly targets SynthID, C2PA EXIF data, and other provenance signals
 
 Google disputes specific figures but does not deny the attack class. The underlying challenge: once an embedding methodology is understood, removal can be engineered. Security through obscurity is not durable.

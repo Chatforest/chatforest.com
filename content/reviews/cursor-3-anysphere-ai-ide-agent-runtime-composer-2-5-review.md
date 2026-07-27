@@ -1,6 +1,7 @@
 ---
 title: "Cursor 3 Review — The Agent-First IDE That Turned the Editor Into a Runtime"
 date: 2026-05-23
+sources_audited: 2026-07-27
 description: "Cursor 3 (April 2026) rearchitected the IDE around AI agents, not developers. With Background Agents, Composer 2.5, a first-class PR review workflow from the Graphite acquisition, and a potential $60B xAI acquisition looming, this is the most consequential update in AI coding tools this year."
 og_description: "Cursor 3: Agents Window (all local/cloud/SSH agents in one place), Composer 2.5 (25x more training data, 72% Tab acceptance rate), parallel agent execution, Canvases, BugBot with autofix, and an in-progress $50B+ funding round. Plus a $60B xAI acquisition option that puts the company's future in question."
 content_type: "Review"
@@ -47,7 +48,7 @@ Other structural additions in 3.0:
 
 Two of the most practically significant features in the Cursor 3 cycle landed in the 3.3 release.
 
-**PR Review workflow** is a first-class GitHub PR integration inside the IDE. It includes a Reviews tab (inline comment threads and top-level PR discussions), a Commits tab (focused commit history), a Changes tab (file tree with a picker for large diffs), and quick-action pills for approve/request-changes/next steps. The feature is a direct product of Anysphere's [December 2025 acquisition of Graphite](https://cursor.com/changelog/3-0), a New York-based code review startup that was acquired for more than its $290M most recent valuation.
+**PR Review workflow** is a first-class GitHub PR integration inside the IDE. It includes a Reviews tab (inline comment threads and top-level PR discussions), a Commits tab (focused commit history), a Changes tab (file tree with a picker for large diffs), and quick-action pills for approve/request-changes/next steps. The feature is a direct product of Anysphere's [December 2025 acquisition of Graphite](https://techcrunch.com/2025/12/19/cursor-continues-acquisition-spree-with-graphite-deal), a New York-based code review startup that was [acquired for more than its $290M most recent valuation](https://www.axios.com/pro/enterprise-software-deals/2025/12/19/cursor-buys-code-review-platform-graphite).
 
 The result is that Cursor 3 now covers the full software development lifecycle inside a single environment: writing code, running tests, deploying, and reviewing PRs without leaving the IDE. Whether you care about that integration depends on how much of your review work you currently do in a browser vs. locally.
 
@@ -135,18 +136,18 @@ The summary: Cursor 3 leads on agentic tooling depth, Tab completion quality, an
 
 ## Business Situation
 
-Anysphere's revenue trajectory is unusual even by AI startup standards:
+Anysphere's [revenue trajectory](https://thenextweb.com/news/cursor-anysphere-2-billion-funding-50-billion-valuation-ai-coding) is unusual even by AI startup standards:
 
 - January 2025: $100M ARR
 - June 2025: $500M ARR
 - November 2025: $1B ARR
 - February 2026: $2B ARR
 
-Total users: 2M+. Paying customers: 1M+. Enterprise teams: approximately 50,000. The company closed a $2.3B Series D in November 2025 at a $29.3B valuation. As of April 2026, it is reportedly in discussions for a $2B Series E at a $50B+ valuation, with the round described as already oversubscribed.
+Total users: 2M+. Paying customers: 1M+. Enterprise teams: approximately 50,000. The company closed a $2.3B Series D in November 2025 at a $29.3B valuation. As of April 2026, it is reportedly in discussions for a [$2B Series E at a $50B+ valuation](https://thenextweb.com/news/cursor-anysphere-2-billion-funding-50-billion-valuation-ai-coding), with the round described as already oversubscribed.
 
 The complication: in April 2026, SpaceX (now merged with xAI) [announced a structured option agreement](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/) that gives xAI the right to acquire Anysphere for $60 billion — or, alternatively, to pay $10 billion for joint development work if the full acquisition does not proceed. The structure appears designed to give Cursor access to xAI's Colossus supercomputer cluster for model training, while giving xAI access to Cursor's model training infrastructure and distribution.
 
-This has created organizational uncertainty. Fortune described Cursor as at a "crossroads" in March 2026. The deal is an option, not a completed acquisition — but it changes the calculus for employees, enterprise customers evaluating long-term vendor commitment, and investors trying to model what the company looks like in 2027.
+This has created organizational uncertainty. The deal is an option, not a completed acquisition — but it changes the calculus for employees, enterprise customers evaluating long-term vendor commitment, and investors trying to model what the company looks like in 2027.
 
 ---
 

@@ -17,7 +17,7 @@ Zuckerberg has been telegraphing this trade since early 2025: use Meta's profita
 
 ## The Numbers
 
-**Revenue and profit.** Q1 2026 net income of $26.8 billion is the highest Meta has recorded in any quarter. Revenue of $56.31 billion represents continued growth off a strong 2025 base — full-year 2025 revenue was $201 billion, up 22% year-over-year, with free cash flow of $43.6 billion.
+**Revenue and profit.** Q1 2026 net income of $26.8 billion is the highest Meta has recorded in any quarter. Revenue of $56.31 billion represents continued growth off a strong 2025 base — [full-year 2025 revenue was $200.97 billion, with free cash flow of $43.6 billion](https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx).
 
 **The layoffs.** 8,000 employees (10% of Meta's 78,865-person workforce) received notifications on May 20. An additional 6,000 open job requisitions were simultaneously cancelled, bringing the effective headcount reduction to 14,000 positions. Further cuts are planned for the second half of 2026.
 
@@ -57,7 +57,7 @@ Prometheus will be the world's first gigawatt-capable data center when it comes 
 
 **Scale trajectory.** Prometheus is not the ceiling. Meta has separately disclosed plans for multiple multi-gigawatt data center clusters, with a 5 GW total facility footprint on the horizon. Zuckerberg described one cluster as covering "a significant part of the footprint of Manhattan."
 
-**Louisiana joint venture.** Alongside Prometheus, Meta has committed to a $27 billion joint venture with Nebius for a gigawatt-scale data center campus in Louisiana. The JV structure distributes capital risk while keeping Meta in control of the resulting compute.
+**Nebius infrastructure deal.** Alongside Prometheus, Meta [committed up to $27 billion to Nebius](https://www.bloomberg.com/news/articles/2026-03-16/meta-to-spend-up-to-27-billion-on-ai-infrastructure-from-nebius) for large-scale AI compute capacity across multiple sites. Meta has also separately secured financing for its Hyperion data center campus in Richland Parish, Louisiana — which it later expanded to 5 GW total capacity.
 
 ---
 
@@ -65,7 +65,7 @@ Prometheus will be the world's first gigawatt-capable data center when it comes 
 
 The organizational story behind the layoffs involves a leadership power structure that is more complicated than the org chart suggests.
 
-**Alexandr Wang** — 28-year-old former CEO of Scale AI — joined Meta in June 2025 as Chief AI Officer. He runs Meta Superintelligence Labs (MSL), the division responsible for frontier model development. MSL's first major external model, **Muse Spark**, was released earlier in May 2026.
+**[Alexandr Wang](https://www.cnbc.com/2025/06/12/scale-ai-founder-wang-announces-exit-for-meta-part-of-14-billion-deal.html)** — former CEO of Scale AI — joined Meta in June 2025 as Chief AI Officer. He runs Meta Superintelligence Labs (MSL), the division responsible for frontier model development. MSL's first major external model, **Muse Spark**, was released earlier in May 2026.
 
 MSL was reorganized in August 2025 into four groups: a research lab (TBD Lab), FAIR (Meta's longtime AI research division), Products and Applied Research, and MSL Infrastructure. The AGI foundations team was dissolved into MSL at the same time.
 

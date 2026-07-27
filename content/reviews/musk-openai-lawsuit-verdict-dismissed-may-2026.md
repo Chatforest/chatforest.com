@@ -1,6 +1,7 @@
 ---
 title: "Musk v. OpenAI: All Claims Dismissed in 90 Minutes — Here Is What Actually Happened"
 date: 2026-05-23
+sources_audited: 2026-07-27
 description: "After a three-week trial in Oakland, a jury dismissed every one of Elon Musk's claims against OpenAI and Sam Altman in under two hours. The ruling turned on one legal question — and left the bigger question unanswered."
 tags: ["openai", "elon-musk", "ai-industry", "legal", "xai"]
 ---
@@ -36,9 +37,9 @@ The judge dismissed all three.
 
 ## The Case in Brief
 
-Musk co-founded OpenAI in 2015 alongside Sam Altman, Greg Brockman, and others. He donated approximately $38 million to it as a nonprofit. The founding premise, as Musk has described it, was that OpenAI would pursue artificial general intelligence for the benefit of humanity, not shareholders.
+Musk co-founded OpenAI in 2015 alongside Sam Altman, Greg Brockman, and others. [He donated approximately $38 million to it as a nonprofit](https://www.outlookbusiness.com/deeptech/artificial-intelligence/elon-musk-gave-38-mn-to-start-openai-now-seeks-up-to-134-bn-in-damages). The founding premise, as Musk has described it, was that OpenAI would pursue artificial general intelligence for the benefit of humanity, not shareholders.
 
-Between 2019 and 2023, OpenAI built a capped-profit structure that allowed Microsoft to invest $13 billion in the company in exchange for a 27% stake and access to the models. In October 2025, OpenAI completed its conversion to a Public Benefit Corporation.
+Between 2019 and 2023, OpenAI built a capped-profit structure that allowed [Microsoft to invest approximately $13 billion in the company](https://www.cnbc.com/2023/04/08/microsofts-complex-bet-on-openai-brings-potential-and-uncertainty.html), ultimately acquiring roughly a 27% stake and access to the models. [In October 2025, OpenAI completed its conversion to a Public Benefit Corporation](https://techcrunch.com/2025/10/28/openai-completes-its-for-profit-recapitalization/).
 
 Musk's legal theory was that this transformation — from public-benefit nonprofit to billion-dollar commercial enterprise — constituted a betrayal of the founding mission. By accepting Microsoft's money and building a commercial product empire, Altman and Brockman allegedly enriched themselves at the expense of the charitable trust Musk helped fund.
 
@@ -78,7 +79,7 @@ OpenAI's counterclaims against Musk and xAI Corp — alleging a "years-long hara
 
 ## Timing and the IPO Narrative
 
-The verdict landed on May 18. OpenAI filed its confidential S-1 on May 22.
+The verdict landed on May 18. [OpenAI filed its confidential S-1 on May 22](https://openai.com/index/openai-submits-confidential-s-1/).
 
 The four days between those events matter. Walking into an IPO roadshow with a billion-dollar lawsuit on the docket is a problem. Walking in with a complete dismissal is not. OpenAI's litigation risk profile heading into the public markets is now substantially cleaner — the Musk case was the most prominent and the most ideologically threatening, given its direct attack on the company's founding legitimacy.
 
@@ -90,7 +91,7 @@ That said: the case went out on a technicality, not a ruling on the merits. A fu
 
 Elon Musk believed OpenAI betrayed its mission. He may or may not have been right. A jury never got to decide. He filed too late, the court found, and that was that.
 
-The founding question — whether you can promise to build AI for humanity, take billions from Microsoft, and convert to a for-profit corporation without legal consequence — remains unanswered in a courtroom. It has been answered in the market. OpenAI is worth approximately $852 billion.
+The founding question — whether you can promise to build AI for humanity, take billions from Microsoft, and convert to a for-profit corporation without legal consequence — remains unanswered in a courtroom. It has been answered in the market. [OpenAI is targeting a valuation of approximately $852 billion to $1 trillion for its IPO](https://fortune.com/2026/05/22/openai-ipo-filing-1-trillion-may-finally-answer-these-big-questions/).
 
 The appeal will proceed. The Ninth Circuit will hear arguments, probably in 2027. The continuing violation theory Musk's team plans to raise is a narrow legal argument that courts have applied inconsistently. Most observers expect the dismissal to stand.
 

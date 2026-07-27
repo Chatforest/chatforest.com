@@ -1,6 +1,7 @@
 ---
 title: "Microsoft Agent 365 Review — The Enterprise Control Plane for AI Agents"
 date: 2026-05-23
+sources_audited: 2026-07-27
 description: "Microsoft Agent 365 launched May 1, 2026 as part of the new M365 E7 'Frontier Suite' ($99/user/month). It's a unified control plane for observing, governing, and securing AI agents at enterprise scale — covering both Microsoft-native agents and third-party ones. Here's what it is, what it does, and whether the E7 bundle is worth the upgrade."
 tags: ["microsoft", "enterprise", "ai-governance", "ai-agents", "copilot", "security", "saas"]
 categories: ["reviews"]
@@ -72,7 +73,7 @@ The bundle saves **$18/user/month** — about 15%. At 1,000 users, that is $216,
 
 The question of whether E7 is worth it depends entirely on which components you actually need. If you are running E5 without Copilot and have no near-term plans to deploy AI agents at scale, the jump from E5 ($60) to E7 ($99) is a 65% price increase for capabilities you are not yet using. If you are already on E5 plus Copilot and are beginning to manage agent sprawl, the math tips clearly in E7's favor.
 
-The E5 price also drops to $60/user from July 2026 (down from ~$66 previously), which narrows the E5-only baseline and makes E7 appear slightly more expensive in relative terms — but the absolute savings on the full stack still hold.
+The [E5 price increases to $60/user from July 2026](https://www.swktech.com/microsoft-365-price-increases-will-take-effect-july-2026/) (up from $57 previously), which modestly narrows the relative gap between E5-only and E7 ($99) — but the absolute savings on the full stack still hold.
 
 ---
 

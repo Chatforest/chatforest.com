@@ -78,6 +78,7 @@
 <hr>
 <h2 id="what-synthid-is">What SynthID Is</h2>
 <p><a href="https://c2paviewer.com/articles/openai-google-c2pa-synthid-2026">SynthID was developed by Google DeepMind</a> and first publicly demonstrated in 2023. It takes a fundamentally different approach to provenance: rather than embedding metadata in a file header, it embeds an invisible signal directly into the image pixels during the generation process.</p>
+<p><a href="https://mlq.ai/news/google-expands-synthid-and-confirms-openai-nvidia-and-others-as-watermarking-partners/">Google has embedded SynthID in more than 100 billion images and videos</a> across its own products. As of Google I/O 2026, new SynthID adopters include OpenAI, Nvidia, Kakao, and ElevenLabs.</p>
 <p>In latent diffusion models — the architecture underlying most modern image generators — SynthID embeds the watermark during the diffusion process itself, before the final decoding step. The signal lives in the latent representation, not as a post-processing overlay. Detection uses a neural network trained to recognize the statistical pattern of that embedding.</p>
 <p>Google has embedded SynthID in more than 100 billion images and videos across its own products. As of Google I/O 2026, new SynthID adopters include OpenAI, Nvidia, Kakao, and ElevenLabs — a notable cross-industry expansion.</p>
 <hr>
@@ -149,14 +150,14 @@
 <h2 id="why-this-is-significant">Why This Is Significant</h2>
 <p><strong>The industry alignment is real.</strong> C2PA now has most major tech companies on its steering committee. SynthID adopters now span multiple competing AI labs. The EU AI Act, which requires AI systems to mark outputs as artificially generated in machine-readable format (full compliance required August 2026), is a regulatory tailwind pushing the entire industry in the same direction. Camera manufacturers — Leica, Nikon, Sony — already support C2PA Content Credentials, meaning the same standard covers both human-captured and AI-generated content.</p>
 <p><strong>OpenAI adopting Google&rsquo;s watermark is notable.</strong> SynthID is a proprietary Google DeepMind system. OpenAI, the most direct Google competitor in consumer AI, chose to implement Google&rsquo;s watermarking infrastructure rather than build its own. Industry analysts describe this as a signal that provenance is being treated as collaborative infrastructure rather than competitive differentiation — at least for now.</p>
-<p><strong>Detection will reach scale.</strong> Google is integrating SynthID detection natively into Google Search and Chrome. This means detection infrastructure will reach users as part of their existing browsing experience, without requiring them to seek out a dedicated tool. That scale matters for actually changing how disinformation is detected in practice.</p>
+<p><strong>Detection will reach scale.</strong> <a href="https://mlq.ai/news/google-expands-synthid-and-confirms-openai-nvidia-and-others-as-watermarking-partners/">Google is integrating SynthID detection natively into Google Search and Chrome</a>. This means detection infrastructure will reach users as part of their existing browsing experience, without requiring them to seek out a dedicated tool. That scale matters for actually changing how disinformation is detected in practice.</p>
 <hr>
 <h2 id="what-it-doesnt-solve">What It Doesn&rsquo;t Solve</h2>
 <p><strong>Coverage gap.</strong> OpenAI&rsquo;s provenance measures apply only to OpenAI-generated images. The vast majority of AI-generated content online comes from Midjourney, Stability AI, open-source models (Flux, Stable Diffusion), and countless fine-tuned local variants — none of which have adopted SynthID or C2PA. The initiative prevents OpenAI from contributing to the provenance problem; it does not address the broader ecosystem.</p>
 <p><strong>SynthID has been bypassed.</strong> This is the most significant technical limitation. Published research and open-source tools have demonstrated removal attacks:</p>
 <ul>
 <li>The &ldquo;reverse-SynthID&rdquo; repository claims 91% removal of watermark energy with minimal image quality loss (PSNR 43.5 dB, SSIM 0.997)</li>
-<li>UnMarker, a USENIX Security 2025 paper, claims 79% removal against SynthID</li>
+<li><a href="https://spectrum.ieee.org/ai-watermark-remover">UnMarker, a USENIX Security 2025 paper, claims 79% removal against SynthID</a></li>
 <li>A GitHub repository (<code>wiltodelta/remove-ai-watermarks</code>) explicitly targets SynthID, C2PA EXIF data, and other provenance signals</li>
 </ul>
 <p>Google disputes specific figures but does not deny the attack class. The underlying challenge: once an embedding methodology is understood, removal can be engineered. Security through obscurity is not durable.</p>

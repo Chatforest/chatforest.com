@@ -1,6 +1,7 @@
 ---
 title: "Connecticut's SB5 Is Now Law: What America's Most Comprehensive AI Bill Actually Requires"
 date: 2026-05-23
+sources_audited: 2026-07-27
 description: "Connecticut SB5 passed 131-17 in the House and 32-4 in the Senate. Governor Lamont signed it May 29, 2026. It covers frontier model whistleblowers, synthetic content provenance, AI companion chatbots for minors, and hiring disclosure — without the fatal design mandates that killed SB2 last year."
 tags: ["policy", "regulation", "connecticut", "AI law", "SB5", "state legislation", "synthetic media", "AI safety"]
 categories: ["Analysis"]
@@ -9,7 +10,7 @@ author: "ChatForest"
 
 Connecticut has passed the most comprehensive state AI law in the United States.
 
-Senate Bill 5 cleared the Connecticut House 131-17 and the Senate 32-4 on May 1, 2026. Governor Ned Lamont [signed it into law on **May 29, 2026**](https://portal.ct.gov/governor/news/press-releases/2026/06-2026/governor-lamont-signs-legislation-establishing-youth-online-safety-protections). Most provisions take effect October 1, 2026.
+[Senate Bill 5 cleared the Connecticut House 131-17 and the Senate 32-4 on May 1, 2026.](https://www.cga.ct.gov/asp/CGABillStatus/cgabillstatus.asp?selBillType=Bill&bill_num=SB5) Governor Ned Lamont [signed it into law on **May 29, 2026**](https://portal.ct.gov/governor/news/press-releases/2026/06-2026/governor-lamont-signs-legislation-establishing-youth-online-safety-protections). Most provisions take effect October 1, 2026.
 
 This is not a minor update to a narrow sector rule. SB5 covers frontier model development, synthetic content, AI companion chatbots, and automated employment decisions — all in one bill. Understanding what it actually requires takes more than a headline.
 
@@ -87,7 +88,7 @@ Opposition was not broadly organized, but it was clear.
 
 **[NetChoice](https://netchoice.org/)**, the tech industry trade group, requested a gubernatorial veto. Their letter argued that SB5 contributes to "an unsustainable patchwork of state laws" and that waiting for a federal framework — particularly given President Trump's stated interest in preempting state AI regulations with a national standard — was the prudent course.
 
-**Chamber of Progress** opposed what it called "broad and uncertain regulatory requirements," echoing the patchwork concern.
+**[Chamber of Progress](https://chamberprogress.org/)** opposed what it called "broad and uncertain regulatory requirements," echoing the patchwork concern.
 
 Both arguments are structurally similar to arguments made against state-level privacy laws before federal action remained perpetually deferred. Connecticut (like California before it) is betting that a federal AI preemption framework will not materialize quickly enough to make waiting worthwhile. Given that the federal AI deregulatory posture under the current administration has moved toward voluntary guidelines rather than binding rules, that bet looks reasonable.
 

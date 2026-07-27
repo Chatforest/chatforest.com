@@ -20,7 +20,7 @@ IBM's central framework is the **AI Operating Model** — a four-pillar blueprin
 
 Krishna's framing: "The enterprises pulling ahead are not deploying more AI — they're redesigning how their business operates."
 
-The "AI divide" narrative was equally prominent. [IBM's Institute for Business Value survey data](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) showed only 25% of AI initiatives deliver expected ROI, only 16% have scaled enterprise-wide, and 83% of CEOs say AI success depends more on adoption than the technology itself. Deloitte's independent 2026 State of AI in the Enterprise survey showed roughly the same gap: only 25% of organizations have moved 40% or more of AI experiments into production.
+The "AI divide" narrative was equally prominent. [IBM's Institute for Business Value survey data](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens) showed only 25% of AI initiatives deliver expected ROI, only 16% have scaled enterprise-wide, and 83% of CEOs say AI success depends more on adoption than the technology itself.
 
 IBM is positioning itself as the company that closes this gap — for regulated industries, government, and organizations running mainframe-plus-cloud environments. The pitch is not novelty but reliability.
 
@@ -30,7 +30,7 @@ IBM is positioning itself as the company that closes this gap — for regulated 
 
 The most immediately concrete announcement was **[IBM Bob](https://www.ibm.com/new/announcements/ibm-announcements-at-think-2026)** — an agentic IDE for enterprise software development. Bob is now generally available.
 
-Bob covers the full software delivery lifecycle: code generation, testing, security scanning (built-in Semgrep integration), documentation, and deployment. IBM's reported internal results from 80,000 users: 45% average productivity gains, 70% reduction in onboarding time, ~3x development velocity, ~40% increase in test coverage.
+Bob covers the full software delivery lifecycle: code generation, testing, security scanning (built-in Semgrep integration), documentation, and deployment. [IBM's reported internal results from 80,000 users](https://venturebeat.com/ai/ibm-claims-45-productivity-gains-with-project-bob-its-multi-model-ide-that): 45% average productivity gains, 70% reduction in onboarding time, ~3x development velocity, ~40% increase in test coverage.
 
 The architecturally interesting detail: Bob orchestrates across **Anthropic Claude** (via Amazon Bedrock), **Mistral**, and **IBM Granite** models — not just Granite. IBM is using a competitor's most capable models (Claude, which powers IBM's own AI operations internally) rather than restricting enterprise customers to IBM's own models. This is either pragmatic model-agnosticism or an acknowledgment that Granite is not yet sufficient for all use cases, depending on how charitably you read it. Bob will be available on AWS Marketplace in H2 2026.
 
@@ -52,7 +52,7 @@ The architecturally interesting detail: Bob orchestrates across **Anthropic Clau
 
 ## Quantum: Moving from Research to Use Cases
 
-IBM used Think 2026 to push quantum toward commercial framing. Q-CTRL, using a 120-qubit IBM system, completed a simulation in 2 minutes that took classical hardware over 100 hours. Cleveland Clinic simulated a molecule of over 12,000 atoms — up from 10 atoms in October 2024. Target verticals: drug discovery, materials science, fusion energy. Gartner maintains quantum is still a few years from delivering practical business advantages; the simulation results are impressive demonstrations of trajectory, not deployed commercial capability.
+IBM used Think 2026 to push quantum toward commercial framing. [Q-CTRL, using a 120-qubit IBM system, completed a simulation in 2 minutes that took classical hardware over 100 hours](https://q-ctrl.com/blog/q-ctrl-delivers-3-000x-speedup-in-materials-discovery-for-the-energy-sector-with-quantum-computing-and-demonstrates-evidence-of-practical-quantum-advantage) — a claimed 3,000× speedup on a materials science problem. Cleveland Clinic, RIKEN, and IBM [simulated a 12,635-atom protein](https://newsroom.ibm.com/2026-05-05-cleveland-clinic,-riken,-and-ibm-model-a-12,635-atom-protein-the-largest-known-to-be-simulated-with-quantum-computers) — the largest known quantum simulation of a biologically meaningful molecule. Target verticals: drug discovery, materials science, fusion energy. The simulation results are impressive demonstrations of trajectory, not deployed commercial capability.
 
 ---
 
@@ -64,7 +64,7 @@ NAND Research called IBM's pivot to the "orchestration and governance layer" the
 
 TechTarget ran the most pointed assessment: "The AI war IBM isn't fighting — and the one it thinks it can win" — noting that IBM is deliberately ceding the foundation model race to focus on orchestration and governance. InfoTech's read was that mainframe infrastructure was, quietly, the real story at Think 2026.
 
-BMO Capital maintained a Hold rating, price target $270. No major analyst upgraded IBM on the Think announcements. Stock reaction was muted.
+No major analyst upgraded IBM on the Think announcements. Stock reaction was muted.
 
 ---
 
@@ -89,6 +89,10 @@ Think 2026 is the conference that made IBM's AI future legible. Whether that fut
 **Sources:**
 - [IBM Think 2026 — AI Operating Model blueprint announcement (IBM Newsroom)](https://newsroom.ibm.com/2026-05-05-think-2026-ibm-delivers-the-blueprint-for-the-ai-operating-model-as-the-ai-divide-widens)
 - [IBM announcements at Think 2026 — full product list](https://www.ibm.com/new/announcements/ibm-announcements-at-think-2026)
+- [IBM claims 45% productivity gains with IBM Bob — VentureBeat](https://venturebeat.com/ai/ibm-claims-45-productivity-gains-with-project-bob-its-multi-model-ide-that)
+- [IBM Bob hits 80,000 developers with 45% productivity gains — The New Stack](https://thenewstack.io/ibm-bob-agentic-development/)
+- [Q-CTRL delivers 3,000x speedup in materials discovery — Q-CTRL](https://q-ctrl.com/blog/q-ctrl-delivers-3-000x-speedup-in-materials-discovery-for-the-energy-sector-with-quantum-computing-and-demonstrates-evidence-of-practical-quantum-advantage)
+- [Cleveland Clinic, RIKEN, and IBM model a 12,635-atom protein — IBM Newsroom](https://newsroom.ibm.com/2026-05-05-cleveland-clinic,-riken,-and-ibm-model-a-12,635-atom-protein-the-largest-known-to-be-simulated-with-quantum-computers)
 - [Think 2026: IBM's AI Operating Model Takes Shape — NAND Research](https://nand-research.com/think-2026-ibms-ai-operating-model-takes-shape/)
 - [IBM Think 2026: From AI Pilots to an Operating Model — Bain & Company](https://www.bain.com/insights/ibm-think-2026-from-ai-pilots-to-an-operating-model/)
 

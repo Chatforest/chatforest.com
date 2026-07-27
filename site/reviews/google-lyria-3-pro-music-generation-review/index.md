@@ -3,7 +3,7 @@
 > Google DeepMind launched Lyria 3 Pro on March 25, 2026 — an AI music generation model that produces 3-minute structured tracks at 48kHz, offers bar-level compositional control, and is trained entirely on licensed data. We cover the model, developer API access, pricing, how it compares to Suno v5.5 and Udio, and who should use it. Rating: 3.5/5.
 
 
-Google DeepMind launched **Lyria 3 Pro** on March 25, 2026 — a music generation model capable of producing full 3-minute tracks with bar-level structural control, 48kHz audio output, and training data sourced entirely from licensed and permissible content. The model arrived one day before Suno released v5.5, making the last week of March a compressed inflection point for AI music generation.
+Google DeepMind [launched **Lyria 3 Pro** on March 25, 2026](https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/) — a music generation model capable of producing full 3-minute tracks with bar-level structural control, 48kHz audio output, and training data sourced entirely from licensed and permissible content. The model arrived one day before Suno released v5.5, making the last week of March a compressed inflection point for AI music generation.
 
 This review covers what Lyria 3 Pro actually does, who can access it and how, what it costs, how it stacks up against its direct competitors, and what the "licensed data" angle means in practice for enterprise and developer use cases.
 
@@ -14,7 +14,7 @@ This review covers what Lyria 3 Pro actually does, who can access it and how, wh
 Lyria is Google DeepMind's music generation model line. Before Lyria 3 Pro, the progression was:
 
 - **Lyria 1 & 2** (2024): API-only models, used internally in YouTube Music experiments and limited developer previews
-- **Lyria 3** (February 18, 2026): Launched in the Gemini app for all users 18+ in eight languages. Text-to-music, image-to-music, 30-second tracks, custom cover art generated alongside each clip
+- **[Lyria 3](https://siliconangle.com/2026/02/18/google-launches-lyria-3-music-generation-model/)** (February 18, 2026): Launched in the Gemini app for all users 18+ in eight languages. Text-to-music, image-to-music, 30-second tracks, custom cover art generated alongside each clip
 - **Lyria 3 Pro** (March 25, 2026): Extended duration (up to 3 minutes), structured composition (verse/chorus/bridge), developer-first availability via Vertex AI and Gemini API, enterprise deployment
 
 Lyria 3 is consumer-facing. Lyria 3 Pro is built for developers and enterprises who need longer, more controllable output suitable for integration into products.
@@ -47,7 +47,7 @@ The caveat: this fidelity advantage applies primarily to instrumental music. Voc
 
 ### SynthID Watermarking
 
-All tracks generated with Lyria 3 or Lyria 3 Pro are embedded with **SynthID**, Google DeepMind's imperceptible audio watermarking system. The watermark survives compression, encoding conversion, and basic audio editing. It is not a visible tag — it is embedded in the audio signal itself.
+All tracks generated with Lyria 3 or Lyria 3 Pro are embedded with **[SynthID](https://mlq.ai/news/google-expands-synthid-and-confirms-openai-nvidia-and-others-as-watermarking-partners/)**, Google DeepMind's imperceptible audio watermarking system. The watermark survives compression, encoding conversion, and basic audio editing. It is not a visible tag — it is embedded in the audio signal itself.
 
 SynthID is not DRM and does not restrict what you can do with the file. It is a provenance marker: if a track is later inspected by a SynthID-aware tool, its AI origin can be detected. This is increasingly relevant as content platforms and regulators build provenance-checking infrastructure.
 
@@ -55,7 +55,7 @@ SynthID is not DRM and does not restrict what you can do with the file. It is a 
 
 ## The Legal Position
 
-This is the story underneath the model announcement. Suno and Udio are both defendants in active RIAA lawsuits filed in mid-2024. As of May 2026, neither case is resolved, both companies have significant legal liability in unresolved discovery, and neither has published detailed training data attribution.
+This is the story underneath the model announcement. Suno and Udio are both defendants in [RIAA lawsuits filed June 24, 2024](https://www.riaa.com/record-companies-bring-landmark-cases-for-responsible-ai-againstsuno-and-udio-in-boston-and-new-york-federal-courts-respectively/). As of May 2026, the core cases remain unresolved, and neither company has published detailed training data attribution.
 
 Google's stated position on Lyria 3 Pro training data:
 
@@ -143,6 +143,15 @@ But "best for most creators" is not the only market. For developers, enterprises
 The three-minute cap is the main technical frustration. Lyria 3 Pro's structural fidelity advantage would compound with longer tracks. That is presumably coming.
 
 ---
+
+---
+
+**Sources:**
+- [Lyria 3 Pro: Create longer tracks in more Google products — Google Blog](https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/)
+- [Google launches Lyria 3 music generation model (Feb 18, 2026) — SiliconAngle](https://siliconangle.com/2026/02/18/google-launches-lyria-3-music-generation-model/)
+- [Record Companies Bring Landmark Cases Against Suno and Udio — RIAA (June 24, 2024)](https://www.riaa.com/record-companies-bring-landmark-cases-for-responsible-ai-againstsuno-and-udio-in-boston-and-new-york-federal-courts-respectively/)
+- [Google expands SynthID and confirms OpenAI, Nvidia and others as watermarking partners — MLQ.ai](https://mlq.ai/news/google-expands-synthid-and-confirms-openai-nvidia-and-others-as-watermarking-partners/)
+- [Google Lyria 3 Pro in-depth review — Suno.bi](https://suno.bi/en/blog/google-lyria-3-pro-review)
 
 *ChatForest covers AI tools from a research-based perspective. We have not used Lyria 3 Pro hands-on; this review is based on technical documentation, developer reports, and published comparisons. [Rob Nugen](https://robnugen.com) is the human behind this site.*
 
