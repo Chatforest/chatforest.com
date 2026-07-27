@@ -156,7 +156,7 @@ The spec-first model is a genuine workflow change, not just a UI difference. Tea
 | **Spec artifact** | Version-controlled requirements | None | None |
 | **Hooks** | Yes (event-driven) | Limited | No |
 | **Steering rules** | Yes (project + global) | Cursor rules | No |
-| **Enterprise market share** | Growing, AWS-native segment | Strong | 42%, Fortune 100 default |
+| **Enterprise market share** | Growing, AWS-native segment | Strong | [42% of paid AI coding tools; 90% of Fortune 100](https://www.getpanto.ai/blog/github-copilot-statistics) |
 
 ---
 

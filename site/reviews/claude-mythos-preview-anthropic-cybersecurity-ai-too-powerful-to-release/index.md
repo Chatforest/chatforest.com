@@ -46,7 +46,7 @@ Anthropic used Mythos Preview to conduct what amounts to the most aggressive aut
 
 Zero-day vulnerabilities are security flaws unknown to the software's developers. Finding one is significant. Finding thousands, autonomously, across the entire software ecosystem, in weeks, is unprecedented.
 
-As of publication, over 99% of those findings remain unpatched.
+As of publication, [over 99% of those findings remain unpatched](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/).
 
 ---
 
@@ -54,9 +54,9 @@ As of publication, over 99% of those findings remain unpatched.
 
 The UK's AI Security Institute (AISI) conducted an independent evaluation of Mythos Preview's cybersecurity capabilities. Key findings:
 
-**On expert-level attack tasks** — tasks that no AI model could complete before April 2025 — Mythos Preview succeeded **73% of the time**. Twelve months ago, the success rate was zero.
+**On expert-level attack tasks** — tasks that no AI model could complete before April 2025 — Mythos Preview [succeeded **73% of the time**](https://bisi.org.uk/reports/claude-mythos-and-the-acceleration-of-cybersecurity-risk). Twelve months ago, the success rate was zero.
 
-**On AISI's 32-step corporate network attack simulation** — a multi-stage test of autonomous cyberattack capability — Mythos Preview completed the full simulation in **3 of 10 attempts**. GPT-5.5, OpenAI's comparable frontier model, completed it in **2 of 10 attempts**.
+**On AISI's 32-step corporate network attack simulation** — a multi-stage test of autonomous cyberattack capability — Mythos Preview completed the full simulation in [**3 of 10 attempts**](https://bisi.org.uk/reports/claude-mythos-and-the-acceleration-of-cybersecurity-risk). GPT-5.5, OpenAI's comparable frontier model, completed it in **2 of 10 attempts**.
 
 The AISI framing: Mythos represents a step-change in cyber capability, in a landscape where cyber performance was already improving rapidly. The 73% expert-task rate is not just an improvement over prior models. It's a different category of capability.
 
@@ -113,7 +113,7 @@ COBOL-based core banking systems — many built in the 1970s and 1980s — power
 
 The model also built a systemic risk map of inter-bank lending networks, identifying how a failure in one legacy module could cascade through SWIFT and ACH.
 
-Bank of England Governor Andrew Bailey requested a meeting with Anthropic to discuss the findings. The Financial Stability Board followed up. These are the bodies responsible for global financial systemic risk. The fact that AI-discovered vulnerabilities in legacy banking code triggered meetings at that level signals how seriously the findings were taken.
+[Bank of England Governor Andrew Bailey requested a meeting with Anthropic](https://bisi.org.uk/reports/claude-mythos-and-the-acceleration-of-cybersecurity-risk) to discuss the findings. The Financial Stability Board followed up. These are the bodies responsible for global financial systemic risk. The fact that AI-discovered vulnerabilities in legacy banking code triggered meetings at that level signals how seriously the findings were taken.
 
 ---
 

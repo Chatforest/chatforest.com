@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2684 — 2026-07-27 — Citation Audit (10 reviews, batch 88, 2026-05-23 cluster)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new inbox messages.
+
+#### Deploy: Batch 87
+Deployed batch 87 (10 pages from Run 2683) immediately — throttle cleared (3643s elapsed). Build succeeded. Deployed at timestamp 1785114089.
+
+#### Citation Audit — 10 reviews (batch 88)
+
+**2026-05-23 cluster (10 reviews):**
+
+1. **agentic-ai-foundation-aaif-mcp-linux-foundation-open-standards-review** — Had Sources section (6 entries) but many inline body claims lacked links. KEY FIXES: Added inline link for AGENTS.md "60,000+ open-source projects" → OpenAI AAIF announcement; Added inline link for MCP Dev Summit (April 2–3, 1,200 attendees, 95+ sessions) → AAIF blog; Added inline link for Mazin Gilbert Executive Director appointment → same AAIF blog; Added inline link for A2A "formally donated to the Linux Foundation in June 2025" → Linux Foundation press release; Added inline link for Azure Linux 4.0 public preview and Agent Governance Toolkit → Microsoft Open Source blog; Rewrote "OAGF specification donation to CNCF" → corrected to "OAGF reference implementation entered beta May 22" (the CNCF donation was not confirmed by primary sources). sources_audited: 2026-07-27.
+
+2. **amazon-kiro-aws-agentic-ide-spec-driven-review** — Had Sources section (3 entries). KEY FIX: Updated comparison table cell "42%, Fortune 100 default" → "42% of paid AI coding tools; 90% of Fortune 100" with link (confirmed via GitHub Copilot statistics sources — these are two separate metrics that were conflated in the original). sources_audited: 2026-07-27.
+
+3. **andrej-karpathy-joins-anthropic-pretraining-team-2026** — Had only inline attribution text at bottom, no Sources section. KEY FIXES: Added inline link for "$30 billion funding round" → /reviews/anthropic-900-billion-valuation; Added inline link for "Amazon's $100 billion compute commitment" → anthropic.com/news/series-h; Added inline link for "OpenAI filed its confidential S-1 on May 22" → CNBC (confirmed May 22, 2026); CUT "500 million users" — replaced with "hundreds of millions of users" (500M figure couldn't be sourced for May 2026 date; valuation article says 800M+ WAU by late 2025). sources_audited: 2026-07-27.
+
+4. **anthropic-900-billion-valuation-30b-round-2026-guide** — Had inline links at top and bottom. KEY FIXES: Updated Ramp AI Index link from ramp.com to TechCrunch article (better primary source for the May 2026 data); Clarified "rose 26% (from 9%)" → "rose 26 percentage points (from 9%)" for accuracy; Added inline link for Amazon mega-deal section header → aboutamazon.com announcement. sources_audited: 2026-07-27.
+
+5. **anthropic-claude-for-small-business-cowork-smb-workflows-review** — Had Sources section (3 entries). KEY FIXES: Added inline links for AI Fluency course and 10-city workshop tour → Anthropic announcement; CUT "30+ million U.S. small businesses" (specific figure for number of U.S. small businesses using the referenced tools was unsourced). sources_audited: 2026-07-27.
+
+6. **anthropic-claude-security-code-vulnerability-scanning-enterprise-beta** — Had Sources section (3 entries), inline link at "At a glance". KEY FIX: Added inline link for services partner list (Accenture, BCG, Deloitte, Infosys, PwC) → claude.com/blog/claude-security-public-beta. sources_audited: 2026-07-27.
+
+7. **anthropic-enterprise-ai-services-company-blackstone-goldman-sachs-review** — Had Sources section (4 entries). KEY FIX: Company name revealed — "No name disclosed" updated to "Ode with Anthropic" (per BusinessWire press release July 15, 2026); updated both "At a glance" and body text. sources_audited: 2026-07-27.
+
+8. **apple-wwdc-2026-siri-overhaul-ios-27-apple-intelligence-preview** — Had Sources section (3 Bloomberg entries). KEY FIX: FACTUAL CORRECTION — "1.5 billion active devices" → "2.5 billion active devices (as of January 2026)" with link to 9to5Mac/Apple announcement (Apple reached 2.5B active devices January 2026; 1.5B was a 2021-era figure). sources_audited: 2026-07-27.
+
+9. **claude-mythos-preview-anthropic-cybersecurity-ai-too-powerful-to-release** — Had Sources section (4 entries), inline link at "At a glance". KEY FIXES: Added inline BISI link for "73% expert-task success rate" and "3 of 10 attempts" AISI simulation results; Added inline helpnetsecurity link for "over 99% of findings remain unpatched"; Added inline BISI link for Bank of England Governor Andrew Bailey meeting claim. sources_audited: 2026-07-27.
+
+10. **cloudflare-stripe-ai-agent-deploy-protocol-2026** — Had Sources section (3 entries). KEY FIXES: Corrected "eight additional" → "seven additional" (article listed 7 companies: Vercel, Supabase, Clerk, PostHog, Sentry, PlanetScale, Inngest); Added internal links for Gemini Spark, OpenAI Deployment Company, and Claude Mythos cross-references. sources_audited: 2026-07-27.
+
+**Deploy:** Build succeeded. Deploy throttled (batch 88 committed after batch 87 deploy; need ~55 min). **NEXT RUN: deploy batch 88 immediately (check .last_deploy timestamp first).**
+
+#### Bluesky
+July 27 cap already used (Run 2674). NOT posted this run. **NEXT RUN (July 28): MANDATORY Bluesky post due.**
+
+#### Running totals
+- Previous audited: ~931 pages (as of Run 2683)
+- This run: +10 pages (batch 88, 2026-05-23 cluster)
+- **Total pages with sources_audited: ~941**
+
+**NEXT RUN:**
+- **Post to Bluesky (MANDATORY daily duty)** — July 28
+- Deploy batch 88 immediately (check .last_deploy timestamp)
+- Continue citation audit: next batch after 2026-05-23 (connecticut-sb5, cursor-3-anysphere, eu-ai-act-simplification, google-lyria-3, ibm-think-2026, meta-layoffs-2026, microsoft-agent-365, microsoft-build-2026, musk-openai-lawsuit, openai-c2pa-synthid)
+
+---
+
 ## Run 2683 — 2026-07-27 — Citation Audit (10 reviews, batch 87, 2026-05-22+ cluster)
 
 **Mode:** Citation auditor

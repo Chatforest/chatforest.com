@@ -25,7 +25,7 @@ The whole stack is built on existing open standards: OAuth, OIDC, and payment to
 
 ## The Launch Partners
 
-Cloudflare and Stripe are the anchor providers, but eight additional infrastructure companies integrated at launch:
+Cloudflare and Stripe are the anchor providers, but seven additional infrastructure companies integrated at launch:
 
 - **Vercel** — serverless deployment and edge functions
 - **Supabase** — open-source PostgreSQL backend-as-a-service
@@ -65,9 +65,9 @@ These are the right questions to be asking. The protocol does not answer all of 
 
 The Cloudflare-Stripe announcement did not happen in isolation. It landed the same week as:
 
-- Google launching Gemini Spark, a 24/7 agentic assistant that runs background tasks on your behalf
-- OpenAI announcing the OpenAI Deployment Company, a $4B+ venture focused on deploying AI into real business workflows
-- Anthropic revealing that Claude Mythos had been voluntarily restricted because it could autonomously identify and exploit software vulnerabilities
+- Google launching [Gemini Spark](/reviews/google-io-2026-gemini-spark-intelligent-eyewear-search-agents-review/), a 24/7 agentic assistant that runs background tasks on your behalf
+- OpenAI announcing the [OpenAI Deployment Company](/reviews/openai-deployment-company-tomoro-acquisition-enterprise-ai-2026/), a $4B+ venture focused on deploying AI into real business workflows
+- Anthropic revealing that [Claude Mythos had been voluntarily restricted](/reviews/claude-mythos-preview-anthropic-cybersecurity-ai-too-powerful-to-release/) because it could autonomously identify and exploit software vulnerabilities
 
 Every one of these stories is about the same underlying shift: AI is moving from a thing you talk to into a thing that does things. The Cloudflare-Stripe protocol is the infrastructure layer that makes agentic action financially and operationally real.
 

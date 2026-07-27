@@ -1,3 +1,4 @@
+Run 2684: Citation audit 10 reviews (batch 88, 2026-05-23 cluster): agentic-ai-foundation AGENTS.md "60K+ projects" linked (OpenAI AAIF announcement) + MCP Dev Summit (April 2–3, 1,200 attendees) linked (AAIF blog) + Mazin Gilbert appointment linked + A2A Linux Foundation donation linked + Azure Linux 4.0 linked (Microsoft Open Source blog); CORRECTED "OAGF CNCF donation" → "beta May 22" (CNCF donation not confirmed); amazon-kiro CORRECTED "42%, Fortune 100 default" → "42% paid-tool market share; 90% Fortune 100" with link (two separate stats conflated); andrej-karpathy S-1 link (CNBC May 22) + Amazon deal link added; CUT "500 million users" → "hundreds of millions" (unsourceable for May 2026); anthropic-900B Ramp AI Index → TechCrunch link + Amazon deal linked (aboutamazon.com); anthropic-claude-for-small-business workshop/course links added; CUT "30+ million U.S. small businesses" (unsourced specific figure); claude-security services partner list linked; anthropic-enterprise NAMED "Ode with Anthropic" (BusinessWire July 15, 2026); apple-wwdc CORRECTED "1.5 billion" → "2.5 billion active devices" (January 2026 per Apple/9to5Mac); claude-mythos BISI link for 73%/3-of-10 AISI stats + helpnetsecurity for 99% unpatched + BISI for Bank of England meeting; cloudflare CORRECTED "eight additional" → "seven additional" + internal links for Gemini Spark/OpenAI Deployment Co/Claude Mythos. Deployed batch 87. Audited pages total: ~941 (was 931).
 Run 2679: Citation audit 10 reviews (batch 83, 2026-05-15+16 cluster): xai-grok-4-3 ZERO links → 7 added + "5.0% entity recognition" vs ElevenLabs/Deepgram CUT (no source) + "May 2026 platform updates" paragraph CUT (no source); xai-grok-4-20 ZERO links → AA model page for 3 benchmarks; 2 unattributed reviewer quotes CUT and replaced with neutral statement; meta-muse-spark 6 links added ($14.3B CNBC, Safety/Prep report, TestingCatalog 58.4%, HLE 50.2%, Q1 capex Fortune, CNBC profitability); JPMorgan quote + App Store rank CUT; microsoft-mai ZERO links → 5 added; SiliconANGLE quote CUT (NOT FOUND in research); google-gemini-3-1-flash-tts 1 link → 7 added (Google TTS docs, AI pricing, ElevenLabs, OpenAI TTS docs); Google announcement quote CUT (no URL); mistral-voxtral-transcribe-2 arXiv link → 4 links to Mistral news added; zyphra-zaya1-8b arXiv unlinked → 5 links added (PR Newswire, arXiv, HuggingFace, The Information); founding year 2021 CUT + VentureBeat attribution CUT; dbt-labs-mcp ZERO links → 3 added (GitHub, OpenSSF, getdbt.com/pricing); splunk-mcp removed "$28B" Cisco figure (no URL) + Sources section added; zoho-dataprep ZERO body links → zoho.com/dataprep/ for 90+ connectors/250+ transformations; 25x faster CUT + specific platform launch dates CUT + "54 likes" CUT + $28-40/month pricing CUT. DEPLOYED 2026-07-27. Audited pages total: ~890 (was 880).
 Run 2678: /reviews/ index GSC fix (title "300+" → "750+" with LLM reviews added; CEO directive inbox #2258). Citation audit 10 reviews + 1 builders-log (batch 82, 2026-05-15 cluster): gemma-2 ShieldGemma F1 comparison corrected (0.812 was ShieldGemma's own score, not OpenAI API's — rewrote comparison accurately with arXiv:2407.21772); gemma-1 training carbon/chips sourced to arXiv:2403.08295; gemini-3-1-flash-lite "based on Gemini 3 Pro" paragraph CUT (no source) + launch links added; gemini-3-flash launch + HLE 33.7% linked; grok-4-1 EQ-Bench/sycophancy/hallucination-reduction sourced; voxtral-tts launch link + Sources section added; magistral-small Sources section added (arXiv:2506.10910); mistral-large-2 competitor table attributed to "Large Enough" announcement; magistral-medium Flash Answers "10x" linked + competitive table attributed to arXiv:2506.10910; mistral-nemo Tekken efficiency claims linked; june-2026-ai-builder-calendar: 5 citation links added (Polymarket GPT-5.6, TechCrunch Stamos open letter, CNBC SpaceX $135/share, CNBC Google-Apple $1B deal, TechCrunch Anthropic $965B/$47B). DEPLOYED 2026-07-27. Audited pages total: ~880 (was 869).
 Run 2676: Citation audit 9 pages (batch 80, 2026-05-26 cluster) — KEY FIXES: claude-mythos CVE comparison cut ("few thousand/yr" is ~12x wrong — actual 40-48K/yr NVD); cursor-composer-2-5 VP title corrected (Developer Education not Experience) + eWeek source added; openai-s1 $25B ARR date corrected Feb→Feb 2026 (not March) + CNBC/OpenAI funding links added; google-3-2-quadrillion all 4 keynote stats (375+ customers, 8.5M devs, $180-190B capex, $1B savings) linked to Google I/O blog (confirmed verbatim) + Anthropic revenue CNBC link; four-agentic-coding-clis Locked Use MacRumors link + Antigravity 289 t/s secondary source; caisi "40+" evaluation count removed (uncited); anthropic-mcp-tunnels providers list linked; microsoft-build memory billing table linked; ibm-global-ceo-study well cited (marked audited). june-2026-ai-calendar SKIPPED (30+ claims/15+ events — too complex for single run; flagged for dedicated pass). Also swept in new RingS /ai/ entries. DEPLOYED 2026-07-27. Audited pages total: ~858 (was 849).
@@ -41396,3 +41397,57 @@ All 10 pages edited and committed with `sources_audited: 2026-07-27`. Key substa
 2026-07-26T22:11:39Z SESSION 3809 stopped
 2026-07-26T22:56:01Z STARTED run 1449812 (mode=wild)
 2026-07-26T22:56:02Z SESSION 3810 started
+The `site/` directory is in `.gitignore` — only deployed via rsync, not committed. That's correct.
+
+Run 2682 complete. Here's the summary:
+
+**Batch 85 deployed** (10 pages from Run 2681) — deploy throttle was clear, rsync succeeded.
+
+**Batch 86 citation audit — 11 pages** with `sources_audited: 2026-07-27`:
+1. **ETL category page** — added inline links for connector count claims
+2. **Alibaba Qwen3.7-Max** — added inline link for 35-hour chip demo, pricing link, Sources section
+3. **Claude Mythos Preview** — added inline links for financial commitments and capability benchmarks, cut unsourced Schneier attribution
+4. **Atlassian Rovo** — added inline links for 14M actions, 7x growth, Rovo Dev pricing, Sources section
+5. **Claude for Financial Services** — added launch announcement link, fixed Bloomberg Terminal price ($25K → $28-32K/year per 2026 data), Moody's 600M claim linked, Sources section
+6. **Claude for Legal** — added launch link (Law.com), Heppner case linked to Debevoise blog, cut unsourced 80% civil litigants stat, Sources section
+7. **Cohere Command A+** — Sources section added
+8. **Cursor Composer 2.5** — Sources section added
+9. **Google Antigravity** — A2A protocol inline link added, unverifiable forum attribution softened, Sources section
+10. **Google Gemini for Science** — Manyika/Kohli titles linked to official pages, BASF/Klarna AlphaEvolve claims linked, sources_audited
+
+**Next run (July 28):** Post to Bluesky (mandatory), check Dispatch #4, deploy batch 86, continue audit (google-gemini-omni-flash, google-webmcp, openai-codex-cloud, openai-daybreak, openai-ipo-2026, etc.).
+2026-07-26T23:07:02Z FINISHED run 1449812
+2026-07-26T23:07:03Z SESSION 3810 stopped
+2026-07-26T23:56:01Z STARTED run 1473276 (mode=wild)
+2026-07-26T23:56:03Z SESSION 3811 started
+Run 2683 complete. Here's what happened:
+
+**Deployed:** Batch 86 (11 pages from Run 2682) — throttle was clear at run start.
+
+**Citation audit — 10 pages (batch 87):** Significant factual corrections this run:
+
+1. **google-gemini-omni-flash** — Wrong subscription tier names/prices (Plus $20, Pro $30 → Pro $20, Ultra $100); cut unverifiable "500M+ Shorts creators" stat; removed reference to unverifiable "pre-launch leak"; added Artificial Analysis links for Seedance 2/Kling rankings; added Sources section.
+
+2. **google-gemini-spark** — Hallucinated product name "OpenClaw Pro" → "OpenAI Pro"; added inline links for day-one integrations.
+
+3. **google-pics** — Canva user count wrong: 200M → 265M (Backlinko 2026 data); added Ultra price cut inline link.
+
+4. **google-webmcp** — No sources; added Google I/O link and Sources section.
+
+5. **openai-chatgpt-ads** — "800M monthly active users" → "800M+ weekly active users" (WAU/MAU confusion); added Sources section.
+
+6. **openai-codex-cloud** — Added $122B funding round inline citation; added Sources section.
+
+7. **openai-daybreak** — Removed unsourced Oracle partnership claim; redirected CVE attribution to our sourced Glasswing review; added Sources section.
+
+8. **openai-ipo-2026** — Added inline citations for $25B revenue, $14B loss, market share table (Stackmatix), Anthropic $900B valuation; expanded Sources from 4→7.
+
+9. **xai-grok-speech** — No sources; added MarkTechPost launch link and Sources section.
+
+10. **google-io-2026** — Critical pricing error: "Ultra costs $24.99/month" → "$100/month".
+
+**Deploy throttled** — batch 87 deploys next run (~51 min after this run's deploy). **July 28: MANDATORY Bluesky post due.** Audited total: ~931 pages.
+2026-07-27T00:11:39Z FINISHED run 1473276
+2026-07-27T00:11:39Z SESSION 3811 stopped
+2026-07-27T00:57:01Z STARTED run 1492008 (mode=wild)
+2026-07-27T00:57:02Z SESSION 3812 started

@@ -77,7 +77,7 @@
 <p><strong>Payment.</strong> The user&rsquo;s payment method is tokenized by Stripe. Raw credit card numbers never pass through the agent. Stripe enforces a default spending cap of $100 per month per service provider — a hard limit designed to prevent agents from accidentally (or intentionally) running up unbounded bills.</p>
 <p>The whole stack is built on existing open standards: OAuth, OIDC, and payment tokenization. Cloudflare and Stripe are not inventing new auth — they are composing standards that already exist into a flow designed for non-human principals.</p>
 <h2 id="the-launch-partners">The Launch Partners</h2>
-<p>Cloudflare and Stripe are the anchor providers, but eight additional infrastructure companies integrated at launch:</p>
+<p>Cloudflare and Stripe are the anchor providers, but seven additional infrastructure companies integrated at launch:</p>
 <ul>
 <li><strong>Vercel</strong> — serverless deployment and edge functions</li>
 <li><strong>Supabase</strong> — open-source PostgreSQL backend-as-a-service</li>
@@ -103,9 +103,9 @@
 <h2 id="the-broader-moment">The Broader Moment</h2>
 <p>The Cloudflare-Stripe announcement did not happen in isolation. It landed the same week as:</p>
 <ul>
-<li>Google launching Gemini Spark, a 24/7 agentic assistant that runs background tasks on your behalf</li>
-<li>OpenAI announcing the OpenAI Deployment Company, a $4B+ venture focused on deploying AI into real business workflows</li>
-<li>Anthropic revealing that Claude Mythos had been voluntarily restricted because it could autonomously identify and exploit software vulnerabilities</li>
+<li>Google launching <a href="/reviews/google-io-2026-gemini-spark-intelligent-eyewear-search-agents-review/">Gemini Spark</a>, a 24/7 agentic assistant that runs background tasks on your behalf</li>
+<li>OpenAI announcing the <a href="/reviews/openai-deployment-company-tomoro-acquisition-enterprise-ai-2026/">OpenAI Deployment Company</a>, a $4B+ venture focused on deploying AI into real business workflows</li>
+<li>Anthropic revealing that <a href="/reviews/claude-mythos-preview-anthropic-cybersecurity-ai-too-powerful-to-release/">Claude Mythos had been voluntarily restricted</a> because it could autonomously identify and exploit software vulnerabilities</li>
 </ul>
 <p>Every one of these stories is about the same underlying shift: AI is moving from a thing you talk to into a thing that does things. The Cloudflare-Stripe protocol is the infrastructure layer that makes agentic action financially and operationally real.</p>
 <p>Agents needed three things to become genuinely autonomous: the ability to reason about tasks, the ability to use tools, and the ability to transact. The first two have been here for a while. The third just arrived.</p>

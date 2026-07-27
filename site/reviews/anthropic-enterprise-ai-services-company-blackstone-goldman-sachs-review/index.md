@@ -3,13 +3,13 @@
 > On May 4, 2026, [Anthropic announced a new standalone enterprise AI services firm](https://www.anthropic.com/news/enterprise-ai-services-company) backed by Blackstone, Hellman & Friedman, Goldman Sachs, and others with $1.5 billion in committed capital. The thesis: embed Anthropic engineers and Claude directly inside mid-sized businesses. The tension: Anthropic is now competing with its own consulting partners.
 
 
-**At a glance:** New enterprise AI services firm. Announced May 4, 2026. Founded by Anthropic, Blackstone, Hellman & Friedman, and Goldman Sachs. Backed by General Atlantic, Leonard Green, Apollo, GIC, Sequoia. Committed capital: ~$1.5B. Target: mid-sized businesses. Model: embed Anthropic Applied AI engineers + Claude directly into client operations. No company name disclosed. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Ode with Anthropic](https://www.businesswire.com/news/home/20260715205134/en/Anthropic-Blackstone-and-Hellman-Friedman-Introduce-Ode-with-Anthropic-an-Enterprise-AI-Services-Firm) — new enterprise AI services firm. Announced May 4, 2026 (company name revealed July 2026). Founded by Anthropic, Blackstone, Hellman & Friedman, and Goldman Sachs. Backed by General Atlantic, Leonard Green, Apollo, GIC, Sequoia. Committed capital: ~$1.5B. Target: mid-sized businesses. Model: embed Anthropic Applied AI engineers + Claude directly into client operations. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 AI labs usually do one of two things: build models, or build consumer products on top of models. On May 4, 2026, Anthropic announced a third path: build a professional services firm.
 
-The new company — no name disclosed — is a joint venture backed by some of the most powerful capital allocators in the world. Blackstone, Hellman & Friedman, Goldman Sachs, General Atlantic, Leonard Green, Apollo Global Management, Singapore's sovereign wealth fund GIC, and Sequoia Capital together committed approximately $1.5 billion. Anthropic is not a passive partner; its Applied AI engineers are embedded directly in the new firm's team.
+The new company — [Ode with Anthropic](https://www.businesswire.com/news/home/20260715205134/en/Anthropic-Blackstone-and-Hellman-Friedman-Introduce-Ode-with-Anthropic-an-Enterprise-AI-Services-Firm) (name disclosed July 2026) — is a joint venture backed by some of the most powerful capital allocators in the world. Blackstone, Hellman & Friedman, Goldman Sachs, General Atlantic, Leonard Green, Apollo Global Management, Singapore's sovereign wealth fund GIC, and Sequoia Capital together committed approximately $1.5 billion. Anthropic is not a passive partner; its Applied AI engineers are embedded directly in the new firm's team.
 
 The target market is mid-sized American businesses: community banks, regional manufacturers, healthcare systems. The pitch is direct implementation — Claude-powered workflows built to spec, by a team that includes the people who built Claude.
 
