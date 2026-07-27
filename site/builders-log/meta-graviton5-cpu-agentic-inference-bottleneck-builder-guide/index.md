@@ -3,7 +3,7 @@
 > Meta has $135B in annual capex, builds its own MTIA AI chips, and still signed a multibillion-dollar deal with Amazon for Graviton5 CPUs. The reason tells you something important about where agentic AI infrastructure is breaking — and how builders should think about costs.
 
 
-Meta has a $135 billion annual capital expenditure budget. It designs its own AI chips — the MTIA line, now in its second generation. And in April 2026, it signed a multibillion-dollar deal to rent tens of millions of processor cores from Amazon, a direct competitor in cloud services.
+Meta has a [$125–$145 billion annual capital expenditure budget](https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx) (Q1 2026 guidance). It designs its own AI chips — the MTIA line, now in its second generation. And in April 2026, it [signed a multibillion-dollar deal to rent tens of millions of processor cores from Amazon](https://about.fb.com/news/2026/04/meta-partners-with-aws-on-graviton-chips-to-power-agentic-ai/), a direct competitor in cloud services.
 
 The chips in question aren't NVIDIA GPUs. They're not AI accelerators. They're Graviton5 CPUs — Amazon's custom general-purpose processors, the kind of chip that was supposed to be made obsolete by the GPU era.
 
@@ -11,7 +11,7 @@ They weren't.
 
 ## What Meta Signed Up For
 
-The deal, announced April 24, 2026, covers tens of millions of Graviton5 ARM processor cores deployed in AWS data centers for agentic AI workloads. The exact dollar figure wasn't disclosed, but Meta described it as part of a procurement campaign that now exceeds $200 billion across Nvidia ($50B), AMD ($60B), CoreWeave ($35B), Nebius ($27B), and Broadcom for MTIA silicon.
+The deal, announced April 24, 2026, covers tens of millions of Graviton5 ARM processor cores deployed in AWS data centers for agentic AI workloads. The exact dollar figure wasn't disclosed, but Meta's total AI infrastructure procurement across vendors has exceeded $200 billion, including deals with [AMD ($60B+)](https://www.cnbc.com/2026/02/24/meta-to-use-6gw-of-amd-gpus-days-after-expanded-nvidia-ai-chip-deal.html), [CoreWeave ($35B)](https://investors.coreweave.com/news/news-details/2026/CoreWeave-and-Meta-Announce-21-Billion-Expanded-AI-Infrastructure-Agreement/default.aspx), and [Nebius ($27B)](https://finance.yahoo.com/news/meta-just-signed-27-billion-161504458.html). The Nvidia figure (~$50B) is an analyst estimate without an official joint disclosure.
 
 Meta is not renting these cores to save money. Meta is renting these cores because it ran out of capacity to run its own agents.
 
@@ -35,9 +35,9 @@ In a well-designed agentic pipeline, a model call might take 2 seconds of GPU ti
 
 ## Why Graviton5
 
-Amazon's Graviton5 is notable for an unusual reason: it doubles the core count of its predecessor while simultaneously reducing inter-core communication latency by 33%.
+[Amazon's Graviton5](https://www.amazon.science/blog/graviton5s-improved-design-increases-speed-and-energy-efficiency-beyond-moores-law) is notable for an unusual reason: it doubles the core count of its predecessor while simultaneously reducing inter-core communication latency by 33%.
 
-The specs: 192 Neoverse V3 cores per chip, built on TSMC's 3-nanometer process, with 25% higher performance than Graviton4. The cache is five times larger. The latency improvement despite the core count increase is the key engineering achievement — it means you can run highly parallel orchestration workloads without cores waiting on each other.
+The specs: 192 Neoverse V3 cores per chip, built on a 3-nanometer process, with 25% higher performance than Graviton4. The cache is five times larger. The latency improvement despite the core count increase is the key engineering achievement — it means you can run highly parallel orchestration workloads without cores waiting on each other.
 
 For agentic workloads, where many agents run in parallel and frequently need to synchronize state, lower inter-core latency directly translates to lower wall-clock latency for the whole pipeline.
 
@@ -47,11 +47,11 @@ Amazon's Graviton chips have become the preferred inference substrate for the or
 
 The Meta deal sits inside a broader shift in how AI infrastructure is being built and measured.
 
-Amazon CEO Andy Jassy disclosed in his April 9, 2026 shareholder letter that Amazon's custom silicon business — Graviton, Trainium, and Nitro combined — had crossed **$20 billion in annualized revenue**, growing at triple-digit rates year-over-year. Jassy said if the business were standalone, he'd value it at roughly $50 billion.
+[Amazon CEO Andy Jassy disclosed in his April 9, 2026 shareholder letter](https://siliconangle.com/2026/04/09/amazon-ceo-andy-jassy-highlights-ai-growth-annual-shareholder-letter/) that Amazon's custom silicon business — Graviton, Trainium, and Nitro combined — had crossed **$20 billion in annualized revenue**, growing at triple-digit rates year-over-year. Jassy said if the business were standalone, he'd value it at roughly $50 billion.
 
-This is not a side project. Amazon deployed more than 2.1 million AI chips over the past year, with Trainium accounting for more than half. And the customer commitments are extraordinary: Anthropic has committed to up to 5 gigawatts of Trainium capacity for training and serving Claude. OpenAI committed to approximately 2 gigawatts.
+This is not a side project. [Amazon deployed more than 2.1 million AI chips over the past year](https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/default.aspx), with Trainium accounting for more than half. And the customer commitments are extraordinary: [Anthropic has committed to up to 5 gigawatts of AWS compute capacity](https://www.anthropic.com/news/anthropic-amazon-compute) (Graviton and Trainium) for training and serving Claude. [OpenAI committed to approximately 2 gigawatts of Trainium](https://openai.com/index/amazon-partnership/).
 
-The 5GW vs 2GW split matters beyond bragging rights. Anthropic's expected $10.9 billion in Q2 2026 revenue requires that infrastructure. The compute commitment is the revenue forecast expressed in hardware.
+The 5GW vs 2GW split matters beyond bragging rights. [Anthropic's projected $10.9 billion in Q2 2026 revenue](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html) (a forecast shared with investors, not yet reported) requires that infrastructure. The compute commitment is the revenue forecast expressed in hardware.
 
 But even with all of that Trainium, Anthropic still runs its API coordination, context management, and tool call infrastructure on CPU-class hardware. The GPU handles generation. Everything around it runs on processors like Graviton.
 

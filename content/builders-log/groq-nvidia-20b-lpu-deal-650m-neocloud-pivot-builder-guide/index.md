@@ -5,6 +5,7 @@ description: "Groq licensed its LPU technology to Nvidia for $20 billion in Dece
 content_type: "Builder's Log"
 categories: ["Infrastructure", "AI Industry", "Developer Tools"]
 tags: ["groq", "nvidia", "inference", "lpu", "neocloud", "api", "llama", "latency", "groqcloud", "infrastructure"]
+sources_audited: 2026-07-27
 ---
 
 On December 24, 2025, Nvidia and Groq announced a **non-exclusive licensing agreement** worth approximately [**$20 billion**](https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/) covering Groq's Language Processing Unit (LPU) inference architecture. Along with the IP came two of the most important people who built it: founder **Jonathan Ross** (previously a Google TPU architect) and president **Sunny Madra** both joined Nvidia. Much of Groq's senior engineering leadership followed.
@@ -29,7 +30,7 @@ The $650M raise is to fund **Groq 2.0** — scaling GroqCloud as a neocloud, pur
 
 ## What Nvidia Gets Out of This
 
-Nvidia unveiled the **Groq 3** at GTC 2026 in March. It's the first chip to emerge from the December licensing deal: an SRAM-based inference accelerator that slots into the **Vera Rubin platform** as a dedicated decode-phase co-processor. Nvidia plans to ship it in **Q3 2026**.
+[Nvidia unveiled the **Groq 3** at GTC 2026 in March](https://spectrum.ieee.org/nvidia-groq-3). It's the first chip to emerge from the December licensing deal: an SRAM-based inference accelerator that slots into the **Vera Rubin platform** as a dedicated decode-phase co-processor. Nvidia plans to ship it in **Q3 2026**.
 
 The strategic rationale is straightforward. GPU inference has a known bottleneck: the prefill phase (parallel, GPU-optimized) and the decode phase (sequential, memory-bandwidth-constrained) have different computational profiles. The LPU's architecture excels at the decode phase. Combining GPU + LPU in the same rack is a way to address both sides of inference without choosing between architectures.
 
@@ -41,11 +42,11 @@ What this means for builders: when Vera Rubin + Groq 3 systems reach cloud provi
 
 If you're using GroqCloud today:
 
-**What's working:** The API is fully operational. No service disruption. Over **two million developers** are on the platform. Rate limits, model availability, and pricing are unchanged.
+**What's working:** The API is fully operational. No service disruption. [More than **five million developers**](https://groq.com/newsroom/groq-raises-usd650m-to-scale-its-ai-inference-cloud-business) are on the platform, per the $650M press release. Rate limits, model availability, and pricing are unchanged.
 
 **What's available:** Groq runs **open-source models exclusively** — no proprietary frontier models. The flagship is **Llama 3.3 70B Versatile** at $0.59 per million input tokens / $0.79 per million output tokens. Smaller models (Llama 3.1 8B, Mixtral, Gemma) are available at lower price points. No Claude, no GPT, no Gemini.
 
-**Pricing structure:**
+**Pricing structure** ([GroqCloud rate limits and pricing](https://console.groq.com/docs/rate-limits)):
 - Free tier: 14,400 API requests/day, 30 req/min, no credit card required
 - Developer tier: Up to 10x rate limits, 25% cost discount
 - Enterprise: Custom rate limits, fine-tuned model hosting, dedicated SLAs

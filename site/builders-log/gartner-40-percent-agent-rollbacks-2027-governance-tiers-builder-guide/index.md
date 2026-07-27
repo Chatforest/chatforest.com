@@ -3,7 +3,7 @@
 > Gartner published a governance framework on May 26 predicting that 40% of enterprises will demote or decommission autonomous agents by 2027 — not from security incidents, but from governance gaps discovered in production. The failure mode is uniform treatment of agents that need differentiated controls.
 
 
-Gartner published a press release on May 26, 2026, with a specific prediction: **40% of enterprises will demote or decommission autonomous AI agents by 2027** — after discovering governance gaps in production.
+Gartner published [a press release on May 26, 2026](https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure), with a specific prediction: **40% of enterprises will demote or decommission autonomous AI agents by 2027** — after discovering governance gaps in production.
 
 The failures are not coming from security incidents or capability problems. They are coming from a governance architecture error that almost every enterprise is making right now: treating all AI agents as if they are the same thing.
 
@@ -13,7 +13,7 @@ This is the risk builders need to understand before they ship an enterprise agen
 
 ## The Root Cause Gartner Identified
 
-Sanchit Vir Gogia, an analyst quoted in coverage of the Gartner research, put it clearly: applying one governance model to all agents is "like applying the same control regime to a receptionist and a surgeon because all use a laptop. It is tidy on paper. It is nonsense in practice."
+Shiva Varma, Senior Director Analyst at Gartner, put it clearly in the press release: "Enterprises are treating AI agent governance as binary, either locked down or fully trusted, and that is the root cause of failure."
 
 Enterprises are currently applying two approaches to AI agent governance, and both are wrong.
 
@@ -71,7 +71,7 @@ The governance requirements at Level 4 are not extensions of Level 3 — they ar
 
 Required controls at Level 4: comprehensive guardrail definitions with explicit boundary conditions, rollback capabilities for every action category the agent can take, continuous monitoring with anomaly detection, kill-switch mechanisms that trigger automatically on defined conditions, red team testing before production deployment, clear ownership assignment (someone's name is on this agent's behavior), and business continuity procedures for agent failure.
 
-The governance mistake at Level 4: conflating guardrails with constraints. A constraint is a hard limit. A guardrail is a soft boundary with a defined response when it is approached. Guardrails are more expensive to implement and more flexible in production. Agents that reach Level 4 deployment need guardrails, not constraints, because the scenarios they encounter will not be fully specified by any design process.
+The governance mistake at Level 4: conflating guardrails with constraints. A constraint is a hard limit. A guardrail is a soft boundary with a defined response when it is approached. Guardrails are more expensive to implement and more flexible in production. Agents that reach Level 4 deployment need guardrails, not constraints, because the scenarios they encounter will not be fully specified by any design process. Varma's summary in the Gartner press release: governance must include "rapid rollback mechanisms so that when AI agents exceed intended boundaries, organizations can respond."
 
 ---
 

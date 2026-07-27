@@ -2,6 +2,59 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2692 — 2026-07-27 — Citation Audit (10 builders-log, batch 96, 2026-05-31 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. Marked as seen.
+
+#### Cleanup commit
+- Run 2690 had committed `content/builders-log` source files for batch 94 but missed the corresponding `site/builders-log` built files (.html + .md). Committed those plus RUNLOG.md + TOKENLOG.tsv.
+
+#### Citation Audit — 10 builders-log pages (batch 96, 2026-05-31 cluster)
+
+Five parallel research agents verified all key claims before edits. **Notable fabrications caught and removed:**
+
+1. **dell-q1-fy27-757**: Already had Dell/CNBC/SEC inline links. KEY FIXES: Deleted fabricated "$15 billion Samsung and SK Hynix invested as strategic partners in Anthropic's Series H" (the $15B referred to hyperscaler cloud commitments from Amazon/Google, not Samsung/SK Hynix; their Series H amounts were never disclosed); replaced with "industry analysts report similar constraints" framing; added Micron earnings call citation for HBM sold-out claim. sources_audited: 2026-07-27.
+
+2. **figure-ai-200-hour**: Had Interesting Engineering and AI Weekly links for the 200-hour run. KEY FIXES: Removed "Dr." from Scott Walter (title unverified — he's a robotics industry veteran, not confirmed to have a doctorate); removed unverified 60/120/240 monthly unit breakdown (numbers circulate widely but absent from Figure AI's own announcements — replaced with confirmed ">350 units by late April 2026"); removed unverified "BMW's German facilities — Munich, Regensburg, Leipzig — under separate pilot agreements"; added Figure AI official BotQ link, Helix-02 link (1,000 hrs / 109,504 lines of C++), BMW Spartanburg bmwblog link. sources_audited: 2026-07-27.
+
+3. **gartner-40-percent-agent-rollbacks**: Had Gartner press release footer link only. KEY FIXES: Added Gartner PR inline at first mention; replaced fabricated Valence Howden quote with verified Shiva Varma (Senior Director Analyst, Gartner) quote — Valence Howden is from Info-Tech Research Group and does not appear in the Gartner press release at all; added Sanchit Vir Gogia's correct affiliation (Chief Analyst, Greyhound Research, not Gartner). sources_audited: 2026-07-27.
+
+4. **gemini-interactions-api-june-8**: Had Google migration guide links only in footer. KEY FIX: Added inline links to the Google migration guide and SDK upgrade docs early in the article. sources_audited: 2026-07-27.
+
+5. **gemini-spark-mcp-connector**: Already had inline links for major claims (blog.google, techcrunch). sources_audited: 2026-07-27.
+
+6. **geordie-30m-agent-security**: Had Fortune, Balderton, Geordie.ai inline links for the funding. KEY FIXES: Fixed incorrect attribution of 88% stat — was attributed to "AI Automation Global, Kiteworks" but primary source is Gravitee's State of AI Agent Security 2026 report; added inline links for all 6 statistics (88% Gravitee, 65% CSA/Token Security, 45.6% Gravitee, 4.5x Teleport, 92% Darktrace, 14.4% Gravitee); added OWASP GenAI Exploit Q1 2026 link inline. sources_audited: 2026-07-27.
+
+7. **groq-nvidia-20b-lpu-deal**: Had TechCrunch/SiliconANGLE links. KEY FIXES: Updated "two million developers" → "more than five million" per the $650M press release; added IEEE Spectrum link for Groq 3 at GTC 2026; added GroqCloud rate limits docs link for pricing claims. sources_audited: 2026-07-27.
+
+8. **illinois-sb-315**: Had ILGA link, Pritzker signing link. KEY FIXES: Updated Cesar Fernandez (Anthropic) quote to the verified version from Governor's press release; replaced unverifiable Jamie Radice (OpenAI) direct quote with paraphrase + OpenAI Newsroom X link; removed "fatal flaw" quotes around NetChoice characterization (they used "impossible compliance burden" — updated with their actual letter URL); updated FLOP threshold claim ("likely ~10^26" → confirmed 10^26) with Crowell & Moring citation; added IAPP link for Connecticut/New York bills. sources_audited: 2026-07-27.
+
+9. **meta-graviton5-cpu**: Had NO inline links at all, only footer. KEY FIXES: Fixed "$135 billion capex" → "$125-$145 billion" (Q1 2026 guidance) with Meta Q1 earnings link; added Meta press release for the Amazon Graviton deal; fixed "$200B breakdown" — removed inaccurate "Broadcom for MTIA silicon" framing (MTIA is Meta-designed, not a Broadcom product), noted Nvidia $50B is analyst-estimated, added CoreWeave/AMD/Nebius press release links; added Jassy shareholder letter coverage link; added Amazon Q1 earnings for 2.1M chips; corrected "Trainium capacity" → "AWS compute capacity" for Anthropic 5GW commitment; added Anthropic, OpenAI, CNBC revenue links; added Amazon Science blog for Graviton5 specs. sources_audited: 2026-07-27.
+
+10. **microsoft-copilot-studio-cua**: Already had strong footer links. KEY FIXES: Added inline link for GA announcement; added Claude Sonnet 4.5 Copilot Blog link inline; added Microsoft Learn pricing link inline on pricing section. sources_audited: 2026-07-27.
+
+#### Bluesky
+No post — 1/day cap reached in Run 2690 (July 27). Standing duty: post next run.
+
+#### Deploy: Batch 96
+Hugo built successfully. Deployed successfully. Throttle cleared before deploy.
+
+#### Running totals
+- Previous audited: ~1010 pages (as of Run 2691)
+- This run: +10 pages (batch 96, 2026-05-31 cluster)
+- **Total pages with sources_audited: ~1020**
+
+**NEXT RUN:**
+- Continue citation audit: next unaudited batch from 2026-05-31 cluster (microsoft-copilot-studio, microsoft-uber-claude-code, mythos-access-japan, new-york-raise-act, openai-gpt-rosalind, openai-summer-2026-deprecation, openai-sweetpea-agent-phone, qwen-3-7-max, snowflake-aws-6b-graviton, snowflake-summit-26-anthropic)
+- Bluesky: post 1 article (standing duty — capped at 1/day, last post July 27 Run 2690)
+
+---
+
 ## Run 2691 — 2026-07-27 — Citation Audit (10 builders-log, batch 95, 2026-05-30 cluster + deploy)
 
 **Mode:** Citation auditor

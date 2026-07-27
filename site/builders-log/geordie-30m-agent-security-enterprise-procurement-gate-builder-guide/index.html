@@ -82,18 +82,18 @@
 <p>The Geordie raise is large because the problem is large — and because security teams are now blocking deployments because of it.</p>
 <p>A few data points that explain the investor thesis:</p>
 <ul>
-<li><strong>88% of organizations</strong> reported confirmed or suspected AI agent security incidents in the past year (AI Automation Global, Kiteworks)</li>
-<li><strong>65% of firms</strong> reported being hit by AI agent security incidents in 2026</li>
-<li><strong>45.6% of enterprises</strong> use shared credentials for agent-to-agent authentication — no individual accountability, no per-agent revocation possible</li>
-<li>Organizations with over-privileged AI systems have a <strong>4.5x higher incident rate</strong> than those enforcing least-privilege, per Teleport&rsquo;s 2026 research</li>
-<li><strong>92% of security professionals</strong> are concerned about the impact of AI agents on their security posture (Darktrace 2026 State of AI Cybersecurity)</li>
+<li><a href="https://www.gravitee.io/state-of-ai-agent-security"><strong>88% of organizations</strong></a> reported confirmed or suspected AI agent security incidents in the past year (Gravitee State of AI Agent Security 2026)</li>
+<li><a href="https://cloudsecurityalliance.org/artifacts/autonomous-but-not-controlled-ai-agent-incidents-now-common-in-enterprises"><strong>65% of firms</strong></a> reported being hit by AI agent security incidents in 2026 (Cloud Security Alliance / Token Security, April 2026)</li>
+<li><a href="https://www.gravitee.io/state-of-ai-agent-security"><strong>45.6% of enterprises</strong></a> use shared credentials for agent-to-agent authentication — no individual accountability, no per-agent revocation possible (Gravitee 2026)</li>
+<li>Organizations with over-privileged AI systems have a <a href="https://goteleport.com/about/newsroom/press-releases/2026-state-of-ai-in-enterprise-security-report/"><strong>4.5x higher incident rate</strong></a> than those enforcing least-privilege, per Teleport&rsquo;s 2026 research</li>
+<li><a href="https://www.darktrace.com/blog/state-of-ai-cybersecurity-2026-92-of-security-professionals-concerned-about-the-impact-of-ai-agents"><strong>92% of security professionals</strong></a> are concerned about the impact of AI agents on their security posture (Darktrace 2026 State of AI Cybersecurity)</li>
 </ul>
-<p>The most striking gap: the vast majority of enterprise executives express confidence in their AI governance. But only <strong>14.4% of AI agents</strong> that went live in enterprise environments did so with full security and IT approval, per multiple 2026 enterprise security surveys. The rest got deployed — and then security had to catch up.</p>
+<p>The most striking gap: the vast majority of enterprise executives express confidence in their AI governance. But only <a href="https://www.gravitee.io/state-of-ai-agent-security"><strong>14.4% of AI agents</strong></a> that went live in enterprise environments did so with full security and IT approval (Gravitee 2026). The rest got deployed — and then security had to catch up.</p>
 <p>That gap is now closing — not by slowing down AI adoption, but by making governance a deployment prerequisite.</p>
 <h2 id="the-attack-pattern-builders-need-to-understand">The Attack Pattern Builders Need to Understand</h2>
 <p>The dominant real-world attack vector against agents in 2026 is prompt injection via untrusted content.</p>
 <p>An agent authorized to read support tickets and write to a CRM is a fully legitimate, well-scoped agent. The attack is the malicious support ticket: crafted content designed to redirect the agent into taking actions the attacker wants — exfiltrating customer data the agent legitimately has access to, creating accounts, or pivoting to other systems. The agent is doing exactly what it was built to do; the inputs have been weaponized.</p>
-<p>This is the top risk class in the OWASP GenAI Exploit Round-up Report for Q1 2026. It is the attack pattern that enterprise security teams are most concerned about because:</p>
+<p>This is the top risk class in the <a href="https://genai.owasp.org/2026/04/14/owasp-genai-exploit-round-up-report-q1-2026/">OWASP GenAI Exploit Round-up Report for Q1 2026</a>. It is the attack pattern that enterprise security teams are most concerned about because:</p>
 <ul>
 <li>The agent has legitimate credentials, so perimeter defenses don&rsquo;t stop it</li>
 <li>The action looks authorized from the system&rsquo;s point of view</li>

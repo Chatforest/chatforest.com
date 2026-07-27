@@ -5,6 +5,7 @@ description: "Dell reported $16.1B in AI server revenue in a single quarter — 
 content_type: "Builder's Log"
 categories: ["AI Infrastructure", "Enterprise AI", "Hardware"]
 tags: ["dell", "ai-servers", "infrastructure", "hardware", "gpu", "memory", "hbm", "neocloud", "enterprise", "cost-model", "supply-chain"]
+sources_audited: 2026-07-27
 ---
 
 Dell Technologies [reported Q1 FY27 earnings](https://www.dell.com/en-us/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2026~05~dell-technologies-delivers-first-quarter-fiscal-2027-financial-results.htm) on May 28, 2026. The headline number — **$16.1 billion in AI-Optimized Server revenue in a single quarter, up 757% year over year** — generated a [32% single-day stock jump](https://www.cnbc.com/2026/05/29/dell-stock-earnings-ai-servers.html), Dell's best day in its public company history.
@@ -37,7 +38,7 @@ Dell raised FY27 full-year revenue guidance to $167 billion at the midpoint — 
 
 In Dell's earnings call, management named the primary supply bottleneck explicitly: **memory** — not GPUs, not networking, not chassis.
 
-Specifically: HBM (High Bandwidth Memory) for AI GPUs and server DRAM for the broader system. HBM from all three major suppliers (Samsung, SK Hynix, Micron) is sold out through 2026. Micron publicly confirmed its HBM capacity is contracted through the calendar year. The $15 billion Samsung and SK Hynix invested as strategic partners in Anthropic's Series H is partly explained by this: they're buying themselves into the center of the AI value chain.
+Specifically: HBM (High Bandwidth Memory) for AI GPUs and server DRAM for the broader system. [Micron's CEO confirmed on the Q1 FY2026 earnings call](https://www.fool.com/earnings/call-transcripts/2025/12/17/micron-mu-q1-2026-earnings-call-transcript/) that its HBM capacity is fully contracted through the calendar year — "sold out in terms of volume." Industry analysts have reported similar supply constraints at Samsung and SK Hynix.
 
 **What this means for builders:**
 

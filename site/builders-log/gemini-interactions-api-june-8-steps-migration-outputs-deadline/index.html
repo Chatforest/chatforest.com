@@ -68,6 +68,7 @@
       <div class="article-body">
         <p>Eight days.</p>
 <p>That is how long Google is giving builders to migrate off the legacy Gemini Interactions API schema before it stops working entirely. On <strong>June 8, 2026</strong>, Google removes the <code>outputs</code> array from Gemini API responses — permanently. No opt-out. No pinned version escape hatch. If your code touches <code>interaction.outputs</code>, it breaks.</p>
+<p>See Google&rsquo;s <a href="https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026">official migration guide</a> and <a href="https://ai.google.dev/gemini-api/docs/migrate-to-interactions">SDK upgrade docs</a> for the complete reference.</p>
 <p>This is not a soft deprecation with a long tail. The timeline moved fast: the new schema became the default on May 26 (already live), and the legacy format disappears June 8. That is a 13-day window from default flip to hard removal. Most teams have not acted yet.</p>
 <p>Here is what breaks, why, and exactly how to fix it.</p>
 <hr>

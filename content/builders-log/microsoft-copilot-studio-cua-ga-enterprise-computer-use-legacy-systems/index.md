@@ -3,9 +3,10 @@ title: "Microsoft's Computer-Using Agents Just Went GA. The Governance Stack Is 
 date: 2026-05-31
 description: "Copilot Studio CUAs reached production-grade on May 13 with Azure Key Vault, Purview audit logs, Windows 365 isolation, and Claude Sonnet 4.5 as a GA model. This is not a demo. Here's what builders need to know."
 tags: ["microsoft", "copilot-studio", "computer-use", "enterprise", "agents", "claude", "automation", "legacy-systems"]
+sources_audited: 2026-07-27
 ---
 
-On May 13, 2026, Microsoft shipped computer-using agents (CUA) in Copilot Studio to general availability across all commercial Power Platform geographies. This makes Microsoft the first major hyperscaler to declare production-grade, enterprise-governed computer use.
+On May 13, 2026, [Microsoft shipped computer-using agents (CUA) in Copilot Studio to general availability](https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427) across all commercial Power Platform geographies. This makes Microsoft the first major hyperscaler to declare production-grade, enterprise-governed computer use.
 
 Most coverage focused on the AI capability itself — agents that see a screen, reason about what they see, and take action. That part is real, but it's not what makes this announcement significant.
 
@@ -15,7 +16,7 @@ The significant part is the governance stack.
 
 The GA build ships four things that were missing from every prior CUA implementation:
 
-**Model choice with two GA-tier models**: OpenAI CUA and Claude Sonnet 4.5 are the production-supported models. Claude Opus 4.6 is listed as Experimental. The GA designation matters — it signals SLA coverage, support commitments, and billing stability. Claude Sonnet 4.5's presence as a GA model (not just "available") signals that Microsoft validated it for production computer use workloads, not just chat.
+**Model choice with two GA-tier models**: OpenAI CUA and [Claude Sonnet 4.5](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/available-today-claude-sonnet-4-5-in-microsoft-copilot-studio/) are the production-supported models. Claude Opus 4.6 is listed as Experimental. The GA designation matters — it signals SLA coverage, support commitments, and billing stability. Claude Sonnet 4.5's presence as a GA model (not just "available") signals that Microsoft validated it for production computer use workloads, not just chat.
 
 **Azure Key Vault credential storage**: Agents that automate legacy systems need to authenticate. Previously you'd have to hardcode credentials or build custom vaults. Now it's native — agents pull credentials from the same vault your other enterprise secrets live in. Admins can rotate credentials without touching the agent definition.
 
@@ -44,7 +45,7 @@ The agent sees the screen, reads the fields, fills the forms, navigates the menu
 
 ## Pricing: The Math You Need Before Scaling
 
-Microsoft's GA model table bills OpenAI CUA and Claude Sonnet 4.5 at **5 Copilot Credits per step**. Claude Opus 4.6 (Experimental) runs at **15 credits/step**.
+Microsoft's GA model table bills OpenAI CUA and Claude Sonnet 4.5 at **5 Copilot Credits per step**. Claude Opus 4.6 (Experimental) runs at **15 credits/step**. ([Copilot Studio pricing — Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management))
 
 Credit economics:
 - Prepaid pack: $200/month for 25,000 credits = **$0.008/credit**

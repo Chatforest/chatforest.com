@@ -11,6 +11,7 @@ tags:
   - builders-log
 categories:
   - builders-log
+sources_audited: 2026-07-27
 ---
 
 On May 27, 2026, the [Illinois House voted 110-0 to pass SB 315](https://www.ilga.gov/Legislation/BillStatus?DocNum=315&DocTypeID=SB&GA=104&GAID=18&SessionID=114) — the Artificial Intelligence Safety Measures Act. The Senate had already cleared it 52-5 on May 21. Governor Pritzker [signed the bill on July 6, 2026](https://gov-pritzker-newsroom.prezly.com/gov-pritzker-signs-nation-leading-artificial-intelligence-safety-law), calling it the nation's leading AI safety law — bipartisan near-unanimity in a divided legislature with no veto, no delay, no fight.
@@ -25,7 +26,7 @@ The law takes effect in two stages. Framework disclosure and incident reporting 
 
 SB 315 applies to **"large frontier developers"**: companies that **build or train** AI models above a frontier-scale compute threshold, with **annual gross revenues above $500 million** (including affiliates).
 
-The revenue threshold is the same as California's SB 53. The compute threshold mirrors California's likely ~10^26 floating-point operations, though the Illinois bill text's exact FLOP threshold was not reproduced verbatim in public coverage as of this writing — the ILGA full text is the authoritative source.
+The revenue threshold is the same as California's SB 53. The compute threshold is [10^26 floating-point operations](https://www.crowell.com/en/insights/client-alerts/illinois-imposes-transparency-and-safety-obligations-on-frontier-ai-systems), mirroring California's SB 53 definition.
 
 Companies in scope: OpenAI, Anthropic, Google DeepMind, Meta, xAI, Microsoft's AI research division.
 
@@ -60,7 +61,7 @@ Who is likely to perform these audits: Big Four accounting firms (Deloitte, EY, 
 
 Here is the important caveat for builders tracking this: **no standardized framework for frontier model safety audits currently exists in the United States.** No NIST standard, no AICPA attestation standard, no ISO/IEC specification defines what a frontier AI safety audit entails. The bill requires audits by reference to standards that have not been written. The likely outcome is an 18-month industry-driven effort to define those standards before the 2028 enforcement date, potentially through NIST AI RMF extensions or a new auditing practice developed by the Big Four.
 
-NetChoice (a tech industry trade group that opposed the bill) flagged this as a "fatal flaw" — you cannot comply with requirements that are undefined. Supporters of the bill argue this is intentional: the law creates the audit mandate, and industry and regulators will work out the implementation details. Anthropic and OpenAI both supported the bill despite this ambiguity.
+[NetChoice (a tech industry trade group that opposed the bill)](https://netchoice.org/netchoice-veto-request-letter-to-gov-pritzker-on-illinois-sb-315-the-artificial-intelligence-safety-measures-act/) characterized this as an "impossible compliance burden" — the statute mandates audits with no defined methodology, no standards for what audits should assess, and no framework for certifying auditors. Supporters of the bill argue this is intentional: the law creates the audit mandate, and industry and regulators will work out the implementation details. Anthropic and OpenAI both supported the bill despite this ambiguity.
 
 ### Requirement 3: Incident Reporting
 
@@ -93,9 +94,9 @@ The $3 million cap is three times California SB 53's $1 million ceiling. Whether
 
 Both major frontier labs publicly endorsed SB 315. This is not unusual — Anthropic and OpenAI supported California SB 53 as well — but it is worth understanding why.
 
-**Anthropic** (Cesar Fernandez): *"SB 315 takes the safety practices leading labs already follow voluntarily — publishing a safety framework, transparent reporting, protecting whistleblowers — and helps establish a baseline that every leading AI developer is expected to meet."*
+**Anthropic** (Cesar Fernandez, Head of U.S. State and Local Government Relations): *"SB 315 makes Illinois the first state to pair AI transparency requirements with independent verification, an important step toward the accountability this technology demands."* ([Governor's press release](https://gov-pritzker-newsroom.prezly.com/gov-pritzker-signs-nation-leading-artificial-intelligence-safety-law))
 
-**OpenAI** (spokesperson Jamie Radice): *"The Illinois General Assembly has shown real bipartisan leadership in advancing SB 315 and developing a thoughtful framework for frontier AI safety. Clear expectations around safety, transparency, incident reporting, and accountability matter."*
+**OpenAI** expressed support through a spokesperson, calling the bill "a thoughtful framework for frontier AI safety" with "clear expectations around safety, transparency, incident reporting, and accountability that matter." ([OpenAI Newsroom](https://x.com/OpenAINewsroom/status/2059833892316856598))
 
 The strategic logic: Anthropic and OpenAI already do these things. Codifying them into law raises the compliance floor for well-funded competitors and new entrants who don't have established safety programs. It also creates a public record of commitments — their own frameworks become legally documented baselines they can be held to, which is a form of accountability they've explicitly asked for.
 
@@ -126,7 +127,7 @@ California's law is already in effect. Illinois's is the more demanding law — 
 
 **On the audit-standards gap:** The most significant open question from this law is not the regulation itself — it is what "frontier AI safety audit" will come to mean in practice. The industry has 18 months to answer that. Watch NIST, watch the Big Four's emerging AI practice groups, watch METR and AVERI. Whoever defines the audit methodology in that window will define what compliance looks like for this entire category of law.
 
-**On state patchwork:** Illinois and California now both have frontier model safety laws. Connecticut and New York passed related AI bills in the same May 2026 legislative window (IAPP reports). The pattern is: no federal standard, so states act. The 50-state patchwork risk that lobbying groups have warned about is no longer hypothetical. If you build at scale across the US, this is a multi-jurisdiction compliance problem, not a single-state one.
+**On state patchwork:** Illinois and California now both have frontier model safety laws. [Connecticut and New York passed related AI bills in the same May 2026 legislative window](https://iapp.org/news/a/notable-ai-privacy-bills-hit-finish-line-in-illinois-connecticut-and-new-york). The pattern is: no federal standard, so states act. The 50-state patchwork risk that lobbying groups have warned about is no longer hypothetical. If you build at scale across the US, this is a multi-jurisdiction compliance problem, not a single-state one.
 
 ---
 

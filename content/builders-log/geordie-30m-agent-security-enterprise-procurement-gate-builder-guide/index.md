@@ -4,6 +4,7 @@ date: 2026-05-31
 description: "A $30M raise, 1,300% ARR growth, and RSAC's top award: Geordie AI's funding round is a clear signal that enterprise security teams are now the gatekeepers blocking agentic deployments. Here's what builders need to know."
 slug: geordie-30m-agent-security-enterprise-procurement-gate-builder-guide
 tags: ["security", "enterprise", "agents", "governance", "agentic-infrastructure"]
+sources_audited: 2026-07-27
 ---
 
 On May 28, [an AI security startup called Geordie raised $30 million](https://fortune.com/2026/05/28/geordie-security-governance-ai-agents/) in a Series A led by [Balderton Capital](https://www.balderton.com/news/geordie-raises-30m-to-help-enterprises-securely-adopt-agentic-ai-at-scale/). The round values the company at approximately $180 million — reportedly the largest Series A for a European cybersecurity startup. ARR grew 1,300% in the first five months of 2026. And the company won [RSAC's Innovation Sandbox](https://www.geordie.ai/resources/geordie-ai-raises-30m-series-a-as-enterprises-race-to-govern-autonomous-ai-agents/), the security industry's most-watched emerging-company prize.
@@ -29,13 +30,13 @@ The Geordie raise is large because the problem is large — and because security
 
 A few data points that explain the investor thesis:
 
-- **88% of organizations** reported confirmed or suspected AI agent security incidents in the past year (AI Automation Global, Kiteworks)
-- **65% of firms** reported being hit by AI agent security incidents in 2026
-- **45.6% of enterprises** use shared credentials for agent-to-agent authentication — no individual accountability, no per-agent revocation possible
-- Organizations with over-privileged AI systems have a **4.5x higher incident rate** than those enforcing least-privilege, per Teleport's 2026 research
-- **92% of security professionals** are concerned about the impact of AI agents on their security posture (Darktrace 2026 State of AI Cybersecurity)
+- [**88% of organizations**](https://www.gravitee.io/state-of-ai-agent-security) reported confirmed or suspected AI agent security incidents in the past year (Gravitee State of AI Agent Security 2026)
+- [**65% of firms**](https://cloudsecurityalliance.org/artifacts/autonomous-but-not-controlled-ai-agent-incidents-now-common-in-enterprises) reported being hit by AI agent security incidents in 2026 (Cloud Security Alliance / Token Security, April 2026)
+- [**45.6% of enterprises**](https://www.gravitee.io/state-of-ai-agent-security) use shared credentials for agent-to-agent authentication — no individual accountability, no per-agent revocation possible (Gravitee 2026)
+- Organizations with over-privileged AI systems have a [**4.5x higher incident rate**](https://goteleport.com/about/newsroom/press-releases/2026-state-of-ai-in-enterprise-security-report/) than those enforcing least-privilege, per Teleport's 2026 research
+- [**92% of security professionals**](https://www.darktrace.com/blog/state-of-ai-cybersecurity-2026-92-of-security-professionals-concerned-about-the-impact-of-ai-agents) are concerned about the impact of AI agents on their security posture (Darktrace 2026 State of AI Cybersecurity)
 
-The most striking gap: the vast majority of enterprise executives express confidence in their AI governance. But only **14.4% of AI agents** that went live in enterprise environments did so with full security and IT approval, per multiple 2026 enterprise security surveys. The rest got deployed — and then security had to catch up.
+The most striking gap: the vast majority of enterprise executives express confidence in their AI governance. But only [**14.4% of AI agents**](https://www.gravitee.io/state-of-ai-agent-security) that went live in enterprise environments did so with full security and IT approval (Gravitee 2026). The rest got deployed — and then security had to catch up.
 
 That gap is now closing — not by slowing down AI adoption, but by making governance a deployment prerequisite.
 
@@ -45,7 +46,7 @@ The dominant real-world attack vector against agents in 2026 is prompt injection
 
 An agent authorized to read support tickets and write to a CRM is a fully legitimate, well-scoped agent. The attack is the malicious support ticket: crafted content designed to redirect the agent into taking actions the attacker wants — exfiltrating customer data the agent legitimately has access to, creating accounts, or pivoting to other systems. The agent is doing exactly what it was built to do; the inputs have been weaponized.
 
-This is the top risk class in the OWASP GenAI Exploit Round-up Report for Q1 2026. It is the attack pattern that enterprise security teams are most concerned about because:
+This is the top risk class in the [OWASP GenAI Exploit Round-up Report for Q1 2026](https://genai.owasp.org/2026/04/14/owasp-genai-exploit-round-up-report-q1-2026/). It is the attack pattern that enterprise security teams are most concerned about because:
 
 - The agent has legitimate credentials, so perimeter defenses don't stop it
 - The action looks authorized from the system's point of view

@@ -11,7 +11,7 @@ This article is not about whether humanoid robots are cool. It is about what cro
 
 ## What Actually Happened
 
-The 200-hour run grew from a challenge. In early May, automation veteran Dr. Scott Walter issued an 8-hour endurance challenge to humanoid robotics companies. Figure accepted it on May 13 and did not stop at 8 hours. By May 14, they had passed 24 hours. By May 26, they were at 200.
+The 200-hour run grew from a challenge. In early May, [automation industry veteran Scott Walter publicly challenged humanoid robotics companies](https://www.humanoidsdaily.com/news/we-ll-do-it-live-brett-adcock-promises-livestream-after-endurance-challenge-from-scott-walter) to demonstrate an 8-hour autonomous shift with no human intervention. Figure accepted it on May 13 and did not stop at 8 hours. By May 14, they had passed 24 hours. By May 26, they were at 200.
 
 The hardware: Figure 03, which launched in October 2025. Thirty-five degrees of freedom, five-fingered hands with 16 DOF each, embedded tactile sensors in the fingertips and palm cameras. Not a controlled lab setup — a warehouse conveyor belt, barcoded packages, variable sizes and weights.
 
@@ -25,13 +25,13 @@ The net result: 200 hours of operation treated as a single uninterrupted run. Th
 
 The 200-hour run does not make sense without understanding Helix-02, announced in January 2026. Most AI control systems for robots are brittle because they compose separate subsystems — a perception model, a planning model, a motion controller — each trained independently and each capable of producing outputs that break the next layer.
 
-Helix-02 replaces that with a three-layer system:
+[Helix-02](https://www.figure.ai/news/helix-02) replaces that with a three-layer system:
 
 **System 2 (slow)**: Reasons about goals. Interprets scenes, understands language instructions, sequences behaviors. This is where "sort this package to zone B" becomes a plan.
 
 **System 1 (fast)**: Translates perception into full-body joint targets at 200 Hz. What the hand does, what the shoulder counterbalances, how the legs shift weight — continuous, reactive, at 200 times per second.
 
-**System 0 (reflexive)**: The layer Figure added in Helix-02. A learned whole-body controller trained on more than 1,000 hours of human motion data, replacing over 109,000 lines of hand-engineered C++ code. This layer maintains stable, human-like motion as background — the thing that keeps a human upright even when thinking about something else. Robotics engineers had been hand-writing this for years. Helix-02 learned it.
+**System 0 (reflexive)**: The layer Figure added in Helix-02. A learned whole-body controller [trained on over 1,000 hours of human motion data, replacing 109,504 lines of hand-engineered C++ code](https://www.figure.ai/news/helix-02). This layer maintains stable, human-like motion as background — the thing that keeps a human upright even when thinking about something else. Robotics engineers had been hand-writing this for years. Helix-02 learned it.
 
 The three-layer architecture is why the robot can select grip strategy in real time (System 1), execute a plan about where to route packages (System 2), and maintain balance on an uneven floor while doing both (System 0) — without these three processes fighting each other or one producing outputs that crash the others.
 
@@ -41,9 +41,9 @@ This architecture is borrowed thinking. The System 1 / System 2 framing comes fr
 
 The 200-hour run is not operating in isolation. Figure has also been publishing production deployment and manufacturing numbers.
 
-Their BotQ manufacturing facility went from one robot per day to one robot per hour — a 24-fold increase in output, achieved in under four months. Monthly unit volumes roughly doubled from February to March to April 2026: approximately 60 units in February, 120 in March, 240 in April.
+[Their BotQ manufacturing facility went from one robot per day to one robot per hour](https://www.figure.ai/news/ramping-figure-03-production) — a 24-fold increase in output, achieved in under four months, with over 350 units delivered by late April 2026.
 
-Figure 03 is in commercial deployment at BMW's Spartanburg plant in South Carolina, with phased expansion contracted through 2026 and 2027. BMW's German facilities — Munich, Regensburg, Leipzig — are under separate pilot agreements.
+[Figure 03 is in commercial deployment at BMW's Spartanburg plant in South Carolina](https://www.bmwblog.com/2026/06/26/bmw-figure-03-humanoid-robot-spartanburg-plant/), performing logistics sequencing tasks — following a successful 10-month pilot with Figure 02.
 
 These numbers collectively mean: Figure is past the point of building robots one at a time for demos. They are manufacturing a product at scale, deploying it at an automotive customer, and demonstrating operational reliability numbers to justify further contracts.
 

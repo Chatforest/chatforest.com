@@ -4,6 +4,7 @@ date: 2026-05-31
 description: "Google's Gemini Spark launched May 29 for US Google AI Ultra subscribers — a 24/7 personal AI agent powered by Gemini 3.5 and Antigravity 2.0. Only three third-party tools are connected at launch. Over 30 more arrive via MCP this summer. There is no public submission process yet. Here is what builders need to know and do right now."
 tags: ["google", "gemini", "mcp", "agents", "antigravity", "builder-guide", "google-io-2026", "integrations"]
 draft: false
+sources_audited: 2026-07-27
 ---
 
 On May 29, 2026, [Google made Gemini Spark available](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/) to US Google AI Ultra subscribers. At launch, [three third-party tools are connected](https://techcrunch.com/2026/05/19/google-introduces-gemini-spark-a-24-7-agentic-assistant-with-gmail-integration/) to it: Canva, OpenTable, and Instacart. Google says over 30 more are coming this summer via the Model Context Protocol. There is no public form to submit your product for inclusion.
