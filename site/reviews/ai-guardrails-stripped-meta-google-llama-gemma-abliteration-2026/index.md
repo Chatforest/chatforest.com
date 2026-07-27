@@ -28,7 +28,7 @@ Two tools have made abliteration accessible to the general public:
 
 **[Heretic](https://github.com/p-e-w/heretic)** — a GitHub-hosted tool that automates the abliteration process. Since its release in late 2025, Heretic has been used to create more than 3,500 "decensored" model variants, which have been downloaded 13 million times from Hugging Face.
 
-**OBLITERATUS** — released March 4, 2026 by a developer known as "Pliny the Liberator." The open-source toolkit supports 116 different models and runs on consumer hardware via a user-friendly Hugging Face Spaces interface.
+**[OBLITERATUS](https://github.com/elder-plinius/OBLITERATUS)** — released March 4, 2026 by a developer known as "Pliny the Liberator." The open-source toolkit [supports 116 different models](https://huggingface.co/spaces/pliny-the-prompter/obliteratus) and runs on consumer hardware via a user-friendly Hugging Face Spaces interface.
 
 These tools are not hidden on dark web forums. They are on mainstream AI development platforms, operating under the same terms as other research code.
 
@@ -52,7 +52,7 @@ Open-weight models are different. Once weights are released, the developer no lo
 
 This creates a genuine dilemma for the open-source AI movement, which has argued — correctly — that open weights democratize access, enable independent research, reduce dependence on a handful of powerful companies, and allow users to run models locally without sending their data to a third party. Those arguments remain valid.
 
-But open weights also democratize the ability to remove safety mechanisms. Kawin Ethayarajh, an assistant professor of applied AI at the University of Chicago's Booth School of Business, put it plainly: stripping guardrails is now "much easier for the average person."
+But open weights also democratize the ability to remove safety mechanisms. [Kawin Ethayarajh](https://kawine.github.io/), an assistant professor of applied AI at the University of Chicago's Booth School of Business, put it plainly: stripping guardrails is now "much easier for the average person."
 
 ---
 

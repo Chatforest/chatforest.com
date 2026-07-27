@@ -5,6 +5,7 @@ description: "Amazon Q Developer new signups are blocked as of May 15. Opus 4.6 
 content_type: "Builder's Log"
 categories: ["Developer Tools", "AI Infrastructure", "Amazon AWS"]
 tags: ["amazon", "kiro", "amazon-q", "aws", "agentic-coding", "migration", "claude", "developer-tools", "enterprise-ai"]
+sources_audited: 2026-07-29
 ---
 
 Amazon Q Developer is being retired. If you're still using it, the timeline has started whether or not you've begun planning a migration.
@@ -49,7 +50,7 @@ Key architectural differences from Q Developer:
 - **Hooks**: Automated operations that trigger on file saves, test runs, or deployment events.
 - **Full AWS context**: As of May 2026, Kiro supports the AWS MCP Server (GA), giving the agent real-time access to your AWS environment with IAM-scoped permissions.
 
-Pricing: Kiro Free includes 50 agent interactions per month. Kiro Pro is $19/month.
+Pricing: [Kiro Free includes 50 agent interactions per month. Kiro Pro is $19/month.](https://kiro.dev)
 
 ---
 

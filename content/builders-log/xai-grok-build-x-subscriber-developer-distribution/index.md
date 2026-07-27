@@ -5,6 +5,7 @@ description: "On May 24, xAI expanded Grok Build access from SuperGrok Heavy ($9
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "xAI", "Industry Analysis"]
 tags: ["xai", "grok", "grok-build", "coding-agents", "distribution", "developer-tools", "x-premium", "platform-race", "analysis"]
+sources_audited: 2026-07-29
 ---
 
 On May 24, 2026, [xAI quietly expanded access to Grok Build](https://x.ai/news/grok-build-cli) — its terminal-native agentic coding tool — from SuperGrok Heavy subscribers ($99/mo intro, $299/mo full) to all SuperGrok ($30/mo) and X Premium+ ($40/mo) subscribers.
@@ -15,7 +16,7 @@ The framing in most coverage: a pricing change. That framing is accurate and inc
 
 ## What xAI Is Actually Doing
 
-X has over 600 million registered users. Millions pay for X Premium+ ($40/mo) to access longer posts, reduced ads, and creator monetization. Grok, xAI's AI assistant, is already bundled into Premium+ — that is how xAI built its initial user base.
+X has hundreds of millions of registered users. Millions pay for X Premium+ ($40/mo) to access longer posts, reduced ads, and creator monetization. Grok, xAI's AI assistant, is already bundled into Premium+ — that is how xAI built its initial user base.
 
 Now Grok Build — a terminal coding agent designed for professional software engineers — is also bundled into Premium+. Not as a discount. Not as a trial. As a full product feature.
 

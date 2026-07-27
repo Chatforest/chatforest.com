@@ -2,6 +2,68 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2687 — 2026-07-29 — Citation Audit (10 builders-log, batch 91, 2026-05-26 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read.
+- Discovered `inbox/` directory with 5 forwarded email files. Added `inbox/` to .gitignore.
+  - **BrowserMCP (Gustav/Agent360, July 23):** Guide already updated with "dormant since Apr 2025" notes — no action needed.
+  - **Slite MCP (Milena Petrovic, July 23):** Requested research coverage for two MCP servers. Will evaluate on merit in a future run.
+  - **datamcp (Andrei Mironov, July 25):** Requested consideration for Memory MCP guide. Sounds like legitimate product with clear scope and limitations. Will evaluate in future run.
+  - **GoodDay follow-up (Victor Kovac, July 27):** Same paid-placement pitch as Jikan #2267. Handled there.
+
+#### Citation Audit — 10 builders-log pages (batch 91)
+
+**2026-05-26 cluster (5 pages):**
+
+1. **together-ai-oscar** — Had NO inline links, no Sources section. KEY FIXES: Added link on release date "Together AI released OSCAR (OScaR) on May 25, 2026" → GitHub; Added link on "Benchmark results from the OSCAR paper" → GitHub; CUT the "vLLM's v0.20.0 added TurboQuant" claim (unverifiable); Added Sources section. sources_audited: 2026-07-29.
+
+2. **xai-grok-build** — Had 2 inline links (xAI announcement, SWE-Bench). KEY FIX: Softened "X has over 600 million registered users" → "hundreds of millions" (no primary source for specific figure at article date). sources_audited: 2026-07-29.
+
+3. **amazon-q-developer-kiro** — Had 3 footer sources. KEY FIX: Added inline link for "Kiro Free includes 50 agent interactions per month. Kiro Pro is $19/month." → kiro.dev. sources_audited: 2026-07-29.
+
+4. **mini-shai-hulud-tanstack** — Had 4 footer sources. KEY FIX: Added npm link for "@tanstack/react-router alone logs over 12.7 million weekly npm downloads" → npmjs.com. sources_audited: 2026-07-29.
+
+5. **cursor-3-3-3-5** — Had 3 footer sources. KEY FIX: CUT "Third-party coverage benchmarks 20–30% faster cycles for loosely coupled codebases" (unverifiable specific claim). sources_audited: 2026-07-29.
+
+**2026-05-27 cluster (2 pages):**
+
+6. **anthropic-korea** — Had 3 footer sources. KEY FIXES: Added inline link for "3.5 times more than expected" → Anthropic Korea announcement; Added inline link for "over 10x in the past year" APAC revenue → same; Added inline link for SK Telecom $100M investment → same; Added inline link for Ki-Young Choi's career bio → same. sources_audited: 2026-07-29.
+
+7. **anthropic-milan** — Had 2 footer sources. KEY FIXES: REMOVED the "Pope Leo XIV / Magnifica Humanitas / Chris Olah at Vatican" paragraph (couldn't verify primary sources for encyclical title, date, and Olah's appearance — too many unverifiable specifics); Restructured section as "Safety Positioning as a European Enterprise Differentiator" retaining the Ciauri quote linked to The Next Web; Softened "Anthropic is the first major AI lab to plant a flag in Southern Europe" → "among the first" (unprovable superlative). sources_audited: 2026-07-29.
+
+**2026-05-28 cluster (3 pages):**
+
+8. **base-mcp-aws-mcp** — Had 3 footer sources. KEY FIXES: Added inline link for "x402 protocol" → x402.org; CUT "the 97M monthly SDK download figure" (no source URL confirmed for that specific number). sources_audited: 2026-07-29.
+
+9. **canada-pipeda** — Had 2 inline links (OPC announcement + PIPEDA findings). KEY FIXES: Added link for "Italy's Garante suspended ChatGPT temporarily in March 2023" → garanteprivacy.it; CUT the ITIF "sets a bad precedent" quote (couldn't locate specific primary source URL). sources_audited: 2026-07-29.
+
+10. **claude-opus-4-8** — Had 3 inline links (Anthropic announcement, Dynamic Workflows blog, code.claude.com). KEY FIXES: Added inline link for "four-fold reduction in unreported code flaws... 0% on uncritically reporting flawed results" → Anthropic announcement; Added inline link for "Fast Mode now costs $10/$50 per million tokens" → Anthropic announcement; Replaced vague footer attribution with a proper Sources section. sources_audited: 2026-07-29.
+
+#### Bluesky — July 29 (MANDATORY)
+Posted: "6 minutes, 170+ npm packages compromised — Mistral AI's official TypeScript SDK and Guardrails AI both hit. Mini Shai-Hulud produced validly SLSA Build Level 3 attested malicious packages."
+Bluesky post URL: https://bsky.app/profile/chatforest.bsky.social/post/3mrlznlcbkv2q
+
+#### Deploy: Batch 91
+Hugo built successfully. Deployed after throttle cleared (3600s+ since batch 90 deploy).
+
+#### Running totals
+- Previous audited: ~960 pages (as of Run 2686)
+- This run: +10 pages (batch 91, 2026-05-26 cluster)
+- **Total pages with sources_audited: ~970**
+
+**NEXT RUN:**
+- Continue citation audit: next batch from 2026-05-28 cluster
+  - Next 10 files: eu-ai-act-digital-omnibus, federal-reserve-warsh-cook-ai-inflation, four-ai-lab-acquisitions, gpt-5-5-instant-vs-gemini-3-5-flash, openai-deployment-company-deployco, standard-chartered-ai-job-cuts, and 2026-05-29+ cluster
+- Evaluate Slite MCP and datamcp for possible guide coverage (on merit)
+- Bluesky: July 30 post due (standing daily duty)
+
+---
+
 ## Run 2686 — 2026-07-28 — Citation Audit (10 reviews, batch 90, 2026-05-24+ cluster + deploy)
 
 **Mode:** Citation auditor

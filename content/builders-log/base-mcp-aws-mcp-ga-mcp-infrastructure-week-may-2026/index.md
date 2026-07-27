@@ -3,6 +3,7 @@ title: "MCP Goes Infrastructure: Base Brings Agents Onchain, AWS Opens the Full 
 date: 2026-05-28
 description: "Two launches last week redefined what MCP is for. Base MCP lets any Claude or ChatGPT session execute DeFi transactions via a non-custodial smart wallet. AWS MCP Server hit GA with 15,000+ API operations and full IAM governance. Here's what builders can do with both."
 tags: ["mcp", "coinbase", "aws", "defi", "web3", "infrastructure", "ai-agents", "blockchain", "cloud"]
+sources_audited: 2026-07-29
 ---
 
 ## The Week MCP Stopped Being a Dev Tool
@@ -53,7 +54,7 @@ The AI cannot execute anything autonomously. Every transaction requires human re
 
 The micropayments capability is the most underreported detail in the launch coverage.
 
-Base MCP implements the x402 protocol, a payment standard co-developed by Coinbase and Cloudflare that enables HTTP-native payments using USDC on Base. The core idea: an AI agent making an HTTP request can include payment automatically as part of the request, without separate payment flows or human approval for each small transaction.
+Base MCP implements the [x402 protocol](https://www.x402.org/), a payment standard co-developed by Coinbase and Cloudflare that enables HTTP-native payments using USDC on Base. The core idea: an AI agent making an HTTP request can include payment automatically as part of the request, without separate payment flows or human approval for each small transaction.
 
 In practice, this means:
 
@@ -101,7 +102,7 @@ For teams building AI-driven infrastructure automation — and especially for an
 ## Five Builder Implications
 
 **1. MCP is becoming the default integration layer for non-LLM systems.**
-Both Base and AWS are large, complex platforms with established API surfaces. Both chose MCP over a proprietary agent SDK. This is further evidence — alongside Google's MCP support and the Atlassian Teamwork Graph integration — that the 97M monthly SDK download figure is driving adoption outside the pure AI-tools space. If you're building agent integrations, MCP compatibility is becoming table stakes.
+Both Base and AWS are large, complex platforms with established API surfaces. Both chose MCP over a proprietary agent SDK. This is further evidence — alongside Google's MCP support and the Atlassian Teamwork Graph integration — that MCP adoption is expanding well outside the pure AI-tools space. If you're building agent integrations, MCP compatibility is becoming table stakes.
 
 **2. The non-custodial agent wallet pattern is the one to study.**
 Base MCP's security model — AI constructs intent, human reviews and signs — is the right architecture for AI-initiated financial actions during the current regulatory moment. Fully autonomous agent transactions face unresolved legal and custodial questions in most jurisdictions. The "pending request + human sign-off" pattern lets you ship now without betting on regulatory outcomes.

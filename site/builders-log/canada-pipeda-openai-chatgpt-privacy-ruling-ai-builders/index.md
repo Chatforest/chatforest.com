@@ -100,7 +100,7 @@ Canadian privacy law gives individuals the right to access, correct, and delete 
 
 The Canada ruling is not the first finding that ChatGPT-era AI training violated privacy law, but it is the most comprehensive investigation by a federal privacy authority in a major Western democracy to have been fully completed and published.
 
-Italy's Garante suspended ChatGPT temporarily in March 2023 before reinstating it with conditions. Several EU data protection authorities launched investigations under GDPR. The UK ICO published guidance but no binding findings.
+[Italy's Garante suspended ChatGPT temporarily in March 2023](https://www.garanteprivacy.it/) before reinstating it with conditions. Several EU data protection authorities launched investigations under GDPR. The UK ICO published guidance but no binding findings.
 
 Canada's investigation is significant because it is:
 
@@ -108,8 +108,6 @@ Canada's investigation is significant because it is:
 - **Multi-jurisdictional**: Four regulators jointly coordinated
 - **Specific**: Six named violations with accompanying reasoning
 - **Precedential**: The "novelty defeats implied consent" reasoning will be cited in other jurisdictions
-
-The ITIF (Information Technology and Innovation Foundation), a US policy organization, argued that Canada's ruling "sets a bad precedent" by making AI training on publicly available data legally risky. That critique is correct as a description: the ruling does make that type of training legally riskier in Canada. Whether it is good or bad policy is a separate question.
 
 ---
 

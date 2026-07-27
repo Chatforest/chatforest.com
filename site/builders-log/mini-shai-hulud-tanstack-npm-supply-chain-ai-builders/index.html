@@ -71,7 +71,7 @@
 <p>If you build AI applications using npm-distributed SDKs, this matters to you directly.</p>
 <hr>
 <h2 id="what-tanstack-has-to-do-with-ai">What TanStack Has to Do With AI</h2>
-<p>TanStack is best known for TanStack Query and TanStack Router — widely used React libraries. <code>@tanstack/react-router</code> alone logs over 12.7 million weekly npm downloads. But TanStack&rsquo;s relevance to AI builders isn&rsquo;t the libraries themselves.</p>
+<p>TanStack is best known for TanStack Query and TanStack Router — widely used React libraries. <a href="https://www.npmjs.com/package/@tanstack/react-router"><code>@tanstack/react-router</code> alone logs over 12.7 million weekly npm downloads</a>. But TanStack&rsquo;s relevance to AI builders isn&rsquo;t the libraries themselves.</p>
 <p>It&rsquo;s that <strong>the same attack vector — the same six-minute window — spread from TanStack to packages that sit directly in AI pipelines.</strong></p>
 <p><code>@mistralai/mistralai</code> is the official TypeScript client for the Mistral AI platform. Guardrails AI is used to validate and constrain LLM outputs in production. Both were hit. If you were running <code>npm install</code> between May 11 and the packages being yanked, you potentially got the worm.</p>
 <hr>

@@ -62,7 +62,7 @@ Independent analyses of heavy users on Max 20x found that some developers were e
 
 For comparison: the previous subscription model implicitly subsidized programmatic usage at roughly 15–30x compared to direct API pricing. The new model ends that subsidy for the usage tier above the monthly credit cap.
 
-Stanford Digital Economy Lab research cited in developer analyses notes that re-sent context accounts for roughly 62% of total agent inference bills. Much of what heavy users are paying for is the model re-reading what it already knows — a pattern common in long-horizon agents and automated pipelines.
+[Developer analyses of agentic billing note that re-sent context accounts for roughly 62% of total agent inference bills](https://beam.ai/agentic-insights/anthropics-new-billing-split-reveals-what-ai-agents-actually-cost). Much of what heavy users are paying for is the model re-reading what it already knows — a pattern common in long-horizon agents and automated pipelines.
 
 ---
 

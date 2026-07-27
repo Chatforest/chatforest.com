@@ -48,7 +48,7 @@ That is not normal software growth. That is a hockey stick with the inflection p
 
 The driver: **Claude Code**. Anthropic's coding AI product accounts for [approximately $2.5 billion of annualized revenue](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) and is growing faster than the rest of the portfolio. When an enterprise deploys Claude Code across 10,000 developers, the token volume is enormous and contracts renew automatically. It is a recurring revenue machine running on a usage model that scales with headcount.
 
-OpenAI's trajectory is similar. [The company projects $29B in revenue for 2026](https://www.investing.com/analysis/the-trilliondollar-ipo-test-spacex-and-openai-face-public-markets-200680688) — up from roughly $4B in 2024. Even factoring in its $1.22 loss for every dollar of revenue in Q1 2026, the trajectory implies profitability at scale is achievable by late 2026 or 2027.
+OpenAI's trajectory is similar. [The company projects $29B in revenue for 2026](https://www.investing.com/analysis/the-trilliondollar-ipo-test-spacex-and-openai-face-public-markets-200680688) — up from roughly $4B in 2024. Even factoring in its [$1.22 loss for every dollar of revenue in Q1 2026](https://www.neura.market/news/openai-lost-122-per-dollar-q1-2026), the trajectory implies profitability at scale is achievable by late 2026 or 2027.
 
 At these revenue levels, the math works. Anthropic at $900B and $30B+ ARR implies roughly a 30× forward revenue multiple — high by software-company standards, normal by platform-company standards when the platform is growing monthly.
 
@@ -62,7 +62,7 @@ Amazon's deal with Anthropic — [$5 billion in equity plus up to $20 billion in
 
 [Google's $40 billion investment in Anthropic](https://fortune.com/2026/06/04/amazon-google-billions-anthropic-ipo/) tells a similar story. Google builds TPUs; Anthropic trains on TPUs. The investment aligns Google's chip roadmap with a customer whose compute demand is growing monthly.
 
-[Meta's $115–135 billion AI capex for 2026](https://www.datacenterdynamics.com/en/news/meta-estimates-2026-capex-to-be-between-115-135bn/) is building 5 gigawatts of AI infrastructure capacity. That is roughly equivalent to 20 large-scale data centers. Meta is not a cloud provider selling compute to others — it is building internal infrastructure to train Llama 5 and beyond and to run AI features for 3.5 billion monthly active users.
+[Meta's $115–135 billion AI capex for 2026](https://www.datacenterdynamics.com/en/news/meta-estimates-2026-capex-to-be-between-115-135bn/) is funding massive AI infrastructure construction — including a [planned 5-gigawatt expansion of its Louisiana Hyperion campus](https://www.foxbusiness.com/markets/meta-expands-louisiana-data-center-50b-ai-push-boosting-rural-community). Meta is not a cloud provider selling compute to others — it is building internal infrastructure to train Llama 5 and beyond and to run AI features for 3.5 billion monthly active users.
 
 What all of this means: **the physical layer of AI infrastructure is being built at wartime pace**, financed by a combination of venture capital, corporate balance sheets, and sovereign wealth funds. The bottleneck is no longer funding — it is physical construction, power permitting, and silicon supply.
 
@@ -80,7 +80,7 @@ When Anthropic deploys Claude Sonnet 4.6 at scale, the infrastructure commitment
 
 ### 2. Falling prices per token
 
-Every major AI provider has been cutting token prices as models become more efficient and compute costs drop. Gemini 3.5 Flash launched at $1.50/$9 per million tokens — frontier-level performance at a price that would have been impossible 18 months ago. Claude's Sonnet-tier models have followed a similar trajectory.
+Every major AI provider has been cutting token prices as models become more efficient and compute costs drop. [Gemini 3.5 Flash launched at $1.50/$9 per million tokens](https://codersera.com/blog/gemini-3-5-complete-guide-2026/) — frontier-level performance at a price that would have been impossible 18 months ago. Claude's Sonnet-tier models have followed a similar trajectory.
 
 The pattern: as revenue scales and custom silicon replaces general-purpose GPUs, marginal inference costs fall. Infrastructure commitments lock in supply, removing the cost uncertainty that previously constrained aggressive pricing.
 
@@ -96,7 +96,7 @@ For developers building on top of these models: build for a world where the mode
 
 The funding supercycle has a natural exit: public markets.
 
-**OpenAI** [filed a confidential S-1 with the SEC](https://aitoolbriefing.com/industry/openai-files-s1-ipo-2026/) on May 22, 2026. Goldman Sachs, Morgan Stanley, and JPMorgan are managing the deal. The target debut is September 2026 at a $1 trillion valuation.
+**OpenAI** [filed a confidential S-1 with the SEC](https://aitoolbriefing.com/industry/openai-files-s1-ipo-2026/) on May 22, 2026. [Goldman Sachs, Morgan Stanley, and JPMorgan are managing the deal](https://www.openpr.com/news/4548677/openai-files-a-confidential-1-trillion-ipo-with-goldman-morgan). The target debut is September 2026 at a $1 trillion valuation.
 
 **Anthropic** is [described by investors as likely in its final private round before going public](https://fortune.com/2026/06/04/amazon-google-billions-anthropic-ipo/), with an IPO targeted as early as October 2026. (Note: the round ultimately closed at [$965B as the Series H](https://www.anthropic.com/news/series-h) — higher than the $900B figure reported at time of writing.) At current revenue trajectory ($30B ARR in April, with Q2 projected at $43B+), a public market debut would price Anthropic against pure-play AI peers and growth-stage software multiples.
 

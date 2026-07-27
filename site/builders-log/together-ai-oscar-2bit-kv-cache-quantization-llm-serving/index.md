@@ -3,7 +3,7 @@
 > Together AI released OSCAR — an attention-aware 2-bit KV cache quantization system that delivers 5.3× memory reduction and 4.1× throughput increase with near-baseline accuracy on Llama, Qwen3, and multimodal models. No training required.
 
 
-If you're serving LLMs at scale, KV cache memory is probably your primary GPU constraint. Together AI released OSCAR (OScaR) on May 25, 2026 — an open-source 2-bit KV cache quantization system that cuts KV cache memory by 5.3× and increases throughput by 4.1× compared to BF16 FlashDecoding-v2, with near-baseline accuracy on LongBench-E, OCRBench, and multimodal benchmarks.
+If you're serving LLMs at scale, KV cache memory is probably your primary GPU constraint. Together AI [released OSCAR (OScaR) on May 25, 2026](https://github.com/ZunhaiSu/OScaR-KV-Quant) — an open-source 2-bit KV cache quantization system that cuts KV cache memory by 5.3× and increases throughput by 4.1× compared to BF16 FlashDecoding-v2, with near-baseline accuracy on LongBench-E, OCRBench, and multimodal benchmarks.
 
 No fine-tuning or calibration required.
 
@@ -33,7 +33,7 @@ The result: 2-bit weights with accuracy characteristics closer to 4-bit.
 
 ## The Numbers
 
-**Benchmark results from the OSCAR paper:**
+**[Benchmark results from the OSCAR paper](https://github.com/ZunhaiSu/OScaR-KV-Quant):**
 
 Text-only (LongBench-E):
 - Llama-3.1-8B: 41.75 INT2 vs. 41.70 BF16 baseline (nearly identical)
@@ -78,9 +78,13 @@ It's not yet integrated into vLLM or HuggingFace TGI as a first-party option —
 
 ## Context
 
-The KV cache quantization space has been moving fast in early 2026. vLLM's v0.20.0 added TurboQuant (2-bit KV cache via their own method). OSCAR's key differentiator is the calibration-free approach and the omni-modal support — two things TurboQuant doesn't currently offer.
+The KV cache quantization space has been moving fast in early 2026. OSCAR's key differentiators are the calibration-free approach and the omni-modal support — both unusual in this category.
 
 For production builders making inference stack decisions in Q2-Q3 2026: OSCAR is worth a benchmark on your specific workload. The accuracy numbers are genuinely competitive with INT4, and the throughput gains at 2-bit are hard to ignore if your bottleneck is KV cache memory rather than compute.
+
+---
+
+**Sources:** [OSCAR GitHub repository (ZunhaiSu/OScaR-KV-Quant)](https://github.com/ZunhaiSu/OScaR-KV-Quant) — benchmarks, installation, and architecture details
 
 ---
 

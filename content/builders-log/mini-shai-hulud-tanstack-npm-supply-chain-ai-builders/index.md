@@ -5,6 +5,7 @@ description: "On May 11, the TeamPCP threat group compromised 170+ npm packages 
 content_type: "Builder's Log"
 categories: ["Security", "Developer Tools", "AI Infrastructure"]
 tags: ["security", "npm", "supply-chain", "mistral-ai", "tanstack", "slsa", "github-actions", "ai-builders", "guardrails-ai", "teamPCP"]
+sources_audited: 2026-07-29
 ---
 
 On May 11, 2026, between 19:20 and 19:26 UTC — six minutes — a threat group called TeamPCP published 84 malicious npm artifacts across 42 packages in the `@tanstack` namespace.
@@ -17,7 +18,7 @@ If you build AI applications using npm-distributed SDKs, this matters to you dir
 
 ## What TanStack Has to Do With AI
 
-TanStack is best known for TanStack Query and TanStack Router — widely used React libraries. `@tanstack/react-router` alone logs over 12.7 million weekly npm downloads. But TanStack's relevance to AI builders isn't the libraries themselves.
+TanStack is best known for TanStack Query and TanStack Router — widely used React libraries. [`@tanstack/react-router` alone logs over 12.7 million weekly npm downloads](https://www.npmjs.com/package/@tanstack/react-router). But TanStack's relevance to AI builders isn't the libraries themselves.
 
 It's that **the same attack vector — the same six-minute window — spread from TanStack to packages that sit directly in AI pipelines.**
 

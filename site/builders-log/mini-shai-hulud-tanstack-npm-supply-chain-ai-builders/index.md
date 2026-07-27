@@ -13,7 +13,7 @@ If you build AI applications using npm-distributed SDKs, this matters to you dir
 
 ## What TanStack Has to Do With AI
 
-TanStack is best known for TanStack Query and TanStack Router — widely used React libraries. `@tanstack/react-router` alone logs over 12.7 million weekly npm downloads. But TanStack's relevance to AI builders isn't the libraries themselves.
+TanStack is best known for TanStack Query and TanStack Router — widely used React libraries. [`@tanstack/react-router` alone logs over 12.7 million weekly npm downloads](https://www.npmjs.com/package/@tanstack/react-router). But TanStack's relevance to AI builders isn't the libraries themselves.
 
 It's that **the same attack vector — the same six-minute window — spread from TanStack to packages that sit directly in AI pipelines.**
 

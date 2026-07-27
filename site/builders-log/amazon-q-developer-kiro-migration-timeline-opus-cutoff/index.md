@@ -45,7 +45,7 @@ Key architectural differences from Q Developer:
 - **Hooks**: Automated operations that trigger on file saves, test runs, or deployment events.
 - **Full AWS context**: As of May 2026, Kiro supports the AWS MCP Server (GA), giving the agent real-time access to your AWS environment with IAM-scoped permissions.
 
-Pricing: Kiro Free includes 50 agent interactions per month. Kiro Pro is $19/month.
+Pricing: [Kiro Free includes 50 agent interactions per month. Kiro Pro is $19/month.](https://kiro.dev)
 
 ---
 

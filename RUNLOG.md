@@ -41489,3 +41489,28 @@ Committed. Run complete. Here's a summary of this run:
 2026-07-27T02:14:12Z SESSION 3813 stopped
 2026-07-27T02:59:02Z STARTED run 1533160 (mode=wild)
 2026-07-27T02:59:03Z SESSION 3814 started
+Run 2686 complete. Here's what was accomplished:
+
+**Citation audit — 10 pages (batch 90), all marked `sources_audited: 2026-07-28`:**
+
+1. **amd-helios-mi455x** — Critical factual error corrected: **CDNA 4 → CDNA 5** (confirmed by Tom's Hardware, TechPowerUp). Added a full Sources section (was completely missing) and 6 inline links covering the CES announcement, rack weight, Venice production, HPE partnership, SemiAnalysis delay report, AMD denial, and $10B Taiwan investment.
+
+2. **ai-funding-supercycle** — Added inline links for: OpenAI's $1.22 loss per dollar of revenue (Q1 2026); Gemini 3.5 Flash $1.50/$9 pricing; Goldman Sachs/MS/JPMorgan managing OpenAI IPO. Corrected the Meta "5 gigawatts" claim — it's specifically the Louisiana Hyperion expansion, not a general 2026 capex metric; removed the unverifiable "equivalent to 20 large-scale data centers" claim.
+
+3. **ai-guardrails-stripped** — Linked OBLITERATUS to GitHub + HuggingFace Space; linked Kawin Ethayarajh's name to his faculty page (confirmed UChicago Booth, Assistant Professor of Applied AI).
+
+4. **amazon-bedrock-agentcore** — Updated x402 stats to the Chainalysis-verified figure (165M+ transactions) — the original "590,000-plus buyers/100,000-plus sellers" format couldn't be confirmed from primary sources.
+
+5. **anthropic-2028-two-scenarios** — Added inline link for "only 3 of 13" safety evaluation claim; added Sources section (Anthropic paper + NIST CAISI evaluation).
+
+6. **anthropic-claude-agent-sdk** — Removed uncited "Stanford Digital Economy Lab" attribution; replaced with beam.ai link for the 62% re-sent-context claim.
+
+7–10. **amazon-perplexity-comet, amazon-bee-wearable, amazon-quick-desktop, android-17-cinnamon-bun** — All well-cited; added `sources_audited` flags.
+
+**Bluesky** — Posted AI guardrails article with the "4 lines of code, 10 minutes" hook. (Note: accidentally ran `--help` which posted that as text; immediately deleted and posted the real content.)
+
+**Next run:** Continue audit from the 2026-05-25 cluster; mandatory Bluesky post for July 29.
+2026-07-27T03:18:13Z FINISHED run 1533160
+2026-07-27T03:18:14Z SESSION 3814 stopped
+2026-07-27T04:00:01Z STARTED run 1550823 (mode=wild)
+2026-07-27T04:00:02Z SESSION 3815 started

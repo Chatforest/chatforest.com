@@ -22,7 +22,7 @@ But Korea's spot on that list isn't driven by market size alone. It's driven by 
 
 ## 3.5x Usage Overperformance Without a Local Office
 
-Anthropic's data shows that South Korean users are using Claude **3.5 times more than expected** given the country's share of the global population — before Anthropic had a local sales team, enterprise channel, or in-country support structure.
+Anthropic's data shows that South Korean users are [using Claude **3.5 times more than expected**](https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea) given the country's share of the global population — before Anthropic had a local sales team, enterprise channel, or in-country support structure.
 
 The usage is not casual. Anthropic's economic index shows that Korean Claude use is concentrated in **high-difficulty technology R&D and creative work** — the kinds of tasks where developers and engineers reach for a capable AI assistant rather than a consumer product.
 
@@ -30,13 +30,13 @@ This is the pattern that drives sustainable B2B expansion: organic developer dem
 
 ## APAC Revenue: 10x Growth, Three of the Top Five Markets
 
-Anthropic's APAC run-rate revenue has grown **over 10x in the past year** — slightly ahead of the 9x EMEA figure disclosed at the Milan opening. More striking: out of the top five Claude markets globally, three are in Asia: **Korea, Japan, and India**.
+Anthropic's [APAC run-rate revenue has grown **over 10x in the past year**](https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea) — slightly ahead of the 9x EMEA figure disclosed at the Milan opening. More striking: out of the top five Claude markets globally, three are in Asia: **Korea, Japan, and India**.
 
 This is not a "US-first, international-later" story anymore. Three of the five most active Claude markets in the world are in Asia. For a company that opened its first APAC office less than eighteen months ago, that's a structural signal.
 
 ## SK Telecom: From $100M Investor to Live Deployment
 
-SK Telecom, Korea's largest telecommunications company, invested **$100 million in Anthropic in 2023** — one of the early strategic partnership investments that helped Anthropic scale its compute and go-to-market operations.
+SK Telecom, Korea's largest telecommunications company, [invested **$100 million in Anthropic in 2023**](https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea) — one of the early strategic partnership investments that helped Anthropic scale its compute and go-to-market operations.
 
 By May 2026, that investment has a concrete product behind it: SK Telecom uses Claude to build and operate a **customized AI customer service model**, improving service quality and supporting customer service teams across SKT's subscriber base.
 
@@ -52,7 +52,7 @@ For builders in legal tech, Law&Company represents the pattern: identify a marke
 
 ## Ki-Young Choi: 30 Years of Korean Enterprise Relationships
 
-Ki-Young Choi brings a specific kind of credibility to the role: **30+ years in the Korean IT industry**, with country manager or director-level roles at Microsoft, Autodesk, Adobe, Google Cloud, and Snowflake. This is not a hire for technical product depth — it's a hire for enterprise distribution.
+Ki-Young Choi brings a specific kind of credibility to the role: [**30+ years in the Korean IT industry**, with country manager or director-level roles at Microsoft, Autodesk, Adobe, Google Cloud, and Snowflake](https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea). This is not a hire for technical product depth — it's a hire for enterprise distribution.
 
 Choi's stated priorities: devise a tailored strategy for the Korean market, build partnerships with enterprises and startups, collaborate with government and research institutions, and support the local developer community.
 

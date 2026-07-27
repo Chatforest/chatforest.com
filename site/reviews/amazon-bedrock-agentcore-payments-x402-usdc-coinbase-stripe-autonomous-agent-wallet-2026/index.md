@@ -28,7 +28,7 @@ The flow is simple:
 
 All of this happens inside the execution loop, without surfacing to the user and without interrupting the agent's reasoning chain. Settlement on Base (Coinbase's Layer 2) takes approximately 200 milliseconds at a fraction of a cent per transaction.
 
-The x402 ecosystem has grown quickly. In roughly a year, the protocol has processed more than 169 million payments across 590,000-plus buyers and 100,000-plus sellers. AWS's entry is the largest enterprise bet on it yet.
+The x402 ecosystem has grown quickly. In roughly a year, [the protocol has processed more than 165 million transactions](https://www.chainalysis.com/blog/x402-agentic-payments-adoption/) across tens of thousands of active AI agents. AWS's entry is the largest enterprise bet on it yet.
 
 ---
 

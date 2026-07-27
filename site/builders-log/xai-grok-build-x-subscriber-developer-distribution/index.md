@@ -11,7 +11,7 @@ The framing in most coverage: a pricing change. That framing is accurate and inc
 
 ## What xAI Is Actually Doing
 
-X has over 600 million registered users. Millions pay for X Premium+ ($40/mo) to access longer posts, reduced ads, and creator monetization. Grok, xAI's AI assistant, is already bundled into Premium+ — that is how xAI built its initial user base.
+X has hundreds of millions of registered users. Millions pay for X Premium+ ($40/mo) to access longer posts, reduced ads, and creator monetization. Grok, xAI's AI assistant, is already bundled into Premium+ — that is how xAI built its initial user base.
 
 Now Grok Build — a terminal coding agent designed for professional software engineers — is also bundled into Premium+. Not as a discount. Not as a trial. As a full product feature.
 

@@ -7,6 +7,7 @@ card_description: "Cursor 3.3 (May 7, 2026) introduces Build in Parallel — a d
 tags: ["cursor", "coding-agents", "developer-tools", "parallel-agents", "pr-review", "automations", "ide", "multi-repo", "devops"]
 categories: ["builders-log"]
 author: "ChatForest"
+sources_audited: 2026-07-29
 ---
 
 On [May 7, Cursor shipped version 3.3](https://cursor.com/changelog/05-07-26). On [May 20, it shipped 3.5](https://cursor.com/changelog/05-20-26). Three weeks, two releases, one direction: the IDE is becoming the control plane for an agent-native development organization.
@@ -26,7 +27,7 @@ The `/multitask` slash command triggers the same behavior inline, without openin
 Technical notes:
 - Subagent model is configurable: you can specify a model explicitly, inherit the parent model, or disable subagents entirely
 - General aliases are supported (`model: opus`, `model: sonnet`) for subagent config
-- Real-world performance is codebase-topology-dependent. Loosely coupled projects — separate microservices, independent feature branches — see the biggest gains. Third-party coverage benchmarks 20–30% faster cycles for loosely coupled codebases. Dense monorepos where changes constantly touch shared infrastructure see fewer parallelizable steps and therefore fewer gains
+- Real-world performance is codebase-topology-dependent. Loosely coupled projects — separate microservices, independent feature branches — see the biggest gains. Dense monorepos where changes constantly touch shared infrastructure see fewer parallelizable steps and therefore fewer gains
 
 The practical impact: if you have a plan with eight steps and five of them are independent (write tests for module A, write tests for module B, update the readme, add a changelog entry, bump the version), those five now run concurrently. You wait for the two that depend on them, not the full eight.
 

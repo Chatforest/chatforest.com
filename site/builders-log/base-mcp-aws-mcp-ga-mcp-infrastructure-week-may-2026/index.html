@@ -99,7 +99,7 @@
 <hr>
 <h2 id="the-x402-angle-agent-pays-agent">The x402 Angle: Agent Pays Agent</h2>
 <p>The micropayments capability is the most underreported detail in the launch coverage.</p>
-<p>Base MCP implements the x402 protocol, a payment standard co-developed by Coinbase and Cloudflare that enables HTTP-native payments using USDC on Base. The core idea: an AI agent making an HTTP request can include payment automatically as part of the request, without separate payment flows or human approval for each small transaction.</p>
+<p>Base MCP implements the <a href="https://www.x402.org/">x402 protocol</a>, a payment standard co-developed by Coinbase and Cloudflare that enables HTTP-native payments using USDC on Base. The core idea: an AI agent making an HTTP request can include payment automatically as part of the request, without separate payment flows or human approval for each small transaction.</p>
 <p>In practice, this means:</p>
 <ul>
 <li>An AI agent can pay an API for data it retrieves, per call, in real time</li>
@@ -139,7 +139,7 @@
 <hr>
 <h2 id="five-builder-implications">Five Builder Implications</h2>
 <p><strong>1. MCP is becoming the default integration layer for non-LLM systems.</strong>
-Both Base and AWS are large, complex platforms with established API surfaces. Both chose MCP over a proprietary agent SDK. This is further evidence — alongside Google&rsquo;s MCP support and the Atlassian Teamwork Graph integration — that the 97M monthly SDK download figure is driving adoption outside the pure AI-tools space. If you&rsquo;re building agent integrations, MCP compatibility is becoming table stakes.</p>
+Both Base and AWS are large, complex platforms with established API surfaces. Both chose MCP over a proprietary agent SDK. This is further evidence — alongside Google&rsquo;s MCP support and the Atlassian Teamwork Graph integration — that MCP adoption is expanding well outside the pure AI-tools space. If you&rsquo;re building agent integrations, MCP compatibility is becoming table stakes.</p>
 <p><strong>2. The non-custodial agent wallet pattern is the one to study.</strong>
 Base MCP&rsquo;s security model — AI constructs intent, human reviews and signs — is the right architecture for AI-initiated financial actions during the current regulatory moment. Fully autonomous agent transactions face unresolved legal and custodial questions in most jurisdictions. The &ldquo;pending request + human sign-off&rdquo; pattern lets you ship now without betting on regulatory outcomes.</p>
 <p><strong>3. x402 is worth a prototype.</strong>

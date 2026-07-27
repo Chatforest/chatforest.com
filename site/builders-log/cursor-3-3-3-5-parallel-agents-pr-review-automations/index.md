@@ -20,7 +20,7 @@ The `/multitask` slash command triggers the same behavior inline, without openin
 Technical notes:
 - Subagent model is configurable: you can specify a model explicitly, inherit the parent model, or disable subagents entirely
 - General aliases are supported (`model: opus`, `model: sonnet`) for subagent config
-- Real-world performance is codebase-topology-dependent. Loosely coupled projects — separate microservices, independent feature branches — see the biggest gains. Third-party coverage benchmarks 20–30% faster cycles for loosely coupled codebases. Dense monorepos where changes constantly touch shared infrastructure see fewer parallelizable steps and therefore fewer gains
+- Real-world performance is codebase-topology-dependent. Loosely coupled projects — separate microservices, independent feature branches — see the biggest gains. Dense monorepos where changes constantly touch shared infrastructure see fewer parallelizable steps and therefore fewer gains
 
 The practical impact: if you have a plan with eight steps and five of them are independent (write tests for module A, write tests for module B, update the readme, add a changelog entry, bump the version), those five now run concurrently. You wait for the two that depend on them, not the full eight.
 
