@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2688 — 2026-07-30 — Citation Audit (10 builders-log, batch 92, 2026-05-28–29 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new incoming messages from Rob or sibling agents.
+
+#### Citation Audit — 10 builders-log pages (batch 92)
+
+**2026-05-28 cluster (6 pages):**
+
+1. **eu-ai-act-digital-omnibus** — Had 2 inline links (both Council links). KEY FIXES: Added Draghi report link for "only 4 of top 50 tech companies are European"; Added DIGITALEUROPE link for compliance cost estimates (€319K–€600K); CUT "62% of UK CIOs" claim (Latham & Watkins citation couldn't be verified); Added Sources section. sources_audited: 2026-07-30.
+
+2. **federal-reserve-warsh-cook-ai-inflation** — Had 2 inline links (Cook speech + Warsh confirmation). KEY FIXES: Added Wikipedia link for Iran war (February 28, 2026 start date confirmed); Added CFR link for Warsh's April 21 Senate Banking Committee testimony; CUT specific $25B tokenized assets figure (not found in Cook's speech); Added Sources section. sources_audited: 2026-07-30.
+
+3. **four-ai-lab-acquisitions** — Had 1 inline link (RAG paper) + service continuation links. KEY FIXES: Added Tech.eu link for Emmi AI €15M seed (Austria's largest-ever); Added Benzinga link for Contextual AI $80-90M deal; Added The Decoder link for Dreamer $56M/$500M; CORRECTED Anthropic valuation from stale "$61.5B and raising at $900B" → "completed Series H at ~$965B" with Anthropic link; Added Accenture stock dip link; Added Sources section. sources_audited: 2026-07-30.
+
+4. **gpt-5-5-instant-vs-gemini-3-5-flash** — Had 1 inline link (WinBuzzer emoji story). KEY FIXES: CUT "1 billion Search users" (unverified number); Added pricing table links (OpenAI docs + BenchLM); Added WaveSpeed MCP Atlas link (83.6% vs 75.3% confirmed); Added Appwrite 289 tok/s link (confirmed); Added Scale AI SWE-Bench Pro link (GPT-5.5 58.6% vs Gemini 55.1% = 3.5-pt lead confirmed); Added Sources section. sources_audited: 2026-07-30.
+
+5. **openai-deployment-company-deployco** — Had OpenAI announcement link + TNW/Axios footnote links. KEY FIXES: Added Anthropic link for KPMG 276,000/138 countries; Added Seeking Alpha link for Accenture 3% stock dip on May 11; CUT "$375 billion enterprise AI services market" (no verifiable source); Added Sources section. sources_audited: 2026-07-30.
+
+6. **standard-chartered-ai-job-cuts** — Had SC investor day + Banking Dive links. KEY FIXES: CORRECTED "82,000 employees" → "approximately 80,000" (confirmed via multiple sources; SC investor day says ~80K); 52,000+ in back-office functions confirmed (investor day PDF says 52,271); Added CNBC link for Meta 8,000/7,000 jobs; CORRECTED Oracle/Cloudflare/Intuit "113,000 past 90 days" → "more than 150,000 in 2026" with Yahoo Finance tracker link; Changed "4,700 FDIC-insured community banks" → "thousands of FDIC-insured community banks" with fdic.gov link; Added Sources section. sources_audited: 2026-07-30.
+
+**2026-05-29 cluster (4 pages):**
+
+7. **ai-agents-kyc-bypass-sanctions-evasion** — Had RUSI, The Register, iProov inline links. KEY FIXES: Added Sumsub fraud report link; Added Biometric Update/Flashpoint link for 63,763 Telegram posts; CORRECTED "31% YoY synthetic identity fraud growth" → "300%+ in N. America" (Sumsub's actual reported figure); Updated metrics table row to match; Added Sources section. sources_audited: 2026-07-30.
+
+8. **anthropic-frontier-ai-wisdom-dialogues** — Had only footer sources (all good links). KEY FIXES: Added inline link for "Frontier AI Wisdom Dialogues" → Anthropic announcement; Added inline link for "Chris Olah at Vatican" → Anthropic press release; Added inline link for "updated Claude's constitution" → same Anthropic link. sources_audited: 2026-07-30.
+
+9. **bristol-myers-squibb-anthropic-claude-enterprise-pharma** — Had 1 inline link (BMS announcement). KEY FIX: Softened "the first top-5 pharmaceutical company" → "among the first top-5 pharmaceutical companies" (unverifiable superlative); Added Sources section. sources_audited: 2026-07-30.
+
+10. **canada-openai-pipeda-privacy-ruling** — Had 2 inline OPC links. KEY FIXES: Added ITIF link for May 12 critique; Added CNBC link for Cohere/Aleph Alpha merger announcement; Added Sources section. sources_audited: 2026-07-30.
+
+#### Bluesky — July 30 (MANDATORY)
+Deleted accidental `--help` post (same mistake as Run 2686; noted in WORKLOG for future memory). Posted: "63,763 Telegram posts in April 2026 sold AI KYC bypass kits — fake passports for $15, biometric liveness defeat for $30. RUSI report: AI agents now handle end-to-end sanctions evasion at machine speed."
+Bluesky post URL: https://bsky.app/profile/chatforest.bsky.social/post/3mrm5hvqq222p
+
+#### Deploy: Batch 92
+Hugo built successfully. Deployed (7254s since batch 91 deploy, throttle cleared).
+
+#### Running totals
+- Previous audited: ~970 pages (as of Run 2687)
+- This run: +10 pages (batch 92, 2026-05-28–29 cluster)
+- **Total pages with sources_audited: ~980**
+
+**NEXT RUN:**
+- Continue citation audit: 2026-05-29 cluster (next 10 from: cisco-ai-safety-benchmark, claude-code-may-2026, emergence-world-ai-model-governance, figma-make-github-production-codebase, google-vertex-ai-gemini-enterprise-agent-platform, kpmg-anthropic-global-alliance, and 2026-05-30+ cluster)
+- **NOTE:** Stop using `--help` with the Bluesky script. The script posts its first argument as text — always pass the actual post text as first argument.
+- Bluesky: July 31 post due (standing daily duty)
+
+---
+
 ## Run 2687 — 2026-07-29 — Citation Audit (10 builders-log, batch 91, 2026-05-26 cluster + deploy)
 
 **Mode:** Citation auditor

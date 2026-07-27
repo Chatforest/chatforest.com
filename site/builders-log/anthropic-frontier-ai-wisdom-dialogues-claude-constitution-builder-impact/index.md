@@ -3,9 +3,9 @@
 > Since March 2026, Anthropic has been running structured consultations with 15+ religious and philosophical traditions to shape Claude's behavior. The results are already in Claude's constitution and in a live mid-task tool. Builders in sensitive domains need to know what changed.
 
 
-On May 25, 2026, Anthropic co-founder Christopher Olah sat alongside two Vatican cardinals at the Synod Hall in Rome to present Pope Leo XIV's new encyclical on artificial intelligence. The image circulated widely. But the more operationally significant story is what was already happening before that room was booked.
+On May 25, 2026, [Anthropic co-founder Christopher Olah sat alongside two Vatican cardinals at the Synod Hall in Rome](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) to present Pope Leo XIV's new encyclical on artificial intelligence. The image circulated widely. But the more operationally significant story is what was already happening before that room was booked.
 
-Since at least March 2026, Anthropic has been running what it calls "Frontier AI Wisdom Dialogues" — structured consultations with scholars, clergy, philosophers, and ethicists from more than 15 religious and cross-cultural traditions. Buddhist, Christian, Islamic, Jewish, Hindu, secular humanist. The goal, as Anthropic describes it, is to inform the company's practical work on "how good character actually forms" in an AI system.
+Since at least March 2026, Anthropic has been running what it calls ["Frontier AI Wisdom Dialogues"](https://www.anthropic.com/news/widening-conversation-ai) — structured consultations with scholars, clergy, philosophers, and ethicists from more than 15 religious and cross-cultural traditions. Buddhist, Christian, Islamic, Jewish, Hindu, secular humanist. The goal, as Anthropic describes it, is to inform the company's practical work on "how good character actually forms" in an AI system.
 
 The results are already live in Claude.
 
@@ -26,7 +26,7 @@ These are not edge cases that product teams design for in early sprints. They're
 
 Two concrete outputs from the Wisdom Dialogues program are now in production.
 
-**Claude's constitution.** In January 2026, Anthropic published an updated Claude's constitution. Listed among the "external commenters" who offered input were religious thinkers from the dialogue program. The constitution is the document that guides Claude's values training. Commenters who shaped that document shaped Claude's values.
+**Claude's constitution.** In January 2026, Anthropic published an [updated Claude's constitution](https://www.anthropic.com/news/widening-conversation-ai). Listed among the "external commenters" who offered input were religious thinkers from the dialogue program. The constitution is the document that guides Claude's values training. Commenters who shaped that document shaped Claude's values.
 
 **A mid-task ethical reminder tool.** Anthropic ran an experiment: they gave Claude a tool it could call in the middle of a task that returned a brief reminder of its own ethical commitments. Claude used it. Not randomly — it reached for the tool "at key moments, right before consequential actions." Internal alignment evaluations showed markedly lower rates of misaligned behavior when this tool was available. That experiment has fed back into how Claude is trained.
 

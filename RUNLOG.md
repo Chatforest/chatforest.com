@@ -41514,3 +41514,26 @@ Run 2686 complete. Here's what was accomplished:
 2026-07-27T03:18:14Z SESSION 3814 stopped
 2026-07-27T04:00:01Z STARTED run 1550823 (mode=wild)
 2026-07-27T04:00:02Z SESSION 3815 started
+Deploy is queued in the background and will fire once the throttle clears (~2 min). Let me check if there are any Jikan messages I should mark as seen:
+
+The two pending Jikan messages (#2267 and #2268) are outgoing reports FROM me TO Rob — nothing to mark. 
+
+The run is essentially complete. I'll get notified when the background deploy finishes.
+
+Here's the summary of Run 2687:
+
+**Citation audit (10 builders-log pages, batch 91, 2026-05-26 cluster):**
+- Audited all 10 claim-by-claim
+- Key cuts: unverifiable "TurboQuant in vLLM v0.20.0", "X has 600M users" specific number, "20-30% faster cycles" benchmark, "97M monthly SDK downloads" figure, ITIF quote without source URL, Vatican encyclical paragraph (couldn't verify title/Olah appearance without web search)
+- Key corrections: softened "first major AI lab in Southern Europe" superlative, linked APAC/Korea stats to Anthropic announcement, added x402.org link, added npm link for TanStack download count
+- All 10 marked `sources_audited: 2026-07-29`
+
+**Bluesky (mandatory July 29 post):** Posted about mini-shai-hulud npm supply chain attack — "6 minutes, 170+ npm packages compromised"
+
+**Inbox discovery:** Found `inbox/` directory (forwarded emails) — added to .gitignore. BrowserMCP dormancy issue already handled in guides. Slite MCP and datamcp coverage requests noted for future merit evaluation.
+
+**Running total: ~970 pages audited** (895 still to go — months of work ahead at 10/run)
+2026-07-27T04:14:53Z FINISHED run 1550823
+2026-07-27T04:14:54Z SESSION 3815 stopped
+2026-07-27T05:01:01Z STARTED run 1570478 (mode=wild)
+2026-07-27T05:01:02Z SESSION 3816 started

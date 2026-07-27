@@ -78,7 +78,7 @@
 <h2 id="three-attack-layers--and-where-they-hit-your-stack">Three Attack Layers — and Where They Hit Your Stack</h2>
 <h3 id="layer-1-document-forgery">Layer 1: Document Forgery</h3>
 <p>Generative AI can now produce convincing fake passports, driver&rsquo;s licenses (from 26+ countries), bank statements, vessel registrations, invoices, and corporate records. The canonical case is OnlyFake — a neural-network-based platform that generated 10,000+ fake IDs at $15 each. Operator Yurii Nazarenko (a.k.a. &ldquo;John Wick&rdquo;) has since pleaded guilty. But what his platform demonstrated matters more than his prosecution: fake British passports from OnlyFake successfully bypassed KYC at OKX, Kraken, Bybit, Bitget, Huobi, and PayPal before anyone caught them.</p>
-<p>Sumsub&rsquo;s 2025 Identity Fraud Report found that 2% of all detected fraudulent documents were created with generative AI tools (ChatGPT, Grok, Gemini) in a six-month window. &ldquo;Detected&rdquo; is the key word. The undetected share is unknown by definition.</p>
+<p><a href="https://sumsub.com/fraud-report-2025/">Sumsub&rsquo;s 2025 Identity Fraud Report</a> found that 2% of all detected fraudulent documents were created with generative AI tools (ChatGPT, Grok, Gemini) in a six-month window. &ldquo;Detected&rdquo; is the key word. The undetected share is unknown by definition.</p>
 <p><strong>What this breaks in your stack:</strong> Any document verification pipeline relying primarily on image analysis — OCR, template matching, or AI classifiers trained on pre-2024 forgery patterns. The gap between &ldquo;looks authentic&rdquo; and &ldquo;is authentic&rdquo; is now a $15 transaction.</p>
 <h3 id="layer-2-biometric-bypass">Layer 2: Biometric Bypass</h3>
 <p>Static liveness checks are gone as a reliable control. The tools to defeat them are commodity:</p>
@@ -87,8 +87,8 @@
 <li><strong>Hooking framework exploits</strong> for rooted Android devices intercept the camera API inside banking apps, bypassing liveness checks at the framework level.</li>
 <li><strong>Face-swap tools</strong> have proliferated. The World Economic Forum&rsquo;s January 2026 Cybercrime Atlas tested 17 face-swapping tools and 8 camera injection tools and found most could bypass standard biometric onboarding checks.</li>
 </ul>
-<p>Deepfakes now account for 11% of all global fraudulent activity in 2026, up from 7% in 2024. Synthetic-identity fraud is growing 31% year-on-year and generates an estimated $20–40 billion in annual losses.</p>
-<p>In April 2026, Flashpoint counted 63,763 Telegram posts advertising or discussing KYC bypass methods in a single month.</p>
+<p>Deepfakes now account for 11% of all global fraudulent activity in 2026, up from 7% in 2024. Synthetic-identity fraud is growing rapidly — <a href="https://sumsub.com/newsroom/synthetic-identity-document-fraud-surges-300-in-the-u-s-sumsub-warns-e-commerce-healthtech-and-fintech-at-risk/">Sumsub reports synthetic identity document fraud surged over 300% in North America</a> — and generates an estimated $20–40 billion in annual losses globally.</p>
+<p>In April 2026, <a href="https://www.biometricupdate.com/202604/kyc-bypass-tools-sold-on-telegram-to-defeat-biometric-checks">Flashpoint counted 63,763 Telegram posts</a> advertising or discussing KYC bypass methods in a single month.</p>
 <p><strong>What this breaks in your stack:</strong> &ldquo;Record your face&rdquo; or &ldquo;take a selfie with your ID&rdquo; as your primary identity assurance mechanism. If your liveness check is prompt-based (turn your head, blink), VCam tools defeat it reliably. This is not an edge case — it is a commodity attack.</p>
 <h3 id="layer-3-agentic-operations">Layer 3: Agentic Operations</h3>
 <p>This is the layer the RUSI report introduces that has no clean precedent. Beyond document forgery and biometric bypass, AI agents can now handle:</p>
@@ -126,9 +126,9 @@
 <td>Tech-Insider</td>
 </tr>
 <tr>
-<td>Synthetic identity fraud growth YoY</td>
-<td>31%</td>
-<td>Sumsub</td>
+<td>Synthetic identity fraud growth (N. America, document fraud)</td>
+<td>300%+</td>
+<td><a href="https://sumsub.com/fraud-report-2025/">Sumsub</a></td>
 </tr>
 <tr>
 <td>Global synthetic ID losses per year</td>
@@ -211,7 +211,17 @@
 <p>Builders deploying anything adjacent to financial services, identity verification, or compliance have always lived with fraud risk. What changed is the cost structure: attacks that were expensive enough to deter except for high-value targets are now cheap enough to run at volume against ordinary onboarding flows.</p>
 <p>Fighting automation with automation — as RUSI explicitly recommends — is not a nice-to-have. It is the only architecture that matches the threat&rsquo;s cost curve.</p>
 <hr>
-<p><em>Research for this article draws on the RUSI &ldquo;Algorithms of Evasion&rdquo; report, The Register&rsquo;s May 26 coverage, Chainalysis 2026 Crypto Crime Report, iProov 2025 Biometric Threat Intelligence Report, WEF Cybercrime Atlas (January 2026), Sumsub 2025 Identity Fraud Report, and Flashpoint/Biometric Update research on Telegram KYC bypass tool markets.</em></p>
+<hr>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://www.rusi.org/explore-our-research/publications/research-papers/algorithms-evasion-rise-ai-enabled-proliferation-financing">RUSI: Algorithms of Evasion — Rise of AI-Enabled Proliferation Financing</a></li>
+<li><a href="https://www.theregister.com/ai-ml/2026/05/26/rogue-states-are-putting-ai-agents-to-work-on-sanctions-evasion/5246210">The Register: Rogue states are putting AI agents to work on sanctions evasion, May 26, 2026</a></li>
+<li><a href="https://www.iproov.com/reports/threat-intelligence-report-2025-remote-identity-attack">iProov 2025 Biometric Threat Intelligence Report (VCam attack figures)</a></li>
+<li><a href="https://www.biometricupdate.com/202604/kyc-bypass-tools-sold-on-telegram-to-defeat-biometric-checks">Biometric Update: KYC bypass tools sold on Telegram (Flashpoint data — 63,763 posts)</a></li>
+<li><a href="https://sumsub.com/fraud-report-2025/">Sumsub: Identity Fraud Report 2025–2026</a></li>
+<li><a href="https://sumsub.com/newsroom/synthetic-identity-document-fraud-surges-300-in-the-u-s-sumsub-warns-e-commerce-healthtech-and-fintech-at-risk/">Sumsub: Synthetic identity document fraud surges 300% in U.S.</a></li>
+<li><a href="https://www.chainalysis.com/blog/crypto-sanctions-2026/">Chainalysis: Crypto Sanctions 2026 (A7A5 stablecoin)</a></li>
+</ul>
 
       </div>
 

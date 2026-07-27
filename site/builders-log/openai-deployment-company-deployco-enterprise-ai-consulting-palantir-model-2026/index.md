@@ -54,7 +54,7 @@ Traditional consulting firms face a structural disadvantage in enterprise AI:
 
 By investing in DeployCo, McKinsey and Bain gain distribution access to the joint venture's revenue stream. They also lock in early insight into where the new model of enterprise AI delivery is going. What they can't buy is the first-mover advantage that comes from controlling the model layer.
 
-Accenture's stock dipped on announcement day, May 11. It later recovered — but the initial market read was that this was a direct threat to systems integration revenue. The market was right.
+[Accenture's stock dipped](https://seekingalpha.com/news/4590667-accenture-dips-after-openai-deployment-co-launch-but-ubs-remains-positive) on announcement day, May 11. It later recovered — but the initial market read was that this was a direct threat to systems integration revenue. The market was right.
 
 ---
 
@@ -66,13 +66,13 @@ OpenAI's pledge of **17.5% annual returns over five years** to DeployCo's PE bac
 
 The distribution network matters more than the $4 billion. TPG, Brookfield, Bain Capital, and Warburg Pincus collectively manage hundreds of portfolio companies — a captive base of potential DeployCo clients. Embedding DeployCo's FDEs across that portfolio creates a flywheel: each successful deployment becomes a reference case that opens the next door.
 
-The guaranteed return is the price of the distribution. It is unusual. It is also, in context, cheap if DeployCo captures even a fraction of the $375 billion enterprise AI services market.
+The guaranteed return is the price of the distribution. It is unusual. It is also, in context, cheap if DeployCo captures even a fraction of the enterprise AI services market.
 
 ---
 
 ## How This Compares to Anthropic's Enterprise Strategy
 
-The same week DeployCo launched, Anthropic announced a different kind of enterprise move: **KPMG deploying Claude across 276,000 employees in 138 countries** through its Digital Gateway platform, with full rollout by September 2026.
+The same week DeployCo launched, Anthropic announced a different kind of enterprise move: **[KPMG deploying Claude across 276,000 employees in 138 countries](https://www.anthropic.com/news/anthropic-kpmg)** through its Digital Gateway platform, with full rollout by September 2026.
 
 The structural difference is instructive:
 
@@ -126,5 +126,15 @@ Whether it works depends on whether speed of model improvement can substitute fo
 
 ---
 
-*Published May 28, 2026. OpenAI Deployment Company launched May 11, 2026. Tomoro AI acquisition announced simultaneously. The $4 billion investor commitment figure is from multiple sources; the [17.5% guaranteed return figure was first reported by The Next Web](https://thenextweb.com/news/tomoro-openai-deployment-company-consulting) and [Axios](https://www.axios.com/2026/05/11/openai-deployco-private-equity). Neither OpenAI nor McKinsey & Company have publicly confirmed specific return terms.*
+---
+
+## Sources
+
+- [OpenAI: Launching the Deployment Company, May 11, 2026](https://openai.com/index/openai-launches-the-deployment-company/)
+- [The Next Web: Tomoro AI and OpenAI Deployment Company (17.5% return figure)](https://thenextweb.com/news/tomoro-openai-deployment-company-consulting)
+- [Axios: OpenAI DeployCo private equity round](https://www.axios.com/2026/05/11/openai-deployco-private-equity)
+- [Anthropic: KPMG alliance — 276,000 employees, 138 countries](https://www.anthropic.com/news/anthropic-kpmg)
+- [Seeking Alpha: Accenture dips after OpenAI Deployment Company launch](https://seekingalpha.com/news/4590667-accenture-dips-after-openai-deployment-co-launch-but-ubs-remains-positive)
+
+*Published May 28, 2026. OpenAI Deployment Company launched May 11, 2026. Tomoro AI acquisition announced simultaneously. The $4 billion investor commitment figure is from multiple sources; the 17.5% guaranteed return figure was first reported by The Next Web and Axios. Neither OpenAI nor McKinsey & Company have publicly confirmed specific return terms.*
 

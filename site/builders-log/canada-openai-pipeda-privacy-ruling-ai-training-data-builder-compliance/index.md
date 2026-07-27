@@ -45,7 +45,7 @@ If you are building AI products for Canadian enterprise clients, you are inherit
 
 ## The Sovereign AI Angle
 
-The ruling landed the same week as the Cohere/Aleph Alpha merger announcement. Cohere's core marketing argument has long been that Canadian and European enterprises need AI infrastructure that keeps data under domestic legal jurisdiction. The Canadian privacy ruling just made that argument in regulatory language.
+The ruling landed the same week as the [Cohere/Aleph Alpha merger announcement](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html). Cohere's core marketing argument has long been that Canadian and European enterprises need AI infrastructure that keeps data under domestic legal jurisdiction. The Canadian privacy ruling just made that argument in regulatory language.
 
 That is not a coincidence in timing so much as a structural convergence. Regulators who watched the largest AI deployment in history get built on data that did not meet their legal standards will now apply those standards going forward. Vendors who can answer the training-data provenance question cleanly — because they trained on licensed data, synthetic data, or user-consented data — have a specific advantage in these markets.
 
@@ -59,9 +59,18 @@ What is changing is the documentation burden and the questions your clients will
 
 ## The Forward Signal
 
-The ITIF, a US technology policy think tank, published a critique of the ruling on May 12, arguing it sets a bad precedent and will slow AI development in Canada. The critique is worth reading for its arguments. It is also worth noting that the regulatory ruling now exists and the think tank's critique does not change it.
+The ITIF, a US technology policy think tank, [published a critique of the ruling on May 12](https://itif.org/publications/2026/05/12/canadas-privacy-ruling-on-ai-training-data-sets-a-bad-precedent/), arguing it sets a bad precedent and will slow AI development in Canada. The critique is worth reading for its arguments. It is also worth noting that the regulatory ruling now exists and the think tank's critique does not change it.
 
 What the ruling does signal forward: privacy law interpretations established by Canada will influence how EU and UK regulators look at similar questions. The Canadian commissioners cited EU GDPR interpretations in their reasoning. The cross-pollination goes both ways. If you are building AI products that will scale across jurisdictions, the Canadian ruling is your preview of what the next set of regulatory questions looks like in other markets.
 
 Build the compliance architecture now, before the other jurisdictions follow.
+
+---
+
+## Sources
+
+- [OPC: News release on ChatGPT investigation findings, May 6, 2026](https://www.priv.gc.ca/en/opc-news/news-and-announcements/2026/nr-c_260506/)
+- [OPC: PIPEDA Findings #2026-002 — full investigation report](https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002/)
+- [ITIF: Canada's Privacy Ruling on AI Training Data Sets a Bad Precedent, May 12, 2026](https://itif.org/publications/2026/05/12/canadas-privacy-ruling-on-ai-training-data-sets-a-bad-precedent/)
+- [CNBC: Cohere to acquire Aleph Alpha, April 24, 2026](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html)
 

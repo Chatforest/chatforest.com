@@ -15,7 +15,7 @@ The Fed is now openly debating whether AI is inflationary or deflationary — an
 
 ## What Cook Said
 
-Cook's Stanford remarks were direct. She identified AI investment as one of three active inflation drivers alongside tariffs and the Iran war (which began February 28, 2026):
+Cook's Stanford remarks were direct. She identified AI investment as one of three active inflation drivers alongside tariffs and the [Iran war](https://en.wikipedia.org/wiki/2026_Iran_war) (which began February 28, 2026):
 
 > "Prices have risen significantly for chips, other high-tech equipment, and software. Wages in specialty trades in construction have picked up notably, and electricity and water prices have each increased by about 5 percent over the past year."
 
@@ -33,7 +33,7 @@ Inflation, Cook said, is "clearly moving in the wrong direction." The question i
 
 Cook is not the only Fed voice with a view on AI. There is a live internal debate between two frameworks.
 
-**Kevin Warsh (Fed Chair, confirmed May 13)** holds the disinflationary view: AI drives significant productivity gains, which expands supply and drives prices down over time. On this view, the right move is to cut rates as AI takes hold — consistent with Trump's stated expectation when he nominated Warsh. In his April 21 Senate Banking Committee testimony, Warsh outlined a thesis where US-led AI disruption produces lasting productivity improvements that ease inflation and justify looser monetary policy.
+**Kevin Warsh (Fed Chair, confirmed May 13)** holds the disinflationary view: AI drives significant productivity gains, which expands supply and drives prices down over time. On this view, the right move is to cut rates as AI takes hold — consistent with Trump's stated expectation when he nominated Warsh. In his [April 21 Senate Banking Committee testimony](https://www.cfr.org/articles/what-kevin-warshs-confirmation-hearing-revealed-about-the-future-of-the-fed), Warsh outlined a thesis where US-led AI disruption produces lasting productivity improvements that ease inflation and justify looser monetary policy.
 
 **Austan Goolsbee (Chicago Fed President)** holds the inflationary view: businesses and consumers pull spending forward in anticipation of future productivity gains, overheating the economy before the productivity arrives. The demand runs ahead of the supply. On this view, AI investment creates a window of elevated inflation that could tip into stagflation — high inflation combined with slowing growth.
 
@@ -47,7 +47,7 @@ Two other inflation drivers are running simultaneously:
 
 **Tariffs**: The current tariff regime has raised input costs across sectors, with downstream effects on equipment and manufactured goods.
 
-**Iran war** (started February 28, 2026): Oil prices have risen since the outbreak of conflict, raising energy costs that feed into electricity prices — the same electricity AI data centers consume.
+**[Iran war](https://en.wikipedia.org/wiki/2026_Iran_war)** (started February 28, 2026): Oil prices have risen since the outbreak of conflict, raising energy costs that feed into electricity prices — the same electricity AI data centers consume.
 
 AI capex is not operating in isolation. It is compounding against two pre-existing inflation vectors. This is the environment in which Warsh is being asked to either hold or cut rates despite Trump's expectations.
 
@@ -72,7 +72,7 @@ Builders dependent on GPU cloud will see this transmitted into compute pricing o
 
 ### 3. Tokenization is creating a new financial infrastructure layer
 
-Cook noted that the market cap of US tokenized assets has more than doubled over the past year, reaching approximately $25 billion. The Fed's Committee on Financial Stability is actively monitoring this. Builders working at the intersection of AI and financial infrastructure — automated settlement, treasury management agents, AI-powered compliance for tokenized assets — are operating in a space the Fed is watching closely.
+Cook's committee is actively monitoring the rapid growth of tokenized assets and their intersection with AI-driven financial infrastructure. Builders working at the intersection of AI and financial infrastructure — automated settlement, treasury management agents, AI-powered compliance for tokenized assets — are operating in a space the Fed is watching closely.
 
 That means both opportunity (fast-growing market with limited tooling) and risk (regulatory attention is arriving before frameworks are set).
 
@@ -101,6 +101,16 @@ If data center buildout slows (capital discipline, regulatory friction, supply c
 **Electricity and water utility pricing**: These are the "boring" inputs that show up in compute costs before they appear in API pricing. A 5% annual increase in electricity is already priced into new data center long-term contracts.
 
 ---
+
+---
+
+## Sources
+
+- [Federal Reserve: Governor Cook speech — AI, the Economy, and the Financial System, May 27, 2026](https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm)
+- [CNBC: Kevin Warsh Senate confirmation, May 13, 2026](https://www.cnbc.com/2026/05/13/kevin-warsh-wins-senate-confirmation-as-the-next-federal-reserve-chair.html)
+- [CFR: What Kevin Warsh's Confirmation Hearing Revealed](https://www.cfr.org/articles/what-kevin-warshs-confirmation-hearing-revealed-about-the-future-of-the-fed)
+- [Wikipedia: 2026 Iran war](https://en.wikipedia.org/wiki/2026_Iran_war)
+- [Axios: Fed officials warn AI's economic costs may arrive faster than benefits, June 2026](https://www.axios.com/2026/06/01/ai-productivity-inflation)
 
 *Governor Lisa D. Cook delivered her remarks at Stanford's Institute for Economic Policy Research on May 27, 2026. Kevin Warsh was confirmed as Federal Reserve Chair on May 13, 2026, in a 54-45 Senate vote, succeeding Jerome Powell.*
 

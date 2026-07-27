@@ -13,7 +13,7 @@ The difference matters more than the benchmark comparisons suggest.
 
 ## The Core Structural Difference
 
-**Gemini 3.5 Flash** has one model ID — `gemini-3.5-flash` — that powers the Gemini consumer app, AI Mode in Google Search, the Gemini API in Google AI Studio, Vertex AI, the Gemini Enterprise Agent Platform, and Google Antigravity 2.0. When Google launched it at I/O, the model was simultaneously available across all surfaces on day one. A builder calling `gemini-3.5-flash` in the API gets the same model that 1 billion Search users interact with through AI Mode.
+**Gemini 3.5 Flash** has one model ID — `gemini-3.5-flash` — that powers the Gemini consumer app, AI Mode in Google Search, the Gemini API in Google AI Studio, Vertex AI, the Gemini Enterprise Agent Platform, and Google Antigravity 2.0. When Google launched it at I/O, the model was simultaneously available across all surfaces on day one. A builder calling `gemini-3.5-flash` in the API gets the same model that powers Google Search's AI Mode for users globally.
 
 **GPT-5.5 Instant** is a ChatGPT product tier label. It does not correspond to a distinct API endpoint. In OpenAI's API, the relevant model is `gpt-5.5`. The "Instant" experience — fast responses, low latency, everyday task optimization — is produced by setting `reasoning_effort` to `"low"` or `"none"`. Setting `reasoning_effort: "medium"` or `"high"` gets you different behavior. The model underlying ChatGPT's default and the model that API calls default to are the same weights accessed through a different configuration.
 
@@ -67,12 +67,12 @@ The pricing gap compounds the strategic difference.
 
 | Model | Input (per 1M tokens) | Output (per 1M tokens) |
 |---|---|---|
-| Gemini 3.5 Flash | $1.50 | $9.00 |
-| GPT-5.5 (gpt-5.5) | $5.00 | $30.00 |
+| [Gemini 3.5 Flash](https://benchlm.ai/google/api-pricing) | $1.50 | $9.00 |
+| [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5) | $5.00 | $30.00 |
 
 Gemini 3.5 Flash is priced at 30% of GPT-5.5 on input, and 30% on output. For workloads running at scale in production agentic pipelines, this is not a marginal difference.
 
-GPT-5.5's higher price buys measurably better SWE-Bench Pro scores (GPT-5.5 leads by 3.5 points) and ARC-AGI-2 performance (84.6% vs Gemini 3.5 Flash's lower score). But Gemini 3.5 Flash leads on multi-step tool calling benchmarks — MCP Atlas at 83.6% vs GPT-5.5's 75.3% — and runs at 289 tokens per second, roughly four times faster than competing frontier models.
+GPT-5.5's higher price buys measurably better [SWE-Bench Pro scores](https://labs.scale.com/leaderboard/swe_bench_pro_public) (GPT-5.5 leads by 3.5 points) and ARC-AGI-2 performance (84.6% vs Gemini 3.5 Flash's lower score). But Gemini 3.5 Flash leads on multi-step tool calling benchmarks — [MCP Atlas](https://wavespeed.ai/blog/posts/gemini-3-5-flash-shipped-leads-agent-benchmarks/) at 83.6% vs GPT-5.5's 75.3% — and [runs at 289 tokens per second](https://appwrite.io/blog/post/gemini-3-5-flash-deep-dive), roughly four times faster than competing frontier models.
 
 For most agentic production workloads, you're paying a 3.3× premium for GPT-5.5 to get better performance on a subset of benchmarks.
 
@@ -108,6 +108,17 @@ Both approaches have costs. Google's "same model everywhere" makes the developer
 For builders, the practical takeaway is not which approach is better. It is that the two providers have structurally different expectations of how much translation work you will do between their product documentation and your production API configuration. With Gemini 3.5 Flash, you do less. With GPT-5.5 Instant, you need to know what "Instant" maps to before you start.
 
 ---
+
+---
+
+## Sources
+
+- [OpenAI: GPT-5.5 model documentation and pricing](https://developers.openai.com/api/docs/models/gpt-5.5)
+- [BenchLM: Gemini API pricing (July 2026)](https://benchlm.ai/google/api-pricing)
+- [Scale AI: SWE-Bench Pro leaderboard](https://labs.scale.com/leaderboard/swe_bench_pro_public)
+- [WaveSpeed: Gemini 3.5 Flash leads agent benchmarks (MCP Atlas)](https://wavespeed.ai/blog/posts/gemini-3-5-flash-shipped-leads-agent-benchmarks/)
+- [Appwrite: Gemini 3.5 Flash deep dive (289 tok/s speed)](https://appwrite.io/blog/post/gemini-3-5-flash-deep-dive)
+- [WinBuzzer: OpenAI GPT-5.5 Instant behavioral update, May 2026](https://www.winbuzzer.com/2026/05/06/openai-releases-gpt-55-instant-a-new-default-model-xcxwbn/)
 
 *For detailed benchmarks and pricing for each model individually, see our [Gemini 3.5 Flash review](/reviews/google-gemini-3-5-flash-agentic-speed-llm-review/) and [GPT-5.5 Instant review](/reviews/openai-gpt-5-5-instant-chatgpt-default-model-2026/). For the full Google I/O 2026 agent stack context, see [Google I/O 2026 Was a System Reveal, Not a Product Launch](/builders-log/google-io-2026-agent-stack/).*
 
