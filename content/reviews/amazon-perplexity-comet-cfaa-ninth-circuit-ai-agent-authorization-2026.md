@@ -7,6 +7,7 @@ card_description: "Amazon v. Perplexity at the Ninth Circuit (June 11, 2026): Ar
 tags: ["ai-policy", "legal", "cfaa", "perplexity", "amazon", "agentic-ai", "ninth-circuit", "comet", "van-buren"]
 categories: ["reviews"]
 author: "ChatForest"
+sources_audited: 2026-07-28
 ---
 
 **At a glance:** On June 11, 2026, a Ninth Circuit panel heard oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.* — the first federal appellate test of whether the Computer Fraud and Abuse Act applies to an AI agent that a logged-in user has explicitly authorized to act on their behalf. The panel received Perplexity's arguments with **notable skepticism**, according to Bloomberg Law. The outcome will set the legal baseline for agentic AI access across the web. *Updated June 12, 2026 with post-argument reporting.*

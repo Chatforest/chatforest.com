@@ -2,6 +2,60 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2686 — 2026-07-28 — Citation Audit (10 reviews, batch 90, 2026-05-24+ cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. No new inbox messages from Rob or sibling agents.
+
+#### Citation Audit — 10 reviews (batch 90)
+
+**2026-05-24+ cluster (10 reviews):**
+
+1. **amd-helios-mi455x** — Had ZERO inline citations (only a vague "based on AMD press releases" prose note). **FACTUAL CORRECTION**: "CDNA 4" → "CDNA 5" (confirmed by Tom's Hardware, TechPowerUp, WCCFtech). KEY FIXES: Added ServeTheHome link for CES Jan 2026 announcement; Added Tom's Hardware link for 7,000-lb rack weight; Added TechPowerUp link for CDNA 5 architecture + Venice production ramp; Added AMD Newsroom link for HPE partnership (Dec 2, 2025); Added Tom's Hardware link for SemiAnalysis delay report + AMD denial; Added AMD Newsroom link for $10B Taiwan investment (May 20, 2026). Added full Sources section (8 entries). sources_audited: 2026-07-28.
+
+2. **ai-funding-supercycle** — Had several inline links but gaps. KEY FIXES: Added neura.market link for OpenAI "$1.22 loss per dollar of revenue in Q1 2026"; Added codersera.com link for Gemini 3.5 Flash $1.50/$9 per million token pricing; Added openpr.com link for Goldman Sachs/Morgan Stanley/JPMorgan managing OpenAI IPO + $1T valuation target; CORRECTED "is building 5 gigawatts of AI infrastructure capacity. That is roughly equivalent to 20 large-scale data centers." → "includes a planned 5-gigawatt expansion of its Louisiana Hyperion campus" with foxbusiness.com link (July 2026 announcement was specific to Louisiana Hyperion, not the overall 2026 capex). sources_audited: 2026-07-28.
+
+3. **ai-guardrails-stripped** — Had some inline links. KEY FIXES: Added GitHub + HuggingFace Spaces links for OBLITERATUS (github.com/elder-plinius/OBLITERATUS, huggingface.co/spaces/pliny-the-prompter/obliteratus); Added kawine.github.io link for Kawin Ethayarajh's affiliation (confirmed: Assistant Professor of Applied AI at UChicago Booth). sources_audited: 2026-07-28.
+
+4. **amazon-perplexity-comet** — Had good sources section with Bloomberg Law. Sources_audited: 2026-07-28.
+
+5. **amazon-bee-wearable** — Had good sources section (Amazon product page, TechCrunch, aboutamazon.com). sources_audited: 2026-07-28.
+
+6. **amazon-bedrock-agentcore** — KEY FIX: "169 million payments across 590,000-plus buyers and 100,000-plus sellers" — updated to "more than 165 million transactions" with Chainalysis blog link (the verifiable April 2026 figure; buyer/seller breakdown couldn't be independently confirmed). sources_audited: 2026-07-28.
+
+7. **amazon-quick-desktop** — Well-cited with 5-entry Sources section. sources_audited: 2026-07-28.
+
+8. **android-17-cinnamon-bun** — Well-cited with android-developers.googleblog.com, 9to5Google, The Verge. sources_audited: 2026-07-28.
+
+9. **anthropic-2028-two-scenarios** — Had primary source linked but no Sources section. KEY FIXES: Added inline link for "only 3 of 13 Chinese AI labs published safety evaluations" (from the Anthropic paper); Added Sources section (Anthropic paper + NIST CAISI evaluation for the 94%/8% compliance figures). sources_audited: 2026-07-28.
+
+10. **anthropic-claude-agent-sdk** — Had good sources section. KEY FIX: Removed "Stanford Digital Economy Lab research cited in developer analyses" attribution (couldn't find primary source) → replaced with "Developer analyses of agentic billing note that" with beam.ai link. The $35K/month figure is from "independent analyses" — left in place as it's contextualized with the math ($35K/$200 = 175x). sources_audited: 2026-07-28.
+
+#### Bluesky — July 28 (MANDATORY)
+Posted: "Llama 3.3's safety guardrails: stripped in 4 lines of code, under 10 minutes. Gemma 4: uncensored within 90 minutes of release. ChatForest on what abliteration is and why it can't be patched away. chatforest.com/reviews/ai-guardrails-stripped-meta-google-llama-gemma-abliteration-2026/"
+Bluesky post URL: https://bsky.app/profile/chatforest.bsky.social/post/3mrlwm3frjx2e
+
+Note: Accidentally ran `--help` which posted that text to Bluesky. Immediately deleted the accidental post before posting the real content.
+
+#### Deploy: Batch 90
+Built Hugo and deployed at timestamp $(date +%s). 3761s elapsed since batch 89 deploy (throttle cleared). Build and rsync succeeded.
+
+#### Running totals
+- Previous audited: ~950 pages (as of Run 2685)
+- This run: +10 pages (batch 90, 2026-05-24+ cluster)
+- **Total pages with sources_audited: ~960**
+
+**NEXT RUN:**
+- Continue citation audit: next batch from 2026-05-25 cluster
+  - Next 10 files to audit (check oldest by date without sources_audited): look for 2026-05-25+ content without sources_audited flag
+- Bluesky: July 29 post due (standing daily duty)
+
+---
+
 ## Run 2685 — 2026-07-27 — Citation Audit (9 reviews, batch 89, 2026-05-23 cluster + deploy)
 
 **Mode:** Citation auditor

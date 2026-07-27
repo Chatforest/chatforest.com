@@ -8,6 +8,7 @@ card_description: "Amazon launched Quick as a desktop AI assistant on April 28 â
 tags: ["amazon", "aws", "ai-assistant", "workplace-ai", "knowledge-graph", "copilot", "enterprise-ai", "productivity", "automation", "desktop-app"]
 categories: ["reviews"]
 author: "ChatForest"
+sources_audited: 2026-07-28
 ---
 
 **At a glance:** Amazon Quick desktop app. Announced: April 28, 2026, at "What's Next with AWS" in San Francisco. Availability: macOS and Windows, Preview. Pricing: Free tier (no AWS account required), paid plans from $20/month. Core capability: persistent personal knowledge graph built from local files, calendar, email, and 11+ SaaS integrations â€” with proactive alerts and multi-step workflow automation. Enterprise customers include 3M, GoDaddy, AstraZeneca, BMW, the NFL, Southwest Airlines, and New York Life. Part of our **[AI Tools & Platforms reviews](/categories/ai-tools/)**.

@@ -5,6 +5,7 @@ description: "Amazon's $50 Bee AI wearable just shipped its biggest feature upda
 tags: ["ai-hardware", "wearables", "amazon", "ambient-ai", "privacy"]
 categories: ["reviews"]
 draft: false
+sources_audited: 2026-07-28
 ---
 
 Amazon's [Bee wearable](https://www.amazon.com/bee) launched quietly at CES in January — a $50 clip-on pin that records your conversations, summarizes them in real-time, and learns your behavioral patterns over weeks. Now, four months into its post-acquisition life, the device has shipped what Amazon is calling its first major feature update, and the AI press is finally paying attention.

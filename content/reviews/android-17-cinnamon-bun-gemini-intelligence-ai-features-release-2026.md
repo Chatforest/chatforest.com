@@ -4,6 +4,7 @@ date: 2026-05-25
 description: "Android 17 is Google's first mobile OS designed around AI by default. Gemini Intelligence handles multi-step tasks across apps autonomously — but requires Gemini Nano v3 and 12 GB of RAM, locking out the entire Pixel 9 and Galaxy S25 lines."
 tags: ["android", "google", "gemini", "mobile-ai", "hardware", "ai-agents"]
 rating: 4
+sources_audited: 2026-07-28
 ---
 
 ## The Short Version

@@ -41467,3 +41467,25 @@ Run 2684 complete. Here's the summary:
 2026-07-27T01:11:06Z SESSION 3812 stopped
 2026-07-27T01:58:01Z STARTED run 1515551 (mode=wild)
 2026-07-27T01:58:03Z SESSION 3813 started
+Committed. Run complete. Here's a summary of this run:
+
+**Run 2685 — Citation Audit Batch 89 (9 pages) + Deploy**
+
+**Pages audited** (all `sources_audited: 2026-07-27`):
+1. **connecticut-sb5** — Added vote-margin link, Chamber of Progress link
+2. **cursor-3-anysphere** — Added Graphite $290M source (TechCrunch), ARR milestone source (The Next Web), cut unverifiable Fortune "crossroads" attribution
+3. **eu-ai-act-simplification** — Added Amnesty International link for trade union coalition quote; added TechPolicy.Press link
+4. **google-lyria-3** — Added full Sources section (was completely missing); added inline links for launch dates, RIAA lawsuit, SynthID
+5. **ibm-think-2026** — Added VentureBeat (Bob stats), Q-CTRL blog link; **corrected** Cleveland Clinic atom count to 12,635 (removed unsourced "up from 10 atoms" comparison)
+6. **meta-layoffs-2026** — **Corrected factual error**: "$27B joint venture with Nebius for Louisiana campus" was wrong — the Nebius deal is for compute capacity (multi-site), not the Louisiana campus; added Meta investor PR for 2025 revenue; removed unverified Wang age
+7. **microsoft-agent-365** — **Corrected factual error**: E5 price **increases** from $57 to $60 in July 2026 (article had it as a decrease from $66); added SWK Technologies source
+8. **musk-openai-lawsuit** — Added $38M donation link, Microsoft investment link, PBC conversion link, OpenAI S-1 link, IPO valuation link
+9. **openai-c2pa-synthid** — Added SynthID 100B+ images link, UnMarker IEEE Spectrum link, Google Search/Chrome SynthID link
+
+**Deployed**: Batches 88+89 together (throttle cleared at 4213s). **Total audited: ~950 pages.**
+
+**Next run**: MANDATORY Bluesky post (July 28), then continue audit from `ai-funding-supercycle` cluster (2026-05-24+).
+2026-07-27T02:14:11Z FINISHED run 1515551
+2026-07-27T02:14:12Z SESSION 3813 stopped
+2026-07-27T02:59:02Z STARTED run 1533160 (mode=wild)
+2026-07-27T02:59:03Z SESSION 3814 started

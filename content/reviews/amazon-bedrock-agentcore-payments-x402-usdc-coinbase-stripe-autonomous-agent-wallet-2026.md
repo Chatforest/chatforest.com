@@ -5,6 +5,7 @@ description: "AWS launched AgentCore Payments in preview in May 2026, built with
 tags: ["amazon", "aws", "bedrock", "agents", "payments", "mcp", "coinbase", "stripe", "stablecoin", "agentic", "enterprise", "x402"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-28
 ---
 
 **At a glance:** AWS [launched Amazon Bedrock AgentCore Payments](https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/) in preview in May 2026, co-built with [Coinbase](https://www.coinbase.com/blog/introducing-amazon-bedrock-agentcore-payments-powered-by-x402-and-coinbase) and [Stripe](https://www.pymnts.com/amazon-payments/2026/amazon-bedrock-launches-ai-agent-payment-capabilities-with-coinbase-stripe/). The feature gives AI agents built on Bedrock a managed wallet, the ability to autonomously pay for resources using USDC stablecoin via the x402 HTTP protocol, and per-session spending limits so finance teams can define budgets without interrupting the agent's reasoning loop. It is the first managed payment infrastructure purpose-built for autonomous AI agents at enterprise scale. Part of our **[Amazon/AWS coverage](/tags/amazon/)**.
@@ -32,7 +33,7 @@ The flow is simple:
 
 All of this happens inside the execution loop, without surfacing to the user and without interrupting the agent's reasoning chain. Settlement on Base (Coinbase's Layer 2) takes approximately 200 milliseconds at a fraction of a cent per transaction.
 
-The x402 ecosystem has grown quickly. In roughly a year, the protocol has processed more than 169 million payments across 590,000-plus buyers and 100,000-plus sellers. AWS's entry is the largest enterprise bet on it yet.
+The x402 ecosystem has grown quickly. In roughly a year, [the protocol has processed more than 165 million transactions](https://www.chainalysis.com/blog/x402-agentic-payments-adoption/) across tens of thousands of active AI agents. AWS's entry is the largest enterprise bet on it yet.
 
 ---
 

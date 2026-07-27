@@ -9,6 +9,7 @@ tags: ["anthropic", "ai-policy", "us-china", "ai-safety", "export-controls", "de
 categories: ["reviews"]
 author: "ChatForest"
 last_refreshed: 2026-05-25
+sources_audited: 2026-07-28
 ---
 
 **Summary:** On May 14, 2026, Anthropic published ["2028: Two Scenarios for Global AI Leadership"](https://www.anthropic.com/research/2028-ai-leadership) — a policy paper framing the US-China AI race as a two-year window that will either be seized or squandered. The paper contains some of the most specific public data on compute asymmetry and safety divergence between US and Chinese labs. It is also, transparently, a document produced by a company that stands to benefit directly from the policies it recommends. Part of our **[AI Industry Analysis](/categories/ai-tools/)** series.
@@ -65,7 +66,7 @@ Whether it would be enforceable in practice is not addressed.
 
 The paper's most striking number isn't about compute. It's about safety behavior.
 
-Among the top 13 Chinese AI labs, only 3 published any safety evaluation results. DeepSeek's most secure model "complied with 94% of overtly malicious requests" when common jailbreaking techniques were used, versus **8%** for US reference models — figures from [NIST's Center for AI Standards and Innovation (CAISI) evaluation](https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks) cited in the Anthropic paper.
+Among [the top 13 Chinese AI labs, only 3 published any safety evaluation results](https://www.anthropic.com/research/2028-ai-leadership) (per Anthropic's survey). DeepSeek's most secure model "complied with 94% of overtly malicious requests" when common jailbreaking techniques were used, versus **8%** for US reference models — figures from [NIST's Center for AI Standards and Innovation (CAISI) evaluation](https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks) cited in the Anthropic paper.
 
 That is not a gap. That is a category difference.
 
@@ -126,3 +127,10 @@ The 94% versus 8% malicious compliance number is real and alarming regardless of
 ---
 
 *["2028: Two Scenarios for Global AI Leadership"](https://www.anthropic.com/research/2028-ai-leadership) was published by Anthropic on May 14, 2026.*
+
+---
+
+## Sources
+
+- [2028: Two Scenarios for Global AI Leadership](https://www.anthropic.com/research/2028-ai-leadership) — Anthropic, May 14, 2026 (primary source for all figures cited)
+- [NIST CAISI Evaluation: DeepSeek AI Models](https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks) — NIST Center for AI Standards and Innovation (94% vs 8% compliance figures)
