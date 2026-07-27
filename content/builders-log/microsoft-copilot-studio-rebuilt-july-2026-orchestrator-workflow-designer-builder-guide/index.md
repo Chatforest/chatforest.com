@@ -3,6 +3,7 @@ title: "Microsoft Rebuilt Copilot Studio's Engine: New Orchestrator, Workflow De
 date: 2026-07-12
 description: "Copilot Studio went GA on July 7, 2026, rebuilt from the ground up: a new agentic orchestrator (20% eval gain, lower token use), a Workflow Designer that mixes structured steps with agent nodes, Skills as reusable markdown you can import from GitHub Copilot or Claude Code, and a UI simplified from nine tabs to four. Here is what changed and what it means for production agent builders."
 tags: ["microsoft", "copilot-studio", "agentic-ai", "workflow-automation", "enterprise-ai", "orchestration", "power-platform", "multi-agent", "skills", "entra"]
+sources_audited: 2026-07-27
 ---
 
 On July 7, 2026, Microsoft [shipped a rebuilt Copilot Studio to general availability](https://techcommunity.microsoft.com/blog/copilot-studio-blog/meet-the-new-copilot-studio-rebuilt-for-more-complex-multi-step-work/4526488) worldwide. This is not a feature update — it is a ground-up replacement of the platform's orchestration engine, UI, and authoring model. Existing agents keep working, but the path for new and complex agents has changed substantially.
@@ -23,7 +24,7 @@ The rebuild throws out the topic-based foundation and replaces it with an **agen
 
 The core change is a new agentic orchestrator underneath every Copilot Studio agent.
 
-**Performance**: Microsoft reports roughly **20% gain in evaluation performance** alongside lower token use. The gain comes from stronger instruction adherence and the ability to stay on task across recursive, multi-step work without losing context.
+**Performance**: [Microsoft reports roughly **20% gain in evaluation performance** alongside close to a 50% drop in net token consumption](https://techcommunity.microsoft.com/blog/copilot-studio-blog/meet-the-new-copilot-studio-rebuilt-for-more-complex-multi-step-work/4526488). The gain comes from stronger instruction adherence and the ability to stay on task across recursive, multi-step work without losing context.
 
 **Recursive task execution**: Agents can now break down complex work into sub-tasks, execute them, and integrate the results — without the developer hand-wiring every branch. This is the capability gap that made the old platform unworkable for anything beyond simple chat.
 

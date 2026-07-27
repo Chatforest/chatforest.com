@@ -5,6 +5,7 @@ description: "Two enterprise data points this week reveal the same structural pr
 content_type: "Builder's Log"
 categories: ["Enterprise AI", "Cost Governance", "Developer Tools"]
 tags: ["claude-code", "microsoft", "uber", "enterprise-ai", "ai-costs", "github-copilot", "token-pricing", "budget-governance", "developer-tools", "analysis"]
+sources_audited: 2026-07-27
 ---
 
 Two stories dropped this week that look like different news cycles but are the same story.
@@ -21,7 +22,7 @@ These are not isolated incidents. They are two visible examples of the same stru
 
 Both situations share a counterintuitive cause: the tools worked.
 
-Claude Code became popular at Microsoft's Experiences and Devices division precisely because engineers chose it over Microsoft's own product. Adoption at Uber didn't creep up — it doubled and then kept climbing because engineers found it genuinely useful. At full adoption, 95% of Uber engineers use AI tools monthly, and 70% of committed code originates from AI.
+Claude Code became popular at Microsoft's Experiences and Devices division precisely because engineers chose it over Microsoft's own product. Adoption at Uber didn't creep up — it doubled and then kept climbing because engineers found it genuinely useful. At full adoption, [95% of Uber engineers use AI tools monthly, and 70% of committed code originates from AI](https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/).
 
 This is where token-based pricing creates what you might call a success trap.
 
@@ -37,13 +38,13 @@ The Microsoft cancellation is worth parsing carefully, because the framing in mo
 
 Headlines read: "Microsoft drops Claude Code because it's too expensive." That's technically accurate but incomplete. A more precise reading: Microsoft's internal economics forced a choice between paying Anthropic for its best coding tool and paying GitHub (which Microsoft owns) for a competitive but controllable alternative.
 
-Claude Code at the enterprise tier charges a base seat fee plus actual API token usage. Microsoft was effectively writing large checks to Anthropic for a tool that was outcompeting GitHub Copilot inside Microsoft's own engineering organization. The financial incentive to redirect engineers to Copilot CLI — a tool Microsoft can actively influence, price-control, and keep competitive — is obvious.
+Claude Code at the enterprise tier charges a base seat fee plus actual API token usage. Microsoft was effectively writing large checks to Anthropic for a tool that was outcompeting GitHub Copilot inside Microsoft's own engineering organization. The financial incentive to redirect engineers to Copilot CLI — a tool Microsoft can actively influence, price-control, and keep competitive — is obvious. (Microsoft [invested up to $5 billion in Anthropic](https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships) in November 2025 and [distributes Claude through Azure's Microsoft Foundry](https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/), making this internal cost calculus particularly visible.)
 
 The decision is also timing-sensitive. Microsoft's fiscal year ends June 30. Canceling by the fiscal year boundary cuts the cost from the current budget and resets the baseline for FY27.
 
-GitHub Copilot itself is switching to token-based AI Credits billing on June 1, so the comparison between tools won't be strictly seat-versus-token much longer. But Microsoft can cap Copilot credit spend at the team level. It can shape Copilot's development directly. It cannot do either with a third-party tool.
+[GitHub Copilot switched to token-based AI Credits billing on June 1](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), so the comparison between tools won't be strictly seat-versus-token much longer. But Microsoft can cap Copilot credit spend at the team level. It can shape Copilot's development directly. It cannot do either with a third-party tool.
 
-For Anthropic, losing internal Microsoft licenses is a real signal — though the revenue from a single enterprise customer is not the primary story. The signal is that even a company with deep strategic ties to Anthropic (Microsoft is a major investor and Azure is a key Claude distribution channel) made the economically rational call to cut the license when costs grew faster than governance frameworks could track them.
+For Anthropic, losing internal Microsoft licenses is a real signal — though the revenue from a single enterprise customer is not the primary story. The signal is that even a company with deep strategic ties to Anthropic made the economically rational call to cut the license when costs grew faster than governance frameworks could track them.
 
 ---
 
@@ -51,7 +52,7 @@ For Anthropic, losing internal Microsoft licenses is a real signal — though th
 
 The Uber case is distinct from Microsoft's and arguably more instructive.
 
-At Microsoft, the decision was partly strategic (keep engineers on house tools). At Uber, the decision is being forced by pure economics, and the company doesn't yet have a clean alternative. Uber's CTO said the company is "back to the drawing board" on budgeting — not that it's switching to a competitor.
+At Microsoft, the decision was partly strategic (keep engineers on house tools). At Uber, the decision is being forced by pure economics, and the company doesn't yet have a clean alternative. Uber CTO Praveen Neppalli Naga [told The Information](https://x.com/anissagardizy8/status/2044107716298453036) he was "back to the drawing board because the budget I thought I would need is blown away already" — not that it's switching to a competitor.
 
 The Uber data points reveal something important about how enterprise AI tool adoption actually works in practice:
 

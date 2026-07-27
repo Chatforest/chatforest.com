@@ -142,7 +142,7 @@
 <h2 id="august-26-assistants-api-shuts-down">August 26: Assistants API Shuts Down</h2>
 <p>This is the one that matters most for the widest pool of builders.</p>
 <p><strong>What it is:</strong> The Assistants API — OpenAI&rsquo;s stateful agent framework launched November 2023 — is being fully removed on August 26, 2026. After that date, all requests to <code>/v1/assistants</code>, <code>/v1/threads</code>, <code>/v1/messages</code>, <code>/v1/runs</code>, and <code>/v1/vector_stores</code> will fail. This is not a soft deprecation. The endpoints stop responding.</p>
-<p>OpenAI announced this on August 26, 2025 — one year in advance. That year is almost up.</p>
+<p><a href="https://developers.openai.com/api/docs/deprecations">OpenAI announced this on August 26, 2025</a> — one year in advance. That year is almost up.</p>
 <p><strong>Who it affects:</strong> Anyone who used the Assistants API to build:</p>
 <ul>
 <li>Chatbots with persistent memory across sessions</li>
@@ -150,7 +150,7 @@
 <li>Multi-step agent loops using Runs</li>
 <li>Any application that references Thread IDs or Assistant IDs</li>
 </ul>
-<p>The impact extends beyond direct API users. Zapier has already deprecated all ChatGPT steps that use the Assistants API; those Zaps stop working August 26.</p>
+<p>The impact extends beyond direct API users. <a href="https://help.zapier.com/hc/en-us/articles/44865998484365">Zapier has already deprecated all ChatGPT steps that use the Assistants API</a>; those Zaps stop working August 26.</p>
 <p><strong>The replacement:</strong> The official path is the <strong>Responses API + Conversations API</strong>. This is not a simple endpoint swap. The entire object model changed:</p>
 <table>
 <thead>
@@ -189,7 +189,7 @@
 <li>File retrieval uses a new file search structure</li>
 <li>Vector stores from the Assistants API do not automatically migrate</li>
 </ul>
-<p>OpenAI provides an official Assistants to Conversations migration guide at <code>developers.openai.com/api/docs/assistants/migration</code>. Read it before starting.</p>
+<p>OpenAI provides an <a href="https://developers.openai.com/api/docs/guides/migrate-to-responses">official Assistants to Conversations migration guide</a>. Read it before starting.</p>
 <p><strong>The upside:</strong> The Responses API is faster, supports newer features (MCP integration, computer use, deep research), and has a better cost model. Moving to it is an investment, not just a port.</p>
 <p><strong>Action required:</strong> Start migration now. Ninety days is not much time if you have a complex Assistants-based product. Inventory all Thread IDs and Assistant IDs your application generates. Plan for state migration — Threads do not export cleanly.</p>
 <hr>
@@ -202,7 +202,7 @@
 <li><code>sora-2-2025-12-08</code></li>
 <li><code>sora-2-pro-2025-10-06</code></li>
 </ul>
-<p>The Sora web and app experiences were already discontinued April 26, 2026. The API follows September 24.</p>
+<p>The Sora web and app experiences were discontinued earlier in 2026. The API follows September 24.</p>
 <p><strong>Who it affects:</strong> Builders who integrated video generation into their products using OpenAI&rsquo;s Sora API. This was a real API — companies built creative tools, marketing platforms, and content pipelines on it.</p>
 <p><strong>The replacement:</strong> There is no officially announced OpenAI replacement for the Videos API. OpenAI has not announced Sora 3 or any successor video generation API.</p>
 <p>Builders need to evaluate third-party alternatives:</p>

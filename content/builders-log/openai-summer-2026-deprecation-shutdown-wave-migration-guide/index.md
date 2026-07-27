@@ -6,6 +6,7 @@ og_description: "OpenAI is shutting down six API endpoints between June and Octo
 content_type: "Builder's Log"
 categories: ["OpenAI", "API Migration", "Developer Tools"]
 tags: ["openai", "api", "deprecation", "assistants-api", "sora", "computer-use", "migration", "gpt-4-5", "responses-api"]
+sources_audited: 2026-07-27
 ---
 
 OpenAI has stacked six deprecations in a five-month window. Some are minor — a model alias swap. Others require full architectural rewrites. One has no announced replacement at all. The deadline pressure is real: [Assistants API dies August 26](https://developers.openai.com/api/docs/deprecations), and if your product is built on it, that is less than ninety days from today. ([OpenAI community announcement](https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666))
@@ -75,7 +76,7 @@ This is the one that matters most for the widest pool of builders.
 
 **What it is:** The Assistants API — OpenAI's stateful agent framework launched November 2023 — is being fully removed on August 26, 2026. After that date, all requests to `/v1/assistants`, `/v1/threads`, `/v1/messages`, `/v1/runs`, and `/v1/vector_stores` will fail. This is not a soft deprecation. The endpoints stop responding.
 
-OpenAI announced this on August 26, 2025 — one year in advance. That year is almost up.
+[OpenAI announced this on August 26, 2025](https://developers.openai.com/api/docs/deprecations) — one year in advance. That year is almost up.
 
 **Who it affects:** Anyone who used the Assistants API to build:
 - Chatbots with persistent memory across sessions
@@ -83,7 +84,7 @@ OpenAI announced this on August 26, 2025 — one year in advance. That year is a
 - Multi-step agent loops using Runs
 - Any application that references Thread IDs or Assistant IDs
 
-The impact extends beyond direct API users. Zapier has already deprecated all ChatGPT steps that use the Assistants API; those Zaps stop working August 26.
+The impact extends beyond direct API users. [Zapier has already deprecated all ChatGPT steps that use the Assistants API](https://help.zapier.com/hc/en-us/articles/44865998484365); those Zaps stop working August 26.
 
 **The replacement:** The official path is the **Responses API + Conversations API**. This is not a simple endpoint swap. The entire object model changed:
 
@@ -101,7 +102,7 @@ What this means in practice:
 - File retrieval uses a new file search structure
 - Vector stores from the Assistants API do not automatically migrate
 
-OpenAI provides an official Assistants to Conversations migration guide at `developers.openai.com/api/docs/assistants/migration`. Read it before starting.
+OpenAI provides an [official Assistants to Conversations migration guide](https://developers.openai.com/api/docs/guides/migrate-to-responses). Read it before starting.
 
 **The upside:** The Responses API is faster, supports newer features (MCP integration, computer use, deep research), and has a better cost model. Moving to it is an investment, not just a port.
 
@@ -118,7 +119,7 @@ OpenAI provides an official Assistants to Conversations migration guide at `deve
 - `sora-2-2025-12-08`
 - `sora-2-pro-2025-10-06`
 
-The Sora web and app experiences were already discontinued April 26, 2026. The API follows September 24.
+The Sora web and app experiences were discontinued earlier in 2026. The API follows September 24.
 
 **Who it affects:** Builders who integrated video generation into their products using OpenAI's Sora API. This was a real API — companies built creative tools, marketing platforms, and content pipelines on it.
 

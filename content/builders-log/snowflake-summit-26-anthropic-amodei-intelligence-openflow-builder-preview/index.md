@@ -6,6 +6,7 @@ og_description: "Snowflake Summit 26 opens tomorrow. Anthropic President Daniela
 content_type: "Builder's Log"
 categories: ["AI Industry", "Enterprise AI", "Developer Tools"]
 tags: ["snowflake", "summit", "anthropic", "daniela-amodei", "openflow", "adaptive-compute", "cortex-aisql", "snowflake-intelligence", "enterprise-ai", "data-cloud", "mcp"]
+sources_audited: 2026-07-27
 ---
 
 [Snowflake Summit 26](https://www.snowflake.com/en/news/press-releases/snowflake-makes-ai-real-at-snowflake-summit-26-featuring-anthropics-daniela-amodei-and-other-industry-leaders/) opens June 1 in San Francisco. Twenty thousand people are expected in person. Anthropic President Daniela Amodei headlines the opening keynote alongside Snowflake CEO Sridhar Ramaswamy. The platform keynote the next morning is where product announcements land.
@@ -36,7 +37,7 @@ The opening keynote on June 1 at 5:00 p.m. PDT will be worth following even if y
 
 Openflow is Snowflake's managed data integration service, built on Apache NiFi with a BYOC (Bring Your Own Cloud) data plane you deploy in your own VPC. It replaces the external ETL vendor for many use cases.
 
-The drag-and-drop canvas connects to virtually any source — databases, file shares, APIs, Kafka topics, Google Drive, SharePoint, cloud storage — and routes data directly into Snowflake tables or stages. The Oracle connector reached general availability in February 2026. More connectors are expected at Summit.
+The drag-and-drop canvas connects to virtually any source — databases, file shares, APIs, Kafka topics, Google Drive, SharePoint, cloud storage — and routes data directly into Snowflake tables or stages. [The Oracle connector reached general availability in February 2026](https://docs.snowflake.com/en/release-notes/2026/other/2026-02-27-openflow-oracle-ga). More connectors are expected at Summit.
 
 **Why this matters for builders**: AI agents are only as good as their data freshness. Most enterprise agents fail in production not because the model is wrong but because the data feeding the model is stale, missing, or inconsistently formatted. Openflow removes the separate data engineering contract from that problem. If you are building agents that answer questions about enterprise data, you now have a native ingestion path rather than a patchwork of external pipeline tools.
 
@@ -44,7 +45,7 @@ The BYOC architecture also matters for enterprise sales. Proprietary data stays 
 
 ### Adaptive Compute: Warehouses That Size Themselves
 
-Adaptive Compute is Snowflake's new warehouse type, currently in public preview as of April 2026 in US West 2, EU West 1, and AP Northeast 1. It is expected to reach wider availability at Summit.
+Adaptive Compute is Snowflake's new warehouse type, [currently in public preview as of April 2026 in US West 2, EU West 1, and AP Northeast 1](https://www.snowflake.com/en/news/press-releases/snowflake-unveils-next-wave-of-compute-innovations-for-faster-more-efficient-warehouses-and-ai-driven-data-governance/). It is expected to reach wider availability at Summit.
 
 The core change: instead of selecting a warehouse size (XS, S, M, L, XL) and managing cluster scaling manually, Adaptive Compute routes all queries to a shared pool of account-dedicated compute and sizes each query dynamically based on its plan. Small queries get small allocations. Large queries get larger ones. The system caps at a configurable MAX_QUERY_PERFORMANCE_LEVEL, which lets you control worst-case cost while maintaining automatic optimization.
 
@@ -56,7 +57,7 @@ If you are building Snowflake-native agents that query on behalf of users at var
 
 Cortex AISQL embeds generative AI directly into the Snowflake SQL engine. You call AI functions — sentiment analysis, entity extraction, text summarization, classification — in SQL, and the functions execute inside Snowflake on your data without exporting it to an external API.
 
-Cortex AI Functions reached general availability in November 2025. Cortex AISQL is the branded evolution: AI operators that behave like native SQL expressions with performance optimization built in. Snowflake claims up to 60% cost savings on filter and join operations compared to calling external AI APIs for the same operations.
+[Cortex AI Functions reached general availability in November 2025](https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-aisql-operators-ga). Cortex AISQL is the branded evolution: AI operators that behave like native SQL expressions with performance optimization built in. [Snowflake claims up to 60% cost savings on filter and join operations](https://www.snowflake.com/en/news/press-releases/snowflake-introduces-cortex-aisql-and-snowconvert-ai-analytics-rebuilt-for-the-ai-era/) compared to calling external AI APIs for the same operations.
 
 The OpenAI $200 million partnership extends this — GPT models are now available inside Cortex AI Functions alongside Claude. Developers can call different models from SQL depending on the task, without leaving the Snowflake governance boundary.
 
@@ -85,7 +86,7 @@ Snowflake is entering Summit carrying four major relationships that collectively
 
 **Anthropic** — Claude as the reasoning layer inside Intelligence and Cortex Code. Daniela Amodei keynoting signals Anthropic as the preferred AI partner even as OpenAI joins.
 
-**OpenAI** — $200 million, multi-year, GPT models natively in Cortex AI Functions and Snowflake Intelligence alongside Claude. Snowflake becomes multi-model. Enterprise customers can choose the model; Snowflake provides the governance.
+**OpenAI** — [$200 million, multi-year partnership announced February 2, 2026](https://www.snowflake.com/en/news/press-releases/snowflake-and-openAI-forge-200-million-partnership-to-bring-enterprise-ready-ai-to-the-worlds-most-trusted-data-platform/), GPT models natively in Cortex AI Functions and Snowflake Intelligence alongside Claude. Snowflake becomes multi-model. Enterprise customers can choose the model; Snowflake provides the governance.
 
 **AWS** — $6 billion, Graviton compute for agentic orchestration workloads. The infrastructure layer that makes running AI agents at enterprise scale economically viable.
 

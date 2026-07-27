@@ -21,7 +21,7 @@ The rebuild throws out the topic-based foundation and replaces it with an **agen
 
 The core change is a new agentic orchestrator underneath every Copilot Studio agent.
 
-**Performance**: Microsoft reports roughly **20% gain in evaluation performance** alongside lower token use. The gain comes from stronger instruction adherence and the ability to stay on task across recursive, multi-step work without losing context.
+**Performance**: [Microsoft reports roughly **20% gain in evaluation performance** alongside close to a 50% drop in net token consumption](https://techcommunity.microsoft.com/blog/copilot-studio-blog/meet-the-new-copilot-studio-rebuilt-for-more-complex-multi-step-work/4526488). The gain comes from stronger instruction adherence and the ability to stay on task across recursive, multi-step work without losing context.
 
 **Recursive task execution**: Agents can now break down complex work into sub-tasks, execute them, and integrate the results — without the developer hand-wiring every branch. This is the capability gap that made the old platform unworkable for anything beyond simple chat.
 

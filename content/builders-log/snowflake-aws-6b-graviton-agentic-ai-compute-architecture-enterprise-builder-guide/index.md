@@ -4,9 +4,10 @@ date: 2026-05-31
 description: "Snowflake's five-year, $6 billion AWS deal targets Graviton ARM CPUs — not GPUs. The reason reveals something most enterprise builders have wrong about where agent costs actually live."
 tags: ["snowflake", "enterprise-ai", "agentic-ai", "aws", "infrastructure", "compute", "builders-guide"]
 slug: "snowflake-aws-6b-graviton-agentic-ai-compute-architecture-enterprise-builder-guide"
+sources_audited: 2026-07-27
 ---
 
-On May 27, 2026, Snowflake announced a five-year, $6 billion commitment to AWS. The same day, its stock rose 36% — its best single day ever, on top of an earnings beat driven by accelerating enterprise AI demand.
+On May 27, 2026, [Snowflake announced a five-year, $6 billion commitment to AWS](https://www.snowflake.com/en/news/press-releases/snowflake-expands-aws-collaboration-with-6b-commitment-to-accelerate-enterprise-agentic-ai-adoption/). [The same day, its stock rose 36% — its best single day ever](https://www.cnbc.com/2026/05/28/snowflake-snow-software-stock-rally.html), on top of an earnings beat driven by accelerating enterprise AI demand.
 
 The number got the headline. The actual content of the deal didn't.
 
@@ -33,7 +34,7 @@ Here is what an agent does in production, at the compute level:
 
 Steps 3, 4, and variations of step 1 dominate wall-clock time in real agent workloads. They are CPU operations.
 
-The ratio tells the story. In the chatbot era — where users prompt an LLM and receive a response — the compute ratio was roughly 1 CPU unit for every 4–8 GPU units. As AI shifts to agentic workloads, that ratio inverts. Some analyses put it at 1:1. AMD's infrastructure team put it even higher on the CPU side in their May 2026 published estimates.
+The ratio tells the story. In the chatbot era — where users prompt an LLM and receive a response — the compute ratio was roughly 1 CPU unit for every 4–8 GPU units. As AI shifts to agentic workloads, that ratio inverts. Some analyses put it at 1:1. [AMD's infrastructure team put it even higher on the CPU side in their May 2026 published estimates](https://www.amd.com/en/blogs/2026/agentic-ai-changes-the-cpu-gpu-equation.html).
 
 The model still runs on a GPU. But the model is a small slice of the total agent workload.
 
@@ -41,7 +42,7 @@ The model still runs on a GPU. But the model is a small slice of the total agent
 
 ## Why Graviton Specifically
 
-Amazon's Graviton 4 processors are ARM-based (Neoverse V3 architecture): 192 cores per socket, 12-channel memory at 8800 MT/s. Compared to x86 alternatives, Graviton delivers approximately 30% better power efficiency and 20–30% better memory efficiency.
+Amazon's [Graviton 4 processors](https://aws.amazon.com/ec2/graviton/) are ARM-based (Neoverse V3 architecture), with 12-channel DDR5 memory and significantly higher memory bandwidth than Graviton 3. Compared to x86 alternatives, Graviton delivers meaningfully better power efficiency for CPU-dense workloads at lower per-hour cost.
 
 For agent orchestration workloads — which are highly parallelizable, relatively memory-bandwidth-bound, and don't require the floating-point density of model training — ARM is a better fit than x86. Graviton is cheaper per CPU-hour than equivalent x86 cloud instances. At $6 billion over five years, the efficiency delta compounds.
 
@@ -90,7 +91,7 @@ This is not a new idea. What is new is that Snowflake has the compute infrastruc
 
 All of these products are being showcased at Snowflake Summit 26 (June 1–4, San Francisco), which also features a keynote conversation between Snowflake CEO Sridhar Ramaswamy and Anthropic Co-Founder and President **[Daniela Amodei](https://www.anthropic.com/)** on Monday at 5:00 p.m. PDT.
 
-Snowflake and Anthropic also have a standing $200 million partnership for enterprise AI on Cortex — which means whatever gets announced Monday is likely built on the $6B infrastructure announced three days earlier.
+Snowflake and Anthropic also have a [standing $200 million partnership for enterprise AI on Cortex](https://www.snowflake.com/en/news/press-releases/snowflake-and-anthropic-announce-200-million-partnership-to-bring-agentic-ai-to-global-enterprises/) — which means whatever gets announced Monday is likely built on the $6B infrastructure announced three days earlier.
 
 ---
 

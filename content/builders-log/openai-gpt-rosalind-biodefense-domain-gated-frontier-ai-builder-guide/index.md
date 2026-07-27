@@ -4,9 +4,10 @@ date: 2026-05-31
 description: "GPT-Rosalind is OpenAI's first purpose-built domain-specific frontier model — and the Rosalind Biodefense program is the first application-gated access tier for any major AI provider. Here's why builders in regulated industries need to understand this architecture now."
 slug: openai-gpt-rosalind-biodefense-domain-gated-frontier-ai-builder-guide
 tags: ["openai", "biotech", "regulated-ai", "enterprise", "access-architecture", "life-sciences"]
+sources_audited: 2026-07-27
 ---
 
-On May 29, OpenAI announced the Rosalind Biodefense program — a structured initiative giving vetted institutions sponsored access to GPT-Rosalind, OpenAI's frontier model for life sciences. Named partners include Lawrence Livermore National Laboratory, Johns Hopkins Applied Physics Laboratory, the Coalition for Epidemic Preparedness Innovations (CEPI), and Los Alamos and Sandia National Laboratories.
+On May 29, [OpenAI announced the Rosalind Biodefense program](https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/) — a structured initiative giving vetted institutions sponsored access to GPT-Rosalind, OpenAI's frontier model for life sciences. Named partners include Lawrence Livermore National Laboratory, Johns Hopkins Applied Physics Laboratory, the Coalition for Epidemic Preparedness Innovations (CEPI), and Fourth Eon Biosecurity.
 
 The stated mission is pandemic preparedness: biosurveillance, outbreak-response planning, diagnostics, epidemiological modeling, and medical countermeasure development.
 
@@ -14,7 +15,7 @@ That is a genuinely important use of AI. But the more significant development fo
 
 ## What GPT-Rosalind Actually Is
 
-GPT-Rosalind is not a general-purpose frontier model with a biodefense prompt wrapper. It is a domain-specific reasoning model introduced in April 2026 for drug discovery, genomics, and protein reasoning — a separate model line purpose-built for life sciences.
+GPT-Rosalind is not a general-purpose frontier model with a biodefense prompt wrapper. It is [a domain-specific reasoning model introduced in April 2026](https://openai.com/index/introducing-gpt-rosalind/) for drug discovery, genomics, and protein reasoning — a separate model line purpose-built for life sciences.
 
 General-purpose frontier models (GPT-5, Gemini 3.5 Pro, Claude Opus 4.8) are trained to be excellent across all domains. GPT-Rosalind is trained to be excellent in one domain, with specialized capabilities and benchmarks that reflect that.
 

@@ -4,6 +4,7 @@ date: 2026-05-31
 description: "Qwen 3.7 Max launched May 20, 2026 with a 1M-token context window, native extended thinking, SWE-Pro and Terminal-Bench scores above Claude Opus 4.6, and a drop-in Anthropic-compatible API — at $2.50 per million tokens. The caveats matter too. Here is the full picture for builders."
 tags: ["qwen", "alibaba", "model-comparison", "agents", "api", "pricing", "extended-thinking", "agentic-coding"]
 draft: false
+sources_audited: 2026-07-27
 ---
 
 On May 20, 2026, Alibaba [launched Qwen 3.7 Max](https://www.alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154) at the Alibaba Cloud Summit — though the commercial API was already live on DashScope one day earlier. The headline: on [the benchmarks that matter most for agent workloads](https://www.marktechpost.com/2026/05/21/qwen-introduces-qwen3-7-max-a-reasoning-agent-model-with-a-1m-token-context-window/), it outscores Claude Opus 4.6. It also supports the Anthropic API protocol natively, meaning builders using Anthropic-compatible harnesses can swap it in without rewriting client code.
@@ -30,34 +31,34 @@ The `preserve_thinking` flag is notable for multi-turn agent workloads — it al
 
 ## The Benchmark Picture
 
-Benchmark claims require skepticism. These are the numbers researchers and leaderboards currently report:
+Benchmark claims require skepticism. These are the numbers [researchers and leaderboards currently report](https://benchlm.ai/models/qwen3-7-max):
 
 | Benchmark | Qwen 3.7 Max | Claude Opus 4.6 | DeepSeek V4 Pro |
 |-----------|-------------|----------------|-----------------|
-| SWE-Pro | 60.6 | 57.3 | ~56 |
+| SWE-Pro | 60.6 | 53.4 | ~56 |
 | Terminal-Bench 2.0 | 69.7 | — | 67.9 |
 | GPQA Diamond | 92.4 | — | — |
 | MCP-Mark | 60.8 | — | — |
-| MCP-Atlas | 76.4 | 75.8 | — |
+| MCP-Atlas | 76.4 | — | — |
 | AI Analysis Intelligence Index | 56.6 (#5) | — | — |
 
-SWE-Pro measures real software engineering task completion on a harder version of SWE-bench. A score of 60.6 versus 57.3 is a meaningful gap on a task that requires maintaining state across long code sessions, running tests, and fixing failures iteratively. This is not a reasoning or trivia benchmark — it is closer to what agent builders actually run.
+SWE-Pro measures real software engineering task completion on a harder version of SWE-bench. A score of 60.6 versus 53.4 is a meaningful gap on a task that requires maintaining state across long code sessions, running tests, and fixing failures iteratively. This is not a reasoning or trivia benchmark — it is closer to what agent builders actually run.
 
 Terminal-Bench 2.0 (specifically the Terminus variant) measures long-horizon terminal task completion. At 69.7%, Qwen 3.7 Max leads the open leaderboard. This benchmark is relevant if you are building agents that interact with file systems, shell environments, or CI/CD pipelines.
 
-MCP-Atlas measures tool-call accuracy across a suite of MCP server integrations. At 76.4 versus Claude Opus 4.6's 75.8, the gap is marginal — but the fact that Alibaba invested in MCP-specific benchmarking suggests the tool-use architecture is not an afterthought.
+MCP-Atlas measures tool-call accuracy across a suite of MCP server integrations. Qwen 3.7 Max scores 76.4 — the fact that Alibaba invested in MCP-specific benchmarking suggests the tool-use architecture is not an afterthought.
 
 **What the benchmarks do not tell you**: latency at scale, reliability under production load, quality of refusals and safety behaviors, and how the model handles your specific workload. Run evals on your task before committing.
 
 ## The Pricing Calculus
 
-Qwen 3.7 Max costs $2.50 per million input tokens and $7.50 per million output tokens on DashScope. Prompt caching drops the effective input cost by 90% on repeated context prefixes: $0.25/M on cache reads.
+Qwen 3.7 Max [lists at $2.50 per million input tokens and $7.50 per million output tokens](https://www.alibabacloud.com/help/en/model-studio/billing-for-model-studio) on DashScope (a 50% promotional discount was active at launch, bringing effective rates to $1.25/$3.75). Prompt caching drops the effective input cost by 90% on repeated context prefixes: $0.25/M on cache reads.
 
 For comparison:
 - Claude Opus 4.6 (Anthropic): $15/$75 per million tokens — 6x more expensive on input, 10x more on output
-- DeepSeek V4 Pro: $0.40/$1.20 per million tokens — 6x cheaper than Qwen 3.7 Max
+- [DeepSeek V4 Pro](https://api-docs.deepseek.com/quick_start/pricing): $0.435/$0.87 per million tokens — approximately 6x cheaper than Qwen 3.7 Max on input, 9x cheaper on output
 
-The Qwen 3.7 Max price point is not "cheap." At $2.50/M input and $7.50/M output, an agent running 100K input tokens and 20K output tokens per cycle will spend $0.40 per cycle. A workflow running 1,000 such cycles costs $400. At Opus 4.6 prices, the same workflow would cost roughly $2,400.
+The Qwen 3.7 Max price point is not "cheap." At list prices of $2.50/M input and $7.50/M output, an agent running 100K input tokens and 20K output tokens per cycle will spend $0.40 per cycle. A workflow running 1,000 such cycles costs $400. At Opus 4.6 prices, the same workflow would cost roughly $2,400.
 
 For agent workloads requiring long-horizon execution — multi-hour autonomous sessions, large context maintenance, heavy tool use — the cost difference matters. For shorter, narrower tasks, DeepSeek V4 Pro delivers competitive quality at a fraction of the cost of either.
 

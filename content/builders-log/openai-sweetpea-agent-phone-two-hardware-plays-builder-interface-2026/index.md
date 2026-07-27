@@ -5,9 +5,10 @@ description: "OpenAI is pursuing two distinct hardware bets: a screenless wearab
 content_type: "Builder's Log"
 categories: ["OpenAI", "Developer Tools", "AI Hardware"]
 tags: ["openai", "hardware", "sweetpea", "jony-ive", "ai-device", "agent-phone", "interface", "builder-guide", "ai-first", "wearable"]
+sources_audited: 2026-07-27
 ---
 
-OpenAI has been publicly quiet about what its hardware products actually are. The company [confirmed a device reveal for H2 2026](https://techcrunch.com/2026/01/21/openai-aims-to-ship-its-first-device-in-2026-and-it-could-be-earbuds/) and acquired Jony Ive's io startup for roughly $6.5 billion in May 2025. Beyond that, details have leaked primarily through supply chain analysis and court filings rather than official announcements.
+OpenAI has been publicly quiet about what its hardware products actually are. The company [confirmed a device reveal for H2 2026](https://techcrunch.com/2026/01/21/openai-aims-to-ship-its-first-device-in-2026-and-it-could-be-earbuds/) and [acquired Jony Ive's io startup for roughly $6.5 billion in May 2025](https://www.bloomberg.com/news/articles/2025-05-21/openai-to-buy-apple-veteran-jony-ive-s-ai-device-startup-in-6-5-billion-deal). Beyond that, details have leaked primarily through supply chain analysis and court filings rather than official announcements.
 
 What those sources now make clear is that OpenAI is not building one hardware product — it is building two, on different timelines, with different form factors, different manufacturing partners, and different assumptions about what the user interface of AI-native hardware should be. Understanding the distinction matters for builders, because both products point at the same underlying shift in how applications will be expected to work.
 
@@ -19,9 +20,9 @@ This is the device most reporting has focused on. It is the product being design
 
 The form factor is behind-the-ear or earbud-adjacent — a wearable, not a phone replacement. It is screenless and voice-first, with built-in cameras and microphones that give it contextual awareness of the user's environment. No display. No app grid. The interface is entirely spoken interaction with an AI that is aware of what is happening around you.
 
-The target first-year production volume is 40 to 50 million units. Manufacturing was initially assigned to Luxshare Precision Industry, the same contract manufacturer used for Apple AirPods, but reports now indicate production is shifting to Foxconn with assembly in the United States or Vietnam — a supply chain restructuring that reads as much as political positioning as manufacturing logistics.
+The [target first-year production volume is 40 to 50 million units](https://wccftech.com/openai-says-its-first-consumer-ai-device-rumored-to-be-sweetpea-earbuds-launching-in-h2-2026-expects-to-sell-up-to-50-million-units-in-the-first-year/). [Manufacturing was initially assigned to Luxshare Precision Industry, but has shifted to Foxconn with assembly in the United States or Vietnam](https://www.trendforce.com/news/2026/01/02/news-openai-reportedly-shifts-first-ai-hardware-order-from-chinas-luxshare-to-foxconn/) — a supply chain restructuring that reads as much as political positioning as manufacturing logistics.
 
-One detail: due to a trademark dispute with hearing aid startup iYo, the product will not be called "io" despite being developed by the company OpenAI acquired under that name.
+One detail: due to [a trademark dispute with hearing aid startup iyO](https://9to5mac.com/2026/04/24/court-sides-with-iyo-in-trademark-fight-against-openai-and-jony-ive/), the product will not be called "io" despite being developed by the company OpenAI acquired under that name.
 
 The design philosophy behind Sweetpea is "calm computing" — explicitly framed as a response to smartphone screen addiction. The pitch is that AI can give you more capability through a less intrusive interface, rather than requiring your full attention on a screen. This is the Jony Ive argument: that the most sophisticated technology recedes into the background.
 
@@ -33,11 +34,11 @@ The phone retains a screen. What it eliminates is the app grid.
 
 Instead of discrete apps (Mail, Maps, Calendar, Messages), the phone's interface is an AI-agent task stream. The user states an intent, and agents handle execution across whatever underlying services are required. A user doesn't open an app to book a dinner reservation — they say they want to make one, and agents handle the calendar check, the restaurant lookup, the reservation API, and the confirmation message. The app layer becomes invisible infrastructure rather than the primary user interface.
 
-The technical architecture underlying this involves on-device processing of lighter tasks — context awareness, memory management, smaller models — with complex inference offloaded to the cloud. The device maintains what Kuo calls "full real-time state": continuous capture of the user's location, activity, communications, and environment to feed the agents' context. This is always-on AI with persistent memory, not session-based assistant interactions.
+The technical architecture underlying this involves on-device processing of lighter tasks — context awareness, memory management, smaller models — with complex inference offloaded to the cloud. The device maintains what Kuo calls ["full real-time state"](https://thenextweb.com/news/openai-qualcomm-ai-phone-agents-replace-apps): continuous capture of the user's location, activity, communications, and environment to feed the agents' context. This is always-on AI with persistent memory, not session-based assistant interactions.
 
-Chips are being co-designed with Qualcomm and MediaTek. Specifications finalization is expected late 2026 or Q1 2027. Mass production was originally slated for 2028 but has been revised to potentially start in H1 2027, likely connected to OpenAI's IPO planning and competitive pressure from other AI hardware entrants.
+Chips are being co-designed with Qualcomm and MediaTek (Kuo's May 2026 update suggests MediaTek is better positioned to become the sole processor supplier). Specifications finalization is expected late 2026 or Q1 2027. [Mass production was originally slated for 2028 but has been revised to potentially start in H1 2027](https://www.macrumors.com/2026/05/05/openai-fast-tracking-ai-phone-2027/), likely connected to OpenAI's IPO planning and competitive pressure from other AI hardware entrants.
 
-Market projections: 300 to 400 million annual shipments if successful. That would exceed current iPhone volumes. These are analyst projections, not OpenAI commitments, but the scale signals that OpenAI is not thinking about this as a niche product.
+Market projections: Kuo's analysis [projects 300 to 400 million annual shipments at mature scale](https://thenextweb.com/news/openai-qualcomm-ai-phone-agents-replace-apps) — that would exceed current iPhone volumes. These are long-term analyst projections, not near-term forecasts or OpenAI commitments; Kuo's May 2026 update projects only ~30 million combined 2027–2028 units.
 
 ## The Common Insight
 

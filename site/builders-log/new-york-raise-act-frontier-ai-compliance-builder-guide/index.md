@@ -5,7 +5,7 @@
 
 The Illinois and Connecticut AI bills passed in May 2026 and got the headlines. But New York already moved.
 
-Governor Hochul signed the **Responsible AI Safety and Education Act (RAISE Act)** on December 19, 2025 — three months before Illinois's SB 315 cleared its first committee. A mandatory chapter amendment (the final negotiated text) was signed March 27, 2026. The law takes effect **January 1, 2027**.
+Governor Hochul [signed the **Responsible AI Safety and Education Act (RAISE Act)**](https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models) on December 19, 2025 — three months before Illinois's SB 315 cleared its first committee. A [mandatory chapter amendment](https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely) (the final negotiated text) was signed March 27, 2026. The law takes effect **January 1, 2027**.
 
 That means if you are building on or with frontier AI models — OpenAI, Anthropic, Google DeepMind, Meta, xAI — you now have three state laws with overlapping but distinct requirements bearing down on your model providers simultaneously. Understanding the stack matters, because where these laws converge tells you what the de facto national standard is becoming.
 
@@ -83,7 +83,7 @@ The DFS oversight office can charge covered developers fees to fund the program.
 
 ## Penalties
 
-The original December 2025 text set penalties at $10 million per violation (first occurrence) and $30 million (subsequent). The March 2026 chapter amendment reduced these significantly:
+The original December 2025 text set penalties at $10 million per violation (first occurrence) and $30 million (subsequent). The [March 2026 chapter amendment reduced these significantly](https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely):
 
 - First violation: up to **$1 million**
 - Subsequent violations: up to **$3 million**
@@ -102,7 +102,7 @@ This matters because it means the RAISE Act's teeth depend partly on whether a f
 
 ## The Pending Disclosure Bill: A3411B
 
-Running alongside the RAISE Act is **A3411B**, a separate bill that passed both chambers of the New York legislature on March 9, 2026, and is currently awaiting Governor Hochul's signature (not yet confirmed signed as of May 31, 2026).
+Running alongside the RAISE Act is **A3411B**, a separate bill that [passed both chambers of the New York legislature on March 9, 2026](https://www.jdsupra.com/legalnews/new-york-ai-disclosure-bill-passes-1580993/), and is currently awaiting Governor Hochul's signature (not yet confirmed signed as of May 31, 2026).
 
 A3411B would require **all owners, licensees, and operators of generative AI systems** — a far broader population than RAISE Act's frontier developers — to display a "clear and conspicuous" notice on system user interfaces stating that generative AI outputs may be inaccurate.
 
@@ -136,7 +136,7 @@ The convergence: all three laws use the same $500M revenue and ~10^26 FLOP thres
 
 The key divergence: Illinois is the only state requiring mandatory annual third-party audits. That single requirement is the hardest to satisfy and has no parallel in the other two laws. It creates a compliance uplift that New York and California explicitly chose not to impose.
 
-Connecticut's SB 5, signed May 11, 2026, adds a fourth dimension — but it operates in different regulatory territory, covering automated employment decision tools, AI companion chatbots, synthetic media provenance, and AI-related layoff notices, rather than frontier model oversight directly.
+Connecticut's [SB 5, signed May 29, 2026](https://www.hklaw.com/en/insights/publications/2026/06/connecticut-enacts-comprehensive-ai-legislation), adds a fourth dimension — but it operates in different regulatory territory, covering automated employment decision tools, AI companion chatbots, synthetic media provenance, and AI-related layoff notices, rather than frontier model oversight directly.
 
 ---
 
@@ -161,7 +161,7 @@ But the downstream effects are real:
 - **DFS rulemaking:** The NY DFS will publish rules defining the specific format and content requirements for registration filings, transparency reports, and incident reports. Watch for rulemaking notices in late 2026.
 - **A3411B signature:** If Governor Hochul signs the AI disclosure bill, add a 90-day countdown and UI compliance checklist to your roadmap.
 - **Federal AI framework:** Any federal incident reporting standard enacted before January 2027 may serve as a RAISE Act compliance pathway under the federal pre-emption safe harbor.
-- **Open-source status:** Whether the RAISE Act includes an open-source model carve-out (California SB 53 has a limited one) is not confirmed in secondary sources — verify against the current bill text at nysenate.gov before relying on any open-source exception.
+- **Open-source status:** Whether the RAISE Act includes an open-source model carve-out is not confirmed in secondary sources — verify against the current bill text at nysenate.gov before relying on any open-source exception. California SB 53 does not contain an explicit open-source exemption in its enacted text.
 
 ---
 

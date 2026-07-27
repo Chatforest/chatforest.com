@@ -83,7 +83,7 @@
 </ul>
 <p>The <code>preserve_thinking</code> flag is notable for multi-turn agent workloads — it allows reasoning content to carry across turns, so the model can stay aligned with earlier decisions in a long-running workflow. Most thinking models lose their chain of thought at the end of each turn.</p>
 <h2 id="the-benchmark-picture">The Benchmark Picture</h2>
-<p>Benchmark claims require skepticism. These are the numbers researchers and leaderboards currently report:</p>
+<p>Benchmark claims require skepticism. These are the numbers <a href="https://benchlm.ai/models/qwen3-7-max">researchers and leaderboards currently report</a>:</p>
 <table>
 <thead>
 <tr>
@@ -97,7 +97,7 @@
 <tr>
 <td>SWE-Pro</td>
 <td>60.6</td>
-<td>57.3</td>
+<td>53.4</td>
 <td>~56</td>
 </tr>
 <tr>
@@ -121,7 +121,7 @@
 <tr>
 <td>MCP-Atlas</td>
 <td>76.4</td>
-<td>75.8</td>
+<td>—</td>
 <td>—</td>
 </tr>
 <tr>
@@ -132,18 +132,18 @@
 </tr>
 </tbody>
 </table>
-<p>SWE-Pro measures real software engineering task completion on a harder version of SWE-bench. A score of 60.6 versus 57.3 is a meaningful gap on a task that requires maintaining state across long code sessions, running tests, and fixing failures iteratively. This is not a reasoning or trivia benchmark — it is closer to what agent builders actually run.</p>
+<p>SWE-Pro measures real software engineering task completion on a harder version of SWE-bench. A score of 60.6 versus 53.4 is a meaningful gap on a task that requires maintaining state across long code sessions, running tests, and fixing failures iteratively. This is not a reasoning or trivia benchmark — it is closer to what agent builders actually run.</p>
 <p>Terminal-Bench 2.0 (specifically the Terminus variant) measures long-horizon terminal task completion. At 69.7%, Qwen 3.7 Max leads the open leaderboard. This benchmark is relevant if you are building agents that interact with file systems, shell environments, or CI/CD pipelines.</p>
-<p>MCP-Atlas measures tool-call accuracy across a suite of MCP server integrations. At 76.4 versus Claude Opus 4.6&rsquo;s 75.8, the gap is marginal — but the fact that Alibaba invested in MCP-specific benchmarking suggests the tool-use architecture is not an afterthought.</p>
+<p>MCP-Atlas measures tool-call accuracy across a suite of MCP server integrations. Qwen 3.7 Max scores 76.4 — the fact that Alibaba invested in MCP-specific benchmarking suggests the tool-use architecture is not an afterthought.</p>
 <p><strong>What the benchmarks do not tell you</strong>: latency at scale, reliability under production load, quality of refusals and safety behaviors, and how the model handles your specific workload. Run evals on your task before committing.</p>
 <h2 id="the-pricing-calculus">The Pricing Calculus</h2>
-<p>Qwen 3.7 Max costs $2.50 per million input tokens and $7.50 per million output tokens on DashScope. Prompt caching drops the effective input cost by 90% on repeated context prefixes: $0.25/M on cache reads.</p>
+<p>Qwen 3.7 Max <a href="https://www.alibabacloud.com/help/en/model-studio/billing-for-model-studio">lists at $2.50 per million input tokens and $7.50 per million output tokens</a> on DashScope (a 50% promotional discount was active at launch, bringing effective rates to $1.25/$3.75). Prompt caching drops the effective input cost by 90% on repeated context prefixes: $0.25/M on cache reads.</p>
 <p>For comparison:</p>
 <ul>
 <li>Claude Opus 4.6 (Anthropic): $15/$75 per million tokens — 6x more expensive on input, 10x more on output</li>
-<li>DeepSeek V4 Pro: $0.40/$1.20 per million tokens — 6x cheaper than Qwen 3.7 Max</li>
+<li><a href="https://api-docs.deepseek.com/quick_start/pricing">DeepSeek V4 Pro</a>: $0.435/$0.87 per million tokens — approximately 6x cheaper than Qwen 3.7 Max on input, 9x cheaper on output</li>
 </ul>
-<p>The Qwen 3.7 Max price point is not &ldquo;cheap.&rdquo; At $2.50/M input and $7.50/M output, an agent running 100K input tokens and 20K output tokens per cycle will spend $0.40 per cycle. A workflow running 1,000 such cycles costs $400. At Opus 4.6 prices, the same workflow would cost roughly $2,400.</p>
+<p>The Qwen 3.7 Max price point is not &ldquo;cheap.&rdquo; At list prices of $2.50/M input and $7.50/M output, an agent running 100K input tokens and 20K output tokens per cycle will spend $0.40 per cycle. A workflow running 1,000 such cycles costs $400. At Opus 4.6 prices, the same workflow would cost roughly $2,400.</p>
 <p>For agent workloads requiring long-horizon execution — multi-hour autonomous sessions, large context maintenance, heavy tool use — the cost difference matters. For shorter, narrower tasks, DeepSeek V4 Pro delivers competitive quality at a fraction of the cost of either.</p>
 <h2 id="the-anthropic-protocol-drop-in">The Anthropic-Protocol Drop-In</h2>
 <p>Qwen 3.7 Max supports the Anthropic API protocol natively. In practice, this means:</p>

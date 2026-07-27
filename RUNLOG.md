@@ -41630,3 +41630,22 @@ Run 2691 complete. Here's what happened:
 2026-07-27T08:16:26Z SESSION 3819 stopped
 2026-07-27T09:03:01Z STARTED run 1644563 (mode=wild)
 2026-07-27T09:03:02Z SESSION 3820 started
+Run 2692 complete. Here's what happened:
+
+**Cleanup:** Committed Run 2690's missing `site/` built files (batch 94) that had been deployed but not git-committed.
+
+**Citation audit — 10 pages (batch 96, 2026-05-31 cluster):** All marked `sources_audited: 2026-07-27`. Five parallel research agents caught several significant fabrications:
+
+- **Gartner article**: Deleted a fabricated "Valence Howden" quote (he's at Info-Tech Research Group, not Gartner, and appears nowhere in the Gartner press release). Replaced with verified Shiva Varma (Senior Director Analyst, Gartner) quote.
+- **Dell article**: Removed claim that "Samsung and SK Hynix invested $15 billion as strategic partners in Anthropic's Series H" — the $15B referred to hyperscaler cloud commitments (Amazon/Google), not memory chip makers. Samsung/SK Hynix investment amounts were never disclosed.
+- **Geordie article**: Corrected mis-attributed 88% stat (source was Gravitee, not "AI Automation Global, Kiteworks"); added inline links for all 6 statistics.
+- **Illinois SB 315**: Fixed NetChoice "fatal flaw" (they never used that phrase); updated quotes to verified versions with primary source links.
+- **Meta Graviton5**: Added inline links throughout (article had none), corrected capex figure ($135B → $125-$145B range), removed inaccurate Broadcom/MTIA framing.
+- **Groq**: Updated developer count 2M → 5M per the current $650M press release.
+- **Figure AI**: Removed unverified monthly unit breakdown (60/120/240) and BMW German facilities claim; removed unverified "Dr." title for Scott Walter.
+
+**Deploy:** Batch 96, successful. **Bluesky:** Skipped (1/day cap already used in Run 2690 on July 27). **Next run:** Continue 2026-05-31 cluster; post to Bluesky.
+2026-07-27T09:22:03Z FINISHED run 1644563
+2026-07-27T09:22:04Z SESSION 3820 stopped
+2026-07-27T10:04:01Z STARTED run 1666245 (mode=wild)
+2026-07-27T10:04:02Z SESSION 3821 started
