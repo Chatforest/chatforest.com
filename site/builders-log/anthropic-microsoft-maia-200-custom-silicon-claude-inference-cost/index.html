@@ -71,20 +71,20 @@
 <p>For builders using Claude through the API: this is worth watching, because it could affect your costs.</p>
 <hr>
 <h2 id="what-maia-200-actually-is">What Maia 200 Actually Is</h2>
-<p>Microsoft announced the Maia 200 in January 2026. The chip is built on TSMC&rsquo;s 3nm process and is designed specifically for inference — not training.</p>
-<p>Key specs:</p>
+<p><a href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/">Microsoft announced the Maia 200 on January 26, 2026</a>. The chip is built on TSMC&rsquo;s 3nm process and is designed specifically for inference — not training.</p>
+<p>Key specs (<a href="https://www.tomshardware.com/pc-components/cpus/microsoft-introduces-newest-in-house-ai-chip-maia-200-is-faster-than-other-bespoke-nvidia-competitors-built-on-tsmc-3nm-with-216gb-of-hbm3e">Tom&rsquo;s Hardware</a>, <a href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/">Microsoft blog</a>):</p>
 <ul>
 <li><strong>140 billion transistors</strong> on TSMC 3nm</li>
 <li><strong>216GB HBM3e</strong> with ~7TB/s memory bandwidth (nearly 3x a standard H100&rsquo;s capacity)</li>
 <li><strong>10 petaFLOPS FP4</strong> compute at 750W TDP</li>
 <li>Inference-optimized, not a general-purpose accelerator</li>
 </ul>
-<p>Microsoft&rsquo;s own claim: the Maia 200 delivers 30% better performance per dollar than rival silicon. The chip is already live in Microsoft&rsquo;s US Central datacenter (Des Moines, Iowa), with US West 3 (Phoenix) next in 2026. Since early 2026, Maia 200 has been running inference for OpenAI&rsquo;s GPT-5.2 model through Microsoft Foundry and Microsoft 365 Copilot — but only for Microsoft&rsquo;s own models.</p>
+<p><a href="https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/">Microsoft&rsquo;s own claim</a>: the Maia 200 delivers 30% better performance per dollar than rival silicon. The chip is already live in Microsoft&rsquo;s US Central datacenter (Des Moines, Iowa), with US West 3 (Phoenix) next in 2026. Since early 2026, Maia 200 has been running inference for OpenAI&rsquo;s GPT-5.2 model through Microsoft Foundry and Microsoft 365 Copilot — but only for Microsoft&rsquo;s own models.</p>
 <p>The Anthropic talks would change that. They would make Claude the first frontier model it didn&rsquo;t build, running under latency requirements set by someone else. That&rsquo;s a materially different test than running your own model in your own products.</p>
 <hr>
 <h2 id="why-anthropic-would-want-this">Why Anthropic Would Want This</h2>
-<p>Anthropic signed a massive compute commitment with AWS in April 2026: up to $100 billion over 10 years for AWS technologies, covering Trainium2, Trainium3, and the still-unannounced Trainium4. The deal also scales Project Rainier — the joint Trainium cluster already running close to 500,000 chips — and secures 5 gigawatts of compute capacity for training and serving Claude.</p>
-<p>Separately, Anthropic has locked in roughly one million Google TPU chips over the life of its Google Cloud agreement.</p>
+<p>Anthropic <a href="https://www.anthropic.com/news/anthropic-amazon-compute">signed a massive compute commitment with AWS in April 2026</a>: up to $100 billion over 10 years for AWS technologies, covering Trainium2, Trainium3, and the still-unannounced Trainium4. The deal also <a href="https://www.anthropic.com/news/anthropic-amazon-compute">scales Project Rainier</a> — the joint Trainium cluster already running close to 500,000 chips — and secures <a href="https://www.anthropic.com/news/anthropic-amazon-compute">5 gigawatts of compute capacity</a> for training and serving Claude.</p>
+<p>Separately, Anthropic has <a href="https://www.datacenterdynamics.com/en/news/google-and-anthropic-confirm-massive-1gw-cloud-deal-with-up-to-one-million-google-tpus/">locked in up to one million Google TPU chips</a> over the life of its Google Cloud agreement.</p>
 <p>So why also talk to Microsoft?</p>
 <p>Multi-vendor compute insulates Anthropic from NVIDIA dependency and from being held captive by any single hyperscaler. The leverage is real: if you can credibly say &ldquo;we&rsquo;ll move inference workloads to wherever the chips are cheapest,&rdquo; you negotiate better on every front. Talking to Microsoft isn&rsquo;t disloyalty to AWS — it&rsquo;s exactly the kind of optionality the AWS deal was designed to give Anthropic room for.</p>
 <p>There&rsquo;s also a simpler angle. Anthropic needs more compute than it can currently get. Compute is constrained across the board. If Maia 200 delivers on its cost claims, adding Microsoft as a third inference provider expands capacity and potentially reduces per-token costs.</p>

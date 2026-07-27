@@ -3,7 +3,7 @@
 > DeepSeek V4-Flash at $0.14/M and V4-Pro at $0.435/M (permanent 75% cut) reshapes the cost math for every builder on the API. Legacy aliases die July 24 — here's exactly what to change and how to pick between Flash and Pro.
 
 
-DeepSeek shipped V4 on April 24, 2026. If you have `deepseek-chat` or `deepseek-reasoner` in your codebase, you are already running on V4-Flash — you just haven't updated your model string yet. On July 24, 2026 at 15:59 UTC, the legacy aliases stop resolving entirely. No fallback, no grace period extension.
+[DeepSeek shipped V4 on April 24, 2026](https://api-docs.deepseek.com/news/news260424/). If you have `deepseek-chat` or `deepseek-reasoner` in your codebase, you are already running on V4-Flash — you just haven't updated your model string yet. [On July 24, 2026 at 15:59 UTC, the legacy aliases stop resolving entirely.](https://api-docs.deepseek.com/news/news260424/) No fallback, no grace period extension.
 
 The good news: the migration is a one-line change. The better news: the price is dramatically lower than anything else at this performance tier.
 
@@ -11,18 +11,18 @@ The good news: the migration is a one-line change. The better news: the price is
 
 DeepSeek V4 comes in two tiers that serve different workloads:
 
-**V4-Flash** is the cost-optimized tier:
+**V4-Flash** is the cost-optimized tier ([DeepSeek API docs](https://api-docs.deepseek.com/quick_start/pricing)):
 - 284B total parameters, MoE architecture, 13B active per inference
 - $0.14/M input, $0.28/M output (cache-hit input: $0.0028/M)
 - 83.6 tokens/second, 1.04s time-to-first-token on DeepSeek's hosted API
 - 1M token context window standard
 - MIT license — weights are open, self-hosting is an option
 
-**V4-Pro** is the frontier coding tier:
+**V4-Pro** is the frontier coding tier ([DeepSeek API docs](https://api-docs.deepseek.com/quick_start/pricing)):
 - 1.6T total parameters, MoE architecture, 49B active per inference
-- $0.435/M input, $0.87/M output (permanent — was $1.74/$3.48/M until May 22)
-- 80.6% SWE-bench Verified — statistically tied with Claude Opus 4.7 at 80.8%
-- 93.5 on LiveCodeBench, Codeforces ELO 3206 (ahead of GPT-5.5 at 3168)
+- $0.435/M input, $0.87/M output ([permanent as of May 22](https://api-docs.deepseek.com/quick_start/pricing) — was $1.74/$3.48/M at launch)
+- [80.6% SWE-bench Verified](https://www.aimadetools.com/blog/deepseek-v4-pro-complete-guide/) — statistically tied with Claude Opus 4.7 at 80.8%
+- [93.5 on LiveCodeBench, Codeforces ELO 3206](https://www.aimadetools.com/blog/deepseek-v4-pro-complete-guide/) (ahead of GPT-5.5 at 3168)
 - 55.4% SWE-bench Pro (vs Claude Opus 4.7 at 64.3% on the harder agentic eval)
 - MIT license — same open-weights commitment
 

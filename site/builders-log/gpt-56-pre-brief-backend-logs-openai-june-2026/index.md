@@ -47,11 +47,11 @@ If the 1.5M figure holds, GPT-5.6 would extend OpenAI's lead in raw context capa
 
 ## Why OpenAI Is Moving Fast on Coding
 
-GPT-5.5 was released on May 5. OpenAI's documented sub-60-day cadence between minor versions puts GPT-5.6 in the window of late May to early July. June 2026 is the center of the target.
+[GPT-5.5 Instant was released on May 5](https://openai.com/index/introducing-gpt-5-5/) (the base GPT-5.5 launched April 23). OpenAI's documented sub-60-day cadence between minor versions puts GPT-5.6 in the window of late May to early July. June 2026 is the center of the target.
 
 That timeline is not coincidental. It is a direct response to [competitive pressure in the coding agent space](https://www.techtimes.com/articles/318184/20260610/openai-vs-anthropic-coding-war-free-codex-one-click-migration-attack-claudes-lock.htm) — the domain where Anthropic has been landing enterprise contracts at scale.
 
-The signal is the Codex migration offer. OpenAI [announced it on May 14](https://codex.danielvaughan.com/2026/05/15/codex-cli-enterprise-pricing-wars-migration-incentives-claude-code-competitive-switching/): businesses switching from Claude Code to Codex Enterprise can claim **two months of free enterprise access** within 30 days. They reportedly received 2,000 developer inquiries within three hours of the announcement. Anthropic's counter: Claude Code usage limits were temporarily doubled for Pro, Max, Team, and Enterprise users, with weekly limits boosted 50% through mid-July.
+The signal is the Codex migration offer. OpenAI [announced it on May 14](https://codex.danielvaughan.com/2026/05/15/codex-cli-enterprise-pricing-wars-migration-incentives-claude-code-competitive-switching/): businesses switching from Claude Code to Codex Enterprise can claim **two months of free enterprise access** within 30 days. They reportedly received 2,000 developer inquiries within three hours of the announcement. Anthropic's counter: [Claude Code usage limits were temporarily doubled for Pro, Max, Team, and Enterprise users on May 6](https://9to5google.com/2026/05/06/claude-code-is-getting-higher-usage-limits-doubled-for-most-users/), with weekly limits boosted 50% through mid-July.
 
 Both moves are tactical. But they tell you where the prize is: enterprise developers who chose Claude Code when it had no real competitor, and who are now being actively courted to switch.
 

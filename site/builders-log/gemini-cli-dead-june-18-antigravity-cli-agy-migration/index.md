@@ -3,7 +3,7 @@
 > On June 18, 2026, Google shuts down Gemini CLI for Pro, Ultra, and free Gemini Code Assist users. Any script, CI pipeline, or cron job calling 'gemini' will break. Migration to Antigravity CLI (agy) takes under 10 minutes for most setups — if you know about the silent failure trap in the MCP config.
 
 
-On June 18, 2026, Google shuts down Gemini CLI for Google AI Pro, Ultra, and free Gemini Code Assist users. Any terminal script, CI pipeline, or cron job calling `gemini` will stop working. The replacement is Antigravity CLI, invoked as `agy`, and the migration takes under 10 minutes for most setups — but there's one silent failure trap in the MCP config that will break your pipeline without any error output if you miss it.
+[On June 18, 2026, Google shuts down Gemini CLI](https://www.techtimes.com/articles/318660/20260618/gemini-cli-shutdown-takes-effect-ci-cd-pipelines-break-go-based-antigravity-cli-arrives.htm) for Google AI Pro, Ultra, and free Gemini Code Assist users. Any terminal script, CI pipeline, or cron job calling `gemini` will stop working. The replacement is Antigravity CLI, invoked as `agy`, and the migration takes under 10 minutes for most setups — but there's one silent failure trap in the MCP config that will break your pipeline without any error output if you miss it.
 
 You have 19 days as of publication. Here's the checklist.
 
@@ -128,7 +128,7 @@ The June 18 deadline is in effect as of today. Gemini CLI is shut off for affect
 
 ## June 14 Update: Two Things to Know Before You Migrate
 
-**The free-tier quota cliff.** Gemini CLI's free tier ran at roughly 1,000 requests per day. Antigravity CLI's free tier is capped at 20 requests per day — a 98% reduction. If you are running meaningful automation on Gemini CLI's free tier, migrating to `agy`'s free tier will not sustain it. The binary swap is five minutes; the capacity shortfall hits you the first night your pipeline runs.
+**The free-tier quota cliff.** [Gemini CLI's free tier ran at roughly 1,000 requests per day. Antigravity CLI's free tier is capped at 20 requests per day — a 98% reduction.](https://www.techtimes.com/articles/317407/20260529/linux-foundation-tool-spotlighted-furious-developers-accuse-sickening-google-gemini-cli.htm) If you are running meaningful automation on Gemini CLI's free tier, migrating to `agy`'s free tier will not sustain it. The binary swap is five minutes; the capacity shortfall hits you the first night your pipeline runs.
 
 Options if you hit this wall:
 - Upgrade to Antigravity Pro (weekly compute cap, price comparable to Gemini Advanced)
@@ -137,9 +137,9 @@ Options if you hit this wall:
 
 Note on Pro tier: Google moved Pro users from a daily to a weekly compute cap in March 2026. If you burn through the weekly cap, you are locked out for up to 7 days — not until tomorrow. For CI pipelines with variable load, budget the weekly cap conservatively.
 
-**The open-source situation.** Gemini CLI launched as Apache 2.0 open-source, accumulated 100,000+ GitHub stars and 6,000+ merged community pull requests, and was spotlighted by the Linux Foundation. Antigravity CLI's GitHub repository contains a changelog, a readme, and a demonstration GIF. There is no source code. Running a fork or an offline build is not practically possible.
+**The open-source situation.** Gemini CLI launched as Apache 2.0 open-source, [accumulated over 104,000 GitHub stars and more than 6,000 merged community pull requests](https://www.techtimes.com/articles/317056/20260523/google-accepted-6000-gemini-cli-contributions-then-closed-tool-enterprise-only.htm), and was spotlighted by the Linux Foundation. Antigravity CLI's GitHub repository contains a changelog, a readme, and a demonstration GIF. There is no source code. Running a fork or an offline build is not practically possible.
 
-The developer community response has been direct: the official transition thread collected roughly 143 thumbs-down vs. 4 approvals within 24 hours of the May 19 announcement. If your organization has a policy on open-source dependencies, or if you contributed to Gemini CLI, factor this into your migration decision.
+The developer community response was strongly negative. If your organization has a policy on open-source dependencies, or if you contributed to Gemini CLI, factor this into your migration decision.
 
 Migrating to `agy` is the right call for the June 18 deadline if you're staying in Google's ecosystem. But for builders who relied on the free tier for volume automation, or who chose Gemini CLI specifically because it was open-source, this is worth treating as a genuine re-evaluation point rather than a simple binary swap.
 

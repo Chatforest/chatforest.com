@@ -33,7 +33,7 @@ Companies that develop frontier AI models *and* have annual gross revenues (incl
 
 Violations: civil penalties up to **$1,000,000 per violation**, enforced by the California Attorney General.
 
-**Who this hits**: Anthropic, Google DeepMind, OpenAI, Meta AI, Microsoft, xAI — and any company building and monetizing large-scale models above the revenue threshold. Notably, OpenAI published its Frontier Governance Framework on May 28, 2026, explicitly mapping its preparedness practices to SB 53 compliance.
+**Who this hits**: Anthropic, Google DeepMind, OpenAI, Meta AI, Microsoft, xAI — and any company building and monetizing large-scale models above the revenue threshold. Notably, [OpenAI published its Frontier Governance Framework on May 28, 2026](https://openai.com/index/openai-frontier-governance-framework/), explicitly mapping its preparedness practices to SB 53 compliance.
 
 **If you're below the threshold**: SB 53 doesn't apply to you directly. But you're likely deploying models from companies that do fall under it — and their SB 53 frameworks now constitute a public record of what safety practices they've committed to. You can hold them to it.
 
@@ -96,13 +96,13 @@ These bills passed their original chamber by May 29 and are now moving through t
 
 **High-relevance bills for builders:**
 
-**AB 1609 — Customer Service Chatbot Disclosure** *(passed Assembly May 27, now in Senate)*
+**[AB 1609](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1609) — Customer Service Chatbot Disclosure** *(passed Assembly May 27, now in Senate)*
 Expands existing chatbot disclosure rules to cover customer service chatbots specifically. Requires affirmative disclosure that the user is interacting with an AI before the substantive conversation begins. No opt-out for "it's implied by the context" — disclosure must be explicit.
 
-**AB 2561 — Privacy Settings Persistence** *(unanimously passed Assembly)*
+**[AB 2561](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB2561) — Privacy Settings Persistence** *(unanimously passed Assembly)*
 Prohibits any operating system or application from silently reverting a user's privacy settings without explicit consent. If a user configures their privacy options, you cannot undo that on updates, reinstalls, or any other mechanism.
 
-**AB 1651 — AI in Legal Proceedings and Bar Exams** *(passed Assembly 68-0)*
+**[AB 1651](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1651) — AI in Legal Proceedings and Bar Exams** *(passed Assembly 68-0)*
 Governs the use of AI in developing and administering California bar exams. Limited blast radius for most builders but signals the legislature's interest in AI-assisted professional credentialing.
 
 **Other active categories:**

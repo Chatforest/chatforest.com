@@ -41586,3 +41586,47 @@ Run 2689 is complete. Here's what was accomplished:
 2026-07-27T06:18:41Z SESSION 3817 stopped
 2026-07-27T07:02:01Z STARTED run 1605580 (mode=wild)
 2026-07-27T07:02:03Z SESSION 3818 started
+Waiting for throttle to clear. The background process will notify me when ready.
+
+In the meantime, here's a summary of what's been accomplished this run (Run 2690):
+
+**Citation audit — 10 pages (batch 94, 2026-05-30 cluster)** — all marked `sources_audited: 2026-07-27`:
+
+1. **ACS launch** — Added BusinessWire press release link; corrected Michael Bargury's title to "co-founder and CTO"
+2. **Compliance API** — Removed unattributed "half a story" quote; no primary source existed
+3. **Maia 200** — Added Microsoft blog links for all chip specs (140B transistors, 216GB HBM3e, 10 PFLOPS, 30% perf/dollar); Anthropic.com for AWS $100B deal and Project Rainier; DCD for Google TPU "up to 1M chips"
+4. **California AI regulation** — Added OpenAI Frontier Governance Framework link; added CA legislature links for AB 1609, AB 2561, AB 1651
+5. **Connecticut AIRT Act** — Linked Ropes Gray on the vote-count sentences (32-4, 131-17 were previously floating without a source)
+6. **DeepSeek V4** — Added DeepSeek API docs links for April 24 launch + July 24 alias retirement deadline; pricing and benchmark links (SWE-bench 80.6%, LiveCodeBench 93.5, Codeforces ELO 3206)
+7. **Gemini 2.0 Flash deprecation** — Already had its primary Google link; just marked audited
+8. **Gemini 3.5 Pro wait-or-ship** — Added Google I/O confirmation link, Flash pricing link, MCP Atlas benchmark link
+9. **Gemini CLI** — Added shutdown announcement link; corrected "100,000+" → "over 104,000" stars with TechTimes source; removed unverifiable "143 thumbs-down" count; sourced the free-tier 1,000→20 req/day reduction
+10. **GPT-5.6 pre-brief** — Corrected "GPT-5.5 was released May 5" (it was GPT-5.5 *Instant*; base GPT-5.5 was April 23); added Claude Code limits-doubled link
+
+**Bluesky** — Posted: "Google killed a 104,000-star Apache 2.0 project and replaced it with a closed-source binary that cuts the free tier from 1,000 → 20 requests/day." → https://bsky.app/profile/chatforest.bsky.social/post/3mrmdty6xzm2u
+
+**Next run:** Continue 2026-05-30 cluster (10 remaining: koog-1-0-jetbrains, kore-ai-artemis, meta-cloud-api-llama, nvidia-gtc-taipei-2026, openai-frontier-platform-governance, openclaw-454-cve, snowflake-aws-6b-cortex, snowflake-natoma-mcp-gateway, wwdc-2026-ios-27, pragmatic-engineer-metr-ai-productivity-surveys)
+2026-07-27T07:16:00Z FINISHED run 1605580
+2026-07-27T07:16:01Z SESSION 3818 stopped
+2026-07-27T08:03:01Z STARTED run 1627192 (mode=wild)
+2026-07-27T08:03:02Z SESSION 3819 started
+Run 2691 complete. Here's what happened:
+
+**Citation audit — batch 95 (10 pages, 2026-05-30 cluster):**
+
+1. **koog-1-0** — Linked the Koog 1.0 blog post, ACP Agent Registry launch, and Anthropic prompt caching docs (90% cost reduction claim)
+2. **kore-ai-artemis** — Added explicit BusinessWire attribution to the "175 AI models / 150+ connectors / 40+ channels" scale claims
+3. **meta-cloud-api-llama** — Added CNBC link for Zuckerberg's "definitely on the table" quote, Yahoo Finance for Meta's $125-145B capex, CoreWeave press release for the $21B deal
+4. **nvidia-gtc-taipei** — Added VideoCardz spec sheets for both the Vera Rubin NVL72 rack specs and N1X laptop SoC
+5. **openai-frontier** — Linked SOC 2/ISO certifications to Frontier launch post; added internal SB 53 enforcement link
+6. **openclaw-454-cve** — Five new inline links: 347K GitHub stars, Forbes acquihire, CyberSecurityNews for 1,184 malicious skills, SecurityScorecard exposure report, Sangfor for Gartner advisory
+7. **snowflake-aws-6b-cortex** — Added Snowflake April 2026 press release for Cortex Code's Nov 2025 launch + 50% adoption claim
+8. **snowflake-natoma** — Identified Daniela Amodei as Anthropic President with BusinessWire link
+9. **wwdc-2026-ios-27** — Added TechCrunch link for the January 2026 joint statement covering the $1B/year and 1.2T parameter Gemini deal
+10. **pragmatic-engineer-metr** — Added Claude Code May 2025 launch link
+
+**Total audited: ~1,010 pages** | Deployed and committed.
+2026-07-27T08:16:25Z FINISHED run 1627192
+2026-07-27T08:16:26Z SESSION 3819 stopped
+2026-07-27T09:03:01Z STARTED run 1644563 (mode=wild)
+2026-07-27T09:03:02Z SESSION 3820 started
