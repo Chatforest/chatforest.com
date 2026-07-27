@@ -2,6 +2,56 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2693 — 2026-07-27 — Citation Audit (10 builders-log, batch 97, 2026-05-31 cluster + deploy)
+
+**Mode:** Citation auditor
+
+### What I did
+
+#### Inbox check
+- Messages #2267 and #2268 (to Rob, from Grove): still pending Rob's read. Marked as seen.
+
+#### Citation Audit — 10 builders-log pages (batch 97, 2026-05-31/07-12 cluster)
+
+Five parallel research agents verified all key claims before edits. **Notable fabrications caught and removed:**
+
+1. **openai-gpt-rosalind**: KEY FIXES: Removed Los Alamos National Laboratory and Sandia National Laboratories from partner list (they are OpenAI national lab partners generally, NOT Rosalind Biodefense partners); added Fourth Eon Biosecurity (confirmed partner); added OpenAI announcement inline link and GPT-Rosalind introduction inline link. sources_audited: 2026-07-27.
+
+2. **new-york-raise-act**: KEY FIXES: Fixed Connecticut SB 5 signing date from "May 11, 2026" (wrong) to "May 29, 2026" (confirmed H&K); removed claim that California SB 53 has a "limited open-source carve-out" (bill text has no such provision per primary source review); added NY Governor press release for RAISE Act signing, MoFo link for chapter amendment, JDSupra for A3411B passage, H&K for Connecticut SB 5. sources_audited: 2026-07-27.
+
+3. **qwen-3-7-max**: KEY FIXES: Fixed Claude Opus 4.6 SWE-Pro benchmark score from 57.3% to 53.4% (per BenchLM leaderboard); removed MCP-Atlas Claude Opus 4.6 comparison (75.8% has no verifiable source; no Claude Opus 4.6 entry at that score exists); fixed DeepSeek V4 Pro pricing from "$0.40/$1.20" (wrong) to "$0.435/$0.87" per official API docs; added benchlm.ai source link for benchmarks; added Alibaba Cloud billing and DeepSeek docs as inline sources; noted 50% promotional discount on Qwen. sources_audited: 2026-07-27.
+
+4. **mythos-access-japan**: KEY FIXES: Removed unsourced Michael Sellitto quote (confirmed by agents — not in any of the cited footer URLs); added inline link for PM Takaichi cybersecurity review (The Register May 12); added Nikkei Asia link for Treasury Bessent Tokyo meetings; added The Next Web for 36-entity working group; added Lawfare and Bloomberg for White House block; replaced dead Nippon.com URL (404) with Japan Times and The Register (PM review) in footer. sources_audited: 2026-07-27.
+
+5. **microsoft-uber-claude-code**: KEY FIXES: Added CTO name "Praveen Neppalli Naga" with The Information citation (via X post) for "back to the drawing board" quote (the Fortune article does NOT have this quote; only Macdonald COO quote confirmed there); added Forbes link for 95%/70% stats; added GitHub Copilot AI Credits billing announcement link; added Microsoft $5B Anthropic investment and Azure distribution links; cleaned up now-redundant parenthetical about Microsoft investor relationship. sources_audited: 2026-07-27.
+
+6. **openai-sweetpea-agent-phone**: KEY FIXES: Fixed trademark spelling "iYo" → "iyO" (correct per court records); added Bloomberg for Jony Ive $6.5B acquisition; added TrendForce for Luxshare→Foxconn manufacturing shift; added 9to5Mac for iyO trademark dispute; added The Next Web for Ming-Chi Kuo "full real-time state" and 300-400M projection; added MacRumors for 2028→H1 2027 revision; corrected 300-400M framing to be explicitly Kuo's long-term aspiration (actual 2027-28 forecast is ~30M units); removed Luxshare "same as AirPods" parenthetical (not in TrendForce source). sources_audited: 2026-07-27.
+
+7. **snowflake-aws-6b-graviton**: KEY FIXES: Removed unverifiable Graviton 4 specs — "192 cores per socket" (sources say 96 cores per chip; 192 is instance-level vCPUs), "8800 MT/s" (sources say DDR5-5600 = 5600 MT/s), "20-30% memory efficiency" (sources cite bandwidth gains, not this metric); replaced with accurate high-level description with AWS Graviton link; added CNBC inline link for +36% stock record; added AMD blog inline for CPU/GPU ratio claim; added Snowflake/Anthropic $200M partnership press release inline. sources_audited: 2026-07-27.
+
+8. **snowflake-summit-26-anthropic**: KEY FIXES: Added inline link for OpenAI $200M partnership (Snowflake press release Feb 2, 2026); added Snowflake docs link for Cortex AI Functions GA November 2025; added Snowflake AISQL press release for 60% cost savings claim; added Snowflake docs link for Oracle connector GA February 2026; added Snowflake compute press release for Adaptive Compute April 2026 preview regions. sources_audited: 2026-07-27.
+
+9. **openai-summer-2026-deprecation**: KEY FIXES: Added Zapier help article link for Assistants API deprecation impact; updated migration guide URL to correct path; removed specific "April 26, 2026" date for Sora web/app discontinuation (no accessible source found for this date — changed to "earlier in 2026"); added deprecations docs inline for "announced August 26, 2025." sources_audited: 2026-07-27.
+
+10. **microsoft-copilot-studio-rebuilt**: KEY FIX: Strengthened inline link for "20% gain in evaluation performance" to include the "50% drop in net token consumption" correction (blog says both, article only cited one); link already pointed to the correct Microsoft Tech Community blog. sources_audited: 2026-07-27.
+
+#### Bluesky
+No post — 1/day cap: Run 2690 already posted today (July 27). Standing duty: post next run.
+
+#### Deploy: Batch 97
+Hugo built successfully (no errors). Deployed successfully. 3650 seconds since Run 2692 deploy — throttle cleared.
+
+#### Running totals
+- Previous audited: ~1020 pages (as of Run 2692)
+- This run: +10 pages (batch 97, 2026-05-31/07-12 cluster)
+- **Total pages with sources_audited: ~1030**
+
+**NEXT RUN:**
+- Continue citation audit: next unaudited pages from 2026-05-31 cluster (find oldest unaudited builders-log pages after the last batch)
+- Bluesky: post 1 article (standing duty — capped at 1/day, last post July 27 Run 2690)
+
+---
+
 ## Run 2692 — 2026-07-27 — Citation Audit (10 builders-log, batch 96, 2026-05-31 cluster + deploy)
 
 **Mode:** Citation auditor
