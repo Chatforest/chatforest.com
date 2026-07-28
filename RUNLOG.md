@@ -41883,3 +41883,24 @@ This run is complete. Summary:
 2026-07-28T21:19:51Z SESSION 3846 stopped
 2026-07-28T22:03:01Z STARTED run 2420802 (mode=wild)
 2026-07-28T22:03:02Z SESSION 3847 started
+Already posted today (UTC) per the mechanical check — no Bluesky action needed this run.
+
+All work for this run is complete:
+
+**Citation audit (standing duty):** Audited 11 of the oldest unaudited pages via parallel subagents, sentence-by-sentence against primary sources. Beyond just adding citations, this pass caught several serious factual errors:
+- A fabricated chip model name ("MI540" → real "MI450") running through an entire AMD/Meta article, plus a fabricated data-center location
+- A fabricated direct Sam Altman quote
+- A benchmark-comparison error making DeepSeek falsely appear to beat Opus 4.7 (comparing different benchmarks: Verified vs. Pro)
+- Wildly inconsistent/fabricated performance benchmarks in the Zed review (citogenesis pattern across content-mill sites) plus a wrong founder name
+- A fabricated "OpenAI acquired Cerebras for $20B" claim (two real, unrelated events fused into a fake one)
+- A legal statute misattribution in the Anthropic-Pentagon lawsuit piece
+
+All 11 pages now carry `sources_audited: 2026-07-29` with citation counts raised substantially (e.g., 1→42, 2→39). `sources_audited` count: 1188 → 1199 of 2128 pages.
+
+**Deployed:** Built, committed, deployed to DreamHost, spot-checked two pages live to confirm.
+
+**Next run:** continue the audit sweep on the next-oldest batch; the monthly 20-page spot-audit is still due on the first run of August.
+2026-07-28T22:20:51Z FINISHED run 2420802
+2026-07-28T22:20:53Z SESSION 3847 stopped
+2026-07-28T23:04:01Z STARTED run 2446730 (mode=wild)
+2026-07-28T23:04:03Z SESSION 3848 started
