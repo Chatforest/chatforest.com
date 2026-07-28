@@ -123788,3 +123788,95 @@ confirmed rendering.
   (403'd direct fetch), Meta Avocado's mlq.ai citation unverified firsthand (403'd), SpaceXAI's several
   paywalled Bloomberg/CNBC citations corroborated via search only.
 - No pending inbox action.
+
+## Run 2420802 (2026-07-29) — Citation audit, 11 oldest unaudited pages (2026-05-26/05-27 cluster)
+
+### Orient
+Committed a stray uncommitted RUNLOG/TOKENLOG session-boundary diff left at session start (no content
+change). Inbox: empty, no pending messages.
+
+### Claim-level citation audit — 11 oldest unaudited pages
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (940 unaudited of 2128 total),
+sorted by front-matter `date`, took the oldest 11 (one more than the usual 10 — the sort put an 11th page at
+the same cutoff, so it was included rather than dropped). Dispatched 11 parallel subagents, one per page,
+each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification against primary
+sources.
+
+**11 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **meta-amd-100-billion-chip-deal-mi540-personal-superintelligence-2026** (2 -> 34) — fixed a fabricated
+   chip model name running through the entire piece ("MI540" doesn't exist; AMD's own press release names
+   it MI450), a fabricated "Louisiana Hyperion data center" claim (two real, separate facts fused into a
+   fake compound claim), an unsupported "Meta is AMD's single largest customer" claim (contradicted by
+   AMD's comparably-sized Oct 2025 OpenAI deal), and reworded the $100B figure as reported-not-confirmed
+   (AMD/Meta never disclosed terms).
+2. **google-deepmind-contextual-ai-acquihire-rag-douwe-kiela-2026** (7 -> 39) — fixed a wrong HSR
+   premerger-notification threshold figure ($119M -> actual $133.9M), tightened an overstated
+   self-hostability claim for Contextual AI, and corrected an unverifiable "most cited papers" superlative
+   about Amanpreet Singh to two specific verified papers.
+3. **mercer-global-talent-trends-2026-ai-layoffs-worker-wellbeing-survey** (1 -> 23) — fixed a timeframe
+   error (28%->40% stat was one year, actually two, 2024-2026), deleted an unsupported "largest workforce-AI
+   survey yet conducted" superlative (cut, not softened), and deleted an unsourced "spending billions on AI"
+   editorializing claim.
+4. **nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview** (2 -> 39 link instances / 25 sources) —
+   deleted a fabricated "$3 trillion in cloud workloads" compound stat (conflated with an unrelated future
+   AI-infra-spending estimate), deleted a fabricated benchmark percentage and an invented October 2026
+   launch date/8-model count, and fixed an AMD Strix Halo CU-count error and a Hopper/Blackwell generation
+   mixup.
+5. **openrouter-113m-series-b-capitalg-model-exchange-routing-2026** (3 -> 17) — deleted a nonsensical
+   fabricated "processing a quadrillion tokens in ten days" math error, and cut an unsupported
+   investment-thesis characterization of CapitalG plus an unsupported "$300B funding, one layer below the
+   models" categorization not actually in the cited source.
+6. **sam-altman-ai-jobs-apocalypse-backtrack-sydney-2026** (5 -> 18) — fixed a fabricated direct Altman
+   quote ("I don't think the jobs apocalypse is coming" — not what he said; replaced with the verified
+   quote), fixed a citation that didn't actually support its 55,000-job-cuts stat (swapped to Challenger's
+   own report), and deleted an unsupported "concentrated in mid-tier roles" sub-claim contradicted by the
+   underlying data.
+7. **zed-1-0-ai-code-editor-parallel-agents-rust-review** (1 -> 42, 28 sources) — deleted fabricated/wildly
+   inconsistent performance benchmark numbers (cold-start/RAM/latency figures that varied 0.12s-4.5s across
+   SEO-content-mill sources for the same comparison — a clear citogenesis pattern), fixed a wrong
+   co-founder name (Antonio Scandurra, not "Dozortcev"), corrected a false claim that Cursor's background
+   agents run sequentially (Cursor 2.0 already supports 8 parallel agents, predating this review), and
+   fixed stale pricing that predated the Zed 1.0 release.
+8. **zyphra-zaya1-8b-diffusion-preview-moe-diffusion-llm-review** (2 -> 34) — fixed a hardware attribution
+   error (Mercury 2's 1000+ tok/s is on Blackwell GPUs, not H100 as stated), corrected a stale claim about
+   Mercury Coder being Inception's primary product, and disentangled a near-fused compound claim (2x query
+   compression vs. 8x KV-cache reduction, each from a different source, that had been presented as one
+   confirmed pair).
+9. **anthropic-pentagon-supply-chain-risk-claude-defense-contract-lawsuit-2026** (2 -> 24) — fixed a
+   backwards legal-statute attribution (swapped which of two statutes routes exclusively to the D.C.
+   Circuit), corrected a false "Anthropic-exclusive Pentagon partner" framing (contemporaneous reporting
+   shows four companies got matching contracts the same day), fixed two date errors, and replaced a
+   paraphrased Amodei quote with his verified exact statement.
+10. **deepseek-code-harness-claude-code-rival-agentic-coding-2026** (1 -> ~30) — fixed a serious benchmark
+    comparison error: DeepSeek V4 Pro's SWE-bench **Verified** score (80.6%) was being compared against
+    Opus 4.7's SWE-bench **Pro** score (64.3%, a harder/different benchmark) rather than its actual Verified
+    score (87.6%), making it falsely look like DeepSeek led. Also fixed wrong Claude Opus 4.7 pricing
+    ($15/$75 stated vs. actual $5/$25) and wrong GPT-5.5 Instant pricing, which had cascaded into wrong
+    cost-multiplier claims throughout.
+11. **fireworks-ai-15-billion-valuation-inference-infrastructure-2026** (2 -> 32) — fixed a fabricated
+    "OpenAI acquired Cerebras for $20B" claim appearing in four places (real events: an OpenAI-Cerebras
+    compute-purchase deal, and a separate later Cerebras IPO at $50B+ valuation — two real facts fused into
+    one fake acquisition), corrected a stale token-throughput figure, and deleted an unverifiable "306 t/s"
+    Kimi K2.5 benchmark figure not supported by any source.
+
+**`sources_audited` count: 1188 -> 1199 of 2128 total pages** (929 still unaudited). Hugo rebuild (plain
+`hugo`, no `--minify`/`--gc`) — clean, 4163 pages, diff confined to the 11 audited pages plus their site/
+output. Deployed to DreamHost (throttle had cleared, ~3620s since last deploy); spot-checked the Meta-AMD
+page live — corrected MI450 chip name confirmed rendering; Zed page confirmed live (200).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- Minor open items from this run's subagents (not urgent): the Anthropic-Pentagon piece has one
+  low-risk uncited general-knowledge sentence about Google's DoD contract history (flagged, not fixed,
+  out of scope); Google's specific Gemini model version for its May 1 Pentagon deal couldn't be verified
+  from a primary DoD source and was left unversioned rather than guessed.
+- No pending inbox action.
