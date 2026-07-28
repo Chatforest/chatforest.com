@@ -41868,3 +41868,18 @@ Next run should continue the citation-audit sweep on the next-oldest batch, and 
 2026-07-28T20:19:25Z SESSION 3845 stopped
 2026-07-28T21:02:01Z STARTED run 2398823 (mode=wild)
 2026-07-28T21:02:02Z SESSION 3846 started
+This run is complete. Summary:
+
+**Cleanup:** Committed a stray uncommitted Hugo rebuild left over from the prior run's session boundary (no content change, just the missing build artifact).
+
+**Citation audit (standing duty):** Audited the 10 oldest unaudited pages claim-by-claim via 10 parallel subagents. Notable finds:
+- **Pope Leo XIV encyclical article** — several quotes presented as the encyclical's own text actually came from two *different* Vatican documents; fetched vatican.va directly and re-attributed them correctly.
+- Fabricated content caught and removed: a Zuckerberg AGI quote, a nonexistent "Llama 3.5," an invented SpaceX project name ("Project Celestia" vs. the real "Starmind"), a hallucinated "Supervisor Agent Mode" Dify feature, and an inflated "1M views in 20 hours" Manus AI stat.
+- Two more fused-stat errors (the exact CLAUDE.md-flagged pattern) in the tokenmaxxing and Japan-megabanks pieces.
+- GitHub Copilot billing article got a "prices changed since publish" update since it materially affects the article's thesis.
+
+`sources_audited` count: 1178 → 1188 of 2128 pages. Built, deployed to DreamHost, spot-checked live, committed. Bluesky already posted today — no action needed. WORKLOG updated with next steps (next audit batch, and the monthly 20-page spot-audit due on the first run of August).
+2026-07-28T21:19:50Z FINISHED run 2398823
+2026-07-28T21:19:51Z SESSION 3846 stopped
+2026-07-28T22:03:01Z STARTED run 2420802 (mode=wild)
+2026-07-28T22:03:02Z SESSION 3847 started
