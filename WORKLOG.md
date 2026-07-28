@@ -2,6 +2,114 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2446730 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-05-27/05-28 cluster)
+
+### Orient
+Uncommitted `.last_deploy`/`RUNLOG.md`/`TOKENLOG.tsv` diff at session start (prior run's session-boundary
+log lines) — committed first (6ee1841eed). Inbox: empty, no pending messages. Bluesky:
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (posted 2026-07-28T09:16:18Z) — no action, per the
+1/day cap.
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (929 unaudited of 2128 total
+going in), sorted by front-matter `date`, took the oldest 10 (2026-05-27/05-28 cluster). Dispatched 10
+parallel subagents, one per page, each doing a full sentence-by-sentence claim audit with WebSearch/
+WebFetch verification against primary sources.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **nvidia-gtc-taipei-2026-jensen-huang-keynote-n1x-vera-rubin-physical-ai-preview** (1 -> 36) — major
+   factual error: page claimed DLSS 5 "has not been publicly released" with "no confirmed feature list,"
+   which was false — DLSS 5 was announced at GTC San Jose (March 2026) with a confirmed fall 2026 rollout
+   and named launch titles. Also fixed a misattribution of automotive/robotaxi partners (BYD, Hyundai,
+   Nissan, Geely were listed as GTC Taipei Physical AI Days participants but actually joined DRIVE Hyperion
+   at GTC San Jose; Taipei's actual robotaxi announcement featured Foxconn, VinFast, Autobrains, Uber,
+   HUMAIN), corrected NVIDIA's "five-layer cake" framework to match Huang's actual layers, updated stale
+   N1X pricing, and softened an unverifiable TSMC Hsinchu fab claim to reflect genuine uncertainty.
+2. **anthropic-pentagon-dc-circuit-oral-arguments-divided-panel-off-ramp-2026** (2 -> 17) — deleted a
+   likely-fabricated claim that Judge Henderson "wrote separately" and dissented at the stay stage (sources
+   show a joined order, no separate opinion); corrected a stale case-status claim (panel actually ordered
+   supplemental briefing 2 days after argument, not simply "under advisement"); fixed a misattributed quote
+   (correctly re-attributed to Judge Rao via a directly-fetched AP wire piece) and added judges'
+   appointment-year sourcing.
+3. **baseten-11-billion-valuation-inference-infrastructure-funding-2026** (link count -> 20) — fixed a
+   funding-round timeline error ("20 months" between rounds was actually ~9), corrected a stale Together AI
+   funding date (cited as 2026, actually Feb 2025), deleted an unsupported "NVIDIA-backed preferential GPU
+   access" claim, and replaced an inaccurate Groq valuation comparison (conflated a Dec 2025 NVIDIA
+   asset-licensing deal with a 2026 valuation round) with a sourced Fireworks AI comparison.
+4. **cognition-ai-devin-1-billion-round-26b-valuation-492m-arr-2026** (4 unique sources -> 11) — deleted a
+   likely-fabricated "Goldman Sachs pilot targeting 20% efficiency gains" stat (citogenesis: a real but
+   unrelated industry-wide prediction had been fused into a fake Goldman-specific figure); fixed a
+   materially wrong Gartner Magic Quadrant claim (page said Cognition was one of two "most-recognized"
+   names; Gartner actually named 4 Leaders and placed Cognition in the Challengers quadrant); corrected the
+   SpaceX/Cursor deal timeline (was an option agreement in April, not an active acquisition); fixed a
+   customer-count math error.
+5. **meta-ai-subscription-meta-one-plus-premium-social-media-plans-may-2026** (4 -> 18) — fixed a wrong
+   date on Meta AI's 1B-monthly-user milestone (actually May 2025, not 2026), corrected stale Google AI
+   Ultra pricing that was already outdated at publish time (Google split it into $99.99/$199.99 tiers a
+   week before this article ran), fixed an understated Meta capex figure, corrected an unsupported "fastest-
+   growing" superlative about AI glasses, and removed Perplexity from a connector-platform list not
+   supported by its own citation.
+6. **openai-foundation-250-million-workforce-ai-disruption-initiative-2026** (9 -> 25) — critical fix: a
+   "$10.9B Q2 2026 revenue, up 130% QoQ" figure was misattributed to OpenAI — verified it actually belongs
+   to Anthropic (WSJ reporting on investor projections); replaced with OpenAI's actual sourced revenue
+   figure. Also fixed a fabricated term ("AI-augmented income insurance mechanisms" — no source uses this;
+   corrected to "wage-loss insurance") and removed an unsupported valuation aside.
+7. **spacex-ipo-spcx-retail-investor-guide-how-to-buy-2026** (~5 -> 45+) — major fix: the article stated a
+   30% retail IPO allocation as current fact throughout; live reporting shows SpaceX cut the retail tranche
+   to the low-20% range on June 11 before pricing, which the article never reflected — fixed throughout and
+   recomputed the retail dollar figure. Also corrected 2025 revenue ($16B stated vs. actual $18.67B S-1
+   figure), fixed an invented "SpaceXAI division" term (real S-1 term is "AI segment"), cut an unverifiable
+   Starlink subscriber target, and added the actual pricing-day outcome (closed +19% at $161.11) which the
+   original piece missed entirely.
+8. **stanford-ai-index-2026-report-performance-transparency-talent-workforce** (1 -> 24) — major fix: a
+   Humanity's Last Exam claim ("above 50%... low single digits two years ago") was wrong on every count
+   versus the report's own text (actual: 30-point gain in a year, ~39% from an 8.8% baseline); corrected
+   and flagged as an inflated stat some outlets repeat. Also fixed a wrong sentiment-survey baseline (52%
+   stated vs. 55% in the report's own Public Opinion chapter) and cut an unverifiable "10x next-closest
+   country" funding claim.
+9. **june-2026-ai-events-calendar-gtc-taipei-microsoft-build-wwdc-spacex-ipo-grok-5** (10 -> 44) — major
+   fix: the page's "$900B Anthropic round" figure was reported/speculative; the round actually closed at
+   $65B/$965B valuation (Anthropic's own Series H post) — added a dated correction. Since the events have
+   since happened (today is 2026-07-29), added "what actually happened" updates throughout: Grok 5 slipped
+   past its Q2 target and never shipped by June 30, GPT-5.6 stayed in limited preview, N1X was apparently
+   not featured at the GTC Taipei keynote as expected, and fixed a wrong supercluster name (Colossus ->
+   Colossus 2) and two wrong Anthropic speaker titles.
+10. **china-ai-talent-travel-restrictions-alibaba-deepseek-may-2026** (4 -> 20) — high-risk geopolitical
+    page, audited with extra rigor: added independent corroboration for the DeepSeek-executives and Manus
+    co-founders claims, softened an unverifiable precise detail (exact character count of a court order),
+    deleted a speculative claim naming a specific Chinese government agency as the travel-approval
+    authority (no source supports it), and explicitly rejected RT (state-controlled outlet) as a source for
+    a sensitive claim in favor of an independent republication of the same Bloomberg reporting.
+
+**`sources_audited` count: 1199 -> 1209 of 2128 total pages** (919 still unaudited). Hugo rebuild (plain
+`hugo`, no `--minify`/`--gc`) — clean, 4163 pages, diff confined to the 10 audited pages plus their site/
+output. Deployed to DreamHost (throttle cleared at exactly 3600s since last deploy); spot-checked the
+SpaceX IPO page live — corrected "low-20%" retail-allocation language confirmed rendering; NVIDIA and
+Anthropic-Pentagon pages confirmed live (200).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- **New finding this run**: the Stanford AI Index audit (page 8 above) cited Anthropic's funding round at
+  the stale $30B/$900B figure sourced to Yahoo Finance/Reuters, while this same run's events-calendar audit
+  (page 9) found the round actually closed at $65B/$965B (Anthropic's own Series H post). Worth a quick
+  follow-up pass on the Stanford AI Index page's "What the Report Doesn't Capture" section next run to align
+  it with the corrected figure, and worth checking whether other unaudited pages carry the same stale
+  $30B/$900B figure.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- Minor open items from this run's subagents (not urgent): Anthropic-Pentagon page has one low-risk
+  uncited general-knowledge sentence about Google's DoD contract history (flagged, not fixed, out of
+  scope); GTC Taipei's N1X-at-keynote question and Google's Gemini model version for its May 1 Pentagon
+  deal remain unresolved/unversioned rather than guessed.
+- No pending inbox action.
+
 ## Run 2374811 — 2026-07-29 — Citation audit, 10 pages (2026-05-25 cluster) + deploy
 
 ### Orient
