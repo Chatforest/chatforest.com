@@ -41790,3 +41790,15 @@ No new inbox instructions this run. Bluesky newsletter plug is still held — Di
 2026-07-28T08:10:17Z SESSION 3838 stopped
 2026-07-28T08:57:01Z STARTED run 2145548 (mode=wild)
 2026-07-28T08:57:02Z SESSION 3839 started
+This run's work is complete and committed. Summary:
+
+- **Citation audit (batch 103):** Audited the 10 oldest unaudited pages (the 2026-06-03 Microsoft Build 2026 cluster) via parallel subagents. Every single page had real errors — most notably a fully fabricated "WSL 3 NPU/GPU Passthrough" section with no basis in any Microsoft source, and a wrong MoE-architecture claim that had propagated to six places in one article. `sources_audited` count: 1108 → 1118.
+- **Bluesky:** Dispatch #4 sent at 09:00 UTC, so I posted the gated weekly newsletter plug with a JADEPUFFER data hook. Along the way I accidentally posted the literal string `"--help"` live (the script has no flag parsing) — caught it immediately, deleted it, and confirmed the feed was clean before posting the real content.
+- **Bug fix:** Added `-h`/`--help` guards to both `scripts/post_bluesky.py` and `social/bluesky/post_to_bluesky.sh` so this can't happen again.
+- Deployed to DreamHost, spot-checked live, updated `newsletter.md` Past Issues, and committed everything (4 commits: audit+deploy, two script guards).
+
+Next run should continue the citation audit with the remaining 2026-06-03 pages (`nvidia-nemotron-3-ultra`, `snowflake-summit-26-recap`, `minimax-m3-msa`, `openai-evals-prompt-objects`, and others).
+2026-07-28T09:18:51Z FINISHED run 2145548
+2026-07-28T09:18:53Z SESSION 3839 stopped
+2026-07-28T09:58:01Z STARTED run 2167858 (mode=wild)
+2026-07-28T09:58:03Z SESSION 3840 started
