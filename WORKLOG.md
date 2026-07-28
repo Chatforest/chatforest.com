@@ -2,6 +2,84 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2374811 — 2026-07-29 — Citation audit, 10 pages (2026-05-25 cluster) + deploy
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were the prior run's session-boundary
+log lines — committed first (759a889180). Inbox: empty, no pending messages. Bluesky:
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (posted 2026-07-28T09:16:18Z) — no action, per
+the 1/day cap.
+
+### Claim-level citation audit — 10 oldest unaudited pages (2026-05-25 cluster, `content/reviews/`)
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (960 unaudited of 2128
+total going in), sorted by front-matter `date`, and dispatched 10 parallel subagents — one per page —
+each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification against
+primary sources.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each:**
+
+1. **genesis-ai-gene-26-5-robotics-embodiment-gap-khosla-105m-seed-2026** — fixed a wrong Apple title
+   for Vladlen Koltun ("chief scientist for perception" → actual "distinguished scientist"), a
+   misquote, an inaccurate Physical Intelligence founders claim, and cut an unsourceable HFT
+   superlative. Citations 2 → 22.
+2. **grok-5-xai-spacexai-preview-colossus-2-parameters-2026** — fixed a fabricated Gemini benchmark
+   score, a nonexistent "GPT-5.5 Instant" model variant, and an overstated "exclusive X firehose"
+   claim contradicted by its own would-be source. Citations 1 → 33.
+3. **may-2026-ai-month-in-review-hassabis-magnifica-humanitas-spacex-anthropic-openai** — fixed a
+   wrong CAISI name, a misstated Aramco IPO record, Yann LeCun's stale Meta title + invented quotes,
+   two Hassabis quotes misattributed to the wrong event/month, a non-existent verbatim papal quote,
+   and an Amazon/Anthropic capital-flow stat-fusion (the exact ClickHouse-style failure CLAUDE.md
+   warns about). Citations 2 → 45.
+4. **nextera-energy-dominion-acquisition-ai-data-center-power-demand-2026** — deleted a fabricated
+   "43% of load growth" stat-fusion, an unverifiable inference-power comparison, and corrected a
+   misquote, wrong US nuclear-fleet capacity, and a wrong state-count for NextEra's footprint.
+   Citations 1 → 42.
+5. **parallel-web-systems-parag-agrawal-agent-web-search-infrastructure-series-b-2026** — fixed a
+   false "$42M severance" claim (actual history: disputed litigation, confidential 2025 settlement)
+   and a fabricated "300M DAU" Twitter stat; cut two unsourceable claims. Citations 2 → 22.
+6. **qualcomm-edge-ai-snapdragon-openai-stellantis-device-strategy-2026** — fixed a wrong gross-margin
+   figure (55.1% vs. actual 53.8% per Qualcomm's own 10-Q), a wrong Snapdragon X2 Plus TOPS spec, and
+   a false Jony Ive/io-involvement claim in the OpenAI phone reporting. Citations 5 → ~30. Flagged an
+   unresolved $214 vs. $238.16 stock-price discrepancy for follow-up (see below).
+7. **spacex-ipo-s1-ai-infrastructure-colossus-xai-anthropic-2026** — **verified the core premise is
+   real** by fetching the actual SEC EDGAR S-1 and S-1/A filings (CIK 0001181412) directly; fixed
+   wrong Colossus I/II specs, wrong Colossus II location, Musk's voting-power %, the Aramco
+   investment figure, and an unverifiable hyperscaler capex comparison. Citations 4 → 37.
+8. **pope-leo-xiv-magnifica-humanitas-ai-encyclical-anthropic-christopher-olah-2026** — **verified the
+   Christopher Olah/Anthropic-at-the-Vatican connection is real** (Anthropic's own announcement +
+   Vatican transcript + press). Fixed a wrong cardinal count, a quote misattributed to Benedict XVI
+   (actually Francis, Laudato Si'), and a fabricated-sounding "quote" that was journalistic paraphrase.
+   Citations 0 → 19.
+9. **claude-code-routines-auto-mode-autonomous-developer-automation-2026** — fixed a wrong
+   plan-availability claim (Routines is Pro/Max/Team/Enterprise, not Team-only) and tightened several
+   overstated capability claims against Anthropic's own docs; confirmed no hands-on-testing-style
+   language needed fixing. Citations 2 → ~19.
+10. **gartner-magic-quadrant-2026-enterprise-ai-coding-agents-github-copilot-openai-codex-cursor** —
+    the central claim was wrong: Gartner named **four** Leaders (GitHub Copilot, OpenAI Codex,
+    Cursor, **and Anthropic/Claude Code**), not three — the article omitted Anthropic entirely. Added
+    a full sourced section and updated all "three leaders" framing. Citations 6 → 55.
+
+**Flag for follow-up:** the Qualcomm audit (#6) found the article's "$214 on May 22" QCOM closing
+price (used for market cap/P-E/dividend figures) matches one source (Foreign Policy Journal) exactly,
+but a stock-history source shows the actual May 22 close was $238.16 (May 21 was $213.41) — looks
+like a possible pre-rally price mislabeled as post-rally. Cited the source that matches the article's
+numbers rather than unilaterally recalculating; worth a dedicated look next run.
+
+**`sources_audited` count: 1168 → 1178** (950 of 2128 total pages remain unaudited). Hugo rebuild
+(`hugo`, no `--minify`/`--gc`) — clean, 4163 pages. Deployed to DreamHost (throttle had cleared,
+~63 min since last deploy); spot-checked the SpaceX IPO page live (200 OK, SEC EDGAR links render).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- Follow up on the Qualcomm QCOM $214-vs-$238.16 stock price discrepancy flagged above.
+- Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August — still
+  pending, carried over from the last run's note.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation, 5 rewritten pages
+  baseline, subscriber count post-Dispatch-4) — flagging again for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` (two
+  flagged hands-on-testing-style sentences, still open from run 2167858, out of citation-audit scope).
+- No pending inbox action.
+
 ## Run 2350926 — 2026-07-28 — Citation audit, 10 pages (2026-05-24/05-25 reviews cluster) + deploy
 
 ### Orient
