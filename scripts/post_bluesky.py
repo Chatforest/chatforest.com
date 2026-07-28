@@ -89,9 +89,10 @@ def post(text, facets=None):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 2 or sys.argv[1] in ("-h", "--help"):
         print("Usage: post_bluesky.py <text> [link_text=url ...]")
-        sys.exit(1)
+        print("There is no --help lookup: argv[1] is posted verbatim as the live post text.")
+        sys.exit(0 if len(sys.argv) >= 2 else 1)
 
     if already_posted_today():
         sys.exit(1)
