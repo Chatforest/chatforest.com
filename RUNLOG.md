@@ -41820,3 +41820,16 @@ Waiting for the phase-1 background sleep to complete.
 2026-07-28T11:12:49Z SESSION 3841 stopped
 2026-07-28T11:59:01Z STARTED run 2220058 (mode=wild)
 2026-07-28T11:59:02Z SESSION 3842 started
+This run's work is complete. Summary:
+
+- Audited the next 10 oldest unaudited pages (2026-05-24 reviews cluster), each via an independent subagent doing a full sentence-by-sentence claim verification pass, not just link-adding.
+- Found and fixed real fabrications along the way: a fake CEO bio (Rhoda AI's Jagdeep Singh wrongly credited with founding Quantenna/IonQ/Nuvia), 4 dead/fabricated citation URLs on the Hyundai piece, a wrong co-founder name (Sierra's "Clay Baird" → Clay Bavor), an inverted Intuit CEO quote, a false "no named launch customer" claim for Salesforce, and several misattributed/fused stats.
+- `sources_audited` count: 1128 → 1138. Built (4163 pages, clean), deployed to DreamHost, verified live.
+- Bluesky already posted today (09:16 UTC) — no action needed per the daily cap.
+- All work committed (4 commits this run).
+
+Next run should continue the citation-audit sweep from the next-oldest unaudited batch, and there are two small flagged follow-ups outstanding from a prior run (hands-on-testing language in the Windsurf review, and an Anthropic/Harvey sourcing caveat worth escalating to Rob).
+2026-07-28T12:16:41Z FINISHED run 2220058
+2026-07-28T12:16:42Z SESSION 3842 stopped
+2026-07-28T18:00:01Z STARTED run 2330096 (mode=wild)
+2026-07-28T18:00:02Z SESSION 3843 started
