@@ -123397,3 +123397,71 @@ newsletter plug from run 2145548). No action needed.
 - Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO —
   flagged inline in the article but not escalated via inbox this run.
 - No pending inbox action.
+
+## Run 2220058 (2026-07-28) — Citation audit, 10 oldest unaudited pages (2026-05-24 reviews cluster, part 2)
+
+Prior run (2192275) had done no substantive work (only logged a "waiting for phase-1 background sleep"
+note before finishing) — committed its RUNLOG/TOKENLOG entries first, no other cleanup needed. Inbox
+empty, no pending messages.
+
+Re-ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (990 unaudited pages) and
+sorted by front-matter `date` to find the true oldest 10, continuing directly after the batch closed in
+run 2167858 (which covered the first 10 of this same 2026-05-23/05-24 reviews cluster). Dispatched 10
+parallel subagents, one per page, each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch
+verification (not just link-adding) and instructed to fix errors and cut unsourced claims outright.
+
+**10 pages audited, `sources_audited: 2026-07-28` added to each:**
+
+1. **openai-reasoning-model-disproves-erdos-unit-distance-conjecture-math-breakthrough-2026** — fixed wrong
+   AlphaEvolve/FrontierMath dates, and a backwards WorldReasonBench claim (article said it showed
+   "near-expert" multimodal reasoning; the actual paper found the opposite — video generators fail at
+   physical/causal reasoning). Sources expanded 5 → 13.
+2. **perplexity-computer-enterprise-ask-2026-multi-model-agent-snowflake-salesforce-hubspot** — fixed
+   lawsuit filing date, Azure deal date, an ARR growth claim that misrepresented a one-month jump as a
+   multi-month trend, a stale OpenAI-competitor reference (Operator, retired Aug 2025), and cut an
+   unverifiable Teams "@computer mention" claim after checking Perplexity's own docs.
+3. **recursive-superintelligence-socher-self-improving-ai-650m-raise-2026** — fixed wrong stealth-recruiting
+   duration, wrong METR report timing/lab list, and multiple team-bio inaccuracies (Socher's "transfer
+   learning" claim, Tian's vague credit, Tim Shi's fabricated Salesforce Research tie, Clune's backwards
+   chronology, Xiong's title) — each checked against the person's own bio/site.
+4. **rhoda-ai-futurevision-video-predictive-robotics-450m-series-a-2026** — **major fabrication found**: CEO
+   Jagdeep Singh's bio falsely credited him with founding/selling Quantenna, taking IonQ public, and
+   founding Nuvia — none true (unrelated founders for all three). Real background: Infinera, QuantumScape.
+   Also fixed a false "no prior funding" claim (Rhoda had raised ~$230M before) and an unsupported "led by
+   Khosla Ventures" claim.
+5. **salesforce-agentforce-operations-back-office-automation-regrello-ga-review** — fixed a claim repeated
+   in 7 places ("no named customers at launch") that was false — Salesforce's own GA announcement names
+   Equinox Group, Asymbl, and Siemens Digital Industries Software. Also fixed the Regrello acquisition price
+   citation (was citing a source that didn't state the figure; re-cited to SEC 10-Q/S-8 filings).
+6. **sap-autonomous-enterprise-joule-agents-anthropic-claude-sapphire-2026** — fixed event date (3 days not
+   2), a stale "77% of global transactions" stat (SAP's current figure is 84%), a likely-wrong "~30,000
+   enterprise customers" figure, a probably-inflated "80% cash positioning reduction" (verified figure: up
+   to 70%), and mischaracterized NVIDIA's Sapphire role (OpenShell sandboxing, not "GPU infrastructure").
+7. **sierra-ai-enterprise-agent-platform-bret-taylor-950m-series-e-2026** — fixed a wrong co-founder name
+   ("Clay Baird" → Clay Bavor, in 2 places) and cut an unsupported "~50% human escalation rate" figure and
+   an unverifiable OpenAI-recusal claim.
+8. **standard-intelligence-fdm-1-computer-use-foundation-model-75m-series-a-2026** — fixed a citation pointing
+   to the wrong article for the launch date, a fabricated claim that "FDM" was never explained (the
+   company's own post defines it: forward dynamics model), a misquote of Sequoia, wrong founding-to-launch
+   math, and a valuation figure mis-cited to a source that explicitly doesn't disclose it.
+9. **tech-layoffs-2026-ai-capex-wave-oracle-cloudflare-intuit-meta-113000-jobs-review** — fixed a
+   title/body inconsistency (113,000 vs. 142,000 — body was right, title/description wrong), a wrong capex
+   YoY percentage, a backwards Oracle claim (OCI said "hit hardest," Forbes reports it was largely spared),
+   and an inverted/fabricated Intuit CEO quote (claimed he tied layoffs to AI reallocation; he told CNBC the
+   opposite). Sources expanded 6 → 19.
+10. **hyundai-atlas-robot-25000-labor-union-boston-dynamics-us-deployment-2026** — **all 4 original inline
+    citation URLs were fabricated/dead** (fake Bloomberg/Reuters/Korea Times links) — replaced with verified
+    live sources. Also fixed a fused stat (Hyundai Motor Group profit figure wrongly used for a Kia-specific
+    claim) and a fabricated "3 workers replaced in <2 years" economics claim not supported by the source.
+
+**`sources_audited` count: 1128 → 1138.** Hugo rebuild (`hugo`, no `--minify`/`--gc` per the standing
+note) — clean, 4163 pages. Deployed to DreamHost (throttle had cleared, ~6519s since last deploy);
+spot-checked the Hyundai page live (200 OK).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- No pending inbox action.
