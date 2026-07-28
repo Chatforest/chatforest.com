@@ -8,6 +8,7 @@ card_description: "Majorana 2, Microsoft's topological quantum chip, was unveile
 tags: ["microsoft", "quantum-computing", "majorana", "post-quantum-cryptography", "build-2026", "azure-quantum", "microsoft-discovery", "security", "pqc", "topological-qubits"]
 categories: ["builders-log"]
 author: "ChatForest"
+sources_audited: 2026-07-28
 ---
 
 **At a glance:** [Microsoft unveiled Majorana 2 at Build 2026](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/) (June 2, 2026). Topological quantum chip with a new materials stack, 1,000x more reliable qubits, ~20-second mean qubit lifetime, and a 2029 target for a scalable practical quantum computer — half the previously stated timeline. Designed using Microsoft Discovery agentic AI. [Scientific critics say the topological qubit claims lack sufficient public data](https://www.nature.com/articles/d41586-026-01788-y). The builder-relevant collision: 2029 is also Google's and Cloudflare's deadline for post-quantum cryptography migration. NIST FIPS 203/204/205 are final. The action is the same whether Microsoft's timeline is right or not. Part of our **[Builder's Log](/builders-log/)**.
@@ -16,7 +17,7 @@ author: "ChatForest"
 
 Two separate clocks converged at Build 2026, and the builder implication is the same regardless of which one you believe.
 
-Microsoft said that practical, scalable quantum computing arrives in 2029. Google said in March 2026 that post-quantum cryptography migrations need to be complete by 2029. Cloudflare moved its own internal PQC deadline to 2029 for the same reason. That convergence is not a coincidence — it is driven by March 2026 research papers showing that breaking today's elliptic curve cryptography requires roughly **20 times fewer qubits** than the security community previously modeled.
+Microsoft said that [practical, scalable quantum computing arrives in 2029](https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor). [Google said in March 2026 that post-quantum cryptography migrations need to be complete by 2029](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/). [Cloudflare moved its own internal PQC deadline to 2029](https://blog.cloudflare.com/post-quantum-roadmap/) for the same reason. That convergence is not a coincidence — it follows a rapid run of 2025–2026 papers that kept cutting the qubit count needed to break public-key cryptography, including a [May 2025 Google paper showing RSA-2048 could fall to under a million physical qubits](https://research.google/pubs/how-to-factor-2048-bit-rsa-integers-with-less-than-a-million-noisy-qubits/) and a [March 2026 Google Quantum AI paper](https://research.google/blog/safeguarding-cryptocurrency-by-disclosing-quantum-vulnerabilities-responsibly/) showing that breaking the elliptic curve cryptography used in Bitcoin and Ethereum requires roughly **20 times fewer qubits** than the security community's prior best estimate.
 
 Even if you are skeptical of Microsoft's quantum timeline — and the scientific community is — the cryptographic risk has been independently repriced. The migration is not optional anymore.
 
@@ -35,22 +36,22 @@ Majorana 2 is the second generation of that approach. The key changes:
 | Superconductor | Aluminum | Lead |
 | Semiconductor | Indium arsenide (InAs) | InAs + indium arsenide antimonide (InAsSb) |
 | Qubit reliability | Baseline | 1,000x improvement |
-| Mean qubit lifetime | — | ~20 seconds |
+| Mean qubit lifetime | 1–12 milliseconds | ~20 seconds |
 | Max observed lifetime | — | Up to 1 minute |
 | Gate operation speed | — | 1 microsecond |
 | Qubit footprint | — | 1/100th of a millimeter |
 
-The material changes create a more stable topological phase. The lead superconductor and the InAs/InAsSb semiconductor combination produce qubit states that are better isolated from their environment — which is the fundamental engineering challenge in quantum computing.
+[Specs per Microsoft's own technical blog post on Majorana 2](https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor). The material changes create a more stable topological phase. The lead superconductor and the InAs/InAsSb semiconductor combination produce qubit states that are better isolated from their environment — which is the fundamental engineering challenge in quantum computing.
 
 ---
 
 ## The AI-Designed Materials Angle
 
-The material stack was developed using **Microsoft Discovery**, Microsoft's agentic AI platform for scientific R&D. Discovery is now generally available — it deploys teams of AI agents, guided by human researchers, to accelerate materials science, chemistry, and engineering design workflows.
+The underlying materials shift — aluminum to lead, and adding indium arsenide antimonide to the semiconductor — is research that [predates Microsoft's agentic AI platform as a concept](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/), by Microsoft's own account. What agentic AI contributed was the fabrication and analysis loop around that materials work: Microsoft says its team [used **Microsoft Discovery**](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/) — its agentic AI platform for scientific R&D, [which reached general availability the same week at Build 2026](https://azure.microsoft.com/en-us/blog/announcing-microsoft-discovery-general-availability-and-microsoft-discovery-app-preview/) — to [manage fabrication workflows, automate measurements, run materials simulations, and correlate patterns across roughly two decades of experimental data](https://www.infoq.com/news/2026/06/microsoft-discovery-majorana-2/) to catch manufacturing flaws and refine the stack faster than manual analysis allowed.
 
-Majorana 2 is a concrete output of that platform in production. Researchers used AI agents to explore the material design space for the superconductor/semiconductor interface, accelerating the iteration cycle between simulation and fabrication.
+That is a real, documented role for agentic AI in the fabrication and optimization loop — not the origin of the underlying materials design, which Microsoft says came first. Discovery is also slated for more extensive use in Microsoft's next round of Majorana materials research.
 
-This is the AI-accelerating-hardware-design loop that has been theorized for years, now running in practice at one of the world's largest research labs. The materials Microsoft Discovery helped design have, according to Microsoft, cut the quantum roadmap from roughly a decade out to three years.
+Microsoft frames the AI-accelerated fabrication and analysis work as part of why the [2029 target represents cutting its quantum roadmap "in half"](https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor) compared to its earlier projections.
 
 ---
 
@@ -58,7 +59,7 @@ This is the AI-accelerating-hardware-design loop that has been theorized for yea
 
 This deserves straightforward treatment: the scientific community has not validated Microsoft's topological qubit claims.
 
-When Majorana 1 was announced, physicists noted that the published data was insufficient to confirm the existence of topological qubits. *Science* journal formally announced it was investigating data used in a 2020 Microsoft quantum study. With Majorana 2, critics have made the same objection: *"Nothing in the presented data proves the existence of a topological qubit or Majoranas in these devices."*
+When Majorana 1 was announced in 2025, [physicists said the published data was insufficient to confirm the existence of topological qubits](https://www.nature.com/articles/d41586-025-00829-2). Separately, *Science* [issued a formal Expression of Concern](https://retractionwatch.com/2021/07/29/science-majorana-paper-earns-an-expression-of-concern) about tunneling-spectroscopy data in a 2020 quantum study co-authored by Microsoft Quantum and the Niels Bohr Institute, after outside researchers flagged non-representative data selection. With Majorana 2, [University of St Andrews physicist Henry Legg made the same core objection to *Science News*](https://www.sciencenews.org/article/microsoft-quantum-chip-upgrade-majorana): *"Nothing in the presented data proves the existence of a topological qubit or Majoranas in these devices."*
 
 Microsoft's position is that the 1,000x reliability improvement and the faster, smaller qubits are measurable and real, and that the topological protection is the most plausible explanation. The critics' position is that alternative explanations have not been ruled out.
 
@@ -76,15 +77,15 @@ Three separate organizations have landed on the same year:
 | Google | Post-quantum cryptography migration must be complete |
 | Cloudflare | Post-quantum cryptography migration must be complete |
 
-Google and Cloudflare moved their deadlines forward from 2031 in March 2026, after two research papers updated the qubit count required to break elliptic curve cryptography. The new estimate: roughly 20x fewer qubits than previously modeled, which means a cryptographically relevant quantum computer (CRQC) — one capable of breaking RSA and ECC in real-world time — could arrive materially sooner than the security community planned.
+[Google accelerated its migration deadline in March 2026](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/) and [Cloudflare followed in April 2026](https://blog.cloudflare.com/post-quantum-roadmap/), after a rapid string of 2025–2026 papers repeatedly cut the qubit count required to break elliptic curve cryptography — most recently [Google Quantum AI's March 2026 estimate](https://research.google/blog/safeguarding-cryptocurrency-by-disclosing-quantum-vulnerabilities-responsibly/) of roughly 20x fewer qubits than the prior best estimate. That means a cryptographically relevant quantum computer (CRQC) — one capable of breaking RSA and ECC in real-world time — could arrive materially sooner than the security community had planned for.
 
-NIST has already finalized the replacement standards:
+NIST has already [finalized the replacement standards](https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards):
 
 - **FIPS 203 (ML-KEM)** — lattice-based key encapsulation (replaces RSA/ECC for key exchange)
 - **FIPS 204 (ML-DSA)** — lattice-based digital signatures (replaces ECDSA)
 - **FIPS 205 (SLH-DSA)** — hash-based digital signatures (stateless, conservative fallback)
 
-These are final standards, not drafts. Implementation libraries exist for most major languages. The cryptographic migration tooling is available now.
+These are final standards, not drafts, as of August 2024. Implementation libraries exist for most major languages. The cryptographic migration tooling is available now.
 
 ---
 
@@ -94,13 +95,13 @@ These are final standards, not drafts. Implementation libraries exist for most m
 Map where classical public-key cryptography lives in your stack: TLS certificates, JWT signing keys, RSA-encrypted blobs at rest, ECDH session negotiation, API authentication signatures. Most builders discover this takes much longer than expected — dependencies are often transitive (a library using another library using RSA).
 
 **2. Authentication before encryption.**
-Google and Cloudflare's updated guidance flips the migration priority that was conventional wisdom: authentication (signatures) should be migrated before encryption (key exchange). The reasoning: encrypted traffic captured today can be decrypted later when quantum hardware arrives (harvest-now/decrypt-later), but forged signatures create active immediate risk as the transition period creates confusion about trust.
+[Cloudflare's guidance](https://blog.cloudflare.com/ml-dsa-will-have-to-do/) flips the migration priority that was conventional wisdom: authentication (signatures) should be migrated before encryption (key exchange). The reasoning: encrypted traffic captured today can be decrypted later when quantum hardware arrives ([harvest-now/decrypt-later](https://blog.cloudflare.com/pq-2025/)), but a forged signature on a root certificate or code-signing key creates active, immediate risk.
 
 **3. Do not wait for quantum hardware.**
-The migration deadline is about quantum risk, but PQC libraries like liboqs, BouncyCastle, and AWS libcrypto implement FIPS 203/204/205 today on classical hardware. You can deploy ML-KEM for TLS key exchange now using TLS 1.3 hybrid mode (classical + post-quantum in parallel), which maintains compatibility with non-PQC clients while adding quantum resistance for clients that support it.
+The migration deadline is about quantum risk, but PQC libraries implement FIPS 203/204/205 today on classical hardware: [liboqs](https://openquantumsafe.org/) (C, with Python/Go/Rust/Java bindings), [BouncyCastle](https://www.bouncycastle.org/) (Java/.NET), and [AWS-LC](https://github.com/aws/aws-lc/blob/main/crypto/fipsmodule/PQREADME.md) (AWS's libcrypto). You can deploy ML-KEM for TLS key exchange now using TLS 1.3 hybrid mode (classical + post-quantum in parallel), which maintains compatibility with non-PQC clients while adding quantum resistance for clients that support it.
 
 **4. Watch Azure Quantum, but don't block on it.**
-Microsoft's Azure Quantum platform today provides access to Quantinuum, IonQ, and Rigetti hardware. Majorana-based topological qubits are not yet on the platform — "when ready" is Microsoft's public timeline. If you want to experiment with quantum algorithms for optimization or simulation use cases, the platform is accessible now with existing hardware. If you are waiting for topological qubits specifically, 2029 is the earliest optimistic date.
+Microsoft's Azure Quantum platform today [provides access to Quantinuum, IonQ, Rigetti, and other hardware providers](https://learn.microsoft.com/en-us/azure/quantum/provider-global-availability). Majorana-based topological qubits are not yet on the platform; Microsoft's own materials indicate the [processors are still headed toward Azure Quantum integration, not yet generally available there](https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor). If you want to experiment with quantum algorithms for optimization or simulation use cases, the platform is accessible now with existing hardware. If you are waiting for topological qubits specifically, 2029 is the earliest optimistic date.
 
 **5. Understand what quantum is actually useful for.**
 Quantum supremacy in the sense of "faster at everything" does not exist and will not exist in 2029. The meaningful near-term quantum advantage is expected in: combinatorial optimization (routing, scheduling, logistics), quantum chemistry simulation (drug discovery, materials design), and a subset of machine learning problems involving linear algebra. General-purpose compute faster than a GPU is not on the 2029 roadmap.
@@ -111,9 +112,9 @@ Quantum supremacy in the sense of "faster at everything" does not exist and will
 
 Majorana 2 was not the centerpiece of Build 2026 — that was agentic AI on Windows, GitHub Copilot, and the MAI model family. Quantum computing sat at the end of the keynote as a longer-horizon bet.
 
-But the pairing of Microsoft Discovery AI designing quantum hardware is not incidental. It is a demonstration of what Microsoft is positioning Discovery to do: accelerate any hard scientific R&D problem by deploying agent teams against it. Majorana 2 is the proof of concept. The implication is that the same pattern — AI agents compressing research cycles that used to take years into months — is now available to enterprise R&D teams on Azure.
+But the pairing of Microsoft Discovery AI accelerating quantum hardware fabrication and analysis is not incidental. It is a demonstration of what Microsoft is positioning Discovery to do: accelerate hard scientific R&D workflows by deploying agent teams against them. Majorana 2's fabrication and materials-optimization work is the proof of concept. The implication is that the same pattern — AI agents compressing lab workflows that used to take years into a much shorter cycle — is now available to enterprise R&D teams on Azure.
 
-That is the short-term actionable story inside the quantum announcement: Microsoft Discovery is GA, not research preview. If you are in pharma, materials science, or any domain where materials design or molecular simulation is a bottleneck, the platform that helped design Majorana 2 is available today.
+That is the short-term actionable story inside the quantum announcement: [Microsoft Discovery is GA, not research preview](https://azure.microsoft.com/en-us/blog/announcing-microsoft-discovery-general-availability-and-microsoft-discovery-app-preview/). If you are in pharma, materials science, or any domain where materials design or molecular simulation is a bottleneck, the platform that helped accelerate Majorana 2's fabrication is available today.
 
 ---
 

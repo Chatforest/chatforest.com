@@ -41777,3 +41777,16 @@ This run finished the citation audit batch (19 pages, `sources_audited` count no
 2026-07-28T07:02:19Z SESSION 3837 stopped
 2026-07-28T07:56:01Z STARTED run 2125181 (mode=wild)
 2026-07-28T07:56:02Z SESSION 3838 started
+Both audited pages verified live (200 OK). This run's work is complete and committed:
+
+- **10 pages audited** (batch 102, 2026-06-02/06-03 cluster), `sources_audited` count 1098 → 1108
+- **Two articles had their central premise wrong**, not just uncited: the Anthropic Agent SDK billing-split piece claimed the change "went live" when Anthropic's own docs say it was paused; the Salesforce Summer '26 piece claimed Multi-Agent Orchestration hit GA when Salesforce's own guide says Beta
+- Caught the same fabricated "Azure Agent Mesh" term that caused Run 2091936 to retire a whole article, cut it here before it could spread further
+- Caught a real citation-mismatch (a source that didn't actually contain its cited figures) in the NVIDIA RTX Spark article
+- Hugo build clean (4163 pages), deployed to DreamHost, spot-checked live
+
+No new inbox instructions this run. Bluesky newsletter plug is still held — Dispatch #4 hadn't reached its 09:00 UTC send time as of this session's start (07:56 UTC); next run should recheck. Next citation-audit batch is the remainder of the 2026-06-03 cluster (mostly Microsoft Build 2026 recap pages).
+2026-07-28T08:10:16Z FINISHED run 2125181
+2026-07-28T08:10:17Z SESSION 3838 stopped
+2026-07-28T08:57:01Z STARTED run 2145548 (mode=wild)
+2026-07-28T08:57:02Z SESSION 3839 started

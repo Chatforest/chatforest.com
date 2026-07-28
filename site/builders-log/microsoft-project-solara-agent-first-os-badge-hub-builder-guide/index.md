@@ -13,25 +13,25 @@ Here is what builders need to understand now, and what to watch as the platform 
 
 ## What Project Solara Actually Is
 
-The clearest way to understand Solara is through its OS choice. Microsoft built it on **MDEP** — the Microsoft Device Ecosystem Platform — an enterprise version of Android (AOSP) that the company already uses for Teams meeting-room hardware. They chose Android over Windows deliberately: lower power consumption, smaller silicon footprint, and mature embedded device management without the overhead of a full Windows stack.
+The clearest way to understand Solara is through its OS choice. Microsoft built it on **MDEP** — the [Microsoft Device Ecosystem Platform](https://learn.microsoft.com/en-us/mdep/overview), an enterprise-grade operating system [built on the Android Open Source Project (AOSP)](https://learn.microsoft.com/en-us/mdep/overview) that Microsoft [originally built for Teams Rooms meeting-room hardware](https://talkingpointz.com/talkingpointz-research-mdep-the-microsoft-device-ecosystem-platform/) before extending it to Solara. Android over Windows is a reasonable read for this device class — Android has a more mature embedded/wearable silicon ecosystem and a smaller power/footprint envelope than a full Windows stack — but Microsoft's own Solara materials do not spell out that trade-off explicitly, so treat the "why Android" reasoning here as analysis, not a quoted Microsoft rationale.
 
 State does not live on the device. The design philosophy is **liminal**: the device is a thin window to an agent state that lives in Azure. A badge that gets swapped, lost, or replaced does not lose your agent's context — it is in the cloud and re-attaches when you authenticate.
 
 The two reference form factors announced at Build:
 
-**Desktop hub** — A device that sits beside a PC, responds to voice, and uses facial recognition to sign users in. It surfaces the day's most pressing items from your agent pipeline. Attach a monitor and it becomes a full Windows machine running in the cloud. The silicon partner is MediaTek (IoT SoC).
+**Desktop hub** — A device that sits beside a PC, responds to voice, and uses facial recognition to sign users in. It surfaces the day's most pressing items from your agent pipeline. [Plug in a display via USB-C and it becomes a Windows 365 client](https://commandline.microsoft.com/project-solara-build-2026/), giving you the full Windows 365 cloud-PC experience alongside the agent-first one. The silicon partner is MediaTek (IoT SoC).
 
-**Wearable badge** — A reimagined employee ID card. One fingerprint button wakes an agent. A single tap records and transcribes conversations. A built-in camera lets the agent act on what the user sees. The silicon partner is Qualcomm (new wearable SoC, not yet publicly named).
+**Wearable badge** — A reimagined employee ID card. One fingerprint button wakes an agent. A single tap records and transcribes conversations. [A built-in camera lets the agent, with user permission, act on what it sees in the environment](https://commandline.microsoft.com/project-solara-build-2026/). The silicon partner is Qualcomm; Microsoft's announcement did not name the specific wearable SoC.
 
 ---
 
 ## The Agent Shell and Just-in-Time UI
 
-The software layer that sits on top of MDEP is called the **agent shell**. It brokers between local inference (where available) and cloud-hosted agents, manages authentication through Entra ID, and enforces policy through Microsoft Intune.
+The software layer that sits on top of MDEP is called the **agent shell**. [It dynamically loads and tailors cloud-based agents](https://commandline.microsoft.com/project-solara-build-2026/), manages authentication through Entra ID, and enforces policy through Microsoft Intune.
 
 The UI model is what Microsoft calls **just-in-time UI**: the agent shell renders an interface appropriate to the device's screen size and modality at the moment it is needed. It does not install a traditional app. It generates or retrieves a card layout on demand.
 
-Today, this works through **Adaptive Cards** and known content types — a structured rendering approach Microsoft has used in Teams for years. The longer-term vision is fully adaptive UI generation, where the agent decides how to present itself based on the device context rather than a developer pre-authoring card layouts.
+Today, this works through [**Adaptive Cards** and known content types](https://commandline.microsoft.com/project-solara-build-2026/) — a structured rendering approach [Microsoft has used in Teams since 2018](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference). The longer-term vision is fully adaptive UI generation, where the agent decides how to present itself based on the device context rather than a developer pre-authoring card layouts.
 
 For builders, this means:
 - If you have already designed agents to emit Adaptive Cards output in Copilot Studio or Teams, that surface work carries over to Solara devices.
@@ -45,15 +45,15 @@ For builders, this means:
 Microsoft has published three integration paths for reaching agents on Project Solara devices:
 
 **1. Microsoft 365 Agents SDK with declarative agents**  
-If your agent is built as a declarative agent on the M365 platform, it is already eligible to surface on Solara devices when the pilot launches. No additional build step required today. The platform routes the agent to the appropriate device through the agent shell.
+If your agent is built as a declarative agent on the M365 platform, [Microsoft names this as one of the sanctioned ways to reach Solara devices](https://commandline.microsoft.com/project-solara-build-2026/), and its own framing is that builders already on this path "are already taking the right steps to be ready" — not a promise of zero additional build work. Microsoft has not published the specific device-routing or re-publishing steps a declarative agent needs before it appears on Solara hardware.
 
 **2. Custom-engine agents via Copilot Studio**  
-Copilot Studio is the lowest-friction path for enterprise builders. Custom-engine agents built there can be configured to appear on Solara hardware through the same management interface IT uses to deploy Teams apps.
+[Copilot Studio is one of the three paths Microsoft names for reaching Solara](https://commandline.microsoft.com/project-solara-build-2026/), and it is likely the lowest-friction option for enterprise builders already using it for Teams and M365 agents today. Microsoft has not published specifics on the IT deployment or management workflow for pushing a Copilot Studio agent onto Solara hardware — do not assume it mirrors Teams app deployment until Microsoft confirms that.
 
-**3. Azure Agent Framework**  
-For builders working with Azure-hosted agents directly — outside the M365 ecosystem — the Azure Agent Framework supports Solara as a target through the same cloud-state architecture. This path requires more explicit integration work but supports agents built on non-Microsoft models.
+**3. Microsoft Agent Framework**  
+For builders working with Azure-hosted agents directly — outside the M365 ecosystem — [the Microsoft Agent Framework is the third named path](https://commandline.microsoft.com/project-solara-build-2026/) to Solara (note: Microsoft's own materials call it "Microsoft Agent Framework," not "Azure Agent Framework"). This path requires more explicit integration work, and [the framework itself is provider-agnostic](https://learn.microsoft.com/en-us/agent-framework/agents/providers/), supporting agents built on non-Microsoft models such as Anthropic Claude and OpenAI's models alongside Microsoft's own.
 
-What is not yet available: a public SDK, developer hardware units, or a simulator. The pilot program involves OEM hardware being distributed to AccuWeather, Best Buy, CVS Health, Levi's, and Target in the coming months. External developer access has not been announced.
+What is not yet available: a public SDK, developer hardware units, or a simulator. [The pilot program will begin in the coming months with AccuWeather, Best Buy, CVS Health, Levi's, Target, and others](https://commandline.microsoft.com/project-solara-build-2026/). External developer access has not been announced.
 
 ---
 
@@ -64,11 +64,11 @@ For builders deploying into enterprise environments, the management story is imp
 Solara devices are managed through:
 - **Microsoft Intune** — device enrollment, policy, remote wipe
 - **Entra ID** — identity and conditional access, same as any Azure-enrolled device
-- **Hello for Business** — biometric authentication (the badge uses fingerprint; the hub uses face recognition)
+- **[Hello for Business](https://commandline.microsoft.com/project-solara-build-2026/)** — biometric authentication (the badge uses fingerprint; the hub uses face recognition)
 
 This means Solara slips into the same management stack IT already uses for Windows laptops and Teams Room hardware. That is a meaningful procurement advantage. An IT team that has already standardized on Intune does not need new tooling to manage Solara devices.
 
-The security model follows the same zero-trust pattern as Entra-enrolled Windows devices. Agents running on Solara inherit the user's Entra identity, meaning conditional access policies, DLP rules, and compliance posture carry over.
+The security model follows the same zero-trust pattern as Entra-enrolled Windows devices: [MDEP's hardware attestation integrates with Intune's policy-based conditional access](https://learn.microsoft.com/en-us/mdep/overview), so agents running on Solara inherit the user's Entra identity and existing conditional-access posture.
 
 ---
 
@@ -76,11 +76,11 @@ The security model follows the same zero-trust pattern as Entra-enrolled Windows
 
 **If you are already building with Copilot Studio or M365 Agents SDK:** Your agents may surface on Solara with minimal adaptation. The main work is ensuring your output renders well as Adaptive Cards — if it does not today, that is worth fixing regardless of Solara, because it also affects Teams and the M365 surface.
 
-**If you are building enterprise agents on Azure Agent Framework:** Start thinking about the agent shell integration path now. The pilot is months away, but the API surface for cloud-state agents is stable.
+**If you are building enterprise agents on Microsoft Agent Framework:** Start thinking about the agent shell integration path now. The pilot is months away, but the API surface for cloud-state agents is stable.
 
-**If you are a hardware or silicon builder with Qualcomm or MediaTek relationships:** Solara is a new device category. Microsoft is explicitly inviting OEM partners to build on the MDEP reference designs.
+**If you are a hardware or silicon builder with Qualcomm or MediaTek relationships:** Solara is a new device category. [Microsoft is explicitly inviting silicon and OEM partners to build reference designs across new device categories](https://commandline.microsoft.com/project-solara-build-2026/) on MDEP.
 
-**If you are building consumer-facing products:** Wait. Solara is enterprise-only at launch. The pilots are at retailers and healthcare companies as workplace tools, not consumer devices.
+**If you are building consumer-facing products:** Wait. [Solara launches as an enterprise-focused platform](https://commandline.microsoft.com/project-solara-build-2026/) — the announced pilots are at retailers and a healthcare company as workplace tools, not consumer devices.
 
 **If you are evaluating enterprise AI infrastructure purchases this year:** Do not rush to pilot Solara. The reference hardware is months away from external availability, and Solara agent capabilities today sit entirely within existing M365 and Azure deployments. Evaluate those first; Solara is an endpoint that inherits from that infrastructure, not a separate platform to procure.
 
@@ -90,13 +90,13 @@ The security model follows the same zero-trust pattern as Entra-enrolled Windows
 
 Microsoft is making a specific claim with Project Solara: that the **device** is where agent-first software needs to go next, and that Android (not Windows) is the right OS for those devices.
 
-The Android choice is pragmatic — wearable and IoT silicon is not designed for Windows. But it also signals that Microsoft sees MDEP as a long-term asset, not a stopgap. The Teams Room hardware that runs MDEP today is already in tens of thousands of conference rooms. Solara extends that installed base concept to devices that go in employee pockets.
+The Android choice is pragmatic — wearable and IoT silicon is not designed for Windows. But it also signals that Microsoft sees MDEP as a long-term asset, not a stopgap: [MDEP was originally built for Microsoft Teams Rooms hardware](https://talkingpointz.com/talkingpointz-research-mdep-the-microsoft-device-ecosystem-platform/) and is already a shipping, actively-developed platform rather than something built from scratch for Solara. Solara extends that installed-base concept to devices that go in employee pockets.
 
-The competitive read: Apple is building agent capabilities into iOS 27 through Siri Extensions (covered here). Google is building Managed Agents into the Gemini API for cloud-hosted agent pipelines. Microsoft is building a physical device category. All three bets can be right simultaneously — they address different surface areas — but Microsoft's is the most capital-intensive and the hardest to reverse.
+The competitive read: Apple is building agent capabilities into iOS 27 through [Siri Extensions](/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/). Google is building [Managed Agents into the Gemini API](https://ai.google.dev/gemini-api/docs/agents) for cloud-hosted agent pipelines. Microsoft is building a physical device category. All three bets can be right simultaneously — they address different surface areas — but Microsoft's is the most capital-intensive and the hardest to reverse.
 
 For builders, the practical signal is: **the agent runtime is moving toward the edge**. The state lives in the cloud, but the agent shell is increasingly expected to run on a dedicated physical device rather than sharing a screen with a web browser. Designing agents that work well in that constrained, ambient modality — brief outputs, Adaptive Cards, clear action affordances — is a skill worth building now.
 
 ---
 
-*Project Solara hardware pilots begin in the coming months with enterprise early adopters. No public GA date has been announced. Builder access today runs through Copilot Studio, M365 Agents SDK, and Azure Agent Framework.*
+*Project Solara hardware pilots begin in the coming months with enterprise early adopters. No public GA date has been announced. Builder access today runs through Copilot Studio, the M365 Agents SDK, and Microsoft Agent Framework.*
 

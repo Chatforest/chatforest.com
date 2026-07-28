@@ -8,13 +8,14 @@ card_description: "CoddSpeed is Microsoft's GPU-accelerated query engine for Fab
 tags: ["microsoft", "fabric", "data-warehouse", "gpu", "coddspeed", "build-2026", "analytics", "sigmod", "nvidia", "enterprise-data"]
 categories: ["builders-log"]
 author: "ChatForest"
+sources_audited: 2026-07-28
 ---
 
-**At a glance:** CoddSpeed, announced June 2, 2026 at Microsoft Build. GPU-accelerated query processing in Fabric Data Warehouse — no query rewrites required. SIGMOD 2026 Industry Track Best Paper. Benchmark: up to 7x faster than three comparable cloud warehouses at 64-user concurrency. UNC Health (healthcare) reports 5x production improvement on existing workloads. Architecture supports GPUs, FPGAs, ASICs, NVLink, InfiniBand. Early access preview: July 2026. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** CoddSpeed, announced [June 2, 2026 at Microsoft Build](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/). GPU-accelerated query processing in Fabric Data Warehouse — [no query rewrites required](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/). [SIGMOD 2026 Industry Track Best Paper](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/). Benchmark: [up to 7x faster than three comparable cloud warehouses at 64-user concurrency](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-analytics-frontier-GPU-accelerated-Fabric-Data-Warehouse/ba-p/5191598). UNC Health (healthcare) reports [5x production improvement on existing workloads](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/). [Architecture supports GPUs, FPGAs, ASICs, NVLink, InfiniBand](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/). Early access preview: [July 2026](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-analytics-frontier-GPU-accelerated-Fabric-Data-Warehouse/ba-p/5191598). Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
-The name is deliberate. Edgar F. Codd invented the relational model in 1970. Microsoft's new GPU-accelerated query engine for Fabric Data Warehouse is called CoddSpeed — part tribute, part positioning. The relational model ran on CPUs for 55 years. Microsoft is making a case that the next phase runs on something else.
+The name is deliberate. Edgar F. Codd invented the relational model in [1970](https://github.com/tpn/pdfs/blob/master/A%20Relational%20Model%20of%20Data%20for%20Large%20Shared%20Data%20Banks%20-%20E.F.%20Codd%20(1970).pdf), in a paper published while he was at IBM. Microsoft's new GPU-accelerated query engine for Fabric Data Warehouse is called [CoddSpeed](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-research-to-product-Microsoft-Fabric-wins-best-industry/ba-p/5191608) — part tribute, part positioning. The relational model ran primarily on CPUs for the 56 years since. Microsoft is making a case that the next phase runs on something else.
 
 Whether that case holds over time is an open question. But the research is real, the benchmarks are specific, and the timeline is July 2026. That's worth understanding before the early access queue opens.
 
@@ -22,11 +23,11 @@ Whether that case holds over time is an open question. But the research is real,
 
 ## What CoddSpeed Actually Is
 
-CoddSpeed is a query execution substrate inside Microsoft Fabric Data Warehouse that offloads analytical query processing from CPUs to hardware accelerators. In the July 2026 early access, that means NVIDIA GPUs. The underlying architecture is designed to host multiple accelerator types over time: FPGAs, ASICs, and custom silicon are explicitly listed as future targets. NVLink and InfiniBand are supported for data movement between components.
+CoddSpeed is a query execution substrate inside Microsoft Fabric Data Warehouse that offloads analytical query processing from CPUs to hardware accelerators. In the [July 2026 early access](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-analytics-frontier-GPU-accelerated-Fabric-Data-Warehouse/ba-p/5191598), that means NVIDIA GPUs. The [underlying architecture is designed to host multiple accelerator types over time](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/): FPGAs, ASICs, NVLink, and InfiniBand are explicitly named in the research paper as part of the hardware-independent design.
 
-The GPU execution engine is derived from Microsoft Research's **Tensor Query Processor (TQP)** — a research project that has been developing GPU-native relational query processing for several years. CoddSpeed takes that research and puts it into Fabric's production warehouse layer.
+The GPU execution engine is [derived from Microsoft Research's **Tensor Query Processor (TQP)**](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/) — a research project that has been developing GPU-native relational query processing for several years. CoddSpeed takes that research and puts it into Fabric's production warehouse layer.
 
-The claim that matters most to builders: **no query rewrites required.** You do not need to modify your SQL, restructure your data model, or change your ingestion pipeline. GPU acceleration is transparent to existing workloads.
+The claim that matters most to builders: [**no query rewrites required.**](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/) Microsoft describes acceleration as working "automatically within Fabric, speeding up queries without requiring any query rewrites." GPU acceleration is transparent to existing workloads.
 
 ---
 
@@ -35,19 +36,19 @@ The claim that matters most to builders: **no query rewrites required.** You do 
 Microsoft published two sets of performance numbers:
 
 **Against the CPU baseline (TPC-H 1TB benchmark):**
-- Up to **30x faster** than Fabric's own CPU-based execution on TPC-H 1TB queries
+- Up to [**30x faster**](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/) than Fabric's own CPU-based execution on TPC-H 1TB queries
 
-**Against comparable cloud warehouses (internal testing, May 2026):**
+**Against comparable cloud warehouses ([internal testing, May 2026](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/A-new-analytics-frontier-GPU-accelerated-Fabric-Data-Warehouse/ba-p/5191598)):**
 | Concurrency | GPU-Fabric vs. Three Cloud DW Providers |
 |---|---|
 | Single user (1 concurrent) | ~3x faster |
 | 16 concurrent users | ~6x faster |
 | 64 concurrent users | ~7x faster |
 
-The three providers are not named. The test covered "common reporting, application and AI-driven analytics scenarios" — not a disclosed subset of TPC-H or a named public benchmark.
+The three providers are not named. The test covered ["common reporting, application and AI-driven analytics scenarios"](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/) — not a disclosed subset of TPC-H or a named public benchmark.
 
 **Customer evidence:**
-- UNC Health (healthcare): up to **5x faster query speeds on existing workloads** in production
+- UNC Health (healthcare): [up to **5x faster query speeds**](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/) on existing workloads in production
 
 The concurrency scaling pattern is the interesting signal. The gap between GPU-accelerated Fabric and the unnamed comparators grows as user count increases. At single-user, 3x might reflect raw throughput advantage. At 64-user, 7x suggests the GPU architecture handles concurrency more efficiently — likely because GPU parallelism scales differently than CPU thread pools under mixed workload pressure.
 
@@ -57,12 +58,12 @@ For teams running heavy multi-user analytics — dashboards serving dozens of si
 
 ## Research Credibility: The SIGMOD Paper
 
-CoddSpeed was the **ACM SIGMOD 2026 Industry Track Best Paper.** SIGMOD is the premier database research conference. The Industry Track Best Paper specifically recognizes production systems that advance the field — not just internal engineering, and not just academic proposals. This is one of the highest forms of peer recognition in database research.
+CoddSpeed was the [**ACM SIGMOD 2026 Industry Track Best Paper**](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/), also confirmed by [Microsoft's own recap of the award](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/From-research-to-product-Microsoft-Fabric-wins-best-industry/ba-p/5191608) and the paper's [ACM Digital Library listing](https://dl.acm.org/doi/abs/10.1145/3788853.3803077). SIGMOD is the premier database research conference. The Industry Track Best Paper specifically recognizes production systems that advance the field — not just internal engineering, and not just academic proposals. This is one of the highest forms of peer recognition in database research.
 
-The paper describes CoddSpeed as "one of the first systems in the era of accelerated analytics" and documents lessons from production deployment. The architecture section covers:
+The paper describes CoddSpeed as ["one of the first systems in the era of accelerated analytics"](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/) and documents lessons from production deployment. The [architecture section covers](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/):
 
 - A novel data movement system using NVLink and InfiniBand
-- Hardware-independence as a design principle: the system is built to run on a variety of compute and network accelerators, not just current-generation NVIDIA GPUs
+- Hardware-independence as a design principle: the system is built to run on a variety of compute and network accelerators, not just current-generation NVIDIA GPUs — the paper states the team has "made hardware independence \[its\] guiding principle" given how fast accelerator hardware changes
 - Validation across both TPC-H benchmarks and production workloads
 
 The academic recognition matters to builders for one reason: **this is not a marketing demo.** GPU-accelerated analytics has been promised by multiple vendors for years. The SIGMOD Best Paper designation means Microsoft's implementation is being judged against the state of the art in database research, not just against its own press release.
@@ -107,9 +108,9 @@ These gaps will matter for cost modeling and capacity planning. Check the July e
 
 ## The Architecture Roadmap Signal
 
-Microsoft explicitly designed CoddSpeed to be hardware-independent. The paper lists GPUs as the current instantiation but frames the system as a "general substrate for hardware-accelerated query execution that can host different coprocessors over time."
+Microsoft explicitly designed CoddSpeed to be hardware-independent. The [paper](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/) lists GPUs as the current, most mature instantiation but states the team has "made hardware independence \[its\] guiding principle, given the rapid evolution of hardware."
 
-FPGAs, ASICs, NVLink, and InfiniBand are all mentioned in the architecture scope. Microsoft has [its own custom silicon program](/builders-log/anthropic-microsoft-maia-200-custom-silicon-claude-inference-cost/) — MAIA — currently used for inference. Whether custom data warehouse silicon follows the same path is speculative, but the architectural decision to build CoddSpeed as a coprocessor-agnostic substrate is not accidental.
+FPGAs, ASICs, NVLink, and InfiniBand are all [mentioned in the architecture scope](https://www.microsoft.com/en-us/research/publication/coddspeed-hardware-accelerated-query-processing-in-microsoft-fabric/). Microsoft has [its own custom silicon program](/builders-log/anthropic-microsoft-maia-200-custom-silicon-claude-inference-cost/) — MAIA — currently used for inference. Whether custom data warehouse silicon follows the same path is speculative, but the architectural decision to build CoddSpeed as a coprocessor-agnostic substrate is not accidental.
 
 For builders, this is a long-term signal: Fabric DW acceleration is not a one-time GPU integration. It's a layer designed to absorb whatever the next generation of compute hardware looks like. That's a different kind of infrastructure bet than a GPU-specific optimization.
 
@@ -120,7 +121,7 @@ For builders, this is a long-term signal: Fabric DW acceleration is not a one-ti
 - **July 2026:** Early access preview opens — sign up when the documentation appears on learn.microsoft.com
 - **Pricing disclosure:** Watch for Fabric DW billing documentation to include GPU execution details
 - **Independent benchmarks:** Third-party TPC-DS and TPC-H runs from the community will be more useful than Microsoft's internal numbers for comparison purposes
-- **Snowflake/Databricks response:** Both have GPU acceleration roadmap items; CoddSpeed accelerates the competitive timeline
+- **Databricks response:** Databricks and NVIDIA have [announced plans](https://www.databricks.com/company/newsroom/press-releases/databricks-and-nvidia-strengthen-partnership-accelerate-enterprise) to bring native NVIDIA-accelerated computing to Photon, Databricks' vectorized query engine, for data warehousing and analytics workloads — no committed ship date yet. **Snowflake**, by contrast, has [added NVIDIA GPU acceleration for machine learning workloads in Snowflake ML](https://www.snowflake.com/en/news/press-releases/snowflake-supercharges-machine-learning-for-enterprises-with-native-integration-of-nvidia-cuda-x-libraries/) (via CUDA-X libraries), not for its core SQL query execution engine — the two are not on equivalent GPU-acceleration timelines
 
 ---
 

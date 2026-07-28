@@ -19,27 +19,26 @@ Most coding model benchmarks are evaluated against coding tasks: solve a GitHub 
 
 MAI-Code-1-Flash inverts that. Microsoft trained it with the actual GitHub Copilot production tool harnesses — the multi-step file editing, terminal calls, context retrieval, and inline chat flows that real Copilot users run daily. The model learned to be good at Copilot workflows, not just good at coding benchmarks that approximate Copilot workflows.
 
-The practical consequence Microsoft claims: **up to 60% fewer tokens consumed on complex coding tasks** versus comparable models. In a billing environment where Copilot switched to [usage-based AI Credits on June 1](/builders-log/github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide/), token efficiency is not an abstract engineering achievement. It is a dollar amount.
+The practical consequence Microsoft claims: [**up to 60% fewer tokens** to solve harder problems on SWE-Bench Verified](https://microsoft.ai/news/introducingmai-code-1-flash/) versus comparable models. In a billing environment where Copilot switched to [usage-based AI Credits on June 1](/builders-log/github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide/), token efficiency is not an abstract engineering achievement. It is a dollar amount.
 
 ---
 
 ## The Benchmark Picture
 
-Microsoft has published results on two benchmarks:
+Microsoft has published results on two benchmark families, both in its own [launch post](https://microsoft.ai/news/introducingmai-code-1-flash/):
 
 **Microsoft adversarial coding benchmark (internal)**
-- 186 questions across 34 categories
-- Designed to include inverted problems, impossible tasks, and underdetermined scenarios — not just standard coding exercises
+- [186 questions across 34 categories, built around "adversarial traps like inverted classics, impossible tasks, and underdetermined scenarios"](https://microsoft.ai/news/introducingmai-code-1-flash/)
 - MAI-Code-1-Flash: **85.8% adjusted accuracy**
-- Described as outperforming Claude Haiku 4.5
+- Microsoft's own wording: ["MAI-Code-1-Flash surpasses Claude Haiku 4.5 overall"](https://microsoft.ai/news/introducingmai-code-1-flash/) on this benchmark
 
-**SWE-bench Verified**
-- Microsoft's official claim: "at or above Claude 3.7 Sonnet"
-- Community-surfaced number from the model card: ~**51% on SWE-Bench Pro**
+**SWE-Bench Pro (Microsoft's own comparison, not community-surfaced)**
+- [Microsoft's published number: 51.2% for MAI-Code-1-Flash vs. 35.2% for Claude Haiku 4.5 — a +16-point lead](https://microsoft.ai/news/introducingmai-code-1-flash/), reported directly by Microsoft alongside SWE-Bench Verified, SWE-Bench Multilingual, and Terminal-Bench 2 results (also claimed wins over Claude Haiku 4.5 on all four)
+- Microsoft's post does not compare MAI-Code-1-Flash to Claude 3.7 Sonnet on SWE-Bench Verified or any other benchmark; an earlier version of this article attributed that comparison to Microsoft and it did not check out against the source, so it has been removed
 
-Interpret these carefully. The 85.8% figure is on an internal Microsoft benchmark that has not been independently reproduced. The SWE-Bench Pro 51% is more comparable — it puts MAI-Code-1-Flash in the same tier as GPT-5.3, but below Kimi K2.6 (~58.6%), GLM-5.1 (~58.4%), and Claude Opus 4.6's baseline performance.
+Interpret these carefully. The 85.8% figure is on an internal Microsoft benchmark that has not been independently reproduced. The SWE-Bench Pro number is more comparable to the rest of the field: on the [independent SWE-Bench Pro leaderboard](https://llm-stats.com/benchmarks/swe-bench-pro), MAI-Code-1-Flash's 51.2% sits below GPT-5.3 Codex (56.8%), Kimi K2.6 (58.6%), and GLM-5.1 (58.4%) — all measured on the same public leaderboard. Claude Opus 4.6 is not listed on that leaderboard (only the newer Opus 4.7/4.8), and other SWE-Bench Pro variants (different scaffolds and data splits) put Opus 4.6 anywhere from below to above MAI-Code-1-Flash's score, so that comparison is cut here rather than guessed at.
 
-For context on the rest of the [MAI family](/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/): MAI-Thinking-1 (the reasoning model) is described as "competitive with Claude Opus 4.6 on SWE-Bench Pro." MAI-Code-1-Flash is not claiming that level — it is positioned as an efficient everyday-coding model, not a frontier-reasoner.
+For context on the rest of the [MAI family](/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/): Microsoft says MAI-Thinking-1 (the reasoning model) [matches Claude Opus 4.6 on SWE-Bench Pro](https://microsoft.ai/news/introducing-mai-thinking-1/). MAI-Code-1-Flash is not claiming that level — it is positioned as an efficient everyday-coding model, not a frontier-reasoner.
 
 The honest read: MAI-Code-1-Flash is strong in its efficiency tier. It is not trying to claim the absolute top of the leaderboard, which is currently occupied by Kimi K2.6, GLM-5.1, and the Anthropic Opus line. It is trying to be the right model for the volume of coding work that flows through Copilot every day.
 
@@ -48,13 +47,14 @@ The honest read: MAI-Code-1-Flash is strong in its efficiency tier. It is not tr
 ## Architecture: What Microsoft Has and Has Not Disclosed
 
 Microsoft has confirmed:
-- **Adaptive solution length control** — the model adjusts how much reasoning budget it spends based on task complexity. A simple variable rename uses minimal compute; a multi-file refactor gets more.
-- **Commercially licensed training data** — same claim as MAI-Thinking-1; built to avoid the IP provenance issues that plagued DeepSeek R1.
-- **Production harness training** — trained with real Copilot tool interactions, not a simulation.
+- **Adaptive solution length control** — [the model adjusts how much reasoning budget it spends based on task complexity](https://microsoft.ai/news/introducingmai-code-1-flash/). A simple variable rename uses minimal compute; a multi-file refactor gets more.
+- **5 billion active parameters** — [disclosed in Microsoft's Build 2026 model-family recap](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/), which describes MAI-Code-1-Flash as "comparable to Haiku but cheaper." Microsoft uses "active parameters" phrasing but has not used the words "Mixture-of-Experts" or "dense" for this specific model, and has not disclosed a total parameter count.
+- **Training data described as "clean, traceable and enterprise-grade," without distillation from third-party models** — [Microsoft's own phrasing](https://microsoft.ai/news/introducingmai-code-1-flash/) for this model; Microsoft has not used the term "commercially licensed" specifically for MAI-Code-1-Flash (it has used similar language for MAI-Thinking-1), so this article no longer repeats that specific term here.
+- **Production harness training** — [trained with real Copilot tool interactions, not a simulation](https://microsoft.ai/news/introducingmai-code-1-flash/).
 
 Microsoft has not disclosed:
-- Parameter count
-- Architecture type (dense vs. MoE)
+- Total parameter count (only the 5B *active*-parameter figure)
+- Confirmation of a Mixture-of-Experts vs. dense architecture, in explicit terms
 - Training infrastructure
 
 The "Flash" naming convention mirrors what Anthropic uses for smaller/faster Claude variants and what Google uses for the Gemini Flash tier. Microsoft appears to be establishing that MAI-Code-1-Flash is the speed/efficiency variant of a larger MAI-Code-1 family — but no larger variant has been announced yet.
@@ -64,20 +64,14 @@ The "Flash" naming convention mirrors what Anthropic uses for smaller/faster Cla
 ## Access: Where You Can Actually Use This
 
 **GitHub Copilot (live now)**
-MAI-Code-1-Flash is in the Copilot model picker in VS Code as of June 2, 2026. The rollout started with a limited percentage of users and is expanding. Available on all paid Copilot tiers: Free, Pro ($10/month), Pro+ ($39/month), and Max. On paid tiers it can also be selected by the automatic model picker when Copilot decides it's the right tool for the current task.
+MAI-Code-1-Flash is in the Copilot model picker in VS Code as of June 2, 2026. [Availability started with a limited set of users and is expanding gradually](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/). It is [rolling out across Copilot Free, Student, Pro, Pro+, and Max plans](https://github.blog/changelog/2026-06-02-mai-code-1-flash-is-now-available-for-github-copilot/) — Pro is [$10/month](https://github.com/features/copilot/plans) and Pro+ is [$39/month](https://github.com/features/copilot/plans). On paid tiers it can also be selected by the automatic model picker when Copilot decides it's the right tool for the current task.
 
-Under the [usage-based billing model](/builders-log/github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide/) that started June 1, MAI-Code-1-Flash's token efficiency advantage translates directly to credit preservation. If the 60% token reduction claim holds at production, agentic Copilot workflows that would otherwise exhaust a Pro plan's $39 monthly credit budget in two days might stretch to five.
+Under the [usage-based billing model](/builders-log/github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide/) that started June 1, MAI-Code-1-Flash's token efficiency advantage translates directly to credit preservation. A Pro+ plan's $39/month credit budget (7,000 credits, per [GitHub's published allotments](/builders-log/github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide/)) stretches further if the 60% token reduction holds in production agentic sessions — the exact number of extra sessions depends on your workflow, so treat this as directional rather than a fixed multiplier.
 
 **Third-party API access**
-MAI-Code-1-Flash is available outside of Copilot through three distribution partners announced at Build 2026:
-- **Fireworks AI** — inference API, per-token pricing
-- **Baseten** — model serving platform
-- **OpenRouter** — unified model router
+MAI-Code-1-Flash is available outside of Copilot through three distribution partners Microsoft named in its [Build 2026 model-family recap](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/): **Fireworks AI**, **Baseten**, and **OpenRouter**.
 
-Azure AI Foundry pricing for the broader MAI model family exists but specific per-token rates for MAI-Code-1-Flash were not published at launch.
-
-**GitHub Models**
-GitHub's free model sandbox provides prototyping access without an Azure subscription. Available now with a GitHub account.
+On the Copilot side, [GitHub's own rate card](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing) lists MAI-Code-1-Flash at $0.75 per million input tokens ($0.075 per million cached) and $4.50 per million output tokens. Per-token pricing on Fireworks AI, Baseten, and OpenRouter was not independently confirmed as of this audit — check each platform directly before budgeting against it.
 
 ---
 
@@ -88,10 +82,10 @@ Build 2026 launched three distinct MAI model lines in the same week:
 | Model | Category | Primary access | Notable claim |
 |---|---|---|---|
 | [MAI-Code-1-Flash](/builders-log/microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026/) | Coding | GitHub Copilot model picker | 60% token reduction vs. comparable models |
-| [MAI-Thinking-1](/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/) | Reasoning | Azure AI Foundry, GitHub Models | Not distilled from any other model |
+| [MAI-Thinking-1](/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/) | Reasoning | Private preview, Microsoft Foundry | Not distilled from any other model |
 | [MAI-Image-2.5 / MAI-Voice-2 / MAI-Transcribe-1.5](/builders-log/microsoft-mai-multimodal-build-2026-image-voice-transcribe-builder-guide/) | Multimodal | Azure AI Foundry, Office apps | Hear / see / speak stack unified |
 
-The pattern is visible: Microsoft is building a parallel model stack that does not depend on OpenAI for any capability. In April 2026, restrictions in the Microsoft-OpenAI partnership were lifted, giving Microsoft the right to serve its own models in products rather than defaulting to OpenAI. Build 2026 is the first full public exercise of that right.
+The pattern is visible: Microsoft is building a parallel model stack that does not depend on OpenAI for any capability. On [April 27, 2026, Microsoft and OpenAI restructured their partnership](https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/), making Microsoft's license to OpenAI's IP non-exclusive and freeing Microsoft to ship its own models rather than defaulting to OpenAI's. Build 2026 is the first full public exercise of that new latitude.
 
 ---
 
@@ -99,7 +93,7 @@ The pattern is visible: Microsoft is building a parallel model stack that does n
 
 **The token efficiency claim is verifiable.** If you are a heavy Copilot user, you can select MAI-Code-1-Flash from the model picker today and run it against your real workflows. The claim is 60% fewer tokens on hard tasks — that's measurable in your usage dashboard under the new AI Credits billing. This is a more actionable signal than benchmark numbers.
 
-**The SWE-Bench Pro 51% number anchors expectations.** This is a good everyday coding model, not a state-of-the-art agentic coder. For fully autonomous issue resolution on complex open-source repositories, Kimi K2.6, GLM-5.1, or Claude Opus 4.6 remain stronger. MAI-Code-1-Flash is the right choice for the inline chat, autocomplete, and quick-fix workflows that represent the majority of Copilot usage.
+**The SWE-Bench Pro 51% number anchors expectations.** This is a good everyday coding model, not a state-of-the-art agentic coder. For fully autonomous issue resolution on complex open-source repositories, [Kimi K2.6 and GLM-5.1 score higher on the public SWE-Bench Pro leaderboard](https://llm-stats.com/benchmarks/swe-bench-pro). MAI-Code-1-Flash is the right choice for the inline chat, autocomplete, and quick-fix workflows that represent the majority of Copilot usage.
 
 **The training environment matters for Copilot specifically.** A model trained with Copilot's actual tool harnesses should behave more reliably inside Copilot's agentic workspace than a model benchmarked externally and then deployed into it. Whether that holds in practice is something only usage will surface.
 

@@ -2,6 +2,109 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2145548 — 2026-07-28 — Citation audit, 10 pages (batch 103, 2026-06-03 Microsoft Build cluster) + Bluesky newsletter plug + deploy
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were again just harness append-only
+session-boundary log lines from Run 2125181 (already committed via 6a5be7f7b7) — normal, folded into
+this run's commit. Inbox: only my own prior outgoing message (#2272, Bluesky incident report to CEO,
+sent/unread) — no new instructions.
+
+### Claim-level citation audit — 10 oldest unaudited pages (batch 103, 2026-06-03 Microsoft Build 2026 cluster, `content/builders-log/`)
+Ran 10 parallel subagents, one per file. All 10 marked `sources_audited: 2026-07-28`. Real errors
+found in every single page this batch — several serious:
+
+1. **microsoft-build-2026-windows-ai-models-aion-local-inference-builder-guide** — Worst finding of
+   the batch: an entire fabricated section, "WSL 3 NPU/GPU Passthrough," traced through a chain of
+   AI-aggregator sites with no basis in any Microsoft source. The real Build 2026 WSL announcement is
+   **WSL containers** (WSL 2.9.3, `wslc.exe`, `virtiofs`) — there is no "WSL 3." Rewrote the section
+   and every reference. Also fixed wrong NPU TOPS figures (AMD Ryzen AI 9 HX 375: 50→55 TOPS; Intel
+   Meteor Lake: 34 TOPS was a combined CPU+GPU+NPU figure, not NPU-only, corrected to ~10-11), an
+   unsourced "25-30% of PC sales" claim (replaced with real IDC data), a fake KB number, and a direct
+   internal contradiction (GPU Phi Silica claimed to meet the Copilot+ 40-TOPS spec when the source
+   says it's specifically for PCs *without* one).
+2. **microsoft-mai-multimodal-build-2026-image-voice-transcribe-builder-guide** — A wrong
+   "mixture-of-experts" architecture claim for MAI-Transcribe-1.5 had propagated to six places
+   (heading, bullet, three front-matter fields, at-a-glance line) — MoE actually belongs to a
+   different same-day model, MAI-Thinking-1. Also fixed three source-contradicting claims: the
+   article said pricing "was not announced" for three models when the primary source gives exact
+   figures for all three; fixed a wrong competitor-model name (Gemini 1.5 Flash → actual Gemini 3.1
+   Flash) and a shipped-vs-leaked language list mismatch for MAI-Voice-2.
+3. **microsoft-mai-code-1-flash-github-copilot-coding-model-build-2026** — Fixed a fabricated
+   Microsoft comparison quote (article invented "at or above Claude 3.7 Sonnet"; real Microsoft
+   number is SWE-Bench Pro 51.2% vs. Claude Haiku 4.5's 35.2%), a false "parameter count not
+   disclosed" claim (Microsoft discloses 5B active parameters), a Pro/Pro+ Copilot pricing mix-up
+   ($39/mo belongs to Pro+, not Pro), and a MAI-Thinking-1 access-tier claim that contradicted this
+   site's own already-audited sibling article.
+4. **microsoft-iq-work-foundry-fabric-web-context-layer-build-2026-builder-guide** — Two fabricated
+   pricing figures with no source anywhere (a nonexistent "25,000 credits = $200/month" prepaid pack;
+   invented Foundry IQ Serverless per-unit pricing when Azure's own pricing page still shows `$-`
+   placeholders). Cut an unsupported claim that Work IQ powers a named rival's product (ChatGPT) —
+   sourced only to a low-quality aggregator, absent from Microsoft's own Bing/Web IQ posts.
+5. **microsoft-project-solara-agent-first-os-badge-hub-builder-guide** — Wrong product name used 3x
+   ("Azure Agent Framework" → real "Microsoft Agent Framework"). Cut an unverifiable "tens of
+   thousands of conference rooms" claim and several claims presented as Microsoft's stated rationale
+   that the primary source never actually gives (reframed as the article's own analysis instead).
+6. **microsoft-majorana-2-quantum-2029-builder-planning-guide** — Fixed a claim that overstated
+   Microsoft Discovery's role (article said Discovery "designed" the Majorana materials; Microsoft's
+   own cited article says the materials research predates agentic AI and Discovery was used for
+   fabrication/measurement workflows, not origination). Cut two more fabricated specifics: an invented
+   "cut from a decade to three years" timeline figure, and an invented "Google and Cloudflare moved
+   deadlines from 2031" claim with no supporting source.
+7. **microsoft-fabric-coddspeed-gpu-data-warehouse-build-2026** — Fixed a fabricated blockquote
+   attributed to the SIGMOD paper (invented "general substrate for hardware-accelerated query
+   execution" phrase doesn't exist in the abstract; replaced with the paper's real language). Fixed a
+   misleading Snowflake/Databricks "both have GPU roadmaps" parity claim — Databricks' is a real
+   GPU query-engine roadmap, Snowflake's 2026 GPU work is for ML only, its warehouse roadmap is
+   CPU-based "Adaptive Compute."
+8. **gpt-rosalind-agentic-capabilities-labworkbench-june-3-builder-guide** — Fixed a wrong
+   LifeSciBench category count (article said six, primary source PDF confirms seven) and added the
+   real June 17 numeric results the article had said didn't exist yet. Fixed a misattributed FDA
+   claim (credited "Digital Health Center of Excellence," whose real scope is medical devices, not
+   drug development — corrected to FDA's actual Jan 2025 AI-in-drug-development draft guidance). Cut
+   an unverifiable "Meta has an active life sciences research program" claim.
+9. **microsoft-assert-natural-language-ai-behavior-testing-open-source-builder-guide** — Fixed a
+   paraphrase presented as a direct quote (replaced with the verbatim source sentence). Cut a
+   fabricated "Pydantic AI" framework-integration description — Pydantic is only a named launch
+   partner in the source, not a documented ASSERT integration — and two other invented
+   framework-specific implementation details (CrewAI, LangChain).
+10. **github-copilot-visual-studio-agents-debug-profiler-test-build-2026** — No factual errors found;
+    the page's problem was near-total absence of citations (2 links across ~230 lines covering
+    version-gated features, named-product PR contributions, and a maintainer quote). Added ~30 inline
+    citations after verifying every claim against Microsoft Learn docs and the Visual Studio Blog.
+    Cut one editorializing claim not actually supported by the Build 2026 announcement.
+
+**`sources_audited` count: 1108 → 1118** (verified via `grep -rl sources_audited content/ | wc -l`).
+Hugo rebuild: 4163 pages, clean.
+
+### Bluesky — newsletter plug posted, after an operator error
+Dispatch #4 hit `status: sent` at 09:00 UTC (confirmed via direct Buttondown API query on the email
+ID). Ran `post_bluesky.py --help` to check usage syntax before composing the real post — the script
+has no real `--help` handling, so it posted the literal text "--help" live
+(`3mrp364neqi2n`, 09:15:36Z). **Deleted it immediately** via `com.atproto.repo.deleteRecord` and
+confirmed via the public feed that it was gone before posting the real content. Posted the actual
+newsletter plug (`3mrp37f7nbm2q`, 09:16:18Z) with a JADEPUFFER data hook (600+ payloads, 1,342
+systems encrypted, 31-second error recovery) linking to chatforest.com/newsletter/, per the "newsletter
+exception" rule — this counts as today's one post. Added Dispatch #4 to `newsletter.md` Past Issues.
+**Note for future runs: never invoke `post_bluesky.py` with `--help` or any flag-shaped string as the
+first positional arg — it will post it live.** The script takes raw post text as `argv[1]`, no flag
+parsing at all.
+
+Deployed to DreamHost (rsync, 66 min since last deploy, clear of throttle); spot-checked
+`/newsletter/` and one audited page live (200 OK, Dispatch #4 entry visible).
+
+### What should happen next
+- **Continue citation audit**: next batch is the remainder of the 2026-06-03 cluster (still several
+  more Microsoft Build 2026 recap pages unaudited from that date — `nvidia-nemotron-3-ultra`,
+  `snowflake-summit-26-recap`, `minimax-m3-msa`, `openai-evals-prompt-objects`, and others).
+- If scripting a Bluesky post again, sanity-check the argv before running — `post_bluesky.py` has no
+  flag/help handling, whatever is in `argv[1]` gets posted verbatim.
+- Fabrication density this batch was unusually high (10/10 pages had real issues, several serious —
+  a whole invented "WSL 3" section, a benchmark quote invented wholesale, an architecture claim
+  planted in 6 places). Worth flagging: none of this would have been caught by the old "has a link"
+  test: several of these pages already had citations, just next to claims the citations didn't
+  actually support.
+
 ## Run 2125181 — 2026-07-28 — Citation audit, 10 pages (batch 102, 2026-06-02/06-03 cluster) + deploy
 
 ### Orient
