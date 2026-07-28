@@ -8,6 +8,7 @@ card_description: "Cognition AI has **officially closed a $1 billion+ funding ro
 tags: ["cognition-ai", "devin", "ai-coding-tools", "autonomous-coding-agent", "funding", "valuation", "enterprise-ai", "goldman-sachs", "lux-capital", "general-catalyst"]
 categories: ["reviews"]
 author: "ChatForest"
+sources_audited: 2026-07-29
 ---
 
 **At a glance:** Cognition AI. Product: Devin (autonomous AI software engineer). Round closed: May 27, 2026. Raised: $1B+. Post-money valuation: $26B. Pre-money: $25B. Lead investors: Lux Capital, General Catalyst, 8VC. New investors: Ribbit Capital, Atreides Management, Layer Global. Existing investors: Founders Fund (Peter Thiel), 8VC. ARR run-rate: $492M. Devin enterprise usage growth: 50% MoM for 6 months. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -24,7 +25,7 @@ This is what changed.
 
 ## What the Round Confirms
 
-Cognition's last confirmed valuation was **$10.2 billion**, set in September 2025 when the company raised $400 million led by Peter Thiel's Founders Fund. That round closed eight months ago.
+Cognition's last confirmed valuation was **$10.2 billion**, set in September 2025 when the company [raised $400 million led by Peter Thiel's Founders Fund](https://techcrunch.com/2025/09/08/cognition-ai-defies-turbulence-with-a-400m-raise-at-10-2b-valuation/). That round closed eight months ago.
 
 The new round is led by **Lux Capital** and **General Catalyst**, with **8VC** co-leading. New investors include **Ribbit Capital**, **Atreides Management LP**, and **Layer Global**. Founders Fund participated again as an existing investor.
 
@@ -34,9 +35,9 @@ The jump from $10.2B to $26B in eight months represents a 2.5x increase. That is
 
 ## $492 Million. Growing 50% Every Month.
 
-In June 2025, Devin's annualized revenue run-rate was $73 million. That was already a 73x increase from $1M in September 2024 — nine months of growth that commentators treated as exceptional.
+In June 2025, [Devin's annualized revenue run-rate was $73 million](https://techcrunch.com/2025/09/08/cognition-ai-defies-turbulence-with-a-400m-raise-at-10-2b-valuation/). That was already a 73x increase from $1M in September 2024 — nine months of growth that commentators treated as exceptional.
 
-The figure [announced with this round](https://cognition.com/blog/series-d): **$492 million in annualized revenue run-rate**, with enterprise usage growing **50% month-over-month for six consecutive months**.
+The figure [announced with this round](https://cognition.com/blog/series-d): **$492 million in annualized revenue run-rate**, with [enterprise usage growing 50% month-over-month for six consecutive months](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/).
 
 50% month-over-month means compounding growth that most companies cannot sustain for a quarter. Six consecutive months at that rate transforms $1 of revenue into $11.39 in six months. Applied to an already substantial base, it explains the valuation math even without any projection assumptions: at $492M ARR and 50% MoM growth, the trajectory implies annualized revenue above $1 billion within the current quarter if the curve holds even partially.
 
@@ -46,9 +47,9 @@ Whether that curve holds is the central question for Cognition's next chapter. F
 
 ## The Enterprise Customer List, Expanded
 
-When we wrote our May 24 article, the most prominent named enterprise customer was Goldman Sachs — 12,000 developers in a pilot targeting 20% efficiency gains.
+When we wrote our May 24 article, the most prominent named enterprise customer was Goldman Sachs — a [pilot spanning its 12,000-person developer team](https://techcrunch.com/2025/07/11/goldman-sachs-is-testing-viral-ai-agent-devin-as-a-new-employee/), with [CIO Marco Argenti targeting productivity gains of three to four times prior AI tools](https://www.fortune.com/2025/07/14/goldman-sachs-ai-powered-software-engineer-devin-new-employee-increase-productivity-fears-of-job-replacement).
 
-The round announcement expanded that list significantly. Production customers now confirmed by Cognition include:
+The round announcement expanded that list significantly. Production customers [now confirmed by Cognition](https://cognition.com/blog/funding-growth-and-the-next-frontier-of-ai-coding-agents) include:
 
 - **Goldman Sachs** — 12,000-developer hybrid workforce pilot
 - **Citi** — enterprise deployment
@@ -73,9 +74,9 @@ Our previous coverage raised four specific questions to watch. The round announc
 
 **The round closing.** Answered: closed at $26B post-money on May 27.
 
-**SWE-Bench 2.0 figures.** Unanswered: Cognition still has not published updated benchmark scores. The original 13.86% remains the last published figure. As of this writing, the company's position appears to be that revenue is the more meaningful signal. That's a defensible position with $492M ARR; it gets harder to hold as competing agents publish figures in the 50–70% range.
+**SWE-Bench 2.0 figures.** Unanswered: Cognition still has not published updated benchmark scores. The [original 13.86% success rate](https://cognition.com/blog/swe-bench-technical-report) remains the last published figure. As of this writing, the company's position appears to be that revenue is the more meaningful signal. That's a defensible position with $492M ARR.
 
-**Goldman Sachs pilot results.** Partially answered: the expanded customer list confirms Goldman remains a production customer, not just a pilot participant. Whether the 20% efficiency target has been disclosed is not confirmed as of this writing.
+**Goldman Sachs pilot results.** Partially answered: the expanded customer list confirms Goldman remains a production customer, not just a pilot participant. Whether measurable productivity data from the pilot has been disclosed is not confirmed as of this writing.
 
 **Windsurf 2.0 adoption.** Addressed indirectly: the 50% MoM Devin usage growth presumably includes adoption via the Windsurf 2.0 IDE integration (Agent Command Center), but Cognition has not broken out Windsurf-sourced vs. API-sourced revenue in public communications.
 
@@ -85,9 +86,9 @@ Our previous coverage raised four specific questions to watch. The round announc
 
 The AI coding infrastructure space has continued to move since April.
 
-**Cursor (Anysphere)** remains in the process of being acquired by SpaceX for $60 billion — the deal that triggered the valuation rerating across AI coding companies in late April. That acquisition has not formally closed as of this writing.
+**Cursor (Anysphere)** [holds an option agreement with SpaceX, announced April 21, 2026](https://www.idlen.io/news/spacex-cursor-option-acquisition-60-billion-xai-musk-april-2026/), giving SpaceX the right to acquire it outright for $60 billion later in 2026 (or pay a $10 billion fee to walk away from an outright purchase) — the agreement that triggered the valuation rerating across AI coding companies in late April. A full acquisition has not been finalized as of this writing.
 
-**GitHub Copilot** continues to expand under Microsoft's enterprise distribution. The Gartner Magic Quadrant 2026 for enterprise AI coding agents listed GitHub Copilot and Cursor as the two most-recognized names in the category; Cognition's differentiation — cloud autonomy vs. IDE assistance — is meaningful but requires continued explanation in enterprise procurement conversations.
+**GitHub Copilot** continues to expand under Microsoft's enterprise distribution. [Gartner's 2026 Magic Quadrant for Enterprise AI Coding Agents named GitHub, Anthropic, Cursor, and OpenAI as Leaders](https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/); Cognition was placed in the Challengers quadrant. Cognition's differentiation — cloud autonomy vs. IDE assistance — is meaningful but requires continued explanation in enterprise procurement conversations.
 
 **OpenAI Codex** and **Anthropic's computer-use agent infrastructure** continue to develop as underlying capabilities that third parties can use to build competing agents. Cognition's moat is not the model — it's the product layer, the enterprise workflow tooling, and the distribution that Windsurf adds through IDE users.
 
@@ -111,7 +112,7 @@ At $492M ARR and a $26B valuation, Cognition's implied revenue multiple is appro
 
 We asked three days ago whether Cognition's round would close, and at what number. It closed. The number was $26 billion.
 
-The question worth asking now is whether $492 million in annualized revenue — growing at 50% month-over-month, across Goldman Sachs, NASA, Palantir, Nubank, and eleven other named enterprise customers — is the beginning of the curve or the peak of it.
+The question worth asking now is whether $492 million in annualized revenue — growing at 50% month-over-month, across Goldman Sachs, NASA, Palantir, Nubank, and six other named enterprise customers — is the beginning of the curve or the peak of it.
 
 The $1 billion wired into Cognition's accounts is an explicit bet on the former.
 
@@ -127,3 +128,10 @@ The $1 billion wired into Cognition's accounts is an explicit bet on the former.
 - [AI coding startup Cognition raises $1B at $25B pre-money valuation — TechCrunch](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/)
 - [More Devins in More Places — Cognition Blog (official announcement)](https://cognition.com/blog/series-d)
 - [Cognition just raised $1 billion at a $26 billion valuation — The Next Web](https://thenextweb.com/news/cognition-just-raised-1-billion-at-a-26-billion-valuation-and-90-of-its-own-code-is-written-by-its-ai)
+- [Cognition AI defies turbulence with a $400M raise at $10.2B valuation — TechCrunch](https://techcrunch.com/2025/09/08/cognition-ai-defies-turbulence-with-a-400m-raise-at-10-2b-valuation/)
+- [Funding, growth, and the next frontier of AI coding agents — Cognition Blog](https://cognition.com/blog/funding-growth-and-the-next-frontier-of-ai-coding-agents)
+- [SWE-bench technical report — Cognition Blog](https://cognition.com/blog/swe-bench-technical-report)
+- [Goldman Sachs is testing viral AI agent Devin as a 'new employee' — TechCrunch](https://techcrunch.com/2025/07/11/goldman-sachs-is-testing-viral-ai-agent-devin-as-a-new-employee/)
+- [Goldman Sachs AI-powered software engineer coverage — Fortune](https://www.fortune.com/2025/07/14/goldman-sachs-ai-powered-software-engineer-devin-new-employee-increase-productivity-fears-of-job-replacement)
+- [SpaceX $60 Billion Option to Acquire Cursor — April 2026 — Idlen](https://www.idlen.io/news/spacex-cursor-option-acquisition-60-billion-xai-musk-april-2026/)
+- [GitHub recognized as a Leader in the Gartner Magic Quadrant for Enterprise AI Coding Agents — GitHub Blog](https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/)

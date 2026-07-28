@@ -18,11 +18,9 @@ For the first time, NVIDIA is expected to put a chip inside a laptop.
 - **Keynote (June 1):** Taipei Music Center, 11:00 AM Taipei Standard Time
 - **Conference sessions and labs (June 2–4):** Taipei International Convention Center (TICC)
 
-The event runs concurrently with **Computex 2026** (June 2–5) — an intentional overlap that puts Jensen Huang's keynote one day before the Computex floor opens. Any hardware announced at GTC Taipei on June 1 will be available for hands-on demos at OEM booths starting June 2.
+The event runs concurrently with **Computex 2026** (June 2–5) — an intentional overlap that puts Jensen Huang's keynote one day before the Computex floor opens ([NVIDIA GTC Taipei](https://www.nvidia.com/en-tw/gtc/taipei/); [WCCFTech](https://wccftech.com/nvidia-ceo-jensen-huang-to-host-gtc-taipei-keynote-ahead-of-computex-2026/)). Any hardware announced at GTC Taipei on June 1 will be available for hands-on demos at OEM booths starting June 2.
 
-The keynote is **free to livestream** globally via NVIDIA's YouTube channel and nvidia.com/gtc.
-
-Pre-show: A GTC Live pregame conversation with industry leaders begins at **9:00 AM TST** (two hours before the main keynote).
+The keynote is **free to livestream** globally via [NVIDIA's YouTube channel and nvidia.com/gtc](https://www.nvidia.com/en-tw/gtc/taipei/).
 
 ---
 
@@ -30,7 +28,7 @@ Pre-show: A GTC Live pregame conversation with industry leaders begins at **9:00
 
 The most anticipated announcement at GTC Taipei is also the one NVIDIA has not officially confirmed: the **N1X**, a custom ARM-based SoC co-developed with MediaTek.
 
-Based on leaked engineering boards and confirmed details from Lenovo's accidentally-published internal product database, here is what the N1X is expected to be:
+Based on leaked engineering boards and specs reported from a Lenovo internal product database, here is what the N1X was expected to be ahead of the keynote ([Tom's Hardware](https://www.tomshardware.com/pc-components/cpus/nvidias-long-awaited-n1-n1x-soc-specs-leak-ahead-of-computex-launch-n1-to-feature-up-to-20-arm-based-cores-standard-n1-equipped-with-12-and-10-core-configs); [igor'sLAB](https://www.igorslab.de/en/nvidia-n1-spotted-on-laptop-motherboard-leak-featuring-128-gb-of-lpddr5x-solidifies-the-hardware-status-of-the-arm-project/)):
 
 | Spec | Expected |
 |------|----------|
@@ -38,12 +36,12 @@ Based on leaked engineering boards and confirmed details from Lenovo's accidenta
 | GPU | 48 Blackwell SMs / 6,144 CUDA cores |
 | Process node | 3nm |
 | Memory | Up to 128 GB LPDDR5X (unified, shared CPU/GPU) |
-| AI throughput | ~180–200 TOPS |
-| Laptop price range | ~$1,000–$1,500 |
+| AI throughput | ~180–200 TOPS ([Cyber Kendra](https://www.cyberkendra.com/2026/05/nvidias-n1x-laptop-chip-leaks-on.html)) |
+| Laptop price range | ~$1,800–$2,900+ (revised upward from earlier $1,000–$1,500 estimates as more specific leaks emerged — [VideoCardz](https://videocardz.com/newz/nvidia-rtx-spark-laptops-may-start-above-1799-n1x-systems-reportedly-above-2899); [Windows Report](https://windowsreport.com/nvidia-rtx-spark-n1x-laptops-pcs-may-start-at-an-eye-watering-price-of-2899/)) |
 
-The key word in that spec table is **CUDA**. Every competing ARM-based laptop chip — Qualcomm's Snapdragon X Elite, Apple's M4 series, AMD's Strix Point — runs on proprietary AI stacks. The N1X brings the CUDA ecosystem to a portable Windows device for the first time: llama.cpp, PyTorch CUDA backend, Flash Attention, and the broader NVIDIA developer toolchain all run natively, without recompilation.
+The key word in that spec table is **CUDA**. Every competing ARM-based laptop chip — Qualcomm's Snapdragon X Elite, Apple's M4 series, AMD's Strix Point — runs on proprietary AI stacks. The N1X is expected to bring the CUDA ecosystem to a portable Windows device for the first time: code built for PyTorch's CUDA backend or Flash Attention is expected to run without recompilation ([byteiota](https://byteiota.com/nvidia-n1x-cuda-windows-arm/)).
 
-Dell and Lenovo are confirmed OEM partners based on pre-announcement leaks; Asus is reportedly in development. Eight specific models are expected at launch, with broader availability arriving in H1 2027.
+Dell and Lenovo are confirmed OEM partners based on pre-announcement leaks, with Asus and MSI also reportedly preparing devices ([Tom's Hardware](https://www.tomshardware.com/pc-components/cpus/nvidias-n1-n1x-chips-leak-once-again-this-time-tipped-for-release-in-first-half-of-2026-hotly-anticipated-chips-to-reportedly-debut-on-dell-and-lenovo-laptops)). Eight specific Lenovo/Dell models were reported ahead of launch ([TechBuzz](https://www.techbuzz.ai/articles/nvidia-s-n1-arm-chips-land-in-8-lenovo-dell-laptops-this-spring)), with broader availability reported as slipping into 2027 ([Guru3D](https://www.guru3d.com/story/nvidia-n1x-arm-soc-leak-reveals-specs-delayed-launch-to-2027/)).
 
 For more detail on the N1X's architecture and AI inference implications, see our [full N1X preview](/reviews/nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview/).
 
@@ -51,32 +49,32 @@ For more detail on the N1X's architecture and AI inference implications, see our
 
 ## Vera Rubin NVL72: From "In Production" to "In Deployment"
 
-The Vera Rubin NVL72 story is no longer about whether the hardware exists — Jensen Huang confirmed at CES 2026 that Vera Rubin chips are in full production. At GTC Taipei, the expected storyline is **delivery and deployment**.
+The Vera Rubin NVL72 story is no longer about whether the hardware exists — Jensen Huang confirmed at CES 2026 that Vera Rubin chips are in full production ([Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-ceo-confirms-vera-rubin-nvl72-is-now-in-production-jensen-huang-uses-ces-keynote-to-announce-the-milestone); [Data Center Dynamics](https://www.datacenterdynamics.com/en/news/nvidia-ceo-announces-vera-rubin-chips-are-in-full-production-during-ces-keynote/)). At GTC Taipei, the expected storyline is **delivery and deployment**.
 
 What is already confirmed:
 
-- **H2 2026** volume delivery to cloud customers
-- **Launch cloud partners:** AWS, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure, CoreWeave, Lambda, Nebius, Nscale
-- **NVL72 configuration:** 72 Vera Rubin GPUs per rack, cable-free/hose-free/fanless tray design, assembly time reduced from 2 hours to 5 minutes per tray
-- **Performance claims:** up to 5x inference throughput and 10x lower cost-per-token vs. Blackwell H100-class systems
+- **H2 2026** volume delivery to cloud customers ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer))
+- **Launch cloud partners:** AWS, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure, CoreWeave, Lambda, Nebius, Nscale ([Tech Times](https://www.techtimes.com/articles/319203/20260627/nvidia-vera-rubin-ships-this-fall-8-cloud-partners-10x-lower-token-cost-hbm4-triples-bandwidth.htm); [NVIDIA Newsroom](https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer))
+- **NVL72 configuration:** 72 Vera Rubin GPUs per rack, cable-free/hose-free/fanless tray design, with rack assembly time cut from roughly 2 hours to about 5 minutes per tray ([NVIDIA Technical Blog](https://developer.nvidia.com/blog/inside-the-nvidia-rubin-platform-six-new-chips-one-ai-supercomputer/))
+- **Performance claims:** up to 5x inference throughput and 10x lower cost-per-token vs. Blackwell, per NVIDIA's own figures ([Tom's Hardware](https://www.tomshardware.com/pc-components/gpus/nvidia-launches-vera-rubin-nvl72-ai-supercomputer-at-ces-promises-up-to-5x-greater-inference-performance-and-10x-lower-cost-per-token-than-blackwell-coming-2h-2026); [NVIDIA Blog](https://blogs.nvidia.com/blog/vera-rubin/))
 
-At Taipei, expect: Taiwan-specific supply chain and partner announcements, updated delivery timelines, and integration into the "AI factory" infrastructure narrative. TSMC's fab in Hsinchu produces the Vera Rubin die — GTC Taipei is naturally the right venue to discuss the manufacturing partnership publicly.
+At Taipei, expect: Taiwan-specific supply chain and partner announcements, updated delivery timelines, and integration into the "AI factory" infrastructure narrative. Vera Rubin is fabricated on TSMC's 3nm process family, and TSMC's Taiwan fabs are expected to produce the first Rubin wafers, though neither company has publicly confirmed the exact fab location — so GTC Taipei is a natural venue to discuss the manufacturing partnership publicly.
 
 ---
 
 ## The Five-Layer Cake: NVIDIA's Full-Stack Strategy
 
-At GTC San Jose (March 2026), Jensen Huang introduced a framing for NVIDIA's business that he will likely formalize and expand at Taipei: the **"Five-Layer Cake"** AI strategy.
+Jensen Huang has been developing a framing for NVIDIA's business — first outlined publicly at the World Economic Forum in Davos in January 2026 — that he will likely reiterate and expand at Taipei: the **"Five-Layer Cake"** AI strategy ([NVIDIA Blog](https://blogs.nvidia.com/blog/davos-wef-blackrock-ceo-larry-fink-jensen-huang)).
 
-The five layers are:
+The five layers, from bottom to top, are:
 
-1. **Energy and infrastructure** — power, cooling, real estate for AI facilities
-2. **Accelerated computing** — GPU hardware and networking (InfiniBand, Spectrum-X)
-3. **AI factories** — the full stack for training and inference at scale (Vera Rubin, DGX, NIM microservices)
-4. **Agentic systems** — multi-agent orchestration, reasoning frameworks, NVIDIA NeMo and Blueprints
-5. **Applications** — vertical deployments (healthcare, automotive, manufacturing, retail)
+1. **Energy** — the power generation needed before any compute can run
+2. **Chips** — the semiconductors and accelerated computing hardware
+3. **Infrastructure** — the data centers that scale that compute
+4. **Models** — the AI models trained and served on that infrastructure
+5. **Applications** — vertical deployments (healthcare, finance, manufacturing, and more) where Huang says the economic benefit ultimately lands
 
-The framing positions NVIDIA not as a chip company or even a platform company, but as a **full-stack infrastructure provider** for the AI economy — analogous to what AWS is to general compute, but specialized for AI. Huang uses this structure to explain why NVIDIA's total addressable market is measured in the trillions.
+The framing positions NVIDIA not as a chip company or even a platform company, but as a company whose fortunes are tied to the **entire stack** of the AI economy. Huang has used it to argue AI represents "the largest infrastructure buildout in human history" ([NVIDIA Blog](https://blogs.nvidia.com/blog/davos-wef-blackrock-ceo-larry-fink-jensen-huang)).
 
 At Taipei, this framing is expected to provide the organizational spine for product announcements across hardware (layer 2), AI factory tooling (layer 3), and physical AI / robotics (layer 4/5).
 
@@ -86,24 +84,24 @@ At Taipei, this framing is expected to provide the organizational spine for prod
 
 Two full days of GTC Taipei sessions (June 2–3) are dedicated to **Physical AI** — NVIDIA's term for AI that acts in the physical world: robotics, industrial automation, simulation, and semiconductor workflows.
 
-Programming runs in both Traditional Chinese and English, reflecting the dense concentration of Taiwanese electronics and manufacturing partners. Confirmed ecosystem participants include:
+Programming runs in both Traditional Chinese and English, reflecting the dense concentration of Taiwanese electronics and manufacturing partners. NVIDIA's global physical-AI ecosystem, announced alongside GTC San Jose in March 2026, includes ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world)):
 
-- **Industrial robotics:** ABB, FANUC, KUKA, Yaskawa
-- **Humanoid platforms:** Figure, Agility Robotics, AGIBOT
-- **Foundation models:** Skild AI (whose models now run on Foxconn's Blackwell production lines), World Labs
-- **Automotive:** BYD, Hyundai, Nissan, Geely, Uber (robotaxi deployment)
+- **Industrial robotics:** ABB Robotics, FANUC, KUKA, Yaskawa
+- **Humanoid platforms:** Figure, Agility, AGIBOT, 1X, Boston Dynamics, NEURA Robotics
+- **Foundation models:** Skild AI (whose "Skild Brain" model is being deployed on Foxconn's Blackwell GPU assembly lines — [NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world); [Technical.ly](https://technical.ly/entrepreneurship/pittsburgh-skild-ai-nvidia-foxconn-robotics-deployment/)), World Labs
+- **Automotive/robotaxi:** GTC Taipei's own automotive news centers on NVIDIA DRIVE Hyperion robotaxi partners **Foxconn** (Kaohsiung robotaxi fleet), **VinFast** and **Autobrains** (Southeast Asia), **Uber** (a new Munich robotaxi program with Autobrains), and **HUMAIN** (Middle East) — announced May 31, 2026 at GTC Taipei ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-drive-hyperion-becomes-the-global-platform-for-a-robotaxi-ready-world)). Separately, BYD, Hyundai, Nissan, and Geely joined the DRIVE Hyperion program at GTC San Jose in March 2026 ([Uber investor relations](https://investor.uber.com/news-events/news/press-release-details/2026/NVIDIA-to-Launch-L4-Software-Driven-Robotaxis-on-Uber-Across-28-Cities-by-2028/default.aspx); [WinBuzzer](https://winbuzzer.com/2026/03/17/nvidia-gtc-2026-uber-robotaxi-physical-ai-drive-hyperion-xcxwbn/))
 
-The star hardware for these sessions is the **NVIDIA Jetson Thor** (Blackwell-based), which delivers 2,070 FP4 teraflops — 7.5x the compute of Jetson Orin — at 3.5x better energy efficiency. Thor is positioned as the onboard inference engine for humanoid robots and autonomous vehicles operating at the edge.
+The star hardware for these sessions is the **NVIDIA Jetson Thor** (Blackwell-based), which NVIDIA specs at 2,070 FP4 teraflops — 7.5x the compute of Jetson Orin — at 3.5x better energy efficiency ([NVIDIA product page](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/); [NVIDIA Technical Blog](https://developer.nvidia.com/blog/introducing-nvidia-jetson-thor-the-ultimate-platform-for-physical-ai/)). Thor is positioned as the onboard inference engine for humanoid robots and autonomous vehicles operating at the edge.
 
-**GR00T N2**, NVIDIA's next-generation humanoid foundation model (previewed at GTC San Jose), may see further demonstration. Early benchmarks showed >2x success rate vs. leading vision-language-action models on novel manipulation tasks.
+**GR00T N2**, NVIDIA's next-generation humanoid foundation model (announced at GTC San Jose in March 2026), may see further demonstration at Taipei. NVIDIA's own announcement says its new "world action model" architecture helps robots "succeed at new tasks in new environments more than twice as often as leading VLA models," and that GR00T N2 is slated to be available by the end of 2026 ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-expands-open-model-families-to-power-the-next-wave-of-agentic-physical-and-healthcare-ai)).
 
 ---
 
 ## DLSS 5
 
-A formal rollout of **DLSS 5** is expected at or around GTC Taipei, though NVIDIA has not confirmed a specific announcement date. DLSS 5 was briefly referenced in early 2026 documentation but has not been publicly released. The Taipei timing aligns with Computex, where OEM gaming laptops would be natural launch vehicles for a DLSS software update.
+Correction: **DLSS 5 was already announced** by Jensen Huang at GTC San Jose in March 2026 — before this preview was written — so it is not a Taipei unknown. NVIDIA describes it as a real-time neural rendering model that "infuses pixels with photoreal lighting and materials," with Huang calling it "the GPT moment for graphics" ([NVIDIA GeForce News](https://www.nvidia.com/en-us/geforce/news/death-stranding-2-crimson-desert-dlss-4-multi-frame-gen/)). NVIDIA has confirmed a **fall 2026 rollout** via the NVIDIA app, with launch support from Bethesda, Capcom, and Ubisoft in titles including *Starfield*, *Resident Evil Requiem*, and *Assassin's Creed Shadows* ([NVIDIA GeForce News](https://www.nvidia.com/en-us/geforce/news/death-stranding-2-crimson-desert-dlss-4-multi-frame-gen/)).
 
-No confirmed feature list for DLSS 5 is publicly available as of this writing.
+At GTC Taipei, expect NVIDIA and OEM gaming-laptop partners to expand on DLSS 5 hardware support and timing rather than reveal it for the first time.
 
 ---
 
@@ -119,16 +117,15 @@ No confirmed feature list for DLSS 5 is publicly available as of this writing.
 | Vera Rubin new partner announcements | **Possible** — regional context favors this |
 | Five-Layer Cake strategy presentation | **Strongly expected** |
 | Physical AI Days (robotics sessions) | **Confirmed** |
-| DLSS 5 rollout | **Expected** — timing unconfirmed |
-| "Consumer surprise" (per WCCFTech) | **Reported** — details unknown |
+| DLSS 5 existence, features, fall 2026 rollout | **Already confirmed at GTC San Jose, March 2026** ([NVIDIA](https://www.nvidia.com/en-us/geforce/news/death-stranding-2-crimson-desert-dlss-4-multi-frame-gen/)) — not a Taipei unknown |
+| "Consumer surprise" (per WCCFTech) | **Reported** — details unknown ([WCCFTech](https://wccftech.com/nvidia-ceo-jensen-huang-to-host-gtc-taipei-keynote-ahead-of-computex-2026/)) |
 
 ---
 
 ## How to Watch
 
 - **Free global livestream:** via NVIDIA's YouTube channel and [nvidia.com/gtc/taipei](https://www.nvidia.com/en-tw/gtc/taipei/)
-- **Keynote time conversions:** 11:00 AM TST = 3:00 AM UTC = 11:00 PM EDT (Sunday night June 1)
-- **Pre-show:** 9:00 AM TST (1:00 AM UTC / 9:00 PM EDT Saturday) — industry leader roundtable
+- **Keynote time conversions:** 11:00 AM TST = 3:00 AM UTC = 11:00 PM EDT (Sunday night, May 31 into June 1)
 
 ChatForest will publish a post-event recap once the keynote closes. If the N1X is formally announced, we will update our [N1X preview](/reviews/nvidia-n1x-computex-2026-blackwell-laptop-ai-pc-preview/) with confirmed specs.
 

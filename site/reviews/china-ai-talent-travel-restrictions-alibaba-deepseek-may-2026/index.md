@@ -9,11 +9,11 @@
 
 ## What Bloomberg Reported
 
-On May 26, Bloomberg broke the story: China is restricting overseas travel for top AI professionals at private firms including Alibaba Group and DeepSeek. The requirement is straightforward — individuals involved in advanced AI work deemed strategically important to China must seek approval from relevant government authorities before embarking on international travel.
+On May 26, [Bloomberg broke the story](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms): China is restricting overseas travel for top AI professionals at private firms including Alibaba Group and DeepSeek. The requirement is straightforward — individuals involved in advanced AI work deemed strategically important to China must seek approval from relevant government authorities before embarking on international travel.
 
 Neither Alibaba nor DeepSeek has commented publicly. Chinese officials have made no formal statement on the policy.
 
-Bloomberg characterized the move as a deliberate escalation — an expansion of travel controls that were previously associated with nuclear scientists, senior executives at state-owned enterprises, and a few high-profile AI cases that made international news.
+Bloomberg characterized the move as a deliberate escalation — an expansion of travel controls that were previously associated with nuclear scientists, senior executives at state-owned enterprises, and a few high-profile AI cases that made international news ([corroborated in independent coverage of the same Bloomberg report](https://www.plataformamedia.com/en/2026/05/27/china-restricts-travel-top-ai-talent-alibaba-deepseek/)).
 
 ---
 
@@ -21,9 +21,9 @@ Bloomberg characterized the move as a deliberate escalation — an expansion of 
 
 This is not a bolt from the blue. There is a clear escalation ladder:
 
-**December 2025 — DeepSeek executives.** Bloomberg reported that some executives at DeepSeek, the Chinese AI lab that briefly topped App Store charts globally with its R1 model, were already facing travel restrictions. The specific scope was not disclosed.
+**December 2025 — DeepSeek executives.** [Bloomberg reported](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms) — confirmed in independent republication ([cryptonews.net](https://cryptonews.net/news/legal/32922423/)) — that some executives at DeepSeek, the Chinese AI lab whose R1 model [briefly topped Apple's and Google's US App Store charts](https://www.cnbc.com/2025/01/27/chinas-deepseek-ai-tops-chatgpt-app-store-what-you-should-know.html) in January 2025, were already facing travel restrictions before the broader policy was disclosed. The specific scope was not disclosed.
 
-**April–May 2026 — Manus co-founders.** When China's National Development and Reform Commission blocked DeepSeek competitor Manus AI's $2 billion acquisition by Meta with a 54-character order, the co-founders of Butterfly Effect (Manus's parent company) were also barred from leaving the country. Bloomberg called the model "officially dead." (We covered the full Manus story [here](/reviews/manus-ai-meta-acquisition-china-blocked-travel-ban-2026/).)
+**April–May 2026 — Manus co-founders.** China's National Development and Reform Commission [ordered Meta to unwind its roughly $2 billion acquisition](https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/) of DeepSeek competitor Manus AI, and the co-founders of Butterfly Effect (Manus's parent company) were separately barred from leaving the country during the review. Bloomberg described the NDRC's brief written order and reported the deal as ["officially dead"](https://www.bloomberg.com/news/articles/2026-04-29/china-s-meta-backlash-renders-manus-model-officially-dead) ([Bloomberg Law mirror](https://news.bloomberglaw.com/private-equity/chinas-meta-backlash-renders-manus-model-officially-dead)). (We covered the full Manus story [here](/reviews/manus-ai-meta-acquisition-china-blocked-travel-ban-2026/).)
 
 **May 26, 2026 — Alibaba and DeepSeek broadly.** The Bloomberg report marks the shift from individual enforcement to systematic policy. The controls now extend to a broader class of AI professionals across private companies working on projects that government authorities have designated as strategically important.
 
@@ -33,10 +33,10 @@ The pattern is consistent: China is treating elite AI talent the way it has hist
 
 ## What the Policy Requires
 
-The mechanics are vague, by design. According to sources cited in the Bloomberg report (who spoke anonymously due to the sensitivity of the topic):
+The mechanics are vague, by design. According to sources cited in the [Bloomberg report](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms) (who spoke anonymously due to the sensitivity of the topic):
 
 - Targeted individuals must obtain prior government approval before any overseas travel
-- The approval authority is "relevant authorities" — which in China typically means the Ministry of State Security, the National Development and Reform Commission, or sector-specific agencies depending on the firm's classification
+- The approval authority is described only as "relevant authorities" — Bloomberg's sourcing does not name a specific ministry or commission responsible for reviewing these requests, and we could not independently verify which agency signs off. (The National Development and Reform Commission's role in the separate Manus/Meta deal review, [confirmed by TechCrunch](https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/), does not necessarily extend to the general AI-talent travel policy.)
 - Who exactly is "targeted" is not publicly defined — the policy applies to those working on AI work considered strategically important
 - No timeline for approvals, no exemptions, no appeals process has been publicly described
 
@@ -46,7 +46,7 @@ The opacity is likely intentional. Informal enforcement — where individuals ar
 
 ## The Brain Drain Paradox
 
-China has spent years and significant public resources running what analysts call a "reverse brain drain" — aggressively recruiting Chinese AI and chip researchers from US universities and companies back to China through programs like the Thousand Talents Plan. The pitch: come home, build China's future, achieve things you cannot achieve abroad.
+China has spent years and significant public resources running what analysts call a "reverse brain drain" — aggressively recruiting Chinese AI and chip researchers from US universities and companies back to China through programs like the [Thousand Talents Plan](https://cset.georgetown.edu/publication/chinese-talent-program-tracker/). The pitch: come home, build China's future, achieve things you cannot achieve abroad.
 
 That narrative now has a structural contradiction. If the most talented researchers know that accepting a senior AI role at DeepSeek or Alibaba means surrendering the right to travel freely — to attend NeurIPS, ICLR, or CVPR, to collaborate with international labs, to visit family abroad, or to simply leave — the incentive calculus changes. Talent considering whether to return from MIT or Stanford has a new variable: once you come back, leaving again requires government sign-off.
 
@@ -56,9 +56,9 @@ The researchers most attractive to China's AI ambitions are often precisely the 
 
 ## The Dual Squeeze
 
-The China travel restrictions story lands against a striking backdrop: the Stanford AI Index 2026, released April 13, found that US AI talent immigration has dropped 89% since 2017, with an 80% collapse in the last year alone. (We covered the full Stanford AI Index [here](/reviews/stanford-ai-index-2026-report-performance-transparency-talent-workforce/).)
+The China travel restrictions story lands against a striking backdrop: the [Stanford AI Index 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report), released April 13, 2026, found that ["the number of AI researchers and developers moving to the U.S. has dropped 89% since 2017, with an 80% decline in the last year alone"](https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report). (We covered the full Stanford AI Index [here](/reviews/stanford-ai-index-2026-report-performance-transparency-talent-workforce/).)
 
-The result is a global talent squeeze tightening from both sides ([Stanford AI Index 2026](https://aiindex.stanford.edu/report/)):
+The result is a global talent squeeze tightening from both sides ([Stanford AI Index 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report)):
 
 | Side | Mechanism | Effect |
 |------|-----------|--------|
@@ -117,4 +117,12 @@ The AI race has always been about more than hardware and compute. It has always 
 - [China Limits Overseas Travel for AI Talent at DeepSeek, Alibaba, Private Firms — Bloomberg](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms)
 - [China Expands Travel Curbs to Top AI Talent at Private Firms — Bloomberg Law](https://news.bloomberglaw.com/securities-law/china-expands-travel-curbs-to-top-ai-talent-at-private-firms)
 - [China restricts overseas travel for top AI talent at Alibaba and DeepSeek — Seeking Alpha](https://seekingalpha.com/news/4596710-china-limits-overseas-travel-for-top-ai-talent-at-alibaba-deepseek-report)
+- [China restricts international travel for top AI professionals — independent republication of the Bloomberg report](https://www.plataformamedia.com/en/2026/05/27/china-restricts-travel-top-ai-talent-alibaba-deepseek/)
+- [China restricts overseas travel for top AI talent — independent republication citing December 2025 DeepSeek restrictions](https://cryptonews.net/news/legal/32922423/)
+- [China's DeepSeek AI tops App Store: Here's what you should know — CNBC](https://www.cnbc.com/2025/01/27/chinas-deepseek-ai-tops-chatgpt-app-store-what-you-should-know.html)
+- [China blocks Meta's $2B Manus deal after months-long probe — TechCrunch](https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/)
+- [China's Meta Backlash Renders Manus Model 'Officially Dead' — Bloomberg](https://www.bloomberg.com/news/articles/2026-04-29/china-s-meta-backlash-renders-manus-model-officially-dead)
+- [The 2026 AI Index Report — Stanford HAI](https://hai.stanford.edu/ai-index/2026-ai-index-report)
+- [Inside the AI Index: 12 Takeaways from the 2026 Report — Stanford HAI](https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report)
+- [Chinese Talent Program Tracker — Center for Security and Emerging Technology (Georgetown)](https://cset.georgetown.edu/publication/chinese-talent-program-tracker/)
 

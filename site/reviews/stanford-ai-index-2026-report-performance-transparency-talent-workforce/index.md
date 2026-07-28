@@ -3,7 +3,7 @@
 > Stanford HAI's 400-page annual AI report lands with record performance numbers, a quiet talent crisis, and a troubling transparency reversal. The key findings every builder, investor, and job seeker should know.
 
 
-Stanford HAI released its 2026 AI Index Report on April 13, 2026. At over 400 pages, it's the most comprehensive annual snapshot of the state of AI — covering technical benchmarks, investment flows, workforce impact, public sentiment, and policy gaps. The report was compiled before the biggest announcements of spring 2026 closed, which means the underlying trends are already more extreme than the numbers show.
+Stanford HAI released its [2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report) on April 13, 2026. At [over 400 pages](https://www.forbes.com/sites/stevenwolfepereira/2026/04/14/stanfords-ai-report-card-agents-are-ready-companies-are-not/) — 423 by one count — it's the most comprehensive annual snapshot of the state of AI, covering technical benchmarks, investment flows, workforce impact, public sentiment, and policy gaps. The report was compiled before the biggest announcements of spring 2026 closed, which means the underlying trends are already more extreme than the numbers show.
 
 Here are the findings that matter most.
 
@@ -11,9 +11,9 @@ Here are the findings that matter most.
 
 ## Performance: AI Crossed a Threshold on Coding
 
-The headline benchmark finding is stark. On SWE-bench Verified — the industry's standard evaluation for autonomous software engineering — AI performance jumped from roughly **60% to near 100% in a single year**. In practical terms: AI can now complete essentially any individual software engineering task a benchmark can describe. The question is no longer whether AI can code. It's whether it can architect, prioritize, and own entire products.
+The headline benchmark finding is stark. On [SWE-bench Verified](https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance) — the industry's standard evaluation for autonomous software engineering — AI performance jumped from roughly **60% to near 100% in a single year**. In practical terms: AI can now complete essentially any individual software engineering task a benchmark can describe. The question is no longer whether AI can code. It's whether it can architect, prioritize, and own entire products.
 
-Separately, top frontier models — including Anthropic's Claude Opus 4.6 and Google's Gemini 3.1 Pro — now score **above 50% on Humanity's Last Exam**, a benchmark specifically designed to stump AI by drawing from the hardest graduate-level problems across science, mathematics, history, and law. Two years ago, the best models scored in the low single digits.
+Separately, the report finds that [frontier models gained 30 percentage points in a single year on Humanity's Last Exam](https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance) — a benchmark built specifically to be hard for AI, drawing on graduate-level problems across science, mathematics, history, and law. That's a jump from a top score of [just 8.8% in last year's report](https://hai.stanford.edu/ai-index/2025-ai-index-report/technical-performance) to roughly 39% now — real progress, but short of the ">50%" figure some outlets have repeated; independent leaderboards for Claude Opus 4.6 and Gemini 3.1 Pro put both in the mid-to-high 30s as of early 2026.
 
 The report does not claim AGI has arrived. But it documents a rate of improvement that is difficult to contextualize using historical baselines.
 
@@ -21,21 +21,21 @@ The report does not claim AGI has arrived. But it documents a rate of improvemen
 
 ## Adoption: Faster Than the PC, the Internet, or Mobile
 
-Generative AI reached **53% global population adoption within three years** of ChatGPT's launch — faster than any previous consumer technology. The PC took decades to cross 50% adoption. The internet took roughly 17 years. Smartphones needed about 7. Generative AI did it in three.
+[Generative AI reached **53% global population adoption within three years**](https://hai.stanford.edu/ai-index/2026-ai-index-report) of ChatGPT's launch — faster than any previous consumer technology. The PC took decades to cross 50% adoption. The internet took roughly 17 years. Smartphones needed about 7. Generative AI did it in three.
 
-Organizational adoption has moved in parallel. **88% of surveyed organizations** report using AI in at least one business function — up from around 72% a year prior. Four in five university students now use generative AI.
+Organizational adoption has moved in parallel. [**88% of surveyed organizations**](https://hai.stanford.edu/ai-index/2026-ai-index-report/economy) report using AI regularly in at least one business function, continuing a rise through 2025. [Four in five university students now use generative AI](https://hai.stanford.edu/ai-index/2026-ai-index-report).
 
-The estimated consumer surplus — the economic value users receive from AI tools beyond what they pay — reached **$172 billion annually** in the U.S. by early 2026, up from $112 billion a year earlier. The median value per user has tripled in the same period.
+The estimated consumer surplus — the economic value users receive from AI tools beyond what they pay — [reached **$172 billion annually**](https://hai.stanford.edu/ai-index/2026-ai-index-report/economy) in the U.S. by early 2026, up from $112 billion a year earlier. The median value per user has tripled in the same period.
 
 ---
 
 ## The American Paradox: Most Investment, Talent in Freefall
 
-The United States continues to dominate AI private investment by an extraordinary margin. U.S. AI companies raised **$285.9 billion in private investment in 2025** — more than **23 times** what was invested in China ($12.4 billion). American investors funded **1,953 newly-started AI companies** in 2025, more than 10 times the next-closest country.
+The United States continues to dominate AI private investment by an extraordinary margin. [U.S. AI companies raised **$285.9 billion in private investment in 2025** — more than **23 times** what was invested in China ($12.4 billion), and American investors funded **1,953 newly-started AI companies**](https://hai.stanford.edu/ai-index/2026-ai-index-report) in 2025.
 
 The problem is talent.
 
-The number of AI researchers and developers immigrating to the United States has **dropped 89% since 2017**, with an **80% decline in a single year**. New H-1B restrictions — including a $100,000 employer fee per hire — are cited as a significant contributing factor. The U.S. is spending more than any country in history on AI infrastructure, while simultaneously making it harder for the people who would build that infrastructure to live and work here.
+The number of AI researchers and developers immigrating to the United States has [**dropped 89% since 2017**, with an **80% decline in a single year**](https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development). The AI Index does not itself attribute a cause, but the timing lines up with new [H-1B restrictions — including a $100,000 employer fee per hire](https://www.americanimmigrationcouncil.org/blog/uscis-implements-h1b-100000-fee/) — that took effect in the same window. The U.S. is spending more than any country in history on AI infrastructure, while simultaneously making it harder for the people who would build that infrastructure to live and work here.
 
 The report frames this as a structural risk. AI investment that cannot find world-class researchers to employ eventually concentrates research in the few institutions that can already recruit domestically. That creates a different kind of monoculture risk than most governance discussions address.
 
@@ -43,7 +43,7 @@ The report frames this as a structural risk. AI investment that cannot find worl
 
 ## Entry-Level Dev Employment: A 20% Collapse
 
-One of the report's more concrete labor findings tracks software developers by age cohort. **Employment among software developers aged 22–25 fell nearly 20% between 2024 and 2026** — even as headcount for developers in their 30s and 40s grew.
+One of the report's more concrete labor findings tracks software developers by age cohort. [**Employment among software developers aged 22–25 has fallen nearly 20% since 2024**](https://hai.stanford.edu/ai-index/2026-ai-index-report/economy) — even as headcount for developers in their 30s and 40s grew.
 
 The interpretation is uncomfortable but clear. AI is eliminating the entry-level pipeline, not the senior roles. Companies are using AI to compress the work that previously went to junior developers, while retaining experienced engineers to supervise AI output and handle work that genuinely requires judgment. The result is that fewer junior engineers are getting hired — which means fewer experienced engineers will exist in five to ten years.
 
@@ -55,7 +55,7 @@ The report notes this creates a skills formation problem: the apprenticeship mod
 
 This is the finding that should concern builders most.
 
-The **Foundation Model Transparency Index** — which measures how openly AI labs disclose their training data, parameter counts, evaluation methods, and safety practices — dropped from an average of **58 points to 40 points** in a single year. The models that scored highest on capability benchmarks scored lowest on transparency.
+The [**Foundation Model Transparency Index**](https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai) — which measures how openly AI labs disclose their training data, parameter counts, evaluation methods, and safety practices — dropped from an average of **58 points to 40 points** in a single year, after having risen from 37 to 58 the year before. The models that scored highest on capability benchmarks scored lowest on transparency.
 
 The report documents a clear inverse relationship: the larger and more capable the model, the less its developers disclose about how it was built. Frontier labs have moved away from publishing training code, dataset sizes, and parameter counts. Independent researchers cannot audit models they cannot inspect.
 
@@ -65,7 +65,7 @@ This matters practically for builders: a model you cannot audit is a dependency 
 
 ## AI Incidents Are Rising — But So Is Deployment
 
-Documented AI incidents — harmful outputs, bias findings, safety failures, and misuse cases — rose to **362 in 2025**, up from 233 in 2024. The 55% year-over-year increase sounds alarming, and may be.
+Documented AI incidents — harmful outputs, bias findings, safety failures, and misuse cases — tracked by the [AI Incident Database rose to **362 in 2025**, up from 233 in 2024](https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai). The 55% year-over-year increase sounds alarming, and may be.
 
 The report offers context without dismissing the concern. Adoption grew faster than incident counts, which means the *rate* of incidents per deployment may not have worsened. But measurement is inconsistent across jurisdictions and companies, making it hard to distinguish a genuine safety improvement from an underreporting problem.
 
@@ -75,9 +75,9 @@ The report offers context without dismissing the concern. Adoption grew faster t
 
 The global survey data shows that AI anxiety and AI optimism are rising together — not in opposition.
 
-- **59% of global respondents** say they feel optimistic about AI's benefits (up from 52%)
-- **52% say they feel nervous** about AI (up 2 percentage points)
-- Only **33% of Americans** expect AI to make their jobs better, compared to a **40% global average**
+- [**59% of global respondents** say AI products and services offer more benefits than drawbacks (up from 55% in 2024)](https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion)
+- [**52% say they feel nervous** about AI](https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report), a small uptick from the year before
+- Only [**33% of Americans** expect AI to make their jobs better, compared to a **40% global average**](https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report) — a separate finding shows an even starker gap, with [73% of AI experts expecting a positive impact on how people do their jobs versus just 23% of the public](https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion)
 
 Americans are more skeptical about AI's labor benefits than most other populations surveyed. That skepticism may reflect the entry-level employment data above, or broader structural anxiety about where AI benefits ultimately accrue.
 
@@ -87,10 +87,10 @@ Americans are more skeptical about AI's labor benefits than most other populatio
 
 The Stanford AI Index was compiled in early 2026 and reflects data through roughly Q1. Since its April 13 release:
 
-- Anthropic has closed a $30 billion round at a $900 billion valuation
-- SpaceX filed an S-1 for an IPO that includes AI infrastructure at its core
-- SWE-bench performance has likely moved again — Claude Opus 4.7 and GPT-5.5 both shipped after the report closed
-- The transparency gap has widened further: Mythos, the most capable model Anthropic has built, remains behind a government research gate
+- [Anthropic was closing a $30 billion round at a $900+ billion valuation](https://finance.yahoo.com/sectors/technology/articles/anthropic-set-close-30-billion-203545596.html) as of late May 2026
+- [SpaceX filed an S-1](https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm) for an IPO that puts AI infrastructure (via its merger with xAI and the Colossus data centers) at its core
+- SWE-bench performance has likely moved again — [Claude Opus 4.7 shipped April 16, 2026](https://www.anthropic.com/claude/opus) and GPT-5.5 shipped that same month, both after the report's data closed
+- The transparency gap has widened further: [Mythos, Anthropic's most capable model for cybersecurity and biology research, remains restricted to a small set of vetted partners](https://www.anthropic.com/claude/mythos) rather than generally available
 
 The report's findings are a floor, not a ceiling.
 
