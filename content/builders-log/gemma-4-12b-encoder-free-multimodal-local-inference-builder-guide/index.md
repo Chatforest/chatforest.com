@@ -1,17 +1,18 @@
 ---
 title: "Gemma 4 12B: Encoder-Free Multimodal on Your Laptop — Text, Image, Audio, Video, Apache 2.0"
 date: 2026-06-03
-description: "Google DeepMind's Gemma 4 12B runs text, image, audio, and video inference on a 16GB laptop with an encoder-free architecture and an OpenAI-compatible local API server. Apache 2.0. This guide covers the architecture, setup, deployment paths, hardware requirements, and when to use it over Qwen 3.5 or Llama 4."
+description: "Google DeepMind's Gemma 4 12B runs text, image, audio, and video inference on a 16GB laptop with an encoder-free architecture and an OpenAI-compatible local API server. Apache 2.0. This guide covers the architecture, setup, deployment paths, hardware requirements, and when to use it over Qwen 3.6 or Llama 4."
 og_description: "Gemma 4 12B: encoder-free multimodal open model running on 16GB laptops. Native audio, 256K context, Apache 2.0. OpenAI-compatible local API via litert-lm serve. Builder guide covers setup, deployment, and model selection."
 content_type: "Builder's Log"
 categories: ["Google", "Open Source Models", "Local AI", "Model Analysis", "Developer Tools"]
 tags: ["google", "gemma", "gemma-4", "open-weight", "multimodal", "local-inference", "apache-2.0", "native-audio", "encoder-free", "litert-lm", "ollama", "on-device-ai", "builders-log"]
 draft: false
+sources_audited: 2026-07-28
 ---
 
-Gemma 4 12B landed June 3, 2026 as the first mid-sized open-weight model to process text, images, audio, and video through a single encoder-free backbone — and to do it on hardware that most developers already own.
+Gemma 4 12B landed June 3, 2026 as the [first mid-sized open-weight model to feature native audio input](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/) through a single [encoder-free backbone](https://developers.googleblog.com/gemma-4-12b-the-developer-guide/) — and to do it on hardware that most developers already own.
 
-The practical upshot: a 16GB laptop (MacBook M-series or Windows RTX 4070+) can run a fully multimodal model with a 256,000-token context window under an Apache 2.0 license, served through an OpenAI-compatible local API endpoint.
+The practical upshot: a laptop with [16GB of VRAM or unified memory](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/) can run a fully multimodal model with a [256,000-token context window](https://ai.google.dev/gemma/docs/core/model_card_4) under an [Apache 2.0 license](https://huggingface.co/google/gemma-4-12B), served through an OpenAI-compatible local API endpoint.
 
 This is the builder guide.
 
@@ -21,7 +22,7 @@ This is the builder guide.
 
 Every multimodal model before Gemma 4 12B used the same basic pattern: a separate encoder for each modality (a vision encoder, an audio encoder), which converts raw pixels or audio samples into embeddings that the LLM can read. The LLM backbone then processes those embeddings alongside text tokens.
 
-Gemma 4 12B eliminates the separate encoders. Vision tokens and audio tokens flow directly into the LLM backbone — the same transformer that processes text processes everything else too.
+Gemma 4 12B eliminates the separate encoders. [Vision and audio inputs project directly into the LLM's embedding space through lightweight linear layers](https://developers.googleblog.com/gemma-4-12b-the-developer-guide/) — the same transformer that processes text processes everything else too.
 
 **Why this matters for builders:**
 
@@ -31,25 +32,15 @@ Gemma 4 12B eliminates the separate encoders. Vision tokens and audio tokens flo
 
 **More coherent multimodal reasoning.** When vision and audio inputs share the same representation space as text from the first layer, the model can reason across modalities at a finer-grained level than cross-attention between separate encoder outputs. Document analysis where diagrams, text, and spoken annotations appear together benefits from this unified view.
 
-**First native audio in the mid-size tier.** Previous models in the 7B–27B range either had no audio support or required a separate Whisper-style transcription step. Gemma 4 12B takes raw audio input without a transcription pre-pass.
+**First native audio in the mid-size tier.** Google describes Gemma 4 12B as [the first mid-sized model to feature native audio inputs](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/) — no separate Whisper-style transcription step required. Gemma 4 12B takes raw audio input without a transcription pre-pass.
 
 ---
 
 ## Hardware Requirements
 
-The model weights are approximately 18GB. Practical requirements:
+Google's own guidance is that the model is [small enough to run locally on machines with at least 16GB of VRAM or unified memory](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/). Actual size on disk depends heavily on precision: full bf16 weights run [close to 24GB](https://huggingface.co/google/gemma-4-12B), while Google's own quantized [LiteRT-LM release for on-device serving is about 6.2GB](https://huggingface.co/litert-community/gemma-4-12B-it-litert-lm) with a GPU memory footprint of roughly 7.7–8GB on the hardware Google benchmarked (an AMD Radeon AI PRO R9700 and a MacBook Pro M4).
 
-| Hardware | Status |
-|----------|--------|
-| MacBook M3/M4 Pro or Max (18GB+ unified memory) | Runs fully |
-| MacBook M3/M4 (16GB unified memory) | Runs with quantization (Q4_K_M) |
-| Windows RTX 4070 Ti SUPER (16GB VRAM) | Runs fully |
-| Windows RTX 4070 (12GB VRAM) | Requires aggressive quantization |
-| Windows RTX 4090 (24GB VRAM) | Full precision, comfortable headroom |
-| Google Colab T4 (15GB) | Borderline; use quantized |
-| CPU-only | Possible but too slow for production |
-
-The 16GB threshold refers to VRAM or unified memory. On Apple Silicon, VRAM and RAM are the same pool, so 16GB M-series Macs run Gemma 4 12B with mild quantization. On discrete GPU machines, the model needs to fit in GPU VRAM for acceptable latency — RAM offloading works but is 5–10x slower.
+In practice, that means 16GB-class laptops and GPUs are the realistic floor, and quantization (via LiteRT-LM, GGUF, or bitsandbytes) is what gets you there — full bf16 precision needs closer to 24GB of VRAM or unified memory.
 
 ---
 
@@ -63,14 +54,17 @@ LiteRT-LM is Google's inference runtime for Gemma models. It is the fastest opti
 # Install LiteRT-LM
 pip install litert-lm
 
-# Download the model (from Hugging Face, LiteRT format)
-litert-lm download google/gemma-4-12b-litert
+# Import the model (from Hugging Face, LiteRT format)
+litert-lm import \
+  --from-huggingface-repo=litert-community/gemma-4-12B-it-litert-lm \
+  gemma-4-12B-it.litertlm \
+  gemma4-12b
 
 # Start the OpenAI-compatible API server
-litert-lm serve google/gemma-4-12b-litert --port 9379
+litert-lm serve
 ```
 
-The server is now available at `http://localhost:9379/v1/chat/completions` with the same request format as the OpenAI API. Tools that target OpenAI (Continue.dev, Aider, OpenCode, LangChain, LlamaIndex) work without modification — change the `base_url` to `http://localhost:9379/v1` and the `model` to `gemma-4-12b`.
+Per [Google's OpenAI-Compatible Server docs](https://developers.google.com/edge/litert-lm/cli/openai_server), the server starts on `http://localhost:9379/v1/chat/completions` by default (customizable with `--host`/`--port`) using the same request format as the OpenAI API. Tools that target OpenAI (Continue.dev, Aider, OpenCode, LangChain, LlamaIndex) work without modification — change the `base_url` to `http://localhost:9379/v1` and the `model` to `gemma4-12b`.
 
 ```python
 from openai import OpenAI
@@ -81,7 +75,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gemma-4-12b",
+    model="gemma4-12b",
     messages=[
         {"role": "user", "content": "Explain the encoder-free architecture in Gemma 4"}
     ]
@@ -91,7 +85,7 @@ print(response.choices[0].message.content)
 
 ### Path 2: Ollama
 
-Ollama is the simplest path if you are already using it for other models.
+Ollama is the simplest path if you are already using it for other models. Google's Gemma 4 12B build is available as [`gemma4:12b` in the Ollama library](https://ollama.com/library/gemma4:12b).
 
 ```bash
 ollama pull gemma4:12b
@@ -108,7 +102,7 @@ For fine-tuning, research, or framework-level integration:
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-model_id = "google/gemma-4-12b"
+model_id = "google/gemma-4-12B"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
@@ -152,7 +146,7 @@ with open("diagram.png", "rb") as f:
     image_data = base64.b64encode(f.read()).decode("utf-8")
 
 response = client.chat.completions.create(
-    model="gemma-4-12b",
+    model="gemma4-12b",
     messages=[{
         "role": "user",
         "content": [
@@ -172,7 +166,7 @@ with open("meeting_clip.wav", "rb") as f:
     audio_data = base64.b64encode(f.read()).decode("utf-8")
 
 response = client.chat.completions.create(
-    model="gemma-4-12b",
+    model="gemma4-12b",
     messages=[{
         "role": "user",
         "content": [
@@ -189,7 +183,7 @@ No Whisper. No intermediate transcription. The model processes the audio nativel
 
 ## Context Window: 256K Tokens
 
-At 256,000 tokens, Gemma 4 12B's context window is larger than Claude Sonnet 4.6 (200K) and GPT-5.5 (128K), and it runs locally.
+At [256,000 tokens](https://ai.google.dev/gemma/docs/core/model_card_4), Gemma 4 12B has a large context window for a locally-runnable model — well beyond Gemma 3's [128K](https://ai.google.dev/gemma/docs/core/model_card_3). It is not the largest window available, though: by June 2026, both [Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6) and [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5) shipped with 1M+-token context windows on their APIs. What Gemma 4 12B offers instead is a 256K window with zero per-token API cost, running entirely on hardware you already own.
 
 What fits in 256K tokens:
 
@@ -206,13 +200,15 @@ For agentic workflows, 256K is enough context to sustain most task sessions with
 
 | Model | MMLU Pro | GPQA Diamond | Context | Audio | Commercial |
 |-------|----------|--------------|---------|-------|------------|
-| Gemma 4 12B | ~75% | ~64% | 256K | Native | Apache 2.0 |
-| Gemma 3 27B | ~70% | ~58% | 128K | No | Gemma ToS |
-| Qwen 3.6 27B | ~78% | ~67% | 256K | No | Apache 2.0 |
-| Llama 4 Scout | ~73% | ~62% | 512K | No | Llama 4 license |
-| Phi-4 14B | ~72% | ~60% | 128K | No | MIT |
+| [Gemma 4 12B](https://ai.google.dev/gemma/docs/core/model_card_4) | 77.2% | 78.8% | 256K | Native | Apache 2.0 |
+| [Gemma 3 27B](https://ai.google.dev/gemma/docs/core/model_card_4) | 67.6% | 42.4% | 128K | No | Gemma ToS |
+| [Qwen 3.6 27B](https://huggingface.co/Qwen/Qwen3.6-27B) | 86.2% | 87.8% | 262K | No | Apache 2.0 |
+| [Llama 4 Scout](https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md) | 74.3% | 57.2% | [10M](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) | No | Llama 4 Community License |
+| [Phi-4 14B](https://arxiv.org/html/2412.08905v1) | 70.4% | 56.1% | [16K](https://huggingface.co/microsoft/phi-4) | No | MIT |
 
-Gemma 4 12B beats Gemma 3 27B on both benchmarks while using less than half the memory. On pure reasoning benchmarks, Qwen 3.6 27B scores higher — but at more than twice the parameter count with no audio support.
+(Gemma 4 12B and Gemma 3 27B scores are Google's own head-to-head comparison from the Gemma 4 model card; other rows are each model's own published benchmark.)
+
+Gemma 4 12B beats Gemma 3 27B on both benchmarks while using less than half the memory. On pure reasoning benchmarks, Qwen 3.6 27B and Llama 4 Scout's 10M-token context both outscore Gemma 4 12B on paper — but neither has native audio, and Qwen 3.6 27B needs more than twice the parameters and roughly [30GB+ of VRAM even quantized](https://unsloth.ai/docs/models/qwen3.6) (55GB+ at full precision) to get there.
 
 The unique advantage is native audio. No other open-weight model at any size tier offers encoder-free native audio input in a locally runnable package.
 
@@ -228,10 +224,10 @@ The unique advantage is native audio. No other open-weight model at any size tie
 - You are building **voice agent prototypes** and want to skip the Whisper integration step
 - You need **Apache 2.0** for clean commercial licensing
 
-### Use Qwen 3.5 27B instead when:
-- Your primary workload is **coding or agentic tool-calling** (Qwen 3.5 leads here)
-- You need **multilingual** support across many languages
-- You have **34GB+ VRAM** available and want stronger benchmark performance
+### Use [Qwen 3.6 27B](https://huggingface.co/Qwen/Qwen3.6-27B) instead when:
+- Your primary workload is **coding or agentic tool-calling** — Qwen 3.6 27B leads Gemma 4 12B on [MMLU-Pro and GPQA Diamond](https://huggingface.co/Qwen/Qwen3.6-27B)
+- You need a **longer context window** — 262K native, extensible to [1M+ tokens](https://huggingface.co/Qwen/Qwen3.6-27B)
+- You have **30GB+ VRAM** for 8-bit quantization (or 55GB+ for full bf16 precision) and want [stronger benchmark performance](https://unsloth.ai/docs/models/qwen3.6)
 
 ### Use a cloud model (Claude, GPT-5.5, Gemini 3.5 Flash) instead when:
 - You need **frontier-level reasoning** on complex tasks
@@ -247,7 +243,7 @@ The unique advantage is native audio. No other open-weight model at any size tie
 
 ## Google AI Edge Gallery (Mac App)
 
-For Mac users who want a no-setup path, Google released **AI Edge Gallery for Mac** alongside Gemma 4 12B. It is a standalone desktop application that downloads and runs Gemma 4 12B locally, wrapping the LiteRT-LM backend with a GUI.
+For Mac users who want a no-setup path, Google released [**AI Edge Gallery for macOS**](https://developers.googleblog.com/bringing-gemma-4-12b-to-your-laptop-unlocking-local-agentic-workflows-with-google-ai-edge/) alongside Gemma 4 12B. It is a free desktop application, [also available on the Mac App Store](https://apps.apple.com/us/app/google-ai-edge-gallery/id6749645337), that downloads and runs Gemma 4 12B locally, wrapping the LiteRT-LM backend with a GUI.
 
 Use AI Edge Gallery for:
 - Evaluating the model without CLI setup
@@ -268,14 +264,12 @@ For server-side inference at scale, use **vLLM** or **SGLang**:
 # vLLM (single A100 or H100)
 pip install vllm
 python -m vllm.entrypoints.openai.api_server \
-  --model google/gemma-4-12b \
+  --model google/gemma-4-12B \
   --dtype bfloat16 \
   --port 8000
 ```
 
-Google Cloud deployment uses Model Garden — the model is available in Vertex AI Model Garden for managed hosting with the same OpenAI-compatible endpoint format.
-
-For multi-tenant inference, Google's quantized LiteRT format achieves approximately 2x throughput over full-precision Hugging Face weights at comparable quality, making it the preferred format for serving multiple concurrent users on shared hardware.
+Google Cloud deployment uses Model Garden — the model is [available in Vertex AI Model Garden](https://developers.googleblog.com/bringing-gemma-4-12b-to-your-laptop-unlocking-local-agentic-workflows-with-google-ai-edge/) for managed hosting.
 
 ---
 
@@ -297,14 +291,14 @@ Previously, this required stitching together Whisper + a vision-capable LLM + a 
 | Architecture | Encoder-free unified LLM backbone |
 | Modalities | Text, image, audio (native), video |
 | Context window | 256,000 tokens |
-| VRAM requirement | 16GB (full precision); 12GB (Q4 quantized) |
+| VRAM requirement | ~24GB (full bf16 precision); ~8GB (Google's quantized LiteRT-LM release) |
 | License | Apache 2.0 |
 | Local API | OpenAI-compatible via `litert-lm serve` |
 | Supported runtimes | LiteRT-LM, Ollama, llama.cpp, MLX, vLLM, SGLang, HF Transformers |
 | Release date | June 3, 2026 |
-| Weights location | Hugging Face: `google/gemma-4-12b` |
+| Weights location | Hugging Face: `google/gemma-4-12B` |
 
-The instruction-tuned variant is `google/gemma-4-12b-it`. For production use, prefer the instruction-tuned version. The base model is for fine-tuning and continued pretraining.
+The instruction-tuned variant is `google/gemma-4-12B-it`. For production use, prefer the instruction-tuned version. The base model is for fine-tuning and continued pretraining.
 
 If your stack involves local inference, audio input, or multimodal document processing under a permissive license, Gemma 4 12B is the model to benchmark against first.
 

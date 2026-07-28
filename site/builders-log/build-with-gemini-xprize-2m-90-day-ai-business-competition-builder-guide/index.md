@@ -1,11 +1,11 @@
 # Build with Gemini XPRIZE: $2 Million to Build an AI Business in 90 Days — What Builders Need to Know
 
-> Google and XPRIZE are running the largest AI hackathon ever — $2M in prizes for builders who ship a real AI business with real users and real revenue by August 17. Here's how the competition works, what judges actually evaluate, and who should enter.
+> Google and XPRIZE are running a $2M hackathon — the largest prize pool ever for a hackathon, per Google — for builders who ship a real AI business with real users and real revenue by August 17. Here's how the competition works, what judges actually evaluate, and who should enter.
 
 
 Most hackathons ask for demos. Build with Gemini XPRIZE asks for a business.
 
-That distinction matters more than any other detail in the competition brief. [Google and XPRIZE launched this competition at Google I/O on May 19, 2026](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google), with $2 million in prizes and a single constraint that filters out most hackathon entrants before registration even closes: judges require real users, real revenue, and AI in production — not a prototype, not a slide deck.
+That distinction matters more than any other detail in the competition brief. [Google and XPRIZE launched this competition at Google I/O on May 19, 2026](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google), with [a $2 million prize pool that Google's own announcement calls "the largest ever for a hackathon"](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) — and a single constraint that filters out most hackathon entrants before registration even closes: judges require [real users, real revenue, and AI in production](https://www.geminixprize.com/rules) — not a prototype, not a slide deck.
 
 If you have a builder project that could become a business, the window is open until August 17. Here is everything you need to decide whether to enter.
 
@@ -13,19 +13,19 @@ If you have a builder project that could become a business, the window is open u
 
 ## What This Competition Actually Is
 
-Build with Gemini XPRIZE is a 90-day global competition where individual developers and small teams (fewer than 25 employees) build AI-powered businesses and compete for $2 million in prizes. The top prize is $500,000.
+Build with Gemini XPRIZE is a 90-day global competition where [individual developers and small teams — organizations must have fewer than 25 employees to be eligible](https://www.geminixprize.com/rules) — build AI-powered businesses and compete for [$2 million in prizes](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google). [The top prize is $500,000](https://www.geminixprize.com/rules).
 
-Registration opened May 19. The build period closes August 17, 2026. Five finalists will compete live in Los Angeles on September 25.
+[Registration opened May 19. The build period closes August 17, 2026. Five finalists will compete live in Los Angeles on September 25](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google).
 
 As of June 2, you have approximately 76 days of build time remaining.
 
-The key difference from typical AI hackathons: this is explicitly framed as a business creation challenge, not a demo challenge. Judges grade on revenue earned during the 90-day window, organic user adoption, and long-term sustainability — not on technical elegance or ambition of scope.
+The key difference from typical AI hackathons: this is explicitly framed as a business creation challenge, not a demo challenge. [Judges assess actual revenue earned during the 90-day window and the sustainability of the underlying business model](https://www.geminixprize.com/rules) — not technical elegance or ambition of scope.
 
 ---
 
 ## Prize Structure
 
-Total pool: $2,000,000
+[Total pool: $2,000,000](https://www.geminixprize.com/rules)
 
 | Place | Prize |
 |-------|-------|
@@ -37,13 +37,13 @@ Total pool: $2,000,000
 | 15 runner-up prizes | $50,000 each |
 | 5 category prizes | $50,000 each |
 
-Runner-up prizes ($50,000 × 15 = $750,000) represent the largest single pool. Category prizes ($50,000 × 5 = $250,000) are awarded independently — you can win a category prize without placing in the top five overall.
+Runner-up prizes ($50,000 × 15 = $750,000) represent the largest single pool. Category prizes ($50,000 × 5 = $250,000) are awarded independently — [each entry qualifies for a maximum of one prize, so a category win and a top-five placement can't both go to the same project](https://www.geminixprize.com/rules).
 
 ---
 
 ## Five Competition Categories
 
-Entries are organized into five tracks:
+[Entries are organized into five tracks](https://www.geminixprize.com/rules):
 
 1. **Education & Human Potential** — tutoring, skill development, credentialing, language learning, career coaching
 2. **Entrepreneurship & Job Creation** — tools that help people start or scale businesses, freelance platforms, micro-enterprise infrastructure
@@ -61,32 +61,32 @@ If you already have a project in a specific vertical, enter that category. If yo
 
 ## How Judges Score Entries
 
-Three criteria, equally weighted:
+[Three criteria, equally weighted](https://www.geminixprize.com/rules):
 
 ### Business Viability
-Revenue earned during the 90-day window. Organic user adoption speed. Evidence of long-term sustainability — meaning the business model makes sense beyond the competition.
+Per the [official rules](https://www.geminixprize.com/rules): "Teams must launch a real business during the Hackathon, acquire real users, and generate real revenue. Judges assess both actual revenue achieved during the 90-day window and the sustainability of the underlying business model."
 
-The key word is "organic." Judges are reportedly skeptical of growth that looks engineered for submission. This means your user acquisition strategy matters as much as your product.
+In practice, that means your user acquisition strategy matters as much as your product — a business model that only works during a subsidized 90-day sprint won't score well on the sustainability half of this criterion.
 
 ### AI-Native Operations
-How deeply embedded AI is in daily business workflows. The evaluation language is specific: the system must operate "continuously on autopilot, making key execution decisions with minimal human intervention."
+How deeply embedded AI is in daily business workflows. The [official evaluation language](https://www.geminixprize.com/rules) is: "Teams must run their business through AI. Judges assess the extent to which AI is live in production, AI executes key business decisions, and how broadly AI governs the operation."
 
 This is not about having an LLM feature — it is about whether removing the AI would collapse the business. A traditional SaaS product with a chatbot bolted on scores poorly here. A business where the AI handles the core value delivery (matching, generation, curation, analysis) scores well.
 
 ### Category Impact
-How significantly the product moves the needle in its vertical. Judges evaluate credibility, depth, and immediate potential for widespread adoption. A product that serves 30 paying customers in a narrow, underserved niche can score higher here than a broad tool with 5,000 free signups.
+Per the [official rules](https://www.geminixprize.com/rules): "Teams built something that meaningfully moves the needle in their chosen category — either by redefining how something works at a fundamental level, or by reaching a scale where widespread adoption is credible."
 
-Impact is measured by what it does for users, not by total users.
+In practice, that gives two distinct paths to a strong score: real depth in a narrow niche, or credible evidence you can reach scale — not just current user count.
 
 ---
 
 ## Technical Requirements
 
-The Gemini API constraint is worth reading carefully:
+The [Gemini API constraint](https://xprize.devpost.com/rules) is worth reading carefully:
 
 > Projects that include LLM functionality must use the Gemini API for at least one LLM call in the deployed application. Teams may use additional LLM providers alongside Gemini at their discretion.
 
-This is not a Gemini-only rule. You can use Claude, GPT-5.x, open-weight models, or any other inference provider. The requirement is that Gemini API handles at least one LLM call somewhere in the production system.
+This is not a Gemini-only rule. You can use Claude, GPT-5.x, open-weight models, or any other inference provider. The requirement is that Gemini API handles at least one LLM call somewhere in the production system. There is also a broader constraint worth noting: [a project must use at least one product from Google Cloud](https://xprize.devpost.com/rules) generally, not just the Gemini API specifically — so a submission with zero LLM functionality still needs some Google Cloud product in the stack.
 
 Practically: if you are already building on another stack, adding a single Gemini API call for a legitimately useful function (routing, classification, summarization) qualifies. Do not add a gratuitous Gemini call just to satisfy the rule — judges can tell, and it reflects on the AI-Native Operations score.
 
@@ -96,11 +96,11 @@ Practically: if you are already building on another stack, adding a single Gemin
 
 When you submit by August 17:
 
-- **Public or shared repository** — all source code, either publicly visible or shared with the competition's testing accounts
-- **3-minute video** — must show the product functioning on device, uploaded to YouTube, Vimeo, or Youku
-- **Revenue evidence** — the competition does not specify a format, but the business viability criterion requires demonstrable revenue. Document it.
+- **[Public or shared repository](https://xprize.devpost.com/rules)** — the repository must be either public (with relevant licensing) or private and shared with the competition's testing accounts (`testing@devpost.com` and `judging@hacker.fund`)
+- **[3-minute video](https://xprize.devpost.com/rules)** — must be under three minutes and uploaded to YouTube, Vimeo, or Youku
+- **[Revenue evidence](https://xprize.devpost.com/rules)** — the rules do specify a format: total revenue earned from third-party customers during the hackathon period, revenue broken out by calendar month (May–August 2026), total expenses, and marketing/customer-acquisition spend. Judges may request further documentation during review.
 
-Finalists are selected by an expert panel after reviewing submissions. The five finalists then present live in Los Angeles on September 25.
+[Finalists are selected by an expert panel](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google) — Hacker Fund oversees initial screening and verification, then an expert panel selects five finalists, who present live in Los Angeles on September 25.
 
 ---
 
@@ -139,6 +139,8 @@ If you are starting from zero today, the most viable path is to find an existing
 ---
 
 ## Key Dates
+
+[Per the official announcement](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google):
 
 | Date | Milestone |
 |------|-----------|

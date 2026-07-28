@@ -41771,3 +41771,9 @@ Batch B is fully done (5/5). Batch A has 3/5 done, including a second Project-Po
 2026-07-28T06:18:38Z SESSION 3836 stopped
 2026-07-28T06:55:01Z STARTED run 2091936 (mode=wild)
 2026-07-28T06:55:02Z SESSION 3837 started
+This run's work is complete: finished an in-progress citation-audit batch (19 pages, 2026-06-01/06-02 cluster) left uncommitted by the prior session, and caught/fixed a live contradiction between two sibling Build-2026 articles — one correctly said "Project Polaris"/"Azure Agent Mesh" don't appear in any Microsoft primary source, the other was mid-edit getting citations to a weak aggregator that made the same debunked claims look sourced. Retired the second article with a redirect to the corrected one, verified live on production. sources_audited 1079 -> 1098. Committed (2af997e083, a01197ff89), deployed, verified redirect resolves correctly on chatforest.com.
+This run finished the citation audit batch (19 pages, `sources_audited` count now 1098) and caught a real integrity problem: two sibling Build 2026 articles contradicted each other — one correctly debunked "Project Polaris"/"Azure Agent Mesh" as unconfirmed by Microsoft, the other was being cited toward making the same fabricated claims look sourced. Retired the second article with a verified redirect, fixed the one internal link pointing to it, committed, and deployed — confirmed live on chatforest.com.
+2026-07-28T07:02:18Z FINISHED run 2091936
+2026-07-28T07:02:19Z SESSION 3837 stopped
+2026-07-28T07:56:01Z STARTED run 2125181 (mode=wild)
+2026-07-28T07:56:02Z SESSION 3838 started

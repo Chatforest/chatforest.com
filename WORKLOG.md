@@ -2,6 +2,107 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2125181 — 2026-07-28 — Citation audit, 10 pages (batch 102, 2026-06-02/06-03 cluster) + deploy
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were just the harness's append-only
+session-boundary log lines from Run 2091936 (already committed via 2af997e083/a01197ff89) — normal,
+folded into this run's commit. Inbox: only my own prior outgoing message (#2272, Bluesky incident
+report, sent/unread, no action needed) — no new instructions from Rob or Boss Claude. Bluesky:
+`check_bluesky_posted_today.py` → `OK_TO_POST`, but session started 07:56 UTC, before Dispatch #4's
+09:00 UTC scheduled send — held the newsletter-plug post again; still not yet time.
+
+### Claim-level citation audit — 10 oldest unaudited pages (batch 102, 2026-06-02/06-03 cluster, `content/builders-log/`)
+Ran 10 parallel subagents, one per file, each fetching and verifying primary sources directly
+rather than attaching plausible-looking links. All 10 marked `sources_audited: 2026-07-28`. Two
+articles had their **central premise flatly wrong**, not just uncited — the most serious class of
+finding this duty exists to catch:
+
+1. **anthropic-agent-sdk-billing-split-june-15-model-deprecations-builder-guide** — The article's
+   whole framing was that the Agent SDK billing split "went live" June 15. Anthropic's own Help
+   Center says the opposite: it was **paused before taking effect** — nothing changed, Agent SDK
+   usage still draws from normal subscription limits. Deleted two invented "failure mode" anecdotes
+   that couldn't have happened if no credits were ever issued; rewrote the billing section as an
+   announced-then-paused plan kept for historical reference. Also fixed real numeric errors: token
+   inflation (32-47% → Anthropic's own 1.0-1.35x/~30%), Haiku-vs-Opus cost ratio (15x → actual 5x),
+   prompt-cache savings (70-90% → flat 90% on cache reads), and a fused $5,800/150-175x subsidy
+   figure that mixed two different scenarios from its source into one number.
+2. **salesforce-summer-26-agentforce-multi-agent-orchestration-atlas-a2a-mcp-builder-guide** — Whole
+   piece was framed around Multi-Agent Orchestration "graduating to GA on June 15." Salesforce's own
+   developer release guide — the source already cited elsewhere in the article — labels it **Beta**.
+   Rewrote GA→Beta throughout (title, description, headline, five-things checklist). Also cut a
+   fabricated "Atlas Reasoning Engine 3.0" version number and an unverifiable "Microsoft's Azure
+   Agent Mesh" claim (checked three Microsoft primary sources, none mention it) — **the same
+   fabricated term Run 2091936 caught and retired a whole article over**, now cut here too before it
+   could seed another contradiction. Fixed a misattributed "Seam Problem" quote (coined by a
+   third-party consultancy, not Salesforce) and corrected rollout dates and two renamed products
+   (Salesforce DX MCP Server, Agentforce Vibes) to their real names/capabilities.
+3. **nvidia-rtx-spark-computex-2026-local-ai-laptop-builder-guide** — Found a genuine
+   citation-mismatch (source fetched and confirmed to not contain the cited TOPS figures — the
+   plausible-link failure mode, not claim-fusion). Fixed a conflation of two separate NVIDIA
+   announcements (COMPUTEX vs. CES) into one claim with the wrong cloud-partner list, Apple M4 Max's
+   process node (4nm → actual 3nm/N3E), an unsupported claim that AMD's Lisa Su co-keynoted COMPUTEX
+   2026 (she keynoted a separate AMD event), and a model-size table with two nonexistent models
+   ("Qwen 3.5 70B", "Llama 4 Scout" mis-sized as 70B dense) plus one anachronistic citation
+   (a model that published two days after this article's date).
+4. **xai-grok-build-0-1-public-api-mcp-native-reasoning-builder-guide** — Article had zero inline
+   citations. Comparison table compared against a nonexistent "Claude Sonnet 4.7" (real: Sonnet 4.6,
+   with correct 1M context/79.6% SWE-bench, not the article's stale 200K/72.7%); GPT-4.1's SWE-bench
+   score was wrong (~72% claimed vs. actual 54.6%); a fabricated `reasoning_effort="none"` API
+   parameter was invented (xAI's docs: reasoning can't be disabled on any current model); the
+   rate-limit table's "Requests/Min" column didn't match any real conversion of xAI's actual
+   published Requests/Sec figures.
+5. **gemma-4-12b-encoder-free-multimodal-local-inference-builder-guide** — Also zero inline
+   citations originally. Benchmark table wrong across multiple models per each vendor's own card;
+   Llama 4 Scout context window off by 20x (512K claimed vs. Meta's actual 10M); Phi-4 14B context
+   window wrong (128K claimed vs. Microsoft's actual 16K); and a textbook **claim-fusion**: GPT-5.5's
+   context window was listed as "128K" — that's actually its max *output* tokens, real context is
+   1.05M (same error pattern for Claude Sonnet 4.6, listed as 200K vs. actual 1M at launch), which
+   had inverted the article's whole "Gemma beats frontier cloud context windows" framing.
+6. **azure-api-management-unified-model-api-anthropic-vertex-a2a-build-2026-builder-guide** — Fixed
+   a stale Preview status: Microsoft's own Build 2026 post shows Anthropic/Vertex governance,
+   content-safety, and observability features are GA (only the new Unified Model API endpoint itself
+   is still preview). Fixed a fabricated Anthropic model-alias format
+   (`anthropic.claude-opus-4-8@20260514` → real `claude-opus-4-8`) and cut an unverifiable claim that
+   OpenAI's tooling supports A2A.
+7. **claude-microsoft-foundry-enterprise-billing-macc-entra-two-tier-guide** — Fixed an outright
+   wrong claim that Azure Zero-Data-Retention "does not apply to Claude" — Microsoft's GA blog says
+   ZDR is available for Claude via Foundry (Anthropic's own opt-in ZDR, not Azure's infra-level ZDR).
+   Fixed stale claims that Claude runs only on Anthropic infrastructure and that Anthropic (not
+   Microsoft) handles support — both now outdated per Microsoft's hosting-comparison doc. Verified
+   the article's most eye-catching claim (the "$1,600 to over $17,000" surprise-invoice range)
+   checks out exactly against two independent real invoices (The Register; a Microsoft Tech
+   Community post).
+8. **fivetran-dbt-labs-merger-agents-schema-data-infrastructure-trusted-ai-agents** — Sourced the
+   merger itself to two independent Fivetran press releases (Oct 2025 announcement + June 2026
+   completion) per the named-company-claim >=2-source rule. Fixed a stale connector count (500+ →
+   current 700+) and corrected a "$600M revenue" present-tense claim to what the source actually
+   says (ARR "approaching $600M" *at the October 2025 announcement*).
+9. **github-copilot-app-standalone-desktop-agent-sessions-canvases-builder-guide** — Fixed a wrong
+   SDK language count (article said "seven languages," GitHub's own changelog says six) repeated
+   across heading/body/description/og_description/card_description. Updated stale "sign-ups paused"
+   and "technical preview" framing — GitHub reopened Copilot Max sign-ups June 17, 2026 and the app
+   went GA the same day, opening to all plans including Free by July 7.
+10. **build-with-gemini-xprize-2m-90-day-ai-business-competition-builder-guide** — Deleted a
+    fabricated blockquote attributed to XPRIZE's judging criteria (real text differs) and an
+    unsourced claim that judges are "skeptical of growth that looks engineered" (word doesn't appear
+    in the official rules). Fixed a claim that revenue evidence has no required format — the
+    official Devpost rules specify exact required fields.
+
+**`sources_audited` count: 1098 → 1108** (verified via `grep -rl sources_audited content/ | wc -l`).
+Hugo rebuild: 4163 pages, clean. Deployed to DreamHost successfully.
+
+### What should happen next
+- **Next run at/after 09:00 UTC:** check Buttondown for Dispatch #4 send status; post the gated
+  Bluesky newsletter plug if sent (this is the second run in a row holding it — 09:00Z hasn't
+  arrived yet at either session's start time).
+- **Continue citation audit**: next batch is the remainder of the 2026-06-03 cluster (many
+  Microsoft Build 2026 recap pages still unaudited from that date).
+- Two articles this run had their entire premise contradicted by their own already-cited primary
+  source (Anthropic billing-split "paused not live," Salesforce "Beta not GA") — worth noting as a
+  pattern: when a page's dramatic hook ("X finally happened") sits right next to a citation, that's
+  exactly where to double check the source says what the headline claims, not just that a link exists.
+
 ## Run 2696 — 2026-07-28 — Citation audit, 10 pages (batch 100, 2026-06-01 cluster) + deploy
 
 ### Inbox

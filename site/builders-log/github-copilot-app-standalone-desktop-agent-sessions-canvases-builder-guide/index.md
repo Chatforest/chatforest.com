@@ -3,7 +3,7 @@
 > GitHub's standalone Copilot app — a desktop client separate from any IDE — expanded its technical preview at Build 2026 on June 2. Sessions run in isolated git worktrees, canvases give agents and humans a shared work surface, and Agent Merge handles the PR-through-merge pipeline. Here's what it is and who should adopt now.
 
 
-**At a glance:** On June 2, 2026, GitHub expanded the technical preview of the GitHub Copilot app — a standalone desktop client for macOS, Windows, and Linux — to all Copilot Pro, Pro+, Business, and Enterprise subscribers. This is not an IDE extension. It's a new interface category: a control center for managing multiple parallel agent sessions, each running in its own isolated git worktree. Key features include the My Work view, canvases, Agent Merge, and cloud sandboxes. The Copilot SDK is now generally available in seven languages. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** On June 2, 2026, GitHub expanded the technical preview of the GitHub Copilot app — a standalone desktop client for macOS, Windows, and Linux — to all Copilot Pro, Pro+, Business, and Enterprise subscribers ([GitHub Blog, June 2, 2026](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)). This is not an IDE extension. It's a new interface category: a control center for managing multiple parallel agent sessions, each running in its own isolated git worktree. Key features include the My Work view, canvases, Agent Merge, and cloud sandboxes. The Copilot SDK is now generally available in six languages ([GitHub Changelog, June 2, 2026](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/)). **Update:** the app itself has since moved past technical preview — GitHub shipped it to general availability on June 17, 2026 and opened it to every Copilot plan, including Free, on July 7, 2026; see the Access section below. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -33,15 +33,15 @@ What it surfaces:
 - Background automations running on your behalf
 - Scheduled jobs that have run or are queued
 
-The framing GitHub uses is that agents are handling more work per session, and the developer's role shifts to managing output: reading transcripts, reviewing diffs, making decisions, and redirecting. My Work is the surface where that oversight happens.
+GitHub frames this as a shift in the developer's role: as agents handle more of the execution — investigating bugs, implementing issues, working through review feedback, each in its own isolated environment — the developer's job becomes inspecting, redirecting, testing, and merging the resulting changes rather than writing all of them ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)). My Work is the surface where that oversight happens.
 
 ---
 
 ## Sessions and Worktrees: No More Branch Juggling
 
-Each agent session in the Copilot app runs in its own **git worktree** — a real, isolated copy of a branch checked out at a separate path on your machine or in a cloud sandbox. The app creates and manages all worktrees automatically.
+Each agent session in the Copilot app runs in its own **git worktree** — a real, isolated copy of a branch checked out at a separate path on your machine or in a cloud sandbox. The app creates and manages all worktrees automatically ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
-The practical implication: you can run ten sessions against the same repository simultaneously and they will not conflict. No manual setup, no cleanup, no stashing or switching branches between tasks.
+The practical implication: you can run multiple sessions against the same repository simultaneously and they will not conflict ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)). No manual setup, no cleanup, no stashing or switching branches between tasks.
 
 Sessions can run:
 - **Locally** — in isolated environments on your machine
@@ -53,7 +53,7 @@ When a session finishes, its worktree is cleaned up. The output is a pull reques
 
 ## Canvases: Shared Work Surfaces
 
-A **canvas** is what GitHub calls a bidirectional work surface for a session. It's not just an output log — it's a structured, interactive surface where both agents and humans can read and write.
+A **canvas** is what GitHub calls a bidirectional work surface for a session ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)). It's not just an output log — it's a structured, interactive surface where both agents and humans can read and write.
 
 What a canvas might contain:
 - A plan (structured as editable steps)
@@ -71,17 +71,17 @@ This matters for workflows where you want to stay in the loop without driving ev
 
 ## Agent Merge: PR to Merged, Autonomously
 
-**Agent Merge** handles the PR-through-merge lifecycle — specifically the part that normally requires a developer to babysit: waiting for CI, responding to review comments, re-running checks, and finally merging.
+**Agent Merge** handles the PR-through-merge lifecycle — specifically the part that normally requires a developer to babysit: waiting for CI, responding to review comments, re-running checks, and finally merging ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
 What it does:
 - Monitors CI runs and responds to failures
-- Tracks required reviewers and their approvals
+- Tracks required reviewers
 - Addresses review comments (with configurable scope)
 - Merges when all conditions are met
 
-How much autonomy you give it is configurable. At minimum: monitor and notify. At maximum: drive CI back to green, address feedback, and merge when the conditions you specify are satisfied.
+How much autonomy you give it is configurable: drive CI back to green, address feedback, or merge only when the conditions you specify are met. "You decide what automation is enabled and what ships," per GitHub's announcement.
 
-One important boundary: repository branch protection rules still apply. If your repo requires human approval on protected branches, Agent Merge waits for that approval before proceeding. It automates the mechanical parts; it doesn't override your governance policies.
+One important boundary: GitHub's Copilot coding-agent documentation states the agent "is also subject to any branch protections and required checks for the working repository," and that it cannot mark a PR "Ready for review" or approve/merge it without satisfying those requirements ([GitHub Docs — Risks and mitigations for GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/risks-and-mitigations)). Even so, GitHub's own guidance is that organizations requiring human approval before merge should verify their branch protection rules are configured to enforce it — Agent Merge automates the mechanical parts, but it's on the repo admin to make sure governance policies are actually wired up to constrain it.
 
 ---
 
@@ -89,73 +89,74 @@ One important boundary: repository branch protection rules still apply. If your 
 
 The Copilot app provides two sandbox environments for agent sessions:
 
-**Cloud sandboxes** — Fully isolated, ephemeral Linux environments hosted by GitHub. Each cloud session gets its own environment. It's torn down after the session. No shared state, no residual artifacts.
+**Cloud sandboxes** — Fully isolated, ephemeral Linux environments hosted by GitHub. Each cloud session gets its own environment, torn down after the session, enabling remote control and continuity across devices ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
-**Local sandboxes** — Isolated environments on your machine. Agents can run, test, and iterate code without touching your working environment or production infrastructure.
+**Local sandboxes** — Isolated environments on your machine, with restricted access to the filesystem, network, and system capabilities, and centrally configurable policy. Agents can run, test, and iterate code without touching your working environment or production infrastructure.
 
 Both sandbox types give agents a bounded place to act. The agent can install packages, run tests, build artifacts, and make filesystem changes inside the sandbox — and none of that reaches anything outside the boundary.
 
 ---
 
-## Copilot SDK: Now GA in Seven Languages
+## Copilot SDK: Now GA in Six Languages
 
-Alongside the app expansion, GitHub announced the **GitHub Copilot SDK** is now generally available in:
+Alongside the app expansion, GitHub announced the **GitHub Copilot SDK** is now generally available "in six languages" ([GitHub Changelog — Copilot SDK is now generally available](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/)):
 
-- Node.js
-- TypeScript
+- Node.js / TypeScript
 - Python
 - Go
 - .NET
 - Rust
 - Java
 
-The SDK exposes the same agent runtime that powers the Copilot app. If you want to build custom agent tools or integrate Copilot-style agent workflows into your own systems, the SDK is the entry point — not a preview integration, but a GA API.
+The SDK exposes the same agent runtime that powers the Copilot app ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)). If you want to build custom agent tools or integrate Copilot-style agent workflows into your own systems, the SDK is the entry point — not a preview integration, but a GA API.
 
-Third-party integrations are already shipping: LaunchDarkly, PagerDuty, and others have built agent apps that integrate directly with the Copilot runtime.
+Third-party integrations are already shipping: GitHub's announcement lists partner-built agent apps from LaunchDarkly, Bright, Amplitude, Sonar, Endor Labs, Octopus Deploy, Packfiles, PagerDuty, and Miro that integrate with GitHub Copilot to automate tasks, generate code, analyze context, and execute actions ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
 ---
 
 ## Other Features Worth Noting
 
-**Voice input** — On-device speech-to-text for hands-free interaction in sessions.
+**Voice input** — On-device speech-to-text so audio never leaves your machine; GitHub shipped this as a Copilot CLI feature ([voice mode docs](https://docs.github.com/copilot/how-tos/copilot-cli/use-copilot-cli/voice-input)) rather than the desktop app specifically, but it's part of the same session infrastructure the app uses.
 
-**Chronicle** — Query prior session data. Ask the app what happened in previous sessions against a repository.
+**Chronicle** — GitHub calls the underlying feature "Memory++," queried via the `/chronicle` command, giving Copilot continuity across devices and over time — you can ask what happened in previous sessions started from the app, CLI, VS Code, or GitHub.com ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
-**Scheduled automations** — Set up cloud sessions to run on a schedule (similar to a cron job but scoped to agent workflows).
+**Scheduled automations** — Set up cloud sessions to run on a schedule, respond to GitHub events, open issues, and leave comments ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
 **Copilot CLI integration** — The CLI has a redesigned interface and connects to the same session infrastructure.
 
-**Rubber duck skill** — Built-in `/rubberduck` for problem-solving discussion when you want to think through an issue rather than have an agent execute.
+**Rubber duck skill** — `/rubberduck` is now generally available and uses multiple model families to critique your implementation and find issues, for problem-solving discussion rather than having an agent execute changes ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
-**Custom review skills** — Configurable effort levels and custom skills like `/security-review` for code review sessions.
+**Custom review skills** — Copilot code review now offers a medium review tier that routes PRs to a higher-reasoning model, configurable per repository, plus custom skills like `/security-review` for a dedicated security-focused evaluation path ([GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)).
 
 ---
 
-## Access: Who Can Use It Now
+## Access: Who Could Use It at Launch (and Who Can Now)
 
-The technical preview expanded on June 2, 2026 at Build 2026.
+The technical preview expanded on June 2, 2026 at Build 2026. At that point, access looked like this ([GitHub Changelog — Expanded Technical Preview Availability](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/)):
 
-| Plan | Access |
+| Plan | Access at June 2, 2026 launch |
 |---|---|
-| Copilot Free | Waitlist only |
+| Copilot Free | Not yet available ("opening soon") |
 | Copilot Pro | Technical preview — download now |
 | Copilot Pro+ | Technical preview — download now |
-| Copilot Business | Technical preview — rolling out across the week |
-| Copilot Enterprise | Technical preview — rolling out across the week |
+| Copilot Business | Technical preview — download now |
+| Copilot Enterprise | Technical preview — download now |
 
-Platform: macOS, Windows, Windows on Arm, Linux.
+**This has since moved on.** The app reached general availability for macOS, Windows, and Linux on June 17, 2026 ([GitHub Changelog — GitHub Copilot app generally available](https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/)), and on July 7, 2026 GitHub opened it to every Copilot plan, including Copilot Free and GitHub Education, with a bring-your-own-key option that needs no Copilot subscription at all ([GitHub Changelog — GitHub Copilot app available to all](https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/)). Business and Enterprise admins still need the Copilot CLI policy enabled in org settings for the app to work.
+
+Platform: macOS, Windows, Windows on Arm (ARM64), and Linux ([GitHub Copilot app releases](https://github.com/github/app)).
 
 ---
 
 ## The Copilot Max Tier
 
-For high-volume agent usage — sustained parallel sessions, heavy Agent Merge usage, large amounts of cloud sandbox time — GitHub has introduced **Copilot Max** at $100/month.
+For high-volume agent usage — sustained parallel sessions, heavy Agent Merge usage, large amounts of cloud sandbox time — GitHub has introduced **Copilot Max** at $100/month ([GitHub Blog — Copilot Individual Plans, Flex Allotments, and Max](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/)).
 
 Copilot Max includes $100/month in GitHub AI Credits plus a $100 flex allotment, for $200 in total monthly included usage. Additional credits can be purchased beyond the allotment.
 
 Context: agent sessions consume AI credits (token-based billing, not seat-based). For background on how GitHub's credit billing works, see our [Copilot AI credits builder guide](/builders-log/github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide/).
 
-New sign-ups for Copilot Max are temporarily paused. Existing Pro and Pro+ customers can upgrade.
+**Sign-up status has changed since launch.** GitHub paused new sign-ups for Copilot Student, Pro, Pro+, and Max in April 2026 due to agentic-workflow compute demand, then began gradually reopening them on June 17, 2026 ([GitHub Changelog — Copilot individual plan sign-ups are reopening](https://github.blog/changelog/2026-06-17-copilot-individual-plan-sign-ups-are-reopening/)). As of this audit, GitHub's own pricing page shows a live "Get started" button for Max, indicating new sign-ups are open ([GitHub Copilot Plans and Pricing](https://github.com/features/copilot/plans)) — check that page for current status before assuming a pause.
 
 ---
 
@@ -172,8 +173,9 @@ New sign-ups for Copilot Max are temporarily paused. Existing Pro and Pro+ custo
 
 **Wait if:**
 - You're a light single-repository user — the IDE extension covers your use case; the app's value is in multi-repo, multi-session scale
-- You're on Copilot Free — waitlist only for now
 - You need Mac-specific enterprise MDM management of the app — check GitHub's documentation for current enterprise deployment support
+
+(Note: at original publish, Copilot Free was waitlist-only. As of the July 7, 2026 rollout, the app is available on every plan including Free, so this is no longer a reason to wait — see the Access section above.)
 
 **On Copilot Max:** Run the math against your actual session volume first. $100/month is a significant step up from Pro+. If you're running background automations and parallel sessions daily, the credit allotment may justify it. If you're primarily using it for interactive sessions, it probably doesn't yet.
 
@@ -181,12 +183,11 @@ New sign-ups for Copilot Max are temporarily paused. Existing Pro and Pro+ custo
 
 ## What to Watch
 
-The technical preview framing means the feature set is not final. Things to watch:
+At original publish, the technical preview framing meant the feature set wasn't final — that has since played out: the app went GA on June 17, 2026 and opened to all plans on July 7, 2026 (see Access section above). What's still worth watching:
 
-- **GA timeline** — GitHub hasn't announced a GA date for the app itself
 - **Enterprise deployment support** — IT-managed rollout, MDM, and network proxy support details
 - **Copilot SDK ecosystem** — which third-party integrations ship and their quality
-- **Chronicle and scheduling capabilities** — both were mentioned at announcement but details are thin
+- **Chronicle and scheduling capabilities** — both were mentioned at announcement but details were thin at the time
 
 This is a substantive shift in what GitHub Copilot is. The IDE extension model — you write, the assistant suggests — is no longer the only offering. The Copilot app is a bet that developers increasingly want to manage agents doing work, not just get suggestions while writing code themselves.
 
@@ -194,5 +195,5 @@ Whether that bet lands depends on how Agent Merge, canvases, and the SDK ecosyst
 
 ---
 
-*Sources: [GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/), [GitHub Changelog — Expanded Technical Preview (June 2, 2026)](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/), [GitHub Blog — Copilot Individual Plans and Max](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [GitHub Copilot Plans and Pricing](https://github.com/features/copilot/plans)*
+*Sources: [GitHub Blog — Copilot App: The Agent-Native Desktop Experience](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/), [GitHub Changelog — Expanded Technical Preview (June 2, 2026)](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/), [GitHub Changelog — Copilot SDK is now generally available](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/), [GitHub Changelog — GitHub Copilot app generally available (June 17, 2026)](https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/), [GitHub Changelog — Copilot individual plan sign-ups are reopening](https://github.blog/changelog/2026-06-17-copilot-individual-plan-sign-ups-are-reopening/), [GitHub Changelog — GitHub Copilot app available to all (July 7, 2026)](https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/), [GitHub Docs — Risks and mitigations for GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/risks-and-mitigations), [GitHub Blog — Copilot Individual Plans and Max](https://github.blog/news-insights/company-news/github-copilot-individual-plans-introducing-flex-allotments-in-pro-and-pro-and-a-new-max-plan/), [GitHub Copilot Plans and Pricing](https://github.com/features/copilot/plans), [GitHub Copilot app releases](https://github.com/github/app)*
 

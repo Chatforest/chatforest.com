@@ -6,6 +6,7 @@ og_description: "Azure API Management Unified Model API (public preview): one Op
 content_type: "Builder's Log"
 categories: ["Azure", "Microsoft", "AI Infrastructure", "Governance", "Multi-Provider"]
 tags: ["azure", "api-management", "unified-model-api", "anthropic", "vertex-ai", "a2a", "mcp", "multi-provider", "ai-gateway", "content-safety", "build-2026", "builder-guide", "enterprise-ai"]
+sources_audited: 2026-07-28
 ---
 
 At Microsoft Build 2026, [Azure API Management shipped a set of changes](https://techcommunity.microsoft.com/blog/integrationsonazureblog/whats-new-in-azure-api-management-at-microsoft-build-2026/4524683) that are easy to miss in the noise of MAI model announcements and Windows agent previews. They are worth slowing down on if you are running AI workloads on Azure — or are about to.
@@ -32,7 +33,7 @@ The Unified Model API (in public preview as of Build 2026) exposes a single endp
 
 From the client side, nothing changes. Your code calls the same endpoint, uses the same request schema, and gets a response in the same format. The platform team controls which model actually runs the inference.
 
-**Model aliases** are how platform teams expose models to application developers. Instead of referencing a provider-specific model ID like `anthropic.claude-opus-4-8@20260514`, a developer calls an alias like `claude-sonnet` or `gpt`. The alias is configured in API Management. Clients can discover available aliases by calling the `/models` endpoint of the Unified Model API — the response lists what the platform team has published.
+**Model aliases** are how platform teams expose models to application developers. Instead of referencing a provider-specific model ID like [`claude-opus-4-8`](https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry) (the actual Foundry deployment name Anthropic publishes for Claude Opus 4.8 — no vendor prefix or version-date suffix), a developer calls an alias like `claude-sonnet` or `gpt`. The alias is configured in API Management. Clients can discover available aliases by calling the [`/models` endpoint of the Unified Model API](https://learn.microsoft.com/en-us/azure/api-management/unified-model-api) — the response lists what the platform team has published.
 
 The practical consequence: when your platform team decides to route `gpt` to Azure OpenAI GPT-5.5 this quarter and to Anthropic Claude Sonnet next quarter, no application code changes. The alias stays the same. Only the backend binding changes in API Management.
 
@@ -42,13 +43,13 @@ This is a meaningful architectural shift for teams running multiple applications
 
 As of Build 2026:
 
-| Provider | Unified Model API | Observability | Content Safety |
-|----------|:-----------------:|:-------------:|:--------------:|
-| Azure OpenAI | GA | GA | GA |
-| Anthropic | Preview | Preview | Preview |
-| Google Vertex AI | Preview | Preview | Preview |
+| Provider | Unified Model API (single endpoint) | AI Gateway — governance, content safety, observability |
+|----------|:-----------------:|:-------------:|
+| Azure OpenAI | Preview | GA (pre-existing) |
+| Anthropic | Preview | GA |
+| Google Vertex AI | Preview | GA |
 
-Azure OpenAI has the most mature integration, as it predates this announcement. Anthropic and Vertex AI governance through API Management is new at Build 2026.
+Two different things are easy to conflate here. The Unified Model API — the single OpenAI-compatible endpoint that translates to whatever backend you configure — is in public preview, and that preview status applies across all three providers, including Azure OpenAI. Separately, [the underlying AI Gateway governance capabilities — runtime policies, content safety, semantic caching, token controls, logging, tracing, and observability — reached general availability for Anthropic and Google Vertex AI at Build 2026](https://techcommunity.microsoft.com/blog/integrationsonazureblog/whats-new-in-azure-api-management-at-microsoft-build-2026/4524683). Azure OpenAI has carried that same governance layer since before this announcement.
 
 ---
 
@@ -56,7 +57,7 @@ Azure OpenAI has the most mature integration, as it predates this announcement. 
 
 Agent-to-Agent (A2A) API support in Azure API Management is now GA.
 
-A2A describes the protocol pattern where one agent calls another agent's API — either as a sub-task delegation or as a service invocation. The A2A spec, driven by Google and now supported across Azure, OpenAI, and Anthropic's tooling, defines how agents register capabilities, authenticate calls, and exchange structured results.
+A2A describes the protocol pattern where one agent calls another agent's API — either as a sub-task delegation or as a service invocation. The A2A spec, [created by Google in April 2025 and donated to the Linux Foundation for vendor-neutral governance in June 2025](https://opensource.googleblog.com/2026/04/a-year-of-open-collaboration-celebrating-the-anniversary-of-a2a.html), is now supported by Azure and by [Anthropic's own agent tooling](https://www.anthropic.com/webinars/deploying-multi-agent-systems-using-mcp-and-a2a-with-claude-on-vertex-ai), alongside Microsoft, AWS, Salesforce, SAP, and ServiceNow. It defines how agents register capabilities, authenticate calls, and exchange structured results.
 
 Before this change, A2A traffic between agents lived outside API Management's governance surface. You could govern the model calls, but not the inter-agent API calls themselves. That created a blind spot: agents could call each other with no rate limiting, no content inspection, no identity verification beyond what the application layer handled.
 
@@ -83,7 +84,7 @@ The `llm-content-safety` policy in Azure API Management previously applied to LL
 
 Why does this matter? Consider a standard agent pipeline: the agent receives a user prompt, calls an MCP tool to retrieve data, processes the result, then calls a downstream agent to act on it. With the old content safety boundary, only the initial LLM call and the final model response were inspected. The MCP tool response and the A2A messages were outside the safety perimeter.
 
-That is a meaningful attack surface. Prompt injection via MCP tool responses — where a malicious or compromised tool server returns content that tries to redirect the agent — is a documented attack pattern. So is data exfiltration via A2A calls, where an agent passes sensitive content to another agent that routes it somewhere it should not go.
+That is a meaningful attack surface. Prompt injection via MCP tool responses — where a malicious or compromised tool server returns content that tries to redirect the agent — is a [documented attack pattern](https://unit42.paloaltonetworks.com/model-context-protocol-attack-vectors/). So is [data exfiltration via A2A calls](https://unit42.paloaltonetworks.com/agent-session-smuggling-in-agent2agent-systems/), where a malicious or compromised agent routes sensitive content somewhere it should not go.
 
 Extending the `llm-content-safety` policy to MCP and A2A traffic closes that gap. The safety controls that your security team configured for LLM calls now apply uniformly across the full agent execution graph.
 
@@ -107,15 +108,15 @@ Now all three providers report through the same pipeline. Token usage, latency d
 
 **If you are running MCP tool servers for agents:** Configure `llm-content-safety` to extend to MCP traffic. The marginal cost is minimal and the risk from unguarded MCP responses is real. The [MCP security research published in March 2026](/builders-log/mcp-security-crisis-2026-unauthenticated-servers-viper-nsa-owasp-builder-guide/) documented several live prompt-injection patterns against MCP servers; the Azure policy layer is a concrete mitigation.
 
-**If you are evaluating Azure vs. third-party AI gateways (LiteLLM, OpenRouter, Portkey, Cloudflare AI Gateway):** The Azure API Management option is now meaningfully competitive for teams that are already in the Azure ecosystem. The advantage is that it sits inside your existing Azure security perimeter — your Entra ID, your private networking, your existing policies. The disadvantage is that it does not give you access to the full provider list that third-party gateways support (Cohere, Mistral, Together AI, and others are not currently part of the Unified Model API). If you need those providers, a dedicated AI gateway still makes more sense.
+**If you are evaluating Azure vs. third-party AI gateways (LiteLLM, OpenRouter, Portkey, Cloudflare AI Gateway):** The Azure API Management option is now meaningfully competitive for teams that are already in the Azure ecosystem. The advantage is that it sits inside your existing Azure security perimeter — your Entra ID, your private networking, your existing policies. The disadvantage is that it does not give you access to the full provider list that third-party gateways support: [the Unified Model API's supported backend formats are OpenAI Chat Completions and the Anthropic Messages API](https://learn.microsoft.com/en-us/azure/api-management/unified-model-api) (plus Vertex AI per the Build 2026 announcement above) — Cohere, Mistral, Together AI, and others are not currently part of it. If you need those providers, a dedicated AI gateway still makes more sense.
 
 ---
 
 ## Access and Availability
 
-The Unified Model API is in public preview. Anthropic and Vertex AI support within API Management is also in preview. A2A API governance is GA.
+[The Unified Model API is in public preview](https://learn.microsoft.com/en-us/azure/api-management/unified-model-api) — that preview status covers the single-endpoint translation layer itself, across all backend providers. The AI Gateway governance underneath it (content safety, semantic caching, token controls, observability) for Anthropic and Vertex AI is GA, as noted above. A2A API governance is also GA.
 
-To enable the Unified Model API, you need an Azure API Management instance (Developer tier or above). Preview features require opt-in through the Azure portal under your API Management instance settings. The `/models` discovery endpoint is available once the Unified Model API is enabled.
+To enable the Unified Model API, you need an Azure API Management instance ([Developer tier or above](https://learn.microsoft.com/en-us/azure/api-management/unified-model-api)). Preview features require opt-in through the Azure portal under your API Management instance settings. The `/models` discovery endpoint is available once the Unified Model API is enabled.
 
 The content safety extension to MCP and A2A traffic requires Azure AI Content Safety integration, which is already required for the existing LLM content safety policy. If you have that integration configured, MCP and A2A coverage is available without additional provisioning.
 
