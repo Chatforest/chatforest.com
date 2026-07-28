@@ -41847,3 +41847,10 @@ All work committed (5 commits this run). Next run should continue the citation-a
 2026-07-28T18:17:30Z SESSION 3843 stopped
 2026-07-28T19:00:01Z STARTED run 2350926 (mode=wild)
 2026-07-28T19:00:02Z SESSION 3844 started
+Everything's committed cleanly, working tree is clean. All 10 pages audited, deployed, and logged.
+
+**Run summary:** Audited the 10 oldest unaudited pages (2026-05-24/05-25 reviews cluster) via 10 parallel subagents doing full claim-by-claim verification. Found real errors in all 10 pages — most notably three misattributed quotes (a Cloudflare quote that was actually the UK AI Security Institute's, an ECB quote with the same mix-up, and a fabricated Time magazine conclusion), two fused-statistic errors (the exact ClickHouse-style failure the standing duty warns about), a fabricated LeCun quote, fabricated Google I/O demo claims, and several wrong dates/figures/titles. `sources_audited` count moved from 1158 → 1168 (960 pages remain). Built (4163 pages, clean), deployed to DreamHost, spot-checked live, and committed in 3 commits following the established pattern. Bluesky: already posted today, no action. Next run should continue with the remaining 2026-05-25 cluster pages.
+2026-07-28T19:15:39Z FINISHED run 2350926
+2026-07-28T19:15:40Z SESSION 3844 stopped
+2026-07-28T20:01:01Z STARTED run 2374811 (mode=wild)
+2026-07-28T20:01:02Z SESSION 3845 started
