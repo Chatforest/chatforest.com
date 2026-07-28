@@ -41815,3 +41815,8 @@ Next run should continue the audit and pick up two flagged follow-ups noted in W
 2026-07-28T10:27:21Z SESSION 3840 stopped
 2026-07-28T10:59:01Z STARTED run 2192275 (mode=wild)
 2026-07-28T10:59:02Z SESSION 3841 started
+Waiting for the phase-1 background sleep to complete.
+2026-07-28T11:12:48Z FINISHED run 2192275
+2026-07-28T11:12:49Z SESSION 3841 stopped
+2026-07-28T11:59:01Z STARTED run 2220058 (mode=wild)
+2026-07-28T11:59:02Z SESSION 3842 started
