@@ -2,14 +2,15 @@
 title: "TeamPCP Supply Chain Attack: The npm Worm That Hit GitHub, OpenAI, and Mistral AI"
 date: 2026-05-23
 description: "Between May 11 and May 19, 2026, a threat actor called TeamPCP poisoned 170+ npm/PyPI packages, hijacked a VS Code extension with 2.2M installs, and stole 3,800 internal GitHub repositories. Here's how the chain worked."
-og_description: "TeamPCP's Mini Shai-Hulud worm compromised TanStack, Mistral AI, and 170+ npm/PyPI packages starting May 11. The stolen tokens became the key to a poisoned Nx Console extension — live for 18 minutes — that ended with GitHub disclosing a breach of 3,800 internal repos. OpenAI and Mistral AI also confirmed hits. The worm explicitly targets Claude Code configurations."
+og_description: "TeamPCP's Mini Shai-Hulud worm compromised TanStack, Mistral AI, and 170+ npm/PyPI packages starting May 11. The stolen tokens became the key to a poisoned Nx Console extension — live for 18 minutes — that ended with GitHub disclosing a breach of 3,800 internal repos. OpenAI, Mistral AI, and Grafana Labs also confirmed hits. The worm explicitly targets Claude Code configurations."
 content_type: "Incident Analysis"
-card_description: "Between May 11 and May 19, 2026, a group called TeamPCP executed a three-stage supply chain attack that hit GitHub, OpenAI, Mistral AI, and the European Commission in sequence. Stage one was a self-propagating npm and PyPI worm. Stage two was an 18-minute window where a poisoned VS Code extension with 2.2 million installs went live. Stage three was the GitHub breach. This is a timeline and technical breakdown of how the chain connected."
+card_description: "Between May 11 and May 19, 2026, a group called TeamPCP executed a three-stage supply chain attack that hit GitHub, OpenAI, Mistral AI, and Grafana Labs in sequence. Stage one was a self-propagating npm and PyPI worm. Stage two was an 18-minute window where a poisoned VS Code extension with 2.2 million installs went live. Stage three was the GitHub breach. This is a timeline and technical breakdown of how the chain connected."
 tags: ["security", "supply-chain", "npm", "pypi", "vscode", "github", "teampcp", "shai-hulud", "incident-analysis", "claude-code", "developer-security"]
 categories: ["reviews"]
 rating: 0
 author: "ChatForest"
 last_refreshed: 2026-05-23
+sources_audited: 2026-07-28
 ---
 
 **Editorial note:** This is an incident analysis based on public disclosures from GitHub, Corgea, Wiz, StepSecurity, Snyk, Tenable, Palo Alto Unit 42, and news coverage from The Hacker News, Infosecurity Magazine, and Help Net Security. ChatForest does not have independent access to logs, affected systems, or TeamPCP materials. All technical details come from published post-mortems and vendor reports.
@@ -27,8 +28,8 @@ Three stages. Nine days. One thread connecting them all.
 | Stage | Date | What happened |
 |---|---|---|
 | Mini Shai-Hulud worm | May 11, 2026 | 170+ npm/PyPI packages compromised; GitHub tokens stolen from TanStack contributor |
-| Nx Console poisoning | May 18, 2026 | Malicious VS Code extension live for 18 minutes; credentials harvested from ~2.2M potential installs |
-| GitHub breach | May 19, 2026 | 3,800 internal GitHub repos exfiltrated; OpenAI, Mistral AI, European Commission also hit |
+| Nx Console poisoning | May 18, 2026 | Malicious VS Code extension live for 18 minutes; listed at ~2.2M total installs, though [Corgea's analysis](https://corgea.com/research/github-breach-vscode-extension-supply-chain-may-2026) estimates roughly 6,000 workspaces actually auto-updated and executed the payload during the window |
+| GitHub breach | May 19, 2026 | 3,800 internal GitHub repos exfiltrated; OpenAI, Mistral AI, Grafana Labs also hit |
 
 What makes this attack notable is not any single stage — each technique is established. What is notable is that each stage fed the next using materials stolen in the stage before.
 
@@ -38,7 +39,7 @@ What makes this attack notable is not any single stage — each technique is est
 
 On May 11, 2026, a threat actor group calling itself **TeamPCP** deployed a self-propagating worm across the npm and PyPI ecosystems. Security researchers named the campaign **Mini Shai-Hulud** — after the sandworm in *Dune* — for its cross-ecosystem propagation behavior.
 
-Within five hours, Mini Shai-Hulud had published over **400 malicious versions across 172 distinct packages**. The affected packages included household names in the JavaScript and Python developer ecosystems:
+Within five hours (22:45 UTC May 11 to 01:53 UTC May 12), Mini Shai-Hulud had published over **[400 malicious versions across 172 distinct packages](https://hackread.com/teampcp-mini-shai-hulud-worm-npm-pypi-packages/)**. The affected packages included household names in the JavaScript and Python developer ecosystems:
 
 - **TanStack** (TanStack Query, TanStack Table, TanStack Router — among the most downloaded React libraries)
 - **Mistral AI** official Python client
@@ -46,7 +47,7 @@ Within five hours, Mini Shai-Hulud had published over **400 malicious versions a
 - **UiPath** automation packages
 - **OpenSearch** Python and JavaScript clients
 
-The 172 packages had a combined cumulative download count exceeding **518 million** before the compromise. Not 518 million downloads of the malicious versions — 518 million downloads total in the packages' histories, which indicates the scale of developer exposure if poisoned versions spread unchecked.
+Per [Tenable's FAQ on the campaign](https://www.tenable.com/blog/mini-shai-hulud-frequently-asked-questions), the affected packages carry a combined **518 million cumulative weekly downloads** — not downloads of the malicious versions specifically, but the normal recurring install volume across the packages' user bases, which indicates the scale of developer exposure if poisoned versions had spread unchecked.
 
 ### How the worm moved
 
@@ -61,7 +62,7 @@ The payload is a multi-target credential harvester. According to Tenable's publi
 - Kubernetes service account tokens
 - 1Password vault access tokens
 
-After collection, credentials are exfiltrated over three independent channels simultaneously: HTTPS to attacker-controlled endpoints, the GitHub API (using stolen tokens to write data to private repos), and DNS tunneling for resilience if the other channels are blocked.
+Tenable's FAQ documents the AWS/Vault/GitHub/npm/Kubernetes targets directly; the 1Password vault targeting and the DNS-tunneling channel below are corroborated by [ThreatLocker's analysis](https://www.threatlocker.com/blog/how-mini-shai-hulud-worm-moved-through-supply-chain-impacting-github-nx-console-tanstack). After collection, credentials are exfiltrated over multiple channels simultaneously: HTTPS to attacker-controlled endpoints, the GitHub API (using stolen tokens to write data to private repos), and DNS tunneling for resilience if the other channels are blocked.
 
 ### The Claude Code angle
 
@@ -103,11 +104,13 @@ GitHub has not disclosed the full content of what was taken, but the repositorie
 
 Additional confirmed victims:
 
-- **OpenAI** — confirmed hit; announced on May 23 that its macOS signing certificate would be fully revoked on June 12, requiring all macOS users to reinstall the application
+- **OpenAI** — [two employee devices compromised](https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html) via the TanStack compromise; OpenAI announced on May 23 that its macOS signing certificate would be fully revoked on June 12, requiring all macOS users to reinstall the application
 - **Mistral AI** — confirmed hit
-- **European Commission** — confirmed hit (through the OpenSearch package compromise)
+- **Grafana Labs** — [confirmed hit](https://www.notebookcheck.net/VS-Code-supply-chain-attack-hits-GitHub-OpenAI-and-Mistral-AI.1302154.0.html) via the same TanStack/Nx Console chain
 
 The breadth of victims reflects the scale of who had developers with Nx Console installed during that 18-minute window.
+
+*Correction (2026-07-28): an earlier version of this piece named the European Commission as a confirmed victim "through the OpenSearch package compromise." A re-audit of the citation could not locate any source supporting that claim — the only European Commission connection found in the sourcing is an unrelated Cyber Resilience Act reporting deadline, not a breach. Corrected to Grafana Labs, which multiple sources do confirm as a victim of the TanStack/Nx Console chain.*
 
 ---
 
@@ -182,5 +185,7 @@ The AI developer ecosystem specifically is a target. TanStack, Mistral AI, Guard
 - [Mini Shai-Hulud: Frequently Asked Questions — Tenable](https://www.tenable.com/blog/mini-shai-hulud-frequently-asked-questions)
 - [TanStack npm Supply Chain Worm — Orca Security](https://orca.security/resources/blog/tanstack-npm-supply-chain-worm/)
 - [Mini Shai-Hulud Cross-Ecosystem Worm — Expel](https://expel.com/blog/mini-shai-hulud-cross-ecosystem-supply-chain-worm-targeting-npm-pypi/)
-- [Gemini 3.5 Flash: The Flash That Beat Last Year's Pro — NxCode](https://www.nxcode.io/resources/news/gemini-3-5-flash-complete-guide-benchmarks-pricing-api-2026)
 - [VS Code Supply Chain Attack — Notebookcheck](https://www.notebookcheck.net/VS-Code-supply-chain-attack-hits-GitHub-OpenAI-and-Mistral-AI.1302154.0.html)
+- [TeamPCP Poisons Over 400 npm/PyPI Packages — Hackread](https://hackread.com/teampcp-mini-shai-hulud-worm-npm-pypi-packages/)
+- [How Mini Shai-Hulud Moved Through the Supply Chain — ThreatLocker](https://www.threatlocker.com/blog/how-mini-shai-hulud-worm-moved-through-supply-chain-impacting-github-nx-console-tanstack)
+- [TanStack Supply Chain Attack Hits Two OpenAI Employee Devices — The Hacker News](https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html)

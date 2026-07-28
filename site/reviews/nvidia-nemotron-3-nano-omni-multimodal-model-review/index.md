@@ -3,7 +3,7 @@
 > NVIDIA Nemotron 3 Nano Omni (April 2026) is an open multimodal model with 30B total parameters but only 3B active per forward pass. Hybrid Mamba-Transformer MoE architecture with C-RADIOv4-H vision encoder and Parakeet-TDT audio encoder. Understands text, images, audio, video, documents, charts, and GUIs. 9x higher throughput than comparable open omni models. Available on HuggingFace, OpenRouter, and NVIDIA NIM. Rating: 4/5.
 
 
-**At a glance:** NVIDIA Nemotron 3 Nano Omni, released April 29, 2026. 30B total parameters, 3B active per forward pass. Hybrid Mamba-Transformer MoE. Understands text, images, audio, video, documents, charts, and GUIs. 9x higher throughput than open omni alternatives. Free weights on HuggingFace and NVIDIA NIM microservice. Part of our **[AI Models & LLM reviews](/categories/ai-providers/)**.
+**At a glance:** NVIDIA Nemotron 3 Nano Omni, [released April 28, 2026](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/). 30B total parameters, 3B active per forward pass. Hybrid Mamba-Transformer MoE. Understands text, images, audio, video, documents, charts, and GUIs. 9x higher throughput than open omni alternatives. Free weights on HuggingFace and NVIDIA NIM microservice. Part of our **[AI Models & LLM reviews](/categories/ai-providers/)**.
 
 ---
 
@@ -13,9 +13,9 @@ That number deserves a pause. Nemotron 3 Nano Omni is a model that can look at a
 
 Most dedicated vision-language models activate their full parameter count to do two things: see and read. Nemotron 3 Nano Omni activates 10% of its weight budget to do six.
 
-The architecture that makes this possible is a hybrid Mixture-of-Experts design. The MoE router selects which 3B-parameter slice of the 30B total is most relevant for a given input — then only that slice runs. The result, [NVIDIA claims](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/), is **9x higher throughput** than comparable open omni models at equivalent interactivity levels, and **2.9x the single-stream reasoning speed** on multimodal tasks.
+The architecture that makes this possible is a hybrid Mixture-of-Experts design. The MoE router selects which 3B-parameter slice of the 30B total is most relevant for a given input — then only that slice runs. The result, [NVIDIA claims](https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence), is **9x higher throughput** than comparable open omni models at equivalent interactivity levels, and **2.9x the single-stream reasoning speed** on multimodal tasks — the [developer blog breaks the aggregate figure down further](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/): 7.4x higher system efficiency for multi-document use cases and 9.2x for video use cases.
 
-NVIDIA [released Nemotron 3 Nano Omni on April 29, 2026](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/). Free weights. NVIDIA NIM microservice. Runs from a Jetson edge device to a DGX data center cluster.
+NVIDIA [released Nemotron 3 Nano Omni on April 28, 2026](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/). Free weights. NVIDIA NIM microservice. Runs from a Jetson edge device to a DGX data center cluster.
 
 ---
 
@@ -31,7 +31,7 @@ The naming convention here matters: "Nano" refers not to tiny capability, but to
 
 ### The MoE Backbone
 
-The core of Nemotron 3 Nano Omni is a **30B-A3B hybrid Mamba-Transformer Mixture-of-Experts** architecture. Breaking that down:
+The core of Nemotron 3 Nano Omni is a [**30B-A3B hybrid Mamba-Transformer Mixture-of-Experts**](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) architecture, detailed in [NVIDIA's technical report](https://arxiv.org/abs/2604.24954). Breaking that down:
 
 - **30B-A3B**: 30 billion total parameters, 3 billion active per token per forward pass
 - **Hybrid Mamba-Transformer**: alternates between Mamba state-space layers (efficient for long sequences) and Transformer attention layers (strong at cross-token reasoning)
@@ -41,13 +41,13 @@ The Mamba-Transformer hybrid is particularly relevant for multimodal agents. Mam
 
 ### Vision Encoder: C-RADIOv4-H
 
-The vision encoder is **C-RADIOv4-H**, NVIDIA's fourth-generation RADIO (Robustness-Aware Distillation for Image Objectives) model in its high-resolution variant. RADIO-class encoders are trained via knowledge distillation from multiple foundation vision models simultaneously — the result is an encoder that preserves signal from diverse visual models without being bottlenecked by any single one.
+The vision encoder is **[C-RADIOv4-H](https://huggingface.co/nvidia/C-RADIOv4-H)**, NVIDIA's fourth-generation RADIO ([Reduce All Domains Into One](https://arxiv.org/abs/2312.06709)) model in its high-resolution variant. RADIO-class encoders are trained via knowledge distillation from multiple foundation vision models simultaneously — [C-RADIOv4 specifically distills from SigLIP2-g, DINOv3-7B, and SAM3](https://huggingface.co/nvidia/C-RADIOv4-H) — the result is an encoder that preserves signal from diverse visual models without being bottlenecked by any single one.
 
 The "H" (high-resolution) variant matters for document intelligence: reading a scanned contract or a dense chart requires seeing fine-grained pixel detail that lower-resolution encoders compress away.
 
 ### Audio Encoder: Parakeet-TDT-0.6B-v2
 
-The audio encoder is **Parakeet-TDT-0.6B-v2**, NVIDIA's automatic speech recognition model. Parakeet-TDT is a Token-and-Duration Transducer — a streaming-capable architecture that transcribes audio with accurate duration alignment. TDT allows the audio branch to process speech in real time rather than requiring a fully buffered input, which matters for voice-interactive agents.
+The audio encoder is **[Parakeet-TDT-0.6B-v2](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)**, NVIDIA's automatic speech recognition model. Parakeet-TDT integrates a Token-and-Duration Transducer (TDT) decoder on a FastConformer backbone, [jointly predicting tokens and their durations](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) for accurate timestamp alignment. Per NVIDIA's model card, this checkpoint is [trained with full attention for efficient transcription of audio segments up to 24 minutes in a single pass](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2) — a batch-oriented design rather than a real-time streaming ASR architecture.
 
 ### Input/Output
 
@@ -80,7 +80,7 @@ Nemotron 3 Nano Omni is a single model that handles all of those input types. Th
 | MMlongbench-Doc | Leads open omni models |
 | OCRBenchV2 | Leads open omni models |
 
-MMlongbench-Doc and OCRBenchV2 test multi-page document understanding and OCR accuracy at scale — the core capability for document processing agents. NVIDIA claims first place among open omni models on both.
+MMlongbench-Doc and OCRBenchV2 test multi-page document understanding and OCR accuracy at scale — the core capability for document processing agents. [NVIDIA claims first place among open omni models on both](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/); the [model card reports raw scores](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) of 57.5 on MMlongBench-Doc and 67.04 (EN) on OCRBenchV2.
 
 ### Video and Audio
 
@@ -91,7 +91,7 @@ MMlongbench-Doc and OCRBenchV2 test multi-page document understanding and OCR ac
 | VoiceBench | Top audio understanding among open omni models |
 | MediaPerf | Most cost-efficient open video reasoning model |
 
-WorldSense and DailyOmni specifically test real-world video understanding — the kind of footage an agent might encounter in a physical environment. VoiceBench tests audio comprehension quality. MediaPerf is a throughput-normalized video reasoning benchmark, which connects back to the 9x throughput claim.
+WorldSense and DailyOmni specifically test real-world video understanding — the kind of footage an agent might encounter in a physical environment; [NVIDIA reports leading results on both](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/), with the [model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) listing raw scores of 55.4 on WorldSense and 74.52 on DailyOmni. VoiceBench tests audio comprehension quality; the [model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) lists a voice-interaction score of 89.39. [MediaPerf is a throughput-normalized video reasoning benchmark](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/) on which NVIDIA reports the highest throughput and lowest inference cost for video-level tagging; this metric appears only in NVIDIA's own reporting and was not independently corroborated at time of writing.
 
 ### Throughput
 
@@ -103,7 +103,7 @@ The 9x throughput advantage over open omni alternatives at equivalent interactiv
 
 ## Deployment: From Jetson to Data Center
 
-One of the more notable aspects of Nemotron 3 Nano Omni is its deployment range:
+One of the more notable aspects of Nemotron 3 Nano Omni is its [deployment range](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/):
 
 **Edge**
 - NVIDIA Jetson hardware (embedded AI systems for robotics, industrial, automotive)
@@ -126,7 +126,7 @@ The NVIDIA NIM packaging means developers who prefer managed API access can use 
 
 ## Technical Report
 
-NVIDIA published the [Nemotron 3 Nano Omni technical report on April 27, 2026](https://arxiv.org/abs/2604.24954) (two days before the public release), available as a research PDF from nvidia.com. The report covers architecture, training methodology, and benchmark results in detail. The [Hugging Face model page](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) includes the architecture documentation alongside the weights.
+NVIDIA published the [Nemotron 3 Nano Omni technical report on April 27, 2026](https://arxiv.org/abs/2604.24954) (one day before the public release), available as a research PDF from nvidia.com. The report covers architecture, training methodology, and benchmark results in detail. The [Hugging Face model page](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) includes the architecture documentation alongside the weights.
 
 ---
 
@@ -182,5 +182,5 @@ For teams building multimodal agents — document processing, video analysis, vo
 
 ---
 
-*NVIDIA Nemotron 3 Nano Omni was released April 29, 2026. Weights available on HuggingFace. NVIDIA NIM microservice available at build.nvidia.com. Technical report published April 27, 2026. Reviewed by ChatForest.*
+*NVIDIA Nemotron 3 Nano Omni was released April 28, 2026. Weights available on HuggingFace. NVIDIA NIM microservice available at build.nvidia.com. Technical report published April 27, 2026. Reviewed by ChatForest.*
 

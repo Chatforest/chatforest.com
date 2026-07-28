@@ -4,20 +4,21 @@ date: 2026-05-23
 description: "Windsurf 2.0 (April 15, 2026) ships the first deep IDE + cloud agent integration: Devin now runs directly inside the editor, an Agent Command Center manages all sessions in one Kanban view, and Cognition's SWE-1.5 model hits 950 tokens/second. Here's what works and what doesn't."
 og_description: "Windsurf 2.0: Agent Command Center (Kanban for all local + cloud agents), Devin integration (cloud agent on own VM, included in Pro/Max/Teams), Spaces (task-level context grouping), SWE-1.5 at 950 tok/s (13× Claude Sonnet 4.5), Codemaps (AI-annotated code navigation). Pricing: Free / $20 / $200 / $40/user/mo. Rating: 4/5."
 content_type: "Review"
-card_description: "Windsurf 2.0 (April 15, 2026) from Cognition AI — the company that acquired Windsurf (formerly Codeium) in December 2025 for $250M — ships the most ambitious IDE update of the year. The centerpiece is **Devin integration**: the cloud autonomous coding agent is now built directly into the editor, included with Pro/Max/Teams plans, and can be delegated to with one click while Cascade continues working locally. The **Agent Command Center** is a Kanban surface showing every local and cloud agent session in one view — a new UI paradigm for multi-agent development. **SWE-1.5**, Cognition's proprietary model, runs at 950 tokens/second — 13× faster than Claude Sonnet 4.5 and 6× faster than Haiku 4.5 — cutting a typical Kubernetes manifest edit from 20 seconds to under 5. **Codemaps** adds AI-annotated visual code navigation with no direct competitor. Pricing spans Free → Pro ($20/mo) → Max ($200/mo) → Teams ($40/user/mo) → Enterprise. The question this update raises: does putting a cloud agent inside a local editor create genuine leverage, or just more things to manage? The answer is mostly the former, with caveats."
+card_description: "Windsurf 2.0 (April 15, 2026) from Cognition AI — the company that acquired Windsurf (formerly Codeium) in July 2025 for an estimated $250M — ships the most ambitious IDE update of the year. The centerpiece is **Devin integration**: the cloud autonomous coding agent is now built directly into the editor, included with Pro/Max/Teams plans, and can be delegated to with one click while Cascade continues working locally. The **Agent Command Center** is a Kanban surface showing every local and cloud agent session in one view — a new UI paradigm for multi-agent development. **SWE-1.5**, Cognition's proprietary model, runs at 950 tokens/second — 13× faster than Claude Sonnet 4.5 and 6× faster than Haiku 4.5 — cutting a typical Kubernetes manifest edit from 20 seconds to under 5. **Codemaps** adds AI-annotated visual code navigation with no direct competitor. Pricing spans Free → Pro ($20/mo) → Max ($200/mo) → Teams ($40/user/mo) → Enterprise. The question this update raises: does putting a cloud agent inside a local editor create genuine leverage, or just more things to manage? The answer is mostly the former, with caveats."
 tags: ["windsurf", "codeium", "cognition-ai", "devin", "ide", "coding-agent", "swe-1-5", "agent-command-center", "mcp", "ai-coding-tools", "cursor"]
 categories: ["reviews"]
 rating: 4
 author: "ChatForest"
+sources_audited: 2026-07-28
 ---
 
-**At a glance:** [Windsurf 2.0](https://devin.ai/blog/windsurf-2-0/). Released April 15, 2026. Developer: Cognition AI (acquired Windsurf / Codeium in December 2025). Key features: Agent Command Center, Devin integration, Spaces, SWE-1.5 model at 950 tok/s, Codemaps. Pricing: Free / Pro ($20/mo) / Max ($200/mo) / Teams ($40/user/mo) / Enterprise. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** [Windsurf 2.0](https://devin.ai/blog/windsurf-2-0/). Released April 15, 2026. Developer: Cognition AI ([acquired Windsurf / Codeium in July 2025](https://cognition.com/blog/windsurf)). Key features: Agent Command Center, Devin integration, Spaces, SWE-1.5 model at 950 tok/s, Codemaps. Pricing: Free / Pro ($20/mo) / Max ($200/mo) / Teams ($40/user/mo) / Enterprise. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
 Windsurf did not start as an ambitious product. It started as Codeium — a free AI autocomplete extension that did one thing well and charged nothing for it. For most of 2022–2024, that was the pitch: solid code completion, generous free tier, no credit system to worry about.
 
-The rebrand to Windsurf in April 2025 was the first signal that the product was changing directions. The [acquisition by Cognition AI in December 2025](https://devin.ai/blog/windsurf-2-0/) — $250M for a company with $82M ARR, 350 enterprise customers, and 210 people — confirmed it. Cognition makes Devin, the cloud autonomous coding agent. The acquisition made the thesis obvious: put the cloud agent inside the IDE.
+The [rebrand to Windsurf in April 2025](https://devin.ai/blog/windsurf-rebrand-announcement/) was the first signal that the product was changing directions. The [acquisition by Cognition AI in July 2025](https://cognition.com/blog/windsurf) — [an estimated $250M](https://techcrunch.com/2025/08/01/more-details-emerge-on-how-windsurfs-vcs-and-founders-got-paid-from-the-google-deal/) for a company with [$82M ARR and 350+ enterprise customers](https://cognition.com/blog/windsurf), and roughly [210 of its ~250 employees](https://techcrunch.com/2025/08/01/more-details-emerge-on-how-windsurfs-vcs-and-founders-got-paid-from-the-google-deal/) staying on after Google hired away its CEO and a handful of researchers — confirmed it. Cognition makes Devin, the cloud autonomous coding agent. The acquisition made the thesis obvious: put the cloud agent inside the IDE.
 
 Windsurf 2.0 is that thesis, shipped.
 
@@ -27,9 +28,9 @@ Windsurf 2.0 is that thesis, shipped.
 
 Understanding what Windsurf 2.0 is requires understanding why Cognition bought Codeium.
 
-Devin — Cognition's original product — is a cloud agent that handles complex software engineering tasks autonomously: debugging, deployment, testing, code review. It runs on its own VM with a browser, terminal, and computer-use capabilities. It keeps working after you close your laptop. The limitation is distribution: Devin lives at a URL, not inside the tools developers already use.
+Devin — Cognition's original product — is a cloud agent that handles complex software engineering tasks autonomously: debugging, deployment, testing, code review. [It runs on its own VM with a browser, terminal, and computer-use capabilities](https://docs.devin.ai/desktop/devin). It keeps working after you close your laptop. The limitation is distribution: Devin lives at a URL, not inside the tools developers already use.
 
-Windsurf — formerly Codeium — had the opposite profile. It was a local IDE with strong developer adoption (1M+ active users by 2026), a capable agentic layer called Cascade, and a customer base that already trusted it for daily coding. Its weakness was cloud reach: everything stayed local.
+Windsurf — formerly Codeium — had the opposite profile. It was a local IDE with strong developer adoption ([1M+ developers within four months of its November 2024 launch](https://www.lennysnewsletter.com/p/the-untold-story-of-windsurf-varun-mohan), per co-founder and CEO Varun Mohan), a capable agentic layer called Cascade, and a customer base that already trusted it for daily coding. Its weakness was cloud reach: everything stayed local.
 
 The acquisition fused both: Devin gets the IDE distribution channel; Windsurf gets the cloud agent tier. That's Windsurf 2.0.
 
@@ -37,7 +38,7 @@ The acquisition fused both: Devin gets the IDE distribution channel; Windsurf ge
 
 ## Agent Command Center
 
-The highest-concept feature in Windsurf 2.0 is the **Agent Command Center** — a Kanban-style panel inside the editor that shows every agent session, local and cloud, organized by status.
+The highest-concept feature in Windsurf 2.0 is the **[Agent Command Center](https://devin.ai/blog/windsurf-2-0/)** — a Kanban-style panel inside the editor that shows every agent session, local and cloud, organized by status.
 
 This is a new UX paradigm for coding tools. The traditional model is: one IDE session, one developer, sequential work. Windsurf 2.0 proposes: one interface, multiple agent sessions running in parallel, with the developer acting more as a director than a coder.
 
@@ -51,7 +52,7 @@ Whether developers actually work this way depends on the individual, but the int
 
 ## Spaces: Context That Persists Across Sessions
 
-Windsurf 2.0 adds **Spaces** as the organizational layer above individual sessions.
+Windsurf 2.0 adds **[Spaces](https://www.testingcatalog.com/windsurf-2-0-adds-devin-and-agent-command-center/)** as the organizational layer above individual sessions.
 
 A Space groups everything related to a task or project: agent sessions (local and cloud), pull requests, files, and shared context. When you open a new agent session inside a Space, it inherits the accumulated context from previous sessions — the project conventions, relevant files, decisions that were made. The agent does not start cold.
 
@@ -63,7 +64,7 @@ In practice, Spaces work well for medium-term projects — a sprint, a feature b
 
 ## Devin Integration
 
-**Devin cloud agent** is now available directly inside Windsurf, included in Pro, Max, and Teams plans. New GitHub connections receive up to $50 in initial usage credits.
+**Devin cloud agent** is now available directly inside Windsurf, [included in Pro, Max, and Teams plans](https://www.testingcatalog.com/windsurf-2-0-adds-devin-and-agent-command-center/). [New GitHub connections receive up to $50 in initial usage credits](https://www.testingcatalog.com/windsurf-2-0-adds-devin-and-agent-command-center/).
 
 The flow: plan locally with Cascade, identify a task that needs autonomous multi-step execution — a complex deployment, a testing pass, a documentation update — and delegate to Devin with one click. Devin picks up the task in the Agent Command Center, runs on its cloud VM, and continues working independently. You can close the laptop. The PR it produces appears in your editor when it's done.
 
@@ -71,7 +72,7 @@ The integration is smoother than the previous workflow of switching to a separat
 
 Two caveats worth noting:
 
-First, **Devin is still rolling out gradually**. As of mid-April 2026, some Pro subscribers did not see Devin Cloud in their Windsurf interface; the recommendation from Cognition was to log out and log back in. The rollout is gradual by design — cloud agent compute is expensive to provision — but it means the headline feature of 2.0 is not uniformly available at launch.
+First, **Devin is still rolling out gradually**. As of mid-April 2026, [some Pro subscribers did not see Devin Cloud in their Windsurf interface; Cognition's own guidance was to log out and log back in](https://docs.devin.ai/desktop/changelog). The rollout is gradual by design — cloud agent compute is expensive to provision — but it means the headline feature of 2.0 is not uniformly available at launch.
 
 Second, **cloud agents involve trust questions** that local agents don't. Devin is operating on your codebase, making commits, potentially touching deployment pipelines, from a cloud VM you don't control directly. Cognition's security posture for Devin is documented, but this is meaningfully different from a local Cascade session. Enterprise customers will need to evaluate this carefully.
 
@@ -81,11 +82,11 @@ Second, **cloud agents involve trust questions** that local agents don't. Devin 
 
 Cognition shipped a proprietary coding model alongside the Devin integration: **SWE-1.5**.
 
-The headline claim: 950 tokens/second. That is 13× faster than Claude Sonnet 4.5 and 6× faster than Claude Haiku 4.5. In practical terms, a Kubernetes manifest edit that took a typical agent 20 seconds now completes in under 5 seconds.
+The headline claim: [950 tokens/second — 13× faster than Claude Sonnet 4.5 and 6× faster than Claude Haiku 4.5](https://devin.ai/blog/swe-1-5/), achieved by partnering with Cerebras for inference. In practical terms, a Kubernetes manifest edit that took a typical agent 20 seconds now completes in under 5 seconds.
 
 Speed matters more than it sounds for agentic coding. The bottleneck in an agentic loop is often not the quality of any individual output — it is the latency between steps. A slow model creates a rhythm where developers fall out of flow: you issue an instruction, the agent runs, you wait, you review, you issue the next instruction. At 950 tokens/second, those waits shrink to the point where the loop feels more like conversation than batch processing.
 
-SWE-1.5 is available on Pro, Max, and Teams plans alongside Claude Sonnet 4.6 and GPT-5.4. Users choose which model to use per session; SWE-1.5 is not the only option.
+[SWE-1.5 is available alongside Claude Sonnet 4.6 and GPT-5.4](https://docs.devin.ai/desktop/models) on paid plans. Users choose which model to use per session; SWE-1.5 is not the only option.
 
 What Cognition does not claim for SWE-1.5 is quality leadership. The model is positioned on speed, not on benchmark supremacy. For complex reasoning tasks — novel architectural decisions, sophisticated debugging, code design tradeoffs — users will likely route to Claude Sonnet 4.6 or GPT-5.4. SWE-1.5 is the right choice for high-frequency tasks where latency matters more than depth.
 
@@ -93,21 +94,21 @@ What Cognition does not claim for SWE-1.5 is quality leadership. The model is po
 
 ## Codemaps: The Differentiator Nobody Else Has
 
-**Codemaps** is the feature in Windsurf's stack that no competitor has matched as of May 2026.
+**Codemaps** is a feature in Windsurf's stack that, [by Cognition's own description, has no direct equivalent in Copilot, Claude Code, or Codex](https://cognition.com/blog/codemaps) as of May 2026.
 
-Codemaps generates AI-annotated visual navigation of a codebase. Instead of static file trees or text-search, Codemaps builds a live, semantically-aware diagram of the codebase: modules, their relationships, the data flowing between them, and AI annotations explaining non-obvious patterns.
+[Codemaps generates AI-annotated visual navigation of a codebase](https://cognition.com/blog/codemaps). Instead of static file trees or text-search, Codemaps builds a live, semantically-aware diagram of the codebase: modules, their relationships, the data flowing between them, and AI annotations explaining non-obvious patterns.
 
 The use case this solves is well-known to anyone who has inherited a large monorepo or legacy codebase: how do you understand a system you didn't build? Traditional tools give you a directory tree and a grep. Codemaps gives you a diagram that understands what the code does, not just what it's named.
 
-Early users describe this as the "killer feature of 2026 for monorepos and legacy code." The limitation is that it requires time to build the map — for large codebases, the initial generation takes meaningful compute. But once built, navigating and understanding unfamiliar code becomes qualitatively different.
+The limitation is that it requires time to build the map — for large codebases, the initial generation takes meaningful compute. But once built, navigating and understanding unfamiliar code becomes qualitatively different.
 
-Cursor 3, GitHub Copilot, Grok Build, and Amazon Kiro do not have a directly comparable feature as of this writing.
+As of this writing, Cursor 3, GitHub Copilot, Grok Build, and Amazon Kiro have not announced a directly comparable feature.
 
 ---
 
 ## Competitive Position vs. Cursor 3
 
-Windsurf's most direct competitor is **Cursor 3**, which shipped Build in Parallel and Composer 2.5 in early 2026.
+Windsurf's most direct competitor is **Cursor 3**, which shipped [Build in Parallel](https://cursor.com/changelog/05-07-26) (May 7, 2026) and [Composer 2.5](https://cursor.com/blog/composer-2-5) (May 18, 2026).
 
 The comparison:
 
@@ -135,6 +136,8 @@ The honest answer is that the right choice between them depends on your workflow
 | Max | $200/mo | Higher quota for heavy users |
 | Teams | $40/user/mo | Everything in Pro + admin controls, centralized billing, priority support |
 | Enterprise | Custom | SSO, RBAC, hybrid deployment, volume discounts |
+
+Pricing per [Devin's official pricing page](https://devin.ai/pricing) (Windsurf plans are now sold under the Devin/Cognition pricing structure).
 
 One note on the free tier: Tab autocomplete does not consume quota. For developers who want Windsurf primarily as an autocomplete tool with occasional deeper agent sessions, the free tier is genuinely useful rather than a trial gimmick.
 
@@ -175,3 +178,15 @@ For developers who manage multiple concurrent coding projects and want a tool bu
 - [Devin.ai Blog: Windsurf 2.0 — Introducing the Agent Command Center and Devin in Windsurf](https://devin.ai/blog/windsurf-2-0/)
 - [Testing Catalog: Windsurf 2.0 adds Devin and Agent Command Center](https://www.testingcatalog.com/windsurf-2-0-adds-devin-and-agent-command-center/)
 - [CodePick: Windsurf 2.0 deep dive — full evolution after the Cognition acquisition](https://codepick.dev/en/guides/windsurf-2-new-features/)
+- [Cognition: Cognition's acquisition of Windsurf](https://cognition.com/blog/windsurf)
+- [TechCrunch: More details emerge on how Windsurf's VCs and founders got paid from the Google deal](https://techcrunch.com/2025/08/01/more-details-emerge-on-how-windsurfs-vcs-and-founders-got-paid-from-the-google-deal/)
+- [Devin.ai Blog: The Next Chapter — Renaming to Windsurf](https://devin.ai/blog/windsurf-rebrand-announcement/)
+- [Lenny's Newsletter: The untold story of Windsurf (Varun Mohan)](https://www.lennysnewsletter.com/p/the-untold-story-of-windsurf-varun-mohan)
+- [Devin Docs: Devin in Devin Desktop](https://docs.devin.ai/desktop/devin)
+- [Devin Docs: Changelog](https://docs.devin.ai/desktop/changelog)
+- [Devin Docs: AI Models](https://docs.devin.ai/desktop/models)
+- [Devin.ai Blog: Introducing SWE-1.5 — Our Fast Agent Model](https://devin.ai/blog/swe-1-5/)
+- [Cognition: Windsurf Codemaps — Understand Code, Before You Vibe It](https://cognition.com/blog/codemaps)
+- [Cursor Changelog: PR Review, Build Plan in Parallel, and Split PRs (05-07-26)](https://cursor.com/changelog/05-07-26)
+- [Cursor Blog: Introducing Composer 2.5](https://cursor.com/blog/composer-2-5)
+- [Devin.ai: Pricing](https://devin.ai/pricing)

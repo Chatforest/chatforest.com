@@ -31,15 +31,15 @@ The bundled capabilities at launch:
 - **Tool execution** — file read/write, web browsing, code running handled natively
 - **End-to-end tracing** — full audit trail of what the agent did, in what order, why
 
-All of this is billed at $0.08 per session-hour plus standard Claude API token costs. For most workloads, token costs dominate: a two-hour active session generates $0.16 in runtime charges but potentially $20–50 in token costs depending on how actively the model is reasoning.
+All of this is billed at [$0.08 per session-hour](https://platform.claude.com/docs/en/about-claude/pricing) plus standard Claude API token costs. For most workloads, token costs dominate: a two-hour active session generates $0.16 in runtime charges but potentially $20–50 in token costs depending on how actively the model is reasoning.
 
-One important limitation at launch: the Batch API's 50% discount does not apply to Managed Agent sessions. Developers who relied on batch pricing for high-volume workloads cannot replicate that cost structure here.
+One important limitation at launch: [the Batch API's 50% discount does not apply to Managed Agent sessions](https://platform.claude.com/docs/en/about-claude/pricing). Developers who relied on batch pricing for high-volume workloads cannot replicate that cost structure here.
 
 ---
 
 ## Code with Claude 2026: Three New Features
 
-On May 6, 2026, Anthropic held the San Francisco stop of its Code with Claude developer conference. Three new capabilities shipped alongside the event. A London stop followed on May 19, adding two enterprise security features (covered below). Tokyo is scheduled for June 10.
+On May 6, 2026, Anthropic held the San Francisco stop of its [Code with Claude developer conference](https://claude.com/blog/code-with-claude-san-francisco-london-tokyo). Three new capabilities shipped alongside the event. A London stop followed on May 19, adding two enterprise security features (covered below). [Tokyo is scheduled for June 10](https://claude.com/code-with-claude/tokyo).
 
 ### Dreaming — Research Preview
 
@@ -49,7 +49,7 @@ Standard agent memory works within a session: the agent accumulates context as i
 
 Dreaming is a scheduled background process that addresses this. It reviews past sessions and memory stores, extracts cross-session patterns, and curates the memory so that what was learned collectively gets surfaced individually. The developer controls how automatic this is: Dreaming can update memory without intervention, or changes can be queued for human review before they land.
 
-Anthropic describes one concrete use case: when 20 subagents are all working in the same domain, Dreaming can aggregate what they collectively learned and publish shared insights to a team-wide memory store. No individual session could produce that.
+[Anthropic describes Dreaming as surfacing patterns a single agent can't see on its own](https://claude.com/blog/new-in-claude-managed-agents) — recurring mistakes, workflows agents converge on, and preferences shared across a team. No individual session could produce that on its own.
 
 The catch: Dreaming is in research preview, not public beta. Developers need to request access. It is the feature most likely to change before general availability.
 
@@ -61,7 +61,7 @@ The developer writes a rubric describing what success looks like. When the agent
 
 The separation matters. An agent evaluating its own output in the same context window is susceptible to reasoning artifacts from the original run. A grader with fresh context is closer to an external reviewer.
 
-Anthropic reported up to 10 percentage points of task success improvement in internal testing. Harvey, the AI-assisted legal research firm, reported a 6x jump in task completion rates across their workloads when combining Outcomes and Multiagent Orchestration.
+[Anthropic reported up to 10 percentage points of task success improvement in internal testing](https://claude.com/blog/new-in-claude-managed-agents). Harvey, the AI-assisted legal research firm, [reported to Anthropic a 6x jump in task completion rates](https://claude.com/blog/new-in-claude-managed-agents) across their workloads when combining Outcomes and Multiagent Orchestration. (Note: this figure is relayed via Anthropic's own announcement; we found no independent Harvey publication confirming it.)
 
 Outcomes is in public beta.
 
@@ -73,7 +73,7 @@ Multiagent Orchestration allows a lead agent to decompose a job into parallel sp
 
 The documented example from Anthropic: a lead agent runs an investigation while subagents fan out through deploy history, error logs, metrics, and support tickets simultaneously. Each brings a focused lens to a different slice of the problem.
 
-Model selection per subagent is meaningful here. A lead agent reasoning through architecture might use Opus; subagents doing structured log extraction might use Haiku at a fraction of the cost. The pricing difference is significant: Opus 4.6 runs $5/$25 per million tokens input/output; Sonnet 4.6 is $3/$15; Haiku 4.5 is $1/$5.
+Model selection per subagent is meaningful here. A lead agent reasoning through architecture might use Opus; subagents doing structured log extraction might use Haiku at a fraction of the cost. [The pricing difference is significant: Opus 4.6 runs $5/$25 per million tokens input/output; Sonnet 4.6 is $3/$15; Haiku 4.5 is $1/$5](https://platform.claude.com/docs/en/about-claude/pricing).
 
 Multiagent Orchestration is in public beta.
 
@@ -85,7 +85,7 @@ The London stop of Code with Claude on May 19, 2026, shipped two features aimed 
 
 ### Self-Hosted Sandboxes — Public Beta
 
-At launch, tool execution in Claude Managed Agents runs in Anthropic-managed infrastructure. Self-hosted sandboxes change that: the execution layer moves to infrastructure controlled by the customer or by supported managed providers (Cloudflare, Daytona, Modal, and Vercel), while Anthropic continues to handle orchestration, context management, and recovery logic.
+At launch, tool execution in Claude Managed Agents runs in Anthropic-managed infrastructure. [Self-hosted sandboxes change that](https://claude.com/blog/claude-managed-agents-updates): the execution layer moves to infrastructure controlled by the customer or by supported managed providers (Cloudflare, Daytona, Modal, and Vercel), while Anthropic continues to handle orchestration, context management, and recovery logic.
 
 The practical implication is significant for compliance-sensitive environments. Data processed during tool execution — file contents, API responses, intermediate computation — stays within the customer's perimeter rather than passing through Anthropic's infrastructure. For teams in regulated industries, this removes a category of data residency concern that otherwise makes managed agent services difficult to deploy.
 
@@ -95,7 +95,7 @@ Self-hosted sandboxes are in public beta.
 
 ### MCP Tunnels — Research Preview
 
-MCP tunnels address a different security problem: how to let agents reach private internal systems — internal databases, ticketing systems, knowledge bases, internal APIs — without exposing those systems to the public internet.
+[MCP tunnels](https://claude.com/blog/claude-managed-agents-updates) address a different security problem: how to let agents reach private internal systems — internal databases, ticketing systems, knowledge bases, internal APIs — without exposing those systems to the public internet.
 
 The standard approach for connecting agents to internal MCP servers requires either opening inbound firewall rules or placing the MCP server on a public endpoint. Both approaches introduce security risk. MCP tunnels route around this by deploying a lightweight gateway inside the customer's network. The gateway opens a single outbound encrypted connection to Anthropic's routing infrastructure. The agent's requests travel through that connection; no inbound rules are needed.
 
@@ -119,7 +119,7 @@ The absence of Batch API pricing is the sharpest edge for production developers.
 
 ## What the Competition Looks Like
 
-The managed agent runtime space is developing quickly. Google's Gemini Managed Agents API (covered separately) arrived in a similar time window. OpenAI has Codex infrastructure for autonomous coding workflows. Amazon Bedrock Agents has been in production longer but operates within a more constrained AWS ecosystem.
+The managed agent runtime space is developing quickly. [Google's Gemini Managed Agents API](/reviews/google-gemini-managed-agents-api-review/) arrived in a similar time window. OpenAI has [Codex infrastructure](https://openai.com/codex/) for autonomous coding workflows. [Amazon Bedrock Agents](https://aws.amazon.com/bedrock/agents/) has been in production longer but operates within a more constrained AWS ecosystem.
 
 Claude Managed Agents differentiates on the Dreaming feature — no direct equivalent exists in the current Google or OpenAI offerings — and on the Outcomes grading system, which is more structured than what most competitors expose as a first-class API.
 
@@ -136,6 +136,8 @@ The tradeoff is that Dreaming is still in research preview. The feature that mos
 | Claude Sonnet 4.6 | $3.00 input / $15.00 output per M tokens |
 | Claude Haiku 4.5 | $1.00 input / $5.00 output per M tokens |
 | Batch API discount | Not available for Managed Agents |
+
+*Source: [Anthropic pricing documentation](https://platform.claude.com/docs/en/about-claude/pricing).*
 
 An agent running 24/7 accumulates approximately $58/month in runtime charges before any token costs. For most real workloads, token costs run well above that.
 
@@ -174,6 +176,11 @@ For developers already building on Claude who want to reduce infrastructure over
 - [Claude Managed Agents — Anthropic](https://claude.com/blog/claude-managed-agents) — public beta launch, April 8, 2026; pricing; feature overview
 - [New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration — Anthropic](https://claude.com/blog/new-in-claude-managed-agents) — May 6, 2026 feature releases; Harvey 6x statistic; Dreaming and Outcomes details
 - [Claude Managed Agents overview — Anthropic Docs](https://platform.claude.com/docs/en/managed-agents/overview) — API reference, session structure, beta header
+- [Code with Claude: San Francisco, London, and Tokyo — Anthropic](https://claude.com/blog/code-with-claude-san-francisco-london-tokyo) — conference tour dates and cities
+- [New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels — Anthropic](https://claude.com/blog/claude-managed-agents-updates) — May 19, 2026 feature release; supported infrastructure providers
+- [Claude Platform pricing — Anthropic Docs](https://platform.claude.com/docs/en/about-claude/pricing) — model token rates, session-runtime rate, Batch API exclusion for Managed Agents
+- [Introducing Codex — OpenAI](https://openai.com/codex/) — competitor reference
+- [Amazon Bedrock Agents — AWS](https://aws.amazon.com/bedrock/agents/) — competitor reference
 
 ---
 
