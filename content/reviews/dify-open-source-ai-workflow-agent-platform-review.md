@@ -1,16 +1,17 @@
 ---
 title: "Dify Review — Open-Source AI Workflow Platform With MCP, RAG, and Multi-Agent Orchestration"
 date: 2026-05-26
-description: "Dify is an open-source platform for building, deploying, and operating AI applications — combining visual workflow orchestration, RAG pipelines, agent execution, and MCP support in a single self-hostable package. 131K GitHub stars, $30M funding, 1M+ apps in production. Here's what it actually is, what's changed in 2026, and who should use it."
+description: "Dify is an open-source platform for building, deploying, and operating AI applications — combining visual workflow orchestration, RAG pipelines, agent execution, and MCP support in a single self-hostable package. 150K+ GitHub stars, $30M funding, 280+ enterprise customers. Here's what it actually is, what's changed in 2026, and who should use it."
+sources_audited: 2026-07-29
 tags: ["dify", "open-source", "agent-workflow", "rag", "mcp", "self-hosted", "workflow-builder", "multi-agent", "llm-platform", "langgenius"]
 categories: ["reviews"]
 author: "ChatForest"
 rating: 4
 ---
 
-Dify ([GitHub: langgenius/dify](https://github.com/langgenius/dify)) is an open-source platform for building and operating AI applications — visual workflow orchestration, RAG pipelines, agent execution, and API publishing in one self-hostable package. In March 2026, the company closed a $30 million Series Pre-A led by HSG, with GL Ventures, Alt-Alpha Capital, 5Y Capital, Mizuho, and NYX Ventures participating.
+Dify ([GitHub: langgenius/dify](https://github.com/langgenius/dify)) is an open-source platform for building and operating AI applications — visual workflow orchestration, RAG pipelines, agent execution, and API publishing in one self-hostable package. In March 2026, the company (operated by LangGenius, Inc.) closed a [$30 million Series Pre-A led by HSG](https://dify.ai/blog/dify-raises-30m-tomorrow-s-organizations-will-be-built-by-people-and-agents), with GL Ventures, Alt-Alpha Capital, 5Y Capital, Mizuho Leaguer Investment, and NYX Ventures participating. At the time of that announcement, Dify described itself as [the 51st most-starred open source project on GitHub, running on more than 1.4 million machines worldwide across 175+ countries](https://dify.ai/blog/dify-raises-30m-tomorrow-s-organizations-will-be-built-by-people-and-agents).
 
-The headline metric: 131,000 GitHub stars, over 1 million applications deployed in production, and 280+ enterprises including Maersk and Novartis in the customer list. That is not a prototype-friendly toy — it is a production platform with real adoption.
+The headline metric: [150,000+ GitHub stars](https://github.com/langgenius/dify) and [280+ enterprise customers — including Maersk, ETS, Anker, and Novartis — with over 1.4 million machines running Dify worldwide](https://dify.ai/about-us), as of mid-2026. That is not a prototype-friendly toy — it is a production platform with real adoption.
 
 ---
 
@@ -20,38 +21,32 @@ Dify sits at the intersection of several categories that are usually separate to
 
 - **Visual workflow builder**: drag-and-drop orchestration of LLM calls, conditionals, loops, retrieval steps, and human-in-the-loop nodes
 - **RAG pipeline**: document ingestion, chunking, embedding, and retrieval across multiple knowledge bases — widely regarded as its strongest feature
-- **Agent runtime**: supports Function Calling and ReAct strategies, with 50+ built-in tools (web search, code execution, image generation) and custom tool definitions
-- **Model management**: one interface across 100+ LLMs — GPT-5 family, Claude (all tiers), Gemini 3.5, DeepSeek V4, Qwen, Llama, Mistral, and any OpenAI-compatible endpoint
+- **Agent runtime**: supports Function Calling and ReAct strategies, with [50+ built-in tools](https://github.com/langgenius/dify) (web search, code execution, image generation) and custom tool definitions
+- **Model management**: one interface for ["seamless integration with hundreds of proprietary/open-source LLMs from dozens of inference providers and self-hosted solutions"](https://github.com/langgenius/dify), covering GPT, Claude, Gemini, DeepSeek, Qwen, Llama, Mistral, and any OpenAI-compatible endpoint
 - **API publishing**: every Dify application exports as an API endpoint, a chat widget, or a web app with built-in authentication and rate limiting
 - **Observability**: full tracing, prompt version history, and user analytics built in
 
-The self-hosted Community Edition (Docker Compose, single machine or Kubernetes) is free with no meaningful limitations. Dify Cloud starts with a free Sandbox tier and scales to Professional ($59/month), Team ($159/month), and Enterprise (custom; approximately $150K/year starting on AWS Marketplace).
+The self-hosted Community Edition (Docker Compose, single machine or Kubernetes) is free and includes the core platform, but it ships under [a source-available license, not plain Apache/MIT](https://docs.dify.ai/en/policies/open-source): self-hosting for your own org and building commercial products with the API are permitted, but operating Dify itself as a multi-tenant SaaS product requires a commercial license from LangGenius. Dify Cloud starts with a free Sandbox tier and scales to [Professional ($59/month or $590/year) and Team ($159/month or $1,590/year)](https://dify.ai/pricing), with Enterprise priced at [$150,000 for a 12-month license on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vhluia2quhiuu) (custom pricing also available via private offer).
 
 ---
 
 ## 2026 Updates: What Changed
 
-Three capabilities added in the first half of 2026 matter for the builder decision:
+Two capabilities added in 2026 matter for the builder decision:
 
 ### MCP as Client and Server
 
-Dify now supports the Model Context Protocol bidirectionally.
+As of [Dify v1.6.0 (July 2025)](https://dify.ai/blog/v1-6-0-built-in-two-way-mcp-support), Dify supports the Model Context Protocol bidirectionally.
 
-As an **MCP client**, agents inside Dify can connect to any external MCP server — filesystems, GitHub, Slack, databases, web browsers — using the standardized HTTP-based MCP protocol. This eliminates per-service integrations in favor of a single discovery mechanism.
+As an **MCP client**, agents inside Dify can [call any external MCP server directly](https://dify.ai/blog/v1-6-0-built-in-two-way-mcp-support) — the release notes cite examples like Linear, Notion, and Zapier — using HTTP-based MCP (protocol version 2025-03-26). This eliminates per-service integrations in favor of a single discovery mechanism.
 
-As an **MCP server**, you can wrap any Dify workflow or agent and expose it as an MCP endpoint. This means an agent you build in Dify becomes callable from Claude Code, Cursor, Antigravity, or any other MCP client. The workflow-to-MCP path is particularly valuable for teams that want visual tooling for building but programmatic access for consuming.
+As an **MCP server**, you can [expose any Dify agent or workflow as an MCP server for other clients](https://dify.ai/blog/v1-6-0-built-in-two-way-mcp-support): after documenting the service and its parameters, Dify issues a standard MCP server URL, making the workflow callable from Claude, Cursor, or any other MCP client. The workflow-to-MCP path is particularly valuable for teams that want visual tooling for building but programmatic access for consuming.
 
 ### Human Input Node
 
-The Human Input node introduces explicit human-in-the-loop checkpoints. A running workflow can pause, present output and context to a user, accept a response or approval, and continue — without breaking the async execution model. This is more structured than ad-hoc tool-call interrupts; you define pause points at design time.
+Shipped in [Dify v1.13.0](https://dify.ai/blog/the-human-input-node-bringing-human-judgment-into-automated-workflows), the Human Input node lets a running workflow [pause for human review and resume with approved, edited, or rerouted decisions](https://dify.ai/blog/the-human-input-node-bringing-human-judgment-into-automated-workflows). Reviewers can respond via web app or email, edit variables before the workflow continues, and route down different branches via configurable buttons (e.g., "Approve," "Reject," "Escalate"); a configurable timeout (3 days by default) sends unanswered requests down a fallback branch. This is more structured than ad-hoc tool-call interrupts; you define pause points at design time.
 
 For regulated industries and high-stakes workflows (legal review, compliance checks, medical triage), this node is the feature that makes Dify viable where fully autonomous agents are not.
-
-### Supervisor Agent Mode
-
-Multi-agent orchestration now includes a Supervisor mode: one coordinator agent decomposes tasks, delegates to specialist subagents in parallel, aggregates results, and handles error recovery. Parallel tool execution and improved tool-call retry logic shipped alongside this.
-
-This aligns Dify's agent model with the multi-agent patterns now standard across Claude Managed Agents, Google's Managed Agents API, and OpenAI's Swarm-successor architecture — but with the visual canvas as the design surface rather than code.
 
 ---
 
@@ -59,7 +54,7 @@ This aligns Dify's agent model with the multi-agent patterns now standard across
 
 **RAG pipeline depth.** Dify's knowledge base capabilities are production-grade: multiple retrieval strategies (similarity, full-text, hybrid), configurable chunk sizes, custom embedding models, and retrieval scoring. Most competitors offer RAG as a bolted-on feature; Dify was built with document retrieval as a first-class citizen.
 
-**Self-hosted by default.** For teams with data residency requirements, enterprise compliance obligations, or a preference to keep inference traffic off third-party infrastructure, the self-hosted path is the primary option — not an afterthought. The Docker Compose setup deploys the full stack including worker queue, vector DB (configurable: Qdrant, Weaviate, Milvus, or others), and cache.
+**Self-hosted by default.** For teams with data residency requirements, enterprise compliance obligations, or a preference to keep inference traffic off third-party infrastructure, the self-hosted path is the primary option — not an afterthought. The [Docker Compose setup](https://github.com/langgenius/dify/blob/main/docker/docker-compose.yaml) deploys the full stack including worker queue, a configurable vector DB (Qdrant, Weaviate, Milvus, PGVector, and several others are supported as Docker profiles), and cache.
 
 **Model-agnostic.** Switching the underlying LLM in a Dify workflow is a configuration change, not a code change. This is practical insurance against vendor lock-in and cost optimization — if GPT-5.6 ships at a better price-performance ratio than your current model, swapping it into a Dify workflow doesn't require touching the orchestration logic.
 
@@ -112,8 +107,8 @@ Dify wins when the team needs visual orchestration with strong RAG and doesn't w
 
 ## Rating: 4/5
 
-Dify is production-ready for the workflows it is designed for. The RAG pipeline is among the best available in an open-source package. The 2026 updates — MCP bidirectionality, Human Input nodes, Supervisor multi-agent mode — bring it current with the state of the field.
+Dify is production-ready for the workflows it is designed for. The RAG pipeline is among the best available in an open-source package. The 2026 updates — MCP bidirectionality and the Human Input node — bring it current with the state of the field.
 
 The limitations are real: visual tooling has a ceiling, and complex custom logic belongs in code. But for the large category of AI applications that involve documents, knowledge retrieval, structured workflows, and human review checkpoints, Dify removes weeks of integration work that would otherwise fall on the engineering team.
 
-The self-hosted path, the model-agnostic design, and the active 131K-star community make it a credible long-term foundation — not a vendor bet that creates lock-in.
+The self-hosted path, the model-agnostic design, and the [active 150K+-star community](https://github.com/langgenius/dify) make it a credible long-term foundation — not a vendor bet that creates lock-in.

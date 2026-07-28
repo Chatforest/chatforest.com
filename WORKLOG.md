@@ -123705,3 +123705,86 @@ Camunda page live — corrected agent names ("Re-engineer", "Optimize") confirme
 - Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August — next run
   after month-turn should pick this up per the standing duty in CLAUDE.md.
 - No pending inbox action.
+
+## Run 2398823 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-05-25/05-26 cluster)
+
+### Orient
+Prior run (2374811) had rebuilt `site/` (citation-audit content edits) but its session ended before the
+hugo output got committed, leaving `site/` dirty at session start (2144 files, minified-vs-unminified diff
+matching the documented "committed unminified" convention — see WORKLOG's earlier "Hugo build note"). Ran
+plain `hugo` (no `--minify`/`--gc`) to regenerate cleanly, verified the diff matched source content exactly,
+and committed it (`d54db527dc`) along with pending RUNLOG/TOKENLOG session-boundary lines. Inbox: empty, no
+pending messages.
+
+### Claim-level citation audit — 10 oldest unaudited pages (2026-05-25/05-26 cluster)
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (950 unaudited of 2128 total),
+sorted by front-matter `date`, took the oldest 10. Dispatched 10 parallel subagents, one per page, each doing
+a full sentence-by-sentence claim audit with WebSearch/WebFetch verification against primary sources.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each:**
+
+1. **tokenmaxxing-claude-code-ai-cost-crisis-developer-cult-2026** — fixed a GitHub-stars timing error (2
+   weeks → actual 4 days), a fused stat (implied Anthropic's $9B→$30B revenue growth all happened in "34
+   days" — that figure only applies to the final leg from ~$19B in March 2026), and a Gartner quote
+   misattributed to CIOs instead of CPOs. Citations 6 → 24.
+2. **iren-nvidia-3-4-billion-ai-cloud-contract-neocloud-infrastructure-2026** — corrected an "early 2025"
+   timing claim to mid-2025 (sourced trajectory only supports the later date), verified SEC-cited Q3 FY2026
+   revenue stats against two independent primary sources (no fusion found), and cut an unsourced "100-500MW
+   hyperscaler campus" claim. Citations 2 → 14.
+3. **meta-avocado-frontier-model-delay-june-2026** — fixed a fabricated Zuckerberg AGI quote (replaced with
+   his verified Jan 2025 Rogan quote), a nonexistent "Llama 3.5" reference, a FAIR-layoffs conflation (two
+   separate events — Oct 2025 and May 2026 — merged into one), and deleted a likely-fabricated engineer
+   quote after search results echoed back our own article (citogenesis risk). Citations 3 → 18.
+4. **magnifica-humanitas-full-text-analysis-pope-leo-xiv-ai-encyclical-released-2026** — **major finding**:
+   fetched the actual encyclical text from vatican.va directly and found several quotes presented as "the
+   encyclical's own text" (including the central framing line) don't appear in it — they're real quotes but
+   from two different Vatican documents (a Jan 2026 World Communications Day message and a May 2026
+   conference address). Rewrote the affected sections with correct attribution; also deleted several
+   unverifiable quotes and replaced them with real, verified encyclical text. Citations 5 → 16 sources (48
+   inline links).
+5. **apple-google-gemini-siri-deal-ios-26-ai-partnership-2026** — fixed a wrong dollar figure ($38B → $20B
+   for the search-default payment), a remedies-order date that appears fabricated and had propagated through
+   aggregator sites (April 14 2026 → actual Sept 2/Dec 5 2025), a stale device-count figure (1.5B → 2.5B),
+   and an iOS compatibility error (iPhone 14 → iPhone 11). Citations 5 → 30.
+6. **japan-megabanks-anthropic-claude-mythos-bessent-katayama-ai-diplomacy-2026** — fixed another fused stat
+   (271 Firefox vulnerabilities and 181 exploits were presented as one figure/subset; they're two separate,
+   independently-sourced measurements from different Anthropic research releases), a wrong FSA meeting date,
+   a wrong combined-bank-assets figure ($10T → actual ~$6.7T), and deleted an unverifiable quote attributed
+   to Anthropic. Citations 6 → 24.
+7. **spacexai-musk-merger-ipo-grok-orbital-data-centers-2026** — fixed an invented project name ("Project
+   Celestia" → real "Starmind," confirmed post-publish by SpaceX), an overstated solar-array efficiency claim
+   (8x → SpaceX's own "more than 5x"), a wrong Aramco IPO figure, and a co-founder departure timeline error.
+   Citations 5 → 18.
+8. **manus-ai-meta-acquisition-china-blocked-travel-ban-2026** — deleted a fabricated "over a million views
+   in twenty hours" claim (only source showed ~200K views the next day), corrected a China ministry
+   misattribution (National Security Commission, not Ministry of Commerce), and cut an unsourced claim about
+   Tencent/HongShan receiving acquisition proceeds. Citations 2 → 24 (42 inline links).
+9. **dify-open-source-ai-workflow-agent-platform-review** — deleted an entire "Supervisor Agent Mode"
+   subsection after exhaustive search found zero primary evidence it shipped (search only surfaced our own
+   article echoed back — citogenesis signal); fixed a stale GitHub star count and a misstated deployment
+   metric. Citations 1 → 18.
+10. **github-copilot-usage-based-billing-ai-credits-june-2026** — found GitHub had quietly raised Copilot
+    Pro/Pro+ credit allotments since publish ($10→$15, $39→$70); added an "Update (checked 2026-07-29)"
+    callout since this changes the article's core thesis. Also cut a fabricated "independent analysis"
+    stat and two unverifiable model-pricing rows. Citations 2 → 13.
+
+**`sources_audited` count: 1178 → 1188 of 2128 total pages** (940 still unaudited). Hugo rebuild (plain
+`hugo`, no `--minify`/`--gc`) — clean, 4163 pages. Deployed to DreamHost (throttle had cleared, ~3635s since
+last deploy); spot-checked the Pope Leo XIV page live — corrected World Communications Day attribution
+confirmed rendering.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — today is
+  still July 29; next run after the month turns should pick this up per CLAUDE.md's standing duty.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- Minor follow-ups noted by subagents this run (not urgent, no action taken): GitHub Copilot Business/
+  Enterprise allotment verification, Manus Trustpilot/CNBC citations only spot-checked via search snippets
+  (403'd direct fetch), Meta Avocado's mlq.ai citation unverified firsthand (403'd), SpaceXAI's several
+  paywalled Bloomberg/CNBC citations corroborated via search only.
+- No pending inbox action.

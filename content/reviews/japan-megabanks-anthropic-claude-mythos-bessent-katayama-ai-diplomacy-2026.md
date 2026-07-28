@@ -2,6 +2,7 @@
 title: "Mythos Goes to Tokyo: The US-Japan Finance Meeting That Made AI Access a Diplomatic Tool"
 date: 2026-05-25T14:00:00+09:00
 description: "On May 12, 2026, US Treasury Secretary Scott Bessent met Japan's Finance Minister and explicitly raised 'cyber threats associated with advances in AI.' Days later, Japan's three megabanks became the first non-Western institutions inside Anthropic's Project Glasswing. This is what happened."
+sources_audited: 2026-07-29
 og_description: "Bessent met Katayama in Tokyo. The agenda included AI cyber threats. Japan's megabanks got Mythos access. Japan's FSA formed a 36-entity working group. This is the moment AI capability access became an instrument of financial diplomacy."
 content_type: "Analysis"
 card_description: "On May 12, 2026, US Treasury Secretary Scott Bessent sat down with Japan's Finance Minister Katayama in Tokyo. The official readout listed 'responses to growing cyber threats associated with advances in AI' as one of the meeting's topics. Within days, Japan's three megabanks — MUFG, SMBC, and Mizuho — were announced as the first non-US, non-European institutions to gain access to Claude Mythos through Project Glasswing. Japan's Financial Services Agency then convened a 36-entity public-private working group, chaired by Mizuho's CISO, to plan its response. This is the moment AI capability became a diplomatic instrument: the world's most restricted AI model exchanged in a bilateral financial meeting, weeks before the G7."
@@ -15,11 +16,11 @@ last_refreshed: 2026-05-25
 
 ---
 
-**At a glance:** May 12, 2026. US Treasury Secretary Bessent [meets Japan's Finance Minister Katayama in Tokyo](https://www.mof.go.jp/english/policy/international_policy/convention/bilateral_meetings_between_finance_ministers/20260511194407.html). Explicit agenda item: "responses to growing cyber threats associated with advances in AI." May 13: Japan's megabanks informed they will receive Mythos access. May 16: [Japan's FSA holds the first meeting of a 36-entity public-private working group](https://www.fsa.go.jp/en/news/2026/20260514/20260514.html) on AI-class cybersecurity risks. Part of our **[AI Governance and Policy coverage](/categories/analysis/)**. For background, see our **[Claude Mythos Preview review](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/)** and **[Trump AI Order cancellation analysis](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/)**.
+**At a glance:** May 12, 2026. US Treasury Secretary Bessent [meets Japan's Finance Minister Katayama in Tokyo](https://www.mof.go.jp/english/policy/international_policy/convention/bilateral_meetings_between_finance_ministers/20260511194407.html). Explicit agenda item: "responses to growing cyber threats associated with advances in AI." May 13: [Japan's megabanks informed they will receive Mythos access](https://asia.nikkei.com/business/finance/japan-megabanks-to-gain-access-to-anthropic-s-powerful-ai-model-mythos). May 14: [Japan's FSA holds the first meeting of a 36-entity public-private working group](https://finance.yahoo.com/sectors/technology/articles/japans-bank-regulator-sets-forum-092910434.html) on AI-class cybersecurity risks. Part of our **[AI Governance and Policy coverage](/categories/analysis/)**. For background, see our **[Claude Mythos Preview review](/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/)** and **[Trump AI Order cancellation analysis](/reviews/trump-ai-executive-order-cancelled-anthropic-mythos-may-2026/)**.
 
 ---
 
-For the first six weeks of Project Glasswing's existence, access to Claude Mythos looked like a closed American club. The launch consortium — AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan Chase, the Linux Foundation, Microsoft, NVIDIA, and Palo Alto Networks — was entirely US-based. The EU was engaged at a "different stage" of discussions, per Anthropic. The rest of the world watched from outside.
+For the first six weeks of [Project Glasswing's existence](https://www.anthropic.com/glasswing), access to Claude Mythos looked like a closed American club. The [launch consortium](https://www.anthropic.com/glasswing) — AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan Chase, the Linux Foundation, Microsoft, NVIDIA, and Palo Alto Networks — was entirely US-based. As of mid-May, no EU government body had Glasswing access, and [reporting indicated the White House was blocking further expansion of the partner list](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access) — a point European finance ministers had raised at a recent Ecofin meeting. The rest of the world watched from outside.
 
 That changed quietly on May 12, 2026, in a conference room in Tokyo.
 
@@ -31,15 +32,15 @@ The [Japanese Ministry of Finance published its readout](https://www.mof.go.jp/e
 
 That last item is unusual language for a finance ministerial readout. Currency volatility and mineral supply chains are standard G7 prep topics. AI cybersecurity is not. Its inclusion signals that the Mythos question had been escalated to the level of bilateral financial diplomacy before the meeting even took place.
 
-The meeting lasted approximately 35 minutes. Within days, Nikkei and Jiji were reporting that Japan's three megabanks — Mitsubishi UFJ Financial Group, Sumitomo Mitsui Financial Group, and Mizuho Financial Group — had been informed they would receive access to Claude Mythos by the end of May.
+The [meeting lasted approximately 35 minutes](https://www.mof.go.jp/english/policy/international_policy/convention/bilateral_meetings_between_finance_ministers/20260511194407.html). Within days, [Nikkei was reporting](https://asia.nikkei.com/business/finance/japan-megabanks-to-gain-access-to-anthropic-s-powerful-ai-model-mythos) that Japan's three megabanks — Mitsubishi UFJ Financial Group, Sumitomo Mitsui Financial Group, and Mizuho Financial Group — had been informed they would receive access to Claude Mythos by the end of May.
 
 ---
 
 ## The Stakes for Japan's Financial Sector
 
-MUFG, SMBC, and Mizuho collectively hold assets exceeding $10 trillion. They are core nodes in global payment infrastructure, correspondent banking networks, and yen-denominated sovereign debt markets. A successful cyberattack against any one of them wouldn't just harm a bank — it would propagate through interconnected clearing systems in ways that could destabilize regional credit markets.
+MUFG, SMBC, and Mizuho collectively hold assets exceeding $6.7 trillion — [$2.7 trillion](https://companiesmarketcap.com/mitsubishi-ufj-financial/total-assets/) for MUFG, [$2.1 trillion](https://companiesmarketcap.com/sumitomo-mitsui-financial-group/total-assets/) for SMBC, and [$1.9 trillion](https://companiesmarketcap.com/mizuho-financial-group/total-assets/) for Mizuho. They are core nodes in global payment infrastructure, correspondent banking networks, and yen-denominated sovereign debt markets. A successful cyberattack against any one of them wouldn't just harm a bank — it would propagate through interconnected clearing systems in ways that could destabilize regional credit markets.
 
-That systemic risk is precisely what makes Mythos's capabilities alarming from a financial regulator's perspective. Claude Mythos Preview demonstrated, in controlled testing, the ability to autonomously identify previously unknown vulnerabilities in every major operating system and browser it was pointed at. Anthropic specifically found 271 vulnerabilities in Firefox alone and developed working exploits for 181 of them. The CyberGym benchmark put Mythos at 83.1% — compared to 66.6% for Opus 4.6.
+That systemic risk is precisely what makes Mythos's capabilities alarming from a financial regulator's perspective. Claude Mythos Preview demonstrated, in controlled testing, the ability to autonomously identify [previously unknown vulnerabilities in every major operating system and web browser it was pointed at](https://www.anthropic.com/glasswing). Mozilla, testing an early version of Mythos Preview, [found and fixed 271 vulnerabilities in Firefox 150](https://www.anthropic.com/research/glasswing-initial-update) — over ten times what it found testing Claude Opus 4.6 against Firefox 148. That is a separate measurement from a controlled benchmark against Firefox 147's SpiderMonkey JavaScript engine, in which [Mythos Preview developed working exploits in 181 of 250 trials, versus just two for Opus 4.6 in prior testing](https://www.anthropic.com/research/exploit-evals). On the [CyberGym benchmark, Mythos scored 83.1% versus 66.6% for Opus 4.6](https://www.anthropic.com/glasswing).
 
 The question for Japan's FSA was not hypothetical. If a Mythos-class model could be deployed offensively against banking infrastructure, what were the defensive options? The answer, in part: gain access to Mythos first and use it to find your own vulnerabilities before an attacker does. That's the Glasswing logic. Japan's financial regulators appear to have accepted it.
 
@@ -47,13 +48,13 @@ The question for Japan's FSA was not hypothetical. If a Mythos-class model could
 
 ## The Working Group
 
-On May 16 — four days after the Bessent-Katayama meeting — [Japan's FSA convened the first session](https://www.fsa.go.jp/en/news/2026/20260514/20260514.html) of its new public-private coordination body: the Working Group on Strengthening Cybersecurity Measures in the Financial Sector Against AI-Related Threats.
+On May 14 — two days after the Bessent-Katayama meeting — [Japan's FSA held the first session](https://finance.yahoo.com/sectors/technology/articles/japans-bank-regulator-sets-forum-092910434.html) of its new public-private coordination body: the [Working Group under the "Public-Private Coordination Meeting on Strengthening Cybersecurity Measures in the Financial Sector Against AI-Related Threats"](https://www.fsa.go.jp/en/news/2026/20260514/20260514.html). That parent coordination meeting had itself first convened on April 24, before the Bessent-Katayama meeting; the May 14 session was the working group specifically formed in response to Katayama's May 12 announcement.
 
-The 36 entities present ranged from the three megabanks to regional banks to internet-native financial institutions. The Bank of Japan attended. So did the Japanese units of Anthropic and OpenAI — a notable detail, given that Project Glasswing was originally a US-domestic initiative, and that access to Mythos is what had prompted the working group's creation.
+The [36 entities present](https://finance.yahoo.com/sectors/technology/articles/japans-bank-regulator-sets-forum-092910434.html) ranged from the three megabanks to regional banks to internet-native financial institutions. The Bank of Japan attended. So did [the Japanese units of Anthropic and OpenAI](https://www.fsa.go.jp/en/news/2026/20260514/20260514.html) — a notable detail, given that Project Glasswing was originally a US-domestic initiative, and that access to Mythos is what had prompted the working group's creation.
 
-The chair: Osamu Terai, Mizuho Financial Group's Chief Information Security Officer.
+The chair: [Osamu Terai, Mizuho Financial Group's Chief Information Security Officer](https://finance.yahoo.com/sectors/technology/articles/japans-bank-regulator-sets-forum-092910434.html), per [multiple independent reports](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access).
 
-The working group's stated agenda: develop shared understanding of AI-driven cyber threats, establish procedures for when vulnerabilities are discovered, plan defensive measures, and develop contingency frameworks for scenarios where threats cannot be fully contained. The last item is notable. It acknowledges that "full containment" may not always be achievable — a significant admission from a regulator whose core mandate is systemic stability.
+The working group's [stated agenda](https://finance.yahoo.com/sectors/technology/articles/japans-bank-regulator-sets-forum-092910434.html): develop shared understanding of AI-driven cyber threats, establish procedures for when vulnerabilities are discovered, plan defensive measures, and develop contingency frameworks for scenarios where threats cannot be fully contained. The last item is notable. It acknowledges that "full containment" may not always be achievable — a significant admission from a regulator whose core mandate is systemic stability.
 
 ---
 
@@ -73,7 +74,7 @@ If this reading is correct, it marks the first known instance of frontier model 
 
 ## What It Means for Glasswing's Expansion
 
-Before Japan's inclusion, Project Glasswing had a geographically narrow perimeter. European institutions were in discussions but at a "different stage." No institution from the Asia-Pacific region had Glasswing access.
+Before Japan's inclusion, Project Glasswing had a geographically narrow perimeter: an all-American launch consortium, with [European government bodies still lacking access as of mid-May](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access). Reporting on the megabank announcement described it as [the first time a Japanese company had been granted entry to the restricted preview](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access).
 
 Japan's megabanks appear to represent the first systematic expansion of that perimeter to non-Western allies — and one driven not by Anthropic's commercial outreach but by a government-level negotiation.
 
@@ -87,7 +88,7 @@ Anthropic's position in all of this is unusual. A company founded explicitly on 
 
 Project Glasswing's original premise was defensive: give vulnerability defenders a head start, patch before attackers find the same flaws. That logic works cleanly when the consortium is a controlled set of US-based critical infrastructure operators.
 
-Japan's megabanks access opens a more complex question: as Glasswing expands through bilateral diplomacy rather than technical vetting, what happens to the disclosure coordination? The FSA working group will "develop procedures when vulnerabilities are found" — but those procedures need to integrate with Glasswing's existing CVD (coordinated vulnerability disclosure) pipeline, which runs through Anthropic and US-based partners.
+Japan's megabanks access opens a more complex question: as Glasswing expands through bilateral diplomacy rather than technical vetting, what happens to the disclosure coordination? The FSA working group is tasked with establishing procedures for when vulnerabilities are found — but those procedures need to integrate with Glasswing's existing CVD (coordinated vulnerability disclosure) pipeline, which runs through Anthropic and US-based partners.
 
 Cross-border vulnerability disclosure is not a new problem. But adding frontier AI capabilities to the mix, with a state-level diplomatic layer controlling access, is genuinely new. The 36 entities in that Tokyo working group are figuring it out in real time.
 
@@ -99,7 +100,12 @@ Cross-border vulnerability disclosure is not a new problem. But adding frontier 
 
 **Sources:**
 - [Japan-U.S. Finance Ministerial Meeting (May 12, 2026)](https://www.mof.go.jp/english/policy/international_policy/convention/bilateral_meetings_between_finance_ministers/20260511194407.html) (Japanese Ministry of Finance)
-- [Working Group on Strengthening Cybersecurity in the Financial Sector Against AI-Related Threats](https://www.fsa.go.jp/en/news/2026/20260514/20260514.html) (Japan Financial Services Agency)
+- [Working Group under the "Public-Private Coordination Meeting on Strengthening Cybersecurity Measures in the Financial Sector Against AI-Related Threats"](https://www.fsa.go.jp/en/news/2026/20260514/20260514.html) (Japan Financial Services Agency, published May 14, 2026)
 - [Mythos goes to Tokyo: Japanese banks to get Anthropic's vulnerability-hunting AI](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access) (The Next Web)
 - [Japan's bank regulator sets up forum to counter Mythos-powered cyber threats](https://finance.yahoo.com/sectors/technology/articles/japans-bank-regulator-sets-forum-092910434.html) (Yahoo Finance)
 - [Bessent Shares View With Japan That FX Volatility Is Undesirable](https://www.bloomberg.com/news/articles/2026-05-12/japan-s-katayama-confirms-good-work-on-fx-after-bessent-meeting) (Bloomberg, May 12, 2026)
+- [Japan megabanks to gain access to Anthropic's powerful AI model Mythos](https://asia.nikkei.com/business/finance/japan-megabanks-to-gain-access-to-anthropic-s-powerful-ai-model-mythos) (Nikkei Asia)
+- [Project Glasswing: Securing critical software for the AI era](https://www.anthropic.com/glasswing) (Anthropic — launch consortium, CyberGym benchmark scores)
+- [Project Glasswing: An initial update](https://www.anthropic.com/research/glasswing-initial-update) (Anthropic — Firefox 150 vulnerability count from Mozilla testing)
+- [Measuring LLMs' ability to develop exploits](https://www.anthropic.com/research/exploit-evals) (Anthropic — Firefox 147 SpiderMonkey exploit benchmark)
+- [Mitsubishi UFJ Financial Group total assets](https://companiesmarketcap.com/mitsubishi-ufj-financial/total-assets/), [Sumitomo Mitsui Financial Group total assets](https://companiesmarketcap.com/sumitomo-mitsui-financial-group/total-assets/), [Mizuho Financial Group total assets](https://companiesmarketcap.com/mizuho-financial-group/total-assets/) (CompaniesMarketCap)

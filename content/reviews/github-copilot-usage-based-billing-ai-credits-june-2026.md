@@ -5,12 +5,13 @@ last_refreshed: 2026-05-26
 description: "GitHub Copilot moves to token-based AI Credits on June 1, 2026. Premium requests are gone. Here's what changes, what stays free, and how to calculate your actual budget before the switch."
 og_description: "GitHub Copilot drops Premium Request Units for AI Credits on June 1. Code completions stay free. Agentic sessions now cost tokens. A Pro user could burn their monthly budget in 11 days of heavy coding."
 card_description: "GitHub Copilot billing changes June 1, 2026: Premium Request Units replaced by AI Credits (1 credit = $0.01). Code completions free. Chat and agentic sessions now token-billed by model. Pro ($10/mo) gets $10 in credits; Pro+ ($39/mo) gets $39. Heavy agentic users may burn budget in days — not a month."
+sources_audited: 2026-07-29
 tags: ["github-copilot", "billing", "pricing", "developer-tools", "ai-coding-agents"]
 categories: ["reviews"]
 author: "ChatForest"
 ---
 
-On **June 1, 2026**, GitHub Copilot's billing model changes fundamentally. The [Premium Request Units](https://github.com/features/copilot/plans) (PRUs) that have defined plan limits since Copilot launched are being replaced by **GitHub AI Credits** — a token-based system where your plan includes a dollar-denominated credit pool, and each model interaction draws from it.
+On **June 1, 2026**, GitHub Copilot's billing model changes fundamentally. [Premium Request Units](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/copilot-requests) (PRUs), which GitHub introduced on June 18, 2025 as the metering unit for paid Copilot plans (not since Copilot's original launch), are being [replaced by GitHub AI Credits](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) — a token-based system where your plan includes a dollar-denominated credit pool, and each model interaction draws from it.
 
 Plan prices are not changing. But what those prices buy is.
 
@@ -28,13 +29,15 @@ Plan prices are not changing. But what those prices buy is.
 | **Next Edit Suggestions** | Free | Still free |
 | **Chat / agent sessions** | Counted as requests | Billed by token × model rate |
 
-Business and Enterprise plans get a promotional bonus for the first three months: Business users receive $30/user (instead of $19), Enterprise users receive $70/user (instead of $39). After that it drops to standard.
+Business and Enterprise plans get a promotional bonus for the first three months: Business users receive $30/user (instead of $19), Enterprise users receive $70/user (instead of $39). After that it drops to standard. ([Source: GitHub Blog announcement](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/))
+
+> **Update (checked 2026-07-29):** GitHub has since raised the included pools beyond what it announced for the June 1 launch. The [live Copilot plans page](https://github.com/features/copilot/plans) currently lists Copilot Pro ($10/mo) with **$15** in monthly AI Credits and Copilot Pro+ ($39/mo) with **$70** — both higher than the $10 and $39 figures GitHub announced at rollout and used throughout this piece's original analysis. If you're budgeting today, check the live plans page for current allotments; the math below reflects the numbers as announced.
 
 ---
 
 ## What's an AI Credit?
 
-**1 AI Credit = $0.01 USD.**
+**[1 AI Credit = $0.01 USD.](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing)**
 
 When you have a chat session or run an agentic task, the interaction consumes input tokens, output tokens, and cached tokens. GitHub converts those token counts to dollar amounts using published per-model API rates, then deducts from your credit pool.
 
@@ -46,18 +49,18 @@ The billing shift affects everything else: Copilot Chat in your IDE, Copilot in 
 
 ## Model Pricing
 
-These are the per-million-token rates that determine your credit consumption. (Rates are in USD and convert directly to AI Credits at $0.01/credit.)
+These are the per-million-token rates that determine your credit consumption, as published on [GitHub's Copilot model pricing reference](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). (Rates are in USD and convert directly to AI Credits at $0.01/credit.) GitHub updates this model lineup frequently — always check the live page for current rates before budgeting.
 
 ### OpenAI Models
 
 | Model | Input ($/1M) | Cached Input | Output ($/1M) |
 |-------|-------------|--------------|---------------|
 | GPT-5 mini | $0.25 | $0.025 | $2.00 |
-| GPT-4.1 | $2.00 | $0.50 | $8.00 |
 | GPT-5.4 mini | $0.75 | $0.075 | $4.50 |
-| GPT-5.2 | $1.75 | $0.175 | $14.00 |
 | GPT-5.4 | $2.50 | $0.25 | $15.00 |
 | GPT-5.5 | $5.00 | $0.50 | $30.00 |
+
+*(GPT-4.1 and GPT-5.2, listed in this table at original publication, no longer appear in GitHub's current pricing reference — GitHub's model lineup has turned over since May 2026. Their original rates could not be re-verified against a live primary source, so they've been removed rather than left uncited.)*
 
 ### Anthropic Models
 
@@ -74,7 +77,7 @@ These are the per-million-token rates that determine your credit consumption. (R
 | Gemini 2.5 Pro | $1.25 | $0.125 | $10.00 |
 | Gemini 3.5 Flash | $1.50 | $0.15 | $9.00 |
 
-Note: Gemini models were [removed from Copilot Chat on the web](https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web/) in May 2026 but remain available via the API.
+Note: Gemini models were [removed from Copilot Chat on the web](https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web/) in May 2026. That changelog covers only the web chat surface; Gemini 2.5 Pro and Gemini 3.5 Flash still carry active per-token rates in [GitHub's Copilot pricing reference](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), indicating they remain billable on other Copilot surfaces.
 
 ---
 
@@ -112,7 +115,7 @@ An agentic task — "refactor this module," "write tests for this class" — inv
 | Agentic task | GPT-5.4 | ~$0.60 | **~17** | **~65** |
 | Agentic task | GPT-5.5 | ~$1.20 | **~8** | **~33** |
 
-One independent analysis found a typical Pro+ user doing a full day of mixed agentic workflow could consume $10–14 in credits. At that rate, a **$39 monthly Pro+ budget runs out in 3–4 days** of heavy use.
+Based on the per-session costs above, a Pro+ user running a full day of mixed agentic workflow — a handful of chat exchanges plus several agentic sessions on flagship models — could plausibly burn **$10–14** in credits in a single day. At the **$39 pool GitHub originally announced**, that pace would exhaust a monthly Pro+ budget in **3–4 days** of sustained heavy use; at the current $70 pool (see the update note above), it stretches closer to a week.
 
 ---
 
@@ -126,14 +129,14 @@ One independent analysis found a typical Pro+ user doing a full day of mixed age
 
 **Most affected:**
 - Pro ($10/mo) users running agentic tasks with flagship models (GPT-5.4, Claude Sonnet, GPT-5.5)
-- Developers who previously relied on "fallback models" — GitHub is eliminating fallbacks; you now choose a model and pay its rate
+- Developers who previously relied on "fallback models" — [GitHub is eliminating fallback experiences](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/); you now choose a model and pay its rate
 - Anyone who interpreted "1,500 premium requests" as meaning "unlimited within reason" — the new system exposes the real cost directly
 
 ---
 
 ## What Happens If You Run Out
 
-When your included credit pool is exhausted:
+When your included credit pool is exhausted ([per GitHub's announcement](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)):
 
 - **Individual plans:** Copilot pauses AI Credit-consuming features until the next billing cycle. Code completions continue.
 - **Business/Enterprise:** Admins can configure budget controls and set whether to allow overage spending (at published rates) or cap usage at the included pool.
@@ -152,9 +155,9 @@ The criticism is valid: for heavy agentic users, the included credit pools are t
 
 For developers comparing options after the switch:
 
-- **Cursor Pro ($20/mo)** operates on a credit pool for premium models, with auto mode unlimited on GPT-4.1-level models and premium model selections drawing credits
-- **Claude Code** (included with Claude Max at $20–$200/mo) uses Anthropic's native token pool
-- **OpenAI Codex** (included with ChatGPT Plus/Pro) similarly draws from a usage pool
+- **[Cursor Pro](https://cursor.com/pricing) ($20/mo)** includes unlimited Auto mode, which routes to a cost-efficient model at no charge, while manually selecting a premium model (Claude, GPT, Gemini) draws from a $20 monthly credit pool
+- **Claude Code** (included with [Claude Pro or Max plans](https://claude.com/pricing), $20–$200/mo) uses Anthropic's native token pool
+- **OpenAI Codex** (included with [ChatGPT Plus and Pro](https://chatgpt.com/pricing/)) similarly draws from a usage pool
 
 The market is converging on token-based pricing with tiered credit pools. GitHub Copilot is late to this transition, not pioneering it.
 
