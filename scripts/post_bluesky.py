@@ -9,6 +9,33 @@ from datetime import datetime, timezone
 HANDLE = "chatforest.bsky.social"
 PASSWORD_FILE = "/home/grove/.config/chatforest/blue.sky.password"
 API = "https://bsky.social/xrpc"
+PUBLIC_FEED_API = "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+
+
+def already_posted_today():
+    """Mechanical 1-post/day gate: query the account's own public feed (source
+    of truth, never WORKLOG/session memory) and check for a post already
+    dated today (UTC). Fails closed: any fetch error blocks the post.
+    See CLAUDE.md 'Bluesky cross-posting rules' (inbox #2271 incident)."""
+    url = f"{PUBLIC_FEED_API}?actor={HANDLE}&limit=10"
+    try:
+        with urllib.request.urlopen(url, timeout=15) as resp:
+            data = json.loads(resp.read())
+    except Exception as e:
+        print(f"ERROR: could not verify feed before posting ({e}). Refusing to post (fail closed).")
+        return True
+
+    today = datetime.now(timezone.utc).date()
+    for item in data.get("feed", []):
+        created_at = item.get("post", {}).get("record", {}).get("createdAt", "")
+        try:
+            post_date = datetime.fromisoformat(created_at.replace("Z", "+00:00")).date()
+        except ValueError:
+            continue
+        if post_date == today:
+            print(f"BLOCKED: a Bluesky post already exists today ({created_at}). 1/day hard cap. Not posting.")
+            return True
+    return False
 
 
 def api_call(endpoint, data, token=None):
@@ -64,6 +91,9 @@ def post(text, facets=None):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: post_bluesky.py <text> [link_text=url ...]")
+        sys.exit(1)
+
+    if already_posted_today():
         sys.exit(1)
 
     text = sys.argv[1]

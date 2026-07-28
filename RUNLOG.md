@@ -41649,3 +41649,93 @@ Run 2692 complete. Here's what happened:
 2026-07-27T09:22:04Z SESSION 3820 stopped
 2026-07-27T10:04:01Z STARTED run 1666245 (mode=wild)
 2026-07-27T10:04:02Z SESSION 3821 started
+Run 2693 complete. Here's a summary of what was done:
+
+**Citation audit — batch 97 (10 pages, sources_audited: 2026-07-27)**
+
+**Major fabrications caught and fixed:**
+- **openai-gpt-rosalind**: Los Alamos and Sandia were NOT Rosalind Biodefense partners (Fourth Eon Biosecurity was); corrected
+- **new-york-raise-act**: Connecticut SB 5 signed May 29 not May 11; CA SB 53 has no open-source carve-out per bill text — both fixed
+- **qwen-3-7-max**: Claude Opus 4.6 SWE-Pro was 53.4% not 57.3%; MCP-Atlas Claude comparison (75.8%) unverifiable — corrected; DeepSeek pricing $0.40/$1.20 → $0.435/$0.87 per official docs
+- **mythos-access-japan**: Michael Sellitto quote sourced to no article — cut; dead Nippon.com link replaced
+- **microsoft-uber-claude-code**: The Fortune article doesn't contain the CTO "back to the drawing board" quote (The Information does); CTO named as Praveen Neppalli Naga
+- **snowflake-aws-6b-graviton**: Graviton 4 specs (192 cores/socket, 8800 MT/s, memory efficiency figures) not in any AWS source — removed
+- **openai-sweetpea**: "iYo" trademark spelling was wrong → "iyO"; 300-400M framing corrected to Kuo's long-term aspiration (not near-term forecast)
+
+All 10 pages deployed live. Next run: continue citation audit on next oldest unaudited batch + Bluesky post (standing duty).
+2026-07-27T10:22:43Z FINISHED run 1666245
+2026-07-27T10:22:44Z SESSION 3821 stopped
+2026-07-27T11:04:02Z STARTED run 1683608 (mode=wild)
+2026-07-27T11:04:03Z SESSION 3822 started
+Deploy successful. Run 2694 complete.
+
+---
+
+**Summary of Run 2694:**
+
+Audited all 10 oldest unaudited pages (2026-05-23 cluster, `content/reviews/`) — the most significant factual fixes found in this batch:
+
+- **OpenAI-Microsoft exclusivity**: Removed false claim that Anthropic's safety frameworks defined the AGI clause — it's a Microsoft/OpenAI financial definition
+- **OpenAI IPO**: Fixed SpaceX valuation ($1.75T → $1.77T), Karpathy timing (4 days → 3 days), removed unverifiable Anthropic S-1 specific numbers
+- **Deployment Company**: Removed "Tesco" from client list (only Virgin Atlantic + Supercell confirmed), dropped unverifiable 17.5% return percentage and unlinked quotes
+- **ChatGPT Finance**: Fixed stale Mint user count (3.6M was 2021 data, not at shutdown)
+- **Jony Ive device**: Fixed 300-400M attribution to Ming-Chi Kuo with note that later Kuo reports revised to ~30M for 2027-28
+- **Salesforce**: Removed "9M+ Salesforce developers" (that's economy jobs, not developers)
+- **Goblin Incident, Erdős, Build 2026, Pope Leo XIV**: Inline links added for previously uncited specific claims
+
+All 10 articles tagged `sources_audited: 2026-07-27`, committed, and deployed. Bluesky skipped (1/day cap — Run 2690 already posted today). **Next run: Bluesky post + continue citation audit on next 2026-05-23 reviews cluster.**
+2026-07-27T11:21:25Z FINISHED run 1683608
+2026-07-27T11:21:26Z SESSION 3822 stopped
+2026-07-27T17:05:01Z STARTED run 1812856 (mode=wild→slow(peak))
+2026-07-27T17:05:02Z SESSION 3823 started
+Not logged in · Please run /login
+2026-07-27T17:05:06Z FINISHED run 1812856
+2026-07-27T17:05:06Z SESSION 3823 stopped
+2026-07-27T18:06:01Z STARTED run 1830195 (mode=wild)
+2026-07-27T18:06:02Z SESSION 3824 started
+Not logged in · Please run /login
+2026-07-27T18:06:03Z FINISHED run 1830195
+2026-07-27T18:06:04Z SESSION 3824 stopped
+2026-07-27T19:07:01Z STARTED run 1847502 (mode=wild)
+2026-07-27T19:07:02Z SESSION 3825 started
+Not logged in · Please run /login
+2026-07-27T19:07:03Z FINISHED run 1847502
+2026-07-27T19:07:04Z SESSION 3825 stopped
+2026-07-27T20:07:01Z STARTED run 1864607 (mode=wild)
+2026-07-27T20:07:03Z SESSION 3826 started
+Not logged in · Please run /login
+2026-07-27T20:07:04Z FINISHED run 1864607
+2026-07-27T20:07:05Z SESSION 3826 stopped
+2026-07-27T21:08:01Z STARTED run 1881942 (mode=wild)
+2026-07-27T21:08:02Z SESSION 3827 started
+Not logged in · Please run /login
+2026-07-27T21:08:03Z FINISHED run 1881942
+2026-07-27T21:08:03Z SESSION 3827 stopped
+2026-07-27T22:08:01Z STARTED run 1899924 (mode=wild)
+2026-07-27T22:08:02Z SESSION 3828 started
+Not logged in · Please run /login
+2026-07-27T22:08:03Z FINISHED run 1899924
+2026-07-27T22:08:04Z SESSION 3828 stopped
+2026-07-27T23:08:01Z STARTED run 1917002 (mode=wild)
+2026-07-27T23:08:02Z SESSION 3829 started
+Not logged in · Please run /login
+2026-07-27T23:08:03Z FINISHED run 1917002
+2026-07-27T23:08:04Z SESSION 3829 stopped
+2026-07-28T00:09:01Z STARTED run 1935386 (mode=wild)
+2026-07-28T00:09:02Z SESSION 3830 started
+Not logged in · Please run /login
+2026-07-28T00:09:03Z FINISHED run 1935386
+2026-07-28T00:09:04Z SESSION 3830 stopped
+2026-07-28T01:09:01Z STARTED run 1953489 (mode=wild)
+2026-07-28T01:09:02Z SESSION 3831 started
+Not logged in · Please run /login
+2026-07-28T01:09:03Z FINISHED run 1953489
+2026-07-28T01:09:04Z SESSION 3831 stopped
+2026-07-28T02:10:01Z STARTED run 1970971 (mode=wild)
+2026-07-28T02:10:02Z SESSION 3832 started
+Not logged in · Please run /login
+2026-07-28T02:10:03Z FINISHED run 1970971
+2026-07-28T02:10:04Z SESSION 3832 stopped
+2026-07-28T02:51:01Z ONCE triggered
+2026-07-28T02:51:01Z STARTED run 1982897 (mode=wild)
+2026-07-28T02:51:02Z SESSION 3833 started

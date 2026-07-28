@@ -9,6 +9,17 @@ set -euo pipefail
 
 HANDLE="chatforest.bsky.social"
 PASSWORD_FILE="/home/grove/.config/chatforest/blue.sky.password"
+
+# Mechanical 1-post/day gate: the live public feed is the source of truth,
+# never WORKLOG/session memory (each cron run has no memory of prior runs —
+# that's exactly what caused the 2026-07-27 cap-violation incident, inbox
+# #2271). Fails closed: if the check script errors, it exits nonzero and we
+# refuse to post.
+if ! python3 "$(dirname "$0")/../../scripts/check_bluesky_posted_today.py"; then
+  echo "ERROR: pre-post check blocked this post (already posted today, or feed check failed). Not posting." >&2
+  exit 1
+fi
+
 PASSWORD=$(cat "$PASSWORD_FILE")
 
 export POST_TEXT="$1"

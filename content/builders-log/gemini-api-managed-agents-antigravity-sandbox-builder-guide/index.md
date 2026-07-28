@@ -1,6 +1,7 @@
 ---
 title: "Gemini API Managed Agents: Hosted Sandbox Execution in One Call"
 date: 2026-06-01
+sources_audited: 2026-07-28
 description: "Google launched Managed Agents in the Gemini API at Google I/O 2026. One call spins up an isolated Linux sandbox running the Antigravity agent on Gemini 3.5 Flash. The sandbox persists state between calls. Compute is free during preview. Here's how to use it."
 og_description: "One API call. Isolated Linux sandbox. Stateful sessions. Google Search built-in. Custom agents via AGENTS.md. Here's what Gemini API Managed Agents actually does and when to use it over AWS AgentCore."
 content_type: "Builder's Log"
@@ -8,9 +9,9 @@ categories: ["Google", "Agent Infrastructure", "Developer Tools"]
 tags: ["google", "gemini", "managed-agents", "antigravity", "sandbox", "agent-infrastructure", "gemini-api", "stateful-agents", "production-ai", "builders-log"]
 ---
 
-Google launched Managed Agents in the Gemini API at Google I/O 2026 on May 20. The service gives developers a hosted execution environment for AI agents — one API call spins up an isolated Linux sandbox, the Antigravity agent runs inside it, files and state persist between calls, and the sandbox tears down when you're done.
+Google launched [Managed Agents in the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/) at [Google I/O 2026 on May 19](https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/). The service gives developers a hosted execution environment for AI agents — one API call spins up an isolated Linux sandbox, the [Antigravity agent](https://ai.google.dev/gemini-api/docs/antigravity-agent) runs inside it, files and state persist between calls, and the sandbox is retired after a period of inactivity.
 
-The problem it solves is the same one AWS AgentCore targets: running agents in production without building the execution infrastructure yourself. Google's version is simpler to start with, ships with one API key instead of an AWS account, and is free to compute during preview.
+The problem it solves is the same one [AWS AgentCore](https://aws.amazon.com/bedrock/agentcore/) targets: running agents in production without building the execution infrastructure yourself. Google's version is simpler to start with, ships with one API key instead of an AWS account, and [environment compute is not billed during preview](https://ai.google.dev/gemini-api/docs/pricing).
 
 ---
 
@@ -20,15 +21,15 @@ Managed Agents is a hosted agent execution service available through the Gemini 
 
 The service has two layers:
 
-**The Antigravity harness** (`antigravity-preview-05-2026`) is the only supported base agent during preview. It is a general-purpose autonomous agent built on Gemini 3.5 Flash that can plan work, write and execute code, manage files, search the web, and call URLs — all inside its sandbox. You define what you want done; the harness decides how to do it.
+**The Antigravity harness** ([`antigravity-preview-05-2026`](https://ai.google.dev/gemini-api/docs/antigravity-agent)) is the only supported base agent during preview. At launch it was [built on Gemini 3.5 Flash](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/) and can [plan work, write and execute code, manage files, search the web, and call URLs](https://ai.google.dev/gemini-api/docs/antigravity-agent) — all inside its sandbox. You define what you want done; the harness decides how to do it.
 
-**The managed execution environment** is an isolated Linux sandbox spun up per session. The sandbox has a persistent filesystem. Files written in one call are still there in the next. Bash, Python, and Node.js all execute natively. Google Search and URL fetch are available. Network access beyond that is disabled by default and requires an explicit domain allowlist.
+**The managed execution environment** is an [isolated Linux sandbox spun up per session](https://ai.google.dev/gemini-api/docs/agent-environment). The sandbox has a persistent filesystem: [files written in one call are still there in the next](https://ai.google.dev/gemini-api/docs/agent-environment). [Bash, Python, and Node.js all execute natively](https://ai.google.dev/gemini-api/docs/antigravity-agent), and Google Search and URL fetch are built in. By default, [environments have unrestricted outbound network access](https://ai.google.dev/gemini-api/docs/agent-environment); you can restrict it to an allowlist of specific domains, or disable it entirely.
 
 ---
 
 ## Core API
 
-The `google-genai` SDK is the single package for all Gemini API access, including Managed Agents. No Vertex AI or Google Cloud SDK required.
+The [`google-genai` SDK](https://ai.google.dev/gemini-api/docs/managed-agents-quickstart) is the single package for all Gemini API access, including Managed Agents. No Vertex AI or Google Cloud SDK required.
 
 ```bash
 pip install google-genai
@@ -58,7 +59,7 @@ The `interaction.environment_id` is your handle to the sandbox. Save it if you n
 
 ## Stateful Sessions
 
-Each sandbox has a persistent filesystem. Files written in one interaction are present in the next if you pass the same `environment_id`.
+Each sandbox has a [persistent filesystem](https://ai.google.dev/gemini-api/docs/agent-environment). Files written in one interaction are present in the next if you pass the same `environment_id`.
 
 ```python
 # First call: agent writes a draft
@@ -87,7 +88,7 @@ interaction_3 = client.interactions.create(
 
 The `previous_interaction_id` tells the harness where the conversation left off. The agent sees the filesystem state from prior calls without you having to re-explain what was done.
 
-Sandbox environments persist until you explicitly delete them or they expire. The preview documentation does not specify a hard session duration limit — this is a material difference from AgentCore's 8-hour cap, and likely to be addressed when billing and limits are finalized post-preview.
+Sandbox environments follow a defined [lifecycle](https://ai.google.dev/gemini-api/docs/agent-environment): a session auto-snapshots and goes idle after 15 minutes of inactivity, then stays resumable offline for 7 days since it was last active before it's deleted. There's no fixed multi-hour session cap the way [AgentCore's runtime does](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-lifecycle-settings.html) — a difference likely to be revisited once billing and limits are finalized post-preview.
 
 ---
 
@@ -95,17 +96,17 @@ Sandbox environments persist until you explicitly delete them or they expire. Th
 
 Inside the sandbox, the Antigravity agent has access to:
 
-**Code execution:** Bash commands, Python scripts, and Node.js programs run natively. The agent can install packages (`pip install`, `npm install`) if network access is enabled for the relevant registry domains.
+**Code execution:** [Bash commands, Python scripts, and Node.js programs run natively](https://ai.google.dev/gemini-api/docs/antigravity-agent). The agent can install packages (`pip install`, `npm install`) using the sandbox's default outbound network access.
 
-**File system:** Reads and writes files. Files persist across interactions within the same environment. The agent can produce output artifacts — reports, scripts, datasets, HTML files — that you retrieve via the API or have the agent process further.
+**File system:** [Reads and writes files](https://ai.google.dev/gemini-api/docs/antigravity-agent). Files persist across interactions within the same environment. The agent can produce output artifacts — reports, scripts, datasets, HTML files — that you retrieve via the API or have the agent process further.
 
-**Google Search:** Built-in, no configuration needed. The agent uses Search to retrieve current information when needed.
+**Google Search:** [Built-in, no configuration needed](https://ai.google.dev/gemini-api/docs/antigravity-agent). The agent uses Search to retrieve current information when needed.
 
-**URL fetch:** The agent can make HTTP requests to retrieve data from specific URLs. This is distinct from general network access.
+**URL fetch:** The agent can make HTTP requests to retrieve data from specific URLs.
 
-**Network access:** Disabled by default. Enable specific domains via an allowlist in your configuration. Useful for calling your own APIs or allowing package installation from known registries.
+**Network access:** [Unrestricted outbound access by default](https://ai.google.dev/gemini-api/docs/agent-environment). You can restrict traffic to an allowlist of specific domains, or disable network access entirely, via the environment's `network` configuration.
 
-What the sandbox cannot do by default: arbitrary outbound network connections, access to your local filesystem, or access to other Google services without explicit configuration.
+What the sandbox cannot do by default: access your local filesystem or other Google services without explicit configuration.
 
 ---
 
@@ -144,7 +145,7 @@ skills/
     SKILL.md
 ```
 
-**AGENTS.md** is the agent's system prompt, written in Markdown. It defines persona, guidelines, constraints, and default behaviors. The agent loads `.agents/AGENTS.md` automatically when the sandbox starts.
+**AGENTS.md** is the agent's system prompt, written in Markdown. It defines persona, guidelines, constraints, and default behaviors. [The agent loads `.agents/AGENTS.md` automatically as system instructions on startup](https://ai.google.dev/gemini-api/docs/custom-agents).
 
 ```markdown
 # Data Analyst Agent
@@ -159,7 +160,7 @@ You are a meticulous data analyst. When given a data task:
 Never modify source files. Work only with copies.
 ```
 
-**SKILL.md** defines a reusable capability that can be discovered via the Skill Registry:
+**SKILL.md** defines a reusable capability. [Place it under `.agents/skills/<skill-name>/SKILL.md` and the harness auto-discovers and registers it](https://ai.google.dev/gemini-api/docs/custom-agents):
 
 ```markdown
 # Skill: CSV Summarizer
@@ -170,7 +171,7 @@ Input: path to CSV file
 Output: summary.md written to the working directory
 ```
 
-Register the configuration to the Skill Registry and invoke your custom agent by its registered ID:
+[Register the agent with `agents.create()` and invoke it by its registered ID](https://ai.google.dev/gemini-api/docs/custom-agents):
 
 ```python
 interaction = client.interactions.create(
@@ -183,33 +184,33 @@ interaction = client.interactions.create(
 
 ## Pricing
 
-**During preview:** Compute is free. Sandbox CPU, memory, and execution time are not billed. You pay only for token usage at standard Gemini 3.5 Flash rates:
+**During preview:** [Environment compute (CPU, memory, sandbox execution) is not billed during the preview period](https://ai.google.dev/gemini-api/docs/pricing). You pay only for token usage, [charged at standard Gemini 3.5 Flash rates](https://ai.google.dev/gemini-api/docs/pricing):
 
 | Resource | Price |
 |---|---|
 | Input tokens | $1.50 / 1M tokens |
 | Output tokens | $9.00 / 1M tokens |
 
-**After preview:** Billing will extend to Sessions, Code Execution, and Memory Bank at rates to be announced. Google has not published post-preview compute pricing as of this writing. Budget accordingly — the current free-compute period is a preview incentive, not the production pricing model.
+**After preview:** Google [has not published post-preview compute pricing](https://ai.google.dev/gemini-api/docs/pricing) as of this writing. Budget accordingly — the current free-compute period is a preview incentive, not the production pricing model.
 
-Google Search calls within the sandbox are billed per-query at standard Gemini API Search grounding rates.
+[Google Search calls within the sandbox are billed per search query performed](https://ai.google.dev/gemini-api/docs/pricing), not per grounded prompt, at standard Gemini API Search grounding rates.
 
 ---
 
 ## Managed Agents vs. AgentCore: A Decision Framework
 
-Both services exist to remove agent infrastructure work from builders. They differ significantly in execution model, ecosystem, and where in the stack they operate.
+Both services exist to remove agent infrastructure work from builders. They differ significantly in execution model, ecosystem, and where in the stack they operate. AgentCore figures below are sourced from AWS's [pricing page](https://aws.amazon.com/bedrock/agentcore/pricing/), [runtime lifecycle docs](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-lifecycle-settings.html), and [platform overview](https://aws.amazon.com/bedrock/agentcore/); Google figures are sourced as linked earlier in this piece.
 
 | | Google Managed Agents | AWS AgentCore |
 |---|---|---|
 | **Isolation model** | Shared Linux sandbox per session | Per-session microVM (Firecracker) |
-| **Session duration** | TBD (preview) | 8 hours max |
-| **Base model** | Gemini 3.5 Flash only (preview) | Any Bedrock model; OpenAI preview |
-| **Framework support** | Antigravity harness (built-in) | LangGraph, CrewAI, LlamaIndex, Strands, custom |
+| **Session duration** | No fixed cap (preview) | [8 hours max by default](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-lifecycle-settings.html) |
+| **Base model** | Gemini 3.5 Flash only (preview) | Any Bedrock model; [OpenAI GPT-5.4/5.5 in preview](https://aws.amazon.com/blogs/aws/get-started-with-openai-gpt-5-5-gpt-5-4-models-and-codex-on-amazon-bedrock/) |
+| **Framework support** | Antigravity harness (built-in) | [LangGraph, CrewAI, LlamaIndex, Strands, custom](https://aws.amazon.com/bedrock/agentcore/) |
 | **Entry requirement** | Gemini API key | AWS account + IAM |
-| **Compute billing** | Free during preview | $0.0895/vCPU-hr + $0.00945/GB-hr |
-| **Governance** | Google API security model | IAM, PrivateLink, CloudTrail, Guardrails |
-| **Network** | Disabled by default; domain allowlist | Configurable per agent |
+| **Compute billing** | Free during preview | [$0.0895/vCPU-hr + $0.00945/GB-hr](https://aws.amazon.com/bedrock/agentcore/pricing/) |
+| **Governance** | Google API security model | [IAM, PrivateLink, CloudTrail, Guardrails](https://aws.amazon.com/bedrock/security-privacy-responsible-ai/) |
+| **Network** | Unrestricted by default; can be domain-allowlisted or disabled | Configurable per agent |
 | **Best fit** | Prototyping, Google-native stacks, quick deployment | Enterprise, model-agnostic, regulated workloads |
 
 **Use Managed Agents when:**
@@ -231,11 +232,11 @@ Both services exist to remove agent infrastructure work from builders. They diff
 
 Before building on Managed Agents for production workloads, note the current limitations:
 
-- **Single base agent:** Only `antigravity-preview-05-2026` is available. You can customize via AGENTS.md and system instructions, but cannot bring your own model or framework.
-- **Preview stability:** The API surface, environment behavior, and pricing can all change. Google has not announced a GA timeline.
-- **Network defaults:** Outbound network access is off by default. Any external API calls require domain allowlist configuration.
-- **Gemini 3.5 Flash only:** No access to Gemini 3.5 Pro or other models during preview. Tasks requiring deeper reasoning than Flash provides cannot currently be routed to a more capable model within the Managed Agents API.
-- **No usage dashboard yet:** Token and session usage reporting in AI Studio does not yet break out Managed Agents separately from standard Gemini API usage.
+- **Single base agent:** Only [`antigravity-preview-05-2026`](https://ai.google.dev/gemini-api/docs/antigravity-agent) is available as the base agent. You can customize via AGENTS.md and system instructions, but cannot bring your own model or framework to the harness itself.
+- **Preview stability:** The API surface, environment behavior, and pricing can all change during preview. Google has not announced a GA timeline.
+- **Network defaults:** Outbound network access is [unrestricted by default](https://ai.google.dev/gemini-api/docs/agent-environment); locking it down to specific domains, or disabling it, requires explicit configuration.
+- **Gemini 3.5 Flash at launch:** No access to Gemini 3.5 Pro during preview at launch. Tasks requiring deeper reasoning than Flash provides could not be routed to a more capable model within the Managed Agents API at launch.
+- **Usage dashboard:** As of this writing, [Google's usage-dashboard documentation](https://blog.google/innovation-and-ai/technology/developers-tools/more-control-over-gemini-api-costs/) lists dedicated breakdowns for Imagen, Veo, and Search grounding, but not a separate Managed Agents category.
 
 ---
 
@@ -249,6 +250,6 @@ pip install google-genai
 python your_agent_script.py
 ```
 
-The API is available through Google AI Studio for prototyping and through the `google-genai` SDK for code. You can also test the Antigravity agent directly in the AI Studio Playground before writing any code.
+The API is available through Google AI Studio for prototyping and through the `google-genai` SDK for code. You can also [test the Antigravity agent directly in the AI Studio Playground](https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/) before writing any code.
 
-For enterprise workloads requiring the full compliance and governance stack (VPC, audit logging, custom networking), the equivalent service is Managed Agents on Gemini Enterprise Agent Platform, accessed through the Google Cloud Console — not the Gemini API. The same conceptual model applies, but the access path, billing, and isolation guarantees differ.
+For enterprise workloads requiring the full compliance and governance stack (VPC, audit logging, custom networking), the equivalent service is [Managed Agents on Gemini Enterprise Agent Platform](https://cloud.google.com/products/gemini-enterprise-agent-platform/pricing), accessed through the Google Cloud Console — not the Gemini API. The same conceptual model applies, but the access path, billing, and isolation guarantees differ.

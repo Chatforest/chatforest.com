@@ -230,15 +230,29 @@ When cross-posting chatforest.com articles to external platforms (dev.to, Hashno
 
 **Note (2026-07-17):** dev.to API key returns 401 (banned/dead); Hashnode API endpoint returns 301 redirect (inaccessible). Both platforms are currently unusable. Do not attempt to post until Rob restores access.
 
-## Bluesky cross-posting rules (added 2026-07-18, CEO-authorized via inbox #2189; updated 2026-07-26)
+## Bluesky cross-posting rules (added 2026-07-18, CEO-authorized via inbox #2189; updated 2026-07-27 after inbox #2271 incident)
 
 Bluesky (@chatforest.bsky.social) is the **active cross-posting platform**. Rules:
 
-- **HARD CAP: 1 post per day, max** — never post more than once per day on Bluesky
-- **1 post per run** — never post to Bluesky more than once in a single run
-- **STANDING DAILY DUTY**: Posting 1×/day is a standing obligation, not optional. The cap is 1/day; the intent is also 1/day. If a run produces no post, the NEXT run must post. Do not let the channel go silent.
+- **HARD CAP: 1 post per day, max** — never post more than once per day on Bluesky.
+- **MANDATORY MECHANICAL PRE-POST CHECK — no exceptions:** Before calling ANY Bluesky posting
+  script, run `python3 scripts/check_bluesky_posted_today.py`. It queries the account's own public
+  feed (`app.bsky.feed.getAuthorFeed`, actor=chatforest.bsky.social — no auth needed) and checks
+  whether a post already exists with `createdAt` on the current UTC date.
+  - Exit code 0 (`OK_TO_POST`) → safe to post.
+  - Exit code 1 (`ALREADY_POSTED`) or 2 (`ERROR`) → **DO NOT POST**, regardless of what WORKLOG.md,
+    memory, or this file's "standing duty" language seem to imply. Fail closed on error.
+  - **The live feed is the only source of truth for "did we post today."** Session/run memory is
+    never sufficient — each hourly cron run starts with zero memory of what a prior run did, which
+    is exactly how the 2026-07-27 incident (6 posts in ~28 hours, cap violated repeatedly) happened.
+- **STANDING DAILY DUTY, reworded to prevent per-run misreading:** the site's intent is one Bluesky
+  post per calendar day, not one post per cron run (runs fire hourly). "If a run produces no post,
+  the next run must post" was previously misread as license for any run finding itself post-less to
+  post — do not read it that way. The only question a run must answer is what the pre-post check
+  script says. If it says `OK_TO_POST`, post. If it says `ALREADY_POSTED`, do not, even if this is
+  the first Bluesky action *you* (this session) have taken today.
 - **Content**: one recent, high-quality, CITED article from the site. Lead with the single most concrete number or surprising claim from the article — not a topic summary. 1–2 sentences, then the link. No clickbait, no hashtag spam, no engagement-farming replies/threads.
-- **Newsletter exception**: at most 1 post per week can promote the latest Dispatch newsletter signup instead of an article; give the plug a data hook too.
+- **Newsletter exception**: at most 1 post per week can promote the latest Dispatch newsletter signup instead of an article; give the plug a data hook too. This still counts as the day's one post — run the pre-post check first.
 - **Link required**: always include the chatforest.com canonical URL in the post.
 - **AI disclosure already in profile**: the bio and `bot` label on the account handle platform-level disclosure — no need to repeat in each post.
 - **Track posts**: note the Bluesky post URL in WORKLOG.md each run you post.

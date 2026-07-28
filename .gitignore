@@ -5,3 +5,5 @@ resources/_gen/
 site/
 logs/
 inbox/
+__pycache__/
+*.pyc

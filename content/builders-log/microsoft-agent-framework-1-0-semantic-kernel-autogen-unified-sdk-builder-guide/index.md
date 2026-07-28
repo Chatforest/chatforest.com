@@ -1,13 +1,14 @@
 ---
 title: "Microsoft Agent Framework 1.0: One SDK to Replace Semantic Kernel and AutoGen"
 date: 2026-06-01
+sources_audited: 2026-07-28
 description: "Microsoft Agent Framework 1.0 went GA April 3, 2026 — a unified open-source SDK that merges Semantic Kernel and AutoGen into a single .NET and Python framework with native MCP, six model providers, and five multi-agent orchestration patterns. If you're building on either predecessor, here's what you need to know."
 content_type: "Builder's Log"
 categories: ["Agent Infrastructure", "Microsoft", "Developer Tools", "Multi-Agent Systems"]
 tags: ["microsoft", "agent-framework", "semantic-kernel", "autogen", "multi-agent", "mcp", "a2a", "dotnet", "python", "orchestration", "builder-guide"]
 ---
 
-On April 3, 2026, Microsoft shipped Microsoft Agent Framework 1.0 — a production-ready, open-source SDK that absorbs both Semantic Kernel and AutoGen into a single framework. If you've been building on either of those, the clock is running. Semantic Kernel v1.x will be maintained for one year post-GA, then deprecated. AutoGen as a standalone project enters maintenance mode now.
+On [April 3, 2026, Microsoft shipped Microsoft Agent Framework 1.0](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) — a production-ready, open-source SDK that absorbs both Semantic Kernel and AutoGen into a single framework. If you've been building on either of those, the clock is running. Microsoft has committed to [maintaining Semantic Kernel v1.x — critical bug fixes and security patches — for at least one year post-GA](https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/) (through at least April 2027), with continued support beyond that contingent on how much usage it still has. AutoGen [entered maintenance mode back in October 2025](https://github.com/microsoft/autogen) — bug fixes and security patches only, no new features, community-managed going forward — well before Agent Framework's GA.
 
 This is not a rename. The programming model changed. Here's what you're actually getting.
 
@@ -15,11 +16,7 @@ This is not a rename. The programming model changed. Here's what you're actually
 
 Microsoft Agent Framework is an open-source (.NET + Python) SDK for building, orchestrating, and deploying AI agents and multi-agent workflows. It ships under the MIT license. The official docs live at [learn.microsoft.com/en-us/agent-framework](https://learn.microsoft.com/en-us/agent-framework/overview/) and the source is at [github.com/microsoft/agent-framework](https://github.com/microsoft/agent-framework).
 
-The architecture layers look like this:
-
-- **Foundation layer**: Semantic Kernel's enterprise machinery — session state, type safety, middleware pipeline, telemetry, prompt management
-- **Orchestration layer**: AutoGen-style multi-agent graph workflows built on top of that foundation
-- **Protocol layer**: Native MCP for tool access; A2A (Agent-to-Agent) for cross-runtime agent collaboration
+The architecture combines the two predecessors' strengths: [it "combines AutoGen's simple agent abstractions with Semantic Kernel's enterprise features — session-based state management, type safety, middleware, telemetry — and adds graph-based workflows for explicit multi-agent orchestration,"](https://learn.microsoft.com/en-us/agent-framework/overview/) plus a protocol layer with native MCP for tool access and A2A (Agent-to-Agent) support for cross-runtime agent collaboration.
 
 The result is that you get Semantic Kernel's production-grade reliability with AutoGen's multi-agent expressiveness. Previously you had to choose.
 
@@ -46,7 +43,7 @@ dotnet add package Azure.Identity
 
 ## Six Providers, One-Line Swap
 
-Agent Framework ships first-class support for six model providers:
+[Agent Framework ships first-party service connectors for Microsoft Foundry, Azure OpenAI, OpenAI, Anthropic Claude, Amazon Bedrock, Google Gemini, and Ollama](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) — six of those (excluding Foundry, which is Microsoft's own hosting platform rather than a distinct model source) are broken out below:
 
 | Provider | Python key | .NET package |
 |---|---|---|
@@ -89,7 +86,7 @@ Tools use standard Pydantic field annotations — the same pattern you likely al
 
 ## Multi-Agent Workflows
 
-Agent Framework ships five orchestration patterns stable at 1.0:
+[Agent Framework ships five orchestration patterns stable at 1.0](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/): sequential, concurrent, handoff, group chat, and Magentic-One.
 
 ### Sequential
 
@@ -154,7 +151,7 @@ The `termination_condition` can be `"consensus"`, `"max_rounds"`, or a custom ca
 
 ### Magentic-One
 
-The research-derived pattern from Microsoft Research — a generalist agent that dynamically recruits specialists:
+[Magentic orchestration is designed based on the Magentic-One system invented by AutoGen](https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/magentic) — a generalist manager agent that dynamically recruits and coordinates specialists:
 
 ```python
 from agent_framework.workflows import MagenticOneWorkflow
@@ -170,12 +167,12 @@ Magentic-One handles task decomposition, specialist assignment, and integration 
 
 ## All Patterns Support
 
-Every orchestration pattern ships with:
+[Workflows ship with checkpointing, streaming, human-in-the-loop, and time-travel support](https://github.com/microsoft/agent-framework):
 
 - **Streaming**: Token-by-token output across the full agent graph
 - **Checkpointing**: Pause state to persistent storage, resume from failure
-- **Human-in-the-loop**: Insert approval gates anywhere in the workflow
-- **Pause/resume**: Long-running workflows can suspend and wake on external events
+- **Human-in-the-loop**: Insert approval gates anywhere in the workflow (the [Magentic pattern's plan-review flow](https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/magentic) is a concrete example — a human can approve or send back the manager's plan before execution)
+- **Pause/resume**: Long-running workflows can suspend and resume from a saved checkpoint
 
 Checkpointing matters for agents that run for minutes or hours. The framework persists state automatically at configurable intervals or on-demand.
 
@@ -196,13 +193,13 @@ agent = Agent(
 )
 ```
 
-When using Agent 365 for enterprise deployments, your MCP tool inventory is registered in the governance registry automatically. This connects directly to the Agent 365 article we published on May 22.
+When using Agent 365 for enterprise deployments, MCP servers aren't auto-discovered — a developer registers the server (via the [Agent 365 CLI](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-tools-for-agent?view=o365-worldwide)), and an IT admin has to review and approve it in the Microsoft 365 admin center before it shows up as available in the governance registry. This connects directly to the [Agent 365 article we published on May 22](/builders-log/microsoft-agent-365-enterprise-governance-layer/), which also covers Agent 365's June detection expansion.
 
 ## A2A: Cross-Runtime Agent Collaboration
 
 Agent-to-Agent (A2A) protocol support lets agents built in Agent Framework communicate with agents running in other frameworks — LangChain, CrewAI, custom implementations — using structured protocol-driven messaging.
 
-Full A2A 1.0 spec compliance is listed as "coming soon" in the 1.0 release notes. What ships at 1.0 is the A2A client and server primitives. The full spec alignment follows in a minor release.
+[Full A2A 1.0 spec compliance is listed as "coming soon" in the 1.0 release notes](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/). What ships at 1.0 is the A2A client and server primitives. The full spec alignment follows in a minor release.
 
 If A2A interop is critical to your deployment, validate the specific protocol version your counterpart framework supports before committing to this pattern.
 
@@ -210,15 +207,15 @@ If A2A interop is critical to your deployment, validate the specific protocol ve
 
 ### From Semantic Kernel
 
-Microsoft is maintaining Semantic Kernel v1.x for at least one year post-GA (through at least April 2027). Migration is phased — you do not need to rip out your entire Semantic Kernel codebase at once.
+Microsoft is [maintaining Semantic Kernel v1.x for at least one year post-GA](https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/) (through at least April 2027). Migration is phased — you do not need to rip out your entire Semantic Kernel codebase at once.
 
-The migration model is additive: you can run Agent Framework on top of your existing Semantic Kernel setup and migrate service by service. The official migration guide is at `learn.microsoft.com/en-us/agent-framework/migrate/semantic-kernel`.
+The migration model is additive: you can run Agent Framework on top of your existing Semantic Kernel setup and migrate service by service. The [official migration guide](https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/) walks through the concrete API changes.
 
-High-level changes:
-- `IKernel` → `Agent` (SK's kernel is absorbed into the agent's session context)
-- `Plugins` → `tools` (same Pydantic/attribute annotation, different class path)
-- `ISemanticFunction` → standard async Python/C# methods decorated with `@tool`
-- Middleware pipelines carry over with minor namespace changes
+High-level changes, [per that guide](https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel/):
+- Every SK agent depends on a `Kernel` instance; Agent Framework agents don't need one — creation is simplified to `chat_client.as_agent(...)` / `chatClient.AsAIAgent(...)`
+- SK's `[KernelFunction]`-decorated methods wrapped in a `Plugin` and added to a `Kernel` become plain functions (optionally decorated with `@tool`) passed directly to the agent's `tools` parameter — no plugin wrapper or kernel required
+- SK's per-provider agent classes (`ChatCompletionAgent`, `OpenAIAssistantAgent`, `AzureAIAgent`) consolidate into one type (`ChatClientAgent` in .NET, `Agent` in Python)
+- Method names shift from `invoke`/`InvokeAsync` to `run`/`RunAsync`, returning a single `AgentResponse` instead of streaming multiple message objects
 
 ### From AutoGen
 
@@ -232,15 +229,15 @@ Practical migration approach:
 3. Rewrite the agents individually — they're simpler in Agent Framework since the orchestration is handled by the workflow, not by agents sending messages to each other
 4. Test streaming and checkpointing behavior — these will differ from AutoGen's async conversation flow
 
-The official AutoGen migration guide is at `learn.microsoft.com/en-us/agent-framework/migrate/autogen`.
+The [official AutoGen migration guide](https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/) has the full walkthrough.
 
-## Windows Agent Runtime
+## Windows Execution: Microsoft Execution Containers
 
-At Microsoft Build 2026 on June 2, Microsoft announced the Windows Agent Runtime (WAR) — a background service that manages agent lifecycle, memory, and permissions on Windows 11 devices.
+At Microsoft Build 2026 on June 2, Microsoft announced [Microsoft Execution Containers (MXC)](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/) — a policy-driven, OS-enforced execution layer for agents on Windows and WSL. Developers declare what an agent can access (files, network, per policies configured in Intune), and MXC enforces those boundaries at runtime through process and session isolation, binding each agent to a strong user identity.
 
-Agent Framework 1.0 is the SDK that runs *on top of* WAR for Windows-native deployments. WAR handles the OS-level concerns (process isolation, credential storage, Intune policy enforcement); Agent Framework handles the application-level concerns (workflow logic, tool calls, model routing).
+Agent Framework 1.0 is the SDK layer that builds and runs the agent logic; MXC is the OS-level layer that contains and governs what that agent can touch once it's running on a Windows device. They're complementary, not competing: Agent Framework handles workflow logic, tool calls, and model routing, while MXC handles process isolation and policy enforcement.
 
-If you're building agents that run on Windows enterprise devices, expect WAR integration to become a deployment requirement as Agent 365 governance expands — see our earlier coverage of Agent 365's June detection expansion.
+If you're building agents that run on Windows enterprise devices, expect MXC-based containment to become a deployment consideration as Agent 365 governance expands — see our [earlier coverage of Agent 365](/builders-log/microsoft-agent-365-enterprise-governance-layer/), including its June detection expansion.
 
 ## Builder Checklist
 

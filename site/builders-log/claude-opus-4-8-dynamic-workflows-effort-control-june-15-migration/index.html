@@ -113,17 +113,17 @@
 </tr>
 </tbody>
 </table>
-<p>The alignment improvements matter for code review and audit pipelines:</p>
+<p>(Scores per <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic&rsquo;s Opus 4.8 announcement</a> and the <a href="https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf">Opus 4.8 system card</a>; independently corroborated by benchmark trackers including <a href="https://llm-stats.com/blog/research/claude-opus-4-8-launch">llm-stats.com</a>.)</p>
+<p>The alignment improvements matter for code review and audit pipelines, per the <a href="https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf">system card</a> and <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic&rsquo;s launch post</a>:</p>
 <ul>
-<li><strong>4x fewer unreported code defects</strong> vs. Opus 4.7</li>
-<li><strong>First Claude model to score 0% on uncritically reporting flawed results</strong> — it will surface problems rather than smooth over them</li>
-<li><strong>17x fewer dishonest agentic code summaries</strong> compared to Sonnet 4.6</li>
-<li><strong>10x+ reduction in overconfidence</strong> — more calibrated uncertainty surfacing</li>
+<li><strong>4x fewer unreported code defects</strong> vs. Opus 4.7 — Anthropic describes Opus 4.8 as &ldquo;around four times less likely than its predecessor to allow flaws in code it has written to pass unremarked&rdquo;</li>
+<li><strong>First Claude model to score 0% on uncritically reporting flawed results</strong> vs. Opus 4.7 — it will surface problems rather than smooth over them</li>
+<li><strong>10x+ reduction in overconfidence</strong> vs. Opus 4.7 — more calibrated uncertainty surfacing</li>
 </ul>
 <p>That last point has a practical implication. If you have a pipeline that treats high-confidence Claude outputs as automatically actionable, Opus 4.8 will surface uncertainty more visibly than 4.7. That is a feature for code review use cases and a friction point for confidence-dependent generation pipelines.</p>
 <hr>
 <h2 id="effort-control">Effort Control</h2>
-<p>Effort control is the simpler of the two new features. All five levels are available via the API today, no beta header required.</p>
+<p>Effort control is the simpler of the two new features. All five levels are available via the <a href="https://platform.claude.com/docs/en/build-with-claude/effort">API today, no beta header required</a>.</p>
 <p>The parameter is <code>output_config.effort</code> in the Messages API request body:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
     model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-opus-4-8&#34;</span>,
@@ -167,16 +167,16 @@
 </tr>
 </tbody>
 </table>
-<p>Omitting the parameter entirely gives you <code>high</code>. Anthropic recommends starting at <code>xhigh</code> for agentic coding workloads.</p>
+<p>Omitting the parameter entirely gives you <code>high</code>. <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-4-8">Anthropic recommends starting at <code>xhigh</code> for coding and agentic use cases</a>.</p>
 <h3 id="no-manual-extended-thinking">No Manual Extended Thinking</h3>
-<p>This is the most common migration gotcha. Opus 4.8 uses <strong>adaptive thinking only</strong>. If you set <code>thinking: {type: &quot;enabled&quot;, budget_tokens: N}</code>, you will get a 400 error. The correct parameter is:</p>
+<p>This is the most common migration gotcha. <a href="https://platform.claude.com/docs/en/about-claude/models/migration-guide">Opus 4.8 uses <strong>adaptive thinking only</strong></a>. If you set <code>thinking: {type: &quot;enabled&quot;, budget_tokens: N}</code>, you will get a 400 error. The correct parameter is:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">thinking<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;adaptive&#34;</span>}
 </code></pre></div><p>The model decides when to think and how deeply based on the request and your effort level. You influence thinking depth by raising or lowering effort, not by setting a token budget directly.</p>
 <h3 id="no-sampling-parameters">No Sampling Parameters</h3>
-<p>Also returns 400 errors on Opus 4.8 (and Opus 4.7): setting <code>temperature</code>, <code>top_p</code>, or <code>top_k</code> to non-default values. This applies to the entire Opus 4.x generation. Steer response behavior via prompting instead.</p>
+<p>Also returns 400 errors on Opus 4.8 (and Opus 4.7): setting <code>temperature</code>, <code>top_p</code>, or <code>top_k</code> to non-default values. Per <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">Anthropic&rsquo;s model deprecations page</a>, this restriction applies to Claude Opus 4.7 and all later models — not to earlier Opus 4.x releases like 4.5 or 4.6. Steer response behavior via prompting instead.</p>
 <hr>
 <h2 id="dynamic-workflows">Dynamic Workflows</h2>
-<p>Dynamic Workflows is in <strong>research preview</strong> and available on <strong>Enterprise, Team, and Max plans only</strong> via Claude Code. It is not available through the API yet.</p>
+<p>Dynamic Workflows launched in <a href="https://www.anthropic.com/news/claude-opus-4-8"><strong>research preview</strong>, available on <strong>Enterprise, Team, and Max plans only</strong> via Claude Code</a>; it was not available through the API at launch.</p>
 <p>The feature lets Claude plan a complex task, fan it out across parallel subagents within a single session, run adversarial verification passes, and confirm results against your test suite before reporting back. You do not write orchestration code — Claude writes its own orchestration scripts at planning time.</p>
 <p>In practice, this means:</p>
 <ul>
@@ -184,13 +184,13 @@
 <li><strong>Parallelized research</strong>: independent agents attack problems from different angles and report back for synthesis</li>
 <li><strong>Multi-stage verification pipelines</strong>: a checking pass runs before any output reaches you</li>
 </ul>
-<p>In Claude Code, this surfaces as <strong>&ldquo;ultracode&rdquo; mode</strong> — a UI label for the combination of <code>xhigh</code> effort and Dynamic Workflow permission. For builders who want to replicate the behavior in their own harnesses, Anthropic&rsquo;s docs describe a &ldquo;Build an orchestration mode&rdquo; pattern, but the underlying multi-agent dispatch is not yet fully exposed via the Messages API.</p>
+<p>In Claude Code, this surfaces as <a href="https://code.claude.com/docs/en/workflows"><strong>&ldquo;ultracode&rdquo; mode</strong></a> — a setting combining <code>xhigh</code> effort with automatic workflow orchestration. For builders who want to replicate the behavior in their own harnesses, <a href="https://platform.claude.com/docs/en/build-with-claude/mid-conversation-effort-example">Anthropic&rsquo;s docs describe a &ldquo;Build an orchestration mode&rdquo; pattern</a>, but the underlying multi-agent dispatch is not yet fully exposed via the Messages API.</p>
 <h3 id="the-token-math">The Token Math</h3>
-<p>Dynamic Workflows is intentionally token-intensive. Anthropic&rsquo;s own evaluations recorded approximately 110 million tokens consumed during testing against a 35 million average for comparable tasks without Dynamic Workflows. That is roughly 3x the baseline token consumption.</p>
+<p>Dynamic Workflows is intentionally token-intensive. Anthropic&rsquo;s own documentation is explicit that <a href="https://code.claude.com/docs/en/workflows#cost">&ldquo;a workflow spawns many agents, so a single run can use meaningfully more tokens than working through the same task in conversation&rdquo;</a> — Claude Code flags a run as &ldquo;large&rdquo; once it schedules more than 25 agents or its projected token total passes 1.5 million.</p>
 <p>If you are on an Enterprise plan and considering Dynamic Workflows for production batch workloads, set <code>max_tokens</code> explicitly, profile a representative sample before scaling, and plan for higher per-task costs than your current Opus 4.7 baseline.</p>
 <hr>
 <h2 id="pricing">Pricing</h2>
-<p>Unchanged from Opus 4.7:</p>
+<p><a href="https://platform.claude.com/docs/en/about-claude/pricing">Unchanged from Opus 4.7</a>:</p>
 <table>
 <thead>
 <tr>
@@ -212,30 +212,29 @@
 </tr>
 </tbody>
 </table>
-<p>Prompt cache hits: $0.50/MTok input. Batch API: 50% discount on standard pricing.</p>
-<p>Fast mode delivers approximately 2.5x the throughput at 2x the standard price. Context window is 1M tokens; maximum output is 128k tokens.</p>
-<p><strong>Microsoft Azure Foundry exception:</strong> the context window is capped at 200k tokens on Foundry, regardless of the 1M token limit elsewhere.</p>
+<p><a href="https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching">Prompt cache hits: $0.50/MTok input. Batch API: 50% discount on standard pricing.</a></p>
+<p><a href="https://www.anthropic.com/news/claude-opus-4-8">Fast mode delivers approximately 2.5x the throughput</a> at 2x the standard price. Context window is 1M tokens; maximum output is 128k tokens.</p>
 <hr>
 <h2 id="opus-48-vs-sonnet-46-which-one-to-use">Opus 4.8 vs. Sonnet 4.6: Which One to Use</h2>
 <p>Use <strong>Opus 4.8</strong> when:</p>
 <ul>
 <li>Running agentic coding sessions over 30 minutes or involving large codebases</li>
 <li>You need the highest alignment guarantees — code review, audit pipelines, compliance-sensitive generation</li>
-<li>Working with computer-use agents (84% on Online-Mind2Web)</li>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-8">Working with computer-use agents (84% on Online-Mind2Web)</a></li>
 <li>Handling legal, finance, or professional-domain tasks</li>
-<li>Processing multimodal workloads with large documents or diagrams (Databricks reported approximately 61% token cost reduction in these workloads vs. prior Opus)</li>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-8">Processing multimodal workloads with large documents or diagrams (Databricks reported approximately 61% token cost reduction in these workloads vs. prior Opus)</a></li>
 </ul>
 <p>Use <strong>Sonnet 4.6</strong> when:</p>
 <ul>
 <li>Single-shot prompts or short context tasks</li>
 <li>Latency is a primary constraint (Sonnet 4.6 is faster)</li>
-<li>Cost is the deciding factor: Sonnet 4.6 is $3/$15 per MTok vs. $5/$25 for Opus 4.8</li>
+<li><a href="https://platform.claude.com/docs/en/about-claude/pricing">Cost is the deciding factor: Sonnet 4.6 is $3/$15 per MTok vs. $5/$25 for Opus 4.8</a></li>
 <li>High-volume pipelines: classification, generation, summarization</li>
-<li>You need extended thinking with an explicit token budget (<code>budget_tokens</code>) — Sonnet 4.6 still supports it</li>
+<li><a href="https://platform.claude.com/docs/en/about-claude/models/migration-guide">You need extended thinking with an explicit token budget (<code>budget_tokens</code>) — Sonnet 4.6 still supports it</a>, unlike Opus 4.8</li>
 </ul>
 <hr>
 <h2 id="june-15-migration-what-to-update">June 15 Migration: What to Update</h2>
-<p>On <strong>June 15, 2026</strong>, the following model IDs stop accepting requests:</p>
+<p>On <strong>June 15, 2026</strong>, the following model IDs <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">stop accepting requests</a>:</p>
 <table>
 <thead>
 <tr>
@@ -255,8 +254,8 @@
 </tbody>
 </table>
 <p>Both were deprecated on April 14, 2026. After June 15, calls using either ID return an error. The API format, authentication, and response structure are unchanged — the migration is a string replacement in your model configuration.</p>
-<p>If you are also running <code>claude-opus-4-0</code> or <code>claude-sonnet-4-0</code> (the version aliases), those alias to the deprecated <code>-20250514</code> IDs and retire on the same date. Update those too.</p>
-<p>The official Anthropic model deprecations page also lists <code>claude-3-opus-20240229</code> (Claude Opus 3) as now recommending <code>claude-opus-4-8</code> as its replacement — worth checking if you have legacy Opus 3 references in any older integrations.</p>
+<p>If you are also running <code>claude-opus-4-0</code> or <code>claude-sonnet-4-0</code> (the version aliases), <a href="https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions">those alias to the deprecated <code>-20250514</code> IDs</a> and retire on the same date, since no other snapshot exists for either alias to fall back to. Update those too.</p>
+<p>The <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">official Anthropic model deprecations page</a> also lists <code>claude-3-opus-20240229</code> (Claude Opus 3) as now recommending <code>claude-opus-4-8</code> as its replacement — worth checking if you have legacy Opus 3 references in any older integrations.</p>
 <h3 id="finding-hardcoded-model-ids">Finding Hardcoded Model IDs</h3>
 <p>If you manage multiple codebases, a quick sweep:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find hardcoded deprecated model IDs</span>

@@ -3,9 +3,9 @@
 > GitHub switched GitHub Copilot from Premium Request Units to token-metered AI Credits on June 1, 2026. Code completions are still free. Everything agentic now bills at actual compute cost. Here is what changed, what it costs, and what builders should do.
 
 
-GitHub replaced its Premium Request Unit (PRU) billing system with token-metered AI Credits on June 1, 2026. If you use GitHub Copilot for chat, code review, or agent mode, the economics changed today. If you only use code completions and Next Edit Suggestions, nothing changed.
+GitHub [replaced its Premium Request Unit (PRU) billing system with token-metered AI Credits on June 1, 2026](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/). If you use GitHub Copilot for chat, code review, or agent mode, the economics changed today. If you only use [code completions and Next Edit Suggestions, nothing changed](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals).
 
-The short version: GitHub was subsidizing your AI compute by 3–8x under the PRU system. That subsidy ended. You now pay actual token costs, converted to credits at $0.01 per credit. The model catalog expanded significantly, annual plan holders face sharply higher multipliers on expensive models, and there is no longer a "fall back to a cheaper model" escape hatch when you run out of budget.
+The short version: the flat-rate PRU system is gone for new usage. You now pay [actual token costs, converted to credits at $0.01 per credit](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). The model catalog expanded significantly, annual plan holders face sharply higher multipliers on expensive models (see below), and there is [no longer a "fall back to a cheaper model" escape hatch](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) when you run out of budget.
 
 ---
 
@@ -15,7 +15,7 @@ The short version: GitHub was subsidizing your AI compute by 3–8x under the PR
 - Code completions
 - Next Edit Suggestions
 
-**Now metered against AI credits:**
+**[Now metered against AI credits](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals):**
 - Copilot Chat (IDE, github.com, mobile)
 - Copilot CLI
 - Agent mode in VS Code and JetBrains
@@ -23,15 +23,15 @@ The short version: GitHub was subsidizing your AI compute by 3–8x under the PR
 - Copilot Spaces
 - Spark
 - Third-party coding agents integrated via Copilot
-- Code review — and as of June 1, also consumes GitHub Actions minutes for private repos
+- [Code review — and as of June 1, also consumes GitHub Actions minutes for private repos](https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026/)
 
-The billing unit is now actual tokens: input tokens (including cached), output tokens, and tool-call results re-sent as context. One AI credit equals $0.01 USD.
+The billing unit is now actual tokens: [input tokens, output tokens, and cached tokens](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing), priced per model. One AI credit equals $0.01 USD.
 
 ---
 
 ## Credit Allotments Per Plan
 
-GitHub introduced a two-pool structure: **base credits** (guaranteed, match your monthly price 1:1) and **flex allotments** (variable bonus that GitHub can adjust over time). Base credits are consumed first.
+GitHub introduced a [two-pool structure: **base credits** (guaranteed, match your monthly price 1:1) and **flex allotments** (variable bonus that GitHub can adjust over time)](https://docs.github.com/en/copilot/how-tos/manage-and-track-spending/prepare-for-your-move-to-usage-based-billing). Base credits are consumed first.
 
 | Plan | Monthly Price | Base Credits | Flex Allotment | Total Included |
 |------|-------------|-------------|----------------|----------------|
@@ -46,25 +46,24 @@ GitHub introduced a two-pool structure: **base credits** (guaranteed, match your
 | Business | $19/user | 1,900/user |
 | Enterprise | $39/user | 3,900/user |
 
-**Promotional credits (Business and Enterprise, June 1 – September 1, 2026):**
+**[Promotional credits (Business and Enterprise, June 1 – September 1, 2026)](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/):**
 - Business: 3,000 credits/user
 - Enterprise: 7,000 credits/user
 
-When credits run out, usage stops — unlike the old system, where you'd silently fall back to a cheaper included model and keep working. If you want to keep going, you need to set an overage budget.
+[When credits run out, usage stops](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) — unlike the old system, where you'd silently fall back to a cheaper included model and keep working. If you want to keep going, you need to set an overage budget.
 
 ---
 
 ## Model Costs
 
-All costs in USD per million tokens. Multiply by 100 to get credits per million tokens (since $1.00/million = 100 credits/million).
+All costs in USD per million tokens, [per GitHub's published rate card](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). Multiply by 100 to get credits per million tokens (since $1.00/million = 100 credits/million).
 
 **OpenAI models available in Copilot:**
 
 | Model | Input ($/M) | Output ($/M) |
 |-------|------------|-------------|
 | GPT-5 mini / GPT-5.4 nano | $0.20–0.25 | $1.25–2.00 |
-| GPT-4.1 | $2.00 | $8.00 |
-| GPT-5.2 / GPT-5.2-Codex | $1.75 | $14.00 |
+| GPT-5.3-Codex | $1.75 | $14.00 |
 | GPT-5.4 | $2.50 | $15.00 |
 | GPT-5.5 | $5.00 | $30.00 |
 
@@ -84,8 +83,6 @@ All costs in USD per million tokens. Multiply by 100 to get credits per million 
 | Gemini 2.5 Pro / Gemini 3.1 Pro | $1.25–2.00 | $10.00–12.00 |
 | Gemini 3.5 Flash | $1.50 | $9.00 |
 
-**Model access by plan:** Claude Opus models require Pro+ or higher. Claude Sonnet and Google Gemini Pro variants are available on Pro and above.
-
 ---
 
 ## The Agentic Session Problem
@@ -102,30 +99,30 @@ That's 18% of a Pro plan's monthly allotment for one session. Pro plan holders w
 
 For Pro+ holders, the math is better: 7,000 credits ÷ 265 per session = ~26 sessions per month. Still finite, still trackable.
 
-For Enterprise teams with complex long-context sessions and code review enabled, the compounding effect is real. GitHub provides budget controls at four levels (user, cost-center, organization, enterprise), which helps admins set guardrails before bills appear.
+For Enterprise teams with complex long-context sessions and code review enabled, the compounding effect is real. GitHub provides [budget controls at four levels — user, cost center, organization, and enterprise](https://docs.github.com/en/copilot/concepts/billing/budgets-for-usage-based-billing) — which helps admins set guardrails before bills appear.
 
-**Code review** carries an additional cost starting June 1: private-repo reviews now consume GitHub Actions minutes at standard rates, in addition to AI credits. Public repositories are unaffected.
+**Code review** carries an additional cost starting June 1: [private-repo reviews now consume GitHub Actions minutes at standard rates, in addition to AI credits; public repositories are unaffected](https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026/).
 
 ---
 
 ## Annual Plan Holders: What Changed
 
-If you're on an annual Copilot plan, you remain on the legacy PRU system until your plan expires. But GitHub changed the per-model multipliers effective June 1, and several moved sharply higher:
+If you're on an annual Copilot plan, [you remain on the legacy PRU system until your plan expires](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/what-changed-with-billing), but GitHub changed the per-model multipliers effective June 1. [The current multiplier table](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/model-multipliers-for-annual-plans) for annual-plan holders:
 
-| Model | Old Multiplier | New Multiplier | Change |
-|-------|--------------|--------------|--------|
-| Claude Haiku 4.5 | ~1 | 0.33 | cheaper |
-| Claude Sonnet 4.5 | ~3 | 6 | 2× |
-| Claude Sonnet 4.6 | ~3 | 9 | 3× |
-| Claude Opus 4.5 | 7.5 | 15 | 2× |
-| Claude Opus 4.6/4.7/4.8 | 7.5 | 27 | **3.6×** |
-| GPT-5.5 | ~10 | 57 | **5.7×** |
-| Gemini 3.5 Flash | — | 14 | new |
-| Code review | ~13 | 13 | unchanged |
+| Model | Multiplier |
+|-------|--------------|
+| Claude Haiku 4.5 | 0.33 |
+| Claude Sonnet 4.5 | 6 |
+| Claude Sonnet 4.6 | 9 |
+| Claude Opus 4.5 | 15 |
+| Claude Opus 4.6/4.7/4.8 | 27 |
+| GPT-5.5 | 57 |
+| Gemini 3.5 Flash | 14 |
+| Code review | 13 |
 
-The headline number: if you're on an annual Pro+ plan and were using Claude Opus 4.6 heavily, your effective monthly PRU budget for Opus just dropped 3.6x. A session that cost 7.5 PRUs now costs 27.
+The headline number: if you're on an annual Pro+ plan and using Claude Opus 4.6, 4.7, or 4.8, every request against those models now costs 27 premium requests apiece — the highest multiplier on the table.
 
-Annual plan holders can opt into usage-based billing early (with a prorated credit refund), but at renewal, annual plans are being discontinued — monthly plans only going forward.
+[Annual plan holders can switch to a monthly plan early and receive prorated credits for the remaining value of their term](https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/what-changed-with-billing). When a current annual term ends, GitHub automatically downgrades the account to Copilot Free unless the holder has already moved to a paid monthly plan.
 
 ---
 
@@ -137,7 +134,7 @@ Annual plan holders can opt into usage-based billing early (with a prorated cred
 
 **Evaluate model selection deliberately.** The pricing spread between models is large. Gemini 3 Flash at $0.50/M input and $3.00/M output costs about 1/5 of Claude Sonnet on input and 1/5 on output. For lightweight tasks that don't require frontier reasoning — code review comments on obvious issues, docstring generation, simple refactors — routing to a cheaper model conserves credits for the sessions where frontier capability matters.
 
-**Annual plan holders: recalculate your Opus budget.** If you were using Claude Opus 4.6 or 4.7 as your default agent model, run the new multiplier math against your monthly PRU budget before your next billing cycle. The PRU cost just tripled; your budget didn't change.
+**Annual plan holders: recalculate your Opus budget.** If you were using Claude Opus 4.6 or 4.7 as your default agent model, run the new 27x multiplier math against your monthly PRU budget before your next billing cycle. The per-request cost went up; your budget didn't change.
 
 **Enterprise teams: activate budget controls now.** GitHub's four-level budget controls (user, cost-center, org, enterprise) are available now. Without a budget ceiling, individual power users on agent mode can run significant overage charges before anyone notices. Set limits, monitor dashboards in the first billing cycle, then calibrate.
 
@@ -145,13 +142,13 @@ Annual plan holders can opt into usage-based billing early (with a prorated cred
 
 ## Alternatives Worth Reconsidering
 
-The billing change coincides with a moment when the standalone alternatives are more capable than they've ever been. Claude Code is an Anthropic-native terminal agent that runs on your Claude Pro or Claude Max subscription — and it has its own billing split starting June 15, 2026, moving programmatic usage to a separate Agent SDK credit. Cursor runs on its own subscription model with model flexibility. Both offer pricing structures that may work out cheaper for developers whose workflows are primarily agent-mode and long-context sessions, rather than integrated IDE completion.
+The billing change coincides with a moment when the standalone alternatives are more capable than they've ever been. Claude Code is an Anthropic-native terminal agent that runs on your Claude Pro or Claude Max subscription. Cursor runs on its own subscription model with model flexibility. Both offer pricing structures that may work out cheaper for developers whose workflows are primarily agent-mode and long-context sessions, rather than integrated IDE completion.
 
 The right tool depends on your stack integration requirements. If you need GitHub PR workflows, Copilot Workspace, or native GitHub.com integration, Copilot is hard to replace. For terminal-first agentic workflows, the economics now favor comparison shopping.
 
 ---
 
-GitHub's billing change reflects a real infrastructure cost: the flat-pricing model was a growth strategy, not a sustainable unit economics model. At scale, subsidizing 3–8x of actual compute is not viable. The move to token billing aligns developer incentives with actual compute costs — which is probably healthy for the ecosystem long-term, even if it stings for power agentic users in the short term.
+GitHub's billing change reflects a real infrastructure cost: the flat-pricing model was a growth strategy, not a sustainable unit economics model for agentic workloads whose token consumption varies by orders of magnitude between sessions. The move to token billing aligns developer incentives with actual compute costs — which is probably healthy for the ecosystem long-term, even if it stings for power agentic users in the short term.
 
 The documentation is in GitHub's [models and pricing reference](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing) and the [usage-based billing guides](https://docs.github.com/en/copilot/how-tos/manage-and-track-spending/prepare-for-your-move-to-usage-based-billing). The full billing announcement is at the [GitHub Blog](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/).
 

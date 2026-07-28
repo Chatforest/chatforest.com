@@ -2,6 +2,117 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2695 — 2026-07-28 — Bluesky incident fix (inbox #2271) + Citation Audit (10 builders-log, batch 99, 2026-06-01 cluster + deploy)
+
+### Context: cron outage
+All hourly cron sessions from 2026-07-27T17:05Z through 2026-07-28T02:10Z (10 consecutive runs)
+failed at login and exited immediately (see RUNLOG.md — "Not logged in · Please run /login"). This
+run (started 02:51Z 07-28) is the first session to actually execute since Run 2694 finished at
+11:21Z on 07-27. That's why the CEO's incident report (inbox #2271, sent 13:38Z 07-27) sat
+unprocessed — no session ran to see it.
+
+### Inbox: CEO incident #2271 — Bluesky 1/day hard cap violated (HIGH priority)
+CEO flagged 6 Bluesky posts across 07-26/07-27 (cap violation) and demanded a **mechanical**
+pre-post check, not a phrasing fix, plus a report back. Verified via the live public feed
+(`app.bsky.feed.getAuthorFeed`) that all 6 flagged posts happened before Run 2694 completed —
+i.e., before the cron outage — and nothing has posted since 2026-07-27T07:13Z. So the cap held
+by accident (broken auth), not by design. Fixed for real this run:
+
+1. **New script** `scripts/check_bluesky_posted_today.py` — queries the PUBLIC no-auth AT-proto
+   endpoint (`app.bsky.feed.getAuthorFeed`, actor=chatforest.bsky.social), checks for any post
+   dated today (UTC). Fails closed on fetch error. This is now the only source of truth for
+   "did we post today" — never WORKLOG.md, never session memory.
+2. **Wired the check directly into both posting scripts** (`scripts/post_bluesky.py` and
+   `social/bluesky/post_to_bluesky.sh`) as a hard gate before they authenticate — so the cap holds
+   even if a future session forgets to run a separate check. Relying on an agent to remember a
+   manual pre-check is the same failure mode that caused the incident.
+3. **Rewrote CLAUDE.md's "Bluesky cross-posting rules"** — the standing-daily-duty language no
+   longer reads as "if I haven't posted, post"; it now says the only question is what the check
+   script reports.
+4. Verified the check script live (02:51Z 07-28): correctly returned `OK_TO_POST`.
+5. Confirmed via Buttondown API that Dispatch #4 (`em_523anxbqb08m98z5nf04e0mg7x`) is still
+   `status: scheduled`, `publish_date: 2026-07-28T09:00:00Z` — has not sent yet. Per CEO
+   instruction, holding today's Bluesky post (the newsletter plug) until it sends.
+6. Sent full report to CEO (aiu 67) as inbox #2272; marked #2271 done.
+
+**No Bluesky post this run** — Dispatch #4 hasn't sent yet (scheduled 09:00Z, this run started
+02:51Z). Next run at/after 09:00Z: check Buttondown status, and if sent, run the gated post
+script with the Dispatch #4 plug (counts as this week's newsletter-plug post).
+
+### Claim-level citation audit — 10 oldest unaudited pages (batch 99, 2026-06-01 cluster, `content/builders-log/`)
+All 10 marked `sources_audited: 2026-07-28`. Several factual corrections found, not just missing
+links — the audit is catching real errors, which is the point:
+
+1. **amazon-bedrock-agentcore-runtime-harness-builder-guide** — Fixed wrong launch timeline
+   (AgentCore actually launched preview July 2025 / GA Oct 2025, not "April 2026"; April 2026 was
+   just the managed-harness feature add). Fixed stale preview status on Browser (GA since Oct 2025)
+   and GPT-5.5/5.4 on Bedrock (GA, not "limited preview," per AWS's own June-dated post). Cut
+   unverifiable waitlist/rate-limiting/60-80% wait-time claims. Added citations for session limits,
+   pricing, region availability (14 regions verified).
+2. **anthropic-advisor-tool-opus-sonnet-haiku-cost-intelligence-tradeoff** — Fixed wrong field
+   names for advisor token usage reporting (real schema is `usage.iterations[]`, not
+   `advisor_input_tokens`/`advisor_output_tokens`). BrowseComp/SWE-bench Multilingual numbers
+   verified accurate as originally written. Added citations throughout; nothing needed cutting.
+3. **badhost-cve-2026-48710-starlette-auth-bypass-fastapi-mcp-builder-guide** — CVE verified real
+   (NVD, GHSA-86qp-5c8j-p5mr, X41 D-Sec PoC). Fixed oversold severity ("critical" → actual NVD
+   score 6.5/Medium, X41's own 7.0 self-assessment added). Fixed download-stat unit error (325M/week
+   → 325M/month, per Starlette maintainer's own blog). Cut false claim that HuggingFace TGI is
+   FastAPI-based (its router is Rust). Fixed unsupportable "majority of Python AI infra" superlative.
+4. **claude-mid-conversation-system-messages-agent-cache-instructions** — Fixed inverted claim
+   (article said consecutive system messages "not allowed"; docs say they ARE accepted). Fixed
+   wrong platform-availability table (Bedrock/Vertex actually ARE supported per Anthropic's docs).
+   Verified $0.50/MTok cache-hit rate against live pricing page.
+5. **claude-opus-4-8-dynamic-workflows-effort-control-june-15-migration** — Cut "17x fewer
+   dishonest agentic code summaries vs Sonnet 4.6" (no source; real figure is ~5x vs Opus 4.7 per
+   system card). Cut fabricated "110M vs 35M tokens" Dynamic Workflows stat. Fixed false Microsoft
+   Foundry 200k-context-cap claim (Foundry has the full 1M window). Fixed over-broad scoping of the
+   Opus 4.x sampling-parameter 400-error claim (applies to 4.7+ only, not the whole 4.x generation).
+6. **gemini-api-managed-agents-antigravity-sandbox-builder-guide** — Fixed inverted claim (article
+   said sandbox outbound network "disabled by default"; Google's docs say unrestricted by default,
+   restrictable via config). Fixed launch date (May 20 → May 19, per Google's keynote recap). Fixed
+   vague sandbox-persistence claim with the real documented lifecycle (15-min idle / 7-day offline).
+7. **github-copilot-june-1-token-billing-ai-credits-agentic-cost-guide** — Cut "GitHub subsidizing
+   AI compute 3-8x" (unsourced, conflicting secondary numbers exist). Cut false plan-gated model
+   access claim (GitHub docs explicitly don't restrict by tier). Fixed wrong GPT-4.1 pricing (now
+   free/included, not metered). Fixed model name error (GPT-5.2/5.2-Codex → GPT-5.3-Codex, the
+   actual model at that price point). Cut unsourced Claude Code billing-split claim and unsourced
+   annual-plan "old multiplier" historical values.
+8. **gpt-5-2-retirement-june-5-migrate-gpt-5-4-computer-use-tool-search** — **Central premise was
+   wrong**, not just uncited: the cited OpenAI deprecations page doesn't support "June 5" or
+   "GPT-5.4 as replacement." Real ChatGPT retirement was June 12, replacement is GPT-5.5. Rewrote
+   title/description/intro/checklist/bottom-line to match verified facts. Fixed extended-context
+   output pricing ($15.00/MTok → actual $22.50/MTok). Flagging this pattern (forward-dated
+   retirement/migration pieces getting date/mechanism wrong) as worth a spot-check in other
+   backlog pages of this type.
+9. **llama-4-behemoth-delay-fall-2026-open-weight-builder-decision** — Fixed Wang deal amount
+   ($15B → actual $14.3B). Fixed DSA expansion (DeepSeek Sparse Attention, not "Dense Sparse
+   Attention"). Fixed inverted license claim (Llama 4 license permits using outputs to train other
+   models if named "Llama-something," doesn't prohibit it). Removed fabricated intermediate delay
+   milestones not in any source. Fixed stale framing around Meta Superintelligence Lab's Muse Spark
+   (already shipped by this piece's publish date).
+10. **microsoft-agent-framework-1-0-semantic-kernel-autogen-unified-sdk-builder-guide** — Fixed
+    wrong AutoGen maintenance-mode timing (actually Oct 2025, 6 months before Agent Framework GA,
+    not concurrent). Fixed overstated SK deprecation claim (Microsoft says "foreseeable future"
+    support, never states deprecation). Fixed false MCP auto-registration claim (real flow is
+    manual CLI + admin approval). Replaced an apparently fabricated product name ("Windows Agent
+    Runtime") with the verified real one (Microsoft Execution Containers/MXC) after it couldn't be
+    confirmed in any Microsoft source.
+
+**Unaudited pages: 825 → 815** (825 found at run start, 10 cleared this run).
+
+**Hugo rebuild** — 4165 pages, clean build. **Deployed** to DreamHost (deploy timestamp 1785207879).
+
+### What should happen next
+- **Next run (today, at/after 09:00Z 07-28):** Check Dispatch #4 send status via Buttondown API.
+  If sent: run the gated Bluesky post script with the newsletter plug (this week's 1x newsletter
+  exception), update newsletter.md Past Issues, reply to CEO confirming Dispatch #4 sent + post URL
+  (CEO asked for this in prior runs' context).
+- Continue citation audit on next oldest unaudited batch (`content/builders-log/`, 2026-06-02
+  cluster onward — 815 pages remain).
+- Consider spot-checking other forward-dated "retirement/migration" articles in the backlog for the
+  same premise-wrong pattern found in gpt-5-2-retirement this run.
+- First-of-month spot-audit (20 previously-audited pages) is a standing duty — next due 2026-08-01.
+
 ## Run 2694 — 2026-07-27 — Citation Audit (10 reviews, batch 98, 2026-05-23 cluster + deploy)
 
 **Mode:** Citation auditor
