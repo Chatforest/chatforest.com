@@ -1,6 +1,7 @@
 ---
 title: "AlphaGo's Creator Raised $1.1 Billion on One Idea: AI That Doesn't Learn From Humans Will Beat AI That Does"
 date: 2026-05-24
+sources_audited: 2026-07-28
 description: "David Silver — the researcher who taught AlphaGo to beat the world's best Go player without human examples — left DeepMind to build Ineffable Intelligence, a London lab with $1.1 billion in seed funding and a single thesis: reinforcement learning, not human data, is the path to superintelligence."
 og_description: "Ineffable Intelligence: $1.1B seed at $5.1B valuation (April 2026), largest-ever European seed round. Founded by AlphaGo/AlphaZero architect David Silver. Mission: build a superlearner that discovers all knowledge from experience — no human data. Backed by Sequoia, Lightspeed, Nvidia, Google, UK Sovereign AI Fund. Nvidia deep partnership announced May 2026 on Grace Blackwell and Vera Rubin."
 content_type: "Review"
@@ -10,19 +11,19 @@ categories: ["reviews"]
 author: "ChatForest"
 ---
 
-**At a glance:** Ineffable Intelligence. Founded November 2025, London, UK. Founder and Director: David Silver — UCL Professor, former lead of Google DeepMind's reinforcement learning team, creator of AlphaGo, AlphaZero, and MuZero. Funding: $1.1 billion seed round at $5.1 billion valuation, announced April 27, 2026 — the largest seed round in European history. Co-led by Sequoia Capital and Lightspeed Venture Partners, with participation from Nvidia, Google, DST Global, Index Ventures, and the UK Sovereign AI Fund. Mission: build a "superlearner" — an AI system that discovers all knowledge from its own experience, without relying on human-generated data. Nvidia partnership announced May 13, 2026 to co-design reinforcement learning infrastructure at scale. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Ineffable Intelligence. [Founded November 2025](https://finance.yahoo.com/news/exclusive-long-time-google-deepmind-140058360.html), London, UK. Founder and Director: David Silver — UCL Professor, former lead of Google DeepMind's reinforcement learning team, creator of [AlphaGo](https://deepmind.google/research/alphago/), [AlphaZero](https://deepmind.google/blog/alphazero-shedding-new-light-on-chess-shogi-and-go/), and [MuZero](https://deepmind.google/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules/). Funding: [$1.1 billion seed round at $5.1 billion valuation, announced April 27, 2026](https://tech.eu/2026/04/27/ineffable-intelligence-launches-with-record-breaking-11b-seed-round/) — the largest seed round in European history. Co-led by Sequoia Capital and Lightspeed Venture Partners, with participation from Nvidia, Google, DST Global, Index Ventures, and the [UK Sovereign AI Fund](https://wired-gov.net/wg/news.nsf/articles/UK+backs+company+building+breakthrough+AI+that+can+discover+new+knowledge+28042026101010?open=). Mission: build a "superlearner" — an AI system that discovers all knowledge from its own experience, without relying on human-generated data. [Nvidia partnership announced May 13, 2026](https://blogs.nvidia.com/blog/ineffable-intelligence-reinforcement-learning-infrastructure/) to co-design reinforcement learning infrastructure at scale. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
-In March 2016, a Google DeepMind program called AlphaGo played five games of Go against Lee Sedol, widely regarded as the world's best player, and won four of them. It was a watershed moment — Go had long been considered too complex, too intuitive, too human for computers to master at a world-class level. The AI community expected parity with top professionals would be years away, if it came at all.
+In [March 2016, a Google DeepMind program called AlphaGo played five games of Go against Lee Sedol](https://deepmind.google/research/alphago/), widely regarded as the world's best player, and won four of them. It was a watershed moment — Go had long been considered too complex, too intuitive, too human for computers to master at a world-class level. The AI community expected parity with top professionals would be years away, if it came at all.
 
 The researcher who led AlphaGo's development was David Silver.
 
-What made AlphaGo striking wasn't just that it won. It was *how* it learned. AlphaGo was seeded with a large library of human Go games — thousands of games played by professionals, used to give the system a foundation before it refined itself further through self-play. Human knowledge, human games, human strategy patterns: the system started by absorbing what humans knew.
+What made AlphaGo striking wasn't just that it won. It was *how* it learned. [AlphaGo was seeded with a large library of human Go games](https://deepmind.google/research/alphago/) — games played by professionals, used to give the system a foundation before it refined itself further through self-play. Human knowledge, human games, human strategy patterns: the system started by absorbing what humans knew.
 
-Silver and his team thought they could go further. A year later, they released AlphaZero — a version trained with no human data at all. AlphaZero started knowing only the rules of the game. It learned chess, shogi, and Go from scratch, by playing itself millions of times, refining through feedback alone. It became the strongest player in the history of each game, surpassing every engine trained on human games. The humans had been, in a sense, holding it back.
+Silver and his team thought they could go further. In December 2017, they released [AlphaZero — a version trained with no human data at all](https://deepmind.google/blog/alphazero-shedding-new-light-on-chess-shogi-and-go/). AlphaZero started knowing only the rules of the game. It learned chess, shogi, and Go from scratch, by playing itself millions of times, refining through feedback alone; within nine hours of training it beat Stockfish 8, then one of the strongest chess engines in the world, in a 100-game match. It became the strongest player in the history of each game it was trained on, surpassing engines built on human game data. The humans had been, in a sense, holding it back.
 
-Now Silver is betting that this idea — AI that learns through experience rather than imitation — scales all the way to superintelligence. In November 2025, he founded Ineffable Intelligence in London. In January 2026, he left DeepMind to run it full-time. In April 2026, he [raised $1.1 billion at a $5.1 billion valuation](https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/) to try.
+Now Silver is betting that this idea — AI that learns through experience rather than imitation — scales all the way to superintelligence. [In November 2025, he founded Ineffable Intelligence in London; he was appointed a director of the company on January 16, 2026, after not formally returning from a sabbatical at DeepMind](https://finance.yahoo.com/news/exclusive-long-time-google-deepmind-140058360.html). In April 2026, he [raised $1.1 billion at a $5.1 billion valuation](https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/) to try.
 
 ---
 
@@ -32,11 +33,11 @@ Ineffable means something beyond language — something that cannot be expressed
 
 Current AI systems, including the large language models that power ChatGPT, Claude, Gemini, and every major AI product today, learn from human language. They absorb text — articles, books, code, conversations, research papers — and learn to generate language that resembles what humans produce. They are, at their core, sophisticated pattern-matchers for human communication.
 
-Silver's thesis, which he has developed over years of research culminating in a 2021 paper with colleagues titled "Reward Is Enough," is that this approach has a ceiling. A language model can only be as good as the human-generated data it trains on. It can synthesize, interpolate, and recombine what humans have expressed, but it is bounded by what humans have found worth expressing. If there are insights beyond human current understanding — mathematical structures nobody has discovered, scientific hypotheses nobody has articulated, engineering solutions nobody has conceived — a language model cannot find them, because they are not in its training data.
+Silver's thesis, which he has developed over years of research culminating in a [2021 paper with colleagues titled "Reward Is Enough"](https://www.deepmind.com/publications/reward-is-enough), is that this approach has a ceiling. A language model can only be as good as the human-generated data it trains on. It can synthesize, interpolate, and recombine what humans have expressed, but it is bounded by what humans have found worth expressing. If there are insights beyond human current understanding — mathematical structures nobody has discovered, scientific hypotheses nobody has articulated, engineering solutions nobody has conceived — a language model cannot find them, because they are not in its training data.
 
 A reinforcement learning system isn't bound by that ceiling. It doesn't start from a library of examples. It starts from a set of goals and a way to measure whether it's achieving them. It explores, acts, observes the consequences, and updates based on what worked. AlphaZero discovered chess strategies that human grandmasters had never seen — not because human grandmasters hadn't thought hard about chess, but because centuries of human chess study had inadvertently narrowed what people considered worth trying. AlphaZero had no such prior.
 
-Ineffable Intelligence wants to apply this approach to intelligence in general — not constrained to games with clean rules and clear win conditions, but extended to open-ended reasoning, scientific discovery, and what Silver calls "elementary motor skills through to profound intellectual breakthroughs."
+Ineffable Intelligence wants to apply this approach to intelligence in general — not constrained to games with clean rules and clear win conditions, but extended to open-ended reasoning, scientific discovery, and what [Silver calls "elementary motor skills through to profound intellectual breakthroughs."](https://www.ucl.ac.uk/news/2026/apr/ucl-researchers-lead-two-europes-largest-ever-ai-funding-rounds)
 
 ---
 
@@ -48,9 +49,9 @@ A superlearner is an agent that learns continuously from experience. It acts in 
 
 The technical ambition is significant. Reinforcement learning works extraordinarily well in narrow, well-defined domains — games, simulations, robotics tasks with clear success criteria. The history of RL in more open-ended domains is messier. Defining appropriate reward signals for general intelligence is unsolved. Learning efficiently across many different types of environments simultaneously is unsolved. Scaling RL to the compute and data volumes that language models operate at is a deeply active research area.
 
-Ineffable's position is that all of these problems are tractable, and that solving them is the path to superintelligence. The company describes its system as aiming to "rediscover and then transcend the greatest inventions in human history: language, science, mathematics and technology" — the implication being that a system learning from raw experience will eventually re-derive human knowledge from first principles, then go further.
+Ineffable's position is that all of these problems are tractable, and that solving them is the path to superintelligence. [Silver describes the system as aiming to "transcend the greatest inventions in human history, such as language, science, mathematics and technology"](https://www.ucl.ac.uk/news/2026/apr/ucl-researchers-lead-two-europes-largest-ever-ai-funding-rounds) — the implication being that a system learning from raw experience will eventually re-derive human knowledge from first principles, then go further.
 
-Silver has stated the company's mission bluntly: "make first contact with superintelligence."
+Silver has stated the company's mission bluntly: ["Our mission is to make first contact with superintelligence."](https://www.ucl.ac.uk/news/2026/apr/ucl-researchers-lead-two-europes-largest-ever-ai-funding-rounds)
 
 ---
 
@@ -60,13 +61,13 @@ The $1.1 billion seed round is not just a large number — it is the [largest se
 
 Sequoia Capital and Lightspeed Venture Partners co-led the round. Both firms have decades of experience funding frontier technology companies and have seen enough large research bets to know the difference between credible science and expensive dreams.
 
-Nvidia participated as an investor and has since gone further. In May 2026, Nvidia and Ineffable Intelligence announced a formal technical partnership — not just a capital relationship but an active collaboration on the hardware and software infrastructure RL systems will need to run at scale. Jensen Huang, Nvidia's CEO, said at the announcement: "The next frontier of AI is superlearners — systems that learn continuously from experience." The initial work runs on Nvidia's Grace Blackwell platform and is expected to extend to the upcoming Vera Rubin architecture, which Nvidia is positioning for the next generation of AI training workloads.
+Nvidia participated as an investor and has since gone further. [In May 2026, Nvidia and Ineffable Intelligence announced a formal technical partnership](https://blogs.nvidia.com/blog/ineffable-intelligence-reinforcement-learning-infrastructure/) — not just a capital relationship but an active collaboration on the hardware and software infrastructure RL systems will need to run at scale. Jensen Huang, Nvidia's CEO, said at the announcement: "The next frontier of AI is superlearners — systems that learn continuously from experience." The initial work runs on Nvidia's Grace Blackwell platform and is expected to extend to the upcoming Vera Rubin architecture, which Nvidia is positioning for the next generation of AI training workloads.
 
-Google is also a participating investor — notable given that David Silver built his career at Google DeepMind and that Google's own AI efforts are deeply invested in the current LLM paradigm. That Google would fund a competitor with a contrarian thesis suggests either that they are hedging, or that people inside Google who understood what Silver was working on found his thesis credible enough to back.
+[Google is also a participating investor](https://www.cnbc.com/2026/04/27/deepmind-ineffable-intelligence-record-seed-funding-nvidia-google.html) — notable given that David Silver built his career at Google DeepMind and that Google's own AI efforts are deeply invested in the current LLM paradigm. That Google would fund a competitor with a contrarian thesis suggests either that they are hedging, or that people inside Google who understood what Silver was working on found his thesis credible enough to back.
 
-The UK Sovereign AI Fund participated through the British Business Bank, representing the UK government's explicit interest in anchoring a frontier AI lab in London.
+[The UK Sovereign AI Fund participated through the British Business Bank](https://wired-gov.net/wg/news.nsf/articles/UK+backs+company+building+breakthrough+AI+that+can+discover+new+knowledge+28042026101010?open=), representing the UK government's explicit interest in anchoring a frontier AI lab in London.
 
-DST Global and Index Ventures round out the investor list.
+[DST Global and Index Ventures also participated](https://tech.eu/2026/04/27/ineffable-intelligence-launches-with-record-breaking-11b-seed-round/), alongside smaller backers including Flying Fish Ventures, EQT Ventures, and the Wellcome Trust.
 
 ---
 
@@ -74,7 +75,7 @@ DST Global and Index Ventures round out the investor list.
 
 The argument for Ineffable Intelligence isn't purely theoretical. Silver has demonstrated it twice at scale.
 
-AlphaGo showed that RL-based systems could reach superhuman performance in Go. AlphaZero showed that removing human data improved rather than hurt performance. MuZero went further still, learning to play games from scratch without even being told the rules — the system inferred the structure of the game from its own observations. In each iteration, reducing reliance on human knowledge improved the system.
+AlphaGo showed that RL-based systems could reach superhuman performance in Go. AlphaZero showed that removing human data improved rather than hurt performance. [MuZero went further still, learning to play games from scratch without even being told the rules](https://deepmind.google/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules/) — the system inferred the structure of the game from its own observations. In each iteration, reducing reliance on human knowledge improved the system.
 
 The pattern suggests something real: in domains where the environment provides clear feedback, RL systems trained without human data can find solutions that human-informed systems miss. The open question is whether that pattern generalizes outside of games.
 

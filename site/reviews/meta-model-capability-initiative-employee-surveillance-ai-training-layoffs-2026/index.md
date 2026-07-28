@@ -3,7 +3,7 @@
 > A leaked Zuckerberg audio clip revealed Meta's Model Capability Initiative — software that tracked employee keystrokes, mouse movements, and screenshots to train its AI models. The disclosure came the same day Meta began its largest 2026 layoffs.
 
 
-On May 20, 2026, roughly 8,000 Meta employees received termination emails. On the same day, [a leaked audio clip surfaced](https://perfectunion.us/) — recorded at an April 30 all-hands meeting — of Mark Zuckerberg explaining why the company had been tracking their computers.
+On May 20, 2026, roughly [8,000 Meta employees received termination emails](https://www.npr.org/2026/05/20/nx-s1-5826917/meta-layoffs-ai-jobs). On the same day, [a leaked audio clip surfaced](https://techstory.in/leaked-audio-reveals-mark-zuckerberg-defending-internal-employee-tracking-to-feed-metas-ai/) — recorded at an April 30 all-hands meeting — of Mark Zuckerberg explaining why the company had been tracking their computers.
 
 The two events were not coincidental. They were consecutive chapters in the same story.
 
@@ -11,7 +11,7 @@ The two events were not coincidental. They were consecutive chapters in the same
 
 ## The Model Capability Initiative
 
-In April 2026, Meta [deployed software called the **Model Capability Initiative**](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/) on U.S. employees' work laptops. The program tracked:
+In April 2026, Meta deployed software called the **Model Capability Initiative** on U.S. employees' work laptops, first reported by [Reuters](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/) and confirmed by [eWeek](https://www.eweek.com/news/meta-employee-monitoring-ai-agents-training/). The program tracked:
 
 - **Keystrokes and mouse movements** — continuous
 - **Click locations** — across approved applications
@@ -24,9 +24,9 @@ The rationale, per internal communications: AI agents require real-world example
 
 ## What Zuckerberg Said
 
-In the leaked audio, obtained by the worker advocacy group More Perfect Union, Zuckerberg explained the program in straightforward terms:
+In the leaked audio, obtained by the worker advocacy group [More Perfect Union](https://x.com/MorePerfectUS/status/2056842597117636890), Zuckerberg explained the program in straightforward terms:
 
-*"AI models learn from watching really smart people do things."*
+*"AI models learn from watching really smart people do things."* ([TechStory](https://techstory.in/leaked-audio-reveals-mark-zuckerberg-defending-internal-employee-tracking-to-feed-metas-ai/); [The Register](https://www.theregister.com/ai-ml/2026/05/22/zuck-defends-monitoring-employees-to-win-ai-race-in-purported-leaked-audio/5245379))
 
 He argued that to build autonomous virtual agents capable of performing knowledge work, the models need real examples of professionals working — not idealized demos, but the actual mouse paths, search patterns, tab-switching, and error-correction behavior of people who are genuinely good at their jobs.
 
@@ -46,7 +46,7 @@ What makes this more than a routine labor dispute is the timeline:
 
 The sequencing is stark. Meta collected behavioral training data from employees throughout April. In the same month, Zuckerberg explained why that data was strategically essential. In May, those employees were let go.
 
-The most uncharitable interpretation: Meta used its workforce as a training data generation facility, then replaced them with the AI those models help power. Zuckerberg's May statement to employees — "AI is not driving these layoffs" — became significantly harder to parse alongside the April audio.
+The most uncharitable interpretation: Meta used its workforce as a training data generation facility, then replaced them with the AI those models help power. Zuckerberg's [statement to employees at a subsequent town hall](https://thenextweb.com/news/zuckerberg-town-hall-meta-layoffs-capex-cost-centres) — "Getting everyone internally to use AI tools and getting to do the work more efficiently is not the thing that's driving layoffs" — became significantly harder to parse alongside the April audio.
 
 ---
 
@@ -54,11 +54,11 @@ The most uncharitable interpretation: Meta used its workforce as a training data
 
 Workers did not accept this quietly.
 
-In U.S. offices, employees distributed flyers citing [**National Labor Relations Act**](https://www.nlrb.gov/guidance/key-reference-materials/national-labor-relations-act) protections and encouraging colleagues to sign a formal petition against the mouse-tracking program. The petition argued the initiative violated employees' right to organize for the improvement of working conditions — and that surveillance of union-organizing discussions via tracked applications could constitute an unfair labor practice.
+In U.S. offices, [employees distributed flyers](https://www.thestar.com.my/tech/tech-news/2026/05/13/exclusive-meta-us-employees-organize-protest-against-mouse-tracking-tech) citing [**National Labor Relations Act**](https://www.nlrb.gov/guidance/key-reference-materials/national-labor-relations-act) protections and encouraging colleagues to sign a formal petition against the mouse-tracking program. The petition argued the initiative violated employees' right to organize for the improvement of working conditions — and that surveillance of union-organizing discussions via tracked applications could constitute an unfair labor practice.
 
 In the United Kingdom, affected employees initiated a **unionization drive** with [United Tech and Allied Workers (UTAW)](https://utaw.tech/), one of the first AI-era collective actions explicitly framed around training data rights.
 
-Legal exposure depends heavily on consent disclosures in employment agreements and local law. California, New York, and Washington all have stricter WARN Act notification thresholds than the federal baseline, creating additional procedural exposure for the May layoffs regardless of the surveillance question.
+Legal exposure depends heavily on consent disclosures in employment agreements and local law. California, New York, and Washington all have [stricter WARN Act notification thresholds than the federal baseline](https://layoffcalculator.com/insights/state-mini-warn-guide), creating additional procedural exposure for the May layoffs regardless of the surveillance question.
 
 ---
 
@@ -97,15 +97,15 @@ The questions the leak surfaces will not stay contained to Meta:
 - What are the limits on workplace surveillance when the data has downstream commercial AI applications?
 - What disclosure obligations exist when surveillance data is used to build products — not just manage performance?
 
-Regulators in the EU are watching this closely. GDPR's legitimate interest provisions and the Article 22 automated decision-making rules create a different legal landscape than U.S. employment law. UK UTAW's unionization drive may be partly motivated by access to those stronger protections.
+Regulators in the EU are watching this closely. GDPR's legitimate interest provisions and the [Article 22 automated decision-making rules](https://gdpr-text.com/read/article-22/) create a different legal landscape than U.S. employment law. UK UTAW's unionization drive may be partly motivated by access to those stronger protections.
 
 ---
 
 ## Context: The 8,000
 
-The employees laid off in May represent roughly 10% of Meta's global workforce. Previous rounds in 2022 and 2023 were framed primarily as cost corrections after the metaverse buildout consumed more capital than planned.
+The employees laid off in May represent [roughly 10% of Meta's global workforce](https://www.npr.org/2026/05/20/nx-s1-5826917/meta-layoffs-ai-jobs). Previous rounds in [2022 and 2023 were framed primarily as cost corrections](https://qz.com/meta-layoffs-2023-jobs-metaverse-ai-1850196575) after the metaverse buildout consumed more capital than planned.
 
-The May 2026 round is framed as an AI pivot. Engineering roles are being eliminated; AI roles are being created. Zuckerberg's stated goal: to reach a point where "the majority of our software is written by AI" by the end of 2025, a threshold the company claims it reached ahead of schedule.
+The May 2026 round is framed as an AI pivot. Engineering roles are being eliminated; AI roles are being created. In an [April 2025 interview](https://www.engadget.com/ai/mark-zuckerberg-predicts-ai-will-write-most-of-metas-code-within-12-to-18-months-213851646.html), Zuckerberg predicted that within 12 to 18 months "most of the code" going into Meta's AI efforts would be written by AI rather than engineers. By [July 2026, he told staff](https://finance.yahoo.com/technology/ai/articles/laying-off-8-000-employees-121545621.html) that AI agent development "hasn't really accelerated in the way that we expected" — behind that schedule, not ahead of it.
 
 The irony is structural, not accidental. The employees who helped build the AI coding tools, whose behavioral data helped train the AI agents, are now in the category of labor that those tools can partially replace.
 
@@ -120,16 +120,18 @@ The irony is structural, not accidental. The employees who helped build the AI c
 
 ---
 
-*ChatForest covers AI industry developments through public reporting. We do not have inside access to Meta's internal systems or employment agreements. All details sourced from [The Register](https://www.theregister.com/), [The Next Web](https://thenextweb.com/), [eWeek](https://www.eweek.com/), [TechStory](https://techstory.in/), and public NLRA filings.*
+*ChatForest covers AI industry developments through public reporting. We do not have inside access to Meta's internal systems or employment agreements. All details sourced from [Reuters](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/), [eWeek](https://www.eweek.com/news/meta-employee-monitoring-ai-agents-training/), [The Register](https://www.theregister.com/ai-ml/2026/05/22/zuck-defends-monitoring-employees-to-win-ai-race-in-purported-leaked-audio/5245379), [The Next Web](https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026), [TechStory](https://techstory.in/leaked-audio-reveals-mark-zuckerberg-defending-internal-employee-tracking-to-feed-metas-ai/), and public NLRA filings.*
 
 ---
 
 ## Sources
 
-- [More Perfect Union: Zuckerberg MCI audio leak](https://perfectunion.us/) — original leaked audio of April 30 all-hands
+- [TechStory: Leaked audio reveals Zuckerberg defending internal employee tracking](https://techstory.in/leaked-audio-reveals-mark-zuckerberg-defending-internal-employee-tracking-to-feed-metas-ai/) — reporting on the April 30 all-hands audio leak obtained by worker advocacy group More Perfect Union, with verbatim quote
+- [The Register: Zuck defends monitoring employees to win AI race in purported leaked audio](https://www.theregister.com/ai-ml/2026/05/22/zuck-defends-monitoring-employees-to-win-ai-race-in-purported-leaked-audio/5245379) — additional reporting and quotes from the leaked audio
 - [Reuters: Meta Model Capability Initiative](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/) — April 21, 2026 MCI deployment reporting
-- [The Register: Meta employee surveillance analysis](https://www.theregister.com/) — additional analysis and context
-- [The Next Web: Meta lays off 8,000 after MCI rollout](https://thenextweb.com/) — timeline and implications
-- [UTAW: Tech workers unionization campaign](https://utaw.tech/) — UK unionization drive background
+- [eWeek: Meta to track employee keystrokes, mouse movements for AI training](https://www.eweek.com/news/meta-employee-monitoring-ai-agents-training/) — independent confirmation of MCI deployment and scope
+- [The Next Web: Meta cuts 8,000 jobs and cancels 6,000 open roles](https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026) — timeline and implications of the May 2026 layoffs
+- [The Next Web: Zuckerberg tells Meta employees the layoffs are about capex, not AI productivity](https://thenextweb.com/news/zuckerberg-town-hall-meta-layoffs-capex-cost-centres) — town-hall quote on AI and layoffs
+- [UTAW: United Tech and Allied Workers](https://utaw.tech/) — UK unionization drive background
 - [NLRB: National Labor Relations Act](https://www.nlrb.gov/guidance/key-reference-materials/national-labor-relations-act) — NLRA worker protections context
 

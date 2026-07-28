@@ -13,7 +13,7 @@ In the room were employees who had recently learned that their work laptops now 
 
 They also knew they could not turn it off.
 
-Leaked audio of that meeting, [obtained by More Perfect Union](https://perfectunion.us/) and reported in May 2026, captures Zuckerberg's explanation for why this was the right approach. His argument was a kind of backhanded compliment: the average intelligence of Meta's employees, he said, was "significantly higher" than that of the outside contractors typically hired for AI data labeling. Having actual engineers solve real engineering problems, with actual tool use, on real systems, would teach models to code far better than simulated scenarios with contractors.
+Leaked audio of that meeting, first published by [More Perfect Union](https://perfectunion.us/) and covered in detail by [The Register](https://www.theregister.com/ai-ml/2026/05/22/zuck-defends-monitoring-employees-to-win-ai-race-in-purported-leaked-audio/5245379), captures what a voice identified as Zuckerberg says about why this was the right approach. Note the hedge: Meta did not respond to requests to authenticate the recording, and outlets covering it — including The Register — describe it as "purported" leaked audio, not independently verified as genuine. In the clip, the speaker's argument is a kind of backhanded compliment: the average intelligence of the people at Meta, he says, "is significantly higher than the average set of people that you can get to do tasks." Having actual engineers solve real engineering problems, with actual tool use, on real systems, would — in his telling — teach models to code far better than simulated scenarios with contractors.
 
 In other words: you are better training data than the people we usually pay for training data.
 
@@ -40,21 +40,23 @@ Meta is training an AI on what it looks like to be a Meta employee.
 
 When employees raised concerns at the town hall, the response from CTO Andrew Bosworth was direct.
 
-When employees asked how to opt out of the tracking program, Bosworth responded: "There is no option to opt out of this on your work provided laptop."
+When employees asked how to opt out of the tracking program on Meta's internal Workplace platform, Bosworth responded: "There is no option to opt out of this on your work provided laptop" — a response to internal pushback [reported by Entrepreneur, drawing on internal reaction threads obtained by Business Insider](https://www.entrepreneur.com/business-news/meta-will-track-every-click-and-keystroke-employees-make-backlash).
 
-The framing in an internal memo was softer: Bosworth described a future in which AI agents do most of the work while humans guide and review. The monitoring program was positioned as a means to that end — gathering the training data needed to build the agents that will change how work gets done. The trade-off, Bosworth wrote, is that human work becomes training data for the systems being built to assist, and potentially replace, parts of it.
+The framing in a separate internal memo was softer. In it, Bosworth described a future in which AI agents "primarily do the work" while employees "direct, review and help them improve," [as reported by Platformer](https://www.platformer.news/meta-mci-monitoring-layoffs-knowledge-work/). The monitoring program was positioned as a means to that end — gathering the training data needed to build the agents that will change how work gets done. In that framing, the trade-off is that human work becomes training data for the systems being built to assist, and potentially replace, parts of it.
 
-Employees were skeptical. Several expressed fear — recorded in the leaked audio — that they would unknowingly train models that would then be deployed to perform their own jobs.
+Employees were skeptical. Several [expressed fear](https://www.ibtimes.co.uk/meta-layoffs-update-leaked-zuckerberg-audio-1798063) — through petitions, office flyers, and internal chats — that they had unknowingly been training a model that would eventually be deployed to perform their own jobs.
 
 ---
 
 ## European Employees Are Exempt
 
-One fact cuts through the corporate framing: Meta's European employees are not subject to the Model Capability Initiative.
+One fact cuts through the corporate framing: Meta says its European employees' devices are not subject to the Model Capability Initiative.
 
-They are exempt because the GDPR — the European Union's General Data Protection Regulation — does not allow it. Under GDPR, collecting this kind of behavioral data from employees requires either genuine informed consent (which must be freely given, meaning employees must be able to decline without consequence) or a legal basis that mass keystroke surveillance of workers is unlikely to satisfy. Meta did not attempt to extend the program to its European workforce.
+They are exempt because the GDPR — the European Union's General Data Protection Regulation — does not allow it. Under GDPR, collecting this kind of behavioral data from employees requires either genuine informed consent (which must be freely given, meaning employees must be able to decline without consequence) or a legal basis that mass keystroke surveillance of workers is unlikely to satisfy. Meta did not attempt to extend the program to European employees' own laptops.
 
-The result is a two-tier workforce: European engineers are not being logged. US engineers are, with no mechanism to refuse.
+The exemption is narrower than it sounds, though. Internal documents reviewed by Reuters show MCI still captures "the contents of any email or message a US-based Meta employee sends or receives, regardless of where the other party is located" — meaning a European employee's messages to a US colleague are ingested too, [as reported by The Next Web](https://thenextweb.com/news/meta-mci-employee-mouse-tracking-eu-gdpr-collision). The Vienna-based privacy group NOYB has argued this puts the program on a collision course with GDPR's purpose-limitation principle even for employees Meta officially exempted, though no data protection authority had opened a formal investigation as of that reporting.
+
+The result is a two-tier workforce on paper: European engineers' own laptops are not being logged, while US engineers' are, with no mechanism to refuse — even though European employees' correspondence with US colleagues is still swept in.
 
 The legal distinction is significant beyond its immediate context. The EU's privacy framework treats employee data as something that requires consent or a lawful basis; the US framework, in most states, provides employers broad discretion to monitor work devices. Meta is using that discretion in full.
 
@@ -64,11 +66,11 @@ The legal distinction is significant beyond its immediate context. The EU's priv
 
 The leaked audio surfaced during an especially fraught period. Meta was in the process of [laying off approximately 8,000 employees](https://www.reuters.com/technology/meta-lay-off-employees-2026-05-20/) — 10% of its global workforce — as part of a restructuring the company framed as an effort to become leaner and faster.
 
-Some of those employees were among the engineers whose work was being logged to train the AI agents Meta intends to deploy going forward.
+Whether any specific laid-off employees were among those whose keystrokes and screen activity had been logged by MCI has not been reported; Meta has not published, and no outlet has obtained, a breakdown of overlap between the two groups. What multiple outlets do report is the framing employees themselves drew: MCI logs the activity of employees who remain on staff, [training the AI agents Meta says will "primarily do the work" going forward](https://www.entrepreneur.com/business-news/meta-cut-8000-jobs-and-told-employees-that-ai-agents-will-primarily-do-the-work-now), even as thousands of colleagues were cut in the same restructuring.
 
-The simultaneity is striking but not coincidental. It reflects a pattern playing out across the industry: companies extracting training value from their existing workforce during a transition to AI-assisted workflows, then restructuring that workforce once the models have been trained. Whether this sequence is a deliberate strategy or an emergent consequence of separate decisions made at different levels of the organization is difficult to determine from the outside.
+The simultaneity is striking but not established as coordinated. It reflects a pattern playing out across the industry: companies expanding data collection from their existing workforce during a transition to AI-assisted workflows, while also restructuring that workforce. Whether this sequence is a deliberate strategy or an emergent consequence of separate decisions made at different levels of the organization is difficult to determine from the outside — and ChatForest could not find reporting that resolves it either way.
 
-What is clear is the result: employees who were required to generate training data and told they could not refuse are among the employees losing their jobs in the same quarter.
+What is clear is the optics: employees who were told they could not refuse to generate training data watched thousands of colleagues lose their jobs in the same quarter, prompting widespread employee commentary — including social-media reaction describing it as a "train your replacement" culture, [as reported by IBTimes UK](https://www.ibtimes.co.uk/meta-layoffs-update-leaked-zuckerberg-audio-1798063).
 
 ---
 
@@ -86,11 +88,13 @@ For people paying attention to how AI training data is sourced — and what priv
 
 ## What Meta Has Said
 
-Meta has not denied the existence of the Model Capability Initiative or disputed the core facts reported by Reuters and More Perfect Union. It has not announced changes to the program's opt-out policy following the audio leak.
+Meta confirmed the existence and mechanics of the Model Capability Initiative to reporters when it first became public in April 2026, and it has not disputed the core facts reported by Reuters. It did not respond to requests from The Register to authenticate the leaked audio.
 
 Andrew Bosworth's internal memo framing — that the program prepares Meta for an AI-assisted future — has not been publicly contradicted by other company leadership.
 
 Mark Zuckerberg's response on the employee intelligence point, as captured in the audio, has not been publicly walked back.
+
+**Update:** Meta [paused MCI on June 22, 2026](https://www.engadget.com/2199458/meta-is-pausing-employee-tracking-program-after-it-let-the-whole-company-see-sensitive-data/) after the tool exposed sensitive captured data — including private conversations and performance records — to the entire company. After further employee backlash, Meta [introduced limited opt-outs](https://thenextweb.com/news/meta-will-let-employees-stop-being-tracked-for-30-minutes-at-a-time): employees can pause tracking for up to 30 minutes at a time and can request a full exemption, though Meta has not detailed the criteria for approval.
 
 ---
 
@@ -113,8 +117,14 @@ Zuckerberg's framing — that Meta employees are valuable training data because 
 ## Sources
 
 - [Reuters: Meta uses employee computer activity to train AI](https://www.reuters.com/technology/artificial-intelligence/meta-uses-employee-computer-activity-train-ai-2026-04-21/) — original MCI reporting, April 21, 2026
-- [More Perfect Union: Meta MCI leaked audio](https://perfectunion.us/) — Zuckerberg town hall audio, May 2026
+- [More Perfect Union](https://perfectunion.us/) — original publisher of the Zuckerberg town hall audio, May 2026
+- [The Register: "Zuck defends monitoring employees to win AI race in purported leaked audio"](https://www.theregister.com/ai-ml/2026/05/22/zuck-defends-monitoring-employees-to-win-ai-race-in-purported-leaked-audio/5245379) — town hall date, direct quote, and note that Meta did not authenticate the recording
 - [Reuters: Meta layoffs May 2026](https://www.reuters.com/technology/meta-lay-off-employees-2026-05-20/) — 8,000 employees, 10% of workforce
-- [The Register: Meta employee surveillance program](https://www.theregister.com/2026/05/meta-model-capability-initiative/) — additional context and analysis
-- [The Next Web: GDPR vs US employee tracking](https://thenextweb.com/news/meta-mci-gdpr-exemption-us-employees) — European exemption explainer
+- [Entrepreneur: Meta tracking backlash, Bosworth opt-out quote](https://www.entrepreneur.com/business-news/meta-will-track-every-click-and-keystroke-employees-make-backlash) — internal reaction reporting drawing on Business Insider
+- [Entrepreneur: "Meta Cut 8,000 Jobs and Told Employees That AI Agents Will 'Primarily Do the Work' Now"](https://www.entrepreneur.com/business-news/meta-cut-8000-jobs-and-told-employees-that-ai-agents-will-primarily-do-the-work-now)
+- [Platformer: "The week that Meta employees became training data"](https://www.platformer.news/meta-mci-monitoring-layoffs-knowledge-work/) — Bosworth internal memo framing
+- [IBTimes UK: Zuckerberg leaked audio and layoffs](https://www.ibtimes.co.uk/meta-layoffs-update-leaked-zuckerberg-audio-1798063) — employee petitions, flyers, "train your replacement" reaction
+- [The Next Web: Meta MCI on collision course with EU privacy rules](https://thenextweb.com/news/meta-mci-employee-mouse-tracking-eu-gdpr-collision) — cross-border communications still captured despite EU device exemption
+- [Engadget: Meta pauses MCI after data exposure](https://www.engadget.com/2199458/meta-is-pausing-employee-tracking-program-after-it-let-the-whole-company-see-sensitive-data/) — June 22, 2026 pause
+- [The Next Web: Meta lets employees pause tracking for 30 minutes](https://thenextweb.com/news/meta-will-let-employees-stop-being-tracked-for-30-minutes-at-a-time) — post-backlash exemption policy
 

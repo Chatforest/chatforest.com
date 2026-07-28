@@ -3,11 +3,11 @@
 > Project Prometheus, Jeff Bezos's first startup since leaving Amazon, is building an 'artificial general engineer' — AI that designs physical objects. Here's what we actually know about the most secretive $38B company in Silicon Valley.
 
 
-**At a glance:** Project Prometheus. Founded November 2025 by Jeff Bezos and Vik Bajaj (former Google X executive). Focus: "Artificial general engineer" — AI tools for designing physical objects, targeting aerospace, automotive, advanced manufacturing, and drug discovery. [Total funding: $16.2 billion ($6.2B at launch, $10B in April 2026). Valuation: $38 billion.](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) Employees: ~120, drawn from OpenAI, DeepMind, Meta, and xAI. Offices: San Francisco, London, Zurich. First public Bezos interview: CNBC Squawk Box, May 20, 2026. Separate initiative: a $100B fund to acquire and transform legacy manufacturing firms. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Project Prometheus. [Founded November 2025 by Jeff Bezos and Vik Bajaj](https://en.wikipedia.org/wiki/Vik_Bajaj) (former Google X executive and co-founder of Google's life-sciences division, later spun out as Verily). Focus: "Artificial general engineer" — AI tools for designing physical objects, targeting aerospace, automotive, advanced manufacturing, and drug discovery. [Total funding: $16.2 billion ($6.2B at launch, $10B in April 2026). Valuation: $38 billion.](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) [Employees: ~120, drawn from OpenAI, DeepMind, Meta, and xAI. Offices: San Francisco, London, Zurich.](https://www.geekwire.com/2026/jeff-bezos-describes-his-38b-startup-prometheus-for-the-first-time-nothing-to-do-with-robotics/) [First public Bezos interview: CNBC Squawk Box, May 20, 2026.](https://www.cnbc.com/2026/05/20/cnbc-exclusive-transcript-jeff-bezos-speaks-with-cnbcs-andrew-ross-sorkin-on-squawk-box-today-.html) [Separate initiative: a $100B fund to acquire and transform legacy manufacturing firms.](https://techcrunch.com/2026/03/19/jeff-bezos-reportedly-wants-100-billion-to-buy-and-transform-old-manufacturing-firms-with-ai/) Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
-On May 20, 2026, Jeff Bezos walked onto the set of CNBC's Squawk Box for his first on-camera interview about Project Prometheus. When host Andrew Ross Sorkin began describing the startup as being "really about AI robotics," Bezos interrupted.
+On [May 20, 2026, Jeff Bezos walked onto the set of CNBC's Squawk Box for his first on-camera interview about Project Prometheus](https://www.cnbc.com/2026/05/20/cnbc-exclusive-transcript-jeff-bezos-speaks-with-cnbcs-andrew-ross-sorkin-on-squawk-box-today-.html). When host Andrew Ross Sorkin began describing the startup as being "really about AI robotics," Bezos interrupted.
 
 "We have nothing to do with robotics."
 
@@ -17,23 +17,23 @@ That correction — delivered without irritation, just matter-of-factly — is p
 
 ## What Is an "Artificial General Engineer"?
 
-Bezos described Prometheus's goal as building an "artificial general engineer" — a phrase the company appears to have invented for itself. He called it "a very, very modern version of CAD."
+Bezos described Prometheus's goal as building an "artificial general engineer" — a phrase the company appears to have invented for itself. He called it ["a very, very modern version of CAD."](https://www.cnbc.com/2026/05/20/cnbc-exclusive-transcript-jeff-bezos-speaks-with-cnbcs-andrew-ross-sorkin-on-squawk-box-today-.html)
 
 CAD, computer-aided design, is the software that engineers use to model physical objects before anything gets made. SolidWorks, AutoCAD, CATIA, Fusion 360 — these are the tools that let an aerospace engineer design a turbine blade or a drug company design a pill capsule. CAD has been around since the 1960s. It is functional, heavily entrenched, and almost completely unchanged in its conceptual model: a human engineer draws something; the software renders it; the human adjusts; repeat.
 
 What Bezos is describing is something different. Rather than giving engineers a faster drawing tool, Prometheus is building AI models trained on the outcomes of engineering decisions — the data that describes what happens when you choose a particular alloy, tighten a tolerance, or change the geometry of a joint. The goal is AI that can reason about physical design the way current language models reason about text: not just rendering what you ask for, but understanding what you probably need.
 
-Bezos himself acknowledged he was "really oversimplifying" with the CAD framing, and said it was too early to give much detail. But the direction is clear: AI that helps engineers design things that get manufactured, faster and with fewer expensive mistakes.
+Bezos himself acknowledged he was ["really oversimplifying"](https://www.cnbc.com/2026/05/20/cnbc-exclusive-transcript-jeff-bezos-speaks-with-cnbcs-andrew-ross-sorkin-on-squawk-box-today-.html) with the CAD framing, and said it was too early to give much detail. But the direction is clear: AI that helps engineers design things that get manufactured, faster and with fewer expensive mistakes.
 
 ---
 
-## The Technology: World Models and Physical AI
+## The Technology: "World Models" (a Label Bezos Disputes) and Physical AI
 
-Prometheus's technical approach centers on what its team calls "world models" — AI systems designed to simulate how the physical world behaves, not just process text or images.
+Early press coverage speculated that Prometheus's technical approach centers on "world models" — AI systems designed to simulate how the physical world behaves, not just process text or images. That framing needs a caveat: [in a June 11, 2026 CNBC interview](https://www.cnbc.com/2026/06/11/project-prometheus-bezos-bajaj-live-updates.html), after this piece originally published, Bezos pushed back directly on it, saying the company went public with details partly because "we heard, for example, that people thought we were building robots and doing world models and things like this, which isn't correct." Bezos did not elaborate on what, technically, is inaccurate about the label — so it is unclear whether Prometheus rejects "world models" as a description of its architecture entirely, or is objecting more to the robotics association. Either way, "world models" should be read as outside speculation about Prometheus, not the company's own description of its technology, which remains undisclosed.
 
-Traditional large language models learn statistical patterns in language. World models are trained on multimodal data from real-world interactions: experimental results, manufacturing sensor readings, materials science datasets, robotics trajectories (note: training on robotics data is not the same as building robots), and engineering workflows from industrial environments. The goal is a model that can "understand" how a design decision in aerospace plays out in the real world — how a part will behave under stress, what it will cost to manufacture at scale, whether the tolerances are achievable with existing tooling.
+For context on the general concept: world models, as an AI research category, are typically trained on multimodal data from real-world interactions — experimental results, manufacturing sensor readings, materials science datasets, robotics trajectories, and engineering workflows from industrial environments. The idea is a model that can "understand" how a design decision in aerospace plays out in the real world — how a part will behave under stress, what it will cost to manufacture at scale, whether the tolerances are achievable with existing tooling. Whether Prometheus's own (still-undisclosed) approach maps onto this category is exactly what Bezos disputed above.
 
-The technology foundation came partly through acquisition. In November 2025, the same month Prometheus was founded, the company reportedly acquired General Agents, an AI startup whose product, Ace, ran on custom foundation models called ace-control-small and ace-control-medium using a VLA (video-language-action) architecture. VLA architectures were originally developed for robotics — but the core approach of learning from video observations of physical processes translates directly to engineering simulation.
+The technology foundation came partly through acquisition. [In November 2025, the company reportedly acquired General Agents](https://siliconangle.com/2025/11/26/jeff-bezos-project-prometheus-reportedly-acquires-ai-startup-general-agents/), an AI startup whose product, Ace, ran on custom foundation models called ace-control-small and ace-control-medium using a VLA (video-language-action) architecture. VLA architectures were originally developed for robotics — but the core approach of learning from video observations of physical processes translates directly to engineering simulation.
 
 The company's target domains are:
 - **Aerospace and defense** — component design, materials innovation, tolerance optimization
@@ -47,7 +47,7 @@ The company's target domains are:
 
 [Prometheus launched in November 2025 with $6.2 billion in initial funding. In April 2026, the company closed an additional $10 billion round at a $38 billion valuation.](https://www.bloomberg.com/news/articles/2026-04-23/bezos-s-physical-ai-lab-has-closed-round-at-38-billion-value) JPMorgan and BlackRock participated as investors — an unusual roster for a 6-month-old AI startup, and a signal that Prometheus is being positioned as an industrial infrastructure play, not a consumer product company.
 
-Separately from the company itself, Bezos has been reported to be raising a $100 billion "manufacturing transformation vehicle" — essentially a private equity fund that would acquire underperforming legacy industrial companies and rebuild them from the inside using Prometheus technology. The TechCrunch and Axios reporting from March 2026 describes the fund as targeting factories, not AI labs: acquiring manufacturers in aerospace, semiconductors, and automotive, then deploying Prometheus AI tools to modernize them.
+Separately from the company itself, [the Wall Street Journal reported in March 2026](https://www.bloomberg.com/news/articles/2026-03-19/bezos-seeks-100-billion-to-use-ai-in-manufacturing-wsj-says) that Bezos is raising a $100 billion "manufacturing transformation vehicle" — essentially a private equity fund that would acquire underperforming legacy industrial companies and rebuild them from the inside using Prometheus technology. [TechCrunch's reporting](https://techcrunch.com/2026/03/19/jeff-bezos-reportedly-wants-100-billion-to-buy-and-transform-old-manufacturing-firms-with-ai/) describes the fund as targeting factories, not AI labs: acquiring manufacturers in chipmaking, aerospace, and defense, then deploying Prometheus AI tools to modernize them. As of this writing the fund is still at the fundraising-talks stage, sourced to unnamed people familiar with the matter — not a closed, confirmed vehicle.
 
 This separates Prometheus from most AI companies in a meaningful way. Most AI companies are trying to sell software. Bezos appears to be trying to own and operate the industrial customers who would use the software — or at least have a financial stake in their transformation.
 
@@ -55,7 +55,7 @@ This separates Prometheus from most AI companies in a meaningful way. Most AI co
 
 ## Bezos on the AI Bubble
 
-Asked about AI valuation concerns on CNBC, Bezos was characteristically direct:
+[Asked about AI valuation concerns on CNBC](https://www.cnbc.com/2026/05/20/bezos-ai-bubble-concerns-amazon-prometheum-blue-origin.html), Bezos was characteristically direct:
 
 "Even if it does turn out to be a bubble, you shouldn't worry about it because the bubble is driving investment and a lot of the investment is going to turn out to be very healthy."
 
@@ -67,11 +67,11 @@ This is a defensible historical position — the internet bubble destroyed indiv
 
 ## Who Is Running It?
 
-This is Bezos's first formal operational role since stepping down as Amazon CEO in July 2021. He serves as co-CEO alongside Vik Bajaj, a former Google X executive who has led hardware and software initiatives at Google's moonshot lab. The two-CEO structure is unusual; it appears to reflect a division between Bezos's focus on strategy and fundraising and Bajaj's focus on technical operations.
+This is Bezos's first formal operational role since [stepping down as Amazon CEO in July 2021](https://www.cnbc.com/2021/05/26/jeff-bezos-to-formally-step-down-as-amazon-ceo-on-july-5.html). He serves as co-CEO alongside [Vik Bajaj — a physical chemist by training who co-founded Google's life-sciences division (later spun out as Verily) as its chief scientific officer and held a director role at Google X, contributing to early-stage projects including what became Waymo and Wing](https://en.wikipedia.org/wiki/Vik_Bajaj). The two-CEO structure is unusual; it appears to reflect a division between Bezos's focus on strategy and fundraising and Bajaj's focus on technical operations.
 
-The roughly 120-person team is drawn primarily from the research divisions of OpenAI, DeepMind, Meta, and xAI. This is an important signal: Prometheus is not hiring generalist software engineers or product managers. It is building a research organization targeting frontier capabilities in a specific physical domain.
+[The roughly 120-person team is drawn primarily from OpenAI, DeepMind, Meta, and xAI.](https://www.geekwire.com/2026/jeff-bezos-describes-his-38b-startup-prometheus-for-the-first-time-nothing-to-do-with-robotics/) This is an important signal: Prometheus is not hiring generalist software engineers or product managers. It is building a research organization targeting frontier capabilities in a specific physical domain.
 
-Bezos told CNBC that his time across Amazon, Blue Origin, and Prometheus is "all spent on AI" at this point — framing industrial AI as continuous with his existing commitments rather than a departure from them.
+Bezos told CNBC: ["My time at Amazon is spent on AI. My time at Prometheus is spent on AI. And my time at Blue is largely spent on AI."](https://www.cnbc.com/video/2026/05/20/jeff-bezos-my-time-at-amazon-blue-origin-and-prometheus-is-spent-on-ai.html) — framing industrial AI as continuous with his existing commitments rather than a departure from them.
 
 ---
 
@@ -102,7 +102,7 @@ The chatbot era is not over. But Bezos, at least, appears to be building for wha
 
 ---
 
-*Research note: All information sourced from public reporting as of May 24, 2026. Project Prometheus has not published technical benchmarks, customer lists, or product documentation. Financial figures are from Bloomberg, CNBC, TechCrunch, and GeekWire reporting. We have not tested any Prometheus product.*
+*Research note: All information sourced from public reporting as of May 24, 2026, with one post-publish correction added at audit time (2026-07-28): Bezos's June 11, 2026 CNBC remarks disputing the "world models" framing, noted inline above because it directly contradicts a claim this piece originally made. Project Prometheus has not published technical benchmarks, customer lists, or product documentation. Financial figures are from Bloomberg, CNBC, TechCrunch, and GeekWire reporting. We have not tested any Prometheus product.*
 
 ---
 
@@ -113,4 +113,14 @@ The chatbot era is not over. But Bezos, at least, appears to be building for wha
 - [Jeff Bezos's Prometheus raises $12B to build an 'artificial general engineer'](https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/) — TechCrunch (June 2026 follow-up round)
 - [Bezos' AI startup Prometheus raises $12B at $41B valuation](https://www.geekwire.com/2026/bezos-ai-startup-prometheus-raises-12b-at-41b-valuation-and-the-ceos-explain-what-theyre-doing/) — GeekWire
 - [Prometheus, the industrial AI startup from Jeff Bezos, is now worth $41 billion](https://www.axios.com/2026/06/11/prometheus-bezos-industrial-ai) — Axios
+- [Jeff Bezos describes his $38B startup Prometheus for the first time: 'Nothing to do with robotics'](https://www.geekwire.com/2026/jeff-bezos-describes-his-38b-startup-prometheus-for-the-first-time-nothing-to-do-with-robotics/) — GeekWire (employee count, offices, founding)
+- [CNBC Exclusive Transcript: Jeff Bezos on "Squawk Box," May 20, 2026](https://www.cnbc.com/2026/05/20/cnbc-exclusive-transcript-jeff-bezos-speaks-with-cnbcs-andrew-ross-sorkin-on-squawk-box-today-.html) — CNBC (CAD/"artificial general engineer" quotes)
+- [Jeff Bezos brushes off concerns of an AI bubble: 'You shouldn't worry about it'](https://www.cnbc.com/2026/05/20/bezos-ai-bubble-concerns-amazon-prometheum-blue-origin.html) — CNBC
+- [Jeff Bezos: My time at Amazon, Blue Origin and Prometheus is spent on AI](https://www.cnbc.com/video/2026/05/20/jeff-bezos-my-time-at-amazon-blue-origin-and-prometheus-is-spent-on-ai.html) — CNBC video
+- [Bezos opens up about AI startup Prometheus after $12 billion raise](https://www.cnbc.com/2026/06/11/project-prometheus-bezos-bajaj-live-updates.html) — CNBC (June 11 "world models" denial)
+- [Jeff Bezos reportedly wants $100 billion to buy and transform old manufacturing firms with AI](https://techcrunch.com/2026/03/19/jeff-bezos-reportedly-wants-100-billion-to-buy-and-transform-old-manufacturing-firms-with-ai/) — TechCrunch
+- [Bezos Seeks $100 Billion Fund to Bring AI to Manufacturing, WSJ Reports](https://www.bloomberg.com/news/articles/2026-03-19/bezos-seeks-100-billion-to-use-ai-in-manufacturing-wsj-says) — Bloomberg
+- [Jeff Bezos' Project Prometheus reportedly acquires AI startup General Agents](https://siliconangle.com/2025/11/26/jeff-bezos-project-prometheus-reportedly-acquires-ai-startup-general-agents/) — SiliconANGLE
+- [Vik Bajaj](https://en.wikipedia.org/wiki/Vik_Bajaj) — Wikipedia (background/career)
+- [Jeff Bezos to formally step down as Amazon CEO on July 5](https://www.cnbc.com/2021/05/26/jeff-bezos-to-formally-step-down-as-amazon-ceo-on-july-5.html) — CNBC, 2021
 
