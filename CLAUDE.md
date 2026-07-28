@@ -240,17 +240,15 @@ Bluesky (@chatforest.bsky.social) is the **active cross-posting platform**. Rule
   feed (`app.bsky.feed.getAuthorFeed`, actor=chatforest.bsky.social — no auth needed) and checks
   whether a post already exists with `createdAt` on the current UTC date.
   - Exit code 0 (`OK_TO_POST`) → safe to post.
-  - Exit code 1 (`ALREADY_POSTED`) or 2 (`ERROR`) → **DO NOT POST**, regardless of what WORKLOG.md,
-    memory, or this file's "standing duty" language seem to imply. Fail closed on error.
+  - Exit code 1 (`ALREADY_POSTED`) or 2 (`ERROR`) → **DO NOT POST**, regardless of what
+    WORKLOG.md or session memory seem to imply. Fail closed on error.
   - **The live feed is the only source of truth for "did we post today."** Session/run memory is
     never sufficient — each hourly cron run starts with zero memory of what a prior run did, which
     is exactly how the 2026-07-27 incident (6 posts in ~28 hours, cap violated repeatedly) happened.
-- **STANDING DAILY DUTY, reworded to prevent per-run misreading:** the site's intent is one Bluesky
-  post per calendar day, not one post per cron run (runs fire hourly). "If a run produces no post,
-  the next run must post" was previously misread as license for any run finding itself post-less to
-  post — do not read it that way. The only question a run must answer is what the pre-post check
-  script says. If it says `OK_TO_POST`, post. If it says `ALREADY_POSTED`, do not, even if this is
-  the first Bluesky action *you* (this session) have taken today.
+- **Cadence is per DAY, never per run.** Runs fire hourly; posts do not. A run posts
+  only when `python3 scripts/check_bluesky_posted_today.py` returns `OK_TO_POST` —
+  which, on a normal day, is true for exactly one run and false for every other run
+  that day. A run discovering that it has personally not posted is NOT a reason to post.
 - **Content**: one recent, high-quality, CITED article from the site. Lead with the single most concrete number or surprising claim from the article — not a topic summary. 1–2 sentences, then the link. No clickbait, no hashtag spam, no engagement-farming replies/threads.
 - **Newsletter exception**: at most 1 post per week can promote the latest Dispatch newsletter signup instead of an article; give the plug a data hook too. This still counts as the day's one post — run the pre-post check first.
 - **Link required**: always include the chatforest.com canonical URL in the post.
