@@ -17,11 +17,9 @@ It's also largely unreported as a single coherent narrative. This is that story.
 
 ## Background: Anthropic Had the Contract
 
-In July 2025, the Department of Defense signed a landmark agreement with Anthropic: Claude would run on classified networks, handling sensitive workloads at the Secret level and above. Anthropic became the first commercial AI company to operate inside Pentagon classified systems under Impact Level 6 and 7 (IL6/IL7) security frameworks.
+On July 14, 2025, the Pentagon's Chief Digital and Artificial Intelligence Office (CDAO) [awarded Anthropic a two-year "other transaction agreement" with a $200 million ceiling](https://www.anthropic.com/news/anthropic-and-the-department-of-defense-to-advance-responsible-ai-in-defense-operations) to prototype Claude for national-security workloads. Anthropic was not alone that day: [the CDAO announced matching $200-million-ceiling agreements with Google, OpenAI, and xAI at the same time](https://www.nextgov.com/acquisition/2025/07/pentagon-awards-multiple-companies-200m-contracts-ai-tools/406698/), so this was one of four simultaneous awards rather than an Anthropic-exclusive deal. Anthropic's own announcement noted the relationship built on "earlier federal deployments" — including [a separate integration with Palantir that had already put Claude to work on U.S. defense networks](https://www.anthropic.com/news/anthropic-and-the-department-of-defense-to-advance-responsible-ai-in-defense-operations).
 
-The contract was worth approximately $200 million. It positioned Anthropic as the DoD's AI-native partner of choice, ahead of OpenAI, Google, and Microsoft in the most security-sensitive tier of government work.
-
-But the agreement came with Anthropic's standard usage restrictions. The company's acceptable use policy prohibits Claude from being used to develop autonomous weapons systems capable of lethal action without meaningful human oversight, and from enabling mass surveillance of civilian populations.
+But the agreement came with Anthropic's standard usage restrictions. [The company's usage policy prohibits Claude from being used](https://www.anthropic.com/legal/aup) for weapons development and delivery, and for surveillance uses such as tracking a person's physical location or communications without consent, facial recognition, or predictive policing — restrictions that cover both autonomous-weapons targeting and mass surveillance.
 
 For most enterprise customers, these restrictions are unremarkable — or actively reassuring. For the Department of Defense under the Trump administration's second term, they were a problem.
 
@@ -29,32 +27,32 @@ For most enterprise customers, these restrictions are unremarkable — or active
 
 ## The Demand: "All Lawful Purposes"
 
-On February 24, 2026, Defense Secretary Pete Hegseth formally presented Anthropic with a revised contract requirement: Claude Gov must be made available to the Pentagon for **"all lawful purposes"** — with no carve-outs for weapons autonomy or domestic surveillance.
+On [Tuesday, February 24, 2026, Defense Secretary Pete Hegseth's Pentagon presented Anthropic with a revised contract requirement](https://www.foxnews.com/politics/pentagon-gives-ai-firm-ultimatum-lift-military-limits-friday-lose-200m-deal): Claude Gov must be made available to the Pentagon for **"all lawful purposes"** — with no carve-outs for weapons autonomy or domestic surveillance — and [set a deadline of 5:01 p.m. that Friday, February 27, for Anthropic to agree](https://www.cbsnews.com/news/hegseth-anthropic-full-access-claude-ai-model/).
 
-The demand was not ambiguous. According to Anthropic's subsequent court filings, the Pentagon wanted explicit authorization to use Claude in systems where AI could make lethal targeting decisions without real-time human confirmation, and in domestic intelligence pipelines that compile detailed behavioral profiles of American civilians from scattered data sources.
+The demand was not ambiguous: the Pentagon wanted Anthropic to drop its two standing carve-outs — no use of Claude in [fully autonomous weapons systems and no mass domestic surveillance](https://www.anthropic.com/news/statement-department-of-war).
 
-Anthropic's position, articulated by CEO Dario Amodei, was equally clear:
+Anthropic's position, articulated by CEO Dario Amodei in a [February 26, 2026 statement](https://www.anthropic.com/news/statement-department-of-war), was equally clear:
 
-> "Frontier AI systems are simply not reliable enough to power fully autonomous weapons. Mass surveillance through AI is currently legal only because the law has not yet caught up with rapidly growing AI capabilities. We cannot in good conscience agree to allow the DoD to use our models in all lawful use cases."
+> "Frontier AI systems are simply not reliable enough to power fully autonomous weapons. [...] To the extent that such surveillance is currently legal, this is only because the law has not yet caught up with the rapidly growing capabilities of AI. [...] We cannot in good conscience accede to their request."
 
-On February 27, Amodei published Anthropic's position. The response from the Trump administration was immediate.
+The response from the Trump administration came the next day.
 
 ---
 
 ## The Designation: An American Company Gets the Huawei Treatment
 
-Trump posted on Truth Social the same day: "IMMEDIATELY CEASE all use of Anthropic's technology." Hegseth posted on X: "No contractor, supplier, or partner that does business with the United States military may conduct any commercial activity with Anthropic."
+Trump posted on Truth Social the same day: ["I am directing every agency in the United States Government to IMMEDIATELY CEASE all use of Anthropic's technology,"](https://www.defenseone.com/threats/2026/02/trump-directs-government-immediately-cease-using-anthropic-technology/411776/) adding "We don't need it, we don't want it, and will not do business with them again." Hegseth [posted on X](https://x.com/SecWar/status/2027507717469049070): "Effective immediately, no contractor, supplier, or partner that does business with the United States military may conduct any commercial activity with Anthropic."
 
-The DoD then invoked a statutory authority called the supply chain risk designation — a tool traditionally used against foreign entities suspected of espionage or hardware sabotage. The target list before Anthropic included Huawei, ZTE, and Kaspersky.
+The DoD then invoked the supply chain risk designation — a tool [previously used against foreign entities such as Huawei, ZTE, Kaspersky, Hikvision, and Dahua](https://www.rstreet.org/commentary/anthropic-the-pentagon-and-the-ai-innovation-ecosystem/), never before against a U.S. company.
 
-Anthropic became the first American company to receive the designation.
+[Anthropic became the first American company to receive the designation](https://www.rstreet.org/commentary/anthropic-the-pentagon-and-the-ai-innovation-ecosystem/).
 
 What this meant in practice:
-- All 17 federal agencies were directed to cease using Anthropic products
-- Defense contractors, suppliers, and partners were barred from commercial activity with Anthropic
-- The transition period was set at up to six months
+- [17 named federal agencies were subject to the directive to cease using Anthropic products](https://breakingdefense.com/2026/03/judge-grants-anthropic-preliminary-injunction-but-pentagon-cto-says-ban-still-stands/)
+- [Defense contractors, suppliers, and partners were barred from commercial activity with Anthropic](https://x.com/SecWar/status/2027507717469049070)
+- [The transition period was set at up to six months](https://www.defenseone.com/threats/2026/02/trump-directs-government-immediately-cease-using-anthropic-technology/411776/)
 
-The business impact was immediate. More than 100 enterprise customers contacted Anthropic to ask whether they were affected. Anthropic estimated in court filings that the designation put "hundreds of millions, or even multiple billions of dollars" in revenue at risk.
+The business impact was immediate. [More than 100 enterprise customers contacted Anthropic to ask whether they were affected, and Anthropic told a federal appeals court that "by Anthropic's best estimate, for 2026, the government's adverse actions risk hundreds of millions, or even multiple billions, of dollars in lost revenue"](https://finance.yahoo.com/news/anthropic-seeks-court-stay-pentagon-044211962.html).
 
 ---
 
@@ -64,7 +62,7 @@ Anthropic responded with a legal strategy that split across two federal courts s
 
 ### Northern District of California — Judge Rita Lin
 
-In early March, Anthropic filed suit in the U.S. District Court for the Northern District of California, arguing the supply chain risk designation constituted unlawful First Amendment retaliation. The government had punished Anthropic, the filing argued, not for what Claude does, but for what Anthropic said publicly about the DoD's position.
+[In early March, Anthropic filed suit in the U.S. District Court for the Northern District of California](https://www.npr.org/2026/03/09/nx-s1-5742548/anthropic-pentagon-lawsuit-amodai-hegseth), arguing the supply chain risk designation constituted unlawful First Amendment retaliation. The government had punished Anthropic, the filing argued, not for what Claude does, but for what Anthropic said publicly about the DoD's position.
 
 On March 26, [Judge Rita F. Lin granted a sweeping preliminary injunction](https://www.cnbc.com/2026/03/26/anthropic-pentagon-dod-claude-court-ruling.html) in Anthropic's favor. Her order barred all 17 named federal agencies from implementing the supply chain risk designation while the lawsuit proceeded.
 
@@ -74,17 +72,17 @@ Her language was pointed:
 
 Lin found Anthropic was "likely to succeed" on the merits — the legal standard for a preliminary injunction.
 
-The government's immediate response: the Pentagon's CTO said the ban was still operative despite the injunction. The order applied to the agencies named in the suit, not to operational security protocols the Pentagon claimed were separately authorized.
+The government's immediate response showed the ban was still partly operative despite the injunction. That is because [the Pentagon had actually invoked two separate statutory authorities](https://www.aoshearman.com/en/insights/ao-shearman-on-tech/dow-and-anthropic-showdown-continues-navigating-the-anthropic-supply-chain-risk-designations) to designate Anthropic a supply chain risk: 10 U.S.C. § 3252, the DoD-specific authority that Judge Lin's injunction blocked, and 41 U.S.C. § 4713 — the Federal Acquisition Supply Chain Security Act (FASCSA), a broader, government-wide authority. Because Lin's order reached only the § 3252 designation, the § 4713/FASCSA designation remained in effect; [the Pentagon's Chief Technology Officer, Emil Michael, said the designation was still "in full force and effect"](https://breakingdefense.com/2026/03/judge-grants-anthropic-preliminary-injunction-but-pentagon-cto-says-ban-still-stands/) and called the underlying order riddled with "dozens of factual errors."
 
 ### D.C. Circuit Court of Appeals — The Federal Appeals Path
 
-Because one of the statutes invoked — the supply chain risk authority under 10 U.S.C. § 3252 — is a provision that can only be challenged in the D.C. Circuit directly, Anthropic simultaneously filed a shorter lawsuit in the U.S. Court of Appeals for the District of Columbia Circuit.
+Because Congress provided that judicial review of a FASCSA designation lies exclusively in the D.C. Circuit, Anthropic simultaneously filed a second, parallel case there challenging the § 4713 designation the N.D. Cal. injunction couldn't touch.
 
-On April 8, [the D.C. Circuit denied Anthropic's emergency motion](https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html) to temporarily block the designation while that case proceeded. The appeals court acknowledged Anthropic "will likely suffer some irreparable harm" during the litigation — but held the harm did not meet the threshold for emergency relief.
+On April 8, [the D.C. Circuit denied Anthropic's emergency motion](https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html) to temporarily block the designation while that case proceeded. The appeals court [acknowledged Anthropic "will likely suffer some degree of irreparable harm absent a stay,"](https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html) but found the harm "primarily financial in nature" and held it did not meet the threshold for emergency relief.
 
 The court did, however, agree to expedite the case.
 
-On May 19, 2026, a three-judge panel of the D.C. Circuit heard nearly two hours of oral arguments. A DOJ lawyer argued the supply chain risk designation was within the DoD's broad statutory authority. Anthropic's counsel argued the designation was weaponized to punish protected speech. The decision is pending.
+On May 19, 2026, a three-judge panel of the D.C. Circuit — [Judges Katsas, Rao, and Henderson, sitting for just over 100 minutes of oral argument](https://www.courtlistener.com/audio/104997/anthropic-pbc-v-united-states-department-of-war/) — heard the case. [The government argued the supply chain risk designation was within the Pentagon's broad statutory authority; Anthropic's counsel argued the designation was pretextual retaliation for protected speech, and Judge Henderson pressed the government's lawyer on why the designation showed no evidence of the "maliciousness" the statute requires](https://www.lawfaremedia.org/article/lawfare-no-bull--anthropic-v.-hegseth-and-dod-at-the-d.c.-circuit). The decision is pending.
 
 ---
 
@@ -92,24 +90,24 @@ On May 19, 2026, a three-judge panel of the D.C. Circuit heard nearly two hours 
 
 While Anthropic's lawsuits progressed, the DoD moved forward with alternatives.
 
-On May 1, 2026, the Pentagon finalized agreements with **eight AI companies** cleared to deploy models on classified IL6 and IL7 networks:
+On [May 1, 2026, the Pentagon finalized agreements with **eight AI companies** cleared to deploy models on classified IL6 and IL7 networks](https://defensescoop.com/2026/05/01/dod-expands-classified-ai-work-with-8-companies-excluding-anthropic/):
 
 | Company | Role |
 |---|---|
-| **OpenAI** | GPT models, Operator-level agents |
-| **Google** | Gemini 3.5 models, cloud infrastructure |
+| **OpenAI** | GPT models on IL6/IL7 networks |
+| **Google** | Gemini frontier models, cloud infrastructure |
 | **Microsoft** | Azure AI platform integration |
 | **Amazon Web Services** | Bedrock models, cloud infrastructure |
 | **NVIDIA** | GPU infrastructure and inference acceleration |
-| **SpaceX** | Compute (Colossus cluster) and communications |
+| **SpaceX** | Compute and communications infrastructure |
 | **Oracle** | Cloud infrastructure |
-| **Reflection AI** | Frontier model from NVIDIA-backed startup |
+| **Reflection AI** | Open-weight frontier model and Asimov code agent |
 
 Anthropic was not on the list.
 
-Reflection AI's inclusion is notable: the startup, founded in March 2024 by former DeepMind researchers Misha Laskin and Ioannis Antonoglou, has no publicly released models. The Pentagon contract is the first time a U.S. agency has bought into the company at the operational tier.
+Reflection AI's inclusion is notable: [the startup was founded in March 2024 by former DeepMind researchers Misha Laskin and Ioannis Antonoglou](https://en.wikipedia.org/wiki/Reflection_AI) and, as of the contract announcement, [had no publicly released models](https://letsdatascience.com/blog/pentagon-signs-eight-ai-companies-anthropic-excluded). [The Pentagon contract is the first time a U.S. agency has bought into the company at the operational tier](https://letsdatascience.com/blog/pentagon-signs-eight-ai-companies-anthropic-excluded).
 
-On May 21, Bloomberg reported that the Pentagon has moved beyond evaluation to active testing of OpenAI and Google models on the specific classified workloads Claude had been handling — with the stated goal of replacing Anthropic in defense workflows entirely.
+On May 21, [Bloomberg reported that the Pentagon has moved beyond evaluation to active testing of AI models — including from OpenAI, Google, and xAI — on the workloads it's weighing as Claude replacements](https://www.bloomberg.com/news/articles/2026-05-21/pentagon-tests-rival-ai-models-in-race-to-replace-anthropic), with the tests reportedly having begun in early March, just days after the supply chain risk designation.
 
 ---
 
@@ -117,7 +115,7 @@ On May 21, Bloomberg reported that the Pentagon has moved beyond evaluation to a
 
 ### For Anthropic
 
-The financial risk is real. Anthropic's revenue projections for 2026 — $10.9 billion in Q2, first operating profit ever, a $900 billion valuation round in progress — depend on enterprise and government customers. The DoD designation has made Anthropic radioactive in a segment of enterprise AI procurement, regardless of legal outcome.
+The financial risk is real. Anthropic's revenue projections for 2026 — [$10.9 billion in Q2 revenue and its first operating profit](https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html), plus [a roughly $30 billion funding round at a $900 billion valuation that was expected to close the week of May 26](https://finance.yahoo.com/sectors/technology/articles/anthropic-set-close-30-billion-203545596.html) — depend on enterprise and government customers. The DoD designation has made Anthropic radioactive in a segment of enterprise AI procurement, regardless of legal outcome.
 
 The reputational stakes cut the other way. Anthropic's position in the AI safety community, among ethically-minded enterprise buyers, and with policymakers in Europe and internationally has been strengthened. The company has demonstrated it will hold its principles against the federal government under significant financial duress.
 
@@ -125,7 +123,7 @@ The reputational stakes cut the other way. Anthropic's position in the AI safety
 
 Every other AI company making defense contracts is watching closely. The question for OpenAI, Google, and the other seven signatories to the new Pentagon agreements: have they accepted "all lawful purposes" clauses that Anthropic rejected? If so, what constraints remain on how their models are used?
 
-OpenAI changed its usage policies in January 2025 to explicitly allow military applications — a move widely noted at the time. Google's separate contracts with the DoD predate the new IL6/IL7 agreements. Neither company has publicly detailed the usage restrictions (or absence thereof) in their Pentagon contracts.
+[OpenAI changed its usage policies in January 2024 to remove an explicit ban on "military and warfare" use](https://techcrunch.com/2024/01/12/openai-changes-policy-to-allow-military-applications) — a move widely noted at the time, while retaining a ban on weapons development. Google's separate contracts with the DoD predate the new IL6/IL7 agreements. Neither company has publicly detailed the usage restrictions (or absence thereof) in their Pentagon contracts.
 
 ### For Enterprise AI Buyers
 

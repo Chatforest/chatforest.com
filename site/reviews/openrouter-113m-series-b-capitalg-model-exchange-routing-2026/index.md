@@ -5,30 +5,30 @@
 
 OpenRouter [raised **$113 million in a Series B** on May 26, 2026](https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/), as the AI model exchange reported weekly token volume of 25 trillion — a fivefold increase from five trillion tokens per week six months earlier.
 
-[CapitalG, Alphabet's independent growth fund, led the round](https://www.businesswire.com/news/home/20260526953416/en/OpenRouter-Raises-$113-Million-CapitalG-led-Series-B-as-Weekly-Volume-Explodes-to-25T-Tokens). NVIDIA Ventures (NVentures), ServiceNow Ventures, MongoDB Ventures, Snowflake Ventures, and Databricks Ventures joined as new investors, alongside existing backers Andreessen Horowitz and Menlo Ventures. The post-money valuation landed at approximately $1.3 billion, more than double the $547 million valuation from the company's $40 million Series A in June 2025.
+[CapitalG, Alphabet's independent growth fund, led the round](https://www.businesswire.com/news/home/20260526953416/en/OpenRouter-Raises-$113-Million-CapitalG-led-Series-B-as-Weekly-Volume-Explodes-to-25T-Tokens). [NVentures (NVIDIA's venture capital arm)](https://www.nventures.ai/), ServiceNow Ventures, MongoDB Ventures, Snowflake Ventures, and Databricks Ventures joined as new investors, alongside existing backers Andreessen Horowitz and Menlo Ventures — [per OpenRouter's own Series B announcement](https://openrouter.ai/blog/announcements/series-b/). The post-money valuation landed at approximately $1.3 billion, more than double the [$547 million valuation from the company's $40 million Series A round, announced in June 2025](https://www.globenewswire.com/news-release/2025/06/25/3105125/0/en/OpenRouter-raises-40-million-to-scale-up-multi-model-inference-for-enterprise.html) — [a jump TechCrunch also reported](https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/).
 
-The company says it now serves more than **8 million users globally**, spanning individual developers and large enterprise organizations.
+The company says it now serves more than **8 million users globally**, spanning individual developers and large enterprise organizations — [per its Series B announcement](https://openrouter.ai/blog/announcements/series-b/).
 
 ---
 
 ## What OpenRouter Does
 
-Founded in 2023, OpenRouter sits between applications and AI providers. Its core product is a unified API layer that connects developers to more than **400 models** from providers including Anthropic (Claude), Google (Gemini), OpenAI (GPT), xAI (Grok), and DeepSeek, plus dozens of open-weight alternatives.
+[Founded in 2023](https://www.theblock.co/post/360093/opensea-co-founder-alex-atallah-raises-40-million-for-ai-startup-openrouter), OpenRouter sits between applications and AI providers. Its core product is a unified API layer that connects developers to [more than **400 models**](https://openrouter.ai/blog/announcements/series-b/) from providers including Anthropic (Claude), Google (Gemini), OpenAI (GPT), xAI (Grok), and DeepSeek, plus dozens of open-weight alternatives.
 
-For most developers, that means a single API key and endpoint. For enterprises, it means a control plane that handles:
+For most developers, that means a single API key and endpoint. For enterprises, [it means a control plane that handles](https://openrouter.ai/blog/announcements/series-b/):
 
 - **Routing and failover** — automatically directing requests to available providers
 - **Cost optimization** — selecting the cheapest qualifying model for each task
 - **Governance** — per-request data policies, team-level permissions, audit logging, and vendor risk management
 - **Usage controls** — spend limits, rate controls, and access reports
 
-The platform processes more than **100 trillion tokens per month** — up from 5 trillion per week six months prior. One trillion tokens a year qualifies as a quadrillion annually; OpenRouter is processing that volume in roughly ten days.
+The platform [processes more than **100 trillion tokens per month** — roughly 25 trillion tokens per week — up from about 5 trillion tokens per week six months earlier](https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/). At that run rate, [OpenRouter's own Series B announcement projects annual volume will exceed 1 quadrillion tokens](https://openrouter.ai/blog/announcements/series-b/).
 
 ---
 
 ## Why the Round Is Significant
 
-The investor composition tells the story. CapitalG is Alphabet's growth-stage vehicle, not Google Ventures — it operates independently of Google's product divisions and tends to back infrastructure companies with durable unit economics. NVIDIA Ventures' participation signals that NVIDIA views model routing infrastructure as complementary to its GPU supply chain. The strategic corporate participation from MongoDB, Snowflake, Databricks, and ServiceNow reflects a broader pattern: these platforms integrate AI into their own products and want equity upside in the infrastructure they route workloads through.
+The investor composition tells the story. [CapitalG is Alphabet's independent growth fund, not Google Ventures](https://www.capitalg.com/about/) — unlike Google's Corporate Development group, which invests strategically for Google's own product lines, [CapitalG invests for financial return, with Alphabet as its parent rather than a strategic sponsor](https://en.wikipedia.org/wiki/CapitalG). NVentures' participation signals that NVIDIA views model routing infrastructure as complementary to its GPU supply chain. The strategic corporate participation from MongoDB, Snowflake, Databricks, and ServiceNow reflects a broader pattern: these platforms integrate AI into their own products and want equity upside in the infrastructure they route workloads through.
 
 The 5x volume growth in six months is not developer hobbyist activity. Production enterprise AI workloads generate that kind of token count. It indicates that companies have moved past experimentation and are routing real workloads through OpenRouter in production.
 
@@ -48,7 +48,7 @@ OpenRouter's routing intelligence layer is what makes that mix-and-match archite
 
 The company said the new capital will be used to expand routing intelligence, governance tooling, optimization systems, and enterprise infrastructure capabilities. The governance focus is notable: as enterprises shift more autonomous workloads to AI, access controls, audit trails, and data residency requirements are moving from nice-to-have to compliance necessities.
 
-OpenRouter will also face increased competition from hyperscaler routing offerings. AWS Bedrock, Google Vertex AI, and Azure AI Studio all offer multi-model access with enterprise SLAs. What OpenRouter offers that those platforms do not is provider-neutrality: a developer using OpenRouter has no incentive pressure from a cloud vendor to prefer that vendor's hosted models.
+OpenRouter will also face increased competition from hyperscaler routing offerings. [AWS Bedrock](https://aws.amazon.com/bedrock/), [Google Vertex AI](https://cloud.google.com/vertex-ai), and [Azure AI Studio](https://azure.microsoft.com/en-us/products/ai-studio) all offer multi-model access with enterprise SLAs. What OpenRouter offers that those platforms do not is provider-neutrality: a developer using OpenRouter has no incentive pressure from a cloud vendor to prefer that vendor's hosted models.
 
 ---
 
@@ -56,7 +56,7 @@ OpenRouter will also face increased competition from hyperscaler routing offerin
 
 OpenRouter is one of several companies this investment cycle collecting large checks to build control planes around AI inference. The thesis: frontier model capabilities will continue to commoditize, but the infrastructure that orchestrates them — routing, caching, governance, observability — will consolidate into durable businesses.
 
-The broader AI funding pattern supports this. Global startup funding hit approximately $300 billion in the first quarter of 2026, with a significant share flowing to companies one layer below the models themselves: inference routers, agent orchestrators, data pipelines, and evaluation platforms.
+The broader AI funding pattern supports this. [Global venture funding hit approximately $300 billion in the first quarter of 2026 — an all-time quarterly record](https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/), with AI startups capturing roughly 80% of that total. Most of that capital concentrated in a small number of frontier labs, but OpenRouter's raise shows meaningful money is also reaching the routing and orchestration layer beneath them.
 
 For developers evaluating multi-model infrastructure in mid-2026, OpenRouter remains the most direct path to access 400+ models behind a single API, with the operational controls that enterprise deployments require.
 
@@ -65,8 +65,13 @@ For developers evaluating multi-model infrastructure in mid-2026, OpenRouter rem
 ## Sources
 
 - [OpenRouter More Than Doubles Valuation to $1.3B — TechCrunch](https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/)
-- [OpenRouter Raises $113M Series B — Official Announcement](https://openrouter.ai/announcements/series-b)
+- [OpenRouter Raises $113M Series B — Official Announcement](https://openrouter.ai/blog/announcements/series-b/)
 - [OpenRouter Raises $113M CapitalG-led Series B as Weekly Volume Explodes to 25T Tokens — BusinessWire](https://www.businesswire.com/news/home/20260526953416/en/OpenRouter-Raises-$113-Million-CapitalG-led-Series-B-as-Weekly-Volume-Explodes-to-25T-Tokens)
+- [OpenRouter Raises $40 Million to Scale Up Multi-Model Inference for Enterprise — GlobeNewswire, June 25, 2025](https://www.globenewswire.com/news-release/2025/06/25/3105125/0/en/OpenRouter-raises-40-million-to-scale-up-multi-model-inference-for-enterprise.html)
+- [OpenSea Co-founder Alex Atallah Raises $40 Million for AI Startup OpenRouter — The Block](https://www.theblock.co/post/360093/opensea-co-founder-alex-atallah-raises-40-million-for-ai-startup-openrouter)
+- [CapitalG — About](https://www.capitalg.com/about/)
+- [NVentures — NVIDIA's Venture Capital Arm](https://www.nventures.ai/)
+- [Q1 2026 Shatters Venture Funding Records As AI Boom Pushes Startup Investment To $300B — Crunchbase News](https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/)
 
 ---
 

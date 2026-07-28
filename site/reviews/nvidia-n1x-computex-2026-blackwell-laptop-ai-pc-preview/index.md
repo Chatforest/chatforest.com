@@ -3,44 +3,43 @@
 > NVIDIA's N1X SoC combines a 20-core ARM CPU with a Blackwell-class GPU and full CUDA support — arriving at Computex 2026. Here's what AI developers need to know before Jensen Huang's June 1 keynote.
 
 
-Jensen Huang takes the Computex stage on **June 1, 2026** at GTC Taipei — and for the first time, an NVIDIA chip is expected to live inside a *laptop* rather than a data center rack. The [N1X is an ARM-based SoC co-developed with MediaTek](https://www.techtimes.com/articles/317428/20260530/nvidia-arm-laptop-chip-n1x-confirmed-computex-cuda-rtx-5070-gpu-onboard.htm), packing a Blackwell-architecture GPU with 6,144 CUDA cores alongside a 20-core ARM CPU. This is a preview based on [pre-announcement leaks and confirmed specifications](https://www.tomshardware.com/pc-components/cpus/nvidias-long-awaited-n1-n1x-soc-specs-leak-ahead-of-computex-launch-n1-to-feature-up-to-20-arm-based-cores-standard-n1-equipped-with-12-and-10-core-configs).
+Jensen Huang takes the Computex stage on **[June 1, 2026](https://videocardz.com/newz/nvidia-confirms-jensen-huang-gtc-taipei-keynote-on-june-1st-day-before-computex)** at GTC Taipei — and for the first time, an NVIDIA chip is expected to live inside a *laptop* rather than a data center rack. The [N1X is an ARM-based SoC co-developed with MediaTek](https://www.techtimes.com/articles/317428/20260530/nvidia-arm-laptop-chip-n1x-confirmed-computex-cuda-rtx-5070-gpu-onboard.htm), packing a Blackwell-architecture GPU with [6,144 CUDA cores alongside a 20-core ARM CPU](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark). This is a preview based on [pre-announcement leaks and confirmed specifications](https://www.tomshardware.com/pc-components/cpus/nvidias-long-awaited-n1-n1x-soc-specs-leak-ahead-of-computex-launch-n1-to-feature-up-to-20-arm-based-cores-standard-n1-equipped-with-12-and-10-core-configs).
 
 ## What Is the N1X?
 
-The N1X is NVIDIA's first laptop system-on-chip — a single die combining CPU and GPU on a 3nm process:
+The N1X is NVIDIA's first laptop system-on-chip — a single die combining CPU and GPU on a [3nm process](https://www.trendforce.com/news/2026/06/01/news-nvidia-enters-pc-market-with-rtx-spark-featuring-mediatek-co-designed-n1x-cpu-on-tsmc-3nm/):
 
-- **CPU**: 20 ARM cores in a hybrid configuration — 10 high-performance Cortex-X925 cores paired with 10 efficiency Cortex-A725 cores
-- **GPU**: 48 Blackwell streaming multiprocessors, 6,144 CUDA cores — the same core count as the desktop RTX 5070
-- **Memory**: Up to 128 GB LPDDR5X (unified, shared between CPU and GPU)
-- **Architecture**: Blackwell (same generation as H100/H200 datacenter GPUs and RTX 5000 desktop cards)
+- **CPU**: 20 ARM cores in a hybrid configuration — [10 high-performance Cortex-X925 cores paired with 10 efficiency Cortex-A725 cores](https://videocardz.com/newz/nvidia-n1x-n1-laptop-chip-specifications)
+- **GPU**: [48 Blackwell streaming multiprocessors, 6,144 CUDA cores](https://videocardz.com/newz/nvidia-n1x-n1-laptop-chip-specifications) — [the same core count as the desktop RTX 5070](https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/)
+- **Memory**: [Up to 128 GB LPDDR5X](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark) (unified, shared between CPU and GPU)
+- **Architecture**: Blackwell — [the same architecture family as NVIDIA's B100/B200/GB200 datacenter GPUs and the GeForce RTX 50-series desktop cards](https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/) (not H100/H200, which are the prior Hopper generation)
 
-A sister chip — the N1 — is expected with a lower core count, targeting thinner/lighter form factors.
+A sister chip — [the N1 — is expected with a lower core count](https://videocardz.com/newz/nvidia-n1x-n1-laptop-chip-specifications) (an 18-core, 40-SM/5,120-CUDA-core configuration has leaked), targeting thinner/lighter form factors.
 
-MediaTek contributed the CPU design and manufacturing relationships; NVIDIA contributed the GPU architecture and software stack. The project was delayed from an originally planned 2025 window due to Windows on ARM compatibility issues, with broader availability now expected by early 2027.
+[MediaTek contributed the CPU design, with NVIDIA developing the GPU and overall chip architecture](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark). The project was [reportedly delayed from an original second-half-2025 target](https://www.trendforce.com/news/2025/07/23/news-nvidia-and-mediatek-reportedly-delay-n1x-processor-launch-from-second-half-of-2025-to-q1-2026/), with contemporaneous reporting at the time citing [Windows-on-ARM software readiness issues and pointing to availability slipping as late as 2027](https://winbuzzer.com/2025/07/24/nvidias-game-changing-arm-chip-for-laptops-delayed-to-2027-amid-microsoft-os-hurdles-xcxwbn/).
 
 ## The CUDA Advantage
 
 The most important word in the N1X spec sheet for AI developers is **CUDA**.
 
-Qualcomm's Snapdragon X Elite dominates the current Windows-on-ARM market and offers respectable NPU performance. But it runs on Qualcomm's proprietary AI stack — ONNX, QNN, and DirectML are the practical options, with no CUDA. AMD's Phoenix and Strix APUs support ROCm, but ROCm's adoption in the AI tooling ecosystem remains far behind CUDA.
+[Qualcomm's Snapdragon X Elite has been the only Windows-on-ARM chip from a major vendor](https://www.windowscentral.com/hardware/laptops/nvidia-wants-push-laptops-forward-after-qualcomm-kickstarted-windows-on-arm) and offers respectable NPU performance ([up to 45 TOPS](https://www.qualcomm.com/laptops/products/snapdragon-x-elite)). But it runs on Qualcomm's proprietary AI stack — [ONNX, QNN, and DirectML are the practical options, with no CUDA](https://onnxruntime.ai/docs/genai/howto/build-models-for-snapdragon.html). AMD's Phoenix and Strix APUs support ROCm, but [ROCm's adoption in the AI tooling ecosystem remains far behind CUDA](https://www.neowin.net/news/amd-rocm-open-source-nvidia-cuda-rival-gets-massive-windows--linux-improvements/), including on Windows.
 
-The N1X changes this. A developer who has tuned a llama.cpp build for CUDA, or relies on PyTorch's CUDA backend, or runs Flash Attention — that code runs natively on the N1X without recompilation gymnastics or framework substitution. The GPU compute ecosystem that runs $3 trillion in cloud workloads comes along for the ride, in a laptop you can carry through an airport.
+The N1X changes this. A developer who has tuned a llama.cpp build for CUDA, or relies on PyTorch's CUDA backend, or runs Flash Attention — that code runs natively on the N1X without recompilation gymnastics or framework substitution, in a laptop you can carry through an airport.
 
 ## Local AI Inference Capabilities
 
 The raw numbers matter for local LLM inference:
 
-- **6,144 CUDA cores** is roughly what's needed to run 70B parameter models quantized to 4-bit at practical speeds
-- **128 GB unified memory** removes the discrete GPU VRAM bottleneck that has limited local model sizes — a 70B Q4 model fits comfortably at ~35 GB
-- **Shared memory architecture** avoids PCIe copy overhead between CPU and GPU, which hurts discrete GPU setups for small-batch inference
+- **128 GB unified memory** removes the discrete GPU VRAM bottleneck that has limited local model sizes — [a 70B model at 4-bit (Q4) quantization needs roughly 35-48 GB depending on the quantization method and context length](https://www.sitepoint.com/quantization-explained-consumer-gpu/), comfortably within the N1X's memory budget
+- **Shared, coherent CPU/GPU memory** ([connected via NVLink-C2C](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark)) avoids the PCIe copy overhead that hurts discrete GPU setups for small-batch inference
 
-For comparison, Apple's M4 Max offers similar memory bandwidth and unified memory capacity — but in a macOS-only ecosystem. The N1X brings comparable local-inference capability to Windows, with full CUDA compatibility.
+For comparison, Apple's M4 Max offers a [similar unified memory capacity ceiling of 128 GB](https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/) — but in a macOS-only ecosystem, and with meaningfully higher memory bandwidth ([up to 546 GB/s](https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/) versus [an estimated 270-300 GB/s for the N1X](https://hothardware.com/news/nvidia-n1-laptop-motherboard-leaks) based on its leaked 16-channel LPDDR5X configuration). The N1X brings comparable memory capacity to Windows, with full CUDA compatibility, though not comparable bandwidth.
 
-Realistic expectations: the integrated GPU runs at lower clock speeds and shared memory bandwidth compared to a discrete RTX 5070. Expect roughly 20-25% of discrete RTX 5070 AI compute performance — still meaningfully ahead of any current Windows ARM laptop, and sufficient for running 13B–70B models locally.
+Realistic expectations: a leaked engineering-sample benchmark put the N1X's integrated GPU clock at [just 1.05 GHz, versus the discrete RTX 5070's 2.3-2.51 GHz boost clock](https://www.techspot.com/news/108835-nvidia-n1x-ai-pc-chip-leaks-same-number.html) — despite sharing the same 6,144 CUDA core count. That same leak measured an [OpenCL (Geekbench) score of 46,361, which beat every other integrated GPU tested](https://www.techspot.com/news/108835-nvidia-n1x-ai-pc-chip-leaks-same-number.html) but is well short of the RTX 5070's own scores; the outlet cautioned the sample wasn't confirmed to be running at full clocks. Treat any specific "N1X is X% of an RTX 5070" figure as unconfirmed until NVIDIA publishes real benchmarks — what's verified is that it beats other integrated/NPU-based Windows-on-ARM graphics and has the memory capacity to hold 13B-70B models locally.
 
 ## Who Makes N1X Laptops?
 
-Dell and Lenovo have both been confirmed through leaks (Lenovo's internal product database was accidentally made public in May 2026). Asus is also reportedly developing N1X designs. Eight specific Dell and Lenovo models are expected at launch.
+Dell and Lenovo have both been confirmed through leaks — [an internal Lenovo sign-in (ADFS) portal referenced the N1X twice in late May 2026](https://winbuzzer.com/2026/05/26/lenovo-leak-points-to-nvidia-n1x-gaming-laptop-push-xcxwbn/), with [leaked Lenovo model names including the Legion 7, IdeaPad Slim 5, Yoga Pro 7, and Yoga 9](https://www.windowscentral.com/hardware/lenovo/lenovo-legion-nvidia-n1x-leak), and [Dell's lineup reportedly including XPS and Alienware models](https://www.tomshardware.com/pc-components/cpus/nvidias-n1-n1x-chips-leak-once-again-this-time-tipped-for-release-in-first-half-of-2026-hotly-anticipated-chips-to-reportedly-debut-on-dell-and-lenovo-laptops). Asus is also [reportedly developing N1X designs](https://www.techtimes.com/articles/317428/20260530/nvidia-arm-laptop-chip-n1x-confirmed-computex-cuda-rtx-5070-gpu-onboard.htm).
 
 Positioning will likely be:
 - **Thin-and-light creators** who want CUDA for local AI without carrying a gaming GPU
@@ -51,16 +50,16 @@ Positioning will likely be:
 
 | Platform | CPU | GPU | CUDA | Max Unified RAM | Notes |
 |---|---|---|---|---|---|
-| NVIDIA N1X | 20-core ARM | 6,144 CUDA (Blackwell) | Yes | 128 GB | Announced June 1 |
-| Apple M4 Max | 16-core Apple | 40-core GPU | No (MPS) | 128 GB | macOS only |
-| Qualcomm Snapdragon X Elite | 12-core Oryon | Adreno | No | 64 GB | No CUDA |
-| AMD Strix Halo | 16-core Zen 5 | 40 RDNA4 CUs | No (ROCm) | 128 GB | x86, ROCm limited |
+| [NVIDIA N1X](https://videocardz.com/newz/nvidia-n1x-n1-laptop-chip-specifications) | 20-core ARM | 6,144 CUDA (Blackwell) | Yes | 128 GB | Announced June 1 |
+| [Apple M4 Max](https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/) | 16-core Apple | 40-core GPU | No (MPS) | 128 GB | macOS only |
+| [Qualcomm Snapdragon X Elite](https://www.qualcomm.com/laptops/products/snapdragon-x-elite) | 12-core Oryon | Adreno | No | 64 GB | No CUDA |
+| [AMD Strix Halo](https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo/ryzen-ai-max-plus-395.html) | 16-core Zen 5 | 40 RDNA 3.5 CUs | No (ROCm) | 128 GB | x86, ROCm limited |
 
-The N1X is the only option combining Windows compatibility, ARM efficiency, high memory capacity, and the CUDA ecosystem. Its weakness remains Windows ARM software compatibility — not all applications and games run natively, and anti-cheat systems in games often block ARM.
+The N1X is the only option combining Windows compatibility, ARM efficiency, high memory capacity, and the CUDA ecosystem. Its weakness remains Windows ARM software compatibility — not all applications and games run natively, and [kernel-level anti-cheat systems (BattlEye, Vanguard) have historically blocked many multiplayer games on ARM](https://www.techradar.com/computing/windows-laptops/epic-delivers-on-promise-to-fix-anti-cheat-games-so-they-work-on-laptops-with-snapdragon-x-cpus-starting-with-fortnite), though Epic's Easy Anti-Cheat has recently been ported to Windows-on-ARM.
 
 ## What to Watch at GTC Taipei (June 1)
 
-Jensen Huang's keynote is scheduled for **11 a.m. Taiwan Time on June 1, 2026** (8 p.m. PT on May 31). Specific items worth watching:
+Jensen Huang's keynote is scheduled for **[11 a.m. Taiwan Time on June 1, 2026](https://videocardz.com/newz/nvidia-confirms-jensen-huang-gtc-taipei-keynote-on-june-1st-day-before-computex)** (8 p.m. PT on May 31). Specific items worth watching:
 
 1. **Official N1X naming** — leaks use "N1" and "N1X"; NVIDIA may introduce a product family name
 2. **Performance numbers** — NVIDIA will likely show AI inference benchmarks (tokens/sec, image generation)
@@ -68,7 +67,7 @@ Jensen Huang's keynote is scheduled for **11 a.m. Taiwan Time on June 1, 2026** 
 4. **CUDA compatibility claims** — which frameworks and tools are supported day one vs. roadmap
 5. **N1 (base model)** — a lower-power tier targeting ultrabooks
 
-MediaTek's Computex keynote was cancelled and its slot handed to NVIDIA — a clear signal that the N1X reveal is the centerpiece announcement.
+[MediaTek's Computex keynote, originally scheduled for June 3, was cancelled](https://www.computextaipei.com.tw/en/news/31E5016E7906D36C/info.html?lt=data&cr=7), and industry coverage read the timing as [NVIDIA getting the spotlight for its N1 launch](https://wccftech.com/mediatek-abruptly-pulled-from-computex-2026-keynote-slot-handing-nvidia-the-stage/) — a signal the N1X reveal is a centerpiece announcement.
 
 ## What This Means for AI Builders
 
@@ -79,7 +78,7 @@ If the N1X delivers on its specs and CUDA compatibility, it reshapes the local A
 - **Edge deployment testing**: AI apps targeting NVIDIA Jetson or datacenter CUDA can be developed and tested on the same architecture without a separate test machine.
 - **Windows on ARM maturation**: The N1X gives the Windows ARM ecosystem a reason to solve its remaining compatibility gaps — NVIDIA's developer relations team will be pushing hard on framework support.
 
-The risk is timing. First devices expected October 2026, broad availability early 2027. The developer tools certification work — PyTorch, llama.cpp, TensorRT-LLM, ComfyUI — needs to complete before the launch date. NVIDIA has a track record of shipping CUDA-compatible hardware with day-one framework support, but this is a new architecture class (consumer ARM laptop) where the validation pipeline hasn't been exercised before.
+The risk is timing. The project has [already slipped once, from an original second-half-2025 target](https://www.trendforce.com/news/2025/07/23/news-nvidia-and-mediatek-reportedly-delay-n1x-processor-launch-from-second-half-of-2025-to-q1-2026/), with [contemporaneous reporting warning broad availability could land as late as 2027](https://winbuzzer.com/2025/07/24/nvidias-game-changing-arm-chip-for-laptops-delayed-to-2027-amid-microsoft-os-hurdles-xcxwbn/). The developer tools certification work — PyTorch, llama.cpp, TensorRT-LLM, ComfyUI — needs to complete before whatever launch date NVIDIA ultimately confirms. NVIDIA has a track record of shipping CUDA-compatible hardware with day-one framework support, but this is a new architecture class (consumer ARM laptop) where the validation pipeline hasn't been exercised before.
 
 ## Bottom Line
 
