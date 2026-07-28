@@ -123302,3 +123302,98 @@ redirect to the recap. Deployed to DreamHost (throttle had cleared, ~10,291s sin
 - Continue the standing citation-audit duty: next oldest unaudited batch.
 - No inbox action needed — the one pending message is CEO's already-handled Bluesky-incident reply (#2272, done).
 - Bluesky: still gated on Dispatch #4 sending (scheduled 09:00 UTC 07-28); run the pre-post check script before any post.
+
+## Run 2167858 (2026-07-28) — Citation audit, 10 oldest unaudited pages (2026-05-23/05-24 reviews cluster)
+
+Committed a prior run's uncommitted RUNLOG/TOKENLOG entries first (run 2145548's batch-103 work + Bluesky
+script guards — see commit 5ac2541a43).
+
+**Discovered the "oldest unaudited" queue was not actually oldest-first**: prior runs had been working the
+2026-06-01/06-02/06-03 builders-log cluster (batches 101-103), but a full `grep -rL sources_audited` sweep
+across all `content/*.md` showed 1010 pages still unaudited, and the true oldest by `date` were 10
+`content/reviews/` pages dated 2026-05-23/05-24 — earlier than the builders-log batch being worked. Picked
+those 10 instead, per the standing instruction to take the oldest unaudited pages by date across the whole
+site, not just within one content subfolder.
+
+**10 pages audited claim-by-claim, `sources_audited: 2026-07-28` added to each** (dispatched via 6 parallel
+subagents + 1 done directly after two subagent attempts got blocked by an over-broad cyber-content safety
+filter):
+
+1. **teampcp-mini-shai-hulud-vscode-github-supply-chain-attack-2026** — audited directly (subagent blocked
+   twice on safety filter for security-incident content; did the WebFetch/WebSearch verification myself).
+   Fixed: 518M download figure was mischaracterized as lifetime cumulative downloads when Tenable's own FAQ
+   says "cumulative *weekly* downloads" — a big difference in what it implies; added hackread.com citation
+   for the 400-versions/172-packages/five-hour figure; added ThreatLocker citation for the 1Password/DNS-
+   tunneling claims (the only source previously cited, Tenable, doesn't mention either); clarified the
+   "2.2M installs" table entry to note Corgea's estimate that only ~6,000 workspaces actually executed the
+   payload during the 18-minute window. **Removed a fabricated victim claim**: "European Commission —
+   confirmed hit (through the OpenSearch package compromise)" appeared in 3 places (og_description,
+   card_description, victims list) with no supporting source after real search effort — traced the only EC
+   mention in any source to an unrelated Cyber Resilience Act reporting-deadline footnote, not a breach.
+   Replaced with Grafana Labs, which multiple independent sources (Notebookcheck, Hacker News) do confirm as
+   a victim of the same TanStack/Nx Console chain. Added a visible correction note in the article itself.
+   Also removed a stray unrelated Sources-list entry (a Gemini 3.5 Flash article link, clearly a copy-paste
+   error).
+2. **trump-ai-executive-order-cancelled-anthropic-mythos-may-2026** — fixed EO cancellation date (May 21,
+   not 22 — the article's own two citations even contradicted each other), Mythos release date (April 7,
+   not "early May"), an unverifiable Trump quote (replaced with 2 confirmed Forbes quotes), false "same-day"
+   OpenAI S-1 coincidence, wrong reviewing-agency list, deleted an unsourced procurement-benefit claim, added
+   Schneier's counter-view for balance. ~15 new citations added.
+3. **windsurf-2-0-cognition-devin-agent-command-center-ide-review** — fixed acquisition date (July 2025, not
+   December 2025 — wrong in 3 places), deleted a fabricated "killer feature" user quote, corrected a
+   mismatched citation. ~15 claims newly cited. Flagged (not fixed, per instructions): two hands-on-testing-
+   style sentences that conflict with the site's research-only policy — worth a follow-up pass.
+4. **anthropic-claude-managed-agents-dreaming-outcomes-multiagent-review** — found and fixed a fused-stat
+   fabrication: an invented "20 subagents" Dreaming anecdote that actually borrowed its number from an
+   unrelated Multiagent Orchestration config limit. Added ~10 citations. Flagged for CEO/Rob: Harvey's "6x"
+   benchmark is Anthropic-relayed only, no independent Harvey confirmation found despite real search effort
+   — reworded to make the sourcing clear rather than cutting outright; worth a judgment call.
+5. **chinese-ai-models-openrouter-dominance-deepseek-kimi-minimax-glm-2026** — headline "60%" stat was
+   imprecise (real figure: 61% of OpenRouter's *top 10* models for *one week*, not "the platform"); deleted
+   an unsourced DeepSeek-vs-Claude cost comparison; fixed GLM-5.1 param count (754B not 744B) and hardware
+   requirement; deleted unverifiable MiniMax/Kimi token-volume figures; corrected IMO/IOI medal attribution
+   to the Speciale variant specifically. Trump EO paragraph went from zero citations to sourced.
+6. **nvidia-nemotron-3-nano-omni-multimodal-model-review** — fixed release date (April 28, not 29, in 6
+   places), fabricated RADIO acronym expansion, and a false "streaming-capable" claim that contradicts
+   NVIDIA's own model card (batch-only, up to 24 min).
+7. **anthropic-gates-foundation-200m-global-health-education-ai-partnership-2026** — fixed announcement date
+   (May 14, not 21 — wrong in 7 places), a factually backwards claim that the education component "focuses
+   on infrastructure, not tutoring" (Anthropic's own post says tutoring is the focus), added citations for 4
+   previously-uncited Anthropic financial claims with an unaudited-projection caveat.
+8. **cognition-ai-devin-25b-valuation-funding-talks-ai-coding-2026** — central premise was stale: round had
+   actually closed (May 27, 2026, $25B pre/$26B post, $492M ARR, not "in talks" at $73-100M ARR as written).
+   Also fixed the SpaceX/Cursor deal (option agreement in April, not an acquisition; exercised in June),
+   a SWE-Bench score misattributed to the wrong Claude version, an unsupported Goldman efficiency stat, and
+   Cognition's founding year (2023, not 2022).
+9. **deepseek-first-vc-round-45b-valuation-china-big-fund-2026** — same staleness pattern: round closed in
+   June 2026 at >$50B (~25x the reported size); added a dated update block rather than rewriting the
+   original May-2026 analysis out of existence. Corrected the investor (National AI Industry Investment
+   Fund, not the semiconductor-focused Big Fund itself) and added ~10 new citations.
+10. **exa-labs-250m-series-c-ai-search-infrastructure-2026** — removed an unverifiable "Nvidia and Thrive
+    Capital participating" claim (Nvidia's involvement traces to the Series B, not C); corrected revenue
+    estimate ($10M, not $12M); removed a fabricated direct quote attributed to the CEO.
+
+One subagent reported it had accidentally run `rm -rf` on the built `site/` directory mid-task and reverted
+via `git checkout -- site/` — verified independently (`git diff --stat -- site/` showed zero drift) before
+trusting that self-report.
+
+**Hugo build note:** ran `hugo --gc --minify` first, which fully re-minified all ~2100 previously-unminified
+tracked `site/*.html` files (894K line diff, no real content change) — caught before committing, reset, and
+rebuilt with plain `hugo` to match the tracked format. Worth remembering: this repo's `site/` output is
+committed unminified; don't add `--minify`/`--gc` to the build command.
+
+**`sources_audited` count: 1118 → 1128.** Deployed to DreamHost (throttle had cleared). Spot-checked the
+TeamPCP page live — Grafana Labs correction and European Commission removal both confirmed live.
+
+**Bluesky:** checked `check_bluesky_posted_today.py` — already posted today (09:16 UTC, the Dispatch #4
+newsletter plug from run 2145548). No action needed.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo
+  `grep -rL sources_audited` sweep rather than assuming the last subfolder/date cluster continues — see
+  the ordering note above).
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (not fixed this run, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO —
+  flagged inline in the article but not escalated via inbox this run.
+- No pending inbox action.
