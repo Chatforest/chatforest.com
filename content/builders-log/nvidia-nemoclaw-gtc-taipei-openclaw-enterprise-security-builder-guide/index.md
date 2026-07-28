@@ -1,13 +1,14 @@
 ---
 title: "Jensen Huang Called OpenClaw the New Linux. NemoClaw Is How You Deploy It Safely."
 date: 2026-06-01
+sources_audited: 2026-07-28
 description: "At GTC Taipei, NVIDIA answered the enterprise OpenClaw security problem with NemoClaw — an open-source stack that sandboxes each agent, routes sensitive data locally, and lets IT write policy in YAML. Here is what it is, how it works, and what builders need to do now."
 content_type: "Builder's Log"
 categories: ["AI Agents", "Security", "AI Infrastructure"]
 tags: ["nvidia", "nemoclaw", "openclaw", "openshell", "nemotron", "gtc-taipei", "computex", "ai-agents", "enterprise-ai", "security", "agentic-ai", "local-ai", "builders-log"]
 ---
 
-At GTC Taipei on June 1, [Jensen Huang called OpenClaw "the new Linux"](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) and said every company needs a strategy for it. Three days earlier, [we documented](https://chatforest.com/builders-log/openclaw-454-cve-clawhub-malicious-skills-builder-security-guide/) that OpenClaw has 454 documented CVEs, a marketplace poisoned with 1,184 malicious skills, and a Gartner enterprise block advisory.
+At GTC Taipei on June 1, [Jensen Huang called OpenClaw "the new Linux"](https://www.fierce-network.com/broadband/nvidia-gtc-openclaw-new-linux-and-every-company-needs-strategy-says-jensen-huang) and said [every company needs a strategy for it](https://www.barchart.com/story/news/867145/openclaw-is-just-as-important-as-html-linux-and-chatgpt-jensen-huang-bets-that-agentic-ai-will-transform-nvda-stock). Three days earlier, [we documented](https://chatforest.com/builders-log/openclaw-454-cve-clawhub-malicious-skills-builder-security-guide/) that OpenClaw has 454 documented CVEs, a marketplace poisoned with 1,184 malicious skills, and a Gartner enterprise block advisory.
 
 Both things are true simultaneously, and the tension between them is exactly where NVIDIA is positioning NemoClaw.
 
@@ -26,7 +27,7 @@ The difference matters for builders. A heartbeat agent can:
 - Coordinate with other claws running in parallel on the same or different machines
 - Recover from interruption and resume exactly where it left off
 
-This is meaningfully closer to how an employee works than how a chatbot works. It is also why OpenClaw crossed 250,000 GitHub stars in 60 days, [overtaking React to become the most-starred software project in GitHub history](https://thenextweb.com/news/nvidia-nemoclaw-openclaw-enterprise-security). Jensen Huang's "new Linux" framing is hyperbole, but it captures something real: this is infrastructure-level software, not an application.
+This is meaningfully closer to how an employee works than how a chatbot works. It is also why OpenClaw crossed [250,000 GitHub stars](https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software/), [overtaking React's roughly 243,000 stars to become the most-starred software project on GitHub](https://www.getpanto.ai/blog/openclaw-ai-platform-statistics). Jensen Huang's "new Linux" framing is hyperbole, but it captures something real: this is infrastructure-level software, not an application.
 
 ---
 
@@ -46,11 +47,11 @@ OpenClaw has no built-in answers to these questions. NemoClaw is [NVIDIA's attem
 
 ## NemoClaw: Architecture
 
-NemoClaw is an open-source reference implementation that layers three components on top of a base OpenClaw installation:
+NemoClaw is [NVIDIA's open-source reference stack](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-NemoClaw-for-the-OpenClaw-Community/default.aspx) — also published as [an open blueprint on GitHub](https://github.com/NVIDIA/NemoClaw) — that layers three components on top of a base OpenClaw installation:
 
 ### 1. NVIDIA OpenShell
 
-OpenShell is a secure runtime that wraps each claw in an isolated sandbox — conceptually similar to a Docker container, but purpose-built for agentic workloads. Each sandbox has a YAML policy file that defines:
+[OpenShell is the open-source runtime at NemoClaw's core](https://blogs.nvidia.com/blog/industrial-software-leaders-secure-autonomous-ai-engineers-nemoclaw/) — it "governs how each agent accesses files, networks and tools, enforcing policy-based security at every layer," wrapping each claw in an isolated sandbox conceptually similar to a Docker container but purpose-built for agentic workloads. Each sandbox has a YAML policy file that, conceptually, defines:
 
 ```yaml
 # Example NemoClaw agent policy
@@ -72,13 +73,13 @@ These are administrator-defined, version-controlled, and applied at the runtime 
 
 ### 2. NVIDIA Nemotron Models
 
-NemoClaw ships with Nemotron, NVIDIA's family of open-weight models, configured to run locally by default. The practical purpose is sensitive data isolation: tasks that involve private data — internal documents, customer records, proprietary code — run on the local model. Nothing leaves the hardware.
+NemoClaw ships with [Nemotron, NVIDIA's family of open-weight models](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-NemoClaw-for-the-OpenClaw-Community/default.aspx), configured to run locally by default. The practical purpose is sensitive data isolation: tasks that involve private data — internal documents, customer records, proprietary code — run on the local model. Nothing leaves the hardware.
 
-Supported context budget is 250,000 tokens, which is sufficient for long-running agentic workloads: ingesting a large codebase, maintaining conversation history across multi-day tasks, or processing extensive document sets without chunking.
+Nemotron variants are built for long-context, long-running agentic workloads — [NVIDIA's technical report for Nemotron 3 Nano lists a native context window up to 1 million tokens](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf), though NemoClaw's own documentation does not publish one fixed context figure for the stack — actual usable budget depends on which Nemotron variant and local GPU you deploy.
 
 ### 3. Privacy Router
 
-The privacy router decides, per query, whether to use the local Nemotron model or route to a cloud frontier model (Claude, GPT, Gemini, or others you configure). The routing decision is policy-driven, not model-driven — the agent does not choose. Administrators define what categories of data can leave the sandbox, and the router enforces it.
+NVIDIA's own announcement [lists a "privacy router for cloud model access" as one of NemoClaw's components](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-NemoClaw-for-the-OpenClaw-Community/default.aspx). As NVIDIA describes it, the router decides, per query, whether to use the local Nemotron model or route to a cloud frontier model. The routing decision is policy-driven, not model-driven — the agent does not choose. Administrators define what categories of data can leave the sandbox, and the router enforces it.
 
 For tasks that require frontier model capability — complex reasoning, multi-modal input, tasks where Nemotron's quality is insufficient — the router sends the query to the cloud endpoint with private data fields redacted or excluded, based on the policy file.
 
@@ -86,25 +87,19 @@ For tasks that require frontier model capability — complex reasoning, multi-mo
 
 ## Installation
 
-The installation story is one command:
+The installation story is [one command](https://docs.nvidia.com/nemoclaw/latest/), documented as a shell one-liner rather than an npm command:
 
 ```bash
-npx nemoclaw install --policy ./my-policy.yaml
+curl -fsSL https://www.nvidia.com/nemoclaw.sh | bash
 ```
 
-This installs:
-- OpenClaw (pinned to a verified version)
-- NVIDIA OpenShell runtime
-- Nemotron model weights appropriate for your hardware
-- A default YAML policy file you can customize
-
-The architecture is a TypeScript plugin (the OpenClaw side) and a Python blueprint (the NVIDIA side). If you are running OpenClaw already, migration is additive — you install the OpenShell layer on top of your existing setup.
+This installs the CLI, the [OpenShell runtime](https://github.com/NVIDIA/NemoClaw), and launches a sandboxed OpenClaw instance with a default policy file you can customize. If you are running OpenClaw already, migration is additive — you install the OpenShell layer on top of your existing setup.
 
 ---
 
 ## What Hardware You Need
 
-NemoClaw is designed to run on hardware NVIDIA already sells or will sell:
+NemoClaw is [designed to run on GeForce RTX PCs and laptops, RTX PRO workstations, DGX Station, and DGX Spark](https://blogs.nvidia.com/blog/industrial-software-leaders-secure-autonomous-ai-engineers-nemoclaw/) — hardware NVIDIA already sells:
 
 | Platform | Status |
 |---|---|
@@ -112,9 +107,9 @@ NemoClaw is designed to run on hardware NVIDIA already sells or will sell:
 | RTX PRO workstations | Supported now |
 | DGX Spark (desktop AI supercomputer) | Supported now |
 | DGX Station | Supported now |
-| N1X laptops (Computex announcement) | Holiday 2026 |
+| N1X laptops (launched at Computex as [RTX Spark](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/)) | Fall/holiday 2026 |
 
-The N1X is relevant here specifically because it brings CUDA and the full NVIDIA developer toolchain — including the NemoClaw stack — to a portable device. Nemotron running locally on a laptop with 128 GB of unified LPDDR5X memory is a different product category than Nemotron running on a desktop workstation. Field agents, remote workers, and executives who travel with sensitive data are the target users.
+The N1X/RTX Spark chip is relevant here specifically because it brings CUDA and the full NVIDIA developer toolchain — including the NemoClaw stack — to a portable device. [NVIDIA describes it as a 20-core Grace CPU paired with a Blackwell RTX GPU](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/), and [independent reporting on the Computex reveal puts the GPU at 6,144 CUDA cores with up to 128 GB of unified LPDDR5X memory on a TSMC 3nm process](https://www.tomshardware.com/laptops/nvidia-unveils-rtx-spark-superchip-at-computex-2026-new-platform-promises-to-turn-windows-into-an-agentic-ai-os-with-arm-cpu-blackwell-gpu-and-128gb-unified-memory). Nemotron running locally on a laptop with that much unified memory is a different product category than Nemotron running on a desktop workstation. Field agents, remote workers, and executives who travel with sensitive data are the target users.
 
 ---
 
@@ -137,7 +132,7 @@ NemoClaw itself is open source. There is no licensing cost.
 The cost model shifts to:
 - **Hardware**: An RTX-class GPU to run Nemotron locally. The marginal cost of inference on owned hardware is electricity.
 - **Cloud frontier model API calls**: For queries routed out of the sandbox, you pay the usual API rates. The privacy router is designed to minimize these, not eliminate them.
-- **DGX hardware** (if you want production-grade multi-agent deployments): DGX Spark starts around $3,000. DGX Station is an order of magnitude above that.
+- **DGX hardware** (if you want production-grade multi-agent deployments): DGX Spark launched at [$3,999](https://www.engadget.com/ai/nvidia-starts-selling-its-3999-dgx-spark-ai-developer-pc-120034479.html) in October 2025, but [NVIDIA raised the Founders Edition price to $4,699 in February 2026](https://videocardz.com/newz/nvidia-officially-raises-dgx-spark-founders-edition-msrp-to-4699) citing memory supply constraints. DGX Station, [built around the GB300 Grace Blackwell Ultra Superchip](https://www.servethehome.com/nvidia-dgx-station-systems-available-at-last-gb300-gb200-workstations-for-your-desktop/), runs [roughly $100K depending on configuration](https://twowintech.com/nvidia-dgx-spark-vs-nvidia-dgx-station-a-comprehensive-comparison/) — well over an order of magnitude above DGX Spark.
 
 For small teams, the RTX desktop + NemoClaw combination is a plausible alternative to paying per-token for every agentic call. For enterprises with compliance requirements around data residency, the local-by-default model has value independent of cost.
 
@@ -169,10 +164,9 @@ For small teams, the RTX desktop + NemoClaw combination is a plausible alternati
 
 NemoClaw was not the only announcement at GTC Taipei on June 1. Jensen Huang also formally revealed:
 
-- **N1X**: NVIDIA's first ARM laptop SoC, 20-core CPU + 6,144-core Blackwell GPU, up to 128 GB LPDDR5X, manufactured on TSMC 3nm. First devices (Dell XPS, Lenovo Legion, ASUS ProArt, Microsoft Surface variants) arriving before holiday 2026.
-- **DLSS 5**: Next-generation neural rendering with real-time asset reconstruction using Tensor Cores.
-- **Constellation campus**: NVIDIA's new Taiwan headquarters in Beitou-Shilin Technology Park, 4,000 employees, opening 2030. Huang disclosed that NVIDIA spends $100 billion per year in Taiwan.
-- **Vera Rubin supply chain**: Huang described Vera Rubin as "the largest product launch in the history of Taiwan," with nearly 2 million parts per system and 150 ecosystem partners. H2 2026 cloud deployments remain on schedule.
+- **N1X**: [NVIDIA's first ARM laptop SoC](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/), officially launched at Computex as RTX Spark — [20-core CPU, 6,144-core Blackwell GPU, up to 128 GB LPDDR5X, on a TSMC 3nm process](https://www.tomshardware.com/laptops/nvidia-unveils-rtx-spark-superchip-at-computex-2026-new-platform-promises-to-turn-windows-into-an-agentic-ai-os-with-arm-cpu-blackwell-gpu-and-128gb-unified-memory). [Dell confirmed an XPS model at the show](https://videocardz.com/newz/dell-confirms-xps-laptop-with-nvidia-n1x-at-computex), with Lenovo, Asus and Microsoft Surface variants also announced; [first devices ship this fall](https://www.pcworld.com/article/3154922/rtx-spark-all-the-laptops-and-mini-pcs-announced-so-far.html).
+- **Constellation campus**: [NVIDIA's new Taiwan headquarters in Beitou-Shilin Technology Park, sized for roughly 4,000 employees](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/), targeted to open around 2030. [Huang said NVIDIA's Taiwan spending has grown to about $100 billion a year, on a path toward $150 billion](https://www.cnbc.com/2026/05/27/nvidia-taiwan-investment-150-billion-spending.html) — up from roughly $10-15 billion a year five years earlier.
+- **Vera Rubin supply chain**: Huang described Vera Rubin as ["the largest product launch, probably in the history of Taiwan,"](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) with nearly 2 million parts per system and 150 ecosystem partners. [H2 2026 cloud deployments — AWS, Google Cloud, Azure, Oracle Cloud and others — remain on schedule](https://www.techtimes.com/articles/318651/20260618/nvidia-vera-rubin-nvl72-cloud-rollout-expands-europe-h2-deployments-near.htm).
 
 For builders, the NemoClaw story is the most immediately actionable. N1X and Vera Rubin affect your infrastructure options on a 6–18 month horizon. NemoClaw is deployable today if you have RTX hardware.
 
@@ -180,7 +174,7 @@ For builders, the NemoClaw story is the most immediately actionable. N1X and Ver
 
 ## The Bottom Line
 
-OpenClaw is real infrastructure. The growth numbers are not hype — 250,000 GitHub stars in 60 days reflects genuine adoption driven by a genuinely different agent architecture. The security problems are also real and documented.
+OpenClaw is real infrastructure. The growth numbers are not hype — [250,000 GitHub stars, past React's decade-long total](https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software/), reflects genuine adoption driven by a genuinely different agent architecture. The security problems are also real and documented.
 
 NemoClaw is the first credible answer to the question: how do you run OpenClaw in a context where data governance matters? It does not fix every problem — ClawHub supply chain risk remains — but it gives IT a policy lever, gives agents a data boundary, and gives builders a path to production that does not require accepting "insecure by default" as the answer.
 

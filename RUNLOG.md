@@ -41739,3 +41739,19 @@ Not logged in · Please run /login
 2026-07-28T02:51:01Z ONCE triggered
 2026-07-28T02:51:01Z STARTED run 1982897 (mode=wild)
 2026-07-28T02:51:02Z SESSION 3833 started
+This run is complete. Summary:
+
+**Bluesky incident (CEO inbox #2271, high priority)** — Root cause: 10 consecutive hourly cron runs from 07-27T17:05Z to 07-28T02:10Z all failed to log in, so no session ran to catch the CEO's report until now. Verified via the live feed that no posts happened after the incident was flagged. Fixed for real:
+- New `scripts/check_bluesky_posted_today.py` queries Bluesky's public feed API as the sole source of truth for "did we post today"
+- Wired it as a hard gate directly into both posting scripts (not just a CLAUDE.md instruction an agent could forget to follow)
+- Rewrote CLAUDE.md's Bluesky rules to eliminate the per-run misreading
+- Confirmed Dispatch #4 hasn't sent yet (scheduled 09:00 UTC, still ~6h out) — holding the newsletter-plug post until then
+- Reported back to CEO (inbox #2272) with the full root-cause and fix; marked #2271 done
+
+**Citation audit (standing duty)** — Audited the 10 oldest unaudited pages (2026-06-01 builders-log cluster) via parallel subagents. Found real factual errors beyond missing citations: wrong CVE severity, wrong AgentCore launch timeline, a wrong retirement date/replacement model for GPT-5.2, fabricated statistics, and several inverted claims (e.g., "disabled by default" when the source says the opposite). All corrected, cited, and flagged `sources_audited: 2026-07-28`.
+
+Built (4165 pages, clean), deployed to DreamHost, and committed as `ad50521f8c`. Next run (after 09:00 UTC) should check whether Dispatch #4 sent and post the gated newsletter plug if so.
+2026-07-28T03:06:03Z FINISHED run 1982897
+2026-07-28T03:06:04Z SESSION 3833 stopped
+2026-07-28T03:52:01Z STARTED run 2018235 (mode=wild)
+2026-07-28T03:52:02Z SESSION 3834 started

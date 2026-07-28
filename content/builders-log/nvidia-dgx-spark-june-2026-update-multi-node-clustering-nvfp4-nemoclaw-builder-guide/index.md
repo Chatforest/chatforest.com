@@ -3,6 +3,7 @@ title: "NVIDIA DGX Spark June 2026 Update: Multi-Node Clustering, 2.6x Faster In
 slug: nvidia-dgx-spark-june-2026-update-multi-node-clustering-nvfp4-nemoclaw-builder-guide
 date: 2026-06-01
 lastmod: 2026-06-07
+sources_audited: 2026-07-28
 description: "NVIDIA shipped a June 2026 DGX Spark software update with three builder-critical changes: a Cluster Assistant that automates 2-4 node stacking (up to 512 GB unified memory, 400B+ models), 2.6x throughput on Qwen3.6-35B via NVFP4 + MTP, and a streamlined NemoClaw install for local agent deployment."
 tags:
   - nvidia
@@ -18,7 +19,7 @@ categories:
   - builders-log
 ---
 
-The NVIDIA DGX Spark was already a significant machine when it launched: 128 GB of unified LPDDR5x memory shared between CPU and GPU on a Grace Blackwell GB10 SoC, up to 1 PFLOP FP4 throughput, in a box the size of a Mac mini. But the June 1, 2026 software update changed its practical ceiling.
+The NVIDIA DGX Spark was already a significant machine when it launched: [128 GB of unified LPDDR5x memory shared between CPU and GPU](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) on a Grace Blackwell GB10 SoC, [up to 1,000 trillion operations per second (1 PFLOP) of FP4 throughput](https://nvidianews.nvidia.com/news/nvidia-announces-dgx-spark-and-dgx-station-personal-ai-computers), in a box the size of a Mac mini. But the [June 1, 2026 software update](https://developer.nvidia.com/blog/run-local-ai-agents-with-faster-models-and-multi-node-clustering-on-nvidia-dgx-spark/) changed its practical ceiling.
 
 Three things shipped in that update that matter to builders:
 
@@ -34,15 +35,15 @@ This is a builder guide to what changed, what it means, and who should care.
 
 Before diving into the update, here are the specs that matter:
 
-- **SoC**: NVIDIA Grace Blackwell GB10 (20-core Arm CPU + Blackwell GPU on one package)
-- **Memory**: 128 GB LPDDR5x unified (CPU and GPU share this pool)
-- **Bandwidth**: 273 GB/s
-- **Compute**: up to 1 PFLOP FP4 / 1,000 TOPS inference
+- **SoC**: [NVIDIA Grace Blackwell GB10](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) (20-core Arm CPU + Blackwell GPU on one package)
+- **Memory**: [128 GB LPDDR5x unified](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) (CPU and GPU share this pool)
+- **Bandwidth**: [273 GB/s](https://www.nvidia.com/en-us/products/workstations/dgx-spark/)
+- **Compute**: [up to 1 PFLOP FP4 / 1,000 TOPS inference](https://nvidianews.nvidia.com/news/nvidia-announces-dgx-spark-and-dgx-station-personal-ai-computers)
 - **Storage**: 1 TB or 4 TB NVMe SSD
-- **Networking**: ConnectX-7 SmartNIC (two QSFP ports), 10 GbE, Wi-Fi 7
-- **Price**: ~$3,999 at launch (~$4,699 as of early 2026)
+- **Networking**: [ConnectX-7 SmartNIC (two QSFP ports), 10 GbE, Wi-Fi 7](https://www.nvidia.com/en-us/products/workstations/dgx-spark/)
+- **Price**: [~$3,999 at launch, raised to ~$4,699 in February 2026](https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713) due to memory supply constraints ([Tom's Hardware](https://www.tomshardware.com/desktops/mini-pcs/nvidia-dgx-spark-gets-18-percent-price-increase-as-memory-shortages-bite-founders-edition-now-usd4-699-up-from-usd3-999))
 
-Single-node capacity tops out at roughly 200B dense parameters, with the practical sweet spot being 100–130B MoE models with ~10–15B active parameters (e.g., Nemotron-3-Super-120B-A12B-NVFP4, Qwen3.6-35B). If you need to run larger models locally without cloud egress, that ceiling has been a constraint.
+Single-node capacity [tops out at roughly 200 billion dense parameters](https://www.nvidia.com/en-us/products/workstations/dgx-spark/), with the practical sweet spot being 100–130B MoE models with ~10–15B active parameters (e.g., [Nemotron-3-Super-120B-A12B-NVFP4](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4), Qwen3.6-35B). If you need to run larger models locally without cloud egress, that ceiling has been a constraint.
 
 The June 2026 update starts removing it.
 
@@ -52,34 +53,34 @@ The June 2026 update starts removing it.
 
 ### How clustering works
 
-Each DGX Spark has two QSFP ports on the rear, connected to a ConnectX-7 SmartNIC. These carry 400 GbE (200 Gbps per port) using standard QSFP112 DAC cables — not Thunderbolt, not NVLink between nodes, not PCIe between units. Think high-speed Ethernet with RDMA semantics.
+Each DGX Spark has two QSFP ports on the rear, connected to a ConnectX-7 SmartNIC, using [QSFP112 DAC cables](https://docs.nvidia.com/sync/latest/cluster-assistant.html) rated for 400G but negotiated at [200 Gbps per port](https://build.nvidia.com/spark/connect-two-sparks/stacked-sparks) on DGX Spark's ConnectX-7 NIC — not Thunderbolt, not NVLink between nodes, not PCIe between units. Think high-speed Ethernet with RDMA semantics.
 
-For two nodes: direct cable, no switch needed. For three nodes: ring topology (three cables, both QSFP ports per node) supported by NCCL 2.30u1, which shipped with this update. For four nodes: a managed switch with 200 Gbps-class QSFP ports.
+For two nodes: direct cable, no switch needed. For three nodes: [ring topology (three cables, both QSFP ports per node) supported by NCCL 2.30u1, which shipped with this update](https://docs.nvidia.com/dgx/dgx-spark/release-notes.html). For four nodes: [a managed switch with 200 Gbps-class QSFP ports](https://docs.nvidia.com/sync/latest/cluster-assistant.html).
 
 The memory math:
 
 | Configuration | Unified RAM | Model capacity |
 |---|---|---|
 | 1 DGX Spark | 128 GB | ~200B dense, ~35B MoE active |
-| 2 DGX Spark | 256 GB | ~400B parameter models |
-| 4 DGX Spark | 512 GB | Large MoE frontier models, multi-agent pipelines |
+| [2 DGX Spark](https://developer.nvidia.com/blog/run-local-ai-agents-with-faster-models-and-multi-node-clustering-on-nvidia-dgx-spark/) | 256 GB | ~400B parameter models |
+| [4 DGX Spark](https://developer.nvidia.com/blog/run-local-ai-agents-with-faster-models-and-multi-node-clustering-on-nvidia-dgx-spark/) | 512 GB | Large MoE frontier models, multi-agent pipelines |
 
 That 4-node configuration (~$16,000–19,000 in hardware, plus cables and optionally a switch) puts 512 GB of high-bandwidth unified memory in a local cluster — enough to run the kinds of models that until recently were cloud-only.
 
 ### Cluster Assistant automates the hard part
 
-The new **Cluster Assistant** in the NVIDIA Sync desktop app handles:
+The new **Cluster Assistant** in the [NVIDIA Sync desktop app](https://docs.nvidia.com/sync/latest/cluster-assistant.html) handles:
 
 1. System readiness checks (OTA version, sudo access)
 2. CX-7 topology detection (probe on each node)
 3. IP planning and deconfliction
 4. Netplan configuration
 5. Inter-node SSH key exchange
-6. Bandwidth and latency validation via `ib_write_bw` and `ib_write_lat`
+6. [Bandwidth and latency validation via `ib_write_bw` and `ib_write_lat`](https://developer.nvidia.com/blog/run-local-ai-agents-with-faster-models-and-multi-node-clustering-on-nvidia-dgx-spark/)
 
 Previously, setting this up required manual networking configuration. The Cluster Assistant handles the network and SSH layer. It does not configure workload orchestration — that's still on you — but it removes the primary friction of getting nodes talking to each other.
 
-**Requirement**: April 2026 system software or later.
+**Requirement**: [April 2026 system software or later](https://docs.nvidia.com/sync/latest/cluster-assistant.html).
 
 ---
 
@@ -87,9 +88,9 @@ Previously, setting this up required manual networking configuration. The Cluste
 
 ### NVFP4 + Multi-Token Prediction
 
-The June update ships NVFP4 quantized checkpoints for Qwen3.6-35B, co-developed with the vLLM team, combined with Multi-Token Prediction (MTP) optimizations. The headline result: **2.6x throughput improvement** on that model versus the prior NVFP4 baseline.
+The June update ships [NVIDIA's own NVFP4 quantized checkpoint for Qwen3.6-35B](https://huggingface.co/nvidia/Qwen3.6-35B-A3B-NVFP4), combined with Multi-Token Prediction (MTP) optimizations, running on vLLM. The headline result: [**2.6x throughput improvement** on that model versus the prior release](https://developer.nvidia.com/blog/run-local-ai-agents-with-faster-models-and-multi-node-clustering-on-nvidia-dgx-spark/).
 
-For reference, here are the published vLLM benchmarks on a single DGX Spark running Nemotron-3-Super-120B-A12B-NVFP4 (a different, larger model — but it shows what the hardware delivers):
+For reference, here are the [published vLLM benchmarks](https://vllm.ai/blog/2026-06-01-vllm-dgx-spark) on a single DGX Spark running Nemotron-3-Super-120B-A12B-NVFP4 (a different, larger model — but it shows what the hardware delivers):
 
 | Scenario | Prompt | Generated | TTFT | Total latency | Decode |
 |---|---|---|---|---|---|
@@ -99,11 +100,11 @@ For reference, here are the published vLLM benchmarks on a single DGX Spark runn
 | Medium prompt, long gen | 1,834 tokens | 108 tokens | 1.12s | 5.74s | 23.4 tok/s |
 | Long prompt, long gen | 7,234 tokens | 124 tokens | 3.84s | 9.26s | 22.9 tok/s |
 
-**22–24 tokens/sec decode** on a 120B MoE model with ~12B active parameters. That's not blazing — this is a 1.2 kg desktop device, not an H100 — but it's enough for real workloads: code review, document analysis, iterative drafts, evaluation pipelines that don't need sub-100ms latency.
+**22–24 tokens/sec decode** on a 120B MoE model with ~12B active parameters. That's not blazing — this is a [1.2 kg desktop device](https://www.nvidia.com/en-us/products/workstations/dgx-spark/), not an H100 — but it's enough for real workloads: code review, document analysis, iterative drafts, evaluation pipelines that don't need sub-100ms latency.
 
 ### vLLM configuration for DGX Spark
 
-Key flags if you're running vLLM on DGX Spark:
+Key flags if you're running vLLM on DGX Spark ([per vLLM's own DGX Spark deployment guide](https://vllm.ai/blog/2026-06-01-vllm-dgx-spark)):
 
 ```bash
 docker run --runtime nvidia --gpus all \
@@ -127,13 +128,13 @@ The vLLM server exposes OpenAI-compatible `/v1` endpoints with streaming support
 
 ### What NemoClaw is
 
-NemoClaw is NVIDIA's open-source local agent blueprint. It bundles three things:
+[NemoClaw is NVIDIA's open-source local agent blueprint](https://github.com/NVIDIA/NemoClaw). It bundles three things:
 
-1. **Open models** — primarily NVIDIA Nemotron models; defaults to Qwen3.6-35B on DGX Spark via Ollama
-2. **Agent harness** — choice of OpenClaw (autonomous governed agents, default) or Hermes Agent (Nous Research's self-improving agent with skills-and-memory loop)
-3. **OpenShell runtime** — a sandboxed execution environment with access controls, network policy, capability drops, process limits, and operator approval flow for network access
+1. **Open models** — primarily [NVIDIA Nemotron models](https://www.nvidia.com/en-us/ai/nemoclaw/); NVIDIA's own [DGX Spark + NemoClaw playbook](https://build.nvidia.com/spark/nemoclaw/instructions) defaults onboarding to Nemotron-3-Super-120B served locally via Ollama, with lighter models like Qwen3.6-35B available as alternatives
+2. **Agent harness** — a choice of [OpenClaw (autonomous governed agents, default), Hermes (built by Nous Research, a self-improving agent with a skills-and-memory loop), or LangChain Deep Agents](https://www.nvidia.com/en-us/ai/nemoclaw/) — see [Nous Research's own Hermes Agent docs](https://hermes-agent.nousresearch.com/docs/) for the self-improvement/skills claim
+3. **OpenShell runtime** — a [sandboxed execution environment](https://docs.nvidia.com/nemoclaw/user-guide/openclaw/reference/architecture) using Landlock, seccomp, and network-namespace isolation, with filesystem access confined to `/sandbox` and `/tmp`, network egress routed through a policy-gated proxy, and [approval required before the agent runs commands](https://www.nvidia.com/en-us/ai/nemoclaw/)
 
-Four pre-built example agents are included: Daily Personal News Digest, Software Development Agent, Deck and Document Reviewer, and Calendar Negotiator.
+[Four pre-built example agents are included](https://build.nvidia.com/spark/nemoclaw-applications): Daily Personal News Digest, Software Development Agent, Deck and Document Reviewer, and Calendar Negotiator.
 
 The June 2026 update streamlines the install path that previously required manual setup steps.
 
@@ -147,15 +148,17 @@ curl -fsSL https://www.nvidia.com/nemoclaw.sh | bash
 curl -fsSL https://www.nvidia.com/nemoclaw.sh | NEMOCLAW_AGENT=hermes bash
 ```
 
+([source: NVIDIA's NemoClaw product page and GitHub repo](https://github.com/NVIDIA/NemoClaw))
+
 After install, onboard a model:
 
 ```bash
 nemoclaw onboard --fresh --gpu
 ```
 
-NemoClaw is TypeScript (78%), Shell (17%), and built on NVIDIA NeMo libraries and NVIDIA Agent Toolkit. It's alpha — treat it accordingly in production contexts.
+NemoClaw's [codebase is chiefly TypeScript and Shell](https://github.com/NVIDIA/NemoClaw) and is built on the [OpenShell runtime, part of NVIDIA's Agent Toolkit](https://docs.nvidia.com/nemoclaw/user-guide/openclaw/home). It's early-stage software — [v0.1.0 as of this writing](https://github.com/NVIDIA/NemoClaw/blob/main/package.json) — so treat it accordingly in production contexts.
 
-The new setup flow also surfaces NemoClaw as a default option during DGX Spark initial setup (OOBE), replacing the previous buried-in-docs approach.
+The June 2026 update also [adds NemoClaw to the DGX Spark out-of-box setup flow: the playbook site now opens on first boot with the NemoClaw playbook prominently featured](https://docs.nvidia.com/dgx/dgx-spark/release-notes.html), replacing the previous buried-in-docs approach.
 
 ---
 
@@ -181,7 +184,7 @@ Stack to four nodes if you're running a local research lab or building products 
 
 ### NemoClaw vs. DIY agent harness
 
-If you're prototyping local agents and don't already have a harness, NemoClaw's OpenShell sandbox is worth evaluating. The operator approval flow for network access and the process-level capability controls are things that teams often skip during prototyping and then struggle to retrofit. Starting with them baked in is a reasonable trade even if you later replace the agent logic.
+If you're prototyping local agents and don't already have a harness, NemoClaw's OpenShell sandbox is worth evaluating. The approval-before-commands flow and the process-level capability controls (Landlock/seccomp/network-namespace isolation) are things that teams often skip during prototyping and then struggle to retrofit. Starting with them baked in is a reasonable trade even if you later replace the agent logic.
 
 Hermes (the Nous Research option) is more experimental — the self-improving loop with skills and memory is interesting research but needs careful handling in any deployment that touches real data or systems.
 
@@ -193,8 +196,8 @@ Worth being explicit about the limitations:
 
 - **Decode throughput is still low for latency-critical apps** — 22–24 tokens/sec means a 500-token response takes ~20 seconds. This is fine for async pipelines, background agents, and evaluation runs; it's not suitable for real-time conversational interfaces where users are waiting.
 - **Inter-node bandwidth is Ethernet, not NVLink** — the 200 Gbps QSFP links are fast for CPU-level distributed inference but don't give you the memory fabric bandwidth you'd get from NVLink-connected server-class GPU modules. Multi-node clustering on DGX Spark is model-partitioning (tensor parallel), not NVLink memory sharing.
-- **NemoClaw is alpha** — the install is now cleaner, but this is not production-grade orchestration infrastructure yet.
-- **Model availability** — not all models have NVFP4 checkpoints yet. The Qwen3.6-35B and Nemotron-3-Super-120B-A12B are the primary showcased options. Expect the catalog to grow but check NGC availability before committing to a specific model.
+- **NemoClaw is early-stage software** ([v0.1.0](https://github.com/NVIDIA/NemoClaw/blob/main/package.json)) — the install is now cleaner, but this is not production-grade orchestration infrastructure yet.
+- **Model availability** — not all models have NVFP4 checkpoints yet. The [Qwen3.6-35B](https://huggingface.co/nvidia/Qwen3.6-35B-A3B-NVFP4) and [Nemotron-3-Super-120B-A12B](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4) are the primary showcased options. Expect the catalog to grow but check NGC availability before committing to a specific model.
 
 ---
 

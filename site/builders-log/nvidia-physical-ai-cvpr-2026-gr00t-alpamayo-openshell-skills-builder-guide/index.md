@@ -3,7 +3,7 @@
 > At CVPR 2026, NVIDIA released Isaac GR00T N1.6 (3B humanoid VLA), Alpamayo-R1-10B (AV reasoning VLA), OpenShell (sandboxed agent runtime), NemoClaw (local agent blueprint), Cosmos 3, and a full physical AI skills library. This builder guide covers what each piece does, the technical specs, and how to start using them.
 
 
-On June 1, 2026, at CVPR 2026, NVIDIA released what amounts to a full open-source physical AI stack: a humanoid robot foundation model, an autonomous vehicle reasoning VLA, a sandboxed agent runtime, a local agent deployment blueprint, a two-tower world model, 1,700+ hours of driving data, and a library of agent-executable physical AI skills covering robotics, autonomous vehicles, vision AI, and industrial digital twins.
+On [June 1, 2026, at CVPR 2026, NVIDIA released](https://nvidianews.nvidia.com/news/nvidia-releases-major-collection-of-open-source-agent-tools-and-skills-for-physical-ai) what amounts to a full open-source physical AI stack: a humanoid robot foundation model, an autonomous vehicle reasoning VLA, a sandboxed agent runtime, a local agent deployment blueprint, a two-tower world model, [1,700 hours of driving data](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles), and a library of agent-executable physical AI skills covering robotics, autonomous vehicles, vision AI, and industrial digital twins.
 
 None of it requires a cloud subscription. Most of it runs on hardware you may already own. All of it is open to builders.
 
@@ -27,28 +27,28 @@ Underlying all of these: **Cosmos 3**, a new two-tower foundation model (Nano 8B
 
 ## Isaac GR00T N1.6
 
-**Model:** `nvidia/GR00T-N1.6-3B` on Hugging Face  
-**Code:** `github.com/NVIDIA/Isaac-GR00T`  
-**License:** NVIDIA One-Way Noncommercial License  
-**Hardware:** NVIDIA Ampere, Hopper, Lovelace, Blackwell, Jetson
+**Model:** [`nvidia/GR00T-N1.6-3B`](https://huggingface.co/nvidia/GR00T-N1.6-3B) on Hugging Face  
+**Code:** [`github.com/NVIDIA/Isaac-GR00T`](https://github.com/NVIDIA/Isaac-GR00T)  
+**License:** [NVIDIA OneWay Noncommercial License](https://huggingface.co/nvidia/GR00T-N1.6-3B)  
+**Hardware:** [NVIDIA Ampere, Hopper, Lovelace, Blackwell, Jetson](https://huggingface.co/nvidia/GR00T-N1.6-3B)
 
 ### Architecture
 
-GR00T N1.6 is a 3-billion-parameter vision-language-action model trained for humanoid robot control. The architecture has four input encoders and one action module:
+GR00T N1.6 is a [3-billion-parameter](https://huggingface.co/nvidia/GR00T-N1.6-3B) vision-language-action model trained for humanoid robot control. The architecture has four input encoders and one action module:
 
-- **Vision Encoder:** SigLip2 (ViT backbone) — handles variable-resolution RGB frames in native aspect ratio, no padding required
-- **Language Encoder:** T5 transformer — processes natural language task instructions
-- **Proprioception Encoder:** MLP indexed by embodiment ID, enabling the same model to control different robot bodies without retraining
-- **VLM Backbone:** Internal Cosmos-2B variant with top 4 layers unfrozen during pretraining — this replaces N1.5's separate 4-layer post-VLM adapter
-- **Action Module:** 32-layer Flow Matching Transformer (doubled from N1.5's 16 layers) — predicts state-relative action chunks rather than absolute joint angles, producing smoother motion
+- **Vision Encoder:** [SigLip2](https://huggingface.co/nvidia/GR00T-N1.6-3B) (ViT backbone) — handles variable-resolution RGB frames in native aspect ratio, no padding required
+- **Language Encoder:** [T5 transformer](https://huggingface.co/nvidia/GR00T-N1.6-3B) — processes natural language task instructions
+- **Proprioception Encoder:** [MLP indexed by embodiment ID](https://huggingface.co/nvidia/GR00T-N1.6-3B), enabling the same model to control different robot bodies without retraining
+- **VLM Backbone:** [internal Cosmos-2B variant with the top 4 layers unfrozen during pretraining](https://research.nvidia.com/labs/gear/gr00t-n1_6/) — this replaces N1.5's separate 4-layer post-VLM adapter
+- **Action Module:** [32-layer flow matching / diffusion transformer (2x larger than N1.5's 16 layers)](https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/) — predicts state-relative action chunks rather than absolute joint angles, producing smoother motion
 
 The cross-embodiment design is the key structural choice. GR00T N1.6 can control bimanual arms, semi-humanoid platforms, and full humanoids from the same checkpoint — embodiment-specific behavior is encoded via the proprioception MLP indexed by embodiment ID, not separate model weights.
 
 ### Training
 
-Pretraining ran for 300,000 steps with a global batch size of 16,384, using data from: the BEHAVIOR suite, RoboCasa, GR-1 (Fourier Intelligence), Unitree G1, bimanual YAM, AGIBot Genie1, Simulated Galaxea R1 Pro, and the DROID dataset — totaling several thousand hours of teleoperated demonstrations across hardware platforms.
+[Pretraining ran for 300,000 steps with a global batch size of 16,384](https://research.nvidia.com/labs/gear/gr00t-n1_6/), using data from: the BEHAVIOR suite, RoboCasa, [GR-1 (Fourier Intelligence's humanoid)](https://newatlas.com/robotics/fourier-gr1-humanoid-robot/), Unitree G1, bimanual YAM, AGIBot Genie1, Simulated Galaxea R1 Pro, and the DROID dataset — spanning real-captured and synthetic demonstrations across these hardware platforms.
 
-Task-specific fine-tuning (post-training) runs 10,000–30,000 steps with batch size ≤1,000. NVIDIA's `build.nvidia.com/station/gr00t` provides a fine-tuning launchable on DGX hardware with free trial credits.
+[Task-specific fine-tuning (post-training) typically runs 10,000–30,000 steps with a global batch size of 1,000 or less](https://research.nvidia.com/labs/gear/gr00t-n1_6/). [NVIDIA's `build.nvidia.com/station/gr00t`](https://build.nvidia.com/station/gr00t) provides a fine-tuning launchable on DGX hardware, with [compute access via NVIDIA Brev's free trial credits](https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/).
 
 ### Capabilities
 
@@ -59,8 +59,8 @@ Task-specific fine-tuning (post-training) runs 10,000–30,000 steps with batch 
 
 ### Supporting Datasets
 
-- **Isaac GR00T X Embodiment Sim:** 320,000+ robotics trajectories, 15 TB — synthetic sim data for cross-embodiment pretraining
-- **GRAIL:** ~50 hours of humanoid-object interaction data
+- **[Isaac GR00T X Embodiment Sim](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim):** ~345,000 robotics trajectories across bimanual, humanoid tabletop, kitchen-manipulation, and Unitree G1 loco-manipulation subsets, 1.91 TB total — synthetic and real sim data for cross-embodiment pretraining
+- **[GRAIL](https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/):** ~50 hours of humanoid-object interaction data
 
 ### Sim-to-Real Pipeline
 
@@ -74,22 +74,22 @@ GR00T N1.6 ships with a full sim-to-real toolchain:
 | **nvblox** | 3D perception + 2D occupancy mapping for path planning |
 | **COMPASS** | Generates synthetic navigation training data in Isaac Lab for zero-shot sim-to-real transfer |
 
-COMPASS automates the mobility training pipeline: scene search → USD conversion → environment registration → navigation policy training → sim-to-real deployment.
+[COMPASS automates the mobility training pipeline: scene search → USD conversion → environment registration → navigation policy training → sim-to-real deployment.](https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/)
 
 ---
 
 ## Alpamayo-R1-10B
 
-**Model:** `nvidia/Alpamayo-R1-10B` on Hugging Face  
-**Code:** `github.com/NVlabs/alpamayo`  
+**Model:** [`nvidia/Alpamayo-R1-10B`](https://huggingface.co/nvidia/Alpamayo-R1-10B) on Hugging Face  
+**Code:** [`github.com/NVlabs/alpamayo`](https://github.com/NVlabs/alpamayo)  
 **Hardware:** GPU with NVIDIA Container Toolkit recommended
 
 ### Architecture
 
-Alpamayo is a 10-billion-parameter vision-language-action model for autonomous vehicles. It pairs a reasoning backbone with a trajectory decoder:
+Alpamayo is a [10-billion-parameter](https://nvidianews.nvidia.com/news/alpamayo-autonomous-vehicle-development) vision-language-action model for autonomous vehicles. It pairs a reasoning backbone with a trajectory decoder:
 
-- **Cosmos-Reason backbone:** 8.2B parameters — generates natural language chain-of-thought reasoning before producing control outputs (e.g., "Nudge to the left to increase clearance from the construction cones encroaching into the lane")
-- **Diffusion-driven trajectory decoder:** 2.3B parameters — converts the reasoning trace into vehicle trajectory predictions
+- **[Cosmos-Reason backbone: 8.2B parameters](https://huggingface.co/nvidia/Alpamayo-R1-10B)** — generates natural language chain-of-thought reasoning before producing control outputs (e.g., "Nudge to the left to increase clearance from the construction cones encroaching into the lane")
+- **[Diffusion-driven trajectory decoder: 2.3B parameters](https://huggingface.co/nvidia/Alpamayo-R1-10B)** — converts the reasoning trace into vehicle trajectory predictions
 
 The explicit reasoning step is the architectural bet: instead of mapping perception directly to control, Alpamayo reasons about the scenario first, then outputs a trajectory. This is designed to handle rare and long-tail situations — faulty traffic lights, novel road configurations, unusual obstacles — via physical common sense rather than memorized pattern matching.
 
@@ -97,14 +97,14 @@ The explicit reasoning step is the architectural bet: instead of mapping percept
 
 | Parameter | Value |
 |-----------|-------|
-| Cameras | 4 (front-left, front-wide, front-right, front-tele) |
-| History | 4 timesteps at 10 Hz (0.4-second window) |
-| Resolution | 1080 × 1920 px |
-| Egomotion history | 3D translation + 9D rotation |
+| Cameras | [4 (front-wide, front-tele, cross-left, cross-right)](https://huggingface.co/nvidia/Alpamayo-R1-10B) |
+| History | [4 timesteps at 10 Hz (0.4-second window)](https://huggingface.co/nvidia/Alpamayo-R1-10B) |
+| Resolution | [1080 × 1920 px](https://huggingface.co/nvidia/Alpamayo-R1-10B) |
+| Egomotion history | [3D translation + 9D rotation](https://huggingface.co/nvidia/Alpamayo-R1-10B) |
 
 ### Training Data
 
-80,000 hours of multi-camera driving data, covering 1 billion+ images at 10 Hz. Industry partners contributing data and validation include Li Auto, Afari, DeepRoute.ai, Lucid Motors, Jaguar Land Rover, Uber, and Berkeley DeepDrive.
+[80,000 hours of multi-camera driving data, covering 1 billion+ images at 10 Hz](https://arxiv.org/abs/2511.00088). Industry partners named for Alpamayo data and validation include [Lucid Motors, Jaguar Land Rover, Uber, and Berkeley DeepDrive](https://nvidianews.nvidia.com/news/alpamayo-autonomous-vehicle-development). (Li Auto, Afari, and DeepRoute.ai are named elsewhere in NVIDIA's CVPR 2026 announcements as users of the separate Omniverse NuRec reconstruction tool — not specifically as Alpamayo training-data contributors — so they're omitted here.)
 
 ### AlpaSim — Closed-Loop Simulation
 
@@ -116,11 +116,11 @@ AlpaSim is an open-source closed-loop simulation framework for AV development. I
 - **Controller** — handles vehicle physics
 - **Physics engine** — scene dynamics
 
-The key result: AlpaSim rollouts demonstrably improve real-world validation metrics, with variance in key safety metrics reduced by up to 83% when AlpaSim is incorporated in the training loop.
+[The key result: incorporating simulated (AlpaSim) trajectories into the evaluation pipeline reduced variance in key real-world validation metrics by up to 83%.](https://developer.nvidia.com/blog/building-autonomous-vehicles-that-reason-with-nvidia-alpamayo/)
 
-Training method: the **RoaD algorithm** (Reinforcement of Driving) mitigates covariate shift between open-loop training data and closed-loop simulation, and is more data-efficient than traditional RL approaches.
+Training method: the **[RoaD algorithm](https://arxiv.org/html/2512.01993)** (Rollouts as Demonstrations) mitigates covariate shift between open-loop training data and closed-loop simulation by using the policy's own closed-loop rollouts as additional training data, and is more data-efficient than traditional RL approaches.
 
-**Dataset:** The Physical AI NuRec dataset provides ~900 reconstructed AV scenes (20 seconds each) for use with AlpaSim, available at `huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles`.
+**Dataset:** [The Physical AI NuRec dataset provides roughly 900 reconstructed AV scenes, each 20 seconds long](https://developer.nvidia.com/blog/building-autonomous-vehicles-that-reason-with-nvidia-alpamayo/), for use with AlpaSim, available at [`huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles`](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles).
 
 **Getting started with AlpaSim:**
 
@@ -143,10 +143,10 @@ jupyter notebook notebooks/alpamayo_inference.ipynb
 
 ## OpenShell — Sandboxed Agent Runtime
 
-**GitHub:** `github.com/NVIDIA/OpenShell`  
-**License:** Apache 2.0  
-**Status:** Alpha (single-developer deployments)  
-**Platforms:** macOS, Windows (WSL 2), Linux
+**GitHub:** [`github.com/NVIDIA/OpenShell`](https://github.com/NVIDIA/openshell)  
+**License:** [Apache 2.0](https://github.com/NVIDIA/openshell)  
+**Status:** [Alpha (single-developer deployments)](https://github.com/NVIDIA/openshell)  
+**Platforms:** [macOS, Windows (WSL 2, experimental), Linux](https://github.com/NVIDIA/openshell)
 
 ### What It Solves
 
@@ -154,7 +154,7 @@ Coding agents — Claude Code, Codex, Copilot, Ollama-based agents — currently
 
 ### Architecture
 
-OpenShell has four components:
+[OpenShell has four components](https://github.com/NVIDIA/openshell):
 
 1. **Gateway** — control-plane API managing sandbox lifecycle and authentication
 2. **Sandbox** — isolated container runtime; each agent gets its own sandbox; security policies are enforced at system level, outside the agent's reach
@@ -215,7 +215,7 @@ Claude Code, OpenCode, Codex, GitHub Copilot CLI, Ollama, Pi
 ## NemoClaw — Local Autonomous Agent Stack
 
 **Install:** `curl -fsSL https://www.nvidia.com/nemoclaw.sh | bash`  
-**Requires:** Docker 28.x+ with NVIDIA container runtime
+**Requires:** [Docker 26+ (Linux, with containerd image store) or Docker Desktop/Colima, plus NVIDIA GPU drivers for local model inference](https://docs.nvidia.com/nemoclaw/user-guide/openclaw/get-started/prerequisites)
 
 NemoClaw is a four-layer blueprint for running a fully local, always-on autonomous agent — no cloud API calls required unless explicitly permitted.
 
@@ -223,7 +223,7 @@ NemoClaw is a four-layer blueprint for running a fully local, always-on autonomo
 
 | Layer | Component | Role |
 |-------|-----------|------|
-| **Model** | Nemotron 3 Super 120B (~87 GB) via Ollama | Local inference, no external dependencies |
+| **Model** | [Nemotron 3 Super 120B (~87 GB via Ollama)](https://docs.nvidia.com/nim/large-language-models/2.0.4/turbo/get-started-nemotron-3-super-120b-a12b.html) | Local inference, no external dependencies |
 | **Orchestration** | NemoClaw | Installation, lifecycle management, versioned blueprints |
 | **Sandbox Runtime** | OpenShell | Network/filesystem isolation + credential proxying |
 | **Agent Framework** | OpenClaw | Persistent memory, multi-channel (Telegram, Slack, Discord), tool integration |
@@ -249,7 +249,7 @@ nemoclaw policy-add [rule]
 openshell forward start 18789 [name] --background
 ```
 
-**Real-world deployments:** Foxconn built MoMClaw (manufacturing operations multi-agent system) on NemoClaw + the FOX blueprint. Synera uses it for design and engineering simulation agents. Cadence, Dassault Systèmes, Siemens, Synopsys, and PTC are deploying it for industrial AI engineering workflows.
+**Real-world deployments:** [Foxconn built MoMClaw (manufacturing operations multi-agent system) on the FOX blueprint plus NemoClaw](https://nvidianews.nvidia.com/news/enterprise-software-leaders-build-ai-agents-with-nvidia). [Synera is among the first to build autonomous AI engineers on NemoClaw](https://nvidianews.nvidia.com/news/enterprise-software-leaders-build-ai-agents-with-nvidia). [Cadence, Dassault Systèmes, and Siemens are using NemoClaw/OpenShell to secure autonomous AI agents for chip design, verification, and engineering platforms, and Synopsys is building autonomous AI engineers for chip design with NVIDIA](https://nvidianews.nvidia.com/news/enterprise-software-leaders-build-ai-agents-with-nvidia). (PTC is named elsewhere in NVIDIA's CVPR 2026 announcements as a user of Isaac Sim/OpenUSD workflows — not confirmed as a NemoClaw deployment — so it's omitted here.)
 
 ---
 
@@ -257,8 +257,8 @@ openshell forward start 18789 [name] --background
 
 **GitHub:** `github.com/NVIDIA/skills`  
 **Platform:** skills.sh  
-**Compute access:** NVIDIA Brev (free H100 trial credits via Physical AI Launchables)  
-**Cloud integrations:** Microsoft Azure, CoreWeave, Nebius
+**Compute access:** [NVIDIA Brev — Launchables run on hosted H100 GPUs and include free trial credits](https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/)  
+**Cloud integrations:** [Microsoft, CoreWeave, Nebius](https://nvidianews.nvidia.com/news/nvidia-releases-major-collection-of-open-source-agent-tools-and-skills-for-physical-ai)
 
 ### What "Skills" Are
 
@@ -275,7 +275,7 @@ This means Claude Code, Copilot, or any agent with tool-use capability can run a
 - Jetson edge deployment tuning
 
 **2. Autonomous Vehicles**
-- **Neural Reconstruction:** converts fleet-captured sensor data into editable 3D simulation scenes using Omniverse NuRec, InstantNuRec, Harmonizer, and HiGS renderer
+- **[Neural Reconstruction](https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/):** converts fleet-captured sensor data into editable 3D simulation scenes using Omniverse NuRec, [InstantNuRec](https://github.com/NVIDIA/instant-nurec), [Harmonizer](https://github.com/NVIDIA/harmonizer), and HiGS renderer
 - Photorealistic scenario generation at scale
 - Closed-loop reinforcement learning with AlpaSim + RoaD
 
@@ -291,33 +291,33 @@ This means Claude Code, Copilot, or any agent with tool-use capability can run a
 
 **5. Healthcare**
 - Clinical environment digital twin creation
-- **Cosmos-H-Surgical-Simulator:** sim-to-real surgical robot training data generation
+- **[Cosmos-H-Surgical-Simulator](https://huggingface.co/nvidia/Cosmos-H-Surgical-Simulator):** an action-conditioned surgical world model, fine-tuned on the [Open-H Embodiment dataset](https://arxiv.org/pdf/2604.21017), for sim-to-real surgical robot training data generation
 - Policy testing in surgical simulation
 
 ### Reported Production Results
 
 | Company | Skill Used | Result |
 |---------|-----------|--------|
-| Pegatron | Defect detection | 67% reduction in training/deployment time |
-| Delta Electronics | Defect Image Generation | 17% detection rate improvement |
-| Inventec | Vision AI inspection | 30% reduction in defect data collection time |
+| [Pegatron](https://nvidianews.nvidia.com/news/nvidia-releases-major-collection-of-open-source-agent-tools-and-skills-for-physical-ai) | Defect detection (synthetic data) | Reduced model training and deployment time by 67% |
+| [Delta Electronics](https://nvidianews.nvidia.com/news/nvidia-releases-major-collection-of-open-source-agent-tools-and-skills-for-physical-ai) | Defect Image Generation (soldering defects) | 17% detection rate improvement |
+| [Inventec](https://nvidianews.nvidia.com/news/nvidia-releases-major-collection-of-open-source-agent-tools-and-skills-for-physical-ai) | Vision AI inspection (laptop manufacturing) | 30% reduction in defect data collection effort |
 
 ---
 
 ## Cosmos 3 — The Physical AI Foundation Backbone
 
-**Variants:** Cosmos 3 Nano (8B + 8B) and Cosmos 3 Super (32B + 32B)  
-**License:** OpenMDW-1.1 (commercial use permitted)
+**Variants:** [Cosmos 3 Nano (8B reasoner + 8B generator, 16B total)](https://huggingface.co/nvidia/Cosmos3-Nano) and [Cosmos 3 Super (32B reasoner + 32B generator, 64B total)](https://huggingface.co/nvidia/Cosmos3-Super)  
+**License:** [OpenMDW-1.1 (ready for commercial and non-commercial use)](https://huggingface.co/nvidia/Cosmos3-Nano)
 
-Cosmos 3 is a two-tower Mixture-of-Transformers (MoT) architecture: an autoregressive transformer handles reasoning, and a diffusion transformer handles generation. The two towers are trained together, allowing a single model to perform five native tasks:
+Cosmos 3 is a two-tower Mixture-of-Transformers (MoT) architecture: an autoregressive transformer handles reasoning, and a diffusion transformer handles generation. [The two towers are trained together, allowing a single model to perform five native tasks](https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai):
 
-1. Text-to-video generation
-2. Vision-language model reasoning
+1. Text-to-video generation (Video Model)
+2. Vision-language model reasoning (VLM)
 3. Forward dynamics modeling (predict next state given current state + action)
 4. Inverse dynamics modeling (predict action given current + next state)
-5. Action policy generation
+5. Action policy generation (Policy Model)
 
-Isaac GR00T N1.6, Alpamayo's reasoning backbone, and the physical AI skills library all build on Cosmos 3 components.
+Isaac GR00T N1.6's VLM backbone is an internal Cosmos-2B variant, and Alpamayo's reasoning backbone is built on the Cosmos-Reason line — both part of the same NVIDIA Cosmos model family as Cosmos 3, though NVIDIA's materials don't state that GR00T N1.6 or Alpamayo were rebuilt on the newer Cosmos 3 checkpoints specifically.
 
 ---
 
@@ -325,13 +325,13 @@ Isaac GR00T N1.6, Alpamayo's reasoning backbone, and the physical AI skills libr
 
 | Dataset | Size | Contents | Access |
 |---------|------|----------|--------|
-| PhysicalAI-Autonomous-Vehicles | 1,727 hours | 310,895 clips, 25 countries, 2,500+ cities; multi-camera + LiDAR for all clips, radar for 163,850 | `huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles` |
-| GR00T X Embodiment Sim | 15 TB | 320,000+ robotics trajectories | Hugging Face (model card) |
-| GRAIL | ~50 hrs | Humanoid-object interaction data | Hugging Face |
-| Physical AI NuRec | ~900 scenes | Reconstructed AV scenes (20 sec each) for AlpaSim | skills.sh / Hugging Face |
+| [PhysicalAI-Autonomous-Vehicles](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles) | 1,700 hours, 133 TB | 306,152 clips (20 sec each), 25 countries, 2,500+ cities; 7-camera + LiDAR coverage for all clips, radar for 160,761 | `huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles` |
+| [GR00T X Embodiment Sim](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim) | 1.91 TB | ~345,000 robotics trajectories | Hugging Face (dataset card) |
+| [GRAIL](https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/) | ~50 hrs | Humanoid-object interaction data | Hugging Face |
+| [Physical AI NuRec](https://developer.nvidia.com/blog/building-autonomous-vehicles-that-reason-with-nvidia-alpamayo/) | ~900 scenes | Reconstructed AV scenes (20 sec each) for AlpaSim | skills.sh / Hugging Face |
 | Cosmos 3 video datasets (6) | — | Robotics, physics, digital humans, AV, warehouse safety, spatial reasoning | Hugging Face |
 
-The AV dataset is the largest public multi-camera + LiDAR + radar dataset released to date, covering 25 countries and 2,500+ cities.
+[NVIDIA describes the AV dataset as "one of the largest, geographically diverse collections of multi-sensor data" for AV research](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles), covering 25 countries and 2,500+ cities.
 
 ---
 
@@ -360,7 +360,7 @@ The AV dataset is the largest public multi-camera + LiDAR + radar dataset releas
 
 **If you are deploying coding agents in sensitive environments:** OpenShell is the most practically relevant piece of this release for general AI builders. OS-level isolation for agent sandboxing, hot-reloadable network and inference policies, and Apache 2.0 licensing — this is infrastructure that matters well beyond physical AI.
 
-**If you need local autonomous agents:** NemoClaw (Nemotron 3 Super 120B + OpenShell + OpenClaw) is a production-grade local agent stack with no cloud dependencies. At ~87 GB the model requires significant hardware, but for enterprise deployments where data sovereignty matters, this is the first fully integrated local agent blueprint NVIDIA has published.
+**If you need local autonomous agents:** NemoClaw (Nemotron 3 Super 120B + OpenShell + OpenClaw) is a local agent stack with no cloud dependencies. At ~87 GB the model requires significant hardware, but for enterprise deployments where data sovereignty matters, this is one of the more fully integrated local agent blueprints NVIDIA has published to date.
 
 **If you are working on vision AI or industrial inspection:** The Defect Image Generation and Video Augmentation skills address the dataset problem that blocks most vision AI projects — generating synthetic training data for rare defect categories without waiting for failures to occur in production.
 

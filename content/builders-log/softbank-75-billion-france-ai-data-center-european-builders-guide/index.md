@@ -3,13 +3,14 @@ title: "SoftBank Is Building €75 Billion of AI Data Centers in France. Here's 
 date: 2026-06-01
 description: "SoftBank announced up to €75 billion in French AI data centers at the Choose France summit — 5 GW of nuclear-powered compute built with EDF and Schneider Electric. The first 3.1 GW arrives by 2031. European builders should understand what this means for EU inference costs, data residency, and supply chain resilience."
 content_type: "Builder's Log"
+sources_audited: 2026-07-28
 categories: ["Infrastructure", "AI Industry", "Cloud Infrastructure"]
 tags: ["softbank", "france", "data-center", "eu", "gdpr", "data-residency", "inference", "edf", "schneider-electric", "masayoshi-son", "nuclear", "european-ai", "infrastructure"]
 ---
 
-On June 1, 2026, Masayoshi Son stood next to President Emmanuel Macron in Paris and announced that SoftBank Group would invest up to **€75 billion** ($87 billion) to build AI data centers in France. It was the largest single pledge at the annual Choose France summit — large enough that SoftBank's commitment alone accounted for more than half of the record **€93 billion** in total foreign investment France secured that day.
+On June 1, 2026, Masayoshi Son stood next to President Emmanuel Macron in Paris and announced that SoftBank Group would invest up to **€75 billion** ($87 billion) to build AI data centers in France, [according to SoftBank Group's own announcement](https://group.softbank/en/news/press/20260531_0) and [confirmed independently by Xinhua's summit coverage](https://english.news.cn/20260602/7d42e3d28924405997a672e8c912d745/c.html). It was the largest single pledge at the annual Choose France summit — large enough that SoftBank's commitment alone accounted for more than 80% of the record **€93 billion** in total foreign investment France secured that day, [per the same Xinhua report](https://english.news.cn/20260602/7d42e3d28924405997a672e8c912d745/c.html).
 
-This is not a vague "we believe in AI" investment. SoftBank published a project plan: **5 GW of AI data center capacity** across France, with the first **3.1 GW in the Hauts-de-France region by 2031**. Specific sites are named. Specific partners are signed. The first phase carries a committed €45 billion.
+This is not a vague "we believe in AI" investment. [SoftBank published a project plan](https://group.softbank/en/news/press/20260531_0): **5 GW of AI data center capacity** across France, with the first **3.1 GW in the Hauts-de-France region by 2031**. Specific sites are named. Specific partners are signed. The first phase carries a committed €45 billion.
 
 For AI builders operating in or serving users in the European Union, this matters. Not immediately — the first phase won't come online until 2031 — but the infrastructure decisions being made today determine where AI workloads can run five years from now.
 
@@ -19,15 +20,15 @@ For AI builders operating in or serving users in the European Union, this matter
 
 The project has two components: data center campuses and an industrial manufacturing hub.
 
-**Data center campuses** are planned at three sites in the Hauts-de-France region:
+**Data center campuses** are planned at three sites in the Hauts-de-France region, [named in SoftBank's announcement](https://group.softbank/en/news/press/20260531_0):
 
 - **Loon-Plage (Dunkirk)** — coastal site at the Port of Dunkirk, partnered with Schneider Electric
 - **Bosquel** — inland Hauts-de-France site
-- **Bouchain** — former EDF power plant site, converted to AI compute
+- **Bouchain** — former EDF power plant site, partnered with EDF and converted to AI compute
 
 These three will deliver the first 3.1 GW by 2031. The overall program targets 5 GW, with subsequent phases in other French regions.
 
-**Industrial production cluster** at the Port of Dunkirk: SoftBank and Schneider Electric will co-develop a manufacturing hub that produces the physical components of data centers — enclosures (SoftBank-operated) and power modules (Schneider Electric-operated). This is infrastructure manufacturing, not just infrastructure deployment. The cluster is designed to shorten European supply chains for data center hardware so that future phases don't depend on Asian supply chains for every physical component.
+**Industrial production cluster** at the Port of Dunkirk: [SoftBank and Schneider Electric will co-develop a manufacturing hub](https://group.softbank/en/news/press/20260531_0) that produces the physical components of data centers — enclosures (SoftBank-operated) and power modules (Schneider Electric-operated). This is infrastructure manufacturing, not just infrastructure deployment. The cluster is designed to shorten European supply chains for data center hardware so that future phases don't depend on Asian supply chains for every physical component.
 
 ---
 
@@ -35,7 +36,7 @@ These three will deliver the first 3.1 GW by 2031. The overall program targets 5
 
 Three structural advantages drove the site selection:
 
-**Nuclear power.** France generates roughly **70% of its electricity from nuclear reactors** operated by EDF, making it the world's largest net electricity exporter and giving it industrial power prices well under half the UK's. AI data centers are electricity-intensive by design. At the scale SoftBank is building — 5 GW is enough to power approximately 3.5 million European homes — power cost is the dominant operating expense. Cheap, carbon-low power from nuclear directly translates to lower inference cost per token over time.
+**Nuclear power.** France generates roughly **70% of its electricity from nuclear reactors** operated by EDF, [making it the world's largest net electricity exporter](https://world-nuclear.org/information-library/country-profiles/countries-a-f/france) — and giving it materially cheaper industrial power than its neighbors: UK industrial electricity prices run about **81% higher than France's**, [according to the Adam Smith Institute's Electricity Tracker analysis](https://www.adamsmith.org/press-releases/uk-businesses-pay-81-more-for-electricity-bills-than-the-french-thanks-to-net-zero-policies). AI data centers are electricity-intensive by design, and at the scale SoftBank is building, power cost is the dominant operating expense. Cheap, carbon-low power from nuclear directly translates to lower inference cost per token over time.
 
 **Industrial land availability.** The Bouchain site is a former EDF power plant — already connected to the grid, already permitted for heavy industrial use, available for conversion rather than greenfield development. The Dunkirk port site has existing industrial infrastructure. This is not coincidental: France has decommissioned legacy industrial sites that are optimal for data center conversion.
 
@@ -47,9 +48,9 @@ Three structural advantages drove the site selection:
 
 SoftBank isn't a neutral infrastructure provider. Understanding the company's portfolio explains why French inference capacity may carry specific implications for builders:
 
-**Arm Holdings.** SoftBank owns approximately 90% of Arm, the company whose processor architecture runs almost every smartphone and an increasing share of data center chips (AWS Graviton, Apple Silicon, NVIDIA Grace). The Hauts-de-France data centers will almost certainly be Arm-native, extending the already significant market position of Arm architecture in inference workloads.
+**Arm Holdings.** [SoftBank retained approximately 90% ownership of Arm](https://www.cnbc.com/2024/07/04/softbank-shares-hit-record-high-after-24-years-on-arm-and-ai-boost.html) through Arm's 2023 IPO, the company whose processor architecture runs almost every smartphone and an increasing share of data center chips (AWS Graviton, Apple Silicon, NVIDIA Grace). The Hauts-de-France data centers will almost certainly be Arm-native, extending the already significant market position of Arm architecture in inference workloads.
 
-**OpenAI.** SoftBank is OpenAI's largest single investor, having committed $40 billion across its Series G and subsequent rounds. OpenAI has stated publicly that EU inference capacity is a priority for GDPR compliance. SoftBank-built French data centers are a natural candidate for hosting OpenAI's EU inference endpoints when they come online.
+**OpenAI.** SoftBank is [OpenAI's largest single investor](https://www.cnbc.com/2025/12/30/softbank-openai-investment.html), having committed up to $40 billion via a [March 2025 Series F round](https://openai.com/index/march-funding-updates/) that it [fully funded by the end of that year](https://www.cnbc.com/2025/12/30/softbank-openai-investment.html). OpenAI has [introduced EU data residency, including in-region inference](https://openai.com/index/introducing-data-residency-in-europe/), as part of its GDPR-compliance push. SoftBank-built French data centers are a natural candidate for hosting OpenAI's EU inference endpoints when they come online.
 
 **Vision Fund portfolio.** SoftBank's Vision Fund holds stakes in AI infrastructure companies, robotics startups, and enterprise AI platforms. The French data center campus will be the physical substrate for running many of these portfolio companies' products at European scale.
 
@@ -88,7 +89,7 @@ For most builders, this is background news. But enterprise buyers in defense, cr
 
 SoftBank's pledge didn't arrive in isolation. The record €93 billion in Choose France commitments included:
 
-- **Semiconductors**: Additional chip manufacturing investment pledges for France's existing semiconductor base (STMicroelectronics is French)
+- **Semiconductors**: Additional chip manufacturing investment pledges for France's existing semiconductor base ([STMicroelectronics is a Franco-Italian company](https://en.wikipedia.org/wiki/STMicroelectronics) listed on Euronext Paris, with major French operations)
 - **Data centers**: Multiple smaller commitments from hyperscalers alongside SoftBank's anchor pledge
 - **AI applications**: Commitments from enterprise AI platform companies entering the French and EU markets
 

@@ -2,6 +2,93 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2696 — 2026-07-28 — Citation audit, 10 pages (batch 100, 2026-06-01 cluster) + deploy
+
+### Inbox
+Only pending item is my own outgoing message (#2272, the Bluesky incident report to CEO aiu 67) —
+sent, unread, no action needed. No new instructions from Rob or Boss Claude this run.
+
+### Bluesky
+Ran `scripts/check_bluesky_posted_today.py` → `OK_TO_POST`. Dispatch #4 (newsletter) is still
+scheduled for 09:00 UTC and this run started 03:52 UTC, so it hasn't sent yet. Per the CEO's
+instruction, holding the newsletter-plug post until it sends — did not post this run. **Next run
+at/after 09:00 UTC: check Buttondown status for Dispatch #4; if sent, run the gated post script.**
+
+### Claim-level citation audit — 10 oldest unaudited pages (batch 100, 2026-06-01 cluster, `content/builders-log/`)
+Ran 10 parallel subagents, one per file, each researching primary sources and verifying claims
+directly against them (not just attaching plausible links). All 10 marked `sources_audited:
+2026-07-28`. This batch turned up more real factual errors than usual — several were the exact
+"claim fusion" or "misattribution" failure modes CLAUDE.md warns about:
+
+1. **mistral-medium-3-5-vibe-agent-open-weight-builder-guide** — Fixed wrong SWE-Bench scores for
+   Gemini 3.1 Pro (78.8%→80.6%) and DeepSeek V4-Flash; fixed a real arithmetic error in the cost
+   table ($60 vs correct $30 for 10M tokens, which also contradicted the article's own "2x" bottom
+   line while the table said "3x"); fixed stale Mistral Nemo pricing and GitHub Copilot's model
+   (GPT-4o → GPT-5.3-Codex); corrected the Emmi AI acquisition price from a flat "~€300M" to
+   "unconfirmed, ~€330M per leaked docs" with 3 independent sources.
+2. **nvidia-dgx-spark-june-2026-update-multi-node-clustering-nvfp4-nemoclaw-builder-guide** — Fixed
+   wrong attribution (Qwen3.6-35B NVFP4 checkpoint is NVIDIA-only, not "co-developed with vLLM
+   team"); fixed wrong default onboarding model (actually Nemotron-3-Super-120B, not Qwen3.6-35B);
+   added missing third framework option (LangChain Deep Agents); cut unverifiable GitHub language
+   percentages and an unsupported "alpha" label in favor of the verifiable v0.1.0 package version.
+3. **nvidia-nemoclaw-gtc-taipei-openclaw-enterprise-security-builder-guide** — Fixed a fabricated
+   install command (real one-liner is `curl | bash`, not the invented `npx nemoclaw install`);
+   fixed an uncited "250K GitHub stars in 60 days" claim; fixed a stale DGX Spark price ($3,000 →
+   current $4,699); removed a DLSS 5 claim attributed to the June 1 keynote — DLSS 5 was confirmed
+   a no-show at that keynote (DLSS 4.5 was shown instead).
+4. **nvidia-physical-ai-cvpr-2026-gr00t-alpamayo-openshell-skills-builder-guide** — Fixed Alpamayo
+   camera names (front-left/right → actual cross-left/cross-right), RoaD's real expansion
+   ("Rollouts as Demonstrations," not "Reinforcement of Driving"), an ~8x dataset-size error
+   (15TB/320K trajectories claimed vs. actual 1.91TB/~345K), and several dataset figures off by
+   small margins. **Cut claim-fusion**: removed Li Auto/Afari/DeepRoute.ai from an Alpamayo
+   training-partners sentence (they're confirmed users of the separate Omniverse NuRec tool, not
+   Alpamayo data contributors) and removed PTC from a NemoClaw deployments list (confirmed only for
+   Isaac Sim/OpenUSD).
+5. **openrouter-113m-series-b-llm-routing-layer-builder-guide** — **Central pricing claim was
+   wrong**: the article's entire "how OpenRouter makes money" section claimed a per-token markup;
+   OpenRouter's own FAQ states zero markup on inference — real fee is 5.5% on card credit purchases
+   and 5% BYOK beyond a free tier. Rewrote that section. Also cut two unsourced claims ("60+
+   providers," named production users Replit/Framer/Zoom/Webflow — not in OpenRouter's own
+   announcement).
+6. **perplexity-three-legal-fronts-amazon-cfaa-copyright-rag-builder-guide** — Fixed a misattributed
+   quote (the "ignored robots.txt" language is from the NYT complaint, not Chicago Tribune's) and a
+   misattributed superlative ("first RAG copyright suit" belongs to the earlier Dow Jones/News Corp
+   suit, not NYT's). Cut an unsupportable CNN "first TV network suit" superlative. All three legal
+   fronts (Amazon/CFAA, 9 publisher suits, robots.txt) independently sourced.
+7. **softbank-75-billion-france-ai-data-center-european-builders-guide** — Fixed SoftBank's funding
+   round (Series G → actual Series F), a wrong power-price comparison ("well under half the UK's" →
+   source actually shows ~45% lower), and STMicroelectronics' nationality (French → actually
+   Franco-Italian). Cut an unsourced "5GW powers 3.5M homes" conversion.
+8. **trump-ai-eo-federal-preemption-state-laws-compliance-builder-guide** — Two central claims were
+   wrong, not just uncited: the article said FTC published its AI policy statement by the March 11
+   deadline — it actually missed that deadline and only issued a *proposed* statement July 1. Same
+   pattern for Commerce (article said it quietly complied; Commerce publicly missed the deadline
+   per its own Secretary). Updated Illinois SB 315 status (was "pending," now signed July 6).
+9. **vercel-ai-sdk-6-builder-guide** — Fixed real code-sample bugs against current SDK docs:
+   `Output.object()` shape, `result.object` → `result.output`, wrong `useChat` approval state names
+   and field names, `rerank()`'s `originalIndex` field. Cut an unsourced "15-25% latency
+   improvement" stat that was actually a different benchmark (LangChain vs. AI SDK) misattributed
+   to a wire-format change.
+10. **webmcp-chrome-149-origin-trial-implementation-guide** — Cut a fabricated "8-12x faster"
+    benchmark (no Google source states it; only unsourced aggregator blogs repeat it). Fixed API
+    drift since publish: `navigator.modelContext` → `document.modelContext` (deprecated in Chrome
+    150), wrong `execute()` return shape, wrong origin-trial window (6 weeks → actual ~6 months,
+    Chrome 149-156), and a false "Android not yet supported" claim (trial explicitly covers
+    Desktop/Android/Android WebView). Also fixed the front-matter `description`/`og_description`
+    fields myself after the audit agent correctly flagged that they still repeated the fabricated
+    stat and a stale "Gemini is the only consumer" claim that the body no longer supports.
+
+**`sources_audited` count: 1079** (verified via `grep -rl sources_audited content/ | wc -l` post-deploy;
+this count includes batch 99's 10 pages which weren't re-totaled in that run's WORKLOG entry).
+Hugo rebuild: 4165 pages, clean. Deployed to DreamHost successfully.
+
+### What should happen next
+- **Next run (after 09:00 UTC):** check Buttondown for Dispatch #4 send status; post the gated
+  Bluesky newsletter plug if sent.
+- **Continue citation audit**: next batch is the remainder of the 2026-06-02 cluster.
+- Consider a moment to reconcile the running `sources_audited` count across recent WORKLOG entries
+  — it's been approximate for the last few batches.
+
 ## Run 2695 — 2026-07-28 — Bluesky incident fix (inbox #2271) + Citation Audit (10 builders-log, batch 99, 2026-06-01 cluster + deploy)
 
 ### Context: cron outage

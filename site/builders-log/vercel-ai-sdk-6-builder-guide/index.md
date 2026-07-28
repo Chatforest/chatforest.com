@@ -3,7 +3,7 @@
 > AI SDK 6 landed December 2025 with production-ready agents, stable MCP support with OAuth, human-in-the-loop tool approval, and a local DevTools debugger. Here is what changed and what to do about it.
 
 
-Vercel AI SDK 6 dropped on December 22, 2025 ([announcement](https://vercel.com/blog/ai-sdk-6)) — and six months in, it is the most significant release since the framework launched. Over 20 million monthly downloads makes this one of the most widely used AI libraries in the JavaScript ecosystem, and v6 rewrites its agent and tool infrastructure from scratch.
+Vercel AI SDK 6 dropped on December 22, 2025 ([announcement](https://vercel.com/blog/ai-sdk-6)) — and six months in, it is the most significant release since the framework launched. [Over 20 million monthly downloads](https://vercel.com/blog/ai-sdk-6) makes this one of the most widely used AI libraries in the JavaScript ecosystem, and v6 rewrites its agent and tool infrastructure from scratch.
 
 The short summary: agents are now stable and production-grade, MCP support went from experimental to full-featured with OAuth and HTTP transport, tool execution has a human-in-the-loop pause mechanism, and there is a local DevTools debugger that shows every LLM call in your app.
 
@@ -13,15 +13,15 @@ This guide covers each major change with code you can use today. If you are on v
 
 ## What Drove the v6 Bump
 
-The major version is triggered by a single underlying change: the **v3 Language Model Specification**. Vercel redesigned the internal wire format between SDK, provider packages, and the model. This enables agents to pause mid-run (necessary for human-in-the-loop) and produces a 15–25% improvement in first-token latency. Everything else in v6 builds on that foundation.
+The major version is triggered by a single underlying change: the **[v3 Language Model Specification](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0)**. Vercel redesigned the internal wire format between SDK, provider packages, and the model. This enables agents to pause mid-run, which is necessary for human-in-the-loop. Everything else in v6 builds on that foundation.
 
-**Current version:** `ai@6.0.193` (as of June 2026)
+**Current version:** [`ai@6.0.193`](https://www.npmjs.com/package/ai) (as of June 2026)
 
 ---
 
 ## ToolLoopAgent: Production-Ready Agents
 
-In v5, agents were `Experimental_Agent` — functional but explicitly not stable. In v6, the same concept ships as `ToolLoopAgent`, production-grade and the recommended way to build agentic loops.
+In v5, agents were `Experimental_Agent` — functional but explicitly not stable. In v6, [the `Experimental_Agent` class has been replaced with `ToolLoopAgent`](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0), production-grade and the recommended way to build agentic loops.
 
 ```typescript
 import { ToolLoopAgent } from 'ai';
@@ -46,12 +46,12 @@ console.log(result.text);
 **Key differences from v5 `Experimental_Agent`:**
 
 - `system:` is now `instructions:` (same function, renamed)
-- Default tool loop steps changed from 1 to **20** — agents actually loop now without explicit config
+- [Default tool loop steps changed from 1 to **20**](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0) (the `stopWhen` default moved from `stepCountIs(1)` to `stepCountIs(20)`) — agents actually loop now without explicit config
 - Define once, call anywhere — the agent object is reusable across requests
 
 ### Structured Output from Agents
 
-Instead of separate `generateObject()` / `streamObject()` functions, v6 uses `Output` types directly:
+Instead of separate `generateObject()` / `streamObject()` functions, v6 uses [`Output` types](https://ai-sdk.dev/docs/reference/ai-sdk-core/output) directly:
 
 ```typescript
 import { ToolLoopAgent, Output } from 'ai';
@@ -62,14 +62,16 @@ const summaryAgent = new ToolLoopAgent({
   instructions: 'Summarize the provided content and extract key facts.',
   tools: { /* your tools */ },
   output: Output.object({
-    summary: z.string(),
-    keyFacts: z.array(z.string()),
-    confidence: z.number().min(0).max(1),
+    schema: z.object({
+      summary: z.string(),
+      keyFacts: z.array(z.string()),
+      confidence: z.number().min(0).max(1),
+    }),
   }),
 });
 
 const result = await summaryAgent.generate({ prompt: content });
-console.log(result.object.keyFacts);
+console.log(result.output.keyFacts);
 ```
 
 Available output types: `Output.object()`, `Output.array()`, `Output.choice()`, `Output.json()`, `Output.text()`.
@@ -78,13 +80,15 @@ Available output types: `Output.object()`, `Output.array()`, `Output.choice()`, 
 
 ## MCP Support: Now Stable
 
-MCP support in v5 was experimental and limited to stdio transport. V6 ships stable MCP with:
+MCP support in v5 was experimental and limited to stdio transport. [V6 ships stable MCP](https://vercel.com/blog/ai-sdk-6) with:
 
 - **HTTP transport** with custom headers
 - **OAuth** with PKCE, token refresh, and dynamic client registration
 - **Resources** — fetch files and database records from MCP servers
 - **Prompts** — reusable templates with parameters
 - **Elicitation** — MCP server can request user input
+
+See the [`createMCPClient` reference](https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client) and [MCP tools docs](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools) for the full API.
 
 ```typescript
 import { createMCPClient } from 'ai';
@@ -121,7 +125,7 @@ If you are building MCP servers and want your tools to work with Vercel AI SDK, 
 
 ## Human-in-the-Loop: `needsApproval`
 
-This is the feature most agentic apps have been waiting for. Any tool can now declare `needsApproval`, causing the agent to pause before execution and wait for explicit human approval.
+This is the feature most agentic apps have been waiting for. Any tool can now declare [`needsApproval`](https://ai-sdk.dev/docs/agents/tool-approvals), causing the agent to pause before execution and wait for explicit human approval.
 
 ```typescript
 import { tool } from 'ai';
@@ -163,14 +167,15 @@ In a Next.js / React app, you handle pending approvals via `useChat`:
 // On the client
 const { messages, addToolApprovalResponse } = useChat({ /* config */ });
 
-// Find tools waiting for approval
+// Find tools waiting for approval — part type is `tool-<toolName>`,
+// e.g. 'tool-runCommand', and the pending state is 'approval-requested'
 const pendingApprovals = messages
   .flatMap(m => m.parts)
-  .filter(p => p.type === 'tool-invocation' && p.state === 'pending-approval');
+  .filter(p => p.type?.startsWith('tool-') && p.state === 'approval-requested');
 
-// Approve or reject
+// Approve or reject — keyed by the approval's own id, not the tool call id
 addToolApprovalResponse({
-  toolCallId: approval.toolCallId,
+  id: approval.id,
   approved: true,   // or false to reject
 });
 ```
@@ -181,7 +186,7 @@ The pattern works well for any "agentic but supervised" use case: coding assista
 
 ## DevTools: Local LLM Call Inspector
 
-The DevTools package gives you a browser-based debugger showing every LLM interaction in your application. No third-party service — runs locally, stores data in a local file.
+The [DevTools package](https://ai-sdk.dev/docs/ai-sdk-core/devtools) gives you a browser-based debugger showing every LLM interaction in your application. No third-party service — runs locally, stores data in a local file.
 
 **Setup:**
 
@@ -230,7 +235,7 @@ Data lives in `.devtools/generations.json`, auto-added to `.gitignore`. Nothing 
 
 ### Reranking for RAG
 
-Native reranking API, no wrapper code needed:
+[Native reranking API](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank), no wrapper code needed:
 
 ```typescript
 import { rerank } from 'ai';
@@ -243,15 +248,16 @@ const { ranking } = await rerank({
   topN: 5,
 });
 
-// ranking is sorted by relevance, best first
-const topDocs = ranking.map(r => docs[r.index]);
+// ranking is sorted by relevance, best first; originalIndex maps back
+// to the position in the input `docs` array
+const topDocs = ranking.map(r => docs[r.originalIndex]);
 ```
 
 Supported providers: Cohere, Amazon Bedrock, Together.ai.
 
 ### Image Editing
 
-`generateImage()` now accepts an input image for edits:
+[`generateImage()`](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-image) now accepts an input image for edits:
 
 ```typescript
 const { images } = await generateImage({
@@ -267,7 +273,7 @@ Accepts URLs, base64 strings, `Uint8Array`, `ArrayBuffer`, or `Buffer`.
 
 ### Provider-Specific Tool Integrations
 
-Several providers now expose their native tool infrastructure through the SDK:
+[Several providers now expose their native tool infrastructure](https://vercel.com/blog/ai-sdk-6) through the SDK:
 
 - **Anthropic:** Memory Tool, Code Execution Tool, Tool Search (regex + BM25)
 - **OpenAI:** Shell Tool, Apply Patch Tool, MCP Tool
@@ -286,7 +292,7 @@ The automated codemod handles most renames:
 npx @ai-sdk/codemod upgrade v6
 ```
 
-**Key manual changes to review after running the codemod:**
+**Key manual changes to review after running the codemod** (per the [official migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0)):
 
 | What changed | v5 | v6 |
 |---|---|---|

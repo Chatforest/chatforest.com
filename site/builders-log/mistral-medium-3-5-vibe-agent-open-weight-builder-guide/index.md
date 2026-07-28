@@ -3,9 +3,9 @@
 > Mistral Medium 3.5 is a 128B open-weight model that merges coding, reasoning, and vision into one endpoint at $1.50/M input tokens — 77.6% on SWE-Bench, within two points of Claude Sonnet 4.6 at half the price. Vibe adds async remote agents with session teleportation. Here's what builders need to know.
 
 
-On April 29, 2026, Mistral released **Medium 3.5** — a 128B dense open-weight model that consolidates three separate Mistral endpoints into one. On May 22, they [launched **Vibe Remote Agents**](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/) and a VS Code extension. On May 28, they rebranded Le Chat to **Vibe** at the AI NOW Summit in Paris, announcing industrial AI deployments at Airbus, BMW, ASML, and EDF.
+On April 29, 2026, Mistral released **[Medium 3.5](https://huggingface.co/mistralai/Mistral-Medium-3.5-128B)** — a 128B dense open-weight model that consolidates three separate Mistral endpoints into one. On May 22, they [launched **Vibe Remote Agents**](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/) and a VS Code extension. On May 28, they rebranded Le Chat to **Vibe** at the [AI NOW Summit](https://mistral.ai/news/ai-now-summit-2026/) in Paris, announcing industrial AI deployments at Airbus, BMW, ASML, and [EDF](https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-and-mistral-sign-a-partnership-agreement-for-ai-serving-nuclear-power-and-digital-sovereignty).
 
-The story hasn't gotten the attention it deserves. Medium 3.5 reaches **77.6% on SWE-Bench Verified** — two points below Claude Sonnet 4.6 — at **$1.50/M input tokens** (vs. Sonnet's $3.00). The weights are open. It self-hosts on four H100s. And Vibe adds something no other major coding agent has: async cloud execution with session teleportation, so you can start a task locally and beam it mid-run to Mistral's servers.
+The story hasn't gotten the attention it deserves. Medium 3.5 reaches **[77.6% on SWE-Bench Verified](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/)** — about two points below Claude Sonnet 4.6's [~79.6%](https://www.datacamp.com/blog/claude-sonnet-4-6) — at **$1.50/M input tokens** (vs. Sonnet's [$3.00](https://openrouter.ai/anthropic/claude-sonnet-4.6)). The weights are open. It self-hosts on [four H100s](https://lushbinary.com/blog/mistral-medium-3-5-self-hosting-vllm-sglang-guide/). And Vibe adds something no other major coding agent has: async cloud execution with session teleportation, so you can start a task locally and beam it mid-run to Mistral's servers.
 
 If you're building in Europe or for sovereignty-sensitive clients, this combination is meaningfully different from anything else available.
 
@@ -15,7 +15,7 @@ If you're building in Europe or for sovereignty-sensitive clients, this combinat
 
 ### The consolidation
 
-Mistral has been running a pattern in 2026: collapse multiple specialized endpoints into a single merged model. Small 4 did it at the small tier (merging Pixtral, Magistral Small, and Devstral Small). Medium 3.5 does it at the frontier tier:
+Mistral has been running a pattern in 2026: collapse multiple specialized endpoints into a single merged model. [Small 4 did it at the small tier](https://mistral.ai/news/mistral-small-4/) (unifying Magistral's reasoning, Pixtral's multimodal understanding, and Devstral's agentic coding). Medium 3.5 does it at the frontier tier:
 
 | Replaced endpoint | What it did |
 |---|---|
@@ -40,6 +40,8 @@ One endpoint, three jobs. The model ID is `mistral-medium-3.5`. The weights are 
 | Languages | 24 |
 | License | Modified MIT (open weights, self-hostable) |
 
+*Specs per [Mistral's own announcement](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/) and the [Hugging Face model card](https://huggingface.co/mistralai/Mistral-Medium-3.5-128B); the [24-language figure](https://ollama.com/library/mistral-medium-3.5) comes from Mistral's Ollama library listing.*
+
 **Vision encoder**: Built from scratch for variable image sizes and aspect ratios — not a bolt-on. Handles tall screenshots and wide panoramas without distortion. Relevant for agentic loops that process UI screenshots or document scans.
 
 **Reasoning mode**: Toggle-adjustable. Dial it up for hard math/code problems, down for fast structured output. Not a separate "thinking" model — it's the same checkpoint with configurable inference budget.
@@ -51,7 +53,7 @@ One endpoint, three jobs. The model ID is `mistral-medium-3.5`. The weights are 
 | Input | **$1.50 / million tokens** |
 | Output | **$7.50 / million tokens** |
 
-Available via Mistral API and Ollama for local deployment.
+Pricing per [Mistral's official API pricing page](https://mistral.ai/pricing/api/). Available via Mistral API and Ollama for local deployment.
 
 ---
 
@@ -64,13 +66,15 @@ Available via Mistral API and Ollama for local deployment.
 | Model | SWE-Bench Verified | Input $/M | Open weights |
 |---|---|---|---|
 | Claude Sonnet 4.6 | ~79.6% | $3.00 | No |
-| Gemini 3.1 Pro Preview | 78.8% | — | No |
+| Gemini 3.1 Pro Preview | 80.6% | — | No |
 | **Mistral Medium 3.5** | **77.6%** | **$1.50** | **Yes** |
-| DeepSeek V4-Flash | ~76% | — | Yes |
+| DeepSeek V4-Flash | 73.7–79.0% (mode-dependent) | — | Yes |
 
-Medium 3.5 is the **only Western-origin open-weight model** at this capability tier. Devstral 2 — its predecessor in the coding slot — scored 72.2% on the same benchmark. Medium 3.5 represents a +5.4 point improvement while adding vision and built-in reasoning.
+*Sources: Claude Sonnet 4.6 per [Anthropic's benchmark data as reported by DataCamp](https://www.datacamp.com/blog/claude-sonnet-4-6) and [Local AI Master](https://localaimaster.com/models/claude-sonnet-5); Gemini 3.1 Pro Preview per [Google's model card, as reported by TechInformed](https://techinformed.com/google-rolls-out-gemini-3-1-pro-preview/); Mistral Medium 3.5 per [Mistral](https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/); DeepSeek V4-Flash ranges from 73.7% (non-reasoning) to 79.0% (max reasoning effort) per its [Hugging Face model card](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash).*
 
-On **Tau-3 Telecom** (agentic tool-use, domain-specific multi-step function calling), Medium 3.5 scores 91.4% — Mistral's strongest claim to agentic reliability.
+Medium 3.5 is the **only Western-origin open-weight model** at this capability tier. [Devstral 2](https://mistral.ai/news/devstral-2-vibe-cli/) — its predecessor in the coding slot — scored 72.2% on the same benchmark. Medium 3.5 represents a +5.4 point improvement while adding vision and built-in reasoning.
+
+On **Tau-3 Telecom** (agentic tool-use, domain-specific multi-step function calling), Medium 3.5 scores [91.4%](https://huggingface.co/mistralai/Mistral-Medium-3.5-128B) — Mistral's strongest claim to agentic reliability.
 
 ### The real cost math
 
@@ -78,11 +82,11 @@ At equivalent usage (say, 10M input tokens + 2M output per month):
 
 | Model | Monthly API cost |
 |---|---|
-| Claude Sonnet 4.6 | $60 input + $30 output = **$90** |
+| [Claude Sonnet 4.6](https://openrouter.ai/anthropic/claude-sonnet-4.6) | $30 input + $30 output = **$60** |
 | Mistral Medium 3.5 | $15 input + $15 output = **$30** |
 | Self-hosted Medium 3.5 (4x H100s) | Amortized hardware cost only |
 
-The 3× cost difference at API pricing, and the option to drop to zero variable cost via self-hosting, is the builder-level case for Medium 3.5 in high-volume pipelines.
+The 2× cost difference at API pricing, and the option to drop to zero variable cost via self-hosting, is the builder-level case for Medium 3.5 in high-volume pipelines.
 
 ---
 
@@ -92,12 +96,14 @@ For context on where Medium 3.5 sits:
 
 | Model | Input $/M | Output $/M | Notes |
 |---|---|---|---|
-| Mistral Nemo | $0.02 | $0.03 | Edge/high-throughput |
+| Mistral Nemo | $0.15 | $0.15 | Edge/high-throughput |
 | Mistral Small 4 | $0.15 | $0.60 | Consolidated small tier |
 | Mistral Large 3 | $0.50 | $1.50 | Reasoning frontier |
 | **Mistral Medium 3.5** | **$1.50** | **$7.50** | Consolidated frontier coder + vision + reasoning |
 | Codestral | separate | separate | Code-only, still available |
 | Magistral | separate | separate | Dedicated reasoning, still available |
+
+Pricing per [Mistral's official API pricing page](https://mistral.ai/pricing/api/).
 
 The Large vs Medium pricing looks inverted, and Mistral is aware of that. The framing: Medium 3.5 is the **capability frontier for agentic tasks**, not "between Small and Large" by size. The output cost reflects its SWE-Bench-class coding depth, not its parameter count.
 
@@ -105,7 +111,7 @@ The Large vs Medium pricing looks inverted, and Mistral is aware of that. The fr
 
 ## What Vibe Is
 
-Vibe started as a CLI coding agent in December 2025, evolved into a cloud execution platform in May 2026, and became Mistral's unified product brand (replacing Le Chat) at the AI NOW Summit on May 28.
+Vibe started as a [CLI coding agent in December 2025](https://mistral.ai/news/devstral-2-vibe-cli/), evolved into a cloud execution platform in May 2026, and became Mistral's unified product brand (replacing Le Chat) at the [AI NOW Summit](https://mistral.ai/news/ai-now-summit-2026/) on May 28.
 
 The four components builders care about:
 
@@ -122,7 +128,7 @@ pip install mistral-vibe
 - Natural language interaction with your full codebase
 - Reads, edits, executes commands
 
-The CLI is `v2.13.0` as of May 29, 2026. Use your own API key; pay standard per-token rates.
+The CLI is [`v2.13.0` as of May 29, 2026](https://pypi.org/project/mistral-vibe/#history). Use your own API key; pay standard per-token rates.
 
 ### 2. Vibe Remote Agents (new May 2026)
 
@@ -149,7 +155,7 @@ The web surface now includes:
 - **Code Mode**: Launch and manage remote coding agents from the browser
 - **Work Mode**: Agentic productivity harness — integrates with Google Workspace, Outlook, SharePoint, Slack, GitHub, Notion. Multi-step workflows (scan inbox → pull spreadsheet → build report → push to SharePoint)
 
-Pricing: Free / €14.99 Pro / €24.99 team/user / Enterprise on request.
+[Pricing](https://mistral.ai/pricing): Free / €14.99 Pro / €24.99 team/user / Enterprise on request.
 
 ---
 
@@ -158,7 +164,7 @@ Pricing: Free / €14.99 Pro / €24.99 team/user / Enterprise on request.
 | | Mistral Vibe | Claude Code | GitHub Copilot | Cursor |
 |---|---|---|---|---|
 | Type | CLI + IDE + web | CLI | IDE extension | Full IDE |
-| Model | Mistral Medium 3.5 | Claude Sonnet 4.6 | GPT-4o / various | Multiple |
+| Model | Mistral Medium 3.5 | Claude Sonnet 4.6 | [GPT-5.3-Codex / various](https://docs.github.com/en/copilot/concepts/models/fallback-and-lts-models) | Multiple |
 | Open source | Yes (Apache 2.0 CLI) | No | No | Partial |
 | Remote async agents | **Yes** | No | No | No |
 | Session teleportation | **Yes** | No | No | No |
@@ -176,16 +182,18 @@ Claude Code has the edge on raw benchmark performance (+2 pts SWE-Bench) and is 
 
 ## Enterprise deployments (AI NOW Summit, May 28)
 
-At the AI NOW Summit at the Carrousel du Louvre in Paris, Mistral announced production deployments under the new "Mistral for Industrial Engineering" stack:
+At the [AI NOW Summit](https://mistral.ai/news/ai-now-summit-2026/) at the Carrousel du Louvre in Paris, Mistral announced production partnerships under the new "Mistral for Industrial Engineering" stack:
 
-- **Airbus** — commercial aircraft, helicopter, defense, and space divisions
-- **BMW Group** — "Large Industry Model" initiative; crash simulation and multimodal engineering reasoning
-- **ASML** — high-performance part design, surrogate models, control loops
-- **EDF** — energy infrastructure
+- **[Airbus](https://mistral.ai/news/ai-now-summit-2026/)** — commercial aircraft, helicopter, defense, and space divisions
+- **[BMW Group](https://mistral.ai/news/ai-now-summit-2026/)** — "Large Industry Model" initiative; crash simulation and multimodal engineering reasoning
+- **[ASML](https://mistral.ai/news/ai-now-summit-2026/)** — high-performance part design, surrogate models, control loops
+- **[EDF](https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-and-mistral-sign-a-partnership-agreement-for-ai-serving-nuclear-power-and-digital-sovereignty)** — a five-year agreement covering nuclear engineering, maintenance, and EPR2 construction, with data kept on sovereign/EDF infrastructure
 
-The industrial stack combines LLMs with physics simulation via the **Emmi AI acquisition** (~€300M, closed May 2026, 30+ researchers). Emmi's models simulate airflow, thermodynamics, fluid dynamics, and material deformation in real time.
+These are announced partnerships, not disclosed contract values — coverage at the time noted concrete contract terms remained sparse.
 
-Mistral also announced a **10 MW inference facility at Les Ulis** (Essonne, near Paris), scheduled to open Q3 2026.
+The industrial stack combines LLMs with physics simulation via the **[Emmi AI acquisition](https://www.emmi.ai/news/mistral-ai-acquires-emmi-ai)**, announced [May 19, 2026](https://tech.eu/2026/05/19/mistral-acquires-austria-s-emmi-ai/). Neither company disclosed the price; leaked internal documents reported by [Sifted](https://sifted.eu/articles/mistral-emmi-acquisition-330m) valued the cash-and-stock deal at up to €330M — that figure is not officially confirmed. Emmi brought [30+ researchers and engineers](https://www.emmi.ai/news/mistral-ai-acquires-emmi-ai) and its Linz, Austria office into Mistral. Emmi's models simulate airflow, thermodynamics, fluid dynamics, and material deformation in real time.
+
+Mistral also announced a **10 MW inference facility at Les Ulis** (Essonne, near Paris), [scheduled to open Q3 2026](https://mistral.ai/news/ai-now-summit-2026/).
 
 ---
 
@@ -193,7 +201,7 @@ Mistral also announced a **10 MW inference facility at Les Ulis** (Essonne, near
 
 **Strong fit:**
 
-- **High-volume agentic pipelines** where per-token cost matters at scale (3× cheaper than Sonnet at API; zero variable at self-hosted)
+- **High-volume agentic pipelines** where per-token cost matters at scale (2× cheaper than Sonnet at API; zero variable at self-hosted)
 - **European teams or GDPR-sensitive deployments** — open weights, self-hostable, French infrastructure option
 - **Teams needing fine-tuning rights** — open weights under modified MIT means you can fine-tune, not just prompt-tune
 - **Multimodal agentic loops** that process variable-format images (screenshots, diagrams, scanned PDFs)

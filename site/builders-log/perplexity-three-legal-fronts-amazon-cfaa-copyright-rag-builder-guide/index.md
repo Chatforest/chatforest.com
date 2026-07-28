@@ -15,17 +15,17 @@ This is the most consequential case for builders shipping AI agents in 2026. It 
 
 **What happened:** Perplexity's Comet browser agent logs into a user's Amazon account using credentials the user provides, browses products, and completes purchases on the user's behalf. [Amazon sued under the Computer Fraud and Abuse Act (CFAA)](https://www.courtlistener.com/docket/71874820/amazoncom-services-llc-v-perplexity-ai-inc/), arguing this constitutes unauthorized access to Amazon's systems — even though the user gave explicit permission. ([IAPP analysis](https://iapp.org/news/a/amazon-perplexity-dispute-raises-questions-over-ai-agent-liability))
 
-**The court's initial ruling:** In March 2026, U.S. District Judge Maxine Chesney issued a preliminary injunction blocking Comet from Amazon's logged-in pages. The key language: Comet accessed Amazon accounts "with the Amazon user's permission, but without authorization by Amazon."
+**The court's initial ruling:** On [March 9, 2026, U.S. District Judge Maxine M. Chesney granted Amazon's motion for a preliminary injunction](https://www.cnbc.com/2026/03/10/amazon-wins-court-order-to-block-perplexitys-ai-shopping-agent.html), blocking Comet from Amazon's logged-in pages and ordering Perplexity to destroy Amazon data it had collected. Per [legal analysis of the order](https://www.cooley.com/news/insight/2026/2026-03-17-court-finds-ai-agent-may-violate-state-federal-law-by-accessing-amazon-accounts-without-authorization), the key language: Comet accessed Amazon accounts "with the Amazon user's permission, but without authorization by Amazon."
 
-The Ninth Circuit paused the injunction pending Perplexity's appeal. **[Oral arguments are scheduled for June 11, 2026, in Seattle.](https://everything-pr.com/amazon-v-perplexity-ninth-circuit-oral-arguments-june-11-2026)**
+[The Ninth Circuit paused the injunction pending Perplexity's appeal](https://www.geekwire.com/2026/judge-blocks-perplexitys-ai-bot-from-shopping-on-amazon-in-early-test-of-agentic-commerce/), and [oral arguments were held June 11, 2026, in Seattle](https://www.courtlistener.com/audio/105468/amazoncom-services-llc-v-perplexity-ai-inc/) before Judges Smith, Tung, and Hinderaker — [the panel pressed both sides but issued no ruling from the bench](https://www.law360.com/articles/2488807/9th-circ-fears-unknowns-in-amazon-s-fight-with-perplexity-ai).
 
 **The builder question this establishes:** Is user authorization sufficient for an AI agent to access a website? Or does each website independently control whether any agent — even one explicitly directed by a legitimate user — is allowed to act?
 
 Amazon's theory: a website's terms of service govern access, and ToS typically prohibit bots regardless of user consent. If courts accept this, every AI agent that acts on behalf of users faces potential CFAA liability whenever it accesses a service that bars automated access in its ToS.
 
-Perplexity's counter: calling a user-directed AI agent "unauthorized access" is "a fundamental misfit" for the CFAA, which was designed for intrusion and hacking, not agents operating with explicit user consent.
+Perplexity's counter, [from its May 8, 2026 opening appellate brief](https://www.mlex.com/mlex/artificial-intelligence/articles/2474961): calling a user-directed AI agent "unauthorized access" is "a fundamental misfit" for the CFAA, which was designed for intrusion and hacking, not agents operating with explicit user consent.
 
-The June 11 oral arguments will not produce a final ruling, but the panel's questions will signal which way the Ninth Circuit is leaning on this framework question.
+The June 11 oral arguments did not produce a final ruling — the case was submitted for decision, and a written opinion is still pending as of this writing.
 
 ---
 
@@ -33,16 +33,15 @@ The June 11 oral arguments will not produce a final ruling, but the panel's ques
 
 As of May 31, 2026, nine organizations have active copyright suits against Perplexity:
 
-- **CNN / Warner Bros. Discovery** (filed May 28, 2026, SDNY No. 1:26-cv-04427) — 17,000+ articles, photos, and videos scraped. Unusually, the complaint adds a **trademark infringement claim**: CNN alleges Perplexity falsely implied an active content licensing deal with CNN by advertising CNN content access to Comet Plus subscribers — when no such deal existed. CNN also alleges it blocked Perplexity's crawler and Perplexity circumvented the block. **First copyright suit by any television network against a generative AI company.**
-- **The New York Times** — RAG output accused of near-verbatim copying; described as "the first copyright infringement lawsuit against a generative AI company utilizing RAG technology"
-- **News Corp / Dow Jones** (Wall Street Journal, New York Post)
-- **Chicago Tribune**
-- **Encyclopedia Britannica**
-- **Merriam-Webster**
-- **Reddit**
-- **Yomiuri Shimbun** (Japan)
+- **CNN / Warner Bros. Discovery** ([filed May 28, 2026, SDNY No. 1:26-cv-04427](https://www.courtlistener.com/docket/73402641/cable-news-network-inc-v-perplexity-ai-inc/)) — 17,000+ articles, photos, and videos scraped, [per the complaint](https://news.bloomberglaw.com/litigation/cnn-latest-news-outlet-to-sue-perplexity-ai-over-data-scraping). Unusually, the complaint adds a **trademark infringement claim**: CNN alleges Perplexity falsely implied an active content licensing deal with CNN by advertising CNN content access to Comet Plus subscribers — when no such deal existed. CNN also [alleges it blocked Perplexity's crawler via robots.txt and that Perplexity circumvented the block using undeclared, stealth crawlers](https://ppc.land/cnn-sues-perplexity-for-copying-17-000-works-in-landmark-ai-copyright-case/).
+- **The New York Times** ([filed December 5, 2025, SDNY](https://www.cnbc.com/2025/12/05/the-new-york-times-perplexity-copyright.html)) — RAG output accused of near-verbatim copying. [The complaint alleges Perplexity "intentionally ignored the Robots Exclusion Protocol (robots.txt)" and "circumvented a 'hard-block' implemented by the newspaper."](https://ipwatchdog.com/2025/12/08/new-york-times-sues-perplexity-ai-latest-ip-case-genai-companies/)
+- **News Corp / Dow Jones** (Wall Street Journal, New York Post) — [filed October 2024, SDNY No. 24-cv-7984](https://www.cnbc.com/2024/10/21/murdoch-firms-dow-jones-and-new-york-post-sue-perplexity-ai.html); this suit predates the others and [legal commentary has called it the first U.S. copyright lawsuit against a RAG-based generative AI service](https://natlawreview.com/article/generative-ai-meets-generative-litigation-news-corp-continues-its-battle-against) (not the NYT suit, despite that framing circulating elsewhere)
+- **Chicago Tribune** ([filed December 4, 2025](https://techcrunch.com/2025/12/04/chicago-tribune-sues-perplexity/)) — alleges Perplexity "intentionally ignored or evaded technical content protection measures, such as robots.txt," and that Perplexity's own crawler documentation "openly admits" its Perplexity-User crawler "generally ignores robots.txt rules"
+- **Encyclopedia Britannica and Merriam-Webster** ([joint suit, filed September 2025](https://www.courthousenews.com/encyclopaedia-britannica-and-merriam-webster-sue-ai-startup-perplexity-for-copyright-infringement/))
+- **Reddit** ([filed October 22, 2025, SDNY, alongside data-broker defendants SerpApi, Oxylabs, and AWMProxy](https://www.cnbc.com/2025/10/23/reddit-user-data-battle-ai-industry-sues-perplexity-scraping-posts-openai-chatgpt-google-gemini-lawsuit.html)) — DMCA anti-circumvention and unfair-competition claims over scraping Reddit content via Google search results
+- **Yomiuri Shimbun** (Japan) — [filed August 7, 2025, Tokyo District Court](https://www.niemanlab.org/2025/08/japans-largest-newspaper-yomiuri-shimbun-sues-perplexity-for-copyright-violations/); alleges 119,467 articles accessed without authorization
 
-Meanwhile, **Time, Gannett, Le Monde, and Der Spiegel** signed licensing agreements rather than litigate.
+Meanwhile, **Time, Gannett, Le Monde, and Der Spiegel** [signed licensing/revenue-share agreements](https://www.niemanlab.org/reading/gannett-couples-up-with-perplexity-and-signs-a-content-licensing-deal/) rather than litigate.
 
 **What the publishers are alleging:** Perplexity scraped their content to (1) train models and (2) power live retrieval in its answer engine. The NYT suit is particularly significant because it directly targets the RAG architecture: the complaint alleges that Perplexity's answers copy verbatim passages of articles it retrieved at query time, not just used for training.
 
@@ -56,7 +55,7 @@ No ruling has been issued on the merits yet. The NYT v. OpenAI case (a parallel 
 
 Multiple lawsuits allege that Perplexity didn't just scrape — it actively evaded access controls.
 
-Cloudflare published research documenting that Perplexity deployed undeclared "stealth" crawlers that bypassed web application firewalls designed specifically to block Perplexity's declared crawlers. The Chicago Tribune suit alleges Perplexity "intentionally ignored the Robots Exclusion Protocol" and "circumvented a hard-block implemented by the newspaper."
+[Cloudflare published research (August 4, 2025) documenting that Perplexity deployed an undeclared "stealth" crawler](https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/) — impersonating Chrome on macOS, rotating IPs and ASNs outside Perplexity's declared ranges — that Cloudflare says continued pulling content on pages where customers had built WAF rules specifically to block Perplexity's two declared crawlers. Perplexity's comms officer called Cloudflare's post a "sales pitch." Two of the publisher suits make parallel allegations in their own words: the [NYT complaint alleges Perplexity "intentionally ignored the Robots Exclusion Protocol" and "circumvented a 'hard-block' implemented by the newspaper,"](https://ipwatchdog.com/2025/12/08/new-york-times-sues-perplexity-ai-latest-ip-case-genai-companies/) and the [Chicago Tribune complaint alleges Perplexity "intentionally ignored or evaded technical content protection measures, such as robots.txt," noting Perplexity's own documentation "openly admits" its Perplexity-User crawler "generally ignores robots.txt rules."](https://techcrunch.com/2025/12/04/chicago-tribune-sues-perplexity/)
 
 This matters beyond the Perplexity cases because it establishes how courts treat robots.txt as a legal boundary:
 
@@ -100,7 +99,7 @@ For news content specifically, assume that verbatim passage retrieval in user-fa
 
 ### If you're using Perplexity's API
 
-The business risk is product continuity. If courts require Perplexity to license all retrieved content — or if adverse rulings force product changes — the Sonar API and related endpoints may change behavior, add content restrictions, or reduce coverage. Perplexity has raised at $21B valuation and has the resources to litigate and settle, but multi-front legal pressure has changed product roadmaps before.
+The business risk is product continuity. If courts require Perplexity to license all retrieved content — or if adverse rulings force product changes — the Sonar API and related endpoints may change behavior, add content restrictions, or reduce coverage. [Perplexity's most recent disclosed round valued it at roughly $20B (September 2025)](https://finance.yahoo.com/news/perplexity-finalizes-20-billion-valuation-232758524.html), and it has the resources to litigate and settle, but multi-front legal pressure has changed product roadmaps before.
 
 Monitor Perplexity's status page and changelog; build with fallback retrieval options where query freshness matters.
 
@@ -110,9 +109,9 @@ Monitor Perplexity's status page and changelog; build with fallback retrieval op
 
 | Date | Event |
 |---|---|
-| March 10, 2026 | Amazon preliminary injunction blocks Perplexity Comet from Amazon |
+| March 9, 2026 | Amazon preliminary injunction blocks Perplexity Comet from Amazon |
 | May 8, 2026 | Perplexity files appellate brief in Ninth Circuit |
-| May 28, 2026 | CNN/WBD files copyright + trademark suit (17,000+ works; first TV network AI copyright action) |
+| May 28, 2026 | CNN/WBD files copyright + trademark suit (17,000+ works alleged, per complaint) |
 | **June 11, 2026** | **Amazon v. Perplexity oral arguments, Ninth Circuit, Seattle — panel opinion pending** |
 | TBD 2026/2027 | Copyright suit trials; RAG precedent expected |
 
