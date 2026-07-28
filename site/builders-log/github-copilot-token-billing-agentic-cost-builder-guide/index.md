@@ -11,7 +11,7 @@ The plan prices look the same: Pro at $10/month, Pro+ at $39/month, Business at 
 
 ## The New Structure
 
-Every paid Copilot plan now includes a monthly allotment of GitHub AI Credits, where **1 AI credit = $0.01 USD**. Your monthly plan price equals your monthly credit budget:
+Every paid Copilot plan now includes a monthly allotment of GitHub AI Credits, where [**1 AI credit = $0.01 USD**](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). Your monthly plan price equals your monthly credit budget:
 
 | Plan | Monthly Price | Included AI Credits |
 |------|--------------|---------------------|
@@ -22,13 +22,13 @@ Every paid Copilot plan now includes a monthly allotment of GitHub AI Credits, w
 
 When you exceed your included credits, additional usage is billed at per-token rates based on whichever model you used. Usage is calculated across input tokens, output tokens, and cached tokens — every token in a conversation counts.
 
-One important carveout: **code completions and Next Edit Suggestions remain free** and do not consume credits. If your Copilot usage is mostly autocomplete while you type, your bill probably does not change. The pricing shift hits chat interactions and, especially, agentic sessions.
+One important carveout: [**code completions and Next Edit Suggestions remain free**](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) and do not consume credits. If your Copilot usage is mostly autocomplete while you type, your bill probably does not change. The pricing shift hits chat interactions and, especially, agentic sessions.
 
 ---
 
 ## What an Agentic Session Actually Costs
 
-Here is the number that has developers posting screenshots on Reddit and X: **a single agentic coding session routinely consumes $30 to $40 in AI credits**.
+Here is the number that has developers posting screenshots on Reddit and X: **a single agentic coding session running GPT-5.5 or Claude Opus can [routinely consume $30 to $40 in AI credits](https://github.com/orgs/community/discussions/192948)**.
 
 A Copilot Pro user has $10/month in credits. One session — a morning's work with Copilot Workspace on a moderately complex task — exceeds their entire monthly budget before lunch.
 
@@ -36,7 +36,7 @@ This is not a niche edge case. This is the use pattern GitHub has been promoting
 
 At $10/month, that math does not work. At $39/month (Pro+), you have about one solid agentic session per day before you're paying overages. At the Business tier ($19/user), you're somewhere in between.
 
-TechCrunch reported developers projecting costs of $750/month for their previous $29/month usage patterns. TechTimes documented agentic users seeing 10x to 50x cost increases. These are not outliers; they are the expected outcome for the use case GitHub has been positioning as the future of software development.
+[TechCrunch reported](https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/) developers projecting costs of $750/month for their previous $29/month usage patterns (and, in another case, $3,000/month up from $50). [TechTimes documented](https://www.techtimes.com/articles/317536/20260601/github-copilot-pricing-change-drives-backlash-agentic-bills-jump-10x-50x-power-users.htm) agentic users seeing 10x to 50x cost increases. These are not outliers; they are the expected outcome for the use case GitHub has been positioning as the future of software development.
 
 ---
 
@@ -44,28 +44,30 @@ TechCrunch reported developers projecting costs of $750/month for their previous
 
 Not all models cost the same. This is where cost management becomes a real engineering decision.
 
-Approximate per-model pricing (per 1 million tokens):
+Per-model pricing (per 1 million tokens), from [GitHub's official models-and-pricing docs](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing):
 
 | Model | Input | Cached Input | Output |
 |-------|-------|-------------|--------|
 | Claude Haiku 4.5 | $1.00 | $0.10 | $5.00 |
-| GPT-5.4 nano | ~$0.60 | — | $1.25 |
+| GPT-5.4 nano | $0.20 | $0.02 | $1.25 |
+| Gemini 3.1 Pro (default context) | $2.00 | $0.20 | $12.00 |
 | Claude Sonnet 4.6 | $3.00 | $0.30 | $15.00 |
-| Gemini 3.1 Pro | $3.50 | — | $12.00 |
 | Claude Opus | $5.00 | $0.50 | $25.00 |
-| GPT-5.5 | $15.00 | — | $30.00 |
+| GPT-5.5 (default context) | $5.00 | $0.50 | $30.00 |
+
+Both GPT-5.5 and Gemini 3.1 Pro carry a separate, higher "long context" rate tier in GitHub's pricing table (GPT-5.5 long context: $10.00 input / $45.00 output) — the rates above are the default-context rates.
 
 The output price spread between GPT-5.4 nano ($1.25/M output tokens) and GPT-5.5 ($30/M output tokens) is 24x. For a heavy agentic session that generates 50,000 output tokens, that's $0.06 vs $1.50 — a difference that compounds across dozens of sessions per month.
 
 Claude Haiku 4.5 is the cheapest capable model in the lineup at $5 output per million tokens. For tasks that don't require frontier-level reasoning — code formatting, documentation, boilerplate generation, test scaffolding — routing to Haiku can reduce session costs by 80–90% compared to using Opus or GPT-5.5.
 
-The removed fallback model (GitHub's previous cost safety net for when premium models were unavailable) is also gone. Every session now hits a real per-token price from the start.
+The [removed fallback model](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) (GitHub's previous behavior of dropping to a lower-cost model when your quota was exhausted, rather than stopping) is also gone — Copilot now hard-stops when credits run out. Every session now hits a real per-token price from the start.
 
 ---
 
 ## Annual Subscribers: The Hidden 27x
 
-The backlash from annual subscribers is particularly sharp. The Level Up Coding analysis quantified what's happening: annual Copilot subscribers who locked in pricing under the old model are facing effective cost multipliers of up to 27x on Claude Opus specifically, because the old included-model value has been replaced with token rates that cost far more than the flat-fee equivalent implied.
+The backlash from annual subscribers is particularly sharp. [The Level Up Coding analysis](https://levelup.gitconnected.com/github-copilots-secret-price-increase-annual-subscribers-facing-up-to-27x-cost-multiplier-c5249d17b3f1) quantified what's happening: annual Copilot subscribers who locked in pricing under the old model are facing effective cost multipliers of up to 27x specifically on Claude Opus (the analysis found Claude Opus 4.6 and 4.7 both hit the 27x multiplier, while other models saw smaller increases), because the old included-model value has been replaced with token rates that cost far more than the flat-fee equivalent implied.
 
 If you're an annual subscriber whose billing hasn't rolled over yet, this is coming. The June 1 switch applies to new and renewing subscriptions; the exact timing for annual subscribers depends on your renewal date.
 
@@ -125,7 +127,7 @@ For builders in the latter category, the June 1 change is effectively a signal: 
 
 4. **Compare against direct API pricing.** For teams doing significant agentic work, it's now worth comparing GitHub Copilot's token rates against calling Claude or GPT-5 directly via API. Depending on usage patterns, direct API access with your own billing may be cheaper — particularly for multi-step workflows where you control the context precisely.
 
-5. **Set usage alerts.** GitHub billing now supports credit usage alerts. Set them at 50% and 90% of your monthly budget so you're not discovering overages after the fact.
+5. **Set usage alerts.** [GitHub billing supports budget alerts](https://docs.github.com/en/billing/concepts/budgets-and-alerts) at 75%, 90%, and 100% of a budget amount — enable them, and turn on "Stop usage when budget limit is reached" if you want a hard cap rather than just a notification, so you're not discovering overages after the fact.
 
 ---
 

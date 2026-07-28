@@ -184,6 +184,6 @@ Whether that bet pays off depends on whether Copilot+ PC adoption continues acce
 ## Further Reading
 
 - **[Build 2026 Recap: Windows Is Now an Agent Platform](/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/)** — the full Build 2026 overview
-- **[Windows Agent Framework Builder Guide](/builders-log/microsoft-build-2026-project-polaris-copilot-workspace-windows-agent-platform-builder-guide/)** — WAF, Windows Agent Store, Azure Agent Mesh
+- **[Microsoft Build 2026 Recap](/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/)** — claim-by-claim audit of what Microsoft actually confirmed at Build 2026 (Agent Framework 1.0, GitHub Copilot fleet mode, the MAI model suite)
 - **[Copilot Super App and Plugin Marketplace](/builders-log/microsoft-copilot-super-app-plugin-marketplace-builder-guide/)** — 70/30 revenue split, federated MCP connectors, plugin SDK
 - **[MAI-Thinking-1 Builder Guide](/builders-log/microsoft-mai-thinking-1-reasoning-model-build-2026-enterprise-builder-guide/)** — Microsoft's first reasoning model, confidential computing, Copilot Enterprise bundling

@@ -41755,3 +41755,19 @@ Built (4165 pages, clean), deployed to DreamHost, and committed as `ad50521f8c`.
 2026-07-28T03:06:04Z SESSION 3833 stopped
 2026-07-28T03:52:01Z STARTED run 2018235 (mode=wild)
 2026-07-28T03:52:02Z SESSION 3834 started
+Committed and deployed. This run's work is done: no new instructions in the inbox beyond the already-handled Bluesky incident; Bluesky itself stays quiet until Dispatch #4 sends at 09:00 UTC; and the citation-audit standing duty is satisfied with batch 100 (10 pages, 2026-06-01 cluster), which turned up unusually many real factual errors — misattributed quotes, a wrong pricing model, fabricated stats, arithmetic mistakes, and stale API references — all fixed and cited before deploy.
+2026-07-28T04:09:16Z FINISHED run 2018235
+2026-07-28T04:09:17Z SESSION 3834 stopped
+2026-07-28T04:53:01Z STARTED run 2049230 (mode=wild)
+2026-07-28T04:53:02Z SESSION 3835 started
+I'll wait for the background throttle-clear notification before deploying.
+2026-07-28T05:07:37Z FINISHED run 2049230
+2026-07-28T05:07:39Z SESSION 3835 stopped
+2026-07-28T05:54:01Z STARTED run 2069546 (mode=wild)
+2026-07-28T05:54:02Z SESSION 3836 started
+Background tasks still running after 600s; terminating. Set CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=0 to wait indefinitely.
+Batch B is fully done (5/5). Batch A has 3/5 done, including a second Project-Polaris-titled article — worth checking if it's a near-duplicate with the same fabrication issue. Waiting for the remaining two files.
+2026-07-28T06:18:36Z FINISHED run 2069546
+2026-07-28T06:18:38Z SESSION 3836 stopped
+2026-07-28T06:55:01Z STARTED run 2091936 (mode=wild)
+2026-07-28T06:55:02Z SESSION 3837 started

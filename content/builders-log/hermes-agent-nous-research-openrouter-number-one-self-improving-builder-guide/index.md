@@ -6,9 +6,10 @@ og_description: "Hermes Agent: MIT-licensed, $5 VPS, persistent memory, self-imp
 content_type: "Builder's Log"
 categories: ["Open Source", "Agent Frameworks", "Developer Tools"]
 tags: ["hermes-agent", "nous-research", "openrouter", "open-source", "self-improving", "persistent-agent", "agent-framework", "autonomous-agent", "skill-system", "sqlite"]
+sources_audited: 2026-07-28
 ---
 
-On May 6, 2026, [Nous Research announced that Hermes Agent had reached #1 on OpenRouter's global token rankings](https://www.marktechpost.com/2026/05/10/openclaw-vs-hermes-agent-why-nous-researchs-self-improving-agent-now-leads-openrouters-global-rankings/) — processing more daily tokens than any other app on the platform, surpassing OpenClaw's 186 billion daily at 224 billion tokens per day ([cumulative total for Hermes exceeded 271 billion](https://phemex.com/news/article/hermes-agent-leads-openrouter-usage-with-271-billion-tokens-80104)). Not the top coding agent. Not the top open-source tool. The top app on the entire platform, across every category.
+In early May 2026, [Hermes Agent reached #1 on OpenRouter's global daily token rankings](https://www.marktechpost.com/2026/05/10/openclaw-vs-hermes-agent-why-nous-researchs-self-improving-agent-now-leads-openrouters-global-rankings/) — processing more daily tokens than any other app on the platform. Reported daily figures moved quickly in that window: [224 billion tokens per day versus OpenClaw's 186 billion](https://www.marktechpost.com/2026/05/10/openclaw-vs-hermes-agent-why-nous-researchs-self-improving-agent-now-leads-openrouters-global-rankings/) as of May 10, and [271 billion tokens per day versus OpenClaw's 245 billion](https://phemex.com/news/article/hermes-agent-leads-openrouter-usage-with-271-billion-tokens-80104) in coverage the day before — OpenRouter's live daily rankings fluctuate, but Hermes held the top spot across that stretch. Not the top coding agent. Not the top open-source tool. The top app on the entire platform, across every category.
 
 That kind of adoption, for a tool that launched February 25, deserves a close read.
 
@@ -18,11 +19,11 @@ This is a builder guide: what Hermes Agent actually is, what it does differently
 
 ## What Hermes Agent Is
 
-[Hermes Agent](https://github.com/nousresearch/hermes-agent) is an open-source, self-hosted AI agent built by Nous Research. MIT license. Python. It reached 140,000 GitHub stars in under three months — faster than any prior open-source agent framework reached that milestone.
+[Hermes Agent](https://github.com/nousresearch/hermes-agent) is an open-source, self-hosted AI agent built by Nous Research, released under an [MIT license](https://github.com/NousResearch/hermes-agent/blob/main/LICENSE), primarily in Python. It [crossed 140,000 GitHub stars in under three months](https://cryptodiffer.com/feed/project-updates/hermes-agent-hits-140k-github-stars-becomes-the-most-popular-ai-agent-framework) of its February 25, 2026 launch, and coverage through mid-2026 has [described it as the fastest-growing open-source AI project of the year](https://the-agent-report.com/2026/06/hermes-agent-ecosystem-2026-pillar/).
 
 The core premise differs from session-based coding tools. Where Claude Code runs in your terminal while you're at your desk and forgets everything when the session ends, Hermes runs *continuously* — on a VPS, a home server, or serverless infrastructure — and builds compounding knowledge over time.
 
-Nous Research describes it as "the agent that grows with you." That tagline reflects a genuine architectural commitment.
+Nous Research [describes it as "the agent that grows with you"](https://github.com/nousresearch/hermes-agent) — the tagline on its GitHub repo. That reflects a genuine architectural commitment.
 
 ---
 
@@ -37,7 +38,7 @@ Here's how it works:
 3. That skill document is stored in `~/.hermes/skills/` and indexed into persistent memory
 4. On the next similar task, Hermes retrieves the relevant skill and applies it — skipping the reasoning overhead it did the first time
 
-The measurable result: Nous Research published benchmarks showing agents using self-created skills completed research tasks 40% faster than fresh instances — without any prompt tuning. The improvement compounds. The third time Hermes encounters a task type it's built a skill for, it's faster than the second time.
+The measurable result: [Nous Research's internal benchmarks show agents with 20+ self-created skills completing similar future research tasks 40% faster](https://tokenmix.ai/blog/hermes-agent-review-self-improving-open-source-2026) than fresh instances — measured in token consumption and wall-clock time, not output quality, and the gain is domain-specific rather than general-purpose. The improvement compounds. The third time Hermes encounters a task type it's built a skill for, it's faster than the second time.
 
 This is meaningfully different from other "memory" implementations that store conversation transcripts. Hermes doesn't store raw logs — it synthesizes *procedural knowledge* from experience.
 
@@ -49,7 +50,7 @@ Hermes uses a three-layer memory system designed for speed and relevance across 
 
 **Layer 1 — Session context**: The current conversation window. Standard in-context retrieval for active tasks.
 
-**Layer 2 — Persistent SQLite + FTS5 store**: Completed sessions, prior tasks, and all generated skills are indexed in a local SQLite database with FTS5 full-text search. Retrieval benchmarks from the Nous documentation show sub-10ms query times across databases with 10,000+ skill documents. The full-text search makes the store usable at scale — you don't hit performance cliffs as the knowledge base grows.
+**Layer 2 — Persistent SQLite + FTS5 store**: Completed sessions, prior tasks, and all generated skills are indexed in a local SQLite database with FTS5 full-text search. [Retrieval benchmarks show ~10ms query times across 10,000+ documents](https://tokenmix.ai/blog/hermes-agent-review-self-improving-open-source-2026). The full-text search makes the store usable at scale — you don't hit performance cliffs as the knowledge base grows.
 
 **Layer 3 — Drift-adjusting user model**: A separate record of how you work, what you prefer, and how your patterns change over time. Hermes adjusts its behavior to your usage patterns, not just its task patterns.
 
@@ -59,7 +60,7 @@ The practical implication: an instance that has been running for 60 days on your
 
 ## Deployment Options
 
-The design target is a $5/month VPS — which, without a local LLM, works. Memory usage stays below 500MB when Hermes connects to an external model provider rather than running a model locally.
+[The design target is a $5/month VPS](https://hermes-agent.nousresearch.com/docs/) — which, without a local LLM, works. Memory usage stays below 500MB when Hermes connects to an external model provider rather than running a model locally.
 
 Six terminal backends are supported:
 
@@ -72,13 +73,13 @@ Six terminal backends are supported:
 
 The Modal and Daytona options are notable for builders who want persistent memory without paying for always-on compute. The agent's environment sleeps when not in use and wakes on demand — your SQLite skill store persists, your knowledge base remains intact, and you pay only for active compute time.
 
-Setup is a single command: `hermes setup --portal`. The wizard handles LLM provider configuration, tool gateway auth, and messaging platform integrations. OpenRouter is the recommended model backend because it provides access to 200+ models behind a single API key, including Hermes 3 (Nous Research's own model, built on Llama 3.1) and every major frontier model.
+Setup is [a single command: `hermes setup --portal`](https://hermes-agent.nousresearch.com/docs/). The wizard handles LLM provider configuration, tool gateway auth, and messaging platform integrations. OpenRouter is the recommended model backend because it provides access to 200+ models behind a single API key, including [Hermes 3 (Nous Research's own model, fine-tuned on Llama 3.1](https://openrouter.ai/nousresearch/hermes-3-llama-3.1-70b) in 8B/70B/405B sizes) and every major frontier model.
 
 ---
 
 ## Platform Support
 
-Hermes connects to 20+ messaging platforms out of the box:
+[Hermes connects to 20+ messaging platforms out of the box](https://hermes-agent.nousresearch.com/docs/):
 
 CLI, Telegram, Discord, Slack, WhatsApp, Signal, Matrix, Mattermost, Email, SMS, DingTalk, Feishu (Lark), WeCom (Enterprise WeChat), BlueBubbles (iMessage bridge), and Home Assistant.
 
@@ -88,16 +89,16 @@ This matters because the agent is designed to be *with you*, not at your desk. A
 
 ## Skill Bundles and agentskills.io
 
-Skills are portable Markdown files. The v0.10 release bundled ready-made skill sets for:
+Skills are portable Markdown files. The [v0.10 release bundled ready-made skill sets](https://hermes-agent.nousresearch.com/docs/) for:
 - MLOps workflows
 - GitHub operations
 - Research pipelines
 - Web scraping
 - Code execution
 
-These can be installed from the community ecosystem at agentskills.io, which has become a secondary marketplace for Hermes capabilities. Custom skills you create are also exportable and shareable — the format is intentionally human-readable.
+These can be installed from the community ecosystem at [agentskills.io](https://hermes-agent.nousresearch.com/docs/), which has become a secondary marketplace for Hermes capabilities. Custom skills you create are also exportable and shareable — the format is intentionally human-readable.
 
-The v0.15 release added Kanban support and skill bundle imports — a batch operation that installs an entire domain skill set rather than individual documents.
+The [v0.15 "Velocity" release](https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.28) (May 28, 2026) expanded Kanban into a multi-agent orchestration platform and added skill bundles — a named group of skills that loads together with one slash command, rather than installing individual documents one at a time.
 
 ---
 
@@ -105,11 +106,11 @@ The v0.15 release added Kanban support and skill bundle imports — a batch oper
 
 These tools are not substitutes for each other. They serve different modes of work.
 
-**Claude Code** (Anthropic) excels at dense, interactive coding sessions: reading a full codebase, tracing import chains, writing and testing code in a controlled loop. It reads the whole repository context and operates in long single-session windows with you present. When the session ends, it retains nothing. The June 15 billing split moves Claude Code's programmatic usage to a separate credit pool — relevant if you're running it in background modes via the Agent SDK.
+**Claude Code** (Anthropic) excels at dense, interactive coding sessions: reading a full codebase, tracing import chains, writing and testing code in a controlled loop. It reads the whole repository context and operates in long single-session windows with you present. When the session ends, it retains nothing. [Anthropic announced a June 15, 2026 billing split](https://the-decoder.com/claude-subscriptions-get-separate-budgets-for-programmatic-use-billed-at-full-api-prices/) that moves programmatic usage (Agent SDK, `claude -p`, Claude Code GitHub Actions) to a separate monthly credit pool billed at API rates — relevant if you're running it in background modes via the Agent SDK. *(Update: this change was briefly paused around its original effective date and confirmed live as of July 10, 2026.)*
 
 **Hermes Agent** (Nous Research) excels at persistent background work: daily tasks, recurring research, scheduled automation, and accumulated improvement over time. It's not primarily a coding tool — its strength is tasks that happen while you're doing something else, tasks that benefit from compounding memory, and tasks across messaging surfaces rather than the terminal.
 
-**OpenClaw** (Nvidia/community) focuses on chat-first accessibility and the ClawHub skill marketplace (3,200+ skills). It has the broadest non-technical user base. Where Hermes emphasizes the closed learning loop and SQLite persistence, OpenClaw emphasizes ecosystem breadth and UI-accessible agents.
+**OpenClaw** (Nvidia/community) focuses on chat-first accessibility and the [ClawHub skill marketplace (5,400+ curated skills](https://github.com/VoltAgent/awesome-openclaw-skills) as of the registry's community index). It has the broadest non-technical user base. Where Hermes emphasizes the closed learning loop and SQLite persistence, OpenClaw emphasizes ecosystem breadth and UI-accessible agents.
 
 A common pattern: Claude Code for interactive development, Hermes for background automation and memory, OpenClaw for non-developer team members who need agent access via familiar chat interfaces.
 
@@ -146,7 +147,7 @@ The MIT license means no per-seat fees, no usage-based platform charges on the H
 
 **4. Treat the skill store as an asset, not just infrastructure.** A Hermes instance with 90 days of operation and 200+ synthesized skills has meaningful proprietary knowledge of your workflow. Back up `~/.hermes/skills/` and the SQLite database. That store is not trivially reproducible from the model weights.
 
-**5. Watch v0.16 for team-shared skill stores.** The roadmap references shared skill repositories for multi-user deployments — a feature that would let a team's Hermes instances share learned knowledge rather than each starting from scratch.
+**5. Watch upcoming releases for team-shared skill stores.** [Multi-user skill ownership and permission systems are under active discussion](https://github.com/NousResearch/hermes-agent/issues/31988) for gateway deployments where multiple users share one skill pool — a feature that would let a team's Hermes instances share learned knowledge rather than each starting from scratch.
 
 ---
 

@@ -6,17 +6,18 @@ og_description: "Grok V9-Medium (1.5T params, Cursor-integrated, mid-June launch
 content_type: "Builder's Log"
 categories: ["Model Releases", "xAI", "Developer Tools"]
 tags: ["xai", "grok", "grok-v9-medium", "coding-agents", "llm", "model-release", "developer-tools", "ai-coding", "june-2026"]
+sources_audited: 2026-07-28
 ---
 
 **June 19, 2026 update:** The mid-June ship window has now passed. `grok-v9-medium` still does not appear in xAI's API documentation as of June 19. V9-Medium is available in the consumer Grok product on X and SuperGrok (since June 16), but consumer product availability and API availability are separate gates for xAI — and the API gate has not opened. Monitor the [xAI release notes](https://docs.x.ai/developers/release-notes) directly for the model string. If you need an xAI coding-focused model with API access today, `grok-build-0.1` is in public beta. The full delays context — including what this means alongside GPT-5.6 and Gemini 3.5 Pro delays — is covered in the [Late-June 2026 Model Delays roundup](/builders-log/ai-model-delays-late-june-2026-fable-5-gpt-56-grok-v9-gemini-builder-planning-guide/).
 
-**June 18, 2026 update:** V9-Medium appeared in the consumer Grok product on X and SuperGrok on June 16, the same day SpaceX filed its binding $60B merger agreement to acquire Cursor. As of June 18, `grok-v9-medium` does not appear in xAI's API documentation — the xAI docs currently list grok-4.3, grok-4.20 variants, and grok-build-0.1. API access is still pending. The article below covers what builders should evaluate when the API slug ships. The June 16 context is also significant: SpaceX's ownership of Cursor and V9-Medium's Cursor-data training now intersect in a way that changes the distribution equation. See: [SpaceX's $60B Cursor Acquisition](/builders-log/spacex-cursor-60b-acquisition-xai-grok-model-shift-builder-guide/).
+**June 18, 2026 update:** [V9-Medium appeared in the consumer Grok product on X and SuperGrok on June 16](https://www.techtimes.com/articles/318495/20260616/grok-v9-medium-arrives-spacex-seals-cursor-developers-face-model-choice-risk.htm), the same day [SpaceX filed its binding $60B merger agreement to acquire Cursor](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/). As of June 18, `grok-v9-medium` does not appear in xAI's API documentation — the xAI docs currently list grok-4.3, grok-4.20 variants, and grok-build-0.1. API access is still pending. The article below covers what builders should evaluate when the API slug ships. The June 16 context is also significant: SpaceX's ownership of Cursor and V9-Medium's Cursor-data training now intersect in a way that changes the distribution equation. See: [SpaceX's $60B Cursor Acquisition](/builders-log/spacex-cursor-60b-acquisition-xai-grok-model-shift-builder-guide/).
 
 ---
 
-On May 25, 2026, Elon Musk announced that xAI had completed training on Grok V9-Medium. Fine-tuning and reinforcement learning are now underway. The expected ship window is mid-June 2026 — roughly two to three weeks from training completion.
+On May 25, 2026, [Elon Musk announced](https://www.kucoin.com/news/flash/xai-completes-training-of-1-5t-grok-v9-medium-model-with-cursor-data-integration) that xAI had completed training on Grok V9-Medium. Fine-tuning and reinforcement learning are now underway. The expected ship window is mid-June 2026 — roughly two to three weeks from training completion, per that same announcement.
 
-Most builder coverage of xAI this month has focused on Grok 5: the 6-trillion-parameter flagship model that prediction markets currently give only about 12% odds of shipping by June 30. V9-Medium is a different product with a different timeline, a different focus area, and — if the training data profile holds — a different practical use case from anything xAI has shipped before.
+Most builder coverage of xAI this month has focused on Grok 5: the [6-trillion-parameter](https://www.benzinga.com/markets/tech/25/11/48894297/elon-musk-tells-ron-baron-grok-5-set-for-2026-with-a-massive-6-trillion-parameter-model) flagship model that prediction markets currently give only [about 12% odds](https://www.lines.com/prediction-markets/tech/grok-5-released-by) of shipping by June 30 (live tracking: [Polymarket](https://polymarket.com/event/grok-5-released-by)). V9-Medium is a different product with a different timeline, a different focus area, and — if the training data profile holds — a different practical use case from anything xAI has shipped before.
 
 This article covers what is confirmed, what is likely, and how to think about V9-Medium before it appears in API documentation.
 
@@ -24,7 +25,7 @@ This article covers what is confirmed, what is likely, and how to think about V9
 
 ## V9-Medium and Grok 5 Are Not the Same Product
 
-The confusion is understandable. xAI does not maintain a clean public model roadmap. Grok 5 dominates coverage because the parameter count — 6 trillion total, 32 billion active in a Mixture-of-Experts configuration — invites the obvious frontier narrative.
+The confusion is understandable. xAI does not maintain a clean public model roadmap. Grok 5 dominates coverage because the [parameter count — 6 trillion total in a Mixture-of-Experts configuration](https://www.benzinga.com/markets/tech/25/11/48894297/elon-musk-tells-ron-baron-grok-5-set-for-2026-with-a-massive-6-trillion-parameter-model) — invites the obvious frontier narrative. (xAI has not disclosed an active-parameter count for Grok 5.)
 
 V9-Medium is not a smaller Grok 5. It is a separate model class, distinguished by:
 
@@ -36,13 +37,13 @@ V9-Medium is not a smaller Grok 5. It is a separate model class, distinguished b
 | Release timing | Mid-June 2026 | Unknown; ~12% odds by June 30 |
 | Status as of June 1 | Training complete; RL underway | Still in training |
 
-The 1.5 trillion parameter count places V9-Medium in a category above current leading coding models — OpenAI's o3-mini-high tops out around 200B effective parameters, and Claude Sonnet 4.6 is a sub-trillion model by Anthropic's public characterizations. Whether raw parameter count translates to better code generation depends heavily on training data quality and RL alignment, which brings us to the most distinctive feature of V9-Medium.
+The 1.5 trillion parameter count is large relative to most current coding-focused models, though direct comparison is difficult: neither OpenAI nor Anthropic discloses parameter counts for their models, so no verified apples-to-apples figure exists for o3-mini-high or Claude Sonnet 4.6. Whether raw parameter count translates to better code generation depends heavily on training data quality and RL alignment, which brings us to the most distinctive feature of V9-Medium.
 
 ---
 
 ## The Cursor Integration
 
-xAI licensed a significant corpus of Cursor usage data for V9-Medium's training. Cursor, the AI-native IDE with over 4 million active developers, generates a distinctive type of training signal: real engineering workflows. Multi-file edits. Refactors across large codebases. Back-and-forth correction cycles where the model proposes something and the engineer accepts, rejects, or modifies it.
+xAI licensed a significant corpus of Cursor usage data for V9-Medium's training. Cursor, the AI-native IDE with an estimated [4 million active developers](https://www.cosmicjs.com/blog/spacex-acquires-cursor-what-developers-should-know) as of mid-2026, generates a distinctive type of training signal: real engineering workflows. Multi-file edits. Refactors across large codebases. Back-and-forth correction cycles where the model proposes something and the engineer accepts, rejects, or modifies it.
 
 This is different from GitHub code corpora, which capture static snapshots of what shipped. Cursor data captures the interaction loop — including mistakes, partial edits, and the engineer's judgment about what the model got wrong.
 
@@ -61,7 +62,7 @@ Training completion is the first gate. For a model at this scale, the path from 
 3. **Infrastructure preparation** (serving optimization, quantization, API integration): 1 week
 4. **Staged rollout** (internal, then limited beta, then GA)
 
-For a "mid-June" claim from a May 25 training completion, xAI would need to compress some of these stages or run them heavily in parallel. That is plausible for a lab that has shipped quickly before — Grok V8 had a five-week path from training to limited API access. It is also plausible that "mid-June" slips to late June, particularly if the RL phase produces alignment issues that require additional work.
+For a "mid-June" claim from a May 25 training completion, xAI would need to compress some of these stages or run them heavily in parallel. That is plausible for a lab that has [publicly committed to a monthly model-release cadence](https://chatforest.com/builders-log/grok-45-xai-v9-monthly-model-cadence-cursor-training-builder-guide/) rather than the slower multi-quarter cycles typical of frontier labs. It is also plausible that "mid-June" slips to late June, particularly if the RL phase produces alignment issues that require additional work.
 
 The useful planning assumption for builders: **evaluate V9-Medium in the June 15–25 window**. If it ships earlier, that's a bonus. If it slips into early July, that is within historical variation for xAI model launches.
 
@@ -71,7 +72,7 @@ The useful planning assumption for builders: **evaluate V9-Medium in the June 15
 
 xAI's current API infrastructure operates at `api.x.ai`, with models accessible via an API key. The existing Grok API supports OpenAI-compatible endpoints, which means V9-Medium should be drop-in swappable with current Grok integrations — and, in most cases, with OpenAI API wrappers.
 
-Pricing for V9-Medium has not been announced. Prior xAI pricing on Grok V8 models ranged from $0.30 to $0.60 per million input tokens and $0.90 to $1.80 per million output tokens for standard tiers. Given the parameter count increase, expect a significant uplift — likely in the $5–15 per million token range for a model this size, competitive with GPT-5.5 or Sonnet 4.6 positioning rather than the cheaper midtier range.
+Pricing for V9-Medium has not been announced. Given the parameter count increase over xAI's current [Grok 4.3 and Grok 4.1 Fast tiers](https://x.ai/api), expect a significant uplift — likely in the $5–15 per million token range for a model this size, competitive with GPT-5.5 or Sonnet 4.6 positioning rather than the cheaper midtier range. This is the article's estimate, not a confirmed figure.
 
 For builders currently on xAI's Grok Build tool (distributed through X subscriptions), V9-Medium will likely replace V8 as the underlying model automatically, with no pricing change at the tool layer. For API consumers, a new model string and potentially a new pricing tier.
 
@@ -81,13 +82,13 @@ For builders currently on xAI's Grok Build tool (distributed through X subscript
 
 The relevant comparison class for V9-Medium, given its coding focus, is:
 
-**GPT-5.5 (April 23, 2026)**: OpenAI's current flagship. Strong on multi-step reasoning, widely deployed. Context: 1M tokens confirmed. Pricing: competitive enterprise tier. V9-Medium's advantage, if the training data hypothesis holds, is specifically on edit-heavy developer workflows rather than net-new generation. If your workload is primarily code completion or generation from scratch, GPT-5.5 may retain an edge. If it's refactoring, review, and multi-file edits, V9-Medium is the more interesting test.
+**[GPT-5.5](https://openai.com/index/introducing-gpt-5-5/) (April 23, 2026)**: OpenAI's current flagship. Strong on multi-step reasoning, widely deployed. Context: 1M tokens confirmed. Pricing: competitive enterprise tier. V9-Medium's advantage, if the training data hypothesis holds, is specifically on edit-heavy developer workflows rather than net-new generation. If your workload is primarily code completion or generation from scratch, GPT-5.5 may retain an edge. If it's refactoring, review, and multi-file edits, V9-Medium is the more interesting test.
 
-**Anthropic Claude Sonnet 4.6**: Currently the dominant API model for production agent pipelines. Strong on instruction-following and multi-step tasks. Anthropic's Adaptive Thinking feature added extended reasoning on demand. V9-Medium may challenge Sonnet 4.6 on raw code output quality; whether it matches Sonnet's reliability and consistency at scale is a separate question that will take production usage to determine.
+**Anthropic Claude Sonnet 4.6**: Currently the dominant API model for production agent pipelines. Strong on instruction-following and multi-step tasks. Anthropic's [Adaptive Thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) feature added extended reasoning on demand. V9-Medium may challenge Sonnet 4.6 on raw code output quality; whether it matches Sonnet's reliability and consistency at scale is a separate question that will take production usage to determine.
 
-**Claude Sonnet 4.6 via Claude Code**: If your team is on Claude Code, Anthropic is splitting billing on June 15 (Agent SDK moves to API-rate billing). This is a non-trivial cost change for teams running automations. V9-Medium's launch timing is notable here: a mid-June ship means builders evaluating the Claude Code billing change and builders considering V9-Medium are facing decisions in the same two-week window.
+**Claude Sonnet 4.6 via Claude Code**: If your team is on Claude Code, Anthropic [announced plans to split billing on June 15](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) (Agent SDK moving to a separate API-rate credit). This is a non-trivial cost change for teams running automations. V9-Medium's launch timing is notable here: a mid-June ship means builders evaluating the Claude Code billing change and builders considering V9-Medium are facing decisions in the same two-week window. *(Update: Anthropic paused this change before the June 15 effective date — see the Help Center link above for current status.)*
 
-**Gemini 3.5 Flash ($1.50/$9.00 per 1M tokens)**: For teams prioritizing cost over capability, Gemini 3.5 Flash is already GA and significantly cheaper than any frontier coding model. V9-Medium is unlikely to compete on price at this tier.
+**[Gemini 3.5 Flash](https://ai.google.dev/gemini-api/docs/pricing) ($1.50/$9.00 per 1M tokens)**: For teams prioritizing cost over capability, Gemini 3.5 Flash is already GA and significantly cheaper than any frontier coding model. V9-Medium is unlikely to compete on price at this tier.
 
 ---
 
@@ -113,10 +114,10 @@ V9-Medium is a legitimate reason to add xAI API access to your evaluation roster
 
 V9-Medium's timing is notable in the mid-June 2026 model landscape. Within a two-week window:
 
-- **Gemini 3.5 Pro** is expected to GA (confirmed "next month" at Google I/O on May 19)
+- **[Gemini 3.5 Pro](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/) is expected to GA** (Sundar Pichai said "give us until next month" at Google I/O on May 19)
 - **V9-Medium** mid-June target
-- **Claude Code billing split** activates June 15
-- **SpaceX (SPCX) Nasdaq debut** June 12 (unrelated, but occupying developer news cycles)
+- **Claude Code billing split** was set to activate June 15 (later paused — see above)
+- **[SpaceX (SPCX) Nasdaq debut](https://www.nasdaq.com/newsroom/spacex-makes-history-raising-85-billion-through-nasdaq-listing)** June 12 (unrelated, but occupying developer news cycles)
 
 For builders, this is a deliberate evaluation moment — not just for V9-Medium, but for the current generation of coding-focused AI tools more broadly. The Claude billing change forces a cost audit. V9-Medium and Gemini 3.5 Pro force a capability comparison. If you haven't done a structured review of your AI toolchain since early 2026, the last two weeks of June are a natural forcing function.
 

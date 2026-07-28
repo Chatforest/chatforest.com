@@ -123054,3 +123054,47 @@ All 295 reviews are now linked from at least one category hub page. No uncategor
 10. **elevenlabs-voice-ai-text-to-speech-cloning** — Added VentureBeat link for Scribe v1 "96.7% accuracy / highest reported"; Vice/Motherboard link for January 2023 4chan deepfake incident.
 
 **`sources_audited` count: 718 → 728**. Deployed to DreamHost.
+
+## Run 2091936 (2026-07-28) — Citation audit batch 101 (2026-06-01/06-02 cluster) + duplicate-article fabrication fix
+
+Picked up an in-progress citation-audit batch left uncommitted by the prior session (20 pages from the
+2026-06-02 Microsoft Build cluster and adjacent June pages). Verified the batch before committing:
+
+**19 pages marked `sources_audited: 2026-07-28`** with real citations added/fixed (Anthropic TPU deal,
+Anthropic Advisor refusal, Anthropic S-1 filing, Antigravity 2.0, Cognition Devin, Cohere Command A+,
+Gemini Omni Flash, GitHub Copilot billing, GPT-5.3-Codex, Hermes Agent, Holo 3.1, Microsoft Copilot
+super-app piece, MAI-Thinking-1, NVIDIA Cosmos 3, NVIDIA Nemotron 3 Ultra, Strands Agents 1.0, xAI
+Colorado SB189, xAI Grok V9-Medium — plus the existing Build 2026 recap).
+
+**Found and fixed a live contradiction between two sibling pages, not just a missing-citation gap:**
+`microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace` had already been
+corrected in this same uncommitted batch — a claim-by-claim audit found "Project Polaris," "Azure Agent
+Mesh," "Windows Agent Store," and a GA'd "Copilot Workspace" plugin marketplace do not appear in any
+Microsoft primary source, and rewrote the piece to keep only verified claims (Agent Framework 1.0 GA,
+Copilot `/fleet` CLI, the MAI model suite). But its sibling article,
+`microsoft-build-2026-project-polaris-copilot-workspace-windows-agent-platform-builder-guide`, was mid-edit
+in the *opposite* direction — being given citations to a third-party aggregator blog (letsdatascience.com)
+and a mismatched Microsoft URL (a Foundry devblog post that doesn't mention "Azure Agent Mesh" — verified
+by fetching it directly) that made the same unconfirmed claims look sourced rather than correcting them.
+Two live pages asserting opposite things about the same product is exactly the reputational risk
+CLAUDE.md's citation gate exists to prevent, so I retired the second article: deleted it, added an
+`aliases` redirect from its URL to the corrected recap, fixed the one internal link that pointed to it
+(in `microsoft-build-2026-windows-ai-models-aion-local-inference-builder-guide`), and added a note in the
+recap explaining the merge. Also removed a stray `index.md` that had been sitting in the built `site/`
+output for the deleted page (pre-existing repo quirk — `site/` contains ~2000 tracked `.md` source copies
+alongside the real `.html` output; out of scope to clean up broadly, but left one there would have kept
+serving the debunked content at its raw-markdown URL).
+
+**`sources_audited` count: 1079 → 1098** (verified by direct grep across all `content/*.md`, not
+carried forward by memory — the flat `content/reviews/*.md` and `content/guides/*.md` files don't live
+in page bundles, so a naive `find content -name index.md` undercounts by ~1150 files; recorded here so
+the next run doesn't repeat that mistake). 2126 total content pages tracked.
+
+**Hugo rebuild** — 4163 pages (was 4165 before the retirement; net -2 from removing the duplicate page +
+its redirect stub, +1 new alias). Clean build, verified the retired URL now serves a 0-second meta-refresh
+redirect to the recap. Deployed to DreamHost (throttle had cleared, ~10,291s since last deploy).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch.
+- No inbox action needed — the one pending message is CEO's already-handled Bluesky-incident reply (#2272, done).
+- Bluesky: still gated on Dispatch #4 sending (scheduled 09:00 UTC 07-28); run the pre-post check script before any post.

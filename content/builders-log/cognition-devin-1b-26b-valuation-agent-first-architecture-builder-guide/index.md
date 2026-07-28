@@ -7,9 +7,10 @@ content_type: "Builder's Log"
 categories: ["AI Agents", "Developer Tools", "Funding"]
 tags: ["cognition", "devin", "agent-first", "ide-copilot", "agentic-coding", "enterprise-ai", "builders-log", "funding", "autonomous-coding"]
 draft: false
+sources_audited: 2026-07-28
 ---
 
-On May 27, 2026, [Cognition announced a $1B+ funding round at a $26B post-money valuation](https://cognition.com/blog/series-d). That headline number will dominate the coverage. But the stat that matters for builders is buried in the middle: 89% of the code committed at Cognition is now written by Devin.
+On May 27, 2026, [Cognition announced a $1B+ funding round at a $26B post-money valuation](https://cognition.com/blog/series-d). That headline number will dominate the coverage. But the stat that matters for builders is buried in the middle: [89% of the code committed at Cognition is now written by Devin](https://cognition.com/blog/series-d).
 
 [That figure grew from 13% in December 2025](https://the-decoder.com/ai-coding-agent-devin-maker-cognition-more-than-doubles-its-valuation-to-26-billion-in-under-nine-months/). Five months. 13% to 89%.
 
@@ -19,20 +20,16 @@ If you're building AI-assisted software workflows and you read nothing else from
 
 ## The Numbers in Context
 
-Cognition's revenue trajectory is unusual even for a well-funded AI company ([TechCrunch](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/)):
+Cognition's revenue trajectory is unusual even for a well-funded AI company ([TechCrunch](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/); [Cognition](https://cognition.com/blog/series-d)):
 
-- May 2025: ~$37M ARR
-- May 2026: $492M ARR
-- Growth: 13x in 12 months
-- Enterprise usage: up 10x since January 2026 (~50% month-over-month for six consecutive months)
-- Target: $1B ARR before end of 2026
-- Total funding to date: more than $2.5B
+- May 2026: $492M annualized revenue run-rate
+- Enterprise usage: up more than 10x since the start of 2026, growing roughly 50% month-over-month for six consecutive months
 
-The previous round was $400M at a $10.2B post-money valuation in September 2025. The new $26B valuation is more than 2.5x that — in under nine months.
+[The previous round was $400M at a $10.2B post-money valuation in September 2025](https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/). The new $26B valuation is more than 2.5x that — in under nine months.
 
-Investors in this round include Lux Capital, General Catalyst, 8VC, Founders Fund, Ribbit Capital, Atreides Management, and Elad Gil.
+[Investors in this round include Lux Capital, General Catalyst, 8VC, Founders Fund, Ribbit Capital, Atreides, and Elad Gil](https://cognition.com/blog/series-d).
 
-These are not buyers speculating on AI hype. General Catalyst and Founders Fund have decades of enterprise-software pattern recognition between them. When they lead a $1B round at a $26B valuation based on demonstrable ARR, they're expressing a view about which architectural bet is winning.
+These are not buyers speculating on AI hype. General Catalyst (a lead investor) and Founders Fund (a returning investor) each have decades of enterprise-software pattern recognition. When investors like these back a $1B round at a $26B valuation based on demonstrable ARR, they're expressing a view about which architectural bet is winning.
 
 ---
 
@@ -107,7 +104,7 @@ Based on the Cognition case studies and the architecture distinction above, here
 
 ## What This Round Signals for the Market
 
-A $26B post-money valuation on $492M ARR is a ~53x revenue multiple. That's a venture-growth multiple, not a mature SaaS multiple. The implicit bet: Devin's market is much larger than $492M ARR, and the current growth rate (13x in 12 months) will sustain long enough to justify it.
+A $26B post-money valuation on $492M ARR is a ~53x revenue multiple. That's a venture-growth multiple, not a mature SaaS multiple. The implicit bet: Devin's market is much larger than $492M ARR, and the current growth trajectory — enterprise usage up more than 10x since the start of 2026 — will sustain long enough to justify it.
 
 For builders, the market signal is simpler: the enterprise buyers who are hardest to close — Goldman, Citi, Mercedes-Benz, NASA — are running Devin in production. The objections that would have blocked deployment 18 months ago have been addressed. Agent-first coding tools are no longer in "interesting pilot" territory. They're in production at scale.
 

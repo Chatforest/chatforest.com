@@ -1,14 +1,15 @@
 ---
-title: "Strands Agents 1.0: AWS's Open-Source Agent SDK Just Got Production-Grade Multi-Agent Orchestration"
+title: "Strands Agents 1.0: AWS's Open-Source Agent SDK Gets Production-Grade Multi-Agent Orchestration"
 date: 2026-06-01T20:00:00+09:00
-description: "Strands Agents Python SDK 1.0 (May 21, 2026) adds multi-agent orchestration, A2A protocol support, and a remote session manager. Here's what changed, how it compares to LangGraph and the Claude Agent SDK, and when to use it."
-og_description: "AWS's Strands Agents Python SDK hit 1.0 on May 21. New: four multi-agent primitives, native A2A protocol (expose or consume any A2A agent in two lines), and a session manager for remote state. The recommended framework for AgentCore deployments."
+description: "Strands Agents Python SDK 1.0 (July 15, 2025) added multi-agent orchestration, A2A protocol support, and a remote session manager; the TypeScript SDK caught up to 1.0 in April 2026. Here's what changed, how it compares to LangGraph and the Claude Agent SDK, and when to use it."
+og_description: "AWS's Strands Agents Python SDK hit 1.0 in July 2025. Ships with: multi-agent patterns (Agents-as-Tools, Swarm, Graph, Workflow), native A2A protocol support, and a session manager for remote state. The recommended framework for AgentCore deployments."
 content_type: "Builder's Log"
 categories: ["Developer Tools", "AWS", "Agent Frameworks"]
 tags: ["strands-agents", "aws", "multi-agent", "a2a-protocol", "agentcore", "bedrock", "open-source", "python", "agent-framework", "langgraph", "crewai", "session-manager"]
+sources_audited: 2026-07-28
 ---
 
-AWS open-sourced Strands Agents in May 2025 as a simple, model-driven Python SDK for building AI agents. On May 21, 2026, version 1.0 shipped — and it changes the story from "good for single agents" to "production-ready for multi-agent systems." The TypeScript SDK hit 1.0 five weeks earlier on April 30.
+AWS [open-sourced Strands Agents](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/) in May 2025 as a simple, model-driven Python SDK for building AI agents. The Python SDK [reached version 1.0 on July 15, 2025](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-1-0-production-ready-multi-agent-orchestration-made-simple/), adding multi-agent orchestration — it changed the story from "good for single agents" to "production-ready for multi-agent systems." The [TypeScript SDK reached its own 1.0 milestone](https://strandsagents.com/blog/strands-agents-typescript-v1/) on April 30, 2026, bringing the two SDKs to feature parity.
 
 If you have an AgentCore workload, a multi-agent pipeline that needs to run across org boundaries, or an agent that needs to accumulate state across sessions, the 1.0 release directly addresses all three.
 
@@ -38,7 +39,7 @@ The tradeoff is real: this approach gives you less fine-grained control than Lan
 
 ## Model Provider Flexibility
 
-Strands is model-agnostic by design, though Amazon Bedrock is the primary supported provider and gets the most maintenance attention.
+Strands is [model-agnostic by design](https://strandsagents.com/docs/user-guide/concepts/model-providers/), though Amazon Bedrock is the primary supported provider and gets the most maintenance attention.
 
 | Provider | Class | Notes |
 |---|---|---|
@@ -46,7 +47,7 @@ Strands is model-agnostic by design, though Amazon Bedrock is the primary suppor
 | Anthropic direct | `AnthropicModel` | Claude models via Anthropic API |
 | OpenAI | `OpenAIModel` | GPT-5.x family |
 | Ollama | `OllamaModel` | Local inference |
-| Any LiteLLM-supported | Via LiteLLM | 100+ providers with unified interface |
+| Any LiteLLM-supported | Via LiteLLM | [100+ providers](https://github.com/BerriAI/litellm) with unified interface |
 
 Switching models does not require changing agent code — only the model object:
 
@@ -68,23 +69,23 @@ The practical caveat: if you are not planning to deploy on AWS, the `AnthropicMo
 
 ## What's New in 1.0: Multi-Agent Orchestration
 
-Pre-1.0 Strands was a single-agent framework. Version 1.0 adds four primitives for composing agents:
+Pre-1.0 Strands was a single-agent framework. Version 1.0 added composable [multi-agent patterns](https://strandsagents.com/docs/user-guide/concepts/multi-agent/multi-agent-patterns/):
 
-**1. SubAgent** — Run a Strands agent as a tool callable by another agent. The parent agent dispatches work; the child agent runs it synchronously.
+**1. [Agents-as-Tools](https://strandsagents.com/docs/user-guide/concepts/multi-agent/agents-as-tools/)** — Not a separate class: wrap a specialized agent with the ordinary `@tool` decorator so an orchestrator agent can call it. The orchestrator dispatches work; the tool agent runs it and returns a result.
 
-**2. ParallelAgent** — Fan out the same task to multiple agents in parallel and collect results. Good for map-reduce patterns: parallel research, parallel scoring, parallel code review.
+**2. [Swarm](https://strandsagents.com/docs/user-guide/concepts/multi-agent/swarm/)** — A collaborative team of agents that hand off to each other autonomously: each agent's structured output can name the next agent to hand off to (or end the swarm and return a final response). Good for open-ended collaborative problem-solving.
 
-**3. Pipeline** — Chain agents sequentially where each agent's output becomes the next agent's input. Good for transformation chains (extract → classify → summarize → draft).
+**3. [Workflow](https://strandsagents.com/docs/user-guide/concepts/multi-agent/workflow/)** — A developer-defined task graph (DAG), shipped in the separate `strands-agents-tools` package, that an agent creates, starts, and monitors as a single non-conversational tool action. Good for transformation pipelines (extract → classify → summarize → draft).
 
-**4. GraphAgent** — Define conditional routing between agents based on intermediate results. The most LangGraph-like primitive; use it when you need explicit decision points in your flow.
+**4. [Graph](https://strandsagents.com/docs/user-guide/concepts/multi-agent/graph/)** — Deterministic, developer-defined orchestration where agents (or nested Swarms/Graphs) are nodes connected by edges, with output from one node feeding the next; cyclic graphs are supported. The most LangGraph-like primitive; use it when you need explicit, rule-based decision points.
 
-For most teams, SubAgent and Pipeline cover 80% of multi-agent patterns. GraphAgent is the escape valve when you need explicit branching.
+For most teams, Agents-as-Tools and Swarm cover the bulk of day-to-day multi-agent patterns. Graph is the escape valve when you need deterministic, explicit branching.
 
 ---
 
 ## A2A Protocol: Cross-Agent Interoperability
 
-1.0 adds native support for the **Agent-to-Agent (A2A) protocol** — Google's open standard for agent discovery and communication. This matters if you need to connect agents across team boundaries, language runtimes, or company firewalls.
+1.0 adds [native support](https://strandsagents.com/docs/user-guide/concepts/multi-agent/agent-to-agent/) for the **Agent-to-Agent (A2A) protocol** — an open standard for agent discovery and communication [originally introduced by Google in April 2025](https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/) and [donated to the Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents) that June, where it's now vendor-neutral and community-governed. This matters if you need to connect agents across team boundaries, language runtimes, or company firewalls.
 
 ### Exposing a Strands agent as an A2A server
 
@@ -103,7 +104,7 @@ server = A2AServer(agent)
 app = server.app  # Mount in any ASGI host
 ```
 
-Any A2A-compatible client — including LangGraph agents, Claude Managed Agents, or a Strands A2AAgent — can now call this agent over HTTP.
+Any A2A-compatible client — including agents built on other frameworks or a Strands `A2AAgent` — can now call this agent over HTTP.
 
 ### Consuming a remote A2A agent
 
@@ -124,15 +125,15 @@ This is the primary mechanism for building inter-team or inter-company agent pip
 
 ## Session Manager: Persistent State Across Runs
 
-Pre-1.0, agent memory reset at the end of each invocation. Version 1.0 ships a **session manager** that persists conversation state to a remote datastore between calls:
+Pre-1.0, agent memory reset at the end of each invocation. Version 1.0 ships a [**session manager**](https://strandsagents.com/docs/user-guide/concepts/agents/session-management/) that persists conversation state to a remote datastore between calls:
 
 ```python
 from strands import Agent
-from strands.session import DynamoDBSessionManager
+from strands.session.s3_session_manager import S3SessionManager
 
-session_manager = DynamoDBSessionManager(
-    table_name="my-agent-sessions",
+session_manager = S3SessionManager(
     session_id="user-42-project-audit",
+    bucket="my-agent-sessions",
 )
 
 agent = Agent(
@@ -141,22 +142,22 @@ agent = Agent(
     session_manager=session_manager,
 )
 
-# First call: fresh session, state written to DynamoDB
+# First call: fresh session, state written to S3
 agent("Audit our IAM policies. Start with S3 bucket policies.")
 
 # Later call (different process, different machine): session restored automatically
 agent("Continue the audit — move on to EC2 security groups.")
 ```
 
-The session manager restores the full conversation history before each call, so the agent picks up exactly where it left off. DynamoDB is the shipping implementation; the `SessionManager` interface is open for custom backends (Redis, Postgres, S3).
+The session manager restores the full conversation history before each call, so the agent picks up exactly where it left off. The SDK ships `FileSessionManager` (local disk, for development) and [`S3SessionManager`](https://strandsagents.com/docs/api/python/strands.session.s3_session_manager/) (for production and distributed deployments) out of the box; the `SessionManager` interface is open for custom backends.
 
-This is the foundation for building agents that accumulate institutional knowledge across days or weeks — the usage pattern that managed agents like AgentCore's Filesystem Persistence feature targets.
+This is the foundation for building agents that accumulate institutional knowledge across days or weeks — the usage pattern that managed agents like [AgentCore's filesystem persistence feature](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-persistent-filesystems.html) (preview) also target.
 
 ---
 
 ## MCP Integration
 
-Strands has supported MCP since early 2025, and 1.0 doesn't change the API — but it's worth being explicit about how it works:
+Strands has [supported MCP since its May 2025 launch](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/), and 1.0 doesn't change the API — but it's worth being explicit about how it works:
 
 ```python
 from strands import Agent
@@ -171,13 +172,13 @@ agent = Agent(
 )
 ```
 
-MCP tools from different servers compose naturally with native Python tools in the same `tools=[]` list. The 14,000+ servers on PulseMCP are all accessible this way.
+MCP tools from different servers compose naturally with native Python tools in the same `tools=[]` list. The [tens of thousands of servers indexed by PulseMCP](https://www.pulsemcp.com/servers) are all accessible this way.
 
 ---
 
 ## AgentCore Deployment
 
-Strands is the AWS-recommended framework for deploying agents on Amazon Bedrock AgentCore. The pairing is designed to be seamless: Strands handles agent logic, AgentCore handles infrastructure isolation, scaling, and governance.
+Strands is [AWS's own reference framework for deploying agents on Amazon Bedrock AgentCore](https://strandsagents.com/docs/user-guide/deploy/deploy_to_bedrock_agentcore/), and [AWS's production blueprint for evaluating agents](https://aws.amazon.com/blogs/machine-learning/evaluating-ai-agents-a-production-blueprint-with-strands-and-agentcore/) pairs the two by default — though AgentCore's runtime also supports other open-source frameworks such as LangChain, LangGraph, and CrewAI. The pairing is designed to be seamless: Strands handles agent logic, AgentCore handles infrastructure isolation, scaling, and governance.
 
 ```python
 # Same Strands agent code — AgentCore wraps the runtime
@@ -215,13 +216,13 @@ Strands is the right choice when you want a framework that is genuinely model-ag
 
 ## Production Usage
 
-Multiple AWS services already run Strands internally:
+At launch, [AWS said multiple internal teams were already running Strands in production](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/):
 
 - **Amazon Q Developer** — the agentic coding assistant
 - **AWS Glue** — ETL pipeline agents
 - **VPC Reachability Analyzer** — network diagnostic agents
 
-Contributing companies include Accenture, Anthropic, Meta, PwC, Langfuse, mem0.ai, and Tavily. The open-source community around the SDK is real and growing.
+That [same announcement named early supporting companies](https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/): Accenture, Anthropic, Langfuse, mem0.ai, Meta, PwC, Ragas.io, and Tavily.
 
 ---
 
@@ -233,7 +234,7 @@ Contributing companies include Accenture, Anthropic, Meta, PwC, Langfuse, mem0.a
 
 **If you have cross-team agent collaboration requirements:** The A2A integration in 1.0 is the production answer to "how do two teams share an agent without sharing credentials or code."
 
-**If you need session continuity:** The DynamoDB session manager is production-ready. The Redis and Postgres backends are community-maintained but functional.
+**If you need session continuity:** The built-in `S3SessionManager` and `FileSessionManager` are production-ready. A [community-maintained catalog](https://strandsagents.com/docs/community/community-packages/) also lists a Valkey/Redis session manager and an Amazon Bedrock AgentCore Memory session manager if you need a different backend.
 
 Install and start:
 

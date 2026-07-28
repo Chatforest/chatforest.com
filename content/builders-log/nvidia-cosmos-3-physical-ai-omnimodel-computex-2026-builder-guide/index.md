@@ -1,6 +1,7 @@
 ---
 title: "NVIDIA Cosmos 3: The First Open Physical AI Omnimodel, Launched at Computex 2026"
 date: 2026-06-02
+sources_audited: 2026-07-28
 description: "NVIDIA launched Cosmos 3 at Computex on June 1 — the first open omnimodel that generates text, images, video, audio, and robot actions in a single system. Here's what builders in robotics, AV, and synthetic data pipelines need to know."
 og_description: "NVIDIA Cosmos 3 launched June 1 at Computex — a fully open physical AI omnimodel that unifies world generation and action prediction. Super, Nano, and Edge variants. OpenMDW-1.1 license, Hugging Face weights, NIM microservices. Reduces robotics training cycles from months to days."
 content_type: "Builder Guide"
@@ -14,7 +15,7 @@ author: "ChatForest"
 
 ---
 
-NVIDIA's Computex 2026 keynote was expected to be a hardware event. Jensen Huang delivered hardware — Rubin training chips, Rubin CPX inference chips, RTX Spark consumer superchip — but the announcement that changes the roadmap for physical AI developers was a model, not a chip.
+NVIDIA's Computex 2026 keynote was expected to be a hardware event. [Jensen Huang delivered hardware — the Rubin training GPU platform and the RTX Spark consumer superchip](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) — but the announcement that changes the roadmap for physical AI developers was a model, not a chip.
 
 [**Cosmos 3** is the first fully open omnimodel for physical AI](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai). It doesn't just understand the physical world — it generates it, predicts actions within it, and outputs the action trajectories that robot controllers and AV systems need to act in it. All in a single model, available for download.
 
@@ -26,13 +27,13 @@ For builders working in robotics, autonomous vehicles, or synthetic data pipelin
 
 Most foundation models are either **understanding models** (they analyze inputs) or **generation models** (they produce outputs). Cosmos 3 is both, at the same time, across six modalities.
 
-The complete modality list: **text, images, video, ambient sound, and action trajectories** — all processed and generated within a single unified architecture.
+The complete modality list: **text, images, video, ambient sound, and action trajectories** — [all processed and generated within a single unified architecture](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai).
 
 The action trajectory output is the part that has no precedent in any open model. Cosmos 3 can produce joint angles, gripper positions, and trajectory points that describe how a robot should physically move to complete a task. That's not image generation with a note about robotics attached — that's direct output a robot controller can consume.
 
 ### What the Previous Cosmos Generation Did
 
-Cosmos 1.x (launched GTC 2025) was a **video world model** — it generated physically plausible video sequences for training physical AI. It gave builders a way to create synthetic training data without real-world robot operation hours. That was significant.
+[Cosmos 1.x (introduced at CES in January 2025](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-world-foundation-model-platform-to-accelerate-physical-ai-development), with a [major model release at GTC in March 2025](https://nvidianews.nvidia.com/news/nvidia-announces-major-release-of-cosmos-world-foundation-models-and-physical-ai-data-tools)) was a **video world model** — it generated physically plausible video sequences for training physical AI. It gave builders a way to create synthetic training data without real-world robot operation hours. That was significant.
 
 Cosmos 3 absorbs everything Cosmos 1.x did and extends it into a full omnimodel. Video generation is still there. So is image generation. What's new is the unified architecture that ties generation to reasoning to action in one system — and the addition of sound, which matters for robots that need to understand their acoustic environment.
 
@@ -59,22 +60,22 @@ Cosmos 3 ships in three tiers with explicit intended workloads:
 **Post-training for robotics and AV models.** Super is the highest-capability variant, optimized for quality over speed. The intended use case is generating synthetic training data and fine-tuning larger robot or AV models. When you're building a training pipeline for a new robot platform and need physics-accurate synthetic sequences at scale, Super is the tier that produces data good enough to train on.
 
 ### Cosmos 3 Nano
-**High-quality video and action reasoning in fractions of a second.** Nano runs fast enough for real-time-adjacent workloads — rapid iteration on test scenarios, quick evaluation of action proposals, batch inference over simulation sequences. It's the developer's workhorse during the build and evaluation loop.
+[**High-quality video and action reasoning in fractions of a second.**](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai) Nano runs fast enough for real-time-adjacent workloads — rapid iteration on test scenarios, quick evaluation of action proposals, batch inference over simulation sequences. It's the developer's workhorse during the build and evaluation loop.
 
 ### Cosmos 3 Edge
-**Coming soon — real-time edge inference.** Edge targets deployment on device, likely for robots and AV systems that need to run world model inference without a cloud round-trip. No release date announced at Computex.
+[**Coming soon — real-time edge inference.**](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai) Edge targets deployment on device, likely for robots and AV systems that need to run world model inference without a cloud round-trip. No release date announced at Computex.
 
 ---
 
 ## License and What Commercial Use Looks Like
 
-Cosmos 3 is released under **OpenMDW-1.1** — not MIT. OpenMDW-1.1 is NVIDIA's open model and data weight license, which permits commercial and non-commercial use of the model weights with conditions.
+Cosmos 3 is released under [**OpenMDW-1.1**](https://github.com/NVIDIA/cosmos/blob/main/LICENSE) — not MIT. [OpenMDW-1.1 is the Linux Foundation's open model-weight license](https://www.linuxfoundation.org/press/linux-foundation-releases-openmdw-1.1-nvidia-adopts-openmdw-for-cosmos-isaac-gr00t-ising-and-nemotron-ai-model-families), which NVIDIA has adopted for Cosmos, and which permits commercial and non-commercial use of the model weights with conditions.
 
 The key practical points:
 - You can build commercial products using Cosmos 3 weights
 - You can fine-tune Cosmos 3 for your specific robot or vehicle platform
 - You can self-host and run Cosmos 3 inference in production
-- The OpenMDW-1.1 license includes attribution requirements and acceptable use restrictions — read it before going to production
+- [The OpenMDW-1.1 license requires retaining the license text and origin/copyright notices in any redistribution](https://github.com/NVIDIA/cosmos/blob/main/LICENSE) — read the full terms before going to production
 
 This is meaningfully more permissive than closed physical AI models from competitors, and more carefully scoped than a pure MIT license that allows unrestricted commercial redistribution of the weights themselves.
 
@@ -83,14 +84,14 @@ This is meaningfully more permissive than closed physical AI models from competi
 ## Where to Get It
 
 **Hugging Face:**
-- `nvidia/Cosmos3-Super` — weights for the high-quality post-training tier
-- `nvidia/Cosmos3-Nano` — weights for fast inference
+- [`nvidia/Cosmos3-Super`](https://huggingface.co/nvidia/Cosmos3-Super) — weights for the high-quality post-training tier
+- [`nvidia/Cosmos3-Nano`](https://huggingface.co/nvidia/Cosmos3-Nano) — weights for fast inference
 
 **NVIDIA Build:**
 - `build.nvidia.com` — API access for trying Cosmos 3 without self-hosting
 
 **NIM Microservices:**
-- NVIDIA NIM packages Cosmos 3 as a containerized inference service you can deploy on your own NVIDIA GPU infrastructure. Partners Baseten, CoreWeave, Microsoft Azure, Nebius, Deep Infra, and Classmethod support NIM-based Cosmos 3 deployment.
+- NVIDIA NIM packages Cosmos 3 as a containerized inference service you can deploy on your own NVIDIA GPU infrastructure. [Partners Baseten, CoreWeave, Microsoft Azure, Nebius, Deep Infra, and Classmethod support NIM-based Cosmos 3 deployment](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai).
 
 **GitHub:**
 - The NVIDIA/cosmos repository provides runnable setup, inference, training, and evaluation workflows using Hugging Face Diffusers and NVIDIA tooling.
@@ -101,7 +102,7 @@ This is meaningfully more permissive than closed physical AI models from competi
 
 NVIDIA launched Cosmos 3 alongside a **Cosmos Coalition** — a network of physical AI developers contributing models, research, and evaluation techniques, with access to NVIDIA DGX Cloud infrastructure for large-scale training.
 
-Founding coalition members at launch:
+[Founding coalition members at launch](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai):
 - **Agile Robots** — humanoid robotics
 - **Black Forest Labs** — generative AI (video/image)
 - **Generalist** — general-purpose robotics
@@ -115,7 +116,7 @@ The mix of robotics companies (Agile Robots, Skild AI, Generalist) with video ge
 
 ## Industry Adoption at Launch
 
-Several companies announced production adoption at or before Computex:
+[Several companies announced production adoption at or before Computex](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai):
 
 **Robotics:**
 - Agile Robots (humanoid)
@@ -136,7 +137,7 @@ This is launch-day adoption, not a beta program — which signals that some of t
 
 ## What the Synthetic Data Argument Actually Means
 
-The headline that NVIDIA promotes is "reduces training cycles from months to days." That framing understates what's actually changing.
+[The headline that NVIDIA promotes is "reduces training cycles from months to days."](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai) That framing understates what's actually changing.
 
 Building a physical AI system today requires:
 1. A robot (or simulator) to generate real action data
@@ -156,15 +157,16 @@ For teams without access to large robot fleets, that's the difference between a 
 
 ## The Connection to NVIDIA's Broader Stack
 
-Cosmos 3 is one of five announced at Computex. The full picture:
+[Cosmos 3 is one of the major model/hardware announcements NVIDIA grouped together at Computex 2026](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/). The full picture:
 
 | Layer | What NVIDIA Announced |
 |-------|----------------------|
-| Training chips | Rubin |
-| Inference chips | Rubin CPX |
-| Client AI | RTX Spark superchip |
-| LLM / reasoning | Nemotron 3 Ultra (500B+) |
-| Physical AI | Cosmos 3 |
+| Training chips | [Rubin GPU platform](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) |
+| Client AI | [RTX Spark superchip](https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/) |
+| LLM / reasoning | [Nemotron 3 Ultra (~500B parameters)](https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models) |
+| Physical AI | [Cosmos 3](https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai) |
+
+Note: Rubin CPX, a separate long-context inference GPU, [was unveiled earlier](https://nvidianews.nvidia.com/news/nvidia-unveils-rubin-cpx-a-new-class-of-gpu-designed-for-massive-context-inference) (September 2025, at NVIDIA's AI Infra Summit) and was not part of the Computex 2026 keynote lineup — it is omitted here to avoid misattributing its announcement date.
 
 Cosmos 3 is the model layer for physical AI in the same way Nemotron 3 is the model layer for reasoning and coding. The shared deployment infrastructure — NIM microservices, build.nvidia.com, Hugging Face — means teams can run Nemotron for their reasoning agent tier and Cosmos 3 for their simulation and action generation tier within the same NVIDIA-native stack.
 

@@ -1,148 +1,109 @@
 ---
-title: "Microsoft Copilot Is Now a Super App: What Builders Need to Know About the Plugin Marketplace"
+title: "Microsoft Copilot's Build 2026 Builder Surfaces: Federated Connectors Go GA, MCP Apps Add Interactive UI"
 date: 2026-06-02
-description: "Microsoft Copilot transformed from sidebar assistant to full-blown super app at Build 2026. Copilot Canvas, a new plugin marketplace with 70/30 revenue split, federated MCP connectors GA, and a TypeScript/Python/C# extension SDK. Here's the builder's guide to the new distribution channel."
-og_description: "Build 2026: Copilot Canvas turns Microsoft's AI sidebar into a plugin marketplace. Federated MCP connectors GA (Canva, HubSpot, Linear, Notion). 70/30 revenue split. What every builder needs to decide now."
+sources_audited: 2026-07-28
+description: "Microsoft Build 2026: federated Copilot connectors (built on MCP) reached general availability, and MCP Apps let Microsoft 365 Copilot declarative agents render interactive UI in Copilot Chat. What builders can ship today — and why a widely-circulated 'Copilot Canvas' plugin-marketplace story couldn't be confirmed against Microsoft's own announcements."
+og_description: "Build 2026: federated Copilot connectors (MCP-based) reach GA — Canva, HubSpot, Linear, Notion and more. MCP Apps let Copilot Chat render interactive UI. What builders can ship now."
 content_type: "Builder's Log"
 categories: ["Microsoft", "Developer Tools", "AI Distribution"]
-tags: ["microsoft", "copilot", "build-2026", "plugin-marketplace", "mcp", "copilot-canvas", "extension-sdk", "federated-connectors", "windows", "distribution"]
+tags: ["microsoft", "copilot", "build-2026", "mcp", "mcp-apps", "federated-connectors", "declarative-agents", "windows", "distribution"]
 ---
 
-Microsoft Build 2026 shipped something most builders are underestimating: a new distribution channel with 200 million potential users and a 70/30 revenue split.
-
-It's called Copilot Canvas. [Fortune reported Microsoft was building a super app that combines coding, chat, and other Copilot AI tools](https://fortune.com/2026/05/29/microsoft-working-on-super-app/) ahead of the announcement. It used to be called the Copilot sidebar.
-
----
-
-## What Changed at Build 2026
-
-For two years, Microsoft Copilot was a competent-but-limited AI assistant embedded in Windows and Microsoft 365 apps. Useful, but not a platform builders could build businesses on top of.
-
-That changed at Build 2026 with three interconnected announcements:
-
-**1. Copilot Canvas** — Copilot is no longer a sidebar. It's now a persistent workspace that can snap to the side of any screen or float as a resizable window. Inside the Canvas, users can drop files, images, code snippets, and live web widgets. Copilot maintains context across everything — a spreadsheet open in Excel, a codebase in Visual Studio, a design in Canva, a deal in HubSpot — and can operate across those surfaces simultaneously. The Canvas also introduces a universal inbox and a project workspace that persist across sessions.
-
-**2. Plugin Marketplace with Revenue Model** — Microsoft is launching a curated extension marketplace for Copilot, expected to open with around 200 vetted third-party extensions. For the first time, Microsoft has disclosed a developer revenue share: **70% to developers after payment processing fees**. This isn't a beta API program — it's a monetization surface.
-
-**3. Federated Copilot Connectors GA** — Built on Model Context Protocol (MCP), [federated connectors bring real-time third-party data into Microsoft 365 Copilot at query time](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993). These reached general availability with a first wave of major partners and are immediately open to custom builders. [Full connector schema and documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) is available on Microsoft Learn.
+Microsoft Build 2026 delivered two concrete, shippable builder surfaces for Copilot: **federated Copilot connectors**, which reached general availability, and **MCP Apps**, which let Microsoft 365 Copilot declarative agents render interactive UI inside Copilot Chat. [Fortune had reported ahead of Build 2026 that Microsoft was working on a "one-stop shop" connecting GitHub Copilot, the Copilot chat function, the Copilot Cowork tool, and a new agentic workflow capability](https://fortune.com/2026/05/29/microsoft-working-on-super-app/) — but that was pre-announcement reporting, not a Microsoft disclosure. A specific "Copilot Canvas" story — a persistent workspace with a plugin marketplace, a 70/30 developer revenue split, roughly 200 vetted extensions at launch, and 200 million potential users — has circulated widely in Build 2026 aggregator coverage, but it does not appear in Microsoft's own Build 2026 site, developer recap, or product blog posts. This piece covers what Microsoft has actually confirmed shipped, and flags what couldn't be verified.
 
 ---
 
-## Three Ways to Build for Copilot
+## What Actually Shipped at Build 2026
 
-Microsoft has created three distinct distribution surfaces at Build 2026. They're different in complexity, control, and revenue potential.
+**1. Federated Copilot Connectors reached general availability.** [Built on Model Context Protocol (MCP), federated connectors bring real-time third-party data into Microsoft 365 Copilot Chat, Copilot in Excel, and the Researcher agent at query time](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview), without indexing that data into Microsoft 365. [Microsoft's TechCommunity announcement post](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993) and the [Microsoft Learn documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) cover the rollout and the first wave of Microsoft-published connectors.
+
+**2. MCP Apps went generally available for Microsoft 365 Copilot declarative agents.** [MCP Apps are interactive UI widgets — tables, forms, diagrams, dashboards, maps, and other rich media — that an MCP server can deliver, rendered in a sandboxed iframe directly inside Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps), so a declarative agent can do more than return plain text. [Microsoft's 365 Developer Blog confirms MCP Apps are generally available in Copilot Chat](https://devblogs.microsoft.com/microsoft365dev/mcp-apps-now-available-in-copilot-chat/).
+
+Both surfaces build on the open MCP standard rather than a proprietary Microsoft plugin format — which matters for the platform-dependence question further down.
+
+---
+
+## Two Ways to Build for Copilot
 
 ### Surface 1: Federated Copilot Connectors (MCP-based)
 
-The lowest-friction path. If you already have an MCP server — or can build one — you can connect your application's data into Microsoft 365 Copilot and GitHub Copilot.
+The lowest-friction path. If you already have an MCP server — or can build one — you can connect your application's data into Microsoft 365 Copilot.
 
-The first wave of launch partners shows the range of data types this works for:
+[Microsoft's federated-connector documentation lists the first wave of Microsoft-published connectors](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview):
 
-| Partner | Data Surface |
+| Partner | What it connects |
 |---------|-------------|
-| Canva | Designs, brand templates, creative performance data |
-| HubSpot | Deal and contact information |
+| Canva | Design and creative content |
+| HubSpot | CRM data |
 | Intercom | Customer conversation data |
 | Linear | Project tracking and issue data |
-| LSEG | Financial market data (also coming to Excel) |
-| Moody's | Credit and risk data (also coming to Excel) |
+| LSEG | Financial market data |
+| Moody's | Credit and risk data |
 | Notion | Pages, databases, workspace content |
-| Google Calendar / Contacts | Scheduling and contact data |
+| Google Calendar / Google Contacts | Scheduling and contact data |
 
-Builders can also create **custom federated connectors for internal and line-of-business systems** using MCP. Enterprise IT admins can then deploy those connectors organization-wide through the Microsoft 365 admin center.
+Builders can also create **custom federated connectors for internal and line-of-business systems** using MCP; [enterprise IT admins deploy and govern those connectors through the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview).
 
-The key difference from traditional Copilot connectors: federated connectors fetch data **live at query time** rather than syncing it to Microsoft's indexes. Your data stays in your system. Microsoft queries it only when a user invokes it from Copilot.
+The key difference from traditional Copilot connectors: [federated connectors fetch data live at query time rather than syncing it into Microsoft's indexes — your data stays in your system, and Copilot queries it only when a user invokes it](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview).
 
-**Who should build this**: Any application with data users want to reason over in Copilot. CRMs, project management tools, financial data services, internal databases, document repositories. If your data is currently siloed away from where people do their AI-assisted work, a federated connector closes that gap.
+**Who should build this**: Any application with data users want to reason over in Copilot Chat, Copilot in Excel, or the Researcher agent — CRMs, project management tools, financial data services, internal databases, document repositories.
 
-**What you need**: An MCP server that exposes your data, registered as a federated connector through Azure. Microsoft's Learn documentation has the full connector schema.
+**What you need**: A remote MCP server that exposes your data, submitted to Microsoft for review to appear in the Connectors Gallery, or deployed as a custom connector for your own tenant.
 
-### Surface 2: Plugin Marketplace Extensions
+### Surface 2: MCP Apps for Declarative Agents
 
-The higher-complexity, higher-monetization surface. Plugins are more than data connectors — they're interactive, can take actions, and render UI directly inside Copilot Canvas.
+[MCP Apps let a Microsoft 365 Copilot declarative agent attach an MCP server whose tools return interactive UI](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps) instead of plain text — tables, forms, diagrams, dashboards, and other structured widgets rendered inline in Copilot Chat. This matters for agents that need to present results in structured form rather than prose, or collect structured input mid-conversation.
 
-The new **Copilot SDK** supports TypeScript, Python, and C#. A plugin is defined by a metadata file that describes what the skill does (similar to Alexa Skills or ChatGPT plugins), plus the action code itself. Registered skills can surface in:
+[MCP Apps is an open extension to the MCP standard itself](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps) (Microsoft 365 Copilot also supports the related OpenAI Apps SDK format), so building against it doesn't require a proprietary Microsoft plugin format or marketplace approval — only a declarative agent registration.
 
-- The Copilot side panel
-- File Explorer
-- The Windows taskbar
-- The Canvas workspace
+**Who should build this**: Any team already building a Microsoft 365 declarative agent that needs to show structured data — dashboards, approval forms, sprint boards — instead of chat text.
 
-Plugins can:
-- Tap into Windows AI models for local NPU inference (no API call needed)
-- Call any REST API
-- Access the local file system, local network services, and hardware sensors (with user permission)
-
-**Revenue model**: 70/30 split in the developer's favor, after payment processing fees. Marketplace opens with ~200 vetted extensions. Microsoft hasn't disclosed whether they plan a curated or open submission model after launch.
-
-**Who should build this**: If you're already serving Windows or Microsoft 365 users, and you have a workflow they currently context-switch out of Copilot to complete, building an extension keeps them in one place. Productivity tools, coding utilities, research services, and data enrichment tools are the most natural fits.
-
-### Surface 3: Declarative Agents with MCP Apps
-
-Between connectors and full plugins sits a third path: MCP Apps for M365 Copilot declarative agents.
-
-MCP Apps let a declarative Copilot agent render interactive UI directly inside Copilot Chat — not just return text, but show cards, buttons, and structured data. This is significant for agents that need to present results in structured form (tables, timelines, dashboards) rather than prose.
-
-This surface is still more limited than full Canvas plugins, but it's also less gatekept — it builds directly on the MCP standard rather than requiring marketplace approval.
+**What you need**: A declarative agent, an MCP server whose tools return UI resources per the MCP Apps or OpenAI Apps SDK spec, and [Visual Studio Code with the Microsoft 365 Agents Toolkit for development and sideloading](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps).
 
 ---
 
-## The Builder Decision: Copilot Extension vs. Standalone Product
+## The Builder Decision: Build for Copilot or Stay Standalone
 
-Microsoft's Copilot distribution channel is genuinely large. Windows is installed on over 1.5 billion devices. Microsoft 365 has over 400 million commercial seats. Any plugin in the Copilot marketplace has implicit access to that install base — pending user discovery and installation.
-
-But "large install base" doesn't mean "easy distribution." ChatGPT's plugin store was also large, and most plugins never found meaningful traction. The same dynamics apply here.
-
-Before building for this platform, three questions matter:
+Both surfaces above are real, MCP-based, and available today. Before building against either, three questions matter:
 
 **1. Does your value proposition work inside Copilot context?**
 
-Copilot Canvas users are doing AI-assisted work. They need data, actions, and results inline — not a new window, not a separate app. If your product delivers value inside a workflow (not as a standalone experience), a Copilot extension makes sense. If your product *is* the experience — a standalone app with its own UX — an extension is probably the wrong model.
+Users invoking Copilot Chat, Copilot in Excel, or the Researcher agent need data and structured results inline — not a new window, not a separate app. If your product delivers value inside someone else's workflow, a federated connector or an MCP App makes sense. If your product *is* the experience, building for Copilot first is probably the wrong move.
 
-**2. Do your economics work at 70/30?**
+**2. Can you tolerate platform dependence?**
 
-70% sounds developer-favorable, but if your product is currently direct-sold or API-billed at higher margins, the marketplace cut plus the reduced pricing pressure (Copilot users expect simple, bundled pricing) may compress your revenue per user. Model this before building.
+Microsoft controls whether a federated connector gets approved into the Connectors Gallery, and how declarative agents and MCP Apps get surfaced and governed in the admin center. Both surfaces reduce that dependence compared to a fully proprietary plugin API, because they're built on the open MCP standard rather than a Microsoft-only format — an MCP server you already run for other clients works here too, and nothing about it is Copilot-exclusive.
 
-**3. Can you tolerate platform dependence?**
+**3. What don't you control?**
 
-Microsoft controls the marketplace approval, the discovery algorithm, the billing, and the SDK. They've already pivoted Copilot's underlying architecture multiple times (OpenAI → Polaris, sidebar → Canvas). Building a significant business line on Copilot extensions means accepting that dependency. The federated connector path carries less dependence — it's an MCP server Microsoft queries, not a binary Microsoft distributes.
+Admins must explicitly enable federated connectors — [Microsoft-published connectors get a seven-day admin-only review window before user rollout](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) — and discovery inside Copilot depends on Microsoft's UI, not yours. Model this before assuming Copilot access equals user reach.
 
 ---
 
 ## What to Do This Week
 
-**If you already have an MCP server**: File for federated Copilot connector registration now. The documentation is live, the first-wave partners are already indexed, and early connectors benefit from discovery advantage while the catalog is small. This is the lowest-risk, fastest-path move.
+**If you already have an MCP server**: [Submit it as a federated connector for the Connectors Gallery](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview), or deploy it as a custom connector for your own tenant. This is the lowest-risk, fastest-path move, and it's live today.
 
-**If you serve Windows or M365 enterprise users**: Evaluate whether one of your workflows qualifies for a Canvas plugin. The 70/30 revenue split is competitive with other platform marketplaces, and the enterprise-quality user segment may accept premium pricing.
+**If you're building a Microsoft 365 declarative agent**: Evaluate whether [MCP Apps](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps) would let you replace a text-only response with a structured widget — approval forms, dashboards, and sprint boards are the clearest fits.
 
-**If you're building a new product**: Don't start with a Copilot extension as the primary surface. Build the standalone product first, then add a connector or plugin as a distribution wedge. The Canvas is a good *second* channel, not a primary one.
+**If you're building a new product**: Don't start with Copilot integration as your primary distribution surface. Build the standalone product first, then add a connector or MCP App as a distribution wedge once you have a defensible core product.
 
-**If you're a Microsoft 365 admin**: Get familiar with the new Copilot admin center controls for deploying and managing federated connectors. Your organization will have an immediate question when teams discover they can bring HubSpot and Linear data into Copilot: who approves which connectors, and what are the data residency implications?
+**If you're a Microsoft 365 admin**: Get familiar with the [federated connector controls in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview) — admins can enable, disable, and stage-roll-out each connector, and Microsoft-published connectors are enabled by default unless disabled.
 
 ---
 
-## What's Not Yet Clear
+## What's Not Confirmed
 
-A few things Microsoft hasn't disclosed as of Build 2026 Day 1:
-
-- **Marketplace submission process**: Open or curated after the initial 200? Timeline for developer applications?
-- **Revenue payout mechanics**: Stripe? Azure billing integration? Minimum thresholds?
-- **Discovery algorithm**: What determines which plugins surface to which users?
-- **Copilot Canvas availability date**: Announced at Build 2026, but general availability date not confirmed
-- **MAI model access from plugins**: Can plugins invoke MAI-Thinking-1 and MAI-Image-2.5, or only the standard Windows AI models?
-
-Day 2 of Build 2026 runs June 3. Some of these questions may get answers then.
+A "Copilot Canvas" super app — a persistent, resizable Copilot workspace with a curated plugin marketplace, a 70/30 developer revenue split, roughly 200 vetted extensions at launch, and a TypeScript/Python/C# Copilot SDK — has circulated in Build 2026 coverage. It could not be verified against Microsoft's own Build 2026 materials, including the [official Build 2026 site](https://news.microsoft.com/build-2026/), the [Microsoft for Developers recap](https://developer.microsoft.com/blog/build-recap/), and Microsoft's own [federated connectors](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993) and [MCP Apps](https://devblogs.microsoft.com/microsoft365dev/mcp-apps-now-available-in-copilot-chat/) announcements, as of this audit (2026-07-28). If Microsoft ships a distinct plugin marketplace with disclosed revenue terms, it will need its own sourced coverage rather than being folded into this piece.
 
 ---
 
 ## The Bigger Picture
 
-Microsoft is building a platform play here that looks more like WeChat than Windows Store. Copilot Canvas is meant to be the surface where work happens — not an app launcher, but the work environment itself, with plugins bringing the apps inside rather than apps existing outside.
+What Microsoft actually shipped by Build 2026 is narrower than "super app," but it's real and buildable today: two MCP-based extensibility surfaces — federated connectors for read-only data, and MCP Apps for interactive UI inside declarative agents — both of which avoid locking builders into a Copilot-only proprietary format.
 
-Whether it achieves that depends on developer adoption. Microsoft has made the economics reasonable (70/30, MCP-compatible, multi-language SDK) and the install base is real. But they've also tried similar things before — Office Add-ins, SharePoint extensions, Teams apps — with mixed results.
-
-The MCP connectors path is the smart early bet: low commitment, open standard, live data, reversible. Build a connector, measure Copilot referral traffic, and decide whether the full plugin investment is warranted based on real data.
+The MCP-based path is the smart early bet regardless of whether a broader plugin marketplace eventually materializes: low commitment, open standard, live data, reversible. Build a connector or an MCP App, measure Copilot referral traffic, and decide whether deeper investment is warranted based on real data.
 
 ---
 
-*Sources: [Fortune on Copilot super app](https://fortune.com/2026/05/29/microsoft-working-on-super-app/); [Microsoft TechCommunity on federated connectors](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993); [Microsoft Learn federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview).*
+*Sources: [Fortune, pre-Build 2026 reporting on a Copilot "super app"](https://fortune.com/2026/05/29/microsoft-working-on-super-app/); [Microsoft TechCommunity on federated Copilot connectors](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993); [Microsoft Learn: federated connectors overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview); [Microsoft Learn: MCP apps in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-mcp-apps); [Microsoft 365 Developer Blog: MCP Apps now available in Copilot Chat](https://devblogs.microsoft.com/microsoft365dev/mcp-apps-now-available-in-copilot-chat/).*

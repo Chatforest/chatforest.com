@@ -10,7 +10,7 @@ We already have separate guides on two of those surfaces:
 - [Google Is Killing Gemini CLI on June 18 — Migration Checklist to Antigravity CLI](/builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration/) covers the `agy` CLI replacement and the MCP config trap.
 - [Gemini API Managed Agents: Hosted Sandbox Execution in One Call](/builders-log/gemini-api-managed-agents-antigravity-sandbox-builder-guide/) covers the API-based hosted execution model.
 
-This guide covers what those two don't: the desktop app architecture, parallel subagent orchestration, scheduled background tasks, the SDK, the enterprise tier, and the AGENTS.md convention that replaces the old `.gemini/` directory.
+This guide covers what those two don't: the desktop app architecture, parallel subagent orchestration, scheduled background tasks, the SDK, the enterprise tier, and the AGENTS.md / `.agents/skills/` conventions that have replaced the old `.gemini/skills/` path.
 
 ---
 
@@ -18,29 +18,29 @@ This guide covers what those two don't: the desktop app architecture, parallel s
 
 Antigravity 1.x was fundamentally a single-agent coding assistant that lived inside your IDE — you prompted it, it responded, you reviewed. The implicit mental model was a smarter autocomplete with terminal access.
 
-Antigravity 2.0 changes the model in two ways. First, agents can now spawn and coordinate subagents. A single top-level prompt can trigger parallel workstreams — one agent writes code, another runs tests, a third checks documentation consistency — without the main agent blocking on any of them. Second, agents can run without the user present: scheduled tasks fire on cron syntax, the agent executes, and results surface when you reopen the desktop app. Together these two changes move Antigravity from a tool you use to infrastructure you operate.
+Antigravity 2.0 changes the model in two ways. First, [agents can now spawn and coordinate subagents](https://antigravity.google/docs/subagents). A single top-level prompt can trigger parallel workstreams — one agent writes code, another runs tests, a third checks documentation consistency — without the main agent blocking on any of them. Second, agents can run without the user present: [scheduled tasks fire on cron syntax](https://antigravity.google/blog/google-io-2026-feature-deep-dive), the agent executes, and results surface when you reopen the desktop app. Together these two changes move Antigravity from a tool you use to infrastructure you operate.
 
 ---
 
 ## The Desktop App
 
-The Antigravity 2.0 desktop app is a standalone application — not an IDE extension, not a web panel. It functions as a centralized workspace for agent orchestration.
+[The Antigravity 2.0 desktop app is a standalone application](https://antigravity.google/blog/introducing-google-antigravity-2) — not an IDE extension, not a web panel. It functions as a centralized workspace for agent orchestration.
 
 ### Parallel Agents
 
-The app's headline feature is multi-agent parallelism. You can launch multiple agents on different tasks simultaneously. Each agent has its own session context and conversation transcript. Agents can view each other's transcripts, which means a coordinating agent can read the output of a specialist subagent without explicit message-passing boilerplate.
+The app's headline feature is multi-agent parallelism. You can launch multiple agents on different tasks simultaneously. Each agent has its own session context and conversation transcript. [Agents can read each other's conversation transcripts](https://antigravity.google/docs/subagents) to audit multi-step workflows, which means a coordinating agent can read the output of a specialist subagent without explicit message-passing boilerplate.
 
-When an idle agent receives a message — from a user or from another agent — it is automatically re-awakened to process the new information. Session context persists across re-activations: the agent retains everything from its prior work when awakened.
+[When an idle agent receives a message](https://antigravity.google/docs/subagents) — from a user or from another agent — it automatically re-awakens to process the new information. Session context persists across re-activations: the agent retains everything from its prior execution turns when awakened.
 
 ### Subagent Workflows
 
-Subagents are the mechanism for parallelizing within a single workflow. An agent can delegate subtasks — running tests, searching the codebase, drafting documentation — to dedicated subagents and continue on its own work while they execute. Subagents preserve the context of the main agent, so the main agent doesn't need to reload state from subagent output; it receives a structured result and continues.
+Subagents are the mechanism for parallelizing within a single workflow. An agent can delegate subtasks — running tests, searching the codebase, drafting documentation — to dedicated subagents and continue on its own work while they execute. When a subagent finishes, [its output comes back to the main agent's thread as a structured result](https://antigravity.google/docs/subagents) rather than something the main agent has to reload state to interpret.
 
 The practical effect: tasks that previously required sequential attention (write → test → document → review) can be structured as parallel delegations. Latency on a complex task can drop significantly if the bottleneck was context-switching across steps.
 
 ### Scheduled Tasks
 
-Scheduled tasks are a new capability in 2.0 with no equivalent in 1.x. They use standard cron syntax and run agents in the background automatically. Google frames scheduled background automation as "a first-class feature" — the agent keeps running after the desktop app is closed, and results surface in the Agent Manager view when you next open the app.
+Scheduled tasks are a new capability in 2.0 with no equivalent in 1.x. [They use standard cron syntax and run agents in the background automatically](https://antigravity.google/blog/google-io-2026-feature-deep-dive) — Google describes them as letting you "set crons for prompts that you would like agents to tackle periodically, without requiring your manual prompting or invocation." The agent keeps running after the desktop app is closed, and results surface when you next open the app.
 
 This converts the agent from a single-turn tool into a persistent automation pipeline. Use cases:
 
@@ -51,19 +51,19 @@ This converts the agent from a single-turn tool into a persistent automation pip
 
 ---
 
-## File Convention: AGENTS.md Replaces .gemini/
+## File Convention: AGENTS.md and .agents/skills/
 
-The old convention for customizing Antigravity behavior was a `.gemini/` directory at repo root. Antigravity 2.0 deprecates that in favor of a single `AGENTS.md` file at repo root and a `.agents/skills/` directory for custom skills.
+Global and workspace skills used to live under `.gemini/skills/`. [Antigravity 2.0 now defaults to a `.agents/skills/` directory for custom skills](https://antigravity.google/docs/skills), though `.gemini/` locations still work for backward compatibility rather than being cut off outright.
 
-The `AGENTS.md` file works the same way conceptually as `CLAUDE.md` in Claude Code — it contains project-level instructions the agent reads at session start. Skills live in `.agents/skills/` as Markdown files and can be invoked by name in prompts or referenced in scheduled task definitions.
+At the repo root, [Antigravity parses rule constraints from either a `GEMINI.md` or an `AGENTS.md` file](https://antigravity.google/docs/cli/best-practices) — conceptually similar to how `CLAUDE.md` works in Claude Code, containing project-level instructions the agent reads at session start. Skills themselves live in `.agents/skills/<skill-folder>/` as `SKILL.md` files and can be invoked by name in prompts or referenced in scheduled task definitions.
 
-Custom agent templates are now available in Google AI Studio, giving teams a starting point for common use cases (code review agent, documentation agent, data pipeline agent) without writing AGENTS.md from scratch.
+[Custom agent templates are available in the Google AI Studio Agents tab](https://ai.google.dev/gemini-api/docs/aistudio-agents), which pre-configure the base Antigravity agent's tools and environment — for example, the "AI Radio" template links a specialized `AGENTS.md` file and skill set for radio-show production. The templates are open source in the `google-gemini/gemini-managed-agents-templates` repository, giving teams a starting point without writing an `AGENTS.md` from scratch.
 
 ---
 
 ## The SDK
 
-The Antigravity SDK provides programmatic access to the same agent harness that powers Google's products. It is optimized for Gemini models and lets developers define custom agent behaviors, chain them together, and host them on their own infrastructure.
+[The Antigravity SDK provides programmatic access to the same agent harness that powers Google's own products](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/) — Google confirms Gemini Spark itself "runs on Gemini 3.5 and uses the Antigravity harness." [The SDK lets developers define custom agent behaviors and host them on their infrastructure of choice](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/).
 
 The SDK is the right surface when:
 - You are embedding agent capabilities into an existing product rather than using the desktop app interactively
@@ -76,15 +76,15 @@ The SDK uses the same `AGENTS.md` / `.agents/skills/` conventions as the desktop
 
 ## The Enterprise Agent Platform
 
-The Gemini Enterprise Agent Platform is the fifth surface, aimed at Google Cloud customers. It lets organizations connect Antigravity directly to their Google Cloud projects — agents run inside the customer's cloud environment with access to Cloud Storage, BigQuery, and other GCP services.
+The Gemini Enterprise Agent Platform is the fifth surface, aimed at Google Cloud customers. [Google Cloud customers can use their GCP project in Antigravity to make inference through the Gemini Enterprise Agent Platform](https://antigravity.google/blog/google-antigravity-for-enterprises), with sessions running under Google Cloud's enterprise infrastructure, data privacy, and compliance terms. Separately, [Google's own codelabs show Antigravity agents working directly against Cloud Storage and BigQuery](https://codelabs.developers.google.com/build-and-deploy-gcp-with-antigravity) once connected to a GCP project.
 
-The enterprise tier adds organizational governance: access controls, audit logs, and agent deployment policies managed at the organization level. This is the path for teams that need to operate agents inside existing compliance boundaries — not a separate hosted environment that IT has to evaluate and approve from scratch.
+Google's enterprise announcement describes [centralized administrative controls over agent capabilities and product features as "coming soon"](https://antigravity.google/blog/google-antigravity-for-enterprises) rather than fully live today — worth checking current status before assuming full governance tooling (audit logs, deployment policies) is already available. This is still the path for teams that need to operate agents inside existing compliance boundaries rather than standing up a separate hosted environment from scratch.
 
 ---
 
 ## Pricing Changes in AI Ultra
 
-Antigravity 2.0 shipped alongside a pricing restructure for Google's consumer AI plans. The AI Ultra plan, previously priced at $250/month, dropped to $200/month and offers 20x higher limits in Antigravity compared to the Pro plan. A new $100/month AI Ultra tier launched with 5x higher limits than Pro.
+Antigravity 2.0 shipped alongside a pricing restructure for Google's consumer AI plans. [The AI Ultra plan, previously priced at $250/month, dropped to $200/month](https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/) and offers 20x higher usage limits in the Gemini app and Antigravity compared to the Pro plan. [A new $100/month AI Ultra tier launched with 5x higher limits than Pro](https://antigravity.google/blog/changes-to-antigravity-plans).
 
 The plans are:
 
@@ -116,7 +116,7 @@ The typical progression: start with the desktop app to develop and test workflow
 
 ## The Broader Ecosystem Signal
 
-The five-surface architecture matters beyond the feature list. Google built Antigravity so that Gemini Spark — Google's AI assistant across Search, Workspace, and Android — runs on the same agent harness. When a Gemini Spark action executes a complex task, it is using the same infrastructure as your Antigravity 2.0 scheduled task.
+The five-surface architecture matters beyond the feature list. [Gemini Spark, Google's always-on AI agent that's deeply integrated with Workspace tools like Gmail, Docs, and Slides](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/), runs on Gemini 3.5 and "uses the Antigravity harness" — the same harness that powers your Antigravity 2.0 desktop app and scheduled tasks.
 
 This alignment is deliberate. It means skills and behaviors developed for Antigravity 2.0 are architecturally compatible with the direction Google is moving its entire product stack. The platform bet Google is making is not "developers build here, consumers experience elsewhere." The platform bet is that the same agent harness underlies both, and developers who build on it are building skills that surface in Google's consumer products.
 
@@ -124,7 +124,7 @@ This alignment is deliberate. It means skills and behaviors developed for Antigr
 
 ## Action Items for Builders
 
-**1. Migrate to AGENTS.md.** If you have a `.gemini/` directory in any repo using Antigravity, move those instructions to an `AGENTS.md` file at repo root. The old convention is deprecated and will eventually stop being read.
+**1. Migrate skills to `.agents/skills/`.** If you have skills under `.gemini/skills/` in any repo using Antigravity, move them to `.agents/skills/` — [that's now the default path](https://antigravity.google/docs/skills), though `.gemini/` locations still work for backward compatibility. Make sure repo-root instructions live in a `GEMINI.md` or `AGENTS.md` file, both of which Antigravity still parses.
 
 **2. Set up one scheduled task.** The quickest way to evaluate whether scheduled agents make sense for your workflow is to automate one existing manual task. Nightly changelog drafts and weekly dependency audit summaries are low-risk starting points that demonstrate value without requiring significant setup.
 
@@ -134,7 +134,7 @@ This alignment is deliberate. It means skills and behaviors developed for Antigr
 
 **5. For SDK users: check the AGENTS.md skill compatibility.** Skills defined in `.agents/skills/` as Markdown files are portable across surfaces — skills work in the desktop app, CLI, and SDK. If you have custom behavior defined only in code, consider externalizing it into skill files for easier iteration.
 
-**6. For GCP customers: register for the Enterprise Agent Platform.** The enterprise tier connects agents to Cloud Storage, BigQuery, and GCP services with organizational governance. If your team already uses GCP for data infrastructure, the integration path is substantially simpler than standing up an alternative.
+**6. For GCP customers: try the Enterprise Agent Platform.** The enterprise tier connects agents to your GCP project for inference, and Google's own codelabs show it working against Cloud Storage and BigQuery; centralized governance controls are described by Google as coming, not fully live yet. If your team already uses GCP for data infrastructure, the integration path is worth evaluating now.
 
 ---
 

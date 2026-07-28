@@ -6,9 +6,10 @@ og_description: "Self-host Cohere Command A+ on 2×H100 with vLLM, parse native 
 content_type: "Builder's Log"
 categories: ["Open Source", "Enterprise AI", "RAG"]
 tags: ["cohere", "command-a-plus", "self-hosting", "rag", "citations", "open-weight", "apache-2", "vllm", "enterprise-ai", "sovereign-ai", "regulated-industries"]
+sources_audited: 2026-07-28
 ---
 
-[Cohere released Command A+ on May 20, 2026](https://cohere.com/blog/command-a-plus) — 218 billion parameters, 25 billion active per token, Apache 2.0, with something no other major open-weight model ships: citation generation trained into the architecture itself.
+[Cohere released Command A+ on May 20, 2026](https://cohere.com/blog/command-a-plus) — [218 billion parameters, 25 billion active per token](https://docs.cohere.com/changelog/command-a-plus-05-2026), Apache 2.0, with something no other major open-weight model ships: citation generation trained into the architecture itself.
 
 Most builders will encounter this model for the first time through a headline about "runs on 2×H100." That's true and it matters, but the headline buries the lead. The real shift is licensing combined with citations combined with the deployment footprint: you can now self-host a frontier-adjacent model on two commodity datacenter GPUs, with no Cohere vendor agreement, with machine-readable citation attribution on every factual claim — in a regulated industry where the previous options were "pay for enterprise API access" or "build a fragile post-processing citation layer on top of a model that wasn't trained to do this."
 
@@ -20,9 +21,9 @@ This guide covers the three decisions Command A+ changes: where to run it, how t
 
 Two properties of Command A+ are genuinely novel in combination:
 
-**Apache 2.0.** [Cohere's predecessor (Command A) shipped under CC-BY-NC 4.0](https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a) — meaning commercial deployment required a separate enterprise license. Apache 2.0 means you take the weights, you run them, you ship a product. No Cohere agreement required. No revenue caps. No non-compete clauses. This matters most in regulated industries (healthcare, finance, government) where procurement teams read license files.
+**Apache 2.0.** [Cohere's predecessor (Command A) shipped under CC-BY-NC 4.0](https://huggingface.co/CohereLabs/c4ai-command-a-03-2025) — [commercial deployment required a separate enterprise license](https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a). Apache 2.0 means you take the weights, you run them, you ship a product. No Cohere agreement required. No revenue caps. No non-compete clauses. This matters most in regulated industries (healthcare, finance, government) where procurement teams read license files.
 
-**Quantization-Aware Distillation (QAD).** Cohere built QAD to preserve attention pathway precision while quantizing only the MoE expert layers, producing near-lossless W4A4 quantization. [The result: 375 tokens/second output throughput on 2×H100 80GB](https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4). The same model in BF16 needs 8×H100. At W4A4, the H100 requirement drops to two — a cost difference of roughly 4× on GPU allocation.
+**Quantization-Aware Distillation (QAD).** [Cohere built QAD to preserve attention pathway precision while quantizing only the MoE expert layers, producing near-lossless W4A4 quantization](https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a). [The result: 375 tokens/second output throughput on 2×H100 80GB](https://venturebeat.com/technology/cohere-cracks-lossless-quantization-and-native-citations-with-first-full-apache-2-0-licensed-open-model-command-a), with a 113ms time-to-first-token. [The same model in BF16 needs 8×H100](https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16). At W4A4, the H100 requirement drops to two — a cost difference of roughly 4× on GPU allocation.
 
 For builders running their own inference infrastructure, the combination of Apache 2.0 and 2×H100 W4A4 makes Command A+ a plausible self-host where Command A was not.
 
@@ -34,19 +35,19 @@ For builders running their own inference infrastructure, the combination of Apac
 
 | Precision | GPU Requirement | Throughput |
 |---|---|---|
-| BF16 | ~8×H100 80GB | ~180 t/s |
-| FP8 | ~4×H100 80GB | ~280 t/s |
+| BF16 | 8×H100 80GB or 4×B200 | not published by Cohere |
+| FP8 | 4×H100 80GB or 2×B200 | not published by Cohere |
 | W4A4 (QAD) | 2×H100 80GB or 1×B200 | 375 t/s |
 
-The 2×H100 headline refers to the W4A4 quantized version. If you're running BF16 for maximum quality (e.g., fine-tuning, research), budget 8 GPUs. For production inference where the QAD quality claims hold, 2×H100 is accurate.
+[GPU counts per precision are from Cohere's own model card](https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4); Cohere has only published an absolute throughput number for the W4A4 configuration, so the BF16/FP8 rows above are left blank rather than estimated. The 2×H100 headline refers to the W4A4 quantized version. If you're running BF16 for maximum quality (e.g., fine-tuning, research), budget 8 GPUs. For production inference where the QAD quality claims hold, 2×H100 is accurate.
 
 ### Model Weights
 
 Weights are on HuggingFace under the CohereLabs organization:
 
-- **BF16:** `CohereLabs/command-a-plus-05-2026`
-- **FP8:** `CohereLabs/command-a-plus-05-2026-fp8`
-- **W4A4 (QAD):** Apply Cohere's QAD quantization tooling to the BF16 or FP8 weights — quantized checkpoints are available via Cohere's documentation
+- **BF16:** [`CohereLabs/command-a-plus-05-2026-bf16`](https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16)
+- **FP8:** [`CohereLabs/command-a-plus-05-2026-fp8`](https://huggingface.co/CohereLabs/command-a-plus-05-2026-fp8)
+- **W4A4 (QAD):** [`CohereLabs/command-a-plus-05-2026-w4a4`](https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4) — Cohere publishes the pre-quantized checkpoint directly; you don't need to run the QAD tooling yourself
 
 All artifacts are fully downloadable. Air-gapped deployment works once the weights are transferred.
 
@@ -59,7 +60,7 @@ pip install vllm
 
 # Serve Command A+ W4A4 on two H100s with tensor parallel
 python -m vllm.entrypoints.openai.api_server \
-  --model CohereLabs/command-a-plus-05-2026 \
+  --model CohereLabs/command-a-plus-05-2026-w4a4 \
   --quantization w4a4 \
   --tensor-parallel-size 2 \
   --max-model-len 131072 \
@@ -271,32 +272,32 @@ The `uncited_claims` check is useful in compliance contexts: any factual-soundin
 
 ## When to Use Command A+ vs. Alternatives
 
-The [Intelligence Index score of 37](https://artificialanalysis.ai/models/command-a-plus) (Artificial Analysis composite) places Command A+ below the 57-60 frontier tier. This is not a general-purpose frontier model. The choice of when to use it versus alternatives is specific.
+Command A+ scores [23 on the Artificial Analysis Intelligence Index](https://artificialanalysis.ai/models/command-a-plus), well below the [roughly 55-61 range where today's frontier models cluster](https://artificialanalysis.ai/models). This is not a general-purpose frontier model. The choice of when to use it versus alternatives is specific.
 
 **Use Command A+ when:**
 
 - You need **data sovereignty** — weights on your hardware, no data leaves your network. Apache 2.0 enables this without any vendor conversation.
 - Your pipeline requires **machine-readable citation attribution** on factual claims. No other open-weight model at this scale has architecture-level citations.
 - You're in a **regulated industry** (legal, clinical, financial, government) where the citation and sovereignty combination are table stakes.
-- You're building **multilingual enterprise applications** — 48 language support is broader than most alternatives at this tier.
-- You need **document and spreadsheet reasoning** — the multimodal capability is focused here and the benchmark numbers are competitive.
+- You're building **multilingual enterprise applications** — [48 language support](https://docs.cohere.com/docs/command-a-plus), including all official EU languages, is broader than most alternatives at this tier.
+- You need **document and spreadsheet reasoning** — [multimodal input support for documents, forms, and scanned records](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/cohere-command-a-now-available-in-microsoft-foundry/4522003) is a focused capability here.
 
 **Use alternatives when:**
 
-- **Coding tasks** — Cohere explicitly recommends GPT-5.5 or Claude Opus 4.7 for code. Command A+ is not competitive on coding benchmarks.
-- **Graduate-level scientific reasoning** — HLE at 11% is a significant gap. If your pipeline needs deep scientific reasoning, DeepSeek V4 or frontier APIs are better.
-- **Cost-sensitive non-regulated deployments** — DeepSeek V4 ($0.27/$1.10 per M tokens, MIT license) is dramatically cheaper and more capable on raw reasoning. If you don't need citations or specific sovereignty requirements, DeepSeek V4 is harder to beat on cost/performance.
-- **Current events or knowledge recency** — April 2025 knowledge cutoff is 13 months old at launch. Use a model with a more recent cutoff if recency matters.
+- **Coding tasks** — Command A+ [reaches 25% on Terminal-Bench Hard agentic coding](https://cohere.com/blog/command-a-plus) (up from 3% for Command A Reasoning), still well below frontier coding models. If your pipeline is coding-heavy, look elsewhere.
+- **Graduate-level scientific reasoning** — Command A+'s [Intelligence Index score of 23](https://artificialanalysis.ai/models/command-a-plus) — which factors in Humanity's Last Exam alongside eight other evaluations — puts it well behind frontier reasoning models. If your pipeline needs deep scientific reasoning, DeepSeek V4 or frontier APIs are better.
+- **Cost-sensitive non-regulated deployments** — [DeepSeek V4-Flash ($0.14 input / $0.28 output per M tokens)](https://deepseek.ai/pricing) is released under an [MIT license](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/LICENSE) and is dramatically cheaper than typical enterprise API pricing. If you don't need citations or specific sovereignty requirements, DeepSeek V4 is harder to beat on cost/performance.
+- **Current events or knowledge recency** — [April 2025 knowledge cutoff](https://docs.cohere.com/docs/command-a-plus) is 13 months old at launch. Use a model with a more recent cutoff if recency matters.
 
 **API vs. self-host decision:**
 
-At $2.50 input / $10.00 output per M tokens via the Cohere API, the crossover point for self-hosting typically falls around 5-10 million output tokens per month depending on your H100 amortization rate. Below that volume, API is cheaper. Above it, two H100s at W4A4 typically pay for themselves within 60-90 days of production load.
+Cohere does not publish public per-token API pricing for Command A+ — [its pricing page](https://cohere.com/pricing) lists only legacy Command models, and Command A+ access requires contacting Cohere sales directly. That absence is itself informative: without a published API rate to compare against, teams evaluating Command A+ can't do a clean API-vs-self-host cost crossover calculation up front. If you're weighing the two paths, get a direct quote from Cohere sales and compare it against your H100 amortization rate rather than assuming a specific price point.
 
 ---
 
 ## Azure AI Foundry
 
-If you're in a Microsoft enterprise environment, Command A+ is available on Azure AI Foundry without managing your own GPU infrastructure. This captures the Apache 2.0 legal clarity and the native citations while Microsoft handles the H100 allocation.
+If you're in a Microsoft enterprise environment, [Command A+ is available on Microsoft Foundry as a Managed Compute offer](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/cohere-command-a-now-available-in-microsoft-foundry/4522003), also [listed in the Azure AI catalog](https://ai.azure.com/catalog/models/Cohere-command-a-plus-05-2026), without managing your own GPU infrastructure. This captures the Apache 2.0 legal clarity and the native citations while Microsoft handles the H100 allocation.
 
 The tradeoff: data leaves your datacenter to Microsoft's Azure region. For teams with Azure data residency agreements, this can satisfy regulated industry requirements. For teams requiring true air-gap deployment, self-hosting is still necessary.
 
@@ -310,7 +311,7 @@ If you're building a general-purpose chatbot, a coding tool, or a reasoning pipe
 
 Three action items if you're evaluating it:
 
-1. Check the `CohereLabs/command-a-plus-05-2026` weights on HuggingFace against your inference hardware budget. The W4A4 2×H100 claim is real.
+1. Check the [`CohereLabs/command-a-plus-05-2026-w4a4`](https://huggingface.co/CohereLabs/command-a-plus-05-2026-w4a4) weights on HuggingFace against your inference hardware budget. The W4A4 2×H100 claim is real.
 2. Build a citation parsing prototype with the `<co>` tag parser above before committing to the architecture. Verify citation accuracy on a representative sample of your actual documents.
 3. Run the compliance check: read the Apache 2.0 license, compare to CC-BY-NC 4.0 (the old Cohere terms), and confirm with your legal team that the license meets your deployment requirements. The license is the feature for regulated industry procurement.
 
