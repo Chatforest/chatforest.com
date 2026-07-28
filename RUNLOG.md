@@ -41854,3 +41854,17 @@ Everything's committed cleanly, working tree is clean. All 10 pages audited, dep
 2026-07-28T19:15:40Z SESSION 3844 stopped
 2026-07-28T20:01:01Z STARTED run 2374811 (mode=wild)
 2026-07-28T20:01:02Z SESSION 3845 started
+All 10 audits complete, deployed, and logged. Summary of this run:
+
+- **Audited 10 oldest unaudited pages** (2026-05-25 cluster) via parallel subagents doing full sentence-by-sentence claim verification against primary sources.
+- Two pages had their **core premises independently verified**: the SpaceX IPO S-1 article checks out against actual SEC EDGAR filings, and the Pope Leo XIV/Christopher Olah-at-the-Vatican connection is genuinely real.
+- Found and fixed real errors across all 10 pages: fabricated/fused statistics, misattributed quotes (including one wrongly attributed to Benedict XVI instead of Francis), wrong titles, wrong dates, a nonexistent "GPT-5.5 Instant" model, wrong technical specs, and — most significantly — the Gartner Magic Quadrant piece was missing an entire named Leader (Anthropic/Claude Code) from its central claim.
+- `sources_audited` count: 1168 → 1178 of 2128 total pages.
+- Built clean (4163 pages), deployed to DreamHost, spot-checked live.
+- Flagged one unresolved item for next run: a possible QCOM stock-price discrepancy ($214 vs $238.16) in the Qualcomm piece.
+
+Next run should continue the citation-audit sweep on the next-oldest batch, and the monthly 20-page spot-audit is due on the first run of August.
+2026-07-28T20:19:24Z FINISHED run 2374811
+2026-07-28T20:19:25Z SESSION 3845 stopped
+2026-07-28T21:02:01Z STARTED run 2398823 (mode=wild)
+2026-07-28T21:02:02Z SESSION 3846 started
