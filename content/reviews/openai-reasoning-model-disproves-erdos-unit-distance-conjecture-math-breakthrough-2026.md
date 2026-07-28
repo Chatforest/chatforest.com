@@ -6,6 +6,7 @@ og_description: "OpenAI's reasoning model cracked an 80-year-old math problem. H
 card_description: "A general-purpose OpenAI reasoning model autonomously disproved the Erdős unit distance conjecture (1946) — the first time AI has resolved an open problem central to a mathematical field. Verified by external mathematicians, including the critic who debunked OpenAI's 2025 false claim."
 tags: ["openai", "ai-research", "mathematics", "reasoning", "science", "milestone"]
 rating: 4.3
+sources_audited: 2026-07-28
 ---
 
 ## The Headline
@@ -32,9 +33,9 @@ The conjecture wasn't formally proven, but it shaped how researchers thought abo
 
 Before getting to what happened on May 20, it matters to understand what happened in October 2025 — because that context is why this announcement is being watched so closely.
 
-In October 2025, OpenAI VP Kevin Weil posted on X that "GPT-5 found solutions to 10 (!) previously unsolved Erdős problems and made progress on 11 others." The AI community and the mathematics community responded with immediate skepticism.
+In October 2025, OpenAI VP Kevin Weil [posted on X](https://futurism.com/artificial-intelligence/openai-researcher-deletes-tweet) that "GPT-5 found solutions to 10 (!) previously unsolved Erdős problems and made progress on 11 others." The AI community and the mathematics community responded with immediate skepticism.
 
-[Thomas Bloom](https://www.erdosproblems.com/) — the mathematician who maintains the Erdős Problems database at [erdosproblems.com](https://www.erdosproblems.com/) — investigated and found that the model hadn't produced original proofs. It had retrieved existing solutions already buried in the mathematical literature and presented them as fresh results. Bloom called the episode "a dramatic misrepresentation." Yann LeCun amplified the criticism. Google DeepMind's Demis Hassabis joined the pile-on. Weil deleted the post.
+[Thomas Bloom](https://www.erdosproblems.com/) — the mathematician who maintains the Erdős Problems database at [erdosproblems.com](https://www.erdosproblems.com/) — investigated and found that the model hadn't produced original proofs. It had retrieved existing solutions already buried in the mathematical literature and presented them as fresh results. Bloom called the episode ["a dramatic misrepresentation."](https://futurism.com/artificial-intelligence/openai-researcher-deletes-tweet) Yann LeCun joked ["Hoisted by their own GPTards,"](https://the-decoder.com/leading-openai-researcher-announced-a-gpt-5-math-breakthrough-that-never-happened/) and Google DeepMind's Demis Hassabis called the episode "embarrassing." Weil deleted the post.
 
 OpenAI entered May 2026 with a credibility deficit on this specific topic.
 
@@ -46,10 +47,10 @@ This time, OpenAI structured the announcement differently.
 
 Instead of a social media post from a VP, OpenAI published a [formal write-up](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) with named external mathematicians attached. The verification panel includes:
 
-- **Thomas Bloom** — the same mathematician who led the 2025 debunking, now a co-author of the verification paper
-- **Noga Alon** — one of the most prominent combinatorists working today
-- **Melanie Wood** — a leading number theorist and MacArthur Fellow
-- **Will Sawin** — a Princeton mathematician who independently checked and refined the result
+- **[Thomas Bloom](https://www.erdosproblems.com/)** — the same mathematician who led the 2025 debunking, now a co-author of the [verification paper](https://arxiv.org/abs/2605.20695)
+- **[Noga Alon](https://www.math.princeton.edu/people/noga-alon)** — a Princeton University mathematician working in combinatorics, recipient of the Israel Prize and other major honors in the field
+- **[Melanie Wood](https://www.macfound.org/fellows/class-of-2022/melanie-matchett-wood)** — a Harvard University number theorist and 2022 MacArthur Fellow
+- **[Will Sawin](https://williamsawin.com/)** — a Princeton mathematician who independently [refined the result](https://arxiv.org/abs/2605.20579)
 
 When your harshest critic co-signs the verification paper, the credibility picture changes substantially.
 
@@ -65,26 +66,26 @@ The key is *polynomial improvement*. Previous work (and the square grid intuitio
 
 The mathematical machinery the model used was not from combinatorial geometry — the field where the problem lived. It came from **deep algebraic number theory**: specifically, Golod-Shafarevich theory and infinite class field towers. These are tools from abstract algebra and number theory, far afield from the geometry problem itself.
 
-Will Sawin subsequently worked out that δ = 0.014, giving a precise quantitative bound on how much better these constructions are than square grids.
+Will Sawin subsequently [worked out](https://arxiv.org/abs/2605.20579) that δ = 0.014, giving a precise quantitative bound on how much better these constructions are than square grids.
 
 The fact that a general-purpose model — one not trained specifically on mathematics, not scaffolded toward proof-search strategies, and not pointed at this particular problem — reached for tools from a completely different mathematical subdiscipline is what the mathematicians on the verification panel are calling most significant.
 
 ---
 
-## Thirty Days That Changed AI Math Research
+## Two Weeks That Changed AI Math Research
 
-The Erdős result landed at the end of a concentrated window of AI mathematical milestones.
+The Erdős result landed at the end of a concentrated window of AI reasoning milestones.
 
-Between April 21 and May 20, 2026, four distinct results emerged:
+Between May 7 and May 20, 2026, four distinct results emerged:
 
 | Date | Result | What it showed |
 |------|--------|----------------|
-| April 21 | AlphaEvolve production results | Evolutionary optimization across real engineering problems |
-| May 12 | FrontierMath Tier 4: 48% accuracy | AI hitting upper-tier research-level problems for the first time |
-| May 17 | WorldReasonBench frontier video | Multimodal reasoning at near-expert level |
-| May 20 | OpenAI Erdős disproof | First autonomous original result in an open mathematical problem |
+| [May 7](https://deepmind.google/blog/alphaevolve-impact/) | AlphaEvolve one-year production report | Evolutionary optimization deployed across real engineering problems — DNA sequencing error correction, power-grid solutions, chip-lithography speedups, and more |
+| [May 8](https://arxiv.org/abs/2605.06651) | Google DeepMind's "AI co-mathematician": FrontierMath Tier 4, 48% accuracy | New high score on the hardest public research-math benchmark, more than double the 19% scored by its own underlying base model |
+| [May 11](https://arxiv.org/abs/2605.10434) | WorldReasonBench benchmark launched | Exposed a persistent gap between visual plausibility and real physical/causal reasoning in video-generation models — not a capability win |
+| [May 20](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) | OpenAI Erdős disproof | First autonomous original result in an open mathematical problem |
 
-Each milestone is different in kind — optimization, benchmark accuracy, multimodal reasoning, original proof generation — but the temporal clustering is hard to dismiss. Whether this represents a phase transition in AI capability or a period of unusual harvesting from existing human research infrastructure is the argument the field is now having.
+Each milestone is different in kind — production optimization, benchmark accuracy, a benchmark exposing reasoning gaps, original proof generation — but the temporal clustering is hard to dismiss. Whether this represents a phase transition in AI capability or a period of unusual harvesting from existing human research infrastructure is the argument the field is now having.
 
 ---
 
@@ -100,7 +101,7 @@ It is described as "a general-purpose reasoning model." It is not:
 
 This matters for interpreting the result. If a math-specialized system had solved a math problem, it would be impressive but somewhat expected. A general-purpose reasoning model finding a path that human geometers had not, using algebraic number theory that wasn't part of the field's toolkit for this problem — that's a different claim about what reasoning capability looks like.
 
-OpenAI says this capability is not limited to geometry and suggests it could soon extend to original discoveries in biology, physics, and engineering.
+OpenAI [says](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) the same abilities behind this result — holding together a long argument, connecting distant fields, producing work that survives expert scrutiny — are what matter for automated research in biology, physics, materials science, and drug discovery.
 
 ---
 
@@ -108,7 +109,7 @@ OpenAI says this capability is not limited to geometry and suggests it could soo
 
 Despite the stronger verification structure, some caution is warranted.
 
-Researchers at Tech Jacks Solutions, analyzing the four-milestone wave, noted that the Erdős result is "the highest-potential result but the lowest verification maturity" of the group — a vendor announcement with named external expert involvement, where experts recommend waiting for further peer review before treating it as fully established.
+[Analysis at Tech Jacks Solutions](https://techjacksolutions.com/ai-brief/ai-math-reasoning-milestones-30-days-research-automation/), comparing the four-milestone wave, noted that the Erdős result is "the highest-potential result but the lowest verification maturity" of the group — a vendor announcement with named external expert involvement, not yet peer-reviewed.
 
 Bloom's co-authorship is meaningful but not the same as publication in a peer-reviewed mathematics journal. The verification paper is forthcoming; the result has not yet gone through the full formal review process that mathematical results typically require.
 
@@ -171,6 +172,14 @@ The square grid was optimal for eighty years. Now it isn't. An AI figured out wh
 
 - [OpenAI: Model Disproves Discrete Geometry Conjecture](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) — official OpenAI announcement, May 20, 2026
 - [Erdős Problems database (Thomas Bloom)](https://www.erdosproblems.com/) — maintained by co-author of the verification paper
-- [arXiv:2605.20695](https://arxiv.org/abs/2605.20695) — verification paper (Gowers et al.)
+- [arXiv:2605.20695](https://arxiv.org/abs/2605.20695) — verification paper, "Remarks on the disproof of the unit distance conjecture" (Alon, Bloom, Gowers, Litt, Sawin, Shankar, Tsimerman, Wang, Wood)
 - [arXiv:2605.20579](https://arxiv.org/abs/2605.20579) — Will Sawin's refinement (δ = 0.014)
-- [OpenAI: Introducing GPT-5](https://openai.com/index/introducing-gpt-5/) — context for the October 2025 Erdős debacle
+- [Will Sawin, faculty page](https://williamsawin.com/) — Princeton University affiliation
+- [Noga Alon, Princeton faculty page](https://www.math.princeton.edu/people/noga-alon)
+- [Melanie Matchett Wood, MacArthur Foundation](https://www.macfound.org/fellows/class-of-2022/melanie-matchett-wood) — 2022 Fellowship citation
+- [Futurism: OpenAI Researcher Deletes Tweet](https://futurism.com/artificial-intelligence/openai-researcher-deletes-tweet) — Kevin Weil's October 2025 claim, Bloom's rebuttal, Hassabis reaction
+- [The Decoder: A GPT-5 math breakthrough that never happened](https://the-decoder.com/leading-openai-researcher-announced-a-gpt-5-math-breakthrough-that-never-happened/) — LeCun's reaction, additional confirmation of the October 2025 episode
+- [DeepMind: AlphaEvolve one-year impact report](https://deepmind.google/blog/alphaevolve-impact/) — May 7, 2026
+- [arXiv:2605.06651](https://arxiv.org/abs/2605.06651) — "AI Co-Mathematician" paper reporting 48% on FrontierMath Tier 4
+- [arXiv:2605.10434](https://arxiv.org/abs/2605.10434) — WorldReasonBench paper
+- [Tech Jacks Solutions: AI Math Results](https://techjacksolutions.com/ai-brief/ai-math-reasoning-milestones-30-days-research-automation/) — verification-maturity comparison of the four milestones

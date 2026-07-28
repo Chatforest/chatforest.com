@@ -9,7 +9,7 @@
 
 Most AI startups in 2026 are racing each other to build a better chatbot or a faster coding assistant. Recursive Superintelligence is not doing that.
 
-The company, which came out of stealth on May 13 after roughly 18 months of quiet recruiting, is pursuing something that the rest of the industry officially classifies as a long-term research goal: AI that rewrites itself. Systems that don't just get trained by engineers — systems that identify their own architectural limitations and fix them, autonomously, in an accelerating loop.
+The company, which [came out of stealth on May 13 roughly four months after it was founded](https://thenextweb.com/news/recursive-superintelligence-self-improving-ai-funding), is pursuing something that the rest of the industry officially classifies as a long-term research goal: AI that rewrites itself. Systems that don't just get trained by engineers — systems that identify their own architectural limitations and fix them, autonomously, in an accelerating loop.
 
 Eight co-founders. $650 million. Under 30 employees. And a specific timeline for when they expect the loop to start running.
 
@@ -19,21 +19,21 @@ Eight co-founders. $650 million. Under 30 employees. And a specific timeline for
 
 The founding group is unusual for being simultaneously overcredentialed and unusually coherent in what they're trying to do.
 
-**Richard Socher** (CEO) is the former chief scientist at Salesforce and founder of the AI search engine You.com. He is one of the figures credited with popularizing transfer learning for NLP before the transformer era.
+**[Richard Socher](https://you.com/meet-richard-socher)** (CEO) is the former chief scientist and EVP at Salesforce (via its 2016 acquisition of his startup MetaMind) and founder of the AI search engine You.com. You.com's own bio of him credits him with "bringing neural networks into the field of natural language processing" and inventing widely used word and contextual vector techniques.
 
-**Yuandong Tian** was a research director at Meta's Fundamental AI Research (FAIR) lab, where he led work on reinforcement learning, long-context reasoning in LLMs, and AI-guided optimization. He is one of the co-inventors of several techniques now standard in foundation model training.
+**[Yuandong Tian](https://yuandong-tian.com/)** was a research scientist director at Meta's Fundamental AI Research (FAIR) lab, where he led work on reinforcement learning, planning, and the theoretical understanding of LLMs. He mentored the teams behind StreamingLLM (efficient long-context LLM inference) and GaLore (memory-efficient LLM training), among other widely used techniques.
 
-**Alexey Dosovitskiy** is the lead author of the Vision Transformer (ViT) paper — one of the most cited machine learning papers of the last decade. ViT's approach of applying transformer architectures to image patches is now the default for vision models across Google, OpenAI, and most large labs.
+**Alexey Dosovitskiy** is the [lead author of the Vision Transformer (ViT) paper](https://arxiv.org/abs/2010.11929), which applies transformer architectures to image patches and [has been cited more than 36,000 times](https://scispace.com/papers/an-image-is-worth-16x16-words-transformers-for-image-v85s5ahlww) since its 2020 release.
 
-**Tim Rocktäschel** was a principal scientist at Google DeepMind and a professor of AI at University College London. He directed DeepMind's Open-Endedness research group, which produced foundational work on AI systems that generate their own curricula.
+**[Tim Rocktäschel](https://rockt.ai/)** is a Director and Principal Scientist at Google DeepMind, where he leads its Open-Endedness Team, and a professor of AI at University College London. His research group's work focuses on AI systems that generate their own curricula and goals.
 
-**Josh Tobin** is a former OpenAI researcher who did significant work on simulation-to-real transfer and robust AI deployment.
+**Josh Tobin** is a former OpenAI research scientist whose [work on domain randomization and sim-to-real transfer](https://jameskle.com/writes/josh-tobin) — including OpenAI's Dactyl dexterous-manipulation system — addressed how robots trained in simulation can operate in the physical world.
 
-**Jeff Clune** ran OpenAI's open-endedness research program before moving to UBC. His lab's work on systems like POET and AI-GAs — evolutionary algorithms that generate increasingly complex environments and agents in tandem — is directly relevant to what Recursive Superintelligence is building.
+**Jeff Clune** is a [professor of computer science at the University of British Columbia](https://www.cs.ubc.ca/news/2021/06/getting-ai-create-itself-interview-jeff-clune) who also led research teams at OpenAI and, most recently, directed [Google DeepMind's Open-Endedness team](https://jeffclune.com/press.html). His research on systems like POET and AI-GAs — evolutionary algorithms that generate increasingly complex environments and agents in tandem — is directly relevant to what Recursive Superintelligence is building.
 
-**Caiming Xiong** was a VP of Salesforce Research and the head of its NLP and AI group.
+**[Caiming Xiong](https://www.crunchbase.com/person/caiming-xiong)** joined Socher's startup MetaMind as a senior researcher in 2014 and became a senior vice president leading AI Research at Salesforce after MetaMind's 2016 acquisition.
 
-**Tim Shi** is a co-founder and engineer with prior experience at Cresta and connections to the Salesforce Research orbit.
+**[Tim Shi](https://shi.ai/)** co-founded and served as CTO of Cresta, an enterprise conversational-AI company, and was an early member of OpenAI's research team.
 
 The common thread across nearly every co-founder is a background in open-ended learning, reinforcement learning, and systems that improve without being explicitly told what to improve next.
 
@@ -53,13 +53,13 @@ Recursive Superintelligence is not avoiding it. The company is building toward i
 
 The company has laid out a three-stage plan:
 
-**Stage 1 — The "50,000 doctors" system.** The first milestone is training a model with the integrated medical and scientific reasoning capacity equivalent to a large panel of domain experts. The framing is deliberately provocative — it is meant to communicate the scale of expertise compression the company believes is achievable in the next 12–18 months, not a literal claim about clinical deployment.
+**[Stage 1 — The "50,000 doctors" system.](https://thenextweb.com/news/recursive-superintelligence-self-improving-ai-funding)** The first milestone the company has described is training a model with the integrated medical and scientific reasoning capacity equivalent to a large panel of domain experts. The framing is deliberately provocative — it is meant to communicate a scale of expertise compression, not a literal claim about clinical deployment.
 
-**Stage 2 — The Eureka Machine.** Once the Stage 1 system is operational, the company plans to direct it entirely at the problem of accelerating AI research itself. The Eureka Machine is a working name for a system that can identify and run its own experiments, propose and evaluate architectural changes, and generate new training curricula — automating the work that currently requires teams of research scientists.
+**[Stage 2 — The Eureka Machine.](https://www.gv.com/news/recursive-superintelligence-self-improving-ai)** Once the Stage 1 system is operational, the company plans to direct it at the problem of accelerating AI research itself. The Eureka Machine is a working name for a system that can identify and run its own experiments, propose and evaluate architectural changes, and generate new training curricula — automating work that currently requires teams of research scientists.
 
-**Stage 3 — Applied to physical science.** The final stage in the initial roadmap applies the Eureka Machine's output to specific hard-science problems: drug discovery, battery materials science, and nuclear fusion physics. These are all domains where the search space is too large for human-paced experimentation but tractable for systems that can design and evaluate millions of computational experiments autonomously.
+**Stage 3 — Applied to physical science.** The final stage in the initial roadmap applies the Eureka Machine's output to specific hard-science problems: [drug discovery, battery materials, and nuclear fusion physics](https://www.gv.com/news/recursive-superintelligence-self-improving-ai). These are all domains where the search space is too large for human-paced experimentation but tractable for systems that can design and evaluate millions of computational experiments autonomously.
 
-The company has said it expects to launch a "Level 1" autonomous training system publicly by mid-2026.
+The company has said it [expects to launch a "Level 1" autonomous training system publicly by mid-2026](https://thenextweb.com/news/recursive-superintelligence-self-improving-ai-funding).
 
 ---
 
@@ -92,7 +92,7 @@ On the upside: the specific co-founder combination is hard to replicate. The ove
 
 ## Context
 
-This raise lands in the same week that Anthropic is in final negotiations to close a $30 billion round at a $900 billion valuation, and three weeks after the METR Frontier Risk Report documented active reward-hacking and goal-directed deception at major labs. The industry is simultaneously pouring record capital into AI capabilities and increasingly acknowledging that the alignment problem is not solved.
+This raise lands in the same week that [Anthropic was reported to be in talks to close a $30 billion round at a $900 billion valuation](https://www.bloomberg.com/news/articles/2026-05-12/anthropic-in-talks-to-raise-30-billion-at-900-billion-valuation), and days before the [METR Frontier Risk Report (published May 19, 2026) documented reward-hacking and goal-directed deception in frontier models tested at Anthropic, Google DeepMind, Meta, and OpenAI](https://metr.org/blog/2026-05-19-frontier-risk-report/). The industry is simultaneously pouring record capital into AI capabilities and increasingly acknowledging that the alignment problem is not solved.
 
 Recursive Superintelligence is explicitly targeting the capability side of that equation — faster, harder, more autonomous improvement — while the alignment side remains, by its own admission, a future concern.
 
@@ -111,4 +111,9 @@ Whether that sequencing is responsible is a question the company has not yet had
 - [Recursive Superintelligence raises $650M to build self-improving AI models](https://siliconangle.com/2026/05/13/recursive-superintelligence-raises-650m-build-self-improving-ai-models/) — SiliconAngle
 - [UK AI startup Recursive hits $4.65B valuation with $650M raise from Nvidia and GV](https://techfundingnews.com/uk-ai-startup-recursive-hits-4-65b-valuation-with-650m-raise-from-nvidia-and-gv/) — TechFundingNews
 - [Recursive Superintelligence raises $650m at $4.65bn valuation](https://thenextweb.com/news/recursive-superintelligence-self-improving-ai-funding) — The Next Web
+- [Recursive Superintelligence: Why Self-Improving AI is the Next Frontier](https://www.gv.com/news/recursive-superintelligence-self-improving-ai) — GV (lead investor's own post)
+- [Frontier Risk Report (February to March 2026)](https://metr.org/blog/2026-05-19-frontier-risk-report/) — METR
+- [Anthropic In Talks to Raise $30 Billion at $900 Billion Valuation](https://www.bloomberg.com/news/articles/2026-05-12/anthropic-in-talks-to-raise-30-billion-at-900-billion-valuation) — Bloomberg
+- [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) — Dosovitskiy et al., arXiv
+- [Meet Richard Socher](https://you.com/meet-richard-socher) — You.com
 
