@@ -5,7 +5,7 @@
 
 ## The Moment
 
-Demis Hassabis had just finished walking through an hour of Google I/O 2026 demos — Gemini 3.5 Flash, Project Astra running live on prototype glasses, AlphaFold drug design results, AI agents booking your dentist appointment. And then, at the close of his keynote, he said it:
+Demis Hassabis had just finished walking through an hour of Google I/O 2026 demos — [Gemini 3.5 Flash](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/), new [Android XR audio and display glasses](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/), [Gemini for Science tools built on the AlphaFold Database](https://www.technologyreview.com/2026/05/22/1137813/google-i-o-showed-how-the-path-for-ai-science-is-shifting/), and [Gemini Spark, a personal AI agent Google says can take action on a user's behalf](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/). And then, at the close of his keynote, he said it:
 
 **"We're at the foothills of the singularity."**
 
@@ -21,9 +21,9 @@ He kept it in.
 
 The Semafor interview is worth reading carefully, because the headlines compress what is actually a nuanced position.
 
-**On timeline:** Hassabis said machines comparably intelligent to humans could arrive "as soon as 2030." He called this year — 2026 — "the beginning." In his words: *"This year, I really felt … that it's the beginning."*
+**On timeline:** In a separate [Axios interview the same week](https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis), Hassabis said he "still broadly expects AGI around 2030," with 2029 now a possibility. He called this year — 2026 — "the beginning." In his words to Semafor: *"This year, I really felt … that it's the beginning."*
 
-**On impact:** He projected AI's societal impact as *"10 times the Industrial Revolution at 10 times the speed."* That multiplication — 10× magnitude, 10× faster — is where the "100× the Industrial Revolution" framing in media coverage comes from. Compressed into a number it sounds hyperbolic. Heard as two separate claims about magnitude and pace, it's harder to dismiss.
+**On impact:** Hassabis has a standing line he reuses across venues — including in coverage of his I/O week remarks — that he "sometimes quantif[ies] the coming of AGI as 10 times the impact of the Industrial Revolution, but happening at ten times the speed," unfolding in a decade rather than a century, [as reported by The Decoder](https://the-decoder.com/deepminds-hassabis-sees-humanity-in-the-foothills-of-the-singularity-while-lecun-says-current-ai-isnt-intelligent/) alongside its I/O coverage. It is not part of the Semafor post-keynote interview quoted above — Hassabis has used the same framing at Davos and the India AI Impact Summit earlier in 2026. Compressed into a single number ("10x10"), it can sound hyperbolic; heard as two separate claims about magnitude and pace, it's a more specific bet.
 
 **On what "singularity" means to him:** Hassabis was careful not to invoke the Kurzweilian version — runaway recursive self-improvement beyond human comprehension. He defined his usage explicitly: *"The singularity, at least my interpretation of that word and that term, means the era that we're in."* The era of AI systems capable of compressing decades of scientific progress into years. The era of agentic AI that can act, build, and iterate autonomously. The era that started, in his view, now.
 
@@ -35,9 +35,9 @@ The I/O conversation didn't happen in a vacuum. Within days, three prominent AI 
 
 **Demis Hassabis (Google DeepMind):** Bullish. AGI by 2030. The singularity has begun.
 
-**Oriol Vinyals (Google DeepMind research lead):** Calibrating. His position, as reported by The Decoder: today's systems *already exceed* what would have looked like AGI in 2019 — the goalposts moved as the models improved. But current systems remain "fundamentally limited in learning and discovery." He's not dismissing progress; he's questioning whether the trajectory continues at the same rate.
+**Oriol Vinyals (VP of Research, Google DeepMind, and Gemini co-lead):** Calibrating. His position, [as reported by The Decoder](https://the-decoder.com/deepminds-hassabis-sees-humanity-in-the-foothills-of-the-singularity-while-lecun-says-current-ai-isnt-intelligent/): today's systems already exceed what would have looked like AGI seven years ago — the goalposts moved as the models improved. But, [as Vinyals put it in a podcast interview](https://officechai.com/ai/todays-models-have-reached-agi-based-on-definitions-from-7-years-ago-google-deepminds-oriol-vinyals/), "this ability for the models to truly learn from experience is what is missing." He's not dismissing progress; he's questioning whether the trajectory continues at the same rate.
 
-**Yann LeCun (Meta Chief AI Scientist):** Skeptical. LeCun's headline quote: *"Current AI isn't intelligent."* His argument is structural: large language models are not the right paradigm for human-like intelligence. Real intelligence requires the ability to learn from limited experience, to build causal world models, to generalize from a handful of examples the way a child does. LLMs, trained on trillions of tokens, can't do what a four-year-old can do after watching something happen twice. Singularity predictions, in his view, presuppose a continuity of progress that the current paradigm cannot support.
+**Yann LeCun (Executive Chairman, [Advanced Machine Intelligence Labs](https://x.com/ylecun/status/2031268686984527936); formerly Meta Chief AI Scientist):** Skeptical. LeCun left Meta in late 2025 to found AMI Labs, a Paris-based startup pursuing "world model" AI as an alternative to LLMs. His view on the singularity debate, [as reported by The Decoder](https://the-decoder.com/deepminds-hassabis-sees-humanity-in-the-foothills-of-the-singularity-while-lecun-says-current-ai-isnt-intelligent/): *"Intelligence is not what you know, it's what you do when you don't know."* His argument is structural: large language models are not the right paradigm for human-like intelligence. Real intelligence requires the ability to learn from limited experience, to build causal world models, to generalize from a handful of examples the way a child does. LLMs, trained on trillions of tokens, can't do what a four-year-old can do after watching something happen twice. Singularity predictions, in his view, presuppose a continuity of progress that the current paradigm cannot support.
 
 ---
 
@@ -45,7 +45,7 @@ The I/O conversation didn't happen in a vacuum. Within days, three prominent AI 
 
 What's striking about Hassabis's position is that it's more conservative than his closest peer's.
 
-In January 2026 at Davos, Dario Amodei (Anthropic CEO) stated AGI would likely arrive by **2027** — a year earlier than Hassabis's 2030 floor. Amodei went further: AI would replace all software developer work within a year; "Nobel-level" research breakthroughs in multiple fields within two. A joint video of Hassabis and Amodei debating "the world after AGI" circulated around the same time.
+In a [January 2026 essay](https://darioamodei.com/essay/the-adolescence-of-technology), Dario Amodei (Anthropic CEO) wrote that "powerful AI" — his term for a system with the combined capabilities of a "country of geniuses in a datacenter" — could arrive "as little as 1-2 years away," i.e., by **2027**, a year earlier than Hassabis's 2030 floor. Speaking at Davos that same month, Amodei went further, saying AI models would ["replace the work of all software developers within a year" and reach "Nobel-level" scientific research in multiple fields within two](https://fortune.com/2026/01/23/deepmind-demis-hassabis-anthropic-dario-amodei-yann-lecun-ai-davos/). Hassabis and Amodei also appeared together at Davos in a [World Economic Forum discussion on "the day after AGI"](https://www.weforum.org/podcasts/radio-davos/episodes/ai-agi-dario-amodei-demis-hassabis/), where Amodei argued superhuman AI is 1-2 years out and Hassabis put it at 5-10 years.
 
 The fact that two of the three most prominent AI lab heads now publicly expect human-level AI within two to four years, and differ mainly on whether it arrives in 2027 or 2030, is the actual story. The Hassabis announcement at I/O was unusual for its staging — a mainstage keynote, not a conference panel — but the underlying forecast is now close to consensus among lab leaders. The outlier position is LeCun's.
 
@@ -94,4 +94,12 @@ We'll know by 2030 who was right.
 - [Google DeepMind CEO Demis Hassabis says we're close to AGI — Axios](https://www.axios.com/2026/05/26/deepmind-ceo-demis-hassabis)
 - [What Is the Singularity? Google DeepMind CEO Demis Hassabis Explains — Forbes Australia](https://www.forbes.com.au/news/innovation/what-is-the-singularity-google-deepmind-ceo-demis-hassabis-explains/)
 - [Google I/O showed how the path for AI-driven science is shifting — MIT Technology Review](https://www.technologyreview.com/2026/05/22/1137813/google-i-o-showed-how-the-path-for-ai-science-is-shifting/)
+- [100 things we announced at Google I/O 2026 — Google Blog](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/)
+- [Google I/O 2026: Sundar Pichai's opening keynote — Google Blog](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/)
+- [Deepmind's Hassabis sees humanity "in the foothills of the singularity" while LeCun says current AI isn't intelligent — The Decoder](https://the-decoder.com/deepminds-hassabis-sees-humanity-in-the-foothills-of-the-singularity-while-lecun-says-current-ai-isnt-intelligent/)
+- [Today's Models Have Reached AGI Based On Definitions From 7 Years Ago: Google DeepMind's Oriol Vinyals — OfficeChai](https://officechai.com/ai/todays-models-have-reached-agi-based-on-definitions-from-7-years-ago-google-deepminds-oriol-vinyals/)
+- [Yann LeCun announces Advanced Machine Intelligence Labs — X/Twitter](https://x.com/ylecun/status/2031268686984527936)
+- [The Adolescence of Technology — Dario Amodei's essay](https://darioamodei.com/essay/the-adolescence-of-technology)
+- [Fortune: Hassabis, Amodei, LeCun clash on AI at Davos](https://fortune.com/2026/01/23/deepmind-demis-hassabis-anthropic-dario-amodei-yann-lecun-ai-davos/)
+- [World Economic Forum: "The day after AGI" — Radio Davos](https://www.weforum.org/podcasts/radio-davos/episodes/ai-agi-dario-amodei-demis-hassabis/)
 

@@ -11,11 +11,11 @@
 
 On May 24, 2026, the European Central Bank summoned eurozone bank executives and delivered an unusual message: a specific commercial AI model — Anthropic's Claude Mythos Preview — has materially changed the cyber threat environment, and European banks need to treat it as an active risk regardless of whether they have access to it.
 
-The meeting was [first reported by the Financial Times](https://www.insurancejournal.com/news/international/2026/05/13/869682.htm) and confirmed by Bloomberg the same day.
+Elderson had already flagged the issue on May 13, writing in the [ECB's Supervision Newsletter](https://www.insurancejournal.com/news/international/2026/05/13/869682.htm) that euro-area banks' lack of Mythos access "is not an excuse for inaction. On the contrary, it makes it even more critical that banks step up and act now." The May 24 summit itself was reported the same day by [Bloomberg, citing the Financial Times](https://www.bloomberg.com/news/articles/2026-05-24/ecb-convenes-banks-to-fix-flaws-exposed-by-ai-models-ft-says), and independently covered by [TheNextWeb](https://thenextweb.com/news/ecb-banks-cybersecurity-ai-mythos-elderson) and [FStech](https://www.fstech.co.uk/fst/ECB_Summons_Bank_Leaders_To_Urgent_Meeting_AI_Driven_Cybersecurity_Risks.php).
 
-ECB supervisory board vice-chair Frank Elderson characterized the threat in unusually direct terms: *"Frontier models' autonomous cyber capability is advancing quickly. The length of cyber tasks that frontier models can complete autonomously has doubled on the order of months, not years."*
+ECB supervisory board vice-chair Frank Elderson characterized the threat in direct terms, warning that once a vendor ships a patch, attackers can now reverse-engineer the underlying vulnerability "not in weeks but maybe in 30 minutes" ([FStech](https://www.fstech.co.uk/fst/ECB_Summons_Bank_Leaders_To_Urgent_Meeting_AI_Driven_Cybersecurity_Risks.php)), and that longstanding cybersecurity fundamentals "are all still valid, but given the progress in AI, they need to be dealt with faster" ([TheNextWeb](https://thenextweb.com/news/ecb-banks-cybersecurity-ai-mythos-elderson)). The underlying acceleration regulators are reacting to comes from the UK AI Security Institute's own research, which found that "the length of cyber tasks that frontier models can complete autonomously has doubled on the order of months, not years" ([AISI](https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing)).
 
-ECB President Christine Lagarde added a geopolitical dimension that has since dominated coverage: *"This divides the level playing field between the U.S. and the rest of the world, given that only U.S. companies have been given access."*
+ECB President Christine Lagarde added a geopolitical dimension that has since dominated coverage, telling reporters on May 8: *"This divides the level playing field between the U.S. and the rest of the world, given that only U.S. companies have been given access."* ([Global Banking & Finance Review](https://www.globalbankingandfinance.com/ecb-studying-defences-against-mythos-powered-attacks-lagarde/); [Sahm Capital, via Reuters wire](https://www.sahmcapital.com/news/content/update-1-ecb-is-studying-defences-against-mythos-powered-attacks-lagarde-says-2026-05-08))
 
 The meeting produced concrete demands for European banks. The ECB is not waiting for European access to Mythos to materialize.
 
@@ -25,11 +25,11 @@ The meeting produced concrete demands for European banks. The ECB is not waiting
 
 What makes this regulatory intervention unusual is how targeted it is. The ECB isn't warning generically about AI cybersecurity risks — it's naming one specific model and describing what it does.
 
-Claude Mythos Preview is Anthropic's restricted-access frontier model, currently available only through Project Glasswing — a controlled program that gives US tech companies, cybersecurity vendors, and certain US financial institutions (including JPMorgan Chase) private access to evaluate the system. The program launched April 7, 2026. As of May 22, Glasswing has [found more than 23,000 software vulnerabilities](/reviews/anthropic-project-glasswing-initial-update-10000-vulnerabilities-patching-crisis-2026/) in a month of operation, including critical flaws in wolfSSL (5 billion devices), Firefox, and multiple enterprise infrastructure stacks.
+Claude Mythos Preview is Anthropic's restricted-access frontier model, currently available only through [Project Glasswing](https://www.anthropic.com/glasswing) — a controlled program that gives US tech companies, cybersecurity vendors, and certain US financial institutions private access to evaluate the system. Founding partners named by Anthropic include Google, Microsoft, Cisco, CrowdStrike, Palo Alto Networks, and JPMorgan Chase ([Anthropic](https://www.anthropic.com/glasswing); [Fortune](https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/)). The program launched April 7, 2026 ([Fortune](https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/)). By its own [month-one update](https://www.anthropic.com/research/glasswing-initial-update) on May 22, Anthropic said its roughly 50 partners had collectively found more than 10,000 high- or critical-severity vulnerabilities, while Anthropic's own scan of 1,000+ open-source projects separately flagged 23,019 potential issues of all severities (6,202 rated high or critical). Findings included a critical wolfSSL certificate-forgery flaw, CVE-2026-5194, in a library embedded in an estimated billions of devices ([Anthropic](https://www.anthropic.com/research/glasswing-initial-update); [gBlock](https://www.gblock.app/articles/wolfssl-cve-2026-5194-certificate-forgery)), along with vulnerabilities in Firefox and multiple enterprise infrastructure stacks. More detail in our [Project Glasswing month-one recap](/reviews/anthropic-project-glasswing-initial-update-10000-vulnerabilities-patching-crisis-2026/).
 
 The EU has no access to this program.
 
-UK officials briefed on Mythos's capabilities framed the risk in terms regulators could operationalize: the model is *"becoming capable of doing work that previously required rare expertise: finding weaknesses in software, writing the code to exploit them, and doing so at a speed and scale that would have been impossible even a year ago."*
+UK Technology Secretary Liz Kendall and Security Minister Dan Jarvis framed the risk in terms regulators could operationalize in an [open letter to business leaders dated April 15, 2026](https://www.gov.uk/government/publications/ai-cyber-threats-open-letter-to-business-leaders/ai-cyber-threats-open-letter-to-business-leaders-html): a new generation of AI models is *"becoming capable of doing work that previously required rare expertise: finding weaknesses in software, writing the code to exploit them, and doing so at a speed and scale that would have been impossible even a year ago."* The same letter cites the UK AI Security Institute's own testing finding Mythos "substantially more capable at cyber offence than any model we have previously assessed."
 
 The concern isn't that Anthropic is a threat. It's that Mythos — or models trained in its image — could be acquired by a state-level adversary. At that point, European financial infrastructure faces attacks that move at speeds traditional security operations centers are not designed to handle.
 
@@ -41,13 +41,13 @@ The ECB's position is that banks cannot wait for access parity. They must accele
 
 ECB supervisors issued four concrete requirements:
 
-**1. Redouble vulnerability identification.** Banks must use existing AI tools to find vulnerabilities — including minor ones previously deprioritized — with immediate urgency. The assumption of a long maintenance window for low-priority flaws is no longer valid; Mythos-class models can elevate a minor vulnerability to an exploitable chain in seconds.
+**1. Redouble vulnerability identification.** Elderson said banks "need to redouble their efforts to identify vulnerabilities, even minor ones, using existing AI tools" ([BankInfoSecurity](https://www.bankinfosecurity.com/ecb-ai-means-european-banks-must-hasten-cybersecurity-pace-a-31691)). The assumption of a long maintenance window for low-priority flaws is no longer valid; Mythos-class models can reportedly turn a patch into a working exploit in around 30 minutes ([FStech](https://www.fstech.co.uk/fst/ECB_Summons_Bank_Leaders_To_Urgent_Meeting_AI_Driven_Cybersecurity_Risks.php)).
 
-**2. Accelerate patching.** Vulnerabilities previously scheduled for routine quarterly or semi-annual patch cycles must be moved to immediate remediation. Project Glasswing demonstrated this dynamic: [Anthropic's own partners have shifted to monthly patch cadences](/reviews/anthropic-project-glasswing-initial-update-10000-vulnerabilities-patching-crisis-2026/), and even monthly is now considered slow.
+**2. Accelerate patching.** Elderson said banks' "approach to patching needs to be changed. Vulnerabilities once thought minor ... need to be treated as urgent and must be fixed right away" ([BankInfoSecurity](https://www.bankinfosecurity.com/ecb-ai-means-european-banks-must-hasten-cybersecurity-pace-a-31691)). Project Glasswing itself illustrates the pace shift: Oracle moved to [monthly Critical Security Patch Updates starting May 28, 2026](https://blogs.oracle.com/security/update-monthly-critical-security-patch-updates-cspus-begin-may-28-2026) on top of its standing quarterly cadence, and Microsoft's internal teams described monthly patch volume as likely to keep growing ([Anthropic](https://www.anthropic.com/research/glasswing-initial-update)). More in our [Project Glasswing recap](/reviews/anthropic-project-glasswing-initial-update-10000-vulnerabilities-patching-crisis-2026/).
 
-**3. Update operational resilience plans.** Banks are required to revise their Digital Operational Resilience Act (DORA) compliance postures to account for a higher probability of severe infrastructure disruptions. DORA's existing framework wasn't designed around an adversary with AI-assisted attack generation at scale.
+**3. Update operational resilience plans.** Elderson said banks "need to update their operational resilience plans to cater for the higher probability of severe disruptions" under the Digital Operational Resilience Act (DORA) ([BankInfoSecurity](https://www.bankinfosecurity.com/ecb-ai-means-european-banks-must-hasten-cybersecurity-pace-a-31691)).
 
-**4. Treat DORA as a floor, not a ceiling.** The ECB's supervisory guidance is that bank-specific, risk-based approaches must exceed minimum DORA requirements. Regulatory compliance alone is not a sufficient security posture against Mythos-class threats.
+**4. Go beyond minimum DORA compliance.** Elderson called for "bank-specific, risk-based" action rather than treating regulatory compliance alone as sufficient ([BankInfoSecurity](https://www.bankinfosecurity.com/ecb-ai-means-european-banks-must-hasten-cybersecurity-pace-a-31691)).
 
 The ECB emphasized that these steps are required *before* European institutions gain any access to advanced AI security tools. Delay is not an option.
 
@@ -57,11 +57,7 @@ The ECB emphasized that these steps are required *before* European institutions 
 
 Lagarde's comment about the level playing field is the core geopolitical issue — and it's been brewing since Anthropic's Glasswing announcement in April.
 
-**Who has Mythos access:**
-- US tech companies (Google, Microsoft, Cloudflare, Oracle, Cisco, others)
-- US cybersecurity vendors (Palo Alto Networks, CrowdStrike, etc.)
-- Select US financial institutions (JPMorgan Chase confirmed)
-- Several US government agencies (unconfirmed, reported)
+**Who has Mythos access:** Project Glasswing's founding partners, named by Anthropic, include Amazon, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan Chase, the Linux Foundation, Microsoft, Nvidia, and Palo Alto Networks, plus more than 40 additional organizations that build or maintain critical software infrastructure ([Anthropic](https://www.anthropic.com/glasswing); [Fortune](https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/)). Cloudflare and Oracle are also named as contributors in Anthropic's own month-one results ([Anthropic](https://www.anthropic.com/research/glasswing-initial-update)). JPMorgan Chase CEO Jamie Dimon confirmed the bank is "testing" Mythos; Goldman Sachs CEO David Solomon separately confirmed Goldman also has access ([Constellation Research](https://www.constellationr.com/insights/news/jpmorgan-chase-goldman-sachs-anthropics-mythos-ai-cyber-risks)).
 
 **Who does not:**
 - Any EU financial institution
@@ -71,7 +67,7 @@ Lagarde's comment about the level playing field is the core geopolitical issue �
 
 The ECB is in the position of studying defenses against a system it cannot directly evaluate. As the Lagarde quote implies, this creates a structural asymmetry: US banks can use Mythos to find and fix their own vulnerabilities; European banks face the same threat landscape without the same defensive tools.
 
-Japan has been navigating this differently. After a [diplomatic intervention in early May involving US Treasury Secretary Bessent and a direct meeting with Anthropic's leadership](/reviews/japan-megabanks-anthropic-claude-mythos-bessent-katayama-ai-diplomacy-2026/), Japan's three major megabanks (MUFG, SMFG, and SMBC) gained conditional access to Project Glasswing under a GRIT+ bilateral framework. EU institutions have not yet achieved comparable terms.
+Japan has been navigating this differently. During a Tokyo visit by US Treasury Secretary Scott Bessent in early May, Japan's three megabanks — Mitsubishi UFJ Financial Group (MUFG), Mizuho Financial Group, and Sumitomo Mitsui Financial Group (SMFG) — were informed they would gain conditional access to Project Glasswing; Japanese Finance Minister Satsuki Katayama announced a public-private working group on Mythos-class risks alongside the news ([FStech](https://www.fstech.co.uk/fst/Japan_Megabanks_Secure_Access_To_Anthropics_Restricted_AI_Cybersecurity_Model.php); [TheNextWeb](https://thenextweb.com/news/anthropic-mythos-japan-megabanks-access)). More detail in our [coverage of the Japan arrangement](/reviews/japan-megabanks-anthropic-claude-mythos-bessent-katayama-ai-diplomacy-2026/). EU institutions have not yet achieved comparable terms.
 
 The European Commission has been briefed on Mythos's capabilities and is reportedly assessing policy implications — but no timeline for EU access has been announced.
 
@@ -81,9 +77,9 @@ The European Commission has been briefed on Mythos's capabilities and is reporte
 
 The ECB's move is part of a broader coordinated financial sector response.
 
-In the United States, Treasury Secretary Scott Bessent and Federal Reserve Chair Jerome Powell convened their own urgent meetings with major bank executives. The US meetings have a different character — American institutions have more information about Mythos's capabilities, in some cases direct access — but the message was similar: prioritize patching, assume the threat environment has stepped up.
+Weeks earlier, on April 10, 2026, Treasury Secretary Scott Bessent and Federal Reserve Chair Jerome Powell convened their own closed-door meeting with major bank CEOs — including Citigroup's Jane Fraser, Morgan Stanley's Ted Pick, Bank of America's Brian Moynihan, Wells Fargo's Charlie Scharf, and Goldman Sachs's David Solomon — at Treasury's Washington headquarters, three days after Project Glasswing's launch ([CBS News](https://www.cbsnews.com/news/mythos-anthropic-ai-cybersecurity-risks-powell-bessent/); [Bloomberg](https://www.bloomberg.com/news/articles/2026-04-10/anthropic-model-scare-sparks-urgent-bessent-powell-warning-to-bank-ceos)). That meeting predates the ECB's action by six weeks; American institutions have had direct access to Mythos through Glasswing in the interim, unlike their European counterparts.
 
-In the United Kingdom, the Technology Secretary and Security Minister issued formal written warnings to businesses about Mythos's enhanced capabilities. The UK warnings are more explicit about offensive applications than the ECB's supervisory guidance, reflecting a different regulatory tradition.
+In the United Kingdom, Technology Secretary Liz Kendall and Security Minister Dan Jarvis issued a [formal open letter to business leaders on April 15, 2026](https://www.gov.uk/government/publications/ai-cyber-threats-open-letter-to-business-leaders/ai-cyber-threats-open-letter-to-business-leaders-html) about Mythos's enhanced capabilities. The UK letter is more explicit about offensive applications than the ECB's supervisory guidance, reflecting a different regulatory tradition.
 
 ---
 
@@ -131,9 +127,21 @@ The question for the next phase of this story is whether the EU will negotiate a
 
 ## Sources
 
-- [ECB Urges Banks to Quickly Prepare for AI-Assisted Cyberattacks — Insurance Journal](https://www.insurancejournal.com/news/international/2026/05/13/869682.htm)
-- [ECB urges eurozone banks to invest more in AI cyber security — Technology.org](https://www.technology.org/2026/05/28/ecb-banks-ai-cybersecurity-investment/)
+- [ECB's Elderson warns banks lack of Mythos access "not an excuse for inaction" — Insurance Journal, May 13, 2026](https://www.insurancejournal.com/news/international/2026/05/13/869682.htm)
+- [ECB Convenes Banks to Fix Flaws Exposed by AI Models, FT Says — Bloomberg, May 24, 2026](https://www.bloomberg.com/news/articles/2026-05-24/ecb-convenes-banks-to-fix-flaws-exposed-by-ai-models-ft-says)
+- [ECB summons bank leaders to urgent meeting on AI-driven cybersecurity risks — TheNextWeb](https://thenextweb.com/news/ecb-banks-cybersecurity-ai-mythos-elderson)
+- [ECB Summons Bank Leaders To Urgent Meeting On AI Driven Cybersecurity Risks — FStech](https://www.fstech.co.uk/fst/ECB_Summons_Bank_Leaders_To_Urgent_Meeting_AI_Driven_Cybersecurity_Risks.php)
+- [ECB: AI Means European Banks Must Hasten Cybersecurity Pace — BankInfoSecurity](https://www.bankinfosecurity.com/ecb-ai-means-european-banks-must-hasten-cybersecurity-pace-a-31691)
 - [ECB tells Europe's biggest banks to prepare for AI-powered cyber threats — Euronews](https://www.euronews.com/business/2026/07/07/ecb-tells-europes-biggest-banks-to-prepare-for-ai-powered-cyber-threats)
+- [ECB studying defences against Mythos-powered attacks, Lagarde says — Global Banking & Finance Review, May 8, 2026](https://www.globalbankingandfinance.com/ecb-studying-defences-against-mythos-powered-attacks-lagarde/)
+- [How fast is autonomous AI cyber capability advancing? — UK AI Security Institute](https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing)
+- [AI cyber threats: open letter to business leaders — UK Government (Kendall/Jarvis), April 15, 2026](https://www.gov.uk/government/publications/ai-cyber-threats-open-letter-to-business-leaders/ai-cyber-threats-open-letter-to-business-leaders-html)
+- [Project Glasswing — Anthropic](https://www.anthropic.com/glasswing)
 - [Project Glasswing: An initial update — Anthropic](https://www.anthropic.com/research/glasswing-initial-update)
+- [Anthropic is giving some firms early access to Claude Mythos — Fortune, April 7, 2026](https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/)
+- [Fed Chair Powell, Treasury's Bessent and top bank CEOs met over Anthropic's Mythos model — CBS News](https://www.cbsnews.com/news/mythos-anthropic-ai-cybersecurity-risks-powell-bessent/)
+- [Bessent, Powell Summon Bank CEOs to Urgent Meeting Over Anthropic's New AI Model — Bloomberg, April 10, 2026](https://www.bloomberg.com/news/articles/2026-04-10/anthropic-model-scare-sparks-urgent-bessent-powell-warning-to-bank-ceos)
+- [JPMorgan Chase, Goldman Sachs on Anthropic's Mythos, AI cyber risks — Constellation Research](https://www.constellationr.com/insights/news/jpmorgan-chase-goldman-sachs-anthropics-mythos-ai-cyber-risks)
+- [Japan megabanks secure access to Anthropic's restricted AI cybersecurity model — FStech](https://www.fstech.co.uk/fst/Japan_Megabanks_Secure_Access_To_Anthropics_Restricted_AI_Cybersecurity_Model.php)
 - [ECB to push banks on AI cyber threat defences — ResultSense](https://www.resultsense.com/news/2026-06-04-ecb-banks-ai-cyber-risk-letter/)
 

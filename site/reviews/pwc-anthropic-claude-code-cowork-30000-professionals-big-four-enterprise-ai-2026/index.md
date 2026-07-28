@@ -26,7 +26,7 @@ The distinction between a procurement relationship and a strategic alliance matt
 
 Most enterprise AI deals are licensing agreements: a firm buys seats, runs training, and professionals use the tool when they want to. The joint Center of Excellence structure here is different. PwC and Anthropic are building a shared roadmap, co-developing delivery methodology, and certifying professionals through a structured program — not just distributing software access.
 
-The 30,000 certification target extends earlier work: PwC had already run hands-on sessions with more than 5,000 partners and senior leaders. The new program scales that institutional capability down through the professional organization, not just at the leadership level.
+The 30,000 certification target extends earlier work: PwC had already run [hands-on sessions with more than 5,000 partners and senior leaders](https://www.prnewswire.com/news-releases/anthropic-and-pwc-expand-alliance-driving-impact-across-client-work-and-the-firm-302772321.html) at its Advisory Leadership Exchange. The new program scales that institutional capability down through the professional organization, not just at the leadership level.
 
 Claude Code and Cowork are the two products PwC is centering the rollout around:
 
@@ -37,25 +37,25 @@ Claude Code and Cowork are the two products PwC is centering the rollout around:
 
 ## Production Results Already Documented
 
-The announcement was not speculative. PwC cited production deployments across five verticals:
+The announcement was not speculative. PwC cited [production deployments across five verticals](https://www.prnewswire.com/news-releases/anthropic-and-pwc-expand-alliance-driving-impact-across-client-work-and-the-firm-302772321.html):
 
 **Insurance underwriting** — Underwriting that took ten weeks now takes ten days. This is the most concrete ROI number in the announcement and covers one of professional services' most document-intensive workflows.
 
 **Cybersecurity** — Security work that took hours now takes minutes. The specific tasks cited involve the kind of log analysis, vulnerability triage, and incident documentation that historically required senior analyst time.
 
-**Mainframe modernization** — Claude Code is accelerating the translation and rewriting of legacy mainframe code, a category of work that has historically been expensive and slow because of the scarcity of COBOL and RPG expertise.
+**Mainframe modernization** — Claude Code is accelerating the translation and rewriting of a COBOL codebase reported as roughly four times larger than originally scoped, with the work tracking on time and under budget — a category of work that has historically been expensive and slow because of the scarcity of COBOL and RPG expertise.
 
-**HR transformation** — AI-assisted restructuring of HR processes, including policy documentation, workflow automation, and organizational design support.
+**HR transformation** — AI-assisted restructuring of HR processes; PwC reported a working prototype built in one week and a full application live in under two months.
 
-**Professional sports operations** — Claude is running in production in unnamed professional sports clients, likely for contract analysis, player performance analytics, or operations workflows. This is an unusual vertical for a Big Four firm, and the reference suggests PwC's early deployments extended across client industries, not just into professional services' own operations.
+**Professional sports operations** — PwC cited digital fan engagement and operations work with unnamed professional sports clients. This is an unusual vertical for a Big Four firm, and the reference suggests PwC's early deployments extended across client industries, not just into professional services' own operations.
 
-Delivery times across these deployments are down up to 70%.
+Delivery times across these deployments are down [up to 70%](https://www.anthropic.com/news/pwc-expanded-partnership).
 
 ---
 
 ## The Finance Business Group
 
-One of the specific new structures announced is a Claude-native finance business group within PwC.
+One of the [specific new structures announced](https://www.prnewswire.com/news-releases/anthropic-and-pwc-expand-alliance-driving-impact-across-client-work-and-the-firm-302772321.html) is a Claude-native finance business group within PwC, launched under the firm's Office of the CFO unit and starting with regulated industries — banking, insurance, and healthcare.
 
 The group combines PwC domain knowledge with the full Anthropic product surface: Claude in the productivity suite, Cowork, and Claude Code. The finance focus makes sense given PwC's concentration in financial services, where it works with banks, insurers, asset managers, and fintechs on audit, tax, and advisory mandates.
 
@@ -65,11 +65,11 @@ The "Claude-native" framing suggests this is not a retrofitted version of an exi
 
 ## PwC Runs Two AI Partnerships
 
-PwC entered a multi-year strategic partnership with OpenAI in 2024. That deal included significant seat deployments and integration with PwC client tools, and positioned PwC as one of OpenAI's largest enterprise partners.
+PwC entered a multi-year strategic partnership with OpenAI on May 29, 2024, becoming [OpenAI's first ChatGPT Enterprise reseller and its largest enterprise customer](https://www.forbes.com/sites/roberthart/2024/05/29/openai-inks-deal-with-pwc-to-resell-chatgpt-to-businesses-as-firms-race-toward-ai/), with ChatGPT Enterprise access extending to roughly [100,000 PwC employees](https://www.cnbc.com/2024/05/29/pwc-to-become-openais-first-reseller-and-largest-enterprise-user.html) across the U.S. and U.K.
 
 The Anthropic expansion announced in May 2026 does not replace that relationship. PwC is running both.
 
-This dual-AI-partnership structure is becoming a pattern in large enterprises. Intuit announced separate deals with both Anthropic ($100M+) and OpenAI for different parts of its product strategy. PwC's approach appears similar — using OpenAI and Anthropic for different purposes within the same organization, rather than consolidating to one vendor.
+This dual-AI-partnership structure is becoming a pattern in large enterprises. Intuit is running a similar dual arrangement, but the deals are not equivalent in disclosed size: its [partnership with OpenAI](https://finance.yahoo.com/news/intuit-strikes-100-million-deal-142409299.html), announced November 18, 2025, commits Intuit to spend more than $100 million integrating OpenAI's models into TurboTax, Credit Karma, and QuickBooks and to make Intuit tools directly accessible inside ChatGPT. Its separate [partnership with Anthropic](https://investors.intuit.com/news-events/press-releases/detail/1305/intuit-and-anthropic-partner-to-bring-trusted-financial-intelligence-and-custom-ai-agents-to-consumers-and-businesses), announced February 24, 2026, covers custom AI agents built on the Claude Agent SDK and Claude Code deployment across Intuit's engineering organization — no dollar figure was disclosed for that deal. PwC's approach appears similar — using OpenAI and Anthropic for different purposes within the same organization, rather than consolidating to one vendor.
 
 For enterprise buyers evaluating professional services firms on AI capability, PwC's position is that it is model-agnostic at the partnership level and deploying whatever tool performs best for the task. Whether that flexibility holds as both partnerships deepen is a practical question: the joint Center of Excellence and certification program are structured around Claude specifically, which implies a growing institutional investment that will create switching costs over time.
 
@@ -77,16 +77,16 @@ For enterprise buyers evaluating professional services firms on AI capability, P
 
 ## Where PwC Fits in the Big Four AI Landscape
 
-Five days after the PwC announcement, KPMG announced a global alliance with Anthropic giving all 276,000+ KPMG employees Claude access and embedding Claude Cowork and Managed Agents directly into Digital Gateway, KPMG's flagship client delivery platform.
+Five days after the PwC announcement, [KPMG announced a global alliance with Anthropic](https://kpmg.com/xx/en/media/press-releases/2026/05/kpmg-and-anthropic-sign-global-alliance-and-launch-digital-gateway-powered-by-claude.html) giving all [276,000+ KPMG employees](https://www.anthropic.com/news/anthropic-kpmg) Claude access and embedding Claude Cowork and Managed Agents directly into Digital Gateway, KPMG's flagship client delivery platform. (ChatForest covered this in detail in our [KPMG-Anthropic alliance analysis](/reviews/kpmg-anthropic-claude-alliance-digital-gateway-276000-employees-big-four-enterprise-ai-2026/).)
 
-That sequential timing — PwC on May 14, KPMG on May 19 — illustrates the competitive pressure in professional services AI. Each announcement reinforces the other. KPMG claimed to be the first Big Four firm to embed a frontier model into its primary client delivery platform. PwC's announcement preceded it by five days.
+That sequential timing — PwC on May 14, KPMG on May 19 — illustrates the competitive pressure in professional services AI. Each announcement reinforces the other. KPMG [claimed to be the first Big Four firm](https://kpmg.com/xx/en/media/press-releases/2026/05/kpmg-and-anthropic-sign-global-alliance-and-launch-digital-gateway-powered-by-claude.html) to embed a frontier model into its primary client delivery platform. PwC's announcement preceded it by five days.
 
 The Big Four AI landscape as of May 2026:
 
 - **PwC** — Anthropic alliance (expanded May 14, 2026) running in parallel with OpenAI partnership (2024). Claude Code and Cowork central. 30,000 professionals to be certified.
-- **KPMG** — Global Anthropic alliance (announced May 19, 2026). Claude Cowork and Managed Agents embedded in Digital Gateway. Named Anthropic's preferred PE partner.
-- **Deloitte** — AI partnerships with AWS, Microsoft, and Salesforce. Various integrations across service lines.
-- **EY** — Microsoft Copilot integrations, proprietary EY.ai platform.
+- **KPMG** — [Global Anthropic alliance](https://www.anthropic.com/news/anthropic-kpmg) (announced May 19, 2026). Claude Cowork and Managed Agents embedded in Digital Gateway. Named Anthropic's preferred PE partner.
+- **Deloitte** — AI partnerships with [AWS](https://www.deloitte.com/us/en/about/press-room/deloitte-launches-gen-ai-accelerator-program-with-aws.html) and [Salesforce](https://www.deloitte.com/us/en/about/press-room/deloitte-digital-unveils-agentforce-accelerators-in-collaboration-with-salesforce-and-anthropic.html). Various integrations across service lines.
+- **EY** — [Microsoft Copilot integrations](https://news.microsoft.com/source/2026/05/21/ey-and-microsoft-announce-global-initiative-to-help-clients-scale-ai-enterprisewide-value-creation-and-move-beyond-experimentation/), proprietary [EY.ai platform](https://www.ey.com/en_gl/newsroom/2023/09/ey-announces-launch-of-artificial-intelligence-platform-ey-ai-following-us-1-4b-investment).
 
 Two of the four are now running formal Anthropic alliances, both announced within five days of each other. The timing is not coincidence — it reflects both firms securing a position before the other could claim it, in a market where AI partnership announcements affect client perception of which firm is most capable.
 

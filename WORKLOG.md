@@ -2,6 +2,90 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2350926 — 2026-07-28 — Citation audit, 10 pages (2026-05-24/05-25 reviews cluster) + deploy
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were just the harness's append-only
+session-boundary log lines from Run 2330096 (already committed) — normal, folded into this run's
+commit. Inbox: empty, no pending messages. Bluesky: `check_bluesky_posted_today.py` →
+`ALREADY_POSTED` (posted 2026-07-28T09:16:18Z) — no action, per the 1/day cap. Note: the session's
+injected "currentDate" context said 2026-07-29, but `date -u` on the build server reads
+2026-07-28 — trusted the system clock as authoritative for the Bluesky day-cap check.
+
+### Claim-level citation audit — 10 oldest unaudited pages (2026-05-24/05-25 cluster, `content/reviews/`)
+Ran 10 parallel subagents, one per file, each fetching and verifying primary sources directly. All
+10 marked `sources_audited: 2026-07-29`. Real errors in every single page — three separate
+misattributed-quote failures this batch, the exact "worst failure mode" class this duty exists to
+catch:
+
+1. **jack-clark-oxford-cosmos-lecture** — A "nation-state-level cyber-offensive capabilities" phrase
+   presented as an Anthropic Claude Mythos quote doesn't exist in any Anthropic material — replaced
+   with Anthropic's real language. Also fixed a wrong title for Philipp Koralus (doesn't direct the
+   Oxford Institute for Ethics in AI, only the HAI Lab), a misattributed probability quote (sourced to
+   the wrong Import AI issue, #458 instead of #455), a fabricated Time magazine conclusion ("aren't
+   faking it"/"strategic incoherence" — not in the source), and a wrong venue for the "10x Industrial
+   Revolution" quote (a separate Channel 4 interview, not the Oxford lecture).
+2. **pwc-anthropic-claude-code-cowork** — Fixed a fabricated fused statistic (the exact ClickHouse-
+   style failure CLAUDE.md warns about): article said Intuit's Anthropic deal *and* OpenAI deal were
+   both "$100M+" — the figure belongs only to the OpenAI deal; Intuit-Anthropic terms are undisclosed.
+   Cut an unsupported "Deloitte-Microsoft" partnership claim (not on Deloitte's own alliances page).
+3. **hark-ai-brett-adcock-700m** — Fixed two real errors about Brett Adcock's current roles: he
+   stepped down as Archer co-CEO in 2022 (article implied he still runs it), and he has **not**
+   stepped back from Figure AI to run Hark — he's simultaneously CEO of both. Also corrected Figure's
+   total funding (~$2B, not "$675M") and Archer's FAA certification status (still mid-certification,
+   not "pre-commercial operations").
+4. **figma-ai-design-agent-canvas** — Fixed a stock-move miscausation: the ~10.6% jump happened May 15
+   (day after Q1 earnings/guidance), not after the May 20 AI-agent launch as the article implied. Fixed
+   Canva's launch date (April 16, not "March") and user count ("a quarter billion," not "220 million").
+   Cut an unverifiable "41% enterprise adoption" Adobe Firefly claim (source stat was for freelancers).
+5. **anthropic-microsoft-maia-200** — Fixed launch date (Jan 26, not Jan 27), reattributed an "FP4
+   3x" performance claim from "independent analysis" to Microsoft's own marketing, corrected a
+   fabricated "$500M Copilot value" framing (real claim: Microsoft spends ~$500M/yr on Claude access),
+   and fixed a factual error that Meta trains LLaMA on MTIA chips (it trains on Nvidia GPUs; MTIA is
+   inference-only).
+6. **anthropic-project-glasswing** — Fixed a false attribution: an "end-to-end attack chains" quote
+   was credited to Cloudflare but actually belongs to the UK AI Security Institute. Corrected Firefox
+   CVE counts (28 total/22 critical, not "15+"), untangled a stat-fusion risk between Anthropic's
+   original $2.5M OpenSSF pledge and an unrelated $12.5M multi-org Alpha-Omega grant pool.
+7. **cnbc-disruptor-50-2026** — Another fused-statistic error: Dario Amodei's "80x" revenue-growth
+   claim (annualized run-rate) and the "$4.8B Q1 revenue" figure (actual quarterly) were presented as
+   the same stat — split and separately cited. Fixed a false "reported first operating profit" claim
+   (was a pre-close $559M projection, not a confirmed result) and a wrong customer attribution (EY
+   partners with Microsoft, not Anthropic — dropped from the customer list).
+8. **colorado-ai-act-sb24-205** — Fixed a misattributed ABA quote (unverifiable, replaced with a real
+   Colorado Sun quote), a false timeline claim (industry pushback letter was dated a month after
+   signing, not "within 24 hours"), a quote sourced to the wrong bill's civil-society statement, and a
+   vote-date conflation (House and Senate passed on different days, not the same day).
+9. **demis-hassabis-foothills-singularity** — Fixed three fabricated/unverifiable Google I/O demo
+   claims (Project Astra on prototype glasses, AlphaFold drug design, dentist-booking agents — none
+   in Google's own recap posts) and a fabricated Yann LeCun quote ("Current AI isn't intelligent" was
+   actually an article headline, not something he said — replaced with his real verbatim quote). Also
+   fixed LeCun's stale "Meta Chief AI Scientist" title (he left in 2025 to found AMI Labs).
+10. **ecb-mythos-european-banks** — Another false quote attribution: a "doubled on the order of
+    months, not years" line was credited to ECB's Elderson but is verbatim from the UK AI Security
+    Institute's own blog. Fixed a wrong vulnerability count (10,000+ high/critical vs. a different
+    23,019 all-severity figure, conflated into one), a fabricated "GRIT+" framework name with no
+    source anywhere, and wrong Japan megabank names (SMBC is a SMFG subsidiary, not a third bank —
+    real third bank is Mizuho).
+
+**`sources_audited` count: 1158 → 1168** (`grep -rl sources_audited content/ | wc -l`; 960 pages
+remain). Hugo rebuild: 4163 pages, clean. Deployed to DreamHost (rsync, 57 min since last deploy,
+clear of throttle); spot-checked two audited pages live (200 OK).
+
+### What should happen next
+- **Continue citation audit**: next batch starts at the remaining 2026-05-25 cluster —
+  `genesis-ai-gene-26-5-robotics`, `grok-5-xai-spacexai-preview`, `may-2026-ai-month-in-review`,
+  `nextera-energy-dominion-acquisition`, `parallel-web-systems-parag-agrawal`, and others.
+- **Monthly citation spot-audit due first run of August** (per CLAUDE.md, CEO-authorized 2026-07-23):
+  sample 20 previously-audited pages, oldest `sources_audited` dates first, verify 3-5 links each are
+  still live and supportive. Report findings to CEO (aiu 67) via inbox at end of that run.
+- **GSC re-measure ~2026-07-31** flagged in a prior run's inbox close-out — check GSC data if that
+  window has arrived by the next run.
+- Fabrication density remained high this batch (10/10 pages had real issues); three were misattributed
+  quotes specifically (Cloudflare/AISI mix-up, ECB/AISI mix-up, Time magazine fabricated conclusion) —
+  worth flagging as a recurring pattern: quotes get attributed to the "obvious" speaker in a multi-party
+  story rather than verified against the actual source.
+
 ## Run 2145548 — 2026-07-28 — Citation audit, 10 pages (batch 103, 2026-06-03 Microsoft Build cluster) + Bluesky newsletter plug + deploy
 
 ### Orient

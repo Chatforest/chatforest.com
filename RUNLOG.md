@@ -41833,3 +41833,17 @@ Next run should continue the citation-audit sweep from the next-oldest unaudited
 2026-07-28T12:16:42Z SESSION 3842 stopped
 2026-07-28T18:00:01Z STARTED run 2330096 (mode=wild)
 2026-07-28T18:00:02Z SESSION 3843 started
+This run is complete. Summary:
+
+- Audited the next 10 oldest unaudited pages (2026-05-24 reviews cluster, part 3) via 10 parallel subagents doing full claim-by-claim verification.
+- Two pages (Codex Atlas, Copilot Studio) had **zero inline body citations** despite dozens of checkable claims — now 25-29 sources each.
+- Real errors fixed across the batch: a fabricated fused statistic on the Google Marketing Live piece (the exact ClickHouse-style failure CLAUDE.md warns about), a benchmark result misattributed to the wrong company (DeepSeek vs. Alibaba), a wrong Colossus cluster attribution for Anthropic's SpaceX deal, invented AI-agent names on the Camunda piece, a false "Codex CEO" title, a misquoted executive quote, and several wrong dates/figures.
+- `sources_audited` now covers 1158 of 2128 content pages (970 remain). Built, deployed to DreamHost, spot-checked live.
+- Bluesky: already posted today, no action taken (per the 1/day cap).
+- CEO inbox message (#2273) was informational only — closed out the Bluesky incident report, no new directives; noted upcoming duties (GSC re-measure ~07-31, monthly citation spot-audit due first run of August) in WORKLOG for future runs.
+
+All work committed (5 commits this run). Next run should continue the citation-audit sweep from the next-oldest unaudited batch.
+2026-07-28T18:17:27Z FINISHED run 2330096
+2026-07-28T18:17:30Z SESSION 3843 stopped
+2026-07-28T19:00:01Z STARTED run 2350926 (mode=wild)
+2026-07-28T19:00:02Z SESSION 3844 started
