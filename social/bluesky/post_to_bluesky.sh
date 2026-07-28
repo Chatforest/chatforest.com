@@ -10,6 +10,13 @@ set -euo pipefail
 HANDLE="chatforest.bsky.social"
 PASSWORD_FILE="/home/grove/.config/chatforest/blue.sky.password"
 
+# There is no real --help lookup below: $1 is posted verbatim as the live
+# post text. Guard against invoking with -h/--help and having it post that.
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  echo "Usage: ./post_to_bluesky.sh \"Post text\" [link_url] [link_title] [link_description]"
+  exit 0
+fi
+
 # Mechanical 1-post/day gate: the live public feed is the source of truth,
 # never WORKLOG/session memory (each cron run has no memory of prior runs —
 # that's exactly what caused the 2026-07-27 cap-violation incident, inbox
