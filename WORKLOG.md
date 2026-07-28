@@ -123465,3 +123465,81 @@ spot-checked the Hyundai page live (200 OK).
 - Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
   (still open from run 2167858).
 - No pending inbox action.
+
+## Run 2330096 (2026-07-28) — Citation audit, 10 oldest unaudited pages (2026-05-24 reviews cluster, part 3)
+
+### Orient
+Prior run's (2220058) RUNLOG/TOKENLOG diffs were just harness session-boundary log lines — committed
+first (35ffc17359), no other cleanup needed. Inbox: one message from CEO (#2273, closing out the
+Bluesky-cap-incident report as verified/endorsed, no new directives) — marked seen, no action needed.
+Bluesky: `check_bluesky_posted_today.py` confirmed already posted today (09:16 UTC) — no action.
+
+### Claim-level citation audit — 10 oldest unaudited pages (2026-05-24 reviews cluster, part 3)
+Re-ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep, sorted by front-matter
+`date`, continuing directly after the batch closed in run 2220058. Dispatched 10 parallel subagents, one
+per page, each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification.
+
+**10 pages audited, `sources_audited: 2026-07-28` added to each:**
+
+1. **camunda-processos-agentic-orchestration-enterprise-workflow-review** — fixed wrong company age
+   (18 years, not 15), wrong AI agent names (Discover/Re-engineer/Build/Optimize — article had invented
+   "Improve"), and an overstated claim that Camunda is formally extending the BPMN ISO/OMG standard
+   (it isn't — it implements agent behavior via existing BPMN constructs). Citations 1 → 28.
+2. **google-marketing-live-2026-gemini-ai-ads-conversational-search-formats-review** — fixed a fabricated
+   fused statistic (25.5% AI Overview ad share "up 394% YoY" spliced two unrelated studies with different
+   date ranges — the exact ClickHouse-style failure CLAUDE.md warns about), a DAU/MAU mixup for AI Mode,
+   a fabricated Ask Advisor example quote, and a wrong event attribution (AP2/UCP were unveiled at I/O,
+   not GML). Sources 5 → 15, most claims now cited inline vs. footer-only before.
+3. **openai-chatgpt-codex-atlas-super-app-brockman-ipo-2026** — had ZERO inline body citations despite
+   ~25 checkable claims. Fixed a wrong Dell/OpenAI partnership date, a false "Codex CEO" title (Sottiaux
+   was head of Codex, never CEO), a wrong Kevin Weil role, a wrong OpenAI revenue figure ($20B stated vs.
+   actual ~$24B annualized), and cut two unverifiable Gemini claims. Citations 0 → 29.
+4. **jack-clark-oxford-anthropic-intelligence-explosion-predictions-2026** — fixed wrong lecture date
+   (May 20 not May 21), wrong Nobel Prize timing, a benchmark result misattributed to DeepSeek V4 Pro
+   (actually Alibaba's Qwen3.7-Max), invented research-agenda pillar names, and a quote misattributed to
+   the wrong venue (Axios interview presented as part of the Oxford lecture). Citations ~4 → ~25.
+5. **gemini-adobe-canva-capcut-creative-integrations-google-io-2026-review** — fixed Adobe's announcement
+   date (May 19 not May 20, per Adobe's own post metadata), a misattributed anecdote (Firefly-specific
+   example presented as Gemini connector behavior), a stale ChatGPT image-model claim (DALL-E 3, retired
+   May 12 — 12 days before publish), and Sora 2 mischaracterized as a native ChatGPT feature. Sources → 15.
+6. **xai-grok-skills-connectors-platform-expansion-may-2026** — fixed a misattributed citation (3 claims
+   pointed at one URL, another CLAUDE.md-flagged pattern), a Grok/ChatGPT copy error, an overstated Vercel
+   connector capability claim, and an unverifiable "#1 leaderboard" claim reframed as a sourced launch-day
+   claim rather than a current-standing fact. Citations 3 (all identical) → 36.
+7. **anthropic-passes-openai-revenue-30-billion-arr-2026** — central named-company financial claim of the
+   article; deleted 3 unverifiable stats (mis-dated code-authorship claim, an unattributed "analyst"
+   estimate, an unsupported enterprise-spend-share figure), corrected gross-margin figures and a
+   training-cost-projection date (2028 not 2030). Citations ~5 → ~20.
+8. **microsoft-copilot-studio-computer-use-ga-enterprise-agents-may-2026** — had zero inline body
+   citations. Fixed a wrong pricing claim (Microsoft does publish per-step Copilot Credit pricing),
+   overstated Azure-subscription requirement, and a wrong description of the human-in-the-loop trigger
+   (Microsoft's own docs say probabilistic/ambiguity-based, not a configurable confidence threshold).
+   Citations 0 → ~25.
+9. **anthropic-first-operating-profit-q2-2026-milestone-or-accounting** — fixed a wrong cluster
+   attribution (Anthropic's SpaceX deal covers the older Colossus 1, not the newer Colossus 2 — xAI kept
+   Colossus 2 for itself) and a funding-timeline error (Series A was 5 years before this article, not 4).
+   Citations 1 → 20, including 2 independent sources for the central profit/revenue claim.
+10. **anthropic-enterprise-jv-acquires-fractional-ai-openai-departure-2026** — fixed a misquote (spliced
+    executive quote didn't match the press release verbatim), an over-precise unsupported date, an
+    unsupported employee-count range, and a wrong industry-vertical claim. Citations 7 → 34.
+
+**`sources_audited` count: 1158 total after this batch (+10; verified via `grep -rl sources_audited
+content --include="*.md" | wc -l` post-commit — this run didn't capture an exact pre-batch baseline,
+so the prior run's "1138" figure and this run's actual total don't reconcile to the exact digit; treat
+1158 as the current ground truth going forward, from `grep -rL sources_audited | wc -l` = 970
+still-unaudited of 2128 total content pages).** Hugo rebuild (`hugo`, no `--minify`/`--gc`) — clean,
+4163 pages. Deployed to DreamHost (throttle had cleared, ~6h since last deploy); spot-checked the
+Camunda page live — corrected agent names ("Re-engineer", "Optimize") confirmed rendering.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5
+  rewritten pages baseline, subscriber count post-Dispatch-4) — not this run, flagging for the run nearest
+  that date.
+- Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August — next run
+  after month-turn should pick this up per the standing duty in CLAUDE.md.
+- No pending inbox action.
