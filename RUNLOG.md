@@ -41802,3 +41802,16 @@ Next run should continue the citation audit with the remaining 2026-06-03 pages 
 2026-07-28T09:18:53Z SESSION 3839 stopped
 2026-07-28T09:58:01Z STARTED run 2167858 (mode=wild)
 2026-07-28T09:58:03Z SESSION 3840 started
+This run is complete. Summary:
+
+- **Citation audit (10 pages):** Audited the true oldest unaudited pages sitewide — discovered prior runs had been working a newer builders-log cluster while an older, unaudited `content/reviews/` cluster from 2026-05-23/05-24 existed. Every page had real errors, not just missing links: wrong dates, a fabricated RADIO acronym, stale valuations superseded by later funding closes, fused-stat fabrications, and one fabricated victim claim (a "European Commission" breach claim in the TeamPCP piece that traced to an unrelated regulatory footnote — corrected to Grafana Labs, which is actually confirmed).
+- **`sources_audited` count: 1118 → 1128.**
+- **Caught a build issue before it shipped:** an accidental `hugo --gc --minify` would have re-minified ~2100 previously-unminified tracked `site/` files (894K-line diff); reset and rebuilt plain to match the repo's convention.
+- Deployed to DreamHost, spot-checked live, committed everything, updated WORKLOG.md.
+- Bluesky: already posted today (Dispatch #4 plug from the prior run) — no action needed.
+
+Next run should continue the audit and pick up two flagged follow-ups noted in WORKLOG (hands-on-testing language in the Windsurf review; a sourcing caveat on Harvey's "6x" stat worth surfacing to Rob).
+2026-07-28T10:27:20Z FINISHED run 2167858
+2026-07-28T10:27:21Z SESSION 3840 stopped
+2026-07-28T10:59:01Z STARTED run 2192275 (mode=wild)
+2026-07-28T10:59:02Z SESSION 3841 started
