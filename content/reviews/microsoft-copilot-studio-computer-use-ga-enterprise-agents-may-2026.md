@@ -3,24 +3,25 @@ title: "Microsoft Copilot Studio Computer Use Is Now GA — What Enterprises Nee
 date: 2026-05-24T16:00:00+09:00
 description: "Microsoft made computer use agents generally available in Copilot Studio on May 13, 2026. Agents now navigate any browser or desktop app using vision and reasoning — no API required. Here's what it does, what it can't do yet, and what the governance story looks like."
 og_description: "Copilot Studio computer use is GA: AI agents that see your screen, click, type, and scroll through any app — including SAP, legacy intranets, and tools with no API. Vision-based navigation, not brittle selectors. Session replay, DLP policies, Azure Key Vault support. But desktop success rates are still ~35%. Full breakdown inside."
-card_description: "Microsoft made computer use agents generally available in Copilot Studio on May 13, 2026. Agents equipped with computer use can see a screen, reason about what's on it, and click, type, and scroll to complete tasks — using vision and reasoning instead of brittle selector-based macros. This works on any browser-accessible app and on legacy software like SAP without requiring API integration. Enterprise governance is built in: DLP policies, environment isolation, audit trails, Purview integration, and Azure Key Vault for credential management. Credentials are never exposed to the AI model. Session replay and step-by-step action logs let admins review everything the agent saw and did. The human-in-the-loop checkpoint system escalates to a human when confidence is low. The tradeoff: web-based task success is ~80%, but desktop app performance drops to ~35%, and dynamic UI elements (dropdowns, date pickers, custom widgets) still cause problems. Model choice is available — OpenAI or Anthropic. Usage-based billing requires an Azure subscription."
+card_description: "Microsoft made computer use agents generally available in Copilot Studio on May 13, 2026. Agents equipped with computer use can see a screen, reason about what's on it, and click, type, and scroll to complete tasks — using vision and reasoning instead of brittle selector-based macros. This works on any browser-accessible app and on legacy software like SAP without requiring API integration. Enterprise governance is built in: DLP policies, environment isolation, audit trails, Purview integration, and Azure Key Vault for credential management. Credentials are never exposed to the AI model. Session replay and step-by-step action logs let admins review everything the agent saw and did. The human-in-the-loop checkpoint system escalates to a human when the agent needs confirmation or is missing information. The tradeoff: web-based task success is ~80%, but desktop app performance drops to ~35%, and dynamic UI elements (dropdowns, date pickers, custom widgets) still cause problems. Model choice is available — OpenAI or Anthropic. Usage-based billing requires an Azure subscription."
 tags: ["microsoft", "copilot-studio", "computer-use", "enterprise", "automation", "agents", "power-platform", "rpa", "governance", "ui-automation"]
 categories: ["reviews"]
 rating: 3
 ratingHalf: true
 author: "ChatForest"
 last_refreshed: 2026-05-24
+sources_audited: 2026-07-28
 ---
 
-**At a glance:** Microsoft made computer use agents generally available in Copilot Studio on May 13, 2026. Agents can now see a screen, reason about what's on it, and take actions — click, type, scroll — across any browser or desktop application, without needing an API. Enterprise governance features (DLP, Purview integration, session replay, Azure Key Vault) ship at GA. Desktop app success rates (~35%) and handling of dynamic UI elements remain real limitations. Part of our **[Microsoft & Azure coverage](/categories/microsoft/)**. For related enterprise AI, see our **[Microsoft Agent 365 review](/reviews/microsoft-agent-365-m365-e7-frontier-suite-enterprise-ai-governance-review/)**.
+**At a glance:** Microsoft made computer use agents generally available in Copilot Studio on [May 13, 2026](https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427) ([confirmed](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new) in Microsoft's own changelog). Agents can now see a screen, reason about what's on it, and take actions — click, type, scroll — across any browser or desktop application, without needing an API. Enterprise governance features (DLP, Purview integration, session replay, Azure Key Vault) ship at GA. Desktop app success rates ([~35%, per Microsoft's own FAQ](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use)) and handling of dynamic UI elements remain real limitations. Part of our **[Microsoft & Azure coverage](/categories/microsoft/)**. For related enterprise AI, see our **[Microsoft Agent 365 review](/reviews/microsoft-agent-365-m365-e7-frontier-suite-enterprise-ai-governance-review/)**.
 
 ---
 
 Every enterprise has applications that haven't shipped an API. Some of those applications run mission-critical workflows — HR systems, legacy ERPs, procurement portals, internal tools built on platforms that were never designed to be automated. For years, the answer was robotic process automation: record a macro, specify exactly which pixel to click, hope the UI doesn't change.
 
-Computer use in Copilot Studio takes a different approach. Instead of recording exact coordinates, the agent looks at the screen, understands what it sees, and decides what to do next — the way a person would. It's the same vision-and-reasoning approach that Anthropic pioneered with Claude's computer use capability, now integrated directly into Microsoft's enterprise agent platform.
+Computer use in Copilot Studio takes a different approach. Instead of recording exact coordinates, the agent looks at the screen, understands what it sees, and decides what to do next — the way a person would. It's a vision-and-reasoning approach; [Anthropic shipped a similar computer-use capability in Claude 3.5 Sonnet in October 2024](https://www.anthropic.com/news/3-5-models-and-computer-use), and Copilot Studio's GA build gives makers a choice between an OpenAI model and Anthropic's Claude Sonnet 4.5 to drive the underlying agent (see Model Choice below).
 
-With GA on May 13, this is no longer a preview experiment. It's a production-ready capability with enterprise governance built in.
+With GA on [May 13](https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427), this is no longer a preview experiment. It's a production-ready capability with enterprise governance built in.
 
 ---
 
@@ -28,13 +29,13 @@ With GA on May 13, this is no longer a preview experiment. It's a production-rea
 
 When you add the computer use tool to a Copilot Studio agent, you give it four things: a browser, a screen, a keyboard, and the ability to read what's on the page and take the next logical step.
 
-The agent doesn't navigate via selectors. It captures a screenshot, processes what it sees using a vision model, decides what action to take (click, type, scroll, or wait), executes that action, and repeats until the task is done or it needs human input. The workflow branches naturally around what's actually on screen at each moment — not what the developer expected to be there when they built the automation.
+The agent doesn't navigate via selectors. Per [Microsoft's own FAQ for the tool](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use), it follows an iterative perception-reasoning-action loop: it captures a screenshot, processes what it sees using a vision model, decides what action to take (click, type, scroll, or wait), executes that action, and repeats until the task is done or it needs human input. The workflow branches naturally around what's actually on screen at each moment — not what the developer expected to be there when they built the automation.
 
 This matters in practice because UIs change. A button moves. A workflow gets an extra confirmation screen. A vendor updates their portal layout. Selector-based automation breaks when this happens; computer use adapts.
 
 ### Setup
 
-Getting started is intentionally low-friction: create or open an agent in Copilot Studio, go to **Tools → Add tool → Add new computer use**, and describe the task in natural language. The agent handles the rest. There's no macro recording, no XPath selectors, no coordinate capture.
+Getting started is intentionally low-friction. Per [Microsoft's setup documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use#add-computer-use-to-your-agent): create or open an agent in Copilot Studio, go to **Tools → Add tool → New tool → Computer use**, and describe the task in natural language. The agent handles the rest. There's no macro recording, no XPath selectors, no coordinate capture.
 
 ---
 
@@ -42,13 +43,13 @@ Getting started is intentionally low-friction: create or open an agent in Copilo
 
 Microsoft has put substantial work into making computer use acceptable to enterprise IT and compliance teams, not just power users.
 
-**DLP and environment isolation.** Computer use agents operate under the same Data Loss Prevention policies and environment boundaries as the rest of Power Platform. If your DLP policy prevents an agent from accessing a particular data domain, that restriction applies here.
+**DLP and environment isolation.** Copilot Studio agents generally — computer use included — run inside the same [data loss prevention (DLP) policy and environment-boundary framework](https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance) that governs the rest of Power Platform, configured through [data policies in the Power Platform admin center](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention). If your DLP policy blocks a connector or data domain, that restriction applies here too.
 
-**Purview and Dataverse integration.** Every run is logged. Audit trails propagate to Microsoft Purview and Dataverse, making it possible to review what the agent saw, what it clicked, and what data it touched. For regulated industries, this changes the feasibility calculus significantly.
+**Purview and Dataverse integration.** Every run is logged. Per [Microsoft's monitoring documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/monitor-computer-use), computer-use logs are stored in Dataverse by default, and admins can separately turn on **Send audit logs to Microsoft Purview** so run logs appear there under the activity term `CUAOperation`. For regulated industries, this changes the feasibility calculus significantly.
 
-**Session replay.** Administrators and makers can watch exactly what the agent did during a run: step-by-step screenshots, action types (click/type/scroll), coordinates, timestamps, and context notes. This is the kind of observability that traditional RPA tools have provided for years, now available for AI agents.
+**Session replay.** Administrators and makers can watch exactly what the agent did during a run. [Microsoft's documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/monitor-computer-use) describes a session-replay screenshot series plus a per-step activity log of action types, action coordinates, user context used, and timestamps. This is the kind of observability that traditional RPA tools have provided for years, now available for AI agents.
 
-**Run summaries.** Each run produces a structured summary: total duration, action count, average time per action, number of human escalations, and instruction text. Useful for both debugging and capacity planning.
+**Run summaries.** Each run produces a structured summary — per the same documentation, this includes instruction text, inputs, total duration and number of actions, average time per action, number of screenshots, human escalation count, and machine/login details. Useful for both debugging and capacity planning.
 
 ---
 
@@ -56,12 +57,12 @@ Microsoft has put substantial work into making computer use acceptable to enterp
 
 Computer use agents often need to authenticate into systems — which creates an obvious question about how credentials are handled.
 
-Microsoft provides two options:
+Microsoft [provides two options](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use#configure-optional-settings):
 
 - **Internal storage**: credentials encrypted within Power Platform. Lower friction, appropriate for most scenarios.
 - **Azure Key Vault**: enterprise-grade secret management with your existing key infrastructure.
 
-In both cases, credentials are never exposed to the AI model itself. The model sees the screen; it doesn't see the password. Authentication happens at the infrastructure layer.
+In both cases, [Microsoft states that credentials are encrypted and never exposed to the AI model](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/computer-using-agents-now-deliver-more-secure-ui-automation-at-scale/) — the model sees the screen; it doesn't see the password. Authentication happens at the infrastructure layer.
 
 ---
 
@@ -69,7 +70,7 @@ In both cases, credentials are never exposed to the AI model itself. The model s
 
 Computer use doesn't have to run fully autonomously. Copilot Studio supports human-in-the-loop checkpoints — moments in the workflow where the agent pauses, describes what it's about to do, and waits for approval before proceeding.
 
-These checkpoints can be configured to trigger at specific steps or to activate automatically when the agent's confidence is below a threshold. If something on screen doesn't match what the agent expected, it escalates rather than guessing.
+Per [Microsoft's documentation on the feature](https://learn.microsoft.com/en-us/microsoft-copilot-studio/human-supervision-computer-use), these checkpoints trigger automatically when the model determines it needs confirmation or is missing information — Microsoft describes the trigger as "probabilistic AI model behavior" rather than a maker-configurable confidence threshold, and [its own FAQ warns](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use) this isn't a guaranteed safety fail-safe: it might not trigger in every situation a person would want a pause, and it might also trigger unnecessarily.
 
 This is meaningful for high-stakes workflows. A computer use agent filing expense reports or updating inventory records can be configured to pause before any write operation, turning what might be an autonomous action into a supervised one.
 
@@ -77,7 +78,7 @@ This is meaningful for high-stakes workflows. A computer use agent filing expens
 
 ## Model Choice
 
-Copilot Studio's computer use supports multiple underlying vision models: options from both OpenAI and Anthropic are available. This gives organizations flexibility to align model choice with existing vendor relationships or compliance requirements.
+Copilot Studio's computer use supports multiple underlying vision models. Per [Microsoft's model table](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use#add-computer-use-to-your-agent), OpenAI's Computer-Using Agent (CUA) and Anthropic's Claude Sonnet 4.5 are generally available at GA, with Claude Sonnet 4.6 and Claude Opus 4.6 available as experimental options (Opus 4.6 is billed at a premium rate). This gives organizations flexibility to align model choice with existing vendor relationships or compliance requirements.
 
 ---
 
@@ -87,19 +88,19 @@ The honest performance picture is a wide gap between browser-based and desktop t
 
 ### Web apps: ~80% success
 
-For browser-accessible workflows — pulling data from a vendor portal, submitting a form, navigating an HR system's web interface — computer use performs reliably. The vision model handles layout changes well. This is where the legacy software use case is strongest: SAP Fiori, Oracle Web Applications, internal intranets, procurement portals. If a person can access it through a browser, the agent generally can too.
+For browser-accessible workflows — pulling data from a vendor portal, submitting a form, navigating an HR system's web interface — computer use performs reliably. [Microsoft's own FAQ for the tool](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use) puts web-based task success at "about 80%." The vision model handles layout changes well. This is where the legacy-software use case is strongest — internal intranets and procurement portals with no API of their own. If a person can access it through a browser, the agent generally can too.
 
 ### Desktop apps: ~35% success
 
-Native desktop applications are harder. Rendering is more variable, accessibility APIs are inconsistent, and the agent has less surface area to reason about. The success rate at GA is roughly 35% — meaningful enough to be useful for specific tasks, not reliable enough to replace human-operated workflows end to end.
+Native desktop applications are harder. Rendering is more variable, accessibility APIs are inconsistent, and the agent has less surface area to reason about. The [same Microsoft FAQ](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use) puts desktop success at "about 35%" — meaningful enough to be useful for specific tasks, not reliable enough to replace human-operated workflows end to end.
 
 ### Dynamic UI elements
 
-Dropdowns, date pickers, multi-select widgets, and custom-built interface components cause problems across both environments. These elements behave differently from what the model was trained on, and the agent can enter a loop if the screen doesn't respond the way it expected. Microsoft documents this explicitly in the troubleshooting guide.
+Dropdowns, date pickers, multi-select widgets, and custom-built interface components cause problems across both environments. [Microsoft's FAQ lists this explicitly](https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-computer-use) as a known limitation: these elements behave differently from what the model was trained on, and the agent can enter a loop or get stuck if the screen doesn't respond the way it expected.
 
 ### Rate limits
 
-Computer use runs count against Copilot Studio message quotas. Per-minute and per-hour limits apply; exceeding them blocks agent messages until the quota resets. For high-volume automation scenarios, this requires capacity planning.
+Computer use runs are billed as Copilot Studio "agent actions," so they count against the same [generative-AI message quotas](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-quotas) that apply to the rest of the platform — Microsoft's documented quotas are defined in requests per minute (RPM) and requests per hour (RPH) per Dataverse environment, and scale with how many prepaid message packs a tenant has purchased. When a tenant hits its quota, further messages fail until the window resets. For high-volume automation scenarios, this requires capacity planning.
 
 ---
 
@@ -127,9 +128,9 @@ What it is: an escape hatch for everything that falls outside what APIs and RPA 
 
 ## Pricing
 
-Computer use in Copilot Studio runs on usage-based billing. An Azure subscription is required. Microsoft doesn't publish per-run pricing directly on the feature page; costs accumulate against Copilot Studio message capacity, which is purchased through Azure or Microsoft 365 licensing.
+Computer use bills against Copilot Studio's usage currency, Copilot Credits, at the "Agent action" rate. Per [Microsoft's published billing rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management#copilot-credits-billing-rates), each step (one click, type, or navigation in the perception-reasoning-action loop) costs 5 Copilot Credits on a standard model (OpenAI CUA or Claude Sonnet 4.5) or 15 Copilot Credits on the premium model (Claude Opus 4.6); [Computer-Using Agent usage is explicitly not included in the Microsoft 365 Copilot per-user license](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management#copilot-credits-billing-rates), unlike some other agent actions.
 
-Organizations already paying for Power Platform or Microsoft 365 E5 licenses should check whether computer use is included in their existing allocation before provisioning additional capacity.
+Copilot Credits can be acquired several ways — a standalone Copilot Studio subscription, a Microsoft 365 Copilot license, prepaid Copilot Credit packs, or pay-as-you-go metering — and [only the pay-as-you-go option requires linking an Azure subscription](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing); it is not a blanket requirement for using computer use. Organizations already paying for Power Platform or Microsoft 365 Copilot licenses should check their existing Copilot Credit allocation against projected computer use volume before provisioning additional capacity.
 
 ---
 
@@ -145,4 +146,4 @@ For organizations with legacy web-based workflows and no API access — which de
 
 ---
 
-*Computer use in Copilot Studio is available in all commercial Power Platform geographies. Azure subscription required. For setup documentation, see [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/). This review is based on publicly available documentation and third-party coverage; ChatForest has not independently tested the product.*
+*Computer use in Copilot Studio reached GA in [all commercial Power Platform geographies](https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427) (sovereign clouds — GCC, GCC High, DoD — were not part of the initial GA rollout, [per third-party coverage of the announcement](https://www.digitalapplied.com/blog/copilot-studio-computer-use-agents-ga-deep-dive)). An Azure subscription is needed only if you choose pay-as-you-go billing or Azure Key Vault for credentials — see Pricing above. For setup documentation, see [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use). This review is based on publicly available documentation and third-party coverage; ChatForest has not independently tested the product.*

@@ -9,11 +9,11 @@
 
 ## What Happened
 
-Seventeen days after Anthropic's unnamed enterprise joint venture was announced on May 4, 2026, the firm closed its first acquisition.
+Seventeen days after Anthropic's unnamed enterprise joint venture was [announced on May 4, 2026](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/) — backed by [Blackstone, Hellman & Friedman, and Goldman Sachs with $1.5 billion committed](https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/) — the firm closed its first acquisition.
 
-The target: **Fractional AI**, a San Francisco-based applied AI implementation firm. Founded in 2024 by Chris Taylor (CEO), Eddie Siegel (CTO), and Travis May, Fractional AI's pitch was direct: take enterprise AI projects from experiment to production. The firm had roughly 57 to 80 employees and had built a track record in healthcare, private equity-backed businesses, and complex enterprise workflows.
+The target: **Fractional AI**, a San Francisco-based applied AI implementation firm. [Founded in 2024 by Chris Taylor (CEO), Eddie Siegel (CTO), and Travis May](https://www.fractional.ai/press-releases/the-ai-native-enterprise-services-firm-announces-acquisition-of-fractional-ai), Fractional AI's pitch was direct: take enterprise AI projects from experiment to production. The firm had an estimated 57 employees as of January 2026, according to startup-data provider [Latka](https://getlatka.com/companies/fractional.ai), and its [own site lists work with enterprise-software companies, financial and professional-services firms, and private-equity-backed businesses](https://www.fractional.ai/) across its client roster.
 
-The terms were not disclosed. Given Fractional AI's reported revenue base (~$4.8M ARR before the deal) and the JV's focus on acquiring delivery capacity rather than technology, this appears to be primarily an acqui-hire — Fractional AI's engineers and delivery methodology become the operational foundation of the new venture.
+The terms were not disclosed, [confirmed by both Fractional AI's own announcement](https://www.fractional.ai/press-releases/the-ai-native-enterprise-services-firm-announces-acquisition-of-fractional-ai) and [Bloomberg's reporting](https://www.bloomberg.com/news/articles/2026-05-21/anthropic-s-new-consulting-venture-makes-its-first-acquisition). Given Fractional AI's reported revenue base (~$4.8M in estimated ARR before the deal, per [Latka](https://getlatka.com/companies/fractional.ai)) and the JV's focus on acquiring delivery capacity rather than technology, this appears to be primarily an acqui-hire — Fractional AI's engineers and delivery methodology become the operational foundation of the new venture.
 
 ---
 
@@ -21,7 +21,7 @@ The terms were not disclosed. Given Fractional AI's reported revenue base (~$4.8
 
 The headline-grabbing detail is what Fractional AI was doing immediately before this acquisition.
 
-On June 26, 2025, Fractional AI announced a formal partnership with OpenAI to accelerate enterprise AI adoption. The arrangement gave Fractional clients early access to OpenAI's models, co-authored implementation playbooks, and joint engineering for custom AI deployments. It ran for approximately 11 months.
+In [June 2025](https://www.linkedin.com/posts/taylorcd_big-news-openai-is-working-with-fractional-activity-7344020724359000068-7ZBV), Fractional AI CEO Chris Taylor announced a formal partnership with OpenAI to accelerate enterprise AI adoption. The arrangement gave Fractional clients early access to OpenAI's frontier models and custom-built AI solutions, and the two companies [co-authored an OpenAI Cookbook guide on eval-driven system design](https://cookbook.openai.com/examples/partners/eval_driven_system_design/receipt_inspection) — a real example of the joint engineering work the partnership produced. It ran for approximately 11 months, [ending when the Anthropic JV acquired Fractional AI](https://www.bloomberg.com/news/articles/2026-05-21/anthropic-s-new-consulting-venture-makes-its-first-acquisition).
 
 As of May 21, 2026, that partnership is over.
 
@@ -39,9 +39,9 @@ It launched without a delivery team.
 
 Fractional AI solves that problem immediately. Taylor, Siegel, and their engineers bring something the JV could not build overnight: real production experience deploying AI inside messy enterprise environments — legacy systems, compliance constraints, multi-stakeholder IT organizations, and the organizational inertia that kills most AI pilots before they reach production.
 
-Garvan Doyle, Anthropic's Applied AI lead, framed it directly: "Bringing frontier AI into a business takes more than a great model. It takes the engineering judgment to rebuild real systems. Fractional has assembled a team with exactly that capability."
+Garvan Doyle, Anthropic's Applied AI lead, [framed it directly](https://www.fractional.ai/press-releases/the-ai-native-enterprise-services-firm-announces-acquisition-of-fractional-ai): "Bringing frontier AI into a business takes more than a great model. It takes the engineering judgment to rebuild real systems around what's now possible, and Fractional has assembled a team with exactly that capability."
 
-Rodney Zemmel from Blackstone added: "It's clear they are a magnet for elite, applied AI engineers... the opportunity ahead is one of the largest we have seen."
+Rodney Zemmel, Blackstone's Global Head of the Operating Team, [added](https://www.fractional.ai/press-releases/the-ai-native-enterprise-services-firm-announces-acquisition-of-fractional-ai): "It's clear they are a magnet for elite, applied AI engineers... The opportunity ahead is one of the largest we have seen."
 
 The 17-day gap between the JV announcement and its first acquisition suggests the Fractional AI deal was well underway before the JV was publicly announced — possibly negotiated in parallel. This was not opportunistic; it was planned.
 
@@ -51,9 +51,9 @@ The 17-day gap between the JV announcement and its first acquisition suggests th
 
 The Fractional AI acquisition does not exist in isolation. It is one move in a parallel race both labs are running simultaneously.
 
-OpenAI launched its own enterprise deployment firm — internally called **DeployCo** — around the same time as Anthropic's JV. DeployCo raised over $4 billion at a reported valuation of approximately $10 billion. Its backers include TPG, Advent International, Bain Capital, Brookfield, Capgemini, McKinsey, and Bain & Company (the consulting firm). Nineteen partners in total at launch.
+OpenAI launched its own enterprise deployment firm — internally called **DeployCo**, officially "[the OpenAI Deployment Company](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/)" — [announced May 4, 2026](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/), the same day as Anthropic's JV. DeployCo [raised over $4 billion from private-equity partners against a roughly $10 billion total vehicle](https://thenextweb.com/news/openai-deployco-finalized-10-billion-joint-venture). Its backers include TPG, Advent International, Bain Capital, Brookfield, Capgemini, McKinsey, and Bain & Company (the consulting firm), among [19 partners in total at launch](https://pulse2.com/openai-confirms-deployment-company-launch-with-more-than-4-billion-backing-acquires-ai-consulting-firm-tomoro/).
 
-OpenAI's version of the Fractional AI move: it acquired **Tomoro**, an applied AI consulting firm with roughly 150 engineers, to staff DeployCo's delivery arm.
+OpenAI's version of the Fractional AI move: it [acquired **Tomoro**](https://pulse2.com/openai-confirms-deployment-company-launch-with-more-than-4-billion-backing-acquires-ai-consulting-firm-tomoro/), a London-based applied AI consulting firm with [roughly 150 forward-deployed engineers](https://openai.com/index/openai-launches-the-deployment-company/), to staff DeployCo's delivery arm.
 
 The structure is nearly identical: a separately capitalized entity with outside investors, an existing applied AI firm as the operational foundation, and a mission to deploy the parent lab's models inside enterprise clients.
 
@@ -87,11 +87,11 @@ Whether any existing clients opt to find alternative implementation partners is 
 
 | | Anthropic JV | OpenAI DeployCo |
 |---|---|---|
-| **Launched** | May 4, 2026 | ~May 2026 |
+| **Launched** | May 4, 2026 | May 4, 2026 |
 | **Capital raised** | ~$1.5B | ~$4B+ |
-| **Valuation** | undisclosed | ~$10B |
+| **Valuation** | undisclosed | ~$10B total vehicle |
 | **Key backers** | Blackstone, H&F, Goldman, GIC, Sequoia | TPG, Bain Capital, McKinsey, Capgemini |
-| **Delivery acquisition** | Fractional AI (~57-80 engineers) | Tomoro (~150 engineers) |
+| **Delivery acquisition** | Fractional AI (~57 employees) | Tomoro (~150 engineers) |
 | **Prior Fractional affiliation** | OpenAI partner → now Anthropic | — |
 | **Target client** | Mid-market (banks, manufacturers, health) | Enterprise (undisclosed) |
 
@@ -116,4 +116,12 @@ Fractional AI's 11-month OpenAI relationship being ended by this deal is the cle
 - [Fractional AI Press Release: Acquisition Announcement](https://www.fractional.ai/press-releases/the-ai-native-enterprise-services-firm-announces-acquisition-of-fractional-ai)
 - [PYMNTS: Anthropic Makes First Acquisition for Enterprise AI Push](https://www.pymnts.com/artificial-intelligence-2/2026/anthropic-makes-first-acquisition-for-enterprise-ai-push/)
 - [CryptoBriefing: Anthropic's enterprise joint venture acquires Fractional AI, pulling it away from OpenAI](https://cryptobriefing.com/anthropic-acquires-fractional-ai-openai/)
+- [TechCrunch: Anthropic and OpenAI are both launching joint ventures for enterprise AI services](https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/)
+- [Fortune: Anthropic takes shot at consulting industry in joint venture with Wall Street giants](https://fortune.com/2026/05/04/anthropic-claude-consulting-industry-joint-venture-blackstone-goldman-sachs/)
+- [Latka: Fractional AI Revenue and Employee Estimates](https://getlatka.com/companies/fractional.ai)
+- [Chris Taylor (Fractional AI CEO) on LinkedIn: OpenAI partnership announcement](https://www.linkedin.com/posts/taylorcd_big-news-openai-is-working-with-fractional-activity-7344020724359000068-7ZBV)
+- [OpenAI Cookbook: Eval-Driven System Design, co-authored with Fractional AI](https://cookbook.openai.com/examples/partners/eval_driven_system_design/receipt_inspection)
+- [OpenAI: OpenAI Launches the OpenAI Deployment Company](https://openai.com/index/openai-launches-the-deployment-company/)
+- [Pulse2: OpenAI Confirms Deployment Company Launch With More Than $4 Billion Backing, Acquires AI Consulting Firm Tomoro](https://pulse2.com/openai-confirms-deployment-company-launch-with-more-than-4-billion-backing-acquires-ai-consulting-firm-tomoro/)
+- [TheNextWeb: OpenAI closes The Deployment Company, a $10bn enterprise AI bet on private equity](https://thenextweb.com/news/openai-deployco-finalized-10-billion-joint-venture)
 
