@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Colab CLI: Your Agents Can Now Provision A100s and H100s From the Terminal — ChatForest</title>
-  <meta name="description" content="Google&#39;s new Colab CLI removes the browser requirement from Colab GPU/TPU access. Any agent with terminal access — Claude Code, Antigravity, Codex — can now provision T4 through H100 and TPU v5e/v6e compute, execute scripts remotely, and retrieve results without a Jupyter kernel in sight.">
+  <meta name="description" content="Google&#39;s new Colab CLI removes the browser requirement from Colab GPU/TPU access. Any agent with terminal access — Claude Code, Antigravity, Codex — can now provision T4 through H100 and TPU v5e1/v6e1 compute, execute scripts remotely, and retrieve results without a Jupyter kernel in sight.">
   <meta property="og:title" content="Google Colab CLI: Your Agents Can Now Provision A100s and H100s From the Terminal — ChatForest">
   <meta property="og:description" content="Colab GPU access no longer requires a browser. The new Google Colab CLI lets builders and AI agents provision T4, A100, and H100 compute directly from the terminal. COLAB_SKILL.md gives Claude Code and Antigravity native context to use it autonomously.">
   <meta property="og:type" content="article">
@@ -67,101 +67,64 @@
 
       <div class="article-body">
         <p>Google shipped <a href="https://developers.googleblog.com/introducing-the-google-colab-cli/">the Colab CLI on June 5, 2026</a>. It is an open source command-line tool that gives you — and your agents — direct access to Colab GPU and TPU runtimes from any terminal, with no browser, no Jupyter notebook, and no kernel management required.</p>
-<p>This is a meaningful change for builders running ML workloads on Colab. It is also the first time Colab has shipped a first-party interface designed explicitly for agent use.</p>
+<p>This is a meaningful change for builders running ML workloads on Colab. It&rsquo;s not Colab&rsquo;s first agent-oriented interface, either — Google shipped a <a href="https://developers.googleblog.com/announcing-the-colab-mcp-server-connect-any-ai-agent-to-google-colab/">Colab MCP server in March 2026</a> that gives MCP-compatible agents structured, protocol-based access to the same runtimes. The CLI adds a second, shell-native path to the same compute.</p>
 <hr>
 <h2 id="what-changed">What Changed</h2>
 <p>Before the CLI, using Colab GPU compute required a browser session. You opened a notebook, attached a runtime, ran cells in order, and downloaded outputs manually. That worked for interactive development but did not compose well with pipelines, scripts, or autonomous agents.</p>
 <p>The Colab CLI changes the access model: you install a lightweight CLI, authenticate once, and from that point on Colab GPU runtimes are addressable with shell commands. Any tool that can run a shell command — scripts, Makefiles, CI runners, or AI agents — can now use Colab compute.</p>
 <hr>
 <h2 id="hardware-available">Hardware Available</h2>
-<p>The CLI gives access to the same accelerator pool as the Colab web interface. What you can actually provision depends on your subscription tier:</p>
-<table>
-<thead>
-<tr>
-<th>Hardware</th>
-<th>Free Plan</th>
-<th>Colab Pro/Pro+</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T4 GPU</td>
-<td>Limited access</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>L4 GPU</td>
-<td>—</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>A100 GPU</td>
-<td>—</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>H100 GPU</td>
-<td>—</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>TPU v5e</td>
-<td>—</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>TPU v6e</td>
-<td>—</td>
-<td>✓</td>
-</tr>
-</tbody>
-</table>
-<p>Free plan users get the same constrained T4 access they would get through the browser. Pro and Pro+ subscribers unlock the full stack. There is no CLI-specific pricing — the CLI is open source under Apache-2.0 and costs nothing; accelerator access is billed the same way it has always been.</p>
+<p>The CLI&rsquo;s own documentation lists the accelerators you can request with the <code>--gpu</code> and <code>--tpu</code> flags: <strong>T4, L4, G4, H100, and A100</strong> GPUs, plus <strong>TPU v5e1 and v6e1</strong> — the same pool the web interface draws from (<a href="https://github.com/googlecolab/google-colab-cli">GitHub README</a>).</p>
+<p>Google does not publish a fixed table mapping each accelerator to a specific subscription tier. Its own Colaboratory FAQ says GPU/TPU availability &ldquo;vary[ies] over time&rdquo; and that premium GPUs are available &ldquo;subject to availability&rdquo; to paid-plan subscribers (<a href="https://research.google.com/colaboratory/faq.html">Colab FAQ</a>) — it deliberately declines to guarantee that a given tier gets a given chip. In practice, T4 is the accelerator free-tier users can expect; A100, H100, and TPU access are effectively gated behind a paid plan, but which chip you actually get on any given run depends on real-time capacity, not a fixed entitlement. There is no CLI-specific pricing — the CLI is open source under Apache-2.0, and accelerator access is billed the same compute-unit way it always has been.</p>
 <hr>
 <h2 id="key-commands">Key Commands</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Provision a new runtime</span>
-colab new --gpu T4
-colab new --gpu A100
+<p>Command syntax below is taken directly from the <a href="https://github.com/googlecolab/google-colab-cli">project README</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Provision a new named session</span>
+colab new -s trainer --gpu A100
 
-<span style="color:#75715e"># Shorthand provisioning</span>
-colab --gpu A100
+<span style="color:#75715e"># List running sessions</span>
+colab sessions
 
-<span style="color:#75715e"># Execute a local script on remote hardware</span>
-colab exec train.py
-colab run pipeline.py
+<span style="color:#75715e"># Execute a local script on a named session&#39;s remote hardware</span>
+colab exec -s trainer -f train.py
 
-<span style="color:#75715e"># Interactive REPL on the remote runtime</span>
+<span style="color:#75715e"># Or provision-and-run a script on fresh hardware in one shot</span>
+colab run --gpu T4 train.py
+
+<span style="color:#75715e"># Interactive REPL / shell on the remote runtime</span>
 colab repl
 colab console
 
-<span style="color:#75715e"># Install packages on the runtime</span>
-colab install torch torchvision
+<span style="color:#75715e"># Install packages on a named session</span>
+colab install -s trainer torch transformers
 
 <span style="color:#75715e"># Retrieve outputs</span>
-colab download results/
-colab log
+colab download -s trainer checkpoints/model.bin ./model.bin
 
-<span style="color:#75715e"># Terminate the runtime</span>
-colab stop
-</code></pre></div><p>The <code>colab exec</code> and <code>colab run</code> commands do what Colab notebooks do when you click Run All — execute Python on the remote runtime — without requiring a notebook structure. Local scripts run as-is on the remote hardware and results come back to your local environment.</p>
+<span style="color:#75715e"># Tail the execution log</span>
+colab log -s trainer -o execution_log.md
+
+<span style="color:#75715e"># Terminate a named session</span>
+colab stop -s trainer
+</code></pre></div><p>The <code>colab exec</code> and <code>colab run</code> commands do what Colab notebooks do when you click Run All — execute Python on the remote runtime — without requiring a notebook structure. Local scripts run on the remote hardware and results come back to your local environment. Most subcommands take a <code>-s</code>/<code>--session</code> name so you can address a specific running runtime.</p>
 <hr>
 <h2 id="the-agent-angle-colab_skillmd">The Agent Angle: COLAB_SKILL.md</h2>
 <p>This is the part that distinguishes the Colab CLI from a standard developer tool.</p>
 <p>The CLI repository ships with a file called <code>COLAB_SKILL.md</code>. This is a prepackaged context document written specifically for AI agents. When an agent (Claude Code, Antigravity, Codex, or any other agent with file and terminal access) reads this file, it gets structured guidance on how to use the CLI — what commands are available, what the outputs look like, and how to handle common workflows.</p>
-<p>Google explicitly tested the CLI with Antigravity (their own agentic platform) and Claude Code, <a href="https://www.marktechpost.com/2026/06/06/googles-new-colab-cli-lets-developers-and-ai-agents-run-python-on-remote-colab-gpus-and-tpus-from-the-terminal/">as described in the launch coverage by MarkTechPost</a>. An agent can:</p>
+<p>Google&rsquo;s own <a href="https://developers.googleblog.com/introducing-the-google-colab-cli/">launch post</a> walks through an example using its Antigravity agent platform, and notes the CLI &ldquo;can easily be used by Claude Code, Codex, and other agents&rdquo; with terminal access — a compatibility claim, not a report of Google having formally tested every agent. <a href="https://www.marktechpost.com/2026/06/06/googles-new-colab-cli-lets-developers-and-ai-agents-run-python-on-remote-colab-gpus-and-tpus-from-the-terminal/">MarkTechPost&rsquo;s launch coverage</a> covers the same example. An agent can:</p>
 <ol>
 <li>Read <code>COLAB_SKILL.md</code> once as context</li>
-<li>Provision a GPU runtime (<code>colab new --gpu A100</code>)</li>
-<li>Execute a script (<code>colab exec fine_tune.py</code>)</li>
-<li>Monitor progress through logs (<code>colab log</code>)</li>
-<li>Download results (<code>colab download checkpoints/</code>)</li>
-<li>Terminate the session (<code>colab stop</code>)</li>
+<li>Provision a GPU runtime (<code>colab new -s trainer --gpu A100</code>)</li>
+<li>Execute a script (<code>colab exec -s trainer -f fine_tune.py</code>)</li>
+<li>Monitor progress through logs (<code>colab log -s trainer</code>)</li>
+<li>Download results (<code>colab download -s trainer checkpoints/model.bin ./model.bin</code>)</li>
+<li>Terminate the session (<code>colab stop -s trainer</code>)</li>
 </ol>
 <p>No human required in the loop. The agent handles the entire lifecycle.</p>
 <p>This makes Colab a plausible compute layer for agentic ML workflows that were previously impractical without a cloud account, Kubernetes cluster, or expensive managed service.</p>
 <hr>
 <h2 id="colab-cli-vs-colab-mcp-server">Colab CLI vs. Colab MCP Server</h2>
-<p>Google also shipped a Colab MCP server in March 2026 that provides structured protocol-based access to Colab runtimes via Model Context Protocol. These are two separate tools solving the same problem at different layers:</p>
+<p>Google also shipped a <a href="https://developers.googleblog.com/announcing-the-colab-mcp-server-connect-any-ai-agent-to-google-colab/">Colab MCP server on March 17, 2026</a> that provides structured protocol-based access to Colab runtimes via Model Context Protocol. These are two separate tools solving the same problem at different layers:</p>
 <table>
 <thead>
 <tr>
@@ -196,17 +159,17 @@ colab stop
 <p>For MCP-native stacks (Claude, Gemini, any host supporting MCP), the MCP server gives you tighter integration with tool call semantics. For everything else — shell scripts, CI/CD pipelines, Makefile orchestration, or agents that work via terminal — the CLI is simpler and more portable.</p>
 <hr>
 <h2 id="builder-implications">Builder Implications</h2>
-<p><strong>Fine-tuning and evaluation pipelines.</strong> If you have a fine-tuning script that normally requires a cloud GPU instance, you can now run it via <code>colab exec fine_tune.py</code> from a local machine or a CI runner. The hardware cost is covered by your Colab subscription rather than a separate GPU cloud bill.</p>
-<p><strong>Long-running jobs without browser babysitting.</strong> Colab&rsquo;s browser-based approach historically timed out if you left the tab idle. The CLI runs jobs as headless remote processes, removing that constraint for Pro+ subscribers who have extended session access.</p>
+<p><strong>Fine-tuning and evaluation pipelines.</strong> If you have a fine-tuning script that normally requires a cloud GPU instance, you can now run it via <code>colab exec -s trainer -f fine_tune.py</code> from a local machine or a CI runner. The hardware cost is covered by your Colab subscription rather than a separate GPU cloud bill.</p>
+<p><strong>Long-running jobs without browser babysitting.</strong> Colab&rsquo;s browser-based approach historically timed out if you left the tab idle. The CLI runs jobs as headless remote processes. Session-length ceilings still apply per plan: Google&rsquo;s own FAQ puts the free tier at up to 12 hours of continuous execution, versus up to 24 hours for Colab Pro+ (<a href="https://research.google.com/colaboratory/faq.html">Colab FAQ</a>).</p>
 <p><strong>Agent-triggered compute.</strong> If you are building an agentic system that needs to train, evaluate, or run inference on demand, the CLI makes Colab a callable compute resource. An agent that hits a model performance threshold can autonomously trigger a fine-tuning job on an A100 and retrieve updated weights.</p>
-<p><strong>CI/CD integration.</strong> <code>colab exec</code> can be called from GitHub Actions, GitLab CI, or any CI runner. This is the first time Colab has been composable with standard CI tooling without third-party workarounds.</p>
+<p><strong>CI/CD integration.</strong> <code>colab run</code> and <code>colab exec</code> are shell commands, so they can be called from GitHub Actions, GitLab CI, or any CI runner the same way any other CLI tool would be — no notebook export step or browser automation workaround required.</p>
 <hr>
 <h2 id="what-to-watch">What to Watch</h2>
 <p>The CLI is versioned separately from the Colab web product. The GitHub repository is at <code>github.com/googlecolab/google-colab-cli</code> and is accepting contributions under Apache-2.0.</p>
 <p>Free tier constraints apply the same way they do in the browser — don&rsquo;t expect uninterrupted A100 access on a free plan. The CLI does not unlock hardware that your subscription plan does not cover.</p>
 <p>Availability is also subject to Colab&rsquo;s capacity pool, which varies. The CLI does not give you priority over the browser when hardware is constrained.</p>
 <hr>
-<p><em>The Google Colab CLI is open source under Apache-2.0 and available at github.com/googlecolab/google-colab-cli. Colab Pro starts at $9.99/month; Pro+ at $49.99/month.</em></p>
+<p><em>The Google Colab CLI is open source under Apache-2.0 and available at <a href="https://github.com/googlecolab/google-colab-cli">github.com/googlecolab/google-colab-cli</a>. Colab Pro is priced at $9.99/month and Pro+ at $49.99/month (<a href="https://software.ncsu.edu/google-colab-pro-colab-pro">Colab Pro/Pro+ overview, NC State Office of Information Technology</a>); check <a href="https://colab.research.google.com/signup">Colab&rsquo;s own signup page</a> for current pricing.</em></p>
 
       </div>
 
@@ -274,7 +237,7 @@ colab stop
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-07T00:00:00+09:00","datePublished":"2026-06-07T00:00:00+09:00","description":"Google's new Colab CLI removes the browser requirement from Colab GPU/TPU access. Any agent with terminal access — Claude Code, Antigravity, Codex — can now provision T4 through H100 and TPU v5e/v6e compute, execute scripts remotely, and retrieve results without a Jupyter kernel in sight.","headline":"Google Colab CLI: Your Agents Can Now Provision A100s and H100s From the Terminal","mainEntityOfPage":"https://chatforest.com/builders-log/google-colab-cli-gpu-tpu-terminal-agent-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/google-colab-cli-gpu-tpu-terminal-agent-builder-guide/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-07T00:00:00+09:00","datePublished":"2026-06-07T00:00:00+09:00","description":"Google's new Colab CLI removes the browser requirement from Colab GPU/TPU access. Any agent with terminal access — Claude Code, Antigravity, Codex — can now provision T4 through H100 and TPU v5e1/v6e1 compute, execute scripts remotely, and retrieve results without a Jupyter kernel in sight.","headline":"Google Colab CLI: Your Agents Can Now Provision A100s and H100s From the Terminal","mainEntityOfPage":"https://chatforest.com/builders-log/google-colab-cli-gpu-tpu-terminal-agent-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/google-colab-cli-gpu-tpu-terminal-agent-builder-guide/"}
 </script>
 
 

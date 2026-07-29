@@ -8,6 +8,7 @@ tags: ["policy", "regulation", "federal-ai", "great-american-ai-act", "white-hou
 categories: ["builders-log"]
 author: "ChatForest"
 last_refreshed: 2026-06-06
+sources_audited: 2026-07-29
 ---
 
 **At a glance:** In the space of seventy-two hours, the US federal government made its two biggest AI governance moves of the year. President Trump [signed a revised executive order on June 2](https://www.akingump.com/en/insights/alerts/trump-administration-and-house-lawmakers-launch-new-ai-governance-initiatives). Two days later, bipartisan House lawmakers released a [269-page discussion draft called the Great American AI Act](https://obernolte.house.gov/media/press-releases/obernolte-trahan-release-discussion-draft-great-american-ai-act). Together they sketch the first coherent federal AI governance picture — and define, for the first time, who it applies to and who it doesn't. Part of our **[AI policy and regulation coverage](/tags/policy/)**.
@@ -22,13 +23,13 @@ These are still early-stage documents. The executive order is signed and in forc
 
 ## The White House Executive Order (June 2, 2026)
 
-The revised EO, "Promoting Advanced Artificial Intelligence Innovation and Security," walks a narrower line than its cancelled predecessor. It has two tracks.
+The revised EO, ["Promoting Advanced Artificial Intelligence Innovation and Security"](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/) ([White House fact sheet](https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-promotes-advanced-artificial-intelligence-innovation-and-security/)), walks a narrower line than its cancelled predecessor. It has two tracks.
 
-**Track one: AI-powered cybersecurity.** Federal agencies are directed to modernize government information systems and harden them against AI-enabled threats. The policy framing is adversarial — protecting American AI intellectual property from foreign theft, not regulating domestic AI companies.
+**Track one: AI-powered cybersecurity.** Federal agencies are directed to prioritize cyber defense of national security systems, Department of War systems, and civilian federal information systems, and to harden them against AI-enabled threats ([EO text](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/)). The policy framing is adversarial — protecting American AI intellectual property from foreign theft, not regulating domestic AI companies.
 
-**Track two: Voluntary frontier model engagement.** The NSA, Treasury, and CISA jointly build a classified benchmarking process that defines what counts as a "covered frontier model." Companies that meet the threshold can voluntarily give the government **30 days of early access** before public release — down from the 90-day window in the scrapped order that alarmed Sacks and Musk. Trusted federal partners can flag security concerns during that window. Nothing in the voluntary track forces a company to participate.
+**Track two: Voluntary frontier model engagement.** The NSA, in consultation with Treasury and CISA, is directed to build a classified benchmarking process that determines the threshold for designating a "covered frontier model" ([EO text](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/)). Companies that meet the threshold can voluntarily give the government **up to 30 days of early access** before releasing to other trusted partners — down from the 90-day window in the scrapped May draft that Sacks, Musk, and Zuckerberg lobbied Trump to shrink ([TechTimes](https://www.techtimes.com/articles/317626/20260602/trump-ai-executive-order-signed-musk-zuckerberg-lobbied-review-down-30-days.htm); [Semafor](https://www.semafor.com/article/05/21/2026/elon-musk-mark-zuckerberg-derail-trump-ai-order)). The government also collaborates with developers to select trusted partners for that early-access window, framed around strengthening critical-infrastructure cybersecurity rather than a formal review process ([EO text](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/)). Nothing in the voluntary track forces a company to participate.
 
-**Timeline:** Agencies face hard deadlines. Key deliverables arrive July 2 (30 days out) and August 1 (60 days out). The EO is in effect now.
+**Timeline:** The EO sets 30-day and 60-day agency deadlines from the June 2 signing date — July 2 and August 1, 2026 — for initial cyber-defense actions and for standing up the benchmarking process, respectively ([EO text](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/)). The EO is in effect now.
 
 **Builder impact:** If you're not building a model that could be designated "covered frontier," the EO doesn't directly touch you. If you are — and if the classified benchmarking threshold is set high, as it was in the original design — the voluntary window is modest. The bigger question is what "voluntary" means over time, and whether enterprises will start asking vendors to certify they've participated.
 
@@ -36,55 +37,55 @@ The revised EO, "Promoting Advanced Artificial Intelligence Innovation and Secur
 
 ## The Great American AI Act Discussion Draft (June 4, 2026)
 
-Representatives Jay Obernolte (R-CA) and Lori Trahan (D-MA) released the GAAIA draft with four additional co-sponsors: Scott Franklin (R-FL), Suhas Subramanyam (D-VA), Erin Houchin (R-IN), and Scott Peters (D-CA). At 269 pages, it is the most comprehensive federal AI framework Congress has put on paper.
+Representatives [Jay Obernolte (R-CA) and Lori Trahan (D-MA) released the GAAIA draft](https://obernolte.house.gov/media/press-releases/obernolte-trahan-release-discussion-draft-great-american-ai-act) with four additional co-sponsors: Scott Franklin (R-FL), Suhas Subramanyam (D-VA), Erin Houchin (R-IN), and Scott Peters (D-CA) ([TechPolicy.Press](https://www.techpolicy.press/unpacking-the-great-american-artificial-intelligence-act-of-2026/)). At **269 pages** ([Roll Call](https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/)), it is the most comprehensive federal AI framework Congress has put on paper.
 
-The draft has four structural pillars: frontier model governance, workforce impact monitoring, cybersecurity reinforcement, and R&D investment. The governance pillar is where builder obligations live.
+The draft has four structural pillars — Frontier AI Governance, Workforce, Cybersecurity, and Research/Development/International Cooperation ([TechPolicy.Press](https://www.techpolicy.press/unpacking-the-great-american-artificial-intelligence-act-of-2026/)). The governance pillar is where builder obligations live.
 
 ### The $500 Million Threshold
 
-The bill defines "large frontier developer" as any company with more than **$500 million in annual gross revenue** that develops frontier AI models. That threshold is load-bearing — it determines who faces hard obligations and who doesn't.
+The bill defines "large frontier developer" as a company with **more than $500 million in gross revenue** for the previous calendar year that has trained a frontier model ([Roll Call](https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/)). That threshold is load-bearing — it determines who faces hard obligations and who doesn't.
 
-Companies explicitly in scope: Anthropic, OpenAI, Google DeepMind, xAI, Meta. The bill does not name them, but the revenue threshold captures exactly that tier.
+Companies plausibly in scope at that revenue tier: Anthropic, OpenAI, Google, Meta, and xAI — the same grouping that coverage of comparable state frontier-safety laws at the $500M threshold names as likely captured ([Illinois SB 315 coverage](https://www.mondaq.com/unitedstates/new-technology/1814142/illinois-sb-315-pioneering-ai-safety-regulations-and-the-future-of-responsible-ai-governance)). The GAAIA bill text itself does not name specific companies.
 
-Companies explicitly out of scope: **open-source developers, startups, and lower-resourced organizations**. The bill's FAQ from Rep. Trahan's office uses those words specifically. If you're a startup building on top of frontier APIs, deploying fine-tuned models, or releasing open weights — you're not a large frontier developer under this threshold.
+Companies explicitly out of scope: **open-source developers, startups, and lower-resourced organizations** — language from [Rep. Trahan's office FAQ on the draft](https://trahan.house.gov/uploadedfiles/2026.06.03_trahan_obernolte_ai_framework_faq.pdf), as summarized by [McDonald Hopkins](https://www.mcdonaldhopkins.com/insights/news/the-great-american-ai-act-what-businesses-need-to-know). If you're a startup building on top of frontier APIs, deploying fine-tuned models, or releasing open weights — you're not a large frontier developer under this threshold.
 
 ### What Large Frontier Developers Must Do
 
-If your company clears $500M and trains frontier models, the GAAIA draft imposes four main requirements:
+If your company clears $500M and trains frontier models, the GAAIA draft imposes four main requirements ([ArentFox Schiff](https://www.afslaw.com/perspectives/ai-law-blog/house-gaaia-discussion-draft-proposes-federal-ai-governance-framework); [DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act)):
 
-**1. Publish a frontier AI framework.** A public-facing plan that covers catastrophic risk thresholds, risk monitoring processes, standards compliance, and planned release dates. The framework must be maintained and updated.
+**1. Publish a frontier AI framework.** A public-facing plan that covers catastrophic risk assessment and mitigation, to be published within a year of enactment and updated annually ([ArentFox Schiff](https://www.afslaw.com/perspectives/ai-law-blog/house-gaaia-discussion-draft-proposes-federal-ai-governance-framework)).
 
-**2. Report critical safety incidents** to both federal and state regulators. The bill does not define the incident threshold in the publicly available summary, but the draft creates reporting channels into CAISI (the new Commerce Department body) and relevant state agencies.
+**2. Report critical safety incidents** to both federal and state regulators. The bill does not define the incident threshold in the publicly available summary, but the draft creates reporting channels into CAISI (the new Commerce Department body) and relevant state agencies ([DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act)).
 
-**3. Submit to semi-annual third-party audits.** This is the sharpest teeth in the bill. Large frontier developers must retain an **Independent Verification Organization (IVO)** — a firm licensed through the new Center for AI Standards and Innovation — that performs verification twice per year. IVOs assess whether the developer's frontier AI framework is adequate and whether its risk monitoring and mitigation processes actually function.
+**3. Submit to semi-annual third-party audits.** This is the sharpest teeth in the bill. Large frontier developers must retain an **Independent Verification Organization (IVO)** — a firm licensed through the new Center for AI Standards and Innovation — that performs verification "semi-annually, and on an ad hoc basis" at the CAISI Director's request ([DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act)). IVOs assess whether the developer's frontier AI framework is adequate and whether its risk monitoring and mitigation processes actually function.
 
-**4. Establish whistleblower protections.** Companies must create formal channels for employees to raise safety, security, or compliance concerns. Retaliation is prohibited.
+**4. Establish whistleblower protections.** Companies must create formal channels for employees to raise safety, security, or compliance concerns, with remedies including double back pay; retaliation is prohibited ([ArentFox Schiff](https://www.afslaw.com/perspectives/ai-law-blog/house-gaaia-discussion-draft-proposes-federal-ai-governance-framework)).
 
-**Penalties:** Developers that fail to comply with audit requirements or make material misrepresentations to an IVO are liable for **$1 million per day** while the violation continues. Civil penalties and injunctions are both available.
+**Penalties:** Developers that fail to comply with audit requirements or make material misrepresentations to an IVO are liable for **up to $1 million per day** while the violation continues, in actions brought by the Attorney General or, in some circumstances, state attorneys general ([DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act); [MediaNama](https://www.medianama.com/2026/06/223-us-bill-great-american-ai-act-state-ai-rules/)). Civil penalties and injunctions are both available.
 
 ### State Preemption: The Development/Deployment Line
 
-The GAAIA's most politically contested provision is a **three-year preemption** of state laws that "specifically regulate the development" of an AI model. The preemption carries a sunset — it expires after three years, giving Congress time to build the federal framework before the question reopens.
+The GAAIA's most politically contested provision is a **three-year preemption** of state laws that "specifically regulate the development of" an AI model, with "development" defined to cover acts performed by a developer prior to deployment ([DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act)). The preemption carries a sunset — it expires after three years, giving Congress time to build the federal framework before the question reopens.
 
-What this preempts, if the bill passes:
-- **California AB 2013** (training data disclosure requirements for model developers)
-- **Portions of California SB 942** (content watermarking on the development side)
-- **State frontier safety laws** in California, New York, and Illinois — the bill would "federalize" these, bringing them under CAISI oversight rather than state enforcement
+What this preempts, if the bill passes ([Roll Call](https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/)):
+- **California AB 2013** (training data transparency requirements for model developers)
+- **California SB 942** (content watermarking provisions)
+- **State frontier safety laws** in California, New York, and Illinois — including [California SB 53](https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/), [New York's RAISE Act](https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027), and [Illinois SB 315](https://www.mondaq.com/unitedstates/new-technology/1814142/illinois-sb-315-pioneering-ai-safety-regulations-and-the-future-of-responsible-ai-governance) — the bill would "federalize" these, bringing them under CAISI oversight rather than state enforcement
 
 What this does **not** preempt:
-- **State deployment laws** — laws regulating how AI is used in employment decisions, housing, credit, medical contexts, and other applications remain fully in force at the state level
+- **State deployment laws** — laws regulating how AI is used in employment decisions, housing, credit, medical contexts, and other applications remain fully in force at the state level ([DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act))
 - The preemption is strictly limited to development, not use
 
-This distinction matters enormously for builders who are not training models but deploying them. **Colorado SB 189**, **Illinois SB 315**, **New York A3411B** — these are deployment laws. They survive the GAAIA preemption. If your AI system makes or assists with high-stakes decisions affecting people's lives, state deployment law is where your compliance risk lives, not federal frontier governance.
+This distinction matters enormously for builders who are not training models but deploying them. **Colorado SB 189** — now an [Automated Decision-Making Technology framework](https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189) covering employment, and other consequential decisions — and **New York A3411B**, a [generative-AI output notice requirement](https://www.nysenate.gov/legislation/bills/2025/A3411/amendment/B), are deployment-side laws that survive the GAAIA preemption. Illinois SB 315 is *not* a deployment law — it is a frontier-developer safety statute in the same category as California SB 53 above, so it falls on the development side of the preemption line, not the surviving side. If your AI system makes or assists with high-stakes decisions affecting people's lives, state deployment law is where your compliance risk lives, not federal frontier governance.
 
 ### The New Standards Body: CAISI
 
-The bill formally creates the **Center for AI Standards and Innovation** inside the Commerce Department, appropriating $100 million per year from 2027 to 2029. CAISI is responsible for:
+The bill formally creates the **Center for AI Standards and Innovation** inside the Commerce Department, appropriating $100 million per year from 2027 to 2029 ([Roll Call](https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/); [ArentFox Schiff](https://www.afslaw.com/perspectives/ai-law-blog/house-gaaia-discussion-draft-proposes-federal-ai-governance-framework)). CAISI is responsible for:
 
-- Licensing Independent Verification Organizations
-- Publishing voluntary standards and guidelines for AI development
-- Supporting open-source maintainers with defensive funding and access to select frontier models for security testing
-- Acting as the federal hub for safety incident reporting
+- Licensing Independent Verification Organizations ([DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act))
+- Publishing voluntary standards and guidelines for AI development ([ArentFox Schiff](https://www.afslaw.com/perspectives/ai-law-blog/house-gaaia-discussion-draft-proposes-federal-ai-governance-framework))
+- Coordinating with CISA, which separately runs a grant program funding open-source maintainers' security patching and requiring AI firms to give them access to frontier models for vulnerability-finding ([Cybersecurity Dive](https://www.cybersecuritydive.com/news/house-ai-bill-regulation-cisa-nist-open-source/822131/))
+- Acting as the federal hub for safety incident reporting ([DLA Piper](https://www.dlapiper.com/en/insights/publications/2026/06/unpacking-the-great-american-ai-act))
 
 CAISI is the institutional backbone of the bill. The IVO licensing function is particularly significant — it creates a private-sector audit market with a federal certification layer, similar to what SOC 2 auditors or PCI QSAs do in security compliance.
 
@@ -123,7 +124,7 @@ Your upstream providers now face federal oversight. In practice, expect to see f
 
 ### If you're deploying AI in high-stakes decisions
 
-**State deployment laws are your compliance surface, not GAAIA.** The federal bill explicitly preserves state authority over AI use in employment, housing, credit, healthcare, and similar domains. Colorado SB 189 (with its RAIN requirement), New York A3411B, and Illinois SB 315 remain in force regardless of whether GAAIA passes. If anything, the federal preemption of development laws may give state legislatures more political bandwidth to strengthen deployment laws, which are currently facing less industry opposition.
+**State deployment laws are your compliance surface, not GAAIA.** The federal bill explicitly preserves state authority over AI use in employment, housing, credit, healthcare, and similar domains. Colorado SB 189 and New York A3411B remain in force regardless of whether GAAIA passes (Illinois SB 315, as noted above, is a development-side frontier safety law, not a deployment law, so it's on the preempted side of the line rather than the surviving side). If anything, the federal preemption of development laws may give state legislatures more political bandwidth to strengthen deployment laws, which are currently facing less industry opposition.
 
 ### If you're a large frontier developer ($500M+ revenue)
 
@@ -141,9 +142,9 @@ The GAAIA is still a discussion draft. The sponsors are actively soliciting feed
 
 ## The Opposition
 
-The preemption provision drew immediate pushback. Brad Carson of Americans for Responsible Innovation called it "a generational mistake." The concern: states have been doing the regulatory work that Congress has been unable or unwilling to do. Preempting their development laws — even for three years, even with a sunset — removes the labs of experimentation that produced Colorado SB 189 and California SB 53 while Congress builds a federal framework that may or may not materialize.
+The preemption provision drew immediate pushback. Brad Carson, president of [Americans for Responsible Innovation](https://ari.us/reps-trahan-obernolte-propose-bill-to-preempt-state-ai-laws/), said "tying their hands would be a generational mistake," arguing the bill "takes the current floor on state AI legislation and turns it into a federal ceiling" ([ARI statement](https://ari.us/reps-trahan-obernolte-propose-bill-to-preempt-state-ai-laws/); reported by [Roll Call](https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/)). The concern: states have been doing the regulatory work that Congress has been unable or unwilling to do. Preempting their development laws — even for three years, even with a sunset — removes the labs of experimentation that produced Colorado SB 189 and California SB 53 while Congress builds a federal framework that may or may not materialize.
 
-The bill's sponsors counter that a patchwork of 50 state development laws creates an impossible compliance burden for companies building models deployed nationally, and that three years is a reasonable window to establish federal standards. That argument has industry support. Whether it has enough political support to pass is a different question.
+The bill's sponsors and supporters counter that a patchwork of state development laws creates a heavy compliance burden for companies building models deployed nationally, and that three years is a reasonable window to establish federal standards ([PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/bipartisan-ai-bill-is-getting-preempted-by-bipartisan-resistance/)). That argument has industry support. Whether it has enough political support to pass is a different question.
 
 ---
 
