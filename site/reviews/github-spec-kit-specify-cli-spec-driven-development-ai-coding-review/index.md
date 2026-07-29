@@ -5,7 +5,7 @@
 
 Most AI coding tools start with code. GitHub Spec Kit starts with a specification.
 
-**GitHub Spec Kit** (`github/spec-kit`) is an open-source CLI toolkit from GitHub that brings Spec-Driven Development (SDD) to any AI coding agent. It shipped publicly in late 2025, hit v0.8.7 on May 7, 2026, and has accumulated 107,000 GitHub stars — making it the most widely adopted open-source SDD tool in the ecosystem, ahead of Amazon Kiro's proprietary IDE.
+**[GitHub Spec Kit](https://github.com/github/spec-kit)** (`github/spec-kit`) is an open-source CLI toolkit from GitHub that brings Spec-Driven Development (SDD) to any AI coding agent. GitHub [open-sourced it in September 2025](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/), it [hit v0.8.7 on May 7, 2026](https://github.com/github/spec-kit/releases/tag/v0.8.7), and by late May 2026 the repo had passed [100,000 GitHub stars](https://github.com/github/spec-kit) — rapid growth for a toolkit that shipped less than a year earlier.
 
 The core proposition: instead of prompting an AI agent to write code immediately, Spec Kit intercepts the workflow and forces a structured four-phase process. The spec is written first. The plan is generated from the spec. Tasks are derived from the plan. Code only appears in the implementation phase, after you've had a chance to review and revise everything that precedes it.
 
@@ -19,7 +19,7 @@ Spec Kit is not an IDE. It is not a model. It is not a platform.
 
 It is a Python CLI and a collection of slash commands that plug into whichever AI coding agent you already use. If you use Claude Code, the Spec Kit slash commands appear in Claude Code's `/` command palette. If you use GitHub Copilot in VS Code, they appear there. If you switch from Cursor to Windsurf next month, Spec Kit moves with you.
 
-This is the fundamental difference from Amazon Kiro. Kiro is a VS Code fork with spec-driven development baked into the IDE itself. You don't choose your model (it's Claude Sonnet and Amazon Nova via Bedrock), and you don't use your existing editor. Kiro is a closed, integrated system.
+This is the fundamental difference from [Amazon Kiro](https://aws.amazon.com/documentation-overview/kiro/). Kiro is a VS Code fork with spec-driven development baked into the IDE itself. You don't choose your model — it routes between Claude Sonnet and Amazon Nova via Amazon Bedrock — and you don't use your existing editor. Kiro is a closed, integrated system. (See our [full Kiro review](/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review/) for details.)
 
 Spec Kit is an open, composable layer. It doesn't care what agent you use. It doesn't care what IDE you're in. It provides the workflow structure; you provide the intelligence.
 
@@ -27,7 +27,7 @@ Spec Kit is an open, composable layer. It doesn't care what agent you use. It do
 
 ## The Workflow: Specify → Plan → Tasks → Implement
 
-The four phases are sequential. Each produces a Markdown artifact that feeds the next. The artifacts are files in your project — version-controlled, reviewable, and editable by humans at any point.
+The four phases are sequential and map to the [core slash commands documented in Spec Kit's README](https://github.com/github/spec-kit/blob/v0.8.7/README.md#available-slash-commands). Each produces a Markdown artifact that feeds the next. The artifacts are files in your project — version-controlled, reviewable, and editable by humans at any point.
 
 ### Phase 1: Specify (`/speckit.specify`)
 
@@ -60,7 +60,7 @@ The plan is decomposed into a **dependency-ordered task list**. Each task is:
 - Annotated with its dependencies (which tasks must complete first)
 - Linked to the spec section it satisfies
 
-An optional command, `/speckit.taskstoissues`, converts the task list into GitHub Issues — enabling standard project tracking without leaving the workflow.
+An optional command, [`/speckit.taskstoissues`](https://github.com/github/spec-kit/blob/v0.8.7/README.md#available-slash-commands), converts the task list into GitHub Issues — enabling standard project tracking without leaving the workflow.
 
 ### Phase 4: Implement (`/speckit.implement`)
 
@@ -70,7 +70,7 @@ The agent executes the task list against the spec and plan. It has structured co
 
 ## Optional Quality Gates
 
-Three optional commands can be inserted between phases to reduce downstream problems:
+[Three optional commands](https://github.com/github/spec-kit/blob/v0.8.7/README.md#available-slash-commands) can be inserted between phases to reduce downstream problems:
 
 | Command | When to Use | What It Does |
 |---|---|---|
@@ -84,17 +84,17 @@ These gates are not mandatory. For simple, well-understood features, skipping th
 
 ## AI Agent Support: 30+ Integrations
 
-Spec Kit's integration model is based on agent-specific command files or skill files that the `specify` CLI installs into your project. Each integration configures how the slash commands present to that specific agent.
+Spec Kit's integration model is based on agent-specific command files or skill files that the `specify` CLI installs into your project. Each integration configures how the slash commands present to that specific agent. The full roster is listed in [Spec Kit's integrations reference](https://github.com/github/spec-kit/blob/v0.8.7/docs/reference/integrations.md); as of v0.8.7 it named 29 integrations plus a Generic fallback.
 
 Supported integrations include:
 
-**Frontier IDE agents:** Claude Code, GitHub Copilot, Cursor, Windsurf, Codex CLI, Amazon Q, Kiro, Cline, Continue, Roo Code
+**Frontier IDE/CLI agents:** [Claude Code](https://www.anthropic.com/claude-code), [GitHub Copilot](https://code.visualstudio.com/), [Cursor](https://cursor.sh/), [Windsurf](https://windsurf.com/), [Codex CLI](https://github.com/openai/codex), [Kiro CLI](https://kiro.dev/docs/cli/), [Roo Code](https://roocode.com/)
 
-**Google ecosystem:** Gemini CLI (which migrates to Antigravity CLI on June 18, 2026)
+**Google ecosystem:** [Gemini CLI](https://github.com/google-gemini/gemini-cli) — Google is [retiring consumer access to Gemini CLI on June 18, 2026](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) in favor of Antigravity, and Spec Kit already ships a dedicated [Antigravity integration](https://antigravity.google/)
 
-**Chinese frontier models:** Qwen Code, Doubao MarsCode, Baidu Comate
+**Agents from Chinese AI labs:** [Qwen Code](https://github.com/QwenLM/qwen-code) (Alibaba), [CodeBuddy CLI](https://www.codebuddy.ai/cli) (Tencent), [Kimi Code](https://code.kimi.com/) (Moonshot AI), [Trae](https://www.trae.ai/) (ByteDance)
 
-**Open-source agents:** OpenHands, Open Codex, Aider, Amp
+**Open-source / independent agents:** [Amp](https://ampcode.com/), [Goose](https://block.github.io/goose/), [opencode](https://opencode.ai/), [Auggie CLI](https://docs.augmentcode.com/cli/overview)
 
 **Plus:** a Generic integration for any agent not on the named list — which means Spec Kit's workflow is portable even to tools not yet formally supported.
 
@@ -104,10 +104,10 @@ The portability is intentional. Teams that rotate between agents (using Claude C
 
 ## Installation
 
-Spec Kit requires Python 3.11 or newer. The recommended installation uses `uv`:
+Spec Kit [requires Python 3.11 or newer](https://github.com/github/spec-kit/blob/v0.8.7/README.md#-prerequisites). The [recommended installation](https://github.com/github/spec-kit/blob/v0.8.7/README.md#-get-started) uses `uv`:
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/github/spec-kit@main
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
 ```
 
 After installation, `specify` is available as a CLI. To initialize a project:
@@ -137,6 +137,8 @@ Both Kiro and Spec Kit implement spec-driven development. The differences matter
 | **Multi-agent** | No | No |
 | **Hooks** | No | Yes (event-driven automations) |
 | **EARS notation** | No | Yes (structured requirements syntax) |
+
+Kiro-side figures per [AWS's Kiro documentation](https://aws.amazon.com/documentation-overview/kiro/); see our [full Kiro review](/reviews/amazon-kiro-aws-agentic-ide-spec-driven-review/) for sourcing on pricing and AWS integrations.
 
 **Spec Kit wins** if your team uses multiple agents, wants portability, or is unwilling to switch IDEs. It's also the lower-friction option — there's no new tool to learn, just slash commands layered on top of what you already use.
 
@@ -188,16 +190,16 @@ This is the right tool for most builders who want to try spec-driven development
 
 | | |
 |---|---|
-| **Repository** | github/spec-kit |
-| **Stars** | 107K (as of May 2026) |
+| **Repository** | [github/spec-kit](https://github.com/github/spec-kit) |
+| **Stars** | ~107K (as of May 2026) |
 | **License** | MIT |
-| **Latest version** | v0.8.7 (May 7, 2026) |
+| **Latest version** | [v0.8.7 (May 7, 2026)](https://github.com/github/spec-kit/releases/tag/v0.8.7) |
 | **CLI package** | specify-cli |
-| **Install** | `uv tool install specify-cli --from git+https://github.com/github/spec-kit@main` |
+| **Install** | `uv tool install specify-cli --from git+https://github.com/github/spec-kit.git` |
 | **Requires** | Python 3.11+ |
 | **Agents supported** | 30+ |
 | **Price** | Free |
-| **Documentation** | github.github.com/spec-kit |
+| **Documentation** | [github.github.com/spec-kit](https://github.github.com/spec-kit/) |
 
 **Rating: 4/5** — Excellent open-source SDD toolkit with broad agent support. Loses one star for static (not living) specs and absence of hook-style automations, both of which Kiro addresses. For portability and zero cost, nothing beats it.
 

@@ -7,11 +7,11 @@
 
 ---
 
-SpaceX filed its S-1 with the SEC on May 20, 2026. Forty-eight hours later, it put the rocket at the center of its IPO story into the sky.
+SpaceX [filed its S-1 with the SEC on May 20, 2026](https://www.satellitetoday.com/finance/2026/05/20/spacexs-ipo-filing-gives-first-look-into-companys-financials/). Forty-eight hours later, it put the rocket at the center of its IPO story into the sky.
 
-Flight 12 was the debut of Starship V3 — the first full vehicle stack to use Block 3 hardware on both booster and ship, with redesigned Raptor 3 engines, a new launch pad (Pad 2 at Starbase, Texas), and the first attempt to deploy actual Starlink hardware from a Starship. Liftoff was May 22 at 6:30 p.m. EDT.
+Flight 12 was the debut of Starship V3 — the [first full vehicle stack to use Block 3 hardware](https://spacenews.com/spacex-launches-first-starship-v3/) on both booster and ship, with redesigned Raptor 3 engines, a new launch pad (Pad 2 at Starbase, Texas), and the first attempt to deploy actual Starlink hardware from a Starship. [Liftoff was May 22 at 6:30 p.m. Eastern](https://spacenews.com/spacex-launches-first-starship-v3/).
 
-For investors heading into the June 4 roadshow, this is the most recent operational data point they have on the vehicle that SpaceX says will eventually slash launch costs by an order of magnitude.
+For investors heading into the [June 4 roadshow](https://www.fool.com/investing/2026/05/17/spacex-accelerates-ipo-timeline-10-things-to-know/), this is the most recent operational data point they have on the vehicle Musk has said [could eventually fly for as little as $2 million per mission](https://techcrunch.com/2019/11/06/elon-musk-says-spacexs-starship-could-fly-for-as-little-as-2-million-per-launch) once mature.
 
 ---
 
@@ -19,29 +19,29 @@ For investors heading into the June 4 roadshow, this is the most recent operatio
 
 ### The Booster: Lost
 
-After stage separation, Super Heavy reoriented and attempted a boostback burn back toward Starbase. The burn failed. Analysis from SpaceX and independent observers suggests one Raptor engine had an energetic event during the boostback — an explosion that cascaded to 16 neighboring engines, disabling them. The booster flipped abnormally, was left with a single ignitable engine during the attempted landing burn, and hit the Gulf of Mexico at approximately 1,450 km/h rather than executing the planned catch attempt at the launch tower.
+After stage separation, Super Heavy reoriented and attempted a boostback burn back toward Starbase. [The booster flipped abnormally, and most of the engines that attempted to relight for the boostback burn failed within seconds](https://techcrunch.com/2026/05/27/faa-orders-spacex-to-investigate-starship-v3-booster-failure/), forcing the burn to end early. Left with only a single ignitable engine during the attempted landing burn, [the booster hit the Gulf of Mexico at roughly 1,450 km/h](https://www.teslarati.com/spacex-starship-v3-flight-12/) rather than executing the planned catch attempt at the launch tower. [The FAA subsequently declared the launch a mishap and grounded Starship pending an investigation](https://spaceflightnow.com/2026/05/27/faa-requires-spacex-led-mishap-investigation-before-resumption-of-starship-launches/).
 
-This is a hardware loss SpaceX has not publicly quantified. Super Heavy boosters are intended to be recovered, reused, and central to SpaceX's claim that Starship's cost-per-kilogram will eventually rival commercial aviation.
+This is a hardware loss SpaceX has not publicly quantified. Super Heavy boosters are intended to be recovered and reused, central to SpaceX's argument that Starship's cost-per-launch will keep falling the way Falcon 9's has.
 
 ### The Ship: Succeeded
 
-One of the ship's six Raptors shut down 36 seconds into the ascent. The vehicle ran a contingency profile — adjusting trajectory to compensate — and completed its objectives. During the suborbital cruise phase, Starship deployed all 20 simulated Starlink satellites one by one, plus two actual modified Starlink satellites equipped with sensors to scan and report on the heat shield during reentry. The ship completed a controlled atmospheric reentry and splashed down in the Indian Ocean at the planned target.
+[One of the ship's six Raptors shut down about 36 seconds into the ascent](https://www.teslarati.com/spacex-starship-v3-flight-12/). The vehicle ran a contingency profile — adjusting trajectory to compensate — and completed its objectives. During the suborbital cruise phase, [Starship deployed 20 Starlink mass simulators, plus two modified satellites carrying cameras that scanned and transmitted imagery of the ship's heat shield](https://spaceq.ca/starship-flight-12-validates-v3-reentry-systems-despite-early-booster-termination/) during reentry. [The ship completed a controlled atmospheric reentry and splashed down in the Indian Ocean at the planned target](https://spacenews.com/spacex-launches-first-starship-v3/).
 
 ---
 
 ## Why the Timing Matters
 
-SpaceX filed its S-1 on May 20. The company raised $75 billion in the largest IPO in history at a $1.75 trillion valuation. Investors who read that prospectus that weekend and then watched the May 22 launch saw both the promise and the gap in a single afternoon.
+SpaceX filed its S-1 on May 20, [targeting a $75 billion raise at up to a $1.75 trillion valuation](https://www.fool.com/investing/2026/05/17/spacex-accelerates-ipo-timeline-10-things-to-know/) — which, if it holds, would make this [the largest IPO in history](https://www.fool.com/investing/2026/05/17/spacex-accelerates-ipo-timeline-10-things-to-know/). Investors who read that prospectus that weekend and then watched the May 22 launch saw both the promise and the gap in a single afternoon.
 
-The ship's success validates the core Starlink narrative. Starlink is what actually makes money: the constellation posted a $1.19 billion profit last quarter, Starlink subscribers crossed 10 million, and Starlink is the primary reason SpaceX's revenues reached $18.67 billion in 2025. The ability to launch and deploy Starlink satellites at scale from Starship is the linchpin of the argument that constellation economics keep improving.
+The ship's success validates the core Starlink narrative. Starlink is what actually makes money: [the Connectivity segment posted $1.19 billion in income from operations in Q1 2026](https://newspaceeconomy.ca/2026/05/30/what-is-starlinks-financial-performance/), [Starlink subscribers reached roughly 10.3 million by March 2026](https://newspaceeconomy.ca/2026/05/30/what-is-starlinks-financial-performance/), and Starlink is the primary reason [SpaceX's revenues reached $18.7 billion in 2025](https://www.satellitetoday.com/finance/2026/05/20/spacexs-ipo-filing-gives-first-look-into-companys-financials/). The ability to launch and deploy Starlink satellites at scale from Starship is the linchpin of the argument that constellation economics keep improving.
 
-The booster loss complicates the reusability narrative. SpaceX's long-term cost argument depends on a Super Heavy booster flying multiple times, just as Falcon 9 boosters do. An engine that explodes during boostback and cascades to 16 others is a V3 hardware maturity problem, not a fundamental physics problem — but it is a problem, and it is the problem that IPO investors will ask about on the roadshow.
+The booster loss complicates the reusability narrative. SpaceX's long-term cost argument depends on a Super Heavy booster flying multiple times, just as [Falcon 9 boosters do](https://spaceflightnow.com/2026/04/18/live-coverage-spacex-attempts-600th-falcon-booster-landing-amid-west-coast-starlink-mission/). [Several of Super Heavy's Raptor 3 engines failed to ignite properly during the boostback burn](https://techcrunch.com/2026/05/27/faa-orders-spacex-to-investigate-starship-v3-booster-failure/), which reads as a V3 hardware maturity problem rather than a fundamental physics problem — but it is a problem, and it is the problem that IPO investors will ask about on the roadshow.
 
 ---
 
 ## The IPO Context
 
-SpaceX's S-1 disclosed 2025 revenue of $18.67 billion and a $4.9 billion net loss. The $1.75 trillion target valuation implies roughly 58-65x forward 2026 revenue. That multiple only works if investors believe the cost structure improves materially over time — which requires Starship to work as advertised.
+SpaceX's S-1 disclosed [2025 revenue of $18.7 billion and a $4.9 billion net loss](https://www.satellitetoday.com/finance/2026/05/20/spacexs-ipo-filing-gives-first-look-into-companys-financials/). The $1.75 trillion target valuation [implies roughly 58-65x forward 2026 revenue](https://www.tradingkey.com/analysis/stocks/us-stocks/261960721-spacex-ipo-is-live-at-135-bull-base-and-bear-cases-for-the-first-90-days-tradingkey), against Wall Street estimates of $22-24 billion in 2026 revenue. That multiple only works if investors believe the cost structure improves materially over time — which requires Starship to work as advertised.
 
 Flight 12 is the 12th test in the program. The first flights were mostly about reaching space at all. The middle flights established ship reentry and reuse. Flight 12 was about the next generation of hardware and the first payload deployment. By the standards of where this program was three years ago, a ship that deploys Starlink sats and hits its splashdown target represents enormous progress.
 
@@ -55,16 +55,16 @@ By the standards of an IPO roadshow pricing at $1.75 trillion, investors will wa
 If the failure was in an individual unit (defective component), SpaceX can isolate and fix it. If it's architectural to the V3 Raptor 3 design in boostback conditions, the fix is more complex.
 
 **2. When does SpaceX expect regular V3 booster catches to begin?**
-The catch system at Starbase is operational; Falcon 9 boosters have now landed over 400 times. The question is when V3 enters that cadence.
+The catch system at Starbase is operational; [Falcon 9 boosters have now landed more than 600 times](https://spaceflightnow.com/2026/04/18/live-coverage-spacex-attempts-600th-falcon-booster-landing-amid-west-coast-starlink-mission/). The question is when V3 enters that cadence.
 
 **3. How does the booster loss affect the Starlink launch manifest?**
-SpaceX has aggressive Starlink Gen3 satellite deployment targets. A booster that can't be recovered adds per-launch cost. How many missions can use V1/V2 hardware in the interim?
+[SpaceX is targeting 2026 to begin regular launches of its third-generation Starlink satellites](https://www.satelliteinternet.com/resources/starlink-roadmap-gigabyte-internet/), which are designed to be deployed from Starship. A booster that can't be recovered adds per-launch cost. How many missions can use V1/V2 hardware in the interim?
 
 **4. What do the two real Starlink satellites deployed on Flight 12 tell you about V3's deployment mechanism?**
 This is actually a positive: the data from those two modified satellites during reentry is engineering gold. Does SpaceX have what it needed?
 
 **5. What is the reuse cadence target for V3 boosters once mature?**
-Falcon 9 boosters have flown 20+ times. The Starship value proposition depends on a booster that flies comparably often. What's the plan-B launch cadence if catches are delayed?
+SpaceX's [most-flown Falcon 9 booster has now flown more than 30 times](https://spaceflightnow.com/2026/02/21/live-coverage-spacexs-most-flown-falcon-booster-to-launch-on-record-33rd-flight/). The Starship value proposition depends on a booster that flies comparably often. What's the plan-B launch cadence if catches are delayed?
 
 ---
 

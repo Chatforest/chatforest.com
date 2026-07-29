@@ -70,7 +70,7 @@
 <hr>
 <p><strong>At a glance:</strong> Claude Opus 4.8 — released May 28, 2026. SWE-Bench Pro: 69.2%. GDPval: 1890. Humanity&rsquo;s Last Exam (with tools): 57.9%. Context window: 1 million tokens. Pricing: $5.00/$25.00 per million tokens (standard); $10.00/$50.00 per million (fast mode). Model ID: <code>claude-opus-4-8</code>. Available on Anthropic API, Amazon Bedrock, Google Vertex AI, Microsoft Foundry. Part of our <strong><a href="/categories/ai-tools/">AI Models &amp; Companies reviews</a></strong>. For context, see the <strong><a href="/reviews/anthropic-claude-opus-4-7-deep-dive/">Opus 4.7 deep dive</a></strong> and the <strong><a href="/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/">Mythos Preview review</a></strong>.</p>
 <hr>
-<p>Anthropic <a href="https://www.anthropic.com/news/claude-opus-4-8">released Claude Opus 4.8 on May 28, 2026</a> — 43 days after Opus 4.7. That pace is fast even by 2026 standards, where the major AI labs have settled into roughly six-to-eight week release cycles for incremental flagship updates. The short interval raises a predictable question: is this a meaningful step or a housekeeping release dressed up as a new model?</p>
+<p>Anthropic <a href="https://www.anthropic.com/news/claude-opus-4-8">released Claude Opus 4.8 on May 28, 2026</a> — 42 days after <a href="https://www.anthropic.com/news/claude-opus-4-7">Opus 4.7 launched on April 16, 2026</a>. That pace is fast even by 2026 standards, where the major AI labs have settled into roughly six-to-eight week release cycles for incremental flagship updates. The short interval raises a predictable question: is this a meaningful step or a housekeeping release dressed up as a new model?</p>
 <p>The numbers answer: it&rsquo;s meaningful. On the two benchmarks that most directly predict real-world coding value — SWE-Bench Pro and GDPval — Opus 4.8 moves ahead of both Opus 4.7 and GPT-5.5. The Dynamic Workflows research preview that ships alongside it is arguably the larger announcement for builders. And a buried confirmation in the release notes matters most of all: Anthropic says a Mythos-class model will be broadly available &ldquo;in the coming weeks.&rdquo;</p>
 <hr>
 <h2 id="benchmark-results">Benchmark results</h2>
@@ -80,52 +80,47 @@
 <li>GPT-5.5: 58.6%</li>
 <li>Gemini 3.1 Pro: 54.2%</li>
 </ul>
-<p>SWE-Bench Pro is the harder version of the canonical SWE-Bench benchmark — it uses novel, post-training-cutoff GitHub issues to reduce data contamination risk. A 4.9-point gain from 4.7 to 4.8, combined with a 10.6-point lead over GPT-5.5, makes Opus 4.8 the strongest publicly-deployed model on production coding tasks as of this writing.</p>
+<p>SWE-Bench Pro is a harder, <a href="https://scale.com/blog/swe-bench-pro">contamination-resistant variant of the original SWE-Bench benchmark</a>: rather than drawing on public post-training-cutoff issues, it sources its task sets from repositories under strong copyleft (GPL-style) licenses plus a private commercial-codebase set, a licensing strategy meant to keep the problems out of model training data. Benchmark figures above are from <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic&rsquo;s launch announcement</a>, corroborated by <a href="https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained">Vellum&rsquo;s independent write-up</a>. A 4.9-point gain from 4.7 to 4.8, combined with a 10.6-point lead over GPT-5.5, makes Opus 4.8 the strongest publicly-deployed model on production coding tasks as of this writing.</p>
 <p><strong>GDPval (knowledge work / economic productivity):</strong> 1890</p>
 <ul>
 <li>Opus 4.7: 1753</li>
 <li>GPT-5.5: 1769</li>
 <li>Opus 4.8 lead over GPT-5.5: 121 points</li>
 </ul>
-<p>GDPval is OpenAI&rsquo;s benchmark that attempts to measure an AI agent&rsquo;s ability to complete economically viable work — the kind of tasks that would have a dollar value in a real organization. Opus 4.8 leads all rivals here despite this being OpenAI&rsquo;s own benchmark. That lead narrowed between Opus 4.7 (where Anthropic trailed GPT-5.5 by 16 points) and Opus 4.8 (where it leads by 121), a reversal that will draw attention.</p>
+<p>GDPval is <a href="https://openai.com/index/gdpval/">OpenAI&rsquo;s benchmark</a> that attempts to measure an AI agent&rsquo;s ability to complete economically viable work — the kind of tasks that would have a dollar value in a real organization. Opus 4.8 leads all rivals here despite this being OpenAI&rsquo;s own benchmark. That lead narrowed between Opus 4.7 (where Anthropic trailed GPT-5.5 by 16 points) and Opus 4.8 (where it leads by 121), a reversal that will draw attention.</p>
 <p><strong>Humanity&rsquo;s Last Exam (multidisciplinary expert reasoning):</strong></p>
 <ul>
 <li>49.8% without tools</li>
 <li>57.9% with tools</li>
 </ul>
-<p>HLE is among the hardest academic benchmarks currently in circulation. Opus 4.8 outperforms all current rivals on both configurations according to Anthropic&rsquo;s published figures.</p>
+<p>HLE, developed by <a href="https://agi.safe.ai/">the Center for AI Safety and Scale AI</a>, is among the hardest academic benchmarks currently in circulation. Opus 4.8 outperforms all current rivals on both configurations according to <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic&rsquo;s published figures</a>.</p>
 <hr>
 <h2 id="the-honesty-improvements">The honesty improvements</h2>
-<p>The benchmark that most distinguishes Opus 4.8 from 4.7 isn&rsquo;t any of the above — it&rsquo;s a behavioral one. Anthropic reports that Opus 4.8 is <strong>four times less likely</strong> than Opus 4.7 to let flaws in code it produces pass without comment.</p>
-<p>In practice, this means: when Opus 4.8 writes code with a bug it knows about, it flags it. When it hits an uncertainty, it says so rather than generating plausible-sounding nonsense. Anthropic describes this as a prosocial improvement — the model &ldquo;reaches new highs on measures of supporting user autonomy and acting in the user&rsquo;s best interest.&rdquo;</p>
+<p>The benchmark that most distinguishes Opus 4.8 from 4.7 isn&rsquo;t any of the above — it&rsquo;s a behavioral one. <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic reports</a> that Opus 4.8 is &ldquo;around four times less likely&rdquo; than Opus 4.7 to let flaws in code it produces pass without comment.</p>
+<p>In practice, this means: when Opus 4.8 writes code with a bug it knows about, it flags it. When it hits an uncertainty, it says so rather than generating plausible-sounding nonsense. Anthropic describes this as a prosocial improvement — the model &ldquo;reaches new highs on our measures of prosocial traits like supporting user autonomy and acting in the user&rsquo;s best interest.&rdquo; <a href="https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment">VentureBeat&rsquo;s coverage</a> reports Anthropic&rsquo;s internal misalignment score improved from roughly 2.5 for Opus 4.7 to roughly 1.9 for Opus 4.8, on par with the more capable, still-restricted Claude Mythos Preview.</p>
 <p>This matters more than it sounds. The reliability failure mode for coding models isn&rsquo;t usually that they get the task completely wrong — it&rsquo;s that they get 90% right and don&rsquo;t alert you to the 10% they&rsquo;re unsure about. A model that hallucinates confidently is harder to use safely than one that hedges where hedging is accurate. Opus 4.8 moves the needle on that property.</p>
 <hr>
 <h2 id="effort-control">Effort Control</h2>
-<p>New to Opus 4.8: a user-selectable effort dial on claude.ai and Cowork.</p>
+<p>New to Opus 4.8: a user-selectable effort dial, <a href="https://www.anthropic.com/news/claude-opus-4-8">available on claude.ai and Cowork</a>. <a href="https://platform.claude.com/docs/en/build-with-claude/effort">Anthropic&rsquo;s effort documentation</a> lists five levels supported on Opus 4.8:</p>
 <ul>
-<li><strong>Low</strong> — faster response, lower rate-limit consumption</li>
-<li><strong>Medium</strong></li>
-<li><strong>High</strong> (default)</li>
-<li><strong>Max</strong> — maximum thinking depth, slower, consumes more rate-limit budget</li>
+<li><strong>Low</strong> — most efficient, with significant token savings and some capability reduction</li>
+<li><strong>Medium</strong> — balanced approach with moderate token savings</li>
+<li><strong>High</strong> (default) — the best overall balance of quality and token efficiency</li>
+<li><strong>Extra</strong> (<code>xhigh</code> in Claude Code) — extended capability for long-horizon agentic and coding work</li>
+<li><strong>Max</strong> — absolute maximum capability with no constraints on token spending</li>
 </ul>
 <p>At High (the default), Opus 4.8 thinks more frequently and deeply than lower tiers, producing higher-quality outputs at a pace that&rsquo;s still practical. At Max, it applies its full reasoning capacity — useful for complex reasoning tasks where latency doesn&rsquo;t matter. At Low, it responds rapidly with reduced reasoning overhead, well-suited for conversational use.</p>
-<p>The API exposes a <code>thinking_effort</code> parameter that accepts the same four levels.</p>
+<p>The API exposes an <a href="https://platform.claude.com/docs/en/build-with-claude/effort"><code>effort</code> field inside <code>output_config</code></a> that accepts the same five levels.</p>
 <p>For Claude API users building agentic systems: exposing effort level as a runtime parameter unlocks a meaningful cost/quality tradeoff that wasn&rsquo;t available in earlier models. A pipeline that needs occasional deep analysis can use Max selectively without paying for it on every call.</p>
 <hr>
 <h2 id="dynamic-workflows-for-claude-code">Dynamic Workflows for Claude Code</h2>
-<p>The larger announcement alongside Opus 4.8 is <strong>Dynamic Workflows</strong> — a research preview in Claude Code that lets the model tackle codebase-scale tasks by dynamically writing orchestration scripts that run tens to hundreds of parallel subagents in a single session.</p>
-<p>The stated use case: a software migration that would take a single session weeks of sequential work can instead be distributed across hundreds of concurrent subagents, with Claude planning the work, executing it, and verifying outputs before surfacing results to the user.</p>
-<p>Anthropic used a concrete example in the announcement: Jarred Sumner (the creator of Bun) used Dynamic Workflows to port Bun from Zig to Rust — approximately 750,000 lines of Rust, 99.8% of the existing test suite passing, and eleven days from first commit to merge. The port was completed with Claude Code running dynamic workflows, not manually.</p>
-<p><strong>Availability:</strong> Dynamic Workflows is available today in research preview via:</p>
+<p>The larger announcement alongside Opus 4.8 is <strong><a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Dynamic Workflows</a></strong> — a research preview in Claude Code that lets the model tackle codebase-scale tasks by dynamically writing orchestration scripts that run tens to hundreds of parallel subagents in a single session.</p>
+<p>The stated use case, per <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic&rsquo;s announcement</a>: &ldquo;Claude Code with Opus 4.8 can now carry out codebase-scale migrations across hundreds of thousands of lines of code from kickoff to merge, with the existing test suite as its bar&rdquo; — work that would otherwise take a single session weeks of sequential effort.</p>
+<p><strong>Availability:</strong> Dynamic Workflows is <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">available today in research preview</a> via:</p>
 <ul>
-<li>Claude Code CLI</li>
-<li>Claude Code Desktop</li>
-<li>Claude Code VS Code extension</li>
-<li>Max, Team, and Enterprise plans (Enterprise requires admin enablement)</li>
-<li>Claude API</li>
-<li>Amazon Bedrock</li>
-<li>Google Vertex AI</li>
-<li>Microsoft Foundry</li>
+<li>Claude Code CLI, Desktop, and the VS Code extension</li>
+<li>Pro, Max, Team, and Enterprise plans (on by default for Max, Team, and Enterprise when using Claude Code via the API; Pro users enable it via configuration; organization admins can manage or disable it)</li>
+<li>Claude API, Amazon Bedrock, Google Vertex AI, and Microsoft Foundry</li>
 </ul>
 <p>The research preview label signals that the feature is production-functional but that the UX and API surface may change before a stable release.</p>
 <p><strong>For builders:</strong> Dynamic Workflows is the most significant change to how Claude Code can be used for large-scale tasks since the Agent tool was introduced. If your team is facing a multi-week migration — framework upgrade, language port, API version migration — it&rsquo;s worth evaluating before committing engineering time to the equivalent manual work.</p>
@@ -141,12 +136,12 @@
 <li>Input: $10.00 per million tokens</li>
 <li>Output: $50.00 per million tokens</li>
 </ul>
-<p>That fast mode pricing is <strong>three times cheaper</strong> than the equivalent for Opus 4.7. The previous fast mode rate for Opus 4.7 was approximately $30/$150 per million — a price that made fast mode economically impractical for most agentic workflows. At $10/$50, it becomes plausible for pipelines where latency matters and cost is a secondary concern. For real-time agentic applications, the 2.5× speed gain at 3× lower cost is a meaningful shift.</p>
+<p>That fast mode pricing is <strong>three times cheaper</strong> than the equivalent for Opus 4.7, per <a href="https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment">VentureBeat&rsquo;s reporting</a> and <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic&rsquo;s own announcement</a>. The previous fast mode rate for Opus 4.7 was $30/$150 per million — a price that made fast mode economically impractical for most agentic workflows. At $10/$50, it becomes plausible for pipelines where latency matters and cost is a secondary concern. For real-time agentic applications, the 2.5× speed gain at 3× lower cost is a meaningful shift.</p>
 <hr>
 <h2 id="mythos-general-availability-the-real-headline">Mythos general availability: the real headline</h2>
-<p>Buried in the Anthropic release notes and confirmed by Reuters: a <strong>Mythos-class model will be broadly available &ldquo;in the coming weeks.&quot;</strong></p>
-<p>This is the important signal. Claude Mythos Preview has been restricted to Project Glasswing participants (AWS, Apple, Cisco, CrowdStrike, Google, JPMorganChase, Microsoft, NVIDIA, Palo Alto Networks, and others) since April 2026, due to its capability to autonomously find and exploit zero-day vulnerabilities at a scale that raised serious concerns about offensive use. See the <strong><a href="/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/">Claude Mythos Preview review</a></strong> for the full technical picture.</p>
-<p>Anthropic&rsquo;s statement indicates the safeguard development work needed to justify broader deployment is nearing completion. VentureBeat&rsquo;s coverage of Opus 4.8 describes the model as having &ldquo;near-Mythos level alignment&rdquo; — suggesting that alignment properties developed for Mythos are already flowing downstream into Opus 4.8&rsquo;s release.</p>
+<p>Buried in the <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic release notes</a> and <a href="https://www.investing.com/news/stock-market-news/anthropic-to-roll-out-claude-mythos-in-coming-weeks-launches-opus-48-4715142">confirmed by Reuters</a>: a <strong>Mythos-class model will be broadly available &ldquo;in the coming weeks.&quot;</strong></p>
+<p>This is the important signal. Claude Mythos Preview has been restricted to <a href="https://www.anthropic.com/glasswing">Project Glasswing</a> participants (AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, the Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks, and others) since the initiative launched on April 7, 2026, due to its capability to autonomously find and exploit zero-day vulnerabilities at a scale that raised serious concerns about offensive use. See the <strong><a href="/reviews/anthropic-claude-mythos-preview-project-glasswing-cybersecurity-review/">Claude Mythos Preview review</a></strong> for the full technical picture.</p>
+<p>Anthropic&rsquo;s statement indicates the safeguard development work needed to justify broader deployment is nearing completion. <a href="https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment">VentureBeat&rsquo;s coverage of Opus 4.8</a> describes the model as having &ldquo;near-Mythos level alignment&rdquo; — suggesting that alignment properties developed for Mythos are already flowing downstream into Opus 4.8&rsquo;s release.</p>
 <p>What this means for builders: within weeks, the most capable publicly-deployed Claude model (currently Opus 4.8 at $5/$25) may be superseded by a Mythos-tier model at an as-yet-unannounced price point. If you&rsquo;re making long-term architectural decisions that depend on frontier capability — complex reasoning, autonomous multi-day tasks, large-scale vulnerability research — waiting a few weeks before committing to Opus 4.8 as your ceiling may be worth it.</p>
 <hr>
 <h2 id="practical-verdict">Practical verdict</h2>
@@ -160,9 +155,18 @@
 <p><strong>Sources:</strong></p>
 <ul>
 <li><a href="https://www.anthropic.com/news/claude-opus-4-8">Introducing Claude Opus 4.8</a> — Anthropic, May 28, 2026 (official announcement, benchmarks, pricing)</li>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-7">Introducing Claude Opus 4.7</a> — Anthropic, April 16, 2026</li>
+<li><a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Introducing dynamic workflows</a> — Claude by Anthropic (availability details)</li>
+<li><a href="https://platform.claude.com/docs/en/build-with-claude/effort">Effort</a> — Anthropic Platform docs (effort levels, API parameter)</li>
+<li><a href="https://platform.claude.com/docs/en/about-claude/models/overview">Models overview</a> — Anthropic Platform docs (context window, model IDs, platform availability)</li>
+<li><a href="https://www.anthropic.com/glasswing">Project Glasswing</a> — Anthropic (Mythos Preview restriction, launch partners, date)</li>
+<li><a href="https://www.investing.com/news/stock-market-news/anthropic-to-roll-out-claude-mythos-in-coming-weeks-launches-opus-48-4715142">Anthropic to roll out Claude Mythos in coming weeks, launches Opus 4.8</a> — Reuters, May 28, 2026</li>
+<li><a href="https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment">Anthropic&rsquo;s Claude Opus 4.8 is here with 3X cheaper fast mode and near-Mythos level alignment</a> — VentureBeat</li>
+<li><a href="https://scale.com/blog/swe-bench-pro">SWE-Bench Pro: Raising the Bar for Agentic Coding</a> — Scale AI (benchmark methodology)</li>
+<li><a href="https://openai.com/index/gdpval/">GDPval</a> — OpenAI (benchmark origin)</li>
+<li><a href="https://agi.safe.ai/">Humanity&rsquo;s Last Exam</a> — Center for AI Safety / Scale AI (benchmark origin)</li>
 <li><a href="https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained">Claude Opus 4.8 Benchmarks Explained</a> — Vellum AI (SWE-Bench Pro, BrowseComp analysis)</li>
 <li><a href="https://llm-stats.com/blog/research/claude-opus-4-8-launch">Claude Opus 4.8 Release, Benchmarks And More</a> — LLM Stats</li>
-<li><a href="https://lushbinary.com/blog/claude-opus-4-8-developer-guide-benchmarks-pricing-dynamic-workflows/">Claude Opus 4.8 Developer Guide: Benchmarks &amp; Pricing</a> — LushBinary (Dynamic Workflows, Effort Control detail)</li>
 </ul>
 
       </div>

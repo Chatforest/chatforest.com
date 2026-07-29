@@ -6,6 +6,7 @@ og_description: "Trump's June 2026 AI EO creates a voluntary 30-day government p
 content_type: "Builder's Log"
 categories: ["AI Policy", "Compliance", "Security"]
 tags: ["ai-regulation", "executive-order", "frontier-models", "cisa", "cybersecurity", "voluntary-framework", "government-access", "compliance", "builder-guide", "trump", "covered-frontier-model"]
+sources_audited: 2026-07-29
 ---
 
 This is Trump's second AI executive order. It is not a follow-on to EO 14365 (December 2025, which focused on preempting state AI laws). It does something different: [it asks frontier AI developers to voluntarily let the government see new models before public release](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/), and it creates government infrastructure for AI-specific cybersecurity coordination. The full builder implications are analyzed by [Latham & Watkins](https://www.lw.com/en/insights/president-trump-signs-executive-order-establishing-ai-cybersecurity-and-frontier-model-framework) and [Skadden](https://www.skadden.com/insights/publications/2026/06/new-ai-executive-order).
@@ -18,7 +19,7 @@ The short builder summary: **nothing is mandatory yet**. But "yet" is the operat
 
 Before getting into what it does, clear away the confusion. This is **not**:
 
-- EO 14365 (December 2025), which directed Commerce, FTC, and DOJ to challenge state AI laws — that is a separate order still in effect
+- [EO 14365](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/) (December 2025), which pushes a national AI policy framework and directs federal agencies — including DOJ litigation and FTC enforcement — to challenge state AI laws — that is a separate order still in effect
 - A mandatory licensing or preclearance regime — the order explicitly bars reading it that way
 - A technical standard for AI safety — no model card requirements, no mandatory eval disclosures
 - An export control update — Commerce BIS rules remain separate
@@ -29,32 +30,32 @@ The order is titled "Promoting Advanced Artificial Intelligence Innovation and S
 
 ## The Two-Part Structure
 
-### Part 1: Cybersecurity Infrastructure (30-Day Deadlines)
+### Part 1: Cybersecurity Infrastructure (30- and 60-Day Deadlines)
 
-Four things happen within 30 days of June 2 (by roughly July 2, 2026):
+Four things happen, three within 30 days of June 2 (by roughly July 2, 2026) and one within 60 days (by roughly August 1, 2026):
 
-**CISA binding operational directives.** CISA must issue directives to civilian federal agencies prioritizing cyber defense of government AI systems, expand AI-enabled defensive tooling programs, and facilitate access to AI security tools for state/local authorities, rural hospitals, community banks, and local utilities. If you provide AI tooling to any of these entities, CISA's new directives will affect your procurement conversations — these entities will cite the directives when asking about your security posture.
+**CISA binding operational directives.** [CISA must issue directives](https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-promotes-advanced-artificial-intelligence-innovation-and-security/) to civilian federal agencies prioritizing cyber defense of government AI systems, expand AI-enabled defensive tooling programs, and facilitate access to AI security tools for state/local authorities, rural hospitals, community banks, and local utilities. If you provide AI tooling to any of these entities, CISA's new directives will affect your procurement conversations — these entities will cite the directives when asking about your security posture.
 
-**AI Cybersecurity Clearinghouse.** Treasury, NSA, and CISA must form a coordinating body that deconflicts vulnerability scanning, validates vulnerabilities in AI systems, and coordinates patch distribution across government and critical infrastructure. This is the first formal U.S. government structure for AI-specific vulnerability coordination — comparable to CERT but AI-targeted. Participation is industry-voluntary but this is the emerging venue for responsible disclosure of AI system vulnerabilities.
+**AI Cybersecurity Clearinghouse.** [Treasury, NSA, and CISA must form](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/) a coordinating body that deconflicts vulnerability scanning, validates vulnerabilities in AI systems, and coordinates patch distribution across government and critical infrastructure. Participation is industry-voluntary but this is the emerging venue for responsible disclosure of AI system vulnerabilities.
 
-**National Security and Military Systems.** Separate 30-day mandates apply to the Committee on National Security Systems and to the Secretary of War (the administration's name for the Department of Defense) to harden classified and military AI systems. If you hold defense contracts involving AI, expect new requirements to flow from these reviews.
+**National Security and Military Systems.** Separate 30-day mandates apply to the Committee on National Security Systems and to the Secretary of War — [the title Trump's September 2025 order authorized as a secondary name for the Secretary of Defense](https://www.whitehouse.gov/fact-sheets/2025/09/fact-sheet-president-donald-j-trump-restores-the-united-states-department-of-war/) — to harden classified and military AI systems. If you hold defense contracts involving AI, expect new requirements to flow from these reviews.
 
-**OMB and OPM (60-day).** OMB must identify federal grants available for AI vulnerability detection. OPM must expand hiring pathways for cybersecurity specialists. These create downstream opportunities for AI security tooling vendors.
+**OMB and OPM (60-day).** [OMB must identify federal grants available for AI vulnerability detection; OPM must expand hiring pathways for cybersecurity specialists](https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-promotes-advanced-artificial-intelligence-innovation-and-security/). These create downstream opportunities for AI security tooling vendors.
 
 ### Part 2: Voluntary Frontier Model Review Framework (60-Day Buildout)
 
 This is the provision that matters most for frontier AI developers.
 
-Within 60 days (by roughly August 1, 2026), Treasury, NSA, and CISA must jointly:
+[Within 60 days (by roughly August 1, 2026), Treasury, NSA, and CISA must jointly](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/):
 
-1. **Define "covered frontier model"** via a classified, multilayered benchmarking process assessing advanced cyber capabilities of AI models. The threshold is not yet defined — this will be the central stakeholder battle of summer 2026.
+1. **Define "covered frontier model"** via a classified benchmarking process assessing advanced cyber capabilities of AI models. The threshold is not yet defined — this will be the central stakeholder battle of summer 2026.
 
 2. **Establish a voluntary framework** through which developers can:
    - Request the government evaluate whether a model in development meets the covered-frontier threshold
    - Provide the government prerelease access to the model for **up to 30 days** before releasing to "other trusted partners"
    - Work with the government to select which outside partners receive early access at all
 
-Three things to understand about the 30-day window: it is measured against release to "other trusted partners," not against public release. The government is asking to see models before your design partners, enterprise design partners, and trusted API preview customers see them — not before the public launch. Second, this was reduced from a 90-day window in the May 2026 draft that leaked. The reduction came after industry lobbying. Third, it is voluntary — participation earns you no formal benefit in the current order text, though procurement leverage is expected to emerge.
+Three things to understand about the 30-day window: it is measured against release to "other trusted partners," not against public release. The government is asking to see models before your design partners, enterprise design partners, and trusted API preview customers see them — not before the public launch. Second, [this was reduced from a 90-day window in an earlier draft that Trump reportedly rejected in May 2026](https://www.theregister.com/ai-and-ml/2026/06/02/trump-ai-executive-order-sets-30-day-frontier-model-review/5250322) after pushback favoring a more pro-innovation approach. Third, it is voluntary — participation earns you no formal benefit in the current order text, though procurement leverage is expected to emerge.
 
 ---
 
@@ -62,11 +63,11 @@ Three things to understand about the 30-day window: it is measured against relea
 
 This is the definition that does not yet exist and will determine who this framework actually applies to.
 
-The order directs agencies to develop a **classified** benchmarking process. The word "classified" is significant: the threshold criteria will not be public. AI developers will be able to ask the government whether their model crosses the threshold, but they will not be able to read the criteria in advance. This creates an asymmetric information problem that law firm analysts are already flagging.
+[The order directs agencies to develop a **classified** benchmarking process](https://www.wiley.law/alert-New-AI-Executive-Order-Addresses-Frontier-Models-and-Cybersecurity-Vulnerabilities). The word "classified" is significant: the threshold criteria will not be public. AI developers will be able to ask the government whether their model crosses the threshold, but the assessment methodology itself is not disclosed in advance — an asymmetric-information problem for anyone trying to plan around the threshold.
 
 The order's stated concern is "advanced cyber capabilities" — not general capability, not benchmark performance, not multimodality. It is asking specifically about whether a model could be used to conduct sophisticated cyber attacks. This framing suggests the threshold is intended to be high (covering a small number of the most capable models), not broad.
 
-Anthropic's Claude is cited in policy coverage as an example of the kind of model that could be subject to review. That does not mean current Claude models meet a threshold that has not yet been defined — it means the order is oriented toward the frontier.
+[The Register's coverage of the order](https://www.theregister.com/ai-and-ml/2026/06/02/trump-ai-executive-order-sets-30-day-frontier-model-review/5250322) points to Anthropic's Project Glasswing early-access program for its Claude Mythos Preview model as the kind of existing arrangement the framework would now give the government a role in — not as confirmation that Claude itself has been designated a "covered frontier model." That designation does not yet exist; the order is oriented toward the frontier generally, not any named model.
 
 **What to watch for:** The 60-day window closes around August 1, 2026. Expect leaks about the classified benchmarking criteria, substantial lobbying from labs and open-source advocates, and debate about whether the process violates the Administrative Procedure Act's notice-and-comment requirements (which classified rulemaking does not follow).
 
@@ -76,7 +77,7 @@ Anthropic's Claude is cited in policy coverage as an example of the kind of mode
 
 The framework gives the government a role in selecting which "trusted partners" receive early access to covered frontier models. This is the provision that has drawn the most criticism from policy analysts.
 
-WilmerHale's analysis notes that this grants the administration "significant discretion in determining which companies receive early access" and warns it could "open the door to potential weaponization against companies." A lab that participates in the voluntary framework and lets the government select which downstream partners get early access has effectively given the administration influence over its commercial relationships.
+Cato Institute policy analyst Juan Londoño told [The Register](https://www.theregister.com/ai-and-ml/2026/06/02/trump-ai-executive-order-sets-30-day-frontier-model-review/5250322) that the government's role in deciding which "trusted partners" can access these models "gives the executive a great deal of discretion" and warned "this could open the door to potential weaponization against companies that have any sort of conflict with the administration." A lab that participates in the voluntary framework and lets the government select which downstream partners get early access has effectively given the administration influence over its commercial relationships.
 
 This is not hypothetical — the prior administration used procurement processes for similar leverage. Whether the current administration uses this provision that way is unknown. Builders advising labs on whether to participate should flag this as a negotiation point: the lab should insist on veto power over partner selection, not just "collaboration" with the government to select.
 
@@ -131,7 +132,7 @@ The directives will also push government agencies toward AI-enabled defensive to
 | ~July 2, 2026 | AI Cybersecurity Clearinghouse formation (Treasury, NSA, CISA) |
 | ~July 2, 2026 | DOD/national security systems cyber hardening mandates |
 | ~August 1, 2026 | "Covered frontier model" classified benchmarking process defined |
-| ~August 1, 2026 | Voluntary prerelease review framework framework published |
+| ~August 1, 2026 | Voluntary prerelease review framework published |
 | ~August 1, 2026 | OMB identifies federal AI vulnerability detection grant programs |
 | ~August 1, 2026 | OPM expands cybersecurity specialist hiring pathways |
 | Ongoing | Stakeholder pressure to shape "covered frontier model" threshold |
@@ -140,7 +141,7 @@ The directives will also push government agencies toward AI-enabled defensive to
 
 ## What This Order Is Explicitly Not
 
-The order contains a specific non-construction clause: nothing in it authorizes "the creation of a mandatory governmental licensing, preclearance, or permitting requirement for the development, publication, release, or distribution of new AI models, including frontier models."
+[The order contains a specific non-construction clause](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/): nothing in it authorizes "the creation of a mandatory governmental licensing, preclearance, or permitting requirement for the development, publication, release, or distribution of new AI models, including frontier models."
 
 This is real protection. The administration deliberately chose a voluntary structure and explicitly prohibited reading the order as creating mandatory licensing. That is a meaningful commitment — it is in the text of the order, and using this framework to establish de facto mandatory requirements would require a new order or legislation.
 
@@ -150,7 +151,7 @@ What the protection does not cover: procurement requirements, contractual terms,
 
 ## Relationship to the December 2025 EO
 
-EO 14365 (December 2025) directed federal agencies to challenge state AI laws and issued a National Policy Framework urging Congressional preemption. It remains in effect and separate.
+[EO 14365 (December 2025) directed federal agencies to challenge state AI laws and issued a National Policy Framework urging Congressional preemption](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/). It remains in effect and separate.
 
 The June 2026 order does not address state law preemption. If you are tracking both state compliance and federal security frameworks, you are now tracking two separate Trump AI orders:
 

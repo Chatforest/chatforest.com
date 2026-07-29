@@ -7,11 +7,11 @@
 
 ---
 
-**Launch update (June 4, 2026):** Weights are live. Nemotron 3 Ultra is available on HuggingFace, OpenRouter, ModelScope, and NVIDIA NIM as of June 4. Thirteen early adopters confirmed: Accenture, CrowdStrike, Palantir, Perplexity, and others. Ultra pricing on OpenRouter has not yet been indexed publicly — check [openrouter.ai/nvidia](https://openrouter.ai/nvidia) directly for current rates. Everything below was accurate at launch; we will update with confirmed pricing once it is stable.
+**Launch update (June 4, 2026):** Weights are live. Nemotron 3 Ultra is available on HuggingFace, OpenRouter, ModelScope, and NVIDIA NIM as of June 4 ([NVIDIA Technical Blog](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/)). Thirteen early adopters confirmed: Accenture, Cadence, CrowdStrike, Cursor, Deloitte, EY, Oracle Cloud Infrastructure, Palantir, Perplexity, ServiceNow, Siemens, Synopsys, and Zoom ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models)). Ultra pricing on OpenRouter has not yet been indexed publicly — check [openrouter.ai/nvidia](https://openrouter.ai/nvidia) directly for current rates. Everything below was accurate at launch; we will update with confirmed pricing once it is stable.
 
 ---
 
-Jensen Huang announced Nemotron 3 Ultra from the stage in Taipei. "Open innovation is the foundation of AI progress," he said. "With Nemotron, we're transforming advanced AI into an open platform that gives developers the transparency and efficiency they need to build agentic systems at scale."
+Jensen Huang announced Nemotron 3 Ultra from the stage in Taipei on June 1, 2026 ([Computex 2026 keynote coverage](https://www.tomshardware.com/tech-industry/nvidia-keynote-computex-2026-gtc-taipei-where-to-watch)). "Open innovation is the foundation of AI progress," he said. "With Nemotron, we're transforming advanced AI into an open platform that gives developers the transparency and efficiency they need to build agentic systems at scale." ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models))
 
 That framing — agentic, open, at scale — is precise. Nemotron 3 Ultra is not competing on being the smartest model in the world. It is competing on being the fastest open frontier model with a US data residency story, commercial licensing, and a published training recipe.
 
@@ -21,25 +21,25 @@ On speed, the claim is strong. On intelligence ranking, it leads every US open-w
 
 ## Architecture
 
-Nemotron 3 Ultra uses what NVIDIA calls a **Hybrid Latent MoE** architecture. Three components work together:
+Nemotron 3 Ultra uses what NVIDIA's technical report calls a **hybrid Mamba-Attention Mixture-of-Experts architecture** ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf), [NVIDIA Nemotron developer page](https://developer.nvidia.com/nemotron)). Three components work together:
 
 - **Mamba-2 state-space layers:** Efficient sequence processing that scales better than attention for very long contexts. This is the primary engine for handling the 1-million-token context window.
 - **Transformer attention blocks:** Retained for tasks where attention mechanisms outperform state-space models.
-- **Mixture-of-Experts routing:** 550B total parameters, 55B activated per token. 10:1 sparsity ratio; approximately 90% of parameters are dormant on any given forward pass.
+- **Mixture-of-Experts routing (LatentMoE):** 550B total parameters, 55B activated per token — a 10:1 sparsity ratio, meaning roughly 90% of parameters are dormant on any given forward pass ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)).
 
-The combination lets Ultra maintain frontier-class quality while dramatically reducing the compute cost per token compared to a dense 550B model. A dense model at this scale would require roughly 10x the compute per inference call.
+The combination lets Ultra maintain frontier-class quality while dramatically reducing the compute cost per token compared to a dense 550B model.
 
-**Multi-Token Prediction (MTP):** The model is trained to predict multiple future tokens simultaneously, not just the next one. This is one of the mechanisms behind the 300+ tokens/second throughput claim — the system generates multiple tokens per forward pass rather than one.
+**Multi-Token Prediction (MTP):** The model is trained with two shared-weight MTP heads to predict multiple future tokens simultaneously, accelerating inference via speculative decoding ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)).
 
-**Training precision:** NVFP4 (NVIDIA's 4-bit floating point format, native to Blackwell architecture). Approximately 85% of layers are NVFP4. Attention and projection layers are retained in BF16/MXFP8. This is designed specifically to maximize throughput on GB300 and Blackwell Ultra platforms.
+**Training precision:** NVFP4 (NVIDIA's 4-bit floating point format, native to Blackwell architecture). NVIDIA's technical report states the final 15% of the network (16 of 108 layers) — Mamba output projections, latent projections, QKV/attention projections, MTP layers, and embedding layers — was kept in higher precision, meaning roughly 85% of layers trained in NVFP4 ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)).
 
-**Post-training:** Reinforcement learning across interactive environments, specifically targeting multi-step agentic task execution. NVIDIA describes this as the differentiating factor: "the first open frontier model built for agents."
+**Post-training:** Supervised fine-tuning, reinforcement learning with verifiable reward (RLVR), and multi-teacher on-policy distillation (MOPD) across interactive agentic environments, targeting multi-step tool use, terminal operation, and software-engineering task execution ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)). NVIDIA positions Ultra as its first open model built around this agentic-loop training rather than single-turn conversation quality ([NVIDIA Technical Blog](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/)).
 
 ---
 
 ## Benchmarks: What the Numbers Actually Show
 
-On the **Artificial Analysis Intelligence Index** (as of June 2026):
+On the **[Artificial Analysis Intelligence Index](https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-launch-announced)** (as of June 2026):
 
 | Model | Intelligence Index |
 |---|---|
@@ -49,16 +49,11 @@ On the **Artificial Analysis Intelligence Index** (as of June 2026):
 | Nemotron 3 Super 120B (NVIDIA) | 36 |
 | GPT-oss-120B (OpenAI) | 33 |
 
-Nemotron 3 Ultra is the top-ranked US open-weights model. It is not the top-ranked open-weights model overall. Kimi K2.6 leads by a margin of 6 points (54 vs 48). Decrypt's headline said it plainly: "Nvidia Releases Its Best Open AI Model Yet — But Still Lags Behind China."
+Nemotron 3 Ultra is the top-ranked US open-weights model. It is not the top-ranked open-weights model overall. Kimi K2.6 leads by a margin of 6 points (54 vs 48). Decrypt's headline said it plainly: "[Nvidia Releases Its Best Open AI Model Yet — But Still Lags Behind China](https://decrypt.co/369689/nvidia-open-ai-model-nemotron-3-ultra)."
 
-**Task-specific benchmarks reported by NVIDIA:**
-- HumanEval (coding): 92.1%
-- MMLU (knowledge): 89.4%
-- Long-context RULER at 256K tokens: 94.2%
-- Long-context RULER at 1M tokens: 95% (keynote slide)
-- Agent productivity benchmark: 91%
+**Benchmarks reported by NVIDIA's technical report** ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)) use a different suite than older-generation LLM benchmarks like HumanEval or MMLU: Terminal-Bench 2.1, SWE-Bench Verified and Multilingual, TauBench V3, GDPVal, ProfBench, PinchBench, IOI 2025, and RULER at 1M context. NVIDIA's technical blog reports Ultra scores **95% on RULER at 1M tokens** and SWE-Bench Verified scores in the 65–70.4% range depending on harness ([NVIDIA Technical Blog](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/)). NVIDIA describes the model as achieving "on-par accuracy" with other state-of-the-art open LLMs on this suite while running substantially faster ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)).
 
-**Speed:** On a pre-release DeepInfra endpoint, Artificial Analysis recorded 300+ tokens/second. Comparably-sized Chinese open models typically run at 50–100 tokens/second in available hosted deployments, partly due to deployment optimization differences. NVIDIA claims 5x faster inference than "comparable competitors" and 30% lower inference cost than "open frontier models in its class." The comparison baselines are not formally specified.
+**Speed:** On a pre-release DeepInfra endpoint, Artificial Analysis recorded over 300 output tokens/second; it notes peer Chinese-lab open models (DeepSeek, Kimi) are typically served at 50–100 tokens/second in the market today ([Artificial Analysis](https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-launch-announced), [Decrypt](https://decrypt.co/369689/nvidia-open-ai-model-nemotron-3-ultra)). NVIDIA's own technical report measured 5.9x, 4.8x, and 1.6x higher inference throughput than GLM-5.1-754B-A40B, Kimi-K2.6-1T-A32B, and Qwen-3.5-397B-17B respectively, on an 8K-input/64K-output setting ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)). Separately, NVIDIA's technical blog claims Ultra lowers the cost of completing agentic tasks by up to 30%, based on token-efficiency comparisons on SWE-bench and Terminal-Bench 2.0 ([NVIDIA Technical Blog](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/)).
 
 **What matters for builders:** The speed advantage is real and substantial in the context of US-hosted open-weights models. The intelligence gap versus Kimi K2.6 is also real. If raw reasoning performance is the primary constraint, Ultra is not the frontier. If throughput, latency, and US deployment options are the primary constraints, Ultra is the current leader.
 
@@ -66,9 +61,9 @@ Nemotron 3 Ultra is the top-ranked US open-weights model. It is not the top-rank
 
 ## Context Window
 
-**1 million tokens.** The 95% RULER score at 1M tokens (from the keynote slide) is the supporting benchmark. RULER (Realistic Uniform Long-context Retrieval) tests the model's ability to retrieve specific information from very long contexts — a better signal than simple "accepts N tokens" claims.
+**1 million tokens.** NVIDIA's technical blog reports a 95% RULER score at 1M tokens as the supporting benchmark ([NVIDIA Technical Blog](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/)). RULER (Realistic Uniform Long-context Retrieval) tests the model's ability to retrieve specific information from very long contexts — a better signal than simple "accepts N tokens" claims.
 
-For comparison, most frontier models in the 100–200K token range score in the high 80s to mid-90s on RULER at their claimed limits. A 95% score at 1M tokens, if it holds under third-party evaluation, would be a meaningful long-context capability.
+A 95% score at 1M tokens, if it holds under third-party evaluation, would be a meaningful long-context capability.
 
 ---
 
@@ -82,13 +77,13 @@ For comparison, most frontier models in the 100–200K token range score in the 
 - **OpenRouter:** Vendor-neutral API access
 - **NVIDIA NIM:** Hosted microservice at build.nvidia.com — lowest-friction path for most builders
 
-NVIDIA is also releasing the training recipes, data toolchain, and evaluation scripts alongside the weights.
+NVIDIA is also releasing the training recipes, data toolchain, and evaluation scripts alongside the weights ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)).
 
-**License:** NVIDIA Open Model License (also called the NVIDIA Open Model Agreement). Key terms:
-- Commercial use permitted
-- Modification and distribution permitted
-- No attribution to NVIDIA required in outputs
-- Slightly more restrictive than Apache 2.0 or MIT on certain redistribution conditions — read the full license before packaging for SaaS redistribution
+**License:** [NVIDIA Nemotron Open Model License](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-nemotron-open-model-license). Key terms:
+- Commercial use permitted, without royalty fees
+- Modification and distribution of derivative works permitted
+- No attribution required in model outputs, but a "Licensed by NVIDIA Corporation under the NVIDIA Nemotron Model License" notice must accompany any distributed derivative work
+- Includes a patent-litigation termination clause not found in Apache 2.0/MIT — read the full license before packaging for SaaS redistribution
 
 For most builder use cases (calling the API, running on your own infrastructure, fine-tuning for internal products), the license is permissive enough to proceed without legal complexity. For redistribution or embedding in a product sold to others, verify the specific terms.
 
@@ -96,13 +91,9 @@ For most builder use cases (calling the API, running on your own infrastructure,
 
 ## Hardware Requirements for Self-Hosting
 
-This model cannot run on consumer hardware. The scale requires datacenter infrastructure:
+This model cannot run on consumer hardware. NVIDIA's own NIM deployment reference lists minimum hardware as 4x GB200, 4x B200, 4x GB300, 4x B300, or 8x H100 GPUs, with a single-node 4x B200 configuration recommended as sufficient to fit the NVFP4 weights plus KV cache with headroom ([NVIDIA NIM deployment reference](https://docs.api.nvidia.com/nim/reference/nvidia-nemotron-3-ultra-550b-a55b)).
 
-- **Minimum:** A100 or H100 cluster, 300GB+ VRAM after quantization
-- **Recommended:** Multi-GPU setup (NVLink fabric preferred)
-- **Optimal:** NVIDIA DGX with NVLink, GB300/Blackwell Ultra platforms with native NVFP4 support
-
-The NVFP4 format reduces VRAM requirements by 50–75% compared to BF16, but 55B active parameters at FP4 precision still requires substantial GPU memory. Budget for the infrastructure cost before planning a self-hosted deployment.
+Budget for datacenter-class infrastructure cost before planning a self-hosted deployment.
 
 **For most builders:** NVIDIA NIM or OpenRouter API access is the practical starting point. The self-hosted path is for organizations with existing DGX infrastructure or a specific data residency requirement that precludes API usage.
 
@@ -110,17 +101,13 @@ The NVFP4 format reduces VRAM requirements by 50–75% compared to BF16, but 55B
 
 ## Fine-Tuning
 
-NVIDIA is releasing a **Nemotron 3 Ultra Base** checkpoint — the pre-instruction-tuned weights — as a starting point for custom fine-tuning and RL post-training pipelines.
+NVIDIA is releasing a **Nemotron 3 Ultra 550B-A55B Base** checkpoint — the pre-instruction-tuned weights, alongside the post-trained and NVFP4-quantized checkpoints — as a starting point for custom fine-tuning and RL post-training pipelines ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf)).
 
-The toolchain includes:
-- **NeMo-RL:** Distributed reinforcement learning framework for post-training
-- **NeMo-Gym:** Interactive environment simulation for agentic RL training
-- **NVFP4 training schedules and quantization recipes**
-- **Data-designer toolchain:** Corpus curation tools (deduplication, sequence structuring)
+The toolchain NVIDIA describes in its technical report includes reinforcement learning and distillation infrastructure (MOPD, RLVR), a Nemo Data Designer synthetic-data pipeline, and NVFP4 training recipes ([NVIDIA Nemotron 3 Ultra Technical Report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf); training recipes and code at [github.com/NVIDIA-NeMo/Nemotron](https://github.com/NVIDIA-NeMo/Nemotron)).
 
-If you are building a specialized agent — one that operates in a specific domain, follows domain-specific protocols, or needs to behave differently from a general assistant — the Ultra Base + NeMo-RL combination is NVIDIA's intended path.
+If you are building a specialized agent — one that operates in a specific domain, follows domain-specific protocols, or needs to behave differently from a general assistant — the Ultra Base checkpoint plus NVIDIA's published RL recipe is the intended path.
 
-The Nano variant already has community fine-tuning support (Unsloth). Ultra community tooling will develop over the weeks following the June 4 launch.
+Community fine-tuning tooling, including [Unsloth](https://unsloth.ai/docs/models/nemotron-3-ultra), already documents support for running and fine-tuning Nemotron 3 Ultra locally ([NVIDIA Nemotron developer page](https://developer.nvidia.com/nemotron)).
 
 ---
 
@@ -130,11 +117,11 @@ The Nemotron 3 family released in 2026 covers a range of size/speed trade-offs:
 
 | Model | Total Params | Active Params | Notes |
 |---|---|---|---|
-| Nemotron 3 Nano Omni | 30B | 3B | Multimodal (text, image, audio, video); edge to DGX |
-| Nemotron 3 Super | 120B | 12B | Mid-tier; $0.09/1M input on OpenRouter |
+| Nemotron 3 Nano Omni | 30B | 3B | Multimodal (text, image, audio, video) ([NVIDIA Blog](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/)) |
+| Nemotron 3 Super | 120B | 12B | Mid-tier; ~$0.085–0.09/1M input on OpenRouter ([OpenRouter pricing](https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b/pricing)) |
 | Nemotron 3 Ultra | 550B | 55B | Frontier-class reasoning; datacenter only |
 
-For most builders, the decision is whether Ultra's intelligence gain over Super justifies the infrastructure cost. On OpenRouter, Super pricing is $0.09/1M input tokens. Ultra pricing was not confirmed before the June 4 launch — expect it to be significantly higher.
+For most builders, the decision is whether Ultra's intelligence gain over Super justifies the infrastructure cost. Ultra pricing was not confirmed before the June 4 launch — expect it to be significantly higher than Super's.
 
 If the task is multi-step agentic reasoning, complex code generation, or deep analytical tasks, Ultra is the right tier. If the task is straightforward content generation, classification, or moderate-complexity reasoning, Super may deliver adequate quality at lower cost.
 
@@ -151,7 +138,7 @@ If the task is multi-step agentic reasoning, complex code generation, or deep an
 
 **Do not choose Nemotron 3 Ultra if:**
 - Maximum reasoning quality is the primary criterion — Kimi K2.6 leads on benchmarks
-- Multilingual capability is critical — Qwen 3 significantly outperforms on Asian languages
+- Multilingual capability, especially in Asian languages, is critical — Nemotron 3 does not market multilingual performance as a differentiator; evaluate dedicated multilingual models for that requirement
 - You need to self-host without datacenter infrastructure
 - You are building multimodal applications — use Nano Omni instead
 - Budget is the primary constraint — wait for confirmed Ultra pricing before committing
@@ -165,7 +152,7 @@ If the task is multi-step agentic reasoning, complex code generation, or deep an
 - **June 4:** Weights drop on HuggingFace; NIM endpoint goes live; OpenRouter pricing confirmed
 - **Community benchmarks:** Third-party reproduction of the 300+ tokens/second and RULER scores will be available within days of the weight release
 - **Pricing disclosure:** Ultra pricing on OpenRouter and NIM will determine cost-per-task economics compared to closed frontier models
-- **Community fine-tuning support:** Unsloth and similar frameworks will take time to support the NVFP4 weight format
+- **Community fine-tuning support:** watch for broader framework support beyond Unsloth's initial coverage for the NVFP4 weight format
 - **Kimi K2.6 availability:** If Moonshot AI opens a US-region API or OSS release improves, the intelligence gap becomes the primary competitive question
 
 ---
