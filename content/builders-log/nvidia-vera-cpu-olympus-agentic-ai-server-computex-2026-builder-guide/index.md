@@ -6,6 +6,7 @@ og_description: "NVIDIA Vera CPU is not another ARM server chip. It is purpose-b
 content_type: "Builder's Log"
 categories: ["AI Infrastructure", "Hardware", "AI Industry"]
 tags: ["nvidia", "vera-cpu", "computex", "olympus", "agentic-ai", "server", "infrastructure", "rl-training", "builders-log"]
+sources_audited: 2026-07-29
 ---
 
 [NVIDIA announced the Vera CPU](https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents) at the June 1 COMPUTEX 2026 keynote. The name has appeared in coverage of the Vera Rubin NVL72 rack — where 36 Vera CPUs pair with 72 Rubin GPUs in a liquid-cooled chassis — but the CPU is also a standalone server product shipping H2 2026 from 18+ OEM partners and a handful of cloud providers.
@@ -20,29 +21,29 @@ Whether that claim holds in production is something H2 2026 deployments will pro
 
 Vera is a server CPU, not a laptop chip or a GPU. It ships in rack server form factors from standard OEM partners — the same companies (Dell, HPE, Supermicro) that sell x86 servers. The target workloads are the CPU-bound jobs that run alongside GPU-accelerated inference in an AI factory: agent orchestration, reinforcement learning loops, memory-intensive data processing, and graph analytics.
 
-NVIDIA has called it "the first server CPU purpose-built for the age of agentic AI." Whether that framing is accurate depends on whether the Olympus core architecture actually delivers meaningfully different performance characteristics for those workloads than a modern x86 chip — which the technical data suggests it does, for specific access patterns.
+NVIDIA has called it ["the world's first processor purpose-built for the age of agentic AI and reinforcement learning"](https://nvidianews.nvidia.com/news/nvidia-launches-vera-cpu-purpose-built-for-agentic-ai). Whether that framing is accurate depends on whether the Olympus core architecture actually delivers meaningfully different performance characteristics for those workloads than a modern x86 chip — which the technical data suggests it does, for specific access patterns.
 
-Vera is the successor to NVIDIA Grace (used in GH200 Grace Hopper systems). Grace was a capable Arm-based server chip, but was designed primarily as a CPU pairing for GPU-intensive inference. Vera is intended to stand alone as a server processor for agentic workloads — and also to pair with Rubin GPUs in the NVL72 rack.
+Vera is the successor to [NVIDIA Grace](https://www.nvidia.com/en-us/data-center/grace-cpu/) (used in GH200 Grace Hopper systems). Grace was a capable Arm-based server chip, but was designed primarily as a CPU pairing for GPU-intensive inference. Vera is intended to stand alone as a server processor for agentic workloads — and also to pair with Rubin GPUs in the NVL72 rack.
 
 ---
 
 ## The Olympus Core Architecture
 
-The central engineering bet in Vera is the Olympus core — a custom NVIDIA-designed Arm v9.2 ISA core built from scratch rather than licensed from Cortex.
+The central engineering bet in Vera is the Olympus core — [a custom NVIDIA-designed Arm v9.2 ISA core built from scratch rather than licensed from Cortex](https://www.nvidia.com/en-us/data-center/vera-cpu/).
 
 **Core count and threading:**
-- 88 Olympus cores per processor
-- 176 hardware threads via Spatial Multithreading
+- [88 Olympus cores per processor](https://www.nvidia.com/en-us/data-center/vera-cpu/)
+- [176 hardware threads via Spatial Multithreading](https://www.nvidia.com/en-us/data-center/vera-cpu/)
 
-Spatial Multithreading is meaningfully different from conventional Simultaneous Multithreading (SMT). Traditional SMT time-slices execution resources between threads. Spatial Multithreading physically partitions the core's resources at runtime to present 176 hardware threads simultaneously. For workloads with high branch divergence — agent decision trees, policy evaluation, irregular memory access — this design reduces thread-switching overhead.
+[Spatial Multithreading is meaningfully different from conventional Simultaneous Multithreading (SMT)](https://developer.nvidia.com/blog/inside-nvidia-vera-cpu-olympus-cores-built-for-maximum-single-threaded-performance-in-agentic-ai/). Traditional SMT time-slices execution resources between threads. Spatial Multithreading physically partitions the core's resources at runtime to present 176 hardware threads simultaneously. For workloads with high branch divergence — agent decision trees, policy evaluation, irregular memory access — this design reduces thread-switching overhead.
 
-**Per-core improvements over NVIDIA Grace:**
-- 50% higher IPC (wider front end, advanced branch prediction, deeper out-of-order scheduling)
+**Per-core improvements over NVIDIA Grace** ([per NVIDIA's technical briefing, as reported by ServeTheHome's architectural deep dive](https://www.servethehome.com/diving-deeper-on-nvidias-vera-cpu-new-architectural-details-and-spec-cpu-2026-benchmarks/)):
+- Up to 50% higher IPC (10-wide decode front end, neural branch predictor, deeper out-of-order scheduling)
 - 2x L2 cache (2 MB per core)
 - Larger unified L3 cache (164 MB total)
 - Specialized memory prefetching tuned for agentic code patterns
 
-**FP8 support:** Olympus cores support FP8 precision natively. Most CPU workloads in AI inference run in FP32 or INT8; FP8 enables compressed model weights and activations to pass between CPU and GPU without upconversion. This matters for bandwidth efficiency in hybrid CPU-GPU agent pipelines.
+**FP8 support:** [Olympus cores support FP8 precision natively](https://www.servethehome.com/diving-deeper-on-nvidias-vera-cpu-new-architectural-details-and-spec-cpu-2026-benchmarks/). Most CPU workloads in AI inference run in FP32 or INT8; FP8 enables compressed model weights and activations to pass between CPU and GPU without upconversion. This matters for bandwidth efficiency in hybrid CPU-GPU agent pipelines.
 
 ---
 
@@ -51,9 +52,9 @@ Spatial Multithreading is meaningfully different from conventional Simultaneous 
 The memory subsystem is where Vera departs most sharply from x86 server chips.
 
 **Bandwidth:**
-- 1.2 TB/s total memory bandwidth
-- LPDDR5X via 8 SOCAMM modules (detachable, field-replaceable)
-- 3x bandwidth per core compared to leading x86 CPUs with DDR5
+- [1.2 TB/s total memory bandwidth](https://www.nvidia.com/en-us/data-center/vera-cpu/)
+- [LPDDR5X via 8 SOCAMM modules (detachable, field-replaceable)](https://www.nvidia.com/en-us/data-center/vera-cpu/)
+- [2x total bandwidth and 3x bandwidth per core compared to leading x86 CPUs with DDR5](https://www.nvidia.com/en-us/data-center/vera-cpu/)
 
 The SOCAMM format is significant for enterprise operators: memory modules are field-replaceable without replacing the processor. DDR5-based x86 server platforms do not offer equivalent per-core bandwidth at these levels.
 
@@ -67,9 +68,9 @@ This is the most interesting benchmark for builders running RAG pipelines or kno
 
 ## GPU Connectivity: NVLink-C2C
 
-In configurations that pair Vera CPU with Rubin GPUs (as in the NVL72 rack), the interconnect is **second-generation NVLink-C2C at 1.8 TB/s coherent bandwidth** between CPU and GPU.
+In configurations that pair Vera CPU with Rubin GPUs (as in the NVL72 rack), the interconnect is [**second-generation NVLink-C2C at 1.8 TB/s coherent bandwidth**](https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents) between CPU and GPU.
 
-This is not PCIe. PCIe Gen 5 (current generation x86 GPU servers) tops out around 128 GB/s per x16 slot. PCIe Gen 6 (supported on Vera, for PCI-attached peripherals) reaches 256 GB/s per x16. NVLink-C2C at 1.8 TB/s is approximately 7x PCIe Gen 6 bandwidth, and it is coherent — the CPU and GPU share a unified memory address space, with cache coherence maintained in hardware.
+This is not PCIe. PCIe Gen 5 (current generation x86 GPU servers) tops out around 128 GB/s per x16 slot. [PCIe Gen 6](https://www.servethehome.com/diving-deeper-on-nvidias-vera-cpu-new-architectural-details-and-spec-cpu-2026-benchmarks/) (supported on Vera, for PCI-attached peripherals) reaches 256 GB/s per x16 by the PCI-SIG spec doubling. NVLink-C2C at 1.8 TB/s is approximately 7x PCIe Gen 6 bandwidth, and it is coherent — the CPU and GPU share a unified memory address space, with cache coherence maintained in hardware.
 
 For agent workloads where the CPU handles orchestration and the GPU handles inference, coherent shared memory eliminates explicit copy operations between CPU and GPU memory buffers. In long-horizon agent pipelines where the context window contents move between compute stages frequently, this matters for latency.
 
@@ -79,17 +80,17 @@ In standalone Vera CPU server configurations (no Rubin GPU in the same chassis),
 
 ## Performance Claims vs. X86
 
-NVIDIA's official published benchmarks:
+[NVIDIA's official published benchmarks](https://www.nvidia.com/en-us/data-center/vera-cpu/):
 
 | Workload | Vera CPU vs. x86 |
 |---|---|
-| Agentic AI task completion | 1.8x faster |
-| AI-focused workloads (general) | Up to 80% faster |
+| Agentic AI task completion (code compilation, Python, code analysis) | 1.8x faster |
+| Sandbox environment performance | Up to 80% faster |
 | Graph traversal | More than 3x faster |
-| Instructions per clock vs. Grace (NVIDIA's prior CPU) | 50% higher |
+| Instructions per clock vs. Grace (NVIDIA's prior CPU) | Up to 50% higher |
 | Memory bandwidth per core vs. x86 DDR5 | 3x higher |
 
-These are vendor-published figures. Independent benchmarks (Phoronix ran early Vera benchmarks and confirmed Olympus core performance above Grace) support the IPC claims. Production workload data from cloud deployments — which will arrive in H2 2026 — will be the real test. The graph traversal claim in particular warrants verification on actual RAG workloads before infrastructure decisions are made on the basis of it.
+These are vendor-published figures. [Independent benchmarks (Phoronix ran early Vera hardware and reported the "best performance ever seen on ARM")](https://www.phoronix.com/review/nvidia-vera-benchmarks) support the core-performance claims, though Phoronix's access was limited and full production-workload comparisons weren't part of that review. Production workload data from cloud deployments — which will arrive in H2 2026 — will be the real test. The graph traversal claim in particular warrants verification on actual RAG workloads before infrastructure decisions are made on the basis of it.
 
 ---
 
@@ -99,9 +100,9 @@ COMPUTEX 2026 completed NVIDIA's four-tier compute stack for the agentic AI era:
 
 | Tier | Product | Target | Availability |
 |---|---|---|---|
-| **Laptop/Edge** | RTX Spark | Local inference, Windows agentic OS | Fall 2026 |
-| **Deskside** | DGX Station for Windows | Enterprise on-prem (GB300 Grace Blackwell) | Q4 2026 |
-| **Server CPU** | Vera CPU | AI factory orchestration, RL, agent runtime | H2 2026 |
+| **Laptop/Edge** | [RTX Spark](https://www.nvidia.com/en-us/geforce/news/computex-2026-nvidia-geforce-rtx-announcements/) | Local inference, Windows agentic OS | Fall 2026 |
+| **Deskside** | [DGX Station for Windows](https://nvidianews.nvidia.com/news/nvidia-dgx-station-for-windows-puts-a-trillion-parameter-ai-supercomputer-on-every-enterprise-desk) | Enterprise on-prem (GB300 Grace Blackwell Ultra Desktop Superchip) | Q4 2026 |
+| **Server CPU** | [Vera CPU](https://nvidianews.nvidia.com/news/nvidia-launches-vera-cpu-purpose-built-for-agentic-ai) | AI factory orchestration, RL, agent runtime | H2 2026 |
 | **GPU Rack** | Vera Rubin NVL72 | Frontier inference, large-scale training | H2 2026 |
 
 Vera CPU occupies a distinct slot: it is the CPU tier of the AI factory, not the GPU tier. In a datacenter running NVL72 racks, Vera CPU servers handle the work that cannot or should not run on GPU: orchestration logic, scheduling, RL policy updates, retrieval preprocessing, logging, and the control plane of multi-agent systems.
@@ -112,10 +113,10 @@ The alternative — running that orchestration work on x86 servers that sit alon
 
 ## DSX: The Software Layer
 
-NVIDIA announced DSX (Data Center Software eXperience) alongside the Vera CPU. DSX is NVIDIA's unified framework for AI factory management, comprising:
+NVIDIA announced [DSX](https://developer.nvidia.com/blog/nvidia-dsx-os-delivers-open-modular-software-for-operating-ai-factories-at-scale/) alongside the Vera CPU — a software platform (blueprint plus open-source components) for building and operating AI factories, comprising:
 
-- **DSX MaxLPS**: Power and cooling optimization delivering up to 40% more GPU capacity within the same power envelope
-- **DSX OS**: Open-source software stack for managing agentic AI data centers; manages GPU scheduling, NVLink fabric, and agent job routing
+- **DSX MaxLPS**: [Power optimization that lets AI factories "run up to 40% more GPUs at peak energy efficiency within a fixed power budget, with minimal impact on inference workload performance"](https://developer.nvidia.com/blog/nvidia-dsx-os-delivers-open-modular-software-for-operating-ai-factories-at-scale/)
+- **DSX OS**: [Open-source, modular software components (available on GitHub) for AI factory lifecycle management, GPU-aware workload scheduling, health automation, and multi-tenant operations](https://developer.nvidia.com/blog/nvidia-dsx-os-delivers-open-modular-software-for-operating-ai-factories-at-scale/)
 
 DSX OS is the software surface that Vera CPU systems run in AI factory configurations. It is open source and extensible — builders at cloud providers or running their own AI factories can customize scheduling and routing logic.
 
@@ -123,15 +124,15 @@ DSX OS is the software surface that Vera CPU systems run in AI factory configura
 
 ## Who Is Deploying Vera CPU
 
-**OEM server partners** (H2 2026 availability):
+**OEM server partners** ([H2 2026 availability](https://nvidianews.nvidia.com/news/nvidia-launches-vera-cpu-purpose-built-for-agentic-ai)):
 
-Aivres, ASRock Rack, ASUS, Compal, Dell, Foxconn, GIGABYTE, HPE, Hyve Solutions, Inventec, Lenovo, MiTAC Computing, MSI, Pegatron, Quanta Cloud Technology, Supermicro, Wistron, Wiwynn.
+Aivres, ASRock Rack, ASUS, Cisco, Compal, Dell, Foxconn, GIGABYTE, HPE, Hyve, Inventec, Lenovo, MiTAC Computing, MSI, Pegatron, Quanta Cloud Technology, Supermicro, Wistron, Wiwynn.
 
-HPE announced the ProLiant Compute DL394 Gen12 specifically — a 2U Vera CPU server targeting RL, agentic inference, and data processing workloads. ASRock Rack announced the 2UXGM-VERA2.
+[HPE announced the ProLiant Compute DL394 Gen12 specifically — a 2U Vera CPU server targeting RL, agentic inference, and data processing workloads](https://www.hpe.com/us/en/newsroom/press-release/2026/05/hpe-introduces-cpu-server-with-nvidia-vera-cpu-purpose-built-for-agentic-ai.html). [ASRock Rack announced the 2UXGM-VERA2](https://www.prnewswire.com/news-releases/asrock-rack-unveils-next-generation-ai-infrastructure-powered-by-nvidia-vera-cpu-at-computex-2026-302789506.html).
 
-**Cloud providers** committing to Vera CPU deployments:
+**Cloud providers** [committing to Vera CPU deployments](https://nvidianews.nvidia.com/news/nvidia-launches-vera-cpu-purpose-built-for-agentic-ai):
 
-Alibaba Cloud, ByteDance, Cloudflare, CoreWeave, Crusoe, Lambda, Nebius, Nscale, Oracle Cloud Infrastructure, Together.AI, Vultr.
+Alibaba Cloud, ByteDance, Cloudflare, CoreWeave, Crusoe, Lambda, Meta, Nebius, Nscale, Oracle Cloud Infrastructure, Together.AI, Vultr.
 
 The cloud provider list is the one that matters most for the majority of builders. When Lambda, CoreWeave, and Together.AI deploy Vera CPU clusters, the per-token costs on their inference APIs should reflect the efficiency gains — without builders needing to procure or manage Vera CPU hardware.
 
@@ -152,7 +153,7 @@ The cloud provider list is the one that matters most for the majority of builder
 ## What Is Not Resolved Yet
 
 - **Pricing**: No published pricing for Vera CPU standalone servers. OEM pricing varies. Cost-per-workload comparison against x86 alternatives requires production data.
-- **Independent benchmarks**: Phoronix confirmed Olympus IPC improvements over Grace. Production workload benchmarks across RL, agent orchestration, and realistic RAG pipelines are not yet published.
+- **Independent benchmarks**: [Phoronix's early hardware review](https://www.phoronix.com/review/nvidia-vera-benchmarks) reported Olympus core performance gains over Grace, but production workload benchmarks across RL, agent orchestration, and realistic RAG pipelines are not yet published.
 - **Cloud pricing impact**: When Vera CPU deployments go live at Lambda, CoreWeave, and others, whether per-token or per-second pricing reflects efficiency gains depends on each provider's pricing strategy.
 - **Software maturity**: DSX OS is open source but new. Operational stability and ecosystem tooling will take time to develop.
 

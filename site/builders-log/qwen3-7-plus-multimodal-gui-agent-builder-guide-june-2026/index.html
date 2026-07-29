@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Qwen3.7-Plus: The Multimodal Half of the Qwen Stack Builders Are Missing — ChatForest</title>
-  <meta name="description" content="Qwen3.7-Plus launched June 2 with image and video input, 79.0 on ScreenSpot Pro (best in class for GUI grounding), and pricing at $0.40/$1.60 per million tokens — 6x cheaper than the text-only Max. Here is what it is, what it is not, and the routing pattern that makes both models work.">
+  <meta name="description" content="Qwen3.7-Plus launched June 2 with image and video input, 79.0 on ScreenSpot Pro (ahead of GPT-5.4 and Claude Opus-4.6 on Alibaba&#39;s own vendor-run benchmark), and pricing at $0.40/$1.60 per million tokens — 6x cheaper than the text-only Max. Here is what it is, what it is not, and the routing pattern that makes both models work.">
   <meta property="og:title" content="Qwen3.7-Plus: The Multimodal Half of the Qwen Stack Builders Are Missing — ChatForest">
-  <meta property="og:description" content="Qwen3.7-Plus (June 2, 2026): $0.40/$1.60/M tokens. ScreenSpot Pro 79.0 — beats GPT-5.4 at 67.4 and Claude Opus-4.6 at 49.5. 1M context. Multimodal: text &#43; image &#43; video. OpenAI-compatible API via Bailian/OpenRouter. Proprietary (no open weights). Builder guide to what it is, how it differs from Qwen3.7-Max, and when to route traffic through each.">
+  <meta property="og:description" content="Qwen3.7-Plus (June 2, 2026): $0.40/$1.60/M tokens. ScreenSpot Pro 79.0 — beats GPT-5.4 at 67.4 and Claude Opus-4.6 at 49.5 on Alibaba&#39;s own comparison. 1M context. Multimodal: text &#43; image &#43; video. OpenAI-compatible API via Bailian/OpenRouter, plus Anthropic-protocol access via Alibaba&#39;s Coding Plan. Proprietary (no open weights). Builder guide to what it is, how it differs from Qwen3.7-Max, and when to route traffic through each.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/builders-log/qwen3-7-plus-multimodal-gui-agent-builder-guide-june-2026/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Qwen3.7-Plus: The Multimodal Half of the Qwen Stack Builders Are Missing — ChatForest">
-  <meta name="twitter:description" content="Qwen3.7-Plus (June 2, 2026): $0.40/$1.60/M tokens. ScreenSpot Pro 79.0 — beats GPT-5.4 at 67.4 and Claude Opus-4.6 at 49.5. 1M context. Multimodal: text &#43; image &#43; video. OpenAI-compatible API via Bailian/OpenRouter. Proprietary (no open weights). Builder guide to what it is, how it differs from Qwen3.7-Max, and when to route traffic through each.">
+  <meta name="twitter:description" content="Qwen3.7-Plus (June 2, 2026): $0.40/$1.60/M tokens. ScreenSpot Pro 79.0 — beats GPT-5.4 at 67.4 and Claude Opus-4.6 at 49.5 on Alibaba&#39;s own comparison. 1M context. Multimodal: text &#43; image &#43; video. OpenAI-compatible API via Bailian/OpenRouter, plus Anthropic-protocol access via Alibaba&#39;s Coding Plan. Proprietary (no open weights). Builder guide to what it is, how it differs from Qwen3.7-Max, and when to route traffic through each.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/builders-log/qwen3-7-plus-multimodal-gui-agent-builder-guide-june-2026/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -67,11 +67,11 @@
 
       <div class="article-body">
         <p>Qwen3.7-Max launched May 19 as a text-only reasoning model — and <a href="/reviews/alibaba-qwen3-7-max-agentic-reasoning-model-review/">we reviewed it then</a>. If you missed it: it benchmarks competitively with Claude Opus-4.6, supports Anthropic-protocol APIs natively, and costs $2.50/$7.50 per million tokens.</p>
-<p>Qwen3.7-Plus launched June 2 and is not the same model at a lower price point. It is a different model with a different job.</p>
+<p>Qwen3.7-Plus <a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">launched June 2</a> and is not the same model at a lower price point. It is a different model with a different job.</p>
 <hr>
 <h2 id="what-qwen37-plus-actually-is">What Qwen3.7-Plus Actually Is</h2>
-<p>Qwen3.7-Plus is a multimodal model: it accepts text, images, and video as input and produces text output. It adds GUI agent grounding — the ability to look at a screenshot and return exact pixel coordinates to interact with. That is a meaningfully different capability from Max, which is text-only.</p>
-<p>The pricing reflects the positioning: <strong>$0.40/$1.60 per million input/output tokens</strong>, with $0.08 for cached input reads. That is roughly 6x cheaper than Max on input, 4.7x cheaper on output.</p>
+<p>Qwen3.7-Plus is a multimodal model: it accepts <a href="https://www.marktechpost.com/2026/06/02/alibabas-qwen-team-launches-qwen3-7-plus-adding-vision-deep-reasoning-tool-invocation-and-autonomous-iteration-on-the-bailian-platform/">text, images, and video as input and produces text output</a>. It adds GUI agent grounding — the ability to look at a screenshot and return exact pixel coordinates to interact with. That is a meaningfully different capability from Max, which is text-only.</p>
+<p>The pricing reflects the positioning: <strong><a href="https://artificialanalysis.ai/models/qwen3-7-plus">$0.40/$1.60 per million input/output tokens</a></strong>, with cached input reads discounted to roughly <a href="https://www.cometapi.com/qwen3-7-plus-api-pricing/">$0.04–$0.08 per million tokens depending on cache type</a> (explicit cache hits price lower than implicit ones). That is roughly 6x cheaper than Max on input, 4.7x cheaper on output than <a href="/reviews/alibaba-qwen3-7-max-agentic-reasoning-model-review/">Max&rsquo;s $2.50/$7.50 pricing</a>.</p>
 <table>
 <thead>
 <tr>
@@ -124,12 +124,12 @@
 <tr>
 <td>Protocol</td>
 <td>Anthropic API + OpenAI</td>
-<td>OpenAI</td>
+<td>Anthropic API (via <a href="https://www.alibabacloud.com/help/en/model-studio/claude-code">Coding Plan</a>) + OpenAI</td>
 </tr>
 <tr>
 <td>SWE-Bench Pro</td>
-<td>~61%</td>
-<td>~59%</td>
+<td>~60.6%</td>
+<td>~57.6%</td>
 </tr>
 <tr>
 <td>ScreenSpot Pro</td>
@@ -138,28 +138,29 @@
 </tr>
 </tbody>
 </table>
+<p>Sources: pricing and specs from <a href="https://artificialanalysis.ai/models/comparisons/qwen3-7-plus-vs-qwen3-7-max">Artificial Analysis</a> and <a href="https://www.alibabacloud.com/help/en/model-studio/claude-code">Alibaba Cloud Model Studio Claude Code docs</a>; SWE-Bench Pro figures are third-party-tracked, not an Alibaba-published head-to-head, and should be treated as approximate.</p>
 <hr>
 <h2 id="the-gui-grounding-benchmark-that-matters">The GUI Grounding Benchmark That Matters</h2>
 <p>The benchmark worth paying attention to is <strong>ScreenSpot Pro</strong>, which tests localized interface understanding: given a screenshot, point to the correct element. This is the core technical challenge behind GUI automation agents.</p>
-<p>Qwen3.7-Plus scored <strong>79.0 on ScreenSpot Pro</strong>.</p>
+<p>Qwen3.7-Plus scored <strong><a href="https://venturebeat.com/technology/alibabas-qwen3-7-plus-supports-text-video-and-imagery-inputs-at-low-cost-of-0-4-1-6-per-1m-token-but-its-proprietary">79.0 on ScreenSpot Pro</a></strong>, a figure Alibaba&rsquo;s own team <a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">reported at launch</a> and multiple outlets independently repeated.</p>
 <p>For reference:</p>
 <ul>
-<li>GPT-5.4 (xhigh): 67.4</li>
-<li>Claude Opus-4.6: 49.5</li>
+<li><a href="https://mlq.ai/news/alibaba-launches-qwen37-plus-a-multimodal-agent-model-that-sees-screens-and-writes-code/">GPT-5.4 (xhigh): 67.4</a></li>
+<li><a href="https://artificialanalysis.ai/models/comparisons/qwen3-7-plus-vs-claude-opus-4-6-adaptive">Claude Opus-4.6: 49.5</a></li>
 </ul>
-<p>A 12-point lead over GPT-5.4 on GUI grounding is not incremental. It places Qwen3.7-Plus at the top of the non-Western multimodal field for this specific capability. The practical implication: if you are building agents that navigate application UIs, web browsers, or desktop interfaces, the Plus model&rsquo;s perception layer is stronger than what OpenAI or Anthropic currently offers at any price point.</p>
+<p>A 12-point lead over GPT-5.4 on GUI grounding is not incremental. The practical implication: if you are building agents that navigate application UIs, web browsers, or desktop interfaces, the Plus model&rsquo;s perception layer benchmarks stronger than what OpenAI or Anthropic currently offer at any price point — on this specific, vendor-run benchmark. Note the caveat that applies to all three numbers: this is Alibaba&rsquo;s own comparison, reportedly run with the competing models&rsquo; extended-thinking modes off, so treat it as a directional signal rather than a neutral, third-party-verified ranking.</p>
 <hr>
-<h2 id="architecture-early-fusion-training">Architecture: Early Fusion Training</h2>
-<p>Unlike some multimodal models that bolt vision on top of a text-first architecture, Qwen3.7-Plus was trained with early fusion: vision and language tokens are processed together from the first layer, not integrated at a late stage. Alibaba reports the model was trained on trillions of multimodal tokens with this approach.</p>
-<p>The practical effect: the model does not just describe images — it reasons about them with the same chain-of-thought depth as the text-only Max. The CoT budget of up to 256K tokens applies to visual reasoning tasks, not just text problems.</p>
+<h2 id="architecture-whats-actually-confirmed">Architecture: What&rsquo;s Actually Confirmed</h2>
+<p>Alibaba has not published detailed architecture specifics for Qwen3.7-Plus (parameter count, training data composition, and fusion method are undisclosed in the launch materials reviewed for this piece). Qwen&rsquo;s prior generation, Qwen3.5, was documented as using an early-fusion approach — text, image, and video tokens processed jointly from early in pretraining rather than bolted on via adapters — but that claim is specific to Qwen3.5&rsquo;s own <a href="https://trilogyai.substack.com/p/deep-dive-qwen-35-brings-native-multimodality">documented training approach</a> and has not been confirmed by Alibaba for Qwen3.7-Plus specifically, so it should not be assumed to carry over.</p>
+<p>What is confirmed: the model reasons about visual input with chain-of-thought, not just description, and the <a href="https://www.digitalapplied.com/blog/qwen-3-7-plus-alibaba-multimodal-agent-model-2026-release">CoT budget of up to 256K tokens applies to visual reasoning tasks</a>, not just text problems.</p>
 <p>The 1M context window extends to multimodal inputs. That means a long document with embedded images, a video with interleaved screenshots, or a session of GUI interactions over time — all manageable within a single context.</p>
 <hr>
 <h2 id="where-max-still-wins">Where Max Still Wins</h2>
 <p>Plus is not a straight upgrade over Max. On text-only reasoning:</p>
 <ul>
-<li><strong>SWE-Bench Pro</strong>: Max edges Plus by roughly 2 points</li>
-<li><strong>Throughput</strong>: Max is approximately 10% faster on text-only requests</li>
-<li><strong>Protocol</strong>: Max supports both OpenAI-compatible and Anthropic API protocol. Plus is OpenAI-compatible only — it does not work as a drop-in replacement inside Claude Code or Anthropic SDK toolchains without an adapter</li>
+<li><strong>SWE-Bench Pro</strong>: Max edges Plus by <a href="https://artificialanalysis.ai/models/comparisons/qwen3-7-plus-vs-qwen3-7-max">roughly 3 points (60.6% vs 57.6%, third-party-tracked)</a></li>
+<li><strong>Throughput</strong>: Max is <a href="https://artificialanalysis.ai/models/comparisons/qwen3-7-plus-vs-qwen3-7-max">substantially faster on text-only requests</a> — roughly 4x higher output tokens/second in third-party benchmarking (202.8 vs 52.7 tokens/sec), consistent with Plus&rsquo;s extra vision-processing overhead</li>
+<li><strong>Protocol</strong>: Both models can be used with the Anthropic API protocol. Max supports it as its default DashScope interface; Plus reaches it through Alibaba&rsquo;s <a href="https://www.alibabacloud.com/help/en/model-studio/claude-code">Coding Plan / Claude Code integration</a> rather than as the default DashScope endpoint format (which is OpenAI-compatible)</li>
 </ul>
 <p>For purely textual coding agents, document processing, or MCP tool orchestration, Max remains the stronger choice.</p>
 <hr>
@@ -168,15 +169,15 @@
 <p>The production endpoint for international users is:</p>
 <pre><code>base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
 model: qwen3.7-plus
-</code></pre><p>Standard OpenAI-compatible chat completions format. You will need an Alibaba Cloud account and API key.</p>
+</code></pre><p>Standard OpenAI-compatible chat completions format, per <a href="https://www.alibabacloud.com/help/en/model-studio/models">Alibaba Cloud Model Studio&rsquo;s documentation</a>. You will need an Alibaba Cloud account and API key.</p>
 <p><strong>OpenRouter</strong></p>
-<p>Available as <code>qwen/qwen3.7-plus</code>. OpenRouter&rsquo;s routing layer handles key management and provides a unified billing surface if you are already routing multiple models through OpenRouter.</p>
+<p>Available as <a href="https://openrouter.ai/qwen/qwen3.7-plus"><code>qwen/qwen3.7-plus</code></a>. OpenRouter&rsquo;s routing layer handles key management and provides a unified billing surface if you are already routing multiple models through OpenRouter. Note OpenRouter&rsquo;s own routed pricing can differ from Alibaba&rsquo;s list price (it has fluctuated toward $0.32/$1.28 per million tokens on some routes) — check current rates before budgeting.</p>
 <hr>
 <h2 id="the-trust-consideration">The Trust Consideration</h2>
 <p>Both Qwen3.7-Max and Qwen3.7-Plus are proprietary, API-only models from Alibaba. Neither has open weights.</p>
-<p>This is a change from the Qwen 3.6 series, which shipped under Apache 2.0. The 3.7 tier is managed APIs only. The practical consequence: you cannot run these on your own infrastructure, inspect their behavior at the weight level, or verify training data claims independently.</p>
+<p>This is a change from the <a href="https://github.com/QwenLM/Qwen3.6">Qwen 3.6 series, which shipped under Apache 2.0</a> (e.g. Qwen3.6-27B, Qwen3.6-35B-A3B). The 3.7 tier is managed APIs only. The practical consequence: you cannot run these on your own infrastructure, inspect their behavior at the weight level, or verify training data claims independently.</p>
 <p>For builders evaluating Chinese AI infrastructure, the same considerations that applied to Max apply here: data routing goes through Alibaba Cloud, the model&rsquo;s behavior is not independently auditable, and the benchmarks are self-reported with limited third-party replication at this stage.</p>
-<p>Artificial Analysis lists Qwen3.7-Plus at an Intelligence Index score of 53, placing it above average among similarly priced models (median for the price tier: 23). That is a credible third-party data point, though it reflects aggregate performance, not ScreenSpot Pro specifically.</p>
+<p><a href="https://artificialanalysis.ai/models/qwen3-7-plus">Artificial Analysis lists Qwen3.7-Plus at an Intelligence Index score of 39</a>, placing it above the median for its price tier (16). That is a credible third-party data point, though it reflects aggregate performance, not ScreenSpot Pro specifically.</p>
 <hr>
 <h2 id="the-routing-pattern">The Routing Pattern</h2>
 <p>The practical builder architecture for June 2026: route between Max and Plus based on task type.</p>
@@ -194,10 +195,10 @@ def route_qwen(task):
 <h2 id="what-this-means-for-builders">What This Means for Builders</h2>
 <p>Qwen3.7-Plus is not a model to evaluate in isolation. Its value depends on whether you are building anything that involves visual inputs: web scraping that requires element identification, desktop automation, document pipelines with embedded figures, or UI testing.</p>
 <p>If your agent stack is text-only, Max remains the relevant Qwen model.</p>
-<p>If you are building GUI agents or multimodal pipelines, Plus&rsquo;s ScreenSpot Pro score is the most compelling capability claim in the current non-Western model market. The pricing makes it practical to use for high-volume visual perception steps without routing those calls through GPT-5.4 or Claude.</p>
+<p>If you are building GUI agents or multimodal pipelines, Plus&rsquo;s ScreenSpot Pro score is a compelling capability claim, beating GPT-5.4 and Claude Opus-4.6 on Alibaba&rsquo;s own vendor-run comparison. The pricing makes it practical to use for high-volume visual perception steps without routing those calls through GPT-5.4 or Claude.</p>
 <p>The caveat that carries: self-reported benchmarks, proprietary weights, Alibaba Cloud infrastructure. Evaluate in your environment before committing.</p>
 <hr>
-<p><em>Qwen3.7-Plus launched June 2, 2026. Pricing from Alibaba Cloud Model Studio and OpenRouter. Benchmarks from Alibaba&rsquo;s launch materials and Artificial Analysis third-party index. ScreenSpot Pro comparison figures from the model card. This is a research-based summary — we did not test the model directly.</em></p>
+<p><em>Qwen3.7-Plus launched June 2, 2026. Pricing from <a href="https://www.alibabacloud.com/help/en/model-studio/models">Alibaba Cloud Model Studio</a> and <a href="https://openrouter.ai/qwen/qwen3.7-plus">OpenRouter</a>. Benchmarks from <a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">Alibaba&rsquo;s launch announcement</a>, <a href="https://venturebeat.com/technology/alibabas-qwen3-7-plus-supports-text-video-and-imagery-inputs-at-low-cost-of-0-4-1-6-per-1m-token-but-its-proprietary">independent launch coverage</a>, and <a href="https://artificialanalysis.ai/models/qwen3-7-plus">Artificial Analysis</a>&lsquo;s third-party index. This is a research-based summary — we did not test the model directly.</em></p>
 
       </div>
 
@@ -265,7 +266,7 @@ def route_qwen(task):
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-05T00:00:00+09:00","datePublished":"2026-06-05T00:00:00+09:00","description":"Qwen3.7-Plus launched June 2 with image and video input, 79.0 on ScreenSpot Pro (best in class for GUI grounding), and pricing at $0.40/$1.60 per million tokens — 6x cheaper than the text-only Max. Here is what it is, what it is not, and the routing pattern that makes both models work.","headline":"Qwen3.7-Plus: The Multimodal Half of the Qwen Stack Builders Are Missing","mainEntityOfPage":"https://chatforest.com/builders-log/qwen3-7-plus-multimodal-gui-agent-builder-guide-june-2026/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/qwen3-7-plus-multimodal-gui-agent-builder-guide-june-2026/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-05T00:00:00+09:00","datePublished":"2026-06-05T00:00:00+09:00","description":"Qwen3.7-Plus launched June 2 with image and video input, 79.0 on ScreenSpot Pro (ahead of GPT-5.4 and Claude Opus-4.6 on Alibaba's own vendor-run benchmark), and pricing at $0.40/$1.60 per million tokens — 6x cheaper than the text-only Max. Here is what it is, what it is not, and the routing pattern that makes both models work.","headline":"Qwen3.7-Plus: The Multimodal Half of the Qwen Stack Builders Are Missing","mainEntityOfPage":"https://chatforest.com/builders-log/qwen3-7-plus-multimodal-gui-agent-builder-guide-june-2026/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/qwen3-7-plus-multimodal-gui-agent-builder-guide-june-2026/"}
 </script>
 
 

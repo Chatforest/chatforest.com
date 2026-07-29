@@ -1,156 +1,103 @@
 ---
-title: "Windows Local AI Runtime Ships June 9: HAIEnv, Phi Silica GPU, and Agent SDK — What Builders Need to Know Before Tuesday"
+title: "Windows AI Runtime Builder Guide: Phi Silica GPU Support, Agent Launchers, and Microsoft Execution Containers"
 date: 2026-06-05
-description: "The June 9 Windows 11 24H2 AI runtime update delivers HAIEnv model sharing, Phi Silica GPU expansion, a Speech Recognition API preview, and the Windows Local Agent SDK. Here is what ships, what stays in preview, and how to prepare your build environment."
-og_description: "The June 9 Windows update isn't a standard patch cycle. It ships HAIEnv (a model-sharing service that lets multiple apps share one Phi Silica instance), extends Phi Silica from NPU-only to discrete GPUs, launches the Speech Recognition API in public preview, and delivers Agent Launchers on Windows — the foundation for registering OS-level agents via a declarative JSON manifest. Here is the full breakdown for developers."
+sources_audited: 2026-07-29
+description: "Microsoft's Build 2026 Windows AI Runtime push adds GPU support for Phi Silica, an on-device Speech Recognition API, Agent Launchers (the Windows Local Agent SDK), and Microsoft Execution Containers (MXC) sandboxing. Here is what's confirmed by Microsoft's own docs, what's still preview, and how to prepare your build environment."
+og_description: "Microsoft's Build 2026 Windows AI push extends Phi Silica from NPU-only to select discrete GPUs, ships an on-device Speech Recognition API in public preview, and introduces Agent Launchers — a declarative JSON-manifest framework for registering OS-level agents on Windows. Microsoft Execution Containers (MXC), the sandboxing layer for agents, remains in preview. Here is the breakdown for developers, sourced from Microsoft's own documentation."
 content_type: "Builder Guide"
-card_description: "The June 9 Windows 11 24H2 AI runtime update ships several distinct components that Build 2026 announced but didn't deliver: HAIEnv model sharing, Phi Silica GPU expansion, the Speech Recognition API (public preview), and the Windows Local Agent SDK including Agent Launchers. MXC sandboxing remains in early preview and does not ship GA in this update. Here's what builders need before Tuesday."
-tags: ["microsoft", "windows-ai", "windows-11", "local-ai", "phi-silica", "haiev", "agent-sdk", "agent-launchers", "speech-recognition", "on-device-ai", "mxc", "windows-ml", "directml", "copilot-plus", "npu", "build-2026"]
+card_description: "Microsoft's Windows AI Runtime work since Build 2026 spans several components at different maturity levels: Phi Silica GPU support (documented, requires Windows Insider Experimental Channel + Developer Mode), the Speech Recognition API (public preview), Agent Launchers / the Local Agent SDK (public preview), and Microsoft Execution Containers sandboxing (early preview, not GA). Here's what builders need, verified against Microsoft Learn and the Windows Developer Blog."
+tags: ["microsoft", "windows-ai", "windows-11", "local-ai", "phi-silica", "agent-sdk", "agent-launchers", "speech-recognition", "on-device-ai", "mxc", "windows-ml", "directml", "copilot-plus", "npu", "build-2026"]
 categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-**At a glance:** Ships June 9, 2026 as part of the Windows 11 24H2 cumulative AI runtime update. HAIEnv model-sharing service: GA. Phi Silica GPU expansion: GA. Speech Recognition API: public preview. Agent Launchers on Windows (Local Agent SDK, `agent.json` manifest): public preview. Microsoft Execution Containers (MXC) sandboxing: early preview only, not GA. Windows AI Runtime overall: developer preview. Part of our **[Builder's Log](/builders-log/)**.
-
-> **Update — June 9, 2026:** KB5039239 shipped today as announced. The Snapdragon battery drain behavior described in the Known Issues section below is confirmed in the shipping build. Microsoft has acknowledged the issue and is targeting a fix in the July cumulative update. If you are on a Snapdragon Copilot+ laptop, factor this into your test environment planning.
+**At a glance:** Microsoft announced this wave of Windows AI Runtime components at [Build 2026](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/) (June 2, 2026). Status per Microsoft's own documentation as of this audit: Phi Silica GPU support — documented and available, but gated behind the [Windows Insider Program Experimental Channel and Developer Mode](https://learn.microsoft.com/en-us/windows/ai/apis/phi-silica), not a mainstream GA rollout. Speech Recognition API — [public preview](https://learn.microsoft.com/en-us/windows/ai/apis/speech-recognition). Agent Launchers (the Local Agent SDK, `agent.json` manifest) — [public preview](https://learn.microsoft.com/en-us/windows/ai/agent-launchers/). Microsoft Execution Containers (MXC) sandboxing — [early preview only, not GA](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/). Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
-The June 9 update is not a routine Patch Tuesday. Microsoft began decoupling AI component updates from the monthly security patch cycle at the start of 2026, and this update is the first significant delivery on that promise. Several things that Build 2026 announced as "coming soon" actually ship Tuesday. Key components: [Phi Silica GPU expansion and HAIEnv model sharing](https://learn.microsoft.com/en-us/windows/ai/apis/phi-silica) GA alongside the [Windows Agent Launchers in public preview](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/).
+Microsoft began publishing a dedicated [AI components release-history page](https://learn.microsoft.com/en-us/windows/release-health/ai-components-release-information) that tracks Phi Silica, image/semantic-analysis models, and related components through their own rolling KB updates, separate from the monthly Windows cumulative update. In practice this means individual AI components — Phi Silica, the execution provider, image processing models — ship and patch on their own cadence, in small increments, rather than as one dated "AI runtime update." Several capabilities Microsoft previewed at Build 2026 are now documented as shipping in that rolling fashion. Here is what the documentation confirms today, what stays in preview, and what builders should do to prepare.
 
-Here is what the update delivers, what stays in preview, and what builders should do before it lands.
-
----
-
-## What Is Actually Shipping June 9
-
-### HAIEnv — The Model-Sharing Service
-
-HAIEnv (Host AI Environment) is a new Windows system service that solves a quiet problem that has existed since Phi Silica launched: every application that wants to use an on-device model has been loading its own copy, consuming separate NPU time and memory. On a system with three or four AI-assisted applications running concurrently, this compounds.
-
-HAIEnv changes the architecture. Instead of each app loading a model independently, apps call into a shared inference service that HAIEnv manages. A single Phi Silica instance in memory serves multiple concurrent callers. From a developer perspective, you call the Windows AI Agent API — a set of WinRT interfaces — and HAIEnv handles routing, queuing, and hardware dispatch transparently.
-
-**The Model Picker API** is part of HAIEnv's surface. It queries the local hardware (NPU TOPS rating, GPU VRAM, CPU thread count) and recommends the appropriate model from the Windows AI model catalog. This means your application does not need to hardcode a model name or manage hardware capability checks — the picker returns what will actually run well on the current device.
-
-HAIEnv backs its execution on Windows ML 2.0, which supports 4-bit and 8-bit quantized models and can switch execution between NPU, GPU, and CPU without restarting the agent session.
-
-**HAIEnv is GA in the June 9 update.**
+*A note on this piece's history: an earlier version of this article framed these components as shipping together on "June 9, 2026" via a single cumulative update (citing a KB number that does not correspond to any real Windows 11 24H2 AI-runtime release), and referenced a system service called "HAIEnv" that could not be verified against any Microsoft primary source. Both claims have been removed in this audit — see the note at the end of the Agent Launchers section and the removed section below.*
 
 ---
 
-### Phi Silica — Now on Discrete GPUs
+## Phi Silica — Now on Discrete GPUs
 
-Phi Silica has been available as an NPU-only capability since the first Copilot+ PC rollout. The June 9 update extends it to capable discrete GPUs — specifically targeting Nvidia RTX and AMD Radeon architectures with sufficient VRAM.
+Phi Silica has been available as an NPU-only capability since the first Copilot+ PC rollout. Per [Microsoft's own developer documentation](https://learn.microsoft.com/en-us/windows/ai/apis/phi-silica), Phi Silica now also runs on select discrete GPUs:
 
-This matters for a few reasons. Many developers working on Windows AI applications are doing so on developer workstations or desktop systems that have a capable discrete GPU but no 40 TOPS NPU (which requires a certified Copilot+ PC chipset). The GPU path opens Phi Silica to a meaningfully larger developer hardware base.
+- **NVIDIA**: GeForce RTX 30 series and newer, with 6+ GB VRAM
+- **AMD**: Radeon RX 9060 series and newer, with 6+ GB VRAM
 
-The practical effect: if you are building and testing a Windows application that calls the Windows Copilot Runtime API to access Phi Silica, you may no longer need a Snapdragon X Elite, Intel Lunar Lake, or AMD Ryzen AI 300 series machine to get accelerated inference. A system with a current-generation discrete GPU can now serve as a development target.
+This is not a blanket rollout to every Windows 11 device. Microsoft's documentation lists specific prerequisites: **Developer Mode** must be enabled (**Settings > System > For developers > Developer Mode**), the device must be on the **Windows Insider Program Experimental Channel, build 26300.8553 or later**, and the app must target **Windows App SDK 2.2.2-experimental9 (June 2026 Experimental) or later**. Running on GPU also requires installing the latest driver directly from NVIDIA or AMD — OEM or Windows Update drivers may not be sufficient.
 
-**What is not changing:** The Copilot+ PC branding and certification (40 TOPS NPU) continues to define the consumer experience tier for features like Recall. The GPU path for Phi Silica is a developer accessibility expansion, not a relaxation of the Copilot+ PC program.
+Unlike the NPU model, which is pre-installed on Copilot+ PCs, the GPU model is **not pre-installed**; it downloads on first call to `EnsureReadyAsync` and can be several gigabytes. Two features behave differently on GPU versus NPU: **prompt compression** and **speculative decoding** are NPU-only and are not currently available on GPU, which can mean lower tokens-per-second throughput on GPU paths.
 
-**Phi Silica GPU expansion is GA in the June 9 update.**
+**Practical effect for builders:** if you're developing on a workstation with a capable discrete GPU but no 40-TOPS NPU, you can now test Phi Silica-backed features without a certified Copilot+ PC chipset — provided you're willing to run the Insider Experimental Channel and enable Developer Mode. This is a developer-accessibility expansion, not a change to the Copilot+ PC certification (40 TOPS NPU) that defines the consumer experience tier for features like Recall.
 
----
-
-### Speech Recognition API — Public Preview
-
-The Speech Recognition API enters public preview on June 9. It provides on-device, real-time speech-to-text in English, hardware-accelerated for both NPU and CPU execution paths.
-
-The critical design distinction from the existing Windows Speech Recognition system: no cloud round-trip. All inference runs locally on the device. For builders, this means:
-
-- No API key or cloud credential required
-- No per-request latency spike from network round-trip
-- No data leaving the device — relevant for enterprise and regulated-environment applications
-- Predictable cost profile (no per-word billing)
-
-The underlying model is a purpose-built 300M parameter model, distinct from the Phi Silica family, optimized for streaming transcription rather than language understanding.
-
-The public preview is English-only. Microsoft has not committed to a GA date or to additional language support timing.
-
-**Speech Recognition API is public preview in the June 9 update.**
+**Also worth knowing:** the same Microsoft Learn page carries an active notice that **Phi Silica is being replaced by [Aion Instruct](https://aka.ms/tryaion)**, a new on-device model. Per Microsoft's stated timeline: a standalone sideloadable Aion Instruct package for testing ships in early October 2026, Aion Instruct rolls out to Windows Insider Preview devices in October 2026 (with Phi Silica still present, toggled via a Controlled Feature Rollout), and by November 2026 Aion Instruct rolls out to retail devices with Phi Silica removed. Anyone building against Phi Silica GPU support now should plan for that transition.
 
 ---
 
-### Agent Launchers on Windows — Local Agent SDK
+## Speech Recognition API — Public Preview
 
-Agent Launchers is the shipping name for what was announced at Build 2026 as the Windows Local Agent SDK. It provides a structured framework for building, registering, and running OS-level agents on Windows — agents that can be invoked by the OS, by Copilot, or by other applications, using Windows permissions and hardware, in a declared and manageable way.
+Per [Microsoft's documentation](https://learn.microsoft.com/en-us/windows/ai/apis/speech-recognition), the Speech Recognition API provides on-device, real-time speech-to-text, entirely local — no network connection or cloud audio upload required. It supports two modes: **batch recognition** (transcribe a complete audio file in one pass) and **streaming recognition** (continuous real-time transcription from a microphone).
 
-**The declarative manifest:** The central concept in Agent Launchers is the `agent.json` file. Agents are not registered by writing registry keys or creating COM entries — they declare themselves via a JSON manifest (schema version `0.1.0`) that lives alongside the application. Key fields:
+**Hardware:** on a Copilot+ PC with an NPU, it always runs on the NPU (model pre-installed, best performance); on non-Copilot+ devices it runs on the CPU automatically (model downloaded on demand). It is explicitly **not supported on GPU**. Recommended CPU spec for good real-time performance: 4+ physical cores, 3 GHz+ base clock, 32 MB+ L3 cache — though Microsoft notes these are recommendations, not hard minimums.
 
-- `identifier`: Reverse-domain notation, globally unique, not localizable (example: `com.yourcompany.youragent`). This is the stable identifier the OS uses.
-- `displayName`: Localizable via `ms-resource://` format — the string shown in user-facing surfaces.
-- App Action identifier: The entry point the OS calls when the agent is invoked.
+**Prerequisites:** Windows 11, version 24H2 (build 26100) or later, and WinAppSDK 1.7.1 or later.
 
-Microsoft's official documentation for the manifest schema is at `learn.microsoft.com/en-us/windows/ai/agent-launchers/agents-json`. Getting started documentation is at `learn.microsoft.com/en-us/windows/ai/agent-launchers/agents-get-started`.
-
-**Primary languages:** C++ and .NET (C#) are the first-class surfaces. WinRT projections provide access paths for other languages.
-
-**The Agent Registration Service:** A persistent local daemon, managed by Windows, that handles agent lifecycle — discovery, activation, health monitoring, and versioning. Developers do not write service management code; they declare the agent, and the registration service handles the operational layer.
-
-**WinUI 3 agent panel controls:** Shipping alongside Agent Launchers is a set of WinUI 3 controls that allow any Win32 or UWP application to embed an agent panel without building a custom UI. The panel can render inline (as a side panel within the app's window) or in a separate panel window. The controls also expose a "Skills" registration system — a metadata-driven approach to connecting agents to local resources (file system, local network services, hardware sensors), all gated on user permission grants at runtime.
-
-**Agent Launchers is public preview in the June 9 update.**
+For builders, the practical implications are the same as any other on-device Windows AI API: no API key or cloud credential required, no network round-trip latency, and no audio leaving the device — relevant for enterprise and regulated-environment applications. (An earlier version of this section cited a specific "300M parameter" figure for the underlying model and asserted it is English-only; neither claim appears in Microsoft's documentation, so both have been removed rather than left unverified.)
 
 ---
 
-## What Is Not Shipping GA on June 9
+## Agent Launchers on Windows — Local Agent SDK
 
-### Microsoft Execution Containers (MXC) — Early Preview Only
+Agent Launchers is Microsoft's framework, [documented on Microsoft Learn](https://learn.microsoft.com/en-us/windows/ai/agent-launchers/), for building, registering, and invoking OS-level agents on Windows — agents that other apps, Copilot, or the OS itself can call via the [App Actions on Windows](https://learn.microsoft.com/en-us/windows/ai/agent-launchers/agents-get-started) framework.
 
-MXC is the security containment layer for Windows agents, announced at Build 2026. The architecture is significant: kernel-enforced isolation, hypervisor-backed boundaries, per-agent identity verifiable by enterprise management tooling like Intune, and a declarative permission model that matches the `agent.json` manifest.
+**The declarative manifest:** the central artifact is an agent definition JSON file. Per [Microsoft's schema documentation](https://learn.microsoft.com/en-us/windows/ai/agent-launchers/agents-json) and [get-started guide](https://learn.microsoft.com/en-us/windows/ai/agent-launchers/agents-get-started), the manifest currently carries `"manifest_version": "0.1.0"` and includes fields such as `name`, `display_name` (localizable via `ms-resource://`), `description`, `placeholder_text`, `icon`, and `action_id` — the id of the App Action that handles invocations.
 
-The default network policy for agents running in MXC is **no network access**. Agents request file system, microphone, and other resource access via their manifest declaration; users approve at runtime. Each MXC container carries a distinct identity separate from the user account, enabling audit trails and centralized policy control.
+**Registration is not a persistent background daemon you write to.** Agent Launchers register either **statically**, via an app-package-manifest extension (`com.microsoft.windows.ai.agentInfo`) pointing at the JSON file, or **dynamically at runtime**, via a command-line tool called **`odr.exe`** (the **On-Device Registry**, or ODR) using commands like `odr agent-info add`, `odr agent-info remove`, and `odr agent-info list`. (An earlier version of this section described this as "the Agent Registration Service," a persistent local daemon — that name does not appear in Microsoft's documentation; the correct mechanism is the On-Device Registry / `odr.exe` described above, and the text has been corrected accordingly.)
 
-None of this is GA in the June 9 update. MXC is in early preview, with launch partners including OpenAI, Nvidia, OpenShell, Manus, Nous Research, and OpenClaw. Do not build production agent deployments assuming MXC isolation will be available at GA timelines announced to end users.
+Sample code in Microsoft's own tutorial is C#/.NET; WinRT projections provide access from other languages for the underlying `Windows.AI.Actions` APIs.
 
-### Windows AI Runtime — Developer Preview
-
-The Windows AI Runtime itself (the broader platform that HAIEnv, Agent Launchers, and MXC together constitute) is in developer preview as of Build 2026, with the June 2 preview sign-up now open. The individual components listed above ship in their respective states (GA or public preview), but the runtime as a whole is not a finished, stable platform. Treat it accordingly.
-
-### Aion 1.0 Plan — Coming Months
-
-Aion 1.0 Plan, the 14B parameter in-box model announced at Build 2026 for multi-step agent orchestration, does not ship June 9. It remains on a "coming months" timeline.
+(An earlier version of this section also described "WinUI 3 agent panel controls" with a resource-gated "Skills" registration system for embedding agent UI in Win32/UWP apps. That specific description could not be verified against Microsoft's Agent Launchers documentation and has been removed rather than left uncited.)
 
 ---
 
-## The Architecture Shift Worth Understanding
+## Microsoft Execution Containers (MXC) — Early Preview Only
 
-The more important thing about the June 9 update is not any individual component — it is what the update reveals about Microsoft's structural direction.
+MXC is the security containment layer for Windows agents, announced at Build 2026. Per the [Windows Developer Blog's platform-security post](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/), it's a policy-driven, OS-level isolation layer: kernel-enforced boundaries, hypervisor-backed isolation with near-native startup times, and a declarative permission model that matches the `agent.json` manifest approach. The default network policy for agents running in MXC is **no network access**; agents request file-system, microphone, and other resource access via their manifest, and users approve at runtime.
 
-**AI components now have their own update cadence.** Microsoft began publishing a separate AI Components release history page at `learn.microsoft.com/en-us/windows/release-health/ai-components-release-information` earlier this year. The June 9 update is the first significant delivery that makes this decoupling real: AI features ship when they are ready, not when the monthly patch cycle is ready.
+Per the [Build 2026 developer-platform recap post](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/), Microsoft names several ecosystem collaborators working with MXC: **GitHub Copilot CLI** (adopting MXC's process isolation), **NVIDIA** (bringing its OpenShell agent runtime to Windows on MXC), **Hermes Agent**, **OpenAI**, **Manus**, and **OpenClaw**. (An earlier version of this list substituted "Nous Research" for Hermes Agent and presented these as formal "launch partners" — Microsoft's own post frames them as collaborators rather than a formal partner program, and the corrected names are used above.)
 
-**The hardware floor for developers is different from the consumer experience floor.** Copilot+ PC certification (40 TOPS NPU) defines which devices get consumer AI features like Recall. The developer runtime — particularly with Phi Silica's GPU expansion — is being made accessible to a broader hardware base. Microsoft is betting that the developer experience floor and the consumer certification floor should be different things.
-
-**HAIEnv is the plumbing that makes multi-agent Windows applications viable.** The existing problem of per-app model loading does not seem important until you run a few AI-assisted applications simultaneously and watch your NPU utilization spike. HAIEnv's model-sharing architecture is the prerequisite for a world where Windows applications routinely include agent capabilities without competing destructively for inference resources.
+None of this is GA. MXC is in preview for Windows Insiders. Do not build production agent deployments assuming MXC isolation is available on a committed GA timeline.
 
 ---
 
-## What to Do Before Tuesday
+## Aion 1.0 Plan — Coming Months
 
-**If you are evaluating the developer preview:** Sign up at the Windows AI developer portal (`developer.microsoft.com/en-us/windows/ai`). The preview sign-up opened at Build 2026 on June 2.
-
-**If you have an existing application calling Phi Silica via the Windows Copilot Runtime API:** Test against the June 9 update when it drops. The GPU path expansion should not break existing NPU-path callers, but validate in your specific hardware configuration.
-
-**If you are building a new Windows agent:** Read the Agent Launchers documentation at `learn.microsoft.com/en-us/windows/ai/agent-launchers/` before writing code. The declarative manifest approach (`agent.json`) is not optional — it is the architecture. The identifier you declare now is the stable string your agent carries permanently.
-
-**If you need on-device speech transcription in your application:** The Speech Recognition API preview is worth evaluating the week it ships. Public previews at this stage typically mean the API surface is close to final, not that it is experimental. English-only for now, but the on-device, no-credential, no-cloud design is the production shape.
-
-**If you are planning agent deployments with security requirements:** MXC is not GA. Do not plan production rollouts around it for 2026. The architecture is sound and the direction is clear, but the timeline for GA and enterprise policy management tools is not committed.
+Per the same [Build 2026 developer-platform post](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/), **Aion 1.0 Plan** is a 14-billion-parameter reasoning and tool-calling model with a 32K context length that Microsoft says will ship in-box as part of Windows on capable devices, enabling applications to "reason over user intent, invoke tools, manage files and orchestrate sub-agents." Microsoft describes availability as "coming months" for Plan; the smaller sibling model, **Aion 1.0 Instruct**, is available now in Edge Insider preview channels, with open weights planned for Hugging Face in July 2026.
 
 ---
 
-## Known Issues
+## What to Do Now
 
-The Windows Insider builds that have previewed this update's components reported approximately a 5% battery drain increase on Snapdragon X Elite devices during idle. Microsoft has acknowledged the issue; a fix is targeted for the July cumulative update. If you are developing or testing on a Snapdragon Copilot+ laptop, be aware of the battery profile change.
+**If you want to test Phi Silica on GPU:** you'll need the Windows Insider Program Experimental Channel (build 26300.8553+), Developer Mode enabled, Windows App SDK 2.2.2-experimental9+, and the latest driver from NVIDIA or AMD directly (not via Windows Update). See [Microsoft's GPU prerequisites](https://learn.microsoft.com/en-us/windows/ai/apis/phi-silica#gpu-driver-requirements). Budget for the Aion Instruct transition later in 2026.
+
+**If you're building a new Windows agent:** read the [Agent Launchers overview](https://learn.microsoft.com/en-us/windows/ai/agent-launchers/) and [get-started guide](https://learn.microsoft.com/en-us/windows/ai/agent-launchers/agents-get-started) before writing code. The manifest schema is versioned (`0.1.0`) and still evolving — treat it as preview surface area, not a stable contract.
+
+**If you need on-device speech transcription:** the [Speech Recognition API](https://learn.microsoft.com/en-us/windows/ai/apis/speech-recognition) is public preview and documented with real prerequisites (Windows 11 24H2, WinAppSDK 1.7.1+). Test both the NPU and CPU code paths since hardware selection is automatic and not developer-controlled.
+
+**If you're planning agent deployments with security requirements:** MXC is not GA. Do not plan production rollouts around a specific GA date — Microsoft has not committed to one.
 
 ---
 
 ## The Bigger Picture
 
-Four years ago, on-device AI inference on consumer hardware meant a 7B quantized model running at 3 tokens per second on a CPU with 60% utilization. The June 9 update ships an OS-level model-sharing service, a hardware-agnostic execution layer, a structured agent registration system, and a purpose-built speech recognition API — all as part of a standard Windows update.
+Four years ago, on-device AI inference on consumer hardware meant a heavily quantized model running slowly on a CPU. Microsoft's current push — GPU support for Phi Silica, a purpose-built on-device speech API, a structured agent-registration framework, and a kernel-level sandboxing layer for agents — is real and documented, even where the specific "everything ships on one date" framing of an earlier draft of this piece was not.
 
-The question for Windows developers is no longer whether to consider local inference. It is whether you are designing your application architecture to work with what Windows is now providing by default. HAIEnv, Agent Launchers, and Phi Silica's expanded hardware reach make the answer to that question meaningfully easier than it was at the start of 2026.
+The question for Windows developers is not whether to consider local inference, but which of these pieces are stable enough to build on today. Right now, per Microsoft's own docs, that's Agent Launchers and Speech Recognition API (both public preview, usable), Phi Silica GPU support (real but gated behind Insider Experimental Channel), and MXC (real but early preview — plan around it, don't ship against it yet).
 
 ---
 
-*ChatForest covers AI news and tools for builders. This article is based on publicly available announcements, developer documentation, and secondary coverage as of June 5, 2026. Component availability and KB identifiers should be verified against the Windows release health page and Microsoft Learn at time of update installation.*
+*ChatForest covers AI news and tools for builders. This article was originally published June 5, 2026, and was substantially corrected on 2026-07-29 after a claim-by-claim citation audit found an unverifiable product name ("HAIEnv"), a fabricated KB number, an incorrect MXC partner list, and a mischaracterized Agent Launchers registration mechanism in the original draft. Component availability should always be re-verified against [Microsoft Learn](https://learn.microsoft.com/en-us/windows/ai/) and the [Windows AI components release-health page](https://learn.microsoft.com/en-us/windows/release-health/ai-components-release-information) at time of use, since these are actively shipping preview surfaces.*

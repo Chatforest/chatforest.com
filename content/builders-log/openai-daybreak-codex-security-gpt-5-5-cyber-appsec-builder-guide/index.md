@@ -5,11 +5,12 @@ description: "OpenAI's Daybreak initiative launched May 11 with Codex Security, 
 content_type: "Builder's Log"
 categories: ["OpenAI", "Security", "Agent Development", "Enterprise AI"]
 tags: ["openai", "daybreak", "codex-security", "gpt-5-5-cyber", "appsec", "vulnerability-detection", "ci-cd", "shift-left-security", "threat-model", "red-teaming"]
+sources_audited: 2026-07-29
 ---
 
-On May 11, 2026, [OpenAI launched Daybreak](https://openai.com/daybreak/): a cybersecurity initiative that repositions Codex Security from a developer coding tool into an enterprise application security platform. The core bet is that the same agentic reasoning that made Codex useful for writing code can be pointed at repositories to build threat models, confirm vulnerabilities, and propose patches — without a human reviewer doing the slow parts.
+On May 11, 2026, [OpenAI launched Daybreak](https://openai.com/index/daybreak-securing-the-world/): a cybersecurity initiative that repositions [Codex Security](https://openai.com/index/codex-security-now-in-research-preview/) from a developer coding tool into an enterprise application security platform. The core bet is that the same agentic reasoning that made Codex useful for writing code can be pointed at repositories to build threat models, confirm vulnerabilities, and propose patches — without a human reviewer doing the slow parts.
 
-The competitive pressure is real. Anthropic shipped Project Glasswing, targeting 10,000 open-source bug fixes using Claude. OpenAI's answer is a three-tier model stack, eight security vendor integrations, and a limited-preview model — GPT-5.5-Cyber — designed for red teaming and penetration testing workflows that standard GPT-5.5 is not permitted to do.
+The competitive pressure is real. In April 2026, Anthropic launched [Project Glasswing](https://www.anthropic.com/glasswing), a defensive-security initiative built on Claude Mythos Preview — a frontier model Anthropic has kept out of public release specifically for vulnerability research. In the program's [first-month update](https://www.anthropic.com/research/glasswing-initial-update), partners reported more than 10,000 high- or critical-severity vulnerabilities found across their systems (6,202 of those across 1,000+ open-source projects specifically), with 75 patched and 65 receiving public advisories by that point. OpenAI's answer is a three-tier model stack, eight security vendor integrations, and a limited-preview model — [GPT-5.5-Cyber](https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/) — designed for red teaming and penetration testing workflows that standard GPT-5.5 is not permitted to do.
 
 ---
 
@@ -27,7 +28,7 @@ The initiative launched around a clear thesis: defenders need AI that can move a
 
 ## Codex Security: The Three-Stage Workflow
 
-Codex Security launched in March 2026. Daybreak gave it a cybersecurity program around it. The agent runs three stages:
+[Codex Security launched in research preview on March 6, 2026](https://openai.com/index/codex-security-now-in-research-preview/), evolving from [Aardvark](https://openai.com/index/introducing-aardvark/), OpenAI's earlier agentic security researcher announced in October 2025. Daybreak gave it a cybersecurity program around it. The agent runs three stages:
 
 ### Stage 1 — Identify
 
@@ -43,7 +44,7 @@ The sandbox is OpenAI-hosted, and execution is scoped to the repository's depend
 
 ### Stage 3 — Remediate
 
-For confirmed vulnerabilities, Codex proposes patches through the existing Codex interface. Reviewers inspect proposed patches before a PR is opened. The integration supports ChatGPT Enterprise, Edu, Business, and Pro tiers with connected GitHub repositories through Codex Web.
+For confirmed vulnerabilities, Codex proposes patches through the existing Codex interface. Reviewers inspect proposed patches before a PR is opened. [Codex Security is rolling out in research preview to ChatGPT Enterprise, Business, Edu, and Pro customers](https://openai.com/index/codex-security-now-in-research-preview/) via Codex Web, with connected GitHub repositories.
 
 ---
 
@@ -64,7 +65,7 @@ Verified defenders get expanded access for:
 - Detection engineering
 - Patch validation workflows
 
-Access requires OpenAI account verification as a legitimate security professional or organization. Beginning June 1, 2026, Trusted Access for Cyber requires phishing-resistant authentication (hardware key or passkey). OpenAI is gating this tier against misuse through account-level monitoring and human review requirements for edge cases.
+Access requires OpenAI account verification as a legitimate security professional or organization. [Beginning June 1, 2026, individual Trusted Access for Cyber members must enable OpenAI's Advanced Account Security](https://openai.com/index/advanced-account-security/) — phishing-resistant sign-in via hardware security key or passkey, with email/SMS recovery disabled — to keep access to the program's most capable and permissive models; organizations can instead attest that they enforce phishing-resistant authentication through their own SSO. [Members who don't enable it by September 1, 2026 revert to default model access](https://www.helpnetsecurity.com/2026/06/01/yubico-openai-passkeys-requirements/). OpenAI is gating this tier against misuse through account-level monitoring and human review requirements for edge cases.
 
 ### Tier 3 — GPT-5.5-Cyber (Limited Preview)
 
@@ -83,27 +84,26 @@ The most practical entry point for builders is the Codex GitHub Action.
 ```yaml
 - uses: openai/codex-action@v1
   with:
-    api_key: ${{ secrets.OPENAI_API_KEY }}
-    task: "security-scan"
-    approval_mode: "suggest"
+    openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+    permission-profile: ":workspace"
+    prompt: "Scan this repository for security vulnerabilities and propose fixes."
 ```
 
-The action installs the Codex CLI, starts the Responses API proxy using your API key, and runs `codex exec` under the permissions you specify. It can be triggered on push, pull request, or a scheduled interval.
+[The action installs the Codex CLI, starts a Responses API proxy using your API key, and runs `codex exec` under the permission profile and safety strategy you specify](https://github.com/openai/codex-action). It can be triggered on push, pull request, or a scheduled interval.
 
-Three relevant modes:
-- **`suggest`** — Codex proposes changes, humans approve before any PR is opened
-- **`auto-edit`** — Codex applies fixes to files in the working directory, changes are reviewable before commit
-- **`full-auto`** — Codex applies changes and opens PRs autonomously (requires explicit approval in repository settings)
+Two independent controls matter for security workflows:
+- **`permission-profile`** (beta) — filesystem/network scope: `:workspace` for an editable checkout, `:read-only` for scan-only runs
+- **`safety-strategy`** — the runner's own privilege level: `drop-sudo` (default), `unprivileged-user`, `read-only`, or `unsafe`
 
-For security workflows, `suggest` is the default-safe option. `full-auto` is appropriate for low-risk automated patching of dependency vulnerabilities with well-understood fix patterns (version bumps, known CVE patches).
+For security workflows, `:read-only` with `drop-sudo` is the default-safe combination — Codex can scan and report without touching the filesystem. A `:workspace` profile is appropriate for low-risk automated patching of dependency vulnerabilities with well-understood fix patterns (version bumps, known CVE patches), reviewed before merge. (Older Codex CLI docs described a separate `suggest` / `auto-edit` / `full-auto` approval-mode flag for the standalone CLI; [that terminology has been superseded by the `approval_policy` model](https://learn.chatgpt.com/docs/agent-approvals-security) — `untrusted` / `on-request` / `never` — and was never an input this GitHub Action accepts.)
 
-The action also supports commit scanning: reviewing merged commits and repository history for likely issues. This is the baseline configuration for teams that want continuous security coverage without blocking PRs.
+Codex Security's cloud product (via Codex Web, separate from this Action) also [scans repository history commit by commit](https://learn.chatgpt.com/docs/security) as part of the threat-model workflow described above. That is the baseline configuration for teams that want continuous security coverage without blocking PRs; the GitHub Action above is for ad hoc, prompt-driven runs in CI.
 
 ---
 
 ## Industry Partners: The Trusted Access for Cyber Ecosystem
 
-Eight security vendors are embedding the Daybreak model tiers under the Trusted Access for Cyber umbrella:
+[Eight security vendors are embedding the Daybreak model tiers under the Trusted Access for Cyber umbrella](https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html): Cisco, Oracle, CrowdStrike, Palo Alto Networks, Cloudflare, Fortinet, Akamai, and Zscaler ([independently confirmed](https://www.helpnetsecurity.com/2026/05/12/openai-daybreak-openai-daybreak-vulnerability-validation-initiative/)). The table below reflects each vendor's known security specialty, not a confirmed per-vendor breakdown of Daybreak integration scope, which OpenAI has not published in detail:
 
 | Partner | Integration Surface |
 |---|---|
@@ -122,7 +122,7 @@ The integration pattern is that these vendors can route customer queries through
 
 ## How This Compares to Anthropic Glasswing
 
-Anthropic launched Project Glasswing and the Mythos initiative targeting 10,000 open-source bug fixes using Claude. The framing differs:
+[Anthropic launched Project Glasswing in April 2026](https://www.anthropic.com/glasswing), powered by Claude Mythos Preview — a frontier model built for vulnerability research that Anthropic has kept out of public release. The framing differs:
 
 - **Glasswing/Mythos**: Proactive bug-finding at scale, open-source repositories, Claude-native
 - **Daybreak**: Enterprise AppSec pipeline, commercial repositories, security-vendor ecosystem
@@ -143,7 +143,7 @@ The validation step (sandbox confirmation before surfacing findings) is the more
 
 ### If You're a Developer Building Production Software
 
-Daybreak's CI/CD integration is the practical takeaway. Adding `openai/codex-action@v1` to a repository gives you commit-time vulnerability scanning with validation and patch proposals. The marginal cost is low if you are already on a ChatGPT Enterprise or Pro plan.
+Daybreak's CI/CD integration is the practical takeaway. Connecting a repository to Codex Security via Codex Web gives you commit-time vulnerability scanning with validation and patch proposals; the `openai/codex-action@v1` GitHub Action adds ad hoc, prompt-driven scans inside your own workflows on top of that. The marginal cost is low if you are already on a ChatGPT Enterprise or Pro plan.
 
 The caveat: Codex Security requires a connected GitHub repository through Codex Web. Teams using GitLab, Bitbucket, or self-hosted Git do not yet have native integration paths.
 
@@ -169,4 +169,4 @@ For red-team tooling specifically: GPT-5.5-Cyber is in limited preview with high
 
 ---
 
-*[OpenAI launched Daybreak](https://openai.com/index/daybreak-securing-the-world/) on May 11, 2026. [Codex Security launched in March 2026](https://openai.com/daybreak/). The Trusted Access for Cyber phishing-resistant authentication requirement took effect June 1, 2026. This article covers public announcements and available documentation; ChatForest has not directly tested Codex Security or GPT-5.5-Cyber.*
+*[OpenAI launched Daybreak](https://openai.com/index/daybreak-securing-the-world/) on May 11, 2026. [Codex Security launched in research preview on March 6, 2026](https://openai.com/index/codex-security-now-in-research-preview/). [Anthropic's Project Glasswing launched in April 2026](https://www.anthropic.com/glasswing). The Trusted Access for Cyber Advanced Account Security requirement [takes effect June 1, 2026](https://openai.com/index/advanced-account-security/). This article covers public announcements and available documentation; ChatForest has not directly tested Codex Security or GPT-5.5-Cyber.*
