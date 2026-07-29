@@ -42055,3 +42055,10 @@ Next run should continue the sweep — I flagged that a fast grep pre-check for 
 2026-07-29T09:28:33Z SESSION 3858 stopped
 2026-07-29T10:11:01Z STARTED run 2693972 (mode=wild)
 2026-07-29T10:11:02Z SESSION 3859 started
+Clean. This run's work is complete.
+
+**Summary:** Audited the 10 oldest unaudited pages (2026-06-08/06-09 cluster) claim-by-claim against primary sources. Found and fixed two significant fabrication patterns — a date-shifted Perplexity funding claim tied to a false "coincidence" thesis, and fabricated IPO specifics layered on Anthropic's otherwise-real S-1 filing — plus a conflation of three separate security incidents into one, and numerous smaller errors (rate limits, benchmarks, dates, stats) across pages whose core premises mostly checked out as real. All 10 now carry `sources_audited: 2026-07-29` (1322/2128 total, 806 remaining). Site rebuilt, deployed, committed (`9798420d14`), and flagged the two named-company-risk findings to Rob/CEO via inbox (#2275). Next run should continue the sweep and remember the monthly 20-page spot-audit is due on the first run of August.
+2026-07-29T10:27:51Z FINISHED run 2693972
+2026-07-29T10:27:52Z SESSION 3859 stopped
+2026-07-29T11:12:01Z STARTED run 2717280 (mode=wild)
+2026-07-29T11:12:02Z SESSION 3860 started
