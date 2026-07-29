@@ -2,6 +2,98 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2693972 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-08/06-09 cluster)
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were the prior run's (2673457) session-boundary
+log lines — committed first (00cb84aab2). Inbox: one pending message (#2274, aiu 6 -> aiu 67), which is this
+agent's own already-sent citation-audit flag from run 2542853, still unactioned by the recipient — nothing
+new to act on.
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (816 unaudited of 2128 total
+going in), sorted by front-matter `date`, took the oldest 10: one 2026-06-08 review
+(`content/reviews/`) plus 9 of the 13 pages tied at 2026-06-09 (`content/builders-log/`). Dispatched 10
+parallel subagents, one per page, each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch
+verification against primary sources — explicitly briefed to treat named-company/funding/deal/IPO claims with
+high skepticism given this site's prior fabricated-premise incidents (fake Hugging Face IPO, denied BYD
+rumor).
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **odysseus-pewdiepie-self-hosted-ai-workspace-review-2026** (1 -> 31) — core premise (PewDiePie's real
+   Odysseus self-hosted AI project) confirmed real via the live GitHub repo, Wayback snapshots, the actual HN
+   thread, and independent press. Fixed a stale "MIT license" claim (project relicensed to AGPL since review
+   time), corrected unsourced star/fork/issue counts against archived snapshots, fixed a wrong PR status
+   (claimed "under review," actually closed and split into two successor PRs), and corrected an unverifiable
+   "270+ catalogued models" figure against the actual data file.
+2. **anthropic-dod-standoff-federal-freeze-thaw-builder-enterprise-guide** (~9 -> 22) — the Anthropic/DoD
+   standoff (Trump's Feb 27 ban order, Hegseth's supply-chain-risk designation, the lawsuit, Judge Lin's
+   injunction, GSA compliance, Pentagon testing competitors) verified real across CBS/NPR/PBS/WaPo/GSA/CNN/
+   Anthropic's own posts. Fixed a misattributed Dario Amodei quote (wrong source article), cut an unsourced
+   "$300-500M potential value" figure, corrected a wrong citation for the Pentagon-testing date, and
+   softened an unverifiable "Anthropic v. United States" case-name claim.
+3. **anthropic-s1-ipo-filing-june-2026-claude-platform-builder-guide** (2 -> 18) — verified real: Anthropic's
+   own site confirms a confidential draft S-1 submitted June 1, 2026 (Rule 135 notice), corroborated by
+   Fortune/CNBC/TechCrunch. Cut a fabricated "$25-35B issuance size"/"five largest IPOs ever" claim, fixed a
+   false claim that Anthropic converted from PBC structure in 2026 (it's been a PBC since founding), fixed a
+   stale OpenAI user count (500M -> 900M+ weekly), and corrected a reversed Anthropic-vs-OpenAI revenue
+   comparison.
+4. **claude-code-github-action-prompt-injection-supply-chain-security-builder-guide** (1 -> 10) — RyotaK's
+   real `checkWritePermissions` disclosure confirmed, but the draft had conflated three separate security
+   incidents (RyotaK's bypass, a distinct Microsoft-disclosed `/proc/self/environ` leak, and an unrelated
+   "Comment and Control" study on a different product) into one unified story. Split into three clearly
+   labeled, separately-cited incidents; replaced a fabricated attack-path detail with the documented real
+   exfiltration mechanism.
+5. **comscore-q1-2026-claude-1858-growth-ai-market-share-builder-implications** (2 -> 7) — the headline
+   "1,858% growth" figure verified word-for-word against Comscore's actual Q1 2026 press release. Cut a
+   fabricated "1,000x" Ramp adoption stat (Ramp's real text says "~4x'd"), fixed a wrong Claude 3.7 Sonnet
+   ship date (article said Feb 2026; actually Feb 2025), and replaced a non-supporting generic source link
+   with the specific Ramp page that actually carries the cited figures.
+6. **google-imagen-deprecated-june-2026-gemini-image-migration-builder-guide** (4 -> 15) — Imagen's
+   deprecation (Vertex AI endpoints June 30, Gemini API preview models June 25) confirmed against Google's own
+   deprecation tables; all model IDs matched exactly. Cut an unsupported "Canada-hosted deployments" detail
+   and an unsourced "2-8 hours of code changes" estimate; fixed a conflation of the `generateContent` API
+   with the separate, newer Interactions API.
+7. **google-spacex-xai-920m-compute-deal-gemini-enterprise-builder-guide** (~5 -> 19) — the $920M/month
+   Google-SpaceX-xAI compute deal confirmed via TechCrunch/CNBC/Bloomberg/Engadget/Data Center Dynamics.
+   Fixed a wrong total contract value ($29B -> ~$30B per the SEC filing reporting), a wrong Gemini Enterprise
+   launch date (claimed Q1, actually April 22/Q2), and cut an unsourced "$75B new capex" figure inconsistent
+   with every real Alphabet guidance number found ($175-205B range).
+8. **grok-imagine-video-1-5-preview-image-to-video-api-builder-guide** (~3 -> 25) — `grok-imagine-video-1.5-
+   preview` confirmed real via xAI's own docs/site. Fixed a 10x rate-limit error (article said 60 req/min;
+   actual is 600/min), a wrong region listing, a stale/wrong benchmark ranking (article said Grok ranked #2;
+   live Artificial Analysis data shows #3, behind a competitor the article omitted), and outdated competitor
+   resolution claims (Kling/Seedance already at native 4K, contradicting the article's "all output 1080p").
+9. **perplexity-200m-comet-browser-20b-valuation-june-2026-builder-guide** (3 -> 17) — **core premise was
+   fabricated by date-shifting real news.** The $200M/$20B round is real but closed September 2025, not June
+   2026 as claimed; the article built a false "timing is not a coincidence" thesis tying it to the June 11
+   Ninth Circuit hearing. Rewrote with a dated correction note; cut unverifiable MAU/query-volume figures with
+   wildly inconsistent aggregator sourcing; fixed a defunct "OpenAI Operator" reference (shut down Aug 2025).
+10. **spacex-neo-cloud-google-anthropic-colossus-deals-spcx-ipo-builder-implications-2026** (21 -> 31) — the
+    SpaceX IPO (ticker SPCX, June 12 2026 Nasdaq debut) and xAI/SpaceX merger both confirmed real via SEC
+    EDGAR and CNBC — no fabrication here, unlike the Hugging Face precedent. Mostly citation-quality fixes: a
+    mismatched citation, a weak aggregator swapped for a real primary source, added sourcing for two
+    previously-uncited rate-limit claims, and a corrected/verbatim Dario Amodei quote attribution.
+
+**`sources_audited` count: 1312 -> 1322 of 2128 total pages** (806 still unaudited). Hugo rebuild (plain
+`hugo`) — clean, 4163 pages. Deployed to DreamHost once the hourly throttle cleared.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep). The
+  remaining 2026-06-09 pages tied at the same date (4 more) plus 2026-06-10 onward are next in line.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward (today is still 2026-07-29).
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation, 5 rewritten pages baseline,
+  subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- No new pending inbox action (message #2274 remains this agent's own already-sent flag, unactioned by the
+  recipient).
+- Two named-company-risk pages this run (Perplexity funding date-shift, Anthropic S-1 fabricated specifics)
+  were significant enough corrections that they follow the same "worst failure mode" pattern flagged in
+  message #2274 — consider a follow-up flag to Rob/CEO bundling all four incidents found across the last two
+  audit runs, since a pattern of AI-generated-blogspam-derived fabrications keeps recurring in this content
+  vintage (pre-audit-duty backlog).
+
 ## Run 2591623 (2026-07-29) — Citation audit, 11 oldest unaudited pages (2026-06-05/06-06 builders-log cluster)
 
 ### Orient

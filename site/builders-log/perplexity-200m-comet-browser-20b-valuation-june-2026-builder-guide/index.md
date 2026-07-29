@@ -1,73 +1,63 @@
-# Perplexity Raises $200M to Fund the Product Amazon Is Suing Them For
+# Amazon v. Perplexity: The Ninth Circuit Tests the $20 Billion Bet on Comet
 
-> Perplexity closed $200M at a $20B valuation on June 5 — four days before Amazon v. Perplexity hits the Ninth Circuit. The raise is a $200M bet that their legal theory of agentic browser access is correct. Here's what it means for builders.
+> Perplexity's valuation hit $20B on a $200M round in September 2025 — not this month, contrary to an earlier version of this piece. What is happening this week is real: Ninth Circuit oral arguments in Amazon v. Perplexity, June 11, 2026. Here's what's actually on the record.
 
 
-On June 5, 2026, [Perplexity closed a $200 million round at a $20 billion valuation](https://finance.yahoo.com/news/perplexity-finalizes-20-billion-valuation-232758524.html). Two months earlier, they had raised $100 million at $18 billion. On June 11 — this Thursday — a three-judge Ninth Circuit panel hears oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.*
+**Correction (2026-07-29):** An earlier version of this piece said Perplexity "closed a $200 million round at a $20 billion valuation" on June 5, 2026, days before Ninth Circuit oral arguments in *Amazon v. Perplexity* — and framed that as a deliberate, meaningful coincidence. That round is real, but it closed in **September 2025**, not June 2026, [as first reported by TechCrunch](https://techcrunch.com/2025/09/10/perplexity-reportedly-raised-200m-at-20b-valuation/) and [corroborated by The Information via Yahoo Finance](https://finance.yahoo.com/news/perplexity-finalizes-20-billion-valuation-232758524.html) (dated September 11, 2025). The "$100 million at $18 billion" round referenced as an April 2026 event also predates this article: it closed in **July 2025**, led by Accel, per the same TechCrunch report. There was no funding announcement timed to the June 11, 2026 oral arguments that we can verify. The rest of this piece is rewritten to keep only what checks out.
 
-The thing Amazon is suing Perplexity over is Comet — the same product the $200 million is meant to fund and scale.
+---
 
-That timing is not a coincidence. It is a statement.
+On June 11, 2026, a three-judge Ninth Circuit panel heard oral arguments in *Amazon.com Services LLC v. Perplexity AI, Inc.* — the first federal appellate test of whether an AI agent acting on a user's instructions counts as an authorized visitor to a logged-in commercial account. [The hearing was in Seattle](https://www.searchenginejournal.com/amazon-vs-perplexity-the-cfaa-case-that-decides-whether-ai-agents-can-visit-your-website/575499/), and it concerns Comet, Perplexity's AI browser.
+
+Comet is also the product behind Perplexity's most recent confirmed valuation jump: $200 million raised at a $20 billion valuation, which [TechCrunch reported](https://techcrunch.com/2025/09/10/perplexity-reportedly-raised-200m-at-20b-valuation/) closed in September 2025 — a step up from the $18 billion valuation Perplexity reached in a $100 million round two months earlier. Both rounds predate this lawsuit's current appellate stage, but the product they were betting on is the same one now in front of the Ninth Circuit.
 
 ---
 
 ## What Perplexity Is Actually Betting On
 
-Comet is Perplexity's AI browser. It launched to Max subscribers ($200/month) in July 2025 and went free worldwide on October 2, 2025. It is free on purpose. The strategy was set before this funding round closed; the $200 million is fuel to execute it before better-funded rivals close the window.
+Comet is Perplexity's AI browser. [It launched in July 2025 to subscribers of Perplexity's $200/month Max plan](https://techcrunch.com/2025/07/09/perplexity-launches-comet-an-ai-powered-web-browser/), then [went free worldwide on October 2, 2025](https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide), following a three-month waitlist period. Perplexity's own launch announcement frames Comet as an assistant built into the browser, not a bolt-on chatbot.
 
-What makes Comet different from other AI-augmented browsers is not its search integration. It is what happens when you ask Comet to *do* something on your behalf. Comet can log into your Amazon account using your stored credentials, browse product pages, compare options, and complete purchases — all through your session, all under your authorization, all without you touching a keyboard.
+What distinguishes Comet from a search-plus-chat product is its Assistant feature: an agent that can, per Perplexity's and reporters' descriptions, [summarize emails and calendar events, manage tabs, and navigate web pages on a user's behalf](https://techcrunch.com/2025/07/09/perplexity-launches-comet-an-ai-powered-web-browser/) — including logging into accounts like Amazon using the user's stored credentials to browse, compare, and complete purchases.
 
-Amazon's lawsuit — currently on appeal at the Ninth Circuit — argues that this constitutes unauthorized access under the Computer Fraud and Abuse Act. [The core holding of the lower court was four words: *user permission, but not authorized.*](https://www.searchenginejournal.com/amazon-vs-perplexity-the-cfaa-case-that-decides-whether-ai-agents-can-visit-your-website/575499/) Meaning: even if you told Comet to log into Amazon for you, Amazon hasn't authorized the agent, and CFAA applies.
+Amazon's lawsuit argues this constitutes unauthorized access under the Computer Fraud and Abuse Act. [Judge Maxine M. Chesney of the Northern District of California granted a preliminary injunction on March 9, 2026](https://www.jonesday.com/en/insights/2026/05/authorized-by-the-user-blocked-by-the-platform-testing-the-legal-limits-of-ai-agents), barring Perplexity's agents from accessing Amazon's systems or creating/using Amazon accounts for that purpose, and ordering destruction of any Amazon data the agents had collected. The Ninth Circuit stayed that injunction pending Perplexity's appeal. [The district court's position, in short: a user's instruction to an agent does not extend the user's own authorization to the agent](https://www.searchenginejournal.com/amazon-vs-perplexity-the-cfaa-case-that-decides-whether-ai-agents-can-visit-your-website/575499/). Perplexity's counter-argument, per the same reporting: Comet's access is the user's access, "channeled through software," and the CFAA was not written to reach software acting under explicit user delegation.
 
-Perplexity's counter: user authorization is authorization. If I give my keys to a friend, Amazon can't arrest the friend for entering my house.
-
-The Ninth Circuit's questions on June 11 will reveal which theory they find plausible. A final ruling comes weeks to months after argument. But the signal will be immediate.
+The Ninth Circuit's questions at the June 11 hearing signal which theory the court finds more plausible; a written ruling typically follows weeks to months after argument.
 
 ---
 
-## The Valuation Trajectory Encodes a Legal Bet
+## The Valuation Trajectory, Corrected
 
-Perplexity's valuation history in 2026 alone:
+Perplexity's confirmed valuation history, per TechCrunch's September 2025 reporting:
 
-- **April 2026**: $18 billion (+$100M raise)
-- **June 5, 2026**: [$20 billion (+$200M raise)](https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm)
-- **Total funding raised**: ~$1.72 billion
+- **July 2025**: $18 billion, on a $100 million round led by Accel
+- **September 2025**: $20 billion, on a $200 million round ([TechCrunch](https://techcrunch.com/2025/09/10/perplexity-reportedly-raised-200m-at-20b-valuation/); [The Information/Yahoo Finance](https://finance.yahoo.com/news/perplexity-finalizes-20-billion-valuation-232758524.html))
+- **Total funding at that point**: approximately $1.5 billion since founding, [per TechCrunch](https://techcrunch.com/2025/09/10/perplexity-reportedly-raised-200m-at-20b-valuation/)
 
-Investors pricing Comet into a $20 billion valuation are making a forward-looking bet: that the AI browser surface — the interface where agents act on behalf of users — is worth owning, and that the legal theory permitting it holds.
+We could not independently confirm a more recent 2026 valuation figure against primary or named-press reporting strong enough to clear this site's bar, so we're not asserting one here.
 
-If Amazon wins on June 11 (or the Ninth Circuit signals it will win), Comet's core value proposition collapses. Agents cannot access logged-in sessions on behalf of users without affirmative opt-in authorization from every platform. That fundamentally changes what an AI browser can do and turns the category into a less valuable product.
-
-If Perplexity wins — or if the Ninth Circuit's questions suggest the "user authorization is sufficient" theory has traction — the $20 billion valuation looks prescient.
-
-The funding round is, in part, a prediction about Thursday's hearing.
+Investors who priced Comet into a $20 billion valuation were making a forward-looking bet: that the AI-browser surface — where agents act on a user's behalf — is worth owning, and that the legal theory permitting it holds up. That bet is now specifically being tested in the Ninth Circuit. If Amazon prevails, agents can't access logged-in sessions on a user's behalf without affirmative platform-level opt-in, which narrows what an AI browser can do. If Perplexity prevails, user delegation remains the operative legal standard.
 
 ---
 
 ## Why It's a Browser, Not an App
 
-Perplexity has 45 million monthly active users. It processes hundreds of millions of queries per day. It already has a well-regarded search product. It could have built Comet as a standalone app, or integrated agent capabilities into the main Perplexity interface.
+Perplexity could have shipped agentic features as an add-on to its main app. It built a standalone browser instead. Browsers are the surface where people research, compare, fill forms, and transact — an agent that wants to act on those tasks needs to be inside the browser doing them, not upstream of them generating a list of recommendations.
 
-It built a browser instead.
+Perplexity is not alone in treating the browser as the contested surface:
 
-Browsers are surfaces. They are where users spend time doing things — researching, comparing, filling forms, transacting. When an AI agent takes over those tasks, it needs to be *inside* the browser to do them. An AI app that generates a list of recommendations is upstream of the action. A browser that *performs* the action on your behalf is the action.
+- **Google** [began rolling out agentic "Auto Browse" features for Gemini in Chrome in late January 2026](https://techcrunch.com/2026/01/28/chrome-takes-on-ai-browsers-with-tighter-gemini-integration-agentic-features-for-autonomous-tasks/), letting Chrome take multi-step actions — navigating sites, filling forms, initiating transactions — on a single prompt, [per Google's own announcement](https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/).
+- **OpenAI** shut down its standalone Operator browser-agent product in August 2025 and folded its computer-use capabilities into ChatGPT Agent, [introduced July 17, 2025](https://openai.com/index/introducing-operator/), which now handles similar tasks inside the main ChatGPT product rather than as a separate browser.
+- **Apple** has [held internal talks about acquiring Perplexity](https://www.bloomberg.com/news/articles/2025-06-20/apple-executives-have-held-internal-talks-about-buying-ai-startup-perplexity), per Bloomberg's June 2025 reporting on discussions between M&A chief Adrian Perica and services head Eddy Cue, and separately [has more than 2.5 billion active devices worldwide](https://www.macrumors.com/2026/01/29/apple-2-5-billion-active-devices/) as it rolls out a redesigned Siri.
 
-The browser is the front door of the agent economy. Every page a Comet user visits is a surface Perplexity's agents can operate on. Every logged-in session is a set of permissions Perplexity's agents can act within. Every transaction a Comet user lets Comet complete is revenue flowing through Perplexity's interface rather than through a competing product.
-
-Comet also cannot be charged for — practically. Perplexity is racing against Google (which owns Chrome and is threading Gemini through it at scale), OpenAI (which is building Operator and its own browser capabilities), and Apple (which is reportedly exploring an acquisition of Perplexity and has Siri AI on billions of devices). In that race, a free product that builds the habit is more valuable than a paid product that limits the addressable market.
+Whichever company controls the browser surface controls where agent-driven transactions happen — which is the actual stake in the Amazon case: not whether Comet can browse, but whether it can act inside someone else's logged-in commercial account without that platform's separate sign-off.
 
 ---
 
 ## The CEO's Statement on June 9
 
-Perplexity CEO Aravind Srinivas went on CNBC on June 9 to reaffirm the company's 2028 IPO timeline — explicitly framing it as independent of whatever happens to Anthropic's and OpenAI's listings.
+[Perplexity CEO Aravind Srinivas told CNBC on June 9, 2026](https://www.cnbc.com/2026/06/09/perplexity-ipo-2028-as-anthropic-openai-prepare-listings.html) that the company still plans to go public in 2028, regardless of how Anthropic's and OpenAI's own IPO plans play out: "Agnostic of these two companies, we were planning for something in 2028 so that still remains the case."
 
-"Agnostic of these two companies, we were planning for something in 2028 so that still remains the case."
-
-The statement signals confidence. You don't announce a 2028 IPO date two days before an oral argument that could materially damage your most important product unless you believe the argument will go reasonably well — or at minimum that your product has enough alternative value to survive a ruling that narrows agentic access.
-
-Perplexity's search product is real. Forty-five million monthly users is real. The $200M closes regardless of what happens Thursday. The 2028 IPO timeline holds regardless of the competitive IPO race.
-
-But Comet is the bet. The $200M is the bet. The $20 billion valuation is the bet.
+That statement is real and correctly dated — it's the one piece of this story that actually happened in the window this article originally claimed. It doesn't depend on the funding-round timing error above: Srinivas made the comment two days before the Ninth Circuit hearing, in the context of a wave of AI-company IPO filings, not in the context of a fresh funding close.
 
 ---
 
@@ -75,21 +65,21 @@ But Comet is the bet. The $200M is the bet. The $20 billion valuation is the bet
 
 **If you're building a product that users will want agents to access:**
 
-The Amazon v. Perplexity case outcome defines your technical compliance posture. If the Ninth Circuit upholds the "user permission, but not authorized" theory, you will need to build affirmative agent authorization flows — not just a terms-of-service clause, but explicit per-agent, per-session consent mechanisms that satisfy courts. If Perplexity wins, user delegation remains the operative standard and you can rely on users consenting to agent access without building separate authorization infrastructure.
+The Amazon v. Perplexity outcome will define your technical compliance posture. If the Ninth Circuit upholds the district court's "user permission doesn't equal agent authorization" theory, expect to need affirmative, per-agent, per-session consent mechanisms — not just a terms-of-service clause. If Perplexity wins, user delegation remains the operative standard and you may not need separate authorization infrastructure.
 
 **If you're building an agent that acts on behalf of users:**
 
-Comet is the clearest example of what the agent browser looks like at scale. The free distribution strategy, the logged-in session access model, and the "I am acting as the user" legal theory are all design choices you may need to replicate, defend, or navigate around. Watch what the Ninth Circuit does with the "authorized user" question closely — it is the operating theory your agent relies on.
+Comet is the clearest example at scale of the design choices — free distribution, logged-in session access, "the agent is the user" legal theory — that are now being tested in court. Whatever the Ninth Circuit signals about "authorized user" is worth tracking closely if your agent relies on the same theory.
 
 **If you're thinking about where AI platform power is accumulating:**
 
-The browser is one answer. Perplexity is not the only company that believes this. The race for the front door of agentic AI is between Comet, Google's Gemini-in-Chrome integration, and whatever OpenAI ships as Operator expands. Whoever controls the surface controls the agent.
+The browser is one contested surface, not the only one. Comet, Gemini-in-Chrome, and ChatGPT Agent are three different bets on the same idea — that whoever operates inside the browser session controls the agent-driven transaction.
 
 ---
 
 ## What's Coming
 
-The Ninth Circuit oral arguments in *Amazon v. Perplexity* are June 11, 2026 in Seattle. A ruling typically follows within 30–90 days of argument. We'll cover the hearing questions and what they signal.
+A Ninth Circuit ruling typically follows 30–90 days after oral argument. We'll cover the ruling and what it signals once it lands.
 
 For the full legal background, see:
 - [Amazon v. Perplexity: What the Ninth Circuit Will Actually Decide](/builders-log/amazon-v-perplexity-ninth-circuit-oral-arguments-june-11-2026-cfaa-agentic-access-preview/)

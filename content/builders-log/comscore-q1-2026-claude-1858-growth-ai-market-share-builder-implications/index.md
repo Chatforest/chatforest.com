@@ -6,6 +6,7 @@ og_description: "Claude hit 22 million desktop conversations in March 2026, up 1
 content_type: "Builder's Log"
 categories: ["Claude", "Market Data", "AI Strategy"]
 tags: ["comscore", "ai-market-share", "claude", "chatgpt", "anthropic", "openai", "enterprise-ai", "claude-code", "market-data", "builder-guide", "ai-adoption"]
+sources_audited: 2026-07-29
 ---
 
 Comscore published its [Q1 2026 AI Intelligence Report](https://www.comscore.com/Insights/Press-Releases/2026/6/Comscore-s-Q1-2026-AI-Intelligence-Report) on June 2, 2026. The headline number was Claude: 22 million desktop conversations in March 2026, up 1,858% compared to October 2025. That is five months of growth from a small base.
@@ -26,6 +27,8 @@ The Comscore report tracked desktop conversations and desktop visitors across th
 | Copilot | — | 44 million | 7.1 |
 | Gemini | — | 30 million | 4.6 |
 | Claude | 22 million | — | — |
+
+*(Source: [Comscore Q1 2026 AI Intelligence Report](https://www.comscore.com/Insights/Press-Releases/2026/6/Comscore-s-Q1-2026-AI-Intelligence-Report), June 2, 2026.)*
 
 ChatGPT's 244 million desktop conversations dwarf Claude's 22 million by a factor of 11x. That gap is real. Anyone building for maximum consumer reach is still building for a ChatGPT-first world.
 
@@ -49,9 +52,9 @@ For builders designing AI features, this is a useful benchmark. If your users av
 
 The Comscore report tracks consumer web traffic. It does not measure the enterprise market, which is where the more consequential competition is happening.
 
-The [Ramp AI Index](https://ramp.com/data/ai-index) for May 2026 — which tracks actual company spend across business tools — shows Claude enterprise adoption at 34.4%, edging past OpenAI's ChatGPT at 32.3%. Anthropic went from 0.03% of businesses in mid-2023 to 34.4% by April 2026. That is a 1,000x increase in business adoption share over three years.
+[Ramp's AI Index](https://ramp.com/leading-indicators/the-ai-race-has-a-new-frontrunner-but-no-clear-winner) — which tracks actual company card spend across business tools — reported that Anthropic's U.S. business adoption rose to 34.4% in April 2026, overtaking OpenAI's 32.3% for the first time (OpenAI had peaked at 36.8% in December 2025). Ramp's own analysis says Anthropic "has nearly 4x'd its rate of business adoption over the last year."
 
-The win-rate figure reported in February 2026: Anthropic wins approximately 70% of head-to-head enterprise deals against OpenAI for net-new business AI contracts. The primary driver in those evaluations is Claude Code — now Anthropic's fastest-growing product, with a $2.5B+ annualized run rate reported as of early 2026.
+Per [Ramp's March 2026 AI Index](https://ramp.com/data/ai-index-march-2026), Anthropic wins approximately 70% of head-to-head matchups against OpenAI among businesses purchasing AI services for the first time. The primary driver is Claude Code: Anthropic's own [Series G funding announcement](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation) (February 12, 2026) states Claude Code's run-rate revenue "has grown to over $2.5 billion," more than double its level at the start of 2026.
 
 ---
 
@@ -63,7 +66,7 @@ The consumer traffic gap (11x in favor of ChatGPT) and the enterprise win rate (
 
 **If you are building developer tools, enterprise integrations, or agentic workflows:** Claude's trajectory is harder to ignore. The enterprise adoption data suggests that the companies writing checks for AI infrastructure are increasingly choosing Claude. Building on the Anthropic API, investing in MCP integrations, and aligning with Claude Code as a deployment surface are increasingly defensible choices for tools targeting technical buyers.
 
-**If you are deciding where to invest in the MCP ecosystem:** Claude is currently the primary platform where MCP server adoption is concentrated. The Comscore growth curve suggests that the developer audience using Claude — which over-indexes for technical users — is expanding fast. MCP tools that work well with Claude now have a growing addressable market.
+**If you are deciding where to invest in the MCP ecosystem:** Anthropic [introduced MCP](https://www.anthropic.com/news/model-context-protocol) in November 2024, and Claude Desktop remains one of its primary hosts, though OpenAI and Google DeepMind have since adopted the protocol as well. The Comscore growth curve suggests that the developer audience using Claude — which over-indexes for technical users — is expanding fast. MCP tools that work well with Claude have a growing addressable market within that base.
 
 ---
 
@@ -82,7 +85,7 @@ This is a consistent pattern, not noise in one platform's data. The audience dri
 
 ## The Limits of What This Data Can Tell You
 
-Consumer traffic metrics are a lagging signal. The Comscore numbers reflect March 2026 and were published in June. The Ramp enterprise spend data reflects Q1. Both are already three to six months behind the current state of the market.
+Consumer traffic metrics are a lagging signal. The Comscore numbers reflect March 2026 and were published in June. The Ramp enterprise spend data cited above reflects April 2026, published in May. Both are already months behind the current state of the market.
 
 The 1,858% growth figure should be read carefully. Claude's October 2025 baseline was small. A jump from a small number to a larger number produces a high percentage even when the absolute gap to the leader remains large. The trend is real; the percentage is somewhat misleading about Claude's competitive proximity to ChatGPT.
 
@@ -92,7 +95,7 @@ The more useful frame: Claude's growth is compounding off a growing base, the en
 
 ## What to Watch Next
 
-Comscore plans to publish quarterly AI Intelligence Reports. The Q2 2026 report (covering April–June 2026) will be the first to show whether the 1,858% growth rate sustained after the initial burst or reflected a one-time surge tied to specific product launches (Claude 3.7 Sonnet shipped in February 2026).
+Comscore plans to publish quarterly AI Intelligence Reports. The Q2 2026 report (covering April–June 2026) will be the first to show whether the 1,858% growth rate sustained after the initial burst or reflected a one-time surge tied to specific product launches: Anthropic shipped [Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5) in November 2025 and [Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6) in February 2026, both inside the Comscore measurement window.
 
 The enterprise Ramp AI Index updates monthly. Watch whether Claude's 34.4% enterprise adoption figure continues to grow past OpenAI's 32.3%, or whether the lines cross back.
 
