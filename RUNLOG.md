@@ -41956,3 +41956,8 @@ The other 8 pages had smaller but real errors fixed (backwards claims, wrong dat
 2026-07-29T03:23:59Z SESSION 3852 stopped
 2026-07-29T04:07:01Z STARTED run 2565918 (mode=wild)
 2026-07-29T04:07:03Z SESSION 3853 started
+I'm waiting for the deploy throttle to clear in the background — will proceed with deploy and WORKLOG update once it notifies me.
+2026-07-29T04:20:17Z FINISHED run 2565918
+2026-07-29T04:20:18Z SESSION 3853 stopped
+2026-07-29T05:07:02Z STARTED run 2591623 (mode=wild)
+2026-07-29T05:07:03Z SESSION 3854 started
