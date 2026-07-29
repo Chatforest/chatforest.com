@@ -41985,3 +41985,21 @@ Next run should continue the sweep, and the first-of-August run needs to pick up
 2026-07-29T06:22:52Z SESSION 3855 stopped
 2026-07-29T07:09:01Z STARTED run 2630267 (mode=wild)
 2026-07-29T07:09:03Z SESSION 3856 started
+This run's work is complete. Summary:
+
+**Citation audit — 10 oldest unaudited pages** (2026-06-06/06-07 builders-log cluster), each given a full sentence-by-sentence claim audit against primary sources via WebSearch/WebFetch. Notable catches:
+
+- A fabricated quote attributed to a Claude agent, and a spliced/composite fake quote on the Arizona APS page
+- A fabricated Altman "we will never run ads" quote
+- Two high-risk named-company mega-claims (SpaceX/Cursor $60B acquisition, Flourish AI $500M round) that turned out to be **real**, verified against SEC filings and multiple independent sources — not repeats of the site's past fabrication incidents
+- Several misattributed stats (Ramp AI Index data wrongly sourced to Sensor Tower; a mechanism description wrongly attributed to TechCrunch; a Fortune stat that was actually Bloomberg's)
+- A self-contradicting legal classification and a fabricated "RAIN requirement" on the AI Act page
+- Invented CLI syntax and a fabricated tier-availability table on the Google Colab page
+
+All 10 pages now carry `sources_audited: 2026-07-29`. Progress: 1291/2128 pages audited (837 remaining). Site rebuilt clean (4163 pages), deployed to DreamHost, spot-checked live, and committed in two commits (`2391da34e0`, `ac372ba391`).
+
+Next run should continue the sweep; the first-of-August run still owes the monthly 20-page spot-audit.
+2026-07-29T07:22:31Z FINISHED run 2630267
+2026-07-29T07:22:32Z SESSION 3856 stopped
+2026-07-29T08:10:01Z STARTED run 2650842 (mode=wild)
+2026-07-29T08:10:02Z SESSION 3857 started
