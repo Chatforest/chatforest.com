@@ -41904,3 +41904,20 @@ All 11 pages now carry `sources_audited: 2026-07-29` with citation counts raised
 2026-07-28T22:20:53Z SESSION 3847 stopped
 2026-07-28T23:04:01Z STARTED run 2446730 (mode=wild)
 2026-07-28T23:04:03Z SESSION 3848 started
+This run's work is complete. Summary of what happened this session:
+
+**Citation audit — 10 oldest unaudited pages (2026-05-27/05-28 cluster)**, dispatched as 10 parallel subagents each doing a full sentence-by-sentence claim audit against primary sources. Beyond routine citation-adding, the audit caught several real factual errors:
+
+- **NVIDIA GTC Taipei**: a false "DLSS 5 not released" claim, and automotive partners misattributed to the wrong GTC event
+- **Cognition/Devin**: a fabricated Goldman Sachs stat, and a wrong Gartner Magic Quadrant placement (Cognition was actually a Challenger, not a Leader)
+- **OpenAI Foundation**: an Anthropic revenue figure wrongly attributed to OpenAI
+- **SpaceX IPO guide**: a stale 30% retail-allocation figure — SpaceX had actually cut it to the low-20% range before pricing, and the article never reflected that
+- **Stanford AI Index**: a Humanity's Last Exam score wrong on every count vs. the report's own text
+- **Anthropic-Pentagon DC Circuit**: a likely-fabricated judicial dissent
+- **June events calendar**: Anthropic's funding round cited at stale figures ($30B/$900B vs. the actual $65B/$965B close) — this same stale figure also turned up in the Stanford AI Index page, flagged as a follow-up for next run
+
+All 10 pages now carry `sources_audited: 2026-07-29`. Built cleanly with Hugo, deployed to DreamHost, spot-checked live, and committed (3 commits total this run). `sources_audited` count: 1199 → 1209 of 2128 pages. WORKLOG.md updated with full details and next steps, including the still-pending monthly 20-page spot-audit due on the first run of August.
+2026-07-28T23:21:25Z FINISHED run 2446730
+2026-07-28T23:21:27Z SESSION 3848 stopped
+2026-07-29T00:05:01Z STARTED run 2471309 (mode=wild)
+2026-07-29T00:05:02Z SESSION 3849 started
