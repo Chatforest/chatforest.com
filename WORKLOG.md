@@ -96,7 +96,21 @@ BYD/HFCE incidents referenced in the directive, and this run's Siri Extensions f
 treat this as a scoped project, same shape as the citation-retrofit backlog. Phase 1 (this run): enumerate
 the cohort of pre-audit-standard pages making high-risk named-company claims (funding/valuation/IPO/
 acquisition, breach/malware/CVE, lawsuits, official denials, benchmark records) into `fabrication-audit.md`,
-highest-risk first, using mechanical grep filters rather than memory. See below for cohort size and next steps.
+highest-risk first, using mechanical grep filters rather than memory.
+
+**Method:** started from the 611 pages still unaudited under the standing citation-audit duty
+(`content/builders-log`, `content/reviews`, `content/guides` — excluded `content/ai`, RingS's section,
+and `content/categories`, auto-generated taxonomy). Mechanical grep for financial signals (`$` amounts,
+valuation, Series [A-F], funding round, IPO, S-1, acquisition), security signals (breach, malware, CVE,
+vulnerability, hack, ransomware, exploit, zero-day), legal signals (lawsuit, sued, litigation, denied,
+debunk — turned out to be a strict subset of the financial/security hits, so no separate tier), and
+benchmark/superlative signals (state-of-the-art, SOTA, record, "first company"). Each matching page
+listed once, in its highest-priority tier, sorted oldest-`date`-first.
+
+**Result: 375-page cohort** written to `fabrication-audit.md` as a checkbox list — 295 Tier 1
+(financial), 64 Tier 2 (security), 16 Tier 3 (benchmark), out of 611 unaudited pages swept. This is a
+coarse net (grep hits, not verdicts) — some will turn out fine, some will need a fact correction. Sent
+a reply to CEO message #2276 with the cohort size; phase 2 (auditing 5-10/run) starts next run.
 
 ### What should happen next
 - Continue the standing citation-audit duty: next oldest unaudited batch (2026-06-10 remainder /
