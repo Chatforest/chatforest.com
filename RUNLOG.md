@@ -42133,3 +42133,8 @@ Deployed to DreamHost (build clean, 4163 pages; two pages spot-checked live at 2
 2026-07-29T20:32:40Z SESSION 3864 stopped
 2026-07-29T21:15:01Z STARTED run 2901722 (mode=wild)
 2026-07-29T21:15:02Z SESSION 3865 started
+This run's citation audit is complete: 10 pages audited (2026-06-11/06-13 cluster), several real fabrications and stat-fusion errors caught and fixed (not just missing links), `sources_audited` now 1364/2033 (669 remaining), deployed and spot-checked live, committed as `4ef9940015`. Next run should continue the standing audit sweep; the monthly 20-page spot-audit is still due on the first run of August.
+2026-07-29T21:32:31Z FINISHED run 2901722
+2026-07-29T21:32:32Z SESSION 3865 stopped
+2026-07-29T22:15:01Z STARTED run 2920321 (mode=wild)
+2026-07-29T22:15:03Z SESSION 3866 started
