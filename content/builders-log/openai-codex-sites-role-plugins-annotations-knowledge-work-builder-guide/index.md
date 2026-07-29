@@ -1,13 +1,14 @@
 ---
 title: "OpenAI Codex Expands Beyond Code: Sites, Six Role Plugins, and What It Means for Enterprise AI Builders"
 date: 2026-06-04
-description: "OpenAI's June 3 'Intelligence at Work' update turns Codex into an enterprise workspace platform with hosted Sites, six role-specific plugins covering data analytics through investment banking, and scoped Annotations editing. If you're building vertical AI for any of those six domains, your competitive landscape just changed."
+description: "OpenAI's June 2 'Intelligence at Work' update turns Codex into an enterprise workspace platform with hosted Sites, six role-specific plugins covering data analytics through investment banking, and scoped Annotations editing. If you're building vertical AI for any of those six domains, your competitive landscape just changed."
 content_type: "Builder's Log"
 categories: ["OpenAI", "Enterprise AI", "Agent Development", "Product Strategy"]
 tags: ["openai", "codex", "codex-sites", "role-plugins", "enterprise-ai", "knowledge-workers", "annotations", "agentic-platform", "non-developers", "vertical-ai"]
+sources_audited: 2026-07-29
 ---
 
-On June 3, 2026, OpenAI held an ["Intelligence at Work"](https://openai.com/business/intelligence-at-work/) event and [shipped a Codex update](https://openai.com/index/codex-for-knowledge-work/) that reframes what the platform is. ([TechCrunch coverage](https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/)) Codex started as a coding agent for developers. After this update, it is also a configurable enterprise workspace for data analysts, marketers, salespeople, product designers, and investment bankers.
+On June 2, 2026, OpenAI held an ["Intelligence at Work"](https://openai.com/business/intelligence-at-work/) event and [shipped a Codex update](https://openai.com/index/codex-for-knowledge-work/) that reframes what the platform is. ([TechCrunch coverage](https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/)) Codex started as a coding agent for developers. After this update, it is also a configurable enterprise workspace for data analysts, marketers, salespeople, product designers, and investment bankers.
 
 Three things shipped at once: Sites (OpenAI-hosted internal tools), six role-specific plugins, and Annotations (scoped in-place editing). None of them require coding knowledge.
 
@@ -19,7 +20,7 @@ Three things shipped at once: Sites (OpenAI-hosted internal tools), six role-spe
 
 Sites lets users build, deploy, and share web apps, dashboards, internal tools, and interactive documents — all hosted by OpenAI. No deployment pipeline, no IT ticket, no infrastructure.
 
-Sites is in preview for ChatGPT Business and Enterprise customers. During preview it is free; pricing has not been announced. Enterprise admins control availability via RBAC in workspace settings.
+Sites is in preview for [ChatGPT Business and Enterprise customers](https://nerova.ai/news/openai-codex-plugins-sites-knowledge-work-june-2-2026). During preview [it is included at no extra cost with eligible plans](https://learn.chatgpt.com/docs/pricing); pricing beyond the preview period has not been announced. Enterprise admins control availability via RBAC in workspace settings.
 
 What you can build: interactive data dashboards, lightweight internal apps, shareable reports, tools-with-instructions for non-technical teammates. The output is a URL that teammates can load directly.
 
@@ -27,7 +28,7 @@ The infrastructure implication is real. OpenAI is now in the business of hosting
 
 ### Six Role-Specific Plugins
 
-The six plugins are designed for specific jobs rather than specific technologies:
+The six plugins are designed for specific jobs rather than specific technologies ([OpenAI](https://openai.com/index/codex-for-every-role-tool-workflow/); integration details corroborated by [Reworked](https://www.reworked.co/digital-workplace/openai-adds-plugins-to-codex/) and [Nerova](https://nerova.ai/news/openai-codex-plugins-sites-knowledge-work-june-2-2026)):
 
 | Plugin | Target User | Sample Integrations |
 |---|---|---|
@@ -38,13 +39,13 @@ The six plugins are designed for specific jobs rather than specific technologies
 | **Equity Investing** | Public equity analysts | Market data integrations |
 | **Investment Banking** | IB analysts and associates | Financial model tools |
 
-Together these six plugins bundle 62 apps and 110 automated skills. Non-developer users — analysts, operators, marketers, researchers — now constitute about 20% of Codex's 5 million weekly active users and are adopting the platform three times faster than engineers.
+Together these six plugins [bundle 62 apps and 110 automated skills](https://www.reworked.co/digital-workplace/openai-adds-plugins-to-codex/). Non-developer users — analysts, operators, marketers, researchers — now [constitute about 20% of Codex's 5 million weekly active users and are adopting the platform three times faster than developers](https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/).
 
-More plugins are on the roadmap: Corporate Finance, Private Equity Investing, Marketing Strategy, Strategy Consulting, and Legal.
+[More plugins are on the roadmap](https://www.reworked.co/digital-workplace/openai-adds-plugins-to-codex/): Corporate Finance, Private Equity Investing, Marketing Strategy, Strategy Consulting, and Legal.
 
 ### Annotations — Scoped In-Place Editing
 
-Annotations is the feature that makes this credible for knowledge work. A user highlights a specific cell range in a financial model, prompts Codex to add a chart, and the model executes only within that boundary — leaving the rest of the document untouched.
+[Annotations](https://nerova.ai/news/openai-codex-plugins-sites-knowledge-work-june-2-2026) is the feature that makes this credible for knowledge work. A user highlights a specific cell range in a financial model, prompts Codex to add a chart, and the model executes only within that boundary — leaving the rest of the document untouched.
 
 Before Annotations, LLM editing of complex documents meant whole-document replacement, which breaks carefully structured spreadsheets, slides, and reports. Scoped editing closes the last friction point for document-heavy roles.
 
@@ -54,7 +55,7 @@ Before Annotations, LLM editing of complex documents meant whole-document replac
 
 ### Your Vertical May Now Be a Plugin
 
-If you are building an AI product for data analytics, sales, marketing, product design, or finance, OpenAI just shipped a competing product with 62 prebuilt integrations and a $20/month price floor (Plus tier).
+If you are building an AI product for data analytics, sales, marketing, product design, or finance, OpenAI just shipped a competing product with 62 prebuilt integrations and a [$20/month price floor (Plus tier)](https://learn.chatgpt.com/docs/pricing).
 
 That is not a reason to stop building. But it changes the question from "does an AI product exist?" to "why is your product better than Codex for this specific workflow?"
 
@@ -73,7 +74,7 @@ The risk for builders: if a knowledge worker can describe a dashboard in a Codex
 
 ### The Non-Developer Growth Signal
 
-20% of 5 million weekly users and growing 3x faster than the developer segment is a market signal. Knowledge workers who were never going to write code are now using Codex as a work tool. This expands the total addressable market for enterprise AI products while also creating the expectation that AI tools require no technical setup.
+[20% of 5 million weekly users and growing 3x faster than the developer segment](https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/) is a market signal. Knowledge workers who were never going to write code are now using Codex as a work tool. This expands the total addressable market for enterprise AI products while also creating the expectation that AI tools require no technical setup.
 
 If your product requires IT installation, developer integration, or API key management, that expectation mismatch will drive non-developer buyers toward Codex alternatives.
 
@@ -91,4 +92,4 @@ If your product requires IT installation, developer integration, or API key mana
 
 ---
 
-*OpenAI's "Intelligence at Work" announcement was made June 3, 2026. Sites is in preview for Business and Enterprise teams. Role plugin availability follows existing subscription tiers (Plus at $20/month, Pro at $100/month, Business and Enterprise with seat licenses). This article covers the announcement and its strategic implications; ChatForest has not directly tested the features.*
+*OpenAI's "Intelligence at Work" announcement was made June 2, 2026. Sites is in preview for Business and Enterprise teams. Role plugin availability follows [existing subscription tiers](https://learn.chatgpt.com/docs/pricing) (Plus at $20/month, Pro at $100/month, Business and Enterprise with seat licenses). This article covers the announcement and its strategic implications; ChatForest has not directly tested the features.*

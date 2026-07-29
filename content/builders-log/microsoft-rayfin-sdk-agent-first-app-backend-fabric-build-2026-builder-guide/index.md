@@ -7,6 +7,7 @@ content_type: "Builder Guide"
 categories: ["AI Infrastructure", "Developer Tools", "Enterprise AI"]
 tags: ["microsoft", "rayfin", "fabric", "build-2026", "agent-first", "backend-as-a-service", "open-source", "replit", "onelake", "vibe-coding", "builders-log"]
 author: "ChatForest"
+sources_audited: 2026-07-29
 ---
 
 **At a glance:** Rayfin is an open-source SDK and CLI, announced at Microsoft Build 2026, for defining and deploying complete application backends to Microsoft Fabric. One command — `rayfin deploy` — provisions the database, APIs, authentication, and governance policies, with app data landing in OneLake by default. Coding agents can drive the full cycle end-to-end. Replit integration included. Currently in preview. Part of our **[Builder's Log](/builders-log/)**.
@@ -17,7 +18,7 @@ Microsoft has a structural problem with the vibe-coding era. AI-assisted code ge
 
 **Rayfin** is Microsoft's structural answer.
 
-Announced at Build 2026 on June 2, Rayfin is an open-source SDK and CLI that lets developers — and coding agents — define an entire application backend in code, then ship it to Microsoft Fabric with a single command. When the backend deploys, it runs inside the tenant's Fabric environment, inheriting existing security controls, governance policies, and compliance rules automatically. App data lands in OneLake, not a new silo.
+[Announced at Microsoft Build 2026 on June 2](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676), Rayfin is [an open-source SDK and CLI](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/) that lets developers — and coding agents — define an entire application backend in code, then ship it to Microsoft Fabric with a single command. When the backend deploys, it runs inside the tenant's Fabric environment, [inheriting the governance, security, and compliance foundations already established in Fabric](https://www.microsoft.com/en-us/microsoft-fabric/features/rayfin) automatically. [App data lands in OneLake](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/), not a new silo.
 
 The pitch is closing a specific gap: you can now go from AI-assisted app generation to governed enterprise production without a human manually provisioning infrastructure, negotiating security policies, or connecting data pipelines.
 
@@ -25,9 +26,9 @@ The pitch is closing a specific gap: you can now go from AI-assisted app generat
 
 ## What Rayfin Actually Does
 
-Rayfin is a **backend-as-a-service framework** where the "service" is Microsoft Fabric and the "as-a-service" part means the infrastructure is fully managed once you deploy.
+Rayfin is a [**backend-as-a-service framework**](https://github.com/microsoft/rayfin) where the "service" is Microsoft Fabric and the "as-a-service" part means the infrastructure is fully managed once you deploy.
 
-Using the Rayfin SDK, you define in code:
+[Using the Rayfin SDK, you define in code](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676):
 
 - **Data models and schema** — what your application's entities are, their structure, their relationships
 - **Business logic and APIs** — the operations the backend exposes and how they work
@@ -40,18 +41,17 @@ You write this once, in your familiar development environment. Then:
 rayfin deploy
 ```
 
-That single command provisions everything — the database, the API endpoints, authentication infrastructure, and policy enforcement — inside your organization's Fabric tenant. No separate infrastructure tickets. No negotiating with a DBA to provision a schema. No manual connection to OneLake.
+[That single command provisions everything — the database, the API endpoints, authentication infrastructure, and policy enforcement](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/) — inside your organization's Fabric tenant. No separate infrastructure tickets. No negotiating with a DBA to provision a schema. No manual connection to OneLake.
 
 The result is an application backend that is:
-- Governed by the tenant's existing Purview and DLP rules from day one
-- Stored in OneLake, where it is immediately accessible to Power BI, Fabric analytics, and other Microsoft data tools
-- Subject to the organization's audit trail without additional instrumentation
+- [Governed by Fabric's existing security, governance, and compliance foundations from day one](https://www.microsoft.com/en-us/microsoft-fabric/features/rayfin) — Microsoft's framing is that these come from the platform rather than being configured per app
+- [Stored in OneLake, where it becomes available to Power BI, data-science notebooks, and Fabric's data agents](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/) without a separate copy or pipeline
 
 ---
 
 ## Why the Agent-First Framing Matters
 
-Rayfin is described as "AI-first" rather than just "developer tooling," and the distinction is precise.
+Microsoft describes Rayfin as ["AI-first"](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676) rather than just "developer tooling," and the distinction is precise.
 
 Traditional developer infrastructure tools require a human in the loop for deployment decisions — a DBA reviewing schema changes, an IT admin approving new service accounts, a security team checking new API surface. Those gates exist because human-authored backends are inconsistent enough that manual review catches real problems.
 
@@ -66,13 +66,13 @@ This means a **coding agent** — Cursor, GitHub Copilot, a custom Claude workfl
 
 No human needs to touch infrastructure steps. The governance guarantees come from the deployment environment, not from hoping the agent was careful.
 
-Microsoft's VentureBeat coverage explicitly named Rayfin and Microsoft IQ together as "Build's answer to enterprise AI agents keep creating data silos." IQ provides the intelligence layer (Work IQ, Fabric IQ, Foundry IQ, Web IQ — see our [Microsoft IQ builder guide](/builders-log/microsoft-iq-work-foundry-fabric-web-context-layer-build-2026-builder-guide/)). Rayfin provides the app-generation layer. They are designed to work together in the same Fabric tenant.
+VentureBeat covered Rayfin and Microsoft IQ together under the headline ["Enterprise AI agents keep creating data silos. Microsoft's Build answer is Microsoft IQ and Rayfin."](https://venturebeat.com/data/enterprise-ai-agents-keep-creating-data-silos-microsofts-build-answer-is-microsoft-iq-and-rayfin) IQ provides the intelligence layer (Work IQ, Fabric IQ, Foundry IQ, Web IQ — see our [Microsoft IQ builder guide](/builders-log/microsoft-iq-work-foundry-fabric-web-context-layer-build-2026-builder-guide/)). Rayfin provides the app-generation layer. They are designed to work together in the same Fabric tenant.
 
 ---
 
 ## The Replit Integration
 
-Microsoft partnered with Replit to make Rayfin accessible for developers who build in browser-based environments.
+Microsoft [partnered with Replit](https://thenewstack.io/microsoft-build-2026-rayfin-replit-vibe-coding/) — [named as the launch partner](https://siliconangle.com/2026/06/02/microsoft-launches-rayfin-let-developers-agents-build-app-backends-fabric/) — to make Rayfin accessible for developers who build in browser-based environments.
 
 The workflow: build in Replit's online IDE using the Rayfin SDK, then deploy from Replit to your organization's Fabric tenant with `rayfin deploy`. The application runs in Fabric — your tenant's environment, your governance rules — not in Replit's infrastructure.
 
@@ -103,7 +103,7 @@ Without both layers, you get either a well-governed but siloed backend (Rayfin a
 
 ## What "Preview" Means for Builders
 
-Rayfin is in **preview** as of Build 2026. The GitHub repository is live and accepting early access users.
+Rayfin is in **preview** as of Build 2026, [available through a Microsoft Fabric trial](https://www.infoworld.com/article/4181166/rayfin-signals-microsofts-push-to-make-fabric-an-ai-app-runtime.html). The [GitHub repository](https://github.com/microsoft/rayfin) is live, MIT-licensed, and open for public use.
 
 What that means practically:
 
@@ -142,7 +142,7 @@ For builders evaluating Rayfin right now: it is real, the GitHub repo is live, a
 - **GA release date** — not announced at Build 2026. Monitor the [Rayfin GitHub repo](https://github.com/microsoft/rayfin) and the [Microsoft Fabric Community blog](https://community.fabric.microsoft.com/) for GA signals
 - **SDK stability** — if you are building agent pipelines that call `rayfin deploy`, pin your SDK version and watch the changelog during preview
 - **IQ + Rayfin integration documentation** — Microsoft has described both together but detailed integration patterns (how a Rayfin-deployed backend surfaces to Foundry IQ, for example) are not fully documented yet
-- **Governance depth** — the preview documentation describes Purview and DLP inheritance; the depth of policy control available to SDK users will clarify as preview progresses
+- **Governance depth** — [Microsoft's own materials describe governance, security, and compliance as inherited from Fabric](https://www.microsoft.com/en-us/microsoft-fabric/features/rayfin) rather than configured per app, but do not name specific policy engines; the depth of policy control available to SDK users will clarify as preview progresses
 - **Non-Replit code generation partners** — Replit is the launch partner; watch for Cursor, GitHub Copilot, and other coding agent integrations
 
 ---

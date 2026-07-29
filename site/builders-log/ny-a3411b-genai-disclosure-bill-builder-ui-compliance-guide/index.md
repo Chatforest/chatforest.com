@@ -3,11 +3,11 @@
 > New York's A3411B passed both legislative chambers on March 9, 2026. It requires every owner, operator, and licensee of a generative AI system to display a clear disclosure notice in the UI. This is not a frontier-developer law — it applies to you. Here's what it says and what to build.
 
 
-New York's RAISE Act gets all the press. It's a serious law — 72-hour incident reporting to the DFS, quarterly risk assessments, mandatory registration for frontier model developers. But it covers six companies.
+New York's RAISE Act gets all the press. It's a serious law — [72-hour incident reporting to the DFS](https://www.dfs.ny.gov/reports_and_publications/press_releases/pr20251222), [quarterly risk assessments and mandatory disclosure-statement filing](https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027) for frontier model developers — but it applies only to "large frontier developers" clearing [$500 million in annual revenue and a 10^26 FLOP compute threshold](https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models), a narrow band of the largest AI labs.
 
 **A3411B covers everyone else.**
 
-On March 9, 2026, the New York legislature [passed the Artificial Intelligence Disclosure Act — Assembly Bill A3411B](https://www.nysenate.gov/legislation/bills/2025/A3411/amendment/B) — with broad bipartisan support. ([Legal analysis: Alston & Bird](https://www.alstonprivacy.com/new-york-ai-disclosure-bill-passes-state-legislature/) · [Troutman Pepper](https://www.troutmanprivacy.com/2026/03/new-york-legislature-passes-genai-warning-bill/)) It is waiting on Governor Hochul's desk. She signed the RAISE Act. There is no public indication she will veto this one.
+On March 9, 2026, the New York legislature [passed the Artificial Intelligence Disclosure Act — Assembly Bill A3411B](https://www.nysenate.gov/legislation/bills/2025/A3411/amendment/B) — [141-0 in the Assembly and 58-2 in the Senate](https://legiscan.com/NY/rollcall/A03411/id/1658771). ([Legal analysis: Alston & Bird](https://www.alstonprivacy.com/new-york-ai-disclosure-bill-passes-state-legislature/) · [Troutman Pepper](https://www.troutmanprivacy.com/2026/03/new-york-legislature-passes-genai-warning-bill/)) It is waiting on Governor Hochul's desk. She signed the [RAISE Act](https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models). There is no public indication she will veto this one.
 
 When she signs it, a 90-day clock starts. At the end of that clock, if you operate any generative AI system accessed by users in New York, you need a disclosure notice in your UI. One line. Mandatory.
 
@@ -17,7 +17,9 @@ When she signs it, a 90-day clock starts. At the end of that clock, if you opera
 
 The operative requirement is straightforward:
 
-> Any owner, licensee, or operator of a generative artificial intelligence system shall clearly and conspicuously display, on the user interface of such system, a notice stating that generative AI outputs may be inaccurate.
+> The owner, licensee or operator of a generative artificial intelligence system shall clearly and conspicuously display a notice on the system's user interface that the outputs of the generative artificial intelligence system may be inaccurate.
+
+[— A3411B, operative text](https://www.nysenate.gov/legislation/bills/2025/A3411/amendment/B)
 
 Three things matter in that sentence:
 
@@ -35,11 +37,13 @@ The RAISE Act and A3411B are companion legislation aimed at different layers of 
 
 | | RAISE Act | A3411B |
 |---|---|---|
-| **Who it covers** | Frontier model developers ($500M revenue, 10^26 FLOPs) | All owners/operators/licensees of GenAI systems |
-| **What it requires** | Registration, safety protocols, incident reporting, DFS oversight | UI disclosure notice |
+| **Who it covers** | "Large frontier developers" ($500M revenue, 10^26 FLOPs) | All owners/operators/licensees of GenAI systems |
+| **What it requires** | Disclosure-statement filing, safety protocols, incident reporting, DFS oversight | UI disclosure notice |
 | **Effective date** | January 1, 2027 | 90 days after signing |
-| **Target entities** | ~6 companies | Thousands of builders |
+| **Target entities** | A narrow band of the largest AI labs | Any builder shipping a GenAI feature to users |
 | **Enforcement** | NY Department of Financial Services | TBD via AG or civil action |
+
+[RAISE Act figures per Governor Hochul's signing announcement and Wiley's legal analysis](https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models).
 
 The RAISE Act is an enterprise compliance program for AI infrastructure companies. A3411B is a consumer protection measure for everyone building AI products. If you are shipping a GenAI feature to users, A3411B is the one that applies to your roadmap.
 
@@ -74,9 +78,9 @@ What you need to do before the deadline:
 
 A3411B applies to users in New York. In practice, this means most builders shipping a consumer or B2B SaaS product in the US need to comply — carving out New York users from a UI feature is not a realistic enforcement boundary.
 
-New York has approximately 20 million residents. The New York City metro area alone is the largest market for technology products in the United States. For any product with meaningful US user distribution, this law sets your disclosure standard nationally.
+New York has [approximately 19.8 million residents](https://www.census.gov/quickfacts/fact/table/NY/PST045225). For any product with meaningful US user distribution, this law sets your disclosure standard nationally.
 
-This is the same dynamic that made California's CCPA the de facto US privacy standard for most companies. New York's AI disclosure requirement will function similarly: you will implement it everywhere rather than maintain a state-specific variant.
+This is the same dynamic commentators point to in [California's CCPA becoming a de facto national privacy standard](https://ccbjournal.com/articles/california-sets-de-facto-national-data-privacy-standard) for most companies: New York's AI disclosure requirement could function similarly — you implement it everywhere rather than maintain a state-specific variant.
 
 ---
 
@@ -101,13 +105,13 @@ The law also does not specify how long the disclosure must persist. A reasonable
 A3411B is part of an accelerating pattern of required AI disclosures across jurisdictions. Builders planning compliance should review the full landscape:
 
 **Already in effect:**
-- **EU AI Act, Article 52** — GPAI system providers must label AI-generated content (effective August 2026 for most provisions). Requires machine-readable watermarking in addition to UI disclosure for some content types.
-- **California AB 2013 (2024)** — Requires "synthetic media" disclosures for AI-generated political content. Narrower scope than A3411B.
-- **FTC guidance on AI transparency** — Not legally binding, but the FTC has treated undisclosed AI in consumer interactions as a deceptive practice in enforcement actions.
+- **EU AI Act, [Article 50](https://artificialintelligenceact.eu/article/50/)** — providers of systems generating synthetic audio, image, video, or text must ensure outputs are marked in a machine-readable, detectable format, with the transparency obligations [applying from August 2, 2026](https://artificialintelligenceact.eu/article/50/).
+- **California [AB 2355](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB2355) (2024)** — Requires a disclosure ("Ad generated or substantially altered using artificial intelligence") on AI-generated or AI-altered political advertisements. Narrower scope than A3411B.
+- **FTC guidance on AI transparency** — Not legally binding, but the FTC has [treated undisclosed or overstated AI claims as a deceptive practice](https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires) in enforcement actions, such as its 2025 order against DoNotPay over its "robot lawyer" claims.
 
 **Coming in 2027:**
-- **New York RAISE Act** — Frontier developers must publish pre-deployment transparency reports accessible to the public. Builds on the disclosure foundation A3411B establishes at the UI layer.
-- **Illinois SB 315** — Annual third-party safety audits for frontier developers, effective January 1, 2027. Focuses on the model layer, not the product layer.
+- **New York RAISE Act** — Frontier developers must [publish pre-deployment transparency reports](https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027) before releasing or materially modifying a frontier model. Builds on the disclosure foundation A3411B establishes at the UI layer.
+- **Illinois SB 315** — [Annual third-party safety audits for large frontier developers begin January 1, 2028](https://www.crowell.com/en/insights/client-alerts/illinois-imposes-transparency-and-safety-obligations-on-frontier-ai-systems), though the law's disclosure and whistleblower provisions take effect January 1, 2027. Focuses on the model layer, not the product layer.
 
 The trend is consistent: every jurisdiction that has moved on AI regulation has included some form of disclosure or transparency requirement. A3411B is New York's entry at the product layer. Builders who implement clean, clearly designed disclosure practices now will be ahead of the next wave.
 

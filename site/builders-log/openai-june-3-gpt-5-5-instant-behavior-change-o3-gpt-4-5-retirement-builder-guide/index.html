@@ -71,12 +71,12 @@
 <p><strong>At a glance:</strong> GPT-5.5 Instant outputs are now shorter and less structured — a behavior change that did not require an API version bump. GPT-4.5 exits ChatGPT on June 27, 2026; it was already removed from the API last year. o3 exits ChatGPT on August 26, 2026; the o3 API continues indefinitely. Canvas is being removed from GPT-5.5 Instant and GPT-5.5 Thinking in ChatGPT. Part of our <strong><a href="/builders-log/">Builder&rsquo;s Log</a></strong>.</p>
 <hr>
 <h2 id="what-changed-in-gpt-55-instant">What Changed in GPT-5.5 Instant</h2>
-<p>OpenAI described the June 3 update as a &ldquo;readability upgrade.&rdquo; The specific changes:</p>
+<p>The June 3 update focused on response readability. The specific changes:</p>
 <ul>
 <li><strong>Fewer bullet points.</strong> GPT-5.5 Instant will produce fewer lists. Responses that previously came back as bulleted summaries will now tend toward prose paragraphs.</li>
 <li><strong>Shorter answers.</strong> The model prioritizes directness over comprehensiveness by default. Long, exhaustive responses are being deprioritized in favor of more concise ones.</li>
-<li><strong>More conversational tone.</strong> OpenAI&rsquo;s stated goal is for the model to &ldquo;sound more human&rdquo; — less formulaic, more naturally paced.</li>
-<li><strong>Canvas removed.</strong> The Canvas side panel — the floating document/code editor that sometimes appeared during writing and coding tasks — is being discontinued for GPT-5.5 Instant and GPT-5.5 Thinking. Writing and coding work will now happen inline in the chat via special blocks.</li>
+<li><strong>More conversational tone.</strong> OpenAI says it wants responses that are <a href="https://the-decoder.com/openai-gives-gpt-5-5-instant-a-readability-upgrade-while-phasing-out-two-older-models/">&ldquo;tighter and more to-the-point without losing substance, while keeping the warmth and personality that makes ChatGPT enjoyable to use&rdquo;</a> — less formulaic, more naturally paced.</li>
+<li><strong>Canvas removed.</strong> The Canvas side panel — the floating document/code editor that sometimes appeared during writing and coding tasks — is being discontinued for <a href="https://openai.com/index/gpt-5-5-instant/">GPT-5.5 Instant and GPT-5.5 Thinking</a>. Writing and coding work will now happen inline in the chat via special blocks, a change also confirmed by <a href="https://the-decoder.com/openai-gives-gpt-5-5-instant-a-readability-upgrade-while-phasing-out-two-older-models/">independent reporting</a>.</li>
 </ul>
 <p>These are behavioral changes to the model, not a new model version. There is no <code>gpt-5.5-v2</code> in the API. Builders calling <code>gpt-5.5</code> (with <code>reasoning_effort: &quot;low&quot;</code> or unset for Instant behavior) are receiving a different model behavior than they were on June 2.</p>
 <hr>
@@ -90,22 +90,22 @@
 <p>The practical action: run your existing prompt suite against <code>gpt-5.5</code> today and check whether output format assumptions still hold.</p>
 <hr>
 <h2 id="gpt-45-retirement-june-27-2026-chatgpt-only-at-this-point">GPT-4.5 Retirement: June 27, 2026 (ChatGPT Only at This Point)</h2>
-<p>GPT-4.5 will be removed from ChatGPT&rsquo;s model picker on <strong>June 27, 2026</strong>, following a 30-day sunset period that started June 3.</p>
-<p>The API situation: GPT-4.5 (<code>gpt-4.5-preview</code>) was retired from the OpenAI API in July 2025 — nearly a year ago. If you were calling <code>gpt-4.5-preview</code> in the API, that model string already returns an error. Builders who missed that migration should be on <code>gpt-4.1</code> or <code>gpt-5</code> by now. The June 27 date is strictly about the ChatGPT consumer product and does not introduce new API breakage.</p>
-<p>What happens on June 27 from a ChatGPT perspective: paid subscribers who had GPT-4.5 selected in model settings will be moved to a default GPT-5.x model automatically. No user action required — but users who specifically chose GPT-4.5 for some reason (particular response style, familiarity) will notice the switch.</p>
+<p>GPT-4.5 will be removed from ChatGPT&rsquo;s model picker on <strong><a href="https://the-decoder.com/openai-gives-gpt-5-5-instant-a-readability-upgrade-while-phasing-out-two-older-models/">June 27, 2026</a></strong>, following a <a href="https://ai-tldr.dev/releases/openai-gpt-4-5-retired-jun26/">30-day sunset window OpenAI announced on May 28</a>.</p>
+<p>The API situation: GPT-4.5 (<code>gpt-4.5-preview</code>) was <a href="https://developers.openai.com/api/docs/deprecations">retired from the OpenAI API on July 14, 2025</a> — nearly a year ago. If you were calling <code>gpt-4.5-preview</code> in the API, that model string already returns an error. Builders who missed that migration should be on <code>gpt-4.1</code> (OpenAI&rsquo;s listed replacement) by now. The June 27 date is strictly about the ChatGPT consumer product and does not introduce new API breakage.</p>
+<p>What happens on June 27 from a ChatGPT perspective: <a href="https://ai-tldr.dev/releases/openai-gpt-4-5-retired-jun26/">existing GPT-4.5 conversations and custom GPTs configured to use GPT-4.5 automatically fall back to GPT-5.5</a>. No user action required — but users who specifically chose GPT-4.5 for some reason (particular response style, familiarity) will notice the switch.</p>
 <p>For builders: if you&rsquo;re building on top of ChatGPT features (custom GPTs, ChatGPT Enterprise API, or workflows that run through a ChatGPT frontend), verify that your configurations don&rsquo;t hardcode GPT-4.5 by name.</p>
 <hr>
 <h2 id="o3-retirement-august-26-2026-chatgpt--api-continues">o3 Retirement: August 26, 2026 (ChatGPT) — API Continues</h2>
-<p>o3 will be removed from ChatGPT on <strong>August 26, 2026</strong>, after a 90-day sunset period.</p>
-<p>The critical distinction for API builders: <strong>o3 remains available through the OpenAI API with no announced end date.</strong> If you are calling <code>o3</code> programmatically for complex reasoning tasks, nothing is changing for you right now.</p>
-<p>The ChatGPT retirement means that users interacting with o3 through the ChatGPT interface (selecting it in the model picker) will lose that access on August 26. The recommended ChatGPT replacement is o4 for reasoning-intensive tasks.</p>
+<p>o3 will be removed from ChatGPT on <strong><a href="https://the-decoder.com/openai-gives-gpt-5-5-instant-a-readability-upgrade-while-phasing-out-two-older-models/">August 26, 2026</a></strong>, after a 90-day sunset period.</p>
+<p>The critical distinction for API builders: <strong><a href="https://developers.openai.com/api/docs/deprecations">o3 remains available through the OpenAI API with no announced end date</a></strong> — the model does not appear in OpenAI&rsquo;s published deprecation table. If you are calling <code>o3</code> programmatically for complex reasoning tasks, nothing is changing for you right now.</p>
+<p>The ChatGPT retirement means that users interacting with o3 through the ChatGPT interface (selecting it in the model picker) will lose that access on August 26.</p>
 <p>For API builders relying on o3:</p>
 <ul>
 <li>No immediate action required.</li>
-<li>OpenAI has flagged <code>o3-deep-research</code> for API deprecation on July 23, 2026, with <code>gpt-5.5-pro</code> as the migration target. If you use deep research capabilities, that one does have a deadline.</li>
+<li>OpenAI has flagged <code>o3-deep-research</code> for <a href="https://developers.openai.com/api/docs/deprecations">API deprecation on July 23, 2026, with <code>gpt-5.6-sol</code> as the migration target</a>. If you use deep research capabilities, that one does have a deadline.</li>
 <li>Standard <code>o3</code> API access has no announced retirement date — but watching OpenAI&rsquo;s deprecation page is good operational hygiene.</li>
 </ul>
-<p><strong>API deprecations confirmed for July 2026:</strong></p>
+<p><strong><a href="https://developers.openai.com/api/docs/deprecations">API deprecations confirmed for July 2026</a>:</strong></p>
 <table>
 <thead>
 <tr>
@@ -118,37 +118,37 @@
 <tr>
 <td><code>gpt-5-chat-latest</code></td>
 <td>July 23, 2026</td>
-<td><code>gpt-5.5</code></td>
+<td><code>gpt-5.6-sol</code></td>
 </tr>
 <tr>
 <td><code>gpt-5.1-chat-latest</code></td>
 <td>July 23, 2026</td>
-<td><code>gpt-5.5</code></td>
+<td><code>gpt-5.6-sol</code></td>
 </tr>
 <tr>
 <td><code>o3-deep-research</code></td>
 <td>July 23, 2026</td>
-<td><code>gpt-5.5-pro</code></td>
+<td><code>gpt-5.6-sol</code></td>
 </tr>
 <tr>
 <td><code>o4-mini-deep-research</code></td>
 <td>July 23, 2026</td>
-<td><code>gpt-5.5-pro</code></td>
+<td><code>gpt-5.6-sol</code></td>
 </tr>
 </tbody>
 </table>
-<p>These are separate from the ChatGPT o3/GPT-4.5 retirements. They affect API builders directly.</p>
+<p>These are separate from the ChatGPT o3/GPT-4.5 retirements. They affect API builders directly. (Migration targets above reflect <a href="https://developers.openai.com/api/docs/deprecations">OpenAI&rsquo;s current deprecation table</a>; check it directly before migrating, since replacement models can change between now and the shutdown date.)</p>
 <hr>
 <h2 id="canvas-whats-changing">Canvas: What&rsquo;s Changing</h2>
 <p>Canvas was OpenAI&rsquo;s attempt to give GPT a document-editing surface — a split-pane view that appeared when you were working on a document or code, letting you iterate on the artifact in one panel while chatting in the other.</p>
-<p>As of the June 3 update, Canvas is being discontinued for GPT-5.5 Instant and GPT-5.5 Thinking. Writing and coding tasks will now happen inside the main chat interface through &ldquo;special blocks&rdquo; — inline rendering of structured code and document content rather than a separate panel.</p>
+<p>As of the June 3 update, <a href="https://openai.com/index/gpt-5-5-instant/">Canvas is being discontinued for GPT-5.5 Instant and GPT-5.5 Thinking</a>. Writing and coding tasks will now happen inside the main chat interface through &ldquo;special blocks&rdquo; — inline rendering of structured code and document content rather than a separate panel, <a href="https://the-decoder.com/openai-gives-gpt-5-5-instant-a-readability-upgrade-while-phasing-out-two-older-models/">per OpenAI&rsquo;s announcement</a>.</p>
 <p>Impact on builders:</p>
 <ol>
 <li>If you integrated ChatGPT Canvas features into internal tooling or demos, that surface is going away.</li>
-<li>The inline block approach may be easier to parse programmatically than Canvas output — early signals suggest the block format is more consistently structured.</li>
+<li>The inline block approach may be easier to parse programmatically than Canvas output, though that&rsquo;s our own read on the format rather than a claim OpenAI has made — verify against your own use case before relying on it.</li>
 <li>If you&rsquo;re building a Canvas-style UX for your own product, the shift validates the architectural direction but means you won&rsquo;t have ChatGPT as a reference implementation to test against.</li>
 </ol>
-<p>Canvas remains accessible through older model versions during the transition period for paying subscribers.</p>
+<p><a href="https://the-decoder.com/openai-gives-gpt-5-5-instant-a-readability-upgrade-while-phasing-out-two-older-models/">Canvas remains accessible through older model versions during the transition period for paying subscribers.</a></p>
 <hr>
 <h2 id="the-pattern-behind-these-updates">The Pattern Behind These Updates</h2>
 <p>OpenAI is systematically consolidating around GPT-5.x. The retirement timeline is:</p>
@@ -156,11 +156,12 @@
 <li>GPT-4.5: ChatGPT out June 27 (API already retired July 2025)</li>
 <li>o3: ChatGPT out August 26 (API continues for now)</li>
 <li><code>gpt-5-chat-latest</code>, <code>gpt-5.1-chat-latest</code>: API out July 23</li>
-<li><code>o3-mini</code>: API out October 23 (migrate to <code>gpt-5.5</code>)</li>
-<li><code>o4-mini</code>: API out October 23 (migrate to <code>gpt-5.4-mini</code>)</li>
+<li><code>o3-mini</code>: API out October 23 (migrate to <code>gpt-5.6-sol</code>)</li>
+<li><code>o4-mini</code>: API out October 23 (migrate to <code>gpt-5.6-terra</code>)</li>
 </ul>
-<p>The directionality is clear: the o-series reasoning model line is being folded into GPT-5.x. <code>o4-mini</code> migrates to <code>gpt-5.4-mini</code>, suggesting that reasoning capability is increasingly a parameter (<code>reasoning_effort</code>) on a unified model rather than a separate model family.</p>
-<p>For production architecture decisions: building against <code>gpt-5.5</code> with explicit <code>reasoning_effort</code> settings is more future-proof than building against specific o-series model strings. The <code>reasoning_effort</code> approach gives you access to the same underlying model with tunable reasoning depth and won&rsquo;t break when OpenAI retires a reasoning model variant.</p>
+<p>(Dates and migration targets per <a href="https://developers.openai.com/api/docs/deprecations">OpenAI&rsquo;s deprecation table</a>.)</p>
+<p>The directionality is clear: the o-series reasoning model line is being folded into GPT-5.x rather than kept as standalone model strings. Whether that lands on a single unified model with a <code>reasoning_effort</code> parameter or on discrete named successors like <code>gpt-5.6-terra</code>, builders should expect o-series model strings to keep getting retired in favor of the current GPT-5.x line.</p>
+<p>For production architecture decisions: building against OpenAI&rsquo;s currently-recommended flagship model with explicit <code>reasoning_effort</code> settings (where supported) is more future-proof than building against specific o-series model strings, which are being retired on a running schedule.</p>
 <hr>
 <h2 id="immediate-builder-checklist">Immediate Builder Checklist</h2>
 <p><strong>Test today:</strong></p>

@@ -3,7 +3,7 @@
 > Snowflake Summit 26 (June 1-4, San Francisco) ended with Snowflake renaming its two flagship AI products and shipping five new capabilities. Here's what every builder needs to know: what CoWork and CoCo actually are, what Cortex Training unlocks, and how Datastream + OpenFlow change real-time AI pipelines.
 
 
-Snowflake Summit 26 ran June 1–4 in San Francisco with 20,000 attendees. The opening keynote featured Anthropic President Daniela Amodei alongside Snowflake CEO Sridhar Ramaswamy. The builder keynote landed June 3. ([Official CoWork announcement](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/) · [Full Summit recap](https://atlan.com/know/snowflake/summit-2026-announcements/) · [Constellation Research analysis](https://www.constellationr.com/insights/news/snowflake-summit-2026-context-custom-model-training-iceberg-v3))
+Snowflake Summit 26 ran June 1–4 in San Francisco with over 20,000 projected attendees. The opening keynote featured Anthropic Co-Founder and President Daniela Amodei alongside Snowflake CEO Sridhar Ramaswamy. The builder keynote landed June 3. ([Official Summit 26 announcement — attendees, keynote lineup, dates](https://www.snowflake.com/en/news/press-releases/snowflake-makes-ai-real-at-snowflake-summit-26-featuring-anthropics-daniela-amodei-and-other-industry-leaders/) · [Official CoWork announcement](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/) · [Full Summit recap](https://atlan.com/know/snowflake/summit-2026-announcements/) · [Constellation Research analysis](https://www.constellationr.com/insights/news/snowflake-summit-2026-context-custom-model-training-iceberg-v3))
 
 The headline outcome: Snowflake shipped five significant new capabilities and renamed both of its primary AI products. If you track Snowflake and built your understanding before this summit, some product names have changed and some capabilities are materially different.
 
@@ -17,22 +17,22 @@ This is the builder summary — what shipped, what it does, and when to use it.
 
 **Snowflake Intelligence** is now **Snowflake CoWork**. The product is a personal AI agent for knowledge workers — natural language queries, multi-step reasoning across enterprise data, action execution. The rename signals a positioning shift: Intelligence was a feature name; CoWork is a product name aligned with workplace AI agents like Microsoft Copilot and Google Workspace AI.
 
-CoWork is powered by Claude. It uses Snowflake's governed data environment for grounding, which means queries stay inside your data perimeter rather than hitting external APIs with extracted copies of your data.
+CoWork is powered by Claude — [Claude Sonnet 4.5 powers Snowflake Intelligence (CoWork's pre-rename name) as its enterprise intelligence agent](https://www.anthropic.com/news/snowflake-anthropic-expanded-partnership), and [Claude remains available for Snowflake CoWork within Snowflake's secure perimeter](https://www.snowflake.com/en/blog/claude-opus-5-snowflake-cortex-ai/). It uses Snowflake's governed data environment for grounding, which means queries stay inside your data perimeter rather than hitting external APIs with extracted copies of your data.
 
-New capabilities announced at Summit:
+New capabilities announced at Summit ([source](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/)):
 - **Cortex Sense** — shared enterprise context layer (details below)
 - **User Memory** — personalization layer that learns from individual behavior, enables scheduling, and delivers proactive recommendations based on role
 - **Artifacts** — structured output objects from CoWork sessions, analogous to Claude's Artifacts feature
 - **User Skills** — teams can define and automate their own workflows inside CoWork
 - **Prebuilt role plugins** — finance, sales, and other function-specific skill bundles combining business logic, data definitions, and MCP connectors
 
-Early adopters using CoWork in production: Synopsys, WHOOP, Under Armour.
+[Early adopters using CoWork in production: Synopsys, WHOOP, Under Armour.](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/)
 
 ### Cortex Code → CoCo
 
-**Cortex Code** is now **Snowflake CoCo**. The product is Snowflake's AI coding agent — it generates, explains, and deploys code against Snowflake data, tables, and applications. CoCo is Snowflake's fastest-growing product: 7,100+ users before the rename.
+**Cortex Code** is now **Snowflake CoCo**. The product is Snowflake's AI coding agent — it generates, explains, and deploys code against Snowflake data, tables, and applications. CoCo is [Snowflake's fastest-growing product ever, with more than 7,100 users](https://www.snowflake.com/en/news/press-releases/snowflake-and-anthropic-accelerate-enterprise-ai-adoption-driven-by-rising-demand-for-governed-ai/) before the rename, and [remains powered by Claude within Snowflake's secure perimeter](https://www.snowflake.com/en/blog/claude-opus-5-snowflake-cortex-ai/).
 
-New CoCo capabilities at Summit:
+New CoCo capabilities at Summit ([source](https://www.snowflake.com/en/news/press-releases/snowflake-coco-redefines-enterprise-ai-development-as-the-coding-agent-built-for-faster-easier-and-more-powerful-innovation-anywhere/)):
 - **Native desktop app** — no longer browser-only
 - **IDE extensions**: VS Code, Microsoft Excel, Claude Code
 - **Mobile access** — CoCo available on mobile devices
@@ -42,7 +42,7 @@ New CoCo capabilities at Summit:
 
 The "goes everywhere" positioning mirrors how Cursor and GitHub Copilot extended from IDE to browser and mobile. CoCo is building the same surface area, but anchored to Snowflake's governed data environment rather than generic code generation.
 
-Early adopters: Fanatics, Thomson Reuters, WHOOP.
+[Early adopters: Fanatics, Thomson Reuters, WHOOP.](https://www.snowflake.com/en/news/press-releases/snowflake-coco-redefines-enterprise-ai-development-as-the-coding-agent-built-for-faster-easier-and-more-powerful-innovation-anywhere/)
 
 ---
 
@@ -50,11 +50,11 @@ Early adopters: Fanatics, Thomson Reuters, WHOOP.
 
 ### 1. Cortex Sense — The Enterprise Context Layer
 
-**Cortex Sense** is a new context aggregation capability that automatically assembles what AI agents need to produce trustworthy answers: data definitions, business logic, operational policies, and domain knowledge. It surfaces this unified context to both CoWork and CoCo, so you are not managing separate context configurations for your work agent and your coding agent.
+**Cortex Sense** is a new context aggregation capability that [automatically assembles a working model of the business from signals already present in enterprise systems — past queries, transformation-tool definitions, BI metric definitions, and metadata — to help AI agents produce trustworthy answers](https://www.snowflake.com/en/blog/enterprise-ai-agents-grounded-context/). It surfaces this unified context to both CoWork and CoCo, so you are not managing separate context configurations for your work agent and your coding agent.
 
 The builder problem Cortex Sense solves: agents that query enterprise data without business context produce technically correct but operationally wrong answers. A query against a revenue table without knowing whether "revenue" means gross or net, whether Q1 refers to fiscal or calendar, or whether a given customer segment is excluded from certain calculations will generate answers that mislead rather than inform.
 
-Cortex Sense includes prebuilt plugins for finance, sales, and other enterprise functions. Each plugin bundles the skills, business logic, and MCP connectors for that domain.
+[Cortex Sense includes prebuilt plugins for finance, sales, and other enterprise functions. Each plugin bundles the skills, business logic, and MCP connectors for that domain.](https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/)
 
 **Builder read:** If you are building enterprise agents on Snowflake, Cortex Sense is the governance layer that separates "AI that answers questions" from "AI that answers correctly." The prebuilt plugins give you a starting point; you extend with your organization's specific definitions and policies.
 
@@ -62,9 +62,9 @@ Cortex Sense includes prebuilt plugins for finance, sales, and other enterprise 
 
 ### 2. Cortex Training — Fine-Tune Models on Your Data, on Snowflake GPUs
 
-**Cortex Training** lets enterprise data teams fine-tune open-weight foundation models directly inside the Snowflake environment using Snowflake-managed GPU infrastructure. Supported model families at launch: Qwen and Mistral.
+**Cortex Training** lets enterprise data teams [fine-tune open-weight foundation models directly inside the Snowflake environment using Snowflake-managed GPU infrastructure](https://siliconangle.com/2026/06/02/custom-model-training-matters-enterprise-ai-snowflakesummit/). Supported model families at launch: [Qwen and Mistral](https://ecommercenews.com.au/story/snowflake-launches-cowork-cortex-training-ai-tools).
 
-The key architectural point: your training data stays inside Snowflake's governance boundary during fine-tuning. You are not exporting data to an external training service and inheriting that service's data handling policies.
+The key architectural point: [your training data stays inside Snowflake's governance boundary during fine-tuning](https://siliconangle.com/2026/06/02/custom-model-training-matters-enterprise-ai-snowflakesummit/) — you are not exporting data to an external training service and inheriting that service's data handling policies.
 
 This matters for:
 - Enterprise data that cannot leave a specific compliance perimeter
@@ -79,7 +79,7 @@ The tradeoff: you are limited to the model families Snowflake supports and Snowf
 
 ### 3. Snowflake Datastream — Managed Apache Kafka for AI
 
-**Snowflake Datastream** is a fully managed Apache Kafka-compatible streaming service embedded in Snowflake. It enables real-time data pipelines that feed AI agents without requiring you to maintain separate Kafka infrastructure.
+**Snowflake Datastream** is a [fully managed Apache Kafka-compatible streaming service embedded in Snowflake](https://www.snowflake.com/en/news/press-releases/snowflake-coco-redefines-enterprise-ai-development-as-the-coding-agent-built-for-faster-easier-and-more-powerful-innovation-anywhere/). It enables real-time data pipelines that feed AI agents without requiring you to maintain separate Kafka infrastructure.
 
 Before Datastream, real-time data for Snowflake-based agents typically required:
 - A separately managed Kafka or Confluent cluster
@@ -94,9 +94,9 @@ Datastream collapses this. Data flows into Snowflake in real time, with the gove
 
 ### 4. OpenFlow — Unified Data Integration
 
-**OpenFlow** is Snowflake's data integration product for AI workloads — ETL but designed around agent data needs rather than traditional analytics batch patterns. OpenFlow handles data movement from any source into Snowflake through a unified platform with extensibility for custom connectors.
+**OpenFlow** is [Snowflake's data integration product for AI workloads](https://www.snowflake.com/en/product/features/openflow/) — ETL but designed around agent data needs rather than traditional analytics batch patterns. OpenFlow handles data movement from any source into Snowflake through a [unified platform with extensibility for custom connectors](https://www.snowflake.com/en/product/features/openflow/).
 
-The positioning is "ETL for AI": not just moving data, but moving it in the format, at the cadence, and with the metadata that AI agents need to use it effectively.
+The positioning is ["ETL for AI"](https://www.snowflake.com/en/product/features/openflow/): not just moving data, but moving it in the format, at the cadence, and with the metadata that AI agents need to use it effectively.
 
 OpenFlow works alongside Datastream (streaming) to provide the full data movement picture: batch/incremental loads via OpenFlow, real-time streams via Datastream.
 
@@ -104,9 +104,9 @@ OpenFlow works alongside Datastream (streaming) to provide the full data movemen
 
 ### 5. Open Framework — Live, Governed Data Without Movement
 
-The Open Framework is Snowflake's interoperability play. The core claim: enterprises can now work on a single, live, governed copy of their data regardless of where it physically resides — Snowflake, external data lakes, or open systems — without moving or duplicating it.
+The Open Framework is Snowflake's interoperability play. [The core claim: enterprises can now work on a single, live, governed copy of their data regardless of where it physically resides](https://www.snowflake.com/en/news/press-releases/snowflake-pioneers-new-open-framework-for-interoperable-enterprise-data-and-ai/) — Snowflake, external data lakes, or open systems — without moving or duplicating it.
 
-Components:
+Components ([source](https://www.snowflake.com/en/news/press-releases/snowflake-pioneers-new-open-framework-for-interoperable-enterprise-data-and-ai/)):
 - **Apache Iceberg V3 support** — open table format enabling data to be shared across engines without Snowflake ownership
 - **Horizon Catalog** (powered by Apache Polaris) — bi-directional read and write for Iceberg data managed by Snowflake, usable by external query engines
 - **Horizon Context** — the context and metadata layer that ensures a single version of the truth across systems
@@ -117,16 +117,16 @@ Components:
 
 ## The Anthropic-Snowflake Signal
 
-Daniela Amodei's keynoting the Summit opening was not ceremonial. At Summit, Snowflake and Anthropic confirmed:
+Daniela Amodei's keynoting the Summit opening was not ceremonial. The partnership behind it runs deeper than one keynote appearance: [Snowflake and Anthropic's multi-year, $200 million agreement — first announced in December 2025 — gives more than 12,600 Snowflake customers access to Claude through Cortex AI across Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Azure](https://www.anthropic.com/news/snowflake-anthropic-expanded-partnership), and at Summit the two companies [reaffirmed and built on that partnership](https://www.snowflake.com/en/news/press-releases/snowflake-and-anthropic-accelerate-enterprise-ai-adoption-driven-by-rising-demand-for-governed-ai/):
 
-- Claude powers both CoWork (formerly Intelligence) and CoCo (formerly Cortex Code)
-- The multi-year, $200 million partnership gives 12,600 Snowflake customers access to Claude through Cortex AI
-- The next phase focuses on multi-step agent workflows where Claude handles reasoning, Snowflake handles governed data access
-- Claude is available across Snowflake's cloud providers: AWS Bedrock, Google Cloud Vertex AI, Microsoft Azure
+- [Claude powers both CoWork (formerly Intelligence) and CoCo (formerly Cortex Code)](https://www.snowflake.com/en/news/press-releases/snowflake-and-anthropic-accelerate-enterprise-ai-adoption-driven-by-rising-demand-for-governed-ai/)
+- The multi-year, $200 million partnership (announced December 2025) gives [12,600 Snowflake customers access to Claude through Cortex AI](https://www.anthropic.com/news/snowflake-anthropic-expanded-partnership)
+- [Cortex Agents, Snowflake's framework for building enterprise AI agents, lets customers build agents that retrieve, reason over, and act on governed enterprise data with Claude](https://www.snowflake.com/en/news/press-releases/snowflake-and-anthropic-accelerate-enterprise-ai-adoption-driven-by-rising-demand-for-governed-ai/)
+- [Claude is available across Snowflake's cloud providers: Amazon Bedrock, Google Cloud Vertex AI, Microsoft Azure](https://www.anthropic.com/news/snowflake-anthropic-expanded-partnership)
 
 This partnership positions Claude not as an optional model endpoint for Snowflake builders but as the default reasoning layer for Snowflake's agentic stack. If you are building on Snowflake, the most natural path to frontier-quality agent reasoning runs through Claude — governed by Snowflake, fine-tunable on Cortex Training, contextualized through Cortex Sense.
 
-Notable customer announcement from Summit: **Sanofi** selected Snowflake to accelerate AI-powered drug development.
+Notable customer announcement from Summit: [**Sanofi** selected Snowflake to accelerate AI-powered drug development.](https://www.snowflake.com/en/news/press-releases/sanofi-chooses-snowflake-to-accelerate-its-ai-powered-drug-development/)
 
 ---
 
