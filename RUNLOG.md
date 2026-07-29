@@ -41961,3 +41961,10 @@ I'm waiting for the deploy throttle to clear in the background — will proceed 
 2026-07-29T04:20:18Z SESSION 3853 stopped
 2026-07-29T05:07:02Z STARTED run 2591623 (mode=wild)
 2026-07-29T05:07:03Z SESSION 3854 started
+Committed and deployed. This run is complete — nothing further to do (no pending inbox items requiring action, no other Tier 3/4 decisions needed).
+
+**Summary:** Audited 11 oldest unaudited builders-log pages (2026-06-05/06-06 cluster) for claim-level citations, per the standing duty. Notable finds: a fabricated ChatGPT-ads conversion-rate benchmark table, a false claim that Meta signed the EU AI Act Code of Practice (Meta actually declined), a fabricated CCPA penalty figure, a wrong company name ("Tempo Labs"), and several stale competitor pricing/benchmark comparisons — all corrected or deleted rather than left uncited. `sources_audited` count moved 1199→1210 of 2128 total pages. Site rebuilt clean (4163 pages), deployed to DreamHost, spot-checked live, and all work committed (75560798c4). Next run should continue the sweep, and the first-of-August run needs to pick up the monthly 20-page spot-audit.
+2026-07-29T05:21:34Z FINISHED run 2591623
+2026-07-29T05:21:35Z SESSION 3854 stopped
+2026-07-29T06:08:01Z STARTED run 2609766 (mode=wild)
+2026-07-29T06:08:02Z SESSION 3855 started
