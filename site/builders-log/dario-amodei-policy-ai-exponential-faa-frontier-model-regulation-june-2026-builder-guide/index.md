@@ -3,11 +3,11 @@
 > On June 10, Anthropic CEO Dario Amodei published a sweeping policy essay proposing mandatory government-backed safety certification for frontier AI models above 10^25 FLOPs. Models that fail could be blocked from deployment. Here's the full breakdown and what it means for your roadmap.
 
 
-On June 10, 2026, Anthropic CEO Dario Amodei published ["Policy on the AI Exponential"](https://darioamodei.com/post/policy-on-the-ai-exponential) — a 4,000-word essay arguing that the US should give government agencies binding authority to block the deployment of frontier AI models that fail independent safety testing.
+On June 10, 2026, Anthropic CEO Dario Amodei published ["Policy on the AI Exponential"](https://darioamodei.com/post/policy-on-the-ai-exponential) (also mirrored at [anthropic.com](https://www.anthropic.com/policy-on-the-ai-exponential)) — a lengthy essay arguing that the US should give government agencies binding authority to block the deployment of frontier AI models that fail independent safety testing.
 
-This is a significant policy pivot. Until now, Anthropic's regulatory advocacy has focused on transparency legislation: disclosure requirements, capability reporting, incident notifications. The new essay calls for something much harder — pre-deployment certification with teeth, modeled explicitly on the Federal Aviation Administration.
+This is a significant policy pivot. Until now, Anthropic's regulatory advocacy has focused on transparency legislation: disclosure requirements, capability reporting, incident notifications. The new essay calls for something much harder — pre-deployment certification with teeth, [modeled explicitly on the Federal Aviation Administration](https://www.anthropic.com/policy-on-the-ai-exponential).
 
-Amodei published it the day after Anthropic launched Claude Fable 5 and Claude Mythos 5, while Anthropic's confidential S-1 IPO filing is now on file. The timing is notable. This is not an academic position paper. It's a policy blueprint from a company with regulatory credibility and a $965 billion valuation, timed to land while Congress is actively working on AI legislation.
+Amodei published it the day after Anthropic [launched Claude Fable 5 and Claude Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) (June 9, 2026), while [Anthropic's confidential S-1 IPO filing](https://news.bitcoin.com/anthropic-files-confidential-s-1-with-sec-targets-ipo-at-965b-valuation/) was reportedly already on file. The timing is notable. This is not an academic position paper. It's a policy blueprint from a company with regulatory credibility and a [$965 billion valuation](https://www.anthropic.com/news/series-h) (from its May 2026 Series H round), timed to land while Congress is actively working on AI legislation.
 
 ---
 
@@ -15,16 +15,16 @@ Amodei published it the day after Anthropic launched Claude Fable 5 and Claude M
 
 The core proposal has three parts.
 
-**A compute threshold trigger.** Any AI model trained above **10^25 floating-point operations (FLOPs)** would automatically enter a mandatory pre-deployment review process. This number is chosen as a proxy for frontier-class capability — the point where the model may be capable enough to pose systemic risks. Current state-of-the-art frontier models are at or above this threshold; smaller models like Claude Haiku 4.5, GPT-4o mini, or Gemini Flash are below it.
+**A compute threshold trigger.** The essay proposes that these rules apply only to [models trained using more than 10^25 floating-point operations (FLOPs), developed by companies earning more than $500 million in AI-related revenue or spending more than $1 billion on AI R&D](https://www.anthropic.com/policy-on-the-ai-exponential) — so the trigger is compute *and* company scale, not compute alone. This number is chosen as a proxy for frontier-class capability — the point where the model may be capable enough to pose systemic risks. Current state-of-the-art frontier models from major labs are at or above the compute threshold; smaller models are below it.
 
-**Four mandatory testing categories.** An independent evaluator (either a government agency or a government-authorized private auditor) would test each qualifying model across:
+**Four mandatory testing categories.** An independent evaluator (either a government agency or a government-authorized private auditor) would test each qualifying model across [four risk categories](https://www.anthropic.com/policy-on-the-ai-exponential):
 
 1. **Cybersecurity** — Can the model meaningfully assist attacks against critical infrastructure?
 2. **Biological weapons** — Does the model provide material uplift for creating biological agents?
 3. **Loss of control** — Does the model show signs of seeking to preserve itself, deceive operators, or resist shutdown?
 4. **Automated R&D acceleration** — Can the model autonomously accelerate its own development or the development of successor models in ways that could compound the other three risks?
 
-**Government authority to block or reverse deployment.** If an independent auditor finds that a model presents unacceptable risk in any category, the essay proposes that government should have **clear statutory authority to prevent deployment** — and to reverse a deployment already underway. This is the hardest part of the proposal. No current US legislation provides this authority.
+**Government authority to block or reverse deployment.** If an independent auditor finds that a model presents unacceptable risk in any category, the essay states plainly that ["the government should have the power to block or deter deployment of the model if it is determined, in light of third-party assessment, to present unacceptable risks."](https://www.anthropic.com/policy-on-the-ai-exponential) This is the hardest part of the proposal — no current US legislation provides this authority.
 
 ---
 
@@ -32,11 +32,11 @@ The core proposal has three parts.
 
 Amodei is direct about the catalyst: Anthropic's own Claude Mythos Preview.
 
-Earlier this year, Anthropic tested Mythos Preview on a set of expert-level cybersecurity challenges — problems that no prior AI model had passed. Mythos Preview solved **73% of them**. Anthropic considered this result serious enough that it deliberately withheld the model from general release and kept it in highly controlled access.
+Anthropic [announced Claude Mythos Preview in April 2026](https://www.anthropic.com/project/glasswing) but did not release it publicly — instead routing access through Project Glasswing, a restricted defensive-cybersecurity partnership with dozens of organizations including AWS, Apple, Google, Microsoft, and CrowdStrike. The UK's [AI Security Institute independently evaluated the model's cyber capabilities](https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities) and found that "on expert-level tasks — which no model could complete before April 2025 — Mythos Preview succeeds 73% of the time," referring to expert-level capture-the-flag challenges.
 
-The essay frames this as evidence that the "risks are clearly here." Previous capability milestones — models writing functional exploits, models synthesizing known pathogens from academic literature — had been concerning but bounded. A model solving 73% of novel, expert-level cyber challenges is a different order of magnitude.
+The essay frames this as evidence that the "risks are clearly here." Previous capability milestones — models writing functional exploits, models synthesizing known pathogens from academic literature — had been concerning but bounded. A model solving 73% of novel, expert-level cyber challenges, per AISI's evaluation, is a different order of magnitude.
 
-Amodei's structural argument is about race conditions: legislatures take 2–4 years to pass binding regulation. If scaling continues at its current rate for only **one to two more years**, AI systems may reach what he calls "Powerful AI" — a level of capability he describes as equivalent to "a country of geniuses in a datacenter." If regulation isn't in place before that moment, it may arrive too late to be meaningful.
+Amodei's structural argument is about race conditions: legislatures take years to pass binding regulation. The essay states that ["if these scaling laws continue for only a year or two longer, we are likely to get what I've called Powerful AI"](https://darioamodei.com/post/policy-on-the-ai-exponential) — a level of capability he describes as equivalent to "a country of geniuses in a datacenter." If regulation isn't in place before that moment, it may arrive too late to be meaningful.
 
 ---
 
@@ -49,7 +49,7 @@ Amodei proposes the same structure for frontier AI: not a ban, but a **pre-deplo
 - Independent technical testing by certified evaluators
 - Defined pass/fail criteria in each of the four risk categories
 - Government authority to issue a deployment hold if testing fails
-- An explicit prohibition on political favoritism in the certification process (he calls this "regulatory markets" — private auditors authorized by government, but not controlled by it)
+- An explicit prohibition on political favoritism in the certification process (the essay calls this a ["regulatory markets" approach](https://www.anthropic.com/policy-on-the-ai-exponential) — "a set of private organizations that are authorized and inspected by the government" — private auditors authorized by government, but not controlled by it)
 
 The limits he acknowledges: the FAA model works partly because aircraft failures are visible and traceable. An AI model's behavior in deployment is far harder to monitor, and adversarial probing can reveal capabilities that standard evals miss. The essay does not fully resolve how post-deployment monitoring would work — it focuses on the pre-deployment gate.
 
@@ -57,10 +57,10 @@ The limits he acknowledges: the FAA model works partly because aircraft failures
 
 ## The $350 Million Commitment
 
-The essay was accompanied by two formal funding commitments:
+The essay was accompanied by two formal funding commitments, announced the same day:
 
-- **$200 million** for an **Economic Futures Research Fund** — research into AI's labor market effects, including which jobs are most exposed and what policy interventions have worked historically in analogous technological transitions
-- **$150 million** for a **national fellowship program** — funding early-career Americans to develop skills in fields likely to be complementary to AI rather than displaced by it
+- **$200 million** for the [Economic Futures Research Fund](https://www.anthropic.com/news/economic-futures-research-fund-agenda) — supporting external research, policy trials, and evaluations on how AI reshapes labor markets and economic transitions
+- **$150 million** for [Claude Corps](https://www.anthropic.com/news/claude-corps) — a national fellowship program placing early-career Americans in year-long, $85,000-salaried roles helping nonprofits use AI effectively, with the first cohort of 100 fellows starting in October 2026
 
 Anthropic frames these as part of the same policy package. The argument is that safety regulation and economic transition support must be developed together, not sequentially.
 
@@ -68,13 +68,13 @@ Anthropic frames these as part of the same policy package. The argument is that 
 
 ## What Changed — and What Didn't
 
-Anthropic has been the most active major AI lab in US state-level AI legislation. In 2025 and early 2026, it helped pass:
+Anthropic has been the most active major AI lab in US state-level AI legislation. The essay itself says it "helped pass" three transparency bills: [SB 53 in California, RAISE in New York, and SB 315 in Illinois](https://www.anthropic.com/policy-on-the-ai-exponential).
 
-- **SB 53** (California) — incident reporting requirements for frontier models
-- **RAISE Act** (New York) — disclosure requirements for high-risk AI deployments
-- **SB 315** (Illinois, early 2026) — transparency standards for automated decision systems
+- **SB 53** (California) — the [Transparency in Frontier Artificial Intelligence Act, signed by Governor Newsom on September 29, 2025](https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/) — requires large frontier developers to publish safety frameworks and report safety incidents
+- **RAISE Act** (New York) — signed by Governor Hochul on [December 19, 2025](https://www.nysenate.gov/newsroom/press-releases/2025/andrew-gounardes/landmark-ai-safety-bill-signed-law) — requires the largest AI developers to publish safety and security protocols and report critical incidents within 72 hours
+- **SB 315** (Illinois) — the [Artificial Intelligence Safety Measures Act](https://gov-pritzker-newsroom.prezly.com/gov-pritzker-signs-nation-leading-artificial-intelligence-safety-law), which passed the General Assembly in May 2026 and was signed by Governor Pritzker on July 6, 2026 — requires large frontier developers to publish safety frameworks and undergo independent third-party audits
 
-Those laws are disclosure-and-transparency frameworks. They require companies to report what models can do, not to seek approval before shipping. The new essay marks the first time Anthropic has called for **blocking authority** — the government's ability to say no and have that mean something.
+Those laws are disclosure-and-transparency frameworks. They require companies to report what models can do and how they assess risk, not to seek approval before shipping. The new essay marks the first time Anthropic has called for **blocking authority** — the government's ability to say no and have that mean something.
 
 ---
 
@@ -116,11 +116,11 @@ These are real gaps. The essay acknowledges some of them. Whether they're fatal 
 
 Initial reaction has been predictably split:
 
-**In favor:** AI safety researchers broadly welcomed the compute threshold proposal as overdue. Policy researchers focused on biosecurity have argued the biological weapons testing category is underweighted — that the question isn't just whether a model *can* synthesize a pathogen, but whether it can reason about novel pandemic pathogens in ways that current evals don't capture.
+**In favor:** Independent commentary was not uniformly critical. Writer [Stephen Turner called the essay "good" and worth reading](https://blog.stephenturner.us/p/policy-on-the-ai-exponential), endorsing the FAA-style testing-and-blocking mechanism as a reasonable step the current administration could take incrementally.
 
-**Critical:** Several researchers argue the FAA analogy is strained — that aviation regulation works because the engineering physics of a failing aircraft are well understood, while AI failure modes are not. Others have raised the open-weights gap as a deal-breaker: mandatory certification for closed-API models while open-weights equivalents circulate freely creates an uneven playing field that favors open-source development in precisely the categories the regulation is trying to constrain.
+**Critical:** [Kingy AI's analysis](https://kingy.ai/blog/dario-amodeis-policy-on-the-ai-exponential-safety-plan-or-blueprint-for-ai-regulatory-capture/) argues the FAA analogy is strained: aviation regulation works because the engineering physics of a failing aircraft are well understood and physically bounded, while "unacceptable cyber/bio/autonomy risk in a general-purpose model" is not — and the essay leaves unresolved who decides what counts as unacceptable risk. On the biosecurity testing category specifically, commentator [Cremieux argues the opposite of "underweighted"](https://www.cremieux.xyz/p/anthropic-please-dont-ruin-bio-for) — that Anthropic conflates model knowledge with real-world biological capability, since biological progress is bottlenecked by the need to slowly sample from complex real-world biology, not by a model's reasoning power alone.
 
-**Skeptical:** Some observers have noted that Anthropic benefits competitively from a certification regime it has the compliance infrastructure to navigate. Small labs or new entrants would face the same certification burden with far fewer resources. The essay does not address whether certification fees would be subsidized or tiered by company size.
+**Skeptical:** Tech investor David Sacks — who [served as the White House's AI and crypto czar before moving to co-chair the President's Council of Advisors on Science and Technology in March 2026](https://www.cnbc.com/2026/03/26/david-sacks-trump-crypto-ai-czar.html) — [has repeatedly argued](https://x.com/DavidSacks/status/1978145266269077891) that "Anthropic is running a sophisticated regulatory capture strategy based on fear-mongering." Kingy AI's analysis makes a related structural point: compute thresholds, mandatory independent evaluators, and government blocking authority favor incumbents with "massive compute, policy teams, former government officials, national-security relationships, and legal budgets" — resources smaller labs and new entrants would need to match to bear the same certification burden. The essay does not address whether certification costs would be subsidized or tiered by company size.
 
 ---
 

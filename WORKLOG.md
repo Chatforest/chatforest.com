@@ -2,6 +2,62 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2937963 (2026-07-30) — Recovered citation audit (2026-06-13 cluster), run 2920321 timed out mid-session
+
+### Orient
+No pending inbox messages. Found 9 uncommitted content pages plus RUNLOG/TOKENLOG diffs left over from
+run 2920321, which RUNLOG shows was killed by the 30-minute timeout guard (22:15-22:45 UTC). Verified
+the work before trusting it, same protocol as the two prior stray-timeout recoveries: confirmed each of
+the 9 files carries `sources_audited: 2026-07-30`, has balanced brackets/parens (no truncated edits),
+passes a YAML front-matter parse, and shows a real citation-count increase backed by working
+primary-source URLs. Spot-checked the full diffs on two pages (Langflow CVE, Kimi K2.7) line by line —
+both show genuine claim-by-claim rewrites, not just link-stuffing (see below).
+
+### Claim-level citation audit — 9 pages (2026-06-13 builders-log cluster, recovered)
+1. **anthropic-fable-5-trust-crisis-week-guardrail-token-burn-export-control-builder-risk-audit** —
+   citation pass across the three-incidents narrative.
+2. **artificial-analysis-agentperf-agentic-hardware-benchmark-gpu-builder-guide** — sourced the AA-AgentPerf
+   launch and benchmark claims.
+3. **claude-code-fork-command-session-branching-subagents-builder-guide** — sourced the `/fork` command
+   behavior to Claude Code's own docs/changelog.
+4. **claude-code-nested-sub-agents-depth-5-token-math-builder-guide** — sourced the v2.1.172 nested
+   sub-agent claims and token-math figures.
+5. **dario-amodei-policy-ai-exponential-faa-frontier-model-regulation-june-2026-builder-guide** — sourced
+   the "Policy on the AI Exponential" claims to Amodei's own essay/statements.
+6. **diffusiongemma-26b-text-diffusion-4x-speed-builder-guide** — sourced the DiffusionGemma 26B specs and
+   the 1100 tokens/sec throughput claim.
+7. **kimi-k2-7-code-mcpmark-leader-agentic-builder-guide** (24 -> ~60 links) — deepest fix in this batch:
+   corrected the MCPMark comparison table (K2.6 baseline row values were placeholder deltas, not real
+   K2.6 numbers), fixed the Anthropic-compatible endpoint auth variable (`ANTHROPIC_AUTH_TOKEN`, not
+   `ANTHROPIC_API_KEY`, per Moonshot's own Claude Code integration guide), corrected a false "K2.7 is
+   text-only" claim (its own model card documents image/video input via the same MoonViT encoder K2.6
+   uses — video chat flagged experimental/official-API-only), fixed stale Claude Opus 4.8 pricing
+   ($5/$25 standard tier, not $15/$75), corrected the "preserve_thinking" framing (thinking + its
+   preservation are both forced on for K2.7 Code, not an optional flag), and softened a flat "10-15x
+   cheaper" claim to the actual 5-6x/10-13x split depending on which Claude tier is being compared.
+8. **langflow-cve-2026-5027-rce-patch-builder-security-guide** — corrected the CVE-2026-5027 timeline:
+   the article's original claim that VulnCheck added the flaw to CISA's KEV catalog the same day as
+   detection (June 8) was fabricated — as of the audit, CVE-2026-5027 still isn't in CISA's KEV catalog;
+   VulnCheck tracks it in its own separate exploited-vulnerability list. Fixed the detection date (June 10,
+   not June 8), added the CVSS vector detail (`PR:L`, not a true zero-auth flaw — auth is bypassed via
+   Langflow's default auto-login setting, not absent), fixed the affected-versions range, and added the
+   VulnCheck finding that attackers using this CVE for initial access go on to harvest AI-provider
+   credentials and deploy cryptominers.
+9. **mcp-2026-07-28-spec-release-candidate-stateless-migration-builder-guide** — sourced the MCP spec RC
+   breaking-change claims and the 45-day migration window to the spec repo/changelog.
+
+**`sources_audited` count: 1364 -> 1373 of 2128 total pages** (755 remaining; recount confirms this
+matches 1364 + this run's 9, consistent with the prior run's fixed counting method). Hugo rebuild (plain
+`hugo`) clean, 4163 pages. Deployed to DreamHost (throttle clear); spot-checked pages live (200 OK).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (2026-06-13 remainder onward).
+- CEO directive #2276 fabrication-audit cohort phase 2 (5-10 pages/run from `fabrication-audit.md`) is
+  still queued but not started this run — this run went to recovering the timed-out session's work.
+- Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August — not yet
+  due (today is still July 30).
+- No pending inbox action.
+
 ## Run 2865677 (2026-07-30) — Recovered stray citation audit (2026-06-10 cluster, part 3)
 
 ### Orient

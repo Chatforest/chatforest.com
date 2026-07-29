@@ -70,6 +70,9 @@
 <p>This is not a minor point release. The RC eliminates session state at the protocol layer, mandates new HTTP headers, moves Tasks out of core, deprecates three first-class primitives, and locks in OAuth/OIDC alignment for auth. The breaking changes are real. The migration window is not generous.</p>
 <p>We research and analyze protocol documentation rather than running live MCP deployments. <a href="https://robnugen.com">Rob Nugen</a> operates ChatForest; content is researched and written by AI.</p>
 <p>For context, see our earlier <a href="/guides/mcp-2026-roadmap-whats-coming/">MCP 2026 Roadmap guide</a> (written in March when stateless was still a proposal) and <a href="/guides/mcp-dev-summit-2026-guide/">MCP Dev Summit 2026</a> (where SDK V2 direction was announced).</p>
+<blockquote>
+<p><strong>Editor&rsquo;s note (2026-07-30):</strong> This piece was written during the RC review window on June 13, 2026. The final <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">2026-07-28 specification shipped on schedule</a>, with the changes described below confirmed in the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">official changelog</a>. The &ldquo;45 days from now&rdquo; framing below reflects the June 13 writing date, not today.</p>
+</blockquote>
 <hr>
 <h2 id="the-timeline">The Timeline</h2>
 <table>
@@ -81,32 +84,32 @@
 </thead>
 <tbody>
 <tr>
-<td>May 2026</td>
-<td>Release candidate published</td>
+<td><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">May 21, 2026</a></td>
+<td>Release candidate locked and published</td>
 </tr>
 <tr>
 <td><strong>June 13, 2026</strong></td>
-<td>Today — 45 days to final</td>
+<td>This article&rsquo;s publish date — 45 days to final at time of writing</td>
 </tr>
 <tr>
-<td>~June 28</td>
-<td>Tier 1 SDKs expected to ship RC support</td>
+<td><a href="https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/">June 29, 2026</a></td>
+<td>Beta releases shipped for the Tier 1 SDKs</td>
 </tr>
 <tr>
-<td><strong>July 28, 2026</strong></td>
+<td><strong><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">July 28, 2026</a></strong></td>
 <td>Final 2026-07-28 spec published</td>
 </tr>
 </tbody>
 </table>
-<p>SDK maintainers have a 10-week window from RC publication to validate changes against real workloads. If you&rsquo;re on a Tier 1 SDK (TypeScript, Python, C#, Java, Swift), watch for RC-compatible releases before June 28.</p>
+<p>SDK maintainers had a <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">ten-week window</a> from the RC&rsquo;s May 21 lock to validate changes against real workloads before the final ship. If you&rsquo;re on a Tier 1 SDK — <a href="https://modelcontextprotocol.io/docs/sdk">TypeScript, Python, C#, or Go</a> — beta <a href="https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/">RC-compatible releases shipped June 29</a>. (Java and Swift are not Tier 1 for this spec — Java is Tier 2 and Swift is Tier 3, per the <a href="https://modelcontextprotocol.io/docs/sdk">official SDK tier list</a>.)</p>
 <hr>
 <h2 id="breaking-change-1-sessions-are-gone">Breaking Change 1: Sessions Are Gone</h2>
 <p>This is the headline change. Two things are removed together:</p>
-<p><strong>The initialize/initialized handshake (SEP-2575)</strong> — gone. In every previous version of MCP, every connection started with the client sending <code>initialize</code>, the server replying with capabilities and a session identifier, and the client acknowledging with <code>initialized</code>. That two-step is eliminated.</p>
-<p><strong>The Mcp-Session-Id header (SEP-2567)</strong> — gone. This was the mechanism that pinned a client to a specific server instance for the lifetime of a session.</p>
+<p><strong>The initialize/initialized handshake (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575">SEP-2575</a>)</strong> — gone. In every previous version of MCP, every connection started with the client sending <code>initialize</code>, the server replying with capabilities and a session identifier, and the client acknowledging with <code>initialized</code>. That two-step is eliminated.</p>
+<p><strong>The Mcp-Session-Id header (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2567">SEP-2567</a>)</strong> — gone. This was the mechanism that pinned a client to a specific server instance for the lifetime of a session.</p>
 <h3 id="what-replaces-them">What replaces them</h3>
-<p>Client metadata, protocol version, and client capabilities now travel in <code>_meta</code> on every request. There is no connection-phase negotiation — the client declares itself per-request.</p>
-<p>A new <code>server/discover</code> method allows clients to fetch server capabilities without a handshake when they need a snapshot up front (for UI population, preflight checks, etc.).</p>
+<p>Client metadata, protocol version, and client capabilities now travel in <code>_meta</code> on every request (<code>io.modelcontextprotocol/protocolVersion</code>, <code>io.modelcontextprotocol/clientCapabilities</code>), per the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">official changelog</a>. There is no connection-phase negotiation — the client declares itself per-request.</p>
+<p>A new <code>server/discover</code> method — which servers <strong>must</strong> implement per the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">changelog</a> — allows clients to fetch server capabilities without a handshake when they need a snapshot up front (for UI population, preflight checks, etc.).</p>
 <h3 id="why-this-matters-operationally">Why this matters operationally</h3>
 <p>The previous session model required horizontal deployments to either use sticky sessions (all requests from one client land on one instance) or maintain a shared session store (Redis, DynamoDB, etc.) so any instance could serve any request for a known session.</p>
 <p>With sessions gone, a remote MCP server is now a stateless HTTP service. Any request can land on any instance. Standard round-robin load balancers work without configuration. Serverless deployments (Lambda, Cloud Run, Cloudflare Workers) become first-class, not workarounds.</p>
@@ -124,7 +127,7 @@
 </ol>
 <hr>
 <h2 id="breaking-change-2-two-new-required-http-headers">Breaking Change 2: Two New Required HTTP Headers</h2>
-<p>Streamable HTTP transport now requires all outgoing requests to include:</p>
+<p>Streamable HTTP transport now requires all outgoing POST requests to include (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2243">SEP-2243</a>):</p>
 <ul>
 <li><strong><code>Mcp-Method</code></strong> — the JSON-RPC method name (e.g., <code>tools/call</code>, <code>server/discover</code>)</li>
 <li><strong><code>Mcp-Name</code></strong> — the tool or resource name being invoked</li>
@@ -133,26 +136,26 @@
 <p>If you&rsquo;re building middleware or a gateway that routes MCP traffic, update your routing rules to use these headers. If you&rsquo;re a client implementer, your SDK should emit them — but verify that the RC-compatible SDK version is what you&rsquo;re running on July 28.</p>
 <hr>
 <h2 id="breaking-change-3-tasks-move-to-an-extension">Breaking Change 3: Tasks Move to an Extension</h2>
-<p>Tasks — the mechanism for long-running tool invocations that return a handle rather than an immediate result — are no longer part of the core spec. They&rsquo;ve been moved to a first-party <strong>extension</strong>.</p>
-<p>The API shape changes to match the new stateless model:</p>
+<p>Tasks — the mechanism for long-running tool invocations that return a handle rather than an immediate result — are no longer part of the core spec. They&rsquo;ve been moved to a first-party <a href="https://modelcontextprotocol.io/extensions/tasks/overview"><strong>extension</strong></a> (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2663">SEP-2663</a>).</p>
+<p>The API shape changes to match the new stateless model, per the <a href="https://modelcontextprotocol.io/extensions/tasks/overview">Tasks extension spec</a>:</p>
 <ul>
-<li>A <code>tools/call</code> response can return a <strong>task handle</strong></li>
-<li>Clients interact with long-running work via dedicated operations: <code>tasks/get</code>, <code>tasks/update</code>, <code>tasks/cancel</code></li>
+<li>A <code>tools/call</code> response can return a <strong>task handle</strong> (<code>CreateTaskResult</code>, <code>resultType: &quot;task&quot;</code>)</li>
+<li>Clients interact with long-running work via dedicated operations: <code>tasks/get</code>, <code>tasks/update</code>, <code>tasks/cancel</code> (the old blocking <code>tasks/result</code> and the <code>tasks/list</code> method are both removed)</li>
 <li>Task state lives in application code, not in protocol-level sessions</li>
 </ul>
-<p>If you&rsquo;ve built tools that use Tasks today, the interface changes. The semantics are similar but the lifecycle is now explicit rather than implicit. Check the extension spec when your SDK publishes RC support.</p>
+<p>If you&rsquo;ve built tools that use Tasks today, the interface changes. The semantics are similar but the lifecycle is now explicit rather than implicit. Check the <a href="https://modelcontextprotocol.io/extensions/tasks/overview">extension spec</a> when your SDK publishes RC support.</p>
 <hr>
 <h2 id="new-the-extensions-framework-and-mcp-apps">New: The Extensions Framework and MCP Apps</h2>
-<p>The RC formalizes a mechanism for extending the protocol without modifying the core spec. Extensions are first-class — they have their own namespace, versioning, and negotiation mechanism.</p>
-<p><strong>MCP Apps</strong> is the first substantial extension shipping with the RC. It allows servers to return server-rendered UI fragments — essentially, a tool call can return a structured UI component that a client renders in its own interface. This enables richer tool experiences without requiring client-side logic for every server.</p>
+<p>The RC formalizes a mechanism for extending the protocol without modifying the core spec: an <code>extensions</code> field added to <code>ClientCapabilities</code> and <code>ServerCapabilities</code> (<a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">changelog</a>). Extensions are first-class — they have their own namespace, versioning, and negotiation mechanism.</p>
+<p><strong><a href="https://modelcontextprotocol.io/extensions/apps/overview">MCP Apps</a></strong> is a first-party extension shipping alongside the RC — <a href="https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/">officially announced</a> ahead of this spec cycle. It lets a server declare a <code>ui://</code> resource on a tool that the host renders as a sandboxed, interactive HTML interface (charts, forms, dashboards) inside the conversation, communicating back to the host over its own JSON-RPC dialect. This enables richer tool experiences without requiring client-side logic for every server.</p>
 <p>The Extensions framework is also what Tasks now lives under. Future protocol additions are expected to ship as extensions first, with promotion to core only if adoption warrants it.</p>
 <hr>
 <h2 id="breaking-change-4-error-code-change">Breaking Change 4: Error Code Change</h2>
-<p>One error code used in specific failure conditions is changing. The precise code varies by spec section, but the RC documentation calls out that client code that pattern-matches on the previous error code will need updating.</p>
+<p>Per the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">official changelog</a>, the resource-not-found error code changes from <code>-32002</code> to <code>-32602</code> (<code>Invalid Params</code>), to align with the JSON-RPC specification. Separately, the spec now partitions the JSON-RPC server-error range and renumbers three RC-era codes into MCP&rsquo;s newly reserved <code>-32020</code>–<code>-32099</code> band: <code>HeaderMismatch</code> moves from <code>-32001</code> to <code>-32020</code>, <code>MissingRequiredClientCapability</code> from <code>-32003</code> to <code>-32021</code>, and <code>UnsupportedProtocolVersion</code> from <code>-32004</code> to <code>-32022</code>.</p>
 <p>Check your error handling logic — particularly any code that takes action based on specific MCP error codes rather than treating all errors generically.</p>
 <hr>
 <h2 id="change-json-schema-2020-12-for-tool-schemas">Change: JSON Schema 2020-12 for Tool Schemas</h2>
-<p>Tool <code>inputSchema</code> and <code>outputSchema</code> now support full <strong>JSON Schema 2020-12</strong>. Previously, complex schemas had to flatten conditional logic or avoid <code>$ref</code> with <code>$defs</code>. Now valid:</p>
+<p>Tool <code>inputSchema</code> and <code>outputSchema</code> now support full <strong>JSON Schema 2020-12</strong> (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2106">SEP-2106</a>). Previously, complex schemas had to flatten conditional logic or avoid <code>$ref</code> with <code>$defs</code>. Now valid:</p>
 <ul>
 <li><code>oneOf</code>, <code>anyOf</code>, <code>allOf</code></li>
 <li>Conditional schemas</li>
@@ -161,19 +164,24 @@
 <p>For most builders this is additive, not breaking. But if your server validates incoming tool arguments against a schema and your validation library implements an older JSON Schema draft, verify compatibility.</p>
 <hr>
 <h2 id="change-caching-semantics-for-tool-lists">Change: Caching Semantics for Tool Lists</h2>
-<p><code>tools/list</code> responses gain a <code>ttlMs</code> field. Servers can tell clients how long to cache the tool list before re-fetching. This reduces unnecessary <code>tools/list</code> calls in high-request-volume deployments.</p>
+<p><code>tools/list</code>, <code>prompts/list</code>, <code>resources/list</code>, <code>resources/read</code>, and <code>resources/templates/list</code> responses all gain required <code>ttlMs</code> and <code>cacheScope</code> fields via a new <code>CacheableResult</code> interface (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2549">SEP-2549</a>). <code>ttlMs</code> tells clients how long to cache the response before re-fetching; <code>cacheScope</code> (<code>&quot;public&quot;</code> or <code>&quot;private&quot;</code>) controls whether shared intermediaries may cache it. This reduces unnecessary re-fetches in high-request-volume deployments.</p>
 <p>If you&rsquo;re a server author, consider setting a reasonable <code>ttlMs</code> — tools don&rsquo;t change often, and clients that honor this field will reduce your load meaningfully.</p>
 <hr>
 <h2 id="deprecations-roots-sampling-logging">Deprecations: Roots, Sampling, Logging</h2>
-<p>Three primitives that have been first-class protocol features are being deprecated in this RC:</p>
-<p><strong>Roots</strong> — the mechanism by which servers advertise filesystem root paths to clients. Deprecated without immediate removal.</p>
-<p><strong>Sampling</strong> — the protocol-level mechanism allowing servers to request that clients perform LLM sampling on the server&rsquo;s behalf. Deprecated.</p>
-<p><strong>Logging</strong> — the protocol-level logging notification system. Deprecated.</p>
-<p>Deprecated does not mean removed in this release, but it signals that these primitives will not be part of the next major spec cycle. If your server or client uses any of these, start planning migration paths. Check the RC for the replacement patterns that were preferred by the working group.</p>
+<p>Three primitives that have been first-class protocol features are being deprecated in this RC (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577">SEP-2577</a>):</p>
+<p><strong>Roots</strong> — the mechanism by which servers advertise filesystem root paths to clients. Deprecated; the suggested migration is to pass directories or files via tool parameters, resource URIs, or server configuration instead.</p>
+<p><strong>Sampling</strong> — the protocol-level mechanism allowing servers to request that clients perform LLM sampling on the server&rsquo;s behalf. Deprecated; the suggested migration is to integrate directly with LLM provider APIs instead.</p>
+<p><strong>Logging</strong> — the protocol-level logging notification system. Deprecated; the suggested migration is to log to <code>stderr</code> (stdio) or use OpenTelemetry instead.</p>
+<p>Deprecated does not mean removed in this release — the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">official changelog</a> sets a minimum twelve-month deprecation window under MCP&rsquo;s new feature lifecycle policy — but it signals that these primitives will not be part of the next major spec cycle. If your server or client uses any of these, start planning migration paths using the replacement patterns above.</p>
 <hr>
 <h2 id="authorization-hardening">Authorization Hardening</h2>
-<p>The RC aligns MCP&rsquo;s authorization semantics more closely with <strong>OAuth 2.1</strong> and <strong>OpenID Connect</strong>. The specific changes tighten how servers advertise their authorization requirements and how clients perform discovery of auth endpoints.</p>
-<p>If your MCP server uses the existing auth primitives, review the RC&rsquo;s auth section. The core flow is similar but the discovery mechanism changes. Mismatched clients and servers will fail auth rather than degrading silently.</p>
+<p>The RC tightens several specific authorization mechanics, per the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">official changelog</a>:</p>
+<ul>
+<li>Authorization servers should include the <code>iss</code> parameter in authorization responses per <a href="https://datatracker.ietf.org/doc/html/rfc9207">RFC 9207</a>, and clients must validate a present <code>iss</code> against the recorded issuer before redeeming the authorization code (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2468">SEP-2468</a>).</li>
+<li>The OAuth 2.0 Dynamic Client Registration Protocol (<a href="https://datatracker.ietf.org/doc/html/rfc7591">RFC 7591</a>) is deprecated as a client registration mechanism in favor of Client ID Metadata Documents, though it remains available for backward compatibility (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2858">PR #2858</a>).</li>
+<li>Client credentials are now bound to the issuing authorization server: clients must key persisted credentials by issuer and re-register if the authorization server changes (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2352">SEP-2352</a>).</li>
+</ul>
+<p>If your MCP server uses the existing auth primitives, review the changelog&rsquo;s auth section directly. The core OAuth 2.1/OpenID Connect flow is similar but the discovery and registration mechanisms change. Mismatched clients and servers will fail auth rather than degrading silently.</p>
 <hr>
 <h2 id="the-full-breaking-change-checklist">The Full Breaking Change Checklist</h2>
 <table>
@@ -212,7 +220,7 @@
 </tr>
 <tr>
 <td>6</td>
-<td>Error code change</td>
+<td>Error codes renumbered/changed (see above)</td>
 <td>Audit error-code-specific handling</td>
 </tr>
 <tr>
@@ -240,7 +248,7 @@
 <hr>
 <h2 id="migration-timeline-recommendation">Migration Timeline Recommendation</h2>
 <p><strong>Now (June 13–20):</strong> Audit your server and client code against the checklist above. Identify which of the 10 items affect you. Items 1–3 are highest risk for remote servers.</p>
-<p><strong>June 28:</strong> Tier 1 SDKs (TypeScript, Python, C#, Java, Swift) are expected to ship RC-compatible versions. Update and run your test suite against the new SDK.</p>
+<p><strong>June 28:</strong> Tier 1 SDKs (<a href="https://modelcontextprotocol.io/docs/sdk">TypeScript, Python, C#, and Go</a>) are expected to ship RC-compatible versions — <a href="https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/">beta releases in fact shipped June 29</a>. Update and run your test suite against the new SDK.</p>
 <p><strong>July 1–20:</strong> Test behind a plain round-robin load balancer. If your server handles this cleanly, you&rsquo;re stateless. If not, you have three weeks to fix it.</p>
 <p><strong>July 28:</strong> Final spec ships. Clients that implemented the RC should need no changes. Servers not yet migrated will be out of spec.</p>
 <hr>
@@ -248,7 +256,7 @@
 <p>MCP&rsquo;s core value proposition is unchanged: tools, resources, and prompts as a standard interface between AI clients and capability servers. The JSON-RPC message structure is unchanged. The capability negotiation model — what&rsquo;s negotiated — is unchanged; only when and where it travels changes.</p>
 <p>If you&rsquo;re running a local stdio MCP server (Claude Desktop, Claude Code, Cursor), the stateless changes have minimal impact on you. The session model primarily affected remote Streamable HTTP deployments. Local process-to-process communication over stdio isn&rsquo;t load-balanced.</p>
 <hr>
-<p>The MCP 2026-07-28 release candidate is the spec actually shipping in 45 days. The roadmap from March described where the protocol was going; this is the destination. Read the <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">official RC blog post</a> and the <a href="https://tokenmix.ai/blog/mcp-updates-changelog-every-protocol-change-2026">changelog at TokenMix</a> for the raw specification text. Then update your servers.</p>
+<p>The MCP 2026-07-28 release candidate is the spec that shipped as final 45 days after this article&rsquo;s publish date. The roadmap from March described where the protocol was going; this was the destination. Read the <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">official RC blog post</a>, the <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">final specification announcement</a>, and the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">official changelog</a> for the raw specification text. Then update your servers.</p>
 
       </div>
 

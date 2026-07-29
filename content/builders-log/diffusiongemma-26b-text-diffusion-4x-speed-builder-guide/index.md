@@ -5,13 +5,14 @@ description: "Google DeepMind released DiffusionGemma 26B-A4B on June 10 — a t
 content_type: "Builder's Log"
 categories: ["AI Models", "Infrastructure", "Developer Tools"]
 tags: ["google", "diffusiongemma", "text-diffusion", "open-source", "apache-2.0", "mixture-of-experts", "vllm", "inference-speed", "gemma", "multimodal", "open-weights"]
+sources_audited: 2026-07-30
 ---
 
-On June 10, 2026, Google DeepMind released **DiffusionGemma 26B-A4B-it** — a model that replaces the standard one-token-at-a-time autoregressive inference loop with a text diffusion approach that generates 15–20 tokens per forward pass. The result: **1100+ tokens per second on an H100 in FP8**, which is roughly 4x faster than a comparably-sized autoregressive model on the same hardware.
+On [June 10, 2026, Google DeepMind released **DiffusionGemma 26B-A4B-it**](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) — a model that replaces the standard one-token-at-a-time autoregressive inference loop with a text diffusion approach that denoises blocks of [up to 256 tokens in parallel per forward pass](https://ai.google.dev/gemma/docs/diffusiongemma). The result: [**1100+ tokens per second on an H100 in FP8** at low batch sizes](https://huggingface.co/google/diffusiongemma-26B-A4B-it), which Google describes as [up to 4x faster token output than Gemma 4 on dedicated GPUs](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) (Google notes this speedup applies to local, low-concurrency inference, with diminishing returns in high-QPS cloud serving).
 
-It's open-weight, Apache 2.0, fits in 18GB of VRAM when quantized to NVFP4, and has day-zero support in vLLM, Transformers, MLX, and Unsloth.
+It's [open-weight, Apache 2.0, and fits in roughly 18GB of VRAM when quantized to NVFP4](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/), with [day-zero support in vLLM, Hugging Face Transformers, MLX, and Unsloth](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) (NVIDIA NeMo also has day-zero support; [llama.cpp support is coming later](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)).
 
-The trade-off is real: DiffusionGemma scores substantially lower than Gemma 4 on reasoning, math, and coding. Google is explicitly calling this release experimental and recommending Gemma 4 for quality-critical production workloads. For builders, the question is whether the speed profile makes sense for your specific use case — and in several cases, it might.
+The trade-off is real: DiffusionGemma scores substantially lower than Gemma 4 on reasoning, math, and coding (see benchmarks below). [Google's own release material describes DiffusionGemma as experimental and recommends deploying standard Gemma 4 for "applications that demand maximum quality"](https://developers.googleblog.com/diffusiongemma-the-developer-guide/). For builders, the question is whether the speed profile makes sense for your specific use case — and in several cases, it might.
 
 ---
 
@@ -19,15 +20,17 @@ The trade-off is real: DiffusionGemma scores substantially lower than Gemma 4 on
 
 Standard autoregressive language models generate one token at a time. Each token depends on the previous tokens, so the process is inherently sequential. You can batch multiple requests, but you can't parallelize the generation of a single response.
 
-Text diffusion works differently. The model starts with a "canvas" of 256 masked tokens and iteratively denoises them — predicting the most likely tokens, committing the high-confidence ones, and re-running the diffusion pass on the remainder. Each denoising step can update 15–20 tokens simultaneously. With up to 48 maximum denoising steps and adaptive stopping when predictions stabilize, a typical 512-token response might require 20–30 denoising passes instead of 512 autoregressive steps.
+Text diffusion works differently. [The model starts with a "canvas" of up to 256 masked tokens and iteratively denoises them](https://ai.google.dev/gemma/docs/diffusiongemma) — predicting the most likely tokens, committing the high-confidence ones, and re-running the diffusion pass on the remainder. The sampler is capped at [48 maximum denoising steps](https://huggingface.co/google/diffusiongemma-26B-A4B-it), but [adaptive stopping (triggered once average per-canvas entropy drops below threshold) means a response typically finishes in about 12–16 steps in practice](https://ai.google.dev/gemma/docs/diffusiongemma) rather than the full 48.
 
-The architecture uses an encoder-decoder design: an autoregressive encoder processes and caches the prompt context, then a bidirectional-attention decoder runs the diffusion passes over the generation canvas. The bidirectional attention in the decoder is what allows parallel token prediction — unlike autoregressive models, the decoder can "see" the entire canvas position at once, not just positions to the left.
+The architecture uses an encoder-decoder design: [an autoregressive encoder processes and caches the prompt context (causal attention, prefill), then a bidirectional-attention decoder runs the diffusion passes over the generation canvas, reading — not writing — the cached context via cross-attention](https://ai.google.dev/gemma/docs/diffusiongemma). The bidirectional attention in the decoder is what allows parallel token prediction — unlike autoregressive models, the decoder can "see" the entire canvas position at once, not just positions to the left.
 
 This is the same principle that made diffusion models dominant in image generation (where every pixel can be denoised in parallel). DiffusionGemma applies it to discrete text tokens.
 
 ---
 
 ## Model Specs
+
+All specs below are from [Google's official model card for DiffusionGemma 26B-A4B-it](https://huggingface.co/google/diffusiongemma-26B-A4B-it).
 
 | Property | Value |
 |----------|-------|
@@ -50,7 +53,7 @@ The MoE design keeps the active compute low. At 3.8B active parameters per forwa
 
 ## Benchmark Results
 
-Be honest with yourself about these numbers before deploying.
+Be honest with yourself about these numbers before deploying. [All figures in this section are from Google's DiffusionGemma model card](https://huggingface.co/google/diffusiongemma-26B-A4B-it), comparing DiffusionGemma 26B-A4B against the [Gemma 4 26B-A4B](https://ai.google.dev/gemma/docs/releases) model it's built on.
 
 ### Reasoning and Knowledge
 
@@ -62,6 +65,15 @@ Be honest with yourself about these numbers before deploying.
 | BigBench Extra Hard | 47.6% | 64.8% |
 
 The AIME gap is the most telling: **69.1% vs 88.3%**. On competition math, the quality cost of diffusion-based generation is significant. Gemma 4 is clearly better for tasks requiring multi-step reasoning.
+
+### Coding
+
+| Benchmark | DiffusionGemma | Gemma 4 |
+|-----------|----------------|---------|
+| LiveCodeBench v6 | 69.1% | 77.1% |
+| Codeforces ELO | 1429 | 1718 |
+
+[Google's model card](https://huggingface.co/google/diffusiongemma-26B-A4B-it) shows DiffusionGemma trailing Gemma 4 on both code-generation (LiveCodeBench v6) and competitive-programming (Codeforces ELO) benchmarks — an 8-point gap on LiveCodeBench and a nearly 300-point gap in Codeforces rating. For anything beyond simple code generation or syntax correction, expect the quality difference to show up in production.
 
 ### Multimodal
 
@@ -77,10 +89,10 @@ The OmniDocBench number is the interesting exception: **DiffusionGemma outperfor
 
 | Hardware | Tokens per second (FP8 / NVFP4) |
 |----------|----------------------------------|
-| H100 | 1100+ |
-| RTX 5090 | 700+ |
+| H100 | [1100+](https://huggingface.co/google/diffusiongemma-26B-A4B-it) |
+| RTX 5090 | [700+](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) |
 
-These numbers are for batch inference. Single-request latency depends on the diffusion pass count, which varies with output length and content complexity.
+These numbers are for low-batch-size inference. Single-request latency depends on the diffusion pass count, which varies with output length and content complexity.
 
 ---
 
@@ -88,19 +100,23 @@ These numbers are for batch inference. Single-request latency depends on the dif
 
 | Configuration | VRAM | Notes |
 |---------------|------|-------|
-| NVFP4 quantized | ~18GB | RTX 5090 viable (700+ tok/s) |
-| BF16 full precision | ~50GB+ | Multi-GPU setup required |
-| FP8 | ~28GB | Single H100 preferred |
+| NVFP4 quantized | [~18GB](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) | RTX 5090 viable (700+ tok/s) |
+| BF16 full precision | ~50GB+ (estimated) | Multi-GPU setup likely required |
+| FP8 | ~28GB (estimated) | Single H100 preferred |
 
-The NVFP4 path is the practical consumer-GPU option. An RTX 5090 with 32GB VRAM can run the quantized model. RTX 4090 (24GB) is marginal — you may be able to run quantized inference, but with limited headroom for context.
+The BF16 and FP8 figures aren't published directly by Google — they're standard back-of-envelope math from the [disclosed 25.2B total parameter count](https://huggingface.co/google/diffusiongemma-26B-A4B-it) (roughly 2 bytes/parameter for BF16, ~1 byte/parameter plus overhead for FP8), not an official spec. Treat them as planning estimates and verify against your own inference stack before committing hardware.
 
-NVIDIA has published an NVFP4-quantized model (`nvidia/diffusiongemma-26B-A4B-it-NVFP4`) specifically for this hardware path.
+The NVFP4 path is the practical consumer-GPU option. An RTX 5090 has 32GB of VRAM, comfortably fitting the ~18GB quantized model. RTX 4090 (24GB) is marginal — you may be able to run quantized inference, but with limited headroom for context.
+
+[NVIDIA has published an NVFP4-quantized model (`nvidia/diffusiongemma-26B-A4B-it-NVFP4`)](https://huggingface.co/nvidia/diffusiongemma-26B-A4B-it-NVFP4) built with NVIDIA Model Optimizer, targeting NVIDIA Hopper (H100) and Blackwell hardware.
 
 ---
 
 ## Deployment
 
 ### vLLM (recommended for production)
+
+[DiffusionGemma is the first diffusion LLM (dLLM) with native, day-zero support in vLLM](https://vllm.ai/blog/2026-06-10-diffusion-gemma).
 
 ```bash
 pip install vllm
@@ -152,7 +168,7 @@ output = model.generate(**inputs, max_new_tokens=512)
 text = processor.decode(output[0], skip_special_tokens=False)
 ```
 
-Note: `DiffusionGemmaForBlockDiffusion` is a new class specific to this model. Standard `AutoModelForCausalLM` will not work — this model's generation loop is different from autoregressive models.
+Note: [`DiffusionGemmaForBlockDiffusion` is a new class specific to this model](https://huggingface.co/docs/transformers/model_doc/diffusion_gemma). Standard `AutoModelForCausalLM` will not work — this model's generation loop is different from autoregressive models.
 
 ### Image input
 
@@ -177,24 +193,30 @@ inputs = processor.apply_chat_template(
 outputs = model.generate(**inputs, max_new_tokens=2048)
 ```
 
-**Image placement matters**: Google's documentation is explicit — place images before text in your prompts for best performance.
+**Image placement matters**: [Google's documentation is explicit — "for optimal performance with multimodal inputs, place image content before the text in your prompt."](https://huggingface.co/google/diffusiongemma-26B-A4B-it)
 
-**Token budgets for image resolution**: 70, 140, 280, 560, 1120 tokens. Lower budgets (70–280) for classification and captioning; higher budgets (560–1120) for OCR and document parsing where detail matters.
+**Token budgets for image resolution**: [the supported token budgets are 70, 140, 280, 560, and 1120](https://huggingface.co/google/diffusiongemma-26B-A4B-it). Lower budgets (70–280) for classification and captioning; higher budgets (560–1120) for OCR and document parsing where detail matters.
 
-### NVFP4 via NVIDIA build (for RTX 5090)
+### NVIDIA NIM container (for NVIDIA-managed deployment)
+
+[NVIDIA publishes a ready-to-run NIM container for DiffusionGemma](https://developer.nvidia.com/blog/run-diffusiongemma-on-nvidia-for-developer-ready-high-throughput-text-generation/):
 
 ```bash
-# Pull from NVIDIA's hosted endpoint (no local download required)
-docker model run hf.co/nvidia/diffusiongemma-26B-A4B-it-NVFP4
+export NIM_IMAGE_PATH="nvcr.io/nim/google/diffusiongemma-26b-a4b-it:latest"
+docker run --gpus=all \
+  -e NGC_API_KEY=$NGC_API_KEY \
+  -v "$LOCAL_NIM_CACHE:/opt/nim/.cache" \
+  -p 8000:8000 \
+  ${NIM_IMAGE_PATH}
 ```
 
-Or pull and run locally using the HuggingFace weights directly.
+For the NVFP4 checkpoint specifically, [pull `nvidia/diffusiongemma-26B-A4B-it-NVFP4` directly from Hugging Face](https://huggingface.co/nvidia/diffusiongemma-26B-A4B-it-NVFP4) and serve it with vLLM or Transformers as shown above.
 
 ---
 
 ## Diffusion Sampling Settings
 
-The model has configurable denoising parameters. Google's recommended defaults:
+The model has configurable denoising parameters. [Google's recommended defaults](https://huggingface.co/google/diffusiongemma-26B-A4B-it):
 
 | Parameter | Value |
 |-----------|-------|
@@ -213,7 +235,7 @@ You can trade quality for speed by reducing `max_denoising_steps` — fewer pass
 
 ## Thinking Mode
 
-DiffusionGemma includes a thinking mode that produces internal reasoning before a final answer:
+DiffusionGemma includes [a thinking mode, triggered via a `<|think|>` system-prompt token, that produces internal reasoning before a final answer](https://developers.googleblog.com/diffusiongemma-the-developer-guide/):
 
 ```python
 # Enable thinking with system prompt
@@ -223,7 +245,7 @@ messages = [
 ]
 ```
 
-Thinking output is wrapped in `<|channel>thought\n[reasoning]<channel|>[final answer]` markers. The reasoning token stream is separate from the output and can be surfaced to users or discarded.
+[Thinking output is wrapped in `<|channel>thought\n[reasoning]<channel|>` markers, followed by the final answer](https://huggingface.co/google/diffusiongemma-26B-A4B-it). The reasoning token stream is separate from the output and can be surfaced to users or discarded.
 
 Important: thinking mode adds denoising passes for the reasoning canvas before the answer canvas. It will slow down overall generation relative to non-thinking mode. For high-throughput use cases, profile carefully before enabling thinking by default.
 
@@ -233,21 +255,21 @@ Important: thinking mode adds denoising passes for the reasoning canvas before t
 
 ### Strong use cases
 
-**Document extraction and OCR.** The OmniDocBench 1.5 result (0.319 vs Gemma 4's 0.149) is the clearest signal that DiffusionGemma has a genuine advantage in document-parsing workflows. If you're processing PDFs, invoices, forms, or dense structured documents, the combination of speed and this specific quality advantage makes it worth evaluating seriously.
+**Document extraction and OCR.** [The OmniDocBench 1.5 result (0.319 vs Gemma 4's 0.149)](https://huggingface.co/google/diffusiongemma-26B-A4B-it) is the clearest signal that DiffusionGemma has a genuine advantage in document-parsing workflows. If you're processing PDFs, invoices, forms, or dense structured documents, the combination of speed and this specific quality advantage makes it worth evaluating seriously.
 
-**High-throughput batch inference.** Summarizing thousands of short texts, generating product descriptions at scale, or any batch workflow where throughput matters more than frontier reasoning quality. At 1100 tokens/second on a single H100, you're covering substantially more ground per GPU-hour.
+**High-throughput batch inference.** Summarizing thousands of short texts, generating product descriptions at scale, or any batch workflow where throughput matters more than frontier reasoning quality. [At 1100+ tokens/second on a single H100](https://huggingface.co/google/diffusiongemma-26B-A4B-it), you're covering substantially more ground per GPU-hour.
 
 **Interactive applications requiring real-time streaming.** The parallel generation means first-token latency is different from autoregressive models — but steady-state throughput is high. For chat-adjacent interfaces where users are watching tokens appear, the speed profile can feel noticeably snappier.
 
-**Multimodal pipelines with image/video input.** The vision encoder handles object detection, captioning, chart reading, and video frame analysis. At 256K context, you can process a long document with many embedded images in a single inference call.
+**Multimodal pipelines with image/video input.** [The vision encoder handles object detection, document/PDF parsing, chart comprehension, OCR, and video processed as frames (up to 60 seconds at 1 fps)](https://huggingface.co/google/diffusiongemma-26B-A4B-it). At 256K context, you can process a long document with many embedded images in a single inference call.
 
 ### Cases where Gemma 4 is better
 
-**Multi-step reasoning.** The AIME 69.1% vs 88.3% gap is not noise. If your workflow involves complex mathematical reasoning, extended logic chains, or any task that requires consistent multi-step coherence, use Gemma 4.
+**Multi-step reasoning.** [The AIME 69.1% vs 88.3% gap](https://huggingface.co/google/diffusiongemma-26B-A4B-it) is not noise. If your workflow involves complex mathematical reasoning, extended logic chains, or any task that requires consistent multi-step coherence, use Gemma 4.
 
-**Coding.** Google's own model card notes weaker coding evaluation performance relative to Gemma 4. For anything beyond simple code generation or syntax correction, the quality difference is likely to show in production.
+**Coding.** [Google's own model card shows an 8-point LiveCodeBench v6 gap (69.1% vs 77.1%) and a nearly 300-point Codeforces ELO gap (1429 vs 1718)](https://huggingface.co/google/diffusiongemma-26B-A4B-it) relative to Gemma 4. For anything beyond simple code generation or syntax correction, the quality difference is likely to show in production.
 
-**Research or analysis tasks.** BigBench Extra Hard (47.6% vs 64.8%) suggests that tasks requiring extended, structured reasoning will produce meaningfully lower quality outputs.
+**Research or analysis tasks.** [BigBench Extra Hard (47.6% vs 64.8%)](https://huggingface.co/google/diffusiongemma-26B-A4B-it) suggests that tasks requiring extended, structured reasoning will produce meaningfully lower quality outputs.
 
 ---
 
@@ -255,13 +277,13 @@ Important: thinking mode adds denoising passes for the reasoning canvas before t
 
 | Use Case | Best Choice | Why |
 |----------|-------------|-----|
-| Fastest open-weight text generation | **DiffusionGemma** | 4x faster, Apache 2.0 |
-| Highest quality open-weight general reasoning | Gemma 4 (27B) | +5–19 points across benchmarks |
-| Best open-weight agentic coding | North Mini Code (Cohere) | Purpose-built, SWE-Bench 61% pass@1 |
-| Document OCR and extraction | **DiffusionGemma** | OmniDocBench best-in-class |
-| Consumer GPU (24GB VRAM) | Gemma 4 27B FP8 | DiffusionGemma NVFP4 marginal on 4090 |
-| Consumer GPU (32GB VRAM) | **DiffusionGemma NVFP4** | RTX 5090 viable, 700+ tok/s |
-| No GPU budget | Gemini 3.5 Flash API | Speed + quality at hosted API rates |
+| Fastest open-weight text generation | **DiffusionGemma** | [Up to 4x faster than Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/), Apache 2.0 |
+| Highest quality open-weight general reasoning | [Gemma 4 (26B-A4B)](https://ai.google.dev/gemma/docs/releases) | [+5–20 points across benchmarks above](https://huggingface.co/google/diffusiongemma-26B-A4B-it) |
+| Best open-weight agentic coding | [North Mini Code (Cohere)](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code) | Purpose-built 30B-A3B model, 80.2% pass@10 on SWE-Bench Verified |
+| Document OCR and extraction | **DiffusionGemma** | [OmniDocBench 1.5 best-in-class](https://huggingface.co/google/diffusiongemma-26B-A4B-it) |
+| Consumer GPU (24GB VRAM) | Gemma 4 26B-A4B FP8 | DiffusionGemma NVFP4 marginal on 4090 |
+| Consumer GPU (32GB VRAM) | **DiffusionGemma NVFP4** | [RTX 5090 viable, 700+ tok/s](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/) |
+| No GPU budget | [Gemini 3.5 Flash API](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash) | Speed + quality at hosted API rates |
 
 ---
 
@@ -273,7 +295,7 @@ Important: thinking mode adds denoising passes for the reasoning canvas before t
 
 **Diffusion != autoregressive for all tasks.** The generation mechanics change what "temperature" and "sampling" mean. Some prompting techniques that work reliably for autoregressive models (few-shot examples, specific chain-of-thought formats) behave differently under text diffusion. Plan for a re-evaluation pass if you're porting an existing prompt library.
 
-**Experimental positioning.** Google's own release notes describe DiffusionGemma as experimental and do not recommend it for production workloads where quality is the primary constraint. That's a meaningful signal from the team that built it.
+**Experimental positioning.** [Google's own developer guide describes DiffusionGemma as "this experimental model," and its announcement post recommends deploying standard Gemma 4 for applications that demand maximum quality](https://developers.googleblog.com/diffusiongemma-the-developer-guide/). That's a meaningful signal from the team that built it.
 
 ---
 
@@ -295,4 +317,6 @@ Important: thinking mode adds denoising passes for the reasoning canvas before t
 Model weights: [google/diffusiongemma-26B-A4B-it](https://huggingface.co/google/diffusiongemma-26B-A4B-it)
 NVFP4 variant: [nvidia/diffusiongemma-26B-A4B-it-NVFP4](https://huggingface.co/nvidia/diffusiongemma-26B-A4B-it-NVFP4)
 Official announcement: [blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/](https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/)
+Google AI developer docs: [ai.google.dev/gemma/docs/diffusiongemma](https://ai.google.dev/gemma/docs/diffusiongemma)
+Developer guide: [developers.googleblog.com/diffusiongemma-the-developer-guide](https://developers.googleblog.com/diffusiongemma-the-developer-guide/)
 NVIDIA build endpoint: [build.nvidia.com/google/diffusiongemma-26b-a4b-it](https://build.nvidia.com/google/diffusiongemma-26b-a4b-it/modelcard)

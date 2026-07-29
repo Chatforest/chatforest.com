@@ -3,9 +3,9 @@
 > Claude Code v2.1.172 (June 10) lifts the sub-agent spawn ban and caps nesting at 5 levels deep. Here's the token math, the practical depth ceiling, and the three pitfalls to avoid before you wire up your first recursive agent chain.
 
 
-On June 10, 2026, [Boris Cherny shipped Claude Code v2.1.172](https://github.com/anthropics/claude-code/releases) with a short announcement: "Just landed nested subagent support in Claude Code. Capped at depth=5 to start. Lmk what you think!" ([byteiota coverage](https://byteiota.com/claude-code-v2-1-172-sub-agents-can-now-spawn-sub-agents/))
+On June 10, 2026, [Boris Cherny shipped Claude Code v2.1.172](https://github.com/anthropics/claude-code/releases/tag/v2.1.172) with [a short announcement](https://www.threads.com/@boris_cherny/post/DZXY8qmG9Dq/just-landed-nested-subagent-support-in-claude-code-starting-to-experiment-more): "Just landed nested subagent support in Claude Code. Starting to experiment more with agents kicking off agents as a way to better manage context. Capped at depth=5 to start, going out in today's release. Lmk what you think!" ([byteiota coverage](https://byteiota.com/claude-code-v2-1-172-sub-agents-can-now-spawn-sub-agents/))
 
-That's a quiet message for a meaningful change. For most of 2026, the Claude Code docs explicitly stated that sub-agents cannot spawn other sub-agents — a deliberate guardrail against infinite recursion. That restriction is now gone. Sub-agents can now launch their own sub-agents, up to 5 frames deep.
+That's a quiet message for a meaningful change. For most of 2026, [the Claude Code docs explicitly stated that sub-agents cannot spawn other sub-agents](https://github.com/anthropics/claude-code/issues/67240) — a deliberate guardrail against infinite recursion. That restriction is now gone. Sub-agents can now launch their own sub-agents, up to 5 frames deep.
 
 Here's what this actually means for builders.
 
@@ -13,7 +13,7 @@ Here's what this actually means for builders.
 
 Before v2.1.172, a sub-agent was a leaf. It could use tools, run code, write files — but it could not delegate further. Any complex work had to be orchestrated from the root agent.
 
-Starting with v2.1.172, each agent in the stack can spawn children, with a hard limit of 5 levels. The mental model is recursion with a bounded stack:
+Starting with v2.1.172, each agent in the stack can spawn children, with [a hard limit of 5 levels](https://code.claude.com/docs/en/sub-agents#let-subagents-spawn-their-own-subagents). The mental model is recursion with a bounded stack:
 
 - **Root agent** (depth 0) — receives the task, does initial reasoning
 - **Depth 1 agents** — first layer of delegation
@@ -27,7 +27,7 @@ Each frame carries its own system prompt and model selection. The parent reads o
 
 Nested agents don't scale linearly. They compound.
 
-The canonical worst-case figure from Anthropic's cost-management documentation is approximately 7× token consumption compared to a single-thread session. That's not hypothetical — it's the observed multiplier on sub-agent-heavy workflows before nesting even existed.
+Anthropic's own engineering write-up on its multi-agent Research system found that [individual agents typically use about 4× more tokens than a single chat interaction, and full multi-agent workflows run about 15× more tokens than a chat](https://www.anthropic.com/engineering/multi-agent-research-system) — with token usage alone explaining roughly 80% of the performance variance the team measured across trials. That's not hypothetical — it's Anthropic's own measured multiplier on agent- and sub-agent-heavy workflows, published before Claude Code's nested-agent cap even existed.
 
 Add nesting and the compounding accelerates. Each frame maintains its own context. "Orphan tokens" — the intermediate output from depth 2 agents that depth 0 never sees — still get billed. You pay to produce intermediate results that disappear after summarization.
 
@@ -43,7 +43,7 @@ The pattern that earns its token cost:
 - **Mid (Sonnet)** — domain work, research, code generation
 - **Leaf (Haiku)** — structured output, formatting, simple lookups
 
-Three layers, three model tiers, deliberately scoped. Each handoff uses an explicit `Agent(name)` allowlist so the root knows exactly what it is delegating.
+Three layers, three model tiers, deliberately scoped. Each handoff uses an explicit [`Agent(agent_type)` allowlist](https://code.claude.com/docs/en/sub-agents#restrict-which-subagents-can-be-spawned) so the root knows exactly what it is delegating.
 
 Before wiring any nested call, write out the leaf summary you expect to receive back. If that summary is under roughly 500 tokens, or if the parent agent could have produced it with two tool calls, don't nest. Nesting earns its keep only when the leaf does meaningful work and returns a meaningfully compressed answer.
 
@@ -55,21 +55,21 @@ The parent prompt shapes every child prompt. A vague or under-specified instruct
 
 **2. Background sub-agents can orphan.**
 
-v2.1.172 also ships a bug fix: background sub-agents were getting stuck as "active" after a nested child was stopped. This was a pre-existing issue that the nested-agent change made more visible. If you are running background agents in existing workflows, upgrade to v2.1.172 before adding nesting — otherwise you may see stale active statuses from stopped children.
+v2.1.172 also ships [a bug fix: background sub-agents were getting stuck as "active" after a nested child was stopped](https://github.com/anthropics/claude-code/releases/tag/v2.1.172). This was a pre-existing issue that the nested-agent change made more visible. If you are running background agents in existing workflows, upgrade to v2.1.172 before adding nesting — otherwise you may see stale active statuses from stopped children.
 
 **3. Model selection defaults to the parent's model.**
 
-Each frame inherits the root model if you do not specify otherwise. Running Opus at every level is how the 7× token multiplier becomes 14×. Explicitly set the model at each handoff. Leaf agents almost never need Opus.
+[Each frame inherits the root model if you do not specify otherwise](https://code.claude.com/docs/en/sub-agents#choose-a-model). Running Opus at every level is how a token multiplier that's already 4×–15× a single chat (per Anthropic's own multi-agent measurements above) compounds even further. Explicitly set the model at each handoff. Leaf agents almost never need Opus.
 
 ## What Else Shipped in v2.1.172
 
 The nested sub-agent feature is the headline, but v2.1.172 includes several other changes worth noting:
 
-**Plugin search bar** — when browsing marketplace plugins, a search field is now available. If you use more than a handful of plugins, this matters more than it sounds.
+**[Plugin search bar](https://github.com/anthropics/claude-code/releases/tag/v2.1.172)** — when browsing marketplace plugins, a search field is now available. If you use more than a handful of plugins, this matters more than it sounds.
 
-**OTEL metrics model attribute** — the `claude_code.lines_of_code.count` metric now includes a model attribute, enabling aggregation by model. If you are running OpenTelemetry in your agent pipeline, you can now break cost attribution down by which model tier is responsible for which output.
+**[OTEL metrics model attribute](https://github.com/anthropics/claude-code/releases/tag/v2.1.172)** — the `claude_code.lines_of_code.count` metric now includes a model attribute, enabling aggregation by model. If you are running OpenTelemetry in your agent pipeline, you can now break cost attribution down by which model tier is responsible for which output.
 
-**Amazon Bedrock region resolution** — when `AWS_REGION` is not set, Claude Code now reads the region from `~/.aws/config`, aligning with standard AWS SDK priority behavior. Previously this required an explicit env var; now it follows the convention that every other AWS tool already uses.
+**[Amazon Bedrock region resolution](https://github.com/anthropics/claude-code/releases/tag/v2.1.172)** — when `AWS_REGION` is not set, Claude Code now reads the region from `~/.aws/config`, aligning with standard AWS SDK priority behavior. Previously this required an explicit env var; now it follows the convention that every other AWS tool already uses.
 
 ## The Builder Decision
 

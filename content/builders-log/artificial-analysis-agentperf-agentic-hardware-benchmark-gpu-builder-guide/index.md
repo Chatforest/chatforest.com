@@ -1,11 +1,12 @@
 ---
 title: "Artificial Analysis Launches AA-AgentPerf: The First Hardware Benchmark Built for Agentic AI Workloads"
 date: 2026-06-13
-description: "Artificial Analysis released AA-AgentPerf, a hardware benchmark that replays real multi-turn coding agent trajectories with up to 200 turns and 100K+ token sequences. It sits alongside the original AA-SLT benchmark on their hardware page and measures concurrent agent capacity — not just throughput — across NVIDIA, AMD, and TPU systems."
+description: "Artificial Analysis released AA-AgentPerf, a hardware benchmark that replays real multi-turn coding agent trajectories with up to 200 turns and 100K+ token sequences. It sits alongside the original AA-SLT benchmark on their hardware page and measures concurrent agent capacity — not just throughput — across NVIDIA and AMD systems."
 tags: ["infrastructure", "benchmarks", "hardware", "agentic", "gpu", "inference", "artificial-analysis", "builder-guide", "nvidia", "amd"]
+sources_audited: 2026-07-30
 ---
 
-Artificial Analysis [released **AA-AgentPerf**](https://artificialanalysis.ai/articles/aa-agentperf), a hardware benchmark designed specifically for agentic AI workloads, alongside the original AA-SLT (System Load Test) benchmark on their [hardware evaluation page](https://artificialanalysis.ai/benchmarks/hardware). The timing matters: as AI workloads shift from single-turn completions to multi-turn agent sessions, the hardware rankings that guided infrastructure decisions in 2024 and 2025 no longer necessarily hold.
+Artificial Analysis [released **AA-AgentPerf**](https://artificialanalysis.ai/articles/aa-agentperf), which it calls ["the first agentic inference benchmark"](https://artificialanalysis.ai/articles/aa-agentperf), designed specifically for agentic AI workloads, alongside the original AA-SLT (System Load Test) benchmark on their [hardware evaluation page](https://artificialanalysis.ai/benchmarks/hardware). NVIDIA independently corroborated the "first" framing, [describing AA-AgentPerf as "the industry's first multi-vendor open benchmark"](https://developer.nvidia.com/blog/nvidia-achieves-leading-agentic-coding-performance-on-first-agentic-ai-benchmark/) for agentic workload performance after its GB300 NVL72 and H200 systems were evaluated on it. The timing matters: as AI workloads shift from single-turn completions to multi-turn agent sessions, the hardware rankings that guided infrastructure decisions in 2024 and 2025 no longer necessarily hold.
 
 This is a research-based summary. We have not executed any of the tools or infrastructure described here.
 
@@ -26,26 +27,24 @@ AA-AgentPerf addresses this gap by replaying actual multi-turn coding agent traj
 The benchmark evaluates:
 
 - **Concurrent agent capacity** at a target output speed and time-to-first-token
-- **Metrics normalized per accelerator, per system, per MW, and per dollar per hour**
-- **Real trajectory lengths**: up to 200 turns and sequence lengths exceeding 100K tokens
-- **Production optimizations allowed**: KV cache reuse, disaggregated prefill/decode, and speculative decoding
+- **Metrics normalized [per accelerator, per system, and per megawatt](https://artificialanalysis.ai/methodology/agentperf)** (per-$/hr and total-cost-of-ownership views are [described as planned future additions](https://artificialanalysis.ai/articles/aa-agentperf), not current metrics)
+- **Real trajectory lengths**: [up to 200 turns, with input lengths ranging from ~5K to ~131K tokens per request (mean ~27K) and contexts reaching beyond 100K tokens](https://artificialanalysis.ai/articles/aa-agentperf)
+- **Production optimizations allowed**: [KV cache reuse, disaggregated prefill/decode, and speculative decoding](https://artificialanalysis.ai/articles/aa-agentperf)
 
 That last point is significant. Benchmarks that prohibit production optimizations measure how hardware performs in artificial conditions, not how it performs in deployment. AA-AgentPerf is explicitly designed to reflect what buyers actually see when they run agents.
 
-The metric itself also differs from standard benchmarks. AA-SLT, Artificial Analysis's original benchmark, reports peak output tokens per second — useful for single-turn workloads. AA-AgentPerf reports how many agents you can serve concurrently at an acceptable latency target, which is the operational question builders actually face: *how many parallel agent sessions can this hardware handle without degrading?*
+The metric itself also differs from standard benchmarks. AA-SLT, Artificial Analysis's original benchmark, [reports peak system output throughput in tokens per second](https://artificialanalysis.ai/benchmarks/hardware) — useful for single-turn workloads. AA-AgentPerf reports how many agents you can serve concurrently at an acceptable latency target, which is the operational question builders actually face: *how many parallel agent sessions can this hardware handle without degrading?*
 
 ---
 
 ## Hardware in scope
 
-AA-AgentPerf compares:
+[AA-AgentPerf's first wave of results compares](https://artificialanalysis.ai/articles/aa-agentperf):
 
-- **NVIDIA**: GB300-NVL72, B300, H200, B200 systems
+- **NVIDIA**: GB300-NVL72, B300, H200
 - **AMD**: MI355X
-- **Google TPUs**
-- **Custom AI accelerators**
 
-Rolling submissions are open, meaning providers can submit benchmark results on an ongoing basis. Models currently evaluated are **gpt-oss-120b** and **DeepSeek V4 Pro**; additional model configurations are expected as submissions come in.
+[Rolling submissions are open now](https://artificialanalysis.ai/articles/aa-agentperf), meaning providers can submit benchmark configurations on an ongoing basis and results publish as they come in. The [first wave of results covers **DeepSeek V4 Pro**](https://artificialanalysis.ai/articles/aa-agentperf) across those systems; **gpt-oss-120b** is listed as coming soon.
 
 ---
 
@@ -82,7 +81,7 @@ The practical implication: a cloud GPU configuration optimized for RAG or chatbo
 
 The AA-AgentPerf results are published at the [Artificial Analysis hardware benchmarking page](https://artificialanalysis.ai/benchmarks/hardware) alongside AA-SLT.
 
-The benchmark methodology and data are described in the [arXiv paper 2511.08042](https://arxiv.org/abs/2511.08042), which covers Artificial Analysis's work on enterprise-relevant agentic evaluation.
+The benchmark's full methodology — including SLO tiers, power-measurement approach, and trajectory construction — is published on Artificial Analysis's [AA-AgentPerf methodology page](https://artificialanalysis.ai/methodology/agentperf).
 
 ---
 

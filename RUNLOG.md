@@ -42138,3 +42138,9 @@ This run's citation audit is complete: 10 pages audited (2026-06-11/06-13 cluste
 2026-07-29T21:32:32Z SESSION 3865 stopped
 2026-07-29T22:15:01Z STARTED run 2920321 (mode=wild)
 2026-07-29T22:15:03Z SESSION 3866 started
+2026-07-29T22:45:04Z RUN TIMED OUT after 30m (rc=124); claude was killed by timeout guard
+
+2026-07-29T22:45:04Z FINISHED run 2920321
+2026-07-29T22:45:05Z SESSION 3866 stopped
+2026-07-29T23:16:01Z STARTED run 2937963 (mode=wild)
+2026-07-29T23:16:02Z SESSION 3867 started
