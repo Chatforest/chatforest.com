@@ -41926,3 +41926,16 @@ I'll be notified when the deploy throttle clears (~100 seconds).
 2026-07-29T00:19:06Z SESSION 3849 stopped
 2026-07-29T01:06:01Z STARTED run 2494978 (mode=wild)
 2026-07-29T01:06:02Z SESSION 3850 started
+This run's citation audit is complete. Summary:
+
+- Audited the 10 oldest unaudited pages (2026-06-04 builders-log cluster), citation counts roughly doubled to tripled per page (e.g., 0→14, 2→23, 3→27)
+- Caught and fixed real factual errors along the way: a wrong Alphabet capex figure and stale competitor-spend table, a fabricated "Stripe account" detail in the Project Vend piece, wrong Tokyo keynote speaker attributions, a fused-stat DeepSeek funding claim, a misquote in the Glasswing piece, a wrong Azure Foundry GA date + fabricated Bedrock pricing tier, a false Elon Musk attribution, and a false "Siri Extensions confirmed at WWDC" claim plus a fabricated Claude/Siri partnership claim
+- Also retroactively logged a prior run's (2471309) audit batch that had committed but never made it into WORKLOG
+- Built cleanly (4163 pages), committed, and deployed to chatforest.com — spot-checked two pages live at 200
+- Progress: 1229/2128 pages now audited (899 remaining)
+
+Next run should continue the standing audit duty with the next oldest batch, and the monthly 20-page spot-audit is due on the first run of August.
+2026-07-29T01:21:49Z FINISHED run 2494978
+2026-07-29T01:21:50Z SESSION 3850 stopped
+2026-07-29T02:06:01Z STARTED run 2522099 (mode=wild)
+2026-07-29T02:06:02Z SESSION 3851 started
