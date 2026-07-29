@@ -15,7 +15,7 @@ Here's what actually changed.
 
 Devin Desktop is the new name for the product formerly called Windsurf. Cognition's repositioning is direct: Windsurf was an editor with AI bolted on. Devin Desktop is an agent manager wrapped in a full IDE.
 
-The distinction is about the default surface. In Windsurf 2.0 (April 2026), the Agent Command Center — a Kanban view showing every local and cloud agent session — was a panel you could open. In Devin Desktop, it is the primary interface. The editor is still there; you access it the same way. But when you open the product, you are looking at agent sessions first, code second.
+The distinction is about the default surface. In [Windsurf 2.0](https://devin.ai/blog/windsurf-2-0/) (launched April 15, 2026), the Agent Command Center — a Kanban view showing every local and cloud agent session — was a panel you could open. In Devin Desktop, it is the primary interface. The editor is still there; you access it the same way. But when you open the product, you are looking at agent sessions first, code second.
 
 For most existing Windsurf users, the day-to-day experience looks nearly identical. The rebrand does not change:
 - Plans or pricing
@@ -32,7 +32,7 @@ The update arrived as a standard OTA push. No migration to run, no settings to r
 
 The most actionable change in the June 2 update is the replacement of **Cascade** with **Devin Local**.
 
-Cascade was Windsurf's original agentic layer — the local AI that handled multi-file edits, code search, and terminal commands inside the editor. Devin Local is its replacement. Cognition describes it as a complete rewrite, not an evolution:
+Cascade was Windsurf's original agentic layer — the local AI that handled multi-file edits, code search, and terminal commands inside the editor. Devin Local is its replacement. [Cognition describes it](https://devin.ai/blog/windsurf-is-now-devin-desktop/) as a complete rewrite, not an evolution:
 
 | | Cascade | Devin Local |
 |---|---|---|
@@ -47,13 +47,13 @@ Cascade remains accessible through **July 1, 2026**. After that date, it is remo
 
 The 30% token efficiency improvement is the number most worth examining. For builders running high-volume agent sessions — long refactors, large codebase navigation, multi-step test generation — the reduction in token consumption translates directly to lower costs and faster sessions. At scale, that matters.
 
-The subagent support is the architectural shift. Cascade operated as a single agent: one context window, one turn at a time. Devin Local can spawn subagents — specialized sub-sessions that handle specific parts of a task in parallel before reporting back. The pattern maps to the same multi-agent architecture that Devin's cloud product has used for complex tasks since late 2025.
+The subagent support is the architectural shift. Cascade operated as a single agent: one context window, one turn at a time. Devin Local can spawn subagents — specialized sub-sessions that handle specific parts of a task in parallel before reporting back. The pattern maps to the coordinator/managed-agent architecture that [Cognition shipped for Devin's cloud product on March 19, 2026](https://cognition.com/blog/devin-can-now-manage-devins), where a primary Devin session scopes work and assigns pieces to managed Devins running in isolated VMs.
 
 ---
 
 ## Agent Client Protocol (ACP)
 
-Devin Desktop shipped with support for the **Agent Client Protocol (ACP)**, an open-source protocol for connecting AI coding agents to code editors. ACP was created by Zed Industries in August 2025. It was adopted by JetBrains in early 2026 (relevant to the Koog 1.0 release at KotlinConf '26 on May 27). By June 2026, it had been adopted by JetBrains, Google, GitHub, and more than 25 agents.
+Devin Desktop shipped with support for the **Agent Client Protocol (ACP)**, an open-source protocol for connecting AI coding agents to code editors. [ACP was created by Zed Industries](https://zed.dev/blog/bring-your-own-agent-to-zed) in August 2025, launching alongside Google's Gemini CLI as the first external integration. [JetBrains announced in October 2025](https://blog.jetbrains.com/ai/2025/10/jetbrains-zed-open-interoperability-for-ai-coding-agents-in-your-ide/) that it would co-develop ACP with Zed and bring native support to IntelliJ IDEA, PyCharm, and WebStorm. By June 2026, [ACP's registry listed JetBrains, Google, GitHub, and 50+ agents](https://zed.dev/acp) as adopters — [GitHub added ACP support to Copilot CLI](https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview/) in January 2026.
 
 Devin Desktop joining the ACP ecosystem is the largest single adoption event in ACP's short history, given Windsurf's install base.
 
@@ -61,11 +61,11 @@ Devin Desktop joining the ACP ecosystem is the largest single adoption event in 
 
 ACP is often described as the **LSP for AI coding agents** — a reference to the Language Server Protocol, which standardized how editors communicate with language servers, making every language toolchain work in every editor. ACP attempts the same standardization for agent-editor interaction.
 
-Technically: ACP is JSON-RPC 2.0 over stdin/stdout. The editor launches the agent as a subprocess. Protocol messages flow back and forth. The session bootstraps via a `session/new` handshake that can also declare which MCP servers the agent should connect to.
+Technically: [ACP is JSON-RPC 2.0 over stdin/stdout](https://agentclientprotocol.com/protocol/overview). The editor launches the agent as a subprocess. Protocol messages flow back and forth. [The session bootstraps via a `session/new` handshake](https://agentclientprotocol.com/protocol/v1/session-setup) that can also declare which MCP servers the agent should connect to.
 
 The result: **any ACP-compatible agent can run inside any ACP-compatible editor**, with the same interface as the editor's native agent.
 
-At launch, Devin Desktop's ACP support includes:
+At launch, [Devin Desktop's ACP support includes](https://devin.ai/blog/windsurf-is-now-devin-desktop/):
 - **Codex** (OpenAI)
 - **Claude Agent** (Anthropic)
 - **OpenCode** (open-source)
@@ -80,7 +80,7 @@ These protocols are often confused because both involve AI agents. They solve di
 | | ACP | MCP |
 |---|---|---|
 | What it connects | Agents to editors | Agents to tools and data |
-| Created by | Zed Industries (Aug 2025) | Anthropic (late 2024) |
+| Created by | [Zed Industries (Aug 2025)](https://zed.dev/blog/bring-your-own-agent-to-zed) | [Anthropic (Nov 2024)](https://www.anthropic.com/news/model-context-protocol) |
 | Transport | JSON-RPC 2.0 over stdio | JSON-RPC 2.0 over stdio or HTTP |
 | Adopted by | Zed, JetBrains, Google, GitHub, Devin Desktop | Most major AI providers and tool vendors |
 | Analogy | LSP (Language Server Protocol) | API gateway for agent tools |
@@ -93,7 +93,7 @@ If you're building agents: ACP is how your agent speaks to the editor. MCP is ho
 
 ## Spaces
 
-Spaces is Devin Desktop's new context layer, introduced alongside the June 2 rebrand. A Space groups related agent sessions, PRs, files, and context objects together, giving multi-agent workflows shared state without requiring each agent to rebuild context from scratch.
+[Spaces is Devin Desktop's new context layer](https://devin.ai/blog/windsurf-is-now-devin-desktop/), introduced alongside the June 2 rebrand. A Space groups related agent sessions, PRs, files, and context objects together, giving multi-agent workflows shared state without requiring each agent to rebuild context from scratch.
 
 This is most useful for longer-running, multi-agent projects: a Space for a feature branch holds the relevant files, the current PR, the test results, and any agent sessions working on that branch — accessible to every agent assigned to the Space.
 
@@ -110,7 +110,7 @@ Spaces is an early feature; the initial release is intentionally simple. Expect 
 
 **If you are evaluating AI coding tools:**
 - Devin Desktop is now the clearest agent-first choice in the IDE category: it assumes you want to manage multiple agents (local and cloud) from a single interface and treats code editing as one capability among several, not the primary surface.
-- Cursor remains the strongest IDE-first choice: the editor experience is the primary surface, and AI (including parallel agents with Composer 2.5) is layered on top.
+- Cursor remains the strongest IDE-first choice: the editor experience is the primary surface, and AI — including [parallel agents via git worktrees, introduced in Cursor 2.0](https://cursor.com/changelog/2-0) — is layered on top.
 - These are different philosophies, not just feature differences. Neither is universally better; the right choice depends on how your team actually works.
 
 **If you are building your own agents:**

@@ -6,6 +6,7 @@ og_description: "GitHub Copilot CLI now has a built-in rubber duck agent (/rubbe
 content_type: "Builder's Log"
 categories: ["Developer Tools", "GitHub", "AI Coding"]
 tags: ["github-copilot", "copilot-cli", "rubber-duck", "voice-input", "prompt-scheduling", "chronicle", "terminal", "developer-tools", "builder-guide", "agentic"]
+sources_audited: 2026-07-29
 ---
 
 GitHub [shipped a significant Copilot CLI update on June 2, 2026](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/) — the same week the flat billing model ended. The two changes together reshape what the CLI is: it now has a second-opinion agent, hands-free voice input, a cross-platform session aggregator, and an experimental scheduler that can run prompts on a timer. None of this was in the CLI a week ago.
@@ -38,17 +39,15 @@ Two activation paths:
 
 **Automatic:** The main Copilot agent decides on its own when a second opinion is worth getting. In practice, this activates on longer or more ambiguous tasks — you do not always need to invoke it explicitly.
 
-The rubber duck uses multiple model families internally, so the critique is not just Copilot talking to itself. GitHub has not published which models are used on the backend.
+The rubber duck deliberately runs on a different model family than your session's orchestrator, not just a second call to the same model. At launch, a Claude-orchestrated session pairs with GPT-5.4 as the rubber duck critic; GitHub has since [expanded pairings so a GPT-orchestrated session can get a Claude critic, and Claude sessions can pair with GPT-5.5](https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models/) as well ([GitHub's explanation of the cross-model design](https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/)).
 
-Alongside rubber duck, GitHub shipped `/security-review` — a dedicated path for security-focused evaluation. Where `/rubber-duck` is general (design, correctness, blind spots), `/security-review` focuses specifically on what could go wrong from a security standpoint in the current implementation.
-
-Both are GA as of June 2.
+`/rubber-duck` is [GA as of June 2](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/). GitHub later shipped a separate, related command: `/security-review`, which [launched June 10, 2026 as an experimental, public-preview feature](https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli/) — it was not part of the June 2 batch this article otherwise covers. Where `/rubber-duck` is general (design, correctness, blind spots), `/security-review` is scoped to security: it scans local changes for vulnerabilities across categories like injection, XSS, broken access control, and hardcoded credentials, and requires `/experimental on` to use.
 
 ---
 
 ## Voice Input
 
-Voice input is now GA in the Copilot CLI with a hard privacy guarantee: all audio processing happens on your machine. The speech-to-text model runs locally; no audio is sent to GitHub's servers or any cloud service.
+Voice input is now [GA in the Copilot CLI](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/) with a privacy guarantee: "voice input runs locally, so all audio you record stays on your machine," per GitHub's own changelog.
 
 Two keyboard shortcuts:
 
@@ -62,7 +61,7 @@ First use triggers a one-time setup: the CLI guides you through downloading the 
 
 ## /chronicle
 
-`/chronicle` is a cross-platform session aggregator. It pulls history from all your Copilot surfaces — CLI, VS Code, JetBrains, cloud agent, code review — and works with that combined context.
+[`/chronicle` is a cross-platform session aggregator](https://github.blog/changelog/2026-06-02-gain-insights-across-your-agent-sessions-with-chronicle/). It pulls history from all your Copilot surfaces — CLI, VS Code, JetBrains, cloud agent, code review — and works with that combined context.
 
 Practical outputs:
 - **Standup summaries**: ask what you accomplished across sessions yesterday
@@ -79,7 +78,7 @@ Sessions are tied to your GitHub account and sync automatically. They appear in 
 
 ## Prompt Scheduling (Experimental)
 
-The most novel addition, and still experimental, is a scheduler built directly into the CLI.
+The most novel addition, and still experimental, is [a scheduler built directly into the CLI](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/).
 
 Two commands:
 
@@ -108,7 +107,7 @@ Scheduling is experimental as of June 2 — it will graduate to GA on an unspeci
 
 ## Experimental Terminal UI
 
-`/experimental on` activates a redesigned text user interface that has been rebuilt from scratch.
+[`/experimental on` activates a redesigned text user interface](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/) that has been rebuilt from scratch.
 
 What changes:
 
@@ -130,7 +129,7 @@ The experimental TUI is a redesign of everything you look at in the CLI — not 
 
 ## New Models in the CLI
 
-Alongside the UX changes, GitHub added two Gemini models to the CLI model selector:
+Alongside the UX changes, GitHub [added two Gemini models to the CLI model selector](https://github.blog/changelog/2026-06-02-gemini-models-in-copilot-cli-cloud-agent-and-the-copilot-app/):
 
 - **Gemini 3.1 Pro (Preview)** — available on Student, Pro, Pro+, Business, Enterprise
 - **Gemini 3.5 Flash** — available on Pro, Pro+, Business, Enterprise
@@ -141,7 +140,7 @@ If you are on a Business or Enterprise plan, admins must opt in via the Copilot 
 
 ## Billing Context
 
-As of June 1 — the day before this CLI update — GitHub switched Copilot from flat Premium Request Units to token-metered AI Credits. The CLI draws from the same AI Credits pool as your IDE usage.
+As of [June 1 — the day before this CLI update — GitHub switched Copilot from flat premium request units (PRUs) to token-metered GitHub AI Credits](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) ([GitHub's billing docs](https://docs.github.com/en/billing/concepts/product-billing/github-copilot-billing) confirm the same). The CLI draws from the same AI Credits pool as your IDE usage.
 
 What this means for the new features:
 
@@ -170,7 +169,7 @@ Run this in any active CLI session to pull the latest version. No version number
 | Feature | Command | Status | Enable |
 |---|---|---|---|
 | Rubber duck critique | `/rubber-duck` | GA | Available immediately |
-| Security review | `/security-review` | GA | Available immediately |
+| Security review | `/security-review` | Experimental (shipped June 10, separately from this batch) | `/experimental on` first |
 | Voice input | Hold spacebar or Ctrl+X+V | GA | One-time runtime download |
 | Session history | `/chronicle` | GA | Available immediately |
 | Prompt scheduling | `/every` or `/after` | Experimental | `/experimental on` first |

@@ -1,11 +1,11 @@
-# Gemma 4 QAT: 72% VRAM Cut, Near-Original Quality — On-Device Deployment Builder Guide
+# Gemma 4 QAT: 75% VRAM Cut, Near-Original Quality — On-Device Deployment Builder Guide
 
-> Google DeepMind released QAT checkpoints for all five Gemma 4 sizes on June 5, 2026. The 26B-A4B model now fits on a 16GB laptop. E2B fits in 1GB on mobile. But naive Q4_0 conversion drops accuracy 15 points — here's how to deploy correctly with Ollama, llama.cpp, and vLLM.
+> Google DeepMind released QAT checkpoints for all five Gemma 4 sizes on June 5, 2026. The 26B-A4B model now fits on a 16GB laptop. E2B fits in 1.1GB on mobile. But naive Q4_0 conversion drops accuracy 15 points — here's how to deploy correctly with Ollama, llama.cpp, and vLLM.
 
 
-Google DeepMind released QAT (quantization-aware training) checkpoints for all five Gemma 4 sizes on June 5, 2026. The headline result: the 26B-A4B model fits on a 16GB laptop. E2B — Gemma 4's smallest variant — fits in 1 GB on a phone.
+Google DeepMind released [QAT (quantization-aware training) checkpoints for all five Gemma 4 sizes on June 5, 2026](https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/). The headline result: the 26B-A4B model fits on a [16GB laptop](https://ai.google.dev/gemma/docs/core). E2B — Gemma 4's smallest variant — fits in 1.1 GB on a phone in the mobile-optimized format (0.84 GB text-only).
 
-The quality headline is equally important: QAT consistently beats standard post-training quantization (PTQ) at the same compression level, landing within a few points of the BF16 originals. But there is a specific pitfall that will silently wreck your deployment if you hit it. More on that below.
+The quality headline is equally important: [QAT is designed to let the model learn to compensate for precision loss during training](https://ai.google.dev/gemma/docs/core), so it beats standard post-training quantization (PTQ) at the same compression level. But there is a specific pitfall that will silently wreck your deployment if you hit it. More on that below.
 
 This guide assumes you've already read the [Gemma 4 12B architecture overview](/builders-log/gemma-4-12b-encoder-free-multimodal-local-inference-builder-guide/). This one is about deployment — specifically, how to get the quantized models running correctly on the hardware you already own.
 
@@ -29,13 +29,15 @@ The practical result for Gemma 4:
 
 | Variant | BF16 VRAM | Q4_0 QAT VRAM | Notes |
 |---------|-----------|---------------|-------|
-| E2B | 9.6 GB | 3.2 GB | Mobile format: ~1 GB |
-| E4B | 15 GB | 5 GB | — |
-| 12B | ~28 GB | ~7 GB | — |
-| 26B-A4B | ~50 GB | ~15 GB | Fits 16GB laptop |
-| 31B | ~60 GB | ~18 GB | Needs 24GB GPU |
+| E2B | 11.4 GB | 2.9 GB | Mobile format: 1.1 GB (0.84 GB text-only) |
+| E4B | 17.9 GB | 4.5 GB | Mobile format: 2.5 GB (2.2 GB text-only) |
+| 12B | 26.7 GB | 6.7 GB | — |
+| 26B-A4B | 57.7 GB | 14.4 GB | Fits 16GB laptop |
+| 31B | 69.9 GB | 17.5 GB | Needs 24GB GPU |
 
-The mobile format is a new quantization format specialized for edge deployment — separate from Q4_0. It gets E2B to 1 GB (text-only: under 1 GB). This is for LiteRT-LM on Android/iOS, not for Ollama or llama.cpp.
+Figures are Google's own published estimates for static model weights only (no runtime/context overhead), from the [official Gemma 4 memory-requirements table](https://ai.google.dev/gemma/docs/core).
+
+The mobile format — Google's custom "wNa8o8" schema — is a new quantization scheme specialized for edge deployment, separate from Q4_0. It gets E2B to 1.1 GB (text-only: 0.84 GB). This is for [LiteRT-LM](https://ai.google.dev/gemma/docs/core) on Android/iOS, not for Ollama or llama.cpp.
 
 ---
 
@@ -47,13 +49,13 @@ Straightforward conversion of Gemma 4 QAT checkpoints into llama.cpp's Q4_0 form
 
 The reason is a scale mismatch. QAT checkpoints encode quantization parameters differently than standard weights. A naive converter misinterprets those parameters.
 
-**Accuracy comparison on 26B-A4B:**
+**Accuracy comparison on 26B-A4B** (per [Unsloth's published Gemma 4 QAT benchmarks](https://unsloth.ai/docs/models/gemma-4/qat)):
 - Naive Q4_0 conversion: **70.2% top-1 accuracy**
 - Unsloth dynamic GGUF (UD-Q4_K_XL): **85.6% top-1 accuracy**
 
 That is a 15-point swing. The difference between usable and not usable for most production tasks.
 
-**On the 31B model:**
+**On the 31B model** ([same source](https://unsloth.ai/docs/models/gemma-4/qat)):
 - Naive Q4_0: 87.9%
 - Unsloth UD-Q4_K_XL: 96.7%
 
@@ -63,7 +65,7 @@ That is a 15-point swing. The difference between usable and not usable for most 
 
 ## Deployment Path 1: Ollama (Easiest)
 
-Ollama has native support for the Gemma 4 QAT models via the `qat` tag. This is the lowest-friction path for local development.
+Ollama has [native support for the Gemma 4 QAT models via the `qat` tag](https://ollama.com/library/gemma4/tags). This is the lowest-friction path for local development.
 
 ```bash
 # Install Ollama if you haven't
@@ -73,23 +75,23 @@ brew install ollama
 curl -fsSL https://ollama.com/install.sh | sh
 
 # Pull the model that fits your hardware
-ollama pull gemma4:e4b-it-qat     # 5 GB — fits 8GB MacBook
-ollama pull gemma4:12b-it-qat     # ~7 GB — fits 8-12GB GPU
-ollama pull gemma4:26b-it-qat     # ~15 GB — fits 16GB Mac/GPU
-ollama pull gemma4:31b-it-qat     # ~18 GB — needs 24GB GPU
+ollama pull gemma4:e4b-it-qat        # 6.1 GB — fits 8GB MacBook
+ollama pull gemma4:12b-it-qat        # 7.2 GB — fits 8-12GB GPU
+ollama pull gemma4:26b-a4b-it-qat    # 16 GB — fits 16GB Mac/GPU
+ollama pull gemma4:31b-it-qat        # 19 GB — needs 24GB GPU
 
 # Run
-ollama run gemma4:26b-it-qat "Explain quantization-aware training in two sentences."
+ollama run gemma4:26b-a4b-it-qat "Explain quantization-aware training in two sentences."
 ```
 
-Ollama handles the Unsloth-style quantization automatically for the `qat`-tagged variants. You do not need to manage GGUF conversion.
+The `qat`-tagged builds ship as [a single pre-quantized download per size](https://ollama.com/library/gemma4/tags) — you do not need to run your own GGUF conversion.
 
-**Sampling defaults for Gemma 4 QAT** (applies to all runtimes):
+**Sampling defaults for Gemma 4 QAT** (applies to all runtimes, per [Unsloth's Gemma 4 QAT guide](https://unsloth.ai/docs/models/gemma-4/qat)):
 - `temperature: 1.0`
 - `top_p: 0.95`
 - `top_k: 64`
 
-These are Google's recommended values for the QAT checkpoints. The 1.0 temperature is intentional — Gemma 4 is tuned for it.
+The 1.0 temperature is intentional — Gemma 4 is tuned for it.
 
 ---
 
@@ -97,7 +99,7 @@ These are Google's recommended values for the QAT checkpoints. The 1.0 temperatu
 
 If you need lower-level control — custom sampling, server mode, mmproj for multimodal, or integration with a specific pipeline — use llama.cpp with Unsloth's GGUFs directly.
 
-**Model IDs on Hugging Face (Unsloth namespace):**
+**Model IDs on Hugging Face ([Unsloth namespace](https://huggingface.co/collections/unsloth/gemma-4-qat)):**
 
 | Variant | HuggingFace ID |
 |---------|----------------|
@@ -127,7 +129,7 @@ The `mmproj-BF16.gguf` file enables multimodal (image) input. Drop that flag if 
 
 ## Deployment Path 3: vLLM (Production / Multi-User)
 
-For production serving — multiple concurrent users, batched inference, structured output — use vLLM with the `w4a16-ct` (compressed-tensors) checkpoints from Google's Hugging Face namespace.
+For production serving — multiple concurrent users, batched inference, structured output — use vLLM with the [`w4a16-ct` (compressed-tensors) checkpoints from Google's Hugging Face namespace](https://huggingface.co/google/gemma-4-31B-it-qat-w4a16-ct).
 
 ```bash
 vllm serve google/gemma-4-31B-it-qat-w4a16-ct \
@@ -136,10 +138,9 @@ vllm serve google/gemma-4-31B-it-qat-w4a16-ct \
 ```
 
 **Notes:**
-- `w4a16` format is available for E2B, E4B, 12B, and 31B — but not 26B-A4B
-- For the 26B-A4B, use SGLang with the compressed-tensors checkpoint
+- The `w4a16-ct` format is [available for E2B, E4B, 12B, and 31B — but not 26B-A4B](https://github.com/vllm-project/recipes/blob/main/Google/Gemma4.md)
+- For the 26B-A4B MoE model, [Google's vLLM recipe recommends serving the base checkpoint with online int8 quantization instead](https://github.com/vllm-project/recipes/blob/main/Google/Gemma4.md), because its small per-expert dimensions make static 4-bit quantization lossy: `vllm serve google/gemma-4-26B-A4B-it --quantization int8_per_channel_weight_only`
 - Set `--max-model-len` to your actual workload's context window, not the model's theoretical maximum — it directly affects KV cache allocation
-- SGLang follows the same serving pattern and adds native structured output support
 
 ---
 
@@ -158,7 +159,7 @@ vllm serve google/gemma-4-31B-it-qat-w4a16-ct \
 
 ## Performance at the Top
 
-For the 26B-A4B running via Unsloth GGUF:
+Google's published benchmark numbers for the 26B-A4B, from its [Hugging Face model card](https://huggingface.co/google/gemma-4-26B-A4B-it) (BF16, instruction-tuned):
 
 | Benchmark | Score |
 |-----------|-------|
@@ -166,7 +167,7 @@ For the 26B-A4B running via Unsloth GGUF:
 | AIME 2026 (no tools) | 88.3% |
 | LiveCodeBench v6 | 77.1% |
 
-These are QAT model scores. The BF16 originals are marginally higher, but the gap is small enough that the 3–5× memory savings dominate for most use cases.
+Google has not published separate benchmark numbers for the quantized checkpoints. The closest available signal on the accuracy trade-off is the top-1 accuracy comparison above — Unsloth's UD-Q4_K_XL build retains 85.6% top-1 accuracy relative to the unquantized model's outputs, which is the basis for treating it as "near-original quality" rather than a full benchmark re-run.
 
 ---
 
@@ -186,7 +187,7 @@ For development, prototyping, self-hosted inference, edge deployment, and most p
 
 The [Gemma 4 12B builder guide](/builders-log/gemma-4-12b-encoder-free-multimodal-local-inference-builder-guide/) covers the architecture: encoder-free multimodal backbone, 256K context, Apache 2.0 license, native audio. That guide remains current — none of that changed with the QAT release.
 
-The QAT checkpoints are new weights for the same architectures. They are drop-in replacements for the BF16 checkpoints in deployment, with the same feature set and the same Apache 2.0 license.
+The QAT checkpoints are new weights for the same architectures. They are drop-in replacements for the BF16 checkpoints in deployment, with the same feature set and the same [Apache 2.0 license](https://opensource.googleblog.com/2026/03/gemma-4-expanding-the-gemmaverse-with-apache-20.html).
 
 ---
 

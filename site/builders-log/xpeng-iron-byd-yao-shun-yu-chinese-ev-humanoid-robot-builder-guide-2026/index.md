@@ -1,11 +1,11 @@
 # XPeng IRON and BYD Yao-Shun-Yu: China's EV Giants Enter the Humanoid Robot Race
 
-> XPeng's IRON humanoid robot — 82 DOF, 3,000 TOPS, open SDK — targets mass production by end of 2026. BYD confirmed its Yao-Shun-Yu project with an open platform strategy and 150 prototypes running 24/7. This guide covers what builders need to know about China's EV-to-robot wave.
+> XPeng's IRON humanoid robot — 82 DOF, 3,000 TOPS, open SDK — targets mass production by end of 2026. BYD confirmed it is developing a humanoid robot with an open-platform strategy, though it has denied the specific prototype figures reported in the Chinese press. This guide covers what builders need to know about China's EV-to-robot wave.
 
 
-Two of the world's largest electric vehicle manufacturers — [XPeng](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7) and [BYD](https://pandaily.com/byd-secretly-develops-humanoid-robot-codename-yao-shun--jun2026) — confirmed humanoid robot programs within days of each other in early June 2026. Both are building open platforms. Both are leveraging automotive supply chains to cut costs that pure-play robotics startups can't match. And both are targeting the same sequence: factory floors first, then retail showrooms, then homes.
+Two of the world's largest electric vehicle manufacturers are pushing into humanoid robots. [XPeng](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7) detailed its next-gen IRON robot's specs at its [November 5, 2025 AI Day](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7) and escalated the program on [June 10, 2026, when CEO He Xiaopeng took direct control of the robotics unit](https://chinabizinsider.com/xpengs-he-xiaopeng-takes-robot-ceo-role-targets-iron-mass-production-by-end-2026/). Days earlier, BYD executive vice president Li Ke (Stella Li) [confirmed for the first time that BYD is developing a humanoid robot](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/), a program reported in the Chinese press under the internal codename "Yao-Shun-Yu." **Note:** on June 6, 2026, [BYD officially denied several of the specific details that had circulated about that program](https://english.news18a.com/news/english_263357.html) — see the BYD section below for what the company has and hasn't confirmed. Both companies are leveraging automotive supply chains to cut costs that pure-play robotics startups can't match, and both are targeting factory floors first, then retail, then homes.
 
-This isn't a side project. XPeng has a full-chain humanoid factory under construction, mass production targeted for end of 2026, and a developer SDK already announced. BYD has 150 prototypes running 24/7 in Shenzhen and Changsha, a dedicated Future Lab, and a recruitment drive across 10 engineering disciplines.
+This isn't a side project for either company. XPeng has a [full-chain humanoid factory under construction in Guangzhou](https://autonews.gasgoo.com/articles/news/xpeng-to-build-full-chain-humanoid-robot-mass-production-base-in-guangzhou-2026901200610291712), mass production targeted for end of 2026, and a developer SDK already announced. BYD has confirmed active humanoid robot development and a hiring drive across multiple engineering disciplines, though — as detailed below — several widely reported specifics (a "150 prototypes" figure, testing locations, a seventh-generation prototype) were denied by BYD as inaccurate.
 
 Here's what builders need to understand about both programs.
 
@@ -19,9 +19,9 @@ The pattern is no longer surprising. Tesla, XPeng, BYD, and Li Auto are all buil
 
 **AI and perception.** XPeng's VLA (Vision-Language-Action) model for IRON is a direct adaptation of the company's autonomous driving AI. The core competency — teaching a neural network to interpret visual input and translate it into motor commands — is identical whether the platform has four wheels or two legs.
 
-**Manufacturing scale.** XPeng produces 190,000+ EVs per year. That manufacturing infrastructure — precision assembly, quality control, supply chain logistics — converts directly to robot production. The company is targeting 1 million IRON units by 2030, a number that would be impossible for a startup without this foundation.
+**Manufacturing scale.** XPeng delivered [190,068 vehicles in full-year 2024](https://www.globenewswire.com/news-release/2025/03/18/3044283/0/en/XPENG-Reports-Fourth-Quarter-and-Fiscal-Year-2024-Unaudited-Financial-Results.html), with 2025 deliveries running well ahead of that pace. That manufacturing infrastructure — precision assembly, quality control, supply chain logistics — converts directly to robot production. CEO He Xiaopeng has said the [company is targeting 1 million IRON units by 2030](https://www.scmp.com/business/china-business/article/3360814/race-against-tesla-china-ev-maker-xpeng-launch-viral-humanoid-globally-2027), a number that would be impossible for a startup without this foundation.
 
-BYD EVP Li Ke framed the strategic gap clearly: *"The fundamental challenge in this space is that China's robots lack a brain, while US robots have strong limbs. BYD aims to produce robots that excel in both dimensions."*
+BYD executive vice president Li Ke (Stella Li) framed the strategic gap this way: [*"Chinese robots lack a developed brain, while US robots face the problem of underdeveloped limbs"*](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/) — BYD, she said, aims to produce robots that are strong in both.
 
 ---
 
@@ -29,14 +29,16 @@ BYD EVP Li Ke framed the strategic gap clearly: *"The fundamental challenge in t
 
 ### Overview
 
-XPeng unveiled the next-generation IRON humanoid at its 2026 Physical AI showcase alongside XPENG VLA 2.0, a new robotaxi platform, and a flying car. IRON is the robot that will reach mass production first.
+XPeng unveiled the next-generation IRON humanoid at its [November 5, 2025 AI Day](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7) — themed "Physical AI: Emergence" — alongside XPENG VLA 2.0, a new robotaxi platform, and a flying car. IRON is the robot that will reach mass production first.
 
-**Mass production target:** End of 2026  
-**Commercial deployment:** Q1 2027  
-**Long-term production goal:** 1 million units by 2030  
-**Manufacturing:** Full-chain dedicated humanoid factory (groundbreaking announced 2026)
+**Mass production target:** [End of 2026](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7)  
+**Commercial deployment:** [Q1 2027, initially as retail sales assistants in Chinese XPeng stores, with overseas markets targeted for Q2 2027](https://pandaily.com/xpeng-iron-humanoid-robot-mass-production-2027)  
+**Long-term production goal:** [1 million units by 2030](https://www.scmp.com/business/china-business/article/3360814/race-against-tesla-china-ev-maker-xpeng-launch-viral-humanoid-globally-2027)  
+**Manufacturing:** [Full-chain dedicated humanoid factory under construction in Guangzhou's Tianhe District, announced February 2026 (~110,000 sq m)](https://autonews.gasgoo.com/articles/news/xpeng-to-build-full-chain-humanoid-robot-mass-production-base-in-guangzhou-2026901200610291712)
 
 ### Hardware Specifications
+
+Specs below are as [announced by XPeng at its 2025 AI Day](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7):
 
 | Spec | Value |
 |------|-------|
@@ -50,25 +52,25 @@ XPeng unveiled the next-generation IRON humanoid at its 2026 Physical AI showcas
 | Head display | 3D curved display integrated into head |
 | Shoulders | Agile joints mimicking full human range of motion |
 
-The 22-DOF hands are a notable spec. Most current-generation humanoid robots operate with 6–12 DOF per hand. 22 DOF enables fine manipulation tasks — assembly, object handling, tool use — that are necessary for both factory work and household assistance.
+The 22-DOF hands are a notable spec — well above rival designs like [Figure 02's 16-DOF hand](https://www.prnewswire.com/news-releases/figure-unveils-figure-02-its-second-generation-humanoid-setting-new-standards-in-ai-and-robotics-302214889.html). More DOF enables finer manipulation tasks — assembly, object handling, tool use — that matter for both factory work and household assistance.
 
 The solid-state battery is significant for home deployment, where charging infrastructure is limited. Solid-state chemistry offers higher energy density per kilogram and eliminates the flammability risks of lithium-ion, which matters when the robot is operating in a domestic environment.
 
 ### Brain Architecture: VLT + VLA + VLM
 
-XPeng's "brain" for IRON combines three large-model systems:
+XPeng describes IRON's "brain" as [combining three large-model systems, VLT + VLA + VLM, for conversation, walking, and interaction](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7):
 
-**VLM (Vision-Language Model):** The perceptual foundation. Processes visual and language input together, enabling the robot to understand what it sees and what it's being asked to do. Acts as the base capability layer.
+**VLM (Vision-Language Model):** Adapted from XPeng's automotive work; processes visual and language input together as a base perceptual layer.
 
-**VLA (Vision-Language-Action):** Derived directly from XPeng's autonomous driving AI. Handles complex joint control — translating high-level intent into precise motor commands across 82 degrees of freedom. End-to-end: visual input goes in, joint angles come out, without intermediate language translation.
+**VLA (Vision-Language-Action):** [Adapted from XPeng's autonomous driving division, this model handles control of the robot's 82 joints](https://www.humanoidsdaily.com/news/xpeng-debuts-most-human-like-iron-robot-details-vlt-brain-and-2026-production-goal) — translating intent into motor commands.
 
-**VLT (Vision-Language-Task):** The planning and decision-making layer. Given a high-level instruction ("assemble this part" or "bring me water"), VLT decomposes the goal into a sequence of sub-actions, plans execution order, monitors progress, and adapts when the environment doesn't match expectations. This is what allows IRON to operate in unstructured environments where scripted behavior would fail.
+**VLT (Vision-Language-Task):** Described by XPeng as the ["core engine" and decision-making "brain"](https://www.humanoidsdaily.com/news/xpeng-debuts-most-human-like-iron-robot-details-vlt-brain-and-2026-production-goal) for autonomous action in real-world scenarios.
 
-XPENG VLA 2.0, unveiled alongside IRON, runs the same end-to-end visual-to-action architecture without language translation as an intermediate step — the same model that handles the company's robotaxi fleet now handles the robot's physical movements.
+XPENG VLA 2.0 was [unveiled alongside IRON at the same AI Day event](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7) as the architecture behind the company's new robotaxi platform.
 
 ### Developer Access: IRON SDK
 
-XPeng has announced an open IRON SDK for global developers. This is the primary builder hook:
+XPeng has [announced an open IRON SDK for global developers](https://www.xpeng.com/news/019a56f54fe99a2a0a8d8a0282e402b7). This is the primary builder hook:
 
 - Build customized applications on IRON
 - Integrate third-party software with IRON's perception and action systems
@@ -80,63 +82,57 @@ No release date for the SDK has been confirmed. Mass production of IRON hardware
 
 ## BYD Yao-Shun-Yu
 
-### Overview
+### Overview — what's confirmed vs. denied
 
-BYD's humanoid robot program has been running since 2022 under the codename "Yao-Shun-Yu" — named after three legendary Chinese emperors (Yao, Shun, and Yu) associated with wisdom, virtue, and practical achievement. The program operates under BYD's 15th Business Unit (electronic integration and intelligence) through a specialized lab called the **Future Lab**, carved out from BYD's Technology Research Institute specifically for embodied AI.
+This section requires an unusual amount of care. Since [December 2024, CnEVPost](https://cnevpost.com/2024/12/26/byd-sets-up-lab-humanoid-robots-report/), [TechNode](https://technode.com/2024/12/17/byd-announces-recruitment-for-humanoid-robot-research-team/), and other outlets have reported that BYD set up a dedicated **Future Lab** under its **15th Business Unit** (electronic integration and intelligence) in 2022 to work on embodied AI, and that the program carries the internal codename "Yao-Shun-Yu" (尧舜禹), after three legendary Chinese sage-kings.
 
-The confirmation came from BYD EVP Li Ke in early June 2026, marking the company's first public acknowledgment of the program after four years of development.
+On June 3, 2026, BYD executive vice president Li Ke (Stella Li) [gave the company's first on-record confirmation that BYD is developing humanoid robots](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/), citing overlap with BYD's automotive AI, motor control, and battery expertise, and floating an open-platform model with eventual sales through BYD's dealer network.
+
+Then, on **June 6, 2026, BYD issued an official denial** of several more specific claims that had circulated in Chinese media in the prior days — that the robot's codename is "Yao Shun Yu," that a "seventh-generation prototype" was field-testing at Shenzhen and Changsha factories, and that BYD planned to deploy 150 prototypes now with a target of 20,000 in-house units by year end. [BYD's statement characterized all of these specifics as false](https://english.news18a.com/news/english_263357.html), even as Li Ke reiterated that humanoid robot development is real and underway.
+
+Bottom line for builders: treat "BYD is building a humanoid robot" as confirmed, and treat the codename, the specific prototype count, and the Shenzhen/Changsha testing detail as **reported but explicitly disputed by BYD** — not established fact. BYD has said it will [publicly show a physical prototype for the first time at its "Di Space" event in August 2026](https://finance.biggo.com/news/3089d725-5613-4bac-a61c-5f3d39a7097d).
 
 ### Current Development Status
 
 | Metric | Value |
 |--------|-------|
-| Development start | 2022 |
-| Prototypes active | 150 (running 24/7 in Shenzhen and Changsha) |
+| Development start | [2022, per Li Ke](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/) |
+| Prototypes active | Not confirmed by BYD — a widely reported "150 prototypes" figure was [officially denied on June 6, 2026](https://english.news18a.com/news/english_263357.html) |
 | Commercial timeline | Not announced |
 | Technical specs | Not disclosed |
 | Investment target | Not disclosed |
 
-150 prototypes running continuously is a meaningful signal. At that scale, BYD is past early-stage research and into reliability testing and operational data collection — the phase where robots accumulate the real-world interaction data needed to train robust VLA models.
-
 ### Hardware Advantages from EV Manufacturing
 
-BYD's manufacturing edge is deeper than XPeng's. BYD is the world's largest EV manufacturer and one of the few companies that builds its own:
+BYD's manufacturing edge is deeper than XPeng's. BYD [became the world's largest seller of battery-electric vehicles in 2025](https://carboncredits.com/byd-overtakes-tesla-as-worlds-biggest-ev-seller-in-2025/), overtaking Tesla, and it is one of the few companies that builds its own:
 
-- **Motors** — including the proprietary BYD ET-i drive system
-- **Battery cells** — Blade Battery (LFP chemistry, ultra-thin form factor)
-- **Semiconductors** — BYD Semiconductor produces IGBT, SiC, and custom AI chips
+- **Motors and drive systems** — including its [e-Platform 3.0 8-in-1 electric drive system](https://en.byd.com/news/byd-debuts-e-platform-3-0-leading-the-next-generation-of-smart-electric-vehicles/)
+- **Battery cells** — [Blade Battery (LFP chemistry, thin form factor)](https://www.byd.com/eu/technology/byd-blade-battery)
+- **Semiconductors** — [BYD Semiconductor produces IGBT modules, SiC power devices, and automotive-grade chips](https://www.nomadsemi.com/p/byd-semiconductor-deep-dive)
 - **Electronics** — full integration from component to system level
 - **Precision manufacturing** — automotive-grade assembly at scale
 
-This vertical integration means BYD can control cost and quality on every major hardware subsystem in a humanoid robot without depending on external suppliers. For comparison, most robotics startups depend on Harmonic Drive actuators, third-party battery packs, and off-the-shelf compute — each with supply constraints and margin requirements.
+This vertical integration means BYD can control cost and quality on major hardware subsystems in a humanoid robot without depending on external suppliers, the way most robotics startups depend on third-party actuators, battery packs, and off-the-shelf compute.
 
 ### Open Platform Strategy
 
-BYD is building what Li Ke described as a platform model similar to BYD's broader "technology fish pond" corporate strategy: develop the core platform, then invite partners to build on top of it.
-
-Concretely:
-- BYD builds the core robot hardware and base AI systems
-- Third-party software developers integrate via platform APIs
-- Third-party hardware makers can build components certified for BYD's platform
-- BYD cooperates with established robotics firms to accelerate capability development
-
-This is a meaningful structural difference from pure-play robotics companies that try to own the entire stack. If BYD executes, builders will be able to build software for Yao-Shun-Yu robots without manufacturing their own hardware — similar to how app developers write for Android without building phones.
+Reporting on Li Ke's June 2026 comments describes BYD building [what she has called a "technology fish pond" strategy applied to robots](https://eu.36kr.com/en/p/3838956663650948): develop the core platform internally, then invite partners to build on top of it, or partner directly with established robotics firms to speed development. If BYD executes on this, the implication for builders is that they could eventually build software for BYD's robots without manufacturing their own hardware — similar to how app developers write for Android without building phones. As of this writing, BYD hasn't published API docs, a timeline, or named any launch partners.
 
 ### Deployment Sequence
 
-BYD has been explicit about the three-phase deployment path:
+Based on Li Ke's public comments, BYD's likely deployment path runs through three phases:
 
-**Phase 1 — Factories:** BYD's own manufacturing facilities, where the company controls the environment and operational requirements. BYD becomes its own largest customer, providing both revenue and operational data.
+**Phase 1 — Factories:** [BYD's own manufacturing facilities](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/), where the company controls the environment and could become its own largest customer.
 
-**Phase 2 — Retail (4S stores):** BYD's overseas dealership network, starting with European 4S stores. Use cases: multilingual customer service, showroom guidance, product demonstrations. 4S stores operate in a semi-controlled environment (indoor, known layout, bounded task set) that's more predictable than general home use.
+**Phase 2 — Retail:** [Overseas dealership showrooms, starting with Europe](https://eu.36kr.com/en/p/3838956663650948), as shopping guides addressing labor shortages.
 
-**Phase 3 — Homes:** Cooking, housework, companionship. Distributed through BYD's existing dealer network, the same channel that sells EVs.
+**Phase 3 — Homes:** Li Ke has said BYD would eventually [distribute household robots through its existing dealer network](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/) if the technology and household-use case mature — this phase has no announced timeline.
 
-This deployment sequence is operationally conservative and strategically smart. Each phase provides real-world data for the next, and BYD's own facilities and dealerships provide controlled deployment environments with direct feedback loops.
+None of this has been announced by BYD as a formal, numbered roadmap; it is builders' best read of Li Ke's public statements as reported by CnEVPost and 36Kr.
 
 ### Hiring Profile
 
-BYD's Future Lab is actively recruiting across 10 engineering disciplines (Shenzhen, Hefei, and Changsha):
+BYD's Future Lab has been [actively recruiting recent master's and PhD graduates across 10 categories of senior engineer](https://www.scmp.com/tech/big-tech/article/3291243/chinas-top-ev-maker-byd-kicks-robotics-recruitment-drive-young-talent) in Shenzhen, Hefei, and Changsha, [independently corroborated by CnEVPost and Motor1](https://cnevpost.com/2024/12/26/byd-sets-up-lab-humanoid-robots-report/):
 
 - Senior Algorithm Engineers
 - Senior Structural Engineers
@@ -145,7 +141,7 @@ BYD's Future Lab is actively recruiting across 10 engineering disciplines (Shenz
 - Senior Perception Algorithm Engineers
 - (Plus additional specializations in motor control, battery systems, chip design, and software)
 
-The hiring profile confirms that BYD is building the full stack internally — hardware, simulation, perception, and algorithms — rather than licensing core capabilities from a partner.
+The hiring profile confirms that BYD is building the full stack internally — hardware, simulation, perception, and algorithms — rather than licensing core capabilities from a partner. This recruiting activity predates, and is independent of, the specific June 2026 rumors BYD denied.
 
 ---
 
@@ -153,29 +149,29 @@ The hiring profile confirms that BYD is building the full stack internally — h
 
 XPeng and BYD enter a market that already has active deployments:
 
-| Company | Robot | Status (June 2026) |
+| Company | Robot | Status (as of mid-2026) |
 |---------|-------|---------------------|
-| Tesla | Optimus Gen-3 | 50 units deployed at Shanghai Gigafactory |
-| XPeng | IRON | Mass production Q4 2026, commercial Q1 2027 |
-| Figure AI | Figure 02 | 200-hour autonomous run milestone reached |
-| Unitree | H1 / G1 | Shipping commercially, ~$16K–$90K range |
-| Xiaomi | CyberOne 2 | Internal deployments, no broad commercial availability |
-| BYD | Yao-Shun-Yu | 150 prototypes, no commercial timeline |
-| Li Auto | Nexus (internal) | Unconfirmed development stage |
+| Tesla | Optimus Gen-3 | [1,000+ units deployed at Fremont and Giga Texas (Jan 2026)](https://optimusk.blog/blog/tesla-optimus-factory-deployment/); Shanghai Gigafactory [named as a future manufacturing hub, not yet producing units](https://mlq.ai/news/tesla-china-president-highlights-shanghai-gigafactory-as-key-for-humanoid-robot-mass-production/) |
+| XPeng | IRON | [Mass production end of 2026, commercial Q1 2027](https://pandaily.com/xpeng-iron-humanoid-robot-mass-production-2027) |
+| Figure AI | Figure 03 | [200-hour autonomous package-sorting run completed with no hardware failure, May 2026](https://x.com/adcock_brett/status/2057651077928145235) |
+| Unitree | H1 / G1 | [Shipping commercially, ~$13.5K (G1) to $90K (H1)](https://shop.unitree.com/collections/humanoid-robot) |
+| Xiaomi | CyberOne V2 | [Internal deployments at Xiaomi facilities, no broad commercial availability](https://www.humanoidsdaily.com/news/xiaomi-debuts-cyberone-v2-at-investor-day-moving-beyond-the-factory-floor) |
+| BYD | "Yao-Shun-Yu" (reported codename) | [Development confirmed; specific prototype/testing figures denied by BYD](https://english.news18a.com/news/english_263357.html) |
+| Li Auto | Nexus (internal) | [Codenamed internal project, described as top-secret as of March 2026](https://cnevpost.com/2026/03/06/li-auto-pivots-to-robotics-with-secret-nexus-project/) |
 
-The key distinction is between companies that have disclosed hardware specs and deployment timelines (XPeng) and companies still in the development confirmation phase (BYD). Tesla's Shanghai deployment and Figure AI's autonomous run milestone represent the frontier of real-world reliability testing.
+The key distinction is between companies that have disclosed hardware specs and deployment timelines (XPeng, Unitree) and companies still in the development-confirmation phase (BYD, Li Auto). Figure AI's autonomous run milestone represents the current frontier of real-world reliability testing.
 
 ---
 
 ## The "Brain vs. Limbs" Problem
 
-Li Ke's framing — China's robots lack a brain, US robots have strong limbs — is a rough cut at a real structural gap in the 2026 humanoid market.
+Li Ke's framing — [China's robots lack a developed brain, while US robots face the problem of underdeveloped limbs](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/) — is a rough cut at a real structural gap in the 2026 humanoid market.
 
-**The limbs side:** Chinese EV manufacturers are well-positioned here. High-DOF actuators, solid-state batteries, precision manufacturing, and cost-effective production are all capabilities BYD and XPeng have from automotive. The hardware cost curves for humanoid robots from Chinese EV manufacturers are expected to track EV cost curves — steep declines through manufacturing scale.
+**The limbs side:** Chinese EV manufacturers are well-positioned here. High-DOF actuators, solid-state batteries, precision manufacturing, and cost-effective production are all capabilities BYD and XPeng have from automotive.
 
-**The brain side:** Foundation models for embodied AI are currently dominated by US-based research (NVIDIA GR00T N1.6, Google DeepMind, Figure AI's Helix). XPeng's VLT/VLA/VLM stack is a credible Chinese response — the company has been training large models for autonomous driving for years and the adaptation to robotics is well-funded.
+**The brain side:** Foundation models for embodied AI have a strong US research presence — [NVIDIA's Isaac GR00T N1.6](https://research.nvidia.com/labs/gear/gr00t-n1_6/), Google DeepMind's robotics work, and [Figure AI's Helix](https://www.figure.ai/news/helix). XPeng's VLT/VLA/VLM stack is a credible Chinese response — the company has been training large models for autonomous driving for years and the adaptation to robotics is well-funded.
 
-BYD's 2026 VLA development strategy is less visible. The Future Lab's hiring profile shows AI algorithm work happening in-house, but no model architecture or benchmark data has been published. The 150 prototypes running 24/7 are collecting the operational data needed to train a competitive brain — but training timelines depend on data volume, model architecture, and compute investment, none of which BYD has disclosed.
+BYD's VLA development strategy is far less visible. The Future Lab's hiring profile shows AI algorithm work happening in-house, but no model architecture or benchmark data has been published, and — as detailed above — BYD has not confirmed the scale of its current prototype testing. Training timelines for a competitive "brain" depend on data volume, model architecture, and compute investment, none of which BYD has disclosed.
 
 The practical implication for builders: XPeng's IRON SDK gives you a near-term integration target (Q1 2027) with a disclosed, competitive brain architecture. BYD's open platform is strategically significant but has an undefined timeline.
 
@@ -185,13 +181,13 @@ The practical implication for builders: XPeng's IRON SDK gives you a near-term i
 
 **1. XPeng IRON SDK release date.** Mass production hardware end of 2026 means SDK documentation and early access programs should appear in H2 2026. Watch XPeng developer portal and GitHub for announcements.
 
-**2. BYD commercial timeline announcement.** The 150-prototype phase typically precedes a commercial announcement by 6–18 months in the EV industry. BYD's pattern (Disruptive Technology Launch Conference) suggests a staged announcement approach.
+**2. BYD's August 2026 "Di Space" event.** [BYD has said it will publicly show a physical prototype there for the first time](https://finance.biggo.com/news/3089d725-5613-4bac-a61c-5f3d39a7097d) — the first real chance to see verified specs rather than disputed rumors.
 
-**3. VLA 2.0 public availability.** XPENG VLA 2.0 underpins IRON's physical AI capability. Whether XPeng open-sources components (as NVIDIA did with GR00T N1.6) will determine whether builders can fine-tune the model for custom applications.
+**3. VLA 2.0 public availability.** XPENG VLA 2.0 underpins the company's Physical AI push. Whether XPeng open-sources components (as [NVIDIA did with GR00T N1.6](https://github.com/NVIDIA/Isaac-GR00T)) will determine whether builders can fine-tune the model for custom applications.
 
-**4. BYD open platform partner announcements.** BYD has explicitly said it will partner with established robotics firms. Who those partners are will define the developer ecosystem around Yao-Shun-Yu.
+**4. BYD open platform partner announcements.** Li Ke has said BYD may partner with established robotics firms. Who those partners are — and whether an SDK materializes — will define the developer ecosystem around BYD's robot program.
 
-**5. Cost curves.** BYD's automotive manufacturing infrastructure points toward aggressive price competition. Unitree's H1 is currently ~$90K. XPeng has not disclosed IRON pricing. If BYD brings automotive-scale economics to humanoid production, the cost per unit could fall below $20K within 3–5 years — the level at which commercial deployments outside of large factories become economically viable.
+**5. Cost curves.** BYD's automotive manufacturing infrastructure points toward aggressive price competition, though BYD hasn't disclosed robot pricing. [Unitree's H1 currently lists at $90K](https://shop.unitree.com/collections/humanoid-robot); XPeng has not disclosed IRON pricing.
 
 ---
 
@@ -203,11 +199,11 @@ The practical implication for builders: XPeng's IRON SDK gives you a near-term i
 - Mass production: Q4 2026
 - Commercial: Q1 2027
 
-**BYD Yao-Shun-Yu**
-- Future Lab: Under BYD 15th Business Unit
-- Current status: 150 prototypes, active recruitment
-- Open platform: Confirmed, timeline TBD
-- Commercial: Not yet announced
+**BYD ("Yao-Shun-Yu")**
+- Future Lab: Under BYD's 15th Business Unit (reported since Dec 2024, predates June 2026 rumor cycle)
+- Current status: Development confirmed by BYD (June 3, 2026); specific prototype/testing figures denied by BYD (June 6, 2026); active recruitment ongoing
+- Open platform: Discussed by EVP Li Ke, no timeline or partners confirmed
+- Commercial: Not yet announced; first public prototype showing expected at "Di Space," August 2026
 
 **Context**
 - NVIDIA GR00T N1.6 (potential "brain" supply for Chinese robots): `github.com/NVIDIA/Isaac-GR00T`

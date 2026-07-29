@@ -7,13 +7,13 @@ Anthropic released a quiet but useful Messages API feature alongside Claude Opus
 
 The reason this matters is prompt caching. Editing the top-level `system` field invalidates the entire cached prefix below it. Mid-conversation system messages let you append operator-level instructions at the *end* of the message history instead, leaving everything already cached untouched.
 
-This is available on Claude Opus 4.8, Claude API and Claude Platform on AWS only. It is **not** available on Amazon Bedrock, Vertex AI, or Microsoft Foundry. No beta header is required.
+This is available on Claude Opus 4.8, on the Claude API, [Claude in Amazon Bedrock, and Google Cloud (Vertex AI)](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages). It is generally available — no beta header is required.
 
 ---
 
 ## The Problem It Solves
 
-Prompt caching hashes the request prefix in this order: `tools` → `system` → `messages`. A cache hit requires that prefix to be byte-identical up to the breakpoint.
+Prompt caching hashes the request prefix in this order: `tools` → `system` → `messages`, [per Anthropic's docs](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages). A cache hit requires that prefix to be byte-identical up to the breakpoint.
 
 The top-level `system` field sits near the very start of that hash. If you want to add a new instruction — say, after 40 turns of cached conversation — you either:
 
@@ -61,13 +61,13 @@ response = client.messages.create(
 )
 ```
 
-When instructions conflict, later system messages take precedence over earlier ones, and mid-conversation system messages take precedence over the top-level `system` field for the turns that follow them.
+[Per Anthropic's docs](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#how-it-works), when instructions conflict, later system messages take precedence over earlier ones, and mid-conversation system messages take precedence over the top-level `system` field for the turns that follow them.
 
 ---
 
 ## Placement Rules
 
-There are four rules. Violating them returns a `400` error.
+There are four rules, [per Anthropic's docs](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#limitations). Violating them returns a `400` error.
 
 | Rule | Detail |
 |---|---|
@@ -124,7 +124,7 @@ A user types a follow-up while Claude is already executing tools for the previou
 ]
 ```
 
-**Framing note:** Write this as a fact, not a command. "The user sent the following message while you were working: X" is more effective than "Ignore the previous request and also do X." Claude is trained to resist system instructions that appear to work against the user — describing what happened is cleaner than trying to override.
+**Framing note:** Write this as a fact, not a command. "The user sent the following message while you were working: X" is more effective than "Ignore the previous request and also do X." [Anthropic's docs note](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#placement-after-tool-results) that Claude is trained to resist instructions that appear to work against the user, and that protection still applies to the system role — describing what happened is cleaner than trying to override.
 
 ### 3. Remaining Token Budget Update
 
@@ -152,13 +152,13 @@ A tool becomes unavailable mid-session (rate limit hit, service down):
 
 ### 5. Mode Switch / Standing Permission
 
-Grant or revoke a session-level capability. Anthropic's own documentation uses this as the canonical example for Dynamic Workflows: a mid-conversation system message can grant standing consent to launch multi-agent workflows, with a refresher every several turns and an exit notice when the mode is turned off.
+Grant or revoke a session-level capability. Anthropic's own docs use this pattern as a [worked example for an "orchestration mode"](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-effort-example): a mid-conversation system message grants standing consent to launch multi-agent workflows via a tool, with a one-line refresher every several turns and an exit notice when the mode is turned off.
 
 ---
 
 ## Cache Behavior
 
-Mid-conversation system messages and prompt caching are designed to work together.
+Mid-conversation system messages and prompt caching are [designed to work together](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#combining-with-prompt-caching).
 
 **Caching is opt-in.** The feature alone does not create cache entries. You still need either the top-level `cache_control: {"type": "ephemeral"}` field (automatic caching) or explicit `cache_control` breakpoints on content blocks.
 
@@ -168,7 +168,7 @@ Mid-conversation system messages and prompt caching are designed to work togethe
 
 **Do not edit or remove sent system messages.** Modifying an earlier message invalidates the cache from that point forward — the same rule that applies to any other turn. If the instruction needs to evolve, append a new system message rather than rewriting the old one.
 
-**Consecutive system messages are not allowed.** Merge them into one, or wait for the next user turn.
+**Consecutive system messages are accepted.** [Anthropic's docs](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages) note they are treated as a single system section, which follows the same placement rule as a whole.
 
 ---
 
@@ -176,7 +176,7 @@ Mid-conversation system messages and prompt caching are designed to work togethe
 
 The limitation that catches builders: **do not put untrusted content in a system message**.
 
-Claude treats `role: "system"` as operator instructions and follows them with the highest priority. Raw tool output, retrieved documents, web content, or any data from outside the conversation — keep all of that in `tool_result` blocks. Placing third-party content in a system message gives it operator-level authority, which is both a security risk and a prompt injection vector.
+Claude treats `role: "system"` as operator instructions and follows them. Raw tool output, retrieved documents, web content, or any data from outside the conversation — keep all of that in `tool_result` blocks. Placing third-party content in a system message gives it operator-level authority, which [Anthropic's docs flag as a security risk](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#limitations) tied to prompt injection.
 
 ---
 
@@ -195,10 +195,9 @@ Claude treats `role: "system"` as operator instructions and follows them with th
 
 | | |
 |---|---|
-| **Model** | Claude Opus 4.8 only |
-| **Platforms** | Claude API, Claude Platform on AWS |
-| **Not available** | Amazon Bedrock, Vertex AI, Microsoft Foundry |
-| **Beta header** | Not required |
+| **Model** | Claude Opus 4.8 |
+| **Platforms** | [Claude API, Claude in Amazon Bedrock, Vertex AI (Google Cloud)](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages) |
+| **Beta header** | Not required — generally available |
 
 The underlying mechanics (placement rules, cache interaction, precedence) are documented at [platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages).
 

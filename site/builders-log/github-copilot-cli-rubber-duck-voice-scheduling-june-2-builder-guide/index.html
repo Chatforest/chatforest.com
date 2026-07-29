@@ -80,19 +80,18 @@
 <p>Two activation paths:</p>
 <p><strong>Manual:</strong> Type <code>/rubber-duck</code> at any point in a session to request a review. The agent runs, returns its critique, and Copilot resumes with that input.</p>
 <p><strong>Automatic:</strong> The main Copilot agent decides on its own when a second opinion is worth getting. In practice, this activates on longer or more ambiguous tasks — you do not always need to invoke it explicitly.</p>
-<p>The rubber duck uses multiple model families internally, so the critique is not just Copilot talking to itself. GitHub has not published which models are used on the backend.</p>
-<p>Alongside rubber duck, GitHub shipped <code>/security-review</code> — a dedicated path for security-focused evaluation. Where <code>/rubber-duck</code> is general (design, correctness, blind spots), <code>/security-review</code> focuses specifically on what could go wrong from a security standpoint in the current implementation.</p>
-<p>Both are GA as of June 2.</p>
+<p>The rubber duck deliberately runs on a different model family than your session&rsquo;s orchestrator, not just a second call to the same model. At launch, a Claude-orchestrated session pairs with GPT-5.4 as the rubber duck critic; GitHub has since <a href="https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models/">expanded pairings so a GPT-orchestrated session can get a Claude critic, and Claude sessions can pair with GPT-5.5</a> as well (<a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/">GitHub&rsquo;s explanation of the cross-model design</a>).</p>
+<p><code>/rubber-duck</code> is <a href="https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/">GA as of June 2</a>. GitHub later shipped a separate, related command: <code>/security-review</code>, which <a href="https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli/">launched June 10, 2026 as an experimental, public-preview feature</a> — it was not part of the June 2 batch this article otherwise covers. Where <code>/rubber-duck</code> is general (design, correctness, blind spots), <code>/security-review</code> is scoped to security: it scans local changes for vulnerabilities across categories like injection, XSS, broken access control, and hardcoded credentials, and requires <code>/experimental on</code> to use.</p>
 <hr>
 <h2 id="voice-input">Voice Input</h2>
-<p>Voice input is now GA in the Copilot CLI with a hard privacy guarantee: all audio processing happens on your machine. The speech-to-text model runs locally; no audio is sent to GitHub&rsquo;s servers or any cloud service.</p>
+<p>Voice input is now <a href="https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/">GA in the Copilot CLI</a> with a privacy guarantee: &ldquo;voice input runs locally, so all audio you record stays on your machine,&rdquo; per GitHub&rsquo;s own changelog.</p>
 <p>Two keyboard shortcuts:</p>
 <p><strong>Hold spacebar to dictate.</strong> While holding the spacebar, speak your prompt. Release to submit. This is the &ldquo;push to talk&rdquo; mode — useful for short queries or quick commands.</p>
 <p><strong>Ctrl+X, then V for a recording session.</strong> Press Ctrl+X then V to start recording. Speak. Press any key to stop. The transcription inserts into the prompt field. Use this for longer inputs where you want to review the text before submitting.</p>
 <p>First use triggers a one-time setup: the CLI guides you through downloading the speech runtime and selecting a speech-to-text model. The download is a one-time operation and runs locally thereafter.</p>
 <hr>
 <h2 id="chronicle">/chronicle</h2>
-<p><code>/chronicle</code> is a cross-platform session aggregator. It pulls history from all your Copilot surfaces — CLI, VS Code, JetBrains, cloud agent, code review — and works with that combined context.</p>
+<p><a href="https://github.blog/changelog/2026-06-02-gain-insights-across-your-agent-sessions-with-chronicle/"><code>/chronicle</code> is a cross-platform session aggregator</a>. It pulls history from all your Copilot surfaces — CLI, VS Code, JetBrains, cloud agent, code review — and works with that combined context.</p>
 <p>Practical outputs:</p>
 <ul>
 <li><strong>Standup summaries</strong>: ask what you accomplished across sessions yesterday</li>
@@ -104,7 +103,7 @@
 <p><code>/chronicle</code> is GA as of June 2.</p>
 <hr>
 <h2 id="prompt-scheduling-experimental">Prompt Scheduling (Experimental)</h2>
-<p>The most novel addition, and still experimental, is a scheduler built directly into the CLI.</p>
+<p>The most novel addition, and still experimental, is <a href="https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/">a scheduler built directly into the CLI</a>.</p>
 <p>Two commands:</p>
 <p><strong><code>/every</code> — recurring prompts:</strong></p>
 <pre><code>/every 30m run the frontend tests
@@ -117,7 +116,7 @@
 <p>Scheduling is experimental as of June 2 — it will graduate to GA on an unspecified timeline.</p>
 <hr>
 <h2 id="experimental-terminal-ui">Experimental Terminal UI</h2>
-<p><code>/experimental on</code> activates a redesigned text user interface that has been rebuilt from scratch.</p>
+<p><a href="https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/"><code>/experimental on</code> activates a redesigned text user interface</a> that has been rebuilt from scratch.</p>
 <p>What changes:</p>
 <p><strong>Tabbed navigation.</strong> The terminal now has four tabs navigable with Tab:</p>
 <ul>
@@ -132,7 +131,7 @@
 <p>The experimental TUI is a redesign of everything you look at in the CLI — not a single feature but a cohesive visual overhaul. The schedule manager UI (from <code>/every</code> and <code>/after</code>) only appears in experimental mode.</p>
 <hr>
 <h2 id="new-models-in-the-cli">New Models in the CLI</h2>
-<p>Alongside the UX changes, GitHub added two Gemini models to the CLI model selector:</p>
+<p>Alongside the UX changes, GitHub <a href="https://github.blog/changelog/2026-06-02-gemini-models-in-copilot-cli-cloud-agent-and-the-copilot-app/">added two Gemini models to the CLI model selector</a>:</p>
 <ul>
 <li><strong>Gemini 3.1 Pro (Preview)</strong> — available on Student, Pro, Pro+, Business, Enterprise</li>
 <li><strong>Gemini 3.5 Flash</strong> — available on Pro, Pro+, Business, Enterprise</li>
@@ -140,7 +139,7 @@
 <p>If you are on a Business or Enterprise plan, admins must opt in via the Copilot settings policy before team members can switch to either Gemini model.</p>
 <hr>
 <h2 id="billing-context">Billing Context</h2>
-<p>As of June 1 — the day before this CLI update — GitHub switched Copilot from flat Premium Request Units to token-metered AI Credits. The CLI draws from the same AI Credits pool as your IDE usage.</p>
+<p>As of <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/">June 1 — the day before this CLI update — GitHub switched Copilot from flat premium request units (PRUs) to token-metered GitHub AI Credits</a> (<a href="https://docs.github.com/en/billing/concepts/product-billing/github-copilot-billing">GitHub&rsquo;s billing docs</a> confirm the same). The CLI draws from the same AI Credits pool as your IDE usage.</p>
 <p>What this means for the new features:</p>
 <p><strong>Rubber duck and security review</strong> add model calls on top of your primary session — they are not free. A rubber duck review invokes a separate model family; that consumption comes out of your credits.</p>
 <p><strong>Voice input</strong> is free from a billing standpoint — it runs locally. No model calls, no credits consumed.</p>
@@ -171,8 +170,8 @@
 <tr>
 <td>Security review</td>
 <td><code>/security-review</code></td>
-<td>GA</td>
-<td>Available immediately</td>
+<td>Experimental (shipped June 10, separately from this batch)</td>
+<td><code>/experimental on</code> first</td>
 </tr>
 <tr>
 <td>Voice input</td>
