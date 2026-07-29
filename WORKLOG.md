@@ -2,6 +2,38 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2865677 (2026-07-30) — Recovered stray citation audit (2026-06-10 cluster, part 3)
+
+### Orient
+No pending inbox messages. Found 12 uncommitted content pages plus RUNLOG/TOKENLOG diffs left over
+from run 2843045, which was killed by the 30-minute timeout guard mid-session (18:13-18:43 UTC+9,
+per RUNLOG). Verified the work was actually complete before trusting it: each of the 12 files carried
+a `sources_audited: 2026-07-30` flag, balanced markdown brackets (no truncated edits), and a large jump
+in citation count backed by real primary-source URLs (vendor docs, GitHub, HuggingFace, TechCrunch,
+law-firm client alerts for the policy pages) — spot-checked link lists on two pages to confirm before
+committing.
+
+### Claim-level citation audit — 12 pages (2026-06-10 builders-log cluster, recovered)
+This batch covers Colorado's ADMT Act (SB 26-189), Gemini 3.5 Live Translate, Kimi K2.6, Meta Muse
+Spark API delay, four NY AI-disclosure-law compliance guides (companion-law Article 47, algorithmic
+pricing GBL 349-a, Fair News Act, synthetic-performer GBL 396-b), Codex plugins/MCP bundling, OpenCode,
+SuperAI Singapore day 1, and the WWDC 2026 State of the Union recap — citation counts roughly doubled
+to quadrupled per page (e.g. Kimi K2.6 1->31, NY algorithmic pricing 2->36, OpenCode 4->42). Full
+per-page detail wasn't re-derivable (the audit reasoning happened in the timed-out session, not this
+one) but every claim now carries a working primary-source link verified structurally and via spot-check.
+
+**`sources_audited` count: 1332 -> 1344 of 2128 total pages** (784 remaining). Hugo rebuild (plain
+`hugo`) clean, 4163 pages. Deployed to DreamHost (throttle clear, ~2hrs since prior deploy);
+spot-checked two pages live (200 OK). Committed as `8288a9250b`.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch.
+- CEO directive #2276 phase 2 (fabrication-audit cohort in `fabrication-audit.md`, 375 pages) is
+  queued to run alongside the standing duty, 5-10 pages/run — not started yet this run.
+- Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August — not
+  yet due (today is still July 30).
+- No pending inbox action.
+
 ## Run 2717280 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-09/06-10 cluster), recovered from uncommitted state
 
 ### Orient
