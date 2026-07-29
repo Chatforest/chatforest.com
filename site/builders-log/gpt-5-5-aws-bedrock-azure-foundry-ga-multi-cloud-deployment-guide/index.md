@@ -1,9 +1,9 @@
 # GPT-5.5 Is Now GA on AWS Bedrock and Azure Foundry: Builder Multi-Cloud Deployment Guide
 
-> GPT-5.5 and Codex went GA on Amazon Bedrock June 1 and on Azure Foundry June 3. Pricing matches the direct OpenAI API on both platforms. Here is when to use each path.
+> GPT-5.5 and Codex went GA on Amazon Bedrock June 1; GPT-5.5 reached GA on Azure Foundry April 24. Pricing is close to the direct OpenAI API on both platforms. Here is when to use each path.
 
 
-Two platform GAs in four days. On June 1, 2026, OpenAI's GPT-5.5, GPT-5.4, and Codex [became generally available on Amazon Bedrock](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/). On June 3, [GPT-5.5 reached GA in Microsoft Azure Foundry](https://azure.microsoft.com/en-us/blog/openais-gpt-5-5-in-microsoft-foundry-frontier-intelligence-on-an-enterprise-ready-platform/) with confirmed production pricing. Both platforms price GPT-5.5 at the same rate as the direct OpenAI API: $5 per million input tokens, $30 per million output tokens.
+GPT-5.5 is now confirmed GA across both major clouds. [GPT-5.5 reached GA in Microsoft Azure Foundry on April 24, 2026](https://azure.microsoft.com/en-us/blog/openais-gpt-5-5-in-microsoft-foundry-frontier-intelligence-on-an-enterprise-ready-platform/), and on June 1, 2026, OpenAI's GPT-5.5, GPT-5.4, and Codex [became generally available on Amazon Bedrock](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/) too. [Direct-API pricing for GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5) is $5 per million input tokens and $30 per million output tokens. Azure Foundry matches that rate exactly. AWS's [published Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) for GPT-5.5 is $5.50 per million input tokens and $33 per million output tokens — about 10% above the direct API rate, even though [AWS's GA announcement](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/) describes Bedrock pricing as matching "OpenAI first-party rates."
 
 If you are running GPT-5.5 workloads or planning to, you now have three production paths. This guide covers what each one gives you, where costs actually diverge, and how to pick without overthinking it.
 
@@ -13,11 +13,11 @@ If you are running GPT-5.5 workloads or planning to, you now have three producti
 
 | Path | GPT-5.5 Input | GPT-5.5 Output | GPT-5.5 Pro Input | GPT-5.5 Pro Output |
 |---|---|---|---|---|
-| **Direct OpenAI API** | $5/M | $30/M | $30/M | $180/M |
-| **AWS Bedrock** | $5/M | $30/M | $30/M | $180/M |
-| **Azure Foundry** | $5/M | $30/M | $30/M | $180/M |
+| **[Direct OpenAI API](https://developers.openai.com/api/docs/models/gpt-5.5)** | $5/M | $30/M | [$30/M](https://developers.openai.com/api/docs/models/gpt-5.5-pro) | [$180/M](https://developers.openai.com/api/docs/models/gpt-5.5-pro) |
+| **[AWS Bedrock](https://aws.amazon.com/bedrock/pricing/)** | $5.50/M | $33/M | Not offered | Not offered |
+| **[Azure Foundry](https://azure.microsoft.com/en-us/blog/openais-gpt-5-5-in-microsoft-foundry-frontier-intelligence-on-an-enterprise-ready-platform/)** | $5/M | $30/M | $30/M | $180/M |
 
-Per-token pricing is identical across all three. The differences are not in the model cost — they are in what wraps around it.
+Per-token pricing is close but not identical across all three: Azure Foundry matches the direct API exactly, while AWS Bedrock's [published on-demand rate](https://aws.amazon.com/bedrock/pricing/) runs about 10% higher. GPT-5.5 Pro is not currently listed among the [OpenAI models available on Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards-openai.html) — only standard GPT-5.5, GPT-5.4, and Codex are. The differences beyond token cost are not in the model itself — they are in what wraps around it.
 
 ---
 
@@ -31,21 +31,21 @@ For teams already deep in AWS, this is a meaningful operational simplification. 
 
 ### Billing Consolidation and MACC-Equivalent Commitments
 
-GPT-5.5 usage on Bedrock counts toward your existing AWS committed spend. If you have AWS Reserved Instances, Savings Plans, or Enterprise Discount Programs (EDPs), model inference spend consolidates with those agreements. You get one invoice, one cost explorer dashboard, and one committed spend pool to track.
+[GPT-5.5 usage on Bedrock counts toward your existing AWS committed spend](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/). If you have AWS Reserved Instances, Savings Plans, or Enterprise Discount Programs (EDPs), model inference spend consolidates with those agreements. You get one invoice, one cost explorer dashboard, and one committed spend pool to track.
 
 ### Security and Compliance Infrastructure
 
 Bedrock provides:
-- **AWS PrivateLink** — route all inference traffic through a private VPC endpoint; no data traverses the public internet
+- **[AWS PrivateLink](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agentcore-vpc.html)** — route inference traffic through a private VPC endpoint
 - **AWS KMS encryption** — at rest and in transit, with customer-managed keys if required
-- **AWS CloudTrail audit logging** — every model invocation logged, queryable, retainable per your compliance retention policy
-- **VPC isolation** — full network-layer controls
+- **AWS CloudTrail audit logging** — [model invocation calls are logged as CloudTrail management events](https://docs.aws.amazon.com/securityhub/latest/userguide/bedrock-controls.html) by default, queryable and retainable per your compliance retention policy
+- **VPC isolation** — network-layer controls
 
-Regulated industries that already run in AWS — healthcare (HIPAA), financial services (FINRA, SOC 2), government (FedRAMP, CMMC) — inherit those compliance postures for GPT-5.5 inference without additional integration work.
+Regulated industries that already run in AWS — healthcare ([HIPAA](https://aws.amazon.com/compliance/hipaa-compliance/)), financial services (FINRA, [SOC 2](https://aws.amazon.com/compliance/soc-faqs/)), government ([FedRAMP](https://aws.amazon.com/compliance/fedramp/), CMMC) — can generally extend those existing compliance postures to GPT-5.5 inference, per [AWS's compliance programs](https://aws.amazon.com/compliance/).
 
 ### Amazon Bedrock Managed Agents
 
-OpenAI's Managed Agents capability is available on Bedrock alongside the model endpoints. This means persistent memory, built-in security, and enterprise-scale orchestration are part of the same API surface.
+[Amazon Bedrock Managed Agents, powered by OpenAI](https://aws.amazon.com/bedrock/openai/), is available on Bedrock alongside the model endpoints. AWS describes it as providing "persistent memory, and built-in security" as part of the same API surface, with [each agent running under its own IAM identity and logged for auditability](https://aws.amazon.com/about-aws/whats-new/2026/04/bedrock-openai-models-codex-managed-agents/).
 
 ### What Bedrock Does Not Provide
 
@@ -61,23 +61,23 @@ Azure Foundry authenticates through Microsoft Entra ID (formerly Azure Active Di
 
 ### RBAC and Team Governance
 
-Foundry provides role-based access control at the model and deployment level. You can define who in your organization can invoke which models, with what rate limits, for which projects. This is particularly relevant for large teams where governance over AI spend and capability access matters.
+Foundry provides [role-based access control](https://learn.microsoft.com/en-us/azure/foundry/concepts/rbac-foundry) at the resource, project, and agent level via Azure RBAC (evaluated when authenticating through Microsoft Entra ID). You can define who in your organization can invoke which models and for which projects. This is particularly relevant for large teams where governance over AI spend and capability access matters.
 
 ### Built-In Evaluation and Monitoring
 
-Azure Foundry includes model evaluation pipelines, tracing, and monitoring natively. You can run structured evals on GPT-5.5 outputs, track latency and quality metrics, and set up alerting — inside the same platform, without standing up separate infrastructure.
+[Azure Foundry includes model evaluation pipelines, tracing, and monitoring natively](https://learn.microsoft.com/en-us/azure/foundry/concepts/observability), built on OpenTelemetry and integrated with Azure Monitor Application Insights. You can run structured evals on model outputs, trace multi-step agent behavior, and track latency, quality, and safety metrics — inside the same platform, without standing up separate infrastructure.
 
 ### Fine-Tuning and Lifecycle Management
 
-For supported models (not GPT-5.5 specifically, since it is a closed-weight model, but for Azure Foundry's broader catalog), the platform provides fine-tuning pipelines, model registries, and deployment lifecycle management. If you are running a multi-model strategy that includes open or fine-tunable models alongside GPT-5.5, Foundry handles both in one place.
+For supported models (not GPT-5.5 specifically, since it is a closed-weight model, but for Azure Foundry's broader catalog), the platform provides [fine-tuning pipelines](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/fine-tuning), model registries via Azure Machine Learning, and [deployment lifecycle management](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirements). If you are running a multi-model strategy that includes open or fine-tunable models alongside GPT-5.5, Foundry handles both in one place.
 
 ### Assistants API Migration Path
 
-OpenAI's Assistants API retires August 26, 2026. The primary forward path for Assistants API users is Azure Foundry Agent Service. If you are currently on the Assistants API, the migration target is Foundry — not a new Assistants endpoint on the direct API. This makes Azure Foundry the lowest-friction migration path for anyone running Assistants-based applications today.
+[OpenAI's Assistants API retires August 26, 2026](https://developers.openai.com/api/docs/deprecations). The primary forward path for Assistants API users is Azure Foundry Agent Service. If you are currently on the Assistants API, the migration target is Foundry — not a new Assistants endpoint on the direct API. This makes Azure Foundry the lowest-friction migration path for anyone running Assistants-based applications today.
 
 ### Total Cost Is Not Just Token Price
 
-Azure Foundry's per-token pricing matches the direct API exactly. However, enterprise Azure configurations typically add support plan costs ($100–$1,000+/month depending on tier), plus networking and management overhead. Foundry's additional capabilities come with Azure's enterprise pricing structure — factor this into your TCO if you are comparing against direct API at scale.
+Azure Foundry's per-token pricing matches the direct API exactly. However, enterprise Azure configurations typically add [support plan costs](https://azure.microsoft.com/en-us/support/plans/) — $100/month for Standard, $1,000/month for Professional Direct — plus networking and management overhead. Foundry's additional capabilities come with Azure's enterprise pricing structure — factor this into your TCO if you are comparing against direct API at scale.
 
 ---
 

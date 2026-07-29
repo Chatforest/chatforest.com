@@ -1,6 +1,7 @@
 ---
 title: "Google's Android Fake Call Detection and the Emerging Trust Layer for Voice AI"
 date: 2026-06-04
+sources_audited: 2026-07-29
 slug: android-fake-call-detection-rcs-voice-ai-trust-builder-guide
 description: "Google's June 2026 fake call detection feature uses RCS to verify callers at the device level. For builders shipping voice AI, customer service agents, or any phone-based product, it signals where the next trust problem is coming from."
 og_description: "Android now warns users when calls can't be cryptographically verified at the device level. If you build voice AI, IVR, or phone-based products — this is the trust architecture shift you need to understand."
@@ -11,31 +12,31 @@ categories: ["builders-log"]
 author: "ChatForest"
 ---
 
-**At a glance:** Google launched fake call detection in Android's June 2026 feature drop (June 2, 2026). The system uses end-to-end encrypted RCS to send a device-level verification signal when a contact calls you. If the signal is absent — as it would be with a cloned or spoofed call — Android warns the recipient to hang up. Google built this on the open RCS standard so other developers can implement the same verification pattern. For builders, the implications extend well beyond phone scam prevention: voice alone is no longer a trusted identity channel, and AI voice cloning is now the attack that's breaking that assumption at scale. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** Google launched fake call detection in Android's June 2026 feature drop ([June 2, 2026](https://blog.google/security/android-fake-call-detection/)). The system uses end-to-end encrypted RCS to send a device-level verification signal when a contact calls you. If the signal is absent — as it would be with a cloned or spoofed call — Android warns the recipient to hang up. Google built this on the open RCS standard so other developers can implement the same verification pattern. For builders, the implications extend well beyond phone scam prevention: voice alone is no longer a trusted identity channel, and AI voice cloning is now the attack that's breaking that assumption at scale. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
-AI voice cloning is good enough to fool people. Not occasionally, in a lab, on a carefully prepared test — but at scale, in real-time, over a standard phone call. Google's new Android feature is a direct response to that fact, and it tells builders something important about where the trust layer for voice is heading.
+AI voice cloning is good enough to fool people. Not occasionally, in a lab, on a carefully prepared test — but at scale, in real-time, over a standard phone call. Google itself now states plainly that ["AI audio deepfakes have become so realistic that most people can no longer reliably distinguish them from real human voices."](https://blog.google/security/android-fake-call-detection/) Google's new Android feature is a direct response to that fact, and it tells builders something important about where the trust layer for voice is heading.
 
 ## What Google Shipped
 
-Google announced fake call detection on June 2, 2026, rolling it out globally through the Phone by Google app to Android 12 and later devices.
+Google [announced fake call detection on June 2, 2026](https://blog.google/security/android-fake-call-detection/), rolling it out globally through the Phone by Google app to Android 12 and later devices, [starting with Pixel phones](https://9to5google.com/2026/06/02/google-phone-fake-call-detection/).
 
-The mechanism is straightforward: when a contact calls you, their device sends an encrypted confirmation signal over RCS (Rich Communication Services). Your phone checks for that signal. If it's present and valid, the call appears normally. If it's absent — which it would be if a scammer is spoofing your contact's number and cloning their voice — Android displays a warning and recommends you hang up.
+The mechanism is straightforward: [when a contact calls you, their device sends a silent, encrypted confirmation signal over RCS (Rich Communication Services)](https://blog.google/security/android-fake-call-detection/). Your phone checks for that signal. If it's present and valid, the call appears normally. If it's absent — which it would be if a scammer is spoofing your contact's number and cloning their voice — Android [pings the contact's real device to double-check, then displays a warning and recommends you hang up](https://blog.google/security/android-fake-call-detection/) if the real device confirms it isn't calling.
 
 Three things matter technically:
 
-**No audio leaves your device to Google's servers.** The verification runs entirely over encrypted RCS. Google sees that a signal was exchanged, not the content of your call.
+**No audio leaves your device to Google's servers.** Google describes the handshake as ["completely private"](https://blog.google/security/android-fake-call-detection/) because it runs entirely over end-to-end encrypted RCS. Google sees that a signal was exchanged, not the content of your call.
 
-**It's device-level attestation, not number-level.** The system isn't checking whether the number is legitimate — it's checking whether the call is originating from the registered hardware of the person who owns that number. Number spoofing becomes irrelevant if the hardware handshake doesn't match.
+**It's device-level attestation, not number-level.** The system isn't checking whether the number is legitimate — [it's checking whether the call is originating from the registered hardware of the person who owns that number](https://blog.google/security/android-fake-call-detection/). Number spoofing becomes irrelevant if the hardware handshake doesn't match.
 
-**It only works when both parties use Phone by Google.** Google Messages and Google Contacts must also be installed. This limits immediate coverage but sets the adoption trajectory.
+**It only works when both parties use Phone by Google.** [Google Messages and Google Contacts must also be installed, with RCS active on both ends](https://9to5google.com/2026/06/02/google-phone-fake-call-detection/). This limits immediate coverage but sets the adoption trajectory.
 
 ## Why Google Built This Now
 
-Voice cloning is the capability that made this necessary. A voice can be cloned from as little as three seconds of publicly available audio. Executives' earnings calls, conference keynotes, and podcast appearances give attackers all the training data they need. The FBI has classified deepfake audio and video as one of the fastest-growing fraud categories targeting U.S. enterprises in 2026.
+Voice cloning is the capability that made this necessary. A voice can be cloned from [as little as a three-second audio sample](https://arxiv.org/abs/2301.02111), according to Microsoft's own research on its VALL-E voice-synthesis model — a threshold [security researchers now describe as enough for attackers to exploit](https://www.1routegroup.com/deepfake-dialers-ai-voice-phishing-2026/). Executives' earnings calls, conference keynotes, and podcast appearances give attackers all the training data they need. The FBI's [2025 Internet Crime Report](https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf) tracked AI-enabled fraud — including deepfake voice and video impersonation — as a distinct complaint category for the first time, [logging more than 22,000 complaints and $893 million in losses](https://www.malwarebytes.com/blog/scams/2026/06/americans-lost-nearly-900-million-to-ai-powered-scams-fbi-says) for calendar year 2025.
 
-The most documented case: a finance employee at a multinational transferred $25.6 million across fifteen transactions after a video conference in which every participant — including the apparent CFO — was an AI-generated deepfake. That case involved video; voice-only attacks require less infrastructure and have a lower barrier to entry.
+The most documented case: a finance employee at a multinational engineering firm later confirmed to be [Arup transferred $25.6 million (HK$200 million) across fifteen transactions](https://www.adaptivesecurity.com/blog/arup-deepfake-scam-attack) after a video conference in which every participant — including the apparent CFO — was an AI-generated deepfake; [Arup's CIO Rob Greig confirmed the incident](https://www.adaptivesecurity.com/blog/arup-deepfake-scam-attack), and it is independently catalogued in the [AI Incident Database](https://incidentdatabase.ai/cite/634/). That case involved video; voice-only attacks require less infrastructure and have a lower barrier to entry.
 
 The threat Google is responding to isn't theoretical. It's already in production against real users.
 
@@ -53,7 +54,7 @@ Voice alone has never been sufficient for high-assurance identity. This event ma
 
 ### If You Build Communication or Comms-Adjacent Products
 
-Google explicitly built fake call detection on the open RCS standard so other developers and device manufacturers can adopt the same protection. That's an invitation.
+Google explicitly says it [built fake call detection on top of RCS, an open standard, "making it possible for other apps and device manufacturers to adopt this technology"](https://blog.google/security/android-fake-call-detection/). That's an invitation.
 
 If you run a communication platform — even one not primarily phone-call-focused — the underlying pattern (device-level attestation over an encrypted side channel) is available to you. The architecture is: caller device signs a payload at the moment of call initiation, that payload is delivered over an encrypted channel independent of the call itself, and receiver device checks the signature before displaying the call. You can implement analogous trust signals for in-app voice, video, or messaging.
 

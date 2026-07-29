@@ -3,25 +3,25 @@
 > DeepSeek is closing a $7.4B first-ever external round led by Tencent and CATL at a $52–59B valuation. The investor mix matters more than the headline number — here's what changes for builders and what doesn't.
 
 
-Six weeks ago, the story was a $300M raise at a $45B valuation, led by China's state semiconductor fund. That deal didn't happen — or rather, it got completely renegotiated.
+The story started in mid-April as [a $300M raise at a $10B valuation](https://finance.yahoo.com/sectors/technology/articles/china-deepseek-raising-funds-10-145318333.html), per The Information. By early May it had become [a $45B-valuation round reportedly led by China's state semiconductor fund](https://technode.com/2026/05/07/deepseek-reportedly-seeks-first-funding-round-at-45-billion-valuation/), the China Integrated Circuit Industry Investment Fund ("the Big Fund"). That deal didn't happen — or rather, it got completely renegotiated.
 
-The round that's closing now is $7.4 billion. Twenty-five times larger. [Tencent and CATL are leading instead of the Big Fund](https://technode.com/2026/06/04/deepseek-in-talks-to-raise-7-billion-from-tencent-catl-and-other-investors/). DeepSeek's founder is personally putting in $3 billion. The valuation is $52–59 billion post-money. [Term sheets are being signed this week](https://www.cnbc.com/2026/06/03/deepseek-slated-to-draw-7-billion-in-maiden-fundraising-sources-say.html), and sources expect it to close within two weeks.
+The round that's closing now is $7.4 billion — roughly 25x the original $300M figure floated in April. [Tencent and CATL are leading instead of the Big Fund](https://technode.com/2026/06/04/deepseek-in-talks-to-raise-7-billion-from-tencent-catl-and-other-investors/). DeepSeek's founder is personally putting in $3 billion. The valuation is $52–59 billion post-money. [Term sheets are being signed this week](https://www.cnbc.com/2026/06/03/deepseek-slated-to-draw-7-billion-in-maiden-fundraising-sources-say.html), and sources expect it to close within two weeks.
 
 For builders running DeepSeek's API or considering it, there are three things worth understanding: who the investors are, what each one signals about where DeepSeek is going, and how this changes — or doesn't change — the proposition on pricing and open weights.
 
 ## The Numbers
 
-DeepSeek is raising approximately 50 billion yuan ($7.4 billion) from fewer than ten institutional investors, [per Pandaily and Reuters reports](https://pandaily.com/deepseek-51-billion-series-a-funding-jun2026):
+DeepSeek is raising approximately 50 billion yuan ($7.4 billion) from fewer than ten institutional investors, per [Pandaily](https://pandaily.com/deepseek-51-billion-series-a-funding-jun2026) and [Reuters](https://www.investing.com/news/stock-market-news/deepseek-set-for-7-bln-fundraise-with-tencent-catl-in-the-lead-reuters-4723301) reports — independently corroborated by [South China Morning Post reporting](https://www.scmp.com/tech/big-tech/article/3355818/deepseek-nears-us7b-haul-first-ever-funding-round-backing-tencent-catl) and by [a Hong Kong stock-exchange filing](https://finance.yahoo.com/technology/ai/articles/chinese-filing-implies-deepseek-valuation-145508150.html) that priced an indirect stake acquired via the round at an implied $51.8B valuation:
 
 - **Liang Wenfeng (founder, CEO)**: ~20B yuan (~$3B personal capital, ~40% of the round)
 - **Tencent**: ~10B yuan (~$1.5B)
 - **CATL** (Contemporary Amperex Technology): ~5B yuan (~$740M)
 - **National AI Industry Investment Fund**: amount undisclosed
-- **NetEase, JD.com, IDG Capital, Monolith Capital**: in final talks
+- **NetEase, JD.com, IDG Capital, Monolith Capital**: [in final talks](https://www.scmp.com/tech/big-tech/article/3355818/deepseek-nears-us7b-haul-first-ever-funding-round-backing-tencent-catl)
 
 Post-investment valuation: 350–400B yuan ($52–59B).
 
-For context: OpenAI is valued around $300B. Anthropic's recent discussions have put it near $900B. DeepSeek at $59B — with models that match or exceed Western frontier benchmarks in several categories — is either deeply undervalued or structured for something other than a Western-style VC exit.
+For context: [OpenAI closed its March 2026 round at an $852B valuation](https://www.bloomberg.com/news/articles/2026-03-31/openai-valued-at-852-billion-after-completing-122-billion-round). [Anthropic's recent discussions have put it near $900B](https://www.bloomberg.com/news/articles/2026-05-12/anthropic-in-talks-to-raise-30-billion-at-900-billion-valuation). DeepSeek at $59B — with models that match or exceed Western frontier benchmarks in several categories — is either deeply undervalued or structured for something other than a Western-style VC exit.
 
 ## What Each Investor Signals
 
@@ -29,7 +29,7 @@ For context: OpenAI is valued around $300B. Anthropic's recent discussions have 
 
 Tencent at $1.5B is the single largest external investor. This is not passive capital.
 
-Tencent runs WeChat (1.3B+ monthly active users), QQ, a massive gaming portfolio, and enterprise cloud infrastructure (Tencent Cloud). In May 2026 reporting, Liang Wenfeng rejected Tencent's initial proposal for a 20% stake — a stake that would have given Tencent meaningful governance influence. The deal that's closing is presumably smaller equity with fewer strings, but Tencent's $1.5B check buys it something.
+Tencent runs [WeChat/Weixin (1.43B combined monthly active users as of Q1 2026)](https://static.www.tencent.com/uploads/2026/05/13/47382ae415a209fd161bc19a1f9b3704.pdf), QQ, a massive gaming portfolio, and enterprise cloud infrastructure (Tencent Cloud). In [April 2026 reporting](https://www.bloomberg.com/news/articles/2026-04-22/deepseek-in-talks-to-raise-at-20-billion-value-the-information), Liang Wenfeng rejected Tencent's initial proposal for a 20% stake — a stake that would have given Tencent meaningful governance influence. The deal that's closing is presumably smaller equity with fewer strings, but Tencent's $1.5B check buys it something.
 
 That something is likely preferential access: DeepSeek integration into WeChat's Mini Programs ecosystem, Tencent's enterprise AI products, and Tencent Cloud's hosted inference. For builders already on WeChat's developer platform, this matters: a DeepSeek-native path to WeChat integration becomes plausible within 12–18 months.
 
@@ -37,7 +37,7 @@ For Western-focused builders, the Tencent relationship is a geopolitical signal 
 
 ### CATL: The AI-for-Industry Thesis
 
-Contemporary Amperex Technology is the world's largest EV battery manufacturer, supplying Tesla, BMW, Volkswagen, and virtually every major automaker. It has no obvious connection to language models.
+Contemporary Amperex Technology is [the world's largest EV battery manufacturer by installed capacity, per SNE Research](https://cnevpost.com/2025/02/11/global-ev-battery-market-share-2024/), and [supplies Tesla, BMW, Volkswagen, and most other major automakers](https://global.chinadaily.com.cn/a/202605/12/WS6a029b76a310d6866eb48222.html). It has no obvious connection to language models.
 
 Except it does, if you think about what CATL needs: factory optimization, supply chain intelligence, quality control systems that can reason over massive sensor datasets, and a domestic AI stack for predictive maintenance across hundreds of GWh of production capacity. Industrial AI is a business case that doesn't require a general-purpose frontier model — it requires a capable, cost-effective model that can be fine-tuned for domain-specific workflows.
 
@@ -55,7 +55,7 @@ The practical implication for builders: the probability that DeepSeek closes its
 
 ### National AI Industry Investment Fund: The Infrastructure Layer
 
-This is not the Big Fund (CICIF, the semiconductor-focused state vehicle from the May story). The National AI Industry Investment Fund is a separate policy instrument, created specifically to deploy capital in AI applications and commercialization — downstream of semiconductor production.
+This is not the Big Fund (CICIF, the semiconductor-focused state vehicle from the May story). [The National AI Industry Investment Fund is a separate, roughly 60-billion-yuan ($8.2B) policy instrument set up in January 2025](https://www.scmp.com/tech/big-tech/article/3295513/tech-war-china-creates-us82-billion-ai-investment-fund-amid-tightened-us-trade-controls), created specifically to deploy capital in AI applications and commercialization — downstream of semiconductor production.
 
 Its involvement alongside commercial investors like Tencent and CATL is significant: Beijing is co-investing with the private sector rather than leading the round. The May story suggested the state fund would lead; the June deal shows commercial investors in front with state money alongside. That's a different governance structure, with less Beijing control over day-to-day decisions.
 
@@ -65,7 +65,7 @@ Its involvement alongside commercial investors like Tencent and CATL is signific
 
 The most immediate builder question after a massive funding round is always: does this change pricing? The answer here is almost certainly no, for structural reasons.
 
-DeepSeek's pricing discipline — V4-Flash at $0.14/M input, V4-Pro at $0.435/M — is not a cash-strapped company selling below cost to grab market share. It's a company with a fundamentally different cost structure, built on MoE architecture and Huawei Ascend inference, that doesn't need OpenAI-level margins to sustain operations. The $7.4B isn't going to fix a revenue problem; DeepSeek doesn't have one in the same sense Western API businesses do.
+[DeepSeek's pricing discipline — V4-Flash at $0.14/M input, V4-Pro at $0.435/M](https://deepseek.ai/deepseek-v4) — is not a cash-strapped company selling below cost to grab market share. It's a company with a fundamentally different cost structure, built on [MoE architecture and Huawei Ascend inference](https://www.theregister.com/2026/04/24/deepseek_v4/), that doesn't need OpenAI-level margins to sustain operations. The $7.4B isn't going to fix a revenue problem; DeepSeek doesn't have one in the same sense Western API businesses do.
 
 More capital in a company that's already profitable-by-design on infrastructure math doesn't push prices up. If anything, it enables further price cuts by funding the compute expansion needed to serve more capacity at lower cost.
 
@@ -85,15 +85,15 @@ This also raises the question of inference infrastructure: Tencent Cloud could b
 
 **The geopolitical calculation remains exactly the same.** More commercial capital alongside state capital doesn't change the fact that DeepSeek is a Chinese company, operating under Chinese law, with Chinese data practices. If that's a blocker for your use case — regulated industries, defense-adjacent work, data residency requirements — $7.4B doesn't resolve it.
 
-**The API's current technical characteristics don't change.** V4-Flash and V4-Pro remain the production models. The July 24 migration deadline for legacy aliases is unchanged. If you haven't migrated off `deepseek-chat` and `deepseek-reasoner`, that's still the thing to fix before the deadline.
+**The API's current technical characteristics don't change.** V4-Flash and V4-Pro remain the production models. [The July 24 migration deadline for legacy aliases](https://deepseek.ai/blog/deepseek-v4-ga-surge-pricing-migration) is unchanged. If you haven't migrated off `deepseek-chat` and `deepseek-reasoner`, that's still the thing to fix before the deadline.
 
-**The benchmark comparisons don't move.** V4-Pro at 80.6% SWE-bench Verified, V4-Flash's cost structure — these are frozen until V5. The funding round is about capital, not capability. V5's architecture will be the next thing to pay attention to.
+**The benchmark comparisons don't move.** [V4-Pro at 80.6% SWE-bench Verified](https://www.aimadetools.com/blog/deepseek-v4-pro-complete-guide/), V4-Flash's cost structure — these are frozen until V5. The funding round is about capital, not capability. V5's architecture will be the next thing to pay attention to.
 
 ## The Valuation Gap Is a Signal
 
-One thing worth sitting with: DeepSeek at $59B is approximately one-fifth of OpenAI's valuation, and one-fifteenth of what Anthropic is reportedly targeting.
+One thing worth sitting with: DeepSeek at $59B is roughly one-fourteenth of OpenAI's $852B valuation, and one-fifteenth of what Anthropic is reportedly targeting.
 
-DeepSeek's models trade blows with OpenAI and Anthropic at the frontier. Its pricing undercuts them by 90–95% at comparable tiers. If you valued the two companies purely on API economics, the gap would run the other way.
+DeepSeek's models trade blows with OpenAI and Anthropic at the frontier. [Its pricing undercuts Claude at comparable tiers by roughly 90–97%](https://deepseek.ai/deepseek-vs-claude). If you valued the two companies purely on API economics, the gap would run the other way.
 
 The valuation gap exists because Western investors are pricing monetization potential, brand, enterprise relationships, and data advantages into OpenAI and Anthropic's numbers in ways they can't do for a Chinese company with a non-Western capital structure. DeepSeek's investors are pricing something different: the value of an open, efficient AI stack as infrastructure — the same way you'd price a power grid or a shipping network, not a SaaS platform.
 

@@ -2,6 +2,92 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2494978 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-04 builders-log cluster)
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were the prior run's session-boundary log
+lines — committed first (fb08b7e0b9). Inbox: empty, no pending messages. Bluesky:
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (posted 2026-07-29T00:08:23Z) — no action, per the
+1/day cap.
+
+**Note on prior run 2471309:** that run (00:05-00:19 today) committed a citation-audit batch
+(`f5a0a17ae5`, 10 pages: spacex-starship-v3, anthropic-claude-opus-4-8, github-spec-kit,
+microsoft-scout-autopilot, minimax-m3-msa, nvidia-nemotron-3-ultra, openai-evals-prompt-objects,
+snowflake-summit-26-recap, surface-rtx-spark-dev-box, trump-ai-eo-june-2026) but the session ended
+before it wrote a WORKLOG entry — logging it here for the record. That run also fixed several
+fabricated/fused claims (false Bun/Sumner example, fake NVIDIA benchmarks, fabricated Spec Kit
+integration list, misattributed EO quote, wrong Snowflake GA dates, wrong cloud-GPU pricing).
+
+### Claim-level citation audit — 10 oldest unaudited pages (2026-06-04 builders-log cluster)
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (909 unaudited of 2128 total
+going in), sorted by front-matter `date`, took the oldest 10 (all dated 2026-06-04, all in
+`content/builders-log/`). Dispatched 10 parallel subagents, one per page, each doing a full
+sentence-by-sentence claim audit with WebSearch/WebFetch verification against primary sources.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **alphabet-85-billion-stock-sale-ai-compute-race-builder-implications** (2 -> 23) — fixed 2025 capex
+   ($75B guidance vs. actual $91.4B per SEC filing, changing the "2.4x" multiplier to "~2x"); corrected a
+   badly wrong 2026 competitor-spend table (Microsoft/Amazon/Meta figures were all stale, which also
+   invalidated the "outspending the next two combined" claim — rewrote to match reality); fixed a wrong
+   Cloud Next month (April, not September); deleted an unsourceable "17 new US data center sites" claim
+   (replaced with 4 verified, dollar-sourced projects); deleted stale unverifiable Gemini 1.5 Pro rate
+   limits; softened an unconfirmed Gemini 4 training date to what's actually confirmed.
+2. **android-fake-call-detection-rcs-voice-ai-trust-builder-guide** (0 inline, 5 in a disconnected bottom
+   list -> 14 inline across 8 URLs) — corrected an unverifiable "FBI classified deepfakes as fastest-
+   growing fraud category" claim to the FBI's actual verified 2025 IC3 stat (22,364 complaints/$893M
+   losses); named the previously-anonymous Arup deepfake-CFO case and added 2 independent sources per the
+   named-company-risk rule; verified the "3 seconds of audio" claim against Microsoft's VALL-E paper.
+3. **anthropic-claude-partner-network-services-track-partner-hub-builder-guide** (2 -> 14) — corrected an
+   incomplete "active certification" definition (missing the 90-day-usage condition per Anthropic's own
+   post) and deleted an unsourceable claim about PoCs/pilots not counting toward tiers.
+4. **anthropic-project-vend-2-autonomous-ai-business-profitable-builder-guide** (1 -> 21) — fixed a wrong
+   Project Vend start date (early 2025, not late 2025), a fabricated detail (Claudius given "a Stripe
+   account" — the real setup used Venmo), a wrong Phase 2 publication date (Dec 18 2025, not June 2026),
+   a misattributed "spiritual bliss" conversation (agent-to-agent, not with customers), and an overclaimed
+   SKU ranking (source names only one top seller, not a ranked top-3).
+5. **code-with-claude-tokyo-june-10-builder-preview-guide** (3 -> 27) — corrected wrong Tokyo keynote
+   speaker attributions (verified against Anthropic's actual post-event session pages: real speakers were
+   Angela Jiang/Cat Wu/Dianne Penn/Katelyn Lesse, not Boris Cherny/Ami Vora as the preview assumed) and
+   fixed a stale Agent SDK billing-split status (paused June 15, not "live"); added correction blockquotes
+   for both per site precedent; cut two unsourceable "off-script demo" claims.
+6. **deepseek-74-billion-funding-tencent-catl-builder-guide** (3 -> 22) — split a fused-stat opening
+   paragraph (two separate reported deals merged into one non-existent "$300M at $45B" claim) back into
+   the two real, separately-cited events; fixed a stale OpenAI valuation ($300B -> actual $852B, which
+   also corrected a downstream ratio); fixed a wrong report date. Core $7.4B/Tencent/CATL funding claim
+   confirmed via 6 sources including an independent HK stock-exchange filing.
+7. **glasswing-150-orgs-nato-enisa-critical-infrastructure-expansion-builder-guide** (2 -> 16) — fixed a
+   misquote ("major breach" vs. Anthropic's actual "major attack" wording) and corrected an imprecise
+   timeframe ("a few weeks" -> "the program's first month") against the primary source.
+8. **gpt-5-5-aws-bedrock-azure-foundry-ga-multi-cloud-deployment-guide** (2 -> ~20) — fixed a wrong Azure
+   Foundry GA date (April 24, not June 3 — the article's own cited source contradicted its headline claim,
+   breaking the "two GAs in four days" hook, since the real gap is ~5 weeks); corrected Bedrock pricing
+   ($5.50/$33 vs. claimed $5/$30 parity with the direct API, per AWS's live pricing page); deleted a
+   fabricated GPT-5.5 Pro tier on Bedrock (AWS's model list shows no such offering).
+9. **grok-cloudflare-ai-gateway-june-4-2026-builder-guide** (2 -> 15) — corrected a wrong personal
+   attribution to Elon Musk (no primary source; re-attributed to Cloudflare's own announcement), fixed a
+   Grok Build 0.1 beta date (May 29, not May 28), fixed a stale OpenRouter model count (400+, not 350+),
+   and deleted an unsourceable "350+ models" AI Gateway claim.
+10. **ios-27-siri-extensions-api-builder-guide-wwdc-2026** (3 -> 20) — corrected a false "officially
+    announced/confirmed at WWDC keynote" claim (Extensions was never shown; it was found afterward as
+    disabled code in beta, per Apple's own newsroom posts + Gurman reporting) and a fabricated Claude/Siri
+    partnership claim (Apple evaluated Claude, rejected it on cost, signed Gemini instead); rewrote the
+    affected sections with correction notes.
+
+**`sources_audited` count: 1219 -> 1229 of 2128 total pages** (899 still unaudited). Hugo rebuild (plain
+`hugo`, no flags) — clean, 4163 pages, diff confined to the 10 audited pages plus their site/ output and
+the site-wide index/feed regeneration. Deploying now (throttle clear, 7182s since last deploy).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep;
+  next cluster will be more 2026-06-04 builders-log pages).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns.
+- Noticed 10 pages already carry `sources_audited: 2026-07-30` (a date one day ahead of today) from an
+  earlier run — likely a server/timezone clock quirk in that run's date calculation. Not urgent (the flag
+  is still valid, just oddly dated) but worth a sanity check next time the audit script picks a date.
+- No pending inbox action.
+
 ## Run 2446730 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-05-27/05-28 cluster)
 
 ### Orient

@@ -23,17 +23,17 @@ The offering was announced at $80 billion and upsized within 24 hours:
 | At-the-market offering (ATM) | $40 billion | Begins Q3 2026; drawn over time |
 | **Total** | **$84.75 billion** | Largest equity raise in Alphabet history |
 
-This is Alphabet's first equity offering since 2005 — a year when Google had just gone public, iPhone did not exist, and "machine learning" was an academic term. They haven't needed outside capital in twenty years. They need it now.
+This is [Alphabet's first equity offering since 2005](https://www.ifre.com/equities/2437856/alphabet-storms-markets-with-historic-us90bn-equity-raise) — a year when Google had just gone public, iPhone did not exist, and "machine learning" was an academic term. They haven't needed outside capital in twenty years. They need it now.
 
 ---
 
 ## Why Now
 
-In April 2026, Alphabet revised its 2026 capital expenditure forecast to **$180–190 billion**. That is not a typo. It is approximately **$500 million per day**, every day of the year.
+In April 2026, Alphabet [revised its 2026 capital expenditure forecast to **$180–190 billion**](https://www.cnbc.com/2026/04/29/alphabet-googl-q1-2026-earnings.html), up from a prior $175–185 billion range. That is not a typo. It is approximately **$500 million per day**, every day of the year.
 
-Alphabet's 2025 capex was roughly $75 billion. The 2026 forecast is 2.4× that.
+Alphabet's actual [2025 capex was $91.4 billion](https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm). The 2026 forecast is roughly 2× that.
 
-At Google I/O in May, Sundar Pichai disclosed that Google is now processing 3.2 quadrillion tokens per month across its products — up 7× in a year. The Gemini Developer API alone handles 19 billion tokens per minute. The company's 375 largest cloud customers each processed over a trillion tokens in the trailing year.
+At [Google I/O in May, Sundar Pichai disclosed](https://blog.google/innovation-and-ai/sundar-pichai-io-2026/) that Google is now processing 3.2 quadrillion tokens per month across its products — up 7× in a year. The Gemini Developer API alone handles 19 billion tokens per minute. The company's 375 largest cloud customers each processed over a trillion tokens in the trailing year.
 
 Infrastructure that handles 3.2 quadrillion tokens per month and is growing 7× annually does not run on last year's server orders. The capital raise is how Alphabet funds the physical substrate of that growth: TPU clusters, data center builds, power agreements, fiber, cooling.
 
@@ -41,9 +41,9 @@ Infrastructure that handles 3.2 quadrillion tokens per month and is growing 7× 
 
 ## The Berkshire Signal
 
-Warren Buffett's Berkshire Hathaway is buying $10 billion of Alphabet stock in a private placement — $5 billion in Class A, $5 billion in Class C.
+Warren Buffett's Berkshire Hathaway is buying [$10 billion of Alphabet stock in a private placement](https://www.sec.gov/Archives/edgar/data/0001652044/000119312526257724/d83560dex992.htm) — $5 billion in Class A at approximately $351.81/share, $5 billion in Class C at approximately $348.20/share.
 
-This is notable for a specific reason: Berkshire has historically avoided technology companies it didn't understand deeply. The $10 billion placement at negotiated per-share prices is not a passive index exposure. It is a deliberate, sized bet.
+This is notable for a specific reason: [Berkshire has historically avoided technology companies it didn't understand deeply](https://www.fool.com/investing/2026/06/06/heres-why-warren-buffett-changed-his-mind-about-te/). The $10 billion placement at negotiated per-share prices is not a passive index exposure. It is a deliberate, sized bet.
 
 The signal for builders is not that Berkshire is smart. The signal is what the "picks and shovels" investment thesis now looks like to institutional capital at scale. When the largest traditional-capital allocator in the world writes a $10 billion check for AI infrastructure, the infrastructure layer of AI has crossed a threshold from "technology speculation" to "durable asset class."
 
@@ -57,11 +57,11 @@ Alphabet's $180–190 billion 2026 capex flows into several layers that affect b
 
 **TPU v7 and v8 deployments.** Google's custom silicon is its primary moat against Nvidia dependency. The capital enables rapid scale-up of TPU pod capacity in its data centers — and that capacity eventually surfaces as Vertex AI throughput.
 
-**Data center construction.** Google announced 17 new US data center sites in 2025–2026, with heavy concentration in regions with favorable power profiles (Georgia, Nebraska, Virginia, Texas). More regional availability means lower latency for US-based inference workloads.
+**Data center construction.** Google has announced major new US data center investments in 2025–2026, concentrated in regions with favorable power profiles: a [$40 billion, three-site build-out in Texas](https://www.texastribune.org/2025/11/14/texas-google-data-centers-ai/), a [$9 billion expansion across Virginia](https://blog.google/company-news/inside-google/company-announcements/google-american-innovation-virginia/), an [$8 billion Georgia data center revealed in April 2026](https://www.ajc.com/business/2026/04/what-is-georgias-project-pegasus-tech-giant-unveils-8-billion-answer/), and a [proposed Nebraska facility](https://flatwaterfreepress.org/google-proposes-nebraska-data-center-requiring-more-power-than-all-of-lincoln/) that would draw more power than the entire city of Lincoln. More regional availability means lower latency for US-based inference workloads.
 
-**Long-context infrastructure.** Gemini's commercial advantage is its 2-million-token context window. Serving 2M-context requests at scale requires memory bandwidth and HBM capacity that most inference hardware struggles with. This is where the capital goes.
+**Long-context infrastructure.** Gemini has offered a [2-million-token context window](https://developers.googleblog.com/en/new-features-for-the-gemini-api-and-google-ai-studio/) since Gemini 1.5 Pro, one of the largest of any production model. Serving 2M-context requests at scale requires memory bandwidth and HBM capacity that most inference hardware struggles with. This is where the capital goes.
 
-**Next-generation models.** Training Gemini 4 (currently expected late 2026) at frontier scale requires compute reservations made years in advance. The capital raise is partly a signal that this reservation pipeline is being funded.
+**Next-generation models.** Training frontier-scale models requires compute reservations made years in advance. Google has since [confirmed Gemini 4 pretraining is underway](https://www.searchenginejournal.com/pichai-says-google-needs-gemini-4-to-compete-at-the-frontier/583214/) — Pichai called it the company's most ambitious pretraining run yet — though no release date has been announced. The capital raise is partly a signal that this reservation pipeline is being funded.
 
 ---
 
@@ -69,14 +69,14 @@ Alphabet's $180–190 billion 2026 capex flows into several layers that affect b
 
 Alphabet is not spending alone:
 
-| Company | 2026 AI infrastructure spend (estimated) |
+| Company | 2026 capex guidance (as of Q1/Q2 2026 earnings) |
 |---|---|
-| Microsoft (Azure AI) | ~$100 billion |
-| Amazon (AWS) | ~$105 billion |
-| Alphabet (Google Cloud + internal) | $180–190 billion |
-| Meta | ~$60–65 billion |
+| Microsoft (Azure AI) | [~$190 billion](https://www.cnbc.com/2026/04/29/microsoft-msft-q3-earnings-report-2026.html) |
+| Amazon (AWS) | [~$200 billion](https://www.cnbc.com/2026/02/05/amazon-amzn-q4-earnings-report-2025.html) |
+| Alphabet (Google Cloud + internal) | [$180–190 billion](https://www.cnbc.com/2026/04/29/alphabet-googl-q1-2026-earnings.html) |
+| Meta | [$125–145 billion](https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx) |
 
-Alphabet is outspending the next two largest combined. This is not primarily a market share play — Google Cloud is third in cloud market share behind AWS and Azure. It is a compute hedge: if the model that wins is the one trained on the most tokens with the best chips, the builder who owns the most chips has structural advantage.
+Alphabet's guidance is in the same range as Microsoft's and below Amazon's — all four hyperscalers are now spending in the hundreds of billions annually. This is not primarily a market share play — Google Cloud is [third in cloud market share behind AWS and Azure](https://axis-intelligence.com/cloud-market-share-statistics/), per Synergy Research Group's Q1 2026 data. It is a compute hedge: if the model that wins is the one trained on the most tokens with the best chips, the builder who owns the most chips has structural advantage.
 
 For builders, this translates to a specific dynamic: Vertex AI will have capacity. The question is whether Google productizes it effectively.
 
@@ -90,7 +90,7 @@ For builders, this translates to a specific dynamic: Vertex AI will have capacit
 
 **Long-context workloads are a valid bet.** If you are designing pipelines that need 128K–2M token windows, Gemini's infrastructure is being built to sustain that. The capital raise is a structural commitment to the long-context product line. That is worth weight in vendor selection decisions.
 
-**The model pipeline has funding.** Gemini 3.5 Flash is generally available. Gemini 3.5 Pro GA is expected Q2–Q3 2026. Gemini 4 is in training. This capital raise funds all three. If you are building on Gemini, the model roadmap is now backed by capital commitments visible in SEC filings.
+**The model pipeline has funding.** [Gemini 3.5 Flash is generally available](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/). [Gemini 3.5 Pro GA was targeted for June 2026](https://tech.yahoo.com/ai/gemini/articles/where-gemini-3-5-pro-200026497.html) by Pichai at Google I/O, though the date has since slipped. [Gemini 4 is in training](https://www.searchenginejournal.com/pichai-says-google-needs-gemini-4-to-compete-at-the-frontier/583214/). This capital raise funds all three. If you are building on Gemini, the model roadmap is now backed by capital commitments visible in SEC filings.
 
 **Google Cloud is not going away.** This sounds obvious, but it matters. When a platform raises $84 billion to fund its infrastructure, it is not sunsetting in 18 months. Builder risk on Vertex AI lock-in is lower than it was before this week.
 
@@ -102,9 +102,9 @@ For builders, this translates to a specific dynamic: Vertex AI will have capacit
 
 **Gemini 3.5 Pro GA date.** The capital raise creates pressure to ship the next model tier. If Google's infrastructure is built out, the bottleneck shifts to model quality, and competitive pressure from Claude Opus 4.8 and GPT-5.5 is acute.
 
-**Vertex AI rate limit changes.** Current Gemini 1.5 Pro limits are 360 RPM at paid tier, 2M TPM. Watch for increases when Q3 capacity comes online.
+**Vertex AI rate limit changes.** Watch for published Gemini API rate-limit increases across tiers as Q3 capacity comes online.
 
-**Google Cloud Summit announcements.** Google typically makes pricing and capacity announcements at Cloud Next (September). The $80B raise will generate questions from enterprise customers about what it means for their Cloud credits and committed-use agreements.
+**Google Cloud Summit announcements.** Google typically makes pricing and capacity announcements at [Google Cloud Next, its flagship conference held each spring](https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26), and at regional Cloud Summit events throughout the year. The $80B raise will generate questions from enterprise customers about what it means for their Cloud credits and committed-use agreements.
 
 **Power agreements and permitting.** The main constraint on AI data center scale in 2026 is not money — it is power and permits. Watch whether Alphabet's data center announcements include power purchase agreements that would constrain or enable the build timeline.
 

@@ -4,9 +4,10 @@ date: 2026-06-04
 slug: grok-cloudflare-ai-gateway-june-4-2026-builder-guide
 description: "xAI's Grok models — including Grok 4.3 and Grok Build 0.1 — are now fully live on Cloudflare AI Gateway. Here's what that means for builders routing between frontier models."
 tags: ["xAI", "Grok", "Cloudflare", "AI Gateway", "model routing", "developer tools", "API"]
+sources_audited: 2026-07-29
 ---
 
-On June 4, 2026, Elon Musk confirmed on X that the xAI–Cloudflare partnership is fully active, with Grok models now running on Cloudflare's global infrastructure. That one sentence signals something worth unpacking: Grok is no longer just an API you call directly. It is now part of the AI routing layer that many production builders are already using.
+On June 4, 2026, Cloudflare confirmed on X that its partnership with xAI is fully active, with Grok LLMs plus audio, image, and video models now running through [Cloudflare AI Gateway](https://x.com/CloudflareDev/status/2062281694162629119), billed directly through Cloudflare with no additional xAI auth or API keys required. That one sentence signals something worth unpacking: Grok is no longer just an API you call directly. It is now part of the AI routing layer that many production builders are already using.
 
 This guide covers what models are available, what Cloudflare AI Gateway actually gives you, how to connect, and what the strategic picture looks like for builders managing multiple AI providers.
 
@@ -22,7 +23,7 @@ Cloudflare AI Gateway is not a model. It is a control plane that sits between yo
 - **Provider fallback** — if one model fails or is unavailable, route automatically to another
 - **Single billing dashboard** — see your spend across OpenAI, Anthropic, Google, Groq, xAI, and others in one place
 
-The gateway currently supports over 350 models. Before June 4, the major gap was xAI. That gap is now closed.
+(Source: [Cloudflare AI Gateway product page](https://www.cloudflare.com/products/ai-gateway/).) Before June 4, the major gap in Cloudflare's provider roster was xAI. That gap is now closed.
 
 ---
 
@@ -32,39 +33,39 @@ Cloudflare AI Gateway now routes to four categories of xAI models:
 
 ### Grok 4.3 (Text and Reasoning)
 
-xAI's current primary text model. Features:
+xAI's current primary text model. Features ([source: xAI model docs](https://docs.x.ai/docs/models)):
 
 - 1 million token context window
 - Text and image inputs
 - Function calling and structured outputs
 - Configurable reasoning effort (think-lite, think, think-hard modes)
 
-**Pricing via xAI API:**
+**Pricing via xAI API** (for prompts under 200K tokens; higher-context requests bill at a higher rate — see [xAI model docs](https://docs.x.ai/docs/models)):
 - Input: $1.25 per million tokens
 - Cached input: $0.20 per million tokens
 - Output: $2.50 per million tokens
 
 ### Grok Build 0.1 (Coding Agent)
 
-Released May 20, 2026 and in public API beta since May 28. Designed specifically for software engineering tasks with always-on reasoning.
+Released May 20, 2026 ([OpenRouter model page](https://openrouter.ai/x-ai/grok-build-0.1)) and in public API beta since May 29, when [xAI announced](https://x.com/xai/status/2060392249402552457) general API availability ([recap](https://www.bighatgroup.com/blog/xai-weekly-2026-06-03/)). Designed specifically for software engineering tasks with always-on reasoning.
 
 - 256K token context window
 - Tool calling and structured outputs
 - Text and image inputs
 - Optimized for multi-step code generation and debugging
 
-**Pricing:**
+**Pricing** ([source: xAI model docs](https://docs.x.ai/docs/models)):
 - Input: $1.00 per million tokens
 - Cached input: $0.20 per million tokens
 - Output: $2.00 per million tokens
 
 ### Grok Imagine Image
 
-Generates and edits images from text and reference-image inputs. A higher-fidelity variant (Grok Imagine Image Quality) is available for sharper detail.
+Generates and edits images from text and reference-image inputs. A higher-fidelity variant, Grok Imagine Image Quality, is available for sharper detail at $0.05 per image versus $0.02 for the standard tier ([source: xAI model docs](https://docs.x.ai/docs/models)).
 
 ### Grok Imagine Video
 
-Generates, edits, and extends video from text and image inputs with native synchronized audio.
+Generates video from text or image inputs, extends existing clips from their final frame, and produces native synchronized audio (background music, sound effects, and lip-synced dialogue) in the same generation pass ([source: Grok Imagine Video 1.5 capabilities](https://morphic.com/resources/models/grok-imagine-video-1-5)).
 
 ---
 
@@ -87,9 +88,9 @@ You need three things:
 2. Your gateway name (created in the Cloudflare dashboard)
 3. A valid xAI API token
 
-For authentication when using provider-native endpoints, use the `cf-aig-authorization` header in place of the standard authorization header.
+For authentication when using provider-native endpoints, use the `cf-aig-authorization` header in place of the standard authorization header ([source: Cloudflare AI Gateway authentication docs](https://developers.cloudflare.com/ai-gateway/configuration/authentication/); Cloudflare's current recommendation is to use its REST API with a standard `Authorization` header for new integrations).
 
-Grok's API follows the OpenAI schema, so if your code already works with OpenAI's client library, the model name is the only other thing that changes.
+Grok's API follows the OpenAI schema, so if your code already works with OpenAI's client library, the model name is the only other thing that changes ([source: Cloudflare AI Gateway — xAI provider docs](https://developers.cloudflare.com/ai-gateway/usage/providers/grok/)).
 
 ```python
 from openai import OpenAI
@@ -129,7 +130,7 @@ Most teams running multiple AI providers today maintain multiple logging integra
 
 ## The Bigger Picture: AI Routing as Infrastructure
 
-The Grok–Cloudflare partnership is one data point in a pattern. OpenRouter, which routes between 350+ models, raised $113M from Google and Nvidia in late May 2026. Cloudflare AI Gateway is expanding its provider roster aggressively. Both are betting that the infrastructure layer between applications and models becomes as important as the models themselves.
+The Grok–Cloudflare partnership is one data point in a pattern. OpenRouter, which routes between 400+ models, raised a $113M Series B led by CapitalG (Alphabet's growth fund) with participation from NVentures (Nvidia's venture arm), announced May 28, 2026 ([OpenRouter's announcement](https://openrouter.ai/blog/announcements/series-b/); [TechCrunch coverage](https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/)). Cloudflare AI Gateway is expanding its provider roster aggressively. Both are betting that the infrastructure layer between applications and models becomes as important as the models themselves.
 
 For builders, the practical implication is straightforward: you do not have to commit to a single frontier model vendor at the application layer. The routing infrastructure is mature enough that swapping or combining providers is an operational question, not an engineering project. Grok's availability on Cloudflare AI Gateway is one more reason to route through a gateway rather than hardcoding provider calls.
 

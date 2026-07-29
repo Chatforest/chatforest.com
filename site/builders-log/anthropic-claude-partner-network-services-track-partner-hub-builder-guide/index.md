@@ -5,7 +5,7 @@
 
 Anthropic [announced the Services Track and Partner Hub of the Claude Partner Network on June 3, 2026](https://www.anthropic.com/news/services-track-partner-hub). These two additions formalize what the program actually is: a structured tier system for consulting and SI firms deploying Claude for enterprise customers, plus a [public-facing directory that enterprise buyers can use to find and evaluate those firms](https://qz.com/anthropic-claude-partner-network-services-track-hub-enterprise-060326).
 
-The broader Claude Partner Network launched in March 2026 with a $100M investment. Since then, more than 40,000 firms have applied, and more than 10,000 consultants have earned individual Claude certifications. The Services Track and Partner Hub convert that volume into something buyers can act on.
+The broader Claude Partner Network [launched in March 2026 with a $100M investment](https://www.anthropic.com/news/services-track-partner-hub) in partner training, technical support, and shared marketing. Since then, [more than 40,000 firms have applied, and more than 10,000 consultants have earned individual Claude certifications](https://www.channeldive.com/news/anthropic-claude-partner-program-services-track/821936/). The Services Track and Partner Hub convert that volume into something buyers can act on.
 
 ---
 
@@ -16,7 +16,7 @@ The Services Track is a three-tier structure that reflects how much Claude deliv
 Three tiers:
 
 ### Select
-The entry tier. Requirements:
+The entry tier. [Requirements](https://www.anthropic.com/news/services-track-partner-hub):
 - At least **10 active certified individuals** on staff
 - At least **2 joint customers** deployed in production in the past 12 months
 - At least **1 public customer story** (case study, reference, testimonial)
@@ -24,7 +24,7 @@ The entry tier. Requirements:
 Select is where a new Claude practice starts. It is achievable for a boutique firm or a regional SI that has shipped two real deployments.
 
 ### Preferred
-The mid tier. Requirements:
+The mid tier. [Requirements](https://www.anthropic.com/news/services-track-partner-hub):
 - At least **100 active certified individuals**
 - At least **15 joint customers** deployed in production
 - At least **3 public customer stories**
@@ -32,7 +32,7 @@ The mid tier. Requirements:
 Preferred is meaningful differentiation. A firm at this level has shipped Claude in volume, has a large certified practice, and has generated enough successful deployments to publish three references. For enterprise buyers doing a serious evaluation, Preferred signals that a firm has done this more than once or twice.
 
 ### Global Premier
-The top tier. Requirements:
+The top tier. [Requirements](https://www.anthropic.com/news/services-track-partner-hub):
 - At least **1,000 active certified individuals**
 - At least **100 joint customers** deployed, across **3 or more regions**
 - At least **15 public customer stories**
@@ -42,7 +42,7 @@ Global Premier targets the large SIs and major consulting firms running deep Cla
 
 ### Advancement schedule
 
-Tier reviews happen on **January 1 and July 1** each year. In this first year there is an additional review on **October 1, 2026**. Promotions process on those dates — a firm that crosses the Preferred threshold in August will not see its tier update until October 1 this year, then January 1 thereafter.
+[Tier reviews happen on **January 1 and July 1** each year, with an additional review on **October 1, 2026** in this first year](https://www.anthropic.com/news/services-track-partner-hub). Promotions process on those dates — a firm that crosses the Preferred threshold in August will not see its tier update until October 1 this year, then January 1 thereafter.
 
 This matters for firms planning certification sprints or customer deployment campaigns: time them to have evidence on the books before a review date.
 
@@ -54,11 +54,11 @@ The Partner Hub is a portal with two faces: one for partners, one for buyers.
 
 ### For partners
 
-Partners get a **daily-updated tracking dashboard** that shows exactly where the firm stands against each tier's requirements — certified headcount, active deployments, published references. No ambiguity about what is needed to advance. The numbers update daily, so you can track progress in real time.
+Partners get a [**daily-updated tracking dashboard**](https://www.anthropic.com/news/services-track-partner-hub) that shows exactly where the firm stands against each tier's requirements — certified headcount, active deployments, published references. No ambiguity about what is needed to advance. The numbers update daily, so you can track progress in real time.
 
-Partners also get a **deal registration system** inside the Hub, which allows partner firms to register active opportunities and track their status.
+Partners also get a [**deal registration system**](https://www.anthropic.com/news/services-track-partner-hub) inside the Hub, which allows partner firms to register active opportunities and track their status.
 
-The new **MCP connector** is the technically interesting addition. Partners can connect the Partner Hub to Claude directly through MCP. Once connected, you can ask Claude natural-language questions about your partnership status:
+The new [**MCP connector**](https://www.anthropic.com/news/services-track-partner-hub) is the technically interesting addition. Partners can connect the Partner Hub to Claude directly through MCP. Once connected, you can ask Claude natural-language questions about your partnership status:
 
 - "Where does our firm stand against Preferred tier requirements?"
 - "How many of our consultants hold active certifications?"
@@ -68,7 +68,7 @@ The Hub answers through Claude. This is an enterprise-grade workflow integration
 
 ### For enterprise buyers
 
-The Partner Hub includes a **public directory** of all partner firms, with their tier, certified headcount, number of deployed joint customers, and published references visible to anyone evaluating partners. There is no obscuring of tier status — a Select firm cannot present itself as Preferred in the Hub.
+The Partner Hub includes a [**public directory**](https://www.anthropic.com/news/services-track-partner-hub) of all partner firms, with their tier, certified headcount, number of deployed joint customers, and published references [visible to anyone evaluating partners](https://qz.com/anthropic-claude-partner-network-services-track-hub-enterprise-060326). There is no obscuring of tier status — a Select firm cannot present itself as Preferred in the Hub.
 
 Enterprise buyers evaluating Claude implementation partners now have a standardized signal:
 - How many certified practitioners does the firm have?
@@ -84,9 +84,9 @@ Previously, that evaluation required calls, demos, and references that vendors c
 
 ### If you are building a Claude consulting or implementation practice
 
-The certification requirement is individual, not firm-level. Certifications must be held by named individuals, and "active" means current — expired certifications do not count. If you are building toward Select (10 certified) or Preferred (100 certified), you need a plan for keeping certifications current as new Claude capabilities release and the curriculum updates.
+The certification requirement is individual, not firm-level. [Anthropic counts a certification as "active" only if it is current and the individual has used Claude in the past 90 days](https://www.anthropic.com/news/services-track-partner-hub) — a lapsed or unused certification does not count. If you are building toward Select (10 certified) or Preferred (100 certified), you need a plan for keeping certifications current as new Claude capabilities release and the curriculum updates.
 
-The production deployment requirement is the harder gate at Preferred (15 customers) and Global Premier (100 customers). Proofs-of-concept, pilots, and sandbox environments do not count. Customers must be in production. Start tracking deployments against this threshold now, before the October review date.
+The production deployment requirement is the harder gate at Preferred (15 customers) and Global Premier (100 customers). Start tracking deployments against this threshold now, before the October review date.
 
 The public customer story requirement means you need clients who will go on record. Build that into your contract and engagement process early — getting permission retroactively is harder than building it in at the start.
 
