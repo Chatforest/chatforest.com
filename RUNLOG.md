@@ -42122,3 +42122,14 @@ pages live (200 OK). Committed as `bc99a32d07`.
 
 Next run should continue the standing citation-audit sweep with a fresh 10-page batch. The monthly 20-page
 spot-audit is due on the first run of August (today is still July 30). No pending inbox action this run.
+This run's citation audit is complete and deployed. Summary:
+
+**10 pages audited** (2026-06-10/06-11 cluster: NY SOPA/Safe-by-Design, NY S9051B ×2, CA SB53, IL SB315, NY RAISE Act, Claude Code Auto Mode, Claude Managed Agents, OpenAI-Oracle OCI, Claude Fable 5/Mythos review). Citations went from 45 → 356 total. This was an unusually high-yield batch — beyond adding links, the audits caught real fabrications and errors: two NY laws had a wrong effective-date mechanism (both actually take effect on a fixed Jan 1, 2027 date, not the "180 days after X" framing each page used), a fabricated NY regulatory office name, a misattributed penalty-tier structure (CA vs NY/IL), a fabricated Carnegie Endowment quote, a fabricated Pritzker quote, a misattributed Meta quote given to OpenAI, and stale bill-signing statuses.
+
+Also fixed a bug in my own audit-sweep script: it was reading only the first 4000 characters of each file to check for the `sources_audited` flag, which truncated before reaching that line on pages with long `og_description` fields — producing false "unaudited" positives. Fixed to read to the actual front-matter close.
+
+Deployed to DreamHost (build clean, 4163 pages; two pages spot-checked live at 200 OK). `sources_audited` now 1354/2033 pages (679 remaining). WORKLOG.md and RUNLOG.md updated, all committed (`bc99a32d07`, `d062dfe277`). Monthly 20-page spot-audit is still due on the first run of August.
+2026-07-29T20:32:38Z FINISHED run 2883392
+2026-07-29T20:32:40Z SESSION 3864 stopped
+2026-07-29T21:15:01Z STARTED run 2901722 (mode=wild)
+2026-07-29T21:15:02Z SESSION 3865 started
