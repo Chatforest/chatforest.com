@@ -6,6 +6,7 @@ og_description: "OpenAI frontier models and Codex are coming to OCI Marketplace.
 content_type: "Builder's Log"
 categories: ["Models", "OpenAI", "Cloud Platforms"]
 tags: ["openai", "oracle", "oci", "cloud", "enterprise", "codex", "gpt-5-5", "stargate", "billing", "builder-guide", "june-2026"]
+sources_audited: 2026-07-30
 ---
 
 [OpenAI announced](https://openai.com/index/openai-on-oracle-cloud/) on June 11, 2026 that its frontier models and Codex will be available through the Oracle Cloud Infrastructure Marketplace. The key detail: Oracle customers can apply [**existing Universal Credits**](https://itbrief.news/story/openai-oracle-to-offer-models-on-oci-marketplace) toward OpenAI API usage — no separate OpenAI billing account or purchasing agreement required.
@@ -18,12 +19,12 @@ This follows the AWS Bedrock launch by ten days. The pattern is now clear: OpenA
 
 The announcement covers two product categories:
 
-- **OpenAI frontier models** — GPT-5.5 and the current GPT family. OpenAI has not published a specific model list for OCI yet, but the AWS Bedrock launch (GA June 1) includes GPT-5.5 and GPT-5.4. Expect parity.
+- **OpenAI frontier models** — [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5) and the current GPT family. OpenAI has not published a specific model list for OCI yet, but the [AWS Bedrock launch (GA June 1)](https://www.aboutamazon.com/news/aws/bedrock-openai-models) includes GPT-5.5 and GPT-5.4. Expect parity.
 - **Codex** — OpenAI's agentic coding product. Available via API; IDE integrations (VS Code, JetBrains) work through Codex whether accessed via OpenAI directly or through a cloud provider.
 
-What is **not** in this announcement: the open-weight variants (`gpt-oss-20b`, `gpt-oss-120b`) that Oracle separately hosts on B200 clusters in its UAE Central region. Those are a different track.
+What is **not** in this announcement: the open-weight variants (`gpt-oss-20b`, `gpt-oss-120b`) that Oracle separately hosts on [B200 clusters in its UAE Central region](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/gpt-oss-abudhabi.htm). Those are a different track.
 
-**Availability:** "Coming weeks" from June 11. No specific GA date. The AWS version launched GA roughly six weeks after its own announcement — treat OCI availability as Q3 2026.
+**Availability:** "Coming weeks" from June 11. No specific GA date. [The AWS version launched GA about five weeks after its limited-preview announcement](https://www.aboutamazon.com/news/aws/bedrock-openai-models) (preview April 28, GA June 1) — treat OCI availability as Q3 2026.
 
 ---
 
@@ -34,7 +35,7 @@ This is the core value proposition for enterprise customers.
 - Usage bills against your **Oracle Universal Cloud Credits** — the same pool that covers your compute, storage, and database spend
 - No new OpenAI account to provision, no separate credit card, no parallel budget approval process
 - Your existing Oracle contract governance applies: security review, spend controls, cost allocation tags, audit trails
-- Pricing at the API level is expected to match OpenAI first-party rates (the AWS launch confirmed rate parity). For reference: GPT-5.5 runs $5 per million input tokens, $30 per million output tokens at OpenAI list price
+- Pricing at the API level is expected to match OpenAI first-party rates ([the AWS launch confirmed rate parity](https://www.aboutamazon.com/news/aws/bedrock-openai-models)). For reference: [GPT-5.5 runs $5 per million input tokens, $30 per million output tokens](https://developers.openai.com/api/docs/pricing) at OpenAI list price
 
 The practical implication: an enterprise that already has $2M in Oracle Universal Credits committed for the year can now route OpenAI inference spend against that commitment without a new procurement cycle. For organizations where "approved vendor" status for AI APIs takes months of legal and security review, this is a significant unblock.
 
@@ -67,7 +68,7 @@ If you are not an OCI customer, this announcement does not change anything for y
 
 This is not a one-off partnership deal — it is the commercial distribution layer sitting on top of the Stargate infrastructure deal.
 
-**Stargate** is the OpenAI + Oracle + SoftBank joint venture announced in January 2025 to build US AI data center infrastructure. Oracle is building 4.5 GW of additional capacity beyond the original Abilene, Texas site; total projected at 5 GW+, 2M+ chips, $300B+ over five years. SoftBank carries financial responsibility; OpenAI carries operational responsibility.
+**Stargate** is the OpenAI + Oracle + SoftBank joint venture [announced in January 2025](https://group.softbank/en/news/press/20250122) to build US AI data center infrastructure ($500B pledged over four years, $100B deployed immediately). [Oracle is building 4.5 GW of additional capacity](https://openai.com/index/stargate-advances-with-partnership-with-oracle/) beyond the original Abilene, Texas site, bringing the total to over 5 GW and 2M+ chips under development. That Oracle build-out is [reported to carry a $300 billion, five-year price tag](https://siliconangle.com/2025/09/10/openai-oracle-strike-300b-cloud-computing-deal-power-ai/) (Oracle/OpenAI have not published the dollar figure themselves; it comes from Wall Street Journal reporting corroborated by multiple outlets). Per the original January 2025 announcement, SoftBank carries financial responsibility; OpenAI carries operational responsibility.
 
 The June 11 OCI Marketplace announcement closes the loop:
 

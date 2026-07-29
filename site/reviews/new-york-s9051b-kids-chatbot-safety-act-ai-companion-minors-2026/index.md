@@ -3,23 +3,23 @@
 > New York passed S9051B unanimously (137-0 / 60-0), banning AI companion chatbots from using unsafe features with minors — including pretending to be human, engaging in flattery, and promoting self-harm. Gov. Hochul has until December 31, 2026 to sign.
 
 
-**At a glance:** New York's legislature [passed S9051B](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/senator-kristen-gonzalez-prioritizes-safety-young) — the *Kids Chatbot Safety Act* — by unanimous votes of 137-0 in the Assembly and 60-0 in the Senate before adjourning June 5, 2026. The bill prohibits AI companion chatbots from using a defined list of "unsafe features" when interacting with minors under 18. Governor Kathy Hochul, who has publicly proposed similar restrictions, has until December 31, 2026 to sign, veto, or allow it to pass unsigned. If enacted, it takes effect January 1, 2027.
+**At a glance:** New York's legislature [passed S9051B](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/senator-kristen-gonzalez-prioritizes-safety-young) — the *Kids Chatbot Safety Act* — by [unanimous votes of 137-0 in the Assembly and 60-0 in the Senate](https://www.transparencycoalition.ai/news/new-york-lawmakers-pass-kids-ai-chatbot-safety-bill-and-two-transparency-acts) before adjourning [June 5, 2026](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B). The bill prohibits AI companion chatbots from using a defined list of "unsafe features" when interacting with minors under 18. Governor Kathy Hochul, who [has publicly proposed similar restrictions](https://www.governor.ny.gov/news/protecting-our-kids-governor-hochul-announces-nation-leading-proposals-protect-kids-online), has until [December 31, 2026 to sign, veto, or allow it to pass unsigned](https://www.transparencycoalition.ai/news/new-york-lawmakers-pass-kids-ai-chatbot-safety-bill-and-two-transparency-acts). As of this writing (verified 2026-07-30), the bill remains unsigned and pending before the Governor. If enacted, it [takes effect January 1, 2027](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B).
 
 ---
 
 ## Why This Bill Exists
 
-In October 2024, Megan Garcia filed a federal lawsuit in Florida alleging that Character.AI's chatbot contributed to the suicide of her 14-year-old son, Sewell Setzer III. Court documents described the boy isolating himself from real relationships, engaging in sexualized conversations with the chatbot, and receiving responses that encouraged the behavior. The case catalyzed legislative action across the country.
+In [October 2024, Megan Garcia filed a federal lawsuit in Florida](https://www.courtlistener.com/docket/69300919/garcia-v-character-technologies-inc/) alleging that Character.AI's chatbot contributed to the suicide of her 14-year-old son, Sewell Setzer III. Reporting on the case, drawing on the complaint and court record, described [the boy growing isolated as he formed a romantic and sexual relationship with the chatbot](https://www.nbcwashington.com/investigations/moms-lawsuit-blames-14-year-old-sons-suicide-on-ai-relationship/3967878/), and the bot [responding to his expressed suicidal thoughts without redirecting him to help](https://www.nbcwashington.com/investigations/moms-lawsuit-blames-14-year-old-sons-suicide-on-ai-relationship/3967878/). The case catalyzed legislative action across the country.
 
-By January 2026, Character.AI and Google had agreed to mediate settlements with families in multiple states. The lawsuits did not go away — but the legal exposure made clear that AI companion platforms operating without guardrails for minor users faced significant liability.
+By [January 2026, Character.AI and Google had agreed to mediate settlements](https://techcrunch.com/2026/01/07/google-and-character-ai-negotiate-first-major-settlements-in-teen-chatbot-death-cases/) with families in [multiple states — Florida, Colorado, New York, and Texas](https://openclassactions.com/lawsuits/character-ai-google-teen-harm-lawsuits-settlement.php). The lawsuits did not go away — but the legal exposure made clear that AI companion platforms operating without guardrails for minor users faced significant liability.
 
-New York did not wait for litigation outcomes. Senator Kristen Gonzalez introduced S9051B in partnership with Attorney General Letitia James and Common Sense Media. The bill targets the specific behaviors that made Character.AI legally vulnerable: emotional manipulation, fake intimacy, and harm escalation that the platform's engagement optimization rewarded.
+New York did not wait for litigation outcomes. Senator Kristen Gonzalez introduced S9051B [in partnership with Attorney General Letitia James and Common Sense Media](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/senator-kristen-gonzalez-prioritizes-safety-young). The bill targets the specific behaviors that made Character.AI legally vulnerable: emotional manipulation, fake intimacy, and harm escalation that the platform's engagement optimization rewarded.
 
 ---
 
 ## What S9051B Prohibits
 
-The bill creates **Article 48 of New York General Business Law**, titled "Prohibition on Unsafe AI Companion Features for Minors." It bars operators from providing AI companions with any "unsafe AI companion feature" when the user is a minor.
+The bill creates **[Article 48 of New York General Business Law](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B)**, titled "Prohibition on Unsafe AI Companion Features for Minors." It bars operators from providing AI companions with any "unsafe AI companion feature" when the user is a minor.
 
 The prohibited features are specific and behavioral:
 
@@ -47,7 +47,7 @@ The prohibited features are specific and behavioral:
 
 ## What It Doesn't Cover
 
-The bill applies to *AI companions* — systems designed for open-ended personal interaction. It does not apply when an AI system serves solely:
+The bill applies to *AI companions* — systems designed for open-ended personal interaction. It does not apply when an [AI system serves solely](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B):
 
 - Customer service or product information (limited to those specified purposes)
 - Efficiency improvements or technical assistance
@@ -59,13 +59,13 @@ This exemption structure is deliberate. A chatbot that helps a minor configure t
 
 ## Enforcement
 
-The New York Attorney General enforces S9051B. Available remedies include:
+The [New York Attorney General enforces S9051B](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B). Available remedies include:
 
 - **Injunctive relief** — court orders halting prohibited features
 - **Restitution and disgorgement of profits** — clawing back revenue from violations
 - **Damages**
 - **Civil penalties up to $25,000 per violation**
-- **Data destruction orders**
+- **Data destruction orders** — including destruction of unlawfully obtained data and any algorithm trained on it
 
 The AG must also maintain a public complaint website where users and parents can report violations. Joint and several liability applies to affiliated entities that structure arrangements to evade the law.
 
@@ -73,7 +73,7 @@ The AG must also maintain a public complaint website where users and parents can
 
 ## Governor Hochul's Position
 
-The unanimous legislative vote removes the usual ambiguity about whether Hochul will sign. More importantly, Hochul had *already* proposed similar measures: her 2026 executive proposals included "Nation-Leading Proposals to Protect Kids Online, Restrict AI Chatbots and Combat the Youth Mental Health Crisis."
+The unanimous legislative vote removes the usual ambiguity about whether Hochul will sign. More importantly, Hochul had *already* proposed similar measures: her [January 2026 executive proposals included "Nation-Leading Proposals to Protect Kids Online, Restrict AI Chatbots and Combat the Youth Mental Health Crisis"](https://www.governor.ny.gov/news/protecting-our-kids-governor-hochul-announces-nation-leading-proposals-protect-kids-online).
 
 That language is close enough to S9051B's purpose that a veto would be politically inconsistent. The most likely outcome is a signature — the only question is timing within the December 31 deadline.
 
@@ -86,10 +86,10 @@ S9051B is not the only AI bill awaiting Hochul's action. When the New York legis
 | Bill | Name | What It Does |
 |------|------|--------------|
 | **S9051B** | Kids Chatbot Safety Act | Bans unsafe AI companion features for minors |
-| **A6578B** | Training Data Transparency Act | Requires AI developers to post training data summaries on their websites |
-| **S6954** | AI Disclosure Act | Mandates provenance data on synthetic content (creation date, systems used) |
-| **S8451B** | FAIR News Act | Requires news media to label content "substantially created" by generative AI; requires disclosure to journalists when AI tools are used in newsrooms |
-| **A3411** | GenAI Output Warning | Requires generative AI systems to display notices that outputs "may be inaccurate" |
+| **[A6578B](https://www.nysenate.gov/legislation/bills/2025/A6578/amendment/B)** | Training Data Transparency Act | Requires AI developers to post training data summaries on their websites |
+| **[S6954](https://www.nysenate.gov/legislation/bills/2025/S6954/amendment/B)** | AI Disclosure Act (Stop Deepfakes Act) | Mandates provenance data on synthetic content |
+| **[S8451B](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B)** | FAIR News Act | Requires news media to label content "substantially created" by generative AI; requires disclosure to journalists when AI tools are used in newsrooms |
+| **[A3411](https://www.nysenate.gov/legislation/bills/2025/A3411/amendment/B)** | GenAI Output Warning | Requires generative AI systems to display notices that outputs "may be inaccurate" |
 
 All five await the governor's decision. Hochul has until December 31, 2026 for each. They address different problems: S9051B is consumer protection. A6578B and S6954 are transparency requirements for developers. S8451B is media industry regulation. A3411 is a disclosure floor for all AI-generated output.
 
@@ -128,7 +128,7 @@ We will update this article when Hochul acts.
 
 ## Tracking
 
-- **Bill text:** NY State Senate Bill 2025-S9051B (nysenate.gov)
+- **Bill text:** [NY State Senate Bill 2025-S9051B](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B) (nysenate.gov)
 - **NY RAISE Act:** New York's frontier AI safety law (signed 2025) — [see our coverage](/reviews/new-york-raise-act-frontier-ai-safety-law-2025-2026/)
 - **CA SB53:** California's frontier AI transparency law — [see our coverage](/reviews/california-sb53-tfaia-transparency-frontier-ai-act-2025-2026/)
 - **IL SB315:** Illinois frontier AI audit mandate — [see our coverage](/reviews/illinois-sb315-ai-safety-measures-act-audit-frontier-2026/)
@@ -143,5 +143,10 @@ We will update this article when Hochul acts.
 - [Senator Gonzalez Prioritizes Safety for Young People Using AI, Passes Regulations on Unsafe AI Chatbot Features](https://www.nysenate.gov/newsroom/press-releases/2026/kristen-gonzalez/senator-kristen-gonzalez-prioritizes-safety-young) — NY State Senate, 2026
 - [New York Set to Ban Key AI Companion Chatbot Features for Minors](https://dataprivacy.foxrothschild.com/2026/06/articles/general-privacy-data-security-news-developments/new-york-set-to-ban-key-ai-companion-chatbot-features-for-minors-in-first%E2%80%91of%E2%80%91its%E2%80%91kind-law/) — Fox Rothschild Data Privacy Blog
 - [New York lawmakers pass kids chatbot safety bill and two AI transparency acts](https://www.transparencycoalition.ai/news/new-york-lawmakers-pass-kids-ai-chatbot-safety-bill-and-two-transparency-acts) — Transparency Coalition
-- [NY State Senate Bill 2025-S9051A](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/A) — NY Senate (bill text)
+- [NY State Senate Bill 2025-S9051B](https://www.nysenate.gov/legislation/bills/2025/S9051/amendment/B) — NY Senate (final bill text, vote record, and status)
+- [Garcia v. Character Technologies, Inc., 6:24-cv-01903](https://www.courtlistener.com/docket/69300919/garcia-v-character-technologies-inc/) — CourtListener docket (M.D. Fla.)
+- [Mom's lawsuit blames 14-year-old son's suicide on AI relationship](https://www.nbcwashington.com/investigations/moms-lawsuit-blames-14-year-old-sons-suicide-on-ai-relationship/3967878/) — NBC Washington
+- [Google and Character.AI negotiate first major settlements in teen chatbot death cases](https://techcrunch.com/2026/01/07/google-and-character-ai-negotiate-first-major-settlements-in-teen-chatbot-death-cases/) — TechCrunch, Jan. 7, 2026
+- [Character.AI & Google Move to Settle Teen Chatbot Harm Lawsuits](https://openclassactions.com/lawsuits/character-ai-google-teen-harm-lawsuits-settlement.php) — Open Class Actions
+- [Protecting Our Kids: Governor Hochul Announces Nation-Leading Proposals to Protect Kids Online, Restrict AI Chatbots and Combat the Youth Mental Health Crisis](https://www.governor.ny.gov/news/protecting-our-kids-governor-hochul-announces-nation-leading-proposals-protect-kids-online) — Governor's Press Office, Jan. 5, 2026
 

@@ -6,15 +6,16 @@ og_description: "Claude Managed Agents June 9 update: cron-scheduled agent runs 
 content_type: "Builder's Log"
 categories: ["Agents", "Anthropic", "Infrastructure"]
 tags: ["claude", "managed-agents", "scheduling", "cron", "vault", "credentials", "api-keys", "automation", "infrastructure", "anthropic", "builder-guide", "june-2026"]
+sources_audited: 2026-07-30
 ---
 
-Anthropic shipped two new Claude Managed Agents capabilities on June 9, 2026, alongside the Claude Fable 5 launch. Neither of them made the main announcement headline, but both address recurring operational pain points for builders running agents in production.
+Anthropic shipped two new Claude Managed Agents capabilities on [June 9, 2026](https://platform.claude.com/docs/en/release-notes/overview#june-9-2026), the same day it [launched Claude Fable 5](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5). Neither of them made the main announcement headline, but both address recurring operational pain points for builders running agents in production.
 
 **Scheduled deployments** let you run a managed agent session on a cron schedule without owning any scheduler infrastructure.
 
 **Vault environment variables** let you inject API keys and other secrets into the agent's sandbox at execution time, without the model ever seeing the actual credential.
 
-Both are in public beta under the standard `managed-agents-2026-04-01` beta header.
+Both are in public beta under the standard `managed-agents-2026-04-01` beta header, per [Anthropic's announcement](https://claude.com/blog/whats-new-in-claude-managed-agents).
 
 ---
 
@@ -22,9 +23,9 @@ Both are in public beta under the standard `managed-agents-2026-04-01` beta head
 
 ### What It Does
 
-A scheduled deployment is a Claude Managed Agents deployment that fires automatically on a cron schedule. Each time the schedule triggers, the agent starts a new session and executes its task from scratch. When the task completes, the session ends. No session is left open between runs.
+A scheduled deployment is a Claude Managed Agents deployment that fires automatically on a cron schedule ([docs](https://platform.claude.com/docs/en/managed-agents/scheduled-deployments)). Each time the schedule triggers, the agent starts a new session and executes its task from scratch; when the task completes, the session ends, and no session is left open between runs, per [Anthropic's announcement](https://claude.com/blog/whats-new-in-claude-managed-agents).
 
-You can:
+[You can](https://claude.com/blog/whats-new-in-claude-managed-agents):
 - Pause a scheduled deployment without deleting it
 - Resume a paused deployment
 - Archive a completed or decommissioned deployment
@@ -40,7 +41,7 @@ Anthropic's managed scheduler eliminates that external dependency for the most c
 
 Cron scheduling is not event-driven scheduling. If you need an agent to run when a file is uploaded, when a webhook arrives, or when another system emits a signal — that is a different architecture. Scheduled deployments are for time-based recurrence, not event-based triggers.
 
-Anthropic has not published rate limits on how frequently you can schedule runs, maximum concurrent scheduled deployments per workspace, or what happens when a run overruns its scheduled interval. These are reasonable questions for production planning. Check the [scheduled deployments documentation](https://platform.claude.com/docs/en/managed-agents/scheduled-deployments) before committing to a deployment cadence.
+Anthropic's [scheduled deployments documentation](https://platform.claude.com/docs/en/managed-agents/scheduled-deployments) answers some of these questions directly: cron expressions support minute-level granularity as the finest schedule, actual execution is jittered by up to 15% of the interval between runs (a minimum of 5 seconds and a maximum of 9 minutes) to spread load, and a maximum of 1,000 scheduled deployments is supported per organization. What the documentation does not spell out is what happens if a run is still executing when the next scheduled trigger fires — each firing starts a new session regardless, which suggests overlapping runs of the same deployment are possible, though Anthropic doesn't say so explicitly. Confirm this behavior for your own use case before committing to a tight cadence.
 
 ---
 
@@ -48,9 +49,9 @@ Anthropic has not published rate limits on how frequently you can schedule runs,
 
 ### What It Does
 
-Claude Managed Agents vaults have supported OAuth credentials for some time. The June 9 update extends vault support to environment variable credentials: API keys, tokens, and other secrets that services expect to find in environment variables at runtime.
+Claude Managed Agents vaults already supported OAuth and static-bearer credentials for MCP servers before this update ([vaults documentation](https://platform.claude.com/docs/en/managed-agents/vaults#add-a-credential)). The [June 9 update](https://platform.claude.com/docs/en/release-notes/overview#june-9-2026) extends vault support to environment variable credentials: API keys, tokens, and other secrets that services expect to find in environment variables at runtime.
 
-The mechanism works in two stages:
+The mechanism works in two stages, per [Anthropic's vaults documentation](https://platform.claude.com/docs/en/managed-agents/vaults#add-a-credential):
 
 1. You add the credential to your vault and attach it to a deployment by reference. The deployment configuration stores the vault reference, not the secret value.
 2. When the agent session starts, the sandbox receives an environment variable with a placeholder value. At the network boundary — before requests leave the sandbox to reach the approved domain — the platform substitutes the actual credential.
@@ -59,7 +60,7 @@ The model running in the session never sees the actual API key. It sees the plac
 
 ### Supported Services
 
-The launch documentation lists the following CLIs and services as supported vault credential targets: Browserbase, KERNEL, Notion, Ramp, and Sentry.
+[Anthropic's launch announcement](https://claude.com/blog/whats-new-in-claude-managed-agents) lists the following CLIs and services as supported vault credential targets: Browserbase, KERNEL, Notion, Ramp, and Sentry.
 
 These represent the services that authenticate via HTTP headers or environment variable injection and have been validated against Anthropic's domain restriction framework. The list will expand; if a service you need is not on it, that is a constraint to track.
 
@@ -87,16 +88,17 @@ It's worth stepping back to see what the feature set looks like now:
 
 | Capability | Status as of June 11 |
 |---|---|
-| Agent loop infrastructure (session management, context tracking) | GA |
-| Public beta (standard usage) | GA |
-| Webhooks and multi-agent orchestration | Public beta |
-| Outcomes (success criteria definition) | Public beta |
-| Memory across sessions | Public beta |
-| Self-hosted sandboxes | Public beta |
-| MCP tunnels (private network access) | Research preview |
-| OAuth vault credentials | Public beta |
+| [Claude Managed Agents (core harness)](https://platform.claude.com/docs/en/release-notes/overview#april-8-2026) | Public beta (since April 8, 2026) |
+| [Memory across sessions](https://platform.claude.com/docs/en/release-notes/overview#april-23-2026) | Public beta (since April 23, 2026) |
+| [Multi-agent orchestration](https://platform.claude.com/docs/en/release-notes/overview#may-6-2026) | Public beta (since May 6, 2026) |
+| [Outcomes (success criteria definition)](https://platform.claude.com/docs/en/release-notes/overview#may-6-2026) | Public beta (since May 6, 2026) |
+| [Webhooks](https://platform.claude.com/docs/en/managed-agents/webhooks) | Available (since May 6, 2026) |
+| [Self-hosted sandboxes](https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes) | Available (since May 19, 2026) |
+| [MCP tunnels](https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview) (private network access) | Research preview |
 | **Scheduled deployments** | **Public beta (new June 9)** |
 | **Vault environment variable credentials** | **Public beta (new June 9)** |
+
+(Claude Managed Agents overall remains in beta as a whole product — Anthropic's [overview documentation](https://platform.claude.com/docs/en/managed-agents/overview#beta-access) does not describe any part of it as generally available.)
 
 The trajectory is toward a complete infrastructure layer: Anthropic handles the agent loop, you define the task, the platform handles scheduling, secrets management, tool execution environment, and observability. The credential and scheduling updates push further in that direction by eliminating two common reasons to build infrastructure adjacent to your managed agent.
 
@@ -128,9 +130,9 @@ Two fewer layers to own. Two fewer things that can break at 3am.
 
 ## Availability
 
-Both features are in public beta and available to Claude for Work and enterprise plan customers. Access requires the `managed-agents-2026-04-01` beta header on API calls.
+Both features are in public beta. Per [Anthropic's Managed Agents documentation](https://platform.claude.com/docs/en/managed-agents/overview#beta-access), access to Claude Managed Agents is enabled by default for all API accounts — there's no separate enterprise or Claude for Work plan requirement — but every request needs a Claude API key and the `managed-agents-2026-04-01` beta header.
 
-Anthropic does not have a stated GA date for either feature.
+As of this writing, [Anthropic's announcement](https://claude.com/blog/whats-new-in-claude-managed-agents) does not state a GA date for either feature.
 
 ---
 

@@ -9,17 +9,18 @@ tags: ["anthropic", "claude", "fable-5", "mythos", "llm-review", "api", "ai-safe
 categories: ["reviews"]
 rating: 0
 author: "ChatForest"
+sources_audited: 2026-07-30
 ---
 
 **Editorial note:** ChatForest does not have access to Claude Fable 5 and has not tested it. This article is based on Anthropic's official announcement, the Claude API documentation, benchmark data from third-party evaluators, and published reporting from TechCrunch, CNBC, VentureBeat, and others. We do not claim hands-on testing.
 
 ---
 
-**At a glance:** Claude Fable 5. Launched June 9, 2026. API model ID: `claude-fable-5`. $10 per million input tokens, $50 per million output tokens. 1M token context window. Available on Claude API, Claude Platform on AWS, Amazon Bedrock, Vertex AI, and Microsoft Foundry. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
+**At a glance:** Claude Fable 5. [Launched June 9, 2026](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5). API model ID: `claude-fable-5`. [$10 per million input tokens, $50 per million output tokens](https://www.anthropic.com/news/claude-fable-5-mythos-5). 1M token context window. Available on Claude API, Claude Platform on AWS, Amazon Bedrock, Vertex AI, and Microsoft Foundry. Part of our **[AI Tools & Companies reviews](/categories/ai-tools/)**.
 
 ---
 
-On April 7, 2026, Anthropic launched Claude Mythos Preview — then announced it would not make the model publicly available. The reason: Mythos had autonomously discovered thousands of zero-day vulnerabilities across every major operating system and browser, found 271 security flaws in Firefox, and demonstrated expert-level autonomous cyberattack capability. Anthropic said the model was too capable for general release.
+On [April 7, 2026, Anthropic launched Claude Mythos Preview](https://red.anthropic.com/2026/mythos-preview/) — then announced it would not make the model publicly available. The reason: Mythos had autonomously discovered [thousands of zero-day vulnerabilities across every major operating system and browser](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/), found [271 security flaws in Firefox](https://www.helpnetsecurity.com/2026/04/22/claude-mythos-mozilla-vulnerabilities-scanning/), and demonstrated expert-level autonomous cyberattack capability. Anthropic said at the time: ["We do not plan to make Mythos Preview generally available."](https://red.anthropic.com/2026/mythos-preview/)
 
 Sixty-three days later, Anthropic launched Claude Fable 5.
 
@@ -29,13 +30,15 @@ Fable 5 is built on the same underlying model as Mythos. It is the Mythos-class 
 
 ## What Fable 5 Is
 
-Claude Fable 5 is Anthropic's most capable publicly available model. Anthropic describes it as built for "the most demanding reasoning and long-horizon agentic work." It shares its architecture with Claude Mythos 5 (the successor to Mythos Preview, available through Project Glasswing). The difference between Fable 5 and Mythos 5 is not capability — they are the same underlying model. The difference is three safety classifiers applied to Fable 5 that restrict certain categories of requests.
+Claude Fable 5 is Anthropic's most capable publicly available model. Anthropic describes it as built for ["the most demanding reasoning and long-horizon agentic work."](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5) It shares its architecture with [Claude Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) (the successor to Mythos Preview, available through [Project Glasswing](https://anthropic.com/glasswing)). The difference between Fable 5 and Mythos 5 is not capability — they are the same underlying model. The difference is three safety classifiers applied to Fable 5 that restrict certain categories of requests.
 
-The practical result: most users will never encounter a classifier. Anthropic reports the bio/chemistry classifier triggers in fewer than 5% of sessions, and it is designed conservatively — it catches some harmless requests.
+The practical result: most users will never encounter a classifier. [Anthropic reports that its safety classifiers, combined, trigger in fewer than 5% of sessions on average](https://www.anthropic.com/news/claude-fable-5-mythos-5), and that they are designed conservatively enough that some harmless requests still get caught.
 
 ---
 
 ## Specifications
+
+Specs below are as published in [Anthropic's own documentation](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5).
 
 | Specification | Claude Fable 5 |
 |:-------------|:--------------|
@@ -57,7 +60,7 @@ Pricing is less than half what Anthropic charged for Claude Mythos Preview acces
 - Google Cloud Vertex AI
 - Microsoft Foundry
 
-**Subscription availability:** Free on Claude.ai from June 9–22, 2026; usage credits required after June 22. Full access restoration planned when capacity allows.
+**Subscription availability:** [Free on Pro, Max, Team, and seat-based Enterprise plans from June 9–22, 2026; usage credits required after June 22](https://www.anthropic.com/news/claude-fable-5-mythos-5). ["When sufficient capacity allows us to do so—we aim to restore Fable 5 as a standard part of subscription plans,"](https://www.anthropic.com/news/claude-fable-5-mythos-5) per Anthropic.
 
 ---
 
@@ -65,42 +68,39 @@ Pricing is less than half what Anthropic charged for Claude Mythos Preview acces
 
 ### Software Engineering
 
-The headline number: **80.3% on SWE-bench Pro** — a benchmark measuring autonomous performance on real-world software engineering tasks.
+The headline number: **[80.3% on SWE-bench Pro](https://www.anthropic.com/news/claude-fable-5-mythos-5)** — a benchmark measuring autonomous performance on real-world software engineering tasks. Anthropic's own figure is produced with its own agent scaffolding rather than a neutral evaluation harness, so treat it as a vendor-reported result rather than an independently audited one.
 
-For comparison: GPT-5.5 scores 58.6% and Gemini 3.1 Pro scores 54.2%. Fable 5's lead is more than 21 percentage points on the top software engineering benchmark available.
+For comparison: [GPT-5.5 scores 58.6% and Gemini 3.1 Pro scores 54.2%](https://www.anthropic.com/news/claude-fable-5-mythos-5) on the same benchmark, per Anthropic's release. Fable 5's lead is more than 21 percentage points ahead of GPT-5.5 on this benchmark.
 
-The Stripe case study from Anthropic's launch materials: Fable 5 "compressed months of engineering into days," completing a migration of a 50-million-line Ruby codebase in one day. A team of engineers would have taken approximately two months.
+The Stripe case study from [Anthropic's launch materials](https://www.anthropic.com/news/claude-fable-5-mythos-5): "In a 50-million-line Ruby codebase, the model performed a codebase-wide migration in a day that would otherwise have taken a whole team over two months by hand." In Stripe's own words, Fable 5 "compressed months of engineering into days."
 
 ### Vision
 
-Fable 5 completed a full playthrough of Pokémon FireRed using vision alone — no additional tooling. This is not a programming benchmark. It requires sustained visual reasoning, planning, and adaptation across a multi-hour autonomous task.
+[Fable 5 beat Pokémon FireRed using a minimal, vision-only harness](https://www.anthropic.com/news/claude-fable-5-mythos-5). This is not a programming benchmark. It requires sustained visual reasoning, planning, and adaptation across a multi-hour autonomous task.
 
 ### Finance and Enterprise Knowledge Work
 
-On Hebbia's Finance Benchmark and IMC trading evaluations, Fable 5 scored highest across reasoning, analysis, and interpretation tasks among tested models.
+On [Hebbia's Finance Benchmark, Fable 5 has the highest score of any model](https://www.anthropic.com/news/claude-fable-5-mythos-5); on IMC's trading-analysis evaluations, [Fable 5 "aced" the evaluations "nearly across the board,"](https://www.anthropic.com/news/claude-fable-5-mythos-5) per Anthropic's launch materials.
 
-Enterprise knowledge work benchmark (GDPval-AA): Fable 5 scores 1,932 versus GPT-5.5 at 1,769 and Gemini 3.1 Pro at 1,314.
+Enterprise knowledge work benchmark (GDPval-AA): [Fable 5 scores 1,932 versus GPT-5.5 at 1,769 and Gemini 3.1 Pro at 1,314](https://www.anthropic.com/news/claude-fable-5-mythos-5).
 
 ### Scientific Research
 
-In life sciences testing, Claude Mythos 5 (same underlying model, no classifiers) conducted autonomous genomics research — producing a model 100 times smaller than recent Science journal publications while outperforming them on the same tasks. Drug design testing showed approximately 10x acceleration in protein design; 9 of 14 protein targets yielded strong drug candidates.
+In life sciences testing, Claude Mythos 5 (same underlying model, no classifiers) conducted autonomous genomics research; its [custom ML solution "outperformed a recent model published in the journal Science—despite being 100 times smaller,"](https://www.anthropic.com/news/claude-fable-5-mythos-5) per Anthropic. In internal drug-design testing, [Anthropic reports the model accelerated aspects of the drug design process by around 10 times, and that 9 of the 14 protein targets in the study yielded strong candidates for drug design](https://www.anthropic.com/news/claude-fable-5-mythos-5).
 
 ### Long-Context and Persistent Memory
 
-In persistent memory testing using Slay the Spire as an evaluation platform, Fable 5 showed 3x performance improvement compared to prior models. The model maintains focus and coherent state across millions of tokens.
-
-### Scientific Reasoning (Where It Does Not Lead)
-
-GPQA Diamond benchmark (graduate-level scientific reasoning): Gemini 3.1 Pro leads at 94.3%, GPT-5.5 at 92.8%, Fable 5 at 91.3%. This is the one major benchmark category where Fable 5 does not rank first among current frontier models.
+In persistent memory testing using Slay the Spire as an evaluation platform, [Anthropic reports Fable 5's persistent file-based memory improved its performance three times more than for Opus 4.8](https://www.anthropic.com/news/claude-fable-5-mythos-5). The model maintains focus and coherent state across millions of tokens.
 
 ---
 
 ## The Full Benchmark Table
 
+Figures below are [as published by Anthropic](https://www.anthropic.com/news/claude-fable-5-mythos-5); independent evaluators have noted the SWE-bench Pro figure uses Anthropic's own scaffolding rather than a neutral harness, so treat these as vendor-reported rather than independently audited. (Anthropic's GPQA Diamond comparison for Fable 5 could not be confirmed against a readable primary source and third-party reporting on it conflicts, so it is omitted here.)
+
 | Benchmark | Claude Fable 5 | GPT-5.5 | Gemini 3.1 Pro |
 |:----------|:--------------|:--------|:--------------|
 | SWE-bench Pro | **80.3%** | 58.6% | 54.2% |
-| GPQA Diamond | 91.3% | 92.8% | **94.3%** |
 | GDPval-AA (enterprise knowledge) | **1,932** | 1,769 | 1,314 |
 | GDPpdf (document reasoning, no tools) | **29.8%** | 24.9% | 16.7% |
 
@@ -111,15 +111,15 @@ GPQA Diamond benchmark (graduate-level scientific reasoning): Gemini 3.1 Pro lea
 The central engineering decision on Fable 5: apply safety classifiers that block specific request categories before generating output. When a classifier triggers, the API returns HTTP 200 with `stop_reason: "refusal"` — not an error — and reports which classifier declined the request.
 
 **Classifier 1: Cybersecurity**
-Blocks exploitation tasks and offensive cyber operations. Anthropic subjected Fable 5 to more than 1,000 hours of external red-teaming; no universal jailbreaks were discovered. The cybersecurity classifier is the primary reason Mythos-class capability can be publicly released — without it, Fable 5 would have the autonomous vulnerability discovery capability that made Mythos Preview a restricted model.
+[Blocks vulnerability-discovery and offensive cyber tasks, preventing Fable from making progress on exploitation and broader cyberattack activities](https://www.anthropic.com/news/claude-fable-5-mythos-5). Anthropic [subjected Fable 5 to more than 1,000 hours of external red-teaming and found no universal jailbreaks](https://www.anthropic.com/news/claude-fable-5-mythos-5). The cybersecurity classifier is the primary reason Mythos-class capability can be publicly released — without it, Fable 5 would have the autonomous vulnerability discovery capability that made Mythos Preview a restricted model.
 
 **Classifier 2: Biology and Chemistry**
-Blocks dual-use bioweapon research and related queries. Designed conservatively — triggers in fewer than 5% of sessions on average, which means some legitimate requests are declined. Anthropic appears to have accepted that false positives are preferable to false negatives in this category.
+[Falls back to Opus 4.8 on most biology and chemistry requests, due to dual-use concerns about gene therapy design and pathogenic capabilities](https://www.anthropic.com/news/claude-fable-5-mythos-5). Anthropic reports its safety classifiers overall — cybersecurity, biology/chemistry, and distillation combined — [trigger in fewer than 5% of sessions on average](https://www.anthropic.com/news/claude-fable-5-mythos-5), and has [said the classifiers are "still stricter than would be ideal — for example, sometimes benign requests will trigger,"](https://www.anthropic.com/news/claude-fable-5-mythos-5) with a stated aim to reduce false positives over time.
 
 **Classifier 3: Distillation**
-Blocks attempts to extract the model's capabilities into unauthorized model weights. This addresses capability proliferation — the risk that a sufficiently capable model can be used to train other capable models outside sanctioned processes.
+[Blocks attempts to extract Claude's capabilities for training competing models](https://www.anthropic.com/news/claude-fable-5-mythos-5). This addresses capability proliferation — the risk that a sufficiently capable model can be used to train other capable models outside sanctioned processes.
 
-Requests refused before any output is generated incur no billing charges. If you retry on a fallback model, Anthropic's fallback credit system refunds the prompt-cache cost so you are not charged twice for the same prompt.
+Requests refused before any output is generated incur no billing charges. If you retry on a fallback model, [Anthropic's fallback credit system refunds the prompt-cache cost so you are not charged twice for the same prompt](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5).
 
 ---
 
@@ -131,7 +131,7 @@ For developers integrating Fable 5, the primary change from prior Claude models 
 2. **Client-side fallback:** Use SDK middleware (TypeScript, Python, Go, Java, C#) to retry on the client.
 3. **Manual fallback:** Build the retry logic yourself, on any platform.
 
-Anthropic's documentation notes that a refused request on Fable 5 "can usually be served by another Claude model" — the most common fallback target is Claude Opus 4.8.
+[Anthropic's documentation notes that a refused request on Fable 5 "can usually be served by another Claude model"](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5) — the most common fallback target is Claude Opus 4.8.
 
 **Thinking mode:** Adaptive thinking is always on for Fable 5 and Mythos 5. The `thinking: {"type": "disabled"}` parameter is not supported. Raw chain-of-thought content is never returned; use `thinking.display: "summarized"` to receive a readable reasoning summary, or `"omitted"` (the default) for an empty thinking block. Use the `effort` parameter to control thinking depth and cost.
 
@@ -141,11 +141,11 @@ Anthropic's documentation notes that a refused request on Fable 5 "can usually b
 
 ## Claude Mythos 5 — The Classifier-Free Version
 
-Claude Mythos 5 (`claude-mythos-5`) is the same underlying model as Fable 5 with the safety classifiers removed in certain areas. It remains restricted to approved customers through Project Glasswing — Anthropic's collaboration with the US government and critical infrastructure organizations.
+Claude Mythos 5 (`claude-mythos-5`) is the same underlying model as Fable 5 with the safety classifiers removed in certain areas. It [remains restricted to approved customers through Project Glasswing](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5) — [Anthropic's collaboration with critical-infrastructure operators, open-source maintainers, and the US government](https://anthropic.com/glasswing).
 
-Mythos 5 replaces Claude Mythos Preview in the Glasswing program. In life sciences testing, Mythos 5 conducted autonomous genomics research that produced models outperforming recent Science journal publications. Anthropic has separately deployed Mythos 5 to a small group of cyberdefenders and infrastructure providers.
+Mythos 5 replaces Claude Mythos Preview in the Glasswing program. In life sciences testing, Mythos 5 conducted autonomous genomics research that [produced models outperforming a recent Science journal publication](https://www.anthropic.com/news/claude-fable-5-mythos-5). Anthropic has separately deployed Mythos 5 to a small group of cyberdefenders and infrastructure providers.
 
-Customers without Glasswing access should use Fable 5. Anthropic's documentation states it "offers the same capabilities" — meaning Fable 5 reaches the same capability ceiling, but with classifiers that can interrupt specific request types.
+Customers without Glasswing access should use Fable 5. [Anthropic's documentation states it "offers the same capabilities"](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5) — meaning Fable 5 reaches the same capability ceiling, but with classifiers that can interrupt specific request types.
 
 ---
 
