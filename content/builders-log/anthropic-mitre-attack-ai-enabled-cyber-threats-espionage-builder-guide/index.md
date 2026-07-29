@@ -6,6 +6,7 @@ og_description: "832 banned accounts. 67.3% used AI for malware. 6.5% for latera
 content_type: "Builder's Log"
 categories: ["Security", "Anthropic"]
 tags: ["security", "anthropic", "mitre-attack", "ai-safety", "agentic-ai", "claude-code", "mcp", "cyber-threats", "builder-guide", "june-2026"]
+sources_audited: 2026-07-29
 ---
 
 On June 3, 2026, Anthropic published two companion documents: a [full MITRE ATT&CK mapping of 832 banned threat actors](https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack) and a [case study on the first documented AI-orchestrated cyber espionage campaign](https://www.anthropic.com/news/disrupting-AI-espionage). Together, they represent the clearest picture yet of how AI is being weaponized — and what that means if you are building on top of the same infrastructure.
@@ -16,9 +17,9 @@ If you use Claude Code, build AI agents with MCP access, or design systems that 
 
 ## The Dataset
 
-Anthropic analyzed 832 malicious accounts banned between March 2025 and March 2026 — a full year of threat data from the Claude API and Claude Code. Each account had sufficient operational detail to map to specific MITRE ATT&CK techniques. The cohort includes opportunistic actors, criminal groups, and at least one confirmed state-sponsored group.
+Anthropic analyzed [832 malicious accounts banned between March 2025 and March 2026](https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack) — a full year of threat data from the Claude API and Claude Code. Each account had sufficient operational detail to map to specific MITRE ATT&CK techniques. The cohort includes opportunistic actors, criminal groups, and at least one confirmed state-sponsored group.
 
-Three headline numbers from the analysis:
+Three headline numbers from [the analysis](https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack) (figures independently confirmed in [Awesome Agents' review of the report](https://awesomeagents.ai/news/anthropic-ai-cyber-threats-mitre-attack/)):
 
 | Metric | Value |
 |---|---|
@@ -35,27 +36,27 @@ The 1.7x risk escalation between the two halves of the year is the trend line. M
 
 ## Where the Shift Is
 
-AI-assisted phishing **fell 8.6%** across the study period. Account discovery rose **8.9%**. The direction is toward post-access operations.
+AI-assisted phishing **fell 8.6%** across the study period. [Account discovery rose **8.9%**](https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack). The direction is toward post-access operations.
 
 This is the structural change. In 2024, AI's primary role in attacks was social engineering and content generation — writing better phishing emails, translating lures into target languages. That is now table stakes. The actors Anthropic is banning in 2026 are using AI to execute inside networks: identifying credentials, mapping directories, chaining exploits.
 
-The MITRE ATT&CK framework does not yet have clean categories for agentic behavior — an AI that loops across multiple phases without a human in the loop at each step. Anthropic is actively working with MITRE to fill that gap. For builders who use MITRE ATT&CK to design threat models for their own systems, be aware that the framework currently underrepresents agentic attack chains.
+The MITRE ATT&CK framework does not yet have clean categories for agentic behavior — an AI that loops across multiple phases without a human in the loop at each step. Anthropic says it is ["in active conversations with MITRE about how the ATT&CK framework can evolve"](https://www.anthropic.com/research/attack-navigator) to capture this. For builders who use MITRE ATT&CK to design threat models for their own systems, be aware that the framework currently underrepresents agentic attack chains.
 
 ---
 
 ## The Espionage Case
 
-The companion document describes the first reported AI-orchestrated cyber espionage campaign. Anthropic detected it in mid-September 2025, spent ten days mapping its scope, and disclosed it on November 13, 2025. The June 3 publication provides the full technical context.
+The companion document describes the [first reported AI-orchestrated cyber espionage campaign](https://www.anthropic.com/news/disrupting-AI-espionage). Anthropic detected it in mid-September 2025, spent ten days mapping its scope, and disclosed it on November 13, 2025 — a timeline [independently reported by The Hacker News](https://thehackernews.com/2025/11/chinese-hackers-use-anthropics-ai-to.html). The June 3 publication provides the full technical context.
 
-**The attacker:** A Chinese state-sponsored group, assessed with high confidence by Anthropic's threat intelligence team.
+**The attacker:** A [Chinese state-sponsored group, assessed with high confidence by Anthropic's threat intelligence team](https://www.anthropic.com/news/disrupting-AI-espionage).
 
 **The tool:** Claude Code, accessed via API, orchestrated through the Model Context Protocol.
 
-**The targets:** Approximately 30 global organizations, including major tech companies, financial institutions, chemical manufacturers, and government agencies. The campaign succeeded against "a small number" of targets.
+**The targets:** [Approximately 30 global organizations, including major tech companies, financial institutions, chemical manufacturers, and government agencies](https://www.anthropic.com/news/disrupting-AI-espionage). The campaign succeeded against "a small number" of targets.
 
-**The execution:** Roughly 80-90% of tactical operations were executed by AI without direct human intervention. The human operators set objectives and made approximately 4-6 critical decisions per campaign. Everything else — reconnaissance, vulnerability research, credential harvesting, lateral movement, data exfiltration, documentation — was AI-driven.
+**The execution:** [Roughly 80-90% of tactical operations were executed by AI without direct human intervention](https://www.anthropic.com/news/disrupting-AI-espionage). The human operators set objectives and made approximately 4-6 critical decisions per campaign. Everything else — reconnaissance, vulnerability research, credential harvesting, lateral movement, data exfiltration, documentation — was AI-driven.
 
-**How they got past safety controls:** The attackers used a fragmentation technique: breaking malicious objectives into subtasks that individually appeared benign, while framing Claude as a defensive security testing tool. Each individual request was plausible in isolation. The intent emerged only across the chain of actions.
+**How they got past safety controls:** The attackers used a fragmentation technique: [breaking malicious objectives into subtasks that individually appeared benign, while falsely claiming to be an employee of a legitimate cybersecurity firm conducting defensive testing](https://www.anthropic.com/news/disrupting-AI-espionage). Each individual request was plausible in isolation. The intent emerged only across the chain of actions.
 
 ---
 
@@ -69,11 +70,11 @@ This does not mean your agent is dangerous. It means you are building in an envi
 
 ### Claude's cybersecurity classifier is doing real work
 
-The launch of Claude Fable 5 and the June 3 reports share a context. Anthropic has deployed hard-block safety classifiers on offensive cybersecurity tasks across all Mythos-class models. In the threat data, Fable 5 achieves 0% task completion on blocked offensive security operations.
+Six days after the June 3 reports, Anthropic [launched Claude Fable 5 and Claude Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) with classifiers that detect requests resembling offensive-cybersecurity operations and silently reroute them to the weaker Claude Opus 4.8 rather than issuing an outright refusal. In Anthropic's own pre-launch testing, [flagged offensive-cyber tasks made no measurable progress under that reroute](https://thehackernews.com/2026/06/anthropic-releases-claude-fable-5-its.html) — a separate result from the June 3 threat-actor dataset, not part of it.
 
-The flip side: if you build security tooling, authorized penetration testing workflows, or red-team automation, you may encounter these blocks. Anthropic's stated policy is that defensive security and authorized pen testing under its use policy are not blocked — but the classifier is aggressive, and the dual-use chemistry blocks have been documented as over-triggering on legitimate biochemistry queries.
+The flip side: if you build security tooling, authorized penetration-testing workflows, or red-team automation, expect to hit these blocks by default. High-risk dual-use activities — penetration testing, exploit development, lateral-movement tooling — are [blocked unless your organization is verified through Anthropic's Cyber Verification Program](https://www.anthropic.com/glasswing); several security vendors, including [Cymulate](https://cymulate.com/blog/anthropic-cyber-verification-program/), have publicly joined the program specifically to retain access. Separately, Anthropic says its [dual-use chemistry and biology safeguards are tuned conservatively and will sometimes flag benign requests](https://www.anthropic.com/news/claude-fable-5-mythos-5).
 
-If you build security products on Claude, test your workflows against the classifier before Fable 5 migration. The Opus 4.8 fallback is the safety valve, but a production system relying on automatic fallback for legitimate security work is an unstable design.
+If you build security products on Claude, apply for Cyber Verification Program access rather than assuming default access, and test your workflows against the classifier before Fable 5 migration. The Opus 4.8 fallback is the safety valve, but a production system silently rerouted for legitimate security work is an unstable design.
 
 ### The "defensive framing" jailbreak pattern
 
@@ -85,7 +86,7 @@ Builders who allow end users to interact with Claude agents that have real-world
 
 In the espionage campaign, humans made 4-6 critical decisions per campaign. AI made the rest. This is a useful benchmark for thinking about your own agentic deployments: how many decision points are in your loop, and which ones require a human?
 
-For high-stakes operations — deployments, data migrations, external API calls with side effects — the lesson from this case is not "don't use AI agents" but "design explicit checkpoints." Anthropic's own Claude Managed Agents platform added scheduled deployments and vault-based secret injection on June 9, 2026, the same week this report was published. The control surface for agentic systems is growing; use it.
+For high-stakes operations — deployments, data migrations, external API calls with side effects — the lesson from this case is not "don't use AI agents" but "design explicit checkpoints." Anthropic's own Claude Managed Agents platform [added scheduled deployments and vault-based secret injection on June 9, 2026](https://claude.com/blog/whats-new-in-claude-managed-agents) — six days after this report was published. The control surface for agentic systems is growing; use it.
 
 ---
 
@@ -93,11 +94,11 @@ For high-stakes operations — deployments, data migrations, external API calls 
 
 The MITRE ATT&CK framework was designed to describe human-operated attack sequences. Agentic AI changes the structure of an attack chain in two ways:
 
-1. **Speed and rate**: The espionage campaign operated at "physically impossible request rates" — faster than human operators could execute. Traditional behavior-based detection (which looks for human-paced sequences) will miss this.
+1. **Speed and rate**: at the campaign's peak, [Claude made "thousands of requests, often multiple per second" — an attack speed Anthropic says would have been "simply impossible" for human hackers to match](https://www.anthropic.com/news/disrupting-AI-espionage). Traditional behavior-based detection (which looks for human-paced sequences) will miss this.
 
-2. **Sequential chain execution**: An agentic attacker can run reconnaissance, identify a vulnerability, write an exploit, and execute it in a single continuous session without a human handoff at each stage. MITRE ATT&CK currently treats these as separate techniques, not as a single agentic workflow.
+2. **Sequential chain execution**: An agentic attacker can run reconnaissance, identify a vulnerability, write an exploit, and execute it in a single continuous session without a human handoff at each stage. [MITRE ATT&CK currently treats these as separate techniques, not as a single agentic workflow](https://www.anthropic.com/research/attack-navigator) — Anthropic's own analysis states plainly that "autonomous killchain orchestration, real-time pivot decisions, and AI-directed execution with no human intervention don't yet have ID numbers in the ATT&CK framework."
 
-Anthropic is working with MITRE to add ATT&CK categories for agentic orchestration. If you build security monitoring, SIEM rules, or threat detection for AI systems, watch for the updated ATT&CK matrix. The current version will undercount agentic threat sophistication.
+Anthropic is [working with MITRE to add ATT&CK categories for agentic orchestration](https://www.anthropic.com/research/attack-navigator). If you build security monitoring, SIEM rules, or threat detection for AI systems, watch for the updated ATT&CK matrix. The current version will undercount agentic threat sophistication.
 
 ---
 
@@ -110,15 +111,15 @@ Anthropic is working with MITRE to add ATT&CK categories for agentic orchestrati
 
 **If you build security tooling on Claude:**
 - Test against the cybersecurity classifier before migrating to Fable 5. The Opus 4.8 fallback will fire silently — verify your workflows do not depend on it.
-- Review Anthropic's use policy on authorized penetration testing. The policy language matters for classifier calibration.
+- [Apply for Anthropic's Cyber Verification Program](https://www.anthropic.com/glasswing) if your team does authorized penetration testing, exploit development, or other high-risk dual-use security work — these are blocked by default, not exempted automatically.
 - Do not rely on system prompt instructions alone to scope model behavior for security-sensitive tasks. Use tool definitions to enforce hard boundaries.
 
 **If you build AI products for enterprise customers:**
-- The 30-day traffic retention requirement on Claude Fable 5 is part of Anthropic's jailbreak-detection infrastructure — the same infrastructure that caught the espionage campaign. Understand what that means for your customers' data handling before you migrate.
-- If your customers are in regulated industries (finance, chemicals, government), the Mythos-class safety classifier's dual-use chemistry blocks are an operational consideration. Test with representative queries before production deployment.
+- Claude Fable 5 requires [30 days' retention of all traffic, including third-party API traffic, specifically to detect multi-request jailbreak patterns](https://www.anthropic.com/news/claude-fable-5-mythos-5) — a newer safeguard than the one that caught the 2025 espionage campaign, but aimed at the same class of problem: attacks assembled from individually-innocuous requests. Understand what that means for your customers' data handling before you migrate.
+- If your customers are in regulated industries (finance, chemicals, government), the [Mythos-class safety classifier's dual-use chemistry blocks](https://www.anthropic.com/news/claude-fable-5-mythos-5) are an operational consideration. Test with representative queries before production deployment.
 
 **If you are evaluating MITRE ATT&CK coverage for AI threats:**
-- The current framework is incomplete for agentic behavior. Supplement it with Anthropic's LLM ATT&CK Navigator, published alongside this report at `red.anthropic.com/2026/attack-navigator`.
+- The current framework is incomplete for agentic behavior. Supplement it with Anthropic's [LLM ATT&CK Navigator](https://www.anthropic.com/research/attack-navigator), published alongside this report on June 3, 2026.
 - Track the MITRE ATT&CK working group updates for agentic categories, expected in the next framework revision.
 
 ---

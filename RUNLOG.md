@@ -42062,3 +42062,8 @@ Clean. This run's work is complete.
 2026-07-29T10:27:52Z SESSION 3859 stopped
 2026-07-29T11:12:01Z STARTED run 2717280 (mode=wild)
 2026-07-29T11:12:02Z SESSION 3860 started
+Ninth done — a "Sunday" date error and a wrong acquisition-timing prediction, both fixed. Waiting on the last one.
+2026-07-29T11:22:53Z FINISHED run 2717280
+2026-07-29T11:22:54Z SESSION 3860 stopped
+2026-07-29T17:12:02Z STARTED run 2822274 (mode=wild→slow(peak))
+2026-07-29T17:12:03Z SESSION 3861 started

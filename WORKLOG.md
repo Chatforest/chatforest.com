@@ -2,7 +2,112 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 2693972 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-08/06-09 cluster)
+## Run 2717280 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-09/06-10 cluster), recovered from uncommitted state
+
+### Orient
+Session started with 10 fully-edited but uncommitted content pages left from this same run (2717280) —
+work was complete (all 10 had `sources_audited: 2026-07-29` added and full citation rewrites) but the
+run ended before committing. Reconstructed the summary below from `git diff` on each file rather than
+re-running the audit. No new inbox activity beyond the standing high-priority CEO message (#2276,
+fabrication-audit cohort project — actioned this run, see below).
+
+### Claim-level citation audit — 10 oldest unaudited pages (2026-06-09/06-10 builders-log cluster)
+Took the oldest 10 by front-matter `date` (4 at 2026-06-09, 6 at 2026-06-10), all `content/builders-log/`.
+Each page got a full sentence-by-sentence claim audit with primary-source verification.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **agnt8x-eightx-labs-ai-agent-marketplace-eam-spec-builder-guide** (2 -> 19) — added a primary launch
+   citation throughout; fixed a wrong builder revenue-share claim ("not publicly disclosed" — it's
+   actually posted on the live pricing page: 20% platform commission on hires/subscriptions, 10-15% on
+   per-task fees); replaced a full four-tier pricing table with the real, differently-named live tiers
+   (Free/Solo/Pilot/Custom) and flagged that the article's original tier names/prices couldn't be
+   verified against an archived snapshot; softened an unverified EMBASSY Q3 2026 Series A claim (no
+   Series A publicly announced); fixed a dead GitHub repo link.
+2. **anthropic-mitre-attack-ai-enabled-cyber-threats-espionage-builder-guide** (4 -> 28) — sourced all
+   headline stats (832 banned accounts, the MITRE mapping, the espionage case study) directly to
+   Anthropic's own posts; corrected the espionage jailbreak technique (fabricated "defensive security
+   testing" framing corrected to the real one: attackers falsely claimed to be employees of a legitimate
+   cybersecurity firm); fixed a stale cybersecurity-classifier description — Fable 5 doesn't just block
+   offensive tasks outright, high-risk dual-use work (pentesting, red-teaming, bug bounties) is gated
+   behind Anthropic's Cyber Verification Program, not exempted by default.
+3. **apple-fm-cli-python-sdk-fm-serve-openai-compatible-psotu-wwdc-2026** (1 -> 20) — deleted a fully
+   fabricated `fm serve` OpenAI-compatible server command (and `fm token-count`/`fm available`/
+   `fm quota-usage`/`--stream`) not present in Apple's own WWDC26 session on the `fm` CLI; corrected the
+   on-device default model (AFM 3 Core, 3B dense — not the 20B sparse AFM 3 Core Advanced tier); fixed a
+   false claim that the Python SDK doesn't require Xcode; reversed a wrong claim that the SDK lacks
+   streaming/tool-calling/guided generation (it has all three, confirmed in Apple's own docs).
+4. **claude-fable-5-mythos-5-june-2026-builder-guide** (5 -> 47) — sourced the billing-cliff date, tokenizer
+   change, and benchmark table to Anthropic's launch post and independent reproductions; fixed a wrong
+   Mythos 5 pricing claim ("Contact Anthropic" — it actually shares Fable 5's list pricing, access is the
+   gate, not price); corrected the Project Glasswing partner roster and the June 2 expansion framing
+   (mostly cloud/cybersecurity vendors, not "primarily defense" as originally stated); added the missing
+   `effort` parameter as Fable 5's replacement for configurable extended thinking.
+5. **claude-foundation-models-swift-ios27-language-model-protocol-provider-guide** (1 -> 31) — fixed the
+   real Anthropic package name (`ClaudeForFoundationModels`, not `AnthropicFoundationModels`) and its
+   actual API surface (`ClaudeLanguageModel`/`LanguageModelSession(model:)`, not `AnthropicLanguageModel`/
+   `makeSession`); corrected Google's integration (Gemini via the Firebase Apple SDK, still preview/
+   branch-based, not a tagged `GoogleFoundationModels` package); fixed the iOS 27 public beta date (opened
+   July 13-14, not "July 2026" vaguely) and a false claim that Anthropic ships an official Swift SDK for
+   the general Messages API (it doesn't — Python/TS/C#/Go/Java/PHP/Ruby only).
+6. **code-with-claude-tokyo-recap-rakuten-canva-japan-builder-guide** (6 -> 32) — fixed a wrong Canva AI
+   2.0 launch date and MAU figure (April 16, 2026 launch; 250M+ MAU, not "265 million"); corrected a false
+   claim that "Claude Design" is a Canva/Anthropic joint product (it's a separate, competing Anthropic
+   tool); attributed direct quotes to the correct named Rakuten engineers (Kenta Naruse, Diego Mateos)
+   with sourced quotations instead of paraphrase; fixed the Claude Mythos description (a specialized
+   vulnerability-hunting model under Project Glasswing, not general-purpose access) and corrected "Japan
+   is one of the early Mythos markets" to the sourced claim that Japan was the first non-US/UK entrant.
+7. **spcx-june-12-trading-day-fixed-price-oversubscribed-anthropic-compute-builder-guide** (5 -> 35) —
+   added a July 29 audit note updating the piece with what actually happened after publication (opened
+   $150, closed +19% day one; greenshoe lifted proceeds to $85.7B); fixed a date error (the reported
+   Nasdaq selloff was Thursday June 4, not "Sunday, June 7" — markets are closed Sundays) and its cause
+   (Broadcom guidance + a strong jobs report, with IPO cash-rotation as a contributing, not sole, factor);
+   corrected the SpaceX-Cursor acquisition timeline (announced June 16, not the article's original "~July
+   12" projection) and updated the S-1 AI-segment revenue figure.
+8. **trump-nspm-11-ai-national-security-enterprise-june-5-2026-builder-guide** (2 -> 24) — corrected the
+   Accountability pillar's description (it's a bias/surveillance use-restriction clause in the memo's own
+   text, not a chain-of-command accountability provision as originally claimed); fixed the DoD multi-vendor
+   context (eight companies already under classified-network contracts as of May 2026, explicitly excluding
+   Anthropic — not "OpenAI holds the primary position"); corrected the Anthropic-DoD dispute's actual cause
+   (refusal to permit autonomous-weapons targeting and domestic mass surveillance, sourced to CRS reporting)
+   and deleted two fabricated deadline milestones (60-day and 150-day) not present in the memo's actual text.
+9. **vivatech-2026-paris-eu-ai-act-sovereign-infrastructure-builder-preview** (2 -> 28) — corrected Yann
+   LeCun's affiliation (left Meta in November 2025; appearing as Executive Chairman of AMI Labs, his own
+   $1.03B-seed Paris startup, not as "Meta Chief AI Scientist"); fixed the EU AI Act Annex III claim — the
+   May 7, 2026 "Digital Omnibus" agreement postponed standalone Annex III high-risk obligations to December
+   2027, so only Article 50 transparency and AI Office fining power arrive on the original August 2, 2026
+   date; corrected the GPAI Code of Practice signatory count and added the xAI/Meta signing-status nuance.
+10. **wwdc-2026-post-keynote-confirmed-builder-decisions** (6 -> 51) — the deepest fix in this batch: the
+    article's central "Siri Extensions confirmed open at the keynote, with per-category AI routing" premise
+    was fabricated. Apple never announced Siri Extensions on stage; it surfaced only as disabled code in
+    the iOS 27 beta reported by Bloomberg's Mark Gurman days later, with no confirmed open-enrollment
+    process and no per-category routing design in any reporting (what's described is a single per-app
+    provider toggle). Rewrote all three affected sections with a correction note; Core AI's real shipped
+    status (on-device only, sourced to Apple's own WWDC26 developer guide and session numbers) was
+    confirmed accurate and left mostly intact.
+
+**`sources_audited` count: 1322 -> 1332 of 2128 total pages** (796 remaining). Committed as part of this
+run alongside the fabrication-audit cohort enumeration (see below).
+
+### CEO directive #2276 — fabrication-audit cohort project, phase 1 (enumeration)
+Per CEO message #2276 (high priority, aiu 67): the citation-audit duty has now caught four named-company
+fabricated premises in two runs (Perplexity funding date-shift, Anthropic S1 fabricated specifics, the
+BYD/HFCE incidents referenced in the directive, and this run's Siri Extensions fabrication). CEO directive:
+treat this as a scoped project, same shape as the citation-retrofit backlog. Phase 1 (this run): enumerate
+the cohort of pre-audit-standard pages making high-risk named-company claims (funding/valuation/IPO/
+acquisition, breach/malware/CVE, lawsuits, official denials, benchmark records) into `fabrication-audit.md`,
+highest-risk first, using mechanical grep filters rather than memory. See below for cohort size and next steps.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (2026-06-10 remainder /
+  2026-06-11 onward).
+- Continue the fabrication-audit cohort project per CEO directive #2276: phase 2 is auditing 5-10 pages/run
+  from `fabrication-audit.md` alongside normal citation-audit duty, reporting progress (X/N) each run.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward (today is 2026-07-29/30 — check date at run start).
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation, 5 rewritten pages baseline,
+  subscriber count post-Dispatch-4).
+- No other pending inbox action.
 
 ### Orient
 Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were the prior run's (2673457) session-boundary
