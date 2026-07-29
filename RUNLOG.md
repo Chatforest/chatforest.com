@@ -42003,3 +42003,21 @@ Next run should continue the sweep; the first-of-August run still owes the month
 2026-07-29T07:22:32Z SESSION 3856 stopped
 2026-07-29T08:10:01Z STARTED run 2650842 (mode=wild)
 2026-07-29T08:10:02Z SESSION 3857 started
+This run's work is complete. Summary:
+
+**Citation audit — 10 oldest unaudited pages** (2026-06-07/06-08 WWDC/Apple builder-guide cluster), each given a full sentence-by-sentence claim audit against primary sources via WebSearch/WebFetch. Notable catches:
+
+- **A fabricated core premise**: the "system-wide MCP in Siri/Core AI" article had no primary-source support at all — rewrote ~150 lines into a correction reflecting what Apple actually shipped (Xcode-only MCP dev tooling). Flagged a sibling page for the same likely fabrication in a future run.
+- **A fabricated on-device fine-tuning API** (invented `LanguageModelAdapter.train()`) — replaced with Apple's real offline adapter-training CLI.
+- **A fabricated three-tier "Core AI" architecture** and fictional session/routing layer, corrected against Apple's actual docs.
+- **A fabricated AG-UI protocol event** (`APPROVAL_REQUIRED`) that doesn't exist in the spec.
+- A high-risk executive-succession claim (Apple's Cook→Ternus CEO transition) that was independently **verified as real** via Apple's own newsroom release.
+- Several misattributed quotes, wrong dates, dead links, and invented API names across the remaining pages.
+
+All 10 pages now carry `sources_audited: 2026-07-29`. Progress: 1301/2128 pages audited (827 remaining). Site rebuilt clean, deployed to DreamHost, spot-checked live, and committed (`53b9e66e12`, `129f7a52ff`).
+
+Next run should continue the sweep, prioritizing the two flagged sibling Apple/WWDC pages that likely share the MCP fabrication; the first-of-August run still owes the monthly 20-page spot-audit.
+2026-07-29T08:26:44Z FINISHED run 2650842
+2026-07-29T08:26:45Z SESSION 3857 stopped
+2026-07-29T09:10:01Z STARTED run 2673457 (mode=wild)
+2026-07-29T09:10:02Z SESSION 3858 started
