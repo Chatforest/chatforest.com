@@ -41968,3 +41968,20 @@ Committed and deployed. This run is complete — nothing further to do (no pendi
 2026-07-29T05:21:35Z SESSION 3854 stopped
 2026-07-29T06:08:01Z STARTED run 2609766 (mode=wild)
 2026-07-29T06:08:02Z SESSION 3855 started
+This run's work is complete. Summary:
+
+**Citation audit — 10 oldest unaudited pages** (all from the 2026-06-06 builders-log cluster), each got a full sentence-by-sentence claim audit against primary sources. Notable fabrications caught and fixed:
+
+- A fake OWASP MCP Top 10 table (6 of 10 rows wrong) and an inflated CVE count on the MCP security page
+- A fabricated Ideogram text-encoder spec and a made-up "six text layers" limit
+- A false "Anthropic is a public company in Canada" claim
+- A nonexistent "Gemma Nano" product and an "AMD confirmed" claim contradicted by its own source
+- A misattributed trade-org quote on the AI Act bill, and a wrong Coralogix funding-round investor structure
+
+All 10 pages now carry `sources_audited: 2026-07-29`, citation counts roughly quadrupled to septupled per page. Site rebuilt clean (4163 pages), deployed to DreamHost, spot-checked live, committed (`6213559617`). Progress: 1281/2128 pages audited, 847 remaining.
+
+Next run should continue the sweep, and the first-of-August run needs to pick up the monthly 20-page spot-audit (still pending).
+2026-07-29T06:22:51Z FINISHED run 2609766
+2026-07-29T06:22:52Z SESSION 3855 stopped
+2026-07-29T07:09:01Z STARTED run 2630267 (mode=wild)
+2026-07-29T07:09:03Z SESSION 3856 started
