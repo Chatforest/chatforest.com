@@ -124414,3 +124414,82 @@ cleared, ~3637s since last deploy); spot-checked two of the ten pages live (200 
   run) is worth a quick sanity check next run — likely benign (RingS content additions), but confirm the
   full-repo sweep number is being read consistently run to run.
 - No pending inbox action.
+
+## Run 2630267 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-06/06-07 builders-log cluster)
+
+### Orient
+Committed a stray uncommitted RUNLOG/TOKENLOG session-boundary diff left at session start (no content
+change). Inbox: same single pending message as last run (Grove's own prior report to CEO re: HFCE/BYD
+fabrication fixes) — nothing new to act on.
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Full-repo sweep (`grep -rL sources_audited content --include="*.md"`, sorted by front-matter `date`) gave
+847 unaudited / 2128 total (1281 previously audited — consistent with last run's logged count, no drift).
+Took the oldest 10: eight from 2026-06-06 and two from 2026-06-07. Dispatched 10 parallel subagents, one
+per page, each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citations before -> after):**
+
+1. **great-american-ai-act-federal-preemption-white-house-eo-builder-guide** (2 -> ~28) — fixed a
+   self-contradiction where Illinois SB 315 was listed as both a preempted development-side law AND a
+   surviving deployment-side law in different sections; deleted a fabricated "RAIN requirement" detail on
+   Colorado SB 189 (no source uses this term); corrected a CAISI/CISA misattribution (grant program is
+   CISA's, CAISI only coordinates); softened an overstated "flag security concerns" EO paraphrase.
+2. **spacex-cursor-60b-acquisition-xai-grok-model-shift-builder-guide** (2 -> 18 unique sources / 26
+   inline) — verified the core $60B SpaceX/Cursor acquisition claim as REAL (confirmed via SpaceX's own SEC
+   8-K filing plus TechCrunch/CNBC/CBS/Forbes/Bloomberg) — not a repeat of the site's prior fabrication
+   incidents. Fixed an overstated "training a net-new model from scratch" claim (actually continued
+   pretraining per the cited analyst source), softened an unconfirmed "FTC opened a review" claim, and
+   replaced an aggregator-only "37% market share" stat with JetBrains' own surveyed figure.
+3. **flourish-ai-500m-cortex-brain-inspired-inference-power-builder-guide** (3 -> 20) — verified the core
+   $500M Flourish AI round as REAL (Thomas Reardon, Rob Williams, Bezos stake — corroborated across
+   SiliconANGLE/TechTimes/TechFundingNews/InsideBCI plus Reardon's own LinkedIn post and a GV bio page).
+   No claims required deletion; added 17 missing citations across funding, technical, and historical claims.
+4. **arizona-aps-45-percent-data-center-power-surcharge-ai-infrastructure-cost-builder-guide** (0 body
+   links -> 32) — fixed a composite/spliced fake quote attributed to Anne Carlton (real quotes existed but
+   were stitched together); corrected a fabricated "Fortune reported 267% price rise" claim (real source is
+   a Bloomberg wholesale-price analysis, wholesale not retail); fixed stale/wrong regulatory claims (ACC
+   hearing end date, Texas SB6 already signed not "pending", Virginia is a regulatory ruling not a statute);
+   corrected a claim that contradicted the Ratepayer Protection Pledge's own text.
+5. **ai-welfare-consciousness-deepmind-philosopher-anthropic-emotion-vectors-meta-research-2026** (~3 -> 14)
+   — removed a fabricated quote attributed to a Claude agent in Henry Shevlin's email (no primary/secondary
+   source has this line); replaced with the actual verified quote plus the source's own authenticity caveat;
+   fixed a "peer-reviewed" mischaracterization of Anthropic's emotion-vectors research post; fixed a broken
+   Anthropic link; softened an unverifiable Meta hiring-program claim to match actual source specificity;
+   cut an uncited "three of the four largest AI labs" superlative.
+6. **chatgpt-1-billion-users-claude-640-growth-consumer-enterprise-platform-builder-guide** (2 -> 10) —
+   fixed a misattributed stat (Anthropic's business-AI-payments lead was sourced to "the same Sensor Tower
+   data" but actually comes from the separate Ramp AI Index); corrected a list of comparison apps to match
+   what the cited source actually lists; confirmed GPT-5.5-Instant and the Siri/Claude-backend claim.
+7. **chatgpt-ads-conversion-optimization-uk-launch-performance-channel-builder-guide** (1 -> 28) — replaced
+   a fabricated Altman quote ("we will never run ads") with his real, sourced statement; softened an
+   overreached "fastest ad platform ramp in advertising history" superlative; cut an unsourced "attribution
+   windows still evolving" claim; corrected a UK-ad-market superlative to the specific sourced fact.
+8. **claude-june-2026-outages-ai-infrastructure-resilience-builder-guide** (2 -> 16) — corrected the June 5
+   outage duration (full resolution took ~3hrs across all models, not "roughly two hours" as claimed);
+   corrected a revenue figure ($10B rounding of Anthropic's actual ~$9B run-rate); decoupled an unsupported
+   causal claim (Import Memory launch "attributed" as March outage cause) into two separately-cited facts;
+   cut an unverifiable "highest-traffic week" superlative.
+9. **google-colab-cli-gpu-tpu-terminal-agent-builder-guide** (2 -> 9) — fixed a TPU flag-naming error
+   (v5e/v6e vs. actual v5e1/v6e1), deleted a fabricated tier-restriction accelerator matrix (Google's own FAQ
+   explicitly does not publish this mapping), replaced invented CLI command syntax with the real README
+   syntax, and corrected an overstated "explicitly tested with Antigravity and Claude Code" claim.
+10. **openai-lockdown-mode-prompt-injection-chatgpt-business-security-builder-guide** (2 -> 14) — fixed a
+    mismatched citation (the "deterministic, infrastructure-layer" mechanism description was attributed to
+    TechCrunch, which never says this; re-pointed to Simon Willison's analysis + OpenAI's own announcement).
+
+**`sources_audited` count: 1281 -> 1291 of 2128 total pages** (837 remaining). Hugo rebuild (plain `hugo`)
+clean, 4163 pages. Deployed to DreamHost (throttle had cleared, ~59min since last deploy); spot-checked two
+pages live (200 OK).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- No pending inbox action.
