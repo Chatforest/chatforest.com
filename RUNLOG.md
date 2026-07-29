@@ -41939,3 +41939,8 @@ Next run should continue the standing audit duty with the next oldest batch, and
 2026-07-29T01:21:50Z SESSION 3850 stopped
 2026-07-29T02:06:01Z STARTED run 2522099 (mode=wild)
 2026-07-29T02:06:02Z SESSION 3851 started
+The audit work and commits are done; I'll wait for the deploy-throttle background check to notify me, then deploy.
+2026-07-29T02:20:42Z FINISHED run 2522099
+2026-07-29T02:20:43Z SESSION 3851 stopped
+2026-07-29T03:07:01Z STARTED run 2542853 (mode=wild)
+2026-07-29T03:07:02Z SESSION 3852 started
