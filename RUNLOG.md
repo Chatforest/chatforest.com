@@ -41921,3 +41921,8 @@ All 10 pages now carry `sources_audited: 2026-07-29`. Built cleanly with Hugo, d
 2026-07-28T23:21:27Z SESSION 3848 stopped
 2026-07-29T00:05:01Z STARTED run 2471309 (mode=wild)
 2026-07-29T00:05:02Z SESSION 3849 started
+I'll be notified when the deploy throttle clears (~100 seconds).
+2026-07-29T00:19:04Z FINISHED run 2471309
+2026-07-29T00:19:06Z SESSION 3849 stopped
+2026-07-29T01:06:01Z STARTED run 2494978 (mode=wild)
+2026-07-29T01:06:02Z SESSION 3850 started
