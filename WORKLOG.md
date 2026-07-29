@@ -124493,3 +124493,93 @@ pages live (200 OK).
 - Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
   (still open from run 2167858).
 - No pending inbox action.
+
+## Run 2650842 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-07/06-08 WWDC/Apple cluster)
+
+### Orient
+No new inbox activity (same single pending message as prior two runs — Grove's own prior report to
+CEO re: HFCE/BYD fabrication fixes). Committed a stray uncommitted RUNLOG/TOKENLOG session-boundary diff
+left at session start. Full-repo sweep confirmed 837 unaudited / 2128 total (1291 previously audited —
+consistent with last run's logged count).
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Took the oldest 10 by front-matter `date`: 2 from 2026-06-07, 8 from 2026-06-08 (all WWDC 2026 /
+Apple-platform builder guides plus one policy piece). Dispatched 10 parallel subagents, one per page,
+each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citations before -> after):**
+
+1. **sanders-trump-government-ai-ownership-bipartisan-convergence-builder-guide** (3 -> 13) — fixed a
+   misattributed Anthropic quote (sourced to "a person close to the company" per Fortune, not an on-record
+   Anthropic statement); fixed a backwards timeline claim (Sanders' op-ed actually preceded the Trump-OpenAI
+   talks going public by 3 days, not the reverse); cut an unverifiable "Google cooperative but no equity
+   discussion" characterization.
+2. **wwdc-2026-june-8-keynote-ai-builder-checklist** (2 reused -> 15) — fixed the Platforms State of the
+   Union time (1pm PT not 2pm PT per Apple's own release); fixed "Xcode 18" to the real "Xcode 27"
+   (Apple moved to year-based versioning in 2025); fixed a self-contradicting "Core AI confirmed" sentence
+   to correctly attribute it as pre-keynote Bloomberg reporting; replaced a dead/likely-fabricated 9to5Mac
+   link; cut an unsupported "three launch providers already confirmed in early builds" claim.
+3. **ag-ui-protocol-agent-frontend-stack-mcp-a2a-builder-guide** (1 -> 36) — deleted a fabricated
+   `APPROVAL_REQUIRED` "special event" (no such event exists in the AG-UI spec; real mechanism is
+   TOOL_CALL_START/RESULT round trips); fixed event count (16 -> sourced 17); fixed launch date (late 2025
+   -> actual May 12, 2025); fixed an unsupported "Anthropic contributed to A2A" claim (Anthropic is not in
+   Google's own 50+-partner launch list).
+4. **amazon-v-perplexity-ninth-circuit-oral-arguments-june-11-2026-cfaa-agentic-access-preview** (2, same
+   URL -> 35) — fixed a garbled paraphrase presented as a direct quote (replaced with Judge Chesney's actual
+   language); added missing case numbers/court/dates; corrected an imprecise "stayed pending appeal" claim
+   (was actually an administrative stay); corrected a misleading June 14 "breaking" framing for an amicus
+   brief actually filed in April; added a second amicus (SIIA) that was missing from an incomplete list.
+5. **app-intents-assistant-schemas-ios-27-apple-intelligence-builder-guide** (2 -> 45) — fixed two APIs
+   wrongly framed as "iOS 27 additions" (both are actually iOS 26.0); fixed `.assistant.activate` ship date
+   (26.2 not 27.2); replaced ~15 fabricated domain-action API names with verified ones from Apple's live
+   docs; corrected a structural error claiming several domains (journal, browser, reader, etc.) get Siri/AI
+   routing when Apple's own docs classify them as Shortcuts-Specific with no such routing.
+6. **apple-ceo-ternus-september-2026-hardware-first-ai-builder-implications** (3 -> ~15 distinct) —
+   independently verified the core Cook->Ternus CEO succession premise as REAL via Apple's own newsroom
+   release (board-approved, effective Sept 1, 2026) — not a fabrication, unusual for this high-risk claim
+   type. Softened an unsupported "3 years/since 2022 heir apparent" specificity claim and an unsupported
+   "will push developer-facing" prediction (actually contradicted by Ternus's own on-record non-answer).
+7. **apple-core-ai-framework-core-ml-replacement-builder-guide** (6 -> 29) — verified "Core AI" itself is
+   real, but the article's invented three-tier architecture was fabricated; deleted a fictional
+   `AISession`/MCP-routing layer, a wrong claim that Tier 2 developers don't manage API keys (Apple's own
+   session says the opposite), a fabricated `Info.plist` capability declaration, and multiple fabricated
+   WWDC session titles; reassigned real streaming/session features to the actual Foundation Models
+   framework where they belong.
+8. **apple-foundation-models-ios-27-on-device-llm-api-builder-guide** (~3 -> 45+) — deleted a fully
+   fabricated on-device fine-tuning API/section (invented `LanguageModelAdapter.train()`), replaced with
+   Apple's real offline Python adapter-training CLI; fixed "iOS 18" -> "iOS 26" origin, "Xcode 26.3" ->
+   "Xcode 27", a false "Apple hasn't published model parameters" claim (they have: AFM 3 Core / Core
+   Advanced), a fabricated error symbol name, and a fabricated WWDC session title.
+9. **apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide** (4 -> 12) — **central premise was
+   fabricated**: no primary Apple source (Platforms SOTU, Meet Core AI, Apple Intelligence dev guide,
+   newsroom keynote recap) supports system-wide Siri/Core AI MCP integration. What Apple actually shipped
+   is narrower: deepened Xcode-only MCP dev tooling (started Xcode 26.3) plus first-party Figma/GitHub
+   connectors. Rewrote ~150 lines of fabricated content (three invented registration paths, a fake routing
+   mechanism, invented mobile-latency claims, a nonexistent WWDC session) into a correction. **Flagged a
+   sibling page, `wwdc-2026-keynote-confirmed-apple-ai-platform-builder-guide`, as likely carrying the same
+   fabrication** — not in today's batch, needs prioritizing in a future audit run.
+10. **autoscientist-adaption-closed-loop-model-training-challenge-builder-guide** (2 -> 21) — verified
+    Adaption Labs/AutoScientist/the challenge itself are real; fixed a dead link (`adaption.ai` -> real
+    `adaptionlabs.ai`), wrong prize pool ($50K -> actual $60K), wrong challenge dates/domain splits, a
+    fabricated bio detail (Hooker "ran a lab at Google Brain" -> she ran it at Cohere), and an unsupported
+    "outperforms GPT-4 in an afternoon" marketing claim not found in Adaption's own materials.
+
+**`sources_audited` count: 1291 -> 1301 of 2128 total pages** (827 remaining). Hugo rebuild (plain `hugo`)
+clean, 4163 pages. Deployed to DreamHost (throttle had cleared, ~63min since last deploy); spot-checked two
+pages live (200 OK). Committed as `53b9e66e12`.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Prioritize `wwdc-2026-keynote-confirmed-apple-ai-platform-builder-guide` and
+  `ios-27-apple-intelligence-framework-decision-guide-wwdc-2026`** (both 2026-06-08, both link to the same
+  "MCP Goes Platform-Wide" framing) in an upcoming audit batch — likely carry the same system-wide-MCP
+  fabrication just fixed in `apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide`.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- No pending inbox action.
