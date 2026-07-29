@@ -2,6 +2,82 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2542853 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-04/06-05 builders-log cluster)
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were the prior run's (2522099) session-boundary
+log lines — committed first (1f431bb98f). Inbox: empty, no pending messages.
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (889 unaudited of 2128 total
+going in), sorted by front-matter `date`, took the oldest 10 (3 dated 2026-06-04, 7 dated 2026-06-05, all
+in `content/builders-log/`). Dispatched 10 parallel subagents, one per page, each doing a full
+sentence-by-sentence claim audit with WebSearch/WebFetch verification against primary sources.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **hugging-face-ipo-june-9-hfce-open-source-ai-public-builder-guide** (2 -> 20) — **the entire IPO
+   premise could not be verified and is very likely fabricated.** Hugging Face is confirmed still private
+   (stockanalysis.com lists IPO status "Unknown," no S-1 on SEC EDGAR, no HFCE ticker anywhere). The
+   $42/share price, $2.1B raise, $15B valuation, "3x oversubscribed," and S-1 disclosures do not check out
+   against any primary source. Substantially rewrote around a dated correction: deleted every section that
+   only made sense if the IPO happened, kept and cited what's real (HF's own usage stats, the real Aug 2023
+   Series D, CEO Clément Delangue, the real Holo3.1 release), fixed a "DeepSeek R3" (doesn't exist) ->
+   DeepSeek V4 error, removed the nonexistent `hfce` tag. **Flagging to Rob/CEO** — see below.
+2. **xpeng-iron-byd-yao-shun-yu-chinese-ev-humanoid-robot-builder-guide-2026** (2 -> 28) — the "BYD 150
+   prototypes running 24/7" claim, plus the "Yao-Shun-Yu" codename, trace to Chinese-media rumors **BYD
+   officially denied on 2026-06-06**; the article had presented them as fact. Rewrote the BYD section to
+   separate BYD-confirmed facts (humanoid program real, since 2022) from the denied claims. Also fixed a
+   Li Ke/BYD quote that was transcribed backwards (had US robots' limbs as the strong point; primary source
+   says the opposite), a wrong XPeng IRON reveal date (framed as concurrent with the BYD news; actually
+   unveiled 7 months earlier), "Figure 02"->"Figure 03" for a 200-hr autonomous-run milestone, an
+   unsupported Tesla Optimus unit count, and a fabricated "BYD ET-i drive system" (no such product).
+   **Flagging to Rob/CEO** — see below.
+3. **xai-grok-voice-agent-api-custom-voices-tool-calling-builder-guide** (0 -> 15) — launch-date premise was
+   wrong: article said the Voice Agent API "shipped" June 4, 2026 alongside Custom Voices/Voice Library;
+   xAI's own post shows the Voice Agent API actually launched Dec 17, 2025, four months *before* Think Fast
+   1.0 (Apr 25, 2026), with Custom Voices a separate Apr 30 launch. Deleted an unsupported "100+ languages"
+   claim (real figure 20-25+), fixed scrambled Voice Library descriptions (Leo/Eve swapped), fixed a
+   nonexistent model ID and LiveKit class in code samples, added the real Big Bench Audio score (92.3%).
+4. **claude-code-dynamic-workflows-ultracode-implementation-guide** (1 -> 26) — fixed backwards plan
+   availability (Pro requires manual `/config` enable, not Enterprise as stated), an invalid CLI command
+   (`/ultracode on` doesn't exist -> `/effort ultracode`), a fabricated mid-session-resume example, and
+   wrong Bun-in-Rust case-study figures (corrected to Jarred Sumner's own post + Anthropic's case study:
+   1,009,272 lines / 11 days / ~$165K, 2 independent primary sources for this named-product claim).
+5. **claude-security-mythos-1-claude-code-enterprise-builder-guide** (4 -> 13) — fixed the Claude Security
+   public-beta date (was May 4, Anthropic's own blog confirms Apr 30), added Pro-tier availability (article
+   omitted it), corrected an unverifiable "six-week sprint" claim for the Glasswing 10,000+ vulnerability
+   finding with sourced timeframe language.
+6. **claude-api-mid-conversation-system-messages-opus-4-8-cache-builder-guide** (1 -> 10) — fixed two
+   backwards claims verified against live Anthropic docs: platform availability (said NOT available on
+   Bedrock/Vertex, actually IS; dropped an unverifiable "Microsoft Foundry" mention) and consecutive system
+   messages (said not allowed, docs say they're merged and accepted).
+7. **github-copilot-cli-rubber-duck-voice-scheduling-june-2-builder-guide** (1 -> 10) — fixed `/security-review`
+   status/date (claimed GA on June 2; GitHub's own changelog shows it shipped June 10 as experimental
+   public-preview) and a false "GitHub hasn't published which models are used" claim (they had).
+8. **coinbase-spcx-perp-pre-ipo-perpetuals-ai-startup-international-guide** (2 -> 30) — deleted an
+   unsupported S-1 pricing claim (SpaceX used a fixed price, not a range that moved up), softened
+   OpenAI/Anthropic IPO-timing claims from settled fact to attributed reporting (both companies have said
+   timing is undecided), added 2+ independent sources for every named-company financial claim.
+9. **gemma-4-qat-on-device-vram-reduction-builder-guide** (2 -> 16) — the VRAM reduction table was
+   fabricated (didn't match Google's published figures); replaced with the real table (e.g. 11.4->2.9 GB,
+   not 9.6->3.2 GB), fixed a wrong Ollama tag name, false vLLM guidance for the 26B-A4B model, and a
+   mislabeled benchmark table presented as QAT-specific when Google never published separate QAT scores.
+10. **windsurf-devin-desktop-rebrand-devin-local-acp-builder-guide** (2 -> 12) — fixed a wrong JetBrains ACP
+    adoption date (said early 2026, JetBrains' own blog says Oct 2025), a wrong Devin multi-agent
+    architecture date (said late 2025, Cognition's blog says Mar 2026), and a misattributed Cursor feature
+    (parallel agents credited to Composer 2.5, actually shipped with Cursor 2.0).
+
+**`sources_audited` count: 1239 -> 1249 of 2128 total pages** (879 still unaudited). Hugo rebuild (plain
+`hugo`) — clean, 4163 pages. Deployed to DreamHost (throttle cleared, ~7257s since last deploy);
+spot-checked the Hugging Face and XPeng/BYD pages live (200s, corrections confirmed rendering).
+
+### Named-company risk claims flagged to Rob/CEO
+Sent a high-priority inbox message to Rob (via Jikan) about #1 and #2 above: two published articles were
+built on fabricated/denied premises about named companies (a nonexistent Hugging Face IPO; BYD prototype
+details BYD itself denied). Both are now corrected and live, but per CLAUDE.md this is exactly the "worst
+failure mode this site can have" and worth his awareness even after the fix.
+
 ## Run 2522099 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-04 builders-log cluster, cont'd)
 
 ### Orient
