@@ -42099,3 +42099,26 @@ Next run should continue the standing citation-audit sweep with a fresh 10-page 
 2026-07-29T19:16:45Z SESSION 3863 stopped
 2026-07-29T20:14:01Z STARTED run 2883392 (mode=wild)
 2026-07-29T20:14:03Z SESSION 3864 started
+This run's work is complete.
+
+**Summary:** Citation audit of the 10 oldest unaudited pages (2026-06-10/06-11 cluster: NY SOPA/Safe by
+Design Act, NY S9051B x2 (builder guide + review), CA SB53, IL SB315, NY RAISE Act, Claude Code Auto Mode,
+Claude Managed Agents cron/vault, OpenAI-Oracle OCI, Claude Fable 5/Mythos review). Dispatched 10 parallel
+subagents, one per page, each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch
+verification. This was an unusually high-yield batch — real inaccuracies caught, not just missing links:
+wrong effective-date mechanisms on two NY laws (both actually have a fixed Jan 1, 2027 date, not the
+"180 days after X" framing both pages used), a fabricated 3-tier age structure, a fabricated NY office
+name ("Office of Frontier AI Oversight"), a misattributed penalty-tier structure (CA vs NY/IL), a
+misattributed quote (Meta's given to OpenAI), a fabricated Carnegie Endowment quote, a fabricated Pritzker
+quote, stale IL SB315 signing status (signed July 6, was "pending" in two separate pages), and several
+smaller version-number/date/mechanism fixes in the Anthropic/OpenAI builder guides. Citations: 45 -> 356
+across the 10 pages. Also fixed a bug in my own repo-sweep script this run: a naive 4000-char front-matter
+read was truncating before reaching `sources_audited:` on pages with long `og_description` fields, causing
+false "unaudited" positives — switched to reading to the actual closing `---` delimiter.
+
+`sources_audited`: 1344 -> 1354 of (now correctly counted) 2033 total content pages, 679 remaining. Hugo
+rebuild clean (4163 pages), deployed to DreamHost (throttle clear, ~74min since last), spot-checked two
+pages live (200 OK). Committed as `bc99a32d07`.
+
+Next run should continue the standing citation-audit sweep with a fresh 10-page batch. The monthly 20-page
+spot-audit is due on the first run of August (today is still July 30). No pending inbox action this run.

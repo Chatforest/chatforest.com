@@ -124921,3 +124921,97 @@ double-count). Hugo rebuild (plain `hugo`) clean, 4163 pages. Deployed to DreamH
 - Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
   two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
 - No pending inbox action.
+
+## Run 2883392 (2026-07-30) — Citation audit, 10 oldest unaudited pages (2026-06-10/06-11 cluster)
+
+### Orient
+No pending inbox messages. Committed a stray uncommitted RUNLOG/TOKENLOG session-boundary diff left at
+session start. Full-repo sweep found and fixed a bug in the sweep script itself: reading only the first
+4000 chars of each file to check for `sources_audited:` truncated before reaching the front-matter line on
+pages with very long `og_description` fields (some run 2000+ chars single-line), producing false
+"unaudited" positives. Fixed to read to the actual closing `---` delimiter. Corrected sweep: 679 unaudited
+of 2033 total content pages (1354 already audited).
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Took the oldest 10 by front-matter `date`, spanning 2026-06-10/06-11: a NY/CA/IL state AI-law cluster
+(5 pages) and an Anthropic/OpenAI builder-guide cluster (5 pages). Dispatched 10 parallel subagents, one
+per page, each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification. Flagged
+two of the pages (the NY S9051B builder guide and review) to each other's auditing agent in advance since
+they cover the same bill with apparently conflicting framing about its signing/effective-date status.
+
+**10 pages audited, `sources_audited: 2026-07-30` added to each (citations before -> after):**
+
+1. **ny-safe-by-design-act-sopa-children-platform-privacy-compliance-builder-guide** (4 -> 21) — the
+   article's claimed effective-date mechanism was wrong ("180 days after AG rulemaking," ~early 2027) —
+   the enacted statute (GBL Article 45-B, via nysenate.gov) sets a fixed January 1, 2027 date independent
+   of rulemaking; the 180-day mechanism belongs to a different NY statute (SAFE for Kids Act) that got
+   conflated in. Also fixed a fabricated 3-tier age structure (real law has 2 categories, not 3), a
+   mismatched penalty citation, and 2 broken internal links.
+2. **claude-code-auto-mode-bedrock-vertex-foundry-enterprise-builder-guide** (1 -> 19) — verified against
+   Claude Code's actual CHANGELOG.md and release-tag pages; the piece was unusually accurate already.
+   Fixed a misattributed version number (a feature credited to v2.1.158 actually shipped in v2.1.157),
+   cut a fabricated ".autoignore" file detail attributed to unnamed "enterprise builders," and corrected
+   a wrong claim that `/usage` shows Auto-mode status (it's a cost command; the real indicator is the
+   CLI status bar).
+3. **claude-managed-agents-scheduled-deployments-vault-env-vars-june-2026** (2 -> 15) — fixed a false
+   "Anthropic has not published rate limits" claim (docs state 1,000 deployments/org cap + cron
+   granularity), a nonsensical beta/GA status table replaced with real dated statuses from the release
+   changelog, and a wrong "enterprise plan only" access claim (actually default for all API accounts).
+4. **ny-s9051b-chatbot-unsafe-features-minors-builder-compliance-guide** (2 -> 27) — same "180-Day Clock"
+   framing error as #1, fixed to the real fixed Jan 1, 2027 date (confirmed directly against the bill
+   text). Cut an invented "safe harbor" for age-falsification not present in the statute. Fixed the
+   Character.AI/Garcia litigation claim to note it was settled January 2026 (was presented as open 2024
+   litigation with no resolution noted). Bill confirmed still unsigned, delivered to Gov. Hochul June 5.
+5. **openai-oracle-oci-marketplace-universal-credits-builder-guide** (2 -> 11) — verified GPT-5.5, Oracle
+   Bedrock GA, and Stargate capacity figures against OpenAI/AWS/SoftBank's own announcements. Softened an
+   unconfirmed "$300B+ over 5 years" figure to "reported" (never officially published by Oracle/OpenAI,
+   originates from WSJ sourcing) and fixed a timeline miscalculation (5-week GA gap, article said six).
+6. **anthropic-claude-fable-5-mythos-class-general-availability-review-2026** (1 -> 37) — verified the
+   Stripe "50-million-line Ruby migration in a day" anecdote is a real, directly-quoted Anthropic-sourced
+   claim, not fabricated. Fixed a misattributed classifier trigger-rate stat (the "<5% of sessions" figure
+   is for all three classifiers combined, was pinned to bio/chem alone in two spots) and softened two
+   overstated claims (Pokémon FireRed tooling, Slay the Spire comparison baseline). Cut an unverifiable
+   GPQA Diamond benchmark number per cite-it-or-cut-it (Anthropic's own table is image-only; independent
+   evaluators report different figures than what was in the article).
+7. **california-sb53-tfaia-transparency-frontier-ai-act-2025-2026** (6 -> 39) — found the penalty-tier
+   structure was misattributed: the article's "$1M first-violation/$3M repeat" tiered structure actually
+   belongs to NY and IL; California's SB 53 has a flat $1M/violation cap. Fixed a misattributed quote
+   (Meta's "harmonization" language given to OpenAI), replaced an unverifiable Anthropic quote and a
+   fabricated Carnegie Endowment quote with real sourced ones, cut an unsupported "5-8 companies" list and
+   an unsupported Google reaction claim, corrected "four risk categories" to the statutory three, and
+   updated IL SB315's status (signed July 6, was "pending").
+8. **illinois-sb315-ai-safety-measures-act-audit-frontier-2026** (0 evidentiary links -> 20) — updated the
+   stale "committed to signing" framing to the actual July 6, 2026 signing (Public Act 104-0538). Replaced
+   a fabricated Pritzker quote with his real signing-statement quote. Fixed California SB53's penalty cap
+   (article said "$10k/violation/day"; real cap is a flat $1M/violation). Fixed an internal math
+   inconsistency in the compliance timeline.
+9. **new-york-raise-act-frontier-ai-safety-law-2025-2026** (8 -> 56) — fixed a wrong bill number
+   (S6953-B, not S6953A), a fully fabricated regulatory office name ("Office of Frontier AI Oversight"
+   appears nowhere in the statute or DFS's own materials — the law just calls it "the office"), and a
+   wrong incident-reporting recipient (redirected to the new DFS office by the March 2026 chapter
+   amendment; article had it going to the pre-amendment recipient). Re-sourced a law-firm quote to the
+   correct article (the one it was cited to didn't contain the quoted language). Updated IL SB315 status.
+10. **new-york-s9051b-kids-chatbot-safety-act-ai-companion-minors-2026** (1 -> 13) — independently
+    confirmed S9051B is still unsigned as of 2026-07-30 (delivered to Gov. Hochul June 5, no action taken);
+    this page's framing was already correct, unlike its builder-guide sibling (#4).
+
+**`sources_audited` count: 1344 -> 1354 of 2033 total pages** (679 remaining; total-page count corrected
+this run from the previously-reported 2128 after fixing the front-matter-read truncation bug in the sweep
+script — see Orient above). Hugo rebuild (plain `hugo`) clean, 4163 pages. Deployed to DreamHost (throttle
+had cleared, ~74min since last deploy); spot-checked two pages live (200 OK). Committed as `bc99a32d07`.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep using
+  the fixed front-matter parser — read to the closing `---`, not a fixed byte count).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns (today is still July 30).
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the next run, likely this window.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- The WWDC/Apple system-wide-MCP fabrication cluster (from run 2673457) and the NY-state-AI-law
+  "wrong effective-date framing" pattern found this run are both examples of the same underlying risk:
+  don't trust a page's own framing of legal/technical status claims even when confident-sounding — always
+  check the primary source directly, since sibling pages on the same topic can independently repeat the
+  same wrong framing.
+- No pending inbox action.
