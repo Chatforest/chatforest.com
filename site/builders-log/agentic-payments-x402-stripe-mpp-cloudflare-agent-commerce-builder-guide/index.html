@@ -80,7 +80,7 @@
 </ul>
 <hr>
 <h2 id="x402-http-402-as-a-machine-readable-price-tag">x402: HTTP 402 as a Machine-Readable Price Tag</h2>
-<p>The HTTP 402 status code has been reserved since 1991 with the note &ldquo;reserved for future use.&rdquo; Coinbase built an open protocol around it.</p>
+<p>The HTTP 402 status code was defined in the <a href="https://www.rfc-editor.org/rfc/rfc2068">HTTP/1.1 specification (RFC 2068)</a> in January 1997, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402">MDN documents it today</a> as still &ldquo;reserved for future use&rdquo; and nonstandard. <a href="https://docs.cdp.coinbase.com/x402/welcome">Coinbase built an open protocol</a> around it.</p>
 <p>x402 works at the HTTP layer. A service that requires payment responds with <code>HTTP 402 Payment Required</code>, a machine-readable price in the response body (amount, accepted currencies, payment address), and the agent pays before retrying the request.</p>
 <pre><code>GET /api/generate-report HTTP/1.1
 Host: data-service.example.com
@@ -105,12 +105,13 @@ Content-Type: application/json
 }
 </code></pre><p>The agent sends the stablecoin payment on Base (or Ethereum mainnet), includes the payment receipt in the next request header, and receives the resource. No account creation, no OAuth, no subscription — just HTTP.</p>
 <h3 id="whos-behind-x402">Who&rsquo;s Behind x402</h3>
-<p>x402 was developed by Coinbase and transferred to the Linux Foundation in April 2026 as the <strong>x402 Foundation</strong>. Members include:</p>
+<p>x402 was <a href="https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol">contributed to the Linux Foundation in April 2026 as the <strong>x402 Foundation</strong></a>, with Coinbase, Cloudflare, and Stripe named as the founding developers. Members include:</p>
 <ul>
-<li>Cloud providers: AWS, Google, Microsoft, Cloudflare</li>
-<li>Payment networks: Stripe, Mastercard, Visa, American Express, Adyen</li>
-<li>Infrastructure: Solana Foundation, Polygon Labs, Base, Circle, thirdweb</li>
-<li>Commerce: Shopify</li>
+<li>Cloud providers: AWS, Google, Microsoft</li>
+<li>Payment networks: Mastercard, Visa, American Express</li>
+<li>Payment/commerce processors: Stripe, Adyen, Shopify</li>
+<li>Crypto infrastructure: Solana Foundation, Polygon Labs, Base, Circle, thirdweb, Coinbase</li>
+<li>Other infrastructure and members: Cloudflare, Fiserv, KakaoPay, PPRO, Sierra, Ampersend.ai, Merit Systems</li>
 </ul>
 <p>The goal is x402 as the SSL of AI commerce — a foundational standard governed by a neutral body rather than a single company.</p>
 <h3 id="x402-practical-constraints">x402 Practical Constraints</h3>
@@ -124,7 +125,7 @@ Content-Type: application/json
 <p>It is not the right choice when your deployment environment prohibits crypto, your finance team requires fiat billing, or your users are enterprises with no stablecoin wallets.</p>
 <hr>
 <h2 id="stripe-machine-payments-protocol-mpp-multi-method-agent-billing">Stripe Machine Payments Protocol (MPP): Multi-Method Agent Billing</h2>
-<p>Stripe and Tempo Labs co-authored the Machine Payments Protocol to solve the same problem without requiring stablecoins. MPP is a request-response protocol that operates over HTTP and integrates directly into Stripe&rsquo;s existing billing infrastructure.</p>
+<p>Stripe and <a href="https://stripe.com/blog/machine-payments-protocol">Tempo</a> — the payments-focused blockchain <a href="https://www.coindesk.com/tech/2026/03/18/stripe-led-payments-blockchain-tempo-goes-live-with-protocol-for-ai-agents">incubated by Stripe and Paradigm</a> — co-authored the Machine Payments Protocol, launched March 18, 2026, to solve the same problem without requiring stablecoins as the only rail. MPP is a request-response protocol that operates over HTTP and integrates directly into Stripe&rsquo;s existing billing infrastructure.</p>
 <h3 id="how-mpp-works">How MPP Works</h3>
 <pre><code>Agent → Service: request resource
 Service → Agent: payment required (amount, methods, Shared Payment Token endpoint)
@@ -134,11 +135,11 @@ Service → Agent: resource delivered
 </code></pre><p>The <strong>Shared Payment Token (SPT)</strong> is the key primitive. An authorized human sets a budget (say, $50/month for infrastructure) and issues an SPT to the agent. The agent uses the SPT for autonomous purchases within that budget — no human approval needed per transaction.</p>
 <p>Supported payment methods:</p>
 <ul>
-<li><strong>Fiat via Stripe</strong>: credit cards, ACH, BNPL — standard Stripe PaymentIntents</li>
+<li><strong>Fiat via Stripe</strong>: <a href="https://stripe.com/blog/machine-payments-protocol">credit cards and buy-now-pay-later</a> — standard Stripe PaymentIntents</li>
 <li><strong>Stablecoins</strong>: via the Tempo network</li>
-<li><strong>Bitcoin Lightning</strong>: for sub-cent microtransactions</li>
+<li><strong>Bitcoin Lightning</strong>: <a href="https://thepaypers.com/payments/news/paradigm-and-stripe-launch-machine-payments-protocol-for-ai-agent-transactions">Lightspark extended MPP to Bitcoin payments over the Lightning Network</a>, enabling microtransactions</li>
 </ul>
-<p>Stripe features that travel with MPP transactions: tax calculation, fraud protection, refunds, and standard Stripe dashboard reporting. Human and agent transactions appear in the same dashboard, attributed separately.</p>
+<p>Stripe features that travel with MPP transactions: <a href="https://stripe.com/blog/machine-payments-protocol">&ldquo;tax calculation, fraud protection, reporting, accounting integrations, and refunds&rdquo;</a>. Agent-initiated orders are <a href="https://docs.stripe.com/agentic-commerce/for-sellers">tagged with the originating agent in the Stripe Dashboard, and merchants can filter transactions by agent name</a>.</p>
 <h3 id="integration-pattern-accepting-mpp-payments">Integration Pattern (Accepting MPP Payments)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> stripe
 
@@ -154,7 +155,7 @@ payment_intent <span style="color:#f92672">=</span> stripe<span style="color:#f9
 )
 </code></pre></div><p>From the service side, accepting MPP is a one-line change to your supported payment methods list. The rest of the PaymentIntents flow is identical.</p>
 <h3 id="early-adopters">Early Adopters</h3>
-<p>Browserbase (browser infrastructure), PostalForm (physical mail API), and Prospect Butcher Co. (food ordering API) are among the first production MPP integrations. Stripe Projects (see below) uses MPP as its payment layer.</p>
+<p><a href="https://stripe.com/blog/machine-payments-protocol">Browserbase (browser infrastructure, pay-per-session), PostalForm (agents pay to print and send physical mail), and Prospect Butcher Co. (agents order sandwiches for NYC pickup or delivery)</a> are among the first production MPP integrations. Stripe Projects (see below) uses MPP as its payment layer.</p>
 <p>MPP is the right choice when:</p>
 <ul>
 <li>Your infrastructure or compliance requires fiat billing</li>
@@ -163,7 +164,7 @@ payment_intent <span style="color:#f92672">=</span> stripe<span style="color:#f9
 </ul>
 <hr>
 <h2 id="cloudflare--stripe-projects-autonomous-end-to-end-deployment">Cloudflare + Stripe Projects: Autonomous End-to-End Deployment</h2>
-<p>The third protocol is not a payment standard — it is a complete autonomous deployment pipeline that uses Stripe as the identity and payment backbone. Cloudflare and Stripe jointly built it; Stripe Projects is currently in open beta.</p>
+<p>The third protocol is not a payment standard — it is a complete autonomous deployment pipeline that uses Stripe as the identity and payment backbone. Cloudflare and Stripe jointly built it; <a href="https://blog.cloudflare.com/agents-stripe-projects/">Stripe Projects is currently in open beta</a>.</p>
 <h3 id="what-it-does">What It Does</h3>
 <p>An agent with Stripe Projects access can autonomously:</p>
 <ol>
@@ -174,11 +175,11 @@ payment_intent <span style="color:#f92672">=</span> stripe<span style="color:#f9
 <li>Configure DNS</li>
 <li>Deploy applications to production</li>
 </ol>
-<p>A human approves only four decision points: initial authentication, terms acceptance, billing confirmation, and code merge. Everything technical is agent-controlled.</p>
+<p>A human approves only <a href="https://www.infoq.com/news/2026/05/cloudflare-stripe-agent-commerce/">four decision points: initial Stripe authentication, terms-of-service acceptance, billing setup, and merge decisions</a>. Everything technical is agent-controlled.</p>
 <h3 id="the-three-layer-architecture">The Three-Layer Architecture</h3>
 <p><strong>Discovery</strong>: The agent queries a REST API that returns a JSON catalog of participating services, their capabilities, and pricing. The agent selects services based on requirements without needing a human to know what&rsquo;s available.</p>
-<p><strong>Authorization</strong>: Stripe serves as the identity provider. If a Stripe email matches an existing Cloudflare account, a standard OAuth flow fires. If no account exists, Cloudflare automatically provisions one. Raw credentials never touch the agent — Stripe tokenization handles billing.</p>
-<p><strong>Spending Control</strong>: A default $100/month cap per provider protects against runaway costs. The cap is configurable. The human who authorizes the agent sets the budget ceiling.</p>
+<p><strong>Authorization</strong>: Stripe serves as the identity provider. If a Stripe email matches an existing Cloudflare account, a standard OAuth flow fires. If no account exists, Cloudflare automatically provisions one. Raw credentials never touch the agent — <a href="https://blog.cloudflare.com/agents-stripe-projects/">Stripe tokenization handles billing</a>.</p>
+<p><strong>Spending Control</strong>: A <a href="https://docs.stripe.com/projects">default $100/month cap per provider</a> protects against runaway costs. The cap is configurable. The human who authorizes the agent sets the budget ceiling.</p>
 <h3 id="participating-services-as-of-beta">Participating Services (as of beta)</h3>
 <table>
 <thead>
@@ -214,16 +215,18 @@ payment_intent <span style="color:#f92672">=</span> stripe<span style="color:#f9
 </tr>
 </tbody>
 </table>
+<p><a href="https://blog.cloudflare.com/agents-stripe-projects/">Source: Cloudflare&rsquo;s Stripe Projects launch post and Stripe&rsquo;s Projects documentation</a> confirm Cloudflare, Vercel, Supabase, Hugging Face, Twilio, and GitLab as catalog participants; <a href="https://docs.stripe.com/projects">AgentMail is listed under Communications in the Stripe Projects provider catalog</a> as well.</p>
 <h3 id="getting-started-open-beta">Getting Started (Open Beta)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Install Stripe CLI with Projects plugin</span>
-stripe plugins install projects
+stripe plugin install projects
 
 <span style="color:#75715e"># Authenticate</span>
 stripe login
 
 <span style="color:#75715e"># Let the agent take it from here</span>
 stripe projects init
-</code></pre></div><p>After <code>stripe projects init</code>, the agent builds the application, provisions accounts on required services, obtains API tokens, registers a domain if needed, and deploys to production. The four human approval gates appear in sequence.</p>
+</code></pre></div><p>(Commands per <a href="https://docs.stripe.com/projects">Stripe&rsquo;s Projects documentation</a>.)</p>
+<p>After <code>stripe projects init</code>, the agent builds the application, provisions accounts on required services, obtains API tokens, registers a domain if needed, and deploys to production. The four human approval gates appear in sequence.</p>
 <p>Stripe Projects is the right choice when:</p>
 <ul>
 <li>You are automating the full bootstrap of a new project or environment</li>
@@ -277,12 +280,12 @@ stripe projects init
 <p><strong>SPT budgets</strong>: Issue Shared Payment Tokens with explicit monthly limits. Treat the limit as a hard stop, not a soft warning. Start conservatively and raise after observing actual usage.</p>
 <p><strong>Cloudflare Projects caps</strong>: The $100/month default is a starting point. Evaluate whether your workload needs more — and if it does, understand why before raising the cap.</p>
 <p><strong>x402 wallets</strong>: Pre-fund with small amounts. Do not connect an agent wallet to a high-balance account. Treat the wallet balance as the agent&rsquo;s spending limit.</p>
-<p><strong>Audit trails</strong>: MPP transactions appear in the Stripe dashboard labeled by agent vs. human origin. x402 transactions are on-chain. Both are auditable. Build alerting around anomalous patterns before you need it.</p>
+<p><strong>Audit trails</strong>: <a href="https://docs.stripe.com/agentic-commerce/for-sellers">MPP transactions are tagged with the originating agent in the Stripe Dashboard and can be filtered by agent name</a>. x402 transactions are on-chain. Both are auditable. Build alerting around anomalous patterns before you need it.</p>
 <hr>
 <h2 id="what-is-not-ready-yet">What Is Not Ready Yet</h2>
 <p>x402 adoption is real but still concentrated in crypto-native services. Most traditional SaaS has not implemented the <code>402 Payment Required</code> response — your agent cannot autonomously pay for a Salesforce seat or a Jira license via x402 in 2026.</p>
 <p>Stripe MPP is live but the early adopter list is short. Budget-controlled SPT spending works; discovering new MPP-capable services still requires manual integration work.</p>
-<p>Cloudflare Stripe Projects is open beta. The service catalog is limited to ~30 providers. If your stack requires services not in the catalog, you are back to manual provisioning for those services.</p>
+<p>Cloudflare Stripe Projects is open beta. As of May 2026, the <a href="https://www.infoq.com/news/2026/05/cloudflare-stripe-agent-commerce/">catalog listed several dozen providers</a> beyond Cloudflare itself. If your stack requires services not in the catalog, you are back to manual provisioning for those services.</p>
 <p>The trajectory is clear — these protocols are converging on a world where agents can transact as fluidly as they communicate. The foundation is being laid now.</p>
 <hr>
 <h2 id="what-to-do-now">What to Do Now</h2>

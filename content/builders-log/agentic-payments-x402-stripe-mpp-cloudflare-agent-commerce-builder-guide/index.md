@@ -6,6 +6,7 @@ og_description: "Your agent needs to pay for an API call, register a domain, or 
 content_type: "Builder's Log"
 categories: ["Developer Tools", "Agent Infrastructure", "Payments"]
 tags: ["agentic-payments", "x402", "stripe", "cloudflare", "machine-payments-protocol", "ai-agents", "autonomous", "stablecoin", "http402", "infrastructure", "stripe-projects", "coinbase", "open-source"]
+sources_audited: 2026-07-29
 ---
 
 Agents now routinely manage files, browse the web, execute code, and call external APIs. The one thing they still can't do cleanly is pay for things. Autonomous billing — spinning up a database, registering a domain, calling a paid API without a human credit card — has been the missing infrastructure layer.
@@ -30,7 +31,7 @@ Three teams built three different answers to this problem in 2025–2026:
 
 ## x402: HTTP 402 as a Machine-Readable Price Tag
 
-The HTTP 402 status code has been reserved since 1991 with the note "reserved for future use." Coinbase built an open protocol around it.
+The HTTP 402 status code was defined in the [HTTP/1.1 specification (RFC 2068)](https://www.rfc-editor.org/rfc/rfc2068) in January 1997, and [MDN documents it today](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402) as still "reserved for future use" and nonstandard. [Coinbase built an open protocol](https://docs.cdp.coinbase.com/x402/welcome) around it.
 
 x402 works at the HTTP layer. A service that requires payment responds with `HTTP 402 Payment Required`, a machine-readable price in the response body (amount, accepted currencies, payment address), and the agent pays before retrying the request.
 
@@ -62,12 +63,13 @@ The agent sends the stablecoin payment on Base (or Ethereum mainnet), includes t
 
 ### Who's Behind x402
 
-x402 was developed by Coinbase and transferred to the Linux Foundation in April 2026 as the **x402 Foundation**. Members include:
+x402 was [contributed to the Linux Foundation in April 2026 as the **x402 Foundation**](https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol), with Coinbase, Cloudflare, and Stripe named as the founding developers. Members include:
 
-- Cloud providers: AWS, Google, Microsoft, Cloudflare
-- Payment networks: Stripe, Mastercard, Visa, American Express, Adyen
-- Infrastructure: Solana Foundation, Polygon Labs, Base, Circle, thirdweb
-- Commerce: Shopify
+- Cloud providers: AWS, Google, Microsoft
+- Payment networks: Mastercard, Visa, American Express
+- Payment/commerce processors: Stripe, Adyen, Shopify
+- Crypto infrastructure: Solana Foundation, Polygon Labs, Base, Circle, thirdweb, Coinbase
+- Other infrastructure and members: Cloudflare, Fiserv, KakaoPay, PPRO, Sierra, Ampersend.ai, Merit Systems
 
 The goal is x402 as the SSL of AI commerce — a foundational standard governed by a neutral body rather than a single company.
 
@@ -86,7 +88,7 @@ It is not the right choice when your deployment environment prohibits crypto, yo
 
 ## Stripe Machine Payments Protocol (MPP): Multi-Method Agent Billing
 
-Stripe and Tempo Labs co-authored the Machine Payments Protocol to solve the same problem without requiring stablecoins. MPP is a request-response protocol that operates over HTTP and integrates directly into Stripe's existing billing infrastructure.
+Stripe and [Tempo](https://stripe.com/blog/machine-payments-protocol) — the payments-focused blockchain [incubated by Stripe and Paradigm](https://www.coindesk.com/tech/2026/03/18/stripe-led-payments-blockchain-tempo-goes-live-with-protocol-for-ai-agents) — co-authored the Machine Payments Protocol, launched March 18, 2026, to solve the same problem without requiring stablecoins as the only rail. MPP is a request-response protocol that operates over HTTP and integrates directly into Stripe's existing billing infrastructure.
 
 ### How MPP Works
 
@@ -101,11 +103,11 @@ Service → Agent: resource delivered
 The **Shared Payment Token (SPT)** is the key primitive. An authorized human sets a budget (say, $50/month for infrastructure) and issues an SPT to the agent. The agent uses the SPT for autonomous purchases within that budget — no human approval needed per transaction.
 
 Supported payment methods:
-- **Fiat via Stripe**: credit cards, ACH, BNPL — standard Stripe PaymentIntents
+- **Fiat via Stripe**: [credit cards and buy-now-pay-later](https://stripe.com/blog/machine-payments-protocol) — standard Stripe PaymentIntents
 - **Stablecoins**: via the Tempo network
-- **Bitcoin Lightning**: for sub-cent microtransactions
+- **Bitcoin Lightning**: [Lightspark extended MPP to Bitcoin payments over the Lightning Network](https://thepaypers.com/payments/news/paradigm-and-stripe-launch-machine-payments-protocol-for-ai-agent-transactions), enabling microtransactions
 
-Stripe features that travel with MPP transactions: tax calculation, fraud protection, refunds, and standard Stripe dashboard reporting. Human and agent transactions appear in the same dashboard, attributed separately.
+Stripe features that travel with MPP transactions: ["tax calculation, fraud protection, reporting, accounting integrations, and refunds"](https://stripe.com/blog/machine-payments-protocol). Agent-initiated orders are [tagged with the originating agent in the Stripe Dashboard, and merchants can filter transactions by agent name](https://docs.stripe.com/agentic-commerce/for-sellers).
 
 ### Integration Pattern (Accepting MPP Payments)
 
@@ -128,7 +130,7 @@ From the service side, accepting MPP is a one-line change to your supported paym
 
 ### Early Adopters
 
-Browserbase (browser infrastructure), PostalForm (physical mail API), and Prospect Butcher Co. (food ordering API) are among the first production MPP integrations. Stripe Projects (see below) uses MPP as its payment layer.
+[Browserbase (browser infrastructure, pay-per-session), PostalForm (agents pay to print and send physical mail), and Prospect Butcher Co. (agents order sandwiches for NYC pickup or delivery)](https://stripe.com/blog/machine-payments-protocol) are among the first production MPP integrations. Stripe Projects (see below) uses MPP as its payment layer.
 
 MPP is the right choice when:
 - Your infrastructure or compliance requires fiat billing
@@ -139,7 +141,7 @@ MPP is the right choice when:
 
 ## Cloudflare + Stripe Projects: Autonomous End-to-End Deployment
 
-The third protocol is not a payment standard — it is a complete autonomous deployment pipeline that uses Stripe as the identity and payment backbone. Cloudflare and Stripe jointly built it; Stripe Projects is currently in open beta.
+The third protocol is not a payment standard — it is a complete autonomous deployment pipeline that uses Stripe as the identity and payment backbone. Cloudflare and Stripe jointly built it; [Stripe Projects is currently in open beta](https://blog.cloudflare.com/agents-stripe-projects/).
 
 ### What It Does
 
@@ -151,15 +153,15 @@ An agent with Stripe Projects access can autonomously:
 5. Configure DNS
 6. Deploy applications to production
 
-A human approves only four decision points: initial authentication, terms acceptance, billing confirmation, and code merge. Everything technical is agent-controlled.
+A human approves only [four decision points: initial Stripe authentication, terms-of-service acceptance, billing setup, and merge decisions](https://www.infoq.com/news/2026/05/cloudflare-stripe-agent-commerce/). Everything technical is agent-controlled.
 
 ### The Three-Layer Architecture
 
 **Discovery**: The agent queries a REST API that returns a JSON catalog of participating services, their capabilities, and pricing. The agent selects services based on requirements without needing a human to know what's available.
 
-**Authorization**: Stripe serves as the identity provider. If a Stripe email matches an existing Cloudflare account, a standard OAuth flow fires. If no account exists, Cloudflare automatically provisions one. Raw credentials never touch the agent — Stripe tokenization handles billing.
+**Authorization**: Stripe serves as the identity provider. If a Stripe email matches an existing Cloudflare account, a standard OAuth flow fires. If no account exists, Cloudflare automatically provisions one. Raw credentials never touch the agent — [Stripe tokenization handles billing](https://blog.cloudflare.com/agents-stripe-projects/).
 
-**Spending Control**: A default $100/month cap per provider protects against runaway costs. The cap is configurable. The human who authorizes the agent sets the budget ceiling.
+**Spending Control**: A [default $100/month cap per provider](https://docs.stripe.com/projects) protects against runaway costs. The cap is configurable. The human who authorizes the agent sets the budget ceiling.
 
 ### Participating Services (as of beta)
 
@@ -172,11 +174,13 @@ A human approves only four decision points: initial authentication, terms accept
 | Email | AgentMail |
 | Source control | GitLab |
 
+[Source: Cloudflare's Stripe Projects launch post and Stripe's Projects documentation](https://blog.cloudflare.com/agents-stripe-projects/) confirm Cloudflare, Vercel, Supabase, Hugging Face, Twilio, and GitLab as catalog participants; [AgentMail is listed under Communications in the Stripe Projects provider catalog](https://docs.stripe.com/projects) as well.
+
 ### Getting Started (Open Beta)
 
 ```bash
 # Install Stripe CLI with Projects plugin
-stripe plugins install projects
+stripe plugin install projects
 
 # Authenticate
 stripe login
@@ -184,6 +188,8 @@ stripe login
 # Let the agent take it from here
 stripe projects init
 ```
+
+(Commands per [Stripe's Projects documentation](https://docs.stripe.com/projects).)
 
 After `stripe projects init`, the agent builds the application, provisions accounts on required services, obtains API tokens, registers a domain if needed, and deploys to production. The four human approval gates appear in sequence.
 
@@ -220,7 +226,7 @@ Autonomous payments require explicit budget governance. Trust the automation on 
 
 **x402 wallets**: Pre-fund with small amounts. Do not connect an agent wallet to a high-balance account. Treat the wallet balance as the agent's spending limit.
 
-**Audit trails**: MPP transactions appear in the Stripe dashboard labeled by agent vs. human origin. x402 transactions are on-chain. Both are auditable. Build alerting around anomalous patterns before you need it.
+**Audit trails**: [MPP transactions are tagged with the originating agent in the Stripe Dashboard and can be filtered by agent name](https://docs.stripe.com/agentic-commerce/for-sellers). x402 transactions are on-chain. Both are auditable. Build alerting around anomalous patterns before you need it.
 
 ---
 
@@ -230,7 +236,7 @@ x402 adoption is real but still concentrated in crypto-native services. Most tra
 
 Stripe MPP is live but the early adopter list is short. Budget-controlled SPT spending works; discovering new MPP-capable services still requires manual integration work.
 
-Cloudflare Stripe Projects is open beta. The service catalog is limited to ~30 providers. If your stack requires services not in the catalog, you are back to manual provisioning for those services.
+Cloudflare Stripe Projects is open beta. As of May 2026, the [catalog listed several dozen providers](https://www.infoq.com/news/2026/05/cloudflare-stripe-agent-commerce/) beyond Cloudflare itself. If your stack requires services not in the catalog, you are back to manual provisioning for those services.
 
 The trajectory is clear — these protocols are converging on a world where agents can transact as fluidly as they communicate. The foundation is being laid now.
 

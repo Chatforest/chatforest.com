@@ -7,17 +7,18 @@ content_type: "Builder's Log"
 categories: ["Google", "Model Analysis", "Developer Tools", "Cost Optimization"]
 tags: ["google", "gemini", "gemini-3.5-flash", "api-integration", "cost-analysis", "context-window", "production-ai", "model-selection", "builders-log"]
 draft: false
+sources_audited: 2026-07-29
 ---
 
 Gemini 3.5 Flash is [now generally available](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/). The preview and limited-access period is over — the model is stable, documented, and priced for production. Pricing and specs are confirmed in the [Gemini API changelog](https://ai.google.dev/gemini-api/docs/changelog).
 
-Three numbers define what this GA means for builders:
+Three numbers define what this GA means for builders, all confirmed on Google's own [Gemini API pricing page](https://ai.google.dev/gemini-api/docs/pricing) and [model page](https://ai.google.dev/gemini-api/docs/whats-new-gemini-3.5):
 
 - **$1.50 per million input tokens**
 - **$9 per million output tokens**
-- **1,000,000-token context window**
+- **1,000,000-token context window** (65K max output tokens)
 
-Combined with confirmed 4x speed over comparable models at similar capability tiers, this is a materially different cost and latency profile than what most builders were working with in early 2026. Here is what you need to know to integrate it.
+Combined with [Google's own claim](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/) that, measured in output tokens per second, Flash "is 4 times faster than other frontier models," this is a materially different cost and latency profile than what most builders were working with in early 2026. Here is what you need to know to integrate it.
 
 ---
 
@@ -26,9 +27,9 @@ Combined with confirmed 4x speed over comparable models at similar capability ti
 The model ID is `gemini-3.5-flash`. It is consistent across:
 
 - **Google AI Studio** — direct API access, no Vertex account required
-- **Gemini API** (api.ai.google.dev) — the developer-tier endpoint
-- **Vertex AI** — enterprise billing, VPC peering, regional endpoints
-- **Google Antigravity 2.0** — for builders using Google's agentic runtime
+- **[Gemini API](https://ai.google.dev/gemini-api/docs)** (`generativelanguage.googleapis.com`) — the developer-tier endpoint
+- **Vertex AI** (`aiplatform.googleapis.com`) — enterprise billing, VPC peering, regional endpoints
+- **Google Antigravity 2.0** — Google's agent-first IDE/CLI/SDK platform, [launched at I/O 2026](https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool-at-io-2026/)
 
 One model ID powers all surfaces. Unlike some competing models, there is no `gemini-3.5-flash-preview` vs `gemini-3.5-flash` split to navigate — the GA label means the `gemini-3.5-flash` you have been testing is the same identifier you run in production.
 
@@ -63,26 +64,28 @@ At $1.50 input / $9 output per million tokens, Gemini 3.5 Flash is priced below 
 
 | Model | Input ($/1M) | Output ($/1M) | Context |
 |-------|-------------|---------------|---------|
-| Gemini 3.5 Flash | $1.50 | $9.00 | 1M |
-| Claude Sonnet 4.6 | $3.00 | $15.00 | 200K |
-| GPT-5.5 (reasoning_effort: low) | ~$2.50 | ~$10.00 | 128K |
-| Gemini 3.1 Pro | $3.50 | $10.50 | 128K |
+| [Gemini 3.5 Flash](https://ai.google.dev/gemini-api/docs/pricing) | $1.50 | $9.00 | 1M |
+| [Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6) | $3.00 | $15.00 | 1M (beta) |
+| [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5) | $5.00 | $30.00 | ~1.05M |
+| [Gemini 3.1 Pro](https://ai.google.dev/gemini-api/docs/pricing) | $2.00–$4.00* | $12.00–$18.00* | 1M |
 
-Flash input pricing is half Sonnet 4.6's. Output is 40% lower. And Flash carries a 5x larger context window than Sonnet 4.6 and nearly 8x over GPT-5.5.
+*Gemini 3.1 Pro pricing is tiered: the lower figure applies to prompts ≤200K tokens, the higher figure to the portion of a prompt beyond 200K tokens.
+
+Flash input pricing is half of Sonnet 4.6's and 70% below GPT-5.5's; output is 40% below Sonnet 4.6's and 70% below GPT-5.5's. Note that the 1M-token context window is **not** a Flash-exclusive advantage the way it was during the 2.x generation — Sonnet 4.6 and GPT-5.5 have both since shipped comparable or larger windows. What Flash actually wins on in this table is price, not context ceiling: no other model here offers a 1M-class window at anywhere near Flash's rate.
 
 For cost-sensitive pipelines — classification, summarization, extraction, routing, and agentic sub-tasks that do not require frontier reasoning — Flash's pricing position is now the default choice to justify against, not a compromise to explain.
 
 ### What this means at scale
 
-A pipeline doing 10 million requests per day at 500 tokens average input and 200 tokens average output:
+A pipeline doing 1 million requests per day at 500 tokens average input and 200 tokens average output:
 
 | Model | Daily cost |
 |-------|-----------|
 | Gemini 3.5 Flash | $750 input + $1,800 output = **$2,550/day** |
 | Claude Sonnet 4.6 | $1,500 input + $3,000 output = **$4,500/day** |
-| GPT-5.5 | ~$1,250 input + $2,000 output = **~$3,250/day** |
+| GPT-5.5 | $2,500 input + $6,000 output = **$8,500/day** |
 
-At this scale, Flash is $710K/year cheaper than Sonnet 4.6 for equivalent throughput.
+At this scale, Flash is roughly $710K/year cheaper than Sonnet 4.6, and roughly $2.17M/year cheaper than GPT-5.5, for equivalent throughput (using the per-token rates in the table above).
 
 ---
 
@@ -112,7 +115,7 @@ For knowledge bases under ~600K tokens (roughly 450 standard pages), you may be 
 
 ## Speed: What 4x Means in Production
 
-Gemini 3.5 Flash is confirmed at 4x the throughput speed of comparable models at similar capability tiers. In practice this surfaces as:
+[Google states](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/) that, measured in output tokens per second, Flash is 4x the throughput speed of other frontier models. In practice this surfaces as:
 
 **Tokens per second**: Flash generates output tokens faster than Gemini 3.1 Pro, GPT-5.5, or Claude Sonnet 4.6 for streaming applications. For user-facing features where perceived speed matters, Flash removes the need for streaming tricks to compensate for slow generation.
 
@@ -129,15 +132,15 @@ Three Google models are now competing for builder attention. The decision matrix
 ### Use Gemini 3.5 Flash when:
 - Your task is single-modality (text in, text out) or standard image understanding
 - Cost per call matters more than peak reasoning performance
-- You need the largest available context window
+- You need a large (1M-token) context window at the lowest available price for that tier
 - Speed and throughput are critical
 - You are building classification, extraction, routing, summarization, or agentic sub-tasks
 
-### Use Gemini Omni Flash when:
+### Use [Gemini Omni Flash](https://ai.google.dev/gemini-api/docs/omni) when:
 - Your pipeline requires video generation, native audio output, or combined text-image-video-audio in a single call
 - You are replacing multi-model pipelines where you previously called separate models for each modality
 - You are building on the Gemini consumer app surface, YouTube integrations, or Google Antigravity
-- Note: Omni Flash API access is still rolling out as of early June 2026; Flash is the GA choice for developer API calls today
+- **Correction (2026-07-29):** at original publication this article noted Omni Flash API access was "still rolling out." That rollout has since completed — [Google made Omni Flash available to developers via the Gemini API and Google AI Studio on June 30, 2026](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/).
 
 ### Wait for Gemini 3.5 Pro when:
 - Your task requires frontier-level reasoning that Flash benchmarks miss
@@ -151,28 +154,28 @@ For most production workloads, the answer is Flash. Pro is for the tasks where y
 
 ## Benchmark Context
 
-Flash leads on:
-- **MCP Atlas** (83.6%) — ahead of Claude Opus 4.7 and GPT-5.5
-- **Finance Agent v2** — up from 43% (Gemini 3.1 Pro) to 57.9%
-- **MMMU-Pro** and **CharXiv Reasoning** — multimodal and chart understanding
-- **Toolathlon** — multi-step tool use
+**Correction (2026-07-29):** this section originally claimed Flash "leads" several benchmarks outright. Re-checking the primary leaderboards found that framing was not accurate — Flash posts strong, near-top scores on agentic/tool-use benchmarks, but does not hold the top spot on any of them once other labs' models are counted. Corrected below with current numbers and sources.
+
+Flash scores well on:
+- **[MCP Atlas](https://labs.scale.com/leaderboard/mcp_atlas)** (Scale AI's tool-use benchmark, 1,000 tasks across 36 real MCP servers): Flash scores 83.6%, second place behind Meta's Muse Spark 1.1 (88.1%) and just ahead of Claude Fable 5 (83.3%).
+- **[Finance Agent v2](https://www.vals.ai/benchmarks/fabv2)** (Vals AI's financial-analyst benchmark): Flash scores 57.9%, second behind Claude Opus 5 (58.6%) — at roughly half the cost and close to double the speed, per Vals AI's own comparison.
 
 Flash trails on:
-- **SWE-bench Pro** — Claude Opus 4.7 leads here
+- **[SWE-bench Pro](https://www.anthropic.com/news/claude-opus-4-7)**: this is a code-reasoning benchmark where Anthropic's Opus line has led since Opus 4.7's release; Anthropic has since shipped [Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) as well. Flash is not competitive here and is not marketed as a coding-frontier model.
 - Tasks requiring extended chain-of-thought reasoning (this is the gap Pro is expected to fill)
 
-For agentic applications and tool-calling pipelines, Flash's benchmark profile is strong. The weakness is deep code reasoning and tasks that benefit from the kind of extended thinking that Opus 4.7 or Pro-tier models provide.
+For agentic applications and tool-calling pipelines, Flash's benchmark profile is strong — it is consistently near the top of the field, not the field's clear leader. The weakness is deep code reasoning and tasks that benefit from the kind of extended thinking that Opus-tier or Pro-tier models provide.
 
 ---
 
 ## Migration from Gemini 2.x and 3.1
 
-If you are migrating from `gemini-2.0-flash` (deprecated June 1, 2026) or `gemini-3.1-pro`:
+If you are migrating from [`gemini-2.0-flash` (shut down June 1, 2026)](https://ai.google.dev/gemini-api/docs/changelog) or `gemini-3.1-pro`:
 
 1. **Update the model ID** to `gemini-3.5-flash` in all API calls and configuration files
 2. **Update your response parsing** — if you are still using the legacy `outputs` schema, migrate to `steps` before June 8 (the hard cutoff; see our [Gemini June 8 migration guide](/builders-log/gemini-interactions-api-june-8-steps-migration-outputs-deadline/))
-3. **Revisit your context window assumptions** — 3.1 Pro had a 128K window; Flash has 1M. This opens up patterns that were previously impractical; review your chunking and RAG logic
-4. **Recalculate your cost model** — Flash undercuts 3.1 Pro pricing; your budget assumptions from a 3.1 Pro rollout will be overstated
+3. **Recalculate your cost model if migrating from 3.1 Pro** — Flash's flat $1.50/$9.00 per-million pricing undercuts 3.1 Pro's tiered [$2.00–$4.00 input / $12.00–$18.00 output](https://ai.google.dev/gemini-api/docs/pricing) rate at every tier; your budget assumptions from a 3.1 Pro rollout will be overstated. Note that both models share a ~1M-token context window, so this is a pricing change, not a context-window upgrade.
+4. **Recalculate your cost model if migrating from 2.0 Flash** — 2.0 Flash was priced at [$0.10 input / $0.40 output](https://ai.google.dev/gemini-api/docs/pricing) per million tokens; Flash's $1.50/$9.00 is a substantial per-token increase even though it is the newer, more capable model. Budget for this rather than assuming price parity with the model you're replacing.
 
 For most 2.x migrations, the primary change is the model ID. The 3.5 API surface (Gemini API v2, SDK 2.x) differs structurally from the 2.x API in response schema and streaming format. The June 8 `outputs` → `steps` deadline applies regardless of which 3.x model you are using.
 
@@ -183,7 +186,7 @@ For most 2.x migrations, the primary change is the model ID. The 3.5 API surface
 Flash is not a universal model substitution. There are specific cases where it is the wrong choice:
 
 - **Extended reasoning tasks**: Flash does not have an equivalent to Claude's `budget_tokens` or GPT-5.5's `reasoning_effort: high`. For tasks that benefit from visible chain-of-thought reasoning steps, use a model that exposes this.
-- **Frontier code generation**: SWE-bench results confirm Flash is not the best available option for complex software engineering tasks. Use Claude Opus 4.7, Claude Sonnet 4.8 (coming mid-June), or wait for Gemini 3.5 Pro.
+- **Frontier code generation**: [SWE-bench Pro results](https://labs.scale.com/leaderboard/swe_bench_pro_public) confirm Flash is not the best available option for complex software engineering tasks. Use [Claude Opus](https://www.anthropic.com/news/claude-opus-4-8), or wait for Gemini 3.5 Pro. **Correction (2026-07-29):** the original text named "Claude Sonnet 4.8 (coming mid-June)" as an alternative; no Sonnet 4.8 has shipped — Anthropic's Sonnet line remains at 4.6, and the May/June 2026 release in that family was [Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8), not a Sonnet update.
 - **Long-form structured output at high accuracy**: At 4x speed, Flash prioritizes throughput. For tasks where output accuracy on structured schemas (JSON, XML, constrained formats) matters more than speed, benchmark before committing.
 
 ---

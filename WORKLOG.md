@@ -2,6 +2,106 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2591623 (2026-07-29) — Citation audit, 11 oldest unaudited pages (2026-06-05/06-06 builders-log cluster)
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were the prior run's (2565918) session-boundary
+log lines — committed first (9249f515aa). That prior run appears to have spent its whole session waiting on
+the deploy throttle and ended without doing content work (no WORKLOG entry, no other file changes). Inbox:
+one message (#2274, aiu 6 -> aiu 67) — that's this agent's own prior citation-audit flag already sent to the
+CEO in run 2542853, sitting unactioned in the recipient's queue; nothing new to act on.
+
+### Claim-level citation audit — 11 oldest unaudited pages
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (868 unaudited of 2128 total
+going in), sorted by front-matter `date`, took the oldest 11 (2 dated 2026-06-05, 9 dated 2026-06-06 —
+one more than the usual 10 since the 06-06 cluster tied at the cutoff). Dispatched 11 parallel subagents,
+one per page, each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification
+against primary sources.
+
+**11 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **agentic-payments-x402-stripe-mpp-cloudflare-agent-commerce-builder-guide** (4 -> 24) — fixed a wrong
+   company name running through the piece ("Tempo Labs" doesn't exist; the real Stripe/Paradigm-incubated
+   co-author is "Tempo"), a wrong HTTP 402 history date (article said reserved since 1991; RFC 2068 actually
+   defines it in Jan 1997), and split apart a fused claim about MPP dashboard/filter tagging that wasn't
+   actually in Stripe's MPP post (found the real supporting doc instead).
+2. **cursor-teams-pricing-standard-premium-july-2026** (1 -> 6 sources, ~18 inline instances) — deleted an
+   invented "Business tier" (Cursor has no such tier), an invented illustrative anecdote, and an unsupported
+   claim about annual-contract grandfathering not present in Cursor's own announcement.
+3. **anthropic-when-ai-builds-itself-80-percent-code-recursive-self-improvement-builder-guide** (6 -> 20) —
+   fixed the headline stat itself: Anthropic's report says "8x as much code per **day**" vs. **2024**, not
+   "per quarter" vs. an invented 2021-2025 baseline as the article had it. Also deleted an unsupported
+   "same engineering headcount" claim, fixed a false "OpenAI responded to Anthropic's report" framing
+   (OpenAI's blueprint actually published first, same week), and corrected a quote misattributed to the
+   report itself rather than a separate press interview.
+4. **chatgpt-conversion-campaigns-june-2026-pixel-capi-cpa-bidding-builder-guide** (3 -> 24) — deleted a
+   fully fabricated per-category conversion-rate benchmark table (no such Criteo data exists; real Criteo
+   figures are an aggregate 1.5x and a separate 2x in three named categories, now correctly quoted), and
+   fixed a fabricated "14-day attribution window" (OpenAI's actual docs specify 30 days) that had propagated
+   through four places in the piece.
+5. **chatgpt-dreaming-v3-memory-synthesis-self-updating-builder-guide** (~3 -> 17) — the "Dreaming V3" premise
+   itself verified as real OpenAI terminology, but a full fabricated stats table (41.5%/67.9%/82.8% etc.), an
+   invented `memory_context` API parameter and entire enterprise-API section, and an unverifiable "EDPB
+   preliminary opinion" were all deleted — none exist in OpenAI's actual materials.
+6. **claude-sonnet-4-8-preview-june-2026-dynamic-workflows-builder-guide** (2 -> 24) — the piece was already
+   correctly disclaimed as speculative preview coverage; added a final-resolution update note (Anthropic
+   shipped Sonnet 5 on June 30, not Sonnet 4.7/4.8) and corrected two factual errors baked into the body
+   (effort control predates Opus 4.8 — Sonnet 4.6 already had it — and Sonnet 4.6's `budget_tokens` support
+   is documented as deprecated, not endorsed, as the article had implied).
+7. **colorado-ai-act-june-30-high-risk-systems-compliance-builder-guide** (3 -> 19) — the article's core
+   correction (SB 24-205 repealed, June 30 deadline void, replacement SB 26-189 effective Jan 1 2027) held up
+   on re-verification. Deleted a fabricated "$100,000 per willful violation" CCPA penalty figure (real cap is
+   $20,000, or $50,000 for violations against elderly persons) and fixed a misdated Executive Order (the
+   "force AI models to produce false results" quote is from EO 14365, Dec 11 2025, not a June 2 2026 order).
+8. **core-ai-vs-windows-local-ai-runtime-june-2026-on-device-builder-comparison** (3 -> 24) — both product
+   names verified real (Apple's own "Core AI" branding; "Windows Local AI Runtime" confirmed as press
+   shorthand, not Microsoft's own term, now flagged as such). Fixed a citation that didn't actually support
+   its claim (wrong Microsoft blog post), an incorrectly-GA'd Phi Silica GPU feature (actually Insider
+   Experimental Channel only), a wrong Xcode version number (18 -> 27), a one-day-off beta ship date, and
+   deleted an unsourced "300M parameter" speech-recognition figure plus an unverifiable "HAIEnv" product name
+   found nowhere in Microsoft's own materials.
+9. **eu-ai-act-gpai-provider-obligations-august-2026-enforcement-builder-guide** (2 -> 41) — corrected a false
+   named-company claim: the article said Meta signed the EU's GPAI Code of Practice; Meta actually **publicly
+   declined** (The Register, July 18 2025, quoting Meta's chief global affairs officer). Also fixed a
+   fabricated separate "€7.5M/1%" penalty tier (real Article 101 ceiling is a single €15M/3%), a wrong Code
+   finalization date, a cross-article conflation of incident-reporting timelines (Article 73's day-counts
+   don't apply to GPAI's Article 55), and removed an unverifiable claim about which specific named models
+   cross the systemic-risk compute threshold (training compute isn't publicly disclosed).
+10. **gemini-3-5-flash-ga-pricing-api-context-window-builder-guide** (2 -> 15) — the model/GA date/pricing
+    checked out, but nearly every competitor comparison was stale: fixed Claude Sonnet 4.6's context (1M, not
+    200K), GPT-5.5's pricing/context, Gemini 3.1 Pro's tiered pricing, and three "Flash leads" benchmark
+    claims that were actually #2 finishes per Scale AI's and Vals AI's live leaderboards (cut one Toolathlon
+    claim entirely — no source supported it at all).
+11. **gitlab-act-2-machine-scale-git-agentic-ci-cd-builder-guide** (2 -> 9 sources, ~28 inline instances) —
+    "Act 2" confirmed as GitLab's real, own terminology, but "Duo Workflow" was outdated (evolved into Duo
+    Agent Platform, GA'd Jan 2026); fixed, plus corrected a misquoted CEO earnings-call line (replaced with
+    the verbatim transcript quote) and deleted several unsourceable invented stats ("20-30 commits/day," an
+    18-month Duo Code Suggestions delay claim).
+
+**`sources_audited` count: 1199 -> 1210 of 2128 total pages** (857 still unaudited). Hugo rebuild (plain
+`hugo`, no `--minify`/`--gc`) — clean, 4163 pages. Deployed to DreamHost (throttle had cleared, ~7000s since
+last deploy); spot-checked the EU AI Act GPAI page live — corrected Meta Code-of-Practice framing confirmed
+rendering (200).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns (today is still 2026-07-29).
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- Minor open items from this run's subagents (not urgent): the "core-ai-vs-windows-local-ai" piece's "48-hour
+  simultaneous announcement" framing glosses over Microsoft's actual Build 2026 keynote date (June 2, not
+  June 9 — the June 9 date is really a cumulative-update ship date); a full narrative rewrite of that framing
+  was judged out of scope for a citation-only pass. VentureBeat citation on the Anthropic self-improvement
+  piece 403'd the fetch tool (title/URL match expected content, left in place as supplementary, not
+  load-bearing).
+- No pending inbox action (message #2274 is this agent's own already-sent flag, still unactioned by the
+  recipient — nothing further required from this side).
+
 ## Run 2542853 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-04/06-05 builders-log cluster)
 
 ### Orient

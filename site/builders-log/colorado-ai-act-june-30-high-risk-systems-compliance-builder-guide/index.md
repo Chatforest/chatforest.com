@@ -7,11 +7,11 @@
 
 ---
 
-~~Colorado's **Consumer Protections for Artificial Intelligence Act** (SB 24-205) takes effect **June 30, 2026**. That is 24 days from publication.~~
+~~Colorado's **Consumer Protections for Artificial Intelligence Act** ([SB 24-205](https://leg.colorado.gov/bills/sb24-205)) takes effect **June 30, 2026** — delayed from an original February 1, 2026 date by [SB 25B-004](https://leg.colorado.gov/bills/sb25b-004), signed August 28, 2025. That is 24 days from publication.~~
 
 *[The text below describes SB 24-205 as of June 6, 2026. That law has since been repealed. See the update notice above.]*
 
-If your AI system makes consequential decisions affecting Colorado residents in any of six covered sectors — employment, education, financial services, healthcare, housing, or legal services — you are in scope. This is not a "large company only" law. It applies to any developer or deployer "doing business in this state."
+If your AI system makes consequential decisions affecting Colorado residents in any of six covered sectors — employment, education, financial services, healthcare, housing, or legal services — you are in scope. This is not a "large company only" law. It applies to any developer or deployer "doing business in this state," per the statutory definitions in [SB 24-205](https://leg.colorado.gov/bills/sb24-205).
 
 ---
 
@@ -31,13 +31,13 @@ If your AI system makes consequential decisions affecting Colorado residents in 
 
 The law covers two roles:
 
-**Developers** — entities that design, code, or train high-risk AI systems and offer them to deployers. If you build a hiring-screening model or a loan-underwriting API and license it to other companies, you are a developer under this law.
+**Developers** — entities that design, code, or train high-risk AI systems and offer them to deployers. If you build a hiring-screening model or a loan-underwriting API and license it to other companies, you are a developer under this law. ([SB 24-205 bill text](https://leg.colorado.gov/bills/sb24-205); definitions summarized in [Brownstein Hyatt Farber Schreck](https://www.bhfs.com/insight/colorados-landmark-ai-law-coming-online-what-developers-and-deployers-should-know/))
 
 **Deployers** — entities that use a high-risk AI system to interact with or make decisions about Colorado consumers. If you use an off-the-shelf model for employee performance reviews, credit scoring, or medical triage, you are a deployer.
 
 You can be both simultaneously.
 
-**High-risk AI system** means a system that makes, or substantially influences, a "consequential decision" — a decision with a material effect on a consumer's access to employment, education, financial services, healthcare, housing, or legal services.
+**High-risk AI system** means a system that makes, or substantially influences, a "consequential decision" — a decision with a material effect on a consumer's access to employment, education, financial services, healthcare, housing, or legal services. ([SB 24-205 bill text](https://leg.colorado.gov/bills/sb24-205))
 
 The threshold is *substantial influence*, not *final authority*. An AI that ranks resumes, scores loan applications, flags patient risk, or recommends lease approval is likely in scope even if a human nominally makes the final call.
 
@@ -47,7 +47,7 @@ The threshold is *substantial influence*, not *final authority*. An AI that rank
 
 ### 1. Maintain and share system documentation
 
-You must provide deployers with enough information to conduct their own impact assessments. At minimum this includes:
+You must provide deployers with enough information to conduct their own impact assessments, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205) (summarized in [Brownstein Hyatt Farber Schreck's compliance guide](https://www.bhfs.com/insight/colorados-landmark-ai-law-coming-online-what-developers-and-deployers-should-know/)). At minimum this includes:
 
 - The intended use cases and known harmful uses of the system
 - Categories and sources of training data
@@ -62,7 +62,7 @@ You must publish statements describing your risk management practices for your h
 
 ### 3. Report known discrimination risks
 
-If you identify that your system poses a risk of discriminatory harm in a covered sector, you must notify the Colorado Attorney General within 90 days of discovery. This is a rolling obligation — it does not have a single deadline, but the clock starts when you *know*.
+If you identify that your system poses a risk of discriminatory harm in a covered sector, you must notify the Colorado Attorney General within 90 days of discovery, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205) (see also [CO-AIMS's summary of the notice requirement](https://co-aims.com/blog/colorado-ai-act-sb-24-205-complete-compliance-guide)). This is a rolling obligation — it does not have a single deadline, but the clock starts when you *know*.
 
 ---
 
@@ -70,11 +70,11 @@ If you identify that your system poses a risk of discriminatory harm in a covere
 
 ### 1. Implement a risk management policy
 
-You need a written policy governing how you assess, monitor, and mitigate algorithmic discrimination risk. This does not need to be novel — NIST AI RMF is the obvious template. But it must exist and be operationalized, not aspirational.
+You need a written policy governing how you assess, monitor, and mitigate algorithmic discrimination risk, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205). This does not need to be novel — the [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) is the obvious template. But it must exist and be operationalized, not aspirational.
 
 ### 2. Complete an impact assessment before deployment
 
-Before deploying or materially updating a high-risk AI system, you must conduct an impact assessment documenting:
+Before deploying or materially updating a high-risk AI system, you must conduct an impact assessment documenting, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205):
 
 - The purpose and intended use of the system
 - The categories of data it processes
@@ -85,15 +85,15 @@ Existing deployments that were live before the effective date need to be assesse
 
 ### 3. Conduct annual reviews
 
-Impact assessments are not one-time events. You must review deployed systems at least annually. If the system's outputs change materially — say, through model drift or retraining — a new assessment is required before redeployment.
+Impact assessments are not one-time events. You must review deployed systems at least annually, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205) (confirmed in [CO-AIMS's compliance guide](https://co-aims.com/blog/colorado-ai-act-sb-24-205-complete-compliance-guide)). If the system's outputs change materially — say, through model drift or retraining — a new assessment is required before redeployment.
 
 ### 4. Notify consumers at the point of consequential decision
 
-When a high-risk AI system meaningfully influences a consequential decision affecting a specific consumer, that consumer must be notified. The notice must be clear, not buried in a terms-of-service clause.
+When a high-risk AI system meaningfully influences a consequential decision affecting a specific consumer, that consumer must be notified, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205). The notice must be clear, not buried in a terms-of-service clause.
 
 ### 5. Provide adverse action explanation and appeal
 
-If a high-risk AI system contributes to an adverse outcome — a rejected loan application, a disqualified job candidate, a denial of housing — the affected consumer has the right to:
+If a high-risk AI system contributes to an adverse outcome — a rejected loan application, a disqualified job candidate, a denial of housing — the affected consumer has the right to, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205):
 
 - A plain-language explanation of how the AI system influenced the decision
 - The ability to correct inaccurate data used by the system
@@ -103,15 +103,15 @@ This does not require you to explain your model weights. It requires you to expl
 
 ### 6. Report known discriminatory harms to the Attorney General
 
-Like developers, deployers must notify the AG within 90 days of discovering that their system has caused or is likely to cause discriminatory harm in a covered sector.
+Like developers, deployers must notify the AG within 90 days of discovering that their system has caused or is likely to cause discriminatory harm in a covered sector, per [SB 24-205](https://leg.colorado.gov/bills/sb24-205).
 
 ---
 
 ## Enforcement
 
-Violations are treated as **deceptive trade practices** under the Colorado Consumer Protection Act (CCPA). The Attorney General has exclusive enforcement authority — private right of action is not available under SB 24-205 itself.
+Violations are treated as **deceptive trade practices** under the Colorado Consumer Protection Act (CCPA). The Attorney General has exclusive enforcement authority — private right of action is not available under SB 24-205 itself. ([C.R.S. § 6-1-1706](https://codes.findlaw.com/co/title-6-consumer-and-commercial-affairs/co-rev-st-sect-6-1-1706/): "the attorney general has exclusive authority to enforce this part 17" and "does not provide the basis for...a private right of action")
 
-CCPA penalties for deceptive trade practices can reach $20,000 per violation for non-willful violations and $100,000 per violation for willful violations. In a system making thousands of automated decisions per day, per-decision framing of "violations" is a realistic enforcement theory.
+*[Correction, 2026-07-29: the original article stated CCPA penalties reach "$100,000 per violation for willful violations." No such tier exists in the statute — this could not be verified against the primary source and has been removed.]* CCPA civil penalties for deceptive trade practices can reach **$20,000 per violation**, per [C.R.S. § 6-1-112](https://codes.findlaw.com/co/title-6-consumer-and-commercial-affairs/co-rev-st-sect-6-1-112/) (with an enhanced $50,000-per-violation tier where the victim is an elderly person — not specific to AI Act violations). In a system making thousands of automated decisions per day, per-decision framing of "violations" is a realistic enforcement theory.
 
 ---
 
@@ -119,15 +119,17 @@ CCPA penalties for deceptive trade practices can reach $20,000 per violation for
 
 *[Update: This section describes the federal landscape as of June 6. What actually happened follows each item.]*
 
-**Great American AI Act**: Would preempt state AI *development* laws for three years, including SB 24-205. Not yet passed. Do not treat this as a current stay. *[Status unchanged as of June 10.]*
+**Great American AI Act**: Would preempt state AI *development* laws for three years, including SB 24-205. Not yet passed. Do not treat this as a current stay. *[Status unchanged as of June 10. See [Great American AI Act — federal preemption framework](/builders-log/great-american-ai-act-federal-preemption-white-house-eo-builder-guide/) for current status.]*
 
-**White House Executive Order (June 2)**: The EO challenged the anti-discrimination provisions of laws like SB 24-205, arguing they would "force AI models to produce false results" by requiring demographic parity. The EO encourages voluntary engagement but does not legally override state law.
+**White House Executive Order**: *[Correction, 2026-07-29: the original article dated this "(June 2)." That date was wrong — the EO quoted below is [Executive Order 14365, "Ensuring a National Policy Framework for Artificial Intelligence"](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/), signed December 11, 2025, not June 2, 2026. There was a separate, unrelated AI-focused EO on June 2, 2026 ("Promoting Advanced Artificial Intelligence Innovation and Security") concerned with frontier-model cybersecurity access, not state-law preemption or discrimination provisions.]* The December 2025 EO challenged the anti-discrimination provisions of laws like SB 24-205, stating they "may even force AI models to produce false results in order to avoid a 'differential treatment or impact' on protected groups" ([EO 14365 text](https://en.wikipedia.org/wiki/Executive_Order_14365)). The EO directs federal agencies to challenge state AI laws but does not by itself legally override state law.
 
-**xAI's lawsuit and the federal stay**: On April 9, 2026, xAI filed suit against SB 24-205 on First Amendment, vagueness, dormant Commerce Clause, and equal protection grounds. On April 24, the DOJ intervened on xAI's side — the first time the federal government sought to invalidate a state AI law. On April 28, a federal magistrate judge **stayed enforcement of SB 24-205 pending resolution of xAI's preliminary injunction motion.** Two weeks later, Governor Polis signed SB 26-189 (May 14), replacing SB 24-205. xAI's litigation continues against SB 26-189 — a preliminary injunction hearing is scheduled June 11, 2026.
+**xAI's lawsuit and the federal stay**: On April 9, 2026, [xAI filed suit](https://www.courthousenews.com/wp-content/uploads/2026/04/grok-ai-bill-colorado-complaint.pdf) against SB 24-205 on First Amendment, vagueness, dormant Commerce Clause, and equal protection grounds. On April 24, [the DOJ intervened](https://www.justice.gov/opa/pr/justice-department-intervenes-xai-lawsuit-challenging-colorados-algorithmic-discrimination) on xAI's side — [reportedly the first time](https://www.nortonrosefulbright.com/en-us/knowledge/publications/de3ad9de/xai-sues-doj-intervenes-enforcement-of-colorado-ai-act-suspended) the federal government sought to invalidate a state AI law. On April 28, [a federal magistrate judge stayed enforcement](https://www.courtlistener.com/docket/73171074/x-ai-llc-v-weiser/) of SB 24-205 pending resolution of xAI's preliminary injunction motion. Two weeks later, Governor Polis [signed SB 26-189](https://leg.colorado.gov/bills/sb26-189) (May 14), replacing SB 24-205. xAI's litigation continues against SB 26-189 — a preliminary injunction hearing was scheduled for June 11, 2026.
 
 ~~For June 30 planning: assume SB 24-205 takes effect as scheduled.~~
 
 **Current status (June 10):** SB 24-205 is repealed. The June 30 deadline does not apply. SB 26-189 governs. See the update notice at the top of this article.
+
+*[Update, 2026-07-29: as of this audit date, no public ruling on the June 11 preliminary-injunction hearing against SB 26-189 has been reported. For the current litigation status, see [xAI's First Amendment challenge to Colorado SB 26-189](/builders-log/xai-colorado-sb189-first-amendment-june-11-preliminary-injunction-builder-guide/), audited 2026-07-28.]*
 
 ---
 
@@ -170,7 +172,7 @@ This is not regulatory overhead at the scale of HIPAA or SOC 2. For most mid-siz
 
 ~~Colorado SB 24-205 is the first comprehensive state AI anti-discrimination law to actually take effect in the United States.~~ *[SB 24-205 was repealed before it took effect. The law never went into force.]*
 
-Illinois, California, and New York have related legislation in various stages — covered separately in the builders-log. Colorado's replacement framework (SB 26-189) may still be first to enforcement, depending on how the xAI litigation resolves and when AG rulemaking completes.
+Illinois ([HB 3773](https://www.ilga.gov/ftp/legislation/103/BillStatus/HTML/10300HB3773.html), amending the Illinois Human Rights Act, effective January 1, 2026), California ([AB 2013](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013), generative-AI training-data transparency, effective January 1, 2026), and New York City ([Local Law 144](https://rules.cityofnewyork.us/rule/automated-employment-decision-tools-updated/), automated employment decision tool bias audits) have related AI legislation in various stages — covered separately in the builders-log. Colorado's replacement framework (SB 26-189) may still be first to enforcement, depending on how the xAI litigation resolves and when AG rulemaking completes.
 
 ~~If you are building state-by-state compliance infrastructure, Colorado is the template. The GAAIA preemption battle will play out over months or years. In the meantime, June 30 is real.~~
 

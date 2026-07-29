@@ -11,31 +11,30 @@ If you are building, fine-tuning, or distributing a general-purpose AI model —
 
 ## What Happens on August 2, 2026
 
-The [EU AI Act's GPAI provisions](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) (Chapter V, Articles 51–56) entered into force on **August 2, 2025** — one year after the Act was published. That first year was a compliance ramp: obligations were in place, enforcement wasn't.
+The [EU AI Act's GPAI provisions](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) (Chapter V, Articles 51–56) entered into application on **August 2, 2025**, one year after [the Regulation entered into force](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng) on August 1, 2024. That first year was a compliance ramp: the substantive obligations applied, but [Article 101 — the Commission's power to fine GPAI providers — was explicitly carved out of the August 2025 application date and only takes effect on the Regulation's general August 2, 2026 application date](https://artificialintelligenceact.eu/article/113/).
 
 On **August 2, 2026**, the European Commission's enforcement powers over GPAI providers fully activate:
 
-- The **AI Office** (established within the Commission) can investigate GPAI providers, demand documentation, and impose fines
-- Fines for GPAI-related violations: **up to €15 million or 3% of total worldwide annual turnover**, whichever is higher
-- For providing false, incomplete, or misleading information: up to €7.5 million or 1% of worldwide annual turnover
+- The [**AI Office**](https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/) (established within the Commission) can investigate GPAI providers, demand documentation, and impose fines
+- Fines for GPAI providers under [**Article 101**](https://artificialintelligenceact.eu/article/101/): **up to €15 million or 3% of total worldwide annual turnover**, whichever is higher — this single ceiling covers both non-compliance with a documentation request and supplying incorrect, incomplete, or misleading information; there is no separate lower fine tier for GPAI providers specifically
 
-The Digital Omnibus deal extended deadlines for Annex III high-risk AI applications (employment screening, credit scoring, education access — standalone products) until December 2027 and embedded AI until August 2028. **GPAI was untouched.** This was deliberate: the Parliament insisted on keeping GPAI obligations on schedule, and the Council agreed.
+The [Digital Omnibus deal](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/) extended deadlines for Annex III high-risk AI applications (employment screening, credit scoring, education access — standalone products) to **December 2, 2027**, and high-risk AI embedded in regulated products (medical devices, machinery, vehicles) to **August 2, 2028**. **GPAI obligations (Articles 51–56) were left out of the extension package** and remain on the original schedule.
 
 ---
 
 ## Who Is a GPAI Provider
 
-A **general-purpose AI model** is defined in the AI Act as a model trained on large amounts of data using self-supervision at scale, that can perform a wide range of tasks, and that can be integrated into downstream systems. In practice: any foundation model — large language model, multimodal model, code model — accessible via API or direct download to EU users qualifies.
+A [**general-purpose AI model**](https://artificialintelligenceact.eu/article/3/) is defined in [Article 3(63) of the AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng) as a model trained with a large amount of data using self-supervision at scale, that displays significant generality and can competently perform a wide range of distinct tasks, and that can be integrated into a variety of downstream systems or applications. In practice: any foundation model — large language model, multimodal model, code model — accessible via API or direct download to EU users qualifies.
 
-A **GPAI provider** is anyone who **places a GPAI model on the EU market**. This includes:
+A [**GPAI provider**](https://artificialintelligenceact.eu/article/3/) is anyone who develops a GPAI model or has one developed and **places it on the EU market under its own name**, per the Article 3(3) provider definition. This includes:
 
-- Companies offering GPAI APIs to EU customers (even from outside the EU — the Act's geographic scope follows where the model's outputs are used)
+- Companies offering GPAI APIs to EU customers, even from outside the EU — [Article 2 gives the Act extraterritorial reach where a third-country provider's AI system output is used in the Union](https://artificialintelligenceact.eu/article/2/)
 - Open-weight model publishers whose models are actively downloaded in the EU
 - Companies that fine-tune or substantially modify an existing GPAI model and release the modified version
 
-**Downstream API integrators** — builders using Claude, GPT, Gemini, or other GPAI models via API to build products — are **not** GPAI providers under the Act. Provider liability sits with whoever placed the model on the market. If you call the Anthropic API to build a customer support bot, you are a deployer, not a GPAI provider.
+**Downstream API integrators** — builders using Claude, GPT, Gemini, or other GPAI models via API to build products — are **not** GPAI providers under the Act. Provider liability sits with whoever placed the model on the market; a party that merely uses an AI system under its own authority is instead a [**deployer** under Article 3(4)](https://artificialintelligenceact.eu/article/3/). If you call the Anthropic API to build a customer support bot, you are a deployer, not a GPAI provider.
 
-The exception that matters for builders: **substantial modification**. If a downstream developer meaningfully changes a model's weights, architecture, or intended-use boundaries and makes the modified model available to others, they may become the provider of the modified GPAI model. The AI Office has not yet published formal guidance on what counts as "substantial" — the Code of Practice process will likely address this.
+The exception that matters for builders: **substantial modification**. Under [Article 25](https://artificialintelligenceact.eu/modifying-ai-under-the-eu-ai-act/), if a downstream developer meaningfully changes a model's weights, architecture, or intended-use boundaries and makes the modified model available to others, they may become the provider of the modified GPAI model — inheriting obligations for the modification itself, not the whole model. The [Commission's July 18, 2025 guidelines on GPAI obligations](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers) give an indicative rule of thumb: if the compute used for the modification exceeds roughly one-third of the original model's training compute, the modifier is generally treated as the provider of the resulting model.
 
 ---
 
@@ -54,59 +53,59 @@ Maintain up-to-date technical documentation covering:
 - **Known harmful uses**: documented misuse patterns and any implemented safeguards
 - **Contact information**: a point of contact for the AI Office to reach the provider
 
-The documentation standard is specified in Annex XI of the AI Act. The AI Office published a template; it is not required but serves as a safe harbor for format.
+The documentation standard is specified in [Annex XI, referenced by Article 53(1)(a) of the AI Act](https://artificialintelligenceact.eu/annex/11/), and includes architecture, training methodology, data sources, computational resources used, and known or estimated energy consumption. The Commission has published a documentation template as part of its [GPAI guidelines](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers); using it is not mandatory but is offered as a recommended format.
 
 ### 2. EU Copyright Compliance Policy
 
-GPAI providers must implement a policy on compliance with EU copyright law, including Directive 2019/790 (the Copyright in the Digital Single Market Directive). In practice this means:
+Under [Article 53(1)(c)](https://artificialintelligenceact.eu/article/53/), GPAI providers must implement a policy on compliance with EU copyright law, including [Directive (EU) 2019/790](https://eur-lex.europa.eu/eli/dir/2019/790/oj/eng) (the Copyright in the Digital Single Market Directive). In practice this means:
 
 - A published statement that the provider has complied with the text-and-data mining provisions
 - Opt-out mechanisms for rights holders (if training on web data)
 - Documentation of which data categories were used and under what legal basis
 
-The Act does not require that all training data be licensed — it requires that providers have a policy and implement it. For open-weight models trained before the August 2025 GPAI effective date, the AI Office has indicated it will evaluate good-faith compliance efforts rather than retroactive perfection.
+The Act does not require that all training data be licensed — it requires that providers have a policy and implement it. For GPAI models placed on the market before August 2, 2025, [providers have until August 2, 2027 to bring documentation into compliance](https://artificialintelligenceact.eu/article/113/); models placed on the market on or after August 2, 2025 must comply immediately.
 
 ### 3. Training Data Summary Publication
 
-Publish a summary of the training data used in the model. This is distinct from the full technical documentation — it is a publicly accessible document that rights holders, researchers, and downstream deployers can consult. The summary must cover data categories, approximate data volumes by category, and data collection methods.
+Under [Article 53(1)(d)](https://artificialintelligenceact.eu/article/53/), publish a summary of the training data used in the model, using the [template published by the AI Office](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers). This is distinct from the full technical documentation — it is a publicly accessible document that rights holders, researchers, and downstream deployers can consult. The summary must cover data categories, approximate data volumes by category, and data collection methods.
 
 ### 4. EU SEND Platform Submission
 
-Submit the technical documentation to the **EU SEND** (Single Electronic Notification and Documentation) platform operated by the AI Office. This is how the Commission tracks which GPAI models are on the EU market.
+Submit the required documentation and notifications to the **EU SEND** platform operated by the AI Office. This is how the Commission [tracks which GPAI models, particularly systemic-risk models, are on the EU market](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers) and receives serious-incident reports and Safety and Security Framework/Model Report submissions.
 
-The SEND platform went live in Q1 2026. Providers who placed models on the EU market before that date had a grace period to submit. As of June 2026, new model placements require submission before or concurrent with EU market access.
+SEND has been operating since GPAI obligations took effect on August 2, 2025. August 2, 2026 does not change SEND's availability — it changes whether the AI Office can fine a provider found not to have submitted.
 
 ---
 
 ## What Systemic-Risk GPAI Providers Must Additionally Do
 
-A GPAI model is classified as **systemic risk** if it was trained using more than **10^25 FLOPs** of compute, or if the AI Office designates it as systemic risk based on capability evaluation (reach, integration into critical infrastructure, etc.).
+Under [Article 51](https://artificialintelligenceact.eu/article/51/), a GPAI model is presumed to have systemic risk if it was trained using more than **10^25 FLOPs** of compute, or if the AI Office designates it as systemic risk based on capability evaluation against the criteria in [Annex XIII](https://artificialintelligenceact.eu/annex/13/) (reach, integration into critical infrastructure, etc.).
 
-In practice, this threshold covers GPT-4-class and above models, the current Anthropic Claude 4.x series, Gemini 3.x series, and the most capable open-weight releases. Most fine-tunes and smaller models do not cross this threshold unless designated.
+In practice, this threshold is understood to cover the most capable frontier models from major labs, though providers do not routinely disclose exact training-compute figures, so which specific current model releases cross it is not something this piece can confirm. Most fine-tunes and smaller models do not cross this threshold unless designated.
 
 Systemic-risk providers must additionally:
 
 ### 5. Adversarial Testing (Red-Teaming)
 
-Conduct, document, and submit results of adversarial testing:
+Under [Article 55](https://artificialintelligenceact.eu/article/55/), conduct, document, and report on model evaluation, including adversarial testing:
 
 - Test for dangerous capabilities: CBRN assistance, cyberweapons generation, large-scale manipulation
 - Test for systemic risks: cascading failures across interconnected deployments, critical infrastructure vulnerabilities
-- Testing must occur before EU market placement and periodically thereafter (the Code of Practice specifies annual cycles)
-- Testing must be performed or validated by a qualified third party or by the AI Office itself
+- Testing must be proportionate to the risk and reflect the state of the art; the Act does not set a fixed testing cadence
+- Testing may involve independent external experts
 
 ### 6. Serious Incident Reporting
 
-Report **serious incidents** to the AI Office without undue delay:
+Under [Article 55(1)(c)](https://artificialintelligenceact.eu/article/55/), keep track of, document, and report **serious incidents** to the AI Office **without undue delay**:
 
-- A serious incident is defined as a malfunction or misuse of the model that results in (or is reasonably likely to result in) death, serious injury, significant disruption to critical infrastructure, property damage, or violation of fundamental rights
+- A serious incident is defined (Article 3) as a malfunction or misuse of the model that results in, or is reasonably likely to result in, death, serious injury, significant disruption to critical infrastructure, property damage, or violation of fundamental rights
 - Reporting is to the AI Office, which coordinates with national competent authorities
-- The initial report must be made within 15 days of becoming aware; a full report within 30 days
+- The Act itself does not set fixed day-counts for GPAI systemic-risk reports (that specific 2/10/15-day tiering is what [Article 73](https://artificialintelligenceact.eu/article/73/) sets for high-risk AI *system* providers, a related but separate obligation); the [GPAI Code of Practice](https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai) operationalizes the Article 55 "without undue delay" standard with a severity-based reporting template
 - Providers must maintain an incident log accessible to the AI Office on request
 
 ### 7. Cybersecurity Measures
 
-Implement and document model-level cybersecurity measures:
+Under [Article 55(1)(d)](https://artificialintelligenceact.eu/article/55/), implement and document model-level cybersecurity measures:
 
 - Adversarial robustness testing (prompt injection, data poisoning, model extraction resistance)
 - Access controls for model weights and fine-tuning infrastructure
@@ -114,23 +113,23 @@ Implement and document model-level cybersecurity measures:
 
 ### 8. Energy Efficiency Reporting
 
-Report and publish energy consumption data:
+As part of the [Annex XI technical documentation](https://artificialintelligenceact.eu/annex/11/), report and publish energy consumption data:
 
-- Training energy consumption (kWh, location of compute)
+- Training energy consumption (known or estimated, based on computational resources used where the exact figure is unknown)
 - Inference energy per token or per request (estimated or measured)
-- The AI Office is developing standardized reporting templates — the initial requirement is to report, not to meet a specific threshold
+- The Commission has run a [targeted consultation on standardizing energy-consumption measurement](https://digital-strategy.ec.europa.eu/en/consultations/targeted-consultation-measuring-energy-consumption-and-emissions-ai-models-and-systems) — the initial requirement is to report, not to meet a specific threshold
 
 ---
 
 ## The Code of Practice
 
-The **GPAI Code of Practice** is a voluntary compliance framework developed jointly by AI providers, civil society organizations, and the AI Office through 2025–2026. It is not legally required, but:
+The [**GPAI Code of Practice**](https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai) is a voluntary compliance framework developed jointly by AI providers, civil society organizations, and the AI Office, and was [published in final form on July 10, 2025](https://www.wsgr.com/en/insights/eu-releases-final-code-of-practice-for-general-purpose-ai-models.html) — ahead of the August 2, 2025 date GPAI obligations took effect. It is not legally required, but:
 
-- Compliance with the Code creates a **presumption of conformity** with GPAI obligations — meaning if you are audited, the AI Office starts from the assumption that you are compliant
-- Providers who are not signatories bear the burden of demonstrating compliance through other means
-- The AI Office stated publicly that non-signatories will receive more scrutiny during the first enforcement cycle
+- Under [Article 56](https://artificialintelligenceact.eu/article/56/), providers may rely on the Code to demonstrate compliance with Articles 53 and 55 obligations until harmonised standards are published
+- Providers who are not signatories must demonstrate compliance through other means
+- An EU spokesperson said companies that decline to sign "may be exposed to more regulatory scrutiny by the AI Office," though the mandatory AI Act obligations apply regardless of signature ([The Register, July 18, 2025](https://www.theregister.com/2025/07/18/meta_declines_eu_ai_guidelines/))
 
-Major AI providers — Anthropic, Google, OpenAI, Meta, Mistral, Cohere — have signed the Code or are in the process of doing so. The Code was finalized in May 2026. The full text is available via the EU AI Office at the European Commission's Digital Single Market portal.
+[Anthropic, Google, OpenAI, Mistral, and Cohere are among the Code's signatories](https://artificialintelligenceact.eu/introduction-to-code-of-practice/). **Meta is a notable exception: it publicly declined to sign**, with its chief global affairs officer stating the Code "introduces a number of legal uncertainties for model developers, as well as measures which go far beyond the scope of the AI Act" ([The Register, July 18, 2025](https://www.theregister.com/2025/07/18/meta_declines_eu_ai_guidelines/)). Declining to sign the Code does not exempt Meta from the AI Act's binding GPAI obligations themselves — it only means Meta must show compliance without the Code's presumption-of-conformity shortcut.
 
 If you are a GPAI provider who has not yet engaged with the Code, the time to sign and begin aligning documentation practices is now, not in September.
 
@@ -142,7 +141,7 @@ If you build on GPAI models via API (Anthropic, OpenAI, Google, etc.) and do not
 
 Three scenarios where this changes:
 
-**Scenario 1: You fine-tune and re-distribute.** If you fine-tune a foundation model and offer the fine-tuned model to others (via API, download, or enterprise contract), you may become a GPAI provider of the modified model. The threshold is not bright-line. If your fine-tune is narrow (domain adaptation, tone adjustment) and you are serving it only to your own product's users, the AI Office has indicated this is likely deployer territory. If you are licensing the fine-tune to third parties, you are in provider territory.
+**Scenario 1: You fine-tune and re-distribute.** If you fine-tune a foundation model and offer the fine-tuned model to others (via API, download, or enterprise contract), you may become a GPAI provider of the modified model. The threshold is not bright-line: the [Commission's guidelines](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers) use the roughly-one-third-of-original-training-compute rule of thumb described above, and whether a narrow, in-house-only fine-tune (domain adaptation, tone adjustment) crosses it remains a grey area that [legal commentators are still tracking](https://www.softwareseni.com/fine-tuning-foundation-models-under-the-eu-ai-act-when-customisation-triggers-provider-obligations/). If you are licensing the fine-tune to third parties, you are more clearly in provider territory.
 
 **Scenario 2: You aggregate and serve.** If you operate an LLM routing layer that serves EU customers — calling multiple GPAI models on their behalf — you are almost certainly a deployer, not a provider. You do not place models on the market; you access them. Your obligation is to verify that the models you route through are compliant GPAI providers.
 
@@ -165,7 +164,7 @@ Three scenarios where this changes:
 
 - [ ] Complete adversarial testing (third-party or AI Office validation)
 - [ ] Submit testing results to AI Office
-- [ ] Establish serious incident reporting process (15-day initial / 30-day full report)
+- [ ] Establish a serious-incident reporting process meeting the Article 55 "without undue delay" standard, per the GPAI Code of Practice's severity-based reporting template
 - [ ] Document cybersecurity measures for model weights and inference infrastructure
 - [ ] Report training energy consumption data
 - [ ] Begin inference energy measurement or estimation
@@ -183,9 +182,9 @@ Three scenarios where this changes:
 
 The August 2, 2026 activation is the enforcement start, not the end of GPAI compliance work.
 
-The AI Office's first-year enforcement posture is expected to focus on the largest providers and on SEND platform registration — not on smaller developers. But the documentation requirements are ongoing, and the audit clock starts ticking on August 2. Non-compliance discovered in a 2027 audit will be measured against obligations that began in August 2025.
+During the 2025–2026 compliance-ramp year, the [AI Office described its own posture as collaborative](https://ai-act-service-desk.ec.europa.eu/en/faq?amp=&combine=&faq_category_id=69) — it treats "technical compliance dialogues" with providers as its first tool of choice, reserving fines for cases where those dialogues aren't sufficient. Whether that same relatively light touch continues after August 2, 2026, and for which providers, is not something this piece can predict. But the documentation requirements are ongoing, and the audit clock starts ticking on August 2. Non-compliance discovered in a later audit will be measured against obligations that began in August 2025.
 
-High-risk AI applications built on GPAI models have their own compliance calendar (December 2027 for standalone, August 2028 for embedded). If your product uses a GPAI model as a component in a high-risk use case — credit scoring, hiring automation, access to essential services — start the Annex III analysis now, even though enforcement is two years out. The documentation requirements for Annex III draw heavily on the GPAI technical documentation already required. Building one GPAI documentation package now reduces duplicated work later.
+High-risk AI applications built on GPAI models have their own [compliance calendar](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/) (December 2, 2027 for standalone, August 2, 2028 for embedded). If your product uses a GPAI model as a component in a high-risk use case — credit scoring, hiring automation, access to essential services — start the Annex III analysis now, even though enforcement is further out. The documentation requirements for Annex III draw heavily on the GPAI technical documentation already required. Building one GPAI documentation package now reduces duplicated work later.
 
 The EU AI Act is the first comprehensive AI regulation with enforcement teeth. August 2, 2026 is when those teeth engage.
 
