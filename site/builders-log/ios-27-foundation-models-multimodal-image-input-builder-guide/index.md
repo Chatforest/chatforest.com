@@ -15,19 +15,17 @@ This guide covers what was announced at WWDC 2026, the API surface, the use case
 
 ## What Was Announced at WWDC 2026
 
-The Foundation Models framework shipped in iOS 26 (WWDC 2025) as a text-only API giving Swift apps direct access to Apple's on-device language model — roughly 3 billion parameters, running entirely on the Neural Engine with no network requirement. The initial API covered structured text generation, tool calling, schema-constrained output, and session context.
+The Foundation Models framework shipped in iOS 26 (WWDC 2025) as a text-only API giving Swift apps direct access to Apple's on-device language model — a [3-billion-parameter dense model](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models), running entirely on the Neural Engine with no network requirement. The initial API covered structured text generation, tool calling, schema-constrained output, and session context.
 
 WWDC 2026 adds image input as a first-class capability. Key announcements:
 
-**`ImageContent` type in the Foundation Models API.** Prompts can now include `ImageContent` alongside text, in any order. The model processes the combined input as a single context.
+**`Attachment` type in the Foundation Models API.** Prompts built with the framework's [prompt builder](https://developer.apple.com/videos/play/wwdc2026/241/) can now include an `Attachment` alongside text, in any order. The model processes the combined input as a single context.
 
-**Camera, photo library, and file input.** `ImageContent` can be initialized from a `UIImage`, a `CGImage`, a `CVPixelBuffer` (for live camera frames), or a file URL. Apps working with AVFoundation or PhotosKit can pass frames or assets directly without format conversion steps.
+**Camera, photo library, and file input.** Per Apple's WWDC26 session on the framework, an `Attachment` [can be created from a `UIImage`, `NSImage`, `CGImage`, Core Image types, a `CVPixelBuffer` (for live camera frames), or a file URL](https://developer.apple.com/videos/play/wwdc2026/241/). Apps working with AVFoundation or PhotosKit can pass frames or assets directly without format conversion steps.
 
-**On-device processing only.** Image analysis in Foundation Models does not route to Private Cloud Compute. The on-device model handles it entirely. Unlike text requests that may route to PCC for larger context or reasoning tasks, image input is explicitly processed locally in iOS 27.
+**On-device processing only.** Apple's [WWDC26 Apple Intelligence guide states](https://developer.apple.com/wwdc26/guides/apple-intelligence/) that multimodal prompts let apps "reason about visual content... all on-device." Unlike text requests, which may route to Private Cloud Compute for larger context or heavier reasoning, image input to the Foundation Models framework is processed locally.
 
-**Privacy-appropriate disclosure.** Apple updated the Apple Intelligence disclosure UI to distinguish between text-only and multimodal interactions. Apps using image input surface a separate disclosure point in Apple's system-level Privacy Nutrition Labels for AI features.
-
-**New WWDC session:** ["Multimodal experiences with Foundation Models" in the WWDC26 session catalog](https://developer.apple.com/videos/play/wwdc2026/241/) covers the API, model capabilities, performance characteristics, and testing workflows.
+**New WWDC session:** ["What's new in the Foundation Models framework" in the WWDC26 session catalog](https://developer.apple.com/videos/play/wwdc2026/241/) covers the API, model capabilities, performance characteristics, and testing workflows.
 
 ---
 
@@ -42,19 +40,18 @@ import FoundationModels
 
 let session = LanguageModelSession()
 
-// From UIImage
+// From UIImage, added to the prompt builder as an Attachment
 let image = UIImage(named: "receipt.jpg")!
-let imageContent = ImageContent(image: image)
 
-let response = try await session.respond(to: [
-    .text("Extract the total amount, merchant name, and date from this receipt."),
-    .image(imageContent)
-])
+let response = try await session.respond {
+    "Extract the total amount, merchant name, and date from this receipt."
+    Attachment(image)
+}
 
 print(response.content)
 ```
 
-The prompt parts array accepts text and image content in any order. The model processes the full context — text before the image, image, text after the image — as a unified input.
+This is the [prompt-builder pattern Apple demonstrated at WWDC26](https://developer.apple.com/videos/play/wwdc2026/241/): text and `Attachment` values are composed inside the same builder closure, in any order, and the model processes the full context as a unified input.
 
 ### Passing camera frames
 
@@ -68,17 +65,16 @@ func captureOutput(_ output: AVCaptureOutput,
     guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
     Task {
-        let imageContent = ImageContent(pixelBuffer: pixelBuffer)
-        let response = try await session.respond(to: [
-            .text("Describe what you see."),
-            .image(imageContent)
-        ])
+        let response = try await session.respond {
+            "Describe what you see."
+            Attachment(pixelBuffer)
+        }
         // Update UI with response
     }
 }
 ```
 
-The `CVPixelBuffer` initializer is designed for the capture pipeline — no intermediate `UIImage` conversion required.
+Apple's session confirms `Attachment` [accepts a `CVPixelBuffer` directly](https://developer.apple.com/videos/play/wwdc2026/241/) — no intermediate `UIImage` conversion required for the capture pipeline.
 
 ### Structured output with image input
 
@@ -93,25 +89,22 @@ struct ReceiptData {
     let lineItems: [String]
 }
 
-let response = try await session.respond(
-    to: [
-        .text("Extract this receipt's data."),
-        .image(ImageContent(image: receiptImage))
-    ],
-    generating: ReceiptData.self
-)
+let response = try await session.respond(generating: ReceiptData.self) {
+    "Extract this receipt's data."
+    Attachment(receiptImage)
+}
 
 let receipt = response.content
 // receipt.merchantName, receipt.totalAmount, etc.
 ```
 
-Structured extraction from images — receipts, business cards, forms, labels — is cleaner than parsing free-text responses and eliminates prompt engineering for output format.
+Structured extraction from images — receipts, business cards, forms, labels — is cleaner than parsing free-text responses and eliminates prompt engineering for output format. A developer walkthrough of the iOS 27 image API confirms [guided generation "still shapes the output into a `@Generable` type"](https://blakecrosley.com/blog/foundation-models-image-input-ios-27) once an image attachment is added to the prompt.
 
 ---
 
 ## What the Model Can Do
 
-The on-device Foundation Models model is approximately 3 billion parameters — small by cloud LLM standards, but within the range of capable multimodal small models. The WWDC session on multimodal experiences is candid about capability boundaries.
+The on-device Foundation Models model is approximately 3 billion parameters — small by cloud LLM standards, but within the range of capable multimodal small models. The lists below reflect [Apple's own "What's new in the Foundation Models framework" session](https://developer.apple.com/videos/play/wwdc2026/241/) plus independent developer testing of the iOS 27 beta.
 
 **Strong use cases:**
 
@@ -127,8 +120,8 @@ The on-device Foundation Models model is approximately 3 billion parameters — 
 - **Complex spatial reasoning** — "Count all the people in the crowd" or "What is the exact distance between these two points" exceeds on-device model capability reliably.
 - **Medical image interpretation** — radiology, pathology, ophthalmology. The model has no specialized training for these and should not be used for diagnostic purposes.
 - **Fine-grained object recognition** — identifying specific plant species, bird species, or rare objects. Use CreateML classification models for domain-specific recognition tasks.
-- **Long-range image understanding** — the on-device context window affects how much of a large image's detail the model can process. The WWDC session specifies a maximum image resolution for optimal performance (tiled at higher resolutions).
-- **Multi-image comparison** — the iOS 27 release supports one image per prompt turn. Multi-image input is documented as a post-launch update.
+- **Very large images** — the framework accepts [any size or aspect ratio without cropping or padding](https://developer.apple.com/videos/play/wwdc2026/241/), but images are tokenized like any other input, so a very large photo consumes more of the on-device context budget and adds latency — there's no accuracy reason to pass a 48MP photo instead of a reasonably downscaled one.
+- **Many images at once** — multiple images can share a single prompt, but they share the same token budget as your text. A developer analysis of the framework's session limits puts the [on-device context window at roughly 4,096 tokens, versus 32K when a request routes to Private Cloud Compute](https://ivanmagda.dev/posts/wwdc26-foundation-models-year-two/), so prompts carrying several images have more room to work with under PCC.
 
 ---
 
@@ -136,13 +129,11 @@ The on-device Foundation Models model is approximately 3 billion parameters — 
 
 Privacy is the primary reason to choose Foundation Models over cloud vision APIs. Understanding the privacy model matters for both implementation decisions and user-facing communications.
 
-**On-device only, no exceptions.** Unlike text processing in Foundation Models — where complex requests may route to Private Cloud Compute when the on-device model is insufficient — image input is processed entirely on-device in iOS 27. Apple's WWDC session states this explicitly: image content never leaves the device, regardless of request complexity.
+**On-device, per Apple's own framing.** Unlike text processing in Foundation Models — where complex requests may route to Private Cloud Compute when the on-device model is insufficient — Apple's [WWDC26 Apple Intelligence guide describes multimodal image prompts as processed "all on-device."](https://developer.apple.com/wwdc26/guides/apple-intelligence/)
 
 **No persistent storage.** The Foundation Models session holds context in memory during the session. When the session ends, the context is cleared. Images passed to the model are not written to disk by the framework.
 
 **App sandbox applies.** Your app provides the image; the Foundation Models framework processes it within your app's process. The image is not accessible to other apps or system processes beyond what your app explicitly controls.
-
-**Privacy Nutrition Label requirement.** Apps using Foundation Models with image input must update their App Store Privacy Nutrition Labels to reflect image data processing. Apple's reviewer guidelines, updated for iOS 27, include specific guidance for AI feature disclosures.
 
 **Compared to VisionKit and Core Image.** VisionKit's `ImageAnalyzer` (for Live Text, subject lifting) also runs on-device. The privacy model is comparable. Foundation Models adds language understanding on top of vision recognition — the reason to use Foundation Models is when you need the model to reason about what it sees in natural language, not just detect or classify.
 
@@ -174,11 +165,10 @@ try handler.perform([request])
 
 if let rectangle = request.results?.first {
     let cropped = crop(cgImage, to: rectangle.boundingBox)
-    let imageContent = ImageContent(cgImage: cropped)
-    let description = try await session.respond(to: [
-        .text("What document is this? What does it say?"),
-        .image(imageContent)
-    ])
+    let description = try await session.respond {
+        "What document is this? What does it say?"
+        Attachment(cropped)
+    }
 }
 ```
 
@@ -186,29 +176,28 @@ if let rectangle = request.results?.first {
 
 ## Performance Characteristics
 
-The WWDC session on multimodal Foundation Models includes benchmark data for common use cases on supported devices. Key points before you start building:
+Apple's ["What's new in the Foundation Models framework"](https://developer.apple.com/videos/play/wwdc2026/241/) session and independent developer testing of the iOS 27 beta point to the following performance characteristics. Key points before you start building:
 
-**Device requirements.** Foundation Models (text and image) requires Apple Silicon — A17 Pro or later on iPhone, M1 or later on Mac. A17 Pro excludes some 2023 non-Pro iPhone models. Plan your minimum deployment target accordingly.
+**Device requirements.** Foundation Models (text and image) requires Apple Silicon. Apple's own compatibility guidance for Apple Intelligence lists [iPhone 15 Pro/Pro Max or later (A17 Pro) and Mac or iPad with M1 or later](https://support.apple.com/en-us/121115). A17 Pro excludes 2023's non-Pro iPhone models. Plan your minimum deployment target accordingly.
 
-**Cold start vs. warm session.** The first Foundation Models request in a session initializes the model on the Neural Engine — latency is higher than subsequent requests in the same session. For camera-frame analysis use cases, initialize the session before the camera session starts.
+**Cold start vs. warm session.** A practical developer write-up of shipping Foundation Models features notes that [a session's first response pays a one-to-two-second "cold start" while the model loads](https://drobinin.com/consulting/foundation-models-apple-intelligence/putting-apple-foundation-models-in-a-real-app/), and that calling `prewarm()` before the user is expected to act — not reactively on first prompt — is what actually hides that latency. For camera-frame analysis use cases, prewarm the session before the camera session starts.
 
-**Resolution scaling.** The model internally scales input images to its training resolution. Passing a 48MP photo provides no accuracy benefit over a scaled version. Use `ImageContent(image:targetSize:)` to hint at a target resolution before model ingestion — this reduces memory and pre-processing time. The WWDC session specifies the recommended target size for maximum accuracy vs. minimum latency tradeoffs.
+**Resolution scaling.** Images are tokenized like any other input, and larger images cost more tokens and more latency — the [WWDC26 session on the framework](https://developer.apple.com/videos/play/wwdc2026/241/) notes the model accepts any size or aspect ratio without requiring you to crop or pad. In practice, that means downscaling a very large photo yourself before creating the `Attachment` when the task doesn't need full resolution, rather than relying on a built-in resize parameter.
 
-**Streaming with image input.** Image analysis supports `session.streamResponse(to:)` the same as text requests. For long descriptions or extraction tasks, streaming lets you update the UI progressively rather than waiting for the complete response.
-
-**Concurrent requests.** The Neural Engine handles one Foundation Models request at a time. If your app submits concurrent requests — text session and image session simultaneously — they are queued. Design your app to avoid unnecessary concurrency in the Foundation Models layer.
+**Streaming with image input.** A developer walkthrough of the iOS 27 image API confirms [streaming "still streams"](https://blakecrosley.com/blog/foundation-models-image-input-ios-27) once an image attachment is part of the prompt — `streamResponse` works the same as it does for text-only requests, letting you update the UI progressively rather than waiting for the complete response.
 
 ---
 
 ## Testing in Foundation Models Playground
 
-Xcode 17's Foundation Models Playground added image input support alongside the multimodal API.
+[Xcode 27's Foundation Models Playground](https://developer.apple.com/videos/play/wwdc2026/241/) added image input support alongside the multimodal API. (Note: Apple's iOS/Xcode version numbers moved to match the release year starting with iOS 26/Xcode 26 — the iOS 27 cycle ships with **Xcode 27**, not Xcode 17.)
 
 In Playground, you can:
 - Drag-drop images into the prompt editor alongside text
 - Test structured extraction schemas with real images
 - View the model's raw output and parsed `@Generable` result side by side
-- Use the Metrics panel to see per-request latency, token count, and Neural Engine utilization for image vs. text-only requests
+
+For deeper performance profiling — time-to-first-token, tokens-per-second, and where latency goes per request — Xcode 27 also ships an [overhauled Foundation Models instrument in Instruments](https://developer.apple.com/videos/play/wwdc2026/243/) that visualizes the full tool-call loop for both text and image requests.
 
 The Playground is the fastest way to evaluate whether Foundation Models vision can handle your specific document type or use case before writing app code. Run the receipt, form, or label type you plan to support through Playground first — if the model struggles there, it will struggle in your app.
 
@@ -232,19 +221,17 @@ The Playground is the fastest way to evaluate whether Foundation Models vision c
 
 ## What to Do Today
 
-The iOS 27 developer beta is available at developer.apple.com as of June 8. To get started with Foundation Models multimodal:
+The [iOS 27 developer beta released June 8](https://www.macrumors.com/2026/06/05/ios-27-release-date-how-to-install-beta/), immediately after the WWDC keynote. To get started with Foundation Models multimodal:
 
 1. **Install the iOS 27 beta.** Foundation Models vision is available on physical devices with A17 Pro or later. The Simulator does not run the on-device model.
 
-2. **Open Foundation Models Playground in Xcode 17.** Test your target document or image type before writing app code. Build intuition for what the model handles well.
+2. **Open Foundation Models Playground in Xcode 27.** Test your target document or image type before writing app code. Build intuition for what the model handles well.
 
 3. **Identify your highest-value extraction task.** Start with one use case — the document type your users most often photograph — rather than building a general-purpose vision layer.
 
-4. **Add `ImageContent` to an existing session.** If your app already uses Foundation Models for text, the image API is additive. Extend an existing session rather than building a separate integration.
+4. **Add `Attachment` to an existing session.** If your app already uses Foundation Models for text, the image API is additive. Extend an existing session's prompt builder rather than building a separate integration.
 
-5. **Update your Privacy Nutrition Label.** If you ship, App Review will check for the updated disclosure. Add the image data processing entry before submitting for review.
-
-6. **Watch the WWDC session.** "Multimodal experiences with Foundation Models" covers capability benchmarks, resolution guidance, and the multi-image roadmap. It is in the WWDC26 session catalog at developer.apple.com/wwdc26.
+5. **Watch the WWDC session.** ["What's new in the Foundation Models framework"](https://developer.apple.com/videos/play/wwdc2026/241/) covers the `Attachment` API, capability benchmarks, and resolution guidance. It is in the WWDC26 session catalog at developer.apple.com/wwdc26.
 
 ---
 

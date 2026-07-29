@@ -1,9 +1,9 @@
 # iOS 27 Apple Intelligence for Developers: Which Framework Do You Actually Need?
 
-> Six new AI frameworks shipped at WWDC 2026. Foundation Models, Core AI, App Intents, AssistantSchemas, Siri Extensions, MCP — here's a decision guide that maps your use case to the right one.
+> WWDC 2026's session catalog names six AI frameworks — Foundation Models, Core AI, App Intents, AssistantSchemas, Siri Extensions, MCP — but only four are confirmed, documented Apple SDKs. Here's a decision guide that maps your use case to the right one, and flags which two are unconfirmed.
 
 
-The iOS 27 developer beta shipped this morning alongside the [WWDC 2026 keynote](https://developer.apple.com/wwdc26/guides/apple-intelligence/). If you opened the session catalog and saw six new AI frameworks — Foundation Models, Core AI, App Intents, AssistantSchemas, Siri Extensions, MCP — and felt unclear about which to read first, this is for you.
+The iOS 27 developer beta shipped this morning alongside the [WWDC 2026 keynote](https://developer.apple.com/wwdc26/guides/apple-intelligence/). If you opened the session catalog and saw six AI-related names circulating — Foundation Models, Core AI, App Intents, AssistantSchemas, Siri Extensions, MCP — and felt unclear about which to read first, this is for you. **One note up front:** four of those six are confirmed, documented WWDC 2026 SDKs (Foundation Models, Core AI, App Intents, AssistantSchemas). The other two are not what they first appear — Siri Extensions is reported from beta code, not an Apple-announced framework, and MCP's WWDC 2026 news is scoped to Xcode 27, not a system-wide API. Both are flagged in detail below.
 
 The short version: most iOS apps need two or three of these, not all six. The question is which two or three.
 
@@ -20,12 +20,12 @@ Before the decision tree, one-line definitions of every framework you'll see in 
 | **Foundation Models** | On-device LLM inference in Swift — text in, text out, on Apple Silicon, no network required |
 | **Core AI** | Low-level on-device ML runtime — replaces Core ML for LLM-native models, handles model loading, memory, inference scheduling |
 | **App Intents + AssistantSchemas** | Typed semantic contract layer — declares what your app can do, routes Apple Intelligence to the right app for the right action |
-| **Siri Extensions** | Third-party AI provider registration — lets your AI backend become the system-wide AI that handles Siri queries, Writing Tools, and Image Playground requests |
-| **MCP (iOS 27 system-wide)** | Tool-calling protocol — lets Foundation Models and the system LLM invoke external capabilities as structured tool calls |
+| **Siri Extensions** | Third-party AI provider registration — an Extensions framework, found in the iOS 27 beta but [not announced or documented by Apple at WWDC 2026](https://letsdatascience.com/news/apple-hides-third-party-siri-extensions-in-ios-27-beta-ac421fbb), that would let a third-party AI backend handle Siri queries, Writing Tools, and Image Playground requests |
+| **MCP (Xcode 27 only)** | Tool-calling protocol — Apple's confirmed WWDC 2026 MCP work is [scoped to Xcode 27's coding-agent tooling](https://developer.apple.com/videos/play/wwdc2026/102/) (plugin-bundled MCP tools, first-party Figma/GitHub connectors), not a system-wide API that Foundation Models or Siri use to call app-registered tools |
 | **Writing Tools opt-in** | Per-text-view configuration — controls whether Apple's rewrite/proofread/summarize panel appears in your app's text views |
 | **Private Cloud Compute (PCC)** | Privacy-preserving cloud inference — Apple's server-side tier for requests that can't run on-device; not a developer-facing API you implement |
 
-PCC is not something you code against — it's the architectural guarantee Apple provides. Everything else is a real SDK decision.
+PCC is not something you code against — it's the architectural guarantee Apple provides. Everything else is a real SDK decision, **except the two flagged above**: Siri Extensions and system-wide MCP were reported/discovered, not announced or documented by Apple. See the corrections in Path 3 and in the MCP section below before you plan against either.
 
 ---
 
@@ -43,8 +43,11 @@ Are you building an AI feature INTO your app?
 Are you building an AI product as an alternative to Apple's system AI?
 └── Yes (Claude-backed, Gemini-backed, etc.) → Siri Extensions
 
-Are you building a server-side AI tool that can be called during inference?
-└── Yes → MCP server (can be iOS-embedded or remote)
+Does your Foundation Models session need to call external capabilities (fetch data, run a calculation)?
+└── Yes → the Foundation Models `Tool` protocol (built into the framework — not MCP)
+
+Are you building coding-agent tooling that runs inside Xcode 27?
+└── Yes → Xcode 27's MCP support (plugin-bundled tools, Figma/GitHub connectors)
 
 Are you building a text editor / notes app / custom text view?
 └── Do you want Writing Tools in your text view? → Writing Tools opt-in
@@ -52,7 +55,7 @@ Are you building a text editor / notes app / custom text view?
 
 Most apps fit one of four paths:
 
-1. **On-device text features** → Foundation Models + optionally MCP for tool calls
+1. **On-device text features** → Foundation Models + optionally its built-in `Tool` protocol for tool calls
 2. **App actions visible to Apple Intelligence** → App Intents + AssistantSchemas
 3. **AI provider apps** → Siri Extensions
 4. **Custom ML models** → Core AI
@@ -61,7 +64,7 @@ Most apps fit one of four paths:
 
 ## Path 1: You Want to Add AI Features Inside Your App
 
-**Frameworks: Foundation Models, optionally MCP**
+**Frameworks: Foundation Models, optionally its `Tool` protocol**
 
 Foundation Models is the right starting point if you're building:
 
@@ -72,7 +75,7 @@ Foundation Models is the right starting point if you're building:
 - Structured extraction (pull fields from unstructured text)
 - On-device analysis of user-captured images (iOS 27 multimodal)
 
-Foundation Models runs a ~3B-parameter on-device model on Apple Silicon. It's free at query time (no API cost), private by design (inference never leaves the device), and fast enough for real-time use in most use cases.
+Foundation Models runs a [~3-billion-parameter on-device model](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models) on Apple Silicon. It's free at query time (no API cost) and private by design (inference never leaves the device), and it's fast enough for real-time use in most use cases.
 
 **What you write:**
 
@@ -111,7 +114,7 @@ let summary = try await session.respond(
 )
 ```
 
-**When to add MCP:** If your Foundation Models session needs to call external capabilities — fetch current data, query your server, run a calculation — MCP tool calling is how you connect them. The iOS 27 system MCP support means your app can register MCP-compatible tools that the on-device model calls during inference. You don't implement MCP for basic text generation; you add it when you need the model to DO something beyond reasoning over text.
+**When to add tool calling:** If your Foundation Models session needs to call external capabilities — fetch current data, query your server, run a calculation — the framework's own [`Tool` protocol](https://developer.apple.com/documentation/foundationmodels/tool) is how you connect them: you implement `Tool`, bind it to a `LanguageModelSession`, and the framework handles the call graph. **This is not MCP.** Apple's confirmed WWDC 2026 MCP work is scoped to Xcode 27's coding-agent tooling — [plugin-bundled MCP tools plus first-party Figma and GitHub connectors](https://developer.apple.com/videos/play/wwdc2026/102/) — not a system-level API that Foundation Models or any app registers tools through. A companion piece on this site originally claimed iOS 27 shipped "system-wide MCP" for exactly this use case; [that claim did not hold up under a source check](/builders-log/apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide/) and has been corrected. You don't implement the `Tool` protocol for basic text generation; you add it when you need the model to DO something beyond reasoning over text.
 
 **What you don't need for this path:** AssistantSchemas, Siri Extensions, Core AI (unless you're loading a custom model). Skip those sessions for now.
 
@@ -151,7 +154,7 @@ struct CreateTaskIntent: AppIntent {
 }
 ```
 
-**The AssistantSchemas catalog** provides 15 domain types covering: photos, browser, spreadsheet, presentation, word processing, mail, journal, reader, whiteboard, books, files, camera, system, visual intelligence, and assistant. If your app fits one of these domains, use the schema from that domain — it gives the routing LLM much stronger signal than a generic intent.
+**The [AssistantSchemas / App Intent domains catalog](https://developer.apple.com/documentation/appintents/app-intent-domains)** groups schemas by category — Apple's own documentation lists domains including photos, mail, browser, journal, camera, and books, and the set has grown release over release (Apple counted [twelve domains at launch in iOS 18](https://developer.apple.com/videos/play/wwdc2024/10133/)). Check the current domain list on that page before you build, since it changes between OS versions. If your app fits one of these domains, use the schema from that domain — it gives the routing LLM much stronger signal than a generic intent.
 
 **What you don't need for this path:** Foundation Models (you're not doing inference, Apple's system is), Siri Extensions (you're not becoming an AI provider, you're declaring app actions), Core AI (no custom model). Skip those sessions.
 
@@ -161,29 +164,19 @@ struct CreateTaskIntent: AppIntent {
 
 ## Path 3: You're Building an AI Product That Competes With or Extends Apple's System AI
 
-**Frameworks: Siri Extensions**
+**Framework: Siri Extensions — reported, not Apple-confirmed. Read this before you plan against it.**
 
-Siri Extensions are for apps that provide an AI backend — Claude-backed, Gemini-backed, or your own model — that users want to use system-wide instead of (or alongside) Apple's default Gemini-powered Siri.
+**Correction:** This section originally described Siri Extensions as a documented, shipping WWDC 2026 SDK, including a named conformance protocol and a five-step implementation process. Neither is real. Apple did not announce or demo an Extensions framework at the WWDC 2026 keynote or in any WWDC26 session. What actually exists: independent reporting found that [the iOS 27 developer beta contains an Extensions framework](https://letsdatascience.com/news/apple-hides-third-party-siri-extensions-in-ios-27-beta-ac421fbb) that would let third-party AI providers plug into Siri, but "the functionality appears disabled on Apple's backend" and it "was not announced during the WWDC 2026 keynote." A separate report on the same discovery notes ["Extensions did not appear in any slide, demo, or press release"](https://thenextweb.com/news/apple-siri-extensions-third-party-ai-missing-wwdc) and that Apple has held private discussions with OpenAI, Anthropic, and Google about entitlements — discussions, not a shipped SDK. Neither report names a specific protocol, and no `developer.apple.com` documentation page for it exists as of this correction.
 
-In iOS 27, users configure their preferred AI provider in Settings → Apple Intelligence & Siri → Extensions. Per-category routing lets users configure different providers for research, coding, creative writing, etc. Once configured, your app's AI handles those query types system-wide: in Siri, in Writing Tools, in Image Playground.
+Separately, Apple's real, on-record AI partnership is that [Siri's underlying model is Gemini-based](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html), per a multi-year Apple-Google licensing deal reported in January 2026 — that part is well corroborated. It's the *third-party-swap-in* Extensions layer described in this section that is unconfirmed.
 
-**What you write:**
+**If you want to build toward this:** treat everything below as informed speculation, not an API contract, until Apple publishes real documentation.
 
-Your app targets a new extension in Xcode, conforms to Apple's Extensions protocol, and returns structured responses in Apple's specified format. The Extensions SDK shipped in beta 1 today — the conformance protocol is documented in the developer beta's documentation.
-
-At minimum:
-
-1. Add an Extensions target to your existing Xcode project
-2. Conform to the `SiriExtensionProvider` protocol (see the SDK; exact protocol name in the documentation)
-3. Implement the required query handler that receives the user's request and returns a formatted response
-4. Declare query category capabilities (which types of queries your Extension handles)
-5. Submit through standard App Review — no separate AI-provider approval track was announced
-
-**The hard part isn't the code.** The code to implement an Extensions target is straightforward. The hard part is response quality: your AI has to return fast, structured, concise responses formatted for Siri's answer card UI. A wall of text that works in a chat interface will fail inside Siri. Design your response formatting specifically for Siri's surface.
-
-**Positioning note:** iOS 27 ships Claude, Gemini, and ChatGPT as the confirmed default provider options. Additional providers can implement the SDK. The first-mover advantage is real — users will pick from what they see in Settings first. If your app needs to compete here, get into beta testing now to build experience before September.
+Reported shape of the feature: users would configure a preferred AI provider in Settings → Apple Intelligence & Siri → Extensions, potentially with per-category routing (e.g., one provider for research, another for coding). If and when Apple documents this for real, that query-category detail is the first thing to re-verify — it comes from third-party analysis of beta code, not an Apple statement.
 
 **What you don't need for this path (unless you're using it internally):** App Intents/AssistantSchemas (those are for apps that receive actions from Siri, not AI providers that respond to Siri queries). You may use Foundation Models internally for on-device inference to augment your cloud backend.
+
+**Bottom line:** there is no Extensions SDK to build against today. If your product strategy depends on being a swap-in Siri AI provider, the actionable step right now is watching for Apple's official announcement — not writing code against reverse-engineered beta internals.
 
 ---
 
@@ -191,7 +184,7 @@ At minimum:
 
 **Framework: Core AI**
 
-Core AI replaces Core ML as the primary ML runtime in iOS 27. If you have a custom model — a fine-tuned classification model, a domain-specific generation model, a specialized vision model — Core AI is how you load and run it.
+[Core AI replaces Core ML](https://developer.apple.com/videos/play/wwdc2026/324/) as the primary on-device ML runtime in iOS 27. If you have a custom model — a fine-tuned classification model, a domain-specific generation model, a specialized vision model — Core AI is how you load and run it.
 
 Core AI is designed for LLM-native architectures (transformers, diffusion models) rather than the traditional CoreML format's focus on structured prediction models. It handles the things that make running LLMs on-device painful: memory-mapped model loading (so you don't spike memory at launch), KV cache management, automatic scheduling across Neural Engine and GPU, and model format conversion.
 
@@ -226,7 +219,7 @@ textView.writingToolsBehavior = .limited // summarize only, no rewrite
 textView.writingToolsBehavior = .none
 ```
 
-The iOS 27 Extensions framework extends this: if the user has configured a third-party AI Extension as their Writing Tools provider, your text view's Writing Tools requests route to that provider. Your `writingToolsBehavior` configuration still controls whether Writing Tools appears; the Extensions framework controls which AI backend processes the request.
+Reported (not Apple-confirmed — see the correction in Path 3) beta functionality would extend this further: if a user has configured a third-party AI Extension as their Writing Tools provider, text-view Writing Tools requests could route to that provider instead of Apple's default. Until Apple documents Extensions officially, treat your `writingToolsBehavior` configuration as controlling only whether Apple's own Writing Tools panel appears — don't build against a third-party routing layer that isn't shipped yet.
 
 ---
 
@@ -238,9 +231,9 @@ The common misconception is that these are competing frameworks — that you pic
 User says to Siri: "Draft a reply to the email from Sarah about the Q2 budget"
                                     │
                                     ▼
-                        Siri Extensions routes query
-                        to user's configured AI provider
-                        (or Gemini if no extension set)
+                  [Reported, unconfirmed] Siri Extensions
+                        routes query to user's configured
+                     AI provider (Gemini by default today)
                                     │
                                     ▼
                       App Intents + AssistantSchemas
@@ -258,10 +251,10 @@ User says to Siri: "Draft a reply to the email from Sarah about the Q2 budget"
 ```
 
 In this chain:
-- **Siri Extensions** handles the AI routing — which AI provider responds?
+- **Siri Extensions** *(reported, not yet Apple-confirmed — see Path 3)* would handle the AI routing — which AI provider responds?
 - **App Intents + AssistantSchemas** handles the action routing — which app does the action?
 - **Foundation Models** handles on-device inference — does the app need to generate text without a network call?
-- **Writing Tools** is a separate surface that the same Extensions framework feeds into
+- **Writing Tools** is a separate surface that the same (reported, unconfirmed) Extensions framework would feed into
 
 You can implement any slice of this chain without implementing all of it. A mail app that implements App Intents/AssistantSchemas becomes accessible to Siri without needing to implement Siri Extensions or Foundation Models. A journaling app that uses Foundation Models for on-device summarization doesn't need App Intents unless it wants Siri to be able to "add entry to [app]".
 
@@ -281,11 +274,11 @@ For a typical iOS app in an established category (productivity, health, finance,
 
 3. **Foundation Models** — if you have AI features in your product roadmap that need to work offline, be private, or have zero per-query cost. If you're currently calling a cloud LLM API for simple in-app generation tasks, on-device Foundation Models is worth evaluating as a replacement or first-tier fallback.
 
-4. **Siri Extensions** — only if your product IS an AI product that competes for system-wide AI routing. Most category apps don't need this — they want their actions available to Siri (App Intents), not to replace Siri.
+4. **Siri Extensions** — not shippable today (see Path 3: reported in beta, not Apple-confirmed). Track it if your product IS an AI product that would compete for system-wide AI routing, but don't build against it yet. Most category apps don't need this anyway — they want their actions available to Siri (App Intents), not to replace Siri.
 
 5. **Core AI** — only if you have a custom model that needs direct runtime management.
 
-6. **MCP** — only if you're building a complex agentic app where the on-device model needs to call tools during inference.
+6. **Foundation Models' `Tool` protocol** — only if you're building a complex agentic app where the on-device model needs to call tools during inference. (Not MCP — see the correction in Path 1.)
 
 ---
 
@@ -293,31 +286,27 @@ For a typical iOS app in an established category (productivity, health, finance,
 
 If you're prioritizing which sessions to watch this week:
 
-**Watch first (highest impact):**
-- "Get to know App Intents" / "Explore enhancements to App Intents" — the foundation everything else builds on
-- "Multimodal experiences with Foundation Models" — the iOS 27 multimodal update
-- "Implement the Siri Extensions framework" — if you're an AI product builder
+**Watch first (highest impact), confirmed WWDC26 sessions:**
+- ["Build intelligent Siri experiences with App Schemas"](https://developer.apple.com/videos/play/wwdc2026/240/) — the AssistantSchemas foundation everything else builds on
+- ["Explore advanced App Intents features for Siri and Apple Intelligence"](https://developer.apple.com/videos/play/wwdc2026/343/) and ["Code-along: Make your app available to Siri"](https://developer.apple.com/videos/play/wwdc2026/344/) — hands-on App Intents work
+- ["What's new in the Foundation Models framework"](https://developer.apple.com/videos/play/wwdc2026/241/) — multimodal and other framework updates
 
 **Watch second (significant but scoped):**
-- "Meet Core AI" — if you need custom model loading
-- "Deploy machine learning models with Core AI" — advanced Core AI usage
-- "Design for Apple Intelligence" — response formatting and UX guidance
-- "Explore the privacy and security of Apple Intelligence" — architectural grounding for PCC
+- ["Meet Core AI"](https://developer.apple.com/videos/play/wwdc2026/324/) — if you need custom model loading
+- ["Platforms State of the Union"](https://developer.apple.com/videos/play/wwdc2026/102/) — covers Core AI, Xcode 27's MCP work, and Foundation Models multimodal in one pass
 
-**Watch when relevant:**
-- "Integrate Writing Tools" — if your app has text editing
-- "Catalog your app's data with App Intents entity queries" — for complex AssistantSchemas integration
+**No confirmed session exists for "Siri Extensions"** — see the Path 3 correction above. There is no WWDC 2026 session by that name; do not schedule your watch list around one.
 
-Approximately 100+ sessions are in the WWDC 2026 catalog. Most app teams don't need more than 6-8 of them to get an informed iOS 27 AI strategy in place.
+There were [over 100 video sessions](https://www.apple.com/newsroom/2026/03/apples-worldwide-developers-conference-returns-the-week-of-june-8/) in the WWDC 2026 catalog. Most app teams don't need more than a handful of them to get an informed iOS 27 AI strategy in place.
 
 ---
 
 ## The Common Mistakes This Week
 
-**Mistake 1: Implementing Siri Extensions when you actually need App Intents.**
-Siri Extensions = "my AI handles queries instead of Apple's AI."
-App Intents + AssistantSchemas = "Apple's AI can perform actions in my app."
-These are different problems. Most apps have problem 2.
+**Mistake 1: Planning around Siri Extensions when you actually need App Intents.**
+Siri Extensions (reported, unconfirmed — see Path 3) = "my AI handles queries instead of Apple's AI."
+App Intents + AssistantSchemas (confirmed, documented today) = "Apple's AI can perform actions in my app."
+These are different problems, and only one of them has a real SDK right now. Most apps have problem 2.
 
 **Mistake 2: Using Foundation Models when you actually need App Intents.**
 Foundation Models makes your app's AI features better. App Intents makes your app visible to Apple's AI. Neither substitutes for the other. A Foundation Models-powered app with no App Intents is invisible to Siri. An App Intents-covered app with no Foundation Models still gets Siri routing — it just processes actions with its own (non-Apple) logic.
@@ -325,8 +314,8 @@ Foundation Models makes your app's AI features better. App Intents makes your ap
 **Mistake 3: Ignoring Core AI because "I'm using Foundation Models."**
 If you're using Foundation Models, you're not bypassing Core AI — Foundation Models uses Core AI internally. You only need to touch Core AI directly if you're loading custom models or doing advanced inference configuration.
 
-**Mistake 4: Not reading the Extensions SDK before implementing.**
-Every major Apple API has adoption traps: entitlement requirements, review policies, edge cases. The developer documentation shipped in beta 1 today. Read it before writing code — Apple's documentation is the authoritative source, not pre-announcement reporting.
+**Mistake 4: Building against the Extensions "SDK" before it exists.**
+There is no published Extensions SDK today — see the Path 3 correction. Every major Apple API has adoption traps once it does ship: entitlement requirements, review policies, edge cases. Wait for Apple's actual developer documentation before writing code against it — reverse-engineered beta internals and pre-announcement reporting are not a stable foundation to build a product on.
 
 ---
 
@@ -334,13 +323,11 @@ Every major Apple API has adoption traps: entitlement requirements, review polic
 
 | Date | iOS 27 AI milestone |
 |------|---|
-| June 8, 2026 | Developer beta 1 — all SDKs available; WWDC sessions begin publishing |
-| June 8–12, 2026 | WWDC sessions — watch the catalog as they drop |
-| Late June 2026 | Developer beta 2 — first API stability signals |
-| July 2026 | Public beta — real user testing begins |
-| September 2026 | iOS 27 public release — Extensions, AssistantSchemas, Foundation Models multimodal all live |
+| [June 8–12, 2026](https://www.apple.com/newsroom/2026/03/apples-worldwide-developers-conference-returns-the-week-of-june-8/) | WWDC 2026 — developer beta 1 ships; confirmed sessions (App Schemas, Foundation Models, Core AI, Platforms State of the Union) publish through the week |
+| [~July 2026 (expected)](https://www.macrumors.com/2026/07/07/ios-27-public-beta-is-coming-soon/) | Public beta — timing reported, not an Apple-committed date |
+| [~September 2026 (expected)](https://www.forbes.com/sites/davidphelan/2026/06/11/ios-27-release-date-beta-public-release/) | iOS 27 public release — Apple has not confirmed an exact date; based on its consistent September release pattern. AssistantSchemas and Foundation Models multimodal are on-record WWDC 2026 features; Siri Extensions is not (see Path 3) |
 
-The beta cycle gives you roughly 12 weeks from today to September. That's enough to ship a solid App Intents integration if you start now. It's not enough to build and refine a Siri Extensions implementation from scratch if you haven't done the App Intents work yet — that's a prerequisite.
+Apple has not published a beta 2 date as of this writing, so treat the rows above as directional, not a committed roadmap. What's confirmed today (App Intents/AssistantSchemas work) is enough to start on now. What's not confirmed (Siri Extensions) isn't something you can build a release plan around yet.
 
 ---
 
@@ -353,7 +340,7 @@ Our full coverage of each framework in the iOS 27 AI stack:
 - **Core AI:** [Apple Core AI Framework: Core ML Replacement and the New On-Device ML Runtime](/builders-log/apple-core-ai-framework-core-ml-replacement-builder-guide/)
 - **App Intents + AssistantSchemas:** [App Intents AssistantSchemas in iOS 27: Make Your App Accessible to Apple Intelligence](/builders-log/app-intents-assistant-schemas-ios-27-apple-intelligence-builder-guide/)
 - **Siri Extensions:** [iOS 27 Siri Extensions API: Builder's Guide to Making Your AI App Work Inside Siri](/builders-log/ios-27-siri-extensions-api-builder-guide-wwdc-2026/)
-- **MCP (iOS 27):** [iOS 27 and MCP: Apple Goes System-Wide with Model Context Protocol](/builders-log/apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide/)
+- **MCP (Xcode 27, corrected):** [No, Apple Didn't Put MCP on Siri: What WWDC 2026 Actually Shipped in Xcode 27](/builders-log/apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide/)
 - **WWDC 2026 keynote overview:** [WWDC 2026 Keynote Confirmed: Siri Is Now Gemini, Core AI Replaces Core ML, MCP Goes Platform-Wide](/builders-log/wwdc-2026-keynote-confirmed-apple-ai-platform-builder-guide/)
 
 ---
