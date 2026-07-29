@@ -5,9 +5,9 @@
 
 The most important thing to understand about App Intents in iOS 27 is that there are now two distinct paths for making your app work with AI — and they solve different problems. This guide covers the updates [announced at WWDC 2026](https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/), with code that reflects [the session "Explore advanced App Intents features for Siri and Apple Intelligence"](https://developer.apple.com/videos/play/wwdc2026/343/).
 
-**AssistantSchemas** is the path for exposing your app's features to Apple Intelligence, Siri, and the system-level routing that decides which app to invoke when a user says "open my receipt in the photos app" or "create a new entry in my journal app." It is a semantic contract between your app and Apple's AI layer.
+**AssistantSchemas** is the path for exposing your app's features to Apple Intelligence, Siri, and the system-level routing that decides which app to invoke when a user says "open my receipt in the photos app" or "send that PDF from my mail app." It is a semantic contract between your app and Apple's AI layer. (As the domain-category section below explains, not every domain reaches Siri this way — some, like journal, are Shortcuts-only.)
 
-**The Tool protocol** (in `FoundationModels`) is the path for your own in-app LLM sessions — when your app itself uses Foundation Models and you want the model to call back into your code during generation.
+**The [Tool protocol](https://developer.apple.com/documentation/FoundationModels)** (in `FoundationModels`) is the path for your own in-app LLM sessions — when your app itself uses Foundation Models and you want the model to call back into your code during generation.
 
 Most discussions of AI integration in iOS conflate these two things. They are architecturally separate. This guide covers both — with a focus on AssistantSchemas, which affects any app that wants to be actionable by Apple Intelligence. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -15,9 +15,9 @@ Most discussions of AI integration in iOS conflate these two things. They are ar
 
 ## What AssistantSchemas Are
 
-AssistantSchemas is a namespace (`enum AssistantSchemas`) within the App Intents framework. It defines typed, domain-specific protocol conformances for app intents, entities, and enums.
+[AssistantSchemas](https://developer.apple.com/documentation/appintents/assistantschemas) is a namespace within the App Intents framework. It defines typed, domain-specific protocol conformances for app intents, entities, and enums.
 
-Plain `AppIntent` (available since iOS 16) lets you declare an arbitrary action your app can perform. That's fine for Shortcuts and Spotlight, where the user explicitly searches for your app's actions by name.
+Plain [`AppIntent`](https://developer.apple.com/videos/play/wwdc2022/10032/) (available since iOS 16, introduced at WWDC 2022) lets you declare an arbitrary action your app can perform. That's fine for Shortcuts and Spotlight, where the user explicitly searches for your app's actions by name.
 
 Apple Intelligence doesn't work that way. It processes natural language requests and needs to understand what your app does at a semantic level — not just "this app has an intent called OpenPhoto" but "this app conforms to the photos domain and supports the openAsset action, which takes a `PhotosEntity`." That semantic understanding is what AssistantSchemas provides.
 
@@ -37,11 +37,13 @@ When a user makes a request to Siri or Apple Intelligence:
 4. It routes to the user's default app for that domain, or the best match if no default is set
 5. Your app's `perform()` method runs — in the background, with no UI required unless you explicitly request it
 
-The routing is semantic. The model infers the domain from the request, not from keyword matching. "Get that picture from the coffee shop last Tuesday" → `photos` domain → `search` or `openAsset` intent. "Make a new note about the meeting" → `journal` or `wordProcessor` domain → `create` intent.
+The routing is semantic. The model infers the domain from the request, not from keyword matching. "Get that picture from the coffee shop last Tuesday" → `photos` domain → `search` or `openAsset` intent. "Reply to that email from my landlord" → `mail` domain → `replyMail` intent.
 
-If multiple installed apps conform to the same schema (two browser apps, two journal apps), the user's default app for that category wins. This is why conforming to AssistantSchemas is important — it puts your app in the routing pool.
+If multiple installed apps conform to the same schema (two photo-editing apps, two mail apps), the user's default app for that category wins. This is why conforming to AssistantSchemas is important — it puts your app in the routing pool.
 
 If no installed app conforms to a schema, Siri handles natively or declines the request.
+
+**Important caveat, verified against Apple's own domain reference:** the routing behavior above applies to what Apple calls "Primary" domains (photos, mail, files, camera, system, and others) and the two "Single-Purpose" domains (Assistant, Visual Intelligence). A third category — "Shortcuts-Specific" domains, which includes journal, browser, reader, whiteboard, books, spreadsheet, presentation, and word processor — works only inside the Shortcuts app and, per Apple's documentation, does **not** activate Apple Intelligence or Siri natural-language discoverability. See [Apple's App Intent domains reference](https://developer.apple.com/documentation/appintents/app-intent-domains) and this [developer forum thread confirming the limitation in practice](https://developer.apple.com/forums/thread/808154). More on what this means for the domain table below.
 
 ---
 
@@ -88,33 +90,35 @@ enum ClearHistoryTimeFrameEnum: String, AppEnum {
 }
 ```
 
-**Note on deprecated macros:** iOS 18 introduced `@AssistantIntent(schema:)`, `@AssistantEntity(schema:)`, and `@AssistantEnum(schema:)` as separate macros. iOS 27 merges schema conformance directly into the standard `@AppIntent(schema:)`, `@AppEntity(schema:)`, and `@AppEnum(schema:)` macros. The old macros still compile but will generate deprecation warnings. Migrate now if you're building for iOS 27.
+**Note on deprecated macros:** the older [`@AssistantIntent(schema:)`](<https://developer.apple.com/documentation/appintents/assistantintent(schema:)>) macro (and its `@AssistantEntity(schema:)` / `@AssistantEnum(schema:)` counterparts) is now marked deprecated in Apple's documentation. iOS 27 moves schema conformance directly into the standard `@AppIntent(schema:)`, `@AppEntity(schema:)`, and `@AppEnum(schema:)` macros — confirmed live in Apple's [`@AppIntent(schema:)` reference](<https://developer.apple.com/documentation/appintents/appintent(schema:)>). The old macros still compile but will generate deprecation warnings. Migrate now if you're building for iOS 27.
 
 ---
 
 ## The 15 Domains
 
-AssistantSchemas covers 15 app domains. Each domain has a defined set of action types (intents), data types (entities), and parameter types (enums). Here is the full catalog:
+This guide focuses on 15 app domains most relevant to third-party apps. (Apple's [full domain reference](https://developer.apple.com/documentation/appintents/app-intent-domains) actually lists 23 domains across three categories — see the callout below the table; the extra 8 are system-app-adjacent domains like Calendar, Maps, Messages, Notes, Phone, Reminders, Audio, and Clock that most third-party apps won't conform to.) Each domain has a defined set of action types (intents), data types (entities), and parameter types (enums). The tables below were checked action-by-action against Apple's live per-domain documentation pages (linked) — several of the action names circulating in early iOS 27 coverage turned out not to match the real API, so this list corrects those:
 
-| Domain | Key Intents | Count |
+| Domain | Key Intents (verified) | Count |
 |--------|-------------|-------|
-| `.photos` | openAsset, createAssets, deleteAssets, search, crop, setExposure, setFilter, setRotation, straighten, updateRecognizedPerson, postToSharedAlbum, openAlbum, createAlbum | 28 |
-| `.browser` | createTab, openURLInTab, search, closeTabs, bookmarkURL, clearHistory, findOnPage, openBookmarks, openHistory, openDownloads | 13 |
-| `.spreadsheet` | create, open, update, delete, createSheet, openSheet, addCommentToSheet, updateCell, deleteSheet, addRowToSheet, addColumnToSheet, searchSheets | 14 |
-| `.presentation` | create, open, createSlide, setSlideTitle, setSlideLayout, addTextToSlide, addImageToSlide, startPlayback, stopPlayback, deleteSlide, duplicateSlide, moveSlide | 15 |
-| `.wordProcessor` | create, open, createPage, openPage, addTextBoxToPage, addImageToPage, addAudioToPage, addVideoToPage, addWebVideoToPage | 9 |
-| `.mail` | createDraft, sendDraft, replyMail, forwardMail, archiveMail, deleteMail, markRead, markUnread, moveToFolder, search | 10 |
-| `.journal` | createEntry, createAudioEntry, updateEntry, deleteEntry, search | 5 |
-| `.reader` | openDocument, openPage, searchDocuments, insertPages, deletePages, rotatePages, resizeDocuments, openBookmark, addAnnotation | 9 |
-| `.whiteboard` | createBoard, openBoard, deleteBoard, createItem, updateItem, deleteItem, updateBoard | 7 |
-| `.books` | openBook, playAudiobook, navigatePage, search, updateFontSize, updateLineSpacing, addBookmark, toggleNightMode, setReadingGoal | 9 |
-| `.files` | openFile, createFolder, moveFiles, renameFile, deleteFiles | 5 |
-| `.camera` | openInCaptureMode, startCapture, stopCapture, setDevice, switchDevice | 5 |
-| `.system` | search | 1 |
-| `.visualIntelligence` | semanticContentSearch | 1 |
-| `.assistant` | activate (Japan side button, requires entitlement, iOS 27.2+) | 1 |
+| [`.photos`](https://developer.apple.com/documentation/appintents/assistantschemas/photosintent) | openAsset, createAssets, deleteAssets, search, crop, setExposure, setFilter, setRotation, straighten, updateRecognizedPerson, postToSharedAlbum, openAlbum, createAlbum, plus album/edit actions (addAssetsToAlbum, updateAlbum, copyEdits, etc.) | 27 |
+| [`.browser`](https://developer.apple.com/documentation/appintents/assistantschemas/browserintent) | createTab, openURLInTab, closeTabs, closeWindows, createWindow, switchTab, bookmarkURL, bookmarkTab, deleteBookmarks, clearHistory, findOnPage, openBookmark, search (deprecated) | 13 |
+| [`.spreadsheet`](https://developer.apple.com/documentation/appintents/assistantschemas/spreadsheetintent) | create, open, update, delete, createSheet, openSheet, updateSheet, deleteSheet, addCommentToSheet, addImageToSheet, addTextBoxToSheet, addAudioToSheet, addVideoToSheet, addWebVideoToSheet | ~14 |
+| [`.presentation`](https://developer.apple.com/documentation/appintents/assistantschemas/presentationintent) | create, open, update, createSlide, openSlide, deleteSlide, setSlideTitle, startPlayback, stopPlayback, addImageToSlide, addTextBoxToSlide, addCommentToSlide, addAudioToSlide, addVideoToSlide, addWebVideoToSlide | ~15 |
+| [`.wordProcessor`](https://developer.apple.com/documentation/appintents/assistantschemas/wordprocessorintent) | create, open, createPage, openPage, addTextBoxToPage, addImageToPage, addAudioToPage, addVideoToPage, addWebVideoToPage | 9 |
+| [`.mail`](https://developer.apple.com/documentation/appintents/assistantschemas/mailintent) | createDraft, saveDraft, updateDraft, deleteDraft, sendDraft, replyMail, forwardMail, archiveMail, deleteMail, updateMail | 10 |
+| [`.journal`](https://developer.apple.com/documentation/appintents/assistantschemas/journalintent) | createEntry, createAudioEntry, updateEntry, deleteEntry, search (deprecated) | 5 |
+| [`.reader`](https://developer.apple.com/documentation/appintents/assistantschemas/readerintent) | openDocument, openPage, searchDocuments, insertPages, deletePages, rotatePages, rotateDocuments, resizeDocuments, enhanceDocuments | 9 |
+| [`.whiteboard`](https://developer.apple.com/documentation/appintents/assistantschemas/whiteboardintent) | createBoard, openBoard, deleteBoard, createItem, updateItem, deleteItem, updateBoard | 7 |
+| [`.books`](https://developer.apple.com/documentation/appintents/assistantschemas/booksintent) | openBook, navigatePage, updateFontSize, updateLineSpacing, updateCharacterSpacing, updateWordSpacing, updateSettings, playAudiobook (deprecated), search (deprecated) | 9 |
+| [`.files`](https://developer.apple.com/documentation/appintents/assistantschemas/filesintent) | openFile, createFolder, moveFiles, renameFile, deleteFiles | 5 |
+| [`.camera`](https://developer.apple.com/documentation/appintents/assistantschemas/cameraintent) | openInCaptureMode, startCapture, stopCapture, setDevice, switchDevice | 5 |
+| [`.system`](https://developer.apple.com/documentation/appintents/assistantschemas/systemintent) | search | 1 |
+| [`.visualIntelligence`](https://developer.apple.com/documentation/appintents/assistantschemas/visualintelligenceintent) | semanticContentSearch | 1 |
+| `.assistant` | activate (Japan side button, requires the `com.apple.developer.side-button-access.allow` entitlement — [shipped iOS 26.2](https://www.macrumors.com/2025/11/17/ios-26-2-iphone-users-japan-siri/), not 27.2) | 1 |
 
-**Total: 15 domains, 110+ defined actions.**
+**Total: roughly 130 defined actions across these 15 domains** (exact per-domain counts can shift as Apple revises docs during the beta — check the linked pages for the current list before shipping).
+
+**Domain category matters for what you actually get.** Per Apple's own [domain reference page](https://developer.apple.com/documentation/appintents/app-intent-domains), domains split into three tiers: "Primary" domains (photos, mail, files, camera, system, and others like calendar/maps/messages not covered above) get full Apple Intelligence and Siri natural-language discoverability; two "Single-Purpose" domains (Assistant, Visual Intelligence) integrate with specific system surfaces; and "Shortcuts-Specific" domains — browser, spreadsheet, presentation, word processor, journal, reader, whiteboard, and books, all covered in the table above — **work only inside the Shortcuts app and do not activate Apple Intelligence or Siri discoverability**, per Apple's own documentation note (independently corroborated by [a developer forum thread](https://developer.apple.com/forums/thread/808154) where a developer confirmed the same domain's sample intents worked from Shortcuts but not from Siri). In practice: conforming a journal or browser app to its schema gets you into Shortcuts and Spotlight, but not into natural-language Siri/Apple Intelligence routing — plan your domain choice accordingly if voice routing is the goal.
 
 Most third-party apps will find a home in photos, browser, mail, journal, reader, whiteboard, files, or a productivity category. Apps that don't fit neatly into a domain cannot create custom schemas — conformance is opt-in to Apple's predefined taxonomy.
 
@@ -190,9 +194,11 @@ This lets you migrate gradually without breaking users who have existing shortcu
 
 ---
 
-## iOS 27 Additions: SnippetIntent
+## SnippetIntent for Rich Results
 
-iOS 27 introduces `SnippetIntent` — a new intent result type that returns an interactive SwiftUI view instead of (or in addition to) a data value.
+**Correction:** [`SnippetIntent`](https://developer.apple.com/documentation/appintents/snippetintent) is not new in iOS 27 — Apple's own documentation lists it as available since **iOS 26.0** (introduced at WWDC 2025, in the ["Explore new advances in App Intents" session](https://developer.apple.com/videos/play/wwdc2025/275/)). It carries over into iOS 27 and is still central to how AssistantSchemas results get rendered, which is why it's covered here, but don't describe it to users or teammates as a new iOS 27 feature.
+
+`SnippetIntent` is an intent result type that returns an interactive SwiftUI view instead of (or in addition to) a data value.
 
 ```swift
 @AppIntent(schema: .journal.search)
@@ -209,15 +215,17 @@ struct SearchJournalIntent: AppIntent, SnippetIntent {
 }
 ```
 
+**Note on the example above:** Apple's live [`AssistantSchemas.JournalIntent` reference](https://developer.apple.com/documentation/appintents/assistantschemas/journalintent) currently marks `.journal.search` itself as deprecated (the domain otherwise still has `createEntry`, `createAudioEntry`, `updateEntry`, and `deleteEntry`). Check the current schema reference for your domain before shipping a `SnippetIntent` built on a `search` action — non-deprecated `search`-style actions do exist elsewhere, e.g. [`.photos.search`](https://developer.apple.com/documentation/appintents/assistantschemas/photosintent) or [`.reader.searchDocuments`](https://developer.apple.com/documentation/appintents/assistantschemas/readerintent); the `SnippetIntent` pattern itself is unaffected by which specific action you attach it to.
+
 When Apple Intelligence invokes a `SnippetIntent`, it renders your SwiftUI view inline in the response — the user can interact with buttons, toggles, and controls without leaving the context. The system calls `perform()` again after each interaction.
 
 For apps with rich browsable results (search, photo grids, reading lists), this is significantly better than returning a flat string. The view needs to be lightweight — heavy data loads should happen asynchronously.
 
 ---
 
-## iOS 27 Additions: IntentValueQuery for Visual Intelligence
+## IntentValueQuery for Visual Intelligence
 
-Visual Intelligence is the feature that lets users point their camera at something and ask questions about it. Apps can now expose their content to this flow using `IntentValueQuery`.
+**Correction:** like `SnippetIntent`, [`IntentValueQuery`](https://developer.apple.com/documentation/AppIntents/IntentValueQuery) is documented by Apple as available since **iOS 26.0**, not new to iOS 27. Visual Intelligence itself (the feature that lets users point their camera at something and ask questions about it) also debuted with iOS 26. It remains a live, relevant API in iOS 27 — Apple's [WWDC 2026 session on integrating visual intelligence](https://developer.apple.com/videos/play/wwdc2026/297/) covers refinements to the same mechanism — but it isn't a new-in-iOS-27 capability. Apps can expose their content to this flow using `IntentValueQuery`.
 
 ```swift
 @AppEntity(schema: .photos.asset)
@@ -259,7 +267,7 @@ extension AssetEntity: Transferable {
 }
 ```
 
-**2. Setting `appEntityIdentifier` on `NSUserActivity`:**
+**2. Setting `appEntityIdentifier` on `NSUserActivity`** (this mechanism has been available [since iOS 18.2](https://superwall.com/blog/how-to-integrate-siri-and-apple-intelligence-into-your-app-to-query-onscreen)):
 
 ```swift
 // In your SwiftUI view modifier or UIKit equivalent
@@ -317,7 +325,7 @@ let session = LanguageModelSession(
 let response = try await session.respond(to: "What did I write about last month?")
 ```
 
-For a journal app, you might implement both: AssistantSchemas so Siri can create entries when the user asks, and the Tool protocol so your app's own AI assistant can search entries during a conversation within the app.
+For a journal app specifically, note the caveat from earlier: `.journal` is one of Apple's Shortcuts-Specific domains, so AssistantSchemas conformance there gets you into Shortcuts and Spotlight rather than Siri natural-language routing. The general pattern still holds for apps in a Primary domain (mail, photos, files, etc.): you might implement both AssistantSchemas so Siri can invoke actions when the user asks, and the Tool protocol so your app's own AI assistant can search or act during a conversation within the app.
 
 ---
 
@@ -325,7 +333,7 @@ For a journal app, you might implement both: AssistantSchemas so Siri can create
 
 **1. Model availability**
 
-Foundation Models requires Apple Intelligence to be enabled, and Apple Intelligence requires an iPhone 15 Pro or later (A17 Pro) or any M-series chip. For AssistantSchemas, there is no availability check required — the intents register at install time and are invocable whenever the system routes to your app. But if your intent implementation uses Foundation Models directly, check availability first:
+Foundation Models requires Apple Intelligence to be enabled, and [Apple Intelligence requires an iPhone 15 Pro or later (A17 Pro) or any M-series chip](https://support.apple.com/en-us/121115). For AssistantSchemas, there is no availability check required — the intents register at install time and are invocable whenever the system routes to your app. But if your intent implementation uses Foundation Models directly, check availability first:
 
 ```swift
 let model = SystemLanguageModel.default
@@ -351,14 +359,16 @@ Before testing with Siri, test your intents in the Shortcuts app. If the action 
 
 ## What's Available in iOS 27 Beta 1
 
-- `AssistantSchemas` namespace: available since iOS 18.0, updated macros in iOS 27
-- `@AppIntent(schema:)`, `@AppEntity(schema:)`, `@AppEnum(schema:)`: iOS 27.0 (replaces deprecated iOS 18 `@AssistantIntent`, `@AssistantEntity`, `@AssistantEnum`)
-- `IndexedEntity`: iOS 18.0
-- `SnippetIntent`: iOS 27.0 — new at WWDC 2026
-- `IntentValueQuery` for Visual Intelligence: iOS 27.0 — new at WWDC 2026
-- `isAssistantOnly`: iOS 18.0
-- Onscreen content awareness via `NSUserActivity.appEntityIdentifier`: iOS 18.2
-- `.assistant.activate` (Japan side button): iOS 27.2+, requires separate entitlement
+Each line below is checked against Apple's own platform-availability badge on the linked reference page. Two corrections from earlier drafts of this guide (and from some community iOS 27 coverage): `SnippetIntent` and `IntentValueQuery` are iOS 26 APIs, not new in iOS 27, and `.assistant.activate` shipped in iOS 26.2, not 27.2.
+
+- [`AssistantSchemas`](https://developer.apple.com/documentation/appintents/assistantschemas) namespace: schema-conforming types in this family have been available since iOS 16.0, with the current macro set updated for iOS 27
+- `@AppIntent(schema:)`, `@AppEntity(schema:)`, `@AppEnum(schema:)`: [iOS 27.0](<https://developer.apple.com/documentation/appintents/appintent(schema:)>) (replaces the deprecated [`@AssistantIntent(schema:)`](<https://developer.apple.com/documentation/appintents/assistantintent(schema:)>), `@AssistantEntity(schema:)`, `@AssistantEnum(schema:)`)
+- [`IndexedEntity`](https://developer.apple.com/documentation/appintents/indexedentity): iOS 18.0
+- [`SnippetIntent`](https://developer.apple.com/documentation/appintents/snippetintent): iOS 26.0 — introduced at WWDC 2025, still current in iOS 27
+- [`IntentValueQuery`](https://developer.apple.com/documentation/AppIntents/IntentValueQuery) for Visual Intelligence: iOS 26.0 — introduced at WWDC 2025, still current in iOS 27
+- [`isAssistantOnly`](https://developer.apple.com/documentation/appintents/assistantschemaintent/isassistantonly-p4hd): iOS 18.0
+- Onscreen content awareness via `NSUserActivity.appEntityIdentifier`: [iOS 18.2](https://superwall.com/blog/how-to-integrate-siri-and-apple-intelligence-into-your-app-to-query-onscreen)
+- `.assistant.activate` (Japan side button): [iOS 26.2+](https://www.macrumors.com/2025/11/17/ios-26-2-iphone-users-japan-siri/), requires the `com.apple.developer.side-button-access.allow` entitlement, and only functions for accounts/devices set to Japan
 
 The Foundation Models framework (`SystemLanguageModel`, `LanguageModelSession`, `@Generable`, `Tool`) is separate and also ships with iOS 27.0 — see our [Foundation Models builder guide](/builders-log/apple-foundation-models-ios-27-on-device-llm-api-builder-guide/) for that API surface.
 

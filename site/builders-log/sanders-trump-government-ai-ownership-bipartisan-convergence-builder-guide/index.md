@@ -20,22 +20,22 @@ Key parameters as reported through June 6, 2026:
 - **Stake size**: Unconfirmed, but framed as a small percentage — a partnership signal, not a controlling interest
 - **Mechanism**: Voluntary donation by OpenAI, not a government purchase or seizure
 - **Vehicle**: A federal Public Wealth Fund, similar in concept to the sovereign wealth funds operated by Norway and several Gulf states
-- **Timing**: Pre-IPO. OpenAI is preparing to go public; a government equity position negotiated now would convert at whatever valuation the market assigns at IPO
-- **Status**: No deal signed. Trump confirmed on Air Force One: "There are concepts where pieces could be given to the American public, where the American public essentially becomes a partner." No White House comment beyond that
+- **Timing**: Pre-IPO. [OpenAI is preparing to go public](https://openai.com/index/openai-submits-confidential-s-1/), having confidentially submitted a draft S-1 to the SEC; a government equity position negotiated now would convert at whatever valuation the market assigns at IPO
+- **Status**: No deal signed. Trump [confirmed on Air Force One](https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/): "There are concepts where pieces could be given to the American public, where the American public essentially becomes a partner." No White House comment beyond that
 
-On June 7, 2026, [reports emerged that the talks are expanding](https://www.axios.com/2026/06/08/trump-bernie-sanders-ai): administration officials are now discussing potential equity arrangements with AI companies beyond OpenAI. Which companies are in scope has not been confirmed. Anthropic, which was explicitly frozen out of federal markets in February 2026 after refusing Pentagon deployment without safety guardrails, confirmed it "is not having conversations with the administration about providing equity to the government."
+On June 7, 2026, [reports emerged that the talks are expanding](https://www.axios.com/2026/06/08/trump-bernie-sanders-ai): administration officials are now discussing potential equity arrangements with AI companies beyond OpenAI. Which companies are in scope has not been confirmed. Anthropic was [explicitly frozen out of federal markets in February 2026](https://www.cbsnews.com/news/trump-anthropic-ai-order-federal-agencies/): [Trump directed every federal agency to immediately stop using Anthropic's technology](https://www.pbs.org/newshour/politics/trump-orders-federal-agencies-to-stop-using-anthropic-tech-over-ai-safety-dispute) after Anthropic refused a Pentagon demand to drop guardrails against mass surveillance and fully autonomous weapons use. Unlike OpenAI, Anthropic was reportedly not part of the equity talks — [a person close to the company told Fortune](https://fortune.com/2026/06/09/should-americans-get-an-equity-stake-in-ai-maga-and-progressive-democrats-say-yes/) it "is not having conversations with the administration about providing equity."
 
 ### The Sanders Approach: Compulsory, Massive, Worker-Aligned
 
-On June 1, 2026, Senator Bernie Sanders published a New York Times op-ed and [announced plans to introduce the American AI Sovereign Wealth Fund Act](https://www.semafor.com/article/06/03/2026/sanders-follows-trump-toward-government-stakes-in-private-business). The proposal is structurally different from the Trump approach in every dimension:
+On June 1, 2026, Senator Bernie Sanders [published a New York Times op-ed](https://www.nytimes.com/2026/06/01/opinion/artificial-intelligence-bernie-sanders.html) and [announced plans to introduce the American AI Sovereign Wealth Fund Act](https://www.semafor.com/article/06/03/2026/sanders-follows-trump-toward-government-stakes-in-private-business). The proposal is structurally different from the Trump approach in every dimension:
 
-- **Stake size**: 50% — majority ownership
+- **Stake size**: [50% — majority ownership](https://finance.yahoo.com/economy/policy/articles/bernie-sanders-introduce-bill-giving-135431485.html)
 - **Mechanism**: A one-time 50% tax on company stock, paid in shares rather than cash
 - **Targets named**: OpenAI, Anthropic, and xAI explicitly; the bill's scope extends to any AI company of significant scale
 - **Vehicle**: A US sovereign wealth fund, with the stock held on behalf of the American public
 - **Governance**: The fund would hold voting shares and board representation at each company. Ordinary Americans would receive universal dividends — initially small, potentially significant as AI revenue scales
 - **Long-term use**: Dividends would eventually fund public goods: healthcare, education, housing
-- **Status**: Sanders said he will "soon introduce" the bill. As of June 7, it has not been formally filed
+- **Status**: Sanders said he will ["soon introduce"](https://finance.yahoo.com/economy/policy/articles/bernie-sanders-introduce-bill-giving-135431485.html) the bill. As of June 7, it has not been formally filed
 
 ---
 
@@ -71,7 +71,7 @@ The optimistic read: government equity gives the government financial incentive 
 
 The concerning read: government ownership creates pressure to prioritize US-based customers and US-aligned use cases. Export controls, data residency requirements, and API availability in non-US markets become more complex when the asset is partially government-owned. If you're building for the EU, Asia-Pacific, or Canada, a US-government-co-owned OpenAI is a different counterparty than a purely private one.
 
-**For builders using Anthropic APIs**: The freeze-out story doesn't change. Anthropic confirmed it is not participating in equity discussions. That independence may appeal to international buyers and compliance teams who specifically want a non-government-entangled AI vendor. But it comes at a cost: Anthropic has no federal market in the current administration, which affects its revenue trajectory and therefore its long-term API pricing stability.
+**For builders using Anthropic APIs**: The freeze-out story doesn't change. Anthropic is reportedly not part of the equity discussions. That independence may appeal to international buyers and compliance teams who specifically want a non-government-entangled AI vendor. But it comes at a cost: Anthropic has no federal market in the current administration, which affects its revenue trajectory and therefore its long-term API pricing stability.
 
 **For builders who use both**: You now have explicit portfolio diversification between government-aligned (OpenAI) and government-independent (Anthropic) vendors. That diversification has value that wasn't there before.
 
@@ -88,7 +88,7 @@ If 50% government ownership becomes compulsory:
 
 The scenario is also politically unlikely. A 50% compulsory tax on private company stock would face immediate constitutional challenge on takings grounds, and it would require 60 Senate votes to overcome a Republican filibuster. The bill is a statement of position more than a legislative vehicle.
 
-**However**: Sanders introduced this bill *after* the Trump equity talks became public, and he has positioned it as the left-wing answer to the right-wing proposal. If the Trump deal proceeds — especially if it later expands to other AI companies — the Sanders framework will reappear as a counter-proposal, a floor negotiation, or a framing device for future legislation. A 3-5% voluntary stake looks more reasonable when the alternative is 50% compulsory. This is how legislative anchoring works.
+**However**: the public sequence actually ran the other way. Sanders published his NYT op-ed on June 1 — [before NOTUS broke the story](https://www.notus.org/technology/trump-ai-stake-openai) of the private Trump-OpenAI equity talks on June 4 — and has positioned his bill as the left-wing answer to a right-wing proposal that became public just days later (Altman had privately pitched the concept to Trump back in early 2025, but that wasn't public knowledge when Sanders wrote his op-ed). If the Trump deal proceeds — especially if it later expands to other AI companies — the Sanders framework will reappear as a counter-proposal, a floor negotiation, or a framing device for future legislation. A 3-5% voluntary stake looks more reasonable when the alternative is 50% compulsory. This is how legislative anchoring works.
 
 The builder implication: even if the Sanders bill never passes, it will shape what "compromise" looks like if and when Congress actually legislates AI ownership.
 
@@ -109,10 +109,10 @@ For the first time in US history, both parties have put "government equity in AI
 ## The Timeline to Watch
 
 - **Near-term**: Whether the Trump equity talks produce a term sheet or a signed agreement before OpenAI's IPO. Pre-IPO is the leverage window; post-IPO, the government has no special advantage in negotiating equity terms.
-- **June–August 2026**: Whether the talks expand to Anthropic (currently frozen out), Google (cooperative but no equity discussion), or other labs.
+- **June–August 2026**: Whether the talks expand to Anthropic (currently frozen out) or other AI labs such as Google and Meta.
 - **Fall 2026**: Whether Sanders formally introduces the bill and whether any Senate colleagues cosponsor it.
 - **OpenAI IPO timing**: The SEC review of a structure in which the US government holds pre-IPO equity in a company filing a public offering is novel and could create procedural delays.
-- **Anthropic IPO (S-1 filed June 2026)**: The federal freeze-out will appear as a disclosed risk factor. Watch how institutional investors price it.
+- **Anthropic IPO** ([confidential S-1 submitted June 1, 2026](https://www.anthropic.com/news/confidential-draft-s1-sec)): The federal freeze-out will appear as a disclosed risk factor. Watch how institutional investors price it.
 
 ---
 

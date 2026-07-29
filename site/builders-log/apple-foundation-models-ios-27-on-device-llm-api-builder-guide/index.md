@@ -5,7 +5,7 @@
 
 Apple's [Foundation Models framework](https://developer.apple.com/wwdc26/guides/apple-intelligence/) is the most underused capability in the iOS 27 SDK.
 
-Every developer with an Xcode license already has access to a locally running LLM with structured outputs, tool calling, multi-turn sessions, and — new in iOS 27 — on-device fine-tuning. No API key. No network request. No cost per inference. The model runs on the Neural Engine of every iPhone 15 Pro or later, every M-series Mac, and every current iPad Pro.
+Every developer with an Xcode license already has access to a locally running LLM with structured outputs, tool calling, multi-turn sessions, and custom LoRA adapter fine-tuning ([Apple's Foundation Models Adapter toolkit](https://developer.apple.com/apple-intelligence/foundation-models-adapter)). No API key. No network request. No cost per inference. The entry-tier model runs on the Neural Engine of every iPhone 15 Pro or later, every M-series Mac, and every current iPad Pro — the exact device list Apple maintains at [support.apple.com/en-us/121115](https://support.apple.com/en-us/121115). (A newer, larger on-device tier introduced at WWDC 2026 needs more capable hardware still — see Availability below.)
 
 If you have shipped an AI feature in your iOS or macOS app using an external API, Foundation Models probably covers your use case at zero marginal cost with better privacy. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -13,23 +13,22 @@ If you have shipped an AI feature in your iOS or macOS app using an external API
 
 ## What Foundation Models Is
 
-Foundation Models was introduced at WWDC 2025 as Apple's first developer-facing on-device LLM API. Before 2025, building with language models on Apple platforms required Core ML (import your own weights) or an external API call. Foundation Models provides a system LLM — maintained, updated, and optimized by Apple — that any app can call without managing model files or API credentials.
+Foundation Models was [introduced at WWDC 2025](https://www.macrumors.com/2025/06/09/foundation-models-framework/) as Apple's first developer-facing on-device LLM API, shipping with iOS 26 ([Meet the Foundation Models framework, WWDC25](https://developer.apple.com/videos/play/wwdc2025/286/); [Deep dive into the Foundation Models framework, WWDC25](https://developer.apple.com/videos/play/wwdc2025/301/)). Before that, building with language models on Apple platforms required Core ML (import your own weights) or an external API call. Foundation Models provides a system LLM — maintained, updated, and optimized by Apple — that any app can call without managing model files or API credentials.
 
 [iOS 27 is the second major release of Foundation Models](https://developer.apple.com/videos/play/wwdc2026/241/). The headline updates:
 
-- **Larger base model:** Apple has not published parameters for the iOS 27 on-device model, but the system model was substantially rebuilt for iOS 27 — substantially more capable than the iOS 26 Foundation Models model.
-- **Expanded context window:** The iOS 18 model supported a limited context. iOS 27 expands this significantly (exact length in the beta release notes; expected to be 32k+ tokens in production builds).
-- **On-device fine-tuning:** New in iOS 27. Apps can train LoRA adapters on local data that never leaves the device. The base model updates via OS updates; adapters persist in the app sandbox.
-- **Improved structured outputs:** The `@Generable` macro has been expanded to support nested types, enums, optional fields, and arrays.
-- **Tool calling in sessions:** Multi-step tool invocation is now handled inside `LanguageModelSession`, not in app code.
+- **Larger, tiered on-device models:** At WWDC 2026 Apple published its [third-generation Foundation Models family](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models) (AFM 3): "AFM 3 Core," a 3-billion-parameter dense model, and "AFM 3 Core Advanced," a 20-billion-parameter sparse model that activates only 1–4 billion parameters per prompt using a technique Apple calls Instruction-Following Pruning. The Advanced tier requires newer hardware than the base tier — see Availability below.
+- **Context window:** iOS 26's on-device `SystemLanguageModel` shipped with a fixed [4,096-token context window](https://developer.apple.com/forums/thread/791026) (instructions + prompt + output combined). Apple's WWDC 2026 session on the framework confirms the Private Cloud Compute server model now offers a 32,000-token context window; Apple has not published a specific new token limit for the on-device model itself, so that number isn't repeated here.
+- **Custom adapter fine-tuning:** Apple's [Foundation Models Adapter toolkit](https://developer.apple.com/apple-intelligence/foundation-models-adapter) lets developers train LoRA (Low-Rank Adaptation) adapters that specialize the on-device model for their app. This is not new to iOS 27 and not literally on-device: training runs offline, on a developer's own Mac (Apple silicon, 32GB+ memory) or a Linux GPU machine, using a Python CLI — not inside the shipped app on a user's device. Details below.
+- **Expanded tool calling:** WWDC 2026 added built-in tools — a Vision-backed `BarcodeReaderTool` and `OCRTool`, plus a Spotlight-powered local search tool for retrieval-augmented generation — and enhanced tool calling in both the on-device and Private Cloud Compute models ([What's new in the Foundation Models framework, WWDC26](https://developer.apple.com/videos/play/wwdc2026/241/)).
 
-The API is backwards-compatible: code written for iOS 18 Foundation Models compiles and runs in iOS 27 with no changes.
+The API is backwards-compatible: code written for iOS 26 Foundation Models compiles and runs in iOS 27 with no changes.
 
 ---
 
 ## The API Surface
 
-The `FoundationModels` framework has four main concepts: sessions, prompts, structured outputs, and tools.
+The `FoundationModels` framework has four main concepts: sessions, prompts, structured outputs, and tools — introduced at WWDC 2025 ([Meet the Foundation Models framework](https://developer.apple.com/videos/play/wwdc2025/286/); [Deep dive into the Foundation Models framework](https://developer.apple.com/videos/play/wwdc2025/301/)) and unchanged in shape for iOS 27.
 
 ### Sessions
 
@@ -69,7 +68,7 @@ let response2 = try await session.respond(to: "How long does it take?")
 // Response knows what dish was suggested — context is maintained
 ```
 
-The session manages context internally. When context approaches the limit, `LanguageModelSession` throws `LanguageModelSession.Error.contextWindowExceeded`. Handle this by starting a new session with a summary of the prior exchange.
+The session manages context internally. When context is exceeded, the session throws [`LanguageModelSession.GenerationError.exceededContextWindowSize`](https://developer.apple.com/documentation/foundationmodels/languagemodelsession/generationerror/exceededcontextwindowsize(_:)) — every session has a fixed context budget (4,096 tokens as of iOS 26; see the context-window note above) covering instructions, prompt, and output combined. Handle this by starting a new session with a summary of the prior exchange.
 
 ### Streaming
 
@@ -126,12 +125,18 @@ print(plan.steps.count)   // 7
 print(plan.estimatedMinutes)  // 480
 ```
 
-**iOS 27 additions to `@Generable`:**
+`@Generable` has supported nested types, optional properties, and enums since its iOS 26 introduction ([Deep dive into the Foundation Models framework, WWDC25](https://developer.apple.com/videos/play/wwdc2025/301/)). We could not find Apple documentation of iOS-27-specific additions to the macro itself — the confirmed iOS 27 structured-output change is new usage/token accounting on the response object, not new `@Generable` syntax:
 
-- Optional properties: `var subtitle: String?` — the model can return `nil` when the field is not applicable
-- Nested `@Generable` types: full object graphs, not just flat structs
-- Array constraints: you can add guidance in comments that the macro passes to the generation schema
-- Enum with associated values: limited to `Codable`-compatible associated values
+```swift
+let response = try await session.respond(
+    to: "Recommend a craft...",
+    contextOptions: ContextOptions(reasoningLevel: .light)
+)
+print(response.usage.input.totalTokenCount)
+print(response.usage.output.totalTokenCount)
+```
+
+([What's new in the Foundation Models framework, WWDC26](https://developer.apple.com/videos/play/wwdc2026/241/))
 
 Structured outputs are the highest-reliability path for integrating LLM responses into app data models. The model is constrained to produce valid JSON matching the schema before it returns — malformed responses retry internally.
 
@@ -176,74 +181,43 @@ let response = try await session.respond(
 // The model may call WeatherTool internally, get the result, then answer
 ```
 
-**Foundation Models handles the tool loop.** The model calls `WeatherTool`, your implementation runs, the result is injected into the context, and the model continues. This is not a single-call pattern — the model can call multiple tools or call the same tool multiple times before returning a final response.
+**Foundation Models handles the tool loop.** The model calls `WeatherTool`, your implementation runs, the result is injected into the context, and the model continues. This is not a single-call pattern — the model can call multiple tools or call the same tool multiple times before returning a final response. This pattern is part of the framework's original iOS 26 design ([Deep dive into the Foundation Models framework, WWDC25](https://developer.apple.com/videos/play/wwdc2025/301/)); WWDC 2026 extended it with new built-in tools (`BarcodeReaderTool`, `OCRTool`, a Spotlight-backed local search tool) and enhanced tool calling for the Private Cloud Compute model as well ([What's new in the Foundation Models framework, WWDC26](https://developer.apple.com/videos/play/wwdc2026/241/)).
 
 Tool functions run on the calling thread. For async tools (network calls, local database queries), the `async throws` signature is fully supported. Since inference is already async, tool calls do not block.
 
-**Important constraint for iOS 27 beta:** Tools that initiate their own network calls are allowed, but the privacy guarantee of Foundation Models applies only to inference — your tool's network activity is subject to your own privacy policy, not Apple's on-device guarantee.
+**Worth flagging for your own privacy review:** Apple's on-device privacy guarantee covers inference itself, not what your own `Tool` implementations do. If a tool you write makes its own network call, that call is governed by your app's privacy policy, not Apple's on-device guarantee — this is a general implication of how the `Tool` protocol works, not a specific constraint Apple documents.
 
 ---
 
-## On-Device Fine-Tuning (New in iOS 27)
+## Custom Adapters via LoRA Fine-Tuning
 
-Foundation Models iOS 27 introduces private on-device fine-tuning via LoRA (Low-Rank Adaptation) adapters. This is the most significant new capability in this release.
+**Correction from an earlier draft of this piece:** we originally described this as an in-app, on-device training API new to iOS 27, with a fabricated `LanguageModelAdapter.train()` Swift call. That does not match what Apple documents. Here is what Apple actually publishes at [developer.apple.com/apple-intelligence/foundation-models-adapter](https://developer.apple.com/apple-intelligence/foundation-models-adapter).
 
-**What it enables:**
+Foundation Models supports custom LoRA (Low-Rank Adaptation) adapters that specialize the on-device model for your app's domain. LoRA freezes the base model's weights and trains small additional weight matrices; only those adapter weights update during training, which keeps training cheap and lets the same base model serve many app-specific adapters.
 
-- Train the model on user-specific data that never leaves the device
-- Personalized completions, suggestions, or classifiers with no cloud dependency
-- Adapters are stored in the app sandbox, persist across app launches, and update incrementally
+**Training is offline, not on-device, and not new to iOS 27.** You train an adapter yourself, ahead of shipping, using Apple's Python-based Foundation Models Adapter training toolkit — it runs on a Mac with Apple silicon and at least 32GB of memory, or on a Linux GPU machine, not inside your app on a user's iPhone. This toolkit already existed for iOS 26 and continues to apply to iOS 27's models; it is not a new iOS 27 capability.
 
-**The fine-tuning API:**
+**The real workflow:**
 
-```swift
-import FoundationModels
+1. Build a training set of prompt/response pairs as JSONL — Apple's guidance is roughly 100–1,000 examples for basic tasks, 5,000+ for complex ones.
+2. Train from the command line: `python -m examples.train_adapter --train-data train.jsonl --eval-data valid.jsonl --epochs 5 --learning-rate 1e-3 --batch-size 4 --checkpoint-dir checkpoints/`
+3. Export the trained adapter: `python -m export.export_fmadapter --adapter-name my_adapter --checkpoint checkpoint.pt --output-dir exports/`
+4. Ship the exported adapter with your app — Apple recommends distributing it via the Background Assets framework rather than bundling it, since each adapter runs **~160MB**, and load it into a `LanguageModelSession` at runtime.
 
-// Prepare training examples
-let examples: [FineTuningExample] = [
-    FineTuningExample(
-        prompt: "Tag this email: 'Quarterly review scheduled for Tuesday'",
-        completion: "work, calendar, meeting"
-    ),
-    FineTuningExample(
-        prompt: "Tag this email: 'Your Amazon order has shipped'",
-        completion: "shopping, delivery, notification"
-    ),
-    // ... more examples
-]
+**Constraints that matter for planning:**
 
-// Create a fine-tuning session
-let adapter = try await LanguageModelAdapter.train(
-    examples: examples,
-    configuration: .init(epochs: 3, learningRate: 1e-4)
-)
+- Each adapter is compiled against one specific system model version and must be retrained when Apple ships a new base model — Apple's own docs note that an adapter built for one OS/model version is not compatible with the next.
+- Deploying a custom adapter requires the Foundation Models Framework Adapter Entitlement from Apple.
 
-// Store the adapter
-try adapter.save(to: adapterURL)
-
-// Use the adapter
-let session = LanguageModelSession(adapter: adapter)
-let tag = try await session.respond(to: "Tag this email: 'Flight confirmation for June 15'")
-```
-
-**Training happens on-device on the Neural Engine.** Apple targets training times under 10 minutes for typical adapter sizes on A17 Pro and later. Training is paused when battery is below 20% and can be backgrounded.
-
-**Practical use cases for on-device fine-tuning:**
-
-- **Email or document classifiers** trained on the user's own archive
-- **Personal writing style capture** for writing assistance features
-- **App-specific intent recognition** trained on your domain's vocabulary
-- **Accessibility adaptations** — model adapts to a user's communication patterns over time
-
-**Privacy architecture:** Training data is processed entirely on the Neural Engine. Apple does not receive training data, adapter weights, or any signal that fine-tuning occurred. The adapter is an app sandbox file — deleting the app deletes the adapter.
-
-**iOS 27 beta limitation:** Adapter size is capped at 50MB on-device storage. The training API is in beta; the configuration options (learning rate, epochs, rank) may change before public release.
+**What this is not:** it is not a mechanism for training on an individual end user's private data inside the running app (no continuous "learns your writing style over time" personalization loop is documented). It is a developer-side tool for specializing the shared on-device model on data *you* curate and ship — e.g., a classifier tuned to your app's own document formats or domain vocabulary — not a way to fine-tune on each user's personal on-device data.
 
 ---
 
 ## Availability
 
-Foundation Models availability depends on hardware. The Neural Engine required for inference shipped with:
+Foundation Models availability depends on hardware, and — new as of the iOS 27 tiered model lineup — which model tier you're targeting.
+
+**Entry tier (AFM 3 Core, 3B dense model)** — the device list Apple maintains for Apple Intelligence generally ([support.apple.com/en-us/121115](https://support.apple.com/en-us/121115)):
 
 | Device | Minimum | Note |
 |---|---|---|
@@ -252,7 +226,11 @@ Foundation Models availability depends on hardware. The Neural Engine required f
 | Mac | Any Mac with M1 or later | All M-series supported |
 | Vision Pro | Apple Vision Pro | M2-based |
 
-Foundation Models **is not available** on iPhone 15 (standard), iPhone 14 series, or older iPads. Always check `LanguageModelSession.isAvailable` before calling into the framework:
+Foundation Models **is not available** on iPhone 15 (standard), iPhone 14 series, or older iPads on this tier.
+
+**Advanced tier (AFM 3 Core Advanced, 20B sparse model):** this is Apple's first time raising on-device AI hardware requirements above the original 8GB-RAM baseline. Per [MacRumors' reporting](https://www.macrumors.com/2026/06/08/most-powerful-on-device-ai-now-requires-iphone-17-pro-or-air/) on the iOS 27 beta, the Advanced model requires iPhone Air, iPhone 17 Pro, or iPhone 17 Pro Max on the phone side, and an M4 (or M3-and-later with 12GB+ unified memory) Mac/iPad, or an M5 Vision Pro. If you build against `LanguageModelSession` generically, your app may silently get routed to the smaller entry-tier model on older-but-still-supported hardware — check which tier is active if model quality matters to your feature.
+
+Always check `LanguageModelSession.isAvailable` before calling into the framework:
 
 ```swift
 guard LanguageModelSession.isAvailable else {
@@ -276,15 +254,19 @@ iOS 27 gives builders several ways to add AI to their apps. They are not interch
 | **Cost per inference** | Free | Free to invoke (Apple manages) | Per-token billing | Free |
 | **Model quality** | Apple on-device model | Gemini / Claude / ChatGPT | Best available | Your model |
 | **Privacy** | On-device, no data sent | Apple PCC for cloud requests | Provider privacy policy | On-device |
-| **Fine-tuning** | Yes (iOS 27) | No | Provider-dependent | Yes |
+| **Fine-tuning** | Yes, via offline LoRA adapter toolkit | No | Provider-dependent | Yes |
 | **Custom tools** | Yes | No | Yes | No |
 | **App control** | Full | Limited (system-mediated) | Full | Full |
-| **Availability** | iPhone 15 Pro+ | iOS 27 compatible devices | All devices (via network) | iPhone 12+ (CoreML models) |
+| **Availability** | iPhone 15 Pro+ (higher tier needs iPhone 17 Pro/Air+) | iOS 27 compatible devices | All devices (via network) | iPhone 12+ (Core AI-compatible models) |
+
+Two of this table's rows — Extensions Framework and Core AI — are corroborated by independent reporting rather than Apple's own marketing copy: [Core AI as Core ML's successor](https://9to5mac.com/2026/03/01/apple-replacing-core-ml-with-modernized-core-ai-framework-for-ios-27-at-wwdc/) was confirmed at WWDC 2026 ([InfoQ](https://www.infoq.com/news/2026/06/apple-core-ai-wwdc/), [AppleInsider](https://appleinsider.com/articles/26/03/01/wwdc-2026-to-introduce-core-ai-as-replacement-for-core-ml)); the Extensions Framework (letting users swap Siri's model among ChatGPT/Claude/Gemini) was found built into the iOS 27 beta but was **not** demoed at the keynote and is reportedly toggled off ([The Next Web](https://thenextweb.com/news/apple-siri-extensions-third-party-ai-missing-wwdc)) — treat it as unconfirmed/unshipped rather than a stable API to build against yet.
+
+**A fifth option worth naming:** WWDC 2026 also added a public `LanguageModel` Swift protocol that third-party cloud providers (Apple names Anthropic and Google) can implement, so `LanguageModelSession` code can call a hosted model instead of the on-device one without changing your call sites ([What's new in the Foundation Models framework, WWDC26](https://developer.apple.com/videos/play/wwdc2026/241/)). That blurs the Foundation Models / "External API" line in the table above — check whether a given provider has shipped a conforming package before assuming this works out of the box.
 
 **Decision framework:**
 
 - **Use Foundation Models** when: you need private, offline-capable AI in your app, the task fits the on-device model's capability, and you want zero infrastructure.
-- **Use Extensions Framework** when: you want your app to plug into Siri and system-wide AI features, and the user expects platform-level AI behavior.
+- **Use Extensions Framework** when: (once/if Apple ships it) you want your app to plug into Siri and system-wide AI features, and the user expects platform-level AI behavior.
 - **Use an external API** when: you need the highest-capability model available, multi-modal inputs, or capabilities Foundation Models does not support.
 - **Use Core AI directly** when: you have your own model weights and need low-level control over inference.
 
@@ -296,35 +278,35 @@ For most in-app AI features — smart suggestions, auto-categorization, contextu
 
 The confusion point for builders is that iOS 27 now has multiple AI layers that overlap in description:
 
-**Siri 2.0** — The user-facing assistant. Your app interacts with Siri through the Extensions Framework (you become an Extension provider) or App Intents (Siri can invoke defined app actions). Foundation Models has no direct Siri integration.
+**Siri 2.0** — The user-facing assistant, rebuilt at WWDC 2026 on a custom Gemini-derived model Apple licensed from Google and runs through Private Cloud Compute ([Simon Willison's WWDC 2026 notes](https://simonwillison.net/2026/Jun/8/wwdc/); [TechCrunch](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/)). Your app interacts with Siri through App Intents (Siri can invoke defined app actions) or, if Apple ships it, the Extensions Framework. Foundation Models has no direct Siri integration.
 
-**Core AI** — The platform framework that replaces Core ML. Foundation Models sits on top of Core AI. When you call `LanguageModelSession`, you are using Core AI's inference infrastructure via the Foundation Models API surface.
+**Core AI** — The platform framework that replaces Core ML, announced for iOS 27 at WWDC 2026 ([9to5Mac](https://9to5mac.com/2026/03/01/apple-replacing-core-ml-with-modernized-core-ai-framework-for-ios-27-at-wwdc/), [InfoQ](https://www.infoq.com/news/2026/06/apple-core-ai-wwdc/)). Independent reporting describes Foundation Models as built on top of Core AI's inference infrastructure, though we could not find an Apple-published diagram stating this relationship in exactly those terms — treat the layering below as a reasonable inference from available reporting, not a quoted Apple claim.
 
-**MCP system client** — iOS 27's system MCP client lets Siri and Core AI invoke registered MCP servers. Foundation Models does not currently consume or register as an MCP server directly, but your Foundation Models tool implementations can call local MCP servers.
+**System-wide MCP** — iOS 27 and Xcode 27 add system-level Model Context Protocol support, letting Siri, Xcode's coding agents, and other system surfaces invoke registered MCP servers ([TechCrunch](https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/); [AppleInsider](https://appleinsider.com/articles/26/06/05/ios-27-macos-27-siri-what-to-expect-to-launch-at-wwdc-2026)). We found no Apple documentation stating whether Foundation Models itself registers as, or consumes, MCP servers directly — your own `Tool` implementations remain the documented way to give a Foundation Models session outside capabilities.
 
 **Foundation Models** — Developer-facing API for in-app LLM inference. This is where your app code lives.
 
-Think of it as layers: Core AI (infrastructure) → Foundation Models (developer API) → your app logic. Siri and MCP are parallel channels in the same Core AI infrastructure, not layered above or below Foundation Models.
+Think of it as layers: Core AI (infrastructure) → Foundation Models (developer API) → your app logic, with Siri and system MCP as parallel channels rather than something layered above or below Foundation Models — though as noted above, that specific layering is our reading of the reporting, not a verbatim Apple claim.
 
 ---
 
 ## Getting Started
 
 **Prerequisites:**
-- Xcode 26.3 or later (available via developer.apple.com)
+- [Xcode 27 beta](https://developer.apple.com/news/releases/?id=06222026f) or later (not Xcode 26.3 — that's the prior-generation toolchain; Xcode 27 is what bundles the iOS 27 SDK)
 - iOS 27 SDK
-- A device running iOS 27 developer beta, or a Mac with Apple Silicon running macOS 27 developer beta
+- A device running [iOS 27 developer beta](https://developer.apple.com/news/releases/?id=06082026b) (first seeded June 8, 2026), or a Mac with Apple Silicon running macOS 27 developer beta
 
 **First steps:**
 
 1. Add `import FoundationModels` to any Swift file
 2. Check `LanguageModelSession.isAvailable` on launch
 3. Create a session and make your first call — the API requires no configuration beyond this
-4. Explore WWDC 2026 sessions: "What's new in Foundation Models" and "Build intelligent apps with Foundation Models"
+4. Explore the WWDC 2026 sessions: ["What's new in the Foundation Models framework"](https://developer.apple.com/videos/play/wwdc2026/241/) and ["Build agentic app experiences with the Foundation Models framework"](https://developer.apple.com/videos/play/wwdc2026/242/)
 
 **WWDC session catalog:** [developer.apple.com/wwdc26](https://developer.apple.com/wwdc26/guides/apple-intelligence/) — the sessions are free with an Apple ID.
 
-The framework is available in Xcode 26.3 beta today. The public release of iOS 27 is expected in September 2026. Developer and public betas run through the summer.
+The framework is available in Xcode 27 beta today. The public release of iOS 27 is expected around September 2026, based on Apple's historical release pattern and [MacRumors' reporting](https://www.macrumors.com/2026/07/07/ios-27-public-beta-is-coming-soon/) on the beta timeline — Apple has not confirmed an exact date. Developer and public betas run through the summer.
 
 ---
 
