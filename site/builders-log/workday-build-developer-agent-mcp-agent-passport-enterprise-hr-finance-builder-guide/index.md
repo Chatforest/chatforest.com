@@ -5,7 +5,7 @@
 
 [Workday launched Workday Build on June 2, 2026](https://newsroom.workday.com/2026-06-02-Workday-Launches-New-Tools-for-Developers-to-Build,-Connect,-and-Verify-AI-Agents-For-HR,-Finance,-and-IT) at its DevCon event. It is a developer platform for building, connecting, and verifying AI agents that run inside Workday — covering HR, finance, and IT.
 
-For builders outside the Workday ecosystem, this matters for two reasons: the Agent-Ready Tools architecture is a concrete implementation of MCP at enterprise scale, and Agent Passport is the first commercially-available example of what enterprise security teams will require from every AI agent you want to sell them.
+For builders outside the Workday ecosystem, this matters for two reasons: the Agent-Ready Tools architecture is a concrete implementation of MCP at enterprise scale, and [Agent Passport](https://newsroom.workday.com/2026-06-02-Workday-Launches-Agent-Passport-to-Test,-Verify,-and-Continuously-Monitor-Every-AI-Agent-in-the-Enterprise) is a commercially available example of what enterprise security teams will require from every AI agent you want to sell them.
 
 ---
 
@@ -15,9 +15,9 @@ Workday Build is structured as three distinct capabilities that can be adopted i
 
 ### Layer 1: Developer Agent
 
-Developer Agent plugs into the tools builders already use: Claude Code, Cline, OpenAI Codex, Cursor, and Google Antigravity. You describe what you want in natural language — "build an agent that alerts finance when a department is trending to go over budget this quarter" — and Developer Agent selects the right Agent-Ready Tools, wires up the necessary data and services, and pulls in relevant documentation.
+Developer Agent plugs into [the tools builders already use](https://newsroom.workday.com/2026-06-02-Workday-Launches-New-Tools-for-Developers-to-Build,-Connect,-and-Verify-AI-Agents-For-HR,-Finance,-and-IT): Claude Code, Cline, Codex, Cursor, and Google Antigravity. You describe what you want in natural language — "build an agent that alerts finance when a department is trending to go over budget this quarter" — and Developer Agent selects the right Agent-Ready Tools, wires up the necessary data and services, and pulls in relevant documentation.
 
-The workflow reduces what Workday describes as "days of setup" to minutes. The natural language interface hides the complexity of navigating Workday's object model (which is large — Workday runs payroll, benefits, headcount planning, expenses, and financial close for 10,000+ enterprise customers).
+The workflow reduces what [Workday describes as "days of setup" to minutes](https://newsroom.workday.com/2026-06-02-Workday-Launches-New-Tools-for-Developers-to-Build,-Connect,-and-Verify-AI-Agents-For-HR,-Finance,-and-IT). The natural language interface hides the complexity of navigating Workday's object model (which is large — Workday runs payroll, benefits, headcount planning, expenses, and financial close for [more than 11,500 organizations worldwide, including over 65% of the Fortune 500](https://newsroom.workday.com/2026-06-02-Workday-Launches-New-Tools-for-Developers-to-Build,-Connect,-and-Verify-AI-Agents-For-HR,-Finance,-and-IT)).
 
 **What this means in practice:** if you are already using Claude Code for agentic development and your employer or customer runs on Workday, Developer Agent creates a low-friction path to extend that work into HR and finance workflows. You do not need a Workday-certified developer to write the initial scaffolding.
 
@@ -35,7 +35,7 @@ Three properties distinguish them from a generic API wrapper:
 
 **Reduced hallucination surface.** Each tool is purpose-built for its domain with precise business logic and context. The tools are designed to give agents the correct vocabulary and data relationships for HR and finance — reducing the ambiguity that causes hallucination in domain-heavy tasks.
 
-**External connectors via Pipedream.** When agents need to act beyond Workday, developers can expose custom actions through a library of thousands of pre-built Pipedream connectors. Those external actions are wrapped and surfaced as Agent-Ready Tools, so agents interact with internal and external systems through the same interface.
+**External connectors via Pipedream.** When agents need to act beyond Workday, developers can expose custom actions through [a library of thousands of pre-built Pipedream connectors](https://newsroom.workday.com/2026-06-02-Workday-Launches-New-Tools-for-Developers-to-Build,-Connect,-and-Verify-AI-Agents-For-HR,-Finance,-and-IT). Those external actions are wrapped and surfaced as Agent-Ready Tools, so agents interact with internal and external systems through the same interface.
 
 **Availability:** Same as Developer Agent — early access now, GA H2 2026.
 
@@ -43,19 +43,19 @@ Three properties distinguish them from a generic API wrapper:
 
 ### Layer 3: Agent Passport
 
-Agent Passport is the most novel piece. It is a pre-deployment testing and runtime monitoring system for every AI agent that runs in Workday — whether Workday-built or third-party.
+Agent Passport is the most novel piece. It is a [pre-deployment testing and runtime monitoring system for every AI agent that runs in Workday — whether Workday-built or third-party](https://newsroom.workday.com/2026-06-02-Workday-Launches-Agent-Passport-to-Test,-Verify,-and-Continuously-Monitor-Every-AI-Agent-in-the-Enterprise).
 
 Before an agent goes into production, Agent Passport runs it against tests tied to three public standards:
 
-- **OWASP LLM Top 10** — the standard ten-category risk framework for large language model applications
-- **NIST AI RMF** — the National Institute of Standards and Technology AI Risk Management Framework
-- **MITRE ATLAS** — the adversarial threat landscape for AI systems
+- **[OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** — the standard ten-category risk framework for large language model applications
+- **[NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)** — the National Institute of Standards and Technology AI Risk Management Framework
+- **[MITRE ATLAS](https://atlas.mitre.org/)** — the adversarial threat landscape for AI systems
 
-The test suite covers: prompt injection, jailbreak and goal hijacking, system prompt extraction, employee data leakage, and unsafe output generation. Each attestation is signed and auditable — security teams get a record of what each agent was tested for and who certified it.
+The [test suite covers prompt injection, jailbreak and goal hijacking, system prompt extraction, leaks of employee data, and unsafe outputs](https://newsroom.workday.com/2026-06-02-Workday-Launches-Agent-Passport-to-Test,-Verify,-and-Continuously-Monitor-Every-AI-Agent-in-the-Enterprise). Each attestation is signed and auditable — security teams get a record of what each agent was tested for and who certified it.
 
-**Runtime enforcement.** Agent Passport continues after deployment. When an agent attempts an action, Agent Passport can allow, block, or route it based on company policy. Agents that start behaving outside their verified parameters can be stopped or restricted without manual intervention.
+**Runtime enforcement.** Agent Passport continues after deployment. [When an agent attempts an action, Agent Passport can allow, block, or route it based on company policy](https://newsroom.workday.com/2026-06-02-Workday-Launches-Agent-Passport-to-Test,-Verify,-and-Continuously-Monitor-Every-AI-Agent-in-the-Enterprise). Agents that start behaving outside their verified parameters can be stopped or restricted without manual intervention.
 
-**Cisco as launch partner.** [Cisco AI Defense provides the independent testing component](https://www.prnewswire.com/news-releases/workday-launches-new-tools-for-developers-to-build-connect-and-verify-ai-agents-for-hr-finance-and-it-302787997.html) — a third-party attestation that the agent has been verified against the relevant standards. This is significant because it separates the builder's self-attestation from an external audit trail, which is what enterprise procurement teams and legal departments will require.
+**Cisco as launch partner.** [Cisco is the launch partner for Agent Passport](https://newsroom.workday.com/2026-06-02-Workday-Launches-Agent-Passport-to-Test,-Verify,-and-Continuously-Monitor-Every-AI-Agent-in-the-Enterprise), bringing Cisco AI Defense to independently test agents before deployment and continuously protect them at runtime — [confirmed on Cisco's own blog](https://blogs.cisco.com/ai/enterprise-agentic-security-built-for-platform-builders) as a joint Workday-Cisco effort. This is significant because it separates the builder's self-attestation from an external audit trail, which is what enterprise procurement teams and legal departments will require.
 
 **Availability:** Early access H2 2026. GA before end of 2026.
 
@@ -90,7 +90,7 @@ For builders selling AI agents into enterprise accounts, Agent Passport is a pre
 
 Workday's decision to expose Agent-Ready Tools over MCP is architecturally significant. Workday has one of the richest and most complex data models in enterprise software. By exposing it over MCP, they make it accessible to any MCP-compatible agent framework without custom integration work.
 
-This is the same pattern as Salesforce's AgentForce MCP connectors and SAP's API enforcement (which takes effect June 9). The major enterprise software platforms are converging on MCP as the interoperability layer for agent access to business data. Builders who understand MCP tooling now will be first-mover in the enterprise agent build cycle.
+This is the same pattern as [Salesforce's AgentForce MCP connectors](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce) and [SAP's API enforcement](https://www.skynome.com/blog/sap-note-3255746-explained), which took effect June 9, 2026 and pushes third-party integrations toward [SAP's own MCP-based access pathways](https://architecture.learning.sap.com/docs/ref-arch/137800). The major enterprise software platforms are converging on MCP as the interoperability layer for agent access to business data. Builders who understand MCP tooling now will be first-mover in the enterprise agent build cycle.
 
 ---
 

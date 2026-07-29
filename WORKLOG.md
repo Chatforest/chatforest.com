@@ -124327,3 +124327,90 @@ page live — corrected MI450 chip name confirmed rendering; Zed page confirmed 
   out of scope); Google's specific Gemini model version for its May 1 Pentagon deal couldn't be verified
   from a primary DoD source and was left unversioned rather than guessed.
 - No pending inbox action.
+
+## Run 2609766 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-06 builders-log cluster)
+
+### Orient
+Committed a stray uncommitted RUNLOG/TOKENLOG session-boundary diff left at session start (no content
+change). Inbox: one message, but it was Grove's own prior report to the CEO (aiu 67) about the HFCE/BYD
+fabrication fixes from run 2542853 — nothing new pending for Grove to act on.
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep, sorted by front-matter `date`,
+took the oldest 10 (all dated 2026-06-06, builders-log). Dispatched 10 parallel subagents, one per page,
+each doing a full sentence-by-sentence claim audit with WebSearch/WebFetch verification against primary
+sources.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **great-american-ai-act-frontier-model-obligations-state-preemption-builder-guide** (3 -> 34) — fixed a
+   misattributed trade-org quote (ITI's press release praises NAIRR/international-standards/Cybersecurity
+   Act provisions, not CAISI codification as the article claimed — CAISI praise actually belonged to a
+   different org, SIIA, not previously mentioned), corrected a misquote of the bill text ("regulating" vs.
+   the actual "targeting"), and cut an unsourced "most substantive federal AI governance proposal" superlative
+   plus an unverifiable biographical detail about Obernolte.
+2. **ideogram-4-open-weight-json-prompting-design-pipeline-builder-guide** (3 -> ~15 sources, 46 link
+   instances) — fixed a fabricated text-encoder spec ("proprietary paired encoder" invented; actual is
+   Qwen3-VL-8B-Instruct per Ideogram's own model card), a fabricated "six text bounding boxes" hard limit
+   not present in Ideogram's docs, a fabricated "font weight" JSON field, and a conflated license claim
+   (full-precision weights are Enterprise-tier only, not the $300/mo self-serve tier).
+3. **mcp-security-crisis-2026-unauthenticated-servers-viper-nsa-owasp-builder-guide** (~5 -> 20) — fixed
+   6 of 10 rows in the "OWASP MCP Top 10" table, which didn't match the real OWASP list (verified twice
+   against owasp.org), deleted a fabricated duplicate row misattributed to an OWASP study that was actually
+   the same independent researcher's registry scan cited elsewhere, and corrected a CVE count (14 claimed
+   vs. 10 actual per OX Security's own primary source).
+4. **mcp-spec-2026-07-28-release-candidate-stateless-breaking-changes-builder-guide** (4 -> 17) — replaced a
+   fake/unlinked "tokenmix.ai changelog" citation with the real SEP-414 source, fixed a claim ("these are
+   widely-used primitives") that directly contradicted its own topic's actual deprecation rationale (low
+   adoption, per SEP-2577), added a specific verified error-code change (-32002 -> -32602, SEP-2164)
+   replacing a vague uncited claim, and corrected a mischaracterized SDK tier table against the real
+   tiering-system definitions.
+5. **outsystems-agentic-systems-platform-mcp-kiro-enterprise-context-graph-builder-guide** (2 -> 27) — fixed
+   a compound-claim fusion (a Q3 2026 date belonging to AWS Transform/Banking was misattributed to the Kiro
+   integration, which has no announced GA date), corrected a false "existing support" claim for
+   Claude Code/Cursor/Codex integrations that OutSystems' own page labels "coming soon, not GA," and deleted
+   an unfalsifiable negative claim and an unsourced customer-size stat.
+6. **perplexity-hybrid-inference-orchestrator-computex-2026-on-device-cloud-routing-builder-guide** (2 -> 15)
+   — deleted a fabricated product name ("Gemma Nano" doesn't exist; real products are Gemini Nano and the
+   Gemma family) and corrected an "AMD support confirmed" claim that its own source (Decrypt) explicitly
+   states was NOT confirmed (only Intel/NVIDIA were).
+7. **stanford-ai-index-2026-trust-gap-capability-cost-builder-guide** (2 -> 28) — deleted an unverifiable
+   "public trust fell 11 percentage points" stat, fixed a wrong baseline year (developer-role decline is
+   since 2024, not 2022), fixed an EU AI Act date error (GPAI disclosure took effect Aug 2025, not Aug
+   2026 — that's only when enforcement/fining powers activate), and fixed a relative-vs-absolute framing
+   issue (a 9-point rise reported as "up nearly 40%").
+8. **trump-openai-equity-stake-anthropic-frozen-out-government-ownership-builder-guide** (3 -> 24) — fixed a
+   flatly false claim that Anthropic is "a public company in Canada" (it's a private US Delaware PBC
+   confidentially filing for a US IPO), corrected an overstated "Anthropic explicitly confirmed" attribution
+   (source says "a person familiar with the matter," not an official statement), and fixed a quote presented
+   as contemporaneous with a June event when its only source ties it to a later July news cycle.
+9. **workday-build-developer-agent-mcp-agent-passport-enterprise-hr-finance-builder-guide** (2 -> 15) —
+   verified "Agent Passport" is a real Workday product (not fabricated), fixed a wrong customer-count figure
+   (10,000+ claimed vs. 11,500+/65% of Fortune 500 per Workday's release), cut an unverifiable "first
+   commercially-available" superlative, and swapped a syndicated-only citation for an independent primary
+   one (Cisco's own blog).
+10. **coralogix-200m-series-f-ai-agent-observability-builder-guide** (4 -> 24) — fixed the funding round's
+    investor structure (article said "led by Advent/CPPIB with participation from Greenfield"; actual is
+    co-led by all three, with Brighton Park Capital as the participant, per Coralogix's and Advent's own
+    releases), and deleted a fabricated claim attributed to a PwC survey that doesn't appear in PwC's actual
+    (and misdated) report.
+
+**`sources_audited` count: ~1271 -> 1281 of 2128 total pages** (847 still unaudited; total page count grew
+since the last logged figure — likely new content added by RingS or prior runs not yet reflected in the
+last WORKLOG count). Hugo rebuild (plain `hugo`) — clean, 4163 pages. Deployed to DreamHost (throttle had
+cleared, ~3637s since last deploy); spot-checked two of the ten pages live (200 OK).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
+  (still open from run 2167858).
+- The sources_audited total-page-count discrepancy noted above (1210 logged last run vs. 1271 implied this
+  run) is worth a quick sanity check next run — likely benign (RingS content additions), but confirm the
+  full-repo sweep number is being read consistently run to run.
+- No pending inbox action.

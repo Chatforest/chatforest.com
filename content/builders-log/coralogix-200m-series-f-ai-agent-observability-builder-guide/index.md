@@ -6,11 +6,12 @@ og_description: "Coralogix closed a $200M Series F (June 3, 2026) at a $1.6B val
 content_type: "Builder's Log"
 categories: ["Developer Tools", "Observability", "AI Agents"]
 tags: ["coralogix", "observability", "ai-agents", "monitoring", "olly", "mcp", "series-f", "devops", "production", "telemetry", "langfuse", "braintrust", "arize"]
+sources_audited: 2026-07-29
 ---
 
-On June 3, 2026, [Coralogix closed a $200 million Series F](https://coralogix.com/blog/coralogix-raises-200m-to-scale-the-observability-backbone-for-theage-of-ai/) led by [Advent International](https://www.adventinternational.com/news/coralogix-raises-200m-to-scale-the-observability-backbone-for-the-age-of-ai/) and the Canada Pension Plan Investment Board (CPPIB), with participation from Greenfield Partners and Brighton Park Capital, per [Axios](https://www.axios.com/pro/enterprise-software-deals/2026/06/03/coralogix-200m-observability-advent-cppib) and [TechCrunch](https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/). Post-money valuation: $1.6 billion. Total raised to date: $550 million.
+On June 3, 2026, [Coralogix closed a $200 million Series F](https://coralogix.com/blog/coralogix-raises-200m-to-scale-the-observability-backbone-for-theage-of-ai/), co-led by [Advent International](https://www.adventinternational.com/news/coralogix-raises-200m-to-scale-the-observability-backbone-for-the-age-of-ai/), the Canada Pension Plan Investment Board (CPPIB), and Greenfield Partners, with participation from Brighton Park Capital — confirmed by [TechCrunch](https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/) and [SecurityWeek](https://www.securityweek.com/coralogix-raises-200m-at-1-6b-valuation-to-scale-ai-observability-platform/). Post-money valuation: [$1.6 billion](https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/). Total raised to date: [$550 million](https://coralogix.com/blog/coralogix-raises-200m-to-scale-the-observability-backbone-for-theage-of-ai/).
 
-The round came 11 months after their $115M Series E — and the pitch has sharpened considerably. This is no longer a log management company. Coralogix is making a direct bet that AI agents running in production need a different observability stack than the one most teams have in place.
+The round came [11 months after their $115M Series E](https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/) — and the pitch has sharpened considerably. This is no longer a log management company. Coralogix is making a direct bet that AI agents running in production need a different observability stack than the one most teams have in place.
 
 That bet is worth examining before you build.
 
@@ -26,7 +27,7 @@ An agent plans multi-step tasks, selects tools dynamically, manages state across
 
 The core gap: **failure modes in agents are causally distributed across a sequence of decisions**, not localized to a single LLM call. Tracing a failure back to its root cause means you need to reconstruct the decision sequence — which tools were available, which one was selected and why, what state was in context at each step, where the branch diverged.
 
-The market data backs this up. PwC's 2026 Agent Survey found 79% of organizations have deployed AI agents, and most cannot trace failures through multi-step workflows or measure output quality systematically. The LLM observability market is estimated at $2.69B in 2026, growing at roughly 30% per year — faster than most enterprise software categories. Roughly 85% of GenAI deployments still run without systematic observability.
+The market data backs this up. [PwC's AI Agent Survey](https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agent-survey.html) (May 2025, 300 senior executives) found 79% say AI agents are already being adopted at their companies. The [LLM observability platform market is estimated at $2.69 billion in 2026](https://www.researchandmarkets.com/reports/6215671/large-language-model-llm-observability), up from $1.97 billion in 2025 — a roughly 36% year-over-year growth rate, faster than most enterprise software categories. [Gartner estimates](https://www.digit.fyi/llm-observability-gartner/) only 15% of GenAI deployments currently have LLM observability in place, meaning roughly 85% still run without it.
 
 ---
 
@@ -38,13 +39,13 @@ The 2026 layer being built on top of it is three things:
 
 ### Olly — SRE Agent
 
-Olly is a site reliability engineering agent built into the Coralogix platform. It can analyze production systems, understand context across logs, metrics, and traces simultaneously, and surface root cause analysis and business impact assessments. Rather than a dashboard you manually interrogate, Olly initiates the investigation based on anomalies it detects.
+[Olly](https://coralogix.com/docs/user-guides/olly/) is a site reliability engineering agent built into the Coralogix platform, which [reached general availability in December 2025](https://www.globenewswire.com/news-release/2025/12/02/3198036/0/en/Coralogix-Autonomous-Agent-Olly-Now-in-General-Availability.html). It can analyze production systems, understand context across logs, metrics, and traces simultaneously, and surface root cause analysis and business impact assessments. Rather than a dashboard you manually interrogate, Olly initiates the investigation based on anomalies it detects.
 
 The positioning is: Olly handles the investigation loop so your on-call engineer starts from a root cause hypothesis rather than a stream of raw signals.
 
 ### MCP Server — Telemetry as Context
 
-Coralogix's MCP server exposes a secure endpoint that lets developers stream live telemetry into their own AI agents, IDEs, or ChatOps workflows. The target audience is explicitly builders — not ops teams. You can bring Coralogix's telemetry context into a Claude conversation, a Cursor session, or your own agent pipeline via standard MCP protocol.
+[Coralogix's MCP server](https://coralogix.com/blog/introducing-coralogixs-mcp-server-helping-customers-build-smarter-ai-agents/) exposes a secure endpoint that lets developers stream live telemetry into their own AI agents, IDEs, or ChatOps workflows. The target audience is explicitly builders — not ops teams. You can bring Coralogix's telemetry context into a Claude conversation, a Cursor session, or your own agent pipeline via standard MCP protocol.
 
 In practice, this means a developer debugging a production issue can ask their AI coding assistant a question that has access to live log streams and trace data, not just static documentation. For teams already using Claude Code or other MCP-enabled environments, this is a low-friction integration path.
 
@@ -66,19 +67,19 @@ The single data foundation underneath all three modes is the differentiating cla
 
 Coralogix is not alone. The AI observability category consolidated rapidly in early 2026:
 
-**Braintrust** — Raised an $80M Series B in February 2026 at an $800M valuation. Evaluation-first architecture: captures traces, runs automated scoring, and closes the feedback loop from production back into training and fine-tuning. Strong with teams that need to systematically improve model quality over time.
+**[Braintrust](https://www.braintrust.dev/blog/announcing-series-b)** — Raised an $80M Series B in February 2026, led by ICONIQ, at an [$800M valuation](https://siliconangle.com/2026/02/17/braintrust-lands-80m-series-b-funding-round-become-observability-layer-ai/). Evaluation-first architecture: captures traces, runs automated scoring, and closes the feedback loop from production back into training and fine-tuning. Strong with teams that need to systematically improve model quality over time.
 
-**Langfuse** — Open-source LLM observability. Self-hostable, with trace viewing, prompt versioning, and cost tracking. Popular with teams that need control over data residency.
+**[Langfuse](https://langfuse.com/)** — Open-source LLM observability. Self-hostable, with trace viewing, prompt versioning, and cost tracking. Popular with teams that need control over data residency.
 
-**Arize Phoenix/AX** — Strong on LLM tracing and evaluation. Phoenix is their open-source offering; AX is the managed platform with enterprise support.
+**[Arize Phoenix/AX](https://arize.com/)** — Strong on LLM tracing and evaluation. Phoenix is their open-source offering; AX is the managed platform with enterprise support.
 
-**Helicone** — Lightweight proxy-based approach. Low setup friction; good for getting started. Less powerful for complex multi-step traces.
+**[Helicone](https://docs.helicone.ai/)** — Lightweight proxy-based approach. Low setup friction; good for getting started. Less powerful for complex multi-step traces. (Note: Helicone was [acquired by Mintlify on March 3, 2026](https://www.helicone.ai/blog/joining-mintlify) and is now in maintenance mode, with only security patches and bug fixes continuing.)
 
-**Galileo** — Agent reliability framing. Fast, cost-effective evaluators designed for production safety checks at scale.
+**[Galileo](https://galileo.ai/)** — Agent reliability framing. Fast, cost-effective evaluators designed for production safety checks at scale.
 
-**LangSmith** — LangChain's native observability layer. If your stack is LangChain, this is the path of least resistance.
+**[LangSmith](https://www.langchain.com/langsmith/observability)** — LangChain's native observability layer. If your stack is LangChain, this is the path of least resistance.
 
-**Datadog LLM Observability** — The incumbent option for teams already standardized on Datadog. Less purpose-built for agents, but benefits from existing infrastructure integration.
+**[Datadog LLM Observability](https://www.datadoghq.com/product/ai/llm-observability/)** — The incumbent option for teams already standardized on Datadog. Less purpose-built for agents, but benefits from existing infrastructure integration.
 
 Where Coralogix sits: it's the largest infrastructure observability platform in this list, with the broadest telemetry foundation (logs, metrics, traces) and the deepest enterprise contracts. The $200M Series F is funding the agent-specific layer on top of a pre-existing enterprise business — not building a new data foundation from scratch.
 
