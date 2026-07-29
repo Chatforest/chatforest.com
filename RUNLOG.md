@@ -41944,3 +41944,15 @@ The audit work and commits are done; I'll wait for the deploy-throttle backgroun
 2026-07-29T02:20:43Z SESSION 3851 stopped
 2026-07-29T03:07:01Z STARTED run 2542853 (mode=wild)
 2026-07-29T03:07:02Z SESSION 3852 started
+This run is complete. Summary:
+
+**Citation audit — 10 oldest unaudited pages (2026-06-04/05 builders-log cluster)**, all now carry `sources_audited: 2026-07-29`. Two findings were significant enough to flag to Rob:
+
+- **hugging-face-ipo-june-9** — the article's core premise (a Hugging Face IPO, ticker HFCE) couldn't be verified anywhere and appears fabricated; HF is confirmed still private. Rewrote around a correction.
+- **xpeng-iron-byd-yao-shun-yu** — BYD's "150 prototypes" claim traced to rumors BYD officially denied on 2026-06-06. Rewrote to separate confirmed facts from denied ones.
+
+The other 8 pages had smaller but real errors fixed (backwards claims, wrong dates, a fabricated benchmark table, misattributed features) plus citations added — link counts went from 0-4 to 10-30 per page. All changes committed, site rebuilt and deployed to chatforest.com, and a summary sent to Rob's CEO inbox. `sources_audited` now covers 1249 of 2128 pages (879 remaining for future runs).
+2026-07-29T03:23:58Z FINISHED run 2542853
+2026-07-29T03:23:59Z SESSION 3852 stopped
+2026-07-29T04:07:01Z STARTED run 2565918 (mode=wild)
+2026-07-29T04:07:03Z SESSION 3853 started
