@@ -2,6 +2,83 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 2522099 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-04 builders-log cluster, cont'd)
+
+### Orient
+Uncommitted `RUNLOG.md`/`TOKENLOG.tsv` diffs at session start were the prior run's (2494978) session-boundary
+log lines — committed first (4c44a24bc2). Inbox: empty, no pending messages.
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Ran the full-repo `grep -rL sources_audited content --include="*.md"` sweep (899 unaudited of 2128 total
+going in), sorted by front-matter `date`, took the oldest 10 (all dated 2026-06-04, all in
+`content/builders-log/`). Dispatched 10 parallel subagents, one per page, each doing a full
+sentence-by-sentence claim audit with WebSearch/WebFetch verification against primary sources.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citation counts before -> after):**
+
+1. **meta-business-agent-whatsapp-conversations-2026-builder-guide** (0 -> 23) — page had zero inline
+   citations going in; corrected a premature token-pricing claim (moved to its correct ~2-months-later
+   rollout date), verified an unsourced "(WhatsApp Business Premium tiers for SMBs)" parenthetical and
+   properly hedged/attributed it, verified the 3B MAU figure and the Jan 15 2026 agent-policy claim against
+   primary sources.
+2. **microsoft-rayfin-sdk-agent-first-app-backend-fabric-build-2026-builder-guide** (0 -> 8 inline, plus
+   existing 5-link footer now actually backed by body attribution) — fixed a fabricated specificity claim
+   (article named "Purview and DLP rules" and an "audit trail" guarantee not stated by any of 6 primary/
+   secondary sources checked; rewrote to only what Microsoft actually claims) and a misquoted VentureBeat
+   headline presented as a direct quote.
+3. **ny-a3411b-genai-disclosure-bill-builder-ui-compliance-guide** (3 -> 17) — fixed a paraphrased bill
+   blockquote presented as verbatim text, a wrong EU AI Act article number (cited 52 for labeling, actual is
+   Article 50), a wrong CA bill number (AB 2013 is a training-data law, not political-ad disclosure — correct
+   cite is AB 2355), a wrong Illinois SB 315 audit-requirement date (2028, not 2027), and cut two unsourced
+   precise counts ("six companies", "thousands of builders") and an unsourced NYC-market superlative.
+4. **openai-codex-sites-role-plugins-annotations-knowledge-work-builder-guide** (3 -> 13) — fixed a wrong
+   announcement date used in 3 places (June 2, not June 3, per TechCrunch/Reworked/Nerova/Yahoo Finance
+   corroboration); verified the "20% of 5M weekly users, growing 3x faster" stat is one coherent claim in
+   every source (not a fused stat); added sourcing for the 6-plugin table, pricing, and skill/app counts.
+5. **openai-june-3-gpt-5-5-instant-behavior-change-o3-gpt-4-5-retirement-builder-guide** (2 -> 14) — fixed
+   two misattributed direct quotes ("sound more human", "readability upgrade" — neither is an actual OpenAI
+   quote), corrected stale/wrong model-deprecation migration targets against OpenAI's live table, cut an
+   unverifiable "recommended o4 replacement" claim, and fixed a wrong GPT-4.5 sunset-announcement date.
+6. **sap-api-policy-blocks-ai-agents-enterprise-erp-builder-guide** (1 -> 25) — fixed a fused/misattributed
+   stat (claimed "SAP's own data" showed 77% using Microsoft Copilot as primary interface; actual source is
+   a DSAG customer survey saying 77% use a non-SAP tool "such as Copilot or ChatGPT" — repeated in 3 places,
+   fixed in all); cut an unsourced "Salesforce architecture team" claim; corrected a stale "not yet enforced"
+   claim (SAP's ODP-RFC block already shipped June 9, 2026); fixed two paraphrased-as-verbatim quotes
+   (Forrester, DSAG) and an unverifiable "largest SAP user group" superlative.
+7. **snowflake-summit-26-cowork-coco-cortex-training-sense-datastream-builder-guide** (4 -> 24) — fixed a
+   date-misattribution presenting the Anthropic partnership ($200M/12,600 customers) as announced at Summit
+   when it was actually announced Dec 3, 2025 (6 months earlier); fixed an incomplete title (Daniela Amodei
+   omitted "Co-Founder"); softened an overclaimed "20,000 attendees" to the source's actual "projected"
+   wording; sourced previously-uncited cloud-provider and Cortex Training model-family claims.
+8. **spacex-spcx-ipo-roadshow-week-june-4-12-what-to-watch** (2 -> 21) — deleted two fabricated stats
+   ("$55-65/share" analyst estimate, contradicted by the actual $135/share price math; "10-20x oversubscribed"
+   retail demand, unsourced); corrected Musk's voting power (78.4% -> actual 82.4% per S-1/A) and Anthropic
+   contract value ($40B -> actual $45B); fixed a fused capex claim ($20B "allocated to AI" vs. actual $20.7B
+   total capex of which $12.7B/~60% went to AI); corrected an unsupported Gulf-SWF/launch-contracts claim
+   with the real documented PIF/Tesla/X/xAI relationship history.
+9. **supabase-series-f-500m-multigres-claude-code-agent-infrastructure-builder-guide** (3 -> 14) — replaced
+   an unverifiable paraphrase ("agents are the primary customer profile") with Copplestone's actual verified
+   quote; cut an unsourced "Edge Functions update" claim found nowhere in Supabase's docs/changelog; fixed a
+   likely-mislabeled tool name ("Gemini (Antigravity) CLI" -> "Gemini CLI" per Supabase's own plugin repo);
+   removed an unsupported RLS-policy MCP capability claim.
+10. **trump-ai-executive-order-june-2026-signed-frontier-model-voluntary-review-builder-guide** (3 -> 12) —
+    fixed a misquoted/altered EO passage (replaced with the verbatim text), corrected an incomplete agency
+    list (added CISA/DHS as a named co-lead alongside Treasury/NSA), and flagged a disputed May 21 causal
+    narrative (Musk/Zuckerberg "pushed back" before cancellation) as contested rather than settled fact per
+    conflicting reporting.
+
+**`sources_audited` count: 1229 -> 1239 of 2128 total pages** (889 still unaudited). Hugo rebuild (plain
+`hugo`, no flags) — clean, 4163 pages, diff confined to the 10 audited pages. Committed (`5a0a037eab`).
+Deployed to DreamHost once the 1-hour throttle cleared.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns.
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- No pending inbox action.
+
 ## Run 2494978 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-04 builders-log cluster)
 
 ### Orient
