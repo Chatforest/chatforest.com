@@ -1,9 +1,9 @@
 # Cohere North Mini Code: A 30B Open-Weight Coding Agent That Runs on a Single H100
 
-> Cohere released North Mini Code on June 11 — a 30B parameter (3B active) MoE model purpose-built for agentic coding, open-source under Apache 2.0. 80.2% on SWE-Bench Verified at pass@10, 61% SWE-Bench Pro pass@1, single H100 in FP8, 256K context. Here's what builders need to know.
+> Cohere released North Mini Code on June 9 — a 30B parameter (3B active) MoE model purpose-built for agentic coding, open-source under Apache 2.0. 67.6% on SWE-Bench Verified, 40.2% on SWE-Bench Pro, single H100 in FP8, 256K context. Here's what builders need to know.
 
 
-On June 11, 2026, Cohere released **North Mini Code 1.0** — a 30-billion-parameter, open-weight coding model built specifically for agentic workflows. The model is available on HuggingFace under an Apache 2.0 license, runs on a single H100 GPU in FP8 precision, and posts **80.2% on SWE-Bench Verified** (pass@10) and **61.0% on SWE-Bench Pro** (pass@1) — numbers that rival closed frontier models while remaining fully self-hostable.
+On June 9, 2026, Cohere released **[North Mini Code 1.0](https://cohere.com/blog/north-mini-code)** — a 30-billion-parameter, open-weight coding model built specifically for agentic workflows. The model is available on [HuggingFace](https://huggingface.co/CohereLabs/North-Mini-Code-1.0) under an [Apache 2.0 license](https://huggingface.co/CohereLabs/North-Mini-Code-1.0), and Cohere states a minimum hardware requirement of one H100 GPU in FP8 or FP4 precision. On its own [published evaluation chart](https://huggingface.co/CohereLabs/North-Mini-Code-1.0), the released model scores **67.6% on SWE-Bench Verified** and **40.2% on SWE-Bench Pro** — solid results for a 3B-active-parameter model that runs on a single GPU, though (as covered below) they trail Cohere's own comparison point, Qwen3.6 35B-A3B, on every benchmark in that same chart.
 
 For builders who want a production-capable agentic coding model without vendor lock-in, this is the most practical open-weight option to land in 2026.
 
@@ -11,7 +11,7 @@ For builders who want a production-capable agentic coding model without vendor l
 
 ## What North Mini Code Actually Is
 
-The name is a bit misleading. "Mini" refers to active parameter count, not capability. North Mini Code has:
+The name is a bit misleading. "Mini" refers to active parameter count, not capability. North Mini Code has, [per Cohere's model card](https://huggingface.co/CohereLabs/North-Mini-Code-1.0):
 
 - **30 billion total parameters** across 128 experts in its Mixture-of-Experts architecture
 - **3 billion active parameters per token** — only 8 of 128 experts fire per forward pass
@@ -26,39 +26,41 @@ This is distinct from Cohere's broader enterprise North platform (which focuses 
 
 ## Architecture and Training
 
-Cohere's technical blog is unusually transparent about the training methodology, which is worth understanding before deploying.
+[Cohere's technical blog post](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code) is unusually transparent about the training methodology, which is worth understanding before deploying.
 
 **Two-stage cascaded supervised fine-tuning:**
 
-The model is trained in two stages to handle long-context coding without the model ignoring rare but high-value code tokens:
+The model is trained in two stages, [per Cohere](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code):
 
-1. **Stage 1:** 64K context, broader data mix — 70% code tokens, 43% agentic tool-use data, 27% competitive/scientific programming
-2. **Stage 2:** 128K context, only high-quality verified samples — 4.5 billion tokens drawn from agentic and reasoning data, with code forming 61% of trainable tokens
-
-The two-stage approach solves a common problem: if you train on 20 billion non-code tokens alongside 1.5 billion code tokens at maximum context, the model learns to deprioritize code. Stage 2 corrects this by training only on verified high-signal data.
+1. **Stage 1:** 64K context — "the code datasets correspond to 70% of trainable tokens, 43% agentic tool-use data, and 27% single-turn competitive or scientific programming data"
+2. **Stage 2:** 128K context, a 4.5-billion-token mixture "from only agentic and reasoning-driven samples," with code forming 61% of trainable tokens
 
 **Reinforcement Learning with Verifiable Rewards (RLVR):**
 
-The model is fine-tuned on 70,000+ verifiable coding tasks across approximately 5,000 repositories. "Verifiable" means the reward signal is objective: does the code compile? Do the tests pass? Do the outputs match? This avoids the noise inherent in human preference signals, which tend to reward confident-sounding wrong answers.
+The model is fine-tuned on [over 70,000 verifiable coding tasks across roughly 5,000 unique repositories](https://huggingface.co/CohereLabs/North-Mini-Code-1.0). "Verifiable" means the reward signal is objective: does the code compile? Do the tests pass? Do the outputs match? This avoids the noise inherent in human preference signals, which tend to reward confident-sounding wrong answers.
 
-The model card notes that SWE-Bench repositories were deduplicated out of the training set to prevent benchmark leakage.
+The [model card](https://huggingface.co/CohereLabs/North-Mini-Code-1.0) notes that the training environments were deduplicated against the SWE-Bench and SWE-Bench Pro source repositories to prevent benchmark leakage.
 
-**Multi-harness SFT:** North Mini Code is trained against multiple agent harnesses (OpenCode, SWE-Agent, mini-SWE-Agent). Cohere reports a 10-percentage-point gain on OpenCode evaluations from multi-harness exposure alone. This matters for deployment: the model adapts better to different scaffolding patterns than models trained against a single agent framework.
+**Multi-harness SFT:** North Mini Code is trained against multiple agent harnesses (OpenCode, SWE-Agent, mini-SWE-Agent). [Cohere reports](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code) that adding a small amount of OpenCode-harness data to the second SFT stage (6% of the mix, versus 50% for the primary SWE-Agent harness) "yields a 10% gain on the evaluation with OpenCode harness while maintaining performance with SWE-Agent on SWE-Bench Verified." This matters for deployment: the model adapts better to different scaffolding patterns than models trained against a single agent framework.
 
 ---
 
 ## Benchmarks
 
-| Benchmark | North Mini Code | Claude Opus 4.7 | GPT-5.4 | Qwen2.5-Coder 32B |
-|-----------|----------------|-----------------|---------|-------------------|
-| SWE-Bench Verified (pass@10) | **80.2%** | ~80.8% | ~78% | ~72% |
-| SWE-Bench Pro (pass@1) | **61.0%** | ~57% | ~58% | ~50% |
-| Coding Index (Artificial Analysis) | 33.4 | — | — | — |
-| Output throughput | 203.8 tok/s | API-only | API-only | Varies |
+Cohere's own [evaluation chart](https://huggingface.co/CohereLabs/North-Mini-Code-1.0) compares North Mini Code against three other small open-weight models, not against closed frontier models:
 
-The SWE-Bench Pro pass@1 number is notable. Pass@1 means the model gets one attempt with no sampling — the condition closest to real production use. 61% on SWE-Bench Pro at pass@1 is competitive with models that cost significantly more to run and can't be self-hosted.
+| Benchmark | North Mini Code (30B-A3B) | Qwen3.6 (35B-A3B) | Poolside XS.2 (33B-A3B) | Devstral Small 2 (24B Dense) |
+|-----------|---------------------------|--------------------|--------------------------|-------------------------------|
+| SWE-Bench Verified | 67.6 | 73.4 | 69.9 | 68.2 |
+| SWE-Bench Pro | 40.2 | 49.5 | 46.3 | 35.7 |
+| Terminal-Bench v2 | 36.0 | 51.5 | 35.7 | 22.5 |
+| Coding Index (Artificial Analysis) | 33.4 | 35.2 ([per Cohere's blog](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code)) | — | — |
 
-The throughput number (203.8 tokens/second measured via Cohere API) is approximately 2.8x higher than Mistral Devstral Small 2 under identical hardware, according to Cohere's internal benchmarks.
+On this chart North Mini Code is not the strongest model — Qwen3.6 35B-A3B outscores it on every listed benchmark. Its case is efficiency and license terms at a given active-parameter budget (3B), not a leaderboard-topping score.
+
+**A note on two other numbers that circulate for this model, because they're easy to conflate with the table above:** Cohere's blog post separately reports that the *pre-RLVR, SFT-only checkpoint* — an earlier, non-released version of the model — scored [80.2% pass@10 on SWE-Bench Verified](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code) (a "best of 10 attempts" metric, not the single-attempt score in the table above). RLVR then improved the *released* model's pass@1 score by "3.0% (absolute)" on SWE-Bench and "7.9% (absolute)" on Terminal-Bench v2 over that SFT baseline. Separately, [Cohere reports](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code) that using the *mini-SWE-Agent* harness — not SWE-Bench Pro — the released model reaches 61.0% pass@1 on SWE-Bench Verified. Neither 80.2% nor 61.0% is the model's SWE-Bench Pro score; that figure is 40.2%, per the table above.
+
+On throughput, Cohere did not publish an absolute tokens-per-second figure in its blog — only a relative comparison: North Mini Code achieved "up to 2.8x higher output throughput" and "a 30% advantage in inter-token latency" versus Mistral's Devstral Small 2, "under identical concurrency levels and hardware configurations," in [Cohere's internal testing](https://cohere.com/blog/north-mini-code). Independent measurement from [Artificial Analysis](https://artificialanalysis.ai/articles/north-mini-code-cohere-s-small-coding-focused-moe-model) put Cohere-API throughput at roughly 199-210 tokens/second at the time of testing; throughput on third-party-hosted deployments has measured substantially lower, so treat any single absolute number as provider-dependent rather than a fixed spec.
 
 ---
 
@@ -66,18 +68,21 @@ The throughput number (203.8 tokens/second measured via Cohere API) is approxima
 
 ### Self-hosted via vLLM (recommended)
 
+Cohere's only officially stated minimum is "1x H100 @ FP8, 1x H100 @ FP4" ([per Cohere's blog](https://cohere.com/blog/north-mini-code)); it does not publish a specific BF16 GPU recommendation. As a rough estimate, 30B parameters at BF16 (2 bytes/param) implies roughly 60GB of weight VRAM alone before KV cache — 2x A100 40GB is a plausible fit, but treat that as back-of-envelope math, not an official Cohere spec. The [model card](https://huggingface.co/CohereLabs/North-Mini-Code-1.0) documents vLLM setup like this (note: it requires building vLLM from the `main` branch plus Cohere's `cohere_melody` library, not a stock `pip install vllm`):
+
 ```bash
-pip install vllm
+uv pip install "git+https://github.com/vllm-project/vllm.git"
+uv pip install cohere_melody>=0.9.0
 
-# BF16 — requires 2x A100 40GB or equivalent (~60GB VRAM total)
 vllm serve CohereLabs/North-Mini-Code-1.0 \
-  --tensor-parallel-size 2 \
-  --max-model-len 320000
-
-# FP8 — single H100 80GB (~30GB VRAM)
-vllm serve CohereLabs/North-Mini-Code-1.0-fp8 \
-  --max-model-len 320000
+  -tp 2 \
+  --max-model-len 320000 \
+  --tool-call-parser cohere_command4 \
+  --reasoning-parser cohere_command4 \
+  --enable-auto-tool-choice
 ```
+
+For the FP8 variant, substitute `CohereLabs/North-Mini-Code-1.0-fp8` as the model argument.
 
 The model exposes an OpenAI-compatible endpoint once running. Any code that calls `openai.ChatCompletion.create()` or uses the `openai` Python library can be redirected with two environment variable changes:
 
@@ -98,7 +103,7 @@ response = client.chat.completions.create(
 
 ### Self-hosted via SGLang
 
-SGLang is an alternative worth considering for agent-heavy workloads. Its RadixAttention mechanism is efficient when many inference calls share common prefixes — common in coding agents that repeatedly send the same system prompt plus evolving context.
+SGLang is an alternative worth considering for agent-heavy workloads. Its RadixAttention mechanism is efficient when many inference calls share common prefixes — common in coding agents that repeatedly send the same system prompt plus evolving context. Cohere's own README doesn't document an SGLang path, but SGLang added [native support for the Cohere2-MoE architecture](https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/cohere2_moe.py) that North Mini Code uses before the model's release, so it's a viable option even though it's not the officially documented route:
 
 ```bash
 pip install sglang[all]
@@ -109,11 +114,11 @@ python -m sglang.launch_server \
   --context-length 262144
 ```
 
-**Important:** llama.cpp and Ollama do not yet support the custom 128-expert MoE architecture in North Mini Code. If you need CPU inference or consumer GPU deployment, this model is not a viable option today.
+**Update on consumer/CPU deployment:** At launch, llama.cpp and Ollama did not support North Mini Code's `cohere2moe` architecture. That changed on [June 13, 2026, when llama.cpp merged native architecture support](https://github.com/ggml-org/llama.cpp/pull/24260); GGUF quantizations are now available (e.g. [unsloth/North-Mini-Code-1.0-GGUF](https://huggingface.co/unsloth/North-Mini-Code-1.0-GGUF)), and the model is [listed on Ollama](https://ollama.com/library/north-mini-code-1.0). Full 256K-context inference still needs substantial VRAM for the KV cache regardless of weight quantization, so a quantized consumer GPU won't reproduce the full-context H100 deployment — but "not a viable option today" is no longer accurate for reduced-context, quantized local use.
 
 ### Cohere API (free tier)
 
-If you're evaluating before committing to GPU infrastructure, Cohere's API exposes North Mini Code with a free tier and currently charges $0.00 per million tokens until rate limits are reached. Production limits depend on key type; check the [Cohere API documentation](https://docs.cohere.com) for current limits.
+If you're evaluating before committing to GPU infrastructure, Cohere exposes North Mini Code through its API and through [OpenRouter, which lists it at no cost](https://openrouter.ai/cohere/north-mini-code:free) subject to rate limits. Trial keys are capped at 1,000 calls/month with per-endpoint rate limits; production keys have higher limits. Check [Cohere's rate-limits documentation](https://docs.cohere.com/docs/rate-limits) for current numbers, since pricing/limits pages change independently of the model itself.
 
 ---
 
@@ -137,15 +142,13 @@ Whether this training pays off at your specific task depends on your scaffolding
 
 ## Hardware Requirements (Honest Assessment)
 
-| Precision | Hardware Required | VRAM | Notes |
+| Precision | Hardware | VRAM | Notes |
 |-----------|------------------|------|-------|
-| FP8 | 1× H100 80GB | ~30 GB | Recommended for production |
-| BF16 | 2× A100 40GB | ~60 GB | Better for research/debugging |
-| Any | RTX 4090 (24GB) | ❌ | Not supported — VRAM insufficient |
+| FP8 or FP4 | 1× H100 | — | [Cohere's stated minimum](https://cohere.com/blog/north-mini-code) |
+| BF16 | 2× A100 40GB (estimate) | ~60 GB (weights only, estimate) | Not an official Cohere spec — see note above |
+| Quantized GGUF | Consumer GPU (e.g. RTX-class, 24-32GB) | Varies by quant | Works for reduced-context use since [llama.cpp PR #24260 merged](https://github.com/ggml-org/llama.cpp/pull/24260); full 256K context needs far more VRAM than weight size alone |
 
-This is an enterprise GPU story. An RTX 4090 with 24GB VRAM cannot run North Mini Code at any supported precision level. If your infrastructure is consumer GPU-based, this model is not usable today.
-
-For organizations with H100 access — cloud or on-premise — the single-H100 FP8 deployment is practical. The model is not compute-hungry at inference time (3B active params), but the weight loading requires the VRAM headroom.
+For organizations with H100 access — cloud or on-premise — the single-H100 FP8 deployment is the officially documented path. The model is not compute-hungry at inference time (3B active params), but full-context weight and KV-cache loading requires real VRAM headroom.
 
 ---
 
@@ -153,24 +156,24 @@ For organizations with H100 access — cloud or on-premise — the single-H100 F
 
 | Use Case | Best Choice | Why |
 |----------|-------------|-----|
-| Agentic coding, self-hosted, H100 available | **North Mini Code** | Purpose-built, Apache 2.0, SWE-Bench Pro 61% |
-| Pure code completion, consumer GPU | Qwen2.5-Coder (32B) | Broader hardware support, strong HumanEval |
-| Maximum agentic capability, cost flexible | Claude Opus 4.7 | Higher SWE-Bench ceiling, broader reasoning |
-| Sub-100ms TTFT requirement | MAI-Code-1-Flash via Copilot | Inference-optimized, 5B active params |
-| Air-gapped enterprise deployment | North Mini Code + North platform | On-premise, GDPR/SOC-2, data stays local |
-| No GPU budget at all | Cohere API free tier | Same model, zero infra cost until rate limits |
+| Agentic coding, self-hosted, H100 available | **North Mini Code** | Purpose-built, [Apache 2.0](https://huggingface.co/CohereLabs/North-Mini-Code-1.0), [40.2% SWE-Bench Pro](https://huggingface.co/CohereLabs/North-Mini-Code-1.0) |
+| Pure code completion, consumer GPU | [Qwen2.5-Coder (32B)](https://qwenlm.github.io/blog/qwen2.5-coder-family/) | Broader hardware support, strong HumanEval |
+| Maximum agentic capability, cost flexible | [Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7) | Higher SWE-Bench ceiling (Anthropic reports 87.6% SWE-Bench Verified), broader reasoning |
+| Sub-100ms TTFT requirement | [MAI-Code-1-Flash via Copilot](https://microsoft.ai/news/introducingmai-code-1-flash/) | Inference-optimized, 5B active params |
+| Air-gapped enterprise deployment | North Mini Code + North platform | On-premise, data stays local |
+| No GPU budget at all | Cohere API / [OpenRouter free tier](https://openrouter.ai/cohere/north-mini-code:free) | Same model, zero infra cost until rate limits |
 
 ---
 
 ## Limitations to Know Before Deploying
 
-**Specialist, not generalist.** North Mini Code scores 14% on GDPval-AA (general reasoning) and 37% on τ²-Bench Telecom. It is a coding specialist. If your workflow requires strong general reasoning alongside coding, you're better served by a general-purpose model.
+**Specialist, not generalist.** North Mini Code scores [14% on GDPval-AA (general reasoning) and 37% on τ²-Bench Telecom](https://artificialanalysis.ai/articles/north-mini-code-cohere-s-small-coding-focused-moe-model), independently measured by Artificial Analysis. It is a coding specialist. If your workflow requires strong general reasoning alongside coding, you're better served by a general-purpose model.
 
-**No consumer GPU path.** The llama.cpp gap is real. Individual developers without institutional GPU access cannot self-host this model today. Cohere has not announced a quantization path that supports consumer hardware.
+**Consumer GPU path exists now, but is new and partial.** At launch, llama.cpp/Ollama had no support for the model's architecture. As of the [June 13, 2026 llama.cpp merge](https://github.com/ggml-org/llama.cpp/pull/24260), GGUF quantizations exist and the model is listed on [Ollama](https://ollama.com/library/north-mini-code-1.0) — but full 256K-context inference on a single consumer GPU is still unrealistic due to KV-cache size, independent of weight quantization.
 
-**Benchmark comparison caveat.** Cohere's competitive comparisons use Qwen3.5 as the baseline, not the current Qwen3.6. The numbers may look slightly less favorable once the current generation is benchmarked head-to-head.
+**Benchmark comparison caveat.** On Cohere's own [published evaluation chart](https://huggingface.co/CohereLabs/North-Mini-Code-1.0), North Mini Code already trails Qwen3.6 35B-A3B on every listed benchmark (e.g., 67.6% vs. 73.4% on SWE-Bench Verified, 40.2% vs. 49.5% on SWE-Bench Pro) — this is not a "wait and see" caveat, Cohere has already run the head-to-head and published it. Separately, [one paragraph of Cohere's own blog post](https://huggingface.co/blog/CohereLabs/introducing-north-mini-code) cites the older Qwen3.5 as the Coding Index comparison point rather than Qwen3.6, so read Cohere's marketing copy (as opposed to its data tables) with that inconsistency in mind.
 
-**Thin documentation.** The model is new (released June 11, 2026). Community examples, error patterns, and edge-case workarounds are still accumulating. Expect some onboarding friction.
+**Thin documentation.** The model is new (released [June 9, 2026](https://huggingface.co/CohereLabs/North-Mini-Code-1.0/blob/main/.eval_results/swe-bench-verified.yaml)). Community examples, error patterns, and edge-case workarounds are still accumulating. Expect some onboarding friction.
 
 ---
 
@@ -182,7 +185,7 @@ The strategic reason to use North Mini Code isn't purely capability — it's the
 - **Fine-tuning rights.** Apache 2.0 permits modification and redistribution, including commercial use. You can fine-tune on your proprietary codebase.
 - **Data sovereignty.** For regulated industries (finance, healthcare, government), the ability to run inference on-premise without data leaving your network is often a hard requirement, not a preference. North Mini Code + Cohere North platform is purpose-built for this.
 
-The S&P Global partnership announced June 8 is the most concrete signal of this positioning: S&P's verified financial data integrating directly into Cohere North for financial institutions that cannot send data to a cloud API.
+The [S&P Global partnership announced June 8, 2026](https://press.spglobal.com/2026-06-08-S-P-Global-Expands-AI-Ecosystem-Reach-with-Cohere-to-Power-Trusted,-Agentic-Workflows-for-Financial-Institutions) is the most concrete signal of this positioning: S&P Global's financial data integrating directly into Cohere's enterprise North platform for financial institutions that need agentic workflows without sending data to a cloud API. Note this partnership is about the broader North enterprise platform, not North Mini Code specifically — Cohere's press release does not name North Mini Code.
 
 ---
 
@@ -190,8 +193,8 @@ The S&P Global partnership announced June 8 is the most concrete signal of this 
 
 If you're evaluating North Mini Code:
 
-- [ ] Confirm hardware: H100 80GB (FP8) or 2× A100 40GB (BF16) available
-- [ ] Use vLLM or SGLang — llama.cpp/Ollama will not work
+- [ ] Confirm hardware: 1x H100 (FP8/FP4, Cohere's stated minimum) for full-context production use
+- [ ] For local/consumer testing at reduced context, GGUF quantizations now work via a post-June-13-2026 llama.cpp build or Ollama; use vLLM or SGLang for full 256K-context, production-grade serving
 - [ ] Start with Cohere API free tier to validate task fit before committing GPU resources
 - [ ] Run your own eval on task-representative examples — don't rely solely on SWE-Bench numbers
 - [ ] If using sub-agent orchestration, pass model-generated thinking tokens between agent steps

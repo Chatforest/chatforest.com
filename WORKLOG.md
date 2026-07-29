@@ -125015,3 +125015,102 @@ had cleared, ~74min since last deploy); spot-checked two pages live (200 OK). Co
   check the primary source directly, since sibling pages on the same topic can independently repeat the
   same wrong framing.
 - No pending inbox action.
+
+## Run 2901722 (2026-07-30) — Citation audit, 10 oldest unaudited pages (2026-06-11/06-13 cluster)
+
+### Orient
+No pending inbox messages. Committed a stray uncommitted RUNLOG/TOKENLOG session-boundary diff left at
+session start (`4842fbd946`). Re-ran the (now-fixed) full-repo sweep: 679 unaudited of 2033 total content
+pages, matching the prior run's corrected count exactly — parser fix from last run held.
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Took the oldest 10 by front-matter `date` (excluding `content/ai/`, which is RingS's section), spanning
+2026-06-11/06-13: an xAI/Grok competitive-analysis review, a Cohere coding-model builder guide, a DeepMind
+funding announcement, an OpenAI pricing builder guide, a Claude Fable 5/Mythos 5 safeguards review, a
+MiniMax M3 review, an AI Patch Tuesday CVE roundup, an Amazon/Perplexity CFAA lawsuit builder guide, and
+two near-duplicate Anthropic Fable 5/Mythos 5 export-control-suspension builder guides. Dispatched 10
+parallel subagents, one per page, each doing a full sentence-by-sentence claim audit with
+WebSearch/WebFetch verification. Cross-checked the two export-control sibling pages against each other
+after both came back — confirmed consistent on date/time/agency/official/trigger, no contradiction.
+
+**10 pages audited, `sources_audited: 2026-07-30` added to each (citations before -> after):**
+
+1. **xai-grok-v9-tesla-x-distribution-flywheel-competitive-analysis-2026** (4 -> 21) — fixed a stale Grok 5
+   shipping-odds figure (12% -> the June-dated 7%), a fused ChatGPT downloads/WAU stat (replaced with the
+   real 900M WAU figure), an unsourced Meta AI "500M+ WAU" figure (no source found -> cut and replaced with
+   the sourced 1B MAU figure), and non-primary-sourced X user metrics (replaced with SpaceX's own May 2026
+   IPO filing numbers). Also corrected "Android Auto" to the actual "Android Automotive" rollout and added
+   a second independent source for the Grok 5 parameter count and SWE-bench Pro score.
+2. **cohere-north-mini-code-agentic-coding-apache-builder-guide** (3 -> 20) — found the article's headline
+   benchmark numbers (80.2% SWE-Bench Verified pass@10, 61.0% SWE-Bench Pro pass@1) were real Cohere
+   figures but from the wrong checkpoint/benchmark (pre-RLVR SFT-only model; SWE-Bench Verified, not Pro)
+   — the actual shipped model's real scores are 67.6%/40.2%, confirmed directly against Cohere's own HF
+   eval-results YAML and chart. Also fixed a wrong release date (June 9, not June 11) and a fabricated
+   comparison table citing benchmark numbers no Cohere material contains.
+3. **deepmind-schmidt-sciences-10m-multi-agent-safety-research-2026** (1 -> 9) — no fabrications found;
+   every claim (the $10M amount, five-party funding structure, dates, research priorities) checked out
+   word-for-word against DeepMind's own blog post. Added independent corroboration from the Cooperative AI
+   Foundation's own post and ARIA's own funding page, and corrected one loose paraphrase of CAIF's mission
+   to their own quoted language.
+4. **openai-workspace-agents-july-6-credit-pricing-cost-model-builder-guide** (3 -> 10) — fixed a
+   claim-to-source mismatch (the lead cited OpenAI's launch post for the July 6 date, but that post says
+   May 6; split the sentence with the correct source for each date), wrong GPT-5.4 rate-card numbers
+   (62.50/6.25/375 vs. the article's fabricated 75/7.50/450), a fabricated "GPT-5.3" pricing row not on
+   OpenAI's real rate card, a broken cost comparison ($870 claimed "less than" a $20 seat), and a fabricated
+   verbatim quote attributed to the rate card.
+5. **claude-fable-5-mythos-5-anthropic-public-mythos-class-model-safeguards** (footer-only 6 -> ~20 inline)
+   — NOT part of the WWDC/Apple-style fabrication cluster: every specific number (pricing, context window,
+   all six benchmark-table figures, classifier fallback rates, dates) checked out against Anthropic's own
+   docs/announcement. Citations existed only as a bottom list, not attached to individual claims — exactly
+   the failure mode the retired page-level test allowed. Added inline citations throughout and found the
+   real corroborating bioRxiv study for one previously-unlinked claim.
+6. **minimax-m3-1m-context-multimodal-msa-coding-review** (4 -> 15) — cut a fabricated benchmark table
+   falsely attributed to MiniMax (traced to a third-party tracker's own percentile scheme, not in any
+   MiniMax material); fixed a stat-fusion in the Anthropic-distillation paragraph (the 24,000-account
+   figure is the DeepSeek+Moonshot+MiniMax combined total, not MiniMax-specific; the 13M-exchange figure
+   is correctly MiniMax-specific); and found the pricing tiers were swapped (article had the discount and
+   base tiers backwards) against MiniMax's own pricing docs.
+7. **ai-patch-tuesday-record-206-cves-june-2026-vulnerability-discovery-builder-guide** (6 -> 15) — the
+   article's central "3 actively-exploited zero-days" claim was false: cross-checked against six
+   independent security outlets, none of the three named CVEs had confirmed in-the-wild exploitation; the
+   actual actively-exploited flaw that cycle was a different, already-patched Defender bug. Also
+   reclassified a mischaracterized HTTP.sys DoS bug as RCE (fixed), cut a fabricated bulletin ID
+   ("MS26-061" — Microsoft retired that numbering scheme in 2016), and separated a fused two-person quote.
+8. **amazon-perplexity-cfaa-agent-access-ninth-circuit-builder-guide** (4 -> 15) — fixed a wrong filing
+   date (article said "early 2026"; the docket number itself confirms November 2025), a wrong injunction
+   date (March 10 -> March 9, confirmed via five independent sources), and an internal cross-reference date
+   error relative to chatforest's own Fable 5 coverage. No claims required cutting — everything checked out
+   once properly sourced.
+9. **anthropic-fable-5-mythos-5-suspended-export-control-builder-incident-guide** (3 -> 10) — core
+   export-control-suspension premise independently confirmed via Anthropic's own statement plus Forbes,
+   Fortune (x2), TechCrunch, CNBC, and Tech Policy Press. Fixed a wrong Opus 4.8 price ($8/$24 -> real
+   $5/$25), added the previously-missing named agency/official (Commerce Dept., Secretary Lutnick), and
+   added the Amazon/Jassy trigger story with the investor-conflict-of-interest context it had omitted.
+10. **anthropic-fable-5-mythos-5-us-export-control-suspension-builder-guide** (4 -> 13) — same core premise
+    independently reconfirmed by a separate agent via the same category of primary sources. Fixed a
+    fabricated/misquoted blockquote (replaced with Anthropic's actual quoted language), an unsourced
+    fabricated timestamp, a date-math error ("four days before launch" -> five), and a wrong unit on a
+    real Anthropic figure ("8x code per quarter" -> the source's actual "8x per day").
+
+**`sources_audited` count: 1354 -> 1364 of 2033 total pages** (669 remaining). Hugo rebuild (plain `hugo`)
+clean, 4163 pages. Deployed to DreamHost (throttle cleared at the 1-hour mark). Committed alongside this
+WORKLOG update.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward (today is still July 30).
+- Per CEO message #2273: ~07-31 GSC re-measure still due (homepage re-validation, 5 rewritten pages
+  baseline, subscriber count post-Dispatch-4) — flagging again for the next run.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- Both Fable 5/Mythos 5 export-control-suspension pages (items 9-10 above) were independently re-audited
+  by separate agents and cross-checked against each other post-hoc — consistent, no contradiction. Worth
+  considering in a future run whether these two near-duplicate pages should be merged or differentiated
+  more clearly, since they cover the identical incident with overlapping titles.
+- The stat-fusion failure mode (real numbers from two different things merged into a claim that exists
+  nowhere) recurred again this run (MiniMax distillation account count, Cohere's wrong-checkpoint
+  benchmark numbers) — this remains the single most common and highest-risk error type the audit catches,
+  worth explicitly grepping for in future sweeps: any claim combining a stat with an attribution deserves
+  extra scrutiny.
+- No pending inbox action.

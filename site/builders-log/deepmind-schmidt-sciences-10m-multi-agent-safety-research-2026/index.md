@@ -3,7 +3,7 @@
 > Google DeepMind, Schmidt Sciences, ARIA, the Cooperative AI Foundation, and Google.org are jointly funding up to $10M for research on what happens when millions of AI agents interact. Applications open through August 8, 2026.
 
 
-On June 11, 2026, Google DeepMind announced a joint initiative with Schmidt Sciences, the Cooperative AI Foundation, the Advanced Research and Invention Agency (ARIA), and Google.org to fund up to **$10 million in technical research** on multi-agent AI safety. Applications are open through **August 8, 2026**, with awards announced in Autumn 2026.
+On June 11, 2026, [Google DeepMind announced](https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/) a joint initiative with [Schmidt Sciences](https://www.schmidtsciences.org/), the [Cooperative AI Foundation](https://www.cooperativeai.com/post/10m-funding-call-launched-with-schmidt-sciences-google-deepmind-and-aria), the Advanced Research and Invention Agency ([ARIA](https://aria.org.uk/opportunity-spaces/trust-everything-everywhere/scaling-trust/funding)), and [Google.org](https://www.google.org/) to fund up to **$10 million in technical research** on multi-agent AI safety, formally titled ["Scaling AI Safety for a Multi-Agent World."](https://schmidtsciences.smapply.io/prog/scaling_ai_safety_for_a_multi_agent_world/) Applications are open through **August 8, 2026**, with awards announced in Autumn 2026.
 
 The problem they're funding against: current AI safety research evaluates models in isolation. But production AI systems are no longer isolated — millions of agents built by different organizations now interact across shared digital environments. What happens when they do is largely unstudied.
 
@@ -21,7 +21,7 @@ The initiative's framing is direct: at scale, interacting agents can produce **e
 
 ## Four Research Priorities
 
-The initiative funds research across four areas:
+[The initiative funds research](https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/) across four areas:
 
 **1. Sandboxes and testbeds**
 Reproducible environments for evaluating multi-agent safety in simulated settings — virtual marketplaces, simulated ecosystems, controlled agent networks. The goal is tooling that researchers worldwide can use to run consistent, comparable experiments on multi-agent behavior.
@@ -39,15 +39,15 @@ Developing monitoring methods for deployed agent populations — the human-in-th
 
 ## Who Can Apply
 
-Academic and independent researchers worldwide are eligible. The application portal is at schmidtsciences.smapply.io/prog/scaling_ai_safety_for_a_multi_agent_world. Decisions will be announced in Autumn 2026.
+Academic and independent researchers worldwide are eligible. The [application portal](https://schmidtsciences.smapply.io/prog/scaling_ai_safety_for_a_multi_agent_world/) offers two funding tiers — up to $300,000 or $300,000–$1,000,000, for one- to two-year projects. Decisions will be announced in Autumn 2026.
 
-The multi-organization structure is notable: Schmidt Sciences is a philanthropic science funder, ARIA is a UK government research agency modeled after DARPA, and the Cooperative AI Foundation specifically targets research on AI systems that work well together without adversarial dynamics. Google.org is the philanthropic arm of Google. DeepMind provides the AI research leadership. This isn't a corporate R&D budget — it's a coordinated push to build a field that doesn't yet fully exist.
+The multi-organization structure is notable: [Schmidt Sciences](https://www.schmidtsciences.org/) is a nonprofit philanthropic science funder founded by Eric and Wendy Schmidt, [ARIA](https://aria.org.uk/about-aria/) is a UK non-departmental public body sponsored by the Department for Science, Innovation and Technology that was [explicitly modeled on the US ARPA/DARPA structure](https://www.wired-gov.net/wg/news.nsf/articles/UK+to+launch+new+research+agency+to+support+high+risk+high+reward+science+19022021131000?open=) when the UK government created it in 2021, and the [Cooperative AI Foundation](https://www.cooperativeai.com/foundation) funds research to improve "the cooperative intelligence of advanced AI for the benefit of all." [Google.org](https://www.google.org/) is Google's philanthropic arm. DeepMind provides the AI research leadership. This isn't a corporate R&D budget — it's a coordinated push to build a field that doesn't yet fully exist.
 
 ---
 
 ## Context: The Timing
 
-This announcement lands as the MCP (Model Context Protocol) ecosystem has crossed into production-scale deployment, with major AI providers building on it and enterprises integrating agents into live workflows. The multi-agent interaction problem this initiative addresses isn't hypothetical. Agents are already calling agents. The infrastructure is ahead of the safety research.
+This announcement lands as the [MCP (Model Context Protocol) ecosystem has moved deeper into production deployment](https://chatforest.com/guides/mcp-ecosystem-2026-state-of-the-standard/), with major AI providers building on it and enterprises integrating agents into live workflows. The multi-agent interaction problem this initiative addresses isn't hypothetical. Agents are already calling agents. The infrastructure is ahead of the safety research.
 
 The four priority areas map directly to gaps that builders running production agent systems run into: no standard test environments for multi-agent behavior, no established patterns for agent-to-agent trust, no monitoring tooling designed for agent populations rather than individual model outputs.
 
