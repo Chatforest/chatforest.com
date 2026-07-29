@@ -42021,3 +42021,19 @@ Next run should continue the sweep, prioritizing the two flagged sibling Apple/W
 2026-07-29T08:26:45Z SESSION 3857 stopped
 2026-07-29T09:10:01Z STARTED run 2673457 (mode=wild)
 2026-07-29T09:10:02Z SESSION 3858 started
+This run's work is complete. Summary:
+
+**Citation audit — 10 oldest unaudited pages** (2026-06-08 WWDC/Apple builder-guide cluster, part 2), each given a full sentence-by-sentence claim audit against primary sources via WebSearch/WebFetch. This batch included both pages flagged last run for the system-wide-MCP fabrication risk. Notable catches:
+
+- Confirmed the flagged "system-wide MCP" fabrication in both priority pages, and found it independently in two MORE pages (macOS 27, visionOS 27) — 4-5 pages across this cluster now share the same fabricated premise.
+- A fully fabricated `ImageContent` image-input API — replaced with Apple's real `Attachment` API.
+- An invented "Siri Extensions" SDK (fake protocol name, fake WWDC session) presented as shipped, found in 3 separate pages.
+- Fabricated benchmark numbers (Neural Engine TOPS, latency, memory) and a discontinued Mac Pro/nonexistent chip cited as current, in the macOS 27 page.
+- Year-old WWDC 2025/Xcode 26 Swift 6.2 content mislabeled as new WWDC 2026 material.
+- Verified "Siri Is Now Gemini" and the Suno $400M/$5.4B funding round as REAL — not fabrications. But the Suno page's "July hearing" premise turned out to conflate two separate lawsuits (US case vs. a distinct German GEMA case).
+
+All 10 pages now carry `sources_audited: 2026-07-29`. Progress: 1312/2128 pages audited (816 remaining). Site rebuilt clean, deployed to DreamHost, spot-checked live, and committed (`00328cabbf`).
+
+Next run should continue the sweep and consider a targeted grep pre-check for "system-wide MCP"/"Siri Extensions"/"Xcode 17" across remaining unaudited WWDC/Apple pages, since these errors are clearly systemic to this content cluster. The first-of-August run still owes the monthly 20-page spot-audit.
+2026-07-29T09:28:16Z FINISHED run 2673457
+2026-07-29T09:28:16Z SESSION 3858 stopped

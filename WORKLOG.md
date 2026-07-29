@@ -124583,3 +124583,98 @@ pages live (200 OK). Committed as `53b9e66e12`.
 - Consider surfacing the Harvey "6x" sourcing caveat in `anthropic-claude-managed-agents-...` to Rob/CEO
   (still open from run 2167858).
 - No pending inbox action.
+
+## Run 2673457 (2026-07-29) — Citation audit, 10 oldest unaudited pages (2026-06-08 WWDC/Apple cluster, part 2)
+
+### Orient
+No new inbox activity (same single pending message as prior runs — Grove's own prior report to CEO
+re: HFCE/BYD fabrication fixes; no action needed). Committed a stray uncommitted RUNLOG/TOKENLOG
+session-boundary diff left at session start. Full-repo sweep confirmed 827 unaudited / 2128 total
+(1301 previously audited).
+
+### Claim-level citation audit — 10 oldest unaudited pages
+Took the oldest 10 by front-matter `date`, all 2026-06-08, all from the WWDC/Apple builder-guide
+cluster — this batch conveniently included both pages flagged last run (2650842) as likely carrying
+the same "system-wide MCP" fabrication caught in `apple-ios-27-mcp-system-wide-siri-core-ai-builder-guide`.
+Dispatched 10 parallel subagents, one per page, each doing a full sentence-by-sentence claim audit
+with WebSearch/WebFetch verification, briefed with the specific fabrication risk where known.
+
+**10 pages audited, `sources_audited: 2026-07-29` added to each (citations before -> after):**
+
+1. **databricks-data-ai-summit-2026-builder-preview-lakebase-mlflow-june** (1 -> 18) — fixed a fused
+   MLflow timeline (three separate releases presented as one "shipped earlier this year" claim);
+   corrected a "relatively new and underused" characterization of Databricks Apps that Databricks' own
+   GA blog contradicts (20,000+ apps, "adoption accelerated rapidly"); fixed a misattributed "150+
+   countries" stat (combined in-person+virtual, not virtual-only); corrected the Databricks Apps GA date.
+2. **ios-27-apple-intelligence-framework-decision-guide-wwdc-2026** (4 -> 19) — confirmed and fixed the
+   flagged system-wide-MCP fabrication (rewrote to Apple's real Xcode-27-scoped MCP + native `Tool`
+   protocol); found and fixed a SECOND fabrication not on the risk list — an invented "Siri Extensions"
+   SDK with a fake protocol name (`SiriExtensionProvider`) and a fabricated WWDC session title, when the
+   real status is unconfirmed beta-code discovery; cut an unverifiable "15 domain types" AssistantSchemas
+   claim.
+3. **ios-27-foundation-models-multimodal-image-input-builder-guide** (4 -> 23) — deleted a fully
+   fabricated `ImageContent` API/array-prompt-syntax; replaced with the real `Attachment`/prompt-builder
+   API from Apple's actual WWDC26 session 241; fixed a fabricated session title, "Xcode 17" -> 27, an
+   invented resolution-hint initializer, and an unsupported multi-image/privacy-label claim.
+4. **ios-27-writing-tools-uikit-swiftui-opt-in-builder-guide-wwdc-2026** (3 boilerplate -> 12) — deleted
+   an entirely fabricated "Siri Extension" path for third-party AI writing tools (`WritingToolsIntent`,
+   fake `Info.plist` keys) contradicted by both a technical write-up and the site's own already-corrected
+   sibling Extensions article; fixed an incomplete `writingToolsBehavior` enum table; added the "Write
+   with Siri" iOS 27 beta 2 update the original omitted entirely; cut three fabricated WWDC session titles.
+5. **macos-27-ai-builder-guide-apple-intelligence-desktop-apple-silicon** (4 -> 24) — the deepest fix in
+   this batch: wrong Xcode version throughout, invented "Siri Extensions" name, the same system-wide-MCP
+   fabrication, fabricated benchmark numbers (Neural Engine TOPS, latency, memory, context window) with
+   no source, a discontinued Mac Pro cited as current with a nonexistent M4 Ultra chip, a fabricated
+   `LanguageModelAdapter.train()` API, fabricated "Swift Assist"/"Foundation Models Playground" feature
+   names, and a nonexistent GitHub Actions runner label.
+6. **suno-400m-series-d-ai-music-api-licensing-july-hearing-builder-guide** (5 -> 42) — verified the core
+   $400M/$5.4B Suno funding round as REAL (TechCrunch, Music Business Worldwide) — not a repeat of the
+   Hugging Face fabrication. But found the article's "July 2026 summary judgment hearing" premise
+   conflated two separate lawsuits: the actual US case has no July hearing (dispositive motions not due
+   until April 2027); the real July 31, 2026 date belongs to a separate German GEMA v. Suno case. Rewrote
+   title/framing/sections accordingly; fixed a wrongly-dated funding round and a wrongly-listed co-plaintiff.
+7. **superai-2026-singapore-ai-week-june-10-builder-guide** (4 -> 26) — fixed a wrong exhibitor count
+   (100+ -> sourced 150+), a wrong hackathon prize figure ($130K, actually next year's cycle -> real
+   $200K for 2026), an out-of-date visa-framework claim (doesn't take effect until Jan 2027) replaced
+   with a verifiable claim, and invented conference-track names replaced with the organizer's real names.
+8. **swift-6-2-ai-app-builders-concurrent-inline-array-span-wwdc-2026** (4, one broken -> 11) — found the
+   entire article mislabeled year-old WWDC 2025/Xcode 26 Swift 6.2 content as new WWDC 2026 material;
+   corrected version/date/event framing throughout; cut a fabricated "20-30% faster" benchmark not
+   present in the cited Swift Evolution proposal; fixed a broken source link and a misnamed WWDC session.
+9. **visionos-27-ai-spatial-computing-foundation-models-builder-guide** (3 -> 50) — found the same
+   system-wide-MCP fabrication independently, plus a fabricated `CoreAI.shared`/`AIRequest` routing API
+   (Core AI is actually on-device-only inference), a fabricated gaze-tracking API Apple doesn't expose to
+   developers, wrong product naming ("Siri 2.0" vs. real "Siri AI"), and a wrong claim about smart-glasses
+   OS/timeline.
+10. **wwdc-2026-keynote-confirmed-apple-ai-platform-builder-guide** (8 -> 44) — the other flagged priority
+    page. Split verdict: "MCP Goes Platform-Wide" confirmed FABRICATED (rewrote per the sibling fix);
+    "Siri Is Now Gemini" independently verified REAL (Bloomberg, TechCrunch, AppleInsider, MacDailyNews) —
+    not a fabrication. Found a third, unflagged fabrication: an "Apple Intelligence Extensions Framework"
+    presented as shipped/confirmed at the keynote when it's actually disabled beta code Apple deliberately
+    left out. Replaced a sketchy/unfetchable citation domain with five verified sources.
+
+**`sources_audited` count: 1301 -> 1312 of 2128 total pages** (816 remaining; +11 reflects 10 audited this
+run plus 1 sibling already audited earlier today in a different run/cluster, confirmed via git log, not a
+double-count). Hugo rebuild (plain `hugo`) clean, 4163 pages. Deployed to DreamHost (throttle had cleared,
+~60min since last deploy); spot-checked two pages live (200 OK). Committed as `00328cabbf`.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (re-run the full-repo sweep).
+- The WWDC/Apple cluster has now yielded independent instances of the same system-wide-MCP fabrication in
+  4 separate pages across two runs (apple-ios-27-mcp-system-wide-siri-core-ai, ios-27-apple-intelligence-
+  framework-decision-guide, macos-27-ai-builder-guide, visionos-27-ai-spatial-computing, plus wwdc-2026-
+  keynote-confirmed) — worth a targeted grep across the remaining unaudited WWDC/Apple pages for "MCP"
+  + "system-wide"/"Siri" as a fast pre-check before the full sentence-by-sentence pass, since it's clearly
+  a systemic error from whatever source generated this content cluster, not isolated incidents.
+- Similarly, "Xcode 17" (wrong; real is Xcode 27) and invented "Siri Extensions" as a shipped SDK name have
+  now each recurred across multiple pages in this cluster — worth the same fast grep pre-check.
+- Suno page's URL slug still says "july-hearing" despite the correction (the real July 31 date belongs to
+  a different case) — flagged by the auditing agent as a stale-slug decision needing a redirect/alias,
+  out of scope for a citation-only pass. Consider in a future run.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward until the month turns (today is still July 29).
+- Per CEO message #2273: ~07-31 GSC re-measure due (homepage re-validation on the fixed script, 5 rewritten
+  pages baseline, subscriber count post-Dispatch-4) — flagging for the run nearest that date.
+- Consider a follow-up pass on `windsurf-2-0-cognition-devin-agent-command-center-ide-review.md` for the
+  two flagged hands-on-testing-style sentences (still open from run 2167858, out of citation-audit scope).
+- No pending inbox action.
