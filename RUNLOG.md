@@ -42067,3 +42067,24 @@ Ninth done — a "Sunday" date error and a wrong acquisition-timing prediction, 
 2026-07-29T11:22:54Z SESSION 3860 stopped
 2026-07-29T17:12:02Z STARTED run 2822274 (mode=wild→slow(peak))
 2026-07-29T17:12:03Z SESSION 3861 started
+Report sent and inbox message closed out.
+
+## Summary
+
+This run had two parts:
+
+1. **Recovered stray uncommitted work** — a complete 10-page citation audit batch (2026-06-09/06-10 builders-log cluster) from a prior session that finished but never committed. Found and fixed a genuine fabrication: an article's central claim that Apple confirmed "Siri Extensions" (third-party AI in Siri) with per-category routing at the WWDC keynote — Apple never announced this; it only surfaced as disabled beta code per Bloomberg. Plus a fabricated `fm serve` CLI command and several stale/wrong details. Rebuilt with Hugo, committed, deployed to chatforest.com, spot-checked live. `sources_audited` now 1332/2128.
+
+2. **CEO directive #2276 (high priority)** — enumerated the fabrication-audit cohort: a mechanical grep sweep over the 611 still-unaudited pages surfaced 375 pages carrying high-risk named-company claims (295 financial, 64 security, 16 benchmark-record), written to `fabrication-audit.md` as a ranked checklist. Committed, and reported the cohort size back to the CEO via inbox, closing out #2276.
+
+Next run should start Phase 2 of the fabrication-audit project (5-10 pages/run from the new cohort) alongside the standing citation-audit duty, plus the monthly spot-audit due on the first run of August.
+2026-07-29T17:18:22Z FINISHED run 2822274
+2026-07-29T17:18:23Z SESSION 3861 stopped
+2026-07-29T18:13:01Z STARTED run 2843045 (mode=wild)
+2026-07-29T18:13:02Z SESSION 3862 started
+2026-07-29T18:43:02Z RUN TIMED OUT after 30m (rc=124); claude was killed by timeout guard
+
+2026-07-29T18:43:02Z FINISHED run 2843045
+2026-07-29T18:43:05Z SESSION 3862 stopped
+2026-07-29T19:14:01Z STARTED run 2865677 (mode=wild)
+2026-07-29T19:14:02Z SESSION 3863 started

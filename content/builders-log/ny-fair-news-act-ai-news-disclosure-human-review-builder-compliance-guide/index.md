@@ -13,13 +13,14 @@ tags:
   - builders-log
 categories:
   - builders-log
+sources_audited: 2026-07-30
 ---
 
 New York has two AI disclosure bills heading to Governor Hochul's desk right now. They cover different ground.
 
 [A3411B](/builders-log/ny-a3411b-genai-disclosure-bill-builder-ui-compliance-guide/) — the Artificial Intelligence Disclosure Act — requires any operator of a generative AI system to display a notice that outputs may be inaccurate. One UI element, 90 days after signing, applies to everyone building AI products.
 
-The **[NY FAIR News Act](https://nysenate.gov/legislation/bills/2025/S8451)** (S.8451B / A.8962A) is different in scope, different in mechanism, and considerably more demanding. It passed both chambers on June 8, 2026. It applies specifically to news publishers, but its requirements flow directly upstream to the AI content tools, writing assistants, CMS pipelines, and newsroom automation that builders sell to those publishers.
+The **[NY FAIR News Act](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B)** ([S.8451B](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B) / [A.8962B](https://www.nysenate.gov/legislation/bills/2025/A8962/amendment/B)) is different in scope, different in mechanism, and considerably more demanding. The Senate passed it 53-7 on June 4, 2026, and the Assembly passed it 130-1 the next day, [June 5, 2026](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B), completing passage. It applies specifically to news publishers, but its requirements flow directly upstream to the AI content tools, writing assistants, CMS pipelines, and newsroom automation that builders sell to those publishers.
 
 If you build anything that touches AI-generated news content, this law shapes your product.
 
@@ -31,7 +32,7 @@ The bill's four operative mandates are distinct. They cover the output layer, th
 
 ### 1. Conspicuous AI Authorship Label
 
-Any news content "substantially composed, authored, or otherwise created" by generative AI must carry a conspicuous disclaimer at the top of the page, at the start of audio, or visually at the onset of video. The required substance: the content "was substantially created by generative AI."
+Any news content "substantially composed, authored, or otherwise created" through generative AI must "conspicuously imprint on the top of the page, webpage, image, graphic, video or other visual or audio/visual content," or be verbally stated at the onset of audio, that it "was substantially created by generative artificial intelligence." Content eligible for copyright registration is exempt. ([S.8451B, General Business Law Art. 48 §1802](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B))
 
 This is meaningfully different from A3411B's generic "outputs may be inaccurate" notice. The FAIR News Act requires affirmative authorship disclosure — stating that a human did not primarily write the piece. For publishers running AI content pipelines, this label must appear at the article level, not just at the product or system level.
 
@@ -39,7 +40,7 @@ This is meaningfully different from A3411B's generic "outputs may be inaccurate"
 
 ### 2. Mandatory Human Review Before Publication
 
-No AI-generated or AI-assisted news content may be published without review and sign-off by a human employee with direct editorial control. Fully automated content feeds — scheduled news briefs, auto-published sports scores, automated financial summaries — require editorial gating under this law.
+No news content "created in whole or in material part by generative artificial intelligence" may be published until it is "reviewed by a human worker who has the authority to approve, deny, or modify any decision recommended or made by the automated system" ([bill text, quoted in Nieman Lab](https://www.niemanlab.org/2026/02/a-new-bill-in-new-york-would-require-disclaimers-on-ai-generated-news-content/); also confirmed in [R Street's opposition commentary](https://www.rstreet.org/commentary/new-yorks-fair-news-act-would-set-the-already-struggling-journalism-industry-back/)). Fully automated content feeds — scheduled news briefs, auto-published sports scores, automated financial summaries — require editorial gating under this law.
 
 **Builder implication:** If you build content automation tools that publish to news outlets without a human approval step, your product is now non-compliant for New York-based publishers. You need a gating mechanism: a review queue, an approval workflow, a one-click sign-off interface. This is not a cosmetic change — it is a required architectural feature for any tool targeting publishers subject to this law.
 
@@ -47,15 +48,15 @@ The bill does not define what qualifies as "review." A reasonably defensible sta
 
 ### 3. Newsroom Transparency
 
-Publishers must disclose to their journalists and staff when, where, and how AI tools are deployed in the newsroom. Internal tool usage is not exempt from the transparency requirement — the disclosure obligation runs both outward (to readers) and inward (to employees).
+Publishers must "fully disclose to journalists and media professionals how and when AI is used in the workplace" ([sponsor's office, NY Senate press release](https://www.nysenate.gov/newsroom/press-releases/2026/patricia-fahy/new-york-legislature-passes-landmark-bill-disclose-ai); confirmed independently in the [NewsGuild of New York's statement](https://www.nyguild.org/post/statement-on-the-ny-fair-news-act) and [R Street's opposition commentary](https://www.rstreet.org/commentary/new-yorks-fair-news-act-would-set-the-already-struggling-journalism-industry-back/)). Internal tool usage is not exempt from the transparency requirement — the disclosure obligation runs both outward (to readers) and inward (to employees).
 
 **Builder implication:** This one primarily affects internal tooling vendors. If you sell AI writing, research, or summarization tools to newsroom operations teams, your customers need to be able to document and disclose those deployments to their reporters. Build audit logs, deployment records, and usage summaries that your customers can produce on demand. If your tool is deployed in a way that is not visible to the employer's own HR or editorial leadership, that is a liability for the publisher — and a reason for them not to buy your product.
 
 ### 4. Source Shielding and Labor Protections
 
-The bill prohibits feeding confidential whistleblower documents, raw interview recordings, and journalist source material into external AI or machine learning models. This is a data handling restriction, not a disclosure requirement.
+The bill requires publishers to "establish safeguards to protect journalist sources and confidential materials from being accessed by an artificial intelligence system" ([sponsor's office](https://www.nysenate.gov/newsroom/press-releases/2026/patricia-fahy/new-york-legislature-passes-landmark-bill-disclose-ai); [NewsGuild of New York](https://www.nyguild.org/post/statement-on-the-ny-fair-news-act)). This is a data handling restriction, not a disclosure requirement.
 
-Labor provisions restrict publishers from terminating journalists or reducing pay and benefits due to AI adoption — though enforcement of the labor provisions is distinct from the content disclosure mandates.
+Labor provisions restrict publishers from terminating journalists or reducing pay and benefits due to AI adoption — R Street's opposition commentary independently confirms the bill would "prohibit AI adoption that results in job displacement, reduced hours, or diminished wages" ([R Street Institute](https://www.rstreet.org/commentary/new-yorks-fair-news-act-would-set-the-already-struggling-journalism-industry-back/)).
 
 **Builder implication:** If you build tools that ingest journalist notes, interview transcripts, or raw documents to generate summaries or story drafts, and those tools route data through an external LLM API, you may be creating legal exposure for your publisher customers. The bill targets the publisher, not the tool vendor directly — but publishers will read their vendor agreements carefully and push compliance obligations upstream via contract.
 
@@ -86,17 +87,19 @@ If you build general-purpose AI products, A3411B is the primary concern. If you 
 
 ## Status and Timeline
 
-**Passed:** Both chambers of the New York State Legislature on June 8, 2026, with bipartisan support. ([S.8451B full text](https://nysenate.gov/legislation/bills/2025/S8451))
+**Passed:** Senate 53-7 on June 4, 2026; Assembly 130-1 on June 5, 2026, the day the legislature adjourned. ([S.8451B full text and action history](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B))
 
-**Sponsors:** State Sen. Patricia Fahy (D-Albany) and Assemblymember Nily Rozic (D-NYC).
+**Sponsors:** State Sen. Patricia Fahy (D-Albany, 46th District) and Assemblymember Nily Rozic (D-Queens, [25th District](https://www.nyassembly.gov/mem/Nily-Rozic/bio/)).
 
-**Governor's deadline:** Hochul has until December 31, 2026, to sign or veto. She has not publicly stated a position. Her track record on AI legislation is mixed — she signed the RAISE Act and related disclosure measures but has exercised vetoes on other AI/privacy bills when industry opposition was significant.
+**Governor's deadline:** Hochul has until December 31, 2026, to sign or veto ([Transparency Coalition tracking of the 2026 AI bill package](https://www.transparencycoalition.ai/news/new-york-lawmakers-pass-kids-ai-chatbot-safety-bill-and-two-transparency-acts)). She has not publicly stated a position. Her track record on AI legislation is mixed — she [signed the RAISE Act](https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models) on December 19, 2025, but [vetoed the New York Health Information Privacy Act](https://www.troutmanprivacy.com/2025/12/new-york-governor-signs-four-ai-related-bills-vetoes-health-data-privacy-bill/) the same month after industry criticism that it was unworkable.
 
-**Effective date if signed:** 60 days after signing. If signed in July, enforcement could begin September 2026.
+**Effective date if signed:** 60 days after signing — the bill text specifies "the sixtieth day after it shall have become a law" ([S.8451B, Section 4](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B)). If signed in July, enforcement could begin September 2026.
 
-**Coalition support:** NY State AFL-CIO, Writers Guild of America East, WGA West, SAG-AFTRA, Directors Guild of America, NewsGuild of New York, NewsGuild-CWA, CWA District 1, Freelancers Union.
+**Penalties:** Violations are civil, enforced by the state Attorney General through injunctive relief: $1,000 for a first offense, $5,000 for each subsequent one ([S.8451B, GBL Art. 48 §1803](https://www.nysenate.gov/legislation/bills/2025/S8451/amendment/B)).
 
-**Opposition:** R Street Institute and publishing industry critics argue the human review requirement adds costs that small and local news organizations cannot absorb, potentially accelerating newsroom closures rather than protecting journalists.
+**Coalition support:** NY State AFL-CIO, Writers Guild of America East, WGA West, SAG-AFTRA, Directors Guild of America, NewsGuild of New York, NewsGuild-CWA, CWA District 1, Freelancers Union. ([NY Senate press release](https://www.nysenate.gov/newsroom/press-releases/2026/patricia-fahy/new-york-legislature-passes-landmark-bill-disclose-ai))
+
+**Opposition:** [R Street Institute](https://www.rstreet.org/commentary/new-yorks-fair-news-act-would-set-the-already-struggling-journalism-industry-back/) and [broadcasters](https://www.nysbroadcasters.org/post/ny-legislative-update-fair-news-act-s-8451-a-8962b-passes) argue the human review requirement adds costs that small and local news organizations cannot absorb, potentially accelerating newsroom closures rather than protecting journalists.
 
 ---
 
@@ -104,7 +107,7 @@ If you build general-purpose AI products, A3411B is the primary concern. If you 
 
 The FAIR News Act's disclosure requirements are compelled speech — the state government requiring publishers to say something about their content. That legal theory is currently under active challenge in federal court.
 
-In December 2025, President Trump signed an executive order directing the DOJ's AI Litigation Task Force (active from January 10, 2026) to challenge state AI laws on interstate commerce, preemption, and First Amendment grounds. The FTC is separately directed to challenge state laws requiring alterations to "truthful outputs of AI models." The same theory was used to challenge California's Age-Appropriate Design Code.
+On [December 11, 2025](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/), President Trump signed an executive order, "Ensuring a National Policy Framework for Artificial Intelligence," directing the Attorney General to establish a DOJ AI Litigation Task Force within 30 days (by January 10, 2026) to challenge state AI laws on interstate-commerce, preemption, and other constitutional grounds. The same order separately directs the FTC Chairman to issue, within 90 days, a policy statement on "the circumstances under which State laws that require alterations to the truthful outputs of AI models are preempted" ([executive order text, whitehouse.gov](https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/)). A comparable compelled-speech theory succeeded, in part, against California's Age-Appropriate Design Code: the Ninth Circuit found in 2024 that its risk-assessment disclosure requirement likely violates the First Amendment ([*NetChoice, LLC v. Bonta*, 9th Cir. 2024](https://law.justia.com/cases/federal/appellate-courts/ca9/23-2969/23-2969-2024-08-16.html)).
 
 This means there is a meaningful probability the FAIR News Act, if signed, faces an immediate legal challenge and possible preliminary injunction before enforcement begins. Builders planning product changes for publisher compliance should factor in this uncertainty: the law may not take effect on schedule, and the compliance requirements could be modified or voided through litigation.
 
