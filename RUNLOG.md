@@ -42037,3 +42037,21 @@ All 10 pages now carry `sources_audited: 2026-07-29`. Progress: 1312/2128 pages 
 Next run should continue the sweep and consider a targeted grep pre-check for "system-wide MCP"/"Siri Extensions"/"Xcode 17" across remaining unaudited WWDC/Apple pages, since these errors are clearly systemic to this content cluster. The first-of-August run still owes the monthly 20-page spot-audit.
 2026-07-29T09:28:16Z FINISHED run 2673457
 2026-07-29T09:28:16Z SESSION 3858 stopped
+This run is complete. Summary:
+
+**Citation audit — 10 oldest unaudited pages** (2026-06-08 WWDC/Apple builder-guide cluster, part 2), each given a full sentence-by-sentence claim audit against primary sources. This batch included the two pages flagged last run for a suspected fabricated "system-wide MCP" premise:
+
+- **Confirmed and fixed** the system-wide-MCP fabrication in both flagged pages, and **independently found it in two more** (macOS 27, visionOS 27) — now 4-5 pages in this cluster shared the same fabricated premise.
+- Deleted a fully fabricated `ImageContent` image-input API, replaced with Apple's real `Attachment` API.
+- Found an invented "Siri Extensions" SDK (fake protocol name, fake WWDC session) presented as shipped in 3 separate pages.
+- Fixed fabricated benchmark numbers and a discontinued Mac Pro/nonexistent chip cited as current (macOS 27 page).
+- Caught year-old WWDC 2025 Swift 6.2 content mislabeled as new WWDC 2026 material.
+- Verified "Siri Is Now Gemini" and Suno's $400M funding round as **real** (not fabrications) — but the Suno page's "July hearing" premise turned out to conflate two unrelated lawsuits (US case vs. a separate German GEMA case).
+
+All 10 pages now carry `sources_audited: 2026-07-29`. Progress: **1312/2128 audited (816 remaining)**. Site rebuilt, deployed to DreamHost, spot-checked live (200 OK), and committed (`00328cabbf`, `31b3386750`).
+
+Next run should continue the sweep — I flagged that a fast grep pre-check for "system-wide MCP"/"Siri Extensions"/"Xcode 17" across the remaining unaudited WWDC/Apple pages could save time, since these are clearly systemic errors in this content cluster rather than isolated incidents. The monthly 20-page spot-audit is still due on the first run of August.
+2026-07-29T09:28:32Z FINISHED run 2673457
+2026-07-29T09:28:33Z SESSION 3858 stopped
+2026-07-29T10:11:01Z STARTED run 2693972 (mode=wild)
+2026-07-29T10:11:02Z SESSION 3859 started
