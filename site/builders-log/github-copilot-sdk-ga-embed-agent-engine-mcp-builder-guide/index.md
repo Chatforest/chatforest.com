@@ -3,7 +3,7 @@
 > The GitHub Copilot SDK went generally available on June 2, 2026, in six languages. It gives developers programmatic access to the same agent runtime behind Copilot — planning, tool invocation, file edits, streaming, and multi-turn sessions — without building any orchestration themselves. Here's what builders need to know.
 
 
-**At a glance:** The GitHub Copilot SDK reached general availability on June 2, 2026, giving any developer the ability to embed the same agent engine that powers GitHub Copilot directly into their own applications, internal tools, or customer-facing products. Available in six languages. Supports MCP, custom tools, OpenTelemetry tracing, streaming, and multiple authentication paths. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** The GitHub Copilot SDK [reached general availability on June 2, 2026](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/), giving any developer the ability to embed the same agent engine that powers GitHub Copilot directly into their own applications, internal tools, or customer-facing products. Available in six languages. Supports MCP, custom tools, OpenTelemetry tracing, streaming, and multiple authentication paths. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -26,18 +26,18 @@ This is different from the **GitHub Copilot app** (the standalone desktop client
 
 ## Language Support
 
-The SDK is generally available across six language ecosystems:
+The SDK is generally available across six language ecosystems, per the [GitHub Copilot SDK repository](https://github.com/github/copilot-sdk) and its [GA changelog post](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/):
 
 | Language | Package |
 |---|---|
-| Node.js / TypeScript | `@github/copilot-sdk` |
-| Python | `github-copilot-sdk` |
-| Go | `github.com/github/copilot-sdk-go` |
-| .NET | `GitHub.Copilot.SDK` |
-| Rust | `copilot-sdk` (crates.io) |
-| Java | `com.github.copilot:copilot-sdk` |
+| Node.js / TypeScript | `@github/copilot-sdk` (npm) |
+| Python | `github-copilot-sdk` (PyPI) |
+| Go | `github.com/github/copilot-sdk/go` |
+| .NET | `GitHub.Copilot.SDK` (NuGet) |
+| Rust | `github-copilot-sdk` (crates.io) |
+| Java | `com.github:copilot-sdk-java` (Maven) |
 
-All six reached GA simultaneously on June 2. API surface is consistent across languages; the planning and tool-invocation model is identical.
+All six reached GA simultaneously on June 2, 2026. API surface is consistent across languages; the planning and tool-invocation model is identical.
 
 ---
 
@@ -47,21 +47,21 @@ The agent runtime the SDK exposes covers the full loop that makes Copilot useful
 
 **Planning.** The agent receives a task and reasons about the sequence of steps needed before taking any action. You can observe the plan, interrupt it, or constrain the action surface.
 
-**Tool invocation.** The runtime ships with built-in tools: file read and edit, grep, terminal command execution, and web search. You can override any built-in tool with your own implementation, and you can disable tools you don't want the agent to use.
+**Tool invocation.** By default the SDK exposes the [Copilot CLI's first-party tools](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/) — including file read/edit (`edit_file`), `grep`, shell command execution, and web search/fetch. You can override any built-in tool with your own implementation, and you can disable tools you don't want the agent to use.
 
 **File edits.** The agent can read and modify files in a workspace. Edits go through the same review surface as in the Copilot app — the agent proposes, the host application decides whether to apply.
 
 **Streaming.** All agent output streams in real time. You receive incremental tokens as the agent thinks, tool calls as they execute, and file edits as they are staged. Standard event-based API across all languages.
 
-**Multi-turn sessions.** Sessions persist context across turns. You send a task, receive output, send a follow-up, and the agent retains full history. Session state can be serialized and restored.
+**Multi-turn sessions.** [Sessions persist context across turns](https://docs.github.com/en/copilot/how-tos/copilot-sdk/use-copilot-sdk/session-persistence) — named sessions survive restarts and can be resumed from disk, even from a different process or client instance.
 
 ---
 
 ## MCP Server Support
 
-The SDK connects to Model Context Protocol (MCP) servers using the same mechanism as the Copilot app and GitHub Copilot in VS Code.
+The SDK connects to Model Context Protocol (MCP) servers using the same mechanism as the Copilot app and GitHub Copilot in VS Code — you can [register custom tools or connect MCP servers](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/) at session setup.
 
-From the SDK, you configure MCP connections via a `mcp_config.json` profile (the same format used by Antigravity CLI since the Gemini CLI migration). Once connected, any tool exposed by an MCP server is available to the agent alongside the built-in tools.
+MCP connections are configured via an [`mcp-config.json` file](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers) (note the hyphen — this is a different, unrelated file from Antigravity CLI's `mcp_config.json`, though both use a similar `mcpServers` JSON structure; see our [Antigravity migration guide](/builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration/) for that format). Once connected, any tool exposed by an MCP server is available to the agent alongside the built-in tools.
 
 This matters for a specific set of builder use cases:
 
@@ -69,27 +69,29 @@ This matters for a specific set of builder use cases:
 - **CI/CD assistants** — connect to your build pipeline's MCP server, and the agent can triage failures, suggest fixes, and open PRs
 - **Support automation** — connect to a CRM or helpdesk MCP server, and the agent can read tickets, generate responses, and draft code examples
 
-MCP server connections are defined at session initialization and can be swapped per session. There is no hard limit on the number of connected servers documented in the GA release, unlike Databricks Genie Code's [20-tool maximum](/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/).
+MCP server connections are defined at session initialization and can be swapped per session. Neither the [GA changelog post](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/) nor the [MCP server docs](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers) mention a maximum number of connected servers, unlike Databricks Genie Code's [20-tool maximum](/builders-log/databricks-genie-one-agent-bricks-dais-2026-builder-guide/).
 
 ---
 
 ## Authentication Options
 
-The SDK supports three authentication paths:
+The GA release documents [four authentication paths](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/): GitHub OAuth, GitHub Apps, environment tokens, and BYOK.
 
-**GitHub OAuth.** The user signs in with their GitHub account. Suitable for user-facing tools where your users have GitHub accounts. Copilot entitlement is checked against the authenticated user — a user with Copilot Pro gets the Pro model tier; a user without a Copilot subscription is denied.
+**GitHub OAuth.** The user signs in with their GitHub account and your application makes Copilot requests on their behalf, using their own Copilot subscription. Suitable for user-facing tools where your users have GitHub accounts.
 
-**GitHub Apps.** Your application authenticates as a GitHub App with its own installation. Suitable for server-side agent workflows that are not tied to a specific user — CI triage agents, background automation, internal tools. The GitHub App needs `copilot` permissions on its installation.
+**GitHub Apps.** Your application authenticates as a GitHub App with its own installation, making requests on behalf of authorized users or the installation itself. Suitable for server-side agent workflows that are not tied to a specific user — CI triage agents, background automation, internal tools.
 
-**Bring Your Own Key (BYOK).** Bypass GitHub's Copilot entitlement system entirely. You supply your own API key for a supported model provider. Useful if you want the SDK's orchestration but prefer to use a model or pricing arrangement outside Copilot's standard tiers.
+**Environment tokens.** A GitHub token supplied via environment variable, used for server-to-server setups such as CI runners.
 
-BYOK is the option that makes this SDK usable without Copilot subscriptions in your user base — though in that mode you lose GitHub-specific features like issue context and repository awareness that depend on Copilot's integration.
+**Bring Your Own Key (BYOK).** Bypass GitHub's Copilot authentication entirely and [supply your own API key](https://github.com/github/copilot-sdk/blob/main/docs/auth/byok.md) for a supported model provider — GitHub's changelog names OpenAI, Microsoft Foundry, Anthropic, and other providers. Useful if you want the SDK's orchestration but prefer a model or billing arrangement outside Copilot's standard tiers.
+
+A [GitHub Copilot subscription is required](https://github.com/github/copilot-sdk/blob/main/docs/auth/byok.md) to use the SDK via OAuth or GitHub Apps; BYOK is the option that makes the SDK usable without Copilot subscriptions in your user base.
 
 ---
 
 ## Observability: OpenTelemetry
 
-The SDK emits OpenTelemetry traces for every agent action: plan steps, tool invocations, file edits, model calls, latency, and token usage. This is a production-grade observability story from day one.
+The SDK [emits OpenTelemetry traces](https://docs.github.com/en/copilot/how-tos/copilot-sdk/observability/opentelemetry) with W3C trace context propagation across CLI startup, JSON-RPC calls, session operations, and tool execution — including per-call token counts and LLM latency histograms via GenAI semantic-convention span attributes.
 
 If you are already running an OpenTelemetry collector (Grafana, Honeycomb, Datadog, AWS X-Ray), you configure the SDK's OTLP exporter and your existing dashboards pick up agent traces with no additional instrumentation.
 
@@ -101,7 +103,7 @@ For teams building internal tools that go through a compliance or audit process,
 
 The SDK fits tightly into a specific category of tools. These are the use cases that show up most often in the coverage since GA:
 
-**CI/CD triage agents.** The agent is triggered on a failing build. It reads the build log (via MCP or direct file access), identifies the error, searches the relevant code, and opens a PR with a fix or a GitHub issue with a root-cause summary. Teams report this cuts the average time-to-triage on flaky tests from hours to under ten minutes.
+**CI/CD triage agents.** The agent is triggered on a failing build. It reads the build log (via MCP or direct file access), identifies the error, searches the relevant code, and opens a PR with a fix or a GitHub issue with a root-cause summary — the pattern behind the SDK's [issue-triage GitHub Actions workflow](https://github.com/github/copilot-sdk).
 
 **Release note generators.** Given a commit range and a target audience, the agent reads diffs, commit messages, and linked issues, then produces structured release notes in the format your team uses. Configurable via system prompt; the agent handles the repetitive parts of release communication.
 
@@ -138,9 +140,9 @@ The Copilot SDK has a clear design center. It will be a poor fit when:
 
 ## Where to Start
 
-The official SDK documentation lives at [github.com/github/copilot-sdk](https://github.com/github/copilot-sdk) (check the SDK tab, not the Copilot app tab). The `@github/copilot-sdk` npm package and `github-copilot-sdk` PyPI package are the most-documented starting points.
+The official SDK source and docs live at [github.com/github/copilot-sdk](https://github.com/github/copilot-sdk), with the [full getting-started guide on docs.github.com](https://docs.github.com/en/copilot/how-tos/copilot-sdk/getting-started). The `@github/copilot-sdk` npm package and `github-copilot-sdk` PyPI package are the most-documented starting points.
 
-For MCP configuration format, the `mcp_config.json` standard used here is the same one adopted by Antigravity CLI — [our Antigravity migration guide](/builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration/) covers the format in detail.
+For MCP configuration, see the [add-MCP-servers docs](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers) (`~/.copilot/mcp-config.json`); if you're migrating from Antigravity CLI's differently-named `mcp_config.json`, [our Antigravity migration guide](/builders-log/gemini-cli-dead-june-18-antigravity-cli-agy-migration/) covers that format.
 
 ---
 

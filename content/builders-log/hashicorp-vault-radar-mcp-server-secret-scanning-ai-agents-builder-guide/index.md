@@ -5,6 +5,7 @@ date: 2026-06-17
 slug: hashicorp-vault-radar-mcp-server-secret-scanning-ai-agents-builder-guide
 tags: ["hashicorp", "vault-radar", "mcp", "secrets-management", "security", "devsecops", "agent-workflows"]
 categories: ["builders-log"]
+sources_audited: 2026-07-30
 ---
 
 Every secrets management workflow has a blind spot: the secrets that aren't managed yet. You can run Vault perfectly and still have credentials scattered across old GitHub commits, Slack messages, Confluence pages, and S3 buckets. Vault Radar exists to find those. The Vault Radar MCP Server makes those findings queryable by an AI agent — without the agent ever seeing the secrets themselves.
@@ -15,27 +16,29 @@ This guide covers what the Vault Radar MCP Server does, how to deploy it, and ho
 
 ## What Vault Radar Is
 
-Vault Radar is HashiCorp's automated secret detection platform. It scans your data sources — code repositories, communication tools, cloud storage — and identifies unmanaged credentials, personally identifiable information (PII), and non-inclusive language.
+Vault Radar is [HashiCorp's automated secret detection platform](https://developer.hashicorp.com/hcp/docs/vault-radar). It scans your data sources — code repositories, communication tools, cloud storage — and identifies unmanaged credentials, personally identifiable information (PII), and non-inclusive language.
 
-**Detection categories:**
+**Detection categories** ([per HashiCorp's own description](https://developer.hashicorp.com/hcp/tutorials/get-started-hcp-vault-radar/vault-radar-introduction)):
 
-- **Secrets** — API keys, tokens, passwords, certificates, private keys
-- **PII** — Social security numbers, credit card numbers, personally identifiable data
-- **Non-inclusive language** — Flagged terms in codebases and documentation
+- **Secrets** — usernames, passwords, and keys
+- **PII** — personally identifiable data such as social security or credit card numbers
+- **Non-inclusive language (NIL)** — flagged terms such as race or gender attributes
 
 **Data sources Vault Radar scans:**
 
 | Category | Sources |
 |----------|---------|
-| Version control | GitHub, GitLab, Bitbucket, Azure DevOps |
-| Communication | Slack, Microsoft Teams, Confluence, Jira |
-| Cloud storage | AWS S3, AWS EC2, AWS EBS (beta) |
-| Cloud config | AWS Parameter Store (beta) |
-| Containers | Docker images (beta) |
+| Version control | [GitHub, GitLab, Bitbucket, Azure DevOps](https://developer.hashicorp.com/hcp/tutorials/get-started-hcp-vault-radar/vault-radar-introduction) |
+| Communication | [Slack, Confluence, Jira](https://www.hashicorp.com/en/blog/vault-radar-2025-recap-expanding-visibility-deepening-integration-simplifying-security) |
+| Cloud storage | [AWS S3, AWS EC2 (beta), AWS EBS (beta)](https://www.hashicorp.com/en/blog/hcp-vault-radar-begins-limited-beta) |
+| Cloud config | [AWS Parameter Store (beta)](https://www.hashicorp.com/en/blog/hcp-vault-radar-begins-limited-beta) |
+| Containers | [Docker images (beta, via CLI)](https://developer.hashicorp.com/hcp/docs/vault-radar/cli/scan/docker-image) |
 
-**Scanning frequency**: Initial scan when a source is added, continuous scans on new commits, pull request scans, and deep historical scans that surface both active and inactive secrets.
+Microsoft Teams integration exists but is a notification/alerting channel, not a scanned data source — it isn't in the table above.
 
-**Activeness checks**: For certain secret types, Vault Radar can validate whether a detected credential is currently valid — not just that it looks like a secret, but that it's live and exploitable.
+**Scanning frequency**: [Vault Radar scans connected data sources when initially added, when there is a new commit, and for new pull requests](https://developer.hashicorp.com/hcp/tutorials/get-started-hcp-vault-radar/vault-radar-introduction).
+
+**Activeness checks**: For [certain secret types, Vault Radar can flag whether a detected credential is "active"](https://developer.hashicorp.com/hcp/docs/vault-radar/remediate-secrets/active) — a live, currently valid credential rather than just a string that matches a secret pattern — so remediation can be prioritized.
 
 The data is collected in HCP (HashiCorp Cloud Platform), and the MCP server exposes it to agents.
 
@@ -43,7 +46,7 @@ The data is collected in HCP (HashiCorp Cloud Platform), and the MCP server expo
 
 ## The 4 Tools
 
-The Vault Radar MCP Server exposes exactly four tools, each targeting a different view of the HCP Vault Radar data model:
+[The Vault Radar MCP Server exposes exactly four tools](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview), each targeting a different view of the HCP Vault Radar data model:
 
 | Tool | What it returns |
 |------|----------------|
@@ -60,21 +63,19 @@ This is the right design. An agent that can enumerate your secret sprawl without
 
 ## Architecture
 
-**Transport**: STDIO only. The server runs as a local Docker container and communicates via standard input/output — no network port, no remote access.
+**Transport**: [STDIO only](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/security). The server runs as a local Docker container and communicates via standard input/output — no network port, no remote access.
 
-**Security implication**: This design eliminates the most common MCP server attack vectors (token interception, session hijacking, cross-origin requests). The tradeoff is that remote or headless deployments need to run the container on the same machine as the MCP client.
+**Security implication**: [HashiCorp says this design prevents common attack vectors such as token pass-through or session hijacking](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/security). The tradeoff is that remote or headless deployments need to run the container on the same machine as the MCP client.
 
-**Stateless**: No data is persisted between requests. Each tool call queries HCP live.
-
-**Rate limit**: 5 requests per second, burst of 10. Configurable via `MCP_RATE_LIMIT_SESSION` with `rps:burst` format. Sufficient for interactive diagnosis; high-volume batch scanning should use the Vault Radar API directly.
+**Stateless**: [No data is persisted between requests](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/security). Each tool call queries HCP live. Vault Radar itself never stores discovered secret values — [HashiCorp states it is "impossible for secrets to leak through Vault Radar"](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/security) because it doesn't retain them in the first place.
 
 ---
 
 ## Prerequisites
 
-- Docker Engine v20.10.21+ or Docker Desktop v4.14.0+
+- [Docker Engine v20.10.21+ or Docker Desktop v4.14.0+](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/deploy)
 - An HCP account with Vault Radar enabled
-- A service principal with **viewer** role on your HCP project (read-only; this prevents any accidental configuration changes through the agent)
+- [A service principal with **viewer** role on your HCP project](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/deploy) (read-only; this prevents any accidental configuration changes through the agent)
 
 ---
 
@@ -92,7 +93,7 @@ Viewer-only scope is intentional. The MCP server cannot create, modify, or delet
 
 **Step 2 — Configure your MCP client**
 
-Create `mcp.json` (or add to your existing MCP configuration):
+Create `mcp.json` (or add to your existing MCP configuration). [HashiCorp's documented example for Claude Desktop](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/deploy) looks like this:
 
 ```json
 {
@@ -101,26 +102,23 @@ Create `mcp.json` (or add to your existing MCP configuration):
       "command": "docker",
       "args": [
         "run", "--rm", "-i",
-        "-e", "HCP_PROJECT_ID",
-        "-e", "HCP_CLIENT_ID",
-        "-e", "HCP_CLIENT_SECRET",
-        "hashicorp/vault-radar-mcp-server:latest"
-      ],
-      "env": {
-        "HCP_PROJECT_ID": "your-project-id",
-        "HCP_CLIENT_ID": "your-client-id",
-        "HCP_CLIENT_SECRET": "your-client-secret"
-      }
+        "-e", "HCP_PROJECT_ID=<HCP Project ID>",
+        "-e", "HCP_CLIENT_ID=<HCP Service Principal Client ID>",
+        "-e", "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
+        "hashicorp/vault-radar-mcp-server:<tag>"
+      ]
     }
   }
 }
 ```
 
+VS Code uses a different top-level structure (`"mcp": { "servers": { ... } }`) with the same `docker run` arguments.
+
 **Step 3 — Verify**
 
 Ask your agent: "What data sources does Vault Radar have configured?" If the server is connected, it calls `query_vault_radar_data_sources` and returns your inventory.
 
-**Alternative deployment**: The server image is also available on AWS Marketplace (free) for Amazon ECS deployments.
+**Alternative deployment**: [The server image is also available on AWS Marketplace at no software charge](https://aws.amazon.com/marketplace/pp/prodview-6ubhgor55yzg4) (standard AWS infrastructure costs still apply) for Amazon ECS or ECS Anywhere deployments.
 
 ---
 
@@ -154,7 +152,7 @@ Vault Radar MCP                    Vault MCP
 ─────────────────                  ─────────
 Detect unmanaged secrets     →     Read/write managed secrets
 Enumerate exposed credentials →    Rotate compromised credentials
-Identify leaked tokens        →    Revoke and replace via PKI
+Identify leaked tokens        →    Issue a replacement via PKI
 Assess risk landscape         →    Confirm vault coverage
 ```
 
@@ -162,7 +160,7 @@ Assess risk landscape         →    Confirm vault coverage
 
 1. **Vault Radar MCP** surfaces a leaked AWS credential in a GitHub commit — `query_vault_radar_events` returns severity, source, and resource context
 2. The agent identifies the credential type from `list_vault_radar_secret_types` — it's an AWS access key
-3. **Vault MCP** checks whether a current version of that credential is stored in Vault — `kv_read_secret` on the relevant path
+3. **Vault MCP** checks whether a current version of that credential is stored in Vault — [`read_secret`](https://developer.hashicorp.com/vault/docs/mcp-server/reference) on the relevant path
 4. If it's there, the agent uses the Vault MCP to verify rotation status and PKI tools to issue a replacement certificate if applicable
 5. Remediation log: the agent outputs a structured report of what was found, what was verified, and what was acted on
 
@@ -172,13 +170,13 @@ This is the workflow that previously required a human security engineer at every
 
 ## Limitations
 
-**Beta status**: The server is in preview (version 0.x). HashiCorp explicitly advises against production use. APIs, tool names, and behavior may change without notice.
+**Beta status**: [The server is a beta release](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview), and HashiCorp explicitly discourages production use. APIs, tool names, and behavior may change without notice.
 
 **STDIO-only transport**: Headless CI environments and remote deployments require the container to run on the same host as the MCP client. No remote HTTP transport is available.
 
 **Read-only**: The server exposes findings only. Suppression, acknowledgment, and remediation workflows must go through the Vault Radar dashboard or API directly — or through a paired Vault MCP session.
 
-**HCP-only**: Vault Radar runs on HashiCorp Cloud Platform. Self-managed Vault Enterprise installations are not supported by this MCP server — Vault Radar is a separate HCP product, not a feature of self-hosted Vault.
+**HCP-only**: [Vault Radar runs on HashiCorp Cloud Platform](https://developer.hashicorp.com/hcp/docs/vault-radar). Self-managed Vault Enterprise installations are not supported by this MCP server — Vault Radar is a separate HCP product, not a feature of self-hosted Vault.
 
 **Local scanning requires CLI**: The MCP server queries HCP Vault Radar data. If you need to scan local files or directories not connected to HCP, you need the separate Vault Radar CLI — the MCP server cannot initiate new scans.
 
@@ -205,7 +203,6 @@ For teams already running HashiCorp infrastructure: if you have Vault MCP and Va
 - [ ] Verify connection: ask the agent to list data sources
 - [ ] Run a baseline query: "What are the highest severity events in Vault Radar right now?"
 - [ ] Combine with Vault MCP Server for cross-tool detection-to-remediation workflows
-- [ ] Review the MCP rate limit (5 rps default) — adjust with `MCP_RATE_LIMIT_SESSION` if needed
 - [ ] Treat all findings as beta output: verify critical findings against the Vault Radar dashboard before acting
 - [ ] Plan for the production gap: keep the Vault Radar dashboard and API access for suppression and acknowledgment workflows the MCP server can't handle yet
 

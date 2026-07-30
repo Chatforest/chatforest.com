@@ -1,24 +1,24 @@
 # MongoDB MCP Server: Database Operations for AI Agents (Builder Guide)
 
-> MongoDB's official MCP server gives AI agents 41+ tools across six categories — CRUD, Atlas cluster management, stream processing, local deployments, Performance Advisor, and auto-embedding generation. Here is what builders need to wire it into their agent workflows.
+> MongoDB's official MCP server gives AI agents 50+ tools across four tool categories — CRUD, Atlas cluster management, stream processing, local deployments, Performance Advisor, and auto-embedding generation. Here is what builders need to wire it into their agent workflows.
 
 
 There is a specific way that AI agents fail at database work. Not spectacularly — the generated code compiles. The queries run. But they run against the wrong schema. They use index patterns from a different version of the driver. They assume field names that were renamed six months ago. The agent was confident, but it was working from training data, not your database.
 
 MongoDB's official MCP Server closes that gap. An AI agent connected to the MongoDB MCP Server can inspect your actual schema before generating a query. It can ask the Atlas Performance Advisor which indexes are slow. It can insert documents with vector embeddings generated automatically, without a separate embedding call. It has access to your database state, not just its memory of what MongoDB databases look like.
 
-With 41+ tools across six categories, this is the most comprehensive database MCP server available — and it shipped GA in March 2026.
+MongoDB's own [tool reference](https://github.com/mongodb-js/mongodb-mcp-server#-supported-tools) currently lists 50+ tools across four tool categories, and the server has been [Generally Available since September 2025](https://www.mongodb.com/products/updates/mongodb-mcp-server-generally-available/).
 
 ---
 
 ## What the MongoDB MCP Server Is
 
-The MongoDB MCP Server (`@mongodb-js/mongodb-mcp-server`) is MongoDB's official MCP server, maintained by MongoDB Inc. It connects AI agents to MongoDB databases — both self-hosted instances and MongoDB Atlas cloud clusters — through six tool categories covering the full database lifecycle: from local development through production performance analysis.
+The MongoDB MCP Server (`@mongodb-js/mongodb-mcp-server`) is MongoDB's official MCP server, maintained by MongoDB Inc. It connects AI agents to MongoDB databases — both self-hosted instances and MongoDB Atlas cloud clusters — through [four tool categories](https://github.com/mongodb-js/mongodb-mcp-server#-supported-tools) covering the full database lifecycle: from local development through production performance analysis, plus a companion [Agent Skills package](https://github.com/mongodb/agent-skills) with expert MongoDB guidance.
 
-**Current status:** Generally Available (GA) since v1.9.0, March 24, 2026. No longer public preview.
+**Current status:** [Generally Available (GA) since September 17, 2025](https://www.mongodb.com/products/updates/mongodb-mcp-server-generally-available/), roughly four months after the [public preview launched in May 2025](https://www.mongodb.com/products/updates/announcing-the-mongodb-mcp-server-public-preview/). GA shipped as v1.0.0; the current release (as of July 2026) is [v1.14.0](https://github.com/mongodb-js/mongodb-mcp-server/releases/tag/v1.14.0). A March 2026 release (v1.9.0) moved the server's lexical/vector search index tooling specifically out of its own public preview — that is a narrower milestone than the server's overall GA date.
 
 **Repository:** [mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server)
-**Stars:** ~1,000 | **Commits:** 770+ | **Release cadence:** Every 1-2 weeks
+**Stars:** 1,080+ | **Commits:** 930+ (as of July 2026 — [check the repo](https://github.com/mongodb-js/mongodb-mcp-server) for current counts) | **Release cadence:** Roughly every 2-4 weeks for stable releases
 **Language:** TypeScript | **License:** Apache 2.0
 **npm:** `@mongodb-js/mongodb-mcp-server` (also: `mongodb-mcp-server`)
 
@@ -41,7 +41,7 @@ This is the practical value: not that the agent becomes more intelligent about M
 
 ## Architecture: How It Runs
 
-The MongoDB MCP Server runs as a local process — either via `npx` or Docker. It connects to your MongoDB instance over the standard MongoDB driver connection string, and to MongoDB Atlas over the Atlas API (if you provide API credentials). There is no hosted endpoint; you run it yourself.
+The MongoDB MCP Server most commonly runs as a local process — either via `npx` or Docker — connecting to your MongoDB instance over the standard MongoDB driver connection string, and to MongoDB Atlas over the Atlas API (if you provide API credentials). A MongoDB-hosted alternative for Atlas also now exists (see Known Limitations below), but self-hosting via `npx`/Docker remains the primary, most flexible path and is what the rest of this guide covers.
 
 **Transport options:**
 
@@ -90,13 +90,13 @@ claude mcp add mongodb \
 }
 ```
 
-### Guided setup (new in GA)
+### Guided setup
 
 ```bash
 npx mongodb-mcp-server setup
 ```
 
-Walks through client selection, read-only mode, connection string, and Atlas credentials. Creates the config file automatically and shows you where it was written.
+Added in [v1.9.0 (March 2026)](https://github.com/mongodb-js/mongodb-mcp-server/releases/tag/v1.9.0). Walks through client selection, read-only mode, connection string, and Atlas credentials. Creates the config file automatically and shows you where it was written.
 
 ### Docker
 
@@ -111,54 +111,51 @@ docker run --rm -i \
 | Flag / Env Var | What It Does |
 |---|---|
 | `--readOnly` / `MDB_MCP_READ_ONLY` | Disables all write tools. Official examples now include this by default. |
-| `MDB_MCP_MAX_TIME_MS` | Sets `maxTimeMS` on all `find()` and `aggregate()` calls — protects against runaway queries. |
+| `MDB_MCP_MAX_TIME_M_S` / `--maxTimeMS` | Sets `maxTimeMS` on all `find()` and `aggregate()` calls — protects against runaway queries. Note the [env var's unusual underscore placement](https://github.com/mongodb-js/mongodb-mcp-server#-configuration-options) (`MAX_TIME_M_S`, not `MAX_TIME_MS`) — the CLI flag `--maxTimeMS` is the more intuitive way to set this. |
 | `MDB_MCP_IDLE_TIMEOUT_MS` | Auto-disconnects idle clients. Helps with connection accumulation. |
 | `--disableTools` | Comma-separated list of tools to disable. Useful for stripping Atlas tools in self-hosted setups. |
 | `--transport` | `stdio` (default) or `http`. |
+| `MDB_MCP_VOYAGE_API_KEY` / `--voyageApiKey` | API key for the [Voyage AI embeddings service](https://github.com/mongodb-js/mongodb-mcp-server#-configuration-options) — required for `insert-many`'s automatic embedding generation (Pattern 3 below). |
 
 ---
 
-## The Six Tool Categories
+## The Tool Categories
 
-### 1. Database Operations (21 tools) — the core
+Tool names and counts below are taken directly from the server's own [tool reference](https://github.com/mongodb-js/mongodb-mcp-server#-supported-tools) as of July 2026. This is a fast-moving repo with stable releases roughly every 2-4 weeks, so treat exact counts as a snapshot rather than a permanent number — check the tool reference link for the current list.
+
+### 1. Database Operations (25 tools) — the core
 
 Everything you need for everyday database work:
 
-**Query tools:** `find`, `aggregate`, `count` — full MongoDB query syntax, aggregation pipelines, document counting.
+**Query tools:** `find`, `aggregate`, `aggregate-db`, `count` — full MongoDB query syntax, aggregation pipelines, document counting.
 
-**Write tools:** `insert-many`, `update-many`, `delete-many` — bulk CRUD. `insert-many` now automatically generates embeddings for fields with vector search indexes (see Pattern 3 below).
+**Write tools:** `insert-many`, `update-many`, `delete-many` — bulk CRUD. `insert-many` can automatically generate embeddings for fields with vector search indexes if you configure a Voyage AI API key (see Pattern 3 below).
 
 **Schema management:** `create-collection`, `drop-collection`, `rename-collection`, `drop-database`. Important: `drop-database` exists. Read-only mode and elicitation exist for this reason.
 
-**Index tools:** `create-index`, `drop-index`, `collection-indexes` — including vector search indexes via a unified tool.
+**Index tools:** `create-index`, `drop-index`, `collection-indexes`.
 
-**Introspection:** `collection-schema`, `collection-storage-size`, `db-stats` — the tools that let the agent understand your data before acting on it.
+**Introspection:** `collection-schema`, `collection-storage-size`, `db-stats`, `list-collections`, `list-databases` — the tools that let the agent understand your data before acting on it.
 
 **Diagnostics:** `explain` (query plan analysis), `mongodb-logs` (database log access), `export` (data export).
 
-**Connection:** `connect`, `switch-connection` — multi-database session management.
+**Connection:** `connect`, `disconnect`, `list-connections` — multi-database session management.
 
-### 2. Atlas Cluster Management (13 tools)
+### 2. Atlas Tools (21 tools)
 
-For teams on MongoDB Atlas, these tools manage cloud infrastructure without leaving your editor:
+For teams on MongoDB Atlas, this category covers both cloud infrastructure management and real-time stream processing, all in one tool group per the server's [own categorization](https://github.com/mongodb-js/mongodb-mcp-server#-supported-tools):
 
 - **Organization / Project:** `atlas-list-orgs`, `atlas-list-projects`, `atlas-create-project`
-- **Clusters:** `atlas-list-clusters`, `atlas-inspect-cluster`, `atlas-connect-cluster`, `atlas-create-free-cluster`
+- **Clusters:** `atlas-list-clusters`, `atlas-inspect-cluster`, `atlas-connect-cluster`, `atlas-create-free-cluster`, `atlas-create-cluster`, `atlas-upgrade-cluster`, `atlas-pause-resume-cluster`, `atlas-load-sample-dataset`
 - **Users:** `atlas-list-db-users`, `atlas-create-db-user`
 - **Access:** `atlas-inspect-access-list`, `atlas-create-access-list`
 - **Monitoring:** `atlas-list-alerts`
-- **Performance Advisor:** `atlas-get-performance-advisor` — suggested indexes, drop-index recommendations, schema advice, slow query identification. The first database MCP server to proactively help optimize performance, not just execute queries.
+- **Performance Advisor:** `atlas-get-performance-advisor` — suggested indexes, drop-index recommendations, schema advice, and a sample of recent slow query logs.
+- **Stream Processing** (added in [v1.9.0, March 2026](https://github.com/mongodb-js/mongodb-mcp-server/releases/tag/v1.9.0)): `atlas-streams-build`, `atlas-streams-discover`, `atlas-streams-manage`, `atlas-streams-teardown` — create workspaces/connections/processors, inspect and diagnose processor health, start/stop and reconfigure, and tear down Kafka/S3/PrivateLink stream pipelines.
 
-### 3. Atlas Stream Processing (4 tools)
+Atlas tools require Atlas API service-account credentials (`MDB_MCP_API_CLIENT_ID` / `MDB_MCP_API_CLIENT_SECRET`) — they're unavailable otherwise.
 
-New in v1.8.1–v1.9.0. Tools for real-time streaming pipeline management on Atlas Stream Processing:
-
-- **`atlas-streams-build`** — Create workspaces, connections (Kafka, MongoDB Cluster, S3, PrivateLink), and processors.
-- **`atlas-streams-discover`** — Inspect resources and diagnose processor health.
-- **`atlas-streams-manage`** — Start/stop processors, modify configurations.
-- **`atlas-streams-teardown`** — Clean up stream processing resources.
-
-### 4. Atlas Local Deployments (4 tools)
+### 3. Atlas Local Deployments (4 tools)
 
 Spin up local MongoDB instances powered by the `mongodb-atlas-local` Docker image — no separate MongoDB installation, no Atlas account, no signup:
 
@@ -167,24 +164,24 @@ Spin up local MongoDB instances powered by the `mongodb-atlas-local` Docker imag
 - `atlas-local-connect-deployment` — Connects to a local cluster
 - `atlas-local-delete-deployment` — Tears down a local cluster
 
-### 5. Knowledge Search (2 tools)
+### 4. MongoDB Assistant Tools (2 tools)
 
 - **`list-knowledge-sources`** — Discover available MongoDB knowledge bases.
 - **`search-knowledge`** — Natural language queries against MongoDB documentation and knowledge sources. Useful for agents that need to look up correct syntax rather than rely on training memory.
 
-### 6. Agent Skills Package (separate install)
+### 5. Agent Skills Package (separate install)
 
-The [mongodb/agent-skills](https://github.com/mongodb/agent-skills) repository (98 stars, Apache 2.0) bundles **7 specialized skills** that transform coding agents into MongoDB specialists:
+MongoDB also publishes a companion [mongodb/agent-skills](https://github.com/mongodb/agent-skills) repository (165+ stars, Apache 2.0) bundling **7 specialized skills**, per the repo's own [`skills/` directory](https://github.com/mongodb/agent-skills/tree/main/skills):
 
-1. **Connection management** — best practices for connection strings and pool sizing
-2. **Schema design** — heuristics to avoid over-normalization; when to embed vs. reference
-3. **Indexing strategy** — compound index design, covered queries, index intersection
-4. **Query patterns** — aggregation pipeline optimization, projection usage
-5. **Performance optimization** — profiler interpretation, explain plan reading
-6. **Vector search / RAG** — index setup, embedding field naming, query construction
-7. **Operational safeguards** — anti-patterns for production MongoDB deployments
+1. **`mongodb-mcp-setup`** — guides users through configuring MCP server connection credentials
+2. **`mongodb-connection`** — optimizes connection pool/timeout configuration across driver languages
+3. **`mongodb-schema-design`** — data modeling patterns and anti-patterns (embed vs. reference, unbounded arrays, the 16MB document limit)
+4. **`mongodb-natural-language-querying`** — generates read-only `find`/aggregation queries from natural language
+5. **`mongodb-query-optimizer`** — indexing and slow-query optimization, using `collection-indexes`/`explain` or the Atlas Performance Advisor when available
+6. **`mongodb-search-and-ai`** — Atlas Search (lexical), Vector Search (semantic), and Hybrid Search index/query design
+7. **`mongodb-atlas-stream-processing`** — Atlas Stream Processing workspace, connection, and processor management
 
-Available as one-click plugins for **Claude Code, Cursor, Gemini CLI, and VS Code** — each plugin bundles both the MCP Server and Agent Skills together, so you get live database access plus expert coding guidance from a single install.
+As of July 2026 these ship as two separate plugins rather than one: **`mongodb-atlas`** connects to a MongoDB-hosted Atlas MCP server over OAuth (available for Claude, Cursor, Codex, GitHub Copilot, and Grok), while **`mongodb`** runs the MCP server locally against a self-managed MongoDB deployment (available for Claude, Cursor, Codex, Gemini CLI, and Copilot CLI) — see the [agent-skills README](https://github.com/mongodb/agent-skills#readme) for the current per-platform install list, since it varies by plugin and changes with each release.
 
 ---
 
@@ -220,13 +217,13 @@ The agent calls:
 
 ### Pattern 3: Automatic embedding generation for RAG pipelines
 
-This is the most significant quality-of-life improvement in the GA release. When you insert documents into a collection that has a vector search index configured, the `insert-many` tool detects the index and automatically generates Voyage AI embeddings during insertion — no separate embedding API call, no pre-processing step.
+This is one of the most useful quality-of-life features for RAG builders. When you insert documents into a collection that has a vector search index configured, the `insert-many` tool can detect the index and automatically generate [Voyage AI](https://docs.voyageai.com/docs/embeddings) embeddings during insertion — no separate embedding API call, no pre-processing step. This requires setting a `MDB_MCP_VOYAGE_API_KEY` (see [configuration options](https://github.com/mongodb-js/mongodb-mcp-server#-configuration-options)) — without it, the tool falls back to inserting documents without embeddings.
 
 > "Insert these 50 product descriptions into the `products` collection. The collection already has a vector search index on the `description_embedding` field."
 
 The agent calls `insert-many`, the server detects the vector search index on `description_embedding`, generates embeddings via Voyage AI for each document, and inserts them with embeddings populated.
 
-**Builder tip:** This removes the most tedious step in RAG pipeline setup. But verify the embedding model matches your search configuration — the server uses Voyage AI models by default, and your vector search index must be configured for the same dimensionality.
+**Builder tip:** This removes the most tedious step in RAG pipeline setup, but only once you've set the Voyage AI API key. Also verify the embedding model matches your search configuration — the server supports several [Voyage models](https://docs.voyageai.com/docs/embeddings) (e.g. `voyage-3-large`, `voyage-3.5`), and your vector search index must be configured for the same dimensionality.
 
 ---
 
@@ -303,19 +300,22 @@ Use read-only mode on production databases. Use writable mode on local dev clust
 
 ### Elicitation for destructive operations
 
-If your MCP client supports MCP elicitation (Claude for Desktop does), the following operations prompt for confirmation before executing:
+If your MCP client supports MCP elicitation (Claude for Desktop does), the following operations prompt for confirmation before executing by default, per the server's [configuration options](https://github.com/mongodb-js/mongodb-mcp-server#-configuration-options):
 
 - `drop-database`
 - `drop-collection`
+- `drop-index`
 - `delete-many`
 - `atlas-create-db-user`
 - `atlas-create-access-list`
+- `atlas-streams-manage`
+- `atlas-streams-teardown`
 
 You can configure which tools require confirmation via `confirmationRequiredTools`. If your client doesn't support elicitation, these tools execute without confirmation — another reason to use read-only mode on production.
 
 ### Connection flooding — mitigate under extended sessions
 
-Issue [#936](https://github.com/mongodb-js/mongodb-mcp-server/issues/936) documents connection accumulation during long sessions. Connections can grow from ~700 to 3,000+ over an extended session.
+Issue [#936](https://github.com/mongodb-js/mongodb-mcp-server/issues/936) documents connection accumulation during long sessions — one reporter saw their cluster's connection count "jump from 700~ connections into 3000~" over the course of a day. The issue was closed in May 2026 without a dedicated code fix landing; the maintainers' guidance in the thread was to tune the settings below.
 
 Mitigation:
 
@@ -332,21 +332,21 @@ Set `maxPoolSize` in the connection string, `maxIdleTimeMS` for pool cleanup, an
 
 ### Node.js version compatibility
 
-Requires Node.js 20.19.0+, 22.12.0+, or 23+. Node.js versions between 20.19 and 22.12 have OIDC-related crashes ([#718](https://github.com/mongodb-js/mongodb-mcp-server/issues/718)). Check your Node version before installing.
+As of July 2026, the server's [`package.json`](https://github.com/mongodb-js/mongodb-mcp-server/blob/main/package.json) requires Node.js `^20.19.0 || ^22.13.0 || >= 24.0.0`. The README also flags that [Node 20.x support is deprecated](https://github.com/mongodb-js/mongodb-mcp-server#prerequisites) and will be removed in a future release, recommending 22.13+ instead. Separately, early Node 22 builds below 22.12.0 hit an ESM/CJS interop crash in the OIDC plugin dependency ([#718](https://github.com/mongodb-js/mongodb-mcp-server/issues/718)) — that was resolved by upgrading Node, not a server code change. Check your Node version before installing.
 
 ---
 
 ## Known Limitations
 
-**No hosted endpoint.** No `mcp.mongodb.com`. You run the server locally via `npx` or Docker. There's a feature request open ([#641](https://github.com/mongodb-js/mongodb-mcp-server/issues/641)) but no announced timeline.
+**Self-hosting is still the primary model, but a hosted Atlas option now exists.** For most of GA, you ran the server yourself via `npx` or Docker, and a feature request for a MongoDB-hosted remote endpoint stayed open with no timeline ([#641](https://github.com/mongodb-js/mongodb-mcp-server/issues/641)). As of the [agent-skills plugin split](https://github.com/mongodb/agent-skills#readme), MongoDB now also offers a **`mongodb-atlas`** plugin that connects to a MongoDB-hosted Atlas MCP server over OAuth — no local process to run. If you're on self-managed MongoDB (Community/Enterprise Advanced) or want the traditional local setup, use the `mongodb`/self-hosted plugin or the base `npx`/Docker install described above instead.
 
 **Atlas-only for Performance Advisor and Stream Processing.** The Performance Advisor requires an Atlas cluster. Self-hosted MongoDB deployments don't have access to `atlas-get-performance-advisor`. Use `explain` as a substitute.
 
-**Aggregation on views fails in some cluster configurations.** Issue [#878](https://github.com/mongodb-js/mongodb-mcp-server/issues/878) — the aggregate tool fails on views when the cluster has search index permissions, due to pre-validation calling `$listSearchIndexes`. Edge case, but blocks some view-based workflows.
+**Aggregation on views can fail for `$vectorSearch` pipelines.** Issue [#878](https://github.com/mongodb-js/mongodb-mcp-server/issues/878) — running a `$vectorSearch` aggregation against a view can fail with `"$listSearchIndexes is only valid as the first stage in a pipeline"` because the tool pre-validates filter fields by calling `getSearchIndexes` against the view. Reported as still unresolved by the reporter as of the issue's last activity; closed by MongoDB as not-planned. Edge case, but blocks some view-based vector search workflows.
 
-**Framework integration issues.** LangChain's `MultiServerMCPClient` and OpenAI Codex have reported session lifecycle issues with the server ([#974](https://github.com/mongodb-js/mongodb-mcp-server/issues/974), [#968](https://github.com/mongodb-js/mongodb-mcp-server/issues/968)). Native MCP clients (Claude Desktop, Claude Code, Cursor) work correctly.
+**Framework integration issues.** LangChain's `MultiServerMCPClient` and OpenAI Codex have reported session-exit issues with the server ([#974](https://github.com/mongodb-js/mongodb-mcp-server/issues/974), [#968](https://github.com/mongodb-js/mongodb-mcp-server/issues/968)). Both were closed as not-planned; a community-submitted fix for the LangChain issue ([PR #979](https://github.com/mongodb-js/mongodb-mcp-server/pull/979)) was not merged, so client code needs to handle the resulting `BrokenResourceError` itself. Native MCP clients (Claude Desktop, Claude Code, Cursor) have not reported the same issue.
 
-**Auto-embedding requires Voyage AI.** The automatic embedding generation in `insert-many` uses Voyage AI models. Your Atlas vector search index must be dimensioned for the Voyage model output. If you're using a different embedding provider, you'll still need to pre-generate embeddings before insertion.
+**Auto-embedding requires a Voyage AI API key.** The automatic embedding generation in `insert-many` uses [Voyage AI](https://docs.voyageai.com/docs/embeddings) models and needs `MDB_MCP_VOYAGE_API_KEY` configured — it's not on by default. Your vector search index must also be dimensioned for the Voyage model output. If you're using a different embedding provider, you'll still need to pre-generate embeddings before insertion.
 
 ---
 
@@ -355,9 +355,9 @@ Requires Node.js 20.19.0+, 22.12.0+, or 23+. Node.js versions between 20.19 and 
 Before going live with the MongoDB MCP Server in an agent workflow:
 
 - [ ] Install with `--readOnly` on any connection to production data
-- [ ] Set `MDB_MCP_MAX_TIME_MS` to protect against runaway queries
+- [ ] Set `--maxTimeMS` (env var `MDB_MCP_MAX_TIME_M_S`) to protect against runaway queries
 - [ ] Set `MDB_MCP_IDLE_TIMEOUT_MS` and connection string pool limits to mitigate connection flooding
-- [ ] Verify your Node.js version: 20.19.0+, 22.12.0+, or 23+
+- [ ] Verify your Node.js version meets the [current requirement](https://github.com/mongodb-js/mongodb-mcp-server/blob/main/package.json): `^20.19.0 || ^22.13.0 || >= 24.0.0` (20.x is deprecated — prefer 22.13+)
 - [ ] Use `npx mongodb-mcp-server setup` for guided configuration if uncertain
 - [ ] Install the [Agent Skills package](https://github.com/mongodb/agent-skills) alongside the MCP Server for expert-level code quality
 - [ ] For Atlas workflows: create a least-privilege service account (not personal credentials)
@@ -365,7 +365,7 @@ Before going live with the MongoDB MCP Server in an agent workflow:
 - [ ] Verify your vector search index dimensionality matches Voyage AI if using auto-embedding
 - [ ] Consider disabling unused tool categories via `--disableTools` to reduce agent tool count
 - [ ] For production Atlas: use `atlas-get-performance-advisor` as part of your regular monitoring workflow
-- [ ] If using LangChain or OpenAI Codex: check open issues #974 and #968 for current workarounds
+- [ ] If using LangChain or OpenAI Codex: check issues [#974](https://github.com/mongodb-js/mongodb-mcp-server/issues/974) and [#968](https://github.com/mongodb-js/mongodb-mcp-server/issues/968) — both closed as not-planned, but the workarounds discussed in the threads still apply
 
 ---
 

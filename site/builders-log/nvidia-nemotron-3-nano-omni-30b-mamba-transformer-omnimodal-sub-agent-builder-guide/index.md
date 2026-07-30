@@ -1,11 +1,11 @@
-# NVIDIA Nemotron 3 Nano Omni: A 3B-Active Omnimodal Sub-Agent That Runs on Any GPU — Builder Guide
+# NVIDIA Nemotron 3 Nano Omni: A 3B-Active Omnimodal Sub-Agent for Single-GPU Deployment — Builder Guide
 
 > Nemotron 3 Nano Omni is a 30B Mamba-Transformer MoE model with only 3B active parameters per token, designed as a multimodal perception sub-agent. It natively processes text, image, video, and audio in a single model. Available free on Hugging Face and OpenRouter.
 
 
 On April 28, 2026, NVIDIA released **Nemotron 3 Nano Omni** — a 30B-parameter hybrid Mamba-Transformer Mixture of Experts model that unifies text, image, video, and audio understanding in a single open-weight checkpoint. Details from the [NVIDIA Blog announcement](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/) and the [NVIDIA Technical Blog deep dive](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/). It is designed explicitly as a perception and reasoning sub-agent in compound AI systems, and it costs nothing to access: the weights are free on Hugging Face, and the API is free on OpenRouter.
 
-The technical headline is unusual: 31.6 billion total parameters, but only ~3.2–3.6 billion active per forward pass. That active-parameter count is what determines inference cost — making Nano Omni one of the most compute-efficient omnimodal models available in 2026.
+The technical headline is unusual: **~31 billion total parameters, but only ~3 billion active per forward pass**, per the [Hugging Face model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16). That active-parameter count is what determines inference cost.
 
 This guide covers the architecture, benchmarks, deployment options, and agentic use cases for builders evaluating Nano Omni as a component in multi-agent systems.
 
@@ -13,7 +13,7 @@ This guide covers the architecture, benchmarks, deployment options, and agentic 
 
 ## The One-Sentence Summary
 
-Nemotron 3 Nano Omni is a 30B-total/3B-active Mamba-Transformer MoE model that accepts text, images, video, and audio as input, achieves 89.1% on AIME 2025 without tools (99.2% with Python), tops LiveCodeBench v6 among models in its efficiency class, and is available as open weights and free API — built specifically to serve as the multimodal perception layer in compound agent architectures.
+Nemotron 3 Nano Omni is a ~30B-total/~3B-active Mamba-Transformer MoE model that accepts text, images, video, and audio as input, scores 82.1% on AIME 2025 (no tools) and 63.2% on LiveCodeBench in its own [technical report](https://arxiv.org/abs/2604.24954) — a modest step down from its text-only sibling [Nemotron 3 Nano](https://arxiv.org/abs/2512.20848) (89.1% / 68.3% on the same two benchmarks), the expected tradeoff of unifying reasoning across four modalities — and is available as open weights and free API, built specifically to serve as the multimodal perception layer in compound agent architectures.
 
 ---
 
@@ -27,7 +27,7 @@ Three constraints have historically made omnimodal agents expensive or impractic
 | Omnimodal = slow | Accept high latency or sacrifice quality | Mamba layers eliminate the quadratic attention bottleneck |
 | Frontier capability = large active footprint | Use a 70B+ dense model or pay closed-model API rates | MoE routing keeps active parameters at ~3B |
 
-If you are building a system that needs to reason across a video transcript, an uploaded image, a voice memo, and a text document in the same context window — and you want to do this affordably, with open weights, on-premise — Nano Omni is the first model that addresses all four constraints simultaneously.
+If you are building a system that needs to reason across a video transcript, an uploaded image, a voice memo, and a text document in the same context window — and you want to do this affordably, with open weights, on-premise — Nano Omni is one of the few models that addresses all four constraints at once (we have not surveyed every open omnimodal release to confirm it is literally the first).
 
 ---
 
@@ -45,20 +45,20 @@ NVIDIA's design combines Mamba's sequence efficiency with transformer attention'
 | MoE Transformer layers | 23 | Sparse expert routing for domain specialization |
 | Attention layers (GQA) | 6 | Precise local context reasoning |
 
-Total: 52 layers. Model dimension: 2688. Query heads: 32. KV heads: 2. Head dimension: 128.
+Total: 52 layers. Model dimension: 2688. Query heads: 32. KV heads: 2. Head dimension: 128. (Per the model's [published `config.json`](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16/raw/main/config.json).)
 
 ### Why MoE?
 
-The 31.6B total parameters are divided among 128 routed experts per MoE layer. Each forward pass activates only 6 of those 128 experts per token (plus shared experts that activate on every token). The result: ~3.2–3.6 billion parameters active per inference call — a compute cost comparable to a small dense model, with capacity comparable to a much larger one.
+The ~31B total parameters are divided among 128 routed experts per MoE layer plus 1 shared expert. Each forward pass activates 6 of the 128 routed experts per token (the shared expert activates on every token) — [confirmed in the model config](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16/raw/main/config.json). The result: ~3 billion parameters active per inference call — a compute cost comparable to a small dense model, with capacity comparable to a much larger one.
 
-The practical implication: Nano Omni can run inference on a single high-end GPU (A100 80GB or equivalent) rather than requiring multi-GPU tensor parallelism. This matters for edge agents and on-premise deployments where multi-node infrastructure is not available.
+The practical implication: Nano Omni can run inference on a single GPU rather than requiring multi-GPU tensor parallelism — a single H100 80GB at full BF16 precision, or as small as a single RTX 5090 32GB using the NVFP4-quantized release, per the [Hugging Face model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16). This matters for edge agents and on-premise deployments where multi-node infrastructure is not available.
 
 ### Omnimodal: Native, Not Adapted
 
 Most multimodal models attach vision or audio via an adapter trained on a frozen language backbone. Nano Omni integrates all modalities from training step zero — there is no seam between the vision encoder, audio processor, and language reasoning. This matters for tasks that require cross-modal reasoning: interpreting a chart from a screenshot while writing code to reproduce it, or summarizing a video while citing timestamps in a document.
 
-**Accepted inputs:**
-- Text (up to 256K token context window)
+**Accepted inputs** (per the [Hugging Face model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16)):
+- Text (up to a 256K-token context window)
 - Images (static)
 - Video (multi-frame)
 - Audio
@@ -71,31 +71,29 @@ Most multimodal models attach vision or audio via an adapter trained on a frozen
 
 ### Math and Reasoning
 
-| Benchmark | Nano Omni | Qwen3-30B-A3B | GPT-OSS-20B |
-|---|---|---|---|
-| **AIME 2025 (no tools)** | 89.1% | 85.0% | 91.7% |
-| **AIME 2025 (+ Python)** | **99.2%** | — | — |
+NVIDIA's own [Nano Omni technical report](https://arxiv.org/abs/2604.24954) (Table 10) benchmarks the multimodal model's text reasoning directly against its text-only sibling, [Nemotron 3 Nano](https://arxiv.org/abs/2512.20848):
 
-Without tool assistance, Nano Omni slots between Qwen3-30B-A3B and GPT-OSS-20B on hard competition math. With Python interpreter access, it reaches 99.2% — strong evidence that the model is well-trained for tool-augmented reasoning loops, not just standalone generation.
+| Benchmark | Nano Omni | Nemotron 3 Nano (text-only sibling) |
+|---|---|---|
+| **AIME 2025 (no tools)** | 82.1% | 89.1% |
+| **GPQA (no tools)** | 72.2% | — |
+| **MMLU-Pro** | 77.3% | — |
+
+Unifying text, image, video, and audio reasoning into a single model costs Nano Omni roughly 7 points of AIME accuracy versus the text-only sibling that shares its backbone — a real tradeoff, not a wash. NVIDIA's technical report does not publish a Nano-Omni-specific comparison against Qwen3-30B-A3B or GPT-OSS-20B on these text benchmarks, so this guide does not claim one.
 
 ### Code
 
-| Benchmark | Nano Omni | Qwen3-30B-A3B | GPT-OSS-20B |
-|---|---|---|---|
-| **LiveCodeBench v6** | **68.3%** | 66.0% | 61.0% |
+| Benchmark | Nano Omni | Nemotron 3 Nano (text-only sibling) |
+|---|---|---|
+| **LiveCodeBench** | 63.2% | 68.3% |
 
-Nano Omni tops both Qwen3-30B-A3B and GPT-OSS-20B at this efficiency tier on LiveCodeBench v6, which tests competitive programming problems from recent contests.
+Same pattern as AIME: the omnimodal model trails its text-only sibling on LiveCodeBench, per the same [technical report](https://arxiv.org/abs/2604.24954) table. No head-to-head Nano-Omni-vs-Qwen3-30B-A3B or Nano-Omni-vs-GPT-OSS-20B code benchmark has been published by NVIDIA as of this writing.
 
 ### Throughput and Multimodal
 
-The MediaPerf benchmark — an industry benchmark measuring throughput, cost, and quality across video understanding tasks — shows Nano Omni achieving the **highest throughput and lowest inference cost** for video-level tagging across competing omnimodal models. NVIDIA cites 9x higher throughput overall versus competing open omnimodal models.
+[MediaPerf](https://www.coactive.ai/blog/mediaperf-nvidia-omni) — an open benchmark from Coactive that scores multimodal models on real media-industry video tasks, reporting quality, cost, and latency together — found Nano Omni delivering the **highest throughput and lowest inference cost of any benchmarked model, open or closed**, on the video-tagging task (9.91 hours of video processed per hour, at $14.27 per unit of work), beating GPT-5.1, Gemini 3.0 Pro, and Qwen3-VL as well as other open omnimodal models. NVIDIA's own [technical report](https://arxiv.org/abs/2604.24954) cites, specifically versus **Qwen3-Omni** on a B200 GPU: up to **3x higher single-stream output token throughput**, and up to **9x higher output token throughput per GPU** at a fixed interactivity target.
 
-For inference throughput versus the closest text-capable competitors:
-
-- **3.3x higher throughput** than GPT-OSS-20B
-- **3.3x higher throughput** than Qwen3-30B-A3B-Thinking-2507
-
-These numbers reflect the architectural benefit of Mamba-2 layers: processing long video frame sequences does not incur the quadratic attention penalty that hits competing models.
+These numbers reflect the architectural benefit of Mamba-2 layers: processing long video frame sequences does not incur the quadratic attention penalty that hits transformer-only competitors. (Note: a commonly repeated "3.3x faster than GPT-OSS-20B and Qwen3-30B-A3B-Thinking-2507" throughput figure comes from NVIDIA's report on the **text-only** Nemotron 3 Nano sibling, not from Nano Omni — it does not apply to the multimodal model covered here.)
 
 ---
 
@@ -131,15 +129,15 @@ The benefit: Nano Omni's per-token cost is near zero (free API tiers exist), so 
 
 | Platform | Access | Notes |
 |---|---|---|
-| **OpenRouter** | Free tier | `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` |
-| **build.nvidia.com** | NVIDIA NIM | Free for evaluation; Enterprise license for production |
-| **fal.ai** | Available | Serverless inference |
+| **OpenRouter** | Free tier | [`nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free`](https://openrouter.ai/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free) |
+| **build.nvidia.com** | NVIDIA NIM | Hosted API endpoints are free for prototyping; production deployment requires an [NVIDIA AI Enterprise license](https://www.nvidia.com/en-us/data-center/products/ai-enterprise/get-started/) (a free 90-day evaluation license is available) |
+| **fal.ai** | Available | Serverless inference, per the [NVIDIA technical blog](https://developer.nvidia.com/blog/nvidia-nemotron-3-nano-omni-powers-multimodal-agent-reasoning-in-a-single-efficient-open-model/) |
 
 ### Open Weights (Self-Hosted)
 
-Full weights are available on Hugging Face under NVIDIA's open license. Review the model card for commercial use terms before deploying in a production product.
+Full weights are available on [Hugging Face](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16) under NVIDIA's open model license. Review the model card for commercial use terms before deploying in a production product.
 
-Supported inference frameworks:
+Supported inference frameworks, per the [Hugging Face model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16):
 - **vLLM** — recommended for high-throughput server deployments
 - **SGLang** — structured generation, tool-calling pipelines
 - **Ollama** — local desktop or developer-workstation deployment
@@ -147,7 +145,7 @@ Supported inference frameworks:
 
 ### NVIDIA NIM (Enterprise)
 
-For production enterprise deployments, NVIDIA offers Nano Omni as a NIM microservice — containerized, optimized, with SLA guarantees. Requires an **NVIDIA AI Enterprise license**. Partners including Palantir, Foxconn, and Dell have adopted the NIM deployment path.
+For production enterprise deployments, NVIDIA offers Nano Omni as a NIM microservice. Production use requires an **[NVIDIA AI Enterprise license](https://www.nvidia.com/en-us/data-center/products/ai-enterprise/get-started/)**. Per the [NVIDIA launch blog](https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/), early adopters include Palantir and Foxconn (among others); Dell Technologies is listed as **evaluating** the model, not yet a confirmed production adopter.
 
 ---
 
@@ -156,7 +154,7 @@ For production enterprise deployments, NVIDIA offers Nano Omni as a NIM microser
 | Scenario | Recommendation |
 |---|---|
 | Need multimodal perception at zero API cost | **Nano Omni** — free on OpenRouter and Hugging Face |
-| Need to process video + audio + images in one model | **Nano Omni** — no other open model unifies all four modalities at this efficiency |
+| Need to process video + audio + images in one model | **Nano Omni** — unifies all four modalities in one open-weight checkpoint at ~3B active parameters |
 | Running a perception sub-agent at edge (single GPU) | **Nano Omni** — 3B active parameters, supports Ollama/llama.cpp |
 | Need proprietary fine-tuning on domain video/audio | **Nano Omni** — open weights allow this |
 | Need maximum raw coding or reasoning performance | Evaluate closed models (Claude, GPT-5.x); Nano Omni is strong but not at closed-frontier ceiling |

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HashiCorp Terraform MCP Server: Infrastructure-as-Code Intelligence for AI Agents (Builder Guide) — ChatForest</title>
-  <meta name="description" content="HashiCorp&#39;s official Terraform MCP Server (v0.5.2) gives AI agents real-time access to the Terraform Registry — provider docs, module specs, and HCP Terraform workspace management — without execution authority.">
+  <meta name="description" content="HashiCorp&#39;s official Terraform MCP Server (v1.1.0, generally available) gives AI agents real-time access to the Terraform Registry — provider docs, module specs, and HCP Terraform workspace management — without execution authority.">
   <meta property="og:title" content="HashiCorp Terraform MCP Server: Infrastructure-as-Code Intelligence for AI Agents (Builder Guide) — ChatForest">
   <meta property="og:description" content="The Terraform MCP Server gives AI agents accurate, current provider documentation and workspace management without letting them trigger plan or apply. Here is what builders need to know to wire it into Claude or any MCP-compatible agent.">
   <meta property="og:type" content="article">
@@ -67,13 +67,13 @@
 
       <div class="article-body">
         <p>AI coding assistants hallucinate Terraform. Not occasionally — routinely. They invent resource attributes that do not exist, use argument names from the wrong provider version, and confuse AWS argument names with Azure equivalents. When the generated HCL looks plausible but fails on <code>terraform validate</code>, you have lost time you cannot recover.</p>
-<p>HashiCorp&rsquo;s official Terraform MCP Server (v0.5.2, April 2026) solves this at the source. Instead of letting an agent guess at provider schemas, you give it a tool call to look them up. The server connects your AI agent to the live Terraform Registry — provider documentation, module specifications, Sentinel policies — and to HCP Terraform workspace management, variable sets, and plan/apply inspection.</p>
+<p>HashiCorp&rsquo;s official Terraform MCP Server — <a href="https://www.hashicorp.com/en/blog/terraform-mcp-server-is-now-generally-available">generally available</a> since <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.0.0">v1.0.0</a> in June 2026, now at <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.1.0">v1.1.0</a> — solves this at the source. Instead of letting an agent guess at provider schemas, you give it a tool call to look them up. The server connects your AI agent to the live Terraform Registry — provider documentation, module specifications, Sentinel policies — and to HCP Terraform workspace management, variable sets, and plan/apply inspection.</p>
 <p>The server deliberately does not run <code>terraform plan</code> or <code>terraform apply</code>. That is a feature, not a gap.</p>
 <hr>
 <h2 id="what-the-terraform-mcp-server-is">What the Terraform MCP Server Is</h2>
-<p>The Terraform MCP Server is a Model Context Protocol server, officially maintained by HashiCorp (now IBM), that gives AI agents structured access to Terraform infrastructure. It translates MCP tool calls into Terraform Registry API requests and HCP Terraform API requests, returning real documentation and real workspace data to the agent.</p>
-<p>It ships with <strong>stdio</strong> and <strong>StreamableHTTP</strong> transport support, making it compatible with Claude for Desktop, Claude Code, Cursor, VS Code, Amazon Q, and any MCP-compliant client. Tool filtering lets you expose exactly the capability surface you need — from pure registry lookups with no auth, to full workspace management with an HCP Terraform token.</p>
-<p><strong>Current status:</strong> Beta. HashiCorp does not recommend it for production systems yet, but the April 2026 release cadence (v0.5.0, v0.5.1, v0.5.2 in under a month) signals active investment.</p>
+<p>The Terraform MCP Server is a Model Context Protocol server, officially maintained by HashiCorp — acquired by IBM in a deal that <a href="https://techcrunch.com/2025/02/27/ibm-closes-6-4b-hashicorp-acquisition/">closed February 27, 2025</a> (<a href="https://siliconangle.com/2025/02/27/ibm-completes-6-4b-hashicorp-acquisition-following-regulatory-approvals/">SiliconANGLE confirms</a>) — that gives AI agents structured access to Terraform infrastructure. It translates MCP tool calls into Terraform Registry API requests and HCP Terraform API requests, returning real documentation and real workspace data to the agent.</p>
+<p>It ships with <strong>stdio</strong> and <strong>StreamableHTTP</strong> <a href="https://github.com/hashicorp/terraform-mcp-server">transport support</a>, making it compatible with Claude for Desktop, Claude Code, Cursor, VS Code, Amazon Q, and any MCP-compliant client. Tool filtering lets you expose exactly the capability surface you need — from pure registry lookups with no auth, to full workspace management with an HCP Terraform token.</p>
+<p><strong>Current status:</strong> <a href="https://www.hashicorp.com/en/blog/terraform-mcp-server-is-now-generally-available">Generally available</a> as of June 2026. The server moved fast to get there: <a href="https://github.com/hashicorp/terraform-mcp-server/releases">v0.5.0, v0.5.1, and v0.5.2 shipped within four weeks</a> in April 2026, followed by the <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.0.0">v1.0.0 GA release</a> in June and <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.1.0">v1.1.0</a> in July — the latter a security-patch release (three CVEs; see Limitations below). Run at least v1.1.0.</p>
 <hr>
 <h2 id="the-problem-agents-writing-terraform-without-documentation">The Problem: Agents Writing Terraform Without Documentation</h2>
 <p>When a developer writes Terraform, they have years of provider experience, IDE completion, and a browser tab open to the registry. When an AI agent writes Terraform, it has whatever was in the training data — which may be outdated, misremembered, or simply wrong.</p>
@@ -81,8 +81,8 @@
 <p>The standard agent workflow — &ldquo;write Terraform, human reviews and fixes&rdquo; — puts all the hallucination cost on the human reviewer. The Terraform MCP Server moves that cost earlier: the agent looks up the actual schema before generating code. The reviewer is checking business logic, not syntax.</p>
 <hr>
 <h2 id="architecture-toolsets-and-filtering">Architecture: Toolsets and Filtering</h2>
-<p>The Terraform MCP Server organizes its 40+ tools into <strong>toolsets</strong> that you enable selectively. This is a deliberate design choice: not every workflow needs every capability, and a smaller tool surface keeps agent context manageable and the security perimeter tighter.</p>
-<p><strong>Toolset flags:</strong></p>
+<p>The Terraform MCP Server organizes its 40+ tools into <a href="https://github.com/hashicorp/terraform-mcp-server/blob/main/README.md"><strong>toolsets</strong></a> that you enable selectively via <code>--toolsets</code>. This is a deliberate design choice: not every workflow needs every capability, and a smaller tool surface keeps agent context manageable and the security perimeter tighter.</p>
+<p><strong>There are only three toolsets</strong> — fewer than you might expect, and not split as finely as some builder writeups (including an earlier version of this guide) assume:</p>
 <table>
 <thead>
 <tr>
@@ -93,38 +93,27 @@
 <tbody>
 <tr>
 <td><code>--toolsets registry</code></td>
-<td>Public Terraform Registry only (no auth required)</td>
+<td>Public Terraform Registry: providers, modules, Sentinel policies (no auth required) — this is the default</td>
+</tr>
+<tr>
+<td><code>--toolsets registry-private</code></td>
+<td>Private registry providers/modules in HCP Terraform or Terraform Enterprise (requires <code>TFE_TOKEN</code>)</td>
 </tr>
 <tr>
 <td><code>--toolsets terraform</code></td>
-<td>HCP Terraform workspace management (requires <code>TFE_TOKEN</code>)</td>
+<td>Everything else on HCP Terraform/TFE in one bundle: orgs, projects, workspaces, runs, plan/apply inspection, variable sets, policy sets, workspace tags, and Stacks (requires <code>TFE_TOKEN</code>)</td>
 </tr>
 <tr>
-<td><code>--toolsets privateTerraform</code></td>
-<td>Private registry (requires <code>TFE_TOKEN</code>)</td>
+<td><code>--toolsets all</code></td>
+<td>Every toolset enabled</td>
 </tr>
 <tr>
-<td><code>--toolsets variables</code></td>
-<td>Variable set and workspace variable management</td>
-</tr>
-<tr>
-<td><code>--toolsets policies</code></td>
-<td>Policy set management and workspace tagging</td>
-</tr>
-<tr>
-<td><code>--toolsets planApply</code></td>
-<td>Plan and apply inspection (requires <code>TFE_TOKEN</code>)</td>
-</tr>
-<tr>
-<td><code>--toolsets stacks</code></td>
-<td>Terraform Stacks inspection</td>
-</tr>
-<tr>
-<td><code>--tools &lt;name&gt;</code></td>
-<td>Enable a specific individual tool</td>
+<td><code>--tools &lt;name1&gt;,&lt;name2&gt;,...</code></td>
+<td>Enable specific individual tools by name instead of a whole toolset</td>
 </tr>
 </tbody>
 </table>
+<p>There is <strong>no</strong> separate toolset for variables, policies, plan/apply, or Stacks — those all live inside the single <code>terraform</code> toolset. If you want a narrower slice (e.g., read-only plan inspection without workspace-modifying tools), use <code>--tools</code> with specific tool names rather than <code>--toolsets terraform</code>.</p>
 <p>For local development and IaC writing, <code>--toolsets registry</code> is all you need — and it requires no authentication at all.</p>
 <hr>
 <h2 id="installation">Installation</h2>
@@ -136,7 +125,7 @@
       <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;docker&#34;</span>,
       <span style="color:#f92672">&#34;args&#34;</span>: [<span style="color:#e6db74">&#34;run&#34;</span>, <span style="color:#e6db74">&#34;-i&#34;</span>, <span style="color:#e6db74">&#34;--rm&#34;</span>,
                <span style="color:#e6db74">&#34;-e&#34;</span>, <span style="color:#e6db74">&#34;TFE_TOKEN&#34;</span>,
-               <span style="color:#e6db74">&#34;hashicorp/terraform-mcp-server:0.5.2&#34;</span>]
+               <span style="color:#e6db74">&#34;hashicorp/terraform-mcp-server:1.1.0&#34;</span>]
     }
   }
 }
@@ -145,10 +134,10 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">claude mcp add terraform -- docker run -i --rm -e TFE_TOKEN hashicorp/terraform-mcp-server
 </code></pre></div><h3 id="go-install">Go Install</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go install github.com/hashicorp/terraform-mcp-server/cmd/terraform-mcp-server@latest
-</code></pre></div><p>Requires Go 1.24+.</p>
+</code></pre></div><p>Requires the Go version pinned in the project&rsquo;s <a href="https://github.com/hashicorp/terraform-mcp-server/blob/main/go.mod"><code>go.mod</code></a> — 1.26.x as of this writing (this has moved up since the server&rsquo;s early beta days, so check before you build).</p>
 <h3 id="http-mode-team-deployments">HTTP Mode (Team Deployments)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">TRANSPORT_MODE<span style="color:#f92672">=</span>streamable-http terraform-mcp-server
-</code></pre></div><p>HTTP mode includes health checks at <code>/health</code>, configurable CORS via <code>MCP_ALLOWED_ORIGINS</code>, and rate limiting. Use this for shared deployments where multiple developers connect to a single running instance.</p>
+</code></pre></div><p>HTTP mode includes health checks at <code>/health</code>, configurable CORS via <code>MCP_ALLOWED_ORIGINS</code>, and rate limiting (<a href="https://github.com/hashicorp/terraform-mcp-server">source</a>). Use this for shared deployments where multiple developers connect to a single running instance — but see the HTTP-mode CVEs in Limitations below before you do; run v1.1.0 or later.</p>
 <hr>
 <h2 id="configuration-and-authentication">Configuration and Authentication</h2>
 <h3 id="registry-only-no-auth">Registry-Only (No Auth)</h3>
@@ -159,7 +148,7 @@
       <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;docker&#34;</span>,
       <span style="color:#f92672">&#34;args&#34;</span>: [<span style="color:#e6db74">&#34;run&#34;</span>, <span style="color:#e6db74">&#34;-i&#34;</span>, <span style="color:#e6db74">&#34;--rm&#34;</span>,
                <span style="color:#e6db74">&#34;--toolsets&#34;</span>, <span style="color:#e6db74">&#34;registry&#34;</span>,
-               <span style="color:#e6db74">&#34;hashicorp/terraform-mcp-server:0.5.2&#34;</span>]
+               <span style="color:#e6db74">&#34;hashicorp/terraform-mcp-server:1.1.0&#34;</span>]
     }
   }
 }
@@ -170,9 +159,9 @@
 
 <span style="color:#75715e"># Or set explicitly:</span>
 export TFE_TOKEN<span style="color:#f92672">=</span>your-hcp-terraform-token
-</code></pre></div><p><strong>v0.5.2 change:</strong> You no longer need to set <code>TFE_TOKEN</code> manually if you have run <code>terraform login</code> — the server reads <code>~/.terraform.d/credentials.tfrc.json</code> automatically. This makes it frictionless for anyone already using Terraform CLI with HCP Terraform.</p>
+</code></pre></div><p><strong>v0.5.2 change:</strong> You no longer need to set <code>TFE_TOKEN</code> manually if you have run <code>terraform login</code> — the server reads <code>~/.terraform.d/credentials.tfrc.json</code> automatically (<a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v0.5.2">v0.5.2 release notes</a>). This makes it frictionless for anyone already using Terraform CLI with HCP Terraform, and the behavior carries forward into the current v1.1.0 release.</p>
 <h3 id="rate-limiting">Rate Limiting</h3>
-<p>Default limits are <code>10:20</code> globally and <code>5:10</code> per-session (requests per second : burst). For agents doing batch registry lookups across many providers, tune per-session limits via <code>MCP_RATE_LIMIT_SESSION</code>. For team HTTP deployments, tune global limits via <code>MCP_RATE_LIMIT_GLOBAL</code>.</p>
+<p>Default limits are <code>10:20</code> globally and <code>5:10</code> per-session (requests per second : burst) (<a href="https://github.com/hashicorp/terraform-mcp-server">source</a>). For agents doing batch registry lookups across many providers, tune per-session limits via <code>MCP_RATE_LIMIT_SESSION</code>. For team HTTP deployments, tune global limits via <code>MCP_RATE_LIMIT_GLOBAL</code>.</p>
 <hr>
 <h2 id="the-tools">The Tools</h2>
 <h3 id="registry-tools-no-auth-required">Registry Tools (No Auth Required)</h3>
@@ -278,7 +267,7 @@ export TFE_TOKEN<span style="color:#f92672">=</span>your-hcp-terraform-token
 </tr>
 </tbody>
 </table>
-<h3 id="plan-and-apply-inspection-v050">Plan and Apply Inspection (v0.5.0)</h3>
+<h3 id="plan-and-apply-inspection-added-in-v050httpsgithubcomhashicorpterraform-mcp-serverreleasestagv050">Plan and Apply Inspection (<a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v0.5.0">added in v0.5.0</a>)</h3>
 <p>These tools are read-only — they let agents see what happened without execution authority:</p>
 <table>
 <thead>
@@ -318,16 +307,16 @@ export TFE_TOKEN<span style="color:#f92672">=</span>your-hcp-terraform-token
 <li><code>list_workspace_variables</code>, <code>create_workspace_variable</code>, <code>update_workspace_variable</code></li>
 </ul>
 <h3 id="stacks">Stacks</h3>
+<p>Added in <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v0.5.1">v0.5.1</a>:</p>
 <ul>
 <li><code>list_stacks</code> — Retrieve stacks with summary</li>
 <li><code>get_stack_details</code> — Full details for a specific stack</li>
 </ul>
 <h3 id="mcp-resources">MCP Resources</h3>
-<p>The server also exposes MCP resources (not tool calls — passive context):</p>
+<p>The server also exposes <a href="https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers">MCP resources</a> (not tool calls — passive context):</p>
 <ul>
 <li>Terraform Style Guide</li>
 <li>Module Development Guide</li>
-<li>Dynamic provider documentation</li>
 </ul>
 <p>These feed directly into agent context, not as tool calls but as available reference material.</p>
 <hr>
@@ -338,7 +327,7 @@ export TFE_TOKEN<span style="color:#f92672">=</span>your-hcp-terraform-token
 <p>&ldquo;I need to create an S3 bucket with versioning enabled. First look up the current <code>aws_s3_bucket</code> resource documentation to confirm the correct argument names and structure.&rdquo;</p>
 </blockquote>
 <p>The agent uses <code>search_providers</code> to find the AWS provider, then <code>get_provider_details</code> for the specific resource schema. The resulting HCL uses the 2026 API, not whatever was in training data.</p>
-<p><strong>Why this matters:</strong> S3 bucket configuration in the AWS provider changed significantly around v4.0 (bucket settings like ACLs, versioning, and logging were split into separate resources). Agents trained before that migration consistently generate the pre-v4 monolithic configuration.</p>
+<p><strong>Why this matters:</strong> S3 bucket configuration in the AWS provider <a href="https://www.hashicorp.com/en/blog/terraform-aws-provider-4-0-refactors-s3-bucket-resource">changed significantly in v4.0</a> — bucket settings like ACLs, versioning, and logging moved out of the monolithic <code>aws_s3_bucket</code> resource into <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning">dedicated resources</a> such as <code>aws_s3_bucket_versioning</code>, <code>aws_s3_bucket_acl</code>, and <code>aws_s3_bucket_logging</code>. Agents relying on older training data are prone to generating the pre-v4 monolithic configuration.</p>
 <h3 id="pattern-2-module-discovery-and-adoption">Pattern 2: Module Discovery and Adoption</h3>
 <p>An agent helping a developer adopt a community module can find the right one and generate correct usage in a single flow:</p>
 <blockquote>
@@ -380,30 +369,30 @@ export TFE_TOKEN<span style="color:#f92672">=</span>your-hcp-terraform-token
 </ul>
 <p>But it does not let an agent <strong>initiate</strong> a plan or apply. You still run <code>terraform plan</code> yourself, or trigger it through HCP Terraform&rsquo;s normal CI/CD pipeline.</p>
 <p>This is the right trade-off for agentic infrastructure. An AI agent with autonomous <code>terraform apply</code> access can provision cloud resources, incur costs, and modify production state with a single misinterpreted prompt. The Terraform MCP Server gives agents the intelligence layer — documentation, workspace inspection, plan review — without execution authority.</p>
-<p>For teams that want AI-assisted plan review, the read-only <code>planApply</code> toolset enables exactly that workflow: a human (or CI system) triggers the plan, the agent inspects the results and summarizes or flags concerns.</p>
-<p><strong><code>ENABLE_TF_OPERATIONS=true</code>:</strong> This environment variable gates the destructive operations (<code>delete_workspace_safely</code>, <code>action_run</code>). Set it only when you have explicitly evaluated the risk of agent-initiated applies or workspace deletions.</p>
+<p>For teams that want AI-assisted plan review without exposing workspace-modifying tools, use <code>--tools</code> to enable only the read-only inspection tools (<code>get_plan_json_output</code>, <code>get_plan_details</code>, <code>get_plan_logs</code>, <code>get_apply_details</code>, <code>get_apply_logs</code>) instead of the full <code>terraform</code> toolset: a human (or CI system) triggers the plan, the agent inspects the results and summarizes or flags concerns.</p>
+<p><strong><code>ENABLE_TF_OPERATIONS=true</code>:</strong> This environment variable gates the destructive operations (<code>delete_workspace_safely</code>, <code>action_run</code>), which default to disabled (<a href="https://github.com/hashicorp/terraform-mcp-server">source</a>). Set it only when you have explicitly evaluated the risk of agent-initiated applies or workspace deletions.</p>
 <hr>
 <h2 id="limitations">Limitations</h2>
-<p><strong>Beta status.</strong> HashiCorp labels this as beta — not for production systems. The v0.5.x release cadence is fast, but tool names and schemas may change.</p>
-<p><strong>Terraform ecosystem only.</strong> The server covers the Terraform Registry and HCP Terraform. It does not support OpenTofu (the open-source Terraform fork), Pulumi, or Pulumi&rsquo;s registry. If your organization has moved to OpenTofu after HashiCorp&rsquo;s BSL license change, public registry lookups may still work but private registry and workspace tools are unavailable.</p>
+<p><strong>Recently GA, still moving fast.</strong> The server left beta and reached <a href="https://www.hashicorp.com/en/blog/terraform-mcp-server-is-now-generally-available">general availability at v1.0.0 in June 2026</a>. Even so, <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.1.0">v1.1.0</a> shipped only weeks later carrying three security fixes (see below) — treat this as young, fast-moving software, pin a specific version, and don&rsquo;t track <code>:latest</code> unattended.</p>
+<p><strong>Terraform ecosystem only.</strong> The server covers the Terraform Registry and HCP Terraform. It does not support <a href="https://opentofu.org/blog/opentofu-announces-fork-of-terraform/">OpenTofu</a> (the open-source Terraform fork), Pulumi, or Pulumi&rsquo;s registry. If your organization has moved to OpenTofu after HashiCorp&rsquo;s BSL license change, public registry lookups may still work but private registry and workspace tools are unavailable.</p>
 <p><strong>HCP Terraform required for workspace tools.</strong> Local state backends (S3, GCS, Consul) are not supported. The workspace management, plan inspection, and variable tools only work with HCP Terraform (cloud) or Terraform Enterprise.</p>
 <p><strong>No plan initiation.</strong> The server can inspect existing plan results but cannot trigger <code>terraform plan</code>. You still need a human or CI system to initiate plans.</p>
-<p><strong>Provider search version ordering.</strong> An open issue (#178) reports the server returning community provider versions instead of official ones in some searches. For high-stakes IaC generation, verify provider search results match the official publisher.</p>
-<p><strong>No OpenTofu support.</strong> The BSL license change is significant in the IaC ecosystem. If your organization adopted OpenTofu, the private registry and workspace tools are irrelevant to your stack.</p>
-<p><strong>Proxy and networking.</strong> Enterprise environments with nginx proxies and custom networking have hit issues with TFE_TOKEN header handling and Docker networking. Test your network path before deploying for team use.</p>
-<p><strong>Security findings open.</strong> Issue #288 (February 2026) documents three unresolved security findings: <code>TFE_SKIP_TLS_VERIFY</code> allows disabling certificate verification, a CI workflow downloads a binary without integrity verification, and tokens can appear in debug logs. MCPSafe scores it 94/100 Grade B (5 medium findings, no critical or high). No maintainer response as of May 2026. Evaluate this against your security requirements.</p>
+<p><strong>Provider search version ordering.</strong> An <a href="https://github.com/hashicorp/terraform-mcp-server/issues/178">open issue (#178)</a> reports that provider search can surface an unofficial community provider (the reported case: a community <code>keycloak</code> provider) ahead of the official publisher&rsquo;s provider. For high-stakes IaC generation, verify provider search results match the official publisher.</p>
+<p><strong>Proxy and networking.</strong> A <a href="https://github.com/hashicorp/terraform-mcp-server/issues/321">reported crash (#321)</a> when running the server behind nginx in Docker Compose — segfault-style errors in StreamableHTTP response handling on v0.4/v0.5 — was filed and closed as fixed. It&rsquo;s a reminder that HTTP-mode deployments behind a proxy are a less-trodden path than local stdio use. Test your network path before deploying for team use, and run a version at or after the fix.</p>
+<p><strong>Security: two rounds of findings, both addressed, but know the history.</strong> First, an <a href="https://github.com/hashicorp/terraform-mcp-server/issues/288">AgentAudit scan (issue #288, opened February 2026)</a> gave the server a trust score of 50/100 with 3 findings — 2 high-severity (<code>TFE_SKIP_TLS_VERIFY</code> can disable TLS certificate verification; the release-publishing CI workflow downloaded a binary via <code>curl | tar</code> with no integrity check) and 1 medium-severity (token presence logged in debug mode). That issue was closed as resolved on June 9, 2026, the same day as the v1.0.0 GA release. Second, and more serious: <a href="https://discuss.hashicorp.com/t/hcsec-2026-23-multiple-vulnerabilities-impacting-hashicorp-terraform-mcp-server/77606">HashiCorp&rsquo;s own security advisory HCSEC-2026-23</a>, published July 28, 2026, disclosed three CVEs affecting versions 0.2.1 through 1.0.0 in the streamable-HTTP transport: an unauthenticated SSRF that could redirect the server&rsquo;s bearer token to an attacker-controlled endpoint (CVE-2026-14869), a session-ID-based authorization bypass in stateful HTTP mode (CVE-2026-16496), and cross-tenant credential reuse in stateless HTTP mode (CVE-2026-16498). All three are fixed in <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.1.0">v1.1.0</a>. If you run this server in HTTP mode for a team, v1.1.0 is not optional.</p>
 <hr>
 <h2 id="builder-checklist">Builder Checklist</h2>
 <ul>
 <li><input disabled="" type="checkbox"> Terraform ecosystem confirmed (not OpenTofu) before investing in HCP Terraform tools</li>
-<li><input disabled="" type="checkbox"> Docker 20.10.21+ or Go 1.24+ installed for running the MCP server</li>
+<li><input disabled="" type="checkbox"> Running <a href="https://github.com/hashicorp/terraform-mcp-server/releases/tag/v1.1.0">v1.1.0</a> or later — versions 0.2.1–1.0.0 have three disclosed CVEs (SSRF, auth bypass, cross-tenant credential reuse) in the streamable-HTTP transport</li>
+<li><input disabled="" type="checkbox"> Docker installed and running, or the <a href="https://github.com/hashicorp/terraform-mcp-server/blob/main/go.mod">Go version pinned in <code>go.mod</code></a> for building from source</li>
 <li><input disabled="" type="checkbox"> For registry-only use: no auth needed — start with <code>--toolsets registry</code></li>
-<li><input disabled="" type="checkbox"> For HCP Terraform: <code>TFE_TOKEN</code> set, or <code>terraform login</code> run (v0.5.2 reads credentials automatically)</li>
+<li><input disabled="" type="checkbox"> For HCP Terraform: <code>TFE_TOKEN</code> set, or <code>terraform login</code> run (v0.5.2+ reads credentials automatically)</li>
 <li><input disabled="" type="checkbox"> <code>get_token_permissions</code> called early to confirm token scope before agentic operations</li>
-<li><input disabled="" type="checkbox"> Toolset scope minimized to what the agent actually needs — don&rsquo;t expose <code>--toolsets terraform</code> for IaC writing workflows</li>
+<li><input disabled="" type="checkbox"> Toolset scope minimized to what the agent actually needs — don&rsquo;t expose <code>--toolsets terraform</code> for IaC writing workflows (there is no narrower <code>variables</code>/<code>policies</code>/<code>planApply</code>/<code>stacks</code> toolset; use <code>--tools</code> for a finer slice)</li>
 <li><input disabled="" type="checkbox"> <code>ENABLE_TF_OPERATIONS=true</code> evaluated carefully — only set if agent-initiated applies are an accepted workflow</li>
 <li><input disabled="" type="checkbox"> Rate limits tuned for workload — default 5 rps/session may need adjustment for batch registry lookups</li>
-<li><input disabled="" type="checkbox"> Provider search results cross-checked against official publisher — open bug #178 (community provider ordering)</li>
+<li><input disabled="" type="checkbox"> Provider search results cross-checked against official publisher — open bug <a href="https://github.com/hashicorp/terraform-mcp-server/issues/178">#178</a> (community provider ordering)</li>
 <li><input disabled="" type="checkbox"> For team HTTP deployments: CORS configured via <code>MCP_ALLOWED_ORIGINS</code>, rate limits reviewed</li>
 <li><input disabled="" type="checkbox"> Vault MCP Server considered for workflows involving secrets alongside infrastructure changes</li>
 </ul>
@@ -413,7 +402,10 @@ export TFE_TOKEN<span style="color:#f92672">=</span>your-hcp-terraform-token
 <li><a href="https://developer.hashicorp.com/terraform/mcp-server">Terraform MCP Server — HashiCorp Developer Docs</a></li>
 <li><a href="https://developer.hashicorp.com/terraform/mcp-server/security">Terraform MCP Server Security Model</a></li>
 <li><a href="https://github.com/hashicorp/terraform-mcp-server">GitHub: hashicorp/terraform-mcp-server</a></li>
+<li><a href="https://github.com/hashicorp/terraform-mcp-server/releases">GitHub Releases</a></li>
+<li><a href="https://www.hashicorp.com/en/blog/terraform-mcp-server-is-now-generally-available">HashiCorp Blog: Terraform MCP server is now generally available</a></li>
 <li><a href="https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers">HashiCorp Blog: Build secure, AI-driven workflows with Terraform and Vault MCP servers</a></li>
+<li><a href="https://discuss.hashicorp.com/t/hcsec-2026-23-multiple-vulnerabilities-impacting-hashicorp-terraform-mcp-server/77606">HCSEC-2026-23 Security Advisory (CVE-2026-14869, CVE-2026-16496, CVE-2026-16498)</a></li>
 <li><a href="/reviews/terraform-mcp-server/">Our full Terraform MCP Server review (4/5)</a></li>
 <li><a href="/builders-log/hashicorp-vault-mcp-server-secrets-management-ai-agents-builder-guide/">HashiCorp Vault MCP Server builder guide</a></li>
 </ul>
@@ -486,7 +478,7 @@ export TFE_TOKEN<span style="color:#f92672">=</span>your-hcp-terraform-token
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-17T00:00:00+09:00","datePublished":"2026-06-17T00:00:00+09:00","description":"HashiCorp's official Terraform MCP Server (v0.5.2) gives AI agents real-time access to the Terraform Registry — provider docs, module specs, and HCP Terraform workspace management — without execution authority.","headline":"HashiCorp Terraform MCP Server: Infrastructure-as-Code Intelligence for AI Agents (Builder Guide)","mainEntityOfPage":"https://chatforest.com/builders-log/hashicorp-terraform-mcp-server-infrastructure-as-code-ai-agents-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/hashicorp-terraform-mcp-server-infrastructure-as-code-ai-agents-builder-guide/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-06-17T00:00:00+09:00","datePublished":"2026-06-17T00:00:00+09:00","description":"HashiCorp's official Terraform MCP Server (v1.1.0, generally available) gives AI agents real-time access to the Terraform Registry — provider docs, module specs, and HCP Terraform workspace management — without execution authority.","headline":"HashiCorp Terraform MCP Server: Infrastructure-as-Code Intelligence for AI Agents (Builder Guide)","mainEntityOfPage":"https://chatforest.com/builders-log/hashicorp-terraform-mcp-server-infrastructure-as-code-ai-agents-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/hashicorp-terraform-mcp-server-infrastructure-as-code-ai-agents-builder-guide/"}
 </script>
 
 
