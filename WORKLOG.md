@@ -2,6 +2,75 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 3128312/current (2026-07-30) — Recovered stray audit (3 pages) + fresh citation audit (4 of 5 pages)
+
+### Orient
+No pending inbox messages. Found the same stray-crash pattern as the last three runs (2920321, 2977380,
+3012891): session 3877 (run 3128312) had audited 3 pages and stamped `sources_audited: 2026-07-30` but
+never committed — RUNLOG showed the session started but no FINISHED line, and several runs in between
+(3030737, 3051823, 3072426, 3093346, 3110790) hit the recurring "Cyber Verification Program" safeguard
+API error and did no work. Verified the 3 recovered diffs before trusting them (openai-partner-network,
+jetbrains-mellum2, moonshot-kimi-k2.7-code reviews) — all genuine claim-by-claim audits with corrected
+figures (swapped pricing pairs, mismatched benchmark-variant tables, a fused "sixfold" growth stat fixed
+to the sourced "roughly fivefold") and real primary-source links, not link-stuffing. Committed as a
+recovery commit.
+
+### Fresh audit batch (5 pages targeted, 4 completed)
+Picked the next 5 oldest unaudited pages, prioritizing the one named-risk-claim page in the batch. Ran
+one general-purpose audit agent per page in parallel, each briefed on the site's citation standard,
+Wikipedia-editor-style claim sweep, and the "cite it or cut it" rule.
+
+1. **miasma-worm-73-microsoft-repos-ai-coding-agent-supply-chain-attack-builder-guide** — the named-risk
+   supply-chain-attack page, prioritized first per CLAUDE.md. Agent hit the recurring "Sonnet 5's
+   safeguards flagged this message" Cyber Verification Program error before making any edit (confirmed
+   via `git diff --stat` — zero changes). File is untouched; carries forward for a future run. This is
+   the same safeguard flag that has now killed 5 consecutive scheduled runs today (3030737 through
+   3110790) per RUNLOG — worth noting to Rob if it keeps recurring on this specific page.
+2. **opencode-open-source-terminal-coding-agent-75-providers-lsp-builder-guide** — corrected several
+   factual errors caught during verification, not just added citations: the agent is TypeScript/Bun, not
+   Go as originally stated; OpenCode's MCP config schema differs from Claude Code's (fixed prose and the
+   JSON example, which had been using the wrong schema); Claude Code doesn't require a Pro subscription
+   for API-key access; JetBrains support is via the ACP protocol, not a first-party "Early Access"
+   extension; the Homebrew install command was stale post org-rename to `anomalyco`. Added citations for
+   provider count, GitHub star count, LSP language-server count, MCP support, and comparison-table cells.
+3. **nvidia-cosmos-3-open-physical-ai-foundation-model-review** — corrected the license claim (OpenMDW-1.1
+   has no field-of-use restrictions — the article had wrongly claimed "no weapons, no surveillance"
+   carve-outs), replaced speculative hardware-spec claims ("likely A100/H100 class") with NVIDIA's actual
+   published guidance (RTX PRO 6000 for Nano, Hopper/Blackwell for Super), and corrected a "no hosted API"
+   claim — a free rate-limited preview exists at build.nvidia.com.
+4. **xiaomi-mimo-v2-5-pro-ultraspeed-1t-moe-inference-speed-commodity-gpu** — cut a derived "79% per-token
+   acceptance rate" statistic that had no supporting source (invalid math from the real 6.30/8
+   block-average acceptance-length figure), cut an unsupported dense-70B-model throughput comparison
+   figure, added TileRT's own blog as an independent second primary source for the headline 1,000-1,200
+   tps throughput claim (satisfying the 2-source bar for a named-company performance claim).
+5. **alibaba-fun-realtime-tts-speech-arena-1-voice-cloning-streaming-builder-guide** — corrected two
+   competitor pricing errors against Artificial Analysis's own published figures (Cartesia Sonic 3.5 was
+   listed at ~$65, actually $39; Inworld Realtime TTS-2's price had been swapped with a different Inworld
+   product's price), corrected Qwen3-TTS's license (Apache 2.0, not MIT), removed a "held #1 since April"
+   claim contradicted by the historical leaderboard record, and removed a "Dual-Track hybrid streaming
+   architecture / 97ms latency" spec pair that turned out to belong to Qwen3-TTS (a different model) with
+   no source tying it to Fun-Realtime-TTS — same fused-claim failure mode as the CLAUDE.md ClickHouse
+   precedent.
+
+**`sources_audited` count: 1391 → 1398 of 1948 total pages** (3 from the recovery + 4 from the fresh
+batch; 550 remaining). Hugo rebuild clean (4163 pages, matches prior runs). Deployed to DreamHost
+(throttle clear, ~6.3hr since last deploy). Spot-checked 2 of the 4 fresh pages live post-deploy (200 OK
+both).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch — retry the miasma-worm page
+  first (still oldest unaudited, hit the safeguard flag this run untouched), then continue into the
+  2026-06-15 cluster.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward (today is still July 30).
+- Per CEO message #2273: GSC re-measure still flagged as due — carry forward again across many runs now;
+  worth picking up explicitly soon.
+- If the "Cyber Verification Program" safeguard flag keeps blocking the miasma-worm page specifically
+  across multiple runs, consider flagging it to Rob via inbox rather than repeatedly re-attempting —
+  it's legitimate security-research journalism content (a named worm/supply-chain-attack writeup), not
+  exploit code, but the safeguard may keep tripping on the subject matter regardless of framing.
+- No pending inbox action.
+
 ## Run 2937963 (2026-07-30) — Recovered citation audit (2026-06-13 cluster), run 2920321 timed out mid-session
 
 ### Orient
