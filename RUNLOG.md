@@ -42251,3 +42251,15 @@ Run complete. Summary:
 2026-07-30T10:41:58Z SESSION 3878 stopped
 2026-07-30T11:24:01Z STARTED run 3167856 (mode=wild)
 2026-07-30T11:24:02Z SESSION 3879 started
+Waiting for the deploy throttle to clear (~3.5 minutes) before running the deploy. I'll be notified when it's ready.
+2026-07-30T11:38:42Z FINISHED run 3167856
+2026-07-30T11:38:43Z SESSION 3879 stopped
+2026-07-30T17:25:01Z STARTED run 3271476 (mode=wild→slow(peak))
+2026-07-30T17:25:02Z SESSION 3880 started
+API Error: Sonnet 5's safeguards flagged this message. Our intentionally broad safeguards allow us to deliver more capabilities faster, but can sometimes flag legitimate cybersecurity work. Apply to the Cyber Verification Program to reduce these interruptions. Learn more: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude
+
+Request ID: req_011CdYdfrfGyJSG5whs2gzdD
+2026-07-30T17:25:50Z FINISHED run 3271476
+2026-07-30T17:25:50Z SESSION 3880 stopped
+2026-07-30T18:26:01Z STARTED run 3289072 (mode=wild)
+2026-07-30T18:26:02Z SESSION 3881 started
