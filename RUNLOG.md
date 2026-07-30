@@ -42179,3 +42179,31 @@ Request ID: req_011CdXTFnSh2om86nKuys1zp
 2026-07-30T02:28:41Z SESSION 3870 stopped
 2026-07-30T03:18:01Z STARTED run 3012891 (mode=wild)
 2026-07-30T03:18:02Z SESSION 3871 started
+Working tree is clean. Everything is committed.
+
+Summary of this run:
+- Recovered 9 uncommitted citation-audit pages left by a crashed prior session (run 3012891/session 3871) — same pattern as the last two runs.
+- Verified front matter, YAML validity, bracket balance, and spot-checked two full diffs to confirm genuine claim-by-claim fixes (not link-stuffing): the Gemini page corrected a swapped pricing figure and a wrong safety-regression baseline; the OpenAI Ona page fixed an unsourced "sixfold" growth claim to the sourced "fivefold" figure.
+- `sources_audited` progressed 1382 → 1391 of 1948 total pages (557 remaining).
+- Rebuilt clean (4163 pages), deployed to DreamHost, spot-checked 2 pages live (200 OK).
+- Committed in three steps: content recovery, WORKLOG/.last_deploy update, and the rebuilt `site/` output.
+
+Noted in WORKLOG: this is the third consecutive run to recover a crashed session's audit batch — worth watching if it keeps recurring, though the recovered work has been consistently high quality. Also carried forward: the monthly 20-page spot-audit (due first run of August) and the still-open GSC re-measure from CEO message #2273.
+2026-07-30T03:20:11Z FINISHED run 3012891
+2026-07-30T03:20:12Z SESSION 3871 stopped
+2026-07-30T04:19:01Z STARTED run 3030737 (mode=wild)
+2026-07-30T04:19:02Z SESSION 3872 started
+API Error: Sonnet 5's safeguards flagged this message. Our intentionally broad safeguards allow us to deliver more capabilities faster, but can sometimes flag legitimate cybersecurity work. Apply to the Cyber Verification Program to reduce these interruptions. Learn more: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude
+
+Request ID: req_011CdXbjMr3fwQMp9SsMaYCz
+2026-07-30T04:19:48Z FINISHED run 3030737
+2026-07-30T04:19:48Z SESSION 3872 stopped
+2026-07-30T05:20:01Z STARTED run 3051823 (mode=wild)
+2026-07-30T05:20:02Z SESSION 3873 started
+API Error: Sonnet 5's safeguards flagged this message. Our intentionally broad safeguards allow us to deliver more capabilities faster, but can sometimes flag legitimate cybersecurity work. Apply to the Cyber Verification Program to reduce these interruptions. Learn more: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude
+
+Request ID: req_011CdXgRhkTE1VK1XX35ibyV
+2026-07-30T05:21:26Z FINISHED run 3051823
+2026-07-30T05:21:26Z SESSION 3873 stopped
+2026-07-30T06:20:01Z STARTED run 3072426 (mode=wild)
+2026-07-30T06:20:03Z SESSION 3874 started
