@@ -5,7 +5,7 @@
 
 Most AI agents are built with a specific blindspot: they know about code, about APIs, about infrastructure — but they do not know what users are actually experiencing in your product right now.
 
-LogRocket's **Galileo AI** has spent years watching session replays, correlating error rates with user behavior, and surfacing friction in web and mobile products. On June 9, 2026, LogRocket launched an **MCP Server** that puts that observability layer directly in front of AI agents. Your coding agent, support agent, or product research agent can now query what real users are doing, where they are failing, and what is breaking — before you even open a ticket.
+LogRocket's **Galileo AI**, an AI analysis layer that [launched as "Ask Galileo" in March 2026](https://www.globenewswire.com/news-release/2026/03/05/3250605/0/en/stop-watching-session-replays-logrocket-launches-ask-galileo-an-ai-powered-chat-that-answers-any-question-about-your-users-experience-in-seconds.html), watches session replays, correlates error rates with user behavior, and surfaces friction in web and mobile products. On [June 9, 2026](https://www.globenewswire.com/news-release/2026/06/09/3308950/0/en/remove-the-blindfold-from-your-ai-agents-the-logrocket-mcp-shows-agents-how-customers-are-actually-experiencing-your-product.html), LogRocket [launched an MCP Server](https://blog.logrocket.com/introducing-the-logrocket-mcp/) that puts that observability layer directly in front of AI agents. Your coding agent, support agent, or product research agent can now query what real users are doing, where they are failing, and what is breaking — before you even open a ticket.
 
 ---
 
@@ -13,13 +13,13 @@ LogRocket's **Galileo AI** has spent years watching session replays, correlating
 
 When an agent helps you debug a production issue, it has access to your codebase, your error logs, maybe your Datadog metrics. What it typically lacks is *behavioral context*: the session replay that shows the exact click sequence before an error, the support ticket that confirms five other users hit the same wall, the A/B test result that shows your new checkout flow is losing conversions.
 
-LogRocket calls this the "blindfold." The MCP Server removes it.
+LogRocket calls this the ["blindfold."](https://blog.logrocket.com/introducing-the-logrocket-mcp/) The MCP Server removes it.
 
 ---
 
 ## What Galileo AI Does Behind the MCP
 
-The LogRocket MCP is not a raw database query layer. Queries route through **Galileo AI**, LogRocket's analysis engine, which:
+The LogRocket MCP is not a raw database query layer. Queries route through **Galileo AI**, LogRocket's analysis engine, which [draws on multiple signal sources](https://www.globenewswire.com/news-release/2026/06/09/3308950/0/en/remove-the-blindfold-from-your-ai-agents-the-logrocket-mcp-shows-agents-how-customers-are-actually-experiencing-your-product.html):
 
 - **Watches session replays** to identify friction patterns within user journeys
 - **Ingests customer calls** from Zoom and Gong to capture user sentiment at scale
@@ -35,7 +35,7 @@ When your agent asks "what are users struggling with in the checkout flow?", Gal
 
 ### Default Toolset
 
-Three tools are available out of the box:
+[Three tools are available out of the box](https://docs.logrocket.com/docs/mcp):
 
 | Tool | Description |
 |---|---|
@@ -47,7 +47,7 @@ Three tools are available out of the box:
 
 ### Optional Toolsets
 
-Builders can enable additional toolsets by appending a `?toolsets=` parameter to the connection URL:
+Builders can enable [additional toolsets](https://docs.logrocket.com/docs/mcp) by appending a `?toolsets=` parameter to the connection URL:
 
 | Toolset | Tools Enabled | Use When |
 |---|---|---|
@@ -79,7 +79,7 @@ https://mcp.logrocket.com/mcp/<organization_id>/<project_id>
 
 For production agent workflows, use the project-scoped URL. It eliminates disambiguation overhead and narrows the data surface to the project your agent should be operating on.
 
-### Authentication
+### [Authentication](https://docs.logrocket.com/docs/mcp)
 
 **OAuth (recommended):** Most MCP clients will prompt for OAuth authentication after connecting. This grants access equivalent to your browser login — scoped to your organization's permissions.
 
@@ -95,7 +95,7 @@ API keys are project-scoped. One key per project gives you clean separation if y
 
 ## Compatible Clients
 
-The LogRocket MCP works with any client that supports the Model Context Protocol:
+The LogRocket MCP [works with any client](https://docs.logrocket.com/docs/mcp) that supports the Model Context Protocol:
 
 - **Claude Code** — wire it in for debugging workflows alongside your codebase
 - **Claude Desktop** — conversational product research sessions
@@ -111,9 +111,9 @@ The LogRocket MCP works with any client that supports the Model Context Protocol
 
 The most direct use case. An agent monitors LogRocket for new error clusters, uses `use_logrocket` to understand the scope and user impact, then routes a fix to a coding agent (Claude Code, Cursor, Codex) with full session context attached.
 
-**Rippling** is using this pattern in production: near-real-time issue identification with agent-driven routing.
+**Rippling** is using this pattern in production: President and Chief Product Officer Matt MacInnis says the company uses the MCP to ["identify and resolve customer issues in real time"](https://www.globenewswire.com/news-release/2026/06/09/3308950/0/en/remove-the-blindfold-from-your-ai-agents-the-logrocket-mcp-shows-agents-how-customers-are-actually-experiencing-your-product.html) ([also noted by LogRocket](https://blog.logrocket.com/introducing-the-logrocket-mcp/)).
 
-**ShipStation Global** extended it: coding agents receive the session context and automatically generate pull requests, so the fix is proposed before a human even opens the ticket.
+**ShipStation Global** extended it: CTO Nick Ciubotariu describes an agent that, [when an issue surfaces, "doesn't wait for us to investigate; it pulls the sessions, diagnoses the root cause, and opens a pull request automatically"](https://www.globenewswire.com/news-release/2026/06/09/3308950/0/en/remove-the-blindfold-from-your-ai-agents-the-logrocket-mcp-shows-agents-how-customers-are-actually-experiencing-your-product.html) ([also referenced here](https://blog.logrocket.com/introducing-self-improving-software/)).
 
 ### Pattern 2: Product Research Agent
 
@@ -133,7 +133,7 @@ After a PR is merged, trigger an agent to query LogRocket for session anomalies 
 
 LogRocket is a frontend observability tool. Users experience failures in the UI; root causes often live in the backend. For full-stack issue resolution, pair the LogRocket MCP with a backend observability MCP:
 
-- **Datadog MCP Server** (launched March 9, 2026): infrastructure metrics, APM traces, log queries
+- **[Datadog MCP Server](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-mcp-server/)** (launched March 9, 2026): infrastructure metrics, APM traces, log queries
 - **New Relic, Dynatrace, Honeycomb**: check each for MCP server availability
 
 An agent that can query both LogRocket (what the user experienced) and Datadog (what the server did) can correlate frontend symptoms with backend root causes without manual pivot-and-search.
@@ -142,12 +142,12 @@ An agent that can query both LogRocket (what the user experienced) and Datadog (
 
 ## Availability and Access
 
-- **Live as of June 9, 2026**
-- Available to **existing LogRocket customers** — no separate SKU or waitlist mentioned at launch
+- **[Live as of June 9, 2026](https://www.globenewswire.com/news-release/2026/06/09/3308950/0/en/remove-the-blindfold-from-your-ai-agents-the-logrocket-mcp-shows-agents-how-customers-are-actually-experiencing-your-product.html)**
+- Available to **existing LogRocket customers** — [no separate SKU or waitlist mentioned at launch](https://blog.logrocket.com/introducing-the-logrocket-mcp/)
 - Connection URL: `mcp.logrocket.com/mcp`
-- Docs: `docs.logrocket.com/docs/mcp`
+- Docs: [`docs.logrocket.com/docs/mcp`](https://docs.logrocket.com/docs/mcp)
 
-LogRocket explicitly notes that MCP server tools are under active development and subject to change. Pin your tool references carefully and build with the expectation that the schema will evolve.
+[LogRocket explicitly notes that MCP server tools are under active development and subject to change](https://docs.logrocket.com/docs/mcp). Pin your tool references carefully and build with the expectation that the schema will evolve.
 
 ---
 
@@ -155,7 +155,7 @@ LogRocket explicitly notes that MCP server tools are under active development an
 
 **No raw session video.** The MCP returns Galileo's synthesized analysis, not the raw session replay file. You cannot stream video to an agent — you get structured insights.
 
-**No write operations.** The LogRocket MCP is read-only. Agents can query and analyze but cannot modify sessions, create alerts, or configure LogRocket settings via MCP.
+**No write operations.** Every [tool the documentation lists](https://docs.logrocket.com/docs/mcp) is a query/read tool (`list_organizations`, `list_projects`, `use_logrocket`, `find_sessions`, `watch_sessions`, `build_metric`) — none create alerts or configure LogRocket settings via MCP.
 
 **Requires LogRocket subscription.** This is not a free observability layer. LogRocket is a paid product. If you are not already using it, evaluate whether your current error tracking and session tooling justifies the switch.
 

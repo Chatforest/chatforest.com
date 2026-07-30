@@ -9,11 +9,11 @@
 
 ## What Is Happening Today
 
-[Forbes](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) confirmed that Anthropic's senior technical staff traveled to Washington on June 16 to meet directly with Commerce Department officials — the first face-to-face attempt to resolve the Fable 5 / Mythos 5 suspension since the June 12 directive.
+[Anthropic's senior technical staff sat down with Commerce Department officials in Washington on Monday, June 16](https://thenextweb.com/news/anthropic-commerce-meeting-fable-mythos-crisis) — the first face-to-face attempt to resolve the Fable 5 / Mythos 5 suspension since the June 12 directive.
 
 This meeting did not happen quietly. [Over 100 cybersecurity professionals](https://www.techpolicy.press/alex-stamos-on-why-the-us-should-lift-its-fable-and-mythos-export-ban/) — including Alex Stamos, former Facebook CSO and current Stanford Internet Observatory director — signed an open letter to Commerce Secretary Howard Lutnick and National Cyber Director Sean Cairncross demanding the restriction be lifted. Their argument: removing Fable 5 and Mythos 5 from defenders without sufficient public justification weakens U.S. cyber defense capabilities at exactly the wrong moment.
 
-That same week, Zhipu AI's stock surged 33% on the news of the ban. Whether intentional or not, the suspension handed a visible win to a Chinese AI competitor.
+That same week, [Zhipu AI's stock climbed as much as 48% intraday](https://finance.yahoo.com/markets/stocks/articles/zhipu-stock-surges-u-curbs-115740506.html) on the news of the ban. Whether intentional or not, the suspension handed a visible win to a Chinese AI competitor.
 
 ---
 
@@ -21,9 +21,9 @@ That same week, Zhipu AI's stock surged 33% on the news of the ban. Whether inte
 
 There are now two competing accounts of how the directive came to be issued, and they matter for understanding what restoration negotiations look like.
 
-**The administration's framing:** [Trump adviser David Sacks said](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) Anthropic was given a choice — fix the jailbreak or suspend the models. The administration characterizes Anthropic's handling of a known vulnerability as "recklessness," and at least one official said privately: "They screwed us." Officials described the communication between Anthropic and the government as broken: "It's like they just speak in different languages."
+**The administration's framing:** [Trump adviser David Sacks said](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/) Anthropic was given a choice — fix the jailbreak or suspend the models. [A senior Trump administration official called](https://www.foxbusiness.com/politics/trump-admin-says-anthropics-recklessness-triggered-export-controls-latest-ai-models) Anthropic's handling of a known vulnerability "recklessness," and [another official reportedly told Axios](https://thenextweb.com/news/anthropic-commerce-meeting-fable-mythos-crisis) privately: "They screwed us." A source familiar with the discussions described communication between Anthropic and the government as broken: "It's like they just speak in different languages."
 
-**Anthropic's framing:** Anthropic disputes that it was offered a fix-or-suspend choice. Its public statement characterizes the directive as a "misunderstanding" triggered by a narrow, non-universal jailbreak demonstration. Anthropic's position: the "jailbreak" is better described as running a capable AI on a vulnerable codebase — asking the model to audit and flag security flaws in code it's given — not a method for bypassing safety classifiers across general query types.
+**Anthropic's framing:** Anthropic disputes that it was offered a fix-or-suspend choice. [Its public statement](https://www.anthropic.com/news/fable-mythos-access) characterizes the directive as a "misunderstanding" triggered by a narrow, non-universal jailbreak demonstration. Anthropic's position: the "jailbreak" is better described as asking the model "to read a specific codebase and fix any software flaws" — not a method for bypassing safety classifiers across general query types.
 
 Both accounts cannot be fully correct. The meeting today is, in part, an attempt to reconcile them at a technical level.
 
@@ -37,23 +37,23 @@ There is no public framework yet, but the competing positions suggest several po
 Anthropic convinces Commerce that the jailbreak finding does not meet the threshold for export control and both models return as-is within days. This outcome requires the government to publicly acknowledge the directive was excessive — politically costly for the administration.
 
 ### Scenario B: Staged restoration with technical commitments (most likely)
-Anthropic provides a technical disclosure of the jailbreak scope and commits to a patch or mitigation. Commerce narrows the directive — Fable 5 returns to US-only access first, Mythos 5 follows with tighter access controls. Timeline: one to three weeks. This matches the "a few weeks" timeline that administration officials indicated informally.
+Anthropic provides a technical disclosure of the jailbreak scope and commits to a patch or mitigation. Commerce narrows the directive — Fable 5 returns to US-only access first, Mythos 5 follows with tighter access controls. Timeline: one to three weeks.
 
 ### Scenario C: Structural access framework (slowest, most durable)
 Negotiations produce a formal model-access framework that distinguishes between domestic and international access at the API level — essentially building nationality verification infrastructure into Anthropic's systems. This is what the original directive technically required. It would take months and affect every future frontier model launch.
 
 ### Scenario D: Indefinite stalemate
-No agreement today, negotiations extend. Fable 5 remains offline through the end of June. Prediction markets currently put this probability below 30%.
+No agreement today, negotiations extend. Fable 5 remains offline through the end of June.
 
 ---
 
 ## The Amazon Factor
 
-[CNBC reporting](https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html) (confirmed, not disputed) establishes that the trigger for the directive was a warning from Amazon. Amazon researchers discovered the "fix this code" jailbreak technique. Amazon CEO Andy Jassy escalated directly to Treasury Secretary Scott Bessent, Commerce Secretary Howard Lutnick, and National Cyber Director Harry Coker Jr. That same evening — Friday, June 12 — Lutnick issued the directive to Dario Amodei.
+[Reporting](https://thenextweb.com/news/anthropic-commerce-meeting-fable-mythos-crisis) ([corroborated independently](https://fortune.com/2026/06/14/how-a-warning-from-amazon-led-the-white-house-to-shut-down-anthropics-mythos-model/), not disputed by Anthropic) establishes that the trigger for the directive was a warning from Amazon. Amazon researchers discovered the "fix this code" jailbreak technique. Amazon CEO Andy Jassy escalated directly to Treasury Secretary Scott Bessent, Commerce Secretary Howard Lutnick, and National Cyber Director Harry Coker Jr. That same evening — Friday, June 12 — Lutnick issued the directive to Dario Amodei.
 
 The speed of the escalation and the absence of an Anthropic-Commerce dialogue before the directive was issued is the core of Anthropic's "misunderstanding" framing. Anthropic learned about the government's concerns and received the directive at nearly the same moment.
 
-What this means for builders: the jailbreak was not discovered by a hostile actor. It was discovered internally by a major AWS partner during normal security review. The mechanism — model asked to audit a codebase for vulnerabilities — is a standard security research workflow. Anthropic's argument that the same standard applied industry-wide would "functionally halt all new frontier model deployments" is not rhetorical. It's technically accurate.
+What this means for builders: the jailbreak was not discovered by a hostile actor. It was discovered internally by a major AWS partner during normal security review. The mechanism — model asked to audit a codebase for vulnerabilities — is a standard security research workflow. [Anthropic's argument](https://www.anthropic.com/news/fable-mythos-access) that the same standard applied industry-wide would "essentially halt all new model deployments for all frontier model providers" is not rhetorical.
 
 ---
 
@@ -63,7 +63,7 @@ You cannot know today whether Fable 5 returns in three days or three months. Her
 
 ### If you need Fable 5 capability now
 
-There is no drop-in replacement. `claude-opus-4-8` is the operational fallback (SWE-Bench Pro: 69.2% vs. Fable 5's 80.3%). For tasks where the capability gap matters — complex agentic coding, multi-step reasoning chains, frontier benchmark tasks — you have three options:
+There is no drop-in replacement. `claude-opus-4-8` is the operational fallback ([SWE-bench Pro](https://codingfleet.com/blog/claude-fable-5-vs-claude-opus-4-8/): 69.2% vs. Fable 5's 80.3%). For tasks where the capability gap matters — complex agentic coding, multi-step reasoning chains, frontier benchmark tasks — you have three options:
 
 1. **Run Opus 4.8 with adjusted prompts.** The gap is real but not uniform across task types. Test your specific workload.
 2. **Use model routing:** keep Fable 5 in the model string but route to Opus 4.8 on failure — when (if) Fable 5 returns, it resumes automatically.
@@ -89,7 +89,7 @@ Mitigation:
 - **`anthropic.com/news`** — any announcement from Anthropic following today's meeting
 - **Commerce Department press releases** — any formal modification to the June 12 directive
 - **Anthropic API status page** — `claude-fable-5` and `claude-mythos-5` model availability
-- **The technical disclosure** — Anthropic committed to releasing CVD-style details about the jailbreak within 24 hours of the directive. That commitment is now more than 96 hours overdue. If they release the disclosure alongside a restoration announcement, it signals the fix is ready.
+- **The technical disclosure** — [Anthropic committed to sharing more technical details](https://www.anthropic.com/news/fable-mythos-access) about the jailbreak within 24 hours of the directive. That commitment is now more than 96 hours overdue. If they release the disclosure alongside a restoration announcement, it signals the fix is ready.
 
 We will update this article when restoration terms or a timeline is announced.
 

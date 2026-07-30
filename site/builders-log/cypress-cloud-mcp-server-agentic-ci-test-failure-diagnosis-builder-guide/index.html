@@ -67,10 +67,10 @@
 
       <div class="article-body">
         <p>Every developer who runs end-to-end tests knows the ritual: the CI pipeline goes red, you open the test dashboard, you copy the stack trace, you paste it into your coding agent, and then you ask &ldquo;why did this fail?&rdquo; The agent helps — but it never had access to the actual run data. You were the integration layer.</p>
-<p>Cypress Cloud&rsquo;s MCP Server, which reached general availability on <strong>May 20, 2026</strong>, removes that manual step. Your AI coding assistant can now query Cypress Cloud directly: pull the failure log, trace the stack, look up the test&rsquo;s flake history, and surface the Test Replay link — all without leaving the conversation.</p>
+<p>Cypress Cloud&rsquo;s MCP Server, which <a href="https://www.cypress.io/blog/cloud-mcp-give-your-ai-assistant-access-to-your-test-runs">reached general availability on May 20, 2026</a>, removes that manual step. Your AI coding assistant can now query Cypress Cloud directly: pull the failure log, trace the stack, look up the test&rsquo;s flake history, and surface the Test Replay link — all without leaving the conversation.</p>
 <hr>
 <h2 id="what-cypress-cloud-is">What Cypress Cloud Is</h2>
-<p><strong>Cypress Cloud</strong> is the hosted dashboard and collaboration layer that sits alongside the open-source Cypress test runner. When your CI pipeline runs <code>cypress run</code>, results are streamed to Cypress Cloud, which stores:</p>
+<p><strong>Cypress Cloud</strong> is the hosted dashboard and collaboration layer that sits alongside the open-source Cypress test runner. When your CI pipeline runs <code>cypress run</code>, results are streamed to <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">Cypress Cloud, which stores</a>:</p>
 <ul>
 <li>Full test run records (pass/fail per spec, per run)</li>
 <li>Stack traces and screenshots for failures</li>
@@ -79,7 +79,7 @@
 <li><strong>UI Coverage</strong> — which application routes and interactive elements tests exercised</li>
 <li><strong>Accessibility violations</strong> — detected during test execution via axe-core integration</li>
 </ul>
-<p>The MCP Server exposes a subset of that stored data to AI agents as queryable tools.</p>
+<p>The MCP Server exposes a subset of that stored data to AI agents as <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">queryable tools</a>.</p>
 <hr>
 <h2 id="the-problem-agents-without-ci-context">The Problem: Agents Without CI Context</h2>
 <p>When a test suite fails, an agent working from your codebase has access to the test file and the application code — but it does not know:</p>
@@ -92,7 +92,7 @@
 <p>Without that context, an agent&rsquo;s diagnosis is educated guessing. With the Cypress Cloud MCP, it becomes grounded investigation.</p>
 <hr>
 <h2 id="architecture-remote-mcp-hosted-by-cypress">Architecture: Remote MCP, Hosted by Cypress</h2>
-<p>The Cypress Cloud MCP Server is a <strong>remote MCP server</strong> — Cypress hosts and operates it. You do not install anything locally or run your own server process. Your MCP client (Claude Code, Cursor, VS Code, Claude Desktop) connects to Cypress&rsquo;s endpoint over HTTPS using StreamableHTTP transport.</p>
+<p>The Cypress Cloud MCP Server is a <strong>remote MCP server</strong> — Cypress hosts and operates it. You do not install anything locally or run your own server process. Your MCP client connects to Cypress&rsquo;s endpoint over HTTPS using <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">streamable HTTP transport</a>; <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">Cypress documents setup for Claude Code, Claude Desktop, Cursor, GitHub Copilot (VS Code and CLI), OpenAI Codex CLI, and Antigravity</a>.</p>
 <p>This means:</p>
 <ul>
 <li>No <code>npm install</code> or local binary required</li>
@@ -106,7 +106,7 @@
 <h3 id="oauth-recommended">OAuth (Recommended)</h3>
 <p>The OAuth flow is the recommended path for interactive setups. Your MCP client redirects to Cypress Cloud, you authorize the connection, and the OAuth token is managed by your client. This is the cleanest setup for Claude Desktop or any client that handles OAuth natively.</p>
 <h3 id="personal-access-token">Personal Access Token</h3>
-<p>For headless environments, CI-adjacent setups, or clients that do not support OAuth, you can generate a <strong>personal access token</strong> in Cypress Cloud settings and provide it as a Bearer token in your MCP client configuration. This is useful when you want the agent connection to reflect a specific user&rsquo;s permissions.</p>
+<p>For headless environments, CI-adjacent setups, or clients that do not support OAuth, you can <a href="https://www.cypress.io/blog/cloud-mcp-give-your-ai-assistant-access-to-your-test-runs">generate a personal access token</a> from your Cypress Cloud profile and provide it as a Bearer token in your MCP client configuration. This is useful when you want the agent connection to reflect a specific user&rsquo;s permissions.</p>
 <hr>
 <h2 id="connecting-to-claude-code">Connecting to Claude Code</h2>
 <p>Add the Cypress Cloud MCP Server to your Claude Code configuration. The server URL and any required token go into your MCP configuration (<code>.claude/settings.json</code> or equivalent):</p>
@@ -114,15 +114,15 @@
   <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
     <span style="color:#f92672">&#34;cypress-cloud&#34;</span>: {
       <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;http&#34;</span>,
-      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://cloud.cypress.io/mcp&#34;</span>
+      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://mcp.cypress.io/mcp&#34;</span>
     }
   }
 }
-</code></pre></div><p>For personal access token auth, add the token as an authorization header in your client configuration. Consult the <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">official Cypress Cloud MCP docs</a> for the current endpoint URL and exact header format, as these may evolve during early GA.</p>
+</code></pre></div><p>The <code>https://mcp.cypress.io/mcp</code> endpoint above <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">matches the URL Cypress publishes in its own client setup guides</a>. For personal access token auth, add the token as an authorization header in your client configuration. Consult the <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">official Cypress Cloud MCP docs</a> for the current endpoint URL and exact header format, as these may evolve during early GA.</p>
 <p>The same connection pattern applies to Cursor and VS Code extensions that support MCP over HTTP.</p>
 <hr>
 <h2 id="what-the-tools-do">What the Tools Do</h2>
-<p>At GA, the Cypress Cloud MCP exposes tools across two functional areas:</p>
+<p>At GA, <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">the Cypress Cloud MCP exposes 11 tools across root-cause-analysis and flaky-test/coverage functions</a>:</p>
 <h3 id="root-cause-analysis-tools">Root-Cause Analysis Tools</h3>
 <p>These tools give an agent the data it needs to diagnose a specific test failure:</p>
 <ul>
@@ -139,19 +139,14 @@
 <li><strong>Get UI Coverage gaps</strong> — identify routes, components, or interactive elements that tests did not exercise in a given run</li>
 </ul>
 <h3 id="planned-tools-not-yet-ga">Planned Tools (Not Yet GA)</h3>
-<p>According to Cypress, the following are on the roadmap:</p>
-<ul>
-<li><strong>Network request inspection</strong> — query captured network traffic from a test run</li>
-<li><strong>Test command logs</strong> — access the step-by-step command log for a test (the equivalent of the left panel in the Cypress test runner)</li>
-<li><strong>Historical flake data</strong> — trend analysis over multiple runs, not just per-test retry data</li>
-</ul>
+<p><a href="https://www.cypress.io/blog/cloud-mcp-give-your-ai-assistant-access-to-your-test-runs">Cypress says it is &ldquo;exploring ways to expose network requests, test command logs, and historical flake data&rdquo; directly to the MCP server</a> to give agents more context. None of these are committed features with a ship date — they are early-stage exploration, not a confirmed roadmap.</p>
 <hr>
 <h2 id="rate-limits">Rate Limits</h2>
-<p>The Cypress Cloud MCP enforces a rate limit of <strong>100 tool requests per hour</strong> across all Cypress Cloud plans. This is generous for interactive diagnosis sessions — an agent investigating a CI failure will typically use 5–15 tool calls. Sustained automated polling or multi-run sweeps will approach the limit.</p>
-<p>The rate limit applies per-user, not per-organization, so multiple agents authenticated with different user tokens each get their own 100-request budget.</p>
+<p>The Cypress Cloud MCP enforces a <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">rate limit of 100 tool requests per hour, applied uniformly across all Cypress Cloud plans</a>. This is generous for interactive diagnosis sessions — an agent investigating a CI failure will typically use 5–15 tool calls. Sustained automated polling or multi-run sweeps will approach the limit.</p>
+<p>Cypress&rsquo;s documentation does not specify whether the limit is scoped per user, per token, or per organization — plan your automation budget conservatively until that is confirmed, and contact Cypress support if you need a higher ceiling.</p>
 <hr>
 <h2 id="pricing">Pricing</h2>
-<p>The Cypress Cloud MCP Server is <strong>included on all Cypress Cloud plans</strong> at no additional charge. If you already use Cypress Cloud to store your test results, you get MCP access without upgrading.</p>
+<p>The Cypress Cloud MCP Server is <a href="https://www.cypress.io/blog/cloud-mcp-give-your-ai-assistant-access-to-your-test-runs">included free on all Cypress Cloud plans, including the Starter (free) tier</a>, at no additional charge. If you already use Cypress Cloud to store your test results, you get MCP access without upgrading.</p>
 <p>This makes it one of the lower-friction enterprise MCP servers to adopt — the cost gate is the Cypress Cloud subscription itself, not a separate MCP tier.</p>
 <hr>
 <h2 id="builder-patterns">Builder Patterns</h2>
@@ -202,12 +197,12 @@ Flag anything that looks like a regression.
 <li>Upload test code or specs to Cypress Cloud</li>
 </ul>
 <p>The MCP is an observability and diagnosis layer. Execution still lives in your CI pipeline.</p>
-<h3 id="test-replay-requires-a-supported-plan">Test Replay Requires a Supported Plan</h3>
-<p>Test Replay is a paid Cypress Cloud feature and is not available on all plans. If your plan does not include Test Replay, the tool will return a link, but clicking it may prompt an upgrade. Check your plan tier before building workflows that depend heavily on Test Replay links.</p>
+<h3 id="test-replay-version-and-browser-requirements">Test Replay Version and Browser Requirements</h3>
+<p>Test Replay itself is <a href="https://docs.cypress.io/cloud/faq">included free on every Cypress Cloud plan, including the Starter (free) tier</a> — it is not gated behind a paid plan. It does, however, <a href="https://docs.cypress.io/cloud/faq">require Cypress v13 or later and only captures Chromium-based browsers (Chrome, Edge, Electron)</a>. If your test suite runs on Cypress v12 or an unsupported browser, or if a run predates your project&rsquo;s <code>--record</code> adoption, the Test Replay tool may return no usable link. Confirm your Cypress version and browser target before building workflows that depend heavily on Test Replay links.</p>
 <hr>
 <h2 id="limitations">Limitations</h2>
 <p><strong>Rate ceiling at scale.</strong> 100 requests/hour is enough for interactive use and occasional automated triage, but a fully automated pipeline that runs tests hourly and queries Cypress Cloud after every run will hit the limit. Plan your request budget before building continuous automation.</p>
-<p><strong>GA scope is narrower than the roadmap.</strong> Network requests, command logs, and historical flake trend data are not yet available. If your diagnosis workflow depends on network inspection (e.g., tracing a failed API call during a test), you will need to fall back to the Cypress Cloud dashboard for now.</p>
+<p><strong>GA scope is narrower than what Cypress is exploring.</strong> <a href="https://www.cypress.io/blog/cloud-mcp-give-your-ai-assistant-access-to-your-test-runs">Network requests, command logs, and historical flake trend data are not part of the GA tool set</a>. If your diagnosis workflow depends on network inspection (e.g., tracing a failed API call during a test), you will need to fall back to the Cypress Cloud dashboard for now.</p>
 <p><strong>OAuth not universally supported.</strong> Not every MCP client handles OAuth flows smoothly. If your client requires a static token, verify that the personal access token path covers your authentication needs before building around it.</p>
 <p><strong>Data retention limits apply.</strong> Cypress Cloud retains run data based on your plan&rsquo;s retention policy. If you query a run that has aged out, the tools will return empty results. Build your workflows to query runs within the retention window.</p>
 <p><strong>Cypress Cloud subscription required.</strong> The MCP server is a cloud product tier, not a feature of the open-source <code>cypress</code> package. Teams running Cypress entirely open-source without a Cloud account cannot use this MCP.</p>
@@ -216,7 +211,7 @@ Flag anything that looks like a regression.
 <p>Before building with the Cypress Cloud MCP:</p>
 <ul>
 <li><input disabled="" type="checkbox"> Confirm you have a Cypress Cloud account with runs stored (not open-source only)</li>
-<li><input disabled="" type="checkbox"> Check your plan for Test Replay access if you plan to use Test Replay link tools</li>
+<li><input disabled="" type="checkbox"> Confirm your test suite runs Cypress v13+ on a Chromium-based browser (Chrome, Edge, Electron) if you plan to rely on Test Replay link tools — Test Replay is free on every plan but has these version/browser requirements</li>
 <li><input disabled="" type="checkbox"> Decide on auth method: OAuth (interactive clients) or personal access token (headless/CI)</li>
 <li><input disabled="" type="checkbox"> Add the MCP server to your client configuration (<code>settings.json</code> or equivalent)</li>
 <li><input disabled="" type="checkbox"> Verify connection by running a simple run-status query for a known recent run</li>
@@ -224,7 +219,7 @@ Flag anything that looks like a regression.
 <li><input disabled="" type="checkbox"> Identify which CI failure triage steps you currently do manually and prioritize those for automation</li>
 <li><input disabled="" type="checkbox"> Decide whether you need to chain a second MCP (GitHub, Linear, Slack) to close the diagnosis-to-ticket loop</li>
 <li><input disabled="" type="checkbox"> Test flaky test queries against your actual suite to validate the data quality</li>
-<li><input disabled="" type="checkbox"> Check the <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">Cypress Cloud MCP docs</a> for roadmap updates — network request tools and command logs are shipping soon</li>
+<li><input disabled="" type="checkbox"> Check the <a href="https://docs.cypress.io/cloud/integrations/cloud-mcp">Cypress Cloud MCP docs</a> for updates — Cypress has said it is <a href="https://www.cypress.io/blog/cloud-mcp-give-your-ai-assistant-access-to-your-test-runs">exploring adding network request, command log, and historical flake data tools</a>, though no ship date is confirmed</li>
 </ul>
 <hr>
 <p>The Cypress Cloud MCP does something narrow and useful: it turns CI test failures from a copy-paste job into a queryable data source. For teams that already use Cypress Cloud, the marginal cost is zero. For builders creating agentic CI workflows, it is a missing piece — the one that lets an agent actually read the test results instead of waiting for a human to relay them.</p>

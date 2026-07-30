@@ -5,9 +5,10 @@ date: 2026-06-16
 slug: databricks-unity-ai-gateway-claude-fable-5-enterprise-mcp-governance-builder-guide
 tags: ["databricks", "unity-ai-gateway", "claude", "fable-5", "mcp", "enterprise-ai", "agent-bricks", "governance", "cost-controls"]
 categories: ["builders-log"]
+sources_audited: 2026-07-31
 ---
 
-Databricks [added Claude Fable 5 as a hosted model option on June 9, 2026](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway), and featured the integration prominently at the Data+AI Summit keynote (June 15). The vehicle for this integration — **Unity AI Gateway** — is the more durable builder story. Fable 5 has been offline since June 12 due to US export control directives, but the gateway itself is live and governs every model on the platform, not just Claude.
+Databricks [added Claude Fable 5 as a hosted model option on June 9, 2026](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway), and featured the integration prominently during the [Data+AI Summit, June 15-18](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-2026-data-ai-summit-keynote-lineup-and). The vehicle for this integration — **Unity AI Gateway** — is the more durable builder story. Fable 5 has been offline since June 12 due to [US export control directives](https://www.anthropic.com/news/fable-mythos-access), but the gateway itself is live and governs every model on the platform, not just Claude.
 
 This guide covers what Unity AI Gateway actually does, how the Fable 5 integration works, where to find the operational complication, and what builders should be doing right now while the suspension plays out.
 
@@ -15,9 +16,9 @@ This guide covers what Unity AI Gateway actually does, how the Fable 5 integrati
 
 ## What Unity AI Gateway Is
 
-Unity AI Gateway is Databricks' centralized governance and observability layer for AI workloads. It sits between your application code and any model endpoint — whether that endpoint is a Databricks-hosted model (Claude, Llama, DBRX, Mistral), an external API (OpenAI, Anthropic direct), or an MCP server.
+[Unity AI Gateway](https://www.databricks.com/product/artificial-intelligence/unity-ai-gateway) is Databricks' centralized governance and observability layer for AI workloads. It applies consistent governance across Databricks-hosted models (Claude, Llama, DBRX, Mistral), external APIs (OpenAI, Anthropic direct), and MCP servers — without locking teams into a single provider or stack.
 
-The core function: **every AI request routes through a single, auditable control plane**. Instead of each team or service calling models directly with their own credentials, the gateway enforces consistent policies, logs everything to Unity Catalog, and applies spend controls before requests hit the model.
+The core function: the gateway enforces centralized policies, identity-aware controls, budgets, and spend governance instead of each team or service calling models directly with their own credentials, and logs prompts, traces, tool calls, and policy decisions to Unity Catalog.
 
 This matters for builders in regulated environments or at any scale where "which AI called what, when, and what did it cost?" becomes a compliance question.
 
@@ -29,19 +30,19 @@ Every request and response is logged to Unity Catalog system tables with actual 
 
 **2. Fine-grained access control**
 
-[Foundation model Unity Catalog permissions](https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway) went GA on June 9 alongside the Fable 5 launch. Account admins can now control which users and service principals have access to which models, across all workload types. You can restrict Fable 5 access to production service accounts while allowing developers to use Opus 4.8 without budget guardrails.
+[Foundation model Unity Catalog permissions](https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway) [went GA on June 5, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/june), shortly before the Fable 5 launch. Account admins can now control which users and service principals have access to which models, across all workload types. You can restrict Fable 5 access to production service accounts while allowing developers to use Opus 4.8 without budget guardrails.
 
 **3. Spend controls**
 
-AI Spend Controls add proactive budget alerts across users, workspaces, use cases, and entire accounts. Alert thresholds trigger before budgets are exhausted, not after. This is distinct from post-hoc billing alerts — the gateway can act on spend thresholds before a model call completes if the projected cost exceeds policy.
+[AI Spend Controls](https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway) add proactive budget alerts across users, workspaces, use cases, and entire accounts, backed by [hard spend caps that automatically stop requests once a budget is exceeded](https://www.databricks.com/blog/whats-new-unity-ai-gateway-service-policies-guardrails-observability-and-cost-controls-ai). This is distinct from post-hoc billing alerts, which only report spend after the fact.
 
 **4. Guardrails**
 
-LLM-based guardrails with customizable policies apply on both input and output. PII detection, content policy enforcement, and business-specific rules are configurable per endpoint. Guardrails extend to tool calls — the gateway can block tool call actions (like deleting files or dropping tables) that don't have explicit consent in the service policy, even if the underlying model returns them.
+[LLM-based guardrails with customizable policies](https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway) apply on both input and output, covering PII exposure, prompt injection, jailbreaks, and other policy violations. Guardrails extend to tool calls — [Service Policies evaluate every tool call before execution and can allow, deny, or require user consent](https://www.databricks.com/blog/governing-ai-agents-scale-unity-catalog) based on the tool name, its arguments, or the caller's identity, even if the underlying model requests the action.
 
 **5. MCP server governance**
 
-This is the capability most relevant to builders working with the Model Context Protocol. Unity AI Gateway provides visibility, access control, and audit logging across all MCP server interactions — the same control plane that governs model calls also governs MCP tool use. All MCP audit logs land in Unity Catalog with centralized tracing via MLflow.
+This is the capability most relevant to builders working with the Model Context Protocol. [Unity AI Gateway provides visibility, access control, and audit logging across all MCP server interactions](https://www.databricks.com/blog/whats-new-unity-ai-gateway-service-policies-guardrails-observability-and-cost-controls-ai) — the same control plane that governs model calls also governs MCP tool use. Teams [register external MCP servers in Unity Catalog and govern them like any other securable](https://www.databricks.com/blog/governing-ai-agents-scale-unity-catalog): permissions, credential management, and full audit logging in one place.
 
 For teams running multiple MCP servers attached to agent workflows, this solves a real problem: MCP tool calls have historically been outside the governance perimeter that covers the model itself. Unity AI Gateway closes that gap.
 
@@ -51,7 +52,7 @@ For teams running multiple MCP servers attached to agent workflows, this solves 
 
 ### What was announced
 
-On June 9, Databricks added Fable 5 (`anthropic.claude-fable-5`) as a hosted model endpoint available across AWS, Azure, and Google Cloud. The integration routes Fable 5 calls through Unity AI Gateway, meaning all governance features apply out of the box.
+On June 9, [Databricks added Fable 5](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway) (`anthropic.claude-fable-5`) as a hosted model endpoint rolling out across AWS, Azure, and Google Cloud. The integration routes Fable 5 calls through Unity AI Gateway, meaning all governance features apply out of the box.
 
 The basic request format:
 
@@ -68,20 +69,20 @@ The endpoint behaves identically to the Anthropic API from a developer perspecti
 
 ### Performance on enterprise benchmarks
 
-Databricks tested Fable 5 on their internal **OfficeQA Pro** benchmark — a set of enterprise workflow tasks spanning knowledge work, document reasoning, and multi-step tool use:
+Databricks tested Fable 5 on their internal **OfficeQA Pro** benchmark — a set of enterprise workflow tasks spanning knowledge work, document reasoning, and multi-step tool use. [Per Databricks](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway):
 
-- **Fable 5:** 57.9% correctness
-- **Claude Opus 4.8 (prior flagship):** ~48% correctness
-- **Improvement:** +20% accuracy, 12% fewer tool calls
+- **Fable 5:** 57.9% correctness — stated as a new state of the art on the benchmark
+- **Claude Opus 4.8 (prior flagship):** ~48% correctness (derived from the stated +20% relative improvement below; Databricks did not publish an absolute Opus 4.8 score)
+- **Improvement:** +20% more accurate and 12% fewer tool calls, both stated relative to Opus 4.8
 
 The fewer-tool-calls result matters for agentic workflows: a model that reaches correct answers with fewer intermediate steps reduces both latency and cost in tool-heavy pipelines.
 
 ### The tradeoffs
 
-Two material downsides to be aware of before switching:
+Two material downsides to be aware of before switching, [per Databricks' own announcement](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway):
 
-- **30% slower than Opus 4.8.** For latency-sensitive applications (customer-facing chat, real-time completions), this is significant. Fable 5 was designed for long-horizon, asynchronous work — not interactive response times.
-- **2.5x more output tokens.** Fable 5 generates substantially more text per response. For applications that consume long-form outputs, this inflates both latency and cost.
+- **~30% slower than Opus 4.8.** For latency-sensitive applications (customer-facing chat, real-time completions), this is significant. Fable 5 was designed for long-horizon, asynchronous work — not interactive response times.
+- **2.5x more output tokens per question.** Fable 5 generates substantially more text per response. For applications that consume long-form outputs, this inflates both latency and cost.
 
 For batch processing, deep research agents, complex document workflows, and multi-step coding tasks, these tradeoffs are generally acceptable. For synchronous user-facing interfaces, they likely are not.
 
@@ -89,11 +90,11 @@ For batch processing, deep research agents, complex document workflows, and mult
 
 ## Agent Bricks Integration
 
-Databricks' Agent Bricks product allows teams to build domain-specific agents that connect to enterprise data sources and deploy as managed serverless apps. With the Fable 5 launch, Agent Bricks can use Fable 5 as the backing model for these agents, with Unity AI Gateway enforcing governance at the agent-infrastructure boundary.
+[Databricks' Agent Bricks product](https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway) lets teams build domain-specific agents grounded in their own data and tools, deployed as Databricks Apps with built-in authentication and access controls. With the Fable 5 launch, Agent Bricks can use Fable 5 as the backing model for these agents, with Unity AI Gateway enforcing governance at the agent-infrastructure boundary.
 
-The June 2026 Agent Bricks Supervisor improvements (GA June 11) add:
-- **Web search as a built-in Supervisor tool** — agents can access current public information without custom tool wiring
-- **Unity Catalog volumes as subagent tools** — agents can read from and write to governed data stores directly
+The June 2026 Agent Bricks Supervisor improvements, [per Databricks' release notes](https://docs.databricks.com/aws/en/release-notes/product/2026/june), add:
+- **Web search as a built-in Supervisor tool** (GA June 3) — agents can access current public information without custom tool wiring
+- **Unity Catalog volumes as subagent tools** (GA June 11) — agents can read from and write to governed data stores directly
 
 Both capabilities are available regardless of which model backs the agent. Switching from Opus 4.8 to Fable 5 (or back) is a model parameter change, not an architecture change.
 
@@ -101,9 +102,9 @@ Both capabilities are available regardless of which model backs the agent. Switc
 
 ## The Suspension Complication
 
-**Claude Fable 5 has been offline since June 12, 2026.** A US government export control directive issued that day suspended Fable 5 and Mythos 5 access, citing concerns about the compute capacity those models provide to potentially restricted parties. Anthropic has not provided a restoration timeline.
+**Claude Fable 5 has been offline since June 12, 2026.** [Anthropic disclosed](https://www.anthropic.com/news/fable-mythos-access) that the US government, citing national security authorities, issued an export control directive ordering Anthropic to suspend all access to Fable 5 and Mythos 5 by any foreign national worldwide — and because Anthropic's platform doesn't verify user nationality in real time, it took both models offline entirely to comply. [Reporting attributes the order to a jailbreak discovered in Fable 5's safety guardrails](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/), a characterization Anthropic disputes as not warranting a full suspension. As of publication, Anthropic had not provided a restoration timeline.
 
-This is unusual timing: Databricks featured Fable 5 at the Data+AI Summit keynote on June 15 — three days after the model was pulled. The `anthropic.claude-fable-5` endpoint exists in Databricks, but calls to it will fail or return errors until the suspension is lifted.
+This is unusual timing: Databricks featured Fable 5 during the Data+AI Summit that opened June 15 — three days after the model was pulled. The `anthropic.claude-fable-5` endpoint exists in Databricks, but calls to it will fail or return errors until the suspension is lifted.
 
 **What to do in the interim:**
 
@@ -119,7 +120,7 @@ ChatForest has existing coverage of the Fable 5 suspension and the trust implica
 
 ## The `ai_extract` and `ai_classify` Functions (GA June 11)
 
-Two AI SQL functions reached general availability alongside the summit, relevant to builders using Databricks for data pipelines with AI-augmented processing:
+Two AI SQL functions [reached general availability on June 11, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/june), alongside the summit, relevant to builders using Databricks for data pipelines with AI-augmented processing:
 
 **`ai_extract`** — extracts structured data from text and documents according to a schema you provide. Supports nested objects, arrays, type validation, citations, and confidence scores. Practical use case: pulling structured fields out of unstructured documents (contracts, PDFs, emails) inside a SQL pipeline.
 

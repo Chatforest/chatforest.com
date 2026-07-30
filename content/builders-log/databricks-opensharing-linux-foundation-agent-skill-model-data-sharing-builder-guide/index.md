@@ -1,26 +1,27 @@
 ---
 title: "Databricks OpenSharing: The Open Protocol for Sharing Agent Skills, Models, and Data"
 date: 2026-06-16
-description: "Databricks donated OpenSharing to the Linux Foundation on June 10, 2026 — an open protocol that extends Delta Sharing to cover agent skills, ML models, and unstructured volumes in addition to tables. 15+ founding members including OpenAI, Stripe, and SAP. Here's the technical architecture and builder decision tree."
+description: "Databricks donated OpenSharing to the Linux Foundation on June 10, 2026 — an open protocol that extends Delta Sharing to cover agent skills, ML models, and unstructured volumes in addition to tables. Launch supporters include OpenAI, Stripe, and SAP. Here's the technical architecture and builder decision tree."
 og_description: "OpenSharing extends Delta Sharing into the agentic era: same zero-copy credential-vending model, now covering agent skills, ML model artifacts, and file volumes. Backward-compatible with all existing Delta Sharing clients. Linux Foundation governed."
 content_type: "Builder's Log"
 categories: ["Data Sharing", "Agent Infrastructure", "Open Source AI", "Databricks"]
 tags: ["databricks", "opensharing", "delta-sharing", "linux-foundation", "agent-skills", "agentskills", "unity-catalog", "open-weights", "mcp", "dais-2026", "model-sharing", "data-governance", "zero-copy", "credential-vending"]
+sources_audited: 2026-07-31
 ---
 
-Databricks announced **OpenSharing** on June 10, 2026 — six days before the Databricks Data + AI Summit (DAIS 2026) opened at Moscone Center. The timing was deliberate: seed press coverage before the keynotes, then validate the architecture with enterprise customer examples at the summit.
+Databricks [announced **OpenSharing**](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-opensharing) on June 10, 2026 — five days before the [Databricks Data + AI Summit (DAIS 2026)](https://www.moscone.com/events/databricks-data-ai-summit-2026), which ran June 15-18, 2026 at Moscone Center in San Francisco. The timing looks deliberate: seed press coverage before the keynotes, then validate the architecture with enterprise customer examples at the summit.
 
-OpenSharing is the successor to Delta Sharing, the 2021 protocol Databricks originally donated to open source for sharing structured tabular data across platforms. The extension is large: where Delta Sharing handled tables only, OpenSharing adds agent skills, ML models, and file volumes — covering the full AI asset stack that organizations now need to distribute securely across teams and partner organizations.
+OpenSharing is the successor to [Delta Sharing](https://www.prnewswire.com/news-releases/databricks-unveils-delta-sharing-the-worlds-first-open-protocol-for-real-time-secure-data-sharing-and-collaboration-between-organizations-301299496.html), which Databricks launched on May 26, 2021, calling it "the world's first open protocol" for sharing structured tabular data across platforms, and donated to the Linux Foundation as part of the open-source Delta Lake project. The extension is large: where Delta Sharing handled tables only, OpenSharing adds agent skills, ML models, and file volumes — covering the full AI asset stack that organizations now need to distribute securely across teams and partner organizations.
 
-The protocol is Apache 2.0 licensed, governed by the Linux Foundation AI & Data Foundation, and backward-compatible with all existing Delta Sharing clients. It is not a Databricks product — any server or client that implements the spec is a valid participant.
+The protocol is [Apache 2.0 licensed](https://github.com/OpenSharing-IO/OpenSharing/blob/main/LICENSE), submitted as a sandbox project under the [Linux Foundation AI & Data Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-opensharing-project-to-standardize-ai-asset-and-data-exchange), and backward-compatible with all existing Delta Sharing clients. It is not a Databricks product — any server or client that implements the spec is a valid participant.
 
 ---
 
 ## What Delta Sharing Was, and Why the Extension Was Necessary
 
-Delta Sharing launched in 2021 as the first open standard for sharing live data across platforms without copying it. The design was straightforward: a sharing server manages access grants, then vends short-lived cloud credentials that let recipients read data directly from the provider's cloud storage. No data movement, no intermediate copies, no single-vendor lock-in.
+[Delta Sharing launched in 2021](https://www.prnewswire.com/news-releases/databricks-unveils-delta-sharing-the-worlds-first-open-protocol-for-real-time-secure-data-sharing-and-collaboration-between-organizations-301299496.html) as an open standard for sharing live data across platforms without copying it. The design was straightforward: a sharing server manages access grants, then vends short-lived cloud credentials that let recipients read data directly from the provider's cloud storage. No data movement, no intermediate copies, no single-vendor lock-in.
 
-The protocol caught on. Delta Sharing clients exist for Apache Spark, pandas, Tableau, Power BI, Snowflake, Oracle, DuckDB, Clojure, Node.js, Java, Rust, Go, and C++. Thousands of Databricks customers use it for cross-organization data sharing. It became the most widely deployed open data-sharing protocol in the enterprise.
+The protocol caught on. [Delta Sharing clients exist](https://github.com/delta-io/delta-sharing) for Apache Spark, pandas, Tableau, Power BI, Clojure, Node.js, Java, Rust, Go, C++, and R. By mid-2024, Databricks [reported](https://www.databricks.com/blog/whats-new-data-sharing-and-collaboration) more than 16,000 data recipients had adopted Delta Sharing, and a separate Databricks post lists [hundreds of partners](https://www.databricks.com/blog/becoming-most-comprehensive-data-ai-ecosystem-earth) — including Adobe, Atlassian, LSEG, Stripe, The Trade Desk, and Walmart — using it to deliver data to their customers.
 
 The problem that motivated OpenSharing: tables are only one type of asset organizations now need to share. As AI development matured, teams faced identical friction with:
 
@@ -35,6 +36,8 @@ OpenSharing adds these three types without breaking existing consumers. Every ex
 ## Protocol Architecture
 
 ### Sharing Hierarchy
+
+The technical details in this section (hierarchy, authentication, credential vending, and API endpoints) come from the [OpenSharing protocol specification](https://github.com/OpenSharing-IO/OpenSharing) — specifically the [SHARES](https://github.com/OpenSharing-IO/OpenSharing/blob/main/spec/protocols/SHARES.md), [SCHEMAS](https://github.com/OpenSharing-IO/OpenSharing/blob/main/spec/protocols/SCHEMAS.md), [CREDENTIALS](https://github.com/OpenSharing-IO/OpenSharing/blob/main/spec/protocols/CREDENTIALS.md), [VOLUMES](https://github.com/OpenSharing-IO/OpenSharing/blob/main/spec/protocols/VOLUMES.md), [ML_MODELS](https://github.com/OpenSharing-IO/OpenSharing/blob/main/spec/protocols/ML_MODELS.md), and [AGENT_SKILLS](https://github.com/OpenSharing-IO/OpenSharing/blob/main/spec/protocols/AGENT_SKILLS.md) protocol files.
 
 The three-tier structure is unchanged from Delta Sharing:
 
@@ -102,7 +105,7 @@ POST .../skills/{skill}/temporary-skill-credentials
 
 Fully specified and implemented. Backward-compatible with all existing Delta Sharing clients. Supports the full Delta Lake feature set: deletion vectors, column mapping, Change Data Feed, time travel, materialized views, dynamic views with row/column filtering, and Uniform format (for Iceberg-native tool access).
 
-The Iceberg compatibility is significant: when a provider stores Delta tables with Uniform format enabled, Iceberg-native tools — Flink, Trino, Snowflake Iceberg tables, Athena — can consume the same shared data via their native Iceberg clients. OpenSharing adds an Iceberg-compatible endpoint to profile files, expanding the consumer universe without changing provider storage.
+The Iceberg compatibility is significant: when a provider stores Delta tables with [Universal Format (UniForm) enabled](https://www.databricks.com/blog/delta-lake-universal-format-uniform-iceberg-compatibility-now-ga), Iceberg-native tools — Databricks names [Snowflake, Trino, and Flink](https://www.databricks.com/blog/announcing-first-class-support-iceberg-format-databricks-delta-sharing) as examples — can consume the same shared data via their native Iceberg clients. The [OpenSharing TABLES spec](https://github.com/OpenSharing-IO/OpenSharing/blob/main/spec/protocols/TABLES.md) implements the Iceberg REST catalog API, expanding the consumer universe without changing provider storage.
 
 ### Volume
 
@@ -130,7 +133,7 @@ Credential vending vends scoped credentials for the version's `storageLocation`.
 
 ### AgentSkill
 
-This is the most architecturally significant new type. An AgentSkill is a **reusable AI capability packaged as a directory of files**, following the [AgentSkills specification](https://github.com/agentskills/agentskills) — an open format originally developed by Anthropic.
+This is the most architecturally significant new type. An AgentSkill is a **reusable AI capability packaged as a directory of files**, following the [AgentSkills specification](https://github.com/agentskills/agentskills) — an open format [originally developed by Anthropic](https://agentskills.io) and released as an open standard.
 
 **Directory structure:**
 
@@ -158,9 +161,9 @@ skill-name/
 | `allowedTools` | No | Space-separated pre-approved tool list |
 | `metadata` | No | Arbitrary `Map<String, String>` |
 
-**Progressive disclosure model:** Agents first scan `name` + `description` metadata via the discovery API. If relevant, they retrieve the full `SKILL.md`. Scripts and referenced files are loaded from storage only during execution. This keeps discovery cheap — an agent can page through hundreds of skills without loading large context payloads.
+**Progressive disclosure model:** Per the [Agent Skills specification](https://agentskills.io), agents load skills in three stages — discovery (scan `name` + `description` metadata), activation (read the full `SKILL.md` once a task matches), and execution (load scripts/referenced files only as needed). This keeps discovery cheap — an agent can page through many skills without loading large context payloads.
 
-**Existing compatibility:** The AgentSkills format (the underlying file structure) is already supported by Claude Code, ChatGPT, Codex CLI, Cursor, GitHub Copilot, Goose, Gemini CLI, and Windsurf. OpenSharing adds the **distribution and access-control layer** — skills can now be published, versioned, discovered, and access-controlled the same way tables have been for five years.
+**Existing compatibility:** The AgentSkills format (the underlying file structure) is already supported by a [large and growing list of agent tools](https://agentskills.io), including Claude Code, Claude, Cursor, GitHub Copilot, Goose, Gemini CLI, and OpenAI Codex. OpenSharing adds the **distribution and access-control layer** — skills can now be published, versioned, discovered, and access-controlled the same way tables have been for five years.
 
 ---
 
@@ -181,7 +184,7 @@ Implementation status:
 
 **Reference implementation:** Databricks has a built-in OpenSharing server in Unity Catalog-enabled workspaces. The [Delta Sharing open-source server](https://github.com/delta-io/delta-sharing) is the starting point for third-party implementations.
 
-**On-premises storage partners (generally available now):** Everpure, MinIO (native in AIStor), Qumulo.
+**[On-premises storage partners](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-opensharing) (generally available now):** Everpure, MinIO (native in AIStor), Qumulo.
 
 **On-premises storage partners (committed by end of 2026):** Cohesity, Commvault, HPE, NetApp, Nutanix, Rubrik, VAST Data.
 
@@ -189,17 +192,19 @@ Implementation status:
 
 ## Founding Members
 
-15+ organizations joined as founding members at announcement:
+A double-digit list of organizations backed OpenSharing at announcement, per quotes in the [Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-opensharing) and [Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-opensharing-project-to-standardize-ai-asset-and-data-exchange) press releases:
 
 **AI ecosystem:** OpenAI, Databricks
 
-**Enterprise data consumers:** SAP (Business Data Cloud connector), Stripe (Data Pipeline), LSEG (London Stock Exchange Group — "LSEG Everywhere" strategy), Atlassian, Amadeus, Acxiom, The Trade Desk
+**Enterprise data consumers:** SAP ("We chose OpenSharing for SAP Business Data Cloud"), Stripe (Stripe Data Pipeline), LSEG (London Stock Exchange Group — cites its "LSEG Everywhere" strategy), Atlassian (Atlassian Analytics data shares), Amadeus, Acxiom (Acxiom Real ID)
 
-**Domain-specific:** Cotality (property intelligence), Kythera Labs (healthcare)
+**Domain-specific:** Cotality (property and location intelligence), Kythera Labs (healthcare data)
 
-**Infrastructure:** MinIO (on-premises object storage)
+**Infrastructure:** MinIO (native in its AIStor on-premises object storage)
 
-The OpenAI membership is notable: it aligns the AgentSkills format across the two dominant agent platforms (Anthropic and OpenAI) under a common distribution layer.
+Separately, a Databricks ecosystem post lists [The Trade Desk](https://www.databricks.com/blog/becoming-most-comprehensive-data-ai-ecosystem-earth) among "launch partners" for OpenSharing-connected apps — a related but distinct list from the protocol-launch quotes above.
+
+The OpenAI participation is notable: it puts the two companies most associated with the AgentSkills format — Anthropic (which created the underlying spec) and OpenAI (an OpenSharing launch supporter) — on a common distribution layer.
 
 ---
 
@@ -230,7 +235,7 @@ A team publishing an agent skill could expose it via both: OpenSharing for distr
 
 ### Relationship to AgentSkills (Anthropic Format)
 
-The AgentSkills SKILL.md format was originally developed by Anthropic as an open standard for packaging reusable agent capabilities. OpenSharing adopts it as the `AgentSkill` asset type — adding versioning, access control, discovery, and credential-vended delivery on top of the raw format.
+The AgentSkills SKILL.md format was [originally developed by Anthropic](https://agentskills.io) as an open standard for packaging reusable agent capabilities. OpenSharing adopts it as the `AgentSkill` asset type — adding versioning, access control, discovery, and credential-vended delivery on top of the raw format.
 
 The convergence: Anthropic-originated format + Databricks-originated distribution protocol + Linux Foundation governance = a complete, vendor-neutral stack for agent skill publishing and consumption.
 
@@ -256,7 +261,7 @@ An internal skills catalog server publishes all approved agent skills via OpenSh
 
 ### Iceberg consumer expansion
 
-A team that stores data in Delta Lake with Uniform format enabled can now share that data with Iceberg-native consumers (Flink, Trino, Athena, Snowflake Iceberg tables) via OpenSharing's Iceberg-compatible endpoint — without changing their storage format or running a separate Iceberg catalog.
+A team that stores data in Delta Lake with Uniform format enabled can now share that data with Iceberg-native consumers (Flink, Trino, Snowflake Iceberg tables) via OpenSharing's Iceberg-compatible endpoint — without changing their storage format or running a separate Iceberg catalog.
 
 ---
 
@@ -318,4 +323,4 @@ Delta Sharing is not deprecated — OpenSharing is backward-compatible. If you h
 
 **On-premises rollout:** The NetApp, HPE, Nutanix, Rubrik, Cohesity, Commvault, and VAST Data integrations are committed for end of 2026. When these ship, OpenSharing becomes viable for regulated industries that cannot put primary data in cloud object storage.
 
-**DAIS 2026 Day 2–3 sessions (June 17–18):** The OpenSharing announcement is likely woven into DAIS keynote content given Matei Zaharia's role as co-founder and primary voice on the OpenSharing announcement. Watch the Databricks blog for any additional technical specifications or customer examples from the summit.
+**Rest of DAIS 2026 (June 15–18):** The OpenSharing announcement is likely woven into DAIS keynote content — [Matei Zaharia](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-opensharing), Databricks co-founder and CTO, supplied the lead quote in the OpenSharing launch press release ("Delta Sharing proved the industry would choose open over locked-in. OpenSharing extends that principle to the full AI stack..."). Watch the Databricks blog for any additional technical specifications or customer examples from the summit.

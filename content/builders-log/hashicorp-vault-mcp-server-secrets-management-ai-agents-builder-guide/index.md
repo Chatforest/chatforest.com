@@ -6,23 +6,24 @@ og_description: "HashiCorp released an official Vault MCP Server in July 2025 th
 content_type: "Builder's Log"
 categories: ["MCP", "Security", "Infrastructure", "AI Agents"]
 tags: ["hashicorp", "vault", "mcp", "secrets-management", "pki", "infrastructure", "security", "claude", "claude-code", "cursor", "ai-agents", "builder-guide", "july-2025", "hcp"]
+sources_audited: 2026-07-31
 ---
 
 There is a moment in almost every autonomous agent workflow where everything stops and waits for a human. Not because the task is hard. Because the task requires a credential.
 
 An agent writing a deployment script knows what environment variables it needs. An agent provisioning infrastructure knows the TLS certificate should exist. An agent debugging a service outage knows the API key rotation might be the cause. In every case, the agent could continue — if it could talk to Vault.
 
-HashiCorp's official Vault MCP Server, announced in July 2025, makes that conversation possible. AI agents can now query KV secrets, issue PKI certificates, and manage Vault mounts as native tool calls — no shell scripting, no API documentation lookup, no human relay.
+HashiCorp's official Vault MCP Server, [announced in July 2025](https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers), makes that conversation possible. AI agents can now query KV secrets, issue PKI certificates, and manage Vault mounts as native tool calls — no shell scripting, no API documentation lookup, no human relay.
 
 ---
 
 ## What the Vault MCP Server Is
 
-The Vault MCP Server is a Model Context Protocol server, officially maintained by HashiCorp (now IBM), that translates MCP tool calls into Vault API requests. An AI agent sends a structured tool call — `read_secret`, `issue_pki_certificate`, `list_mounts` — and the server executes the corresponding Vault operation, returning the result to the agent in the same conversation.
+The Vault MCP Server is a Model Context Protocol server, [officially maintained by HashiCorp](https://developer.hashicorp.com/vault/docs/mcp-server/overview), which [IBM acquired in February 2025](https://techcrunch.com/2025/02/27/ibm-closes-6-4b-hashicorp-acquisition/), that translates MCP tool calls into Vault API requests. An AI agent sends a structured tool call — `read_secret`, `issue_pki_certificate`, `list_mounts` — and the server executes the corresponding Vault operation, returning the result to the agent in the same conversation.
 
-It ships with support for both **stdio** and **StreamableHTTP** transports, making it compatible with Claude for Desktop, Claude Code, Cursor, VS Code, Amazon Q, and any other MCP-compliant client.
+It ships with support for both **stdio** and **StreamableHTTP** transports, making it compatible with [Claude for Desktop, Cursor, Visual Studio Code, and Amazon Q](https://developer.hashicorp.com/vault/docs/mcp-server/deploy), and other MCP-compliant clients.
 
-**Current status:** The server is in **beta** (experimental). HashiCorp recommends it for development and testing workflows, not production systems exposed to untrusted networks.
+**Current status:** The server carries a [**BETA** badge in HashiCorp's own documentation](https://developer.hashicorp.com/vault/docs/mcp-server/overview). HashiCorp says [all its MCP servers are "experimental in nature and intended for development, testing, and evaluation purposes," and that "use of these MCP servers in production settings is not recommended at this time."](https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers)
 
 ---
 
@@ -40,14 +41,14 @@ The Vault MCP Server is designed for the supervised-agent case. The agent connec
 
 The Vault MCP Server runs as a local process — you deploy it yourself, either as a Docker container or a compiled binary. It connects to your Vault instance over the standard Vault API.
 
-**Important:** In beta, the server is intended for local use only. HashiCorp explicitly does not recommend exposing it to untrusted network clients. This makes it a good fit for developer workstations, secure build environments, and local Claude Desktop setups — not for multi-tenant or internet-facing deployments.
+**Important:** In beta, [the server "should only be deployed in trusted networks with trusted clients"](https://github.com/hashicorp/vault-mcp-server) and HashiCorp's own docs warn: ["Do not use the MCP server with untrusted MCP clients or LLMs."](https://developer.hashicorp.com/vault/docs/mcp-server/overview) This makes it a good fit for developer workstations, secure build environments, and local Claude Desktop setups — not for multi-tenant or internet-facing deployments.
 
 **Transport options:**
 
 - **stdio** — The server communicates over stdin/stdout. This is the default for Claude Desktop and most local MCP clients.
 - **StreamableHTTP** — Network-based HTTP communication, with CORS and origin configuration required. Used for clients that connect over HTTP rather than launching a subprocess.
 
-The server includes CORS middleware, session management, and a configurable rate limiter.
+[The server includes CORS middleware, session-based Vault client management, and a configurable rate limiter.](https://github.com/hashicorp/vault-mcp-server)
 
 ---
 
@@ -57,7 +58,7 @@ Three deployment paths are supported:
 
 ### Docker (Recommended)
 
-Requires Docker Engine v20.10.21+ or Docker Desktop v4.14.0+. Configure via environment variables in your MCP client settings:
+[Requires Docker Engine v20.10.21+ or Docker Desktop v4.14.0+.](https://developer.hashicorp.com/vault/docs/mcp-server/deploy) Configure via environment variables in your MCP client settings:
 
 ```json
 {
@@ -91,7 +92,7 @@ Download a pre-built release binary from the HashiCorp release library. Configur
 go install github.com/hashicorp/vault-mcp-server/cmd/vault-mcp-server@latest
 ```
 
-Requires Go 1.24 or later.
+[Requires Go 1.24 or later.](https://github.com/hashicorp/vault-mcp-server)
 
 ---
 
@@ -105,7 +106,7 @@ Three environment variables configure the Vault connection:
 | `VAULT_TOKEN` | Yes | Authentication token for Vault operations |
 | `VAULT_NAMESPACE` | No | Namespace for Vault Enterprise or HCP Vault Dedicated deployments |
 
-**Rate limiting:** A per-session rate limit applies, configurable via `MCP_RATE_LIMIT_SESSION`. The default is `5:10` — five requests per second with a burst capacity of ten. This prevents runaway agents from hammering your Vault cluster during long sessions.
+**Rate limiting:** A per-session rate limit applies, configurable via `MCP_RATE_LIMIT_SESSION`. [The default is `5:10`](https://github.com/hashicorp/vault-mcp-server) — five requests per second with a burst capacity of ten. This prevents runaway agents from hammering your Vault cluster during long sessions.
 
 ---
 
@@ -115,19 +116,15 @@ The MCP server uses **token-based authentication** — you provide a `VAULT_TOKE
 
 The token policy is the authorization boundary. If your token has read-only access to a specific KV mount, the agent will only be able to read from that mount. The MCP server does not escalate privileges beyond what the token allows.
 
-**Vault edition support:**
+**Vault edition support:** The server exposes a `VAULT_NAMESPACE` variable for namespace-scoped connections. [Namespaces are a Vault Enterprise / HCP Vault Dedicated feature](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) ("Appropriate Vault Enterprise license or HCP Vault Dedicated cluster required") — Vault Community Edition deployments simply leave `VAULT_NAMESPACE` unset.
 
-- **Vault Community Edition** — full support
-- **Vault Enterprise** — supported, with namespace configuration via `VAULT_NAMESPACE`
-- **HCP Vault Dedicated** — supported, with namespace configuration
-
-The server is also available as an offering on **AWS Marketplace**, integrated with Amazon Bedrock AgentCore for teams operating in AWS environments.
+The Vault MCP Server is [also available on AWS Marketplace](https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers) as part of HashiCorp's July 2025 MCP server launch. (Note: the Bedrock AgentCore integration HashiCorp announced in that same release is specific to the separate Terraform MCP server, not this Vault MCP Server.)
 
 ---
 
 ## What the Tools Do
 
-At beta, the Vault MCP Server exposes sixteen tools across three functional areas:
+At beta, [the Vault MCP Server exposes sixteen tools across three functional areas](https://developer.hashicorp.com/vault/docs/mcp-server/reference):
 
 ### KV Secrets Tools
 
@@ -190,7 +187,7 @@ This uses `read_secret` to retrieve the current secret metadata (KV v2 includes 
 
 ### Pattern 4: Combined with Vault Radar MCP Server
 
-HashiCorp simultaneously released a **Vault Radar MCP Server**, which exposes secret scanning findings from Vault Radar — the tool that detects leaked secrets in repositories and data sources.
+HashiCorp [simultaneously released a Vault Radar MCP Server](https://www.hashicorp.com/en/blog/build-secure-ai-driven-workflows-with-new-terraform-and-vault-mcp-servers), which exposes secret scanning findings from [Vault Radar — the tool that identifies and helps remove leaked secrets across the development workflow, scanning pull requests and monitored repositories](https://developer.hashicorp.com/hcp/docs/vault-radar).
 
 Pairing both MCP servers gives an agent the full incident loop: Vault Radar identifies a leaked credential, the agent uses the Vault MCP to read the current secret, verify the rotation status, and confirm the leak is remediated. This is a workflow that previously required a human operator at every step.
 
