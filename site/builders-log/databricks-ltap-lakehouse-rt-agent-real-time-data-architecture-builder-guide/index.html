@@ -83,8 +83,8 @@
 <p>LTAP removes the pipeline by eliminating the architectural split.</p>
 <hr>
 <h2 id="what-ltap-is">What LTAP Is</h2>
-<p>LTAP stands for <strong>Lake Transactional/Analytical Processing</strong> — Databricks&rsquo; deliberate parallel to OLTP (Online Transactional Processing) and OLAP (Online Analytical Processing), the two system categories it replaces.</p>
-<p>The architecture is:</p>
+<p>LTAP stands for <strong><a href="https://www.databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical">Lake Transactional/Analytical Processing</a></strong> — Databricks&rsquo; deliberate parallel to OLTP (Online Transactional Processing) and OLAP (Online Analytical Processing), the two system categories it replaces.</p>
+<p>The architecture, <a href="https://www.databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical">per Databricks</a>, is:</p>
 <ul>
 <li><strong>One storage layer</strong>: Delta Lake and Apache Iceberg files in object storage (S3, ADLS, GCS)</li>
 <li><strong>Two access paths</strong>: Lakebase for transactional workloads, the Lakehouse for analytical workloads</li>
@@ -94,7 +94,7 @@
 <p>The critical design decision: Databricks chose to build a transactional engine that writes natively to the open columnar formats the Lakehouse already reads, rather than trying to sync two separate systems. The storage layer is the integration point.</p>
 <hr>
 <h2 id="component-1-lakebase">Component 1: Lakebase</h2>
-<p>Lakebase is Databricks&rsquo; serverless Postgres-compatible database. It was announced in mid-2025 and reached general availability in early 2026. At DAIS 2026, Databricks promoted it to the foundational transactional layer of the LTAP architecture.</p>
+<p>Lakebase is Databricks&rsquo; serverless Postgres-compatible database. It <a href="https://www.databricks.com/blog/announcing-databricks-lakebase-launch-partners">launched in June 2025</a> and <a href="https://www.databricks.com/blog/databricks-lakebase-generally-available">reached general availability on AWS on February 3, 2026</a> (Azure Databricks followed with its own GA on <a href="https://www.databricks.com/blog/azure-databricks-lakebase-generally-available">March 3, 2026</a>). At DAIS 2026, Databricks promoted it to the foundational transactional layer of the LTAP architecture.</p>
 <p><strong>What Lakebase is:</strong></p>
 <ul>
 <li>PostgreSQL-compatible wire protocol — existing Postgres client libraries connect without changes</li>
@@ -104,7 +104,7 @@
 </ul>
 <p><strong>What this means for operational data:</strong>
 Applications writing to Lakebase write to the same underlying Parquet files the Lakehouse reads from. There is no translation step. Delta&rsquo;s transaction log ensures ACID properties for the transactional writer while the Lakehouse reads via the standard Delta reader protocol.</p>
-<p><strong>Current scale:</strong> <a href="https://venturebeat.com/data/databricks-says-it-solved-the-decades-old-data-pipeline-problem-thats-been-slowing-ai-agents">12 million database launches per day</a> across the Databricks platform. Thousands of customers are in production.</p>
+<p><strong>Current scale:</strong> As of the LTAP announcement, Lakebase <a href="https://www.databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical">handles 12 million database launches per day and already serves thousands of customers</a>, including Block, Ensemble, Superhuman, and Zillow.</p>
 <p><strong>How to connect:</strong> Standard Postgres connection string pointing at your Databricks workspace. If your application already uses a Postgres driver (psycopg2, pg, JDBC), the wire-protocol compatibility means no client changes.</p>
 <hr>
 <h2 id="component-2-lakehousert">Component 2: Lakehouse//RT</h2>
@@ -126,7 +126,7 @@ Applications writing to Lakebase write to the same underlying Parquet files the 
 </ul>
 <p><strong>What Reyden optimizes for:</strong>
 The engine is designed for the concurrency patterns of real-time serving: many parallel short queries rather than fewer long scans. This is structurally different from Spark&rsquo;s design, which prioritizes throughput on large scans.</p>
-<p><strong>Availability:</strong> Lakehouse//RT is in beta as of DAIS 2026.</p>
+<p><strong>Availability:</strong> <a href="https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse">Lakehouse//RT is in beta as of DAIS 2026, currently scoped to select read-only workloads</a>, with more capabilities planned in the following months.</p>
 <hr>
 <h2 id="how-ltap-eliminates-the-pipeline">How LTAP Eliminates the Pipeline</h2>
 <p>Here is what the old architecture vs. LTAP looks like for a common AI agent use case:</p>
@@ -254,8 +254,8 @@ Agent gets current customer data
 </ul>
 <p><strong>Lakehouse//RT:</strong></p>
 <ul>
-<li>Currently in beta — not yet GA as of DAIS 2026</li>
-<li>Beta access via Databricks account team or the DAIS 2026 waitlist</li>
+<li>Currently in beta and <a href="https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse">scoped to select read-only workloads</a> — not yet GA as of DAIS 2026</li>
+<li>Beta access is by <a href="https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse">talking to your Databricks account team</a></li>
 <li>Reyden engine is a separate compute path from Spark; you will select it at query time, not at cluster level</li>
 <li>Designed for serving workloads (high concurrency, sub-100ms) — Spark remains better for batch and large scans</li>
 </ul>
@@ -276,19 +276,19 @@ Agent gets current customer data
 </thead>
 <tbody>
 <tr>
-<td>Lakebase</td>
-<td>Generally Available</td>
+<td><a href="https://www.databricks.com/blog/databricks-lakebase-generally-available">Lakebase</a></td>
+<td>Generally Available (GA Feb 3, 2026)</td>
 <td>Standard Databricks workspace + Unity Catalog</td>
 </tr>
 <tr>
-<td>LTAP architecture</td>
-<td>GA (Lakebase GA + Lakehouse unified)</td>
-<td>Available where Lakebase + Unity Catalog are enabled</td>
+<td><a href="https://www.databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical">LTAP architecture</a></td>
+<td>Announced at DAIS 2026; Databricks describes it as &ldquo;coming soon as part of Lakebase,&rdquo; not yet GA</td>
+<td>Not yet generally available</td>
 </tr>
 <tr>
-<td>Lakehouse//RT (Reyden engine)</td>
-<td>Beta</td>
-<td>Waitlist / Databricks account team</td>
+<td><a href="https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse">Lakehouse//RT (Reyden engine)</a></td>
+<td>Beta, select read-only workloads</td>
+<td>Via Databricks account team</td>
 </tr>
 </tbody>
 </table>
@@ -296,13 +296,13 @@ Agent gets current customer data
 <h2 id="what-ltap-does-not-solve">What LTAP Does Not Solve</h2>
 <p>For completeness, LTAP does not replace:</p>
 <ul>
-<li><strong>Vector databases</strong> for semantic/embedding search — Delta tables can store embeddings, but LTAP does not add ANN index structures. Mosaic AI Vector Search remains the Databricks answer for that.</li>
+<li><strong>Vector databases</strong> for semantic/embedding search — Delta tables can store embeddings, but LTAP does not add ANN index structures. <a href="https://docs.databricks.com/aws/en/vector-search/vector-search">Mosaic AI Vector Search</a> remains the Databricks answer for that.</li>
 <li><strong>Streaming ingestion from external systems</strong> — If your data originates outside Databricks (Kafka, external APIs, third-party SaaS), you still need streaming ingestion (Databricks Autoloader, Lakeflow) to bring it in. LTAP eliminates the pipeline <em>between Lakebase and the Lakehouse</em>, not the pipeline from external systems <em>into</em> Lakebase.</li>
 <li><strong>Agent memory at inference speed</strong> — For within-turn agent working memory (what the model needs in-context), LTAP is slower than in-process memory. It is optimized for fresh persistent state between turns, not millisecond token-level context injection.</li>
 </ul>
 <hr>
 <h2 id="the-positioning">The Positioning</h2>
-<p>DAIS 2026 was themed around agents as first-class enterprise actors. Agent Bricks for building agents, Genie ZeroOps for operating them, Unity AI Gateway for governing them — and now LTAP for giving them fresh data.</p>
+<p>DAIS 2026 was themed around agents as first-class enterprise actors. <a href="https://www.databricks.com/blog/agent-bricks-dais-2026">Agent Bricks</a> for building agents, <a href="https://www.databricks.com/blog/introducing-genie-zeroops">Genie ZeroOps</a> for operating them, <a href="https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway">Unity AI Gateway</a> for governing them — and now LTAP for giving them fresh data.</p>
 <p>Each of these is a response to the same underlying observation: the infrastructure built for human-paced analytics fails for agent-paced operations. Humans tolerate 15-minute lag. Agents executing business processes in real time cannot.</p>
 <p>LTAP is Databricks&rsquo; structural answer to that lag — not by making the pipeline faster, but by eliminating the architectural boundary that made a pipeline necessary in the first place.</p>
 <p>For builders designing agent systems that need to act on current enterprise data, LTAP is worth understanding now even if Lakehouse//RT is still in beta. The pattern of treating Lakebase as the operational write layer and the Lakehouse as the analytical read layer on unified storage is available today. The millisecond read performance (Reyden) arrives at GA.</p>

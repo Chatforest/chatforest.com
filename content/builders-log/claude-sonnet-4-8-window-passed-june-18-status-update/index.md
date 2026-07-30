@@ -6,15 +6,16 @@ og_description: "claude-sonnet-4-8 does not exist as of June 18, 2026. Our June 
 content_type: "Builder's Log"
 categories: ["Anthropic", "Claude", "Developer Tools", "Model Migration"]
 tags: ["anthropic", "claude", "claude-sonnet", "sonnet-4-8", "sonnet-4-6", "model-release", "june-2026", "api", "correction", "update"]
+sources_audited: 2026-07-31
 ---
 
 **Update — June 18, 2026:** This article corrects the prediction in our earlier guide, [Claude Sonnet 4.8 Is Next: Builder Preview for the June 16–18 Drop](/builders-log/claude-sonnet-4-8-preview-june-2026-dynamic-workflows-builder-guide/). The window has passed. Sonnet 4.8 has not shipped.
 
 ---
 
-On June 6, this site published a preview article predicting that Claude Sonnet 4.8 would arrive in the June 16–18 window. The reasoning was pattern-based: Opus 4.8 launched May 28, Anthropic's historical gap between Opus and Sonnet is roughly three weeks, and that arithmetic pointed to the week after the June 15 model-retirement deadline.
+On June 6, this site published a preview article predicting that Claude Sonnet 4.8 would arrive in the June 16–18 window. The reasoning was pattern-based: [Opus 4.8 launched May 28](https://www.anthropic.com/news/claude-opus-4-8), Anthropic's historical gap between Opus and Sonnet is roughly three weeks, and that arithmetic pointed to the week after the [June 15 model-retirement deadline](https://platform.claude.com/docs/en/about-claude/model-deprecations) for the original Claude Sonnet 4 and Opus 4 models.
 
-It is now June 18. There is no `claude-sonnet-4-8` in the Anthropic API. There has been no Anthropic announcement, no model card, no benchmark release, no API ID. Claude Sonnet 4.6 remains the current production Sonnet, unchanged since February 17, 2026.
+It is now June 18. There is no `claude-sonnet-4-8` in the Anthropic API. There has been no Anthropic announcement, no model card, no benchmark release, no API ID. Claude Sonnet 4.6 remains the current production Sonnet, unchanged since its [February 17, 2026 release](https://www.anthropic.com/news/claude-sonnet-4-6).
 
 This article corrects that prediction, explains why the pattern broke, and gives builders an updated picture of what to plan around.
 
@@ -29,7 +30,9 @@ The Claude 4.x Sonnet family has not moved since February:
 | Claude Sonnet 4.6 | Available — current | `claude-sonnet-4-6` | $3/$15 per MTok |
 | Claude Sonnet 4.8 | **Not released** | — | — |
 
-The Opus track moved significantly since then: Opus 4.7 shipped April 16, Opus 4.8 shipped May 28. The Sonnet track skipped both. There is a two-generation gap between the current Sonnet and the current Opus — a gap that has not appeared in Anthropic's prior release cadence.
+(Pricing and status per [Anthropic's Sonnet 4.6 announcement](https://www.anthropic.com/news/claude-sonnet-4-6) and the [models overview](https://platform.claude.com/docs/en/about-claude/models/overview).)
+
+The Opus track moved significantly since then: [Opus 4.7 shipped April 16](https://www.anthropic.com/news/claude-opus-4-7), [Opus 4.8 shipped May 28](https://www.anthropic.com/news/claude-opus-4-8). The Sonnet track skipped both. There is a two-generation gap between the current Sonnet and the current Opus — a gap that has not appeared in Anthropic's prior release cadence.
 
 If your production code is on `claude-sonnet-4-6`, you are on the correct and only available Sonnet. Nothing changed on June 15 for builders who had already migrated.
 
@@ -39,7 +42,7 @@ If your production code is on `claude-sonnet-4-6`, you are on the correct and on
 
 ### The evidentiary basis was thin
 
-The "Sonnet 4.8 is coming" narrative rested almost entirely on a single signal: a string in a leaked source-map file that accidentally shipped inside the `@anthropic-ai/claude-code` npm package on March 31, 2026. The file contained what appeared to be internal model references — including `claude-sonnet-4-8`.
+The "Sonnet 4.8 is coming" narrative rested almost entirely on a single signal: a string in a leaked source-map file that [accidentally shipped inside the `@anthropic-ai/claude-code` npm package on March 31, 2026](https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html). The file contained what appeared to be internal model references — including `claude-sonnet-4-8`.
 
 That single string, combined with the Opus→Sonnet release pattern, was enough to make a reasonable probabilistic case for a June window. It was not a confirmed product signal. Anthropic never acknowledged the leak or confirmed the model ID. The article's editorial disclaimer said exactly this.
 
@@ -47,15 +50,15 @@ What the pattern analysis missed: **the string may have been a planning artifact
 
 ### The versioning pattern broke this cycle
 
-Anthropic has historically released matching Sonnet and Opus versions within weeks of each other. Sonnet 4.5 and Opus 4.5 shipped in the same month. Sonnet 4.6 and Opus 4.6 followed the same pattern.
+**Correction to the original article's premise:** Sonnet and Opus releases have not historically landed in the same month as consistently as the June 6 preview assumed. [Sonnet 4.5 shipped September 29, 2025](https://www.anthropic.com/news/claude-sonnet-4-5); [Opus 4.5 followed roughly two months later, in November 2025](https://www.anthropic.com/news/claude-opus-4-5) — not the same month. The pair that actually did land close together was the next one: [Opus 4.6 shipped February 5, 2026](https://www.anthropic.com/news/claude-opus-4-6) and [Sonnet 4.6 followed 12 days later, on February 17](https://www.anthropic.com/news/claude-sonnet-4-6).
 
-This cycle broke that. Opus 4.7 shipped April 16. No Sonnet 4.7 appeared. Opus 4.8 shipped May 28. No Sonnet 4.8 appeared. Anthropic has now shipped two Opus generations without a corresponding Sonnet update — the longest Sonnet gap since the 4.x generation launched.
+This cycle broke even that looser pattern. [Opus 4.7 shipped April 16](https://www.anthropic.com/news/claude-opus-4-7). No Sonnet 4.7 appeared. [Opus 4.8 shipped May 28](https://www.anthropic.com/news/claude-opus-4-8). No Sonnet 4.8 appeared. Anthropic has now shipped two Opus generations without a corresponding Sonnet update — the longest Sonnet gap since the 4.x generation launched.
 
 The most likely reading: the Mythos-class work (Fable 5, Mythos 5, and the compliance and international access negotiations around them) consumed the engineering and release capacity that would otherwise have driven the Sonnet cadence. Sonnet is not the priority when the frontier-tier is in crisis.
 
 ### The Fable 5 disruption
 
-On June 12, Anthropic suspended Claude Fable 5 and Mythos 5 to comply with a US Commerce Department export-control directive. Senior technical staff traveled to Washington for direct negotiations. That intervention — and the ongoing effort to restore international access to the Mythos tier — represents a substantial organizational focus that displaces routine product releases.
+On [June 12, Anthropic suspended Claude Fable 5 and Mythos 5](https://www.anthropic.com/news/fable-mythos-access) to comply with a US Commerce Department export-control directive. [Senior technical staff — including security researcher Nicholas Carlini, safety-evaluations lead Logan Graham, and head of safeguards Dave Orr — traveled to Washington for direct negotiations](https://qz.com/anthropic-staff-washington-export-controls-fable-mythos-061526). That intervention — and the effort that led the Commerce Department to lift the export controls on [June 30](https://www.anthropic.com/news/redeploying-fable-5) — represents a substantial organizational focus that displaces routine product releases.
 
 Whether this directly delayed Sonnet 4.8 is not confirmed. What is clear: Anthropic's June has been dominated by the Fable 5 crisis, and a quiet Sonnet drop in this period would have been anomalous.
 
@@ -63,7 +66,7 @@ Whether this directly delayed Sonnet 4.8 is not confirmed. What is clear: Anthro
 
 ## Revised Timeline Estimate
 
-Based on the 141-day historical gap between Sonnet 4.5 (December 2025) and Sonnet 4.6 (February 17, 2026), a similar cadence from Sonnet 4.6 points to **early-to-mid July 2026** as the next plausible Sonnet release window.
+Based on the 141-day gap between [Sonnet 4.5's release on September 29, 2025](https://www.anthropic.com/news/claude-sonnet-4-5) and [Sonnet 4.6's release on February 17, 2026](https://www.anthropic.com/news/claude-sonnet-4-6) — this passage originally, and incorrectly, placed Sonnet 4.5's release in December 2025; corrected during the 2026-07-31 citation audit — a similar cadence from Sonnet 4.6 points to **early-to-mid July 2026** as the next plausible Sonnet release window.
 
 That estimate carries substantial uncertainty because:
 
@@ -79,13 +82,13 @@ The honest answer: Sonnet 4.8 could ship in mid-July, late July, or later. It ma
 
 **If you have already migrated to `claude-sonnet-4-6`:** Nothing to do. You are on the current production Sonnet and the June 15 retirement deadline is behind you. When a new Sonnet ships, it will be a one-line model string change.
 
-**If you are evaluating whether to hold on `claude-sonnet-4-6` or upgrade to Opus 4.8 while waiting:** The answer is the same as it was in June: use Sonnet 4.6 for high-volume, cost-sensitive workloads. Use Opus 4.8 for agentic coding sessions, code review pipelines, and workloads where the alignment improvements — 4x fewer unreported defects, 17x fewer dishonest agentic summaries — justify the 1.7x price premium.
+**If you are evaluating whether to hold on `claude-sonnet-4-6` or upgrade to Opus 4.8 while waiting:** The answer is the same as it was in June: use Sonnet 4.6 for high-volume, cost-sensitive workloads. Use Opus 4.8 for agentic coding sessions and code review pipelines where its alignment improvements justify the roughly 1.7x price premium ([$5 input/$25 output per MTok on Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) vs. [$3/$15 on Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6)). Two figures are worth citing precisely, since they use different baselines: [Opus 4.8 lets flaws in its own code pass unremarked about 4x less often than its immediate predecessor, Opus 4.7](https://www.anthropic.com/news/claude-opus-4-8); separately, per [Anthropic's Opus 4.8 system card](https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf), Opus 4.8 produces dishonest summaries of agentic coding work about 17x less often than Sonnet 4.6 specifically — not than Opus 4.7.
 
-The features expected for Sonnet 4.8 — Dynamic Workflows, effort control — are real features on Opus 4.8 today. If your pipeline needs them now, test them on Opus 4.8. The API surface will be identical when Sonnet inherits them.
+The features expected for Sonnet 4.8 — [Dynamic Workflows](https://www.anthropic.com/news/claude-opus-4-8) (a research-preview feature that plans work and runs many parallel subagents in a session) and [effort control](https://www.anthropic.com/news/claude-opus-4-8) — are real features on Opus 4.8 today. If your pipeline needs them now, test them on Opus 4.8. The API surface will be identical when Sonnet inherits them.
 
 **If you were waiting for Sonnet 4.8 to make architecture decisions:** Stop waiting. Plan around `claude-sonnet-4-6` as the Sonnet baseline. Treat "Sonnet 4.8 / 4.7" as an upgrade when it ships — not as a dependency.
 
-**On `budget_tokens`:** The open question from the June 6 article — whether Sonnet 4.8 drops explicit thinking budgets in favor of effort control — remains open. Sonnet 4.6 still supports `budget_tokens`. If your pipeline depends on this, Sonnet 4.6 is the stable choice until Anthropic confirms the behavior on the next Sonnet.
+**On `budget_tokens`:** The open question from the June 6 article — whether Sonnet 4.8 drops explicit thinking budgets in favor of effort control — remains open. Sonnet 4.6 still supports `budget_tokens` (deprecated but functional; [Claude Opus 4.7 and later models reject it outright with a 400 error](https://platform.claude.com/docs/en/build-with-claude/extended-thinking)). If your pipeline depends on this, Sonnet 4.6 is the stable choice until Anthropic confirms the behavior on the next Sonnet.
 
 ---
 
@@ -113,3 +116,7 @@ Predicting model release windows from pattern analysis and leaked strings is gen
 The June 6 article included a disclaimer that Sonnet 4.8 had not been announced. The disclaimer was accurate. The prediction in the title and summary was wrong. This article is the correction.
 
 When Anthropic announces the next Sonnet — whether numbered 4.7, 4.8, or otherwise — this site will cover it the same day.
+
+---
+
+**Editor's note — added 2026-07-31, during a citation audit of this piece:** The next Sonnet arrived sooner than this article's revised estimate, and under different numbering than either option considered above. [Claude Sonnet 5 launched June 30, 2026](https://www.anthropic.com/news/claude-sonnet-5) — 12 days after this article was published — skipping 4.7 and 4.8 on the Sonnet track entirely and jumping straight from the 4.6 generation to a new major version, alongside [Claude Opus 5](https://www.anthropic.com/news/claude-opus-5) and [Claude Fable 5 / Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5). `claude-sonnet-4-8` never shipped as an Anthropic model.

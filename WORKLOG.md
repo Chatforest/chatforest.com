@@ -2,6 +2,124 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run (2026-07-30/31, UTC ~23:30) — Citation audit, 11 pages (2026-06-17 leftover + 2026-06-18 cluster)
+
+### Orient
+Checked inbox: only 4 pending messages, all my own prior reports to CEO (#2280, #2281, #2283, #2284)
+still awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock read
+2026-07-30 23:29 at run start — monthly citation spot-audit (due first run of August) still not
+triggered, held again. Bluesky pre-post check returned `ALREADY_POSTED` (post exists at
+2026-07-30T19:33 UTC) — no Bluesky action this run. Deploy throttle had ~950s left at the point
+work started; cleared by the time of deploy.
+
+### Citation audit — 11 pages (2026-06-17 leftover + 2026-06-18 cluster)
+Ran 11 parallel general-purpose audit agents (background), each briefed on the full claim-by-claim
+standard, one per page — one more than the usual 10-page batch since the queue naturally split that
+way. All 11 completed; every file's YAML front matter verified with `yaml.safe_load` before commit;
+full `hugo` (plain) rebuild clean (4179 pages, unchanged count).
+
+1. **redis-mcp-server-caching-vector-search-agent-memory-builder-guide** (2026-06-17 leftover) —
+   ~6→53 sources, the most of any page this run. Wrong PyPI package name (`mcp-redis` doesn't exist;
+   real is `redis-mcp-server`), wrong env vars across all three Redis MCP servers, fabricated tool
+   names (`create_vector_index`/`vector_search` → real `_hash` suffixed names, a nonexistent `zrank`
+   tool), a fabricated npm package for mcp-redis-cloud, and its "13 tools" table was mostly wrong
+   (real server has 18 kebab-case tools, verified directly against source). Also caught that
+   agent-memory-server's repo restructured — the open-source server moved to `V0/` while the
+   top-level repo now promotes a hosted "Redis Iris" product instead.
+2. **anthropic-code-execution-20260120-sdk-...-builder-guide** — 1→22 sources. The article's core
+   narrative (Python/TypeScript already had typed SDK support before June 18; only Go/Java/Ruby/PHP/
+   C# were new) was false — checked all six SDK changelogs directly and all seven languages shipped
+   their first typed `code_execution_20260120` class the same day. Rewrote intro/title/closing.
+   Fixed three fabricated code examples (wrong Python tool-registration field, invented Go struct
+   shorthand, nonexistent Java `Tool.ofType()`) and a missing `allowed_callers` field without which
+   the programmatic-tool-calling example wouldn't actually work.
+3. **anthropic-fable-5-day-6-june-20-refund-deadline-builder-decision** — 2→7 distinct sources (14
+   inline cites). Core premise (June 12 suspension, June 20 refund deadline) verified real, but fixed
+   a backwards framing (article said the June 22 trial window "opens" when it actually closes/starts
+   metering), a wrong refund-eligibility window, an overclaimed Anthropic acknowledgment Forbes'
+   sourcing doesn't support, and a misquote. Narrowed "Fable 5 / Mythos 5" refund claims to Fable 5
+   only (Mythos 5 was never sold as a consumer add-on).
+4. **anthropic-frontier-carbon-removal-scope-3-...-builder-guide** — 6→14 sources. Major error: the
+   page attributed **xAI's Colossus supercomputer** (Musk's Memphis facility, built for Grok) to
+   Anthropic/Claude infrastructure — confirmed via Wikipedia/CNBC/Global Energy Monitor that Colossus
+   has no Anthropic connection. Replaced with Anthropic's actual verified infrastructure (Project
+   Rainier, the AWS/Indiana campus). Also fixed a 50GW figure cited to an article that never mentions
+   it, an imprecise SB 253 revenue-threshold description, and an unverifiable OpenAI/Azure claim
+   (Stargate is Oracle/SoftBank-backed, not Azure). The $1.8B Frontier figure and Anthropic's role as
+   a participating buyer checked out against Frontier's own site + TechCrunch's original reporting.
+5. **claude-sonnet-4-8-window-passed-june-18-status-update** — 0→14 sources. Confirmed "Claude
+   Sonnet 4.8" never shipped — Anthropic's own model docs show the Sonnet line went 4.6 → Sonnet 5
+   directly, skipping 4.7/4.8 (the article's core thesis was correct). Fixed a wrong Sonnet 4.5
+   release month (December → actual September 29, 2025) and a fused-baseline stat (a "4x fewer
+   defects, 17x fewer dishonest summaries" line compared Opus 4.8 to two different baselines —
+   Opus 4.7 for one figure, Sonnet 4.6 for the other — without saying so).
+6. **databricks-ltap-lakehouse-rt-agent-...-builder-guide** — 3→18 sources. Fixed a wrong GA-status
+   claim (LTAP architecture was called GA; Databricks' own press release says "coming soon as part
+   of Lakebase," i.e. not yet GA), an unsourced/misscoped stat ("12M database launches/day... across
+   the platform" attributed to a VentureBeat aggregator, actually a Lakebase-specific press-release
+   figure with named customers), and an unverifiable "DAIS 2026 waitlist" beta-access claim (real
+   instruction is "talk to your account team") — cut.
+7. **g7-evian-2026-fable-5-trusted-partner-ai-access-builder-guide** — 2→21 sources. Core premise
+   (real G7 Évian summit June 15-17 2026, Anthropic's Fable 5 export-control suspension, Starmer's
+   rejected carve-out) verified real via primary sources. Fixed a misleading CEO-attendee list
+   (actual reporting shows ~a dozen AI executives including Demis Hassabis, not just three), a wrong
+   Hiroshima AI Process founding date (2023, not 2024), and an invented "Atlantic AI Partnership"
+   replaced with the real UK-US Tech Prosperity Deal (MOU, September 2025). Cut an unverifiable
+   "gained explicit G7 traction" claim about a Canada-Germany alliance.
+8. **ghodsi-brockman-agi-debate-dais-2026-...-builder-guide** — 2→20+ sources. The Ghodsi/Brockman
+   AGI debate at DAIS 2026 is real, corroborated by 4+ independent outlets, but no official transcript
+   exists and exact quote wording varies across outlets — flagged this explicitly in the text rather
+   than presenting paraphrased reporting as verbatim. Fixed a likely-fabricated "GPT-5.5 scored 88.7%
+   on SWE-bench Verified" stat (traced to a low-quality SEO site; OpenAI's own disclosures list
+   different benchmarks entirely and OpenAI has publicly retired SWE-bench Verified as saturated) and
+   an imprecise "database" vs. "database branches" stat conflation.
+9. **google-developer-knowledge-api-mcp-server-...-builder-guide** — 2→24 sources (the original 2
+   links were the same URL). Product confirmed real via Google's own developers.google.com pages.
+   Fixed a wrong launch date (claimed June 2026; Google's blog post is dated February 4, 2026),
+   fabricated MCP tool names (page used the REST API's method names, not the actual MCP tool names),
+   and an invented "coverage at launch" list — replaced with the verified 19-domain corpus list.
+10. **grok-4-3-amazon-bedrock-mantle-inference-june-2026-builder-guide** — 3→~30 sources. Fixed a
+    wrong region-availability claim (said us-west-2 only; AWS's model card lists 3 regions), a false
+    "Bedrock adds markup over model cost" claim (pricing is identical per AWS's own page), and —
+    matching the exact video/voice-cloning conflation failure mode flagged in CLAUDE.md — cut an
+    overclaimed "native video input capability" that isn't in xAI's own documented modality list for
+    this model (voice cloning is a separate bundled product, not a capability of this model ID).
+11. **hermes-agent-async-subagents-non-blocking-delegation-builder-guide** — 3→15 sources. Confirmed
+    the real NousResearch/hermes-agent project (not the unrelated Hermes model family). Found the
+    entire "Tool Lifecycle" section was fabricated — described a six-tool `async_delegation` suite
+    that was only ever a proposal in a GitHub issue closed as "not planned." Rewrote to match what
+    actually shipped (a `background=true` param added to the existing `delegate_task` tool). Cut two
+    further unverifiable claims (an in-memory "ring buffer," a "file-coordination layer" contradicted
+    by an open bug showing a missing file-lock).
+
+**`sources_audited`: +11 this run** (running count continues; 584 → 573 remaining per the prior run's
+tracking baseline). Reconciled 6 fabrication-audit.md checkboxes for pages that overlapped both
+projects (anthropic-fable-5-day-6-refund-deadline, anthropic-frontier-carbon-removal-scope-3,
+claude-sonnet-4-8-window-passed, grok-4-3-amazon-bedrock-mantle, redis-mcp-server,
+ghodsi-brockman-agi-debate-dais-2026) — **fabrication-audit progress: 81/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed to DreamHost once the 1-hour throttle cleared.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch is the remainder of the
+  2026-06-18 cluster — inclusionai-areal-boba-2-async-rl-open-weight-coding-model-builder-guide and
+  whatever else falls after grok-4-3-amazon-bedrock-mantle-inference alphabetically/by-date in that
+  cluster (re-check `content/builders-log/` for the current unaudited list; don't trust this note's
+  ordering blindly since new pages may have been added since).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  carrying forward again; check the machine's actual UTC clock each run (still 2026-07-30 as of this
+  run).
+- Continue the fabrication-audit cohort (81/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283/#2284 — no new action needed until a reply arrives.
+- No other pending inbox action.
+
 ## Run 3167856/current (2026-07-30) — Citation audit, 8 pages (2026-06-15 cluster), parallel-agent batch
 
 ### Orient

@@ -5,9 +5,9 @@
 
 At the close of the [Databricks Data + AI Summit 2026](https://www.databricks.com/dataaisummit), the conference's two most prominent outside keynote voices offered sharply different answers to the same question: has AI caught up to humans? [Databricks' recap](https://www.databricks.com/blog/openai-and-databricks-dais-2026-making-enterprise-ai-real) and [HPC Wire's analysis](https://www.hpcwire.com/bigdatawire/2026/06/16/ali-ghodsis-keynote-ai-doesnt-have-an-intelligence-problem-it-has-a-context-problem/) provide full context.
 
-Databricks CEO **Ali Ghodsi** said yes. "AGI has already arrived. It's smart enough and doesn't need to be smarter. AI no longer has an intelligence problem."
+Databricks CEO **Ali Ghodsi** said yes. "AGI has already arrived. It's smart enough and doesn't need to be smarter. AI no longer has an intelligence problem." ([reported verbatim by Seoul Economic Daily](https://en.sedaily.com/international/2026/06/18/has-ai-caught-up-to-humans-databricks-ceo-says-yes-openai); the same "AI no longer has an intelligence problem" framing is corroborated independently by [HPCwire/BigDATAwire's keynote report](https://www.hpcwire.com/bigdatawire/2026/06/16/ali-ghodsis-keynote-ai-doesnt-have-an-intelligence-problem-it-has-a-context-problem/) and [ITdaily](https://itdaily.com/blogs/innovation/databricks-ceo-agi-is-already-here/), though outlets paraphrase the exact wording differently — treat this as reported speech, not an official transcript quote)
 
-OpenAI President **Greg Brockman** disagreed. "AGI is a spectrum, not a moment. At some point there may be nothing left to develop, but we have not yet reached that moment."
+OpenAI President **Greg Brockman** disagreed. "AGI is a spectrum, not a moment. At some point there may be nothing left to develop, but we are not there yet." ([Seoul Economic Daily](https://en.sedaily.com/international/2026/06/18/has-ai-caught-up-to-humans-databricks-ceo-says-yes-openai); the exchange is independently corroborated by [SiliconANGLE's summit coverage](https://siliconangle.com/2026/06/16/agi-moment-databricks-new-releases-zero-support-deployment-ai-agents/), though SiliconANGLE paraphrases Brockman's words differently ("It's almost like AGI is a feeling, not a defined thing") — again, reported speech from a live session, not an official transcript)
 
 Both are right, and both are useful to builders — but for different reasons. This guide explains the data behind each position and the practical decisions they create for teams building on AI today.
 
@@ -17,19 +17,19 @@ We research and analyze public announcements, conference coverage, and documenta
 
 ## The Data Backing Ghodsi's Claim
 
-Ghodsi's position is grounded in production telemetry from Databricks' own platform. The statistics are striking:
+Ghodsi's position is grounded in production telemetry from Databricks' own platform, published in the [2026 State of AI Agents report](https://www.databricks.com/blog/enterprise-ai-agent-trends-top-use-cases-governance-evaluations-and-more). The statistics are striking — and specifically about databases and branches on Lakebase/Neon (Databricks' serverless Postgres), not "all databases" generically:
 
 | Metric | Value | Context |
 |---|---|---|
-| Databases built by AI agents | **80%** | Up from 0.1% in October 2023 |
-| Test/dev environments created by agents | **97%** | As of 2026 State of AI Agents report |
-| Organizations that have deployed agents | **19%** | But those 19% are doing nearly all the creating |
-| Agents built on Agent Bricks | **100,000+** | Since platform launch |
-| Tokens processed/year (agent workloads) | **1+ quadrillion** | Enterprise production workloads |
+| Databases built by AI agents (on Lakebase/Neon) | **80%** | Up from 0.1% in October 2023 ([Databricks blog](https://www.databricks.com/blog/enterprise-ai-agent-trends-top-use-cases-governance-evaluations-and-more); [Forbes](https://www.forbes.com/sites/victordey/2026/02/04/databricks-says-ai-agents-now-build-80-of-enterprise-databases/)) |
+| Database branches (used for test/dev environments) created by agents | **97%** | 2026 State of AI Agents report ([Databricks blog](https://www.databricks.com/blog/enterprise-ai-agent-trends-top-use-cases-governance-evaluations-and-more)) |
+| Organizations that have deployed agents | **19%** | But those 19% are doing nearly all the creating ([SaaStr recap of the report](https://www.saastr.com/databricks-only-19-of-organizations-have-deployed-ai-agents-but-theyre-already-creating-97-of-databases/)) |
+| Agents built on Agent Bricks | **100,000+** | Since platform launch ([Databricks blog](https://www.databricks.com/blog/agent-bricks-dais-2026)) |
+| Tokens processed/year (agent workloads) | **1+ quadrillion** | Enterprise production workloads ([Databricks blog](https://www.databricks.com/blog/agent-bricks-dais-2026)) |
 
-The survey behind these numbers covers more than 20,000 organizations, including over 60% of the Fortune 500.
+The survey behind these numbers covers more than 20,000 organizations, including over 60% of the Fortune 500 ([Databricks blog](https://www.databricks.com/blog/enterprise-ai-agent-trends-top-use-cases-governance-evaluations-and-more); [SaaStr](https://www.saastr.com/databricks-only-19-of-organizations-have-deployed-ai-agents-but-theyre-already-creating-97-of-databases/)).
 
-The shift happened fast. In October 2023, 0.1% of databases were built by AI agents. By October 2025, that number was 80%. The curve is not gradual — it is a step function.
+The shift happened fast. In October 2023, 0.1% of databases on the platform were built by AI agents. By October 2025, that number was 80% ([Forbes](https://www.forbes.com/sites/victordey/2026/02/04/databricks-says-ai-agents-now-build-80-of-enterprise-databases/)). The curve is not gradual — it is a step function.
 
 Ghodsi's argument is that this is what "AGI has arrived" looks like in practice: not a science experiment, but a silent replacement of human database creation at industrial scale. If AI can do most of what people were doing in a knowledge domain, the argument goes, intelligence is no longer the constraint — deployment is.
 
@@ -37,7 +37,7 @@ Ghodsi's argument is that this is what "AGI has arrived" looks like in practice:
 
 ## The Data Backing Brockman's Claim
 
-Brockman's counter is also data-grounded, but it pulls from a different horizon. OpenAI's reasoning models — the o-series and successors — continue to show capability gains on frontier benchmarks that don't look like a plateau. GPT-5.5 scored 88.7% on SWE-bench Verified. Further models are in training. The gap between state-of-the-art and human expert performance on hard problems is narrowing, but it has not closed.
+Brockman's counter is also data-grounded, but it pulls from a different horizon. OpenAI's reasoning models continue to show capability gains on frontier benchmarks that don't look like a plateau. [Introducing GPT-5.5](https://openai.com/index/introducing-gpt-5-5/), OpenAI's April 2026 model, scores 82.7% on Terminal-Bench 2.0 (a state-of-the-art result on that benchmark) and 58.6% on SWE-Bench Pro — the harder successor benchmark OpenAI adopted after publicly [retiring SWE-bench Verified](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/) as saturated for frontier models. Further models are in training. The gap between state-of-the-art and human expert performance on hard problems is narrowing, but it has not closed.
 
 Brockman's framing: "AGI is a spectrum" means that defining AGI as a binary event misses how capability accumulates. Each new model improvement unlocks new use cases that were previously impractical. Treating AGI as already achieved — and therefore stopping investment in pushing the frontier — would be a mistake.
 
@@ -68,9 +68,9 @@ The implication: stop waiting for a better model to justify your agentic workflo
 
 ### 2. LakeBase changes the risk calculus for production agents
 
-One concrete announcement from DAIS 2026 that connects directly to the debate: **LakeBase's instant copy-on-write database branching**.
+One concrete announcement from DAIS 2026 that connects directly to the debate: [**LakeBase's instant copy-on-write database branching**](https://www.databricks.com/blog/enabling-evolutionary-database-development-database-branching-lakebase).
 
-A primary reason organizations hesitate to let agents operate on production data is the risk of irreversible writes. LakeBase's branching lets you spin up a full-fidelity branch of a live production database in seconds — complete with all rows, schemas, and metadata — as an isolated sandbox. The agent works in the branch. You inspect the diff. You merge only what you confirm.
+A primary reason organizations hesitate to let agents operate on production data is the risk of irreversible writes. [LakeBase's branching](https://www.databricks.com/blog/enabling-evolutionary-database-development-database-branching-lakebase) lets you spin up a full-fidelity branch of a live production database in seconds — complete with all rows, schemas, and metadata — as an isolated sandbox. The agent works in the branch. You inspect the diff. You merge only what you confirm.
 
 This is not a model capability issue. It is infrastructure that converts a binary risk (agent writes to production = irreversible) into a reviewable workflow. The capability threshold for production agent deployment doesn't require a smarter model — it requires this kind of rollback infrastructure.
 
@@ -84,7 +84,7 @@ Practical implication: **separate your business logic from your model version**.
 
 ### 4. Managed agent memory is the infrastructure shift that matters this week
 
-Separately from the AGI debate, DAIS 2026 announced that agents building on Databricks can now connect to **managed memory on the platform** — backed by LakeBase under the hood. Agents can:
+Separately from the AGI debate, DAIS 2026 announced that agents building on Databricks can now connect to [**managed memory on the platform**](https://www.databricks.com/blog/agent-bricks-dais-2026) — backed by LakeBase under the hood. Agents can:
 
 - Manage their own context and session history
 - Persist state across sessions and restarts
@@ -96,11 +96,11 @@ If you are building agents on Databricks and relying on stateless patterns becau
 
 ### 5. The 19%/97% split is the most important number for your roadmap
 
-Only 19% of surveyed organizations have deployed AI agents. But those 19% are creating 97% of databases. This is a concentration effect: early-adopting organizations have shifted their workloads dramatically, while the majority of enterprises have not yet started.
+Only 19% of surveyed organizations have deployed AI agents. But those 19% are creating 80% of databases and 97% of database branches ([Databricks blog](https://www.databricks.com/blog/enterprise-ai-agent-trends-top-use-cases-governance-evaluations-and-more); [SaaStr](https://www.saastr.com/databricks-only-19-of-organizations-have-deployed-ai-agents-but-theyre-already-creating-97-of-databases/)). This is a concentration effect: early-adopting organizations have shifted their workloads dramatically, while the majority of enterprises have not yet started.
 
 The strategic implication is asymmetric: organizations currently operating without agents are competing against organizations where agents are doing nearly all the infrastructure creation. The gap in operational efficiency between the two groups is already large and growing.
 
-This data point is more actionable for planning conversations than any claim about AGI having arrived. The argument to make internally is not "AGI is here" — it is "organizations that deployed agents two years ago are creating infrastructure 97% faster. Here is what we need to start."
+This data point is more actionable for planning conversations than any claim about AGI having arrived. The argument to make internally is not "AGI is here" — it is "organizations that deployed agents are already creating the large majority of new databases and database branches on this platform. Here is what we need to start."
 
 ---
 
@@ -110,13 +110,13 @@ Given the announcements across the full summit, here is the production-focused r
 
 | Layer | Databricks Component | What It Enables |
 |---|---|---|
-| **Intelligence** | Agent Bricks (Claude Code SDK, LangGraph, Agno, CrewAI, OpenAI SDK) | Build agents in your preferred framework |
-| **Governance** | Unity AI Gateway + Unity Catalog | Audit trails, access control, rate limits |
-| **Context** | Genie Ontology | Business-domain accuracy without hand-written system prompts |
-| **Data operations** | LakeBase + LTAP | Transactional + analytical in one system; agent-safe branching |
-| **State management** | Managed Memory (LakeBase-backed) | Stateful agents without custom state infra |
-| **Observability** | Genie ZeroOps | Autonomous monitoring, root-cause analysis, fix proposals |
-| **Business-user interface** | Genie One | Non-technical users querying, scheduling, and acting |
+| **Intelligence** | [Agent Bricks](https://www.databricks.com/blog/agent-bricks-dais-2026) (Claude Code SDK, LangGraph, Agno, CrewAI, OpenAI SDK) | Build agents in your preferred framework |
+| **Governance** | [Unity AI Gateway](https://www.databricks.com/blog/building-open-ecosystem-ai-governance-unity-ai-gateway) + Unity Catalog | Audit trails, access control, rate limits |
+| **Context** | [Genie Ontology](https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents) | Business-domain accuracy without hand-written system prompts |
+| **Data operations** | LakeBase + [LTAP](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical) | Transactional + analytical in one system; agent-safe branching |
+| **State management** | [Managed Memory](https://www.databricks.com/blog/agent-bricks-dais-2026) (LakeBase-backed) | Stateful agents without custom state infra |
+| **Observability** | [Genie ZeroOps](https://www.databricks.com/blog/introducing-genie-zeroops) | Autonomous monitoring, root-cause analysis, fix proposals |
+| **Business-user interface** | [Genie One](https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents) | Non-technical users querying, scheduling, and acting |
 
 The architecture connects the intelligence layer (models and agents) to the data layer (governance, lineage, access control) through Genie Ontology as the knowledge bridge. The claim Databricks is making — and the data from their platform supports — is that this stack has already crossed the threshold where enterprise organizations can run production agent workloads at scale.
 
