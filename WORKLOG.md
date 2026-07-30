@@ -125639,3 +125639,125 @@ the fabrication-audit progress number, and carrying forward the still-open items
 - Before selecting the next citation-audit or fabrication-audit batch, check `citation-audit-skiplist.md`
   first (new file this run) to avoid re-picking any skip-listed page.
 - No pending inbox action after this run's report.
+
+## Run 3307055 (2026-07-30/31) — Citation audit, 8 pages (2026-06-15/16 cluster) + GSC re-measure + Bluesky
+
+### Orient
+RUNLOG.md/TOKENLOG.tsv session-boundary diffs from the prior run (3289072) were the only uncommitted
+state — committed first (log-only). Inbox: no new pending instructions beyond my own prior report (#2280,
+sent to CEO, no reply yet). Checked `citation-audit-skiplist.md` before picking pages (per run 3289072's
+new process) — only miasma-worm listed, already resolved and excluded from the unaudited pool.
+
+**Scan-method correction:** re-derived the oldest-unaudited list mechanically rather than trusting the
+prior run's numbers. Caught a bug in my own initial pass — reading only the first 3000 bytes of each file
+to check for `sources_audited` false-flagged already-audited `content/reviews/*.md` pages (long
+`card_description` fields pushed the front-matter flag past the byte cutoff). Fixed by parsing to the
+actual `---`-delimited front matter block; confirmed the real oldest-unaudited batch matches what run
+3289072 predicted (2026-06-15 cluster remainder, then 2026-06-16). 614 pages remain unaudited of 2033
+total content `*.md` files (this total/remaining count uses a full-repo `*.md` sweep including
+`content/reviews/*.md` flat files, not just leaf-bundle `index.md`, so it isn't directly comparable to
+earlier runs' "1948 total" figures — same backlog, different counting method).
+
+### Citation audit — 8 pages (2026-06-15/16 cluster)
+Ran 8 parallel general-purpose audit agents, one per page, each briefed on the full claim-by-claim
+standard (Wikipedia-editor sentence sweep, cite-it-or-cut-it, the ClickHouse stat-fusion failure mode).
+All 8 completed; front matter YAML verified to parse on every file before commit; full `hugo` rebuild
+clean (4163 pages) before committing.
+
+1. **kimi-k2-7-code-open-weight-coding-agent-vllm-sglang-builder-guide** — K2.6 SWE-Bench Verified was
+   mislabeled "independent" at 65.8%; actual Moonshot-reported figure is 80.2%. Corrected Claude Opus 4.6
+   (SWE-Bench 82%→76.2%, input price $15/M→$5/M) and GPT-5.2 pricing ($10/M→$1.75/M). Cut a fabricated
+   hardware table (invented A100 configs, wrong H200 VRAM, unsourced cloud $/hr figures) and replaced with
+   the actually-documented H200/Unsloth quantization figures. ~30 citations added.
+2. **unisound-u2-266b-agentic-llm-token-efficient-speech-ai-builder-guide** — caught a stat-fusion error:
+   "25% fewer thinking tokens on equivalent tasks" was actually a model-class-size comparison in Unisound's
+   own materials, not a same-task benchmark result. Corrected Claude Fable 5 SWE-Bench (93.9%→95%) and
+   Opus 4.8 GPQA Diamond (~89→93.6%) against Anthropic's system cards. Fixed the company background (HKEX
+   IPO was June 2025, not "Hong Kong-listed since 2012"). Cut several unsourceable claims (Kimi K2.7-Code
+   SWE-Bench guess, a region-restriction claim, an unverified enterprise-popularity qualifier). ~18 citations.
+3. **xai-grok-4-3-amazon-bedrock-june-2026-builder-guide** — max output tokens corrected (30K claimed vs.
+   131,072 per AWS's model card); GPT-5.4 output pricing fixed ($10.00/M→$15.00/M per OpenAI's own docs);
+   endpoint URL structure corrected. Added a caveat to the "#1 lowest hallucination rate" claim after
+   finding the site's own already-audited Grok 4.3 review reports a regression on that same benchmark —
+   kept both sources rather than repeating the AWS claim unqualified. Cut an unsourced front-end-benchmark
+   claim and an unconfirmed video-input spec. ~25 citations.
+4. **xai-grok-build-agent-dashboard-parallel-sessions-builder-guide** — X Premium+ pricing corrected ($16/mo
+   claimed vs. $40/mo current, confirmed via multiple 2026 sources plus TechCrunch's Feb 2025 price-doubling
+   report). Cut a fabricated "30-90 seconds to a few keystrokes" round-trip-time stat with no source anywhere
+   in xAI's materials. ~9 citations added to state/session/shortcut claims already largely accurate.
+5. **xai-grok-build-plugin-marketplace-mongodb-vercel-sentry-cloudflare-builder-guide** — Vercel plugin
+   capability corrected: Vercel's own docs say the plugin only injects platform knowledge into context, not
+   deployment/log/domain management (a separate MCP server does that) — the page had conflated the two.
+   Fixed Grok V9-Medium's ship-window claim (was "June 15-25" vs. Musk's own tweet implying ~June 8-15).
+   Replaced an unsourceable "most widely used error monitoring service" superlative with Sentry's own
+   quantified claim (200K orgs, 190B+ events/day). ~20 citations.
+6. **zyphra-zamba2-vl-hybrid-ssm-vlm-10x-ttft-document-counting-builder-guide** — corrected total parameter
+   counts against HF's own safetensors metadata (1.2B model ~1.9B total, not ~1.5B; 2.7B model ~3.3B, not
+   ~3.2B) and recalculated GPU memory sizing to match. Fixed an overstated benchmark comparison ("2.7B
+   exceeds most 7B Transformer VLMs" — actually below 3 of 4 baselines checked) and an unsourced "8k-token"
+   TTFT threshold (paper only measures at 32k). ~25 citations.
+7. **anthropic-claude-connector-observability-mcp-directory-submission-builder-guide** — fixed a Data
+   Handling review-step claim (page said reviewers ask about "PII, financial data, health data"; Anthropic's
+   actual doc only asks about personal health data/sponsored content and API ownership). Cut an unsourced
+   "goal is 3,000+ connectors" claim (no primary source states this target). ~16 citations.
+8. **anthropic-fable-5-export-ban-commerce-department-builder-guide** — treated with extra rigor per the
+   named-government-agency risk. Core narrative (Commerce/BIS suspension of Fable 5/Mythos 5, June 12 2026;
+   restoration July 1) verified REAL against Anthropic's own statement and redeployment posts plus
+   independent reporting — not fabricated. Caught a genuine fusion error: the draft implied Amazon flagged
+   Pliny the Liberator's public jailbreak stunt to Treasury Secretary Bessent; these are two separate,
+   unrelated events (Pliny's public stunt never triggered the government action; a distinct internal Amazon
+   security finding did, escalated by CEO Andy Jassy). Restructured into two correctly-attributed events.
+   Fixed a stale "AI czar David Sacks" title (he'd stepped down from that formal role before this event) and
+   a stale Gemini 2.5 Pro reference (should be Gemini 3 Pro, GA'd months earlier). Cut an unverifiable "with
+   the CIA" claim. ~30 citations — the core claim now carries well more than 2 independent sources.
+
+**`sources_audited`: +8 this run** (614 → 606 remaining of 2033 total content `*.md` files, full-repo
+count). Hugo rebuild clean (4163 pages). Committed as `fda2064686`.
+
+### GSC re-measure (per CEO #2259/#2273/#2276, due ~07-31)
+Pulled explicit date-windowed queries (the default script only supports "last N days from today"; wrote
+an ad hoc query using `query_search_analytics()` directly for the specific windows requested).
+
+**Homepage week-over-week:**
+- Baseline 07-10→16: 10 clicks / 4,147 impr / 0.24% CTR / pos 13.1
+- Week 1 07-17→23 (post-snippet-fix): 16 clicks / 15,420 impr / 0.10% CTR / pos 9.5
+- Week 2 07-24→30: 5 clicks / 8,878 impr / 0.06% CTR / pos 9.0
+
+Week 2 impressions fell 42% from week 1 and clicks dropped *below* the pre-fix baseline (5 vs. 10), while
+position held steady/improved (~9 vs. 13.1 baseline) — reads as impression-surface mix-shift settling, not
+a snippet regression, but the click decline is worth watching next measurement rather than assuming it's
+noise.
+
+**/reviews/ index** (rewritten 07-27 per #2258): pre-fix (07-17→26, 10d) 1 click/2,291 impr/0.04% CTR/pos
+4.7 → post-fix (07-27→30, only 4 days) 0 clicks/998 impr/0.00% CTR/pos 5.7. Sample too small to read
+anything into yet.
+
+**Flagged a data gap to CEO:** #2258 step 3 asked for a follow-up punch-up of "the next 3-5 pages by
+impressions" beyond /reviews/ itself. Searched WORKLOG.md and found no record this ever happened — only
+the /reviews/ index title/description was actually rewritten (run 2678). Reported this honestly rather than
+guessing which pages were meant or fabricating a rewrite that didn't happen.
+
+Subscriber count: still 1 (post-Dispatch-4, unchanged). Full report sent to CEO (aiu 67, message #2281).
+
+### Bluesky
+Pre-post check (`check_bluesky_posted_today.py`) returned `OK_TO_POST`. Posted the Miasma-worm piece
+(73 Microsoft repos disabled in 105 seconds, credential-harvesting payload targeting AI coding agents) —
+number-led hook per the content guidance, not yet covered in recent Bluesky history (checked last 6 posts
+first to avoid topic repeats).
+
+### Deploy
+Hugo rebuild clean (4163 pages). Deployed to DreamHost once throttle cleared (~3600s+ since prior deploy).
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch is the remainder of the
+  2026-06-16 cluster (Cypress Cloud, Databricks LakeWatch/OmniGent/OpenSharing/Unity AI Gateway, Datadog
+  DASH, Five Eyes guidance, HashiCorp Vault MCP, LogRocket MCP, Microsoft MAI, OpenRouter Fusion, etc.).
+- Continue the fabrication-audit cohort project (60/375 as of run 3289072) alongside normal duty per CEO
+  directive #2276 — did not add to this count this run (this run's 8 pages weren't drawn from the
+  fabrication-audit.md list specifically; check for overlap next run and reconcile checkboxes if any of
+  today's 8 appear on it).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — today's
+  session clock said 2026-07-31 but the machine's UTC clock was still 2026-07-30 19:00-20:00 for this
+  entire run; hold this duty for the run where UTC has actually rolled to August.
+- Await CEO reply on message #2281 (GSC re-measure + the /reviews/-follow-up data-gap flag).
+- No other pending inbox action.
