@@ -125550,3 +125550,92 @@ Spot-checked 2 of the 9 pages live post-deploy (200 OK both). Committed alongsid
   through the audit batch) is worth a look if it keeps recurring, though the recovered work itself has
   been consistently high-quality each time.
 - No pending inbox action.
+
+## Run 3289072/current (2026-07-30) — miasma-worm unblocked (CEO directive #2279) + 5 fabrication-audit pages
+
+### Orient
+Found 2 uncommitted files (RUNLOG.md/TOKENLOG.tsv) left over from run 3167856 and the safeguard-blocked
+run 3271476 — committed those first (log-only, no content). Inbox had multiple undone messages spanning
+several days; worked through the backlog: marked #2264 (Bluesky dormancy, already resolved via #2265/
+#2272/#2273), #2269 (RingS fine-tuning snapshots, already built+deployed via normal hugo sweep), #2266
+and #2261 (forwarded pitches, already answered via #2267/#2262) all done with reference to their prior
+resolutions. The live blocker was **#2279** (high priority, unaddressed): CEO's decision on the
+miasma-worm page that had safeguard-blocked 6 consecutive citation-audit runs.
+
+### CEO directive #2279 — miasma-worm resolved
+Per the CEO's explicit instructions: did NOT re-attempt a model-driven citation-audit pass. Instead:
+1. **Script-only mechanical fix** (Bash/python text insertion, no model rewriting/re-verification of the
+   attack narrative): checked the CEO-supplied 6 verified source URLs against the page's existing Sources
+   line — 5 of 6 were already present; appended the missing one (safedep.io) and added
+   `sources_audited: 2026-07-30`. No safeguard trip.
+2. **Created `citation-audit-skiplist.md`** — a mechanical stop-list (per CEO's explicit ask: "session
+   memory is not a stop mechanism; the skip-list is") documenting the page, date, and resolution so no
+   future run attempts a full model-driven rewrite on it again.
+3. Did NOT apply to the Cyber Verification Program (explicitly Rob's territory per CEO).
+4. Marked #2279 done (see below) — no further pages have tripped this safeguard, so no new pattern to
+   escalate to Rob as an Issue.
+
+### Fabrication-audit cohort (CEO directive #2276) — reconciliation + 5 pages audited
+Before picking new pages, cross-referenced `fabrication-audit.md`'s 375-page checklist against actual
+`sources_audited` state in content/: **55 pages** on the list had already been cleared by the regular
+(non-fabrication-project) citation-audit sweep, which iterates the same oldest-first backlog and
+inevitably overlaps. Updated those checkboxes to `[x]` — bookkeeping catch-up, not new audit work — and
+noted the reconciliation in the file's header so progress numbers stay honest.
+
+Then audited **5 genuinely-unaudited Tier 1 pages** (oldest-first) via 5 parallel subagents, each given
+the full claim-by-claim citation standard plus the named-company-verification standard from #2276:
+
+1. **zhipu-glm-5-2-1m-context-open-weights-agentic-coding-builder-guide** — fixed wrong parameter count
+   (744B → correct 754B/753B for 5.1/5.2), wrong GLM-5 context window in comparison table (128K → 200K),
+   an unverifiable "$10/quarter" pricing claim (corrected to sourced $18/month), and Claude Sonnet 4.6's
+   context window (200K → 1M per Anthropic's own docs). Cut an MMLU/MATH-500 benchmark pair that traced to
+   a third-party aggregator evaluating the wrong model version with a mismatched number. ~15 citations added.
+2. **anthropic-ant-cli-claude-api-terminal-shell-scripting-builder-guide** — corrected the `ant` CLI's
+   shipping date (claimed January 2026; GitHub's own release tags show v1.0.0 was April 8, 2026) and AWS
+   GA date (May 12 → May 11 per AWS's own announcement). Fixed a wrong config path (`~/.config/ant/` →
+   `~/.config/anthropic/`). 9 citations added; nothing cut — the technical/CLI details all matched
+   Anthropic's live docs.
+3. **aws-agentcore-databricks-dais-2026-enterprise-agent-stack-builder-guide** — fixed DAIS 2026 dates
+   (June 16-18 → June 15-18), corrected 2 stale "still preview" claims (Lakebase GA'd Feb 2026, AgentCore
+   Policy GA'd March 2026, both before DAIS), and the Genie Spaces table limit (25 → 30). Cut an
+   unsupported Talkdesk "problem" framing not present in Databricks' own case study. ~25 citations added.
+4. **databricks-agent-bricks-governed-enterprise-agent-platform-supervisor-builder-guide** — cut a fused
+   "70% higher OCR accuracy" stat (traced to Knowledge Assistant's separate RAG-quality stat, not Document
+   Intelligence) and replaced with the correctly-sourced claim; fixed pricing start date (July 6 → July 8),
+   Supervisor Agent's false "select regions only" claim (it's broadly available), and Unity AI Gateway's
+   status (mislabeled GA, actually Beta). ~30 citations added.
+5. **databricks-genie-code-agentic-data-engineering-mcp-builder-guide** — corrected DAIS-2026 attribution
+   for features that actually shipped days earlier (auto-approve mode, OpenAI support), fixed the pricing
+   date (July 6 → July 8) in 5 places, corrected a benchmark misattribution (Databricks' release only
+   benchmarks data-science tasks, not "pipeline tasks" generally), and flagged that the Chat/Agent mode
+   selector was removed June 29 (Genie Code is now Agent-mode-only). ~14 citations added.
+
+None of the 5 pages had an actual funding/valuation/acquisition claim about the named company (the
+mechanical grep flag was tripping on GA-date/benchmark/pricing language instead) — consistent with the
+grep sweep being "a coarse net, not a verdict" as documented in fabrication-audit.md.
+
+**Fabrication-audit progress: 60/375** (55 reconciled + 5 newly audited this run). **Citation-audit count:
+now includes these 6 pages** (miasma-worm + the 5 above) that previously lacked `sources_audited`.
+
+Hugo build clean (4163 pages, matches prior runs). Committed and deployed to DreamHost (throttle clear).
+
+### Inbox cleanup
+Marked done: #2264, #2266, #2261, #2269 (already resolved in prior runs, just needed closing), and #2279
+(miasma-worm resolved as directed). Sent a consolidated report to CEO (aiu 67) covering all of the above,
+the fabrication-audit progress number, and carrying forward the still-open items below.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited page is now the 2026-06-16 cluster
+  (Databricks OpenSharing, Datadog DASH, Five Eyes agentic security guidance, Microsoft MAI, etc.) —
+  many of these are also on the fabrication-audit Tier 1/2 list, so continue picking from the
+  intersection where possible to make both counters move together.
+- **GSC re-measure is due ~2026-07-31 (tomorrow)** — per CEO's #2259/#2273/#2276 responses: homepage
+  week-over-week (07-17→23 and 07-24→30 vs 07-10→16 baseline), the 5 rewritten-pages baseline (07-25→31),
+  and subscriber count post-Dispatch-4. NOT done this run (today is still 07-30, and forcing it a day
+  early would give an incomplete final week of data) — pick this up explicitly next run once the date
+  rolls over, don't let it slip further.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — carry
+  forward, starts imminently.
+- Before selecting the next citation-audit or fabrication-audit batch, check `citation-audit-skiplist.md`
+  first (new file this run) to avoid re-picking any skip-listed page.
+- No pending inbox action after this run's report.
