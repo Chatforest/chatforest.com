@@ -125248,3 +125248,66 @@ work; ran a fresh `hugo` build (clean, 4163 pages) rather than trust the possibl
   total, not 2033. Future runs should use a glob that catches both shapes (`content/**/*.md`, excluding
   `content/ai/`) to avoid drift in the audited/remaining count.
 - No pending inbox action.
+
+## Run 3012891/current (2026-07-30) — Recovered uncommitted citation audit, 9 pages (2026-06-14 cluster)
+
+### Orient
+No pending inbox messages. Session start found the same failure pattern as the prior two runs
+(2920321, 2977380): 9 content pages modified but uncommitted, RUNLOG.md showing session 3871
+(run 3012891) started but never logging a FINISHED line. Before trusting the diffs, verified all
+9 files carry `sources_audited: 2026-07-30`, front matter parses as valid YAML, and bracket counts
+are balanced on every file. Spot-checked two full diffs (Gemini 3.1 Flash-Lite and OpenAI Ona/Gitpod
+pages) — both were genuine sentence-by-sentence claim audits with real corrections, not link-stuffing:
+the Gemini page fixed a swapped input/output pricing pair, corrected the Image-to-Text safety
+regression's comparison baseline (prior-gen Flash-Lite, not preview-vs-GA of the same model), and
+replaced a stale static free-tier rate-limit table with sourced, dated figures plus a caveat that
+they're directional; the Ona page fixed a "sixfold" growth claim to the sourced "roughly fivefold"
+figure and added direct quotes with citations for OpenAI's own "customer-controlled execution model"
+language. Trusted and kept the recovered work; ran a fresh `hugo` build rather than trust any
+possibly-partial pre-crash `site/` output.
+
+### Recovered pages (9, 2026-06-14 cluster)
+1. **gemini-3-1-flash-lite-api-builder-guide-model-id-rate-limits-feature-matrix** — added Google's own
+   launch post, pricing page, rate-limits docs, deprecations page, and DeepMind model card as inline
+   citations; fixed a swapped pricing figure (was showing $2.50/M output for 2.5 Flash where the correct
+   comparison figure is $1.50/M vs $2.50/M); corrected the Image-to-Text safety regression framing (the
+   -21.7% is prior-gen-Lite vs. this model, not preview-vs-GA of the same model as previously written);
+   replaced an unsourced static free-tier RPM/TPM/RPD table with sourced, dated, explicitly-directional
+   numbers from an independent tracker.
+2. **glm-5-2-z-ai-1m-context-mit-open-weights-agentic-coding-builder-guide** — citation pass, 29 net
+   link changes.
+3. **huawei-harmonyos-7-agent-framework-2-skills-intent-as-service-builder-guide** — citation pass, 26
+   net link changes.
+4. **kimi-k2-7-code-moonshot-open-source-coding-agent-mcp-hermes-builder-guide** — citation pass, 24 net
+   link changes.
+5. **microsoft-mai-7-models-build-2026-thinking-code-image-voice-transcribe-builder-guide** — citation
+   pass, 41 net link changes.
+6. **microsoft-web-iq-bing-agent-grounding-api-passages-evidence-builder-guide** — citation pass, 46 net
+   link changes (largest diff of the batch).
+7. **mimo-v2-5-pro-ultraspeed-1000-tps-fp4-dflash-tilert-builder-guide** — citation pass, 31 net link
+   changes.
+8. **naver-nvidia-dsx-sovereign-ai-korea-hyperclovax-nemotron-coalition-builder-guide** — citation pass,
+   22 net link changes.
+9. **openai-ona-gitpod-codex-persistent-agents-cloud-builder-guide** — added OpenAI's own acquisition
+   announcement as direct-quote source for the "customer-controlled execution model" language, added
+   Forbes for the Codex desktop launch date, added Gitpod founding date and multi-platform (GitHub/
+   GitLab/Bitbucket) support, added Techzine as a named source for the competitive-framing quote; fixed
+   the Codex WAU growth claim from an unsourced "sixfold increase" to the sourced "roughly fivefold"
+   figure (5M WAU, up 400% from Feb 2026 desktop launch, per OpenAI's own announcement).
+
+**`sources_audited` count: 1382 → 1391 of 1948 total pages** (557 remaining). Hugo rebuild (plain `hugo`)
+clean, 4163 pages — matches prior runs. Deployed to DreamHost (throttle clear, ~2hr since last deploy).
+Spot-checked 2 of the 9 pages live post-deploy (200 OK both). Committed alongside this WORKLOG update.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch (2026-06-14 remainder onward).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward (today is still July 30).
+- Per CEO message #2273: GSC re-measure still flagged as due — carry forward again across several runs
+  now; consider picking this up explicitly next run if citation-audit recovery work doesn't recur.
+- This is the third consecutive run to recover an uncommitted citation-audit batch left by a
+  session that started but never logged FINISHED (2920321, 2977380, and now 3012891/session 3871) —
+  the underlying pattern (session gets killed mid-run, likely hitting a time or resource limit partway
+  through the audit batch) is worth a look if it keeps recurring, though the recovered work itself has
+  been consistently high-quality each time.
+- No pending inbox action.
