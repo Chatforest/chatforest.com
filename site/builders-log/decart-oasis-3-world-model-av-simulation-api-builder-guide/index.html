@@ -88,8 +88,8 @@ variation, but physics becomes implicit — an approximation learned from data, 
 code.</p>
 <hr>
 <h2 id="how-oasis-3-works">How Oasis 3 works</h2>
-<p>Oasis 3 is an <strong>action-conditioned generative video model</strong> built on DOS (Decart Optimization Stack)
-2.0 and co-designed with NVIDIA&rsquo;s physical AI ecosystem. It runs on CoreWeave&rsquo;s cloud infrastructure.</p>
+<p>Oasis 3 is an <strong>action-conditioned generative video model</strong> built on <a href="https://wandb.ai/site/customers/decart/">DOS (Decart Optimization Stack)
+2.0</a>, which runs on <a href="https://techround.co.uk/artificial-intelligence/decarts-new-oasis-3-world-model-empower-physical-ai-revolution/">CoreWeave&rsquo;s cloud infrastructure using NVIDIA HGX B200 systems and NVIDIA&rsquo;s physical AI rendering layer</a>.</p>
 <p>At each step:</p>
 <ol>
 <li>Your AV policy (or robot controller) emits an action — a steering angle, throttle value, or API
@@ -102,8 +102,8 @@ the same coherent world state.</li>
 <p>The three-camera native output is significant: most AV training pipelines require spatial consistency
 across cameras. Oasis 3 generates all three simultaneously from the same latent world representation
 rather than generating each view independently.</p>
-<p>The underlying architecture — and specifically what makes DOS 2.0 order-of-magnitude cheaper than
-comparable inference pipelines — is not publicly disclosed.</p>
+<p>The underlying architecture — and specifically what makes DOS 2.0 <a href="https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/">order-of-magnitude cheaper than
+comparable inference pipelines</a> — is not publicly disclosed.</p>
 <hr>
 <h2 id="what-builders-can-do-with-it">What builders can do with it</h2>
 <h3 id="the-api">The API</h3>
@@ -140,7 +140,7 @@ real-world testing</li>
 </ul>
 <hr>
 <h2 id="the-four-limitations-you-need-to-know">The four limitations you need to know</h2>
-<p>Decart is explicit that this is a world model, not a physics engine. The TechCrunch review of Oasis 3
+<p>Decart is explicit that this is a world model, not a physics engine. <a href="https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/">The TechCrunch review of Oasis 3</a>
 surfaced four limitations builders should factor in before choosing it as a primary simulation
 platform:</p>
 <h3 id="1-spatial-coherence-degrades-over-time">1. Spatial coherence degrades over time</h3>
@@ -241,16 +241,20 @@ discover failure modes, then re-run the failures in CARLA to validate controller
 accurate physics.</p>
 <hr>
 <h2 id="business-context">Business context</h2>
-<p>Decart was founded in 2023 and <a href="https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/">raised $300M in May 2026</a> at approximately $4B valuation. Total funding
-exceeds $450M. The round was led by Radical Ventures with participation from NVIDIA, Adobe Ventures,
-Toyota Ventures, Sequoia, and Benchmark — a signal that the strategic investors see Oasis 3 as
+<p>Decart was <a href="https://www.calcalistech.com/ctechnews/article/sjt9ncukgl">founded in late 2023</a> by Dean
+Leitersdorf and Moshe Shalev, and <a href="https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/">raised $300M in May 2026</a> at approximately $4B valuation,
+<a href="https://www.calcalistech.com/ctechnews/article/sjt9ncukgl">bringing total funding to more than $450M</a>.
+The round was led by Radical Ventures with new participation from NVIDIA, eBay Ventures, Adobe
+Ventures, Toyota Ventures, Atreides Management, and Valor Equity Partners, alongside existing
+investors Sequoia Capital and Benchmark — a signal that the strategic investors see Oasis 3 as
 infrastructure for the physical AI stack, not a vertical product.</p>
 <p>Decart&rsquo;s positioning is explicit: they are building the simulation layer that AV and robotics companies
-build on top of, not a complete AV platform. Over 100,000 developers used prior Decart real-time video
-models before Oasis 3; the company is betting that developer familiarity converts to AV-team adoption.</p>
-<p>Oasis 3 narrows prior Oasis versions (which demonstrated open-world and gaming capabilities) to
-domain-specific driving fidelity. The breadth-for-accuracy trade is a product decision, not a
-capability limitation.</p>
+build on top of, not a complete AV platform. <a href="https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/">Over 100,000 developers used prior Decart real-time video
+models</a> before Oasis 3; the company is betting that developer familiarity converts to AV-team adoption.</p>
+<p>Oasis 3 narrows prior Oasis versions — starting with an <a href="https://techcrunch.com/2024/10/31/decarts-ai-simulates-a-real-time-playable-version-of-minecraft/">October 2024 real-time, AI-generated
+Minecraft-like world model</a> built with Etched, which demonstrated open-world and gaming
+capabilities — to domain-specific driving fidelity. The breadth-for-accuracy trade is a product
+decision, not a capability limitation.</p>
 <hr>
 <h2 id="what-to-watch">What to watch</h2>
 <ul>
@@ -258,9 +262,9 @@ capability limitation.</p>
 ships, the CARLA/Oasis trade-off calculus changes significantly.</li>
 <li><strong>Context window expansion</strong>: Longer coherent sessions would unlock applications requiring map
 consistency. Watch for context window announcements in H2 2026.</li>
-<li><strong>Robotics expansion</strong>: Oasis 3 is officially scoped to driving, but Decart cites drones,
-off-road vehicles, maritime, and humanoid manipulation as planned extensions. First non-driving
-release is the leading indicator.</li>
+<li><strong>Robotics expansion</strong>: Oasis 3 is officially scoped to driving, but <a href="https://decart.ai/oasis">Decart cites drones,
+off-road vehicles, maritime, and humanoid manipulation</a> as planned
+extensions. First non-driving release is the leading indicator.</li>
 <li><strong>Pricing at scale</strong>: $0.02/second is $1.20/minute. A 10,000-episode training run at 30 seconds/episode
 is $6,000. Understand your episode budget before committing to a training loop at scale.</li>
 </ul>

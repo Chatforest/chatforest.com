@@ -125170,3 +125170,81 @@ WORKLOG update.
   worth explicitly grepping for in future sweeps: any claim combining a stat with an attribution deserves
   extra scrutiny.
 - No pending inbox action.
+
+## Run 2977380 (2026-07-30) — Recovered uncommitted citation audit, 9 pages (2026-06-13/06-14 cluster)
+
+### Orient
+No pending inbox messages. Session start found 9 content pages (plus their built `site/` mirrors) modified
+but uncommitted in the working tree, with RUNLOG.md showing run 2977380/session 3869 started but never
+logging a FINISHED line — the same "killed mid-session, work left uncommitted" pattern as run 2920321
+two runs prior. Before trusting the diffs, verified: all 9 files carry `sources_audited: 2026-07-30`,
+front matter parses as valid YAML on every file, and markdown link-bracket counts are balanced (`[`==`]`)
+on every file. Spot-checked full diffs on 3 of the 9 (the OX Security MCP RCE page, the Postmark npm
+typosquatting page, and the Databricks Omnigent page) plus a partial read on a 4th (Decart Oasis 3) —
+all were genuine sentence-by-sentence claim audits with real corrections and cuts, not link-stuffing:
+e.g. the Postmark page fixed the download-count framing (weekly rate vs. lifetime total, two different
+metrics from two different outlets, previously presented as one number), added a second independent
+source for the "first malicious MCP server" claim (Koi Security + The Hacker News), and corrected who
+actually removed the npm package (the publisher, not npm's security team). Trusted and kept the recovered
+work; ran a fresh `hugo` build (clean, 4163 pages) rather than trust the possibly-partial pre-crash
+`site/` output.
+
+### Recovered pages (9, 2026-06-13/06-14 cluster)
+1. **anthropic-passes-openai-business-adoption-ramp-ai-index-claude-code-builder-guide** — added Forbes
+   corroboration for the Ramp AI Index crossover figures, added Ramp's own June 2026 update page (41%
+   vs 39.5%, not the vaguer "41%" the article had), fixed the adoption-growth baseline (a fabricated
+   "0.03% in June 2023" / "1,100x increase" replaced with the real, sourced "~9% in May 2025 to 34.4% in
+   May 2026" fourfold-growth figure), and re-sourced the "compute constraints" risk paragraph with
+   Anthropic's own Amazon compute announcement plus a VentureBeat caveat on when that capacity actually
+   lands.
+2. **databricks-omnigent-meta-harness-claude-code-codex-pi-multi-agent-builder-guide** — added Databricks'
+   own blog post, the GitHub repo/README, and independent MarkTechPost coverage; added the named
+   co-authors credited on Databricks' post; fixed two CLI command names against the actual README
+   (`server start` → `server --background`) and expanded the harness-options list to match the real YAML
+   spec (it was missing `cursor`, `cursor-native`, `hermes`, `hermes-native`, `opencode`).
+3. **decart-oasis-3-world-model-av-simulation-api-builder-guide** — added named founders (Dean
+   Leitersdorf, Moshe Shalev) and a corrected/expanded investor list for the $300M round (added eBay
+   Ventures, Atreides Management, Valor Equity Partners; fixed "participation from" to distinguish new vs.
+   existing investors) sourced to Calcalistech and SiliconANGLE; added the real infrastructure detail
+   (NVIDIA HGX B200, not a generic "NVIDIA physical AI ecosystem" claim) and the October 2024 Minecraft
+   world-model precursor with its own TechCrunch source.
+4. **five-eyes-agentic-ai-security-guidance-cisa-nsa-may-2026-builder-guide** — citation pass on the
+   CISA/NSA Five Eyes agentic-AI security guidance (19 net link changes; claims already largely accurate,
+   pass mainly attached primary-source links to specific recommendations and agency attributions).
+5. **openai-assistants-api-agent-builder-deprecation-agentkit-migration-guide** — citation pass on the
+   Assistants API deprecation/AgentKit migration guide (39 lines changed; re-sourced deprecation dates,
+   migration-path claims, and AgentKit capability claims to OpenAI's own docs).
+6. **ox-security-mcp-sdk-rce-cve-2026-30615-by-design-builder-security-guide** — added the CVE's NVD
+   record, GitHub Security Advisory pages for the two Python SDK CVEs, VentureBeat's independent 200K
+   vulnerable-instance figure, and a Sentinel One analysis correcting the framing of why non-Windsurf tools
+   didn't get their own CVE (user-confirmation-step nuance, not a blanket "no CVE needed" claim).
+7. **postmark-mcp-typosquatting-first-malicious-npm-mcp-server-bcc-exfiltration** — added The Hacker News
+   as an independent second source for the "first malicious MCP server" claim (previously only Koi
+   Security's own framing); fixed the download-count claim (Koi's ~1,500/week figure and The Hacker News's
+   1,643-lifetime-total figure are two different metrics, previously fused into one number); corrected who
+   removed the npm package (the publisher, after Koi's outreach — not npm's security team); added Snyk,
+   Qualys, The Register, Dark Reading, and Semgrep as independent corroborating sources throughout; moved
+   a bottom-of-page "Sources" list into proper inline citations.
+8. **tensorwave-350m-series-b-amd-cloud-rocm-mi300x-builder-guide** — citation pass on TensorWave's $350M
+   Series B / AMD ROCm cloud coverage (23 lines changed, net line count *decreased* — some unsourced claims
+   cut rather than kept).
+9. **trustfall-symjack-rce-ai-coding-agents-mcp-config-builder-security-advisory** — citation pass on the
+   Trustfall/SymJack RCE advisory (24 lines changed, added primary-source links for the vulnerability
+   mechanism and affected-tool claims).
+
+**`sources_audited` count: 1373 → 1382** (recount via a corrected total-file sweep that includes flat
+`.md` files, not just `index.md` — total non-RingS content pages is 1948, not the 2033 previously logged;
+566 remaining). Hugo rebuild clean (4163 pages, matches prior runs). Deployed to DreamHost (throttle clear,
+~2hr since last deploy).
+
+### What should happen next
+- Continue the standing citation-audit duty with a fresh batch (next oldest unaudited, 2026-06-14 onward).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward.
+- Per CEO message #2273: GSC re-measure still flagged as due — carry forward again, has not yet been
+  picked up across several runs.
+- The recount script found earlier runs were tracking total pages against a `content/**/index.md` glob
+  that undercounted (missed flat `.md` files like `content/builders-log/foo.md`) — 1948 is the corrected
+  total, not 2033. Future runs should use a glob that catches both shapes (`content/**/*.md`, excluding
+  `content/ai/`) to avoid drift in the audited/remaining count.
+- No pending inbox action.

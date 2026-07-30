@@ -3,6 +3,7 @@ title: "Decart Oasis 3: A Real-Time World Model for AV Training — and an Hones
 date: 2026-06-14
 description: "Decart's Oasis 3 generates photorealistic, action-conditioned driving environments via API at $0.02/second. Here's what the architecture actually does, where it beats CARLA, and the four limitations you need to understand before building on it."
 tags: ["physical-ai", "autonomous-vehicles", "simulation", "world-model", "robotics", "api", "developer-tools"]
+sources_audited: 2026-07-30
 ---
 
 Decart [launched **Oasis 3**](https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/) on June 10, 2026 — a real-time world model that generates photorealistic
@@ -36,8 +37,8 @@ code.
 
 ## How Oasis 3 works
 
-Oasis 3 is an **action-conditioned generative video model** built on DOS (Decart Optimization Stack)
-2.0 and co-designed with NVIDIA's physical AI ecosystem. It runs on CoreWeave's cloud infrastructure.
+Oasis 3 is an **action-conditioned generative video model** built on [DOS (Decart Optimization Stack)
+2.0](https://wandb.ai/site/customers/decart/), which runs on [CoreWeave's cloud infrastructure using NVIDIA HGX B200 systems and NVIDIA's physical AI rendering layer](https://techround.co.uk/artificial-intelligence/decarts-new-oasis-3-world-model-empower-physical-ai-revolution/).
 
 At each step:
 
@@ -52,8 +53,8 @@ The three-camera native output is significant: most AV training pipelines requir
 across cameras. Oasis 3 generates all three simultaneously from the same latent world representation
 rather than generating each view independently.
 
-The underlying architecture — and specifically what makes DOS 2.0 order-of-magnitude cheaper than
-comparable inference pipelines — is not publicly disclosed.
+The underlying architecture — and specifically what makes DOS 2.0 [order-of-magnitude cheaper than
+comparable inference pipelines](https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/) — is not publicly disclosed.
 
 ---
 
@@ -103,7 +104,7 @@ surfaces, and geographies without a single additional asset.
 
 ## The four limitations you need to know
 
-Decart is explicit that this is a world model, not a physics engine. The TechCrunch review of Oasis 3
+Decart is explicit that this is a world model, not a physics engine. [The TechCrunch review of Oasis 3](https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/)
 surfaced four limitations builders should factor in before choosing it as a primary simulation
 platform:
 
@@ -168,18 +169,22 @@ accurate physics.
 
 ## Business context
 
-Decart was founded in 2023 and [raised $300M in May 2026](https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/) at approximately $4B valuation. Total funding
-exceeds $450M. The round was led by Radical Ventures with participation from NVIDIA, Adobe Ventures,
-Toyota Ventures, Sequoia, and Benchmark — a signal that the strategic investors see Oasis 3 as
+Decart was [founded in late 2023](https://www.calcalistech.com/ctechnews/article/sjt9ncukgl) by Dean
+Leitersdorf and Moshe Shalev, and [raised $300M in May 2026](https://siliconangle.com/2026/05/18/decart-raises-300m-ai-optimization-software-world-models/) at approximately $4B valuation,
+[bringing total funding to more than $450M](https://www.calcalistech.com/ctechnews/article/sjt9ncukgl).
+The round was led by Radical Ventures with new participation from NVIDIA, eBay Ventures, Adobe
+Ventures, Toyota Ventures, Atreides Management, and Valor Equity Partners, alongside existing
+investors Sequoia Capital and Benchmark — a signal that the strategic investors see Oasis 3 as
 infrastructure for the physical AI stack, not a vertical product.
 
 Decart's positioning is explicit: they are building the simulation layer that AV and robotics companies
-build on top of, not a complete AV platform. Over 100,000 developers used prior Decart real-time video
-models before Oasis 3; the company is betting that developer familiarity converts to AV-team adoption.
+build on top of, not a complete AV platform. [Over 100,000 developers used prior Decart real-time video
+models](https://techcrunch.com/2026/06/10/decarts-new-world-model-can-simulate-hours-of-photorealistic-driving-with-some-caveats/) before Oasis 3; the company is betting that developer familiarity converts to AV-team adoption.
 
-Oasis 3 narrows prior Oasis versions (which demonstrated open-world and gaming capabilities) to
-domain-specific driving fidelity. The breadth-for-accuracy trade is a product decision, not a
-capability limitation.
+Oasis 3 narrows prior Oasis versions — starting with an [October 2024 real-time, AI-generated
+Minecraft-like world model](https://techcrunch.com/2024/10/31/decarts-ai-simulates-a-real-time-playable-version-of-minecraft/) built with Etched, which demonstrated open-world and gaming
+capabilities — to domain-specific driving fidelity. The breadth-for-accuracy trade is a product
+decision, not a capability limitation.
 
 ---
 
@@ -189,9 +194,9 @@ capability limitation.
   ships, the CARLA/Oasis trade-off calculus changes significantly.
 - **Context window expansion**: Longer coherent sessions would unlock applications requiring map
   consistency. Watch for context window announcements in H2 2026.
-- **Robotics expansion**: Oasis 3 is officially scoped to driving, but Decart cites drones,
-  off-road vehicles, maritime, and humanoid manipulation as planned extensions. First non-driving
-  release is the leading indicator.
+- **Robotics expansion**: Oasis 3 is officially scoped to driving, but [Decart cites drones,
+  off-road vehicles, maritime, and humanoid manipulation](https://decart.ai/oasis) as planned
+  extensions. First non-driving release is the leading indicator.
 - **Pricing at scale**: $0.02/second is $1.20/minute. A 10,000-episode training run at 30 seconds/episode
   is $6,000. Understand your episode budget before committing to a training loop at scale.
 

@@ -9,7 +9,7 @@ This article covers what each attack does, which tools are affected, what patche
 
 ---
 
-**Update — June 14, 2026:** Final vendor response status is now confirmed. Anthropic patched three CVEs (CVE-2025-59536, CVE-2026-21852, CVE-2026-33068) and quietly hardened the SymJack approval flow — the approval prompt now displays the real resolved path instead of the symlink path. No other vendor patched either attack class. Google (Gemini CLI / Antigravity CLI) and Cursor both formally **declined to patch**. xAI (Grok Build) and GitHub Copilot CLI gave **no response** to researchers. OpenAI had the Codex CLI report **closed by Bugcrowd as a false positive**, characterizing the attack as "theoretical" because the user approves the underlying `cp` command — ignoring that the symlink redirection is invisible to the user at approval time. The table below reflects these outcomes. Builders using any unpatched tool should assume no vendor mitigation is forthcoming and apply the hardening steps below.
+**Update — June 14, 2026:** Vendor response has settled into a pattern. Anthropic **rejected TrustFall itself**, telling researchers the trust-prompt UX is "outside its threat model" ([The Register](https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319)) — but weeks after SymJack's disclosure it quietly hardened Claude Code's approval flow so the prompt now displays the real resolved path instead of the symlink path ([SecurityWeek](https://www.securityweek.com/symjack-attack-turns-ai-coding-agents-into-supply-chain-attack-delivery-systems/)). No other vendor patched either attack class. Google (Gemini CLI / Antigravity CLI) rejected the SymJack report as intended behavior, and Cursor **declined**, saying they already knew about the issue ([SecurityWeek](https://www.securityweek.com/symjack-attack-turns-ai-coding-agents-into-supply-chain-attack-delivery-systems/)). xAI (Grok Build) and GitHub Copilot CLI gave **no response** to researchers. OpenAI had the Codex CLI report **closed by Bugcrowd as a false positive**, characterizing the attack as "theoretical" because the user approves the underlying `cp` command — ignoring that the symlink redirection is invisible to the user at approval time ([Adversa AI](https://adversa.ai/blog/the-approval-prompt-is-lying-to-you-symlink-rce-in-five-ai-coding-agents-claude-code-cursor-antigravity-copilot-grok-build/)). The table below reflects these outcomes. Builders using any unpatched tool should assume no vendor mitigation is forthcoming and apply the hardening steps below.
 
 ---
 
@@ -19,14 +19,14 @@ AI coding agents — Claude Code, Cursor, Gemini CLI, Copilot CLI, Codex CLI —
 
 The attack surface follows from this model: **if an attacker can control which MCP server gets executed, they own the machine**.
 
-Adversa AI's research identified two paths to that outcome. They operate at different layers, require different mitigations, and in at least one case have been exploited in the wild.
+Adversa AI's research ([TrustFall](https://adversa.ai/blog/trustfall-coding-agent-security-flaw-rce-claude-cursor-gemini-cli-copilot/), [SymJack](https://adversa.ai/blog/the-approval-prompt-is-lying-to-you-symlink-rce-in-five-ai-coding-agents-claude-code-cursor-antigravity-copilot-grok-build/)) identified two paths to that outcome. They operate at different layers and require different mitigations.
 
 ---
 
 ## TrustFall — One-Click RCE via Project-Embedded MCP Config
 
-**Disclosed:** May 7, 2026  
-**CVEs:** CVE-2026-21852, CVE-2026-33068 (both patched by Anthropic)  
+**Disclosed:** May 7, 2026 ([Adversa AI](https://adversa.ai/blog/trustfall-coding-agent-security-flaw-rce-claude-cursor-gemini-cli-copilot/); [The Register](https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319))  
+**CVE:** None assigned — Anthropic reviewed and rejected the report as outside its threat model (see "Anthropic's Response" below)  
 **Affected:** Claude Code, Cursor CLI, Gemini CLI, GitHub Copilot CLI
 
 ### The Attack
@@ -37,21 +37,23 @@ TrustFall exploits this directly: a malicious actor plants a `.mcp.json` in a re
 
 The user sees one prompt. The CLI executes potentially arbitrary MCP server code on their machine.
 
-### Real-World Exploitation: The Miasma Worm
+### Related: The Miasma Worm
 
-The attack was not purely theoretical. Adversa AI documented the **Miasma worm**, which exploited TrustFall by planting a malicious `.mcp.json` inside the Microsoft Azure `durabletask` repository — a widely cloned open-source project. Any developer who cloned the compromised repo and opened it in an affected AI coding CLI became an execution target.
+Separately — and documented by other security researchers, not Adversa AI — a self-replicating supply-chain campaign called the **Miasma worm** used a compromised maintainer credential to push malicious commits into Microsoft's Azure `durabletask` package and dozens of other repositories, eventually forcing GitHub to disable 73 Microsoft repos ([The Hacker News](https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html); [StepSecurity](https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents)). Miasma's payloads targeted AI-coding-agent auto-run surfaces broadly — MCP config files among them, alongside `.cursorrules`, `.windsurfrules`, and Copilot instruction files — to trigger credential-harvesting when a compromised repo was opened in Claude Code, Gemini CLI, Cursor, and other tools.
 
-The Miasma worm demonstrates the supply-chain multiplier effect: one compromised popular repo, many downstream victims, all through the standard developer workflow.
+Miasma is a broader, multi-vector worm; it is not a confirmed exploitation of TrustFall specifically. But it's independent evidence that config-triggered execution on repo-open is already being abused in the wild, not merely a theoretical risk.
 
 ### Anthropic's Response
 
-Anthropic issued patches addressing CVE-2026-21852 and CVE-2026-33068. Additionally, the SymJack approval-flow hardening was addressed under CVE-2025-59536 — the approval prompt now displays the real resolved path of a symlink target, not the symlink itself, making the redirect visible to the user before they approve. However, Anthropic's public response also characterized the core trust-prompt UX issue as "outside its threat model" — meaning the underlying ambiguity of what a folder trust prompt authorizes remains an open design question across the ecosystem.
+Anthropic did not patch TrustFall. Per Adversa AI's report and reporting by The Register, Anthropic's position is that once a user accepts the folder-trust dialog, the resulting code execution is a user trust decision and therefore "outside its threat model" — the company treats the behavior as by design, not a vulnerability ([The Register](https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319); [Adversa AI](https://adversa.ai/blog/trustfall-coding-agent-security-flaw-rce-claude-cursor-gemini-cli-copilot/)).
+
+That said, Claude Code had already patched three related trust-boundary bugs in the same problem class before TrustFall's disclosure — cited by Adversa as prior precedent, not as TrustFall's own CVEs: **CVE-2025-59536** (a project-scoped MCP server could execute before the trust dialog even rendered, patched September 2025), **CVE-2026-21852** (a malicious `ANTHROPIC_BASE_URL` in a repo's committed settings could exfiltrate the user's API key before the trust prompt was confirmed, patched December 2025), and **CVE-2026-33068** (a repo-controlled settings file could silently bypass the trust dialog by setting `permissions.defaultMode`, patched in v2.1.53, disclosed March 2026) ([Check Point Research](https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/); [GitLab Advisory Database](https://advisories.gitlab.com/npm/@anthropic-ai/claude-code/CVE-2026-33068/)). These are separate, earlier bugs — not patches issued in response to TrustFall — but they show the same trust-boundary weakness has been found and fixed in Claude Code repeatedly.
 
 ---
 
 ## SymJack — Symlink Hijack Overwrites MCP Config at Restart
 
-**Disclosed:** May 27, 2026 (updated to include OpenAI Codex CLI)  
+**Disclosed:** May 26, 2026 (updated May 27, 2026 to include OpenAI Codex CLI) ([Adversa AI](https://adversa.ai/blog/the-approval-prompt-is-lying-to-you-symlink-rce-in-five-ai-coding-agents-claude-code-cursor-antigravity-copilot-grok-build/))  
 **Affected:** Claude Code, Gemini CLI, Antigravity CLI, Cursor Agent CLI, GitHub Copilot CLI, Grok Build, OpenAI Codex CLI
 
 ### The Attack
@@ -78,7 +80,7 @@ Both attacks share the same consequence: the agent's MCP config becomes attacker
 
 | Tool | TrustFall | SymJack | Patch Status |
 |---|---|---|---|
-| Claude Code | Yes (CVE-2026-21852, CVE-2026-33068) | Yes (CVE-2025-59536) | **Patched** — approval prompt now shows real resolved path |
+| Claude Code | Yes (no CVE; rejected as by-design) | Yes (no CVE; approval flow hardened) | **Partially hardened** — SymJack approval prompt now shows real resolved path; TrustFall itself rejected |
 | Cursor CLI | Yes | Yes | **Declined to patch** |
 | Gemini CLI | Yes | Yes | **Declined to patch** |
 | Antigravity CLI | — | Yes | **Declined to patch** |
@@ -86,14 +88,14 @@ Both attacks share the same consequence: the agent's MCP config becomes attacker
 | Grok Build | — | Yes | **No response** |
 | OpenAI Codex CLI | — | Yes (added May 27) | **Closed as false positive** (Bugcrowd) |
 
-As of June 14, 2026, Anthropic is the only vendor to have patched either attack class. All other vendors have declined, gone silent, or dismissed the reports.
+As of June 14, 2026, Anthropic is the only vendor to have made any hardening change — and only for SymJack; TrustFall itself was rejected outright, not patched. All other vendors have declined, gone silent, or dismissed the reports ([SecurityWeek](https://www.securityweek.com/symjack-attack-turns-ai-coding-agents-into-supply-chain-attack-delivery-systems/); [Adversa AI](https://adversa.ai/blog/the-approval-prompt-is-lying-to-you-symlink-rce-in-five-ai-coding-agents-claude-code-cursor-antigravity-copilot-grok-build/)).
 
 ---
 
 ## What Builders Should Do
 
 **1. Update Claude Code now; do not wait on other vendors.**  
-Anthropic patched three CVEs and hardened the SymJack approval flow. Ensure you're running the latest version. No remediation is forthcoming from Cursor, Google, GitHub, xAI, or OpenAI — the hardening steps below are your only mitigation if you use those tools.
+Anthropic hardened the SymJack approval flow (TrustFall itself was rejected as by-design, and separately Claude Code has patched three earlier, related trust-boundary CVEs — see above). Ensure you're running the latest version. No remediation is forthcoming from Cursor, Google, GitHub, xAI, or OpenAI — the hardening steps below are your only mitigation if you use those tools.
 
 **2. Audit MCP config files before accepting trust prompts.**  
 When you clone a repository and your CLI prompts for folder trust, inspect `.mcp.json` (or the equivalent config file for your tool) before accepting. Look for any MCP server entry pointing to a remote URL, an npm package you don't recognize, or a path you didn't configure yourself.
@@ -115,7 +117,7 @@ TrustFall and SymJack are not Claude Code bugs or Cursor bugs individually — t
 
 The trust prompt problem Anthropic noted as "outside its threat model" is the same one every vendor in this space faces: how do you make a tool that runs powerful local processes on the developer's machine — automatically, on project open — while maintaining a security boundary that's meaningful to non-security-specialist developers?
 
-The MCP 2026-07-28 spec RC addresses some authentication and server discovery questions, but it does not fully resolve the local execution trust problem. That's an open design challenge for the ecosystem.
+The [MCP 2026-07-28 spec release candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) addresses some authentication and server discovery questions, but it does not fully resolve the local execution trust problem. That's an open design challenge for the ecosystem.
 
 For now, the practical security posture is: know what's in your MCP config, update your tools, and apply the same supply-chain skepticism to MCP servers that you would to any third-party code running on your machine.
 
@@ -124,9 +126,15 @@ For now, the practical security posture is: know what's in your MCP config, upda
 ## Sources
 
 - Adversa AI: [TrustFall — Coding Agent Security Flaw Enables One-Click RCE](https://adversa.ai/blog/trustfall-coding-agent-security-flaw-rce-claude-cursor-gemini-cli-copilot/) (May 7, 2026)
-- Adversa AI: [SymJack — Symlink RCE in Five AI Coding Agents](https://adversa.ai/blog/the-approval-prompt-is-lying-to-you-symlink-rce-in-five-ai-coding-agents-claude-code-cursor-antigravity-copilot-grok-build/) (May 27, 2026)
+- Adversa AI: [SymJack — Symlink RCE in Five AI Coding Agents](https://adversa.ai/blog/the-approval-prompt-is-lying-to-you-symlink-rce-in-five-ai-coding-agents-claude-code-cursor-antigravity-copilot-grok-build/) (May 26-27, 2026)
 - Dark Reading: [TrustFall Exposes Claude Code Execution Risk](https://www.darkreading.com/application-security/trustfall-exposes-claude-code-execution-risk)
+- The Register: [Anthropic response to 1-click pwn: Shouldn't have clicked 'ok'](https://www.theregister.com/security/2026/05/07/claude-code-trust-prompt-can-trigger-one-click-rce/5235319) (May 7, 2026)
 - SecurityWeek: [SymJack Attack Turns AI Coding Agents Into Supply Chain Attack Delivery Systems](https://www.securityweek.com/symjack-attack-turns-ai-coding-agents-into-supply-chain-attack-delivery-systems/)
+- Check Point Research: [Caught in the Hook: RCE and API Token Exfiltration Through Claude Code Project Files (CVE-2025-59536, CVE-2026-21852)](https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/)
+- GitLab Advisory Database: [CVE-2026-33068 — Claude Code Workspace Trust Dialog Bypass via Repo-Controlled Settings File](https://advisories.gitlab.com/npm/@anthropic-ai/claude-code/CVE-2026-33068/)
+- The Hacker News: [Miasma Worm Hits 73 Microsoft GitHub Repositories in Major Supply Chain Attack](https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html) (June 2026)
+- StepSecurity: [Miasma Worm Hits Microsoft Again](https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents)
+- MCP: [The 2026-07-28 MCP Specification Release Candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
 
 ---
 

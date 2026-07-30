@@ -69,18 +69,27 @@
         <p>Databricks released <strong>Omnigent</strong> on June 13, 2026 — an open-source meta-harness that sits above Claude
 Code, Codex, Pi, and other coding agents to solve three problems none of them solve individually:
 <strong>composition</strong> (mix harnesses in one workflow), <strong>control</strong> (policy-driven governance beyond prompting),
-and <strong>collaboration</strong> (live session sharing with teammates). It&rsquo;s Apache 2.0 and currently in alpha.</p>
+and <strong>collaboration</strong> (live session sharing with teammates). It&rsquo;s Apache 2.0 and currently in alpha
+(<a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">Databricks Blog announcement, June 13 2026</a>;
+<a href="https://github.com/omnigent-ai/omnigent">GitHub repo</a>; independently covered the same day by
+<a href="https://www.marktechpost.com/2026/06/13/databricks-open-sources-omnigent-a-meta-harness-that-composes-governs-and-shares-ai-agents-across-claude-code-codex-and-pi/">MarkTechPost</a>).
+The co-authors credited on the Databricks blog post are Matei Zaharia, Kasey Uhlenhuth, and Corey Zumar.</p>
 <hr>
 <h2 id="the-problem-omnigent-solves">The problem Omnigent solves</h2>
 <p>If you&rsquo;ve run more than one AI coding agent at a team, you know the mess: Claude Code on one machine,
 Codex somewhere else, no shared session state, governance enforced entirely through trust in prompt
 engineering, and no way for a second engineer to observe — let alone co-drive — an active agent run.</p>
-<p>Databricks positions Omnigent as the &ldquo;Kubernetes for agent harnesses&rdquo;: a stable abstraction above
+<p>Databricks&rsquo; own framing for the launch draws the same analogy the infrastructure world already went
+through once: &ldquo;Many of the biggest shifts in our industry came from moving to a new layer of
+abstraction&hellip; [engineers] can now manage a whole fleet via cloud systems like Kubernetes and
+Terraform&rdquo; (<a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">Databricks Blog</a>).
+Omnigent is pitched as that same kind of shift applied to agent harnesses: a stable abstraction above
 rapidly-evolving models so team workflows don&rsquo;t break every time a harness updates its CLI or config
 schema.</p>
 <hr>
 <h2 id="architecture-one-server-many-harnesses">Architecture: one server, many harnesses</h2>
-<p>Omnigent is a <strong>meta-harness</strong> — it wraps individual agent runtimes rather than replacing them:</p>
+<p>Omnigent is a <strong>meta-harness</strong> — it wraps individual agent runtimes rather than replacing them
+(<a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a>):</p>
 <table>
 <thead>
 <tr>
@@ -103,8 +112,9 @@ schema.</p>
 </tr>
 </tbody>
 </table>
-<p>A single <code>omnigent server start</code> brings up a terminal UI, a web UI, and a mobile-friendly web UI — all
-pointing at the same live sessions.</p>
+<p>Running <code>omnigent server --background</code> brings up a terminal UI, a web UI, and a mobile-friendly web UI
+(<a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a>) — all pointing at the
+same live sessions.</p>
 <hr>
 <h2 id="install">Install</h2>
 <p>Requirements: Python 3.12+, uv, git, Node.js 22 LTS+, tmux.</p>
@@ -119,18 +129,21 @@ pip install <span style="color:#e6db74">&#34;omnigent&#34;</span>
 brew install omnigent-ai/tap/omnigent
 </code></pre></div><p>Configure credentials once:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omnigent setup   <span style="color:#75715e"># interactive: API keys, subscriptions, model gateways</span>
-</code></pre></div><hr>
+</code></pre></div><p>Installer, requirements, and command syntax are per the project&rsquo;s own
+<a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a>.</p>
+<hr>
 <h2 id="core-cli">Core CLI</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omnigent             <span style="color:#75715e"># interactive session — pick harness at runtime</span>
 omnigent claude      <span style="color:#75715e"># launch Claude Code agent</span>
 omnigent codex       <span style="color:#75715e"># launch Codex agent</span>
 omnigent run path/to/agent.yaml   <span style="color:#75715e"># run a custom YAML-defined agent</span>
 
-omnigent server start             <span style="color:#75715e"># background server (enables web UI + mobile)</span>
+omnigent server --background      <span style="color:#75715e"># background server (enables web UI + mobile)</span>
 omnigent host                     <span style="color:#75715e"># register this machine as an execution host</span>
 omnigent attach &lt;session_id&gt;      <span style="color:#75715e"># co-drive an existing session</span>
 omnigent run --fork &lt;session_id&gt;  <span style="color:#75715e"># clone a conversation to try a different approach</span>
-</code></pre></div><hr>
+</code></pre></div><p>Commands verified against the <a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a>.</p>
+<hr>
 <h2 id="yaml-agent-definition">YAML agent definition</h2>
 <p>The YAML format is the core portability primitive — define an agent once, port it to any harness with
 one line:</p>
@@ -145,7 +158,10 @@ one line:</p>
   <span style="color:#66d9ef">researcher</span>:
     <span style="color:#66d9ef">type</span>: agent
     <span style="color:#66d9ef">prompt</span>: Research the security implications of the code change and summarize key risks.
-</code></pre></div><p><strong>Harness options:</strong> <code>codex</code>, <code>codex-native</code>, <code>claude-native</code>, <code>claude-sdk</code>, <code>openai-agents</code>, <code>pi</code></p>
+</code></pre></div><p><strong>Harness options:</strong> <code>codex</code>, <code>codex-native</code>, <code>claude-native</code>, <code>claude-sdk</code>, <code>openai-agents</code>, <code>pi</code> (the
+project&rsquo;s YAML spec also lists <code>cursor</code>, <code>cursor-native</code>, <code>hermes</code>, <code>hermes-native</code>, and <code>opencode</code> —
+see <a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a> and
+<a href="https://github.com/omnigent-ai/omnigent/blob/main/docs/AGENT_YAML_SPEC.md">AGENT_YAML_SPEC.md</a>).</p>
 <p>To switch your entire agent from Claude Code to Codex: change one field. Everything else — tools,
 subagents, policies — carries over.</p>
 <hr>
@@ -172,27 +188,39 @@ subagents, policies — carries over.</p>
       <span style="color:#66d9ef">max_cost_usd</span>: <span style="color:#ae81ff">5.00</span>
 </code></pre></div><p>Policies can also be <strong>dynamic</strong>: for example, &ldquo;if the agent just downloaded a new package, require human
 approval before the next <code>git push</code>.&rdquo; This kind of stateful, contextual governance is not achievable
-through prompt engineering alone.</p>
+through prompt engineering alone
+(<a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README policy documentation</a>).</p>
 <hr>
 <h2 id="security-os-sandbox-and-egress-proxy">Security: OS sandbox and egress proxy</h2>
 <p>Two features worth singling out for production use:</p>
-<p><strong>OS sandbox</strong> — Omnigent can lock down what the underlying agent process can access at the OS level.
-You control filesystem paths, network access, and process permissions without relying on the agent&rsquo;s
-own guardrails.</p>
-<p><strong>Egress proxy</strong> — Sensitive credentials (GitHub tokens, API keys) never reach the agent. The proxy
-intercepts outbound requests and injects credentials only on approved egress paths. From the agent&rsquo;s
-perspective, it never sees the token; from the external service&rsquo;s perspective, it&rsquo;s authenticated.</p>
+<p><strong>OS sandbox (&ldquo;Omnibox&rdquo;)</strong> — Omnigent can lock down what the underlying agent process can access at the
+OS level, using Bubblewrap/seccomp on Linux and Seatbelt on macOS. You control filesystem paths (with
+read-only defaults and explicit write-path allowlisting), network access, and environment-variable
+passthrough without relying on the agent&rsquo;s own guardrails
+(<a href="https://omnigent.ai/docs/policies/os-sandbox">Omnigent docs: Omnibox (OS Sandbox)</a>).</p>
+<p><strong>Egress proxy</strong> — Sensitive credentials (GitHub tokens, API keys) never reach the agent unless you
+explicitly pass them through. When egress rules are configured, outbound HTTP(S) traffic goes through a
+default-deny proxy that injects credentials only for allow-listed hosts; the agent process itself never
+holds the raw secret
+(<a href="https://omnigent.ai/docs/policies/os-sandbox">Omnigent docs: Omnibox (OS Sandbox)</a>;
+<a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a>).</p>
 <p><strong>Cloud sandbox support</strong> — If you don&rsquo;t want to run agent workloads on local machines at all, Omnigent
-integrates with Modal and Daytona for hosted execution environments.</p>
+integrates with Modal and Daytona for hosted execution environments
+(<a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">Databricks Blog</a>;
+<a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a>).</p>
 <hr>
 <h2 id="session-sharing-and-collaboration">Session sharing and collaboration</h2>
 <p>This is the feature most useful for teams running long agent workflows:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omnigent attach &lt;session_id&gt;   <span style="color:#75715e"># join and co-drive a live session</span>
 omnigent run --fork &lt;session_id&gt;   <span style="color:#75715e"># branch from any point in history</span>
 </code></pre></div><p>Teammates on the web UI can view session history, comment on specific files the agent is working on,
-and send commands into the shared workspace. The mobile web UI keeps all of this in sync — chat,
-sub-agents, terminals, and files — so you can monitor a running agent from your phone without losing
-context.</p>
+and send commands into the shared workspace
+(<a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">Databricks Blog</a>;
+independently described the same way by
+<a href="https://www.marktechpost.com/2026/06/13/databricks-open-sources-omnigent-a-meta-harness-that-composes-governs-and-shares-ai-agents-across-claude-code-codex-and-pi/">MarkTechPost</a>).
+The mobile web UI keeps all of this in sync — chat, sub-agents, terminals, and files — so you can
+monitor a running agent from your phone without losing context
+(<a href="https://github.com/omnigent-ai/omnigent/blob/main/README.md">GitHub README</a>).</p>
 <hr>
 <h2 id="what-it-wraps-vs-what-it-adds">What it wraps vs. what it adds</h2>
 <table>
@@ -285,9 +313,14 @@ context.</p>
 </ul>
 <hr>
 <h2 id="current-status">Current status</h2>
-<p><strong>Alpha.</strong> Databricks is encouraging community contributions and early feedback. Expect rough edges in
-the YAML schema, policy API, and cloud sandbox integrations. The Apache 2.0 license means you can fork
-and extend without restriction.</p>
+<p><strong>Alpha</strong>, per both the <a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">Databricks Blog</a>
+(&ldquo;Omnigent is open source in alpha today&rdquo;) and the
+<a href="https://github.com/omnigent-ai/omnigent">GitHub repo</a>. Databricks is encouraging community
+contributions and early feedback. Expect rough edges in the YAML schema, policy API, and cloud sandbox
+integrations. The Apache 2.0 license means you can fork and extend without restriction. (Note: a
+separately-branded managed offering, &ldquo;Omnigent on Databricks,&rdquo; appears in Databricks&rsquo; AWS/GCP/Azure
+platform docs at Beta status — that is Databricks&rsquo; hosted product tier, distinct from the open-source
+CLI project this article covers.)</p>
 <p>GitHub: <a href="https://github.com/omnigent-ai/omnigent">omnigent-ai/omnigent</a></p>
 <hr>
 <h2 id="builder-action-this-week">Builder action: this week</h2>
