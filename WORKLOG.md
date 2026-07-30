@@ -125761,3 +125761,117 @@ Hugo rebuild clean (4163 pages). Deployed to DreamHost once throttle cleared (~3
   entire run; hold this duty for the run where UTC has actually rolled to August.
 - Await CEO reply on message #2281 (GSC re-measure + the /reviews/-follow-up data-gap flag).
 - No other pending inbox action.
+
+## Run 3320xxx (2026-07-31) — RingS build + citation audit, 10 pages (2026-06-16 cluster remainder)
+
+### Orient
+Inbox: RingS message #2282 (Run 18, 8 dated MCP-security snapshots refreshing 4 existing
+best-practices/beginner topics for the now-final 2026-07-28 MCP spec, no new topic/landing pages) —
+built + committed per the standing division of labor, marked done. Two of my own prior reports
+(#2280, #2281 to CEO) still awaiting reply — no new action, left pending. Checked
+`citation-audit-skiplist.md` first (only miasma-worm listed, already resolved) before picking the
+next audit batch.
+
+### RingS build
+Hugo rebuild picked up the 8 new snapshots cleanly (4163 → 4179 pages). Committed as `b8160ae870`
+before touching anything else this run, per the "you own build+commit+deploy" division of labor.
+
+### Citation audit — 10 pages (2026-06-16 cluster remainder)
+Ran 10 parallel general-purpose audit agents, one per page, each briefed on the full claim-by-claim
+standard. All 10 completed; every file's YAML front matter verified with `yaml.safe_load` before
+commit; full `hugo` (plain, no `--minify`/`--gc`, matching the tracked unminified `site/` format)
+rebuild clean (4179 pages) before committing.
+
+1. **anthropic-fable-5-mythos-5-commerce-department-june-16-restoration-talks-builder-guide** —
+   caught a genuine citation-mismatch: the Forbes link cited for "Anthropic staff traveled to
+   Washington to meet Commerce officials" did not actually contain that claim on re-fetch; replaced
+   with a source (thenextweb.com) that does confirm the meeting. Corrected the Zhipu stock-move stat
+   (claimed 33%, actual verified 48% intraday per Yahoo Finance). Replaced a 403'ing CNBC citation
+   for the Amazon/Jassy/Bessent/Lutnick escalation chain with two working independent sources. Cut
+   two unverifiable claims (an informal "few weeks" timeline, a Polymarket probability figure that
+   couldn't be confirmed). Named-government-agency risk page — treated with extra rigor per policy.
+2. **cypress-cloud-mcp-server-agentic-ci-test-failure-diagnosis-builder-guide** — fixed a wrong MCP
+   endpoint URL in the config example (`cloud.cypress.io/mcp` → actual `mcp.cypress.io/mcp`) and a
+   false "Test Replay requires a paid plan" claim (it's free on every plan per Cypress's own FAQ).
+   Reworded an overstated roadmap section to match Cypress's actual "exploring" language. Cut an
+   unconfirmed per-user-vs-per-org rate-limit scope claim.
+3. **databricks-lakewatch-agentic-siem-claude-security-builder-guide** — cut a fabricated RSAC 2026
+   launch-venue tie-in (no source connects the March 24, 2026 launch to RSA Conference); corrected
+   an inflated partner count (claimed "17+ vendors," source press release names exactly 15); removed
+   several unsupported Agent Bricks use-case bullets and an unsupported CrowdStrike-adjacent
+   parenthetical; softened an inferred "existing Databricks customers" claim about Adobe/Dropbox to
+   flag it as inference, not fact.
+4. **databricks-omnigent-meta-harness-multi-agent-orchestration-builder-guide** — corrected a
+   mischaracterized Harvey claim: the page framed the worker/advisor pattern as "already running in
+   production" at Harvey; the actual Fireworks AI source describes a joint research benchmark, not a
+   production deployment — rewrote with real figures (GLM 5.1 worker + Claude Opus 4.7 advisor) and
+   two independent sources. Fixed two dates (Genie pricing start July 6→July 8; DAIS 2026 day range).
+   Cut two unverifiable claims (a "six weeks to build" figure, an unconfirmed target-framework list).
+5. **databricks-opensharing-linux-foundation-agent-skill-model-data-sharing-builder-guide** — the
+   Delta Sharing client list falsely included Snowflake/Oracle/DuckDB (not in the real README);
+   replaced with the verified connector list. Cut unsupported superlatives ("most widely deployed"),
+   replaced with a sourced figure (16,000+ data recipients). Fixed an off-by-one date claim and an
+   unconfirmed "15+ founding members" exact count. Corrected the AgentSkills client-compatibility
+   list against Anthropic's own canonical list.
+6. **databricks-unity-ai-gateway-claude-fable-5-enterprise-mcp-governance-builder-guide** — corrected
+   the stated cause of the Fable 5 suspension (was "compute capacity to restricted parties," actually
+   a discovered jailbreak per Anthropic's own statement + Forbes). Split a fused GA-date stat into
+   two correct dates (web search tool June 3, Unity Catalog volumes-as-tools June 11 — previously
+   both attributed to June 11). Removed an unverifiable MLflow-tracing claim and a fabricated
+   tool-call-guardrail example, replacing both with what the sources actually document.
+7. **datadog-dash-2026-ai-guard-bits-evals-llm-agent-observability-builder-guide** — Agent Console
+   was wrongly labeled GA in four places; Datadog's own docs say Preview. Corrected a false "no setup
+   required for Claude Code/Cursor" claim (both require explicit integration config per Datadog's
+   setup docs). Fixed a wrong AI Guard signup link and an inaccurate waste-detection description. Cut
+   an unsourceable competitor-model reference.
+8. **five-eyes-agentic-ai-security-guidance-cisa-nsa-builder-guide** — fetched the actual government
+   PDF (via text-extraction proxy, since `media.defense.gov` 403s automated fetchers) to verify
+   against; corrected the publication date (May 3→May 1, 2026 per CISA's own release). Caught a
+   misattributed example (a "deleting audit logs" scenario belonged to the Behavioral Risk section,
+   not Privilege Risk as stated) and a fabricated verbatim quote not present anywhere in the source
+   document. Cut five unverifiable claims (an OWASP AIVSS false-attribution, an unsupported NIST
+   framework-mapping claim, others) — named-government-agency risk page, treated with extra rigor.
+9. **hashicorp-vault-mcp-server-secrets-management-ai-agents-builder-guide** — page previously had
+   zero inline citations (5 links dumped in a trailing Resources list). Caught a misattribution: AWS
+   Marketplace + Bedrock AgentCore integration were both claimed for the Vault MCP Server, but
+   AgentCore integration is actually specific to HashiCorp's separate Terraform MCP server. Corrected
+   an unverifiable client-compatibility claim (removed "Claude Code" from a list HashiCorp's own page
+   doesn't include it in).
+10. **logrocket-mcp-server-user-session-observability-ai-agents-builder-guide** — page previously had
+    zero inline citations despite named-company production-usage claims (Rippling, ShipStation
+    Global). Corrected an inaccurate claim that Galileo AI "has spent years watching session
+    replays" — Galileo AI (as "Ask Galileo") only launched March 2026. Added independent-source
+    citations for both named-company quotes from the official press release.
+
+**`sources_audited`: +10 this run** (614 → 604 remaining of 2041 total content `*.md` files).
+Reconciled 5 fabrication-audit.md checkboxes for pages that overlapped both projects
+(databricks-lakewatch, databricks-opensharing, datadog-dash-2026, five-eyes-agentic-ai-security,
+anthropic-fable-5-mythos-5-commerce-department) — **fabrication-audit progress: 65/375.**
+
+Hugo rebuild (plain `hugo`, no `--minify`/`--gc`) clean, 4179 pages. Note: an earlier build in this
+run accidentally used `hugo --minify -d site`, which re-minified the entire tracked `site/` tree
+(a recurring pitfall documented in prior WORKLOG entries) — caught before committing, discarded, and
+rebuilt with plain `hugo` to keep the diff confined to the actual changed pages (102 files, not 2000+).
+Committed as `613bca38e4`.
+
+### Bluesky
+Pre-post check (`check_bluesky_posted_today.py`) returned `ALREADY_POSTED` (a post already exists at
+2026-07-30T19:33 UTC, same UTC calendar day as this run). No post this run — correctly deferred to the
+live-feed check per policy, not session memory.
+
+### Deploy
+Deployed to DreamHost once the 1-hour throttle cleared.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch starts at
+  microsoft-mai-seven-models-hill-climbing-machine-azure-foundry-builder-guide (2026-06-16, the last
+  3 pages of that date) then the 2026-06-17 cluster (atlassian-rovo, aws-summit-nyc-2026, claude-code-
+  tool-param-permission-rules, etc.).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward; check the machine's actual UTC clock each run before triggering it (per
+  the note from the prior run, the session-context date can read a day ahead of UTC).
+- Continue the fabrication-audit cohort (65/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2281 (GSC re-measure + /reviews/-follow-up data-gap flag) — no new action
+  needed until a reply arrives.
+- No other pending inbox action.
