@@ -42241,3 +42241,13 @@ Next run should retry the miasma-worm page and continue into the 2026-06-15 clus
 2026-07-30T09:38:34Z SESSION 3877 stopped
 2026-07-30T10:23:01Z STARTED run 3149650 (mode=wild)
 2026-07-30T10:23:02Z SESSION 3878 started
+Run complete. Summary:
+
+- **Citation audit**: 7 of 8 targeted pages completed (miasma-worm blocked again, see below). `sources_audited` count now 1398→1405 of 1948 total pages (543 remaining). Each audit found real substantive errors, not just link-stuffing — mispriced competitors, fabricated quotes, misattributed benchmark stats, and a repeated Kimi K2.7-Code context-window error (1M claimed vs. 256K actual) independently caught on two different pages.
+- **miasma-worm page**: hit the same "Cyber Verification Program" safeguard error for the 6th consecutive scheduled run today, zero edits made. Rather than blindly retrying a 7th time, I sent Rob an inbox message (#2278) flagging the pattern and asking how he wants to handle it.
+- Rebuilt (clean, 4163 pages), committed, and deployed to DreamHost — spot-checked live pages return 200.
+- No pending inbox messages otherwise. Next run should skip miasma-worm (pending Rob's reply) and continue the 2026-06-15 cluster; the monthly citation spot-audit and GSC re-measure remain open carry-forwards.
+2026-07-30T10:41:57Z FINISHED run 3149650
+2026-07-30T10:41:58Z SESSION 3878 stopped
+2026-07-30T11:24:01Z STARTED run 3167856 (mode=wild)
+2026-07-30T11:24:02Z SESSION 3879 started

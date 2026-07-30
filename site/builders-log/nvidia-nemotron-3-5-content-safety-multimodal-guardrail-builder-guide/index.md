@@ -3,7 +3,7 @@
 > Nemotron 3.5 Content Safety is a 4B-parameter guardrail classifier from NVIDIA with 12-language support, image+text classification, and an auditable reasoning mode. Released June 4 — here's what builders need to know before adding it to a safety pipeline.
 
 
-Most builders think about safety guardrails after the fact — after the main model is chosen, the product is half-built, and a compliance review has surfaced concerns. NVIDIA's **Nemotron 3.5 Content Safety**, released June 4, 2026, is designed to reduce the cost of treating guardrails as a first-class component. It's a 4B-parameter classifier that runs on consumer-grade GPU hardware, handles text and images in 12 languages, and optionally explains every verdict in an auditable reasoning trace.
+Most builders think about safety guardrails after the fact — after the main model is chosen, the product is half-built, and a compliance review has surfaced concerns. NVIDIA's **Nemotron 3.5 Content Safety**, [released June 4, 2026](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety), is designed to reduce the cost of treating guardrails as a first-class component. It's a 4B-parameter classifier that runs on consumer-grade GPU hardware, handles text and images in 12 languages, and optionally explains every verdict in an auditable reasoning trace.
 
 This guide covers the architecture, the three operating modes, the benchmarks, how to deploy it, and where it fits (and doesn't fit) in a production safety pipeline.
 
@@ -11,26 +11,26 @@ This guide covers the architecture, the three operating modes, the benchmarks, h
 
 ## What It Is
 
-Nemotron 3.5 Content Safety is not a conversational model — it's a **binary classifier with category labeling**. You feed it a user input, a model output, or an image, and it returns: safe or unsafe, and which of 23 defined categories were violated.
+Nemotron 3.5 Content Safety is not a conversational model — it's a **binary classifier with category labeling**. You feed it a user input, a model output, or an image, and it returns: safe or unsafe, and which of [23 defined categories](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) were violated.
 
-The model is built on Google's Gemma-3-4B-it foundation, fine-tuned by NVIDIA with a LoRA adapter (rank 16, alpha 32). At 4 billion parameters, it fits in 8 GB of VRAM in BF16 — a significant step down from Meta's LlamaGuard (8B) while covering capabilities LlamaGuard doesn't: multimodal inputs and multilingual classification.
+The model is built on Google's [Gemma-3-4B-it](https://huggingface.co/google/gemma-3-4b-it) foundation, fine-tuned by NVIDIA with a [LoRA adapter (rank 16, alpha 32)](https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety). At 4 billion parameters, it fits in [8 GB+ of VRAM](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) — a significant step down from Meta's [LlamaGuard 3 (8B)](https://huggingface.co/meta-llama/Llama-Guard-3-8B) while covering capabilities LlamaGuard doesn't: multimodal inputs and multilingual classification.
 
 | Spec | Value |
 |------|-------|
 | Parameters | 4B |
-| Base model | Gemma-3-4B-it |
-| Context window | 128K tokens |
-| VRAM requirement | 8 GB+ (BF16) |
+| Base model | [Gemma-3-4B-it](https://huggingface.co/google/gemma-3-4b-it) |
+| Context window | [128K tokens](https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety) |
+| VRAM requirement | [8 GB+](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) |
 | Modalities | Text + image |
-| Languages | 12 explicit + ~140 zero-shot |
-| License | NVIDIA Open Model License (commercial OK) |
-| HuggingFace ID | `nvidia/Nemotron-3.5-Content-Safety` |
+| Languages | [12 explicit + ~140 zero-shot](https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety) |
+| License | [NVIDIA Open Model License (commercial OK)](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) |
+| HuggingFace ID | [`nvidia/Nemotron-3.5-Content-Safety`](https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety) |
 
 ---
 
 ## Safety Categories
 
-The model uses the **Aegis 2.0 framework**, which aligns to the MLCommons taxonomy. There are 13 core categories and 10 fine-grained subcategories, 23 total. Core categories include Violence, Criminal Planning, Hate Speech, Sexual Content, Self-Harm, and several others covering harmful instruction-following, privacy violations, and regulated content.
+The model uses the **[Aegis 2.0 framework](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety)**, which aligns to the MLCommons taxonomy. There are [13 core categories and 10 fine-grained subcategories, 23 total](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety). [Core categories](https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0) include Violence, Criminal Planning, Hate Speech, Sexual Content, Self-Harm, and several others covering harmful instruction-following, privacy violations, and regulated content.
 
 You can't add entirely new categories — the taxonomy is fixed — but you can supply **custom policy instructions at inference time** (see Mode 3 below) to layer domain-specific rules on top of the base categories.
 
@@ -44,7 +44,7 @@ The model's operating mode is controlled by how you structure the prompt. NVIDIA
 
 **Mode 2 — Verdict with violated categories.** Returns the safety label plus which of the 23 categories triggered. Useful for audit logs, moderation queues, and cases where downstream action depends on the category (e.g., age-gating for sexual content vs. law enforcement escalation for CSAM).
 
-**Mode 3 — THINK mode with reasoning traces.** Returns a step-by-step reasoning trace (limited to 3 sentences by training), then the verdict and categories. The reasoning traces were generated by a Qwen 397B teacher model and then distilled into concise form by a Qwen 80B second-stage model — NVIDIA provides ground-truth labels during generation to prevent mislabeled traces from propagating.
+**Mode 3 — THINK mode with reasoning traces.** Returns a [step-by-step reasoning trace (limited to roughly 3 sentences by training)](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety), then the verdict and categories. [The reasoning traces were generated by a Qwen 397B teacher model and then distilled into concise form by a Qwen 80B second-stage model](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) — NVIDIA provides ground-truth labels during generation to prevent mislabeled traces from propagating.
 
 THINK mode adds latency proportional to reasoning length. For latency-sensitive systems, the recommended pattern is: run Mode 1 synchronously for the live response, then run Mode 3 asynchronously to log the reasoning for audit purposes.
 
@@ -52,25 +52,25 @@ THINK mode adds latency proportional to reasoning length. For latency-sensitive 
 
 ## Benchmarks
 
-NVIDIA evaluated the model on 14 benchmarks covering multilingual safety, multimodal content, and adversarial robustness.
+NVIDIA evaluated the model across [14 benchmarks](https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety) covering multilingual safety, multimodal content, and adversarial robustness — including VLGuard, MM-SafetyBench, PolyGuard, RTP-LX, Aya Redteaming, XSafety, MultiJail, Aegis, LinguaSafe, and the custom-policy suites Dynaguardrail and CoSA.
 
 | Benchmark | Score |
 |-----------|-------|
-| Multilingual Aegis (12 languages) | 96.5% harmful classification accuracy |
-| RTP-LX | 88.8% |
-| Combined Aegis + RTP-LX average | 92.7% |
-| Full 14-benchmark average | ~85% |
+| [Multilingual Aegis (12 languages)](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) | 96.5% harmful classification accuracy |
+| [RTP-LX](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) | 88.8% |
+| [Combined Aegis + RTP-LX average](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) | 92.7% |
+| [Full 14-benchmark average](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) | ~85% |
 
-**Versus alternatives:** Nemotron 3.5 claims 3x lower end-to-end latency on multimodal benchmarks vs. comparable models and generates up to 50% fewer tokens when THINK mode is enabled compared to competing reasoning safety models. These are NVIDIA's own numbers — independent evaluations are limited at this stage.
+**Versus alternatives:** Nemotron 3.5 [claims 3x lower end-to-end latency on a multimodal benchmark vs. an alternative multimodal safety model](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) and [generates up to 50% fewer tokens when THINK mode is enabled compared to another reasoning safety model](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety) — NVIDIA does not name the comparison models. These are NVIDIA's own numbers — independent evaluations are limited at this stage.
 
 The more useful comparison for builders is structural:
 
 | Model | Params | Multimodal | Multilingual | Auditable traces | Open weights |
 |-------|--------|------------|--------------|-----------------|--------------|
-| **Nemotron 3.5 Content Safety** | 4B | Yes (text+image) | 12 languages | Yes (THINK mode) | Yes (NVIDIA OML) |
-| LlamaGuard 3 (Meta) | 8B | No | English-primary | No | Yes (Llama license) |
-| ShieldGemma 2 (Google) | 2B/9B | No | English-primary | No | Yes (Gemma license) |
-| Perspective API (Google) | API | No | ~50 languages | No | No (hosted only) |
+| **[Nemotron 3.5 Content Safety](https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety)** | 4B | Yes (text+image) | 12 languages | Yes (THINK mode) | Yes (NVIDIA OML) |
+| [LlamaGuard 3 (Meta)](https://huggingface.co/meta-llama/Llama-Guard-3-8B) | 8B | No (text only) | [8 languages](https://huggingface.co/meta-llama/Llama-Guard-3-8B) | No | Yes ([Llama 3.1 Community License](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE)) |
+| [ShieldGemma 2 (Google)](https://huggingface.co/google/shieldgemma-2-4b-it) | 4B | Image only (no text mode) | English only | No | Yes (Gemma license) |
+| [Perspective API (Google)](https://www.lassomoderation.com/blog/what-is-perspective-api/) | API | No | 18+ languages | No | No (hosted only) |
 
 Nemotron's differentiation is the combination: multimodal, multilingual, compact, auditable, and commercially licensed with published training data.
 
@@ -166,7 +166,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-OpenRouter lists both a free tier and paid tier. The free tier is rate-limited but functional for development and low-volume production.
+[OpenRouter lists the model at $0 per token](https://openrouter.ai/nvidia/nemotron-3.5-content-safety:free), free for both development and production use, subject to OpenRouter's standard platform-wide rate limits for free models.
 
 ### Custom Policy Instructions
 
@@ -196,9 +196,9 @@ A few details worth knowing before deployment:
 
 **Quantized checkpoints are not yet released.** If you need consumer GPU (<8 GB VRAM) or CPU inference, you'll need to quantize yourself (GGUF, GPTQ, AWQ). NVIDIA hasn't published official quantized variants as of June 2026.
 
-**Training data is published.** The Nemotron 3.5 Content Safety Dataset is available alongside the model weights — rare for a safety model and useful for audit, evaluation, and fine-tuning on domain-specific data.
+**Training data is published.** The [Nemotron 3.5 Content Safety Dataset](https://huggingface.co/datasets/nvidia/Nemotron-3.5-Content-Safety-Dataset) is available alongside the model weights — rare for a safety model and useful for audit, evaluation, and fine-tuning on domain-specific data.
 
-**Zero-shot multilingual generalization.** The 12 explicitly trained languages are Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Spanish, and Thai. The Gemma-3 base gives the model zero-shot capability across roughly 140 languages, but accuracy degrades for lower-resource languages outside the 12 explicitly trained.
+**Zero-shot multilingual generalization.** [The 12 explicitly trained languages are Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Spanish, and Thai](https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety). The Gemma-3 base gives the model [zero-shot capability across roughly 140 languages](https://huggingface.co/blog/nvidia/nemotron-3-5-content-safety), but accuracy degrades for lower-resource languages outside the 12 explicitly trained.
 
 ---
 
@@ -230,7 +230,7 @@ The dual-layer approach (checking input and output separately) catches both jail
 
 **Don't use it when:**
 - You need hosted-API access without managing infrastructure (consider Perspective API or Llama Guard via Fireworks/Together)
-- Your workload is English-text-only and latency is critical (2B ShieldGemma is faster)
+- Your workload is English-text-only and latency is critical ([the original 2B ShieldGemma](https://huggingface.co/google/shieldgemma-2b) — a smaller, text-only, English-only classifier, distinct from the image-only ShieldGemma 2 — is a lighter option)
 - You need to add entirely new categories not covered by the Aegis 2.0 taxonomy (fine-tune LlamaGuard instead)
 - Consumer GPU or CPU-only deployment is a hard requirement (no official quantized weights yet)
 

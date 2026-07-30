@@ -2,7 +2,92 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 3149650/current (2026-07-30) — Citation audit, 7 of 8 pages (miasma-worm safeguard-blocked 6th time)
+## Run 3167856/current (2026-07-30) — Citation audit, 8 pages (2026-06-15 cluster), parallel-agent batch
+
+### Orient
+No pending inbox action — message #2278 (miasma-worm safeguard block, sent to Rob in the prior run)
+is still pending with no reply, so miasma-worm was skipped again this run per the prior run's plan.
+No stray uncommitted content-audit work this time; only the harness's own RUNLOG.md/TOKENLOG.tsv
+diffs were pending, which are expected housekeeping, not content.
+
+### Audit batch (8 pages, all completed)
+Continued the standing citation-audit duty into the 2026-06-15 cluster, next-oldest after miasma-worm.
+Ran one general-purpose agent per page **in parallel** (background), each briefed on the site's
+citation standard, Wikipedia-editor-style claim sweep, "cite it or cut it," and the stat-fusion
+failure mode from CLAUDE.md. Every page turned up at least one real, non-trivial correction — this
+batch was not just link-adding:
+
+1. **jetbrains-mellum2-12b-moe-focal-model-pipeline-builder-guide** — caught a misattributed AIME
+   score: the page said the *Thinking* variant scored 41.7% (weaker than "Qwen3-4B"); the arXiv report
+   (2605.31268) actually shows 41.7% belongs to the *Instruct* variant, the Thinking variant's real
+   score is 58.4%, and the comparison model is Qwen3.5-4B (68.3%), not Qwen3-4B. Also corrected VRAM
+   figures (BF16 ~24.3GB not ~24.7GB+4GB; Q4_K_M ~8.1GB not ~6.6GB) and cut two unsourced ROI multipliers
+   ("5-20x cheaper," "60-70% of traffic").
+2. **minimax-m3-1m-context-open-weight-multimodal-agentic-coding-builder-guide** — corrected active
+   params (26B claimed vs. 23B actual per HF/GitHub), a swapped benchmark name (Video-MMMU vs. the
+   correct Video-MME), a fabricated ARC-AGI-2 gap ("~10 points lower than Claude" vs. the real 40-80
+   point gap per ARC Prize leaderboard coverage), and **rewrote a materially wrong license claim** —
+   the page speculated M3 would ban commercial use like M2.7 did; the actual MiniMax Community License
+   is free for non-commercial/small-commercial use with authorization only required above $20M revenue.
+   Cut an unsourced "30-day trial credits" claim and a wrong Ollama command.
+3. **moonshot-kimi-k2-7-code-1t-moe-open-weights-tool-use-builder-guide** — context window was already
+   correct (256K) on this page, unlike two sibling pages audited in prior runs. Fixed a real error:
+   KTransformers was called "Moonshot's own engine" — it's a third-party project (KVCache.AI); Moonshot's
+   guide just links to it. Also added a missing GPT-5.5 MCPMark-Verified score (92.9) that the page's
+   comparison table had omitted, which undercuts the page's "outperforms Opus" framing.
+4. **nvidia-nemotron-3-5-content-safety-multimodal-guardrail-builder-guide** — fixed a wrong ShieldGemma
+   2 comparison (page said 2B/9B text-only; actual ShieldGemma 2 is a 4B image-only model, a different
+   generation than ShieldGemma 1) and a wrong Perspective API language-coverage figure (~50 claimed vs.
+   18+ sourced). Cut an unsupported "OpenRouter paid tier" claim — only a free tier is documented.
+5. **openai-codex-cli-0140-import-claude-code-bedrock-auth-usage-views-builder-guide** — cut a
+   fabricated "208 changes across 50 features and 46 improvements" stat (GitHub's actual release notes
+   list ~15 bullets); corrected several features (`/app` handoff, image-path exposure) that actually
+   shipped in v0.138.0, not 0.140.0 as claimed; removed an anachronistic "GPT-5.6" reference (didn't
+   exist until 11 days after this page's publish date); fixed a wrong claim that `.claude.json` is
+   project-level (it's user-level per Claude Code's own docs).
+6. **qwen3-embedding-8b-text-embedding-mteb-multilingual-builder-guide** — corrected the MTEB Chinese
+   score (68.70 claimed vs. 73.84 actual) and cut a fabricated "MTEB-Code | 75.00 | #1" claim — 75.00 is
+   actually the unrelated C-MTEB Mean(Type) score, no MTEB-Code score exists for this model. Reworded a
+   stale "#1 on MTEB multilingual" superlative to explicitly anchor it to the June 2025 release date,
+   since newer entrants have since passed it.
+7. **qwen3-vl-embedding-open-source-multimodal-rag-image-video-document-builder-guide** — cut a
+   fabricated "most-downloaded VL embedding model (1.64M downloads)" claim after a live HF check showed
+   a *lower* current count (1.31M) than the claimed figure, which is impossible since downloads only
+   accumulate. Corrected a wrong claim that Gemini Embedding 2 handles "hours" of video — Google's own
+   docs cap it at 120 seconds per clip, roughly the same order of magnitude as Qwen's limit.
+8. **tencent-hy3-preview-295b-moe-openrouter-self-host-builder-guide** — **corrected a named-product
+   licensing error with real reputational/legal stakes**: the page called Hy3 preview "MIT-licensed"
+   throughout; it actually ships under Tencent's restrictive Community License Agreement (excludes EU/
+   UK/South Korea, gates commercial use at 100M MAU, bars using outputs to improve competing models).
+   Fixed every instance (front matter, intro, spec table, decision matrix). Also cut a fabricated Kimi
+   K2.7-Code SWE-bench range (no independent scores exist) and a fused/unreproducible cache-pricing
+   comparison figure, and corrected an inference-infrastructure claim (OpenRouter's Hy3 provider is
+   SiliconFlow, not Tencent directly).
+
+One agent's raw output was flagged by the harness as containing instruction-shaped text (pattern:
+"settings-json") and neutralized before being surfaced — reviewed the underlying report and it was
+benign: the audited page legitimately discusses `.claude.json` and MCP config paths, no actual
+injected instructions found.
+
+**`sources_audited` count: 1405 → 1413** of 1948 total pages (535 remaining). Hugo rebuild clean
+(4163 pages, matches prior runs). Spot-checked diffs directly (not just agent self-reports) before
+trusting — front matter YAML parses on all 8, bracket/link syntax verified on a full diff read of the
+Tencent Hy3 page.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited is still miasma-worm (blocked,
+  pending Rob's reply to #2278), then the remainder of the 2026-06-15 cluster (unisound-u2,
+  xai-grok-4-3, xai-grok-build-agent-dashboard, xai-grok-build-plugin-marketplace, zhipu-glm-5-2,
+  zyphra-zamba2-vl) and on into 2026-06-16+.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still open, carry forward (today is still July 30).
+- Per CEO message #2273: GSC re-measure still flagged as due — carry forward again across many runs
+  now.
+- Deploy throttle was not yet clear at audit-completion time (~3300s since last deploy, need 3600s);
+  deploy immediately once clear, in this run if possible.
+- No pending inbox action beyond the still-open miasma-worm question.
+
+## Run 3149650 (2026-07-30) — Citation audit, 7 of 8 pages (miasma-worm safeguard-blocked 6th time)
 
 ### Orient
 No pending inbox messages. No stray uncommitted work this time (last run committed cleanly). Picked up
