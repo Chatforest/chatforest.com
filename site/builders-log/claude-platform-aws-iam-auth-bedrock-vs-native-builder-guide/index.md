@@ -3,7 +3,7 @@
 > Claude Platform on AWS is not Amazon Bedrock. Anthropic operates the inference stack; AWS provides IAM auth and Marketplace billing. You get full Claude features on day one — Managed Agents, MCP connectors, Agent Skills, Files API — but not HIPAA. Here's the complete builder guide.
 
 
-In May 2026, Anthropic launched Claude Platform on AWS, a generally available product that lets you access the Anthropic API through your AWS account — using IAM authentication and AWS Marketplace billing. At first glance it looks like another Bedrock variant. It isn't.
+On [May 11, 2026](https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/), Anthropic and AWS launched [Claude Platform on AWS](https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account/), a generally available product that lets you access the Anthropic API through your AWS account — using IAM authentication and AWS Marketplace billing ([Anthropic's launch post](https://claude.com/blog/claude-platform-on-aws)). At first glance it looks like another Bedrock variant. It isn't.
 
 The key distinction: with Amazon Bedrock, AWS operates the inference stack. With Claude Platform on AWS, **Anthropic operates the inference stack**. AWS provides the authentication layer, access control, and billing integration. That operational split is what determines every meaningful difference between the two — feature availability, compliance posture, data residency, and cost.
 
@@ -25,12 +25,14 @@ Two ways to run Claude in the AWS ecosystem:
 | **Agent Skills** | Yes | No |
 | **Files API** | Yes | No |
 | **Message Batches API** | Yes | No |
-| **MCP connectors** | Yes | Limited |
+| **MCP connectors** | Yes | [Not available](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector#limitations) |
 | **Code execution** | Yes | No |
-| **HIPAA** | No | Yes |
+| **HIPAA** | [No](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html) | Yes |
 | **Data residency** | Outside AWS boundary (Anthropic-operated) | Within AWS boundary |
 | **CloudTrail integration** | Yes | Yes |
-| **Available regions** | 19 | Varies by region |
+| **Available regions** | [17 at GA launch](https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/) | Varies by region |
+
+*Table sourced from the [AWS launch announcement](https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/), Anthropic's [Claude Platform on AWS vs. Amazon Bedrock comparison](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws#claude-platform-on-aws-vs-amazon-bedrock), and AWS's [feature-support documentation](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html). Region count reflects general-availability launch (May 2026) per AWS's own announcement; AWS's product docs describe rollout as ongoing, so treat this as a snapshot, not a current live count.*
 
 ---
 
@@ -53,9 +55,9 @@ Claude Platform on AWS supports two authentication modes.
 
 ### IAM with SigV4 (Recommended for Production)
 
-Request signing uses AWS Signature Version 4, the same mechanism you use for S3, DynamoDB, or any other AWS service. The IAM service name and action namespace is `aws-external-anthropic`.
+Request signing uses AWS Signature Version 4, the same mechanism you use for S3, DynamoDB, or any other AWS service. The [IAM service name and action namespace](https://docs.aws.amazon.com/claude-platform/latest/userguide/authentication.html) is `aws-external-anthropic`.
 
-IAM policy actions follow the pattern `aws-external-anthropic:<Action>`. For inference calls:
+IAM policy actions follow the pattern `aws-external-anthropic:<Action>`. The [IAM action reference](https://platform.claude.com/docs/en/api/claude-platform-on-aws-iam-actions) lists 65 actions; for inference and batch calls specifically, the relevant actions are `CreateInference` (synchronous) and `CreateBatchInference` (Message Batches API) — not a single combined "message batch" action:
 
 ```json
 {
@@ -65,7 +67,7 @@ IAM policy actions follow the pattern `aws-external-anthropic:<Action>`. For inf
       "Effect": "Allow",
       "Action": [
         "aws-external-anthropic:CreateInference",
-        "aws-external-anthropic:CreateMessageBatch"
+        "aws-external-anthropic:CreateBatchInference"
       ],
       "Resource": "*"
     }
@@ -77,9 +79,9 @@ SigV4 signing lets you use temporary IAM credentials (assumed roles, instance pr
 
 ### API Keys
 
-Claude Platform on AWS also supports Anthropic-issued API keys. The base URL is the same as the SigV4 endpoint. This is the easier path for exploration and local development — the same keys from `console.anthropic.com` work here if you've enabled AWS billing.
+Claude Platform on AWS also supports API key authentication as an alternative to SigV4, authorized through the `aws-external-anthropic:CallWithBearerToken` IAM action. This is the easier path for exploration and local development. Importantly, these keys are **not interchangeable with first-party Anthropic keys**: [AWS's own authentication docs](https://docs.aws.amazon.com/claude-platform/latest/userguide/authentication.html) are explicit that "only API keys created in the AWS Console under Claude Platform on AWS work with this service" — keys generated in the standard `console.anthropic.com` Claude Console for first-party API access do **not** work against the Claude Platform on AWS endpoint, contrary to what you might expect.
 
-Note: Amazon Bedrock API keys do not work on Claude Platform on AWS, and vice versa. These are separate authentication systems with separate endpoints.
+Note: [Amazon Bedrock API keys do not work on Claude Platform on AWS, and vice versa](https://docs.aws.amazon.com/claude-platform/latest/userguide/authentication.html) — "Bedrock uses a separate endpoint, authentication flow, and IAM namespace."
 
 ---
 
@@ -89,26 +91,26 @@ The defining characteristic of Claude Platform on AWS is same-day feature parity
 
 ### Messages API, Files API, Message Batches API
 
-All three are fully available. If your code targets `api.anthropic.com` today, migrating to Claude Platform on AWS is primarily an auth change — the request format is the same.
+All three are [fully available](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html). If your code targets `api.anthropic.com` today, migrating to Claude Platform on AWS is primarily an auth change — the request format is the same.
 
 ### Agent Skills
 
-[Agent Skills](/builders-log/anthropic-agent-sdk-billing-split-june-15-model-deprecations-builder-guide/) are reusable, shareable skill packages for Claude agents. Available on Claude Platform on AWS; not available on Bedrock.
+[Agent Skills](/builders-log/anthropic-agent-sdk-billing-split-june-15-model-deprecations-builder-guide/) are reusable, shareable skill packages for Claude agents. [Available on Claude Platform on AWS](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html); [not available on Bedrock](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws#claude-platform-on-aws-vs-amazon-bedrock) ("requires code execution," per Anthropic's comparison table).
 
 ### Managed Agents
 
-[Managed Agents](/builders-log/claude-managed-agents-self-hosted-sandboxes-mcp-tunnels/) — cron-scheduled agents with vault-stored credentials and browser access — are available on Claude Platform on AWS. However, there are functional gaps compared to direct:
+[Managed Agents](/builders-log/claude-managed-agents-self-hosted-sandboxes-mcp-tunnels/) — Anthropic's [managed agent harness](https://platform.claude.com/docs/en/managed-agents/overview) with cron-scheduled sessions and vault-stored credentials — are [available on Claude Platform on AWS](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws#claude-managed-agents), including agents, sessions, environments, credential vaults, memory stores, webhooks, and multiagent orchestration. There are two known functional gaps versus first-party direct access:
 
-- **Not available on Claude Platform on AWS**: outcome tracking, multi-agent sessions, webhook delivery
-- **Available on direct only** for these specific features
+- **Outcome tracking** for agent sessions is [not available](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html) on Claude Platform on AWS.
+- **Autonomous-session reauthentication**: an AWS-hosted session that runs without any user event must [reauthenticate every 6 hours](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws#claude-managed-agents) (send any user-role event) or the session ends; first-party direct Managed Agents has no such runtime limit.
 
-If your Managed Agents use is straightforward (run a scheduled task, use CLI tools, authenticated services), Claude Platform on AWS handles it. If you need outcome callbacks or multi-agent session coordination, stay on Anthropic direct.
+If your Managed Agents use is straightforward (run a scheduled task, use CLI tools, authenticated services), Claude Platform on AWS handles it. If you need outcome tracking or long unattended autonomous runs past 6 hours, stay on Anthropic direct.
 
 ### MCP Connectors and Code Execution
 
-Both are available. MCP connectors on Claude Platform on AWS let agents reach external tools via the same MCP protocol — useful for agents running in AWS infrastructure that need to reach Jira, GitHub, Slack, or custom MCP servers.
+Both are available on Claude Platform on AWS. [MCP connectors](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector) let agents reach external tools via the same MCP protocol — useful for agents running in AWS infrastructure that need to reach Jira, GitHub, Slack, or custom MCP servers. Per Anthropic's own docs, "the MCP connector is available on the Claude API, Claude Platform on AWS, and Microsoft Foundry... It is not currently available on Amazon Bedrock or Google Cloud."
 
-Code execution (the sandboxed interpreter) is also available, which Bedrock does not offer.
+[Code execution](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html) (the sandboxed interpreter) is also available, which Bedrock does not offer.
 
 ---
 
@@ -116,45 +118,44 @@ Code execution (the sandboxed interpreter) is also available, which Bedrock does
 
 ### HIPAA
 
-This is a hard no. The [official AWS documentation](https://docs.aws.amazon.com/claude-platform/latest/userguide/welcome.html) is explicit: Anthropic's HIPAA-ready program is not available on Claude Platform on AWS. If you have HIPAA requirements, use Claude in Amazon Bedrock instead.
+This is a hard no. AWS's [feature-support documentation](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html) is explicit: "Anthropic's HIPAA-ready program is not available on Claude Platform on AWS. Customers with HIPAA requirements should evaluate Claude in Amazon Bedrock instead." The same page notes the service "is not covered by standard AWS compliance programs, certifications, or audit reports (such as SOC, ISO, or HIPAA eligibility)" — it's a third-party offering layered on AWS billing/IAM, not an AWS-operated service.
 
 The structural reason: HIPAA compliance requires data to process within AWS's covered infrastructure. Because Anthropic operates the inference stack on Claude Platform on AWS, data exits AWS's security perimeter. That's incompatible with HIPAA BAA requirements.
 
 ### Full Managed Agents Feature Set
 
-As noted above: outcome tracking, multi-agent sessions, and webhook delivery are not available on Claude Platform on AWS. These are available on Anthropic direct but haven't been extended to the AWS-hosted version.
+As noted above: [outcome tracking is not available](https://docs.aws.amazon.com/claude-platform/latest/userguide/feature-support.html) on Claude Platform on AWS, and unattended autonomous sessions must [reauthenticate every 6 hours](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws#claude-managed-agents), a limit that doesn't exist on Anthropic direct.
 
 ### Bedrock-Specific Features
 
-Cross-model orchestration via Bedrock's multi-model APIs, Bedrock Knowledge Bases, Bedrock Guardrails, and other Bedrock-native services operate at the AWS layer and are separate from Claude Platform on AWS.
+Cross-model orchestration via Bedrock's multi-model APIs, [Bedrock Knowledge Bases](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html), [Bedrock Guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html), and other Bedrock-native services operate at the AWS layer and are separate from Claude Platform on AWS.
 
 ---
 
 ## CloudTrail Integration
 
-All API calls made through Claude Platform on AWS are captured in AWS CloudTrail. This is significant for enterprises that require audit trails of AI API usage — who called what, when, from which IAM principal.
+AWS CloudTrail [can capture all requests](https://docs.aws.amazon.com/claude-platform/latest/userguide/monitoring.html) made through Claude Platform on AWS, classified under the `aws-external-anthropic` action namespace. Per AWS's monitoring documentation: workspace and vault operations are logged as **Management events by default**; inference, batch, file, skill, model, user-profile, and most Managed Agents operations are **Data events**, which require you to explicitly turn on data-event logging (and incur additional CloudTrail charges) — see the [full event-type classification](https://platform.claude.com/docs/en/api/claude-platform-on-aws-iam-actions#route-to-action-mapping). AWS states plainly that "enabling logging does not provide AWS or Anthropic access to your content beyond what is necessary for billing and service operation."
 
-CloudTrail events follow the `aws-external-anthropic` namespace and include the standard CloudTrail fields: request time, user identity, source IP, request parameters (without prompt content, which is not logged), and response metadata.
-
-If your security team needs to demonstrate that AI API usage is auditable, this is the mechanism.
+This is significant for enterprises that require audit trails of AI API usage — who called what, when, from which IAM principal. If your security team needs to demonstrate that AI API usage is auditable, this is the mechanism, but note that Data events (the ones covering actual inference calls) are opt-in, not on by default.
 
 ---
 
 ## Claude Code on Claude Platform on AWS
 
-Claude Code supports Claude Platform on AWS through the same SigV4 auth path. Configuration:
+Claude Code supports Claude Platform on AWS through the same SigV4 (or API key) auth path, gated behind an explicit opt-in environment variable rather than a `claude config` subcommand. Per the [official Claude Code docs](https://code.claude.com/docs/en/claude-platform-on-aws), configuration looks like:
 
 ```bash
-# Set AWS credentials (if not already configured via instance profile or ~/.aws)
-export AWS_ACCESS_KEY_ID=...
-export AWS_SECRET_ACCESS_KEY=...
-export AWS_REGION=us-east-1
+# Authenticate via the standard AWS credential chain (SSO shown here)
+aws sso login --profile my-profile
+export AWS_PROFILE=my-profile
 
-# Point Claude Code to Claude Platform on AWS
-claude config set api-provider claude-platform-on-aws
+# Route Claude Code to Claude Platform on AWS
+export CLAUDE_CODE_USE_ANTHROPIC_AWS=1
+export ANTHROPIC_AWS_WORKSPACE_ID=wrkspc_01ABCDEFGHIJKLMN
+export AWS_REGION=us-east-1
 ```
 
-The detailed setup is documented in the [Claude Code on Claude Platform on AWS](https://code.claude.com/docs/en/claude-platform-on-aws) docs. The practical value: teams already using AWS SSO or IAM Identity Center can authenticate Claude Code sessions through existing role assumptions rather than managing separate API keys.
+`ANTHROPIC_AWS_WORKSPACE_ID` is required on every request; `AWS_REGION` determines the base URL (`https://aws-external-anthropic.{region}.api.aws`). Claude Platform on AWS is opt-in even with AWS credentials present — if `CLAUDE_CODE_USE_BEDROCK` or `CLAUDE_CODE_USE_FOUNDRY` is also set, those take precedence. Run `/status` inside Claude Code to confirm the resolved provider. The practical value: teams already using AWS SSO or IAM Identity Center can authenticate Claude Code sessions through existing role assumptions rather than managing separate API keys.
 
 ---
 
@@ -174,7 +175,7 @@ The detailed setup is documented in the [Claude Code on Claude Platform on AWS](
 - Your IAM policies are already built around Bedrock IAM actions and migration cost is high
 
 **Use Anthropic direct if:**
-- You need full Managed Agents features including outcome tracking, multi-agent sessions, and webhook delivery
+- You need outcome tracking for agent sessions, or unattended autonomous Managed Agents runs longer than 6 hours
 - You're not on AWS or prefer to avoid AWS coupling
 - You need maximum flexibility for future provider switching
 
@@ -182,7 +183,7 @@ The detailed setup is documented in the [Claude Code on Claude Platform on AWS](
 
 ## Pricing
 
-Claude Platform on AWS bills through AWS Marketplace on consumption. Token pricing is the same as Anthropic direct — there is no AWS premium added. The cost difference, if any, comes from operational decisions (regional pricing, data transfer) rather than a markup on inference.
+Claude Platform on AWS bills through AWS Marketplace on consumption, denominated in Claude Consumption Units and invoiced monthly in arrears. AWS's own product page states plainly: ["Pricing is the same as accessing directly through the Claude API"](https://aws.amazon.com/claude-platform/) — there is no AWS premium added to token pricing. The cost difference, if any, comes from operational decisions (regional pricing, data transfer) rather than a markup on inference. One exception: Anthropic's docs note a [1.1x pricing multiplier](https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws#data-residency) applies if you pin inference to the "US" data-residency geography specifically; the default "global" routing carries standard pricing.
 
 ---
 

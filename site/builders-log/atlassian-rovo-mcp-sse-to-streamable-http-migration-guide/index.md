@@ -3,7 +3,7 @@
 > The Atlassian Rovo MCP Server's /v1/sse endpoint shuts down June 30, 2026. If your MCP config points at that endpoint, your agents stop working. Here's the migration — it's one URL change and two minutes of work.
 
 
-Atlassian deprecated the SSE endpoint for their Rovo MCP Server in early March 2026, and the hard shutdown is June 30, 2026. If your `claude_desktop_config.json`, `.mcp.json`, or VS Code settings currently include `mcp.atlassian.com/v1/sse`, your Jira and Confluence access via MCP stops working in thirteen days.
+Atlassian [deprecated the SSE endpoint for their Rovo MCP Server on March 11, 2026, with the hard shutdown set for June 30, 2026](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484). If your `claude_desktop_config.json`, `.mcp.json`, or VS Code settings currently include `mcp.atlassian.com/v1/sse`, your Jira and Confluence access via MCP stops working in thirteen days.
 
 The fix is almost trivial: one URL change. But it matters that you do it before the deadline.
 
@@ -19,13 +19,13 @@ The Atlassian Rovo MCP Server was originally accessible via two transport protoc
 | **Transport** | SSE (Server-Sent Events) | Streamable HTTP |
 | **Status** | Deprecated — sunset June 30, 2026 | Current — supported |
 
-The `v1/sse` endpoint is being removed, not just discouraged. After June 30, calls to it will fail.
+The `v1/sse` endpoint is being removed, not just discouraged. [After June 30, calls to it will fail](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484).
 
 ### SSE vs. Streamable HTTP — What Changed Architecturally
 
 The old SSE transport used two separate connections: a GET endpoint that held open a long-lived Server-Sent Events stream for server-to-client messages, and a separate POST endpoint for client-to-server messages. This worked but created operational complexity — clients had to manage two connections and deal with reconnection logic across both.
 
-Streamable HTTP (defined in the MCP spec as the current recommended transport) collapses this into a single endpoint. The client POSTs to `/v1/mcp`; the server responds either as a standard HTTP response or as a streamed response within that same connection. Simpler connection management, better compatibility with proxies and firewalls, and cleaner client implementation.
+Streamable HTTP ([defined in the MCP spec as the transport that replaces the deprecated HTTP+SSE transport](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports)) collapses this into a single endpoint. The client POSTs to `/v1/mcp`; the server responds either as a standard HTTP response or as a streamed response within that same connection. Simpler connection management, better compatibility with proxies and firewalls, and cleaner client implementation.
 
 The practical result: your config gets shorter (one URL instead of potentially two), and the transport is more reliable over standard corporate network infrastructure.
 
@@ -43,7 +43,7 @@ You are **not** affected if:
 
 - You're using [sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian) — the community server. That's self-hosted and uses its own transport; it has nothing to do with `mcp.atlassian.com`
 - You already set up the connection using the current `/v1/mcp` endpoint
-- You connect through Atlassian's first-party integrations (the official Claude, ChatGPT, GitHub Copilot CLI, or VS Code Copilot Chat connectors), where Atlassian manages the transport internally
+- You connect through [Atlassian's first-party integrations](https://www.atlassian.com/platform/rovo-mcp) (the official Claude, ChatGPT, GitHub Copilot CLI, or VS Code Copilot Chat connectors), where Atlassian manages the transport internally
 
 ---
 
@@ -115,7 +115,7 @@ That's the entire migration for most setups.
 }
 ```
 
-Claude Desktop uses stdio transport internally. The `mcp-remote` bridge is what converts stdio ↔ remote HTTP. You still need `mcp-remote`; you're just pointing it at the new endpoint. Requires Node.js v18+.
+Claude Desktop uses stdio transport internally. The [`mcp-remote`](https://github.com/geelen/mcp-remote) bridge is what converts stdio ↔ remote HTTP. You still need `mcp-remote`; you're just pointing it at the new endpoint. Requires Node.js v18+.
 
 ### Claude Code
 
@@ -135,7 +135,7 @@ In your `.mcp.json`:
 }
 ```
 
-Or, if your Claude Code client natively supports Streamable HTTP (Claude Code versions supporting direct HTTP transport):
+Or, if your Claude Code client natively supports Streamable HTTP ([current Claude Code versions support direct HTTP transport](https://code.claude.com/docs/en/mcp)):
 
 ```json
 {
@@ -165,11 +165,11 @@ In `.vscode/mcp.json`:
 }
 ```
 
-VS Code's MCP extension supports Streamable HTTP natively (no `mcp-remote` needed). If you were using the proxy before, you can remove it.
+[VS Code's MCP support includes native Streamable HTTP transport](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) (no `mcp-remote` needed). If you were using the proxy before, you can remove it.
 
 ### Cursor
 
-In `~/.cursor/mcp.json`:
+In `~/.cursor/mcp.json`, using the `mcp-remote` bridge (the form most existing SSE setups already use):
 
 ```json
 {
@@ -185,7 +185,19 @@ In `~/.cursor/mcp.json`:
 }
 ```
 
-Cursor authentication issues with the Atlassian MCP server are tracked in [issue #137](https://github.com/atlassian/atlassian-mcp-server/issues/137). If you experience auth errors after migration, this is a known Cursor-specific problem unrelated to the transport change.
+Or, since [Cursor also supports Streamable HTTP natively](https://cursor.com/docs/context/mcp), you can skip the proxy entirely:
+
+```json
+{
+  "mcpServers": {
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    }
+  }
+}
+```
+
+Cursor authentication issues with the Atlassian MCP server were reported in [issue #137](https://github.com/atlassian/atlassian-mcp-server/issues/137) (since closed). If you experience auth errors after migration, check that issue thread first — it may be a known Cursor-specific problem unrelated to the transport change.
 
 ### Gemini CLI
 
@@ -202,13 +214,13 @@ In `~/.gemini/settings.json`:
 }
 ```
 
-Gemini CLI natively supports Streamable HTTP via the `httpUrl` key.
+[Gemini CLI natively supports Streamable HTTP via the `httpUrl` key](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md).
 
 ---
 
 ## Authentication After Migration
 
-The transport change does not affect authentication. Your existing OAuth 2.1 credentials remain valid. You should not be prompted to re-authorize unless your token has expired or you clear stored credentials.
+The transport change does not affect authentication. Your existing [OAuth 2.1 credentials](https://support.atlassian.com/atlassian-rovo-mcp-server/docs/use-atlassian-rovo-mcp-server/) remain valid. You should not be prompted to re-authorize unless your token has expired or you clear stored credentials.
 
 **If you're using API token authentication** (headless or long-running setups): same behavior — token stays valid, just update the endpoint URL.
 
@@ -257,9 +269,9 @@ After updating your config:
 
 ## The Broader Context
 
-The Atlassian Rovo MCP Server reached GA in February 2026 and covers six product areas: Jira, Confluence, Compass, Jira Service Management, Bitbucket Cloud, and cross-product Rovo Search. The SSE sunset is part of the MCP ecosystem-wide shift toward Streamable HTTP as the standard remote transport — the MCP specification itself moved in this direction, and most major MCP servers have followed.
+The Atlassian Rovo MCP Server [reached GA on February 4, 2026](https://www.atlassian.com/blog/announcements/atlassian-rovo-mcp-ga) and [covers six product areas: Jira, Confluence, Compass, Jira Service Management, Bitbucket Cloud, and cross-product Rovo Search](https://developer.atlassian.com/cloud/rovo-mcp/). The SSE sunset is part of the MCP ecosystem-wide shift toward Streamable HTTP as the standard remote transport — [the MCP specification itself moved in this direction](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports), and most major MCP servers have followed.
 
-For the community server ([sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian), 5,000 stars), none of this applies — it's self-hosted and uses its own transport layer. If you're evaluating whether to stay on the official server or switch, our [Atlassian MCP Server review](/reviews/atlassian-mcp-server/) covers both in depth, including the reliability issues still open on the official server (52 open issues as of May 2026, including the duplicate-creation bug in `createJiraIssue`).
+For the community server ([sooperset/mcp-atlassian](https://github.com/sooperset/mcp-atlassian), over 5,000 stars), none of this applies — it's self-hosted and uses its own transport layer. If you're evaluating whether to stay on the official server or switch, our [Atlassian MCP Server review](/reviews/atlassian-mcp-server/) covers both in depth, including the reliability issues still open on the official server (52 open issues as of May 2026, including [a duplicate-creation bug in `createJiraIssue`](https://github.com/atlassian/atlassian-mcp-server/issues/132) that creates two identical tickets per call).
 
 This migration is the easy part. Two minutes. Do it before June 30.
 

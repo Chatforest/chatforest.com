@@ -1,9 +1,9 @@
 # AWS Summit New York City 2026: AgentCore Seven Services, Amazon Quick, Kiro Pro Max, S3 Vectors — Builder Guide
 
-> AWS Summit New York City 2026 happened June 17 at the Javits Center. The headline: AWS is positioning agentic AI as the organizing layer for its entire platform. Here's every announcement that matters to builders — AgentCore's seven-service suite, Amazon Quick replacing Q Business, Kiro Pro Max, S3 Vectors, Nova Act, and a new AI Agents Marketplace.
+> AWS Summit New York City 2026 happened June 17 at the Javits Center. The headline: AWS is positioning agentic AI as the organizing layer for its entire platform. Here's every announcement that matters to builders — AgentCore's seven-service suite, Amazon Quick's new agentic features, Kiro Pro Max, S3 Vectors, and Nova Act.
 
 
-AWS Summit New York City 2026 ran June 17 at the Javits Center ([top announcements](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/)). VP of Agentic AI Swami Sivasubramanian led the keynote at 11 AM ET, with [AWS at a $142 billion annualized run rate](https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents) and agentic AI as the organizing theme for virtually every service announcement.
+AWS Summit New York City 2026 ran June 17 at the Javits Center, with an 11:00 AM–12:30 PM keynote ([official event agenda](https://aws.amazon.com/events/summits/new-york/agenda/); [top announcements](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/)). [VP of Agentic AI Swami Sivasubramanian](https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents) delivered the keynote, with agentic AI as the organizing theme for virtually every service announcement. AWS heads into the summit as a $142 billion annualized revenue run-rate business — a figure both [CEO Andy Jassy and CFO Brian Olsavsky cited on the company's Q4 2025 earnings call](https://www.fool.com/earnings/call-transcripts/2026/02/05/amazon-amzn-q4-2025-earnings-call-transcript/) in February 2026, following [$35.6 billion in Q4 2025 AWS segment revenue, up 24% year-over-year](https://www.aboutamazon.com/news/company-news/amazon-earnings-q4-2025-report) — the segment's fastest growth rate in 13 quarters.
 
 The throughline: AWS is no longer treating agents as an experimental feature. The entire platform — storage, compute, identity, observability — is being reoriented around them.
 
@@ -13,9 +13,9 @@ Here is what builders need to know.
 
 ## AgentCore: Now a Seven-Service Production Infrastructure Suite
 
-When [AgentCore launched in April 2026](/builders-log/amazon-bedrock-agentcore-runtime-harness-builder-guide/), it was a runtime with microVM isolation and a managed harness. Good start; incomplete picture.
+AgentCore launched in [preview in July 2025](https://aws.amazon.com/blogs/aws/introducing-amazon-bedrock-agentcore-securely-deploy-and-operate-ai-agents-at-any-scale/), reached [general availability that October](https://aws.amazon.com/about-aws/whats-new/2025/10/amazon-bedrock-agentcore-available/), and picked up a [managed harness in April 2026](/builders-log/amazon-bedrock-agentcore-runtime-harness-builder-guide/) — a runtime with microVM isolation that now also handles the agent orchestration loop for you.
 
-The summit clarified the full architecture. AgentCore is seven services that together form an infrastructure stack for running agents in enterprise production:
+Since its original launch, AgentCore has been [seven services](https://aws.amazon.com/blogs/aws/introducing-amazon-bedrock-agentcore-securely-deploy-and-operate-ai-agents-at-any-scale/) that together form an infrastructure stack for running agents in enterprise production:
 
 | Service | What it handles |
 |---|---|
@@ -27,25 +27,21 @@ The summit clarified the full architecture. AgentCore is seven services that tog
 | **AgentCore Gateway** | MCP-compatible tool routing; connects agents to enterprise systems |
 | **AgentCore Observability** | Trace IDs, latency, tool call logs; integrates with CloudWatch and OpenTelemetry |
 
+What's new at this specific summit: a [managed Knowledge Base for Bedrock](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/) with native data connectors and an Agentic Retriever that integrates with AgentCore Gateway, a [fully managed web search tool for AgentCore](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/) that grounds agent responses in current, cited web knowledge with zero data egress, and the [AgentCore Harness reaching general availability](https://aws.amazon.com/blogs/aws/top-announcements-of-the-aws-summit-in-new-york-2026/).
+
 This matters because the common failure mode for production agents is not the LLM — it is the surrounding infrastructure: leaked credentials, state bleed between sessions, no audit trail. AgentCore's seven-service model addresses each of these explicitly.
 
 **For builders:** If you are on AWS and building production agents, AgentCore is now the default answer for "where do I run this." It works with any framework (CrewAI, LangGraph, LlamaIndex, Strands, custom) and any Bedrock-compatible model.
 
 ---
 
-## Amazon Quick: Q Business Replaced by a Five-Module Agentic System
+## Amazon Quick: The Amazon Q Business Migration Path Gets New Agentic Features
 
-Amazon Quick launched April 28, 2026, as a full replacement for Amazon Q Business. The summit gave it its biggest public stage yet.
+Amazon Quick — AWS's rebrand of [Amazon Quick Suite](https://aws.amazon.com/about-aws/whats-new/2025/10/amazon-quick-suite-agentic-ai-powered-workspace), itself an [October 2025 evolution of Amazon QuickSight](https://aws.amazon.com/blogs/business-intelligence/reimagine-business-intelligence-amazon-quicksight-evolves-to-amazon-quick-suite/) — got its biggest public stage yet at the summit. AWS is steering [Amazon Q Business customers toward Quick](https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html) as the recommended migration path; Q Business itself stops accepting new customers on July 31, 2026, though AWS says existing deployments keep receiving bug fixes and security updates.
 
-Where Q Business offered reactive chat against organizational data, Quick is a five-module architecture designed for autonomous workflow execution:
+At the summit, AWS announced [autonomous background agents for Quick](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-quick/) — configurable for specific expertise, tone, and tool access — along with multi-dataset analytics for querying across data sources without technical prep, and a redesigned activity feed consolidating email, messaging, calendar, and tasks.
 
-- **Spaces** — collaborative workspaces where teams and agents share context
-- **Chat Agents** — autonomous agents that execute cross-app workflows (not just answer questions)
-- **Flows** — natural-language automation builder for connecting enterprise tools
-- **Research** — deep search across internal and external data simultaneously
-- **Automations** — drag-and-drop workflow scheduler with built-in monitoring
-
-Quick ships with 100+ integrations: Microsoft 365, Google Workspace, Slack, Teams, Salesforce, Jira, ServiceNow. Desktop app (macOS and Windows) plus Chrome, Edge, and Firefox extensions.
+Quick's core modules, per [AWS's own FAQ](https://aws.amazon.com/quicksuite/faqs/), are: **Quick Flows** (natural-language workflow automation), **Quick Automate** (multi-step processes across systems), **Quick Research** (a deep-research agent that returns fully cited reports), **Quick Sight** (AI-powered BI dashboards and reporting), **Spaces** (shared team workspaces), and **Quick Extensions** (browser and app add-ons for Chrome, Edge, Firefox, Slack, Outlook, and Microsoft Office). Quick ships a [native desktop app for macOS and Windows](https://aws.amazon.com/quicksuite/faqs/).
 
 **For builders assessing Quick vs. building custom:** Quick is the right call when the goal is cross-app workflow automation for business users — HR, finance, operations. It is not a developer platform. If you need custom agent logic, tool calling, or tight control over model behavior, AgentCore is the answer, not Quick. They are complementary, not competing.
 
@@ -53,11 +49,11 @@ Quick ships with 100+ integrations: Microsoft 365, Google Workspace, Slack, Team
 
 ## Kiro Pro Max: $100/Month Tier for Serious Daily Use
 
-[Kiro](/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/) is AWS's spec-driven agentic IDE — it generates requirements.md, design.md, and tasks.md documents before writing a line of code. That spec-first approach means it works better than most tools for large, multi-file features but adds friction for quick one-off changes.
+[Kiro](/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/) is AWS's spec-driven agentic IDE — its [spec workflow generates requirements.md, design.md, and tasks.md documents](https://kiro.dev/docs/specs/feature-specs/) before writing a line of code. That spec-first approach means it works better than most tools for large, multi-file features but adds friction for quick one-off changes.
 
-Kiro Pro Max is a new pricing tier at $100/month, slotting between Pro+ ($40/mo) and Power ($200/mo). It is aimed at developers who consistently exceed their Pro+ credit allocation without needing the full Power tier.
+[Kiro Pro Max is a new pricing tier at $100/month](https://kiro.dev/blog/kiro-pro-max/), slotting between [Pro+ ($40/mo) and Power ($200/mo)](https://kiro.dev/pricing/) — [announced in AWS's June 15 weekly roundup](https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-finops-agent-in-preview-gemma-4-on-bedrock-kiro-pro-max-and-more-june-15-2026/) ahead of the summit. It is aimed at developers who consistently exceed their Pro+ credit allocation without needing the full Power tier.
 
-Under the hood, Kiro uses Claude Sonnet for reasoning-heavy spec generation and Amazon Nova for high-throughput code generation, switching models based on task type.
+Per [Kiro's own FAQ](https://kiro.dev/faq/), model access is via "Auto" — a mix of frontier and specialized models including Claude Sonnet 4.5, Sonnet 4.6, Haiku 4.5, and Opus 4.5–4.7 — or users can select a specific model directly. AWS has not published details on Amazon Nova being used for Kiro's code generation, so this article is not repeating that claim.
 
 **The decision:**
 
@@ -72,11 +68,11 @@ Under the hood, Kiro uses Claude Sonnet for reasoning-heavy spec generation and 
 
 ## S3 Vectors: Native Vector Storage at 90% Lower Cost
 
-S3 Vectors is a new S3 capability that adds native vector storage and querying directly in object storage — no separate vector database required for basic retrieval use cases.
+S3 Vectors — an S3 capability that adds native vector storage and querying directly in object storage, no separate vector database required for basic retrieval use cases — was recapped at the summit as background for the AgentCore/RAG story. It's not new: AWS [announced it in preview in July 2025](https://aws.amazon.com/about-aws/whats-new/2025/07/amazon-s3-vectors-preview-native-support-storing-querying-vectors/) and took it to [general availability on December 2, 2025](https://aws.amazon.com/blogs/aws/amazon-s3-vectors-now-generally-available-with-increased-scale-and-performance) with expanded scale (up to 2 billion vectors per index, a 40x increase over preview).
 
-Key numbers:
-- **90% cost reduction** compared to conventional vector database approaches for cold or archival retrieval workloads
-- Supports similarity search, metadata filtering, and batch writes natively
+Key numbers, per AWS's own announcements:
+- [Up to 90% lower cost](https://aws.amazon.com/about-aws/whats-new/2025/07/amazon-s3-vectors-preview-native-support-storing-querying-vectors/) than specialized vector database solutions for uploading, storing, and querying vectors
+- [Similarity search, metadata filtering, and batch writes](https://aws.amazon.com/blogs/aws/amazon-s3-vectors-now-generally-available-with-increased-scale-and-performance) supported natively, with query latency around 100ms or less at GA
 - Scales with S3's existing durability and access control model
 
 **When S3 Vectors makes sense:** High-volume, lower-latency-tolerance retrieval (document archives, batch embedding pipelines, long-term memory for agents). For real-time RAG with sub-50ms requirements, purpose-built vector databases (Pinecone, Weaviate, pgvector) still have the advantage.
@@ -85,33 +81,25 @@ Key numbers:
 
 ---
 
-## Nova Act: Browser Automation with 90%+ Enterprise Task Completion
+## Nova Act: Browser Automation, 90% Reliability Per AWS
 
-Nova Act is Amazon's browser automation agent, trained for enterprise web tasks: form filling, portal navigation, multi-step approvals, data extraction from web applications.
+Nova Act is Amazon's browser automation agent, [generally available since December 2, 2025](https://aws.amazon.com/about-aws/whats-new/2025/12/build-automate-production-ui-workflows-nova-act/), trained for enterprise web tasks: form filling, portal navigation, multi-step approvals, data extraction from web applications.
 
-The claim is 90%+ task completion on enterprise use cases — notably higher than general-purpose browser automation like Playwright + LLM or Puppeteer-based approaches, which often fall apart on dynamic authentication flows and multi-page state.
+AWS's own claim is "[Nova Act delivers 90% reliability on early customer workflows](https://www.aboutamazon.com/news/aws/aws-agentic-ai-amazon-bedrock-nova-models)" — that's AWS's figure from its own customers, not an independent benchmark against Playwright, Puppeteer, or other browser-automation frameworks, so this article isn't repeating a head-to-head comparison it can't verify.
 
-Nova Act is built into AgentCore as an optional tool via AgentCore Browser Tool, so it inherits full session isolation and credential management.
+Nova Act [can be integrated with AgentCore via AgentCore Browser Tool](https://docs.aws.amazon.com/nova-act/latest/userguide/bedrock-agentcore.html), as one option among several browser backends, so it can inherit AgentCore's session isolation and credential management when configured that way.
 
 **Use cases:** Agent-driven access to vendor portals, legacy intranet tools, SaaS applications without APIs, compliance workflows that live in web-only interfaces.
 
 ---
 
-## AWS AI Agents Marketplace
-
-New: a dedicated AI Agents and Tools category in AWS Marketplace. It allows customers to discover, purchase, deploy, and manage pre-built AI agents and MCP-compatible tools from third-party providers — all within the AWS billing and IAM framework.
-
-For ISVs and tool builders, this is a new distribution channel with AWS's enterprise purchasing infrastructure already attached.
-
----
-
 ## AWS FinOps Agent (Preview)
 
-Announced in the June 15 weekly roundup and reinforced at the summit: AWS FinOps Agent is in preview. It can:
+[Announced in AWS's June 15 weekly roundup](https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-finops-agent-in-preview-gemma-4-on-bedrock-kiro-pro-max-and-more-june-15-2026/) ahead of the summit and covered again on stage: [AWS FinOps Agent went into public preview](https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/) on June 9, 2026. Per [AWS's own announcement](https://aws.amazon.com/blogs/aws-cloud-financial-management/aws-finops-agent-is-now-public-preview/), it can:
 
 - Answer cost questions across services and time windows
-- Surface rightsizing recommendations via Cost Optimization Hub and Compute Optimizer
-- Investigate cost anomalies automatically
+- Surface rightsizing, idle-resource, and Savings Plans recommendations via Cost Optimization Hub and Compute Optimizer
+- Investigate cost anomalies automatically, linking changes to CloudTrail events to identify who changed what and when
 - Open Jira tickets based on recommendations
 - Post findings to Slack on a defined schedule
 
@@ -121,7 +109,7 @@ This is a meaningful development for teams with growing AWS bills and limited Fi
 
 ## What Today's Summit Means for Builders
 
-**The short version:** AWS has shipped the infrastructure layer for production agents. The April preview filled in half the picture; today filled in the rest.
+**The short version:** AWS has shipped the infrastructure layer for production agents. The April 2026 harness update filled in half the picture; this summit filled in the rest.
 
 | You're building | The AWS path |
 |---|---|
@@ -136,5 +124,5 @@ The pattern here is not subtle: AWS is betting that agentic AI becomes the inter
 
 ---
 
-*Related reading: [Amazon Bedrock AgentCore: April 2026 Launch](/builders-log/amazon-bedrock-agentcore-runtime-harness-builder-guide/) | [Kiro Migration Timeline from Amazon Q Developer](/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/) | [Amazon Bedrock AgentCore on AWS: Platform Deep-Dive](/builders-log/amazon-bedrock-agentcore-platform-aws-builder-guide/)*
+*Related reading: [Amazon Bedrock AgentCore: April 2026 Harness Update](/builders-log/amazon-bedrock-agentcore-runtime-harness-builder-guide/) | [Kiro Migration Timeline from Amazon Q Developer](/builders-log/amazon-q-developer-kiro-migration-timeline-opus-cutoff/) | [Amazon Bedrock AgentCore on AWS: Platform Deep-Dive](/builders-log/amazon-bedrock-agentcore-platform-aws-builder-guide/)*
 

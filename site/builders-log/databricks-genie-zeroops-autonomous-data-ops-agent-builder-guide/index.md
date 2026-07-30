@@ -3,7 +3,7 @@
 > Genie ZeroOps is Databricks' new background agent that autonomously monitors pipelines, tables, jobs, and ML models — then drafts and sandbox-validates fixes before a human approves them. Here is the complete builder breakdown.
 
 
-At DAIS 2026 on June 16, Databricks announced **Genie ZeroOps** — a background agent built into the Databricks platform that autonomously monitors your data and AI assets, diagnoses failures, and drafts validated fixes before any human sees them. It is now entering private preview.
+At [DAIS 2026](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-2026-data-ai-summit-keynote-lineup-and) (June 15–18, San Francisco), Databricks [announced Genie ZeroOps](https://www.databricks.com/blog/introducing-genie-zeroops) — a background agent built into the Databricks platform that autonomously monitors your data and AI assets, diagnoses failures, and drafts validated fixes before any human sees them. It is [entering private preview in the coming weeks](https://www.databricks.com/blog/introducing-genie-zeroops).
 
 The pitch: a broken revenue pipeline at 3 AM gets a proposed fix waiting in your inbox by 3:02, not a page that wakes up an on-call engineer.
 
@@ -15,20 +15,19 @@ This guide breaks down how ZeroOps works architecturally, what you need in place
 
 ZeroOps handles one job: **keep your data and AI assets healthy without manual intervention.**
 
-It covers:
+It covers, per [Databricks' announcement](https://www.databricks.com/blog/introducing-genie-zeroops):
 - Delta tables (data quality, PII exposure)
 - Databricks jobs and Delta Live Tables pipelines
-- ML models and model-serving endpoints
-- Query performance issues
+- ML models, including model-serving endpoints
 
 For each asset type, it runs the same four-step loop:
 
 | Step | What Happens |
 |---|---|
-| **1. Detect** | Continuous monitoring via Data Quality Monitoring + Data Classification |
-| **2. Diagnose** | Root-cause analysis through Unity Catalog lineage |
-| **3. Fix** | Agentic code generation drafts a candidate fix |
-| **4. Validate** | Fix runs in a sandboxed shallow clone before you see it |
+| **1. Detect** | Continuous monitoring via [Data Quality Monitoring](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/) + [Data Classification](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-classification) |
+| **2. Diagnose** | Root-cause analysis through [Unity Catalog lineage](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage) |
+| **3. Fix** | [Agentic code generation drafts a candidate fix](https://www.databricks.com/blog/introducing-genie-zeroops) |
+| **4. Validate** | Fix runs in a [sandboxed shallow clone](https://docs.databricks.com/aws/en/delta/clone) before you see it |
 
 ---
 
@@ -36,9 +35,9 @@ For each asset type, it runs the same four-step loop:
 
 ZeroOps builds on two existing Databricks platform features:
 
-**Data Quality Monitoring** — already available for Delta tables. Tracks statistical profiles of your data over time: row counts, null rates, distribution shifts, freshness. ZeroOps ingests these signals continuously.
+**[Data Quality Monitoring](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/)** — already available for Delta tables. Tracks statistical profiles of your data over time: row counts, null rates, distribution shifts, freshness. [ZeroOps is built on these signals](https://www.databricks.com/blog/introducing-genie-zeroops).
 
-**Data Classification** — scans table contents for sensitive data patterns. ZeroOps uses these results to flag PII exposure risks alongside quality anomalies.
+**[Data Classification](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-classification)** — scans table contents for sensitive data patterns and tags them. ZeroOps uses these results to flag PII exposure risks alongside quality anomalies.
 
 The combination means ZeroOps is watching for both correctness problems (pipeline failure, column drift, broken join) and compliance problems (a PII column unexpectedly appearing in a non-governed table) simultaneously.
 
@@ -48,9 +47,9 @@ The combination means ZeroOps is watching for both correctness problems (pipelin
 
 This is where ZeroOps earns its keep. Knowing that a table has anomalous null rates is useful. Knowing *why* — which upstream pipeline, which source table, which schema change three steps back — is what cuts resolution time from hours to minutes.
 
-Unity Catalog maintains the complete dependency graph of every asset in your workspace: which jobs write to which tables, which notebooks read which views, which model endpoints depend on which feature tables. ZeroOps traverses this graph when it detects an anomaly, tracing the failure to its root node.
+[Unity Catalog maintains the complete dependency graph](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage) of every asset in your workspace: which jobs write to which tables, which notebooks read which views, which model endpoints depend on which feature tables. [ZeroOps traverses this graph](https://www.databricks.com/blog/introducing-genie-zeroops) when it detects an anomaly, tracing the failure to its root node.
 
-**What this requires from you:** Unity Catalog must be set up and assets must be registered in it. Lineage capture is automatic once assets are in UC, but if you are running legacy Hive metastore workloads, ZeroOps cannot trace them.
+**What this requires from you:** Unity Catalog must be set up and assets must be registered in it — [ZeroOps runs under Unity Catalog governance and lineage](https://www.databricks.com/blog/introducing-genie-zeroops). Lineage capture is automatic once assets are in UC, but [tables left in the legacy Hive metastore don't get Unity Catalog's lineage, auditing, or access-control features](https://docs.databricks.com/aws/en/data-governance/unity-catalog/hive-metastore), so ZeroOps cannot trace them.
 
 ---
 
@@ -70,28 +69,28 @@ The fix is not applied immediately. It goes into a sandbox.
 
 This is the architecture decision that matters most to builders evaluating ZeroOps.
 
-Databricks uses **shallow table clones**: when ZeroOps needs to test a fix, it clones the affected table using Delta's zero-copy clone feature. This creates a full logical copy of the table metadata pointing at the same underlying Parquet files. No data is duplicated. The clone exists as an isolated object.
+[Databricks uses shallow table clones](https://www.databricks.com/blog/introducing-genie-zeroops): when ZeroOps needs to test a fix, it clones the affected table using [Delta's zero-copy clone feature](https://docs.databricks.com/aws/en/delta/clone). This creates a full logical copy of the table metadata pointing at the same underlying Parquet files. No data is duplicated. The clone exists as an isolated object.
 
-That sandboxed clone gets:
-- **Permission guardrails**: only ZeroOps' execution context can read/write it
+That sandboxed clone gets, per [Databricks' description of the verification step](https://www.databricks.com/blog/introducing-genie-zeroops):
+- **Permission guardrails**: scoped permissions restrict who/what can read or write it
 - **Network isolation**: the sandbox environment cannot reach external systems
 - The candidate fix then runs against the real data (through the clone) in this isolated space
 
-If the fix produces correct results — quality metrics recover, no PII introduced, no regression — ZeroOps surfaces it to you with a summary. You approve; the fix is applied to production. You decline; ZeroOps notes the feedback.
+If the fix produces correct results — quality metrics recover, no PII introduced, no regression — ZeroOps surfaces it to you with a summary. As Databricks describes the flow: ["the agent detects, investigates, and fixes. All you need to do is review and accept."](https://www.databricks.com/dataaisummit/session/genie-zeroops-data-quality-and-compliance-scale)
 
-The key guarantee: **production data is never touched by an unvalidated fix.** The shallow clone pattern means even large tables are cloned at near-zero storage cost.
+The key guarantee: **production data is never touched by an unvalidated fix.** The shallow clone pattern means [even large tables can be cloned at near-zero storage cost](https://docs.databricks.com/aws/en/delta/clone), since no data files are copied.
 
 ---
 
 ## The DAIS Demo: Two Use Cases
 
-Databricks ran two live demos at the DAIS session:
+Databricks featured two live demos in its [DAIS 2026 session on ZeroOps](https://www.databricks.com/dataaisummit/session/genie-zeroops-data-quality-and-compliance-scale):
 
-**Revenue dashboard incident**: A data engineer receives an alert that a revenue summary table has anomalous row counts. By the time they open Databricks, ZeroOps has traced the failure to an upstream DLT pipeline with a broken expectation introduced in a schema change 48 hours earlier. A candidate fix — a revised expectation and a pipeline config update — is already validated and waiting. Resolution in two minutes.
+**Revenue dashboard incident**: a data engineer resolves a broken revenue dashboard in two minutes — ZeroOps traces the anomaly to its root cause through lineage and has already drafted and validated a candidate fix, waiting on a decision.
 
-**PII exposure incident**: A governance lead opens the Governance Hub and sees a ZeroOps flag: a PII column (email addresses) appeared in a table that is shared broadly across the workspace without access controls. ZeroOps has drafted a Unity Catalog policy change that restricts access to the table and classified the column. One confirmation click closes the risk.
+**PII exposure incident**: a governance lead closes a PII exposure risk by confirming a single drafted policy change.
 
-Both cases resolve in the Governance Hub, which serves as the centralized view for ZeroOps activity across quality and compliance.
+Per the session description, both demo cases surface in the **Governance Hub**, which gives ["centralized visibility across quality and compliance."](https://www.databricks.com/dataaisummit/session/genie-zeroops-data-quality-and-compliance-scale)
 
 ---
 
@@ -101,10 +100,10 @@ ZeroOps is one of four Genie products. Understanding where it sits prevents over
 
 | Product | Status | What It Does |
 |---|---|---|
-| **Genie One** | GA | Agentic coworker for business users — answers questions, takes actions |
-| **Genie Code** | GA | Agentic coding + data engineering in the workspace, with MCP |
-| **Genie App Builder** | Private Preview | Low-code app generation from business context + governed data |
-| **Genie ZeroOps** | Private Preview | Background ops agent — monitors, diagnoses, fixes without being asked |
+| **Genie One** | [GA](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-one-all-new-agentic-coworker-every-team) | Agentic coworker for business users — answers questions, takes actions |
+| **Genie Code** | [GA](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-one-all-new-agentic-coworker-every-team), with [MCP server support](https://docs.databricks.com/aws/en/genie-code/) | Agentic coding + data engineering in the workspace |
+| **Genie App Builder** | [Private Preview](https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks) | Low-code app generation from business context + governed data |
+| **Genie ZeroOps** | [Private Preview](https://www.databricks.com/blog/introducing-genie-zeroops) | Background ops agent — monitors, diagnoses, fixes without being asked |
 
 ZeroOps is the only purely background component. The others are interactive: users prompt them. ZeroOps runs continuously and surfaces output only when it has something actionable.
 
@@ -144,27 +143,27 @@ Private preview or GA, ZeroOps requires these platform foundations:
 
 ## Genie App Builder: The Other Private Preview
 
-Announced alongside ZeroOps, **Genie App Builder** takes a different angle: give business teams a fully managed vibe coding environment where they describe an app in natural language, and Genie generates a live working preview connected to real, governed data in Unity Catalog.
+Announced alongside ZeroOps, **[Genie App Builder](https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks)** takes a different angle: give business teams a fully managed vibe coding environment where they describe an app in natural language, and Genie generates a live working preview connected to real, governed data in Unity Catalog.
 
-Apps are governed by UC permissions from the start — users building apps cannot accidentally expose data they are not authorized to see. This is positioned at the "business analyst builds their own dashboard" use case, not at professional developers.
+Apps are governed by UC permissions from the start — the tool has direct visibility into workspace tables, semantic layer definitions, and existing governance policies, so it can [surface the right data without manual wiring](https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks). Databricks positions it for [mixed-skill teams — "both technical and less technical" users](https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks) — not exclusively professional developers.
 
-Both ZeroOps and App Builder enter private preview in the same wave post-DAIS (DAIS ends June 18).
+Both ZeroOps and App Builder [enter private preview in the same wave, shortly after the Data + AI Summit](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-one-all-new-agentic-coworker-every-team) ([DAIS 2026 ran June 15–18](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-2026-data-ai-summit-keynote-lineup-and)).
 
 ---
 
 ## How to Get Private Preview Access
 
-Talk to your **Databricks account team**. There is no self-serve sign-up listed.
+[Talk to your Databricks account team to request early access](https://www.databricks.com/blog/introducing-genie-zeroops) — there is no self-serve sign-up listed.
 
-Databricks said the initial private preview starts with support for: **jobs, pipelines, tables, and ML workloads.** Additional asset types are expected to follow before GA.
+Databricks said the [initial private preview starts with support for jobs, pipelines, tables, and ML workloads](https://www.databricks.com/blog/introducing-genie-zeroops). Apps and Lakebase database support are on the roadmap.
 
 ---
 
 ## What to Watch
 
-- **GA timeline**: Databricks did not give a date. Given the pattern with Genie Code (announced at DAIS, GA same week), ZeroOps and App Builder may GA faster than a typical preview cycle. Watch the [Databricks release notes](https://docs.databricks.com/aws/en/ai-bi/release-notes/2026) for the announcement.
-- **DAIS Day 4 (June 18)**: Final DAIS keynote may include additional ZeroOps detail or expanded asset coverage announcement.
-- **Governance Hub GA**: Currently in preview — if you are evaluating ZeroOps for compliance workflows, the Hub's GA milestone is the other thing to track.
+- **GA timeline**: Databricks [did not give a GA date](https://www.databricks.com/blog/introducing-genie-zeroops) for ZeroOps or App Builder. Watch the [Databricks release notes](https://docs.databricks.com/aws/en/ai-bi/release-notes/2026) for the announcement.
+- **DAIS Day 4 ([June 18](https://www.databricks.com/company/newsroom/press-releases/databricks-announces-2026-data-ai-summit-keynote-lineup-and))**: the final day of the four-day summit may include additional ZeroOps detail or expanded asset coverage announcement.
+- **Governance Hub GA**: [currently in Private Preview](https://www.databricks.com/blog/whats-new-unity-catalog-data-ai-summit-2026) — if you are evaluating ZeroOps for compliance workflows, the Hub's GA milestone is the other thing to track.
 
 ---
 

@@ -125875,3 +125875,128 @@ Deployed to DreamHost once the 1-hour throttle cleared.
 - Await CEO reply on #2281 (GSC re-measure + /reviews/-follow-up data-gap flag) — no new action
   needed until a reply arrives.
 - No other pending inbox action.
+
+## Run 3344880 (2026-07-31, UTC still 2026-07-30 21:00-22:00) — Citation audit, 10 pages (2026-06-16 remainder + 2026-06-17 cluster start)
+
+### Orient
+Checked inbox: only 2 pending messages, both my own prior reports to CEO (#2280, #2281) still
+awaiting reply — no new instructions from Rob or Boss Claude. Machine's UTC clock was still
+2026-07-30 21:00-22:00 this entire run (session date context said 2026-07-31), so the monthly
+citation spot-audit (due first run of August) is still not triggered — holding it again per the
+note from the prior two runs. Confirmed no lock-file collision (`.grove_lock` PID matched this
+run's own `grove_runner.sh` process). Bluesky pre-post check returned `ALREADY_POSTED` (post exists
+at 2026-07-30T19:33 UTC) — no Bluesky action this run, correctly deferred to the live-feed check.
+No new RingS content pending build (last batch already committed in `b8160ae870`).
+
+### Citation audit — 10 pages (2026-06-16 remainder + 2026-06-17 cluster start)
+Ran 10 parallel general-purpose audit agents, one per page, each briefed on the full claim-by-claim
+standard. All 10 completed; every file's YAML front matter verified with `yaml.safe_load` before
+commit; full `hugo` (plain, no `--minify`/`--gc`) rebuild clean (4179 pages, unchanged count since
+this is edits-only) before committing. Diff confined to the 10 changed pages (source `content/` +
+built `site/`) plus RUNLOG.md/TOKENLOG.tsv — no accidental full-tree re-minify this time.
+
+1. **microsoft-mai-seven-models-hill-climbing-machine-azure-foundry-builder-guide** — zero inline
+   citations to start. Cut a fabricated 8th model ("MAI-Thinking-Mini") that had inflated the
+   "seven models" count to eight. Fixed the announcement date used throughout (was June 16, actually
+   June 2/updated June 8 per Microsoft's own post). Corrected Claude Haiku 4.5 pricing ($0.80/$4.00 →
+   actual $1/$5 per Anthropic's pricing page), which flipped a pricing-comparison claim. Split a
+   fused speed+accuracy stat (a "5x more efficient... on FLEURS and Artificial Analysis" claim that
+   conflated a speed figure with two separate accuracy benchmarks) into correctly-attributed claims.
+   Fixed a stale "GA in Foundry" label for MAI-Transcribe-1.5 (actually public preview).
+2. **openrouter-fusion-compound-ai-fable-5-alternative-builder-guide** — the opening premise was
+   wrong: article said Fusion "launched quietly March 31, 2026" citing Decrypt, but Decrypt's own
+   article says June 12. Investigated further and found the real two-stage timeline (chatroom-only
+   experiment March 31 per OpenRouter's own X post, full server-side API June 12 per OpenRouter's
+   blog) and rewrote the intro accordingly. Added missing DRACO benchmark citations, fixed an
+   omitted judge-model row in the Budget Preset table, cut unsourceable "community consensus"
+   claims, and softened an unverifiable/now-resolved Polymarket percentage to point at the live
+   market instead of a stale precise figure.
+3. **tiktok-ads-mcp-server-agentic-campaign-management-builder-guide** — a "six functional
+   categories" capability table and an entire "Governance and Rate Limiting" section (budget caps,
+   KPI stop-loss, rate limits) were fabricated with no supporting source; cut per cite-it-or-cut-it
+   and replaced with only what TikTok's own docs confirm. Fixed a misattributed citation (a claim
+   attached to a source that didn't say it), a merged-vs-separate feature error (TikTok GO actually
+   is the travel-booking feature, not two separate launches), and an inaccurate "controlling stake"
+   characterization (each JV partner holds 15%, 45% combined — not majority control).
+4. **atlassian-rovo-mcp-sse-to-streamable-http-migration-guide** — nearly every claim was uncited
+   (deprecation date, GA date, six product areas, client-capability claims). Verified and cited all
+   against Atlassian's own docs/community posts. Found a real gap: the Cursor section implied
+   `mcp-remote` proxy was the only option when Cursor actually supports native Streamable HTTP;
+   added the native config alongside. Updated a referenced GitHub issue's now-closed status and
+   added a live-issue citation for a duplicate-creation bug claim.
+5. **aws-summit-new-york-city-2026-agentcore-amazon-quick-kiro-pro-max-builder-guide** — the most
+   heavily corrected page this batch (32 inline citations added, from ~2 at the start). Cut a
+   likely-hallucinated Kiro model-switching claim (Nova vs. Claude — Kiro's own FAQ says Claude-only
+   "Auto" mixing). Rewrote a conflated Amazon Quick launch/module-list section against AWS's actual
+   FAQ and migration docs. Cut an "AI Agents Marketplace" bullet presented as summit-new that
+   actually launched a year earlier. Cut an unsupported Nova Act vs. Playwright/Puppeteer benchmark
+   comparison. Fixed a "$142B annualized run rate" stat that was cited to the wrong URL — traced to
+   its real source (Jassy/Olsavsky, Amazon Q4 2025 earnings call) and re-cited with two independent
+   sources. Corrected AgentCore's timeline (was framed as an April 2026 launch; actually preview
+   July 2025/GA October 2025, with April 2026 adding only the managed harness).
+6. **claude-code-tool-param-permission-rules-nested-skills-auto-mode-subagent-classifier-builder-guide**
+   — zero external citations to start. More seriously, several worked JSON permission-rule examples
+   used syntax that doesn't actually work per Claude Code's own docs (`Tool(param:value)` matching
+   only applies to deny/ask, never allow; a tool's primary content field like `command`/`file_path`/
+   `url` can't be matched this way) — rewrote all three broken examples to use real supported syntax.
+   Fixed a misattributed bugfix (a WebFetch subdomain-wildcard fix credited to v2.1.178, actually
+   shipped in v2.1.172).
+7. **claude-code-week-24-nested-subagents-cd-safe-mode-cross-session-security-builder-guide** — zero
+   inline citations to start (two links dumped in the opening paragraph covering ~15 claims). Fixed
+   5 version misattributions found by checking every claim against the actual GitHub release notes
+   — most notably the article's headline security claim (cross-session SendMessage hardening) was
+   attributed to v2.1.172 throughout but actually shipped in v2.1.166. Removed a fabricated
+   background/foreground split on the subagent nesting-depth cap that no primary source supports.
+8. **claude-platform-aws-iam-auth-bedrock-vs-native-builder-guide** — found real fabrications, not
+   just gaps: an IAM action name that doesn't exist (`CreateMessageBatch` → real name
+   `CreateBatchInference`), a false claim that standard Anthropic Console API keys work on AWS
+   billing (AWS's own docs say the opposite), and a fabricated Claude Code CLI command
+   (`claude config set api-provider ...` doesn't exist; replaced with the real env-var mechanism).
+   Fixed a stale Managed-Agents gap list (both "gaps" cited are now supported; the real remaining
+   gap is outcome tracking + a 6-hour reauth requirement). Corrected an unreliable region count (used
+   the one verifiable launch-time figure, 17, instead of an unsourced "19") and moved a HIPAA
+   citation off a page that doesn't mention HIPAA onto the one that does.
+9. **databricks-genie-one-agent-bricks-dais-2026-builder-guide** — fixed a misquoted press-release
+   quote (dropped "all-new"), an invented "DAIS Day 3" date label Databricks doesn't officially use,
+   and a stale claim about Genie Code's Chat/Agent mode selector (removed post-DAIS per Databricks'
+   own release notes — added an explicit "Update (post-DAIS)" note rather than leaving it silently
+   outdated). Traced an uncited "70% higher accuracy" stat to its real, separate source (an April
+   2026 Agent Bricks governance post) rather than letting it read as a Genie Ontology result.
+10. **databricks-genie-zeroops-autonomous-data-ops-agent-builder-guide** — zero inline citations
+    across 976 lines. Cut several fabricated demo specifics (invented "48 hours earlier," "PII
+    column (email addresses)" detail, a decline/feedback mechanism) not present in Databricks' own
+    DAIS session abstract — rewrote the demo section to match only the verified text. Fixed a false
+    GA-timeline analogy (Genie Code was NOT announced at DAIS as claimed; it launched March 11, 2026,
+    months earlier). Agent also flagged that some web searches returned this same chatforest.com
+    article echoed back as an apparent "source" for its own claims — disregarded those and confirmed
+    everything against Databricks' primary pages directly.
+
+**`sources_audited`: +10 this run** (604 → 594 remaining of 2041 total content `*.md` files).
+Reconciled 6 fabrication-audit.md checkboxes for pages that overlapped both projects
+(microsoft-mai-seven-models, tiktok-ads-mcp-server, aws-summit-nyc-2026,
+claude-code-tool-param-permission-rules, databricks-genie-one-agent-bricks, openrouter-fusion) —
+**fabrication-audit progress: 71/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed to DreamHost once the 1-hour throttle cleared.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch continues the 2026-06-17
+  cluster (claude-code-week-24 and claude-platform-aws-iam-auth and the two Databricks Genie pages
+  audited this run were partway through that date; check remaining 2026-06-17 files —
+  databricks-unity-catalog-dais-2026, github-copilot-sdk-ga, hashicorp-consul-mcp-server,
+  hashicorp-terraform-mcp-server, hashicorp-vault-radar-mcp-server, microsoft-phi-4-reasoning-vision,
+  minimax-m3, mongodb-mcp-server, nvidia-nemotron-3-nano, openai-deployment-simulation,
+  redis-mcp-server — before moving to 2026-06-18).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward for the third run in a row; check the machine's actual UTC clock each run
+  (this run's UTC was still 2026-07-30 21:00-22:00 despite session date context reading 2026-07-31).
+- Continue the fabrication-audit cohort (71/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281 — no new action needed until a reply arrives.
+- No other pending inbox action.

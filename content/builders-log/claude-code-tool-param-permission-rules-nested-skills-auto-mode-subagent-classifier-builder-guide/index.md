@@ -6,9 +6,10 @@ og_description: "Claude Code 2.1.178 ships Tool(param:value) permission rules, n
 content_type: "Builder's Log"
 categories: ["Anthropic", "Claude Code", "Developer Tools"]
 tags: ["anthropic", "claude-code", "permission-rules", "auto-mode", "subagents", "nested-skills", "agentic", "june-2026", "builders-log"]
+sources_audited: 2026-07-31
 ---
 
-Claude Code v2.1.178, released June 15, 2026, ships three changes that matter for teams running Claude Code in production: a new `Tool(param:value)` permission syntax that gives rule authors parameter-level control over any tool call, automatic loading of skills from nested `.claude/skills` directories, and a fix to the auto mode gap where subagent spawns were not evaluated by the classifier before launch. Part of our **[Builder's Log](/builders-log/)**.
+[Claude Code v2.1.178](https://github.com/anthropics/claude-code/releases/tag/v2.1.178), released June 15, 2026, ships three changes that matter for teams running Claude Code in production: a new `Tool(param:value)` permission syntax that gives rule authors parameter-level control over deny/ask rules for any tool call, automatic loading of skills from nested `.claude/skills` directories, and a fix to the auto mode gap where subagent spawns were not evaluated by the classifier before launch. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -26,9 +27,10 @@ Claude Code v2.1.178, released June 15, 2026, ships three changes that matter fo
 | Fixed subagent transcript missing tool results and live progress | Bug fix |
 | Fixed messages dropped when sent while subagent was finishing | Bug fix |
 | Fixed 401 for `claude agents` workers using custom API gateway | Bug fix |
-| Fixed `WebFetch(domain:*.example.com)` wildcard never matching subdomains | Bug fix |
 | Fixed nested skills with directory-qualified names blocked in non-interactive runs | Bug fix |
 | Fixed MCP server-level specs in subagent `disallowedTools` silently ignored | Bug fix |
+
+All items in this table are drawn from Anthropic's own [v2.1.178 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.178). The redesigned `/doctor` layout, the `/bug` description requirement, and the persistent Remote Control `/rc failed` indicator are documented there as UX changes with no separate write-up; the rest are covered section by section below.
 
 ---
 
@@ -36,34 +38,36 @@ Claude Code v2.1.178, released June 15, 2026, ships three changes that matter fo
 
 ### The old model
 
-Before 2.1.178, Claude Code permission rules matched on tool name only. You could allow or block `Bash`, `WebFetch`, `Agent`, or `Read` — but you could not express anything about *what arguments* those tools were called with. If you wanted to block Opus subagents while allowing Sonnet, you had no way to write that in a permission rule.
+Before 2.1.178, Claude Code permission rules matched on tool name (and, for a few tools, a built-in specifier like `WebFetch(domain:...)` or a Bash command pattern) — but there was no general way to match on an arbitrary input parameter. If you wanted to block Opus subagents specifically, you had no way to write that in a permission rule.
 
 ### The new syntax
 
-2.1.178 adds a parameter clause to the permission rule syntax:
+2.1.178 adds a parameter clause to the permission rule syntax, documented in Anthropic's [permissions reference](https://code.claude.com/docs/en/permissions):
 
 ```
 Tool(param:value)
 ```
 
-The `param` is a key from the tool's input object. The `value` is the expected string, with `*` as a wildcard prefix, suffix, or standalone. Rules are evaluated in the same allow/deny order as the existing permission system.
+The `param` must be a top-level field of the tool's input (nested fields aren't matchable). The `value` supports `*` as a wildcard matching any sequence of characters, anywhere in the string. Two restrictions matter in practice:
 
-### Example: Block Opus subagents, allow Sonnet
+- **Deny and ask rules only.** Per Anthropic's docs, `Tool(param:value)` rules work for `deny` and `ask` — there is no equivalent for `allow`. An allow rule "for one parameter value wouldn't establish that the call is safe overall," so allow rules still rely on each tool's own specifier syntax (e.g., `WebFetch(domain:...)`, a Bash command pattern).
+- **A tool's "primary content field" can't be matched this way.** That means `command` for Bash/PowerShell, `file_path` for Read/Edit/Write, `path` for Grep/Glob, `notebook_path` for NotebookEdit, and `url` for WebFetch. A rule like `Bash(command:rm *)` would be trivially bypassable by a compound command, so Claude Code ignores it and prints a startup warning — use the tool's own pattern syntax instead (`Bash(rm *)`, `Read(./path)`, `WebFetch(domain:host)`).
+
+### Example: Block Opus subagents
 
 Add to your project `.claude/settings.json`:
 
 ```json
 {
   "permissions": {
-    "deny": ["Agent(model:claude-opus*)"],
-    "allow": ["Agent(model:claude-sonnet*)"]
+    "deny": ["Agent(model:claude-opus*)"]
   }
 }
 ```
 
-Effect: Any subagent spawn that requests an Opus model is blocked before the spawn fires. Sonnet subagents proceed normally.
+Effect: Any subagent spawn that requests an Opus model is blocked before the spawn fires. This uses `Agent`'s documented `model` parameter, one of the examples Anthropic gives directly (`Agent(model:opus)`) in its [permissions reference](https://code.claude.com/docs/en/permissions).
 
-This is useful for cost control in repositories where developers have auto mode on and the project policy is to limit background subagents to Sonnet-class models.
+Note there is no equivalent `allow`-side rule to affirmatively restrict subagents to Sonnet only — per the restriction above, parameter matching is deny/ask-only, so a rule can block Opus but can't be used to positively allow-list "Sonnet and nothing else." For cost control, pair this deny rule with whatever your existing `Agent` allow/prompt policy already is.
 
 ### Example: Restrict WebFetch to internal docs
 
@@ -71,42 +75,37 @@ This is useful for cost control in repositories where developers have auto mode 
 {
   "permissions": {
     "deny": ["WebFetch"],
-    "allow": ["WebFetch(url:https://docs.yourcompany.com/*)"]
+    "allow": ["WebFetch(domain:docs.yourcompany.com)"]
   }
 }
 ```
 
-The deny-all-then-allow pattern works here: `deny: ["WebFetch"]` blocks the rule first, then `allow: ["WebFetch(url:https://docs.yourcompany.com/*)"]` opens up exactly the URLs you need. Subagents inherit these rules unless they are explicitly overridden in the `disallowedTools` list.
+The deny-all-then-allow pattern works here: `deny: ["WebFetch"]` blocks the tool by default, then `allow: ["WebFetch(domain:docs.yourcompany.com)"]` opens it back up for that one hostname. Note this restricts by domain, not by URL path — `WebFetch`'s `url` field is one of the "primary content fields" that the new generic `Tool(param:value)` matching explicitly excludes (see above), so `domain:` (a pre-existing, WebFetch-specific specifier, not the new 2.1.178 syntax) is the supported way to allow-list it. [Anthropic's subagent docs](https://code.claude.com/docs/en/sub-agents) note that subagents inherit the parent session's permissions and tool pool unless explicitly narrowed via `tools` or `disallowedTools` in the subagent's own configuration.
 
-**Note**: Before 2.1.178, `WebFetch(domain:*.example.com)` wildcards were not matching subdomains at all due to a bug. Both the new syntax and this existing bug fix shipped together — if you were using domain wildcards and seeing them fail, update to 2.1.178.
+**Note**: `WebFetch(domain:*.example.com)`-style wildcards previously did not match subdomains at all, due to a bug. That fix shipped in [Claude Code 2.1.172](https://github.com/anthropics/claude-code/releases/tag/v2.1.172) — three versions before 2.1.178 — not in 2.1.178 itself. If you're on anything at or after 2.1.172, subdomain wildcards should work correctly.
 
 ### Example: Gate Bash by shell flag
 
 ```json
 {
   "permissions": {
-    "deny": ["Bash(command:*--rm*)"],
-    "deny": ["Bash(command:*sudo*)"]
+    "deny": ["Bash(*--rm*)", "Bash(*sudo*)"]
   }
 }
 ```
 
-This blocks any Bash call whose command string contains `--rm` or `sudo`, regardless of the surrounding invocation. The wildcard prefix and suffix apply so partial matches work.
+This blocks any Bash call whose command string contains `--rm` or `sudo`. Note this uses Bash's own wildcard command-pattern syntax (`Bash(*sudo*)`), not the generic `Tool(param:value)` form — per [Anthropic's permissions reference](https://code.claude.com/docs/en/permissions), `command` is Bash's "primary content field" and a rule shaped like `Bash(command:*sudo*)` is ignored outright (with a startup warning) because it would be trivially bypassable via a compound command.
 
 ### Combining parameter rules with the existing allow/deny list
 
-Parameter rules compose with the existing permission system. The rule evaluation order is:
+Parameter rules compose with the existing permission system. Per [Anthropic's permissions reference](https://code.claude.com/docs/en/permissions), rules are evaluated in order — deny, then ask, then allow — and the first match wins regardless of how specific a later rule is; if nothing matches, Claude Code falls through to its default behavior (prompt in interactive mode, deny in non-interactive/headless runs).
 
-1. If an explicit `deny` matches, block.
-2. If an explicit `allow` matches, proceed.
-3. Fall through to default behavior (prompt in interactive mode, deny in non-interactive).
-
-The `Tool(param:value)` clauses are evaluated as part of step 1 or 2 depending on which list they appear in. You can mix parameterized and plain rules freely:
+You can mix a `Tool(param:value)` deny rule with plain tool-name and specifier rules freely. Remember the param form itself is deny/ask-only, so the `WebFetch` allow rule below uses WebFetch's own `domain:` specifier rather than a generic parameter match:
 
 ```json
 {
   "permissions": {
-    "allow": ["Read", "WebFetch(url:https://docs.yourcompany.com/*)"],
+    "allow": ["Read", "WebFetch(domain:docs.yourcompany.com)"],
     "deny": ["Write", "Agent(model:claude-opus*)"]
   }
 }
@@ -114,19 +113,17 @@ The `Tool(param:value)` clauses are evaluated as part of step 1 or 2 depending o
 
 ### What parameters are available per tool?
 
-The parameter key must correspond to a field in the tool's input schema. Useful ones:
+Per [Anthropic's permissions reference](https://code.claude.com/docs/en/permissions), the parameter must be a top-level field of the tool's input, and it cannot be the tool's "primary content field" — that restriction rules out `command` for Bash/PowerShell, `file_path` for Read/Edit/Write, `path` for Grep/Glob, `notebook_path` for NotebookEdit, and `url` for WebFetch. Documented examples of parameters that *are* matchable (deny/ask rules only):
 
-| Tool | Parameter | Example value |
+| Tool | Parameter | Example rule |
 |------|-----------|---------------|
-| `Agent` | `model` | `claude-opus*`, `claude-sonnet-4-6` |
-| `WebFetch` | `url` | `https://internal.example.com/*` |
-| `WebFetch` | `domain` | `*.example.com` |
-| `Bash` | `command` | `*sudo*`, `*--force*` |
-| `Read` | `file_path` | `~/.ssh/*` |
-| `Write` | `file_path` | `/etc/*` |
-| `Edit` | `file_path` | `/etc/*` |
+| `Agent` | `model` | `Agent(model:opus)`, `Agent(model:claude-opus*)` |
+| `Agent` | `isolation` | `Agent(isolation:worktree)` |
+| `Bash` | `run_in_background` | `Bash(run_in_background:true)` |
 
-The wildcard `*` matches zero or more characters. It can appear at the start, end, or both, but not in the middle (e.g., `*.example.com` and `https://docs.*` work; `https://docs.*.com` does not).
+For file paths, URLs, and shell commands — the excluded "primary content fields" — use each tool's own specifier syntax instead, e.g. `Read(./path)`, `WebFetch(domain:*.example.com)`, or `Bash(sudo *)`.
+
+The `*` wildcard in a `Tool(param:value)` rule matches any sequence of characters and can appear anywhere in the value — start, middle, end, or standalone (e.g., both `Agent(model:*opus*)` and `Agent(model:claude-opus*)` are valid). A stricter middle-of-string restriction does apply specifically to WebFetch's `domain:` specifier (a wildcard there only expands to match whole subdomain labels between dots), but that's a rule of the `domain:` specifier, not of the generic parameter-matching syntax.
 
 ---
 
@@ -134,7 +131,7 @@ The wildcard `*` matches zero or more characters. It can appear at the start, en
 
 ### What changed
 
-Skills placed in a `.claude/skills/` directory nested inside a subdirectory of your project now load automatically when Claude Code's working directory is inside that subdirectory. Before 2.1.178, only the root-level `.claude/skills/` was scanned.
+Skills placed in a `.claude/skills/` directory nested inside a subdirectory of your project now load automatically when Claude Code's working directory is inside that subdirectory. Before 2.1.178, only the root-level `.claude/skills/` was scanned. This is documented in the [v2.1.178 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.178): "Skills in nested `.claude/skills` directories now load when working on files there."
 
 ### How name collisions resolve
 
@@ -149,7 +146,7 @@ You can invoke the nested skill by its qualified name: `run the frontend:deploy 
 
 ### Closest .claude wins for configuration
 
-For `agent`, `workflow`, and `output-style` settings, the `.claude/` directory closest to the current working directory takes precedence on collision. This lets frontend, backend, and data subdirectories each carry their own output style or default agent without interfering with each other.
+For `agent`, `workflow`, and `output-style` settings, the `.claude/` directory closest to the current working directory takes precedence on collision, per the [v2.1.178 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.178): "Nested `.claude/` directories: the agent, workflow, and output-style closest to the working directory now wins when names collide." This lets frontend, backend, and data subdirectories each carry their own output style or default agent without interfering with each other.
 
 A repository layout that takes advantage of this:
 
@@ -169,7 +166,7 @@ When a session is opened with `cd frontend && claude`, the `frontend/.claude/set
 
 ### Non-interactive runs
 
-A bug in prior versions blocked nested skills with directory-qualified names (`frontend:deploy`) from running in non-interactive mode (`claude -p "..."`) — they were silently skipped. This is fixed in 2.1.178. CI pipelines that reference nested skills by qualified name will now work correctly.
+A bug in prior versions caused nested skills with directory-qualified names (`frontend:deploy`) to be blocked by permission prompts they couldn't fulfill in non-interactive mode (`claude -p "..."`). This is [fixed in 2.1.178](https://github.com/anthropics/claude-code/releases/tag/v2.1.178) ("Fixed nested `.claude/skills` skills being blocked by permission prompts"). CI pipelines that reference nested skills by qualified name should now work correctly.
 
 ---
 
@@ -177,18 +174,18 @@ A bug in prior versions blocked nested skills with directory-qualified names (`f
 
 ### The previous gap
 
-Auto mode routes Claude Code tool calls through a server-side classifier before each action fires. The classifier decides whether a given action needs human approval or can proceed automatically.
+Auto mode routes Claude Code tool calls through a server-side classifier before each action fires; per [Anthropic's engineering write-up on auto mode](https://www.anthropic.com/engineering/claude-code-auto-mode), the classifier runs a fast pass on every tool call and escalates to deeper chain-of-thought review when something looks risky, deciding whether a given action needs human approval or can proceed automatically.
 
-However, before 2.1.178, *spawning a subagent* was not itself classified before the spawn completed. The subagent was created first, and its actions were individually classified — but the spawn request itself could bypass the pre-launch check. This meant that in a carefully crafted scenario, a primary agent operating in auto mode could spawn a subagent configured to request actions the human had not reviewed.
+However, before 2.1.178, *spawning a subagent* was not itself classified before the spawn completed. This is documented directly in the [v2.1.178 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.178): "Improved auto mode: subagent spawns are now evaluated by the classifier before launch." The subagent was created first, and its actions were individually classified — but the spawn request itself could bypass the pre-launch check. This meant that in a carefully crafted scenario, a primary agent operating in auto mode could spawn a subagent configured to request actions the human had not reviewed.
 
 ### What changed
 
-2.1.178 adds classifier pre-screening to subagent spawn requests. Before a subagent starts executing, the classifier evaluates the spawn parameters — model, initial prompt, tool allowlist — the same way it evaluates individual tool calls. If the spawn would trigger an action that requires human approval, the spawn is held pending confirmation.
+2.1.178 adds classifier pre-screening to subagent spawn requests. Before a subagent starts executing, the classifier evaluates the spawn — the same way [Anthropic describes it reviewing a subagent handoff](https://www.anthropic.com/engineering/claude-code-auto-mode) "at both ends: when work is delegated out and when results come back." If the spawn would trigger an action that requires human approval, the spawn is held pending confirmation.
 
 In practice, this matters most for:
 
 - **Agentic pipelines running unattended** where the primary agent has auto mode permissions but subagent behavior was an implicit trust escalation.
-- **Deep agent chains** (Claude Code 2.1.172 added up to 5 levels of nesting). Without classifier pre-screening of spawns, each nesting level was a potential gap.
+- **Deep agent chains** — [Claude Code 2.1.172](https://github.com/anthropics/claude-code/releases/tag/v2.1.172) added the ability for "sub-agents to spawn their own sub-agents (up to 5 levels deep)." Without classifier pre-screening of spawns, each nesting level was a potential gap.
 - **Custom permission rules** that restrict the primary agent but were not being evaluated at spawn boundaries.
 
 For most interactive users running a single session, the change is invisible. For teams that have built auto mode pipelines or are using agent orchestration, this closes a meaningful gap.
@@ -197,13 +194,15 @@ For most interactive users running a single session, the change is invisible. Fo
 
 ## Other Fixes Worth Noting
 
+All four fixes below are listed in the [v2.1.178 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.178).
+
 **Subagent transcript** now shows tool results and live progress, not just the final response. If you were opening a subagent's transcript and seeing an empty or summary-only view, that is fixed.
 
 **Messages dropped during subagent finish**: In prior versions, messages sent to Claude Code while a subagent was completing its last turn were silently dropped. Fixed in 2.1.178 — messages are now queued correctly.
 
-**Custom API gateway 401**: Teams routing `claude agents` workers through a custom API gateway were seeing `401 Invalid bearer token` errors. This is fixed.
+**Custom API gateway 401**: Teams routing `claude agents` workers through a custom API gateway (`ANTHROPIC_BASE_URL`/`ANTHROPIC_AUTH_TOKEN`) were seeing `401 Invalid bearer token` errors. This is fixed.
 
-**MCP disallowedTools in subagents**: MCP server-level specs in a subagent's `disallowedTools` list were being silently ignored. Fixed — the specs now apply correctly.
+**MCP disallowedTools in subagents**: MCP server-level specs (`mcp__server`, `mcp__server__*`, `mcp__*`) in a subagent's `disallowedTools` list were being silently ignored. Fixed — the specs now apply correctly.
 
 ---
 
@@ -220,11 +219,11 @@ claude --version
 
 Once updated:
 
-1. **Review your permission rules** — if you have existing `allow`/`deny` lists, consider whether `Tool(param:value)` rules could tighten them. Common wins: `Agent(model:claude-opus*)` deny to cap costs, `Read(file_path:~/.ssh/*)` deny to block credential reads.
+1. **Review your permission rules** — if you have existing `allow`/`deny` lists, consider whether `Tool(param:value)` rules could tighten them. Common win: `Agent(model:claude-opus*)` as a deny rule to cap subagent model costs. For blocking credential reads, use Read's own path specifier rather than the generic parameter form — `Read(~/.ssh/*)` as a deny rule, not `Read(file_path:~/.ssh/*)`, since `file_path` is Read's excluded primary content field (see [permissions reference](https://code.claude.com/docs/en/permissions)).
 
 2. **Audit nested .claude directories** — if your repo has subdirectories with `.claude/skills/`, verify the skill names are unique or decide on your qualified-name convention now (`frontend:deploy`, `backend:deploy`).
 
-3. **Test CI pipelines using nested skills** — if you call a nested skill by its qualified `<dir>:<name>` form in non-interactive mode, the prior bug that silently skipped it is now fixed. Test that the correct skill runs.
+3. **Test CI pipelines using nested skills** — if you call a nested skill by its qualified `<dir>:<name>` form in non-interactive mode, the prior bug that blocked it behind an unfulfillable permission prompt is now fixed. Test that the correct skill runs.
 
 4. **If you use auto mode in pipelines** — the subagent classifier gap fix is passive. No configuration change needed. But it is worth re-validating your permission rules now that spawn requests are also classified.
 

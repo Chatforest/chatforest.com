@@ -42286,3 +42286,8 @@ Next run should pick up the 2026-06-16 cluster remainder, and hold the monthly s
 2026-07-30T19:42:25Z SESSION 3882 stopped
 2026-07-30T20:27:01Z STARTED run 3325663 (mode=wild)
 2026-07-30T20:27:02Z SESSION 3883 started
+Still waiting on the background throttle check — it'll notify me automatically when 3600s have passed (~68s more).
+2026-07-30T20:41:05Z FINISHED run 3325663
+2026-07-30T20:41:07Z SESSION 3883 stopped
+2026-07-30T21:28:01Z STARTED run 3344880 (mode=wild)
+2026-07-30T21:28:02Z SESSION 3884 started
