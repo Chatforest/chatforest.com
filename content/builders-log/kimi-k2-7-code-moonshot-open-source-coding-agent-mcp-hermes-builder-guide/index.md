@@ -6,6 +6,7 @@ og_description: "Kimi K2.7-Code: 1T MoE, 32B active, 256K context, Modified MIT 
 content_type: "Builder's Log"
 categories: ["Open Source AI", "Coding Agents", "Developer Tools", "MCP"]
 tags: ["kimi", "moonshot-ai", "k2.7-code", "open-source", "coding-agent", "mcp", "hermes-agent", "mixture-of-experts", "tool-use", "mcpmark", "agentic-coding", "builder-guide", "hugging-face", "openai-compatible"]
+sources_audited: 2026-07-30
 ---
 
 On June 12, 2026, Moonshot AI [published the full weights for Kimi K2.7-Code on Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code). Two days later, it is already the [highest-scoring open-source model on MCPMark Verified](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) — the benchmark most directly relevant to builders wiring models into MCP tool-call workflows. It beats Claude Opus 4.8 there by more than four points.
@@ -16,7 +17,7 @@ That is a remarkable sentence. An open-weight model under a Modified MIT license
 
 ## What Kimi K2.7-Code Is
 
-Kimi K2.7-Code is a Mixture-of-Experts model from Moonshot AI, the Chinese AI lab that has been releasing the Kimi K-series since 2024. The architecture:
+Kimi K2.7-Code is a Mixture-of-Experts model from Moonshot AI, the Chinese AI lab behind the [Kimi chatbot (launched 2023)](https://en.wikipedia.org/wiki/Kimi_(chatbot)) and the numbered Kimi K-series of open-weight models that began with [Kimi K2 in July 2025](https://huggingface.co/moonshotai/Kimi-K2-Instruct). The [architecture](https://huggingface.co/moonshotai/Kimi-K2.7-Code):
 
 | Spec | Value |
 |---|---|
@@ -28,7 +29,7 @@ Kimi K2.7-Code is a Mixture-of-Experts model from Moonshot AI, the Chinese AI la
 | Release date | June 12, 2026 |
 | Hugging Face | Free weights, same day |
 
-"Modified MIT" here means standard MIT terms for most use cases — commercial use, modification, and distribution are permitted — with an attribution requirement for large-scale deployments. Moonshot's definition of "large-scale" is published in the license; read it before assuming unrestricted enterprise deployment.
+"Modified MIT" here means standard MIT terms for most use cases — commercial use, modification, and distribution are permitted — with an attribution requirement for large-scale deployments. The [license text](https://huggingface.co/moonshotai/Kimi-K2.7-Code/blob/main/LICENSE) specifies the threshold: products or services with more than 100 million monthly active users, or more than $20 million in monthly revenue, must prominently display "Kimi K2.7 Code" in the product's user interface. Read it before assuming unrestricted enterprise deployment.
 
 The architecture is the same MoE pattern Moonshot has used since K2.5: sparse activation where only 32B of the 1T parameters are active per forward pass. This keeps inference cost practical on commodity GPU clusters while the full 1T parameter count provides capacity for the model to have learned from.
 
@@ -38,7 +39,7 @@ The architecture is the same MoE pattern Moonshot has used since K2.5: sparse ac
 
 ### Vendor-reported gains over K2.6
 
-Moonshot reports the following improvements on its own benchmarks:
+Moonshot reports the following improvements on its own benchmarks (via its [Hugging Face model card](https://huggingface.co/moonshotai/Kimi-K2.7-Code) and [release coverage](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/)):
 
 | Benchmark | K2.6 | K2.7-Code | Change |
 |---|---|---|---|
@@ -51,7 +52,7 @@ These are Moonshot's own benchmarks. Treat them as directional, not definitive. 
 
 ### MCPMark Verified: the number that matters most here
 
-The more interesting datapoint is external. MCPMark Verified is an independent evaluation of models on MCP tool-call tasks — structured tool invocation, chained tool calls, error recovery when a tool returns unexpected output, and multi-step planning with tool state.
+The more interesting datapoint is external. [MCPMark](https://arxiv.org/abs/2509.24002) is a benchmark built by researchers at NUS, Shanghai Jiao Tong University, Fudan University, EvalSys, and LobeHub — independent of Moonshot — for stress-testing MCP tool use across real server environments (Notion, GitHub, filesystem, Postgres, Playwright). The benchmark design is independent; the 81.1%/76.4% scores below are Moonshot's own reported results on it, not a third-party-run leaderboard measurement, so treat the gap as directional rather than adjudicated.
 
 K2.7-Code scores **81.1%** on MCPMark Verified. Claude Opus 4.8 scores **76.4%**.
 
@@ -65,7 +66,7 @@ You have three options, each with a different cost/control tradeoff:
 
 ### 1. Kimi Platform API (managed, pay-per-token)
 
-Moonshot's hosted API is OpenAI-compatible.
+Moonshot's hosted API is OpenAI-compatible. [Pricing](https://huggingface.co/moonshotai/Kimi-K2.7-Code):
 
 - **Input:** $0.95 / million tokens
 - **Output:** $4.00 / million tokens
@@ -73,21 +74,20 @@ Moonshot's hosted API is OpenAI-compatible.
 - **Endpoint:** OpenAI-compatible (drop-in `base_url` replacement)
 - **Context:** 256K tokens available
 
-For comparison, Claude Opus 4.8 runs $15/$75 per million input/output. K2.7-Code API is roughly 16× cheaper on input and 19× cheaper on output. If you are running a coding workflow with high volume and the benchmark performance is close enough, that cost differential is significant.
+For comparison, [Claude Opus 4.8 runs $5/$25 per million input/output tokens](https://platform.claude.com/docs/en/about-claude/pricing) at standard rates. K2.7-Code API is roughly 5× cheaper on input and 6× cheaper on output. If you are running a coding workflow with high volume and the benchmark performance is close enough, that cost differential is significant.
 
 ### 2. Hugging Face weights (self-host, free)
 
-Full model weights were published to Hugging Face on June 12 alongside the release. The Modified MIT license permits self-hosting for commercial use. Running 1T parameters requires serious hardware — approximately 8× H100s at FP8 precision or 16× A100-80GBs. Smaller quantized versions (Q4, Q5) run on fewer GPUs at some quality cost; community quants are already appearing.
+Full model weights were published to [Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code) on June 12 alongside the release. The Modified MIT license permits self-hosting for commercial use. Running 1T parameters requires serious hardware: [deployment guides put FP8 weights at roughly 1TB](https://www.spheron.network/blog/deploy-kimi-k2-7-code-gpu-cloud/), fitting an 8×H200 node with headroom for KV cache, while the model's native INT4 quantization brings requirements down to as few as 2×A100-80GB. Community quants are already appearing.
 
 For teams with GPU budget but high token volume, self-hosting pays off quickly at these API prices.
 
 ### 3. Kimi Code CLI (integrated coding agent)
 
-Moonshot ships a command-line coding agent, Kimi Code CLI, that uses K2.7-Code as its backend. The CLI has:
+Moonshot ships a command-line coding agent, [Kimi Code CLI](https://github.com/MoonshotAI/kimi-cli), that can run against K2.7-Code via the Kimi API or a self-hosted endpoint. The CLI has:
 
-- MCP server connection support (connect your databases, issue trackers, internal tools)
-- Local file system access
-- Git integration
+- [MCP server connection support](https://github.com/MoonshotAI/kimi-cli) (connect your databases, issue trackers, internal tools) via `kimi mcp add`/`kimi mcp list`, or conversational `/mcp-config`
+- Local file system access — read and edit code, execute shell commands
 - Can be pointed at a self-hosted K2.7-Code instance for unlimited local usage
 
 If you want a fully self-contained coding agent without wiring together your own tool layer, Kimi Code CLI is the fastest path.
@@ -96,14 +96,14 @@ If you want a fully self-contained coding agent without wiring together your own
 
 ## Hermes Agent Integration
 
-Hermes Agent (from Nous Research) is an open-source agentic framework with a persistent memory layer and a self-improving skills system. It supports any OpenAI-compatible backend, which means K2.7-Code works as a drop-in.
+[Hermes Agent](https://github.com/nousresearch/hermes-agent) (from Nous Research) is an open-source agentic framework with a [persistent memory layer and a self-improving skills system](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory/) — it autonomously creates reusable "skill" documents from successful task trajectories and refines them in use. It works with ["Nous Portal, OpenRouter, OpenAI, or any [OpenAI-compatible] endpoint"](https://hermes-agent.nousresearch.com/docs/), which means K2.7-Code works as a drop-in backend.
 
 The combination:
 
 - **K2.7-Code** handles the coding intelligence and tool invocation
 - **Hermes Agent** adds a learning loop that builds skill memories from session outcomes and persists them across sessions — the agent gets better at your specific codebase and workflow over time
 
-Setup is straightforward: install Hermes Agent, set `base_url` to the Kimi platform endpoint (or your self-hosted instance), and pass your API key. Hermes Agent's three coding modes (focused, exploratory, and autonomous) map cleanly onto the kind of long-horizon tasks K2.7-Code is optimized for.
+Setup is straightforward: install Hermes Agent, point it at the Kimi platform endpoint (or your self-hosted instance), and pass your API key. Hermes Agent's [execution modes](https://hermes-agent.nousresearch.com/docs/) — one-shot queries, interactive sessions, and long-running background/worktree tasks for parallel autonomous work — map cleanly onto the kind of long-horizon tasks K2.7-Code is optimized for.
 
 ---
 
@@ -141,7 +141,7 @@ A few things worth calibrating:
 
 **Evaluate K2.7-Code now if:**
 - You are building on MCP and want to benchmark a leading open-source model against your current backend
-- Your coding agent workload is high-volume and the 16–19× cost difference vs. Opus is significant
+- Your coding agent workload is high-volume and the 5–6× cost difference vs. Opus 4.8 is significant
 - You have GPU infrastructure and want to evaluate self-hosting a frontier-class coding model
 - You are using Hermes Agent or a similar OpenAI-compatible framework and want to swap backends
 

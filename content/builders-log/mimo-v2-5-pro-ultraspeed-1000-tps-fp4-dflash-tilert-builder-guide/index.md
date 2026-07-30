@@ -3,31 +3,36 @@ title: "MiMo-V2.5-Pro-UltraSpeed: How Xiaomi and TileRT Hit 1000 Tokens Per Seco
 date: 2026-06-14
 description: "Xiaomi MiMo and TileRT stacked FP4 quantization, DFlash speculative decoding, and a co-designed inference runtime to push a trillion-parameter open-weight model past 1000 tokens per second on a single 8-GPU node. Here's the technical breakdown and the routing decision builders need to make."
 tags: ["inference", "open-source", "reasoning", "speed", "quantization", "speculative-decoding", "xiaomi", "agentic-coding", "builder-decision"]
+sources_audited: 2026-07-30
 ---
 
 On June 8, 2026, Xiaomi MiMo and inference startup TileRT published a result that shouldn't be possible
-with commodity hardware: a 1-trillion-parameter mixture-of-experts model generating over **1000 tokens per
-second** on a single 8-GPU node. The system is called **MiMo-V2.5-Pro-UltraSpeed**, the underlying
-weights are open on HuggingFace, and an API trial is open until **June 23, 2026**.
+with commodity hardware: a 1-trillion-parameter mixture-of-experts model generating over **[1000 tokens
+per second](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps)** on a [single 8-GPU
+node](https://www.marktechpost.com/2026/06/08/xiaomi-mimo-and-tilert-push-a-1-trillion-parameter-model-past-1000-tokens-per-second-on-commodity-gpus/).
+The system is called **MiMo-V2.5-Pro-UltraSpeed**, the underlying weights are open on
+[HuggingFace](https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash), and an API trial is open until
+**[June 23, 2026](https://mimo.mi.com/docs/en-US/news/latest/1000tps)**.
 
 ---
 
 ## What MiMo-V2.5-Pro-UltraSpeed actually is
 
-MiMo-V2.5-Pro is Xiaomi's open-source 1.02-trillion-parameter MoE reasoning model (1M-token context,
-native multimodality, released under permissive license). UltraSpeed is not a smaller model — it is the
-**same weights** run through a co-designed inference stack developed by TileRT that layers three
-independent speedups:
+MiMo-V2.5-Pro is Xiaomi's open-source [1.02-trillion-parameter (42B active) MoE reasoning
+model](https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro) with a [1M-token context and native
+multimodality](https://mimo.xiaomi.com/mimo-v2-5-pro), released under an MIT license. UltraSpeed is not a
+smaller model — it is the **same weights** run through a co-designed inference stack developed by TileRT
+that layers three independent speedups:
 
 | Speedup | Technique | Reported gain |
 |---|---|---|
-| Expert matrix throughput | FP4 (MXFP4) quantization with QAT | Cuts memory bandwidth per expert |
-| Decode throughput | DFlash speculative decoding | ~6× acceptance length on coding tasks |
-| Runtime overhead | TileRT persistent GPU kernels | Removes per-operator launch latency |
+| Expert matrix throughput | [FP4 (MXFP4) quantization with QAT](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) | Cuts memory bandwidth per expert |
+| Decode throughput | [DFlash speculative decoding](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) | ~6× acceptance length on coding tasks |
+| Runtime overhead | [TileRT persistent GPU kernels](https://github.com/tile-ai/TileRT) | Removes per-operator launch latency |
 
-The combined result: ~10× faster token generation than standard MiMo-V2.5-Pro at a cost of ~3× price
-premium per API call. Net economics flip positive the moment your workload is latency-bound rather than
-compute-bound.
+The combined result: [~10× faster token generation than standard MiMo-V2.5-Pro at a cost of ~3× price
+premium per API call](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps). Net economics flip positive the
+moment your workload is latency-bound rather than compute-bound.
 
 ---
 
@@ -38,15 +43,17 @@ compute-bound.
 MoE models spend most of their inference time in expert matmuls, which are bandwidth-bound: the compute
 is fast but the GPU spends more time waiting for weights to stream from HBM than it does multiplying.
 
-UltraSpeed quantizes expert matrices to FP4 using **quantization-aware training** (QAT) — the model saw
-FP4-rounded weights during post-training, so accuracy loss at the matrix level is absorbed by the
-optimizer rather than appearing at inference time as degraded reasoning. Critically, attention layers and
-MoE routers stay at higher precision; those paths are compute-bound and accuracy-sensitive, so FP4 would
-hurt them without helping.
+UltraSpeed [quantizes expert matrices to FP4 using **quantization-aware training**
+(QAT)](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) — the model saw FP4-rounded weights during
+post-training, so accuracy loss at the matrix level is absorbed by the optimizer rather than appearing at
+inference time as degraded reasoning. Critically, attention layers and MoE routers stay at higher
+precision; those paths are compute-bound and accuracy-sensitive, so FP4 would hurt them without helping.
 
-**Builder implication**: FP4 alone does not change correctness on coding and reasoning tasks. Xiaomi
-reports no measurable regression on SWE-bench or AIME versus the standard-precision checkpoint. The
-weights are on HuggingFace at
+**Builder implication**: FP4 alone does not change correctness on coding and reasoning tasks. Xiaomi's own
+comparison chart reports the FP4-quantized model's [overall capability as "essentially on par" with the
+full-precision checkpoint across its benchmark suite](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps)
+(Xiaomi does not break this comparison out by individual benchmark name). The weights are on HuggingFace
+at
 [XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash](https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash) if
 you want to run self-hosted.
 
@@ -61,7 +68,7 @@ target.
 draft step itself runs in parallel within a block rather than sequentially. This increases the
 draft-acceptance rate by giving the verifier more context per round.
 
-Reported acceptance lengths (block size 8):
+[Reported acceptance lengths](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) (block size 8):
 
 | Task type | Accepted tokens per verify round |
 |---|---|
@@ -79,10 +86,11 @@ The FP4 and DFlash improvements are compute-side. TileRT's contribution is elimi
 overhead**: the per-operator kernel-launch latency that accumulates across the hundreds of ops in a
 single forward pass.
 
-TileRT achieves this with persistent GPU kernels — kernels that stay resident in GPU registers across
-multiple inference calls rather than being launched and torn down each time. On a 1T MoE with short
-decode batches, this launch tax is large relative to useful work. Removing it amplifies both the FP4 and
-DFlash gains.
+[TileRT achieves this with persistent GPU kernels and warp-specialized
+pipelines](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) — kernels that stay resident across multiple
+inference calls rather than being launched and torn down each time. On a 1T MoE with short decode batches,
+this launch tax is large relative to useful work. Removing it amplifies both the FP4 and DFlash gains.
+[TileRT](https://github.com/tile-ai/TileRT) is a separate open-source project, not a Xiaomi product.
 
 ---
 
@@ -92,12 +100,11 @@ UltraSpeed preserves the base model's benchmark numbers. Key scores for MiMo-V2.
 
 | Benchmark | MiMo-V2.5-Pro | Context |
 |---|---|---|
-| SWE-bench Pro | **57.2%** | GPT-5.4: 57.7%; Claude Opus 4.6: 53.4% |
-| AIME 2025 | **41%** | Competition-level math |
-| GPQA | **54%** | PhD experts score 65–74% |
-| MATH | **75%** | — |
-| AI Index v4.0 | **54** (#8 / 144) | Artificial Analysis ranking |
-| Context window | **1M tokens** | — |
+| SWE-bench Pro | **[57.2%](https://www.buildfastwithai.com/blogs/xiaomi-mimo-v2-5-pro-review-2026)** | [GPT-5.4: 57.7%; Claude Opus 4.6: 53.4%](https://www.marktechpost.com/2026/04/22/xiaomi-releases-mimo-v2-5-pro-and-mimo-v2-5-matching-frontier-model-benchmarks-at-significantly-lower-token-cost/) |
+| AIME 2025 | **[41%](https://automatio.ai/models/mimo-v2-5-pro)** | Competition-level math |
+| GPQA | **[54%](https://automatio.ai/models/mimo-v2-5-pro)** | [PhD experts score 65–74%](https://arxiv.org/abs/2311.12022) |
+| MATH | **[75%](https://automatio.ai/models/mimo-v2-5-pro)** | — |
+| Context window | **[1M tokens](https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro)** | — |
 
 SWE-bench 57.2% puts MiMo-V2.5-Pro squarely in the top tier of open-weight coding models — ahead of
 Claude Opus 4.6 on that specific benchmark, and within 0.5 points of GPT-5.4.
@@ -110,11 +117,13 @@ Approximate rates (based on reported 3× premium over standard MiMo-V2.5-Pro API
 
 | Variant | Speed | Relative cost |
 |---|---|---|
-| MiMo-V2.5-Pro (standard) | ~100 tps | 1× |
-| MiMo-V2.5-Pro-UltraSpeed | ~1000–1200 tps | ~3× |
+| MiMo-V2.5-Pro (standard) | ~100 tps (approximate, derived from the ~10× figure below) | 1× |
+| MiMo-V2.5-Pro-UltraSpeed | **[~1000–1200 tps](https://automatio.ai/models/mimo-v2-5-pro)** | ~3× |
 
-Comparison reference: Decrypt reported UltraSpeed running ~15× faster than standard ChatGPT and Claude
-API decode speeds under comparable load.
+Comparison reference: [Decrypt reported](https://decrypt.co/370449/xiaomi-mimo-ultraspeed-ai-model-faster-chatgpt-claude)
+UltraSpeed running roughly 15× faster than Artificial Analysis-tracked decode speeds for GPT-5.5 (~68 tps)
+and Claude Opus 4.6 (~71 tps) — Decrypt cited these as published throughput figures but did not state
+whether hardware or load conditions were matched across the comparison.
 
 ---
 
@@ -147,19 +156,21 @@ the economics of an **entire workload class**.
 
 ## Access
 
-**API trial** (June 9–23, 2026 — ends in nine days):
+**API trial** ([June 9–23, 2026](https://mimo.mi.com/docs/en-US/news/latest/1000tps) — ends in nine days):
 - Access via Xiaomi MiMo's developer portal
 - Priced at 3× the standard MiMo-V2.5-Pro rate
-- Single 8-GPU node; throughput scales per-request not per-session
+- Runs on a single 8-GPU commodity node
 
 **Self-hosted**:
-- Weights: `XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash` on HuggingFace
-- Requires TileRT runtime; TileRT is separately available for enterprise deployment
-- Hardware floor: 8× H100 or H200 (or commodity equivalent with HBM3)
+- Weights: [`XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash`](https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash) on HuggingFace
+- Requires the [TileRT runtime](https://github.com/tile-ai/TileRT); TileRT has open-sourced select modules
+  on GitHub, with a fuller runtime reportedly available for enterprise deployment
+- Hardware: a single 8-GPU commodity node — Xiaomi has not disclosed the specific GPU model used in its
+  demos
 
 **Standard MiMo-V2.5-Pro** (for comparison / async workloads):
-- Available on OpenRouter at `xiaomi/mimo-v2.5-pro`
-- Hugging Face standard checkpoint: `XiaomiMiMo/MiMo-V2.5-Pro`
+- Available on [OpenRouter](https://openrouter.ai/xiaomi/mimo-v2.5-pro) at `xiaomi/mimo-v2.5-pro`
+- Hugging Face standard checkpoint: [`XiaomiMiMo/MiMo-V2.5-Pro`](https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro)
 
 ---
 
