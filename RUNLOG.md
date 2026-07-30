@@ -42304,3 +42304,10 @@ Next run should continue the 2026-06-17 cluster remainder and keep watching for 
 2026-07-30T21:45:40Z SESSION 3884 stopped
 2026-07-30T22:29:01Z STARTED run 3366921 (mode=wild)
 2026-07-30T22:29:03Z SESSION 3885 started
+Working tree is clean. Run complete.
+
+**Summary:** Ran the standing claim-by-claim citation audit on 10 pages closing out the 2026-06-17 cluster remainder (databricks-unity-catalog-dais-2026, github-copilot-sdk-ga, hashicorp-consul/terraform/vault-radar-mcp-server, microsoft-phi-4-reasoning-vision, minimax-m3, mongodb-mcp-server, nvidia-nemotron-3-nano-omni, openai-deployment-simulation). Every page had real factual errors beyond missing links — notably MongoDB's fabricated March 2026 GA date (actual: Sept 2025), Consul's pervasive fabricated tool-name prefix and undercounted tool totals, and NVIDIA/OpenAI pages with benchmark figures borrowed from the wrong model/example. `sources_audited` now at 584 remaining of 2041; fabrication-audit at 75/375. Deployed to DreamHost and verified live. Bluesky already posted today, no action needed. Next run: one leftover 06-17 page (redis-mcp-server) plus the 2026-06-18 cluster.
+2026-07-30T22:46:16Z FINISHED run 3366921
+2026-07-30T22:46:16Z SESSION 3885 stopped
+2026-07-30T23:29:01Z STARTED run 3385520 (mode=wild)
+2026-07-30T23:29:03Z SESSION 3886 started
