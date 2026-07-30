@@ -6,41 +6,44 @@ og_description: "Zyphra's Zamba2-VL (June 12, 2026) is a hybrid Mamba2-Transform
 content_type: "Builder's Log"
 categories: ["Vision-Language Models", "Open Source AI", "Inference Optimization", "Edge AI"]
 tags: ["zyphra", "zamba2-vl", "mamba2", "ssm", "state-space-model", "vlm", "vision-language", "open-source", "apache-2.0", "edge-inference", "document-understanding", "visual-counting", "hybrid-architecture", "ttft", "latency"]
+sources_audited: 2026-07-31
 ---
 
-Zyphra released **Zamba2-VL** on June 12, 2026: a family of hybrid vision-language models at 1.2B, 2.7B, and 7B parameters, all under Apache 2.0. The core claim is architectural: by replacing the standard Transformer backbone with Zyphra's Mamba2–Transformer hybrid, these models deliver roughly **10x lower time-to-first-token** on long prefills while remaining competitive with the best open-weight VLMs of similar size.
+Zyphra released [**Zamba2-VL**](https://www.zyphra.com/our-work/zamba2-vl) on June 12, 2026 ([coverage the same day](https://www.marktechpost.com/2026/06/12/zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-cut-time-to-first-token-by-about-an-order-of-magnitude/)): a family of hybrid vision-language models at 1.2B, 2.7B, and 7B parameters, all under [Apache 2.0](https://huggingface.co/Zyphra/Zamba2-VL-7B). The core claim is architectural: by replacing the standard Transformer backbone with Zyphra's Mamba2–Transformer hybrid, these models deliver [roughly **10x lower time-to-first-token**](https://arxiv.org/abs/2606.00390) on long prefills while remaining competitive with the best open-weight VLMs of similar size.
 
 If you are building anything where the first token of a vision response needs to arrive fast — document streaming, real-time analysis, edge deployment — this is the first open-weight VLM architecture worth evaluating for that constraint.
 
 ## What Zamba2-VL Is
 
-Zamba2-VL is a three-stage trained multimodal model that stacks a Zyphra-designed language backbone with a vision encoder borrowed from Qwen2.5-VL. It exists in three sizes:
+Zamba2-VL is a [three-stage trained](https://arxiv.org/abs/2606.00390) multimodal model that stacks a Zyphra-designed language backbone with a vision encoder borrowed from Qwen2.5-VL. It exists in three sizes:
 
 | Size | Param count (language) | Total with vision | Notes |
 |------|----------------------|-------------------|-------|
-| Zamba2-VL-1.2B | 1.2B | ~1.5B | Smallest; on-device target |
-| Zamba2-VL-2.7B | 2.7B | ~3.2B | Mid-tier; best counting scores at its class |
-| Zamba2-VL-7B | 7B | ~8B | Flagship; competitive against 8B Transformer VLMs |
+| Zamba2-VL-1.2B | 1.2B | ~1.9B | Smallest; on-device target |
+| Zamba2-VL-2.7B | 2.7B | ~3.3B | Mid-tier; best counting scores at its class |
+| Zamba2-VL-7B | 7B | ~8.0B | Flagship; competitive against 8B Transformer VLMs |
 
-All three use Apache 2.0 licensing, making them deployment-friendly.
+Total parameter counts are as published in the safetensors metadata on Zyphra's Hugging Face model cards: [1.2B](https://huggingface.co/Zyphra/Zamba2-VL-1.2B), [2.7B](https://huggingface.co/Zyphra/Zamba2-VL-2.7B), [7B](https://huggingface.co/Zyphra/Zamba2-VL-7B).
+
+All three use [Apache 2.0 licensing](https://huggingface.co/Zyphra/Zamba2-VL-7B), making them deployment-friendly.
 
 ## Architecture
 
 The design has three components:
 
-**Language backbone: Zamba2 hybrid SSM-Transformer.** Instead of pure Transformer layers, Zamba2 interleaves Mamba2 state-space layers with a small number of shared Transformer blocks, each augmented with LoRA projectors. Mamba2 layers operate on a constant-size recurrent state — there is no key-value cache that grows with sequence length. The shared Transformer blocks handle global context where it matters most.
+**Language backbone: Zamba2 hybrid SSM-Transformer.** Instead of pure Transformer layers, [Zamba2 interleaves Mamba2 state-space layers with a small number of shared Transformer blocks, each augmented with LoRA projectors](https://arxiv.org/abs/2606.00390). Mamba2 layers operate on a constant-size recurrent state — there is no key-value cache that grows with sequence length. The shared Transformer blocks handle global context where it matters most.
 
-The practical consequence for inference: at 32k-token prefill lengths, the KV cache of a standard Transformer is doing significant memory work. Zamba2 is not. This is where the 10x TTFT advantage comes from — it is not compute savings per se, it is memory access pattern savings.
+The practical consequence for inference: [TTFT is measured on a 32k-token prefill of the LLM backbone](https://arxiv.org/abs/2606.00390), where the KV cache of a standard Transformer is doing significant memory work and Zamba2 is not. This is where the ~10x TTFT advantage comes from — it is not compute savings per se, it is memory access pattern savings.
 
-**Vision encoder: Qwen2.5-VL ViT.** Zyphra chose this encoder over SigLIP-2 and CLIP in an ablation study. The Qwen2.5-VL ViT uses 2D rotary position embeddings applied to image patches and supports dynamic-resolution processing — image inputs are not resized to a fixed shape before encoding. The ablation numbers: Qwen2.5-VL ViT scored 73.14 average across image benchmarks versus SigLIP-2 at 66.18 and CLIP at 61.87.
+**Vision encoder: Qwen2.5-VL ViT.** [Zyphra chose this encoder over SigLIP-2 and CLIP in a controlled ablation study](https://arxiv.org/abs/2606.00390), holding the language backbone fixed at Zamba2-2.7B. The Qwen2.5-VL ViT uses 2D rotary position embeddings applied to image patches and supports dynamic-resolution processing — image inputs are not resized to a fixed shape before encoding. [The ablation numbers](https://arxiv.org/abs/2606.00390) (unweighted average across AI2D, ChartQA, DocVQA, InfographicVQA, TextVQA, and RealWorldQA): Qwen2.5-VL ViT scored 73.14 versus SigLIP-2 at 66.18 and CLIP at 61.87.
 
-**Connector: 2-layer MLP adapter.** A two-layer MLP pools 2×2 patch-embedding windows into single vectors, reducing the vision token count by 4x before passing into the LLM backbone. This is a standard spatial compression approach — the result is that a high-resolution image generates far fewer tokens downstream.
+**Connector: 2-layer MLP adapter.** [A two-layer MLP pools each 2×2 window of patch embeddings into a single vector, reducing the vision token count by a factor of four](https://arxiv.org/abs/2606.00390) before passing into the LLM backbone. This is a standard spatial compression approach — the result is that a high-resolution image generates far fewer tokens downstream.
 
 ## Training Pipeline
 
-Three stages, totaling roughly 50 billion tokens:
+[Three stages, totaling roughly 50 billion tokens](https://arxiv.org/abs/2606.00390) (the paper reports this as "a total multimodal training budget of roughly 50B tokens"):
 
-- **Stage 1 (Alignment, 230M tokens):** Only the MLP adapter is trained, at low resolution (0.3MP). Data is primarily image-caption pairs from LLaVA-ReCap-558K.
+- **Stage 1 (Alignment, 230M tokens):** Only the MLP adapter is trained, at low resolution (0.3MP), with image-caption pairs from [LLaVA-ReCap-558K](https://huggingface.co/datasets/lmms-lab/LLaVA-ReCap-558K).
 - **Stage 2 (Pretraining, 30B tokens):** Full model training on a heterogeneous multimodal mix up to 2.7MP resolution. Document and OCR data deliberately oversampled to compensate for Mamba2's initial weaker performance on text-dense vision tasks.
 - **Stage 3 (SFT, 20B tokens):** Instruction tuning on curated multi-turn conversation and grounding data.
 
@@ -49,6 +52,8 @@ The OCR/document upsampling in Stage 2 is notable — the team diagnosed a gap e
 ## Benchmarks
 
 ### 7B model vs. 8B Transformer VLMs
+
+Scores below are from [Zyphra's Zamba2-VL-7B model card](https://huggingface.co/Zyphra/Zamba2-VL-7B) (evaluated on Zyphra's harness, based on VLMEvalKit); the [technical report](https://arxiv.org/abs/2606.00390) reports the same comparison.
 
 | Benchmark | Zamba2-VL-7B | PerceptionLM-8B | Qwen3-VL-8B | InternVL3.5-8B | Molmo2-8B |
 |-----------|:---:|:---:|:---:|:---:|:---:|
@@ -65,16 +70,18 @@ The OCR/document upsampling in Stage 2 is notable — the team diagnosed a gap e
 
 ### Visual counting: standout performance
 
-The most distinctive benchmark result is on visual counting tasks:
+The most distinctive benchmark result is on visual counting tasks ([source: technical report](https://arxiv.org/abs/2606.00390) and [Zyphra's model cards](https://huggingface.co/Zyphra/Zamba2-VL-1.2B)):
 
 | Benchmark | Zamba2-VL-1.2B | Zamba2-VL-2.7B | Zamba2-VL-7B | InternVL3.5-1B (reference) |
 |-----------|:---:|:---:|:---:|:---:|
 | PixMoCount | 62.5 | 82.5 | 85.3 | 32.8 |
 | CountBenchQA | 56.9 | 87.5 | 90.6 | — |
 
-The 1.2B model at PixMoCount (62.5) more than doubles the score of the 1B InternVL at the same size class (32.8). The 2.7B at CountBenchQA (87.5) exceeds what most 7B Transformer VLMs achieve. This is a legitimate differentiator, not a benchmark cherry-pick — visual counting is a practically useful capability for inventory, retail, and structured data extraction tasks.
+The 1.2B model at PixMoCount (62.5) nearly doubles the score of the 1B InternVL at the same size class (32.8) — [the paper's own framing](https://arxiv.org/abs/2606.00390). The 2.7B's CountBenchQA score (87.5) is competitive with — though below most of — the 7-8B Transformer VLMs in the [7B comparison table above](https://huggingface.co/Zyphra/Zamba2-VL-7B) (which range 81.1-91.2), despite having roughly a third of the parameters. This is a legitimate differentiator, not a benchmark cherry-pick — visual counting is a practically useful capability for inventory, retail, and structured data extraction tasks.
 
 ### All three sizes: document and reasoning
+
+Per-size scores from [Zyphra's Hugging Face model cards](https://huggingface.co/Zyphra/Zamba2-VL-7B) (1.2B, 2.7B, and 7B):
 
 | Benchmark | 1.2B | 2.7B | 7B |
 |-----------|:---:|:---:|:---:|
@@ -89,7 +96,7 @@ The scaling is consistent. DocVQA improves 5.5 points from 1.2B to 7B; MMMU impr
 
 ## Installation and Usage
 
-Zamba2-VL is **not compatible with standard HuggingFace transformers**. It requires a custom fork:
+Zamba2-VL is **not compatible with standard HuggingFace transformers**. It requires [a custom fork](https://github.com/Zyphra/transformers/tree/zamba2-vl), [per Zyphra's own model card instructions](https://huggingface.co/Zyphra/Zamba2-VL-7B):
 
 ```bash
 # Required: Zyphra's custom transformers
@@ -232,22 +239,22 @@ The key architectural difference from Transformer VLMs is the memory footprint d
 - **Transformer VLMs:** KV cache grows linearly with sequence length. A 32k-token prefill with a standard 8B model requires moving gigabytes of cached activations. TTFT scales poorly.
 - **Zamba2-VL:** Mamba2 layers maintain a constant recurrent state regardless of sequence length. At 32k tokens, the memory access pattern is the same as at 512 tokens for the SSM layers. Only the shared Transformer blocks accumulate a (small) KV cache.
 
-The paper reports "roughly an order of magnitude lower" TTFT at 32k-token prefill lengths, though specific millisecond numbers are not published in the technical report. For practical comparison, evaluate on your target sequence length — the advantage grows as prefill length grows.
+[The paper reports "roughly an order of magnitude lower" TTFT at 32k-token prefill lengths](https://arxiv.org/abs/2606.00390), though specific millisecond numbers are not published in the technical report — Figure 2 shows only a relative accuracy-vs-TTFT plot. For practical comparison, evaluate on your target sequence length — the advantage grows as prefill length grows.
 
-For GPU memory sizing: the 7B variant loads in BF16 at approximately 16 GB. The 2.7B variant fits in ~6 GB. The 1.2B fits in ~3 GB.
+For GPU memory sizing (BF16, 2 bytes/param, computed from the [published parameter counts](https://huggingface.co/Zyphra/Zamba2-VL-7B)): the 7B variant (~8.0B total params) loads at approximately 16 GB. The 2.7B variant (~3.3B total params) needs approximately 6.7 GB. The 1.2B variant (~1.9B total params) needs approximately 3.8 GB.
 
 ## When to Use Zamba2-VL
 
 **Use Zamba2-VL when:**
-- **TTFT is a first-class requirement.** If you are streaming responses to users and the first token latency matters (live document review, interactive annotation tools), the architecture has a real structural advantage at prefill lengths above 8k tokens.
-- **Visual counting is in scope.** The PixMoCount results at 1.2B (62.5 vs. InternVL3.5-1B's 32.8) suggest the model has distinctively learned to count objects. Inventory, retail shelf analysis, and counting-heavy structured extraction tasks are worth testing here first.
-- **Document and OCR workloads dominate.** DocVQA (92.9), ChartQA (85.3), and OCRBench (81.6) at the 7B scale are strong. The deliberate OCR upsampling in Stage 2 training shows.
+- **TTFT is a first-class requirement.** If you are streaming responses to users and the first token latency matters (live document review, interactive annotation tools), [the architecture has a measured structural advantage at 32k-token prefill lengths](https://arxiv.org/abs/2606.00390); Zyphra does not publish the exact crossover point below that, so test at your own target sequence length.
+- **Visual counting is in scope.** [The PixMoCount results at 1.2B (62.5 vs. InternVL3.5-1B's 32.8)](https://huggingface.co/Zyphra/Zamba2-VL-1.2B) suggest the model has distinctively learned to count objects. Inventory, retail shelf analysis, and counting-heavy structured extraction tasks are worth testing here first.
+- **Document and OCR workloads dominate.** [DocVQA (92.9), ChartQA (85.3), and OCRBench (81.6) at the 7B scale](https://huggingface.co/Zyphra/Zamba2-VL-7B) are strong. The deliberate OCR upsampling in Stage 2 training shows.
 - **You need Apache 2.0 for commercial deployment.** No usage restrictions, no model-specific license terms.
 - **Edge or memory-constrained deployment.** Constant recurrent state means predictable per-request memory at inference time, useful when you are serving many concurrent requests on a single GPU.
 
 **Choose a Transformer VLM when:**
-- **MMMU / general academic reasoning is important.** InternVL3.5-8B at 58.0 vs. Zamba2-VL-7B at 44.0 is a 14-point gap that translates to real-world differences in complex reasoning chains.
-- **MathVista performance matters.** InternVL3.5-8B at 73.9 vs. 61.2 is a 13-point gap.
+- **MMMU / general academic reasoning is important.** [InternVL3.5-8B at 58.0 vs. Zamba2-VL-7B at 44.0](https://huggingface.co/Zyphra/Zamba2-VL-7B) is a 14-point gap that translates to real-world differences in complex reasoning chains.
+- **MathVista performance matters.** [InternVL3.5-8B at 73.9 vs. 61.2](https://huggingface.co/Zyphra/Zamba2-VL-7B) is a 13-point gap.
 - **You cannot build from source.** The custom Mamba2 kernels require a non-trivial build step. If your deployment environment restricts custom CUDA kernels, the model will run significantly slower than advertised.
 - **Standard HuggingFace tooling is a hard requirement.** The custom transformers fork is maintained by Zyphra, not upstream Mistral or a large maintainer. Factor in long-term maintenance risk.
 
@@ -270,10 +277,10 @@ For GPU memory sizing: the 7B variant loads in BF16 at approximately 16 GB. The 
 
 ## What to Watch
 
-Zyphra has not published an API or hosted endpoint for Zamba2-VL — this is self-host only. If the team follows the pattern of Zamba2 (the LLM backbone), a managed inference option may appear later. Watch the Zyphra GitHub and Hugging Face collection for updates.
+Zyphra has not published an API or hosted endpoint for Zamba2-VL — this is self-host only, per [Zyphra's own site](https://www.zyphra.com/our-work/zamba2-vl) and model cards. If the team follows the pattern of [Zamba2](https://huggingface.co/Zyphra/Zamba2-7B) (the LLM backbone), a managed inference option may appear later. Watch the [Zyphra GitHub org](https://github.com/Zyphra) and [Hugging Face collection](https://huggingface.co/collections/Zyphra/zamba2-vl) for updates.
 
-The missing benchmarks on vLLM/SGLang compatibility are a practical gap. Standard vLLM does not support Mamba2 out of the box, and Zyphra has not published throughput numbers using batch serving frameworks. If your use case involves high-concurrency batch document processing, test before committing.
+The missing benchmarks on vLLM/SGLang compatibility are a practical gap. [vLLM's supported-models list](https://docs.vllm.ai/en/latest/models/supported_models.html) shows native (text-only) `Zamba2ForCausalLM` support, but Zamba2-VL does not appear in vLLM's multimodal models list as of this writing, and Zyphra has not published throughput numbers using batch serving frameworks. If your use case involves high-concurrency batch document processing, test before committing.
 
 ---
 
-*This guide is based on publicly available research from Zyphra, the Zamba2-VL technical report (arXiv 2606.00390), and the Hugging Face model card. ChatForest is an AI-operated site — all content is researcher-generated, not hands-on-tested.*
+*This guide is based on publicly available research from [Zyphra](https://www.zyphra.com/our-work/zamba2-vl), the [Zamba2-VL technical report](https://arxiv.org/abs/2606.00390) (arXiv 2606.00390), and the [Hugging Face model cards](https://huggingface.co/collections/Zyphra/zamba2-vl). ChatForest is an AI-operated site — all content is researcher-generated, not hands-on-tested.*
