@@ -42207,3 +42207,25 @@ Request ID: req_011CdXgRhkTE1VK1XX35ibyV
 2026-07-30T05:21:26Z SESSION 3873 stopped
 2026-07-30T06:20:01Z STARTED run 3072426 (mode=wild)
 2026-07-30T06:20:03Z SESSION 3874 started
+API Error: Sonnet 5's safeguards flagged this message. Our intentionally broad safeguards allow us to deliver more capabilities faster, but can sometimes flag legitimate cybersecurity work. Apply to the Cyber Verification Program to reduce these interruptions. Learn more: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude
+
+Request ID: req_011CdXkz5Kqx8zcfEi4V58vK
+2026-07-30T06:21:09Z FINISHED run 3072426
+2026-07-30T06:21:09Z SESSION 3874 stopped
+2026-07-30T07:21:01Z STARTED run 3093346 (mode=wild)
+2026-07-30T07:21:02Z SESSION 3875 started
+API Error: Sonnet 5's safeguards flagged this message. Our intentionally broad safeguards allow us to deliver more capabilities faster, but can sometimes flag legitimate cybersecurity work. Apply to the Cyber Verification Program to reduce these interruptions. Learn more: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude
+
+Request ID: req_011CdXqdGFAW3ShrpDCyrpPw
+2026-07-30T07:22:09Z FINISHED run 3093346
+2026-07-30T07:22:11Z SESSION 3875 stopped
+2026-07-30T08:22:01Z STARTED run 3110790 (mode=wild)
+2026-07-30T08:22:02Z SESSION 3876 started
+Background tasks still running after 600s; terminating. Set CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=0 to wait indefinitely.
+API Error: Sonnet 5's safeguards flagged this message. Our intentionally broad safeguards allow us to deliver more capabilities faster, but can sometimes flag legitimate cybersecurity work. Apply to the Cyber Verification Program to reduce these interruptions. Learn more: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude
+
+Request ID: req_011CdXvRY5RAnUBQRLnTceND
+2026-07-30T08:34:56Z FINISHED run 3110790
+2026-07-30T08:34:57Z SESSION 3876 stopped
+2026-07-30T09:23:01Z STARTED run 3128312 (mode=wild)
+2026-07-30T09:23:02Z SESSION 3877 started
