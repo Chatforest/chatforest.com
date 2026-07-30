@@ -67,15 +67,19 @@
 
       <div class="article-body">
         <p>On June 8, 2026, Xiaomi MiMo and inference startup TileRT published a result that shouldn&rsquo;t be possible
-with commodity hardware: a 1-trillion-parameter mixture-of-experts model generating over <strong>1000 tokens per
-second</strong> on a single 8-GPU node. The system is called <strong>MiMo-V2.5-Pro-UltraSpeed</strong>, the underlying
-weights are open on HuggingFace, and an API trial is open until <strong>June 23, 2026</strong>.</p>
+with commodity hardware: a 1-trillion-parameter mixture-of-experts model generating over <strong><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">1000 tokens
+per second</a></strong> on a <a href="https://www.marktechpost.com/2026/06/08/xiaomi-mimo-and-tilert-push-a-1-trillion-parameter-model-past-1000-tokens-per-second-on-commodity-gpus/">single 8-GPU
+node</a>.
+The system is called <strong>MiMo-V2.5-Pro-UltraSpeed</strong>, the underlying weights are open on
+<a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash">HuggingFace</a>, and an API trial is open until
+<strong><a href="https://mimo.mi.com/docs/en-US/news/latest/1000tps">June 23, 2026</a></strong>.</p>
 <hr>
 <h2 id="what-mimo-v25-pro-ultraspeed-actually-is">What MiMo-V2.5-Pro-UltraSpeed actually is</h2>
-<p>MiMo-V2.5-Pro is Xiaomi&rsquo;s open-source 1.02-trillion-parameter MoE reasoning model (1M-token context,
-native multimodality, released under permissive license). UltraSpeed is not a smaller model — it is the
-<strong>same weights</strong> run through a co-designed inference stack developed by TileRT that layers three
-independent speedups:</p>
+<p>MiMo-V2.5-Pro is Xiaomi&rsquo;s open-source <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro">1.02-trillion-parameter (42B active) MoE reasoning
+model</a> with a <a href="https://mimo.xiaomi.com/mimo-v2-5-pro">1M-token context and native
+multimodality</a>, released under an MIT license. UltraSpeed is not a
+smaller model — it is the <strong>same weights</strong> run through a co-designed inference stack developed by TileRT
+that layers three independent speedups:</p>
 <table>
 <thead>
 <tr>
@@ -87,37 +91,39 @@ independent speedups:</p>
 <tbody>
 <tr>
 <td>Expert matrix throughput</td>
-<td>FP4 (MXFP4) quantization with QAT</td>
+<td><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">FP4 (MXFP4) quantization with QAT</a></td>
 <td>Cuts memory bandwidth per expert</td>
 </tr>
 <tr>
 <td>Decode throughput</td>
-<td>DFlash speculative decoding</td>
+<td><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">DFlash speculative decoding</a></td>
 <td>~6× acceptance length on coding tasks</td>
 </tr>
 <tr>
 <td>Runtime overhead</td>
-<td>TileRT persistent GPU kernels</td>
+<td><a href="https://github.com/tile-ai/TileRT">TileRT persistent GPU kernels</a></td>
 <td>Removes per-operator launch latency</td>
 </tr>
 </tbody>
 </table>
-<p>The combined result: ~10× faster token generation than standard MiMo-V2.5-Pro at a cost of ~3× price
-premium per API call. Net economics flip positive the moment your workload is latency-bound rather than
-compute-bound.</p>
+<p>The combined result: <a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">~10× faster token generation than standard MiMo-V2.5-Pro at a cost of ~3× price
+premium per API call</a>. Net economics flip positive the
+moment your workload is latency-bound rather than compute-bound.</p>
 <hr>
 <h2 id="three-layer-technical-breakdown">Three-layer technical breakdown</h2>
 <h3 id="layer-1-fp4-expert-quantization-mxfp4">Layer 1: FP4 expert quantization (MXFP4)</h3>
 <p>MoE models spend most of their inference time in expert matmuls, which are bandwidth-bound: the compute
 is fast but the GPU spends more time waiting for weights to stream from HBM than it does multiplying.</p>
-<p>UltraSpeed quantizes expert matrices to FP4 using <strong>quantization-aware training</strong> (QAT) — the model saw
-FP4-rounded weights during post-training, so accuracy loss at the matrix level is absorbed by the
-optimizer rather than appearing at inference time as degraded reasoning. Critically, attention layers and
-MoE routers stay at higher precision; those paths are compute-bound and accuracy-sensitive, so FP4 would
-hurt them without helping.</p>
-<p><strong>Builder implication</strong>: FP4 alone does not change correctness on coding and reasoning tasks. Xiaomi
-reports no measurable regression on SWE-bench or AIME versus the standard-precision checkpoint. The
-weights are on HuggingFace at
+<p>UltraSpeed <a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">quantizes expert matrices to FP4 using <strong>quantization-aware training</strong>
+(QAT)</a> — the model saw FP4-rounded weights during
+post-training, so accuracy loss at the matrix level is absorbed by the optimizer rather than appearing at
+inference time as degraded reasoning. Critically, attention layers and MoE routers stay at higher
+precision; those paths are compute-bound and accuracy-sensitive, so FP4 would hurt them without helping.</p>
+<p><strong>Builder implication</strong>: FP4 alone does not change correctness on coding and reasoning tasks. Xiaomi&rsquo;s own
+comparison chart reports the FP4-quantized model&rsquo;s <a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">overall capability as &ldquo;essentially on par&rdquo; with the
+full-precision checkpoint across its benchmark suite</a>
+(Xiaomi does not break this comparison out by individual benchmark name). The weights are on HuggingFace
+at
 <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash">XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash</a> if
 you want to run self-hosted.</p>
 <h3 id="layer-2-dflash-speculative-decoding">Layer 2: DFlash speculative decoding</h3>
@@ -128,7 +134,7 @@ target.</p>
 <p><strong>DFlash</strong> replaces serial draft-token generation with <strong>block-level masked parallel drafting</strong> — the
 draft step itself runs in parallel within a block rather than sequentially. This increases the
 draft-acceptance rate by giving the verifier more context per round.</p>
-<p>Reported acceptance lengths (block size 8):</p>
+<p><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">Reported acceptance lengths</a> (block size 8):</p>
 <table>
 <thead>
 <tr>
@@ -158,10 +164,11 @@ predictable by the draft step.</p>
 <p>The FP4 and DFlash improvements are compute-side. TileRT&rsquo;s contribution is eliminating <strong>runtime
 overhead</strong>: the per-operator kernel-launch latency that accumulates across the hundreds of ops in a
 single forward pass.</p>
-<p>TileRT achieves this with persistent GPU kernels — kernels that stay resident in GPU registers across
-multiple inference calls rather than being launched and torn down each time. On a 1T MoE with short
-decode batches, this launch tax is large relative to useful work. Removing it amplifies both the FP4 and
-DFlash gains.</p>
+<p><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps">TileRT achieves this with persistent GPU kernels and warp-specialized
+pipelines</a> — kernels that stay resident across multiple
+inference calls rather than being launched and torn down each time. On a 1T MoE with short decode batches,
+this launch tax is large relative to useful work. Removing it amplifies both the FP4 and DFlash gains.
+<a href="https://github.com/tile-ai/TileRT">TileRT</a> is a separate open-source project, not a Xiaomi product.</p>
 <hr>
 <h2 id="mimo-v25-pro-base-benchmarks">MiMo-V2.5-Pro base benchmarks</h2>
 <p>UltraSpeed preserves the base model&rsquo;s benchmark numbers. Key scores for MiMo-V2.5-Pro:</p>
@@ -176,32 +183,27 @@ DFlash gains.</p>
 <tbody>
 <tr>
 <td>SWE-bench Pro</td>
-<td><strong>57.2%</strong></td>
-<td>GPT-5.4: 57.7%; Claude Opus 4.6: 53.4%</td>
+<td><strong><a href="https://www.buildfastwithai.com/blogs/xiaomi-mimo-v2-5-pro-review-2026">57.2%</a></strong></td>
+<td><a href="https://www.marktechpost.com/2026/04/22/xiaomi-releases-mimo-v2-5-pro-and-mimo-v2-5-matching-frontier-model-benchmarks-at-significantly-lower-token-cost/">GPT-5.4: 57.7%; Claude Opus 4.6: 53.4%</a></td>
 </tr>
 <tr>
 <td>AIME 2025</td>
-<td><strong>41%</strong></td>
+<td><strong><a href="https://automatio.ai/models/mimo-v2-5-pro">41%</a></strong></td>
 <td>Competition-level math</td>
 </tr>
 <tr>
 <td>GPQA</td>
-<td><strong>54%</strong></td>
-<td>PhD experts score 65–74%</td>
+<td><strong><a href="https://automatio.ai/models/mimo-v2-5-pro">54%</a></strong></td>
+<td><a href="https://arxiv.org/abs/2311.12022">PhD experts score 65–74%</a></td>
 </tr>
 <tr>
 <td>MATH</td>
-<td><strong>75%</strong></td>
+<td><strong><a href="https://automatio.ai/models/mimo-v2-5-pro">75%</a></strong></td>
 <td>—</td>
 </tr>
 <tr>
-<td>AI Index v4.0</td>
-<td><strong>54</strong> (#8 / 144)</td>
-<td>Artificial Analysis ranking</td>
-</tr>
-<tr>
 <td>Context window</td>
-<td><strong>1M tokens</strong></td>
+<td><strong><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro">1M tokens</a></strong></td>
 <td>—</td>
 </tr>
 </tbody>
@@ -222,18 +224,20 @@ Claude Opus 4.6 on that specific benchmark, and within 0.5 points of GPT-5.4.</p
 <tbody>
 <tr>
 <td>MiMo-V2.5-Pro (standard)</td>
-<td>~100 tps</td>
+<td>~100 tps (approximate, derived from the ~10× figure below)</td>
 <td>1×</td>
 </tr>
 <tr>
 <td>MiMo-V2.5-Pro-UltraSpeed</td>
-<td>~1000–1200 tps</td>
+<td><strong><a href="https://automatio.ai/models/mimo-v2-5-pro">~1000–1200 tps</a></strong></td>
 <td>~3×</td>
 </tr>
 </tbody>
 </table>
-<p>Comparison reference: Decrypt reported UltraSpeed running ~15× faster than standard ChatGPT and Claude
-API decode speeds under comparable load.</p>
+<p>Comparison reference: <a href="https://decrypt.co/370449/xiaomi-mimo-ultraspeed-ai-model-faster-chatgpt-claude">Decrypt reported</a>
+UltraSpeed running roughly 15× faster than Artificial Analysis-tracked decode speeds for GPT-5.5 (~68 tps)
+and Claude Opus 4.6 (~71 tps) — Decrypt cited these as published throughput figures but did not state
+whether hardware or load conditions were matched across the comparison.</p>
 <hr>
 <h2 id="the-routing-decision-when-does-3-cost-justify-10-speed">The routing decision: when does 3× cost justify 10× speed?</h2>
 <p>Speed rarely changes operator routing decisions on its own. What changes decisions is when speed alters
@@ -260,22 +264,24 @@ larger here than on generic chat or reasoning.</li>
 </ul>
 <hr>
 <h2 id="access">Access</h2>
-<p><strong>API trial</strong> (June 9–23, 2026 — ends in nine days):</p>
+<p><strong>API trial</strong> (<a href="https://mimo.mi.com/docs/en-US/news/latest/1000tps">June 9–23, 2026</a> — ends in nine days):</p>
 <ul>
 <li>Access via Xiaomi MiMo&rsquo;s developer portal</li>
 <li>Priced at 3× the standard MiMo-V2.5-Pro rate</li>
-<li>Single 8-GPU node; throughput scales per-request not per-session</li>
+<li>Runs on a single 8-GPU commodity node</li>
 </ul>
 <p><strong>Self-hosted</strong>:</p>
 <ul>
-<li>Weights: <code>XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash</code> on HuggingFace</li>
-<li>Requires TileRT runtime; TileRT is separately available for enterprise deployment</li>
-<li>Hardware floor: 8× H100 or H200 (or commodity equivalent with HBM3)</li>
+<li>Weights: <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash"><code>XiaomiMiMo/MiMo-V2.5-Pro-FP4-DFlash</code></a> on HuggingFace</li>
+<li>Requires the <a href="https://github.com/tile-ai/TileRT">TileRT runtime</a>; TileRT has open-sourced select modules
+on GitHub, with a fuller runtime reportedly available for enterprise deployment</li>
+<li>Hardware: a single 8-GPU commodity node — Xiaomi has not disclosed the specific GPU model used in its
+demos</li>
 </ul>
 <p><strong>Standard MiMo-V2.5-Pro</strong> (for comparison / async workloads):</p>
 <ul>
-<li>Available on OpenRouter at <code>xiaomi/mimo-v2.5-pro</code></li>
-<li>Hugging Face standard checkpoint: <code>XiaomiMiMo/MiMo-V2.5-Pro</code></li>
+<li>Available on <a href="https://openrouter.ai/xiaomi/mimo-v2.5-pro">OpenRouter</a> at <code>xiaomi/mimo-v2.5-pro</code></li>
+<li>Hugging Face standard checkpoint: <a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro"><code>XiaomiMiMo/MiMo-V2.5-Pro</code></a></li>
 </ul>
 <hr>
 <h2 id="what-to-watch">What to watch</h2>

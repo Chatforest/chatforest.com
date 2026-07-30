@@ -11,11 +11,11 @@ This guide covers what changed from GLM-5.1, what the benchmark picture actually
 
 ## Context: The GLM-5 Line
 
-GLM-5 launched in early 2026 as a 744-billion-parameter Mixture-of-Experts model with 40 billion parameters active per forward pass. That MoE ratio — 40B active out of 744B total — is what makes the model economically deployable at API scale and self-hostable with a fraction of the hardware you'd need for a dense equivalent.
+GLM-5 launched on [February 11, 2026](https://aireleasetracker.com/model/zai/glm-5) as a [744-billion-parameter Mixture-of-Experts model with 40 billion parameters active per forward pass](https://docs.z.ai/guides/llm/glm-5). That MoE ratio — 40B active out of 744B total — is what makes the model economically deployable at API scale and self-hostable with a fraction of the hardware you'd need for a dense equivalent.
 
-GLM-5.1 (April 2026) was a post-training upgrade: same architecture, but reinforcement learning retargeted specifically at coding task distributions. The result was a model capable of sustaining roughly 1,700 autonomous agent steps in a single session, and the first open-weight model to reach SOTA on SWE-Bench Pro.
+GLM-5.1 ([April 7, 2026](https://winbuzzer.com/2026/04/09/z-ai-releases-glm-5-1-754b-model-tops-swe-bench-pro-xcxwbn/)) scaled up to [754 billion total parameters](https://winbuzzer.com/2026/04/09/z-ai-releases-glm-5-1-754b-model-tops-swe-bench-pro-xcxwbn/) — not simply the same 744B architecture as GLM-5 — with reinforcement learning retargeted specifically at coding task distributions. The result was a model capable of [sustained autonomous sessions lasting up to 8 hours, including a documented from-scratch build of a Linux desktop environment with no human in the loop](https://winbuzzer.com/2026/04/09/z-ai-releases-glm-5-1-754b-model-tops-swe-bench-pro-xcxwbn/), and [the first open-weight model to reach SOTA on SWE-Bench Pro](https://huggingface.co/zai-org/GLM-5.1) — 58.4, edging out Claude Opus 4.6's 57.3 and GPT-5.4's 57.7.
 
-GLM-5.2 keeps that architecture and extends it in two directions: a 5× context expansion (200K → 1M tokens) and a dual thinking-effort system.
+GLM-5.2 keeps [roughly the same ~753B-754B-parameter architecture](https://huggingface.co/zai-org/GLM-5.2) as GLM-5.1 and extends it in two directions: a 5× context expansion (200K → 1M tokens) and a dual thinking-effort system.
 
 ---
 
@@ -23,7 +23,7 @@ GLM-5.2 keeps that architecture and extends it in two directions: a 5× context 
 
 ### 1M-Token Context, Labeled Usable
 
-Earlier GLM-5 releases technically supported extended context but with degraded retrieval quality at the far end. Zhipu explicitly labels GLM-5.2's 1M-token window "truly usable," emphasizing coherence and retrieval accuracy across the full range. The model supports up to 131,072 output tokens per response, which matters for long-horizon code generation tasks where prior models would truncate mid-output.
+Earlier GLM-5 releases technically supported extended context but with degraded retrieval quality at the far end. Z.ai and independent coverage frame GLM-5.2's 1M-token window as [genuinely usable rather than a marketing-only ceiling](https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/), emphasizing coherence and retrieval accuracy across the full range. The model supports [up to 131,072 output tokens per response](https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/), which matters for long-horizon code generation tasks where prior models would truncate mid-output.
 
 For builders, this means:
 - Full large codebase ingestion (entire monorepos, not just selected files)
@@ -32,7 +32,7 @@ For builders, this means:
 
 ### Dual Thinking-Effort Levels
 
-GLM-5.2 introduces two explicit effort modes: **High** and **Max**. These are analogous to effort parameters in other frontier models but are the first time the GLM line has exposed a user-controlled compute-vs-latency dial.
+GLM-5.2 introduces [two explicit effort modes: **High** and **Max**](https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/). These are analogous to effort parameters in other frontier models but are the first time the GLM line has exposed a user-controlled compute-vs-latency dial.
 
 - **High**: faster responses, good for iterative coding loops and shorter tasks
 - **Max**: deeper reasoning, suited for complex debugging, multi-file refactors, long-horizon planning
@@ -47,22 +47,23 @@ The model's reinforcement learning was focused on coding correctness, agentic ta
 
 ## Benchmark Picture
 
-Zhipu published **no benchmark numbers for GLM-5.2 at launch**. This is a pattern the company has used before (GLM-5 itself launched without a full benchmark suite). Third-party evaluations are expected in the week following the API release.
+Zhipu published [no benchmark numbers for GLM-5.2 at launch](https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/) — no SWE-bench, Terminal-Bench, or Code Arena scores were included in the release. Third-party evaluations are expected in the week following the API release.
 
-The baseline to work from is GLM-5.1, which established:
+The most relevant recent baseline is GLM-5.1's own published scorecard, [compared against the contemporaneous Claude Opus 4.6 and GPT-5.4](https://huggingface.co/zai-org/GLM-5.1):
 
-| Benchmark | GLM-5.1 | Claude Opus 4.5 | GPT-5.2 |
+| Benchmark | GLM-5.1 | Claude Opus 4.6 | GPT-5.4 |
 |---|---|---|---|
-| SWE-bench Verified | ~77.8% | 80.9% | 80.0% |
-| SWE-bench Multilingual | 73.3% | — | 72.0% |
-| BrowseComp | 62.0% | 37.0% | — |
-| BrowseComp + context mgmt | 75.9% | — | 65.8% |
+| SWE-Bench Pro | 58.4 | 57.3 | 57.7 |
+| BrowseComp | 68.0 | — | — |
+| BrowseComp + context mgmt | 79.3 | 84.0 | 82.7 |
+
+For additional context, the predecessor GLM-5 (Feb 2026) [published a fuller benchmark suite at its own launch](https://docs.z.ai/guides/llm/glm-5), scoring 77.8% on SWE-bench Verified against the then-frontier Claude Opus 4.5 (80.9%) and GPT-5.2 (80.0%), and leading GPT-5.2 on BrowseComp with context management (75.9% vs. 65.8%). Those are GLM-5's numbers, not GLM-5.1's — the two models were benchmarked on different suites against different competing model generations, and shouldn't be read as a single continuous line.
 
 Two things stand out:
 
-**The SWE-bench gap is small.** GLM-5.1 sits 3 points below Claude Opus 4.5 and GPT-5.2 on the primary coding correction benchmark. That's within realistic noise for post-training variance.
+**GLM-5.1's SWE-Bench Pro lead is real but narrow.** At 58.4 vs. 57.3 (Claude Opus 4.6) and 57.7 (GPT-5.4), it's [the first open-weight model to top that specific leaderboard](https://huggingface.co/zai-org/GLM-5.1) — but the margin is inside normal run-to-run variance.
 
-**BrowseComp is a genuine win.** At 62.0% vs. Claude Opus 4.5's 37.0%, GLM-5.1 significantly outperforms on agentic web research tasks that require navigating many sources and synthesizing long-range information — exactly where 1M context helps. The expanded window in GLM-5.2 makes this advantage more exploitable.
+**BrowseComp with context management has flipped to a closed-model lead.** GLM-5.1 trails both Claude Opus 4.6 (84.0) and GPT-5.4 (82.7) on the context-managed variant — a reversal from GLM-5's earlier advantage over its own contemporary, GPT-5.2. Builders shouldn't assume GLM-5.x still "wins" BrowseComp by default heading into 5.2.
 
 GLM-5.2's improvements over 5.1 in these areas remain to be confirmed by independent evaluation.
 
@@ -76,27 +77,27 @@ GLM-5.2 is immediately available on all four Coding Plan tiers:
 
 | Tier | Monthly Price | Access |
 |---|---|---|
-| Lite | ~$18/month | GLM-5.2 model, 1M context |
-| Pro | Higher | Same + higher rate limits |
-| Max | Higher | Same + priority queuing |
+| Lite | [~$18/month](https://www.aipricing.guru/z-ai-subscription-pricing/) | GLM-5.2 model, 1M context |
+| Pro | [~$72/month](https://www.aipricing.guru/z-ai-subscription-pricing/) | Same + higher rate limits |
+| Max | [~$160/month](https://www.aipricing.guru/z-ai-subscription-pricing/) | Same + priority queuing |
 | Team | Enterprise | Shared team seats |
 
 Access is via z.ai. The model is served through the Coding Plan interface, not yet through a raw API endpoint.
 
 ### Standalone API (Week of June 16–20)
 
-The standalone API, enabling pay-per-token access without a subscription, is scheduled for the same week as the open weights. Pricing has not been announced; GLM-5 Turbo on Z.ai's API runs at **$1.20 / $4.00 per million input / output tokens**. GLM-5.2 pricing will likely be in the same range.
+The standalone API, enabling pay-per-token access without a subscription, is scheduled for the same week as the open weights. Pricing has not been announced; [GLM-5 Turbo on Z.ai's API runs at **$1.20 / $4.00 per million input / output tokens**](https://openrouter.ai/z-ai/glm-5-turbo). GLM-5.2 pricing will likely be in the same range.
 
-For comparison, GLM-5.1 is already available on OpenRouter at **$0.45 / $1.80 per million tokens** — roughly one-third the price of the flagship tier, useful as a cheaper fallback for lower-stakes tasks.
+For comparison, GLM-5.1 is already available on OpenRouter at [roughly **$0.95 / $3.00 per million tokens**](https://openrouter.ai/z-ai/glm-5.1) — noticeably cheaper than the flagship tier, useful as a cheaper fallback for lower-stakes tasks.
 
 ### Self-Hosted (Week of June 16–20)
 
 MIT-licensed weights are arriving on HuggingFace the week of June 16–20. The GLM-5.1 self-hosting baseline from April gives a reasonable preview of requirements:
 
-- **Minimum hardware**: 8× H100 GPUs for reasonable inference throughput
-- **Runtimes**: vLLM and SGLang both support the architecture
-- **Memory optimization**: FP8 quantized weights cut VRAM requirements by approximately 50%
-- **Third-party managed options**: Fireworks AI, DeepInfra, Nebius — US/EU-hosted, no data-residency exposure to Chinese infrastructure
+- **Minimum hardware**: [a full node of 8× NVIDIA B200 GPUs at full precision](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/); the [FP8-quantized checkpoint needs roughly 800GB of VRAM](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/), which points to 8× H200 or H20 as the realistic production config (standard 80GB H100s don't have enough VRAM per GPU for this model at FP8)
+- **Runtimes**: [vLLM (v0.19.0+) and SGLang (v0.5.10+) both support the architecture](https://www.spheron.network/blog/deploy-glm-5-1-gpu-cloud/)
+- **Memory optimization**: FP8-quantized weights roughly halve VRAM requirements versus BF16
+- **Third-party managed options**: [Fireworks AI, DeepInfra, and Nebius all host GLM-5.1](https://artificialanalysis.ai/models/glm-5-1/providers) — US/EU-hosted, no data-residency exposure to Chinese infrastructure
 
 Self-hosting eliminates any jurisdictional data concerns while preserving full model capability. For teams already running GLM-5.1 inference clusters, upgrading the weights will be straightforward.
 
@@ -110,7 +111,7 @@ Self-hosting eliminates any jurisdictional data concerns while preserving full m
 | You need self-hostable MIT weights right now | GLM-5.1 is already available |
 | You're on the GLM Coding Plan | Upgrade is automatic — you have 5.2 now |
 | You need the highest SWE-bench performance | Wait for independent 5.2 benchmarks before switching from Claude or GPT |
-| You're building agentic web research systems | GLM-5.x has a strong BrowseComp advantage — 5.2's extended context amplifies it |
+| You're building agentic web research systems | Mixed picture — GLM-5 (the predecessor) led GPT-5.2 on context-managed BrowseComp, but GLM-5.1 trails Claude Opus 4.6 and GPT-5.4 on the same metric; don't assume the advantage carries into 5.2 |
 
 ---
 
@@ -120,18 +121,17 @@ The honest comparison for builders considering GLM-5.2 as a primary coding agent
 
 **Reasons to prefer GLM-5.2:**
 - MIT license and self-hosting path (neither Claude nor GPT-5.2 offer this)
-- BrowseComp performance is meaningfully better for web-research-heavy agents
 - 1M token context is on par with or exceeds what the closed models offer today
 - Cost advantage will be significant once the pay-per-token API launches
-- SWE-bench multilingual: GLM-5.1 already beats GPT-5.2 (73.3 vs. 72.0)
+- [GLM-5.1 is the first open-weight model to top the SWE-Bench Pro leaderboard](https://huggingface.co/zai-org/GLM-5.1) (58.4 vs. Claude Opus 4.6's 57.3 and GPT-5.4's 57.7), though the margin is narrow
 
 **Reasons to prefer Claude Opus 4.5 or GPT-5.2:**
-- Higher SWE-bench Verified scores (80.9% and 80.0% vs. ~77.8% for GLM-5.1)
+- On predecessor GLM-5's own launch benchmarks, [Claude Opus 4.5 and GPT-5.2 scored higher on SWE-bench Verified](https://docs.z.ai/guides/llm/glm-5) (80.9% and 80.0% vs. GLM-5's 77.8%) — GLM-5.1 has not published a directly comparable SWE-bench Verified number, so this isn't a clean apples-to-apples read against the current model
 - Independent benchmark coverage is much deeper for the closed models
 - Ecosystem: Claude Code and Codex CLI have more mature tooling integrations
 - GLM-5.2 has no published benchmarks yet — the upgrade over 5.1 is unquantified
 
-**Bottom line**: If your workload is US/EU-regulated, requires model transparency, or involves agentic web research over long documents, GLM-5.2 deserves a serious evaluation. If raw SWE-bench Verified performance is the primary decision factor, Claude Opus 4.5 still leads on measured data.
+**Bottom line**: If your workload is US/EU-regulated, requires model transparency, or involves long-context agentic coding, GLM-5.2 deserves a serious evaluation. Be aware the SWE-bench Verified vs. Claude Opus 4.5 comparison above is GLM-5's (the predecessor's) data, not GLM-5.1's or 5.2's — GLM-5.1's own scorecard uses the different SWE-Bench Pro benchmark against the newer Claude Opus 4.6 and GPT-5.4, where it holds a narrow lead. On measured data across both generations, no single model cleanly "wins" every benchmark.
 
 ---
 
@@ -141,7 +141,7 @@ The honest comparison for builders considering GLM-5.2 as a primary coding agent
 
 **If you want pay-per-token API access**: Watch z.ai announcements for the API launch, expected the week of June 16–20. Sign up for a Z.ai account now if you don't have one.
 
-**If you want MIT open weights**: The HuggingFace release will follow the same week. Check the [Zhipu AI HuggingFace page](https://huggingface.co/Hcompany) (look for the ZhipuAI / z-ai organization) when weights drop.
+**If you want MIT open weights**: The HuggingFace release will follow the same week. Check the [Z.ai HuggingFace organization page](https://huggingface.co/zai-org) when weights drop.
 
 **If you're evaluating benchmarks**: Don't lock in a decision until third-party SWE-bench and BrowseComp numbers are published for 5.2 specifically. The GLM-5.1 numbers above are the closest baseline, but 5.2 may move in either direction.
 

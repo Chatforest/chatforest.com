@@ -71,7 +71,7 @@
 <hr>
 <h2 id="what-happened">What Happened</h2>
 <p>NVIDIA announced the <strong>DSX platform</strong> on June 1 at GTC Taipei. On June 8, <a href="https://www.globenewswire.com/news-release/2026/06/07/3307753/0/en/NAVER-Expands-AI-Infrastructure-With-NVIDIA-to-Serve-Surging-Global-AI-Demand.html">NAVER became one of the first major production deployments</a>.</p>
-<p>NAVER&rsquo;s GAK Sejong hyperscale data center — already running <strong>4,000 NVIDIA B200 GPUs</strong> — will expand on the DSX architecture:</p>
+<p>NAVER — which in January 2026 <a href="https://www.datacenterdynamics.com/en/news/naver-cloud-completes-cluster-of-4000-nvidia-b200-gpus-in-south-korea/">completed Korea&rsquo;s largest AI compute cluster</a> at <strong>4,000 NVIDIA B200 GPUs</strong> (a separate, leased Seoul facility, not GAK Sejong) — will now expand its GAK Sejong hyperscale data center on the DSX architecture:</p>
 <table>
 <thead>
 <tr>
@@ -103,39 +103,40 @@
 </tr>
 </tbody>
 </table>
-<p>NAVER has also stated a target of <strong>25 trillion won (~$18 billion)</strong> in AI factory revenue by 2030, positioning GAK Sejong as a regional AI compute hub serving Korean industry, government, and global cloud clients.</p>
+<p>This phased buildout — 55MW in H1 2027, 100MW later that year, 200MW by 2028, en route to 1GW — is <a href="https://www.techtimes.com/articles/321630/20260726/naver-nvidia-triple-koreas-ai-factory-200-megawatts-10-billion-deal-brookfield.htm">corroborated by subsequent reporting</a> on the $10B NVIDIA/Brookfield financing package backing it. NAVER has also stated a target of <a href="https://www.techtimes.com/articles/318006/20260609/naver-nvidia-seal-1gw-ai-factory-plan-dsx-platform-powers-korea-sovereign-cloud.htm"><strong>25 trillion won (~$18 billion)</strong></a> in AI factory revenue by 2030, positioning GAK Sejong as a regional AI compute hub serving Korean industry, government, and global cloud clients.</p>
 <hr>
 <h2 id="what-nvidia-dsx-actually-is">What NVIDIA DSX Actually Is</h2>
-<p>DSX is NVIDIA&rsquo;s unified reference platform for building and operating AI factories — the large-scale clusters that run inference and training at production scale. It shipped June 1 and covers four layers:</p>
+<p>DSX is NVIDIA&rsquo;s unified reference platform for building and operating AI factories — the large-scale clusters that run inference and training at production scale. <a href="https://nvidianews.nvidia.com/news/dsx-infrastructure-ai-factory">It shipped June 1 at GTC Taipei</a> and covers four of its layers relevant to builders here (NVIDIA&rsquo;s full stack also includes DSX MaxLPS and DSX Exchange, covered below and not detailed further in this piece):</p>
 <p><strong>DSX OS</strong> — open-source, modular software for AI factory operations: lifecycle management, intelligent scheduling, runtime consistency, health automation, multi-tenant operations.</p>
 <p><strong>DSX Reference Design</strong> — generation-specific validated architectures covering compute, networking, storage, hardware cluster design, and facilities (power, cooling, civil/structural). Think of it as NVIDIA-certified blueprints for building GPU clusters at scale, updated per GPU generation.</p>
 <p><strong>DSX Sim</strong> — simulation layer for modeling AI factory infrastructure decisions across the full lifecycle, from planning through operations. Lets datacenter operators validate configurations before committing to physical build-out.</p>
-<p><strong>DSX Flex</strong> — connects AI factories to power grid services for dynamic workload adaptation: load shedding, demand response, renewable integration. NVIDIA frames the optimization metric as <strong>token throughput per megawatt</strong> — more AI processing per unit of electricity.</p>
+<p><strong>DSX Flex</strong> — connects AI factories to power grid services for dynamic workload adaptation: load shedding, demand response, and pricing events.</p>
+<p>A related but distinct DSX component, <strong>DSX MaxLPS</strong>, is what NVIDIA frames around the optimization metric of <strong>token throughput per megawatt</strong> — <a href="https://nvidianews.nvidia.com/news/dsx-infrastructure-ai-factory">NVIDIA says it &ldquo;lets operators run up to 40% more GPUs at their most energy-efficient operating point with minimal impact on workload performance.&quot;</a></p>
 <p>The practical effect of DSX: any cloud provider or national compute operator that deploys NVIDIA hardware going forward will likely be running DSX as the management and design layer. Builders won&rsquo;t interact with DSX directly, but the infrastructure their APIs run on will be built to DSX specs.</p>
 <hr>
 <h2 id="the-nemotron-coalition-connection">The Nemotron Coalition Connection</h2>
-<p>NAVER joins the <strong>NVIDIA Nemotron Coalition</strong> as its first Korean member. The coalition&rsquo;s inaugural members include Black Forest Labs, Cursor, LangChain, Mistral AI, Perplexity, Reflection AI, Sarvam, and Thinking Machines Lab — labs across twelve countries that collaboratively train and release frontier AI models under permissive licenses, using NVIDIA DGX Cloud for training compute that would otherwise be cost-prohibitive.</p>
-<p>The first output of the coalition will feed into the <strong>Nemotron 4</strong> open model family.</p>
+<p>NAVER joins the <a href="https://nvidianews.nvidia.com/news/nvidia-launches-nemotron-coalition-of-leading-global-ai-labs-to-advance-open-frontier-models"><strong>NVIDIA Nemotron Coalition</strong></a> as <a href="https://nvidianews.nvidia.com/news/naver-ai-infrastructure">the first Korean company to participate</a>. The coalition&rsquo;s inaugural members are Black Forest Labs, Cursor, LangChain, Mistral AI, Perplexity, Reflection AI, Sarvam, and Thinking Machines Lab, who collaboratively train and release frontier AI models under permissive licenses, using NVIDIA DGX Cloud for training compute that would otherwise be cost-prohibitive. (An earlier draft of this piece described the coalition as spanning &ldquo;twelve countries&rdquo; — that figure could not be verified against NVIDIA&rsquo;s own coalition announcement, which describes member count, not country count, and has been removed.)</p>
+<p><a href="https://nvidianews.nvidia.com/news/nvidia-launches-nemotron-coalition-of-leading-global-ai-labs-to-advance-open-frontier-models">The first project stemming from the coalition is a base model codeveloped by Mistral AI and NVIDIA, which NVIDIA says &ldquo;will be shared with the open ecosystem and underpin the upcoming NVIDIA Nemotron 4 family of models.&quot;</a></p>
 <p>For NAVER, coalition membership means:</p>
 <ul>
-<li>Fine-tuning Nemotron 3 Ultra on NAVER&rsquo;s proprietary Korean-language data and training expertise</li>
+<li><a href="https://nvidianews.nvidia.com/news/naver-ai-infrastructure">Fine-tuning Nemotron 3 Ultra</a> on NAVER&rsquo;s proprietary Korean-language data and training expertise</li>
 <li>Delivering a more capable HyperCLOVA X with the resulting fine-tuned weights</li>
-<li>Contributing to the next generation of open frontier models</li>
+<li><a href="https://nvidianews.nvidia.com/news/naver-ai-infrastructure">Contributing to open model development across pretraining, post-training and reinforcement learning</a></li>
 </ul>
-<p>This is significant for the Nemotron model family: Nemotron 3 Ultra&rsquo;s quality will compound with Korean cultural and linguistic knowledge that NVIDIA&rsquo;s training data underrepresents. The resulting model isn&rsquo;t just Nemotron — it&rsquo;s Nemotron adapted for a market that has over 50 million Korean speakers and one of the world&rsquo;s highest per-capita internet penetration rates.</p>
+<p>This is significant for the Nemotron model family: Nemotron 3 Ultra&rsquo;s quality will compound with Korean cultural and linguistic knowledge that NVIDIA&rsquo;s training data underrepresents. The resulting model isn&rsquo;t just Nemotron — it&rsquo;s Nemotron adapted for a market with <a href="https://en.wikipedia.org/wiki/Korean_language">over 50 million Korean speakers</a> and <a href="https://datareportal.com/reports/digital-2026-south-korea">one of the world&rsquo;s highest internet penetration rates (97.9% as of the 2026 DataReportal count)</a>.</p>
 <hr>
 <h2 id="what-builders-can-access-hyperclova-x">What Builders Can Access: HyperCLOVA X</h2>
 <p>HyperCLOVA X is NAVER&rsquo;s LLM family. For builders, there are three access paths:</p>
 <p><strong>1. HyperCLOVA X SEED (open weights)</strong></p>
-<p>NAVER&rsquo;s open-source lineup is available on HuggingFace under the <code>naver-hyperclovax</code> organization. The SEED series includes models optimized for Korean language performance, available for fine-tuning and commercial use.</p>
+<p>NAVER&rsquo;s open-source lineup is available on <a href="https://huggingface.co/naver-hyperclovax">HuggingFace under the <code>naver-hyperclovax</code> organization</a>. The SEED series includes models optimized for Korean language performance, available for fine-tuning and commercial use.</p>
 <ul>
-<li><code>HyperCLOVAX-SEED-Think-32B</code> is the current flagship open-weight reasoning model</li>
-<li>Apache-style licensing for the SEED series, suitable for commercial deployment</li>
-<li>No API cost — run on your own infrastructure</li>
+<li><a href="https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Think-32B"><code>HyperCLOVAX-SEED-Think-32B</code></a> is the current flagship open-weight reasoning model</li>
+<li>The SEED series ships under <a href="https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Think-32B">NAVER&rsquo;s own custom &ldquo;HyperCLOVA X SEED Model License Agreement&rdquo;</a> — not Apache — which permits commercial use free of charge but requires attribution (&ldquo;Powered by HyperCLOVA X&rdquo;) and naming any derivative model with the &ldquo;HyperCLOVA X&rdquo; prefix</li>
+<li>No API cost if you self-host — <a href="https://github.com/NAVER-Cloud-HyperCLOVA-X/OmniServe">NAVER also publishes <strong>OmniServe</strong></a>, an open-source, OpenAI-compatible inference server for running the SEED models on your own GPUs (Docker Compose deployment; you provide the hardware)</li>
 </ul>
-<p><strong>2. NAVER Cloud API (OmniServe)</strong></p>
-<p>NAVER provides <strong>OmniServe</strong>, a production-grade multimodal inference system with an <strong>OpenAI-compatible API</strong>. If you&rsquo;re already using the OpenAI Python SDK or compatible client, pointing at NAVER&rsquo;s endpoint is a configuration change, not a code rewrite.</p>
-<p>OmniServe handles text and multimodal inputs, consistent with HyperCLOVA X&rsquo;s capabilities.</p>
+<p><strong>2. NAVER Cloud API (CLOVA Studio)</strong></p>
+<p>NAVER&rsquo;s managed cloud product for HyperCLOVA X is <a href="https://guide.ncloud-docs.com/docs/en/clovastudio-overview"><strong>CLOVA Studio</strong></a>, a hosted NAVER Cloud Platform service. CLOVA Studio <a href="https://api.ncloud-docs.com/docs/en/clovastudio-openaicompatibility">documents its own OpenAI-compatible endpoint</a> for Chat Completions and Embeddings, so if you&rsquo;re already using the OpenAI Python SDK, pointing the base URL at CLOVA Studio&rsquo;s endpoint is a configuration change, not a code rewrite. (An earlier draft of this piece named OmniServe — the self-hosted open-source server above — as this managed API; that was incorrect and has been corrected.)</p>
+<p>CLOVA Studio handles text and multimodal inputs, consistent with HyperCLOVA X&rsquo;s capabilities.</p>
 <p><strong>3. DSX-hosted enterprise access</strong></p>
 <p>Post-deployment at GAK Sejong, NAVER will serve Korean enterprise and government clients from sovereign Korean infrastructure — data that never leaves Korean jurisdiction. This is the tier for builders whose compliance requirements specify Korean data residency.</p>
 <hr>
@@ -164,7 +165,7 @@
 </tr>
 <tr>
 <td>Need Korean data residency (legal/compliance)</td>
-<td>Contact NAVER Cloud for OmniServe enterprise access</td>
+<td>Contact NAVER Cloud for CLOVA Studio enterprise access</td>
 </tr>
 <tr>
 <td>Using Nemotron 3 Ultra in production</td>
