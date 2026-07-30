@@ -7,7 +7,7 @@
 
 ---
 
-Two months after [Kimi K2.6 launched](https://www.kimi.com/blog/kimi-k2-6) to developer acclaim — reaching second-most-used on OpenRouter and establishing the open-weight SWE-Bench Verified high-water mark — [Moonshot AI has released Kimi K2.7-Code](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/). This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.
+Two months after [Kimi K2.6 launched](https://www.kimi.com/blog/kimi-k2-6) to developer acclaim — [surging to the top of OpenRouter's usage leaderboard within a week of its April 20, 2026 release](https://phemex.com/news/article/kimi-k26-tops-openrouter-leaderboard-with-188-trillion-tokens-76904), and posting a [SWE-Bench Pro score of 58.6, ahead of GPT-5.4's 57.7](https://www.kimi.com/blog/kimi-k2-6) — [Moonshot AI has released Kimi K2.7-Code](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/). This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.
 
 The good news: Moonshot is addressing the two most consistent developer complaints about K2.6 — indirect implementation style and token verbosity. The skeptic's caveat: every benchmark improvement claim in the K2.7-Code announcement is measured on Moonshot's own proprietary evaluation suites. As of publication date, no independent results exist on SWE-Bench Verified, LiveCodeBench, Terminal-Bench, or any other publicly audited coding benchmark.
 
@@ -17,7 +17,7 @@ Whether that caveat is disqualifying depends on your risk tolerance for self-rep
 
 ## What Changed From K2.6
 
-K2.7-Code does not change the underlying model architecture. This is the same trillion-parameter Sparse MoE system:
+K2.7-Code does not change the underlying model architecture. Per [Moonshot's own K2.7-Code model card](https://huggingface.co/moonshotai/Kimi-K2.7-Code), this is the same trillion-parameter Sparse MoE system [K2.6 introduced](https://www.kimi.com/blog/kimi-k2-6):
 
 | Parameter | Value |
 |-----------|-------|
@@ -46,9 +46,9 @@ Whether this training shift holds up in practice across diverse workloads is exa
 
 ### 2. Reduced Thinking-Token Usage (~30%)
 
-The verbosity problem with K2.6 was documented and real: intelligence evaluation testing found K2.6 generating approximately 170 million tokens to complete a benchmark suite where comparable models averaged 42 million. A 4× token surplus at $0.60/million input is one cost; at $0.95/million it is another.
+The verbosity picture is more nuanced than "K2.6 was a token hog." [Artificial Analysis found K2.6 generating approximately 170 million output tokens](https://artificialanalysis.ai/models/kimi-k2-6) to complete their Intelligence Index evaluation — nearly double the evaluation's ~99-million-token median. But [Artificial Analysis's own comparison](https://artificialanalysis.ai/articles/kimi-k2-6-the-new-leading-open-weights-model) put that in context: K2.6's reasoning-token usage (~160M on their methodology) was lower than Claude Sonnet 4.6's (~190M) and higher than GPT-5.4's (~110M), which Artificial Analysis characterized as "in line with other frontier models in the same intelligence tier" — not the outlier picture "verbosity problem" implies. Still, more output tokens is more cost at $0.60/million input, $2.50/million output pricing.
 
-Moonshot reports K2.7-Code reduces thinking-token usage by approximately 30% versus K2.6. This addresses the verbosity critique directly. If the 30% reduction holds in production — and it is a plausible training outcome — K2.7-Code's effective cost per task may be lower than the sticker-price increase suggests, because each task consumes fewer tokens.
+Moonshot reports K2.7-Code reduces thinking-token usage by [approximately 30% versus K2.6](https://www.kimi.com/resources/kimi-k2-7-code). This addresses the verbosity critique directly. If the 30% reduction holds in production — and it is a plausible training outcome — K2.7-Code's effective cost per task may be lower than the sticker-price increase suggests, because each task consumes fewer tokens.
 
 The math: if K2.6 requires 1,000 output thinking tokens on average and K2.7-Code requires 700, the effective output cost comparison is:
 - K2.6: 1,000 tokens × $2.50/million = $0.0025
@@ -60,7 +60,7 @@ A 58% output price increase partially offset by a 30% token reduction yields rou
 
 ## Benchmark Claims
 
-Moonshot AI reports the following improvements over K2.6:
+[Moonshot AI reports](https://www.kimi.com/resources/kimi-k2-7-code) the following improvements over K2.6:
 
 | Benchmark | K2.6 → K2.7-Code | Delta |
 |-----------|------------------|-------|
@@ -79,7 +79,7 @@ Moonshot AI reports the following improvements over K2.6:
 - AIME 2026
 - Artificial Analysis Intelligence Index
 
-Developer testing reported that practitioners who evaluated K2.7-Code on real-world codebases could not consistently replicate the benchmark gains. The specific failure mode: on tasks that did not match the style of Moonshot's internal benchmarks — particularly tasks involving complex codebases with significant existing library usage — K2.7-Code's "implementation-first" approach sometimes produced inferior code compared to K2.6's library-routing approach.
+[VentureBeat reported](https://venturebeat.com/technology/kimi-k2-7-code-cuts-thinking-tokens-30-practitioners-say-benchmarks-dont-check-out) that practitioners who evaluated K2.7-Code on real-world codebases could not consistently replicate the benchmark gains, and that the model has not been submitted to DeepSWE, an independent benchmark practitioners consider more discriminating than SWE-Bench Pro. A specific failure mode cited: on a GPU-kernel benchmark, K2.7-Code produced authored Triton kernels (rather than library-wrapper code, as K2.6 had) on five of six problems — but two of those kernels had bugs, and the model's score on the MoE-kernel task regressed from K2.6's 0.222 to 0.157. Direct implementation authoring is a real tradeoff, not a strict upgrade.
 
 This is a legitimate concern. Benchmark suites, including third-party ones, tend to measure specific capability profiles. A model optimized to perform well on agentic long-horizon tasks from scratch may underperform on tasks involving idiomatic use of established frameworks.
 

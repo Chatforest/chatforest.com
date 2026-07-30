@@ -68,12 +68,12 @@
       <div class="article-body">
         <p><strong>At a glance:</strong> Kimi K2.7-Code, released June 12, 2026. Architecture: 1T total parameters, 32B active (Sparse MoE). Same chassis as K2.6. Key changes: direct implementation authoring; 30% fewer thinking tokens. API at $0.95/$4.00 per million tokens. Modified MIT license. Part of our <strong><a href="/categories/ai-tools/">AI Models &amp; Companies reviews</a></strong>.</p>
 <hr>
-<p>Two months after <a href="https://www.kimi.com/blog/kimi-k2-6">Kimi K2.6 launched</a> to developer acclaim — reaching second-most-used on OpenRouter and establishing the open-weight SWE-Bench Verified high-water mark — <a href="https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/">Moonshot AI has released Kimi K2.7-Code</a>. This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.</p>
+<p>Two months after <a href="https://www.kimi.com/blog/kimi-k2-6">Kimi K2.6 launched</a> to developer acclaim — <a href="https://phemex.com/news/article/kimi-k26-tops-openrouter-leaderboard-with-188-trillion-tokens-76904">surging to the top of OpenRouter&rsquo;s usage leaderboard within a week of its April 20, 2026 release</a>, and posting a <a href="https://www.kimi.com/blog/kimi-k2-6">SWE-Bench Pro score of 58.6, ahead of GPT-5.4&rsquo;s 57.7</a> — <a href="https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/">Moonshot AI has released Kimi K2.7-Code</a>. This is not a new architecture. It is a coding-specialized fine-tune of the same trillion-parameter Mixture-of-Experts system that K2.6 introduced.</p>
 <p>The good news: Moonshot is addressing the two most consistent developer complaints about K2.6 — indirect implementation style and token verbosity. The skeptic&rsquo;s caveat: every benchmark improvement claim in the K2.7-Code announcement is measured on Moonshot&rsquo;s own proprietary evaluation suites. As of publication date, no independent results exist on SWE-Bench Verified, LiveCodeBench, Terminal-Bench, or any other publicly audited coding benchmark.</p>
 <p>Whether that caveat is disqualifying depends on your risk tolerance for self-reported numbers. Here is the full picture.</p>
 <hr>
 <h2 id="what-changed-from-k26">What Changed From K2.6</h2>
-<p>K2.7-Code does not change the underlying model architecture. This is the same trillion-parameter Sparse MoE system:</p>
+<p>K2.7-Code does not change the underlying model architecture. Per <a href="https://huggingface.co/moonshotai/Kimi-K2.7-Code">Moonshot&rsquo;s own K2.7-Code model card</a>, this is the same trillion-parameter Sparse MoE system <a href="https://www.kimi.com/blog/kimi-k2-6">K2.6 introduced</a>:</p>
 <table>
 <thead>
 <tr>
@@ -131,8 +131,8 @@
 <p>Moonshot&rsquo;s framing for this is &ldquo;implementation-first coding.&rdquo; The practical implication is that K2.7-Code should perform better on tasks where the desired implementation cannot be expressed cleanly through existing library calls — novel algorithms, custom data structures, performance-critical paths, or code that needs to work in constrained environments without standard dependencies.</p>
 <p>Whether this training shift holds up in practice across diverse workloads is exactly what the missing third-party benchmarks would tell us.</p>
 <h3 id="2-reduced-thinking-token-usage-30">2. Reduced Thinking-Token Usage (~30%)</h3>
-<p>The verbosity problem with K2.6 was documented and real: intelligence evaluation testing found K2.6 generating approximately 170 million tokens to complete a benchmark suite where comparable models averaged 42 million. A 4× token surplus at $0.60/million input is one cost; at $0.95/million it is another.</p>
-<p>Moonshot reports K2.7-Code reduces thinking-token usage by approximately 30% versus K2.6. This addresses the verbosity critique directly. If the 30% reduction holds in production — and it is a plausible training outcome — K2.7-Code&rsquo;s effective cost per task may be lower than the sticker-price increase suggests, because each task consumes fewer tokens.</p>
+<p>The verbosity picture is more nuanced than &ldquo;K2.6 was a token hog.&rdquo; <a href="https://artificialanalysis.ai/models/kimi-k2-6">Artificial Analysis found K2.6 generating approximately 170 million output tokens</a> to complete their Intelligence Index evaluation — nearly double the evaluation&rsquo;s ~99-million-token median. But <a href="https://artificialanalysis.ai/articles/kimi-k2-6-the-new-leading-open-weights-model">Artificial Analysis&rsquo;s own comparison</a> put that in context: K2.6&rsquo;s reasoning-token usage (~160M on their methodology) was lower than Claude Sonnet 4.6&rsquo;s (~190M) and higher than GPT-5.4&rsquo;s (~110M), which Artificial Analysis characterized as &ldquo;in line with other frontier models in the same intelligence tier&rdquo; — not the outlier picture &ldquo;verbosity problem&rdquo; implies. Still, more output tokens is more cost at $0.60/million input, $2.50/million output pricing.</p>
+<p>Moonshot reports K2.7-Code reduces thinking-token usage by <a href="https://www.kimi.com/resources/kimi-k2-7-code">approximately 30% versus K2.6</a>. This addresses the verbosity critique directly. If the 30% reduction holds in production — and it is a plausible training outcome — K2.7-Code&rsquo;s effective cost per task may be lower than the sticker-price increase suggests, because each task consumes fewer tokens.</p>
 <p>The math: if K2.6 requires 1,000 output thinking tokens on average and K2.7-Code requires 700, the effective output cost comparison is:</p>
 <ul>
 <li>K2.6: 1,000 tokens × $2.50/million = $0.0025</li>
@@ -141,7 +141,7 @@
 <p>A 58% output price increase partially offset by a 30% token reduction yields roughly a 12% net increase in effective output cost per task. That is meaningfully less than the sticker price jump suggests — though still an increase.</p>
 <hr>
 <h2 id="benchmark-claims">Benchmark Claims</h2>
-<p>Moonshot AI reports the following improvements over K2.6:</p>
+<p><a href="https://www.kimi.com/resources/kimi-k2-7-code">Moonshot AI reports</a> the following improvements over K2.6:</p>
 <table>
 <thead>
 <tr>
@@ -183,7 +183,7 @@
 <li>AIME 2026</li>
 <li>Artificial Analysis Intelligence Index</li>
 </ul>
-<p>Developer testing reported that practitioners who evaluated K2.7-Code on real-world codebases could not consistently replicate the benchmark gains. The specific failure mode: on tasks that did not match the style of Moonshot&rsquo;s internal benchmarks — particularly tasks involving complex codebases with significant existing library usage — K2.7-Code&rsquo;s &ldquo;implementation-first&rdquo; approach sometimes produced inferior code compared to K2.6&rsquo;s library-routing approach.</p>
+<p><a href="https://venturebeat.com/technology/kimi-k2-7-code-cuts-thinking-tokens-30-practitioners-say-benchmarks-dont-check-out">VentureBeat reported</a> that practitioners who evaluated K2.7-Code on real-world codebases could not consistently replicate the benchmark gains, and that the model has not been submitted to DeepSWE, an independent benchmark practitioners consider more discriminating than SWE-Bench Pro. A specific failure mode cited: on a GPU-kernel benchmark, K2.7-Code produced authored Triton kernels (rather than library-wrapper code, as K2.6 had) on five of six problems — but two of those kernels had bugs, and the model&rsquo;s score on the MoE-kernel task regressed from K2.6&rsquo;s 0.222 to 0.157. Direct implementation authoring is a real tradeoff, not a strict upgrade.</p>
 <p>This is a legitimate concern. Benchmark suites, including third-party ones, tend to measure specific capability profiles. A model optimized to perform well on agentic long-horizon tasks from scratch may underperform on tasks involving idiomatic use of established frameworks.</p>
 <p>The benchmark independence gap is the primary reason K2.7-Code receives a lower rating than K2.6 at this stage of its release lifecycle. Independent numbers may arrive in the coming weeks; if they validate Moonshot&rsquo;s claims, the rating would improve.</p>
 <hr>

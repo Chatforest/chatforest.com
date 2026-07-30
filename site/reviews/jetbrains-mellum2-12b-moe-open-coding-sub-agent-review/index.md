@@ -7,24 +7,24 @@
 
 Most model announcements arrive with a claim to the throne. JetBrains' Mellum2 arrives with something rarer: a clear statement of what it is not.
 
-"Mellum2 is not designed to replace frontier models," JetBrains writes in the announcement. "It is designed to go where they cannot." The company calls it a **focal model** — the fast, specialized inner-loop component inside multi-model AI pipelines, not the flagship.
+JetBrains frames Mellum2 as a **["focal model"](https://huggingface.co/blog/JetBrains/mellum2-launch)** — "The goal is not to replace every model in the stack. The goal is to make the stack faster, cheaper, and easier to control," as the [HuggingFace launch post](https://huggingface.co/blog/JetBrains/mellum2-launch) puts it. The [JetBrains blog announcement](https://blog.jetbrains.com/ai/2026/06/mellum2-goes-open-source-a-fast-model-for-ai-workflows/) makes the same case: "practical AI products also require focal models: fast, specialized components that handle high-frequency tasks efficiently." [The New Stack's coverage](https://thenewstack.io/jetbrains-mellum2-open-source-coding-model/) summarized the positioning even more bluntly in its headline — Mellum2 is meant to "go where Claude Code can't."
 
-Released June 1–2, 2026, Mellum2 is Apache 2.0, immediately open-sourced, and built on a Mixture-of-Experts architecture that offers competitive inference speed at a fraction of the memory footprint of similar-sized dense models. That positioning — fast, open, private-deployable — is where this model has a real case to make.
+Released June 1–2, 2026 ([JetBrains announcement](https://blog.jetbrains.com/ai/2026/06/mellum2-goes-open-source-a-fast-model-for-ai-workflows/); [HuggingFace launch post](https://huggingface.co/blog/JetBrains/mellum2-launch)), Mellum2 is Apache 2.0, immediately open-sourced, and built on a Mixture-of-Experts architecture that offers competitive inference speed at a fraction of the memory footprint of similar-sized dense models. That positioning — fast, open, private-deployable — is where this model has a real case to make.
 
 ---
 
 ## What Mellum2 Is
 
-Mellum2 is a 12B total parameter, 2.5B active parameter Mixture-of-Experts language model trained specifically for software engineering tasks. JetBrains trained it on 10.6 trillion tokens across a three-phase curriculum: a broad web corpus, a high-quality coding-focused phase, and a final curated phase where code exceeds 50% of tokens.
+Mellum2 is a 12B total parameter, 2.5B active parameter Mixture-of-Experts language model trained specifically for software engineering tasks. Per the [Mellum2 Technical Report](https://arxiv.org/abs/2605.31268) (arXiv:2605.31268), JetBrains trained it on approximately 10.6 trillion tokens across a three-phase curriculum that progressively shifts the data mixture from diverse web data toward curated code and mathematical content.
 
-The model lineup on HuggingFace includes:
+The model lineup on the [HuggingFace Mellum2 collection](https://huggingface.co/collections/JetBrains/mellum-2) includes:
 
-- `JetBrains/Mellum2-12B-A2.5B-Base` — raw pretrained model
-- `JetBrains/Mellum2-12B-A2.5B-Instruct` — instruction-tuned for conversational and agentic use
-- `JetBrains/Mellum2-12B-A2.5B-Thinking` — reasoning variant with `<think>...</think>` chain-of-thought blocks
-- GGUF variants at Q4_K_M and Q8_0 for self-hosted deployment via llama.cpp, Ollama, or LM Studio
+- [`JetBrains/Mellum2-12B-A2.5B-Base`](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Base) — raw pretrained model
+- [`JetBrains/Mellum2-12B-A2.5B-Instruct`](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Instruct) — instruction-tuned for conversational and agentic use
+- [`JetBrains/Mellum2-12B-A2.5B-Thinking`](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Thinking) — reasoning variant with `<think>...</think>` chain-of-thought blocks
+- GGUF variants at [Q4_K_M](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Instruct-GGUF-Q4_K_M) and [Q8_0](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Thinking-GGUF-Q8_0) for self-hosted deployment via llama.cpp, Ollama, or LM Studio
 
-License: Apache 2.0. No API access — this is a self-hosted model.
+License: [Apache 2.0](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Base). No API access — this is a self-hosted model.
 
 ---
 
@@ -32,50 +32,58 @@ License: Apache 2.0. No API access — this is a self-hosted model.
 
 The architecture has several choices worth understanding for builders integrating it into pipelines:
 
-**MoE design:** 64 total experts, 8 activated per token (top-K routing). At any forward pass, only 2.5B of the 12B parameters are active — giving the inference cost profile of a ~2–3B dense model while retaining the representational capacity of a much larger one. JetBrains claims this enables more than 2x faster inference versus similarly-sized dense models.
+**MoE design:** 64 total experts, 8 activated per token ([arXiv:2605.31268](https://arxiv.org/abs/2605.31268)). At any forward pass, only 2.5B of the 12B parameters are active — giving the inference cost profile of a ~2–3B dense model while retaining the representational capacity of a much larger one. JetBrains' [HuggingFace launch post](https://huggingface.co/blog/JetBrains/mellum2-launch) states the model "delivers more than 2x faster inference" versus similarly-sized dense models.
 
-**Sliding Window Attention:** Applied to 3 of every 4 transformer layers (28 layers total). This reduces KV cache size dramatically, improving memory efficiency at long contexts without sacrificing performance on the model's primary use cases.
+**Sliding Window Attention:** Applied to 3 of every 4 transformer layers, across 28 layers total ([Mellum2 Technical Report](https://huggingface.co/papers/2605.31268), arXiv:2605.31268). This reduces KV cache size dramatically, improving memory efficiency at long contexts without sacrificing performance on the model's primary use cases.
 
-**Multi-Token Prediction (MTP) head:** The notable architectural choice. A single MTP head serves double duty: an auxiliary pre-training objective (which JetBrains reports added +10.4 HumanEval points in ablation), and a built-in draft model for speculative decoding. You get speculative decoding without a separate draft model — the MTP head generates candidate tokens that the main model can verify in batch.
+**Multi-Token Prediction (MTP) head:** The notable architectural choice. A single MTP head serves double duty: an auxiliary pre-training objective, and a built-in draft model for speculative decoding. In a smaller-scale ablation study on a 14B proxy MoE model trained for 105B tokens, the [technical report](https://arxiv.org/abs/2605.31268) shows the MTP objective raising HumanEval pass@1 from 20.73 to 31.10 — a +10.4 point gain — alongside smaller gains on MMLU and GSM8K. That ablation number comes from the proxy model used to validate the technique, not a direct before/after measurement on the released 12B Mellum2 checkpoint. In production, the head doubles as a draft model for speculative decoding: it generates candidate tokens that the main model verifies in batch, so you get speculative decoding without a separate draft model.
 
-**Context window:** 131,072 tokens — sufficient for large codebases or long document processing.
+**Context window:** 131,072 tokens ([Mellum2 model cards](https://huggingface.co/collections/JetBrains/mellum-2)) — sufficient for large codebases or long document processing.
 
 ---
 
 ## Benchmarks
 
-All numbers are from JetBrains' own technical report (arXiv:2605.31268). No independent third-party replication has been published as of this review.
+All numbers below are from JetBrains' own [technical report](https://arxiv.org/abs/2605.31268) (arXiv:2605.31268, Tables 9–10). No independent third-party replication has been published as of this review. Two different variants are in play here, and the report does not always attach the same score to the same variant — worth being precise about which is which.
 
-| Benchmark | Mellum2 Score |
-|---|---|
-| EvalPlus (HumanEval+ / MBPP+ mean) | 78.4% |
-| LiveCodeBench v6 | 37.2% |
-| MultiPL-E (multi-language code gen) | 67.1% |
-| AIME 2025+2026 | 41.7% |
+**Instruct (RL-tuned) variant — Table 9:**
 
-**The honest reading:** EvalPlus at 78.4% is a solid score for a model activating 2.5B parameters per token. LiveCodeBench v6 at 37.2% is competitive for the weight class. MultiPL-E at 67.1% covers the multi-language scenario relevant to IDE integration.
+| Benchmark | Mellum2 Instruct | Qwen3.5-4B | Qwen3.5-9B |
+|---|---|---|---|
+| EvalPlus (HumanEval+ / MBPP+ mean) | 78.4% | 69.4% | 71.8% |
+| LiveCodeBench v6 | 37.2% | 51.0% | 63.7% |
+| MultiPL-E (multi-language code gen) | 67.1% | 51.0% | 67.1% |
+| AIME 2025+2026 | 41.7% | 38.3% | 58.3% |
 
-**The friction point:** AIME 2025+2026 at 41.7% is weak for a "Thinking" variant. Community discussion has noted that Qwen3-4B — a smaller model by active parameters — posts higher AIME scores. If your pipeline has heavy math reasoning requirements, Mellum2's Thinking variant is not the strongest option at this weight class.
+**Thinking variant — Table 10:**
 
-All benchmark numbers are self-reported. Until independent evaluation arrives (the model is two weeks old), treat them as directionally informative rather than definitive.
+| Benchmark | Mellum2 Thinking | Qwen3.5-9B-Thinking |
+|---|---|---|
+| LiveCodeBench v6 | 69.9% | 68.3% |
+| AIME 2025+2026 | 58.4% | 73.4% |
+
+**The honest reading:** For the Instruct variant, EvalPlus at 78.4% is a solid score for a model activating 2.5B parameters per token, and it actually beats both listed Qwen3.5 comparison models here. MultiPL-E at 67.1% ties Qwen3.5-9B and covers the multi-language scenario relevant to IDE integration. Instruct's LiveCodeBench v6 (37.2%) trails both Qwen comparisons, though the Thinking variant's LiveCodeBench score (69.9%) is competitive with — and edges out — Qwen3.5-9B-Thinking's 68.3%.
+
+**The friction point:** On math reasoning, Mellum2 Thinking's 58.4% AIME score trails Qwen3.5-9B-Thinking's 73.4% by a wide margin — Qwen3.5-9B is a dense model with more active parameters (9B) than Mellum2's 2.5B, so the comparison isn't perfectly apples-to-apples, but the gap is real. If your pipeline has heavy math reasoning requirements, Mellum2's Thinking variant is not the strongest option at this weight class.
+
+All benchmark numbers are self-reported by JetBrains. Until independent evaluation arrives (the model is two weeks old as of this review), treat them as directionally informative rather than definitive.
 
 ---
 
 ## Hardware Requirements
 
 **BF16 (full precision):**
-- Weights: ~24.7 GB VRAM
-- With 131K context loaded: ~28.8 GB
-- Requires: RTX 5090 (32 GB), A100-80GB, H100, Mac Studio/Pro with 32GB+ unified memory
+- Weights: [~24.3 GB file size](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Thinking-GGUF-BF16) (earlier drafts of this review cited ~24.7 GB — close, but the published GGUF file is 24.3 GB; actual VRAM use will run somewhat higher once the 131K-token context and KV cache are loaded, though JetBrains does not publish a combined figure)
+- Practical hardware for this footprint: a 32 GB-class GPU (RTX 5090), or datacenter cards (A100-80GB, H100). Apple Silicon Macs with 32GB+ unified memory should also be able to run it — this is our own extrapolation from the file size, not a JetBrains-published spec
 
 **INT4 quantized (Q4_K_M):**
-- Weights: ~6.6 GB VRAM
-- Fits comfortably on: RTX 4090 (24 GB), RTX 4080 (16 GB) with reduced batch
+- Weights: [~8.1 GB file size](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Instruct-GGUF-Q4_K_M) (corrected — earlier drafts of this review cited ~6.6 GB, which did not match the published GGUF file size)
+- Fits comfortably on: RTX 4090 (24 GB), RTX 4080 (16 GB)
 - Ollama (Thinking variant): `ollama run hf.co/JetBrains/Mellum2-12B-A2.5B-Thinking-GGUF-Q4_K_M`
 
 **Q8_0 (recommended for quality-critical workloads):**
-- JetBrains reports KL divergence of ~0.004 from BF16 and 97% top-token match — effectively lossless for practical purposes
-- Fits on 24 GB GPU; also runs on Mac Mini M4 Pro (48 GB unified memory) with headroom
+- For the [Thinking-variant Q8_0 GGUF](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Thinking-GGUF-Q8_0), JetBrains reports KL divergence of ~0.004 from BF16 and a 97% top-token match rate (measured against BF16 logits on Wikitext-2) — effectively lossless for practical purposes. The [Instruct-variant Q8_0 build](https://huggingface.co/JetBrains/Mellum2-12B-A2.5B-Instruct-GGUF-Q8_0) reports a slightly larger gap: ~0.016 KL divergence and ~95% top-token match.
+- File size is ~12.9 GB, so it fits on a 24 GB GPU with headroom
 
 The Q4_K_M quantization is the practical local deployment path. Inference at this quantization level is fast enough for sub-agent use cases that don't require sub-100ms latency.
 
@@ -93,7 +101,7 @@ In their intended architecture, Mellum2 sits inside a larger AI system rather th
 
 **RAG post-processor:** After retrieval, Mellum2 summarizes, re-ranks, or filters retrieved code chunks before they reach a more expensive frontier model. This reduces token cost at the frontier model tier.
 
-**Air-gapped / private deployment:** The headline use case from The New Stack: "goes where Claude Code can't." Regulated industries (defense, finance, healthcare) with no external API access can run Mellum2 fully on-premise. Apache 2.0 means no licensing friction.
+**Air-gapped / private deployment:** [The New Stack framed](https://thenewstack.io/jetbrains-mellum2-open-source-coding-model/) this as Mellum2 going "where Claude Code can't." Regulated industries (defense, finance, healthcare) with no external API access can run Mellum2 fully on-premise. Apache 2.0 means no licensing friction.
 
 None of these require Mellum2 to be the smartest model in the room. They require it to be fast, controllable, private, and cheap to run — all of which it delivers.
 
@@ -103,9 +111,9 @@ None of these require Mellum2 to be the smartest model in the room. They require
 
 For context on where Mellum2 came from:
 
-**Mellum 1 (2024–2025):** A 4B dense model trained on 4+ trillion tokens, deployed inside JetBrains IDEs starting with the 2024.2 release. Purpose-built for code completion (fill-in-the-middle). Open-sourced April 2025 on HuggingFace (`JetBrains/Mellum-4b-base`). Not a general assistant — it couldn't hold a conversation.
+**Mellum 1 (2024–2025):** A 4B dense model trained on [~4.2 trillion tokens](https://huggingface.co/JetBrains/Mellum-4b-base), [deployed inside JetBrains IDEs starting with the 2024.2 release](https://blog.jetbrains.com/blog/2024/10/22/introducing-mellum-jetbrains-new-llm-built-for-developers/). Purpose-built for code completion (fill-in-the-middle). [Open-sourced April 2025](https://blog.jetbrains.com/ai/2025/04/mellum-goes-open-source-a-purpose-built-llm-for-developers-now-on-hugging-face/) on HuggingFace (`JetBrains/Mellum-4b-base`). Not a general assistant — it couldn't hold a conversation.
 
-**Mellum2 (June 2026):** Scaled to 12B MoE, 10.6T training tokens. Added Instruct and Thinking variants. Open-sourced from day one. The scope expanded from single-task FIM completion to multi-role agentic deployment. JetBrains also uses Mellum2 internally in JetBrains AI Assistant, so this is production-tested code, not a research release.
+**Mellum2 (June 2026):** Scaled to 12B MoE, [10.6T training tokens](https://arxiv.org/abs/2605.31268). Added Instruct and Thinking variants. Open-sourced from day one. The scope expanded from single-task FIM completion to multi-role agentic deployment. The original Mellum has powered code completion in JetBrains' AI Assistant since 2024; JetBrains' own launch materials do not state that Mellum2 itself has replaced it in production, so we're not asserting that here — treat Mellum2 as newly open-sourced, not yet confirmed as JetBrains' own internal production model.
 
 ---
 
@@ -117,7 +125,7 @@ For context on where Mellum2 came from:
 
 **AIME weakness.** The Thinking variant is weak for mathematical reasoning at this parameter count. Don't route math-heavy agentic tasks to Mellum2 without testing.
 
-**JetBrains-optimized training data framing.** The 10.6T token curriculum is described as "permissively licensed code, web text, and math" but specific dataset names aren't confirmed in public sources. Builders with strict training data provenance requirements should review the arXiv technical report directly.
+**Training data provenance.** JetBrains describes the [10.6T token curriculum](https://arxiv.org/abs/2605.31268) only in broad terms — a shift from diverse web data toward curated code and mathematical content — without naming specific source datasets. Builders with strict training data provenance requirements should review the arXiv technical report directly.
 
 ---
 

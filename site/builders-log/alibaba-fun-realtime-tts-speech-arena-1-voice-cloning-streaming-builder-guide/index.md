@@ -4,9 +4,10 @@
 
 
 On June 3, 2026, Alibaba's Fun-Realtime-TTS climbed to the top of the [Artificial Analysis Speech Arena
-Leaderboard](https://artificialanalysis.ai/text-to-speech/arena), knocking Google's Gemini 3.1 Flash TTS
-off the #1 slot it had held since April. Elo 1,219 vs 1,214 — a narrow margin, but a real one across
-nearly 1,000 arena comparisons.
+Leaderboard](https://artificialanalysis.ai/text-to-speech/arena), [knocking Google's Gemini 3.1 Flash TTS
+off the #1 slot](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard).
+Elo 1,219 vs 1,214 — a narrow margin, but a real one across
+[962 arena comparisons](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard).
 
 This guide is for builders adding speech synthesis to products: voice assistants, customer service agents,
 content narration, accessibility tools, or real-time conversational interfaces. Here's what Fun-Realtime-TTS
@@ -17,30 +18,29 @@ actually is, what it costs, and whether it belongs in your stack.
 ## What Fun-Realtime-TTS Is
 
 Fun-Realtime-TTS is a hosted text-to-speech model developed by Alibaba's Tongyi Lab (the team behind
-the FunAudioLLM open-source project). It's the production API version of their streaming TTS research,
-available through Alibaba Cloud's Model Studio (DashScope).
+the [FunAudioLLM open-source project](https://github.com/FunAudioLLM/FunResearch)). It's available through
+[Alibaba Cloud's Model Studio (DashScope)](https://www.alibabacloud.com/help/en/model-studio/text-to-speech).
 
-It is **not** the same as CosyVoice (Alibaba's earlier voice synthesis line, now at v3.5). Fun-Realtime-TTS
-is a separate model optimized specifically for low-latency streaming scenarios — it uses what the team
-calls a **Dual-Track hybrid streaming generation architecture**: a single model that natively supports
-both streaming (character-by-character, low latency) and non-streaming (full-text, higher quality)
-generation modes without switching between two different systems.
-
-The practical claim: first audio packet latency as low as 97ms from a single input character. For
-real-time conversational applications, that's competitive with the fastest proprietary TTS APIs.
+It is **not** the same as CosyVoice (Alibaba's earlier voice synthesis line, now at v3.5) — the two are
+served through overlapping DashScope infrastructure, but [Artificial Analysis benchmarks and reports on
+Fun-Realtime-TTS as a distinct entry](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard)
+on the Speech Arena leaderboard.
 
 ### What the Previous Version Looked Like
 
-This isn't Alibaba's first pass at the leaderboard. The predecessor, **Fun-Realtime-TTS-Preview**, reached
-#7 on the Speech Arena before this release took #1. The quality gap between Preview and the production
-model was large enough to flip the leaderboard.
+This isn't Alibaba's first pass at the leaderboard. The predecessor, **Fun-Realtime-TTS-Preview**, [reached
+#7 on the Speech Arena](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard)
+before this release took #1. (Rank on a live arena leaderboard shifts as new models are added and votes
+accrue — an [earlier May 29, 2026 snapshot](https://www.scmp.com/tech/tech-trends/article/3355316/alibaba-ai-voice-model-cracks-top-5-globally-outperforming-us-rivals-regional-accents)
+had Preview at #5 with an Elo of 1,190.)
 
 ---
 
 ## Speech Arena Rankings: June 2026
 
-The Artificial Analysis Speech Arena uses blind preference comparisons to compute quality Elo. As of
-the June 3 update:
+The [Artificial Analysis Speech Arena](https://artificialanalysis.ai/text-to-speech/arena) uses blind
+preference comparisons to compute quality Elo. As of the [June 3
+update](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard):
 
 | Model | Elo | Provider |
 |---|---|---|
@@ -56,6 +56,10 @@ provider your billing already lives in.
 ---
 
 ## Capabilities
+
+Artificial Analysis [describes Fun-Realtime-TTS's feature set](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard)
+as "real-time speech generation with voice cloning, voice design, multilingual output, and support for
+regional accents and dialects."
 
 ### Voice Cloning
 
@@ -75,33 +79,37 @@ you can reuse.
 
 Like several of the newer generation TTS models, Fun-Realtime-TTS supports natural language instructions
 embedded in input to modify delivery — adjusting emotion, pace, tone, and prosody without changing
-the underlying text. This is useful for expressive output where a single voice needs to deliver
-varied emotional content.
+the underlying text. Alibaba documents this [instruction-control capability across its CosyVoice/DashScope
+TTS lineup](https://www.alibabacloud.com/help/en/model-studio/tts-model/), which Fun-Realtime-TTS is built
+on. This is useful for expressive output where a single voice needs to deliver varied emotional content.
 
 ### Language Coverage
 
-30+ languages with explicit optimization for Chinese speech. The model covers seven major Chinese
-dialect families and more than 20 regional accents — a specific strength relative to models designed
-primarily for English-centric output. For products targeting Chinese-speaking markets, this is
-a material differentiator.
+[30+ languages, seven major Chinese dialects, and more than 20 regional
+accents](https://www.scmp.com/tech/tech-trends/article/3355316/alibaba-ai-voice-model-cracks-top-5-globally-outperforming-us-rivals-regional-accents) —
+a figure reported for the Fun-Realtime-TTS-Preview generation and consistent with the model's Chinese-language
+optimization. A specific strength relative to models designed primarily for English-centric output; for
+products targeting Chinese-speaking markets, this is a material differentiator.
 
 ---
 
 ## Pricing
 
-Fun-Realtime-TTS costs **$27.59 per 1 million characters** via the Alibaba Cloud DashScope API.
+Fun-Realtime-TTS costs [**$27.59 per 1 million
+characters**](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard)
+via the Alibaba Cloud DashScope API.
 
 For comparison:
 
 | Model | Price (per 1M chars) | Quality Elo |
 |---|---|---|
-| Fun-Realtime-TTS | $27.59 | 1,219 |
-| Gemini 3.1 Flash TTS | $18.30 | 1,214 |
-| Inworld Realtime TTS-2 | ~$35.00 | 1,209 |
-| Cartesia Sonic 3.5 | ~$65.00 | 1,203 |
+| Fun-Realtime-TTS | [$27.59](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard) | 1,219 |
+| Gemini 3.1 Flash TTS | [$18.30](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard) | 1,214 |
+| Inworld Realtime TTS-2 | [$25.00 on-demand](https://inworld.ai/pricing) | 1,209 |
+| Cartesia Sonic 3.5 | [$39.00](https://artificialanalysis.ai/articles/fun-realtime-tts-new-text-to-speech-model-topping-artificial-analysis-leaderboard) | 1,203 |
 
 Fun-Realtime-TTS is not the cheapest option (Gemini 3.1 Flash TTS is ~33% cheaper), but it sits
-significantly below Cartesia while delivering a higher Elo than any of them. The quality-per-dollar
+below Cartesia while delivering a higher Elo than any of them. The quality-per-dollar
 profile is strong.
 
 ---
@@ -127,6 +135,12 @@ with an existing Google Cloud account) or Cartesia (which has a simple signup fl
 | Singapore (international) | `wss://dashscope-intl.aliyuncs.com/api-ws/v1/inference/` |
 | Beijing (China) | `wss://dashscope.aliyuncs.com/api-ws/v1/inference/` |
 
+Alibaba's [CosyVoice WebSocket API
+documentation](https://www.alibabacloud.com/help/en/model-studio/cosyvoice-websocket-api) now recommends
+newer workspace-scoped domains (`wss://{WorkspaceId}.ap-southeast-1.maas.aliyuncs.com/api-ws/v1/inference`
+for international, `wss://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api-ws/v1/inference` for Beijing) in
+place of the generic hosts above — check the current docs before wiring these into production.
+
 ### Streaming TTS via Python SDK
 
 The DashScope SDK wraps the WebSocket protocol into a cleaner interface. Install it with
@@ -140,7 +154,7 @@ dashscope.api_key = "YOUR_DASHSCOPE_API_KEY"
 
 # Non-streaming call — full audio response
 result = SpeechSynthesizer.call(
-    model="cosyvoice-v3.5-plus",   # Fun-Realtime-TTS is served via CosyVoice v3.5 infrastructure
+    model="cosyvoice-v3.5-plus",   # closest available match to the Arena-benchmarked model — see note below
     text="Welcome to the assistant. How can I help you today?",
     voice="longxiaochun_v2",       # system voice; use your custom voice_id after cloning
     format="mp3",
@@ -186,19 +200,28 @@ SpeechSynthesizer.stream(
 )
 ```
 
-**Note on model ID:** Fun-Realtime-TTS as measured by Artificial Analysis is served via the
-`cosyvoice-v3.5-plus` and `cosyvoice-v3.5-flash` endpoints in DashScope's current API. Use
-`cosyvoice-v3.5-plus` for maximum quality (matches the Arena #1 results) and `cosyvoice-v3.5-flash`
-for lower latency at slightly reduced quality. The v3.5 series is currently available in the
-Beijing region; the Singapore international endpoint serves `cosyvoice-v3-plus` and `cosyvoice-v3-flash`
-for users outside China.
+**Note on model ID:** Neither Artificial Analysis nor Alibaba Cloud's own documentation publicly confirms
+an exact mapping from the "Fun-Realtime-TTS" name on the Speech Arena leaderboard to a specific DashScope
+model ID. ChatForest's inference — based on the fact that `cosyvoice-v3.5-plus` and `cosyvoice-v3.5-flash`
+are [Alibaba's current top-tier real-time synthesis
+endpoints](https://www.alibabacloud.com/help/en/model-studio/text-to-speech) — is that these are the
+closest available match, with `cosyvoice-v3.5-plus` for quality and `cosyvoice-v3.5-flash` for lower
+latency. Treat this as an educated guess, not a confirmed identity, and verify against Alibaba Cloud's
+current model list before building on it. The v3.5 series is [available in the Beijing
+region](https://www.alibabacloud.com/help/en/model-studio/text-to-speech); the Singapore international
+endpoint serves `cosyvoice-v3-plus` and `cosyvoice-v3-flash` for users outside China.
 
 ---
 
 ## Open-Source Alternative: Qwen3-TTS
 
-Alibaba's Qwen team separately open-sourced **Qwen3-TTS** (MIT license, available on HuggingFace
-at `QwenLM/Qwen3-TTS`). This is a related but distinct family supporting:
+Alibaba's Qwen team separately open-sourced **Qwen3-TTS** ([Apache 2.0
+license](https://github.com/QwenLM/Qwen3-TTS), available on
+[HuggingFace](https://huggingface.co/spaces/Qwen/Qwen3-TTS) at `QwenLM/Qwen3-TTS`). This is a related
+but distinct family — and the source of the **Dual-Track hybrid streaming generation architecture** and
+**~97ms first-packet latency** figures sometimes attributed to Fun-Realtime-TTS elsewhere; [Qwen3-TTS's
+own docs](https://qwenlm-qwen3-tts.mintlify.app/guides/streaming) confirm those specs apply to Qwen3-TTS,
+not to the hosted Fun-Realtime-TTS benchmarked on the Speech Arena. It supports:
 
 - Free-form voice design from text descriptions
 - Voice cloning from reference audio

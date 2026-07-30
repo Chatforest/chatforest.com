@@ -3,9 +3,9 @@
 > OpenAI launched its official partner program on June 14, 2026. Three tiers (Select, Advanced, Elite), a $150M fund, specializations in Codex, cybersecurity, and AI agents, and a Forward Deployed Experts program embedding partners with OpenAI engineers. Builder implications inside.
 
 
-[OpenAI launched the OpenAI Partner Network](https://openai.com/index/introducing-openai-partner-network/) on June 14, 2026 — its first formal, tiered partner ecosystem. The announcement comes three months after Anthropic launched the Claude Partner Network in March, and follows the same basic structural playbook: a three-tier program, an investment fund, and a certification track, all aimed at closing the implementation gap between AI capability and enterprise deployment.
+[OpenAI launched the OpenAI Partner Network](https://openai.com/index/introducing-openai-partner-network/) on June 14, 2026 — its first formal, tiered partner ecosystem. The announcement comes three months after Anthropic launched the [Claude Partner Network](https://www.anthropic.com/news/claude-partner-network) in March, and follows the same basic structural playbook: a three-tier program, an investment fund, and a certification track, all aimed at closing the implementation gap between AI capability and enterprise deployment.
 
-The fund is $150M. The certification target is 300,000 consultants by end of 2026 ([TechTimes](https://www.techtimes.com/articles/318436/20260615/openai-launches-partner-network-150m-bet-that-implementation-beats-model-power.htm)). The program covers system integrators, management consultants, ISVs, managed service providers, and infrastructure companies.
+The fund is $150M. The certification target is 300,000 consultants by end of 2026 ([TechTimes](https://www.techtimes.com/articles/318436/20260615/openai-launches-partner-network-150m-bet-that-implementation-beats-model-power.htm)). The program covers system integrators, management consultants, ISVs, managed service providers, and infrastructure companies ([EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/openai-launches-150-million-network-to-train-and-enable-300000-ai-consultants)).
 
 ---
 
@@ -15,7 +15,7 @@ The fund is $150M. The certification target is 300,000 consultants by end of 202
 
 The entry tier. Select is the starting point for firms that have shipped OpenAI-based deployments and want a formal relationship with the vendor.
 
-Requirements are not published in granular form — OpenAI has not released exact headcount or deployment thresholds the way Anthropic has. Advancement is based on a combination of:
+Requirements are not published in granular form — OpenAI has not released exact headcount or deployment thresholds the way Anthropic has, which publishes specific certified-practitioner and deployment counts for each of its three tiers ([Anthropic](https://www.anthropic.com/news/services-track-partner-hub)). Advancement is based on a combination of ([EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/openai-launches-150-million-network-to-train-and-enable-300000-ai-consultants)):
 
 - Sales performance (ARR sourced or influenced)
 - Technical capability evidence (certifications held, specializations earned)
@@ -32,7 +32,7 @@ Advancement from Select to Advanced requires demonstrating consistent pipeline c
 
 ### Elite
 
-The top tier. Elite is the equivalent of Anthropic's Global Premier — it targets large SIs, major consulting firms, and enterprise-focused ISVs running deep, multi-region OpenAI practices.
+The top tier. Elite is the equivalent of Anthropic's Global Premier — the top tier, reserved for large systems integrators, major consulting firms, and enterprise-focused ISVs with the deepest OpenAI practices ([EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/openai-launches-150-million-network-to-train-and-enable-300000-ai-consultants)).
 
 Elite partners access the most direct co-sell and technical engagement from OpenAI. Named specializations (see below) are particularly relevant at this tier, where deep domain expertise becomes a differentiator in competitive deal cycles.
 
@@ -40,7 +40,7 @@ Elite partners access the most direct co-sell and technical engagement from Open
 
 ## Specializations
 
-Partners at any tier can earn specializations in three areas:
+Partners at any tier can earn specializations in three areas ([EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/openai-launches-150-million-network-to-train-and-enable-300000-ai-consultants)):
 
 **Codex** — Implementation expertise with OpenAI Codex for software development automation, code generation pipelines, and developer tooling.
 
@@ -54,17 +54,15 @@ Specializations serve two functions: they signal a firm's depth to enterprise bu
 
 ## The $150M Fund
 
-OpenAI manages the $150M directly. The fund is not a venture vehicle — it does not take equity. It is an enablement fund: co-sell support, technical assistance, enablement programs, and partner development resources across the ecosystem.
+OpenAI manages the $150M as an enablement fund: partner training, offsetting service-delivery costs, co-sell support, and market development resources across the ecosystem ([EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/openai-launches-150-million-network-to-train-and-enable-300000-ai-consultants)).
 
 The fund is oriented toward implementation, not product development. The bet is that the constraint on enterprise AI adoption is not model capability but deployment quality — firms that cannot get from pilot to production, integration patterns that do not hold at scale, and organizations that lack internal expertise to sustain what they build. The $150M is aimed at closing that gap through the partner channel.
-
-This is a significant difference from how tech vendors have historically funded partner ecosystems. There is no reseller margin structure announced. No referral fee schedules. The funding is aimed at capability-building in the partner base, not incentivizing transactions.
 
 ---
 
 ## Forward Deployed Experts
 
-The most architecturally unusual addition in the OpenAI Partner Network is the Forward Deployed Experts pilot.
+The most architecturally unusual addition in the OpenAI Partner Network is the Forward Deployed Experts pilot ([EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/openai-launches-150-million-network-to-train-and-enable-300000-ai-consultants)).
 
 Under this program, practitioners from partner firms are embedded with OpenAI engineering teams on complex enterprise projects. The flow runs the other direction from a typical vendor support model: instead of a customer escalating to the vendor for help, a partner's engineer works alongside OpenAI's engineers on the hardest deployments.
 
@@ -94,7 +92,7 @@ The three specialization areas OpenAI chose — Codex, cybersecurity, and AI age
 
 ### Direct competition with Anthropic's partner channel is now explicit
 
-Anthropic has a three-month lead, more than 40,000 applicants, and 10,000+ certified consultants already on the books. OpenAI is starting from behind on headcount but has a larger certification target (300K vs. Anthropic's scale) and is using the Forward Deployed Experts program as a qualitative differentiator that Anthropic has not matched.
+Anthropic has a three-month lead, more than 40,000 applicants, and 10,000+ certified consultants already on the books ([Anthropic](https://www.anthropic.com/news/services-track-partner-hub)). OpenAI is starting from behind on headcount but has a larger certification target (300K vs. Anthropic's scale) and is using the Forward Deployed Experts program as a qualitative differentiator that Anthropic has not matched.
 
 For firms deciding where to invest partner ecosystem resources, this is now a genuine choice with different tradeoffs on each side.
 
@@ -113,7 +111,9 @@ For firms deciding where to invest partner ecosystem resources, this is now a ge
 | **Tier review schedule** | Not published | Jan 1 / Jul 1 / Oct 1 (2026) |
 | **Partner types** | SIs, consultants, ISVs, MSPs, infrastructure | SIs, consultants, ISVs |
 
-Anthropic's program has more published transparency on exact tier thresholds. OpenAI's program has the larger scale target and the Forward Deployed Experts pilot as a differentiated offer for top-tier partners.
+*Table sources: [OpenAI](https://openai.com/index/introducing-openai-partner-network/), [TechTimes](https://www.techtimes.com/articles/318436/20260615/openai-launches-partner-network-150m-bet-that-implementation-beats-model-power.htm), and [EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/openai-launches-150-million-network-to-train-and-enable-300000-ai-consultants) for OpenAI figures; [Anthropic — Claude Partner Network](https://www.anthropic.com/news/claude-partner-network) and [Anthropic — Services Track and Partner Hub](https://www.anthropic.com/news/services-track-partner-hub) for Anthropic figures.*
+
+Anthropic's program has more published transparency on exact tier thresholds — Select requires 10 certified practitioners and 2 production deployments, Preferred requires 100 practitioners and 15 deployments, and Global Premier requires 1,000 practitioners and 100 deployments across 3+ regions ([Enterprise DNA](https://enterprisedna.co/resources/news/anthropic-claude-partner-network-services-track-june-2026/)). OpenAI's program has the larger scale target and the Forward Deployed Experts pilot as a differentiated offer for top-tier partners.
 
 ---
 
