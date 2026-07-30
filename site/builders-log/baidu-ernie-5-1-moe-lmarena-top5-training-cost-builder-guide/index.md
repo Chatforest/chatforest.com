@@ -3,7 +3,7 @@
 > Baidu released ERNIE 5.1 on May 8, 2026 — a sparse MoE that reached #4 globally and #1 Chinese model on LMArena Search Arena while costing 94% less to train than comparable frontier models. Here is what builders need to evaluate it.
 
 
-Baidu released **ERNIE 5.1** on May 8, 2026. We have covered nearly every significant model release since then — Qwen 3.7, Kimi K2.7-Code, GLM-5.2, Claude Fable 5 — but not this one. That is an oversight worth correcting, because ERNIE 5.1 has a legitimate claim that deserves scrutiny: it reached #4 globally on the LMArena Search Arena leaderboard while costing approximately 6% of what comparable frontier models cost to train.
+Baidu released [**ERNIE 5.1**](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) on May 8, 2026 ([independent coverage](https://codersera.com/blog/baidu-ernie-5-1-launch-2026/)). We have covered nearly every significant model release since then — Qwen 3.7, Kimi K2.7-Code, GLM-5.2, Claude Fable 5 — but not this one. That is an oversight worth correcting, because ERNIE 5.1 has a legitimate claim that deserves scrutiny: it [reached #4 globally on the LMArena Search Arena leaderboard](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) while [costing approximately 6% of what comparable frontier models cost to train](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) ([independent coverage](https://www.remio.ai/post/baidu-ernie-5-1-hits-no-1-chinese-model-on-lmarena-built-at-6-of-the-normal-training-cost)).
 
 Whether those two facts hold up under builder-level examination is what this guide covers.
 
@@ -13,7 +13,7 @@ Whether those two facts hold up under builder-level examination is what this gui
 
 ERNIE 5.1 is Baidu's fifth-generation text-focused flagship. It is a sparse Mixture-of-Experts model, hosted exclusively through Baidu's Qianfan platform and the ernie.baidu.com interface. There are no open weights and no plans for self-hosting.
 
-It is notably different from its predecessor. ERNIE 5.0 (released January 2026) was a 2.4-trillion-parameter omni-modal model handling text, images, audio, and video. ERNIE 5.1 is text-only, with roughly one-third of ERNIE 5.0's total parameter count and approximately half of its active parameters per token. Baidu has not published exact parameter counts for 5.1, so those proportions are from their public technical communications rather than a model card.
+It is notably different from its predecessor. [ERNIE 5.0 (released January 2026) was a 2.4-trillion-parameter omni-modal model handling text, images, audio, and video](https://ernie.baidu.com/blog/posts/ernie5.0/) ([independent coverage](https://the-decoder.com/baidus-ernie-5-0-tops-all-chinese-ai-models-in-lmarena-with-2-4-trillion-parameters/)). ERNIE 5.1 is text-only, with [roughly one-third of ERNIE 5.0's total parameter count and approximately half of its active parameters per token](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/). Baidu has not published exact parameter counts for 5.1, so those proportions are from their public technical communications rather than a model card.
 
 The trade-off for shrinking the model: ERNIE 5.1 outperforms ERNIE 5.0 on the benchmarks Baidu cares about most (LMArena, agentic tasks) while being dramatically cheaper to serve. It is not the model you call when you need vision or audio — it is the model you call when you need high-quality reasoning over text and want to pay as little as possible to get it.
 
@@ -32,17 +32,17 @@ The trade-off for shrinking the model: ERNIE 5.1 outperforms ERNIE 5.0 on the be
 | Self-hosting | Not available |
 | License | Proprietary |
 
-The 128K context is the biggest architectural constraint for builders evaluating ERNIE 5.1 against the current Chinese frontier. DeepSeek V4-Pro and Kimi K2.7-Code both support 1M tokens. GLM-5.2 supports 1M tokens. ERNIE 5.1 does not. If your use case involves large codebase analysis, long document pipelines, or extended agentic sessions, the context limit is a hard stop.
+The [128K context and 65,536-token output cap](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) are the biggest architectural constraint for builders evaluating ERNIE 5.1 against the current Chinese frontier. [DeepSeek V4-Pro supports a 1M-token context](https://api-docs.deepseek.com/news/news260424/) and [GLM-5.2 supports a 1M-token context](https://www.eigent.ai/blog/glm-5-2) as well. Kimi K2.7-Code, despite also being a newer release, tops out at a [262,144-token (256K) context](https://www.kimi.com/resources/kimi-k2-7-code-pricing) — larger than ERNIE 5.1's 128K but well short of 1M. If your use case involves large codebase analysis, long document pipelines, or extended agentic sessions, ERNIE 5.1's context limit is a hard stop.
 
 ---
 
 ## The Training Cost Claim
 
-The headline is that ERNIE 5.1 was trained at approximately **6% of the compute cost** of comparable frontier models — meaning 94% cheaper to produce.
+The headline is that [ERNIE 5.1 was trained at approximately **6% of the compute cost** of comparable frontier models](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) — meaning 94% cheaper to produce. This is Baidu's own claim; as of this writing there is no independent audit of Baidu's training compute, so treat the specific percentage as Baidu-reported rather than externally verified, though [multiple outlets have repeated it without disputing it](https://en.wedoany.com/shortnews/163484.html).
 
 Baidu's explanation is architectural efficiency: the MoE design activates only a small fraction of parameters per token, and their training stack (built on PaddlePaddle) has been optimized over multiple generations for Baidu's cluster configurations. They are not doing anything exotic by frontier standards — efficient MoE training has been validated by DeepSeek, Mistral, and others — but the claimed efficiency ratio is on the high end of published results.
 
-What this means for builders practically: lower training cost does not directly lower inference cost, but it does signal that Baidu can iterate the model faster, keep pricing competitive as they release successors, and sustain a more aggressive API pricing strategy over time. The $0.59/M input price already reflects this.
+What this means for builders practically: lower training cost does not directly lower inference cost, but it does signal that Baidu can iterate the model faster, keep pricing competitive as they release successors, and sustain a more aggressive API pricing strategy over time. The $0.59/M input price (sourced in the Pricing section below) already reflects this.
 
 ---
 
@@ -50,7 +50,7 @@ What this means for builders practically: lower training cost does not directly 
 
 ### LMArena Search Arena — #4 Globally
 
-ERNIE 5.1 debuted at a score of **1,223** on the LMArena Search Arena, placing it #4 globally behind two Claude Opus variants and GPT-5.5 Search. It was the first Chinese model in the global Search Arena top 5.
+ERNIE 5.1 [debuted at a score of **1,223** on the LMArena Search Arena, placing it #4 globally behind two Claude Opus variants and GPT-5.5 Search](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/). It was [the first Chinese model in the global Search Arena top 5](https://codersera.com/blog/baidu-ernie-5-1-launch-2026/).
 
 Two cautions before treating this as a proxy for general capability:
 
@@ -62,19 +62,19 @@ That said, landing at #4 globally on any widely-used leaderboard is not trivial.
 
 ### AIME 2026 with Tools — 99.6%
 
-On AIME 2026 (the American Invitational Mathematics Examination) evaluated with tool access, ERNIE 5.1 scored **99.6%**, placing second only to Gemini 3.1 Pro.
+On AIME 2026 (the American Invitational Mathematics Examination) evaluated with tool access, [ERNIE 5.1 scored **99.6%**, placing second only to Gemini 3.1 Pro](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/).
 
 This benchmark rewards multi-step symbolic reasoning rather than code execution, which makes it a more interesting data point than it first appears. ERNIE 5.1 is not a coding model — but it can reason carefully through structured problem sequences when given access to tools.
 
 ### Agentic Benchmarks — τ³-bench and SpreadsheetBench
 
-On the τ³-bench and SpreadsheetBench-Verified evaluation sets for agentic tasks, ERNIE 5.1 **outperforms DeepSeek V4-Pro** according to Baidu's published comparisons.
+On the τ³-bench and SpreadsheetBench-Verified evaluation sets for agentic tasks, [ERNIE 5.1 **outperforms DeepSeek V4-Pro**](https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/) according to Baidu's published comparisons.
 
 Independent replication of these results is limited as of this writing. Treat this as a directional signal, not a confirmed ranking. The task types in these benchmarks — multi-step instruction following, spreadsheet manipulation, long-horizon planning — are plausibly aligned with what ERNIE 5.1 does well.
 
 ### No SWE-Bench Score
 
-Baidu has not published a SWE-bench Verified score for ERNIE 5.1. This is consistent with ERNIE 5.1 being positioned as a text and agentic model rather than a coding model — but it also means you cannot directly compare it to DeepSeek V4-Pro (80.6%), Kimi K2.7-Code, or Claude Opus 4.8 (88.6%) on software engineering tasks.
+Baidu has not published a SWE-bench Verified score for ERNIE 5.1. This is consistent with ERNIE 5.1 being positioned as a text and agentic model rather than a coding model — but it also means you cannot directly compare it to [DeepSeek V4-Pro (80.6%)](https://www.aimadetools.com/blog/deepseek-v4-pro-complete-guide/), Kimi K2.7-Code (no independent SWE-bench Verified score published as of this writing — [vendor benchmarks only](https://saascity.io/blog/kimi-k27-code-drops-moonshot-ai-strongest-open-source-coding-model)), or [Claude Opus 4.8 (88.6%)](https://www.anthropic.com/news/claude-opus-4-8) on software engineering tasks.
 
 If coding is your primary use case, ERNIE 5.1 is not where you start.
 
@@ -82,12 +82,12 @@ If coding is your primary use case, ERNIE 5.1 is not where you start.
 
 ## Domain Strengths
 
-Baidu reports the following LMArena category rankings:
+On the [LMArena Text Arena's occupational-category breakdown, as of the April 30, 2026 preview release](https://ernie.baidu.com/blog/posts/ernie-5.1-preview-0430-release-on-lmarena/) (ERNIE-5.1-Preview, ranked #13 globally overall on that leaderboard — a different board from the Search Arena #4 ranking above), Baidu-reported category rankings included:
 
 - **Legal and Government** — #1 globally
 - **Math** — 9th globally
 
-The Legal/Government result is the more actionable signal for builders. ERNIE 5.1 produces outputs that human raters with legal expertise prefer over every other frontier model on legal document synthesis tasks. This makes sense given Baidu's enterprise focus on Chinese government and legal markets, where the training data and RLHF feedback have been tuned for this domain over multiple generations.
+These are preview-era, Text Arena numbers, not the final release's Search Arena standing, and LMArena's live category leaderboards are continuously updated as new models are added — by the time you read this, ERNIE 5.1's position may have shifted. Still, the Legal/Government result is the more actionable signal for builders as of its measurement: ERNIE 5.1 produced outputs that human raters preferred over most other frontier models on legal document synthesis tasks at that time. This makes sense given Baidu's enterprise focus on Chinese government and legal markets, where the training data and RLHF feedback have been tuned for this domain over multiple generations.
 
 If you are building for Chinese legal tech, regulatory compliance tooling, or government document processing, ERNIE 5.1 is the first model you evaluate.
 
@@ -97,20 +97,20 @@ If you are building for Chinese legal tech, regulatory compliance tooling, or go
 
 ERNIE 5.1 is available through two channels:
 
-**Baidu Qianfan** (primary):
+**Baidu Qianfan** (primary) — [base URL and model ID confirmed](https://docs.openclaw.ai/providers/qianfan) via [independent documentation](https://apidog.com/blog/how-to-use-ernie-5-1-api/):
 
 ```
 Base URL: https://qianfan.baidubce.com/v2
 Model ID: ernie-5.1
 ```
 
-The API is OpenAI-compatible. If you are using the OpenAI Python or JavaScript SDK, pointing it at the Qianfan endpoint with your Qianfan API key is the only change required.
+[The API is OpenAI-compatible](https://apidog.com/blog/how-to-use-ernie-5-1-api/). If you are using the OpenAI Python or JavaScript SDK, pointing it at the Qianfan endpoint with your Qianfan API key is the only change required.
 
 **ernie.baidu.com** — the web interface for direct testing.
 
-**Friction point for Western builders:** Obtaining a Qianfan API key requires a Baidu account and phone verification. The signup flow is Chinese-primary. Western builders who have gone through the DeepSeek or Kimi signup processes report the Qianfan flow is roughly comparable in friction — doable, but not instant.
+**Friction point for Western builders:** Getting a Qianfan API key requires a Baidu Intelligent Cloud account, but core API access does not strictly require a mainland Chinese phone number — [international developers can sign up by email, and a mainland phone number is only needed for some enterprise features](https://apidog.com/blog/how-to-use-ernie-5-1-api/). The console and signup flow are Chinese-primary either way, so expect friction from language and unfamiliar UI even without a phone-verification blocker.
 
-ERNIE 5.1 is **not available on OpenRouter** as of this writing. Baidu models on OpenRouter include earlier ERNIE versions (ERNIE 4.5 21B A3B Thinking) but not 5.1. If you need ERNIE 5.1 access without going through Qianfan directly, check OpenRouter's model catalog — this may change as the model matures.
+ERNIE 5.1 is **not available on OpenRouter** as of this writing. Baidu models on OpenRouter include earlier ERNIE versions ([ERNIE 4.5 21B A3B Thinking](https://openrouter.ai/baidu/ernie-4.5-21b-a3b-thinking)) but not 5.1. If you need ERNIE 5.1 access without going through Qianfan directly, check OpenRouter's model catalog — this may change as the model matures.
 
 ---
 
@@ -118,12 +118,14 @@ ERNIE 5.1 is **not available on OpenRouter** as of this writing. Baidu models on
 
 | Model | Input ($/M) | Output ($/M) |
 |---|---|---|
-| ERNIE 5.1 | $0.59 | $2.65 |
-| DeepSeek V4-Pro | $0.67 | $0.87 |
-| Qwen 3.7-Max | ~$0.90 | ~$3.60 |
-| Kimi K2.7-Code | $0.95 | $4.00 |
-| Claude Opus 4.8 | $5.00 | $25.00 |
-| GPT-5.5 | $5.00 | $30.00 |
+| [ERNIE 5.1](https://en.wedoany.com/shortnews/163484.html) | $0.59 | $2.65 |
+| [DeepSeek V4-Pro](https://api-docs.deepseek.com/quick_start/pricing) | $0.435 | $0.87 |
+| [Qwen 3.7-Max](https://openrouter.ai/qwen/qwen3.7-max) | $1.25 (launch promo; $2.50 list) | $3.75 (launch promo; $7.50 list) |
+| [Kimi K2.7-Code](https://www.kimi.com/resources/kimi-k2-7-code-pricing) | $0.95 | $4.00 |
+| [Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) | $5.00 | $25.00 |
+| [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5) | $5.00 | $30.00 |
+
+*Pricing corrected 2026-07-30: an earlier version of this table listed DeepSeek V4-Pro at $0.67/M input (stale — DeepSeek's 75%-off promotional rate became the standing price on 2026-05-22, well before this article's original publish date) and Qwen 3.7-Max at approximately $0.90/$3.60 (this figure does not match any documented Qwen 3.7-Max pricing tier found on re-verification; corrected to the sourced launch-promotional and list rates above).*
 
 ERNIE 5.1 is the cheapest of the Chinese frontier hosted models, and it is roughly 8–9× cheaper than Claude Opus 4.8 on both sides.
 
@@ -159,8 +161,8 @@ Use ERNIE 5.1 as a first evaluation if:
 Skip ERNIE 5.1 if:
 
 - Your primary tasks are **code generation or software engineering** — use Kimi K2.7-Code or DeepSeek V4-Pro
-- You need **1M-token context** — use DeepSeek V4-Pro, Kimi K2.7-Code, or GLM-5.2
-- You require **self-hosting or open weights** — use DeepSeek V4 (MIT license)
+- You need **1M-token context** — use DeepSeek V4-Pro or GLM-5.2 (Kimi K2.7-Code tops out at 256K, still well above ERNIE 5.1's 128K but not 1M)
+- You require **self-hosting or open weights** — use [DeepSeek V4 (MIT license)](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)
 - You want **multimodal** input handling — use ERNIE 5.0, Qwen 3.7-Plus, or Gemini 3.5 Flash
 - You cannot obtain a **Baidu Qianfan account** and ERNIE 5.1 is not yet on OpenRouter
 

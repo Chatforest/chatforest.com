@@ -2,7 +2,92 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
-## Run 3128312/current (2026-07-30) — Recovered stray audit (3 pages) + fresh citation audit (4 of 5 pages)
+## Run 3149650/current (2026-07-30) — Citation audit, 7 of 8 pages (miasma-worm safeguard-blocked 6th time)
+
+### Orient
+No pending inbox messages. No stray uncommitted work this time (last run committed cleanly). Picked up
+the standing citation-audit duty where run 3128312 left off: retry the miasma-worm page (oldest
+unaudited, safeguard-blocked in the prior run) plus 7 fresh pages from the 2026-06-15 cluster.
+
+### Audit batch (8 targeted, 7 completed)
+Ran one general-purpose audit agent per page in parallel, each briefed on the site's citation standard,
+Wikipedia-editor-style claim sweep, "cite it or cut it," and the stat-fusion failure mode from CLAUDE.md.
+
+1. **miasma-worm-73-microsoft-repos-ai-coding-agent-supply-chain-attack-builder-guide** — hit the same
+   "Sonnet 5's safeguards flagged this message" Cyber Verification Program error again, before any edit
+   (confirmed via `git diff --stat`: zero changes). This is now **6 consecutive scheduled-run failures**
+   on this specific page (runs 3030737, 3051823, 3072426, 3093346, 3110790, and now 3149650 — 3128312 also
+   hit it mid-run). Given the streak, **sent an inbox message to Rob (aiu 67) flagging it** rather than
+   queuing another blind retry — see below. File remains untouched; still the oldest unaudited page.
+2. **alteryx-agent-studio-mcp-server-business-logic-enterprise-ai-builder-guide** — removed two MCP-callable
+   platforms (Microsoft Copilot, Salesforce Agentforce) that were only supported by a secondary
+   aggregator's hedged illustrative language, not Alteryx's own materials (which confirm only Claude/
+   ChatGPT/Gemini); removed a fabricated direct quote ("agent architects") that traced to an aggregator's
+   own editorializing, replaced with a properly attributed paraphrase.
+3. **baidu-ernie-5-1-moe-lmarena-top5-training-cost-builder-guide** — corrected DeepSeek V4-Pro pricing
+   ($0.67/M claimed vs. $0.435/M actual), Qwen 3.7-Max pricing (~$0.90/~$3.60 claimed vs. $2.50/$7.50 list
+   actual), and a Kimi K2.7-Code context-window claim (1M tokens claimed twice vs. 256K actual per
+   Moonshot's own pricing page) — the same 256K-vs-1M error also caught independently on the Doubao page
+   below, suggesting an aggregator-wide error worth watching for. Also separated two different LMArena
+   leaderboards (Search Arena vs. Text Arena preview) that had been conflated into one "ranking" claim.
+4. **bytedance-doubao-seed-2-0-multimodal-moe-four-variant-builder-guide** — found ByteDance's own arXiv
+   model card (published after this article's original write-up) and re-verified nearly every benchmark
+   number against it directly. Corrected DeepSeek V4-Pro and ERNIE 5.1 pricing, the same Kimi K2.7-Code
+   256K-vs-1M context error as #3, a Seed 2.0 Code pricing claim that had it at 35% below Pro (actual:
+   roughly at parity per Volcano Engine's CNY rate card), and cut an unsourced "held-out IMO problems"
+   claim and an unsupported Code-variant SWE-bench score that the model card never publishes.
+5. **claude-fable-5-system-prompt-120k-leak-architecture-builder-guide** — the biggest catch: the article
+   claimed the Opus 4.8 safety-routing handoff was silent/undisclosed to users; Anthropic's own launch
+   announcement explicitly says users are informed when it occurs. Rewrote the section to reflect the
+   real documented complaint (can't reverse mid-session) rather than a false secrecy claim. Also replaced
+   a fabricated percentage-breakdown table with figures from two independent researcher analyses that
+   include a 13% "identity and self-reference" category the original table omitted.
+6. **gemini-embedding-2-multimodal-video-audio-rag-builder-guide** — the headline benchmark claim (MTEB
+   English v2: 68.32, "5.09 points ahead of the next competitor") belonged to the *predecessor* model per
+   Google's own technical report, not Gemini Embedding 2 — corrected to the model's actual verified MTEB
+   Multilingual score (69.9), which also resolved an internal contradiction with the article's own
+   footnote. Corrected fabricated file-format claims (invented WebP/GIF/AVI/WebM/FLAC/AAC support) against
+   Google's actual docs, and cut an unverifiable Voyage 4 NDCG figure.
+7. **google-open-knowledge-format-okf-v0-1-ai-agent-knowledge-builder-guide** — no claims needed cutting;
+   mainly a citation-attachment pass. Fixed two stale repo paths against the actual GitHub tree and added
+   a note that the frozen "451 lines" spec snapshot has since grown to a v0.2 spec (1,003 lines), linking
+   both versions so the historical claim stays true without misleading current readers.
+8. **holo3-1-local-computer-use-android-quantized-builder-guide** — cut several fabricated hard numbers
+   (a "140ms per step" claim from the article's own title, an invented "dynamic ROI encoding" architecture
+   feature, an entire consumer-GPU hardware table H Company never published) traced to an unreliable
+   aggregator that also invented a wrong model architecture elsewhere on the same source page. Corrected
+   real benchmark numbers by downloading and reading H Company's own benchmark chart images directly
+   (OSWorld 74.2%/68% claimed vs. 80.0%/77.8% actual — this also reversed a "mobile beats desktop" claim
+   that was backwards) and fixed a VRAM claim (12GB claimed vs. 21.3GB actual file size).
+
+**`sources_audited` count: 1398 → 1405 of 1948 total pages** (543 remaining). Hugo rebuild clean (4163
+pages, matches prior runs). All front matter validated (YAML parses, bracket counts balanced) before
+build. Deployed to DreamHost (throttle clear, ~62min since last deploy).
+
+### Inbox sent
+Sent Rob (aiu 67) a high-priority-adjacent note on the miasma-worm page: 6 consecutive scheduled runs have
+now hit the "Cyber Verification Program" safeguard error attempting to audit it, with zero edits made
+each time. It's a defensive-security writeup of an already-public supply-chain attack (named worm,
+Microsoft repos), not exploit code, but the safeguard appears to trip on the subject matter regardless of
+framing. Asked whether Rob wants to (a) apply for the Cyber Verification Program referenced in the error
+message, (b) have grove skip this one page indefinitely and note it as a known gap, or (c) something else.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch is the remainder of the
+  2026-06-15 cluster (many pages left in that date, e.g. jetbrains-mellum2-12b-moe-focal-model-pipeline,
+  minimax-m3-1m-context, moonshot-kimi-k2-7-code, nvidia-nemotron-3-5, openai-codex-cli-0140,
+  qwen3-embedding-8b, qwen3-vl-embedding, and more).
+- **Do not re-attempt the miasma-worm page** until Rob replies — it's now flagged to him; re-attempting
+  without new information would just repeat the same failure a 7th time.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  open, carry forward (today is still July 30).
+- Per CEO message #2273: GSC re-measure still flagged as due — carry forward again across many runs now;
+  worth picking up explicitly soon.
+- Noticed a possible recurring aggregator error: two independent pages this run (baidu-ernie-5-1, bytedance-
+  doubao-seed-2-0) both had to correct a claimed 1M-token context window for Kimi K2.7-Code down to the
+  real 256K — worth a quick grep across other unaudited pages mentioning Kimi K2.7-Code for the same error.
+
+## Run 3128312 (2026-07-30) — Recovered stray audit (3 pages) + fresh citation audit (4 of 5 pages)
 
 ### Orient
 No pending inbox messages. Found the same stray-crash pattern as the last three runs (2920321, 2977380,

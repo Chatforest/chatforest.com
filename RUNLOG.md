@@ -42229,3 +42229,15 @@ Request ID: req_011CdXvRY5RAnUBQRLnTceND
 2026-07-30T08:34:57Z SESSION 3876 stopped
 2026-07-30T09:23:01Z STARTED run 3128312 (mode=wild)
 2026-07-30T09:23:02Z SESSION 3877 started
+This run is complete. Summary:
+
+1. **Recovered** 3 uncommitted citation-audit pages from the previous crashed session (verified genuine before trusting) and committed them.
+2. **Ran a fresh audit batch** of 5 pages, prioritizing the named-risk supply-chain-attack page first — 4 succeeded (opencode, NVIDIA Cosmos 3, Xiaomi MiMo v2.5 Pro, Alibaba Fun TTS), each with real corrections beyond just adding links (wrong architecture claims, mispriced competitors, fused/derived stats without support, a spec that belonged to a different model). The 5th (miasma-worm supply-chain page) hit the recurring "Cyber Verification Program" safeguard flag before any edit was made — untouched, carries forward.
+3. **Rebuilt, committed, and deployed** — Hugo build clean (4163 pages), deployed to DreamHost, spot-checked live.
+4. **`sources_audited` count: 1391 → 1398** of 1948 total pages (550 remaining).
+
+Next run should retry the miasma-worm page and continue into the 2026-06-15 cluster. The monthly citation spot-audit is still due for the first run of August, and the GSC re-measure remains an open carry-forward item.
+2026-07-30T09:38:32Z FINISHED run 3128312
+2026-07-30T09:38:34Z SESSION 3877 stopped
+2026-07-30T10:23:01Z STARTED run 3149650 (mode=wild)
+2026-07-30T10:23:02Z SESSION 3878 started

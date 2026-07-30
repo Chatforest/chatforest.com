@@ -8,9 +8,9 @@ different model. Feed them a video clip, and you need a third one. Building a RA
 mixed corpus of PDFs, screenshots, videos, and transcripts meant stitching together multiple models
 and hoping their vector spaces were compatible enough to retrieve across modalities.
 
-Gemini Embedding 2, released in public preview on March 10, 2026, takes a different approach: a
-single model that maps text, images, videos, audio, and PDFs into one unified 3,072-dimensional
-vector space. Cross-modal similarity — comparing a natural language query against a video thumbnail
+Gemini Embedding 2, released in public preview on [March 10, 2026](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/) — Google's [first natively multimodal embedding model](https://www.marktechpost.com/2026/03/11/google-ai-introduces-gemini-embedding-2-a-multimodal-embedding-model-that-lets-your-bring-text-images-video-audio-and-docs-into-the-embedding-space/) — takes a different approach: a
+single model that maps text, images, videos, audio, and PDFs into one unified [3,072-dimensional
+vector space](https://arxiv.org/abs/2605.27295). Cross-modal similarity — comparing a natural language query against a video thumbnail
 or audio clip — works natively, with no conversion step.
 
 This guide is for builders evaluating embedding models for production RAG pipelines, semantic search,
@@ -27,16 +27,19 @@ a text completion.
 
 The key architectural distinction: it's natively multimodal. Most "multimodal embedding" models are
 really text embedding models that accept image inputs and convert them to text-space representations
-internally. Gemini Embedding 2 was trained to represent all modalities in a shared geometric space
-from the start. A photo of a product, a 30-second video of a process, an audio snippet, and a text
+internally. [Gemini Embedding 2 was trained to represent all modalities in a shared geometric space
+from the start](https://arxiv.org/abs/2605.27295). A photo of a product, a 30-second video of a process, an audio snippet, and a text
 description of the same thing should all map to nearby vectors.
 
-**What it embeds:**
-- Text (documents, queries, code)
-- Images (JPEG, PNG, WebP, GIF)
-- Video (MP4, MOV, AVI, WebM)
-- Audio (MP3, WAV, FLAC, AAC)
-- PDFs (natively — no OCR preprocessing required)
+**What it embeds** (per-request limits per [Google's own documentation](https://ai.google.dev/gemini-api/docs/embeddings)):
+- Text — up to 8,192 tokens (documents, queries, code)
+- Images — up to 6 per request, PNG or JPEG
+- Video — up to 120 seconds per request, MP4 or MOV
+- Audio — up to 180 seconds per request, MP3 or WAV
+- PDFs — natively, up to 6 pages per request, no OCR preprocessing required
+
+Note the per-request caps: this is not "embed a whole 200-page PDF" or "embed an hour of video" in a
+single call — long documents and long-form media need to be chunked before embedding.
 
 ---
 
@@ -58,87 +61,112 @@ image was trained to be compatible with the vector you get from a text descripti
 without your having to write the description yourself.
 
 For practical RAG applications this means:
-- **PDF corpuses with embedded images and figures**: embed the whole PDF, not just extracted text
-- **Video knowledge bases**: embed video chunks directly; retrieve by natural language query
+- **PDF corpuses with embedded images and figures**: embed short PDFs (up to 6 pages per request)
+  directly, images and layout included, instead of extracting text and discarding figures
+- **Video knowledge bases**: embed short video chunks (up to 120 seconds each) directly; retrieve by
+  natural language query
 - **Mixed-media datasets**: one index, one embedding model, one retrieval path
 
 ---
 
 ## Benchmarks
 
-**MTEB English v2: 68.32** — top position at launch, 5.09 points ahead of the next competitor.
+Correction from an earlier draft of this piece: a widely repeated "68.32, +5.09 points" figure
+attached to Gemini Embedding 2 in secondary coverage is actually the *predecessor* model's
+(`gemini-embedding-001`) score — [Google's own technical report](https://arxiv.org/abs/2605.27295)
+(Table 2) shows the older model at a 68.4 mean-task MTEB(Multilingual) score, which Gemini Embedding
+2 then improved on. That number does not belong to Gemini Embedding 2 and has been removed here
+rather than repeated.
 
-**MTEB Multilingual: 69.9** — top position at launch across 100+ languages.
+**MTEB Multilingual: 69.9** (mean-by-task) — per [Google's technical report](https://arxiv.org/abs/2605.27295),
+ahead of Amazon Nova MME (63.8) and voyage-3.5 (58.5) on the same table, and confirmed as a
+[launch highlight in Google's announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/).
 
-**MTEB Code: 84.0** — strong performance on code retrieval tasks.
+**MTEB Code: 84.0** — per the [same technical report](https://arxiv.org/abs/2605.27295), up from 76.0
+for the previous Gemini Embedding model.
 
-**Video Retrieval: 68.8** — specific multimodal benchmark covering natural language queries over
-video clips.
+**Video Retrieval (Vatex, NDCG@10): 68.8** — per [Google's technical report](https://arxiv.org/abs/2605.27295),
+ahead of Amazon Nova MME (60.3) and Voyage Multimodal 3.5 (55.2) on the same video-retrieval
+benchmark, per [independent reporting on the same figures](https://medium.com/@tentenco/gemini-embedding-2-googles-first-natively-multimodal-embedding-model-specs-benchmarks-45dbcf80f4e9).
 
-For context, the previous generation text-only comparison points:
+For context, comparison points against other current embedding models (mixing MTEB Multilingual,
+MTEB English v2, and Voyage's own RTEB benchmark — these are not directly equivalent, see notes
+below):
 
-| Model | MTEB English | Type | Price/1M tokens |
+| Model | Benchmark score | Type | Price/1M tokens |
 |---|---|---|---|
-| **Gemini Embedding 2** | **68.32** | Multimodal API | $0.20 |
-| Qwen3-Embedding-8B | 70.58 (multilingual) | Text, OSS | $0.01 |
-| Cohere Embed 4 | 65.8 | Multimodal API | $0.10 |
-| OpenAI text-embedding-3-large | 64.6 | Text API | $0.13 |
-| Voyage 4 | ~69+ (NDCG@10) | Text API | ~$0.06 |
+| **Gemini Embedding 2** | **69.9** (MTEB Multilingual) | Multimodal API | [$0.20](https://ai.google.dev/gemini-api/docs/pricing) |
+| [Qwen3-Embedding-8B](https://qwenlm.github.io/blog/qwen3-embedding/) | 70.58 (MTEB Multilingual) | Text, OSS | [$0.01](https://openrouter.ai/qwen/qwen3-embedding-8b) |
+| [Cohere Embed 4](https://docs.cohere.com/changelog/embed-multimodal-v4) | 65.8 (MTEB English) | Multimodal API | [$0.12](https://cohere.com/pricing) ([per-modality breakdown](https://embeddingcost.com/cohere)) |
+| [OpenAI text-embedding-3-large](https://openai.com/index/new-embedding-models-and-api-updates/) | 64.6 (MTEB English) | Text API | [$0.13](https://openai.com/index/new-embedding-models-and-api-updates/) |
+| [Voyage 4](https://blog.voyageai.com/2026/01/15/voyage-4/) | not directly comparable — beats OpenAI text-embedding-3-large by 14% and Cohere Embed 4 by 8.2% on Voyage's own RTEB NDCG@10 | Text API | [$0.06](https://docs.voyageai.com/docs/pricing) |
 
 A few notes on reading this table honestly:
-- Qwen3-Embedding-8B beats Gemini Embedding 2 on raw MTEB Multilingual (70.58 vs 69.9) and costs
-  20x less, but is text-only and requires either self-hosting or a third-party inference provider.
-- Cohere Embed 4 also supports multimodal input (including PDFs) with a 128K-token context window
-  vs Gemini Embedding 2's 8,192 — a meaningful advantage for very long documents.
-- The MTEB leaderboard is updated continuously; Gemini Embedding 2 held the top position at launch
-  but rankings shift as new models release. Check the current state at mteb.clef-initiative.eu.
+- The benchmark column mixes MTEB Multilingual, MTEB English v2, and Voyage's proprietary RTEB —
+  these are different test sets and not strictly apples-to-apples; treat this as a rough guide, not
+  a ranking.
+- [Qwen3-Embedding-8B](https://qwenlm.github.io/blog/qwen3-embedding/) beats Gemini Embedding 2 on
+  MTEB Multilingual (70.58 vs 69.9) and costs 20x less, but is text-only and requires either
+  self-hosting or a third-party inference provider.
+- [Cohere Embed 4](https://docs.cohere.com/changelog/embed-multimodal-v4) also supports multimodal
+  input (including mixed-modality documents such as PDFs) with a [128K-token context
+  window](https://docs.cohere.com/changelog/embed-multimodal-v4) vs Gemini Embedding 2's 8,192 — a
+  meaningful advantage for very long documents.
+- The [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard) is updated continuously;
+  Gemini Embedding 2 held the top Multilingual position at launch but rankings shift as new models
+  release. Check the current state there.
 
 ---
 
 ## Dimensions and Context Window
 
-**Dimensions:** 128 to 3,072, selectable at inference time via Matryoshka Representation Learning
-(MRL). The model produces a full 3,072-dimensional vector that can be truncated to any smaller size
+**Dimensions:** [128 to 3,072, selectable at inference time via Matryoshka Representation Learning
+(MRL)](https://ai.google.dev/gemini-api/docs/embeddings). The model produces a full 3,072-dimensional vector that can be truncated to any smaller size
 while preserving most of the semantic quality.
 
-Practical guidance:
+Practical guidance (recommended sizes [per Google's documentation](https://ai.google.dev/gemini-api/docs/embeddings)):
 - **3,072** — maximum quality; larger index storage and slower similarity search
 - **1,536** — balanced; recommended for most production use cases
 - **768** — cost-efficient; acceptable quality loss for high-volume applications
 
-**Context window:** 8,192 tokens — a 4x improvement over Google's previous embedding-001 model, and
-sufficient for most document chunks in a standard RAG pipeline. If you're embedding 200-page documents
-whole, Cohere Embed 4's 128K context is more appropriate.
+**Context window:** [8,192 tokens](https://ai.google.dev/gemini-api/docs/embeddings) — a 4x improvement
+over Google's previous [`gemini-embedding-001` model's 2,048-token limit](https://ai.google.dev/api/embeddings),
+and sufficient for most document chunks in a standard RAG pipeline. If you're embedding 200-page documents
+whole, [Cohere Embed 4's 128K context](https://docs.cohere.com/changelog/embed-multimodal-v4) is more appropriate.
 
 ---
 
 ## Pricing
 
-**$0.20 per 1 million input tokens** via the Gemini API.
+**[$0.20 per 1 million input tokens](https://ai.google.dev/gemini-api/docs/pricing)** for text, via the Gemini API.
 
-For multimodal inputs, token counting works differently:
-- Text: standard token count
-- Images: Google's Vision token calculation (roughly proportional to resolution)
-- Video and audio: billed per second of media content
+For multimodal inputs, [Google's own pricing page](https://ai.google.dev/gemini-api/docs/pricing) shows
+token counting and pricing work differently per modality:
+- Text: $0.20 per 1M tokens, standard token count
+- Images: $0.45 per 1M tokens (Google's Vision token calculation, roughly proportional to resolution)
+- Audio: $6.50 per 1M tokens, billed per second of audio
+- Video: $12.00 per 1M tokens, billed per frame
 
-At $0.20/M tokens, Gemini Embedding 2 is more expensive than OpenAI text-embedding-3-large
+At $0.20/M text tokens, Gemini Embedding 2 is more expensive than
+[OpenAI text-embedding-3-large](https://openai.com/index/new-embedding-models-and-api-updates/)
 ($0.13/M) and significantly more expensive than open-source alternatives via OpenRouter
-(Qwen3-Embedding-8B at $0.01/M). The price premium is the cost of native multimodal capability
-and Google's infrastructure guarantees.
+([Qwen3-Embedding-8B at $0.01/M](https://openrouter.ai/qwen/qwen3-embedding-8b)). The price premium is
+the cost of native multimodal capability and Google's infrastructure guarantees.
 
 ---
 
 ## API Access
 
-Gemini Embedding 2 is available through two Google endpoints:
+Gemini Embedding 2 is available through [two Google endpoints](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/):
 
 **Gemini API** (AI Studio) — simpler setup, suitable for prototyping and personal projects.
 Requires a Google account and an AI Studio API key.
 
-**Vertex AI** — production-grade endpoint with SLAs, regional options, IAM integration,
+**[Vertex AI](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/embedding-2)** — production-grade endpoint with SLAs, regional options, IAM integration,
 and VPC-SC support. Requires a Google Cloud project.
 
-The model identifier is `gemini-embedding-2` across both endpoints. Check the current Google
+The model identifier is [`gemini-embedding-2`](https://ai.google.dev/gemini-api/docs/models/gemini-embedding-2)
+(the preview identifier was `gemini-embedding-2-preview`) across both endpoints. Check the current Google
 documentation for the latest model IDs, as Google sometimes updates these between preview and GA.
 
 ### Python: Text Embedding (Gemini API)
@@ -235,8 +263,9 @@ embeddings = GoogleGenerativeAIEmbeddings(
 # Works with any LangChain vector store (Chroma, Qdrant, Weaviate, etc.)
 ```
 
-Gemini Embedding 2 is supported by LangChain, LlamaIndex, Haystack, Weaviate, Qdrant, and
-ChromaDB directly. For most frameworks, it's a drop-in swap wherever an embedding model is
+Gemini Embedding 2 is [supported by LangChain, LlamaIndex, Haystack, Weaviate, Qdrant, and
+ChromaDB directly, per Google's own integration list](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/).
+For most frameworks, it's a drop-in swap wherever an embedding model is
 configured — you change the model identifier and add your Gemini API key.
 
 ---
@@ -247,7 +276,8 @@ configured — you change the model identifier and add your Gemini API key.
 - Your corpus mixes text, images, PDFs, video, or audio and you want a single embedding pipeline
 - You're already on GCP and want native Vertex AI integration with proper IAM and SLAs
 - Cross-modal retrieval is a core feature — finding images from text queries or vice versa
-- You want maximum MTEB English performance from a managed API without running your own inference
+- You want strong MTEB Multilingual performance (69.9) from a managed API without running your own
+  inference
 
 **Use OpenAI text-embedding-3-large instead when:**
 - Your corpus is text-only and you want a proven, lower-cost option ($0.13/M vs $0.20/M)

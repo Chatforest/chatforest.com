@@ -3,9 +3,9 @@
 > OKF v0.1 is Google Cloud's June 2026 open spec for representing org knowledge as linked Markdown files. One required field, two reference implementations, and a design that works with any agent framework.
 
 
-On June 12, 2026, Google Cloud published **Open Knowledge Format v0.1** — a vendor-neutral specification for representing organizational knowledge as a directory of linked Markdown files with YAML frontmatter. The spec is 451 lines, lives in the [GoogleCloudPlatform/knowledge-catalog](https://github.com/GoogleCloudPlatform/knowledge-catalog) GitHub repo, and ships with two working reference implementations.
+On [June 12, 2026](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing), Google Cloud published **Open Knowledge Format v0.1** — a vendor-neutral specification for representing organizational knowledge as a directory of linked Markdown files with YAML frontmatter. The spec [was 451 lines at its initial commit](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/ee67a5ca27044ebe7c38385f5b6cffc2305a9c1a/okf/SPEC.md), lives in the [GoogleCloudPlatform/knowledge-catalog](https://github.com/GoogleCloudPlatform/knowledge-catalog) GitHub repo, and ships with [two working reference implementations](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/README.md).
 
-The pattern it formalizes is not new: teams have been keeping shared Markdown wikis for AI agents to read since Andrej Karpathy popularized the idea. What OKF adds is a versioned spec so bundles from different teams, tools, and vendors can be consumed without translation layers. One required field. No proprietary SDK. No lock-in.
+The pattern it formalizes is not new: teams have been keeping shared Markdown wikis for AI agents to read since [Andrej Karpathy popularized the idea](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) in an April 2026 GitHub gist. What OKF adds is a versioned spec so bundles from different teams, tools, and vendors can be consumed without translation layers. One required field. No proprietary SDK. No lock-in.
 
 This guide covers what the spec actually says, how to build an OKF bundle today, how agents consume it, and where it fits relative to the patterns you're probably already using.
 
@@ -120,13 +120,13 @@ That's it. The spec requires no minimum number of documents, no mandatory `index
 
 ## Reference Implementations
 
-Google ships two implementations in the `knowledge-catalog` repo:
+Google ships two implementations in the [`knowledge-catalog`](https://github.com/GoogleCloudPlatform/knowledge-catalog) repo:
 
-**Enrichment Agent** (`agents/` directory) — walks a BigQuery dataset and drafts OKF concept documents for every table and view. A second LLM pass enriches the drafts with schema context, join paths, and citations from authoritative docs. The sample bundles (GA4 e-commerce, Stack Overflow, Bitcoin public datasets) were produced this way.
+**Enrichment Agent** ([`okf/src/enrichment_agent/`](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/ee67a5ca27044ebe7c38385f5b6cffc2305a9c1a/okf/src/enrichment_agent)) — walks a BigQuery dataset and drafts OKF concept documents for every table and view. A second LLM pass enriches the drafts with schema context, join paths, and citations from authoritative docs. The [sample bundles](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/ee67a5ca27044ebe7c38385f5b6cffc2305a9c1a/okf/bundles) (GA4 e-commerce, Stack Overflow, Bitcoin public datasets) were produced this way.
 
-**Static HTML Visualizer** — a single self-contained file that renders any OKF bundle as an interactive knowledge graph. No backend. No data leaving the page. Drop it next to your bundle directory and open in a browser.
+**Static HTML Visualizer** — a single self-contained file, [rendered from templates bundled with the enrichment agent](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/ee67a5ca27044ebe7c38385f5b6cffc2305a9c1a/okf/src/enrichment_agent/viewer), that renders any OKF bundle as an interactive knowledge graph. No backend. No data leaving the page. Drop it next to your bundle directory and open in a browser.
 
-Google also updated **Cloud Knowledge Catalog** on June 12 to ingest OKF bundles natively — so there's a hosted consumption path if you're already in GCP.
+Google also [updated **Cloud Knowledge Catalog**](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) around the same June 12 launch to ingest OKF bundles natively — so there's a hosted consumption path if you're already in GCP.
 
 ---
 
@@ -151,7 +151,7 @@ If you're building an MCP server, OKF bundles make a clean backing store: serve 
 | `CLAUDE.md` / `AGENTS.md` | Single repo, single tool | Tool-specific | None |
 | Karpathy LLM wiki pattern | Team-internal | Convention only | None |
 | OKF v0.1 | Org-wide, multi-team, multi-vendor | Versioned spec | `type` only |
-| `llms.txt` | Site-level context for crawlers | Not an agent format | N/A |
+| [`llms.txt`](https://llmstxt.org/) | Site-level context for crawlers | Not an agent format | N/A |
 
 These don't conflict. `CLAUDE.md` can reference an OKF bundle. An OKF bundle can contain concept files that point to your `AGENTS.md`. `llms.txt` is for crawlers; OKF is for agents doing work.
 
@@ -181,7 +181,7 @@ Google explicitly calls v0.1 a starting point:
 - **No merge semantics** — if two agents write conflicting updates to the same concept, OKF doesn't specify how to resolve them
 - **No faceted search** — the `tags` field exists but the spec doesn't mandate a tag vocabulary or search behavior
 - **No live knowledge** — bundles are files; real-time data needs a layer on top
-- **Name collision** — "OKF" is also used by the unrelated OKF-SCIS supply-chain spec; context matters when searching
+- **Name collision** — "OKF" is also used by the unrelated [OKF-SCIS supply-chain spec](https://helpfulengineering.github.io/OKF-SCIS/); context matters when searching
 
 The spec is versioned (`<major>.<minor>`): minor bumps are backward-compatible; major bumps indicate breaking changes. Community feedback shapes v0.2.
 
@@ -189,11 +189,11 @@ The spec is versioned (`<major>.<minor>`): minor bumps are backward-compatible; 
 
 ## Getting Started
 
-The spec is at `okf/SPEC.md` in the [GoogleCloudPlatform/knowledge-catalog](https://github.com/GoogleCloudPlatform/knowledge-catalog) repo. The three sample bundles are in `bundles/`. The enrichment agent and visualizer are in `agents/` and `src/`.
+The spec is at [`okf/SPEC.md`](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) in the [GoogleCloudPlatform/knowledge-catalog](https://github.com/GoogleCloudPlatform/knowledge-catalog) repo. The three sample bundles are in [`okf/bundles/`](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf/bundles). The enrichment agent and visualizer both live under [`okf/src/enrichment_agent/`](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf/src/enrichment_agent).
 
 For most builders, the fastest path is:
 
-1. Read `okf/SPEC.md` (14.7 KB, 451 lines — an easy afternoon read)
+1. Read `okf/SPEC.md` — [14.7 KB, 451 lines at the v0.1 launch commit](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/ee67a5ca27044ebe7c38385f5b6cffc2305a9c1a/okf/SPEC.md); the spec has since [grown into v0.2](https://github.com/GoogleCloudPlatform/knowledge-catalog/commit/780fe9d30b5bbca8931256edf1d0290d6bda5462) on `main`, so check the live file's current length before budgeting your afternoon
 2. Open one of the sample bundles alongside the visualizer to see what a working OKF graph looks like
 3. Write a concept or two for your own domain using the `type` + optional fields schema
 4. Wire it to your agent via file tools or an MCP resource server
