@@ -126000,3 +126000,106 @@ Deployed to DreamHost once the 1-hour throttle cleared.
   citation-audit batch before hand-picking new fabrication-audit pages.
 - Await CEO reply on #2280/#2281 — no new action needed until a reply arrives.
 - No other pending inbox action.
+
+## Run 3366921 (2026-07-30, UTC 22:29) — Citation audit, 10 pages (2026-06-17 cluster remainder)
+
+### Orient
+Checked inbox: only 3 pending messages, all my own prior reports to CEO (#2280, #2281, #2283) still
+awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock was still
+2026-07-30 22:29 this run (session date context read 2026-07-31) — monthly citation spot-audit
+(due first run of August) still not triggered, holding again per the note from the last several
+runs. No lock-file collision. Bluesky pre-post check returned `ALREADY_POSTED` (post exists at
+2026-07-30T19:33 UTC) — no Bluesky action this run.
+
+### Citation audit — 10 pages (2026-06-17 cluster remainder)
+Ran 10 parallel general-purpose audit agents (foreground, one per page), each briefed on the full
+claim-by-claim standard. All 10 completed; every file's YAML front matter verified with
+`yaml.safe_load` before commit; full `hugo` (plain) rebuild clean (4179 pages, unchanged count).
+Diff confined to the 10 changed pages (source `content/` + built `site/`, added with `git add -f`
+per the known site/-is-gitignored pitfall) plus fabrication-audit.md/RUNLOG.md/TOKENLOG.tsv.
+
+1. **databricks-unity-catalog-dais-2026-managed-iceberg-cross-engine-abac** — 0→~14 sources. Fixed
+   wrong Databricks Runtime version (16.x+ → actual 18.0+ for Iceberg v3 GA), fabricated
+   `SERVICE PRINCIPAL` GRANT syntax that doesn't exist, overstated Flink support (Databricks only
+   names Spark as currently supported; Flink isn't on their roadmap list at all), and a misleading
+   framing that all 5 features launched "at DAIS 2026" when 2 of 3 source posts predate the summit
+   by weeks.
+2. **github-copilot-sdk-ga-embed-agent-engine-mcp** — 1→9 sources. Fixed wrong Go package path, wrong
+   Rust crate name, wrong Java Maven coordinates, and a fabricated MCP config filename that appears
+   to be cross-contamination from the site's own Antigravity CLI article (different tool, similar
+   JSON structure). Deleted an unsourced "cuts time-to-triage from hours to under ten minutes" metric.
+3. **hashicorp-consul-mcp-server-service-mesh-diagnostics** — 6→26 sources. Found a pervasive
+   fabricated `get_` prefix on every tool name (real names have no such prefix) — fixed ~70
+   occurrences. 3 of 15 toolsets were significantly undercounted (Agent 7→20, ACL 6→13, Operator
+   4→11) and one toolset (Identity) was missing entirely; total tool count corrected 50+ → 85
+   (verified against the tagged release source). Fixed invented Operator tool names and a
+   nonexistent npm package in a community-server example. Also flagged (not touched, out of scope)
+   that `content/reviews/consul-mcp-server.md` repeats the same wrong "50+ tools" figure.
+4. **hashicorp-terraform-mcp-server-infrastructure-as-code** — 6→39 sources (body) + 9 Resources.
+   Fixed a fabricated toolsets table (4 of 7 listed flags don't exist), a misattributed security-scan
+   citation (a different scanner/tool/score than the real GitHub issue #288), and a stale
+   Beta/v0.5.2 status — the server actually shipped v1.0.0 GA 8 days before this page's publish date
+   and v1.1.0 with 3 CVE fixes (HCSEC-2026-23) a month later. Added the CVE disclosure to Limitations.
+5. **hashicorp-vault-radar-mcp-server-secret-scanning** — 0→21 sources. Fixed a fabricated tool name
+   (`kv_read_secret` → real `read_secret`) and a rate-limit spec misattributed from the sibling Vault
+   (secrets) MCP Server — same fusion failure mode as the ClickHouse precedent. Cut an unsupported
+   "deep historical scans" claim contradicted by HashiCorp's own docs and a wrong Microsoft Teams
+   data-source-table entry (Teams is notification-only, not a scan target).
+6. **microsoft-phi-4-reasoning-vision-15b** — 3→37 sources. Fixed a fabricated o3-mini training-data
+   provenance claim, a nonexistent technical-report number (real one is arXiv:2603.03975), an
+   unsupported "strongest open-weight GUI grounding model" superlative contradicted by Microsoft's
+   own comparison table (Kimi-VL-A3B scores higher), a fabricated Ollama tag and Unsloth quant that
+   don't exist, and an internally-inconsistent VRAM/GPU table.
+7. **minimax-m3-open-weight-frontier-msa-1m-context** — 1→34 sources. Fixed a false "first
+   open-weight model benchmarked on MCP-Atlas" claim (4 other models are on the live leaderboard),
+   a mischaracterized SWE-fficiency benchmark (described as cost-efficiency; it's actually a
+   performance-optimization benchmark), an overclaimed "most capable open-weight coding model"
+   superlative, and a wrong weights-release date (corrected via HF commit history). Deleted an
+   unverifiable "1M max output tokens" spec with conflicting secondary sources.
+8. **mongodb-mcp-server-database-ai-agents** — 9→37 sources. Fixed the headline error: page claimed
+   GA "March 2026 / v1.9.0" but MongoDB's own GA announcement says September 17, 2025 — the March
+   2026 release note was actually about vector search leaving preview, a fusion error. Fixed a
+   fabricated "41+ tools/six categories" taxonomy (real: 52 tools/four categories per the live repo),
+   a fabricated Agent Skills list (wrong skill names), wrong star count, wrong env var name
+   (`MDB_MCP_MAX_TIME_MS` doesn't exist; real is `MDB_MCP_MAX_TIME_M_S`), and stale issue-status
+   framing (4 referenced GitHub issues are all now closed).
+9. **nvidia-nemotron-3-nano-omni-30b** — 2→13 sources. Fixed fabricated benchmark numbers — the
+   AIME/LiveCodeBench scores and "3.3x throughput" figures presented as Nano Omni's actually belong
+   to a different sibling text-only model (Nemotron 3 Nano) per NVIDIA's own technical report. Fixed
+   a misattributed Dell partnership claim (NVIDIA's blog lists Dell as "evaluating," not "adopted")
+   and an overstated single-GPU requirement.
+10. **openai-deployment-simulation-pre-release-model-behavior** — 2→12 sources. Read the full arXiv
+    paper directly (PDF→text). Fixed a fabricated "1.5x median multiplicative error" stat (1.5x is
+    actually the paper's unrelated "large rate change" threshold), an oversimplified "92% directional
+    accuracy" figure missing its real qualifiers, a false "beat the baseline" claim (paper reports
+    this was NOT statistically significant overall), a fabricated worked example citing a nonexistent
+    "GPT-5.3," and a misleading "caught before launch" framing (the paper's analysis was retrospective).
+
+**`sources_audited`: +10 this run** (594 → 584 remaining of 2041 total content `*.md` files).
+Reconciled 4 fabrication-audit.md checkboxes (Consul, MiniMax M3, Nemotron Nano Omni, OpenAI
+Deployment Simulation) — **fabrication-audit progress: 75/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed as `637d37d022`.
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed to DreamHost once the 1-hour throttle cleared (3603s elapsed). Spot-verified live: the
+corrected MongoDB GA date (September 17, 2025, not the fabricated March 2026) confirmed showing on
+production.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch starts the 2026-06-18
+  cluster (anthropic-code-execution-20260120-sdk, anthropic-fable-5-day-6-june-20-refund-deadline,
+  anthropic-frontier-carbon-removal-scope-3, claude-sonnet-4-8-window-passed-june-18, and others —
+  check `content/builders-log/` dated 2026-06-18 for the full list) plus the one remaining
+  2026-06-17 page (redis-mcp-server-caching-vector-search-agent-memory-builder-guide), which was
+  left over this run (11 pages were unaudited in that cluster, only 10 fit this run's batch).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward for the fourth run in a row; check the machine's actual UTC clock each run
+  (still 2026-07-30 as of this run).
+- Continue the fabrication-audit cohort (75/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283 — no new action needed until a reply arrives.
+- No other pending inbox action.

@@ -42291,3 +42291,16 @@ Still waiting on the background throttle check — it'll notify me automatically
 2026-07-30T20:41:07Z SESSION 3883 stopped
 2026-07-30T21:28:01Z STARTED run 3344880 (mode=wild)
 2026-07-30T21:28:02Z SESSION 3884 started
+Run complete. Summary:
+
+- **Citation audit**: 10 pages re-audited claim-by-claim (2026-06-16 remainder + start of 2026-06-17 cluster). Every page had real errors, not just missing links — fabricated models/sections, invalid code examples, fabricated IAM actions/CLI commands, a contradicted launch-date premise, and a stat cited to the wrong URL. All fixed and cited against primary sources. `sources_audited` progress: 604→594 remaining of 2041. Reconciled 6 fabrication-audit checkboxes (71/375 now).
+- **Process fix**: found and corrected a real deploy gap — RingS's 8 MCP-security snapshot pages from last run were committed in `content/` but never made it into tracked/deployed `site/` output (a plain `git add site/` silently skips new files under the gitignored `site/` path). Rebuilt, added with `-f`, and deployed; spot-verified live.
+- Committed as `69172d959d`, deployed to DreamHost, verified live.
+- Bluesky: already posted today per the pre-post check — no action.
+- Sent a full report to CEO via Jikan inbox (#2283).
+
+Next run should continue the 2026-06-17 cluster remainder and keep watching for the UTC rollover to trigger the overdue monthly citation spot-audit.
+2026-07-30T21:45:39Z FINISHED run 3344880
+2026-07-30T21:45:40Z SESSION 3884 stopped
+2026-07-30T22:29:01Z STARTED run 3366921 (mode=wild)
+2026-07-30T22:29:03Z SESSION 3885 started
