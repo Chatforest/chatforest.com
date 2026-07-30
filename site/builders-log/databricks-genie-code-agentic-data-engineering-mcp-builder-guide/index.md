@@ -1,6 +1,6 @@
 # Databricks Genie Code: The Agentic Data Engineering Tool Builders Need to Understand
 
-> Databricks Genie Code is the agentic AI assistant embedded in the Databricks workspace for data engineers, scientists, and analysts — not the SQL chatbot. It builds Lakeflow pipelines, authors dashboards, and debugs notebooks autonomously. DAIS 2026 added auto-approve mode, OpenAI model support, and a July 6 pricing change. Here's the builder guide.
+> Databricks Genie Code is the agentic AI assistant embedded in the Databricks workspace for data engineers, scientists, and analysts — not the SQL chatbot. It builds Lakeflow pipelines, authors dashboards, and debugs notebooks autonomously. Auto-approve mode and OpenAI model support shipped in the weeks just before DAIS 2026, with a July 8 pricing change following. Here's the builder guide.
 
 
 Databricks launched two things called "Genie" and managed to confuse most of the market in the process.
@@ -9,7 +9,7 @@ Databricks launched two things called "Genie" and managed to confuse most of the
 
 **Genie Code** is a different product entirely. It [launched March 11, 2026](https://www.databricks.com/blog/introducing-genie-code), and it is aimed at data engineers, data scientists, and analysts who write code. It lives inside the Databricks workspace — embedded in notebooks, the SQL editor, Lakeflow Pipelines, and AI/BI Dashboards — and operates as a multi-step agentic assistant that plans, executes, reads outputs, and iterates, not just a code autocomplete.
 
-[DAIS 2026](https://www.databricks.com/blog/whats-new-genie-code-data-ai-summit-2026) (June 16–18, San Francisco) introduced auto-approve mode — the feature that turns Genie Code from a supervised assistant into a genuinely autonomous agent. It also added OpenAI model support and previewed a pricing change that takes effect July 6. If you're building on Databricks, this is worth understanding now.
+Two changes shipped in the weeks just before [DAIS 2026](https://www.databricks.com/blog/whats-new-genie-code-data-ai-summit-2026) (June 16–18, San Francisco): [auto-approve mode](https://docs.databricks.com/aws/en/release-notes/product/2026/june) (June 4, 2026) — the feature that turns Genie Code from a supervised assistant into a genuinely autonomous agent — and [OpenAI model support](https://docs.databricks.com/aws/en/release-notes/product/2026/june) (June 11, 2026). A [pay-as-you-go pricing change](https://www.databricks.com/product/pricing/genie) followed, effective July 8, 2026. *(Correction, 2026-07-30: an earlier version of this article attributed auto-approve mode and OpenAI support to the DAIS 2026 keynote and gave the pricing date as July 6; Databricks' own release notes show both features shipped via routine product updates before the summit, and the pricing cutover is July 8, 00:00 UTC.)* If you're building on Databricks, this is worth understanding now.
 
 ---
 
@@ -26,7 +26,7 @@ Before going further, clarify this for your team or you'll waste time.
 | **Where it lives** | Genie Spaces (standalone UI) | Embedded in notebook, SQL editor, Lakeflow, dashboards |
 | **Autonomy level** | Single-turn Q&A | Multi-step agentic planning |
 
-AI/BI Genie answers data questions. Genie Code does the engineering work. They will eventually converge under the "Genie One" brand consolidation Databricks is working toward, but for now they are separate surfaces with separate billing.
+AI/BI Genie answers data questions. Genie Code does the engineering work. They sit under the ["Genie One"](https://www.databricks.com/product/genie/one) brand consolidation Databricks is working toward, but for now they are separate surfaces with separate billing.
 
 ---
 
@@ -34,11 +34,13 @@ AI/BI Genie answers data questions. Genie Code does the engineering work. They w
 
 Genie Code has a Chat mode and an Agent mode. The distinction matters for how you use it.
 
+*(Correction, 2026-07-30: this was accurate as of the article's June 16, 2026 publish date. [Databricks' release notes](https://docs.databricks.com/aws/en/release-notes/product/2026/june) show that on June 29, 2026, the Chat/Agent mode selector was removed from the Genie Code pane — Genie Code now runs exclusively in Agent mode. To get a conversational, no-execution response, you now say so explicitly in the prompt, e.g. "Just explain this to me, don't run any code," rather than switching modes. The mode distinction below describes the tool's behavior, not a UI toggle you can still flip.)*
+
 **Chat mode** is interactive inline assistance. You're in a notebook or pipeline editor; Genie Code lives in a side panel. You prompt it, it generates code or an explanation, you apply it or don't. Familiar pattern if you've used Copilot or Cursor.
 
-**Agent mode** is where things change. In Agent mode, Genie Code plans a multi-step task, executes each step, reads the output, decides what to do next, and continues until the task is done or it needs clarification. It tells you what it's doing before doing it, so you can intervene. Until DAIS 2026, every consequential action (run this cell, create this dataset, add this chart) required your explicit approval.
+**Agent mode** is where things change. In Agent mode, Genie Code plans a multi-step task, executes each step, reads the output, decides what to do next, and continues until the task is done or it needs clarification. It tells you what it's doing before doing it, so you can intervene. Before auto-approve mode shipped, every consequential action (run this cell, create this dataset, add this chart) required your explicit approval.
 
-**DAIS 2026 — auto-approve mode**: The per-action confirmation gate is now optional. Auto-approve mode lets Genie Code run uninterrupted. An AI classifier runs in the background, monitoring actions and blocking anything flagged as risky (schema-destructive operations, credential access, cross-workspace writes). The classifier is the safety net; you're not flying blind. This is the feature that makes long-running agentic sessions practical — the friction of approving 30 individual steps in a pipeline build made Agent mode painful in practice.
+**Auto-approve mode** (shipped [June 4, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/june), ahead of DAIS): The per-action confirmation gate is now optional. [Auto-approve mode](https://docs.databricks.com/aws/en/genie-code/use-genie-code) lets Genie Code run uninterrupted. An AI classifier runs in the background, reviewing each proposed action against your stated intent and blocking anything flagged as risky — destructive operations, production deployments, permission and secret changes, external calls to third parties, and risky source-control operations like force pushes. Databricks is explicit that this is "a productivity feature, not a security boundary," and recommends keeping it off for production data or shared resources. This is the feature that makes long-running agentic sessions practical — the friction of approving 30 individual steps in a pipeline build made Agent mode painful in practice.
 
 ---
 
@@ -50,7 +52,7 @@ This is where Genie Code is most differentiated from general-purpose coding agen
 
 In practice: prompt it to build a bronze-to-gold pipeline reading from a source URI. It plans the full pipeline structure, generates the declarative code, runs it, reads the error logs when it fails (because pipelines always fail the first time), adjusts, and reruns. You can reference existing tables and files using `@resource_name` syntax to give it context from your Unity Catalog.
 
-[Databricks benchmarks this](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-code-bringing-agentic-engineering-data) at higher accuracy than general-purpose coding agents on pipeline tasks — specifically because it has Unity Catalog context. It knows your schema, your lineage, and your column semantics if you've maintained your UC metadata. That's the critical dependency (see Limitations).
+Databricks doesn't publish a pipeline-specific accuracy benchmark (its one published benchmark, covered below, is for data science tasks) — but it attributes Genie Code's edge over general-purpose coding agents to Unity Catalog context: [access to lineage, usage patterns, and business semantics](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-code-bringing-agentic-engineering-data) that a standalone coding agent doesn't have. It knows your schema, your lineage, and your column semantics if you've maintained your UC metadata. That's the critical dependency (see Limitations).
 
 ### Notebooks
 
@@ -68,7 +70,7 @@ This compresses dashboard work that previously took hours of back-and-forth betw
 
 ### MLflow and Data Science
 
-In data science contexts, Genie Code handles experiment tracking, model evaluation, and iteration workflows inside MLflow. Databricks reports a 77.1% success rate on real-world data science tasks, against 32.1% for general-purpose coding agents on the same benchmark. This is a vendor-reported number with unpublished methodology — take it directionally, not as gospel. The differential is plausible because Genie Code has native MLflow context; a general-purpose agent does not.
+In data science contexts, Genie Code handles experiment tracking, model evaluation, and iteration workflows inside MLflow. [Databricks reports](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-genie-code-bringing-agentic-engineering-data) a 77.1% success rate on real-world data science tasks, against 32.1% for "leading coding agents" on the same benchmark. This is a vendor-reported number with unpublished methodology — take it directionally, not as gospel. The differential is plausible because Genie Code has native MLflow context; a general-purpose agent does not.
 
 ---
 
@@ -76,18 +78,15 @@ In data science contexts, Genie Code handles experiment tracking, model evaluati
 
 Genie Code has a native MCP client. This is the extensibility layer most relevant to the ChatForest audience.
 
-**What ships out of the box**: Databricks provides managed MCP servers for:
-- Genie Spaces (query your data warehouse via MCP)
-- Unity Catalog functions (expose UC functions as MCP tools)
-- Vector Search indexes (semantic retrieval via MCP)
+**What ships out of the box**: [Databricks provides managed MCP servers](https://docs.databricks.com/aws/en/genie-code/mcp) for Unity Catalog functions (run predefined SQL as MCP tools), AI/Vector Search (query indexes for semantic retrieval), and Genie Agents (query your data warehouse via natural language over MCP) — plus built-in connectors to Google Drive, SharePoint, GitHub, Glean, Atlassian (Confluence and Jira), and Slack.
 
 These run inside the Databricks security perimeter, authenticated against your workspace, with all calls auditable in Unity Catalog logs.
 
-**Custom MCP servers**: You can run any MCP server on Databricks Apps and connect Genie Code to it. Community integrations exist for GitHub, Confluence, Azure DevOps, and Jira — the standard pattern of connecting an AI coding agent to your engineering toolchain.
+**Custom MCP servers**: You can also run any MCP server on Databricks Apps and connect Genie Code to it. Beyond the built-in GitHub and Atlassian connectors above, community write-ups cover [wiring Azure DevOps in as a custom MCP server](https://community.databricks.com/t5/community-articles/create-an-mcp-for-azure-devops-to-use-with-genie-code/td-p/152041) — the standard pattern of connecting an AI coding agent to your engineering toolchain.
 
-**For external consumers**: There is also a community-built `databricks-genie-mcp` server (alexxx-db on GitHub) that exposes Genie's API capabilities as MCP tools for external AI assistants — so you can call into a Genie Space from Claude or any MCP client, not just from inside the Databricks workspace.
+**For external consumers**: There is also a community-built [`databricks-genie-mcp` server](https://github.com/alexxx-db/databricks-genie-mcp) (alexxx-db on GitHub) that exposes Genie's API capabilities as MCP tools for external AI assistants — so you can call into a Genie Space from Claude or any MCP client, not just from inside the Databricks workspace.
 
-**Agent Skills**: A second extensibility mechanism. Skills are Markdown files stored in `.assistant/skills/` in your workspace, with front-matter metadata. Genie Code auto-loads relevant skills based on context, or you invoke them with `@skill_name`. This follows the same open Agent Skills standard that Claude Code, GitHub Copilot, and others have adopted — skills you write for one tool can transfer.
+**Agent Skills**: A second extensibility mechanism. [Skills are Markdown files](https://docs.databricks.com/aws/en/genie-code/skills) stored in `.assistant/skills/` in your workspace, with front-matter metadata. Genie Code auto-loads relevant skills based on context, or you invoke them with `@skill_name`. This follows the same [open Agent Skills standard](https://docs.databricks.com/aws/en/agent-skills/) that Claude Code, GitHub Copilot, and other agents have adopted — skills you write for one tool can transfer.
 
 Workspace admins control which MCP servers are available and can audit all external connections. This is an important difference from general-purpose coding agents that route data through external APIs: Genie Code's MCP integration stays inside Databricks' auth and audit layer.
 
@@ -95,25 +94,27 @@ Workspace admins control which MCP servers are available and can audit all exter
 
 ## The Models Underneath
 
-Databricks abstracts the model layer. What's confirmed: Genie Code routes through Databricks model-serving and supports **Anthropic models** (Claude Opus 4, Claude Sonnet 4), **Azure OpenAI**, and **OpenAI** (added at DAIS 2026). The specific default model is not publicly documented.
+Databricks abstracts the model layer. What's confirmed: [Genie Code routes through Databricks model-serving and supports models hosted by Azure OpenAI, OpenAI on Databricks, and Anthropic on Databricks](https://docs.databricks.com/aws/en/databricks-ai/databricks-ai-trust); [OpenAI support was added June 11, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/june), shortly before DAIS. Databricks' own docs describe the Anthropic and OpenAI providers generically rather than naming specific model versions for Genie Code, so treat "Claude Opus 4 / Claude Sonnet 4" as the Anthropic models Databricks has made available on the platform broadly, not a confirmed Genie Code default. The specific default model is not publicly documented.
 
 This abstraction is intentional — Databricks can swap the underlying model without changing the product experience. For builders, this means you're not locked to a specific model, but you also can't directly choose which model runs your Genie Code session (unlike Agent Bricks, where you configure this explicitly).
 
 ---
 
-## Pricing: The July 6 Change
+## Pricing: The July 8 Change
 
-Current state (pre-July 6): Genie Code usage is included in most Databricks tiers without separate metering. If you're on Databricks today and haven't used Genie Code, it costs nothing extra.
+*(Correction, 2026-07-30: this section originally said the pricing cutover was July 6, 2026. [Databricks' release notes](https://docs.databricks.com/aws/en/release-notes/product/2026/june) and [pricing page](https://www.databricks.com/product/pricing/genie) put it at July 8, 2026, 00:00 UTC. Corrected below.)*
 
-**Starting July 6, 2026**:
+Current state (pre-July 8): Genie Code usage is included in most Databricks tiers without separate metering. If you're on Databricks today and haven't used Genie Code, it costs nothing extra.
+
+**[Starting July 8, 2026, 00:00 UTC](https://docs.databricks.com/aws/en/release-notes/product/2026/june)**:
 - Pay-as-you-go on DBU (Databricks Unit) basis
-- **150 DBU free per identified user per month** — at $0.07/DBU on the Genie plan rate, this is roughly $10.50/user/month of free usage
+- **150 DBU free per identified user per month** — [150 DBUs = $10.50 in US East](https://www.databricks.com/product/pricing/genie) (works out to roughly $0.07/DBU on the Genie rate; the dollar equivalent varies by region)
 - Service principals get **no free allowance** — automation and scheduled agents are billed from the first DBU
-- LLM token costs and compute triggered by Genie Code (SQL Serverless, cluster runs) are billed separately; the 150 DBU free allowance applies only to the AI/LLM layer
+- LLM token costs and compute triggered by Genie Code (SQL Serverless, cluster runs) are billed separately; the 150 DBU free allowance applies only to the Genie LLM usage layer
 
 **What this means for agentic workloads**: Heavy Agent mode sessions with many tool calls exhaust the free allowance faster than routine Chat mode usage. A long pipeline-building session can involve 50–100 tool calls. Budget accordingly if you're running Genie Code in Agent mode at scale, and be aware that service principals — typical for CI/CD or scheduled jobs that call into Genie — start paying immediately.
 
-Databricks is adding budget controls: per-user spending caps, email alerts, and account/workspace-level budgets. These weren't available at launch and are part of the July 6 rollout.
+Databricks [documents budget controls](https://docs.databricks.com/aws/en/genie-code/) that account administrators can use to manage spending as part of the same rollout; Genie One and Genie Agents remain free through July 31, 2026.
 
 ---
 
@@ -123,9 +124,9 @@ Databricks is adding budget controls: per-user spending caps, email alerts, and 
 
 **Non-determinism**. Small prompt changes produce different outputs. This is not unique to Genie Code, but it matters more when the agent is executing real actions (running pipelines, modifying dashboards) rather than just generating suggestions. Regulated environments or high-stakes pipelines should treat Genie Code outputs as drafts requiring review, not as production-ready code.
 
-**The 30-table limit in Genie Spaces**. Applies to the AI/BI Genie side, not Genie Code directly, but relevant if you're building workflows that span both. Complex domains may require pre-unifying views.
+**The 30-table limit in Genie Spaces**. [Genie Agents support up to 30 tables or views](https://learn.microsoft.com/en-us/azure/databricks/genie/best-practices) (raised from 25). Applies to the AI/BI Genie side, not Genie Code directly, but relevant if you're building workflows that span both. Complex domains may require pre-unifying views into metric views.
 
-**Free Edition capacity restriction**. Agent mode in the Free Edition may silently fall back to Chat mode during capacity pressure. If you're evaluating Genie Code on Free Edition and Agent mode seems to behave like Chat mode, this is why.
+**Free Edition capacity restriction**. Agent mode in the Free Edition runs on a more constrained capacity pool than paid tiers; when guardrails kick in, [a Databricks Delivery Solution Architect confirmed on the Databricks community forum](https://community.databricks.com/t5/databricks-free-edition-help/possible-degradation-of-genie-agentic-capabilities-in-databricks/td-p/155839) that Agent mode can silently fall back to chat-like behavior even though notebooks and normal code execution keep working. If you're evaluating Genie Code on Free Edition and Agent mode seems to behave like Chat mode, this is why.
 
 **Not a callable service**. There is no public REST API to programmatically invoke Genie Code as an agent from outside the workspace. It is workspace-embedded. If you want to build external apps that use Databricks AI capabilities, that's Agent Bricks or the Genie API — not Genie Code.
 
@@ -152,18 +153,18 @@ Before using Genie Code in production:
 
 - [ ] **Audit Unity Catalog metadata**: table descriptions, column definitions, business terms. This is the primary quality lever.
 - [ ] **Enable auto-approve mode selectively**: start with supervised Agent mode, graduate to auto-approve once you trust the classifier's flagging behavior in your environment.
-- [ ] **Budget for July 6**: if you use service principals for automation, calculate your DBU usage now and set spending caps before the change takes effect.
+- [ ] **Budget for July 8**: if you use service principals for automation, calculate your DBU usage now and set spending caps before the change takes effect.
 - [ ] **Configure MCP servers**: connect Genie Code to GitHub (for code context), Confluence or internal wikis (for business context), and any domain-specific tools your engineers already use.
 - [ ] **Create custom skills**: document team conventions, naming standards, and architecture patterns as Agent Skills files in `.assistant/skills/`. These persist across sessions and make Genie Code consistent.
 - [ ] **Set persistent instructions**: workspace-level custom instructions for coding style, naming conventions, and security constraints apply to all team members.
 - [ ] **Watch the non-determinism**: for critical pipelines, treat Genie Code output as a draft — run it in a dev environment, review the generated code, and promote to production manually.
-- [ ] **Don't skip the feedback loop**: use the thumbs-down in Genie Code to flag bad outputs. Databricks uses this to improve routing and generation quality.
+- [ ] **Don't skip the feedback loop**: [use the thumbs up/down feedback](https://docs.databricks.com/aws/en/genie/tune-quality) in Genie Code to flag bad outputs — Databricks surfaces this feedback in usage monitoring and recommends it as the mechanism for improving response quality over time.
 
 ---
 
 ## The Context That Makes This Timely
 
-The Fable 5 export suspension (June 12, 2026) has every enterprise data team auditing their AI toolchain dependencies. Genie Code runs entirely inside the Databricks security perimeter, uses Databricks-managed model serving, and keeps data access inside Unity Catalog's governance layer. None of its core workflows require external model API calls that could be disrupted by an export control action.
+The [Fable 5 export suspension](https://www.anthropic.com/news/fable-mythos-access) (June 12, 2026) has every enterprise data team auditing their AI toolchain dependencies. Genie Code runs entirely inside the Databricks security perimeter, uses Databricks-managed model serving, and keeps data access inside Unity Catalog's governance layer. None of its core workflows require external model API calls that could be disrupted by an export control action.
 
 That's not the reason to choose Genie Code — the engineering productivity case stands on its own. But it is a factor in the current environment. Tools that route data outside your perimeter carry regulatory exposure that embedded tools like Genie Code don't.
 

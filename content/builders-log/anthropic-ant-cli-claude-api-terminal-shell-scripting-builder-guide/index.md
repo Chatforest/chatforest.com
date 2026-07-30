@@ -5,9 +5,12 @@ description: "The ant CLI gives you every Claude API endpoint as a typed shell c
 content_type: "Builder's Log"
 categories: ["Anthropic", "Claude API", "Developer Tools", "CLI", "Agent Development"]
 tags: ["ant-cli", "anthropic", "claude-api", "shell-scripting", "agents", "managed-agents", "ci-cd", "devops", "yaml", "claude-code", "terminal"]
+sources_audited: 2026-07-30
 ---
 
-Anthropic shipped the `ant` CLI in January 2026. By June 10, 2026 it had reached v1.12.1 — a Go-based, officially maintained command-line client that exposes the entire Claude Developer Platform from your terminal, with no SDK code required. This guide covers what it does, where it fits in your toolchain, and how to use it effectively.
+Anthropic shipped the [`ant` CLI](https://github.com/anthropics/anthropic-cli) with its [initial `v1.0.0` release on April 8, 2026](https://github.com/anthropics/anthropic-cli/releases/tag/v1.0.0). By [June 10, 2026 it had reached v1.12.1](https://github.com/anthropics/anthropic-cli/releases/tag/v1.12.1) — a Go-based, MIT-licensed command-line client that exposes the entire [Claude Developer Platform](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/quickstart) from your terminal, with no SDK code required. This guide covers what it does, where it fits in your toolchain, and how to use it effectively.
+
+*Correction (2026-07-30): an earlier version of this guide stated the CLI shipped in January 2026. Anthropic's own GitHub releases page shows the first tagged release, v1.0.0, on April 8, 2026 — the same week Claude Managed Agents entered public beta. This has been corrected.*
 
 ---
 
@@ -29,7 +32,7 @@ It is not a REPL. It does not manage conversation history automatically. Every c
 
 ## Installation
 
-Three methods — pick the one that fits your environment.
+Three methods — pick the one that fits your environment. (Source: [CLI quickstart](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/quickstart).)
 
 **macOS (Homebrew)**
 
@@ -67,7 +70,7 @@ ant --version
 ant auth login
 ```
 
-This opens a browser-based OAuth flow against the Claude Console and stores credentials locally. You do not need to create or manage an API key to use `ant` in interactive environments.
+This opens a browser-based OAuth flow against the [Claude Console](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication) and stores credentials locally. You do not need to create or manage an API key to use `ant` in interactive environments.
 
 For headless servers, CI/CD, or environments without a browser, set the standard environment variable instead:
 
@@ -75,7 +78,7 @@ For headless servers, CI/CD, or environments without a browser, set the standard
 export ANTHROPIC_API_KEY=sk-ant-...
 ```
 
-For multi-workspace setups (multiple API keys or org accounts) use named profiles via `--profile`. Profile credentials live in `~/.config/ant/` and can be switched per-invocation.
+For multi-workspace setups (multiple API keys or org accounts) use [named profiles](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication) via `--profile`. Profile credentials and configs live under the CLI's config directory (`~/.config/anthropic/credentials/<profile>.json` and `~/.config/anthropic/configs/<profile>.json` by default) and can be switched per-invocation.
 
 ---
 
@@ -93,7 +96,9 @@ ant models list
 ant models retrieve --model-id claude-opus-4-8
 ```
 
-Resources still in beta use the `beta:` prefix. The CLI automatically sends the correct `anthropic-beta` header — you do not need to manage this manually:
+Examples throughout this guide reference [Claude Opus 4.8](https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/) (released May 28, 2026) and [Claude Sonnet 4.6](https://www.cnbc.com/2026/02/17/anthropic-ai-claude-sonnet-4-6-default-free-pro.html) (released February 17, 2026) as the current model IDs at time of writing; check `ant models list` for what's current when you run these commands.
+
+Resources still in beta (including agents, sessions, deployments, environments, and skills) use the `beta:` prefix. The CLI automatically sends the correct `anthropic-beta` header — you do not need to manage this manually. (Source: [Using the CLI](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/using).)
 
 ```bash
 ant beta:agents list
@@ -162,6 +167,8 @@ The `@./contract.pdf` reference causes `ant` to read the file, base64-encode it,
 ---
 
 ## Output formats
+
+(Source: [Using the CLI](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/using).)
 
 | Format | When to use |
 |--------|-------------|
@@ -427,7 +434,7 @@ With `ant` installed and authenticated, Claude Code can operate your API resourc
 - *"Upload every PDF in `./reports` to the Files API and print the resulting file IDs."*
 - *"Pull the events for session `session_01...` and tell me where the agent got stuck."*
 
-Claude Code shells out to `ant`, parses the structured output, and reasons over the results. This is how you give Claude Code access to Anthropic's platform APIs without writing MCP servers or custom tooling.
+Claude Code shells out to `ant`, parses the structured output, and reasons over the results — Anthropic documents this pattern as part of [CLI scripting and automation](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting) and ships a dedicated [`claude-api` skill](https://github.com/anthropics/skills/blob/main/skills/claude-api/SKILL.md) that teaches Claude Code the CLI's conventions. This is how you give Claude Code access to Anthropic's platform APIs without writing MCP servers or custom tooling.
 
 ---
 
@@ -539,8 +546,8 @@ ant @completion fish > ~/.config/fish/completions/ant.fish
 ## What to watch
 
 - **v1.12.x changelog** — The CLI is actively developed. Each release in this range has been adding new beta resource commands (most recently `beta:deployments` and `beta:skills`). Check the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases) before pinning a version in CI.
-- **Claude Platform on AWS endpoint** — The Claude Platform on AWS (launched May 12, 2026) is accessible through the standard `ant` CLI using `--base-url` or by configuring a named profile pointing to the AWS-native endpoint. Expect official documentation to clarify this workflow as Platform on AWS matures.
-- **Workload Identity Federation** — Anthropic has documented WIF support in the CLI authentication options page. This is the path for keyless authentication in GCP/AWS CI environments — worth watching as it matures for production use.
+- **Claude Platform on AWS endpoint** — [Claude Platform on AWS reached general availability on May 11, 2026](https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/), giving AWS customers native access to the Claude Platform (APIs, console, and beta features) through their existing AWS account, authenticated via AWS IAM and billed on a single AWS invoice. It is accessible through the standard `ant` CLI using `--base-url` or by configuring a named profile pointing to the AWS-native endpoint. Expect official documentation to clarify this workflow as Platform on AWS matures.
+- **Workload Identity Federation** — Anthropic documents [WIF support on its own dedicated authentication page](https://platform.claude.com/docs/en/manage-claude/workload-identity-federation), referenced from the [CLI authentication options page](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication). This is the path for keyless, non-interactive authentication in CI/CD, servers, and containers — worth watching as it matures for production use.
 
 ---
 
