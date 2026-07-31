@@ -19,14 +19,14 @@ This article covers two new revelations from the past 48 hours that materially c
 
 The sequence of events before June 12 is now better documented.
 
-According to Trump administration accounts, the US government alerted Anthropic to a specific jailbreak vulnerability in Fable 5 **before** the export control directive was issued. The administration then offered Anthropic two options:
+According to [David Sacks](https://www.tomshardware.com/tech-industry/artificial-intelligence/trump-adviser-david-sacks-says-anthropic-refused-to-fix-fable-5-jailbreak-before-us-export-controls) — [co-chair of the President's Council of Advisors on Science and Technology](https://techcrunch.com/2026/03/26/david-sacks-is-done-as-ai-czar-heres-what-hes-doing-instead/) — a trusted partner tested Fable 5, reported a working jailbreak of its guardrails to both Anthropic and the US government, and the administration asked Anthropic to choose between two options **before** the export control directive was issued:
 
 1. **Fix the jailbreak** before the model continued operating
 2. **Voluntarily de-deploy** Fable 5 until the issue was resolved
 
-Dario Amodei declined both options. Anthropic's position, then and now, is that the jailbreak "isn't serious" — that it is better described as running a capable AI on a vulnerable codebase to audit and flag security flaws in code it's given, not a method for bypassing safety classifiers across general query types.
+Dario Amodei declined both options, according to [Sacks' account](https://www.tomshardware.com/tech-industry/artificial-intelligence/trump-adviser-david-sacks-says-anthropic-refused-to-fix-fable-5-jailbreak-before-us-export-controls). [Anthropic's own statement](https://www.anthropic.com/news/fable-mythos-access) on the directive does not confirm or deny that a fix-or-de-deploy choice was offered, but it does dispute the vulnerability's severity: Anthropic calls it a "narrow, non-universal jailbreak, which essentially consists of asking the model to read a specific codebase and fix any software flaws," says the same capability "is widely available from other models," and argues the government's action "would essentially halt all new model deployments for all frontier model providers" if applied as a general standard. Press coverage has summarized Anthropic's position as the jailbreak "isn't serious" — [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/trump-adviser-david-sacks-says-anthropic-refused-to-fix-fable-5-jailbreak-before-us-export-controls) headlined its report on this exact phrase.
 
-The administration's response to Anthropic's refusal was to issue a mandatory export control directive. David Sacks, co-chair of the President's Council of Advisors on Science and Technology, published a statement describing the administration as "frankly bewildered that Anthropic hasn't wanted to comply with safety requests that it previously said were its highest priority."
+The administration's response to Anthropic's refusal was to issue a mandatory export control directive. Sacks [posted](https://x.com/DavidSacks/status/2065853007619588171) a statement describing the administration as "frankly bewildered that Anthropic hasn't wanted to comply with safety requests that it previously said were its highest priority."
 
 This sequence matters for builders: the ban did not arrive without warning. It was the administration's escalation after Anthropic declined two voluntary off-ramps.
 
@@ -36,7 +36,7 @@ This sequence matters for builders: the ban did not arrive without warning. It w
 
 The original framing — that Anthropic could restore Fable 5 by patching the specific vulnerability that triggered the government concern — appears to have shifted.
 
-Multiple reports now indicate the White House has escalated its requirement for restoration: Anthropic must demonstrate it can **prevent all jailbreaks** before Fable 5 and Mythos 5 are allowed to return.
+Multiple reports now indicate the White House has escalated its requirement for restoration: Anthropic must demonstrate it can [**prevent all jailbreaks**](https://cybernews.com/ai-news/anthropic-fable-5-jailbreak-proof-impossible-white-house/) before Fable 5 and Mythos 5 are allowed to return — a demand also reported by [WebProNews](https://www.webpronews.com/white-house-demands-anthropic-eliminate-all-claude-ai-jailbreaks/) and [Gadget Review](https://www.gadgetreview.com/the-white-house-wants-anthropic-to-block-all-jailbreaks-that-may-be-impossible).
 
 This is a categorically different standard. "Fix this jailbreak" is a tractable engineering problem. "Eliminate all jailbreaks" is not.
 
@@ -46,15 +46,15 @@ This is a categorically different standard. "Fix this jailbreak" is a tractable 
 
 No frontier AI model has ever been fully protected against jailbreaking. The record is unambiguous:
 
-- Every major LLM that has been systematically tested has been successfully jailbroken
-- Research has repeatedly demonstrated prompt injection techniques that can bypass safety guardrails across all major frontier AI models
-- The UK AI Security Institute and US counterparts have not identified any company — Anthropic, OpenAI, Google, or xAI — that has achieved comprehensive jailbreak prevention
+- Academic surveys of [prompt-injection and jailbreak attacks](https://www.mdpi.com/2078-2489/17/1/54) have demonstrated successful bypasses across ChatGPT, Gemini, Claude, LLaMA, and other widely used models
+- Indirect prompt injection has been ranked by OWASP and NIST among the top AI risks for 2025-2026, and the 2026 industry view — per that same survey literature — is that prompt injection may be a structural property of how LLMs process text rather than something patchable at the model layer alone
+- Even Anthropic's own most rigorous internal red-teaming hasn't achieved comprehensive prevention: a [Center for a New American Security analysis](https://www.cnas.org/publications/cnas-insights/cnas-insights-governing-jailbreak-incidents) of the Fable 5 episode notes Anthropic reported "zero universal jailbreaks after over 1,700 cumulative hours of red-teaming" in its January 2026 defensive work — but *non-universal* jailbreaks (the exact category that triggered the export directive) were still found, and CNAS concludes "the boundary remains exploitable"
 
-The academic consensus is that AI model guardrails function as layered mitigations, not impenetrable barriers. Skilled users and adversarial researchers will find bypass paths in any sufficiently capable model. The goal of a robust safety program is to make jailbreaks hard, costly, and non-scalable — not to eliminate them.
+That CNAS analysis is also the source for calling AI model guardrails layered mitigations rather than impenetrable barriers: developers stack "classifiers on model inputs, outputs, or activations to flag and refuse dangerous content," but "no model generalizes perfectly." Skilled users and adversarial researchers will find bypass paths in any sufficiently capable model. The goal of a robust safety program is to make jailbreaks hard, costly, and non-scalable — not to eliminate them.
 
-Cybersecurity professionals who signed the open letter to Commerce Secretary Howard Lutnick argued that the Fable 5 jailbreak is precisely the kind of vulnerability that security researchers discover and report — and that pulling the model makes defenders worse off without making attackers meaningfully better off.
+More than 100 cybersecurity professionals — including Alex Stamos (former Facebook/Yahoo CISO), Katie Moussouris (Luta Security), and Chris Wysopal (Veracode), per [The Next Web's](https://thenextweb.com/news/fable-5-ban-cybersecurity-defenders-open-letter) reporting — signed an [open letter](https://www.pymnts.com/news/artificial-intelligence/2026/cybersecurity-experts-ask-feds-to-lift-restrictions-on-mythos/) to Commerce Secretary Howard Lutnick arguing the export directive "has taken the best models away from defenders, created market uncertainty, and risked America's AI leadership without any real risk to justify it," and that Fable 5's bug-finding capability "can be replicated by other models" — meaning pulling it doesn't meaningfully hamper attackers while it does hamper defenders.
 
-The White House demand, as reported, asks for a standard that no AI company has achieved and that researchers broadly describe as unachievable with current technology.
+The White House demand, as reported, asks for a standard that no AI company has achieved. [Oliver Simonnet](https://theorg.com/org/cultureai/org-chart/oliver-simonnet), lead cybersecurity researcher at CultureAI, put it directly in comments reported by [Cybernews](https://cybernews.com/ai-news/anthropic-fable-5-jailbreak-proof-impossible-white-house/): "While developers can reduce the success rate of jailbreaks, it is currently unrealistic to guarantee that an AI model will remain completely jailbreak-proof forever."
 
 ---
 
@@ -68,13 +68,13 @@ This is the core of the impasse.
 
 **Security researchers' position:** The administration's requirement cannot be satisfied. It's like demanding a firewall that blocks all future attacks, not just known ones.
 
-Neither side is likely to get everything it wants. The practical resolution — if one comes — will likely look like a managed access structure rather than a technical fix. Anthropic's existing TACP (Trusted Access for Cyber) program provides controlled access to models with logging, authorization requirements, and audit trails rather than jailbreak elimination. Something like TACP-compliance as a precondition, rather than zero-jailbreak proof, is a more achievable deal structure.
+Neither side is likely to get everything it wants. The practical resolution — if one comes — will likely look like a managed access structure rather than a technical fix. Anthropic's existing [Cyber Verification Program (CVP)](https://www.anthropic.com/research/glasswing-initial-update) already does something similar: it gives vetted security professionals access to models for legitimate cybersecurity work — vulnerability research, penetration testing, red-teaming — with authorization requirements, under safeguards Anthropic would otherwise apply, rather than requiring proof that jailbreaks are impossible. (Note: OpenAI runs a separately named "[Trusted Access for Cyber](https://cyberscoop.com/openai-expands-trusted-access-for-cyber-to-thousands-for-cybersecurity/)" program for its own models — a different company's program, not Anthropic's.) Something like CVP-style compliance as a precondition, rather than zero-jailbreak proof, is a more achievable deal structure.
 
 ---
 
 ## What This Means for Ciauri's "Coming Days"
 
-Chris Ciauri, Anthropic's managing director for international, stated at the Seoul office opening on June 18 that he was "very confident" Fable 5 would return "in the coming days." That window — if taken literally — spans June 19 through approximately June 24.
+Chris Ciauri, Anthropic's [Managing Director of International](https://www.anthropic.com/news/anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-managing-director-of), stated at the Seoul office opening this week that he was "very confident" Fable 5 would return "in the coming days," per [reporting from the press conference](https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522) (also covered by [TechTimes](https://www.techtimes.com/articles/318668/20260618/fable-5-export-ban-day-six-anthropic-opens-seoul-office-vows-models-back-days.htm)). That window — if taken literally — spans June 19 through approximately June 24.
 
 Ciauri's confidence is either based on information about the negotiation that has not been publicly disclosed, or it reflects optimism about deal terms that are not yet agreed. The "coming days" signal remains on the table, but as of June 19 there is no announced breakthrough.
 
@@ -84,7 +84,7 @@ If a deal materializes, it will almost certainly involve something other than An
 
 ## Builder Decision: June 20 Refund Deadline Is Tomorrow
 
-Anthropic's prorated refund window for subscribers who upgraded between June 9 and June 14 closes **tomorrow, June 20**.
+Anthropic's [prorated refund window](https://www.forbes.com/sites/barrycollins/2026/06/14/anthropic-fable-5-refunds-shutdown/) for subscribers who purchased or upgraded a plan between 10:00 AM PDT on June 9 and 12:00 AM PDT on June 14 closes **tomorrow, June 20** ([details](https://techjacksolutions.com/ai-brief/ai-models-news-fable-5-refund-window-closes-june-20-what-pro/)).
 
 | If you refund tomorrow | If you hold past June 20 |
 |---|---|
@@ -106,7 +106,7 @@ If you're holding because you believe Ciauri's "coming days" signal reflects gen
 
 - **June 20**: Refund deadline passes. No further refund option after this.
 - **June 21–24**: Ciauri's "coming days" window. If no announcement by June 24, that signal has expired.
-- **June 22**: Free trial pricing window opens (if models return by then, affected subscribers get a trial period at no charge).
+- **June 22**: The [free usage window](https://www.ghacks.net/2026/06/10/anthropic-releases-claude-fable-5-to-pro-max-and-enterprise-users-free-until-june-22/) Anthropic originally gave Pro, Max, Team, and Enterprise subscribers was scheduled to end this date (if models return by then, affected subscribers get the remainder of that window at no charge).
 - **Commerce Department public statements**: Any shift in language from "eliminate all jailbreaks" toward "managed access controls" would signal a deal structure is taking shape.
 
 The surest sign that a deal is imminent is not another "coming days" statement — it's a change in the administration's public restoration condition.

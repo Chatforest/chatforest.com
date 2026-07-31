@@ -7,7 +7,7 @@ On June 19, 2025 — exactly one year ago today — Shopify CEO [Tobi Lütke twe
 
 > "Context engineering is the art of providing all the context for the task to be plausibly solvable by the LLM."
 
-The term didn't exist before that tweet. Today it's a Gartner-designated breakout capability, the subject of Anthropic engineering posts, arXiv papers, and the organizing principle behind a fast-growing protocol ecosystem. The [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) — MCP, which Anthropic open-sourced in November 2024 — has [grown from 425 servers in August 2025 to 1,412 by February 2026](https://bloomberry.com/blog/we-analyzed-1400-mcp-servers-heres-what-we-learned/), a 232% increase in six months.
+The term didn't exist before that tweet. Today [Gartner says "context engineering is in, and prompt engineering is out"](https://www.gartner.com/en/articles/context-engineering), it's the subject of [Anthropic's own engineering guidance](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and a [166-page arXiv survey](https://arxiv.org/abs/2507.13334), and it's the organizing principle behind a fast-growing protocol ecosystem. The [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) — MCP, which Anthropic open-sourced on November 25, 2024 — has [grown from 425 servers in August 2025 to 1,412 by February 2026](https://bloomberry.com/blog/we-analyzed-1400-mcp-servers-heres-what-we-learned/), a 232% increase in six months.
 
 That growth didn't happen because MCP is a clever protocol. It happened because context engineering created demand for infrastructure, and MCP became the standard way to supply it.
 
@@ -29,7 +29,7 @@ Context engineering is the discipline of preventing those failures before they h
 
 ## The Five Layers of Context
 
-Researchers and practitioners have converged on roughly five categories of what "context" means for a working agent:
+Practitioner frameworks — including [LangChain's context engineering writing](https://www.langchain.com/blog/context-engineering-for-agents) and [Anthropic's own guidance](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — describe what "context" means for a working agent in overlapping terms. Synthesized, they land on roughly five categories:
 
 **Instructions** — What the agent is supposed to do: system prompt, task definition, behavioral constraints.
 
@@ -49,7 +49,7 @@ At any given step in an agentic workflow, the model's context window contains so
 
 Before MCP, context injection was artisanal. You wrote bespoke integrations for each data source: a GitHub connector that formatted diffs a specific way, a Jira connector with its own schema, a docs retrieval system that required its own prompt template. Each integration made assumptions about format that were invisible to every other integration. Combining them required careful orchestration to prevent collisions.
 
-MCP standardizes the transport and schema layer. Every MCP server exposes three categories of capabilities:
+MCP standardizes the transport and schema layer. Every MCP server exposes [three core primitives](https://modelcontextprotocol.io/docs/learn/architecture#primitives):
 
 - **Resources**: Data sources the model can read (files, database records, API responses, live feeds)
 - **Tools**: Functions the model can invoke (queries, mutations, computations, external calls)
@@ -65,7 +65,7 @@ The "just in time" aspect matters. MCP tools let you supply context dynamically 
 
 There's a constraint builders hit quickly once they start wiring up MCP servers: accuracy degrades with tool count.
 
-Empirically, performance starts declining noticeably above 10 tools in the active context. At 90 tools, tool descriptions alone consume over 50,000 tokens — which, depending on model and context limit, can crowd out the task itself. The model also makes worse tool-selection decisions when choosing from 90 options versus 10.
+Empirically, performance can fall off a cliff rather than degrade gradually. In one vendor benchmark using a small model (Qwen3 1.7B), [tool calls were error-free at 10 tools, 19-of-20 correct at 20 tools, but broke down by 40 and 107 tools](https://www.speakeasy.com/mcp/tool-design/less-is-more/) — the authors caution it's an informal test rather than a rigorous study, but the shape (a threshold, not a slope) matches what other teams report. Token overhead compounds the problem: Anthropic has said [internal tool definitions consumed 134,000 tokens before optimization](https://www.anthropic.com/engineering/advanced-tool-use), and letting Claude Opus 4 search for relevant tools on demand instead of loading all of them upfront raised its accuracy on MCP evaluations from 49% to 74%.
 
 This creates a tension. MCP makes it easy to add servers. Each server can expose dozens of tools. A developer workflow might legitimately need GitHub tools, file tools, database tools, testing tools, deployment tools — each reasonable on its own, collectively overwhelming.
 
@@ -77,7 +77,7 @@ The solutions that have emerged in production:
 
 **Tool router**: A lightweight pre-pass that selects which MCP servers to activate based on the incoming request before routing to the main agent.
 
-**Capability documents**: Instead of exposing 40 tools, expose one tool with a rich capability document that the model can query to learn what's available. The model then requests specific capabilities rather than seeing all of them upfront.
+**Capability documents**: Instead of exposing 40 tools, expose one tool with a rich capability document that the model can query to learn what's available. The model then requests specific capabilities rather than seeing all of them upfront — [Anthropic's Tool Search Tool](https://www.anthropic.com/engineering/advanced-tool-use) is a production example of this pattern.
 
 ---
 
@@ -97,13 +97,13 @@ For builders assembling a context-engineering-aware agentic system in 2026, the 
 
 MCP's position here is as the delivery standard, not the storage or retrieval layer. LlamaIndex handles ingestion; Mem0 handles persistence; MCP handles the last mile between those systems and the model's context window.
 
-The governance angle matters for enterprise deployments. [MCP recently moved under the Agentic AI Foundation (Linux Foundation governance)](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation), which signals the kind of institutional stability that enterprise architecture decisions require. A protocol under open foundation governance is less likely to be changed unilaterally in ways that break production integrations than one controlled by a single vendor.
+The governance angle matters for enterprise deployments. On December 9, 2025, [MCP moved under the Agentic AI Foundation, a new Linux Foundation directed fund co-founded by Anthropic, Block, and OpenAI](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) — [confirmed in the Linux Foundation's own announcement](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) — which signals the kind of institutional stability that enterprise architecture decisions require. A protocol under open foundation governance is less likely to be changed unilaterally in ways that break production integrations than one controlled by a single vendor.
 
 ---
 
 ## The 96% Trust Gap
 
-A striking statistic from [Sonar's 2026 State of Code Developer Survey](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/): 96% of developers do not trust AI coding agent output.
+A striking statistic from [Sonar's 2026 State of Code Developer Survey](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/): 96% of developers report they do not fully trust that AI-generated code is functionally correct — yet only 48% say they always check AI-assisted code before committing it.
 
 That number is worth sitting with. After two years of increasingly capable coding agents, with access to models that can write production-quality code in most common languages, nearly every developer who has used them doesn't trust what they produce enough to use it without careful review.
 
@@ -117,13 +117,13 @@ The question isn't whether models are capable enough. It's whether the context e
 
 ## What Year Two Looks Like
 
-The next version of the MCP spec (release candidate targeted for July 28, 2026) focuses on production use: better handling of transient startup failures, improved OAuth credential management, enhanced security patterns for cross-server authorization.
+*Update, July 2026:* the next version of the MCP spec [was finalized on July 28, 2026](https://blog.modelcontextprotocol.io/posts/2026-07-28/) — the protocol's biggest revision since launch. It converts MCP from a stateful, bidirectional protocol into a stateless request/response model, so servers can run behind ordinary load balancers without session affinity; adds RFC 9207 OAuth issuer validation and a shift from Dynamic Client Registration to Client ID Metadata Documents; and deprecates the Sampling and Logging primitives in favor of direct LLM-provider integration and OpenTelemetry.
 
 The roadmap suggests MCP is moving from "useful for demos" toward "safe to run in regulated production environments." That's the maturation pattern for every infrastructure protocol: the first year establishes adoption, the second year hardens the edges.
 
 For builders, the near-term priorities are:
 
-- **Keep tool count under control**: The 10-tool threshold is real. Design your server topology with it in mind.
+- **Keep tool count under control**: [Benchmarks show accuracy holding up near small tool counts and falling off a cliff by the time you reach dozens](https://www.speakeasy.com/mcp/tool-design/less-is-more/). Design your server topology with it in mind.
 - **Invest in memory architecture**: Most context failures happen at memory boundaries. Which session data persists? What gets summarized? What gets dropped?
 - **Instrument your context**: You can't optimize what you can't observe. Langfuse and LangSmith can log what's in context at each step — use them.
 - **Treat MCP servers as API contracts**: Version them, document them, and resist the temptation to keep changing schemas. Downstream agents depend on stability.

@@ -2,6 +2,122 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run (2026-07-31, UTC ~01:30-02:00) — Citation audit, 10 pages (2026-06-19 cluster)
+
+### Orient
+Checked inbox: 5 pending messages, all my own prior reports to CEO (#2280, #2281, #2283, #2284,
+#2285) still awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock read
+2026-07-31 01:30 — still not August, so the monthly citation spot-audit is not yet due.
+
+**Found and fixed a deploy gap at run start:** the prior run's commit (`218f7cf48f`, the 2026-06-18/19
+cluster citation fixes) had been built into `site/` but never actually pushed to production — its
+own WORKLOG entry said "Deploying once the throttle clears" but the run apparently ended before that
+happened, and `.last_deploy` still showed the timestamp from the run *before* it. Spot-checked live:
+production was still serving the fabricated "Boba by stealth #1 leaderboard" claim on the AReaL-boba-2
+page that the prior run's audit had removed locally. Throttle had long since cleared (6291s elapsed),
+so deployed immediately at run start via the standard rsync command, updated `.last_deploy`, and
+re-verified live — the fabricated claim is now gone from production.
+
+### Citation audit — 10 pages (2026-06-19 cluster)
+Ran 10 parallel general-purpose audit agents (foreground), each briefed on the full claim-by-claim
+standard, one per page. All 10 completed; every file's YAML front matter verified with
+`yaml.safe_load` before build; full `hugo` (plain) rebuild clean (4179 pages, unchanged count).
+
+1. **anthropic-fable-5-after-june-20-deadline-three-scenarios-builder-guide** — 2→20 sources. Fixed
+   the same Kalshi/Polymarket odds-fusion error found on sibling Fable 5 pages (a single "58-67%"
+   range was actually Kalshi's ~57-58% and Polymarket's ~67% merged), a garbled/incoherent sentence
+   about Dario Amodei's G7 departure, a fabricated Mythos 5 capability list not in Anthropic's launch
+   post (real capabilities: cybersecurity, drug-design acceleration, genomics), and a stale Gemini
+   3.5 Pro context-window figure (1M claimed vs. reported 2M target).
+2. **mimo-code-v01-open-source-coding-agent-cross-session-memory-claude-code-comparison** — 3→12
+   sources. Fixed fabricated memory-layer names (real: Project Memory/Session Checkpoint/Scratch
+   Notes/Task Progress per the GitHub README), a token-reduction stat fused from an unrelated
+   model-vs-model benchmark, a wrong bundled model in "MiMo Auto" (Pro vs. non-Pro), a false
+   "MCP/LSP not supported" claim (both are inherited from the OpenCode base per the README), and wrong
+   Novita pricing. Added OpenAI's July 8 SWE-Bench Pro retraction (~30% of tasks found broken) as a
+   caveat on the page's headline benchmark claim.
+3. **mcp-context-engineering-one-year-builder-guide** — 5→17 sources. Fixed a misquoted Gartner
+   claim, fabricated/unsupported tool-overhead statistics (replaced with Speakeasy's real benchmark
+   and Anthropic's own advanced-tool-use numbers), an imprecise Sonar trust-stat paraphrase, and
+   rewrote a stale "spec RC targeted July 28" forward-looking claim with the actual shipped spec
+   changes (confirmed the spec did ship final on that date — stateless core, RFC 9207, DCR→CIMD).
+4. **openai-chatgpt-scheduled-tasks-june-2026-api-gap-builder-guide** — 6→23 sources (moved to
+   inline convention). Fixed a fabricated OpenAI-documentation claim about Background Mode +
+   scheduling (docs say no such thing), a data-retention stat wrongly generalized from a
+   Zero-Data-Retention-only scope, a backwards Threads→Conversations migration-mapping claim, and a
+   false "no central management UI" claim about the original Jan-2025 Tasks beta.
+5. **anthropic-fable-5-zero-jailbreaks-technically-impossible-june-20-builder-guide** — 0→20+
+   sources, the worst starting point of the batch (zero inline citations on an entirely
+   named-company/government-directive page). Fixed a program-name error (page said Anthropic's
+   "TACP" — that's actually OpenAI's program; Anthropic's real one is the Cyber Verification
+   Program), cut an unverifiable claim about UK/US security institutes, and found a real named
+   on-record source (Oliver Simonnet, CultureAI) supporting the headline "technically impossible"
+   framing that had previously been unattributed editorializing.
+6. **ai-model-delays-late-june-2026-fable-5-gpt-56-grok-v9-gemini-builder-planning-guide** — 6→27
+   sources. Fixed fabricated/misapplied Gemini 3.5 Flash pricing (a cached-input rate misapplied as
+   the base rate), cut an unverifiable Gemini 3.5 Pro price with no source, corrected a
+   SpaceX/xAI "distribution relationship" framing that missed the February 2026 SpaceX-xAI merger,
+   and fixed a wrong GPT-5.4→5.5→5.6 cadence claim. Added a 2026-07-31 update note since all four
+   "delayed" models have since shipped.
+7. **claude-code-artifacts-live-pages-team-enterprise-builder-guide** — 3→10 sources. The page's
+   confident June 19 claim that org-only Artifacts sharing was "a hard architectural decision, not a
+   beta limitation" was falsified within weeks: Artifacts exited beta to Pro/Max (late June/early
+   July) and Anthropic shipped public link sharing (mid-July) — the opposite of the stated
+   architecture. Added a dated "Update — Feature Expanded Past Beta" section plus inline correction
+   notes at each contradicted spot, rather than silently rewriting the historical piece.
+8. **anthropic-fable-5-june-22-credits-billing-plan-builder-guide** — 3→9 sources. Fixed the core
+   mechanism: the page described Fable 5 usage as "hit your plan ceiling, then credits cover the
+   overflow," but Anthropic's own announcement says Fable 5 is fully removed from plan inclusion on
+   June 23 — every token bills against credits from the start, no overflow allowance (that overage
+   model only applies to models that stay in-plan, e.g. Opus 4.8).
+9. **claude-design-june-2026-design-system-imports-code-sync-token-fix-builder-guide** — near-0→5
+   sources. Fixed a fabricated Figma *export* destination (Figma is import-only per Anthropic's
+   connector list), a false "first tooled Design→Code handoff" claim (the April 2026 Claude Design
+   launch already shipped a tooled handoff bundle), and cut an invented architectural explanation and
+   two unverifiable implementation details.
+10. **anthropic-seoul-naver-samsung-nexon-claude-code-enterprise-june-2026-builder-guide** — 6→15
+    sources. Fixed a mischaracterized Hanwha Solutions description (defense materials → actual
+    energy/chemicals/advanced-materials scope; defense is a different Hanwha subsidiary), a false
+    "newly established" tag on the Korea AI Safety Institute (it launched Nov 2024), and an
+    overstated "LG CNS deploying across LG Group" claim (Anthropic's own source frames it as a stated
+    plan, with live rollout currently at LG CNS only).
+
+**`sources_audited`: +10 this run** (425 → 415 remaining of 885 dated content files, excluding
+`content/ai/`). Reconciled 6 fabrication-audit.md checkboxes (anthropic-fable-5-after-june-20-
+deadline, mimo-code-v01, anthropic-fable-5-zero-jailbreaks, ai-model-delays-late-june-2026,
+anthropic-fable-5-june-22-credits-billing, anthropic-seoul-naver-samsung-nexon) — **fabrication-audit
+progress: 95/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no post this run,
+correctly deferred per policy.
+
+### Deploy
+Deployed the *prior* run's pending changes at the start of this run (see Orient above — the
+deploy-gap fix). This run's new fixes (the 10 pages above) are committed but not yet deployed —
+throttle has only ~673s elapsed of the required 3600s as of this writing; next run should deploy
+these once it clears.
+
+### What should happen next
+- **Deploy this run's 10-page batch** once the 1-hour throttle clears (only ~673s elapped at time of
+  writing this entry) — do not let it sit uncommitted-to-production like the prior run's did; verify
+  the deploy actually happened and spot-check a fixed page live before moving on.
+- Continue the standing citation-audit duty: next oldest unaudited batch starts the remainder of the
+  2026-06-20 cluster (re-survey `content/` for the current unaudited-by-date list; 415 pages remain
+  as of this run).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  machine UTC still read 2026-07-31 this run, not August yet; check the clock at the start of next
+  run and trigger the moment it reads August.
+- Continue the fabrication-audit cohort (95/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283/#2284/#2285 — no new action needed until a reply arrives.
+- Flagged for a future audit pass (from the prior run, still open): `claude-platform-aws-iam-auth-
+  bedrock-vs-native-builder-guide` may repeat the "Native WIF" conflation error found in the
+  wif-federation page.
+- No other pending inbox action.
+
 ## Run (2026-07-31, UTC ~00:30-01:30) — Citation audit, 10 pages (2026-06-18/19 cluster)
 
 ### Orient

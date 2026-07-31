@@ -3,7 +3,7 @@
 > Anthropic's June 17 Claude Design overhaul adds design system imports (from GitHub, file, or upload), a /design-sync command for Claude Code, WYSIWYG canvas editing, and a fix for the token-burning problem. Builder's guide to what changed and when to use it.
 
 
-Anthropic shipped a substantial Claude Design overhaul on June 17, 2026. The headline features: bring-your-own design system, a `/design-sync` terminal command that bridges Claude Design to Claude Code, direct canvas editing, and a fix for the token-burning problem that made Claude Design expensive to use at scale. Part of our **[Builder's Log](/builders-log/)**.
+Anthropic shipped a [substantial Claude Design overhaul on June 17, 2026](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work). The headline features: bring-your-own design system, a `/design-sync` terminal command that bridges Claude Design to Claude Code, direct canvas editing, and a fix for the token-burning problem that had made Claude Design expensive to use at scale. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -14,23 +14,23 @@ Anthropic shipped a substantial Claude Design overhaul on June 17, 2026. The hea
 | **Design system import** | Pull your design system from a GitHub repo, design file, or raw upload |
 | **Claude Code sync** | `/design-sync` imports your system into Claude Code; `/design` manages projects from the terminal |
 | **Canvas editing** | Edit designs directly on the canvas (WYSIWYG) |
-| **Stronger layout controls** | More precise spacing, alignment, and responsiveness constraints |
+| **Stronger layout controls** | [Drag, resize, and align elements directly](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work); hundreds of stability fixes |
 | **Expanded exports** | Adobe, Base44, Canva, Gamma, Lovable, Miro, Replit, Vercel, Wix, PDF, PowerPoint |
 | **Token burn fix** | Shared usage limits with chat/Cowork/Code; fewer tokens per turn; lower error rates |
 
-Available in beta to **Pro, Max, Team, and Enterprise** subscribers at [claude.ai/design](https://claude.ai/design) or via the Claude desktop app sidebar.
+Available in beta to **Pro, Max, Team, and Enterprise** subscribers at [claude.ai/design](https://claude.ai/design) or via the Claude desktop app sidebar, per [Anthropic's help center](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
 
 ---
 
 ## The Token Burning Problem (and the Fix)
 
-The original Claude Design had a reputation for consuming tokens at a rate that surprised users. The cause is architectural: generating a design requires the model to reason about layout, typography, color, spacing, responsiveness, and content simultaneously before producing a complete artifact. That is a fundamentally heavier workload than a chat exchange, and every iteration was billed accordingly.
+The original Claude Design, which [launched in research preview on April 17, 2026](https://www.anthropic.com/news/claude-design-anthropic-labs), had a reputation for consuming tokens at a rate that surprised users — [a PCWorld reviewer blew through 80% of a weekly Claude Design allowance in about 25 minutes producing three variations of one prototype](https://www.pcworld.com/article/3117811/i-tried-claude-design-for-half-an-hour-im-already-locked-out-for-a-week.html), an anecdote [TechRepublic's coverage of the June fix](https://www.techrepublic.com/article/news-anthropic-claude-design-overhaul-enterprise-teams/) also cites as the kind of complaint the update addresses.
 
-The June 17 update addresses this in two ways:
+The June 17 update addresses this in two ways, [per Anthropic's announcement](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work):
 
 1. **Shared usage pool.** Claude Design now draws from the same usage limit bucket as Claude chat, Claude Cowork, and Claude Code. Previously, Design drew from its own quota, which ran out faster. The unified pool gives more practical headroom.
 
-2. **Fewer tokens per turn.** Anthropic states it uses fewer tokens per generation with sharply lower error rates — meaning fewer regenerations triggered by model errors.
+2. **Fewer tokens per turn.** Anthropic states "the average turn now uses fewer tokens to achieve the same results, and errors are down sharply" — meaning fewer regenerations triggered by model errors.
 
 The net effect is that Claude Design is more viable for iterative work across a day's session rather than something you budget a single focused block for.
 
@@ -40,15 +40,13 @@ The net effect is that Claude Design is more viable for iterative work across a 
 
 This is the feature builders will find most significant for real-world work.
 
-Previously, Claude Design invented its own component language. It would reason about buttons, spacing, typography, and color from scratch every time — which meant outputs that looked good in isolation but clashed with existing codebases or brand guidelines.
-
-Now you bring your own system. Import sources:
+Design system import isn't new to Claude Design — [since its April 2026 launch](https://www.anthropic.com/news/claude-design-anthropic-labs), Claude has built a design system during onboarding "by reading your codebase and design files," then reused it on later projects. What changed on June 17 is that Anthropic [rebuilt that import pipeline "to give you more flexibility and increase precision,"](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work) making it an explicit, re-runnable import from three named sources rather than a one-time onboarding step:
 
 - **GitHub repo** — point Claude at a repository that contains your design system
 - **Design file** — upload a Figma export or equivalent
 - **Raw upload** — drop in tokens, component specs, or a style guide document
 
-Once imported, Claude Design builds with your components and validates its output against your system rather than inventing its own. A Tailwind-based design system stays Tailwind. A shadcn/ui setup stays shadcn/ui.
+Once imported, [Claude Design "builds with your components, checks its output against your design system, and makes corrections before you see it,"](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work) and for larger teams, an admin role can now approve one standard system and lock down edits so output matches company guidelines.
 
 This is what makes the feature meaningful for teams with existing design infrastructure, not just greenfield experiments.
 
@@ -56,7 +54,7 @@ This is what makes the feature meaningful for teams with existing design infrast
 
 ## Claude Code Integration
 
-The design-to-code pipeline is now explicitly supported via two terminal commands:
+The design-to-code pipeline is now supported via two terminal commands, [per Anthropic's help center](https://support.claude.com/en/articles/14604416-get-started-with-claude-design):
 
 **`/design-sync`** — pulls your active Claude Design design system into Claude Code's context. Run this before a Claude Code session that should produce UI consistent with the system you defined in Claude Design. Claude Code will reference the system when generating components, rather than making arbitrary choices.
 
@@ -72,13 +70,13 @@ Prompt in Claude Design
 → PR
 ```
 
-This is the first time Anthropic has made the Design → Code handoff explicit and tooled rather than manual copy-paste.
+This isn't the first Design-to-Code handoff Anthropic has shipped — [Claude Design launched in April 2026 with a "handoff bundle that you can pass to Claude Code with a single instruction."](https://www.anthropic.com/news/claude-design-anthropic-labs) What's new on June 17 is making that handoff a terminal-native, two-way workflow: `/design-sync` and `/design` let you move between Claude Design and Claude Code without leaving the terminal, rather than exporting a bundle from the browser.
 
 ---
 
 ## Canvas Editing
 
-The update adds direct WYSIWYG editing on the canvas. Previously, all changes went through the chat prompt — you described what to change and Claude regenerated. Now you can click, resize, reorder, and tweak directly on the canvas surface.
+The update adds direct WYSIWYG editing on the canvas — [Anthropic describes "rich layout controls" that let you "drag, resize, and align elements" directly](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work). Previously, all changes went through the chat prompt — you described what to change and Claude regenerated.
 
 This changes the interaction model for refinement. Prompting is still the primary way to generate and restructure designs, but post-generation polish can happen without another full regeneration and its associated token cost.
 
@@ -86,15 +84,17 @@ This changes the interaction model for refinement. Prompting is still the primar
 
 ## Expanded Export Destinations
 
-Claude Design's previous export story was limited. The June 17 update expands to:
+Claude Design's previous export story was limited. [The June 17 update expands to](https://claude.com/blog/claude-design-stays-on-brand-for-daily-work):
 
 | Category | Destinations |
 |---|---|
 | **Code/deploy** | Replit, Vercel, Lovable, Base44 |
-| **Design collaboration** | Figma (via file export), Miro |
+| **Design collaboration** | Miro |
 | **Creative tools** | Adobe, Canva, Gamma |
 | **Business tools** | PDF, PowerPoint |
 | **CMS/site builders** | Wix |
+
+Note: Figma appears in Claude Design as a *design system import* source (via a Figma file export), not as an export destination — Anthropic's list of connectors does not include Figma.
 
 The practical effect: Claude Design outputs can reach a broader range of downstream tools without manual re-creation. For teams that operate in Canva or Gamma for marketing content, or Miro for design reviews, the handoff is now direct.
 
@@ -110,7 +110,7 @@ The practical effect: Claude Design outputs can reach a broader range of downstr
 | Team | Beta access |
 | Enterprise | Beta access |
 
-Access at [claude.ai/design](https://claude.ai/design) or via the Claude desktop app sidebar (look for Design in the left nav).
+Access at [claude.ai/design](https://claude.ai/design) or via the Claude desktop app sidebar (look for Design in the left nav), [per Anthropic](https://support.claude.com/en/articles/14604416-get-started-with-claude-design).
 
 ---
 
