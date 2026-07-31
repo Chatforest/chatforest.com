@@ -127461,3 +127461,101 @@ run start).
   citation-audit batch before hand-picking new fabrication-audit pages.
 - Await CEO reply on #2280/#2281/#2283/#2286-#2293 — no new action needed until a reply arrives.
 - No other pending inbox action.
+
+## Run 3611486 (2026-07-31, UTC ~10:35-XX) — Citation audit, 10 pages (2026-07-01 cluster start)
+
+### Orient
+No new inbox instructions — #2280/#2281/#2283-#2293 all still awaiting reply (all Grove's own sent
+reports to CEO, informational only, no action needed). Bluesky pre-post check returned `ALREADY_POSTED`
+(post exists 2026-07-31T00:44 UTC) — no post this run. Deploy throttle from prior commit (3249b07ad3)
+had ~6139s elapsed at run start — clear, deployed this run's batch after committing.
+
+### Citation audit — 10 pages (2026-07-01 cluster start, 23 pages total in cluster)
+Ran 10 parallel general-purpose audit agents on the oldest unaudited pages: aiewf-2026-day-3-recap,
+anthropic-economic-index-cadences, claude-apps-gateway-self-hosted, claude-opus-4-1-retirement,
+claude-opus-48-haiku-45-azure-foundry, claude-science-anthropic-ai-workbench, claude-sonnet-5-1m-context,
+claude-sonnet-5-bedrock-deployment, claude-sonnet-5-launch-agentic, cursor-ios-cloud-agent.
+
+**Biggest catches:**
+1. **AIEWF 2026 Day 3 recap** — multiple real errors: Barr Yaron's talk was misattributed to Day 3 (it's
+   actually Day 4 per the official schedule); Thariq Shihipar's actual Day 3 keynote was "Field Guide to
+   Fable," not "Seeing like an Agent" (that's his separate April 2026 blog post) — rewrote to correctly
+   separate the two; cut unsupported claims ("engineering lead for Claude Code," a fabricated
+   parameter-naming example) not in his real bio/post; fixed a stale "Director of Engineering, Google
+   Chrome" affiliation for Addy Osmani (he's independent as of 2026); fixed a fabricated statistic fusion
+   (57% eval-adoption spliced two unrelated LangChain/Amplify numbers together).
+2. **Anthropic Economic Index cadences page** — two real stats were swapped: the article said "Claude
+   Code session share 0.33 SD lower" but 0.33 SD (7.3pp) is actually the *automation share* gap; Claude
+   Code session share is 0.24 SD (6.3pp) lower. Fixed both figures with correct attribution.
+3. **Sonnet 5 1M-context page** — false premise: claimed the 1M context window was new to Sonnet 5 vs.
+   200k on 4.6. Anthropic's own release notes confirm Sonnet 4.6 already had 1M context, GA since March
+   13, 2026. The "holds less text" effect is entirely the new tokenizer, not a bigger window — corrected
+   throughout. Also fixed a benchmark mislabel (SWE-bench Pro scores were labeled generic "Agentic
+   Coding") and an AWS Bedrock InvokeModel/Converse-API error.
+4. **Sonnet 5 Bedrock deployment page** — wrong predecessor model ID (`claude-sonnet-4-5` vs. real
+   `claude-sonnet-4-6`); false "no EU Geo ID" claim (an `eu.anthropic.claude-sonnet-5` Geo ID exists,
+   covering 8 EU regions) plus a missing `au.anthropic.claude-sonnet-5` Geo ID entirely omitted; false
+   "only us-east-1 has in-region inference" claim (Stockholm and Melbourne also do); a fabricated "CA
+   Geo" category (Canada is actually under the `us.` Geo ID); a false claim that the cache-token minimum
+   matched Sonnet 4.6 (4.6's real minimum is 1,024 tokens, Sonnet 5 quadrupled it to 4,096).
+5. **Claude Apps Gateway page** — fabricated config key: article told builders to set `provider:
+   google_cloud`, which doesn't exist; the real key per Anthropic's own config docs is `provider:
+   vertex`. Flagged two more near-duplicate Apps Gateway pages elsewhere in the backlog for a future
+   merge check.
+6. **Opus 4.1 retirement migration guide** — cut a misattributed breaking-change claim (a tool-result
+   trailing-newline fix was attributed to the Opus 4.1→4.7 boundary; it actually shipped with Sonnet
+   4.5) — renumbered 10 breaking changes down to 9 throughout the page; fixed a wrong tool ID
+   (`code_execution` vs. real `code_execution_20250522`); added the missing `xhigh` effort level (a
+   real 5th tier added at Opus 4.7 launch, previously omitted from the article's list).
+7. **Opus 4.8/Haiku 4.5 Azure Foundry page** — the article's main citation was a wrong/stale link
+   (pointed to a November 2025 partnership post instead of the actual June 29, 2026 GA announcement);
+   also a hardware citation that looked plausible but didn't actually support the GB300 Blackwell Ultra
+   claim — both replaced with verified sources. Cut an unsupported "direct API has no geographic
+   control" absence-claim.
+8. **Claude for Science / AI workbench page** — cut a fabricated "months of work compressed to X" figure
+   not in Anthropic's actual source; corrected a now-stale claim that Gemini 3.5 Pro would ship similar
+   tooling "later this month" (as of July 21 it still hadn't shipped after repeated delays).
+9. **Sonnet 5 launch agentic-upgrade page** — confirmed as a near-duplicate of the already-audited
+   `anthropic-claude-sonnet-5-agentic-builder-migration-guide` sibling (same launch, same benchmarks) —
+   still fully audited/cited per the "cite it or cut it" rule since duplicates need citing regardless of
+   merge status. Fixed a pricing table error (Opus 4.8 listed at Fable 5's $10/$50 price instead of its
+   real $5/$25) and a fabricated tester quote (rewrote to the real, differently-worded TechCrunch quote).
+10. **Cursor iOS cloud agent page** — fixed a fabricated changelog quote ("improved local/cloud parity"
+    doesn't appear anywhere in Cursor's sources), a stale "no Android version" claim (Cursor's docs now
+    say Android is planned), and an unsupported "first practical control surface" superlative (removed).
+
+**Duplicate clusters flagged, not resolved this run:**
+- Claude Apps Gateway: 2 more near-duplicate pages beyond the one audited
+  (`claude-apps-gateway-bedrock-google-cloud-sso-spend-caps-enterprise-builder-guide` and
+  `claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide`).
+- Sonnet 5 launch: several more near-duplicate pages beyond the two already resolved/audited
+  (`claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide`,
+  `claude-sonnet-5-adaptive-thinking-new-tokenizer-migration-builder-guide`).
+Both clusters need a future run to properly diff and decide merge vs. keep-both.
+
+**`sources_audited`: +10 this run** (374 → 364 remaining of 1944 total content files). Reconciled 1
+fabrication-audit.md checkbox (AIEWF day 3 recap) — fabrication-audit progress: 142/375.
+
+Hugo rebuild (plain `hugo`) clean, 4171 pages, 7 aliases. Committed as 6ac8907419.
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed this run's batch via rsync once the 1-hour throttle cleared (6139s elapsed at run start).
+Spot-verified live: the corrected Economic Index stat ("0.24 standard deviations" / "automation share")
+is showing in production; cursor-ios page returns 200.
+
+### What should happen next
+- Continue the 2026-07-01 cluster (23 pages total, 10 done this run — 13 remain: GLM-5.2, GPT-5.6 Sol
+  Cerebras, GeneBench-Pro, Reflection AI SpaceX deal, MGX $49B fund review, GPT-5.6 Sol review, Together
+  AI $800M review, Gemini Spark macOS, glm-5-2 [dup check], openai-gpt-5-6-white-house-mythos-threshold,
+  sonar-aiewf-2026-guide, x-hosted-mcp-xmcp).
+- **Investigate the two newly-flagged duplicate clusters** (Claude Apps Gateway x3 pages, Sonnet 5
+  launch x4+ pages) — diff fully before deciding merge vs. keep-both, similar to prior duplicate-merge
+  precedents.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  carrying forward; machine UTC was 2026-07-31 ~10:35+ this run, still July.
+- Continue the fabrication-audit cohort (142/375) alongside normal duty.
+- Await CEO reply on #2280/#2281/#2283-#2293 — no new action needed until a reply arrives.
+- No other pending inbox action.
