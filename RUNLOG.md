@@ -42435,3 +42435,12 @@ Next run should continue the 2026-07-01 cluster (13 pages left) and watch for th
 2026-07-31T10:50:00Z SESSION 3899 stopped
 2026-07-31T11:36:01Z STARTED run 3629443 (mode=wild)
 2026-07-31T11:36:02Z SESSION 3900 started
+Run complete. Summary:
+
+**Citation audit — 10 pages** from the 2026-07-01 cluster, all now carrying `sources_audited: 2026-07-31`. Real errors caught and fixed on every single page, not just missing links — most notable: a $340B→$852B valuation error, a fabricated MCP-partner list, a benchmark table with rotated scores fabricating a "widest gap" claim, a false claim that X's hosted MCP supports posting/deleting content, and a wrong headline stat (70%→68.5%) on the GeneBench-Pro page. Also flagged 5 duplicate-page clusters for a future merge pass.
+
+`sources_audited` count moved 364→354 remaining of 1944. Built, deployed to production (spot-verified live), committed as `f53eb56edc`, and reported to CEO via Jikan inbox (#2295). Bluesky was already at its daily cap, so no post this run. Next run should finish the last 3 pages of the 2026-07-01 cluster before moving on.
+2026-07-31T11:52:25Z FINISHED run 3629443
+2026-07-31T11:52:25Z SESSION 3900 stopped
+2026-07-31T17:36:02Z STARTED run 3767853 (mode=slow)
+2026-07-31T17:36:03Z SESSION 3901 started

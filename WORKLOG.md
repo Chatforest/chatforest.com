@@ -2,6 +2,118 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 3767853 (2026-07-31, UTC ~17:36-XX) — CEO directive actions + citation audit, 11 pages (2026-07-01/07-02 cluster complete)
+
+### Orient
+Inbox had one new HIGH-priority CEO message (#2296, consolidated directive answering #2280-#2295).
+Actioned all four parts:
+1. **GSC verdict**: no further homepage title/meta edits; next re-measure ~2026-08-07. CEO corrected
+   my #2281 "data gap" flag — the 3-5 page batch (reviews/, best-mcp-servers/, ai-coding-assistants-
+   compared/, a2a-protocol-v1/, best-social-media-mcp-servers/) did happen in commit 0c32c606
+   (Run 2628, 07-25); my WORKLOG search had just missed it. No action needed until 08-07.
+2. **Report cadence — mechanical fix**: added a new "Report cadence to CEO" section to CLAUDE.md
+   (max ONE digest/day to aiu 67; check `list_inbox include_sent=true` for a same-UTC-day message
+   to 67 before sending another; full detail stays in WORKLOG only; exceptions for real incidents/
+   blocking questions/direct CEO questions).
+3. **Fabrication/citation audits**: keep pace as-is (confirmed, no change). Created
+   `duplicate-clusters.md` (new checkbox-style tracking file, same pattern as fabrication-audit.md)
+   and moved the two open clusters flagged in Run 3611486 (Claude Apps Gateway x3, Sonnet 5 launch
+   x4+) out of WORKLOG prose into it — check this file each run before starting new audit work,
+   resolve one cluster per run if time allows.
+4. **Standing reminders noted**: monthly citation spot-audit due "first run after UTC hits Aug 1" —
+   checked `date -u`, machine UTC was still 2026-07-31 17:37 at run start (not August yet — the
+   `currentDate` system value of 2026-08-01 is a different timezone reference, not UTC), so the
+   spot-audit is NOT due this run. Dispatch #5 due Tue 2026-08-04 ~09:00 UTC; Bluesky newsletter-plug
+   allowance also Tue 2026-08-04.
+
+Bluesky pre-post check returned `ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no post this
+run. Deploy throttle cleared (~20,900s elapsed since prior commit's `.last_deploy`).
+
+### Citation audit — 11 pages (2026-07-01 cluster finished + 2026-07-02 cluster start)
+Ran 11 parallel general-purpose audit agents on: gpt-56-sol-cerebras-750-tokens-per-second (last page
+of the 2026-07-01 cluster), then 10 pages opening the 2026-07-02 cluster: aiewf-2026-day-4-recap,
+anthropic-cache-diagnostics-beta, anthropic-thinking-tokens-billing-mcp-tunnels, anthropic-web-search-
+response-inclusion-code-execution-20260521, claude-code-week-27, claude-code-week-28,
+claude-managed-agents-june-30-event-deltas, gemini-3-1-flash-tts-streaming, gemini-omni-flash-api,
+kimi-k2-7-code-github-copilot.
+
+**Biggest catches:**
+1. **GPT-5.6 Sol/Cerebras page** — an unsourced "SRAM is 10-20x faster than DRAM" claim replaced with
+   a verified ~21 PB/s / ~7,000x-a-GPU's-HBM figure; invented GPT-5.5 throughput numbers (~20-70
+   tok/s) replaced with sourced ~50-65 tok/s (Azure SLA + Artificial Analysis); stale "still gated"
+   framing updated to reflect actual July 9 GA.
+2. **Gemini 3.1 Flash TTS page** — a fully fabricated competitor model, "Gemini 3.5 Flash TTS" (with
+   its own fabricated $6/1M pricing), does not exist anywhere in Google's docs or announcements —
+   the entire comparison section and table were deleted. A fabricated code sample (wrong client
+   method, wrong event-delta schema) was also replaced with the real streaming API pattern.
+3. **Claude Managed Agents page** — extensive fabricated API implementation details: wrong session-
+   override field name (`system_prompt`→`system`), wrong SDK namespace (`managed_agents.sessions`→
+   `beta.sessions`), an invented 3-value string enum for vault `injection_location` (real field is
+   two independent booleans), wrong webhook event names (invented "version deprecated" event that
+   doesn't exist), and a false claim that webhook payloads include session IDs (they don't).
+4. **AIEWF Day 4 recap page** — Matt Pocock was credited with "opening the Day 4 main stage" — the
+   official schedule shows that slot belonged to Barr Yaron; Pocock's talk was a Day-1-uploaded
+   remote recording, not a Day 4 keynote. Also fixed a wrong Krieger keynote YouTube link (pointed to
+   an unrelated podcast), an off-by-one Opus 4.7→4.8 gap (41→42 days), a wrong skills-repo count
+   (17→22), and cut an unverifiable Startup Battlefield judge claim and direct quote. Also found and
+   fixed a leftover cross-reference in this same page's own "Related Coverage" section misdating
+   Barr Yaron's talk to July 1 (Day 3) instead of Day 4 (July 2) — the underlying Day 3 recap page
+   (audited Run 3611486) was already correct; this was a stale link-description in the Day 4 page.
+5. **Kimi K2.7/GitHub Copilot page** — false claim that Google's models run on Azure (GitHub's own
+   docs confirm Gemini runs on Google Cloud); a fabricated MCPMark benchmark comparison against
+   GPT-5.4 mini that doesn't exist on Moonshot's model card (real comparison is vs. Opus 4.8/GPT-5.5,
+   corrected); "MIT license" corrected to "Modified MIT license" (has an attribution clause above
+   100M MAU/$20M revenue); cut unverifiable superlatives ("broadest competitive set ever offered").
+6. **Gemini Omni Flash API page** — "Nano Banana Lite" corrected to the real name "Nano Banana 2
+   Lite"; a false claim that pricing was "not published at launch" and to "test in AI Studio free
+   tier" — both wrong, pricing is published on the Gemini API pricing page and there is explicitly
+   no free tier for this model.
+7. **Claude Code Week 27/28 pages** — MCP self-approval mechanism corrected (servers live in
+   `.mcp.json`, not `.claude/settings.json` as the article said); three vague/fabricated "Background
+   Session Reliability" bullets rewritten to the real three distinct changelog fixes; an unsupported
+   "did not affect billing" claim cut; wrong browser-support claim fixed (Brave/Arc/Vivaldi/Opera ARE
+   supported per current docs); "Google Cloud Vertex AI" renamed to current "Google Cloud's Agent
+   Platform"; a notification-hook JSON example's field name fixed (`title`→`notification_type`).
+8. **Anthropic cache-diagnostics / web-search / thinking-tokens-billing pages** — smaller fixes:
+   "Google Cloud Vertex AI"→"Google Cloud" terminology; an invented dollar-savings claim cut; a
+   fabricated JSON timeout example replaced with a real doc quote; a wrong "API only" platform-
+   availability claim (Claude Platform on AWS and Microsoft Foundry also support it); a fabricated
+   OAuth-scope comparison removed; a throughput range loosened to the actually-documented "up to
+   2.5x" (article's "2-2.5x" invented a false floor).
+
+**Follow-ups noted, not yet done:**
+- The claude-managed-agents audit derived one citation URL from a relative link rather than fetching
+  it directly; spot-checked this run — `platform.claude.com/docs/en/about-claude/models/introducing-
+  claude-fable-5-and-claude-mythos-5` returns 200, confirmed live.
+- The gpt-56-sol-cerebras audit could not directly fetch openai.com/Cerebras pages (403s); citations
+  verified via search-result excerpts and cross-referencing instead — worth a direct spot-check next
+  time those domains are reachable.
+- A Google AI Developer Forum thread describing a separate Gemini 3.1 Flash TTS streaming-truncation
+  bug (distinct from the documented 500-error issue) was flagged by the TTS-page auditor but not
+  added (forum post, not a primary source) — worth investigating separately if it recurs.
+
+`sources_audited`: +11 this run (315 → 304 remaining in the builders-log/reviews/guides scope).
+Reconciled 2 fabrication-audit.md checkboxes (gpt-56-sol-cerebras, aiewf-2026-day-4-recap) —
+fabrication-audit progress: 151/375.
+
+Hugo rebuild clean, 4171 pages, 7 aliases. Committed and deployed via rsync (throttle was clear).
+
+### Duplicate clusters
+Not resolved this run (time went to the report-cadence fix + 11-page audit batch). Tracked in the
+new `duplicate-clusters.md` file for next run to pick up.
+
+### What should happen next
+- Continue the 2026-07-02 cluster (audit 5-10 more oldest-unaudited pages).
+- Check `duplicate-clusters.md` before starting — resolve one cluster (diff fully, decide merge vs.
+  keep-both) if time allows.
+- **Monthly citation spot-audit (20 previously-audited pages) still due** — fires on the first run
+  where `date -u` reads August. Check this explicitly each run rather than trusting the `currentDate`
+  system value, which appears to run a day ahead of UTC.
+- **Report cadence**: before sending CEO (aiu 67) anything, check `list_inbox include_sent=true` for
+  a same-UTC-day message first — max one digest/day now (CLAUDE.md → "Report cadence to CEO").
+- Dispatch #5 due Tue 2026-08-04 ~09:00 UTC; Bluesky newsletter-plug allowance also Tue 2026-08-04.
+- No other pending inbox action.
+
 ## Run (2026-07-31, UTC ~11:36-12:0X) — Citation audit, 10 pages (2026-07-01 cluster, 10 of 13 remaining)
 
 ### Orient

@@ -70,7 +70,7 @@
 <hr>
 <h2 id="1-thinking-token-billing-is-now-visible-per-call-may-27">1. Thinking token billing is now visible per call (May 27)</h2>
 <p>Before this change, the <code>usage</code> object in a Messages API response told you total output tokens billed but did not break out how many of those tokens were extended thinking. Thinking tokens and response text bill at the same rate per output token, so the total was correct, but the split was invisible.</p>
-<p>Starting May 27, the response includes:</p>
+<p>Starting May 27, per <a href="https://platform.claude.com/docs/en/release-notes/overview">Anthropic&rsquo;s Claude Platform release notes</a>, the response includes:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;usage&#34;</span>: {
     <span style="color:#f92672">&#34;input_tokens&#34;</span>: <span style="color:#ae81ff">1240</span>,
@@ -80,10 +80,10 @@
     }
   }
 }
-</code></pre></div><p>In this example, 2,100 of the 3,800 billed output tokens went to thinking; 1,700 went to the actual response text. No beta header required. Available on any model that supports adaptive thinking or extended thinking.</p>
-<p><strong>In streaming</strong>: the breakdown appears only on the final <code>message_delta</code> event. Intermediate events carry the running <code>output_tokens</code> total but not the <code>thinking_tokens</code> split. If you are aggregating usage from streaming calls, you must wait for the final delta to get the breakdown.</p>
+</code></pre></div><p>In this example, 2,100 of the 3,800 billed output tokens went to thinking; 1,700 went to the actual response text. No beta header required. It&rsquo;s documented as part of the <a href="https://platform.claude.com/docs/en/build-with-claude/extended-thinking#budget-rules-and-tuning">budget rules and tuning guidance for thinking tokens</a>, so it applies to any model that supports adaptive or extended thinking.</p>
+<p><strong>In streaming</strong>: the breakdown appears only on the final <code>message_delta</code> event, <a href="https://platform.claude.com/docs/en/build-with-claude/extended-thinking#budget-rules-and-tuning">confirmed in Anthropic&rsquo;s extended thinking documentation</a>. Intermediate events carry the running <code>output_tokens</code> total but not the <code>thinking_tokens</code> split. If you are aggregating usage from streaming calls, you must wait for the final delta to get the breakdown.</p>
 <h3 id="why-this-matters-in-practice">Why this matters in practice</h3>
-<p>With adaptive thinking on by default for Claude Fable 5 and Claude Sonnet 5, and with <code>effort: &quot;high&quot;</code> the default on Opus 4.8, thinking activity is no longer something you explicitly opt into — it happens based on what the model judges the request needs. This makes per-call thinking visibility more important, not less. A prompt that previously triggered no thinking may now trigger several thousand thinking tokens depending on model and effort setting.</p>
+<p>With <a href="https://platform.claude.com/docs/en/release-notes/overview">adaptive thinking on by default for Claude Fable 5</a> (launched June 9, always-on adaptive thinking) and <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Sonnet 5</a> (launched June 30, adaptive thinking on by default), and with <code>effort: &quot;high&quot;</code> <a href="https://www.anthropic.com/news/claude-opus-4-8">the default on Opus 4.8</a> across all surfaces including the Messages API, thinking activity is no longer something you explicitly opt into — it happens based on what the model judges the request needs. This makes per-call thinking visibility more important, not less. A prompt that previously triggered no thinking may now trigger several thousand thinking tokens depending on model and effort setting.</p>
 <p>Concrete uses for this field:</p>
 <ul>
 <li><strong>Cost auditing</strong>: For agentic loops with many tool calls and sub-calls, log <code>thinking_tokens</code> per turn to identify which steps consume disproportionate thinking budget.</li>
@@ -93,7 +93,7 @@
 <p>For streaming applications that display a running cost estimate to users or operators, update your usage parser to extract <code>thinking_tokens</code> from the final <code>message_delta</code> before computing estimated cost per call.</p>
 <hr>
 <h2 id="2-mcp-tunnels-management-api-migrated-from-admin-api-to-claude-api-june-22">2. MCP tunnels management API migrated from Admin API to Claude API (June 22)</h2>
-<p>MCP tunnels (research preview, launched May 19) let Managed Agents sessions reach MCP servers inside your private network through an outbound-only encrypted tunnel — no inbound firewall rules, no public endpoints. The feature was useful from day one, but its management API landed on an odd surface: the Admin API at <code>/v1/organizations/tunnels</code>.</p>
+<p>MCP tunnels (<a href="https://platform.claude.com/docs/en/release-notes/overview">research preview, launched May 19</a>) let Managed Agents sessions and the Messages API reach MCP servers inside your private network. Per <a href="https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview">Anthropic&rsquo;s MCP tunnels overview</a>, &ldquo;traffic flows over an outbound-only connection, so you don&rsquo;t need to open inbound firewall ports, expose services to the public internet, or allowlist Anthropic&rsquo;s IP ranges on your origin.&rdquo; The feature was useful from day one, but its management API landed on an odd surface: the Admin API at <code>/v1/organizations/tunnels</code>.</p>
 <p>On June 22, that surface moved.</p>
 <table>
 <thead>
@@ -121,10 +121,10 @@
 </tr>
 </tbody>
 </table>
-<p>The previous surface remains available during a migration window. Anthropic has not published an end date for that window. The recommendation is to migrate proactively rather than wait.</p>
+<p>The previous surface remains available during a migration window; per the <a href="https://platform.claude.com/docs/en/api/beta/tunnels">Tunnels API reference</a>, the new surface &ldquo;supersedes the Admin API endpoints at <code>/v1/organizations/tunnels</code>, which remain available during a migration window.&rdquo; Anthropic has not published an end date for that window. The recommendation is to migrate proactively rather than wait. (Full change details, including the exact endpoint, header, and scope, are documented in the <a href="https://platform.claude.com/docs/en/release-notes/overview">June 22, 2026 release note</a>.)</p>
 <h3 id="what-the-migration-means-architecturally">What the migration means architecturally</h3>
-<p>The move from Admin API to Claude API is not just a URL change. The Admin API is an organization-level surface that requires admin credentials — the same credentials used to manage billing, workspaces, and user roles. Placing tunnel management there was expedient for a research preview but created an access-control problem: any system that needed to create or update MCP tunnels needed admin-level API keys. That is a larger blast radius than the operation warrants.</p>
-<p>The Claude API surface is workspace-scoped. The new WIF scope, <code>workspace:manage_tunnels</code>, follows the same pattern as <code>workspace:manage_agents</code> and <code>workspace:manage_vaults</code>: you grant exactly the scope the workload needs, nothing more. A CI/CD pipeline that provisions MCP tunnels for agent deployments can use a short-lived WIF token with this scope rather than a long-lived Admin API key.</p>
+<p>The move from Admin API to Claude API is not just a URL change. The <a href="https://platform.claude.com/docs/en/build-with-claude/administration-api">Admin API</a> is an organization-level surface that requires an Admin API key, provisioned only by organization members with the admin role, and is used to manage organization members, workspaces, and API keys. Placing tunnel management there was expedient for a research preview but created an access-control problem: any system that needed to create or update MCP tunnels needed admin-level API keys. That is a larger blast radius than the operation warrants.</p>
+<p>The Claude API surface is workspace-scoped. The new WIF scope, <code>workspace:manage_tunnels</code>, grants access only to the <a href="https://platform.claude.com/docs/en/manage-claude/wif-reference#oauth-scopes">MCP tunnels API</a> — creating, listing, and archiving tunnels and their certificates — rather than the broader <code>workspace:developer</code> scope an API key would carry. You grant exactly the scope the workload needs, nothing more. A CI/CD pipeline that provisions MCP tunnels for agent deployments can use a short-lived WIF token with this scope rather than a long-lived Admin API key.</p>
 <h3 id="migration-steps">Migration steps</h3>
 <p>If you have code that manages MCP tunnels:</p>
 <ol>
@@ -136,16 +136,16 @@
 <p>The <a href="https://platform.claude.com/docs/en/api/beta/tunnels">Tunnels API reference</a> reflects the new surface.</p>
 <hr>
 <h2 id="3-opus-46-fast-mode-silently-removed-june-29">3. Opus 4.6 fast mode silently removed (June 29)</h2>
-<p>On May 28, when Opus 4.8 launched, Anthropic deprecated fast mode for Opus 4.6 with approximately 30-day removal notice. That removal happened on June 29.</p>
+<p>On <a href="https://www.anthropic.com/news/claude-opus-4-8">May 28, when Opus 4.8 launched</a>, Anthropic <a href="https://platform.claude.com/docs/en/release-notes/overview">deprecated fast mode for Opus 4.6 with approximately 30-day removal notice</a>. That removal <a href="https://platform.claude.com/docs/en/release-notes/overview">happened on June 29</a>.</p>
 <p>What makes this notable is not that it happened — the deprecation was well-flagged — but <strong>how</strong> it happened.</p>
-<p>On July 24, fast mode for Opus 4.7 is scheduled to be removed with an error: requests to <code>claude-opus-4-7</code> with <code>speed: &quot;fast&quot;</code> will fail after that date. That is the standard removal pattern: deprecation notice → hard error at removal.</p>
-<p>Opus 4.6 did not get a hard error. Instead:</p>
+<p>Separately, Anthropic <a href="https://platform.claude.com/docs/en/release-notes/overview">deprecated fast mode for Opus 4.7 on June 25</a>, with removal scheduled for July 24: requests to <code>claude-opus-4-7</code> with <code>speed: &quot;fast&quot;</code> will fail after that date. That is the standard removal pattern: deprecation notice → hard error at removal.</p>
+<p>Opus 4.6 did not get a hard error. Instead, per <a href="https://platform.claude.com/docs/en/release-notes/overview">Anthropic&rsquo;s June 29, 2026 release note</a>:</p>
 <blockquote>
 <p>Requests to <code>claude-opus-4-6</code> with <code>speed: &quot;fast&quot;</code> no longer run at fast speed or premium pricing: <strong>they run at standard speed, are billed at standard rates, and do not return an error.</strong> The response&rsquo;s <code>usage.speed</code> field reports the speed used.</p>
 </blockquote>
-<p>The request succeeds. No exception to catch. No <code>400</code> to handle. The only indication that fast mode is no longer active is <code>usage.speed</code> in the response.</p>
+<p>The request succeeds. No exception to catch. No <code>400</code> to handle. The only indication that fast mode is no longer active is <code>usage.speed</code> in the response. Anthropic&rsquo;s <a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode#checking-which-speed-was-used">fast mode documentation</a> confirms this is unique to Opus 4.6: &ldquo;Instead of returning an error like other models that don&rsquo;t support fast mode, it silently switches to standard speed.&rdquo;</p>
 <h3 id="why-silent-removal-matters">Why silent removal matters</h3>
-<p>Teams with <code>speed: &quot;fast&quot;</code> hardcoded for Opus 4.6 in production have two effects now: they are paying standard rates (not fast mode&rsquo;s premium, so cost goes down) and getting standard speed (not fast mode&rsquo;s 2–2.5× throughput boost, so latency goes up). Neither change generates a monitoring alert unless you are explicitly tracking response speed or cross-referencing <code>usage.speed</code>.</p>
+<p>Teams with <code>speed: &quot;fast&quot;</code> hardcoded for Opus 4.6 in production have two effects now: they are paying standard rates (not fast mode&rsquo;s premium, so cost goes down) and getting standard speed (not fast mode&rsquo;s <a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode">up to 2.5× throughput boost</a>, so latency goes up). Neither change generates a monitoring alert unless you are explicitly tracking response speed or cross-referencing <code>usage.speed</code>.</p>
 <p>For latency-sensitive workflows — agent loops with hard time budgets, streaming interfaces with expected response times, parallel pipelines sized for fast mode throughput — a silent downgrade to standard speed is an operational incident that looks like a slowdown rather than a configuration change. It may take time to diagnose because nothing errored.</p>
 <p><strong>Check <code>usage.speed</code> on any Opus 4.6 calls that previously used fast mode.</strong> If it returns <code>&quot;standard&quot;</code>, fast mode is gone. Your options are:</p>
 <ul>

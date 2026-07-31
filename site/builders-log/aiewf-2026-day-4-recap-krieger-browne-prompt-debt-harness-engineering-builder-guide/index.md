@@ -11,7 +11,7 @@ Here's what happened and what builders need to take from it.
 
 ## Matt Pocock — "Building Great Agent Skills: The Missing Manual"
 
-Matt Pocock (AI Hero) opened the Day 4 main stage at 9:00 AM. His framing: most builders hit a wall called "Skill Hell" — they discover Claude Code skills, build a few, encounter a framework or tutorial, build more, and end up with a `.claude/` directory full of overlapping, undermaintained instructions that don't compose cleanly.
+Matt Pocock (AI Hero) is not on the [official Day 4 schedule](https://www.ai.engineer/worldsfair/schedule?day=4) — the 9:00 AM main-stage slot belonged to Barr Yaron's "The 2026 State of AI Engineering." Pocock's talk, ["Building Great Agent Skills: The Missing Manual,"](https://www.youtube.com/watch?v=UNzCG3lw6O0) was published to AI Engineer's YouTube channel on June 29, 2026 — the conference's first day — as a remotely-recorded session rather than a live main-stage slot. His framing: most builders hit a wall called "Skill Hell" — they discover Claude Code skills, build a few, encounter a framework or tutorial, build more, and end up with a `.claude/` directory full of overlapping, undermaintained instructions that don't compose cleanly.
 
 The Missing Manual is Pocock's framework for avoiding that. He calls it the Skill Checklist — four components every well-crafted agent skill needs:
 
@@ -20,7 +20,7 @@ The Missing Manual is Pocock's framework for avoiding that. He calls it the Skil
 3. **Steering** — the behavioral constraints that keep the agent on task. This is where you put the "don't do X" and "always check Y" rules.
 4. **Pruning** — the discipline of removing instructions the model no longer needs. Skills accumulate cruft; pruning is what keeps them usable.
 
-Pocock's `mattpocock/skills` repository on GitHub demonstrates the framework in practice — 17 agent skills covering TDD, code review, refactoring, and release management, each built to the Trigger/Structure/Steering/Pruning spec.
+Pocock's [`mattpocock/skills`](https://github.com/mattpocock/skills) repository on GitHub demonstrates the framework in practice — 22 agent skills, including dedicated TDD and code-review skills, each built to the Trigger/Structure/Steering/Pruning spec.
 
 **Builder implication:** If you're building custom skills for Claude Code or any agent harness, the Trigger component is probably where your current skills are weakest. A skill invoked at the wrong time is worse than no skill — it's active misdirection.
 
@@ -28,9 +28,9 @@ Pocock's `mattpocock/skills` repository on GitHub demonstrates the framework in 
 
 ## Mike Krieger — "How Anthropic Builds: Lessons from Labs"
 
-Mike Krieger co-founded Instagram, served as Anthropic's CPO, and moved in January 2026 to co-lead Anthropic Labs alongside Ben Mann (Anthropic co-founder). Labs is where Anthropic runs internal experiments before promoting capabilities to products — which means Krieger's team has more genuine production experience with Claude's failure modes than almost anyone outside the company.
+Mike Krieger [co-founded Instagram (as CTO) and served as Anthropic's Chief Product Officer](https://www.anthropic.com/news/mike-krieger-joins-anthropic), then [moved in January 2026 to co-lead the newly formed Anthropic Labs alongside Ben Mann](https://www.anthropic.com/news/introducing-anthropic-labs) (Anthropic co-founder). Labs is Anthropic's team for "incubating experimental products at the frontier of Claude's capabilities" — tinkering at the edge of what Claude can do, testing unpolished versions with early users, and scaling what lands into products.
 
-His 10:00 AM keynote, ["How Anthropic Builds: Lessons from Labs"](https://www.youtube.com/watch?v=VSLEGpCemtE), was the practitioner version of a talk labs rarely give: here is what we actually do when we build with our own model.
+His 10:00 AM keynote, ["How Anthropic Builds: Lessons from Labs,"](https://www.youtube.com/live/I2cbIws9j10) was the practitioner version of a talk labs rarely give: here is what we actually do when we build with our own model.
 
 Three core lessons:
 
@@ -48,11 +48,11 @@ The third implication, which Krieger made explicit: this model of collaboration 
 
 ## Angela Jiang + Katelyn Lesse — "Tokens Should Have Jobs"
 
-At 10:45 AM, Angela Jiang (Head of Product, Claude Platform) and Katelyn Lesse (Head of Platform Engineering, Anthropic) presented "Tokens Should Have Jobs." Presenting together — product and engineering leads for the platform — they described a principle for how builders should think about token allocation in agentic contexts.
+At [10:45 AM, Angela Jiang (Head of Product, Claude Platform) and Katelyn Lesse (Head of Engineering, Claude Platform, Anthropic)](https://www.ai.engineer/worldsfair/schedule?day=4) presented "Tokens Should Have Jobs." Presenting together — product and engineering leads for the platform — they described a principle for how builders should think about token allocation in agentic contexts.
 
 The core thesis: in an agentic pipeline, every token spend should be assigned to a defined purpose. Tokens used in reasoning that has no downstream effect on the action are waste. Tokens that front-load the most important context — instructions, state, the current subtask — are working. Tokens at the end of a context window that the model can't act on are invisible.
 
-The practical mechanism is Anthropic's **task budgets** API (currently in beta on Fable 5, Mythos 5, and Opus 4.7/4.8). Task budgets let you set a per-task token ceiling that the model self-regulates against. Unlike a hard context cutoff — which truncates mid-action — task budgets let the model finish gracefully: summarizing findings, reporting progress, or completing the current subtask before stopping. The model knows how many tokens it has left and spends them accordingly.
+The practical mechanism is Anthropic's [**task budgets** API](https://platform.claude.com/docs/en/build-with-claude/task-budgets) (in beta, per Anthropic's own docs, on Claude Opus 5, Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, and Claude Opus 4.7). Task budgets let you set a per-task token ceiling that the model self-regulates against. Unlike a hard context cutoff — which truncates mid-action — task budgets let the model finish gracefully: summarizing findings, reporting progress, or completing the current subtask before stopping. The model knows how many tokens it has left and spends them accordingly.
 
 The signal from Jiang and Lesse presenting together: this is a platform feature, not just an API parameter. Anthropic is treating token budget management as core infrastructure for the agentic era, not an advanced setting.
 
@@ -62,47 +62,45 @@ The signal from Jiang and Lesse presenting together: this is a platform feature,
 
 ## Theo Browne — "Your Prompts Are Technical Debt"
 
-Theo Browne (CEO, T3 Tools) closed the main stage at 4:30 PM. The official listing was simply "Closing Keynote." The content was a sharp-edged argument that most builders are accruing a form of technical debt they can't see because it produces no errors.
+[Theo Browne (CEO, T3 Tools)](https://www.ycombinator.com/companies/t3-chat) closed the main stage [at 4:30 PM](https://www.ai.engineer/worldsfair/schedule?day=4). The official listing was simply "Closing Keynote." The content, recapped in detail by [BigGo Finance](https://finance.biggo.com/news/5320d310d8ec014d), was a sharp-edged argument that most builders are accruing a form of technical debt they can't see because it produces no errors.
 
 **The diagnosis:** AI prompts — system instructions, AGENT.md files, markdown directives — decay silently. When a foundation model updates, custom prompts become obsolete unpredictably. Unlike broken code, there's no stack trace, no CI failure, no immediate signal. The degradation shows up weeks later as subtly worse outputs, architectural rewrites the agent wasn't supposed to do, or behavioral regressions with no obvious cause.
 
-Browne's examples:
-- T3 Code's own AGENT.md stayed labeled "Codex-first" for months after the team switched to Claude. The file directed counterproductive architectural patterns. Nobody noticed because nothing broke — outputs just got quietly worse.
-- GPT-4.5 and Gemini 2.0 Pro required completely rewritten system prompts to perform effectively in existing tools. Teams running those models through inherited prompts were getting the old model's behavior on the new model's price.
+[Browne's examples](https://finance.biggo.com/news/5320d310d8ec014d):
+- T3 Code's own AGENT.md went unupdated for two months and still labeled the project "Codex-first" — a designation left over from when the tool used OpenAI's Codex, long after the team had moved on. The file still pointed the model toward sweeping architectural rewrites appropriate for an early-stage codebase, not a maturing one. Nobody noticed because nothing broke — outputs just got quietly worse.
+- GPT-4.5 needed retuned tool descriptions to perform well, and a Cursor engineer had to deliberately re-prompt Gemini 2.0 Pro to get good results inside Cursor despite it performing worse in Google's own tools — evidence that a prompt tuned for one model doesn't transfer to the next.
 
-**The scale problem:** Model release cycles have compressed to 40-day intervals. Anthropic shipped Claude Opus 4.8 just 41 days after its predecessor. A team maintaining bespoke prompt engineering configurations for three models is running a prompt maintenance operation that needs attention nine times a year, minimum. Most teams are not doing this.
+**The scale problem:** Anthropic's own release announcements show [Claude Opus 4.7 shipped April 16, 2026](https://www.anthropic.com/news/claude-opus-4-7) and [Claude Opus 4.8 shipped May 28, 2026](https://www.anthropic.com/news/claude-opus-4-8) — 42 days apart. A team maintaining bespoke prompt engineering configurations for three models is running a prompt maintenance operation that needs attention multiple times a year, minimum. Most teams are not doing this.
 
-**His recommendations:**
+**[His recommendations](https://finance.biggo.com/news/5320d310d8ec014d):**
 - Rely on third-party-maintained tools that continuously retune prompts as models update
 - Minimize custom configuration; avoid unnecessary MCP servers
 - Limit any AGENT.md to concrete, stable facts: file locations, linting rules, project structure
 - Never include behavioral steering directives — those are the first to go stale
 - Delete AI-generated prompts immediately; they embed the assumptions of the model that generated them, not the model that will execute them
-- "Write your prompts yourself and delete them whenever you get a chance"
+- Write your prompts yourself and delete them whenever you get a chance
 
-**The disclosure worth noting:** Browne is CEO of T3 Code, a coding assistant with a maintained prompt layer. His advice points at his product. That context is relevant. But the underlying diagnosis — prompt maintenance is a 40-day obligation most teams ignore until something breaks — holds regardless of which tools you choose.
+**The disclosure worth noting:** Browne is CEO of T3 Tools, which makes T3 Code, a coding assistant with a maintained prompt layer. His advice points at his product. That context is relevant. But the underlying diagnosis — prompt maintenance is a recurring obligation most teams ignore until something breaks — holds regardless of which tools you choose.
 
 ---
 
 ## Garry Tan — Closing Keynote
 
-Garry Tan (President and CEO, Y Combinator) closed the conference at 4:50 PM. His talk carried the Startup Battlefield into the closing block: what does it mean to build now, and who gets to do it?
+[Garry Tan (President and CEO, Y Combinator)](https://www.ai.engineer/worldsfair/schedule?day=4) closed the conference at 4:50 PM. His talk carried the Startup Battlefield into the closing block: what does it mean to build now, and who gets to do it?
 
-Tan's framing came from G Stack — the open-source Claude Code configuration he released in March 2026 that recreates an engineering team inside a single session. G Stack assigns skills to roles: a CEO skill that rethinks product scope, an Eng Manager skill that locks architecture, a Designer skill that catches AI-generated visual mediocrity, a Reviewer skill that finds issues, a Doc Engineer, and a QA pass. The `/office-hours` skill simulates YC's founder evaluation process — a way to pressure-test an idea before committing to it.
+Tan's framing came from [G Stack (gstack)](https://github.com/garrytan/gstack) — the open-source Claude Code configuration he [released in March 2026](https://www.marktechpost.com/2026/03/14/garry-tan-releases-gstack-an-open-source-claude-code-system-for-planning-code-review-qa-and-shipping/) that recreates an engineering team inside a single session. G Stack's README describes 23 opinionated tools built around CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA roles. Its `/office-hours` skill simulates YC's founder evaluation process — a way to pressure-test an idea before committing to it.
 
-Tan runs 10-15 parallel Claude Code sessions simultaneously in isolated workspaces. He described this as the Conductor pattern: the human's job is not to write code but to direct concurrent agent work and review the output. The human review step remains essential — it catches errors that agents generate confidently and ensures outputs align with actual product goals.
+Tan's own gstack documentation describes running [10-15 parallel Claude Code sessions](https://www.conductor.build/docs/guides/parallel-agents/run-multiple-claude-code-sessions) simultaneously in isolated workspaces using Conductor: the human's job is not to write code but to direct concurrent agent work and review the output. The human review step remains essential — it catches errors that agents generate confidently and ensures outputs align with actual product goals.
 
-His closing image for the conference: a quarter of the current YC batch uses "vibe coding" — building prototypes by describing what they want without writing the underlying code themselves. These founders are not software engineers. They came from design, marketing, domain expertise, operations. AI removed the technical prerequisite for founding a software company.
-
-The stage line Tan landed the talk on: "You can just build things."
+Tan has separately pointed to Y Combinator's own numbers as evidence of the shift: [a quarter of YC's Winter 2025 batch had codebases that were 95% AI-generated](https://x.com/garrytan/status/1897303270311489931), what he calls "vibe coding" — building prototypes by describing what they want without writing the underlying code themselves. Whether he repeated that specific statistic in this keynote isn't independently confirmed, but the broader point he's made publicly holds: AI is lowering the technical prerequisite for founding a software company, and some founders now come from design, marketing, or domain expertise rather than engineering.
 
 ---
 
 ## The First Startup Battlefield
 
-At 5:10 PM, Howie Liu (CEO, Airtable) took the stage to host AIEWF's inaugural Startup Battlefield — the first startup competition the conference has run. The Battlefield was supported by Hyperagent, Airtable's standalone agent-builder platform (launched in April 2026 with a $10 million inference grant pool for AI startups called the Founding 500 program).
+At [5:10 PM, Howie Liu (CEO, Airtable) took the stage](https://www.ai.engineer/worldsfair/schedule?day=4) alongside Joshua Xu (CEO, HeyGen) and swyx to close AIEWF's Startup Battlefield — the [$100,000 "AIE Startup Battlefield," presented by Hyperagent](https://www.ai.engineer/worldsfair/schedule?day=4), in which twenty founders demoed on the expo floor from 10:45 AM before three finalists pitched live on the main stage. No earlier AIEWF Startup Battlefield turned up in a search of prior years' coverage, consistent with the conference's own framing of this as its first.
 
-The structure: Hyperagent provides every AIEWF Startup Battlefield finalist with compute credits to build during the conference. Garry Tan joined as a judge. The combination — Tan evaluating founders, Hyperagent providing the infrastructure — maps precisely to the conference's thesis: you can build fast, you need the right compute, and the people who will fund what you build are watching.
+The Battlefield was supported by Hyperagent, Airtable's agent-builder platform. Hyperagent's Founding 500 program — [$10 million in inference credits split across roughly 500 qualifying founders](https://phemex.com/news/article/airtable-cofounder-launches-10m-initiative-for-ai-startups-84584) ($20,000 each) — was [announced May 22, 2026](https://forkoff.xyz/radar/hyperagent-launch), giving every finalist compute credits to build during the conference. This article could not independently confirm the judging panel for the finals; the schedule lists Howie Liu, Joshua Xu, and swyx on stage for the announcement, not Garry Tan.
 
 Specific Startup Battlefield results were not publicly confirmed at the time of this article.
 
@@ -130,7 +128,7 @@ The conference closed the way it needed to: with the compute handed to the found
 
 - [AIEWF 2026: Builder's Watch Guide](/builders-log/ai-engineer-worlds-fair-2026-aiewf-builder-watch-guide/) — the pre-conference preview
 - [AIEWF 2026 Days 3 & 4 Preview: Verifiers Take the Stage](/builders-log/aiewf-2026-days-3-4-verification-autoresearch-mike-krieger-anthropic-builder-guide/) — the advance look at what Day 4 sessions would cover
-- [AIEWF 2026 Day 3 Recap: Designing FOR Agents, Not Just WITH Them](/builders-log/aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026/) — what Thariq Shihipar, Barr Yaron, and Addy Osmani said on July 1
+- [AIEWF 2026 Day 3 Recap: Designing FOR Agents, Not Just WITH Them](/builders-log/aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026/) — what Thariq Shihipar and Addy Osmani said on Day 3 (July 1), and Barr Yaron's Day 4 (July 2) opening survey
 - [Claude Science: Anthropic's Workflow-First Scientific AI Workbench](/builders-log/claude-science-anthropic-ai-workbench-scientists-june-2026-builder-guide/) — Anthropic Labs' most recent product ahead of Krieger's keynote
 
 ---

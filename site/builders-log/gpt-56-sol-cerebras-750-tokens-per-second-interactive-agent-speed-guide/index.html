@@ -76,18 +76,18 @@
 <p>Cerebras built their wafer-scale architecture to eliminate this bottleneck at the hardware level.</p>
 <hr>
 <h2 id="what-cerebras-wse-3-actually-is">What Cerebras WSE-3 Actually Is</h2>
-<p>The <a href="https://cryptobriefing.com/openai-gpt-56-cerebras-inference-breakthrough/">Cerebras Wafer Scale Engine 3 (WSE-3)</a> is a chip the size of an entire silicon wafer:</p>
+<p>The <a href="https://www.cerebras.ai/chip">Cerebras Wafer Scale Engine 3 (WSE-3)</a> is a chip the size of an entire silicon wafer, per <a href="https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine">Cerebras&rsquo; WSE-3 launch announcement</a>:</p>
 <ul>
-<li><strong>46,225 mm²</strong> — approximately 57× the die area of an Nvidia H100</li>
+<li><strong>46,225 mm²</strong> — <a href="https://www.tweaktown.com/news/96843/cerebras-wse-3-wafer-scale-ai-chip-57x-bigger-than-largest-gpu-with-4-trillion-transistors/index.html">approximately 57× the die area of an Nvidia H100</a> (46,225 mm² vs. 826 mm²)</li>
 <li><strong>4 trillion transistors</strong></li>
 <li><strong>900,000 AI-optimized compute cores</strong></li>
 <li><strong>44 GB of on-chip SRAM</strong> — directly accessible by all cores, no DRAM latency</li>
 </ul>
-<p>The critical distinction is that 44 GB of on-chip SRAM. SRAM is ten to twenty times faster than the DRAM used in conventional GPU memory (HBM3). When you can fit a model — or a significant portion of one — into on-chip SRAM, you eliminate the DRAM-to-chip transfer latency that is the primary rate limiter for inference workloads.</p>
-<p>For GPT-5.6 Sol specifically, OpenAI is claiming this hardware configuration enables inference at up to 750 tokens per second per session under production conditions.</p>
+<p>The critical distinction is that 44 GB of on-chip SRAM. Cerebras reports the WSE-3&rsquo;s on-chip memory bandwidth at roughly 21 PB/s — <a href="https://www.servethehome.com/cerebras-enters-ai-inference-blows-away-tiny-nvidia-h100-gpus-by-besting-hbm/">about 7,000× the bandwidth of a single GPU&rsquo;s HBM stack</a>. When you can fit a model — or a significant portion of one — into on-chip SRAM, you eliminate the DRAM-to-chip transfer latency that is the primary rate limiter for inference workloads.</p>
+<p>For GPT-5.6 Sol specifically, OpenAI and Cerebras say this hardware configuration enables inference at up to 750 tokens per second per session under production conditions (<a href="https://openai.com/index/previewing-gpt-5-6-sol/">OpenAI</a>; <a href="https://www.cerebras.ai/blog/getting-the-most-out-of-gpt-5-6-sol-terra-and-luna">Cerebras</a>).</p>
 <hr>
 <h2 id="how-750-toks-compares-to-current-production">How 750 tok/s Compares to Current Production</h2>
-<p>GPT-5.5&rsquo;s priority-tier service advertises 99th-percentile throughput above 50 tokens per second. In practice, streaming responses from GPT-5.5 Pro often arrive at 40–70 tok/s depending on load.</p>
+<p>GPT-5.5&rsquo;s priority-processing tier carries a documented service-level target of 99% of requests above 50 tokens per second, per <a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/priority-processing">Microsoft&rsquo;s Azure AI Foundry priority-processing documentation</a>, which publishes OpenAI&rsquo;s per-model latency targets for the hosted service. Independent benchmarking from <a href="https://artificialanalysis.ai/models/gpt-5-5">Artificial Analysis</a> measures GPT-5.5&rsquo;s default (non-priority) API throughput at roughly 62–65 tokens per second across reasoning-effort variants.</p>
 <table>
 <thead>
 <tr>
@@ -97,50 +97,51 @@
 </thead>
 <tbody>
 <tr>
-<td>GPT-5.5 standard tier</td>
-<td>~20–35 tok/s</td>
+<td>GPT-5.5 default API tier (<a href="https://artificialanalysis.ai/models/gpt-5-5">Artificial Analysis</a>, measured)</td>
+<td>~62–65 tok/s</td>
 </tr>
 <tr>
-<td>GPT-5.5 priority tier</td>
-<td>~40–70 tok/s</td>
+<td>GPT-5.5 priority tier, 99th-percentile floor (<a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/priority-processing">Microsoft Learn</a>)</td>
+<td>&gt;50 tok/s</td>
 </tr>
 <tr>
-<td>GPT-5.6 Sol on Cerebras (target)</td>
+<td>GPT-5.6 Sol on Cerebras (target) (<a href="https://www.cerebras.ai/blog/getting-the-most-out-of-gpt-5-6-sol-terra-and-luna">Cerebras</a>)</td>
 <td>up to 750 tok/s</td>
 </tr>
 </tbody>
 </table>
-<p>The ~15× speed multiplier is not uniform across use cases, but the architecture change is real.</p>
+<p>The ~15× speed multiplier (750 tok/s against the 50 tok/s priority-tier SLA floor) is not uniform across use cases, but the architecture change is real.</p>
 <hr>
 <h2 id="where-speed-actually-changes-what-is-possible">Where Speed Actually Changes What Is Possible</h2>
 <h3 id="interactive-voice-agents">Interactive voice agents</h3>
-<p>Current voice agents buffer tokens before text-to-speech synthesis because the TTS pipeline needs a minimum token batch to generate natural-sounding phonemes. At 40–70 tok/s, that buffer is noticeable as a pause. At 750 tok/s, you can reduce buffer depth significantly — or eliminate it for short utterances — which translates directly to perceived conversational latency.</p>
+<p>Current voice agents buffer tokens before text-to-speech synthesis because the TTS pipeline needs a minimum token batch to generate natural-sounding phonemes. At 50–65 tok/s, that buffer is noticeable as a pause. At 750 tok/s, you can reduce buffer depth significantly — or eliminate it for short utterances — which translates directly to perceived conversational latency.</p>
 <p>Voice agent developers should note that the constraint shifts from inference throughput to TTS pipeline and audio streaming when you move to Cerebras speeds. The bottleneck relocates; it does not disappear.</p>
 <h3 id="streaming-uis-with-live-reasoning">Streaming UIs with live reasoning</h3>
-<p>Sol&rsquo;s Max Reasoning mode and Ultra mode produce token streams that are structurally different from standard completion: reasoning traces, chain-of-thought fragments, and subagent outputs arrive interleaved. At current GPU speeds, a complex Ultra-mode task might take 20–40 seconds end-to-end even if the reasoning is sound. At 750 tok/s, the same reasoning depth arrives in a fraction of the time.</p>
+<p>Sol&rsquo;s <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol">Max Reasoning mode and Ultra mode</a> produce token streams that are structurally different from standard completion: Max gives the model more time to reason and revise before answering, while Ultra coordinates multiple subagents in parallel on a task — so reasoning traces, chain-of-thought fragments, and subagent outputs arrive interleaved. At current GPU speeds, a complex Ultra-mode task might take 20–40 seconds end-to-end even if the reasoning is sound. At 750 tok/s, the same reasoning depth arrives in a fraction of the time.</p>
 <p>For UIs where users watch a live reasoning trace — code editors, research assistants, agent debuggers — this changes the product feel from &ldquo;watching it think&rdquo; to &ldquo;interactive collaboration.&rdquo;</p>
 <h3 id="synchronous-agent-pipelines">Synchronous agent pipelines</h3>
 <p>The use cases where speed matters most are synchronous pipelines where each step blocks on the previous one. A pipeline that calls Sol five times serially — plan, decompose, execute, verify, summarize — currently takes wall-clock time that scales linearly with per-step latency. At 15× throughput, that pipeline wall-clock drops accordingly.</p>
 <p>Asynchronous or batch pipelines do not benefit equivalently. If your workload is fire-and-forget with results consumed minutes later, inference speed is irrelevant; you are optimizing for cost per token, not latency.</p>
 <h3 id="the-cost-angle-is-not-straightforward">The cost angle is not straightforward</h3>
-<p>Faster inference does not automatically reduce cost. OpenAI&rsquo;s pricing for Sol is $5/$30 per million tokens input/output — the same as GPT-5.5. You pay per token regardless of how fast they arrive. What you get is more work done per minute of user-facing time, which has value in interactive products but no direct per-call cost benefit.</p>
+<p>Faster inference does not automatically reduce cost. OpenAI&rsquo;s pricing for Sol is <a href="https://openrouter.ai/openai/gpt-5.6-sol">$5/$30 per million tokens input/output</a> — the same as <a href="https://openrouter.ai/openai/gpt-5.5">GPT-5.5&rsquo;s published rate</a>. You pay per token regardless of how fast they arrive. What you get is more work done per minute of user-facing time, which has value in interactive products but no direct per-call cost benefit.</p>
 <hr>
 <h2 id="the-access-double-lock">The Access Double Lock</h2>
 <p>Sol on Cerebras comes with two simultaneous access restrictions:</p>
-<p><strong>Lock 1 — Government-gated.</strong> GPT-5.6 Sol is currently restricted to approximately 20 government-approved partner organizations. Broader API access is planned for &ldquo;coming weeks&rdquo; with no confirmed date.</p>
-<p><strong>Lock 2 — Cerebras capacity.</strong> Even when Sol access expands, Cerebras deployment will initially be limited to select customers as capacity scales. The WSE-3 is not a commodity chip; each unit represents significant capital investment and constrained supply.</p>
-<p>Builders should not plan production dependencies on Sol-on-Cerebras throughput as a default inference tier. It will be an available option for latency-critical use cases, not a universal replacement for standard GPU serving.</p>
+<p><strong>Lock 1 — Government-gated.</strong> At launch, GPT-5.6 Sol was restricted to approximately 20 government-vetted partner organizations at the request of the U.S. government, which cited Sol&rsquo;s cybersecurity capabilities (<a href="https://www.cnbc.com/2026/06/26/openai-limits-new-ai-models-to-trusted-partners-request-us-government.html">CNBC</a>; <a href="https://www.infosecurity-magazine.com/news/openai-gpt-5-6-sol-limited-preview/">Infosecurity Magazine</a>). OpenAI said broader access was planned for &ldquo;coming weeks&rdquo; with no confirmed date as of the June 26 announcement.</p>
+<p><em>Update (as of this audit, 2026-07-31):</em> the gate lifted faster than expected — OpenAI made Sol, Terra, and Luna generally available across ChatGPT, the API, and Codex on <strong>July 9, 2026</strong>, after the government&rsquo;s review concluded early (<a href="https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html">CNBC</a>). The government-access restriction described above no longer applies; Cerebras capacity constraints (Lock 2) still do.</p>
+<p><strong>Lock 2 — Cerebras capacity.</strong> Even with Sol now generally available, Cerebras deployment is still limited to select customers as capacity scales. The WSE-3 is not a commodity chip; each unit represents significant capital investment and constrained supply.</p>
+<p>Builders should not plan production dependencies on Sol-on-Cerebras throughput as a default inference tier. It is an available option for latency-critical use cases, not a universal replacement for standard GPU serving.</p>
 <hr>
 <h2 id="the-openai-cerebras-relationship">The OpenAI-Cerebras Relationship</h2>
-<p>The Cerebras deployment is not a casual inference partnership. <a href="https://finance.yahoo.com/technology/ai/articles/openai-cerebras-deal-supposed-good-200700053.html">OpenAI and Cerebras formalized a <strong>$20 billion cloud services agreement</strong></a> that includes Cerebras equity warrants (<a href="https://www.sec.gov/Archives/edgar/data/0002021728/000162828026035214/cerebras-424b4.htm">SEC filing</a>) — a structure that aligns OpenAI&rsquo;s scaling interests with Cerebras&rsquo;s wafer-scale chip roadmap.</p>
-<p>OpenAI has also been building its own inference hardware in parallel. The <a href="/builders-log/openai-broadcom-jalapeno-inference-chip-builder-guide-api-cost-2026/">Jalapeño chip (announced June 24 with Broadcom)</a> targets end-of-2026 deployment. The two efforts address different timelines: Cerebras delivers speed-optimized inference now, using existing hardware; Jalapeño is OpenAI&rsquo;s longer-term custom silicon play.</p>
+<p>The Cerebras deployment is not a casual inference partnership. <a href="https://finance.yahoo.com/technology/ai/articles/openai-cerebras-deal-supposed-good-200700053.html">OpenAI and Cerebras signed a compute supply agreement worth more than <strong>$20 billion</strong></a>, covering 750 megawatts of inference capacity through 2028, and the deal includes Cerebras equity warrants (<a href="https://www.sec.gov/Archives/edgar/data/0002021728/000162828026035214/cerebras-424b4.htm">SEC filing</a>) — a structure that aligns OpenAI&rsquo;s scaling interests with Cerebras&rsquo;s wafer-scale chip roadmap.</p>
+<p>OpenAI has also been building its own inference hardware in parallel. The <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip/">Jalapeño chip</a>, <a href="https://investors.broadcom.com/news-releases/news-release-details/openai-and-broadcom-unveil-llm-optimized-intelligence-processor">announced June 24 with Broadcom</a> (<a href="/builders-log/openai-broadcom-jalapeno-inference-chip-builder-guide-api-cost-2026/">more detail in our builder guide</a>), targets end-of-2026 deployment. The two efforts address different timelines: Cerebras delivers speed-optimized inference now, using existing hardware; Jalapeño is OpenAI&rsquo;s longer-term custom silicon play.</p>
 <p>The inference infrastructure landscape OpenAI is building is not &ldquo;one chip.&rdquo; It is a layered compute strategy: Nvidia H100/H200 GPUs for training and general serving, Cerebras wafer-scale for latency-critical inference, and Jalapeño for future cost-optimized production serving at scale.</p>
 <hr>
 <h2 id="builder-action">Builder Action</h2>
-<p><strong>Architecture design:</strong> If you are building interactive agents today on GPT-5.5, design your token handling to be throughput-agnostic. Do not hardcode streaming assumptions that depend on current 40–70 tok/s rates — either slower (standard tier) or faster (Cerebras) should both work without application-layer changes. Buffer depth, TTS batch sizes, and UI flush intervals should be configurable, not constants.</p>
-<p><strong>Monitor the access expansion:</strong> The Sol government gate is expected to open &ldquo;in coming weeks&rdquo; from the June 26 announcement — call it late July 2026 at the optimistic end. When Sol reaches broader API access, Cerebras throughput will be available as an inference option. Start evaluating your latency-sensitive use cases now so you can move quickly when access opens.</p>
-<p><strong>Do not optimize for Cerebras speeds yet.</strong> 750 tok/s is a headline number from a limited-capacity preview with no confirmed production pricing for the speed tier. Design for correctness and model capability first; inference speed is a configuration knob you can turn later.</p>
-<p><strong>Latency vs. cost tradeoff planning:</strong> When Sol GA does arrive, you will likely face a choice between standard GPU serving (lower cost, 50–70 tok/s) and Cerebras-tier serving (higher cost, up to 750 tok/s). Identify now which of your agent steps are latency-critical (synchronous, user-facing, real-time) vs. latency-tolerant (batch, async, background). That segmentation will directly inform which serving tier you provision for each pipeline stage.</p>
+<p><strong>Architecture design:</strong> If you are building interactive agents today on GPT-5.5, design your token handling to be throughput-agnostic. Do not hardcode streaming assumptions that depend on current ~50–65 tok/s rates — either slower (standard tier) or faster (Cerebras) should both work without application-layer changes. Buffer depth, TTS batch sizes, and UI flush intervals should be configurable, not constants.</p>
+<p><strong>Access update:</strong> The Sol government gate lifted on <a href="https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html">July 9, 2026</a> — faster than the &ldquo;coming weeks&rdquo; language in the original June 26 announcement suggested. Sol is now broadly available via ChatGPT, the API, and Codex; Cerebras throughput availability as a distinct inference option is still capacity-gated (see Lock 2 above).</p>
+<p><strong>Do not optimize for Cerebras speeds yet.</strong> 750 tok/s is a headline number from what was, at launch, a limited-capacity preview, and Cerebras has not published confirmed standalone pricing for the speed tier. Design for correctness and model capability first; inference speed is a configuration knob you can turn later.</p>
+<p><strong>Latency vs. cost tradeoff planning:</strong> You will likely face a choice between standard GPU serving (lower cost, ~50–65 tok/s) and Cerebras-tier serving (higher cost, up to 750 tok/s). Identify now which of your agent steps are latency-critical (synchronous, user-facing, real-time) vs. latency-tolerant (batch, async, background). That segmentation will directly inform which serving tier you provision for each pipeline stage.</p>
 <hr>
 <h2 id="prior-coverage">Prior Coverage</h2>
 <ul>

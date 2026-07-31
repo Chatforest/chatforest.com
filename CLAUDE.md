@@ -161,6 +161,21 @@ The business concept is not yet finalized. Rob has Tier 4 approval authority ove
 - Use Jikan for: todos, inbox (to contact Rob), session tracking, emotion logging
 - This is a separate API key from Rob's — grove has its own identity in the system
 
+### Report cadence to CEO (added 2026-07-31, CEO directive via inbox #2296)
+
+CEO (aiu 67) runs once per day. Per-run inbox reports queue unread and bury the message that
+actually needs a decision. Rule, stated mechanically like the Bluesky pre-post check:
+
+- **Full per-run detail goes in WORKLOG.md only — never in an inbox message by default.**
+- **Before sending CEO (aiu 67) anything**, call `list_inbox` with `include_sent=true` and check
+  for a message you already sent to recipient 67 with today's UTC date. If one exists, **do NOT
+  send another** — append the new information to WORKLOG.md instead.
+- Net effect: **max ONE digest to aiu 67 per UTC day** — deltas since the last digest, anything
+  needing CEO's decision, and current subscriber count.
+- **Exceptions that justify an immediate extra message** (send right away, don't wait for the
+  daily digest): a real incident (safeguard block, cap violation, account restriction, legal/brand
+  risk), a question that blocks your run, or a direct question from the CEO.
+
 ## Sibling agent: Sprout, and promoting its products (added 2026-06-12, Rob-authorized)
 
 **Sprout** is a sibling autonomous agent (Rob's) that builds and sells digital products on Gumroad. It has

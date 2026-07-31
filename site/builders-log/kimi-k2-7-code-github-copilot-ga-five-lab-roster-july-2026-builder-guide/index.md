@@ -3,17 +3,17 @@
 > Moonshot AI's Kimi K2.7 Code is now GA in GitHub Copilot as of July 1, 2026. It is the first open-weight model selectable in Copilot's model picker, and it completes a five-lab roster across OpenAI, Anthropic, Google, Microsoft, and Moonshot AI. Builder guide: rollout tiers, admin controls, platform support, and CLI auto-routing.
 
 
-On July 1, 2026, [GitHub shipped Kimi K2.7-Code into general availability in GitHub Copilot](https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/). That is 19 days after Moonshot AI published the weights on Hugging Face. In under three weeks, a Chinese open-weight coding model went from "download and self-host" to "available in the world's largest developer platform by default subscription." Part of the **[Builder's Log](/builders-log/)**.
+On July 1, 2026, [GitHub shipped Kimi K2.7-Code into general availability in GitHub Copilot](https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/). Moonshot AI [published the weights on Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code) roughly three weeks earlier, around June 11–12, 2026. In under a month, a Chinese open-weight coding model went from "download and self-host" to "available in the world's largest developer platform by default subscription." Part of the **[Builder's Log](/builders-log/)**.
 
-There are two headlines here. First: Kimi K2.7 Code is the **first open-weight model to appear in Copilot's model picker**. Every other selectable model is proprietary — you cannot download it, run it locally, or audit its weights. Kimi K2.7 is different: it is MIT-licensed, the full 1T parameter weights are public on Hugging Face, and GitHub is simply running a hosted copy on Azure for Copilot users who prefer not to manage infrastructure. Second: the addition completes a **five-lab Copilot roster**. The model picker now spans OpenAI, Anthropic, Google, Microsoft, and Moonshot AI — the broadest competitive set that any major coding tool has ever offered through a single subscription.
+There are two headlines here. First: Kimi K2.7 Code is [the **first open-weight model to appear in Copilot's model picker**](https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/). Every other selectable model is proprietary — you cannot download it, run it locally, or audit its weights. Kimi K2.7 is different: it is released under a [Modified MIT license](https://huggingface.co/moonshotai/Kimi-K2.7-Code), the full 1T-parameter (32B active) weights are [public on Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code), and GitHub is simply running a hosted copy on Azure for Copilot users who prefer not to manage infrastructure. Second: the addition completes a **five-lab Copilot roster**. The model picker now spans [OpenAI, Anthropic, Google, Microsoft, and Moonshot AI](https://docs.github.com/en/copilot/reference/ai-models/supported-models).
 
-Also on July 1, GitHub shipped Copilot CLI auto model routing. It routes each CLI request to the best available model for the task type, and it gives paid subscribers a 10% credit discount for using Auto instead of pinning a model. The timing is not coincidental — expanding the roster and teaching the CLI to route intelligently are the same product move.
+Also on July 1, [GitHub shipped Copilot CLI auto model routing](https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task/). It routes each CLI request to the best available model for the task type, and it gives paid subscribers a 10% credit discount for using Auto instead of pinning a model. The timing is not coincidental — expanding the roster and teaching the CLI to route intelligently are the same product move.
 
 ---
 
 ## The Five-Lab Copilot Roster
 
-As of July 1, 2026, the Copilot model picker includes:
+As of July 1, 2026, the [Copilot model picker](https://docs.github.com/en/copilot/reference/ai-models/supported-models) includes:
 
 | Lab | Models |
 |---|---|
@@ -23,7 +23,7 @@ As of July 1, 2026, the Copilot model picker includes:
 | **Microsoft** | MAI-Code-1-Flash, Raptor mini |
 | **Moonshot AI** | Kimi-K2.7-Code ← new |
 
-No other coding tool currently routes across five independent labs through a single subscription. This matters for builders who do not want to maintain five separate API keys, billing accounts, and context window configurations.
+Routing across five independent labs through a single subscription means builders who don't want to maintain five separate API keys, billing accounts, and context window configurations have one place to work from.
 
 ---
 
@@ -31,13 +31,11 @@ No other coding tool currently routes across five independent labs through a sin
 
 If you have used Kimi K2.7 directly through `api.moonshot.cn` or via a self-hosted vLLM/SGLang deployment, the Copilot version differs in a few practical ways:
 
-**Infrastructure:** GitHub hosts Kimi K2.7 on Microsoft Azure (US-based). Your prompts do not route to Moonshot AI's servers. This is the same pattern as the other third-party models in Copilot — Google's models run on Azure too, not on Google Cloud.
+**Infrastructure:** GitHub hosts Kimi K2.7 [on Microsoft Azure (US-based)](https://docs.github.com/en/copilot/reference/ai-models/model-hosting). Your prompts do not route to Moonshot AI's servers. That's the same arrangement GitHub uses for OpenAI's models, which also run on GitHub's Azure infrastructure — though it's not universal: [Google's Gemini models in Copilot are the exception and run on Google Cloud, not Azure](https://docs.github.com/en/copilot/reference/ai-models/model-hosting).
 
 **No separate API key:** You authenticate with your GitHub account. No Moonshot AI account, no separate `MOONSHOT_API_KEY`, no per-model rate limit management. If you are already on Copilot Pro/Pro+/Max, the model is available in the picker immediately.
 
-**Pricing via AI credits:** Copilot switched to usage-based AI credit billing in June 2026. Kimi K2.7 is billed at provider list pricing within that credit system — roughly GPT-5.4 mini pricing tier. If you are on an annual Copilot plan, your premium request multiplier applies (0.9x with Auto, 1.0x pinned).
-
-**Model ID:** In API contexts, the model surfaces as `kimi-k2.7-code` within Copilot's routing layer, not as `moonshot-kimi-k2.7-code` or the Moonshot-native identifier. Automation that pins by model name needs to account for this.
+**Pricing via AI credits:** [Copilot switched to usage-based AI credit billing on June 1, 2026](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/). Kimi K2.7 is billed at provider list pricing within that credit system — [$0.95 per million input tokens / $4.00 per million output tokens](https://www.kimi.com/resources/kimi-k2-7-code-pricing), which lands close to [GPT-5.4 mini's $0.75 input / $4.50 output](https://developers.openai.com/api/docs/pricing) pricing. If you are on an annual Copilot plan, [your premium request multiplier applies (0.9x with Auto, 1.0x pinned)](https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task/).
 
 ---
 
@@ -59,20 +57,20 @@ Business and Enterprise users: the model will not appear until your Copilot admi
 
 ## Platform Support
 
-Kimi K2.7 Code is available in Copilot across all major surfaces:
+[Kimi K2.7 Code is available in Copilot across all major surfaces](https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/):
 
 | Surface | Minimum Version |
 |---|---|
 | Visual Studio Code | 1.127.0+ |
 | Visual Studio | 17.14.6+ |
 | JetBrains IDEs | 1.9.1-251+ |
-| Xcode | Latest Copilot for Xcode |
-| Eclipse | Latest Copilot extension |
+| Xcode | No update needed |
+| Eclipse | No update needed |
 | GitHub.com (Copilot Chat) | No client update needed |
 | GitHub Mobile | No client update needed |
-| Copilot CLI | Latest version |
-| Cloud Agent | Available |
-| Copilot App | Available |
+| Copilot CLI | No update needed |
+| Cloud Agent | No update needed |
+| Copilot App | No update needed |
 
 Check your IDE extension version before expecting the model to appear in the picker.
 
@@ -80,13 +78,13 @@ Check your IDE extension version before expecting the model to appear in the pic
 
 ## Copilot CLI Auto Routing — July 1
 
-Alongside the Kimi announcement, GitHub shipped auto model selection to Copilot CLI. This is directly related: a larger roster is only useful if the CLI can route intelligently across it.
+Alongside the Kimi announcement, [GitHub shipped auto model selection to Copilot CLI](https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task/). This is directly related: a larger roster is only useful if the CLI can route intelligently across it.
 
-Auto routing evaluates each request across several dimensions: reasoning complexity, code generation difficulty, bug diagnosis needs, and tool orchestration requirements. It then routes to the best available model for that task type, respecting your administrator's enabled model policies.
+Auto routing [evaluates each request across several dimensions](https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task/): reasoning complexity, code generation difficulty, bug diagnosis needs, and tool orchestration requirements, along with real-time model availability and reliability signals. It then routes to the best available model for that task type, respecting your administrator's enabled model policies.
 
 **For builders:** The routing decisions align with what experienced users do manually. Simple completions and file lookups go to faster, cheaper models. Multi-file refactors, complex debugging sessions, and agentic tool-call chains go to heavier models. You get near-optimal quality without manually switching models for each task type.
 
-**Cost note:** Paid subscribers get a **10% credit discount** when using Auto mode. Annual plan subscribers receive a 0.9x multiplier instead of 1.0x. If you are currently pinning a model by habit, switching to Auto saves credits and requires less active model management.
+**Cost note:** [Paid subscribers get a **10% credit discount** when using Auto mode](https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task/). Annual plan subscribers receive a 0.9x multiplier instead of 1.0x. If you are currently pinning a model by habit, switching to Auto saves credits and requires less active model management.
 
 **Override:** You can override Auto any time with `/model <name>` in the CLI. Auto is a default, not a lock.
 
@@ -94,28 +92,28 @@ Auto routing evaluates each request across several dimensions: reasoning complex
 
 ## Enterprise Admin Guide: Enabling Kimi K2.7
 
-For Copilot Business and Enterprise, Kimi K2.7 Code requires explicit administrator opt-in:
+For Copilot Business and Enterprise, [Kimi K2.7 Code is off by default and requires explicit administrator opt-in](https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise/):
 
 1. Go to your GitHub organization settings
-2. Navigate to **Copilot → Policies**
-3. Find **Kimi K2.7 Code** in the model policy list
+2. Under "Code, planning, and automation," click **Copilot**
+3. Click **[Models](https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/managing-policies-for-copilot-in-your-organization)** and find **Kimi K2.7 Code** in the model policy list
 4. Set to **Enabled** (default is Disabled)
 
-GitHub recommends evaluating your security and compliance requirements before enabling. The relevant considerations:
+[GitHub recommends evaluating open-weight models against your security, compliance, and data-governance requirements before enabling them](https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise/). The relevant considerations:
 
-**Data routing:** Prompts sent to Kimi K2.7 in Copilot go to Azure (US-based), not to Moonshot AI's servers in China. The Azure data processing terms apply, not Moonshot AI's terms. This matters for GDPR assessments — the data controller and processor chain is GitHub/Microsoft, not Moonshot.
+**Data routing:** [Prompts sent to Kimi K2.7 in Copilot go to Azure (US-based)](https://docs.github.com/en/copilot/reference/ai-models/model-hosting), not to Moonshot AI's servers in China. The Azure data processing terms apply, not Moonshot AI's terms.
 
-**CLOUD Act exposure:** Azure US infrastructure is subject to US law, including CLOUD Act requests. If your organization's compliance framework requires data to remain outside US jurisdictions, this is the same constraint as every other Copilot model.
+**CLOUD Act exposure:** Azure US infrastructure is subject to US law, including CLOUD Act requests. If your organization's compliance framework requires data to remain outside US jurisdictions, this is the same constraint as every other Azure-hosted Copilot model.
 
-**Weights are public:** Unlike GPT or Claude, you can audit the Kimi K2.7 Code model weights directly on Hugging Face. For organizations that require model transparency as part of procurement, this is an advantage not available with any other Copilot model.
+**Weights are public:** Unlike GPT or Claude, you can [audit the Kimi K2.7 Code model weights directly on Hugging Face](https://huggingface.co/moonshotai/Kimi-K2.7-Code). For organizations that require model transparency as part of procurement, this is an advantage not available with the closed-weight models in Copilot's roster.
 
 ---
 
 ## Builder Decision Guide
 
 **Pick Kimi K2.7 when:**
-- You want cost efficiency in the GPT-5.4 mini pricing tier but need strong agentic tool-call performance (K2.7 scored 81.1% on MCPMark vs GPT-5.4 mini at lower scores)
-- You want an open-weight model — verifiable weights, MIT license, auditable
+- You want cost efficiency in roughly the GPT-5.4 mini pricing tier but need strong agentic tool-call performance ([K2.7 scored 81.1% on MCPMark-Verified, ahead of Claude Opus 4.8's 76.4% on the same benchmark, though behind GPT-5.5's 92.9%](https://huggingface.co/moonshotai/Kimi-K2.7-Code) — vendor-reported figures from Moonshot's own model card)
+- You want an open-weight model — verifiable weights, [Modified MIT license](https://huggingface.co/moonshotai/Kimi-K2.7-Code), auditable
 - You are routing through Copilot CLI Auto and want the router to have access to a strong, cost-efficient coding model
 - You are building HIPAA-adjacent tooling and want to use GitHub/Microsoft as your data processor rather than adding a new AI vendor
 
@@ -142,7 +140,7 @@ GitHub recommends evaluating your security and compliance requirements before en
 - [ ] If on Business/Enterprise: request admin enable the Kimi K2.7 Code policy in Copilot settings
 - [ ] If using Copilot CLI: update to latest, select Auto for the 10% credit discount
 - [ ] Review Azure data processing terms if your organization has cross-border data requirements
-- [ ] If you need open-weight auditability for procurement: note Kimi K2.7 weights are on Hugging Face (MIT license) — reference the model card in your vendor assessment
+- [ ] If you need open-weight auditability for procurement: note [Kimi K2.7 weights are on Hugging Face under a Modified MIT license](https://huggingface.co/moonshotai/Kimi-K2.7-Code) — reference the model card in your vendor assessment
 - [ ] If you are currently paying for a direct Moonshot AI API subscription for Kimi K2.7: compare costs against Copilot credit pricing — Copilot may be cheaper for typical IDE usage patterns
 
 ---

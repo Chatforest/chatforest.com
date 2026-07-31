@@ -3,7 +3,7 @@
 > Two June 11 API improvements for builders running research agents: web_search_20260318 and web_fetch_20260318 add response_inclusion: 'excluded' to drop dynamically-filtered search blocks from your API response, and code_execution_20260521 discloses the 90-second per-cell limit in its tool description so Claude can budget long-running cells.
 
 
-On June 11, 2026, Anthropic shipped two tool updates that work together to reduce token costs in multi-step research agents: new tool versions for web search and web fetch that add a `response_inclusion` parameter, and a new code execution version that discloses the per-cell execution time limit in its tool description. Neither change required a beta header, and neither was widely covered outside the release notes.
+On [June 11, 2026](https://platform.claude.com/docs/en/release-notes/api), Anthropic shipped two tool updates that work together to reduce token costs in multi-step research agents: new tool versions for web search and web fetch that add a `response_inclusion` parameter, and a new code execution version that discloses the per-cell execution time limit in its tool description. Neither change required a beta header.
 
 ---
 
@@ -19,9 +19,9 @@ Separately, when Claude runs code in a sandbox and a cell takes too long, the AP
 
 ### What it does
 
-The `response_inclusion` parameter controls whether search and fetch result blocks appear in the API response when those results were consumed by a completed code execution call in the same turn.
+The [`response_inclusion` parameter](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool#response-inclusion) controls whether search and fetch result blocks appear in the API response when those results were consumed by a completed code execution call in the same turn.
 
-Set `"response_inclusion": "excluded"` and any `server_tool_use` + `web_search_tool_result` (or `web_fetch_tool_result`) block pair that was consumed by a completed code execution call is dropped from the response entirely. The default is `"full"`, which preserves prior behavior.
+Set `"response_inclusion": "excluded"` and any `server_tool_use` + `web_search_tool_result` (or [`web_fetch_tool_result`](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool#response-inclusion)) block pair that was consumed by a completed code execution call is dropped from the response entirely. The default is `"full"`, which preserves prior behavior.
 
 **The exclusion is conditional:** it only applies when:
 1. The result block was consumed by a code execution call, AND
@@ -31,7 +31,7 @@ Results from direct web search calls — where Claude searched and responded fro
 
 ### Why it matters
 
-A research agent that runs five searches per turn, processes each through dynamic filtering, and generates a 2,000-token response can easily accumulate several thousand extra output tokens from search result blocks that no downstream code ever reads. At $10 per 1,000 searches and standard output token pricing, those orphaned result blocks are a visible line item at production scale.
+A research agent that runs five searches per turn, processes each through dynamic filtering, and generates a 2,000-token response can easily accumulate several thousand extra output tokens from search result blocks that no downstream code ever reads. At [$10 per 1,000 searches](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool#usage-and-pricing) plus standard output token pricing, those orphaned result blocks are a visible line item at production scale.
 
 With `response_inclusion: "excluded"`, the API response contains only what your application actually needs: the final text output, any unconsumed tool results, and citation references.
 
@@ -88,7 +88,7 @@ tools=[
 ]
 ```
 
-In document-processing pipelines — where an agent fetches a page, extracts structured data via code, and continues — fetched HTML can easily exceed 50,000 tokens. Dropping those consumed fetch results saves real money.
+In document-processing pipelines — where an agent fetches a page, extracts structured data via code, and continues — fetched content adds up fast: Anthropic's own token estimates put a 100 KB documentation page at roughly [25,000 tokens and a 500 KB PDF at roughly 125,000 tokens](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool#usage-and-pricing). Dropping those consumed fetch results saves real money.
 
 ---
 
@@ -96,31 +96,15 @@ In document-processing pipelines — where an agent fetches a page, extracts str
 
 ### What changed
 
-`code_execution_20260521` is functionally identical to `code_execution_20260120` (REPL state persistence, programmatic tool calling) with one addition: the per-cell execution time limit is included in the tool description that Claude reads when it receives the tool definition.
+[`code_execution_20260521` is functionally identical to `code_execution_20260120`](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool#model-compatibility) (REPL state persistence, programmatic tool calling) with one addition: the per-cell execution time limit is included in the tool description that Claude reads when it receives the tool definition.
 
-Before this version, Claude knew nothing about the 90-second wall-clock limit on individual cells until it hit it. That produced a specific failure pattern: Claude would write a single long-running computation as one cell, the cell would timeout and return `detection_timeout`, Claude would try to understand why, and then restructure the work — wasting turns and tokens on recovery.
+Before this version, Claude knew nothing about the [90-second wall-clock limit on individual cells](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool#resource-limits) until it hit it. That produced a specific failure pattern: Claude would write a single long-running computation as one cell, the cell would timeout and return `detection_timeout`, Claude would try to understand why, and then restructure the work — wasting turns and tokens on recovery.
 
 With `code_execution_20260521`, Claude sees the limit in the tool description before it writes any code. It can budget long-running computations across multiple cells, add intermediate checkpoints, or warn you when a requested computation may not fit within the limit.
 
 ### What a timeout looks like
 
-A cell that exceeds 90 seconds returns:
-
-```json
-{
-  "type": "tool_result",
-  "tool_use_id": "toolu_...",
-  "content": {
-    "type": "code_execution_result",
-    "return_code": 1,
-    "stderr": "",
-    "stdout": "",
-    "result": {
-      "type": "detection_timeout"
-    }
-  }
-}
-```
+A cell that exceeds the limit doesn't raise an API-level error. Per Anthropic's tool reference, it ["returns a normal code execution result with a non-zero `return_code` and a `detection_timeout` status message in its output"](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool#model-compatibility) — distinct from the separately documented `execution_time_exceeded` [error code](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool#errors), which the API returns only when an entire tool invocation, not a single cell, runs past its execution-time budget.
 
 Claude can handle this, but recovery takes a turn. The budget signal eliminates most cases where this happens on avoidable computations.
 
@@ -142,7 +126,7 @@ REPL state and programmatic tool calling work identically across both versions. 
 
 The combination is intentional. When you pair `web_search_20260318` (or `web_fetch_20260318`) with `code_execution_20260521`:
 
-- **Dynamic filtering runs free.** Code execution is not charged when used alongside web search or web fetch.
+- **Dynamic filtering runs free.** [Code execution is not charged when used alongside web search or web fetch](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool).
 - **Claude filters search results before they hit context.** Instead of loading full HTML into the conversation, code execution processes and discards what's irrelevant.
 - **Consumed result blocks don't come back.** With `response_inclusion: "excluded"`, the filtered-and-discarded search content never appears in the API response.
 - **Long extractions finish safely.** Claude knows the 90-second cell limit and can structure large page parses into bounded chunks.
@@ -164,11 +148,11 @@ The result is a research agent architecture that costs less at every step: less 
 | code_execution | `code_execution_20260120` | + REPL state, programmatic tool calls |
 | code_execution | `code_execution_20260521` | + 90-second limit in tool description |
 
-The `web_search_20260318` and `web_fetch_20260318` versions require no beta header. The `code_execution_20260521` version requires no beta header. All three are available on the Claude API only — not Amazon Bedrock or Google Cloud.
+The `web_search_20260318` and `web_fetch_20260318` versions require no beta header. The `code_execution_20260521` version requires no beta header. All three are available on the [Claude API, Claude Platform on AWS, and Microsoft Foundry](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool#platform-availability) — none of the three is currently available on Amazon Bedrock or Google Cloud.
 
 ---
 
 ## Source
 
-Both changes shipped in the [Anthropic platform release notes](https://platform.claude.com/docs/en/release-notes/api) on June 11, 2026. The full `response_inclusion` specification is in the [web search tool documentation](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool#response-inclusion). The code execution version table and per-cell limit are documented in the [code execution tool reference](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool).
+Both changes shipped in the [Anthropic platform release notes](https://platform.claude.com/docs/en/release-notes/api) on June 11, 2026. The full `response_inclusion` specification is in the [web search tool documentation](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool#response-inclusion) and the [web fetch tool documentation](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool#response-inclusion). The code execution version table, 90-second per-cell limit, and platform availability are documented in the [code execution tool reference](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool).
 

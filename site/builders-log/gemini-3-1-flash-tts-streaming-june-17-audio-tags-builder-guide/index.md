@@ -3,7 +3,7 @@
 > Streaming support arrived for gemini-3.1-flash-tts-preview on June 17. PCM 24kHz output, 200+ inline audio tags, 30 voices, 70+ languages. One known bug to handle before shipping: occasional 500 errors require retry logic.
 
 
-Streaming support for [`gemini-3.1-flash-tts-preview`](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-tts-preview) arrived June 17, 2026. The model itself [launched in April](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/) — this changelog entry is specifically about streaming via `streamGenerateContent` becoming available. Before June 17, TTS on this model required a non-streaming call that returned the full audio blob at completion. Now you can stream audio chunks and begin playback before the full generation is done.
+Streaming support for [`gemini-3.1-flash-tts-preview`](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-tts-preview) arrived [June 17, 2026](https://ai.google.dev/gemini-api/docs/changelog). The model itself [launched in April](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/) — this changelog entry is specifically about streaming, via `streamGenerateContent` and `stream: true` in the Interactions API, [becoming available](https://ai.google.dev/gemini-api/docs/changelog). Before June 17, TTS on this model required a non-streaming call that returned the full audio blob at completion. Now you can stream audio chunks and begin playback before the full generation is done.
 
 This guide covers: how streaming works, the audio tag system, voice selection, output format, pricing, and the one known bug you need to handle before shipping.
 
@@ -26,29 +26,42 @@ This guide covers: how streaming works, the audio tag system, voice selection, o
 | Batch API | Supported |
 | Caching, function calling, structured outputs | Not supported |
 
-Note the $20/1M output token rate. Compare to Gemini 3.5 Flash TTS at $6/1M — the 3.5 Flash model is newer and cheaper. The 3.1 Flash TTS is the model to use when you need the 200+ audio tag system for fine-grained delivery control; 3.5 Flash TTS is the cost-efficient option for straightforward narration.
+Model ID, token limits, and unsupported features are from [Google's model page](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-tts-preview). The PCM/24kHz/16-bit/mono output format is documented in the [TTS guide's](https://ai.google.dev/gemini-api/docs/speech-generation) code samples. Voice count and language coverage are from [Google's launch announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/). Pricing is from [Google's Gemini API pricing page](https://ai.google.dev/gemini-api/docs/pricing).
+
+Note the $20/1M output token rate — double the $10/1M output rate for [Gemini 2.5 Flash TTS](https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-preview-tts), Google's prior-generation TTS model (same [pricing page](https://ai.google.dev/gemini-api/docs/pricing)). The premium buys the 200+ audio tag system described below.
 
 ---
 
 ## How Streaming Works
 
-Use `streamGenerateContent` instead of `generateContent`. In the Interactions API, set `stream: true` in the request.
-
-Audio arrives as `step.delta` events. When `event.delta.type == "audio"`, the data field contains base64-encoded PCM. Decode and pipe directly to your audio output:
+Use `streamGenerateContent` instead of `generateContent`. With the `google-genai` SDK this is `client.models.generate_content_stream()` — iterate over the returned chunks, and each chunk's audio lives at `chunk.candidates[0].content.parts[0].inline_data.data` as raw PCM bytes ([Google's TTS guide](https://ai.google.dev/gemini-api/docs/speech-generation) has the full code sample in Python, JavaScript, and REST):
 
 ```python
-import base64
+from google import genai
+from google.genai import types
 import wave
 
-audio_chunks = []
+client = genai.Client()
 
-for event in client.models.stream_generate_content(
+response_stream = client.models.generate_content_stream(
     model="gemini-3.1-flash-tts-preview",
     contents="[excited] We just shipped streaming TTS support.",
-    config={"speech_config": {"voice": "Puck"}}
-):
-    if event.delta and event.delta.type == "audio":
-        audio_chunks.append(base64.b64decode(event.delta.data))
+    config=types.GenerateContentConfig(
+        response_modalities=["AUDIO"],
+        speech_config=types.SpeechConfig(
+            voice_config=types.VoiceConfig(
+                prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name="Puck")
+            )
+        ),
+    ),
+)
+
+audio_chunks = []
+for chunk in response_stream:
+    try:
+        audio_chunks.append(chunk.candidates[0].content.parts[0].inline_data.data)
+    except (IndexError, AttributeError):
+        pass
 
 # Write PCM chunks to WAV
 with wave.open("output.wav", "wb") as f:
@@ -58,13 +71,15 @@ with wave.open("output.wav", "wb") as f:
     f.writeframes(b"".join(audio_chunks))
 ```
 
+Google's newer [Interactions API](https://ai.google.dev/gemini-api/docs/speech-generation) offers the same capability via `client.interactions.create(..., stream=True)`, which emits `step.delta` events where `event.delta.type == "audio"` and `event.delta.data` is base64-encoded PCM you decode yourself. Both mechanisms shipped for this model on the same [June 17, 2026 release](https://ai.google.dev/gemini-api/docs/changelog).
+
 The output is always 24000 Hz, 16-bit, mono PCM. You do not need to negotiate the format — it is fixed.
 
 ---
 
 ## Audio Tags
 
-The audio tag system lets you embed delivery instructions directly in the input text. Tags are inline, surrounded by square brackets:
+The audio tag system lets you embed delivery instructions directly in the input text. Google says the model supports [200+ audio tags](https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-tts-on-google-cloud) for steering vocal style, tone, pacing, and accent. Tags are inline, surrounded by square brackets:
 
 ```
 [whispers] This part is spoken softly.
@@ -81,21 +96,21 @@ Categories of control include:
 - **Delivery style:** `[whispers]`, `[shouting]`, `[breathlessly]`, `[dramatically]`
 - **Emotion:** `[excitedly]`, `[bored]`, `[laughing]`, `[sighs]`
 - **Pacing:** `[one word at a time]`, `[quickly]`, `[pausing]`
-- **Accent and register:** vary by tag — the full list is in Google's TTS documentation
+- **Accent and register:** vary by tag — [Google's TTS documentation](https://ai.google.dev/gemini-api/docs/speech-generation) lists commonly used tags but is explicit that "there is no exhaustive list on what tags do and don't work," and recommends experimenting
 
-Tags are processed inline — you can switch style mid-sentence or per paragraph. This is the primary differentiator from Gemini 3.5 Flash TTS, which handles narration but does not support the 200+ tag system.
+Tags are processed inline — you can switch style mid-sentence or per paragraph.
 
 ---
 
 ## Voice Selection
 
-30 prebuilt voices are available. A subset of named voices:
+30 prebuilt voices are available. A subset of named voices, per [Google's TTS documentation](https://ai.google.dev/gemini-api/docs/speech-generation):
 
 - **Kore** — Firm
 - **Puck** — Upbeat
 - **Enceladus** — Breathy
 
-Set voice in `speech_config.voice`. Voice selection affects the base character; audio tags control delivery on top of the voice. You can run two independent speakers in the same request with separate voice and style configuration per speaker.
+Set voice in `speech_config.voice`. Voice selection affects the base character; audio tags control delivery on top of the voice. [Google's documentation](https://ai.google.dev/gemini-api/docs/speech-generation) describes multi-speaker configuration supporting up to two speakers in the same request, each with independent voice and style configuration.
 
 ---
 
@@ -127,21 +142,7 @@ Do not surface the retry to end users — one or two retries transparently handl
 
 ## Long Output Drift
 
-For outputs longer than a few minutes, the documentation notes that "speech quality and consistency may begin to drift." If you need long-form TTS (podcast narration, audiobook chapters), split your input at natural paragraph or section boundaries and stitch the output chunks rather than submitting the entire document in one call. This also reduces the impact of a mid-generation 500 error, since you only retry the failed chunk rather than the entire input.
-
----
-
-## vs. Gemini 3.5 Flash TTS
-
-| | 3.1 Flash TTS Preview | 3.5 Flash TTS |
-|---|---|---|
-| Audio tags | 200+ inline tags | Not supported |
-| Pricing | $20/1M output tokens | $6/1M output tokens |
-| Status | Preview | GA |
-| Multi-speaker | Yes, 2 speakers | Check docs |
-| Use case | Expressive, steerable narration | Cost-efficient narration |
-
-Use 3.1 Flash TTS when fine delivery control matters (character voices, expressive training data, styled narration). Use 3.5 Flash TTS when you need reliable, cheap, scalable narration without style complexity.
+For outputs longer than a few minutes, [the documentation notes](https://ai.google.dev/gemini-api/docs/speech-generation) that "speech quality and consistency may begin to drift." If you need long-form TTS (podcast narration, audiobook chapters), split your input at natural paragraph or section boundaries and stitch the output chunks rather than submitting the entire document in one call. This also reduces the impact of a mid-generation 500 error, since you only retry the failed chunk rather than the entire input.
 
 ---
 

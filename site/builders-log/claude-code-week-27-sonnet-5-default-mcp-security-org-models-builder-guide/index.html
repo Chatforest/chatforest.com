@@ -70,7 +70,7 @@
 <p>Here is what matters for builders.</p>
 <hr>
 <h2 id="sonnet-5-is-now-the-default-model">Sonnet 5 Is Now the Default Model</h2>
-<p><strong>Version:</strong> 2.1.197 · <strong>Released:</strong> June 30</p>
+<p><strong>Version:</strong> 2.1.197 · <strong>Released:</strong> June 30 · <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform release notes, June 30, 2026</a> · <a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5">What&rsquo;s new in Claude Sonnet 5</a> · <a href="https://www.anthropic.com/news/claude-sonnet-5">Introducing Claude Sonnet 5</a></p>
 <p>When you start a Claude Code session, you are now on Claude Sonnet 5. The model brings a native 1M-token context window, improved agentic reasoning, and introductory pricing of $2 / $10 per million input/output tokens through August 31, 2026 — at which point standard $3 / $15 pricing takes effect.</p>
 <p>Three API behavior changes come with Sonnet 5 that affect anyone who has tuned Claude Code prompts around prior model behavior:</p>
 <ul>
@@ -82,16 +82,16 @@
 <p><strong>Builder implication:</strong> If you are using Claude Code with usage-based billing and had cost budgets calibrated to Sonnet 4.6, expect your per-session token counts to increase. Run a few representative sessions and check your actual usage in the Console before relying on prior estimates.</p>
 <hr>
 <h2 id="mcp-self-approval-security-fix">MCP Self-Approval Security Fix</h2>
-<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a></p>
-<p>Before this release, a committed <code>.claude/settings.json</code> that listed MCP servers would cause Claude Code to auto-spawn those servers in any workspace where the file existed — including workspaces not explicitly trusted by the user. This created a vector for repository-level prompt injection: a malicious <code>.claude/settings.json</code> checked into a repository could provision MCP servers without user confirmation.</p>
-<p>The fix: Claude Code no longer auto-spawns MCP servers from committed configuration files in untrusted workspaces. Instead, untrusted workspace MCP servers show a <code>⏸ Pending approval</code> indicator and wait for explicit user confirmation before connecting.</p>
+<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.196">Release v2.1.196</a></p>
+<p>Before this release, a repo could self-approve its own <code>.mcp.json</code> MCP server definitions: a committed <code>.claude/settings.json</code> containing <code>enableAllProjectMcpServers</code> or <code>enabledMcpjsonServers</code> would cause Claude Code to auto-spawn those servers in any workspace where the file existed — including workspaces not explicitly trusted by the user. This created a vector for repository-level prompt injection: a malicious pair of <code>.mcp.json</code> / <code>.claude/settings.json</code> files checked into a repository could provision MCP servers without user confirmation.</p>
+<p>The fix: <code>claude mcp list</code>/<code>get</code> no longer spawn <code>.mcp.json</code> servers that a repo self-approved via a committed <code>.claude/settings.json</code>. Instead, untrusted workspace MCP servers show a <code>⏸ Pending approval</code> indicator and wait for explicit user confirmation (accepting the workspace trust dialog) before connecting.</p>
 <p><strong>Builder implication if you maintain Claude Code configurations for your team:</strong> Your committed <code>.claude/settings.json</code> MCP entries will now require one-time approval in fresh workspace clones. This is intentional. Walk team members through the approval flow before they hit it unexpectedly in CI or onboarding.</p>
 <p><strong>Builder implication if you use shared repositories with Claude Code configurations you did not write:</strong> This fix protects you. Before 2.1.196, cloning a repository with a <code>.claude/settings.json</code> could spawn MCP servers you did not control. You are now prompted before that happens.</p>
 <hr>
 <h2 id="organization-default-models">Organization Default Models</h2>
-<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29</p>
+<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.196">Release v2.1.196</a></p>
 <p>Enterprise Claude Code deployments can now set organization-level and role-level default models. In the <code>/model</code> picker, organization-governed defaults appear as <strong>&ldquo;Org default&rdquo;</strong> or <strong>&ldquo;Role default&rdquo;</strong> rather than a raw model ID.</p>
-<p>Combined with the <code>enforceAvailableModels</code> managed setting (added in v2.1.175), this gives enterprise admins two layers of model governance:</p>
+<p>Combined with the <code>enforceAvailableModels</code> managed setting (<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.175">added in v2.1.175</a>), this gives enterprise admins two layers of model governance:</p>
 <ol>
 <li><strong>Allowlist</strong> (<code>enforceAvailableModels</code> + <code>availableModels</code>): restrict which models users can select at all.</li>
 <li><strong>Default</strong> (new): set which model users land on in a new session, without removing their ability to switch.</li>
@@ -100,36 +100,33 @@
 <p><strong>Builder implication for teams managing cost:</strong> Setting an org default to a cheaper model (Sonnet 5 or Haiku 4.5) while leaving Opus available for opt-in is now straightforward. Previously, you either locked the model or left the decision entirely to individual users.</p>
 <hr>
 <h2 id="stream-stall-watchdog-enabled-by-default">Stream-Stall Watchdog Enabled by Default</h2>
-<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29</p>
+<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.196">Release v2.1.196</a></p>
 <p>The stream-stall watchdog — which aborts and retries a session when the response stream produces no events for 5 minutes — is now on by default. To disable it:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CLAUDE_ENABLE_STREAM_WATCHDOG<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 </code></pre></div><p>The watchdog was available as an opt-in before this release. Making it the default address a class of failures that previously resulted in sessions silently hanging: network interruptions, API stalls, or provider timeouts that do not surface as errors but produce no forward progress.</p>
 <p><strong>Builder implication for long-running agentic sessions:</strong> If you run Claude Code on tasks that legitimately take more than 5 minutes of uninterrupted model generation (rare but possible for very large output blocks), you may hit spurious aborts. Test with a representative long-output task; if you encounter retries, disable the watchdog or confirm the actual hang duration before ruling it out.</p>
 <hr>
 <h2 id="remote-control-safety">Remote Control Safety</h2>
-<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29</p>
-<p>Remote Control is now automatically disabled when <code>ANTHROPIC_BASE_URL</code> points to a non-Anthropic host. This prevents Remote Control sessions from inadvertently routing through proxy servers or compatible API endpoints that are not under Anthropic&rsquo;s control.</p>
+<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.196">Release v2.1.196</a></p>
+<p>Remote Control is now automatically disabled when <code>ANTHROPIC_BASE_URL</code> points to a non-Anthropic host, matching the existing behavior under <code>CLAUDE_CODE_USE_BEDROCK</code>/<code>_VERTEX</code>/<code>_FOUNDRY</code>. This prevents Remote Control sessions from inadvertently routing through proxy servers or compatible API endpoints that are not under Anthropic&rsquo;s control.</p>
 <p>If you run Claude Code against a third-party compatible API (Bedrock pass-through, local proxy, compatible gateway) and also use Remote Control, you will need to choose one or the other. The combination is now blocked rather than silently allowed.</p>
 <hr>
 <h2 id="background-session-reliability">Background Session Reliability</h2>
-<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29</p>
-<p>Two background session fixes:</p>
+<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.196">Release v2.1.196</a></p>
+<p>Three background session fixes:</p>
 <ul>
-<li><strong>Transcript files no longer deleted</strong>: background job transcript files are now preserved across session lifecycle events. Previously, certain cleanup paths deleted in-progress transcripts.</li>
-<li><strong>Permanent recovery improved</strong>: the recovery path for crashed or interrupted background sessions is more robust.</li>
+<li><strong>Transcript files no longer deleted on wake</strong>: previously, waking a background job could permanently delete its conversation and re-run the original prompt if the transcript probe misread a real transcript. The transcript file is now set aside instead of deleted.</li>
+<li><strong>Long-running commands survive process restarts</strong>: background commands and workflows now survive the session&rsquo;s process being stopped, restarted, or updated — including on Windows, where background shells are handed off instead of being killed.</li>
+<li><strong>Remote sessions auto-resume after a server restart</strong>: mid-turn crash recovery for Remote sessions is fixed — sessions interrupted by a server restart now auto-resume on the next worker, and background agents killed by a daemon restart resume automatically the next time the agents view opens.</li>
 </ul>
 <p>For builders running Claude Code in persistent background configurations — CI agents, headless servers, scheduled tasks — this reduces the frequency of lost work from unexpected session termination.</p>
 <hr>
 <h2 id="streaming-and-telemetry-fixes">Streaming and Telemetry Fixes</h2>
-<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29</p>
-<p>Two corrections affect billing accuracy and monitoring:</p>
-<ul>
-<li><strong>Rate-limit warning over-counting fixed</strong>: rate-limit warnings were being triggered and counted incorrectly when making parallel requests. This did not affect billing, but could cause confusing warning thresholds to fire in high-concurrency setups.</li>
-<li><strong>Telemetry over-counting fixed</strong>: similarly, parallel request scenarios were inflating telemetry event counts.</li>
-</ul>
+<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.196">Release v2.1.196</a></p>
+<p>One fix touches both the rate-limit warning UI and telemetry accuracy: when multiple parallel requests were in flight at the moment a usage limit was hit, the rate-limit warning could flicker off (disappear when it should have stayed visible) and rate-limit telemetry was over-counted. Both are fixed in this release, which should make warning indicators and usage telemetry more trustworthy in high-concurrency setups.</p>
 <hr>
 <h2 id="ux-readable-session-names-and-clickable-attachments">UX: Readable Session Names and Clickable Attachments</h2>
-<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29</p>
+<p><strong>Version:</strong> 2.1.196 · <strong>Released:</strong> June 29 · <a href="https://code.claude.com/docs/en/changelog">Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.196">Release v2.1.196</a></p>
 <p>Two quality-of-life improvements worth noting:</p>
 <ul>
 <li><strong>Readable default session names</strong>: new sessions now get human-readable names rather than UUID-style identifiers by default. This makes the session list in <code>claude agents</code> and the session picker more navigable.</li>
@@ -138,7 +135,7 @@
 <p>Neither changes how Claude Code works mechanically, but both reduce friction in day-to-day use.</p>
 <hr>
 <h2 id="what-is-not-here-yet">What Is Not Here Yet</h2>
-<p>The big gap that remains: Claude Managed Agents scheduled deployments and the new June 30 Managed Agents updates (event deltas, per-session config overrides, vault <code>injection_location</code>) have not surfaced as native Claude Code features. They live at the API layer and require direct API integration. Claude Code&rsquo;s agent orchestration and its Managed Agents counterpart are still separate surfaces.</p>
+<p>The big gap that remains: <a href="https://platform.claude.com/docs/en/managed-agents/scheduled-deployments">Claude Managed Agents scheduled deployments</a> and the <a href="https://platform.claude.com/docs/en/release-notes/overview">new June 30 Managed Agents updates</a> (session event deltas, per-session <code>agent_with_overrides</code> config, vault <code>injection_location</code>) have not surfaced as native Claude Code features. They live at the API layer and require direct API integration. Claude Code&rsquo;s agent orchestration and its Managed Agents counterpart are still separate surfaces.</p>
 <hr>
 <h2 id="upgrade">Upgrade</h2>
 <p>Update via the normal path:</p>

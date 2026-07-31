@@ -6,14 +6,14 @@
   <title>Gemini Omni Flash API Is Live: Model ID, Interactions API, Video Specs, and What Changed from the Planning Guide — ChatForest</title>
   <meta name="description" content="Gemini Omni Flash entered public preview on June 30. Model ID is gemini-omni-flash-preview. The Interactions API is the recommended entry point. 3–10 second video at 720p/24fps. Here is what you need to update from pre-launch planning.">
   <meta property="og:title" content="Gemini Omni Flash API Is Live: Model ID, Interactions API, Video Specs, and What Changed from the Planning Guide — ChatForest">
-  <meta property="og:description" content="Gemini Omni Flash public preview went live June 30. Model ID gemini-omni-flash-preview. Interactions API. 720p/24fps. Pricing on Vertex AI. What changed from the June 2 planning guide.">
+  <meta property="og:description" content="Gemini Omni Flash public preview went live June 30. Model ID gemini-omni-flash-preview. Interactions API. 720p/24fps. Published token pricing. What changed from the June 2 planning guide.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/builders-log/gemini-omni-flash-api-public-preview-june-30-interactions-builder-guide/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gemini Omni Flash API Is Live: Model ID, Interactions API, Video Specs, and What Changed from the Planning Guide — ChatForest">
-  <meta name="twitter:description" content="Gemini Omni Flash public preview went live June 30. Model ID gemini-omni-flash-preview. Interactions API. 720p/24fps. Pricing on Vertex AI. What changed from the June 2 planning guide.">
+  <meta name="twitter:description" content="Gemini Omni Flash public preview went live June 30. Model ID gemini-omni-flash-preview. Interactions API. 720p/24fps. Published token pricing. What changed from the June 2 planning guide.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/builders-log/gemini-omni-flash-api-public-preview-june-30-interactions-builder-guide/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -116,15 +116,15 @@
 </tr>
 </tbody>
 </table>
-<p>The 1M token context window means you can pass large documents, long video descriptions, or extended conversation histories into a single Omni request. The 720p/24fps output is the preview spec — higher resolution variants are not confirmed for the public preview timeline.</p>
+<p>The 1M token context window means you can pass large documents, long video descriptions, or extended conversation histories into a single Omni request. The 720p/24fps output is the preview spec — <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/">Google&rsquo;s launch announcement says 10-second video generations are the current cap, &ldquo;with longer durations coming soon&rdquo;</a>; higher resolution variants are not confirmed for the public preview timeline. Full spec table confirmed on <a href="https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash">Google&rsquo;s Omni Flash model page</a>.</p>
 <hr>
 <h2 id="which-api-to-use">Which API to Use</h2>
-<p>Google recommends the <a href="https://ai.google.dev/gemini-api/docs/omni"><strong>Interactions API</strong></a> for Gemini Omni Flash. The Interactions API was purpose-built for stateful multi-turn interactions and is where new Omni features will land first. The legacy <code>generateContent</code> endpoint works but may not surface all preview capabilities.</p>
+<p>Google recommends the <a href="https://ai.google.dev/gemini-api/docs/omni"><strong>Interactions API</strong></a> for Gemini Omni Flash. The Interactions API <a href="https://ai.google.dev/gemini-api/docs/interactions-overview">reached general availability and is Google&rsquo;s recommended API &ldquo;for access to all the latest features and models&rdquo;</a>, and is where new Omni features will land first — Google&rsquo;s own docs state that &ldquo;going forward, all new models, multimodal capabilities, tools, and agentic features will launch on the Interactions API.&rdquo; The legacy <code>generateContent</code> endpoint <a href="https://ai.google.dev/gemini-api/docs/interactions-overview">remains fully supported</a> but will not receive new capabilities going forward.</p>
 <p>If your existing infrastructure is built on <code>generateContent</code>, it will still function. But for new Omni Flash integrations, start with the Interactions API so you are on the forward path before GA.</p>
-<p>The Interactions API uses <code>client.interactions.create()</code> and maintains state server-side via <code>previous_interaction_id</code>, the same pattern as <a href="/builders-log/gemini-3-5-flash-computer-use-tool-june-24-api-intents-safety-builder-guide/">Gemini 3.5 Flash Computer Use</a>. For pure video generation (not multi-turn editing), a single interaction without a <code>previous_interaction_id</code> is sufficient.</p>
+<p>The Interactions API uses <code>client.interactions.create()</code> and <a href="https://ai.google.dev/gemini-api/docs/omni">maintains state server-side via <code>previous_interaction_id</code></a>, the same pattern as <a href="/builders-log/gemini-3-5-flash-computer-use-tool-june-24-api-intents-safety-builder-guide/">Gemini 3.5 Flash Computer Use</a>. For pure video generation (not multi-turn editing), a single interaction without a <code>previous_interaction_id</code> is sufficient.</p>
 <hr>
-<h2 id="pricing-on-vertex-ai">Pricing on Vertex AI</h2>
-<p>Omni Flash pricing on the Gemini API was not published at launch. On Vertex AI, Google has disclosed token-based pricing for the preview:</p>
+<h2 id="pricing">Pricing</h2>
+<p>Omni Flash pricing is published, with matching token-based billing on both the <a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing page</a> and the <a href="https://cloud.google.com/vertex-ai/generative-ai/pricing">Vertex AI pricing page</a>:</p>
 <table>
 <thead>
 <tr>
@@ -147,11 +147,11 @@
 </tr>
 </tbody>
 </table>
-<p>Until the Gemini API price sheet is updated, the Vertex AI token counts are the best available proxy for cost modeling. A 10-second video at 720p costs 57,920 output tokens on Vertex. At text token rates that would be trivial, but video tokens are billed at a distinct rate not yet published for the Gemini API tier.</p>
-<p>If you are cost-sensitive, stay on Veo 3.1 (published pricing) until Omni Flash publishes its rate card, or test in AI Studio free tier first.</p>
+<p>Text/image/video/audio input is billed at $1.50 per 1M tokens; video output is billed at $17.50 per 1M tokens. At 5,792 tokens per second, that works out to <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/">roughly $0.10 per second of video output</a>, which is what Google&rsquo;s launch announcement quotes directly. A 10-second video at 720p costs 57,920 output tokens — about $1.01 at that rate.</p>
+<p><a href="https://ai.google.dev/gemini-api/docs/pricing">There is no free tier for Omni Flash Preview on the Gemini API pricing page</a> — every call is billed. If you are cost-sensitive, compare against Veo 3.1&rsquo;s published per-second pricing before committing, since both models are billed similarly on a per-second-of-output basis.</p>
 <hr>
-<h2 id="also-ga-on-june-30-nano-banana-lite">Also GA on June 30: Nano Banana Lite</h2>
-<p>Alongside the Omni Flash preview launch, Google also brought <code>gemini-3.1-flash-lite-image</code> (internally called Nano Banana Lite) to general availability. This is the ultra-low-latency, cost-optimized image generation model — the &ldquo;lite&rdquo; counterpart to the Nano Banana 2 (<code>gemini-3.1-flash-image</code>) covered in our <a href="/builders-log/veo-3-1-nano-banana-2-google-ai-video-image-generation-builder-guide/">Veo 3.1 + Nano Banana 2 guide</a>.</p>
+<h2 id="also-ga-on-june-30-nano-banana-2-lite">Also GA on June 30: Nano Banana 2 Lite</h2>
+<p>Alongside the Omni Flash preview launch, Google also brought <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/"><code>gemini-3.1-flash-lite-image</code>, branded <strong>Nano Banana 2 Lite</strong>, to general availability</a>. This is the ultra-low-latency, cost-optimized image generation model — <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/">text-to-image in about 4 seconds</a>, the &ldquo;lite&rdquo; counterpart to Nano Banana 2 (<code>gemini-3.1-flash-image</code>) covered in our <a href="/builders-log/veo-3-1-nano-banana-2-google-ai-video-image-generation-builder-guide/">Veo 3.1 + Nano Banana 2 guide</a>. Google&rsquo;s own <a href="https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite-image">model page</a> confirms the <code>gemini-3.1-flash-lite-image</code> model ID and the Nano Banana 2 Lite branding.</p>
 <p>If your pipeline uses image generation for keyframe seeding before passing to Veo or Omni, <code>gemini-3.1-flash-lite-image</code> GA is now a stable production option for that step.</p>
 <hr>
 <h2 id="preview-caveats">Preview Caveats</h2>

@@ -3,11 +3,12 @@ title: "Anthropic Cache Diagnostics Beta: Find Exactly Why Your Prompt Cache Mis
 date: 2026-07-02
 description: "Anthropic's cache diagnostics beta adds a cache_miss_reason field to API responses. Pass your previous response ID and get a machine-readable explanation of exactly where your prompt prefix diverged."
 tags: ["anthropic", "claude-api", "prompt-caching", "developer-tools", "cost-optimization"]
+sources_audited: 2026-07-31
 ---
 
-Prompt caching cuts Claude API costs by up to 90% on repeated context — but only when the beginning of your prompt is byte-for-byte identical across turns. Until now, the only signal that a cache miss occurred was `usage.cache_read_input_tokens` dropping to zero. No reason. No location. No path to a fix.
+Prompt caching [cuts Claude API costs by up to 90%](https://claude.com/blog/prompt-caching) on repeated context — but only when the beginning of your prompt is byte-for-byte identical across turns. Until now, the only signal that a cache miss occurred was `usage.cache_read_input_tokens` dropping to zero. No reason. No location. No path to a fix.
 
-Anthropic's **cache diagnostics beta**, launched May 13, 2026, closes that gap. Pass the `id` of your previous response on the next request and the API tells you exactly what changed: the model, the system prompt, the tools, or the message history. You can fix the root cause instead of guessing.
+Anthropic's **[cache diagnostics beta](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics)**, [launched May 13, 2026](https://platform.claude.com/docs/en/release-notes/api#may-13-2026), closes that gap. Pass the `id` of your previous response on the next request and the API tells you exactly what changed: the model, the system prompt, the tools, or the message history. You can fix the root cause instead of guessing.
 
 ---
 
@@ -26,7 +27,7 @@ Before cache diagnostics, you could tell a miss happened. You couldn't tell why.
 
 ## How to opt in
 
-Include the beta header `cache-diagnosis-2026-04-07` on every request. On the first turn, pass `diagnostics.previous_message_id: null` to opt in without a prior message. On subsequent turns, pass the `id` from the previous response.
+Include the beta header `cache-diagnosis-2026-04-07` on every request. On the first turn, pass `diagnostics.previous_message_id: null` to opt in without a prior message. On subsequent turns, pass the `id` from the previous response. (Source: [Anthropic cache diagnostics docs, "Basic usage"](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#basic-usage).)
 
 ```python
 import anthropic
@@ -75,7 +76,7 @@ The `diagnostics` object appears on the response `Message`. For streaming, it ar
 
 ## What you get back
 
-The `diagnostics` field has four possible states:
+The `diagnostics` field has four possible states, per Anthropic's [response format documentation](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#response-format):
 
 | Value | Meaning |
 |---|---|
@@ -103,7 +104,7 @@ When there's a miss, the response looks like this:
 
 ## The six miss reason types
 
-The API reports the **earliest** divergence only. Fix the first one before hunting for the next.
+The API reports the **earliest** divergence only. Fix the first one before hunting for the next. (Reference: [Anthropic, "Cache miss reason types"](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types).)
 
 ### `system_changed`
 
@@ -155,7 +156,7 @@ No fingerprint exists for the supplied `previous_message_id`. This is not eviden
 
 ### `unavailable`
 
-Diagnostics couldn't produce a result. This covers: non-`*_changed` parameter differences (`tool_choice`, `thinking`, `context_management`, active beta headers), very long conversations where the divergence is beyond the comparison horizon, and transient conditions.
+Diagnostics couldn't produce a result. This covers: non-`*_changed` parameter differences (`tool_choice`, `thinking`, `context_management`, `output_config`, `output_format`, or active beta headers) and very long conversations where the divergence is beyond the comparison horizon. Per Anthropic, your request is still processed normally in this case.
 
 If you see this persistently after checking the obvious suspects, consult the [prompt caching troubleshooting guide](https://platform.claude.com/docs/en/build-with-claude/prompt-caching#troubleshooting-common-issues).
 
@@ -163,7 +164,7 @@ If you see this persistently after checking the obvious suspects, consult the [p
 
 ## Combining diagnostics with usage
 
-`diagnostics` answers "did my request change?" while `usage.cache_read_input_tokens` answers "did the cache hit?" Use both together:
+`diagnostics` answers "did my request change?" while `usage.cache_read_input_tokens` answers "did the cache hit?" Use both together (matrix per [Anthropic's guidance](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#reading-diagnostics-alongside-usage)):
 
 | Diagnostics | Cache read tokens | What it means |
 |---|---|---|
@@ -209,8 +210,10 @@ The first turn always returns `diagnostics: null` — there's nothing to compare
 
 ## Current limitations
 
+Per Anthropic's [documented limitations and data retention notes](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#limitations):
+
 - **Beta:** Field names and semantics may change before GA.
-- **Claude API only:** Not available on Amazon Bedrock or Google Cloud Vertex AI.
+- **Claude API only:** Not available on Amazon Bedrock or Google Cloud.
 - **Fingerprints expire:** Run diagnostic comparisons between closely spaced requests; if too much time passes, you'll get `previous_message_not_found`.
 - **Same workspace:** The previous request must be from the same organization and workspace as the current one.
 - **First divergence only:** The API reports the earliest divergence point. Fix it, then re-run — later divergences may be hidden behind the first.
@@ -227,7 +230,7 @@ Cache diagnostics is targeted at builders who:
 - **Are migrating between models** — if your code has any routing or fallback logic, `model_changed` will surface it immediately.
 - **Are using third-party SDKs or wrappers** — framework layers sometimes re-serialize tool schemas or reorder messages. Diagnostics finds this without needing to instrument the framework.
 
-Enable the beta header in staging, run your workflow, and check the `cache_miss_reason` on turn 2+. Even one `system_changed` fix on a large system prompt can eliminate thousands of dollars per month in unnecessary cache write costs.
+Enable the beta header in staging, run your workflow, and check the `cache_miss_reason` on turn 2+. A cache read costs 0.1x the base input price, versus 1.25x–2x for a cache write ([Anthropic prompt caching pricing](https://platform.claude.com/docs/en/about-claude/pricing#prompt-caching)), so on a large system prompt, even one `system_changed` fix can meaningfully cut unnecessary cache write costs — the exact savings depend on your prompt size and traffic volume.
 
 ---
 

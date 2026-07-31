@@ -7,9 +7,10 @@ content_type: "Builder's Log"
 categories: ["Anthropic", "Developer Tools", "Claude Code"]
 tags: ["claude-code", "anthropic", "chrome", "browser-automation", "background-agents", "notifications", "hooks", "auto-pr", "explore-agent", "extended-thinking", "dataviz", "gateway", "builders-log", "july-2026"]
 draft: false
+sources_audited: 2026-07-31
 ---
 
-Claude Code v2.1.198 drops in the first week of July 2026 with a headline most builders have been waiting on: the Chrome integration leaves beta and becomes generally available. The release also ships background agent hook notifications, automatic commit-push-PR on agent completion, and a meaningful upgrade to how the Explore agent and subagents handle model selection and extended thinking.
+Claude Code [v2.1.198](https://github.com/anthropics/claude-code/releases/tag/v2.1.198) drops July 1, 2026 with a headline most builders have been waiting on: the Chrome integration leaves beta and becomes generally available. The release also ships background agent hook notifications, automatic commit-push-PR on agent completion, and a meaningful upgrade to how the Explore agent and subagents handle model selection and extended thinking.
 
 Here is what changed and what it means for your workflows.
 
@@ -17,11 +18,11 @@ Here is what changed and what it means for your workflows.
 
 ## Chrome Integration: Out of Beta
 
-The biggest flag in this release: "Claude in Chrome is now generally available." The `--chrome` flag and `/chrome` command that were previously marked experimental are now stable and supported.
+The biggest flag in this release: ["Claude in Chrome is now generally available."](https://github.com/anthropics/claude-code/releases/tag/v2.1.198) The `--chrome` flag and `/chrome` command, previously in beta, are now stable and supported, per [Anthropic's Chrome integration docs](https://code.claude.com/docs/en/chrome).
 
 ### What the Chrome integration does
 
-With Chrome connected, Claude Code bridges your terminal (or VS Code) with a live browser session. Claude can:
+With Chrome connected, Claude Code bridges your terminal (or VS Code) with a live browser session. Per [Anthropic's Chrome integration docs](https://code.claude.com/docs/en/chrome), Claude can:
 
 - **Read console errors and DOM state** as they happen, then fix the code that caused them without a context switch
 - **Open your local dev server and interact with it** — form validation, visual regression checks, user flow verification
@@ -34,12 +35,14 @@ Browser actions run in a visible Chrome window in real time. When Claude hits a 
 
 ### Prerequisites
 
-- Google Chrome or Microsoft Edge (Brave, Arc, and other Chromium-based browsers are not yet supported)
+Per [Anthropic's Chrome integration docs](https://code.claude.com/docs/en/chrome):
+
+- Google Chrome, Microsoft Edge, or another Chromium-based browser such as Brave, Arc, Vivaldi, or Opera (Claude Code auto-detects the extension in these)
 - [Claude in Chrome extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) version 1.0.36 or higher
-- Claude Code 2.0.73 or higher
+- A current version of Claude Code, signed in with `/login`
 - A direct Anthropic plan (Pro, Max, Team, or Enterprise)
 
-**Third-party provider note:** Chrome integration does not work through Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. If you only have third-party API access, you need a separate claude.ai account to use this feature.
+**Third-party provider note:** Chrome integration is not available through third-party providers like Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry. If you only have third-party API access, you need a separate claude.ai account to use this feature.
 
 ### Enabling Chrome
 
@@ -83,13 +86,13 @@ Record a GIF showing the checkout flow, from cart to order confirmation.
 
 ### What GA means for builders
 
-Beta status was the blocker for many teams who could not rely on experimental features in production pipelines. GA means the integration API is stable: `--chrome`, `/chrome`, and the `claude-in-chrome` MCP server tools are now supported surfaces. Run `/mcp` → `claude-in-chrome` to see the full list of available browser tools.
+Beta status was the blocker for many teams who could not rely on experimental features in production pipelines. GA means the integration API is stable: `--chrome`, `/chrome`, and the `claude-in-chrome` MCP server tools are now supported surfaces, per the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198). Run `/mcp` → `claude-in-chrome` to see the full list of available browser tools, per the [Chrome docs](https://code.claude.com/docs/en/chrome).
 
 ---
 
 ## Background Agent Notifications: New Hook Events
 
-Background agents (sessions running in `claude agents`) can now surface two new events to your `Notification` hook: `agent_needs_input` and `agent_completed`.
+Background agents (sessions running in `claude agents`) can now surface two new events to your `Notification` hook: `agent_needs_input` and `agent_completed`, per the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198) and [Anthropic's hooks documentation](https://code.claude.com/docs/en/hooks), which lists these as notification-type matcher values meaning "when an agent requires user input" and "when an agent completes" respectively.
 
 If you have a `Notification` hook configured in `.claude/settings.json`, it will now fire when:
 
@@ -98,12 +101,12 @@ If you have a `Notification` hook configured in `.claude/settings.json`, it will
 
 This eliminates the polling problem. Previously you had to monitor `claude agents` manually or poll on a timer to know when a background session needed attention. Now your hook handler receives a structured notification you can route to Slack, a desktop alert, a webhook, or any other channel you prefer.
 
-**Hook event shape** (received by your `Notification` hook):
+**Hook event shape** (received by your `Notification` hook, per [Anthropic's hooks documentation](https://code.claude.com/docs/en/hooks)):
 ```json
 {
   "hook_event_name": "Notification",
   "session_id": "...",
-  "title": "agent_needs_input",
+  "notification_type": "agent_needs_input",
   "message": "Agent session abc123 is waiting for input"
 }
 ```
@@ -114,7 +117,7 @@ This pairs directly with the auto-PR feature below: you get a notification when 
 
 ## Background Agents Auto-Commit, Push, and Open Draft PRs
 
-Previously, when a background agent finished code work in a worktree, it stopped and asked for confirmation before committing or pushing. As of 2.1.198, that handshake is gone.
+Previously, when a background agent finished code work in a worktree, it stopped and asked for confirmation before committing or pushing. As of 2.1.198, that handshake is gone: background agents launched from `claude agents` "now commit, push, and open a draft PR when they finish code work in a worktree, instead of stopping to ask," per the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198).
 
 **New behavior:** when a background agent running in a worktree completes code work, it automatically:
 1. Commits the changes
@@ -131,7 +134,7 @@ If you want to inspect work before a PR is opened, set up a `PostToolUse` hook o
 
 ## Explore Agent: Upgraded from Haiku to Main Session Model
 
-The built-in Explore agent now inherits the main session's model instead of always running on Haiku. The model is capped at Opus (so it will not run on Fable 5 or Mythos 5 even if that is your main session model), but for any session on Sonnet 5, Sonnet 4.6, or Opus 4.8, the Explore agent now runs at that same capability level.
+The built-in Explore agent now inherits the main session's model instead of always running on Haiku. Per [Anthropic's subagents documentation](https://code.claude.com/docs/en/sub-agents), Explore's model "inherits from the main conversation, capped at Opus on the Claude API, so Explore never runs on a more expensive model than the one you already chose for the session" — so on a Fable 5 or Mythos 5 session, which sit above Opus in [Anthropic's model lineup](https://www.anthropic.com/news/claude-fable-5-mythos-5), Explore would still cap at Opus. For any session on Sonnet 5, Sonnet 4.6, or Opus 4.8, the Explore agent now runs at that same capability level.
 
 **Practical impact:** Explore handles file pattern matching, symbol searches, and codebase exploration. Running it on Haiku was a cost optimization that sometimes produced lower-quality search synthesis — incomplete answers, missed edge cases in naming conventions, shallow pattern matching. Running it on Sonnet 5 in a Sonnet 5 session should produce meaningfully better research results, especially for ambiguous or open-ended lookups.
 
@@ -141,9 +144,9 @@ The built-in Explore agent now inherits the main session's model instead of alwa
 
 ## Subagents Inherit Extended Thinking Configuration
 
-Subagents and context compaction now inherit the session's extended thinking configuration.
+Subagents and context compaction now inherit the session's extended thinking configuration, per the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198).
 
-Previously, when a session with extended thinking enabled spawned a subagent, the subagent ran without extended thinking — which could produce lower-quality results on delegated tasks that genuinely needed deeper reasoning. As of 2.1.198, subagents pick up the parent session's thinking settings automatically.
+Previously, when a session with extended thinking enabled spawned a subagent, the subagent ran without extended thinking — which could produce lower-quality results on delegated tasks that genuinely needed deeper reasoning. As of 2.1.198, "subagents also inherit the main conversation's extended thinking configuration: if thinking is on in your session, it's on for the subagent, and if it's off, it stays off. There is no per-subagent thinking setting. Before v2.1.198, subagents ran with extended thinking disabled regardless of the main conversation's setting," per [Anthropic's subagents documentation](https://code.claude.com/docs/en/sub-agents).
 
 The same applies to context compaction: when the session compacts context, the compaction step now uses the same extended thinking configuration rather than the default.
 
@@ -153,20 +156,22 @@ The same applies to context compaction: when the session compacts context, the c
 
 ## `/dataviz` Skill
 
-A new `/dataviz` skill provides chart and dashboard design guidance with a runnable color-palette validator. This is primarily relevant to builders working on data visualization interfaces and needing design-consistent palette choices validated programmatically.
+A new `/dataviz` skill "provides chart and dashboard design guidance with a runnable color-palette validator," per the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198). This is primarily relevant to builders working on data visualization interfaces and needing design-consistent palette choices validated programmatically.
 
 ---
 
 ## Gateway: Claude Platform on AWS as Failover Provider
 
-The Claude Code gateway now supports Claude Platform on AWS (`anthropicAws`) as an upstream provider alongside the existing Anthropic API and Azure/Vertex integrations. Two related improvements ship alongside this:
+The Claude Code gateway now supports Claude Platform on AWS (`anthropicAws`) as an upstream provider, per [Anthropic's gateway configuration reference](https://code.claude.com/docs/en/claude-apps-gateway-config), which notes "the `anthropicAws` provider requires Claude Code v2.1.198 or later; earlier gateway releases reject it at boot." This joins the gateway's existing Amazon Bedrock, Google Cloud Agent Platform (formerly Vertex AI), and Microsoft Foundry upstreams. Two related improvements ship alongside this, per the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198):
 
-- **Model-not-found failover:** when a gateway provider returns a model-not-found error (rather than a general error), the failover chain now advances to the next configured provider instead of failing the request. This means if your primary endpoint does not have a model, the request automatically tries the next provider.
-- **AWS STS token refresh:** Sessions using Claude Platform on AWS or Mantle no longer dead-end with "Please run /login" when the STS token expires. The `awsAuthRefresh` flow runs automatically on token expiration.
+- **Model-not-found failover:** per the gateway docs, "the gateway forwards inference to the first upstream that resolves the requested model. On 5xx, 429, 401, 403, 404, or timeout it fails over to the next... Failover on 404 requires gateway v2.1.198 or later. Earlier releases returned the first 404 to the client even when a later upstream in the list served the model." This means if your primary endpoint does not have a model, the request automatically tries the next provider.
+- **AWS STS token refresh:** Sessions using Claude Platform on AWS or Mantle no longer dead-end with "Please run /login" when the STS token expires — "`awsAuthRefresh` now runs automatically," per the release notes.
 
 ---
 
 ## Bug Fixes Worth Knowing About
+
+The following fixes are drawn from the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198).
 
 **Network resilience:** Transient errors like `ECONNRESET` mid-response now retry with backoff instead of aborting the turn. Long-running agentic sessions were the most affected — a momentary network drop no longer costs you the entire turn.
 
@@ -193,6 +198,8 @@ The Claude Code gateway now supports Claude Platform on AWS (`anthropicAws`) as 
 ---
 
 ## Workflow and UX Improvements
+
+The following improvements are also drawn from the [v2.1.198 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.198).
 
 **Focus mode:** Subagents launched in a turn now appear in its activity summary. Completed background notifications fold into a single count instead of stacking.
 
