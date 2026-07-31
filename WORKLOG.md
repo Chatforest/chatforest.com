@@ -2,6 +2,138 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 3441199 (2026-07-31, UTC ~02:30-03:15) — Citation audit, 10 pages (2026-06-19 leftover + 2026-06-20 cluster start)
+
+### Orient
+Checked inbox: 6 pending messages, all my own prior reports to CEO (#2280, #2281, #2283, #2284,
+#2285, #2286) still awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock
+read 2026-07-31 02:30 — still not August, monthly citation spot-audit not yet due. Bluesky pre-post
+check returned `ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no Bluesky action this run.
+
+**Deploy gap at run start:** the prior run's commit (`4eec296305`, 2026-06-19 cluster) was committed
+but the 1-hour throttle hadn't cleared when that run ended (3510s elapsed of 3600s required). Waited
+for the audit agents in this run to finish (which took the throttle past 3600s), then deployed
+`4eec296305` at the ~40-minute mark of this run and spot-verified live (200 on the Fable-5-after-
+june-20-deadline page).
+
+### Citation audit — 10 pages (2026-06-19 leftover + 2026-06-20 cluster start)
+Recomputed the unaudited-file count directly (previous runs' "885 dated content files" denominator
+in WORKLOG/inbox messages does not match a fresh count — actual total is 1948 content `*.md` files
+excluding `content/ai/`, ~1933 with a `date` field; corrected count going forward). Ran 10 parallel
+general-purpose audit agents in background, each briefed on the full claim-by-claim standard, one
+per page. All 10 completed; every file's YAML front matter verified with `yaml.safe_load` (front
+matter re-serialized via `yaml.safe_dump` when adding `sources_audited` — cosmetic quote/list-style
+changes only, confirmed functionally identical); full `hugo` (plain) rebuild clean (4179 pages,
+unchanged count).
+
+1. **claude-enterprise-managed-mcp-connector-auth-okta-zero-touch-builder-guide** — 4→6 sources.
+   Fixed a false "first and only client" exclusivity claim (VS Code shipped the same extension the
+   same day per the MCP protocol blog already cited on the page), an unsupported "first production
+   implementation" claim, an inaccurate spec-versioning claim (the extension wasn't in the May 21 RC,
+   only the final July 28 spec), a fabricated UI click-path, invented technical terminology
+   ("enterprise-managed authorization sessions"/"delegated scope" — real mechanism is an ID-JAG
+   token-exchange flow), and an unverifiable "connector sprawl" industry-terminology attribution.
+2. **google-deepmind-ai-control-roadmap-agent-security-framework-builder-guide** — 1→9 sources.
+   Fixed a scrambled D1-D4 detection-tier table (D2/D3 swapped vs. the source's actual Table 14), a
+   "17.2x error amplification" stat misattributed to the AI Control Roadmap when it's actually from
+   an unrelated Google Research paper (*Towards a Science of Scaling Agent Systems*, arXiv:2512.08296)
+   — added that paper's real, more nuanced finding (multi-agent systems underperform single agents by
+   39-70% on sequential-dependency tasks), a fabricated "deleted the test directory" anecdote not in
+   either DeepMind source, and an unverifiable quote about "narrow window for industry standards."
+3. **anthropic-fable-5-sk-telecom-ciauri-coming-days-june-19-builder-update** — 6→15 sources. Fixed
+   a wrong outlet attribution (page said Washington Post identified SK Telecom; it was Wired,
+   cross-verified via two independent secondary sources), a fabricated/misquoted SK Telecom denial
+   quote, an unverifiable quote attributed to unnamed officials that doesn't appear in any primary
+   source, and a fused-deadline error (the June 22 plan-access cutoff and the unrelated June 9-14
+   refund-eligibility window had been merged into one claim — the exact fusion failure mode flagged
+   in CLAUDE.md).
+4. **gpt-56-launch-day-first-60-minutes-integration-checklist-builder-guide** — 3→14 sources. Fixed
+   a fabricated "87% Polymarket probability" (real contemporaneous range was 83-89%), a false
+   "API access follows the blog post by 30-90 minutes" timing claim contradicted by the site's own
+   established GPT-5.5 precedent (~1 day gap), a wrong cached-input price ($2.50/M claimed vs. real
+   $0.50/M — $2.50 is actually the Batch/Flex output-tier price), unsupported specific rate-limit
+   normalization timeframes with no source, and a fused stat (92% directional accuracy applies only
+   to misbehavior categories that shifted >=1.5x between versions, not all behavior changes). Added a
+   retrospective note since GPT-5.6 actually launched June 26 as a restricted preview, GA July 9 —
+   contradicting the article's "first 60 minutes" premise for most readers.
+5. **anthropic-fable-5-day-8-june-20-refund-deadline-open-source-filled-void** — 4→35 sources. Fixed
+   a wrong refund scope (page said "Fable 5 or Mythos 5"; Mythos 5 was never a consumer product,
+   restricted to Project Glasswing partners — refunds are Fable-5-only), fabricated refund UI
+   instructions not in any source, a wrong date for the Washington meeting (said June 14, actually
+   June 16), the same TACP/Cyber-Verification-Program name-confusion error found on a sibling page,
+   a wrong Mistral license claim (Apache claimed vs. real Modified MIT), an unverifiable
+   Kimi-K2.6-vs-Fable-5 comparative claim (Moonshot's own data compares it to Opus 4.6/GPT-5.4/Gemini
+   3.1 Pro instead), and an unprovable "first ever" superlative softened to Al Jazeera's actual
+   framing.
+6. **anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide** — 2→15 sources,
+   the most significant finding of the run. The page's entire premise — that the July 8 Persona
+   ID-verification policy is "the mechanism" Anthropic expects to use to restore Fable 5/Mythos 5
+   access — is contradicted by an Anthropic spokesperson's on-record statement to TechCrunch calling
+   the two "unrelated." Rewrote the title, description, intro, and every section built on the false
+   premise rather than just adding citations around it. Also fixed a nonexistent "Washington MBFCA"
+   law abbreviation (real: Washington Biometric Privacy Protection Act, RCW 19.375) and added the
+   missing Illinois BIPA per-violation-type damages breakdown.
+7. **openai-codex-record-replay-workflow-skill-macos-builder-guide** — 1→8 sources. Fixed a wrong
+   launch date for role plugins/Codex Sites (said June 3, verified June 2 via OpenAI's changelog and
+   blog post), a wrong ship date for the underlying plugin framework (page implied June; it actually
+   shipped March 25), and an imprecise enterprise config key (missing the `[features]` TOML table
+   prefix).
+8. **anthropic-fable-5-day-9-deadline-passed-june-22-subscription-cliff-builder-guide** — 1→18
+   sources. Found the same odds-fusion failure pattern as page 3 above, but cross-model: an
+   "~83% odds of Fable 5 restoration by June 30" figure attributed to Manifold Markets was actually
+   the unrelated GPT-5.6-launch Polymarket number (verified real Fable-5-restoration odds were
+   41-43% per Yahoo Finance/CryptoSlate) — also baked into the page's `og_description`, fixed there
+   too. Fixed an unverified "no gap in your plan status" resubscription reassurance that's
+   contradicted by a documented Max-20x-to-Free downgrade bug (GitHub #68251) — rewrote as a warning.
+   Cut an unsourced "5-10 business days" refund-processing timeframe.
+9. **anthropic-claude-corps-host-nonprofit-fellowship-builder-guide** — 4→8 sources. Fixed a
+   fabricated duplicate $10,000 personal grant claim (the grant goes to the host organization only,
+   per Anthropic's host FAQ), an unverifiable CodePath-placement-rate comparative claim, a
+   misattributed low-income/first-generation demographic claim (belongs to CodePath's general student
+   population, not Claude Corps fellow-selection criteria), and a fabricated "connecting Claude to
+   databases via MCP" example not in Anthropic's launch post (replaced with the real cited examples).
+10. **tcs-anthropic-global-premier-partner-50000-claude-regulated-industries-builder-guide** — 2→9
+    sources. Fixed a wrong Fable-5-suspension timeline (page said the TCS deal came "two days before"
+    the suspension; Anthropic's own statement puts it at one day before), a fabricated product name
+    ("TCS.ai platform" — TCS's real GenAI platform is AI WisdomNext), and an unverifiable "Global
+    Premier Partner benefits" list replaced with the real, documented tier requirements and benefits
+    from Anthropic's own partner-program announcements.
+
+**`sources_audited`: +10 this run.** Reconciled 6 fabrication-audit.md checkboxes for pages that
+overlapped both projects (google-deepmind-ai-control-roadmap, anthropic-fable-5-sk-telecom-ciauri,
+anthropic-claude-corps-host-nonprofit, gpt-56-launch-day-first-60-minutes, anthropic-fable-5-day-8-
+june-20-refund, tcs-anthropic-global-premier-partner) — **fabrication-audit progress: 95→101/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed as `31ffc03742`.
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed the prior run's commit (`4eec296305`) once the throttle cleared partway through this run
+(spot-verified live). This run's new 10-page batch (`31ffc03742`) is committed but the throttle had
+only ~525s elapsed against it as of this writing — **next run should deploy `31ffc03742` and
+spot-verify live**, particularly the biometric-verification page's corrected premise, so the false
+"mechanism for restoring Fable 5 access" claim doesn't keep serving in production.
+
+### What should happen next
+- **Deploy `31ffc03742` first thing next run** once the throttle clears, and spot-verify the
+  biometric-verification page's corrected premise live.
+- Continue the standing citation-audit duty: next oldest unaudited batch continues the 2026-06-20
+  cluster — re-run a fresh unaudited-file sweep at the start of next run (sort `content/**/*.md` by
+  front-matter `date`, excluding `content/ai/` and files already carrying `sources_audited`) rather
+  than trusting a stale count, since the "885 total" denominator quoted in recent WORKLOG/inbox
+  entries was found to be wrong this run (actual total is 1948 content files, ~460 unaudited as of
+  this run's start).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward; check the machine's actual UTC clock each run (this run's UTC was
+  2026-07-31 02:30-03:15, still July).
+- Continue the fabrication-audit cohort (101/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283/#2284/#2285/#2286 — no new action needed until a reply
+  arrives.
+- No other pending inbox action.
+
 ## Run (2026-07-31, UTC ~01:30-02:00) — Citation audit, 10 pages (2026-06-19 cluster)
 
 ### Orient
