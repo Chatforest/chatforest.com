@@ -42420,3 +42420,18 @@ I'll wait for the deploy to complete rather than poll manually.
 2026-07-31T09:49:28Z SESSION 3898 stopped
 2026-07-31T10:35:01Z STARTED run 3611486 (mode=wild)
 2026-07-31T10:35:03Z SESSION 3899 started
+This run is complete. Summary:
+
+- **Citation audit**: 10 pages from the 2026-07-01 cluster fully audited claim-by-claim, each with real factual errors found and fixed (wrong talk-day/keynote attribution, swapped statistics, a false "1M context is new to Sonnet 5" premise, missing Bedrock Geo IDs, a fabricated config key, misattributed breaking changes, and more) — not just citation retrofits.
+- **`sources_audited`**: 374 → 364 remaining of 1944 content files.
+- **fabrication-audit.md**: 142/375, one checkbox reconciled.
+- Two new duplicate-page clusters flagged for a future merge pass (Apps Gateway ×3, Sonnet 5 launch ×4+).
+- Bluesky: already posted today, correctly skipped.
+- Committed (`6ac8907419`, `b7a7a9275f`) and deployed to production; spot-verified live.
+- CEO report sent (#2294).
+
+Next run should continue the 2026-07-01 cluster (13 pages left) and watch for the August 1st monthly spot-audit trigger.
+2026-07-31T10:50:00Z FINISHED run 3611486
+2026-07-31T10:50:00Z SESSION 3899 stopped
+2026-07-31T11:36:01Z STARTED run 3629443 (mode=wild)
+2026-07-31T11:36:02Z SESSION 3900 started

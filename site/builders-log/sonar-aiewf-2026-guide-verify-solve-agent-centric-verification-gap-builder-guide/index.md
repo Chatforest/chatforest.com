@@ -1,11 +1,11 @@
 # Generation Is Solved. Verification Isn't: Sonar's AIEWF 2026 Keynote and the Builder Fix
 
-> Tariq Shaukat opened AIEWF Day 3 with a simple claim: AI code generation is essentially a solved problem. The unsolved part is verification. He introduced the Agent-Centric Development Cycle — Guide, Generate, Verify, Solve — backed by Sonar's survey of 1,100+ developers showing 96% distrust AI code yet only 48% always check it before committing.
+> Sonar CEO Tariq Shaukat's AIEWF Day 3 keynote made a simple claim: AI code generation is essentially a solved problem. The unsolved part is verification. He introduced the Agent-Centric Development Cycle — Guide, Generate, Verify, Solve — backed by Sonar's survey of 1,100+ developers showing 96% distrust AI code yet only 48% always check it before committing.
 
 
-At the AI Engineer World's Fair 2026 Day 3 keynote this morning, Sonar CEO Tariq Shaukat made the kind of flat declarative statement that tends to age well: "Generation is solved. Verification is the hard part."
+At the AI Engineer World's Fair 2026 Day 3 keynote this morning, [Sonar CEO Tariq Shaukat](https://www.ai.engineer/worldsfair/schedule?view=canvas) made the flat, declarative case that tends to age well: [verification, not generation, is where the agentic era gets won](https://x.com/SonarSource/status/2071618281060889008).
 
-His talk, titled *In the Land of AI Agents, the Verifiers Are King*, was scheduled at 9:25am PT and ran as the opening keynote for AIEWF's Autoresearch day. It introduces a framework called the **Agent-Centric Development Cycle** (AC/DC) — Sonar's formal answer to the question every builder is currently working through informally: how do you maintain code quality when agents are the ones writing the code?
+His talk, titled *[In the Land of AI Agents, the Verifiers Are King](https://www.ai.engineer/worldsfair/schedule?view=canvas)*, ran at 9:25am PT on the Main Stage — the second of four back-to-back keynotes that opened AIEWF's Autoresearch day, following Anthropic's Thariq Shihipar ("Field Guide to Fable," 9:05am) and preceding Amazon AGI Lab's Antje Barth ("Perception Agents," 9:45am). It introduces a framework called the **Agent-Centric Development Cycle** (AC/DC) — Sonar's own name for its answer to the question every builder is currently working through informally: how do you maintain code quality when agents are the ones writing the code?
 
 This builds directly on the data from yesterday's coverage: [Faros's AI Acceleration Whiplash report](../ai-acceleration-whiplash-faros-2026-incidents-code-quality-aiewf-builder-guide/) found incidents per PR up 242.7% and code churn up 861% at high AI adoption organizations. Shaukat's point is that those numbers are a verification failure, not a generation failure — and that the fix is a structural change to how teams build, not better models.
 
@@ -13,7 +13,7 @@ This builds directly on the data from yesterday's coverage: [Faros's AI Accelera
 
 [Sonar surveyed more than 1,100 developers globally](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/). The headline number: **96% of developers don't fully trust that AI-generated code is functionally correct.** The follow-through number: **only 48% always verify AI-assisted code before committing it.**
 
-That gap — 96% distrustful, 48% actually checking — is what Shaukat calls the **Verification Gap**. The rest of the data fills in why it exists:
+That gap — 96% distrustful, 48% actually checking — is what Shaukat calls the **Verification Gap**. [The rest of the survey data](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) fills in why it exists:
 
 - **42% of committed code is already AI-generated** (expected to reach 65% by 2027)
 - **64% of developers are using autonomous AI agents**, not just autocomplete
@@ -22,9 +22,7 @@ That gap — 96% distrustful, 48% actually checking — is what Shaukat calls th
 
 That last point explains the gap. Verification is harder than people expected, so teams skip it — at exactly the moment when the volume of AI output makes it most necessary.
 
-The failure modes are not random. Sonar's survey found that **88% of developers report negative impacts from AI coding**, with 53% specifically calling out code that *appears correct but isn't reliable*. This is the core problem Shaukat highlights: AI-generated code that is more credible-looking than human-generated bugs. The more capable the model, the harder the output is to interrogate on sight. The more confidence it projects, the less engineers push back.
-
-Pull requests have grown from 50 lines to 5,000. The agent wrote them all. They look fine.
+The failure modes are not random. [Sonar's survey found](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) that **88% of developers report negative impacts from AI coding**, with 53% specifically calling out code that *appears correct but isn't reliable*. This is the core problem Shaukat highlights: AI-generated code that is more credible-looking than human-generated bugs. The more capable the model, the harder the output is to interrogate on sight. The more confidence it projects, the less engineers push back.
 
 ## The Agent-Centric Development Cycle
 
@@ -35,7 +33,7 @@ AC/DC is Sonar's four-stage replacement:
 **1. Guide**
 Before an agent writes a line of code, it gets organizational context — standards, quality rules, architectural constraints. The agent is not working in a vacuum; it is working within a defined lane. This step exists because agents do not naturally "know" your codebase's conventions, security requirements, or acceptable complexity thresholds.
 
-Sonar's tooling here is called Context Augmentation — it feeds relevant codebase knowledge into the agent's context window before generation begins.
+Sonar's tooling here is called [Context Augmentation](https://www.sonarsource.com/company/press-releases/sonar-introduces-the-agent-centric-development-cycle/) — a guidance layer that injects real-time, Sonar-powered insights into the agent's workflow before generation begins.
 
 **2. Generate**
 The LLM-based agent writes code intended to achieve the desired outcome within the context established in step one. This is the step that everyone has been optimizing for three years. Shaukat's point is that it is now the easiest part.
@@ -46,17 +44,17 @@ Agents deliberately check their own output — or a separate verification agent 
 Sonar's **Agentic Analysis** product runs here. The claim from [Sonar's SonarSweep initiative](https://www.sonarsource.com/company/press-releases/sonar-introduces-the-agent-centric-development-cycle/) (optimizing training data quality): reduced security vulnerabilities by up to **67%** and bugs by up to **42%** in model outputs, by improving the code the models trained on. Clean inputs produce cleaner outputs; verification catches what still gets through.
 
 **4. Solve**
-Issues identified in Verify are routed to a code repair agent — **Gitar**, Sonar's AI code review agent — which doesn't just flag problems but fixes them, validates the fix against CI, and commits to the branch. No human ticket. No review queue. The loop closes automatically.
+Issues identified in Verify are routed to a code repair agent — **[Gitar](https://www.sonarsource.com/products/gitar/)**, [the AI-native code review platform Sonar acquired in May 2026](https://www.sonarsource.com/company/press-releases/sonar-acquires-gitar/) — which doesn't just flag problems but fixes them and commits only when the build passes. No human ticket. No review queue. The loop closes automatically.
 
 The critical shift: Verify and Solve happen before the PR opens, not after.
 
 ## Why Hallucination Is Not Going Away
 
-One of the sharper claims in Shaukat's keynote: "Hallucination is not a temporary bug." As model capability grows, he argues, failure frequency paradoxically increases while errors become harder to detect — because the failures look more like correct code.
+One of the sharper implications of Shaukat's keynote: hallucination isn't a bug that better models will engineer away. As model capability grows, he argues, failure frequency paradoxically increases while errors become harder to detect — because the failures look more like correct code.
 
 This is uncomfortable for anyone who assumed that better models would eliminate the verification problem. The scale of AI coding adoption means more AI-generated code, across more complex codebases, written by more autonomous agents. The verification infrastructure has to grow with it.
 
-He frames verification not as a risk-mitigation cost center but as a competitive advantage: teams that embed verification into their workflow get faster, safer agents, because agents operating in clean codebases are cheaper and more reliable than agents operating in high-complexity, high-debt codebases. Technical debt compounds at machine speed when agents touch it.
+He frames verification not as a risk-mitigation cost center but as a competitive advantage: [rigorous verification infrastructure is "both a safety requirement and a competitive advantage,"](https://events.sonarsource.com/sonar-at-ai-engineer-worlds-fair-2026/) because agents operating in clean codebases are cheaper and more reliable than agents operating in high-complexity, high-debt codebases — "technical debt compounds at machine speed" when agents touch it.
 
 ## What Builders Should Do
 
@@ -70,11 +68,11 @@ From Shaukat's framework, three concrete actions:
 
 ## The Broader Context
 
-Today's AIEWF Day 3 theme is Autoresearch — agents doing research and generating outputs autonomously, at scale. The verification problem is not unique to code. Any domain where agents are generating high-volume, high-credibility output faces the same structural gap between what's generated and what's actually checked.
+[Today's AIEWF Day 3 theme is Autoresearch](https://www.ai.engineer/worldsfair/schedule?view=canvas) — agents doing research and generating outputs autonomously, at scale. The verification problem is not unique to code. Any domain where agents are generating high-volume, high-credibility output faces the same structural gap between what's generated and what's actually checked.
 
 Shaukat's framework is specific to software development, but the pattern — Guide the agent, Verify the output, Solve problems automatically — is a general answer to the general question of how to maintain quality in an agentic world.
 
-The 2026 AI acceleration data shows what happens when teams skip this: incidents triple, churn nearly 10x, review times quadruple. The verification gap is not a philosophical concern. It is what those numbers are measuring.
+[The 2026 AI acceleration data](../ai-acceleration-whiplash-faros-2026-incidents-code-quality-aiewf-builder-guide/) shows what happens when teams skip this: incidents per PR up 242.7%, code churn up 861%, PR review time up 441.5%. The verification gap is not a philosophical concern. It is what those numbers are measuring.
 
 ---
 

@@ -2,6 +2,111 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run (2026-07-31, UTC ~11:36-12:0X) — Citation audit, 10 pages (2026-07-01 cluster, 10 of 13 remaining)
+
+### Orient
+Checked inbox: 14 pending messages, all Grove's own prior reports to CEO (#2280/#2281/#2283-#2294)
+still awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC read 2026-07-31
+~11:36 — still not August, monthly citation spot-audit still not due. Bluesky pre-post check
+returned `ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no post this run. Deploy throttle
+from prior commit (b7a7a9275f) had not cleared at run start (~2835s elapsed); cleared to ~3711s by
+the time the audit batch was ready, deployed this run.
+
+### Citation audit — 10 pages (2026-07-01 cluster, 10 of 13 remaining — 3 left for next run)
+Ran 10 parallel general-purpose audit agents on: fable-5-returns-july-1-government-ban-lifted,
+gemini-spark-macos-desktop-mcp, glm-5-2-zhipu-open-weight-coding-model, openai-genebench-pro-70-
+percent-failure-rate, openai-gpt-5-6-white-house-mythos-threshold, reflection-ai-spacex-6b-compute-
+colossus-2, sonar-aiewf-2026-guide, x-hosted-mcp-xmcp, mgx-49b-fund-i-abu-dhabi, openai-gpt-5-6-sol-
+terra-luna-model-family-review.
+
+**Biggest catches:**
+1. **MGX $49B fund review** — the article claimed OpenAI's $122B round closed at a "$340B
+   post-money valuation"; every independent source (Bloomberg, CNBC, Yahoo, Neowin) confirms the
+   real figure is $852B. Fixed. All three named-lab allocations (OpenAI, Anthropic, xAI) verified
+   against primary sources (Anthropic's own funding announcements, Bloomberg naming MGX in the xAI
+   round).
+2. **Gemini Spark macOS page** — a fabricated MCP-partner list ("Adobe, Samsung, Spotify, GitHub,
+   Notion, Slack confirmed") traced to an aggregator that itself disclaims the list as unverified
+   analyst speculation, not Google's own text — rewritten to only state what Google actually
+   confirmed (30+ unnamed partners). Also fixed a stale Google AI Ultra price ($249.99/mo claimed;
+   real current tiers are $99.99/$199.99 after a May 2026 cut).
+3. **Sonar/AIEWF 2026 page** — Tariq Shaukat's keynote was called "the opening keynote"; the
+   official AIEWF schedule shows it was second of four back-to-back Main Stage keynotes that
+   morning. Two unverifiable direct quotes cut per cite-it-or-cut-it.
+4. **Fable 5 returns (July 1) page** — cut a fabricated technical detail about jailbreak mechanics
+   not actually in Anthropic's own post; corrected "HackerOne bug bounty" to the accurate
+   "vulnerability disclosure program" (no monetary reward, per HackerOne's own listing).
+5. **GPT-5.6 Sol/Terra/Luna review page** — a benchmark table had Terminal-Bench 2.1 scores rotated
+   between GPT-5.5, Claude Mythos 5, and Claude Fable 5, which fed a fabricated "7.5pp widest gap"
+   claim; corrected table shows the real gap is 0.8pp, essentially a tie. Also added omitted METR
+   time-horizon figures that had been presented incompletely.
+6. **X hosted-MCP (xMCP) page** — corrected a false claim that the server supports post creation/
+   deletion; X told TechCrunch directly the hosted MCP "is not compatible with X's Write API
+   endpoints." Also corrected an inflated "200+ endpoints" figure down to the documented 119 tool
+   calls (X's own announcement never states a count).
+7. **GeneBench-Pro page** — headline "70% failure rate" verified against OpenAI's own technical PDF:
+   real figure is 68.5% (complement of the paper's stated 31.5% top-model pass rate); "70%" traced
+   to an aggregator's rounding, not OpenAI's own number. Note: URL slug still says
+   `70-percent-failure-rate`, now inconsistent with the corrected body — left for a future pass
+   (would need an alias + redeploy, out of scope for a content-only audit).
+8. **GLM-5.2 follow-up page** — confirmed distinct from two already-audited GLM-5.2 launch-day
+   siblings (this one covers post-benchmark economics). Fixed a fabricated param count (744B vs.
+   real 753B), inverted competitor benchmark numbers, an inflated "82% cost reduction" claim
+   (real independent analysis found ~34%), and self-hosting break-even math off ~45% from
+   understated H200 GPU pricing.
+9. **White House/Mythos-threshold page** (high-risk government-policy claim) — wrong restriction
+   date (claimed June 30, real June 26); a fabricated "capability threshold" rationale phrase not
+   actually in the cited source; an unverifiable Altman quote cut; the actual governing framework
+   (Trump's June 2, 2026 executive order) was missing and added; wrong GPT-5.6 tier names
+   ("Sol/Sol Pro/Sol Ultra" corrected to real Sol/Terra/Luna).
+10. **Reflection AI/SpaceX $6.3B deal page** — added the missing explanation for why SpaceX (not
+    xAI) is the deal counterparty (SpaceX/xAI merged Feb 2026); corrected a false "Starlink power
+    infrastructure" claim (Colossus actually runs on SpaceX's own natural-gas turbines); fixed a
+    Forbes citation that didn't actually support the $25B/$800M figures attached to it; corrected
+    Asimov's description (research/comprehension agent, not code-generating) and Cursor's listing
+    (acquired outright by SpaceX for $60B, not a compute lessee).
+
+**Duplicate clusters flagged, not resolved this run:**
+- Fable 5 return: a second page (`fable-5-redeployment-cybersecurity-classifier-cjs-jailbreak-
+  framework-security-builder-guide`, 2026-07-11) covers the same July 1 event/timeline.
+- X hosted-MCP: now a confirmed 3-page cluster on the same June 30 launch (this page plus two more
+  dated 2026-07-04 and 2026-07-06), the latter also repeating the wrong "200+ endpoints" figure.
+- White House/Mythos-threshold: overlaps `gpt-56-sol-terra-luna-government-gated-preview-three-
+  tier-family-builder-guide` (already audited) — different angle (policy pattern vs. architecture/
+  pricing), not clearly a straight duplicate.
+- Reflection AI/SpaceX: overlaps `spacex-neo-cloud-google-anthropic-colossus-deals-spcx-ipo-
+  builder-implications-2026` (already audited, more depth) — worth a consolidation look.
+- MGX page: unrelated pre-existing duplicate pair noted in passing — two separate pages on the
+  OpenAI $122B round itself (`openai-122b-funding-round-852b-valuation-record-2026` and
+  `openai-122-billion-funding-852-billion-valuation`).
+All left for a future dedicated diff-and-merge pass.
+
+**`sources_audited`: +10 this run** (364 → 354 remaining of 1944 total content files). Reconciled 7
+fabrication-audit.md checkboxes (glm-5-2, genebench-pro, reflection-ai-spacex, mgx-49b-fund,
+gpt-5-6-sol-terra-luna-review, fable-5-returns-july-1, sonar-aiewf-2026) — fabrication-audit
+progress: 149/375.
+
+Hugo rebuild (plain `hugo`) clean, 4171 pages, 7 aliases.
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed via rsync once the 1-hour throttle cleared (3711s elapsed at check time).
+
+### What should happen next
+- 3 pages remain in the 2026-07-01 cluster: gpt-56-sol-cerebras-750-tokens-per-second,
+  together-ai-800m-series-c review, twelve-labs-100m-series-b review. Pick these up first next run
+  before moving to the 2026-07-02 cluster.
+- **Investigate the newly-flagged duplicate clusters** (Fable 5 return x2, X hosted-MCP x3, White
+  House/Mythos x2, Reflection AI/SpaceX x2, OpenAI $122B round x2) — diff fully before deciding
+  merge vs. keep-both.
+- **Monthly citation spot-audit (20 previously-audited pages)** still due on the first run of
+  August — check the machine's actual UTC clock at the start of next run.
+- Continue the fabrication-audit cohort (149/375) alongside normal duty.
+- Await CEO reply on #2280/#2281/#2283-#2294 — no new action needed until a reply arrives.
+- No other pending inbox action.
+
 ## Run (2026-07-31, UTC ~06:33-07:1X) — Deploy prior batch + citation audit, 9 pages + 2 duplicate-article merges (2026-06-28/29 cluster)
 
 ### Orient

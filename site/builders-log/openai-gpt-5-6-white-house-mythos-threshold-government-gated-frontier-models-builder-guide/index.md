@@ -1,40 +1,40 @@
 # GPT-5.6 Joins the Government Review Queue: What the 'Mythos Threshold' Means for Builders
 
-> The White House placed GPT-5.6 behind the same capability-review gate that blocked Fable 5 for nearly three weeks. A pattern is forming — and builders who ship on frontier models need a plan.
+> The Trump administration gated GPT-5.6 behind a government-approved partner list two weeks after a separate export-control order blocked Fable 5 for 19 days. A pattern is forming — and builders who ship on frontier models need a plan.
 
 
-On June 30, 2026 — the same day Anthropic's Fable 5 returned from its own government-ordered review — [the White House applied the same treatment to OpenAI's GPT-5.6](https://www.business-standard.com/world-news/white-house-asks-openai-to-limit-early-release-of-gpt-5-6-to-small-group-126062600119_1.html). The pattern is now clear enough to plan around.
+On June 26, 2026 — while Anthropic's Fable 5 and Mythos 5 were still offline under a separate Commerce Department export-control order — [OpenAI announced it was limiting GPT-5.6's rollout to roughly 20 government-vetted partners](https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/), a decision it said was made [at the Trump administration's request](https://openai.com/index/previewing-gpt-5-6-sol/). Two frontier-model providers gated by the same administration inside the same month — the pattern is worth planning around.
 
 ---
 
 ## What Happened
 
-The Trump administration asked OpenAI to limit GPT-5.6 to a small group of government-approved partners before any wider launch. The reason: [capability evaluators determined GPT-5.6 had crossed "the same capability threshold as Mythos"](https://techxplore.com/news/2026-06-openai-restricts-gpt-sol-users.html) — the shorthand for the level at which models get routed through federal security review.
+The Trump administration asked OpenAI to limit GPT-5.6 Sol to a small group of government-approved partners before any wider launch, under the voluntary "covered frontier model" review track [created by the president's June 2, 2026 executive order, "Promoting Advanced Artificial Intelligence Innovation and Security,"](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/) which lets the government evaluate a model's cyber capabilities for up to 30 days before public release. Reporting ties the request to the same cybersecurity concern that had already put Anthropic's Mythos on the government's radar: [officials had grown wary since Anthropic warned that Mythos was "adept at finding software flaws in a way that could be weaponized by malicious hackers"](https://techxplore.com/news/2026-06-openai-restricts-gpt-sol-users.html). Notably, [OpenAI itself said Sol "does not cross the company's own risk threshold"](https://techxplore.com/news/2026-06-openai-restricts-gpt-sol-users.html) — the restriction was a government request, not OpenAI's own risk assessment. No government statement or OpenAI post uses the phrase "Mythos threshold" as a formal designation; that is an informal shorthand this article is using for the pattern, not an official term (see Explicit Limits below).
 
-Sam Altman acknowledged the situation publicly, [telling reporters access would likely broaden within "a couple of weeks"](https://www.business-standard.com/world-news/white-house-asks-openai-to-limit-early-release-of-gpt-5-6-to-small-group-126062600119_1.html) pending the review process completing.
+In its own announcement, OpenAI said it expected to make Sol, Terra, and Luna [generally available "in the coming weeks,"](https://openai.com/index/previewing-gpt-5-6-sol/) while objecting to the process itself: ["We don't believe this kind of government access process should become the long-term default,"](https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/) the company wrote, adding that it "keeps the best tools from users, developers, enterprises, cyber defenders, and global partners who need them."
 
-As of July 1, GPT-5.6 is available to select government-approved partners only. The general API is not yet open.
+As of July 1, GPT-5.6 was available to roughly 20 government-approved partners only, through the API and Codex — not through ChatGPT. **Update (2026-07-31):** [Sol, Terra, and Luna became generally available on July 9, 2026](https://openai.com/index/gpt-5-6/), after [additional testing by the Commerce Department's Center for AI Standards and Innovation (CAISI)](https://www.nist.gov/caisi) — a roughly two-week gate. The rest of this article is left as originally reported on July 1, with dated updates noted where the picture has since become clearer.
 
 ---
 
 ## The Mythos Threshold: A Pattern, Not an Anomaly
 
-The Fable 5 / Mythos 5 suspension (June 12–July 1) looked like a one-off regulatory surprise. GPT-5.6 getting the same treatment three weeks later makes it a **system**.
+The Fable 5 / Mythos 5 suspension (June 12–July 1) looked like a one-off regulatory surprise. GPT-5.6 getting gated two weeks later makes it a **pattern**, even though the two cases used different legal mechanisms (see below).
 
 Here's what the pattern looks like:
 
 | Model | Restricted | Returned | Gap |
 |-------|-----------|---------|-----|
-| Fable 5 / Mythos 5 | June 12 | July 1 | ~19 days |
-| GPT-5.6 | June 30 | TBD | counting… |
+| Fable 5 / Mythos 5 | [June 12](https://www.anthropic.com/news/fable-mythos-access) | [July 1](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html) | [~19 days](https://www.marketscale.com/industries/software-and-technology/fable-5-and-mythos-5-are-back-what-the-19-day-shutdown-taught-every-enterprise-about-ai-as-infrastructure) |
+| GPT-5.6 Sol/Terra/Luna | [June 26](https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/) | [July 9](https://openai.com/index/gpt-5-6/) | [~12 days](https://www.techtimes.com/articles/319979/20260709/gpt-56-goes-public-after-12-day-white-house-gate-tests-voluntary-ai-framework.htm) |
 
-The governing mechanism isn't a named framework yet. What we know:
-- **Trigger:** A model is assessed as exceeding a capability threshold tied to Mythos-level performance
-- **Mechanism:** White House requests staggered rollout through government-approved partners
-- **Duration:** Weeks, not months — the Fable 5 case resolved in 19 days after Anthropic agreed to proactive security detection and government disclosure obligations
-- **Resolution path:** Public commitments from the lab + federal partner testing → broader release
+The governing mechanism does have a name: the "covered frontier model" review process created by [Trump's June 2, 2026 executive order](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/). It is explicitly voluntary — the order states it does not create "a mandatory governmental licensing, preclearance, or permitting requirement" for releasing a model — but both cases below show what happens once the government invokes it. What we know:
+- **Trigger:** A model is run through a classified cyber-capability benchmarking process under the executive order to determine whether it meets the "covered frontier model" threshold
+- **Mechanism differs by case:** Fable 5/Mythos 5 were suspended globally under a [Commerce Department export-control directive](https://www.anthropic.com/news/fable-mythos-access) blocking foreign-national access, after [a trusted partner reported a jailbreak of Fable 5's safety guardrails](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html); GPT-5.6 was instead gated through a staged, US-partner-only preview under the same executive order's frontier-review track — [it was never suspended for existing users, since it hadn't launched broadly yet](https://openai.com/index/previewing-gpt-5-6-sol/)
+- **Duration:** Weeks, not months — Fable 5 resolved in [19 days after Anthropic patched the reported vulnerability and agreed to closer government collaboration on testing and threat-sharing](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html); GPT-5.6 resolved in [about 12 days after additional CAISI testing](https://www.techtimes.com/articles/319979/20260709/gpt-56-goes-public-after-12-day-white-house-gate-tests-voluntary-ai-framework.htm)
+- **Resolution path:** Lab-side security commitments + federal partner testing → broader release, in both cases
 
-Commerce Secretary Howard Lutnick has been the named point of contact for at least the Fable 5 case. The same process is likely running for GPT-5.6.
+Commerce Secretary Howard Lutnick was the named point of contact for the Fable 5 case — he [signed the original export-control letter and personally announced its lifting](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html). For GPT-5.6, the [White House's Office of the National Cyber Director and Office of Science and Technology Policy made the request](https://internationalfinance.com/technology/white-houses-tech-lock-and-key-strategy-shifts-to-openai/), with Lutnick also personally pressing Altman on cross-agency sign-off.
 
 ---
 
@@ -44,11 +44,11 @@ GPT-5.6 is a serious model. The existing ChatForest coverage on its capabilities
 
 **Pricing you're planning on doesn't change.** The restriction is on access, not pricing — once you can call the API, the rates already announced apply.
 
-**"A couple of weeks" has a track record.** Fable 5 took 19 days. If GPT-5.6 follows a similar arc, broad API access could arrive around mid-to-late July. That said, OpenAI is operating in a different regulatory atmosphere than Anthropic did — GPT-5.6 triggered this without the export-control suspension mechanism that hit Fable 5. Timeline confidence is low.
+**"A couple of weeks" had a track record — and it held.** Fable 5 took 19 days to return. GPT-5.6 followed a similar arc: [Sol, Terra, and Luna reached general availability on July 9, 2026](https://openai.com/index/gpt-5-6/), about two weeks after the June 26 gate. OpenAI was operating under a different mechanism than Anthropic — GPT-5.6 went through the executive order's staged-preview track rather than the export-control suspension that hit Fable 5 — but the rough timeline held anyway. (Update: as of this July 31 audit, this is confirmed, not a forecast.)
 
-**Sol Pro sub-tier is separately affected.** GPT-5.6 comes in three tiers (Sol, Sol Pro, Sol Ultra — previously covered). If the review is model-wide, all tiers are gated. If partner access begins with the lower tiers first, Sol may appear on the API before Sol Pro. Watch for selective unlocks.
+**GPT-5.6 comes in three tiers — Sol, Terra, and Luna, not "Sol Pro/Sol Ultra."** [Sol is the flagship model, Terra a balanced mid-tier at roughly 2x cheaper than GPT-5.5, and Luna the fast, low-cost tier](https://openai.com/index/previewing-gpt-5-6-sol/). All three were gated together during the June 26–July 9 preview; there was no selective unlock by tier.
 
-**OpenAI's Workspace Agents credit billing begins July 6 regardless.** The billing change for Workspace Agents is a separate product decision from model availability. If you're planning Workspace Agents deployments, the cost structure changes even if you can't yet access GPT-5.6 directly.
+**OpenAI's Workspace Agents credit billing began July 6 regardless.** [Per OpenAI's own release notes, the free preview for Workspace Agents in Business, Enterprise, Edu, and Teachers workspaces ended and credit-based billing began July 6, 2026](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes) — a separate product decision from GPT-5.6's model-access gate, and one that took effect on schedule.
 
 ---
 
@@ -72,18 +72,20 @@ Two major frontier models have now been government-gated in the same month. The 
 
 ## What to Watch
 
-- **Mid-July:** Most likely window for broad GPT-5.6 API access, if the Fable 5 timeline is a guide
-- **July 6:** OpenAI Workspace Agents credit billing change — affects cost modeling regardless of GPT-5.6 availability
+*(As originally published July 1, with outcomes noted from this July 31 audit.)*
+
+- **Mid-July:** Most likely window for broad GPT-5.6 API access, if the Fable 5 timeline was a guide — **confirmed:** [GPT-5.6 reached general availability July 9, 2026](https://openai.com/index/gpt-5-6/)
+- **July 6:** OpenAI Workspace Agents credit billing change — affects cost modeling regardless of GPT-5.6 availability — **confirmed on schedule**, [per OpenAI's release notes](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes)
 - **Government partner signals:** Any announcement from OpenAI of expanded access is a leading indicator
-- **Competitive response:** If GPT-5.6 stays gated past mid-July, expect builders to accelerate Fable 5 adoption following its July 1 return
+- **Competitive response:** If GPT-5.6 stays gated past mid-July, expect builders to accelerate Fable 5 adoption following its July 1 return — moot given the July 9 GA date above
 
 ---
 
 ## Explicit Limits of This Article
 
-- The "Mythos threshold" is an informal capability designation, not a formally published government standard. The specific criteria for triggering a review are not public.
-- This article covers API access restrictions only — GPT-5.6 may be accessible through ChatGPT consumer products via a separate track.
-- Timeline estimates are extrapolated from the Fable 5 precedent, which may not generalize exactly.
+- The "Mythos threshold" is this article's own informal shorthand, not a term used by the government or by OpenAI. The actual mechanism is the "covered frontier model" track of [Trump's June 2, 2026 executive order](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/); the specific classified benchmark that trips it is not public.
+- [GPT-5.6 was not available through ChatGPT at all during the June 26–July 9 preview](https://openai.com/index/previewing-gpt-5-6-sol/) — access was API- and Codex-only, restricted to the ~20 approved partners. There was no separate consumer-product track.
+- Timeline estimates in the original version of this article were extrapolated from the Fable 5 precedent before GPT-5.6's own resolution was known; see the dated updates above for what actually happened.
 
 ---
 

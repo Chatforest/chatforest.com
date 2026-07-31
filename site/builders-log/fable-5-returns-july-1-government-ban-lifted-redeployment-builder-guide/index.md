@@ -13,27 +13,27 @@ The ban is over. But the conditions under which it ended tell a more complicated
 
 ## The Timeline
 
-- **June 9**: Fable 5 and Mythos 5 launch
-- **June 12**: US government directive suspends both models globally (including for foreign national Anthropic employees)
-- **June 26**: Commerce Department approves Mythos 5 restoration for ~100+ US critical infrastructure organizations
-- **June 30**: Export controls fully lifted on Fable 5; Anthropic publishes redeployment announcement
-- **July 1**: Global access restored — Claude Platform, Claude.ai, Claude Code, Claude Cowork
+- **June 9**: [Fable 5 and Mythos 5 launch](https://www.anthropic.com/news/claude-fable-5-mythos-5)
+- **June 12**: [US government directive suspends both models globally](https://www.anthropic.com/news/fable-mythos-access) (including for foreign national Anthropic employees)
+- **June 26**: [Commerce Department approves Mythos 5 restoration](https://x.com/AnthropicAI/status/2070665903440871779) for a defined set of US organizations that operate and defend critical infrastructure
+- **June 30**: [Export controls fully lifted on Fable 5](https://www.anthropic.com/news/redeploying-fable-5); Anthropic publishes redeployment announcement
+- **July 1**: [Global access restored](https://www.anthropic.com/news/redeploying-fable-5) — Claude Platform, Claude.ai, Claude Code, Claude Cowork
 
 ---
 
 ## What Actually Changed in the Model
 
-The suspension was triggered by [a report from Amazon researchers identifying a jailbreak technique](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html) that bypassed Fable 5's safety systems for a narrow category of dangerous information. The technique involved a specific prompt structure that caused the model to treat safety-relevant outputs as benign continuation.
+The suspension was triggered by [a report from Amazon researchers](https://www.anthropic.com/news/redeploying-fable-5) who found a method of bypassing Fable 5's safeguards by prompting it to identify software vulnerabilities in a way that let it demonstrate exploitation — a narrow category of dangerous information the model's guardrails were meant to block.
 
 Anthropic's primary technical fix is a new safety classifier targeted specifically at this technique. The company [states the classifier blocks](https://www.anthropic.com/news/redeploying-fable-5) "the specific technique described in the Amazon report" in over 99% of cases. That number is classifier-specific — it means the exact method that triggered the original concern is now reliably caught, not that all jailbreaks are eliminated.
 
-Anthropic also launched a HackerOne bug bounty program covering safety-relevant vulnerabilities, giving external security researchers a formal channel for reporting similar issues before they reach government attention.
+Anthropic also launched a [HackerOne vulnerability disclosure program](https://hackerone.com/anthropic-cyber-jailbreak/) covering cyber jailbreaks in Fable 5, giving external security researchers a formal channel for reporting similar issues before they reach government attention. It is an unpaid disclosure program, not a paid bug bounty.
 
 ---
 
 ## What Anthropic Committed To
 
-[Commerce Secretary Howard Lutnick stated](https://venturebeat.com/technology/anthropic-is-bringing-back-claude-fable-5-globally-after-us-lifts-export-control-order-where-can-enterprises-access-it/) that the export license is no longer required after Anthropic agreed to a set of conditions. Anthropic's announcement describes four commitments:
+[Commerce Secretary Howard Lutnick stated](https://venturebeat.com/technology/anthropic-is-bringing-back-claude-fable-5-globally-after-us-lifts-export-control-order-where-can-enterprises-access-it/) — independently [corroborated by CNBC](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html) — that the export license is no longer required after Anthropic agreed to a set of conditions. [Anthropic's announcement describes four commitments](https://www.anthropic.com/news/redeploying-fable-5):
 
 **1. Pre-release government access.** For national security-relevant models, Anthropic will provide US government access before public release. This is the structurally significant one — it creates a pre-clearance step for frontier models that didn't formally exist before.
 
@@ -49,7 +49,7 @@ The fourth item produced a concrete artifact: a four-criterion jailbreak severit
 
 ## The Jailbreak Severity Framework
 
-Anthropic, Amazon, Microsoft, and Google agreed to evaluate jailbreaks on four criteria:
+[Anthropic, Amazon, Microsoft, and Google agreed](https://www.anthropic.com/news/redeploying-fable-5) to evaluate jailbreaks on four criteria:
 
 - **Capability gain** — does the jailbreak give the attacker capabilities beyond what existing non-AI tools can provide?
 - **Breadth** — across how many targets does the capability apply?
@@ -65,7 +65,7 @@ This framework matters because the June 12 suspension was, in part, a calibratio
 **Immediately available:**
 
 - Claude Platform, Claude.ai, Claude Code, Claude Cowork
-- Pro, Max, Team, and select Enterprise plans: up to 50% of normal weekly usage limits through July 7 at no additional cost — a partial restoration period while infrastructure fully re-enables
+- [Pro, Max, Team, and select Enterprise plans: up to 50% of normal weekly usage limits through July 7](https://www.anthropic.com/news/redeploying-fable-5) at no additional cost — a partial restoration period while infrastructure fully re-enables
 
 **Not yet available:**
 
@@ -73,19 +73,19 @@ This framework matters because the June 12 suspension was, in part, a calibratio
 - Google Cloud Vertex AI
 - Microsoft Foundry
 
-Anthropic says it is re-enabling those cloud provider integrations "as quickly as possible." No date committed.
+[Anthropic says it is re-enabling those cloud provider integrations](https://www.anthropic.com/news/redeploying-fable-5) "as quickly as possible." No date committed.
 
 **After July 7:**
 
-Access beyond the 50% free allocation requires usage credits. This is where the Persona identity verification layer from [the July 8 privacy policy update](/builders-log/anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide/) becomes relevant — consumer plan users who want full Fable 5 access will go through government-ID verification via Persona starting July 8. The app strings tying Fable 5 credits to verification were already live ahead of the announcement.
+[Access beyond the 50% free allocation requires usage credits](https://www.anthropic.com/news/redeploying-fable-5). This is where the Persona identity verification layer from [the July 8 privacy policy update](/builders-log/anthropic-fable-5-july-8-biometric-verification-persona-consumer-builder-guide/) becomes relevant — consumer plan users who want full Fable 5 access will go through government-ID verification via Persona starting July 8. [App strings tying Fable 5 credits to Persona verification were found live in the Claude app ahead of the official announcement](https://x.com/kimmonismus/status/2071868011804266828).
 
-API customers (direct API key users, not Claude.ai consumer plans) are exempt from the Persona verification requirement under the current policy.
+[API customers (direct API key users, not Claude.ai consumer plans) are exempt](https://support.claude.com/en/articles/14328960-identity-verification-on-claude) from the Persona verification requirement under the current policy.
 
 ---
 
 ## Mythos 5: Still on a Restricted Track
 
-Mythos 5 is not on the same general-access trajectory. The June 26 restoration allowed specific domestic critical infrastructure organizations access, coordinated through the Glasswing program. Anthropic says it continues to work with the government to expand Mythos 5 access but gave no timeline for general availability.
+Mythos 5 is not on the same general-access trajectory. [The June 26 restoration allowed specific domestic critical infrastructure organizations access](https://x.com/AnthropicAI/status/2070665903440871779), coordinated through [the Glasswing program](https://www.anthropic.com/news/redeploying-fable-5). Anthropic says it continues to work with the government to expand Mythos 5 access but gave no timeline for general availability.
 
 If Fable 5 is the workhorse model that most builders and subscribers were waiting on, Mythos 5 remains a high-security tier with a narrower, government-coordinated access program.
 
