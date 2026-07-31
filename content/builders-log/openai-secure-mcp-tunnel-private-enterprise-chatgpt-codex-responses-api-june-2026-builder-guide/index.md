@@ -1,7 +1,7 @@
 ---
 title: "OpenAI Secure MCP Tunnel: Connect Private MCP Servers to ChatGPT and the Responses API — June 2026 Builder Guide"
 date: 2026-06-26
-description: "OpenAI's Secure MCP Tunnel (June 26, 2026) lets a small tunnel-client running inside your network bridge private or on-prem MCP servers to ChatGPT, Codex, and the Responses API — no public exposure required."
+description: "OpenAI's Secure MCP Tunnel (published May 27, 2026) lets a small tunnel-client running inside your network bridge private or on-prem MCP servers to ChatGPT, Codex, and the Responses API — no public exposure required."
 tags:
   - openai
   - mcp
@@ -9,9 +9,10 @@ tags:
   - security
   - networking
   - builder-guide
+sources_audited: 2026-07-31
 ---
 
-On June 26, 2026, OpenAI published the Secure MCP Tunnel — a customer-operated tunnel client that bridges private or on-prem MCP servers to ChatGPT, Codex, the Responses API, and AgentKit, without exposing those servers to the public internet.
+On [May 27, 2026](https://byteiota.com/openai-secure-mcp-tunnel-private-mcp-servers-no-firewall-changes/), OpenAI published the [Secure MCP Tunnel](https://developers.openai.com/blog/connect-private-mcp-servers-to-openai-products) — a customer-operated tunnel client that bridges private or on-prem MCP servers to ChatGPT, Codex, the Responses API, and AgentKit ([per the open-source client's own documentation](https://github.com/openai/tunnel-client)), without exposing those servers to the public internet.
 
 This is an AI-researched guide based on published changelogs and documentation. ChatForest does not have hands-on access to these tools.
 
@@ -27,20 +28,20 @@ Before Secure MCP Tunnel, the only way to connect such a server to ChatGPT or th
 
 ## How it works
 
-The tunnel inverts the direction of connectivity. Instead of OpenAI calling inbound to your server, your environment initiates an outbound call.
+The tunnel inverts the direction of connectivity. Instead of OpenAI calling inbound to your server, your environment initiates an outbound call, [per OpenAI's Secure MCP Tunnel guide](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels):
 
 1. You run `tunnel-client` inside your private network, alongside the MCP server.
 2. `tunnel-client` establishes an outbound HTTPS connection to OpenAI's tunnel control plane.
 3. When a ChatGPT or Responses API request needs your MCP server, OpenAI queues that request at the hosted tunnel endpoint.
 4. `tunnel-client` retrieves the request from the queue, forwards it to your local MCP server, and streams the response back through the same outbound channel.
 
-The transport is long-polling over standard HTTPS — no WebSocket, no custom protocol, no open inbound ports. Enterprise firewalls and outbound HTTPS proxies handle it without changes.
+The transport is [long-polling over standard HTTPS](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels.md) — no WebSocket, no custom protocol, no open inbound ports. Enterprise firewalls and outbound HTTPS proxies handle it without changes.
 
 ---
 
 ## Quick setup
 
-Download `tunnel-client` from [platform.openai.com/settings/organization/tunnels](https://platform.openai.com/settings/organization/tunnels) or the [openai/tunnel-client GitHub releases](https://github.com/openai/tunnel-client/releases/latest). The binary is open-source so your security team can review what runs inside the protected network.
+Download `tunnel-client` from [platform.openai.com/settings/organization/tunnels](https://platform.openai.com/settings/organization/tunnels) or the [openai/tunnel-client GitHub releases](https://github.com/openai/tunnel-client/releases/latest). The binary is [open-source under the Apache License 2.0](https://github.com/openai/tunnel-client/blob/master/LICENSE) so your security team can review what runs inside the protected network.
 
 **For a stdio MCP server:**
 
@@ -62,7 +63,7 @@ tunnel-client init \
   --mcp-server-url https://mcp.internal.example.com/mcp
 ```
 
-Run `tunnel-client doctor --profile <profile> --explain` to validate your configuration before testing. The local admin UI at `/ui` on loopback shows health, readiness, and tunnel status.
+Run `tunnel-client doctor --profile <profile> --explain` to validate your configuration before testing. The local admin UI at `/ui` on loopback shows health, readiness, and tunnel status ([setup commands documented here](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels.md)).
 
 ---
 
@@ -70,16 +71,16 @@ Run `tunnel-client doctor --profile <profile> --explain` to validate your config
 
 Once running, the tunnel is selectable as a connector source in:
 
-- **ChatGPT** (web) — requires developer-mode workspace permission; workspace admin grants it in Permissions & Roles → Connected Data
-- **Codex** — available in the Codex plugin interface with guided configuration
+- **ChatGPT** (web) — requires [developer-mode workspace permission](https://developers.openai.com/api/docs/guides/developer-mode); for Enterprise/Edu/Business workspaces, an admin grants it via [Permissions & Roles → Connected Data](https://help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-in-apps-enterprise-edu-and-business)
+- **Codex** — installed via [`tunnel-client codex plugin install`](https://github.com/openai/tunnel-client/blob/master/docs/end-user-guide.md), with guided configuration
 - **Responses API** — reference the tunnel endpoint as an MCP server URL
-- **AgentKit** — same connector reference as Responses API
+- **AgentKit** — same connector reference as Responses API, [per the client README](https://github.com/openai/tunnel-client)
 
 ---
 
 ## Enterprise networking features
 
-`tunnel-client` is designed to work inside enterprise network environments without infrastructure changes:
+`tunnel-client` is designed to work inside enterprise network environments without infrastructure changes, per [OpenAI's Secure MCP Tunnel guide](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels.md) and the [enterprise customer onboarding docs](https://github.com/openai/tunnel-client/blob/master/docs/enterprise-customer-onboarding.md):
 
 | Requirement | How tunnel-client handles it |
 |---|---|
@@ -87,14 +88,14 @@ Once running, the tunnel is selectable as a connector source in:
 | Custom CA bundle | Pass custom CA certificates for TLS validation |
 | Control-plane client certificates | mTLS to `mtls.api.openai.com:443` (optional, replaces API-key auth) |
 | MCP-side mTLS | Configure client certs for the MCP server connection |
-| Kubernetes | Run as a sidecar or dedicated deployment alongside the MCP server |
-| systemd | Drop-in unit file for bare-metal or VM deployments |
+| Kubernetes | Run as a sidecar (same pod as the MCP server) or a dedicated Deployment |
+| systemd | Runs as a host binary on bare-metal or VM deployments |
 
 ---
 
 ## Harpoon: narrow HTTP callouts into private networks
 
-Beyond MCP, `tunnel-client` includes an embedded server called Harpoon that exposes configured internal HTTP endpoints by label. Supported agent flows (not all OpenAI surfaces) can call those labeled targets through the tunnel with bounded request/response limits.
+Beyond MCP, `tunnel-client` includes an embedded MCP server called Harpoon that exposes configured internal HTTP endpoints by label, [per OpenAI's documentation](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels.md). Supported agent flows (not all OpenAI surfaces) can call those labeled targets through the tunnel; callers cannot choose arbitrary hosts, and requests are limited to the targets and methods you configure.
 
 This is not a general proxy. It's scoped to exactly the HTTP targets you register in the Harpoon configuration — useful for agent steps that need to hit an internal REST API without running a full MCP server.
 
@@ -107,6 +108,8 @@ This is not a general proxy. It's scoped to exactly the HTTP targets you registe
 | Create or edit a tunnel | Tunnels **Read** + **Manage** |
 | Run `tunnel-client` or select tunnel in a connector | Tunnels **Read** + **Use** |
 | Connect tunnel to ChatGPT | Developer-mode workspace permission (admin grant) |
+
+Permission scopes per [OpenAI's Secure MCP Tunnel guide](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels.md); ChatGPT developer-mode admin controls per the [OpenAI Help Center](https://help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-in-apps-enterprise-edu-and-business).
 
 ---
 

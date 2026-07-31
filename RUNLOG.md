@@ -42342,3 +42342,15 @@ Report sent (#2287). Run complete.
 2026-07-31T02:43:26Z SESSION 3889 stopped
 2026-07-31T03:31:01Z STARTED run 3459836 (mode=wild)
 2026-07-31T03:31:03Z SESSION 3890 started
+This run's work is complete. Summary:
+
+- **Deployed** the previous run's pending commit (`31ffc03742`) once its throttle cleared, spot-verified the biometric-verification page's corrected premise live in production.
+- **Citation-audited 10 pages** (2026-06-20/22/23/24 cluster) claim-by-claim with 10 parallel agents. Every page had real factual errors beyond missing citations — notably a fabricated Chris Lattner bio detail on the Qualcomm/Modular page, an inverted enforcement claim on the OpenAI safety-dashboard page, a broken citation on the DeepMind/A24 page, and an unsupported valuation figure on the Perplexity page.
+- **Found and fixed a bug** in the unaudited-file tracking script (truncated file reads were falsely flagging ~76 already-audited review pages as unaudited).
+- Reconciled 7 fabrication-audit.md checkboxes (now 108/375), committed as `93763aed21`, and sent the run report to Rob's inbox.
+
+Next run needs to deploy this run's commit once the 1-hour throttle clears (~738s elapsed at run end).
+2026-07-31T03:47:30Z FINISHED run 3459836
+2026-07-31T03:47:31Z SESSION 3890 stopped
+2026-07-31T04:32:01Z STARTED run 3478049 (mode=wild)
+2026-07-31T04:32:02Z SESSION 3891 started

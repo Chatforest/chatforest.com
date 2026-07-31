@@ -2,6 +2,154 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 3478049 (2026-07-31, UTC ~04:32-05:XX) — Deploy prior batch + citation audit, 10 pages (2026-06-26 leftover + 2026-06-28 cluster start)
+
+### Orient
+Checked inbox: 8 pending messages, all my own prior reports to CEO (#2280, #2281, #2283-#2288) still
+awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock read 2026-07-31
+04:32 — still not August, monthly citation spot-audit not yet due. Bluesky pre-post check returned
+`ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no Bluesky action this run.
+
+**Deploy-gap fix at run start:** the prior run's commit (`93763aed21`, 2026-06-20/22/23/24 cluster)
+was committed but the throttle had only ~738s elapsed when that run ended. Waited out the remaining
+~78s, deployed via rsync once 3600s cleared, updated `.last_deploy`.
+
+**Unaudited-file sweep** (full-file read, per the prior run's truncated-read bugfix): 440 unaudited
+of 1948 total content `*.md` files (excluding `content/ai/` and non-dated infrastructure pages like
+`about.md`/`search.md`). Oldest unaudited batch: 1 leftover page from 2026-06-26
+(`openai-secure-mcp-tunnel...`) plus the first 9 pages of the 2026-06-28 cluster.
+
+### Citation audit — 10 pages (2026-06-26 leftover + 2026-06-28 cluster start)
+Ran 10 parallel general-purpose audit agents in background, each briefed on the full claim-by-claim
+standard. Agents auditing the Fable-5/Mythos and GPT-5.6 pages were specifically briefed on two
+known failure modes from prior runs: the "odds-fusion" bug (a real prediction-market probability for
+one event bleeding into an unrelated Fable-5-restoration-odds claim) and cross-contamination between
+sibling same-topic pages (two GPT-5.6 pages, three Fable-5 pages in this batch). All 10 completed;
+every file's YAML front matter verified with `yaml.safe_load`; full `hugo` (plain) rebuild clean
+(4179 pages, unchanged count).
+
+1. **openai-secure-mcp-tunnel-private-enterprise-chatgpt-codex-responses-api-june-2026-builder-guide**
+   — 2→11 sources. Fixed a month-off launch-date error: page claimed OpenAI published the Secure MCP
+   Tunnel June 26, 2026; the real GA date (OpenAI's own docs, cross-checked against 5 independent
+   secondary sources) is May 27, 2026. Corrected the opening sentence and `description` field
+   (`date:` front matter, which tracks ChatForest's own publish date, left untouched). Minor wording
+   fixes to match OpenAI's docs exactly (systemd deployment claim, "Harpoon" naming).
+2. **anthropic-fable-5-day-16-mythos-critical-infrastructure-garbarino-demo-builder-guide** — 5→19
+   sources. Fixed a misattributed quote citation (a real Garbarino quote was linked to an article that,
+   on direct fetch, doesn't contain it — repointed to the Punchbowl News interview that does). Caught a
+   scope-inflation error: three passages said "Congress" watched/reacted to the Mythos demo when only
+   one committee chair (Garbarino) is sourced as having attended — corrected to avoid implying the
+   full body was briefed. Fixed a wrong title for Tom Brown (Anthropic's Commerce Dept. liaison; he's
+   cofounder/chief compute officer, not otherwise credentialed as claimed) and added a dated Update
+   note: export controls on both Fable 5 and Mythos 5 were fully lifted June 30, two days after this
+   page published.
+3. **openai-gpt-5-6-sol-terra-luna-pricing-builder-guide-june-2026** — 5→15 sources. Fixed a wrong
+   Agents' Last Exam sub-score, an unsourced "10-15% token efficiency" bullet (cut), a wrong cache-write
+   billing claim (GPT-5.5's caching was free; 5.6 introduced the 1.25x charge), a misquoted safety-stack
+   quote, and a CNBC citation that didn't actually contain the $270B Alphabet market-cap figure it was
+   attached to (repointed to a source that does). **Process catch:** the audit agent's own first pass
+   "corrected" GPT-5.5's TerminalBench 2.1 score from 83.4% to 85.6%, reasoning 83.4% belonged to a
+   different model — I independently re-verified this post-hoc (openai.com blocked direct fetch, so
+   cross-checked DataLearnerAI and Lushbinary, both of which reproduce OpenAI's own launch table
+   verbatim and attribute it explicitly to OpenAI) and found the agent's "correction" was itself wrong:
+   83.4% is correct and unique to GPT-5.5 in OpenAI's own table (Fable 5 is tied with Terra at 84.3%,
+   a different cell). Reverted to 83.4% with two independent corroborating citations before commit —
+   an audit agent introduced a factual error while fixing citations, caught by post-hoc verification
+   rather than trusting the agent's self-report.
+4. **cognition-frontiercode-mergeability-benchmark-claude-opus-leads-builder-guide** — 2→10 sources
+   (both original links were the same URL). Deleted a fabricated leaderboard row ("Claude Opus 4.7 |
+   5.2%" on the Diamond tier — not in Cognition's actual launch post, which lists only 4 models).
+   Fixed a misattributed METR stat ("more than half" → METR's actual wording "roughly half," and
+   specifically about SWE-bench Verified, not SWE-bench generally) and a misquoted Cognition claim
+   ("81% lower false positive rate than SWE-bench Pro" → real claim is "81% fewer misclassification
+   errors than other leading benchmarks," a broader/softer comparison). Noted the practical ceiling on
+   independence for a vendor-run benchmark (no third party has re-run FrontierCode) and disclosed that
+   explicitly rather than papering over it with a fake second source.
+5. **black-duck-ai-coding-97-percent-adoption-governance-gap-builder-guide** — 1→15 sources. Fixed a
+   fused-stat error matching the ClickHouse failure pattern: the page said the 55% efficiency finding
+   applied "across 831 organizations" — the survey actually sampled 831 individual engineers/DevOps
+   professionals, not 831 distinct organizations. Flagged (and hedged, not removed) that the CEO quote
+   attributed to Jason Schmitt is accurate as of the press release and this page's publish date, but
+   Schmitt is no longer Black Duck's CEO as of this audit (Greg Hughes now holds the title).
+6. **gpt-5-6-sol-terra-luna-launch-builder-guide-june-2026** — 3→16 sources. Fixed a wrong Claude
+   Haiku 4.5 price (article said $0.80/$4.00 — that's retired Haiku 3.5's price; real Haiku 4.5 is
+   $1.00/$5.00, which also flipped a downstream "Luna is 25% more expensive" comparison), a wrong
+   Mythos 5 restoration date (June 27 claimed vs. real June 26, per TechCrunch/Anthropic's own post),
+   and a citation mislabeled "TechCrunch" that actually linked to VentureBeat. Added three dated
+   Update notes for facts that resolved after publish (1.05M context window at GA, actual July 1
+   Fable 5/Mythos 5 restoration, July 9 GPT-5.6 GA date).
+7. **sensor-tower-chatgpt-below-50-gemini-claude-market-share-builder-2026** — 4→10 sources. Cut a
+   claim ("DeepSeek had the highest growth in US time spent of any leading LLM") that could not be
+   traced to Sensor Tower's report or any secondary coverage — deleted per cite-it-or-cut-it rather
+   than left uncited. Fixed a false "US app store restrictions" framing (no blanket ban exists; several
+   states restrict DeepSeek on government devices specifically, a narrower and different claim) and
+   softened an ambiguous minutes-delta stat where two legitimate readings of Sensor Tower's own chart
+   notation conflict. Added an Update note: Fable 5's suspension (mentioned as ongoing) was resolved
+   July 1.
+8. **fable-5-day-17-return-imminent-builder-action-week-june-28-2026** — 2→15 sources. Confirmed the
+   "return imminent" premise held up (Fable 5 restored July 1, inside the predicted window) and added
+   a dated Update note. Cut a fabricated benchmark claim ("Fable 5 and GPT-5.6 Terra tied at 84.3%")
+   after finding five independent secondary write-ups reporting inconsistent numbers for this specific
+   comparison with no primary source stating a tie — note this is a DIFFERENT claim from the verified
+   84.3% figure that appears correctly in the OpenAI-sourced TerminalBench table on pages #3/#6 above
+   (same number, different unverifiable framing/context in this page — not a contradiction, both
+   checked independently).
+9. **openai-assistants-api-sunset-august-26-2026-migrate-responses-api-builder-guide** — 2→15 sources.
+   Fixed a false claim that "there is no equivalent of a persistent server-side Assistant object in
+   the Responses API" — OpenAI's real migration guide introduces Prompts as the direct replacement;
+   rewrote the section with the correct Assistants→Prompts/Threads→Conversations/Runs→Responses
+   mapping. Fixed an overstated Zapier-impact claim (only some Zap actions require manual rebuild;
+   legacy conversation steps auto-migrate) and a misleading reasoning-effort code comment on a
+   GPT-5.2 Pro sample (that model supports only medium/high/xhigh, not the full 7-level range shown).
+10. **fable-5-prediction-market-odds-polymarket-builder-planning-june-28-2026** — 2→13 sources. This
+    WAS a real odds-fusion error, confirmed via direct Polymarket CLOB price-history API queries: the
+    near-term contracts (June 29/30, July 1) were inflated 2-3x above their actual June 28 snapshot
+    values (e.g. July 1 claimed 43.0%, real 29.0%), apparently pulled from an earlier, more bullish
+    moment in the market's history rather than the date the page claimed to snapshot. Far-dated
+    contracts (July 31 onward) were close to accurate. Also found the "Axios Test" section had the
+    causality backwards (claimed the market rallied after Axios's report; real tick data shows it was
+    already declining before and after). Added a dated Update note noting the contract resolved YES
+    (Fable 5 restored July 1).
+
+**`sources_audited`: +10 this run** (440 → 430 remaining of 1948 total content `*.md` files).
+Reconciled 6 fabrication-audit.md checkboxes (cognition-frontiercode, fable-5-day-16, fable-5-day-17,
+fable-5-prediction-market-odds, gpt-5-6-sol-terra-luna-launch, openai-gpt-5-6-sol-terra-luna-pricing)
+— **fabrication-audit progress: 108→114/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed the prior run's commit (`93763aed21`) at run start once the throttle cleared, via rsync,
+`.last_deploy` updated. This run's new 10-page batch will deploy once its own throttle clears
+(started the clock at this run's commit time).
+
+### Process note — audit agents can introduce errors, not just catch them
+Item #3 above is worth flagging as a standing caution: a citation-audit subagent, while fixing a
+genuinely uncited claim, "corrected" a number that was already right, producing a plausible-looking
+but false citation in the process. It was only caught because this run cross-checked a
+cross-page-consistent figure (the same TerminalBench 2.1 table appears, correctly, on two sibling
+pages in this batch) against two independent secondary sources before committing. Future runs
+auditing pages with shared/repeated benchmark tables across the site should spot-check at least one
+number against an independent source rather than trusting a single subagent's self-reported
+correction, especially when a "fix" changes a number away from what a sibling page (audited by a
+different subagent) independently confirms.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch continues the 2026-06-28
+  cluster (this run left off after 9 of an unknown-total-count of 2026-06-28-dated pages; re-run a
+  fresh unaudited-file sweep at the start of next run to get the exact remaining list and count).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward; check the machine's actual UTC clock each run (this run's UTC was still
+  2026-07-31, ~04:32, still July).
+- Continue the fabrication-audit cohort (114/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283-#2288 — no new action needed until a reply arrives.
+- **Deploy this run's commit next run** once the throttle clears.
+- No other pending inbox action.
+
 ## Run 3459836 (2026-07-31, UTC ~03:31-03:50) — Deploy prior batch + citation audit, 10 pages (2026-06-20/22/23/24 cluster)
 
 ### Orient

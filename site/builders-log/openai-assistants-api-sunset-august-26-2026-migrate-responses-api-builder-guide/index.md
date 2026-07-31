@@ -17,24 +17,33 @@ The Assistants API introduced three core abstractions:
 - **Threads** — server-side conversation history managed by OpenAI
 - **Runs** — execution jobs that process a thread with an assistant and return results
 
-After August 26, API calls to `/v1/beta/assistants`, `/v1/beta/threads`, and `/v1/beta/threads/{id}/runs` return HTTP errors. Threads stored on OpenAI's servers are no longer readable. There is no automated tool to export or migrate existing Threads — if you have data there you need to keep, extract it now.
+After August 26, API calls to `/v1/beta/assistants`, `/v1/beta/threads`, and `/v1/beta/threads/{id}/runs` return HTTP errors, so Threads stored on OpenAI's servers become unreachable through the API. [OpenAI's own migration guide is explicit that there is no automated tool to export or migrate existing Threads](https://developers.openai.com/api/docs/assistants/migration) — "We will not provide an automated tool for migrating Threads to Conversations" — so if you have data there you need to keep, extract it now.
 
-Third-party integrations are also affected. Zapier deprecated all ChatGPT (OpenAI) steps using the Assistants API on the same timeline — any Zaps built on Assistants steps will fail on August 26.
+Third-party integrations are also affected. [Zapier has deprecated the ChatGPT (OpenAI) actions and searches built on the Assistants API](https://help.zapier.com/hc/en-us/articles/44865998484365-Important-update-ChatGPT-users-OpenAI-Assistants-API-deprecation) — Create Assistant, Find Assistant, Find or Create Assistant, and Upload File (when used with assistants) — and those Zaps stop working on August 26, 2026 unless rebuilt. One exception: Zaps using "Conversation With Assistant (Legacy)" are auto-migrated by Zapier to a new Responses-API-backed Conversation action, though left disabled pending your review; every other Assistants-based action requires a manual rebuild.
 
 ---
 
 ## What the Responses API Is
 
-The Responses API is OpenAI's unified successor to both the Assistants API and the Chat Completions API. It replaces Assistants for stateful agent-style workloads and is the recommended interface for all new projects using GPT-5.5 and newer models.
+The Responses API is OpenAI's unified successor to both the Assistants API and the Chat Completions API. [OpenAI recommends it for reasoning, tool-calling, and multi-turn workflows going forward](https://developers.openai.com/api/docs/guides/latest-model), and its [own writeup on the design](https://developers.openai.com/blog/responses-api) frames it as the simpler, more flexible replacement for both older APIs.
 
-Where the Assistants API abstracted conversation state into Threads and Runs that OpenAI managed invisibly, the Responses API makes state explicit. You send input items — a list of messages, tool results, or content blocks — and receive output items back. Multi-turn state is handled either by passing `store: true` and referencing the prior response by ID, or by maintaining conversation history yourself and replaying it with each request.
+[OpenAI's Assistants migration guide](https://developers.openai.com/api/docs/assistants/migration) maps the old abstractions onto new ones directly:
+
+| Legacy (Assistants API) | Replacement (Responses API) |
+|---|---|
+| Assistants | Prompts |
+| Threads | Conversations |
+| Runs | Responses |
+| Run steps | Items |
+
+Where the Assistants API abstracted conversation state into Threads and Runs that OpenAI managed invisibly, the Responses API makes state explicit. You send input items — a list of messages, tool results, or content blocks — and receive output items back. [Multi-turn state can be handled](https://developers.openai.com/api/docs/guides/migrate-to-responses) by passing `store: true` and referencing the prior response by ID, by attaching a `conversation` object (the direct, richer replacement for Threads — it stores message and tool-call items rather than just messages), or by maintaining conversation history yourself and replaying it with each request.
 
 The Responses API also ships capabilities that the Assistants API never supported:
 
-- **Deep research** — long multi-step web research runs managed by the API
-- **Computer use** — browser and desktop control
-- **Remote MCPs** — connect to external MCP servers directly from the API call
-- **Background Mode** — submit a long-running request and poll asynchronously rather than holding a connection open
+- **[Deep research](https://developers.openai.com/api/docs/guides/deep-research)** — long multi-step web research runs managed by the API
+- **[Computer use](https://developers.openai.com/api/docs/guides/tools)** — browser and desktop control
+- **[Remote MCPs](https://developers.openai.com/api/docs/guides/tools-connectors-mcp)** — connect to external MCP servers directly from the API call
+- **[Background Mode](https://developers.openai.com/api/docs/guides/background)** — submit a long-running request and poll asynchronously rather than holding a connection open
 
 ---
 
@@ -46,8 +55,8 @@ The Responses API is transparent. You own the input. Each API call is self-conta
 
 This means:
 - **Debugging is easier**: the full input to any generation is visible in your code
-- **Caching is more efficient**: OpenAI reports 40–80% better cache utilization compared to Chat Completions in internal benchmarks
-- **Reasoning models work better**: the Responses API is the recommended interface for GPT-5.2 Pro's extended reasoning modes
+- **Caching is more efficient**: [OpenAI reports 40–80% better cache utilization compared to Chat Completions in internal benchmarks](https://developers.openai.com/blog/responses-api)
+- **Reasoning models work better**: [reasoning is preserved across turns in the Responses API but dropped between calls in Chat Completions](https://developers.openai.com/cookbook/examples/responses_api/reasoning_items) — OpenAI's own benchmark shows a 3% SWE-bench improvement for the same prompt and setup when reasoning items are carried forward. [GPT-5.2 Pro, a reasoning-heavy model, is available only through the Responses API](https://developers.openai.com/api/docs/models/gpt-5.2-pro)
 
 ---
 
@@ -130,12 +139,12 @@ Available built-in tools: `web_search_preview`, `file_search`, `computer_use_pre
 
 ### Reasoning effort
 
-For workloads on GPT-5.2 Pro or other reasoning-capable models, `reasoning_effort` controls depth vs. speed:
+For reasoning-capable models, the [`reasoning.effort` parameter](https://developers.openai.com/api/docs/guides/reasoning) controls depth vs. speed. The full range across models is `none, minimal, low, medium, high, xhigh, max`, but [each model supports only a subset](https://developers.openai.com/api/docs/models/gpt-5.2-pro) — GPT-5.2 Pro specifically supports only `medium`, `high`, and `xhigh`:
 
 ```python
 response = openai.responses.create(
     model="gpt-5.2-pro",
-    reasoning={"effort": "high"},  # options: none, minimal, low, medium, high, xhigh
+    reasoning={"effort": "high"},  # gpt-5.2-pro supports: medium, high, xhigh
     input=[{"role": "user", "content": "Analyze this architecture for failure modes."}],
 )
 ```
@@ -156,15 +165,15 @@ while response.status not in ("completed", "failed", "cancelled"):
     response = openai.responses.retrieve(response.id)
 ```
 
-Background Mode is not Zero Data Retention (ZDR) compatible — responses are stored for ~10 minutes to enable polling.
+[Background Mode is not compatible with strict Zero Data Retention (ZDR) — response data is stored for roughly 10 minutes to enable polling](https://developers.openai.com/api/docs/guides/background), which conflicts with a no-retention requirement. GPT-5.2 Pro requests specifically can take several minutes, which is why OpenAI recommends background mode for that model.
 
 ---
 
 ## What Does Not Migrate Automatically
 
-**Threads.** OpenAI has no automated export or migration tool for stored Thread data. If you have multi-turn conversation history in Threads that needs to be preserved — for support history, user session context, or compliance — write an export job now that reads the Thread messages via the Assistants API and stores them in your own database. Do this before August 26.
+**Threads.** [OpenAI's migration guide states plainly that it will not provide an automated tool for migrating Threads to Conversations](https://developers.openai.com/api/docs/assistants/migration). If you have multi-turn conversation history in Threads that needs to be preserved — for support history, user session context, or compliance — write an export job now that reads the Thread messages via the Assistants API (`openai.beta.threads.messages.list`) and either creates a matching `Conversation` object (`openai.conversations.create`) or stores the data in your own database. Do this before August 26.
 
-**Assistant objects.** Any logic encoded in a saved Assistant (system prompt, tool list, model choice) must be moved into your application code. There is no equivalent of a persistent server-side Assistant object in the Responses API — you supply `instructions` and `tools` on each call.
+**Assistant objects.** This is *not* a total loss the way it first appears: [OpenAI's migration guide introduces "Prompts" as the direct, dashboard-managed replacement for Assistant objects](https://developers.openai.com/api/docs/assistants/migration) — a Prompt bundles model, tools, and instructions, is versionable, and is referenced by ID (`prompt={"id": "..."}`) instead of being recreated on every call. Prompts are created in the dashboard, not the API, so you can't script the conversion — but you don't have to hardcode instructions and tools into application code just to preserve a reusable, centrally managed configuration. If you skip Prompts, the fallback is what this article originally implied: supply `instructions` and `tools` directly on each `responses.create()` call.
 
 **Run logic.** Assistants API Runs handle tool call loops automatically. In the Responses API, tool call loops are explicit: when the response contains a tool call, you execute it and send the result back as a new input item. This gives you more control but requires re-implementing any custom orchestration logic.
 
@@ -172,14 +181,14 @@ Background Mode is not Zero Data Retention (ZDR) compatible — responses are st
 
 ## Performance Impact
 
-OpenAI's internal benchmarks for the Responses API compared to Chat Completions:
+OpenAI's own internal benchmarks for the Responses API compared to Chat Completions:
 
-| Metric | Improvement |
-|---|---|
-| Cache hit rate | 40–80% better |
-| SWE-bench (same prompt) | +3% |
+| Metric | Improvement | Source |
+|---|---|---|
+| Cache hit rate | 40–80% better | [Why we built the Responses API](https://developers.openai.com/blog/responses-api) |
+| SWE-bench (same prompt/setup, reasoning items preserved) | +3% | [Better performance from reasoning models using the Responses API](https://developers.openai.com/cookbook/examples/responses_api/reasoning_items) |
 
-Reasoning model performance specifically improves because the Responses API was designed around the way reasoning models use context — the input structure maps more cleanly to how these models accumulate and reference prior outputs.
+Reasoning model performance specifically improves because [the Responses API preserves reasoning state across turns, while Chat Completions drops it between calls](https://developers.openai.com/cookbook/examples/responses_api/reasoning_items) — the model doesn't have to redo work it already did on the previous turn.
 
 ---
 
@@ -187,7 +196,7 @@ Reasoning model performance specifically improves because the Responses API was 
 
 1. **Audit for Assistants API usage**: grep for `beta.assistants`, `beta.threads`, `beta.runs`, and `/v1/beta/threads` in your codebase and infrastructure configs
 2. **Export Thread data**: use the Assistants API to read and store any conversation history you need to preserve — do this before August 26
-3. **Port system prompts and tool lists**: move logic from saved Assistant objects into your application code
+3. **Port system prompts and tool lists**: either recreate each saved Assistant as a [Prompt object](https://developers.openai.com/api/docs/assistants/migration) in the OpenAI dashboard and reference it by ID, or move the logic directly into your application code
 4. **Migrate to Responses API**: use `store: True` + `previous_response_id` for multi-turn, or manage conversation history in your own state store
 5. **Re-implement tool call loops**: if your Assistants workflow used function calling, update the loop to handle Responses API tool call items explicitly
 6. **Update Zapier or no-code integrations**: rebuild any Zaps that used Assistants API steps using the Responses API actions

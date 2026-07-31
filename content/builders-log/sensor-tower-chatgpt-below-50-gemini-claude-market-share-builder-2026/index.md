@@ -5,11 +5,12 @@ description: "For the first time since ChatGPT launched, it holds less than half
 og_description: "ChatGPT: 46.4%. Gemini: 27.7%. Claude: 10.3%. The Sensor Tower June 2026 report measures where users actually spend time — and the implications for platform bets are concrete."
 categories: ["Market Data", "Strategy", "Platform"]
 tags: ["chatgpt", "gemini", "claude", "market-share", "sensor-tower", "platform-strategy", "ai-market", "deepseek"]
+sources_audited: 2026-07-31
 ---
 
-In March 2026, ChatGPT's share of the AI assistant market quietly dropped below 50% for the first time. By the end of May, Sensor Tower's [State of AI 2026 report](https://sensortower.com/blog/state-of-ai-2026) (released June 16) had measured it at 46.4%.
+In March 2026, ChatGPT's share of the AI assistant market quietly dropped below 50% for the first time. By the end of May, Sensor Tower's [State of AI 2026 report](https://sensortower.com/blog/state-of-ai-2026) (released June 16) had measured it at 46.4%, corroborated independently by [TechCrunch's](https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/) and [Fast Company's](https://www.fastcompany.com/91560276/chatgpt-loses-ground-gemini-claude-below-50-percent-market-share) reporting on the same data.
 
-That number is a milestone. It doesn't mean ChatGPT is struggling — it now has 1.1 billion monthly active users, the fastest any app has ever reached that scale. But it means that if you're building for "the AI market," you are no longer building primarily for a ChatGPT audience. The market has fractured.
+That number is a milestone. It doesn't mean ChatGPT is struggling — it now has 1.1 billion monthly active users, [the fastest any app has ever reached that scale](https://sensortower.com/blog/state-of-ai-2026), including TikTok, YouTube, and Instagram. But it means that if you're building for "the AI market," you are no longer building primarily for a ChatGPT audience. The market has fractured.
 
 Here is what the Sensor Tower data actually shows, and what each number means if you're deciding where to build.
 
@@ -17,7 +18,7 @@ Here is what the Sensor Tower data actually shows, and what each number means if
 
 ## The Numbers
 
-Sensor Tower measures "True Audience" — usage across desktop, mobile apps, and mobile web globally. This is different from app-store download counts or US-only data, which is why some of these figures differ from other reports.
+Sensor Tower measures ["True Audience"](https://www.fastcompany.com/91560276/chatgpt-loses-ground-gemini-claude-below-50-percent-market-share) — usage across desktop, mobile apps, and mobile web globally. This is different from app-store download counts or US-only data, which is why some of these figures differ from other reports.
 
 **Monthly active users (through May 2026):**
 
@@ -28,11 +29,11 @@ Sensor Tower measures "True Audience" — usage across desktop, mobile apps, and
 | Anthropic Claude | 245M | 10.3% | ~120 min |
 | Others (Grok, Perplexity, DeepSeek, Meta AI) | — | <5% each | — |
 
-ChatGPT, Gemini, and DeepSeek together account for roughly 90% of total time spent across all AI assistant apps in Q1 2026.
+[ChatGPT, Gemini, and DeepSeek together account for roughly 90% of total time spent](https://sensortower.com/blog/state-of-ai-2026) across all AI assistant apps in Q1 2026 — note this is a *different* ranking than the True Audience table above: DeepSeek has under 5% of users but still lands in the time-spent top three.
 
-Global time spent on generative AI apps is projected to more than double year-over-year in H1 2026: from 17.2 billion hours (H1 2025) to 36 billion hours (H1 2026).
+[Global time spent on generative AI apps is projected to more than double year-over-year in H1 2026: from 17.2 billion hours (H1 2025) to 36 billion hours (H1 2026)](https://www.prnewswire.com/news-releases/sensor-tower-state-of-ai-2026-report-global-time-spent-on-generative-ai-apps-projected-to-more-than-double-year-over-year-302800975.html).
 
-Sources: [Sensor Tower State of AI 2026](https://sensortower.com/blog/state-of-ai-2026) · [TechCrunch](https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/) · [Fast Company](https://www.fastcompany.com/91560276/chatgpt-loses-ground-gemini-claude-below-50-percent-market-share) · [PR Newswire](https://www.prnewswire.com/news-releases/sensor-tower-state-of-ai-2026-report-global-time-spent-on-generative-ai-apps-projected-to-more-than-double-year-over-year-302800975.html)
+Sources: [Sensor Tower State of AI 2026](https://sensortower.com/blog/state-of-ai-2026) · [TechCrunch](https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/) · [Fast Company](https://www.fastcompany.com/91560276/chatgpt-loses-ground-gemini-claude-below-50-percent-market-share) · [PR Newswire](https://www.prnewswire.com/news-releases/sensor-tower-state-of-ai-2026-report-global-time-spent-on-generative-ai-apps-projected-to-more-than-double-year-over-year-302800975.html) · [GIGAZINE](https://gigazine.net/gsc_news/en/20260617-state-of-ai/)
 
 ---
 
@@ -40,11 +41,11 @@ Sources: [Sensor Tower State of AI 2026](https://sensortower.com/blog/state-of-a
 
 User counts tell you reach. Minutes per user tell you what kind of work people are doing.
 
-**ChatGPT: 215 min/month.** This is the baseline for a mainstream platform with both casual and power users. It's the highest absolute engagement.
+**ChatGPT: [215 min/month](https://sensortower.com/blog/state-of-ai-2026).** This is the baseline for a mainstream platform with both casual and power users. It's the highest absolute engagement.
 
-**Claude: 120 min/month, +40-point gain.** Claude has fewer users than Gemini — but users spend *more time per session* than on Gemini. The +40 gain is also the largest percentage increase in the report. Claude is not driving discovery queries; people are doing sustained work with it.
+**Claude: [120 min/month](https://sensortower.com/blog/state-of-ai-2026).** Claude has fewer users than Gemini — but users spend *more time per session* than on Gemini. Sensor Tower's report groups Claude with Gemini as seeing "rapid gains in usage intensity" over the period measured, though the report doesn't spell out the prior-period baseline clearly enough to state a precise percentage-point delta here. Claude is not driving discovery queries; people are doing sustained work with it.
 
-**Gemini: 100 min/month, +14-point gain.** Despite nearly triple Claude's user count, Gemini users spend less time per session. This makes sense: a large fraction of Gemini's 662 million users arrived through Android 17, Workspace integration, or Google Search — not because they sat down intending to use an AI assistant. Shorter sessions, more distribution-driven.
+**Gemini: [100 min/month](https://sensortower.com/blog/state-of-ai-2026).** Despite nearly triple Claude's user count, Gemini users spend less time per session. This makes sense: a large fraction of Gemini's 662 million users arrived through [Android's built-in Gemini integration](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/), Workspace integration, or Google Search — not because they sat down intending to use an AI assistant. Shorter sessions, more distribution-driven.
 
 The pattern: Gemini has massive reach through Google's ecosystem flywheel. Claude has fewer but more engaged users. ChatGPT has both.
 
@@ -86,9 +87,9 @@ Use an abstraction layer (OpenRouter, LiteLLM, Bedrock) if you're building anyth
 
 ## The DeepSeek Number Worth Watching
 
-DeepSeek is not in the user-count table, but it's in the time-spent top-3. Sensor Tower found DeepSeek had the highest growth in US time spent of any leading LLM in the dataset.
+DeepSeek isn't broken out in the user-count table — Sensor Tower groups it with Grok, Perplexity, and Meta AI in the "under 5%" True Audience bucket. But [it's in the time-spent top three](https://sensortower.com/blog/state-of-ai-2026) alongside ChatGPT and Gemini, meaning a model with a small user base is still capturing an outsized share of engaged usage minutes.
 
-This matters to builders because DeepSeek's growth happened despite US app store restrictions and regulatory pressure. Users found it. The audience for open-weight, privacy-respecting, non-US-cloud AI is real and growing.
+That's notable because it happened despite real friction, not despite a blanket US ban — no such ban exists as of this writing. What exists is narrower: [several states, including Texas and New York, have banned DeepSeek from government devices and networks](https://www.govtech.com/biz/data/wheres-deepseek-banned-the-states-blocking-chinese-made-ai), and [a coalition of state attorneys general has pushed Congress toward a federal-device ban](https://www.insidegovernmentcontracts.com/2025/02/u-s-federal-and-states-governments-moving-quickly-to-restrict-use-of-deepseek/). Consumer app-store bans have been discussed in Washington but not enacted. Ordinary users can still download and use it — and Sensor Tower's numbers say plenty of them are.
 
 If you're building for users who care about data sovereignty, cost control, or model transparency, the DeepSeek signal suggests that audience will show up even with friction.
 
@@ -102,7 +103,7 @@ Three caveats worth keeping in mind:
 
 **"True Audience" is Sensor Tower's proprietary methodology.** It's useful for cross-platform comparison, but it is not the same number you'd get from Apple App Store data, ComScore desktop panels, or first-party platform reports. Numbers from different sources will differ, and all have blind spots.
 
-**The data runs through May 2026.** Fable 5 was suspended June 12 — that is not reflected in these numbers. If the suspension extends, Claude's June and July numbers will look different.
+**The data runs through May 2026.** [Fable 5 (and Mythos 5) access was suspended globally on June 12](https://www.anthropic.com/news/fable-mythos-access) after a US government export-control directive — that is not reflected in these numbers. (Update, since publication: [Anthropic restored global access on July 1](https://www.anthropic.com/news/redeploying-fable-5), after Commerce lifted the export controls on June 30, so the disruption was contained to about 18-19 days rather than an open-ended one.)
 
 ---
 
