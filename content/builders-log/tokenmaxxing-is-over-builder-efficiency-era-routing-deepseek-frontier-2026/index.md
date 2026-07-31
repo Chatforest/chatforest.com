@@ -6,11 +6,12 @@ og_description: "Meta's Claudeonomics leaderboard, Uber's blown AI budget, Lindy
 content_type: "Builder's Log"
 categories: ["AI Tools", "Cost & Efficiency", "Industry"]
 tags: ["tokenmaxxing", "deepseek", "anthropic", "openai", "routing", "enterprise", "cost-optimization", "june-2026", "builders-log"]
+sources_audited: 2026-07-31
 ---
 
-Sometime in April 2026, [Meta circulated an internal leaderboard called "Claudeonomics,"](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) ranking 85,000 employees by AI token consumption, with top performers averaging 281 billion tokens per month. Burning more tokens was treated as a proxy for productivity. The name was not ironic.
+In April 2026, [Meta employees built an internal leaderboard called "Claudeonomics,"](https://fortune.com/2026/04/09/meta-killed-employee-ai-token-dashboard/) tracking AI token consumption across [more than 85,000 employees](https://finance.yahoo.com/sectors/technology/articles/meta-just-killed-dashboard-let-084400197.html); its highest-ranked individual user averaged 281 billion tokens over a 30-day period. Burning more tokens was treated as a proxy for productivity. The name was not ironic.
 
-By late June 2026, [Lindy CEO Flo Crivello had switched 100% of his company's API traffic from Claude to DeepSeek](https://the-decoder.com/ai-startup-lindy-ditched-claude-entirely-for-deepseek-saving-millions-as-cost-pressure-mounts-on-anthropic/). His reported explanation: [the cost curve "crashed to the ground,"](https://www.lindy.ai/blog/migrating-from-claude-to-deepseek) saving millions. [Vercel's AI Gateway Production Index](https://vercel.com/blog/ai-gateway-production-index-june-2026) confirmed the pattern at scale — DeepSeek's token share jumped from under 1% in April to 17% in May. Its spend share stayed near 1%.
+By late June 2026, [Lindy CEO Flo Crivello had switched 100% of his company's API traffic from Claude to DeepSeek](https://the-decoder.com/ai-startup-lindy-ditched-claude-entirely-for-deepseek-saving-millions-as-cost-pressure-mounts-on-anthropic/). He told [CNBC](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) the cost curve "crashed to the ground," saving millions, after AI costs at the 25-person startup grew "unsustainable," exceeding personnel costs. [Vercel's AI Gateway Production Index](https://vercel.com/blog/ai-gateway-production-index-june-2026) confirmed the pattern at scale — DeepSeek's token share jumped from under 1% in April to 17% in May. Its spend share stayed near 1%.
 
 Something inverted. Understanding what — and what it means for your stack — is the point of this article.
 
@@ -22,11 +23,11 @@ Tokenmaxxing treated AI token consumption as a performance metric. The logic had
 
 The problems were predictable in retrospect.
 
-**Amazon's case** is the clearest failure mode. Once token usage became a performance signal, Amazon developers ran meaningless tasks to inflate their numbers. Goodhart's Law, applied to LLMs: when a measure becomes a target, it stops being a measure.
+**Amazon's case** is the clearest failure mode. After Amazon set a target of [more than 80% of its developer workforce using AI tools weekly](https://www.hcamag.com/us/specialization/transformation/amazon-workers-are-gaming-the-ai-leaderboard-hr-built-it/575083) and tracked individual usage on an internal leaderboard, [some employees ran meaningless tasks through Amazon's internal agent platform purely to inflate their token counts](https://futurism.com/artificial-intelligence/amazon-quotas-ai-use). Goodhart's Law, applied to LLMs: when a measure becomes a target, it stops being a measure.
 
-**Uber** is the cost version. [The company exhausted its entire 2026 AI coding budget within four months](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) and was forced to impose $1,500-per-employee-per-month caps. The metric it had optimized — tokens consumed — had no connection to the budget it forgot to protect.
+**Uber** is the cost version. [The company exhausted its entire 2026 AI coding budget within four months](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) and was forced to impose [a $1,500-per-employee, per-agentic-tool monthly cap](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/) on tools like Claude Code and Cursor. The metric it had optimized — tokens consumed — had no connection to the budget it forgot to protect.
 
-**The Jellyfish study** is the productivity version. Heavy AI users in that research were approximately 2× more productive than non-users. They also consumed 10× the tokens. The return on additional spend above a baseline was nearly zero. Separately, high-AI-adoption engineering environments showed bugs up 54% and code churn up 861% — unconstrained generation created review debt that erased the apparent speedups.
+[**The Jellyfish study**](https://jellyfish.co/blog/is-tokenmaxxing-cost-effective-new-data-from-jellyfish-explains/) is the productivity version. Developers in the top 20% of token spend shipped roughly 2× the merged pull requests of those in the bottom 20% — while consuming roughly 10× the tokens per PR. The return on additional spend above a baseline was nearly zero. Separately, [Faros AI's 2026 AI Engineering Report](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) found bugs per developer up 54% and code churn up 861% when comparing organizations' lowest- and highest-AI-adoption periods — unconstrained generation created review debt that erased the apparent speedups.
 
 ---
 
@@ -44,7 +45,7 @@ Vercel publishes a monthly AI Gateway Production Index tracking real API traffic
 
 **Price sensitivity exposed Gemini's miscalculation**
 
-When Google launched Gemini 3.5 Flash at a higher price than version 3.0, adoption stalled. By month-end, 3.5 Flash held only 7% of the Flash family's tokens while 3.0 held 90%. Compare this to Gemini 3.1 Pro, which launched at a competitive price in February and achieved 30% adoption immediately. The market is now price-elastic in ways it was not six months ago.
+When Google launched Gemini 3.5 Flash at a higher price than version 3.0, adoption stalled. [By month-end, 3.5 Flash held only 7% of the Flash family's tokens while 3.0 held 90%](https://vercel.com/blog/ai-gateway-production-index-june-2026). Compare this to Gemini 3.1 Pro, which [launched at a competitive price in February and achieved 30% adoption immediately](https://vercel.com/blog/ai-gateway-production-index-june-2026). The market is now price-elastic in ways it was not six months ago.
 
 **Total tokens grew 20% month-over-month; total spend grew 43%**
 
@@ -58,7 +59,7 @@ The June 26 CNBC report captured the inflection point. Companies that pushed dev
 
 The Lindy switch crystallizes this. Flo Crivello did not switch because Claude is worse — his team built on Claude because it was the best model for their use case. He switched because DeepSeek V4 Flash was good enough for enough of those use cases that the cost gap became indefensible to a board. A 20–50× price difference is not a line item negotiation. It is a rearchitecting decision.
 
-This dynamic is playing out across enterprise contracts. Both OpenAI and Anthropic [filed confidential S-1s with the SEC in early June](https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html) (OpenAI on June 8, Anthropic on June 1), with Anthropic at a [$965 billion post-money valuation](https://www.forbes.com/sites/petercohan/2026/05/29/why-anthropics-965-billion-ipo-could-pay-off-massively-for-investors/). Their investors need growth rates that justify these valuations. But the customers most likely to drive that growth are now the ones most focused on cost discipline. The tension is not going away.
+This dynamic is playing out across enterprise contracts. Both OpenAI and Anthropic [filed confidential S-1s with the SEC in early June](https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/) — Anthropic on June 1, OpenAI on June 8 — with Anthropic having just closed a [$65 billion Series H at a $965 billion post-money valuation](https://www.anthropic.com/news/series-h). Their investors need growth rates that justify these valuations. But the customers most likely to drive that growth are now the ones most focused on cost discipline. The tension is not going away.
 
 ---
 
@@ -66,7 +67,7 @@ This dynamic is playing out across enterprise contracts. Both OpenAI and Anthrop
 
 The production answer to the tokenmaxxing reckoning is heterogeneous model routing: default to cheaper models, escalate to frontier only when the task requires it.
 
-**RouteLLM** (ICLR 2025) demonstrated what is possible. A router trained on preference data cut benchmark cost by more than 85% while preserving approximately 95% of flagship model quality. The mechanism: route easy queries to a cheap model, route failing cases to GPT-5.5 or Claude Sonnet. Most queries are easy.
+[**RouteLLM**](https://arxiv.org/abs/2406.18665) ([ICLR 2025](https://www.lmsys.org/blog/2024-07-01-routellm/)) demonstrated what is possible. A router trained on human preference data from Chatbot Arena [cut cost by more than 85% on MT-Bench while preserving approximately 95% of GPT-4's quality](https://www.lmsys.org/blog/2024-07-01-routellm/). The same routing logic generalizes to today's model stack: route easy queries to a cheap model, escalate failing or high-stakes cases to a frontier model like GPT-5.5 or Claude Sonnet. Most queries are easy.
 
 This is not a theoretical exercise. The Vercel data shows this pattern running in production. Builders who have already implemented tiered routing are seeing the spend share stay at Anthropic (for the queries that need it) while token volume shifts toward DeepSeek (for the queries that do not).
 
@@ -94,7 +95,7 @@ $0.14 input / $0.28 output per million tokens. If you have not benchmarked this 
 
 **5. Treat context engineering as infrastructure, not optimization**
 
-The Corti analysis identified four practices that distinguish token-disciplined teams from tokenmaxxing teams: context compaction (summarizing prior turns rather than including them wholesale), structured note-taking (agents write to persistent state rather than re-reasoning from scratch), sub-agent isolation (each agent sees only what it needs), and just-in-time retrieval (fetch context at query time rather than loading everything at session start). These are architectural decisions, not prompting tricks.
+[Anthropic's own engineering guidance](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) identifies four practices that distinguish token-disciplined teams from tokenmaxxing teams: context compaction (summarizing prior turns rather than including them wholesale), structured note-taking (agents write to persistent state rather than re-reasoning from scratch), sub-agent architectures (each agent sees only what it needs), and just-in-time retrieval (fetch context at query time rather than loading everything at session start). These are architectural decisions, not prompting tricks.
 
 **6. Instrument quality alongside cost**
 
@@ -116,4 +117,4 @@ The tokenmaxxing era was not malicious — it was an honest attempt to measure s
 
 ---
 
-*Data in this article draws from Vercel's AI Gateway Production Index (May 2026), the Corti analysis of enterprise AI engineering practices (June 2026), and public reporting from CNBC (June 26), The Neuron, and Exadel. The Jellyfish study is cited as reported in secondary analysis; the original research is from Jellyfish's internal engineering dataset.*
+*Data in this article draws from Vercel's AI Gateway Production Index (May 2026), Anthropic's engineering blog on context engineering, Jellyfish's own tokenmaxxing analysis, Faros AI's 2026 AI Engineering Report, and public reporting from CNBC, Fortune, TechCrunch, the-decoder, HCAmag, and Futurism — each linked inline above.*

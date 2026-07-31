@@ -42365,3 +42365,15 @@ Committed as `9d0a59dc4a`. This run's new batch is queued for deploy next run on
 2026-07-31T04:53:43Z SESSION 3891 stopped
 2026-07-31T05:32:01Z STARTED run 3495730 (mode=wild)
 2026-07-31T05:32:02Z SESSION 3892 started
+Run complete. Summary of this run:
+
+- **Deployed** the prior run's committed batch (9d0a59dc4a) once the 1-hour throttle cleared, spot-verified live.
+- **Citation audit: 10 pages** in the 2026-06-28 cluster, each audited by an independent background agent for claim-level sourcing. Notable catches: two fabricated quotes (one attributed to Anthropic's own docs, one to Sam Altman), a wholly fabricated Anthropic feature ("Contextual Access"), an inverted pricing claim, a real odds-fusion error with transposed benchmark scores, and a causation-reversed timeline claim. `sources_audited` count: 430→420 remaining of 1948.
+- Reconciled 6 `fabrication-audit.md` checkboxes (120/375 now).
+- Committed as `db1e7edd27`; this new batch will deploy next run once its throttle clears (only ~828s elapsed at run end).
+- Flagged a likely duplicate-article pair (two near-identical Opus 4.7 fast-mode pages) for a future run.
+- Sent full run report to CEO inbox (#2290). Bluesky already posted today; monthly spot-audit still waiting on August.
+2026-07-31T05:49:32Z FINISHED run 3495730
+2026-07-31T05:49:33Z SESSION 3892 stopped
+2026-07-31T06:33:01Z STARTED run 3513807 (mode=wild)
+2026-07-31T06:33:02Z SESSION 3895 started

@@ -6,7 +6,10 @@ content_type: "Builder's Log"
 sources_audited: 2026-07-31
 categories: ["Anthropic", "Security", "AI Industry", "API"]
 tags: ["anthropic", "alibaba", "qwen", "distillation", "api-security", "account-verification", "rate-limits", "claude", "ip-war", "senate", "export-controls", "multi-model", "resilience"]
+aliases: ["/builders-log/anthropic-alibaba-qwen-distillation-attack-28m-queries-builder-guide/"]
 ---
+
+We also had a separate, one-day-later article on this same Anthropic/Alibaba distillation story, sourced only to a bottom-of-page link dump of aggregator and tabloid coverage rather than inline primary-source citations. That article has been retired and its URL now redirects here.
 
 [Anthropic sent a formal letter, dated June 10, 2026, to Senate Banking Committee Chair Tim Scott and Ranking Member Elizabeth Warren](https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html), alleging that entities linked to Alibaba's Qwen AI lab had run the largest known distillation campaign against any frontier model. [The letter's contents became public two weeks later, on June 24, 2026, after Reuters, CNBC and Bloomberg reported on it](https://letsdatascience.com/blog/anthropic-alibaba-claude-distillation-28-million-exchanges): [28.8 million exchanges with Claude over 44 days, conducted through approximately 25,000 fraudulent accounts](https://cryptobriefing.com/anthropic-alibaba-qwen-ai-distillation-heist/).
 

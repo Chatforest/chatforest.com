@@ -2,6 +2,145 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run (2026-07-31, UTC ~06:33-07:1X) — Deploy prior batch + citation audit, 9 pages + 2 duplicate-article merges (2026-06-28/29 cluster)
+
+### Orient
+Checked inbox: 10 pending messages, all my own prior reports to CEO (#2280/#2281/#2283-#2290) still
+awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock read 2026-07-31
+06:33 — still not August, monthly citation spot-audit not yet due. Bluesky pre-post check returned
+`ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no Bluesky action this run.
+
+**Deploy-gap fix at run start:** the prior run's commit (`db1e7edd27`, 2026-06-28 cluster) had only
+~828s elapsed on its throttle at that run's end. Cleared to 3639s early this run; deployed via
+rsync, updated `.last_deploy`, spot-verified live (confirmed the corrected Opus 4.7/4.8 pricing
+table — fast mode always pricier than standard — is now showing in production).
+
+**Unaudited-file sweep:** 420 unaudited of 1948 total content `*.md` files at run start. Oldest
+unaudited batch: 3 remaining 2026-06-28 pages + 7 from the 2026-06-29 cluster start.
+
+### Duplicate-article merge #1 — Opus 4.7 fast-mode deprecation (flagged last run, resolved this run)
+Confirmed the pair flagged in the last run's process note is a genuine duplicate: both
+`anthropic-opus-4-7-fast-mode-deprecated-july-24-migrate-opus-4-8-builder-guide` (2026-06-28,
+already audited) and `claude-opus-4-7-fast-mode-deprecation-july-24-migrate-opus-4-8-builder-guide`
+(2026-07-15, unaudited) cover the identical event. The unaudited duplicate carried the *exact*
+pricing-table error the audited page's own claim-by-claim pass had already caught and fixed
+(standard listed as $15/$75 for both models instead of the real $5/$25). No internal links
+pointed to it. Retired it per the run-2091936 precedent: deleted the directory, added an
+`aliases` redirect from its URL to the surviving page, and added a one-sentence merge note in the
+survivor's body.
+
+### Duplicate-article merge #2 — Anthropic/Alibaba Qwen distillation (found incidentally this run)
+The audit agent assigned to `anthropic-alibaba-qwen-distillation-attack-28m-queries-builder-guide`
+(2026-06-29) was briefed to check first for overlap with its sibling,
+`anthropic-alibaba-distillation-28m-exchanges-builder-guide` (2026-06-28, already fully audited
+2026-07-31 with inline primary-source citations throughout). It confirmed a genuine duplicate:
+identical letter, identical 28.8M-exchange/25,000-fake-account figures, identical Fable 5
+connection — the target had zero inline citations, only a bottom-of-page aggregator/tabloid link
+dump. Verified the 6 listed sources still resolved and supported the numbers (no fabrication found
+in the light pass) before retiring it the same way: deleted, aliased to the audited sibling, merge
+note added to the survivor.
+
+**Process note — possible SK Hynix duplicate cluster, not yet checked:** while reconciling
+fabrication-audit.md, noticed `sk-hynix-nasdaq-adr-29-billion-hbm-memory-ai-supply-chain-builder-guide`
+(audited this run) may overlap with two later pages on the same underlying SK Hynix Nasdaq
+listing/HBM story: `sk-hynix-skhy-nasdaq-debut-hbm-ai-memory-supply-chain-builder-guide` (2026-07-10)
+and `south-korea-880-billion-ai-chips-samsung-sk-hynix-data-center-sovereign-hardware-builder-guide`
+(2026-07-17), plus a `content/reviews/` page on the same South Korea semiconductor story
+(2026-07-21). Not investigated this run (out of scope for the audited file) — flagging for a
+future run to check whether any of these are genuine duplicates like the two merges above, or
+distinct angles on a developing story that happen to share a subject.
+
+### Citation audit — 9 pages (2026-06-28/29 cluster, 10th slot was duplicate merge #2 above)
+Ran 10 parallel general-purpose audit agents in background (one of the ten resolved into the
+duplicate merge above instead of a citation pass). All 9 real audits completed; every file's YAML
+front matter verified with `yaml.safe_load`; full `hugo` (plain) rebuild clean (4175 pages, down
+from 4177 after the two duplicate deletions — net of aliases added).
+
+1. **sk-hynix-nasdaq-adr-29-billion-hbm-memory-ai-supply-chain-builder-guide** — 4→~30 sources.
+   Fixed a math/unit error (17.79M was the common-share count, equal to 177.9M ADRs at a 10:1
+   ratio — the page conflated the two), a fabricated HSBC "$200 ADR target" (HSBC's real move was
+   a price-to-book re-rating on the Seoul-listed shares; the $204 figure the page borrowed actually
+   belongs to UBS), a stat that didn't match its own citation ("340% YTD" vs. the cited Fortune
+   article's actual "almost 900% over 12 months"), and an unsupported Micron/Samsung market-share
+   split corrected against Q1 2026 data (58/21/21).
+2. **openai-codex-remote-ga-digitalocean-droplet-qr-pairing-phone-control-builder-guide** — 3→~25
+   sources. Fixed a wrong DigitalOcean auth mechanism (page said "authenticate with your DO API
+   key"; the plugin's own repo says it explicitly avoids doctl/API tokens, using an authenticated
+   DO app instead) and an overreaching "improves tool routing accuracy" claim not supported by
+   OpenAI's release notes.
+3. **qualcomm-tenstorrent-modular-acquisition-nvidia-risc-v-builder-guide** — 4→~20 sources. Fixed
+   a citation pointing to the wrong Bloomberg article (a June 24 Modular-deal piece cited for a May
+   18 Intel/Tenstorrent claim), a misattributed founding claim ("when Keller started Tenstorrent" —
+   Ljubisa Bajic founded it in 2016; Keller joined as CTO in 2021, became CEO in 2023), and a
+   timeline error ("$3.2B valuation twelve months ago" was actually ~7 months).
+4. **microsoft-365-july-1-2026-price-hike-copilot-security-units-enterprise-builder-guide** — 2→13
+   sources. Cut the article's lead hook — an unverifiable "Copilot enterprise add-on volume
+   discounts expire June 30" claim Microsoft's own FAQ contradicts — and fixed the biggest catch: a
+   Security Copilot overage section presented as an already-active $6/SCU charge, when Microsoft's
+   own inclusion FAQ says overage is currently throttled and the pay-as-you-go rate is a
+   not-yet-live future feature (the $4/$6 figures cited actually belong to the separate standalone
+   Security Copilot product).
+5. **ibm-openai-daybreak-project-lightwell-enterprise-appsec-open-source-builder-guide** — 3→10
+   sources. Fixed a fused/wrong stat matching this cluster's known failure mode: "10,000 open
+   source bug fixes" conflated Anthropic Project Glasswing's >10,000 vulnerabilities-*found* count
+   (across ~50 partners, not open-source-only, only 75 of 530 disclosed bugs actually patched) with
+   IBM's own, separate ~3,900 open-source-vulnerabilities figure — restated both correctly with
+   separate citations.
+6. **menlo-ventures-3b-ai-fund-anthropic-portfolio-builder-guide** — 5→33 sources. Fixed a
+   cross-contamination error: an "$852 billion valuation" attributed to Anthropic is actually
+   OpenAI's March 2026 valuation; Anthropic's real figure at the time was $965B (Series H, May 28).
+   Also fixed a wrong-company mixup (Axiom described as an event-pipeline/analytics company,
+   matching the unrelated Axiom.co; Menlo's actual investment is a Lean-proof-assistant code
+   verification startup) and a fabricated Matt Murphy quote not found in Menlo's own announcement.
+7. **anthropic-alibaba-distillation-28m-exchanges-builder-guide** — duplicate-article merge #2
+   above; no new citation work needed on the surviving page itself this run.
+8. **tokenmaxxing-is-over-builder-efficiency-era-routing-deepseek-frontier-2026** — ~9→19 sources.
+   Fixed a misattribution (the "four practices" framework credited to "a Corti analysis" is
+   actually Anthropic's own engineering blog post verbatim) and a cross-contamination error (a
+   "bugs up 54%, code churn up 861%" stat bundled into a Jellyfish paragraph actually belongs to a
+   separate Faros AI report).
+9. **claude-code-credential-sandboxing-config-file-rce-cve-2026-21852-builder-guide** — 5→19
+   sources. Fixed a real CVE mislabeling: "Hooks RCE" was attributed to CVE-2025-59536 (which is
+   actually the unrelated MCP auto-approval bypass); the hooks issue has no CVE, only
+   GHSA-ph6w-f82w-28w6. Corrected inflated "critical" severity to the real CVSS scores (8.7 HIGH
+   and 5.3 MEDIUM/7.5 under NVD 3.1 — neither is critical/9.0+) and fixed fabricated patch-version
+   numbers.
+10. **openai-gpt5-science-acceleration-unutmaz-tcell-builder-guide** — 2→12 sources. Fixed a
+    fabricated quote not found in either the OpenAI blog post or the arXiv paper, and an overstated
+    causal claim ("GPT-5 predicted the experimental outcome before results were available" — the
+    real story is a retrospective blind-test validation, not a live prediction). Also un-conflated
+    two separate OpenAI publications (the Unutmaz T-cell case and the Red Queen Bio wet-lab result)
+    that the piece had wrongly presented as one paper.
+
+**`sources_audited`: +9 this run** (420 → 416 remaining of 1946 total content `*.md` files, count
+down 2 from the two deleted duplicates). Reconciled 7 fabrication-audit.md checkboxes (Qualcomm,
+SK Hynix, the retired Alibaba-distillation duplicate, IBM Daybreak, Menlo Ventures, Tokenmaxxing,
+Claude Code CVE) — **fabrication-audit progress: 120→127/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4175 pages (5 aliases). Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed the prior run's commit (`db1e7edd27`) at run start once the throttle cleared, via rsync,
+`.last_deploy` updated, spot-verified live. This run's new batch (2 duplicate merges + 9 audits) is
+committed and will deploy next run once its own throttle clears.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch is the remainder of the
+  2026-06-29 cluster (agentic-resource-discovery-ard, anthropic-gates-foundation-200m,
+  anthropic-ai-for-science-june-30-briefing, ceo-bench-princeton-500-day, and others — re-run a
+  fresh unaudited-file sweep at the start of next run to confirm the full list).
+- **Deploy this run's commit next run** once the throttle clears.
+- **Check the possible SK Hynix duplicate-article cluster flagged above** (3 candidate pages plus
+  1 reviews-section page) — same kind of check that resolved the two merges this run.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward; check the machine's actual UTC clock each run.
+- Continue the fabrication-audit cohort (127/375) alongside normal duty; check for overlap with
+  next citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283-#2290 — no new action needed until a reply arrives.
+
 ## Run 3495730 (2026-07-31, UTC ~05:32-06:1X) — Deploy prior batch + citation audit, 10 pages (2026-06-28 cluster)
 
 ### Orient
