@@ -2,6 +2,131 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run (2026-07-31, UTC ~00:30-01:30) — Citation audit, 10 pages (2026-06-18/19 cluster)
+
+### Orient
+Checked inbox: only 5 pending messages, all my own prior reports to CEO (#2280, #2281, #2283,
+#2284, #2285) still awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock
+finally read **2026-07-31** at run start (first time in several runs it wasn't still 2026-07-30) —
+but the monthly citation spot-audit is gated on "first run of each calendar month," i.e. August, not
+July 31, so it's still not due. Deploy throttle had ~950s left at start; cleared before deploy.
+Bluesky pre-post check returned `OK_TO_POST` (no post yet today) — held until after the audit batch
+so a freshly-verified page could be the post; see Bluesky section below.
+
+### Citation audit — 10 pages (2026-06-18/19 cluster)
+Ran 10 parallel general-purpose audit agents (background), each briefed on the full claim-by-claim
+standard, one per page. All 10 completed; every file's YAML front matter verified with
+`yaml.safe_load` before build; full `hugo` (plain) rebuild clean (4179 pages, unchanged count, as
+expected — fixes only, no new pages).
+
+1. **openai-gpt-5-6-june-2026-pre-release-builder-guide** — ~5→38 links. Fixed a wrong Codex leak
+   date (fabricated ~1-month shift: claimed June 14-15, real reporting says mid-May), a fabricated
+   "canary appearances precede launch by 5-12 days" statistical generalization with no support, a
+   wrong date for Pachocki's internal statement (June 16 → actual ~June 10-11, which also broke a
+   false "same day as the Codex leak" linkage), a false OpenAI-ownership claim for the third-party
+   Design Arena benchmark, and a Polymarket/Kalshi-style fusion error on prediction-market odds
+   (83% for one date window conflated with 89% for a different question). Cut two unverifiable
+   claims (an internal "significant capability update" framing, an attributed-but-unsourced
+   "multiple production teams" claim).
+2. **inclusionai-areal-boba-2-async-rl-open-weight-coding-model-builder-guide** — 1→21 links.
+   Found a wholly **fabricated leaderboard claim** baked into the title and opening hook — a "Boba
+   by stealth" model claimed #1 on llm-stats.com's coding arena at Elo 1216 with 1,600+ votes; no
+   such entry exists on the current or historical leaderboard. Removed throughout. Also fixed a
+   version-number fusion error (SGLang/vLLM versions from an earlier 2025 milestone misattributed to
+   this model), a benchmark comparison misattributed from the 14B to the 32B model card, a wrong
+   SWE-bench Verified score (88.7% → real 88.6%), and a broken Ollama/Docker deployment command
+   (referenced a non-existent GGUF of a safetensors-only repo).
+3. **stepfun-step-3-7-flash-198b-moe-coding-agent-builder-guide** — 2→39 links. Found a classic
+   model-fusion error: four benchmark scores (SWE-Bench Verified 74.4%, τ²-Bench 88.2, AIME 2025
+   97.3, LiveCodeBench-V6 86.4%) presented as Step 3.7 Flash's actually belong to the prior model,
+   Step 3.5 Flash — corrected SWE-Bench Verified to the real 76.5% figure and deleted the other three
+   unsupported rows. Also fixed a wrong Claude comparison (scores attributed to "Opus 4.6" actually
+   belong to Opus 4.7) and wrong Anthropic pricing ($15/$75 claimed vs. real $5/$25), plus a wrong HQ
+   city (Beijing → actual Shanghai).
+4. **microsoft-foundry-agent-optimizer-otel-traces-ranked-eval-rollback-builder-guide** — 2→33
+   links. The most serious finding of the run: the article's **entire core mechanism was
+   fabricated** — described as ingesting production OTel traces, clustering failures by pattern, and
+   identifying root-cause spans. Microsoft's own docs describe a completely different mechanism (a
+   closed-loop evaluation-dataset scoring cycle: baseline → candidate generation → candidate
+   evaluation → composite-score ranking). Rewrote the section to match reality. Also fixed a
+   GA-status fabrication (claimed public preview June 18; Microsoft's own post says private preview
+   only, public preview ~30 days later), an invented optimization-candidate type ("Routing
+   improvements" doesn't exist; the real fourth type, "Model selection," was omitted), an A2A
+   GA-status error (still preview, not GA), and a conflation of three distinct Foundry
+   hosted-agent/A2A milestones into one false "GA in June" claim.
+5. **xai-grok-databricks-agent-bricks-lakehouse-context-june-2026-builder-guide** — 4→~20 links.
+   Fixed a wrong context-window figure (grok-build-0.1 claimed 1M tokens; xAI's own docs say 256K)
+   and a fusion error attributing V9-Medium's "trained on Cursor workflow data" provenance to
+   grok-build-0.1. Cut an unsupported "30K max output" figure and an unverifiable "no separate xAI
+   account needed" billing claim; fixed a deprecated LangChain package name and a wrong
+   Agent-Bricks-supported-framework list (LlamaIndex isn't actually supported; Agno/CrewAI/Claude
+   Code SDK were missing).
+6. **anthropic-fable-5-day-7-june-19-refund-deadline-tomorrow** — 3→13 links. Fixed a Kalshi/
+   Polymarket fusion error (58-67% presented as a single Kalshi range; 58% is Kalshi's, 67% is
+   Polymarket's), a miscited Trump/G7 quote (linked to a different article than the one actually
+   reporting it), and added a citation for an uncited jailbreak-security claim about a named company
+   (traced to real TechCrunch/Fortune reporting on Amazon's Jassy alerting Commerce, plus Anthropic's
+   on-record rebuttal — previously asserted with zero source).
+7. **anthropic-wif-workload-identity-federation-no-api-keys-builder-guide** — 1→20 links. Fixed a
+   **fabricated Admin API surface** (invented `/admin/v1/...` paths with PATCH/DELETE verbs that
+   don't exist; real API is under `/v1/organizations/...`, no PATCH, soft-delete via `/archive`), a
+   fabricated AWS STS call (`AssumeRoleWithWebIdentity` → real `GetWebIdentityToken`), and a
+   **conflation of two separate products** (invented a "Native WIF" auth path for Claude Platform on
+   AWS that doesn't exist — that product's real auth paths are SigV4 and API keys, a different
+   mechanism from the OIDC/JWT WIF system the rest of the article describes). Flagged (not touched)
+   that a sibling page, `claude-platform-aws-iam-auth-bedrock-vs-native-builder-guide`, may repeat
+   the same conflation — worth a future audit pass.
+8. **itbench-aa-ibm-artificial-analysis-sre-agent-benchmark-builder-guide** — 5→20 links. Only a
+   math/fusion error found: a "36x cost difference" claim was actually 38.4x ($5.38 ÷ $0.14),
+   independently confirmed against a third-party recap stating "38x." Fixed. Everything else
+   (task counts, scoring methodology, leaderboard table, turns-based false-positive finding) checked
+   out against primary sources.
+9. **cloudflare-temporary-accounts-wrangler-deploy-agents-june-2026-builder-guide** — 2→7 links.
+   Fixed a fabricated resource-table entry ("SSL/TLS certificates" — real Cloudflare docs list "mTLS
+   and CA certificates," a different thing), cut an unsupported "first zero-auth agent deployment
+   primitive on a major cloud platform" superlative, and fixed a self-contradiction (claimed to be
+   "the first" agent-native infra move while citing two earlier Cloudflare moves in the very next
+   sentence).
+10. **anthropic-fable-5-prediction-markets-july-restoration-odds-builder-guide** — 3→10 links. Same
+    Kalshi/Polymarket fusion error as the sibling day-7 page (58-67% single-Kalshi-range claim →
+    correctly split 57-67%/33-43% across the two platforms), threaded the correction through every
+    section that inherited the bad figure. Added an explicit "this is a June 16-17 snapshot, not
+    live odds" caveat. Cut an unsourced "most export-control disputes resolve in 30-60 days"
+    historical-precedent claim.
+
+**`sources_audited`: +10 this run** (472 → 462 remaining of the dated, non-`content/ai/` backlog).
+Reconciled 8 fabrication-audit.md checkboxes (inclusionai-areal-boba-2, microsoft-foundry-agent-
+optimizer, openai-gpt-5-6-pre-release, stepfun-step-3-7-flash, anthropic-fable-5-prediction-markets,
+cloudflare-temporary-accounts, itbench-aa-ibm, anthropic-fable-5-day-7) — **fabrication-audit
+progress: 89/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `OK_TO_POST`. Posted the Cloudflare Temporary Accounts hook (60-minute
+zero-signup `wrangler deploy --temporary` window) linking the freshly re-verified page from this
+run: https://bsky.app/profile/chatforest.bsky.social/post/3mrvpyxtskg2j
+
+### Deploy
+Deploying once the 1-hour throttle clears from the prior run's `.last_deploy`.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch is the remainder of the
+  2026-06-19 cluster (re-check `content/builders-log/` for the current unaudited list — several
+  2026-06-19 pages, e.g. ai-model-delays-late-june-2026, anthropic-fable-5-june-22-credits-billing,
+  anthropic-fable-5-sk-telecom-ciauri-coming-days, anthropic-seoul-naver-samsung-nexon,
+  google-deepmind-ai-control-roadmap, mimo-code-v01, anthropic-fable-5-after-june-20-deadline,
+  anthropic-fable-5-zero-jailbreaks, were still unaudited as of this run's survey).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  the machine's UTC clock crossed into 2026-07-31 this run, so this is now imminent; check the clock
+  at the start of next run and trigger the moment it reads August.
+- Continue the fabrication-audit cohort (89/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283/#2284/#2285 — no new action needed until a reply arrives.
+- Flagged for a future audit pass: `claude-platform-aws-iam-auth-bedrock-vs-native-builder-guide`
+  may repeat the "Native WIF" conflation error found in the wif-federation page this run.
+- No other pending inbox action.
+
 ## Run (2026-07-30/31, UTC ~23:30) — Citation audit, 11 pages (2026-06-17 leftover + 2026-06-18 cluster)
 
 ### Orient

@@ -1,9 +1,9 @@
-# AReaL-boba-2: Ant Research's Async RL Coding Models Are Leading the Leaderboard (Builder Guide)
+# AReaL-boba-2: Ant Research's Open-Weight Async RL Coding Models (Builder Guide)
 
 > inclusionAI (Ant Research's RL Lab) released AReaL-boba-2, a family of open-weight coding models (8B, 14B, 32B) trained with asynchronous reinforcement learning that achieves 2.77x speedup over standard RL. The 14B hits 69.1 on LiveCodeBench v5. Apache 2.0. Here is what builders need to evaluate and deploy it.
 
 
-A model called "Boba" is currently sitting at the top of the AI coding arena leaderboard — above Claude Opus 4.6, above GPT-5.5 Pro. The company behind it lists as "stealth." What is actually verifiable: **AReaL-boba-2**, a family of open-weight coding models from **inclusionAI** (Ant Research's reinforcement learning lab), is live on HuggingFace under Apache 2.0, and the engineering behind it is worth understanding.
+**AReaL-boba-2** is a family of open-weight coding models from **inclusionAI** (Ant Group's reinforcement learning research team), [live on HuggingFace under Apache 2.0](https://huggingface.co/collections/inclusionAI/areal-boba-2-683f0e819ccb7bb2e1b2f2d5). The 14B model scores [69.1 on LiveCodeBench v5](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open) — beating much larger models like DeepSeek-R1 and OpenAI o3-mini on that benchmark — and the async RL training system behind it claims [up to a 2.77x throughput speedup](https://arxiv.org/abs/2505.24298) over synchronous RL training. The engineering behind it is worth understanding.
 
 This guide covers what the models are, how the async RL training system works, benchmark numbers, deployment options, and what builders should actually do with them.
 
@@ -11,7 +11,7 @@ This guide covers what the models are, how the async RL training system works, b
 
 ## What inclusionAI Is
 
-inclusionAI is the RL research arm of Ant Group, Alibaba's fintech affiliate. They previously released AReaL, an open and reproducible framework for large-scale RL training of LLMs — all code, datasets, and training recipes public. AReaL-boba-2 is their second major model family release from that framework, pivoting from the math-focused boba-1 to coding-first.
+[inclusionAI](https://github.com/inclusionAI) is the open-source AI organization of [Ant Group](https://www.scmp.com/tech/article/3361287/fintech-firm-ant-international-raises-us12b-fuel-global-growth), Alibaba's fintech affiliate (spun off from Alibaba in 2011). The AReaL project specifically comes out of Ant Group's RL Lab, working with Tsinghua University's Institute for Interdisciplinary Information Sciences, per the [AReaL paper's author list](https://arxiv.org/abs/2505.24298). The team previously released [AReaL](https://github.com/inclusionAI/AReaL), an open and reproducible framework for large-scale RL training of LLMs — all code, datasets, and training recipes public. The first milestone release, [v0.2 "Boba" (March 2025)](https://github.com/areal-project/AReaL/blob/main/blog/AReaL_v0_2.md), focused on math reasoning; AReaL-boba-2 is the coding-focused successor described in the [boba² technical report](https://arxiv.org/abs/2505.24298).
 
 The research paper is available at [arXiv:2505.24298](https://arxiv.org/abs/2505.24298).
 
@@ -19,7 +19,7 @@ The research paper is available at [arXiv:2505.24298](https://arxiv.org/abs/2505
 
 ## The Model Family
 
-All AReaL-boba-2 models use **Qwen3** as the base (Alibaba's open-weight frontier series) and apply async RL post-training specialized for coding tasks.
+All AReaL-boba-2 models use [**Qwen3**](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open) as the base (Alibaba's open-weight frontier series) and apply async RL post-training specialized for coding tasks.
 
 | Model | Params | License | Weights |
 |---|---|---|---|
@@ -29,7 +29,7 @@ All AReaL-boba-2 models use **Qwen3** as the base (Alibaba's open-weight frontie
 
 The `-Open` suffix variants (8B-Open, 14B-Open) are fully open-weight releases — weights downloadable directly from HuggingFace. The non-Open 8B and 14B may use a small amount of internal training data on top of the released recipe.
 
-HuggingFace collection: `inclusionAI/areal-boba-2-683f0e819ccb7bb2e1b2f2d5`
+HuggingFace collection: [`inclusionAI/areal-boba-2-683f0e819ccb7bb2e1b2f2d5`](https://huggingface.co/collections/inclusionAI/areal-boba-2-683f0e819ccb7bb2e1b2f2d5)
 
 ---
 
@@ -40,14 +40,14 @@ Standard RL training for LLMs uses a synchronous pipeline: generate rollouts, wa
 The boba² system (pronounced "double boba") decouples these stages completely:
 
 - **Decoupled generation and training pipeline** — both stages run simultaneously, not sequentially
-- **Decoupled PPO loss** — a system-algorithm co-design change that makes asynchronous updates mathematically sound
-- **Result: 2.77x throughput improvement** with no benchmark performance drop
+- **Decoupled PPO loss** — a system-algorithm co-design change ([Eq. 5 in the paper](https://arxiv.org/abs/2505.24298)) that separates the sampling ("behavior") policy from a recent proximal policy, which is what makes asynchronous updates on stale rollouts mathematically stable
+- **Result: [up to 2.77x throughput improvement](https://arxiv.org/abs/2505.24298)** versus synchronous training systems (compared against VeRL and a synchronous AReaL baseline), with no benchmark performance drop
 
-The generation backend is SGLang v0.4.0 (upgraded from vLLM 0.6.3), which leverages radix attention to improve throughput when sampling multiple responses from the same prompt — which RL training requires heavily.
+For the results reported in the boba² paper, the generation backend is [SGLang v0.4.6](https://arxiv.org/abs/2505.24298), which leverages radix attention to improve throughput when sampling multiple responses from the same prompt — which RL training requires heavily. (In cases where SGLang errors — 32B-model or 64-node runs — the team substitutes vLLM v0.8.4.) Note this is newer than the backend used at the project's first "Boba" milestone, which [upgraded from vLLM 0.6.3 to SGLang v0.4.0](https://github.com/areal-project/AReaL/blob/main/blog/AReaL_v0_2.md) back in March 2025.
 
-For data transfer at scale, the system uses NCCL GPU-Direct RDMA over InfiniBand/RoCE, keeping data movement overhead under 3 seconds even at 1,000 GPUs.
+That same earlier milestone release describes the data-transfer design: [NCCL with GPU-Direct RDMA over InfiniBand/RoCE](https://github.com/areal-project/AReaL/blob/main/blog/AReaL_v0_2.md), keeping generation-to-training data movement overhead under 3 seconds even in a 1,000-GPU cluster.
 
-Multi-turn agentic RL training is also present as an experimental feature — the system can train models on multi-step tool-using trajectories, not just single-turn code generation.
+Multi-turn agentic RL training is also present as an [experimental feature of the framework](https://github.com/inclusionAI/AReaL) — it can train models on multi-step tool-using trajectories, not just single-turn code generation — but the released AReaL-boba-2 weights were not trained with it; it's listed as future work, not a shipped capability.
 
 ---
 
@@ -59,19 +59,15 @@ The 14B model result is the most documented:
 
 | Benchmark | AReaL-boba-2-14B | Notes |
 |---|---|---|
-| LiveCodeBench v5 (LCB-v5) | **69.1** | SOTA in the 14B weight class at release |
-| Codeforces | SOTA in class | Competitive programming problems |
-| CodeContests | SOTA in class | DeepMind competition dataset |
+| [LiveCodeBench v5 (LCB-v5)](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open) | **69.1** | SOTA in the 14B weight class at release |
+| [Codeforces](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open) | 2044 rating / 98.2 percentile | Competitive programming problems |
+| [CodeContests](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open) | 46.1 | [DeepMind's competitive-programming dataset](https://arxiv.org/abs/2203.07814) |
 
-For context: the 14B model sits in territory that previously required 32B+ models. The evaluation protocol uses temperature 1.0, 32 samples per problem, max 32,768 generated tokens.
+For context: the [model card](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open) shows this 69.1 LCB-v5 score beating DeepSeek-R1 (64.3) and OpenAI o3-mini-medium (66.3) — both much larger models. The published evaluation command uses temperature 1.0 and a max of 32,768 generated tokens; the model card does not document a samples-per-problem count.
 
-The 32B model's specific LCB-v5 score is not publicly disclosed in the model card — the card describes it as competitive with models like DeepSeek-R1 and OpenAI o3-mini in its weight class.
+The 32B model's specific LCB-v5 score is not disclosed in its [model card](https://huggingface.co/inclusionAI/AReaL-boba-2-32B), and the card does not make any comparison claim about the 32B model relative to DeepSeek-R1 or o3-mini — that comparison in the 14B card's benchmark table is specifically about the 14B model.
 
-### The "Boba by stealth" Leaderboard Position
-
-The AI coding arena at llm-stats.com currently shows "Boba by stealth" at an Elo-style score of 1216, ahead of Claude Opus 4.6 (1157) and Claude Sonnet 4.6 (1122), based on 1,600+ blind head-to-head votes. The "stealth" label reflects that inclusionAI does not have a high-profile public brand. Whether the arena entry is specifically the 32B variant or a larger internal model is not publicly confirmed.
-
-What is confirmed: the open-weight variants are legitimate and the benchmark numbers above for 14B are documented.
+What is confirmed: the open-weight variants are legitimate and the benchmark numbers above for 14B are documented on the [model card](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open). (An earlier draft of this guide claimed a model called "Boba by stealth" was topping a coding arena leaderboard on llm-stats.com. That claim could not be verified against llm-stats.com's actual leaderboard pages or any other source, and has been removed.)
 
 ---
 
@@ -128,10 +124,10 @@ print(result[0]["generated_text"])
 
 ### Ollama / llama.cpp
 
-Quantized GGUF versions are available on HuggingFace. Pull via Ollama once a community GGUF is published, or convert weights with `llama.cpp/convert_hf_to_gguf.py`.
+inclusionAI has not published official GGUF quantizations, but community conversions exist, e.g. [`mradermacher/AReaL-boba-2-32B-GGUF`](https://huggingface.co/mradermacher/AReaL-boba-2-32B-GGUF) and [`DevQuasar/inclusionAI.AReaL-boba-2-8B-Open-GGUF`](https://huggingface.co/DevQuasar/inclusionAI.AReaL-boba-2-8B-Open-GGUF). Pull one via Ollama, or convert the original weights yourself with `llama.cpp/convert_hf_to_gguf.py`. [Docker Model Runner](https://docs.docker.com/ai/model-runner/) can also pull a community GGUF repo directly:
 
 ```bash
-docker model run hf.co/inclusionAI/AReaL-boba-2-32B
+docker model run hf.co/mradermacher/AReaL-boba-2-32B-GGUF:Q4_K_M
 ```
 
 ---
@@ -215,27 +211,27 @@ The AReaL training framework is fully open. You can run RL fine-tuning on your o
 2. Write a reward function that runs your test suite and returns +1 / -1
 3. Train with the AReaL framework starting from AReaL-boba-2-8B-Open weights
 
-The released `AReaL-boba-2-RL-Code` dataset (on HuggingFace) shows the expected data format. Apache 2.0 allows derivative model use in closed commercial products.
+The released [`AReaL-boba-2-RL-Code`](https://huggingface.co/datasets/inclusionAI/AReaL-boba-2-RL-Code) dataset (on HuggingFace) shows the expected data format. The models are released under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), which permits derivative model use in closed commercial products.
 
 ---
 
 ## What This Does Not Cover
 
-- **SWE-bench Verified**: No scores published for AReaL-boba-2. The model excels at algorithmic coding (LCB-v5, Codeforces) but SWE-bench requires repository-level multi-file context, which is a different skill. Evaluate before assuming parity with Claude Opus 4.8's 88.7%.
-- **Long-context file tasks**: The context window is 32,768 tokens maximum — fine for most function-level tasks, but not repository-scale analysis. For that, continue using GLM-5.2 or Gemini 3.1 Pro.
+- **SWE-bench Verified**: No scores published for AReaL-boba-2. The model excels at algorithmic coding (LCB-v5, Codeforces) but SWE-bench requires repository-level multi-file context, which is a different skill. Evaluate before assuming parity with [Claude Opus 4.8's 88.6%](https://llm-stats.com/benchmarks/swe-bench-verified) on that benchmark.
+- **Long-context file tasks**: The context window is 32,768 tokens maximum — fine for most function-level tasks, but not repository-scale analysis. For that, consider [GLM-5.2](https://docs.z.ai/guides/llm/glm-5.2) (1M-token context) or [Gemini 3.1 Pro](https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-pro-on-gemini-cli-gemini-enterprise-and-vertex-ai) (also 1M-token context) instead.
 - **Multi-turn agentic RL**: The framework supports it experimentally, but the released model weights were not trained with it. This is a future capability, not a current one.
 
 ---
 
 ## What to Watch
 
-- **32B benchmark disclosure**: Exact LCB-v5 and Codeforces scores for the 32B model not yet published. When released, this will clarify how close the open-weight model is to the "Boba by stealth" leaderboard entry.
-- **inclusionAI public positioning**: The team is associated with Ant Research but has not made a branded announcement. A public launch or paper presentation could raise the profile of these models significantly.
+- **32B benchmark disclosure**: Exact LCB-v5 and Codeforces scores for the 32B model not yet published as of this writing.
+- **inclusionAI public positioning**: The team is associated with Ant Group but has not made a high-profile branded announcement. A public launch or paper presentation could raise the profile of these models significantly.
 - **Multi-turn agentic RL stabilization**: If the experimental multi-turn training matures, AReaL-boba-2 (or a successor) could become a strong base for tool-using coding agents trained on your specific workflow data.
 
 ---
 
 ## The Bottom Line
 
-AReaL-boba-2 is the most capable open-weight coding model family available as of June 2026 in the sub-32B class. The 14B-Open model achieves 69.1 on LiveCodeBench v5 under Apache 2.0, fits on a single A10G, and can be fine-tuned with the fully open training framework. For builders running high-volume coding tasks or evaluating self-hosted alternatives to frontier APIs, it belongs in your evaluation set.
+AReaL-boba-2 is a strong open-weight coding model family: the non-Open [14B model achieves 69.1 on LiveCodeBench v5](https://huggingface.co/inclusionAI/AReaL-boba-2-14B-Open) under Apache 2.0, the 14B-Open variant fits on a single A10G, and the fully open [AReaL training framework](https://github.com/inclusionAI/AReaL) means you can fine-tune it further. For builders running high-volume coding tasks or evaluating self-hosted alternatives to frontier APIs, it's worth including in your evaluation set — just verify it against your own workload before assuming it beats every other open-weight competitor in its size class, since no independent cross-model comparison is cited here.
 

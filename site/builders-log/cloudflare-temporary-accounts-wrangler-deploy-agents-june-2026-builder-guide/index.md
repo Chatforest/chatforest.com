@@ -7,7 +7,7 @@
 
 On June 19, 2026, Cloudflare shipped [Temporary Accounts](https://blog.cloudflare.com/temporary-accounts/): a feature that lets AI coding agents deploy a Cloudflare Worker with no account, no OAuth flow, and no human in the loop. One CLI flag. Sixty minutes of live hosting. A URL the human can claim to keep it.
 
-This is the first zero-auth agent deployment primitive on a major cloud platform, and it solves a specific friction point that every builder who runs coding agents has hit.
+It solves a specific friction point that every builder who runs coding agents has hit.
 
 ---
 
@@ -28,7 +28,7 @@ Background agents cannot do any of this. They either pause and prompt a human ("
 
 ## How Temporary Accounts Work
 
-Cloudflare added one flag to Wrangler: `--temporary`.
+Cloudflare added one flag to Wrangler: [`--temporary`](https://developers.cloudflare.com/workers/platform/claim-deployments/).
 
 ```bash
 wrangler deploy --temporary
@@ -38,15 +38,15 @@ Running this as an unauthenticated agent:
 
 1. Cloudflare provisions a temporary account with a new API token
 2. The Worker deploys immediately under that account
-3. Wrangler prints a claim URL the agent can surface to the user
+3. Wrangler prints a [claim URL](https://developers.cloudflare.com/workers/platform/claim-deployments/) the agent can surface to the user
 
-The temporary account stays live for **60 minutes**. During that window:
+The temporary account stays live for **[60 minutes](https://developers.cloudflare.com/workers/platform/claim-deployments/)**. During that window:
 
-- The agent can redeploy multiple times, iterating on the code while reusing the same account credentials
+- The agent can [redeploy multiple times](https://developers.cloudflare.com/workers/platform/claim-deployments/), iterating on the code while reusing the same account credentials (Wrangler caches and reuses the account while its credentials and claim URL remain valid)
 - The human can open the claim URL in a browser to make the account permanently their own
 - If unclaimed, the account and all its resources auto-delete at the 60-minute mark
 
-Wrangler 4.102.0+ is required. To limit abuse, the CLI includes a proof-of-work challenge for unauthenticated deployments — lightweight enough that agents don't notice it, expensive enough to deter mass account provisioning.
+[Wrangler 4.102.0+](https://developers.cloudflare.com/workers/platform/claim-deployments/) is required. To limit abuse, the CLI includes a [proof-of-work challenge](https://developers.cloudflare.com/workers/platform/claim-deployments/) for unauthenticated deployments — a short automatic delay lightweight enough that agents don't notice it, harder to script at scale for mass account provisioning.
 
 ---
 
@@ -63,7 +63,9 @@ Temporary accounts support the full range of Cloudflare's serverless primitives:
 | Durable Objects | Yes |
 | Hyperdrive | Yes |
 | Queues | Yes |
-| SSL/TLS certificates | Yes |
+| mTLS and CA certificates | Yes |
+
+Source: [Cloudflare's claim-deployments resource support table](https://developers.cloudflare.com/workers/platform/claim-deployments/).
 
 This covers the majority of agent-useful infrastructure. An agent can deploy a Worker with a D1 database backend and KV session storage in a single `wrangler deploy --temporary` call.
 
@@ -71,7 +73,7 @@ This covers the majority of agent-useful infrastructure. An agent can deploy a W
 
 ## Discovery Without Human Instruction
 
-One design detail worth noting: Wrangler's unauthenticated flow now prompts about `--temporary` automatically.
+One design detail worth noting: Wrangler's unauthenticated flow now [prompts about `--temporary` automatically](https://blog.cloudflare.com/temporary-accounts/).
 
 When an agent runs `wrangler deploy` without credentials, the CLI outputs a message highlighting the `--temporary` flag. The agent doesn't need to be pre-programmed with knowledge of this capability — it can discover it from the error message and retry.
 
@@ -85,9 +87,9 @@ This matters because it means agents written *before* Temporary Accounts shipped
 
 The temporary account pattern shifts deployment from "the human authenticates, then the agent deploys" to "the agent deploys, then the human claims." If your agent is generating prototypes, demo endpoints, or staging environments, this removes a synchronous human step from the critical path. The human only needs to be involved if they want to keep the output.
 
-**2. This is the first, not the last.**
+**2. This is part of a pattern, not a one-off.**
 
-Cloudflare has been building toward agent-native infrastructure systematically: the Stripe Projects integration (April 30) let agents create permanent accounts by routing through a payment-attested identity flow. Temporary Accounts is the simpler, no-payment version — suitable for evaluation and prototyping rather than production deployments with billing. Expect other platforms to ship similar primitives as coding agents become standard outputs of developer workflows.
+Cloudflare has been building toward agent-native infrastructure systematically: the [Stripe Projects integration](https://blog.cloudflare.com/agents-stripe-projects/) (April 30, 2026) let agents create permanent accounts by routing through a Stripe-attested identity and payment flow. Temporary Accounts is the simpler, no-payment version — suitable for evaluation and prototyping rather than production deployments with billing. Expect other platforms to ship similar primitives as coding agents become standard outputs of developer workflows.
 
 **3. Think carefully about the 60-minute window in your UX.**
 
@@ -101,7 +103,7 @@ The built-in challenge prevents mass free-hosting abuse, but it doesn't limit wh
 
 ## Where This Fits
 
-Cloudflare Agents Week (April 2026) shipped the infrastructure foundations: [disaggregated prefill and lossless weight compression](/builders-log/cloudflare-agents-week-2026-infire-disaggregated-prefill-unweight-llm-inference/) for the serving layer, Sandboxes GA for persistent isolated agent compute, Workflows v2 for 50,000-concurrency durable background execution.
+Cloudflare Agents Week (April 2026) shipped the infrastructure foundations: [disaggregated prefill and lossless weight compression](/builders-log/cloudflare-agents-week-2026-infire-disaggregated-prefill-unweight-llm-inference/) for the serving layer, [Sandboxes GA](https://blog.cloudflare.com/sandbox-ga/) for persistent isolated agent compute, [Workflows v2](https://developers.cloudflare.com/changelog/post/2026-04-15-workflows-limits-raised/) for 50,000-concurrency durable background execution.
 
 Temporary Accounts is a different kind of shipping: not infrastructure for running agents, but infrastructure for what agents *produce*. It's the deployment side of the agentic development loop.
 

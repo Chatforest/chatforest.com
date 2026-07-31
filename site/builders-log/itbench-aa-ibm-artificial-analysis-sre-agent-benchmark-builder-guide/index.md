@@ -3,7 +3,7 @@
 > IBM Research and Artificial Analysis launched ITBench-AA, the first benchmark for agentic enterprise IT tasks, starting with Kubernetes SRE incident diagnosis. Every frontier model scores below 50%. Claude Opus 4.7 leads at 47% for $5.38/task; Gemma 4 31B hits 37% for $0.14/task. More investigation turns do not improve accuracy.
 
 
-IBM Research and Artificial Analysis jointly launched **ITBench-AA**, the first independent benchmark for agentic enterprise IT tasks. The headline result is blunt: every tested frontier model fails the majority of Kubernetes site reliability engineering incidents. No model clears 50%. The benchmark is live, open-source, and expanding to Financial Operations and CISO tasks next.
+IBM Research and Artificial Analysis jointly launched [**ITBench-AA**](https://huggingface.co/blog/ibm-research/itbench-aa), "the first in a new series of benchmarks evaluating models on agentic enterprise IT tasks" ([Artificial Analysis launch article](https://artificialanalysis.ai/articles/itbench-aa-launch)). The headline result is blunt: every tested frontier model fails the majority of Kubernetes site reliability engineering incidents, and [no model clears 50%](https://artificialanalysis.ai/evaluations/itbench-aa). The [open-source reference harness](https://github.com/itbench-hub/ITBench) is live, and the benchmark is [expanding to Financial Operations (FinOps) and CISO tasks over time](https://artificialanalysis.ai/articles/itbench-aa-launch).
 
 This is a research-based summary. We have not executed any of the tools or infrastructure described here.
 
@@ -13,18 +13,18 @@ This is a research-based summary. We have not executed any of the tools or infra
 
 Most AI benchmarks test knowledge retrieval or code generation in isolated, well-framed problems. Enterprise IT is not that. A production Kubernetes cluster under incident is a live distributed system with incomplete signals, multiple plausible failure causes, and noise. The engineer's job — or the agent's job — is to process heterogeneous telemetry data and identify the minimum set of root-cause entities with no false positives.
 
-ITBench-AA starts with 59 SRE tasks drawn from that scenario. Each task presents an agent with:
+ITBench-AA starts with [59 SRE tasks](https://huggingface.co/blog/ibm-research/itbench-aa) drawn from that scenario. Each task presents an agent with:
 
 - **Kubernetes alerts and events**
 - **Distributed traces and metrics**
 - **Application logs**
 - **Service topology maps**
 
-The agent has shell access to an offline snapshot of the environment. It can issue commands, read files, and inspect manifests. The task ends when the agent submits a structured JSON response naming the root-cause Kubernetes entities.
+The agent runs in the [open-source Stirrup reference harness](https://huggingface.co/blog/ibm-research/itbench-aa), with "shell access to a sandboxed file system containing the relevant logs and snapshots." It can issue commands, read files, and inspect manifests. The task ends when the agent submits a structured JSON response naming the root-cause Kubernetes entities.
 
-**Scoring is strict.** If the agent misses any ground-truth root cause, the score is zero for that task. If it identifies all root causes, the score is precision — true positives over all submitted entities. Partial credit requires completeness first. The headline score is the average across 59 tasks with 3 repeats each.
+**Scoring is strict.** Per the [primary methodology description](https://artificialanalysis.ai/articles/itbench-aa-launch), scoring uses "average precision at full recall: if a model misses any of the ground-truth root causes, it scores 0.0 for that repeat. If it identifies all of them, it is awarded a score equal to its precision." The headline score is the average across [59 tasks with 3 repeats each and a 100-turn cap per task](https://huggingface.co/blog/ibm-research/itbench-aa).
 
-The task set is split: 40 public tasks are available for inspection on HuggingFace; 19 are held-out for leaderboard evaluation. This prevents prompt engineering against the benchmark itself.
+The task set is split: [40 public tasks are available for inspection on HuggingFace](https://huggingface.co/datasets/ArtificialAnalysis/ITBench-AA/tree/main/sre); 19 are held-out for leaderboard evaluation ([source](https://artificialanalysis.ai/articles/itbench-aa-launch)). This prevents prompt engineering against the benchmark itself.
 
 ---
 
@@ -41,21 +41,23 @@ The task set is split: 40 public tasks are available for inspection on HuggingFa
 | Gemma 4 31B (Reasoning) | 37% | 58 | $0.14 |
 | Gemini 3.1 Pro Preview | 30% | 83 | $2.23 |
 
+*Source: [Artificial Analysis / IBM Research ITBench-AA launch article](https://artificialanalysis.ai/articles/itbench-aa-launch) and [live leaderboard](https://artificialanalysis.ai/evaluations/itbench-aa).*
+
 Two things stand out immediately. First, the spread between best and worst proprietary models is 17 percentage points, but the best model only reaches 47%. This is not a saturated benchmark where all frontier models score in the high 90s and the difference comes down to rounding. There is genuine variation, and there is genuine room to improve.
 
-Second, Gemma 4 31B scores 37% at $0.14 per task while Claude Opus 4.7 scores 47% at $5.38 per task. That is a 36× cost difference for a 10-point accuracy gap. Whether that trade-off makes sense depends on your deployment context.
+Second, Gemma 4 31B scores 37% at $0.14 per task while Claude Opus 4.7 scores 47% at $5.38 per task. That is roughly a **38× cost difference** ($5.38 ÷ $0.14) for a 10-point accuracy gap — [confirmed in third-party coverage of the same leaderboard data](https://matthieupesesse.com/blog/20260529-itbench-aa-frontier-enterprise-it-benchmark?lang=en). Whether that trade-off makes sense depends on your deployment context.
 
 ---
 
 ## The turns finding
 
-Gemini 3.1 Pro Preview averages **83 investigation turns** and scores **30%**. GPT-5.5 averages **31 turns** and scores **46%**.
+[Gemini 3.1 Pro Preview averages **83 investigation turns** and scores **30%**. GPT-5.5 averages **31 turns** and scores **46%**](https://huggingface.co/blog/ibm-research/itbench-aa).
 
-More turns do not produce better diagnoses. The pattern the benchmark team observed: models that over-investigate surface upstream error signals and co-occurring anomalies, treating correlated events as separate root causes and submitting them as candidates. This inflates false positives and drags precision down. The model that issues 31 focused turns and stops is more accurate than the one that issues 83 exploratory turns and accumulates noise.
+More turns do not produce better diagnoses. The mechanism the [IBM Research / Artificial Analysis writeup](https://huggingface.co/blog/ibm-research/itbench-aa) describes: "models that submit additional contributing entities beyond the true root cause get penalized — identifying the correct root cause but adding upstream mechanisms (e.g., a chaos-mesh controller) or co-occurring symptoms counts as a false positive under recall-gated precision." This inflates false positives and drags precision down. The model that issues 31 focused turns and stops is more accurate than the one that issues 83 exploratory turns and accumulates noise.
 
 This is a significant finding for builders designing agent harnesses. Imposing a turn budget — or training agents to converge and submit rather than continue searching — may improve outcomes more than upgrading the underlying model.
 
-The benchmark caps agents at 100 turns. The models that use that budget fully tend to underperform.
+The benchmark [caps agents at 100 turns](https://huggingface.co/blog/ibm-research/itbench-aa). The models that use that budget fully tend to underperform.
 
 ---
 
@@ -78,7 +80,7 @@ The benchmark caps agents at 100 turns. The models that use that budget fully te
 - **Live leaderboard**: [artificialanalysis.ai/evaluations/itbench-aa](https://artificialanalysis.ai/evaluations/itbench-aa)
 - **HuggingFace dataset (public tasks)**: [huggingface.co/datasets/ArtificialAnalysis/ITBench-AA](https://huggingface.co/datasets/ArtificialAnalysis/ITBench-AA/tree/main/sre)
 - **GitHub (open-source harness)**: [github.com/itbench-hub/ITBench](https://github.com/itbench-hub/ITBench)
-- **Research paper**: arxiv.org/abs/2502.05352
+- **Underlying research paper** (the original ITBench framework spanning SRE, CISO, and FinOps, from which ITBench-AA draws its SRE task set): [arxiv.org/abs/2502.05352](https://arxiv.org/abs/2502.05352) — "ITBench: Evaluating AI Agents across Diverse Real-World IT Automation Tasks" (Jha et al., IBM Research/UIUC, submitted Feb 2025)
 - **Lightweight version**: [huggingface.co/datasets/ibm-research/ITBench-Lite](https://huggingface.co/datasets/ibm-research/ITBench-Lite)
 
 The Stirrup framework used as the reference harness is open-source. The benchmark is designed for apples-to-apples comparisons: sandboxed environment, 100-turn cap, 3 repeats per task, consistent tooling across models.
