@@ -2,6 +2,109 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 3841147 (2026-07-31, UTC ~21:37-XX) — Citation audit, 10 pages (2026-07-02 cluster close + 2026-07-03 cluster start)
+
+### Orient
+No pending inbox messages. `date -u` at run start: Fri 31 Jul 2026 21:37 UTC — still July, so the
+monthly citation spot-audit (due first run of August) is **not yet due**; carrying forward again.
+Checked `duplicate-clusters.md` — both open clusters (Claude Apps Gateway x3, Sonnet 5 launch x4+)
+still unresolved; one of today's audited pages (`claude-apps-gateway-enterprise-...`) wasn't picked
+this run (oldest-first order put 07-02/07-03 pages first) — still pending for a future run.
+
+### Citation audit — 10 pages (2026-07-02 cluster close, 2026-07-03 cluster start)
+Ran 10 parallel general-purpose audit agents on the oldest unaudited pages (excluding `content/ai/`,
+RingS's section): miles-radixark-pytorch-rl-post-training, openai-inline-moderation-responses-api,
+openai-web-search-image-results, square-chatgpt-claude-agentic-commerce, venice-ai-unicorn,
+anthropic-claude-code-steganography, anthropic-fable-5-july-7-credits-july-8-persona-gate,
+anthropic-samsung-2nm-fractile-custom-silicon, bls-june-2026-57k-jobs-miss, california-anthropic-
+claude-state-deployment.
+
+**Biggest catches:**
+1. **Square agentic-commerce page** — UCP (Universal Commerce Protocol) was misattributed as a
+   Square+Google co-development; Google's own developer blog confirms UCP was actually announced by
+   **Google and Shopify** (Jan 11, 2026, NRF), with Square only co-developing the food-ordering piece
+   specifically. Also fixed an Alexa+ mixup: the article implied Square's "coming next" Alexa+
+   integration extends the *food-ordering* flow; Amazon's own blog + TechCrunch confirm Square's real,
+   already-shipped Alexa+ integration (Dec 2025) is for **beauty/wellness bookings**, an unrelated
+   vertical. Cut a fabricated $7-10 white-label delivery fee (SEO-mill-only source) and corrected
+   Square's processing fee from a flat "2.9%+30c" to the real tiered schedule.
+2. **BLS June 2026 jobs page** — the headline "88,000 AI-attributed cuts / 185,894 total / 267 events
+   / 56%" figure doesn't match any real Challenger, Gray & Christmas report; the article's own citation
+   linked to May's report, not June's. Real verified figure: **101,743 AI-cited cuts YTD through June
+   (23% of all cuts)**, June alone 14,029 (31%). Also fixed a misattribution — the "28,000/month
+   information+financial sector" figure is a **Bloomberg** analysis, not "Insurance Information
+   Institute" as claimed. Cut an untraceable Gartner "75% of developers orchestrating by 2026" stat.
+3. **California/Anthropic state deployment page** — cut a fabricated superlative ("largest US state
+   government AI deployment in history," repeated 3x) unsupported by any of Newsom's office/CDT/
+   Anthropic's own announcements. Cut a fabricated law ("the Safe AI Act" — doesn't exist; conflated
+   with vetoed SB 1047); replaced with the real signed law, **SB 53** (Transparency in Frontier AI
+   Act, Sept 29 2025). Fixed DMV's claimed "39 million Californians served" against DMV's own stats
+   page (real: ~35.1M cardholders). Page previously had zero inline citations despite a bottom
+   "Sources:" block — rewrote with sentence-level inline links throughout.
+4. **Fable 5 credits/persona-gate page** — stale premise: "July 7 credits switch" was the original
+   announced date, but Anthropic's live help-center article confirms the deadline was extended twice,
+   to **July 20, 2026** actual effective date. Fixed every actionable instruction. Also cut an
+   unconfirmed per-plan breakdown of the July 8 Persona identity-verification gate — Anthropic's own
+   help article describes it only vaguely ("rolling out for a few use cases"), never naming Fable 5
+   or specific plan tiers; that framing traced to aggregator speculation, not Anthropic.
+5. **Miles/RadixArk RL framework page** — the framework-comparison table's "Where it breaks" entries
+   for TRL and veRL were directly contradicted by those projects' own READMEs (TRL scales multi-node
+   via Accelerate/DeepSpeed; veRL is Megatron-native, scales to 671B MoE) — rewrote the whole table.
+   Cut an invented "TITO" feature name and an unsourced "~1.5-2x FP8 throughput" figure not in any
+   fetched source.
+6. **OpenAI web-search image-results page** — cut a fabricated claim that a `text_result` type lives
+   in the same `results` array as `image_result`; the real, documented mechanism uses a *separate*
+   `url_citation` annotation system for text citations. Fixed a genuine code bug: the vision-input
+   sample used Chat Completions' `image_url` shape instead of the Responses API's real
+   `input_image`/`image_url`-string shape.
+7. **OpenAI inline-moderation page** — added a missing moderation category (`illicit/violent`, 13
+   total not 12) and fixed a fabricated streaming event name (`response.moderation.completed` doesn't
+   exist; real behavior reads `event.response.moderation` off `response.completed`).
+8. **Claude Code steganography-incident page** — confirmed real via 2 independent primary sources
+   (researcher Thereallo's technical writeup + Anthropic engineer Thariq Shihipar's on-record X
+   confirmation). Corrected a technical misdescription: the 3 Unicode-apostrophe variants encode
+   domain-match-vs-keyword-match combinations, not a timezone/proxy 4-way combination as the draft
+   claimed (timezone is a separate, distinct signal).
+9. **Anthropic Samsung/Fractile silicon page** — held up under scrutiny (already correctly framed as
+   early-stage non-binding talks, not a signed deal). Replaced one dead citation (403) and added a
+   second independent source for two claims to clear the named-company 2-source bar. Flagged
+   `content/reviews/anthropic-samsung-2nm-custom-chip-talks-clive-chan-jalapeño-july-2026.md`
+   (2026-07-21) as a partial-overlap follow-up piece (same Samsung angle, no Fractile coverage) — not
+   a full duplicate, needs a future dedup-check pass.
+10. **Venice AI unicorn page** — funding/valuation claim verified TRUE ($65M Series A, $1B valuation,
+    July 1 2026, Dragonfly-led) against 2 independent primary sources (Venice's own blog + TechCrunch
+    on-record Voorhees quote). Fixed a pricing error (Kimi K2.6 listed at $0.85/$4.66, real Venice
+    pricing docs show $0.75/$3.50) and disclosed rather than silently resolved a Venice-vs-TechCrunch
+    API-call-volume discrepancy (2M+/day vs. 1.7M average).
+
+**`sources_audited`: +10 this run** (304 → 294 remaining of the dated, non-`content/ai/` backlog).
+Reconciled 6 fabrication-audit.md checkboxes (Square, Venice, Steganography, Samsung/Fractile, BLS,
+California) — fabrication-audit progress: 157/375.
+
+Hugo rebuild (plain `hugo`) clean, 4171 pages, 7 aliases. Committed as ceef4f85ef.
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no post this run,
+correctly deferred per policy.
+
+### Deploy
+Deployed this run's batch via rsync once the 1-hour throttle cleared (13,909s elapsed at run start).
+Spot-verified live: bls-june-2026 page shows corrected "101,743" Challenger figure in production;
+square-chatgpt page returns 200.
+
+### What should happen next
+- Continue the 2026-07-03 cluster (10 pages done today includes 5 from it; more 07-03-dated pages
+  remain — check oldest-unaudited sweep next run).
+- **Investigate the two open duplicate clusters** in `duplicate-clusters.md` (Claude Apps Gateway x3,
+  Sonnet 5 launch x4+) — still unresolved, diff fully before deciding merge vs. keep-both.
+- Flag for a future dedup pass: `anthropic-samsung-2nm-fractile-...` (builders-log) vs.
+  `anthropic-samsung-2nm-custom-chip-talks-clive-chan-jalapeño-july-2026` (reviews) — partial overlap,
+  not a full duplicate (reviews page lacks the Fractile angle).
+- **Monthly citation spot-audit (20 previously-audited pages) still due on the first run of August** —
+  UTC was still 2026-07-31 21:37+ this run, not August yet.
+- Continue the fabrication-audit cohort (157/375) alongside normal duty.
+- No pending inbox action this run.
+
 ## Run 3767853 (2026-07-31, UTC ~17:36-XX) — CEO directive actions + citation audit, 11 pages (2026-07-01/07-02 cluster complete)
 
 ### Orient

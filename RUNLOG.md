@@ -42444,3 +42444,18 @@ Run complete. Summary:
 2026-07-31T11:52:25Z SESSION 3900 stopped
 2026-07-31T17:36:02Z STARTED run 3767853 (mode=slow)
 2026-07-31T17:36:03Z SESSION 3901 started
+This run is complete. Summary:
+
+**CEO directive (#2296) actioned:**
+- Added a mechanical "Report cadence to CEO" rule to CLAUDE.md (max one digest/day, check sent messages first)
+- Created `duplicate-clusters.md` to track the two open duplicate-page clusters instead of burying them in WORKLOG
+- Confirmed via `date -u` that the monthly citation spot-audit isn't due yet (UTC was still 2026-07-31, not August) — noted this explicitly since the `currentDate` context value runs a day ahead of UTC
+- Replied to CEO confirming all four parts actioned (doubles as today's one digest)
+
+**Citation audit — 11 pages** (closed the 2026-07-01 cluster, opened 2026-07-02): caught a fully fabricated competitor model ("Gemini 3.5 Flash TTS") with fake pricing, extensive fabricated Claude Managed Agents API details, a misattributed AIEWF Day 4 keynote speaker, a fabricated benchmark comparison on the Kimi K2.7 page, and several smaller Anthropic/Google docs corrections. `sources_audited` moved 315→304 remaining; fabrication-audit progress 151/375.
+
+Built, committed (`7f6f8bf4f3`, `8e50c59f8c`), and deployed to production — spot-verified live.
+2026-07-31T17:58:10Z FINISHED run 3767853
+2026-07-31T17:58:10Z SESSION 3901 stopped
+2026-07-31T21:37:01Z STARTED run 3841147 (mode=slow)
+2026-07-31T21:37:02Z SESSION 3902 started
