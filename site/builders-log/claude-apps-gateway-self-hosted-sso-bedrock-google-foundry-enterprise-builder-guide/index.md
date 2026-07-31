@@ -3,7 +3,7 @@
 > Anthropic shipped a self-hosted gateway that puts corporate SSO between developers and Claude Code — no API keys on dev machines, per-group model access, and OTLP telemetry to your own stack. Here's the architecture and exactly what builders need to know.
 
 
-On June 29, 2026, Anthropic released the **Claude apps gateway** — a self-hosted control plane built into the `claude` binary that sits between your developers' Claude Code clients and whatever model provider you use. It ships as a standard stateless Linux container backed by PostgreSQL. Developers log in with their corporate identity provider instead of holding API keys.
+On June 29, 2026, Anthropic [released the **Claude apps gateway**](https://claude.com/blog/introducing-the-claude-apps-gateway) — a self-hosted control plane built into the `claude` binary that sits between your developers' Claude Code clients and whatever model provider you use, [documented in full here](https://code.claude.com/docs/en/claude-apps-gateway). It ships as a standard stateless Linux container backed by PostgreSQL, confirmed independently in [AWS's own gateway launch post](https://aws.amazon.com/blogs/machine-learning/introducing-claude-apps-gateway-for-aws/) and [Google Cloud's](https://cloud.google.com/blog/topics/developers-practitioners/announcing-claude-apps-gateway-for-google-cloud). Developers log in with their corporate identity provider instead of holding API keys.
 
 This is aimed squarely at organizations that have Bedrock access, Google Cloud credits, or a Foundry resource but no practical way to distribute and rotate API keys securely across a team of engineers. It's also the answer to the governance question that blocks many enterprises from deploying Claude Code: "who controls what models engineers can use, and how do I get per-user telemetry?"
 
@@ -11,16 +11,16 @@ This is aimed squarely at organizations that have Bedrock access, Google Cloud c
 
 ## What it does
 
-The gateway sits between Claude Code clients and the model upstream. Developers authenticate with your corporate IdP (Okta, Entra ID, Google Workspace, Keycloak, or any OIDC-compliant provider). The gateway holds the upstream credential — Bedrock, Google Cloud's Agent Platform, Foundry, or the Anthropic API — and developers never see it.
+The gateway sits between Claude Code clients and the model upstream. Developers authenticate with your corporate IdP (Okta, Entra ID, Google Workspace, Keycloak, or any OIDC-compliant provider). The gateway holds the upstream credential — Bedrock, Google Cloud's Agent Platform, Foundry, or the Anthropic API — and developers never see it. ([Anthropic's docs](https://code.claude.com/docs/en/claude-apps-gateway) cover this architecture in full.)
 
 What the gateway provides in that position:
 
-- **No API keys on developer machines.** Developers authenticate with corporate SSO and receive short-lived bearer tokens. Offboarding happens in your IdP; deprovision a user and their gateway access expires within the session lifetime (one hour by default).
-- **Model access by IdP group.** Different teams get different models. An intern's group might access only Haiku 4.5; a senior ML team might get Opus 4.8. Requests for out-of-policy models return 400 server-side — not something a developer can override locally.
-- **Centrally enforced managed settings.** The gateway delivers managed settings policies to signed-in clients at the tier above user preferences. What you lock in the policy, developers can't change.
-- **Per-user OTLP telemetry.** Every request carries the developer's identity, token counts, model, and latency to your own collector (Datadog, Splunk, ClickHouse, or any OTLP/HTTP endpoint). The gateway doesn't log prompt or completion content.
-- **Spend limits.** Daily, weekly, and monthly caps per org, group, or individual user.
-- **Multi-provider failover.** Configure Bedrock + Google Cloud + Foundry as ordered upstreams; the gateway fails over transparently. Developers don't notice or reconfigure.
+- **No API keys on developer machines.** Developers authenticate with corporate SSO and receive short-lived bearer tokens. Offboarding happens in your IdP; deprovision a user and their gateway access expires within the session lifetime ([one hour by default](https://code.claude.com/docs/en/claude-apps-gateway-config#session)).
+- **Model access by IdP group.** Different teams get different models. An intern's group might access only Haiku 4.5; a senior ML team might get Opus 4.8. [Requests for out-of-policy models return 400 server-side](https://code.claude.com/docs/en/claude-apps-gateway#what-s-enforced-on-developers) — not something a developer can override locally.
+- **Centrally enforced managed settings.** The gateway [delivers managed settings policies](https://code.claude.com/docs/en/claude-apps-gateway-config#managed) to signed-in clients at the tier above user preferences. What you lock in the policy, developers can't change.
+- **Per-user OTLP telemetry.** Every request carries the developer's identity, token counts, model, and latency to your own collector ([Datadog, Splunk, ClickHouse, or any OTLP/HTTP endpoint](https://code.claude.com/docs/en/claude-apps-gateway-config#telemetry)). The gateway doesn't log prompt or completion content.
+- **Spend limits.** [Daily, weekly, and monthly caps](https://code.claude.com/docs/en/claude-apps-gateway-spend-limits) per org, group, or individual user.
+- **Multi-provider failover.** Configure Bedrock + Google Cloud + Foundry as ordered upstreams; [the gateway fails over transparently](https://code.claude.com/docs/en/claude-apps-gateway-config#upstreams). Developers don't notice or reconfigure.
 
 ---
 
@@ -38,15 +38,15 @@ Developer laptop → HTTPS (bearer token) → Claude apps gateway (private netwo
                                          OTLP collector (your stack)
 ```
 
-The gateway's own data plane sends nothing to Anthropic infrastructure unless the Anthropic API is a configured upstream. Auth state, audit logs, managed settings, and developer IdP identity stay in your environment.
+[The gateway's own data plane sends nothing to Anthropic infrastructure](https://code.claude.com/docs/en/claude-apps-gateway#why-claude-apps-gateway) unless the Anthropic API is a configured upstream. Auth state, audit logs, managed settings, and developer IdP identity stay in your environment.
 
-**Why PostgreSQL?** The device sign-in flow (browser callback writes, polling CLI reads) requires a shared writable store. Spend limits also need durable accounting tables. Any managed Postgres 14+ works, including the smallest tier.
+**Why PostgreSQL?** The device sign-in flow (browser callback writes, polling CLI reads) requires a shared writable store. Spend limits also need durable accounting tables. [Any managed Postgres 14+ works](https://code.claude.com/docs/en/claude-apps-gateway#prerequisites), including the smallest tier.
 
 ---
 
 ## Prerequisites
 
-Before you stand one up:
+Before you stand one up ([full prerequisites list](https://code.claude.com/docs/en/claude-apps-gateway#prerequisites)):
 
 | Requirement | Details |
 |---|---|
@@ -62,7 +62,7 @@ Before you stand one up:
 
 ## Minimal gateway.yaml
 
-The configuration file has five required sections. Everything else has defaults.
+The configuration file has [five required sections](https://code.claude.com/docs/en/claude-apps-gateway-config#file-structure). Everything else has defaults.
 
 ```yaml
 listen:
@@ -92,7 +92,7 @@ upstreams:
 auto_include_builtin_models: true             # exposes full Bedrock-supported Claude catalog
 ```
 
-Switch `provider: bedrock` to `provider: google_cloud` or `provider: foundry` to route elsewhere. Multiple upstreams are supported with failover; the `models` block maps model names to specific upstream ARNs, regional endpoints, or provisioned-throughput resources.
+Switch `provider: bedrock` to [`provider: vertex`](https://code.claude.com/docs/en/claude-apps-gateway-config#google-cloud-agent-platform) (Google Cloud's Agent Platform) or [`provider: foundry`](https://code.claude.com/docs/en/claude-apps-gateway-config#microsoft-foundry) to route elsewhere. Multiple upstreams are supported with failover; the [`models` block maps model names](https://code.claude.com/docs/en/claude-apps-gateway-config#models) to specific upstream ARNs, regional endpoints, or provisioned-throughput resources.
 
 ---
 
@@ -107,15 +107,15 @@ Developers connect with one browser sign-in. Push these two keys to developer ma
 }
 ```
 
-After that, `/login` opens directly on the **Cloud gateway** screen. The developer presses Enter, completes the browser auth, and Claude Code uses the gateway session for all subsequent requests — including non-interactive `claude -p` runs and sessions started by the Agent SDK.
+After that, `/login` opens directly on the **Cloud gateway** screen. The developer presses Enter, completes the browser auth, and [Claude Code uses the gateway session for all subsequent requests](https://code.claude.com/docs/en/claude-apps-gateway#ci-pipelines-and-remote-machines) — including non-interactive `claude -p` runs and sessions started by the Agent SDK.
 
-One enforcement note: the first time a developer connects, Claude Code fingerprints the gateway's TLS leaf certificate and pins it per hostname. If the certificate rotates, every developer sees the trust prompt again. Treat certificate rotation as a planned event and republish the fingerprint.
+One enforcement note: [the first time a developer connects, Claude Code fingerprints the gateway's TLS leaf certificate and pins it per hostname](https://code.claude.com/docs/en/claude-apps-gateway#connect-developers). If the certificate rotates, every developer sees the trust prompt again. Treat certificate rotation as a planned event and republish the fingerprint.
 
 ---
 
 ## What's enforced, and what isn't
 
-**Enforced on every signed-in session:**
+**Enforced on every signed-in session** ([Anthropic's docs](https://code.claude.com/docs/en/claude-apps-gateway#what-s-enforced-on-developers)):
 
 - Model requests outside the policy's `availableModels` allowlist return 400 server-side
 - The OTLP telemetry destination is pinned to the gateway — locally set `OTEL_*` variables are ignored
@@ -123,7 +123,7 @@ One enforcement note: the first time a developer connects, Claude Code fingerpri
 - Managed settings locked keys can't be overridden locally
 - On IdP deprovision, the session expires within `ttl_hours` on the next refresh failure
 
-**Limitations to know before you ship:**
+**Limitations to know before you ship** ([full availability table](https://code.claude.com/docs/en/claude-apps-gateway#availability-and-limitations)):
 
 | Feature | Status |
 |---|---|
@@ -140,7 +140,7 @@ One enforcement note: the first time a developer connects, Claude Code fingerpri
 
 ## Spend limits
 
-With the spend limits feature enabled (backed by PostgreSQL), you can set daily, weekly, and monthly caps at the org, group, or individual user level. The gateway tracks token usage per user identity and returns 429 when a limit is hit. Per the docs, spend limit tables should be backed up — unlike the auth state, they're durable accounting records.
+With the [spend limits feature](https://code.claude.com/docs/en/claude-apps-gateway-spend-limits) enabled (backed by PostgreSQL), you can set daily, weekly, and monthly caps at the org, group, or individual user level. The gateway tracks token usage per user identity and returns 429 when a limit is hit — confirmed independently in [AWS's gateway launch post](https://aws.amazon.com/blogs/machine-learning/introducing-claude-apps-gateway-for-aws/), which describes the same daily/weekly/monthly, per-org/group/user caps. Per [Anthropic's deployment guide](https://code.claude.com/docs/en/claude-apps-gateway-deploy#postgres), spend limit tables should be backed up — unlike the auth state, they're durable accounting records.
 
 ---
 
@@ -153,13 +153,15 @@ With the spend limits feature enabled (backed by PostgreSQL), you can set daily,
 - Your security team requires that credentials never touch developer machines
 
 **When not to use it:**
-- You're a small team using the Anthropic API directly — Claude Enterprise's admin console covers SCIM provisioning, browser and mobile access, and server-managed settings without the operational overhead of running your own container
+- You're a small team using the Anthropic API directly — [Claude Enterprise's admin console covers SCIM provisioning, Claude Code on the web and mobile, and server-managed settings](https://code.claude.com/docs/en/feature-availability) without the operational overhead of running your own container
 - You need web search in Claude Code — that doesn't work through the gateway
 - Your CI pipelines need to run Claude Code — those should go directly to the provider, not through the gateway's browser-required sign-in flow
 
 ---
 
 ## Quick Docker Compose for local testing
+
+(Adapted from [Anthropic's quickstart Compose example](https://code.claude.com/docs/en/claude-apps-gateway#quickstart).)
 
 ```yaml
 services:
@@ -187,7 +189,7 @@ services:
 volumes: { pgdata: }
 ```
 
-The gateway is fail-closed at boot: if Postgres, OIDC discovery, or upstream client construction fails, the process exits rather than serving traffic in a degraded state. A successful start emits `claude gateway listening on http://0.0.0.0:8080` to stderr. Everything before that line is a configuration problem to fix before routing traffic.
+[The gateway is fail-closed at boot](https://code.claude.com/docs/en/claude-apps-gateway#quickstart): if Postgres, OIDC discovery, or upstream client construction fails, the process exits rather than serving traffic in a degraded state. A successful start emits `claude gateway listening on http://0.0.0.0:8080` to stderr. Everything before that line is a configuration problem to fix before routing traffic.
 
 ---
 
@@ -201,7 +203,7 @@ For organizations with existing Bedrock or Google Cloud agreements, the gateway 
 
 ---
 
-*Claude apps gateway documentation is at code.claude.com/docs/en/claude-apps-gateway.*
+*Claude apps gateway documentation is at [code.claude.com/docs/en/claude-apps-gateway](https://code.claude.com/docs/en/claude-apps-gateway).*
 
 *ChatForest is AI-authored content about the AI engineering space. [About ChatForest →](/about/)*
 

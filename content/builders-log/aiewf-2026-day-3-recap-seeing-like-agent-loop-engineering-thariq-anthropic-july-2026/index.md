@@ -4,21 +4,24 @@ date: 2026-07-01
 description: "Day 3 at the AI Engineer World's Fair 2026 carried a single underlying message across three very different talks: the engineer's role is shifting from human who uses AI tools to architect of systems that run AI autonomously. Here's what Barr Yaron, Thariq Shihipar, and Addy Osmani actually said — and what builders should do with it."
 og_description: "AIEWF 2026 Day 3 recap: Barr Yaron's 2026 AI Engineering Survey, Thariq Shihipar on seeing like an agent (tool design from the model's perspective), and Addy Osmani on loop engineering — the shift from 'I use AI' to 'I design systems that do AI work.'"
 tags: ["conference", "agents", "AIEWF", "Anthropic", "claude-code", "context-engineering", "loop-engineering", "tool-design", "evals"]
+sources_audited: 2026-07-31
 ---
 
-The [AI Engineer World's Fair 2026](https://www.ai.engineer/worldsfair/schedule) designated July 1 as its "Autoresearch" day — parallel tracks on robotics, memory, context engineering, evals, computer use, and design engineering. The main stage opened at 9:00 AM PT with a data-heavy survey keynote and closed with a concept that's been quietly reshaping how senior engineers think about their jobs.
+The [AI Engineer World's Fair 2026](https://www.ai.engineer/worldsfair/schedule) designated July 1 as its "Autoresearch" day — parallel tracks on robotics, memory, context engineering, evals, computer use, and design engineering. Per the [official schedule](https://www.ai.engineer/worldsfair/schedule), Day 3's main stage opened at 9:05 AM PT with Thariq Shihipar's keynote on Anthropic's Fable model and closed at 4:30 PM with Addy Osmani's keynote on a concept that's been quietly reshaping how senior engineers think about their jobs. The following morning (Day 4, July 2) opened with a data-heavy practitioner survey that belongs in the same conversation.
 
-Three talks in particular carried weight beyond their session slots. Taken together, they describe the same shift from three different angles: the engineer's role is changing from someone who uses AI tools to someone who designs systems that run AI work.
+Three talks in particular carried weight beyond their session slots — two from Day 3, one from the Day 4 open. Taken together, they describe the same shift from three different angles: the engineer's role is changing from someone who uses AI tools to someone who designs systems that run AI work.
 
 ---
 
 ## Barr Yaron — 2026 AI Engineering Survey
 
-Barr Yaron (Amplify Partners) has opened AIEWF's main stage day with the annual practitioner survey for two years running. The format is consistent: survey hundreds of AI engineers on what they're actually doing, present the data without editorial spin, let the aggregate picture do the work.
+Barr Yaron ([Partner, Amplify Partners](https://www.ai.engineer/worldsfair/schedule)) opened AIEWF's Day 4 (July 2) main stage with ["The 2026 State of AI Engineering"](https://www.ai.engineer/worldsfair/schedule) — the annual practitioner survey, back for a second year. The format is consistent: survey hundreds of AI engineers on what they're actually doing, present the data without editorial spin, let the aggregate picture do the work.
 
-The 2025 version established the baseline. Evals ranked as the single most painful aspect of AI engineering. 70% of respondents used RAG. 41% were fine-tuning models. Fewer than 20% reported that agents were working well in production — yet fewer than 10% were ruling agents out entirely. The field was agent-curious but not agent-confident.
+The [2025 version](https://www.amplifypartners.com/blog-posts/the-2025-ai-engineering-report) established the baseline: evals ranked as the single most painful aspect of AI engineering, 70% of respondents said they were using RAG in some form, 41% were fine-tuning models, fewer than 20% said agents were working well in production, and fewer than 1 in 10 had no plans to use agents at all. The field was agent-curious but not agent-confident.
 
-The 2026 survey reflects a materially different moment. The signals are in the complementary data released this week from other research arms:
+The [2026 report](https://www.amplifypartners.com/blog-posts/the-2026-ai-engineering-report) (1,000+ engineers surveyed) shows a materially different moment: there's no longer one dominant pain point — evals, orchestration/agent logic, inference, and security all cluster within a few points of each other. Agent adoption roughly doubled year over year, and among teams already using agents, the share granting write access to live production systems jumped from 52% to 89%; the overall share of respondents running write-enabled agents is up more than 3x from 2025. Cost has become a hard constraint: three-quarters of respondents now adjust their AI ambitions based on affordability, and 40% say cost "regularly shapes how ambitiously they use AI." RAG usage held roughly flat around 50%.
+
+Complementary signals from other research arms, released around the same time, add color:
 
 **[Datadog's 2026 State of AI Engineering](https://www.datadoghq.com/state-of-ai-engineering/)** ([press release](https://www.datadoghq.com/about/latest-news/press-releases/datadog-state-of-ai-engineering-report-2026/)) (telemetry from 1,000+ customers) shows:
 - OpenAI's model share dropped from 75% to 63%; Claude and Gemini each gained significantly
@@ -29,9 +32,9 @@ The 2026 survey reflects a materially different moment. The signals are in the c
 - Rate limit errors account for nearly one-third of all LLM call failures
 
 **[LangChain's State of Agent Engineering](https://www.langchain.com/state-of-agent-engineering)** (1,340 respondents) shows:
-- 57% of respondents have agents in production — up sharply from 2025's sub-20%
+- 57% of respondents have agents in production — up from 51% the prior year
 - 89% have some form of agent observability; 62% have detailed step-level tracing
-- Most teams start with offline evals, but a quarter are combining offline and online
+- 52% run offline evals on test sets; 37% run online evals monitoring live traffic — online eval adoption is growing but still trails offline
 
 What the Barr Yaron survey adds is the practitioner-level perspective — not what tools people are using, but what's painful, what's working, and what's changed in one year. The dominant shift: evals pain didn't go away, but it now has company. Multi-agent debugging, context engineering at scale, and verifying agentic pipelines are the new friction points emerging alongside evaluation.
 
@@ -39,19 +42,17 @@ What the Barr Yaron survey adds is the practitioner-level perspective — not wh
 
 ---
 
-## Thariq Shihipar — "Seeing like an Agent"
+## Thariq Shihipar — "Seeing Like an Agent"
 
-Thariq Shihipar is the engineering lead for Claude Code at Anthropic. He built the Claude Agent SDK. He made the decision (initially controversial, now widely replicated) to have Claude Code output HTML rather than Markdown — a change that improved how agents render and process their own responses in practice.
+Thariq Shihipar is a [Member of Technical Staff on the Claude Code team at Anthropic](https://claude.com/blog/seeing-like-an-agent). He's been a visible advocate for [having Claude Code output HTML rather than Markdown](https://www.lennysnewsletter.com/p/html-is-the-new-markdown-how-anthropic) — an idea he's spent months experimenting with and [demonstrating publicly](https://www.chatprd.ai/how-i-ai/claude-code-anthropic-thariq-shihipar-on-replacing-markdown-with-html), and one that's since been widely picked up elsewhere.
 
-His Day 3 talk, "Seeing like an Agent," is about something that sounds obvious until you try to do it: designing tools from the agent's point of view, not the human's.
+Shihipar's Day 3 keynote at AIEWF was actually ["Field Guide to Fable,"](https://www.ai.engineer/worldsfair/schedule) on Anthropic's Fable model — a different talk from the tool-design ideas below. Those come instead from his Anthropic blog post ["Seeing like an agent"](https://claude.com/blog/seeing-like-an-agent) (published April 2026), which is about something that sounds obvious until you try to do it: designing tools from the agent's point of view, not the human's.
 
 The core thesis is this: most builders design agent tools the way they'd design human-facing APIs — they document what the tool does and trust the agent to figure out how to use it. That assumption breaks down quickly. Agents process tool descriptions differently than humans read documentation. The *shape* of a tool — how its inputs are named, what information is exposed at each step, how the response is structured — determines whether the model uses it correctly, uses it wrong, or doesn't use it at all.
 
-Shihipar's example: an "AskUserQuestion" tool that his team iterated through three versions with the same intended behavior. Each version had the same goal. None of them changed the underlying capability. What changed was how the tool presented information to the model at each call — and each revision produced meaningfully different agent behavior.
+Shihipar's example, [from the post](https://claude.com/blog/seeing-like-an-agent): an "AskUserQuestion" tool that his team iterated through three versions with the same intended behavior. The first attempt repurposed parameters on the existing ExitPlanTool, which confused the model. The second tried a structured-markdown instruction format, which proved unreliable. Only the third — a dedicated AskUserQuestion tool — got consistent results. Each version had the same goal and the same underlying capability; what changed was how the tool presented information to the model at each call, and that alone produced meaningfully different agent behavior.
 
-The practical framing is a **teacher's mindset**: you're not writing code that an agent executes, you're structuring information that an agent interprets. The distinction matters because agents make inferences based on tool names, parameter descriptions, and response schemas in ways that humans don't anticipate. A parameter called `user_query` behaves differently in practice than one called `current_request`, even if they accept the same input — the label changes how the model reasons about what to put there.
-
-A second insight: agent scaffolding ages. What's a useful constraint early in a project — guardrails, structured response formats, forced confirmation steps — can become a limitation as models improve. The scaffolding you design for GPT-4-class agents may be wrong for the model your team is using six months later. This means tool design is not a one-time decision. It requires monitoring actual agent behavior and revising as the model capabilities change beneath you.
+A second insight from the post: agent scaffolding ages. Shihipar points to Claude Code's own TodoWrite tool as an example — a constraint that was useful when models needed more structure early on can become a limitation as the underlying model improves. As he puts it, ["as model capabilities increase, the tools that your models once needed might now be constraining them."](https://claude.com/blog/seeing-like-an-agent) This means tool design is not a one-time decision; it requires monitoring actual agent behavior and revising as model capabilities change beneath you.
 
 **Builder implication:** When something in your agent pipeline isn't working, the failure is often in the tool interface, not the model. Before you reach for prompt engineering fixes, look at what the model is *seeing* when it calls the tool. Rename parameters to match how you'd describe the concept to a new colleague, not to a compiler. Simplify response schemas to surface the decision-relevant information first. Treat tool design as an iterative craft, not a configuration exercise.
 
@@ -59,23 +60,23 @@ A second insight: agent scaffolding ages. What's a useful constraint early in a 
 
 ## Addy Osmani — "Loop Engineering" (Closing Keynote)
 
-Addy Osmani (Director of Engineering, Google Chrome) closed Day 3 with a keynote on what he calls **Loop Engineering** — a shift in how he frames the senior engineer's job in an AI-augmented environment.
+Addy Osmani — [independent as of 2026, after 14 years at Google leading developer experience across Chrome and, most recently, AI (Gemini, coding agents), most recently as Director at Google Cloud AI](https://addyosmani.com/bio/) — closed Day 3 with a keynote on what he calls **Loop Engineering** — a shift in how he frames the senior engineer's job in an AI-augmented environment. Osmani later [published a written version of the keynote](https://addyosmani.com/blog/own-the-outer-loop/).
 
 The premise: most engineers are still thinking about AI as a tool they hold. They write a prompt, get a result, evaluate it, revise. Osmani's argument is that this model doesn't scale — and more importantly, it's not where the senior skill now lives. The skill is in designing the *system that does the prompting*, not in doing the prompting well.
 
-Loop Engineering means building an autonomous process that:
+Per [Osmani's own writeup](https://addyo.substack.com/p/loop-engineering), Loop Engineering rests on a handful of building blocks — scheduled automations, isolated worktrees, reusable skills, external connectors, and separate verifier sub-agents — that together mean building an autonomous process that:
 1. Discovers work on a schedule (not when you remember to ask)
 2. Executes that work in isolated, parallel contexts (no state collisions)
 3. Verifies outputs with a *different* agent than the one that produced them
 4. Persists state across runs so context isn't lost between sessions
 5. Integrates with external tools (ticketing, communication, data) via MCP
 
-That last point — verification by a separate agent — has become one of Osmani's signature claims: "The model that wrote the code is way too nice grading its own homework." A generation agent and a verification agent should have different system prompts, different constraints, and ideally different models. The generator is optimized to produce; the verifier is optimized to find problems. Building them as a single agent with a "now check your work" instruction is not the same as separating them.
+That last point — verification by a separate agent — has become one of Osmani's signature claims: ["The model that wrote the code is way too nice grading its own homework."](https://addyo.substack.com/p/loop-engineering) A generation agent and a verification agent should have different system prompts, different constraints, and ideally different models. The generator is optimized to produce; the verifier is optimized to find problems. Building them as a single agent with a "now check your work" instruction is not the same as separating them.
 
 Osmani is careful to frame this with warnings. Loop Engineering does not remove the need for judgment. It removes the need for *repetitive prompting*. The things that remain yours:
 - Deciding what loops are worth building
 - Evaluating whether the outputs are actually good
-- Understanding the code that agents write (to avoid "comprehension debt")
+- Understanding the code that agents write (to avoid what Osmani, citing [research on developers' AI-assisted coding](https://addyosmani.com/blog/own-the-outer-loop/), calls "cognitive debt" — engineers in one study scored 17 percentage points lower on comprehension when they'd worked through AI)
 - Recognizing when a loop is producing plausible-looking wrong results
 
 The frame shift: from "I am the person who uses AI" to "I am the person who designs how AI works." Engineering judgment is still the scarce resource — but what that judgment is applied to is changing.
@@ -90,7 +91,7 @@ Barr Yaron's survey shows the industry has cleared the "will agents work?" thres
 
 The through-line is an identity shift. The AI engineer job was initially about knowing which models exist, which prompting techniques work, and how to wrap an API. That job is commoditizing. The job that's emerging is about systems design — how you structure agent orchestration, how you design tool interfaces agents actually use correctly, how you build verification into the loop rather than bolting it on at the end.
 
-The 2025 survey said evals are the most painful thing. The 2026 data suggests that's still true, but the pain has a different shape: it's no longer "how do I evaluate an LLM response?" It's "how do I evaluate whether an autonomous agent pipeline is producing trustworthy results at scale?" That's a harder question, and the answer requires exactly the architecture Day 3 described.
+The 2025 survey said evals were the single most painful thing. The 2026 data shows that pain hasn't gone away, but it's no longer alone at the top — it now sits in a cluster with orchestration, agent logic, inference, and security. The shape of the question has changed too: it's no longer just "how do I evaluate an LLM response?" but "how do I evaluate whether an autonomous agent pipeline is producing trustworthy results at scale?" That's a harder question, and the answer requires exactly the architecture Day 3 described.
 
 ---
 

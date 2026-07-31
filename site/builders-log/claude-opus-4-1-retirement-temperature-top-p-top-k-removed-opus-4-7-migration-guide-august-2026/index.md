@@ -1,11 +1,11 @@
-# Claude Opus 4.1 Retires August 5 — 10 Breaking Changes to Fix Before You Upgrade
+# Claude Opus 4.1 Retires August 5 — 9 Breaking Changes to Fix Before You Upgrade
 
 > Anthropic retired temperature, top_p, and top_k on Opus 4.7+ and Sonnet 5. If you set any of them to a non-default value, you'll get a 400 error today. Here's the full migration checklist for Opus 4.1 → Opus 4.8.
 
 
-Anthropic has [deprecated `temperature`, `top_p`, and `top_k`](https://docs.anthropic.com/en/docs/about-claude/model-deprecations) on Claude Opus 4.7 and later. If you call those models with any of those parameters set to a **non-default value**, the API returns a `400` error immediately — no fallback, no warning, just a hard failure. This applies to Opus 4.7, Opus 4.8, Sonnet 5, Fable 5, and Mythos 5.
+Anthropic has [deprecated `temperature`, `top_p`, and `top_k`](https://docs.anthropic.com/en/docs/about-claude/model-deprecations#api-parameter-deprecations) on Claude Opus 4.7 and later. If you call those models with any of those parameters set to a **non-default value**, the API returns a `400` error immediately — no fallback, no warning, just a hard failure. This applies to Opus 4.7, Opus 4.8, and, per Anthropic's own [API release notes](https://docs.anthropic.com/en/release-notes/api), to [Sonnet 5 at its June 30, 2026 launch](https://docs.anthropic.com/en/release-notes/api) and to Fable 5 and Mythos 5 at their June 9, 2026 launch.
 
-Separately, Claude Opus 4.1 (`claude-opus-4-1-20250805`) was deprecated June 5, 2026 and **retires August 5, 2026**. After that date, requests to that model ID return errors. If you haven't migrated yet, you have five weeks. The migration path from Opus 4.1 to Opus 4.8 spans ten breaking changes, some of which restructure your API call significantly.
+Separately, Claude Opus 4.1 (`claude-opus-4-1-20250805`) was [deprecated June 5, 2026 and retires August 5, 2026](https://docs.anthropic.com/en/docs/about-claude/model-deprecations#2026-06-05-claude-opus-4-1-model). After that date, requests to that model ID return errors. If you haven't migrated yet, you have five weeks. The migration path from Opus 4.1 to Opus 4.8 spans nine breaking changes, some of which restructure your API call significantly.
 
 ---
 
@@ -45,13 +45,13 @@ If you're on Opus 4.6 or Sonnet 4.6 and using `temperature`, you're fine — tho
 |---|---|---|---|
 | `claude-opus-4-1-20250805` | June 5, 2026 | **August 5, 2026** | `claude-opus-4-8` |
 
-After August 5, any request to `claude-opus-4-1-20250805` returns an error. The recommended replacement is `claude-opus-4-8`. Pricing stays the same: $5 per million input tokens, $25 per million output tokens.
+After August 5, any request to `claude-opus-4-1-20250805` returns an error. The recommended replacement is `claude-opus-4-8`. [Pricing stays the same](https://docs.anthropic.com/en/release-notes/api): $5 per million input tokens, $25 per million output tokens.
 
-If you have production workloads on Opus 4.1, five weeks is enough time — but the migration isn't just a model ID swap. There are ten breaking changes stacked between Opus 4.1 and Opus 4.7+.
+If you have production workloads on Opus 4.1, five weeks is enough time — but the migration isn't just a model ID swap. There are nine breaking changes stacked between Opus 4.1 and Opus 4.7+.
 
 ---
 
-## Ten breaking changes: Opus 4.1 → Opus 4.8
+## Nine breaking changes: Opus 4.1 → Opus 4.8
 
 Work through these in order. Each one that doesn't apply to your codebase, skip and move on.
 
@@ -82,22 +82,22 @@ response = client.messages.create(
 )
 ```
 
-The `effort` parameter controls how much the model reasons. Valid values are `"low"`, `"medium"`, `"high"`, and `"max"`. If you omit `output_config` entirely, the model defaults to adaptive thinking at its own judgment. The `budget_tokens` field is not valid on Opus 4.7+.
+The `effort` parameter controls how much the model reasons. Valid values are `"low"`, `"medium"`, `"high"`, `"xhigh"`, and `"max"` — Anthropic [added the `xhigh` level with the Opus 4.7 launch](https://docs.anthropic.com/en/release-notes/api) specifically for long-running agentic and coding tasks; see the [effort parameter reference](https://docs.anthropic.com/en/docs/build-with-claude/effort) for what each level does. If you omit `output_config` entirely, the model defaults to adaptive thinking at its own judgment. The `budget_tokens` field is not valid on Opus 4.7+.
 
 ### 3. Update tool versions
 
-Two built-in tools changed IDs:
+Two built-in tools changed IDs — see Anthropic's [tool reference](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/tool-reference) for the full versioning rules:
 
 | Before | After |
 |---|---|
 | `text_editor_20250124` | `text_editor_20250728` |
-| `code_execution` | `code_execution_20250825` |
+| `code_execution_20250522` | `code_execution_20250825` |
 
-Also: the `undo_edit` command was removed from the text editor tool. If your tool-use code calls `undo_edit`, remove those calls — the model won't find the command.
+Also: the [`undo_edit` command was removed](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/text-editor-tool#change-log) from the text editor tool (dropped when the Claude 4 line of the tool shipped, carried forward into `text_editor_20250728`). If your tool-use code calls `undo_edit`, remove those calls — the model won't find the command.
 
 ### 4. Handle two new stop reasons
 
-Opus 4.7+ can return two stop reasons that don't exist on Opus 4.1:
+Opus 4.7+ can return two stop reasons that don't exist on Opus 4.1 — see Anthropic's [guide to handling stop reasons](https://docs.anthropic.com/en/docs/build-with-claude/handling-stop-reasons):
 
 - `stop_reason: "refusal"` — the model declined to complete the request. The response will also include `stop_details.category` with a refusal category string.
 - `stop_reason: "model_context_window_exceeded"` — the context window was hit mid-generation.
@@ -119,7 +119,7 @@ match response.stop_reason:
 
 ### 5. Remove assistant message prefills
 
-Opus 4.7+ returns a `400` error if you pass a trailing assistant turn in `messages` (a "prefill"). This pattern was common for steering output format:
+Opus 4.7+ [returns a `400` error](https://docs.anthropic.com/en/docs/about-claude/models/migration-guide) if you pass a trailing assistant turn in `messages` (a "prefill"). This pattern was common for steering output format:
 
 ```python
 # Before — worked on Opus 4.1
@@ -140,7 +140,7 @@ Use `output_config.format` for structured outputs. For plain text formatting, us
 
 ### 6. Migrate `output_format` to `output_config.format`
 
-If you used the `output_format` parameter for structured output (JSON schema), it has moved:
+If you used the `output_format` parameter for structured output (JSON schema), [it has moved](https://docs.anthropic.com/en/docs/about-claude/models/migration-guide):
 
 ```python
 # Before
@@ -154,27 +154,23 @@ The `output_format` key is no longer accepted.
 
 ### 7. Remove legacy beta headers
 
-Remove these from your `extra_headers` or `anthropic_beta` parameter — they either do nothing or cause errors on Opus 4.7+:
+Remove these from your `extra_headers` or `anthropic_beta` parameter — each was a real beta flag for a feature that's now either GA or superseded on Opus 4.7+, so it either does nothing or causes an error. See Anthropic's [beta headers reference](https://docs.anthropic.com/en/api/beta-headers) for how beta headers work, and the [API release notes](https://docs.anthropic.com/en/release-notes/api) for when each of these shipped and was superseded:
 
-- `token-efficient-tools-2025-02-19`
-- `output-128k-2025-02-19`
-- `interleaved-thinking-2025-05-14`
-- `effort-2025-11-24`
+- `token-efficient-tools-2025-02-19` — a February 2025 tool-use efficiency beta, predating native support on Claude 4+ models.
+- `output-128k-2025-02-19` — a February 2025 extended-output beta from the Claude 3.7 Sonnet era; 128k output is now built in.
+- `interleaved-thinking-2025-05-14` — a May 2025 beta; adaptive thinking on Opus 4.7+ enables interleaved thinking automatically.
+- `effort-2025-11-24` — the beta flag for the `effort` parameter (introduced with Opus 4.5 on November 24, 2025); `effort` is now generally available with no beta header required.
 
-### 8. Verify tool string parameter handling
+### 8. Re-baseline tokenization
 
-The model's behavior on trailing newlines in tool result strings changed between Opus 4.1 and Opus 4.7. If you have tests that assert exact string equality on tool parameters, run them against Opus 4.7+ before deploying — you may see newline differences that break downstream parsing.
-
-### 9. Re-baseline tokenization
-
-Opus 4.7+ uses a new tokenizer that produces **roughly 30% more tokens** than Opus 4.1 on the same input text. This has two practical effects:
+Opus 4.7+ uses a [new tokenizer that produces roughly 30% more tokens](https://docs.anthropic.com/en/docs/build-with-claude/token-counting#token-counts-on-claude-fable-5) than models before Opus 4.7 — including Opus 4.1 — on the same input text; the exact increase depends on content and workload shape. This has two practical effects:
 
 - **Cost increases.** A prompt that was 1,000 tokens on Opus 4.1 may be ~1,300 tokens on Opus 4.8. Re-run your cost estimates.
 - **`max_tokens` headroom.** If you set `max_tokens` close to the context window limit, prompts that fit before may now exceed it. Audit your largest prompts.
 
-### 10. Handle Sonnet 5 introductory pricing window (if relevant)
+### 9. Handle Sonnet 5 introductory pricing window (if relevant)
 
-If you're also migrating Sonnet workloads: Claude Sonnet 5 is on introductory pricing of $2 per million input / $10 per million output through August 31, 2026. Standard pricing ($3/$15) takes effect September 1. If you're running cost models, account for the step-up.
+If you're also migrating Sonnet workloads: [Claude Sonnet 5 is on introductory pricing](https://docs.anthropic.com/en/release-notes/api) of $2 per million input / $10 per million output through August 31, 2026. Standard pricing ($3/$15) takes effect September 1. If you're running cost models, account for the step-up.
 
 ---
 
@@ -189,7 +185,6 @@ If you're also migrating Sonnet workloads: Claude Sonnet 5 is on introductory pr
 [ ] Remove assistant message prefills; switch to output_config.format
 [ ] Migrate output_format → output_config.format
 [ ] Remove legacy beta headers
-[ ] Audit tool result string parsing for trailing newline behavior
 [ ] Re-baseline token counts and max_tokens values (~30% increase)
 [ ] Update model ID to claude-opus-4-8
 [ ] Run integration tests against Opus 4.8 in staging before August 5

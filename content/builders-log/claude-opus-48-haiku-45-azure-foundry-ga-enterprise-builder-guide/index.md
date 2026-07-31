@@ -6,9 +6,10 @@ og_description: "Claude Opus 4.8 and Haiku 4.5 are now GA on Azure Foundry. Azur
 content_type: "Builder's Log"
 categories: ["Anthropic", "Azure", "Microsoft", "Enterprise AI", "AI Infrastructure"]
 tags: ["claude", "anthropic", "azure", "foundry", "microsoft", "opus-48", "haiku-45", "enterprise", "data-residency", "billing", "governance", "nvidia", "gb300", "builder-guide"]
+sources_audited: 2026-07-31
 ---
 
-On June 29, 2026, Anthropic announced that Claude is [generally available in Microsoft Azure Foundry](https://azure.microsoft.com/en-us/blog/introducing-anthropics-claude-models-in-microsoft-foundry-bringing-frontier-intelligence-to-azure/). Claude Opus 4.8 and Claude Haiku 4.5 are now accessible through the Messages API as a first-party Azure service — with Azure-native billing, identity, networking, and a US data residency option.
+On June 29, 2026, Anthropic announced that [Claude in Microsoft Foundry is now generally available](https://claude.com/blog/claude-in-microsoft-foundry), a milestone Microsoft confirmed the same day on [its own Azure blog](https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/). Claude Opus 4.8 and Claude Haiku 4.5 are now accessible through the Messages API as a first-party Azure service — with Azure-native billing, identity, networking, and a US data residency option.
 
 This is different from what was [already possible via Azure API Management](/builders-log/azure-api-management-unified-model-api-anthropic-vertex-a2a-build-2026-builder-guide/), where a gateway layer routed requests to Anthropic's API. Claude is now a native Foundry service with Azure authentication and consolidated billing. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -23,9 +24,9 @@ Two models reached GA on June 29:
 | Claude Opus 4.8 | Messages API | Prompt caching, extended thinking, complex reasoning |
 | Claude Haiku 4.5 | Messages API | Prompt caching, fast inference, low cost |
 
-Claude Sonnet 4.6 is not listed in the initial GA offering. The announcement says Microsoft and Anthropic "aim to have feature and model parity" between the Azure-hosted and Anthropic-hosted paths over time — this language signals that parity is a goal, not the current state.
+Claude Sonnet 4.6 is not listed in the initial GA offering. [Anthropic's announcement](https://claude.com/blog/claude-in-microsoft-foundry) says the two companies "aim to have feature and model parity" between the Azure-hosted and Anthropic-hosted paths over time — this language signals that parity is a goal, not the current state.
 
-The physical infrastructure [runs on NVIDIA GB300 Blackwell Ultra systems](https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-claude). For workloads that saturate GPU bandwidth, this is a tier above standard Azure inference capacity.
+The physical infrastructure runs on [NVIDIA GB300 Blackwell Ultra systems, connected by InfiniBand networking](https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/), a detail [NVIDIA's own announcement](https://blogs.nvidia.com/blog/anthropic-nvidia-gb300-blackwell-ultra-microsoft-azure/) of the partnership confirms. For workloads that saturate GPU bandwidth, this is a tier above standard Azure inference capacity.
 
 ---
 
@@ -33,7 +34,7 @@ The physical infrastructure [runs on NVIDIA GB300 Blackwell Ultra systems](https
 
 The GA announcement formalizes two distinct ways to access Claude through Foundry:
 
-**Hosted on Azure** — inference runs in your Azure environment. You get Azure authentication (Entra), Azure billing, Azure networking controls, and the option to pin workloads to a US data zone. Anthropic operates the inference as a data processor within this arrangement.
+**Hosted on Azure** — inference runs in your Azure environment. You get Azure authentication (Entra), Azure billing, Azure networking controls, and the option to pin workloads to a US data zone. [Anthropic operates the inference and is the data processor](https://claude.com/blog/claude-in-microsoft-foundry) within this arrangement.
 
 **Hosted on Anthropic** — formerly the "Foundry Preview" path. Requests go to Anthropic's infrastructure. You get the full Anthropic API feature set and access to models not yet available in the Azure-hosted path.
 
@@ -45,19 +46,19 @@ The key tradeoff in one sentence: Azure-hosted buys compliance and integration; 
 
 ### Billing consolidation
 
-Azure enterprise agreements (EAs) carry significant discounts, drawdown commitments, and centralized invoicing. If your team already has an Azure EA, adding Claude usage to the same invoice is materially simpler than maintaining a separate Anthropic account, separate credit card, and separate budget approval chain. The announcement confirms EA drawdown eligibility.
+Azure enterprise agreements (EAs) carry significant discounts, drawdown commitments, and centralized invoicing. If your team already has an Azure EA, adding Claude usage to the same invoice is materially simpler than maintaining a separate Anthropic account, separate credit card, and separate budget approval chain. Both companies' announcements confirm this: Anthropic's post says ["for eligible customers with a Microsoft Enterprise Agreement, Claude usage draws down a Microsoft Azure commitment"](https://claude.com/blog/claude-in-microsoft-foundry), and Microsoft's [GA post](https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/) confirms MACC drawdown with per-model detail retained in Foundry.
 
 ### Identity and governance without extra plumbing
 
-Azure-hosted Claude uses Entra ID for authentication. Role assignments, audit logs, and access policies use the same tooling your security team already manages. If your organization has mandated that all production AI calls go through Azure's governance layer, Claude now qualifies without a gateway workaround.
+Azure-hosted Claude [uses Microsoft Entra ID for authentication](https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/). Role assignments, audit logs, and access policies use the same tooling your security team already manages. If your organization has mandated that all production AI calls go through Azure's governance layer, Claude now qualifies without a gateway workaround.
 
 ### US data residency
 
-If your legal or compliance requirements specify that inference must happen on US soil, the Azure-hosted path offers a dedicated US data zone. Anthropic's direct API does not offer this level of geographic control today.
+If your legal or compliance requirements specify that inference must happen on US soil, the Azure-hosted path offers [a dedicated US data zone](https://claude.com/blog/claude-in-microsoft-foundry).
 
 ### NVIDIA GB300 performance
 
-GB300 Blackwell Ultra is the current top tier for Azure inference. For latency-sensitive workloads — voice agents, interactive reasoning pipelines, real-time document review — running on GB300 versus standard inference hardware is a real difference.
+[GB300 Blackwell Ultra](https://blogs.nvidia.com/blog/anthropic-nvidia-gb300-blackwell-ultra-microsoft-azure/) is the current top tier for Azure inference. For latency-sensitive workloads — voice agents, interactive reasoning pipelines, real-time document review — running on GB300 versus standard inference hardware is a real difference.
 
 ---
 
@@ -65,7 +66,7 @@ GB300 Blackwell Ultra is the current top tier for Azure inference. For latency-s
 
 **Model selection**: Only Opus 4.8 and Haiku 4.5 at launch. Sonnet 4.6, the model most teams use for everyday coding and analysis tasks at the cost/quality midpoint, is absent. The "parity over time" language suggests it's coming, but it is not there now.
 
-**API surface parity**: The Anthropic API has capabilities that are not replicated on the Azure-hosted path yet. The announcement explicitly calls this out and frames it as future work. If you depend on features outside the Messages API core — certain streaming behaviors, newer API versions, specific beta endpoints — test before committing.
+**API surface parity**: The Anthropic API has capabilities that are not replicated on the Azure-hosted path yet. [Anthropic's announcement](https://claude.com/blog/claude-in-microsoft-foundry) frames full parity as future work rather than a launch-day guarantee. If you depend on features outside the Messages API core — certain streaming behaviors, newer API versions, specific beta endpoints — test before committing.
 
 **All models**: Newer or more specialized models will likely appear on Anthropic-hosted first. The Azure path will lag.
 

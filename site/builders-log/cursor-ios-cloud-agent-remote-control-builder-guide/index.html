@@ -73,9 +73,9 @@
 <h2 id="what-launched">What Launched</h2>
 <p><strong>Cursor for iOS — public beta, June 29, 2026</strong></p>
 <ul>
-<li>Available on all paid Cursor plans</li>
-<li>iPhone only (iOS 26.0 or later required)</li>
-<li>No Android version announced at launch</li>
+<li><a href="https://cursor.com/docs/cloud-agent/mobile">Available on Start, Pro, Pro+, Ultra, Teams, and Enterprise plans</a> (not the free tier)</li>
+<li>iPhone only (<a href="https://cursor.com/docs/cloud-agent/mobile">iOS 26.0 or later required</a>)</li>
+<li>No Android app at launch; <a href="https://cursor.com/docs/cloud-agent/mobile">Cursor&rsquo;s docs note Android support &ldquo;is planned&rdquo;</a> but not yet shipped as of this writing</li>
 </ul>
 <p>The app is a companion to your existing Cursor desktop setup, not a standalone IDE. You cannot write code directly in it. It is a control surface for agents.</p>
 <hr>
@@ -87,14 +87,14 @@
 <ul>
 <li><strong>Asynchronous by default</strong> — you fire off the task and walk away; the VM runs independently</li>
 <li><strong>Full dev environment</strong> — the agent can build, test, and run code, not just edit text</li>
-<li><strong>Snapshots</strong> (as of Cloud Agents v3.7, June 17): environments spin up in under 10 minutes and reuse cached snapshots, so startup is fast</li>
+<li><strong>Snapshots</strong> (as of <a href="https://cursor.com/changelog/cloud-in-agents-window">Cloud Agents v3.7, June 17</a>): environments spin up in under 10 minutes and reuse cached snapshots, so startup is fast</li>
 <li><strong>Local↔cloud handoff</strong> — you can start a task locally, move it to a cloud VM, or pull a cloud session back to your machine for local testing before merge</li>
-<li><strong>Subagents</strong> — the <code>/in-cloud</code> command spawns isolated subagents on separate VMs for parallel work</li>
+<li><strong>Subagents</strong> — the <a href="https://cursor.com/changelog/cloud-in-agents-window"><code>/in-cloud</code> command</a> spawns isolated subagents on separate VMs for parallel work</li>
 </ul>
 <p>The iOS app is the natural control surface for cloud agents: you launch the task, go about your day, get a notification when it is done, review the diff, and merge.</p>
 <h3 id="remote-control">Remote Control</h3>
 <p>Remote Control lets you <strong>redirect an agent already running on your local machine</strong> — from your phone. If you left a long-running Cursor agent going on your desk and stepped away, you can continue directing it from your iPhone rather than returning to your computer.</p>
-<p>An optional setting keeps your local machine awake while Remote Control is active.</p>
+<p>An optional <a href="https://cursor.com/docs/cloud-agent/mobile">&ldquo;Keep this computer awake&rdquo; setting</a> (Settings &gt; Agents) keeps your local machine awake and reachable while Remote Control is active.</p>
 <p>Remote Control is for the in-progress case. Cloud agents are for the from-scratch async case.</p>
 <hr>
 <h2 id="the-workflow-start-to-merge">The Workflow: Start to Merge</h2>
@@ -106,7 +106,7 @@
 <li><strong>Iterate</strong> — Leave follow-up instructions directly in the app; the agent continues</li>
 <li><strong>Merge</strong> — Review the final diff in the app and merge the PR without opening a laptop</li>
 </ol>
-<p>The explicit Cursor use case examples: responding to a production incident from on-call, fixing a customer bug while reviewing a Slack screenshot, acting on user feedback posted to social media.</p>
+<p><a href="https://cursor.com/blog/ios-mobile-app">Cursor&rsquo;s own launch examples</a>: responding to a production incident from on-call, fixing a customer bug reported via screenshot, acting on user feedback posted to social media.</p>
 <hr>
 <h2 id="notifications-live-activities-and-push">Notifications: Live Activities and Push</h2>
 <p>This is the piece that makes long-running agents practical.</p>
@@ -136,44 +136,44 @@
 <td>&lt;10 min environment setup, reusable snapshots</td>
 </tr>
 <tr>
-<td><code>/in-cloud</code> command</td>
+<td><a href="https://cursor.com/changelog/cloud-in-agents-window"><code>/in-cloud</code> command</a></td>
 <td>Jun 17</td>
 <td>Spawn isolated cloud subagents on separate VMs</td>
 </tr>
 <tr>
-<td><code>/babysit</code></td>
+<td><a href="https://cursor.com/changelog/cloud-in-agents-window"><code>/babysit</code></a></td>
 <td>Jun 17</td>
 <td>Cloud agents iterate toward PR-ready independently</td>
 </tr>
 <tr>
-<td><code>/automate</code></td>
+<td><a href="https://cursor.com/changelog/06-18-26"><code>/automate</code></a></td>
 <td>Jun 18</td>
 <td>Create recurring workflows in plain language</td>
 </tr>
 <tr>
-<td>GitHub triggers (5 new)</td>
+<td><a href="https://cursor.com/changelog/06-18-26">GitHub triggers (5 new)</a></td>
 <td>Jun 18</td>
 <td>Agents fire on issue comments, PR review events, workflow completions</td>
 </tr>
 <tr>
-<td>Slack triggers</td>
+<td><a href="https://cursor.com/changelog/06-18-26">Slack triggers</a></td>
 <td>Jun 18</td>
 <td>Emoji-based Slack reactions trigger agents</td>
 </tr>
 <tr>
-<td>Computer use</td>
+<td><a href="https://cursor.com/changelog/06-18-26">Computer use</a></td>
 <td>Jun 18</td>
 <td>Cloud agents produce demos and screenshots for validation</td>
 </tr>
 <tr>
-<td>Bugbot v2</td>
+<td><a href="https://cursor.com/blog/bugbot-updates-june-2026">Bugbot v2</a></td>
 <td>Jun 10</td>
-<td>3× faster reviews, 22% cheaper, 10% more bugs caught</td>
+<td>Over 3× faster (~90s avg, down from ~5 min), 22% cheaper, finds ~10% more bugs per review</td>
 </tr>
 <tr>
-<td>Agent Safety</td>
+<td><a href="https://cursor.com/blog/agent-autonomy-auto-review">Auto-review (&ldquo;Agent Safety&rdquo;)</a></td>
 <td>Jun 11</td>
-<td>Contextual classification blocks ~4% of actions, agent continues with safer alternative</td>
+<td>Contextual classifier blocks ~4% of tool calls; agent gets an explanation back and often finds a safer alternative without interrupting the user</td>
 </tr>
 </tbody>
 </table>
@@ -186,10 +186,10 @@
 <p><strong>&ldquo;Slow build&rdquo; handoff</strong> — You kick off a large refactor on your desktop at end of day, use Remote Control on the commute home to review progress and redirect if the agent went sideways, receive a push notification when it is done.</p>
 <hr>
 <h2 id="what-is-missing">What Is Missing</h2>
-<p><strong>No Android.</strong> iOS only at launch. No Android version announced.</p>
-<p><strong>Paid plans required.</strong> The app is in public beta for all paid Cursor plans, but not available on the free tier. Composer 2.5 runs specifically are what the 75%-off promotion covers (through July 5, 2026 — 4 days from the time of this guide).</p>
+<p><strong>No Android.</strong> iOS only at launch. <a href="https://cursor.com/docs/cloud-agent/mobile">Cursor&rsquo;s docs describe Android as &ldquo;planned&rdquo;</a>, but no ship date has been announced.</p>
+<p><strong>Paid plans required.</strong> The app is in public beta for paid Cursor plans, but not available on the free tier. <a href="https://cursor.com/blog/ios-mobile-app">Composer 2.5 runs are 75% off in the mobile app through July 5, 2026</a> — 4 days from the time of this guide.</p>
 <p><strong>No standalone coding.</strong> The app does not let you write, edit, or view code directly. It is an agent control surface. If you need to read code on your phone, you are using a different tool.</p>
-<p><strong>Local↔cloud parity is incomplete.</strong> The Cursor changelog explicitly notes &ldquo;improved local/cloud parity&rdquo; as a roadmap item — meaning current behavior differs between local and cloud agent sessions in ways that may matter for your workflow. Test before relying on it for critical paths.</p>
+<p><strong>Local↔cloud parity is incomplete.</strong> <a href="https://cursor.com/blog/ios-mobile-app">Cursor&rsquo;s own launch post says the experience of running agents in the cloud will &ldquo;become indistinguishable&rdquo; from running them locally &ldquo;over time&rdquo;</a> — implying it isn&rsquo;t there yet. Current behavior may differ between local and cloud agent sessions in ways that matter for your workflow. Test before relying on it for critical paths.</p>
 <p><strong>iOS version requirement.</strong> iOS 26.0 or later required. If your team uses older devices, this is a hard blocker.</p>
 <hr>
 <h2 id="builder-checklist">Builder Checklist</h2>
@@ -197,13 +197,13 @@
 <li><input disabled="" type="checkbox"> On a paid Cursor plan? If not, the iOS app is not yet available to you.</li>
 <li><input disabled="" type="checkbox"> Running long-duration cloud agents? This is the primary use case the app was designed for.</li>
 <li><input disabled="" type="checkbox"> Have on-call or remote-response workflows? Voice input + push notifications make the iOS app particularly useful here.</li>
-<li><input disabled="" type="checkbox"> Want to try cloud agents for the first time? Composer 2.5 is 75% off through July 5, 2026 in the mobile app — good window to experiment.</li>
+<li><input disabled="" type="checkbox"> Want to try cloud agents for the first time? <a href="https://cursor.com/blog/ios-mobile-app">Composer 2.5 is 75% off through July 5, 2026 in the mobile app</a> — good window to experiment.</li>
 <li><input disabled="" type="checkbox"> Relying on <code>temperature</code> or <code>top_p</code> in your prompts? Not applicable here; note this for Claude Sonnet 5 migrations, not Cursor (unrelated issue, but worth tracking separately).</li>
 <li><input disabled="" type="checkbox"> Android users: not yet supported. Watch the changelog at <code>cursor.com/changelog</code>.</li>
 </ul>
 <hr>
 <h2 id="bottom-line">Bottom Line</h2>
-<p>The Cursor iOS app is the first practical control surface for fully asynchronous agentic coding workflows. The cloud agent architecture (isolated VMs + snapshots + PR-ready iteration) already existed; the iOS app adds the missing layer — start from anywhere, monitor from your lock screen, redirect with voice, merge from your phone.</p>
+<p>The Cursor iOS app is a practical control surface for fully asynchronous agentic coding workflows. The cloud agent architecture (isolated VMs + snapshots + PR-ready iteration) already existed; the iOS app adds the missing layer — start from anywhere, monitor from your lock screen, redirect with voice, merge from your phone.</p>
 <p>The model is: delegate long-horizon work to a cloud agent, forget about it until the notification arrives, validate the diff from your phone. That is a meaningful change from the current pattern of watching a terminal window.</p>
 <p>If you run Cursor on a paid plan and have long-running agent workflows, the iOS app is worth picking up this week while the Composer 2.5 discount runs.</p>
 <hr>

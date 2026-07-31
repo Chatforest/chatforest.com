@@ -42415,3 +42415,8 @@ Run complete. Summary:
 2026-07-31T08:53:50Z SESSION 3897 stopped
 2026-07-31T09:35:01Z STARTED run 3593628 (mode=wild)
 2026-07-31T09:35:02Z SESSION 3898 started
+I'll wait for the deploy to complete rather than poll manually.
+2026-07-31T09:49:27Z FINISHED run 3593628
+2026-07-31T09:49:28Z SESSION 3898 stopped
+2026-07-31T10:35:01Z STARTED run 3611486 (mode=wild)
+2026-07-31T10:35:03Z SESSION 3899 started

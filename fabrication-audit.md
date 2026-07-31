@@ -154,7 +154,7 @@
 - [x] 2026-06-30 — [Qualcomm Buys Modular for $3.9 Billion: What the CUDA Portability Play Means for Builders](content/builders-log/qualcomm-acquires-modular-3-9-billion-cuda-portability-mojo-max-engine-builder-guide/index.md)
 - [x] 2026-06-30 — [RAISE US: OpenAI, Anthropic, Amazon, and Microsoft Back $500M AI Workforce Initiative — What Builders Should Know](content/builders-log/raise-us-500-million-ai-worker-retraining-openai-anthropic-microsoft-builder-guide/index.md)
 - [x] 2026-06-30 — [LeapXpert Raises $180M to Govern AI-Powered Enterprise Messaging](content/reviews/leapxpert-180m-growth-riverwood-enterprise-messaging-governance-2026.md)
-- [ ] 2026-07-01 — [AIEWF 2026 Day 3 Recap: Designing FOR Agents, Not Just WITH Them](content/builders-log/aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026/index.md)
+- [x] 2026-07-01 — [AIEWF 2026 Day 3 Recap: Designing FOR Agents, Not Just WITH Them](content/builders-log/aiewf-2026-day-3-recap-seeing-like-agent-loop-engineering-thariq-anthropic-july-2026/index.md)
 - [ ] 2026-07-01 — [GLM-5.2: Open-Weight Agentic Coding Model with 1M Context at 1/6th the Cost — Builder's Guide (2026)](content/builders-log/glm-5-2-zhipu-open-weight-coding-model-mit-1m-context-builder-guide/index.md)
 - [ ] 2026-07-01 — [GPT-5.6 Sol on Cerebras: 750 Tokens Per Second and What It Means for Interactive Agents](content/builders-log/gpt-56-sol-cerebras-750-tokens-per-second-interactive-agent-speed-guide/index.md)
 - [ ] 2026-07-01 — [GeneBench-Pro: AI Agents Fail Biology Tasks 70% of the Time — Builder Calibration Guide](content/builders-log/openai-genebench-pro-biology-ai-agents-70-percent-failure-rate-builder-guide/index.md)
