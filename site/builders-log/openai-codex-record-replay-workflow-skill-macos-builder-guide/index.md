@@ -3,7 +3,7 @@
 > OpenAI shipped Record & Replay for Codex on June 18 — a macOS feature that watches you complete a workflow once and converts it to a reusable skill. Here's what it does, what the stored SKILL.md looks like, and when to use it versus building a plugin.
 
 
-OpenAI shipped Record & Replay for Codex on June 18, 2026. The feature watches you complete a workflow on macOS once, then converts your observed steps and window context into an editable SKILL.md file that Codex can replay on demand with variable inputs.
+OpenAI shipped [Record & Replay](https://developers.openai.com/codex/record-and-replay) for Codex on [June 18, 2026](https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-06-18-app). The feature watches you complete a workflow on macOS once, then converts your observed steps and window context into an editable SKILL.md file that Codex can replay on demand with variable inputs.
 
 This is the "show don't tell" approach to workflow automation: instead of writing instructions for the agent, you demonstrate the task and Codex writes the instructions from what it saw.
 
@@ -37,35 +37,35 @@ On future runs, you invoke the skill and provide any variable inputs — a new f
 
 ## What Workflows Fit
 
-OpenAI's documentation names these as the sweet spot:
+[OpenAI's documentation](https://developers.openai.com/codex/record-and-replay) names these as the sweet spot:
 
 - **Repetitive tasks** — filing an expense, downloading a recurring report, creating a correctly configured issue
 - **Preference-heavy tasks** — anything where your setup choices matter more than the steps (publishing a video to your specific channel with your specific defaults)
 - **Show-not-tell workflows** — tasks easier to demonstrate than to describe in a prompt
 
-The documentation notes the feature works best when demonstrations are short and complete. Long workflows with many branches are harder for Codex to generalize — you'd get a skill that replays that exact run, not a flexible template.
+The documentation notes the feature works best when demonstrations are "short and complete," with stable steps and clear success criteria. Long workflows with many branches are harder for Codex to generalize — you'd get a skill that replays that exact run, not a flexible template.
 
 ---
 
 ## Requirements and Restrictions
 
-**Platform:** macOS only. No Windows or Linux path announced.
+**Platform:** macOS only. No Windows or Linux path announced. ([OpenAI documentation](https://developers.openai.com/codex/record-and-replay))
 
-**Dependency:** Computer Use must be enabled in your organization or by the user. No Computer Use, no Record & Replay.
+**Dependency:** Computer Use must be enabled in your organization or by the user. No Computer Use, no Record & Replay. ([source](https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-06-18-app))
 
-**Geographic exclusion:** Initial availability excludes the European Economic Area, UK, and Switzerland.
+**Geographic exclusion:** Initial availability excludes the European Economic Area, UK, and Switzerland. ([source](https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-06-18-app))
 
-**Enterprise off-switch:** If your org uses `requirements.toml` for Codex configuration, Computer Use (and by extension Record & Replay) can be disabled with `computer_use = false`.
+**Enterprise off-switch:** If your org uses `requirements.toml` for Codex configuration, the `[features].computer_use` setting controls Record & Replay too — setting `computer_use = false` disables both. ([source](https://developers.openai.com/codex/record-and-replay))
 
 ---
 
 ## Skills vs. Plugins: When to Use Which
 
-Codex already has two existing paths for reusable automation:
+Codex already has two existing paths for reusable automation, laid out in [OpenAI's skills-and-plugins guidance](https://developers.openai.com/codex/skills-and-plugins):
 
-**Skills** (including Record & Replay output) are local, personal, and lightweight. A SKILL.md lives in your Codex config and runs in the context of your session. Good for: individual workflows, personal preferences, one-off automation, internal team sharing via a shared config.
+**Skills** (including Record & Replay output) are local, personal, and lightweight — "the best fit for reusable workflows" that need "richer instructions, scripts, and references while staying reusable across tasks." A SKILL.md lives in your Codex config and runs in the context of your session. Good for: individual workflows, personal preferences, one-off automation, internal team sharing via a shared config.
 
-**Plugins** are packaged, distributable, and stable. They bundle skills with app integrations and MCP server configs into one installable unit (OpenAI shipped Codex plugins in June). Good for: distributing across large teams, maintaining versioned automation, sharing publicly, combining multiple integrations into one install.
+**Plugins** are packaged, distributable, and stable. OpenAI [shipped plugin support for Codex on March 25, 2026](https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-03-25) — installable bundles that package skills, app integrations, and MCP server configuration for reusable workflows. Good for: distributing across large teams, maintaining versioned automation, sharing publicly, combining multiple integrations into one install.
 
 OpenAI's guidance: use Record & Replay → SKILL.md for workflows you develop and refine. Graduate to a plugin when you want stability, versioning, and broad distribution.
 
@@ -73,19 +73,19 @@ OpenAI's guidance: use Record & Replay → SKILL.md for workflows you develop an
 
 ## What Else Shipped on June 18
 
-Record & Replay was the headline but three other changes shipped in the same release:
+Record & Replay was the headline but three other changes shipped in the [same June 18, 2026 release](https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-06-18-app) (Codex app 26.616):
 
 **Bulk history actions:** Automation run history now supports bulk operations — mark every run as read or archive eligible runs in one action. Less noise in the history view for teams running many automations.
 
-**SSH deep links and thread handoff:** New deep links to manage SSH connections directly. Threads can now hand off between local and remote hosts, moving a session between matching projects on connected machines. The practical use: start a task locally, hand it to a remote Codex instance when compute needs scale.
+**SSH deep links and thread handoff:** New [deep links to manage SSH connections](https://developers.openai.com/codex/app/commands#settings) directly. Threads can now [hand off between local and remote hosts](https://developers.openai.com/codex/remote-connections#hand-off-a-task-between-hosts), moving a session to a matching project on a connected machine, with Codex able to coordinate the handoff. The practical use: start a task locally, hand it to a remote Codex instance when compute needs scale.
 
-**Browser Use improvements:** Visible-tab routing and annotations now persist when draft browser sessions move to servers, plus general reliability improvements for browser-based tasks. If your Codex workflows involve browser steps, replays should be more stable after this update.
+**Browser Use improvements:** Visible-tab routing and annotations now persist when a draft browser session moves to the server, plus general reliability improvements for browser-based tasks. If your Codex workflows involve browser steps, replays should be more stable after this update.
 
 ---
 
 ## The Broader Pattern
 
-Record & Replay follows the same logic as the June 3 role plugins and Codex Sites: OpenAI is expanding Codex's addressable work surface. The June 3 update added white-collar knowledge work. Record & Replay adds personal workflow capture.
+Record & Replay follows the same logic as the [June 2, 2026 role plugins and Codex Sites launch](https://openai.com/index/codex-for-every-role-tool-workflow/): OpenAI is expanding Codex's addressable work surface. That update shipped [six role-specific plugins](https://openai.com/index/codex-for-every-role-tool-workflow/) — bundling 62 apps and 110 skills for non-developer work like data analytics and sales — plus a preview of [Codex Sites](https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-06-02) for hosted internal apps. OpenAI said non-developers made up about 20% of Codex's [5 million weekly users](https://openai.com/index/codex-for-every-role-tool-workflow/) at the time and were growing more than 3x as fast as developers. Record & Replay adds personal workflow capture on top of that push into white-collar knowledge work.
 
 The through-line is reducing the skill gap between "knowing what you want the agent to do" and "being able to configure the agent to do it." Prompting, plugins, and now demonstration all serve that goal at different levels of formality.
 

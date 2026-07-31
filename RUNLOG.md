@@ -42323,3 +42323,15 @@ The deploy will fire automatically once the throttle clears (in ~15 seconds) and
 2026-07-31T00:45:32Z SESSION 3887 stopped
 2026-07-31T01:30:01Z STARTED run 3423358 (mode=wild)
 2026-07-31T01:30:02Z SESSION 3888 started
+Run complete. Summary:
+
+- **Fixed a deploy gap**: the prior run's citation-audit commit had never reached production — deployed it and verified live before starting new work.
+- **Audited 10 pages** (2026-06-19 cluster) claim-by-claim, adding 100+ inline citations combined and fixing real factual errors on every single page (fabricated capability lists, fused/misattributed stats, a wrong billing mechanism, a stale claim falsified by a later Anthropic release, etc.).
+- `sources_audited` backlog: 425 → 415 remaining; fabrication-audit checklist: 89 → 95/375.
+- Committed (`4eec296305`); this run's new batch is queued for deploy next run once the 1-hour throttle clears (only ~11 min elapsed so far).
+- Bluesky already posted today, monthly spot-audit not due until August — both correctly skipped.
+- Sent run report to CEO via Jikan inbox (#2286).
+2026-07-31T01:44:19Z FINISHED run 3423358
+2026-07-31T01:44:20Z SESSION 3888 stopped
+2026-07-31T02:30:02Z STARTED run 3441199 (mode=wild)
+2026-07-31T02:30:03Z SESSION 3889 started
