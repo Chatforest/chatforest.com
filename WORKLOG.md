@@ -127374,3 +127374,90 @@ run start).
 - Continue the fabrication-audit cohort (134/375) alongside normal duty.
 - Await CEO reply on #2280/#2281/#2283-#2292 — no new action needed until a reply arrives.
 - No other pending inbox action.
+
+## Run 3593628 (2026-07-31, UTC ~09:35-XX) — Citation audit, 12 pages (2026-06-30 cluster complete)
+
+### Orient
+No new inbox instructions — #2280/#2281/#2283-#2293 all still awaiting reply (all Grove's own sent
+reports to CEO). Bluesky pre-post check returned `ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) —
+no post this run. Deploy throttle from prior commit (a7299d1171) had ~2532s elapsed at run start (needs
+3600s) — not yet clear; deploying this run's batch once it clears.
+
+### Citation audit — 12 pages (closes the 2026-06-30 cluster)
+Ran 12 parallel general-purpose audit agents on the oldest unaudited pages: gemini-3-5-pro-missed-june-deadline,
+github-copilot-month-one-invoice-agentic-billing-shock, google-deepmind-coding-strike-team-brin-agentic-mandate,
+google-nano-banana-2-lite-gemini-omni-flash, google-nano-banana-pro-gemini-3-pro-image-ga,
+grok-45-xai-v9-monthly-model-cadence, openai-deepmind-erdos-unit-distance-conjecture,
+persona-269-checks-claude-july-8-fincen-watchlist, q2-closes-fable-5-grok-5-gemini-pro-gpt56,
+qualcomm-acquires-modular-3-9-billion-cuda-portability, raise-us-500-million-ai-worker-retraining, and
+the review leapxpert-180m-growth-riverwood.
+
+**Biggest catches:**
+1. **Nano Banana Pro GA page** — worst error of the run: the article's central premise (June 30 GA date,
+   `-preview` model IDs, a dedicated "edit" endpoint) was stale/wrong. Real GA was May 28; the cited model
+   IDs had already been shut down 5 days before publish; there is no separate edit endpoint (single unified
+   Interactions API); output-token pricing was off by 10x ($12/M claimed vs. real $120/M for image tokens).
+   Required a substantial rewrite, not a citation patch.
+2. **DeepMind coding strike-team page** — a fabricated compound stat: "Google's CFO stated Anthropic writes
+   close to 100% of its code" fused two unrelated facts (the real CFO quote was ~50% for Google's own code;
+   the ~100% figure is a Claude Code lead's personal claim about Anthropic, not the CFO's). Rewrote the
+   section and its downstream echoes.
+3. **RAISE US $500M retraining page** — false claim that Amazon and Microsoft were "filing IPO papers"
+   alongside OpenAI/Anthropic (both are decades-old public companies). Corrected to the two companies
+   actually pursuing IPOs.
+4. **Persona 269-checks / FinCEN watchlist page** — repeated the same false premise a sibling page had
+   (that the July 8 ID-verification gate is Anthropic's Fable-5-restoration mechanism) — fixed with
+   Anthropic's on-record denial via TechCrunch. Also caught and deleted a fabricated HN engagement stat
+   (article claimed 510 points/472 comments; the actual matching thread has 7 points/3 comments).
+5. **GitHub Copilot invoice-shock page** — fabricated "1,000x more tokens for agentic tasks" stat
+   attributed to a GitHub post that says no such thing; several viral invoice-anecdote figures reframed as
+   explicitly unverified rather than stated fact; a Microsoft 365 Copilot / Security Copilot SCU-billing
+   product conflation fixed.
+6. **Gemini 3.5 Pro delay page** — a $15/$60 pricing figure presented as "confirmed" had no source
+   anywhere; every real projection clusters at $2-8/$12-45. Rewrote the pricing section as honest
+   unconfirmed ranges.
+7. **Nano Banana 2 Lite page** — fabricated API detail (told builders to target `batchEmbedContents`, an
+   embeddings endpoint, for image batch jobs); wrong Veo 3.1 Lite price ($0.15/sec claimed vs. real
+   $0.05-0.08/sec); wrong tier name and GA-status claim on a `-preview` model ID.
+8. **Qualcomm/Modular deep-dive page** — confirmed NOT a duplicate of the already-audited three-deal
+   roundup (substantial unique Mojo/MAX/Mammoth content). Found the deal actually closed July 29 (two days
+   before this audit) — updated the "pending" framing throughout. Fixed a false hardware-support claim
+   (Qualcomm silicon support was a stated future goal, not shipping), wrong CUDA-age math, and an
+   aggregator-sourced benchmark claim replaced with Modular's own MLSys 2026 figures.
+9. Erdos unit-distance conjecture page and Grok 4.5 page: smaller citation-linking fixes (wrong paper
+   linked for the Sawin bound; a misquoted Musk tweet; added the SpaceX/Cursor acquisition context the
+   original never mentioned).
+10. LeapXpert review: cut an unverifiable aggregate funding total and an unsupported CTO bio detail;
+    fixed misquoted CEO/investor quotes to verbatim.
+
+**Duplicate flagged, not resolved:** `gemini-3-1-flash-lite-image-nano-banana-2-lite-image-generation-pricing-builder-guide`
+(dated 2026-07-05, still unaudited) substantially overlaps with this run's audited
+`google-nano-banana-2-lite-gemini-omni-flash-june-30-builder-guide` — both cover Nano Banana 2 Lite
+pricing/specs in depth. Unlike the Qualcomm/Modular case, this one wasn't fully diffed for unique content
+this run — left for a future run to properly compare and decide merge vs. keep-both.
+
+**`sources_audited`: +12 this run** (386 → 374 remaining of 1944 total content files). Reconciled 7
+fabrication-audit.md checkboxes (gemini-3-5-pro, grok-45, persona-269, q2-closes, qualcomm-acquires-modular,
+raise-us-500-million, leapxpert-180m) — fabrication-audit progress: 141/375.
+
+Hugo rebuild (plain `hugo`) clean, 4171 pages, 7 aliases. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deploying this run's batch once the 1-hour throttle clears from commit a7299d1171 (had ~2532s elapsed at
+run start).
+
+### What should happen next
+- The 2026-06-30 cluster is now closed. Next oldest unaudited pages start 2026-07-01 (per `content/` scan
+  at this run's start).
+- **Investigate the flagged Nano Banana 2 Lite duplicate** (see above) — diff the two pages fully before
+  deciding merge vs. keep-both.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — check
+  the machine's actual UTC clock at the start of next run; this run's UTC was 09:35+ on 2026-07-31, still
+  July.
+- Continue the fabrication-audit cohort (141/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283/#2286-#2293 — no new action needed until a reply arrives.
+- No other pending inbox action.

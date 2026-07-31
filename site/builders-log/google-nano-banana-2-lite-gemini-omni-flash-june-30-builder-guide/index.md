@@ -3,31 +3,31 @@
 > Google shipped two models on June 30: Nano Banana 2 Lite (gemini-3.1-flash-lite-image) hits GA at $0.034 per image in 4 seconds, and Gemini Omni Flash (gemini-omni-flash-preview) opens its API at $0.10/sec video. Model IDs, pricing math, API patterns, and the decision guide between them and their predecessors.
 
 
-Google shipped two models on June 30, 2026: Nano Banana 2 Lite reached general availability for image generation, and Gemini Omni Flash opened its developer API in public preview for video generation. Both land on the Gemini Enterprise Agent Platform and the standard Gemini API. This guide covers what each model does, the exact pricing math, the API patterns you need, and when to pick each over its predecessor.
+Google shipped two models on June 30, 2026: Nano Banana 2 Lite reached general availability for image generation, and Gemini Omni Flash opened its developer API in public preview for video generation ([Google's launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)). Both are documented on the Gemini Enterprise Agent Platform ([Nano Banana 2 Lite GEAP page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-lite-image); [Gemini Omni Flash GEAP page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-flash-preview)) as well as the standard Gemini API. This guide covers what each model does, the exact pricing math, the API patterns you need, and when to pick each over its predecessor.
 
 ---
 
 ## Nano Banana 2 Lite (gemini-3.1-flash-lite-image)
 
-Nano Banana 2 Lite is the speed-and-cost tier of Google's image generation family. The standard Nano Banana 2 (`gemini-3.1-flash-image`) generates images across 1K, 2K, and 4K resolutions with balanced quality; the Lite version strips that to 1K only (1024×1024) in exchange for roughly half the cost and roughly half the latency.
+Nano Banana 2 Lite is the speed-and-cost tier of Google's image generation family. The standard Nano Banana 2 (`gemini-3.1-flash-image`) generates images across 1K, 2K, and 4K resolutions ([Gemini API pricing page](https://ai.google.dev/gemini-api/docs/pricing) lists per-resolution pricing for each tier); the Lite version strips that to 1K only (1024×1024) at roughly half the per-image cost of standard at 1K ($0.034 vs. $0.067/image — [pricing page](https://ai.google.dev/gemini-api/docs/pricing)), and Google markets it as the faster tier of the two ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)).
 
 **Model ID:** `gemini-3.1-flash-lite-image`  
-**Status:** Generally Available (GA) since June 30, 2026  
-**Free tier:** Not available — paid plans only
+**Status:** Generally Available (GA) since June 30, 2026 ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/))  
+**Free tier:** Not available — paid plans only ([pricing page](https://ai.google.dev/gemini-api/docs/pricing))
 
 ### What it supports
 
 - Text-to-image generation
-- Conversational image editing (describe changes; model edits in context)
-- Character consistency across multiple generations (storyboarding, virtual try-ons)
-- In-image text rendering in multiple languages
-- C2PA content credentials and SynthID watermarks, enabled by default
+- Conversational image editing (describe changes; model edits in context) ([Nano Banana image generation docs](https://ai.google.dev/gemini-api/docs/image-generation))
+- Character consistency across multiple generations (storyboarding, virtual try-ons) ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/))
+- In-image text rendering in multiple languages ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/))
+- C2PA content credentials and SynthID watermarks, enabled by default ([Gemini 3.1 Flash-Lite Image model card](https://deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/))
 
 ### What it does not support
 
-- 2K or 4K resolution output — 1K (1024×1024) only
-- High-complexity compositions — the model card notes slightly weaker performance on multi-input editing vs Nano Banana 2 standard
-- Small text rendering below threshold — the model card flags blurriness in small text
+- 2K or 4K resolution output — 1K (1024×1024) only ([Nano Banana image generation docs](https://ai.google.dev/gemini-api/docs/image-generation): "Gemini 3.1 Flash Lite image model only supports 1K resolution")
+- Multiple reference inputs or multi-turn sequential editing — the docs state the model is "not optimized for multiple reference inputs or multi-turn sequential editing" ([Nano Banana image generation docs](https://ai.google.dev/gemini-api/docs/image-generation))
+- Small text rendering — the model card flags text as "poor in small text (often blurry in 1k model), long paragraphs, page length" ([Gemini 3.1 Flash-Lite Image model card](https://deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/))
 
 ### Pricing
 
@@ -36,11 +36,13 @@ Nano Banana 2 Lite is the speed-and-cost tier of Google's image generation famil
 | Standard | $30 per 1M tokens (~$0.034/image) | $0.25 per 1M | $1.50 per 1M |
 | Batch | $15 per 1M tokens (~$0.017/image) | $0.125 per 1M | $0.75 per 1M |
 
-At $0.034 per image standard and $0.017 per image batch, Nano Banana 2 Lite is roughly 4× cheaper than Nano Banana 2 standard at 4K ($0.151/image) and about 2× cheaper than Nano Banana 2 at 1K. Provisioned Throughput is available for high-concurrency workloads.
+Source for all figures: [Gemini API pricing page](https://ai.google.dev/gemini-api/docs/pricing), which confirms a 1K image consumes 1,120 output tokens (1,120 × $30/1M = $0.0336/image standard).
+
+At $0.034 per image standard and $0.017 per image batch, Nano Banana 2 Lite is roughly 4× cheaper than Nano Banana 2 standard at 4K ($0.151/image, per the same pricing page) and about 2× cheaper than Nano Banana 2 at 1K ($0.067/image). Provisioned Throughput for Nano Banana 2 Lite is available on the Gemini Enterprise Agent Platform ([GEAP model page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-lite-image)).
 
 ### Generation speed
 
-Target is approximately 4 seconds per image. Image editing requests may have slightly higher latency than text-to-image.
+Google's launch post states text-to-image generation completes in about 4 seconds ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)). Image editing requests may have slightly higher latency than text-to-image.
 
 ### API pattern
 
@@ -66,7 +68,7 @@ for image in response.generated_images:
         f.write(image.image.image_bytes)
 ```
 
-For batch workloads, target the `batchEmbedContents` endpoint or set up a queue loop — the model itself does not have a native batch API, but Provisioned Throughput handles concurrent request pressure.
+For batch workloads, submit requests through the Gemini API's [Batch API](https://ai.google.dev/gemini-api/docs/batch-api) — a JSONL file of requests submitted as an async job, priced at the batch rate above, with results retrieved once the job completes (typically well under the 24-hour target turnaround). Provisioned Throughput handles concurrent request pressure for latency-sensitive, non-batch workloads.
 
 ### When to use Nano Banana 2 Lite vs Nano Banana 2 standard
 
@@ -82,51 +84,54 @@ The practical split: if your pipeline generates at 1K and you run high volumes �
 
 ### Migration from Nano Banana (Gemini 2.5 Flash Image)
 
-If you are on the original Nano Banana (`gemini-2.5-flash-image`), migration is a model string swap. Google recommends regression testing for style consistency, as quality characteristics differ between generations. Run a sample of your production prompts on both models before switching.
+If you are on the original Nano Banana (`gemini-2.5-flash-image`), migration is a model string swap. Google's own launch post names Nano Banana 2 Lite as "our recommended replacement for developers currently using our first version of Nano Banana," positioning it as an immediate swap ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)). Google has not published specific regression-testing guidance for the swap, so run a sample of your production prompts on both models before switching if style consistency matters to your pipeline.
 
 ---
 
 ## Gemini Omni Flash (gemini-omni-flash-preview)
 
-Gemini Omni Flash is Google's any-to-any video generation model. It was announced at Google I/O on May 19, 2026 — [our review at the time](/builders-log/google-gemini-omni-flash-multimodal-video-generation-review/) noted the developer API was not yet open and flagged it as a Q3 2026 planning item. It arrived in public preview on June 30, ahead of that schedule.
+Gemini Omni Flash is Google's any-to-any video generation model, the first release in the new "Gemini Omni" family ([Google's Gemini Omni launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)). It was announced at Google I/O on May 19, 2026 — [our review at the time](/builders-log/google-gemini-omni-flash-multimodal-video-generation-review/) noted the developer API was not yet open and flagged it as a Q3 2026 planning item. It arrived in public preview on June 30, ahead of that schedule ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)).
 
 **Model ID:** `gemini-omni-flash-preview`  
-**Status:** Public Preview since June 30, 2026  
-**Free tier:** Not available — paid Gemini API only
+**Status:** Public Preview since June 30, 2026 ([model page](https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash))  
+**Free tier:** Not available — paid Gemini API only ([pricing page](https://ai.google.dev/gemini-api/docs/pricing))
 
 ### What it does
 
-Gemini Omni Flash accepts text, images, and existing video as input and generates 3–10 second clips at 720p with native audio — audio, dialogue, and ambient sound generated in the same pass as the video, not as a post-processing step.
+Gemini Omni Flash accepts text, images, and existing video as input and generates 3–10 second clips at 720p/24fps ([model page](https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash)) with native audio — the [Omni docs](https://ai.google.dev/gemini-api/docs/omni) state "the model generates a video with audio based on your text description," created in the same pass as the video rather than added afterward.
 
-The distinguishing capability is **conversational editing**: you can issue follow-up prompts to swap characters, relight scenes, alter camera angles, or change object styles in natural language without losing scene coherence. The model maintains character and object consistency across multi-turn revision sessions.
+The distinguishing capability is **conversational editing**: through the Interactions API, you can issue follow-up prompts to swap characters, relight scenes, alter camera angles, or change object styles in natural language without regenerating the full clip ([Omni docs](https://ai.google.dev/gemini-api/docs/omni)). The model retains context across turns via `previous_interaction_id`.
 
-Other capabilities:
+Other capabilities, per Google's Gemini Omni launch post:
 
-- **Multimodal input**: text + image + video in the same request
-- **World knowledge in motion**: physics understanding plus Gemini's knowledge base — useful for historically or scientifically grounded scenes
-- **Text in video**: renders legible text and synchronized kinetic typography
-- **SynthID watermarks**: enabled by default on all generated video
+- **Multimodal input**: text + image + video in the same request ([model page](https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash))
+- **World knowledge in motion**: the model "combines an intuitive understanding of physics with Gemini's knowledge of history, science and cultural context," useful for historically or scientifically grounded scenes ([Gemini Omni launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/))
+- **Text in video**: renders legible text and graphics with kinetic typography synchronized to on-screen movement, though Google flags dense/long text as a known weak spot ([Gemini Omni launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/))
+- **SynthID watermarks**: enabled by default on all generated video ([launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/))
 
 ### Pricing
 
 | Output type | Cost |
 |---|---|
-| Video output | $17.50 per 1M tokens (≈ $0.101 per second of 720p video) |
+| Video output | $17.50 per 1M tokens (≈ $0.10 per second of 720p video) |
 | Text input | $1.50 per 1M tokens |
 | Text output | $9.00 per 1M tokens |
 
-At 5,792 tokens per second of 720p output, a 10-second clip costs approximately $1.01 in video output tokens plus input token costs. This places Gemini Omni Flash at roughly the same price per second as Veo 3.1 Lite ($0.15/sec) but lower than Veo 3.1 Quality ($0.60/sec). The tradeoff is capability profile, not price tier: Omni Flash's strength is conversational editing and multimodal input composition; Veo 3.1 Quality's strength is cinematic fidelity at 4K.
+Source: [Gemini API pricing page](https://ai.google.dev/gemini-api/docs/pricing), which states billing is "calculated at a rate of 5,792 tokens per second of 720p video," working out to approximately $0.10/second under Standard pricing.
+
+At 5,792 tokens per second of 720p output, a 10-second clip costs approximately $1.01 in video output tokens plus input token costs. Compared against Google's own [Veo 3.1 pricing](https://ai.google.dev/gemini-api/docs/pricing), Gemini Omni Flash's ~$0.10/sec sits close to the Veo 3.1 Fast tier ($0.10/sec at 720p) — well above Veo 3.1 Lite ($0.05/sec at 720p) and below Veo 3.1 Standard ($0.40/sec at 720p/1080p, $0.60/sec at 4K). The tradeoff is capability profile, not just price tier: Omni Flash's strength is conversational editing and multimodal input composition; Veo 3.1 Standard's strength is cinematic fidelity at 4K.
 
 ### Coming soon (not in June 30 preview)
 
-- Audio reference support (feed a reference audio clip)
-- Video reference support
-- Last-frame control (specify what the final frame should be)
-- Scene extension (continue from an existing clip)
-- Higher resolution outputs (beyond 720p)
-- Provisioned Throughput for Gemini Omni Flash
+Per the [Omni docs limitations section](https://ai.google.dev/gemini-api/docs/omni):
 
-These are listed as "coming soon" in the official release announcement. Build around 720p for now and abstract the resolution parameter so you can upgrade without architectural changes.
+- Audio reference support — "uploading audio references is unsupported in the current version of the API"
+- Video reference support — video references up to 3 seconds "are accepted by the API schema but are not correctly processed by the model at this time"
+- Video extension and video interpolation (generating video between a first and last frame) — explicitly listed as "not supported"
+- Provisioned Throughput — explicitly listed as "not supported"
+- Higher resolution outputs beyond 720p — not offered in the current preview
+
+Build around 720p for now and abstract the resolution parameter so you can upgrade without architectural changes.
 
 ### API pattern
 
@@ -164,20 +169,21 @@ Use the Interactions API to maintain session context across editing turns. Each 
 
 ### Gemini Omni Flash vs Veo 3.1
 
-Both models generate video via the Gemini API. The profiles diverge on use case:
+Both models generate video via the Gemini API. The profiles diverge on use case. Veo 3.1's GA tier is called "Standard" on Google's own pricing page, not "Quality" — Vertex AI documentation lists `veo-3.1-generate-001` as the GA model ID for that tier (Veo 3.1 Fast and Lite are separate, cheaper tiers; [Vertex AI Veo 3.1 model docs](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-1-generate)):
 
-| Criteria | Gemini Omni Flash | Veo 3.1 |
+| Criteria | Gemini Omni Flash | Veo 3.1 Standard |
 |---|---|---|
-| Model ID | `gemini-omni-flash-preview` | `veo-3.1-generate-preview` (Quality) |
-| Status | Public preview | GA |
+| Model ID | `gemini-omni-flash-preview` | `veo-3.1-generate-001` (GA) / `veo-3.1-generate-preview` (Gemini API preview endpoint) |
+| Status | Public preview ([model page](https://ai.google.dev/gemini-api/docs/models/gemini-omni-flash)) | GA on Vertex AI ([Vertex AI model docs](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-1-generate)) |
 | Primary strength | Conversational editing, multimodal input | Cinematic quality, 4K |
 | Resolution | 720p (more coming) | 720p, 1080p, 4K |
-| Pricing | ~$0.10/sec | $0.15/sec (Lite) to $0.60/sec (Quality) |
+| Pricing | ~$0.10/sec | $0.40/sec (720p/1080p), $0.60/sec (4K) — [pricing page](https://ai.google.dev/gemini-api/docs/pricing) |
 | Audio | Native, every output | Native, every output |
 | Iterative editing | Yes — multi-turn with context | No — single-shot |
-| Preview status | Preview (features incomplete) | GA, stable |
 
-The short version: if you need iterative creative control in a conversation loop (character swaps, style changes, lighting edits without full regeneration), Omni Flash is the right model. If you need stable production output at 4K or need to lock in an SLA-quality workflow, use Veo 3.1 Quality.
+For reference, Google also sells cheaper Veo 3.1 tiers: **Fast** ($0.10/sec at 720p, $0.12/sec at 1080p, $0.30/sec at 4K) and **Lite** ($0.05/sec at 720p, $0.08/sec at 1080p, no 4K) — both per the same [pricing page](https://ai.google.dev/gemini-api/docs/pricing). Omni Flash's ~$0.10/sec lands closest to Veo 3.1 Fast, not Lite.
+
+The short version: if you need iterative creative control in a conversation loop (character swaps, style changes, lighting edits without full regeneration), Omni Flash is the right model. If you need stable production output at 4K or need to lock in an SLA-quality workflow, use Veo 3.1 Standard.
 
 ---
 
@@ -189,7 +195,7 @@ The short version: if you need iterative creative control in a conversation loop
 
 **Generating video with iterative editing (product swaps, localization variants, collaborative creative):** Use Gemini Omni Flash (`gemini-omni-flash-preview`). Note its current 720p ceiling and incomplete feature set.
 
-**Generating video for production delivery (cinematics, marketing assets, 4K):** Use Veo 3.1 Quality (`veo-3.1-generate-preview`). GA, stable, 4K available.
+**Generating video for production delivery (cinematics, marketing assets, 4K):** Use Veo 3.1 Standard (`veo-3.1-generate-001`, GA on Vertex AI — [Vertex AI model docs](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-1-generate)). 4K available.
 
 **Image-to-video pipeline:** Nano Banana 2 standard (not Lite — Lite lacks multi-resolution) → Veo 3.1. Feed the generated PNG as the start frame; the video inherits composition from the image.
 

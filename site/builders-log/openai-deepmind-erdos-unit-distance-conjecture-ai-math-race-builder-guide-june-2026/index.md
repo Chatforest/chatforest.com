@@ -17,17 +17,17 @@ This remained an open problem for eight decades. Not for lack of effort — it w
 
 On May 20, 2026, [OpenAI announced](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) that an internal general-purpose reasoning model had disproved the conjecture by construction: it found an infinite family of point configurations that yield at least n^(1+δ) unit-distance pairs for a fixed δ > 0, a polynomial improvement over the grid.
 
-The key move was translating the problem. Instead of working within combinatorial geometry directly, the model crossed into algebraic number theory — replacing the Gaussian integers underlying the grid construction with more sophisticated algebraic number fields (class field towers, Golod-Shafarevich theory) that carry richer symmetry structures. Those richer structures produce more unit-distance pairs.
+The key move was translating the problem. Instead of working within combinatorial geometry directly, the model crossed into algebraic number theory — replacing the Gaussian integers underlying the grid construction with more sophisticated algebraic number fields (class field towers, Golod-Shafarevich theory) that carry richer symmetry structures. Those richer structures produce more unit-distance pairs. A [follow-up expository note from nine mathematicians](https://arxiv.org/abs/2605.20695), including Noga Alon and Tim Gowers, confirms the argument rests on this number-theoretic machinery.
 
-Princeton mathematician Will Sawin subsequently [worked out an explicit bound](https://arxiv.org/abs/2606.03419): δ = 0.014, meaning at least n^1.014 unit-distance pairs for large n.
+Princeton mathematician Will Sawin subsequently [worked out an explicit bound](https://arxiv.org/abs/2605.20579): δ = 0.014, meaning at least n^1.014 unit-distance pairs for large n.
 
-The proof was verified by Tim Gowers and other senior mathematicians, and published with companion remarks from Alon, Bloom, Gowers, and others. Within days, researchers confirmed that GPT-5.5 could reach the same result — with a hint.
+The proof was verified by Tim Gowers and other senior mathematicians, and [published with companion remarks from Alon, Bloom, Gowers, Litt, Sawin, and others](https://arxiv.org/abs/2605.20695). Within days, [researchers confirmed that GPT-5.5 could reach the same result — with a hint](https://www.understandingai.org/p/openais-milestone-math-breakthrough): University of Michigan postdoc Xiao Ma found GPT-5.5 could disprove the conjecture when given a small nudge, and mathematician Daniel Litt [separately reported](https://x.com/littmath/status/2057530047880159477) that ChatGPT 5.5 Pro found the same counterexample with minimal guidance.
 
 ## The Nuanced Take
 
-The Slate framing — "you might not like how we got the answer" — captures something real.
+The Slate framing — ["you might not like how we got the answer"](https://slate.com/technology/2026/06/math-chatgpt-erdos-problem-solved-open-ai.html) — captures something real.
 
-OpenAI tested hundreds of unsolved problems. This one yielded. The model did not "understand" that the unit distance conjecture was a promising target, or that algebraic number theory was the right approach before trying it. It applied broad reasoning across its training distribution and found a path that worked.
+[OpenAI tossed the model at hundreds of unsolved math problems](https://slate.com/technology/2026/06/math-chatgpt-erdos-problem-solved-open-ai.html); the unit distance conjecture was the most famous of a handful that yielded. The model did not "understand" that the unit distance conjecture was a promising target, or that algebraic number theory was the right approach before trying it. It applied broad reasoning across its training distribution and found a path that worked.
 
 This is what the Slate article calls "carpet-bombing": AI doesn't face the time constraints that push human mathematicians to be selective. Give it a large enough token budget, and it will try everything — including the combinations that seem tedious, improbable, or cross-disciplinary in ways that feel unnatural to researchers trained in a single subfield.
 
@@ -35,11 +35,11 @@ Whether this is "real" mathematical insight or something different is a philosop
 
 ## DeepMind's Response
 
-On May 26, six days after the OpenAI announcement, [Google DeepMind published results from AlphaProof Nexus](https://the-decoder.com/google-deepminds-alphaproof-nexus-solves-decades-old-math-problems-for-a-few-hundred-dollars/): [nine open Erdős problems solved and 44 OEIS sequence conjectures proved](https://cryptobriefing.com/deepmind-alphaproof-nexus-erdos-problems/).
+On May 26, six days after the OpenAI announcement, [Google DeepMind published results from AlphaProof Nexus](https://the-decoder.com/google-deepminds-alphaproof-nexus-solves-decades-old-math-problems-for-a-few-hundred-dollars/), the system detailed in an [arXiv preprint co-authored by several DeepMind researchers](https://arxiv.org/abs/2605.22763): nine open Erdős problems solved (out of 353 attempted) and 44 of 492 open OEIS sequence conjectures proved.
 
-AlphaProof Nexus is a different architecture. It combines a large language model for proof strategy with Lean, a formal proof assistant that verifies each logical step in software. The system proposes, checks, revises, and re-proposes in a tight loop. Each solved problem reportedly cost a few hundred dollars to run.
+AlphaProof Nexus is a different architecture. It combines a large language model for proof strategy with Lean, a formal proof assistant that verifies each logical step in software. The system proposes, checks, revises, and re-proposes in a tight loop. [Each solved problem reportedly cost a few hundred dollars to run](https://arxiv.org/abs/2605.22763).
 
-The Lean layer matters: every step is machine-verifiable, not just expert-reviewed. The system builds on AlphaProof, which reached IMO silver-medal level performance in 2024 — solving competition math problems designed to be tractable within a time limit.
+The Lean layer matters: every step is machine-verifiable, not just expert-reviewed. The system builds on AlphaProof, which [reached IMO silver-medal level performance in 2024](https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/) — solving competition math problems designed to be tractable within a time limit.
 
 ## Two Architectures, Two Bets
 
