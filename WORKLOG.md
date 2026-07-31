@@ -127152,3 +127152,122 @@ production.
   citation-audit batch before hand-picking new fabrication-audit pages.
 - Await CEO reply on #2280/#2281/#2283 — no new action needed until a reply arrives.
 - No other pending inbox action.
+
+## Run 3531937 (2026-07-31, UTC ~07:34-08:2X) — Duplicate merge + citation audit, 10 pages (2026-06-29 cluster)
+
+### Orient
+Checked inbox: no new instructions from Rob or Boss Claude — only my own prior run reports (#2280
+through #2291) still awaiting reply. Bluesky pre-post check returned `ALREADY_POSTED` (post exists
+2026-07-31T00:44 UTC) — no post this run. Deploy throttle from the prior run's commit (16e9a40953)
+had ~91s left at run start; waited it out.
+
+### Deploy-gap fix at run start
+Prior run's commit (16e9a40953, 2026-06-28/29 cluster) was committed but its throttle hadn't fully
+cleared when that run ended. Cleared early this run, deployed via rsync, spot-verified live (the
+corrected SK Hynix 177.9M ADR figure and UBS/HSBC attribution are now showing in production).
+
+### Duplicate-article merge
+Found a third duplicate pair while sweeping the oldest unaudited files: two separate builders-log
+pages on the same June 26, 2026 Anthropic rate-limit unification (Start/Build/Scale rename +
+Sonnet/Haiku-matches-Opus), both dated 2026-06-29, both carrying only a single citation. Fetched
+Anthropic's live rate-limits docs, fast-mode docs, pricing page, and API changelog directly to
+verify every figure in both drafts before choosing a survivor. Kept
+`anthropic-rate-limits-start-build-scale-sonnet-haiku-opus-unified-june-2026-builder-guide` (more
+comprehensive — it alone covered Fast Mode and Managed Agents rate limits) as the survivor, added
+~15 inline citations to it, and fixed three real errors in the process: a wrong "Opus fast mode
+covers 4.8/4.7/4.6" claim (4.6's fast mode was actually removed the same week this article
+published; added a dated "Update (post-July-24)" section reflecting that Opus 4.7's fast mode has
+since been removed too, per Anthropic's own July 24 changelog entry), a wrong "40%" vs "less than
+half" Fable-5-at-Scale-tier ratio (self-caught before commit), and a stale Opus pricing comparison
+($15/$75 — that's retired Opus 4.1/4 pricing, not current Opus 4.x's real $5/$25). Retired the
+weaker duplicate with an `aliases` redirect, matching the pattern from run 16e9a40953's two merges.
+
+### Citation audit — 9 more pages (2026-06-29 cluster), 10 total this run counting the rate-limits merge
+Ran 9 parallel general-purpose audit agents (background), each briefed on the full claim-by-claim
+standard. All 9 completed; every file's YAML front matter verified with `yaml.safe_load` before
+commit; full `hugo` (plain) rebuild clean (4173 pages, alias count 6).
+
+1. **agentic-resource-discovery-ard-agent-tool-discovery-spec** — 3→~20 sources. Fixed a wrong
+   company count (said 12/8-others, the source list and Microsoft's own post confirm 11 total), a
+   fabricated Ed25519 signing-mechanism detail (real spec supports JWS/SPIFFE/DIDs, not Ed25519 —
+   that only appeared in an unrelated third party's blog comment), and an overstated "housed under
+   the Linux Foundation's AI Catalog Working Group" claim (Google's post only credits that group for
+   the underlying data model, doesn't say ARD is governed by it).
+2. **ai-engineer-worlds-fair-2026-aiewf-builder-watch-guide** — 4→~20 sources. Fixed a false "ACM
+   CAIS running in parallel" claim — CAIS 2026 actually ran a month earlier in a different city; the
+   real connection is a paper-crossover partnership, not concurrency.
+3. **anthropic-ai-for-science-june-30-briefing-life-sciences** — fixed a wrong BioMysteryBench
+   publish date (April 30, not June 8 — June 8 was actually VirBench) and fabricated/unsupported
+   Coefficient Bio acquisition details (the sole prior citation explicitly flagged its own price
+   figure as "unconfirmed"; replaced with TechCrunch + biopharmatrend.com for the verified $400M
+   all-stock deal, employee count, and founder backgrounds). Cut an unsourced "first top-5 pharma"
+   superlative.
+4. **anthropic-gates-foundation-200m-health-education-agriculture** — biggest catch of the batch: a
+   fabricated partnership. The page claimed Anthropic partnered with IHME on the Global Burden of
+   Disease dataset; direct-fetching Anthropic's own announcement found no mention of IHME or that
+   dataset anywhere — the real partner is the Institute for Disease Modeling (IDM), for malaria/TB
+   deployment forecasting, a different org and different disease pair entirely. Rewrote the Health
+   section and all downstream references. Also fixed a wrong announcement date (May 14, not May 15)
+   and a miscascaded "16 months" OpenAI/Gates-deal-comparison claim (OpenAI's Horizon1000 was
+   January 21, 2026, not January 2025 — corrected to "under four months").
+5. **ceo-bench-princeton-500-day-startup-agent-long-horizon** — the largest fabrication found this
+   run: extensive invented data built around a plausible-but-false narrative. The real paper
+   (arXiv:2606.18543) tested 16 models, not 12 as headlined; the rule-based baseline beat every
+   single LLM tested (article had it ranked #4); the entire leaderboard was fabricated (e.g. article
+   said Fable 5 hit $47.15M, real figure $12.63M; article conflated GPT-5.5 and GPT-5.6 Sol into one
+   entry). A fabricated quote ("steering intelligence") was attributed to the paper's authors — that
+   phrase doesn't appear in it. Also caught a stale claim: Fable 5 "currently unavailable" was true
+   at the article's June 29 publish date but wrong as of this audit (restored July 1). Rebuilt the
+   full 16-model table and every derived stat from the primary source.
+6. **daamta-hr-8283-ai-distillation-sanctions-ndaa** — legislation verified as real (fetched the
+   actual 19-page bill PDF from govinfo.gov; every specific provision checked out against the
+   statutory text). Fixed a stale companion-bill status (H.R. 2683 had actually passed the House
+   January 12, 2026 — article said "status unclear"), a fabricated "~50,000+ daily transactions"
+   stat (source says cumulative, not daily), and added the missing "Alibaba denies wrongdoing,
+   figures unverified" caveat to a serious named-company accusation that had been stated as flat
+   fact.
+7. **deepseek-dspark-speculative-decoding-v4-builder-inference** — fixed a wrong API endpoint name
+   (`deepseek-coder` was merged into `deepseek-chat` in 2024, not a live endpoint) and a wrong
+   self-hosting GPU spec (the "8 GPUs" figure belongs to DeepSpec's training pipeline, not the
+   DSpark inference checkpoints' actual single-4×GB300-node recipe per DeepSeek's own model cards).
+8. **five-eyes-ai-cyber-advisory-mythos-nsa-months-not-years** — confirmed real (Five Eyes joint
+   statement and the Mythos/NSA incident both check out against primary sources). Fixed a stale
+   "both models remain suspended" framing — Mythos partial restoration began June 26, full
+   restoration for both June 30 — and tightened several claims (CISA's patch-window rule is tiered,
+   not a flat 3 days; export-control scope corrected from "US citizens only" to "blocks all foreign
+   nationals including Anthropic's own non-citizen employees").
+9. **ford-350-engineers-ai-quality-miss-institutional-knowledge** — core premise (Ford's 350-engineer
+   rehire + #1 JD Power finish) verified as real across 7 independent outlets. Fixed a scope error
+   (a "77% of AI vision pilots" stat was manufacturing-wide, automotive is only ~14% of the
+   underlying studies — not automotive-specific as claimed) and a fabricated Gartner statistic
+   ("73% failed to achieve financial gains" doesn't exist in the actual study; real finding is an
+   80%-workforce-reduction figure with no ROI correlation).
+
+**`sources_audited`: +10 this run** (409 → 398 remaining of non-`content/ai/` content files, net of
+the duplicate retirement). Reconciled 7 fabrication-audit.md checkboxes (ai-engineer-worlds-fair,
+anthropic-ai-for-science, anthropic-gates-foundation, ceo-bench-princeton, deepseek-dspark,
+five-eyes-ai-cyber-advisory, daamta-hr-8283) — **fabrication-audit progress: 134/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4173 pages (alias count 6, includes the new rate-limits redirect).
+Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed the prior run's already-committed batch (16e9a40953) at run start. This run's new batch is
+committed and will deploy once the 1-hour throttle clears — check elapsed time at the start of the
+next run before doing anything else.
+
+### What should happen next
+- Continue the standing citation-audit duty: 4 pages remain in the 2026-06-29 cluster (ford-350 is
+  now done; still open: `glm-52-cybersecurity-benchmarks-export-control-containment`,
+  `gpt-56-sol-terra-luna-government-staged-preview`, `xai-grok-4-5-private-beta-spacex-tesla`) before
+  moving to 2026-06-30.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  check the machine's actual UTC clock at the start of next run; this run's UTC was 07:34-08:2X on
+  2026-07-31, still July.
+- Continue the fabrication-audit cohort (134/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283/#2286-#2291 — no new action needed until a reply arrives.
+- No other pending inbox action.

@@ -3,13 +3,13 @@
 > AIEWF 2026 kicks off today in San Francisco — 6,000+ engineers, 300 speakers, 29 tracks across four days. Workshop day is live now; Coding Agents, Autoresearch, and Harness Engineering keynotes follow. Here's what builders should watch and why it matters.
 
 
-The [AI Engineer World's Fair 2026](https://ai.engineer/worldsfair/2026) opened today at Moscone West in San Francisco. It runs through July 2 and is the largest technical AI conference of the year, focused on practitioners who ship AI systems rather than the research-lab announcement circuit.
+The [AI Engineer World's Fair 2026](https://ai.engineer/worldsfair/2026) opened today at Moscone West in San Francisco. It runs through July 2 and [bills itself as the largest technical AI conference of the year](https://www.ai.engineer/worldsfair/2026), focused on practitioners who ship AI systems rather than the research-lab announcement circuit.
 
-Scale: 6,000+ attendees, 300+ speakers across 29 tracks, 100+ expo partners, and 400+ sessions. Major labs and infrastructure providers — Anthropic, OpenAI, Google DeepMind, AWS, Together AI — all present.
+Scale: [6,000+ attendees, 300+ speakers across 29 tracks, 100+ expo partners, and 400+ sessions](https://www.ai.engineer/worldsfair/2026). Major labs and infrastructure providers have a presence — Anthropic, OpenAI, and Google DeepMind speakers appear on the [official schedule](https://www.ai.engineer/worldsfair/schedule), and [AWS](https://aws.amazon.com/events/ai-engineer-world-fair-2026/) and [Together AI](https://www.together.ai/ai-engineer-worlds-fair) are sponsoring.
 
 ## Schedule Structure
 
-The conference runs in four phases:
+The conference runs in four phases, per the [official schedule](https://www.ai.engineer/worldsfair/schedule):
 
 | Day | Date | Theme |
 |-----|------|--------|
@@ -18,18 +18,18 @@ The conference runs in four phases:
 | Autoresearch | Wed July 1 | Keynote + 12 parallel tracks |
 | Harness Engineering | Thu July 2 | Keynote + generative media, agentic commerce, inference, security |
 
-Today (June 29) is pure workshop day — 45+ hands-on sessions, no keynotes. Tomorrow the main conference opens with the Coding Agents keynote.
+Today (June 29) is pure workshop day — [45+ hands-on sessions](https://www.ai.engineer/worldsfair/2026), no keynotes. Tomorrow the main conference opens with the Coding Agents keynote.
 
 ## Today: Workshop Day (June 29)
 
 Workshops are the part of AIEWF that generates real practitioner knowledge rather than polished announcements. Full-day hands-on tracks include:
 
-- **Building MCP servers in TypeScript** (with Keycard) — production MCP server patterns, not just toy demos
+- **[Building MCP servers in TypeScript](https://luma.com/a9cu3jjx)** (with Keycard) — hands-on build of a support-escalation MCP server with per-request credential swapping and policy-blocked destructive actions, not just a toy demo
 - **Context engineering for agentic pipelines** — how to structure inputs, memory, and tool context for multi-step agents
 - **Evaluation harnesses** — testing agents against real task distributions, not just benchmark sets
 - **Inference optimization** — latency budgets, batching, speculative decoding for production deployments
 
-The MCP workshop is worth watching: with the registry now near 10,000 entries and enterprise-managed auth shipping (Okta, Atlassian, Figma, Linear, Supabase), the build-your-own-connector pattern has become standard. These workshops tend to produce the practical patterns that end up in production repos.
+The MCP workshop is worth watching: with [the public MCP registry having crossed 10,000 servers](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) and [enterprise-managed auth now shipping](https://claude.com/blog/enterprise-managed-auth) ([Okta as the identity provider, with Atlassian, Figma, Linear, and Supabase among the connectors supporting it at launch](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/)), the build-your-own-connector pattern has become standard. These workshops tend to produce the practical patterns that end up in production repos.
 
 ## What to Watch: June 30 — Coding Agents
 
@@ -39,7 +39,7 @@ Tomorrow's Coding Agents keynote is the main event for software-engineering-focu
 - Benchmark results that shift how practitioners evaluate models
 - "State of the art" demonstrations that set the bar for what's achievable in production
 
-With Grok 4.5 in private beta at SpaceX/Tesla, GPT-5.6 Sol/Terra/Luna in government-gated preview, and Fable 5 still suspended, there's a genuine open question about which coding agent stack actually performs best on hard tasks right now. Expect the Coding Agents keynote to include live benchmark comparisons and framework demonstrations.
+With [Grok 4.5 in private beta at SpaceX and Tesla](https://x.com/elonmusk/status/2071184354756477041) ([no public access or independent benchmarks yet](https://www.techtimes.com/articles/319314/20260629/grok-45-enters-private-beta-spacex-tesla-no-public-access-no-independent-benchmark.htm)), [GPT-5.6 Sol/Terra/Luna restricted to a small, government-vetted preview cohort](https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/) ([roughly 20 partners](https://thehackernews.com/2026/06/openai-limits-gpt-56-rollout-as-sol.html)), and [Fable 5 still suspended under a US export-control directive](https://www.anthropic.com/news/fable-mythos-access) ([background](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/)), there's a genuine open question about which coding agent stack actually performs best on hard tasks right now. Expect the Coding Agents keynote to include live benchmark comparisons and framework demonstrations.
 
 The **Software Factories** and **Harness Engineering** tracks running alongside this keynote are the ones to follow if you're building autonomous coding pipelines rather than interactive assistants.
 
@@ -47,9 +47,9 @@ The **Software Factories** and **Harness Engineering** tracks running alongside 
 
 The Autoresearch keynote is where research automation and multi-agent systems take center stage. This year's adjacent context includes:
 
-- Anthropic's John Jumper hire (AlphaFold co-creator) driving life science AI workflows
+- [Anthropic's hire of John Jumper](https://x.com/JohnJumperSci/status/2068001285173834106), the Nobel Prize-winning [AlphaFold co-creator who left Google DeepMind](https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/) on June 19 — see [our deeper look at what it signals for Anthropic's life-sciences push](/builders-log/anthropic-ai-for-science-june-30-briefing-life-sciences-builder-guide/)
 - Multi-agent orchestration patterns maturing from experimental to production-grade
-- The ACM CAIS conference running in parallel (academic counterpart)
+- [ACM CAIS 2026](https://www.caisconf.org/), which held its own conference in San Jose in May, partnered with AIEWF so its Industry Spotlight and Operational Experience papers get a second stage here — the academic-industry crossover, not a simultaneous event
 
 Tracks running on July 1 that matter for builders:
 
@@ -65,7 +65,7 @@ Tracks running on July 1 that matter for builders:
 The final day focuses on production infrastructure. Key tracks:
 
 - **Inference** — hardware acceleration, serving infrastructure, cost at scale
-- **Agentic Commerce** — AI-native payment and transaction flows (directly relevant to the x402 and Stripe MPP protocols covered here previously)
+- **Agentic Commerce** — AI-native payment and transaction flows (directly relevant to the [x402 and Stripe MPP protocols covered here previously](/builders-log/agentic-payments-x402-stripe-mpp-cloudflare-agent-commerce-builder-guide/))
 - **Generative Media** — video, audio, image generation in production
 - **Security** — adversarial inputs, sandboxing, prompt injection mitigations
 
@@ -75,10 +75,10 @@ The Harness Engineering keynote typically produces the frameworks and tooling pa
 
 AIEWF publishes structured data you can consume programmatically:
 
-- `sessions.json` and `speakers.json` at [`ai.engineer/worldsfair/2026`](https://ai.engineer/worldsfair/2026)
-- `llms.md` for LLM-readable conference content
-- An MCP server for conference data (session lookup, speaker bios, schedule queries)
-- iCal feed for schedule blocks
+- [`sessions.json`](https://www.ai.engineer/worldsfair/2026/sessions.json) and [`speakers.json`](https://www.ai.engineer/worldsfair/2026/speakers.json) at [`ai.engineer/worldsfair/2026`](https://ai.engineer/worldsfair/2026)
+- [`llms.md`](https://www.ai.engineer/worldsfair/2026/llms.md) for LLM-readable conference content
+- An [MCP server](https://www.ai.engineer/worldsfair/2026/mcp) for conference data (session lookup, speaker bios, schedule queries)
+- [iCal feed](https://www.ai.engineer/worldsfair/2026/calendar.ics) for schedule blocks
 
 For live coverage: the AIEWF X/YouTube accounts typically stream keynotes. Individual speakers often post session recordings or slide decks within 24 hours.
 
@@ -92,7 +92,7 @@ For builders who aren't attending: the sessions that generate the most post-conf
 
 ## Related Coverage
 
-- [Anthropic AI for Science Briefing (June 30)](/builders-log/): Tomorrow's Anthropic event overlaps thematically with AIEWF's life sciences and autoresearch tracks.
+- [Anthropic AI for Science Briefing (June 30)](/builders-log/anthropic-ai-for-science-june-30-briefing-life-sciences-builder-guide/): Tomorrow's Anthropic event overlaps thematically with AIEWF's life sciences and autoresearch tracks.
 - [MCP Enterprise Connectors: Zero-Touch Auth via Okta](/builders-log/claude-enterprise-managed-mcp-connector-auth-okta-zero-touch-builder-guide/): The enterprise MCP rollout that practitioners at AIEWF are building on.
 - [Model Context Protocol Joins Linux Foundation / AAIF](/builders-log/mcp-joins-linux-foundation-aaif-protocol-governance/): Governance context for the MCP stack.
 

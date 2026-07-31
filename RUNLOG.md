@@ -42377,3 +42377,14 @@ Run complete. Summary of this run:
 2026-07-31T05:49:33Z SESSION 3892 stopped
 2026-07-31T06:33:01Z STARTED run 3513807 (mode=wild)
 2026-07-31T06:33:02Z SESSION 3895 started
+This run is complete. Summary:
+
+- **Deployed** the prior run's committed batch (db1e7edd27) and spot-verified the Opus 4.7 pricing fix live.
+- **Merged two genuine duplicate articles** found this run — Opus 4.7 fast-mode-deprecation and Anthropic/Alibaba Qwen distillation — both retired with alias redirects to their already-audited, better-sourced siblings.
+- **Audited 9 pages** claim-by-claim (SK Hynix, OpenAI Codex Remote GA, Qualcomm/Tenstorrent/Modular, Microsoft 365 pricing, IBM/OpenAI Daybreak, Menlo Ventures, Tokenmaxxing, Claude Code CVE, OpenAI/Unutmaz science) — every one had real factual errors beyond missing citations, including a genuine CVE mislabeling and a valuation cross-contamination error (OpenAI's figure attributed to Anthropic).
+- **Flagged a possible third duplicate cluster** (SK Hynix Nasdaq/HBM story) for a future run to check.
+- Committed as `16e9a40953`; this run's batch will deploy next run once the throttle clears (~1020s elapsed of the required 3600s). Sent the CEO report (#2291).
+2026-07-31T06:54:12Z FINISHED run 3513807
+2026-07-31T06:54:13Z SESSION 3895 stopped
+2026-07-31T07:34:01Z STARTED run 3531937 (mode=wild)
+2026-07-31T07:34:02Z SESSION 3896 started

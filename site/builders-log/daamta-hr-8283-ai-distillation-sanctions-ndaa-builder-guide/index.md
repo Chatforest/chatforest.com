@@ -5,7 +5,7 @@
 
 The U.S. response to AI distillation attacks just moved from committee hearings to enforcement legislation.
 
-H.R. 8283, the **Deterring American AI Model Theft Act of 2026 (DAAMTA)**, passed the House Foreign Affairs Committee unanimously. In the Senate, Senators **Bill Hagerty (R-TN) and Andy Kim (D-NJ)** have announced a parallel amendment to the National Defense Authorization Act — the must-pass annual defense bill — that would sanction or blacklist any Chinese company found to have conducted distillation campaigns. A companion House version, backed by **Representatives Bill Huizenga (R-MI) and Sydney Kamlager-Dove (D-CA)**, is under consideration for the same defense measure.
+[H.R. 8283](https://www.govinfo.gov/app/details/BILLS-119hr8283ih), the **Deterring American AI Model Theft Act of 2026 (DAAMTA)**, introduced by Rep. Bill Huizenga (R-MI) on April 15, 2026, [passed the House Foreign Affairs Committee by a 43-0 vote](https://www.iaps.ai/research/ai-distillation-attacks-executive-and-congressional-action-can-go-further) on April 22 ([official roll call](https://docs.house.gov/meetings/FA/FA00/20260422/119191/CRPT-119-FA00-Vote017-20260422.pdf)). In the Senate, Senators **Bill Hagerty (R-TN) and Andy Kim (D-NJ)** have [announced a parallel amendment](https://pondero.ai/news/2026-06-26-alibaba-claude-distillation-attack/) to the National Defense Authorization Act — the must-pass annual defense bill — that would sanction or blacklist any Chinese company found to have conducted distillation campaigns. A companion House version, backed by **Representatives Bill Huizenga (R-MI) and Sydney Kamlager-Dove (D-CA)**, is [under consideration for the same defense measure](https://easternherald.com/2026/06/27/anthropic-alibaba-claude-distillation-senate-sanctions/).
 
 Bipartisan. Both chambers. Attached to must-pass legislation. This is no longer a draft — it's a legislative escalation.
 
@@ -15,7 +15,7 @@ Bipartisan. Both chambers. Attached to must-pass legislation. This is no longer 
 
 ## What DAAMTA Actually Does
 
-The bill has three operational pillars:
+The [bill text](https://www.govinfo.gov/content/pkg/BILLS-119hr8283ih/pdf/BILLS-119hr8283ih.pdf) lays out three operational pillars:
 
 **Pillar 1 — Threat Assessment**
 
@@ -49,7 +49,7 @@ The [CNAS Adversarial Distillation report](https://www.cnas.org/publications/rep
 | **Cloud Service Providers** (AWS, Azure, GCP) | Host inference; see network patterns | Limited by customer privacy commitments |
 | **Commercial Token Mixers** (OpenRouter, Eden AI) | Route requests across providers | Obscure end-user identity by design |
 | **Self-hosted Token Mixers** (LiteLLM instances) | Provide full attacker control | Cannot be regulated at software level |
-| **Transfer Stations** | Resell API access via offshore proxies | ~50,000+ daily transactions in Hong Kong/Singapore |
+| **Transfer Stations** | Resell API access via offshore proxies | Top known reseller has accumulated 50,000+ transactions, concentrated in Hong Kong/Singapore |
 | **Chinese AI Developers** | Collect extracted outputs; train competing models | DAAMTA's primary target |
 
 The CNAS report found that **transfer stations** are the critical vulnerability — commercial resellers using key redistribution systems (One-API, New-API) deployed across Asia. These aren't hacker operations; they're commercial services advertising API access at discount rates, with offices and customer support desks. DAAMTA's "entities of concern" definition is written broadly enough to include them.
@@ -60,11 +60,11 @@ The CNAS report found that **transfer stations** are the critical vulnerability 
 
 To understand why legislators called this a national security issue:
 
-- CNAS estimates **150–400 billion tokens** were extracted from Claude alone — more than the entire supervised fine-tuning dataset used to train DeepSeek-R1 (6.4 billion tokens by comparison)
-- Anthropic's June 10 Senate letter documented **28.8 million exchanges** via 25,000 fake accounts between April 22 and June 5, targeting the software engineering and agentic reasoning capabilities in Claude Mythos Preview specifically
-- The State Department explicitly identified DeepSeek, Moonshot AI, and MiniMax as actors in prior campaigns; Alibaba's Qwen lab is the named actor in the most recent campaign
+- The [CNAS Adversarial Distillation report](https://www.cnas.org/publications/reports/adversarial-distillation) estimates that the DeepSeek/Moonshot/MiniMax campaigns alone generated over 16 million exchanges with Claude, representing **150–400 billion tokens** by AI researcher Nathan Lambert's estimate — more than the entire supervised fine-tuning dataset used to train DeepSeek-R1, which Epoch AI estimates at just 6.4 billion tokens
+- Anthropic's June 10 letter to the Senate Banking Committee alleged **28.8 million exchanges** via roughly 25,000 fake accounts between April 22 and June 5, [targeting the software engineering, agentic reasoning, and cybersecurity capabilities](https://www.forbes.com/sites/jonmarkman/2026/06/26/anthropic-says-alibaba-used-25000-fake-accounts-to-distill-claude/) in Claude's [Mythos Preview](https://www.techtimes.com/articles/319105/20260625/alibaba-ran-largest-known-ai-theft-campaign-against-claude-anthropic-tells-senate.htm) model specifically — [Alibaba has denied wrongdoing](https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html) and none of the figures has been independently verified
+- The [State Department instructed diplomats](https://www.dawn.com/news/1995029) to warn foreign counterparts about model extraction by DeepSeek, Moonshot AI, and MiniMax in an April 2026 cable; Alibaba's Qwen lab is the actor Anthropic named in the [most recent campaign](https://www.techtimes.com/articles/319105/20260625/alibaba-ran-largest-known-ai-theft-campaign-against-claude-anthropic-tells-senate.htm)
 
-On the national security side: the PLA's psychological warfare unit has deployed DeepSeek-powered systems targeting Taiwan. Threat groups Volt Typhoon and Salt Typhoon — which operate inside U.S. critical infrastructure — benefit from faster capability development when that development is subsidized by extraction from U.S. frontier models.
+On the national security side: the [CNAS report documents](https://www.cnas.org/publications/reports/adversarial-distillation) that PLA Unit 61716 — the outfit responsible for psychological warfare against Taiwan — has been documented working with a Chinese firm on a DeepSeek-powered AI system. The same report warns that more capable Chinese AI replicating U.S. models' cyber capabilities would make intrusions by Volt Typhoon (pre-positioned in U.S. critical infrastructure) and Salt Typhoon (which breached major U.S. telecom carriers) faster, harder to detect, and easier to scale.
 
 ---
 
@@ -76,7 +76,7 @@ Mandatory sanctions remove the administration's ability to condition responses o
 
 Permissive authority lets the executive branch threaten escalation, accept behavioral commitments, and negotiate with Beijing through the State Department channel — while maintaining the credible threat of IEEPA blocking if extraction campaigns continue.
 
-This also connects to the Remote Access Security Act (**H.R. 2683**), which extends export controls over cloud-based API inference services. H.R. 2683 treats an API query to a U.S. frontier model the same way export control law treats exporting the hardware that runs the model — as a controlled transfer requiring authorization. Combined with DAAMTA, these bills would establish that **querying a U.S. AI model at scale is a controlled act**, not merely a usage-of-service.
+This also connects to the [Remote Access Security Act (H.R. 2683)](https://sanctionsnews.bakermckenzie.com/us-house-passes-remote-access-security-act/), which extends export-control jurisdiction to remote, cloud-based access to controlled items — defining "remote access" as a foreign person using a controlled item, such as an AI chip or the compute behind a frontier model, over a network connection "from a location other than where the item is physically located." Combined with DAAMTA, these bills move toward treating **large-scale remote use of a controlled U.S. AI system as a controlled act**, not merely a usage-of-service.
 
 ---
 
@@ -86,7 +86,7 @@ One structural problem DAAMTA partially addresses: U.S. AI companies **cannot cu
 
 If Anthropic detects a coordinated fake-account campaign and notifies OpenAI, that communication — between two competitors sharing intelligence about a shared threat — creates antitrust risk. The same pattern applies to cloud providers coordinating on traffic anomalies.
 
-The CNAS report recommends DOJ and FTC explicitly clarify that sharing adversarial distillation signals among U.S. AI firms raises no antitrust concerns, modeled on existing cybersecurity information-sharing frameworks (like CISA's automated sharing mechanisms). Without this clarification, even companies that want to cooperate on defense have legal incentives not to.
+The [CNAS report recommends](https://www.cnas.org/publications/reports/adversarial-distillation) DOJ and FTC explicitly clarify that sharing adversarial distillation signals among U.S. AI firms raises no antitrust concerns, modeled on existing cybersecurity information-sharing frameworks (like CISA's automated sharing mechanisms). Without this clarification, even companies that want to cooperate on defense have legal incentives not to.
 
 DAAMTA's threat assessment provision implicitly creates a government-mediated coordination mechanism: if the State Department maintains the authoritative list of attackers and methods, individual companies can contribute data into a government process without directly coordinating with competitors.
 
@@ -96,7 +96,7 @@ DAAMTA's threat assessment provision implicitly creates a government-mediated co
 
 **If you operate an API intermediary** — routing requests across multiple model providers, reselling API capacity, building abstraction layers over inference endpoints — you are now in a regulatory conversation you weren't in six months ago.
 
-The CNAS report recommends Commerce designate foreign token mixers and transfer stations on the Entity List. Even domestic token mixers face an implied due-diligence obligation: if you're routing traffic that includes campaigns extracting model capabilities, and you can't demonstrate KYC controls, you're a potential enforcement vector.
+The [CNAS report recommends](https://www.cnas.org/publications/reports/adversarial-distillation) Commerce designate foreign token mixers and transfer stations on the Entity List. Even domestic token mixers face an implied due-diligence obligation: if you're routing traffic that includes campaigns extracting model capabilities, and you can't demonstrate KYC controls, you're a potential enforcement vector.
 
 **Practical steps:**
 
@@ -106,7 +106,7 @@ The CNAS report recommends Commerce designate foreign token mixers and transfer 
 
 3. **Watch the Entity List.** If foreign API resellers you depend on get Entity Listed, your ability to receive their services becomes restricted immediately. Diversify your API supply chain away from intermediaries that lack KYC infrastructure.
 
-4. **H.R. 2683 could change your pricing model.** If the Remote Access Security Act passes, API inference services to foreign nationals in controlled categories may require export licenses. That's a compliance cost that intermediaries will face before individual developers do.
+4. **H.R. 2683 could change your pricing model.** The [Remote Access Security Act already passed the House](https://sanctionsnews.bakermckenzie.com/us-house-passes-remote-access-security-act/) and is now before the Senate Banking Committee. If it becomes law, remote/cloud access to controlled items in national-security-sensitive categories by foreign persons may require export licenses. That's a compliance cost that intermediaries will face before individual developers do.
 
 5. **The public naming list changes enterprise procurement.** If your company is named on the AI Model Extraction Attackers List — even as a token mixer rather than a primary attacker — enterprise buyers running sanctions screens will see it. Compliance teams at large customers treat OFAC/BIS lists as hard blocks.
 
@@ -114,11 +114,11 @@ The CNAS report recommends Commerce designate foreign token mixers and transfer 
 
 ## Status: Where This Stands as of June 29
 
-- **H.R. 8283 (DAAMTA)**: Passed House Foreign Affairs Committee unanimously. Not yet scheduled for House floor vote.
-- **Hagerty/Kim Senate amendment**: Announced, targeted at NDAA. Not yet introduced as text.
-- **Huizenga/Kamlager-Dove House companion**: Under consideration for NDAA attachment.
-- **H.R. 2683 (Remote Access Security Act)**: Introduced; status unclear.
-- **IEEPA executive order**: CNAS recommends the President declare a national emergency on adversarial distillation. No action taken yet.
+- **[H.R. 8283 (DAAMTA)](https://www.govinfo.gov/app/details/BILLS-119hr8283ih)**: [Passed House Foreign Affairs Committee 43-0](https://www.iaps.ai/research/ai-distillation-attacks-executive-and-congressional-action-can-go-further) on April 22, 2026. Not yet scheduled for House floor vote.
+- **Hagerty/Kim Senate amendment**: [Announced](https://pondero.ai/news/2026-06-26-alibaba-claude-distillation-attack/), targeted at NDAA. Not yet introduced as text.
+- **Huizenga/Kamlager-Dove House companion**: [Under consideration](https://easternherald.com/2026/06/27/anthropic-alibaba-claude-distillation-senate-sanctions/) for NDAA attachment.
+- **[H.R. 2683 (Remote Access Security Act)](https://www.congress.gov/bill/119th-congress/house-bill/2683)**: [Passed the House on January 12, 2026](https://sanctionsnews.bakermckenzie.com/us-house-passes-remote-access-security-act/); now in the Senate Banking, Housing, and Urban Affairs Committee.
+- **IEEPA executive order**: [CNAS recommends](https://www.cnas.org/publications/reports/adversarial-distillation) the President declare a national emergency on adversarial distillation. No action taken yet.
 
 The NDAA is must-pass legislation — it funds the military. If either the Hagerty/Kim or Huizenga/Kamlager-Dove provisions attach, they move on NDAA's timeline regardless of DAAMTA's standalone floor status. That's the legislative leverage point to watch.
 
