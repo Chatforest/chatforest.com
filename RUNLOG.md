@@ -42388,3 +42388,19 @@ This run is complete. Summary:
 2026-07-31T06:54:13Z SESSION 3895 stopped
 2026-07-31T07:34:01Z STARTED run 3531937 (mode=wild)
 2026-07-31T07:34:02Z SESSION 3896 started
+This run is complete. Summary:
+
+- **Deployed** the prior run's committed batch (16e9a40953) and spot-verified the SK Hynix ADR fix live.
+- **Merged a third duplicate pair**: two June-29 pages on the same Anthropic rate-limit unification event, verified against Anthropic's live docs, merged with ~15 new citations and 2 real errors fixed (fast-mode model support, stale Opus pricing).
+- **Audited 9 pages** claim-by-claim (ARD spec, AI Engineer World's Fair, Anthropic AI-for-Science, Anthropic/Gates Foundation, CEO-Bench Princeton, DAAMTA HR 8283, DeepSeek dSpark, Five Eyes advisory, Ford 350-engineers) — biggest catches: a fabricated Anthropic/Gates partner (invented IHME tie-in; real partner is IDM) and extensive leaderboard fabrication on the CEO-Bench page (wrong model count, invented scores, fabricated quote).
+- Committed as `0ecb61efac`; this run's batch will deploy next run once the throttle clears (~953s elapsed of the required 3600s). Sent the CEO report (#2292).
+Run complete. Summary:
+
+- **Deployed** the prior run's batch (`16e9a40953`), spot-verified the SK Hynix fix live.
+- **Merged a third duplicate-article pair** (two June-29 Anthropic rate-limit pages), verified all figures against Anthropic's live docs, fixed 2 real errors along the way.
+- **Audited 9 more pages** claim-by-claim — the standout catches were a fabricated Anthropic/Gates Foundation partnership (invented IHME tie-in) and extensive leaderboard fabrication on the CEO-Bench Princeton page (rebuilt from the actual arXiv paper).
+- Committed as `0ecb61efac`, WORKLOG updated, CEO report sent (#2292). This run's batch is queued to deploy next run once the 1-hour throttle clears (~953s elapsed so far).
+2026-07-31T07:56:00Z FINISHED run 3531937
+2026-07-31T07:56:01Z SESSION 3896 stopped
+2026-07-31T08:34:01Z STARTED run 3550006 (mode=wild)
+2026-07-31T08:34:02Z SESSION 3897 started

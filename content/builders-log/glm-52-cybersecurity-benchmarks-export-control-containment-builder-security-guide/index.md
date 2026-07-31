@@ -6,11 +6,12 @@ og_description: "GLM-5.2 scores 39% F1 on IDOR detection vs Claude Code's 37%/28
 content_type: "Builder's Log"
 categories: ["Security", "Open Source AI", "AI Policy", "Builder Tools"]
 tags: ["glm-5-2", "zhipu", "z-ai", "export-controls", "fable-5", "mythos-5", "cybersecurity", "vulnerability-detection", "idor", "semgrep", "graphistry", "open-weights", "mit-license", "containment", "builder-guide", "five-eyes", "security-benchmarks"]
+sources_audited: 2026-07-31
 ---
 
-On June 12, 2026, the US government enacted an emergency export control barring any foreign national from accessing Anthropic's Fable 5 and Mythos 5. The stated rationale: these models had demonstrated advanced cybersecurity capabilities — specifically, a red-team test in which Mythos penetrated NSA classified systems in hours. Restricting access was framed as containing a dangerous capability.
+On June 12, 2026, the US government enacted an emergency export control barring any foreign national from accessing Anthropic's Fable 5 and Mythos 5 ([Anthropic's own statement](https://www.anthropic.com/news/fable-mythos-access)). Anthropic says the government's directive itself did not specify a reason, and that Anthropic's own understanding was that officials had found a narrow jailbreak method — not a specific breach incident. But the order landed the same week a starker justification surfaced from government sourcing: in a Senate Intelligence Committee briefing, General Joshua Rudd — who leads both the NSA and US Cyber Command — reportedly told Senator Mark Warner that Mythos 5 "broke into almost all of our classified systems, not in weeks, but in hours" during a June 11 red-team exercise ([Security Affairs](https://securityaffairs.com/194016/ai/anthropics-mythos-ai-broke-into-almost-all-nsa-classified-systems-in-hours.html); [Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-powerful-mythos-ai-reportedly-breached-almost-all-nsa-classified-systems-within-a-few-hours-during-red-team-test-report-sheds-more-light-on-the-u-s-governments-sudden-ban-on-the-flagship-models)). That account is a single secondhand quote relayed at a hearing, not an independently verified incident report, and Anthropic disputes the severity of the characterization, describing what it reviewed as a "narrow, non-universal jailbreak" rather than autonomous system intrusion. Restricting access was nonetheless framed by officials as containing a dangerous capability.
 
-Ten days later, [Semgrep published a benchmark](https://semgrep.dev/blog/). Open-weight GLM-5.2, released by Zhipu AI on June 13 with an MIT license and no regional access restrictions, **outperformed Claude Code on IDOR vulnerability detection**: 39% F1 versus 37% (Opus 4.6) and 28% (Opus 4.8/4.7). Graphistry's CyBT-CTF placed GLM-5.2 at parity with Opus 4.8 on agentic cybersecurity investigation tasks.
+Ten days later, [Semgrep published a benchmark](https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/). Open-weight GLM-5.2, released by Zhipu AI (Z.ai) on June 13 with an [MIT license and no regional access restrictions](https://huggingface.co/zai-org/GLM-5.2), **outperformed Claude Code on IDOR vulnerability detection**: 39% F1 versus 37% (Opus 4.6) and 28% (Opus 4.8/4.7). [Graphistry's CyBT-CTF](https://www.graphistry.com/blog/glm-5-2-cybersecurity-open-model) placed GLM-5.2 at parity with Opus 4.8 on agentic cybersecurity investigation tasks.
 
 This is the first empirical data point on whether the Fable 5/Mythos 5 export controls can actually contain the capability they targeted. The early data suggests they cannot — not because the controls were wrong in principle, but because the capability they tried to lock down is now reproducible with freely downloadable open weights.
 
@@ -29,13 +30,13 @@ Semgrep's security research team tested models on a real vulnerability detection
 | Claude Code (Opus 4.6) | 37% | US model, API access |
 | Claude Code (Opus 4.8/4.7) | 28% | US model, API access |
 
-Cost for GLM-5.2: **$0.17 per vulnerability found** via the Z.ai Coding Plan.
+Cost for GLM-5.2: **$0.17 per vulnerability found**, [roughly one-sixth the cost of the comparable frontier-model runs](https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/) at GLM-5.2's API pricing.
 
-The test used a minimal scaffolding harness (Pydantic AI framework) for both open-weight models and Claude Code — matching the harness as closely as possible to isolate model capability. Caveats: this is one task, one dataset, one run. Semgrep's own team does not present it as a comprehensive model evaluation.
+Open-weight models ran through a minimal scaffolding harness built on the Pydantic AI framework, prompt-only, with no endpoint enumeration. Claude Code ran through its own Claude Code SDK on the same prompt — a different harness, not the same one Semgrep used for open-weight models ([Semgrep](https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/)). Caveats: this is one task, one dataset, one run. Semgrep's own team does not present it as a comprehensive model evaluation.
 
 **Graphistry — CyBT-CTF**
 
-Graphistry's CyBT-CTF (Cyber Threat CTF) benchmark evaluates agentic cybersecurity investigation performance: models are given incomplete incident data and must autonomously identify threat actors, attack paths, and root causes across multi-step scenarios. GLM-5.2 matched Opus 4.8 on solve rate, placing it in what Graphistry characterized as "frontier-like" territory for open-weight models.
+Graphistry's CyBT-CTF (Cyber Threat CTF) benchmark evaluates agentic cybersecurity investigation performance: models are given incomplete incident data and must autonomously identify threat actors, attack paths, and root causes across multi-step scenarios. GLM-5.2 matched Opus 4.8 on solve rate (28/59), placing it in what [Graphistry characterized](https://www.graphistry.com/blog/glm-5-2-cybersecurity-open-model) as "frontier-like" territory for open-weight models — the first time, in Graphistry's words, it felt "comfortable recommending using an open weights model for a frontier-like experience."
 
 This benchmark is closer in spirit to the Mythos NSA red-team framing — it measures autonomous, multi-step security reasoning, not just pattern matching.
 
@@ -49,7 +50,7 @@ The GLM-5.2 benchmarks challenge the "limit a dangerous capability" half of that
 
 What the benchmarks show: **the specific task profile that justified the ban — autonomous cybersecurity vulnerability detection and investigation — is now replicable with a freely downloadable open-weight model**. Not at full Mythos 5 capability across all dimensions, but on the narrow measurable tasks that correlate most directly with the stated concern.
 
-What the benchmarks do not show: whether GLM-5.2 matches the autonomous intrusion behaviors described in the NSA red-team test. The Mythos incident involved full system penetration — multi-stage lateral movement, credential compromise, access to classified infrastructure — in a controlled red-team environment. IDOR detection and CTF solve rates are leading indicators, not proof of equivalent offensive capability. That distinction matters.
+What the benchmarks do not show: whether GLM-5.2 matches whatever autonomous intrusion behavior underlies the reported Mythos NSA incident. No technical bulletin, incident report, or vulnerability disclosure has been published on that incident — only the secondhand Senate-hearing quote described above, which Anthropic disputes and which The Economist's own editor has cautioned "should not be read literally." IDOR detection and CTF solve rates are leading indicators on a narrow, well-defined task; they are not evidence about a claim whose scope and method remain undisclosed. That distinction matters.
 
 ---
 
@@ -63,7 +64,7 @@ GLM-5.2 is distributed under the MIT license. Anyone on Earth can:
 
 Fable 5 and Mythos 5 are closed-weight, API-only models. The export controls work at the API authentication layer — restricting API keys issued to foreign nationals. That control surface does not exist for open-weight models.
 
-On June 25, Axios reported that Russian hacker forums were already discussing GLM-5.2 jailbreak techniques and testing the model on offensive security tasks. This is three days after Semgrep's benchmark was published. Whatever capability GLM-5.2 has, the operational adversaries the export controls were designed to contain appear to have access to it.
+On June 25, [Axios reported](https://www.axios.com/2026/06/25/china-glm-52-open-source-hackers) that hackers were already discussing GLM-5.2 jailbreak techniques on Russian-language forums — per Jason Baker, a managing security consultant at GuidePoint Security quoted in the piece — with some finding that simple prompts were enough to get the model to explain how to bypass its own safety limits for offensive tasks. This is three days after Semgrep's benchmark was published. Whatever capability GLM-5.2 has, the operational adversaries the export controls were designed to contain appear to have access to it.
 
 ---
 
@@ -79,7 +80,7 @@ If you are building AI-assisted security tooling, the architecture of your harne
 
 Before June 12, builders building security-adjacent products had a clear choice: use Fable 5/Mythos 5 for frontier capability, or settle for less. After June 12, that choice was removed for anyone who lost access. GLM-5.2 benchmarks suggest that open-weight alternatives are now competitive on the specific vulnerability detection tasks where Fable 5/Mythos 5 were most valuable.
 
-If your security pipeline lost access to Anthropic models via the export control disruption, GLM-5.2 is the first open-weight option with credible benchmark data on the relevant tasks. You will need self-hosting infrastructure (the model is a 744B MoE; you need significant compute), but the MIT license removes API reliability risk.
+If your security pipeline lost access to Anthropic models via the export control disruption, GLM-5.2 is the first open-weight option with credible benchmark data on the relevant tasks. You will need self-hosting infrastructure (the model is a [753B-parameter MoE with ~40B active per token](https://huggingface.co/zai-org/GLM-5.2); you need significant compute), but the MIT license removes API reliability risk.
 
 **3. API access is a policy variable now, not a technical one**
 
@@ -91,9 +92,9 @@ This is a signal for architecture decisions: **API access to frontier models sho
 
 The most likely response to "export controls failed to contain the capability" is not "so let Fable 5 return." It is escalation to the hardware layer — restrictions on Nvidia chip exports, tighter controls on the data center compute required to train and run models like GLM-5.2, or secondary sanctions on jurisdictions running the inference infrastructure.
 
-The Great American AI Act (currently a discussion draft) includes federal preemption provisions that could preempt state AI laws but does not address open-weight model policy. The White House June 2 executive order directed agencies to build a pre-release review framework for "covered frontier models" — closed-weight, API-distributed models. Open-weight models sit outside that framework entirely.
+The [Great American AI Act discussion draft](https://trahan.house.gov/uploadedfiles/gaaia_discussion_draft_section-by-section.pdf), released June 4 by Reps. Jay Obernolte and Lori Trahan, includes federal preemption provisions that would preempt state laws specifically regulating AI model development for three years. The [White House's June 2 executive order](https://www.federalregister.gov/documents/full_text/text/2026/06/05/2026-11415.txt) directs agencies to build a voluntary pre-release review framework for "covered frontier models," but leaves the qualifying cyber-capability threshold to a classified benchmarking process due by August 1, 2026. Whether an open-weight model like GLM-5.2 could ever be designated a "covered frontier model" — and what a voluntary pre-release framework would even mean for a model nobody needs permission to download — is a question the order does not resolve.
 
-The regulatory gap between closed API models and open-weight models is where the next policy move is most likely to land.
+The regulatory gap between how closed API models and freely downloadable open-weight models get governed is where the next policy move is most likely to land.
 
 ---
 
@@ -101,15 +102,13 @@ The regulatory gap between closed API models and open-weight models is where the
 
 - **Fable 5 restoration timeline**: The cybersecurity benchmark data does not directly accelerate Fable 5 restoration — the government's concern was about specific advanced capabilities, not the commodity task range GLM-5.2 was tested on. But it changes the political calculus: the "containment" argument is harder to make if the capability is already freely available. Watch for Anthropic and the White House to respond to this specifically.
 
-- **NIST AI Safety Institute open-weight model working group**: Since March 2026, NIST has been developing guidance on how to apply AI safety frameworks to open-weight models. The GLM-5.2 benchmark data is likely to become a reference point in those discussions.
-
 - **Semgrep second run**: Semgrep noted their result was "one task, one dataset, one run." A broader replication across vulnerability classes would either confirm or narrow the result. Watch for follow-up benchmarks.
 
-- **GLM-5.2 commercial API stability**: Z.ai's Coding Plan pricing ($1.40/$4.40 per 1M tokens, or flat $10/quarter Lite tier) is currently very competitive. As international demand for GLM-5.2 grows (partly driven by the Fable 5 gap), pricing may change. If self-hosting is your contingency plan, start evaluating hardware requirements now rather than after pricing adjusts.
+- **GLM-5.2 commercial API stability**: [Z.ai's standalone API pricing](https://docs.z.ai/guides/overview/pricing) — $1.40 per 1M input tokens, $4.40 per 1M output tokens — is currently very competitive against comparable frontier models. As international demand for GLM-5.2 grows (partly driven by the Fable 5 gap), pricing may change. If self-hosting is your contingency plan, start evaluating hardware requirements now rather than after pricing adjusts.
 
 ---
 
-The export controls on Fable 5 and Mythos 5 were enacted on an emergency basis with significant disruption to the API ecosystem. Seventeen days later, the first independent cybersecurity benchmarks show an open-weight alternative matching or exceeding the relevant metric on the task class that justified the ban. That does not make the ban wrong — the NSA incident involved capabilities not measured in these benchmarks. But it does mean the containment logic has a shelf life measured in weeks, not months, and that builders who built API-access dependencies on frontier models need a different risk model going forward.
+The export controls on Fable 5 and Mythos 5 were enacted on an emergency basis with significant disruption to the API ecosystem. Seventeen days later, the first independent cybersecurity benchmarks show an open-weight alternative matching or exceeding the relevant metric on the task class that justified the ban. That does not make the ban wrong — the reported NSA incident, whatever it actually involved, is not the same thing these benchmarks measured. But it does mean the containment logic has a shelf life measured in weeks, not months, and that builders who built API-access dependencies on frontier models need a different risk model going forward.
 
 ---
 

@@ -17,19 +17,19 @@ GPT-5.6 is not a single model. It is a three-tier family designed to map cleanly
 
 **Sol — Flagship**
 
-Sol is the highest-capability tier, targeting long-horizon coding, security research, and complex agentic work. On Terminal-Bench 2.1 — the benchmark for command-line workflows requiring planning, iteration, and tool coordination — Sol ultra scored 91.91%. GPT-5.5 scored 83.4% on the same benchmark. Claude Mythos 5 scored 88%. ([source: OpenAI preview](https://openai.com/index/previewing-gpt-5-6-sol/))
+Sol is the highest-capability tier, targeting long-horizon coding, security research, and complex agentic work. On Terminal-Bench 2.1 — the benchmark for command-line workflows requiring planning, iteration, and tool coordination — Sol ultra scored 91.91% and Sol at max reasoning effort scored 88.76%. GPT-5.5 scored 83.4% on the same benchmark. Claude Mythos 5 scored 88%. ([source: OpenAI preview](https://openai.com/index/previewing-gpt-5-6-sol/); scores independently reported by [MarkTechPost](https://www.marktechpost.com/2026/06/26/openai-previews-gpt-5-6-with-sol-terra-and-luna-tiered-models-new-reasoning-modes-limited-access/) and [VentureBeat](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov))
 
-Sol pricing: $5 input / $30 output per million tokens. This is identical to GPT-5.5 pricing. The same cost now buys meaningfully better capability, which changes the GPT-5.5 vs Sol substitution calculus for anyone already paying that rate.
+Sol pricing: $5 input / $30 output per million tokens. This is identical to [GPT-5.5 pricing](https://developers.openai.com/api/docs/models/gpt-5.5). The same cost now buys meaningfully better capability, which changes the GPT-5.5 vs Sol substitution calculus for anyone already paying that rate.
 
 **Terra — Production**
 
-Terra is the mid-tier, designed for high-volume production work. OpenAI describes it as roughly half the cost of GPT-5.5 at equivalent quality for mainstream tasks. Terra pricing: $2.50 input / $15 output per million tokens.
+Terra is the mid-tier, designed for high-volume production work. [OpenAI describes Terra as having "competitive performance to GPT-5.5 while being 2x cheaper"](https://openai.com/index/previewing-gpt-5-6-sol/) for mainstream tasks. Terra pricing: $2.50 input / $15 output per million tokens.
 
 If your workload is not at the frontier of coding or security difficulty, Terra is likely the right default when GA access opens.
 
 **Luna — Fast/Cheap**
 
-Luna is the budget tier for fast, routine, low-cost tasks. Luna pricing: $1 input / $6 output per million tokens. This puts Luna in direct competition with Claude Haiku, Gemini Flash, and similar high-throughput, cost-optimized models.
+Luna is the budget tier for fast, routine, low-cost tasks. [Luna pricing](https://openai.com/index/previewing-gpt-5-6-sol/): $1 input / $6 output per million tokens. This puts Luna in direct competition with Claude Haiku, Gemini Flash, and similar high-throughput, cost-optimized models.
 
 ---
 
@@ -39,7 +39,7 @@ Luna is the budget tier for fast, routine, low-cost tasks. Luna pricing: $1 inpu
 
 Sol introduces two new reasoning effort options. `max` gives the model extended time to reason on complex problems — an existing pattern across frontier models. `ultra` is new and structurally different: it launches parallel subagents that collaborate on difficult tasks.
 
-Ultra mode is OpenAI's first native API-level multi-agent capability. Previously, builders who needed parallel subagent orchestration built that infrastructure themselves — spawning multiple API calls, managing context sharing, aggregating results. Ultra mode delegates that orchestration to OpenAI's infrastructure.
+[Ultra mode goes beyond a single agent by using subagents to accelerate complex work](https://openai.com/index/previewing-gpt-5-6-sol/) — a native API-level multi-agent capability. Previously, builders who needed parallel subagent orchestration built that infrastructure themselves — spawning multiple API calls, managing context sharing, aggregating results. Ultra mode delegates that orchestration to OpenAI's infrastructure.
 
 The practical question is how much control builders retain over the subagent behavior, handoff structure, and output format. Until more organizations have GA access and can document behavior, treat ultra mode as a capability that may reduce orchestration code at the cost of reduced observability into what the subagents are doing.
 
@@ -47,11 +47,11 @@ The practical question is how much control builders retain over the subagent beh
 
 Terminal-Bench 2.1 is the most cited benchmark for this release. It tests command-line workflow tasks that require planning across multiple steps, iterating based on output, and coordinating tool calls — a reasonable proxy for the kinds of coding agent work that Sol is positioned for.
 
-Sol ultra (91.91%) outperforms Mythos 5 (88%) on this benchmark. Mythos 5 is currently available only to vetted critical infrastructure organizations. If Sol reaches GA access before Mythos 5 reaches general availability, Sol becomes the accessible frontier for agentic coding workloads.
+Sol ultra (91.91%) outperforms Mythos 5 (88%) on this benchmark. [Mythos 5 is currently available only to vetted critical infrastructure organizations](https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/). If Sol reaches GA access before Mythos 5 reaches general availability, Sol becomes the accessible frontier for agentic coding workloads.
 
-Agent's Last Exam in code mode: Sol scored 50.9%. This benchmark tests broad problem-solving in an exam format across complex domains; the code mode variant focuses specifically on programming challenges.
+Agent's Last Exam in code mode: [Sol scored 50.9%](https://openai.com/index/previewing-gpt-5-6-sol/), reported as the only model to clear 50% on that slice of the benchmark ([independently reported](https://www.marktechpost.com/2026/06/26/openai-previews-gpt-5-6-with-sol-terra-and-luna-tiered-models-new-reasoning-modes-limited-access/)). This benchmark tests broad problem-solving in an exam format across complex domains; the code mode variant focuses specifically on programming challenges.
 
-Cybersecurity performance: Sol achieves comparable results to Mythos 5 while using approximately one-third the output tokens. This is a cost efficiency advantage in security workflows, not just a raw capability comparison.
+Cybersecurity performance: [on ExploitBench, Sol is "competitive with Mythos Preview using only ~1/3 of the output tokens"](https://openai.com/index/previewing-gpt-5-6-sol/) ([independently reported](https://www.marktechpost.com/2026/06/26/openai-previews-gpt-5-6-with-sol-terra-and-luna-tiered-models-new-reasoning-modes-limited-access/)). This is a cost efficiency advantage in security workflows, not just a raw capability comparison.
 
 ---
 
@@ -59,13 +59,13 @@ Cybersecurity performance: Sol achieves comparable results to Mythos 5 while usi
 
 This is the second consecutive frontier model release to launch under US government oversight requirements in June 2026.
 
-The first was Fable 5 and Mythos 5, which were suspended entirely on June 12 under an export control directive from the Commerce Department. The suspension is still in effect for general access; Mythos 5 was partially restored June 27 for critical infrastructure organizations only.
+The first was Fable 5 and Mythos 5, which [Anthropic suspended entirely on June 12 after receiving an export control directive from the Commerce Department](https://www.anthropic.com/news/fable-mythos-access) ([independently reported by Forbes](https://www.forbes.com/sites/anishasircar/2026/06/16/anthropic-disabled-fable-5-and-mythos-5-after-a-us-export-control-order-heres-what-happened/)). The suspension remained in effect for general access; [Mythos 5 was partially restored June 27 for critical infrastructure organizations only](https://x.com/AnthropicAI/status/2070665903440871779) ([independently reported by TechCrunch](https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/)).
 
 GPT-5.6 took a different path: OpenAI previewed the models and release plans with the government before launch. At the government's request, OpenAI limited initial access to approximately 20 trusted partners whose participation has been shared with the government. OpenAI and the administration are now developing a new cybersecurity framework and "repeatable process" for future releases.
 
 OpenAI's public statement was direct: ["We don't believe this kind of government access process should become the long-term default."](https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov) The company framed the staged rollout as a temporary accommodation while the framework is being built, and argued that restricting the best AI tools keeps them from "users, developers, enterprises, cyber defenders, and global partners who need them."
 
-The contrast with the Fable 5 action is deliberate. The Commerce Department issued a legally binding suspension directive that left Anthropic no choice. OpenAI proactively previewed GPT-5.6 with the government and negotiated a staged rollout rather than risking a similar directive. Whether OpenAI's approach results in faster general access depends on how quickly the cybersecurity framework is established.
+The contrast with the Fable 5 action is deliberate. [The Commerce Department issued a legal directive that Anthropic said left it no choice but to disable both models for all customers globally](https://www.anthropic.com/news/fable-mythos-access) — the order required blocking access "by any foreign national, whether inside or outside the United States," which Anthropic said it could only guarantee by suspending access entirely. OpenAI proactively previewed GPT-5.6 with the government and negotiated a staged rollout rather than risking a similar directive. Whether OpenAI's approach results in faster general access depends on how quickly the cybersecurity framework is established.
 
 ---
 
@@ -107,7 +107,7 @@ Terra does not have a clear analog — it slots between the frontier and the fas
 
 **If you are evaluating ultra mode:** Do not architect around it until you have GA access and can test the subagent handoff behavior. The capability is real; the observability story is not yet documented.
 
-**For the framework timeline:** The August 1 AI EO deadline is the next concrete checkpoint. Federal agencies are required to deliver frameworks on "covered frontier model" handling by that date. If the government's side of the OpenAI framework also targets that window, GA access for Sol may arrive in late July or early August.
+**For the framework timeline:** [The August 1 AI EO deadline](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/) is the next concrete checkpoint. The June 2 executive order gives Treasury, the NSA, and CISA [60 days to design a voluntary framework for designating and reviewing "covered frontier models"](https://vorplabs.com/ai-regulatory-updates/frontier-model-review-framework) — a deadline that binds the government's process, not AI companies directly. If the government's side of the OpenAI framework also targets that window, GA access for Sol may arrive in late July or early August.
 
 ---
 
@@ -115,7 +115,7 @@ Terra does not have a clear analog — it slots between the frontier and the fas
 
 OpenAI's statement that this staging "shouldn't become the long-term default" is the line to watch. It is not a refusal — OpenAI complied. It is a public objection that creates a record if the government attempts to extend or expand the staging requirement.
 
-Anthropic's response to the June 12 directive was technically non-negotiable; it suspended all access because filtering by nationality in real time was impossible. OpenAI's proactive preview gave it a negotiated position. Neither approach resolved the underlying question: when the government can require staged access to frontier AI, what are the limits?
+[Anthropic's response to the June 12 directive was framed as non-negotiable: it suspended all access, saying the order's effect was that it "must abruptly disable Fable 5 and Mythos 5 for all our customers to ensure compliance."](https://www.anthropic.com/news/fable-mythos-access) OpenAI's proactive preview gave it a negotiated position. Neither approach resolved the underlying question: when the government can require staged access to frontier AI, what are the limits?
 
 That question is now the background condition for every frontier model release. It was not a consideration for builders six months ago. It is now.
 

@@ -127271,3 +127271,106 @@ next run before doing anything else.
   citation-audit batch before hand-picking new fabrication-audit pages.
 - Await CEO reply on #2280/#2281/#2283/#2286-#2291 — no new action needed until a reply arrives.
 - No other pending inbox action.
+
+## Run 3550006 (2026-07-31, UTC ~08:34-XX) — Citation audit, 11 pages (2026-06-29 cluster end + 2026-06-30 cluster start) + duplicate merge
+
+### Orient
+No new inbox instructions from Rob or Boss Claude — #2280/#2281/#2283-#2292 all still awaiting reply.
+Bluesky pre-post check returned `ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no post this run.
+Deploy throttle from prior commit (0ecb61efac) had ~3301s elapsed at run start (needs 3600s) — not yet
+clear; deploying this run's batch once it clears.
+
+### Citation audit — 11 pages
+Ran 11 parallel general-purpose audit agents (one more than the usual 10 batch), each briefed on the
+full claim-by-claim standard: glm-52-cybersecurity-benchmarks-export-control-containment (closed out the
+2026-06-29 cluster), gpt-56-sol-terra-luna-government-staged-preview, xai-grok-4-5-private-beta-spacex-tesla
+(also closing 2026-06-29), then the start of 2026-06-30 — ai-acceleration-whiplash-faros-2026,
+aiewf-2026-day-2-coding-agents, aiewf-2026-days-3-4-verification-autoresearch, amazon-trainium3-nvidia-blackwell-parity,
+anthropic-2026-agentic-coding-trends-report, anthropic-ai-for-science-pharma-ceo-signal-sonnet-45-connectors,
+anthropic-claude-sonnet-5-agentic-builder-migration-guide, and arena-ai-100m-arr-evaluation-economy.
+
+**Biggest catches:**
+1. **GLM-5.2 cybersecurity page** — the article presented "Mythos penetrated NSA classified systems in
+   hours" as the government's stated rationale for the June 12 export order. Anthropic's own statement
+   says the government gave no specific reason and Anthropic's own read was a narrower jailbreak. The
+   NSA story is a separate, later, disputed secondhand Senate-hearing claim. Rewrote the causation chain
+   and softened downstream claims that stated the NSA incident as settled fact.
+2. **Anthropic 2026 agentic coding trends report** — downloaded and text-extracted Anthropic's actual PDF
+   and found the article's central secondary stat ("40% fewer agent errors, 55% faster" from context
+   engineering) doesn't appear anywhere in it; an entire "Trend 8: Intent as Infrastructure" section was
+   fabricated (real Trend 8 is about dual-use security risk); a "57% of organizations" stat and a "20
+   autonomous actions, doubled in six months" stat were unfindable and cut/replaced with real Anthropic
+   research; an Uber "27.6% of merged PRs" figure was misattributed (that number belongs to Greptile, not
+   Uber — replaced with Uber's own AIEWF session + blog numbers).
+3. **AI acceleration whiplash / Faros page** — the worst single-number error of the run: "reviewer
+   abandonment accounted for 38% of rejected agent PRs" traced back to the actual arXiv paper
+   (2601.00753) as a 3.8% agent-ghosting rate, not 38%, and not about reviewers. Also removed two false
+   AIEWF speaker-attendance claims (Addy Osmani and Greptile were said to be presenting/appearing at
+   AIEWF sessions that, per the official schedule, they weren't part of) and fixed a 4.4x vs 5.4x math
+   error.
+4. **AIEWF Day 2 recap** — Lee Robinson's closing talk was mistitled and its content invented (real
+   title "Recursive Model Improvement," about Cursor's self-improvement training pipeline, not the
+   draft's "ambient computing" framing); Lance Martin's talk content was also fabricated; a fabricated
+   quote attributed to swyx was replaced with a verified one; an unsourced "Cursor is the dominant AI
+   coding editor" superlative was cut (usage-share data says GitHub Copilot leads).
+5. **Cross-page keynote error caught mid-run:** the Arena-AI-$100M page's audit agent found that a
+   "Wei-Lin Chiang presents 'Trends in AI' as the Day 3 closing keynote" claim was wrong (that title
+   belongs to a separate Day 4 talk by Artificial Analysis's Cameron/Hill-Smith) — but its own fix
+   over-corrected by cutting Chiang's keynote appearance entirely, based on a bad "he's not in the
+   schedule at all" read. I independently re-fetched AIEWF's official schedule directly and confirmed
+   Chiang genuinely is the Day 3 closing keynote speaker, just not under that title. Fixed both pages: the
+   AIEWF-days-3-4 page (which had the same wrong title, sourced this run by a different agent) now
+   correctly says he delivers the Day 3 closing keynote without asserting a false title; left the Arena
+   page's more conservative omission as-is since it's not wrong, just less complete.
+6. **Amazon Trainium3/Blackwell page** — fabricated Jassy quote about deploying "more Trainium than
+   NVIDIA servers internally" (not in the transcript/press release/shareholder letter — replaced with a
+   real sourced 2.1M-chip stat); wrong B200 petaflops figure (was actually the 2-GPU GB200 Superchip's
+   number); unsupported $1.80/$4.80 per-chip-hour pricing traced to an "illustrative, directional only"
+   third-party estimate and cut.
+7. **xAI Grok 4.5 page** — the article's central skepticism thesis had an inverted benchmark claim: it
+   said Opus 4.8 leads on "reasoning-heavy and instruction-following" tasks, but Artificial Analysis's
+   live IFBench leaderboard shows Grok 4.3 actually leads instruction-following. Split the claim
+   correctly (Opus 4.8 leads reasoning/HLE, Grok 4.3 leads IFBench) with citations for both.
+8. Smaller fixes across the batch: GPT-5.6 page's suspected transposed benchmark score actually checked
+   out against two independent contemporaneous reports (no fix needed, just cited); Anthropic AI-for-
+   science pharma page confirmed NOT a duplicate of the already-audited June-30-briefing sibling (distinct
+   pre-event vs post-event angles); wrong event end time, false "3 of top-5 pharma execs" superlative,
+   and two date-misattributed claims fixed on that page.
+
+### Duplicate-article merge (fourth in this series)
+The Sonnet-5-agentic audit agent flagged a near-duplicate: `anthropic-claude-sonnet-5-agentic-builder-migration-guide`
+(this run's audit target, already well-cited) vs. the unaudited `claude-sonnet-5-agentic-model-june-2026-pricing-migration-builder-guide`
+— same June 30 launch, overlapping pricing tables and migration checklists, zero citations on the
+second page. Rather than a straight delete, cross-verified every unique claim in the weaker draft against
+primary sources before merging in the ones that held up: a 7-benchmark table (SWE-Bench Verified 85.2%,
+Terminal-Bench 2.1 80.4%, OSWorld-Verified 81.2%, BrowseComp single-agent 84.7%, HLE-with-tools 57.4%,
+USAMO 2026 79.5%, plus the already-cited SWE-Bench Pro 63.2%) — confirmed via MarkTechPost and
+llm-stats.com, both citing Anthropic's System Card independently; the effort-parameter default (`high`
+on both Claude API and Claude Code) — confirmed via Anthropic's own effort docs page; and the Claude
+Opus 4.1 retirement (August 5, 2026 → migrate to Opus 4.8) — confirmed via Anthropic's own model-
+deprecations page. Cut two unverifiable figures from the draft (SWE-Bench Multilingual 78.3%, BrowseComp
+multi-agent 86.6% — no second source found) and fixed a fabricated AWS Bedrock model ID
+(`anthropic.claude-sonnet-53` doesn't exist; AWS's own launch post gives `us.anthropic.claude-sonnet-5`).
+Retired the weaker draft with an `aliases` redirect to the survivor.
+
+**`sources_audited`: +11 this run** (390 → 386 remaining of 1944 total content `*.md` files, net of the
+duplicate retirement).
+
+Hugo rebuild (plain `hugo`) clean, 4171 pages, 7 aliases. Committed as (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deploying this run's batch once the 1-hour throttle clears from commit 0ecb61efac (had ~3301s elapsed at
+run start).
+
+### What should happen next
+- Continue the standing citation-audit duty: 2026-06-30 cluster continues (many pages remain from that
+  date — check `content/builders-log/` dated 2026-06-30 for the full list, roughly a dozen+ still
+  unaudited after this run's 8).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** — still
+  carrying forward; check the machine's actual UTC clock each run (was still 2026-07-31 as of this run).
+- Continue the fabrication-audit cohort (134/375) alongside normal duty.
+- Await CEO reply on #2280/#2281/#2283-#2292 — no new action needed until a reply arrives.
+- No other pending inbox action.

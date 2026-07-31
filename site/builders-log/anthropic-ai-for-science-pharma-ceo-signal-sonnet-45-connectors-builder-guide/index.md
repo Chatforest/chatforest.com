@@ -3,51 +3,53 @@
 > Novartis, BMS, and Genentech's top executives showed up to Anthropic's AI for Science Briefing today. That's a signal worth reading. Plus: Sonnet 4.5 just beat human experts on a lab protocol benchmark, and here's what the 12-connector suite means for your architecture.
 
 
-Today Anthropic ran ["The Briefing: AI for Science"](https://www.anthropic.com/events/the-briefing-ai-for-science) — a virtual event that ran from 10:00 AM to 12:20 PM PST. The headline presenters were Vas Narasimhan (CEO of Novartis and Anthropic board member), Chris Boerner (Chair and CEO of Bristol Myers Squibb), and Aviv Regev (EVP and Head of Research at Genentech, part of Roche). Anthropic's life sciences team — Eric Kauderer-Abrams and Jonah Cool — hosted.
+Today Anthropic ran ["The Briefing: AI for Science"](https://www.anthropic.com/events/the-briefing-ai-for-science-virtual-event) — a [livestreamed event that ran from 10:00 AM to 11:40 AM PST](https://www.anthropic.com/events/the-briefing-ai-for-science-virtual-event). The headline presenters were [Vas Narasimhan (CEO of Novartis and Anthropic board member)](https://www.anthropic.com/news/narasimhan-board), [Chris Boerner (Board Chair and CEO of Bristol Myers Squibb)](https://www.anthropic.com/events/the-briefing-ai-for-science-virtual-event), and [Aviv Regev (EVP and Head of Research and Early Development at Genentech, part of the Roche group)](https://www.gene.com/scientists/our-scientists/aviv-regev). Anthropic's life sciences team — [Eric Kauderer-Abrams and Jonah Cool](https://www.anthropic.com/events/the-briefing-ai-for-science-virtual-event) — hosted.
 
-This was not primarily a product launch. It was a public display of who is in the room.
+Anthropic did use the event to ship something: a beta of [Claude Science, a research workbench bundling 60+ scientific databases and connectors into one workspace](https://www.anthropic.com/news/claude-science-ai-workbench) on top of its existing models. But the more useful story for builders isn't that launch — it's who showed up to watch it.
 
 ## The Signal: What CEO Presence at a Vendor Event Means
 
-When you see three top-five pharma executives showing up to a vendor's virtual briefing — not a conference, not a regulatory body, an AI company's event — it tells you something about where their organizations actually are in the adoption cycle.
+When you see three [top-ten pharma companies](https://www.fiercepharma.com/special-reports/top-20-pharma-companies-2025-revenue)' executives showing up to a vendor's virtual briefing — not a conference, not a regulatory body, an AI company's event — it tells you something about where their organizations actually are in the adoption cycle.
 
 C-suite attendance at vendor events doesn't happen early. It happens after the pilot phase, after internal stakeholders have validated the tool, after someone's research team has presented results, and after the executive team has made an internal commitment. You don't get the CEO of BMS on a livestream if BMS is still running a proof-of-concept.
 
-[BMS specifically committed Claude Enterprise to 30,000+ employees](https://mlq.ai/news/anthropic-launches-claude-science-workbench-for-drug-discovery-and-biotech-research/) — its largest enterprise AI deployment to date — before this event. Novartis's CEO sits on Anthropic's board. Genentech's research head is Aviv Regev, one of the founding scientists of the single-cell RNA analysis field, who has been publicly tracking AI's role in biology for years.
+[BMS specifically committed to deploying Claude Enterprise to more than 30,000 employees](https://news.bms.com/news/corporate-financial/2026/Bristol-Myers-Squibb-Announces-Strategic-Agreement-with-Anthropic-to-Position-Claude-Enterprise-as-the-Shared-Intelligence-Platform-Across-Its-Global-Operations/default.aspx) before this event. [Novartis's CEO sits on Anthropic's board](https://www.anthropic.com/news/narasimhan-board). Genentech's research head is Aviv Regev, [whose lab pioneered foundational experimental and computational methods in single-cell genomics](https://www.gene.com/scientists/our-scientists/aviv-regev).
 
 This is what post-pilot looks like in enterprise pharma. If you're building tools for this market, the question has shifted from "will they adopt AI" to "what infrastructure do they need to run it at scale."
 
 ## Sonnet 4.5 Now Beats Human Experts on Lab Protocols
 
-One concrete benchmark from the June 30 announcement is worth isolating:
+One concrete benchmark underlying today's presentations, [published alongside the October 2025 Claude for Life Sciences launch](https://www.anthropic.com/news/claude-for-life-sciences), is worth isolating:
 
-**Protocol QA** measures a model's ability to understand and work with laboratory protocols — step-by-step experimental procedures used in wet lab science. It's a domain where hallucinated instructions cause real experimental failures.
+**[Protocol QA](https://www.anthropic.com/news/claude-for-life-sciences)** measures a model's ability to understand and work with laboratory protocols — step-by-step experimental procedures used in wet lab science. It's a domain where hallucinated instructions cause real experimental failures.
 
 | Model | Protocol QA Score |
 |-------|-------------------|
 | Claude Sonnet 4 | 0.74 |
 | Human experts | 0.79 |
-| [Claude Sonnet 4.5](https://www.fastcompany.com/91567549/claude-science) | **0.83** |
+| Claude Sonnet 4.5 | **0.83** |
 
-Sonnet 4.5 now scores above the human expert baseline on this benchmark. That's not a marginal improvement — it's Anthropic's first model to cross that threshold on this task.
+*Source: [Anthropic, "Claude for Life Sciences"](https://www.anthropic.com/news/claude-for-life-sciences) (multiple-choice format, 10-shot prompting).*
+
+Sonnet 4.5 now scores above the human expert baseline on this benchmark. Of the two Claude generations Anthropic reports here, it's the first to cross that threshold on this task.
 
 The implications are narrow but real. Protocol QA doesn't mean Claude can design novel experiments; it means Claude can parse and reason about existing experimental protocols more accurately than most domain experts. That's a specific, useful capability: protocol review, safety checks, translation across lab notation standards, and onboarding support for researchers unfamiliar with a specific method.
 
-The broader trajectory: in October 2025, Anthropic launched Claude for Life Sciences. By January 2026, they had significantly expanded the connector and skills suite. By June 2026, Sonnet 4.5 is outperforming human experts on at least one specialized benchmark. The model curve and the infrastructure curve are moving together.
+The broader trajectory: in [October 2025, Anthropic launched Claude for Life Sciences](https://www.anthropic.com/news/claude-for-life-sciences). By [January 2026, they had significantly expanded the connector and skills suite](https://www.anthropic.com/news/healthcare-life-sciences). By June 2026, Sonnet 4.5 is outperforming human experts on at least one specialized benchmark. The model curve and the infrastructure curve are moving together.
 
 ## The 12-Connector Suite: What's Actually Available Now
 
-The product story at today's briefing centers on the connector expansion — which has now grown from six connectors at October 2025 launch to more than twelve. For builders, the relevant question is what each connector actually unlocks.
+Today's briefing didn't introduce the connector suite itself — that expansion landed in January 2026, ahead of the event. But it's the infrastructure today's presenters were building on, and it has now grown from six connectors at [October 2025 launch](https://www.anthropic.com/news/claude-for-life-sciences) to more than twelve as of the [January 2026 expansion](https://www.anthropic.com/news/healthcare-life-sciences). For builders, the relevant question is what each connector actually unlocks.
 
-**Existing connectors (October 2025 launch):**
+**Existing connectors ([October 2025 launch](https://www.anthropic.com/news/claude-for-life-sciences)):**
 - **Benchling** — Lab notebooks and source experiment data; useful if your pharma/biotech customers run on Benchling
-- **PubMed** — 35M+ biomedical papers
+- **[PubMed](https://pubmed.ncbi.nlm.nih.gov/)** — 38M+ biomedical citations
 - **BioRender** — Scientific figure access and templates
 - **Scholar Gateway (Wiley)** — Peer-reviewed content
 - **Synapse.org** — Collaborative data sharing and analysis
 - **10x Genomics** — Single-cell and spatial analysis data
 
-**January 2026 additions:**
+**[January 2026 additions](https://www.anthropic.com/news/healthcare-life-sciences):**
 - **Medidata** — Clinical trial enrollment data and site performance; enables Claude to pull actual trial history when doing site selection analysis
 - **ClinicalTrials.gov** — Drug/device development pipeline queries; useful for competitive landscape and patient recruitment analysis
 - **bioRxiv / medRxiv** — Preprint repositories; gives Claude access to papers before peer review, which matters in fast-moving biology research
@@ -58,7 +60,7 @@ The product story at today's briefing centers on the connector expansion — whi
 
 The architecture implication: if you're building life sciences applications on Claude, these connectors mean you don't need to build or maintain data access layers for these databases yourself. The connection to Medidata alone would have taken months to build and certify on your own.
 
-**New agent skills (also January 2026):**
+**[New agent skills](https://www.anthropic.com/news/healthcare-life-sciences) (also January 2026):**
 - Clinical trial protocol drafting
 - scVI-tools (single-cell RNA analysis via the scverse framework)
 - Nextflow pipeline deployment

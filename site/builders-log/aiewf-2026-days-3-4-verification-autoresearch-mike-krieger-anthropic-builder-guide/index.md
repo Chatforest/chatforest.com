@@ -3,7 +3,7 @@
 > AIEWF shifts from generation to verification on Days 3–4. Tariq Shaukat keynotes on why verifiers will dominate the agentic era; Thariq Shihipar on agent perception; Mike Krieger reveals how Anthropic Labs actually builds. What builders need to act on.
 
 
-The AI Engineer World's Fair 2026 opened June 29 with workshops, hit the Coding Agents keynote on June 30, and now pivots for its final two days. Days 3 and 4 (July 1–2) shift the conference's center of gravity from *generation* to *verification* — and from conference talks about AI to a keynote from someone who runs the internal team that builds AI products at Anthropic.
+The [AI Engineer World's Fair 2026](https://www.ai.engineer/worldsfair/2026) opened June 29 with workshops, hit the Coding Agents keynote on June 30, and now pivots for its final two days. Days 3 and 4 (July 1–2) shift the conference's center of gravity from *generation* to *verification* — and from conference talks about AI to a keynote from someone who runs the internal team that builds AI products at Anthropic.
 
 Here's what matters for builders who can't be in San Francisco.
 
@@ -11,7 +11,7 @@ Here's what matters for builders who can't be in San Francisco.
 
 Day 2's Coding Agents keynote established the baseline. The headline speakers — swyx on "Three Years of AI Engineering," Idan Gazit on GitHub Copilot agents, Daksh Gupta on Greptile's dataset of 1M+ AI-reviewed pull requests — collectively described a field that has crossed a threshold.
 
-Greptile's data point summarized where we are: AI-generated code now accounts for [27.6% of all merged PRs reviewed by Greptile](https://www.greptile.com/blog/rise-of-the-overnight-agents) as of April 2026, up from under 1% in February 2025. That is a roughly 28× increase in 14 months. The Uber session (uReview, a multi-agent code review system built internally) described what happens when you point AI at that volume of AI-generated code — you need an agent to review what an agent wrote.
+Greptile's data point summarized where we are: AI-generated code now accounts for [27.6% of all merged PRs reviewed by Greptile](https://www.greptile.com/blog/rise-of-the-overnight-agents) as of April 2026, up from 0.86% in February 2025. That is a roughly 32× increase in 14 months. The Uber session (uReview, a multi-agent code review system built internally) described what happens when you point AI at that volume of AI-generated code — you need an agent to review what an agent wrote.
 
 The hard question that Day 2 raised but didn't fully answer: if AI writes 28% of code and growing, who — or what — is responsible for whether that code works?
 
@@ -21,7 +21,7 @@ Days 3 and 4 are where AIEWF 2026 tries to answer that.
 
 ### The Verification Gap (Sonar's Data, Tariq Shaukat's Keynote)
 
-Tariq Shaukat, CEO of Sonar, closes the Day 3 opening keynote block with "In the Land of AI Agents, the Verifiers Are King." The title is a direct stake in the ground about where value migrates in an AI-augmented development cycle.
+[Tariq Shaukat, CEO of Sonar](https://www.sonarsource.com/company/press-releases/tariq-shaukat-joins-sonar-as-co-ceo/), closes the Day 3 opening keynote block with "In the Land of AI Agents, the Verifiers Are King." The title is a direct stake in the ground about where value migrates in an AI-augmented development cycle.
 
 Sonar's own survey data gives the keynote its empirical spine. Their [2026 State of Code Developer Survey](https://www.sonarsource.com/company/press-releases/sonar-data-reveals-critical-verification-gap-in-ai-coding/) (1,100+ developers globally) found:
 
@@ -33,21 +33,21 @@ The arithmetic is the problem: AI is generating a rising share of code, the vast
 
 Shaukat's thesis connects directly to the agentic era: as agents loop (write code → run tests → observe results → revise), the human is increasingly downstream of multiple generation-correction cycles they didn't directly observe. The question is no longer "did I write good code?" but "did the agent pipeline I configured produce an outcome I can stand behind?"
 
-Sonar's product response is the "Agent Centric Development Cycle" — Guide, Verify, Solve — replacing the linear developer loop with one that treats verification as a first-class step rather than an afterthought. They acquired Gitar earlier this year to extend their code review capabilities specifically to AI-generated code. Shaukat's keynote will likely announce the next step in that roadmap.
+Sonar's product response is the "Agent Centric Development Cycle" — Guide, Verify, Solve — replacing the linear developer loop with one that treats verification as a first-class step rather than an afterthought. They [acquired Gitar](https://www.sonarsource.com/company/press-releases/sonar-acquires-gitar/) in May 2026 to [extend their code review capabilities specifically to AI-generated code](https://www.sonarsource.com/blog/welcoming-gitar-to-sonar/). Shaukat's keynote will likely announce the next step in that roadmap.
 
 **Builder implication:** If you're shipping AI-assisted code at scale, your bottleneck has already shifted from generation to review. A systematic verification gate — automated static analysis, AI code assurance that identifies AI-generated sections, explicit commit policies — is no longer optional tooling. It's what determines whether your speed advantage is real or a debt that lands later.
 
 ### "Seeing like an Agent" — Thariq Shihipar, Anthropic
 
-Thariq Shihipar is the engineering lead for Claude Code at Anthropic. His Day 3 keynote, "Seeing like an Agent," focuses on agent perception — how agents interpret visual and structured inputs, and what that means for how you design agent workflows.
+[Thariq Shihipar works on Claude Code at Anthropic](https://www.thariq.io/). His Day 3 keynote, "Seeing like an Agent," focuses on agent perception — how agents interpret visual and structured inputs, and what that means for how you design agent workflows.
 
-Shihipar has been the practitioner voice for Claude Code publicly: he's the person who switched Anthropic's default from Markdown to HTML for AI agent outputs (an apparently minor change that materially improved how agents render and process their own responses). He built the Claude Agent SDK. His talks tend to be dense with implementation detail rather than positioning.
+Shihipar has been a practitioner voice for Claude Code publicly: he's [spent months publicly experimenting with using HTML instead of Markdown in Claude Code's planning and implementation workflows](https://www.chatprd.ai/how-i-ai/claude-code-anthropic-thariq-shihipar-on-replacing-markdown-with-html), an approach he argues improves how agents (and humans) engage with their own output. He's also [run Anthropic's public workshops on the Claude Agent SDK](https://www.youtube.com/watch?v=TqC1qOfiVcQ). His talks tend to be dense with implementation detail rather than positioning.
 
 "Seeing like an Agent" is likely about computer use — how agents perceive and interact with interfaces designed for humans, what the failure modes look like, and what developers should know when building systems that give agents visual access to tools. If computer use is in your pipeline or on your roadmap, this is the session that will most directly map to what you're building.
 
 ### "2026 AI Engineering Survey" — Barr Yaron, Amplify Partners
 
-Barr Yaron (Amplify Partners) opens the Day 3 keynote block with the 2026 AI Engineering Survey. He's been running this survey at AIEWF since 2025; last year's results showed evaluation tooling as the single most painful aspect of AI engineering, 70% RAG adoption, and 41% fine-tuning at scale.
+Barr Yaron (Amplify Partners) opens the Day 3 keynote block with the 2026 AI Engineering Survey. He's been running this survey at AIEWF since 2025; [last year's results](https://www.amplifypartners.com/blog-posts/the-2025-ai-engineering-report) showed evaluation tooling as the single most painful aspect of AI engineering, 70% RAG adoption, and 41% fine-tuning at scale.
 
 The 2026 version will reflect a significantly different landscape: agents in production at scale, context engineering as a named discipline, the shift from model selection to model orchestration. Yaron's survey tends to be one of the most useful calibration tools for understanding what practitioners are actually doing as opposed to what vendor announcements suggest they should be doing.
 
@@ -55,15 +55,15 @@ The results won't be fully available until the session, but expect the evals pai
 
 ### Closing Day 3 — Addy Osmani and Wei-Lin Chiang
 
-**Addy Osmani** (formerly Google Chrome Director, now independent) closes the Day 3 afternoon with "Director of Engineering." Osmani has spent 2026 writing extensively about what senior engineering judgment looks like in a world where agents handle the implementation. His thesis: the value of a senior engineer doesn't diminish when AI handles coding — it concentrates in the decisions AI can't make yet. The title likely refers to directing AI-assisted engineering teams rather than replacing them.
+**Addy Osmani** — who [led developer experience across Google Chrome for over a decade before moving into a Director role at Google Cloud AI](https://addyosmani.com/blog/farewell-chrome/), and by mid-2026 [had left Google entirely](https://x.com/CodeByPoonam/status/2068317985039896880) — closes the Day 3 afternoon with "Director of Engineering." Osmani has spent 2026 writing extensively about what senior engineering judgment looks like in a world where agents handle the implementation. His thesis: the value of a senior engineer doesn't diminish when AI handles coding — it concentrates in the decisions AI can't make yet. The title likely refers to directing AI-assisted engineering teams rather than replacing them.
 
-**Wei-Lin Chiang** (CTO, Arena.ai) presents "Trends in AI" as the Day 3 closing keynote. Arena.ai — the spinout from the UC Berkeley LMSYS Chatbot Arena team — [announced $100 million in annualized run-rate revenue](https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/) on June 29, the same day AIEWF opened. In eight months as a commercial entity, the platform reached that milestone on a $1.7 billion valuation from its January 2026 Series A. Chiang's talk will likely describe where Arena's data says AI capability is actually heading — from its uniquely grounded position of having processed the world's largest volume of blind head-to-head model comparisons.
+**Wei-Lin Chiang** ([CTO, Arena.ai](https://research.contrary.com/company/lmarena)) delivers the [Day 3 closing keynote](https://ai.engineer/schedule) (the conference's own schedule lists his slot but not a title — this is a distinct session from "Trends in AI," a separate Day 4 talk given by Artificial Analysis's George Cameron and Micah Hill-Smith). Arena.ai — the [spinout from the UC Berkeley LMSYS Chatbot Arena team](https://research.contrary.com/company/lmarena) — announced [$100 million in annualized run-rate revenue](https://arena.ai/blog/arena-100m-revenue/) on [June 29](https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/), the same day AIEWF opened. In eight months as a commercial entity, the platform reached that milestone; it stood at $30 million in annualized revenue in January 2026, when it [raised a $150 million Series A at a $1.7 billion post-money valuation](https://arena.ai/blog/series-a). Chiang's talk will likely describe where Arena's data says AI capability is actually heading — from its uniquely grounded position of having processed the world's largest volume of blind head-to-head model comparisons.
 
 ## Day 4 — July 2: Harness Engineering
 
 ### "How Anthropic Builds: Lessons from Labs" — Mike Krieger, Anthropic Labs
 
-Mike Krieger co-founded Instagram and served as Anthropic's CPO before moving in January 2026 to co-lead Anthropic Labs — the internal incubator that builds experimental AI products and research previews. He runs Labs alongside Ben Mann (Anthropic co-founder), reporting to President Daniela Amodei.
+Mike Krieger co-founded Instagram and served as Anthropic's CPO before [moving in January 2026 to co-lead Anthropic Labs](https://www.anthropic.com/news/introducing-anthropic-labs) — the internal incubator that builds experimental AI products and research previews. He runs Labs alongside Ben Mann (Anthropic co-founder), with the reorganization overseen by President Daniela Amodei; Ami Vora took over Krieger's former head-of-product role.
 
 Labs is where Anthropic tests what Claude can actually do in production environments before those capabilities become features. It's the team that has arguably the clearest view into where the gap between Claude's stated capabilities and reliable deployment actually sits.
 
@@ -73,13 +73,13 @@ Instagram was a master class in product velocity at scale. If Krieger applies th
 
 ### Closing Day 4 — Garry Tan, Y Combinator
 
-Garry Tan (YC President and CEO) closes AIEWF 2026. YC has moved dramatically toward AI-native companies in the last two years: the 2025 batch was majority AI companies, and the 2026 batch is tracking higher. Tan's closing talk will likely articulate what YC is seeing in the founding patterns that work — what "AI-native" actually means in a company's architecture and team composition, not just its feature set.
+Garry Tan (YC President and CEO) closes AIEWF 2026. YC has moved dramatically toward AI-native companies in the last two years: [about 80% of the companies presenting at YC's Winter 2025 demo day were AI-focused](https://www.nbcphiladelphia.com/news/business/money-report/y-combinator-startups-are-fastest-growing-most-profitable-in-fund-history-because-of-ai/4135508/), and the 2026 batch is tracking higher. Tan's closing talk will likely articulate what YC is seeing in the founding patterns that work — what "AI-native" actually means in a company's architecture and team composition, not just its feature set.
 
 ### Day 4 Tracks to Watch
 
 The Day 4 multi-track sessions cover ground that matters for infrastructure and vertical deployment:
 
-- **Agentic Commerce** — payment flows, transaction authorization, and the protocols that let agents handle purchasing decisions without human approval for each step. The x402 payment protocol and Stripe's Machine Payments Protocol (both covered here previously) are the current frontrunners.
+- **Agentic Commerce** — payment flows, transaction authorization, and the protocols that let agents handle purchasing decisions without human approval for each step. [Coinbase's x402 payment protocol](https://www.coinbase.com/developer-platform/discover/launches/x402) and [Stripe's Machine Payments Protocol](https://stripe.com/blog/machine-payments-protocol) (both covered here previously) are the current frontrunners.
 - **AI in Finance / Healthcare / GTM** — vertical deployment patterns, compliance constraints, and how agents handle regulated data environments.
 - **Local AI Inference** — running capable models on-device or in private infrastructure. As GPU clouds remain expensive and latency-sensitive use cases multiply, local inference is no longer just a privacy play — it's an economics play.
 - **Graph Databases** — how knowledge graphs and graph-native data structures intersect with agent memory and retrieval. The RAG → graph-augmented retrieval transition is happening faster than the tooling vendors anticipated.
