@@ -41,7 +41,7 @@ output_result = response.moderation.output.results[0]
 print(output_result.flagged)
 ```
 
-The `response.moderation.input` object contains scores for what the user sent. `response.moderation.output` scores what the model generated. Both are available in the same response object.
+The `response.moderation.input` object contains scores for what the user sent. `response.moderation.output` scores what the model generated. Both are available in the same response object, per [OpenAI's moderation guide](https://developers.openai.com/api/docs/guides/moderation).
 
 ---
 
@@ -64,7 +64,7 @@ output_result = completion.moderation.output.results[0]
 print(output_result.flagged)
 ```
 
-When you request multiple choices (`n=3`), `completion.moderation.output.results[i]` corresponds to `completion.choices[i]`.
+When you request multiple choices (`n=3`), `completion.moderation.output.results[i]` corresponds to `completion.choices[i]`, per [OpenAI's moderation guide](https://developers.openai.com/api/docs/guides/moderation).
 
 ---
 
@@ -79,15 +79,17 @@ Each result object has three fields:
 | `category_scores` | dict | Model confidence 0–1 per category |
 | `category_applied_input_types` | dict | Which input types each category applies to |
 
+(Field definitions per [OpenAI's moderation guide](https://developers.openai.com/api/docs/guides/moderation).)
+
 The `flagged` boolean is the fast path for most applications. For logging, routing to human review, or building custom thresholds, use `category_scores` directly — a score of 0.3 on `harassment` may warrant logging even if it doesn't cross the default threshold for `flagged=True`.
 
-Categories include: `hate`, `hate/threatening`, `harassment`, `harassment/threatening`, `self-harm`, `self-harm/intent`, `self-harm/instructions`, `sexual`, `sexual/minors`, `violence`, `violence/graphic`, and `illicit`.
+The [13 moderation categories](https://developers.openai.com/api/docs/guides/moderation) are: `hate`, `hate/threatening`, `harassment`, `harassment/threatening`, `self-harm`, `self-harm/intent`, `self-harm/instructions`, `sexual`, `sexual/minors`, `violence`, `violence/graphic`, `illicit`, and `illicit/violent`.
 
 ---
 
 ## Streaming Behavior
 
-Moderation scores are not part of the streaming delta events. If you stream a response, moderation results arrive as a separate block **after** the full output is available.
+Per [OpenAI's moderation guide](https://developers.openai.com/api/docs/guides/moderation): "If you stream a generated response, moderation scores arrive after the full generated output is available. They aren't included with partial output deltas." There is no separate moderation-specific streaming event — the scores land on the final response object once generation finishes.
 
 ```python
 stream = client.responses.create(
@@ -100,9 +102,9 @@ stream = client.responses.create(
 for event in stream:
     if event.type == "response.output_text.delta":
         print(event.delta, end="", flush=True)
-    elif event.type == "response.moderation.completed":
-        # Arrives after the final output event
-        print("\n\nFlagged:", event.moderation.output.results[0].flagged)
+    elif event.type == "response.completed":
+        # event.response carries the full response, moderation included
+        print("\n\nFlagged:", event.response.moderation.output.results[0].flagged)
 ```
 
 This means you cannot gate on moderation results while streaming output. You either stream without gating, or you complete generation first and then evaluate. If real-time blocking matters (e.g., a live voice agent), keep the standalone `/v1/moderations` call in parallel with your generation request.
@@ -111,7 +113,7 @@ This means you cannot gate on moderation results while streaming output. You eit
 
 ## Tool Calling Coverage
 
-Inline moderation covers tool-call arguments and tool outputs when they appear in conversation content. It does not score:
+Per [OpenAI's moderation guide](https://developers.openai.com/api/docs/guides/moderation), inline moderation covers tool-call arguments and tool outputs when they appear in conversation content. It does not score:
 
 - Tool names
 - Tool descriptions
@@ -124,9 +126,9 @@ If your tools handle sensitive data — medical records, legal documents, person
 
 ## Cost
 
-The moderation endpoint is free. Adding `moderation` to a generation request does not increase your bill beyond the standard generation cost. There is no per-moderation-call charge, whether you use the inline parameter or the standalone endpoint.
+The standalone moderation endpoint is [documented as free to use](https://developers.openai.com/api/docs/guides/moderation), and OpenAI's [pricing page](https://developers.openai.com/api/docs/pricing) lists `omni-moderation-latest` — the model backing both inline and standalone moderation — as free. Passing `moderation` into a Responses or Chat Completions request runs that same free model.
 
-The practical implication: there is no cost reason to skip moderation. The only tradeoff is compute overhead (a small latency increase at response completion) and streaming behavior (results arrive at the end, not in flight).
+The practical implication: there is no cost reason to skip moderation. The tradeoff is timing, not price — see Streaming Behavior above for how results are delayed when you stream output.
 
 ---
 
@@ -148,5 +150,5 @@ The practical implication: there is no cost reason to skip moderation. The only 
 
 ## Migration Note
 
-Adding `moderation` to existing generation calls is additive — it doesn't change the model output, the response structure, or any existing fields. You can deploy it to a subset of endpoints first and compare results before rolling out broadly. No beta header is required; inline moderation is generally available as of June 4, 2026.
+Adding `moderation` to existing generation calls is additive: per [OpenAI's moderation guide](https://developers.openai.com/api/docs/guides/moderation), "the model still generates normally," and the parameter adds a new `moderation` object to the response rather than altering existing fields. You can deploy it to a subset of endpoints first and compare results before rolling out broadly. Inline moderation shipped as a standard [changelog entry dated June 4, 2026](https://developers.openai.com/api/docs/changelog).
 

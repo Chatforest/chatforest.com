@@ -3,7 +3,7 @@
 > OpenAI's web search tool in the Responses API now returns image results alongside text results as of June 9, 2026. Set search_content_types to include image and receive image_url, thumbnail_url, source page, and caption fields per result.
 
 
-[OpenAI expanded the web search tool in the Responses API](https://developers.openai.com/api/docs/changelog) on June 9, 2026. In addition to text results, [web search can now return image results](https://x.com/OpenAIDevs/status/2064395155688616153) — enabling agents to ground responses in current web visuals without requiring a separate image search integration. Part of our **[Builder's Log](/builders-log/)**.
+[OpenAI expanded the web search tool in the Responses API](https://developers.openai.com/api/docs/changelog) on June 9, 2026. In addition to text results, [web search can now return image results](https://developers.openai.com/api/docs/guides/tools-web-search) — enabling agents to ground responses in current web visuals without requiring a separate image search integration. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -38,13 +38,13 @@ response = client.responses.create(
 )
 ```
 
-`search_content_types` accepts `"text"`, `"image"`, or both. Omitting it defaults to text-only, matching prior behavior. No beta header or separate feature flag is needed.
+`search_content_types` accepts `"text"`, `"image"`, or both, as documented in [OpenAI's web search guide](https://developers.openai.com/api/docs/guides/tools-web-search).
 
 ---
 
 ## Response Structure
 
-Image results appear in the `web_search_call` item, separate from the assistant message. Parse the results from the tool call response, not from the model's text output:
+Image results appear in the `web_search_call` item, separate from the assistant message, [as documented by OpenAI](https://developers.openai.com/api/docs/guides/tools-web-search). Parse the results from the tool call response, not from the model's text output:
 
 ```python
 for item in response.output:
@@ -57,7 +57,7 @@ for item in response.output:
                 print("Caption:", result.caption)
 ```
 
-Each `image_result` object contains:
+Each `image_result` object contains the following [documented fields](https://developers.openai.com/api/docs/guides/tools-web-search):
 
 | Field | Description |
 |---|---|
@@ -72,14 +72,14 @@ Each `image_result` object contains:
 
 ## What the Model Does With Image Results
 
-The model receives the image metadata as structured content in the tool result, the same way it receives text result snippets. It can:
+The model receives the image metadata — [`image_url`, `source_website_url`, `thumbnail_url`, and `caption`](https://developers.openai.com/api/docs/guides/tools-web-search) — as structured content in the tool result. It can:
 
 - Reference the image URLs in its response text
 - Describe what the images show (based on the caption field)
 - Select which images are most relevant to surface to the user
 - Incorporate image URLs into markdown or HTML output
 
-The model does not download or visually process the images during generation — it works from the metadata. If you need the model to *see* and interpret the image content, you would need to separately fetch the image and pass it as a vision input in a follow-up turn.
+OpenAI's documented `image_result` schema contains only URL and text metadata fields — no image bytes or visual embedding. So a result by itself doesn't give the model pixel-level access to the image. To have the model actually *see* and interpret the image content, pass the URL back as a vision input in a follow-up turn using the Responses API's [`input_image` content type](https://developers.openai.com/api/docs/guides/images-vision), as shown below.
 
 ---
 
@@ -92,7 +92,7 @@ The model does not download or visually process the images during generation —
 }
 ```
 
-Both fields are optional. When `caption` is `False` or omitted, the `caption` field on results will be `None` even when the source provides one.
+Both fields are optional, per [OpenAI's `image_settings` documentation](https://developers.openai.com/api/docs/guides/tools-web-search): `max_results` sets how many image results to request, and `caption` requests short image descriptions when available. When `caption` is not set to `True`, the `caption` field on results will be `None` even when the source page provides one.
 
 ---
 
@@ -115,7 +115,7 @@ html_images = "".join(
 )
 ```
 
-**Passing image URLs back to the model for vision analysis:**
+**Passing image URLs back to the model for vision analysis** (using the Responses API's [`input_image` content type](https://developers.openai.com/api/docs/guides/images-vision), not the Chat Completions `image_url`-object shape):
 ```python
 # After retrieving image URLs, pass them back for visual interpretation
 followup = client.responses.create(
@@ -124,9 +124,9 @@ followup = client.responses.create(
         {
             "role": "user",
             "content": [
-                {"type": "text", "text": "Based on these search results, describe what you see."},
+                {"type": "input_text", "text": "Based on these search results, describe what you see."},
                 *[
-                    {"type": "image_url", "image_url": {"url": r.image_url}}
+                    {"type": "input_image", "image_url": r.image_url}
                     for r in image_results[:3]  # limit to 3 for context budget
                     if r.image_url
                 ],
@@ -152,26 +152,28 @@ followup = client.responses.create(
 
 ## What Image Search Does Not Provide
 
-- **Image content analysis during search:** The model doesn't "see" the retrieved images while composing the initial response. It knows the URL, caption, and source page — not the visual content.
-- **Filtered-by-visual-content search:** You can't search for "images where the sky is blue" — the underlying web search operates on indexed metadata and alt text, not visual similarity.
-- **Guaranteed freshness:** Image search retrieves from the live web index, but the index may lag by hours to days for very recent events.
-- **License information:** No licensing metadata is returned. Responsibility for rights review is on the caller.
+- **Image content analysis during search:** OpenAI's documented `image_result` fields — [`image_url`, `source_website_url`, `thumbnail_url`, `caption`](https://developers.openai.com/api/docs/guides/tools-web-search) — are URL and text metadata only. No pixel data is included, so the model doesn't "see" the retrieved images while composing the initial response.
+- **License information:** OpenAI's [documented `image_result` schema](https://developers.openai.com/api/docs/guides/tools-web-search) does not include a licensing or rights field. Responsibility for rights review is on the caller.
 
 ---
 
 ## Combining Image and Text Results
 
-When both content types are requested, image and text results appear in the same `item.results` list, distinguished by `result.type`:
+Image and text results use two different, documented mechanisms in the response, [per OpenAI's web search guide](https://developers.openai.com/api/docs/guides/tools-web-search): image results appear as `image_result` objects in the `web_search_call` item's `results` array, while text citations appear as `url_citation` annotations attached to the assistant's `output_text` message content — the same annotation mechanism the tool used for text-only results before this update. When both content types are requested, expect both mechanisms in the same response:
 
 ```python
 for item in response.output:
     if item.type == "web_search_call":
-        text_results = [r for r in item.results if r.type == "text_result"]
         image_results = [r for r in item.results if r.type == "image_result"]
-
-        print(f"Text results: {len(text_results)}")
         print(f"Image results: {len(image_results)}")
-```
 
-The ratio of text to image results in the response is determined by the model's search strategy and the web search index — it won't be a fixed split even when both types are enabled.
+    if item.type == "message":
+        citations = [
+            a
+            for c in item.content
+            for a in c.get("annotations", [])
+            if a.get("type") == "url_citation"
+        ]
+        print(f"Text citations: {len(citations)}")
+```
 

@@ -3,7 +3,7 @@
 > Venice AI raised $65M and crossed the $1B unicorn threshold on July 1, 2026. Its core builder value: an OpenAI-compatible API with end-to-end encryption, no data retention, and 250+ models — purpose-built for developers who process data they can't send to mainstream providers.
 
 
-Venice AI closed a $65M Series A on July 1, 2026, crossing the $1B unicorn threshold with 3 million active users and 1.7 million daily API calls. The funding signals that a meaningful segment of builders — not just privacy enthusiasts — needs AI infrastructure that doesn't retain their prompts.
+Venice AI closed a [$65M Series A on July 1, 2026, at a $1B valuation](https://venice.ai/blog/venice-raises-65-million-series-a), led by crypto-focused VC Dragonfly with participation from Coinbase Ventures, F-Prime, and North Island Ventures — [confirmed independently by TechCrunch](https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/), which reported the same $65M/$1B figures on the record from CEO Erik Voorhees. TechCrunch also reports [3 million active users and an average of 1.7 million API calls per day](https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/) (Venice's own blog post cites a higher, and not directly reconciled, figure of "2M+ API calls per day" — this piece uses the TechCrunch figure since it's the more conservative, independently-reported number). The funding signals that a meaningful segment of builders — not just privacy enthusiasts — needs AI infrastructure that doesn't retain their prompts.
 
 This is the builder's orientation: what Venice offers technically, who the right fit is, and where the tradeoffs sit.
 
@@ -11,7 +11,7 @@ This is the builder's orientation: what Venice offers technically, who the right
 
 ## The Core Proposition
 
-Venice runs your inference and then discards the data. Every request is encrypted client-side before it leaves your application, routed through an external proxy, and processed without being stored on Venice's servers. No conversation history accumulates. No identity tracking. No prompt training on your inputs.
+Venice runs your inference and then discards the data — [by its own account](https://venice.ai/privacy). Requests are routed through an external proxy, and [Venice states "your conversation history stays on your device"](https://venice.ai/privacy) and is relayed without being stored on Venice's servers. Worth noting: Venice's [own privacy page](https://venice.ai/privacy) distinguishes two tiers of guarantee — its default ("Private") mode for no-prompt-storage is **contractual/trust-based**, not independently verified, while a technically-enforced end-to-end-encrypted mode (prompts decrypted only inside a verified TEE) is available to Pro-tier users. No third-party security audit of these retention claims had been published as of this writing.
 
 This is the opposite of how most hosted AI APIs work — and for a subset of use cases, it eliminates the legal, compliance, and contractual friction that makes mainstream providers untenable.
 
@@ -19,7 +19,7 @@ This is the opposite of how most hosted AI APIs work — and for a subset of use
 
 ## Drop-In for the OpenAI SDK
 
-Venice's API is OpenAI-compatible. If you're using the OpenAI Python or JavaScript SDK, the migration is a `baseURL` change:
+[Venice's API is OpenAI-compatible](https://docs.venice.ai/overview/about-venice). If you're using the OpenAI Python or JavaScript SDK, the migration is a `baseURL` change:
 
 ```python
 from openai import OpenAI
@@ -36,16 +36,16 @@ The same request format, the same streaming behavior, the same tool-use interfac
 
 ## What the API Covers
 
-Venice organizes its catalog into four modality groups:
+Venice organizes its [catalog into four modality groups](https://docs.venice.ai/overview/about-venice):
 
 **Text / Chat Completions**
-100+ models available, including open-source weights (Llama, Mistral, Qwen family, Kimi K2.6) alongside closed-source options. The standard `chat/completions` endpoint handles reasoning, tool use, and streaming.
+[100+ models available](https://docs.venice.ai/overview/about-venice), including open-source weights (Llama, Mistral, Qwen family, Kimi K2.6) alongside closed-source options. The standard `chat/completions` endpoint handles reasoning, tool use, and streaming.
 
 **Image Generation**
 Text-to-image, image-to-image, upscaling, and background removal. Resolution and style options vary by model.
 
 **Audio**
-Text-to-speech with 50+ multilingual voices, and speech-to-text transcription.
+Text-to-speech with [50+ multilingual voices](https://docs.venice.ai/overview/about-venice), and speech-to-text transcription.
 
 **Video**
 Text-to-video, image-to-video, and reference-to-video, delivered via job queue (async).
@@ -54,13 +54,13 @@ Text-to-video, image-to-video, and reference-to-video, delivered via job queue (
 
 ## Built-In Tools: What You Don't Have to Pipe Yourself
 
-Venice includes several server-side capabilities that would otherwise require separate infrastructure:
+Venice includes [several server-side capabilities](https://docs.venice.ai/overview/about-venice) that would otherwise require separate infrastructure:
 
-- **Web search with citations** — returned inline with the response
+- **Web search with citations** — enabled via an `enable_web_search` model suffix, with citation markers returned inline when `enable_web_citations` is set ([Venice API docs](https://docs.venice.ai/overview/about-venice))
 - **Web scraping** — fetch and parse live pages as context
-- **File inputs** — PDF, Office documents, and code files up to 25MB
+- **File inputs** — [PDF, Office documents, and code files up to 25MB per file](https://docs.venice.ai/guides/features/file-inputs), measured after decoding
 - **MCP tool access** — Venice exposes MCP-style tooling natively to models, relevant if you're building agentic workflows
-- **Blockchain RPC** — 11 blockchain networks (niche, but notable for Web3 builds)
+- **Blockchain RPC** — [11 chains supported](https://docs.venice.ai/guides/integrations/crypto-rpc-agents) — Ethereum, Base, Arbitrum, Optimism, Polygon, Linea, Avalanche, BSC, Blast, zkSync Era, and Starknet (mainnet plus testnets) — niche, but notable for Web3 builds
 
 The file input capability is practically useful: you can pass a PDF directly to the model without writing your own extraction pipeline.
 
@@ -68,15 +68,15 @@ The file input capability is practically useful: you can pass a PDF directly to 
 
 ## Model Catalog and Pricing
 
-Venice uses a credit system for premium models: **100 credits = $1 USD**. A sample from their published catalog:
+Venice uses a credit system for premium models: **[100 credits = $1 USD](https://docs.venice.ai/overview/pricing)**. A sample from [their published catalog](https://docs.venice.ai/overview/pricing) (verified current as of this audit; Venice updates model pricing regularly, so check the live page before budgeting):
 
 | Model | Context | Input (per 1M tokens) | Output (per 1M tokens) |
 |---|---|---|---|
-| Kimi K2.6 (Moonshot AI) | 256K | $0.85 | $4.66 |
+| Kimi K2.6 (Moonshot AI) | 256K | $0.75 | $3.50 |
 | Claude Opus 4.7 (Anthropic) | 1M | $6.00 | $30.00 |
 | GPT-5.5 (OpenAI) | 1M | $6.25 | $37.50 |
 
-Venice lists 250+ models across all modalities. The pricing for proprietary models (Claude, GPT) is in line with their respective providers' published rates — Venice functions as an aggregator for these, passing requests through with the privacy routing applied. For open-weight models, Venice is more competitive on cost.
+Venice lists [250+ models across all modalities](https://docs.venice.ai/overview/about-venice). The pricing for proprietary models (Claude, GPT) is in line with their respective providers' published rates — Venice functions as an aggregator for these, passing requests through with the privacy routing applied. For open-weight models, Venice is more competitive on cost.
 
 ---
 
@@ -84,18 +84,18 @@ Venice lists 250+ models across all modalities. The pricing for proprietary mode
 
 | Plan | Monthly | API Access | Credits Included |
 |---|---|---|---|
-| Free | $0 | Limited | 500 welcome |
+| Free | $0 | Limited | 500 welcome (one-time) |
 | Pro | $18 | Yes (free-tier limits) | 100/month |
 | Pro Plus | $68 | Yes (higher limits) | 7,500/month |
 | Max | $200 | Yes (highest limits) | 22,500/month |
 
-Annual billing saves 10% across all paid tiers. Unused credits roll forward on Pro Plus (2 months) and Max (3 months).
+([Source: Venice pricing page](https://venice.ai/pricing).) Annual billing saves 10% across all paid tiers. Unused credits roll forward on Pro Plus (2 months) and Max (3 months).
 
 **Alternative payment paths:**
-- DIEM token staking: stake DIEM to receive a fixed daily credit allowance ($1/day per staked token)
-- x402 (Base): per-request USDC micropayments directly from wallets — no subscription required
+- [DIEM token staking](https://docs.venice.ai/overview/pricing): stake DIEM to receive a fixed daily credit allowance ($1/day per staked token, refreshed daily)
+- [x402 (Base)](https://docs.venice.ai/overview/about-venice): wallet-based USDC micropayments directly on Base — no subscription required
 
-The crypto payment rails are a small percentage of actual usage (~8% of paying users), but they matter for use cases where subscription management is a friction point.
+The crypto payment rails are a small percentage of actual usage — [TechCrunch reported CEO Erik Voorhees saying only about 8% of Venice's users pay with crypto](https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/) — but they matter for use cases where subscription management is a friction point.
 
 ---
 
@@ -143,7 +143,7 @@ If you're evaluating Venice for a project:
 
 ## Context: The Unicorn Milestone
 
-The $65M Series A values Venice above $1B. 3M+ active users and 1.7M daily API calls suggest genuine adoption rather than hype-driven signups. The majority of users (~92%) pay in USD rather than cryptocurrency, which indicates the privacy use case is pulling non-crypto-native builders.
+The [$65M Series A values Venice above $1B](https://venice.ai/blog/venice-raises-65-million-series-a) — a figure [independently confirmed by TechCrunch](https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/). 3M+ active users and 1.7M daily API calls (per TechCrunch's reporting, cited above) suggest genuine adoption rather than hype-driven signups. The majority of users (~92%, the inverse of [TechCrunch's reported ~8% crypto-paying share](https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/)) pay in USD rather than cryptocurrency, which indicates the privacy use case is pulling non-crypto-native builders.
 
 The competitive context: Venice is not trying to beat OpenAI at frontier model performance. It's positioning as the infrastructure layer for builders who need to decouple AI capability from AI provider data access. That's a specific problem with a growing regulatory tailwind — GDPR, HIPAA, SOC 2, and sector-specific data protection requirements are all pushing enterprises toward "don't send customer data to third-party AI" as a default policy.
 

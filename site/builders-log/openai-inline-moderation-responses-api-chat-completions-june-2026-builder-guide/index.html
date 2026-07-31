@@ -6,14 +6,14 @@
   <title>OpenAI Inline Moderation: One-Call Safety Scores in Responses API and Chat Completions — ChatForest</title>
   <meta name="description" content="OpenAI added inline moderation to both the Responses API and Chat Completions API on June 4, 2026. Pass a moderation object in your generation request and receive flagged status, per-category scores, and model confidence in the same response.">
   <meta property="og:title" content="OpenAI Inline Moderation: One-Call Safety Scores in Responses API and Chat Completions — ChatForest">
-  <meta property="og:description" content="Pass moderation={&#34;model&#34;: &#34;omni-moderation-latest&#34;} to get input and output safety scores alongside your generation — no second API call, no extra latency for standalone requests.">
+  <meta property="og:description" content="Pass moderation={&#34;model&#34;: &#34;omni-moderation-latest&#34;} to get input and output safety scores alongside your generation — no second API call needed.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/builders-log/openai-inline-moderation-responses-api-chat-completions-june-2026-builder-guide/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OpenAI Inline Moderation: One-Call Safety Scores in Responses API and Chat Completions — ChatForest">
-  <meta name="twitter:description" content="Pass moderation={&#34;model&#34;: &#34;omni-moderation-latest&#34;} to get input and output safety scores alongside your generation — no second API call, no extra latency for standalone requests.">
+  <meta name="twitter:description" content="Pass moderation={&#34;model&#34;: &#34;omni-moderation-latest&#34;} to get input and output safety scores alongside your generation — no second API call needed.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/builders-log/openai-inline-moderation-responses-api-chat-completions-june-2026-builder-guide/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -93,7 +93,7 @@ input_result <span style="color:#f92672">=</span> response<span style="color:#f9
 <span style="color:#75715e"># Moderation results on output</span>
 output_result <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>moderation<span style="color:#f92672">.</span>output<span style="color:#f92672">.</span>results[<span style="color:#ae81ff">0</span>]
 <span style="color:#66d9ef">print</span>(output_result<span style="color:#f92672">.</span>flagged)
-</code></pre></div><p>The <code>response.moderation.input</code> object contains scores for what the user sent. <code>response.moderation.output</code> scores what the model generated. Both are available in the same response object.</p>
+</code></pre></div><p>The <code>response.moderation.input</code> object contains scores for what the user sent. <code>response.moderation.output</code> scores what the model generated. Both are available in the same response object, per <a href="https://developers.openai.com/api/docs/guides/moderation">OpenAI&rsquo;s moderation guide</a>.</p>
 <hr>
 <h2 id="chat-completions-api">Chat Completions API</h2>
 <p>The same parameter works in Chat Completions:</p>
@@ -109,7 +109,7 @@ input_result <span style="color:#f92672">=</span> completion<span style="color:#
 <span style="color:#75715e"># Output moderation — results[i] aligns with choices[i]</span>
 output_result <span style="color:#f92672">=</span> completion<span style="color:#f92672">.</span>moderation<span style="color:#f92672">.</span>output<span style="color:#f92672">.</span>results[<span style="color:#ae81ff">0</span>]
 <span style="color:#66d9ef">print</span>(output_result<span style="color:#f92672">.</span>flagged)
-</code></pre></div><p>When you request multiple choices (<code>n=3</code>), <code>completion.moderation.output.results[i]</code> corresponds to <code>completion.choices[i]</code>.</p>
+</code></pre></div><p>When you request multiple choices (<code>n=3</code>), <code>completion.moderation.output.results[i]</code> corresponds to <code>completion.choices[i]</code>, per <a href="https://developers.openai.com/api/docs/guides/moderation">OpenAI&rsquo;s moderation guide</a>.</p>
 <hr>
 <h2 id="reading-moderation-results">Reading Moderation Results</h2>
 <p>Each result object has three fields:</p>
@@ -144,11 +144,12 @@ output_result <span style="color:#f92672">=</span> completion<span style="color:
 </tr>
 </tbody>
 </table>
+<p>(Field definitions per <a href="https://developers.openai.com/api/docs/guides/moderation">OpenAI&rsquo;s moderation guide</a>.)</p>
 <p>The <code>flagged</code> boolean is the fast path for most applications. For logging, routing to human review, or building custom thresholds, use <code>category_scores</code> directly — a score of 0.3 on <code>harassment</code> may warrant logging even if it doesn&rsquo;t cross the default threshold for <code>flagged=True</code>.</p>
-<p>Categories include: <code>hate</code>, <code>hate/threatening</code>, <code>harassment</code>, <code>harassment/threatening</code>, <code>self-harm</code>, <code>self-harm/intent</code>, <code>self-harm/instructions</code>, <code>sexual</code>, <code>sexual/minors</code>, <code>violence</code>, <code>violence/graphic</code>, and <code>illicit</code>.</p>
+<p>The <a href="https://developers.openai.com/api/docs/guides/moderation">13 moderation categories</a> are: <code>hate</code>, <code>hate/threatening</code>, <code>harassment</code>, <code>harassment/threatening</code>, <code>self-harm</code>, <code>self-harm/intent</code>, <code>self-harm/instructions</code>, <code>sexual</code>, <code>sexual/minors</code>, <code>violence</code>, <code>violence/graphic</code>, <code>illicit</code>, and <code>illicit/violent</code>.</p>
 <hr>
 <h2 id="streaming-behavior">Streaming Behavior</h2>
-<p>Moderation scores are not part of the streaming delta events. If you stream a response, moderation results arrive as a separate block <strong>after</strong> the full output is available.</p>
+<p>Per <a href="https://developers.openai.com/api/docs/guides/moderation">OpenAI&rsquo;s moderation guide</a>: &ldquo;If you stream a generated response, moderation scores arrive after the full generated output is available. They aren&rsquo;t included with partial output deltas.&rdquo; There is no separate moderation-specific streaming event — the scores land on the final response object once generation finishes.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stream <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>responses<span style="color:#f92672">.</span>create(
     model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gpt-5.5&#34;</span>,
     input<span style="color:#f92672">=</span>[{<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;Tell me about nuclear energy.&#34;</span>}],
@@ -159,13 +160,13 @@ output_result <span style="color:#f92672">=</span> completion<span style="color:
 <span style="color:#66d9ef">for</span> event <span style="color:#f92672">in</span> stream:
     <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;response.output_text.delta&#34;</span>:
         <span style="color:#66d9ef">print</span>(event<span style="color:#f92672">.</span>delta, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>, flush<span style="color:#f92672">=</span>True)
-    <span style="color:#66d9ef">elif</span> event<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;response.moderation.completed&#34;</span>:
-        <span style="color:#75715e"># Arrives after the final output event</span>
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Flagged:&#34;</span>, event<span style="color:#f92672">.</span>moderation<span style="color:#f92672">.</span>output<span style="color:#f92672">.</span>results[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>flagged)
+    <span style="color:#66d9ef">elif</span> event<span style="color:#f92672">.</span>type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;response.completed&#34;</span>:
+        <span style="color:#75715e"># event.response carries the full response, moderation included</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Flagged:&#34;</span>, event<span style="color:#f92672">.</span>response<span style="color:#f92672">.</span>moderation<span style="color:#f92672">.</span>output<span style="color:#f92672">.</span>results[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>flagged)
 </code></pre></div><p>This means you cannot gate on moderation results while streaming output. You either stream without gating, or you complete generation first and then evaluate. If real-time blocking matters (e.g., a live voice agent), keep the standalone <code>/v1/moderations</code> call in parallel with your generation request.</p>
 <hr>
 <h2 id="tool-calling-coverage">Tool Calling Coverage</h2>
-<p>Inline moderation covers tool-call arguments and tool outputs when they appear in conversation content. It does not score:</p>
+<p>Per <a href="https://developers.openai.com/api/docs/guides/moderation">OpenAI&rsquo;s moderation guide</a>, inline moderation covers tool-call arguments and tool outputs when they appear in conversation content. It does not score:</p>
 <ul>
 <li>Tool names</li>
 <li>Tool descriptions</li>
@@ -175,8 +176,8 @@ output_result <span style="color:#f92672">=</span> completion<span style="color:
 <p>If your tools handle sensitive data — medical records, legal documents, personal information — and tool schemas themselves could reveal sensitive patterns, the standalone moderation endpoint gives finer control. For most agents, inline coverage is sufficient.</p>
 <hr>
 <h2 id="cost">Cost</h2>
-<p>The moderation endpoint is free. Adding <code>moderation</code> to a generation request does not increase your bill beyond the standard generation cost. There is no per-moderation-call charge, whether you use the inline parameter or the standalone endpoint.</p>
-<p>The practical implication: there is no cost reason to skip moderation. The only tradeoff is compute overhead (a small latency increase at response completion) and streaming behavior (results arrive at the end, not in flight).</p>
+<p>The standalone moderation endpoint is <a href="https://developers.openai.com/api/docs/guides/moderation">documented as free to use</a>, and OpenAI&rsquo;s <a href="https://developers.openai.com/api/docs/pricing">pricing page</a> lists <code>omni-moderation-latest</code> — the model backing both inline and standalone moderation — as free. Passing <code>moderation</code> into a Responses or Chat Completions request runs that same free model.</p>
+<p>The practical implication: there is no cost reason to skip moderation. The tradeoff is timing, not price — see Streaming Behavior above for how results are delayed when you stream output.</p>
 <hr>
 <h2 id="when-to-use-inline-vs-standalone">When to Use Inline vs Standalone</h2>
 <p><strong>Use inline moderation when:</strong></p>
@@ -195,7 +196,7 @@ output_result <span style="color:#f92672">=</span> completion<span style="color:
 </ul>
 <hr>
 <h2 id="migration-note">Migration Note</h2>
-<p>Adding <code>moderation</code> to existing generation calls is additive — it doesn&rsquo;t change the model output, the response structure, or any existing fields. You can deploy it to a subset of endpoints first and compare results before rolling out broadly. No beta header is required; inline moderation is generally available as of June 4, 2026.</p>
+<p>Adding <code>moderation</code> to existing generation calls is additive: per <a href="https://developers.openai.com/api/docs/guides/moderation">OpenAI&rsquo;s moderation guide</a>, &ldquo;the model still generates normally,&rdquo; and the parameter adds a new <code>moderation</code> object to the response rather than altering existing fields. You can deploy it to a subset of endpoints first and compare results before rolling out broadly. Inline moderation shipped as a standard <a href="https://developers.openai.com/api/docs/changelog">changelog entry dated June 4, 2026</a>.</p>
 
       </div>
 
