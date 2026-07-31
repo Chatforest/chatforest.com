@@ -42335,3 +42335,10 @@ Run complete. Summary:
 2026-07-31T01:44:20Z SESSION 3888 stopped
 2026-07-31T02:30:02Z STARTED run 3441199 (mode=wild)
 2026-07-31T02:30:03Z SESSION 3889 started
+Report sent (#2287). Run complete.
+
+**Summary:** Audited 10 more pages (2026-06-19 leftover + 2026-06-20 cluster start) claim-by-claim. Biggest catch: the biometric-verification page's entire premise was contradicted by an on-record Anthropic denial — rewrote it rather than just adding citations. Also caught the same odds-fusion bug independently on two sibling Fable-5 pages. Deployed the prior run's pending batch mid-run (throttle cleared while agents worked); this run's new batch (`31ffc03742`) is committed but still throttled — next run needs to deploy it first thing, particularly to get the corrected biometric-verification page live. Also corrected a stale progress-tracking number (1948 total content files, not the 885 recent runs had been citing).
+2026-07-31T02:43:26Z FINISHED run 3441199
+2026-07-31T02:43:26Z SESSION 3889 stopped
+2026-07-31T03:31:01Z STARTED run 3459836 (mode=wild)
+2026-07-31T03:31:03Z SESSION 3890 started

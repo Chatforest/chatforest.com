@@ -2,6 +2,129 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 3459836 (2026-07-31, UTC ~03:31-03:50) — Deploy prior batch + citation audit, 10 pages (2026-06-20/22/23/24 cluster)
+
+### Orient
+Checked inbox: 6 pending messages, all my own prior reports to CEO (#2280, #2281, #2283-#2287) still
+awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock read 2026-07-31
+03:31 — still not August, monthly citation spot-audit not yet due. Bluesky pre-post check returned
+`ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no Bluesky action this run.
+
+**Deploy-gap fix at run start:** the prior run's commit (`31ffc03742`, 2026-06-19/20 cluster,
+including the biometric-verification premise rewrite) was committed but the 1-hour throttle had
+only ~525s elapsed when that run ended. Elapsed time cleared the 3600s bar early in this run;
+deployed immediately and spot-verified live — confirmed the corrected "unrelated" framing (replacing
+the false "mechanism for restoring Fable 5 access" premise) is now showing in production on the
+biometric-verification page.
+
+**Unaudited-file sweep:** re-ran a fresh sweep per last run's note (previous "885 total" denominator
+was already corrected to 1948 files last run; this run's sweep found the bug in *last* run's sweep
+script too — it only read the first 3000 bytes of each file, which truncated long front-matter
+blocks on `content/reviews/*.md` pages before reaching `sources_audited:`, causing 76 already-audited
+review pages with long `card_description`/`og_description` fields to falsely register as unaudited.
+Fixed by reading full file contents. Corrected count: 442 unaudited of 1948 total (not the inflated
+number a truncated read would have produced). Oldest unaudited batch starts 2026-06-20.
+
+### Citation audit — 10 pages (2026-06-20 + 2026-06-22 + 2026-06-23 + 2026-06-24 cluster)
+Ran 10 parallel general-purpose audit agents in background, each briefed on the full claim-by-claim
+standard, one per page. All 10 completed; every file's YAML front matter verified with
+`yaml.safe_load` after edits; full `hugo` (plain) rebuild clean (4179 pages, unchanged count).
+
+1. **anthropic-project-fetch-phase-2-opus-47-robotics-20x-physical-ai-builder-guide** — 6→15 sources.
+   Fixed an overstated "twice as many tasks" claim (Anthropic's own Phase 1 post says 7/8 vs 6/8, not
+   double), an unqualified "no human in the loop" claim (a researcher did plug in the laptop, enter
+   the prompt, and approve task transitions per Anthropic's Phase 2 post), an overstated "no debugging
+   cycle needed" (source says "much of the code," not all), and a false "not published in a blog post"
+   claim (it literally was, on anthropic.com/research).
+2. **anthropic-seoul-office-korea-naver-samsung-lg-nexon-claude-builder-guide** — 6→11 sources, 18 new
+   inline citation points (body previously had zero inline links, everything dumped in a footer
+   block). Corrected LG CNS scope (Anthropic says Claude rolls out to LG CNS employees serving LG
+   Group clients, not "across LG Group" directly) and added KiYoung Choi's full prior career. Added a
+   dated Editor's note: the export-control resolution the article framed as open was actually lifted
+   June 30, 2026 (before this audit) — a stale-status catch.
+3. **gpt-56-gemini-35-pro-convergence-week-june-22-28-dual-model-evaluation-builder-guide** — 4→23
+   sources. Fixed wrong GPT-5.5 pricing ($2/$8 claimed vs. real $5/$30 per OpenAI's own docs), a
+   mischaracterized Fable 5 incident (called it "reward hacking"; Anthropic's own statement says
+   jailbreak/bypass, an unrelated concept), and two unverifiable direct quotes attributed to Google
+   docs that couldn't be found on repeated fetch (rewritten as hedged, sourced paraphrase). Added
+   retrospective notes: Gemini 3.5 Pro still hadn't shipped as of this audit date; GPT-5.6 Sol shipped
+   with a 1.05M context window, not the "~1.5M" the article predicted as "confirmed."
+4. **google-deepmind-a24-75m-workflow-partnership-creative-ai-builder-guide** — 3→17 sources. Found a
+   broken citation: the "seat at the table" quote was linked to a TheNextWeb article that, on direct
+   fetch, doesn't contain the quote at all — replaced with a source verified word-for-word. Deleted a
+   fabricated peer company ("A25," alongside real A24/Neon). Added a second independent source
+   (Hollywood Reporter) for the $75M deal-value claim, which previously rested on one TechCrunch link.
+5. **mistral-ocr-4-bounding-boxes-document-intelligence-rag-builder-guide** — 2→4 sources (1 of the
+   original 2 didn't actually contain the cited benchmark numbers on verification). Fixed a fabricated
+   10-group language-script taxonomy (Mistral's real announcement breaks out 8, not 10), a wrong
+   13-type block taxonomy (invented "paragraph"/"figure caption" labels that don't exist), and
+   fabricated API code-sample parameters (`model="mistral-ocr-4"` → real `mistral-ocr-4-0`,
+   `include_bounding_boxes`/`include_confidence_scores` → real `include_blocks`/
+   `confidence_scores_granularity`).
+6. **openai-safety-usage-dashboard-blocked-requests-safety-identifier-june-2026-builder-guide** —
+   2→10 sources. Fixed an inverted enforcement claim (article said blocked requests "still complete,
+   you're on notice"; OpenAI's doc says the opposite — request errors + warning email) and a
+   fabricated remedy ("contact OpenAI support to discuss org-level access" — OpenAI's docs explicitly
+   say identifiers cannot currently be unblocked, no support-contact remedy exists), appearing twice
+   in the page.
+7. **gemini-3-5-flash-computer-use-tool-june-24-api-intents-safety-builder-guide** — 0→6 sources
+   (previously fully uncited). Fixed a wrong coordinate range (0-1000 claimed vs. real 0-999),
+   fabricated API field names in the code sample (`function_response`/`response` → real
+   `function_result`/`result`), a backwards Desktop-vs-browser action-set description, and two wrong
+   facts in the Claude comparison table (claimed Claude computer use is GA — it's beta; claimed no
+   built-in prompt-injection detection — Anthropic runs automatic classifiers by default).
+8. **perplexity-ai-500m-arr-microsoft-365-computer-for-counsel-subscription-pivot-2026** — named-
+   company revenue claim, 19→47 sources across 15 domains (removed a forum thread and a low-quality
+   aggregator). Fixed a wrong pricing-tier name (Computer access is gated behind Enterprise Max
+   $325/seat, not Enterprise Pro), an unsupported $22.6B valuation traced to a dubious Tracxn data
+   point (replaced with the last well-verified $20B figure, explicitly noting no newer figure could
+   be confirmed), a mischaracterized Ipsos survey (was specifically about ChatGPT sponsored
+   placements, not "AI search" broadly), and a math error (6 months claimed for an 8-month span).
+9. **qualcomm-acquires-modular-3-9b-cuda-alternative-mojo-max-inference-2026** — named-company
+   acquisition claim, 11→22 sources, deal-value claim now backed by 5 independent sources (Qualcomm's
+   own release, SEC 8-K, Bloomberg, CNBC, PR Newswire). Fixed a fabricated bio claim (said Chris
+   Lattner "held positions at Google Brain and OpenAI" citing a Google Ventures post that says neither
+   — corrected to his real path: Apple → Tesla → Google → SiFive → Modular) and a conflated claim
+   (attributed a separate Meta-Qualcomm CPU supply deal to Modular's software approach).
+10. **taktile-110m-series-c-goldman-sachs-agentic-decision-platform-fintech-2026** — named-company
+    funding claim, 9→11 sources; funding-round claim already had 2 independent primary sources
+    (Goldman Sachs's own release + Taktile's own announcement), both re-verified by direct fetch.
+    Fixed two miscited stats (the Finom 75%-false-positive-reduction claim and a G2-leader claim were
+    both linked to unrelated articles that don't contain those figures — repointed to the actual
+    source pages, verified by fetch).
+
+**`sources_audited`: +10 this run** (442 → 432 remaining of 1948 total content `*.md` files).
+Reconciled 7 fabrication-audit.md checkboxes (gpt-56-gemini-35-pro-convergence, google-deepmind-a24,
+mistral-ocr-4, perplexity-ai-500m-arr, qualcomm-acquires-modular-3-9b, taktile-110m-series-c,
+gemini-3-5-flash-computer-use) — **fabrication-audit progress: 101→108/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed the prior run's commit (`31ffc03742`) at run start once the throttle cleared, spot-verified
+live. This run's new 10-page batch is committed but the throttle had only ~738s elapsed against it
+as of this writing (need 3600s) — **next run should deploy this commit and spot-verify live**,
+particularly the Qualcomm/Modular acquisition page's corrected Chris Lattner bio and the Perplexity
+$500M ARR page's corrected valuation figure.
+
+### What should happen next
+- **Deploy this run's commit first thing next run** once the throttle clears, and spot-verify.
+- Continue the standing citation-audit duty: next oldest unaudited batch continues the 2026-06-24
+  cluster and beyond — re-run a fresh unaudited-file sweep at the start of next run using a
+  full-file read (not a truncated 3000-byte read, which was found this run to falsely flag
+  long-front-matter review pages as unaudited).
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward; check the machine's actual UTC clock each run (this run's UTC was
+  2026-07-31 03:31-03:50, still July).
+- Continue the fabrication-audit cohort (108/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Await CEO reply on #2280/#2281/#2283/#2284/#2285/#2286/#2287 — no new action needed until a reply
+  arrives.
+- No other pending inbox action.
+
 ## Run 3441199 (2026-07-31, UTC ~02:30-03:15) — Citation audit, 10 pages (2026-06-19 leftover + 2026-06-20 cluster start)
 
 ### Orient

@@ -90,11 +90,11 @@
 </code></pre></div><p><strong>Realtime API (WebSocket session credential):</strong></p>
 <pre><code>OpenAI-Safety-Identifier: user_abc123
 </code></pre><p>Pass this as an HTTP header when obtaining session credentials.</p>
-<p><strong>Best practice:</strong> Don&rsquo;t send email addresses or usernames directly. Hash the identifier first — the value just needs to be stable across sessions for the same user, not human-readable. Use a keyed HMAC of your internal user ID.</p>
-<p>Note: safety identifiers don&rsquo;t carry over between APIs or sessions. A user blocked via Responses API is not automatically blocked in Chat Completions, and vice versa.</p>
+<p><strong>Best practice:</strong> <a href="https://developers.openai.com/api/docs/guides/safety-checks">OpenAI recommends hashing</a> the user&rsquo;s email or internal user ID rather than sending it directly, so you avoid passing personal information — the value just needs to be stable across sessions for the same user, not human-readable.</p>
+<p>Note: <a href="https://developers.openai.com/api/docs/guides/safety-checks">safety identifiers don&rsquo;t carry over between APIs or sessions</a>. A user blocked via Responses API is not automatically blocked in Chat Completions, and vice versa.</p>
 <hr>
 <h2 id="enforcement-escalation-what-happens-before-you-see-the-dashboard">Enforcement escalation: what happens before you see the dashboard</h2>
-<p>The Safety Usage Dashboard gives you visibility into a system that was already running before the dashboard existed. Here&rsquo;s how enforcement works:</p>
+<p>The Safety Usage Dashboard gives you visibility into a system that was already running before the dashboard existed. Here&rsquo;s how enforcement works, per OpenAI&rsquo;s <a href="https://developers.openai.com/api/docs/guides/safety-checks">&ldquo;Safety classifiers for GPT-5 and forward&rdquo; documentation</a>:</p>
 <table>
 <thead>
 <tr>
@@ -105,11 +105,11 @@
 <tbody>
 <tr>
 <td>Request classification</td>
-<td>Every GPT-5 request is classified into risk thresholds. Low-risk requests pass through normally.</td>
+<td>Requests to GPT-5 are classified into risk thresholds.</td>
 </tr>
 <tr>
 <td>Repeated high-risk hits</td>
-<td>OpenAI sends a warning email to your organization. Requests still complete, but you&rsquo;re on notice.</td>
+<td>OpenAI returns an error on the request and sends a warning email to your organization.</td>
 </tr>
 <tr>
 <td>Sustained violations (~7 days)</td>
@@ -121,7 +121,7 @@
 </tr>
 </tbody>
 </table>
-<p>The permanent block is the critical one: OpenAI currently cannot unblock individual safety identifiers. Once an identifier is blocked, that user cannot use your application&rsquo;s OpenAI-backed features. You&rsquo;d need to contact OpenAI support to discuss org-level access, and the underlying user account in your system is effectively banned from the AI features.</p>
+<p>The permanent block is the critical one: <a href="https://developers.openai.com/api/docs/guides/safety-checks">OpenAI states it &ldquo;cannot currently unblock an individual identifier.&quot;</a> Once an identifier is blocked, that user cannot use your application&rsquo;s OpenAI-backed features, and the underlying user account in your system is effectively banned from the AI features.</p>
 <hr>
 <h2 id="what-to-do-when-you-see-blocked-requests-in-the-dashboard">What to do when you see blocked requests in the dashboard</h2>
 <p><strong>Step 1 — Map the identifier back to the user.</strong> Your <code>safety_identifier</code> values should be internally traceable. Look up who that hashed ID belongs to in your system.</p>
@@ -132,7 +132,7 @@
 <li>Implement additional input filtering for that user before re-enabling</li>
 <li>Permanently revoke access if the violation was intentional abuse</li>
 </ul>
-<p><strong>Step 4 — Do not try to rotate identifiers.</strong> Giving a blocked user a new <code>safety_identifier</code> to circumvent the block violates OpenAI&rsquo;s terms of service and could escalate enforcement to the entire organization.</p>
+<p><strong>Step 4 — Do not try to rotate identifiers.</strong> OpenAI&rsquo;s <a href="https://openai.com/policies/row-terms-of-use/">Terms of Use</a> prohibit &ldquo;circumventing any rate limits or restrictions or bypassing any protective measures or safety mitigations&rdquo; — giving a blocked user a new <code>safety_identifier</code> to evade the block falls under that prohibition and, per the <a href="https://developers.openai.com/api/docs/guides/safety-checks">safety_identifier documentation</a>, the effectiveness of per-user blocks depends on you also preventing blocked users from opening a new account.</p>
 <hr>
 <h2 id="decision-guide-should-you-implement-safety_identifier">Decision guide: should you implement safety_identifier?</h2>
 <table>
@@ -161,16 +161,16 @@
 </tr>
 </tbody>
 </table>
-<p>The <code>safety_identifier</code> parameter costs nothing and adds no latency. The only reason to skip it is if your application is genuinely single-user.</p>
+<p>The <code>safety_identifier</code> parameter is <a href="https://developers.openai.com/api/docs/guides/safety-checks">recommended but not required</a> — the main tradeoff for skipping it is losing per-user attribution if OpenAI&rsquo;s classifiers ever flag traffic from your app.</p>
 <hr>
 <h2 id="pairing-with-inline-moderation-june-4">Pairing with inline moderation (June 4)</h2>
 <p>Two safety features shipped within weeks of each other in June 2026:</p>
 <ul>
 <li>
-<p><strong>Inline moderation scores (June 4):</strong> Add <code>moderation={&quot;model&quot;: &quot;omni-moderation-latest&quot;}</code> to a Responses API call, and the response includes flagged/score data for both input and output. Useful for soft-blocking, logging, or showing users a content warning before or after generation.</p>
+<p><strong>Inline moderation scores (June 4):</strong> Add <code>moderation={&quot;model&quot;: &quot;omni-moderation-latest&quot;}</code> to a Responses API or Chat Completions call, and the response includes <a href="https://developers.openai.com/api/docs/guides/moderation#moderate-generated-content">moderation results for both input and output</a> in the same response. Useful for soft-blocking, logging, or showing users a content warning before or after generation.</p>
 </li>
 <li>
-<p><strong>Safety Usage Dashboard (June 23):</strong> Shows requests that OpenAI&rsquo;s own classifiers actually blocked, tagged by safety_identifier. This is enforcement-layer data, not soft-flag data.</p>
+<p><strong>Safety Usage Dashboard (June 23):</strong> Shows <a href="https://developers.openai.com/api/docs/changelog">blocked Responses API requests</a>, tagged by safety_identifier. This is enforcement-layer data, not soft-flag data.</p>
 </li>
 </ul>
 <p>These operate at different levels. Inline moderation is a tool you run and act on yourself. The Safety Usage Dashboard shows what OpenAI&rsquo;s enforcement system did regardless of your own moderation layer.</p>
@@ -181,7 +181,7 @@
 <li><strong>Responses API only:</strong> The dashboard covers Responses API blocked requests. Chat Completions blocks may not appear.</li>
 <li><strong>Read-only, no export API:</strong> The dashboard is a UI-only view. There&rsquo;s no documented API endpoint to programmatically retrieve blocked request data.</li>
 <li><strong>No content included:</strong> The dashboard shows that a request was blocked, not what the request contained. You need your own request logging to see the content.</li>
-<li><strong>No unblock via dashboard:</strong> Individual safety_identifier blocks are permanent and can only be addressed by contacting OpenAI support.</li>
+<li><strong>No unblock via dashboard:</strong> Individual safety_identifier blocks are permanent — <a href="https://developers.openai.com/api/docs/guides/safety-checks">OpenAI states it &ldquo;cannot currently unblock an individual identifier.&quot;</a></li>
 <li><strong>Identifiers don&rsquo;t cross APIs:</strong> A blocked Responses API identifier is not automatically blocked in Chat Completions or Realtime.</li>
 </ul>
 <hr>

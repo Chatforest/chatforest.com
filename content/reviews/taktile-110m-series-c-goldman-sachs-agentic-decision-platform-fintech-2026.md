@@ -10,6 +10,7 @@ categories: ["reviews"]
 rating: 0
 author: "ChatForest"
 last_refreshed: 2026-06-24
+sources_audited: 2026-07-31
 ---
 
 **At a glance:** Taktile, an agentic AI decision platform for financial institutions, [raised $110 million in a Series C](https://www.businesswire.com/news/home/20260624880263/en/Taktile-Secures-$110M-in-Goldman-Sachs-led-Series-C-to-Power-AI-Transformation-in-Financial-Institutions) led by Growth Equity at Goldman Sachs Alternatives, [announced June 24, 2026](https://fortune.com/2026/06/24/exclusive-taktile-goldman-sachs-ai-bank-insurance-funding/). Total raised: $184 million. Part of our **[AI Funding reviews](/categories/reviews/)**.
@@ -45,13 +46,13 @@ The key design choice is that AI agents augment the rules layer rather than repl
 
 Three publicly cited outcomes from [Taktile's funding announcement](https://taktile.com/articles/taktile-s-next-chapter-we-raised-110m-to-power-the-agentic-financial-institutions-of-the-future) are notable:
 
-**95% automation in B2B underwriting.** A fintech using Taktile tripled onboarding capacity and cut underwriting time by 50% by deploying AI agents on the credit decisioning workflow. The previous approach required human review for the majority of applications.
+**95% automation in B2B underwriting.** [A fintech using Taktile tripled onboarding capacity (after automating 80% of onboarding tasks) and cut underwriting time by 50%](https://taktile.com/articles/b2b-fintech-and-taktile) by deploying AI agents on the credit decisioning workflow. Taktile's case study does not name the fintech. The previous approach required human review for the majority of applications.
 
-**75% fewer AML false positives.** [Finom](https://taktile.com/articles/taktile-and-sentilink), a European business banking platform, cut anti-money laundering false positives by 75% and accelerated rule updates by 99% using Taktile's platform. False positives in AML are expensive: each one triggers a manual review workflow, and high false-positive rates in transaction monitoring are a primary driver of compliance staff costs.
+**75% fewer AML false positives.** [Finom](https://taktile.com/articles/finom-success-story), a European business banking platform, cut anti-money laundering false positives by 75% and accelerated rule updates by 99% — moving from month-long engineering cycles to deploying updated rulesets in under 15 minutes — using Taktile's platform. False positives in AML are expensive: each one triggers a manual review workflow, and high false-positive rates in transaction monitoring are a primary driver of compliance staff costs.
 
 **$90M+ projected claims savings for a major insurer.** One of the world's largest insurers is running multiple claims processing workflows on Taktile, with projected cost efficiencies exceeding $90 million — primarily from automating coverage determination on routine claims.
 
-Named enterprise customers include [Mercury](https://mercury.com/), [Monzo](https://monzo.com/), [Faire](https://www.faire.com/), and [Pleo](https://www.pleo.io/en) — spanning US neobanks, UK challenger banks, B2B marketplaces, and European spend management platforms. [Taktile has been named a G2 Decision Management Platform Leader for seven consecutive quarters](https://taktile.com/articles/taktile-secures-110m-in-goldman-sachs-led-series-c-to-power-ai-transformation-in-financial-institutions).
+Named enterprise customers include [Mercury](https://mercury.com/), [Monzo](https://monzo.com/), [Faire](https://www.faire.com/), and [Pleo](https://www.pleo.io/en) — spanning US neobanks, UK challenger banks, B2B marketplaces, and European spend management platforms. [Taktile has been named a G2 Decision Management Platform Leader for seven consecutive quarters](https://taktile.com/articles/taktile-celebrates-seven-quarters-as-g2-leader-for-decision-management-platforms) (as of G2's Spring 2026 Report, published March 18, 2026).
 
 ## Why this matters for AI in financial services
 
