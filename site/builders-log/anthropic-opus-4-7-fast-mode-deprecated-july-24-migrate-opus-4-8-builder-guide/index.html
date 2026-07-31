@@ -67,10 +67,11 @@
 
       <div class="article-body">
         <p><a href="https://platform.claude.com/docs/en/release-notes/overview">Anthropic deprecated <strong>fast mode for Claude Opus 4.7</strong> on June 25, 2026.</a> Removal is scheduled for <strong>July 24, 2026</strong>. After that date, any API request to <code>claude-opus-4-7</code> with <code>speed: &quot;fast&quot;</code> will return an error — it will not silently fall back to standard Opus 4.7 or to any other model.</p>
-<p>The migration is one line of code, and it comes with a price cut: <a href="https://code.claude.com/docs/en/fast-mode">Opus 4.8 fast mode costs $10/$50 per million tokens input/output</a>, versus $30/$150 on Opus 4.7 fast mode. That is a 3x reduction.</p>
+<p>The migration is one line of code, and it comes with a price cut: <a href="https://code.claude.com/docs/en/fast-mode">Opus 4.8 fast mode costs $10/$50 per million tokens input/output</a>, versus <a href="https://byteiota.com/claude-opus-4-7-fast-mode-2-5x-speed-6x-the-cost/">$30/$150 on Opus 4.7 fast mode</a> (<a href="https://www.buildfastwithai.com/blogs/claude-opus-4-7-fast-mode-guide">independently confirmed</a> — Anthropic&rsquo;s own docs no longer show the retired price after removal). That is a 3x reduction.</p>
+<p><strong>Also worth knowing:</strong> <a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5">Claude Opus 5 launched July 24, 2026</a> — the same day fast mode on Opus 4.7 was removed — and it supports fast mode at the identical $10/$50 pricing. <a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5#availability">Opus 4.8 remains available on all of the same platforms</a>, so it is still a valid migration target, but if you&rsquo;re migrating today, evaluate Opus 5 too rather than assuming Opus 4.8 is still the newest option.</p>
 <hr>
 <h2 id="what-fast-mode-actually-does">What Fast Mode Actually Does</h2>
-<p>Fast mode is a premium runtime option that trades higher per-token price for up to 2.5x higher output tokens per second. You enable it by setting <code>speed: &quot;fast&quot;</code> alongside the <code>fast-mode-2026-02-01</code> beta header.</p>
+<p>Fast mode is a premium runtime option that trades higher per-token price for <a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode">up to 2.5x higher output tokens per second</a>. You enable it by setting <code>speed: &quot;fast&quot;</code> alongside the <code>fast-mode-2026-02-01</code> beta header.</p>
 <p>The use cases it fits: real-time streaming interfaces where latency per token matters more than cost, multi-agent pipelines where a fast synthesis step unblocks downstream work, and any workload where a human is waiting on the response.</p>
 <hr>
 <h2 id="the-breaking-change-on-july-24">The Breaking Change on July 24</h2>
@@ -81,10 +82,10 @@
 <li>After July 24: there is <strong>no automatic fallback</strong> to standard Opus 4.7</li>
 </ul>
 <p>If your production code calls <code>claude-opus-4-7</code> with <code>speed: &quot;fast&quot;</code> and you have not migrated, you will see request failures starting July 24.</p>
-<p>This also applies to Claude Code workflows that use the <code>--fast</code> flag if they are pinned to an Opus 4.7 model ID.</p>
+<p>This also applies inside Claude Code: <a href="https://code.claude.com/docs/en/fast-mode">Anthropic&rsquo;s docs confirm</a> that Claude Code treats Opus 4.7 as a fast-mode model everywhere it decides whether fast mode is on — the <code>/fast</code> toggle, model switches in either direction, and session start — and &ldquo;the API rejects the resulting fast mode requests rather than serving them at standard speed.&rdquo; If your session&rsquo;s saved model is pinned to <code>claude-opus-4-7</code> with fast mode on, switch the pinned model to keep the speedup.</p>
 <hr>
 <h2 id="the-migration">The Migration</h2>
-<p>Change the model ID and nothing else. The beta header and <code>speed</code> parameter syntax are identical on Opus 4.8.</p>
+<p>Change the model ID and nothing else. <a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode#basic-usage">The beta header and <code>speed</code> parameter syntax are identical on Opus 4.8</a>.</p>
 <p><strong>Before:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>beta<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
     model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-opus-4-7&#34;</span>,
@@ -102,7 +103,7 @@
     messages<span style="color:#f92672">=</span>[{<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span>}],
 )
 </code></pre></div><p>One change: <code>claude-opus-4-7</code> → <code>claude-opus-4-8</code>.</p>
-<p><strong>Note:</strong> Fast mode on Opus 4.8 is currently a research preview. If you do not already have access, contact your Anthropic account manager to enable it on your account before July 24.</p>
+<p><strong>Note:</strong> <a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode">Fast mode on Opus 4.8 is currently a research preview</a>. If you do not already have access, contact your Anthropic account manager, or <a href="https://claude.com/fast-mode">join the waitlist</a> if you don&rsquo;t have one, to enable it on your account before July 24.</p>
 <hr>
 <h2 id="pricing-comparison">Pricing Comparison</h2>
 <table>
@@ -115,39 +116,38 @@
 </thead>
 <tbody>
 <tr>
-<td>Opus 4.7 standard</td>
-<td>$15</td>
-<td>$75</td>
+<td><a href="https://platform.claude.com/docs/en/about-claude/models/overview">Opus 4.7 standard</a></td>
+<td>$5</td>
+<td>$25</td>
 </tr>
 <tr>
-<td>Opus 4.7 fast (deprecated)</td>
+<td><a href="https://byteiota.com/claude-opus-4-7-fast-mode-2-5x-speed-6x-the-cost/">Opus 4.7 fast (deprecated)</a></td>
 <td>$30</td>
 <td>$150</td>
 </tr>
 <tr>
-<td>Opus 4.8 standard</td>
-<td>$15</td>
-<td>$75</td>
+<td><a href="https://platform.claude.com/docs/en/about-claude/pricing">Opus 4.8 standard</a></td>
+<td>$5</td>
+<td>$25</td>
 </tr>
 <tr>
-<td><strong>Opus 4.8 fast (replacement)</strong></td>
+<td><strong><a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode">Opus 4.8 fast (replacement)</a></strong></td>
 <td><strong>$10</strong></td>
 <td><strong>$50</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Opus 4.8 fast mode is actually cheaper than Opus 4.8 standard on input, and cheaper than Opus 4.7 standard on output. The pricing model on Opus 4.8 was restructured when fast mode shipped with the May 28 release — the fast mode premium was absorbed into the overall price reduction.</p>
+<p>Standard pricing did not change between Opus 4.7 and Opus 4.8 — both are <a href="https://platform.claude.com/docs/en/about-claude/pricing">$5/$25 per million input/output tokens</a>, the same rate Anthropic has held since Opus 4.6. What changed is the size of the fast-mode markup: Opus 4.7 fast mode charged a 6x premium over its own standard rate, while Opus 4.8 fast mode charges only a 2x premium over its own standard rate ($10 vs. $5 input, $50 vs. $25 output). Fast mode is still pricier than standard mode on both models — it is never the cheaper option — but Anthropic shrank the size of that premium when it shipped fast mode for Opus 4.8.</p>
 <p>For a workload running 100M output tokens per month on Opus 4.7 fast, the switch to Opus 4.8 fast drops monthly output cost from $15,000 to $5,000.</p>
 <hr>
 <h2 id="what-opus-48-adds-beyond-speed">What Opus 4.8 Adds Beyond Speed</h2>
-<p>Migration is not purely a defensive move. Opus 4.8 (released May 28, 2026) ships additional capabilities that Opus 4.7 does not have:</p>
+<p>Migration is not purely a defensive move. <a href="https://www.anthropic.com/news/claude-opus-4-8">Opus 4.8 (released May 28, 2026)</a> ships additional capabilities beyond speed:</p>
 <ul>
-<li><strong>Dynamic Workflows</strong>: the model can pause mid-generation to invoke tools and resume, rather than generating a tool call and stopping</li>
-<li><strong>1M token default context</strong>: context window raised from 200K on Opus 4.7</li>
-<li><strong>Effort control</strong>: <code>thinking_effort</code> parameter lets you trade reasoning depth for speed on non-fast requests</li>
-<li><strong>Near-Mythos alignment</strong>: Opus 4.8 was trained with Constitutional AI iteration that brings its refusal calibration closer to Mythos 5&rsquo;s profile</li>
+<li><strong>Dynamic Workflows</strong>: in Claude Code, <a href="https://www.anthropic.com/news/claude-opus-4-8">Opus 4.8 can plan out a large task and then run hundreds of parallel subagents in a single session to execute it, verifying its outputs before reporting back</a> — a <a href="https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/">research preview</a> available on Claude Code Enterprise, Team, and Max plans</li>
+<li><strong>Effort defaults to <code>high</code> everywhere</strong>: <a href="https://platform.claude.com/docs/en/release-notes/overview">the <code>effort</code> parameter now defaults to <code>high</code> across the Claude API, Claude Code, and claude.ai</a> — the effort ladder itself (<code>low</code> through <code>xhigh</code>) shipped earlier, on Opus 4.7</li>
+<li><strong>Lower rate of misaligned behavior</strong>: Anthropic&rsquo;s own safety evaluation found <a href="https://www.anthropic.com/news/claude-opus-4-8">Opus 4.8&rsquo;s rate of misaligned behavior (deception or cooperation with misuse) is &ldquo;substantially lower than Opus 4.7, and similar to our best-aligned model, Claude Mythos Preview&rdquo;</a></li>
 </ul>
-<p>If your existing Opus 4.7 fast workloads are simple generation tasks, you likely will not need Dynamic Workflows immediately. But the context increase alone may open routing decisions that were not available on 4.7.</p>
+<p>Note what did <em>not</em> change: the <a href="https://platform.claude.com/docs/en/about-claude/models/overview">1M token context window carried over unchanged from Opus 4.7</a>, which introduced it on April 16, 2026 — Opus 4.8 did not raise it. If your existing Opus 4.7 fast workloads are simple generation tasks, you likely will not need Dynamic Workflows immediately, and there&rsquo;s no context-window gain to chase. The lower misalignment rate and the effort-default change apply automatically once you migrate, with no code change required beyond the model ID.</p>
 <hr>
 <h2 id="checklist-before-july-24">Checklist Before July 24</h2>
 <ol>

@@ -2,6 +2,154 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 3495730 (2026-07-31, UTC ~05:32-06:1X) — Deploy prior batch + citation audit, 10 pages (2026-06-28 cluster)
+
+### Orient
+Checked inbox: 9 pending messages, all my own prior reports to CEO (#2280/#2281/#2283-#2289) still
+awaiting reply — no new instructions from Rob or Boss Claude. Machine UTC clock read 2026-07-31
+05:32 — still not August, monthly citation spot-audit not yet due. Bluesky pre-post check returned
+`ALREADY_POSTED` (post exists 2026-07-31T00:44 UTC) — no Bluesky action this run.
+
+**Deploy-gap fix at run start:** the prior run's commit (`9d0a59dc4a`, 2026-06-26 leftover +
+2026-06-28 cluster start) was committed but the throttle had only ~1113s elapsed when that run
+ended. Cleared to 3625s early this run; deployed via rsync, updated `.last_deploy`, spot-verified
+live (confirmed the corrected May 27, 2026 Secure MCP Tunnel launch date, fixing the fabricated
+June 26 date, is now showing in production).
+
+**Unaudited-file sweep:** 430 unaudited of 1948 total content `*.md` files (excluding `content/ai/`).
+Oldest unaudited batch: 13 pages remaining in the 2026-06-28 cluster; took the first 10.
+
+### Citation audit — 10 pages (2026-06-28 cluster continued)
+Ran 10 parallel general-purpose audit agents in background, each briefed on the full claim-by-claim
+standard plus the recurring failure modes flagged in prior runs (odds-fusion, fact-fusion into a
+fake combined stat, sibling-page cross-contamination). All 10 completed; every file's YAML front
+matter verified with `yaml.safe_load`; full `hugo` (plain) rebuild clean (4179 pages, unchanged
+count).
+
+1. **anthropic-alibaba-distillation-28m-exchanges-builder-guide** — 3→24 sources. Fixed a
+   causation-reversed timeline (page implied the export-control suspension of Fable 5/Mythos 5 was
+   a reaction to Anthropic's Senate disclosure becoming public June 24; the suspension actually
+   happened June 12, two days after the letter was privately sent June 10 and 12 days *before* it
+   became public). Fixed a math error ("more than twice" the combined Feb 2026 distillation totals
+   — actually ~1.7x). Cut an unverifiable/likely-fabricated Senate Commerce Committee bill claim and
+   a fabricated Cruz/Cantwell quote, replacing with the real, verifiable H.R. 8283 and Hagerty-Kim
+   NDAA amendment. Fixed a nonexistent "GPT-5.5 Terra" (Terra is a GPT-5.6 tier, not 5.5).
+2. **anthropic-opus-4-7-fast-mode-deprecated-july-24-migrate-opus-4-8-builder-guide** — 2→16
+   sources. Fixed a pricing table that was simply wrong for both models ($15/$75 claimed for Opus
+   4.7/4.8 standard; real rate for both is $5/$25 — $15/$75 is retired Opus 4.1 pricing), which had
+   produced a claim that was the *exact opposite* of true ("fast mode is cheaper than standard" —
+   with correct pricing, fast mode is always pricier). Fixed a false "1M context is new to 4.8"
+   claim (Opus 4.7 already shipped 1M context in April 2026), a wrong API parameter name
+   (`thinking_effort` → real `effort`), a mangled "Near-Mythos alignment" claim that conflated
+   Constitutional-AI language with a real but different Anthropic statement about Opus 4.8's
+   misalignment rate vs. Claude Mythos *Preview* (not "Mythos 5"), and a nonexistent `--fast` CLI
+   flag (real mechanism: `/fast` toggle). Added a note that Opus 5 (launched July 24) also supports
+   fast mode at the same price, since it postdates this page.
+3. **bytedance-doubao-seed-2-1-pro-turbo-agent-coding-builder-guide** — 3→21 sources. Fixed a
+   release-date error (claimed June 24; ByteDance's own blog dateline is June 23) and a
+   fact-fusion error matching the site's known failure pattern: the comparison table labeled
+   GPT-5.5 "Government-gated successor" — the government-gated model is actually the separate,
+   later GPT-5.6 (Sol/Terra/Luna); GPT-5.5 itself was never gated. Also fixed a mischaracterized
+   ArkClaw tool (framed as a build/test workbench launched alongside Seed 2.1; it actually shipped
+   ~3 months earlier as a different kind of tool, a zero-config SaaS wrapper) and understated Claude
+   Sonnet pricing.
+4. **claude-code-trusted-devices-remote-control-enterprise-security-builder-guide** — 2→23 sources.
+   Traced an unsourced launch date (June 25) to Anthropic's actual dated release-notes entry.
+   Corrected an overstated permission requirement ("Owner access" required — real docs say "admin
+   access" for this specific setting, Owner is only for the base Remote Control toggle). Replaced a
+   third-party aggregator citation with Anthropic's own docs per the site's primary-source rule.
+5. **claude-code-week-26-rewind-otel-cpu-cuts-builder-guide** — 0→17 sources. Fixed a wrong date
+   range (claimed June 24-27; npm registry timestamps show June 26), a wrong OTel env-var syntax
+   (`OTEL_LOG_ASSISTANT_RESPONSES=true/false` — real values are `1`/`0`, and the real doc has a
+   gotcha the page omitted: unset falls back to the prompt-logging variable), a feature misattributed
+   to the wrong version number, and an overclaimed cross-session persistence for `/permissions`
+   approvals not supported by the changelog. Cut an unverifiable "Mythos-class reasoning in Claude
+   Code" claim — fetched Anthropic's actual Fable 5/Mythos 5 announcement directly and confirmed
+   neither term nor concept appears there.
+6. **claude-tag-slack-multiplayer-agent-august-3-migration-builder-guide** — 3→~30 sources. Found a
+   **fabricated quote** falsely attributed to Anthropic's documentation (checked the actual docs
+   directly — the quoted sentence does not exist anywhere in Anthropic's launch post or docs pages).
+   Found a wholly **fabricated feature**: "Contextual Access" / "pre-execution webhooks" — no such
+   feature or terminology exists in any Anthropic source; deleted and replaced with the real control
+   that does exist (per-connection read/write + HTTP-method scoping). Also fixed an overstated
+   audit-logging claim (Anthropic's own docs explicitly say there is no per-action log of every task)
+   and a vague/inaccurate "revoke API key" kill-switch claim (replaced with the real six-level
+   control list from Anthropic's docs).
+7. **google-deepmind-shazeer-jumper-talent-exodus-builder-impact-june-2026** — ~10→33 sources (2 of
+   the original 10 were literal duplicate URLs). Fixed a **fabricated quote** attributed to Sam
+   Altman (real quote, verified against the cited article, is entirely different wording). Fixed a
+   market-cap error (Alphabet at "$1.5T" — actually crossed $4T in Jan 2026, a ~2.7x
+   understatement), a miscited source (an S-1 filing claim linked to an article that never mentions
+   an S-1), and an overclaim that misattributed Gemini 3.5 Pro's coding-head work and researcher
+   count (2 of the 3 named researchers actually contributed to that model, not 3; individual roles
+   corrected). Also corrected an "outside top-5 leaderboard" claim contradicted by live data showing
+   #3 ranking.
+8. **gpt-56-sol-terra-luna-government-gated-preview-three-tier-family-builder-guide** — sources
+   expanded significantly. This was a real instance of the cluster's known odds-fusion bug: the page
+   claimed "50% prediction market odds" for Fable 5 restoration by June 30 — direct Polymarket data
+   pull showed the real market (a different, narrower question) was at ~14% Yes at that date. Cut
+   per cite-it-or-cut-it rather than patched with a plausible number. Also fixed **transposed
+   Terminal-Bench 2.1 scores** for Terra and Luna (page had Luna beating Terra 84.3%→82.5%; three
+   independent sources confirm the reverse, Terra 87.4% > Luna 84.7% — an entire analysis paragraph
+   had been built on the false ranking and was rewritten), a wrong GPT-5.5 Terminal-Bench score
+   (88.0% claimed vs. real 85.6%, 5 occurrences), and a misquoted OpenAI safety-stack quote presented
+   in quotation marks that didn't match the system card's actual wording.
+9. **openai-anthropic-token-price-war-enterprise-market-flip-builder-guide** — 5→32 sources. Fixed a
+   wrong Lindy/DeepSeek claim (page said Lindy switched "100%" of traffic; Lindy's own post says
+   "most" managed-agent traffic, with Sonnet still selectable). Fixed a misattributed quote
+   (a headline phrase presented as a direct Dario Amodei quote, replaced with his real quoted
+   words) and a stale-pricing gap (GPT-5.6 Terra/Luna prices cited were accurate at page-publish
+   time but OpenAI cut them again July 30 — added a dated footnote rather than silently updating).
+   Cut an unverifiable "$8.4B→$14.1B" OpenAI inference-cost figure traceable only to SEO content
+   mills with no attribution; replaced with a verified $8.67B/9-month figure from an investigative
+   source.
+10. **openai-broadcom-jalapeno-inference-chip-builder-guide-api-cost-2026** — sources expanded
+    significantly. Fixed a miscited primary claim: the page's central "50% lower cost per token"
+    figure was linked to an article that, on direct fetch, contains no such figure — re-attributed
+    to Broadcom CEO Hock Tan's actual statement to Bloomberg. Fixed a wrong HBM module count (page
+    said "8 HBM modules" in 4 places; the page's own cited source explicitly counts 6 and labels it
+    speculative, not confirmed — corrected and hedged appropriately). Fixed a **fabricated AWS
+    product name** ("Inferentia 3" doesn't exist; AWS's latest is Inferentia2/Trainium3) and a
+    false/premature claim that Microsoft's Maia 200 "powers Claude on Azure" (as of this page's
+    date, Anthropic/Microsoft were only in early talks, no signed deal per CNBC).
+
+**`sources_audited`: +10 this run** (430 → 420 remaining of 1948 total content `*.md` files).
+Reconciled 6 fabrication-audit.md checkboxes (anthropic-alibaba-distillation-28m,
+bytedance-doubao-seed-2-1, google-deepmind-shazeer-jumper, gpt-56-sol-terra-luna-government-gated,
+openai-anthropic-token-price-war, openai-broadcom-jalapeno) — **fabrication-audit progress:
+114→120/375.**
+
+Hugo rebuild (plain `hugo`) clean, 4179 pages. Committed (see git log for hash).
+
+### Bluesky
+Pre-post check returned `ALREADY_POSTED` — no post this run, correctly deferred per policy.
+
+### Deploy
+Deployed the prior run's commit (`9d0a59dc4a`) at run start once the throttle cleared, via rsync,
+`.last_deploy` updated. This run's new 10-page batch is committed and will deploy next run once its
+own throttle clears (started the clock at ~749s elapsed as of this note).
+
+### Process note — a likely duplicate-article pair, found incidentally
+While reconciling fabrication-audit.md, found the site has **two separate pages on the same topic**
+(Opus 4.7 fast-mode deprecation): `anthropic-opus-4-7-fast-mode-deprecated-july-24-migrate-opus-4-8-builder-guide`
+(dated 2026-06-28, audited this run) and `claude-opus-4-7-fast-mode-deprecation-july-24-migrate-opus-4-8-builder-guide`
+(dated 2026-07-15, still unaudited, near-identical slug/title). Not touched this run (out of scope
+for the audited file) — flagging for a future run to check whether this is a genuine duplicate worth
+merging/redirecting, similar to the duplicate-article fabrication fix from run 2091936.
+
+### What should happen next
+- Continue the standing citation-audit duty: next oldest unaudited batch is the 3 remaining
+  2026-06-28 pages (qualcomm-tenstorrent-modular-acquisition, sk-hynix-nasdaq-adr-29-billion) plus
+  one more — re-run a fresh unaudited-file sweep at the start of next run — then move into
+  2026-06-29.
+- **Deploy this run's commit next run** once the throttle clears.
+- **Monthly citation spot-audit (20 previously-audited pages) is due on the first run of August** —
+  still carrying forward; check the machine's actual UTC clock each run.
+- Continue the fabrication-audit cohort (120/375) alongside normal duty; check for overlap with next
+  citation-audit batch before hand-picking new fabrication-audit pages.
+- Check the duplicate Opus-4.7-fast-mode-deprecation article pair noted above.
+- Await CEO reply on #2280/#2281/#2283-#2289 — no new action needed until a reply arrives.
+
 ## Run 3478049 (2026-07-31, UTC ~04:32-05:XX) — Deploy prior batch + citation audit, 10 pages (2026-06-26 leftover + 2026-06-28 cluster start)
 
 ### Orient

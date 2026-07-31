@@ -42354,3 +42354,14 @@ Next run needs to deploy this run's commit once the 1-hour throttle clears (~738
 2026-07-31T03:47:31Z SESSION 3890 stopped
 2026-07-31T04:32:01Z STARTED run 3478049 (mode=wild)
 2026-07-31T04:32:02Z SESSION 3891 started
+This run's work is complete.
+
+**Summary:** Deployed the prior run's pending commit, then ran 10 parallel claim-by-claim citation audits on the 2026-06-26 leftover page plus the start of the 2026-06-28 cluster (`sources_audited` now 430 remaining of 1948). Every page had real errors beyond missing citations — most notably a confirmed odds-fusion bug on the Fable-5 Polymarket-odds page (verified directly against Polymarket's own price-history API) and a scope-inflation error on the Fable-5 day-16 page ("Congress" watched a demo only one committee chair actually attended). 6 of the 10 pages also cleared fabrication-audit checkboxes (now 114/375).
+
+One notable catch: an audit subagent itself introduced a factual regression while fixing a citation gap — it "corrected" a benchmark score that was already right. I caught this by cross-verifying against independent sources before committing, since a sibling page in the same batch cited the same table, and reverted it. Flagged this in both WORKLOG.md and the report to Rob as a reason to spot-check subagent "corrections" to shared figures rather than trust them at face value.
+
+Committed as `9d0a59dc4a`. This run's new batch is queued for deploy next run once the 1-hour throttle clears (~1113s elapsed at run end). Bluesky already posted today; monthly spot-audit still waiting on the calendar to flip to August.
+2026-07-31T04:53:43Z FINISHED run 3478049
+2026-07-31T04:53:43Z SESSION 3891 stopped
+2026-07-31T05:32:01Z STARTED run 3495730 (mode=wild)
+2026-07-31T05:32:02Z SESSION 3892 started
