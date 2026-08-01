@@ -3,7 +3,7 @@
 > Claude Code v2.1.198 ships 32+ changes: background agents auto-commit and open draft PRs, Chrome extension goes GA, /dataviz skill added, Explore agent inherits session model, and a batch of reliability fixes including the 52-second macOS reconnect loop.
 
 
-Claude Code v2.1.198 landed on July 2, 2026 with what may be its most consequential background-agent update yet: agents you launch with `claude agents` can now autonomously commit their work, push to a remote, and open a draft pull request when they finish — without waiting for you to return. That changes background agents from an async task-runner into a nearly-hands-off PR generator.
+Claude Code [v2.1.198 landed on July 1, 2026](https://code.claude.com/docs/en/changelog) with what may be its most consequential background-agent update yet: agents you launch with `claude agents` can now autonomously commit their work, push to a remote, and [open a draft pull request when they finish](https://code.claude.com/docs/en/whats-new/2026-w27) — without waiting for you to return. That changes background agents from an async task-runner into a nearly-hands-off PR generator.
 
 Here is what shipped, what it means for your workflow, and what broke (intentionally) that you need to know about.
 
@@ -11,7 +11,7 @@ Here is what shipped, what it means for your workflow, and what broke (intention
 
 ## Background Agents Now Open Draft PRs Automatically
 
-**What changed:** When a background agent (`claude --bg` or launched from `claude agents`) completes a code task, it now commits its changes, pushes the branch, and opens a GitHub PR flagged as draft — on its own.
+**What changed:** When a background agent (`claude --bg` or launched from `claude agents`) completes a code task in a worktree, it now [commits its changes, pushes the branch, and opens a GitHub PR flagged as draft](https://code.claude.com/docs/en/changelog) — on its own.
 
 **What this means:** Previously you had to return to the agent session, review the diff, then manually run the commit-push-PR sequence. Now the PR exists by the time you look up. The draft flag means it cannot be merged until you explicitly mark it ready, so the gate is still human-controlled.
 
@@ -24,9 +24,9 @@ Here is what shipped, what it means for your workflow, and what broke (intention
 
 ## Notification Hooks: Know When an Agent Needs You
 
-**What changed:** `claude agents` now fires two new Notification hooks:
-- `agent_needs_input` — the session is blocked and waiting for your response
-- `agent_completed` — the session has finished
+**What changed:** `claude agents` now fires [two new Notification hooks](https://code.claude.com/docs/en/hooks-guide) (requiring Claude Code v2.1.198 or later):
+- `agent_needs_input` — a background session starts waiting on your input (fires only while agent view is open)
+- `agent_completed` — a background session finishes or fails (fires only while agent view is open)
 
 **What this means:** You can wire these hooks in `.claude/settings.json` to send a system notification, post to Slack, trigger a webhook, or do anything a shell command can do.
 
@@ -65,19 +65,19 @@ On macOS, swap `notify-send` for `osascript -e 'display notification "..." with 
 
 ## Subagents Now Run in the Background by Default
 
-**What changed:** Subagents (agents you spawn inside a Claude session, not from the `claude agents` dashboard) now execute in the background by default. Claude continues working rather than waiting for each subagent to complete sequentially.
+**What changed:** Subagents (agents you spawn inside a Claude session, not from the `claude agents` dashboard) now [execute in the background by default](https://code.claude.com/docs/en/whats-new/2026-w27). Claude continues working rather than waiting for each subagent to complete sequentially — though Claude still runs a subagent in the foreground when it needs the result before continuing, and you can pin a subagent's behavior with the `background` frontmatter field.
 
 **What this means:** Multi-step tasks where Claude delegates to subagents — code review, test runs, file analysis — now proceed concurrently. Wall-clock time drops for any task that fans out.
 
-**Extended thinking and context compaction** now inherit the parent session's configuration. If you run your main session with extended thinking enabled, subagents see that setting too.
+**Extended thinking and context compaction** now [inherit the parent session's configuration](https://code.claude.com/docs/en/changelog). If you run your main session with extended thinking enabled, subagents see that setting too.
 
 ---
 
 ## Claude in Chrome: Now Generally Available
 
-**What changed:** The Claude in Chrome browser extension moved from beta to GA. It is stable and supported on all paid plans (Pro, Max, Team, Enterprise).
+**What changed:** The [Claude in Chrome browser extension moved from beta to GA](https://code.claude.com/docs/en/whats-new/2026-w27) — "out of preview for everyone on a direct Anthropic plan." It [requires a direct Anthropic plan](https://code.claude.com/docs/en/chrome) (Pro, Max, Team, or Enterprise); it is not available through third-party providers like Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry.
 
-**What it does:** The extension runs as a side panel and gives Claude direct access to the active tab — it can read page content, click elements, fill forms, navigate, and extract data. It uses the Agent SDK and connects to the same session as your Claude Code session when active together.
+**What it does:** [Claude Code drives the browser through the extension](https://code.claude.com/docs/en/chrome) — it opens tabs, clicks through pages, fills forms, reads console logs, extracts data, and shares your browser's login state, so it can test and interact with what it builds without you switching contexts.
 
 **Builder use cases that are now stable (not beta-risk):**
 - Automating web-based dashboards that have no API (scrape → process → export)
@@ -91,7 +91,7 @@ On macOS, swap `notify-send` for `osascript -e 'display notification "..." with 
 
 ## /dataviz Skill: Built-in Chart Design Guidance
 
-**What changed:** A new `/dataviz` skill is available in the skill library. It provides chart and dashboard design guidance and ships with a runnable color-palette validator.
+**What changed:** A new [`/dataviz` skill is available in the skill library](https://code.claude.com/docs/en/changelog). It provides chart and dashboard design guidance and ships with a runnable color-palette validator.
 
 **What this means for you:** Rather than describing your chart layout in prose and iterating, you can invoke `/dataviz` to get opinionated guidance on chart type selection, axis labeling, color accessibility, and layout hierarchy. The color-palette validator outputs whether a palette passes WCAG contrast thresholds for common chart background scenarios.
 
@@ -107,7 +107,7 @@ Then describe your data: what dimensions, what audience, what decision the chart
 
 ## Explore Agent Now Inherits Your Session Model
 
-**What changed:** The built-in Explore agent previously always ran on Haiku regardless of your session model. Now it inherits the main session model, capped at Opus.
+**What changed:** The built-in Explore agent previously always ran on Haiku regardless of your session model. [Now it inherits the main session's model, capped at Opus](https://code.claude.com/docs/en/changelog).
 
 **What this means:** If you are on Sonnet 5 or Fable 5, Explore queries now run on that model rather than the cheapest available. You get better codebase reasoning on large repos. The Opus cap prevents runaway costs if you are in an Opus session and fire off many Explore queries.
 
@@ -115,33 +115,35 @@ Then describe your data: what dimensions, what audience, what decision the chart
 
 ## AWS Platform Support in Gateway
 
-**What changed:** Claude Platform on AWS (`anthropicAws`) is now a recognized upstream provider in Gateway.
+**What changed:** [Claude Platform on AWS (`anthropicAws`) is now a recognized upstream provider](https://code.claude.com/docs/en/changelog) in the Claude apps gateway.
 
-**What this means:** Teams running Claude via Amazon Bedrock can now route through Claude Code's Gateway layer with the same configuration pattern as direct Anthropic API access. Gateway benefits — request logging, rate-limit pooling, credential abstraction — apply to Bedrock-hosted Claude without custom integration.
+**What this means:** Claude Platform on AWS is a distinct AWS-hosted product from Amazon Bedrock — the [gateway already routed to Bedrock, Google Cloud's Agent Platform, and Microsoft Foundry](https://code.claude.com/docs/en/claude-apps-gateway); this release adds Claude Platform on AWS as a fourth upstream option, with failover between them. Teams that specifically run Claude via Claude Platform on AWS (not Bedrock) can now route through Claude Code's self-hosted Gateway with the same configuration pattern used for the other upstreams — SSO sign-in, per-group model access, and OTLP telemetry apply without custom integration.
 
 ---
 
 ## Reliability Fixes Worth Knowing About
 
-**Background tasks stuck on "Running":** A bug caused background tasks to show "Running" indefinitely after they completed or after you resumed a session. Fixed. If you were building tooling that polled task status, this was a false-positive source.
+All of the following are documented in the [v2.1.198 changelog](https://code.claude.com/docs/en/changelog):
 
-**52-second reconnect loop on macOS fixed:** Background agents were dropping and attempting reconnection every ~52 seconds on macOS, producing log noise and brief interruptions. This is now resolved.
+**Background tasks stuck on "Running":** A bug caused background tasks in web, desktop, and VS Code task panels to show "Running" indefinitely after they finished or after you resumed a session. Fixed. If you were building tooling that polled task status, this was a false-positive source.
 
-**Agent team failure visibility:** Previously, a teammate agent that crashed on an API error would simply disappear from the team view. It now reports a "failed" status to the lead agent, which can decide whether to retry or escalate.
+**52-second reconnect loop on macOS fixed:** Background agents were repeatedly showing "Reconnecting…" every ~52 seconds on macOS while the agents view was open, producing log noise and brief interruptions. This is now resolved.
 
-**AWS STS token expiry:** Sessions using AWS credentials with short-lived STS tokens now auto-run `awsAuthRefresh` when the token expires, rather than erroring out mid-session.
+**Agent team failure visibility:** Previously, a teammate agent that died on an API error would simply disappear from the team view. It now reports a "failed" status to the lead agent, and messaging a stuck teammate wakes it to retry immediately.
 
-**Plan mode auto-allows read-only tool calls:** In plan mode, Claude previously prompted for permission on every tool call including read-only operations like file reads and searches. Now read-only calls are auto-allowed, which eliminates the most repetitive approval prompt in plan-mode sessions.
+**AWS STS token expiry:** Claude Platform on AWS and Mantle sessions using short-lived STS tokens previously dead-ended with "Please run /login" when the token expired; `awsAuthRefresh` now runs automatically instead.
 
-**`.claude/rules/` via symlinks:** Conditional rules defined in `.claude/rules/` were silently ignored when the directory was accessed through a symlink. Fixed.
+**Plan mode auto-allows read-only tool calls:** Previously, plan mode did not auto-allow read-only tool calls when a session started in plan mode. Now read-only calls are auto-allowed, which eliminates a repetitive approval prompt in plan-mode sessions.
 
-**`claude attach <id>` exit behavior:** Previously, `claude attach <id>` would attach and then immediately exit back to shell. Fixed — it now opens the agent view as expected.
+**`.claude/rules/` via symlinks:** Conditional rules defined in `.claude/rules/` were not loading when the target file was reached via a symlinked path. Fixed.
+
+**`claude attach <id>` exit behavior:** Previously, pressing the left arrow key inside `claude attach <id>` would exit back to the shell instead of opening the agent view. Fixed.
 
 ---
 
 ## Breaking Change: /agents Wizard Removed
 
-**What changed:** The `/agents` wizard, a guided flow for setting up agent configurations, has been removed.
+**What changed:** [The `/agents` wizard has been removed](https://code.claude.com/docs/en/changelog); ask Claude to create or manage subagents, or edit `.claude/agents/` directly.
 
 **Migration:** You now have two paths:
 1. Ask Claude directly: describe the agent you want to create and Claude will scaffold the configuration.

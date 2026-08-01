@@ -5,7 +5,7 @@ description: "Step-by-step instructions for installing and configuring MCP serve
 content_type: "Guide"
 card_description: "How to install and configure MCP servers in Claude Desktop, VS Code, Cursor, Claude Code, Windsurf, ChatGPT, and JetBrains — with recommended starter stacks for every developer role."
 last_refreshed: 2026-04-23
-sources_audited: 2026-07-22
+sources_audited: 2026-08-01
 ---
 
 You know [what MCP is](/guides/what-is-mcp/). You've seen our [reviews of 300+ servers](/reviews/). Now you want to actually set them up. This guide walks you through installing and configuring MCP servers across seven major clients, then recommends starter stacks based on what you do.
@@ -18,7 +18,7 @@ Before configuring anything, understand the two ways MCP servers connect:
 
 **Remote servers (Streamable HTTP)** run on someone else's infrastructure. You connect via a URL, authenticate with OAuth 2.1, and the server handles everything. No local install needed. First-party servers from companies like [Supabase](/reviews/supabase-mcp-server/), [Neon](/reviews/neon-mcp-server/), [Sentry](/reviews/sentry-mcp-server/), [Stripe](/reviews/stripe-mcp-server/), [Asana](https://mcp.asana.com), [ClickUp](https://mcp.clickup.com/mcp), and [Google Workspace](https://developers.google.com/workspace/guides/configure-mcp-servers) work this way. As of April 2026, remote is the default for vendor-operated servers.
 
-The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — [Atlassian's SSE endpoint](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484) dies June 30, 2026, and [Asana V1 (SSE)](https://developers.asana.com/docs/integrating-with-asanas-mcp-server) shuts down May 11, 2026. If you see a server that only mentions SSE, check for a newer version immediately.
+The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — [Atlassian's SSE endpoint](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484) dies June 30, 2026, and [Asana V1 (SSE)](https://developers.asana.com/docs/integrating-with-asanas-mcp-server) shuts down August 5, 2026 (extended from an earlier May 11, 2026 deadline). If you see a server that only mentions SSE, check for a newer version immediately.
 
 **Which should you prefer?** Remote servers when available — they're easier to set up, always up to date, and the vendor handles security and auth. Use local servers for open-source tools, file system access, or anything that needs to touch your local machine.
 
@@ -377,7 +377,7 @@ For teams managing many servers, **Docker MCP Gateway** provides containerized M
 | **Claude Code** | MCP Tool Search (lazy loading, -85% tokens), organization controls |
 | **Google Official** | 5 managed MCP servers: Calendar, Drive, Gmail, Chat, People |
 | **Remote servers** | 15+ vendors now have hosted MCP servers (was ~5 in March) |
-| **SSE dying** | Atlassian SSE dies June 30, Asana V1 dies May 11 |
+| **SSE dying** | Atlassian SSE dies June 30, Asana V1 dies Aug 5 |
 | **Security** | 30+ CVEs in early 2026; OAuth 2.1 + PKCE now mandatory |
 | **Docker** | MCP Profile Templates, 300+ verified catalog images |
 | **Tool management** | Multiple clients now support filtering, lazy loading, or allowlists |

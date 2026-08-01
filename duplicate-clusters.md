@@ -12,7 +12,7 @@
 Flagged Run 3611486 (2026-07-31). Not yet diffed.
 - `content/builders-log/claude-apps-gateway-self-hosted/index.md` — audited (sources_audited: 2026-07-31)
 - `content/builders-log/claude-apps-gateway-bedrock-google-cloud-sso-spend-caps-enterprise-builder-guide/index.md` — not yet audited
-- `content/builders-log/claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide/index.md` — not yet audited
+- `content/builders-log/claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide/index.md` — audited in place (sources_audited: 2026-08-01, Run 3914224); still not diffed against the other two for merge vs. keep-both
 
 ### Sonnet 5 launch / agentic upgrade (4+ pages)
 Flagged Run 3611486 (2026-07-31). One pair already resolved (see below); others not yet diffed.

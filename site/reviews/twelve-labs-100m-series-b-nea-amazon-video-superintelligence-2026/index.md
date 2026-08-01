@@ -3,7 +3,7 @@
 > TwelveLabs raised $100M Series B on July 1, 2026, led by NEA and NAVER Ventures with Amazon, Radical Ventures, and Index Ventures joining. The company's agentic video AI — Marengo 3.0 and Pegasus 1.5 — converts video archives into structured, searchable intelligence. AWS is the strategic cloud partner.
 
 
-[TwelveLabs](https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/twelvelabs-raises-100-million-in-series-b-funding-to-build-video-superintelligence.html) closed a $100 million Series B on July 1, 2026, bringing total funding to approximately $207 million. The round was [co-led by NEA and NAVER Ventures](https://www.finsmes.com/2026/07/twelvelabs-raises-100m-in-series-b-funding.html), with participation from Amazon, Radical Ventures, Korea Investment Partners, Index Ventures, Quadrille Capital, and Red Bull Ventures.
+[TwelveLabs](https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/twelvelabs-raises-100-million-in-series-b-funding-to-build-video-superintelligence.html) closed a $100 million Series B on July 1, 2026, [bringing total funding to approximately $207 million](https://siliconangle.com/2026/07/01/twelvelabs-raises-100m-bring-superintelligence-ai-video-models/). The round was [co-led by NEA and NAVER Ventures](https://www.finsmes.com/2026/07/twelvelabs-raises-100m-in-series-b-funding.html), with participation from Amazon, Radical Ventures, Korea Investment Partners, Index Ventures, Quadrille Capital, and Red Bull Ventures.
 
 The company is building what it calls a full-stack agentic video intelligence system — not a search tool layered on top of video, but a complete architecture combining perception, knowledge, and reasoning to make video a first-class input for machine intelligence.
 
@@ -13,7 +13,7 @@ The company is building what it calls a full-stack agentic video intelligence sy
 
 Text has been the dominant substrate of AI for the past several years: language models trained on text, evaluated on text, deployed to produce text. [TwelveLabs CEO Jae Lee argues this is a fundamental limitation](https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/twelvelabs-raises-100-million-in-series-b-funding-to-build-video-superintelligence.html): "The substrate of machine intelligence is recorded reality in motion, not language."
 
-The numbers support the framing. Video represents an estimated 90% of the world's data, yet almost none of it is searchable, structured, or usable by enterprise systems. A media company may have a million hours of archived footage; a hospital may have decades of surgical recordings; a manufacturer may have years of production-floor video. All of it is effectively opaque — stored but not understood.
+The numbers support the framing. [Video represents an estimated 90% of the world's data](https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/twelvelabs-raises-100-million-in-series-b-funding-to-build-video-superintelligence.html), yet almost none of it is searchable, structured, or usable by enterprise systems. A media company may have a million hours of archived footage; a hospital may have decades of surgical recordings; a manufacturer may have years of production-floor video. All of it is effectively opaque — stored but not understood.
 
 TwelveLabs is building the infrastructure layer to change that.
 
@@ -35,9 +35,9 @@ Together, the two models form a perception and structuring pipeline that turns r
 
 ## The AWS Partnership
 
-[Amazon joined the Series B as an investor](https://www.bloomberg.com/news/articles/2026-07-01/video-search-startup-raises-100-million-from-amazon-vc-funds), and the deal comes with a strategic layer: AWS is now TwelveLabs' preferred cloud provider under a multiyear commitment, specifically for video inference workloads running on AWS Trainium chips. Trainium is Amazon's custom silicon for training and inference, positioned as a cost-effective alternative to Nvidia GPUs for AI workloads at scale.
+[Amazon joined the Series B as an investor](https://www.bloomberg.com/news/articles/2026-07-01/video-search-startup-raises-100-million-from-amazon-vc-funds), and [the deal comes with a strategic layer](https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/twelvelabs-raises-100-million-in-series-b-funding-to-build-video-superintelligence.html): AWS is now TwelveLabs' preferred cloud provider under a multiyear commitment, specifically for video inference workloads running on AWS Trainium chips. [Trainium is Amazon's custom silicon](https://aws.amazon.com/machine-learning/trainium/) for training and inference, positioned as a cost-effective alternative to Nvidia GPUs for AI workloads at scale.
 
-This partnership signals two things. First, Amazon is betting that video AI inference is going to be a major compute category — large enough to warrant building a dedicated customer relationship. Second, TwelveLabs gets access to infrastructure economics that smaller, GPU-dependent competitors cannot easily replicate.
+This partnership signals two things. First, Amazon is betting that video AI inference is going to be a major compute category — large enough to warrant building a dedicated customer relationship. Second, TwelveLabs gets access to infrastructure economics that smaller, GPU-dependent competitors cannot easily replicate. [AWS positions Trainium](https://aws.amazon.com/machine-learning/trainium/) as purpose-built silicon for "the best economics for high performance AI training and inference at scale," an alternative to general-purpose GPU pricing.
 
 ---
 
@@ -45,14 +45,14 @@ This partnership signals two things. First, Amazon is betting that video AI infe
 
 | Round | Date | Amount | Key Investors |
 |---|---|---|---|
-| Series A | Jun 2024 | $50M | NEA, NVIDIA NVentures |
-| Series A Extension | Dec 2024 | $30M | Databricks, SK Telecom, Snowflake Ventures, HubSpot Ventures, In-Q-Tel |
-| Corporate Minority | Oct 2025 | $3M | — |
+| [Series A](https://www.twelvelabs.io/blog/series-a-announcement) | Jun 2024 | $50M | NEA, NVIDIA NVentures |
+| [Series A Extension](https://www.twelvelabs.io/blog/twelve-labs-secures-30-million-in-funding-validating-the-importance-of-twelve-labs-video-understanding-technology-to-the-ai-ecosystem) | Dec 2024 | $30M | Databricks, SK Telecom, Snowflake Ventures, HubSpot Ventures, In-Q-Tel |
+| [Corporate Minority](https://variety.com/2025/tv/news/squid-game-creator-investment-ai-company-twelvelabs-1236536825/) | Oct 2025 | $3M | Firstman Studio (Hwang Dong-hyuk, "Squid Game" creator) |
 | **Series B** | **Jul 2026** | **$100M** | **NEA, NAVER Ventures, Amazon, Radical Ventures, Index Ventures** |
 
 [Prior funding rounds](https://www.twelvelabs.io/blog/series-a-announcement) brought in major names across AI infrastructure and developer tooling. The Databricks/Snowflake participation in the December 2024 extension reflects TwelveLabs' positioning in the data stack: video intelligence as a data source that feeds the same warehouses and analytics pipelines enterprises already run.
 
-[In-Q-Tel's participation](https://www.finsmes.com/2026/07/twelvelabs-raises-100m-in-series-b-funding.html) — the CIA's technology investment arm — flags government and intelligence as a serious target market for video AI.
+[In-Q-Tel's participation](https://www.finsmes.com/2026/07/twelvelabs-raises-100m-in-series-b-funding.html) — [a not-for-profit strategic investment firm chartered by the CIA](https://www.iqt.org/about) — flags government and intelligence as a serious target market for video AI.
 
 ---
 
@@ -75,7 +75,7 @@ In each case, the core value proposition is the same: turn passive video storage
 
 [TwelveLabs has grown to approximately 178 employees as of mid-2026](https://www.pymnts.com/news/investment-tracker/2026/twelve-labs-raises-100-million-to-fund-bet-on-video-ai/), up from around 58 a year earlier — roughly a 3× increase in headcount in 12 months. The company operates from San Francisco and Seoul, and will use Series B capital to add offices in New York and London to address global customer demand.
 
-The dual presence in San Francisco and Seoul reflects the company's origins: TwelveLabs was founded by Korean entrepreneurs building in the US, and [NAVER Ventures' role as a Series B co-lead](https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/twelvelabs-raises-100-million-in-series-b-funding-to-build-video-superintelligence.html) — NAVER is South Korea's dominant internet platform — keeps that connection institutionalized.
+The dual presence in San Francisco and Seoul reflects the company's origins: TwelveLabs was [founded by CEO Jae Lee](https://news.sktelecom.com/en/1757), who was born in Seoul, alongside co-founders Soyoung Lee, Aiden Lee, Dave Chung, and Sungjun Kim, and [NAVER Ventures' role as a Series B co-lead](https://www.globenewswire.com/news-release/2026/07/01/3320545/0/en/twelvelabs-raises-100-million-in-series-b-funding-to-build-video-superintelligence.html) — [NAVER holds roughly 60-80% of South Korea's search market](https://www.koreatimes.co.kr/business/companies/20260104/naver-tops-60-in-koreas-search-market-data), the country's dominant internet platform — keeps that connection institutionalized.
 
 ---
 

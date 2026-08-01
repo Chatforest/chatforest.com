@@ -19,19 +19,19 @@ OpenAI's framing: Sol is where you push hard problems; Terra is where you run in
 
 ## Sol: The Frontier Agent Model
 
-Sol is OpenAI's new flagship. Its [published benchmarks: 91.91% on Terminal-Bench 2.1 in ultra mode, 50.9% on Agent's Last Exam](https://openai.com/index/previewing-gpt-5-6-sol/). OpenAI calls out coding, biology, and cybersecurity as its strongest areas.
+Sol is OpenAI's new flagship. Its [published benchmarks: 91.91% on Terminal-Bench 2.1 in ultra mode, 53.6% on Agents' Last Exam](https://openai.com/index/previewing-gpt-5-6-sol/) (topping the next-best model, Claude Fable 5, by 13.1 points). OpenAI calls out coding, biology, and cybersecurity as its strongest areas.
 
-**Pricing**: $5 per million input tokens, $30 per million output tokens. This matches GPT-5.5 pricing — Sol is positioned as a quality upgrade at the same price, not a premium tier.
+**Pricing**: [$5 per million input tokens, $30 per million output tokens](https://openai.com/index/previewing-gpt-5-6-sol/). This matches GPT-5.5 pricing — Sol is positioned as a quality upgrade at the same price, not a premium tier.
 
-Sol is the model that gets Cerebras hardware. OpenAI is deploying Sol on Cerebras GPUs targeting up to 750 tokens per second, available in July. That matters for agentic pipelines that are currently bottlenecked on inference speed — a 10-step agent loop that takes 30 seconds might compress dramatically at 750 tok/sec.
+Sol is the model that gets Cerebras hardware — not GPUs, but Cerebras's wafer-scale chips. [OpenAI is deploying Sol on Cerebras hardware targeting up to 750 tokens per second, available in July](https://openai.com/index/previewing-gpt-5-6-sol/), a figure [Cerebras confirms on its own blog](https://www.cerebras.ai/blog/getting-the-most-out-of-gpt-5-6-sol-terra-and-luna), describing it as roughly a 10x speed advantage over Sol's standard deployment. That matters for agentic pipelines that are currently bottlenecked on inference speed — a 10-step agent loop that takes 30 seconds might compress dramatically at 750 tok/sec.
 
 Use Sol when: the task requires deep reasoning or multi-step planning, you need the highest reliability on ambiguous or novel problems, you're running security analysis or scientific reasoning, or latency is measured in seconds rather than milliseconds.
 
 ## Terra: The Production Workhorse
 
-Terra matches GPT-5.5 performance at roughly half the cost. OpenAI's target workloads: document summarization, chat features at scale, and any high-volume task where you've already validated the pattern works.
+[Terra has "competitive performance to GPT‑5.5 while being 2x cheaper,"](https://openai.com/index/previewing-gpt-5-6-sol/) per OpenAI. OpenAI's target workloads: document summarization, chat features at scale, and any high-volume task where you've already validated the pattern works.
 
-**Pricing**: $2.50 per million input tokens, $15 per million output tokens.
+**Pricing**: [$2.50 per million input tokens, $15 per million output tokens](https://openai.com/index/previewing-gpt-5-6-sol/).
 
 The positioning here is deliberate. If you're running thousands of document summaries per day and you validated the approach with Sol, Terra is where you move that production workload. You get GPT-5.5-tier quality at 50% of the previous input cost and 50% of the output cost.
 
@@ -39,7 +39,7 @@ Use Terra when: you've validated a task shape and are running it at scale, the i
 
 ## Luna: The Latency-First Model
 
-Luna is the fast, cheap entry point. Pricing: $1 per million input tokens, $6 per million output tokens. It's designed for autocomplete, routing logic, basic extraction, and any path where sub-200ms response time is what the product needs.
+Luna is the fast, cheap entry point. [Pricing: $1 per million input tokens, $6 per million output tokens](https://openai.com/index/previewing-gpt-5-6-sol/). It's designed for autocomplete, routing logic, basic extraction, and any path where sub-200ms response time is what the product needs.
 
 Luna isn't for complex reasoning — it's for the layer that decides what complex reasoning is needed and routes there. Think of it as the traffic controller for Sol and Terra.
 
@@ -57,7 +57,7 @@ Ultra mode matters for builders working on CLI agents, code generation pipelines
 
 ## Prompt Caching Changes
 
-GPT-5.6 ships with an updated prompt caching model worth noting:
+[GPT-5.6 ships with an updated prompt caching model](https://openai.com/index/previewing-gpt-5-6-sol/) worth noting:
 
 - **Explicit breakpoints**: You can mark where in a prompt cache breaks should occur, rather than relying on automatic prefix caching. This matters if you have a long system prompt followed by variable context — you can now pin the cache boundary.
 - **30-minute minimum cache life**: Cached prefixes survive for at least 30 minutes, regardless of request volume. Previous behavior could be inconsistent on low-traffic keys.
@@ -67,7 +67,7 @@ The explicit breakpoints change is the most useful for builders with mixed-conte
 
 ## The Cerebras Partnership: What 750 Tokens/Sec Actually Means
 
-The Sol/Cerebras deployment targeting 750 tokens/sec in July is a production speed tier, not a research number. For context: current hosted inference speeds for frontier models are typically in the 50–150 tok/sec range. 750 tok/sec is roughly 5–10× faster.
+The Sol/Cerebras deployment targeting 750 tokens/sec in July is a production speed tier, not a research number. For context: [Artificial Analysis's model leaderboard puts current frontier reasoning models — GPT-5.6 Sol, Claude Opus 5, Gemini 3.1 Pro, Grok 4.5 — mostly in a 50–120 tok/sec band on standard (non-accelerated) hosting](https://artificialanalysis.ai/leaderboards/models). 750 tok/sec is roughly 6–15× faster than that band.
 
 For builders, that speed difference changes the economics of agentic pipelines. A five-step code review agent that generates 1,000 tokens per step currently takes ~30–50 seconds end-to-end. At 750 tok/sec, the same pipeline runs in ~7 seconds. That's the difference between a background job and an interactive experience.
 
@@ -75,11 +75,11 @@ The limitation: this will likely be a premium tier with a distinct endpoint, not
 
 ## Access and Timeline
 
-Current state (as of July 3): Limited to approximately 20 trusted partners and US government via API and Codex.
+Current state (as of July 3): [Limited to "a small group of trusted partners" via API and Codex, with participation shared with the U.S. government in advance](https://openai.com/index/previewing-gpt-5-6-sol/). Multiple outlets have reported the group at roughly 20 organizations, but OpenAI itself has not published an exact count, so that number is left out here.
 
 Expected: Broad access through ChatGPT, Codex, and the standard API July 10–17. The model IDs will be `gpt-5.6-sol`, `gpt-5.6-terra`, and `gpt-5.6-luna` (exact API slugs not confirmed at preview).
 
-During the limited preview, OpenAI gave US government first access — a pattern they introduced with Fable 5. It reflects the dual-use concern around frontier-level models, particularly Sol's noted strength in cybersecurity.
+During the limited preview, [OpenAI shared the models and its release plans with the U.S. government ahead of launch, at the government's request, and says it is coordinating with the Administration on a forthcoming cyber Executive Order framework](https://openai.com/index/previewing-gpt-5-6-sol/). It reflects the dual-use concern around frontier-level models, particularly Sol's noted strength in cybersecurity.
 
 ## Builder Decision Framework
 

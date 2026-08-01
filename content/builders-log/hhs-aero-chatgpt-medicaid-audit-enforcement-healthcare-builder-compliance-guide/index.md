@@ -5,30 +5,31 @@ description: "HHS's AERO initiative deployed ChatGPT across five years of Single
 content_type: "Builder's Log"
 categories: ["Compliance", "Government AI", "Healthcare Tech"]
 tags: ["hhs", "aero", "chatgpt", "medicaid", "audit", "federal-compliance", "healthcare", "single-audit", "ai-enforcement", "omb-m-25-21", "govtech"]
+sources_audited: 2026-08-01
 ---
 
 On May 21, 2026, the U.S. Department of Health and Human Services quietly launched something that every healthcare technology builder and federal grantee needs to understand: [**AERO** — the Audit Enforcement and Risk Oversight initiative](https://www.hhs.gov/press-room/asfr-aero-audit-enforcement-risk-oversight-initiative.html).
 
 AERO uses ChatGPT and other large language models to scan at least five years of Single Audit filings across all 50 states and thousands of federal grantees, as [reported by Healthcare Dive](https://www.healthcaredive.com/news/hhs-ai-fraud-state-audit-aero/820989/) and [TechTimes](https://www.techtimes.com/articles/319108/20260625/hhs-deploys-chatgpt-medicaid-audits-no-error-rate-no-appeals-no-deadline.htm). When the AI flags chronic noncompliance, HHS has the authority to withhold payments, disallow costs, suspend or terminate grants, and initiate debarment proceedings.
 
-The scale is significant: Gustav Chiarello, HHS Assistant Secretary for Financial Resources, estimates the department has between **$100 billion and $200 billion** in annual wasteful or fraudulent spending in its sights. Any organization receiving $1 million or more in federal funds annually is in scope.
+The scale is significant: [Gustav Chiarello, HHS Assistant Secretary for Financial Resources, estimates the department has between **$100 billion and $200 billion** in annual wasteful or fraudulent spending in its sights](https://www.beckershospitalreview.com/legal-regulatory-issues/hhs-launches-ai-powered-audit-crackdown-on-states-grantees/) — a figure originally reported by the Wall Street Journal and cited widely since. Any organization receiving $1 million or more in federal funds annually is in scope.
 
 What makes AERO notable — and legally contested — is what HHS has not done. As of late June 2026, the agency has not published the tool's error rate, disclosed its methodology, specified when funds will be cut, or provided clear appeal rights. Compliance attorneys are now advising every organization that receives AERO correspondence to file a FOIA request before responding.
 
 ## What AERO Actually Does
 
-The Single Audit Act requires any entity spending $1 million or more in federal awards annually to undergo an independent audit. These audits are publicly filed. Before AERO, HHS staff reviewed findings manually — a process that allowed backlogs to accumulate for years.
+[Federal regulation (2 CFR § 200.501) requires any non-federal entity spending $1 million or more in federal awards annually to undergo an independent Single Audit](https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200/subpart-F/subject-group-ECFRfd0932e473d10ba/section-200.501). These audits are publicly filed. Before AERO, HHS staff reviewed findings manually — a process that allowed backlogs to accumulate for years.
 
-AERO automates that review at scale. The AI screens for four categories:
+AERO automates that review at scale. [HHS's own press release frames the target as "chronic audit noncompliance, unresolved findings, and delinquent" submissions](https://www.hhs.gov/press-room/asfr-aero-audit-enforcement-risk-oversight-initiative.html), and [legal analysts covering the initiative describe the AI as parsing that into more granular patterns](https://www.afslaw.com/perspectives/investigations-blog/hhs-using-ai-address-ongoing-audit-noncompliance) — repeat findings across years, recurring internal-control weaknesses, and overdue filings:
 
 1. **Chronic noncompliance** — repeat audit findings across multiple years
 2. **Repeat deficiencies** — the same internal control weakness flagged in consecutive audits
 3. **Material weaknesses** — significant gaps in financial controls
 4. **Delinquent submissions** — required audits filed late or not at all
 
-HHS's initial analysis found that some states and grantees had failed to address serious internal control issues for three, four, or five or more years. Hundreds of grantees had not submitted required audits, some late by more than two years.
+[HHS's own press release states that some states consistently failed to remedy serious internal control issues that persisted for three to five or more years, and that hundreds of grantees had not submitted required audits, some delinquent by more than two years](https://www.hhs.gov/press-room/asfr-aero-audit-enforcement-risk-oversight-initiative.html).
 
-The agency sent formal letters to all 50 state governors and treasurers. For entities flagged by AERO, enforcement options include:
+[The agency sent formal letters to all 50 state governors and treasurers, putting states on notice](https://www.hhs.gov/press-room/asfr-aero-audit-enforcement-risk-oversight-initiative.html). For entities flagged by AERO, enforcement options include:
 
 - Temporary payment withholding until corrective action is taken
 - Cost disallowance for noncompliant activities
@@ -40,24 +41,24 @@ The agency sent formal letters to all 50 state governors and treasurers. For ent
 The enforcement power is real. The transparency is not.
 
 HHS has not disclosed:
-- **Which models are being used**, beyond reporting that ChatGPT was involved in development
+- **Full model details** — Chiarello confirmed to the Wall Street Journal that "ChatGPT and other large language models are being used to ingest and analyze audit records," but not which specific model versions, configurations, or "other" models are in the pipeline
 - **The error rate** — what percentage of AI flags represent genuine noncompliance vs. false positives
 - **The methodology** — how the AI weighs different findings, how it handles data quality issues in older audits, or how it handles auditor inconsistency across states
 - **Whether identifiable data or de-identified data** is being processed
 - **How the agency audits the AI's own performance** over time
 
-Industry groups have pressed CMS for clear appeal rights and human review thresholds before any AI-flagged denial becomes final. As of this writing, those guardrails have not been written into rule.
+As of this writing, no published rule guarantees a human review step or a formal appeal path before an AERO-flagged finding results in enforcement action.
 
 ## The OMB M-25-21 Problem
 
 This is where the legal exposure for HHS becomes significant — and where builders have leverage.
 
-**OMB Memorandum M-25-21**, issued in April 2025, is the current federal AI governance framework. It requires agencies deploying AI with significant consequences for individuals to implement minimum risk management practices, including:
+[**OMB Memorandum M-25-21**](https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf), issued April 3, 2025, is the current federal AI governance framework (it rescinded and replaced the prior Biden-era M-24-10). It requires agencies deploying "high-impact" AI — AI whose output is a principal basis for decisions with legal or significant effects on people — to implement minimum risk management practices, including:
 
-- Pre-deployment testing and validation
-- Bias assessment
-- An accessible human review process
-- Reporting compliance to OMB by September 2026
+- Pre-deployment testing and a documented risk mitigation plan
+- A completed AI impact assessment, including documentation of potential civil-rights and discrimination impacts
+- An accessible human review and appeals process for people affected by AI-enabled decisions
+- [Documenting and being prepared to report compliance with these practices to OMB within 365 days of the memo's issuance — by April 3, 2026](https://department.va.gov/ai/department-of-veterans-affairs-compliance-plan-for-omb-memorandum-m-25-21/), per the memo's own implementation timeline (as reflected in other agencies' published M-25-21 compliance plans)
 
 HHS has not demonstrated compliance with M-25-21 for AERO. Compliance attorneys at the [National Law Review](https://natlawreview.com/article/hhss-aero-initiative-what-hospitals-need-do-right-now) now advise that any organization receiving AERO correspondence should file a FOIA request specifically seeking:
 
@@ -65,9 +66,9 @@ HHS has not demonstrated compliance with M-25-21 for AERO. Compliance attorneys 
 - Training data composition
 - Validation studies
 - Bias assessments
-- Any documentation of OMB M-25-21 compliance
+- Any documentation of OMB M-24-10/M-25-21 pre-clearance compliance
 
-M-25-21 is a live legal challenge vector. If HHS deployed AERO without the required pre-deployment testing or bias assessment, that gap is discoverable and challengeable.
+M-25-21 is a live legal challenge vector. If HHS deployed AERO without the required pre-deployment testing or AI impact assessment, that gap is discoverable and challengeable.
 
 ## What This Means for the Scope
 
@@ -92,7 +93,7 @@ AERO surfaces findings from Single Audit data. But when AI flags a finding as "c
 
 ### 2. The pattern will spread to other agencies
 
-HHS is the first major agency to deploy LLMs at enforcement scale. The approach — scan publicly available audit data, identify patterns, initiate enforcement — requires no new regulatory authority. It requires only an LLM and five years of public filings. DOE, DOJ, and DOD run comparable grant programs with comparable Single Audit filing requirements. Expect this pattern to replicate.
+[HHS built AERO without a public RFP, a multi-year authorization process, or a vendor-selection competition](https://natlawreview.com/article/hhss-aero-initiative-what-hospitals-need-do-right-now) — legal analysts describe this as setting a procurement and deployment template other agencies can replicate at enforcement scale. The approach — scan publicly available audit data, identify patterns, initiate enforcement — requires no new regulatory authority. It requires only an LLM and five years of public filings. DOE, DOJ, and DOD run comparable grant programs with comparable Single Audit filing requirements. Expect this pattern to replicate.
 
 ### 3. FOIA + model card requests are a new enterprise workflow
 

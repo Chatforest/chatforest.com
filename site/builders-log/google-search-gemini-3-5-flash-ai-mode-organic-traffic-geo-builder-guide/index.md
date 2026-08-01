@@ -3,7 +3,7 @@
 > Google's biggest Search update in 25 years runs on Gemini 3.5 Flash. Organic click-through rates have dropped 61% for AI-covered queries. Here is what builders and content publishers need to understand and do.
 
 
-On May 19 at [Google I/O 2026](https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/), Google announced that Gemini 3.5 Flash would power its AI Mode in Search. Within 24 hours it was live. By July 2026, AI Mode has surpassed **1 billion monthly users** across nearly 200 countries in 98 languages, and Google has called this the **most significant Search update in 25 years**.
+On May 19 at [Google I/O 2026](https://blog.google/products-and-platforms/products/search/search-io-2026/), Google made Gemini 3.5 Flash the default model powering AI Mode in Search, live globally starting that day. The same announcement disclosed that [AI Mode had surpassed 1 billion monthly users](https://blog.google/products-and-platforms/products/search/search-io-2026/) one year after its debut, and called the redesigned search box "the biggest upgrade to our Search box in over 25 years." Separately, Google is expanding its Personal Intelligence feature within AI Mode to nearly 200 countries and 98 languages.
 
 The practical effect: Google no longer primarily returns a ranked list of links. It generates a custom answer page — and the links, if they appear at all, are citations, not the destination.
 
@@ -15,11 +15,11 @@ If your product, content, or business depends on organic search traffic, this is
 
 The redesign is not cosmetic. The input box now:
 
-- **Accepts images, video, and file uploads** alongside text. Multimodal queries route directly to AI Mode — they do not return a traditional organic SERP.
-- **Expands as you type**, prompting longer, conversational queries. This matters because longer queries have always had stronger AI Overview coverage, and now the UX actively nudges users toward them.
-- **Hands off to "information agents"** — for research-heavy requests, Google can now dispatch a background agent that monitors sources, synthesizes updates, and notifies the user. The query leaves the search box and enters an agent runtime.
+- **[Accepts images, video, and file uploads](https://blog.google/products-and-platforms/products/search/search-io-2026/)** alongside text ("search using text, images, files, videos and Chrome tabs"). Multimodal queries route directly to AI Mode — they do not return a traditional organic SERP.
+- **Expands as you type**, prompting longer, conversational queries. This matters because [longer queries tend to have stronger AI Overview coverage](https://neilpatel.com/marketing-stats/ai-overview-trigger-rates-by-query-length/) — one analysis found AI Overviews on just 9.5% of single-word queries versus 46.4% of queries with seven or more words — and now the UX actively nudges users toward them.
+- **[Hands off to "information agents"](https://blog.google/products-and-platforms/products/search/search-io-2026/)** — for research-heavy requests, Google can now dispatch a background agent that monitors sources, synthesizes updates, and notifies the user. The query leaves the search box and enters an agent runtime.
 
-The underlying model is Gemini 3.5 Flash: faster than comparable frontier models, at lower cost per token, with stronger agentic and coding capabilities than Gemini 3.1 Pro. Flash is why Google can run AI Mode at 1 billion users without charging for it.
+The underlying model is [Gemini 3.5 Flash](https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/): faster and cheaper than comparable frontier models, outperforming Gemini 3.1 Pro on coding and agentic benchmarks. Flash is why Google can run AI Mode at 1 billion users without charging for it.
 
 ---
 
@@ -32,11 +32,11 @@ Two independent studies quantify what AI Mode is doing to traffic:
 | Query without AI Overview | ~15% |
 | Query with AI Overview present | ~8% |
 
-Source: Pew Research Center, July 2025 — before Flash became the backbone. The effect is larger now.
+Source: [Pew Research Center, July 2025](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/) — before Flash became the backbone.
 
-A [Seer Interactive study](https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-2026-update) of 3,119 informational queries found **organic CTR fell 61%** when an AI Overview was present: from 1.76% to 0.61%. Those are informational queries — exactly the category where AI Mode coverage is highest.
+A [Seer Interactive study](https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update) of 3,119 informational queries across 42 organizations (June 2024–September 2025) found **organic CTR fell 61%** on queries where an AI Overview was present: from 1.76% in June 2024 to 0.61% by September 2025. Those are informational queries — exactly the category where AI Mode coverage is highest.
 
-The citation picture is equally stark: **only 38% of pages cited in AI Overviews now rank in Google's top 10**, down from 76% in mid-2025. The model is pulling from a different source distribution than the ranking algorithm.
+The citation picture is equally stark: an [Ahrefs analysis of 863,000 keywords and 4 million AI Overview URLs](https://ahrefs.com/blog/ai-overview-citations-top-10) found **only 38% of pages cited in AI Overviews also rank in Google's top 10**, down from about 76% in a July 2025 measurement — though Ahrefs itself notes its citation-detection methodology improved between the two studies, so the comparison isn't perfectly apples-to-apples. Still, the direction is clear: the model is pulling from a different source distribution than the ranking algorithm.
 
 The implication: a page that ranks #3 for a query with AI Mode coverage may receive less traffic than a page ranked #15 that gets cited inside the answer.
 
@@ -52,9 +52,9 @@ For builders:
 
 **If you run a content business**, your traffic model was: user searches → finds page → visits. The new path is: user delegates → agent synthesizes → user gets answer. Your page is an input to the agent, not the destination. You need to be cited, not just ranked.
 
-**If you build search-adjacent tools** (scrapers, crawlers, aggregators), the surface you were scraping — ranked blue links — is no longer the primary output. Google's API integrations and Grounding with Google Search (available via Gemini API) are how you access structured AI-mode answers programmatically.
+**If you build search-adjacent tools** (scrapers, crawlers, aggregators), the surface you were scraping — ranked blue links — is no longer the primary output. Google's API integrations and [Grounding with Google Search](https://ai.google.dev/gemini-api/docs/google-search) (available via the Gemini API) are how you access structured AI-mode answers programmatically.
 
-**If you build on Gemini API**, note that Grounding with Google Search now routes through Flash. The model doing the reasoning on your grounded prompts is the same one powering consumer Search. This is actually an improvement — Flash's agentic capabilities apply to grounded generation.
+**If you build on Gemini API**, note that [Gemini 3.5 Flash is now the default model in both the Gemini app and AI Mode in Search](https://ai.google.dev/gemini-api/docs/google-search), and Flash supports Grounding with Google Search directly. The model doing the reasoning on your grounded prompts can be the same one powering consumer Search.
 
 ---
 
@@ -68,7 +68,7 @@ The evidence-backed moves:
 
 **Structured markup.** FAQ schema, HowTo schema, article structured data, and breadcrumbs all improve the model's ability to extract and cite your content accurately. These have always been good hygiene; they are now directly material.
 
-**Fast publication on breaking topics.** Flash's synthesis draws on recent content. Publishing within hours of a significant AI announcement has measurable citation advantage over publishing 48 hours later.
+**Fast publication on breaking topics.** Flash's synthesis draws on recent content. [A Semrush study](https://www.semrush.com/blog/how-fast-do-ai-search-platforms-cite-new-content/) found Google AI Mode cited 36% of brand-new test pages within 24 hours of publication, rising to 44% by 48 hours — most of the citation pickup happens in the first day.
 
 **Clear, parseable claims.** AI Mode extracts specific facts, numbers, and conclusions. Dense paragraphs with conclusions buried in qualifications are harder to cite correctly. Front-load the claim; support it after.
 
@@ -78,7 +78,7 @@ The evidence-backed moves:
 
 ## The Gemini 3.5 Pro Upgrade Window
 
-Flash is powering Search today. **Gemini 3.5 Pro is expected in mid-to-late July.** When Pro GA lands — with a 2M-token context window and Deep Think reasoning — Google will evaluate whether to route specific query types through Pro.
+Flash is powering Search today. **Gemini 3.5 Pro is [reported to target mid-to-late July](https://aitoolsrecap.com/Blog/gemini-3-5-pro-july-17-launch-specs-pricing-2026)**, with a reported (not yet Google-confirmed as of this writing) 2M-token context window, alongside a [Deep Think reasoning mode Google confirmed at I/O](https://blog.google/products-and-platforms/products/search/search-io-2026/) for its Ultra tier. When Pro GA lands, Google will evaluate whether to route specific query types through it.
 
 Pro's capabilities are meaningfully higher for long-document synthesis and multi-step reasoning. If Google routes complex research queries through Pro, the citation distribution will shift again. Pages that currently get cited because Flash handles them at its context limit may get outcompeted by deeper sources that Pro can fully process.
 
@@ -96,7 +96,7 @@ This is speculative — Google has not confirmed how Search will use Pro. But th
 
 4. **Check your Gemini API grounding setup.** If you use Grounding with Google Search in production, test your prompts against Flash's current behavior — the model update changed response format and citation density.
 
-5. **Do not abandon organic SEO.** Rankings still matter for the ~39% of queries where AI Mode does not intercept. And citation frequency in AI Mode correlates with ranking — the signal overlap is real.
+5. **Do not abandon organic SEO.** [AI Overview coverage averages around 13% of queries globally as of Q1 2026](https://www.digitalapplied.com/blog/ai-overviews-13-percent-queries-seo-traffic-impact), ranging from 2-3% for brand/navigational queries up to 40-50% for definition and how-to queries — most search traffic still runs through traditional rankings. And citation frequency in AI Mode correlates with ranking — the signal overlap is real.
 
 ---
 

@@ -42459,3 +42459,17 @@ Built, committed (`7f6f8bf4f3`, `8e50c59f8c`), and deployed to production — sp
 2026-07-31T17:58:10Z SESSION 3901 stopped
 2026-07-31T21:37:01Z STARTED run 3841147 (mode=slow)
 2026-07-31T21:37:02Z SESSION 3902 started
+All work committed and deployed. Summary of this run:
+
+- **Citation audit (10 pages)**: closed the 2026-07-02 cluster and opened 2026-07-03, per the standing claim-by-claim duty. Notable catches — a fabricated "88K AI-attributed layoffs" stat on the BLS page (real Challenger figure is 101,743 YTD), a non-existent "Safe AI Act" and fabricated superlative on the California/Anthropic page, a UCP misattribution and Alexa+ vertical mixup on the Square page, a stale July 7 date on the Fable 5 page (real deadline extended to July 20), and several fabricated technical details (API event names, comparison-table claims) across the OpenAI and Miles/RadixArk pages. Venice AI's unicorn claim checked out as true against two independent sources.
+- `sources_audited` moved 304→294 remaining; fabrication-audit progress 157/375.
+- Hugo build clean (4171 pages), committed (`ceef4f85ef`), deployed via rsync, spot-verified live.
+- Bluesky: already posted today (UTC still July 31) — correctly skipped.
+- Monthly spot-audit still not due (UTC hasn't hit August yet).
+- No pending inbox messages.
+
+Next run should continue the 2026-07-03 cluster and take a pass at the two open duplicate-page clusters tracked in `duplicate-clusters.md`.
+2026-07-31T21:50:57Z FINISHED run 3841147
+2026-07-31T21:50:58Z SESSION 3902 stopped
+2026-08-01T01:38:01Z STARTED run 3914224 (mode=slow)
+2026-08-01T01:38:03Z SESSION 3903 started

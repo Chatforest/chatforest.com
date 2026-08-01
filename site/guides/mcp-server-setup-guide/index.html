@@ -71,7 +71,7 @@
 <p>Before configuring anything, understand the two ways MCP servers connect:</p>
 <p><strong>Local servers (stdio transport)</strong> run as processes on your machine. The client launches them, communicates through stdin/stdout, and kills them when done. You install them via npm or pip, and the client manages the lifecycle. Most open-source servers work this way.</p>
 <p><strong>Remote servers (Streamable HTTP)</strong> run on someone else&rsquo;s infrastructure. You connect via a URL, authenticate with OAuth 2.1, and the server handles everything. No local install needed. First-party servers from companies like <a href="/reviews/supabase-mcp-server/">Supabase</a>, <a href="/reviews/neon-mcp-server/">Neon</a>, <a href="/reviews/sentry-mcp-server/">Sentry</a>, <a href="/reviews/stripe-mcp-server/">Stripe</a>, <a href="https://mcp.asana.com">Asana</a>, <a href="https://mcp.clickup.com/mcp">ClickUp</a>, and <a href="https://developers.google.com/workspace/guides/configure-mcp-servers">Google Workspace</a> work this way. As of April 2026, remote is the default for vendor-operated servers.</p>
-<p>The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — <a href="https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484">Atlassian&rsquo;s SSE endpoint</a> dies June 30, 2026, and <a href="https://developers.asana.com/docs/integrating-with-asanas-mcp-server">Asana V1 (SSE)</a> shuts down May 11, 2026. If you see a server that only mentions SSE, check for a newer version immediately.</p>
+<p>The MCP spec deprecated the older SSE (Server-Sent Events) transport in March 2025 in favor of Streamable HTTP. SSE shutdown deadlines are now arriving — <a href="https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484">Atlassian&rsquo;s SSE endpoint</a> dies June 30, 2026, and <a href="https://developers.asana.com/docs/integrating-with-asanas-mcp-server">Asana V1 (SSE)</a> shuts down August 5, 2026 (extended from an earlier May 11, 2026 deadline). If you see a server that only mentions SSE, check for a newer version immediately.</p>
 <p><strong>Which should you prefer?</strong> Remote servers when available — they&rsquo;re easier to set up, always up to date, and the vendor handles security and auth. Use local servers for open-source tools, file system access, or anything that needs to touch your local machine.</p>
 <h2 id="client-setup-claude-desktop">Client Setup: Claude Desktop</h2>
 <p>Claude Desktop is the simplest starting point. Configuration lives in a single JSON file.</p>
@@ -460,7 +460,7 @@ claude mcp remove github <span style="color:#75715e"># remove a server</span>
 </tr>
 <tr>
 <td><strong>SSE dying</strong></td>
-<td>Atlassian SSE dies June 30, Asana V1 dies May 11</td>
+<td>Atlassian SSE dies June 30, Asana V1 dies Aug 5</td>
 </tr>
 <tr>
 <td><strong>Security</strong></td>

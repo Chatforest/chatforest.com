@@ -59,7 +59,7 @@ Neel's presentation covered three architectural decisions:
 
 ### Parallel Agents as a First-Class Feature
 
-On April 22, 2026, [Zed launched parallel agent support](https://zed.dev/blog/parallel-agents) — making it the first code editor with native parallel agents. Rather than a single conversation thread, Zed developers can run multiple agents simultaneously on different tasks, with each agent operating in its own thread but visible within the shared editor environment.
+On April 22, 2026, [Zed launched parallel agent support](https://zed.dev/blog/parallel-agents). Rather than a single conversation thread, Zed developers can run multiple agents simultaneously on different tasks, with each agent operating in its own thread but visible within the shared editor environment.
 
 This is architecturally non-trivial. When two agents are editing files in the same project, conflict resolution becomes a real problem. Zed's approach: channel-scoped threads where each agent's reasoning trace, tool calls, and conclusions are visible to everyone who joins the channel. The shared visibility makes parallel work auditable in real time rather than opaque.
 

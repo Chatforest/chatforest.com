@@ -54,7 +54,7 @@ These servers manage the development workflow — work items, pipelines, pull re
 
 Docker's MCP play is bigger than a single server — it's an entire ecosystem. The **MCP Catalog** hosts 300+ verified MCP server images on Docker Hub, each containerized, signed, and shipped with an SBOM. The **MCP Toolkit** is a management layer inside Docker Desktop that lets you browse, install, configure, and run MCP servers in sandboxed containers.
 
-The standout feature is **Dynamic MCP**: AI agents can search the catalog and add new MCP servers mid-conversation. Instead of pre-configuring every tool, your agent discovers and installs the tools it needs on the fly. Each server runs in a container limited to 2GB memory with no host filesystem access by default.
+The standout feature is **[Dynamic MCP](https://www.docker.com/blog/dynamic-mcps-stop-hardcoding-your-agents-world/)**: AI agents can search the catalog and add new MCP servers mid-conversation. Instead of pre-configuring every tool, your agent discovers and installs the tools it needs on the fly. Each server runs in a container limited to 2GB memory with no host filesystem access by default.
 
 For container management itself, Docker's MCP server handles image building, container lifecycle, network management, and volume operations — the standard Docker workflow exposed as MCP tools.
 
@@ -154,7 +154,7 @@ Microsoft also ships a separate **Azure MCP Server** for Azure cloud resources (
 
 **[Red Hat RHEL MCP Server](https://www.redhat.com/en/blog/smarter-troubleshooting-new-mcp-server-red-hat-enterprise-linux-now-developer-preview)** | Red Hat (official), Developer Preview
 
-A new layer in the DevOps MCP stack: operating system-level intelligence. Red Hat's RHEL MCP server (announced April 2026, now in developer preview) bridges RHEL directly to LLMs, enabling AI-driven root cause analysis and system troubleshooting.
+A new layer in the DevOps MCP stack: operating system-level intelligence. Red Hat's RHEL MCP server ([announced January 8, 2026](https://www.redhat.com/en/blog/smarter-troubleshooting-new-mcp-server-red-hat-enterprise-linux-now-developer-preview), now in developer preview) bridges RHEL directly to LLMs, enabling AI-driven root cause analysis and system troubleshooting.
 
 The server provides read-only access to system state: CPU count, load averages, memory information, per-process CPU/memory usage, and system logs. An LLM connected via MCP can analyze current system state, identify performance bottlenecks, detect anomalies in logs, and recommend corrective actions — all through natural language conversation.
 

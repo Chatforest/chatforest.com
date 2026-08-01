@@ -3,9 +3,9 @@
 > Since Fable 5's July 1 redeployment, its new safety classifier produces more false positives on routine coding and debugging requests. Blocked requests silently fall back to Opus 4.8 — different pricing, different capability, and the downgrade can stick inside a Claude Code session. Here is how to detect it, configure it explicitly, and design around it.
 
 
-Fable 5 returned globally on July 1 after an 18-day absence driven by US export controls. The technical fix — [a new safety classifier targeting the specific jailbreak technique cited in Amazon's report](https://www.anthropic.com/news/redeploying-fable-5) — works as advertised: Anthropic states it blocks that technique in over 99% of cases.
+Fable 5 returned globally on July 1 after a 19-day absence driven by US export controls. The technical fix — [a new safety classifier targeting the specific jailbreak technique cited in Amazon's report](https://www.anthropic.com/news/redeploying-fable-5) — works as advertised: Anthropic states it blocks that technique in over 99% of cases.
 
-The tradeoff is a higher false-positive rate on routine coding and debugging requests. [Developer reports since July 1](https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm) include a session whose only user input was the word "hello" triggering `model_refusal_fallback`, a request to edit an "Application Security Architect resume" being refused, and the word "cancer" being flagged as a biosecurity risk.
+The tradeoff is a higher false-positive rate on routine coding and debugging requests — a pattern that first surfaced during Fable 5's original June release and, by developer accounts, continued after the July 1 redeployment. [Developer reports from Fable 5's June release](https://www.theregister.com/ai-and-ml/2026/06/10/anthropic-claude-fable-5-refuses-innocuous-prompts/5253754) include Institute for Disease Modeling scientist Mike Famulare noting the classifier triggered "on the first turn of essentially every session on my account — including a session whose only user input is the word hello," Jackson Laboratory immunologist Derya Unutmaz finding the word "cancer" "flagged as a biosecurity risk," and [a GitHub bug report](https://github.com/anthropics/claude-code/issues/66655) describing Fable 5 refusing to help edit an "Application Security Architect" resume. [Reporting after the July 1 redeployment](https://www.techtimes.com/articles/319665/20260703/claude-fable-5-back-safety-classifiers-now-reroute-security-agent-loops.htm) describes the same categories of false positives persisting under the new classifier.
 
 When the classifier fires, Fable 5 does not error out. It falls back silently to Opus 4.8 — different pricing, different capability, and inside Claude Code, the downgrade can stick for the rest of the session.
 
@@ -18,17 +18,17 @@ When Fable 5's classifier blocks a request, two things happen:
 1. **The response is served by Opus 4.8.** The user or application gets an answer, but not from the model they requested or paid for.
 2. **The `model` field in the API response reflects Opus 4.8**, not Fable 5. If you are not reading the response metadata, you will not notice.
 
-Anthropic's billing behavior: Fable 5 at $10/$50 per million tokens (input/output) vs. Opus 4.8 at $15/$75. A fallback is cheaper, not more expensive — but the capability difference matters for agentic workflows, tool use, and complex coding tasks where you specifically selected Fable 5.
+Anthropic's [published API pricing](https://platform.claude.com/docs/en/about-claude/pricing): Fable 5 costs $10/$50 per million tokens (input/output) vs. Opus 4.8 at $5/$25. A fallback is cheaper, not more expensive — but the capability difference matters for agentic workflows, tool use, and complex coding tasks where you specifically selected Fable 5.
 
 ---
 
 ## Detecting a Fallback in the API
 
-The API surfaces classifier blocks through three fields in the response:
+The API surfaces classifier blocks through fields documented in [Anthropic's refusals and fallback reference](https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback):
 
 **`stop_reason`:** A classifier block returns `"refusal"` as the stop reason. This is different from a normal completion (`"end_turn"`) and different from a length limit (`"max_tokens"`).
 
-**`stop_details.category`:** When `stop_reason` is `"refusal"`, this field specifies which classifier fired. Categories include `"safety"`, `"policy"`, and sub-categories that Anthropic has not fully documented publicly. This is your signal for *why* the block happened.
+**`stop_details.category`:** When `stop_reason` is `"refusal"`, this field specifies which classifier fired. Per [Anthropic's documented categories](https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback), the values are `"cyber"`, `"bio"`, `"frontier_llm"`, `"reasoning_extraction"`, and `"general_harms"` — both `category` and `explanation` can also be `null` when a refusal doesn't map to a named category. This is your signal for *why* the block happened.
 
 **`usage.iterations`:** This field shows which model actually served each turn. If you requested `fable-5` but see `opus-4-8` in the iterations breakdown, a fallback occurred on that turn.
 
@@ -54,20 +54,16 @@ if response.stop_reason == "refusal":
 By default, without the beta header, a classifier block returns a refusal error rather than silently serving Opus 4.8. The silent fallback behavior requires opting in:
 
 ```python
-response = client.messages.create(
+response = client.beta.messages.create(
     model="claude-fable-5",
+    max_tokens=1024,
     messages=[...],
-    extra_headers={
-        "anthropic-beta": "server-side-fallback-2026-06-01",
-        "anthropic-beta-fallback-credit": "fallback-credit-2026-06-01"
-    },
-    fallbacks=[{"model": "claude-opus-4-8"}]
+    fallbacks=[{"model": "claude-opus-4-8"}],
+    betas=["server-side-fallback-2026-06-01"],
 )
 ```
 
-Both beta headers are required per Anthropic's cookbook documentation:
-- `server-side-fallback-2026-06-01` enables the fallback routing
-- `fallback-credit-2026-06-01` authorizes billing transfer from Fable 5 credits to Opus 4.8 credits on the fallback turn
+Per [Anthropic's refusals and fallback documentation](https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback), a single beta header enables this — `server-side-fallback-2026-06-01` for the explicit-model-list form shown above (or `server-side-fallback-2026-07-01`, which also supports `fallbacks: "default"` routing). Billing is handled for you in this mode: "Server-side fallback and the SDK middleware apply fallback credit for you." A separate `fallback-credit-*` beta header is only needed if you build the retry yourself over raw HTTP instead of using the `fallbacks` parameter — see the [fallback credit guide](https://platform.claude.com/docs/en/build-with-claude/fallback-credit).
 
 Without the explicit fallback configuration, a classified request returns a refusal — which may be preferable for production systems where you need to know when Fable 5 is unavailable rather than silently receiving a different model.
 
@@ -82,7 +78,7 @@ This is not a configuration issue — it is a session-state issue in the Claude 
 - The model dropdown in Claude Code may still show Fable 5 selected while actual requests are being routed to Opus 4.8
 - The session reports Opus 4.8 tokens in usage logs after the trigger point
 
-A GitHub issue filed on July 2 (anthropics/claude-code #67306) describes the worst case: "Fable 5 advisor silently disabled by its own safety classifier — no Opus fallback, generic 'unavailable', sticky-off for the session." In this variant, neither Fable 5 nor the Opus 4.8 fallback serves the request — the model returns a generic unavailability message, and the sticky-off state persists for the session.
+[A GitHub issue filed on July 2](https://github.com/anthropics/claude-code/issues/67306) (anthropics/claude-code #67306) describes the worst case: "Fable 5 advisor silently disabled by its own safety classifier — no Opus fallback, generic 'unavailable', sticky-off for the session." In this variant, neither Fable 5 nor the Opus 4.8 fallback serves the request — the model returns a generic unavailability message, and the sticky-off state persists for the session.
 
 **The reliable reset is a fresh session.** If you notice unexpected Opus 4.8 tokens, unexpected refusals, or the model selector not matching your bill, close and reopen your Claude Code workspace to start a clean session.
 
@@ -90,7 +86,7 @@ A GitHub issue filed on July 2 (anthropics/claude-code #67306) describes the wor
 
 ## What the Classifier Is and Isn't Catching
 
-The classifier was built specifically to block the technique documented in Amazon's June 12 report — a structured prompt pattern that bypassed Fable 5's CBRN safeguards. The 99%+ block rate is for that specific technique.
+The classifier was built specifically to block the technique documented in [Amazon's June 12 report](https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html) — a jailbreak prompt that got Fable 5 to identify software vulnerabilities and, in one case, write exploit code, which triggered US Commerce Department export controls. It was a cybersecurity/software-exploit finding, not a CBRN (biological, chemical, nuclear, or radiological) one. The 99%+ block rate is for that specific technique.
 
 False positives are appearing in adjacent categories:
 - **Cybersecurity vocabulary:** Terms common in security engineering prompts (exploitation, injection, privilege escalation, lateral movement) can trigger the classifier depending on phrasing and context
@@ -98,9 +94,9 @@ False positives are appearing in adjacent categories:
 - **Resume and credential editing:** Requests to edit titles containing security or infrastructure roles ("Security Architect," "Penetration Tester," "Red Team Engineer")
 - **Reverse engineering tasks:** Decompilation, binary analysis, and firmware inspection requests, even when the artifact is the user's own codebase
 
-[Anthropic has acknowledged the tradeoff publicly](https://www.anthropic.com/news/redeploying-fable-5): "We made the wrong tradeoff and we apologize for not getting the balance right. Users may experience more false positives as we refine these classifiers to respond to new threats. We are working to reduce these as fast as possible."
+[Anthropic has acknowledged the tradeoff publicly](https://www.anthropic.com/news/redeploying-fable-5): "The new classifier also comes at the cost of flagging benign requests more often during routine coding and debugging tasks." Anthropic says it will keep tuning the classifier: "As with all our safeguards, we'll continue to refine this to better distinguish genuine misuse from legitimate requests and reduce false positives."
 
-The classifier is improving — the false positive rate in week one was higher than the July 1 deployment state. But the rate is not zero, and Anthropic has not published a timeline for when it expects the false positive rate to normalize.
+The rate is not zero, and Anthropic has not published a quantified false-positive rate or a timeline for when it expects the rate to normalize.
 
 ---
 
@@ -128,9 +124,9 @@ If you are building tools for security or biomedical professionals, consider whe
 
 ## What Happens on July 7
 
-On July 7, Fable 5's inclusion in paid plan usage caps expires. Access moves to metered usage credits at $10/$50 per million tokens. After July 7, a fallback to Opus 4.8 ($15/$75) costs *more* per token than Fable 5 itself — inverting the current dynamic where fallbacks are cheaper.
+As [announced in Anthropic's June 30 redeployment post](https://www.anthropic.com/news/redeploying-fable-5), Fable 5's inclusion in paid-plan usage caps was set to expire July 7, after which access moves to metered usage credits at $10/$50 per million tokens — Anthropic's [published API pricing](https://platform.claude.com/docs/en/about-claude/pricing) for the model. At Opus 4.8's $5/$25 rate, a fallback stays cheaper than Fable 5 per token even under metered billing; the July 7 change affects whether Fable 5 usage is included in your plan at all, not which of the two models costs more per token.
 
-For builders who are currently treating Opus 4.8 fallbacks as a cost floor: that assumption inverts on July 7. If your system enables fallback, ensure you are logging fallback rates now and projecting their cost impact under the post-July 7 pricing structure.
+If your system enables fallback, log fallback rates now and project their cost impact once Fable 5 moves off included usage — you'll be paying metered Fable 5 rates for every request the classifier does *not* divert to the cheaper Opus 4.8 fallback.
 
 ---
 

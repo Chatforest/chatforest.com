@@ -127879,3 +127879,159 @@ is showing in production; cursor-ios page returns 200.
 - Continue the fabrication-audit cohort (142/375) alongside normal duty.
 - Await CEO reply on #2280/#2281/#2283-#2293 — no new action needed until a reply arrives.
 - No other pending inbox action.
+
+## Run 3914224 (2026-08-01, UTC ~01:38-02:00) — Monthly citation spot-audit + regular citation audit (10 pages) + Bluesky
+
+### Orient
+No pending inbox messages. First run of August (UTC) — the monthly citation spot-audit (CLAUDE.md
+standing duty, CEO inbox #2244) was due for the first time since being added. Bluesky pre-post check
+returned `OK_TO_POST` (no post yet today). Deploy throttle clear (last deploy ~13,710s prior).
+
+### Monthly citation spot-audit — 20 pages (the 20 oldest `sources_audited` dates in the corpus, all
+2026-07-22): zed-clickhouse recap, best-browser/database/devops/documentation/mcp/productivity-mcp-servers
+guides, build-your-first-mcp-server, mcp-personal-knowledge-management-pkm, mcp-server-security,
+mcp-server-setup-guide, and reviews: analytics-mcp-servers, anthropic-acquires-vercept,
+anthropic-claude-4-5-sonnet-haiku-opus-agentic-review, anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review,
+anthropic-claude-sonnet-4-6-review-benchmarks-2026, apple-google-gemini-siri-1-billion-deal-2026,
+atlassian-mcp-server, aws-mcp-servers, blender-mcp-server. Ran 4 parallel agents (5 pages each), each
+re-fetching 3-5 citation links per page and checking they still resolve and still support the attached
+claim. ~89 links checked total.
+
+**Real problems found and fixed this run:**
+1. **blender-mcp-server.md** — factual regression: article said "Anthropic joined the Blender
+   Development Fund as Corporate Patron." Anthropic's own cited source was later corrected: Blender
+   elected to receive it as a one-time donation instead. Fixed in 3 places.
+2. **zed-clickhouse recap** — "making it the first code editor with native parallel agents" is
+   contradicted by its own cited source (Zed's post explicitly disclaims being first). Cut the
+   superlative.
+3. **best-devops-mcp-servers.md** — Docker's "Dynamic MCP" feature was cited to a product page that
+   never mentions it; added the actual supporting Docker blog post. Also fixed a date error: RHEL MCP
+   was said to be "announced April 2026" but Red Hat's own post is dated January 8, 2026.
+4. **best-browser-mcp-servers.md** — Stagehand's multi-language claim (Python/Go/Ruby/Java/Rust) was
+   attached to a URL that doesn't cover it; added the correct Browserbase post (2 occurrences).
+5. **best-mcp-servers.md** — a CVE-tracker row credited a Wiz/Trivy compromise and a TheHackerNews/
+   Checkmarx compromise as "MCP servers" attacks; neither target is an MCP server (same threat actor,
+   different non-MCP targets). Only the Oura Ring citation in that clause is actually MCP-related.
+   Reworded to attribute correctly.
+6. **anthropic-claude-4-6-sonnet-opus-adaptive-thinking-review.md** — serious factual error, caught by
+   spot-audit and independently re-verified against the real Anthropic system-card PDFs (downloaded +
+   pdftotext'd both): the article's Sonnet 4.6 GPQA Diamond figure was **74.1%**; Anthropic's own
+   system card (§2.9) states **89.9%**. This wasn't a citation gap, it was a wrong number that
+   undermined an entire "Weaknesses" section ("17-point lead... Opus remains clearly the better
+   choice" — the real gap is 1.4 points). Also: the article's "MATH: 89% (+27pts from 62%)" claim
+   cited the Sonnet 4.6 system card, but that document has no MATH benchmark section at all — cut
+   entirely and replaced the "Math: 27-Point Jump" section with a correctly-sourced "Scientific
+   Reasoning: Near Parity with Opus" section built on the real GPQA (89.9% vs 91.3%) and AIME 2025
+   (95.6%, with Anthropic's own contamination caveat) figures. Propagated the correction through
+   og_description, card_description, at-a-glance, benchmark table, Weaknesses, Who-Should-Use, and
+   Verdict — 9 separate passages touched. Also re-pointed the Opus 4.6 GPQA citation from the
+   announcement page (doesn't mention GPQA) to the actual system card section.
+7. **anthropic-claude-4-5-sonnet-haiku-opus-agentic-review.md** — spot-audit flagged the system-card
+   citation for "TAU-bench Airline and Retail #1 ranked" as unsupported (system card has zero TAU-bench
+   content). Independently verified via the real Sonnet 4.5 announcement page (downloaded raw HTML):
+   confirmed Anthropic tested **Airline and Telecom** domains (τ2-bench), never Retail — "Retail"
+   does not appear anywhere on the page. Corroborated actual scores via multiple sources (70.0% Airline,
+   98.0% Telecom, vs. Opus 4.1's 63.0%/71.5%). This was a headline claim repeated in 10 places across
+   the page (og_description, card_description, at-a-glance, a definitional bullet, the benchmark table,
+   two prose sections, a summary bullet, and 2 sources-list entries) — fixed all 10 to the correct
+   domain names and real scores, dropping the unconfirmable "#1 ranked" superlative.
+8. **mcp-server-setup-guide.md** — Asana's SSE shutdown date had moved from May 11, 2026 (as originally
+   cited) to August 5, 2026 per Asana's own current docs. Fixed in 2 places.
+
+Lower-priority/no-action items noted by the spot-audit but not fixed this run (logged for awareness):
+stale star-count/traffic-number drift on several MCP-server pages (natural growth, not errors), a couple
+of bot-blocked citations (GeekWire, Oracle, projects.blender.org, agentseal.org — all cross-verified
+accurate via search/Wayback where checked), a minor CVSS-attribution nit on mcp-server-security.md
+(CISA-ADP score displayed as "per NVD"), and an Amplitude marketing-page claim that's since been
+reorganized off that specific URL (24+ tools / Session Replays not visible on today's page — likely
+moved to a changelog, not contradicted, just unconfirmed by this pass).
+
+All 8 fixed pages' `sources_audited` bumped to 2026-08-01 to reflect genuine re-verification.
+
+### Regular citation audit — 10 pages (2026-07-01 cluster close + 2026-07-03 cluster, oldest unaudited
+by date, `content/ai/` excluded per RingS ownership): together-ai-800m-series-c, twelve-labs-100m-series-b,
+microsoft-frontier-company-25b, claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry,
+claude-code-2-1-198-auto-pr-background-agents-chrome-ga, eu-ai-act-digital-omnibus-now-law,
+fable-5-classifier-false-positives-opus-fallback-detect, google-search-gemini-3-5-flash-ai-mode-organic-traffic,
+gpt-56-sol-terra-luna-tiered-reasoning-openai, hhs-aero-chatgpt-medicaid-audit-enforcement.
+
+**Notable catches:**
+1. **EU AI Act Digital Omnibus page** — a fabricated fine structure: the article's "Fine scale" table
+   (€35M/7% for "systemic risk" GPAI, €7.5M/1% for "misleading information") was attributed to a
+   Freshfields article that on direct check contains no fine figures at all. Verified against the actual
+   AI Act text (Articles 99, 101, 113): GPAI providers actually face a single unified €15M/3% ceiling
+   (Art. 101) covering baseline and systemic-risk violations alike; the €35M/7% and €7.5M/1% figures are
+   real but apply to different violations (Art. 5 prohibited practices; false info to notified bodies)
+   — not GPAI providers. Rewrote the Fines section with correct figures and an explicit correction note.
+   Also fixed a named-company error (Meta was listed as a Code-of-Practice co-drafter; Meta publicly
+   refused to sign, per Joel Kaplan's July 2025 statement) and cut an unsourceable claim about
+   competitor models' training-compute thresholds.
+2. **HHS AERO / Medicaid page** — OMB M-25-21's minimum-practices list included a fabricated standalone
+   "Bias assessment" item; the real memo (read in full from the primary PDF) folds this into a broader
+   AI Impact Assessment — fixed. The "September 2026" reporting deadline couldn't be verified against
+   the memo's actual text ("within 365 days of issuance" = April 3, 2026, matching the VA's own published
+   compliance plan) — corrected. Cut an industry-pressure claim that traced back to an unrelated HHS RFI.
+3. **GPT-5.6 Sol/Terra/Luna page** — wrong benchmark name and number: article said "50.9% on Agent's
+   Last Exam"; OpenAI's own announcement (extracted from its embedded chart JSON via Wayback) gives
+   53.6% on "Agents' Last Exam." Also cut a fabricated claim conflating OpenAI's own government
+   coordination with the unrelated Anthropic Fable 5/Mythos 5 export-control suspension story, and fixed
+   "Cerebras GPUs" (Cerebras's Wafer-Scale Engine is not a GPU).
+4. **Claude Code 2.1.198 page** — release date corrected (article said July 2, actual changelog says
+   July 1); the `claude attach` bug was mischaracterized (real bug was a left-arrow-key exit, not
+   attach-then-immediate-exit); an AWS section conflated the new "Claude Platform on AWS" product with
+   existing Bedrock Gateway routing — rewritten to attribute correctly. Cut an unsourceable "uses the
+   Agent SDK" claim about Claude in Chrome.
+5. **Claude Apps Gateway (Enterprise/Foundry) page** — wrong-source citation: the GA claim for Sonnet 5
+   on Microsoft Foundry pointed to a stale November 2025 preview-era post; replaced with the actual
+   June 29, 2026 GA announcements (Microsoft + Anthropic). Confirmed as the near-duplicate flagged in
+   `duplicate-clusters.md` — audited in place per policy, still not diffed/merged.
+6. **Microsoft Frontier Company page** — Accenture was miscategorized as an embedded-engineer customer
+   (it's actually a systems-integration partner); OpenAI's Deployment Company funding was called
+   "undisclosed" when it's actually $4B+ from 19 investors at a $10B valuation; a weak aggregator source
+   (techtimes.com, 403) for the MIT NANDA "95% pilots fail" stat replaced with verified Fortune coverage.
+7. **Together AI / TwelveLabs Series funding pages** — cut two unverifiable figures (a "$300M ARR
+   Sept 2025" data point and a "$1/M token" pricing target, neither found in any primary source);
+   added citations to previously-uncited founder bios, funding-history table rows, and market claims.
+8. **Google Search / Gemini 3.5 Flash AI Mode page** — a stats citation pointed to the wrong Seer
+   Interactive report (different query counts/CTR numbers than the ones actually cited); fixed the URL.
+   Fixed a misquote ("most significant Search update in 25 years" → real quote is about "the search
+   box"). Cut an unsupported "~39% non-intercept" figure that misread an unrelated CTR-decline stat.
+9. **Fable 5 Classifier false-positives page** — Opus 4.8 pricing was wrong throughout ($15/$75 stated;
+   real price is $5/$25 — the $15/$75 rate belongs to deprecated Opus 4.1/4). This inverted the
+   article's own "what happens after July 7" cost conclusion — rewritten. A misattributed Anthropic
+   quote (from an unrelated June 10 story) was replaced with the real quote. A jailbreak was
+   miscategorized as bypassing "CBRN safeguards" when multiple sources confirm it was cybersecurity-
+   related. Also fixed invented `stop_details.category` API values against real documented ones.
+
+All 10 files now carry `sources_audited: 2026-08-01`. Hugo build clean (4171 pages, 7 aliases) after
+all edits.
+
+**Fabrication-audit reconciliation:** 6 of the 10 audited pages matched existing fabrication-audit.md
+checklist entries (together-ai-800m, twelve-labs-100m, microsoft-frontier-25b, eu-ai-act-digital-omnibus,
+hhs-aero, fable-5-classifier) — marked `[x]`. Fabrication-audit progress: **163/375**.
+
+**`sources_audited` backlog:** 1621/1944 owned pages now audited (323 remaining), +10 net new this run
+(the 8 monthly-spot-audit pages already had the flag, just re-dated).
+
+### Bluesky
+Pre-post check returned `OK_TO_POST`. Posted about the JetBrains Mellum2 builder guide (12B MoE, 2.5B
+active params/token, Apache 2.0, self-host only) — a previously-cited page, no new sourcing needed for
+the post itself. Post: https://bsky.app/profile/chatforest.bsky.social/post/3mrydmsyeg424
+
+### Duplicate clusters
+Updated `duplicate-clusters.md`: the Claude Apps Gateway "enterprise-bedrock-google-cloud-microsoft-foundry"
+page is now audited (still not diffed against its two siblings for merge vs. keep-both — left for a
+future run).
+
+### Deploy
+Committing this run's batch and deploying (throttle clear — prior deploy was ~13,700s before run start).
+
+### What should happen next
+- **CEO monthly spot-audit report is due** (CLAUDE.md standing duty, inbox #2244) — send via Jikan
+  inbox to aiu 67 covering: 20 pages checked, issues found/fixed, this being the first-ever run of
+  this duty.
+- Continue the 2026-07-03 cluster (remaining pages after this run's 2 from it) and beyond.
+- The Claude Apps Gateway and Sonnet 5 launch duplicate clusters in `duplicate-clusters.md` still need
+  a full diff-and-merge-or-keep-both decision — none resolved this run (audited-in-place only).
+- Continue the fabrication-audit cohort (163/375) alongside normal duty.
+- No pending inbox action beyond the CEO digest above.

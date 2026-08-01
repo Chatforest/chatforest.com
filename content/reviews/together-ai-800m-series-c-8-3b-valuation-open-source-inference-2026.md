@@ -7,11 +7,12 @@ card_description: "Together AI (together.ai) raised **$800M Series C at an $8.3B
 tags: ["together-ai", "funding", "open-source", "inference", "series-c", "aramco", "nvidia", "general-catalyst"]
 categories: ["/categories/developer-tools/", "/categories/funding/"]
 author: "ChatForest"
+sources_audited: 2026-08-01
 ---
 
 Together AI [announced an $800 million Series C](https://www.together.ai/blog/announcing-our-series-c) on July 1, 2026, pushing its post-money valuation to $8.3 billion. The round was led by Aramco Ventures, with NVIDIA, General Catalyst, Vista Equity Partners, Emergence Capital, March Capital, Pegatron, and S Ventures (SentinelOne's investment arm) also participating. It is [one of the clearest signals yet](https://techcrunch.com/2026/07/01/neocloud-together-ai-raises-800m-leaps-to-8-3b-valuation/) that open-weight AI inference has crossed from experimental alternative to production infrastructure.
 
-The company's [annual bookings crossed $1.15 billion](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All) last quarter, up from roughly $300 million ARR (September 2025). Together AI now serves thousands of paying customers — including Cursor, Cognition, Decagon, ElevenLabs, and Suno — running production AI workloads on open-weight models rather than closed frontier APIs.
+The company's [annual bookings crossed $1.15 billion](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All) last quarter. Together AI now serves thousands of paying customers — including Cursor, Cognition, Decagon, ElevenLabs, and Suno — running production AI workloads on open-weight models rather than closed frontier APIs.
 
 ---
 
@@ -19,7 +20,7 @@ The company's [annual bookings crossed $1.15 billion](https://www.businesswire.c
 
 | Round | Date | Valuation |
 |---|---|---|
-| Series B | Feb 2025 | $3.3B |
+| [Series B](https://www.together.ai/blog/together-ai-announcing-305m-series-b) | Feb 2025 | [$3.3B](https://www.forbes.com/sites/esatdedezade/2025/02/21/together-ais-valuation-soars-to-33-billion-as-demand-for-ai-computing-grows/) |
 | **Series C** | **Jul 2026** | **$8.3B** |
 
 The valuation more than doubled in eighteen months, while bookings grew roughly four-fold. That combination — accelerating revenue against rising valuation — is the signature of a company hitting the infrastructure-layer inflection point before most of its competitors noticed the shift was coming.
@@ -41,7 +42,6 @@ Together AI plans to use the capital to:
 - **Scale compute capacity by ~50×** over the next five years
 - **Deploy 500+ MW of compute**, committed by investors alongside the equity
 - **Expand product depth** across inference, fine-tuning, and reinforcement learning infrastructure
-- **Reduce frontier model pricing** further — the company has stated targets around $1 per million tokens for leading open models
 
 The 500 MW compute commitment is notable because it comes from investors, not from Together AI directly. The structure lets the company access capacity at infrastructure scale without concentrating balance-sheet risk on its own books — a financing innovation that mirrors how hyperscalers sometimes arrange power purchase agreements through third parties.
 
@@ -49,14 +49,14 @@ The 500 MW compute commitment is notable because it comes from investors, not fr
 
 ## Why Customers Switch: The Cost Math
 
-Together AI customers consistently report cost savings when moving from closed APIs to open-weight inference on Together's platform. [Decagon cut inference costs sixfold](https://www.together.ai/customers) after moving workloads to Together. Other customers report savings ranging from 6× to 60× depending on model and workload type.
+Together AI customers consistently report cost savings when moving from closed APIs to open-weight inference on Together's platform. [Decagon cut inference costs sixfold](https://www.together.ai/customers) after moving workloads to Together. [Other customers report savings ranging from 6× to 60×](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All) depending on model and workload type.
 
-The comparison point is usually GPT-4-class closed APIs at standard pricing. The models customers actually run on Together include DeepSeek variants, Meta Llama 4, MiniMax, Kimi, Qwen3, and Nemotron — all open-weight, all available without rate limits that cap production throughput.
+The comparison point is usually GPT-4-class closed APIs at standard pricing. [The models customers actually run on Together](https://www.together.ai/models) include DeepSeek variants, Meta Llama 4, MiniMax, Kimi, Qwen3, and Nemotron — all open-weight, all available without rate limits that cap production throughput.
 
 **Why the savings are structural, not just pricing:**
 
 1. **No proprietary lock-in markup** — open models carry no license premium that goes back to a model lab
-2. **Inference kernel advantage** — Together AI's Chief Scientist Tri Dao invented FlashAttention; the company runs its own optimized kernels rather than generic inference stacks
+2. **Inference kernel advantage** — Together AI's Chief Scientist [Tri Dao invented FlashAttention](https://www.together.ai/blog/tri-dao-flash-attention); the company runs its own optimized kernels rather than generic inference stacks
 3. **Dedicated cluster option** — customers who need predictable throughput can reserve dedicated GPU capacity, eliminating the shared-pool latency variance that makes latency-sensitive products hard to build on public inference APIs
 
 ---
@@ -71,13 +71,13 @@ The comparison point is usually GPT-4-class closed APIs at standard pricing. The
 
 ## Context: What Together AI Has Built
 
-Together AI was founded in June 2022 by four researchers with unusually strong credentials for a cloud infrastructure company:
+Together AI was [founded in June 2022 by four researchers](https://research.contrary.com/company/together-ai) with unusually strong credentials for a cloud infrastructure company:
 
-- **Vipul Ved Prakash** (CEO) — serial founder; built Topsy (acquired by Apple), Cloudmark (acquired by Proofpoint)
-- **Percy Liang** — Stanford CS professor, director of the Center for Research on Foundation Models, creator of the HELM benchmarks
-- **Chris Ré** — Stanford CS professor, MacArthur Fellow, co-creator of Snorkel AI
-- **Ce Zhang** — ETH Zürich CS professor, specializing in systems and databases
-- **Tri Dao** (Chief Scientist, joined early) — author of FlashAttention and FlashAttention-2, the attention kernels that most competing inference providers also run
+- **Vipul Ved Prakash** (CEO) — serial founder; built Topsy ([acquired by Apple](https://techcrunch.com/2013/12/02/apple-buys-topsy-for-a-reported-200m-could-use-social-signals-to-bolster-app-store-relevance/) for a reported $200M+), Cloudmark ([acquired by Proofpoint](https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-completes-acquisition-cloudmark) for $110M)
+- **Percy Liang** — Stanford CS professor, [director of the Center for Research on Foundation Models](https://hai.stanford.edu/people/percy-liang), creator of the [HELM benchmarks](https://github.com/stanford-crfm/helm)
+- **Chris Ré** — Stanford CS professor, [MacArthur Fellow (2015)](https://cs.stanford.edu/people/chrismre/), [co-founder of Snorkel AI](https://snorkel.ai/author/christopher-re/)
+- **Ce Zhang** — [ETH Zürich CS professor](https://systems.ethz.ch/news-and-events/news/2023/04/ce-zhang-promoted-to-associate-professor-of-computer-science-as-of-april-2023.html), specializing in systems and databases
+- **Tri Dao** (Chief Scientist, joined early) — [author of FlashAttention and FlashAttention-2](https://www.together.ai/blog/tri-dao-flash-attention), the attention kernels that most competing inference providers also run
 
 The company's position in the open-source ecosystem extends beyond hosting models. It co-releases research, contributes to model training infrastructure, and maintains FlashAttention as the de facto standard for efficient attention computation. That research depth is why customers trust it with production inference workloads at scale.
 
