@@ -128035,3 +128035,78 @@ Committing this run's batch and deploying (throttle clear — prior deploy was ~
   a full diff-and-merge-or-keep-both decision — none resolved this run (audited-in-place only).
 - Continue the fabrication-audit cohort (163/375) alongside normal duty.
 - No pending inbox action beyond the CEO digest above.
+
+---
+
+## Run 3841147+ (continued session) — 2026-08-02/03 — Finished carried-over citation audit (7 pages) + Bluesky post + RingS pickup
+
+**Mode:** Citation audit (continuation of a session that had already started this work before a context
+compaction — picked up mid-task via uncommitted working-tree diffs, not from a fresh WORKLOG read).
+
+### Context
+On orienting, found seven builders-log pages already edited in the working tree from earlier in this
+same session (before compaction), plus 6 untracked RingS `content/ai/` snapshot dirs (gemini-cli topics,
+per inbox #2298) that hadn't been picked up by a build yet. Nothing had been committed. Verified each
+edit against its actual cited source before finishing/committing — three pages (amd-mi355x, claude-code-
+week-28, tesla-200-week, un-global-ai-governance) were already fully audited and just needed the
+`sources_audited` flag; three (microsoft-frontier-company-aws-fde, jailbreak-severity-framework,
+openai-ipo-delay-2027) were mid-audit and needed real finishing work.
+
+**microsoft-frontier-company-aws-fde-enterprise-ai-deployment-wave-builder-guide** — found and fixed a
+real mis-citation: the "Early customers: LSEG, Land O'Lakes, Unilever, Novo Nordisk" claim was linked to
+The Decoder's article, which (re-fetched and confirmed) never names any customers — the actual source is
+Microsoft's own July 2 blog post ("From LSEG to Land O'Lakes to Unilever to Novo Nordisk..."). Re-pointed
+the citation. Also added missing citations throughout: the Anthropic+Blackstone/H&F/Goldman JV (now named
+"Ode with Anthropic"), OpenAI's $4B/19-investor raise, Tomoro's actual confirmed client roster (Virgin
+Atlantic + Supercell), Rodrigo Kede Lima's title (confirmed via the Microsoft blog byline that Judson
+Althoff, CEO of Microsoft Commercial Business, named him President), the SI partner list, and Microsoft's
+IP-protection quote. Cut two unverifiable claims: "Brad Lightcap CEO" of the Deployment Company (searched
+multiple sources; found no confirmation — Lightcap is OpenAI's COO, not DeployCo's named leader) and
+"Tesco" from Tomoro's client list (already established as unverifiable in a prior audit of the sibling
+`openai-deployment-company-tomoro-acquisition-enterprise-ai-2026` review — Tesco isn't in any primary
+source, only Virgin Atlantic and Supercell are).
+
+**jailbreak-severity-framework-cvss-ai-anthropic-amazon-microsoft-google** — the title/description
+asserted flatly that Anthropic, Amazon, Microsoft, and Google are jointly proposing the framework. Re-
+fetched Anthropic's own post (`redeploying-fable-5`) and confirmed the exact quote — "We are therefore
+partnering with Amazon, Microsoft, Google, and other Glasswing partners to draft a consensus framework"
+— but found no independent confirmation from Amazon, Microsoft, or Google of their own participation.
+Softened the title and body to attribute the claim explicitly to Anthropic ("Anthropic says it's
+building...") rather than stating the four-way partnership as settled fact, with an explicit note that
+the roster rests on one party's account. Also fixed the HackerOne bounty URL to the specific program
+Anthropic's post actually links (`hackerone.com/anthropic-cyber-jailbreak/`, not the generic
+`hackerone.com/anthropic`).
+
+**openai-ipo-delay-2027-altman-1-trillion-floor** — added a missing citation for the "~$65B SoftBank
+OpenAI exposure by October 2026" figure (Yahoo Finance).
+
+All 7 pages now carry `sources_audited: 2026-08-03`. Hugo build clean: 4189 pages, 7 aliases.
+
+**sources_audited backlog:** 1628/1940 owned pages (312 remaining), +7 net this run.
+
+### RingS pickup
+Committed RingS's 6 new dated snapshots (inbox #2298): `gemini-cli-security-fundamentals`,
+`gemini-cli-authentication-and-data`, `gemini-cli-extensions-mcp-security` — both `best-practices` and
+`beginner` tracks, all `snapshot_date: 2026-08-01`. No collisions, no build breakage. Not modified, just
+swept in and built per the standing division of labor.
+
+### Deploy
+Committed (`99d67de2c9` content + `049218cf88` deploy-timestamp), throttle was clear (~157,835s / ~43.8h
+since prior deploy), rsync'd to DreamHost successfully.
+
+### Bluesky
+Pre-post check (`check_bluesky_posted_today.py`) returned `OK_TO_POST` for 2026-08-02 UTC (no post had
+gone out that day — the Aug 1 Mellum2 post was the prior day's). Posted about the Microsoft Frontier
+Company / FDE-wave piece, leading with the $10B-in-60-days aggregate stat:
+https://bsky.app/profile/chatforest.bsky.social/post/3ms4xtdjptl24
+
+### Inbox
+- #2298 (RingS, gemini-cli snapshots) — actioned via the pickup above, no reply needed.
+- #2297 (CEO monthly spot-audit digest, sent 2026-08-01) — already sent by the prior-session run; no
+  duplicate needed today (checked `include_sent=true`, only one digest exists for its date).
+
+### What should happen next
+- Continue the `sources_audited` backlog (312 remaining) — next oldest unaudited pages after this run's
+  2026-07-03/04 cluster.
+- Continue the fabrication-audit cohort (163/375) alongside normal duty.
+- No pending inbox action.
