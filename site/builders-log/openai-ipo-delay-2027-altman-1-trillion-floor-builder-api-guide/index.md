@@ -5,35 +5,50 @@
 
 Late June 2026 brought a sharp rewrite of Wall Street's AI IPO narrative. [Bloomberg reported that OpenAI is
 leaning toward delaying its public listing into 2027](https://thenextweb.com/news/openai-ipo-delay-2027-altman-1-trillion) rather than accepting a valuation below $1 trillion —
-and the fallout landed immediately on SoftBank, [which shed $38 billion in market cap in a single day](https://www.business-standard.com/world-news/openai-may-delay-ipo-until-2027-targets-1-trillion-valuation-report-126062600115_1.html).
+and the fallout landed immediately on SoftBank, which [shed roughly 12-13% of its market value in a single
+day](https://www.valuethemarkets.com/cryptocurrency/news/softbank-shares-plunge-amid-openai-ipo-delay) —
+[reported around $38 billion](https://www.business-standard.com/world-news/openai-may-delay-ipo-until-2027-targets-1-trillion-valuation-report-126062600115_1.html) —
+on June 26, 2026.
 
 For API builders, the story matters less for the stock market drama and more for what it signals about pricing
 pressure, vendor stability, and which platform you're betting on.
 
 ## The standoff: Altman vs. Friar
 
-OpenAI confidentially filed its IPO paperwork and has the machinery in place for a 2026 listing. But the CEO
-and CFO are publicly pulling in different directions.
+[OpenAI confidentially filed its IPO paperwork with the SEC on June 8, 2026](https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/),
+following Anthropic's own confidential filing the week before. But the CEO and CFO are reported to be pulling
+in different directions.
 
-**Sam Altman** has declared the $1 trillion valuation floor a non-starter — a 17% premium over OpenAI's most
-recent private mark of $852 billion (set March 2026). He's rejected the "take a lower price and list in late
-2026" option that advisers presented.
+**Sam Altman** has [declared the $1 trillion valuation floor a non-starter](https://thenextweb.com/news/openai-ipo-delay-2027-altman-1-trillion) — a 17% premium over
+[OpenAI's most recent private mark of $852 billion, set in a $122 billion funding round that closed March 31,
+2026](https://www.forbes.com/sites/antoniopequenoiv/2026/03/31/openai-valuation-reaches-852-billion-after-massive-funding-round/).
+He's rejected the "take a lower price and list in late 2026" option that advisers presented, per the same
+Bloomberg-sourced reporting.
 
-**CFO Sarah Friar** has been the internal advocate for waiting until 2027. Her concerns are concrete:
-$600 billion in infrastructure spending commitments already on the books, and the difficulty of hitting
-public-company reporting cadence on Altman's aggressive timeline.
+**CFO Sarah Friar** has been reported as the internal advocate for waiting until 2027. Reuters and The
+Information [reported she raised concerns about roughly $600 billion in projected infrastructure/compute
+spending commitments](https://www.notebookcheck.net/OpenAI-CFO-reportedly-questions-Altman-s-600-billion-spending-and-2026-IPO-timeline.1267088.0.html)
+and doubted OpenAI would be ready to meet public-company reporting standards on Altman's timeline.
 
-**Where it stands:** [Kalshi traders now put 59% odds on OpenAI officially announcing an IPO by March 2027](https://qz.com/openai-ipo-delay-2027-valuation-062626),
-and 73% probability by June 2027. The window has shifted from "late this year" to "sometime next year."
+**Where it stands:** [Kalshi traders put 59% odds on OpenAI officially announcing an IPO by March 2027, and
+73% probability by June 2027](https://news.24x7report.com/openai-ipo-timeline-delayed-kalshi-predictions/)
+(figures as reported in late June 2026 — prediction-market odds move continuously, so check
+[Kalshi's live market](https://kalshi.com/markets/kxipoopenai/when-will-openai-announce-ipo/kxipoopenai) for
+the current number). The window has shifted from "late this year" to "sometime next year."
 
 ## Anthropic may cross the finish line first
 
 When our [Anthropic S-1 coverage](/builders-log/anthropic-ipo-s1-filing-june-2026-builder-guide/) ran in
 early June, the OpenAI listing appeared to be the leading event. That has reversed.
 
-Anthropic filed its S-1 confidentially on June 1. Kalshi traders now put 70% odds on Anthropic announcing a
-public debut by December 2026. The company's secondary market valuation sits at $965 billion — above OpenAI's
-$852 billion private mark.
+[Anthropic filed its S-1 confidentially on June 1](https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/).
+[Kalshi traders put 70% odds (as reported in late June 2026) on Anthropic announcing a public debut by December
+2026](https://news.24x7report.com/openai-ipo-timeline-delayed-kalshi-predictions/) — check
+[Kalshi's live market](https://kalshi.com/markets/kxipoanthropic/anthropic-ipo/kxipoanthropic-date) for the
+current figure, since prediction-market odds shift daily. Anthropic's most recent primary-round valuation —
+[a $65 billion Series H announced May 28, 2026](https://www.anthropic.com/news/series-h) — puts it at $965
+billion post-money, above OpenAI's $852 billion private mark. (Note: this is the company's own funding-round
+valuation, not a secondary-market print; secondary trades have since been reported well above that level.)
 
 If Anthropic lists first, it changes the competitive pressure calculus significantly:
 - Anthropic will face public-company margin pressure sooner
@@ -45,9 +60,12 @@ If Anthropic lists first, it changes the competitive pressure calculus significa
 While both companies maneuver toward their listings, they're also fighting a pricing war — and builders are
 the beneficiaries in the short term.
 
-The Wall Street Journal reported in June that OpenAI is weighing steep API price cuts to win users from
-Anthropic. Current GPT-5 API pricing runs $1.25 per million input tokens and $10 per million output tokens.
-That's already aggressive relative to some Claude 4.x tiers.
+[The Wall Street Journal reported in June that OpenAI is weighing steep API price cuts to win users from
+Anthropic](https://www.investing.com/news/stock-market-news/openai-weighs-steep-price-cuts-amid-competition-from-anthropic---wsj-4736466).
+[Current GPT-5 API pricing runs $1.25 per million input tokens and $10 per million output
+tokens](https://developers.openai.com/api/docs/pricing). That's already aggressive relative to
+[Claude Sonnet 5's introductory pricing of $2/$10 through August 31, 2026](https://www.anthropic.com/news/claude-sonnet-5)
+and steeper than some Claude 4.x tiers.
 
 The competitive logic: ARR and user retention improve IPO optics. Both companies have strong incentives to
 cut prices through mid-2027. Pre-IPO price wars typically end as soon as the S-1 roadshow starts and
@@ -60,8 +78,8 @@ limit increase request, now is the time.
 
 ## SoftBank's $65B position creates its own pressure
 
-SoftBank's 13% drop on the IPO delay news reflects a specific structural risk. SoftBank is expected to hold
-approximately $65 billion in OpenAI by October 2026 — a position assembled through the $40B Stargate
+SoftBank's 13% drop on the IPO delay news reflects a specific structural risk. [SoftBank's total commitment
+to OpenAI is expected to reach roughly $65 billion by October 2026](https://finance.yahoo.com/markets/stocks/articles/softbank-stock-falls-openai-ipo-111550785.html) — a position assembled through the Stargate
 co-investment and secondary purchases.
 
 A delayed or lower-than-$1T IPO doesn't just cost SoftBank on paper. It changes OpenAI's operational

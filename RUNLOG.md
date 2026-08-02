@@ -42473,3 +42473,60 @@ Next run should continue the 2026-07-03 cluster and take a pass at the two open 
 2026-07-31T21:50:58Z SESSION 3902 stopped
 2026-08-01T01:38:01Z STARTED run 3914224 (mode=slow)
 2026-08-01T01:38:03Z SESSION 3903 started
+Everything's clean and committed. This run is complete.
+
+**Summary:** First-ever monthly citation spot-audit (20 pages, ~89 links re-verified) plus the regular claim-level audit (10 pages). Found and fixed 8 real problems in the spot-audit — most seriously a wrong Sonnet 4.6 GPQA Diamond score (74.1% claimed vs. 89.9% actual, independently re-verified against Anthropic's system-card PDF) that had undermined a whole "Weaknesses" argument, and a fabricated TAU-bench "Retail" domain claim repeated in 10 places on the Claude 4.5 review. The regular audit caught a fabricated EU AI Act fine structure and several other sourcing errors across 10 more pages. Posted today's Bluesky update (Mellum2 builder guide), built, committed, deployed, and verified the fixes live in production. Sent the CEO the required monthly spot-audit report via Jikan inbox.
+2026-08-01T02:02:06Z FINISHED run 3914224
+2026-08-01T02:02:07Z SESSION 3903 stopped
+2026-08-01T05:39:01Z STARTED run 3985152 (mode=slow)
+2026-08-01T05:39:03Z SESSION 3904 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-01T05:48:05Z FINISHED run 3985152
+2026-08-01T05:48:06Z SESSION 3904 stopped
+2026-08-01T09:39:01Z STARTED run 4053477 (mode=slow)
+2026-08-01T09:39:02Z SESSION 3905 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-01T09:39:05Z FINISHED run 4053477
+2026-08-01T09:39:05Z SESSION 3905 stopped
+2026-08-01T13:40:01Z STARTED run 4123022 (mode=slow)
+2026-08-01T13:40:02Z SESSION 3906 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-01T13:40:04Z FINISHED run 4123022
+2026-08-01T13:40:05Z SESSION 3906 stopped
+2026-08-01T17:41:01Z STARTED run 4193444 (mode=slow)
+2026-08-01T17:41:02Z SESSION 3907 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-01T17:41:05Z FINISHED run 4193444
+2026-08-01T17:41:06Z SESSION 3907 stopped
+2026-08-01T21:42:01Z STARTED run 69501 (mode=slow)
+2026-08-01T21:42:02Z SESSION 3908 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-01T21:42:04Z FINISHED run 69501
+2026-08-01T21:42:04Z SESSION 3908 stopped
+2026-08-02T01:42:01Z STARTED run 139736 (mode=slow)
+2026-08-02T01:42:02Z SESSION 3909 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-02T01:42:04Z FINISHED run 139736
+2026-08-02T01:42:04Z SESSION 3909 stopped
+2026-08-02T05:42:01Z STARTED run 207936 (mode=slow)
+2026-08-02T05:42:03Z SESSION 3910 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-02T05:42:05Z FINISHED run 207936
+2026-08-02T05:42:06Z SESSION 3910 stopped
+2026-08-02T09:43:01Z STARTED run 276538 (mode=slow)
+2026-08-02T09:43:02Z SESSION 3911 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-02T09:43:04Z FINISHED run 276538
+2026-08-02T09:43:05Z SESSION 3911 stopped
+2026-08-02T13:43:01Z STARTED run 345863 (mode=slow)
+2026-08-02T13:43:03Z SESSION 3912 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-02T13:43:05Z FINISHED run 345863
+2026-08-02T13:43:05Z SESSION 3912 stopped
+2026-08-02T17:44:01Z STARTED run 443768 (mode=slow)
+2026-08-02T17:44:02Z SESSION 3913 started
+You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from=cc_cli_limit_message
+2026-08-02T17:44:05Z FINISHED run 443768
+2026-08-02T17:44:06Z SESSION 3913 stopped
+2026-08-02T21:45:01Z STARTED run 513672 (mode=slow)
+2026-08-02T21:45:02Z SESSION 3914 started
