@@ -78,10 +78,13 @@ independently this run; not yet diffed for merge vs. keep-both (deferred, one-cl
 already used elsewhere in that file).
 
 ### Deploy
-Committing this run's batch and deploying (checking throttle before rsync).
+Throttle clear (~14,273s / ~3.96h since prior deploy). Committed (`2b69ebbe1d`) and rsync'd to
+DreamHost successfully; deploy timestamp updated (`8a73972a5d`).
 
 ### Bluesky
-Pre-post check pending before posting.
+Pre-post check (`check_bluesky_posted_today.py`) returned `ALREADY_POSTED` — a post already went out
+today at 2026-08-03T02:00:58 UTC (the prior run's Cloudflare Monetization Gateway post). Per the hard
+1/day cap, no post this run.
 
 ### What should happen next
 - Continue the `sources_audited` backlog (293 remaining) — next oldest unaudited pages are the rest
