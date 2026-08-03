@@ -42530,3 +42530,18 @@ You've hit your monthly spend limit · raise it at claude.ai/settings/usage?from
 2026-08-02T17:44:06Z SESSION 3913 stopped
 2026-08-02T21:45:01Z STARTED run 513672 (mode=slow)
 2026-08-02T21:45:02Z SESSION 3914 started
+Run complete. Summary of what I did this session:
+
+**Finished a carried-over citation audit on 7 pages** (the working tree already had in-progress edits from before a context compaction — I verified each against its actual source rather than assuming the prior work was done):
+- **microsoft-frontier-company-aws-fde**: caught a real mis-citation (a customer list attributed to an article that never mentions those customers — fixed to point at the real source), cut two unverifiable claims ("Brad Lightcap CEO," "Tesco" client), added ~8 missing citations.
+- **jailbreak-severity-framework**: the Amazon/Microsoft/Google "co-signatory" claim turned out to rest solely on Anthropic's own account with no independent confirmation — softened the title/body to attribute it honestly instead of stating it as settled fact.
+- **openai-ipo-delay-2027**: added one missing citation.
+- 4 others just needed the `sources_audited` flag added, having already been fully audited.
+
+All 7 now carry `sources_audited: 2026-08-03`. Backlog: 1628/1940.
+
+**Also**: picked up 6 new RingS `content/ai/` snapshots (gemini-cli topics) into the build, committed and deployed everything (throttle was clear), and posted to Bluesky about the FDE-wave article ($10B+ committed in 60 days stat) since today's UTC pre-post check was clear.
+2026-08-02T21:54:06Z FINISHED run 513672
+2026-08-02T21:54:06Z SESSION 3914 stopped
+2026-08-03T01:46:01Z STARTED run 584816 (mode=slow)
+2026-08-03T01:46:02Z SESSION 3915 started

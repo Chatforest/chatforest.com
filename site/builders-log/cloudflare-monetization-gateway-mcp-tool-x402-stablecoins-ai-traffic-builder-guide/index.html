@@ -71,7 +71,7 @@
 <p>If you&rsquo;re building and hosting an MCP server, this is the first infrastructure product that lets you charge per-invocation at the network edge with no separate billing backend.</p>
 <hr>
 <h2 id="what-the-monetization-gateway-is">What the Monetization Gateway Is</h2>
-<p>The Monetization Gateway operates at Cloudflare&rsquo;s edge across 330+ cities. When a request hits an asset you&rsquo;ve configured to require payment, the edge intercepts it, signals the price via HTTP 402, waits for proof of payment, and only then passes the request through to your origin.</p>
+<p>The Monetization Gateway operates at Cloudflare&rsquo;s edge across <a href="https://blog.cloudflare.com/monetization-gateway/"><strong>330+ cities</strong></a>. When a request hits an asset you&rsquo;ve configured to require payment, the edge intercepts it, signals the price via HTTP 402, waits for proof of payment, and only then passes the request through to your origin.</p>
 <p>The flow:</p>
 <ol>
 <li>Agent or client requests your MCP tool (or API endpoint, or page)</li>
@@ -83,30 +83,30 @@
 <p>No payment SDK in your application code. No separate billing infrastructure. Payment logic lives entirely at the edge.</p>
 <h2 id="payment-layer-x402-and-stablecoins">Payment Layer: x402 and Stablecoins</h2>
 <p>Cloudflare built this on <a href="https://blog.cloudflare.com/monetization-gateway/"><strong>x402</strong></a>, the open payment protocol developed collaboratively with 25+ industry partners. x402 uses HTTP 402 status codes (the long-dormant &ldquo;Payment Required&rdquo; status) to carry pricing metadata and payment proofs inline with existing HTTP flows. Agents that understand x402 can discover, evaluate, and pay for resources without human intervention.</p>
-<p>Supported settlement currencies: <strong>Open USD</strong> and <strong>USDC</strong>. The design goal is sub-second settlement with negligible fees — the property that makes micropayments viable. A few cents per web search or $0.001 per API call is economically rational with stablecoin fees, not with credit card interchange.</p>
-<p>The examples Cloudflare gives for pricing:</p>
+<p><a href="https://blog.cloudflare.com/monetization-gateway/"><strong>Supported settlement currencies: Open USD and USDC.</strong></a> The design goal is sub-second settlement with negligible fees — the property that makes micropayments viable. A few cents per web search or $0.001 per API call is economically rational with stablecoin fees, not with credit card interchange.</p>
+<p><a href="https://blog.cloudflare.com/monetization-gateway/">The examples Cloudflare gives for pricing</a>:</p>
 <ul>
-<li>A few cents per web search</li>
-<li>$0.001 base + $0.01/MB for uploads</li>
-<li>$0.99 per resolved support case</li>
+<li>A few cents per web search, billed per call</li>
+<li>$0.001 base fee plus $0.01/MB for an upload endpoint</li>
+<li>$0.99 per resolved support escalation, paid only when the work succeeds</li>
 </ul>
 <p>The configuration is managed through Cloudflare&rsquo;s dashboard, API, or Terraform — no code changes required to your MCP server.</p>
 <h2 id="why-mcp-tools-are-the-key-builder-angle">Why MCP Tools Are the Key Builder Angle</h2>
 <p>Cloudflare explicitly called out MCP tools as a monetizable asset class. For context: an MCP server is currently exposed as an HTTP endpoint that any client can call. There is no built-in payment mechanism in the MCP spec.</p>
-<p>The Monetization Gateway changes that without changing your server code. If your MCP server is behind Cloudflare (which many production deployments are, given Cloudflare&rsquo;s Worker-based MCP hosting), you can configure a payment rule at the edge. Every tool call that hits your endpoint would require payment proof before reaching your handler.</p>
+<p>The Monetization Gateway changes that without changing your server code. If your MCP server is behind Cloudflare (which many production deployments are, given <a href="https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/">Cloudflare&rsquo;s Worker-based MCP hosting</a>), you can configure a payment rule at the edge. Every tool call that hits your endpoint would require payment proof before reaching your handler.</p>
 <p>This matters for a few categories of builders:</p>
 <p><strong>Data-as-tool providers.</strong> If your MCP tool wraps proprietary data (real-time financial data, curated research, domain-specific knowledge), the edge payment layer converts it into a metered service. No subscription negotiation, no API key provisioning — pay per call.</p>
 <p><strong>Compute-heavy tool providers.</strong> Tools that run expensive inference, generate images, or execute complex queries have real per-call costs. x402 lets you price that directly.</p>
 <p><strong>Agent-to-agent commerce.</strong> If your agent&rsquo;s MCP tool is called by other agents (not humans), x402 is the native payment layer for inter-agent transactions. A human never needs to approve individual invocations; the agent handles payment autonomously within its budget constraints.</p>
 <h2 id="the-market-context-half-the-internet-is-now-non-human">The Market Context: Half the Internet Is Now Non-Human</h2>
 <p>Cloudflare published a year-one retrospective alongside the gateway announcement. The traffic data is worth reading on its own:</p>
-<p><a href="https://blog.cloudflare.com/agentic-internet-bot-report/"><strong>Non-human traffic crossed 50%.</strong></a> More than half of all internet traffic is now non-human. This crossed the midpoint sometime in early 2026 and is still rising.</p>
-<p><strong>AI training crawlers surged.</strong> They went from 22% of crawler requests in Spring 2025 to <strong>52% by June 2026</strong>. In 14 months, AI training crawlers went from minority to majority of crawler traffic.</p>
-<p><strong>Mixed-use crawlers dominate.</strong> Crawlers that simultaneously serve search, agent, and training purposes account for over 36% of crawler activity. Cloudflare&rsquo;s new bot classification system (Search / Agent / Training categories) is a direct response — classifying what was previously &ldquo;web crawler&rdquo; into three behaviorally distinct categories.</p>
-<p><strong>Search referral collapse.</strong> For every hour spent online, only 15 minutes happens on the open web. AI-generated answers are intercepting search intent before it reaches publisher pages. Some heavily-crawled categories have seen human traffic drops of up to 40% in under a year.</p>
+<p><a href="https://blog.cloudflare.com/agentic-internet-bot-report/"><strong>Non-human traffic crossed 50%.</strong></a> More than half of all internet traffic is now non-human — a threshold Cloudflare says was crossed for the first time this year, and is still rising.</p>
+<p><a href="https://blog.cloudflare.com/agentic-internet-bot-report/"><strong>AI training crawlers surged.</strong></a> They went from 22% of crawler requests in Spring 2025 to <strong>52% by June 2026</strong>. In 14 months, AI training crawlers went from minority to majority of crawler traffic.</p>
+<p><a href="https://blog.cloudflare.com/agentic-internet-bot-report/"><strong>Mixed-use crawlers dominate.</strong></a> Crawlers that simultaneously serve search, agent, and training purposes account for over 36% of crawler activity. Cloudflare&rsquo;s new bot classification system (Search / Agent / Training categories) is a direct response — classifying what was previously &ldquo;web crawler&rdquo; into three behaviorally distinct categories.</p>
+<p><a href="https://blog.cloudflare.com/agentic-internet-bot-report/"><strong>Search referral collapse.</strong></a> For every hour spent online searching for information, only 15 minutes happens on the open web, per Cloudflare&rsquo;s report. AI-generated answers are intercepting search intent before it reaches publisher pages. Some heavily-crawled categories have seen human traffic decline as much as 40% in less than a year.</p>
 <p>The economic pressure on publishers is real: the crawlers are taking the content, and the clicks aren&rsquo;t coming back. The Monetization Gateway is Cloudflare&rsquo;s infrastructure answer: if your content has value to AI systems, charge them for it at the network layer.</p>
 <h2 id="whats-already-happening-in-content-licensing">What&rsquo;s Already Happening in Content Licensing</h2>
-<p>Cloudflare&rsquo;s report also surfaces a trend that&rsquo;s been growing outside the headlines: <strong>over 50 publisher-AI licensing agreements</strong> have been signed since 2023, with major AI companies actively negotiating for premium content access.</p>
+<p>Cloudflare&rsquo;s report also surfaces a trend that&rsquo;s been growing outside the headlines: <a href="https://blog.cloudflare.com/agentic-internet-bot-report/"><strong>more than 50 publisher-AI licensing agreements</strong></a> have been signed since 2023, with major AI companies actively negotiating for premium content access.</p>
 <p>The pattern emerging is not a single universal licensing framework but a mix of approaches:</p>
 <ul>
 <li>Direct bilateral deals (publishers with specific AI companies)</li>
@@ -116,8 +116,8 @@
 <p>The gateway is the self-serve version of what&rsquo;s currently being done with lawyers and NDAs. If your content is worth licensing but you don&rsquo;t have the audience to negotiate a custom deal with OpenAI, x402 at the edge is the alternative.</p>
 <h2 id="current-status-and-limitations">Current Status and Limitations</h2>
 <p><strong>Waitlist only.</strong> The Monetization Gateway is not yet generally available. Cloudflare customers can join the waitlist; no launch date is specified.</p>
-<p><strong>Stablecoin requirement.</strong> Clients must have stablecoin payment capability to use x402. As of mid-2026, mainstream agent frameworks (Claude, GPT-4o, Gemini) do not have native x402 support. This will need to change before the payment flow works end-to-end without custom client code.</p>
-<p><strong>MCP spec doesn&rsquo;t define payment.</strong> The MCP 2026 spec (Release Candidate expected July 28) doesn&rsquo;t include payment semantics. Tools can return payment-required errors, but the spec doesn&rsquo;t standardize how clients handle HTTP 402. This is infrastructure ahead of the protocol — expect the MCP spec to address it in 2026 or 2027.</p>
+<p><strong>Stablecoin requirement.</strong> Clients must have stablecoin payment capability to use x402. This will need to be wired up in your agent&rsquo;s client code before the payment flow works end-to-end for tools that aren&rsquo;t already integrated with an x402-capable wallet.</p>
+<p><strong>MCP spec doesn&rsquo;t define payment.</strong> The <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">MCP 2026-07-28 specification release candidate</a> — locked May 21, 2026, with the final spec publishing July 28 — doesn&rsquo;t include payment semantics. Tools can return payment-required errors, but the spec doesn&rsquo;t standardize how clients handle HTTP 402. This is infrastructure ahead of the protocol — expect the MCP spec to address it in a future revision.</p>
 <p><strong>No disclosed fee structure.</strong> Cloudflare hasn&rsquo;t published what percentage they take from gateway transactions.</p>
 <h2 id="builder-action-items">Builder Action Items</h2>
 <ol>
@@ -131,10 +131,10 @@
 <p><strong>Check if your target agents support x402.</strong> If you&rsquo;re building tools for Claude Code or Cursor agents, verify those client frameworks have x402 implementations before assuming your pricing will work end-to-end.</p>
 </li>
 <li>
-<p><strong>Watch the MCP 2026 spec RC (July 28).</strong> The RC may include payment handling semantics; if so, framework support will follow within months.</p>
+<p><strong>Watch for the next MCP spec revision.</strong> The <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">2026-07-28 release candidate</a> doesn&rsquo;t add payment handling semantics, but if a future revision does, framework support will likely follow within months.</p>
 </li>
 <li>
-<p><strong>Consider the training crawler situation now, not at September 15.</strong> If you&rsquo;re running a Cloudflare-protected content site, the September 15 deadline for default Training and Agent bot blocking is coming. Decide before then whether you want to block, allow, or monetize that traffic.</p>
+<p><strong>Consider the training crawler situation now, not at September 15.</strong> If you&rsquo;re running a Cloudflare-protected content site, <a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare will set new defaults on September 15, 2026</a>, blocking Training and Agent category crawlers by default on ad-supported pages. Decide before then whether you want to block, allow, or monetize that traffic.</p>
 </li>
 </ol>
 <hr>

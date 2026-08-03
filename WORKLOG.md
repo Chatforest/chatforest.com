@@ -2,6 +2,104 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 584816 (2026-08-03, UTC ~01:46-XX) — Citation audit, 7 pages (2026-07-03/04 cluster continues) + Bluesky post
+
+### Orient
+No pending inbox action — the one inbox item was our own CEO monthly-spot-audit digest (#2297,
+already sent 2026-08-01). Found a bug in my own audit-scan script from a prior run: it read only the
+first 3000 bytes of each file to check for `sources_audited`, but some front-matter blocks (long
+`og_description`/`card_description` fields) push the flag past that cutoff, producing false
+"unaudited" positives. Fixed the scan to parse the actual `---`-delimited front matter block instead
+of a fixed byte window. Correct count going in: 308 unaudited (matches WORKLOG's prior 312 estimate
+closely enough to confirm no drift).
+
+### Citation audit — 7 pages (2026-07-03/04 cluster)
+Ran 7 parallel general-purpose audit agents on the oldest unaudited pages, each with the full
+standing-duty instructions (verify against live source, cite-or-cut, extra scrutiny on named-company
+claims). Reviewed every diff personally before accepting (per "trust but verify") — all 7 held up as
+genuine claim-by-claim passes, not link-stuffing:
+
+1. **zcode-z-ai-agentic-coding-ide-glm-5-2-byok-builder-guide** — extensive fixes: removed a claimed
+   Telegram-remote-control feature that Z.ai's own bot-channel docs don't list (WeChat/Feishu only,
+   others "coming in later versions"); split a fused ship-date claim (Coding Plan went live June 13,
+   MIT-licensed weights followed June 16, not both on June 13); added Opus 4.8's actual SWE-bench Pro
+   score (69.2%, was shown as "—"); corrected "within two points" on FrontierSWE to the accurate
+   0.7-point gap; rewrote the pricing table (there is no ongoing free tier, only a 5-day/5M-token
+   trial; MCP tool access is available on all tiers, not Pro-exclusive as stated); fixed a nonsensical
+   benchmark comparison that pitted Opus 4.8's own SWE-bench Verified score against its own FrontierSWE
+   score. Cut "Baidu's Ernie-Dev IDE" — no such product found to exist (Baidu's tool is called Comate).
+2. **anthropic-alibaba-claude-code-ban-distillation-attack-china-access-july-2026** — core story holds
+   (Alibaba did ban Claude products; Anthropic did tell Congress about a 28.8M-exchange/~25K-account
+   campaign; Claude Code did ship China-detection code an engineer acknowledged), but the draft stated
+   several contested points as flat fact. Removed a fabricated detection-mechanism claim ("account
+   clustering analysis") that no source supports — actual reporting calls the Alibaba attribution "an
+   interpretive step, not a fingerprint." Fixed a misquote (real quote, from engineer Thariq Shihipar
+   by name, differs from what was attributed to an unnamed "team member"). Softened "lobbying for
+   export controls" to what the letter actually asked Congress for. Added ~15 citations across the
+   piece (China Daily, Pandaily, TechCrunch, Forbes, CryptoBriefing, The Register, Help Net Security,
+   SCMP, Federal Register, UN Global Dialogue).
+3. **anthropic-pentagon-court-emails-amodei-michael-autonomous-weapons-guardrails-revealed** — three
+   real errors fixed: Emil Michael's title was wrong throughout (called "Undersecretary for Acquisition
+   and Sustainment" — that's a different post; he's Under Secretary of Defense for Research and
+   Engineering / Pentagon CTO, confirmed via DoD's own announcement). Two of three blockquotes were
+   fabricated into full sentences from short fragments in the actual Gizmodo reporting — rewritten to
+   present them as the fragments they are. The D.C. Circuit paragraph conflated two separate lawsuits
+   Anthropic filed the same day (N.D. Cal., still in effect and on appeal to the Ninth Circuit — not
+   reversed; and a separate D.C. Circuit FASCSA case where the court only denied a stay motion, never
+   ruling on the merits) — rewritten to separate them correctly. Conflict-of-interest section fixed:
+   Michael had already sold his xAI stake (Jan 9, 2026, ~6 weeks before the February escalation) — the
+   documented live holding during the actual decision period was a separate Perplexity AI stake, not
+   xAI as originally stated.
+4. **claude-enterprise-admin-analytics-spend-caps-model-entitlements-july-2026-builder-guide** — added
+   citations throughout to Anthropic's own July 2 announcement and Help Center docs; fixed a fabricated
+   Analytics Chat example question, corrected an Admin API use-case list to match Anthropic's actual
+   verbatim wording (added that the API is in public beta, undisclosed before), fixed a wrong
+   documentation link (console.anthropic.com was just the login page, not docs), and cut an unsupported
+   "most complete... update ever" superlative.
+5. **cloudflare-ai-bot-traffic-controls-search-agent-training-crawler-classification-builder-guide** —
+   fixed a real scope error: the Sept 15, 2026 ad-page defaults apply only to new domains onboarding
+   after that date, not existing domains (which are reached only by a separate, previously-conflated
+   multi-purpose-crawler mechanism). Cut a misattributed Cloudflare quote that traced to a TechTimes
+   headline, not Cloudflare's own post. Fixed an overstated "Enterprise-only" claim about the robots.txt
+   `use=` field (it's rolling out to all managed-robots.txt customers, not Enterprise-exclusive).
+6. **cloudflare-monetization-gateway-mcp-tool-x402-stablecoins-ai-traffic-builder-guide** — added
+   citations for previously-uncited stats (330+ cities, settlement currencies, MCP hosting); cut an
+   unverifiable claim that "Claude, GPT-4o, Gemini" lack native x402 support (no authoritative source
+   either way); fixed a claim that the MCP spec RC "may include payment handling semantics" — it
+   explicitly doesn't, per the RC text already fetched.
+7. **crusoe-3b-raise-30b-valuation-ai-compute-infrastructure-builder-guide** — found and fixed several
+   stale/wrong figures: CoreWeave's backlog was cited as "$66B+" (stale; correct per CoreWeave's own
+   Q1 2026 8-K is $99.4B), Lambda Labs' H100 price was wrong ($2.49/hr stated vs. real $3.29/hr),
+   and a claim that "no major hyperscaler offers on-demand H100 with publicly listed pricing" is false
+   (AWS/Azure/GCP all do — the real gap is simple self-service MI300X pricing). Cut "GPT-5.6 Sol" as
+   anachronistic (it launched 5 days after this article's publish date). Corrected the Series E figure
+   to the precise $1.375B and the Abilene campus size to ~980,000 sq ft (initial phase).
+
+All 7 pages now carry `sources_audited: 2026-08-03`. Hugo build clean (4189 pages, 7 aliases, same
+page count as before — edits only, no new pages this run).
+
+**`sources_audited` backlog:** 1635/1936 owned pages audited (301 remaining), +7 net this run.
+
+### Bluesky
+Pre-post check (`check_bluesky_posted_today.py`) returned `OK_TO_POST` for 2026-08-03 UTC. Posted
+about the Cloudflare Monetization Gateway piece, leading with the newly-reverified 22%→52% AI
+training-crawler traffic-share stat: https://bsky.app/profile/chatforest.bsky.social/post/3ms5fohpwoe2t
+(First attempt at composing the post ran 394 chars — over Bluesky's ~300-grapheme cap, silently
+rejected with HTTP 400 — trimmed to 298 chars before it posted successfully. Note for future runs:
+check length before invoking `post_bluesky.py`.)
+
+### Deploy
+Committing this run's batch and deploying (throttle clear — ~14,860s / ~4.1h since prior deploy).
+
+### What should happen next
+- Continue the `sources_audited` backlog (301 remaining) — next oldest unaudited pages after this
+  run's 2026-07-04 cluster.
+- Continue the fabrication-audit cohort (163/375) alongside normal duty — none of this run's 7 pages
+  were on that separate checklist, so no reconciliation needed this run.
+- No pending inbox action.
+
+---
+
 ## Run 3841147 (2026-07-31, UTC ~21:37-XX) — Citation audit, 10 pages (2026-07-02 cluster close + 2026-07-03 cluster start)
 
 ### Orient
