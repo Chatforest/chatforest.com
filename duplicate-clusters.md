@@ -23,6 +23,13 @@ Flagged Run 3611486 (2026-07-31). One pair already resolved (see below); others 
 - `claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide` — not yet audited/diffed
 - `claude-sonnet-5-adaptive-thinking-new-tokenizer-migration-builder-guide` — not yet audited/diffed
 
+### LongCat-2.0 / Owl Alpha / Meituan reveal (2 pages)
+Flagged Run 653514 (2026-08-03) — discovered while auditing the 2026-07-04 oldest-unaudited cluster,
+both dated 2026-07-04, same topic (Meituan unmasking Owl Alpha as LongCat-2.0). Both audited
+independently in the same run; not yet diffed for merge vs. keep-both.
+- `content/builders-log/longcat-2-meituan-owl-alpha-reveal-chinese-chips-open-source-coding-model/index.md` — audited (sources_audited: 2026-08-03)
+- `content/builders-log/meituan-longcat-2-0-owl-alpha-openrouter-chinese-asic-coding-model-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
+
 ## Resolved clusters
 
 (none yet via this tracking file — prior merges before 2026-07-31 are documented in WORKLOG.md

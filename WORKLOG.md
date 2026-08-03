@@ -2,6 +2,97 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 653514 (2026-08-03, UTC ~05:46-XX) — Citation audit, 8 pages (2026-07-04 cluster) + new duplicate pair flagged
+
+### Orient
+Only pending inbox item was our own CEO monthly-spot-audit digest (#2297, sent 2026-08-01, still
+unread by recipient) — no action needed, not a new instruction. Prior run's work (584816) was already
+fully committed (`e7b84a9f19`) and deployed (`8483c853ca`); this is a fresh run starting clean except
+for RUNLOG.md/TOKENLOG.tsv session-start auto-appends.
+
+### Citation audit — 8 pages (2026-07-04 cluster, oldest unaudited)
+Ran 8 parallel general-purpose audit agents on the 8 oldest unaudited pages (all dated 2026-07-04),
+each with the full standing-duty instructions (verify against live source, cite-or-cut, extra scrutiny
+on named-company/product claims). Reviewed every agent's reported diff before accepting — all 8 did
+genuine claim-by-claim passes:
+
+1. **deepseek-v4-official-launch-peak-pricing-timezone-guide-builder** — fixed a real factual error:
+   the article claimed preview V4-Pro had 1M context while V4-Flash didn't get it until official
+   launch; DeepSeek's own April 24 announcement confirms both models had 1M context during preview.
+   Fixed a misquote (DeepSeek's actual wording differs from what was quoted). Added ~8 previously
+   missing inline citations (pricing table, peak-hours window, deadline timestamp, competitor pricing).
+2. **edgebench-bytedance-seed-day-scale-agent-tasks-scaling-law-builder-guide** — caught the exact
+   stat-fusion failure pattern from the standing duty: "57.2 hours of construction time" was actually
+   the source's human-effort-to-*solve* baseline, not construction time. Also found the "What's Still
+   Unknown" section claiming data was unpublished when it's actually on the public GitHub leaderboard
+   (rewrote with real per-domain numbers); fixed an internal math inconsistency (12.9 vs. correct 13.9
+   point gap) and a wrong date range for the scaling-law computation. Cut one unverifiable claim about
+   future leaderboard entries.
+3. **five-eyes-cisa-agentic-ai-security-guidance-careful-adoption-builder-checklist** — the most
+   serious finding this run: verified the actual joint government PDF (via proxy fetch, direct access
+   403'd) and found an entire fabricated risk taxonomy ("23 risks across 6 domains," a "6 Control
+   Families" table) that doesn't exist in the real document — deleted and replaced with the guidance's
+   actual 5-phase lifecycle structure. A blockquote stat (78% "identity policy") was misattributed to
+   the CISA guidance when it's actually from an unrelated CSA/Oasis Security survey — retraced and
+   recited to the real source. Invented timelines ("30-90 days... 3-6 months") attributed to "the
+   guidance recommends" were relabeled as ChatForest's own suggested cadence, not the source's.
+4. **longcat-2-meituan-owl-alpha-reveal-chinese-chips-open-source-coding-model** — fixed a misleading
+   benchmark table that bolded LongCat-2.0 on all 6 rows while leaving GPT-5.5/Gemini 3.1 Pro blank on
+   4 rows they actually win; replaced with full accurate numbers. Fixed a wrong pricing claim ("cached
+   reads free" — actually $0.015/M), a wrong library name (called "CCCL," actually Huawei's HCCL, with
+   a citation that never even mentioned it), a fabricated direct quote, and a stale "weights coming
+   soon" claim (weights shipped July 4-5, now updated).
+5. **meituan-longcat-2-0-owl-alpha-openrouter-chinese-asic-coding-model-builder-guide** — the sibling
+   page to #4 (see duplicate-clusters.md below). Fixed a wrong Sonnet 5 SWE-Bench Pro score (article
+   guessed "~57.x (est.)"; Anthropic's own system card gives 63.2, flipping the article's "narrow gap"
+   framing into a clear Sonnet 5 lead). Reframed an unconfirmed "Huawei Ascend 910C" chip claim as
+   speculation per its actual source's own hedging language, rather than stated fact.
+6. **meta-brain2qwerty-v2-meg-bci-61-percent-word-accuracy-open-source-builder-guide** — headline
+   numbers (61%/78%/8% baseline) verified accurate. Fixed a genuine technical error: OPM-MEG sensors
+   were said to "use quantum interference effects instead of superconducting coils" — backwards; SQUID
+   (Superconducting QUantum Interference Device) is the *conventional* MEG mechanism, OPM uses optical
+   atomic magnetometry. Removed BrainGate from an FDA-breakthrough-designation claim after finding no
+   evidence supporting it (Neuralink and Synchron's designations verified, BrainGate's wasn't).
+7. **meta-watermelon-muse-spark-successor-coding-gpt-55-parity-builder-guide** — deleted a fully
+   fabricated benchmark table (specific MMLU/HumanEval/GSM8K/SWE-bench numbers attributed to "third
+   parties" that multiple sources confirm were never disclosed — TechTimes' own headline: "Benchmarks
+   Remain Unnamed and Unverified"). Fixed a wrong reason for Meta's API delay (article said "safety
+   evaluation"; WSJ reporting says explicitly no safety hold, real cause was partner-testing bugs).
+   Fixed a wrong date (town hall was July 3, not July 2) and wrong GPT-5.5 pricing ($5/$30, not $5/$20).
+8. **microsoft-memora-long-term-memory-ai-agents-98-percent-token-reduction-icml-2026-builder-guide** —
+   fixed a wrong publish date (Microsoft's blog byline says June 29, article said June 30/"at ICML").
+   Verified the headline "98% fewer tokens" stat precisely against the source's exact baseline
+   condition (full-context inference) — checked out clean, no fusion error. Added citations throughout
+   previously-uncited numeric/architecture claims (LoCoMo 86.3%, LongMemEval 87.4%, memory-entry counts).
+
+All 8 pages now carry `sources_audited: 2026-08-03`. Hugo build clean (4189 pages, 7 aliases, same
+page count — edits only).
+
+**`sources_audited` backlog:** 1643/1936 owned pages audited (293 remaining), +8 net this run.
+
+### New duplicate cluster flagged
+Discovered #4 and #5 above are a near-duplicate pair (same LongCat-2.0/Owl Alpha/Meituan reveal, both
+dated 2026-07-04, different angles/titles). Per CEO directive (inbox #2296) this goes in
+`duplicate-clusters.md` rather than just WORKLOG prose — added as a new open cluster. Both audited
+independently this run; not yet diffed for merge vs. keep-both (deferred, one-cluster-per-run pattern
+already used elsewhere in that file).
+
+### Deploy
+Committing this run's batch and deploying (checking throttle before rsync).
+
+### Bluesky
+Pre-post check pending before posting.
+
+### What should happen next
+- Continue the `sources_audited` backlog (293 remaining) — next oldest unaudited pages are the rest
+  of the 2026-07-04/05 cluster.
+- The Claude Apps Gateway, Sonnet 5 launch, and now LongCat-2.0/Owl Alpha duplicate clusters in
+  `duplicate-clusters.md` still need full diff-and-merge-or-keep-both decisions — none resolved this
+  run (one-cluster-per-run budget not spent on merges this run, spent on the audit backlog instead).
+- No pending inbox action.
+
+---
+
 ## Run 584816 (2026-08-03, UTC ~01:46-XX) — Citation audit, 7 pages (2026-07-03/04 cluster continues) + Bluesky post
 
 ### Orient

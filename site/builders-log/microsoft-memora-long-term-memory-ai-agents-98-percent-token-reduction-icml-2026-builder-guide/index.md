@@ -3,7 +3,7 @@
 > Microsoft Research's Memora framework achieves state-of-the-art on LoCoMo and LongMemEval benchmarks while using up to 98% fewer context tokens than full-context inference. Here's what builders need to know.
 
 
-Microsoft Research published Memora at ICML 2026 on June 30, and it deserves builder attention: the framework beats every prior memory system on the two standard long-term memory benchmarks — including full-context inference — while using up to 98% fewer context tokens. That's a meaningful engineering claim, not just an academic one.
+Microsoft Research published [Memora](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/) at ICML 2026 on June 29, and it deserves builder attention: the framework beats every prior memory system on the two standard long-term memory benchmarks — including full-context inference — while using up to 98% fewer context tokens. That's a meaningful engineering claim, not just an academic one.
 
 ## The Core Problem Memora Solves
 
@@ -13,7 +13,7 @@ Memora's central insight: **decouple what you store from how you retrieve it**. 
 
 ## How It Works
 
-Each memory has three components:
+Per [Microsoft's description of the architecture](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/), each memory has three components:
 
 - **Primary Abstraction** — a 6–8 word phrase capturing the memory's essence (e.g., "Updated Project Orion timeline agreed by Dave and Sarah"). This is the only thing embedded for similarity search.
 - **Memory Value** — the full, expressive content, untouched by retrieval operations.
@@ -28,9 +28,11 @@ The "harmonic" in the paper title refers to balancing abstraction (for efficient
 3. Refines progressively across multiple hops
 4. Determines its own stopping point
 
-This iterative approach captures multi-hop dependencies — the kind of recall humans do naturally when context matters as much as content. The retrieval policy can be LLM-prompted or distilled into a smaller model via reinforcement learning for latency-sensitive deployments.
+This iterative approach captures multi-hop dependencies — the kind of recall humans do naturally when context matters as much as content. Per Microsoft, [the retrieval policy can be either hand-prompted with a strong LLM or distilled into a much smaller model via reinforcement learning](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/) for latency-sensitive deployments.
 
 ## Benchmark Numbers
+
+Numbers below are from [Microsoft's published benchmark results](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/) and the [ICML 2026 paper](https://arxiv.org/abs/2602.03315).
 
 **LoCoMo** (600-turn dialogues, rich personal memory):
 - Memora: **86.3% LLM-judge accuracy**
@@ -44,7 +46,7 @@ Memory storage efficiency: Memora stores ~344 entries per conversation vs. 651 f
 
 ## The 98% Token Reduction — What It Actually Means
 
-The "98% fewer context tokens" figure compares Memora against naively including the full conversation history in every prompt — the brute-force baseline. It does *not* mean your inference bill drops 98%.
+The ["98% fewer context tokens" figure](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/) compares Memora against naively including the full conversation history in every prompt — the brute-force baseline (Microsoft's own phrasing: "up to 98% relative to full-context inference"). It does *not* mean your inference bill drops 98%.
 
 The actual picture for builders:
 
@@ -58,7 +60,7 @@ Think of it as: Memora trades some retrieval latency and a few extra small-model
 
 **1. Open source, ICML-published — audit the claims yourself**
 
-The code is at [github.com/microsoft/Memora](https://github.com/microsoft/Memora) and the paper is peer-reviewed at ICML 2026. This isn't a product announcement with a waitlist; it's research infrastructure you can evaluate today.
+The code is at [github.com/microsoft/Memora](https://github.com/microsoft/Memora) and [the paper](https://arxiv.org/abs/2602.03315) is peer-reviewed at ICML 2026. This isn't a product announcement with a waitlist; it's research infrastructure you can evaluate today.
 
 **2. Policy distillation is the latency unlock**
 

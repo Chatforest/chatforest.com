@@ -1,15 +1,15 @@
 # Five Eyes Agentic AI Security Guidance: The Builder Checklist
 
-> CISA, NSA, and Five Eyes allies published the first joint security framework for agentic AI in May 2026. It identifies 23 risks across 6 domains and over 100 best practices. Here's what builders deploying AI agents must act on now.
+> CISA, the NSA, and their Five Eyes counterparts published the first joint security framework for agentic AI in May 2026, organizing risks into five categories and best practices across the agent lifecycle. Here's what builders deploying AI agents must act on now.
 
 
-On May 1, 2026, CISA, the NSA, and the cybersecurity agencies of Australia, Canada, New Zealand, and the United Kingdom published **"Careful Adoption of Agentic AI Services"** — the first coordinated security framework for AI agents from allied governments. Six agencies. 23 risks. Over 100 best practices. One central message: organizations that deploy agents without deliberate security controls are taking on risks that existing static-AI and cloud security frameworks were not designed to handle.
+On May 1, 2026, six agencies — the U.S. Cybersecurity and Infrastructure Security Agency (CISA), the U.S. National Security Agency (NSA), the Australian Signals Directorate's Australian Cyber Security Centre (ASD's ACSC), the Canadian Centre for Cyber Security, New Zealand's National Cyber Security Centre (NCSC-NZ), and the UK's National Cyber Security Centre (NCSC-UK) — jointly published [**"Careful Adoption of Agentic AI Services"**](https://www.cisa.gov/resources-tools/resources/careful-adoption-agentic-ai-services) ([full PDF](https://media.defense.gov/2026/Apr/30/2003922823/-1/-1/0/CAREFUL%20ADOPTION%20OF%20AGENTIC%20AI%20SERVICES_FINAL.PDF)), the first coordinated security framework for AI agents from allied governments. One central message: organizations that deploy agents without deliberate security controls are taking on risks that existing static-AI and cloud security frameworks were not designed to handle.
 
 If you are building or deploying AI agents in any enterprise or regulated context, this document is now part of your compliance landscape.
 
 ## Why This Guidance Matters Beyond Compliance
 
-The guidance isn't just a regulatory signal — it's also a practical risk inventory. The agencies identified **five primary risk categories** that compound on top of traditional software security:
+The guidance isn't just a regulatory signal — it's also a practical risk inventory. The agencies organize agentic-AI security risk into [**five primary risk categories**](https://media.defense.gov/2026/Apr/30/2003922823/-1/-1/0/CAREFUL%20ADOPTION%20OF%20AGENTIC%20AI%20SERVICES_FINAL.PDF) that compound on top of traditional software security:
 
 1. **Privilege risk** — Agents are granted more access than any task requires. A single compromise cascades because the agent's blast radius matches its permissions.
 2. **Design and configuration risk** — Security gaps baked in before deployment. Over-permissioned accounts, missing human approval gates, no shutdown mechanisms.
@@ -17,70 +17,39 @@ The guidance isn't just a regulatory signal — it's also a practical risk inven
 4. **Structural risk** — Multi-agent networks triggering cascading failures. One compromised agent delegates to others, amplifying the incident.
 5. **Accountability risk** — Decision processes that are hard to inspect, logs that are hard to parse, incident timelines that are difficult to reconstruct.
 
-## The 23 Risks, Organized
+## How the Guidance Structures Its Recommendations
 
-The guidance organizes 23 specific risks across six operational domains:
+Rather than a flat checklist, the [guidance](https://media.defense.gov/2026/Apr/30/2003922823/-1/-1/0/CAREFUL%20ADOPTION%20OF%20AGENTIC%20AI%20SERVICES_FINAL.PDF) organizes its best practices around five phases of the agent lifecycle:
 
-### Governance & Oversight
-- Agents operating without human approval gates
-- Unclear accountability chains when autonomous systems cause harm
-- Absence of formal AI governance structures across stakeholder teams
-
-### Intent & Behavior Control
-- Misalignment between intended and actual agent goals
-- Agents pursuing objectives in unexpected ways (gaming metrics, deceptive outputs)
-- Insufficient real-time monitoring of agent reasoning
-
-### System Architecture
-- Agents with excessive permission scope ("over-permissioned" service accounts)
-- Autonomous cross-system actions without isolation
-- Missing breakglass or emergency shutdown mechanisms
-
-### Supply Chain & Third-Party Risk
-- Dependencies on untrusted model providers
-- Compromised tools integrated into agent toolsets
-- Model poisoning and adversarial prompt injection
-
-### Operational Resilience
-- Silent agent failures or cascading failures across integrated systems
-- No incident detection or rollback capabilities
-- Insufficient logging and auditability for forensic investigation
-
-### Adversarial Resilience
-- Susceptibility to prompt injection, jailbreaks, and adversarial inputs
-- Agents weaponized as attack vectors against downstream systems
-- Delegation abuse — agents delegating tasks to untrusted sub-agents
-
-## The 6 Control Families
-
-The guidance prescribes six primary mitigation areas, each with specific practices:
-
-| Control Family | Core Requirement |
+| Lifecycle Phase | Representative Practices |
 |---|---|
-| Human-in-the-loop | Human approval required for all high-risk and irreversible actions |
-| Approval gates | Defined thresholds set by designers, not by the agent itself |
-| Intent classification | Assess what an agent intends to do before it executes |
-| Behavioral monitoring | Continuous observation during operation, not just at deploy |
-| Supply-chain vetting | Mandatory assessment of models, tools, and third-party dependencies |
-| Incident response | Agent-specific playbooks, separate from standard software IR plans |
+| Designing secure agents | Controlled context, oversight mechanisms, identity management, defense in depth |
+| Developing secure agents | Comprehensive testing, red teaming, input management, vetting third-party components |
+| Deploying agents securely | Threat modeling, governance sign-off, progressive (staged) rollout, secure defaults, isolation |
+| Operating agents securely | Output validation, human-in-the-loop review, performance monitoring, privilege/authentication checks |
+| Defending against future risks | Expanding threat intelligence sharing across organizations, building agent-specific evaluations |
+
+On identity specifically, the guidance is explicit: treat each agent as its own cryptographic principal rather than a shared, long-lived credential. It recommends builders "construct each agent as a distinct principal, a cryptographically anchored identity with its own unique keys or certificates," and "maintain a trusted registry" that agents are checked against before any privileged action is authorized.
 
 ## What Makes Agentic AI Different from Prior AI Security Guidance
 
-The document is explicit on this: agents operate as **non-human principals**. They authenticate to databases, call APIs, and take actions on infrastructure — often with credentials equivalent to a service account with broad permissions. A typical application security review assumes a human made the authorization decision. With agents, the authorization chain runs: human → system prompt → model → tool call → infrastructure action. Any link in that chain can be compromised or manipulated.
+Building on the identity point above, the [guidance](https://media.defense.gov/2026/Apr/30/2003922823/-1/-1/0/CAREFUL%20ADOPTION%20OF%20AGENTIC%20AI%20SERVICES_FINAL.PDF) treats agents as a new class of "principal" — a non-human actor that authenticates to databases, calls APIs, and takes actions on infrastructure, often via credentials with broad, static permissions. A typical application security review assumes a human made the authorization decision at the point of action; with agents, that assumption no longer holds, which is why the guidance's design-phase practices center on cryptographic per-agent identity and a trusted registry rather than shared service accounts.
 
-**Prompt injection is explicitly flagged** as an attack vector with "potentially unsolvable aspects." An agent reading external content (email, web pages, user-submitted data) can be induced to take actions by adversarially crafted inputs embedded in that content. The guidance categorizes this under Adversarial Resilience and recommends defensive controls, but acknowledges no fully reliable mitigation exists today.
+**Prompt injection is treated as a persistent, structurally hard-to-fix risk.** The guidance lists prompt injection under both "inherited LLM risks" and "behaviour risks": an agent reading external content (email, web pages, user-submitted data) can be induced to take unintended actions by adversarially crafted inputs embedded in that content. Its prescribed defenses — input management, guardrails and constraints, and human review of consequential actions — are mitigations rather than a claim of a full fix.
 
-**Delegation abuse in multi-agent systems** is identified as a standalone risk. When Agent A delegates to Agent B, Agent B inherits some portion of Agent A's trust and access. If Agent B is compromised — whether through a malicious tool, a poisoned model, or prompt injection — the attacker reaches whatever Agent A was authorized to do. Least-privilege enforcement must apply at every hop in a multi-agent chain, not just at the entry point.
+**Delegation between agents is called out as a structural risk.** The guidance describes how "tightly coupled planning, retrieval and execution agents autonomously delegate tasks and select tools without strong validation or guardrails," and recommends defining agent roles (e.g., "Orchestrator," "Reader," "Actuator") with explicit delegation-expiry timers and recorded grant chains, rather than letting one agent hand off unlimited trust to another.
 
 ## The Stat That Should Concern Every Builder
 
-> "78% of organizations with deployed agents have no documented policy for creating or removing AI identities."
+This isn't from the Five Eyes guidance itself — it's from a separate industry survey, but it explains why the guidance leans so hard on identity controls. A [Cloud Security Alliance / Oasis Security survey released January 27, 2026](https://cloudsecurityalliance.org/press-releases/2026/01/27/79-of-it-pros-feel-ill-equipped-to-prevent-attacks-via-nhi-csa-oasis-survey-finds) ([full report](https://cloudsecurityalliance.org/artifacts/state-of-nhi-and-ai-security-survey-report)) of 383 IT and security professionals found:
 
-AI service accounts that persist beyond a project, accumulate permissions over time, and never get audited are the enterprise agent security debt that hasn't been written about yet. The guidance recommends immediate audits of all agent identities in production, with 30–90 days to deploy access controls and 3–6 months to harmonize with emerging regulatory standards.
+> "78% of organizations don't have documented and formally adopted policies for creating or removing AI identities."
+
+AI service accounts that persist beyond a project, accumulate permissions over time, and never get audited are the enterprise agent security debt that hasn't been written about yet — and it's exactly the gap the guidance's identity-management practices (distinct per-agent principals, a trusted registry, short-lived credentials) are designed to close.
 
 ## Builder Action Plan
 
-The guidance's central recommendation: **deploy incrementally, starting with clearly defined, low-risk tasks, and continuously reassess against evolving threat models.** In practice, that translates to:
+The guidance's central recommendation, echoed in [NCSC-UK's companion blog post](https://www.ncsc.gov.uk/blogs/thinking-carefully-before-adopting-agentic-ai): **start with tightly bounded pilots on clearly defined tasks, and build confidence before expanding scope — a progressive rollout rather than a full production launch on day one.** The guidance itself doesn't prescribe day or month counts for each step; the timeframes below are ChatForest's own suggested cadence for translating that principle into a checklist:
 
 **Right now (before next agent deployment):**
 - Audit all agent service accounts in production — what credentials do they hold, what can they access?
@@ -100,7 +69,7 @@ The guidance's central recommendation: **deploy incrementally, starting with cle
 
 ## The Framing Builders Should Keep
 
-The agencies deliberately chose not to prescribe new security frameworks. The message: apply zero-trust, defense-in-depth, and least-privilege to agents — principles your security team already understands. The novelty isn't the principles; it's applying them to non-human principals that can take actions at machine speed, across system boundaries, with a reasoning process that's difficult to audit in real time.
+The [guidance](https://media.defense.gov/2026/Apr/30/2003922823/-1/-1/0/CAREFUL%20ADOPTION%20OF%20AGENTIC%20AI%20SERVICES_FINAL.PDF) is explicit that it isn't a replacement framework: it directs organizations to "address AI security, including agentic AI systems, within established cyber security frameworks rather than treating it as a separate or standalone discipline," and to harmonize agent controls with existing Zero Trust principles, defense-in-depth, and least-privilege — practices your security team already understands. The novelty isn't the principles; it's applying them to non-human actors that can take actions at machine speed, across system boundaries, with a reasoning process that's difficult to audit in real time.
 
 The full guidance is available at [cisa.gov/resources-tools/resources/careful-adoption-agentic-ai-services](https://www.cisa.gov/resources-tools/resources/careful-adoption-agentic-ai-services).
 

@@ -1,6 +1,7 @@
 ---
 title: "LongCat-2.0: The Trillion-Parameter Coding Model That Was Already Beating You (Under a Different Name)"
 date: 2026-07-04
+sources_audited: 2026-08-03
 tags: ["open-source", "coding-agents", "moe", "china", "openrouter", "export-controls", "builder-guide", "benchmarks", "meituan", "longcat", "agentic-coding"]
 description: "Meituan's LongCat-2.0 — a 1.6T MoE trained entirely on Chinese chips — spent two months on OpenRouter as the anonymous 'Owl Alpha' before its June 30 reveal. It beats GPT-5.5 on SWE-Bench Pro, offers free cached reads, and may be the most unexpected open-source coding model of 2026."
 ---
@@ -20,11 +21,11 @@ Here's what builders need to know.
 Starting around May 1, a model labeled "Owl Alpha" appeared on OpenRouter with no attribution, no published
 paper, and no company name attached. It grew fast:
 
-- **10.1 trillion monthly tokens** by the time of the reveal — roughly 559 billion tokens per day
-- **242% month-over-month growth** in call volume
+- [**10.1 trillion monthly tokens**](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips) by the time of the reveal — roughly 559 billion tokens per day
+- **242% month-over-month growth** in call volume ([VentureBeat](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips))
 - [**#1 on the Hermes Agent workspace**](https://cryptobriefing.com/openrouter-owl-alpha-model-global-ranking/) by monthly call volume
-- **#2 on Claude Code** integrations by call volume
-- **#3 across OpenClaw deployments**
+- [**#2 on Claude Code**](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips) integrations by call volume
+- [**#3 across OpenClaw deployments**](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips)
 
 These are agent and coding-heavy workloads, not chat. Builders were already routing coding and agentic
 tasks to a model they couldn't name, and it was performing. The unmasking tells you something about how
@@ -44,22 +45,28 @@ legitimately surprising benchmark position before the geopolitics attached to th
 - **MIT license**
 
 The context window is the part that deserves a closer look. A 1M context with a dense model would be
-ruinously expensive to run. Meituan's answer is **LongCat Sparse Attention**: a sparse attention
-mechanism that selects only the most relevant tokens to attend to, dropping attention complexity closer
-to linear. The result is that the 1M window is practical rather than a benchmark claim that no one
-actually uses.
+ruinously expensive to run. Meituan's answer is [**LongCat Sparse Attention**](https://huggingface.co/meituan-longcat/LongCat-2.0),
+a mechanism (built from streaming-aware, cross-layer, and hierarchical indexing) that selects only the
+most relevant tokens to attend to, dropping attention complexity closer to linear. The result is that
+the 1M window is practical rather than a benchmark claim that no one actually uses.
 
 ### Benchmarks
 
 | Model | SWE-Bench Pro |
 |---|---|
-| **LongCat-2.0** | **59.5** |
+| Claude Sonnet 5 | **63.2** |
+| **LongCat-2.0** | 59.5 |
 | GPT-5.5 | 58.6 |
-| Claude Sonnet 5 | ~57.x (est.) |
 
-SWE-Bench Pro tests real software engineering tasks on actual repositories — it's meaningfully harder
-than the original SWE-Bench and harder to game with benchmark-specific tuning. A 0.9-point lead is
-narrow, but it's a genuine lead, and it was posted by an open model trained without Nvidia hardware.
+Sources: LongCat-2.0 and GPT-5.5 scores are from [Meituan's reveal, as reported by VentureBeat](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips);
+the Claude Sonnet 5 score is from [Anthropic's own Claude Sonnet 5 system card](https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf) (Section 8.2), which
+lists GPT-5.5 at the same 58.6, cross-confirming the two reports.
+
+[SWE-Bench Pro](https://arxiv.org/abs/2509.16941) tests real software engineering tasks on actual
+repositories — it's meaningfully harder than the original SWE-Bench and harder to game with
+benchmark-specific tuning. LongCat-2.0 edges out GPT-5.5 by a narrow 0.9 points, a genuine lead posted
+by an open model trained without Nvidia hardware — but it trails Claude Sonnet 5's 63.2 by a clear
+margin, so "near-frontier" is the accurate framing, not "frontier-leading."
 
 ---
 
@@ -68,14 +75,20 @@ narrow, but it's a genuine lead, and it was posted by an open model trained with
 This is the part of the LongCat-2.0 announcement that changes the policy conversation, not just the
 leaderboard.
 
-Previous Chinese frontier models — including DeepSeek V4 — trained primarily on domestic chips for
-inference but relied on restricted hardware (older Nvidia A100s or smuggled H100s) for at least part of
-the pre-training run. Meituan is claiming something different: [**both pre-training and inference ran
+Previous Chinese frontier models leaned on domestic chips for inference while pre-training still touched
+Nvidia hardware to some degree. DeepSeek V4 is the clearest comparison: DeepSeek has said it trained V4 on
+Nvidia H800 GPUs alongside Huawei Ascend 910C chips, and independent analysts still
+[dispute how much of the actual pre-training run ran on Nvidia hardware](https://thechinaacademy.org/why-deepseek-v4-hasnt-fully-cut-ties-with-nvidia/)
+versus domestic silicon. Meituan is claiming something cleaner: [**both pre-training and inference ran
 end-to-end on a 50,000-card cluster of domestic Chinese ASICs**](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips).
 
-The chips in question share architectural similarities with Huawei's Ascend 910C series, though Meituan
-has not publicly named the exact vendor. The coordination layer runs on Huawei's HCCL (their NCCL
-equivalent) across superpod-style interconnects.
+Meituan has not publicly named the exact chip vendor or model — claims that the chips are Huawei Ascend
+910C-class silicon are outside speculation based on circumstantial technical clues, not a Meituan or
+Huawei confirmation. What Meituan has
+confirmed is the coordination layer: it said in a [WeChat statement, as reported by Yahoo
+Tech](https://tech.yahoo.com/ai/articles/china-longcat-2-0-becomes-134258951.html), that training used
+Huawei's HCCL (their NCCL equivalent) across ASIC "superpod" interconnects, rather than Nvidia's
+communication stack.
 
 ### What This Does and Doesn't Change for Export Controls
 
@@ -93,6 +106,8 @@ pressure point, not a single model release.
 
 ## Pricing
 
+[Per Meituan's reveal](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips):
+
 | Tier | Input | Output |
 |---|---|---|
 | Standard | $0.75/M tokens | $2.95/M tokens |
@@ -105,8 +120,10 @@ something — typically at a discount, but not zero. Free cached reads changes t
 patterns: long system prompts that are reused across many calls, or agentic loops that maintain a large
 shared context between turns.
 
-The launch promo pricing is $0.30/$1.20 per million tokens — competitive with Sonnet 5's intro pricing
-and well under Fable 5's rate. How long the promo runs has not been announced.
+The launch promo pricing is $0.30/$1.20 per million tokens — well under [Claude Sonnet 5's intro pricing
+of $2/$10 per million tokens](https://www.anthropic.com/news/claude-sonnet-5) and [Claude Fable 5's
+$10/$50 per million tokens](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5).
+How long the promo runs has not been announced.
 
 ---
 
@@ -114,9 +131,11 @@ and well under Fable 5's rate. How long the promo runs has not been announced.
 
 **API:** Live at standard and promo pricing.
 
-**Model weights:** GitHub and Hugging Face pages both show *"Model weights coming soon — stay tuned."*
-The weights have not yet dropped as of July 4. This is meaningful for builders who want to run
-self-hosted inference or fine-tune: full local deployment is not yet possible, though the API is open.
+**Model weights:** [GitHub](https://github.com/meituan-longcat/LongCat-2.0) and [Hugging
+Face](https://huggingface.co/meituan-longcat/LongCat-2.0) pages both show *"Model weights coming soon —
+stay tuned."* The weights have not yet dropped as of July 4. This is meaningful for builders who want to
+run self-hosted inference or fine-tune: full local deployment is not yet possible, though the API is
+open.
 
 **OpenRouter:** The Owl Alpha alias has been retired. The model should appear under its own name.
 
@@ -124,9 +143,10 @@ self-hosted inference or fine-tune: full local deployment is not yet possible, t
 
 ## Builder Takeaways
 
-**If you're evaluating coding agents:** LongCat-2.0 is now a legitimate tier-1 candidate alongside
-GPT-5.5 and Sonnet 5 on SWE-Bench Pro tasks. The narrow benchmark margin means you should run it on
-your actual tasks — the generic leaderboard position doesn't necessarily predict which model wins on your
+**If you're evaluating coding agents:** LongCat-2.0 is now a legitimate near-frontier candidate: it edges
+out GPT-5.5 narrowly on SWE-Bench Pro, but it trails Claude Sonnet 5's score by a clear margin, and it's
+open and far cheaper than either. Benchmark position isn't the whole story — run it on your actual
+tasks, since the generic leaderboard position doesn't necessarily predict which model wins on your
 specific codebase or agent scaffold.
 
 **If you have large shared contexts:** Benchmark the free cached read pricing against your current
