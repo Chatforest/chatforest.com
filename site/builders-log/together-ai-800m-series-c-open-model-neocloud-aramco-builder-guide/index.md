@@ -3,37 +3,37 @@
 > Together AI closed an $800M Series C at $8.3B valuation on July 1, with Aramco leading and NVIDIA participating. Annual bookings hit $1.15B. Here's what the funding signals and how it should shape your inference stack decisions.
 
 
-Together AI raised an [$800 million Series C](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All) on July 1, 2026, valuing the company at $8.3 billion. Aramco Ventures led the round; NVIDIA, Vista Equity Partners, General Catalyst, Emergence Capital, Pegatron, and others participated. The company disclosed that annual bookings surpassed $1.15 billion in Q2 2026 — roughly 3.6× the revenue run-rate typically associated with their $3.3B Series B valuation from 16 months prior.
+Together AI raised an [$800 million Series C](https://www.businesswire.com/news/home/20260701243402/en/Together-AI-Raises-$800-Million-at-$8.3-Billion-Valuation-to-Make-Frontier-AI-Accessible-to-All) on July 1, 2026, valuing the company at $8.3 billion. Aramco Ventures led the round; NVIDIA, Vista Equity Partners, General Catalyst, Emergence Capital, Pegatron, and others participated. The company [disclosed that annual bookings surpassed $1.15 billion](https://www.together.ai/blog/announcing-our-series-c) in the quarter before the raise closed.
 
-This round matters to builders beyond the headline number. Together AI is, in practice, the largest dedicated inference platform for open-weight models — Llama, DeepSeek, Qwen, Kimi, Nemotron. If you route traffic through open models at meaningful scale, you are likely already using it or have it on your shortlist. Understanding what this funding enables and what it signals about the market helps you plan your infrastructure bets.
+This round matters to builders beyond the headline number. Together AI is, in practice, one of the largest dedicated inference platforms for open-weight models — Llama, DeepSeek, Qwen, Kimi, Nemotron — with a [catalog of 200+ models](https://www.together.ai/models) and $1.15 billion in annual bookings. If you route traffic through open models at meaningful scale, you are likely already using it or have it on your shortlist. Understanding what this funding enables and what it signals about the market helps you plan your infrastructure bets.
 
 ## What Together AI Actually Is
 
 Together AI is not a model lab. It does not train frontier models. It is an inference provider — its product is letting you call open-weight models via API at production latency, without managing GPU clusters yourself.
 
-Three core products:
+Three core products (see [Together's rate card](https://www.together.ai/pricing) for current numbers — rates move with the catalog):
 
-- **Serverless Inference**: Pay per token across a wide catalog of open models ($0.05–$9.00 per million tokens depending on model). No commitment. Scales to zero.
-- **Dedicated Inference**: Single-tenant GPU instances by the hour ($6.49/hr for H100 SXM). Predictable latency, no cold starts, suitable for production SLAs.
-- **Batch Inference API**: 50% discount for workloads that don't need sub-second response. Ideal for synthetic data generation, offline evaluation, document processing pipelines.
+- **Serverless Inference**: Pay per token across a wide catalog of open models, priced per model. No commitment. Scales to zero.
+- **Dedicated Inference**: Single-tenant GPU instances by the hour (roughly $5–6/hr for H100 SXM at time of writing). Predictable latency, no cold starts, suitable for production SLAs.
+- **[Batch Inference API](https://www.together.ai/blog/batch-api)**: Up to 50% discount for workloads that don't need sub-second response. Ideal for synthetic data generation, offline evaluation, document processing pipelines.
 
-The company also sells GPU Clusters for training and fine-tuning at $3.99–$5.49/hr per H100 depending on commitment length.
+The company also sells GPU Clusters for training and fine-tuning, priced per H100-hour with lower rates for longer commitments.
 
-Underlying everything is ATLAS, Together's proprietary inference engine. It uses speculative decoding and other optimization techniques to push throughput — [the company now claims #1 output speed](https://techcrunch.com/2026/07/01/neocloud-together-ai-raises-800m-leaps-to-8-3b-valuation/) among GPU-based providers for DeepSeek-R1, DeepSeek-V3.1, Kimi-K2, Qwen-3-Coder-480B, and GPT-OSS-120B. In internal benchmarks, ATLAS delivers up to 400% acceleration over baseline serving on select models, and up to 2× faster serverless inference versus the prior generation of their stack.
+Underlying everything is ATLAS, Together's proprietary inference engine. It uses speculative decoding and other optimization techniques to push throughput — [the company now claims #1 output speed](https://www.together.ai/blog/fastest-inference-for-the-top-open-source-models) among GPU-based providers for DeepSeek-R1, DeepSeek-V3.1, Kimi-K2, Qwen-3-Coder-480B, and GPT-OSS-120B. In [Together's own benchmarks](https://www.together.ai/blog/adaptive-learning-speculator-system-atlas), ATLAS's adaptive speculator delivers up to 400% faster inference than baseline serving (e.g. vLLM) on select models; separately, the company says its serverless inference is now up to 2× faster than competing providers on several models.
 
 ## The Funding Math
 
-**Series B (February 2025):** $305M at $3.3B valuation.
+**[Series B (February 2025)](https://www.prnewswire.com/news-releases/together-ai-raises-305m-series-b-to-scale-ai-acceleration-cloud-for-open-source-and-enterprise-ai-302380967.html):** $305M at $3.3B valuation.
 
 **Series C (July 1, 2026):** $800M at $8.3B valuation.
 
 The valuation grew 2.5× in 16 months — faster than the broader AI infrastructure market compression seen in the same period. The catalyst is bookings. A $1.15B annualized bookings rate at Q2 close means the business is real, not speculative. Aramco Ventures — the investment arm of Saudi Aramco — led the round. This is a strategic bet from a sovereign-adjacent capital pool with both the capacity and the incentive to back long-duration infrastructure plays.
 
-NVIDIA's continued participation matters for a different reason: it confirms that NVIDIA sees open-model inference providers as distribution for its GPU supply, not competitors. The relationship is complementary — Together runs on H100s and H200s, and NVIDIA benefits from every token processed.
+NVIDIA's [continued participation](https://www.prnewswire.com/news-releases/together-ai-raises-305m-series-b-to-scale-ai-acceleration-cloud-for-open-source-and-enterprise-ai-302380967.html) — it also backed the Series B — matters for a different reason: it confirms that NVIDIA sees open-model inference providers as distribution for its GPU supply, not competitors. The relationship is complementary — Together runs on H100s and H200s, and NVIDIA benefits from every token processed.
 
 ## Use of Funds: 50× Capacity
 
-The company [disclosed commitments for more than 500 megawatts of compute](https://thenextweb.com/news/together-ai-800m-series-c-aramco-ventures) as part of the fundraise. That maps to a plan to grow capacity roughly 50 times over five years.
+The company [disclosed commitments for more than 500 megawatts of compute](https://thenextweb.com/news/together-ai-800m-series-c-aramco-ventures) as part of the fundraise. Together [says it expects capacity to grow roughly 50-fold over the next five years](https://www.together.ai/blog/announcing-our-series-c).
 
 To put 500 MW in context: a hyperscale data center is typically 50–200 MW. Together AI is committing to the equivalent of multiple hyperscale builds, dedicated to open-model inference. The capital structure from this round likely supports long-term power purchase agreements and hardware procurement at a scale that drives their per-GPU cost down, which gets passed to builders through lower token pricing.
 
@@ -53,7 +53,7 @@ Together AI makes sense when one or more of the following is true:
 
 **You're running an open model and want managed inference.** Running DeepSeek-R1, Llama 4, Kimi K2, or Qwen-3 yourself on provisioned GPUs has real operational overhead. Together's Serverless Inference removes that. If your throughput isn't high enough to amortize the ops cost of self-hosting, the API is the correct choice.
 
-**You need cost leverage over closed APIs.** Together AI's published rates are 6–60× cheaper than equivalent closed-model pricing for comparable quality on certain tasks. This range is wide because "equivalent quality" varies by task. Coding, summarization, and structured extraction tend to have the smallest quality gap. Nuanced reasoning, long-context tasks, and anything requiring the latest training data tend to have a larger gap. Run evaluations against your actual tasks.
+**You need cost leverage over closed APIs.** Together [says customers building on open models routinely see 6–20× lower costs](https://www.together.ai/blog/announcing-our-series-c) than equivalent closed-model pricing "while maintaining equal or better performance" — Decagon, one of its customers, cut inference costs sixfold after switching. This range is wide because "equivalent quality" varies by task. Coding, summarization, and structured extraction tend to have the smallest quality gap. Nuanced reasoning, long-context tasks, and anything requiring the latest training data tend to have a larger gap. Run evaluations against your actual tasks.
 
 **You need batch processing at scale.** The 50%-off Batch Inference API is underused by builders. If you're running offline pipelines — synthetic data generation, nightly document processing, evaluation suites — there's no reason to pay real-time pricing.
 
@@ -69,7 +69,7 @@ Together AI is not the right call when:
 
 Three months ago, the open-model inference market was tight. Rate limits were frequent, queue latencies spiked during peak hours, and builders with production workloads often had to maintain secondary provider fallbacks. Together AI was not the only neocloud in this position — Fireworks AI, Groq, Lepton, and others were similarly constrained.
 
-The $800M round — combined with Crusoe's $3B raise (also announced this week at $30B valuation) and CoreWeave's earlier IPO — signals that infrastructure capital has concluded the AI inference demand curve is real and durable. These are not speculative bets. They are capacity commitments.
+The $800M round — combined with [Crusoe's reported talks to raise $3B at a $30B valuation](https://thenextweb.com/news/crusoe-reportedly-in-talks-to-raise-3-billion-tripling-its-valuation) (first reported by Bloomberg the same week, not yet closed) and [CoreWeave's earlier IPO](https://www.coreweave.com/news/coreweave-announces-pricing-of-initial-public-offering) — signals that infrastructure capital has concluded the AI inference demand curve is real and durable. These are not speculative bets. They are capacity commitments.
 
 The practical effect for builders: the open-model inference market is about to have significantly more supply. More supply means lower prices, better availability, and more provider competition. If you locked in prices with a provider a year ago, they should renegotiate when your contract comes up. If you've been on a waitlist for dedicated instances, the list will clear faster.
 
@@ -84,5 +84,5 @@ The risk: this is the same dynamic that played out in cloud compute in 2012–20
 
 ---
 
-*Together AI's $800M round closed July 1, 2026. Crusoe closed its $3B raise approximately the same week. Both are available for AI infrastructure use.*
+*Together AI's $800M round closed July 1, 2026. Crusoe's reported $3B raise was still in talks, not closed, as of the same week.*
 

@@ -71,18 +71,18 @@
 <hr>
 <h2 id="openai-workspace-agents-go-metered-on-july-6">OpenAI: Workspace Agents go metered on July 6</h2>
 <h3 id="whats-happening">What&rsquo;s happening</h3>
-<p>ChatGPT Workspace Agents — the feature that lets you build agents connected to your org&rsquo;s tools (Salesforce, Jira, Google Workspace, internal APIs) — have been free since launch. OpenAI extended the free window twice, pushing a May 6 deadline back to July 6. That extension is now final.</p>
-<p>Starting July 6, every agent run inside ChatGPT on Business, Enterprise, or Edu plans incurs metered credits. Agent runs invoked from outside ChatGPT (e.g., Slack-triggered agents) remain in free preview with no published end date.</p>
+<p>ChatGPT Workspace Agents — the feature that lets you build agents connected to your org&rsquo;s tools (Salesforce, Jira, Google Workspace, internal APIs) — have been free since launch. OpenAI&rsquo;s originally announced deadline was May 6; that was extended to <strong>July 6</strong>, the <a href="https://poplab.io/blog/workspace-agents-pricing-ux/">confirmed final expiry date</a>. That extension is now final.</p>
+<p>Starting July 6, every agent run inside ChatGPT on Business, Enterprise, or Edu plans incurs metered credits. Agent runs invoked from outside ChatGPT (e.g., Slack-triggered agents) remain in free preview with no published end date (<a href="https://useauteur.com/blog/chatgpt-workspace-agents-pricing-credits-2026">OpenAI&rsquo;s rate card, via Auteur</a>).</p>
 <h3 id="the-rate-card">The rate card</h3>
-<p>OpenAI prices Workspace Agent runs in <strong>credits</strong> rather than dollars per token. A typical end-to-end run on GPT-5.5 costs between 5 and 25 credits. A worked example from OpenAI&rsquo;s documentation: a run with 20,000 input tokens + 80,000 cached input tokens + 5,000 output tokens lands at approximately <strong>7.25 credits</strong>.</p>
+<p>OpenAI prices Workspace Agent runs in <strong>credits</strong> rather than dollars per token. A typical end-to-end run on GPT-5.5 costs between 5 and 25 credits. A worked example from <a href="https://useauteur.com/blog/chatgpt-workspace-agents-pricing-credits-2026">OpenAI&rsquo;s rate card</a>: a run with 20,000 input tokens + 80,000 cached input tokens + 5,000 output tokens lands at approximately <strong>7.25 credits</strong>.</p>
 <p>The breakdown for that example at GPT-5.5 rates:</p>
 <ul>
 <li>20,000 fresh input tokens → higher rate</li>
-<li>80,000 cached tokens → 12.50 credits per million tokens (80K × $12.50/1M = 1 credit)</li>
+<li>80,000 cached tokens → 12.50 credits per million tokens (80,000 × 12.50 credits/1M = 1 credit)</li>
 <li>5,000 output tokens → highest rate</li>
 </ul>
-<p>The uncomfortable truth: <strong>OpenAI does not publicly disclose the dollar value of one credit.</strong> It is custom per account, set by your account team. This means you cannot budget Workspace Agents without a conversation with OpenAI sales — you literally cannot calculate the dollar cost of a run from public information alone.</p>
-<p>For reference, GPT-5.5 API pricing (separate from Workspace Agents but useful context) is $5 per million input tokens and $30 per million output tokens.</p>
+<p>The uncomfortable truth: <strong>OpenAI does not publicly disclose the dollar value of one credit.</strong> It is custom per account, set by your account team. This means you cannot budget Workspace Agents without a conversation with OpenAI sales — you literally cannot calculate the dollar cost of a run from public information alone. (<a href="https://useauteur.com/blog/chatgpt-workspace-agents-pricing-credits-2026">Source</a>: &ldquo;a single public dollars-per-credit figure isn&rsquo;t something we can responsibly quote.&quot;)</p>
+<p>For reference, GPT-5.5 <a href="https://developers.openai.com/api/docs/models/gpt-5.5">API pricing</a> (separate from Workspace Agents but useful context) is $5 per million input tokens and $30 per million output tokens.</p>
 <h3 id="what-to-do-before-july-6">What to do before July 6</h3>
 <ol>
 <li><strong>Contact your account team</strong> to get the dollar/credit conversion rate for your contract. Without this, you cannot budget.</li>
@@ -94,7 +94,7 @@
 <hr>
 <h2 id="anthropic-fable-5-ends-its-50-inclusion-on-july-7">Anthropic: Fable 5 ends its 50% inclusion on July 7</h2>
 <h3 id="whats-happening-1">What&rsquo;s happening</h3>
-<p>Since Fable 5 launched, Anthropic has included it in paid plans (Pro, Max, Team, select Enterprise) for up to 50% of weekly usage limits — meaning roughly half your usage could be Fable 5 without additional charge. That window closes on <strong>July 7</strong>.</p>
+<p>Since Fable 5 launched, Anthropic has included it in paid plans (Pro, Max, Team, select Enterprise) for up to 50% of weekly usage limits — meaning roughly half your usage could be Fable 5 without additional charge. That window closes on <strong>July 7</strong> (<a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic: Redeploying Claude Fable 5</a>: &ldquo;For Pro, Max, Team, and select Enterprise plans, Fable 5 will be included for up to 50% of weekly usage limits through July 7&rdquo;).</p>
 <p>After July 7, Fable 5 access requires <strong>usage credits</strong> at the standard API rate:</p>
 <table>
 <thead>
@@ -106,21 +106,21 @@
 <tbody>
 <tr>
 <td>Input tokens</td>
-<td>$10 per million</td>
+<td><a href="https://platform.claude.com/docs/en/about-claude/pricing">$10 per million</a></td>
 </tr>
 <tr>
 <td>Output tokens</td>
-<td>$50 per million</td>
+<td><a href="https://platform.claude.com/docs/en/about-claude/pricing">$50 per million</a></td>
 </tr>
 <tr>
-<td>Spending cap</td>
-<td>$2,000/day (configurable)</td>
+<td>Credit-purchase ceiling</td>
+<td><a href="https://www.digitalapplied.com/blog/fable-5-usage-credits-cost-engineering-cache-batch-2026">$2,000/day</a> (fixed cap on daily credit purchases; the separate monthly <em>spending</em> cap is configurable)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Important:</strong> If you have Standard Enterprise seats (as opposed to Premium seats), the grace period never applied — Standard seats have required usage credits for Fable 5 from day one.</p>
+<p><strong>Important:</strong> If you have Standard Enterprise seats (as opposed to Premium seats), the grace period never applied — Standard seats have required usage credits for Fable 5 from day one (<a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic: Redeploying Claude Fable 5</a>: &ldquo;Standard Enterprise: No included Fable 5 allowance; access requires enabling usage credits&rdquo;).</p>
 <h3 id="the-fable-5--sonnet-5-cost-gap">The Fable 5 / Sonnet 5 cost gap</h3>
-<p>At $10/$50 per million tokens, Fable 5 costs approximately <strong>5× more per token</strong> than Sonnet 5&rsquo;s introductory rate ($2/$10 per million tokens, which runs through August 31).</p>
+<p>At $10/$50 per million tokens, Fable 5 costs approximately <strong>5× more per token</strong> than <a href="https://platform.claude.com/docs/en/about-claude/pricing">Sonnet 5&rsquo;s introductory rate</a> ($2/$10 per million tokens, which runs through August 31, 2026, before moving to $3/$15).</p>
 <p>This isn&rsquo;t a reason to avoid Fable 5 — for the tasks it handles best, it&rsquo;s often worth the premium. But it does mean you need routing discipline: Fable 5 for planning, architecture, and the hardest reasoning tasks; Sonnet 5 for bulk coding, document processing, and anything where quality differences are marginal.</p>
 <h3 id="the-hard-cutoff-risk">The hard cutoff risk</h3>
 <p>This is the part builders miss: <strong>if you don&rsquo;t enable usage credits before your Fable 5 allowance runs out on July 7, access stops</strong>. There is no automatic fallback to Sonnet 5, no grace period, no overage at slower speed. Fable 5 simply becomes unavailable mid-project, mid-workflow, mid-week — until you enable credits.</p>
@@ -143,7 +143,7 @@
 <li><strong>Phase 3</strong>: Metered billing with published rate card</li>
 <li><strong>Phase 4</strong>: Cost optimization becomes competitive differentiation</li>
 </ul>
-<p>Tesla&rsquo;s $200/week per-employee AI cap (activating July 6, the same day OpenAI billing starts) is the enterprise side of the same story — companies are now setting explicit budgets for AI spend, which only makes sense when the underlying tools are metered.</p>
+<p><a href="https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/">Tesla&rsquo;s $200/week per-employee AI cap</a> (activating July 6, the same day OpenAI billing starts) is the enterprise side of the same story — companies are now setting explicit budgets for AI spend, which only makes sense when the underlying tools are metered.</p>
 <p>For builders, the strategic implication is straightforward: <strong>your AI infrastructure budget is now a real line item, not an assumption.</strong> Routing, caching, model selection, and context management are not optimizations — they are cost controls.</p>
 <hr>
 <h2 id="quick-reference-what-changes-and-when">Quick reference: what changes and when</h2>

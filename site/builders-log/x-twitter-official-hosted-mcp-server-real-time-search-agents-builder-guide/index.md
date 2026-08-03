@@ -3,21 +3,21 @@
 > X now runs a hosted MCP endpoint at api.x.com/mcp that connects Claude, Cursor, or any MCP client to its full-archive search, trends, and user data via your own OAuth credentials. Here's what builders need to know.
 
 
-X [launched an official hosted MCP server on June 30, 2026](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/). The single-endpoint deployment at `api.x.com/mcp` lets Claude, Cursor, or any MCP-compatible client search and read X data through your own developer credentials — no custom bridge to build, no server to host.
+X [launched an official hosted MCP server on June 30, 2026](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/). The primary deployment at `api.x.com/mcp` lets Claude, Cursor, or any MCP-compatible client search and read X data through your own developer credentials — no custom bridge to build, no server to host. X also runs a secondary MCP server at `docs.x.com/mcp` for querying its own API documentation ([docs.x.com/tools/mcp](https://docs.x.com/tools/mcp)).
 
-This is the first major social platform to ship an [officially-hosted MCP server](https://devcommunity.x.com/t/announcing-the-hosted-x-mcp/269558), and it signals that the "platforms become MCP-native" prediction is arriving faster than expected.
+X's [officially-hosted MCP server](https://devcommunity.x.com/t/announcing-the-hosted-x-mcp/269558) puts it alongside [GitHub, Slack, Notion, Stripe, and Salesforce](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/) — companies that already run their own official MCP servers — and it signals that the "platforms become MCP-native" prediction is arriving faster than expected.
 
 ## What the Server Exposes
 
 Through the MCP, agents can access:
 
-- **Full-archive search** — query the complete X post history, not just the recent window
-- **Trending topics** — real-time trends with geographic filtering
-- **User lookup** — profile data, follower counts, bio, pinned posts
-- **Conversations** — thread context and reply chains
-- **Bookmarks** — your saved posts, retrievable programmatically
+- **Full-archive search** — query the complete X post history, not just the recent window ([docs.x.com/tools/mcp](https://docs.x.com/tools/mcp))
+- **Trending topics** — real-time trends, filterable by location ([docs.x.com/tools/mcp](https://docs.x.com/tools/mcp))
+- **User lookup** — profile data including follower counts, bio, and pinned post ([X API data dictionary](https://docs.x.com/x-api/fundamentals/data-dictionary))
+- **Conversations** — search and analyze conversation threads on X ([TechCrunch](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/))
+- **Bookmarks** — list, add, and remove your saved posts programmatically ([docs.x.com/tools/mcp](https://docs.x.com/tools/mcp))
 
-**Current limitation: read-only.** The X MCP server does not expose Write API endpoints. Agents cannot post, reply, follow, or take any action on your behalf. X's standard API pricing applies for reads — search costs vary by tier.
+**Current limitation: mostly read-only.** The X MCP server exposes a narrow slice of write actions — adding/removing bookmarks and creating and publishing draft Articles — but it does not expose the post-creation, reply, or follow endpoints, so agents still cannot tweet, reply, DM, or follow on your behalf through MCP ([docs.x.com/tools/mcp](https://docs.x.com/tools/mcp)). X's API runs on pay-per-use pricing — currently $0.005 per post read and $0.010 per user read, with no subscription required ([X API pricing](https://docs.x.com/x-api/getting-started/pricing)).
 
 ## How to Connect
 
@@ -55,11 +55,11 @@ X now runs all of that at the platform layer. The developer cost to get X data i
 
 ## What to Watch
 
-**Write access is the next unlock.** X's write APIs (post, reply, DM) are expensive and locked behind higher API tiers precisely because autonomous posting is the abuse vector. When or whether X enables write access through MCP — with appropriate rate limits — will determine whether this becomes a full social automation layer for agents.
+**Write access is the next unlock.** X's write APIs for posting, replying, and DMing are already available on the standard X API under pay-per-use pricing ([$0.015 per post created](https://docs.x.com/x-api/getting-started/pricing)) — but the MCP server doesn't expose them; the only write actions it currently supports are managing bookmarks and publishing Articles ([docs.x.com/tools/mcp](https://docs.x.com/tools/mcp)). When or whether X extends MCP write access to posting and replying — with appropriate rate limits, since autonomous posting is the obvious abuse vector — will determine whether this becomes a full social automation layer for agents.
 
-**Rate limits at scale.** The existing X API rate limits (not MCP-specific) constrain how many searches an agent can run per 15-minute window. High-frequency monitoring agents will hit ceilings quickly on lower API tiers. Budget accordingly.
+**Rate limits at scale.** The existing X API rate limits (not MCP-specific) constrain how many searches an agent can run per 15-minute window — recent search, for example, is capped at 300 requests per 15 minutes per user ([X API rate limits](https://docs.x.com/x-api/fundamentals/rate-limits)). High-frequency monitoring agents will hit ceilings quickly on the standard pay-per-use plan; only Enterprise customers get custom limits. Budget accordingly.
 
-**Other platforms will follow.** LinkedIn, GitHub, Reddit, and Bluesky all have API layers that could be MCP-wrapped. X shipping an official hosted server sets the template. Expect announcements in the next 6-12 months from platforms that want agent-native distribution.
+**Other platforms will follow.** LinkedIn, Reddit, and Bluesky don't yet run an official hosted MCP server of their own — only community-built integrations exist for each today — even though all three have API layers that could be MCP-wrapped. X shipping an official hosted server sets the template, following [GitHub, Slack, Notion, Stripe, and Salesforce](https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/), which already have their own. Expect announcements in the next 6-12 months from social platforms that want agent-native distribution.
 
 **Security posture.** Your OAuth credentials gate what the MCP server can access. Treat the MCP connection like any API key: narrow the OAuth scopes to exactly what your agent needs, rotate credentials regularly, and monitor usage logs for unexpected query patterns.
 

@@ -3,9 +3,10 @@ title: "Vercel's Production Agent Stack: AI SDK 7, eve, Connect, and Agent Run O
 date: 2026-07-04
 description: "Vercel's full production agent toolkit landed in June–July 2026: AI SDK 7 adds WorkflowAgent and tool approvals, eve turns agents into directories, Connect ends long-lived secrets, and the new Agent Runs MCP tools expose full trace data. Here is how the pieces fit together."
 tags: ["vercel", "ai-sdk", "agents", "mcp", "typescript", "javascript", "observability", "eve"]
+sources_audited: 2026-08-03
 ---
 
-Vercel's agent story has shifted from infrastructure to a complete production toolkit. At Ship London (June 17, 2026) the company launched [AI SDK 7](https://vercel.com/changelog/ai-sdk-7), the [eve agent framework](https://vercel.com/blog/introducing-eve), and [Vercel Connect](https://vercel.com/blog/introducing-vercel-connect) in a single event. [Vercel Services](https://vercel.com/blog/vercel-ship-2026-recap) went live July 1. Agent Run observability via MCP arrived July 4. This guide maps each piece and shows how they connect.
+Vercel's agent story has shifted from infrastructure to a complete production toolkit. At [Ship London](https://vercel.com/ship/london) (June 17, 2026) the company launched [AI SDK 7](https://vercel.com/changelog/ai-sdk-7), the [eve agent framework](https://vercel.com/blog/introducing-eve), and [Vercel Connect](https://vercel.com/blog/introducing-vercel-connect) in a single event. [Vercel Services](https://vercel.com/blog/vercel-ship-2026-recap) went live July 1. [Agent Run observability via MCP](https://vercel.com/changelog/agent-runs-vercel-mcp-cli) arrived July 3. This guide maps each piece and shows how they connect.
 
 ---
 
@@ -14,9 +15,9 @@ Vercel's agent story has shifted from infrastructure to a complete production to
 | Layer | What it is | Status |
 |---|---|---|
 | **AI SDK 7** | Provider-agnostic agent runtime — WorkflowAgent, tool approvals, HarnessAgent | GA |
-| **eve** | Open-source directory-based agent framework that deploys on Vercel Functions | GA (Apache 2.0) |
+| **eve** | Open-source directory-based agent framework that deploys on Vercel | [Beta](https://github.com/vercel/eve) ([Apache 2.0](https://github.com/vercel/eve/blob/main/LICENSE)) |
 | **Vercel Connect** | Task-scoped short-lived credentials for third-party APIs | Public Beta |
-| **Agent Run Observability** | MCP tools to query eve agent traces and token usage | GA (July 4) |
+| **Agent Run Observability** | MCP tools to query eve agent traces and token usage | [Shipped July 3](https://vercel.com/changelog/agent-runs-vercel-mcp-cli) |
 
 ---
 
@@ -42,7 +43,7 @@ The codemod handles the straightforward renames automatically. After running it,
 
 ### WorkflowAgent: durable execution
 
-The biggest addition. A `ToolLoopAgent` runs entirely in memory — if the process dies, the run is gone. `WorkflowAgent` runs inside Vercel Workflow SDK, so each tool execution is a durable step with automatic retries and state persistence.
+The biggest addition. A `ToolLoopAgent` runs entirely in memory — if the process dies, the run is gone. [`WorkflowAgent` runs inside a Vercel Workflow](https://ai-sdk.dev/v7/docs/agents/workflow-agent), so each tool execution is a durable step with automatic retries (3 attempts by default) and state persistence.
 
 Use `WorkflowAgent` when your agent tasks take more than a few seconds, involve external APIs that can fail, or need human-in-the-loop approval at checkpoints.
 
@@ -71,26 +72,32 @@ New in v7 — `HarnessAgent` wraps external agent runtimes (Claude Code, Codex, 
 
 ### MCP Apps
 
-AI SDK 7 adds MCP Apps: MCP servers that render sandboxed iframes inside the client UI. Builders can ship interactive tool UIs (file pickers, diff viewers, approval dialogs) that run inside Claude.ai, Cursor, or any MCP-compatible client without requiring the user to leave the interface.
+[AI SDK 7 adds MCP Apps](https://vercel.com/changelog/ai-sdk-7): MCP support that distinguishes model-visible from app-only tools and uses tool metadata to render app-specific UI inside sandboxed iframes, communicating over JSON-RPC for tools, resources, logs, and display updates — so a builder can ship an interactive tool UI without the user leaving an MCP-compatible client.
 
 ### Observability
 
-The `@ai-sdk/otel` package is now the standard path for OpenTelemetry. Every operation — model call, tool execution, step start/end — emits a span. Step performance metrics (response time, TTFT, throughput) are included by default.
+The [`@ai-sdk/otel` package](https://vercel.com/changelog/ai-sdk-7) is now the standard path for OpenTelemetry. Every operation — model call, tool execution, step start/end — emits a span.
 
 ```typescript
-import { registerOTel } from '@ai-sdk/otel';
-registerOTel({ serviceName: 'my-agent' });
+import { generateText, registerTelemetry } from 'ai';
+import { OpenTelemetry } from '@ai-sdk/otel';
+registerTelemetry(new OpenTelemetry());
 ```
 
-Node.js tracing channel support means you can tap into diagnostics without an OTel collector if you just need local structured logs.
+Separately, step results now expose their own timing and throughput fields directly — response time, total step time, tool execution time, time to first output, and output tokens per second — available via lifecycle callbacks whether or not you've wired up OpenTelemetry.
+
+[AI SDK 7 also emits structured telemetry through the Node.js tracing channel](https://vercel.com/changelog/ai-sdk-7), so observability providers can subscribe once and keep async context across streaming and tool execution without an OTel collector if you just need local structured logs.
 
 ### Terminal UI for local development
 
-`@ai-sdk/tui` gives you a TUI for testing agents locally — inspect every LLM call, tool input/output, and token count in the terminal without setting up a dashboard.
+[`@ai-sdk/tui`](https://vercel.com/changelog/ai-sdk-7) gives you a TUI for testing agents locally — inspect every LLM call, tool input/output, and token count in the terminal without setting up a dashboard.
 
-```bash
-npm install @ai-sdk/tui
-npx ai-tui start
+```typescript
+import { ToolLoopAgent } from 'ai';
+import { runAgentTUI } from '@ai-sdk/tui';
+
+const agent = new ToolLoopAgent({ model: 'openai/gpt-5.5' });
+await runAgentTUI({ agent });
 ```
 
 ---
@@ -113,7 +120,7 @@ agent/
   subagents/         # nested agent directories
 ```
 
-Everything is file-system-first. Eve discovers and validates the directory on build, compiles a manifest, and serves it as a durable runtime on Vercel Functions.
+Everything is file-system-first. [Eve](https://vercel.com/blog/introducing-eve) discovers and validates the directory on build, compiles a manifest, and serves it as a durable runtime on Vercel.
 
 ### Minimal start
 
@@ -133,7 +140,7 @@ Add `agent/instructions.md` as the system prompt. Tools are individual TypeScrip
 vercel deploy
 ```
 
-No additional configuration. Eve recognizes an `agent/` directory and provisions Functions, Workflow SDK durable execution, and Vercel Sandbox automatically. Local and production environments use identical code.
+No additional configuration: an eve agent is [an ordinary Vercel project](https://vercel.com/blog/introducing-eve), so it deploys the way any other frontend or backend does. Durable execution runs on the open-source Workflow SDK, and the sandbox adapter swaps to Vercel Sandbox without a code change. Local and production environments use identical code.
 
 ### Channels and integrations
 
@@ -161,13 +168,13 @@ Connect replaces the stored token with runtime credential exchange. When the age
 
 ### How it works
 
-1. Register a connector once in the Vercel dashboard (Slack, GitHub, Linear, Discord, Notion, Salesforce, Figma, Snowflake, or generic OAuth/API key).
+1. Register a [connector](https://vercel.com/docs/connect) once in the Vercel dashboard. Slack, GitHub, Snowflake, and Salesforce are natively-managed connector types; anything else (Notion, Linear, etc.) connects via generic Custom OAuth or a static API key.
 2. Set permissions at registration time — e.g., a GitHub connector scoped to one repo and read-only.
 3. In your agent, the SDK fetches and refreshes tokens automatically at runtime.
 
 No secret to store, rotate, or audit.
 
-### Pricing
+### [Pricing](https://vercel.com/docs/connect/pricing)
 
 | Plan | Included | Overage |
 |---|---|---|
@@ -178,22 +185,21 @@ No secret to store, rotate, or audit.
 
 ## Agent Run Observability via MCP
 
-Added July 4, the Vercel MCP server now includes four Agent Runs tools. Any MCP-compatible client (Claude Code, Cursor, etc.) can query your eve agent's production behavior directly in the same context as your code.
+[Added July 3](https://vercel.com/changelog/agent-runs-vercel-mcp-cli), the Vercel MCP server now includes four Agent Runs tools. Any MCP-compatible client (Claude Code, Cursor, etc.) can query your eve agent's production behavior directly in the same context as your code.
 
-### Setup
+### [Setup](https://vercel.com/docs/agent-resources/vercel-mcp)
 
 ```bash
-npx plugins add vercel/vercel-plugin
-vercel mcp
+npx add-mcp https://mcp.vercel.com
 ```
 
-This installs the Vercel MCP server and configures your local MCP client. The four new tools:
+This detects your installed AI clients and configures the Vercel MCP server for each one (Claude Code, Cursor, and others each have their own one-line variant in Vercel's docs). The four new tools:
 
 **`list_agent_run_projects`** — find all projects in your team with eve agent activity. Returns run counts and average durations per project.
 
 **`list_agent_runs`** — paginated list of runs for a project, with status, model, trigger, token usage, and time series.
 
-**`get_agent_run`** — metadata for a single run: events, workflow steps, usage, and subagent breakout.
+**`get_agent_run`** — metadata for a single run: events, workflow metadata, usage, and subagent breakout.
 
 **`get_agent_run_trace`** — full trace: every turn, message, reasoning step, tool call, and token count. Use this to debug unexpected behavior in production.
 
@@ -237,9 +243,9 @@ The codemod handles most steps 4 and 5 automatically, but review its output befo
 
 ## What to watch
 
-- **eve 1.0**: the framework is stable but still at Public Beta quality on some connectors. Check [github.com/vercel/eve](https://github.com/vercel/eve) for the current connector maturity table.
+- **eve is still in beta**: [Vercel's own repo says as much](https://github.com/vercel/eve) — "the framework, APIs, documentation, and behavior may change before general availability." There's no 1.0 release yet; treat directory structure and connection configs as subject to change.
 - **Vercel Connect GA**: currently Public Beta; pricing may adjust at GA.
-- **HarnessAgent support matrix**: Claude Code and Codex integrations are confirmed; others are listed as "in progress" in the AI SDK 7 release notes.
+- **HarnessAgent**: [AI SDK 7's release notes](https://vercel.com/changelog/ai-sdk-7) list Claude Code, Codex, Deep Agents, OpenCode, and Pi adapters together with no stated distinction in maturity between them — worth verifying directly against your target runtime before depending on one in production.
 
 ---
 

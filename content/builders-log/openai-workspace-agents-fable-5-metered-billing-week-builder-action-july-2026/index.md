@@ -1,6 +1,7 @@
 ---
 title: "The Week AI Gets a Tab: OpenAI Workspace Agents and Fable 5 Both Go Metered July 6–7"
 date: 2026-07-04
+sources_audited: 2026-08-03
 description: "OpenAI ends free Workspace Agent runs on July 6; Anthropic ends Fable 5's 50% weekly inclusion on July 7. Two major providers, one week, one message: the era of AI bundled into your SaaS price is over."
 og_description: "Both OpenAI and Anthropic transition premium AI access to metered billing the same week (July 6–7). Here's what each change means, what the actual costs look like, and the specific steps builders need to take before Monday."
 content_type: "Builder's Log"
@@ -18,22 +19,22 @@ This isn't a coincidence — it's the industry normalizing the idea that frontie
 
 ### What's happening
 
-ChatGPT Workspace Agents — the feature that lets you build agents connected to your org's tools (Salesforce, Jira, Google Workspace, internal APIs) — have been free since launch. OpenAI extended the free window twice, pushing a May 6 deadline back to July 6. That extension is now final.
+ChatGPT Workspace Agents — the feature that lets you build agents connected to your org's tools (Salesforce, Jira, Google Workspace, internal APIs) — have been free since launch. OpenAI's originally announced deadline was May 6; that was extended to **July 6**, the [confirmed final expiry date](https://poplab.io/blog/workspace-agents-pricing-ux/). That extension is now final.
 
-Starting July 6, every agent run inside ChatGPT on Business, Enterprise, or Edu plans incurs metered credits. Agent runs invoked from outside ChatGPT (e.g., Slack-triggered agents) remain in free preview with no published end date.
+Starting July 6, every agent run inside ChatGPT on Business, Enterprise, or Edu plans incurs metered credits. Agent runs invoked from outside ChatGPT (e.g., Slack-triggered agents) remain in free preview with no published end date ([OpenAI's rate card, via Auteur](https://useauteur.com/blog/chatgpt-workspace-agents-pricing-credits-2026)).
 
 ### The rate card
 
-OpenAI prices Workspace Agent runs in **credits** rather than dollars per token. A typical end-to-end run on GPT-5.5 costs between 5 and 25 credits. A worked example from OpenAI's documentation: a run with 20,000 input tokens + 80,000 cached input tokens + 5,000 output tokens lands at approximately **7.25 credits**.
+OpenAI prices Workspace Agent runs in **credits** rather than dollars per token. A typical end-to-end run on GPT-5.5 costs between 5 and 25 credits. A worked example from [OpenAI's rate card](https://useauteur.com/blog/chatgpt-workspace-agents-pricing-credits-2026): a run with 20,000 input tokens + 80,000 cached input tokens + 5,000 output tokens lands at approximately **7.25 credits**.
 
 The breakdown for that example at GPT-5.5 rates:
 - 20,000 fresh input tokens → higher rate
-- 80,000 cached tokens → 12.50 credits per million tokens (80K × $12.50/1M = 1 credit)
+- 80,000 cached tokens → 12.50 credits per million tokens (80,000 × 12.50 credits/1M = 1 credit)
 - 5,000 output tokens → highest rate
 
-The uncomfortable truth: **OpenAI does not publicly disclose the dollar value of one credit.** It is custom per account, set by your account team. This means you cannot budget Workspace Agents without a conversation with OpenAI sales — you literally cannot calculate the dollar cost of a run from public information alone.
+The uncomfortable truth: **OpenAI does not publicly disclose the dollar value of one credit.** It is custom per account, set by your account team. This means you cannot budget Workspace Agents without a conversation with OpenAI sales — you literally cannot calculate the dollar cost of a run from public information alone. ([Source](https://useauteur.com/blog/chatgpt-workspace-agents-pricing-credits-2026): "a single public dollars-per-credit figure isn't something we can responsibly quote.")
 
-For reference, GPT-5.5 API pricing (separate from Workspace Agents but useful context) is $5 per million input tokens and $30 per million output tokens.
+For reference, GPT-5.5 [API pricing](https://developers.openai.com/api/docs/models/gpt-5.5) (separate from Workspace Agents but useful context) is $5 per million input tokens and $30 per million output tokens.
 
 ### What to do before July 6
 
@@ -49,21 +50,21 @@ For reference, GPT-5.5 API pricing (separate from Workspace Agents but useful co
 
 ### What's happening
 
-Since Fable 5 launched, Anthropic has included it in paid plans (Pro, Max, Team, select Enterprise) for up to 50% of weekly usage limits — meaning roughly half your usage could be Fable 5 without additional charge. That window closes on **July 7**.
+Since Fable 5 launched, Anthropic has included it in paid plans (Pro, Max, Team, select Enterprise) for up to 50% of weekly usage limits — meaning roughly half your usage could be Fable 5 without additional charge. That window closes on **July 7** ([Anthropic: Redeploying Claude Fable 5](https://www.anthropic.com/news/redeploying-fable-5): "For Pro, Max, Team, and select Enterprise plans, Fable 5 will be included for up to 50% of weekly usage limits through July 7").
 
 After July 7, Fable 5 access requires **usage credits** at the standard API rate:
 
 | Metric | Rate |
 |--------|------|
-| Input tokens | $10 per million |
-| Output tokens | $50 per million |
-| Spending cap | $2,000/day (configurable) |
+| Input tokens | [$10 per million](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Output tokens | [$50 per million](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Credit-purchase ceiling | [$2,000/day](https://www.digitalapplied.com/blog/fable-5-usage-credits-cost-engineering-cache-batch-2026) (fixed cap on daily credit purchases; the separate monthly *spending* cap is configurable) |
 
-**Important:** If you have Standard Enterprise seats (as opposed to Premium seats), the grace period never applied — Standard seats have required usage credits for Fable 5 from day one.
+**Important:** If you have Standard Enterprise seats (as opposed to Premium seats), the grace period never applied — Standard seats have required usage credits for Fable 5 from day one ([Anthropic: Redeploying Claude Fable 5](https://www.anthropic.com/news/redeploying-fable-5): "Standard Enterprise: No included Fable 5 allowance; access requires enabling usage credits").
 
 ### The Fable 5 / Sonnet 5 cost gap
 
-At $10/$50 per million tokens, Fable 5 costs approximately **5× more per token** than Sonnet 5's introductory rate ($2/$10 per million tokens, which runs through August 31).
+At $10/$50 per million tokens, Fable 5 costs approximately **5× more per token** than [Sonnet 5's introductory rate](https://platform.claude.com/docs/en/about-claude/pricing) ($2/$10 per million tokens, which runs through August 31, 2026, before moving to $3/$15).
 
 This isn't a reason to avoid Fable 5 — for the tasks it handles best, it's often worth the premium. But it does mean you need routing discipline: Fable 5 for planning, architecture, and the hardest reasoning tasks; Sonnet 5 for bulk coding, document processing, and anything where quality differences are marginal.
 
@@ -94,7 +95,7 @@ The transition looks like this:
 - **Phase 3**: Metered billing with published rate card
 - **Phase 4**: Cost optimization becomes competitive differentiation
 
-Tesla's $200/week per-employee AI cap (activating July 6, the same day OpenAI billing starts) is the enterprise side of the same story — companies are now setting explicit budgets for AI spend, which only makes sense when the underlying tools are metered.
+[Tesla's $200/week per-employee AI cap](https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/) (activating July 6, the same day OpenAI billing starts) is the enterprise side of the same story — companies are now setting explicit budgets for AI spend, which only makes sense when the underlying tools are metered.
 
 For builders, the strategic implication is straightforward: **your AI infrastructure budget is now a real line item, not an assumption.** Routing, caching, model selection, and context management are not optimizations — they are cost controls.
 

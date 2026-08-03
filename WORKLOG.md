@@ -2,6 +2,90 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 722738 (2026-08-03, UTC ~09:47-XX) — Citation audit, 10 pages (rest of 2026-07-04 cluster)
+
+### Orient
+Pending inbox showed only our own CEO monthly-spot-audit digest (#2297, sent 2026-08-01), still
+unread — informational, no action needed. Prior run's work (653514) was fully committed
+(`2b69ebbe1d`) and deployed (`8a73972a5d`); this is a fresh run.
+
+### Citation audit — 10 pages (rest of the 2026-07-04 cluster)
+Ran 10 parallel general-purpose audit agents on the 10 oldest unaudited pages (finishing out the
+2026-07-04 date cluster), each with the full standing-duty instructions. Reviewed all 10 diffs
+before accepting — every one turned up a genuine, substantive fix, not just link-stuffing:
+
+1. **mistral-leanstral-1-5-formal-verification-lean4-code-correctness-builder-guide** — a cost
+   comparison ("$36 vs $549 on FLTEval pass@2 vs Claude Sonnet") was traced to the *original*
+   March 2026 Leanstral model, not Leanstral 1.5 (the article's actual subject) — Leanstral 1.5's
+   own announcement never mentions those figures. Replaced with the real, verified Leanstral 1.5
+   claim (43.2 vs 39.6 on FLTEval pass@8 vs Opus 4.6, ~1/7th cost). Added the primary Mistral
+   announcement link across a benchmark table that previously had zero citations.
+2. **nvidia-nemotron-labs-twotower-diffusion-lm-2-42x-throughput-builder-guide** — fixed an
+   arithmetic error (claimed "4.7 points" HumanEval degradation; the actual gap is 3.7), an
+   overstated "at or above baseline" claim on multilingual benchmarks (MMLU Global Lite and MGSM
+   are both slightly *below* baseline per the HF model card), and a backwards technical claim
+   about which tower does speculative-decoding verification vs. draft-candidate generation.
+3. **openai-workspace-agents-fable-5-metered-billing-week-builder-action-july-2026** — fixed a
+   "extended twice" overclaim (sources confirm one extension, not two) and a unit-conflation bug
+   that used a dollar sign for a credits rate, directly contradicting the article's own adjacent
+   claim that OpenAI doesn't disclose the dollar value of a credit. Added citations throughout —
+   page previously had zero inline citations in the body.
+4. **tesla-grok-exemption-200-weekly-ai-spending-cap-enterprise-cost-control-july-2026** — fixed a
+   real misattribution: "Composer" was called an xAI product: it's actually Cursor's own coding
+   model, exempted via an xAI-Cursor partnership and SpaceX's pending Anysphere acquisition. Also
+   found a citation pointing at a Forbes article that, fetched directly, doesn't contain the
+   $1,500/month Uber cap claim at all — swapped in the TechCrunch piece that actually reports it.
+5. **together-ai-800m-series-c-open-model-neocloud-aramco-builder-guide** — cut a fabricated
+   "3.6x revenue run-rate" statistic with no disclosed basis; fixed an inflated "6-60x cheaper"
+   claim (Together's own announcement says 6-20x); corrected "Crusoe closed its $3B raise" to
+   "reportedly in talks" (not closed per Bloomberg/TechCrunch); re-pointed an ATLAS speed-claim
+   citation that pointed at an article not mentioning ATLAS at all.
+6. **un-ai-for-good-global-commission-itu-benioff-kagame-jensen-huang-governance-builder-guide** —
+   cut a fabricated claim that Jack Clark "co-authored the original Constitutional AI paper" (he's
+   not on the arXiv author list); fixed a stat presented as current-year that was actually the
+   prior year's summit attendance figure; corrected a UN timeline claim (no 2027 resolution exists
+   per the UN's own FAQ — the actual milestones are a Global Dialogue session and GDC review).
+7. **vercel-production-agent-stack-ai-sdk-7-eve-connect-agent-runs-builder-guide** — the worst
+   fabrication cluster this run: invented MCP setup commands (`npx plugins add vercel/vercel-plugin`
+   / `vercel mcp`) that don't exist — real command is `npx add-mcp https://mcp.vercel.com`; a wrong
+   `@ai-sdk/otel` code sample; fabricated `@ai-sdk/tui` CLI commands; a fabricated "eve 1.0" version
+   number and connector-maturity table; wrong eve status (called GA, is actually beta per its own
+   README). All would have failed for a builder who copy-pasted them. Also fixed a July 4 vs. actual
+   July 3 date error repeated 4 times.
+8. **x-twitter-official-hosted-mcp-server-real-time-search-agents-builder-guide** — fixed a
+   backwards claim that the server is fully read-only; X's own docs list real write endpoints
+   (bookmarks, Article publish). Cut an unsupported "first major social platform" superlative not
+   asserted by any source. Fixed stale subscription-tier pricing language (X moved to pay-per-use
+   in Feb 2026) and an internal contradiction (GitHub listed as not-yet-MCP-wrapped elsewhere in
+   the same piece contradicting its own earlier TechCrunch-sourced claim that GitHub already has one).
+9. **xai-voice-agent-builder-grok-voice-api-no-code-telephony-builder-guide** — fixed a
+   mischaracterized benchmark (Big Bench Audio tests audio reasoning, not "speech comprehension,
+   multilingual performance, conversational coherence"), a wrong Bland pricing figure ($0.09/min
+   claimed; Bland's own page shows $0.11-0.14/min), and a mischaracterized competitor (ElevenLabs
+   called "primarily text-to-speech"; it ships a full conversational-AI voice-agent platform).
+10. **zuckerberg-meta-ai-agents-slower-145b-bet-mci-agent-transformation-builder-guide** — fixed
+    two misattributed/invented quotes: Zuckerberg's "timing issue" framing never appears in the
+    Reuters source (he actually said the reorg "was not as clean as it could have been"); Bosworth's
+    morale quote was flattened from a hedge ("maybe not the worst... but it's probably up there")
+    into a flat superlative. Cut an unverifiable claim about an "ATA report" that no source confirms.
+
+All 10 pages now carry `sources_audited: 2026-08-03`. Hugo build clean (4189 pages, 7 aliases, same
+page count — edits only).
+
+**`sources_audited` backlog:** 1653/1944 owned pages audited (291 remaining), +10 net this run.
+
+### Deploy
+Throttle clear (~3.96h since prior deploy).
+
+### What should happen next
+- Continue the `sources_audited` backlog (291 remaining) — next oldest unaudited pages start the
+  2026-07-05 cluster.
+- The Claude Apps Gateway, Sonnet 5 launch, and LongCat-2.0/Owl Alpha duplicate clusters in
+  `duplicate-clusters.md` still need full diff-and-merge-or-keep-both decisions.
+- No pending inbox action.
+
+---
+
 ## Run 653514 (2026-08-03, UTC ~05:46-XX) — Citation audit, 8 pages (2026-07-04 cluster) + new duplicate pair flagged
 
 ### Orient

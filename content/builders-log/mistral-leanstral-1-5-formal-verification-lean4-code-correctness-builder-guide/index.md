@@ -4,6 +4,7 @@ description: "Mistral's free open-source Lean 4 agent proves code correctness ma
 og_description: "Mistral's Leanstral 1.5 is a free Apache 2.0 formal verification agent (119B MoE, 6B active). 587/672 PutnamBench at $4/problem vs $300+ for Seed-Prover. Beats Opus 4.6 on FLTEval at 1/7th cost. 5 previously unknown bugs found in 57 open-source repos. Builder guide: when formal verification beats testing."
 date: 2026-07-04
 lastmod: 2026-07-04
+sources_audited: 2026-08-03
 content_type: "Builder's Log"
 categories: ["Mistral", "Code Quality", "AI Models", "Open Source"]
 tags: ["mistral", "leanstral", "formal-verification", "lean4", "code-correctness", "open-source", "agents", "math", "builder-guide", "july-2026"]
@@ -27,11 +28,13 @@ Leanstral 1.5 operates in two modes:
 
 **Code agent mode**: Leanstral works like a developer with filesystem access. It edits files, runs bash commands, and uses the Lean language server to inspect proof goals and errors interactively. This is how it operates on real repositories rather than isolated theorem statements.
 
-The model's three-stage training — mid-training, supervised fine-tuning, and reinforcement learning via CISPO — optimizes specifically for the compile-test-revise loop that formal verification requires.
+The model's three-stage training — mid-training, supervised fine-tuning, and reinforcement learning via CISPO — optimizes specifically for the compile-test-revise loop that formal verification requires. ([Mistral's Leanstral 1.5 announcement](https://mistral.ai/news/leanstral-1-5/) describes the same three stages.)
 
 ---
 
 ## The Numbers
+
+The figures below come from [Mistral's own Leanstral 1.5 announcement](https://mistral.ai/news/leanstral-1-5/), except where noted otherwise.
 
 | Benchmark | Score | Notes |
 |-----------|-------|-------|
@@ -43,9 +46,9 @@ The model's three-stage training — mid-training, supervised fine-tuning, and r
 | FLTEval pass@1 | 28.9% | vs 21.9% previous Leanstral |
 | FLTEval pass@8 | 43.2% | vs 31.9% previous; beats Opus 4.6's 39.6% |
 
-Cost comparison: At pass@2, Leanstral outperforms Claude Sonnet on FLTEval at $36 vs $549. The cost gap is structural — 6B active parameters (from a 119B total MoE architecture) versus a frontier dense model.
+Cost comparison: on FLTEval pass@8, Leanstral 1.5 beats Claude Opus 4.6 (43.2 vs 39.6) at roughly one-seventh the cost, per [Mistral's announcement](https://mistral.ai/news/leanstral-1-5/). The cost gap is structural — 6B active parameters (from a 119B total MoE architecture) versus a frontier dense model.
 
-The [bug-finding number is notable](https://the-decoder.com/mistrals-open-source-leanstral-1-5-aces-formal-math-benchmarks-and-catches-real-bugs-in-code/): across 57 open-source repositories, Leanstral flagged 47 violated properties, 11 pointing to genuine bugs, 5 of which were previously unreported. One example: an integer overflow in the `datrs/varinteger` library's sign function on `Std.U64.MAX` — a class of edge case that unit tests rarely reach because you'd have to explicitly think to test the maximum value of a 64-bit unsigned integer.
+The [bug-finding number is notable](https://the-decoder.com/mistrals-open-source-leanstral-1-5-aces-formal-math-benchmarks-and-catches-real-bugs-in-code/) — confirmed with the exact same figures in [Mistral's own announcement](https://mistral.ai/news/leanstral-1-5/): across 57 open-source repositories, Leanstral flagged 47 violated properties, 11 pointing to genuine bugs, 5 of which were previously unreported. One example: an integer overflow in the `datrs/varinteger` library's sign function, where incrementing a value already at `Std.U64.MAX` overflowed — causing crashes in debug mode and silent corruption in release mode, a class of edge case that unit tests rarely reach because you'd have to explicitly think to test the maximum value of a 64-bit unsigned integer.
 
 ---
 
@@ -64,7 +67,7 @@ vibe --agent lean
 
 The API endpoint is `leanstral-1-5` via Mistral's free tier. Model weights are on Hugging Face under Apache 2.0 if you need to self-host.
 
-The team also ships a Lean LSP MCP server, which makes Leanstral accessible to any MCP-compatible client. That means Claude Desktop, Cursor, or your own agent pipeline can call Leanstral as a verification tool rather than running it standalone.
+The team also ships a [Lean LSP MCP server](https://mistral.ai/news/leanstral-1-5/), which makes Leanstral accessible to any MCP-compatible client. That means Claude Desktop, Cursor, or your own agent pipeline can call Leanstral as a verification tool rather than running it standalone.
 
 ---
 
@@ -109,7 +112,7 @@ Leanstral also does not replace the need for domain expertise. The model can pro
 - You don't have anyone who can write or review Lean 4 specifications
 - Your correctness requirements are satisfied by thorough testing and review
 
-The practical entry point the Leanstral team recommends: start with one narrow, correctness-critical module. Write explicit specifications for it. Run the full proof workflow. Only scale after you understand the tooling. The AVL tree proof they demo in the announcement runs 2.7 million tokens — that is a calibration point for what "thorough" looks like in formal verification.
+The practical entry point the Leanstral team recommends: start with one narrow, correctness-critical module. Write explicit specifications for it. Run the full proof workflow. Only scale after you understand the tooling. The [AVL tree proof they demo in the announcement](https://mistral.ai/news/leanstral-1-5/) runs over 2.7 million tokens across 22 context compactions — that is a calibration point for what "thorough" looks like in formal verification.
 
 ---
 
@@ -119,4 +122,4 @@ That changes the calculus for teams that have been watching this space from the 
 
 ---
 
-*Sources: [Mistral Leanstral 1.5 model card](https://docs.mistral.ai/models/model-cards/leanstral-1-5); [DevOps.com](https://devops.com/mistral-releases-leanstral-1-5-an-open-model-that-solved-587-of-672-putnam-math-problems/); [The Decoder](https://the-decoder.com/mistrals-open-source-leanstral-1-5-aces-formal-math-benchmarks-and-catches-real-bugs-in-code/); [MarkTechPost](https://www.marktechpost.com/2026/07/03/mistral-ai-releases-leanstral-1-5-an-apache-2-0-lean-4-code-agent-model-solving-587-of-672-putnambench-problems/).*
+*Sources: [Mistral Leanstral 1.5 announcement](https://mistral.ai/news/leanstral-1-5/); [Mistral Leanstral 1.5 model card](https://docs.mistral.ai/models/model-cards/leanstral-1-5); [DevOps.com](https://devops.com/mistral-releases-leanstral-1-5-an-open-model-that-solved-587-of-672-putnam-math-problems/); [The Decoder](https://the-decoder.com/mistrals-open-source-leanstral-1-5-aces-formal-math-benchmarks-and-catches-real-bugs-in-code/); [MarkTechPost](https://www.marktechpost.com/2026/07/03/mistral-ai-releases-leanstral-1-5-an-apache-2-0-lean-4-code-agent-model-solving-587-of-672-putnambench-problems/).*

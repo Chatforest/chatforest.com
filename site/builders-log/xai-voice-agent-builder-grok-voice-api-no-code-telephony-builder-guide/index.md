@@ -17,7 +17,7 @@ Before July 1, building a voice agent on Grok Voice required developer comfort w
 
 Voice Agent Builder removes that barrier entirely. The interaction model is: write a plain-language description of how calls should flow, attach your documents and tools, configure guardrails, and the platform provisions the rest. From zero to a live agent that can pick up inbound calls: roughly two minutes.
 
-The platform runs on the same Grok Voice stack that powers in-vehicle voice capabilities in Tesla vehicles, which gives it a production-proven runtime before any external customer has shipped a line of code on it.
+The platform runs on the same Grok Voice model that, per [xAI's Grok Voice Agent API launch post](https://x.ai/news/grok-voice-agent-api), already powers Grok's in-vehicle voice assistant in millions of Tesla vehicles — Tesla was a design partner on that underlying API — which gives it a production-proven runtime before any external customer has shipped a line of code on it.
 
 ---
 
@@ -25,9 +25,9 @@ The platform runs on the same Grok Voice stack that powers in-vehicle voice capa
 
 The standard architecture for voice AI is a pipeline: speech-to-text (transcription), a language model (reasoning + response), then text-to-speech (synthesis). Each hop adds latency. Each API is a separate contract. When something breaks, you debug across three different systems.
 
-Grok Voice Agent runs a single speech-to-speech model. Audio in, audio out. No transcript in the middle. The result is sub-second latency in VoIP environments — measurable, not marketing — and a single system to reason about when a call goes wrong.
+Grok Voice Agent runs a single speech-to-speech model. Audio in, audio out. No transcript in the middle. xAI says the model delivers [an average time-to-first-audio under one second](https://x.ai/news/grok-voice-agent-api) — measurable, not marketing — and a single system to reason about when a call goes wrong instead of three stitched-together APIs.
 
-xAI claims this architecture ranked first on Big Bench Audio as of launch. The benchmark covers speech comprehension, multilingual performance, and conversational coherence; a ranking there is evidence of quality, not just speed.
+xAI says the same underlying Grok Voice model [ranked #1 on Big Bench Audio](https://x.ai/news/grok-voice-agent-api) at its own December 2025 launch. Big Bench Audio is [Artificial Analysis's audio-reasoning benchmark](https://huggingface.co/blog/big-bench-audio-release) — 1,000 spoken questions adapted from Big Bench Hard (formal fallacies, navigation, object counting, logical deduction) that test whether a model reasons correctly over audio input and output, not how fast or fluent it sounds. A ranking there is evidence of reasoning quality, not conversational polish.
 
 ---
 
@@ -43,7 +43,7 @@ The [pricing structure](https://x.ai/news/grok-voice-agent-builder) has two comp
 
 A ten-minute customer support call works out to roughly $0.60 total. That is $0.50 in agent audio plus $0.10 in telephony.
 
-For builders evaluating the economics against alternatives: Bland charges approximately $0.09/minute all-in; Vapi's pricing is similarly structured around $0.05/minute for the model layer but adds telephony separately; ElevenLabs is primarily a text-to-speech API rather than a full voice agent platform and prices accordingly.
+For builders evaluating the economics against alternatives: [Bland's published rates](https://www.bland.ai/pricing) run from $0.14/minute (Start plan, no platform fee) down to $0.11/minute (Scale plan, $499/month platform fee), with lower per-minute pricing reserved for custom enterprise contracts; [Vapi charges $0.05/minute for its hosting/orchestration layer](https://vapi.ai/pricing) but bills speech-to-text, LLM, text-to-speech, and telephony separately at each provider's own rates, with real-world all-in costs commonly landing between $0.10 and $0.30/minute; [ElevenLabs' Conversational AI platform](https://elevenlabs.io/conversational-ai) is a full voice agent product, not just a text-to-speech API, though its telephony runs through partner integrations (Twilio, Genesys, Vonage, and others) rather than a natively bundled number.
 
 The $0.05/minute rate for the agent layer is not unusual, but the bundled telephony and provisioned phone numbers lower the real all-in cost compared to assembling the same stack from separate providers.
 
@@ -51,10 +51,10 @@ The $0.05/minute rate for the agent layer is not unusual, but the bundled teleph
 
 ## What's Bundled
 
-Voice Agent Builder includes out of the box:
+[Voice Agent Builder includes out of the box](https://x.ai/news/grok-voice-agent-builder):
 
 - **Telephony**: inbound and outbound calling, provisioned numbers, no third-party provider required
-- **80+ voices**: a range of speech styles and personas; voice cloning from one to two minutes of audio
+- **80+ voices**: a range of speech styles and personas; voice cloning from about two minutes of audio
 - **25+ languages**: with mid-conversation switching — a caller can shift language and the agent follows
 - **MCP integrations**: the platform supports Model Context Protocol tools natively, meaning voice agents can call external services (CRM lookups, calendar booking, order status APIs) through the same MCP layer you might already be using for other Claude integrations
 - **Guardrails**: configurable constraints on what the agent will and will not say

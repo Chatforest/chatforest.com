@@ -1,6 +1,7 @@
 ---
 title: "NVIDIA Nemotron-Labs-TwoTower: 2.42x Throughput at 98.7% Quality Without Retraining — Builder Guide"
 date: 2026-07-04
+sources_audited: 2026-08-03
 description: "NVIDIA released Nemotron-Labs-TwoTower on July 2, 2026: a 60B open-weight diffusion language model that runs 2.42x faster than its autoregressive baseline while retaining 98.7% quality. Builder's guide: the two-tower architecture, hardware requirements, inference modes, benchmark breakdown, and where this fits in production pipelines."
 og_description: "NVIDIA's Nemotron-Labs-TwoTower delivers 2.42x throughput at 98.7% quality by splitting a frozen 30B AR backbone and a trained diffusion denoiser across two GPUs. Open weights, three inference modes, and a confidence threshold you can tune. Here's what builders need to know."
 content_type: "Builder's Log"
@@ -31,7 +32,7 @@ The context tower is never modified. NVIDIA trained only the denoiser — on app
 
 ## Architecture Details
 
-Both towers share the same layer composition per the Nemotron-3-Nano-30B-A3B backbone: 52 layers each, built from 23 Mamba-2 layers, 6 self-attention layers, and 23 mixture-of-experts layers with 128 routable experts (6 activated per token, plus 2 shared). With MoE sparsity, each tower uses approximately 3 billion active parameters per token despite the 30B total parameter count.
+Both towers share the same layer composition per the [Nemotron-3-Nano-30B-A3B backbone spec on the model card](https://huggingface.co/nvidia/Nemotron-Labs-TwoTower-30B-A3B-Base-BF16): 52 layers each, built from 23 Mamba-2 layers, 6 self-attention layers, and 23 mixture-of-experts layers with 128 routable experts (6 activated per token, plus 2 shared). With MoE sparsity, each tower uses approximately 3 billion active parameters per token despite the 30B total parameter count.
 
 Total checkpoint: roughly 60 billion parameters across both towers. Cross-attention between towers connects layer-by-layer rather than only at the final hidden states, which is what allows the denoiser to incorporate fine-grained context signals rather than only broad summary representations.
 
@@ -53,22 +54,22 @@ Full diffusion inference (the mode that delivers 2.42x throughput) requires two 
 
 For builders without dual-80GB access: the `generate_ar` mode runs the context tower on a single 80GB GPU as standard autoregressive decoding. You get the Nemotron-3-Nano-30B quality without the throughput gain, but you also avoid the multi-GPU requirement entirely.
 
-There is no NIM deployment or inference provider API at launch. Self-hosting is the only path as of release.
+[There is no NIM deployment or inference provider API at launch](https://huggingface.co/nvidia/Nemotron-Labs-TwoTower-30B-A3B-Base-BF16) — the model card notes it "isn't deployed by any Inference Provider." Self-hosting is the only path as of release.
 
 ---
 
 ## Benchmark Results
 
-The 98.7% aggregate quality number holds across the standard evaluation suite, but the distribution matters for deciding whether TwoTower fits your workload:
+The 98.7% aggregate quality number holds across the [standard evaluation suite published on the model card](https://huggingface.co/nvidia/Nemotron-Labs-TwoTower-30B-A3B-Base-BF16), but the distribution matters for deciding whether TwoTower fits your workload:
 
 | Benchmark | AR Baseline | TwoTower | Retention |
 |---|---|---|---|
 | MMLU (5-shot) | 78.56% | 78.24% | 99.6% |
 | GSM8K (8-shot) | 92.49% | 90.14% | 97.5% |
-| HumanEval | 79.27 | 75.58 | 95.4% |
+| HumanEval | 79.27 | 75.58 | 95.3% |
 | **Overall aggregate** | 100% | **98.7%** | — |
 
-General knowledge benchmarks hold within one point of the autoregressive baseline. Code (HumanEval) and math (GSM8K) show steeper degradation — 4.7 points and 2.3 points respectively. Commonsense and multilingual performance are at or above baseline.
+General knowledge benchmarks hold within one point of the autoregressive baseline. Code (HumanEval) and math (GSM8K) show steeper degradation — 3.7 points and 2.3 points respectively. Commonsense benchmarks (ARC-Challenge, WinoGrande) sit at or slightly above baseline; multilingual benchmarks (MMLU Global Lite, MGSM) sit within half a point of baseline, essentially matching it rather than exceeding it.
 
 The implication for workload selection: TwoTower is a strong fit for natural language tasks where the quality delta is essentially invisible. It is a weaker fit for tasks where correct code or precise arithmetic is load-bearing. The base model also ships without instruction tuning or alignment, which constrains direct user-facing deployment regardless of the throughput gain.
 
@@ -84,7 +85,7 @@ The relationship between the knobs and output:
 - **Smaller block size**: more frequent AR synchronization, higher quality, lower parallelism benefit
 - **Larger block size**: more tokens generated in parallel, higher throughput, higher variance in block quality
 
-NVIDIA's benchmark numbers show quality begins degrading more steeply beyond the 3x throughput range. For production use, the 2.42x operating point represents a reasonable default — calibrate from there based on downstream task sensitivity.
+[NVIDIA's benchmark numbers show quality begins degrading more steeply beyond the 3x throughput range](https://www.marktechpost.com/2026/07/01/nvidia-releases-nemotron-labs-twotower/). For production use, the 2.42x operating point represents a reasonable default — calibrate from there based on downstream task sensitivity.
 
 ---
 
@@ -121,7 +122,7 @@ The mock-AR mode is particularly useful for establishing your actual quality bas
 
 **Batch synthetic data generation** is the clearest fit. Builders running text generation at scale — synthetic training corpora, paraphrasing, document augmentation, summarization pipelines — where throughput directly maps to cost and time get the full 2.42x benefit without needing instruction-tuned quality on the output end.
 
-**Speculative decoding pipelines** are a natural integration target. The context tower can function as a draft model; its parallel block generation provides a batch of candidate tokens for a larger verifier model to accept or reject. TwoTower's authors note explicit compatibility with speculative decoding setups.
+**Speculative decoding pipelines** are a natural integration target. TwoTower's diffusion mode already generates blocks of candidate tokens in parallel, and [the context tower keeps its own LM head — normally optional in the default diffusion path — specifically so it can be used for speculative decoding, verification, likelihood evaluation, or AR scoring](https://www.marktechpost.com/2026/07/01/nvidia-releases-nemotron-labs-twotower/). That lets builders pair the fast block-diffusion output with a standalone AR scoring pass from the same checkpoint, rather than needing a separate verifier model.
 
 **Quality-throughput exploration** for production AR deployments: even teams not planning to ship TwoTower can use the confidence threshold sweep methodology to understand how much generation speed is available on their specific workload before quality degrades past their threshold.
 
@@ -131,7 +132,7 @@ Where TwoTower is a worse fit: instruction-following tasks (no fine-tuning yet),
 
 ## License
 
-Released under the **NVIDIA Nemotron Open Model License** — commercially viable, with terms that follow the Nemotron model family pattern. Read the license before production deployment to confirm your use case is in scope, particularly for output redistribution and derivatives.
+Released under the [**NVIDIA Nemotron Open Model License**](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-nemotron-open-model-license/) — the model card lists it as ready for commercial use, with terms that follow the Nemotron model family pattern. Read the license before production deployment to confirm your use case is in scope, particularly for output redistribution and derivatives.
 
 ---
 
