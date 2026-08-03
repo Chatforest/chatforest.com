@@ -7,7 +7,7 @@
 
 Gemini 3.1 Flash-Lite Image — Google's internal codename is Nano Banana 2 Lite — launched June 30, 2026 in the [same announcement as Gemini Omni Flash](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/). The [Omni Flash article](/builders-log/gemini-omni-flash-api-public-preview-june-30-interactions-builder-guide/) covered video generation; this one covers the image model that shipped alongside it.
 
-The headline number: **$0.034 per 1,000 images** at 1K resolution. That is $0.000034 per image — roughly 1,200× cheaper than DALL-E 3 standard ($40/1K), and half the per-image price of its sibling Nano Banana 2 at the same resolution.
+The headline number: **$0.034 per 1,000 images** at 1K resolution ([Gemini Developer API pricing](https://ai.google.dev/gemini-api/docs/pricing)). That is $0.000034 per image — half the per-image price of its sibling Nano Banana 2, which runs $0.067 per 1,000 images at the same resolution (see the [comparison table below](#nano-banana-2-lite-vs-nano-banana-2)).
 
 ---
 
@@ -17,12 +17,12 @@ The headline number: **$0.034 per 1,000 images** at 1K resolution. That is $0.00
 gemini-3.1-flash-lite-image
 ```
 
-Available immediately through:
+[Available today](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/) through:
 - **Google AI Studio** — no waitlist, use in the playground or call via API key
 - **Gemini API** — standard API key access
 - **Gemini Enterprise Agent Platform (GEAP)** — Vertex AI enterprise customers
 
-No separate application or quota request required. The model is GA (not preview) for the image generation use case.
+No separate application or quota request required. Unlike the full Nano Banana 2 (`gemini-3.1-flash-image-preview`), the Lite model ID carries no `-preview` suffix — consistent with Google's own framing of it as available today rather than a preview feature.
 
 ---
 
@@ -32,7 +32,7 @@ No separate application or quota request required. The model is GA (not preview)
 |---|---|
 | Model ID | `gemini-3.1-flash-lite-image` |
 | Architecture | Built on Gemini 3.1 Flash-Lite |
-| Context window | 65,536 tokens |
+| Context window | Up to 1,048,576 tokens (1M) |
 | Input | Text + images |
 | Output | Images (4K token output cap) + text (64K token cap) |
 | Resolution | 1K (1024×1024) only |
@@ -40,15 +40,15 @@ No separate application or quota request required. The model is GA (not preview)
 | Knowledge cutoff | January 2025 |
 | Availability | Gemini API, Google AI Studio, GEAP |
 
-The 4K token output cap applies to the image representation in the API, not the pixel resolution of the output image.
+The 4K token output cap applies to the image representation in the API, not the pixel resolution of the output image. Context window, output token caps, and knowledge cutoff are per [Google DeepMind's model card](https://deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/); the 1K-only resolution and ~4-second generation speed are per [Google's launch announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/) and corroborated by [OpenRouter's model listing](https://openrouter.ai/google/gemini-3.1-flash-lite-image), which also documents the 1K-resolution constraint as "outputs are generated at 1K resolution across 14 aspect ratios."
 
 ---
 
 ## Pricing
 
-**Gemini API:**
+**Gemini API** (per the [Gemini Developer API pricing page](https://ai.google.dev/gemini-api/docs/pricing)):
 - Image generation: **$0.034 per 1,000 images** (flat, 1K resolution only)
-- Token billing: $0.25/M input tokens, $1.50/M output tokens
+- Token billing: $0.25/M input tokens, $1.50/M output tokens (for text/thinking output; image output is billed via the flat per-image rate above, not this token rate)
 
 At scale: 1 million generated images = $34.
 
@@ -61,13 +61,15 @@ The Lite version and the full version are not the same model. Choosing between t
 | | Nano Banana 2 Lite (`gemini-3.1-flash-lite-image`) | Nano Banana 2 (`gemini-3.1-flash-image-preview`) |
 |---|---|---|
 | Resolution | 1K only | 1K, 2K, 4K |
-| Speed | ~4s | ~10.8s |
+| Speed | ~4s | ~10.8s (derived, see note) |
 | Price: 1K | $0.034/1K images | $0.067/1K images |
 | Price: 2K | — | $0.101/1K images |
 | Price: 4K | — | $0.151/1K images |
 | Batch price: 1K | — | $0.034/1K images |
 | Batch price: 2K | — | $0.050/1K images |
 | Batch price: 4K | — | $0.076/1K images |
+
+Pricing and batch rates above are from the [Gemini Developer API pricing page](https://ai.google.dev/gemini-api/docs/pricing), corroborated by [LaoZhang AI's rate breakdown](https://blog.laozhang.ai/en/posts/gemini-3-1-flash-image-preview). Google has not published an explicit per-second generation time for the full Nano Banana 2; the ~10.8s figure is derived from [OpenRouter's stated](https://openrouter.ai/google/gemini-3.1-flash-lite-image) "~2.7× faster" differential for Lite (4s × 2.7 ≈ 10.8s), not an independently confirmed number.
 
 If you need 1K resolution and speed is important: **use Lite**. If you need 2K or 4K, or need to produce different resolutions from the same pipeline: **use the full Nano Banana 2**, optionally with batch mode.
 
@@ -154,12 +156,12 @@ For context on where this fits:
 
 | Model | ID | Strength | Starting Price |
 |---|---|---|---|
-| Imagen 4 | `imagen-4.0` | Premium photorealism, print quality | Higher; check Vertex pricing |
-| Nano Banana 2 | `gemini-3.1-flash-image-preview` | Multi-resolution, 1K–4K | $0.067/1K images |
-| **Nano Banana 2 Lite** | **`gemini-3.1-flash-lite-image`** | **1K at maximum speed and lowest cost** | **$0.034/1K images** |
-| Gemini Omni Flash | `gemini-omni-flash-preview` | Video generation, multimodal | Per-video pricing via Interactions API |
+| Imagen 4 | `imagen-4.0` | Premium photorealism, print quality | Higher; see [Vertex AI generative AI pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing) |
+| Nano Banana 2 | `gemini-3.1-flash-image-preview` | Multi-resolution, 1K–4K | [$0.067/1K images](https://ai.google.dev/gemini-api/docs/pricing) |
+| **Nano Banana 2 Lite** | **`gemini-3.1-flash-lite-image`** | **1K at maximum speed and lowest cost** | **[$0.034/1K images](https://ai.google.dev/gemini-api/docs/pricing)** |
+| Gemini Omni Flash | `gemini-omni-flash-preview` | Video generation, multimodal | [$0.10 per second of video output](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/), accessed via the [Interactions API](/builders-log/gemini-omni-flash-api-public-preview-june-30-interactions-builder-guide/) |
 
-If you are already using Nano Banana 2 and your output resolution is 1K, switching to Lite cuts your per-image cost in half and makes each generation 2.7× faster. The API call structure is the same; the model ID is the only change.
+If you are already using Nano Banana 2 and your output resolution is 1K, switching to Lite cuts your per-image cost in half and makes each generation [~2.7× faster](https://openrouter.ai/google/gemini-3.1-flash-lite-image). The API call structure is the same; the model ID is the only change.
 
 ---
 

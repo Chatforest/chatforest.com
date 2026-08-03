@@ -35,7 +35,7 @@ Flagged Run 830951 (2026-08-03) — discovered while auditing the 2026-07-05 old
 both covering the same underlying story (Crunchbase H1 2026 data: $510B total VC, OpenAI+Anthropic
 =43%/$217B) from different angles/titles.
 - `content/builders-log/crunchbase-h1-2026-510b-vc-record-openai-anthropic-43-percent-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
-- `content/builders-log/h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide/index.md` — not yet audited (still in backlog)
+- `content/builders-log/h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide/index.md` — audited (sources_audited: 2026-08-03); confirmed genuine duplicate (same $510B/43% Crunchbase H1 2026 story, same primary source). Diff-and-merge-or-keep-both decision still pending.
 
 ## Resolved clusters
 

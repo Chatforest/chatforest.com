@@ -3,33 +3,36 @@ title: "OpenAI's Stargate UK Never Left the Drawing Board: A Builder's Guide to 
 date: 2026-07-05
 description: "OpenAI paused Stargate UK in April 2026 after a Guardian investigation found they never visited the Cobalt Park site—and UK electricity runs 4x the cost of Nordic alternatives. What UK builders can actually use today: NScale-BT's 14MW sovereign AI facility, cloud provider UK regions, and lessons from a high-profile infrastructure disappointment."
 tags: ["infrastructure", "uk", "openai", "stargate", "cloud", "data-centers", "nvidia", "nscale", "enterprise", "sovereign-ai"]
+sources_audited: 2026-08-03
 ---
 
-In September 2025, OpenAI stood alongside UK Prime Minister Keir Starmer and announced a landmark AI infrastructure partnership: Stargate UK. The headline figures were large — over £1.9 billion in investment — with OpenAI, Nvidia, and British cloud provider Nscale as the principals, and two sites earmarked for compute buildout: Cobalt Park near Newcastle and a location in Loughton, Essex.
+In January 2025, Nscale [announced a $2.5 billion (roughly £2 billion) UK data centre investment](https://www.nscale.com/press-releases/ai-hyperscaler-nscale-to-invest-gbp-2-billion-in-the-uk-data-centre-industry) and confirmed its first UK site with the purchase of a location in Loughton, Essex, built out for 50MW of AI and HPC capacity — a deal that did not involve OpenAI. Eight months later, in September 2025, OpenAI, Nvidia, and Nscale [announced a separate partnership, Stargate UK](https://openai.com/index/introducing-stargate-uk/), centered on [Cobalt Park near Newcastle](https://www.nscale.com/press-releases/nscale-uk-ai-infrastructure-announcement), with OpenAI exploring offtake of up to 8,000 Nvidia GPUs scaling to 31,000 over time. The announcement came during Donald Trump's state visit to the UK, alongside a wider [£31 billion UK-US "Tech Prosperity Deal"](https://www.thinkdigitalpartners.com/news/2025/09/17/uk-and-us-sign-tech-prosperity-deal-worth-31-billion/) that UK Prime Minister Keir Starmer called "a generational step change in our relationship with the US."
 
-Nine months later, that announcement has not translated into usable infrastructure. A [Guardian investigation](https://thenextweb.com/news/openai-apparently-never-visited-the-site-of-its-flagship-uk-ai-project) found the Loughton, Essex site was still functioning as a scaffolding yard with no evidence of construction, and that OpenAI never visited the Cobalt Park site before the announcement was made. In April 2026, OpenAI formally paused the UK Stargate initiative, citing electricity costs in Britain that run approximately four times higher than comparable regions in Finland and Norway.
+Neither project delivered as advertised. A [Guardian investigation](https://thenextweb.com/news/openai-apparently-never-visited-the-site-of-its-flagship-uk-ai-project), reported in March 2026, found the Loughton site — Nscale's own project, unrelated to OpenAI — was still functioning as a scaffolding yard with no evidence construction had begun, and that [neither OpenAI nor Nscale had visited the Cobalt Park site](https://www.inkl.com/news/openais-apparent-failure-to-visit-key-site-raises-questions-over-stargate-uk-project); only Nvidia had, in February 2026, five months after the announcement. In April 2026, [OpenAI formally paused the UK Stargate initiative](https://thenextweb.com/news/openai-pauses-stargate-uk-energy-costs-regulation), citing electricity costs in Britain that run more than four times higher than in the US, Finland, Norway, and Sweden — a pause [independently confirmed by Sifted](https://sifted.eu/articles/openai-stargate-uk-pause-nscale).
 
-The £1.9 billion investment contract referenced in UK government press releases was never signed.
+Separately, [the UK government press release describing a signed £1.9 billion ($2.5 billion) Nscale investment contract was inaccurate](https://capacityglobal.com/news/data-centre-phantom-investments-uk-ai-growth/) — the Department for Science, Innovation and Technology later acknowledged no such contract existed.
 
 ## What Actually Happened
 
 The timeline matters if you're a builder who's been assuming UK AI compute is coming:
 
-**September 2025 — Announcement.** OpenAI, Nscale, Nvidia, and the UK government announced Stargate UK as a flagship AI infrastructure programme, with Cobalt Park (Newcastle) and a second site in Essex as the planned locations.
+**January 2025 — Nscale's own UK investment.** [Nscale announced a $2.5 billion (~£2 billion) UK data centre investment](https://www.nscale.com/press-releases/ai-hyperscaler-nscale-to-invest-gbp-2-billion-in-the-uk-data-centre-industry), independent of OpenAI, and purchased its first UK site in Loughton, Essex.
 
-**March 2026 — Guardian investigation.** The Guardian reported that the Essex site was a scaffolding yard with no construction activity. No planning applications had been lodged at either site.
+**September 2025 — Stargate UK announcement.** [OpenAI, Nscale, and Nvidia announced Stargate UK](https://www.nscale.com/press-releases/nscale-uk-ai-infrastructure-announcement) as a flagship AI infrastructure programme centered on Cobalt Park, Newcastle — a separate project from Nscale's Loughton site.
 
-**April 2026 — Formal pause.** OpenAI announced it was pausing the UK Stargate project, citing industrial electricity costs in the UK — roughly four times the rate in Finland, Norway, and Sweden. Unresolved regulatory questions around AI and copyright contributed to the decision.
+**March 2026 — Guardian investigation.** [The Guardian reported](https://thenextweb.com/news/openai-apparently-never-visited-the-site-of-its-flagship-uk-ai-project) that the Loughton site was a scaffolding yard with no construction activity, that no planning applications had been lodged at Cobalt Park, and that [neither OpenAI nor Nscale had visited Cobalt Park](https://www.inkl.com/news/openais-apparent-failure-to-visit-key-site-raises-questions-over-stargate-uk-project) before the September 2025 announcement.
 
-**April 23, 2026 — Nscale pivots.** [Nscale, BT, and Nvidia announced a smaller but real alternative](https://www.nscale.com/press-releases/nscale-and-bt): 14 megawatts of sovereign AI compute capacity across three existing BT sites in the UK. The BT infrastructure is already in place; this project installs Nvidia AI stacks on top of it.
+**April 2026 — Formal pause.** [OpenAI announced it was pausing the UK Stargate project](https://thenextweb.com/news/openai-pauses-stargate-uk-energy-costs-regulation), citing industrial electricity costs in the UK — more than four times the rate in the US, Finland, Norway, and Sweden. Unresolved regulatory questions around AI and copyright contributed to the decision.
 
-**Also April 2026 — Nscale goes to Portugal.** Nscale separately announced a €695 million investment in Portugal to supply GPU capacity to Microsoft infrastructure, citing more favorable energy costs and permitting conditions.
+**April 23, 2026 — Nscale pivots.** [Nscale, BT, and Nvidia announced a smaller but real alternative](https://www.nscale.com/press-releases/nscale-and-bt) — [confirmed by BT's own newsroom](https://newsroom.bt.com/bt-to-work-with-nscale-to-accelerate-uk-sovereign-ai-capability-powered-by-nvidia/): 14 megawatts of sovereign AI compute capacity across three existing BT sites in the UK. The BT infrastructure is already in place; this project installs Nvidia AI stacks on top of it.
+
+**Also April 2026 — Nscale goes to Portugal.** [Nscale separately announced a €695 million investment in Portugal](https://www.nscale.com/press-releases/nscale-start-campus) to supply GPU capacity to Microsoft infrastructure, citing more favorable energy costs and permitting conditions.
 
 ## Why UK Electricity Costs Killed the Big Plan
 
 AI training and inference at scale is compute-intensive, and compute is electricity. The economics matter:
 
-UK industrial electricity rates sit at roughly 4x those in the Nordic countries. For a facility running tens of thousands of GPUs, this isn't a rounding error — it changes whether a project is profitable at any commercially viable price point.
+UK industrial electricity rates sit at [roughly 4x those in the Nordic countries](https://thenextweb.com/news/openai-pauses-stargate-uk-energy-costs-regulation). For a facility running tens of thousands of GPUs, this isn't a rounding error — it changes whether a project is profitable at any commercially viable price point.
 
 The Finnish and Norwegian rates are low because of cheap hydroelectric power and favorable grid access. UK rates reflect a different energy mix and grid infrastructure. This is a structural cost constraint, not a policy decision that will change quickly.
 
@@ -37,7 +40,7 @@ Builders drawing up multi-year infrastructure roadmaps need to treat UK-based co
 
 ## What UK Builders Can Actually Use Today
 
-The BT-Nscale-Nvidia partnership is real and proceeding. Key facts:
+The BT-Nscale-Nvidia partnership [is real and proceeding](https://www.nscale.com/press-releases/nscale-and-bt) — [confirmed independently by BT](https://newsroom.bt.com/bt-to-work-with-nscale-to-accelerate-uk-sovereign-ai-capability-powered-by-nvidia/). Key facts:
 
 - **14 megawatts of AI capacity** across three existing BT sites (locations undisclosed)
 - **Nvidia full-stack infrastructure** — the standard stack for inference and training workloads

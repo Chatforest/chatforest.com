@@ -128552,3 +128552,138 @@ observation that 08-02/08-03 had no digest sent).
 - GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
 - Crunchbase/H1-2026-VC duplicate pair — sibling still needs auditing; diff-and-merge-or-keep-both
   decision still pending (same status as the other 2 open clusters in `duplicate-clusters.md`).
+
+## Run 901665 (2026-08-03, ~19:48 UTC)
+
+### Orientation
+No pending inbox messages requiring action (only my own 2026-08-03 CEO digest #2300 showing in
+the list). Confirmed via `date -u` that real UTC time is still 2026-08-03 (not 08-04) — Dispatch #5
+(scheduled for 2026-08-04 09:00 UTC via Buttondown) is not yet due for confirmation this run.
+
+### Citation audit — 10 pages (2026-07-05 cluster, continuing the backlog)
+Selected via a corrected front-matter scan (reads full file, not a fixed byte window — the prior
+run's regex fix for quoted dates was retained and re-verified: 281 unaudited pages confirmed,
+matching the prior run's count exactly). All 10 pages below dispatched to parallel claim-by-claim
+audit agents; every single one found and fixed a real issue — this cluster's error rate matches the
+2026-07-04 cluster (10/10) more than the 2026-07-05 cluster reported last run (8/10):
+
+1. **gemini-3-1-flash-lite-image-nano-banana-2-lite-image-generation-pricing-builder-guide** — real
+   error: specs table said 65,536-token context window; Google DeepMind's own model card says up to
+   1M (1,048,576), confirmed against a sibling article's identical figure. Deleted an unverifiable
+   DALL-E 3 price comparison (DALL-E 3 was pulled from OpenAI's API before this page's July 5, 2026
+   publish date). Caught a stat-fusion risk before it shipped: a "~10.8s" Nano Banana 2 speed figure
+   was arithmetic derived from a multiplier, not a directly-sourced number — labeled as derived
+   instead of presented as confirmed.
+2. **h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide** —
+   fabricated stat: claimed "83% of global VC to US, up from 71% a year prior" — Crunchbase's real
+   source says 83% was Q1 2026 only, falling to ~two-thirds in Q2, in line with Q2 2025 — the "71%"
+   figure doesn't exist and the direction was reversed. Also corrected a stale $380B Anthropic IPO
+   valuation (Feb 2026 Series G figure) to the current $965B (post-Series H, per Anthropic's own
+   confidential-S-1 announcement). **Confirmed as a genuine duplicate** of the already-audited
+   `crunchbase-h1-2026-510b-vc-record-openai-anthropic-43-percent-builder-guide` (same $510B/43%
+   Crunchbase story, same primary source) — `duplicate-clusters.md` updated; merge decision still
+   pending.
+3. **hopsworks-5-coding-data-ai-stack-claude-code-embedded-mlops-builder-guide** — no fabrications,
+   but zero citations on several sections: added the CEO's name (Jim Dowling, previously just "the
+   CEO"), sourced all five "What Ships in 5.0" product bullets, the air-gapped quote, the July 28 MCP
+   spec RC, the Stargate UK pause reference, and the Zalando named-company claim (2 independent
+   Hopsworks sources for "Europe's largest online retailer").
+4. **jadepuffer-agentic-ransomware-langflow-cve-builder-security-guide** — the highest-risk page in
+   this batch (named ransomware + CVE claims). Core claims independently verified: Sysdig's own post
+   does say "first documented case of agentic ransomware," CVE-2025-3248 (9.8 CRITICAL, Langflow
+   unauthenticated code injection) confirmed via NVD + Langflow's own GHSA advisory, CVE-2021-29441
+   (Nacos auth bypass) confirmed via NVD. Added citations throughout (page had only 2 before); the
+   auditing agent caught and self-corrected a near-fusion (almost conflated CVE assignment date with
+   CISA KEV addition date) before it shipped.
+5. **july-6-10-2026-five-builder-events-cost-api-governance-week-guide** — a weekly roundup that had
+   drifted out of sync with corrections already made on its own sister articles: the Fable 5 metered-
+   billing cutoff was stated as July 7 when Anthropic's own help center confirms it was extended
+   twice to July 20; the Persona ID-verification plan-tier breakdown was unconfirmed aggregator
+   detail not actually in Anthropic's page (rewritten to only what's confirmed); an OpenAI credit-
+   rate arithmetic error (25 vs. real 125 credits/million for uncached input) fixed; Geneva summit
+   attendance corrected from a reused prior-year placeholder (11,000/169 countries) to the actual
+   2026 record turnout (12,000+/170 countries, Euronews).
+6. **midjourney-disney-universal-warner-bros-ai-copyright-discovery-builder-guide** — wrong ruling
+   date (June 16 → June 15, confirmed via 3 independent sources) and the magistrate judge's name
+   added (Joel Richlin). Two stale case-status claims fixed: Getty Images v. Stability AI was called
+   "pending" but was actually decided for Stability in the UK in Nov 2025; the music-industry AI
+   cases list called all "pending" when UMG/Warner Music actually settled with Udio/Suno in late
+   2025 (only Sony's suits remain active). Attributed the "fishing expedition" quote to studios'
+   lead attorney David Singer (2 sources). Dropped a Forensis Group citation whose content couldn't
+   be verified (JS-rendered, unfetchable) rather than link something unconfirmed.
+7. **openai-5-percent-government-stake-gpt56-delay-api-platform-risk-builder-guide** — the core "5%
+   government stake" and GPT-5.6-delay claims independently verified as real (FT reporting relayed
+   by CNBC/TechCrunch/Forbes, consistently framed as preliminary/conceptual, matching the page's
+   hedged framing). But found a real misquote: the page put quotation marks around Altman saying
+   "the fairest way to spread AI's gains" — that exact phrase doesn't exist in any source; it's the
+   FT's own paraphrase, not a verbatim Altman quote. Fixed attribution. Also fixed a date-math error
+   (Fable 5 export-control suspension was 13 days before the Lutnick call, not "a month earlier") and
+   replaced a stale/wrong "watch the July 10–17 window" prediction with the actual outcome (GPT-5.6
+   GA'd July 9, per Engadget).
+8. **openai-stargate-uk-pause-cobalt-park-nscale-bt-uk-ai-infrastructure-builder-guide** — a real
+   conflation error: the page presented Nscale's January 2025 Loughton/Essex data-centre investment
+   (its own, unrelated announcement) as one of "two sites earmarked" for the September 2025 Stargate
+   UK partnership (OpenAI/Nvidia/Nscale, centered on Cobalt Park, Newcastle) — these are two separate
+   announcements 8 months apart, confirmed via Nscale's own Jan 2025 release (never mentions Cobalt
+   Park/Stargate). Rewrote to separate the two threads correctly. Confirmed the "paused" status is
+   still current as of early August 2026 (no resumption/cancellation found).
+9. **opus-4-8-sonnet-5-tool-schema-hallucination-strict-mode-fix-builder-guide** — the worst
+   fabrication count in this batch: (a) a recommendation invented and attributed to the source author
+   Armin Ronacher that contradicts his actual stated conclusion (his real point: fighting the
+   model's prior is futile, use strict/grammar-constrained sampling — not "align your schema to
+   Claude Code's shapes" as the page claimed); (b) unsupported specific-model claims ("Sonnet 4.6 and
+   Opus 4 did not exhibit this") when the source only names Opus 4.5; (c) a fully fabricated JSON
+   Schema code block presented as quoted from Ronacher's post — the real post only shows a simple
+   `path` field, not the invented nested schema with `file_path`. All three fixed against the primary
+   source's exact wording. Also corrected a mechanism error (strict mode is grammar-constrained
+   sampling, not "instruction-following override," per Anthropic's live docs) and an overstated bio
+   claim (implied Ronacher created Sentry; he's a longtime engineer there, not its creator).
+10. **palantir-nvidia-sovereign-ai-os-karp-wealth-tax-enterprise-builder-guide** — the flagged
+    high-risk item (Karp's "wealth tax" quotes) checked out: all four attributed phrases verified
+    verbatim against Forbes + Yahoo Finance + a third independent transcript, no fabrication or
+    misattribution — but the paragraph had zero inline citations before this audit despite being the
+    most quote-sensitive content in the piece; fixed. Found a real date error: the Palantir-NVIDIA
+    Sovereign AI OS Reference Architecture was dated "June 29, 2026 — two days before the rant" but
+    was actually announced March 12, 2026; June 29 was a separate, later Nemotron-integration
+    announcement (which is what Karp was actually on CNBC to discuss). Also fixed a Blackwell Ultra
+    launch-date error (H1 2026 claimed; it began shipping H2 2025 per AWS's GA announcement) and an
+    McKinsey point-estimate overstatement ($600B claimed as a single figure; real range is $500B–
+    $600B).
+
+All 10 files now carry `sources_audited: 2026-08-03`. 4 of 10 matched existing `fabrication-audit.md`
+checklist entries (h1-2026-vc-510-billion, openai-5-percent-government-stake, palantir-nvidia-
+wealth-tax, jadepuffer-agentic-ransomware) — marked `[x]`. Fabrication-audit progress: **175/375**.
+
+**`sources_audited` backlog:** 1673/1944 owned pages now audited (**271 remaining**), -10 net this
+run. Next oldest (rest of the 2026-07-05 cluster): `poolside-laguna-xs-2-1-open-weight-coding-model-
+july-9-migration-builder-guide`, `profound-aim-background-agent-ai-search-visibility-marketing-
+builder-guide`, `pxpipe-cut-claude-fable-5-token-costs-png-image-proxy-builder-guide`, and the two
+`snaplogic-mcp-builder` pages (likely another duplicate pair — worth checking on the next pass).
+
+### Duplicate clusters
+Confirmed the Crunchbase/H1-2026-VC pair as a genuine duplicate (see item 2 above); both sides now
+audited. Merge-or-keep-both decision still open in `duplicate-clusters.md`.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-03 02:00 UTC). No post this run, hard
+daily cap respected.
+
+### Deploy
+Hugo build clean (4189 pages, 7 aliases). Deploy throttle clear (last deploy well over an hour
+before this run). Committing and deploying this run's batch.
+
+### Digest
+Already sent today's CEO digest this UTC day (#2300, sent 2026-08-03 16:11). Per the max-one-per-day
+rule, no second digest sent — this WORKLOG entry is the full record for CEO review on the next cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (271 remaining) — next oldest listed above.
+- Continue the fabrication-audit cohort (175/375) alongside normal duty.
+- **After ~2026-08-04 09:00 UTC:** confirm Dispatch #5 sent via Buttondown API, update
+  `newsletter.md` Past Issues, run the Bluesky pre-post check and use the newsletter-plug allowance
+  if clear.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — merge-or-keep-both decision still pending (now both sides
+  audited, so this can be resolved whenever there's room).
+- Worth checking on next pass: the two `snaplogic-mcp-builder` pages in the 2026-07-05 cluster look
+  like they may be another near-duplicate pair (same MCP-Builder-Enterprise-Integration topic).

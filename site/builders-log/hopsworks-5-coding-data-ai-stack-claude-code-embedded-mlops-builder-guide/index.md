@@ -5,7 +5,7 @@
 
 On June 30, 2026, [Hopsworks released version 5.0](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html) — a unified ML lakehouse platform that embeds Claude Code and Codex directly inside the development environment. The core shift: instead of an AI coding assistant you context-switch to when you need help, the agent lives inside the same terminal that has access to your feature store, your pipelines, your GPU compute, and your data.
 
-The CEO's framing is deliberately aggressive: "The low-code and no-code tooling that dominates other Lakehouses is obsolete."
+Hopsworks CEO [Jim Dowling's framing](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html) is deliberately aggressive: "The low-code and no-code tooling that dominates other Lakehouses is obsolete."
 
 ## The Context-Switching Problem Hopsworks Is Solving
 
@@ -17,15 +17,15 @@ Hopsworks 5.0's thesis is that the right fix is not a better clipboard — it's 
 
 ## What Ships in 5.0
 
-**Embedded development container with Claude Code + Codex.** A full terminal lives inside the Hopsworks UI, pre-loaded with both agents. You can run multiple parallel agent sessions, so you can have one building a feature pipeline while another debugs a training job.
+**[Embedded development container with Claude Code + Codex](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html).** A full terminal lives inside the Hopsworks UI, pre-loaded with both agents. You can run multiple parallel agent sessions, so you can have one building a feature pipeline while another debugs a training job.
 
-**The Wizard.** Select a use-case template (time series forecasting, RAG pipeline, auto-research, and others), and an agent drives the guided setup end-to-end — from ingesting raw data through to a production-ready deployment. Think of it as a project bootstrapper that actually understands your data environment because it has access to it.
+**[The Wizard](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html).** Select a use-case template (time series forecasting, RAG pipeline, auto-research, and others), and an agent drives the guided setup end-to-end — from ingesting raw data through to a production-ready deployment. Think of it as a project bootstrapper that actually understands your data environment because it has access to it.
 
-**Platform Intelligence.** When you connect an external data source (Databricks, Snowflake, BigQuery, MongoDB, SAP HANA), the platform uses an LLM to automatically generate human-readable column names and descriptions, infer primary keys and event times, and configure ingestion schedules. The result is a feature store that documents itself.
+**[Platform Intelligence](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html).** When you connect an external data source (Databricks, Snowflake, BigQuery, MongoDB, SAP HANA), the platform uses an LLM to automatically generate human-readable column names and descriptions, infer primary keys and event times, and configure ingestion schedules. The result is a feature store that documents itself.
 
-**Native analytics.** SQL via Trino and dashboards via Apache Superset are now built in. The data layer and the analytics layer are the same context for the agent — it can write a pipeline and query its output without switching tools.
+**[Native analytics](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html).** SQL via Trino and dashboards via Apache Superset are now built in. The data layer and the analytics layer are the same context for the agent — it can write a pipeline and query its output without switching tools.
 
-**Model registry with Hugging Face imports.** Direct model card imports, GPU/Ray/Spark compute for distributed training.
+**[Model registry with Hugging Face imports](https://www.globenewswire.com/news-release/2026/06/30/3319457/0/en/releasing-hopsworks-5-0-introducing-the-coding-data-and-ai-stack.html).** Direct model card imports, GPU/Ray/Spark compute for distributed training.
 
 ## Container vs. Wrapper: The Technical Argument
 
@@ -43,15 +43,15 @@ The essay makes an interesting call: CLI tools outperform Model Context Protocol
 
 MCP's strength is standardized tool discovery across heterogeneous systems. CLI's strength is precision access to an already-known local environment. For a platform where the agent lives inside a bounded, well-defined compute context, CLI is faster and less context-expensive.
 
-This is a genuine technical stance worth watching. The MCP ecosystem is growing fast and the July 28 MCP 2026 spec RC may shift this calculus, but Hopsworks's argument that "context window efficiency matters more than interoperability when you're inside a platform" is defensible.
+This is a genuine technical stance worth watching. The MCP ecosystem is growing fast and the [2026-07-28 MCP spec release candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) may shift this calculus, but Hopsworks's argument that "context window efficiency matters more than interoperability when you're inside a platform" is defensible.
 
 ## Air-Gapped and Sovereign Deployments
 
-A sentence from the essay deserves emphasis: "You can launch a coding agent in Hopsworks that uses a LLM that is hosted in Hopsworks — all inside an air-gapped environment."
+A sentence from [the essay](https://www.hopsworks.ai/post/coding-agents-inside-data-platforms) deserves emphasis: "You can launch a coding agent in Hopsworks that uses a LLM that is hosted in Hopsworks — all inside an air-gapped environment."
 
-This is non-trivial. Most coding agent setups require outbound calls to an external model API. If you're in financial services, healthcare, defense, or — relevant after the OpenAI Stargate UK pause — a European enterprise concerned about data residency, a coding agent that never touches an external network is a compliance story that most platforms cannot tell.
+This is non-trivial. Most coding agent setups require outbound calls to an external model API. If you're in financial services, healthcare, defense, or — relevant after [OpenAI paused its Stargate UK data center project](https://www.cnbc.com/2026/04/09/openai-halts-uk-stargate-project.html) in April 2026 over energy costs and regulatory uncertainty — a European enterprise concerned about data residency, a coding agent that never touches an external network is a compliance story that most platforms cannot tell.
 
-Zalando, Europe's largest online retailer, runs its AI infrastructure on Hopsworks. Their case is illustrative: the platform's sovereign AI capability isn't theoretical positioning — there are production workloads running on it in environments where data can't cross certain boundaries.
+[Zalando, described by Hopsworks as "Europe's largest online retailer,"](https://www.globenewswire.com/news-release/2026/06/18/3313956/0/en/zalando-europe-s-largest-online-retailer-runs-its-ai-infrastructure-on-european-technology-hopsworks.html) [runs its AI infrastructure on Hopsworks](https://www.hopsworks.ai/customers/zalando). Their case is illustrative: the platform's sovereign AI capability isn't theoretical positioning — there are production workloads running on it in environments where data can't cross certain boundaries.
 
 ## Who This Is For
 
@@ -65,7 +65,7 @@ Zalando, Europe's largest online retailer, runs its AI infrastructure on Hopswor
 
 **Teams without ML infrastructure to manage.** If you're building a straightforward LLM application — RAG over documents, a chatbot, an agent with a few tools — you don't need a feature store, a training cluster, or a model registry. Hopsworks is overkill.
 
-**Teams running lean on opex.** Hopsworks is a full ML platform with enterprise deployment options. SaaS registration is open for free tiers, but production use at scale has real infrastructure costs. If your ML footprint is small, the platform's value is in managing complexity you probably don't have yet.
+**Teams running lean on opex.** Hopsworks is a full ML platform with enterprise deployment options. [SaaS registration is open for a free tier](https://www.hopsworks.ai/pricing) (one project, Feature Store + Model Registry, no credit card required), but production use at scale has real infrastructure costs. If your ML footprint is small, the platform's value is in managing complexity you probably don't have yet.
 
 **Teams where MCP interoperability is required.** If your agent needs to communicate across heterogeneous systems using MCP standards, Hopsworks's CLI-first philosophy is a friction point. The platform's agent is designed to work within Hopsworks — not to plug into an external MCP client.
 
