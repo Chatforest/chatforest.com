@@ -17,7 +17,7 @@ Eight days into the Fable 5 suspension, Anthropic [confirmed a revised privacy p
 - **Your face** — photo or video form, plus [facial geometry templates, which Anthropic itself acknowledges "may be considered biometric data in some jurisdictions"](https://www.techtimes.com/articles/318778/20260621/claude-identity-verification-starts-july-8-what-facial-data-anthropic-collects.htm)
 - **The verification result** — pass, fail, or flagged
 
-The verification service is **Persona**, a third-party identity-verification SaaS [backed by Founders Fund](https://www.biometricupdate.com/202606/update-on-identity-age-verification-for-claude-prompts-user-pushback). Anthropic sends flagged users through Persona's flow (photo ID upload + live selfie), and Persona returns a result. [Anthropic says the ID images and selfie data are held by Persona, not stored on Anthropic's own systems, and are not used for model training](https://thenextweb.com/news/anthropic-claude-id-verification-privacy-policy-persona-biometric); the policy does not specify a retention period.
+The verification service is **Persona**, a third-party identity-verification SaaS [backed by Founders Fund](https://www.biometricupdate.com/202606/update-on-identity-age-verification-for-claude-prompts-user-pushback). Anthropic sends flagged users through Persona's flow (photo ID upload + live selfie), and Persona returns a result. Anthropic's own Help Center states plainly: ["Your ID and selfie are collected and held by Persona, not on Anthropic's systems,"](https://support.claude.com/en/articles/14328960-identity-verification-on-claude) and ["we are not using your identity data to train our models"](https://support.claude.com/en/articles/14328960-identity-verification-on-claude) — [reporting on the policy corroborates the same storage split](https://thenextweb.com/news/anthropic-claude-id-verification-privacy-policy-persona-biometric); the policy does not specify a retention period.
 
 ---
 
@@ -63,7 +63,7 @@ For builders building products that allow minors to use Claude (educational tool
 Facial geometry templates are regulated biometric data under several US state laws:
 
 - **Illinois BIPA** ([Biometric Information Privacy Act, 740 ILCS 14](https://www.ilga.gov/Legislation/ILCS/Articles?ActID=3004&ChapterID=57)) — private right of action; [$1,000 per negligent violation, $5,000 per intentional or reckless violation](https://www.ilga.gov/Legislation/ILCS/Articles?ActID=3004&ChapterID=57) (a 2024 amendment caps recovery to one violation per person per collection method, regardless of how many times the same data was captured)
-- **Texas CUBI** ([Capture or Use of Biometric Identifier Act](https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act)) — no private right of action; enforced exclusively by the [Texas Attorney General, which obtained a $1.4B settlement from Meta under this law in 2024](https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act)
+- **Texas CUBI** ([Capture or Use of Biometric Identifier Act](https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act)) — no private right of action; enforced exclusively by the Texas Attorney General, which [obtained a $1.4 billion settlement from Meta under this law in 2024](https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-secures-14-billion-settlement-meta-over-its-unauthorized-capture) — the largest privacy settlement any single state AG has obtained
 - **Washington's [Biometric Privacy Protection Act](https://app.leg.wa.gov/RCW/default.aspx?cite=19.375.020)** (RCW 19.375, enacted as H.B. 1493) — a separate, distinct law from the state's My Health My Data Act; requires notice and consent before enrolling someone's biometric identifiers in a database
 - **Colorado, Connecticut, Virginia** — [comprehensive privacy laws that classify biometric data used to identify an individual as "sensitive data" requiring opt-in consent](https://www.recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws/)
 
@@ -83,7 +83,7 @@ The policy update is not only about identity. [Anthropic's own summary groups th
 
 ## What This Means for API Builders Right Now
 
-The practical status as of June 20:
+The practical status as of June 22 (the date of Anthropic's on-record denial to TechCrunch, the most recent development this piece cites):
 
 1. **Your API access is unaffected.** No verification required. No change to rate limits, model availability, or pricing.
 2. **Fable 5 and Mythos 5 are still offline via API.** The export control suspension applies to the API tier as well. The July 8 consumer path does not restore API access automatically.

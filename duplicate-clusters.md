@@ -30,6 +30,13 @@ independently in the same run; not yet diffed for merge vs. keep-both.
 - `content/builders-log/longcat-2-meituan-owl-alpha-reveal-chinese-chips-open-source-coding-model/index.md` — audited (sources_audited: 2026-08-03)
 - `content/builders-log/meituan-longcat-2-0-owl-alpha-openrouter-chinese-asic-coding-model-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
 
+### H1 2026 VC concentration / Crunchbase $510B (2 pages)
+Flagged Run 830951 (2026-08-03) — discovered while auditing the 2026-07-05 oldest-unaudited cluster,
+both covering the same underlying story (Crunchbase H1 2026 data: $510B total VC, OpenAI+Anthropic
+=43%/$217B) from different angles/titles.
+- `content/builders-log/crunchbase-h1-2026-510b-vc-record-openai-anthropic-43-percent-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
+- `content/builders-log/h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide/index.md` — not yet audited (still in backlog)
+
 ## Resolved clusters
 
 (none yet via this tracking file — prior merges before 2026-07-31 are documented in WORKLOG.md

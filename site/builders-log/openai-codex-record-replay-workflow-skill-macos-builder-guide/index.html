@@ -71,8 +71,8 @@
 <p>This is an AI-researched guide based on published OpenAI documentation and changelogs. ChatForest does not have hands-on access to Codex.</p>
 <hr>
 <h2 id="what-record--replay-does">What Record &amp; Replay Does</h2>
-<p>Classic Codex skill creation requires you to write out the workflow — describe each step, note the tools the agent should use, document edge cases. Record &amp; Replay inverts this: you do the task normally while Codex watches, then Codex drafts the skill.</p>
-<p>The output is a SKILL.md file stored with your Codex configuration. It contains:</p>
+<p>Classic Codex skill creation requires you to write out the workflow — describe each step, note the tools the agent should use, document edge cases. Record &amp; Replay inverts this: you do the task normally while Codex watches, then Codex drafts the skill, per <a href="https://developers.openai.com/codex/record-and-replay">OpenAI&rsquo;s Record &amp; Replay documentation</a>.</p>
+<p>The output is a SKILL.md file stored with your Codex configuration. Per that same documentation, it contains:</p>
 <ul>
 <li>Usage instructions (how to invoke the skill and what variable inputs it accepts)</li>
 <li>The sequence of steps Codex observed</li>
@@ -82,6 +82,7 @@
 <p>On future runs, you invoke the skill and provide any variable inputs — a new filename, date, or destination — and Codex executes the sequence using whatever tools are available: Computer Use, browser actions, installed plugins.</p>
 <hr>
 <h2 id="the-three-step-flow">The Three-Step Flow</h2>
+<p>Per <a href="https://developers.openai.com/codex/record-and-replay">OpenAI&rsquo;s documentation</a>:</p>
 <p><strong>Record:</strong> Open Plugins in Codex, select &ldquo;Record a skill,&rdquo; add context about what you&rsquo;re about to demonstrate, then perform your workflow. Codex observes your screen actions and the window content it can see. Stop the recording when the task is complete.</p>
 <p><strong>Review:</strong> Codex analyzes the captured sequence and drafts a skill. You get usage instructions, verification steps, and an editable SKILL.md. This is your opportunity to add context Codex couldn&rsquo;t infer — preferences, fallback paths, notes about edge cases.</p>
 <p><strong>Replay:</strong> Invoke the skill in any new thread. Provide the variable inputs for that run. Codex executes using available tools.</p>
@@ -103,7 +104,7 @@
 <hr>
 <h2 id="skills-vs-plugins-when-to-use-which">Skills vs. Plugins: When to Use Which</h2>
 <p>Codex already has two existing paths for reusable automation, laid out in <a href="https://developers.openai.com/codex/skills-and-plugins">OpenAI&rsquo;s skills-and-plugins guidance</a>:</p>
-<p><strong>Skills</strong> (including Record &amp; Replay output) are local, personal, and lightweight — &ldquo;the best fit for reusable workflows&rdquo; that need &ldquo;richer instructions, scripts, and references while staying reusable across tasks.&rdquo; A SKILL.md lives in your Codex config and runs in the context of your session. Good for: individual workflows, personal preferences, one-off automation, internal team sharing via a shared config.</p>
+<p><strong>Skills</strong> (including Record &amp; Replay output) are local, personal, and lightweight — <a href="https://developers.openai.com/codex/concepts/customization">OpenAI&rsquo;s customization guidance</a> says they&rsquo;re &ldquo;the best fit for reusable workflows&rdquo; that need &ldquo;richer instructions, scripts, and references while staying reusable across tasks.&rdquo; A SKILL.md lives in your Codex config and runs in the context of your session. Good for: individual workflows, personal preferences, one-off automation, internal team sharing via a shared config.</p>
 <p><strong>Plugins</strong> are packaged, distributable, and stable. OpenAI <a href="https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-03-25">shipped plugin support for Codex on March 25, 2026</a> — installable bundles that package skills, app integrations, and MCP server configuration for reusable workflows. Good for: distributing across large teams, maintaining versioned automation, sharing publicly, combining multiple integrations into one install.</p>
 <p>OpenAI&rsquo;s guidance: use Record &amp; Replay → SKILL.md for workflows you develop and refine. Graduate to a plugin when you want stability, versioning, and broad distribution.</p>
 <hr>

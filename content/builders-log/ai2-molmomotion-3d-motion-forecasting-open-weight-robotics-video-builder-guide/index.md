@@ -5,11 +5,12 @@ description: "Allen AI released MolmoMotion on June 17, 2026 — an open 4B visi
 content_type: "Builder's Log"
 categories: ["Open Source Models", "Robotics", "Video Generation", "Computer Vision", "Research"]
 tags: ["ai2", "allenai", "molmomotion", "molmo", "3d-motion-forecasting", "robotics", "open-weight", "video-generation", "point-trajectories", "vision-language-model", "open-dataset"]
+sources_audited: 2026-08-03
 ---
 
 The Allen Institute for AI (Ai2) [released **MolmoMotion** on June 17, 2026](https://allenai.org/blog/molmo-motion) — an open-weight vision-language model that predicts where objects will move in 3D space before they move, given a short video clip, marked points on the target object, and a plain-language action instruction like "Put the bowl on the table."
 
-This is not a new chatbot or coding assistant. It is a 3D motion forecasting tool, and it ships as a complete open stack: model weights, a 1.16-million-video training dataset (MolmoMotion-1M), and a new evaluation benchmark (PointMotionBench). Builders working on robotics, video generation, or any system that needs to reason about what happens *next* in physical space now have an open foundation to build on.
+This is not a new chatbot or coding assistant. It is a 3D motion forecasting tool, and it ships as a complete open stack: model weights, a [1.16-million-video training dataset (MolmoMotion-1M)](https://allenai.org/blog/molmo-motion), and a new evaluation benchmark (PointMotionBench). Builders working on robotics, video generation, or any system that needs to reason about what happens *next* in physical space now have an open foundation to build on.
 
 ---
 
@@ -20,13 +21,13 @@ Given three inputs:
 2. A set of 2D query points marking locations on an object
 3. A natural-language action description
 
-MolmoMotion outputs: predicted 3D point trajectories for those query points over the next ~2 seconds, in a world-coordinate frame shared across viewpoints.
+MolmoMotion outputs: predicted 3D point trajectories for those query points over the next ~2 seconds, in a [world-coordinate frame shared across viewpoints](https://allenai.org/blog/molmo-motion) — "because the points live in a shared world frame, their trajectories remain stable across camera motion and viewpoint change."
 
 The key design choices that make this useful:
 
 **Object-attached coordinates in world space.** Unlike approaches that work in image space and break when the camera moves, MolmoMotion reasons in 3D. The same motion looks the same regardless of camera angle — this is what makes the predictions usable in robot planning systems where the camera isn't fixed.
 
-**Class-agnostic.** The model does not require per-object templates or category-specific training. If it appears in video, the model can predict its motion.
+**[Class-agnostic](https://allenai.org/blog/molmo-motion).** The model does not require per-object templates or category-specific training — "not tied to templates for human bodies, hands, rigid objects, or any other fixed category." If it appears in video, the model can predict its motion.
 
 **Language-conditioned.** Motion predictions are grounded to the action instruction. "Pick up the mug" produces different trajectories than "push the mug to the right" for the same starting frame.
 
@@ -34,7 +35,7 @@ The key design choices that make this useful:
 
 ## Two Model Variants
 
-MolmoMotion ships as two architectures, both built on Molmo 2 as the backbone:
+MolmoMotion ships as [two architectures, both built on Molmo 2 as the backbone](https://allenai.org/blog/molmo-motion):
 
 | Variant | Mechanism | Best For |
 |---|---|---|
@@ -47,16 +48,16 @@ For robot control tasks with known manipulation goals, AR is typically the right
 
 ## Benchmark Numbers
 
-**PointMotionBench** — the evaluation set released alongside the model — contains 2,700 clips across 111 object categories and 61 motion types, covering:
+**[PointMotionBench](https://allenai.org/blog/molmo-motion)** — the evaluation set released alongside the model — contains [2,700 clips across 111 object categories and 61 motion types](https://allenai.org/blog/molmo-motion) ([also documented on arXiv](https://arxiv.org/abs/2606.18558)), covering:
 - Indoor manipulation (tabletop pick-and-place, kitchen tasks)
 - Egocentric hand-object interaction
 - Outdoor scenes
 
-MolmoMotion-AR achieved **0.109 meters average displacement error** on PointMotionBench, outperforming all prior 3D motion forecasting methods in the comparison.
+MolmoMotion-AR achieved [**0.109 meters average displacement error**](https://allenai.org/blog/molmo-motion) on PointMotionBench (best result, HOT3D split), [outperforming all other 3D motion forecasting methods tested in the comparison](https://allenai.org/blog/molmo-motion) — including pixel-space video generators, parametric 3D methods, and a constant-velocity baseline.
 
-**Robot manipulation (simulation):** Using MolmoMotion trajectories for planning on pick-and-place tasks [improved success rate from **56.0% to 76.3%**](https://arxiv.org/abs/2606.18558) — a 20+ percentage point jump. That number is from a simulation environment, not production hardware, but it is a large enough gap to be meaningful as a capability signal.
+**Robot manipulation (simulation):** Using MolmoMotion trajectories for planning on pick-and-place tasks [improved success rate from **56.0% to 76.3%**](https://arxiv.org/abs/2606.18558) versus the Molmo 2 baseline — a 20+ percentage point jump. That number is from a simulation environment, not production hardware, but it is a large enough gap to be meaningful as a capability signal.
 
-**Video generation:** Substituting MolmoMotion-guided trajectories for the baseline improved all five motion quality metrics tested.
+**Video generation:** Substituting MolmoMotion-guided trajectories for the baseline [improved all five motion quality metrics tested](https://allenai.org/blog/molmo-motion) — temporal consistency, subject consistency, motion smoothness, dynamic degree, and background consistency.
 
 ---
 
@@ -72,7 +73,7 @@ Everything is on HuggingFace under open licenses:
 | **Code** | [github.com/allenai/molmo-motion](https://github.com/allenai/molmo-motion) |
 | **Project page** | [molmomotion.github.io](https://molmomotion.github.io/) |
 
-The training pipeline is also open: Ai2 released the automated annotation method that extracts 3D point trajectories from unconstrained video. If you have proprietary video data relevant to your domain (warehouse picking, surgical robotics, sports), you can apply the same pipeline to build a domain-adapted version.
+The training pipeline is also open: Ai2 released the [automated annotation pipeline](https://github.com/allenai/molmo-motion) (the `data_generation/` code) that extracts 3D point trajectories from unconstrained video. If you have proprietary video data relevant to your domain (warehouse picking, surgical robotics, sports), you can apply the same pipeline to build a domain-adapted version.
 
 ---
 
@@ -80,7 +81,7 @@ The training pipeline is also open: Ai2 released the automated annotation method
 
 **Robotics builders** — the 76.3% pick-and-place improvement in simulation is the headline number, but the mechanism is what matters: you can feed MolmoMotion a short video clip of a scene and a natural-language task, and get back a 3D trajectory to pass to a motion planner. This replaces the brittle part of many manipulation pipelines (the "where should the arm go next?" estimate).
 
-**Video generation builders** — current video generation models struggle with motion consistency. Injecting predicted 3D trajectories as conditioning signals (rather than 2D optical flow or pose estimates) gives the generator a physically grounded target. MolmoMotion provides this at 4B parameter scale from a single video clip.
+**Video generation builders** — current video generation models struggle with motion consistency. Injecting predicted 3D trajectories as conditioning signals (rather than 2D optical flow or pose estimates) gives the generator a physically grounded target. MolmoMotion provides this at [4B parameter scale](https://huggingface.co/allenai/MolmoMotion-4B-H3-F30) from a single video clip.
 
 **Research teams building on Molmo** — since MolmoMotion uses Molmo 2 as its backbone, teams already working with Molmo (the family of open VLMs from Ai2) can extend into motion forecasting without a full retraining from scratch.
 

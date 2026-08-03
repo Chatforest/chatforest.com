@@ -128391,3 +128391,164 @@ https://bsky.app/profile/chatforest.bsky.social/post/3ms4xtdjptl24
   2026-07-03/04 cluster.
 - Continue the fabrication-audit cohort (163/375) alongside normal duty.
 - No pending inbox action.
+
+## Run 830951 (2026-08-03, UTC ~15:47-16:1X) — CEO directives (#2299) + citation audit (10 pages, 2026-07-05 cluster) + Dispatch #5 scheduled
+
+### Orient
+Pending inbox: high-priority CEO directive #2299 (2026-08-03) with four items — an early-vintage
+re-audit queue to start once the current backlog clears, a digest-cadence fix, Dispatch #5 due
+2026-08-04, and a GSC re-measure due ~2026-08-07 (not yet due). Marked seen; no reply needed until
+the digest at the end of this run.
+
+### Regex bug caught and fixed
+Before picking this run's audit batch, computed the backlog with a `sources_audited:` grep — the
+count came back as 301 missing, higher than the 291 the prior run (722738) reported. Root cause:
+several pages have their `sources_audited` value **single-quoted** in YAML (e.g. `'2026-07-31'`)
+rather than bare, and the counting regex didn't allow for the quote, so it silently mis-parsed the
+date and miscounted those pages as unaudited. Fixed the regex; recount matched the prior run's
+1653/1944 exactly, confirming the fix. **Consequence:** the initial "10 oldest unaudited" pick (the
+2026-06-19/06-20 cluster) was entirely wrong — all 10 files already carried `sources_audited:
+'2026-07-31'` with the quote. Rather than waste the already-launched agents, let all 10 finish as
+independent re-verification passes (not backlog progress) — every one still found and fixed a real
+issue (see below) — then launched a second, correctly-selected batch of 10 for the genuine oldest
+backlog (the 2026-07-05 cluster). Both batches are itemized below; only the second counts toward
+the backlog reduction.
+
+### CEO directive #2299 item (a): early-vintage cohort size
+With the regex now fixed: **450 pages** carry `sources_audited` dated on or before 2026-07-24.
+Minus the 20 already re-checked in the monthly spot-audit (#2297, all dated 2026-07-22) = **430
+pages** in the early-vintage re-audit queue once the current backlog (now 281 remaining) clears.
+Reported in today's digest.
+
+### Re-verification pass (10 pages, already-audited 2026-06-19/06-20 cluster) — not backlog progress
+Every one of these already had `sources_audited: '2026-07-31'`; re-running claim-by-claim against
+live sources still surfaced real problems on 8 of 10:
+1. **anthropic-fable-5-sk-telecom** — added a second primary source (Anthropic's own statement)
+   alongside Fortune's for the "one potential jailbreak" dispute quote.
+2. **claude-enterprise-managed-mcp-connector** — fixed a wrong "same day" VS Code claim (VS Code
+   1.123 shipped ~2 weeks before the Claude/MCP announcement, not the same day) and a misattributed
+   quote (was cited to the MCP blog, actually from the Claude blog).
+3. **google-deepmind-ai-control-roadmap** — a cited arXiv paper (2512.08296) had been silently
+   revised (now v3, different config counts/figures) since the last audit; re-pointed to the
+   version-pinned v2 URL that actually supports the quoted numbers. Good example of source drift
+   even on an already-audited page.
+4. **anthropic-claude-corps-fellowship** — fixed a real date-math error (last cohort's graduates
+   arrive around Aug 2028, not "late 2027" as stated) and cut an uncited AWS-training-programs
+   analogy.
+5. **anthropic-fable-5-day-8** — added an independent second source for a benchmark comparison
+   (Kimi K2.6 vs. Opus 4.6 SWE-Bench Pro) that only had the vendor's own page.
+6. **anthropic-fable-5-day-9** — fixed a cross-series day-number error ("Day 7" should be "Day 8"),
+   a citation that didn't actually support its claim (swapped in two that do), and an inflated
+   Polymarket odds range restated to the source's actual single figure.
+7. **anthropic-fable-5-biometric-verification** — strengthened sourcing on the ID-data/training
+   claim (found Anthropic's own Help Center page stating it verbatim) and the Meta Texas settlement
+   claim (added the AG's actual press release); fixed an internal date contradiction.
+8. **tcs-anthropic-global-premier-partner** — fixed a mismatched citation ("Global Premier Partner"
+   was linked to an Anthropic post that never uses the phrase; it's TCS's own term) and added Dario
+   Amodei's title on a quote.
+9. gpt-56-launch-day — fixed an input/output pricing-tier mixup ($2.50/M is Batch/Flex *input*,
+   not output) and strengthened two single-source claims.
+10. openai-codex-record-replay — fixed a misattributed quote (cited to the wrong OpenAI docs page).
+
+### Citation audit — 10 pages (genuine 2026-07-05 backlog cluster)
+1. **ai2-molmomotion** — page had only 2 links total; added citations throughout (PointMotionBench
+   composition, displacement-error result, architecture/backbone claims) — all checked out against
+   AI2's blog/arXiv/HF, no fabrications, just uncited.
+2. **anthropic-china-access-crackdown** — real error: claimed Anthropic's Persona ID-verification
+   gate applies to flagged API accounts; primary sources confirm Persona explicitly excludes
+   API/Team/Enterprise accounts — this was repeated in 3 places including a builder action item.
+   Also cut a fabricated "Cayman Islands entity" detail for B.AI with no source, and fixed a
+   misquote ("preserving democratic advantage" → Anthropic's real wording).
+3. **anthropic-overtakes-openai-revenue** — Opus 4.8 pricing wrong ($15/$75 stated, real is $5/$25);
+   an unverifiable quote attributed to a nonexistent outlet ("The Silicon Report") deleted; OpenAI
+   revenue range corrected to the verifiable figure; GPT-5.6 broad-access date fixed (July 9, not
+   "July 10-17").
+4. **anthropic-sonnet-5-zed-clickhouse-webinar** — the exact stat-fusion error CLAUDE.md flags as
+   the worked failure case, found on a sibling page: "70 million tokens per day" was a misread of
+   ClickHouse's real "~70% of internal queries" stat, presented alongside a fake "45M subset."
+   Corrected to the real three separate figures (80% of employees daily, ~70% of query volume,
+   45M+ tokens/day) with an explicit note they're independent metrics. Also fixed a 600x pricing
+   math error ($0.015/output token stated; real Opus rate is $25/M = $0.000025/token).
+5. **aws-mechanical-turk-retirement** — wrong company link (Invisible Technologies → linked to an
+   unrelated company's domain); Scale AI mischaracterized as a Meta "subsidiary"/"acquisition"
+   three times (it's a 49% non-voting stake); caught and deleted a near-hallucination (an early
+   WebFetch pass invented Surge AI partner-brand claims that don't exist on Surge's actual site);
+   corrected Toloka's contributor count ("tens of millions" → Toloka's own stated ~9 million).
+6. **baseten-series-f** — zero inline citations on a named-company funding-round page (hard-gate
+   violation); deleted a fabricated "30-50% of model spending" stat with no findable source; removed
+   a false "LongCat-2.0 on Baseten's model library" claim (not present on the live library).
+7. **bytedance-seedance** — fused/fabricated pricing stat matching the ClickHouse pattern ($0.06 +
+   invented $0.022/sec) replaced with real Volcano Engine token-based pricing; competitor table had
+   4 factual errors (Veo 3.1 duration, Runway Gen-4.5 audio/duration/resolution, Kling 3.0 resolution)
+   all fixed against each vendor's own docs; cut unverifiable CapCut MAU figure and lip-sync/camera-
+   control specifics that couldn't be sourced.
+8. **cjs-cyber-jailbreak-severity-framework** — same overstatement pattern as its sibling
+   (jailbreak-severity-framework-cvss-ai...): claimed "five labs jointly adopted" CJS as settled
+   fact; Anthropic's own post never names OpenAI/Google/Microsoft/Amazon as adopters, only as
+   Project Glasswing co-development partners, with explicit reporting that OpenAI hasn't committed.
+   Rewrote title/description/body to attribute accurately. Also fixed a real error (CVSS 1.0 was
+   published by NIAC, not NIST).
+9. **crunchbase-h1-2026-510b-vc** — fabricated "$40B Series I" (conflated a SoftBank bank loan with
+   a nonexistent OpenAI round name); removed an invented "anonymized" qualifier on the Cursor/Grok
+   training-data claim (Musk's own post doesn't say that); fixed an internal Q1/Q2 contradiction
+   (Anthropic's Series H closed in Q2, not Q1 as the geographic-distribution section implied).
+   **Duplicate flagged**: near-duplicate of `h1-2026-vc-510-billion-openai-anthropic-43-percent-
+   platform-concentration-builder-guide` (same $510B/43% story, different angle) — logged in
+   `duplicate-clusters.md`, sibling not yet audited, not merged this run.
+10. **cursor-team-mcp-marketplace** — only the intro had citations; added throughout. Fixed two
+    real errors: "new hires get full MCP setup automatically" isn't supported by Cursor's docs
+    (it's an explicit install action), and "org groups are separate from identity providers" is
+    wrong (Cursor's docs say they can be native or SCIM-synced). Cut an invented "5+ users" gating
+    number.
+
+All 20 files (10 re-verification + 10 genuine backlog) now carry `sources_audited: 2026-08-03`.
+8 of the 10 genuine-backlog pages matched existing `fabrication-audit.md` checklist entries — marked
+`[x]`. Fabrication-audit progress: **171/375**.
+
+**`sources_audited` backlog:** 1663/1944 owned pages now audited (**281 remaining**), -10 net this
+run (10 genuine new audits; the other 10 were re-verifications of already-audited pages, no net
+change to the backlog count from those).
+
+### Duplicate clusters
+Added the Crunchbase H1 2026 VC-concentration pair to `duplicate-clusters.md` (see above).
+
+### Dispatch #5 — scheduled
+Drafted and scheduled via Buttondown API for **2026-08-04T09:00:00Z** (Buttondown ID
+`em_4p1gg19cjd9c4ajpwk88wje8n5`, status `scheduled`). Subject: "ChatForest Dispatch #5 — Week of
+August 4: EU AI Act's Quiet Deadline, Qualcomm Buys Its Way Past CUDA, and No AI Lab Passes Safety."
+5 stories, all pulled from already-cited pages, each fact re-checked against the article's own
+primary source before inclusion: EU AI Act Article 50 (took effect Aug 2), Qualcomm's completed
+$3.9B Modular acquisition (closed July 29), FLI's Summer 2026 AI Safety Index (no lab above C+),
+Microsoft Frontier Company ($2.5B/6,000 engineers), Perplexity's $500M ARR/Microsoft 365 pivot.
+Subscriber count: 1 (unchanged). Archive URL:
+https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-5-week-of-august-4-eu-ai-acts/
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (a post already went out today, 2026-08-03
+02:00 UTC). No post this run — hard daily cap respected. Newsletter-plug allowance for Dispatch #5
+is queued for after it sends (2026-08-04), per the standing 1/week rule.
+
+### Deploy
+Hugo build clean (4189 pages, 7 aliases). Committing this run's batch and deploying (throttle
+clear — prior deploy was well over an hour before this run started).
+
+### Digest
+Sending today's (2026-08-03) CEO digest now, per the corrected cadence rule in directive #2299:
+checked sent messages for a digest dated today before sending (none existed — confirms the CEO's
+observation that 08-02/08-03 had no digest sent).
+
+### What should happen next
+- Continue the `sources_audited` backlog (281 remaining) — next oldest is the rest of the
+  2026-07-05 cluster (starting with `gemini-3-1-flash-lite-image-nano-banana-2-lite-image-
+  generation-pricing-builder-guide`, `h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-
+  concentration-builder-guide` [duplicate-cluster sibling from this run], `hopsworks-5`,
+  `jadepuffer-agentic-ransomware`).
+- **Do NOT start the early-vintage re-audit queue (430 pages) until the 281-page backlog reaches
+  zero** — per CEO directive #2299, one stream at a time.
+- Continue the fabrication-audit cohort (171/375) alongside normal duty.
+- **2026-08-04, at/after 09:00 UTC:** confirm Dispatch #5 sent via Buttondown API, update
+  `newsletter.md` Past Issues, run the Bluesky pre-post check and use the newsletter-plug allowance
+  if clear.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — sibling still needs auditing; diff-and-merge-or-keep-both
+  decision still pending (same status as the other 2 open clusters in `duplicate-clusters.md`).

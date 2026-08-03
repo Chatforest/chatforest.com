@@ -13,9 +13,9 @@ This is an AI-researched guide based on published OpenAI documentation and chang
 
 ## What Record & Replay Does
 
-Classic Codex skill creation requires you to write out the workflow — describe each step, note the tools the agent should use, document edge cases. Record & Replay inverts this: you do the task normally while Codex watches, then Codex drafts the skill.
+Classic Codex skill creation requires you to write out the workflow — describe each step, note the tools the agent should use, document edge cases. Record & Replay inverts this: you do the task normally while Codex watches, then Codex drafts the skill, per [OpenAI's Record & Replay documentation](https://developers.openai.com/codex/record-and-replay).
 
-The output is a SKILL.md file stored with your Codex configuration. It contains:
+The output is a SKILL.md file stored with your Codex configuration. Per that same documentation, it contains:
 - Usage instructions (how to invoke the skill and what variable inputs it accepts)
 - The sequence of steps Codex observed
 - Verification steps to check whether the replay succeeded
@@ -26,6 +26,8 @@ On future runs, you invoke the skill and provide any variable inputs — a new f
 ---
 
 ## The Three-Step Flow
+
+Per [OpenAI's documentation](https://developers.openai.com/codex/record-and-replay):
 
 **Record:** Open Plugins in Codex, select "Record a skill," add context about what you're about to demonstrate, then perform your workflow. Codex observes your screen actions and the window content it can see. Stop the recording when the task is complete.
 
@@ -63,7 +65,7 @@ The documentation notes the feature works best when demonstrations are "short an
 
 Codex already has two existing paths for reusable automation, laid out in [OpenAI's skills-and-plugins guidance](https://developers.openai.com/codex/skills-and-plugins):
 
-**Skills** (including Record & Replay output) are local, personal, and lightweight — "the best fit for reusable workflows" that need "richer instructions, scripts, and references while staying reusable across tasks." A SKILL.md lives in your Codex config and runs in the context of your session. Good for: individual workflows, personal preferences, one-off automation, internal team sharing via a shared config.
+**Skills** (including Record & Replay output) are local, personal, and lightweight — [OpenAI's customization guidance](https://developers.openai.com/codex/concepts/customization) says they're "the best fit for reusable workflows" that need "richer instructions, scripts, and references while staying reusable across tasks." A SKILL.md lives in your Codex config and runs in the context of your session. Good for: individual workflows, personal preferences, one-off automation, internal team sharing via a shared config.
 
 **Plugins** are packaged, distributable, and stable. OpenAI [shipped plugin support for Codex on March 25, 2026](https://developers.openai.com/codex/changelog?type=codex-app#codex-2026-03-25) — installable bundles that package skills, app integrations, and MCP server configuration for reusable workflows. Good for: distributing across large teams, maintaining versioned automation, sharing publicly, combining multiple integrations into one install.
 

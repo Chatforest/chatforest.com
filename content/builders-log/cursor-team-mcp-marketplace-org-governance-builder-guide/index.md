@@ -6,9 +6,10 @@ og_description: "Cursor 3.9 (June 22) introduced a unified Customize page, one-c
 content_type: "Builder's Log"
 categories: ["Developer Tools", "Cursor", "AI Tools"]
 tags: ["cursor", "mcp", "developer-tools", "teams", "enterprise", "ai-governance", "builders-log", "june-2026", "july-2026"]
+sources_audited: 2026-08-03
 ---
 
-Cursor shipped two related updates in the last two weeks of June 2026 — [version 3.9 on June 22](https://cursor.com/changelog/customize) and a [team marketplace expansion on June 30](https://cursor.com/changelog) — that together replace what was previously a patchwork of individual JSON config files with a proper admin-controlled governance layer for AI tools across an engineering org.
+Cursor shipped two related updates in the last two weeks of June 2026 — [version 3.9 on June 22](https://cursor.com/changelog/customize) and a [team marketplace expansion (version 3.10) on June 30](https://cursor.com/changelog/team-marketplace-updates) — that together replace what was previously a patchwork of individual JSON config files with a proper admin-controlled governance layer for AI tools across an engineering org.
 
 If you run Cursor at a company with more than a handful of developers, both changes are immediately relevant.
 
@@ -26,32 +27,27 @@ This was fine when MCP was a niche feature. By mid-2026, with most engineering t
 
 ### Unified Customize Page
 
-The release replaced the old fragmented configuration interface with a single **Customize page** that manages all extension types — plugins, skills, and MCPs — in one view. Previously these lived in different settings areas; now they're surfaced together.
+The release replaced the old fragmented configuration interface with a single **[Customize page](https://cursor.com/changelog/customize)** that brings plugins, skills, and MCPs "into one place," manageable "at the user, team, or workspace level." Previously these lived in different settings areas; now they're surfaced together.
 
 ### Team MCP Management
 
-The key change for engineering teams: admins can now enable an MCP server once in the dashboard, and team members install it with a single click from the marketplace — no manual JSON editing required.
+[Cursor's docs](https://cursor.com/docs/mcp) describe the workflow: admins configure shared Team MCP servers under **Dashboard → Integrations & MCP**, then choose **Add to Team Marketplace** to make a server available in the Agent Window, IDE, and CLI. From there, "teammates can then install and configure it from Customize" — a one-click install from the [Customize page](https://cursor.com/changelog/customize) rather than hand-editing a shared JSON file.
 
-The workflow:
-1. Admin configures the MCP server in Dashboard → Integrations & MCP
-2. The server appears in the team marketplace
-3. Developers install it locally from the marketplace in one click
-
-This eliminates the onboarding step of "get everyone to add the same server config." New hires get the full team MCP setup automatically when they join the marketplace.
+This eliminates the onboarding step of "get everyone to add the same server config" by hand — new hires can pick up the team's approved MCP servers from the marketplace instead of copy-pasting a config file.
 
 ### Team Leaderboards
 
-Cursor added adoption leaderboards showing the most-used extensions across your org. The practical value: instead of guessing which MCP integrations are actually delivering value, you can see what's being used in practice. Tools that appear in onboarding docs but never show up in leaderboards are candidates for removal; tools that spread organically through the org are worth standardizing.
+The [3.9 release](https://cursor.com/changelog/customize) added a leaderboard "of the most popular plugins, skills, and MCPs across your team," with one-click install for anything on it from the Customize page. The practical value: instead of guessing which MCP integrations are actually delivering value, you can see what's being used in practice. Tools that appear in onboarding docs but never show up in leaderboards are candidates for removal; tools that spread organically through the org are worth standardizing.
 
 ### Prebuilt Canvases
 
-Plugins can now ship with **prebuilt workspace templates** — ready-made canvas configurations for common workflows. An example from the announcement: the Hex plugin ships a data analytics canvas with pre-configured visualization tools, so developers working with Hex data don't start from a blank workspace.
+Plugins can now ship with **[prebuilt canvases](https://cursor.com/changelog/customize)** — "shared setup templates your team can open and reuse." The announcement's examples: a Hex Canvas for data visualizations and an Atlassian Canvas for a real-time view of issues, projects, and documents — so teams using those tools don't start from a blank workspace.
 
 This is mostly a plugin ecosystem feature rather than an admin feature, but it changes what's possible in the marketplace: plugins become complete workflow packages, not just API wrappers.
 
 ### Expanded Source Repository Support
 
-Cursor's marketplace previously required GitHub as the source repository for custom plugins. 3.9 adds support for **GitLab, BitBucket, and Azure DevOps**. Teams that mirror internal tooling repos to GitHub to get around this limitation can stop.
+Cursor's marketplace previously required GitHub as the source repository for custom plugins. [3.9 adds support](https://cursor.com/changelog/customize) for team marketplaces to import plugin repositories from **GitLab, BitBucket, or Azure DevOps**. Teams that mirror internal tooling repos to GitHub to get around this limitation can stop.
 
 ---
 
@@ -59,15 +55,15 @@ Cursor's marketplace previously required GitHub as the source repository for cus
 
 ### Organization Groups in Team Marketplaces
 
-The June 30 update extended marketplace access controls from SCIM directory groups to **organization groups** — Cursor's own native group system, separate from your identity provider.
+The [June 30 update](https://cursor.com/changelog/team-marketplace-updates) extended marketplace access controls beyond team-level SCIM directory groups to **[organization groups](https://cursor.com/docs/enterprise/organization-groups)** — org-level cohorts (e.g. Engineering, Contractors, Pilot Users) that Cursor Enterprise admins can manage natively in the dashboard, or sync from an identity provider via SCIM; either way they're a distinct, org-wide layer on top of a single team's own directory groups.
 
-Under Dashboard → Plugins → Team Marketplaces, admins can now restrict which organization groups can see and install which marketplaces. A team marketplace containing production database MCP servers can be restricted to backend engineers; a marketplace with design tools can be scoped to product designers. Existing marketplaces configured with SCIM groups keep their configuration.
+Under **Dashboard → Plugins → Team Marketplaces**, admins can now restrict which organization groups can see and install which marketplaces — for example, scoping a marketplace to a specific engineering or design cohort. [Existing marketplaces configured with SCIM groups keep their configuration](https://cursor.com/changelog/team-marketplace-updates).
 
 ### MCP Distribution to Cloud Agents
 
-This is the most operationally significant June 30 change: Team MCP servers configured by admins now distribute to **cloud agents**, not just local IDE sessions.
+This is the most operationally significant June 30 change: [Team MCP servers configured by admins now distribute](https://cursor.com/changelog/team-marketplace-updates) "across cloud agents, the agents window, IDE, and CLI" — not just local IDE sessions.
 
-Before June 30, Team MCPs were a local IDE feature. If you ran Cursor's cloud agents (background agents, remote sessions), they didn't automatically pick up your team's MCP configuration — you had to configure servers separately for cloud runs. After June 30, when an admin configures Team MCP servers for cloud agents in Dashboard → Integrations & MCP, those servers are automatically available to cloud agent sessions across the team.
+Before June 30, admin-configured Team MCPs didn't automatically reach Cursor's cloud agents (background agents, remote sessions) — teams had to configure servers separately for cloud runs. After June 30, an admin configures Team MCP servers once in **Dashboard → Integrations & MCP**, and [those servers become available across cloud agents, the agents window, IDE, and CLI](https://cursor.com/changelog/team-marketplace-updates) for the whole team.
 
 For teams running agents on long-running tasks or using cloud agents for automated workflows, this closes a gap that previously required maintaining two separate MCP configurations.
 
@@ -94,7 +90,7 @@ These changes matter most at companies where:
 - Compliance or security teams need visibility into what third-party integrations are authorized
 - Onboarding velocity matters and manual config setup is friction
 
-Smaller teams and solo developers won't feel most of this — the Customize page UX improvement applies to everyone, but the governance features are designed for orgs with 5+ Cursor users.
+Smaller teams and solo developers won't feel most of this — the Customize page UX improvement applies to everyone, but the governance features (admin allowlists, org-group access gates, cloud-agent distribution) only pay off once there's a team large enough that config drift and unmanaged tool sprawl become a real risk.
 
 ---
 
@@ -114,7 +110,7 @@ If you're a developer whose team has set this up:
 
 ## What's Not Covered
 
-Both updates are silent on pricing tier requirements — which Cursor plan includes team marketplace features and which includes cloud agent MCP distribution is not spelled out in the announcements. The Admin Dashboard features historically require at minimum the Teams tier ($32/seat/month Standard, $96/seat/month Premium as of July 1 renewals).
+Both updates are silent on pricing tier requirements — which Cursor plan includes team marketplace features and which includes cloud agent MCP distribution is not spelled out in the announcements. The Admin Dashboard features historically require at minimum the Teams tier ([$32/seat/month Standard, $96/seat/month Premium on annual billing, effective for renewals starting July 1, 2026](https://cursor.com/blog/teams-pricing-june-2026)).
 
 There's also no announced API for querying leaderboard data programmatically — you can see it in the dashboard but can't pipe it into your own analytics tooling.
 
