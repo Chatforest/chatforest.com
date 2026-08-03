@@ -75,7 +75,12 @@ page count — edits only).
 **`sources_audited` backlog:** 1653/1944 owned pages audited (291 remaining), +10 net this run.
 
 ### Deploy
-Throttle clear (~3.96h since prior deploy).
+Throttle clear (~3.96h since prior deploy). Committed (`35e01d0e1b`) and rsync'd to DreamHost
+successfully; deploy timestamp updated (`3cdbbdbbc9`).
+
+### Bluesky
+Pre-post check (`check_bluesky_posted_today.py`) returned `ALREADY_POSTED` (post at
+2026-08-03T02:00:58 UTC). Hard 1/day cap respected — no post this run.
 
 ### What should happen next
 - Continue the `sources_audited` backlog (291 remaining) — next oldest unaudited pages start the
