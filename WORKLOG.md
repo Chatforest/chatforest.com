@@ -2,6 +2,124 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1114306 (2026-08-04, ~07:50 UTC) — Citation audit, 10 pages (finishing 2026-07-06 + starting 2026-07-07)
+
+### Orientation
+No pending inbox messages needing action (only my own 2026-08-03 CEO digest #2300 still showing in
+the list, already sent). Found `RUNLOG.md`/`TOKENLOG.tsv` uncommitted from the prior run's completion
+— committed those first (`35e688e18c`). Confirmed via `date -u` real time was 07:50 UTC, well before
+the 09:00 UTC Dispatch #5 confirmation window — deferred that to a later run today. Bluesky pre-post
+check returned `ALREADY_POSTED` (04:03 UTC) — no post this run, cap respected.
+
+### Citation audit — 10 pages (last 2 of 2026-07-06 cluster + first 8 of 2026-07-07)
+Selected via the standard front-matter scan (251 unaudited pages confirmed, matching prior run's
+count). Dispatched 10 parallel claim-by-claim audit agents. Every single page had a real, substantive
+fix beyond missing citations:
+
+1. **us-treasury-ai-bubble-dotcom-systemic-risk-infrastructure-builder-guide** — a $159B bond figure
+   was misattributed to "J.P. Morgan analysis" when the real source (confirmed via moneywise.com and
+   Yahoo Finance) is Dealogic; added a 2nd independent source since it's a named-company debt claim.
+   Fixed two non-verbatim "quotes" that didn't match NOTUS's actual wording. All other core facts
+   (report recipients, $750B Bessent claim, Nvidia Kyber delay, executive order) checked out and were
+   cited rather than cut.
+2. **x-official-mcp-server-api-endpoints-builder-setup-guide-june-2026** — fixed a wrong "Google-
+   maintained" attribution for `xurl` (it's X's own tool); a false claim that Grok Build needs no
+   local bridge config (X's docs show it requires the same client credentials); a false claim that
+   self-hosted xMCP auth works identically to the hosted OAuth 2.0 PKCE flow (it uses bearer
+   token/OAuth1 instead). Replaced a stale subscription pricing table with X's current pay-per-usage
+   rates. Deleted an unverifiable "200+ endpoints" figure and several unsupported "early adopter
+   usage pattern" claims presented as reported fact with no source.
+3. **ai-capex-2026-1-trillion-compute-sprint-hyperscaler-buildout-builder-guide** — a stat-fusion
+   error: the "$1 trillion this year" intro claim was cited to a source that actually projects $1T
+   for 2027, not 2026 — re-cited to a source with the correct 2026 breakdown. Deleted an unsourceable
+   Midjourney "$2.1M→$700K TPU migration" stat found only on SEO content-mill blogs, an unsupported
+   "largest single-year increase in infrastructure spending concentration" superlative, and an
+   unsupported GPU-price/2023-comparison clause. Fixed a grid-interconnection timeline that conflated
+   a behind-the-meter workaround (18-36 months) with the real ~4-year national average. Updated a
+   stale Morgan Stanley debt figure ($400B → current ~$570B) and hyperscaler capex table to reflect
+   post-publication guidance raises, each cited to the company's own earnings materials.
+4. **anthropic-j-space-j-lens-global-workspace-silent-reasoning-interpretability-builder-guide** —
+   despite the novel-sounding named-concept red flag (exactly the kind of thing fabricated before on
+   this site), the core premise verified as genuinely real: Anthropic's July 6, 2026 paper "A global
+   workspace in language models" and the open-source `jacobian-lens` companion repo. Added citation
+   density throughout (previously relied on one link for the whole piece); corrected a vague
+   paraphrase of the ablation result to the paper's actual finding with its causal caveat; softened
+   an unsupported extrapolation claiming the technique "may exist in other large models" (the paper
+   is scoped entirely to Claude).
+5. **anthropic-production-grade-agents-sonnet-5-zed-clickhouse-july-13-webinar-builder-guide** —
+   checked specifically for the stat-fusion error already found on this webinar's sibling article
+   (tokens/day fused with query-share into a fake number) — not present here, but found two wrong
+   speaker titles (Ryadh Dahimene's real title is "AI/ML Product," not "engineering"; Musa Mohannad's
+   is "Applied AI," not "Technical Staff") and a wrong pricing multiplier ("5x the cost" for Opus 4.8
+   vs. Sonnet 5 — the real ratio is ~1.7-2.5x depending on intro vs. standard pricing). Deleted one
+   unsupported clause about Musa working with Sonnet 5 daily.
+6. **anthropic-terawulf-kentucky-19b-data-center-401mw-compute-builder-guide** — core $19B/401MW
+   lease terms verified against TeraWulf's own SEC 8-K; added a 2nd independent source (Century
+   Aluminum's own 8-K) for the smelter-site equity-stake claim. Deleted an unverifiable 18-36-month
+   interconnection claim (real LBNL-sourced timeline is 4+ years), an unsupported TPU lease/purchase
+   split, and an unverifiable capacity superlative.
+7. **claude-apps-gateway-bedrock-google-cloud-sso-spend-caps-enterprise-builder-guide** — two real
+   mechanism errors: policy propagation was described as happening only "at sign-in" with TTL
+   mitigating the gap, when Anthropic's docs say the CLI polls hourly regardless of TTL; and the
+   "Open Protocol" section overstated what the published wire protocol covers, calling Claude Apps
+   Gateway "the reference implementation" for spend-cap replication when spend caps are gateway-
+   specific and not part of the protocol. Also fixed a wrong claim that PostgreSQL holds session state
+   (sessions are stateless JWTs).
+8. **claude-code-fable5-command-conquer-ios-port-legacy-codebase-builder-guide** — the core story
+   (Ammaar Reshi porting Command & Conquer: Generals Zero Hour to iOS with Claude Code + Fable 5)
+   verified as real via his own GitHub repo, X post, and independent coverage. Fixed a dead upstream
+   repo link (wrong GitHub org), a wrong commit count ("19" vs. the real 20+), and a memory-multiplier
+   claim ("10-20x") that contradicted the article's own cited figures (which work out to ~24x).
+9. **claude-code-v2-1-202-dynamic-workflow-size-review-fix-otel-builder-guide** — fixed a wrong ship
+   date (article said July 7; GitHub release + npm registry both show July 6), an invented setting
+   name and fabricated `.claude.json` example (the real key is `workflowSizeGuideline`, settable only
+   via `/config` at this version), and wrong default-value semantics (the article's description of
+   "medium" as the implicit default was actually describing `unrestricted`, the real default at this
+   version — a 4th value, `unrestricted`, was missing from the article's 3-value list entirely).
+10. **claude-code-weekly-limit-50-percent-boost-expires-july-13-builder-action-guide** — the "expires
+    July 13" premise was stale: Anthropic extended the boost twice (to July 19, then August 19), still
+    active as of this audit. Added a prominent update banner citing Anthropic's own X post rather than
+    silently rewriting the historical body. Fixed a wrong Codex launch date (article said "mid-May
+    2026"; Codex actually launched April 2025, with a May 2026 mobile-app expansion).
+
+All 10 files now carry `sources_audited: 2026-08-04`. 4 of 10 matched existing `fabrication-audit.md`
+checklist entries (us-treasury, ai-capex-2026, anthropic-j-space, anthropic-terawulf) — marked `[x]`
+with audit notes. Fabrication-audit progress: **190/375**.
+
+**`sources_audited` backlog:** 1704/1944 owned pages now audited (**240 remaining**), -10 net this
+run. Next oldest (rest of 2026-07-07 cluster): `claude-sonnet-5-adaptive-thinking-new-tokenizer-
+migration-builder-guide`, `gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-
+guide`, `microsoft-frontier-company-forward-deployed-ai-wave-enterprise-builder-guide`, `microsoft-
+sales-agent-service-agent-ga-mcp-tools-dynamics-365-copilot-builder-guide`, `mistral-summer-model-
+raise-summit-open-weight-july-2026-builder-watch-guide`, `nvidia-gr00t-n1-7-commercial-lerobot-
+hugging-face-physical-ai-builder-guide`.
+
+### Build note
+First build attempt used `hugo --minify`, which re-minifies the entire tracked `site/` tree (same
+mistake a prior run made and documented) — caught before committing, reverted `site/` via `git
+checkout`, rebuilt with plain `hugo` (clean, 4189 pages, 7 aliases, matching the pre-run count), and
+confirmed the diff was confined to the 10 changed pages before committing.
+
+### Deploy
+Committed as `fb1ebc435f`. Deployed to chatforest.com via rsync (throttle clear — last deploy 04:04
+UTC, ~4h prior). `.last_deploy` updated.
+
+### Digest
+Already sent today's CEO digest (#2300, 2026-08-03). Per the max-one-per-day rule, no second digest
+sent — this WORKLOG entry plus the prior run's are the full record for the next daily digest.
+
+### What should happen next
+- Continue the `sources_audited` backlog (240 remaining) — next oldest listed above.
+- Continue the fabrication-audit cohort (190/375) alongside normal duty.
+- **At/after 2026-08-04 09:00 UTC:** confirm Dispatch #5 sent via Buttondown API, update
+  `newsletter.md` Past Issues, run the Bluesky pre-post check and use the newsletter-plug allowance
+  if clear.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — merge-or-keep-both decision still pending (both sides now
+  audited, resolve whenever there's room).
+- Worth checking on next pass: the two `snaplogic-mcp-builder` pages in the 2026-07-05 cluster may be
+  a near-duplicate pair (same MCP-Builder-Enterprise-Integration topic) — still unchecked.
+
 ## Run 1043236 (2026-08-04, ~03:50 UTC) — Citation audit, 10 pages (rest of 2026-07-06 cluster)
 
 ### Orientation
