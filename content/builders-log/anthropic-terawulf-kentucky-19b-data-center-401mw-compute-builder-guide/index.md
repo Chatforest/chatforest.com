@@ -5,11 +5,12 @@ description: "Anthropic signed a 20-year, $19 billion lease for TeraWulf's Justi
 content_type: "Builder's Log"
 categories: ["Anthropic", "Infrastructure", "AI Industry"]
 tags: ["anthropic", "claude", "compute", "infrastructure", "data-center", "rate-limits", "capacity", "terawulf", "kentucky"]
+sources_audited: 2026-08-04
 ---
 
 On July 6, 2026, Anthropic signed a 20-year lease with TeraWulf Inc. for the Justified Data campus in Hawesville, Kentucky — a purpose-built AI infrastructure site expected to generate approximately $19 billion in contracted revenue for TeraWulf over the initial lease term. ([TeraWulf press release](https://investors.terawulf.com/news-events/press-releases/detail/142/terawulf-announces-anthropic-lease-at-justified-data-campus-and-sale-of-majority-interest-in-abernathy-joint-venture-to-fluidstack) · [CNBC](https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html))
 
-The campus will deliver approximately 401 megawatts of critical IT load in phases. Initial capacity comes online in the second half of 2027. Full buildout is expected by early 2028.
+The campus will deliver approximately 401 megawatts of critical IT load in phases ([TeraWulf SEC 8-K, July 6, 2026](https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001104659-26-080583/tm2619468d1_8k.htm)). Initial capacity comes online in the second half of 2027. Full buildout is expected by early 2028.
 
 For builders on Claude, this is the fourth major infrastructure commitment Anthropic has announced in 2026, and the one with the longest time horizon before it affects your API experience.
 
@@ -17,21 +18,21 @@ For builders on Claude, this is the fourth major infrastructure commitment Anthr
 
 ## What TeraWulf Is and Why the Site Matters
 
-TeraWulf is an AI infrastructure developer that acquires industrial power sites and converts them for high-density compute. The Justified Data campus sits on the former Century Aluminum smelter in Hawesville, Hancock County, Kentucky — a site TeraWulf acquired from Century in February 2026, with Century retaining a small minority equity stake in the redevelopment.
+TeraWulf is an AI infrastructure developer that acquires industrial power sites and converts them for high-density compute. The Justified Data campus sits on the former Century Aluminum smelter in Hawesville, Hancock County, Kentucky — a site TeraWulf, through affiliate Justified DataPower LLC, acquired from Century for $200 million in cash in a deal that closed February 2, 2026, with Century retaining a 6.8% non-dilutive minority equity stake in the development entity, Raylan Data Holdings LLC ([TeraWulf press release](https://investors.terawulf.com/news-events/press-releases/detail/129/terawulf-expands-digital-and-power-infrastructure-portfolio) · [Century Aluminum 8-K](https://www.stocktitan.net/sec-filings/CENX/8-k-century-aluminum-co-reports-material-event-bfc05500fd48.html)).
 
 The aluminum angle matters. Smelting is one of the most energy-intensive industrial processes that exists. The Hawesville smelter ran at a scale that required dedicated high-voltage transmission lines, an on-site substation, and a direct connection to the regional transmission network. All of that infrastructure stays in place when you repurpose the site for data centers.
 
-The result: approximately 480 MW of immediately available grid-connected power and more than 250 buildable acres. Those are not planned numbers — the grid connection already exists. Greenfield AI data centers in most U.S. markets wait 18–36 months for utility interconnection. The Hawesville site eliminates that bottleneck entirely.
+The result: approximately 480 MW of immediately available grid-connected power and more than 250 buildable acres ([TeraWulf press release](https://investors.terawulf.com/news-events/press-releases/detail/129/terawulf-expands-digital-and-power-infrastructure-portfolio)). Those are not planned numbers — the grid connection already exists. For comparison, large-scale (100+ MW) greenfield power projects in the U.S. face a median of four-plus years from interconnection request to commercial operation, per Lawrence Berkeley National Laboratory's annual interconnection-queue research ([LBNL, "Queued Up: 2025 Edition"](https://emp.lbl.gov/publications/queued-2025-edition-characteristics)). The Hawesville site's existing grid connection sidesteps that queue entirely.
 
 ---
 
 ## The Lease Structure
 
-The deal is a 20-year lease, with Anthropic holding two successive five-year renewal options — giving Anthropic the option to extend to 30 years at the same campus if it chooses. Rent payments begin upon delivery of each phase, so Anthropic starts paying for capacity as it comes online rather than up front.
+The deal is a 20-year lease, with Anthropic holding two successive five-year renewal options — giving Anthropic the option to extend to 30 years at the same campus if it chooses. Rent payments begin upon delivery of each phase, so Anthropic starts paying for capacity as it comes online rather than up front ([TeraWulf SEC 8-K, July 6, 2026](https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001104659-26-080583/tm2619468d1_8k.htm)).
 
-The $19 billion figure is the expected total contracted revenue over the 20-year initial term. Payments are backed by investment-grade credit, which is why this lease structure is comparable to infrastructure bonds rather than typical technology contracts. The credit quality also tells you something about how counterparties view Anthropic's long-term viability.
+The $19 billion figure is the expected total contracted revenue over the 20-year initial term. Payments are backed by investment-grade credit ([TeraWulf SEC 8-K](https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001104659-26-080583/tm2619468d1_8k.htm)), which is why this lease structure is comparable to infrastructure bonds rather than typical technology contracts. The credit quality also tells you something about how counterparties view Anthropic's long-term viability.
 
-TeraWulf simultaneously announced a separate transaction: it is selling its 50.1% stake in the Abernathy Joint Venture — a different data center it co-owned with Fluidstack — to an investor group led by Fluidstack for approximately $530 million. TeraWulf is monetizing that co-investment at a premium and redeploying the capital toward wholly-owned, single-tenant AI campuses like Justified Data. That is a strategic statement: the Anthropic lease is the business model TeraWulf is building toward.
+TeraWulf simultaneously announced a separate transaction: it is selling its 50.1% stake in the Abernathy Joint Venture — a different data center it co-owned with Fluidstack — to an investor group led by Fluidstack for approximately $530 million, paid in three installments through April 2027 ([TeraWulf SEC 8-K](https://investors.terawulf.com/sec-filings/all-sec-filings/content/0001104659-26-080583/tm2619468d1_8k.htm)). TeraWulf is monetizing that co-investment (roughly $450 million of invested capital) at a premium and redeploying the capital toward wholly-owned, single-tenant AI campuses like Justified Data. That is a strategic statement: the Anthropic lease is the business model TeraWulf is building toward.
 
 ---
 
@@ -39,11 +40,11 @@ TeraWulf simultaneously announced a separate transaction: it is selling its 50.1
 
 Before this announcement, Anthropic's compute picture for 2026 consisted of:
 
-**SpaceX Colossus 1 (Memphis, Tennessee):** 220,000+ NVIDIA GPUs, 300 MW, $1.25 billion per month through at least May 2029. Primarily GPU-based (H100, H200, GB200). Already online; this infrastructure drove the three rate limit increases in Q2 2026.
+**SpaceX Colossus 1 (Memphis, Tennessee):** 220,000+ NVIDIA GPUs, 300+ MW ([Anthropic](https://www.anthropic.com/news/higher-limits-spacex)), reportedly $1.25 billion per month through at least May 2029 per SpaceX's IPO-related S-1 disclosures ([Winbuzzer](https://winbuzzer.com/2026/05/21/anthropic-could-pay-xai-125b-for-colossus-compute-xcxwbn/)). Mixed-generation NVIDIA silicon — H100, H200, and GB200 ([Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-colossus-1-ai-supercomputers-inefficient-mixed-architecture-design-couldnt-be-used-to-train-grok-so-anthropics-using-it-for-inference-instead-musk-readies-unified-blackwell-only-colossus-2-for-frontier-training-and-potential-ipo)). Already online; Anthropic tied this capacity directly to doubled Claude Code rate limits, removed peak-hour restrictions, and higher Opus API limits in Q2 2026 ([Anthropic](https://www.anthropic.com/news/higher-limits-spacex)).
 
-**Amazon Trainium (Indiana):** Dedicated 1,200-acre campus with approximately $11 billion in facility investment, built for Trainium-based AI training. Amazon holds a $5 billion equity stake in Anthropic; chip access is part of that arrangement.
+**Amazon Trainium (Indiana):** Dedicated 1,200-acre campus with approximately $11 billion in facility investment ([CNBC](https://www.cnbc.com/2025/10/29/amazon-opens-11-billion-ai-data-center-project-rainier-in-indiana.html)), built for Trainium-based AI training. Amazon holds a $5 billion equity stake in Anthropic; chip access is part of that arrangement ([Anthropic](https://www.anthropic.com/news/anthropic-amazon-compute)).
 
-**Google TPUs (New York, Texas, Louisiana, Indiana):** The $35 billion private credit deal closed June 5 finances approximately 1 million TPUs — 600,000 leased and 400,000 purchased outright — across four states. 3.5 gigawatts of committed power capacity.
+**Google TPUs (New York, Texas, Louisiana, Indiana):** A $35 billion Apollo/Blackstone private credit deal closed June 5, 2026 to finance chip purchases ([Bloomberg](https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic)), building on Anthropic's October 2025 agreement for access to up to 1 million TPUs ([Anthropic](https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services) · [Google Cloud](https://www.googlecloudpresscorner.com/2025-10-23-Anthropic-to-Expand-Use-of-Google-Cloud-TPUs-and-Services)) across four states. Broadcom disclosed 3.5 gigawatts of committed Google TPU capacity starting in 2027 ([Tom's Hardware](https://www.tomshardware.com/tech-industry/broadcom-expands-anthropic-deal-to-3-5gw-of-google-tpu-capacity-from-2027)).
 
 **TeraWulf Justified Data (Hawesville, Kentucky):** 401 MW by early 2028. The newest and most distant timeline entry.
 
@@ -63,7 +64,7 @@ The practical read for builders:
 
 - **Near-term (2026):** No direct impact. Colossus 1, Google TPUs, and Amazon Trainium are the capacity drivers. Watch July 13 for the Colossus-driven weekly limit expiration announcement.
 - **2027:** Initial Hawesville capacity comes online in the second half. Expect announcements tracking compute delivery, potentially followed by API improvements similar to the pattern after Colossus 1 came online.
-- **2028:** Full 401 MW buildout complete. At that point Anthropic's aggregate power capacity across all known infrastructure agreements will exceed what any single hyperscaler had dedicated to AI in 2024.
+- **2028:** Full 401 MW buildout complete, adding to the SpaceX, Amazon, and Google commitments already cited above.
 
 ---
 
@@ -75,7 +76,7 @@ Aluminum smelting requires extraordinarily stable, high-current power. The equip
 
 This makes the acquisition pattern worth watching. Industrial site repurposing — steel mills, paper mills, smelters — is emerging as a category of AI infrastructure acquisition precisely because the power is already there. TeraWulf has made it a core strategy. If this model proves out, expect more announcements that follow the same pattern.
 
-For builders who care about the carbon footprint of inference, Kentucky's grid runs heavily on coal and natural gas. TeraWulf has not announced renewable energy commitments for the Hawesville campus specifically, though the broader conversation around AI-as-renewable-energy-buyer (which has been part of other data center announcements in 2026) may apply here as the buildout progresses.
+For builders who care about the carbon footprint of inference, Kentucky's grid runs heavily on coal and natural gas — roughly 92% combined, per the U.S. Energy Information Administration's Kentucky state profile ([EIA](https://www.eia.gov/state/?sid=KY)). TeraWulf has not announced renewable energy commitments for the Hawesville campus specifically, though the broader conversation around AI-as-renewable-energy-buyer (which has been part of other data center announcements in 2026) may apply here as the buildout progresses.
 
 ---
 

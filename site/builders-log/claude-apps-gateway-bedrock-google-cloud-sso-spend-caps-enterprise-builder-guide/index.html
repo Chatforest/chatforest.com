@@ -74,15 +74,15 @@
 <p>The Claude apps gateway closes all of that. It&rsquo;s a self-hosted service that sits between your developers&rsquo; Claude Code clients and your model provider. Developers sign in via corporate SSO. Admins define policy in one place. Spend caps apply per org, group, or user. And inference traffic routes through your cloud account — not Anthropic&rsquo;s — if you&rsquo;re on Bedrock, Google Cloud, or Microsoft Foundry.</p>
 <hr>
 <h2 id="architecture">Architecture</h2>
-<p>The gateway is a single stateless container running on Linux, backed by a PostgreSQL database. Configuration lives in one file, <code>gateway.yaml</code>, which defines:</p>
+<p>The gateway is <a href="https://code.claude.com/docs/en/claude-apps-gateway-deploy#deployment">a single stateless Linux binary, packaged as a container, backed by a PostgreSQL database</a>. Configuration lives in one file, <a href="https://code.claude.com/docs/en/claude-apps-gateway-config"><code>gateway.yaml</code></a>, which defines:</p>
 <ul>
 <li>Where the gateway listens</li>
 <li>How developers authenticate (OIDC issuer)</li>
 <li>Where inference goes (upstream provider)</li>
 <li>What policy and telemetry settings apply</li>
 </ul>
-<p>Because the container is stateless, you can run it behind a standard load balancer with no sticky sessions. Scale it horizontally if you have many developers; run it as a single instance if you don&rsquo;t need HA. PostgreSQL holds session state, usage records, and policy definitions.</p>
-<p><strong>Supported upstreams:</strong></p>
+<p>Because replicas are stateless, you can run it behind a standard load balancer. Scale it horizontally if you have many developers; run it as a single instance if you don&rsquo;t need HA. <a href="https://code.claude.com/docs/en/claude-apps-gateway-deploy#postgres">PostgreSQL holds device sign-in state, per-developer spend counters and caps, and the admin audit trail</a> — permissions and tool policy live in <code>gateway.yaml</code>, not the database; developer sessions themselves are short-lived signed JWTs validated without a database lookup.</p>
+<p><strong>Supported upstreams</strong> (<a href="https://code.claude.com/docs/en/claude-apps-gateway#why-claude-apps-gateway">per Anthropic&rsquo;s docs</a>):</p>
 <ul>
 <li>Amazon Bedrock</li>
 <li>Claude Platform on AWS</li>
@@ -92,14 +92,14 @@
 </ul>
 <hr>
 <h2 id="identity-and-authentication">Identity and Authentication</h2>
-<p>The gateway acts as an OpenID Connect relying party. It works with:</p>
+<p>The gateway <a href="https://code.claude.com/docs/en/claude-apps-gateway#why-claude-apps-gateway">acts as an OpenID Connect relying party</a>. It works with:</p>
 <ul>
 <li>Google Workspace</li>
 <li>Microsoft Entra ID</li>
 <li>Okta</li>
 <li>Any standards-compliant OIDC provider</li>
 </ul>
-<p>Developers log in once — their existing corporate identity — and the gateway issues a short-lived session. No long-lived credentials sitting on developer machines, no per-developer API key rotation.</p>
+<p>Developers log in once — their existing corporate identity — and the gateway issues a short-lived session (one hour by default). No long-lived credentials sitting on developer machines, no per-developer API key rotation.</p>
 <p><strong>Getting started:</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Download the Claude Code CLI binary</span>
 <span style="color:#75715e"># Point gateway.yaml at your OIDC issuer and upstream credential</span>
@@ -107,23 +107,23 @@
 </code></pre></div><p>That&rsquo;s the setup surface. Anthropic&rsquo;s own docs at <a href="https://code.claude.com/docs/en/claude-apps-gateway">code.claude.com/docs/en/claude-apps-gateway</a> walk through the full configuration reference.</p>
 <hr>
 <h2 id="spend-control">Spend Control</h2>
-<p>Admins can set spend caps that apply daily, weekly, or monthly, and scope them at three levels: organization, group, or individual user.</p>
-<p>The gateway enforces caps per-request — requests that would exceed the cap are rejected before they hit the upstream provider. Policy is defined on the server; clients pick it up automatically at sign-in. No per-developer configuration required.</p>
+<p>Admins can set <a href="https://code.claude.com/docs/en/claude-apps-gateway-spend-limits">spend caps that apply daily, weekly, or monthly, and scope them at three levels: organization, group, or individual user</a>.</p>
+<p>The gateway checks caps on every <code>/v1/messages</code> request against period-to-date spend recorded in Postgres — a request from a developer who&rsquo;s already over their cap <a href="https://code.claude.com/docs/en/claude-apps-gateway-spend-limits#how-enforcement-works">returns a <code>429</code> before it reaches the upstream provider</a>. Caps are set through an admin API, not per developer.</p>
 <hr>
 <h2 id="data-residency">Data Residency</h2>
 <p>If you route through Bedrock, Google Cloud, or Foundry: inference traffic goes from your developers to your cloud account. It does not pass through Anthropic&rsquo;s infrastructure. Usage data stays put.</p>
-<p>The gateway itself doesn&rsquo;t send inference traffic or usage data to Anthropic unless you configure it to use the Anthropic API directly. That&rsquo;s the fallback upstream — and if you use it, the data residency guarantee goes away.</p>
-<p><strong>Trap:</strong> Automatic failover routing can switch between providers if you configure multiple upstreams. If your data residency requirement is real (compliance, not preference), either disable failover to the Anthropic API or don&rsquo;t configure it as a fallback.</p>
+<p>Per <a href="https://code.claude.com/docs/en/claude-apps-gateway-deploy#compliance-posture">Anthropic&rsquo;s compliance-posture documentation</a>, &ldquo;the gateway&rsquo;s own data plane sends nothing to Anthropic unless the Anthropic API is a configured upstream; when it is, your existing data-handling agreement applies to the inference path.&rdquo; That&rsquo;s the fallback upstream — and if you use it, the data residency guarantee goes away for that traffic. (The host process — the Claude Code CLI itself — can still send startup analytics and update checks to Anthropic separately; strict-egress deployments disable that with <code>CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1</code>.)</p>
+<p><strong>Trap:</strong> <a href="https://code.claude.com/docs/en/claude-apps-gateway#why-claude-apps-gateway">Automatic failover routing can switch between providers if you configure multiple upstreams</a>. If your data residency requirement is real (compliance, not preference), either disable failover to the Anthropic API or don&rsquo;t configure it as a fallback.</p>
 <hr>
 <h2 id="open-protocol">Open Protocol</h2>
-<p>Anthropic published the protocol the gateway uses. Third parties can implement their own gateways that support the same SSO, policy, and spend-cap features. This is an interoperability move — it determines whether Claude apps gateway becomes the de facto standard for multi-cloud Claude Code governance, or stays one implementation among several.</p>
-<p>The protocol reference is at <a href="https://code.claude.com/docs/en/llm-gateway-protocol">code.claude.com/docs/en/llm-gateway-protocol</a>. If you&rsquo;re evaluating LiteLLM, TrueFoundry, or other LLM gateway products alongside the Anthropic gateway, check their protocol compliance — partial implementations may miss policy enforcement.</p>
+<p>Anthropic <a href="https://code.claude.com/docs/en/claude-apps-gateway#other-gateway-implementations">published the protocol</a> the gateway uses: the wire contract for the endpoints, headers, and body fields any gateway must forward so Claude Code works correctly through it. A running Claude apps gateway instance serves a superset of that contract at <code>GET /protocol</code>, which additionally documents its own SSO sign-in and managed-settings-delivery endpoints. This is an interoperability move — it determines whether Claude apps gateway becomes the de facto standard for multi-cloud Claude Code governance, or stays one implementation among several.</p>
+<p>The <a href="https://code.claude.com/docs/en/llm-gateway-protocol">protocol reference</a> documents the base wire contract. If you&rsquo;re evaluating LiteLLM, TrueFoundry, or other LLM gateway products alongside the Anthropic gateway, check their protocol compliance — a gateway that doesn&rsquo;t forward headers and request bodies unchanged can silently break Claude Code features, per the <a href="https://code.claude.com/docs/en/llm-gateway-protocol#feature-pass-through">feature pass-through table</a>.</p>
 <hr>
 <h2 id="things-that-catch-builders">Things That Catch Builders</h2>
 <p><strong>Spend caps apply on the next request, not retroactively.</strong> If a developer submits a large workflow that generates 50 sub-requests in parallel, the cap check happens per-request. Set caps before developer onboarding, not after an overrun.</p>
-<p><strong>IdP downtime = Claude Code outage.</strong> The gateway issues short-lived sessions against your identity provider. If your IdP is down, developers can&rsquo;t authenticate. Plan your HA accordingly — this is the same dependency shape as any SSO-gated corporate tool, but worth making explicit.</p>
-<p><strong>Policy enforcement at sign-in.</strong> Managed settings are pushed to clients at authentication. If you change policy mid-day, developers running long sessions with cached tokens may not pick up the change until their next sign-in. Short token TTLs reduce this window.</p>
-<p><strong>Protocol compliance varies across third-party gateways.</strong> Anthropic&rsquo;s gateway is the reference implementation. Others may implement a subset. Test policy enforcement — specifically spend caps and managed settings propagation — before relying on a third-party implementation for compliance purposes.</p>
+<p><strong>IdP downtime blocks new sign-ins.</strong> Per <a href="https://code.claude.com/docs/en/claude-apps-gateway-deploy#outage-behavior">Anthropic&rsquo;s docs</a>, &ldquo;if your IdP goes down, existing sessions work until <code>ttl_hours</code>, and new logins and refreshes fail.&rdquo; So already-signed-in developers keep working, but nobody new can authenticate, and everyone&rsquo;s session eventually expires (one hour by default) and can&rsquo;t refresh. Plan your IdP&rsquo;s HA accordingly.</p>
+<p><strong>Policy applies at sign-in and on an hourly poll — not instantly.</strong> Per <a href="https://code.claude.com/docs/en/claude-apps-gateway">Anthropic&rsquo;s docs</a> (&ldquo;What&rsquo;s enforced on developers&rdquo;), &ldquo;the CLI applies the policy at startup and on each hourly poll.&rdquo; If you change policy mid-day, a developer already running a session can be up to an hour behind before their client picks up the change.</p>
+<p><strong>Protocol compliance varies across third-party gateways.</strong> Claude apps gateway is Anthropic&rsquo;s own implementation, <a href="https://code.claude.com/docs/en/claude-apps-gateway#why-claude-apps-gateway">built into the <code>claude</code> binary and tested against each Claude Code release</a>. A third-party gateway (LiteLLM, TrueFoundry, or one you build yourself) only needs to implement the base wire contract — forwarding headers and request bodies unchanged — for inference to work correctly; it does not get Claude apps gateway&rsquo;s own SSO, spend-cap, or managed-settings features unless it separately builds them. Don&rsquo;t assume protocol compliance implies feature parity.</p>
 <hr>
 <h2 id="who-should-deploy-this">Who Should Deploy This</h2>
 <p>You need it if any of these are true:</p>
