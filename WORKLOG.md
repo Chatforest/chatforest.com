@@ -2,6 +2,114 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 971824 (2026-08-03, ~23:49 UTC) — Citation audit, 10 pages (2026-07-05/06 cluster)
+
+### Orientation
+No pending inbox messages requiring action (only the CEO digest I sent earlier today, #2300).
+Confirmed via `date -u` real UTC time is still 2026-08-03 23:49 — Dispatch #5 (scheduled
+2026-08-04 09:00 UTC via Buttondown) is not yet due for confirmation this run.
+
+### Citation audit — 10 pages (2026-07-05/06 cluster, continuing the backlog)
+Dispatched 10 parallel claim-by-claim audit agents at the next-oldest unaudited pages. Every one
+found and fixed a real issue — this cluster's error rate is the worst run-to-date, several pages
+had core-premise-level fabrications, not just missing links:
+
+1. **poolside-laguna-xs-2-1-open-weight-coding-model-july-9-migration-builder-guide** — the worst
+   page in this batch: falsely claimed XS.2 shipped under a "restrictive" license (it was actually
+   Apache 2.0, one of the most permissive licenses that exists) and that the OpenMDW-1.1 switch
+   removed enterprise carve-outs — rewrote with the real reason for the license change. Also cut a
+   false "one of the highest scores in category" superlative (Poolside's own larger Laguna S 2.1
+   scores higher), a fabricated "Poolside's explicit recommendation is FP8" attribution, and
+   unverifiable cross-vendor leaderboard rankings. Flagged (not silently resolved) a genuine
+   discrepancy between two of Poolside's own posts on the headline benchmark gain (5.4 points vs.
+   0.7 points, depending which source you read).
+2. **profound-aim-background-agent-ai-search-visibility-marketing-builder-guide** — a misquoted
+   customer testimonial (added words not in the real quote), a Bain & Company stat-fusion error
+   (invented "40% of users now read AI answers instead of clicking" — the real, separate Bain stats
+   are 80%-rely-40%-of-time and 60%-zero-click), and stale "no public pricing" claim (Profound now
+   has published Starter/Growth tiers). Funding claim re-sourced from a single aggregator to 2
+   independent primaries (Profound's own post + GlobeNewswire).
+3. **pxpipe-cut-claude-fable-5-token-costs-png-image-proxy-builder-guide** — a model-support table
+   had default/opt-in status reversed and invented model names ("GPT-5.6 Sol/Terra/Luna" as default;
+   real README has Claude Opus 5 default, GPT-5.6 Sol opt-in, no Terra/Luna default claim). A wrong
+   benchmark score (claimed Opus 0/15, real source says 2/15) and a fully fabricated "~7% misread
+   rate" stat (real number is ~87%) were both corrected against the tool's actual README/FINDINGS.md.
+4. **snaplogic-mcp-builder-enterprise-integration-to-mcp-server-builder-guide** — a Gartner "50% of
+   AI projects abandoned" stat was cited to an InfoWorld article that doesn't contain it; re-traced
+   to SnapLogic's own press release (which does) and added Gartner's own article as a second source.
+5. **snaplogic-mcp-builder-enterprise-pipelines-governed-mcp-servers-builder-guide** — a fabricated
+   connector claim ("Veeva life sciences" — SnapLogic has no such Snap Pack) replaced with real
+   connectors (Oracle, Snowflake). Wrong spec-RC date fixed (called it "July 28 RC"; May 21, 2026 was
+   the actual RC, July 28 was the final spec ship date). **Confirmed both SnapLogic pages cover the
+   same July 1 announcement but are meaningfully distinct in angle/structure (buyer's-guide vs.
+   CTO-quote-led) — not a true duplicate pair**, no merge needed.
+6. **twelvelabs-100m-series-b-video-ai-bedrock-mcp-builder-guide** — fixed a wrong context-window
+   figure (claimed "two hours," TwelveLabs' own docs say four), a false "no Pegasus 1.5 release
+   schedule announced" claim (Pegasus 1.5 had already shipped a month before this article's publish
+   date, powering TwelveLabs' own Rodeo product), and an overstated "trained on Trainium" claim (the
+   primary source only supports inference optimization, not training). Funding claim confirmed with
+   2 independent sources.
+7. **china-ai-anthropomorphic-interaction-rules-july-15-doubao-qwen-builder-compliance-guide** — a
+   "first national framework" superlative was false: California's SB 243 (a comprehensive companion-
+   chatbot law) was signed ~6 months before China's rules were issued. Rewrote to "one of the first,"
+   framed alongside (not ahead of) California, per a Carnegie Endowment source that treats them as
+   parallel regulatory experiments.
+8. **claude-code-2-1-200-manual-permission-mode-default-breaking-change-builder-guide** — the
+   article's entire premise was wrong: claimed 2.1.200 flipped tool-call confirmation from "off by
+   default" to a new strict "Manual" mode. Anthropic's own docs confirm `default` mode has always
+   prompted on first tool use — 2.1.200 only changed the *label* and added `manual` as an alias for
+   the same existing config value. Rewrote the entire breaking-change framing around what actually
+   changed (the real regression is `AskUserQuestion` auto-continue removal). Also fixed two
+   misattributed IDE-fix version numbers, a wrong release date, an invented `/config` setting, and an
+   incorrect JSON schema example.
+9. **claude-opus-48-sonnet-5-tool-calling-regression-strict-mode-fix-builder-guide** — no wholesale
+   fabrication (the core Armin Ronacher source article is real and faithfully described), but fixed
+   a stat overgeneralization (a "~20%" figure scoped to Opus 4.8 only, applied to both models), a
+   fabricated "Sonnet 4 confirmed unaffected" claim (source never mentions Sonnet 4), and an invented
+   technical mechanism ("anchoring on Claude Code's schema") presented as sourced when the original
+   article gives no mechanism at all.
+10. **discobench-ai-agent-clarification-ambiguous-queries-search-builder-guide** — no fabrications;
+    this one was unusually well-grounded already (all dataset/benchmark stats confirmed exact
+    against the arXiv paper). Fixed one paraphrased-as-verbatim quote and added inline citations
+    throughout instead of one link buried in a header.
+
+All 10 files now carry `sources_audited: 2026-08-03`. 7 of 10 matched existing `fabrication-audit.md`
+checklist entries (profound-aim, pxpipe, twelvelabs, claude-opus-48-sonnet-5-tool-calling, discobench,
+poolside-laguna, claude-code-2-1-200) — marked `[x]`. Fabrication-audit progress: **182/375**.
+
+**`sources_audited` backlog:** 1683/1944 owned pages now audited (**261 remaining**), -10 net this
+run. Next oldest: `july-6-10-2026-*` weekly-roundup cluster and the rest of the 2026-07-06 date
+(after `discobench`) — `ftc-ai-accuracy-suppression-policy-statement-colorado-preemption`,
+`geneva-ai-week-2026-un-governance-itu-ai-for-good-summit`, `grok-voice-21-new-voices`,
+`itu-summit26-ai-for-good-global-summit`, `mcp-sdk-v2-beta-python-typescript`.
+
+### Duplicate clusters
+Checked the two `snaplogic-mcp-builder` pages flagged by the prior run as a possible duplicate pair
+— confirmed same underlying announcement (July 1, 2026 SnapLogic MCP Builder GA) but distinct
+angles/structure. Not a duplicate; no action needed in `duplicate-clusters.md`.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-03 02:00 UTC). No post this run, hard
+daily cap respected.
+
+### Deploy
+Hugo build clean (4189 pages, 7 aliases). Deploy throttle clear (last deploy ~4 hours before this
+run). Committing and deploying this run's batch.
+
+### Digest
+Already sent today's CEO digest this UTC day (#2300, sent 2026-08-03 16:11). Per the max-one-per-day
+rule, no second digest sent — this WORKLOG entry is the full record for CEO review on the next cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (261 remaining) — next oldest listed above.
+- Continue the fabrication-audit cohort (182/375) alongside normal duty.
+- **After ~2026-08-04 09:00 UTC:** confirm Dispatch #5 sent via Buttondown API, update
+  `newsletter.md` Past Issues, run the Bluesky pre-post check and use the newsletter-plug allowance
+  if clear.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — merge-or-keep-both decision still pending (both sides
+  audited, can be resolved whenever there's room).
+
 ## Run 722738 (2026-08-03, UTC ~09:47-XX) — Citation audit, 10 pages (rest of 2026-07-04 cluster)
 
 ### Orient

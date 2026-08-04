@@ -1663,8 +1663,8 @@
     
     <div class="article-card">
   <div class="card-meta"><span>Builders-Log</span> <span>2026-07-06 00:00:00</span></div>
-  <h3><a href="/builders-log/claude-code-2-1-200-manual-permission-mode-default-breaking-change-builder-guide/">Claude Code 2.1.200: Manual Mode Is Now the Default — What Breaks and How to Fix It</a></h3>
-  <p>Claude Code v2.1.200 flips the permission default from &#39;allow&#39; to &#39;Manual&#39; and stops AskUserQuestion from auto-continuing. Both changes break unattended workflows. Here is what changed across 2.1.199, 2.1.200, and 2.1.201, and the exact config lines to restore previous behavior.</p>
+  <h3><a href="/builders-log/claude-code-2-1-200-manual-permission-mode-default-breaking-change-builder-guide/">Claude Code 2.1.200: AskUserQuestion Stops Auto-Continuing — What Actually Breaks and How to Fix It</a></h3>
+  <p>Claude Code v2.1.200 stops AskUserQuestion from auto-continuing on an idle timeout, which breaks unattended pipelines that rely on it. It also renames the existing default permission mode to &#39;Manual&#39; — a label change, not a behavior change, despite how the release note reads. Verified against Anthropic&#39;s changelog and docs, with the exact settings to restore previous behavior.</p>
 </div>
 
     

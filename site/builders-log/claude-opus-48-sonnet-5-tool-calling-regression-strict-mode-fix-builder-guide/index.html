@@ -77,11 +77,11 @@
 <li><code>type</code>, <code>id</code>, <code>kind</code>, <code>unique</code>, <code>matchCase</code>, <code>in_file</code>, <code>forceMatchCount</code>, <code>children</code></li>
 </ul>
 <p>The actual <code>oldText</code> and <code>newText</code> values are byte-correct. The edit intent is right. But the extra fields cause schema validation to fail, which means the tool call fails, which means the agent either errors or retries into a different failure mode.</p>
-<p>The failure rate in multi-turn agentic contexts is approximately <strong>20%</strong> — high enough to break production pipelines that were running cleanly on older models.</p>
-<p>Older Claude models — Sonnet 4, Opus 4.5, and earlier — do not exhibit this behavior. Neither do Codex models tested by Ronacher.</p>
+<p>The clearest failure-rate figure in Ronacher&rsquo;s write-up is scoped to Opus 4.8: in the agentic session he used to reproduce the bug, <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">continuing the conversation caused Opus 4.8 to fail about 20% of the time</a>. He reports Sonnet 5 shows the same kind of regression but doesn&rsquo;t give it a separate failure-rate number. Either way, that&rsquo;s high enough to break production pipelines that were running cleanly on older models.</p>
+<p><a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">Ronacher found the regression only in Opus 4.8 and Sonnet 5 — &ldquo;none of the older models&rdquo; showed it</a>, and he specifically notes that when Opus 4.5 launched, it &ldquo;adapted to other edit tools exceptionally well.&rdquo; The Codex models he tested — all available versions except one he didn&rsquo;t yet have access to — didn&rsquo;t show it either.</p>
 <hr>
 <h2 id="why-it-happens">Why It Happens</h2>
-<p>Ronacher&rsquo;s hypothesis is that the root cause is reinforcement learning on Claude Code&rsquo;s internal edit harness.</p>
+<p><a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">Ronacher&rsquo;s hypothesis</a> is that the root cause is reinforcement learning on Claude Code&rsquo;s internal edit harness.</p>
 <p>Claude Code uses a <strong>flat</strong> edit tool schema: <code>file_path</code>, <code>old_string</code>, <code>new_string</code>, <code>replace_all</code>. When Anthropic trained Opus 4.8 and Sonnet 5 with RL feedback from Claude Code sessions, the models learned that &ldquo;edit tool calls often have an extra optional field.&rdquo; That prior got baked in.</p>
 <p>When these models encounter a <strong>nested</strong> edit schema — one they weren&rsquo;t trained on — they don&rsquo;t have a name for the extra field, so they sample one fresh from the distribution of plausible field names. Because slightly malformed tool calls in the training harness could still complete the task and receive reward (the harness absorbed the error silently), there was minimal gradient against this behavior.</p>
 <p>The result: the model&rsquo;s edit-tool schema expectation is now shaped by Claude Code&rsquo;s internal format. Anything that looks like an edit tool but isn&rsquo;t Claude Code&rsquo;s schema triggers this hallucinated field generation.</p>
@@ -89,19 +89,19 @@
 <h2 id="reproducing-it">Reproducing It</h2>
 <p>The regression is <strong>context-dependent</strong>:</p>
 <ul>
-<li><strong>Single-turn prompts</strong>: not reproducible</li>
-<li><strong>Multi-turn agentic contexts</strong>: reproducible, ~20% failure rate</li>
-<li><strong>With extended thinking blocks</strong>: failure rate increases</li>
-<li><strong>With thinking blocks stripped</strong>: failure rate drops by approximately 50%</li>
+<li><strong>Single-turn prompts</strong>: <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">not reproducible</a> — &ldquo;a fresh single-turn prompt like &lsquo;edit this file&rsquo; did not reproduce it at all,&rdquo; per Ronacher</li>
+<li><strong>Multi-turn agentic contexts</strong>: reproducible — <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">~20% failure rate for Opus 4.8</a> in the session Ronacher used to reproduce it</li>
+<li><strong>With thinking blocks stripped</strong>: <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">failure rate dropped by about half</a> in Ronacher&rsquo;s tests</li>
 </ul>
 <p>This context-dependency explains why many developers haven&rsquo;t hit it yet. Unit tests using single-turn calls will pass cleanly. The regression surfaces in long agentic runs.</p>
 <hr>
 <h2 id="the-fix-strict-tool-invocation-mode">The Fix: Strict Tool Invocation Mode</h2>
-<p>Enable <strong>strict tool invocation mode</strong> on your tool definitions. When strict mode is active, the API enforces the JSON schema on the server side, rejecting any attempt to sample a key that isn&rsquo;t permitted by the schema. The model can no longer invent extra fields — the constraint is applied before the call reaches your handler.</p>
+<p>Enable <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use"><strong>strict tool invocation mode</strong></a> on your tool definitions. Anthropic&rsquo;s docs describe this as constraining &ldquo;the model&rsquo;s token sampling to schema-valid outputs&rdquo; — grammar-constrained sampling — rejecting any attempt to sample a key that isn&rsquo;t permitted by the schema. The model can no longer invent extra fields — the constraint is applied before the call reaches your handler.</p>
 <p>In the Anthropic API, this means setting <code>strict: true</code> in your tool definition:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;edit_file&#34;</span>,
   <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Edit a file by replacing text&#34;</span>,
+  <span style="color:#f92672">&#34;strict&#34;</span>: <span style="color:#66d9ef">true</span>,
   <span style="color:#f92672">&#34;input_schema&#34;</span>: {
     <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>,
     <span style="color:#f92672">&#34;properties&#34;</span>: {
@@ -127,15 +127,15 @@
 <li>Set <code>&quot;additionalProperties&quot;: false</code> at every level of your schema</li>
 <li>Enable strict mode through your SDK configuration</li>
 </ol>
-<p>Ronacher confirmed that turning on strict tool invocation eliminated the regression in his test runs.</p>
+<p>Ronacher confirmed that <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">turning on strict tool invocation eliminated the regression in his test runs</a>.</p>
 <hr>
 <h2 id="secondary-mitigation-strip-thinking-blocks">Secondary Mitigation: Strip Thinking Blocks</h2>
-<p>If strict mode is not immediately available in your stack, stripping extended thinking blocks from multi-turn context reduces the failure rate by approximately 50%. The mechanism isn&rsquo;t fully understood, but the hypothesis is that the thinking content causes the model to &ldquo;anchor&rdquo; more strongly on its Claude Code schema expectations.</p>
+<p>If strict mode is not immediately available in your stack, <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">stripping extended thinking blocks from multi-turn context reduced the failure rate by about half in Ronacher&rsquo;s testing</a>. Ronacher doesn&rsquo;t offer an explanation for why this helps — treat it as an observed mitigation, not an understood one.</p>
 <p>This is a mitigation, not a fix. Use strict mode as the primary solution.</p>
 <hr>
 <h2 id="what-this-tells-builders-about-rl-and-tool-schemas">What This Tells Builders About RL and Tool Schemas</h2>
 <p>This regression reveals something structurally important about how post-training shapes model behavior.</p>
-<p>Tool schemas are not neutral. When a model is extensively trained with RL feedback against a specific tool schema — as Claude Code uses — that schema becomes part of the model&rsquo;s distribution. Any tool that resembles the training schema will partially inherit the training schema&rsquo;s shape, even when you explicitly define something different.</p>
+<p><a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">&ldquo;Tool schemas are not neutral,&quot;</a> as Ronacher puts it. When a model is extensively trained with RL feedback against a specific tool schema — as Claude Code uses — that schema becomes part of the model&rsquo;s distribution. Any tool that resembles the training schema will partially inherit the training schema&rsquo;s shape, even when you explicitly define something different.</p>
 <p>For builders, this means:</p>
 <p><strong>Avoid schema shapes that pattern-match to known Anthropic-internal tooling.</strong> If your edit tool uses nested arrays with text-swap semantics, you are in the overlap zone. Either rename fields to make the schema clearly distinct, or use strict mode to enforce boundaries.</p>
 <p><strong>Test in multi-turn agentic contexts.</strong> Single-turn tests will not expose this class of regression. Build evaluation harnesses that run 5-10 turn agentic sequences.</p>
@@ -153,27 +153,27 @@
 <tbody>
 <tr>
 <td>Claude Opus 4.8</td>
-<td>Yes (~20% multi-turn)</td>
-<td>Use strict mode</td>
+<td>Yes (~20% in Ronacher&rsquo;s reproduction)</td>
+<td><a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">Use strict mode</a></td>
 </tr>
 <tr>
 <td>Claude Sonnet 5</td>
-<td>Yes (similar behavior)</td>
-<td>Use strict mode</td>
+<td>Yes (same behavior, per Ronacher)</td>
+<td><a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">Use strict mode</a></td>
 </tr>
 <tr>
-<td>Claude Sonnet 4.6</td>
+<td>Claude Opus 4.5</td>
 <td>No</td>
-<td>Older generation, unaffected</td>
+<td><a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">Ronacher: adapted well to non-Claude-Code edit tools</a></td>
 </tr>
 <tr>
-<td>Claude Haiku 4.5</td>
-<td>No</td>
-<td>Older generation, unaffected</td>
+<td>Other older Claude models</td>
+<td>Not observed by Ronacher</td>
+<td>His piece states the regression showed up only in Opus 4.8 and Sonnet 5, not naming which older models he tested</td>
 </tr>
 </tbody>
 </table>
-<p>If you cannot enable strict mode immediately — for example, if you are on a third-party integration that hasn&rsquo;t exposed the flag — the lowest-cost fallback is Sonnet 4.6. It costs $3/$15 per million tokens vs. Sonnet 5&rsquo;s $2/$10 intro rate through August 31. The delta is not large.</p>
+<p>If you cannot enable strict mode immediately — for example, if you are on a third-party integration that hasn&rsquo;t exposed the flag — one option is falling back to an older-generation model such as Sonnet 4.6, which predates the Opus 4.8 / Sonnet 5 generation where Ronacher found the regression. He did not test Sonnet 4.6 directly, so treat this as a reasonable inference, not a confirmed fix. Sonnet 4.6 is priced at <a href="https://platform.claude.com/docs/en/about-claude/pricing">$3 / $15 per million input/output tokens</a>, versus Sonnet 5&rsquo;s <a href="https://platform.claude.com/docs/en/about-claude/pricing">introductory $2 / $10 rate through August 31, 2026</a> (standard $3/$15 pricing takes effect after that). The cost delta is not large.</p>
 <hr>
 <h2 id="action-items">Action Items</h2>
 <ol>
@@ -183,7 +183,7 @@
 <li><strong>Run your regression tests in multi-turn context</strong>, not just single-turn.</li>
 <li><strong>Strip extended thinking blocks</strong> from your context window if strict mode is not available yet.</li>
 </ol>
-<p>The underlying capability of both Opus 4.8 and Sonnet 5 is not degraded — this is a schema compliance issue, not a reasoning issue. Strict mode fully resolves it.</p>
+<p>The underlying capability of both Opus 4.8 and Sonnet 5 is not degraded — this is a schema compliance issue, not a reasoning issue. Strict mode <a href="https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/">eliminated the regression in Ronacher&rsquo;s testing</a>.</p>
 
       </div>
 

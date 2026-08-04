@@ -6,9 +6,10 @@ og_description: "SnapLogic's MCP Builder converts existing pipelines, OpenAPI sp
 content_type: "Builder's Log"
 categories: ["Developer Tools", "MCP", "Enterprise"]
 tags: ["mcp", "enterprise", "integration", "api", "snaplogic", "agent-tools", "builders-log", "july-2026"]
+sources_audited: 2026-08-03
 ---
 
-[SnapLogic made its MCP Builder generally available on July 1, 2026.](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html) It converts existing integration pipelines, OpenAPI specs, and API management services into MCP servers — in one step, without writing code. If your organization already has SnapLogic integrations touching Salesforce, SAP, Workday, or any of 1,000+ other enterprise connectors, those integrations can now be exposed to AI agents as governed MCP tools without rebuilding them.
+[SnapLogic made its MCP Builder generally available on July 1, 2026.](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html) It converts existing integration pipelines, OpenAPI specs, and API management services into MCP servers — in one step, without writing code. If your organization already has SnapLogic integrations touching Salesforce, SAP, Workday, or any of [1,000+ other enterprise connectors](https://www.snaplogic.com/products/mcp), those integrations can now be exposed to AI agents as governed MCP tools without rebuilding them.
 
 The launch addresses a problem that's been quietly blocking enterprise AI agent adoption: the models are ready, the use cases are clear, but getting agents to actually reach production enterprise data requires building and maintaining MCP server infrastructure that most teams don't have the bandwidth to handle.
 
@@ -22,7 +23,7 @@ Building an MCP server from scratch means writing server code, handling authenti
 
 SnapLogic's CTO [framed the gap this way](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html): "Enterprises don't have a shortage of AI models or agents. They have a shortage of execution."
 
-According to [Gartner data cited in the announcement](https://www.infoworld.com/article/4191862/snaplogic-mcp-builder-eases-creation-of-mcp-servers.html), 50% of enterprise AI projects are abandoned after proof of concept. SnapLogic's argument is that execution failures — not model capability — are the primary cause, and MCP Builder is designed to close that gap.
+According to [Gartner data cited in the announcement](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html) — the specific figure traces to [Gartner's own research on GenAI project failure](https://www.gartner.com/en/articles/genai-project-failure) — at least 50% of enterprise AI projects are abandoned after proof of concept. SnapLogic's argument is that execution failures — not model capability — are the primary cause, and MCP Builder is designed to close that gap.
 
 ---
 
@@ -36,7 +37,7 @@ MCP Builder creates MCP servers from three source types:
 
 **API management services**: For organizations using API gateways to manage their internal services, MCP Builder can pull from those service definitions and generate the corresponding MCP tools.
 
-Once created, MCP tools are published and versioned through the SnapLogic Agentic Integration Platform. The output is a managed MCP server endpoint, not a code artifact you take ownership of — SnapLogic handles the infrastructure and lifecycle.
+Once created, MCP tools are published and versioned through the [SnapLogic Agentic Integration Platform](https://www.globenewswire.com/news-release/2026/07/01/3320652/0/en/snaplogic-launches-mcp-builder-to-accelerate-enterprise-ai-adoption-through-simplified-mcp-creation.html). The output is a managed MCP server endpoint, not a code artifact you take ownership of — SnapLogic handles the infrastructure and lifecycle.
 
 ---
 
@@ -44,15 +45,15 @@ Once created, MCP tools are published and versioned through the SnapLogic Agenti
 
 The headline feature for enterprise buyers is not the speed of creation — it's what gets built into the server automatically.
 
-### Trusted Agent Identity
+### [Trusted Agent Identity](https://www.globenewswire.com/news-release/2026/04/16/3275117/0/en/SnapLogic-Announces-AI-Gateway-and-Trusted-Agent-Identity-to-Power-the-Era-of-Digital-Labor.html)
 
 MCP Builder propagates user identity downstream. When an agent invokes an MCP tool that wraps a Salesforce pipeline, the call doesn't execute as a service account with broad access — it carries the identity and permissions of the user who authorized the agent to act on their behalf. This means the CRM sees the right user, applies the right access controls, and logs the right audit trail.
 
 This matters because the alternative — agents running as service accounts — gives every agent access to everything the account can do, which is usually far too permissive for a production environment. Identity propagation is the difference between an auditable agent and an agent that bypasses your existing access model.
 
-### AI Gateway
+### [AI Gateway](https://www.globenewswire.com/news-release/2026/04/16/3275117/0/en/SnapLogic-Announces-AI-Gateway-and-Trusted-Agent-Identity-to-Power-the-Era-of-Digital-Labor.html)
 
-SnapLogic includes an AI Gateway for MCP traffic: monitoring, governance controls, and visibility across all MCP tool calls at the organizational level. This gives security and compliance teams a single point to see what agents are calling, how often, and with what parameters — rather than having to instrument each MCP server individually.
+SnapLogic includes an AI Gateway for MCP traffic: monitoring, governance controls, and visibility across all MCP tool calls at the organizational level. Both Trusted Agent Identity and the AI Gateway were originally announced [April 16, 2026](https://www.globenewswire.com/news-release/2026/04/16/3275117/0/en/SnapLogic-Announces-AI-Gateway-and-Trusted-Agent-Identity-to-Power-the-Era-of-Digital-Labor.html) as platform-wide capabilities; MCP Builder extends them to MCP traffic specifically. This gives security and compliance teams a single point to see what agents are calling, how often, and with what parameters — rather than having to instrument each MCP server individually.
 
 ### Deterministic Execution
 
