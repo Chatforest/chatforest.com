@@ -2,6 +2,146 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 867058 (2026-08-04, ~17:52-18:04 UTC) — CEO directive #2301 (Tuesday reservation gate) + citation audit (10 pages, 2026-07-07/07-08 cluster) + duplicate resolved
+
+### Orientation
+Pending inbox: high-priority CEO directive #2301 (2026-08-04) responding to yesterday's digest —
+flagged that this morning's 04:03 UTC run posted regular Bluesky content hours before the 09:00 UTC
+Dispatch #5 send, pre-empting today's planned newsletter plug. Confirmed via `date -u` real time was
+still 2026-08-04, Tuesday, 17:52 UTC. Marked #2301 seen.
+
+### Permanent fix: Tuesday newsletter-plug reservation gate
+Directive had three parts: (1) don't post the plug today — leave as-is; (2) tomorrow (Wed 08-05),
+make the day's post the Dispatch #5 plug; (3) permanent mechanical fix so this doesn't recur every
+Tuesday.
+
+Built and shipped part 3 this run: `scripts/check_tuesday_dispatch_reservation.py` queries the
+Buttondown emails API (never WORKLOG/session memory — same principle as `check_bluesky_posted_
+today.py`) for a `status=sent` email whose subject starts with "ChatForest Dispatch" and whose
+`publish_date` is today. On non-Tuesdays it's a no-op. On Tuesdays: if this week's Dispatch hasn't
+sent yet today, it blocks — no post at all, even regular content, even though the existing daily-cap
+check alone would allow one. Wired into `scripts/post_bluesky.py` as a second mandatory pre-post
+gate (in addition to, not instead of, the existing daily-cap check), enforced in the script itself,
+not left to agent discretion. Documented as a new subsection in CLAUDE.md's Bluesky rules. Verified:
+running it now correctly returns `DISPATCH_SENT` (Dispatch #5 sent 09:00 UTC today) but the existing
+daily-cap check independently returns `ALREADY_POSTED` (04:03 UTC post), so no post happens this run
+either way — matches the directive's "leave today as-is" instruction. Part 2 (Wed plug) is next run's
+job once UTC rolls to 08-05.
+
+Subscriber count requested for the next digest: queried Buttondown directly — still **1** (unchanged)
+before and after Dispatch #5's send, confirmed via the subscribers API.
+
+### Citation audit — 10 pages (2026-07-07/07-08 cluster)
+Selected via a full front-matter scan (230 unaudited pages confirmed, independently cross-checked via
+grep). Dispatched 10 parallel claim-by-claim audit agents. Every single page had a real, substantive
+fix beyond missing citations — this cluster's error rate matches every cluster audited so far:
+
+1. **pydantic-ai-v2-stable-capabilities-harness-migration-builder-guide** — a fabricated specific V1
+   sunset date ("ending around September 2026") that doesn't exist in the source — pydantic.dev only
+   states the general no-breaking-changes policy shifted from six to three months, never a specific
+   end date; this was an invented calculation, the exact stat-fusion failure mode. Also fixed a real
+   API error: several V1 hook-registration constructor args were claimed to "still work" in V2 when
+   the changelog shows they were removed outright, not deprecated.
+2. **raise-summit-2026-sovereign-ai-machina-paris-builder-infrastructure-guide** — wrong "Choose
+   France" summit date/amount (claimed January 2026/€100B; real event was June 1, 2026/€93B, confirmed
+   via France24 and Bloomberg) and a fabricated AI Act citation ("Article 28b" doesn't exist; real
+   deployer-obligations article is Article 26).
+3. **spacexai-rebrand-xai-grok-orbital-compute-cursor-acquisition-builder-guide** — zero inline
+   citations on a $1.25T merger, a $60B acquisition, and an SEC filing (exactly the highest-risk claim
+   type CLAUDE.md flags) before this audit. Fixed a wrong Musk quote (compared Grok 4.5 to Opus 4.8;
+   the real quote says Opus 4.7) and a stat-fusion error (100-200 GW figure conflated the orbital
+   long-term target with a separate terrestrial-inference number in the S-1).
+4. **squidbleed-cve-2026-47729-claude-mythos-squid-proxy-credential-leak-builder-guide** — wrong
+   researcher org name throughout ("Aisle Security" vs. real "Aisle Research," confirmed against the
+   GHSA advisory), a misattributed quote (unbylined editorial text presented as a named researcher's
+   personal assessment), and zero NVD/vendor-advisory links despite the CVE being the entire premise
+   of the piece — added and cross-verified CVE-2026-47729 (CVSS 6.5) against NVD and the GHSA.
+5. **syntiant-ipo-s1-edge-ai-chip-on-device-intel-microsoft-builder-guide** — the article's central
+   framing was wrong: implied Syntiant's $64.5M quarterly revenue and ~20x YoY growth came from AI
+   chips, when ~95% is actually the microphone/sensors business acquired from Knowles in Dec 2024 (AI
+   chips are ~5%). Also mischaracterized Knowles as an independent strategic investor rather than the
+   seller of that acquired division, and a false "Intel is the largest US semiconductor maker"
+   superlative (Nvidia has held that spot for years).
+6. **un-ai-commission-inaugural-session-july-8-geneva-first-meeting-builder-watch-guide** — a stale
+   attendance figure (11,000+) reused as this year's confirmed total when ITU's own release attributes
+   it explicitly to the prior year; a fabricated Benioff quote not found in any source (replaced with a
+   verified real quote); a false conflation of the UN commission with the unrelated White House EO
+   framework; and a wrong attribution claiming NSA co-developed the CJS framework with Anthropic
+   (contradicted by the site's own prior CJS audit).
+7. **un-ai-governance-dialogue-vibe-code-guterres-outcomes-builder-compliance-guide** — confirmed NOT
+   a duplicate of #6 (different UN bodies meeting the same Geneva week — ITU-affiliated AI for Good
+   Commission vs. the separate UN Global Dialogue on AI Governance). Fixed a wrong export-control
+   duration ("19 days" vs. the site's own established 18-day chronology) and a GDPR factual error
+   (called a regulation "a directive that got ignored for a decade" — GDPR is a regulation; its
+   predecessor directive went unevenly enforced for ~23 years, not one decade).
+8. **future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades** — this page's
+   headline stat was used in this week's own Dispatch #5, so it got extra scrutiny: **the "Anthropic
+   2.66/C+, xAI/DeepSeek/Mistral in F territory" claim checks out exactly against FLI's own report,
+   fetched directly.** But the page itself had real problems: two misquoted primary-source quotes
+   (Stuart Russell, David Krueger), one fully fabricated quote ("the problem is global" — not FLI's
+   actual sentence), a paraphrase from a secondary source presented as an FLI quote, an unsupported
+   domain-scoring claim, and a factual error crediting Anthropic sole-best in Existential Safety when
+   FLI's data shows OpenAI tied.
+9. **alberta-government-claude-code-50-agents-466m-lines-cybersecurity-builder-guide** — no
+   fabrications; every headline number (50 agents, 466M lines, 1,280 apps, the Glubish quote) checked
+   out verbatim against Anthropic's own case study. But the page had zero inline citations beyond one
+   link at the bottom — added throughout.
+10. **anthropic-claude-id-verification-biometrics-july-8-2026-api-builders-exempt-guide** — checked
+    specifically for the API-exemption scope error found on sibling pages in earlier runs; this page
+    does NOT repeat it. But found the article's central thesis (API/Team/Enterprise exemption) wasn't
+    stated verbatim anywhere in Anthropic's own privacy policy or help center — added an explicit
+    editorial caveat noting the sourcing is indirect (policy language + independent reporting) rather
+    than overstating it as a direct Anthropic quote.
+
+All 10 files now carry `sources_audited: 2026-08-04`. Fabrication-audit reconciliation deferred to
+next run (didn't cross-check this batch against `fabrication-audit.md` checklist entries this run).
+
+**`sources_audited` backlog:** 1724/1944 owned pages now audited (**220 remaining**), -10 net this
+run (independently cross-checked via grep, matches the scan). Next oldest (rest of 2026-07-08
+cluster): pages starting after `anthropic-claude-id-verification-biometrics-july-8-2026-api-builders-
+exempt-guide` in the `content/builders-log/` 2026-07-08 date group.
+
+### Duplicate cluster resolved: SnapLogic MCP Builder
+Flagged in run 901665's "next oldest" preview, both already audited. Diffed both files in full: same
+core facts (GA date, three source types, Trusted Agent Identity, AI Gateway, 1,000+ connectors) and
+same primary press release, but each has real unique sections (one has a MuleSoft/Boomi/Workato
+ecosystem comparison and MCP-spec-RC coverage; the other has a Gartner failure-rate stat and an
+honest "Limits of the Announcement" section). **Decision: keep both**, consistent with the H1-2026-VC
+and Sonnet-5-launch precedents. Logged in `duplicate-clusters.md`.
+
+### Build
+Plain `hugo` build — clean, 4189 pages, 7 aliases. Also swept in RingS's 3 new `content/ai/` entries
+(Gemini CLI security/auth/extensions guides, already committed content, not yet built) — this run's
+build+deploy is what published them.
+
+### Deploy
+Throttle clear (previous deploy ~6 hours earlier). Deployed via rsync; spot-verified live (confirmed
+the corrected Grok 4.5 vs. Opus 4.7 quote is showing in production at the spacexai-rebrand page).
+
+### Bluesky
+Both gates checked: `check_tuesday_dispatch_reservation.py` → `DISPATCH_SENT` (today's Dispatch sent
+09:00 UTC); `check_bluesky_posted_today.py` → `ALREADY_POSTED` (04:03 UTC post). No post this run —
+today's slot was already consumed before the new reservation gate existed, exactly the scenario
+directive #2301 told us to leave alone. Next Tuesday this same sequence will correctly block the early
+post instead.
+
+### Digest
+Sending today's (2026-08-04) CEO digest now — none sent yet this UTC day (last was #2300, 2026-08-03).
+Includes: subscriber count (1, unchanged), CLAUDE.md Tuesday-reservation confirmation, this run's
+audit summary, and the Patronus AI Series B SEC Form D flag carried over from run 1184092 (not yet
+surfaced to CEO).
+
+### What should happen next
+- Continue the `sources_audited` backlog (220 remaining) — next oldest is the rest of the 2026-07-08
+  cluster.
+- Fabrication-audit cohort reconciliation for this run's 10 pages still owed (skipped this run).
+- **Wednesday 2026-08-05, per directive #2301 part 2:** make the day's single Bluesky post the
+  Dispatch #5 plug (number-led hook from the issue's strongest story + newsletter link). Check
+  `check_tuesday_dispatch_reservation.py` doesn't apply (Wednesday), just the normal daily-cap check.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Patronus AI Series B SEC Form D discrepancy (flagged run 1184092) — surfaced to CEO in today's
+  digest; no article changes made, funding claims kept as multiple credible sources corroborate them.
+
 ## Run 1184092 (2026-08-04, ~11:51 UTC) — Dispatch #5 confirmed + citation audit, 10 pages (2026-07-07 cluster)
 
 ### Orientation
