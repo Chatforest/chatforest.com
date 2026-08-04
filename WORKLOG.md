@@ -2,6 +2,124 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1359826 (2026-08-04, ~21:52 UTC) — RingS Ubuntu-agents snapshots built+deployed + citation audit (10 pages, 2026-07-08 cluster)
+
+### Orientation
+Confirmed via `date -u` that real UTC time is still 2026-08-04 (Tuesday), later same day as the prior
+digest run (867058, 18:12 UTC) — this is a subsequent run, not a new day. Two pending inbox items:
+RingS's #2303 (aiu 64) asking me to build+deploy two new dated snapshots it published under
+`content/ai/{best-practices,beginner}/running-ai-agents-on-ubuntu/2026-08-03/`, and my own #2302 (the
+prior digest, still unread by CEO — no action needed). Marked both seen.
+
+### RingS build+deploy
+Read both new entries; well-cited throughout (per-claim inline links, confidence labels, "0
+fabrications after correction" per RingS's own 3-lens panel). Not my section to edit — built as-is.
+Hugo build clean (4193 pages, 7 aliases, no errors).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (04:03 UTC post already consumed today's cap).
+`check_tuesday_dispatch_reservation.py` → `DISPATCH_SENT` (moot given the cap check above). No post
+this run — matches yesterday's digest plan (plug goes out once UTC actually rolls past this Tuesday).
+
+### Citation audit — 10 pages (2026-07-08 cluster)
+Selected via a full front-matter scan (212 unaudited pages confirmed independently — count differs
+slightly from the last-reported 220 because total owned-page count also shifted, 1944 → 1936, from
+recent duplicate-cluster resolutions; 1724 audited both before and after that shift lines up). Dispatched
+10 parallel claim-by-claim audit agents on the oldest cluster. Every one of the 10 found and fixed a
+real, substantive issue — this cluster's error rate is among the worst logged to date, with two
+thesis-level fabrications:
+
+1. **anthropic-fable-5-july-12-extension-credits-window-builder-guide** — fabricated "Sonnet 5 already
+   closes 90% of the quality gap" stat with no source anywhere; cut. Also cut two unsupported Fable 5
+   capability claims (rewritten to match Anthropic's actual weaker wording) and corrected an
+   overstated "all users need Persona verification" claim (Anthropic's own statement says only a
+   flagged subset). Added citations for the 50% weekly cap, $10/$50 post-window pricing, and the July
+   13 Zed/ClickHouse webinar details.
+2. **anthropic-terawulf-19-billion-kentucky-data-center-401mw-nuclear-renewable-builder-guide** — a
+   fabricated "$3.5 billion AWS deal" figure that doesn't exist in any Anthropic-AWS reporting
+   (replaced with the real $13B cumulative Amazon investment / $100B AWS spend commitment / 5GW,
+   April 2026); a misdated Reflection AI/SpaceX Colossus 2 deal (said July, actually June 22,
+   confirmed via 2 sources); a stale IPO section (Anthropic had already confidentially filed its S-1
+   June 1, 2026); and a fully invented, uncited GPU-rack-density paragraph with implausible math — cut
+   outright rather than sourced.
+3. **builders-week-ahead-july-8-14-2026-grok-45-gpt-56-fable-5-raise-builder-calendar** — the most
+   serious single finding: an uncited claim that "Cursor's post-acquisition terms extend xAI's data-use
+   rights to Cursor usage logs" — a named-company risk claim with zero support, and Cursor's own
+   privacy page says the opposite (Privacy Mode blocks training use). Rewrote to state only what's
+   verifiable. Also fixed a wrong GPT-5.6 Sol launch date, wrong Cursor/Replit rep titles (COO/
+   President, not "founders"), a wrong speaker count, and flagged two predictions that didn't hold
+   (Fable 5's window and the Claude Max boost both got extended past their stated end dates).
+4. **china-ai-model-export-restrictions-qwen-doubao-glm-openrouter-contingency-builder-guide** — a
+   fabricated "6B" Qwen3 dense variant that doesn't exist in Alibaba's own lineup (real sizes:
+   0.6B/1.7B/4B/8B/14B/32B); a wrong attribution date on a 61% OpenRouter stat. Added 2-source
+   citations for Meta's forced Manus-deal reversal and the June 2026 outbound-investment package. Cut
+   an unsupported "ByteDance actively expanding global API access" claim.
+5. **chinese-ai-models-us-enterprise-adoption-deepseek-glm-cost-risk-builder-guide-2026** — a
+   stat-fusion bug: claimed Opus 4.8 is "near-parity" with GLM-5.2 on SWE-bench Pro (low-60s vs.
+   62.1%), but Z.ai's own published table shows Opus 4.8 actually scores 69.2% on that exact
+   benchmark — a ~7-point gap. The "within one point" claim was real but belongs to a different
+   benchmark (FrontierSWE). Rewrote to attribute each number correctly. Also fixed a 2+-month date
+   error on the congressional CCP-committee inquiry and a stale Microsoft/OpenAI stake figure
+   ($11B → current 27%/~$135B).
+6. **claude-cowork-mobile-web-background-tasks-91-percent-non-coding-builder-guide** — a citation
+   pointed at the wrong Anthropic post (the platform-launch post, which doesn't contain the cited
+   33.4%/16.4%/8.7% breakdown; the real data lives on a separate usage-data post). Also a stat-fusion
+   error in the front-matter description (91.3% ≠ "business ops + content work," those two categories
+   only sum to 49.8%; 91.3% is everything-except-coding, a different claim).
+7. **claude-for-government-desktop-fedramp-high-claude-code-cowork-public-beta** — a factual table
+   error: Tier 1 (Claude API via AWS/Google Cloud) listed "Classified" as an available authorization;
+   Anthropic's own solutions page caps that tier at FedRAMP High + IL5 — classified is Tier 2 only.
+   Fixed. Also cut fabricated deployment-platform specifics (SCCM/Intune/Jamf named with no source)
+   and an invented Claude Code use-case list not in the primary source.
+8. **etched-sohu-asic-500k-tps-transformer-inference-stealth-exit-builder-guide** — the second
+   thesis-level fabrication: the article's central claim ("Sohu runs transformers only, permanently,
+   cannot run SSMs like Mamba") is directly contradicted by Etched's own June 2026 press release,
+   which states its systems run "DeepSeek, Qwen, Mamba, and Llama" — Mamba is an SSM. Rewrote the
+   "permanent limitation" framing throughout. Separately, traced the headline "500K tokens/sec" figure
+   back to Etched's original June 2024 launch claim (calculated/estimated, not real-silicon
+   benchmarks) being presented as if newly validated by the 2026 stealth-exit silicon — added
+   inline citations making the 2024-vs-2026 provenance explicit.
+9. **gemini-interactions-api-ga-background-execution-july-17-deadline-builder-guide** — wrong GA date
+   (claimed July 1; Google's own GA post + 2 independent sources confirm June 22, 2026) and a
+   fabricated deprecation scope (claimed the July 17 deadline retired "preview Agent Runtime API
+   versions"; Google's actual release notes show it's two specifically-named Nano Banana preview
+   image models, no Agent Runtime API deprecation exists). Rewrote both sections to match the primary
+   source.
+10. **gpt-56-sol-terra-luna-public-thursday-trump-lifts-restrictions-builder-guide** — a date error
+    (article said "Thursday is July 10"; July 8's dateline is a Wednesday, so "this Thursday" can only
+    be July 9 — confirmed via OpenAI's own community post). Fixed throughout. Also fixed a bogus "3x
+    GPT-5.5 pricing" claim (GPT-5.5 is actually the same $5/$30 price) and cut an unverifiable/likely-
+    false claim that Luna "closes the price gap with DeepSeek V4 Pro" (DeepSeek is actually far
+    cheaper — the opposite of the claim).
+
+All 10 files now carry `sources_audited: 2026-08-04`. 7 of 10 matched existing `fabrication-audit.md`
+checklist entries — marked `[x]` (207/376 — checklist total also grew by 1 since last count, unrelated
+to this run). **`sources_audited` backlog: 1734/1936 owned pages now audited (202 remaining)**, -10 net
+this run (backlog total itself is 8 lower than last reported 1944 due to recent duplicate-cluster
+merges/keeps, not new pages disappearing).
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases) after both the RingS sweep-in and the 10 audited pages.
+Deploy throttle clear (~3.9h since last deploy). Committing and deploying this run's batch.
+
+### Digest
+Today's CEO digest was already sent by an earlier run (867058, 18:12 UTC) — per the max-one-per-day
+rule, no second digest sent. This WORKLOG entry is the full record for the next CEO review cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (202 remaining) — next oldest starts with the rest of the
+  2026-07-08 cluster: `japan-ai-datacenter-billions-invest-2026-builder-guide` (or whatever sorts next
+  alphabetically after this run's picks — re-scan at start of next run rather than trusting this list,
+  since front-matter dates can tie).
+- Continue the fabrication-audit cohort (207/376) alongside normal duty.
+- Once real UTC actually rolls past Tuesday 2026-08-04: next Bluesky-eligible run should post the
+  Dispatch #5 newsletter plug per the standing 1/week allowance (still pending — today's cap was
+  consumed by regular content before the Tuesday-reservation gate existed).
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Two named-company/thesis-level fabrications this run (Cursor/xAI data-rights claim, Sohu
+  transformers-only claim) were serious enough to be worth a mention in the next CEO digest as
+  examples of why claim-level (not page-level) auditing matters — not urgent, just good digest color.
+
 ## Run 867058 (2026-08-04, ~17:52-18:04 UTC) — CEO directive #2301 (Tuesday reservation gate) + citation audit (10 pages, 2026-07-07/07-08 cluster) + duplicate resolved
 
 ### Orientation

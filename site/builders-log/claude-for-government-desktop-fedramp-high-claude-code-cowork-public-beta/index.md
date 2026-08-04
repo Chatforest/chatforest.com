@@ -13,13 +13,13 @@ If you are a government IT builder, a contractor evaluating AI for an agency cli
 
 ## What Is Claude for Government Desktop
 
-Claude for Government Desktop is not Claude.ai with a government skin. It is a distinct desktop application running inference inside a FedRAMP High authorized environment. The key difference from the commercial product: conversation history and file access stay on agency-managed devices, inference runs in the authorized environment, and the governance layer is substantially heavier.
+Claude for Government Desktop is not Claude.ai with a government skin. It is a distinct desktop application running inference inside a FedRAMP High authorized environment. The key difference from the commercial product: [conversation history is stored locally on the agency-managed device, and inference runs inside the FedRAMP High authorized environment](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government) — and the governance layer is substantially heavier.
 
 Two products ship in this beta:
 
-**Claude Code** brings Anthropic's coding agent to agencies. The primary use case in Anthropic's framing is software modernization — legacy systems rewrite assistance, policy-to-code workflows, code review for safety-critical software. The desktop app gives it local filesystem access under agency-controlled permissions.
+**Claude Code** brings Anthropic's coding agent to agencies. Anthropic's stated use case: ["public sector teams can build and modernize the software systems that underpin public services"](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). The desktop app gives it local filesystem access under agency-controlled permissions.
 
-**Claude Cowork** brings the general work agent to agency staff. The concrete use cases Anthropic highlights: memo creation, RFP reviews, casework delegation, deck drafting. File access is local (desktop). Scheduled tasks can run in the background. Claude surfaces decision-point notifications when it needs human input before proceeding.
+**Claude Cowork** brings the general work agent to agency staff. The concrete use cases Anthropic highlights: ["memo creation, RFP reviews, casework, and decks"](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). File access is local (desktop). Cowork more broadly supports [scheduled tasks that run in the background and notify the user when a task completes or reaches a decision point that needs human input](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork) — this is a general Cowork capability, not something Anthropic specifically documented for the government beta.
 
 Both ship in public beta. Enterprise GA timing is not yet announced.
 
@@ -27,12 +27,12 @@ Both ship in public beta. Enterprise GA timing is not yet announced.
 
 ## The Four-Tier Government Stack
 
-Anthropic now offers four distinct access models for government, each with different security clearance coverage:
+Anthropic now offers four distinct access models for government, each with different security clearance coverage, [per Anthropic's government solutions page](https://claude.com/solutions/government):
 
 | Tier | Product | Authorization | Where Inference Runs |
 |---|---|---|---|
-| 1 | Claude API via AWS / Google Cloud | FedRAMP High, IL5, Classified | Customer's existing cloud contract |
-| 2 | Claude Gov models on AWS | Classified environments | AWS GovCloud with clearance controls |
+| 1 | Claude API via AWS / Google Cloud | FedRAMP High, IL5 | Customer's existing cloud contract |
+| 2 | Claude Gov models on AWS | Classified environments | AWS GovCloud |
 | 3 | Claude for Government application | FedRAMP High | Anthropic-managed authorized environment |
 | 4 | Claude Code + Cowork Desktop (this beta) | FedRAMP High | Anthropic-managed authorized environment |
 
@@ -48,49 +48,47 @@ The government-specific controls are the actual story here. Anthropic built a go
 
 ### Audit and Accountability
 
-**Hash-chained, tamper-evident audit logs**: Every session produces a cryptographic audit record. The hash chain means any post-hoc modification to a log entry breaks the chain — providing integrity assurance that's documentable to authorizing officials.
+**Hash-chained, tamper-evident audit logs**: [Every administrative action is recorded in a hash-chained audit log](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). The hash chain means any post-hoc modification to a log entry breaks the chain — providing integrity assurance that's documentable to authorizing officials.
 
-**Usage exports (metering only)**: Export files contain usage data (tokens, sessions, users, costs) but not conversation content. Agencies can feed usage data to their own financial systems without touching sensitive material.
+**Usage exports (metering only)**: [Usage exports are metering data only, so agencies can answer ATO and IG requests without moving sensitive material](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). Agencies can feed usage data to their own financial systems without touching sensitive material.
 
-**Two-person approval for sensitive operations**: Certain privileged actions require a second authorized user to confirm. This mirrors the "two-person rule" used in federal operations for sensitive decisions and is explicitly designed to support internal audit and ATO documentation.
+**Two-person approval for sensitive operations**: [Sensitive operations on Anthropic's side require two-person approval](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). This mirrors the "two-person rule" used in federal operations for sensitive decisions and is explicitly designed to support internal audit and ATO documentation.
 
 ### Administration and Access Control
 
-**Department-level administration**: A central admin can create sub-admins for individual agencies or bureaus. Sub-admins can configure their own rate limits, model access, and spending caps without touching the parent organization's settings.
+**Department-level administration**: [Department-level administrators can allocate seats and prepaid usage to sub-agencies while allowing each to manage its own users](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government).
 
-**SCIM group mappings**: Rate limits and allowed models can be configured at the SCIM group level — meaning your identity provider (Okta, Entra ID, etc.) can drive who gets access to what, without manual provisioning in a separate portal.
+**SCIM group mappings**: [Administrators can use SCIM group mappings to set rate limits, dollar caps, and allowed models](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government) — meaning your identity provider (Okta, Entra ID, etc.) can drive who gets access to what, without manual provisioning in a separate portal.
 
-**Layered configuration**: Defaults cascade from the organization level to department to sub-agency. Lower-level admins can further restrict (but not expand beyond) what the level above has configured.
+**Layered configuration**: [Layered configuration sets defaults for sub-agencies, including what Claude can connect to, which features are available, and the instructions that guide how Claude interacts with users](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government).
 
 ### Spending Controls
 
-**Prepaid usage in fixed increments**: Agencies buy prepaid compute in defined increments. This fits standard government procurement models — agencies cannot exceed their authorized spend without a new procurement action.
+**Prepaid usage in fixed increments**: [Program offices define their own seat tiers with spend and model limits, and usage is purchased in fixed increments with a hard not-to-exceed cap](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). This fits standard government procurement models — agencies cannot exceed their authorized spend without a new procurement action.
 
 **Hard spending caps**: Once an increment is consumed, access stops until more is purchased. No unexpected overage invoices.
 
-**Per-user and per-model tracking**: Usage is tracked at both the individual user level and by model version — useful for budget attribution and for demonstrating that specific models approved in an ATO package are the ones actually being used.
+**Per-user and per-model tracking**: [Administrators can track usage per user and per model in the admin console](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government) — useful for budget attribution and for demonstrating that specific models approved in an ATO package are the ones actually being used.
 
-**Automatic burndown alerts**: Admins get alerts as spending approaches the cap, enabling timely reprocurement without service interruption.
+**Automatic burndown alerts**: [Automatic burndown alerts warn admins before the balance runs low](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government), enabling timely reprocurement without service interruption.
 
 ---
 
 ## Deployment
 
-The application deploys through standard agency MDM platforms (SCCM, Intune, Jamf). No custom installation pipeline is needed. Anthropic remains the contracted and billing party, which matters for agencies that have constraints on direct cloud-provider relationships — you deal with one vendor contract, not two.
-
-No separate AWS or Google Cloud contract is required for the FedRAMP High environment — the authorized infrastructure is Anthropic-managed and included.
+[The application deploys through standard agency MDM platforms](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). Anthropic's announcement does not name specific MDM products for the government deployment. [Anthropic remains the contracted and billing party — agencies don't need a separate cloud-provider relationship to get started](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government), which matters for agencies that have constraints on direct cloud-provider relationships — you deal with one vendor contract, not two.
 
 ---
 
 ## Pricing
 
-Federal agencies: **$1 per agency (unlimited seats) through August 2026**. This is a promotional rate for early adopters during the beta phase.
+Federal agencies: [**$1 per agency (unlimited seats) through August 2026**](https://support.claude.com/en/articles/14503590-get-started-with-claude-for-government). This is a promotional rate for early adopters during the beta phase.
 
-State and local government: Contact Anthropic's public sector sales team for pricing.
+[State and local government: Contact Anthropic's public sector sales team for pricing.](https://support.claude.com/en/articles/14503590-get-started-with-claude-for-government)
 
-Post-August pricing has not been announced. The August 2026 cutoff aligns with several Anthropic promotional windows expiring around the same period (Claude Max 50% boost, Sonnet 5 introductory pricing). Agencies evaluating the platform should treat August 2026 as the window to begin procurement before standard government pricing takes effect.
+Post-August pricing has not been announced. The August 2026 cutoff coincides with the end of [Claude Sonnet 5's introductory API pricing, which runs through August 31, 2026](https://platform.claude.com/docs/en/about-claude/pricing) before standard rates take effect — a reminder that several Anthropic promotional windows cluster around that date. Agencies evaluating the platform should treat August 2026 as the window to begin procurement before standard government pricing takes effect.
 
-Access: claude.com/solutions/government
+Access: [claude.com/solutions/government](https://claude.com/solutions/government)
 
 ---
 
@@ -102,16 +100,16 @@ Access: claude.com/solutions/government
 
 **If you're designing enterprise AI governance**: The control set Anthropic shipped here — hash-chained logs, two-person approval, SCIM-driven access, hard spending caps, metering-only exports — is a reasonable template for what serious enterprise governance looks like regardless of whether you're in government. The patterns transfer.
 
-**If you're advising agencies on ATO**: Anthropic provides penetration test summaries, a formal change notification process, and a trust center. The FedRAMP High ATO documentation is available on request. The metering-only export design was explicitly built to support ATO documentation without exposing conversation content in compliance artifacts.
+**If you're advising agencies on ATO**: [A penetration-test summary is available for the desktop client, and the change notification process and pentest summary are available under NDA through Anthropic's trust center](https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government). The FedRAMP High ATO documentation is available on request. The metering-only export design was explicitly built to support ATO documentation without exposing conversation content in compliance artifacts.
 
 ---
 
 ## What the Beta Does Not Cover
 
-- **Classified workloads**: Use Claude Gov models via AWS (Tier 2) for TS/SCI and other classified contexts.
-- **DoD IL4/IL5**: Available through Bedrock (already FedRAMP High + IL4/5 approved) — not through the desktop app.
+- **Classified workloads**: [Use Claude Gov models on AWS (Tier 2), built for classified environments and national security missions](https://claude.com/solutions/government), for TS/SCI and other classified contexts.
+- **DoD IL4/IL5**: [Claude in Amazon Bedrock is approved for FedRAMP High and DoD IL4/5 workloads](https://www.anthropic.com/news/claude-in-amazon-bedrock-fedramp-high) — not through the desktop app.
 - **Non-U.S. government**: The product is scoped to U.S. federal, state, and local agencies and qualifying public sector organizations. International public sector access is handled separately.
-- **Web-only access**: The desktop app is required for full Claude Code and Cowork functionality. The FedRAMP High web app is a separate product (Tier 3 above).
+- **Web-only access**: The desktop app is required for full Claude Code and Cowork functionality. The FedRAMP High web app (Claude for Government application, Tier 3 above) is a separate product.
 
 ---
 

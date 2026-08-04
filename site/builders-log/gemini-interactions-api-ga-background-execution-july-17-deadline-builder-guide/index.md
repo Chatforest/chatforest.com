@@ -1,9 +1,9 @@
 # Gemini Interactions API Is Now GA: Background Execution, Stable Schema, and a July 17 Deadline
 
-> Google's Interactions API reached general availability on July 1. The schema is now stable, background execution is live, and deprecated preview endpoints on the Gemini Enterprise Agent Platform stop working July 17. Here's what builders need to update.
+> Google's Interactions API reached general availability on June 22. The schema is now stable, background execution is live, and two Nano Banana preview image models on the Gemini Enterprise Agent Platform retire July 17. Here's what builders need to update.
 
 
-Google's Interactions API hit general availability on July 1, 2026. If you're building anything with Gemini — models or agents — this is the API going forward. And if you're on the Gemini Enterprise Agent Platform using preview endpoints, you have until **July 17** to update before service disruption.
+Google's Interactions API hit [general availability on June 22, 2026](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/). If you're building anything with Gemini — models or agents — this is the API going forward. And if you're on the Gemini Enterprise Agent Platform using the `gemini-3.1-flash-image-preview` or `gemini-3-pro-image-preview` preview models, they're [retired as of **July 17**](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) — update before then to avoid disruption.
 
 Here's what changed at GA, what to update, and what the stable schema means for your architecture.
 
@@ -11,9 +11,9 @@ Here's what changed at GA, what to update, and what the stable schema means for 
 
 ## What Changed at GA
 
-The Interactions API entered public beta in December 2025. The beta period had one implicit caveat: the schema could change. It did — the [June 8 outputs schema removal](/builders-log/gemini-interactions-api-june-8-steps-migration-outputs-deadline/) was the last breaking change before GA.
+The [Interactions API entered public beta in December 2025](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/). The beta period had one implicit caveat: the schema could change. It did — the [June 8 outputs schema removal](/builders-log/gemini-interactions-api-june-8-steps-migration-outputs-deadline/) was the last breaking change before GA.
 
-As of July 1, the schema is stable. Google is committing to backward compatibility going forward. That matters for teams who were waiting before building on top of it.
+As of the June 22 GA release, [the schema is stable](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/). That matters for teams who were waiting before building on top of it.
 
 **New capabilities shipping at GA:**
 
@@ -36,11 +36,11 @@ job_id = response.job_id
 
 Previously, long-running agent tasks would block until completion or hit timeout limits. Background execution decouples the request from the response — useful for tasks that run minutes or hours, such as multi-step research, large document processing, or orchestrated workflows where you don't need the result in the same request cycle.
 
-Background execution works for both direct model calls and Managed Agent runs.
+[Background execution works for both standard Gemini models and Managed Agent runs](https://ai.google.dev/gemini-api/docs/background-execution).
 
 ### Mixed Built-In and Custom Tools in One Request
 
-You can now combine Google's built-in tools (Google Search, Google Maps, code execution) with your own custom functions in a single API call — without routing or tool dispatch logic on your side:
+You can now [combine Google's built-in tools (Google Search, Google Maps) with your own custom functions in a single API call](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/) — without routing or tool dispatch logic on your side:
 
 ```python
 response = genai.interact(
@@ -57,31 +57,31 @@ Previously this required either a custom orchestration layer or separate request
 
 ### Tool Results Can Return Images
 
-Custom tool functions can now return images (as base64-encoded data) alongside text. This matters for workflows where tools generate or retrieve visual content — charts, screenshots, diagrams — that the model should reason about in subsequent steps.
+[Custom tool functions can now return images alongside text](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/). This matters for workflows where tools generate or retrieve visual content — charts, screenshots, diagrams — that the model should reason about in subsequent steps.
 
-### Managed Agents: Antigravity 2.0
+### Managed Agents Ship at GA
 
-Managed Agents — the hosted sandbox execution environment [launched at Google I/O](/builders-log/gemini-api-managed-agents-antigravity-sandbox-builder-guide/) — ships at GA with Antigravity 2.0. The default agent now includes improved web browsing, persistent file storage, and better code execution reliability. Custom agent definitions via `AGENTS.md` also work at GA.
+Managed Agents — the hosted sandbox execution environment [launched at Google I/O](/builders-log/gemini-api-managed-agents-antigravity-sandbox-builder-guide/) — [ship at GA](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/). A single API call provisions a remote Linux sandbox where the [Antigravity agent](https://ai.google.dev/gemini-api/docs/agents) — general-purpose, powered by Gemini 3.6 Flash — can reason, execute code, browse the web, and manage files. [Custom agent definitions via `AGENTS.md` also work at GA](https://ai.google.dev/gemini-api/docs/custom-agents).
 
 Background execution applies to Managed Agent runs as well: long-running agent sessions that previously required polling workarounds now support `background=True` natively.
 
 ---
 
-## The July 17 Deadline: Enterprise Agent Platform Preview Endpoints
+## The July 17 Deadline: Two Preview Image Models Retire
 
-If you're using the Gemini Enterprise Agent Platform (the Google Cloud version, not the Google AI Studio / Gemini API path), preview endpoints are being deprecated on **July 17, 2026**.
+If you're using the Gemini Enterprise Agent Platform (the Google Cloud version, not the Google AI Studio / Gemini API path), two "Nano Banana" preview image models — `gemini-3.1-flash-image-preview` and `gemini-3-pro-image-preview` — [are retired as of **July 17, 2026**](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) and are no longer accessible after that date.
 
-Affected endpoints include preview model IDs and preview versions of the Agent Runtime API. If your calls include `-preview` in the endpoint URL or model ID on the Enterprise platform, check the [Gemini Enterprise Agent Platform release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) for the GA equivalents.
+If your calls reference either preview model ID, [migrate to `gemini-3.1-flash-image` or `gemini-3-flash-image`](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) — check the [Gemini Enterprise Agent Platform release notes](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) for the current list of affected models.
 
-The Gemini API (AI Studio path) is not affected by this deadline — it uses different endpoint naming. But if you're building on Vertex AI or the Enterprise platform, audit your endpoint references now.
+This is a model-level retirement, not a broader "all preview endpoints" deprecation — the Interactions API's own preview-to-GA transition (background execution, Managed Agents, mixed tools) is a separate change covered above and doesn't share this deadline.
 
 ---
 
 ## Where generateContent Stands
 
-The legacy `generateContent` API is not being deprecated. It will continue to receive new mainline Gemini models for the foreseeable future.
+[The legacy `generateContent` API is not being deprecated. It will continue to receive new mainline Gemini models for the foreseeable future](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/).
 
-However, Google has made clear that **frontier capabilities land exclusively on the Interactions API going forward**. Background execution, Managed Agents, and the mixed-tool support described above are not available on `generateContent`. As models like Gemini Omni roll out broadly, the newest capabilities will come to the Interactions API first.
+However, [Google expects frontier capabilities for long-running models and agents to increasingly land exclusively on the Interactions API](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/). Background execution, Managed Agents, and the mixed-tool support described above are not available on `generateContent`. Google has also flagged [Gemini Omni as a "soon"-coming addition](https://blog.google/innovation-and-ai/technology/developers-tools/interactions-api-general-availability/) that will land on the Interactions API.
 
 The practical guidance: if you're starting a new project, use the Interactions API. If you have an existing `generateContent` integration doing simple text/multimodal inference, there's no pressure to migrate — but you're opting out of new capabilities as they ship.
 

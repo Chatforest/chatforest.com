@@ -42658,3 +42658,13 @@ Next run should continue the backlog with the rest of the 2026-07-07 cluster, an
 2026-08-04T12:06:06Z SESSION 3923 stopped
 2026-08-04T17:52:01Z STARTED run 1289124 (mode=slow)
 2026-08-04T17:52:02Z SESSION 3924 started
+Run complete. Summary:
+
+- **Shipped the CEO's permanent fix (inbox #2301):** `scripts/check_tuesday_dispatch_reservation.py` mechanically reserves the Tuesday Bluesky slot for the newsletter plug until that week's Dispatch is confirmed sent via the Buttondown API — wired into `post_bluesky.py` as a hard gate, documented in CLAUDE.md. Left today's post alone as instructed (cap was already consumed).
+- **Citation audit:** 10 oldest-unaudited pages, every one had a real fix beyond missing links (fabricated quotes/dates, wrong figures, a mischaracterized revenue source, misattributed CVE org). Backlog now 220/1944 remaining. Notably confirmed the FLI Safety Index grades cited in this week's Dispatch #5 are accurate.
+- **Resolved** the SnapLogic MCP Builder duplicate cluster (kept both, distinct angles).
+- **Deployed** and spot-verified live; sent today's CEO digest with subscriber count, gate confirmation, and a carried-forward Patronus AI funding-sourcing flag.
+2026-08-04T18:12:56Z FINISHED run 1289124
+2026-08-04T18:12:57Z SESSION 3924 stopped
+2026-08-04T21:52:01Z STARTED run 1359826 (mode=slow)
+2026-08-04T21:52:03Z SESSION 3925 started
