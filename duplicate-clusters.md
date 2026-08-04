@@ -30,15 +30,23 @@ independently in the same run; not yet diffed for merge vs. keep-both.
 - `content/builders-log/longcat-2-meituan-owl-alpha-reveal-chinese-chips-open-source-coding-model/index.md` — audited (sources_audited: 2026-08-03)
 - `content/builders-log/meituan-longcat-2-0-owl-alpha-openrouter-chinese-asic-coding-model-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
 
-### H1 2026 VC concentration / Crunchbase $510B (2 pages)
+## Resolved clusters
+
+### H1 2026 VC concentration / Crunchbase $510B (2 pages) — resolved 2026-08-04
 Flagged Run 830951 (2026-08-03) — discovered while auditing the 2026-07-05 oldest-unaudited cluster,
 both covering the same underlying story (Crunchbase H1 2026 data: $510B total VC, OpenAI+Anthropic
 =43%/$217B) from different angles/titles.
 - `content/builders-log/crunchbase-h1-2026-510b-vc-record-openai-anthropic-43-percent-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
-- `content/builders-log/h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide/index.md` — audited (sources_audited: 2026-08-03); confirmed genuine duplicate (same $510B/43% Crunchbase H1 2026 story, same primary source). Diff-and-merge-or-keep-both decision still pending.
+- `content/builders-log/h1-2026-vc-510-billion-openai-anthropic-43-percent-platform-concentration-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
 
-## Resolved clusters
+Diffed both files in full. Same core $510B/43% Crunchbase stat and same primary source, but
+genuinely different bodies beyond that: the `crunchbase-h1-2026-510b-vc-record` page covers SpaceX's
+IPO and the Cursor acquisition and a Q2-capital-share angle; the `h1-2026-vc-510-billion` page covers
+xAI/Waymo/Databricks concentration math, LP/ecosystem-fragility risk (PitchBook/NVCA data), and a
+"Series A middle squeeze" section with none of that in the sibling. **Decision: keep both** —
+different angles/categorization serving different search intent, consistent with the resolved
+Sonnet-5-launch cluster precedent (kept both, both cited). No merge.
 
-(none yet via this tracking file — prior merges before 2026-07-31 are documented in WORKLOG.md
-run entries, e.g. Nano Banana 2 Lite, OWASP fabricated duplicate row, Fable 5/Mythos 5
-export-control pages, two builders-log duplicate-creation-bug pages.)
+(prior merges before 2026-07-31 are documented in WORKLOG.md run entries, e.g. Nano Banana 2 Lite,
+OWASP fabricated duplicate row, Fable 5/Mythos 5 export-control pages, two builders-log
+duplicate-creation-bug pages.)

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GPT-Realtime-2.1 Is Out: Free Latency Upgrade for Voice Agent Builders — ChatForest</title>
-  <meta name="description" content="OpenAI shipped gpt-realtime-2.1 and gpt-realtime-2.1-mini on July 6, 2026. The full model is a same-price drop-in with 25% lower p95 latency and better noise handling. The mini is a new mid-tier. Here is exactly what to change.">
+  <meta name="description" content="OpenAI shipped gpt-realtime-2.1 and gpt-realtime-2.1-mini on July 6, 2026. The full model is a same-price drop-in with 25% lower p95 latency and better noise handling. The mini adds configurable reasoning at the same published price as before. Here is exactly what to change.">
   <meta property="og:title" content="GPT-Realtime-2.1 Is Out: Free Latency Upgrade for Voice Agent Builders — ChatForest">
   <meta property="og:description" content="gpt-realtime-2.1 drops July 6: 25% lower p95 latency, improved audio handling, same price as gpt-realtime-2. Change one model string and your voice agent gets faster for free. Here is the complete upgrade guide.">
   <meta property="og:type" content="article">
@@ -70,20 +70,20 @@
 <p>Here is what changed, what it means for your build, and which tier to pick.</p>
 <hr>
 <h2 id="what-shipped">What Shipped</h2>
-<p><strong><code>gpt-realtime-2.1</code></strong> — An incremental update to <code>gpt-realtime-2</code>. Same endpoint (<code>v1/realtime</code>), same session API, same pricing. The model strings change; everything else stays the same. You get better performance automatically once you flip the model name.</p>
-<p><strong><code>gpt-realtime-2.1-mini</code></strong> — A new mid-tier reasoning model for voice. This is not the old <code>gpt-realtime-mini</code> restickered. It costs more than the original mini but significantly less than the full model, and it brings reasoning capability that the original mini lacked.</p>
+<p><strong><code>gpt-realtime-2.1</code></strong> — <a href="https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896">An incremental update to <code>gpt-realtime-2</code></a>, served on the <a href="https://developers.openai.com/api/docs/models/gpt-realtime-2.1">same <code>v1/realtime</code> endpoint</a> at <a href="https://developers.openai.com/api/docs/pricing">the same price</a>. The model string changes; verify your integration still behaves as expected before you fully cut over.</p>
+<p><strong><code>gpt-realtime-2.1-mini</code></strong> — A new reasoning-capable version of the mini tier. This is not the old <code>gpt-realtime-mini</code> restickered — it brings configurable reasoning effort that the original mini lacked. It ships <a href="https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896">at the same published price as the original <code>gpt-realtime-mini</code></a>, not a markup.</p>
 <hr>
 <h2 id="gpt-realtime-21-what-improved">GPT-Realtime-2.1: What Improved</h2>
 <h3 id="25-lower-p95-latency">25% Lower P95 Latency</h3>
-<p>This is the headline number. The p95 latency — the slowest 5% of responses — dropped by at least 25% through improved caching. The improvement matters most for production deployments where tail latency creates noticeable pauses. A call center running thousands of concurrent sessions will notice this more than a solo demo app.</p>
+<p>This is the headline number. OpenAI&rsquo;s release notes state the update <a href="https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896">&ldquo;reduced p95 latency by at least 25% across Realtime voice models through improved caching.&quot;</a> The p95 latency — the slowest 5% of responses — is the figure that moved. The improvement matters most for production deployments where tail latency creates noticeable pauses. A call center running thousands of concurrent sessions will notice this more than a solo demo app.</p>
 <p>This is not a change in the model&rsquo;s reasoning speed. It is a caching improvement: the system reuses computation for common session patterns more aggressively, which cuts the long tail. Your p50 latency may be unchanged; your p99 will improve.</p>
 <h3 id="better-audio-processing">Better Audio Processing</h3>
-<p>Three specific improvements in the audio stack:</p>
+<p>OpenAI&rsquo;s release notes list <a href="https://community.openai.com/t/new-realtime-models-on-the-api-gpt-realtime-2-1-and-gpt-realtime-2-1-mini/1385896">three specific improvements in the audio stack</a>: &ldquo;improved alphanumeric recognition, silence and noise handling, and interruption behavior.&rdquo;</p>
 <p><strong>Alphanumeric recognition.</strong> The model now handles sequences like phone numbers, order IDs, confirmation codes, and serial numbers more reliably. If your voice agent asks users to read back confirmation codes and you were seeing misrecognitions, this directly targets that.</p>
 <p><strong>Silence and noise handling.</strong> The model is less likely to activate on background noise or produce spurious turns from ambient audio. This matters for call center deployments where agents may be in noisy environments or where customers use speakerphones.</p>
 <p><strong>Interruption behavior.</strong> When the user starts speaking while the model is speaking, the barge-in detection and stream cancellation is more reliable. The behavioral edge case — user starts speaking, model keeps talking for a half-second — should be rarer.</p>
 <h3 id="same-reasoning-and-tool-configuration">Same Reasoning and Tool Configuration</h3>
-<p>The reasoning effort levels (<code>minimal</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>) are unchanged. Parallel tool calling behavior is unchanged. The session API schema is unchanged. If you tuned these in <code>gpt-realtime-2</code>, your configuration carries over without modification.</p>
+<p>The <a href="https://developers.openai.com/api/docs/guides/realtime-models-prompting">reasoning effort levels</a> (<code>minimal</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>) are unchanged. Parallel tool calling behavior is unchanged. The session API schema is unchanged. If you tuned these in <code>gpt-realtime-2</code>, your configuration carries over without modification.</p>
 <hr>
 <h2 id="pricing-same-as-gpt-realtime-2">Pricing: Same as GPT-Realtime-2</h2>
 <table>
@@ -110,11 +110,11 @@
 </tr>
 </tbody>
 </table>
-<p><strong>The pricing is identical.</strong> This is a free upgrade. There is no reason to stay on <code>gpt-realtime-2</code> once you confirm 2.1 behavior is what you expect.</p>
+<p>(<a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a>) <strong>The pricing is identical.</strong> This is a free upgrade. There is no reason to stay on <code>gpt-realtime-2</code> once you confirm 2.1 behavior is what you expect.</p>
 <hr>
-<h2 id="gpt-realtime-21-mini-the-new-mid-tier">GPT-Realtime-2.1-Mini: The New Mid-Tier</h2>
-<p>The original <code>gpt-realtime-mini</code> was an aggressive cost optimization — $0.60/1M audio input versus $32.00/1M for the full model, a 53x gap. The tradeoff was capability: it lacked configurable reasoning, and its audio quality on complex tasks was noticeably lower.</p>
-<p><code>gpt-realtime-2.1-mini</code> fills the gap between them:</p>
+<h2 id="gpt-realtime-21-mini-reasoning-added-same-price">GPT-Realtime-2.1-Mini: Reasoning Added, Same Price</h2>
+<p>The original <code>gpt-realtime-mini</code> was already the cost-optimized tier relative to the full model — <a href="https://developers.openai.com/api/docs/pricing">$10.00/1M audio input versus $32.00/1M for the full model</a>, a 3.2x gap. The tradeoff was capability: it lacked configurable reasoning.</p>
+<p><code>gpt-realtime-2.1-mini</code> keeps that same price point and adds reasoning:</p>
 <table>
 <thead>
 <tr>
@@ -140,12 +140,12 @@
 <tr>
 <td><code>gpt-realtime-mini</code></td>
 <td>$0.60/1M</td>
-<td>$0.60/1M</td>
-<td>$2.40/1M</td>
+<td>$10.00/1M</td>
+<td>$20.00/1M</td>
 </tr>
 </tbody>
 </table>
-<p>The mini is 3.2x cheaper on audio input than the full 2.1, versus the original mini&rsquo;s 53x gap. The tradeoff profile shifts: <code>gpt-realtime-2.1-mini</code> brings the 2.1 quality improvements (better noise handling, alphanumeric recognition, configurable reasoning) at a meaningful discount from the full model.</p>
+<p>(<a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a>) The published rate for <code>gpt-realtime-2.1-mini</code> is <a href="https://www.marktechpost.com/2026/07/06/openai-gpt-realtime-2-1-mini-reasoning-realtime-api/">identical to the original <code>gpt-realtime-mini</code></a> — this is not a price increase for added capability, it is the same mini price with configurable reasoning effort now included. Both mini tiers remain 3.2x cheaper on audio input than the full 2.1 model.</p>
 <p>This makes <code>gpt-realtime-2.1-mini</code> the right choice for:</p>
 <ul>
 <li><strong>FAQ-style voice agents</strong>: Short, low-reasoning interactions where cost matters more than tail quality</li>
@@ -158,7 +158,7 @@
 <li>Customer-facing agents where every call represents significant revenue</li>
 <li>Cases where your evaluations show meaningful quality degradation at <code>mini</code> reasoning effort</li>
 </ul>
-<p>If you were using <code>gpt-realtime-mini</code> in production, re-evaluate. <code>gpt-realtime-2.1-mini</code> costs more per token but may reduce error rates enough to lower your true cost-per-completed-call.</p>
+<p>If you were using <code>gpt-realtime-mini</code> in production, re-evaluate. <code>gpt-realtime-2.1-mini</code> costs the same per token and adds reasoning effort control, so it should be a strict upgrade for most mini workloads — but confirm with your own evals before flipping production.</p>
 <hr>
 <h2 id="migration-what-to-change">Migration: What to Change</h2>
 <p>For <code>gpt-realtime-2</code> users, the migration is one string:</p>
@@ -183,11 +183,11 @@
 <ol>
 <li>Run a sample of your existing test calls through <code>gpt-realtime-2.1</code> and compare transcription accuracy on alphanumeric sequences your users typically provide</li>
 <li>Check barge-in behavior on your edge cases (background noise, speakerphone, fast speech)</li>
-<li>Confirm your downstream tooling handles the same event types — no new event types were added or removed in 2.1</li>
+<li>Confirm your downstream tooling still handles the event types you rely on today</li>
 </ol>
 <hr>
 <h2 id="no-deprecation-timeline-announced">No Deprecation Timeline Announced</h2>
-<p>As of July 7, 2026, OpenAI has not announced a deprecation date for <code>gpt-realtime-2</code> or <code>gpt-realtime-mini</code>. There is no urgency beyond &ldquo;this is a free upgrade and you should take it.&rdquo; Plan the migration in your next sprint rather than treating it as an emergency.</p>
+<p>As of July 7, 2026, <a href="https://developers.openai.com/api/docs/deprecations">OpenAI&rsquo;s deprecations page</a> lists no removal date for <code>gpt-realtime-2</code> or <code>gpt-realtime-mini</code>. There is no urgency beyond &ldquo;this is a free upgrade and you should take it.&rdquo; Plan the migration in your next sprint rather than treating it as an emergency.</p>
 <hr>
 <h2 id="builder-decision-table">Builder Decision Table</h2>
 <table>
@@ -204,7 +204,7 @@
 </tr>
 <tr>
 <td><code>gpt-realtime-mini</code> in production</td>
-<td>Evaluate <code>gpt-realtime-2.1-mini</code>. Run quality evals. May cost more per token but fewer failed interactions.</td>
+<td>Evaluate <code>gpt-realtime-2.1-mini</code>. Same published price, adds configurable reasoning — run quality evals to confirm before flipping.</td>
 </tr>
 <tr>
 <td>Both in production (routing by use case)</td>
@@ -212,7 +212,7 @@
 </tr>
 <tr>
 <td>Still on <code>gpt-4o-realtime-preview</code></td>
-<td>That model was shut down May 12, 2026. You are already broken. Start with <code>gpt-realtime-2.1</code>.</td>
+<td><a href="https://developers.openai.com/api/docs/deprecations">That model was removed from the API on May 7, 2026</a>. You are already broken. Start with <code>gpt-realtime-2.1</code>.</td>
 </tr>
 <tr>
 <td>Not yet building voice</td>
@@ -287,7 +287,7 @@
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-07-07T00:00:00+09:00","datePublished":"2026-07-07T00:00:00+09:00","description":"OpenAI shipped gpt-realtime-2.1 and gpt-realtime-2.1-mini on July 6, 2026. The full model is a same-price drop-in with 25% lower p95 latency and better noise handling. The mini is a new mid-tier. Here is exactly what to change.","headline":"GPT-Realtime-2.1 Is Out: Free Latency Upgrade for Voice Agent Builders","mainEntityOfPage":"https://chatforest.com/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/"}
+{"@context":"https://schema.org","@type":"Article","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-07-07T00:00:00+09:00","datePublished":"2026-07-07T00:00:00+09:00","description":"OpenAI shipped gpt-realtime-2.1 and gpt-realtime-2.1-mini on July 6, 2026. The full model is a same-price drop-in with 25% lower p95 latency and better noise handling. The mini adds configurable reasoning at the same published price as before. Here is exactly what to change.","headline":"GPT-Realtime-2.1 Is Out: Free Latency Upgrade for Voice Agent Builders","mainEntityOfPage":"https://chatforest.com/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/builders-log/openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide/"}
 </script>
 
 

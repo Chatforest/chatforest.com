@@ -7,7 +7,7 @@
 
 If you have shipped an AI agent into production, you have probably had this experience: the agent passed every evaluation you ran. It scored well on the benchmark. It handled all the test cases. Then it did something unexpected in a real workflow — took a shortcut, misinterpreted an edge case, looped where it should have stopped.
 
-Benchmark performance and production reliability are not the same thing. Patronus AI's **Digital World Models**, announced June 25 as part of a $50M Series B, are the most serious attempt yet to close that gap.
+Benchmark performance and production reliability are not the same thing. Patronus AI's **Digital World Models**, [announced June 25, 2026 as part of a $50M Series B](https://www.patronus.ai/announcements/announcing-our-50m-series-b), are the most serious attempt yet to close that gap.
 
 Part of our **[Builder's Log](/builders-log/)**.
 
@@ -30,32 +30,32 @@ The deeper issue: benchmarks measure what you thought to test. Production surfac
 
 ## What Digital World Models Are
 
-Patronus AI's Digital World Models are **language diffusion world models** — they use masked diffusion mechanisms within language model frameworks to generate realistic digital environment states and transitions.
+Patronus AI's Digital World Models are **language diffusion world models** — they use [masked diffusion language modeling](https://arxiv.org/abs/2607.16204) within language model frameworks to generate realistic digital environment states and transitions. Patronus researchers describe masked diffusion models as acquiring bidirectional context over full observations, which supports more globally consistent environment rollouts than autoregressive approaches ([arXiv:2607.16204](https://arxiv.org/abs/2607.16204)).
 
-The analogy that clarifies it fastest: **Waymo builds physical world models** to simulate road conditions, pedestrian behavior, and edge cases so self-driving systems can fail in simulation before they fail on a real road. Patronus is building the equivalent for digital workflows.
+The analogy Patronus itself uses: **Waymo builds physical world models** to simulate road conditions, pedestrian behavior, and edge cases so self-driving systems can fail in simulation before they fail on a real road. Patronus is building the equivalent for digital workflows ([Patronus AI announcement](https://www.patronus.ai/announcements/announcing-our-50m-series-b)).
 
 In practice, this means:
 
 - **Synthetic environment generation**: Instead of a fixed benchmark, the system generates dynamic environments — websites, internal applications, research workflows, multi-step enterprise tasks — that agents can operate within
 - **Realistic failure surfaces**: The environments are designed to surface the failure modes that matter: incorrect shortcuts, partial task completion that looks correct, and edge cases that only appear in complex real-world conditions
-- **Long-horizon simulation**: Co-founder Anand Kannappan describes the goal as building "the environment in which you can operate an agent that can run for 10 hours or 10 days or 10 weeks." Current benchmarks cannot run evaluations at that timescale
+- **Long-horizon simulation**: Co-founder and CEO Anand Kannappan describes the goal as building "the environment in which you can operate an agent that can run for 10 hours or 10 days or 10 weeks" ([TechCrunch](https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/)). Current benchmarks cannot run evaluations at that timescale
 - **Self-improving environments**: Unlike static test sets that become stale, the generative approach allows environments to evolve without requiring manual curation of new test cases
 
 ---
 
 ## Benchmark Results
 
-Patronus has published results for their Digital World Model (Patronus-DWM) across a cross-section of the standard agent evaluation landscape, all run at high reasoning. The domains covered:
+In its own Series B/launch announcement, Patronus published results for its Digital World Model (Patronus-DWM) across a cross-section of the standard agent evaluation landscape, all run at high reasoning. The domains covered ([Patronus AI announcement](https://www.patronus.ai/announcements/announcing-our-50m-series-b)):
 
 | Domain | Benchmarks |
 |--------|-----------|
 | Coding | InterCode, CoderForge, SWE-smith |
 | Dialogue | τ-bench |
 | Research | DeepResearchQA, OpenResearcher |
-| GUI interaction | (GUI-specific benchmarks) |
+| GUI interaction | (unnamed GUI-specific benchmarks) |
 | General tool use | OccuBench, API-Bank, BFCL-v4, Toolathlon, Pandora |
 
-Patronus-DWM leads across the coding, dialogue, research, and general tool use categories. The company's framing is not "our model is better" — they position DWM as **evaluation infrastructure**: the thing you use to test whether your agent is ready, not a replacement for the agent itself.
+Per that same announcement, Patronus-DWM leads across the coding, dialogue, research, and general tool use categories. Note this claim comes from Patronus's own launch materials — no independent third-party benchmark comparison has been published as of this writing. The company's framing is not "our model is better" — they position DWM as **evaluation infrastructure**: the thing you use to test whether your agent is ready, not a replacement for the agent itself.
 
 ---
 
@@ -65,7 +65,7 @@ The use case is clearest for builders in these situations:
 
 **1. Long-horizon agentic workflows**: If your agent runs autonomously for more than a few steps — browsing, research, code generation across multiple files, multi-tool workflows — standard evals cannot verify behavior at full run length. Digital World Models can simulate the full workflow.
 
-**2. Enterprise deployments with real consequences**: Patronus currently supports two primary domains in production: **software engineering** and **finance**. Both are domains where incorrect agent behavior has direct, verifiable consequences. This is the starting point they chose deliberately — begin with tasks where "did it complete correctly?" can be checked, then expand.
+**2. Enterprise deployments with real consequences**: Patronus currently supports two primary domains in production: **software engineering** and **finance** ([TechCrunch](https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/)). Both are domains where incorrect agent behavior has direct, verifiable consequences. This is the starting point they chose deliberately — begin with tasks where "did it complete correctly?" can be checked, then expand.
 
 **3. Teams using reinforcement learning for agent training**: The simulation environments are designed to support RL training loops: the environment generates scenarios, the agent acts, the environment scores the outcome. This replaces the expensive and brittle process of generating labeled training data manually.
 
@@ -87,20 +87,20 @@ Patronus-DWM is evaluation and training infrastructure, not an agent framework o
 
 Patronus AI has made the Digital World Model available:
 
-- **Playground**: dwm.patronus.ai/playground
-- **Documentation**: dwm.patronus.ai/documentation
+- **Playground**: [dwm.patronus.ai/playground](https://dwm.patronus.ai/playground)
+- **Documentation**: [dwm.patronus.ai/documentation](https://dwm.patronus.ai/documentation)
 
-Pricing is not yet published. The company works with "virtually every frontier AI lab and many emerging startups," which suggests enterprise-first access while the platform matures.
+Pricing is not published on Patronus's site as of this writing. Glenn Solomon, a managing director at Notable Capital (an investor in Patronus), told TechCrunch that "virtually every frontier AI lab and many emerging startups" are now customers — an investor's characterization, not a Patronus-published figure, but it points toward enterprise-first access while the platform matures ([TechCrunch](https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/)).
 
 ---
 
 ## Company Context
 
-Patronus AI launched in 2023 focused on LLM evaluation. The jump to Digital World Models is an evolution of that core thesis — that evaluation is the bottleneck for safe AI deployment — applied to the shift from LLMs to agents.
+Patronus AI launched in 2023, founded by former Meta AI researchers Anand Kannappan and Rebecca Qian, focused on LLM evaluation ([TechCrunch](https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/); [PR Newswire](https://www.prnewswire.com/news-releases/patronus-ai-raises-50-million-series-b-and-unveils-first-digital-world-models-for-ai-agent-training-and-simulation-302811248.html)). The jump to Digital World Models is an evolution of that core thesis — that evaluation is the bottleneck for safe AI deployment — applied to the shift from LLMs to agents.
 
-The $50M Series B was led by **Greenfield Partners** with participation from **Lightspeed Venture Partners**, **Notable Capital**, **Datadog**, **Samsung**, **Factorial Capital**, and individual investors including Gokul Rajaram. Total raised: $70M.
+The $50M Series B was led by **Greenfield Partners** with participation from **Lightspeed Venture Partners**, **Notable Capital**, **Datadog**, **Samsung**, **Factorial Capital**, and individual investors including Gokul Rajaram. Total raised: $70M ([Patronus AI announcement](https://www.patronus.ai/announcements/announcing-our-50m-series-b); [PR Newswire](https://www.prnewswire.com/news-releases/patronus-ai-raises-50-million-series-b-and-unveils-first-digital-world-models-for-ai-agent-training-and-simulation-302811248.html)).
 
-The company reports 15x revenue growth over the past year. Samsung's participation is notable given their recent infrastructure investments in AI lab partnerships (they are also participating in Anthropic's Series H and exploring custom silicon with multiple AI companies).
+The company reports more than 15x revenue growth over the past year ([Patronus AI announcement](https://www.patronus.ai/announcements/announcing-our-50m-series-b); [TechCrunch](https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/)). Samsung's participation is notable given its broader AI infrastructure bets: Samsung was also one of the strategic investors (alongside SK hynix and Micron) in Anthropic's $65B Series H round, announced in May 2026 ([Anthropic](https://www.anthropic.com/news/series-h)), and is separately in early talks with Anthropic to manufacture a custom AI chip on its 2nm process ([TechCrunch](https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/)).
 
 ---
 

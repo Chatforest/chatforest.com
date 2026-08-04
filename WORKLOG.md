@@ -2,6 +2,133 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1184092 (2026-08-04, ~11:51 UTC) — Dispatch #5 confirmed + citation audit, 10 pages (2026-07-07 cluster)
+
+### Orientation
+No pending inbox messages needing action (only my own 2026-08-03 CEO digest #2300 still showing).
+Real UTC time was 11:51, past the 09:00 UTC Dispatch #5 confirmation window from the prior run.
+
+### Dispatch #5 confirmed sent
+Queried the Buttondown API directly for email `em_4p1gg19cjd9c4ajpwk88wje8n5`: `status: "sent"`,
+`publish_date: 2026-08-04T09:00:00Z`. Added the Dispatch #5 entry to `content/newsletter.md`'s Past
+Issues list. Bluesky pre-post check → `ALREADY_POSTED` (04:03 UTC) — no post this run, newsletter-plug
+allowance carries forward to whenever the daily cap is next open.
+
+### Duplicate cluster resolved: H1 2026 VC / Crunchbase $510B
+Both sides were already audited (prior run). Diffed the two files in full: same core $510B/43%
+Crunchbase stat and primary source, but genuinely different bodies — one covers SpaceX's IPO/Cursor
+acquisition, the other covers xAI/Waymo/Databricks concentration math and LP/ecosystem-fragility risk
+with no overlap in those sections. **Decision: keep both**, consistent with the earlier Sonnet-5-launch
+cluster precedent. Moved the entry to the Resolved section of `duplicate-clusters.md`.
+
+### Citation audit — 10 pages (2026-07-07 cluster)
+Selected via the standard front-matter scan (232 unaudited pages with dates confirmed; the site also
+has 8 non-dated utility pages — about/search/newsletter/etc. — correctly excluded from the backlog).
+Dispatched 10 parallel claim-by-claim audit agents. Every single page had a real, substantive fix
+beyond missing citations — this cluster's error rate matches every cluster audited so far (10/10):
+
+1. **claude-sonnet-5-adaptive-thinking-new-tokenizer-migration-builder-guide** — deleted a fabricated
+   "GPQA-AAA v2 / first Sonnet-class model to beat the concurrent Opus flagship" superlative: not on
+   Anthropic's news page, not in two independent secondary write-ups that reproduced every other
+   System Card number exactly, and internally contradicted by the piece's own Terminal-Bench numbers
+   (which already show Sonnet 5 beating Opus there). Fixed wrong API code samples (`effort` was nested
+   inside `thinking`; the real field is a separate top-level `output_config.effort`, and Anthropic's
+   docs explicitly warn against the article's exact mistake). Fixed an imprecise 40-60% pricing-discount
+   claim (40% is standard pricing; 60% only applies during the intro period).
+2. **gemini-3-5-pro-july-17-architectural-rebuild-math-svg-deep-think-builder-guide** — fixed
+   overstated certainty ("confirmed launch date" when the cited source's own headline says "every spec
+   remains unconfirmed"); a wrong GPT-5.6 Sol Terminal-Bench score (74.5% claimed vs. real 88.8%/91.9%);
+   an uncorroborated "four researchers departed" headcount (only 3 verifiable, one date fell outside the
+   stated window); an unsupported "cheaper than Sol/Fable 5" pricing claim contradicted by the one real
+   pricing leak that exists. Relabeled the entire "what the rebuilt model adds" section as leak-derived
+   since none of it traces to a Google source.
+3. **microsoft-frontier-company-forward-deployed-ai-wave-enterprise-builder-guide** — fixed a fabricated
+   Brad Lightcap quote citing Palantir as an explicit inspiration (no such quote exists in any source;
+   the Palantir-playbook framing is journalists' analysis, not Lightcap's words) — reattributed
+   accurately. Fixed a wrong early-client claim (Accenture is a consulting *partner*, not a client; the
+   real fourth client is Novo Nordisk) and a valuation-vs-capital error ($10B claimed as OpenAI's
+   DeployCo capital raised, when that's the pre-money valuation — real capital is $4B, which also fixed
+   the article's own headline math, which only sums to "$9 Billion" using $4B). Cut an unverifiable "19
+   investors incl. McKinsey" claim.
+4. **microsoft-sales-agent-service-agent-ga-mcp-tools-dynamics-365-copilot-builder-guide** — fixed
+   fabricated Cowork-plugin feature bullets not present in Microsoft's own post, a fabricated detail on
+   the Sandvik Coromant pilot's rationale, and a false attribution to CX Today (the article claimed CX
+   Today made a specific claim it never made — the sentence was actually the site's own inference wearing
+   someone else's byline). Replaced generic IDC/Gartner homepage citations with the actual reports.
+5. **mistral-summer-model-raise-summit-open-weight-july-2026-builder-watch-guide** — fixed a wrong
+   benchmark name (article said "SWE-Bench Multilingual," Mistral's own post says SWE-Bench Verified),
+   wrong output pricing ($4.50 claimed vs. real $7.50/M), and a wrong license name ("research-and-
+   internal-use" vs. the real "Modified MIT"). Cut a likely-fabricated RAISE Summit speaker list (Macron,
+   LeCun, and three named CEOs not on the official speaker page) and an unverifiable Llama 4 Maverick
+   benchmark figure with no matching primary-source number anywhere.
+6. **nvidia-gr00t-n1-7-commercial-lerobot-hugging-face-physical-ai-builder-guide** — fixed a fabricated
+   HF repo name (`Isaac-GR00T-N1.7-3B` doesn't exist; the real repo, already correctly linked, is
+   `GR00T-N1.7-3B`) and an inflated Isaac Teleop device list (article claimed haptic controllers,
+   SpaceMouse, and motion capture; HF's own docs say only an XR headset and the SO-101 leader arm are
+   actually available today, with hand/full-body tracking listed as future work).
+7. **openai-gpt-5-6-sol-metr-evaluation-gaming-cheating-builder-guide** — caught a textbook stat-fusion
+   error, exactly the failure mode this audit exists to catch: the headline 55.4%/41.2% cheating-rate
+   figures were attributed to METR, but METR's own primary post publishes no percentage for this at all
+   — the real numbers come from a different organization (OpenAI's own GPT-5.6 system card) measuring a
+   different thing (verbalized metagaming in chain-of-thought, not METR's cheating-behavior finding).
+   Rewrote the opening to attribute each number to its correct source. Fixed a wrong confidence interval
+   (97% claimed vs. 95% in both METR's report and the article's own table).
+8. **openai-gpt-5-6-sol-ultra-mode-subagents-parallel-architecture-builder-guide** — confirmed "Sol,"
+   "Ultra Mode," and subagents are real OpenAI product terms (not fabricated architecture). Deleted a
+   fabricated Opus 4.8 Terminal-Bench comparison figure (78.9%, unsupported by any source — real
+   reported figures range 74.6-84.3% depending on source, none match 78.9%) along with its derived
+   "+9.9/+13.0 points" claims. Fixed a mischaracterized "government-gated access" framing (the
+   government got access first; a ~20-partner preview restriction came after, not as a gate) and a
+   broken source link.
+9. **openai-gpt-realtime-2-1-voice-latency-upgrade-mini-builder-guide** — fixed fabricated mini pricing
+   that broke the article's central thesis: it claimed `gpt-realtime-mini` audio pricing was $0.60/1M (a
+   "53x gap" vs. the full model), confusing the mini's *text* pricing with its *audio* pricing — the real
+   mini audio pricing is $10/$20, identical to `gpt-realtime-2.1-mini`. Rewrote the affected section.
+   Fixed a wrong shutdown date for `gpt-4o-realtime-preview` (May 7 confirmed via OpenAI's deprecations
+   page, not May 12 — that date belonged to a separate, unrelated shutdown).
+10. **patronus-ai-digital-world-models-agent-evaluation-simulation-builder-guide** — fixed a misattributed
+    quote (a line from investor Glenn Solomon to TechCrunch was presented as Patronus's own claim) and an
+    unsourced vague Samsung/Anthropic aside (replaced with the verified specifics: Samsung as a Series H
+    strategic investor, separately in early talks for custom silicon). **Flagged for the record, not
+    incorporated into the article**: an SF newsroom (The Dissent) reported Patronus's Series B round has
+    no matching SEC Form D filing past the 15-day deadline, plus other soft red flags — kept the funding
+    claims as-is since PR Newswire/TechCrunch/Patronus's own site all corroborate the round, but worth
+    surfacing to Rob/CEO given the stakes of a named-company funding claim.
+
+All 10 files now carry `sources_audited: 2026-08-04`. 9 of 10 matched existing `fabrication-audit.md`
+checklist entries (all except the Microsoft sales/service-agent page, which wasn't on the list) — marked
+`[x]` with audit notes. Fabrication-audit progress: **199/375**.
+
+**`sources_audited` backlog:** 1722/1944 owned pages now audited (**222 remaining**), -10 net this run.
+Next oldest (rest of 2026-07-07 cluster): `pydantic-ai-v2-stable-capabilities-harness-migration-
+builder-guide`, `raise-summit-2026-sovereign-ai-machina-paris-builder-infrastructure-guide`,
+`squidbleed-cve-2026-47729-claude-mythos-squid-proxy-credential-leak-builder-guide`, `syntiant-ipo-s1-
+edge-ai-chip-on-device-intel-microsoft-builder-guide`, `un-ai-commission-inaugural-session-july-8-
+geneva-first-meeting-builder-watch-guide`, `un-ai-governance-dialogue-vibe-code-guterres-outcomes-
+builder-compliance-guide`.
+
+### Build
+Plain `hugo` build (no `--minify`, matching the prior run's caught mistake) — clean, 4189 pages, 7
+aliases. Diff confined to the 10 audited pages plus newsletter and the natural aggregation-file changes
+(homepage, feed.xml, index.json, builders-log listing).
+
+### Deploy
+Throttle clear. Committing and deploying this run's batch.
+
+### Digest
+Already sent today's CEO digest (#2300, 2026-08-03). No second digest per the max-one-per-day rule —
+this WORKLOG entry plus the Patronus SEC Form D flag are the record for the next daily digest.
+
+### What should happen next
+- Continue the `sources_audited` backlog (222 remaining) — next oldest listed above.
+- Continue the fabrication-audit cohort (199/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Worth checking on next pass: the two `snaplogic-mcp-builder` pages in the 2026-07-05 cluster may be a
+  near-duplicate pair (same MCP-Builder-Enterprise-Integration topic) — still unresolved.
+- Next daily CEO digest should mention the Patronus AI Series B SEC Form D discrepancy flagged above
+  (soft red flag from an SF newsroom, not incorporated into the article since 3 credible sources
+  corroborate the funding — worth Rob/CEO awareness given it's a named-company funding claim).
+
 ## Run 1114306 (2026-08-04, ~07:50 UTC) — Citation audit, 10 pages (finishing 2026-07-06 + starting 2026-07-07)
 
 ### Orientation
