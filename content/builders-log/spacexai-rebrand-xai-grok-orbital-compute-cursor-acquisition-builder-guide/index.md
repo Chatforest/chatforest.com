@@ -7,9 +7,10 @@ card_description: "xAI went live as SpaceXAI on July 6 with a new logo. Your Gro
 tags: ["spacexai", "xai", "grok", "spacex", "cursor", "ai-infrastructure", "orbital-compute", "model-rebrand", "builder-guide", "grok-api"]
 categories: ["builders-log"]
 author: "ChatForest"
+sources_audited: 2026-08-04
 ---
 
-On July 6, 2026, the xAI X account switched to **@SpaceXAI**, a new combined logo went live, and a short video showed the old xAI identity folding into the SpaceX mark. The rebrand caps a process that started in February when SpaceX completed its all-stock acquisition of xAI at a combined valuation of approximately **$1.25 trillion**. Musk confirmed full dissolution of xAI as a standalone company in May; the July 6 visual rollout is the public milestone that makes it permanent.
+On July 6, 2026, the xAI X account switched to **@SpaceXAI**, a new combined logo went live, and a short video showed the old xAI identity folding into the SpaceX mark ([Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/xai-makes-rebrand-spacexai-complete-215010760.html); [Not a Tesla App](https://www.notateslaapp.com/news/4410/spacex-unveils-new-xai-logo)). The rebrand caps a process that started in February when SpaceX completed its all-stock acquisition of xAI at a combined valuation of approximately **$1.25 trillion** ([Fortune](https://fortune.com/2026/02/02/elon-musk-spacex-xai-ipo-trillion/); [CNBC](https://www.cnbc.com/2026/02/03/musk-xai-spacex-biggest-merger-ever.html)). Musk confirmed full dissolution of xAI as a standalone company in May ([Musk on X](https://x.com/elonmusk/status/2052105373621121284); [Not a Tesla App](https://www.notateslaapp.com/news/4116/elon-musk-announces-xai-will-dissolve-form-spacexai-subdivision)); the July 6 visual rollout is the public milestone that makes it permanent.
 
 If you build on Grok, here is what this means for you — now and over the next 90 days.
 
@@ -17,9 +18,9 @@ If you build on Grok, here is what this means for you — now and over the next 
 
 ## What Is Not Changing (Act on This: Nothing)
 
-**API endpoints are unchanged.** The Grok API base URL remains `https://api.x.ai/v1`. No migration needed.
+**API endpoints are unchanged.** The Grok API base URL remains `https://api.x.ai/v1` ([xAI/SpaceXAI API reference](https://docs.x.ai/docs/api-reference)). No migration needed.
 
-**Model names are unchanged.** `grok-build-0.1`, `grok-4-3`, and any other model you reference in production code are unaffected by the brand transition.
+**Model names are unchanged.** `grok-build-0.1`, `grok-4.3`, and any other model you reference in production code are unaffected by the brand transition ([xAI/SpaceXAI docs](https://docs.x.ai/docs/api-reference)).
 
 **API keys continue functioning.** Keys issued under xAI are valid under SpaceXAI. No rotation required.
 
@@ -33,12 +34,12 @@ The practical rule: **do not change production code because a brand post went li
 
 | Date | Milestone |
 |------|-----------|
-| February 2, 2026 | SpaceX acquires xAI in all-stock deal; combined valuation ~$1.25T |
-| May 2026 | Musk confirms xAI will be fully dissolved into SpaceX |
-| June 12, 2026 | SpaceX IPO on Nasdaq (SPCX) |
-| June 16, 2026 | SpaceX announces $60B all-stock Cursor acquisition |
-| July 6, 2026 | @SpaceXAI handle goes live; new logo published |
-| Q3 2026 | Cursor acquisition expected to close (pending regulatory approval) |
+| February 2, 2026 | SpaceX acquires xAI in all-stock deal; combined valuation ~$1.25T ([Fortune](https://fortune.com/2026/02/02/elon-musk-spacex-xai-ipo-trillion/)) |
+| May 2026 | Musk confirms xAI will be fully dissolved into SpaceX ([Musk on X](https://x.com/elonmusk/status/2052105373621121284)) |
+| June 12, 2026 | SpaceX IPO on Nasdaq (SPCX) ([Nasdaq newsroom](https://www.nasdaq.com/newsroom/spacex-ipo-rocket-company-launches-historic-ipo); [Forbes](https://www.forbes.com/sites/tylerroush/2026/06/12/spacex-opens-at-150-surging-17-after-largest-ipo-ever-live-updates/)) |
+| June 16, 2026 | SpaceX announces $60B all-stock Cursor acquisition ([TechCrunch](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/)) |
+| July 6, 2026 | @SpaceXAI handle goes live; new logo published ([Yahoo Finance](https://finance.yahoo.com/technology/ai/articles/xai-makes-rebrand-spacexai-complete-215010760.html)) |
+| Q3 2026 | Cursor acquisition expected to close (pending regulatory approval) ([TechCrunch](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/)) |
 
 ---
 
@@ -46,23 +47,23 @@ The practical rule: **do not change production code because a brand post went li
 
 ### Cursor Closes
 
-The Cursor acquisition — $60 billion, all SpaceX stock — is expected to close in Q3 2026, pending regulatory approval. Every Cursor share converts to SPCX at a volume-weighted average price over the seven days before close.
+The Cursor acquisition — $60 billion, all SpaceX stock — is expected to close in Q3 2026, pending regulatory approval ([TechCrunch](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/)). Every Cursor share converts to SPCX at a volume-weighted average price over the seven trading days before close ([Yahoo Finance/Bloomberg](https://finance.yahoo.com/technology/ai/articles/spacex-formalizes-60-billion-stock-123441921.html)).
 
 For builders, this matters for two reasons:
 
-1. **Cursor's model routing will shift.** Today, Cursor routes coding requests through Claude and GPT. After the acquisition closes, SpaceXAI will own the IDE that a significant share of Fortune 500 developers use to write production code. The company has already trained Grok 4.5 on Cursor data — the flywheel is being assembled before the close.
+1. **Cursor's model routing will shift.** Today, Cursor routes coding requests through models from Anthropic, OpenAI, Google, and xAI, including Claude and GPT variants ([Cursor model docs, via TechJack Solutions](https://techjacksolutions.com/ai-tools/cursor/cursor-models/)). After the acquisition closes, SpaceXAI will own an IDE that [Cursor's own enterprise page](https://cursor.com/enterprise) says is used by 64% of Fortune 500 companies. The company has already trained Grok 4.5 on Cursor data — the flywheel is being assembled before the close ([CryptoBriefing](https://cryptobriefing.com/xai-grok-4-5-v9-model-upgrade/)).
 
 2. **Antitrust uncertainty.** A $60B AI coding acquisition closing under a new regulatory framework carries review risk. Q3 is the expected window, not a guarantee.
 
 ### Grok 4.5 Exits Private Beta
 
-Grok 4.5 — built on the V9 foundation model with 1.5 trillion parameters, supplemented by Cursor-sourced training data — entered private beta at SpaceX and Tesla in late June. Musk has said early evaluations put its performance near Claude Opus 4.8, but no independent benchmark has scored it. Public API access is expected in the near term with no confirmed date.
+Grok 4.5 — built on the V9 foundation model with 1.5 trillion parameters, supplemented by Cursor-sourced training data — entered private beta at SpaceX and Tesla on June 28 ([CryptoBriefing](https://cryptobriefing.com/xai-grok-4-5-v9-model-upgrade/); [GIGAZINE](https://gigazine.net/gsc_news/en/20260630-grok-4-5-cursor/)). Musk has said early internal evaluations suggest its performance is comparable to Anthropic's Claude Opus — when Grok 4.5 launched publicly on July 8, Musk described it on X as "roughly comparable to Opus 4.7, but much faster" ([Yahoo Tech](https://tech.yahoo.com/ai/claude/articles/grok-4-5-elon-musk-222631748.html)) — but no independent benchmark had scored it as of this writing. Public API access is expected in the near term with no confirmed date as of July 7.
 
 When Grok 4.5 goes public, it will be the first SpaceXAI model that has explicitly incorporated coding-environment training data. Benchmark it against your actual workloads; Musk's informal capability claims have historically mixed well with aggressive timelines.
 
 ### 2T Parameter Model
 
-A successor model exceeding two trillion parameters is reportedly in final training stages, targeting completion by late July. If the V9-Medium 1.5T model is Grok 4.5, the 2T model is likely Grok V9-Large or a versioned successor. Expect this to surface in private beta first, following the same SpaceX/Tesla → public path.
+A successor model exceeding two trillion parameters is reportedly in final training stages, targeting completion by late July ([TechCity Authority](https://www.techcityauthority.com/2026/07/elon-musk-confirms-grok-4-6-2t-parameter-model.html); Musk confirmed the run was finishing "this week" in a [July 18 post on X](https://x.com/muskonomy/status/2079619918249730073)). If the V9-Medium 1.5T model is Grok 4.5, the 2T model is likely Grok V9-Large or a versioned successor — reporting after this article's publication confirmed it as Grok 4.6. Expect this to surface in private beta first, following the same SpaceX/Tesla → public path.
 
 ---
 
@@ -70,22 +71,22 @@ A successor model exceeding two trillion parameters is reportedly in final train
 
 SpaceXAI's long-term infrastructure thesis has no near-term impact on your API calls, but it defines why the company is consolidating everything under one roof.
 
-From SpaceX's own filings: AI infrastructure in orbit can tap solar power without terrestrial cooling constraints, scaling to **100–200 GW annually** and eventually toward terawatt-level capacity. Starship is positioned as the delivery mechanism for orbital data center modules. Musk has described a long-horizon roadmap that extends to lunar-based compute.
+From SpaceX's own IPO filings: AI infrastructure in orbit can tap solar power without terrestrial cooling constraints, with a stated long-term target of **100 GW of orbital AI compute deployed annually** (by 2030) and Musk speaking of eventually reaching terawatt-level capacity ([Trending Topics](https://www.trendingtopics.eu/spacex-orbital-data-centers-are-the-big-ipo-narrative-and-an-unsolved-physics-problem/); [Introl](https://introl.com/blog/spacex-million-satellite-orbital-data-center-2026)). Starship is positioned as the delivery mechanism for orbital data center modules — the filing states plainly that "AI compute satellites at scale need full Starship reusability to be economically compelling" ([Trending Topics](https://www.trendingtopics.eu/spacex-orbital-data-centers-are-the-big-ipo-narrative-and-an-unsolved-physics-problem/)). Musk has described a long-horizon roadmap that extends to a lunar base as a future AI energy hub ([Trending Topics](https://www.trendingtopics.eu/spacex-orbital-data-centers-are-the-big-ipo-narrative-and-an-unsolved-physics-problem/)).
 
 This is the framing behind why xAI was acquired into SpaceX rather than the other way around: SpaceX controls the launch vehicle, the satellite constellation (Starlink), and now the AI models. The rebranding to SpaceXAI is a statement about vertical integration — not a product update.
 
-For builders, orbital compute is a 2028+ reality at the earliest. It doesn't affect model selection this quarter. But if you're reasoning about which AI provider's infrastructure will still be standing in five years, the orbital thesis is SpaceXAI's answer to the power and cooling constraints every other hyperscaler is currently fighting over.
+For builders, orbital compute is a 2028+ reality at the earliest — first deployments are targeted for "as early as 2028" per the filing coverage ([Introl](https://introl.com/blog/spacex-million-satellite-orbital-data-center-2026)). It doesn't affect model selection this quarter. But if you're reasoning about which AI provider's infrastructure will still be standing in five years, the orbital thesis is SpaceXAI's answer to the power and cooling constraints every other hyperscaler is currently fighting over.
 
 ---
 
 ## Grok Product Suite Under SpaceXAI
 
-The product lineup carries over unchanged under the new brand:
+The product lineup carries over unchanged under the new brand ([SpaceXAI/x.ai](https://x.ai/)):
 
 - **Grok** — flagship AI assistant
 - **Grok Build** — agentic coding / multi-session assistant
-- **Imagine** — image generation
-- **Voice** — voice interface
+- **Grok Imagine** — image and video generation
+- **Grok Voice** — voice interface
 - **Grokipedia** — structured knowledge product
 - **xAI API** — the developer API (name TBD on branding update)
 
@@ -99,7 +100,7 @@ The API is still referred to as the **xAI API** in documentation. Until official
 - No code changes needed. Monitor `api.x.ai/v1` uptime as normal.
 
 **When Grok 4.5 goes public:**
-- Run benchmark against your specific coding or reasoning workload. Compare against Opus 4.8 and Sonnet 5 at current pricing. SpaceXAI has not published Grok 4.5 pricing for third-party API access.
+- Run benchmark against your specific coding or reasoning workload. Compare against Opus 4.8 and Sonnet 5 at current pricing. SpaceXAI had not published Grok 4.5 pricing for third-party API access as of this writing (July 7); pricing of $2/$6 per million input/output tokens was published alongside the July 8 public launch ([sakutto.ai](https://sakutto.ai/en/articles/grok-4-5-release)).
 - Check if Cursor training data improves code completion quality on your stack relative to Claude-backed models.
 
 **When Cursor acquisition closes (Q3):**
@@ -107,7 +108,7 @@ The API is still referred to as the **xAI API** in documentation. Until official
 - Review enterprise terms if you have a Cursor Enterprise agreement — acquisition closes often trigger change-of-control provisions.
 
 **Late July:**
-- Watch for announcement of the 2T parameter model. This is likely Grok V10 or Grok 5's foundation; it won't hit public API until after internal validation.
+- Watch for announcement of the 2T parameter model (subsequently confirmed as Grok 4.6); it won't hit public API until after internal validation.
 
 **API branding change:**
 - At some point `api.x.ai` will likely migrate to `api.spacexai.com` or equivalent. This will not happen without migration notice. Do not preemptively change endpoints.

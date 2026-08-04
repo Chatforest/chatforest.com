@@ -70,11 +70,11 @@
 <p>Pydantic AI <a href="https://pydantic.dev/articles/pydantic-ai-v2">v2.0.0 went stable on June 23, 2026</a>, fourteen days ago. If you&rsquo;re building Python AI agents and still on V1, this is the upgrade you&rsquo;ve been waiting — and probably delaying — to evaluate. Here&rsquo;s what actually changed.</p>
 <hr>
 <h2 id="what-is-pydantic-ai">What Is Pydantic AI</h2>
-<p>Pydantic AI is the AI agent framework from the Pydantic team — the same people who built the type-validation library that underpins most of the Python data ecosystem. The framework wraps model provider APIs into a type-safe, structured-output-first agent loop, with native support for Anthropic, OpenAI, and Google models. If you already use Pydantic for data validation, the programming model will feel familiar: declare your expectations explicitly, get errors early, avoid surprises at runtime.</p>
-<p>V1 has been in production use since 2025. V2 is not a rewrite — it&rsquo;s a structural upgrade built on lessons from V1 adoption.</p>
+<p>Pydantic AI is the AI agent framework from the <a href="https://pydantic.dev/docs/ai/overview/">Pydantic team</a> — the same people who built the type-validation library that underpins most of the Python data ecosystem. The framework wraps model provider APIs into a type-safe, structured-output-first agent loop, with <a href="https://pydantic.dev/docs/ai/overview/">native support for Anthropic, OpenAI, and Google models</a>. If you already use Pydantic for data validation, the programming model will feel familiar: declare your expectations explicitly, get errors early, avoid surprises at runtime.</p>
+<p><a href="https://pydantic.dev/articles/pydantic-ai-v2">V1 shipped in September 2025</a> and has been in production use since. V2 is not a rewrite — it&rsquo;s a structural upgrade built on lessons from V1 adoption.</p>
 <hr>
 <h2 id="the-core-change-the-capability-primitive">The Core Change: The Capability Primitive</h2>
-<p>V2&rsquo;s central idea is the <code>Capability</code> — a composable unit that bundles an agent&rsquo;s instructions, tools, lifecycle hooks, and model settings into a single object.</p>
+<p>V2&rsquo;s central idea is the <a href="https://pydantic.dev/docs/ai/core-concepts/capabilities/"><code>Capability</code></a> — a composable unit that bundles an agent&rsquo;s instructions, tools, lifecycle hooks, and model settings into a single object.</p>
 <p>In V1, wiring up a memory system, a guardrail, or a code execution environment meant touching multiple disconnected parts of the agent: adding tools in one place, instructions in another, hooks in another. You had to understand the full internals to add a meaningful extension without breaking something else.</p>
 <p>In V2, all of that is expressed as one Capability:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pydantic_ai <span style="color:#f92672">import</span> Agent
@@ -99,7 +99,7 @@ agent <span style="color:#f92672">=</span> Agent(
         ),
     ],
 )
-</code></pre></div><p>Capabilities are:</p>
+</code></pre></div><p><a href="https://pydantic.dev/docs/ai/core-concepts/capabilities/">Capabilities are</a>:</p>
 <ul>
 <li><strong>Composable</strong> — stack them in a list, each one only affects what it manages</li>
 <li><strong>Serializable</strong> — agents can be defined in spec files and loaded dynamically</li>
@@ -110,13 +110,13 @@ agent <span style="color:#f92672">=</span> Agent(
 <h2 id="the-harness">The Harness</h2>
 <p>Pydantic AI V2 splits itself into two layers:</p>
 <p><strong>Core</strong> stays small and stable. It ships the agent loop, provider adapters, the Capability and hooks API, and only capabilities that need deep provider support or are fundamental to every agent.</p>
-<p><strong>The Harness</strong> (<code>pydantic_ai_harness</code>) is the fast-moving batteries layer: memory systems, guardrails, context management, file system access, <code>CodeMode</code>, and a growing catalog from third-party contributors. It installs separately from core, so you only pull in what you use.</p>
+<p><strong><a href="https://pydantic.dev/docs/ai/harness/">The Harness</a></strong> (<code>pydantic-ai-harness</code>) is the fast-moving batteries layer: memory systems, guardrails, context management, file system access, <code>CodeMode</code>, and a growing catalog from <a href="https://pydantic.dev/articles/pydantic-ai-v2">third-party contributors like VStorm</a>. It installs separately from core, so you only pull in what you use.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">uv add pydantic-ai             <span style="color:#75715e"># core only</span>
-uv add pydantic_ai_harness     <span style="color:#75715e"># capabilities batteries</span>
-</code></pre></div><p>The split matters for stability. Core commits to zero breaking changes within a major version and a three-month breaking-changes window between major versions. The Harness moves faster — new capabilities ship there first and graduate to core only if they prove broadly essential.</p>
+uv add pydantic-ai-harness     <span style="color:#75715e"># capabilities batteries</span>
+</code></pre></div><p>The split matters for stability. Core commits to zero breaking changes within a major version, and <a href="https://pydantic.dev/articles/pydantic-ai-v2">the no-breaking-changes window between major versions has moved from six months to three</a>. The Harness moves faster — new capabilities ship there first and graduate to core only if they prove broadly essential.</p>
 <hr>
 <h2 id="four-breaking-changes-from-v1">Four Breaking Changes from V1</h2>
-<p>Before upgrading, there are four behavior changes to know — these go beyond what the V1 deprecation warnings catch:</p>
+<p>Before upgrading, there are <a href="https://pydantic.dev/docs/ai/project/changelog/">four behavior changes to know</a> — these go beyond what the V1 deprecation warnings catch:</p>
 <p><strong>1. OpenAI now uses the Responses API by default</strong></p>
 <p><code>openai:</code> model names now route to the Responses API. If you need Chat Completions (for older integration compatibility, vendor routing, or structured output formats that differ), use <code>openai-chat:</code> as the provider prefix.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># V1 and V2 (Chat Completions)</span>
@@ -132,15 +132,15 @@ agent <span style="color:#f92672">=</span> Agent(<span style="color:#e6db74">&#3
 <p>Previously, with <code>end_strategy='graceful'</code>, function tools requested alongside a successful output tool were skipped. In V2 they execute. If your agent logic depended on them being skipped in that scenario — for cost control, side-effect prevention, or flow control — you need an explicit check before upgrading.</p>
 <hr>
 <h2 id="migration-path">Migration Path</h2>
-<p>The Pydantic team&rsquo;s recommended sequence:</p>
+<p><a href="https://pydantic.dev/docs/ai/project/changelog/">The Pydantic team&rsquo;s recommended sequence</a>:</p>
 <p><strong>Step 1 — Clear V1 deprecations first.</strong> Update to the latest V1 release and eliminate every deprecation warning. The automated tooling in V1&rsquo;s final version catches the majority of what needs to change. Do not skip this — it covers most of the migration.</p>
 <p><strong>Step 2 — Review the four breaking changes.</strong> The deprecation warnings cannot catch the behavior changes listed above. Read each one and assess whether it applies to your codebase before upgrading.</p>
 <p><strong>Step 3 — Upgrade.</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">uv add pydantic-ai
-</code></pre></div><p><strong>Step 4 — Migrate to Capabilities.</strong> The V1 <code>tools=[]</code>, <code>instructions=</code>, and hook registration APIs still work in V2. You don&rsquo;t have to refactor everything to Capabilities immediately. Refactor incrementally when it makes your code clearer, not as a prerequisite to running V2.</p>
+</code></pre></div><p><strong>Step 4 — Migrate to Capabilities.</strong> The <code>@agent.tool</code> decorator and <code>instructions=</code> keyword still work in V2 as before. But <a href="https://pydantic.dev/docs/ai/project/changelog/">some V1 hook-registration constructor arguments are removed outright, not just deprecated</a>: <code>Agent(event_stream_handler=...)</code> becomes <code>capabilities=[ProcessEventStream(...)]</code>, <code>Agent(prepare_tools=...)</code> becomes <code>capabilities=[PrepareTools(...)]</code>, <code>Agent(history_processors=...)</code> becomes <code>capabilities=[ProcessHistory(...)]</code>, and <code>Agent(mcp_servers=[...])</code> becomes <code>Agent(toolsets=[...])</code>. Those specific call sites need updating at upgrade time — they are not optional cleanup. Everything else can be refactored to Capabilities incrementally, when it makes your code clearer.</p>
 <hr>
 <h2 id="provider-changes">Provider Changes</h2>
-<p><strong>Default providers</strong> (included in the base install): Anthropic, OpenAI, Google.</p>
+<p><strong><a href="https://pydantic.dev/docs/ai/project/changelog/">Default providers</a></strong> (included in the base install): Anthropic, OpenAI, Google.</p>
 <p><strong>Optional providers</strong> (install separately): AWS Bedrock, Groq, Mistral, others. Long-tail providers were moved out of the base install to reduce dependency weight for projects that don&rsquo;t use them.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">uv add pydantic-ai<span style="color:#f92672">[</span>bedrock<span style="color:#f92672">]</span>    <span style="color:#75715e"># adds Bedrock support</span>
 uv add pydantic-ai<span style="color:#f92672">[</span>groq<span style="color:#f92672">]</span>       <span style="color:#75715e"># adds Groq support</span>
@@ -149,7 +149,7 @@ uv add pydantic-ai<span style="color:#f92672">[</span>mistral<span style="color:
 <h2 id="who-should-upgrade-now">Who Should Upgrade Now</h2>
 <p><strong>Upgrade now</strong> if you&rsquo;re building new agents from scratch, or if you&rsquo;re maintaining V1 agents that have already been cleaned up to pass all deprecation warnings. V2 is stable, the migration path is well-defined, and the Capabilities model will make extensions easier to reason about as your agents grow.</p>
 <p><strong>Wait a sprint</strong> if you have V1 agents in production with any of the four breaking-change scenarios above. Test in a staging environment first — especially the OpenAI Responses API switch and the function tool execution change.</p>
-<p><strong>Ignore V2 for now</strong> if you&rsquo;re on a vendor platform that pins the Pydantic AI version for you, or if your agents are simple enough that the Capabilities model adds complexity rather than clarity. V1 remains supported through the three-month overlap window ending around September 2026.</p>
+<p><strong>Ignore V2 for now</strong> if you&rsquo;re on a vendor platform that pins the Pydantic AI version for you, or if your agents are simple enough that the Capabilities model adds complexity rather than clarity. Note that <a href="https://pydantic.dev/articles/pydantic-ai-v2">the no-breaking-changes overlap window between major versions is now three months</a>, shorter than V1&rsquo;s six-month window — don&rsquo;t assume you have as long to migrate as you did last time.</p>
 <hr>
 <p><em>This article is based on Pydantic AI&rsquo;s official v2 announcement, the upgrade guide at pydantic.dev, and the v2.0.0 changelog. ChatForest did not test this framework hands-on.</em></p>
 

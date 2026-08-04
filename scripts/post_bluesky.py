@@ -2,14 +2,33 @@
 """Post to BlueSky via AT Protocol REST API."""
 
 import json
+import subprocess
 import sys
 import urllib.request
 from datetime import datetime, timezone
+from pathlib import Path
 
 HANDLE = "chatforest.bsky.social"
 PASSWORD_FILE = "/home/grove/.config/chatforest/blue.sky.password"
 API = "https://bsky.social/xrpc"
 PUBLIC_FEED_API = "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
+TUESDAY_RESERVATION_SCRIPT = Path(__file__).with_name("check_tuesday_dispatch_reservation.py")
+
+
+def tuesday_slot_reserved():
+    """Mechanical Tuesday gate (CEO directive, inbox #2301, 2026-08-04): on UTC
+    Tuesdays the day's single post is reserved for the Dispatch newsletter plug
+    until that week's Dispatch has actually sent. See
+    check_tuesday_dispatch_reservation.py and CLAUDE.md 'Bluesky cross-posting
+    rules'. Fails closed: any error blocks the post."""
+    result = subprocess.run(
+        [sys.executable, str(TUESDAY_RESERVATION_SCRIPT)],
+        capture_output=True, text=True,
+    )
+    print(result.stdout.strip())
+    if result.returncode not in (0,):
+        return True
+    return False
 
 
 def already_posted_today():
@@ -95,6 +114,9 @@ if __name__ == "__main__":
         sys.exit(0 if len(sys.argv) >= 2 else 1)
 
     if already_posted_today():
+        sys.exit(1)
+
+    if tuesday_slot_reserved():
         sys.exit(1)
 
     text = sys.argv[1]

@@ -270,6 +270,29 @@ Bluesky (@chatforest.bsky.social) is the **active cross-posting platform**. Rule
 - **AI disclosure already in profile**: the bio and `bot` label on the account handle platform-level disclosure — no need to repeat in each post.
 - **Track posts**: note the Bluesky post URL in WORKLOG.md each run you post.
 
+### Tuesday slot reservation for the newsletter plug (added 2026-08-04, CEO-authorized via inbox #2301)
+
+**On UTC Tuesdays, the day's single Bluesky post is RESERVED for the Dispatch newsletter plug —
+mechanically, not by discretion.** Root cause this fixes: on 2026-08-04 a Tuesday run posted regular
+content at 04:03 UTC, hours before the 09:00 UTC Dispatch send, consuming the day's 1-post cap and
+pre-empting the plug. Without a mechanical check this recurs every Tuesday.
+
+- **MANDATORY MECHANICAL CHECK, in addition to `check_bluesky_posted_today.py`, not instead of it:**
+  before posting anything on a UTC Tuesday, run
+  `python3 scripts/check_tuesday_dispatch_reservation.py`. It queries the Buttondown emails API
+  (source of truth — never WORKLOG/session memory) for a `status=sent` email whose subject starts
+  with "ChatForest Dispatch" and whose `publish_date` is today.
+  - Exit 0 `NOT_TUESDAY` → reservation doesn't apply, proceed to the normal daily-cap check.
+  - Exit 0 `DISPATCH_SENT` → this week's Dispatch has sent today; safe to post — **make this post
+    the newsletter plug**, not regular content.
+  - Exit 1 `RESERVED_FOR_PLUG` or exit 2 `ERROR` → **DO NOT POST anything today**, even regular
+    content, even if the daily-cap check alone would allow it. Skip and let a later run (after the
+    Dispatch send lands) post the plug. Fail closed on error.
+- `scripts/post_bluesky.py` calls this check automatically before every post — this is enforced in
+  the posting script itself, not left to agent discretion.
+- This does not change the 1 plug/week allowance — it only fixes *which* Tuesday post (if any) uses
+  it.
+
 ### Bluesky follows policy (added 2026-07-26, CEO-authorized via inbox #2264)
 
 - **Follow pace**: ~10–15 genuinely relevant accounts per week, each individually chosen — never mass-follow tools or follow-for-follow schemes.

@@ -32,6 +32,22 @@ independently in the same run; not yet diffed for merge vs. keep-both.
 
 ## Resolved clusters
 
+### SnapLogic MCP Builder (2 pages) — resolved 2026-08-04
+Flagged Run 901665 (2026-08-03) — discovered while noting the next-oldest backlog cluster, both dated
+2026-07-05, same underlying event (SnapLogic MCP Builder GA, July 1, 2026).
+- `content/builders-log/snaplogic-mcp-builder-enterprise-pipelines-governed-mcp-servers-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
+- `content/builders-log/snaplogic-mcp-builder-enterprise-integration-to-mcp-server-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
+
+Diffed both files in full. Same core facts (GA date, three source types, Trusted Agent Identity, AI
+Gateway, 1,000+ connectors) and same primary press release, but each has real unique content: the
+`enterprise-pipelines-governed` page has a "Broader Enterprise MCP Platform Picture" section
+comparing MuleSoft/Boomi/Workato and covers the July 28 MCP spec release-candidate implications; the
+`enterprise-integration-to-mcp-server` page has a sourced Gartner 50%-GenAI-project-failure stat, an
+honest "Limits of the Announcement" section (pricing tier, agent-side setup, performance
+characteristics not addressed), and a distinct "Bottom Line" framing. **Decision: keep both** —
+consistent with the H1-2026-VC and Sonnet-5-launch precedents (different angles/depth on the same
+event, both already cited). No merge.
+
 ### H1 2026 VC concentration / Crunchbase $510B (2 pages) — resolved 2026-08-04
 Flagged Run 830951 (2026-08-03) — discovered while auditing the 2026-07-05 oldest-unaudited cluster,
 both covering the same underlying story (Crunchbase H1 2026 data: $510B total VC, OpenAI+Anthropic

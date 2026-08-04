@@ -7,7 +7,7 @@
 
 Three days ago, the [Mistral watch guide](https://chatforest.com/builders-log/mistral-summer-model-raise-summit-open-weight-july-2026-builder-watch-guide/) covered what to look for from Arthur Mensch at RAISE Summit. That article was about a model. This article is about infrastructure — and the decisions being made in Paris this week that will narrow or expand your options for months afterward.
 
-Today is July 7. **MACHINA Summit opened this morning at Station F.** [RAISE Summit](https://www.raisesummit.com/) opens tomorrow at Le Carrousel du Louvre. Over the next 72 hours, a significant slice of European AI policy, enterprise procurement signals, and physical AI ecosystem commitments will be announced in public before any press release lands in your inbox.
+Today is July 7. **[MACHINA Summit](https://www.machinasummit.com/) opened this morning at Station F.** [RAISE Summit](https://www.raisesummit.com/) opens tomorrow at Le Carrousel du Louvre. Over the next 72 hours, a significant slice of European AI policy, enterprise procurement signals, and physical AI ecosystem commitments will be announced in public before any press release lands in your inbox.
 
 Here is what the sovereign AI sessions mean for builders, and what to track.
 
@@ -17,15 +17,15 @@ Here is what the sovereign AI sessions mean for builders, and what to track.
 
 **July 7 — MACHINA Summit, Station F, Paris**
 
-Europe's first summit dedicated entirely to Physical AI. Jim Fan (NVIDIA, Director of AI) keynotes at 11:40 CEST on why robotics follows the same capability curve as LLMs. Marc Raibert (RAI Institute, founder of Boston Dynamics), Bernt Børnich (1X), and David Reger (NEURA Robotics) present alongside live demos of Tesla Optimus Gen 3, Figure AI's Figure 02, and Boston Dynamics' electric Atlas.
+[Europe's first summit dedicated entirely to Physical AI](https://www.robot-magazine.fr/en/machina-2026-can-paris-become-europes-capital-of-physical-ai/). [Jim Fan (NVIDIA, Director of AI) keynotes at 11:40 CEST](https://tickets.raisesummit.com/Machina/agenda) on why robotics follows the same capability curve as LLMs. [Marc Raibert (RAI Institute, founder of Boston Dynamics), Bernt Børnich (1X), and David Reger (NEURA Robotics)](https://www.machinasummit.com/) present alongside [live demos of Tesla Optimus Gen 3, Figure AI's Figure 02, and Boston Dynamics' electric Atlas](https://www.raisesummit.com/post/humanoids-hardware-machina-summit-2026-what-to-expect).
 
-For software builders, MACHINA is a signal event even if you're not building robots: physical AI companies are becoming some of the largest consumers of LLM APIs, and the simulation + world model stack (NVIDIA Cosmos, Isaac GR00T N) increasingly requires the same kind of orchestration layer that enterprise SaaS builders are building now.
+For software builders, MACHINA is a signal event even if you're not building robots: physical AI companies are becoming some of the largest consumers of LLM APIs, and the simulation + world model stack ([NVIDIA Cosmos, Isaac GR00T](https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots)) increasingly requires the same kind of orchestration layer that enterprise SaaS builders are building now.
 
 **July 8–9 — [RAISE Summit](https://www.raisesummit.com/raise-week), Carrousel du Louvre, Paris**
 
-[9,000 attendees. 350 speakers.](https://tech.eu/2026/06/10/raise-summit-returns-to-paris-on-july-8-9-2026-at-the-carrousel-du-louvre/) Four tracks: Foundation, Frontier, Friction, Future. President Macron keynotes. Arthur Mensch (Mistral) speaks. Yann LeCun (AMI Labs), Scott Wu (Cognition), Jim Fan again, Carolina Parada (Google DeepMind), Amin Vahdat (Google).
+[9,000 attendees. 350 speakers.](https://tech.eu/2026/06/10/raise-summit-returns-to-paris-on-july-8-9-2026-at-the-carrousel-du-louvre/) [Four tracks: Foundation, Frontier, Friction, Future.](https://www.raisesummit.com/) President Macron keynotes. [Arthur Mensch (Mistral), Yann LeCun (AMI Labs), Scott Wu (Cognition), Jim Fan (NVIDIA), Carolina Parada (Google DeepMind), and Amin Vahdat (Google) are confirmed speakers](https://www.raisesummit.com/speakers-2026).
 
-The [summit's competition](https://www.raisesummit.com/): 1,500+ startup applications, 10 finalists, €10M in funding opportunities. The hackathon runs simultaneously: 8,000 participants, €200,000 prize pool, four tracks that map directly to where the industry believes the unsolved problems live — infrastructure, advanced applications, adoption barriers, future AI possibilities.
+The [summit's competition](https://www.raisesummit.com/post/world-largest-ai-hackathon-startup-competition-raise-summit-2026): 1,500+ startup applications, 10 finalists, €10M in funding opportunities. [The hackathon runs simultaneously: 8,000 participants, €200,000 prize pool](https://www.raisesummit.com/post/world-largest-ai-hackathon-startup-competition-raise-summit-2026), four tracks that map directly to where the industry believes the unsolved problems live — infrastructure, advanced applications, adoption barriers, future AI possibilities.
 
 ---
 
@@ -46,9 +46,9 @@ The speaker composition matters here. If the panelists are primarily hyperscaler
 This is the policy session most builders will ignore and shouldn't.
 
 "Sovereign AI" started as a government procurement concept — don't outsource your national AI capability to foreign companies. It's now colliding with enterprise procurement in three ways:
-- **GDPR compliance for AI** — training data, output retention, and model access logs need to satisfy EU supervisory authority requirements
-- **DORA (Digital Operational Resilience Act)** — financial services firms need AI vendors with EU data residency and contractual liability structures that US providers don't always offer
-- **AI Act Article 28b obligations** — deployers of high-risk AI systems in EU markets must document the model they're using and ensure it complies with their data processing obligations
+- **[GDPR compliance for AI](https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en)** — the EDPB's Opinion 28/2024 holds that GDPR applies to AI models trained on personal data, and that such models generally can't be treated as anonymous without a case-by-case assessment
+- **[DORA (Digital Operational Resilience Act)](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX%3A32022R2554)** — financial services firms need ICT (including AI) vendor contracts with minimum resilience provisions, incident-reporting timelines, and exit strategies for critical dependencies, with non-EU critical providers required to establish an EU subsidiary for oversight
+- **[AI Act Article 26 obligations](https://artificialintelligenceact.eu/article/26/)** — deployers of high-risk AI systems in EU markets must use them per the provider's instructions, apply human oversight, and retain system logs to support their data-protection obligations
 
 The RAISE session on sovereign AI will likely produce specific recommendations on which model architectures and deployment patterns satisfy these frameworks. If EU enterprise procurement is part of your market, this session sets the table for the next 6-12 months of sales conversations.
 
@@ -62,12 +62,12 @@ The EU enterprise context is different from US. European enterprises tend to hav
 
 ## What Macron Is Likely to Announce
 
-Macron has used major AI events to make specific investment commitments since the January 2026 "Choose France" summit, which produced €100 billion in pledged AI investment from global companies.
+Macron has used major AI events to make specific investment commitments, most recently at the [June 2026 "Choose France" summit](https://www.france24.com/en/france/20260601-macron-eyes-billions-in-ai-investment-at-choose-france-summit), which produced [€93 billion in pledged foreign investment](https://www.bloomberg.com/news/articles/2026-06-01/macron-says-france-got-93-billion-of-foreign-investment-pledges) with AI and data-center projects — including SoftBank's up-to-€75B data center commitment — at the center of it.
 
 At RAISE, expect a combination of:
-- **Follow-up on Choose France commitments** — tracking which of the €100B pledges have materialized and adding new ones
+- **Follow-up on Choose France commitments** — tracking which of the €93B in pledges have materialized and adding new ones
 - **EU Compute Fund announcement** — France has been advocating for a pan-European public compute pool to rival US hyperscaler capacity. RAISE is the right platform for a commitment.
-- **AI governance stance** — After the UN Global Dialogue in Geneva (July 6–7), Macron is likely to position France and the EU's approach relative to the US voluntary framework and China's domestic controls
+- **AI governance stance** — After the [UN Global Dialogue on AI Governance in Geneva (July 6–7)](https://www.un.org/global-dialogue-ai-governance/en/participation-support-ai-dialogue-geneva-2026), Macron is likely to position France and the EU's approach relative to the US voluntary framework and China's domestic controls
 
 For builders specifically: a European public compute fund announcement would mean subsidized inference access for EU-based startups and SMEs, potentially dramatically changing the cost structure for building on EU-sovereign models. Worth watching closely.
 
@@ -127,9 +127,9 @@ Watch the finalists list when it's published on July 8. The problems they're sol
 
 ## The Bigger Picture
 
-The RAISE / MACHINA week happens at a specific inflection point: the US government's voluntary AI framework is expected to drop this week (July 7–11 window), which would unlock broader access to GPT-5.6 Sol. That announcement would coincide with Mensch's likely Mistral flagship reveal — two weeks in which the frontier expands and the EU makes its positioning clearer.
+The RAISE / MACHINA week happens at a specific inflection point: [OpenAI limited GPT-5.6 Sol's June 26 launch to roughly 20 government-vetted partners at the White House's request](https://www.pymnts.com/news/artificial-intelligence/2026/openai-readies-gpt-5-6-launch-as-white-house-lifts-restriction-request/), and said broader availability would follow "within weeks" — putting a plausible public-release window inside this July 7–11 stretch. That announcement would coincide with Mensch's likely Mistral flagship reveal — two weeks in which the frontier expands and the EU makes its positioning clearer.
 
-For builders, the question isn't whether to pay attention to Paris. It's whether to build for the US market (where GPT-5.6 Sol will soon be widely available), the EU market (where sovereign AI and regulatory compliance create different product requirements), or both simultaneously (which requires routing decisions, multi-model deployments, and data handling that you need to design for now).
+For builders, the question isn't whether to pay attention to Paris. It's whether to build for the US market (where [GPT-5.6 Sol](https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna-coming-july-9-10am-pt/1384931) will soon be widely available), the EU market (where sovereign AI and regulatory compliance create different product requirements), or both simultaneously (which requires routing decisions, multi-model deployments, and data handling that you need to design for now).
 
 The sessions in Paris this week are building the vocabulary your EU enterprise clients will use when they evaluate your product in Q4. Reading the primary sources — the actual statements, not the press summaries — is how you build ahead of that conversation rather than catching up to it.
 

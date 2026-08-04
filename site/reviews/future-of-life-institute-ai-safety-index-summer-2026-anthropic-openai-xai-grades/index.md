@@ -5,7 +5,7 @@
 
 ## The Grade Sheet Nobody Wanted
 
-The [Future of Life Institute](https://futureoflife.org/ai-safety-index-summer-2026/) published its Summer 2026 AI Safety Index on July 7, 2026. Nine frontier AI companies were evaluated by a [panel of seven independent researchers](https://www.digitalapplied.com/blog/fli-ai-safety-index-2026-enterprise-buyer-readout) from UC Berkeley, the University of Montreal, and the University of Wisconsin-Madison, using a [37-indicator framework](https://futureoflife.org/wp-content/uploads/2026/07/AI-Safety-Index-Report_010726_2Pager.pdf) across six domains.
+The [Future of Life Institute](https://futureoflife.org/ai-safety-index-summer-2026/) published its Summer 2026 AI Safety Index on July 7, 2026. Nine frontier AI companies were evaluated by a [panel of seven independent expert reviewers](https://futureoflife.org/ai-safety-index-summer-2026/) — David Krueger (University of Montreal), Sharon Li (University of Wisconsin-Madison), Tegan Maharaj (HEC Montréal), Sneha Revanur (Encode), Stuart Russell (UC Berkeley), Robert Trager (University of Oxford), and Yi Zeng (Renmin University of China) — using a [37-indicator framework](https://futureoflife.org/wp-content/uploads/2026/07/AI-Safety-Index-Report_010726_2Pager.pdf) across six domains.
 
 The findings are a structured form of bad news. [No company received an A grade in any single category](https://www.mitsloanme.com/article/anthropic-tops-2026-ai-safety-index-but-no-ai-firm-earns-above-a-c/). The highest overall score in the industry — Anthropic's 2.66 on a 4.0 scale — translates to a C+.
 
@@ -42,7 +42,7 @@ The index evaluated each lab across six categories, scored separately and averag
 5. **Governance & Accountability** — board structures, auditing, external accountability
 6. **Information Sharing** — transparency about capabilities, limitations, and safety research
 
-[Anthropic leads five of the six domains](https://www.digitalapplied.com/blog/fli-ai-safety-index-2026-enterprise-buyer-readout). OpenAI leads Risk Assessment. [Existential Safety was the weakest category across the entire industry](https://futureoflife.org/ai-safety-index-summer-2026/), with Anthropic's D+ being the best score any lab achieved in that domain.
+[Anthropic leads five of the six domains](https://www.digitalapplied.com/blog/fli-ai-safety-index-2026-enterprise-buyer-readout). OpenAI leads Risk Assessment. [Existential Safety was the weakest category across the entire industry](https://futureoflife.org/ai-safety-index-summer-2026/), with Anthropic and OpenAI's shared D+ the best score any lab achieved in that domain — every other company scored a D or F in Existential Safety.
 
 ---
 
@@ -50,17 +50,15 @@ The index evaluated each lab across six categories, scored separately and averag
 
 The report's most pointed finding isn't a company-specific grade — it is a pattern across the top four. [Between 2024 and 2026, Anthropic, OpenAI, Google DeepMind, and Meta all reversed prior restrictions on military applications and began actively pursuing defense contracts](https://en.sedaily.com/news/2026/07/08/global-big-tech-retreats-on-ai-safety-pledges-experts-warn) — joining xAI and Mistral, which had already been pursuing such work.
 
-[Stuart Russell, an expert reviewer on the panel, noted](https://futureoflife.org/ai-safety-index-summer-2026/): "The capabilities race has become more extreme. Companies backed away from earlier commitments to release systems with appropriate safety measures."
+[Stuart Russell, an expert reviewer on the panel, noted](https://futureoflife.org/ai-safety-index-summer-2026/): "...the capabilities race has become more extreme. Companies have backed away from earlier commitments to release new systems only with safety measures appropriate for their capability levels; now, they're planning to release them even if it's demonstrably unsafe to do so."
 
-Reviewer David Krueger added: "AI companies' lack of credible safety plans is scandalous. CEOs' gestures toward pausing lack transparency on how unprepared they are."
-
-The reviewers flagged military AI as an "emerging current harm risk" and cited it explicitly in the Current Harms domain scoring.
+[Reviewer David Krueger added](https://futureoflife.org/ai-safety-index-summer-2026/): "AI companies' lack of progress towards credible AI Safety plans is scandalous. Even they are starting to get anxious as they race towards recursive self-improvement and face down the prospect of losing control. CEOs' recent gestures towards coordinating a pause or slowdown are welcome, but they're still not telling people how urgent the risk is and how unprepared they are."
 
 ---
 
 ## Anthropic: Leads Everything, But Dropped a Key Pledge
 
-Anthropic earns the highest overall grade and [leads all six domains or comes close in each](https://www.mitsloanme.com/article/anthropic-tops-2026-ai-safety-index-but-no-ai-firm-earns-above-a-c/). Its relative strengths are in Information Sharing (B+), Governance & Accountability (B), and Safety Frameworks (B−). These reflect published model cards, Claude's Constitution, the Responsible Scaling Policy (RSP), and greater-than-average external transparency.
+Anthropic earns the highest overall grade and [leads five of the index's six domains](https://www.mitsloanme.com/article/anthropic-tops-2026-ai-safety-index-but-no-ai-firm-earns-above-a-c/) (OpenAI leads the sixth, Risk Assessment). Its relative strengths are in Information Sharing (B+), Governance & Accountability (B), and Safety Frameworks (B−). These reflect published model cards, Claude's Constitution, the Responsible Scaling Policy (RSP), and greater-than-average external transparency.
 
 However, the index identifies a specific retreat: in February 2026, [Anthropic dropped its pledge to never train a system unless it could guarantee in advance that its safety measures were adequate](https://www.digitalapplied.com/blog/fli-ai-safety-index-2026-enterprise-buyer-readout). The reviewers treat this as a meaningful weakening of the RSP framework, not a minor rewording.
 
@@ -70,17 +68,17 @@ The C+ ceiling on the industry's best performer communicates something worth int
 
 ## xAI: The Sharpest Decline
 
-The most dramatic change from the prior index is [xAI's drop from 4th place to 7th, and from a passing-range grade to a failing F at 0.65](https://dcthemedian.substack.com/p/the-2026-ai-safety-index-nine-ai). The company had previously sat in the C+/D range in 2025 evaluations.
+The most dramatic change from the prior index is [xAI's drop from 4th place to 7th](https://futureoflife.org/ai-safety-index-summer-2026/), and from a D to a failing F at 0.65. The company held a D grade in both the [Summer 2025](https://futureoflife.org/ai-safety-index-summer-2025/) (1.23) and [Winter 2025](https://futureoflife.org/ai-safety-index-winter-2025/) (1.17) indexes — it had not scored above D before this drop.
 
 The index does not provide a single-sentence causal explanation for the fall. The pattern across the six domains points to a combination of weak safety documentation, an absence of formal risk assessment processes, and the military AI posture that was already a feature of xAI before most other labs reversed course.
 
-xAI's Grok model series has expanded rapidly through 2026 — [Grok 4](https://chatforest.com/reviews/xai-grok-4-frontier-llm-review/) and subsequent versions — but lab-level safety commitments have not kept pace with capability deployment. Reviewers noted "corporate safety frameworks often lack quantitative risk thresholds and independent audits."
+xAI's Grok model series has expanded rapidly through 2026 — [Grok 4](https://chatforest.com/reviews/xai-grok-4-frontier-llm-review/) and subsequent versions — but lab-level safety commitments have not kept pace with capability deployment.
 
 ---
 
 ## Meta: The Notable Improvement
 
-[Meta climbed from 6th to 4th place, improving its grade from D to D+](https://finance.biggo.com/news/5ba203b5-e561-442c-9467-0b98ab270d5d). At 1.32 overall, it still sits well below the passing threshold, but the direction is positive. The improvement reflects Meta's increased publication of safety research related to its open-weight Llama model series and marginal governance improvements.
+[Meta climbed from 6th to 4th place, improving its grade from D to D+](https://futureoflife.org/ai-safety-index-summer-2026/) ([Winter 2025 index](https://futureoflife.org/ai-safety-index-winter-2025/): D, 1.10, 6th of 8). At 1.32 overall, it still sits well below the passing threshold, but the direction is positive. The improvement reflects Meta's increased publication of safety research related to its open-weight Llama model series and marginal governance improvements.
 
 Meta's approach — open-weight models with limited lab-level deployment control — creates structural challenges for safety scoring that the index doesn't fully resolve. Publishing a model doesn't give a lab the ability to audit downstream use, and the framework's Governance & Accountability domain implicitly rewards centralized deployment structures.
 
@@ -94,9 +92,9 @@ Three companies receive failing grades ([F](https://www.verity.news/story/2026/t
 
 **DeepSeek (China, 0.47):** Consistently low on transparency and governance. Open-weight models released with minimal safety documentation.
 
-**Mistral (France, 0.33):** Lowest score in the index. The European lab has publicly positioned against safety restrictions and in favor of minimal oversight, which scores poorly across nearly every domain the FLI evaluates.
+**Mistral (France, 0.33):** Lowest score in the index. Mistral did not respond to FLI's survey, so its grade rests entirely on public policies, research, and disclosures. The [reviewers' own assessment](https://futureoflife.org/ai-safety-index-summer-2026/) states that Mistral's "leadership consistently downplays — and at times dismisses — frontier risk rather than articulating any control or alignment strategy."
 
-The geographic spread — one from the US, one from China, one from Europe — undercuts any narrative that safety failures are regional. The report states explicitly that "the problem is global."
+The geographic spread — one from the US, one from China, one from Europe — undercuts any narrative that safety failures are regional. [The report states](https://futureoflife.org/ai-safety-index-summer-2026/): "Inadequate safety is a global problem, not a regional one."
 
 ---
 
@@ -104,7 +102,7 @@ The geographic spread — one from the US, one from China, one from Europe — u
 
 The FLI Safety Index grades [organizational policies and public commitments, not deployed product performance](https://www.digitalapplied.com/blog/fli-ai-safety-index-2026-enterprise-buyer-readout). A company can score well on Governance & Accountability while shipping a model that causes harm at the product level — and vice versa.
 
-The data collection cutoff was June 3, 2026. The assessment is based on public materials (model cards, research papers, published policies) plus a targeted survey sent to each company. Not all companies responded to the survey.
+[The data collection cutoff was June 3, 2026](https://futureoflife.org/ai-safety-index-summer-2026/). The assessment is based on public materials (model cards, research papers, published policies) plus a targeted survey sent to each company. Not all companies responded to the survey.
 
 This means the index is best read as a measure of *stated commitments and documented processes* — what labs say they do, what they've published, what structures they claim to have. Whether those commitments hold under competitive pressure is a different question, and the military AI reversal finding suggests the gap between rhetoric and practice is widening, not narrowing.
 
