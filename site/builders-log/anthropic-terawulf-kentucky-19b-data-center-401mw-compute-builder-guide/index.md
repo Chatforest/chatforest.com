@@ -57,7 +57,7 @@ What it does change is the 2027-2028 planning horizon. When 401 MW comes online,
 
 The practical read for builders:
 
-- **Near-term (2026):** No direct impact. Colossus 1, Google TPUs, and Amazon Trainium are the capacity drivers. Watch July 13 for the Colossus-driven weekly limit expiration announcement.
+- **Near-term (2026):** No direct impact. Colossus 1, Google TPUs, and Amazon Trainium are the capacity drivers. Watch for what happens to Claude Code's temporary 50%-higher weekly limits, originally set to expire July 13, 2026 and already extended once, to July 19 ([Help Net Security](https://www.helpnetsecurity.com/2026/07/13/claude-code-weekly-limits-promotion-extended/)).
 - **2027:** Initial Hawesville capacity comes online in the second half. Expect announcements tracking compute delivery, potentially followed by API improvements similar to the pattern after Colossus 1 came online.
 - **2028:** Full 401 MW buildout complete, adding to the SpaceX, Amazon, and Google commitments already cited above.
 
@@ -71,7 +71,7 @@ Aluminum smelting requires extraordinarily stable, high-current power. The equip
 
 This makes the acquisition pattern worth watching. Industrial site repurposing — steel mills, paper mills, smelters — is emerging as a category of AI infrastructure acquisition precisely because the power is already there. TeraWulf has made it a core strategy. If this model proves out, expect more announcements that follow the same pattern.
 
-For builders who care about the carbon footprint of inference, Kentucky's grid runs heavily on coal and natural gas — roughly 92% combined, per the U.S. Energy Information Administration's Kentucky state profile ([EIA](https://www.eia.gov/state/?sid=KY)). TeraWulf has not announced renewable energy commitments for the Hawesville campus specifically, though the broader conversation around AI-as-renewable-energy-buyer (which has been part of other data center announcements in 2026) may apply here as the buildout progresses.
+For builders who care about the carbon footprint of inference, Kentucky's grid runs heavily on coal and natural gas — coal alone is the state's primary electricity source, with coal and gas together accounting for roughly 92% of generation, per the U.S. Energy Information Administration's Kentucky electricity profile ([EIA](https://www.eia.gov/electricity/state/kentucky/)). TeraWulf has not announced renewable energy commitments for the Hawesville campus specifically, though the broader conversation around AI-as-renewable-energy-buyer (which has been part of other data center announcements in 2026) may apply here as the buildout progresses.
 
 ---
 
