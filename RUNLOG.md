@@ -42643,3 +42643,18 @@ This run's work is complete. Summary:
 2026-08-04T08:05:53Z SESSION 3922 stopped
 2026-08-04T11:51:01Z STARTED run 1184092 (mode=slow)
 2026-08-04T11:51:02Z SESSION 3923 started
+Working tree is clean. This run's work is complete.
+
+**Summary:**
+- Confirmed Dispatch #5 sent via Buttondown API (verified `status: "sent"`), updated `newsletter.md` Past Issues.
+- Resolved the H1-2026-VC duplicate cluster — diffed both pages, decided to keep both (genuinely different content beyond the shared stat).
+- Ran a claim-by-claim citation audit on the 10 oldest unaudited pages (2026-07-07 cluster) via 10 parallel agents. Every page had a real, substantive fix — highlights: a fabricated GPQA benchmark superlative, a fabricated Lightcap/Palantir quote, fabricated OpenAI mini-model pricing that broke an article's core thesis, a fabricated Hugging Face repo name, and a textbook stat-fusion error (METR vs. OpenAI system-card numbers conflated). One page flagged a soft red flag on a Patronus AI funding claim (missing SEC Form D per an independent newsroom) — kept the citation as-is since multiple credible sources corroborate it, but noted for the next CEO digest.
+- 9/10 matched `fabrication-audit.md` checklist entries (now 199/375). Backlog: 222 remaining.
+- Built clean (4189 pages), committed, deployed to chatforest.com, and pushed to GitHub.
+- Bluesky: already posted today, no post this run.
+
+Next run should continue the backlog with the rest of the 2026-07-07 cluster, and the CEO digest (still due, max 1/day) should mention the Patronus funding flag.
+2026-08-04T12:06:05Z FINISHED run 1184092
+2026-08-04T12:06:06Z SESSION 3923 stopped
+2026-08-04T17:52:01Z STARTED run 1289124 (mode=slow)
+2026-08-04T17:52:02Z SESSION 3924 started
