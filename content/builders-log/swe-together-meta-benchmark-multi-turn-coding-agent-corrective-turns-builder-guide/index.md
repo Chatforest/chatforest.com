@@ -4,6 +4,7 @@ date: 2026-07-06
 description: "Meta researchers published SWE-Together (arxiv 2606.29957) — a benchmark built from 11,260 real coding sessions. Claude Opus 4.8 leads with 63% pass@1 and only 1.38 corrective turns per task. Here is what the data means for choosing your coding agent."
 og_description: "Most coding benchmarks measure final correctness. SWE-Together also measures how many times you have to course-correct the agent. Claude Opus 4.8 finishes 63% of tasks correctly with only 1.38 interruptions on average — vs MiniMax-2.7 at 40% and 2.17 interruptions. The benchmark was reconstructed from 11,260 real user sessions."
 content_type: "Builder's Log"
+sources_audited: 2026-08-04
 categories: ["AI Research", "Benchmarks", "Coding Agents", "Developer Productivity"]
 tags: ["swe-together", "meta", "benchmark", "coding-agents", "claude-opus-4-8", "gpt-5-5", "deepseek", "glm", "minimax", "multi-turn", "interactive-coding", "ai-research", "builders-log", "july-2026"]
 ---
@@ -20,7 +21,7 @@ The answer varies significantly across frontier models — and the pattern has d
 
 The benchmark starts from a simple observation: real coding assistance is interactive. Users don't hand over a perfectly specified task and walk away. They clarify goals mid-session, add constraints the agent missed, and correct the direction when the agent drifts. Any benchmark that ignores this interaction cost is measuring a scenario that doesn't exist in practice.
 
-To address this, the researchers reconstructed **109 repository-level tasks** from **11,260 recorded real user-agent coding sessions**. They retained only sessions with clear user goals and verifiable outcomes — then built a reactive LLM-based user simulator that reproduces the feedback patterns of the original human users.
+To address this, the researchers reconstructed **109 repository-level tasks** from **11,260 recorded real user-agent coding sessions** ([full methodology](https://arxiv.org/html/2606.29957v1)). They retained only sessions with clear user goals and verifiable outcomes — then built a reactive LLM-based user simulator that reproduces the feedback patterns of the original human users.
 
 Each task is scored on two dimensions:
 
@@ -33,7 +34,7 @@ The second number is the distinctive contribution. Corrective turns represent re
 
 ## The Results
 
-Seven models were evaluated:
+Seven models were evaluated ([Table 2 of the paper](https://arxiv.org/html/2606.29957v1#S3.T2); mirrored on the project's [live leaderboard](https://togetherbench.com/)):
 
 | Model | Pass@1 | Corrective Turns |
 |-------|--------|-----------------|
@@ -45,7 +46,7 @@ Seven models were evaluated:
 | DeepSeek-V4-Pro | 48% | 1.76 |
 | MiniMax-2.7 | 40% | 2.17 |
 
-The correlation between the two metrics is -0.92 (Pearson) — nearly perfect inverse. Stronger models not only finish more tasks correctly, they also require fewer interruptions on the tasks they do handle. The capability advantage compounds.
+The correlation between the two metrics is [-0.92 (Pearson)](https://arxiv.org/html/2606.29957v1#S3.F6) — nearly perfect inverse. Stronger models not only finish more tasks correctly, they also require fewer interruptions on the tasks they do handle. The capability advantage compounds.
 
 ---
 
@@ -71,11 +72,11 @@ For production agentic systems — where the "user" is another agent rather than
 
 ## What This Does Not Tell You
 
-SWE-Together evaluated models available before its June 29 publication date. **GPT-5.6 Sol, Terra, and Luna** are absent — they entered limited preview the same week the paper dropped and were not included. Given that GPT-5.6 Sol is positioned as a significant capability jump over GPT-5.5, its expected position on this leaderboard is an open question.
+SWE-Together evaluated models available before its June 29 publication date. **GPT-5.6 Sol, Terra, and Luna** are absent — OpenAI [previewed the family on June 26, 2026](https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna/1384931), restricted at launch to a small set of vetted partner organizations pending government review, just days before the paper's release, and were not included in this evaluation. OpenAI [positions Sol as a significant capability jump over GPT-5.5](https://openai.com/index/gpt-5-6/); its expected position on this leaderboard is an open question.
 
-The benchmark also does not evaluate **Claude Fable 5**, which was in government-restricted status through June 30. Where either model lands on the corrective-turn metric will take a follow-up study.
+The benchmark also does not evaluate **Claude Fable 5**: the US government [ordered Anthropic to suspend all access](https://www.anthropic.com/news/fable-mythos-access) to Fable 5 and Mythos 5 on June 12, 2026 over an export-control dispute, and Anthropic did not [restore access](https://www.anthropic.com/news/redeploying-fable-5) until July 1 — so the model was unavailable for the entire span of the paper's evaluation window. Where either model lands on the corrective-turn metric will take a follow-up study.
 
-Seven models is a reasonable first wave, but it leaves out several players (Gemini 3.5 Pro, Grok 4.5, Kimi k2.5) whose coding performance numbers are otherwise competitive. The full picture will require a broader evaluation sweep.
+Seven models is a reasonable first wave, but the field keeps moving. xAI [launched Grok 4.5](https://x.ai/news/grok-4-5) on July 8, 2026, and Moonshot AI [released Kimi K2.5](https://www.kimi.com/ai-models/kimi-k2-5) back in January 2026 — neither is represented here, and SWE-Together has not tested either against its corrective-turn metric, so no comparative claim can be made yet. The full picture will require a broader evaluation sweep.
 
 ---
 
@@ -85,7 +86,7 @@ Seven models is a reasonable first wave, but it leaves out several players (Gemi
 
 **If you are building a multi-agent coding pipeline:** The corrective turn metric maps to your inter-agent callback rate. A model that requires fewer mid-task corrections produces more reliable chain execution. Audit your pipeline's current interruption rate against these numbers before choosing your backbone model.
 
-**If you are evaluating Chinese open-weight alternatives:** GLM-5.2 and GLM-5.1 show competitive pass@1 (55% and 52%) at considerably lower inference cost than Claude Opus 4.8. The corrective turn numbers (1.53 and 1.54) are also reasonable — if your workflow can absorb slightly more feedback handling, the cost difference may justify the tradeoff.
+**If you are evaluating Chinese open-weight alternatives:** GLM-5.2 and GLM-5.1 show competitive pass@1 (55% and 52%) at considerably lower inference cost than Claude Opus 4.8 — [Z.ai's own pricing](https://docs.z.ai/guides/overview/pricing) lists GLM-5.2 and GLM-5.1 at $1.40 / $4.40 per million input/output tokens, versus [Anthropic's $5 / $25](https://platform.claude.com/docs/en/about-claude/pricing) for Opus 4.8. The corrective turn numbers (1.53 and 1.54) are also reasonable — if your workflow can absorb slightly more feedback handling, the cost difference may justify the tradeoff.
 
 **If you are using DeepSeek-V4-Pro:** The 1.76 corrective turns combined with 48% pass@1 puts it in a difficult position — more oversight required for fewer successful outcomes. In cost-sensitive contexts it may still win; in productivity-sensitive ones, the math is harder to justify.
 

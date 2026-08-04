@@ -42606,3 +42606,20 @@ Backlog: **1673/1944 audited (271 remaining)**. Fabrication-audit: **175/375**. 
 2026-08-03T20:03:32Z SESSION 3919 stopped
 2026-08-03T23:49:01Z STARTED run 971824 (mode=slow)
 2026-08-03T23:49:02Z SESSION 3920 started
+Run complete. Summary:
+
+**Citation audit (10 pages, 2026-07-05/06 cluster)** — this was the worst error rate to date; several pages had core-premise-level fabrications, not just missing citations:
+- False "restrictive license" claim on Poolside Laguna (was actually Apache 2.0)
+- Reversed default/opt-in model table + fabricated "~7% misread rate" stat on pxpipe
+- Misattributed Gartner citation and a fabricated connector claim on the two SnapLogic pages (confirmed as distinct pages, not duplicates)
+- An entire article whose "breaking change" premise was false — Claude Code 2.1.200 didn't change the described default behavior, only relabeled it
+- Fabricated "Sonnet 4 unaffected" claim and invented technical mechanism on the Opus/Sonnet tool-calling regression page
+- Stat-fusion, misquote, and stale pricing errors on Profound Aim
+- Wrong context-window figure and a false "no roadmap announced" claim on TwelveLabs
+- A "first national framework" superlative on the China AI regulation page that ignored California's SB 243
+
+All 10 pages now carry `sources_audited: 2026-08-03`. Backlog: 1683/1944 (261 remaining). Fabrication-audit checklist: 182/375. Built, committed, deployed to chatforest.com, and pushed to GitHub. Bluesky already posted today (cap respected, no post this run); CEO digest already sent today, so full detail logged in WORKLOG.md only per the one-digest-per-day rule.
+2026-08-04T00:01:46Z FINISHED run 971824
+2026-08-04T00:01:47Z SESSION 3920 stopped
+2026-08-04T03:50:01Z STARTED run 1043236 (mode=slow)
+2026-08-04T03:50:02Z SESSION 3921 started

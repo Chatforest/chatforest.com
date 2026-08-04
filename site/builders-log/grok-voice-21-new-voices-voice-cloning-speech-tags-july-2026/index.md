@@ -13,7 +13,7 @@ On July 6, 2026, xAI pushed a substantial update to Grok Voice: 21 new flagship 
 
 ### 21 New Flagship Voices
 
-xAI added 21 new voices to the Grok Voice catalog, joining the five original options (Ara, Eve, Leo, Rex, and Sal). The originals were also retrained — xAI says the retraining improved pacing, phrasing, and emphasis for "greater naturalness in real conversation."
+xAI added 21 new voices to the Grok Voice catalog, joining the five original options (Ara, Eve, Leo, Rex, and Sal). ([xAI announcement](https://x.ai/news/new-flagship-voices)) The originals were also retrained — xAI says the retraining used "an improved recipe" so that pacing, phrasing, and emphasis "are more natural." ([xAI announcement](https://x.ai/news/new-flagship-voices))
 
 The new voices are cast by function:
 
@@ -23,35 +23,39 @@ The new voices are cast by function:
 - **Advertising**: High energy and polished, for brand spots and promos
 - **Education**: Clear and deliberate, for explainers, training, e-learning
 
-All 26 voices (21 new + 5 original) support 25+ languages and work across TTS, the Realtime API, and Voice Agent Builder.
+All 26 voices (21 new + 5 original) support 25+ languages and work across TTS, the Realtime API, and Voice Agent Builder. ([xAI announcement](https://x.ai/news/new-flagship-voices))
 
 ### Voice Cloning
 
 Voice cloning is now available in the API. The workflow:
 
-1. Upload a reference clip (maximum 120 seconds) to the xAI Console
-2. Receive a `voice_id`
+1. Upload a reference clip (no minimum, 120-second maximum — xAI recommends 90+ seconds to capture prosody and intonation) to the xAI Console
+2. Receive a `voice_id` (an 8-character alphanumeric identifier)
 3. Use that `voice_id` anywhere a built-in voice is accepted — TTS API, Voice Agent API, Voice Agent Builder
 
-The reference audio does not need to be professionally recorded, but xAI recommends a clean-enough clip to capture the target voice's characteristic qualities. The resulting custom voice behaves identically to built-in voices from the API's perspective — you swap the `voice_id` field.
+([xAI docs](https://docs.x.ai/developers/model-capabilities/audio/custom-voices))
 
-This matters for branded agents: a company can clone its own spokesperson, a developer can clone a specific narrator, or a language-learning app can let users create a study partner that sounds like someone they know.
+The resulting custom voice behaves identically to built-in voices from the API's perspective — you swap the `voice_id` field. Creating a custom voice via the Console is free (up to 30 voices); creating one via the `POST /v1/custom-voices` API endpoint is gated to teams on an Enterprise plan. As of this writing, xAI limits Custom Voices to the United States, excluding Illinois. ([xAI docs](https://docs.x.ai/developers/model-capabilities/audio/custom-voices))
+
+This matters for branded agents: a company can clone its own spokesperson, a developer can clone a specific narrator, or a language-learning app can let users create a study partner that sounds like someone they know — subject to the US-only (minus Illinois) availability above.
 
 ### Speech Tags
 
-Delivery control tags let you shape how Grok Voice speaks at the word and phrase level:
+Delivery control tags let you shape how Grok Voice speaks at the word and phrase level. xAI's TTS docs split them into two families: **inline tags** (square brackets, mark a single point in the text) and **wrapping tags** (angle brackets, wrap a span of text to change how that span is delivered). ([xAI docs](https://docs.x.ai/developers/model-capabilities/audio/text-to-speech); confirmed in xAI's own flagship-voices post, which contrasts `[pause]` with `<whisper>` — [xAI announcement](https://x.ai/news/new-flagship-voices))
 
-| Tag | Effect |
-|---|---|
-| `[pause]` | Inserts a natural pause at the point in the text |
-| `[whisper]` | Drops to a quiet, breathy delivery |
-| `[emphasis]` | Adds stress to the enclosed word or phrase |
-| `[laughter]` | Inserts a natural laugh |
+| Tag | Type | Effect |
+|---|---|---|
+| `[pause]` | inline | Inserts a natural pause at that point in the text |
+| `[laugh]` | inline | Inserts a natural laugh |
+| `<whisper>text</whisper>` | wrapping | Delivers the wrapped text as a quiet, breathy whisper |
+| `<slow>text</slow>` | wrapping | Delivers the wrapped text at a slower pace |
+
+xAI's docs describe additional tag categories — pauses, laughter/crying, mouth sounds, breathing, volume/intensity, pitch/speed, and vocal style — without listing every individual tag name in the plain-text version of the page; check the [xAI docs](https://docs.x.ai/developers/model-capabilities/audio/text-to-speech) for the full, current set before building against it.
 
 Tags work inline in your TTS request text. For example:
 
 ```
-"We're almost out of time. [pause] But before we go, [emphasis]remember this[/emphasis]: the next session starts Monday."
+"We're almost out of time. [pause] But before we go, <slow>remember this</slow>: the next session starts Monday."
 ```
 
 Speech tags apply to TTS requests and Voice Agent Builder configurations. Their behavior in the streaming Realtime API may vary by session configuration.
@@ -70,7 +74,7 @@ Speech tags apply to TTS requests and Voice Agent Builder configurations. Their 
 
 ## Pricing
 
-xAI has not published separate pricing for voice cloning. The base Grok Voice rate remains $0.05/min of audio for TTS and Realtime API. Custom voice creation via the Console is currently included with API access; xAI has not announced when or whether it will be separately metered.
+The base Grok Voice rate is $0.05/min of audio for TTS and the Realtime API. ([xAI announcement](https://x.ai/news/grok-voice-agent-api)) There is no extra charge to use the TTS or Voice Agent APIs with a custom (cloned) voice — the cost is the same as using a built-in voice. ([xAI docs](https://docs.x.ai/developers/model-capabilities/audio/custom-voices))
 
 ---
 
@@ -82,16 +86,16 @@ xAI has not published separate pricing for voice cloning. The base Grok Voice ra
 
 **If you're building interactive content**: The characters category gives you distinct personas without scripting accents or personalities through system prompts. Combined with speech tags, you can hit comedic timing, dramatic pauses, and emphasis shifts at the text-generation layer.
 
-**If you're comparing to alternatives**: ElevenLabs has offered voice cloning for longer and at higher fidelity — their Instant Voice Cloning (IVC) is a direct competitor. The xAI advantage is a single API that covers voice cloning, phone agent orchestration, knowledge retrieval, tool calling, MCP support, and observability without stitching together multiple vendors.
+**If you're comparing to alternatives**: ElevenLabs' Instant Voice Cloning (IVC) ([ElevenLabs docs](https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning/instant-voice-cloning)) is a direct competitor and predates xAI's cloning feature. The xAI pitch is a single API that also covers phone agent orchestration, knowledge retrieval, tool calling, and MCP support — evaluate fidelity yourself before choosing between them, since we have not run a side-by-side comparison.
 
 ---
 
 ## Background
 
-This update sits on top of two prior Grok Voice milestones:
-- **April 25, 2026**: Think Fast 1.0 voice model shipped with background reasoning and sub-second latency
-- **June 4, 2026**: Grok Voice Agent API launched as a commercial developer platform with 80+ voices (at launch), tool calling, and 100+ language support
-- **July 1, 2026**: Voice Agent Builder launched as a no-code platform for building phone agents in two minutes without code
+This update sits on top of three prior Grok Voice milestones:
+- **December 17, 2025**: Grok Voice Agent API launched, giving developers programmatic access to xAI's real-time, multilingual voice agents with tool calling. ([xAI announcement](https://x.ai/news/grok-voice-agent-api))
+- **April 23, 2026**: Think Fast 1.0 voice model shipped, performing reasoning in the background while speaking — xAI says this adds no impact on response latency. ([xAI announcement](https://x.ai/news/grok-voice-think-fast-1))
+- **July 1, 2026**: Voice Agent Builder launched as a no-code platform — xAI says you can go from a plain-language description to a working phone agent "in about two minutes." ([xAI announcement](https://x.ai/news/grok-voice-agent-builder))
 
 The July 6 release adds the voice depth (specific-purpose casting, cloning, delivery control) that the platform was missing. It now covers the full stack from infrastructure to persona.
 

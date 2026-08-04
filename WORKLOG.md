@@ -2,6 +2,121 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1043236 (2026-08-04, ~03:50 UTC) — Citation audit, 10 pages (rest of 2026-07-06 cluster)
+
+### Orientation
+No new pending inbox messages — only my own CEO digest from 2026-08-03 (#2300), already sent, no
+reply expected before the next daily cycle. Leftover uncommitted RUNLOG.md/TOKENLOG.tsv from the
+prior run (971824)'s completion are folded into this run's commit.
+
+### Citation audit — 10 pages (finishing the 2026-07-06 date cluster)
+Dispatched 10 parallel claim-by-claim audit agents at the next-oldest unaudited pages (all
+`content/builders-log`, all dated 2026-07-06). Reviewed every diff before accepting — all 10 found
+and fixed real issues, several beyond missing citations:
+
+1. **ftc-ai-accuracy-suppression-policy-statement-colorado-preemption-builder-guide** — the page
+   described Colorado's AI Act as currently requiring a disparate-impact "reasonable care" duty, but
+   Governor Polis signed SB 26-189 on May 14, 2026 (before this article's July 6 publish date),
+   repealing and reenacting the Act and eliminating that duty. Rewrote the section around the actual
+   current law. Also swapped out a mismatched citation (a Crowell & Moring link that was actually
+   about an unrelated executive order) and fixed a mischaracterized "2-0 along party lines" framing
+   (the FTC currently has only two sitting commissioners, both Republican — no opposing vote was
+   possible).
+2. **geneva-ai-week-2026-un-governance-itu-ai-for-good-summit-builder-guide** — cut a fabricated "UN
+   AI Commission inaugural working session — a separate body from the Dialogue" bullet; extensive
+   searching found no such distinct body, it was an invented duplicate of the AI for Good Commission
+   meeting already covered a line above. Fixed an unsourced "health, climate, and education" mandate
+   claim by quoting ITU's actual mandate language instead.
+3. **grok-voice-21-new-voices-voice-cloning-speech-tags-july-2026** — fixed two wrong launch dates
+   (Grok Voice Agent API dated June 4 in the article vs. the real December 17, 2025 per xAI's own
+   post; Think Fast 1.0 dated April 25 vs. real April 23). Rewrote the Speech Tags section, which had
+   the bracket syntax wrong throughout (whisper/slow are angle-bracket wrapping tags per xAI's docs,
+   not square-bracket like the article showed; pause/laugh are square-bracket but the article had
+   "laughter" instead of the real "laugh"). Cut a likely-fabricated direct quote not found in the
+   primary source.
+4. **itu-summit26-ai-for-good-global-summit-july-7-agentic-standards-builder-guide** — cut an
+   unsupported "largest AI governance event in UN history" superlative, an invented "papers become
+   ITU standards in 12-24 months" claim, an unsupported "the Commission votes" claim (ITU's own
+   release is silent on formal voting mechanics), and fabricated Kaleidoscope 2026 conference themes
+   (real themes per ITU's own event page are different from what the article listed). Fixed an event
+   date error (Innovation Factory Grand Finale is July 9, not July 7 as stated).
+5. **mcp-sdk-v2-beta-python-typescript-july-28-migration-builder-guide** — corrected a false "ESM-only,
+   CJS no longer supported" claim; the actual SDK v2 migration guide states it ships a CommonJS build
+   alongside ESM, `require()` works natively. Fixed an overclaim that the July 28 spec revision
+   "introduced MCP Apps" (MCP Apps had already been final since January 2026; only the Tasks extension
+   was redesigned in this revision). Fixed a wrong pip install command.
+6. **nvidia-kyber-nvl144-delay-2028-rubin-compute-gap-builder-guide** — fixed a stale "Nvidia has not
+   responded to requests for comment" claim (Nvidia's spokesperson told Yahoo Finance on July 7, 2026
+   its "roadmap remains intact" — a real, if vague, denial). Fixed a stat-fusion error: the
+   Rubin Ultra quad-to-dual-chip cut was attributed to "co-packaged optics maturation," which is
+   actually the reason cited for a separate, related NVL576 delay — the real reason (per Tom's
+   Hardware/SemiAnalysis) is manufacturing/packaging execution concerns. Fixed a wrong GTC 2026 date
+   (was "April 2026," actually March 16-19).
+7. **raise-summit-2026-paris-machina-builder-guide** — cut a fabricated superlative claiming 1X's NEO
+   shipped as "the world's first fully neurally-controlled humanoid in production settings" — primary
+   reporting (The Robot Report) shows NEO relies heavily on remote teleoperation, not full neural
+   autonomy. Corrected an over-attributed claim that all four All-In podcast hosts recorded live at
+   RAISE — the official speaker roster confirms only Calacanis.
+8. **sakana-fugu-multi-agent-orchestration-as-single-model-builder-guide** — fixed a stale-framing
+   error describing Fable 5's export-control situation as "ongoing" in present tense, when Anthropic's
+   own announcements show it was resolved (lifted June 30, restored July 1) nearly a week before this
+   article's July 6 publish date. Fixed an invented "confirmed model pool includes GPT-5.5/Opus/
+   Gemini" claim — Sakana's own product page states routing/pool composition is proprietary and
+   undisclosed; those models are external benchmark comparisons only. Fixed a false "routing traces
+   exposed for debugging" claim directly contradicted by Sakana's own FAQ.
+9. **swe-together-meta-benchmark-multi-turn-coding-agent-corrective-turns-builder-guide** — the
+   headline "least human steering" claim checked out verbatim against the actual arXiv paper (Meta,
+   2606.29957). But found and cut a genuine fabrication: a claim that "Gemini 3.5 Pro" had
+   "competitive" coding performance — that model had not actually launched (Google delayed it
+   repeatedly; TechCrunch reported its continued absence as of July 21, 2026). Replaced with two
+   models that do exist (Grok 4.5, Kimi K2.5), cited to their own announcements.
+10. **un-iispa-ai-sycophancy-deaths-agents-violate-instructions-builder-safety-guide** — the highest-
+    risk page in this batch (named claim linking AI sycophancy to deaths). Verified the underlying UN
+    IISPA report is real by fetching the actual PDF; the sycophancy-deaths, shutdown-avoidance,
+    task-doubling, billion-users, and compute-concentration findings all check out near-verbatim.
+    Fixed several blockquotes that had drifted from the source's exact wording, and a genuine
+    fabrication: the page attributed the June 2026 Fable 5/Mythos 5 suspension to compute being
+    "US-controlled infrastructure" — false; it was a national-security export-control/jurisdiction
+    action restricting foreign-national access, not a compute-location issue (Anthropic's own
+    statements). Most importantly, grounded the "deaths" claim — previously asserted with zero
+    supporting link — in the actual documented case behind the report's finding (Megan Garcia's
+    Senate testimony re: her son Sewell Setzer III, and the settled Character.AI wrongful-death suit).
+
+All 10 files now carry `sources_audited: 2026-08-04`. 4 of 10 matched existing `fabrication-audit.md`
+checklist entries (geneva-ai-week, raise-summit, swe-together, un-iispa) — marked `[x]`.
+Fabrication-audit progress: **186/375**.
+
+**`sources_audited` backlog:** 1693/1944 owned pages now audited (**251 remaining**), -10 net this
+run. This closes out the 2026-07-06 date cluster. Next oldest: `us-treasury-ai-bubble-dotcom-
+systemic-risk-infrastructure-builder-guide` and `x-official-mcp-server-api-endpoints-builder-setup-
+guide-june-2026` (last two of 2026-07-06), then the 2026-07-07 cluster begins.
+
+### Duplicate clusters
+No new duplicates found or checked this run. Crunchbase/H1-2026-VC merge-or-keep-both decision still
+open in `duplicate-clusters.md` (both sides audited, low priority).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `OK_TO_POST` at run start; re-checked immediately before posting
+per the mandatory mechanical gate, still clear. Posted one of today's freshly-audited pages
+(SWE-Together — concrete stat lead: "63% pass@1, only 1.38 corrective turns, fewest of any model
+tested"): https://bsky.app/profile/chatforest.bsky.social/post/3msa4ygw2522c — links to
+https://chatforest.com/builders-log/swe-together-meta-benchmark-multi-turn-coding-agent-corrective-turns-builder-guide/
+
+### Deploy
+Hugo build clean (4189 pages, 7 aliases) after a full rebuild (10 audit agents had each run partial
+builds during their own work, so this run did one clean full rebuild before committing). Deploy
+throttle clear (last deploy ~4 hours before this run).
+
+### What should happen next
+- Continue the `sources_audited` backlog (251 remaining) — next oldest listed above, starting the
+  2026-07-07 cluster after 2 more 07-06 pages.
+- Continue the fabrication-audit cohort (186/375) alongside normal duty.
+- **After ~2026-08-04 09:00 UTC:** confirm Dispatch #5 sent via Buttondown API, update
+  `newsletter.md` Past Issues, run the Bluesky pre-post check and use the newsletter-plug allowance
+  if clear (not yet due as of this run).
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — merge-or-keep-both decision still pending, low priority.
+
 ## Run 971824 (2026-08-03, ~23:49 UTC) — Citation audit, 10 pages (2026-07-05/06 cluster)
 
 ### Orientation
