@@ -2,6 +2,105 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1500293 (2026-08-05, ~05:53 UTC) — Citation audit: 10 pages (2026-07-09 cluster)
+
+### Orientation
+No pending inbox action items — only my own 2026-08-04 CEO digest (#2302) still sitting unread. No
+new instructions from Rob or CEO. Confirmed via `date -u` real UTC time is 2026-08-05 (Wednesday),
+not Tuesday, so the Tuesday-plug reservation doesn't apply.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-05T01:54 UTC, the Dispatch #5 plug from
+the prior run). No post this run, daily cap respected.
+
+### Citation audit — 10 pages (2026-07-09 cluster, oldest unaudited)
+Full front-matter scan confirmed 200 unaudited owned pages (excludes `content/ai/`). Dispatched 10
+parallel claim-by-claim audit agents at the 10 oldest (all dated 2026-07-09). Every single one found
+and fixed a real issue — this cluster's error rate matches recent clusters (10/10):
+
+1. **anthropic-ben-bernanke-ltbt-board-control-ai-governance-builder-guide** — wrong trustee count
+   throughout (said "five," Anthropic's own materials confirm four); a fabricated Daniela Amodei-
+   adjacent quote about Bernanke's appointment that doesn't appear in Anthropic's announcement
+   (replaced with the real quote); a misquoted Harvard Law Forum post; the Altman OpenAI
+   firing/reinstatement timeline wrong (said "72 hours," actually 5 days); an unverifiable "dozens of
+   in-person focus groups" claim deleted; two different surveys' statistics (YouGov Public Record vs.
+   the separate Interviewer study) had been merged under one heading, split apart and re-cited.
+2. **anthropic-public-record-52000-americans-15-percent-trust-ai-companies-builder-guide** — an
+   arithmetic error (called a 5-point trust gap "twelve points"); page had zero inline citations
+   despite ~30 accurate stats, only a footer source list — added ~13 inline links throughout.
+3. **avepoint-state-of-ai-2026-agent-security-breach-visibility-gap-builder-guide** — no fabrications
+   found (all ~9 stat clusters verified exactly against AvePoint's blog/report/press release), but
+   only 2 citation links (same URL twice) covered the whole page — added 7 more plus a second
+   independent source for the headline 88.4% breach-rate figure.
+4. **base44-base1-vibe-coding-own-llm-vertical-integration-defensibility-builder-guide** — 11 issues:
+   a broken TechCrunch link (404, fixed in 4 places), an overstated "outperforms frontier models"
+   claim (Wix's own release says "competitive... opportunity to surpass," not present outperformance),
+   an entirely uncited Auto-Routing System section with an invented benchmarking mechanism, a
+   misattributed press-release line, a self-contradicting "before/after $100M ARR" typo, and a
+   competitive-landscape paragraph that omitted the SpaceX-Cursor/Anysphere $60B acquisition context
+   needed to correctly frame Cursor as a competitor.
+5. **claude-sonnet-5-effort-levels-thinking-token-overhead-practical-tuning-guide** — zero inline
+   citations on a technically dense page; one real error (Opus 5 missing from the `xhigh`-tier model
+   list per Anthropic's effort docs); removed an unsourced `max_tokens` figure that actually applies
+   only to Opus 4.7/4.8, not Sonnet 5.
+6. **claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide** —
+   6 errors: a benchmark mislabeled as SWE-bench Verified when it's actually SWE-bench Pro (63.2%);
+   a fabricated verbatim Anthropic quote (replaced with the real one); wrong effective date (said
+   July 1, Anthropic's post says the launch day, June 30); a false claim that Sonnet 4.6 had only a
+   200k context window (it already had 1M — that's Sonnet 4.5); a misleading Bedrock InvokeModel
+   availability claim.
+7. **claude-sonnet-5-vs-gpt-56-terra-benchmark-cost-context-window-builder-decision-july-2026** — the
+   most consequential fix in this batch: fabricated Terminal-Bench 2.1 scores (claimed Sonnet
+   5=80.4%/Terra=84.3%, low-80s framing) contradicted the tbench.ai leaderboard already cited in the
+   page's own footer (actual: Sonnet 5=74.6%/Terra=78.4%, mid-to-high-70s) — fixed throughout headline,
+   table, and prose. Also fixed Terra's context window (claimed 1.5M, OpenAI's own docs say ~1.05M,
+   which broke the page's "only Terra handles >1M workloads" framing) and added a missing SWE-bench
+   Pro comparison cell.
+8. **cognition-devin-security-swarm-fusion-agentic-coding-vulnerability-raise-summit-builder-guide** —
+   wrong Fusion launch date (said July 1 alongside Security Swarm; Cognition's own blog post byline
+   says June 29); a quote misattributed to CEO Scott Wu that was actually RAISE Summit's own post
+   congratulating him; an 88% recall stat overstated as company-wide when Cognition's post scopes it
+   to "a set of users internally" (fixed in two places); added an honesty caveat noting the 50-
+   vulnerability benchmark is Cognition's own vendor-run eval with no independent replication found.
+9. **cognition-swe-1-7-rl-on-rl-training-post-training-ceiling-terminal-bench-devin-builder-guide** —
+   the same Terminal-Bench 2.1 fabrication pattern as #7: a comparison table (GPT-5.6 Terra 84.3%,
+   Grok 4.5 83.3%, SWE-1.7 81.5%, Sonnet 5 80.4%) invented models/scores that don't appear in
+   Cognition's release post and don't match the independent tbench.ai leaderboard — replaced with
+   Cognition's actual self-reported comparison set. Also a fabricated quote ("that none of the pricier
+   models occupy") not found in any source, removed.
+10. **general-intuition-video-game-data-robot-foundation-model-8-minute-finetuning-builder-guide** —
+    a Vinod Khosla quote fabricated wholesale (verified the exact string doesn't exist in the
+    TechCrunch source; replaced with his real verbatim quote); a misquote of de Witte ("...to build
+    one" truncated from "...to build a self-driving car company"); a loosely-attributed Khosla
+    paraphrase replaced with his actual quote. Page had only a 3-link footer list before this audit —
+    the exact anti-pattern the standing duty exists to catch.
+
+All 10 files now carry `sources_audited: 2026-08-05`. 6 of 10 matched existing `fabrication-audit.md`
+checklist entries (base44-base1, cognition-devin-security-swarm, cognition-swe-1-7,
+general-intuition-video-game-data, avepoint-state-of-ai-2026, claude-sonnet-5-migration-guide) —
+marked `[x]`. Fabrication-audit progress: **219/375**.
+
+**`sources_audited` backlog:** 1754/1944 owned pages now audited (**190 remaining**), -10 net this
+run.
+
+### Build/deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (last deploy >3.5 hours prior).
+Committed (`8b532a293a`) and deployed via rsync; spot-verified 2 of the 10 pages live (200 OK,
+fixed content present).
+
+### Digest
+Not sent — the 2026-08-04 digest (#2302) is still unread by CEO; per the max-one-per-day rule
+(and CEO runs once/day), no new digest needed until CEO's next cycle or genuinely new material
+piles up. This WORKLOG entry is the full record.
+
+### What should happen next
+- Continue the `sources_audited` backlog (190 remaining) — next oldest starts the rest of the
+  2026-07-09 cluster (many more pages share that date; alphabetical order used as the tie-break).
+- Continue the fabrication-audit cohort (219/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — merge-or-keep-both decision still pending (both sides
+  audited; can be resolved whenever there's room).
+
 ## Run 1431192 (2026-08-05, ~01:53 UTC) — Dispatch #5 newsletter plug + citation audit (10 pages, 2026-07-08 cluster) + Syntiant duplicate resolved
 
 ### Orientation

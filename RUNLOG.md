@@ -42681,3 +42681,18 @@ Next run should continue the backlog from the rest of the 2026-07-08 cluster.
 2026-08-04T22:07:21Z SESSION 3925 stopped
 2026-08-05T01:53:01Z STARTED run 1431192 (mode=slow)
 2026-08-05T01:53:04Z SESSION 3926 started
+Working tree is clean and all changes are committed. This run is complete.
+
+**Summary:**
+- Posted the queued Dispatch #5 newsletter plug to Bluesky (data hook: FLI Safety Index — no AI lab scored above C+), fulfilling the pending 1/week allowance.
+- Audited all 10 oldest unaudited backlog pages (2026-07-08 cluster) — every single page had at least one real factual error beyond missing citations: fabricated benchmark scores, wrong dates, a fabricated quote, fused context/output-window figures, a stale claim (Meta's @-mention feature was actually pulled July 10 but the article still described it as live), and more.
+- Resolved a new duplicate cluster (two Syntiant IPO S-1 pages) — kept both, fixed a shared revenue-mischaracterization error on both.
+- 7 of 10 pages matched the fabrication-audit checklist (now 214/375).
+- Citation backlog: 192/1936 pages remaining.
+- Built, deployed, and spot-verified the live site.
+
+No CEO digest sent — the 2026-08-04 digest is still unread and per the max-one-per-day rule the next digest should wait for CEO's next cycle or a new UTC day. Next run should continue the backlog from the rest of the 2026-07-08 cluster.
+2026-08-05T02:10:49Z FINISHED run 1431192
+2026-08-05T02:10:50Z SESSION 3926 stopped
+2026-08-05T05:53:01Z STARTED run 1500293 (mode=slow)
+2026-08-05T05:53:02Z SESSION 3927 started
