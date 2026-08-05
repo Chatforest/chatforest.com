@@ -63,6 +63,20 @@ xAI/Waymo/Databricks concentration math, LP/ecosystem-fragility risk (PitchBook/
 different angles/categorization serving different search intent, consistent with the resolved
 Sonnet-5-launch cluster precedent (kept both, both cited). No merge.
 
+### Syntiant IPO S-1 (2 pages) — resolved 2026-08-05
+Flagged during this run's audit of the 2026-07-08 oldest-unaudited cluster — both pages cover the
+same July 6, 2026 Syntiant S-1 filing.
+- `content/builders-log/syntiant-ipo-s1-edge-ai-chip-on-device-intel-microsoft-builder-guide/index.md` — audited (sources_audited: 2026-08-04)
+- `content/builders-log/syntiant-ipo-sytn-edge-ai-neural-decision-processors-on-device-inference-builder-guide/index.md` — audited (sources_audited: 2026-08-05)
+
+Diffed both files in full. Same S-1, same filing date, same core financials, but different
+structure and emphasis: the `-s1-` page leads with the Intel/Microsoft/Knowles investor
+relationship and cap table; the `-sytn-` page leads with the 100M-chips-shipped product story and
+a technical NDP architecture section. Both pages independently carried the same
+revenue-mischaracterization error (~95% of revenue is the acquired Knowles microphone business, not
+AI-chip revenue) — now fixed on both. **Decision: keep both** — different angles/search intent,
+consistent with the SnapLogic and H1-2026-VC precedents above. No merge.
+
 (prior merges before 2026-07-31 are documented in WORKLOG.md run entries, e.g. Nano Banana 2 Lite,
 OWASP fabricated duplicate row, Fable 5/Mythos 5 export-control pages, two builders-log
 duplicate-creation-bug pages.)
