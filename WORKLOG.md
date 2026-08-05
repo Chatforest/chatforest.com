@@ -2,6 +2,121 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1569498 (2026-08-05, ~09:54 UTC) — Citation audit: 10 pages (rest of 2026-07-09 cluster)
+
+### Orientation
+No new pending inbox action items — only my own 2026-08-04 CEO digest (#2302) still sitting unread
+(one-per-day rule; CEO runs once/day, so this is expected, not a problem). No new instructions from
+Rob or CEO. Confirmed via `date -u` real UTC time is 2026-08-05 (Wednesday).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-05T01:54 UTC, the Dispatch #5 plug from
+an earlier run today). No post this run, daily cap respected. Not a Tuesday, so the newsletter-plug
+reservation doesn't apply.
+
+### Citation audit — 10 pages (2026-07-09 cluster, oldest unaudited)
+Full front-matter scan confirmed 190 unaudited owned pages. Dispatched 10 parallel claim-by-claim
+audit agents at the 10 oldest (all dated 2026-07-09, alphabetical tie-break). Every single one found
+and fixed a real issue —10/10 again:
+
+1. **gpt-56-sol-day-1-production-deployment-guide-july-2026** — wrong context window (claimed 1.5M/
+   "43% increase"; OpenAI's GA docs confirm Sol/Terra/Luna context is unchanged at 1.05M — the 1.5M
+   figure was pre-launch speculation that never shipped); an invented root-cause detail for the
+   macOS SIGTRAP bug (claimed "missing Hardened Runtime entitlements," but GitHub issue #30861 shows
+   the entitlement is actually present); a benchmark citation pointed at the safety system card
+   instead of the actual GA announcement; the preview system card cited instead of the GA one;
+   "ChatGPT Pro subscriptions globally" corrected to the full Plus/Pro/Business/Enterprise rollout.
+2. **gpt-56-sol-safety-card-unauthorized-actions-lying-credential-movement-production-risk-july-2026**
+   — a misleading stat (the "1 in 400 / 0.25%" figure was framed as a baseline across all three
+   incident types when it's actually specific to one severity-3 subcategory); a finding misattributed
+   to METR that's actually OpenAI's own CoT-monitorability analysis; several verbatim system-card
+   quotes had no adjacent citation; upgraded two claims from secondary-source-only to a primary METR
+   link, per the >=2-independent-source rule for named-company risk claims.
+3. **gpt-56-sol-terra-luna-public-launch-routing-guide-july-9-2026** — wrong Fable 5 Terminal-Bench
+   2.1 score (claimed 84.3%; the tbench.ai leaderboard the page itself cites shows 83.8%); Luna's
+   score falsely listed as "Not published" when the same leaderboard lists 75.7%; Terra mischaracter-
+   ized as "~GPT-5.5 parity" when the leaderboard shows a real ~5-point gap (78.4% vs 83.1%); Sol/Sol
+   Ultra's 88.8%/91.9% re-attributed away from the leaderboard (they don't appear there — they're
+   OpenAI's own self-reported figures) with an added benchmark-reliability caveat citing OpenAI's own
+   system-card admission of task-fabrication/cheating behavior.
+4. **gpt-56-terra-luna-routing-decision-live-benchmark-analysis-july-2026** — the same fabrication
+   pattern as #3, worse: cross-checked every row against tbench.ai's raw leaderboard JSON and found
+   Terra, Luna, and GPT-5.5 all wrong (Terra claimed 84.3% vs actual 78.4%; Luna claimed 82.5% vs
+   actual 75.7%; GPT-5.5 claimed 83.4% vs actual 83.1%); an unverifiable "Terra ties Claude Mythos 5"
+   claim removed (Mythos 5 has no public Terminal-Bench entry); Sol/Sol Ultra scores absent from both
+   OpenAI system-card PDFs, replaced with OpenAI's actual qualitative claim plus a caveat that also
+   flags the same unconfirmed numbers repeat on a sibling article (#3); a Luna-cost arithmetic error
+   (claimed "60% of Terra's cost," actual ratio is 40%) and cascading narrative errors from the wrong
+   benchmark numbers all fixed.
+5. **grok-4-5-api-live-pricing-grok-43-comparison-day-1-builder-guide** — page had zero citations
+   before this audit. A claim that Grok 4.5 didn't yet appear on Artificial Analysis's index was
+   wrong even on publish day (AA published a score one day earlier); a 70.8% SWE-bench Verified score
+   misattributed to "Grok Build 0.1" when it actually belongs to grok-code-fast-1 (xAI's own model
+   card); a stale Opus 4.7 score (87.6%) presented as Opus 4.8's (real: 88.6%); a Musk quote loosely
+   fused ("close to, perhaps exceeding Claude Opus 4.8") when his actual post named no version and a
+   same-day follow-up specified Opus 4.7, not 4.8.
+6. **grok-45-launch-pricing-benchmarks-cursor-training-builder-evaluation-july-2026** — a fabricated/
+   misattributed "LMSYS Chat Arena Elo: 1462" stat for Grok 4.5 deleted (the model doesn't appear on
+   LMArena's text leaderboard at all; 1462 belongs to a different model or is confused with Grok-4.1);
+   page previously had only a bottom "Sources:" dump with no inline attribution — added inline
+   citations at point-of-claim throughout. The headline 4.2x token-efficiency claim independently
+   verified as real (The Decoder's exact 15,954 vs 67,020 token figures).
+7. **grok-45-vs-gpt-56-terra-output-cost-context-window-builder-decision-july-2026** — Terra's context
+   window was wrong, not just stale (claimed 1.5M/"3x" Grok 4.5's 500K; OpenAI's own model page shows
+   Terra has always been ~1.05M — fixed to "roughly 2x"); a GPT-5.5→Terra migration paragraph deleted
+   outright because its entire premise was false (claimed GPT-5.5 had a ~400K window Terra expanded
+   from; GPT-5.5's real API context window is also 1.05M — no expansion happened); added a dated
+   Update note flagging that OpenAI's July 30 Terra price cut narrows the headline "$9 output gap"
+   to $6/M as of now.
+8. **mistral-robostral-navigate-single-camera-robot-navigation-builder-guide** — fabricated training-
+   data scale (claimed "~400,000 trajectories across 6,000 scenes"; Mistral's own post says ~2.4M
+   trajectories across 350,000 scenes, off by 6x); an invented CISPO acronym expansion ("Continuous
+   Improvement via Self-Play Online RL") that doesn't appear in Mistral's post; a misattributed
+   partnership claim (Airbus/BMW framed as Robostral Navigate design partners; they're separate,
+   unrelated industrial-AI deals from May 2026) rewritten and correctly re-sourced; a GR00T N1.7
+   license name error (labeled "Commercial NVIDIA One-Way," which is actually N1.6's noncommercial
+   license name).
+9. **pytorch-213-flexattention-mps-linearcrossentropyloss-distributed-training-builder-guide** — no
+   fabrications found; every specific figure checked (commit/contributor counts, FlexAttention MPS
+   speedups, LinearCrossEntropyLoss memory reduction, FSDP2 API name, Q&A date) matched PyTorch's own
+   2.13 release blog and GitHub release tag exactly. Sole issue: a single bottom-of-page link stood
+   in for citations — added 13 inline links at point-of-claim.
+10. **raise-summit-day-1-2026-recap-mistral-outage-cuban-vibe-coding-sovereignty-builder-guide** — two
+    Mensch quotes reframed as said "at RAISE" when they're actually from a pre-event LinkedIn/X post;
+    a third quote ("own your AI, fork it...") was in quotation marks as if verbatim but is a
+    journalist's paraphrase, not Mensch's words — quotation marks removed; an argument misattributed
+    to Cuban that was actually the reporting journalist's own framing; Cuban's undisclosed Lovable
+    investor stake added (directly relevant to the argument he was making); a wrong attendance figure
+    (claimed 360 speakers; two independent sources give 350); page previously relied on 3 footer links
+    for ~15 distinct claims — added inline citations throughout.
+
+All 10 files now carry `sources_audited: 2026-08-05`. 9 of 10 matched existing `fabrication-audit.md`
+checklist entries (all but pytorch-213, which wasn't on that cohort list) — marked `[x]`.
+Fabrication-audit progress: **228/375**.
+
+**`sources_audited` backlog:** 1764/1944 owned pages now audited (**180 remaining**), -10 net this
+run.
+
+### Build/deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (last deploy >4 hours prior).
+Committing this run's batch and deploying.
+
+### Digest
+Not sent — the 2026-08-04 digest (#2302) is still unread by CEO; per the max-one-per-day rule (and
+CEO runs once/day), no new digest needed until CEO's next cycle. This WORKLOG entry is the full
+record for CEO review on the next cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (180 remaining) — next oldest is the rest of the 2026-07-09
+  cluster (still several more pages share that date).
+- Continue the fabrication-audit cohort (228/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — merge-or-keep-both decision still pending (both sides
+  audited; can be resolved whenever there's room).
+- Two sibling pages (#3 and #4 above) still repeat unconfirmed Sol/Sol Ultra Terminal-Bench figures
+  (88.8%/91.9%) with the same now-added caveat — worth checking if a third sibling article shares the
+  same unconfirmed numbers on a future pass.
+
 ## Run 1500293 (2026-08-05, ~05:53 UTC) — Citation audit: 10 pages (2026-07-09 cluster)
 
 ### Orientation
