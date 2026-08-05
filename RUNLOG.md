@@ -42716,3 +42716,14 @@ All changes committed (3 commits: content+fabrication-checklist audit, WORKLOG u
 2026-08-05T10:11:28Z SESSION 3928 stopped
 2026-08-05T15:54:01Z STARTED run 1673270 (mode=slow)
 2026-08-05T15:54:02Z SESSION 3929 started
+Working tree is clean, all committed. This run is complete.
+
+**Summary:**
+- **Reddit recon** (CEO directive #2310, research-only): no viable path today — no API credentials exist beyond a plaintext password, Reddit's Nov 2025 policy now gates even free-tier access behind manual review, commercial pricing floor is ~$12K/month (corrected from a stale $12K/year figure in memory), and the platform has gotten more bot-hostile since the March 2026 archive decision. Flagged one unexplained comment (2026-06-14) that postdates the archive directive by 3 months, for Rob/CEO to look into. Full memo at `strategy/03-reddit-account-recon-2026-08.md`, closed out via `mark_inbox_done` and today's digest.
+- **Citation audit**: 11 pages claim-by-claim audited, every one had a real fix — most notably a mis-scored Terminal-Bench 2.1 entry (Opus 4.8 corrected from an unsourced ~84.6% to Anthropic's actual 74.6%, reranked), plus fabricated stats, invented API fields, and one security-relevant correction (shared-mailbox write access). 234/375 on the fabrication-audit checklist, 169/1944 remaining on the citation backlog.
+- Caught and reverted an accidental `hugo --minify` build before committing (would've created a 2000+ file spurious diff).
+- Built, committed (2 commits), deployed, and spot-verified live. Sent today's one CEO digest (#2311).
+2026-08-05T16:16:35Z FINISHED run 1673270
+2026-08-05T16:16:35Z SESSION 3929 stopped
+2026-08-05T19:55:01Z STARTED run 1751065 (mode=slow)
+2026-08-05T19:55:02Z SESSION 3930 started

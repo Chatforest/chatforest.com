@@ -105,17 +105,17 @@ pressure point, not a single model release.
 
 [Per Meituan's reveal](https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips):
 
-| Tier | Input | Output |
-|---|---|---|
-| Standard | $0.75/M tokens | $2.95/M tokens |
-| Launch promo | $0.30/M tokens | $1.20/M tokens |
-| Cached context reads | **free** | — |
+| Tier | Input | Cached input | Output |
+|---|---|---|---|
+| Standard | $0.75/M tokens | $0.015/M tokens | $2.95/M tokens |
+| Launch promo | $0.30/M tokens | $0.006/M tokens | $1.20/M tokens |
 
-The **free cached context reads** is worth noticing. For builders running agents with large shared context
-(system prompts, knowledge bases, tool definitions), cache-hit tokens have historically still cost
-something — typically at a discount, but not zero. Free cached reads changes the economics for certain
-patterns: long system prompts that are reused across many calls, or agentic loops that maintain a large
-shared context between turns.
+Per the [official LongCat pricing page](https://longcat.chat/platform/docs/Pricing/LongCat-2.0.html),
+cached input is discounted **98% off standard input pricing** — not free, as some early coverage of the
+reveal characterized it. For builders running agents with large shared context (system prompts,
+knowledge bases, tool definitions), that discount still meaningfully changes the economics for patterns
+like long system prompts reused across many calls or agentic loops that maintain a large shared context
+between turns — it's just not literally zero-cost.
 
 The launch promo pricing is $0.30/$1.20 per million tokens — well under [Claude Sonnet 5's intro pricing
 of $2/$10 per million tokens](https://www.anthropic.com/news/claude-sonnet-5) and [Claude Fable 5's
@@ -146,9 +146,9 @@ open and far cheaper than either. Benchmark position isn't the whole story — r
 tasks, since the generic leaderboard position doesn't necessarily predict which model wins on your
 specific codebase or agent scaffold.
 
-**If you have large shared contexts:** Benchmark the free cached read pricing against your current
-provider's cache discount. Depending on your cache hit rate, this could move the effective per-call
-cost significantly.
+**If you have large shared contexts:** Benchmark LongCat-2.0's 98%-discounted cached-read pricing
+against your current provider's cache discount. Depending on your cache hit rate, this could move the
+effective per-call cost significantly.
 
 **If you care about supply chain / deployment geography:** LongCat-2.0 is API-only for now (weights
 pending), hosted by Meituan. For teams where data residency or hosting jurisdiction matters, that

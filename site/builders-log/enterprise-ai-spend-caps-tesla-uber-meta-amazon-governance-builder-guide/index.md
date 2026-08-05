@@ -3,7 +3,7 @@
 > Tesla, Uber, Meta, Amazon, and Walmart have all capped employee AI spending in 2026. The root cause is token-based billing replacing flat subscriptions. Here's what the governance shift means for builders who sell AI tools to enterprises.
 
 
-Uber burned through its entire 2026 AI budget by April. Tesla is capping employees at $200 per week starting July 6 — with a carve-out for Grok that its own engineers didn't ask for. Meta is fighting a practice its CTO called "tokenmaxxing." Amazon scrapped its internal AI adoption leaderboard after engineers started gaming it. Walmart is rationing tokens for Code Puppy.
+Uber burned through its entire 2026 AI budget by April. Tesla is capping employees at $200 per week starting July 6 — with a carve-out for Grok that its own engineers didn't ask for. Meta is fighting a practice employees dubbed "tokenmaxxing," which its CTO told staff to stop. Amazon scrapped its internal AI adoption leaderboard after engineers started gaming it. Walmart is rationing tokens for Code Puppy.
 
 Five companies. Same problem. The bill for "just let people experiment" came due.
 
@@ -15,7 +15,7 @@ This isn't a story about enterprise reluctance. These companies spent aggressive
 
 ### Tesla — $200/Week with a Grok Carve-Out
 
-Tesla's AI spending cap took effect July 6, 2026. The number is $200 per week per employee — roughly $800 a month. The rationale is straightforward: before the cap, some software engineers were spending thousands of dollars in tokens weekly.
+[Tesla's AI spending cap took effect July 6, 2026](https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/). The number is $200 per week per employee — roughly $800 a month. The rationale is straightforward: before the cap, some software engineers were [spending "thousands of dollars' worth of tokens each week"](https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/).
 
 The notable detail is what's exempt: beta versions of xAI products, including Grok, aren't subject to the limit. That's a carve-out Tesla leadership built in, not one engineers requested. [Electrek reports](https://electrek.co/2026/07/02/tesla-caps-employee-ai-spending-200-week/) Tesla engineers largely prefer Anthropic's Claude.
 
@@ -23,29 +23,29 @@ The competitive lesson here isn't flattering to builders: at the enterprise leve
 
 ### Uber — $1,500/Month After Burning the Annual Budget in Four Months
 
-Uber is the most dramatic case because it was first and most public. CTO Praveen Neppalli Naga confirmed the company had used its entire 2026 AI budget by April — four months into the year. The cap that followed was $1,500 per month per employee, applied to tools including Claude Code and Cursor.
+Uber is the most dramatic case because it was first and most public. [CTO Praveen Neppalli Naga confirmed](https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/) the company had used its entire 2026 AI budget by April — four months into the year, saying the company was "back to the drawing board" on its assumptions. The cap that followed was [$1,500 per month per employee, per tool, applied to agentic coding tools including Claude Code and Cursor](https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/).
 
-Being the first Fortune 500 to publicly admit AI budget loss of control carries its own lesson: the companies that moved fastest got the biggest bill.
+Uber's public admission of AI budget loss of control carries its own lesson: the companies that moved fastest got the biggest bill.
 
 ### Meta — Approaching Billions, Coined "Tokenmaxxing"
 
-Meta CTO Andrew Bosworth introduced the term "tokenmaxxing" — the practice of employees running up AI usage metrics for gamified leaderboard credit rather than genuine productivity. When your company's internal AI usage is approaching billions of dollars, you audit what you're getting for it. Meta's response was spending controls on employee use of outside AI tools alongside heavier internal investment in its own infrastructure.
+Meta employees [built an internal leaderboard called "Claudeonomics"](https://fortune.com/2026/04/09/meta-killed-employee-ai-token-dashboard/) that ranked the company's roughly 85,000 workers by token consumption, with some staff instructing agents to run multiple tasks at once purely to climb the rankings — a practice that came to be called "tokenmaxxing." [Meta CTO Andrew Bosworth pushed back on the practice in an internal memo](https://the-decoder.com/meta-shifts-from-tokenmaxxing-to-token-managing-as-internal-ai-costs-reportedly-hit-billions/): "Nobody should be using AI tools just for the sake of using them. All motion is not progress and token usage alone is not a measure of impact of any kind." An internal memo sent to roughly 6,000 employees [flagged an "exponential increase" in AI usage and warned the company faced billions of dollars in internal AI costs](https://the-decoder.com/meta-shifts-from-tokenmaxxing-to-token-managing-as-internal-ai-costs-reportedly-hit-billions/). Meta's response was spending controls on employee use of outside AI tools alongside heavier internal investment in its own infrastructure.
 
 The leaderboard detail is important for builders: any tool with a usage dashboard can create the same incentive. Design for value delivery, not raw usage volume.
 
 ### Amazon — The Leaderboard That Backfired
 
-Amazon rolled out internal adoption metrics for AI tools and watched engineers begin gaming them — using AI agents primarily to climb the ranking rather than to do work. Amazon warned employees to stop using AI "for the sake of using it" and scrapped the leaderboard structure. The lesson is the same as Meta's: when you instrument adoption and tie recognition to it, you measure gaming, not value.
+Amazon rolled out an internal adoption dashboard called ["KiroRank"](https://www.storyboard18.com/how-it-works/amazon-shuts-down-internal-ai-leaderboard-after-employees-inflate-usage-driving-up-costs-99782.htm) for its Kiro AI coding tool and watched engineers begin gaming it — feeding trivial or fabricated tasks into the tool primarily to climb the ranking rather than to do work. Amazon SVP [Dave Treadwell told staff](https://www.storyboard18.com/how-it-works/amazon-shuts-down-internal-ai-leaderboard-after-employees-inflate-usage-driving-up-costs-99782.htm), "Please don't use AI just for the sake of using AI," and the company scrapped the leaderboard, saying it "was not a formal or approved tool." The lesson is the same as Meta's: when you instrument adoption and tie recognition to it, you measure gaming, not value.
 
 ### Walmart — Capping Code Puppy Tokens
 
-Walmart built its own internal coding agent called Code Puppy, and then had to cap the token usage when adoption surged. Even fully internal tools face the same cost structure once they're running at scale. Walmart's approach — building the tool, deploying it, then capping it when costs ran ahead of projections — is a preview of the governance cycle that any large organization deploying AI will go through.
+Walmart built its own internal AI assistant called [Code Puppy](https://www.retail-systems.com/rs/Walmart_Caps_AI_Tool_Access_After_Employee_Demand_Exceeds_Budget.php), and in June 2026 [moved it from unrestricted access to a fixed per-employee token allocation](https://www.retail-systems.com/rs/Walmart_Caps_AI_Tool_Access_After_Employee_Demand_Exceeds_Budget.php) after employee demand outpaced budget projections. Even fully internal tools face the same cost structure once they're running at scale. Walmart's approach — building the tool, deploying it, then capping it when costs ran ahead of projections — is a preview of the governance cycle that any large organization deploying AI will go through.
 
 ---
 
 ## Why This Is Happening Now
 
-The root cause is a pricing structure shift. Anthropic, OpenAI, and other providers moved enterprise customers from flat subscription tiers to token-based billing over the past eighteen months. Per-token pricing was good for providers (it scales with actual usage) and initially felt fair to buyers (you only pay for what you use). But it made cost invisible at the point of use — until it wasn't.
+The root cause is a pricing structure shift. Through late 2025 and into 2026, [Anthropic restructured its enterprise plans to unbundle Claude, Claude Code, and Cowork from flat seat fees](https://www.implicator.ai/anthropic-shifts-enterprise-billing-to-per-token-pricing-the-flat-fee-era-is-over/), moving customers to per-token billing at standard API rates, and [OpenAI shifted Codex from flat-message pricing to token metering in early April 2026](https://www.implicator.ai/anthropic-shifts-enterprise-billing-to-per-token-pricing-the-flat-fee-era-is-over/). Per-token pricing was good for providers (it scales with actual usage) and initially felt fair to buyers (you only pay for what you use). But it made cost invisible at the point of use — until it wasn't.
 
 When engineers ran Claude Code all day on a $20/month subscription, the company had predictable costs. When the same usage became per-token, usage growth showed up as a line item in someone's budget report. Every developer who spun up an agent was now spending company money in a way that could be measured.
 
@@ -73,7 +73,7 @@ If you're building an enterprise AI product, offering a per-seat tier with predi
 
 ### Task Routing by Cost Is Becoming a Competitive Differentiator
 
-Oracle, AWS, and several emerging model router products are building tooling that sends tasks to the cheapest capable model automatically. A simple code completion doesn't need Opus. A complex multi-step agent task might. Dynamic routing by task complexity can reduce per-token costs by 40–70% while maintaining output quality on the tasks where it matters.
+[AWS's Amazon Bedrock Intelligent Prompt Routing](https://aws.amazon.com/blogs/aws/reduce-costs-and-latency-with-amazon-bedrock-intelligent-prompt-routing-and-prompt-caching-preview/) and a growing set of third-party model-router products are built on this idea: send tasks to the cheapest model that can actually handle them. A simple code completion doesn't need Opus. A complex multi-step agent task might. AWS says its own router — which picks between models in the same family, like Claude 3.5 Sonnet versus Claude 3 Haiku, based on prompt complexity — [can cut costs by up to 30% without compromising accuracy](https://aws.amazon.com/blogs/aws/reduce-costs-and-latency-with-amazon-bedrock-intelligent-prompt-routing-and-prompt-caching-preview/); more aggressive routing strategies across a wider range of models can save more, though the exact number depends heavily on the task mix.
 
 If you're building an agent-based product, model routing by cost-complexity tradeoff is now closer to a requirement than a feature. Enterprises will ask for it. If your product doesn't do it, theirs will — through a layer they put on top of yours.
 

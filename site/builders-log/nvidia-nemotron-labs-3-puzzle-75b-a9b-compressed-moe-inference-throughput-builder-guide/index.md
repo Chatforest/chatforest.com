@@ -5,25 +5,25 @@
 
 Serving large Mixture-of-Experts models is expensive. The math is simple and brutal: more total parameters means more GPU memory to load, more communication overhead per request, and lower concurrency at any fixed hardware budget — even when most weights are skipped at inference time.
 
-On July 9, 2026, NVIDIA released **Nemotron-Labs-3-Puzzle-75B-A9B**, a compressed version of Nemotron-3-Super (120B parameters, 12.8B active) built using a framework they call **Iterative Puzzle**. The headline number is **2.03× server throughput** on decode-heavy workloads at matched user-latency constraints, achieved by reducing the model to 75.3B total / 9.3B active parameters.
+On July 9, 2026, NVIDIA released [**Nemotron-Labs-3-Puzzle-75B-A9B**](https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16), a compressed version of Nemotron-3-Super (120.7B parameters, 12.8B active) built using a framework they call **Iterative Puzzle**, detailed in [NVIDIA's technical paper](https://arxiv.org/abs/2607.04371). The headline number is **2.03× server throughput** on decode-heavy workloads at matched user-latency constraints, achieved by reducing the model to 75.3B total / 9.3B active parameters ([source](https://arxiv.org/abs/2607.04371)).
 
 This is a deployment-efficiency story, not a capability story. Here is what you need to know before routing traffic to it.
 
 ## What Changed in the Compression
 
-Nemotron-3-Super has 88 blocks with a hybrid architecture: 40 Mamba state-space layers, 40 Mixture-of-Experts layers, and 8 dense Attention layers. Puzzle keeps this exact block topology — it does not rearrange the architecture. Instead, it reduces internal capacity across three axes simultaneously:
+Nemotron-3-Super has 88 blocks with a hybrid architecture: 40 Mamba state-space layers, 40 Mixture-of-Experts layers, and 8 dense Attention layers ([NVIDIA, arXiv:2607.04371](https://arxiv.org/abs/2607.04371)). Puzzle keeps this exact block topology — it does not rearrange the architecture. Instead, it reduces internal capacity across three axes simultaneously:
 
-- **MoE expert pruning**: Ranks expert contributions and prunes to uniform sizes within each MoE layer. The routing budget drops from up to 22 active experts per token down to 4–18.
+- **MoE expert pruning**: Ranks expert contributions and prunes to uniform sizes within each MoE layer. The routing budget drops from up to 22 active experts per token down to 4–18 ([source](https://arxiv.org/abs/2607.04371)).
 - **Top-k reduction**: Fewer experts per token per layer, which cuts active parameter count even before quantization.
-- **Mamba SSM pruning**: Reduces the state-space dimension from 128 to 96 channels per Mamba layer.
+- **Mamba SSM pruning**: Reduces the state-space dimension from 128 to 96 channels per Mamba layer ([source](https://arxiv.org/abs/2607.04371)).
 
-The compression is done in three staged phases totaling 120B distillation tokens, alternating bounded compression with short knowledge distillation recovery. After compression, the model goes through reinforcement learning fine-tuning and gains a **Multi-Token Prediction (MTP) head** — averaging 4.34 tokens per decode step at depth 7, which compounds the throughput gains on top of the parameter reduction.
+The compression is done in three staged phases totaling 120B distillation tokens (24B + 43.2B + 52.8B across the three stages, [per the paper](https://arxiv.org/abs/2607.04371)), alternating bounded compression with short knowledge distillation recovery. After compression, the model goes through reinforcement learning fine-tuning and gains a **Multi-Token Prediction (MTP) head** — averaging 4.34 tokens per decode step at a draft depth of 7 ([Table 5, arXiv:2607.04371](https://arxiv.org/abs/2607.04371)), which compounds the throughput gains on top of the parameter reduction.
 
 The attention layers are **not pruned** at all, which is why KV cache per-request cost is unchanged relative to Super.
 
 ## The Throughput Numbers
 
-All benchmarks are on an 8×B200 node (decode-heavy workload: 8K input tokens, 64K output tokens):
+All benchmarks are on an 8×B200 node (decode-heavy workload: 8K input tokens, 64K output tokens), per [NVIDIA's Iterative Puzzle paper](https://arxiv.org/abs/2607.04371):
 
 | User-throughput constraint | Server throughput gain vs. Super |
 |---|---|
@@ -33,32 +33,32 @@ All benchmarks are on an 8×B200 node (decode-heavy workload: 8K input tokens, 6
 
 The gap between decode-heavy and prefill-heavy scenarios is the key nuance here. Puzzle's gains come primarily from fewer parameters to load per decode step. When prefill dominates — long-input summarization, document indexing, large-context ingestion — the advantage shrinks because compute is bottlenecked on reading the prompt, not on generating tokens.
 
-**1M-token single-GPU concurrency**: On a single H100-80GB, Puzzle increases sustainable concurrent requests at 1M-token context from **1 to 8**. This is the more dramatic number for long-context RAG use cases where the bottleneck is fitting the KV cache, not decoding speed.
+**1M-token single-GPU concurrency**: On a single H100-80GB, Puzzle increases sustainable concurrent requests at 1M-token context from **1 to 8** ([source](https://arxiv.org/abs/2607.04371)). This is the more dramatic number for long-context RAG use cases where the bottleneck is fitting the KV cache, not decoding speed.
 
 ## Memory Footprint
 
 | Format | Weight memory |
 |---|---|
-| Nemotron-3-Super BF16 | ~70 GB |
-| Puzzle BF16 | ~44.5 GB (−36%) |
-| Puzzle NVFP4 (W4A4, Blackwell) | ~44.5 GB listed but significantly lower in practice |
+| Nemotron-3-Super NVFP4 | ~70 GB |
+| Puzzle NVFP4 (W4A4, Blackwell) | ~44.5 GB (−36%) |
+| Puzzle BF16 | ~150 GB (75.3B params × 2 bytes/param — full precision, not separately published by NVIDIA) |
 
-The NVFP4 variant targets Blackwell (B200) GPUs and uses max calibration rather than the full AutoQuantize sensitivity search. The FP8 W8A8 variant targets Hopper (H100). KV cache is FP8 across both quantized versions.
+These NVFP4 figures come directly from [NVIDIA's paper](https://arxiv.org/abs/2607.04371), which states Super's weights occupy ~70GB at NVFP4 versus ~44.5GB for Puzzle. The NVFP4 variant targets Blackwell (B200) GPUs and uses max calibration rather than the full AutoQuantize sensitivity search used for Super's own NVFP4 checkpoint; the FP8 W8A8 variant targets Hopper (H100) and follows the same PTQ recipe as Super's FP8 release. KV cache is quantized to FP8 across both quantized versions ([source](https://arxiv.org/abs/2607.04371)).
 
 ## What You Give Up: Benchmark Delta vs. Super
 
-Puzzle preserves most of the parent model's quality, but the losses are not evenly distributed:
+Puzzle preserves most of the parent model's quality, but the losses are not evenly distributed. Figures below are BF16-precision scores from [NVIDIA's Iterative Puzzle paper](https://arxiv.org/abs/2607.04371):
 
 | Benchmark | Nemotron-3-Super | Puzzle | Delta |
 |---|---|---|---|
-| Arena-Hard-V2 | ~72.8 | 68.6 | **−4.2** |
-| SWE-Bench | ~N/A | — | **−2.6** |
-| AIME25 | ~92.2 | 89.7 | **−2.5** |
-| MMLU-Pro | ~83.8 | 82.4 | **−1.4** |
-| RULER @ 1M tokens | ~93.9 | 92.2 | **−1.7** |
-| RULER @ 256K | ~96.4 | 95.1 | **−1.3** |
+| Arena-Hard-V2 | 72.8 | 68.6 | **−4.2** |
+| SWE-Bench (OpenHands) | 59.5 | 56.9 | **−2.6** |
+| AIME25 | 92.2 | 89.7 | **−2.5** |
+| MMLU-Pro | 83.8 | 82.4 | **−1.4** |
+| RULER @ 1M tokens | 93.9 | 92.2 | **−1.7** |
+| RULER @ 256K | 96.7 | 95.1 | **−1.6** |
 
-Short-context KD recovers most categories to over 97% of Super's scores. The outsized loss in Arena-Hard-V2 (instruction-following quality) and SWE-Bench (software engineering task completion) is where the routing budget reduction hurts most — tasks that require multi-step reasoning with precise instruction adherence.
+Short-context KD recovers most categories to over 97% of Super's scores ([source](https://arxiv.org/abs/2607.04371)). The outsized loss in Arena-Hard-V2 (instruction-following quality) and SWE-Bench (software engineering task completion) is where the routing budget reduction hurts most — tasks that require multi-step reasoning with precise instruction adherence.
 
 ## How to Deploy
 
@@ -112,7 +112,7 @@ The NVFP4 variant is the one that delivers the headline throughput numbers on 8�
 
 ## License
 
-Nemotron-Labs-3-Puzzle-75B-A9B is released under the **OpenMDW License Agreement v1.1**, which permits commercial use. This is the same license as Nemotron-3-Super. Review the full license before deploying in production — particularly the acceptable use policy, which NVIDIA inherited from its foundation model agreements.
+Nemotron-Labs-3-Puzzle-75B-A9B is released under the [**OpenMDW License Agreement, version 1.1**](https://openmdw.ai/license/1-1/) ([per the model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-FP8)), which permits commercial use. Note this is **not** the same license as its parent: Nemotron-3-Super is released under the separate [NVIDIA Nemotron Open Model License](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-nemotron-open-model-license/), while Puzzle-75B-A9B is one of the models NVIDIA has moved to the Linux Foundation's [OpenMDW license](https://www.linuxfoundation.org/press/linux-foundation-releases-openmdw-1.1-nvidia-adopts-openmdw-for-cosmos-isaac-gr00t-ising-and-nemotron-ai-model-families). Review the applicable license for whichever checkpoint you deploy before shipping to production.
 
 ## When to Use Puzzle vs. Super
 
@@ -138,7 +138,7 @@ What makes it noteworthy for builders is not just this one model. NVIDIA publish
 
 Nemotron-Labs-3-Puzzle-75B-A9B is the right call when your bottleneck is **serving cost on decode-heavy workloads**. It cuts hardware requirements significantly, roughly doubles interactive throughput on Blackwell, and keeps long-context performance near parity with its 120B parent.
 
-The trade-off is real but specific: instruction-following quality drops ~4 points on Arena-Hard-V2, and agentic task performance drops ~2.5 points on SWE-Bench. For coding assistants, long-context RAG, and high-concurrency inference pipelines, that trade-off is likely acceptable. For agentic pipelines where the model is making multi-step tool-use decisions, stay with Super.
+The trade-off is real but specific: instruction-following quality drops ~4 points on Arena-Hard-V2, and agentic task performance drops ~2.6 points on SWE-Bench. For coding assistants, long-context RAG, and high-concurrency inference pipelines, that trade-off is likely acceptable. For agentic pipelines where the model is making multi-step tool-use decisions, stay with Super.
 
 Weights are available now on Hugging Face in BF16, FP8, and NVFP4 formats. The license is commercially permissive. If you have H100 or B200 hardware and are serving anything decode-heavy, this is worth benchmarking against your current stack.
 

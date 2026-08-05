@@ -129902,3 +129902,125 @@ rule, no second digest sent — this WORKLOG entry is the full record for CEO re
   audited, so this can be resolved whenever there's room).
 - Worth checking on next pass: the two `snaplogic-mcp-builder` pages in the 2026-07-05 cluster look
   like they may be another near-duplicate pair (same MCP-Builder-Enterprise-Integration topic).
+
+## Run 4064xxx (2026-08-05, UTC ~19:55-21:0X)
+
+### Orientation
+No pending inbox messages requiring action — only my own 2026-08-05 CEO digest (#2311) still
+showing unread from the CEO's side. Confirmed via `date -u` that real UTC time is 2026-08-05 (not
+08-06 as one context field suggested). Monthly citation spot-audit already done this month (Run
+3914224, 2026-08-01) — not due again until September. Not a UTC Tuesday, so the Dispatch-plug
+reservation script correctly returned `NOT_TUESDAY`.
+
+### Citation audit — 10 pages (2026-07-10/07-11 cluster)
+Selected the 10 oldest unaudited pages by front-matter `date` (169 remaining backlog, excluding
+RingS's `/ai/` section). Dispatched all 10 to parallel claim-by-claim audit agents. Every single one
+found and fixed a real issue:
+
+1. **enterprise-ai-spend-caps-tesla-uber-meta-amazon-governance-builder-guide** — misquoted Amazon
+   SVP Dave Treadwell ("for the sake of using it" → real quote "just for the sake of using AI");
+   misattributed Meta's "tokenmaxxing" term to CTO Andrew Bosworth (he pushed back on it; employees
+   coined it via the "Claudeonomics" leaderboard); an unsupported "40-70% cost reduction" routing
+   stat replaced with AWS's own published "up to 30%" figure; dropped an unsupported Oracle claim;
+   removed an unverifiable "first Fortune 500 to admit AI budget loss of control" superlative. Added
+   inline citations for Tesla's $200/week cap, Uber's $1,500/tool cap, Meta's Claudeonomics
+   leaderboard, Amazon's KiroRank, and Walmart's Code Puppy cap — all previously relying on a single
+   end-of-article link dump.
+2. **meta-muse-spark-1-1-api-launch-meta-model-api-agentic-tool-use-builder-guide** — worst error
+   count in this batch (40 citations added, up from a handful): wrong competitor pricing (Opus 4.8
+   listed at $15/$75, actually $5/$25; Haiku 4.5 listed at $0.80/$4.00, actually $1.00/$5.00);
+   GPT-5.6 Sol's 80-score was from the unrelated Artificial Analysis Coding Agent Index, not
+   Terminal-Bench (real Terminal-Bench score: 88.8%); a false "we're the only one with native web
+   search" claim when Claude and GPT-5.6 both ship an equivalent built-in tool; stale GPT-5.6
+   Terra/Luna pricing (cut July 30, noted with an update); an imprecise "first frontier model"
+   claim (Muse Spark 1.1 is MSL's second model, not first).
+3. **nvidia-nemotron-labs-3-puzzle-75b-a9b-compressed-moe-inference-throughput-builder-guide** — a
+   memory table mislabeled BF16 that was actually NVFP4 (70GB/44.5GB); a false claim that the model
+   shares Nemotron-3-Super's license (it doesn't — OpenMDW-1.1 vs. NVIDIA's own Open Model License,
+   confirmed via both HF model cards); two wrong RULER@256K benchmark numbers; a SWE-Bench row that
+   displayed a delta with no visible source values, filled in from the primary arXiv paper.
+4. **nvidia-nemotron-labs-diffusion-tri-mode-self-speculation-6x-throughput-builder-guide** — a real
+   stat-fusion error matching the exact failure mode the standing duty warns about: a "2.4-3.3x
+   speedup" figure silently mixed numbers from two different baselines (standard AR vs. Eagle3).
+   Corrected to the accurate AR-baseline range with the Eagle3 comparison explicitly separated. Also
+   fixed vague uncited hardware bullets and an unsupported license-permits-commercial-use claim.
+5. **omnigent-meta-harness-claude-code-codex-cursor-compose-govern-coding-agents-builder-guide** —
+   premise independently verified as real (Databricks open-sourced Omnigent, June 2026, Apache 2.0).
+   Page had only 1 link for ~150 lines of specific architecture/policy claims; added 10 inline
+   citations to Databricks' own blog, GitHub, PyPI, and docs. No fabrications found.
+6. **openai-gpt-5-6-sol-ga-july-9-api-surface-programmatic-tool-calling-builder-guide** — a
+   fabricated API parameter (`reasoning.mode: 'ultra'` — OpenAI's real API only supports
+   `standard`/`pro` for that field; Ultra mode is actually a separate `multi_agent.enabled` beta
+   flag); an 88.0% benchmark figure that three independent sources attributed to three different
+   models — cut per "cite it or cut it" rather than guess; stale Terra/Luna pricing noted; a wrong
+   ChatGPT plan-access claim corrected.
+7. **openai-gpt-live-1-full-duplex-voice-architecture-api-builder-guide** — premise verified real
+   (GPT-Live-1 replaced ChatGPT's Advanced Voice Mode, July 8 2026). Found a fabricated quote
+   ("one interaction decision per frame" — OpenAI's real wording has no "per frame" phrasing) and an
+   unsourced ~190ms latency figure that traced to no actual OpenAI source — deleted rather than left
+   uncited.
+8. **sk-hynix-skhy-nasdaq-debut-hbm-ai-memory-supply-chain-builder-guide** — a stat-fusion error in
+   the page's own math: claimed "$28.07 billion raised" while the body's own numbers (177.9M ADSs ×
+   $149) multiply to $26.5B, matching TechCrunch/Bloomberg/CNBC's actual-raise reporting — the
+   page had conflated the F-1 filing's pre-pricing estimate (~$28B) with the post-pricing actual
+   raise. Also fixed a wrong fab attribution (Cheongju M15X → Icheon M16) and a false "Samsung's
+   HBM4 timeline remains uncertain" claim (Samsung began HBM4 shipments in Feb 2026). Diffed against
+   the sibling `-29-billion-` filing-stage page: confirmed NOT a duplicate (different pipeline
+   stages, correctly dated days apart) — logged and resolved in `duplicate-clusters.md`.
+9. **vscode-1-128-multi-chat-claude-agents-subagent-monitoring-parallel-workflow-builder-guide** —
+   fabricated Claude model names ("Luna" and "Sol" chats — neither exists in Anthropic's real
+   lineup; replaced with Haiku/Opus/Sonnet 5); an unsupported "GA means on by default" claim deleted;
+   added the still-current "(Preview)" flag VS Code's own docs carry for the subagent feature; six
+   precise anchor-linked citations added to the primary VS Code release notes.
+10. **agentprizm-agentmemory-agentskills-governed-persistence-mcp-builder-guide** — premise verified
+    real (VUGA Enterprises' AgentPrizm, launched via a July 9 2026 press release). Went from 1
+    citation to ~20. Fixed a false "cryptographically signed receipt" claim (no signature field in
+    the live API schema), stale pricing ($16/$66/$208 → current $19/$79/$249), and a wrong
+    "private skills require paid tier" claim (free Hobby tier includes 10).
+
+All 10 files now carry `sources_audited: 2026-08-05`. 3 of 10 matched existing `fabrication-audit.md`
+checklist entries (sk-hynix-skhy-nasdaq-debut, agentprizm-agentmemory, meta-muse-spark-1-1) — marked
+`[x]`. Fabrication-audit progress: **236/375**.
+
+**`sources_audited` backlog:** 1785/1944 owned pages now audited (**159 remaining**), -10 net this
+run.
+
+### Duplicate clusters
+Resolved the LongCat-2.0/Owl Alpha pair (both audited, kept both — different technical vs. policy
+angles) while agents ran: found and fixed a real error along the way — one page claimed cached
+tokens were "free" (sourced only to secondary VentureBeat coverage); LongCat's own pricing page says
+98% discounted, not free. Corrected.
+
+Also resolved a new pair the sk-hynix audit agent surfaced: the $29B filing-stage page vs. the $28B/
+$26.5B debut-day page. Confirmed not a duplicate (different pipeline stages, correctly dated days
+apart) — moved from the agent's initial "Open clusters" filing into "Resolved clusters" in
+`duplicate-clusters.md` for consistency with the file's own structure.
+
+Two clusters remain open and undiffed: Claude Apps Gateway (3 pages, one still unaudited) and
+Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet audited/diffed).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-05 01:54 UTC). No post this run, hard
+daily cap respected. Tuesday-reservation check correctly returned `NOT_TUESDAY` (today is Wednesday).
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (last deploy ~3h53m prior). Deployed
+via rsync; spot-verified 2 corrected pages live (Nemotron diffusion Eagle3 distinction, Muse Spark
+Opus 4.8 $5/$25 pricing fix).
+
+### Digest
+Already sent today's CEO digest this UTC day (#2311, sent 2026-08-05 16:16). Per the max-one-per-day
+rule, no second digest sent — this WORKLOG entry is the full record for CEO review on the next cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (159 remaining) — next oldest is the rest of the 2026-07-11
+  cluster (dated 2026-07-11): `ai-agents-deleting-home-directories-rm-rf-gpt56sol-claude-cli-tilde-
+  expansion-sandbox-builder-guide`, `apple-openai-trade-secret-lawsuit-io-products-tang-tan-ios-
+  chatgpt-builder-guide`, `cambridge-casp-boko-haram-iswap-ai-specialist-units-weapons-planning-
+  safeguards-juelich-builder-guide`, `chatgpt-work-week-one-postmortem-usage-pool-compute-confusion-
+  builder-fix`, `claude-code-v2-1-207-shell-injection-plugin-breaking-changes-auto-mode-bedrock-
+  builder-guide`, and others in that cluster.
+- Continue the fabrication-audit cohort (236/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Two duplicate clusters still open: Claude Apps Gateway (3 pages, one unaudited) and Sonnet 5
+  launch/agentic upgrade (4+ pages, 2 not yet audited/diffed) — resolve one when there's room.

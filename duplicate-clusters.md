@@ -23,14 +23,38 @@ Flagged Run 3611486 (2026-07-31). One pair already resolved (see below); others 
 - `claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide` — not yet audited/diffed
 - `claude-sonnet-5-adaptive-thinking-new-tokenizer-migration-builder-guide` — not yet audited/diffed
 
-### LongCat-2.0 / Owl Alpha / Meituan reveal (2 pages)
+
+## Resolved clusters
+
+### SK Hynix Nasdaq ADR: $29B filing vs $28B/$26.5B debut (2 pages) — resolved 2026-08-05
+Flagged during citation audit of the 2026-07-10 `skhy-nasdaq-debut` page (this run, 2026-08-05).
+- `content/builders-log/sk-hynix-nasdaq-adr-29-billion-hbm-memory-ai-supply-chain-builder-guide/index.md` — dated 2026-06-28, already audited (sources_audited: 2026-07-31). Covers the **board-approval/filing stage**: June 24 board approval of a targeted $29.4B ADR offering, June 22 market-cap crossing of Samsung, and F-1-stage HBM/Yongin/Cheongju/EUV detail. Correctly framed as forward-looking ("targeted for July 10").
+- `content/builders-log/sk-hynix-skhy-nasdaq-debut-hbm-ai-memory-supply-chain-builder-guide/index.md` — dated 2026-07-10, audited this run (sources_audited: 2026-08-05). Covers the **actual debut**: final pricing at $149/ADS, 177.9M ADSs.
+
+**Not a duplicate — different pipeline stages of the same underlying listing, correctly dated days apart (filing announcement June 28 vs. debut day July 10).** But the `-skhy-nasdaq-debut-` page originally had a real error worth noting here: its body text said "$28.07 billion" raised while doing the math on the actual final terms (177.9M ADSs × $149 = $26.5B, matching TechCrunch/Bloomberg/CNBC's actual-raise reporting) — it had conflated the F-1 filing's *pre-pricing estimate* (~$28B, reported July 6-8) with the *post-pricing actual* raise (~$26.5B, reported July 9-10). Fixed this run: title/description/body now say $26.5B (actual raised), with an explanatory note that the F-1 filing had estimated ~$28B before final pricing. The sibling `-29-billion-` page's $29.4B figure is the board-approved *target* as of June 24 (₩45.45 trillion) and was never claimed as the final raised amount, so it did not need correction. **Decision: keep both, no merge** — genuinely different moments in the same event's timeline, consistent with prior "keep both" precedents, now with the debut page's own internal math error corrected.
+
+### LongCat-2.0 / Owl Alpha / Meituan reveal (2 pages) — resolved 2026-08-05
 Flagged Run 653514 (2026-08-03) — discovered while auditing the 2026-07-04 oldest-unaudited cluster,
-both dated 2026-07-04, same topic (Meituan unmasking Owl Alpha as LongCat-2.0). Both audited
-independently in the same run; not yet diffed for merge vs. keep-both.
+both dated 2026-07-04, same topic (Meituan unmasking Owl Alpha as LongCat-2.0).
 - `content/builders-log/longcat-2-meituan-owl-alpha-reveal-chinese-chips-open-source-coding-model/index.md` — audited (sources_audited: 2026-08-03)
 - `content/builders-log/meituan-longcat-2-0-owl-alpha-openrouter-chinese-asic-coding-model-builder-guide/index.md` — audited (sources_audited: 2026-08-03)
 
-## Resolved clusters
+Diffed both files in full. Same core facts (Owl Alpha stealth run, 1.6T MoE, 50K-ASIC training,
+MIT license) but genuinely different angles: the `longcat-2-meituan-owl-alpha-reveal` page is
+technical/product-spec oriented (full architecture breakdown, self-hosting/vLLM instructions, a
+6-benchmark comparison table); the `meituan-longcat-2-0-owl-alpha-openrouter` page is policy/export-
+controls oriented (DeepSeek V4 comparison, a dedicated "What This Does and Doesn't Change for Export
+Controls" section, a Claude Sonnet 5 SWE-Bench Pro comparison cross-confirmed against Anthropic's own
+system card). **Decision: keep both** — consistent with prior precedent.
+
+Real error found and fixed during the diff: the `meituan-longcat-2-0-owl-alpha-openrouter` page
+claimed cached-context reads were **free**, sourced only to secondary VentureBeat coverage. Fetched
+LongCat's own official pricing page directly — cached input is **98% discounted, not free**
+($0.015/M standard, $0.006/M promo, vs. $0.75/M and $0.30/M uncached). Corrected the pricing table,
+the surrounding paragraph, and a later "free cached read" reference to match the primary source
+(matches what the sibling page already had right). No change needed to the sibling's weights-timing
+claim ("landed on Hugging Face days later") — a live search confirmed weights actually dropped July 5,
+2026, consistent with "days later" than the June 30 announcement.
 
 ### SnapLogic MCP Builder (2 pages) — resolved 2026-08-04
 Flagged Run 901665 (2026-08-03) — discovered while noting the next-oldest backlog cluster, both dated
