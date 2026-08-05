@@ -70,12 +70,12 @@
 <hr>
 <h2 id="what-grok-45-is">What Grok 4.5 is</h2>
 <p>Grok 4.5 is <a href="https://www.marktechpost.com/2026/07/08/spacexai-releases-grok-4-5/">SpaceXAI&rsquo;s targeted model for coding, agentic tool calling, and knowledge work</a>. It is not a general-purpose frontier model or a reasoning flagship — it is purpose-built for developer workflows and multi-step agent tasks, specifically the kind that happen inside an IDE over an extended session.</p>
-<p>The model runs with a <a href="https://datanorth.ai/news/xai-releases-grok-4-5-coding-focused-model">500,000-token context window</a>, accepts text and image inputs, and supports configurable reasoning effort (low, medium, or high — high is the default). Knowledge cutoff is February 1, 2026.</p>
-<p>Grok 4.5 is built on SpaceXAI&rsquo;s <a href="https://www.marktechpost.com/2026/07/08/spacexai-releases-grok-4-5/">V9 foundation</a> — the same 1.5-trillion-parameter base as Grok v9 — with additional training specifically for coding and agent tasks. SpaceXAI trained it across <a href="https://www.datacamp.com/blog/grok-4-5">tens of thousands of NVIDIA GB300 GPUs</a> on coding, science, engineering, and mathematics data, with reinforcement learning covering &ldquo;hundreds of thousands of tasks, including agent runs that lasted for hours.&rdquo;</p>
+<p>The model runs with a <a href="https://datanorth.ai/news/xai-releases-grok-4-5-coding-focused-model">500,000-token context window</a>, accepts text and image inputs, and supports <a href="https://docs.x.ai/developers/grok-4-5">configurable reasoning effort (low, medium, or high — high is the default)</a>. <a href="https://docs.x.ai/developers/grok-4-5">Knowledge cutoff is February 1, 2026</a>, per xAI&rsquo;s own model documentation.</p>
+<p>Grok 4.5 is built on SpaceXAI&rsquo;s V9 foundation — the same <a href="https://x.com/elonmusk/status/2071184354756477041">1.5-trillion-parameter base</a> Elon Musk described when announcing the model&rsquo;s private beta — with additional training specifically for coding and agent tasks, per <a href="https://www.marktechpost.com/2026/07/08/spacexai-releases-grok-4-5/">MarkTechPost&rsquo;s coverage</a>. SpaceXAI trained it across <a href="https://www.datacamp.com/blog/grok-4-5">tens of thousands of NVIDIA GB300 GPUs</a> on coding, science, engineering, and mathematics data, with reinforcement learning covering &ldquo;hundreds of thousands of tasks, including agent runs that lasted for hours.&rdquo;</p>
 <hr>
 <h2 id="the-cursor-data-advantage">The Cursor data advantage</h2>
 <p>The distinguishing fact about Grok 4.5 is where part of its training data came from. Per <a href="https://x.ai/news/grok-4-5">SpaceXAI&rsquo;s launch announcement</a>, the model was trained on real Cursor session data — actual interaction logs from developers working inside live codebases. That data does not exist anywhere outside of Cursor&rsquo;s servers. No standalone model lab has it.</p>
-<p>This matters in a specific, narrow way: the model&rsquo;s training distribution includes what engineers actually do in long IDE sessions, not what researchers construct as proxy tasks. <a href="https://benchlm.ai/models/grok-4-5">BenchLM&rsquo;s evaluation</a> puts Grok 4.5 at <a href="https://benchlm.ai/models/grok-4-5">#1 on agentic tool use</a> on the Artificial Analysis Intelligence Index — the one benchmark category most directly correlated with that training signal.</p>
+<p>This matters in a specific, narrow way: the model&rsquo;s training distribution includes what engineers actually do in long IDE sessions, not what researchers construct as proxy tasks. On the specific agentic-tool-use dimension of the <a href="https://artificialanalysis.ai/articles/grok-4-5-brings-spacexai-to-the-the-intelligence-frontier">Artificial Analysis Intelligence Index</a>, Grok 4.5 &ldquo;takes the top position&rdquo; — the one benchmark category most directly correlated with that training signal. (Note: this is a sub-dimension ranking, not the overall Intelligence Index, where Grok 4.5 placed #4 — see benchmark table below. Artificial Analysis and BenchLM re-run these evaluations continuously, so newer models may have since overtaken this specific ranking.)</p>
 <p>Whether Cursor-sourced training data provides durable advantage over larger-scale synthetic approaches is not settled. But the benchmark result exists, and the mechanism is plausible.</p>
 <hr>
 <h2 id="benchmark-results">Benchmark results</h2>
@@ -122,7 +122,7 @@
 </tbody>
 </table>
 <p><a href="https://www.datacamp.com/blog/grok-4-5">DataCamp&rsquo;s analysis</a> summarizes the picture accurately: Grok 4.5 leads on SWE Marathon and tops the agentic tool use ranking, but Claude Fable 5 leads on DeepSWE 1.0, DeepSWE 1.1, and SWE-Bench Pro. Grok 4.5 is #1 at the task type most resembling a real multi-step agent run; it trails on isolated repository-editing tasks where Fable 5 is optimized.</p>
-<p>On speed, SpaceXAI claims approximately 80 tokens per second. <a href="https://artificialanalysis.ai/models/grok-4-5">Artificial Analysis&rsquo; independent measurement</a> puts it closer to 120 tokens per second. Both readings put it at or above the frontier median.</p>
+<p>On speed, SpaceXAI claims approximately 80 tokens per second, while <a href="https://www.datacamp.com/blog/grok-4-5">Artificial Analysis&rsquo; independent measurement in mid-July</a> put it closer to 120 tokens per second. (Artificial Analysis re-benchmarks models on a rolling basis, so its live model page may show a different current figure than this mid-July snapshot.)</p>
 <hr>
 <h2 id="pricing">Pricing</h2>
 <p>Standard pricing per <a href="https://x.ai/news/grok-4-5">SpaceXAI&rsquo;s official page</a> and <a href="https://www.datacamp.com/blog/grok-4-5">DataCamp</a>:</p>
@@ -156,8 +156,8 @@
 </tr>
 </tbody>
 </table>
-<p>A fast-serving variant is available at approximately $4/$18 per MTok input/output for latency-sensitive paths, <a href="https://explainx.ai/blog/grok-4-5-public-launch-spacexai-july-2026">per launch coverage</a>. Cursor offered 50% off usage at launch.</p>
-<p>For comparison: Claude Opus 4.8 lists at $15/$75 per MTok (input/output). At $2/$6, Grok 4.5 is roughly 7–13× cheaper per token for most workloads. The comparison is not apples-to-apples — Opus 4.8 has a broader capability profile — but for coding and agentic tasks specifically, the cost gap is material.</p>
+<p>A fast-serving variant is available at approximately $4/$18 per MTok input/output for latency-sensitive paths, <a href="https://explainx.ai/blog/grok-4-5-public-launch-spacexai-july-2026">per launch coverage</a>. <a href="https://explainx.ai/blog/cursor-doubled-usage-limits-again-july-21-2026">Cursor offered 50% off Grok 4.5 usage at launch</a>, a promotion that ran through July 21 before reverting to standard rates.</p>
+<p>For comparison: Claude Opus 4.8 lists at <a href="https://platform.claude.com/docs/en/about-claude/pricing">$5/$25 per MTok</a> (input/output) — Anthropic&rsquo;s standard API rate, <a href="https://www.vellum.ai/blog/claude-opus-4-8-benchmarks-explained">confirmed independently</a>. At $2/$6, Grok 4.5 is roughly 2.5–4× cheaper per token, not the double-digit multiple sometimes floated in early coverage. The comparison is not apples-to-apples — Opus 4.8 has a broader capability profile — but for coding and agentic tasks specifically, the cost gap is still meaningful.</p>
 <hr>
 <h2 id="where-it-is-available">Where it is available</h2>
 <p>Per <a href="https://x.ai/news/grok-4-5">SpaceXAI&rsquo;s announcement</a> and <a href="https://www.datacamp.com/blog/grok-4-5">DataCamp</a>:</p>
@@ -175,14 +175,14 @@
 <ul>
 <li>You are building multi-step agent workflows where tool calling and action chains are the primary cost driver</li>
 <li>Your tasks look like long IDE sessions — multi-file edits, repo exploration, iterative debugging — rather than one-shot code generation</li>
-<li>Token cost is a constraint and you need something closer to Opus-class quality at $2 input (not $15)</li>
+<li>Token cost is a constraint and you need something closer to Opus-class quality at $2 input (not $5)</li>
 <li>You are already in the Cursor ecosystem and the 50% launch discount reduces risk</li>
 </ul>
 <p><strong>Consider alternatives when:</strong></p>
 <ul>
 <li>You need maximum accuracy on isolated repository-editing benchmarks (SWE-Bench Pro, DeepSWE 1.0/1.1) — Fable 5 leads there</li>
 <li>Your users are in the EU — Grok 4.5 is not available there yet</li>
-<li>You need longer context than 500K tokens — the Inkling 1M context or Grok 4.20&rsquo;s 2M window may fit better for very large codebases</li>
+<li>You need longer context than 500K tokens — <a href="https://thinkingmachines.ai/news/introducing-inkling/">Thinking Machines&rsquo; Inkling</a> (1M context) or <a href="https://www.digitalapplied.com/blog/grok-4-20-full-release-2m-context-lowest-hallucination">xAI&rsquo;s own Grok 4.20</a> (2M context) may fit better for very large codebases</li>
 <li>Knowledge cutoff matters: February 1, 2026 means events from the past five months are not in its training</li>
 </ul>
 <p>The $2/$6 pricing opens Grok 4.5 to workloads where cost previously ruled out a frontier model. The agentic tool use advantage is real and documented. The benchmark shortfall versus Fable 5 on static coding tasks is also real. Neither story is wrong — they describe the same model at different points in the benchmark surface.</p>

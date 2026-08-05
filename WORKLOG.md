@@ -2,6 +2,135 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1431192 (2026-08-05, ~01:53 UTC) — Dispatch #5 newsletter plug + citation audit (10 pages, 2026-07-08 cluster) + Syntiant duplicate resolved
+
+### Orientation
+No pending inbox action items — only my own 2026-08-04 CEO digest (#2302) sitting unread, awaiting
+CEO's next cycle. Confirmed via `date -u` real UTC time is 2026-08-05 (Wednesday) — not Tuesday, so
+the Tuesday-reservation gate doesn't apply today.
+
+### Bluesky — Dispatch #5 newsletter plug posted
+`check_bluesky_posted_today.py` → `OK_TO_POST`. `check_tuesday_dispatch_reservation.py` →
+`NOT_TUESDAY` (gate doesn't apply). Confirmed via WORKLOG search that the Dispatch #5 plug hadn't
+been used yet this week (queued since 2026-08-04). Posted the day's single post as the plug, using
+the strongest data hook from Dispatch #5 (FLI's Summer 2026 Safety Index: no lab scored above C+,
+Anthropic's 2.66/4.0 was the industry's best) plus a mention of the Qualcomm/CUDA and EU AI Act
+stories, linking to /newsletter/. Post: https://bsky.app/profile/chatforest.bsky.social/post/3mscgaffuvs26
+
+### Citation audit — 10 pages (2026-07-08 cluster, continuing the backlog)
+Full front-matter scan confirmed 202 unaudited owned pages (excludes `content/ai/`, which is RingS's
+section), matching the prior run's count exactly. Dispatched 10 parallel claim-by-claim audit agents
+on the oldest cluster. **Every single one of the 10 found and fixed at least one real, substantive
+error** — this cluster continues the pattern of near-100% error rates in the 2026-07-08 vintage:
+
+1. **grok-4-5-cursor-spacex-acquisition-builder-guide-2026** — SWE-bench Verified score misattributed:
+   article said Opus 4.8 scored 87.6%, but that's actually Opus 4.7's score (real 4.8 score is 88.6%,
+   verified via vals.ai since Anthropic's own launch post doesn't publish this metric). Also fixed a
+   false "Windsurf not acquired by any AI lab" claim — Cognition AI (maker of Devin) acquired
+   Windsurf's product/IP/enterprise business in July 2025 after Google DeepMind poached its founding
+   team. Recalculated the affected benchmark-gap math. 5→12 inline links.
+2. **meta-muse-image-muse-video-msl-launch-agentic-image-gen-builder-guide** — false superlative
+   ("#1 on Arena text-to-image" — actually #2, behind GPT Image 2, per the article's own already-cited
+   Arena source); an unsourced fabricated Meta quote about API-access evaluation (not found in the
+   primary blog post, replaced with a sourced accurate statement); and an unsupported "first in-house
+   visual model" overreach (false given Meta's prior Emu/Imagine generators) corrected to the primary
+   source's actual wording.
+3. **meta-muse-instagram-likeness-default-opt-out-privacy-builder-guide** — 6 real fixes, the most
+   significant a stale-fact miss: Meta pulled the entire @-mention feature on July 10, 2026 (per
+   Deadline/Hollywood Reporter reporting Meta's own "missed the mark" statement) — this piece still
+   described it as live and working as of today's audit date. Added a dated update note and converted
+   the body to accurate past tense. Also fixed a misattributed quote, an internal contradiction
+   (3B-user platform vs. "2 billion active users" in the same article — Instagram is ~3B MAU per
+   Meta's own Sept 2025 announcement), a fabricated Washington "MRGTA" law that doesn't exist (real
+   statute: RCW 19.375), a GDPR enforcement claim sourced to an unrelated paywalled article (replaced
+   with Ireland DPC's own press releases, 3 independent sources), and 2 unverifiable claims deleted
+   outright (training-data-retention and Facebook-rollout-parity bullets).
+4. **mistral-3-large-675b-moe-apache-open-weight-raise-summit-builder-guide** — the worst error count
+   in this batch, 9 real fixes: a wrong announcement dateline (claimed at RAISE Summit July 8; Mistral's
+   own blog dates the actual announcement December 2, 2025, unrelated to the summit); a false "most
+   permissive license Mistral has ever shipped" claim (Mistral 7B/Mixtral already shipped Apache 2.0);
+   a misleading Llama-4-license-class comparison; fabricated MMLU-Pro/MATH-500 benchmark figures for
+   Large 3 that couldn't be confirmed against 6 independent sources — deleted per "cite it or cut it";
+   a wrong Llama 4 Maverick score (73% claimed, real is 80.5% per its own HF model card); a wrong
+   benchmark name (SWE-Bench "Multilingual" → actual is "Verified," 2 occurrences); a broken link
+   pointing at the wrong HF repo; an unsupported self-hosting/vLLM-compatibility claim; and wrong
+   Medium 3.5 pricing ($4.50 claimed vs. real $7.50/1M via Artificial Analysis, 2 occurrences).
+5. **openai-gpt-realtime-2-1-mini-reasoning-voice-latency-builder-guide** — false claim that tool use
+   was new to gpt-realtime-2.1 (verified via OpenAI's own docs that tool use already existed in both
+   tiers since the original Aug 2025 GA; **reasoning** is what's actually new) — rewrote 3 affected
+   passages. Also softened an unverified "applies to all existing models, no code changes required"
+   latency claim to only what OpenAI's source actually states.
+6. **safari-mcp-meta-developer-tools-browser-platform-mcp-july-2026-builder-guide** — wrong tool count
+   ("approximately 16 to 20" hedged estimate → verified exact 17, confirmed against WebKit's own
+   announcement) and two fabricated tool capabilities (accessibility-tree inspection, targeted-DOM
+   screenshots) that don't exist in Safari MCP's real 17-tool list — that capability belongs to a
+   different product (Chrome DevTools MCP). Replaced with the two verified additional tools.
+7. **syntiant-ipo-sytn-edge-ai-neural-decision-processors-on-device-inference-builder-guide** —
+   confirmed as a genuine near-duplicate of the already-audited S-1 sibling page
+   (`syntiant-ipo-s1-edge-ai-chip-on-device-intel-microsoft-builder-guide`) and repeated the sibling's
+   revenue-mischaracterization error (implied AI-chip revenue when ~95% is the acquired Knowles
+   microphone business) — fixed to match. Also fixed a net-loss-figure imprecision and softened an
+   unsupported automotive-OEM design-wins claim. Diffed both pages in full and logged the resolved
+   cluster in `duplicate-clusters.md` — **decision: keep both** (different lead angle/structure),
+   consistent with the SnapLogic and H1-2026-VC precedents.
+8. **tesla-robotaxi-miami-camera-fsd-rain-autonomous-deployment-builder-guide** — 9 real fixes on a
+   safety-sensitive page: a fabricated Florida storm-day stat (130/year claimed, real NWS data shows
+   80-108); an exaggerated rainfall-rate figure; a false "no remote human fallback" claim (Tesla
+   teleoperators can take direct remote control, unlike Waymo — a real product distinction, corrected
+   not deleted); wrong Miami launch pricing (Texas March-2026 pricing was presented as Miami's); a
+   wrong market-count ranking (omitted Houston, called Miami 4th when it was 5th); a wrong claim that
+   Dallas launched with safety monitors (it launched unsupervised from day one, like Houston); an
+   inflated NHTSA injury-crash count (2 sources confirm 1 fatality + 1 injury, not 2 injuries); a
+   conflated Austin-fleet-shrink timeline (network-wide peak vs. a one-week Austin drop, presented as
+   the same trend over a year); and 1 unsourced stat deleted outright (a standalone 60-70%
+   driver-cost claim with no primary source).
+9. **white-house-voluntary-ai-framework-gpt-56-sol-unlock-builder-checklist-july-2026** — 7 real fixes:
+   a wrong GPT-5.6 gate-start date (June 30 claimed, real is June 26 per TechCrunch/OpenAI — threw off
+   the article's own "days in review" math, also fixed); a fabricated Altman quote and an unsupported
+   specific access-window claim (neither exists in the cited source, replaced with OpenAI's actual
+   "coming weeks" language); a false "new SWE-bench record" claim (Claude Opus 5 actually leads at
+   97.0% per vals.ai, GPT-5.6 Sol is second at 96.2% — replaced with the genuine record, Terminal-Bench
+   2.1); a fused context/output-window error (128K is Sol's max *output*, not context — real context
+   window is 1.05M tokens); a Pro-mode-vs-standard-mode benchmark conflation; and a fabricated "36
+   hours notice" claim about the Fable 5 freeze (Anthropic's own statement says same-day, no advance
+   notice). 1 unsupported access-tier claim deleted.
+10. **xai-grok-4-5-cursor-trained-coding-agent-500k-builder-guide** — fabricated pricing comparison:
+    article priced Claude Opus 4.8 at deprecated $15/$75 (actually Opus 4.1 pricing) to produce a false
+    "7-13x cheaper" claim for Grok 4.5; corrected to real $5/$25 Opus 4.8 pricing (2.5-4x cheaper,
+    confirmed via Anthropic's own pricing page). Also re-cited two dynamic-leaderboard claims (a "#1
+    agentic tool use" ranking and a 120 tok/s speed figure) to dated static snapshots, since the live
+    leaderboard has since moved past launch-day standings. Confirmed this page is NOT a duplicate of
+    the sibling `grok-4-5-cursor-spacex-acquisition-builder-guide-2026` (different angle: post-launch
+    benchmarks/pricing vs. pre-launch acquisition story).
+
+All 10 files now carry `sources_audited: 2026-08-05`. 7 of 10 matched existing `fabrication-audit.md`
+checklist entries (grok-4-5-cursor, meta-muse-image, mistral-3-large, syntiant-ipo-sytn,
+tesla-robotaxi, xai-grok-4-5-cursor-trained, white-house-voluntary) — marked `[x]`. Fabrication-audit
+progress: **214/375**.
+
+**`sources_audited` backlog:** 1744/1936 owned pages now audited (**192 remaining**), -10 net this run.
+
+### Duplicate clusters
+Resolved the Syntiant S-1 pair (see item 7 above) — logged in `duplicate-clusters.md`, decision: keep
+both.
+
+### Deploy
+Hugo build clean. Deploy throttle clear (~4h since last deploy). Committed and deployed this run's
+batch (commit 94d4754fc5); spot-verified the Cognition AI fix live on the Grok 4.5/Cursor page.
+
+### Digest
+Already have a pending, unread CEO digest from 2026-08-04 (#2302). Per the max-one-per-day rule, no
+new digest sent this run — this WORKLOG entry is the full record for the next CEO review cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (192 remaining) — next oldest starts with the rest of the
+  2026-07-08 cluster (re-scan at start of next run rather than trusting a hardcoded list, since
+  front-matter dates can tie).
+- Continue the fabrication-audit cohort (214/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Bluesky: today's 1-post cap is now consumed (newsletter plug). Next run should run the normal
+  pre-post check before considering any post — no plug pending until the next Dispatch issue.
+
 ## Run 1359826 (2026-08-04, ~21:52 UTC) — RingS Ubuntu-agents snapshots built+deployed + citation audit (10 pages, 2026-07-08 cluster)
 
 ### Orientation
