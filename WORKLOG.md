@@ -2,6 +2,152 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1673270 (2026-08-05, ~15:54 UTC) — Reddit recon (CEO directive) + citation audit: 11 pages
+
+### Orientation
+One pending inbox item: CEO (aiu 67) directive #2310 (2026-08-05, normal priority) — research-only
+Reddit account recon, no posting/commenting/voting. No other new instructions from Rob or CEO.
+
+### Reddit account recon (research only — nothing posted, commented, voted, or followed)
+Full memo: `strategy/03-reddit-account-recon-2026-08.md`. Headline finding: **no viable path today,
+more clearly so than when archived in March 2026.**
+
+- **No usable API credential exists.** The only file on record is a plaintext account password —
+  no `client_id`/`client_secret`. Reddit's OAuth requires a registered app created via a logged-in
+  browser session, which Grove cannot do from this build server. "Verify the key authenticates"
+  wasn't answerable as posed — there's no key, only a password with nothing to present it to.
+- **All JSON/API-shaped endpoints are hard-blocked** (`about.json`, `rules.json`, etc. → HTTP 403
+  anti-bot challenge, any User-Agent) and the HTML profile page is gated behind an unsolvable JS
+  proof-of-work challenge. Public **RSS feeds work unauthenticated** and were the only usable
+  channel — confirmed via `user/ChatForest.rss` (HTTP 200, real entries) that the account is
+  **not suspended/banned**.
+- **History:** 0 submitted posts ever (`submitted.rss` empty). 2 comments total: 2026-03-13 in
+  r/isthisAI (harmless, likely predates the 2026-03-14 archive decision by one day) and
+  **2026-06-14 in r/ClaudeAI — ~3 months after the archive decision, unexplained by anything in
+  this WORKLOG.** Neither comment is promotional/on-brand (both read as off-topic test replies,
+  no spam pattern), but the second is a process gap I can't resolve from here — flagged to
+  Rob/CEO in the mark-done response on #2310.
+- **Sitewide policy has gotten worse since March, not better:** Reddit's Nov 2025 "Responsible
+  Builder Policy" closed self-service OAuth registration — even the free non-commercial tier now
+  needs a 2-4 week manual pre-approval. Commercial API pricing floor is **~$12K/MONTH** (the
+  archived-decision memory had this wrong as "$12K/year" — corrected in memory now). Reddit also
+  rolled out mandatory `[App]` bot labels + human verification sitewide starting 2026-03-31.
+  Subreddit rules text itself was **not directly obtainable** — every rules.json 403's and the
+  HTML sidebar rules widget doesn't render unauthenticated — so the rules-inventory section of the
+  memo is explicitly caveated as secondary-aggregator paraphrase, not verified primary quotes.
+- **Recommendation sent to CEO** (marked #2310 done): keep the March 2027 revisit date; nothing
+  found this run weakens that call. Updated `project_reddit_archived.md` memory with the corrected
+  figures and the unexplained-comment flag.
+
+### Citation audit: 11 pages (rest of 2026-07-09 cluster + start of 2026-07-10)
+Dispatched 11 parallel claim-by-claim audit agents (took the 10 oldest unaudited pages by `date`,
+which pulled in one extra from the same day). Every page had a real fix beyond missing citations:
+
+1. **shadow-mcp-servers-visibility-gap-enterprise-governance-builder-guide** — 3
+   fabricated/unattributed stats found and fixed: an untraceable "78% of enterprise AI teams have
+   MCP-backed agents in production" (replaced with Stacklok's actual Dec 2025 survey figure), an
+   unsourced "28,000-37,000 private MCP servers" estimate (deleted, no origin found anywhere;
+   public count replaced with Anthropic's own 10,000+ tally), and an overstated claim that the
+   2026 MCP auth-layer update makes policy "portable across agent frameworks" (narrowed to what
+   the spec actually says — OAuth 2.1/OIDC standardization within MCP, not cross-framework
+   portability).
+2. **terminal-bench-2-1-leaderboard-july-9-sol-ultra-access-gap-builder-guide** — the highest-risk
+   fix in this batch: Claude Opus 4.8 was listed at an unsourced ~84.6%, tied for #4. Anthropic's
+   own Opus 4.8 launch page puts it at **74.6%**, below Sonnet 5 — corrected and the model moved
+   to its accurate #9 rank, with a visible correction note. Also fixed a fabricated OpenAI quote
+   about Sol Ultra's parallel-agent behavior and a citation link that pointed at the wrong
+   Anthropic post (export-control redeployment notice instead of the actual launch announcement).
+3. **claude-fable-5-api-guide-refusals-fallback-credit-suspension-builder-guide** — two invented
+   API specifics: a nonexistent `response.stop_reason_detail.get("classifier")` field (real field
+   is `response.stop_details.category`) and a wrong `fallbacks` parameter shape in a code sample.
+   Also fixed a claim that fallback credit is "automatic" when the manual-retry path actually
+   requires an explicit beta header, and flagged the $2/$10 Sonnet 5 pricing as introductory
+   (expires Aug 31, 2026) rather than stated as flat fact.
+4. **claude-code-v2-1-206-mcp-timeout-fix-doctor-background-agents-july-2026-builder-guide** —
+   an invented config field name (`request_timeout_ms`, used throughout prose/code/action-items;
+   the real `.mcp.json` field is `timeout`) and an invented `/code-review --model` CLI flag (no
+   such argument exists; correct usage is `/model` then `/code-review`) both corrected against
+   live Claude Code docs, verified via raw curl fetches after catching an inconsistency in an
+   earlier AI-summarized fetch pass.
+5. **claude-m365-write-tools-email-calendar-onedrive-sharepoint-agentic-builder-guide** — a
+   security-relevant error: the page implied write tools extend to shared mailboxes with delegate
+   access. Anthropic's own security guide states shared-mailbox access is **read-only**
+   (`Mail.Read.Shared`), with no write scope, regardless of the user's own mailbox permissions.
+   Also cut an unsupported "signature editing" claim and rewrote an unverified assertion about
+   Managed Agents integration to state only what's actually documented.
+6. **claude-reflect-usage-dashboard-ai-fluency-4d-wellbeing-builder-guide** — core premise verified
+   real (Anthropic's Claude Reflect, launched July 9, 2026) with nearly every specific checking out
+   against the primary announcement; one over-specific fabrication found (an invented "may suggest
+   a custom template" detail — Anthropic's post only documents a Project-recommendation example)
+   and corrected, re-attributing a related detail to independent Engadget hands-on coverage.
+7. **claude-sonnet-5-august-31-pricing-cliff-tokenizer-compound-budget-action-guide** — the
+   title/description overclaimed the real cost increase ("larger than 50%") in direct contradiction
+   of the article's own worked math (~40%); rewrote to match. Also fixed wrong Haiku 4.5 pricing
+   ($0.25/$1.25 stated vs. actual $1/$5 per million), a fabricated AWS CloudWatch metric name
+   (`bedrock:InvokedModelTokens` doesn't exist), an overstated Enterprise-only billing-alert claim,
+   and replaced an unsupported per-language tokenizer-multiplier table with Simon Willison's actual
+   published measurements, properly attributed as independent testing.
+8. **deepseek-inference-chip-sovereign-compute-nvidia-huawei-independence-builder-guide** —
+   corrected a chip-generation error: the H800 was called "the older A100 equivalent" when it's
+   actually the same Hopper-generation silicon as the H100 with reduced interconnect bandwidth for
+   export compliance. Preserved and reinforced the existing "unconfirmed by DeepSeek officially"
+   framing for the core chip claim (Reuters/Bloomberg reporting, no company confirmation).
+9. **flare-ai-open-source-flaw-reporting-platform-ai-vulnerability-builder-guide** — verified real
+   (arXiv paper, ICML 2026 acceptance, CMU SEI co-authors, live ai-reports.org site); fixed an
+   overstated "dozens of recipient organizations" claim (the live site currently lists ~6-7; "dozens"
+   was the paper's designed-capacity language, not the current roster) and cut a fabricated "20
+   reports in a month" example number with no source.
+10. **google-tabfm-zero-shot-tabular-foundation-model-xgboost-classification-regression-bigquery-builder-guide**
+    — caught a fused/misattributed statistic: an "TabFM beat Optuna-tuned XGBoost on all 10
+    fold-matched datasets" claim attributed to Google actually traces to an independent,
+    Google-unaffiliated GitHub reproduction — rewrote to separate Google's own claims from the
+    third-party figure. Also corrected an overstated "BigQuery AI.PREDICT integration in preview"
+    claim (per a Google Cloud Developer Advocate's own walkthrough, it requires org-level
+    allowlisting, not general preview).
+11. **chatgpt-work-openai-gpt-56-agent-long-horizon-tasks-builder-guide** — fixed a stale Atlas
+    browser sunset date (now the confirmed Aug 9, 2026 target), an inaccurate availability table
+    (Free tier does get desktop-app access per OpenAI's own rollout post, contrary to what the page
+    stated), and added named customer attribution (Zapier, Virgin Atlantic) to a benchmark table
+    that previously claimed "named testers" without naming any.
+
+5 of 11 pages matched existing `fabrication-audit.md` checklist entries (shadow-mcp-servers,
+terminal-bench-2-1, claude-fable-5-api-guide, claude-reflect, flare-ai) — marked `[x]`.
+Fabrication-audit progress: **234/375**.
+
+**`sources_audited` backlog:** 169/1944 pages remaining (down from 180), next oldest is the rest
+of the 2026-07-10 cluster.
+
+### Duplicate clusters
+No new duplicates found this run.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-05T01:54 UTC). No post this run, hard
+daily cap respected. Not a Tuesday, so the newsletter-plug reservation doesn't apply.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases) — used plain `hugo` (not `--minify`; minify reformats
+every page and creates a spurious full-site diff, caught and reverted before committing). Deploy
+throttle clear (last deploy ~6 hours before this run). Committed and deployed; spot-verified two
+corrected pages live (Terminal-Bench Opus 4.8 74.6% correction, Shadow MCP Stacklok citation).
+
+### Digest
+Checked `list_inbox(include_sent=true)` for a same-UTC-day message to aiu 67 — none existed for
+2026-08-05 (last one was 2026-08-04, #2302). Sent today's digest (#2311): Reddit recon summary
+(per CEO's explicit "summary in your next digest" ask in #2310), citation-audit results,
+fabrication-audit count, backlog count, Bluesky status, subscriber count (1, verified via
+Buttondown API), build/deploy confirmation, GSC reminder.
+
+### What should happen next
+- Continue the `sources_audited` backlog (169 remaining) — next oldest is the rest of the
+  2026-07-10 cluster.
+- Continue the fabrication-audit cohort (234/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Crunchbase/H1-2026-VC duplicate pair — merge-or-keep-both decision still pending.
+- **Follow up on the unexplained 2026-06-14 r/ClaudeAI comment** — ask Rob directly if the next
+  CEO digest doesn't surface an explanation; it's a process gap independent of the Reddit-strategy
+  question, and the recon memo (`strategy/03-reddit-account-recon-2026-08.md`) can't resolve it
+  from the build server alone.
+
 ## Run 1569498 (2026-08-05, ~09:54 UTC) — Citation audit: 10 pages (rest of 2026-07-09 cluster)
 
 ### Orientation

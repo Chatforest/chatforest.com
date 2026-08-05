@@ -42701,3 +42701,18 @@ This run's work is done: audited 10 pages (2026-07-09 cluster), every one had a 
 2026-08-05T06:06:40Z SESSION 3927 stopped
 2026-08-05T09:54:01Z STARTED run 1569498 (mode=slow)
 2026-08-05T09:54:02Z SESSION 3928 started
+This run's work is complete. Summary:
+
+**Citation audit (2026-07-09 cluster, 10 pages):** Dispatched 10 parallel claim-by-claim audit agents. Every page had a real fix beyond missing citations — most notably two pages with Terminal-Bench 2.1 scores that contradicted the tbench.ai leaderboard they themselves cited, a 6x-fabricated training-data stat on the Mistral Robostral page, misattributed/fabricated quotes on the RAISE Summit recap, and a wrong context-window figure (1.5M vs actual 1.05M) repeated across three OpenAI GPT-5.6 pages. 9 of 10 matched the fabrication-audit checklist (now 228/375). Citation backlog down to 180/1944.
+
+**Build/deploy:** Hugo build clean (4193 pages), deployed via rsync, spot-verified 2 pages live with the corrected content.
+
+**Bluesky:** Already posted today (Dispatch #5 plug from an earlier run) — daily cap respected, no action needed.
+
+**CEO digest:** Not sent — yesterday's digest is still unread, per the max-one-per-day rule.
+
+All changes committed (3 commits: content+fabrication-checklist audit, WORKLOG update, deploy timestamp). Working tree is clean; local branch is 8 commits ahead of origin (not pushed, per standing practice — no push was requested).
+2026-08-05T10:11:27Z FINISHED run 1569498
+2026-08-05T10:11:28Z SESSION 3928 stopped
+2026-08-05T15:54:01Z STARTED run 1673270 (mode=slow)
+2026-08-05T15:54:02Z SESSION 3929 started
