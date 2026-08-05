@@ -3,24 +3,24 @@
 > Both are priced near $2.50 input during Sonnet 5's intro window. After August 31, Terra is effectively cheaper. Here's the four-part framework for deciding which mid-tier to run.
 
 
-Two mid-tier models landed within ten days of each other: [Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5) on June 30, [GPT-5.6 Terra](https://openai.com/index/gpt-5-6/) on July 9. Both target the same pricing band. Both score in the low-80s on Terminal-Bench 2.1. Both claim to be the practical workhorse for production agentic workloads.
+Two mid-tier models landed within ten days of each other: [Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5) on June 30, [GPT-5.6 Terra](https://openai.com/index/gpt-5-6/) on July 9. Both target the same pricing band. Both score in the mid-to-high 70s on the independently-run [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1). Both claim to be the practical workhorse for production agentic workloads.
 
 If you're deciding which one to build on, the answer depends heavily on *when* you're reading this. Anthropic's intro pricing expires August 31. After that, the cost math inverts.
 
 ---
 
-## The Benchmark Gap: 3.9 Points on Terminal-Bench 2.1
+## The Benchmark Gap: 3.8 Points on Terminal-Bench 2.1
 
-On the benchmark that matters most for agentic code tasks:
+On the benchmark that matters most for agentic code tasks, per the official [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) (Sonnet 5 run via Claude Code at `effort: high`; Terra run via Codex at `effort: max` — the leaderboard's independently-run scores, not either vendor's self-reported eval numbers):
 
 | Model | Terminal-Bench 2.1 | SWE-bench Pro | Context Window |
 |---|---|---|---|
-| Claude Sonnet 5 | 80.4% | 63.2% | 1M tokens |
-| GPT-5.6 Terra | 84.3% | — | 1.5M tokens |
+| Claude Sonnet 5 | 74.6% | [63.2%](https://www.anthropic.com/news/claude-sonnet-5) | [1M tokens](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5) |
+| GPT-5.6 Terra | 78.4% | [63.4%](https://openai.com/index/gpt-5-6/) | [~1.05M tokens](https://developers.openai.com/api/docs/models/gpt-5.6-terra) |
 
-Terra holds a 3.9-point lead on Terminal-Bench. That's meaningful — it clears statistical noise — but it's not the dominant factor for most builders. At the 80-84% band, both models succeed on the majority of agentic tasks; the gap shows up at the tail: the hardest 5-10% of jobs where Terra's extra headroom matters.
+Terra holds a 3.8-point lead on the independent Terminal-Bench leaderboard. That's meaningful — it clears statistical noise — but it's not the dominant factor for most builders. At the mid-to-high-70s band, both models succeed on the majority of agentic tasks; the gap shows up at the tail: the hardest 5-10% of jobs where Terra's extra headroom matters. (OpenAI's own self-reported eval table shows both models scoring higher — Terra at 87.4% — but that uses OpenAI's internal harness rather than the standardized leaderboard config, so it isn't a fair apples-to-apples comparison with Anthropic's numbers.)
 
-SWE-bench Pro (63.2% for Sonnet 5) shows the ceiling for pure software engineering tasks. OpenAI hasn't published a comparable Terra-specific SWE-bench figure as of this writing.
+SWE-bench Pro shows the ceiling for pure software engineering tasks: Sonnet 5 scores 63.2%, up from 58.1% for Sonnet 4.6; Terra scores 63.4% — a virtual tie, well inside typical benchmark-to-benchmark noise.
 
 ---
 
@@ -28,7 +28,7 @@ SWE-bench Pro (63.2% for Sonnet 5) shows the ceiling for pure software engineeri
 
 ### Phase 1: Now through August 31, 2026
 
-Anthropic is running an introductory rate on Sonnet 5:
+Anthropic is running an [introductory rate](https://platform.claude.com/docs/en/about-claude/pricing) on Sonnet 5:
 
 | Model | Input | Output | Cache Reads |
 |---|---|---|---|
@@ -37,15 +37,15 @@ Anthropic is running an introductory rate on Sonnet 5:
 
 At sticker price, Sonnet 5 is cheaper on both input and output. But the sticker lies.
 
-**The tokenizer tax.** [Claude Sonnet 5 uses a new tokenizer](https://www.anthropic.com/news/claude-sonnet-5) that produces 0–35% more tokens than Sonnet 4.6 for the same text (typical: 25–30% more for mixed code+prose). That means your effective input cost isn't $2.00/M — it's $2.50–2.70/M for typical workloads. Effectively equal to Terra's $2.50.
+**The tokenizer tax.** [Claude Sonnet 5 uses a new tokenizer](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5) that produces "approximately 30% more tokens" than Sonnet 4.6 for the same text — Anthropic's own docs note the exact increase depends on the content and workload shape. That means your effective input cost isn't $2.00/M — using the ~1.3x multiplier, it's roughly $2.60/M for typical workloads. Close to, and possibly above, Terra's $2.50.
 
-**The effort=high default.** Sonnet 5 defaults to `effort: "high"`, which enables extended thinking. Thinking tokens are billed at full output rates ($10/M intro). For a reasoning-heavy job that generates 10K thinking tokens before producing 2K output tokens, you're billing 12K output tokens, not 2K. On simple tasks, set `effort: "low"` to disable thinking and restore predictable output costs.
+**The effort=high default.** [Sonnet 5 defaults to `effort: "high"`](https://platform.claude.com/docs/en/build-with-claude/effort), which enables adaptive thinking on every request. Thinking tokens are billed at full output rates ($10/M intro). For a reasoning-heavy job that generates 10K thinking tokens before producing 2K output tokens, you're billing 12K output tokens, not 2K. On simple tasks, set `effort: "low"` to cut thinking and restore more predictable output costs.
 
 **During intro window (before Aug 31):** Sonnet 5 and Terra are effectively cost-equivalent after tokenizer adjustment. The decision shouldn't rest on intro pricing.
 
 ### Phase 2: September 1, 2026 onward
 
-Sonnet 5 moves to standard pricing:
+Sonnet 5 moves to [standard pricing](https://platform.claude.com/docs/en/about-claude/pricing):
 
 | Model | Input | Output | Cache Reads |
 |---|---|---|---|
@@ -60,20 +60,20 @@ After applying Sonnet 5's tokenizer multiplier (~1.3×): effective input cost is
 
 ## Four Decision Points
 
-### 1. Context window: Does your workload exceed 1M tokens?
+### 1. Context window: not much of a differentiator either way
 
-Sonnet 5 caps at 1M tokens. Terra runs to 1.5M. If you're processing large codebases, long documents, or multi-turn agent sessions with extensive memory, this isn't a close call — **Terra is the only option**.
+Sonnet 5 caps at [1M tokens](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5). Terra's official context window is [~1.05M tokens](https://developers.openai.com/api/docs/models/gpt-5.6-terra) — a roughly 5% edge, not the much larger 1.5M window that pre-launch leaks had rumored. If you're processing large codebases, long documents, or multi-turn agent sessions with extensive memory, neither model gives you meaningfully more headroom than the other.
 
-For most workloads (under 200K tokens), both models are fine. The gap only matters at the tail.
+For most workloads (under 200K tokens), context window isn't a deciding factor at all.
 
 ### 2. Cloud infrastructure: Are you locked into AWS or GCP?
 
-Claude Sonnet 5 is available on:
+[Claude Sonnet 5 is available on](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5):
 - Anthropic API
 - AWS Bedrock (`anthropic.claude-sonnet-5`)
-- Google Vertex AI
+- Google Cloud (Vertex AI)
 
-GPT-5.6 Terra is available on:
+[GPT-5.6 Terra is available on](https://openai.com/index/gpt-5-6/):
 - OpenAI API
 - OpenAI Codex
 
@@ -111,14 +111,12 @@ At 1B input tokens/month, that delta is $1,400/month. For teams with high input 
 ## Decision Framework
 
 ```
-If context > 1M tokens:
-  → Terra (Sonnet 5 can't reach it)
-
-Else if infrastructure is AWS Bedrock or Google Vertex:
+If infrastructure is AWS Bedrock or Google Vertex:
   → Sonnet 5 (Terra unavailable there)
 
 Else if launching before September 1 with low volume:
-  → Either (cost-equivalent in intro window)
+  → Either (cost-equivalent in intro window; context windows are
+            close enough (~1M vs ~1.05M) not to matter)
 
 Else if launching post-August 31 at volume:
   → Terra (effective input ~$2.50 vs $3.90 after tokenizer tax)
@@ -128,16 +126,18 @@ Else if existing OpenAI API stack:
 
 Else:
   → Sonnet 5 (lower migration cost for Anthropic stacks,
-              BrowseComp 84.7% advantage for web tasks)
+              strong BrowseComp web-research score — see below)
 ```
+
+Sonnet 5 scores 84.7% single-agent on BrowseComp, Anthropic's agentic web-research benchmark, per the [Claude Sonnet 5 system card](https://www-cdn.anthropic.com/283ef97c476cf442c91d9a37d5b214242a55bb92/Claude%20Sonnet%205%20System%20Card.pdf).
 
 ---
 
 ## What Neither Model Solves
 
-The 3.9-point benchmark gap doesn't answer the question most production teams actually face: **which model completes your specific task at acceptable cost and latency?** Benchmarks measure average performance across standardized datasets; your workload may skew differently.
+The 3.8-point benchmark gap doesn't answer the question most production teams actually face: **which model completes your specific task at acceptable cost and latency?** Benchmarks measure average performance across standardized datasets; your workload may skew differently.
 
-Both models are close enough that the **migration cost often outweighs the quality difference**. If you're currently running GPT-5.5 successfully, Terra is a clear upgrade at the same price. If you're running Sonnet 4.6, Sonnet 5 is the path of least resistance — and you get the 1M context window upgrade.
+Both models are close enough that the **migration cost often outweighs the quality difference**. If you're currently running GPT-5.5 successfully, Terra is a clear upgrade at the same price. If you're running Sonnet 4.6, Sonnet 5 is a drop-in upgrade at the same price — [Sonnet 4.6 already had the 1M context window](https://platform.claude.com/docs/en/about-claude/pricing), so that part doesn't change, but you do inherit the ~30% tokenizer tax noted above.
 
 The August 31 cliff is the real decision trigger. If you're starting a new project today, build on whichever model fits your ecosystem — but model the post-cliff cost before locking in your architecture.
 
@@ -153,5 +153,5 @@ The August 31 cliff is the real decision trigger. If you're starting a new proje
 
 ---
 
-*Sources: [Anthropic: Claude Sonnet 5 launch](https://www.anthropic.com/news/claude-sonnet-5) · [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [TechCrunch: Anthropic launches Claude Sonnet 5](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/)*
+*Sources: [Anthropic: Claude Sonnet 5 launch](https://www.anthropic.com/news/claude-sonnet-5) · [Anthropic: Claude Sonnet 5 pricing docs](https://platform.claude.com/docs/en/about-claude/pricing) · [Anthropic: What's new in Claude Sonnet 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5) · [Anthropic: Effort parameter docs](https://platform.claude.com/docs/en/build-with-claude/effort) · [Claude Sonnet 5 system card (PDF)](https://www-cdn.anthropic.com/283ef97c476cf442c91d9a37d5b214242a55bb92/Claude%20Sonnet%205%20System%20Card.pdf) · [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI: GPT-5.6 Terra model docs](https://developers.openai.com/api/docs/models/gpt-5.6-terra) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [TechCrunch: Anthropic launches Claude Sonnet 5](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/)*
 

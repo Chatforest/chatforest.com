@@ -1,9 +1,9 @@
 # SWE-1.7: Cognition's RL-on-RL Training Lands at 81.5% Terminal-Bench — And Why You Can't Call It Directly
 
-> Cognition's SWE-1.7 challenges the post-training ceiling by stacking RL on an already-RL-trained model (Kimi K2.7). It scores 81.5% on Terminal-Bench 2.1 — between Grok 4.5 and Sonnet 5 — at $1.97 per task. But it's only accessible through Devin, not via API.
+> Cognition's SWE-1.7 challenges the post-training ceiling by stacking RL on an already-RL-trained model (Kimi K2.7). It scores 81.5% on Terminal-Bench 2.1 — below Opus 4.8 and GPT-5.5 but above Kimi K2.7 Code and Composer 2.5 — at a reported ~$1.97 per task. But it's only accessible through Devin, not via API.
 
 
-Cognition shipped **SWE-1.7** on July 8, 2026 — the most capable model they've trained, available today in Devin at 1,000 tokens per second via Cerebras. The headline is benchmark performance at a fraction of frontier cost. But the more interesting story is how they got there: reinforcement learning on top of a model that was already heavily RL-trained. That breaks with the conventional assumption that RL has a ceiling.
+Cognition shipped [**SWE-1.7**](https://cognition.com/blog/swe-1-7) on July 8, 2026 — "the most capable model we've trained so far," in the company's own words, available today in Devin at 1,000 tokens per second via Cerebras. The headline is benchmark performance at a fraction of frontier cost. But the more interesting story is how they got there: reinforcement learning on top of a model that was already heavily RL-trained. That breaks with the conventional assumption that RL has a ceiling.
 
 Here's what builders need to know.
 
@@ -11,30 +11,36 @@ Here's what builders need to know.
 
 ## Where SWE-1.7 Sits in the July 2026 Model Landscape
 
-The benchmark that matters for direct comparison is **Terminal-Bench 2.1** — the same one we've used to position Terra, Grok 4.5, and Sonnet 5:
+The benchmark that matters for direct comparison is **Terminal-Bench 2.1**. Cognition's own release post puts SWE-1.7 against its own base model and its closest frontier competitors — not against Grok or Sonnet, which don't appear in Cognition's comparison at all:
 
 | Model | Terminal-Bench 2.1 | Provider |
 |---|---|---|
-| GPT-5.6 Terra | 84.3% | OpenAI |
-| Grok 4.5 | 83.3% | xAI |
+| Claude Opus 4.8 | 86.9% | Anthropic |
+| GPT-5.5 | 84.2% | OpenAI |
+| Claude Opus 4.7 | 83.0% | Anthropic |
+| GLM-5.2 | 81.0% | Zhipu |
 | **SWE-1.7** | **81.5%** | Cognition |
-| Claude Sonnet 5 | 80.4% | Anthropic |
+| Kimi K2.7 Code (base) | 72.7% | Moonshot AI |
+| Composer 2.5 | 76.0% | Cursor |
+| SWE-1.6 | 39.7% | Cognition |
 
-SWE-1.7 slots cleanly between Grok 4.5 and Sonnet 5 — above a frontier Anthropic model, behind a frontier OpenAI and xAI model. Not bad for a model positioned as a cost alternative.
+*(All scores as self-reported in [Cognition's SWE-1.7 announcement](https://cognition.com/blog/swe-1-7).)*
 
-Cognition's own **FrontierCode 1.1** benchmark gives a fuller picture of agentic coding specifically:
+SWE-1.7 lands just above GLM-5.2 and well above its own Kimi K2.7 Code base, Composer 2.5, and Cognition's prior model SWE-1.6 — but it's still behind Opus 4.7, GPT-5.5, and Opus 4.8. The story isn't "beats frontier models," it's "closes most of the gap to frontier models at a fraction of the cost."
+
+Cognition's own **FrontierCode 1.1** benchmark, [also from the same release post](https://cognition.com/blog/swe-1-7), gives a fuller picture of agentic coding specifically:
 
 | Model | FrontierCode 1.1 |
 |---|---|
 | Claude Opus 4.8 | 46.5% |
 | GPT-5.5 | 43.0% |
 | **SWE-1.7** | **42.3%** |
-| Kimi K2.7 (base) | 30.1% |
+| Kimi K2.7 Code (base) | 30.1% |
 | Composer 2.5 | 25.6% |
 
-SWE-1.7 sits 0.7 points behind GPT-5.5 and 4.2 points behind Opus 4.8. More strikingly, it's 12.2 points above its own starting point — the Kimi K2.7 base model it was trained on.
+SWE-1.7 sits 0.7 points behind GPT-5.5 and 4.2 points behind Opus 4.8. More strikingly, it's 12.2 points above its own starting point — the Kimi K2.7 Code base model it was trained on.
 
-It also scores **77.8% on SWE-Bench Multilingual**, Cognition's cross-language coding benchmark.
+It also scores [**77.8% on SWE-Bench Multilingual**](https://cognition.com/blog/swe-1-7), Cognition's cross-language coding benchmark.
 
 ---
 
@@ -44,31 +50,31 @@ This is the technical claim worth taking seriously.
 
 The conventional wisdom has been that once a base model is extensively RL post-trained, you approach a ceiling. Additional RL training on an already-RL-optimized model yields diminishing returns, partly because the model's entropy collapses — the policy becomes too deterministic and stops exploring new strategies.
 
-**Kimi K2.7** (Moonshot AI's 1-trillion-parameter MoE model with 32B active parameters, released June 2026) had already undergone extensive RL post-training before Cognition touched it. That makes SWE-1.7 a direct test of whether additional RL training stacks.
+**Kimi K2.7 Code** — [Moonshot AI's 1-trillion-parameter MoE model with 32 billion active parameters](https://www.kimi.com/resources/kimi-k2-7-code), [released as open weights on June 12, 2026](https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/) — had already undergone extensive RL post-training before Cognition touched it. That makes SWE-1.7 a direct test of whether additional RL training stacks.
 
-The result: a 12.2-point jump on FrontierCode 1.1 over the base model. Cognition's interpretation: "RL can push capabilities much further than previously believed."
+The result: a 12.2-point jump on FrontierCode 1.1 over the base model. Cognition's own framing: "the large additional gains from our own training challenge the idea of a 'post-training ceiling' and suggest that [RL can push capabilities much further than previously believed](https://cognition.com/blog/swe-1-7)."
 
 ### How They Avoided Entropy Collapse
 
-The key technical innovation is **entropy preservation** using top-p sampling with sampling distribution replay. During RL training, as the model improves, it tends to become overconfident — repeatedly choosing the same high-probability actions and losing the diversity that drives further learning. Cognition's approach replays the sampling distribution from earlier in training, keeping policy entropy high enough to keep learning.
+The key technical innovation is **entropy preservation** using top-p sampling with sampling distribution replay. During RL training, as the model improves, it tends to become overconfident — repeatedly choosing the same high-probability actions and losing the diversity that drives further learning. [Cognition's approach](https://cognition.com/blog/swe-1-7) replays the sampling distribution from earlier in training, keeping policy entropy high enough to keep learning.
 
 ### Self-Compaction for Long Agentic Tasks
 
-Agentic coding tasks can run for hours. SWE-1.7's training rollouts ran up to **six hours** — far beyond what fits in a raw context window. Cognition solved this with **self-compaction**: the model periodically summarizes its own working state and picks up from that summary, using alternating length penalties to drive efficient compression. This means SWE-1.7 can maintain coherent task progress across very long horizons without hitting context limits.
+Agentic coding tasks can run for hours. [SWE-1.7's training rollouts ran up to six hours](https://cognition.com/blog/swe-1-7) — far beyond what fits in a raw context window. Cognition solved this with **self-compaction**: the model periodically summarizes its own working state and picks up from that summary, using an alternating length penalty to drive efficient compression. This means SWE-1.7 can maintain coherent task progress across very long horizons without hitting context limits.
 
 ### Multi-Cluster Training Infrastructure
 
-To run RL at this scale, Cognition distributed training across compute clusters on three continents with fault tolerance built in. RL training is notoriously brittle to node failures — a single dead node typically kills a run. Their multi-cluster setup keeps training resilient across hardware failures.
+To run RL at this scale, [Cognition trained on clusters across three continents, shipped weight updates through object storage, and built fault tolerance so that hardware failures never stalled the run](https://cognition.com/blog/swe-1-7).
 
 ### Data Curation
 
-An automated pipeline filters out tasks with low learning signal and detects reward exploitation through execution testing. This prevents the model from gaming its training rewards rather than learning genuine task completion.
+[Cognition built an automated data-quality pipeline that runs each task through execution tests, filters out tasks with low learning signal, and hardens tasks against reward-hacking](https://cognition.com/blog/swe-1-7) — preventing the model from gaming its training rewards rather than learning genuine task completion.
 
 ---
 
 ## Cost: $1.97 Per Task
 
-On FrontierCode's Main evaluation set, SWE-1.7 costs **$1.97 per task** on average. Cognition plots this on a cost-performance Pareto curve where SWE-1.7 occupies a position "that none of the pricier models occupy" — meaning you'd pay significantly more per task with GPT-5.5 or Opus 4.8 to get a small benchmark gain.
+On FrontierCode's Main evaluation set, [Cognition reports SWE-1.7 costs roughly **$1.97 per task**](https://officechai.com/ai/cognition-releases-swe-1-7-says-it-is-close-to-frontier-performance-at-a-fraction-of-the-cost/) on average — a figure attributed to Cognition but presented as a chart data point in [their release post](https://cognition.com/blog/swe-1-7) rather than a plain-text price. Cognition frames this as advancing the cost-performance Pareto curve, meaning you'd pay significantly more per task with GPT-5.5 or Opus 4.8 for a small additional benchmark gain.
 
 At 1,000 tokens/second via Cerebras, the model is also fast enough for interactive coding workflows rather than just batch background work.
 
@@ -101,7 +107,7 @@ Even if you're not a Devin user, this release matters for a few reasons:
 
 ## Bottom Line for Builders
 
-SWE-1.7 is a legitimate technical achievement. The RL-on-RL result challenges conventional assumptions about post-training ceilings, the self-compaction technique is novel, and the Terminal-Bench position (81.5% — above Sonnet 5) is credible at a claimed $1.97/task cost.
+SWE-1.7 is a legitimate technical achievement. The RL-on-RL result challenges conventional assumptions about post-training ceilings, the self-compaction technique is novel, and the Terminal-Bench position (81.5%, within a few points of GPT-5.5 and Opus 4.8) is credible at a claimed $1.97/task cost.
 
 The access constraint is real: you get SWE-1.7 by using Devin, not by calling an API. If Devin fits your workflow, this upgrade is meaningful. If you're building directly on model APIs, track the techniques rather than the model.
 

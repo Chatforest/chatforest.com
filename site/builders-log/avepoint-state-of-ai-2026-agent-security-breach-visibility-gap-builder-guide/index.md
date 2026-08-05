@@ -3,11 +3,11 @@
 > AvePoint surveyed 750 global IT leaders and found 88.4% experienced AI agent security breaches. The real story is the visibility gap, which has nearly tripled while adoption accelerates.
 
 
-AvePoint released its [State of AI 2026 report](https://www.avepoint.com/blog/manage/state-of-ai-2026-report) based on 750 IT leaders across financial services, healthcare, and government — and the headline number has been making the rounds: **88.4% of organizations experienced at least one AI agent-related security breach in the past 12 months.**
+AvePoint released its [State of AI 2026 report](https://www.avepoint.com/blog/manage/state-of-ai-2026-report) based on 750 IT leaders across financial services, healthcare, and government — and the headline number has been making the rounds: **88.4% of organizations experienced at least one AI agent-related security breach in the past 12 months** ([AvePoint press release](https://www.globenewswire.com/news-release/2026/06/29/3318982/0/en/AvePoint-Research-Reveals-AI-Visibility-Gaps-Have-Nearly-Tripled-as-AI-Agents-Scale-and-Almost-Half-of-Enterprise-Employees-Now-Rely-on-Agents-Daily-or-Weekly.html)).
 
 That's not a rounding error. That's virtually every enterprise that's shipping agents.
 
-But the 88.4% figure is almost the wrong thing to focus on. The more alarming finding is buried a few pages deeper: **the visibility gap has nearly tripled.** In 2025, 6.3% of organizations couldn't tell whether employees were using unsanctioned AI tools. That number is now 17.6%. And 21.1% can't tell whether unsanctioned tools are being used to *build* AI agents for internal work processes.
+But the 88.4% figure is almost the wrong thing to focus on. The more alarming finding is buried a few pages deeper: **the visibility gap has nearly tripled.** In 2025, 6.3% of organizations couldn't tell whether employees were using unsanctioned AI tools. That number is now 17.6%. And 21.1% can't tell whether unsanctioned tools are being used to *build* AI agents for internal work processes. ([Source](https://www.avepoint.com/blog/manage/state-of-ai-2026-report))
 
 Organizations are losing the ability to audit their own AI surface — while the surface itself is growing faster than ever.
 
@@ -15,7 +15,7 @@ Organizations are losing the ability to audit their own AI surface — while the
 
 ## What's Actually Failing
 
-The two most common breach types in the report are almost perfectly balanced:
+The two most common breach types in the report are almost perfectly balanced ([source](https://www.avepoint.com/blog/manage/state-of-ai-2026-report)):
 
 - **Data leakage**: 50.1% of incidents
 - **Manipulation by malicious or untrusted inputs**: 49.6% of incidents
@@ -30,27 +30,27 @@ Neither failure mode requires a sophisticated attacker. They require an agent th
 
 ## The Adoption Acceleration Making This Worse
 
-Here's the compounding factor: **46.9% of employees already rely on AI agents daily or weekly.** A year ago, agents were used in 26.6% of work processes. That number is now 39.1%, and the report projects 54.8% within twelve months.
+Here's the compounding factor: **46.9% of employees already rely on AI agents daily or weekly.** A year ago, agents were used in 26.6% of work processes. That number is now 39.1%, and the report projects 54.8% within twelve months. ([Source](https://www.avepoint.com/blog/manage/state-of-ai-2026-report))
 
 The attack surface is not static. It's expanding faster than security posture can follow.
 
-The data on delays tells the same story from the other direction. **86% of organizations delayed AI agent deployments by an average of 5.92 months** — primarily because of unresolved data security and governance concerns. These aren't teams that aren't taking security seriously. These are teams that understand the risk and are still deploying anyway, because competitive pressure doesn't wait for governance frameworks.
+The data on delays tells the same story from the other direction. **86% of organizations delayed AI agent deployments by an average of 5.92 months** ([source](https://www.avepoint.com/blog/manage/state-of-ai-2026-report)) — primarily because of unresolved data security and governance concerns. These aren't teams that aren't taking security seriously. These are teams that understand the risk and are still deploying anyway, because competitive pressure doesn't wait for governance frameworks.
 
 ---
 
 ## The Data Generation Problem
 
-There's a compounding factor the report surfaces that doesn't get enough attention: **AI assistants now generate 35.5% of organizational data.** That number is projected to reach 42.1% within twelve months.
+There's a compounding factor the report surfaces that doesn't get enough attention: **AI assistants now generate 35.5% of organizational data.** That number is projected to reach 42.1% within twelve months. ([Source](https://www.avepoint.com/blog/manage/state-of-ai-2026-report))
 
 This matters for security because AI-generated data inherits the context of its creation. An agent summarizing a sensitive HR conversation produces a sensitive summary. An agent building a report from customer data produces a document with customer data embedded in it. That output lands in email threads, SharePoint libraries, Slack messages, and wherever else work happens — often with no metadata flagging its origin or sensitivity level.
 
-Organizations managing petabyte-scale data estates (84.1% of the surveyed organizations) are now contending with a rapidly growing fraction of that data being generated by systems that don't inherently apply classification, retention, or access controls at creation time.
+Organizations managing petabyte-scale data estates ([84.1% of the surveyed organizations](https://www.avepoint.com/shifthappens/reports/artificial-intelligence-report-2026)) are now contending with a rapidly growing fraction of that data being generated by systems that don't inherently apply classification, retention, or access controls at creation time.
 
 ---
 
 ## What Enterprises Are Actually Spending On
 
-The report's investment data is telling:
+The report's investment data is telling ([source](https://www.avepoint.com/blog/manage/state-of-ai-2026-report)):
 
 - **62.4%** plan increased spending on monitoring AI agent policy alignment
 - **55.7%** are prioritizing agent interference protection tools (i.e., defenses against prompt injection and adversarial inputs)
