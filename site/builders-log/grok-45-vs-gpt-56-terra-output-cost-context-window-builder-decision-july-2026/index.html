@@ -6,14 +6,14 @@
   <title>Grok 4.5 vs GPT-5.6 Terra: The $9 Output Gap That Makes the Decision for You — ChatForest</title>
   <meta name="description" content="Grok 4.5 ($2/$6) and GPT-5.6 Terra ($2.50/$15) launched the same day targeting the same price tier. Terminal-Bench scores are separated by 1 point. Output cost is separated by $9 per million tokens. Here&#39;s the routing decision.">
   <meta property="og:title" content="Grok 4.5 vs GPT-5.6 Terra: The $9 Output Gap That Makes the Decision for You — ChatForest">
-  <meta property="og:description" content="Both launched July 9. Both sit at roughly $2 per million input tokens. The benchmark gap is 1 point. The output cost gap is 2.5x. The context window gap is 3x. Here&#39;s which one wins your workload.">
+  <meta property="og:description" content="Both launched July 9. Both sit at roughly $2 per million input tokens. The benchmark gap is 1 point. The output cost gap is 2.5x. The context window gap is roughly 2x. Here&#39;s which one wins your workload.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/builders-log/grok-45-vs-gpt-56-terra-output-cost-context-window-builder-decision-july-2026/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Grok 4.5 vs GPT-5.6 Terra: The $9 Output Gap That Makes the Decision for You — ChatForest">
-  <meta name="twitter:description" content="Both launched July 9. Both sit at roughly $2 per million input tokens. The benchmark gap is 1 point. The output cost gap is 2.5x. The context window gap is 3x. Here&#39;s which one wins your workload.">
+  <meta name="twitter:description" content="Both launched July 9. Both sit at roughly $2 per million input tokens. The benchmark gap is 1 point. The output cost gap is 2.5x. The context window gap is roughly 2x. Here&#39;s which one wins your workload.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/builders-log/grok-45-vs-gpt-56-terra-output-cost-context-window-builder-decision-july-2026/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -72,7 +72,9 @@
 <p><a href="https://x.ai/news/grok-4-5">Grok 4.5</a> and <a href="https://openai.com/index/gpt-5-6/">GPT-5.6 Terra</a> launched on the same day — July 9, 2026. Both sit at roughly $2 per million input tokens. On <a href="https://www.tbench.ai/leaderboard/terminal-bench/2.1">Terminal-Bench 2.1</a>, the main agentic coding baseline, they are separated by exactly one point: Terra 84.3%, Grok 4.5 83.3%.</p>
 <p>That benchmark gap is noise. The output pricing gap is not.</p>
 <p>Terra outputs cost $15 per million tokens. Grok 4.5 outputs cost $6 per million tokens. That $9 gap is 2.5x, and for code-generation or long-response workloads where output tokens dominate, it decides the routing decision before you ever run a benchmark.</p>
-<p>But Terra has a 3x larger context window and a 90% cache read discount. Those two numbers flip the math for specific workload shapes. Here&rsquo;s the full analysis.</p>
+<p>But Terra has a roughly 2x larger context window and a 90% cache read discount. Those two numbers flip the math for specific workload shapes. Here&rsquo;s the full analysis.</p>
+<hr>
+<p><strong>Update (verified 2026-08-05):</strong> Two figures below reflect July 9 launch-day facts that have since moved. First, <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">OpenAI cut Terra&rsquo;s price 20% on July 30, 2026</a> — Terra is now $2.00/M input and $12.00/M output, down from the $2.50/$15 launch pricing used throughout this piece. That narrows the output-cost gap from $9/M to $6/M (still a 2x differential, just not $9). Second, Terra&rsquo;s context window was never 1.5M tokens — <a href="https://developers.openai.com/api/docs/models/gpt-5.6-terra">OpenAI&rsquo;s own model page</a> lists it at 1,050,000 tokens (roughly 1.05M) with a 922K max input, both at launch and today; 1.5M was pre-launch speculation that didn&rsquo;t hold. Figures below are corrected for the context-window error; dollar figures are left at launch-day pricing with this note as the record of the July 30 change.</p>
 <hr>
 <h2 id="the-numbers">The Numbers</h2>
 <table>
@@ -87,17 +89,17 @@
 <tr>
 <td>Input</td>
 <td>$2.00/M</td>
-<td>$2.50/M</td>
+<td>$2.50/M (now $2.00/M)</td>
 </tr>
 <tr>
 <td>Output</td>
 <td>$6.00/M</td>
-<td>$15.00/M</td>
+<td>$15.00/M (now $12.00/M)</td>
 </tr>
 <tr>
 <td>Context window</td>
 <td>500K tokens</td>
-<td>1.5M tokens</td>
+<td>~1.05M tokens</td>
 </tr>
 <tr>
 <td>Terminal-Bench 2.1</td>
@@ -131,7 +133,7 @@
 </tr>
 </tbody>
 </table>
-<p>Both are generally available as of July 9. Grok 4.5 requires an xAI API key; Terra uses the OpenAI API.</p>
+<p>Both are generally available as of July 9. Grok 4.5 requires an xAI API key; Terra uses the OpenAI API. Context window and pricing per <a href="https://x.ai/news/grok-4-5">xAI&rsquo;s Grok 4.5 pricing</a> and <a href="https://developers.openai.com/api/docs/models/gpt-5.6-terra">OpenAI&rsquo;s GPT-5.6 Terra model page</a>.</p>
 <hr>
 <h2 id="the-output-cost-math">The Output Cost Math</h2>
 <p>For most agentic coding workloads, output tokens dominate the bill. A typical SWE-bench Pro task run on Grok 4.5 generates roughly 16,000 output tokens, per xAI&rsquo;s published benchmark data. At $6/M, that&rsquo;s about $0.096 per task.</p>
@@ -159,7 +161,7 @@
 <p>The benchmark difference — 1 point on Terminal-Bench — would need to produce a measurable task-completion rate improvement to justify that cost premium. A 1-point gap on Terminal-Bench 2.1 does not typically translate to a 1% improvement in real production task completion.</p>
 <hr>
 <h2 id="the-context-window-flip">The Context Window Flip</h2>
-<p>Terra&rsquo;s 1.5M token context window versus Grok 4.5&rsquo;s 500K is not a minor spec difference. It&rsquo;s a 3x multiplier that completely changes what you can send in a single call.</p>
+<p>Terra&rsquo;s <a href="https://developers.openai.com/api/docs/models/gpt-5.6-terra">~1.05M token context window</a> versus Grok 4.5&rsquo;s <a href="https://x.ai/news/grok-4-5">500K</a> is not a minor spec difference. It&rsquo;s roughly a 2x multiplier that changes what you can send in a single call.</p>
 <p>If your workload involves:</p>
 <ul>
 <li>Repository-scale context (large codebase + test suite + documentation)</li>
@@ -168,10 +170,9 @@
 <li>Multi-file refactors where you want the full codebase in context</li>
 </ul>
 <p>&hellip;you may hit Grok 4.5&rsquo;s 500K limit before Terra&rsquo;s. Once you exceed 500K tokens of context, Grok 4.5 is no longer an option for that request without chunking.</p>
-<p>Terra&rsquo;s context window advantage is especially meaningful for the GPT-5.5 → Terra migration use case. Teams running GPT-5.5 (which had a roughly 400K context window) on large-context workloads are already architecture-planning around context size. Terra&rsquo;s 1.5M window gives them room to expand rather than shrink.</p>
 <hr>
 <h2 id="the-caching-angle">The Caching Angle</h2>
-<p>Terra has a prompt caching system: cache writes cost 1.25× the standard input rate, cache reads cost 10% of the standard input rate — a 90% discount on cached input tokens.</p>
+<p>Terra has a <a href="https://developers.openai.com/api/docs/guides/prompt-caching">prompt caching system</a>: cache writes cost 1.25× the standard input rate, cache reads cost 10% of the standard input rate — a 90% discount on cached input tokens.</p>
 <p>At standard Terra input pricing of $2.50/M, cache reads cost $0.25/M. That undercuts Grok 4.5&rsquo;s $2.00/M non-cached input rate by $1.75/M.</p>
 <p>If your system prompt or repeated context is large and you send it on every request, Terra&rsquo;s cache read discount can flip the economics:</p>
 <ul>
@@ -188,7 +189,7 @@
 <p>The efficiency claim is verified against Opus. The Terra comparison remains unverified.</p>
 <hr>
 <h2 id="the-cursor-training-data-question">The Cursor Training Data Question</h2>
-<p>Grok 4.5 was trained on Cursor IDE interaction data — real coding sessions from developers using Cursor. This gives the model intuitions about interrupted code states, multi-file context, and real-world agentic coding patterns that don&rsquo;t appear in standard benchmarks.</p>
+<p><a href="https://x.ai/news/grok-4-5">Grok 4.5 was trained on Cursor IDE interaction data</a> — real coding sessions from developers using Cursor. This gives the model intuitions about interrupted code states, multi-file context, and real-world agentic coding patterns that don&rsquo;t appear in standard benchmarks.</p>
 <p>For the privacy-sensitive: your production code is not in Grok 4.5&rsquo;s training data. But choosing Grok 4.5 means your future API calls go to xAI, and your data governance policies need to account for that. If your organization has approved OpenAI but not xAI, Terra is the path of least resistance.</p>
 <p>For the capability-focused: the Cursor training signal may explain why Grok 4.5&rsquo;s SWE-bench Pro score (64.7%) is competitive despite lower raw benchmark scores on other tasks. Cursor-style agentic coding tasks map closely to SWE-bench Pro&rsquo;s evaluation methodology.</p>
 <hr>
@@ -217,7 +218,7 @@
 <hr>
 <p><em>Related: <a href="/builders-log/gpt-56-terra-luna-routing-decision-live-benchmark-analysis-july-2026/">GPT-5.6 Terra vs Luna: The Routing Decision Now That Both Are Actually Live</a> — the within-GPT-5.6-family routing analysis that prompted this piece. <a href="/builders-log/grok-45-launch-pricing-benchmarks-cursor-training-builder-evaluation-july-2026/">Grok 4.5 Builder Evaluation</a> — Grok 4.5 launch overview with SWE-bench Pro context.</em></p>
 <hr>
-<p><em>Sources: <a href="https://x.ai/news/grok-4-5">xAI Grok 4.5 official announcement</a> · <a href="https://openai.com/index/gpt-5-6/">OpenAI GPT-5.6 launch</a> · <a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a> · <a href="https://www.tbench.ai/leaderboard/terminal-bench/2.1">Terminal-Bench 2.1 leaderboard</a> · <a href="https://artificialanalysis.ai/models/grok-4-5">Artificial Analysis: Grok 4.5</a></em></p>
+<p><em>Sources: <a href="https://x.ai/news/grok-4-5">xAI Grok 4.5 official announcement</a> · <a href="https://openai.com/index/gpt-5-6/">OpenAI GPT-5.6 launch</a> · <a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a> · <a href="https://developers.openai.com/api/docs/models/gpt-5.6-terra">OpenAI GPT-5.6 Terra model page</a> · <a href="https://developers.openai.com/api/docs/guides/prompt-caching">OpenAI prompt caching guide</a> · <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">OpenAI: July 30 price-performance update</a> · <a href="https://www.tbench.ai/leaderboard/terminal-bench/2.1">Terminal-Bench 2.1 leaderboard</a> · <a href="https://artificialanalysis.ai/models/grok-4-5">Artificial Analysis: Grok 4.5</a></em></p>
 
       </div>
 

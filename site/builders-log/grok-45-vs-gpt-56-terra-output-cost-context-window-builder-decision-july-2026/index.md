@@ -15,7 +15,11 @@ That benchmark gap is noise. The output pricing gap is not.
 
 Terra outputs cost $15 per million tokens. Grok 4.5 outputs cost $6 per million tokens. That $9 gap is 2.5x, and for code-generation or long-response workloads where output tokens dominate, it decides the routing decision before you ever run a benchmark.
 
-But Terra has a 3x larger context window and a 90% cache read discount. Those two numbers flip the math for specific workload shapes. Here's the full analysis.
+But Terra has a roughly 2x larger context window and a 90% cache read discount. Those two numbers flip the math for specific workload shapes. Here's the full analysis.
+
+---
+
+**Update (verified 2026-08-05):** Two figures below reflect July 9 launch-day facts that have since moved. First, [OpenAI cut Terra's price 20% on July 30, 2026](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/) — Terra is now $2.00/M input and $12.00/M output, down from the $2.50/$15 launch pricing used throughout this piece. That narrows the output-cost gap from $9/M to $6/M (still a 2x differential, just not $9). Second, Terra's context window was never 1.5M tokens — [OpenAI's own model page](https://developers.openai.com/api/docs/models/gpt-5.6-terra) lists it at 1,050,000 tokens (roughly 1.05M) with a 922K max input, both at launch and today; 1.5M was pre-launch speculation that didn't hold. Figures below are corrected for the context-window error; dollar figures are left at launch-day pricing with this note as the record of the July 30 change.
 
 ---
 
@@ -23,9 +27,9 @@ But Terra has a 3x larger context window and a 90% cache read discount. Those tw
 
 | | Grok 4.5 | GPT-5.6 Terra |
 |---|---|---|
-| Input | $2.00/M | $2.50/M |
-| Output | $6.00/M | $15.00/M |
-| Context window | 500K tokens | 1.5M tokens |
+| Input | $2.00/M | $2.50/M (now $2.00/M) |
+| Output | $6.00/M | $15.00/M (now $12.00/M) |
+| Context window | 500K tokens | ~1.05M tokens |
 | Terminal-Bench 2.1 | 83.3% | 84.3% |
 | SWE-bench Pro | 64.7% | not published |
 | Cache read discount | — | 90% |
@@ -33,7 +37,7 @@ But Terra has a 3x larger context window and a 90% cache read discount. Those tw
 | Speed | ~80 tokens/sec | not published |
 | Training source | Cursor IDE interactions | standard |
 
-Both are generally available as of July 9. Grok 4.5 requires an xAI API key; Terra uses the OpenAI API.
+Both are generally available as of July 9. Grok 4.5 requires an xAI API key; Terra uses the OpenAI API. Context window and pricing per [xAI's Grok 4.5 pricing](https://x.ai/news/grok-4-5) and [OpenAI's GPT-5.6 Terra model page](https://developers.openai.com/api/docs/models/gpt-5.6-terra).
 
 ---
 
@@ -58,7 +62,7 @@ The benchmark difference — 1 point on Terminal-Bench — would need to produce
 
 ## The Context Window Flip
 
-Terra's 1.5M token context window versus Grok 4.5's 500K is not a minor spec difference. It's a 3x multiplier that completely changes what you can send in a single call.
+Terra's [~1.05M token context window](https://developers.openai.com/api/docs/models/gpt-5.6-terra) versus Grok 4.5's [500K](https://x.ai/news/grok-4-5) is not a minor spec difference. It's roughly a 2x multiplier that changes what you can send in a single call.
 
 If your workload involves:
 - Repository-scale context (large codebase + test suite + documentation)
@@ -68,13 +72,11 @@ If your workload involves:
 
 ...you may hit Grok 4.5's 500K limit before Terra's. Once you exceed 500K tokens of context, Grok 4.5 is no longer an option for that request without chunking.
 
-Terra's context window advantage is especially meaningful for the GPT-5.5 → Terra migration use case. Teams running GPT-5.5 (which had a roughly 400K context window) on large-context workloads are already architecture-planning around context size. Terra's 1.5M window gives them room to expand rather than shrink.
-
 ---
 
 ## The Caching Angle
 
-Terra has a prompt caching system: cache writes cost 1.25× the standard input rate, cache reads cost 10% of the standard input rate — a 90% discount on cached input tokens.
+Terra has a [prompt caching system](https://developers.openai.com/api/docs/guides/prompt-caching): cache writes cost 1.25× the standard input rate, cache reads cost 10% of the standard input rate — a 90% discount on cached input tokens.
 
 At standard Terra input pricing of $2.50/M, cache reads cost $0.25/M. That undercuts Grok 4.5's $2.00/M non-cached input rate by $1.75/M.
 
@@ -103,7 +105,7 @@ The efficiency claim is verified against Opus. The Terra comparison remains unve
 
 ## The Cursor Training Data Question
 
-Grok 4.5 was trained on Cursor IDE interaction data — real coding sessions from developers using Cursor. This gives the model intuitions about interrupted code states, multi-file context, and real-world agentic coding patterns that don't appear in standard benchmarks.
+[Grok 4.5 was trained on Cursor IDE interaction data](https://x.ai/news/grok-4-5) — real coding sessions from developers using Cursor. This gives the model intuitions about interrupted code states, multi-file context, and real-world agentic coding patterns that don't appear in standard benchmarks.
 
 For the privacy-sensitive: your production code is not in Grok 4.5's training data. But choosing Grok 4.5 means your future API calls go to xAI, and your data governance policies need to account for that. If your organization has approved OpenAI but not xAI, Terra is the path of least resistance.
 
@@ -143,5 +145,5 @@ That data does not exist yet as of July 9. When it does, the output cost vs effi
 
 ---
 
-*Sources: [xAI Grok 4.5 official announcement](https://x.ai/news/grok-4-5) · [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [Artificial Analysis: Grok 4.5](https://artificialanalysis.ai/models/grok-4-5)*
+*Sources: [xAI Grok 4.5 official announcement](https://x.ai/news/grok-4-5) · [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [OpenAI GPT-5.6 Terra model page](https://developers.openai.com/api/docs/models/gpt-5.6-terra) · [OpenAI prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) · [OpenAI: July 30 price-performance update](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [Artificial Analysis: Grok 4.5](https://artificialanalysis.ai/models/grok-4-5)*
 

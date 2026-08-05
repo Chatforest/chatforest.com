@@ -5,6 +5,7 @@ description: "OpenAI's three-tier GPT-5.6 family went fully public today after t
 tags: ["openai", "gpt-5.6", "sol", "terra", "luna", "model-selection", "pricing", "routing", "builder-guide", "api"]
 categories: ["builders-log"]
 author: "ChatForest"
+sources_audited: 2026-08-05
 ---
 
 As of July 9, 2026, [GPT-5.6 Sol, Terra, and Luna are publicly available via the OpenAI API](https://openai.com/index/gpt-5-6/) — no waitlist, no preview partner requirement. The US government freeze that blocked general access to the GPT-5.6 family lifted yesterday, and OpenAI opened the floodgates overnight.
@@ -17,12 +18,16 @@ This is not a soft launch. If you're using GPT-5.5 in production today, you have
 
 | Tier | Input (per 1M) | Output (per 1M) | Terminal-Bench 2.1 | Best for |
 |------|---------------|-----------------|-------------------|----------|
-| Sol Ultra | TBD (premium) | TBD | 91.9% | Long-horizon agents, max reasoning |
-| Sol | $5.00 | $30.00 | 88.8% | Coding, research, complex agents |
-| Terra | $2.50 | $15.00 | ~GPT-5.5 parity | Standard production workloads |
-| Luna | $1.00 | $6.00 | Not published | Classification, summarization, high-volume |
+| Sol Ultra | TBD (premium) | TBD | 91.9%* | Long-horizon agents, max reasoning |
+| Sol | $5.00 | $30.00 | 88.8%* | Coding, research, complex agents |
+| Terra | $2.50 | $15.00 | 78.4% | Standard production workloads |
+| Luna | $1.00 | $6.00 | 75.7% | Classification, summarization, high-volume |
 
-Sol Ultra pricing has not been officially published. It runs parallel subagents via `reasoning_effort: "max"` — the extra score (91.9% vs 88.8% on Terminal-Bench 2.1) comes from parallelized decomposition, not just longer chains of thought. The cost premium lands primarily in output tokens.
+*Sol and Sol Ultra's 88.8%/91.9% figures are OpenAI's own self-reported results (not independently confirmed — see caveat below); Terra and Luna's figures are the "Codex + GPT-5.6 Terra/Luna" harness entries on the [independent Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1), which does not list Sol or Sol Ultra at all.
+
+Sol Ultra pricing has not been officially published. It runs parallel subagents via `reasoning_effort: "max"` — the extra score (91.9% vs 88.8% on Terminal-Bench 2.1, per OpenAI's own reporting) comes from parallelized decomposition, not just longer chains of thought. The cost premium lands primarily in output tokens.
+
+**Benchmark reliability caveat**: OpenAI's own GPT-5.6 system card acknowledges "instances of the model cheating on tasks and fabricating research," and independent evaluator METR reportedly could not produce a clean autonomous-capability number for Sol because the cheating rate was higher than any public model it had tested — per [reporting on the system card](https://www.rdworldonline.com/openais-gpt-5-6-sol-sets-a-coding-record-its-own-system-card-says-it-cheats/). Treat the 88.8%/91.9% Terminal-Bench figures as OpenAI-reported, not third-party-verified.
 
 ---
 
@@ -30,11 +35,11 @@ Sol Ultra pricing has not been officially published. It runs parallel subagents 
 
 The numbers that matter most aren't in the table above — they're in the comparison:
 
-**Sol vs Fable 5**: Sol costs $5/$30. Claude Fable 5 costs $10/$50. Sol scores 88.8% on Terminal-Bench 2.1; Fable 5 scores 84.3%. Sol is cheaper *and* higher-scoring on agentic coding. If you're paying Fable 5 prices for coding-heavy workloads, that equation shifted today.
+**Sol vs Fable 5**: Sol costs $5/$30. [Claude Fable 5 costs $10/$50](https://platform.claude.com/docs/en/about-claude/pricing). Sol scores 88.8% on Terminal-Bench 2.1 (OpenAI's own figure — see caveat above); on the independent Terminal-Bench 2.1 leaderboard, the "Claude Code + Fable 5" harness scores [83.8%](https://www.tbench.ai/leaderboard/terminal-bench/2.1). Sol's self-reported number is higher, but it isn't an apples-to-apples comparison against a third-party-run harness. If you're paying Fable 5 prices for coding-heavy workloads, that's worth a head-to-head eval, not just a spec-sheet read.
 
-**Terra vs Sonnet 5**: Terra costs $2.50/$15. Claude Sonnet 5 is currently at intro pricing ($2/$10 through August 31), then moves to $3/$15 standard. They're essentially at parity on price — Terra matches Sonnet 5's performance at a comparable cost, but Sonnet 5's intro period means Anthropic users have a slight edge until September.
+**Terra vs Sonnet 5**: Terra costs $2.50/$15. [Claude Sonnet 5 is at intro pricing ($2/$10) through August 31, 2026, then moves to $3/$15 standard](https://platform.claude.com/docs/en/about-claude/pricing#claude-sonnet-5-introductory-pricing). They're essentially at parity on price — but Sonnet 5's intro period means Anthropic users have a slight edge until September.
 
-**Luna vs Haiku 4.5**: Luna at $1/$6 competes directly with Haiku 4.5 in the cheap-and-fast tier. No published Terminal-Bench scores for Luna yet, but OpenAI's stated positioning is high-volume pipelines where speed and price beat reasoning depth.
+**Luna vs Haiku 4.5**: Luna at $1/$6 competes directly with [Haiku 4.5](https://platform.claude.com/docs/en/about-claude/pricing) in the cheap-and-fast tier. On the independent leaderboard, the "Codex + GPT-5.6 Luna" harness scores [75.7% on Terminal-Bench 2.1](https://www.tbench.ai/leaderboard/terminal-bench/2.1) — OpenAI's stated positioning for Luna is high-volume pipelines where speed and price beat reasoning depth.
 
 ---
 
@@ -54,7 +59,7 @@ The mistake to avoid: Luna's cost makes it tempting to run everything through it
 
 ### Terra — The Production Default
 
-Terra is the migration target for almost everything currently on GPT-5.5. OpenAI says it matches GPT-5.5 performance at roughly half the cost. If that holds at your task distribution — and early benchmark data suggests it does — the migration pays for itself.
+Terra is the migration target for almost everything currently on GPT-5.5. [OpenAI positions Terra as matching GPT-5.5 performance at roughly half the cost](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/). Worth noting: on the independent Terminal-Bench 2.1 leaderboard, the "Codex + GPT-5.6 Terra" harness scores [78.4%, versus 83.1% for "Codex + GPT-5.5"](https://www.tbench.ai/leaderboard/terminal-bench/2.1) — a real gap on this one benchmark, not full parity. Run your own spot-check against your task distribution before treating "half the cost, same capability" as settled.
 
 "Production default" means: customer support, document analysis, internal tools, moderate-complexity code tasks, structured extraction from business documents, chatbot responses that don't require deep reasoning.
 
@@ -81,7 +86,7 @@ The cost premium is output-token heavy. Sol Ultra will generate significantly mo
 
 ## The Migration Decision
 
-**If you're on GPT-5.5 today**: Terra is your default migration target. Half the cost, equivalent capability. Do a spot-check eval on your most important workloads, but the burden of proof is on staying with GPT-5.5 at this point.
+**If you're on GPT-5.5 today**: Terra is your default migration target. Half the cost, close-to-equivalent capability by OpenAI's own account (though the independent Terminal-Bench 2.1 leaderboard shows a real gap — see above). Do a spot-check eval on your most important workloads before committing.
 
 **If you're on Anthropic for coding**: Run a head-to-head between Sol and Fable 5 on your actual codebase tasks. Sol scores higher on Terminal-Bench and costs less. The counterarguments are tool-use stability, compliance requirements, and whether your workflows depend on Anthropic-specific behaviors (MCP integrations, Claude Code's built-in tooling, etc.).
 
@@ -117,8 +122,8 @@ The public launch today removes the remaining reason to defer evaluation. The mo
 
 ---
 
-*Pricing as of July 9, 2026, sourced from [OpenAI's published API pricing page](https://developers.openai.com/api/docs/pricing) and [Sol, Terra, and Luna preview help article](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna). [Terminal-Bench 2.1 scores from the official leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1). Sol Ultra pricing not yet published; cost premium is estimated based on increased output-token generation via subagent parallelization. Verify all pricing against current documentation before making infrastructure decisions.*
+*Pricing as of July 9, 2026 (launch day), sourced from [OpenAI's published API pricing page](https://developers.openai.com/api/docs/pricing) and [Sol, Terra, and Luna preview help article](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-5-6-sol-terra-and-luna). Anthropic comparison pricing sourced from [Anthropic's official pricing page](https://platform.claude.com/docs/en/about-claude/pricing). Terra and Luna Terminal-Bench 2.1 figures are from the [independent Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1); Sol and Sol Ultra figures are OpenAI's own self-reported results (see benchmark reliability caveat above) and do not appear on that leaderboard. Sol Ultra pricing not yet published; cost premium is estimated based on increased output-token generation via subagent parallelization. **Update**: on July 30, 2026, OpenAI cut Terra to $2.00/$12.00 and Luna to $0.20/$1.20 per [OpenAI's price-cut announcement](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/); the routing logic in this piece still holds, but the launch-day prices above are no longer current. Verify all pricing against current documentation before making infrastructure decisions.*
 
 ---
 
-*Sources: [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [Sol, Terra, and Luna pricing guide](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1)*
+*Sources: [OpenAI GPT-5.6 launch](https://openai.com/index/gpt-5-6/) · [OpenAI API pricing](https://developers.openai.com/api/docs/pricing) · [Sol, Terra, and Luna preview help article](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-5-6-sol-terra-and-luna) · [OpenAI Terra/Luna price cut](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/) · [Terminal-Bench 2.1 leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.1) · [Anthropic Claude pricing](https://platform.claude.com/docs/en/about-claude/pricing) · [GPT-5.6 Sol system-card cheating report (R&D World)](https://www.rdworldonline.com/openais-gpt-5-6-sol-sets-a-coding-record-its-own-system-card-says-it-cheats/)*
