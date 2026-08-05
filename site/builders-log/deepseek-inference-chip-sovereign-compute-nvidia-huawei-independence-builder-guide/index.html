@@ -74,13 +74,30 @@ it changes the math for every developer relying on DeepSeek&rsquo;s famously che
 <hr>
 <h2 id="why-deepseeks-current-chip-situation-is-complicated">Why DeepSeek&rsquo;s Current Chip Situation Is Complicated</h2>
 <p>DeepSeek runs inference in China, where the hardware landscape is constrained:</p>
-<p><strong>NVIDIA H800 / H100 chips</strong> were cut off by US export controls in October 2023. DeepSeek built V3 and V4
-on the older A100 equivalent (H800) before the cutoff, then shifted to Huawei Ascend 910B/C for new
-deployments. NVIDIA recently released H20 specifically targeting China at lower capabilities, but export
-rules can tighten at any time.</p>
-<p><strong>Huawei Ascend 910C</strong> is the primary alternative. It runs Chinese AI workloads but carries a significant
-performance gap versus NVIDIA&rsquo;s best, particularly for memory bandwidth and inter-chip networking — the
-two metrics that matter most for large MoE models.</p>
+<p><strong>NVIDIA H800 / H100 chips</strong> were cut off by US export controls that the Commerce Department&rsquo;s Bureau of
+Industry and Security <a href="https://www.bis.gov/press-release/commerce-strengthens-restrictions-advanced-computing-semiconductors-semiconductor-manufacturing-equipment">strengthened in October 2023</a>.
+Correction for precision: the H800 is not, as sometimes assumed, an older A100-class chip — it&rsquo;s the
+same Hopper-generation silicon as the H100, <a href="https://www.philisun.com/technical-analysis/nvidia-h800-vs-h100-a-technical-deep-dive-into-politically-defined-ai-chips/">with interconnect bandwidth deliberately cut to comply with
+export limits</a>.
+DeepSeek trained V3 on roughly <a href="https://arxiv.org/abs/2412.19437">2.79 million H800 GPU-hours</a> acquired
+before the tightened rules. V4 continued to rely primarily on Nvidia H800s for training, while <a href="https://fortune.com/2026/04/24/deepseek-v4-ai-model-price-performance-china-open-source/">Huawei
+chips were used for part of V4-Flash&rsquo;s training and its inference deployments</a>:
+DeepSeek, SiliconFlow, and Huawei Cloud <a href="https://www.techpowerup.com/331994/huawei-ascend-910b-accelerators-power-cloud-infrastructure-for-deepseek-r1-inference">jointly launched a V3/R1 inference service running on Ascend
+910B in February 2025</a>,
+and a <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/huawei-led-team-claims-it-post-trained-deepseeks-1-6-trillion-parameter-models-on-ascend-910c-chips">Huawei-led team separately claims to have post-trained the 1.6T-parameter V4 model on 1,000
+Ascend 910C chips</a>
+— an unverified claim from the Huawei side, not confirmed by DeepSeek. NVIDIA&rsquo;s H20, <a href="https://www.tomshardware.com/news/nvidias-latest-regulation-compliant-gpu-for-china-has-been-delayed-to-early-next-year">designed
+specifically for the China market at reduced capability</a>,
+has had its export approval reversed and reinstated multiple times through 2025 as <a href="https://www.npr.org/2025/04/16/nx-s1-5366665/nvidia-china-h20-chips-exports">US-China trade
+policy shifted</a>, underscoring that export rules can tighten again at any time.</p>
+<p><strong>Huawei Ascend 910C</strong> is the primary Chinese-made alternative. Independent teardowns and benchmarks
+report it trailing NVIDIA&rsquo;s best chips on the metrics that matter most for large MoE models: one
+comparison puts the 910C at <a href="https://techstartups.com/2025/04/28/huaweis-ascend-910c-system-reportedly-outperforms-nvidias-h100-in-key-metrics/">roughly 60% of the H100&rsquo;s per-chip inference throughput</a>,
+with Huawei instead <a href="https://techstartups.com/2025/04/28/huaweis-ascend-910c-system-reportedly-outperforms-nvidias-h100-in-key-metrics/">compensating at the system level — clustering 384 chips into its CloudMatrix 384
+system</a>
+rather than closing the individual-chip gap. See also <a href="https://www.csis.org/analysis/deepseek-huawei-export-controls-and-future-us-china-ai-race">CSIS&rsquo;s analysis of the DeepSeek/Huawei/export-control
+dynamic</a> for
+independent corroboration of the broader picture.</p>
 <p>Building its own chip gives DeepSeek a third path: custom silicon designed for its exact architecture,
 no export-control risk, fully within China.</p>
 <hr>
@@ -97,13 +114,13 @@ no export-control risk, fully within China.</p>
 </thead>
 <tbody>
 <tr>
-<td>V3</td>
+<td><a href="https://arxiv.org/abs/2412.19437">V3</a></td>
 <td>671B</td>
 <td>37B</td>
 <td>~1/18 active</td>
 </tr>
 <tr>
-<td>V4-Pro</td>
+<td><a href="https://deepseek.ai/blog/deepseek-v4-unveiled-1-6-trillion-parameters">V4-Pro</a></td>
 <td>1.6T</td>
 <td>49B</td>
 <td>~1/33 active</td>
@@ -113,19 +130,22 @@ no export-control risk, fully within China.</p>
 <p>The key insight: only a small fraction of the network participates in any single forward pass. A custom
 inference chip can be designed to make sparse routing, expert dispatching, and memory access patterns
 extremely efficient — workloads that general-purpose GPUs handle adequately but not optimally.</p>
-<p>V4-Pro also compresses its KV cache to 10% of V3&rsquo;s size via CSA+HCA attention — another candidate for
-hardware-specific optimization.</p>
+<p>V4-Pro also compresses its KV cache to roughly <a href="https://arxiv.org/abs/2606.19348">10% of DeepSeek-V3.2&rsquo;s size (and ~27% of its inference
+FLOPs) at 1M-token context, via CSA+HCA attention</a> — another candidate
+for hardware-specific optimization.</p>
 <p>A chip tuned for these exact patterns would likely outperform GPU-based inference per watt and per dollar,
 possibly by a large margin.</p>
 <hr>
 <h2 id="what-changes-for-builders-if-this-succeeds">What Changes for Builders If This Succeeds</h2>
 <h3 id="pricing-likely-goes-lower">Pricing likely goes lower</h3>
-<p>DeepSeek V4 Flash already prices at <strong>$0.14/$0.28 per million tokens</strong> — cheapest frontier-class API
-available anywhere. Running on purpose-built silicon instead of repurposed GPU silicon could push that
-floor down further.</p>
+<p>DeepSeek V4 Flash already prices at <strong><a href="https://deepseek.ai/pricing">$0.14/$0.28 per million tokens</a></strong>
+(input cache-miss / output) — among the cheapest frontier-class API pricing available anywhere. Running
+on purpose-built silicon instead of repurposed GPU silicon could push that floor down further.</p>
 <p>If DeepSeek&rsquo;s custom chip delivers better tokens-per-watt, the savings accrue directly to inference costs.
-DeepSeek has historically passed cost reductions through to API pricing. Builders who depend on cheap
-Chinese-hosted inference could see those prices drop again over a 2–3 year horizon.</p>
+DeepSeek has a track record of passing cost reductions through to API pricing — including a <a href="https://www.caixinglobal.com/2026-05-25/deepseek-cuts-flagship-ai-model-prices-by-75-as-funding-round-looms-102447441.html">roughly 75%
+cut to V4-Pro rates on May 31, 2026</a>
+and earlier cuts through 2025. Builders who depend on cheap Chinese-hosted inference could see those
+prices drop again over a 2–3 year horizon.</p>
 <h3 id="export-control-resilience-improves--but-api-access-stays-complicated">Export-control resilience improves — but API access stays complicated</h3>
 <p>The chip development project directly responds to export-control risk. If the US cuts off Huawei Ascend
 supply chains or broadens restrictions to hit Huawei&rsquo;s tooling, DeepSeek&rsquo;s own silicon becomes a hedge.</p>
@@ -142,12 +162,16 @@ hardware, those lessons eventually reach the broader market through papers, open
 third-party silicon vendors copying the design ideas.</p>
 <hr>
 <h2 id="the-market-reaction-is-telling">The Market Reaction Is Telling</h2>
-<p>When Reuters published the story, the Nasdaq Composite dropped more than 160 points at the open, with
-chip stocks broadly weak.</p>
+<p>When Reuters published the story, the <a href="https://finance.yahoo.com/markets/stocks/articles/nasdaq-falls-open-deepseeks-ai-133424605.html">Nasdaq Composite dropped 161.0 points (0.62%) at the open, to
+25960.13</a>,
+with chip stocks broadly weak — <a href="https://finance.yahoo.com/markets/stocks/articles/nasdaq-falls-open-deepseeks-ai-133424605.html">Nvidia fell 1.5% in premarket trading, and memory makers Micron (-4.7%),
+Western Digital (-6.3%), and Sandisk (-4.6%) led the sector-wide decline</a>.</p>
 <p>The reaction wasn&rsquo;t to DeepSeek&rsquo;s chip specifically — it&rsquo;s still years from production. The reaction was
 to the precedent: a major frontier lab signaling it intends to own its full compute stack. Every
-hyperscaler and lab that builds its own silicon (Google TPU, Amazon Trainium, Microsoft Azure Maia,
-Meta MTIA) has demonstrated that vertical integration changes the cost curve permanently.</p>
+hyperscaler that builds its own silicon — <a href="https://www.tomshardware.com/tech-industry/semiconductors/custom-ai-asics-examined-from-broadcom-to-mtia">Google TPU, Amazon Trainium, Microsoft Azure Maia, and Meta
+MTIA among them</a>
+— has demonstrated that vertical integration can change the cost curve over time, though none has fully
+displaced NVIDIA for frontier training workloads.</p>
 <p>If DeepSeek pulls this off, it joins that club. More importantly, it shows the rest of the AI industry
 that depending on NVIDIA as a single supplier is a strategic risk — a message the market has been
 ignoring, and is now re-pricing.</p>
@@ -159,9 +183,15 @@ costs.</p>
 <p><strong>Medium term (2–3 years):</strong> If the chip reaches tape-out and yield, expect DeepSeek&rsquo;s inference costs to
 drop again, possibly significantly. Model context pricing for the open-weight V4 family could fall below
 where it is today.</p>
-<p><strong>Structural shift:</strong> DeepSeek is one of several Chinese AI labs (Alibaba, Baidu, ByteDance) that are
-aggressively building toward compute self-sufficiency. The inference API market is unlikely to be dominated
-by NVIDIA-dependent providers forever. Builders architecting for the long run should design cost models
+<p><strong>Structural shift:</strong> DeepSeek is one of several Chinese AI labs and tech giants pushing toward compute
+self-sufficiency: <a href="https://www.scmp.com/tech/big-tech/article/3332596/baidu-unveils-ai-chips-boost-chinas-self-sufficiency-drive">Baidu has its own Kunlunxin chip line</a>,
+<a href="https://www.buildaiq.com/articles/chinas-ai-ecosystem-explained-deepseek-baidu-alibaba-tencent-and-the-race-for-ai-self-reliance">Alibaba&rsquo;s T-Head unit builds the Yitian and other processors</a>,
+and ByteDance and Alibaba are among the customers reportedly <a href="https://capacityglobal.com/news/huawei-ai-chips-bytedance-alibaba/">placing large orders for Huawei&rsquo;s latest AI
+chips</a>. <a href="https://officechai.com/ai/chinas-self-sufficiency-in-ai-chips-has-risen-from-20-in-2023-to-over-40-in-2026-morgan-stanley-data/">Morgan Stanley data cited by
+industry trackers puts China&rsquo;s AI-chip self-sufficiency ratio at roughly 40%, up from about 20% in
+2023</a> —
+still well short of full independence. The inference API market is unlikely to be dominated by
+NVIDIA-dependent providers forever, but builders architecting for the long run should design cost models
 that assume the cheapest option shifts over time, not that current pricing is a floor.</p>
 <p><strong>On supply-chain risk for open-weight users:</strong> Self-hosting DeepSeek V4 weights today requires
 NVIDIA or AMD GPUs. That hardware exposure is yours, not DeepSeek&rsquo;s. DeepSeek&rsquo;s own chip does not

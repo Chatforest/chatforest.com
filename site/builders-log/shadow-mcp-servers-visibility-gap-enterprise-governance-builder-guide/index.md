@@ -1,9 +1,9 @@
 # Shadow MCP Servers: If 21.1% of Enterprises Can't See Unsanctioned Agents, What Are Those Agents Connecting To?
 
-> AvePoint found 21.1% of enterprises can't audit unsanctioned agents. MCP's 9,400+ public servers and 28,000-37,000 estimated private servers mean the visibility gap runs deeper than anyone's tracking.
+> AvePoint found 21.1% of enterprises can't audit unsanctioned agents. MCP crossed 10,000+ active servers by December 2025, and untracked private servers mean the visibility gap runs deeper than anyone's tracking. Corrected 2026-08-05: two unsourced server-count stats removed.
 
 
-Yesterday's [AvePoint State of AI 2026 report](/builders-log/avepoint-state-of-ai-2026-agent-security-breach-visibility-gap-builder-guide/) surfaced a number worth sitting with: **21.1% of enterprises can't tell whether unsanctioned tools are being used to build internal AI agents.** They have agents in production. They don't know what those agents were built with.
+Yesterday's [AvePoint State of AI 2026 report](/builders-log/avepoint-state-of-ai-2026-agent-security-breach-visibility-gap-builder-guide/) surfaced a number worth sitting with: **21.1% of enterprises can't tell whether unsanctioned tools are being used to build internal AI agents**, per [AvePoint's own report](https://www.avepoint.com/blog/manage/state-of-ai-2026-report). They have agents in production. They don't know what those agents were built with.
 
 There's a layer below that visibility gap that the AvePoint survey doesn't measure. When an unsanctioned agent runs, it connects to something. In 2026, that something is often a MCP server — and the inventory of reachable MCP endpoints inside your perimeter is almost certainly larger than any security team thinks.
 
@@ -11,7 +11,9 @@ There's a layer below that visibility gap that the AvePoint survey doesn't measu
 
 ## What Shadow MCP Is
 
-The Model Context Protocol (MCP) is the cross-vendor standard that lets AI agents connect to external data sources and tools. An agent uses MCP to call a GitHub server to read code, a Salesforce server to query contacts, a Postgres server to run queries, or a custom internal API you built last quarter. The protocol is now supported by Anthropic, OpenAI, Google, and Microsoft, and enterprise adoption has scaled fast: as of July 2026, **78% of enterprise AI teams have MCP-backed agents in production**, with approximately 97 million monthly SDK downloads.
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/specification) is the cross-vendor standard that lets AI agents connect to external data sources and tools. An agent uses MCP to call a GitHub server to read code, a Salesforce server to query contacts, a Postgres server to run queries, or a custom internal API you built last quarter. [Anthropic open-sourced the protocol in November 2024](https://www.anthropic.com/news/model-context-protocol), and it's since been adopted by [OpenAI](https://openai.com/index/new-tools-and-features-in-the-responses-api/), [Google](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services), and [Microsoft](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/introducing-model-context-protocol-mcp-in-copilot-studio-simplified-integration-with-ai-apps-and-agents/). Enterprise adoption has scaled fast: MCP crossed **97 million monthly SDK downloads and 10,000 active servers by December 2025**, when Anthropic donated the protocol to the vendor-neutral [Agentic AI Foundation](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) — and downloads have kept climbing since, reaching [close to half a billion a month by late July 2026](https://blog.modelcontextprotocol.io/posts/2026-07-28/). On production maturity specifically, [Stacklok's December 2025 survey of 300 senior technical leaders](https://stacklok.com/resources/state-of-mcp-in-software-2026/) found nearly half of software companies already running MCP in some form of production, with 19% in broad production.
+
+**Correction (2026-08-05 audit):** an earlier version of this paragraph claimed "78% of enterprise AI teams have MCP-backed agents in production." That figure doesn't trace to any named survey or methodology — it circulates across SEO content that cites other SEO content rather than an original study, and the most careful third-party analysis found flags it as unattributed. It's replaced above with the closest verifiable figure, Stacklok's December 2025 production-adoption survey.
 
 Shadow MCP is the subset of those connections that IT has never approved, inventoried, or reviewed. It includes:
 
@@ -20,7 +22,9 @@ Shadow MCP is the subset of those connections that IT has never approved, invent
 - Internal MCP servers built by teams and shared informally — configuration copied in a Slack thread, never logged in any registry
 - Public community servers pointed at internal data through configuration that looks locally innocuous
 
-The scale is significant. There are now **9,400+ public MCP servers** available, with an estimated **28,000–37,000 private servers** deployed across organizations. When a developer configures an agent with a community MCP server, they're adding a network endpoint to their agent's tool surface. Their security team almost certainly doesn't know it's there.
+The scale is significant. Anthropic's own tally put the public ecosystem at [**10,000+ active MCP servers by December 2025**](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/), and third-party directories like [PulseMCP](https://www.pulsemcp.com/servers) now list over 20,000 — though counts vary widely depending on how aggressively each directory dedupes forks and abandoned listings. Private, internal-only servers aren't tracked by any registry at all, which is the actual point: when a developer configures an agent with a community MCP server, they're adding a network endpoint to their agent's tool surface, and their security team almost certainly doesn't know it's there.
+
+**Correction (2026-08-05 audit):** an earlier version of this paragraph cited "9,400+ public MCP servers" and "an estimated 28,000–37,000 private servers deployed across organizations." Neither number traces to a primary source — no registry, vendor report, or research firm publishes a 28,000–37,000 private-server estimate, and repeated searching turned up no origin for it. It's removed above rather than re-cited with a weaker source.
 
 ---
 
@@ -38,7 +42,7 @@ The AvePoint finding — 21.1% can't see unsanctioned agents — describes the a
 
 ## What's Connected Has Permissions
 
-This is where the AvePoint data and the MCP visibility gap converge. The report's two most common breach types were:
+This is where the AvePoint data and the MCP visibility gap converge. Among the 88.4% of organizations that had experienced at least one AI agent security incident, [the report's](https://www.avepoint.com/blog/manage/state-of-ai-2026-report) two most common breach types were:
 
 - **Data leakage** (50.1%): agents with too much permission scope exposing information they shouldn't
 - **Manipulation by malicious/untrusted inputs** (49.6%): external content hijacking agent behavior
@@ -69,9 +73,11 @@ You don't need a sophisticated attacker for either failure. You need an unapprov
 
 Discovery without governance is just a longer list of problems. The pattern that's emerged for enterprise MCP governance has three components.
 
-**Central registry with allowlist enforcement.** The MCP gateway pattern — a proxy layer that sits between agents and MCP servers — gives you a single enforcement point. Agents route all MCP calls through the gateway. The gateway checks each server URI against an approved registry and blocks unapproved connections. The open-source `mcp-gateway-registry` project (Keycloak/Entra integration, OAuth 2.0, RBAC) and Cloudflare's enterprise MCP implementation are the two most commonly deployed starting points.
+**Central registry with allowlist enforcement.** The MCP gateway pattern — a proxy layer that sits between agents and MCP servers — gives you a single enforcement point. Agents route all MCP calls through the gateway. The gateway checks each server URI against an approved registry and blocks unapproved connections. The open-source [`mcp-gateway-registry`](https://github.com/agentic-community/mcp-gateway-registry) project (Keycloak/Entra integration, OAuth 2.0, RBAC) and [Cloudflare's enterprise MCP reference architecture](https://blog.cloudflare.com/enterprise-mcp/) are two actively maintained starting points.
 
-**Identity-scoped permissions.** Each agent identity in the gateway gets a permission set that specifies which MCP servers it's allowed to call, which tools within those servers, and under what conditions. This is the same model as privileged access management for humans — agent identities are treated as non-human principals with explicitly scoped access. The 2026 MCP auth layer makes this configuration-portable; you define policies once rather than per-agent-framework.
+**Identity-scoped permissions.** Each agent identity in the gateway gets a permission set that specifies which MCP servers it's allowed to call, which tools within those servers, and under what conditions. This is the same model as privileged access management for humans — agent identities are treated as non-human principals with explicitly scoped access. [MCP's July 2026 spec update](https://blog.modelcontextprotocol.io/posts/2026-07-28/) standardized this at the protocol level around OAuth 2.1 and RFC 9728/9207, so authorization goes from bespoke per-server wiring to, as [WorkOS put it](https://workos.com/blog/mcp-2026-spec-agent-authentication), "follow these RFCs and it works" — though that standardization is within MCP itself, not a cross-framework policy layer.
+
+**Correction (2026-08-05 audit):** an earlier version of this paragraph claimed the "2026 MCP auth layer makes this configuration-portable; you define policies once rather than per-agent-framework." Neither the official MCP spec blog nor third-party analysis of the update supports cross-framework policy portability — the July 2026 update standardizes OAuth 2.1/OIDC authorization within MCP itself, which is a narrower and different claim. Corrected above.
 
 **Continuous runtime audit.** The audit trail records which agent identity called which tool, with which parameters, at what time — exported as OpenTelemetry data to your existing SIEM. This is what closes the AvePoint visibility gap at the MCP layer: not just knowing what MCP servers exist, but having a complete log of every tool invocation across your agent fleet.
 

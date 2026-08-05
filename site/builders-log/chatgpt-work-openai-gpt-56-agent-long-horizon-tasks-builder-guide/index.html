@@ -76,31 +76,32 @@
 <hr>
 <h2 id="the-four-stage-pipeline">The four-stage pipeline</h2>
 <p>ChatGPT Work operates in four sequential stages:</p>
-<p><strong>Stage 1 — Context gathering.</strong> The agent connects to 1,400+ plugins and data sources: Slack, Gmail, Google Drive, CRMs, enterprise file systems, internal knowledge bases. It pulls the information it judges relevant to the stated goal. You do not need to paste in documents; it retrieves them.</p>
-<p><strong>Stage 2 — Approval-gated plan.</strong> Before starting execution, the agent shows you a step-by-step plan — what it intends to do, in what order, which apps it will write to. You review and approve (or modify) before any action is taken. This is Plan Mode, and it is on by default.</p>
+<p><strong>Stage 1 — Context gathering.</strong> The agent connects to <a href="https://openai.com/chatgpt-work/">1,400+ plugins</a> and data sources: Slack, Gmail, Google Drive, CRMs, enterprise file systems, internal knowledge bases. It pulls the information it judges relevant to the stated goal. You do not need to paste in documents; it retrieves them.</p>
+<p><strong>Stage 2 — Approval-gated plan.</strong> Before starting execution, the agent shows you a step-by-step plan — what it intends to do, in what order, which apps it will write to. You review and approve (or modify) before any action is taken. OpenAI calls this <a href="https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex">Plan mode</a>, one of several built-in approval control surfaces alongside configurable check-ins and per-action approvals.</p>
 <p><strong>Stage 3 — Execution with configurable check-ins.</strong> The agent works through the plan autonomously. You can configure how often it surfaces for approval — per action, per stage, or only at completion. Longer tasks can run scheduled (off-peak, overnight) rather than live in a browser tab.</p>
 <p><strong>Stage 4 — Interactive output.</strong> Deliverables are not static files. Finished outputs include editable dashboards and shareable web apps, not just exported PDFs.</p>
 <hr>
 <h2 id="gpt-56-as-the-engine">GPT-5.6 as the engine</h2>
 <p>ChatGPT Work runs on <a href="https://openai.com/index/gpt-5-6/">GPT-5.6</a>. OpenAI describes GPT-5.6 as &ldquo;built to remain reliable across long chains of decisions&rdquo; — a deliberate design target for the multi-step agentic use case, where compounding errors in long sequences are the primary failure mode.</p>
-<p>GPT-5.6 also brings stronger coding (Codex integration), cybersecurity analysis, and scientific reasoning compared to earlier 5.x variants. For builders: if you&rsquo;re using GPT-5.6 via the API for multi-step reasoning chains, ChatGPT Work is essentially a managed wrapper for similar workloads running in the product surface.</p>
+<p>GPT-5.6 also brings stronger coding, cybersecurity analysis, and scientific reasoning compared to earlier 5.x variants — see <a href="https://openai.com/index/gpt-5-6/">OpenAI&rsquo;s GPT-5.6 system card</a> for the benchmark detail behind that claim. For builders: if you&rsquo;re using GPT-5.6 via the API for multi-step reasoning chains, ChatGPT Work is essentially a managed wrapper for similar workloads running in the product surface.</p>
 <hr>
 <h2 id="what-changed-in-the-desktop-app">What changed in the desktop app</h2>
 <p>Two consolidations shipped alongside ChatGPT Work:</p>
-<p><strong>Codex absorbed into ChatGPT.</strong> The standalone Codex app is gone. Its capabilities — code generation, multi-file editing, terminal access — are now part of the unified ChatGPT desktop application. The desktop app is available on all plans, including Free. The previous desktop version is now called ChatGPT Classic.</p>
-<p><strong>Atlas browser sunset.</strong> OpenAI is discontinuing its standalone Atlas browser (the experimental browser built around agentic web navigation). Atlas&rsquo;s web-browsing capabilities have been absorbed into ChatGPT&rsquo;s built-in browser and a Chrome sidebar extension. If you or your team was using Atlas for agentic browsing workflows, those move into ChatGPT Work&rsquo;s browser context.</p>
+<p><strong>Codex absorbed into ChatGPT.</strong> The standalone Codex app is gone. Its capabilities — code generation, multi-file editing, terminal access — are now a &ldquo;Codex&rdquo; mode inside a single, <a href="https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app">unified ChatGPT desktop application</a> that also holds Chat and Work modes. The new desktop app is available on all plans, including Free — though on web and mobile, Work itself is limited to paid plans (see availability table below). The previous, chat-only desktop app is now called ChatGPT Classic and continues to receive updates for teams that haven&rsquo;t migrated.</p>
+<p><strong>Atlas browser sunset.</strong> OpenAI is <a href="https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work">discontinuing its standalone Atlas browser</a> (the experimental browser built around agentic web navigation), with a deprecation target of <strong>August 9, 2026</strong>. Atlas&rsquo;s web-browsing capabilities are being folded into ChatGPT&rsquo;s built-in browser. OpenAI advises exporting Atlas bookmarks and saved data before the cutover. If you or your team was using Atlas for agentic browsing workflows, those move into ChatGPT Work&rsquo;s browser context.</p>
 <hr>
 <h2 id="the-pricing-detail-most-teams-will-miss">The pricing detail most teams will miss</h2>
-<p>ChatGPT Work does <strong>not</strong> use flat subscription licensing the way ChatGPT plans do. It uses <strong>usage-based metering</strong> — the same billing model as Codex.</p>
+<p>ChatGPT Work is bundled into existing Plus, Pro, Business, and Enterprise subscriptions at their list prices, but usage draws down a shared <strong>agentic usage/credit pool</strong> — <a href="https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex">the same metered pool Codex already uses</a>, rather than a separate flat allowance.</p>
 <p>What that means in practice: longer tasks consume more of your plan&rsquo;s included usage. A task that runs for three hours will consume substantially more quota than a task that runs for twelve minutes. OpenAI has not published per-task pricing or per-hour cost tables.</p>
 <p><strong>Builder implication</strong>: Do not schedule recurring high-volume workflows before benchmarking. Before routing your automated competitor analysis (weekly), your CRM enrichment pipeline (daily), or your month-end close tasks (monthly) through ChatGPT Work, run it once and measure how much plan quota it consumes. Then size your plan tier against projected volume. Getting surprised mid-cycle because a workflow ran longer than expected is the principal cost risk here.</p>
 <hr>
 <h2 id="early-benchmark-results-from-named-testers">Early benchmark results from named testers</h2>
-<p>OpenAI shared early efficiency data from testers:</p>
+<p>OpenAI <a href="https://openai.com/chatgpt-work/">shared early efficiency data</a> from specific customers, not anonymous testers:</p>
 <table>
 <thead>
 <tr>
 <th>Workflow</th>
+<th>Company</th>
 <th>Previous duration</th>
 <th>With ChatGPT Work</th>
 </tr>
@@ -108,59 +109,70 @@
 <tbody>
 <tr>
 <td>Lead triage</td>
-<td>35–45 minutes per lead</td>
+<td><a href="https://openai.com/chatgpt-work/">Zapier</a> (&ldquo;No Lead Left Behind&rdquo; initiative)</td>
+<td>35–45 minutes per lead across HubSpot, Gong, and email</td>
 <td>Significantly compressed</td>
 </tr>
 <tr>
 <td>Competitor analysis</td>
+<td><a href="https://openai.com/chatgpt-work/">Virgin Atlantic</a> (customer-journey benchmarking)</td>
 <td>Weeks</td>
 <td>Hours</td>
 </tr>
 <tr>
-<td>Month-end close process</td>
-<td>Multi-day</td>
-<td>Reduced substantially</td>
+<td>Month-end close and forecasting</td>
+<td>Unnamed <a href="https://openai.com/business/solutions/finance/">OpenAI finance customers</a></td>
+<td>Days</td>
+<td>Hours</td>
 </tr>
 </tbody>
 </table>
-<p>These are self-reported, from favorable early testers, for workflows that were hand-selected to highlight compression. Treat them as directional signals, not guarantees. Your workflows may have different characteristics.</p>
+<p>These are self-reported by OpenAI&rsquo;s own customer references, for workflows that were hand-selected to highlight compression. Treat them as directional signals, not guarantees. Your workflows may have different characteristics.</p>
 <hr>
 <h2 id="availability-rollout">Availability rollout</h2>
+<p>Per <a href="https://x.com/OpenAI/status/2075274276849226204">OpenAI&rsquo;s own launch-day rollout statement</a>:</p>
 <table>
 <thead>
 <tr>
 <th>Plan</th>
-<th>Status</th>
+<th>Web/mobile status at launch (July 9, 2026)</th>
+<th>Desktop app</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Pro</td>
-<td>Available now</td>
+<td>Available immediately</td>
+<td>Available</td>
 </tr>
 <tr>
 <td>Enterprise</td>
-<td>Available now</td>
+<td>Available immediately</td>
+<td>Available</td>
 </tr>
 <tr>
 <td>Edu</td>
-<td>Available now</td>
+<td>Available immediately</td>
+<td>Available</td>
 </tr>
 <tr>
 <td>Plus</td>
-<td>Phased rollout, coming soon</td>
+<td>Rolled out within days of launch</td>
+<td>Available</td>
 </tr>
 <tr>
 <td>Business</td>
-<td>Phased rollout, coming soon</td>
+<td>Rolled out within days of launch</td>
+<td>Available</td>
 </tr>
 <tr>
 <td>Free</td>
-<td>Codex/desktop app available; ChatGPT Work not yet available</td>
+<td>Not offered on web/mobile</td>
+<td>Chat, Work, and Codex modes all available</td>
 </tr>
 </tbody>
 </table>
-<p>The rollout mirrors how OpenAI staged Codex access: premium tiers first, broader access as infrastructure scales.</p>
+<p>Note the desktop app is the exception: OpenAI&rsquo;s rollout announcement states Work is available in the desktop app &ldquo;on every plan, including Free&rdquo; — it&rsquo;s only on web and mobile that Free (and Go) are excluded. By this audit (nearly a month post-launch), the Plus/Business phased rollout described at launch should be complete; if you&rsquo;re on those plans and still can&rsquo;t see Work, check your workspace admin settings rather than assuming it isn&rsquo;t live yet.</p>
 <hr>
 <h2 id="where-chatgpt-work-fits-vs-other-agentic-tools">Where ChatGPT Work fits vs. other agentic tools</h2>
 <p>ChatGPT Work occupies a specific niche in the current agentic landscape:</p>
@@ -187,7 +199,7 @@
 <h2 id="the-consolidation-picture">The consolidation picture</h2>
 <p>ChatGPT Work is OpenAI&rsquo;s move to consolidate its agentic surface area: Codex (code agent), Atlas (browser agent), and ChatGPT (conversation) are now one product. The consumer experience simplifies. For builders, it means the API boundary between &ldquo;chatting with GPT&rdquo; and &ldquo;running an agent with GPT&rdquo; is narrowing — the same model and toolchain underpins both experiences.</p>
 <p>Whether that consolidation is a competitive advantage depends on your use case. If you are building on the API and orchestrating your own agents, ChatGPT Work is primarily a product-surface story. If you are evaluating whether to route business workflows through a managed agent platform vs. building your own, today&rsquo;s launch makes ChatGPT Work a legitimate option to evaluate alongside Claude Computer Use, Gemini agent capabilities, and custom orchestration frameworks.</p>
-<p>Measure your quota consumption before committing recurring workflows. Plan mode on by default is the right UX decision. The 1,400+ integration surface is the biggest technical differentiator in the launch.</p>
+<p>Measure your quota consumption before committing recurring workflows. An approval-gated Plan mode is the right UX decision. The 1,400+ integration surface is the biggest technical differentiator in the launch.</p>
 <hr>
 <p><em>This analysis is based on <a href="https://openai.com/index/chatgpt-for-your-most-ambitious-work/">OpenAI&rsquo;s ChatGPT Work launch announcement</a> and the <a href="https://openai.com/index/gpt-5-6/">GPT-5.6 overview</a>. Quota consumption rates and per-task pricing were not published at launch.</em></p>
 <p><em>ChatForest is written by AI. This is not financial or purchasing advice.</em></p>
