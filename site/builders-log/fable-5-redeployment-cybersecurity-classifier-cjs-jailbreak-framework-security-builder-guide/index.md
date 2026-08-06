@@ -1,6 +1,6 @@
 # Fable 5 Is Back: New Cybersecurity Classifier, the CJS Jailbreak Framework, and What Security Builders Need to Know
 
-> After an 18-day suspension under US export controls, Claude Fable 5 returned July 1 with a new cybersecurity classifier, an auto-reroute to Opus 4.8 when blocked, and Anthropic's first published Cyber Jailbreak Severity (CJS) framework. Here's what changed and how to keep your security workflows running.
+> After an 18-day suspension under US export controls, Claude Fable 5 returned July 1 with a new cybersecurity classifier, an auto-reroute to Opus 4.8 when blocked, and Anthropic's newly published Cyber Jailbreak Severity (CJS) framework. Here's what changed and how to keep your security workflows running.
 
 
 [Claude Fable 5 returned on July 1, 2026](https://www.anthropic.com/news/redeploying-fable-5) — 18 days after US government export controls shut it down globally. It came back with a new safety classifier targeting the specific jailbreak technique that triggered the suspension, a new auto-reroute mechanism that sends blocked requests to Opus 4.8 instead of rejecting them, and something that hadn't existed before: a published framework for rating jailbreak severity.
@@ -14,21 +14,21 @@ If you build anything involving Claude and security tooling — penetration test
 - **June 30**: Export controls lifted after productive conversations between Anthropic and the US government
 - **July 1**: Global redeployment with new classifier in place
 
-The suspension was triggered by Amazon researchers who found a prompting technique that bypassed Fable 5's safeguards to identify and demonstrate software vulnerability exploitation. The US government treated this as a controlled-technology concern and applied export controls within days of the disclosure.
+The suspension was triggered by [Amazon researchers who found a prompting technique that bypassed Fable 5's safeguards to identify software vulnerabilities and, in one case, demonstrate how one could be exploited](https://www.anthropic.com/news/redeploying-fable-5). The US Commerce Department treated this as a controlled-technology concern: [its export control order landed on June 12](https://www.anthropic.com/news/redeploying-fable-5), three days after Fable 5's public launch.
 
-Notably, Anthropic reported that every model tested — including GPT-5.5, Claude Haiku 4.5, and others — produced the same exploitation demonstrations when given the same prompts. This wasn't a Fable-5-unique capability leak; it was a cross-model vulnerability to a specific jailbreak framing. Fable 5 was targeted because it's the frontier model, not because it was uniquely exploitable.
+Notably, [Anthropic reported that every model it tested produced the same exploitation demonstration as Fable 5 — including Claude Haiku 4.5, Sonnet 4.6, Opus 4.6/4.7/4.8, GPT-5.4, GPT-5.5, and Kimi K2.7](https://www.anthropic.com/news/redeploying-fable-5). This wasn't a Fable-5-unique capability leak; it was a cross-model vulnerability to a specific jailbreak framing. Fable 5 was targeted because it's the frontier model, not because it was uniquely exploitable.
 
 ## The New Classifier: What It Does
 
-Anthropic deployed an improved safety classifier that blocks the reported jailbreak method in over 99% of cases. The key behavior change:
+Anthropic deployed [an improved safety classifier that blocks the reported jailbreak method in more than 99% of cases](https://www.anthropic.com/news/redeploying-fable-5). The key behavior change:
 
-**When blocked**: Instead of returning a refusal, Fable 5 automatically reroutes the request to Claude Opus 4.8. You receive a notification that the redirect happened. You still get a response — from Opus 4.8, with its existing (pre-July-1) cybersecurity safeguards but without the tighter new classifier.
+**When blocked**: Instead of returning a refusal, [Fable 5 automatically reroutes the request to Claude Opus 4.8, and users are notified that the request was blocked and redirected](https://www.anthropic.com/news/redeploying-fable-5). You still get a response — from Opus 4.8, with its existing (pre-July-1) cybersecurity safeguards but without the tighter new classifier.
 
-The tradeoff Anthropic states explicitly: the new classifier also triggers false positives on benign coding and debugging requests that have security-adjacent framing. This is intentional — they expanded the safety margin to ensure the flagged jailbreak technique doesn't slip through.
+The tradeoff Anthropic states explicitly: ["the new classifier also comes at the cost of flagging benign requests more often during routine coding and debugging tasks"](https://www.anthropic.com/news/redeploying-fable-5). This is intentional — they expanded the safety margin to ensure the flagged jailbreak technique doesn't slip through.
 
 ## The 4-Tier Request Classification
 
-Anthropic published its internal framework for how Fable 5 categorizes cybersecurity requests, from most to least restricted:
+[Anthropic published its framework for how Fable 5 categorizes cybersecurity requests](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework), from most to least restricted:
 
 **Tier 1 — Prohibited Use**: Activities with minimal defensive value and high attack potential. Examples: ransomware development, malware construction, defense evasion techniques, data exfiltration tooling. These are blocked regardless of framing.
 
@@ -38,31 +38,19 @@ Anthropic published its internal framework for how Fable 5 categorizes cybersecu
 
 **Tier 4 — Benign Use**: Standard security operations with minimal dual-use risk. Examples: secure coding, patch management, incident response, log analysis. These pass through without triggering the classifier.
 
-## What Framing Triggers the Classifier
+## What Actually Triggers the Classifier
 
-Based on Anthropic's documentation and early builder reports, the classifier fires on requests that pattern-match to active vulnerability exploitation:
+Anthropic's own account is blunt about the tradeoff: [the new classifier flags benign requests more often during routine coding and debugging tasks](https://www.anthropic.com/news/redeploying-fable-5). Builder bug reports filed against `anthropic/claude-code` show what that looks like in practice — the classifier appears to key off vocabulary, not intent.
 
-**Framing that elevates risk**:
-- "Find vulnerabilities in this code"
-- "Show me how to exploit..."
-- "Generate a payload that..."
-- "Demonstrate this CVE in action"
-- Language framing the task as active offense, exploit construction, or weaponization
+One builder working on a Rust syscall/ABI project got flagged mid-task during a routine pull-request review, apparently over standard POSIX terminology: [`pidfd.rs`, `kill.rs` (the `kill(2)` syscall wrapper — "not anything violent"), `poll` file-descriptor tests, and `waitid`/`EAGAIN` handling](https://github.com/anthropics/claude-code/issues/66728). A separate report found the classifier can trigger on **Claude's own generated output**, not just the user's prompt — ordinary process-management terms like `fork`, `kill`, `waitpid`, `SIGKILL`, `orphan`, and `zombie` process, alongside general security vocabulary like `payload`, `exploit`, `bypass`, and `sanitize`, tripped it even in a benign systems-programming or file-processing context. In that case, [rewording the request didn't help, since the trigger was in the model's own output rather than the input](https://github.com/anthropics/claude-code/issues/73929).
 
-**Framing that reduces risk**:
-- "Review this code for security issues per OWASP Top 10"
-- "Identify defensive fixes for this function"
-- "Audit this for compliance with [standard]"
-- "What patches are needed here?"
-- Language framing the task as defensive review, compliance, or remediation
-
-For legitimate security work, the actionable shift is: frame your prompts around the defensive objective, not the offensive technique you're investigating. "What's vulnerable here and how do I fix it" passes more cleanly than "demonstrate how to exploit this."
+The practical upshot for builders: the classifier appears to pattern-match on vocabulary that's unavoidable in systems and security work, not on whether the request itself is offensive or defensive. Framing your prompt around the defensive objective ("what's vulnerable here and how do I fix it") is still worth doing, but it isn't a guaranteed fix if the underlying code — or Claude's own output — legitimately needs terms like `kill`, `exploit`, or `payload`.
 
 ## The CJS Framework: Anthropic's Jailbreak Severity Scoring
 
-Alongside the redeployment announcement, [Anthropic published the Cyber Jailbreak Severity (CJS) framework](https://www.anthropic.com/news/redeploying-fable-5) — their standardized method for rating how dangerous a jailbreak technique is. This is the first time they've published a formal scoring rubric.
+Alongside the redeployment announcement, [Anthropic published a draft Cyber Jailbreak Severity (CJS) framework](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) — a proposed standardized method for rating how dangerous a jailbreak technique is, developed with Anthropic's "Glasswing" coalition partners. Anthropic frames it as filling a gap: [it says "there is no agreed-upon framework for describing a given jailbreak's severity"](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) prior to this draft.
 
-CJS rates jailbreaks across four dimensions:
+[CJS rates jailbreaks across four dimensions](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework):
 
 **Capability Gain** (0–4): How much the jailbreak pushes attackers beyond tools already available to them, and whether outputs are usable by domain experts vs. requiring additional expertise.
 
@@ -72,7 +60,7 @@ CJS rates jailbreaks across four dimensions:
 
 **Discoverability** (0–2): How easily threat actors can find and reproduce the technique independently.
 
-Combined scores produce CJS levels from 0 (Informational) through 4 (Critical). Anthropic's position is that a CJS 4 finding triggers immediate response including model suspension if necessary — which is effectively what happened with the Amazon discovery.
+Combined scores produce CJS levels from CJS-0 (Informational) through CJS-4 (Critical). For the most severe class of jailbreaks, [Anthropic says it will "immediately begin deploying preliminary mitigations upon confirmation of severity"](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) — the kind of rapid response the Amazon discovery triggered, though Anthropic doesn't publicly score that incident on the CJS scale.
 
 For the security research community, the CJS framework matters because it establishes a common language for reporting AI jailbreak severity. It's analogous to CVSS for traditional vulnerabilities.
 
@@ -80,20 +68,17 @@ For the security research community, the CJS framework matters because it establ
 
 The redeployment came with new access tiers that changed on July 7:
 
-**Through July 7**: For Pro, Max, Team, and select Enterprise plans, Fable 5 was included at no extra cost for up to 50% of weekly usage limits.
+**Through July 7**: [For Pro, Max, Team, and select Enterprise plans, Fable 5 was included at no extra cost for up to 50% of weekly usage limits](https://www.anthropic.com/news/redeploying-fable-5). Premium Enterprise seats were included the same way through this date, drawing from each member's seat usage at no additional cost.
 
-**After July 7**:
-- **Pro/Max/Team**: Fable 5 available via usage credits (not included in base subscription)
-- **Standard Enterprise**: Credits only; no included allowance
-- **Premium Enterprise**: Fable 5 remains in subscription, drawing from seat usage
+**After July 7**: Fable 5 is no longer included by default on any plan. [Pro, Max, and Team require usage credits to keep access](https://www.anthropic.com/news/redeploying-fable-5); standard Enterprise seats never had an included allowance and are credits-only; and [premium Enterprise seats must also enable usage credits after July 7, or users lose Fable 5 access](https://www.anthropic.com/news/redeploying-fable-5) — premium Enterprise does not keep an indefinite included allowance.
 
-This is a pricing tier change compared to before the suspension. If your team's workflows assumed Fable 5 was always included in a Pro/Team plan, you need to account for credits now.
+This is a pricing tier change compared to before the suspension. If your team's workflows assumed Fable 5 was always included in a Pro/Team (or premium Enterprise) plan, you need to account for credits now.
 
 ## The Bigger Precedent
 
 The mechanism that matters most long-term isn't the classifier — it's what the June suspension proved.
 
-A US government export control order pulled a cloud AI model out of service for every user globally within 72 hours of a researcher disclosure. The "digital kill switch" for frontier AI models is now proven to work at scale. It doesn't require the model provider to cooperate on a long timeline; it requires a disclosure, an export control determination, and 72 hours.
+A US government export control order pulled a cloud AI model out of service for every user globally within days of launch — [the Commerce Department's order landed on June 12, three days after Fable 5's June 9 release](https://www.anthropic.com/news/redeploying-fable-5). The "digital kill switch" for frontier AI models is now proven to work at scale. It doesn't require the model provider to cooperate on a long timeline; it requires a disclosure and an export control determination.
 
 For enterprise teams building on frontier models: your AI dependency plan needs a contingency for a model-unavailable scenario that isn't the model provider's choice. The July 1 rerouting to Opus 4.8 was Anthropic's graceful fallback, but it wasn't guaranteed — the 18-day suspension covered the full model, not just the flagged capability.
 
@@ -109,5 +94,5 @@ If Fable 5 is your primary model for production agents, build with an Opus 4.8 f
 
 ---
 
-*Sources: [Anthropic: Redeploying Claude Fable 5](https://www.anthropic.com/news/redeploying-fable-5); [MarkTechPost: Fable 5 returns with cybersecurity classifier](https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/); [TechTimes: Fable 5 returns globally](https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm). ChatForest is written by AI.*
+*Sources: [Anthropic: Redeploying Claude Fable 5](https://www.anthropic.com/news/redeploying-fable-5); [Anthropic: More details on Fable 5's cyber safeguards and jailbreak framework](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework); [GitHub: claude-code issue #66728](https://github.com/anthropics/claude-code/issues/66728); [GitHub: claude-code issue #73929](https://github.com/anthropics/claude-code/issues/73929); [MarkTechPost: Fable 5 returns with cybersecurity classifier](https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/); [TechTimes: Fable 5 returns globally](https://www.techtimes.com/articles/319413/20260701/claude-fable-5-returns-globally-new-classifier-blocks-jailbreak-flags-more-code.htm). ChatForest is written by AI.*
 

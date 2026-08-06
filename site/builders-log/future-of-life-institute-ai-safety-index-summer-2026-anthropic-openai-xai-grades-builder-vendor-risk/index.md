@@ -21,11 +21,11 @@ For builders choosing AI providers, this is vendor risk data. Here is what the i
 | DeepSeek | F | 0.47 | ↓ from D |
 | Mistral | F | 0.33 | new entrant |
 
-Mistral scored the lowest of any company assessed. xAI dropped two full letter grades in one cycle.
+Mistral scored the lowest of any company assessed. xAI fell from a D to an F in one cycle — [the same drop DeepSeek posted](https://futureoflife.org/ai-safety-index-summer-2026/).
 
 ## How the Index Works
 
-Seven independent researchers evaluated each company using publicly available materials — model cards, safety research papers, benchmark results, governance disclosures — plus a targeted survey to fill transparency gaps. Evidence was collected through June 3, 2026. Companies were graded on absolute performance standards, not relative to peers, across six domains:
+[Seven independent researchers evaluated each company](https://futureoflife.org/ai-safety-index-summer-2026/) using publicly available materials — model cards, safety research papers, benchmark results, governance disclosures — plus a targeted survey to fill transparency gaps. Evidence was collected through June 3, 2026. Companies were graded on absolute performance standards, not relative to peers, across six domains:
 
 1. **Risk Assessment** — internal evals, dangerous capability testing, red-teaming
 2. **Current Harms** — content safety, bias, misuse prevention
@@ -69,7 +69,7 @@ This is the closest the index gets to "will this model behave in production." Th
 
 Anthropic: D+ | OpenAI: D+ | Google DeepMind: D | Meta: F | everyone else: F
 
-The expert panel described existing industry efforts as "entirely inadequate." Even Anthropic's relatively strong overall position masks a D+ on the category that covers catastrophic and irreversible risk. The panel questioned whether current interpretability-focused approaches constitute meaningful prevention.
+[The expert panel described existing industry efforts as "entirely inadequate,"](https://futureoflife.org/ai-safety-index-summer-2026/) writing that dominant paradigms such as interpretability and chain-of-thought monitorability are limited because "detection is not prevention." Even Anthropic's relatively strong overall position masks a D+ on the category that covers catastrophic and irreversible risk.
 
 For most builders, existential safety scores are background information rather than day-to-day procurement criteria. But the scores matter for enterprise buyers assessing long-term platform risk and for any org building applications where AI agency could have large-scale consequences.
 
@@ -77,9 +77,9 @@ For most builders, existential safety scores are background information rather t
 
 The most significant finding in the Summer 2026 index is directional movement, not absolute scores:
 
-**Weakened pause commitments.** Anthropic, OpenAI, Google DeepMind, and Meta have all diluted or abandoned earlier pledges that required them to halt development if their systems crossed specified danger thresholds. The index found companies now explicitly planning to deploy systems "even if demonstrably unsafe" rather than requiring safety adequacy before release. [Stuart Russell, one of the panelists, described this shift directly](https://time.com/article/2026/07/07/ai-safety-rankings-openai-anthropic-meta/): companies backed away from releasing systems only with appropriate safety measures — now they're planning to release them even if demonstrably unsafe.
+**Weakened pause commitments.** [Anthropic, OpenAI, Google DeepMind, and Meta have all weakened or voided pledges to pause unilaterally if redlines are approached](https://futureoflife.org/ai-safety-index-summer-2026/), some citing competitor-contingent conditions. Stuart Russell, a UC Berkeley professor and one of the index's panelists, [put it directly in the report](https://futureoflife.org/ai-safety-index-summer-2026/): "Companies have backed away from earlier commitments to release new systems only with safety measures appropriate for their capability levels; now, they're planning to release them even if it's demonstrably unsafe to do so." [TIME's coverage of the index](https://time.com/article/2026/07/07/ai-safety-rankings-openai-anthropic-meta/) notes Anthropic specifically dropped a pause pledge in February 2026.
 
-**Military AI pivot.** Between 2024 and 2026, companies that previously banned military applications — including Anthropic, OpenAI, Google DeepMind, and Meta — reversed course and are now actively pursuing defense partnerships. The index flagged this as a significant safety regression.
+**Military AI pivot.** [Companies including Anthropic, OpenAI, Google DeepMind, and Meta that previously banned military applications gradually reversed course](https://futureoflife.org/ai-safety-index-summer-2026/), joining xAI and Mistral in actively seeking defense partnerships. The index flagged this as a significant safety regression.
 
 **Falling scores for the middle tier.** Z.ai dropped from D to D-. xAI dropped from D to F. DeepSeek dropped from D to F. The companies in the middle tier did not hold ground — they regressed.
 
@@ -87,17 +87,17 @@ The most significant finding in the Summer 2026 index is directional movement, n
 
 The three F-graded companies — xAI, DeepSeek, and Mistral — represent one company each from the US, China, and Europe. The index treats this as evidence that inadequate safety practices are a global problem, not a regional one.
 
-**xAI (0.65):** The xAI/SpaceX merger has complicated accountability structures. The index found no meaningful existential safety team, no binding thresholds for deployment decisions, and no assessment of AI R&D risk (a notable gap given Grok 4's coding capabilities). xAI scored D in Safety Frameworks — its only non-F domain score outside of that category.
+**xAI (0.65):** [SpaceX acquired xAI in an all-stock merger in February 2026](https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/), folding Grok and the X platform into SpaceX's structure — a reorganization that adds to the accountability questions the index raises. [The index found no meaningful existential safety team and no binding thresholds connecting danger-threshold breaches to deployment decisions](https://futureoflife.org/ai-safety-index-summer-2026/); its dangerous-capability evaluations also have "gaping holes," including no assessment of AI R&D risk — a notable gap given [Grok 4's strong showing on coding benchmarks like SWE-bench](https://x.ai/news/grok-4) at the time of the evidence cutoff. Outside of Information Sharing (D), xAI's only other non-F domain scores are Safety Frameworks (D) and Risk Assessment (D-); Current Harms, Existential Safety, and Governance & Accountability are all F.
 
-**DeepSeek (0.47):** DeepSeek scored F in all domains except Current Harms (D-) and Information Sharing (D-). The index found no published safety framework, no governance structure, and no independent research beyond regulatory compliance.
+**DeepSeek (0.47):** [DeepSeek scored F in every domain except Current Harms (D-) and Information Sharing (D-)](https://futureoflife.org/ai-safety-index-summer-2026/). The index found no published safety framework — noting the company's rating "largely reflects the Chinese regulatory environment rather than independent safety leadership" — no governance structure, and no independent research beyond regulatory compliance.
 
-**Mistral (0.33):** The lowest score in the index. Mistral argued the evaluation framework was not suited to open-source model development and declined to respond to the survey. The index found weak safety benchmark performance, no engagement with existential risk, and a near-complete absence of formal governance. Despite the EU AI Act — the most aggressive safety regulation in the world — Mistral, Europe's flagship AI company, scored last.
+**Mistral (0.33):** The lowest score in the index. [Mistral was one of four companies (with Alibaba, xAI, and DeepSeek) that did not complete FLI's survey](https://www.axios.com/2026/07/07/report-ai-safety-pledges), so its grade rests on the public record alone; in a statement to Axios, Mistral argued that its open-weight release model puts fine-tuning, deployment, and safety controls in the hands of the deploying enterprise rather than Mistral itself, calling the index's company-level framework a poor fit for that model. [The index found weak safety benchmark performance](https://futureoflife.org/ai-safety-index-summer-2026/), no engagement with existential risk (F), and a near-complete absence of formal governance (F). [FLI noted that although the EU is a leader in AI safety regulation, Mistral — Europe's top AI company — scored dead last](https://futureoflife.org/ai-safety-index-summer-2026/).
 
 ## Builder Takeaways
 
 **For enterprise vendor selection:** The top tier (Anthropic, OpenAI, Google DeepMind) are meaningfully differentiated from the rest in documentation quality, governance structure, and current-harms management. If your org has vendor risk requirements, the gap between the B range on Information Sharing and the D range matters.
 
-**For Grok integrations:** xAI's F grade is a concrete governance risk signal. Grok 4.5 is a capable model at $2/$6 per 1M tokens, and capable models can come from companies with weak safety structures. Builders integrating xAI APIs should document their own mitigations — content filtering, output validation, incident response — because the provider's internal structures are rated inadequate.
+**For Grok integrations:** xAI's F grade is a concrete governance risk signal. [Grok 4.5 is a capable model priced at $2 per million input tokens and $6 per million output tokens](https://x.ai/news/grok-4-5), and capable models can come from companies with weak safety structures. Builders integrating xAI APIs should document their own mitigations — content filtering, output validation, incident response — because the provider's internal structures are rated inadequate.
 
 **For DeepSeek and Mistral integrations:** Same logic applies with even less safety infrastructure from the provider. Open-weights Mistral and DeepSeek models shift the safety burden almost entirely to the deployer.
 

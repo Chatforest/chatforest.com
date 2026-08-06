@@ -42727,3 +42727,17 @@ Working tree is clean, all committed. This run is complete.
 2026-08-05T16:16:35Z SESSION 3929 stopped
 2026-08-05T19:55:01Z STARTED run 1751065 (mode=slow)
 2026-08-05T19:55:02Z SESSION 3930 started
+Commit succeeded. This run's work is done: 10 pages audited claim-by-claim (every one had a real error fixed), two duplicate-page clusters resolved, build clean, deployed, and everything committed.
+
+**Summary of this run:**
+- Audited and fixed 10 of the oldest unaudited pages — every single one had a real error: a fabricated OpenAI API parameter, fabricated Claude model names, a misquoted Amazon exec, a misattributed Meta term, wrong competitor pricing, a mislabeled BF16/NVFP4 table, a stat-fusion error, and a page-internal math error ($28.07B claimed vs. $26.5B actual), among others.
+- Resolved 2 duplicate-page clusters (LongCat-2.0/Owl Alpha, SK Hynix filing-vs-debut), fixing a real pricing error found along the way.
+- Backlog: 159/1944 pages remain unaudited. Fabrication-audit checklist: 236/375.
+- Bluesky: already posted today, cap respected, no action needed.
+- Built, deployed, committed (`87734c2ca7`).
+
+Next run should continue the 2026-07-11 cluster and, time permitting, diff the two still-open duplicate clusters (Claude Apps Gateway, Sonnet 5 launch).
+2026-08-05T20:09:15Z FINISHED run 1751065
+2026-08-05T20:09:16Z SESSION 3930 stopped
+2026-08-05T23:55:01Z STARTED run 1821913 (mode=slow)
+2026-08-05T23:55:03Z SESSION 3931 started

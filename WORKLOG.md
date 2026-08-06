@@ -130024,3 +130024,120 @@ rule, no second digest sent — this WORKLOG entry is the full record for CEO re
 - GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
 - Two duplicate clusters still open: Claude Apps Gateway (3 pages, one unaudited) and Sonnet 5
   launch/agentic upgrade (4+ pages, 2 not yet audited/diffed) — resolve one when there's room.
+
+## Run 4128xxx (2026-08-05, UTC ~23:55-00:2X)
+
+### Orientation
+No new inbox instructions — only my own 2026-08-05 CEO digest (#2311) still unread from the CEO's
+side. Confirmed via `date -u` that real UTC time was 2026-08-05 23:55 (not 08-06 as one context
+field suggested, same discrepancy noted in prior runs). Bluesky already posted today (01:54 UTC) —
+`check_bluesky_posted_today.py` correctly returned `ALREADY_POSTED`. Not a UTC Tuesday, so the
+Dispatch-plug reservation check correctly returned `NOT_TUESDAY` (moot anyway since already posted).
+
+### Citation audit — 11 pages (2026-07-11 cluster)
+Selected the 11 oldest unaudited pages by front-matter `date` (159 remaining backlog, excluding
+RingS's `/ai/` section) and dispatched all 11 to parallel claim-by-claim audit agents. Every single
+one found and fixed a real issue:
+
+1. **ai-agents-deleting-home-directories-rm-rf-gpt56sol-claude-cli-tilde-expansion-sandbox-builder-guide**
+   — a fabricated "OpenAI's own mitigation recommendations" bullet list that does not exist anywhere
+   in the actual GPT-5.6 system card (verified directly against the PDF); a garbled Claude CLI
+   command transcription (`rm -rf tests/patches/plan/ ~/` as one path → actually four separate
+   arguments `rm -rf tests/ patches/ plan/ ~/`); an unsourced "15,000-27,000 files" estimate for the
+   Claude Cowork incident, cut per cite-it-or-cut-it; an overstated "every user-owned file destroyed"
+   claim (dotfiles actually survived).
+2. **apple-openai-trade-secret-lawsuit-io-products-tang-tan-ios-chatgpt-builder-guide** — a factual
+   error repeated 3x: io Products acquisition price stated as "$6.4 billion" throughout, when the
+   page's own already-cited source and current reporting consistently say $6.5 billion. Also
+   softened two unsupported superlatives ("first third-party AI... at OS level", "deepest
+   integration ever") into sourced, verifiable claims.
+3. **cambridge-casp-boko-haram-iswap-ai-specialist-units-weapons-planning-safeguards-juelich-builder-guide**
+   — given the sensitivity (named extremist org + weapons capability claims), cut an unverifiable
+   "IRB-equivalent process" methodology claim and an unverifiable superlative about CASP's policy
+   influence; added a missing caveat paragraph noting the study's own author acknowledges the claims
+   are testimony-only, not independently corroborated — important given the standing duty's extra
+   rigor requirement for weapons/violence subject matter.
+4. **chatgpt-work-week-one-postmortem-usage-pool-compute-confusion-builder-fix** — a stat-fusion
+   error matching the exact failure mode the standing duty warns about: OpenAI's "54% fewer output
+   tokens" figure was claimed as "vs GPT-5.5" and "standard mode," but the real primary source (an
+   OpenAI X post) says vs. the next-highest competing model at max/high reasoning — opposite of what
+   was claimed. Also wrong cost ratios in a pricing table (Terra 0.5x/Luna 0.2x claimed vs. actual
+   0.4x/0.04x) and a citation pointing to a URL that didn't contain the quoted material.
+5. **claude-code-v2-1-207-shell-injection-plugin-breaking-changes-auto-mode-bedrock-builder-guide** —
+   a feature misattributed to this release that actually shipped in earlier v2.1.202-206 builds
+   (deleted rather than misattribute); a nonexistent product name "Azure Foundry" corrected to the
+   real "Microsoft Foundry"; a heading overstating auto-mode's new default behavior, contradicted by
+   the article's own body text.
+6. **claude-science-ai-workbench-multi-agent-reproducibility-grant-deadline-builder-guide** — an
+   overstated "automatic persistence" claim about skills that isn't in Anthropic's docs; a
+   provenance-tabs list that didn't match the product's actual five tabs; a missing partner (Allen
+   Institute) omitted from GPT-Rosalind's partner list per OpenAI's own launch post; conflated two
+   separate Anthropic science-grant programs (the $30K/50-project launch round vs. a separate
+   standing $20K rolling program) now distinguished.
+7. **colibri-engine-glm-5-2-744b-local-inference-disk-streaming-moe-builder-guide** — a fabricated
+   quote in quotation marks that appears nowhere in the source repo or HN post; a wrong expert count
+   (21,504 vs. the corrected-upstream 19,456, which is also what the math 75×256 actually supports);
+   fabricated throughput/acceptance-rate stats with no basis in the repo; steered readers to a
+   deprecated HF weights repo the project's own docs warn is measurably worse and buggy — swapped
+   for the recommended one.
+8. **fable-5-july-12-tonight-credits-setup-deadline-checklist-builder-guide** — a now-false "no
+   indication of another extension" claim: Anthropic extended again to July 19 then restructured
+   access July 20 (Max/Team Premium made permanent, Pro/Team Standard moved to credits). Flagged
+   inline with a dated update block rather than silently rewritten. Also wrong UI navigation path and
+   wrong enablement mechanism (API-key level claimed, actually org-level).
+9. **fable-5-redeployment-cybersecurity-classifier-cjs-jailbreak-framework-security-builder-guide** —
+   a wrong claim that Premium Enterprise stayed on subscription (Anthropic's own footnote says it
+   also must switch); a fused stat conflating "72 hours until shutdown" with unconfirmed disclosure
+   timing; an unsupported causal claim about automatic model suspension; entirely fabricated example
+   prompts in a "framing that elevates/reduces risk" bullet list, replaced with real GitHub issue
+   reports documenting actual false positives.
+10. **friendly-fire-hallusquatting-ai-coding-agent-auto-mode-prompt-injection-hallucination-builder-security-guide**
+    — a misquoted researcher (invented sentence structure not in the primary AI Now Institute brief);
+    wrong patch-status claims for two named products (GhostApproval/Google Antigravity actually
+    patched in v1.19.6; Claude Code's status was more nuanced than "no patch"); a nonexistent CLI
+    flag `--skip-permissions` corrected to the real `--dangerously-skip-permissions`; an unsupported
+    "first pull-based prompt injection that scales" superlative removed.
+11. **future-of-life-institute-ai-safety-index-summer-2026-anthropic-openai-xai-grades-builder-vendor-risk**
+    — a misattributed quote (Stuart Russell's "demonstrably unsafe" line was sourced to TIME, which
+    doesn't contain it — verbatim quote actually lives in FLI's own report); a factual error on xAI's
+    grade breakdown (claimed only one non-F domain score outside Information Sharing; xAI also scored
+    D- in Risk Assessment); an unsupported "most aggressive regulation in the world" superlative about
+    the EU AI Act not present in the source.
+
+All 11 files now carry `sources_audited: 2026-08-05`. 8 of 11 matched existing `fabrication-audit.md`
+checklist entries (apple-openai-trade-secret, colibri-engine-glm-5-2, fable-5-july-12,
+future-of-life-institute [builders-log version], ai-agents-deleting-home-directories, cambridge-casp,
+fable-5-redeployment, friendly-fire-hallusquatting) — all marked `[x]`. Fabrication-audit progress:
+**245/375** (was 236/375; net +9, one entry — future-of-life-institute — had already been counted
+against the separate `content/reviews/` sibling page at line 220, which remains unaudited/unchecked).
+
+**`sources_audited` backlog:** 1796/1944 owned pages now audited (**148 remaining**), -11 net this
+run.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-05 01:54 UTC). No post this run, hard
+daily cap respected. Tuesday-reservation check correctly returned `NOT_TUESDAY`.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (last deploy ~4h prior). Deployed via
+rsync; spot-verified 2 corrected pages live (rm-rf command transcription fix, Apple/OpenAI $6.5B
+acquisition price fix).
+
+### Digest
+Already sent today's CEO digest this UTC day (#2311, sent 2026-08-05 16:16). Per the max-one-per-day
+rule, no second digest sent — this WORKLOG entry is the full record for CEO review on the next cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (148 remaining) — next oldest is the rest of the 2026-07-11
+  cluster: `ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-
+  builder-guide`, `google-genkit-agents-api-preview-session-state-interrupts-multi-agent-typescript-
+  go-builder-guide`, `google-genkit-middleware-intercept-extend-harden-agentic-apps-model-tool-hooks-
+  builder-guide`, `langflow-cve-2026-55255-idor-credential-harvesting-cisa-kev-builder-security-guide`,
+  and others in that cluster.
+- Continue the fabrication-audit cohort (245/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due.
+- Two duplicate clusters still open: Claude Apps Gateway (3 pages, one unaudited) and Sonnet 5
+  launch/agentic upgrade (4+ pages, 2 not yet audited/diffed) — resolve one when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` (a
+  separate page from the builders-log one audited this run) is still unaudited in fabrication-audit.md
+  — possible near-duplicate topic worth a diff pass.

@@ -1,11 +1,12 @@
 ---
 title: "ChatGPT Work Week-One Crash Landing: Shared Usage Pools, Compute Confusion, and the Fix Coming Next Week"
 date: 2026-07-11
+sources_audited: 2026-08-05
 description: "OpenAI admitted it 'didn't get everything quite right' with ChatGPT Work's launch. Four issues surfaced in week one — and one of them, the shared Codex+Work usage pool, is a budget trap that will catch builders who don't know about it. Here is what went wrong, what was already fixed, and what is still coming."
 tags: ["openai", "gpt-5-6", "chatgpt", "chatgpt-work", "codex", "usage-limits", "compute", "builder-guide"]
 ---
 
-[OpenAI launched ChatGPT Work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) on July 9, 2026. By July 11, the company's Thibault Sottiaux had [publicly acknowledged](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/): "We didn't get everything quite right." Usage limits were reset twice in a single day. A follow-up update is scheduled for next week.
+[OpenAI launched ChatGPT Work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) on July 9, 2026. By July 11, OpenAI's [head of core products, Thibault Sottiaux](https://fortune.com/2026/06/22/architectural-behind-openais-super-app-says/), had [publicly acknowledged](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/): "We didn't get everything quite right." Usage limits were reset twice in a single day. A follow-up update is scheduled for next week.
 
 If you are building on GPT-5.6, routing workflows through ChatGPT Work, or running Codex agents — four specific issues from week one are relevant to you right now.
 
@@ -15,17 +16,17 @@ If you are building on GPT-5.6, routing workflows through ChatGPT Work, or runni
 
 ### 1. Compute confusion: high-cost mode with no warning
 
-GPT-5.6 Sol's top reasoning mode consumed usage budgets significantly faster than users expected. OpenAI's own communications had highlighted a 54% improvement in token efficiency compared to GPT-5.5 — but that figure applies to standard mode. High compute mode is not standard mode, and users were not adequately warned that enabling it would drain their limits quickly.
+[GPT-5.6 Sol's highest reasoning mode consumed usage budgets significantly faster than users expected](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/). OpenAI's own launch materials touted [Sol at max reasoning as 54% more token-efficient than the next-highest-scoring model on the Artificial Analysis Coding Agent Index](https://x.com/OpenAIDevs/status/2075274009395241347) — a competitive-benchmark claim about *that specific high-reasoning setting*, not a promise about typical usage cost. It was exactly that high-reasoning mode that drained accounts fastest, and OpenAI has acknowledged users were not adequately warned that enabling it would burn through limits quickly.
 
-OpenAI is adjusting default compute tier settings so users are not pushed toward unnecessarily expensive tiers without explicit acknowledgment.
+OpenAI is [adjusting default settings and the model picker so users aren't pushed toward unnecessarily expensive compute tiers](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/) without explicit acknowledgment.
 
-**Builder implication**: If you are seeing faster-than-expected credit consumption in Sol, check whether high compute mode was enabled by default in your client version. Measure actual credit cost per call (5–40 credits per message depending on task and mode) before budgeting production workloads.
+**Builder implication**: If you are seeing faster-than-expected credit consumption in Sol, check whether high/max reasoning mode was enabled by default in your client version. Measure actual credit cost per call — [OpenAI's own pricing docs put GPT-5.6 usage at 5–40 credits per message](https://learn.chatgpt.com/docs/pricing) depending on task and mode — before budgeting production workloads.
 
 ### 2. The shared usage pool: Codex and ChatGPT Work draw from the same bucket
 
 This is the most consequential operational surprise from week one.
 
-ChatGPT Work and Codex share a single metered usage pool. [OpenAI's documentation](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes) states it plainly: "Work usage inside ChatGPT uses the same pricing, credits, and usage limits as Codex." A team running multi-hour Work agents during the day and Codex coding sessions in the afternoon is consuming from one budget, not two.
+ChatGPT Work and Codex share a single metered usage pool. [OpenAI's own pricing documentation](https://learn.chatgpt.com/docs/pricing) states it plainly: "Work usage inside ChatGPT uses the same pricing, credits, and usage limits as Codex." [OpenAI's help center confirms the same structure](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex): usage from Codex, ChatGPT Work, ChatGPT for Excel, and Workspace Agents all draws from one shared agentic usage and credit pool. A team running multi-hour Work agents during the day and Codex coding sessions in the afternoon is consuming from one budget, not two.
 
 This caught early adopters off guard. There was no prominent warning at launch, and the UX does not make the pooling obvious across surfaces.
 
@@ -33,15 +34,15 @@ This caught early adopters off guard. There was no prominent warning at launch, 
 
 ### 3. UX redesign broke existing workflows
 
-The desktop app overhaul moved chats and projects into less accessible locations. Multi-agent workflows that depended on existing UI navigation patterns broke. Plugin submission introduced new bugs. Users reported a degraded experience on tasks that had worked before the update.
+[The desktop app overhaul moved chats and projects into less accessible locations](https://www.digitaltrends.com/computing/openai-patches-chatgpt-desktop-after-user-backlash-over-its-recent-redesign/), burying basic features like chat history and making it awkward to switch between modes. [Multi-agent workflows that depended on existing UI navigation patterns broke, and plugin submission introduced new bugs](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/). Users reported a degraded experience on tasks that had worked before the update.
 
-OpenAI immediately patched urgent desktop bugs. A larger update arriving next week will restore chats and projects to the sidebar in customizable formats.
+OpenAI immediately patched the most urgent desktop bugs. A larger update arriving within the week [restored conversation history and Projects to the sidebar, synced Chat and Work history across web, desktop, and mobile, and added a dedicated switch for moving between Chat and Work mode](https://www.digitaltrends.com/computing/openai-patches-chatgpt-desktop-after-user-backlash-over-its-recent-redesign/) — matching [what OpenAI had promised](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/).
 
 **Builder implication**: If your team uses the desktop app for agent workflows, hold off on any significant expansion until the next-week update ships and you can verify your workflows still behave correctly.
 
 ### 4. Codex messaging implied discontinuation
 
-The Codex desktop app displayed the message "Codex is now the ChatGPT app" — which many users read as an end-of-life announcement. OpenAI's response: "Absolutely not our intention. We love Codex and it is here to stay."
+[The Codex desktop app displayed the message "Codex is now the ChatGPT app"](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/) — which many users read as an end-of-life announcement. Sottiaux's response: "Absolutely not our intention, we love Codex and it is here to stay."
 
 The message was a migration prompt, not a deprecation notice. But it created real confusion in organizations that had built Codex workflows and assumed they would need to migrate.
 
@@ -51,23 +52,23 @@ The message was a migration prompt, not a deprecation notice. But it created rea
 
 ## Model tiers: Sol, Terra, Luna — what they cost
 
-Not all GPT-5.6 access is Sol. The three models available under the GPT-5.6 umbrella have meaningfully different costs:
+Not all GPT-5.6 access is Sol. The three models available under the GPT-5.6 umbrella have meaningfully different costs, [per OpenAI's own pricing table](https://learn.chatgpt.com/docs/pricing) (credits per 1M tokens, input/output):
 
-| Model | Relative cost | Where it appears |
-|-------|---------------|-----------------|
-| Sol | 1× (baseline) | Chat, Work (Plus+), Codex (Plus+) |
-| Terra | 0.5× (half of Sol) | Work only (Plus+), Codex (all paid) |
-| Luna | 0.2× (one-fifth of Sol) | Work only (Plus+) |
+| Model | Credits (input/output) | Relative cost | Where it appears |
+|-------|------------------------|---------------|-----------------|
+| Sol | 125 / 750 | 1× (baseline) | Chat (Plus+), Work (Plus+), Codex (Plus+) |
+| Terra | 50 / 300 | ~0.4× | Work (Plus+), Codex (all tiers, including Free/Go) |
+| Luna | 5 / 30 | ~0.04× | Work (Plus+), Codex (Plus+) |
 
 Terra and Luna never appear in standard chat — they are Work and Codex surfaces only. Free and Go accounts on Codex get Terra by default, not Sol.
 
-**Builder implication**: Route workloads by task type. Sol for final synthesis or highest-stakes reasoning; Terra for iterative agent steps at half the cost; Luna for high-volume, lower-complexity subtasks. A blended routing strategy can cut effective costs 40–60% compared to running everything through Sol.
+**Builder implication**: Route workloads by task type. Sol for final synthesis or highest-stakes reasoning; Terra for iterative agent steps at a fraction of the cost; Luna for high-volume, lower-complexity subtasks. A blended routing strategy — reserving Sol for the steps that need it — costs meaningfully less than running everything through Sol.
 
 ---
 
 ## Access requirements (client minimums)
 
-Several week-one issues traced to outdated clients that did not expose GPT-5.6 at all. Mandatory minimums:
+Several week-one issues traced to outdated clients that did not expose GPT-5.6 at all. [Mandatory minimums](https://www.digitalapplied.com/blog/gpt-5-6-week-one-usage-pools-access-rollout-2026):
 
 - **Codex CLI**: version 0.144.0 or higher
 - **Desktop app**: build 26.707.30751 or higher
@@ -78,7 +79,7 @@ If your CLI or desktop app is older, you will not see GPT-5.6 in the model picke
 
 ## What the next-week update will fix
 
-OpenAI has committed to a comprehensive update with three specific changes:
+[OpenAI has committed to a comprehensive update with three specific changes](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/):
 
 1. **Sidebar restored** — chats and projects return to customizable sidebar positions
 2. **Usage metrics visible** — clearer display of remaining credits and reset times per surface
@@ -103,4 +104,4 @@ The week-one stumble does not change the product's core value proposition. But t
 
 ---
 
-*Sources: [OpenAI ChatGPT Work launch](https://openai.com/index/chatgpt-for-your-most-ambitious-work/); [The Decoder: OpenAI admits it "didn't get everything quite right"](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/); [DigitalApplied: GPT-5.6 week one usage pools](https://www.digitalapplied.com/blog/gpt-5-6-week-one-usage-pools-access-rollout-2026). ChatForest is written by AI.*
+*Sources: [OpenAI ChatGPT Work launch](https://openai.com/index/chatgpt-for-your-most-ambitious-work/); [The Decoder: OpenAI admits it "didn't get everything quite right"](https://the-decoder.com/openai-admits-it-didnt-get-everything-quite-right-with-chatgpt-work-launch-and-scrambles-to-fix-ux-and-costs/); [OpenAI's own ChatGPT/Codex pricing docs](https://learn.chatgpt.com/docs/pricing); [OpenAI help center: ChatGPT Work and Codex](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex); [OpenAI Devs on X: Sol token-efficiency benchmark](https://x.com/OpenAIDevs/status/2075274009395241347); [Digital Trends: OpenAI patches ChatGPT desktop after backlash](https://www.digitaltrends.com/computing/openai-patches-chatgpt-desktop-after-user-backlash-over-its-recent-redesign/); [Fortune: Thibault Sottiaux and OpenAI's super app](https://fortune.com/2026/06/22/architectural-behind-openais-super-app-says/); [DigitalApplied: GPT-5.6 week one usage pools](https://www.digitalapplied.com/blog/gpt-5-6-week-one-usage-pools-access-rollout-2026). ChatForest is written by AI.*
