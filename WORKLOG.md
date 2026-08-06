@@ -130565,3 +130565,104 @@ rule; nothing this run rises to the "immediate extra message" exception bar.
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
   unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
   diff pass.
+
+## Run 2208499 (2026-08-06, UTC ~21:56-22:15)
+
+### Orientation
+No pending inbox messages. Committed the housekeeping RUNLOG.md/TOKENLOG.tsv updates left over from
+run 2137673's tail. `sources_audited` backlog stood at 109 pages (excluding RingS's `content/ai/`).
+
+### Citation audit — 8 pages (rest of 2026-07-13 cluster)
+Dispatched 8 parallel claim-by-claim audit agents against the next-oldest unaudited pages (all dated
+2026-07-13). Every page had a real, substantive issue — not just missing links:
+
+1. **eu-chat-control-1-0-july-2026-paradox-vote-e2e-encryption-builder-guide** — most serious finding
+   of the run: the "99% false-positive rate for CSAM detection" was attributed to "the European
+   Commission's own data" and cited to patrick-breyer.de, but that source doesn't support it — the
+   "99%" there is a hypothetical *precision* assumption in an illustrative example, not a measured
+   real-world rate. Fetched the actual EC implementation report (EUR-Lex COM(2025)740) and replaced
+   with real figures (known-CSAM hash-matching false positives near-zero; Thorn's classifier claims
+   99% precision / 0.1% false positive; the only disclosed real-world grooming-detection error rate,
+   Yubo, was 13-20%). Rewrote the "scale math" accordingly. Also added citations for the vote tallies,
+   the 361/720 threshold, TFEU Article 294, the regulation text itself, and per-platform encryption
+   claims (WhatsApp/Signal/Proton/Tuta/Gmail/iCloud/Discord) — none had cited before.
+2. **fable-5-extended-july-19-second-extension-builder-update** — the "Source Note" claimed to be
+   "based on Anthropic's support article" that was never actually linked; found and added it
+   (support.claude.com). Corrected an overreach: the piece said both access extensions were announced
+   "hours before the deadline each time" — true for the first, but the second was announced *after*
+   the July 12 deadline had already passed (per RepublicWorld). Added citations for pricing, Claude
+   Code's rate-limit extension, and Anthropic's own stated reason (capacity), previously uncited.
+3. **gemini-managed-agents-july-7-background-tasks-remote-mcp-credential-refresh-builder-guide** — the
+   competitor-comparison table wrongly said OpenAI's Responses API had no async/remote-MCP support;
+   both have shipped per OpenAI's own docs. Corrected the table and added 2 primary sources per
+   platform (Anthropic, AWS, OpenAI) for a table that previously named competitors with zero citations.
+4. **github-actions-checkout-v7-pull-request-target-pwn-request-july-16-enforcement-builder-guide** —
+   stale enforcement date: GitHub's own changelog carries a July 15 correction moving backport
+   enforcement from July 16 to July 20, which the article (published July 13) never picked up — fixed
+   every date reference. Also wrong CVSS score (9.3 claimed vs. 8.6 actual per GHSA/NVD) and a
+   citation that said "23,000 organizations" being used to support a "23,000 repositories" claim —
+   swapped for GitHub's own advisory, which says repositories.
+5. **github-code-quality-ga-july-20-2026-pricing-audit-builder-guide** — "10,000-committer preview
+   pool" was actually "10,000 enterprises" in the source (the same stat-fusion failure pattern flagged
+   in CLAUDE.md). Also wrong enforcement mechanism (said branch protection rules; GitHub's docs say
+   rulesets) and an uncited, un-vendor-named "comparable to other vendors" claim — cut per cite-it-
+   or-cut-it.
+6. **gpt-56-sol-ultra-cycle-double-cover-conjecture-multiagent-research-prompt-builder-guide** — high
+   fabrication risk (AI-assisted math proof story) but the core premise checked out as genuine:
+   verified OpenAI's own proof/prompt PDFs, Thomas Bloom's actual X post, the real 1983 Bermond/
+   Jackson/Jaeger paper, and independent corroboration (The Decoder, HN, others) all match. Added 9
+   missing inline citations that had relied only on a top-of-article link or bottom source blurb.
+7. **meta-hyperion-50-billion-5-gigawatt-louisiana-ai-infrastructure-builder-guide** — the New Orleans
+   power-demand comparison was wrong ("nearly five times" peak demand; verified sources put the 10 gas
+   plants at ~7.5GW, more than six times). The Microsoft datacenter comparison was stale ("largest
+   facility ~800MW"; Microsoft's Fairwater Wisconsin campus is projected at 3.3GW by 2027 per
+   Microsoft's own blog). Added primary Meta sources plus citations for the previously-uncited Nvidia/
+   SambaNova/Amazon/Anthropic infrastructure bullets.
+8. **meta-iris-chip-mtia-september-production-14gw-compute-llama-inference-builder-guide** — wrong
+   Alberta investment figure (article said $10B USD; Meta's own newsroom post says CAD $13B). Wrong
+   power-source rationale (article said renewables/hydro/wind; on-the-ground reporting shows the site
+   runs primarily on a new natural-gas plant). Wrong Meta Model API launch date (said June 2026;
+   Meta's blog dates the public preview to July 9). Removed an unverifiable "Iris = MTIA 450/500"
+   number mapping that secondary sources contradicted on, rather than guess. Removed an unsupported
+   TSMC-fab claim not confirmed by Broadcom's own press release.
+
+All 8 files now carry `sources_audited: 2026-08-07`. 5 of 8 matched existing `fabrication-audit.md`
+checklist entries (gemini-managed-agents, github-code-quality-ga, meta-hyperion, meta-iris-chip,
+github-actions-checkout-v7) — marked `[x]`. fable-5-extended, gpt-56-sol-ultra, and eu-chat-control
+have no fabrication-audit.md entries.
+
+**`sources_audited` backlog:** 101 pages remaining (owned pages, excluding RingS's `content/ai/`).
+**`fabrication-audit.md`:** 99 unchecked (down from 104), 276 checked.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-06 03:57 UTC). No post this run.
+
+### GSC re-measure
+Real UTC clock still reads 2026-08-06 as of this run (checked ~21:57 UTC) — the ~2026-08-07 re-measure
+is not yet due. Deferred again to a run where UTC has actually rolled over to Aug 7.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Committed (`699537a471`) and deployed via rsync; spot-
+verified two fixes live (corrected July 20 enforcement date + CVSS 8.6 on the checkout-v7 page).
+
+### Digest
+No CEO digest sent — nothing this run rises to the "immediate extra message" exception bar; last
+digest (#2311, 2026-08-05) still stands under the max-one-per-day rule.
+
+### What should happen next
+- Continue the `sources_audited` backlog (101 remaining) — next oldest is the rest of the 2026-07-13
+  cluster: `microsoft-mai-replace-openai-anthropic-copilot-excel-outlook-routing-builder-guide`,
+  `openai-atlas-browser-shutdown-august-9-chatgpt-work-migration-builder-guide`,
+  `openai-build-week-july-2026-codex-hackathon-100k-entry-guide`,
+  `openai-codex-5-hour-limit-removed-shared-agentic-credit-pool-builder-guide`,
+  `sambanova-1b-sn50-rdu-agentic-inference-jpmorgan-nvidia-alternative-builder-guide`,
+  `sunrun-distributed-ai-inference-home-solar-edge-compute-builder-guide`, and
+  `content/reviews/helsing-1-8b-series-e-18b-valuation-europe-defense-ai-drones-july-2026.md`.
+- Continue the fabrication-audit cohort alongside normal duty (99 remaining).
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — check next run
+  once UTC has rolled to August 7.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
+  unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
+  diff pass.
