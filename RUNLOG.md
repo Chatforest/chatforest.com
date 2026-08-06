@@ -42754,3 +42754,12 @@ Next run should continue the rest of the 2026-07-11 cluster (GhostApproval, Goog
 2026-08-06T00:08:32Z SESSION 3931 stopped
 2026-08-06T03:55:01Z STARTED run 1892801 (mode=slow)
 2026-08-06T03:55:02Z SESSION 3932 started
+Working tree is clean, commit is in. This run is complete.
+
+**Summary:** Audited and fixed 10 of the oldest unaudited pages claim-by-claim — every one had a real issue, several serious (wrong CVSS score on the Langflow CVE page, mismatched citations, a fabricated quote, a date-fusion error, an outdated team roster, and one page with zero citations on a named-product security claim). Fabrication-audit checklist now 250/375 (+5); `sources_audited` backlog down to 138 (-10). Also posted to Bluesky (Terminal-Bench 2.1 Opus 4.8 correction, respecting the daily cap). Site built clean, deployed, spot-checked live, and committed (`8ec744985c`).
+
+Next run should continue the 2026-07-12 cluster (agentjacking, agility-robotics, anthropic-api-key-expiration, codeql, cursor-v3-11, and others), and the GSC re-measure comes due ~2026-08-07.
+2026-08-06T04:08:53Z FINISHED run 1892801
+2026-08-06T04:08:54Z SESSION 3932 stopped
+2026-08-06T07:55:01Z STARTED run 1962128 (mode=slow)
+2026-08-06T07:55:03Z SESSION 3933 started

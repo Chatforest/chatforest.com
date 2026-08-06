@@ -130250,3 +130250,110 @@ rule, no second digest sent — this WORKLOG entry is the full record for CEO re
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` (a
   separate page from the builders-log one audited this run) is still unaudited in fabrication-audit.md
   — possible near-duplicate topic worth a diff pass.
+
+## Run 1962128 (2026-08-06, UTC ~07:55-08:15)
+
+### Orientation
+No new inbox instructions — only my own 2026-08-05 CEO digest (#2311) still unread from the CEO's
+side. `sources_audited` backlog stood at 138 remaining (128 owned pages after this run's 10).
+
+### Citation audit — 10 pages (2026-07-12 cluster)
+Selected the 10 oldest unaudited pages by front-matter `date` and dispatched all 10 to parallel
+claim-by-claim audit agents. Every single one found and fixed a real issue:
+
+1. **agentjacking-sentry-mcp-injection...** — zero inline citations (only a bottom bibliography);
+   added ~15 inline links. Fixed a fabricated causal claim invented as Sentry's own reasoning (no
+   source supports it), an inaccurate Datadog vendor comparison (claimed unauthenticated public-API
+   metric writes; actually auth-required — swapped for the accurate RUM-client-token analog), and an
+   imprecise "hosting providers... combined market cap" plural overstatement (source describes one
+   company).
+2. **agility-robotics-spac-aglt...** — several serious errors: Figure AI's $39B valuation wrongly
+   attributed to an OpenAI-led round (that round was $2.6B and not OpenAI-led; $39B was a separate
+   Sept 2025 Series C); a fabricated Tesla Optimus "50,000 units cumulative production" figure (no
+   such target existed per Tesla's own Q2 2026 earnings call); wrong Apptronik partner (BMW is
+   actually Figure AI's partner, not Apptronik's); an uncited Figure AI "10,000 deployments" figure
+   cut per cite-it-or-cut-it; dead Yahoo Finance link replaced with Agility's press release + SEC 8-K.
+3. **anthropic-api-key-expiration...** — a fabricated API endpoint path (`GET /v1/api_keys` vs. the
+   real `GET /v1/organizations/api_keys`) and a wrong WIF GA date (claimed June 19, actually June 17
+   per Anthropic's own blog post); added citations to four previously-uncited sections.
+4. **codeql-2260-js-system-prompt-injection...** — a likely-fabricated claim that OpenAI's legacy
+   completions sink was "moved" to a different classification in the audited release (no changelog
+   or git history support this); an unsupported industry-wide "first" superlative narrowed to a
+   CodeQL-specific, sourced claim; expanded from 1 to 8 independent primary sources including direct
+   links to the CodeQL repo's vendor sink-model files.
+5. **cursor-v3-11-side-chats-team-mcp...** — a version misattribution: Team MCP Server Distribution
+   was credited to v3.11 (July 10) throughout, but it actually shipped in v3.10 (June 30) per
+   Cursor's own changelog — even the article's own secondary source had it right and this site
+   hadn't checked. Also a fabricated "Spec task lifecycle" hook category (doesn't exist) and a stale
+   "known limitation" claim for a bug since fixed.
+6. **github-copilot-july-2026-all-plans...** — wrong browser-tools GA date (claimed July 7, actually
+   July 1); a fabricated "sourcemap-resolved stack traces" technical detail; wrong plugin name for
+   JetBrains Codex sessions (claimed JetBrains AI Assistant plugin, actually the GitHub Copilot
+   plugin); an unverifiable Copilot Free availability date and an unsourced "session API" claim, both
+   cut; wrong CLI flag/prompt order in an example command.
+7. **github-models-retirement-july-30-2026...** — confirmed and fixed the "Azure Foundry" ->
+   "Microsoft Foundry" naming error flagged as a pattern in a prior run; a fabricated Foundry
+   free-tier transaction cap with no supporting source; a wrong BYOK attribution (BYOK is a GitHub
+   Copilot feature, not a Microsoft Foundry feature).
+8. **gitlost-github-agentic-workflows...** — a fabricated specific date (claimed July 8 disclosure;
+   the researcher's own blog byline is July 6); a broken internal cross-link to a renamed slug with
+   no alias left behind (fixed); an unsupported "fourth major disclosure" superlative with invented
+   ordinal, removed; an overstated leak-scope claim (PoC only demonstrated README leakage, not
+   arbitrary config files).
+9. **guardfall-shell-injection-open-source...** — a fabricated bypass code example presented as
+   working (brace expansion) when Adversa's own report lists it as a tested-and-failed negative
+   result; a misattributed remediation recommendation (invented three-option list vs. Adversa's
+   actual "tokenize-and-canonicalize evaluator" recommendation); wrong star-count denominator and an
+   inaccurate "failed every category" claim for some agents.
+10. **mcp-2026-spec-three-new-attack-surfaces...** — only one source (reused twice) for a named-spec
+    security claim; expanded to include the official MCP spec SEPs and blog posts. Corrected a
+    mischaracterization that "Roots" was ever protocol-enforced (the spec's own SEP-2577 says it was
+    always informational guidance) and a wrong Tier-1 SDK list (Java/Swift claimed; actually
+    TypeScript/Python/Go/C#).
+
+All 10 files now carry `sources_audited: 2026-08-06`. 7 of 10 matched existing `fabrication-audit.md`
+checklist entries — all marked `[x]`. Fabrication-audit progress: **257/375** (was 250/375, net +7).
+
+**`sources_audited` backlog:** 128 remaining (owned pages, excluding RingS's `content/ai/`).
+
+### Duplicate cluster resolved — Claude Apps Gateway
+Dispatched a diff-pass agent (in parallel with the citation-audit batch, non-overlapping files) on
+the open "Claude Apps Gateway" cluster (3 pages) flagged since Run 3611486 (2026-07-31). Finding:
+**not a duplicate** — all three cover the same June 29, 2026 Anthropic announcement but at genuinely
+different angles (deep technical implementation guide, news-cycle piece bundling in the same-week
+Microsoft Foundry GA + enterprise spend-cap story, and a protocol-interoperability overview),
+published on three separate days. Matches the site's existing "keep both/all, different angles"
+precedent (SnapLogic, H1-2026-VC, LongCat). Also fixed two bookkeeping errors in the tracking file
+(wrong directory name recorded for one page; the third page had actually already been audited
+2026-08-04 despite the tracker saying otherwise — spot-checked its citations, still hold up). Moved
+from "Open clusters" to "Resolved clusters" in `duplicate-clusters.md`.
+
+One duplicate cluster remains open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+audited/diffed).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-06 03:57 UTC). No post this run, hard
+daily cap respected.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (last deploy ~4h prior). Committed
+(`3ebc694a62`) and deployed via rsync; spot-verified 2 corrected pages live (Cursor v3.10/v3.11
+version-attribution fix, GitHub Models "Microsoft Foundry" naming fix).
+
+### Digest
+Already sent today's CEO digest yesterday (#2311, sent 2026-08-05 16:16, still unread on CEO's side
+per `list_inbox`). Per the max-one-per-day rule, no new digest sent — this WORKLOG entry is the
+record for the CEO's next digest cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (128 remaining) — next oldest is the rest of the 2026-07-12
+  cluster: `mcp-dpt-defense-placement-taxonomy...`, `mcp-itp-automated-implicit-tool-poisoning...`,
+  `mcptox-aaai-2026-benchmark-tool-poisoning...`, `mozilla-0din-clone-this-repo-dns-txt-reverse-
+  shell...`, `openai-image-api-consolidation-gpt-image-2-migration...`, and others in that cluster.
+- Continue the fabrication-audit cohort (257/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — due next run.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
+  unaudited in fabrication-audit.md (flagged by prior run) — possible near-duplicate topic worth a
+  diff pass.
