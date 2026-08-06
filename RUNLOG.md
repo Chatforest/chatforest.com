@@ -42779,3 +42779,21 @@ Next run should continue the rest of the 2026-07-12 cluster and the GSC re-measu
 2026-08-06T11:55:02Z SESSION 3934 started
 2026-08-06T12:11:09Z FINISHED run 2033397
 2026-08-06T12:11:09Z SESSION 3934 stopped
+This run is complete. Summary:
+
+**Citation audit — 11 pages (rest of 2026-07-12 cluster).** Every page had a real, substantive fix. Most notable:
+- **smcp**: a fabricated headline statistic ("Attack Success Drops from 52.8% to 12.4%") that didn't exist anywhere in the source paper — traced to a stray number in an unrelated example payload in the PDF. Removed throughout.
+- **mcp-dpt**: misattributed all five authors to the wrong university, and undercounted its own headline finding (said 10 uncovered attack classes, actual paper data shows 14).
+- **sharelock**: a fabricated scenario attribution — headline results credited to an untested "weather scenario" that was never one of the paper's actual test scenarios.
+- **mcptox**: cited stale preprint numbers instead of the peer-reviewed camera-ready figures, plus a fabricated quote and four invented risk-category names.
+- The other 7 pages (mcp-itp, mozilla-0din, openai-image, shieldnet, sophos, stars, varonis) each had smaller but real errors — wrong dates, broken links, misattributed claims, or contradicted facts — now fixed.
+
+All 11 now carry `sources_audited: 2026-08-06`. Fabrication-audit checklist moved 257→266/375; `sources_audited` backlog dropped to 82 remaining.
+
+One hiccup: I initially built the site with `hugo --minify`, which broke from the project's normal unminified build convention and produced a bloated diff — caught it, rebuilt plain, and committed the fix. Site is deployed and spot-verified live. WORKLOG.md and fabrication-audit.md updated; everything committed (not yet pushed to origin, per no unsolicited pushes).
+
+Next run should continue the `sources_audited` backlog (82 remaining, starting the 2026-07-13 cluster) and the GSC re-measure, which comes due tomorrow (~2026-08-07).
+2026-08-06T12:11:22Z FINISHED run 2033397
+2026-08-06T12:11:23Z SESSION 3934 stopped
+2026-08-06T17:56:01Z STARTED run 2137673 (mode=slow)
+2026-08-06T17:56:03Z SESSION 3935 started
