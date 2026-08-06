@@ -5,9 +5,10 @@ date: 2026-07-11
 lastmod: 2026-07-11
 categories: ["builders-log"]
 tags: ["genkit", "google", "middleware", "agents", "human-in-the-loop", "retry", "fallback", "typescript", "go", "open-source", "agent-infrastructure", "tool-calling"]
+sources_audited: 2026-08-06
 ---
 
-On May 14, 2026, Google shipped a composable middleware layer for Genkit. The announcement was titled "Intercept, extend, and harden your agentic apps" — and the framing is accurate. Genkit Middleware gives you cross-cutting control over model calls, tool executions, and the full generation loop without changing the logic inside your flows or agent code.
+On May 14, 2026, Google shipped a composable middleware layer for Genkit. The [announcement](https://developers.googleblog.com/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/) was titled "Intercept, extend, and harden your agentic apps" — and the framing is accurate. Genkit Middleware gives you cross-cutting control over model calls, tool executions, and the full generation loop without changing the logic inside your flows or agent code.
 
 This is the counterpart to [Genkit's Agents API](https://chatforest.com/builders-log/google-genkit-agents-api-preview-session-state-interrupts-multi-agent-typescript-go-builder-guide/), which shipped in preview two months later. Middleware handles production hardening and observability; the Agents API handles session state and multi-agent routing. They compose.
 
@@ -25,7 +26,7 @@ Genkit Middleware solves this with an onion model borrowed from HTTP frameworks 
 
 ## Three hook types
 
-Genkit Middleware operates at three distinct layers:
+Per Google's [Genkit Middleware announcement](https://developers.googleblog.com/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/) and the [Genkit middleware docs](https://genkit.dev/docs/js/middleware/), Genkit Middleware operates at three distinct layers:
 
 **`generate` hook** — Wraps the entire generation loop, including all tool call iterations. Runs once per `generate()` invocation. Use this to inject tools or modify the system prompt before the loop starts, or to observe the final output after all tool calls complete.
 
@@ -39,7 +40,7 @@ The key distinction between `model` and `tool`: `model` sees LLM API boundaries,
 
 ## Built-in middleware
 
-The `@genkit-ai/middleware` package ships five pre-built options:
+The [`@genkit-ai/middleware`](https://www.npmjs.com/package/@genkit-ai/middleware) package, described in the [Genkit Middleware announcement](https://developers.googleblog.com/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/), ships five pre-built options:
 
 **`retry`** — Exponential backoff with jitter for transient errors (`RESOURCE_EXHAUSTED`, `UNAVAILABLE`). Configurable max retries. Note: only the individual model call is retried, not the surrounding tool loop — a failed tool call does not trigger retry.
 
@@ -49,7 +50,7 @@ The `@genkit-ai/middleware` package ships five pre-built options:
 
 **`skills`** — Injects Markdown skill files into the system prompt and exposes an on-demand `use_skill` tool. Designed to work with Claude-style `SKILL.md` conventions. Useful for agents that need selective skill loading rather than a single monolithic system prompt.
 
-**`filesystem`** — Provides scoped file access with path safety enforcement. Exposes `list`, `read`, `write`, and `search_replace` tools restricted to a configured root path. Useful for code agents that should not be able to read outside the project directory.
+**`filesystem`** — Provides scoped file access with path safety enforcement. Exposes [`list_files`, `read_file`, `write_file`, and `search_and_replace`](https://genkit.dev/docs/js/middleware/) tools restricted to a configured root path. Useful for code agents that should not be able to read outside the project directory.
 
 ---
 
@@ -108,7 +109,7 @@ Execution order: `retry` is outermost, `contentFilter` is innermost (before the 
 
 ## Language support
 
-As of the May 14, 2026 announcement:
+As of the [May 14, 2026 announcement](https://developers.googleblog.com/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/):
 
 | Language | Status |
 |----------|--------|
@@ -117,7 +118,7 @@ As of the May 14, 2026 announcement:
 | Dart | Available |
 | Python | Coming soon |
 
-The `generate()` pipeline exists in all Genkit runtimes; the middleware abstraction is being added to each in turn. Python was the last to ship the Agents API as well — expect it to follow a similar timeline.
+The `generate()` pipeline exists in all Genkit runtimes; the middleware abstraction is being added to each in turn. Python (along with Dart) also [does not have the Agents API yet](https://chatforest.com/builders-log/google-genkit-agents-api-preview-session-state-interrupts-multi-agent-typescript-go-builder-guide/) as of that API's July 1, 2026 preview — both languages are trailing TypeScript and Go on more than one Genkit feature.
 
 ---
 
@@ -146,7 +147,7 @@ Middleware is the production hardening layer Genkit was missing. If you are ship
 
 For custom concerns — PII filtering, per-tenant quota, cost tracking, domain-specific tool sandboxing — the middleware interface is small enough to implement in 20-30 lines. The onion model means you can stack these without any wrapper knowing about the others.
 
-Spec: [Google Developers Blog announcement](https://developers.googleblog.com/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/), `@genkit-ai/middleware` on npm.
+Spec: [Google Developers Blog announcement](https://developers.googleblog.com/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/), [`@genkit-ai/middleware` on npm](https://www.npmjs.com/package/@genkit-ai/middleware), [Genkit middleware docs](https://genkit.dev/docs/js/middleware/).
 
 ---
 

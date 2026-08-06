@@ -2,6 +2,115 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1892801 (2026-08-06, UTC ~03:55-04:1X) — Citation audit: 10 pages (2026-07-11/07-12 cluster) + Bluesky
+
+### Orientation
+No blocking inbox items — only my own 2026-08-05 16:16 CEO digest (#2311), still unread from the CEO's
+side (expected under the max-one-digest/day rule; no new digest sent this run). `date -u` confirmed
+real UTC time was 2026-08-06 03:55, a new UTC day, so the Bluesky daily cap had reset.
+
+### Citation audit — 10 pages (rest of 2026-07-11 cluster + start of 2026-07-12)
+Selected the 9 remaining oldest unaudited pages from the 2026-07-11 cluster plus the first 2026-07-12
+page (138→ backlog), dispatched 10 parallel claim-by-claim audit agents. **Every single one found and
+fixed at least one real, substantive issue** — several were serious:
+
+1. **ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-builder-guide**
+   — Amazon Q and Cursor CVE numbers/versions were linked to a SecurityWeek article that, on direct
+   fetch, contains none of those numbers — re-pointed to the real primary source (Wiz). A math error
+   ("145 days" of vendor lead time, corrected to 144 per the cited dates) and a misleading "patched
+   within weeks" characterization (actual gap ~3.5-4 months) were also fixed.
+2. **google-genkit-agents-api-preview-session-state-interrupts-multi-agent-typescript-go-builder-guide**
+   — page had zero inline citations (only 3 links bundled at the bottom, the classic retrofit failure
+   mode). Added inline citations throughout; fixed a mechanism-description error (interrupt validation
+   is by tool-call name + reference ID, not "against session history" as originally stated) and
+   corrected outdated claims about competing SDKs (Claude SDK now has Sessions/Subagents; Google ADK is
+   open-source, not "a managed platform").
+3. **google-genkit-middleware-intercept-extend-harden-agentic-apps-model-tool-hooks-builder-guide** —
+   fixed wrong filesystem-middleware tool names (`list`/`read`/`write`/`search_replace` claimed;
+   actual names are `list_files`/`read_file`/`write_file`/`search_and_replace`) and a wrong claim that
+   Python "was the last to ship the Agents API" when Python and Dart both still lack it entirely.
+4. **langflow-cve-2026-55255-idor-credential-harvesting-cisa-kev-builder-security-guide** — CVSS score
+   was wrong (9.9 claimed; NVD/GHSA both give 8.4 HIGH), the fix version was wrong (1.9.2 claimed;
+   GHSA + Sysdig both say 1.9.1), and a second KEV-listed CVE was misidentified (CVE-2026-5027 claimed;
+   the real second Langflow KEV entry is CVE-2026-33017). All three traced to primary sources (NVD API,
+   GHSA-qrpv-q767-xqq2, Sysdig, BleepingComputer).
+5. **mcp-enterprise-managed-authorization-ema-stable-zero-touch-sso-okta-claude-vs-code-builder-guide**
+   — a spec citation pointed to the wrong IETF draft (`identity-chaining`, verified to not mention
+   ID-JAG/5-minute lifetime/`jti` at all); replaced with the correct draft
+   (`identity-assertion-authz-grant`). Also caught a stable-vs-beta conflation: the Claude clients
+   table claimed "Stable" but Anthropic's own post says the feature is in beta for Team/Enterprise.
+6. **meta-ray-ban-super-sensing-always-on-audio-photos-no-led-privacy-builder-guide** — zero inline
+   citations (footer-only sourcing). A fabricated exact quote attributed to the NY courthouse ban memo
+   was corrected to the verified OCA wording. A stat-fusion error matching the ClickHouse failure mode:
+   the Anthropic Public Record survey's date and its #2/#3 concern rankings were both misstated,
+   corrected against Anthropic's own report (cognitive dependency 56%, misinformation 52% — not "data
+   collection and loss of agency" as claimed).
+7. **microsoft-mcp-dev-days-july-29-30-2026-session-guide-builder-preview** — zero inline citations
+   across a 16-session agenda. Fixed a misattributed speaker affiliation (Toby Padilla is GitHub's PM
+   for MCP and a Registry Maintainer, not "Anthropic's MCP registry lead"), a wrong keynote month
+   (Build 2026 was June, not May), a fabricated appearance detail ("live from the Microsoft Studio,"
+   unsupported), a wrong NLWeb endpoint (`/ask`, not `/nlweb`), and a mislabeled resource name.
+8. **thinking-machines-lab-future-worth-building-human-decentralized-alignment-customizable-weights-builder-guide**
+   — the founding-team roster listed two people (Barret Zoph, Andrew Tulloch) who had actually departed
+   months before this piece published; corrected to reflect who was actually present, with sourced
+   departure dates. Also fixed an unsupported "largest seed round in AI history" superlative (TechCrunch
+   actually says "one of the largest... in Silicon Valley history") and a funding-detail conflation
+   (Nvidia deal size is undisclosed per TechCrunch, not implied as billions like the Google deal).
+9. **uae-a5-chip-export-reclassification-g42-core42-nvidia-license-free-gulf-builder-guide** — cut an
+   inaccurate "alongside NATO allies, Japan, Australia, South Korea" framing (Country Group A:5 actually
+   includes ~40 countries); fixed a "first Arab country" claim not in the BIS release (re-sourced to
+   AGBI, which does say it); corrected a mis-cited link (pointed to the wrong domain entirely); fixed a
+   date-scope fusion on Microsoft's $7.3B UAE investment figure (was open-ended, actually "through end
+   of 2025" per source); fixed a front-matter arithmetic bug ("seven" vs. the eight companies actually
+   listed).
+10. **adversa-claude-code-50-subcommand-deny-rule-bypass-bashpermissions-builder-security-guide** —
+    shipped with **zero external citations anywhere in the body** despite being a named-product
+    security-vulnerability claim about Claude Code. Added Adversa's own writeup, Anthropic's own
+    CHANGELOG, and two independent corroborating sources (The Register, The Hacker News) to clear the
+    >=2-source bar. Found and fixed a date-fusion error: the patch (v2.1.90) actually shipped April 1,
+    2026 per the npm registry, not April 4 as claimed — April 4 was when Adversa's post was *updated*
+    to note the fix, a different event fused into "patch date."
+
+All 10 files now carry `sources_audited: 2026-08-06`. 6 of 10 matched existing `fabrication-audit.md`
+checklist entries (thinking-machines-lab, uae-a5-chip, adversa-claude-code-50, ghostapproval,
+langflow-cve-2026-55255, meta-ray-ban-super-sensing) — all marked `[x]`. Fabrication-audit progress:
+**250/375** (was 245/375; net +5).
+
+**`sources_audited` backlog:** 138 remaining (was 148; -10 net this run).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `OK_TO_POST` (new UTC day). `check_tuesday_dispatch_reservation.py`
+→ `NOT_TUESDAY` (today is Thursday, reservation doesn't apply). Posted about the Terminal-Bench 2.1
+Opus 4.8 correction from the 2026-08-05 audit run (74.6% real score, below Sonnet 5's 80.4%, vs. the
+unsourced ~84.6% that had circulated) — a concrete, surprising, already-cited data point:
+https://bsky.app/profile/chatforest.bsky.social/post/3msf5ltrqwc2x
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (last deploy ~4h prior). Deployed via
+rsync; spot-verified 2 corrected pages live (Langflow CVE fix version 1.9.1 / CVE-2026-33017,
+GhostApproval 144-day vendor lead-time correction).
+
+### Digest
+Already sent today's CEO digest yesterday (#2311, 2026-08-05 16:16), still unread — per the
+max-one-per-UTC-day rule, no new digest sent. This run's work (10-page audit + Bluesky post) will be
+included in the next digest.
+
+### What should happen next
+- Continue the `sources_audited` backlog (138 remaining) — next oldest is the rest of the 2026-07-12
+  cluster: `agentjacking-sentry-mcp-injection-claude-code-cursor-codex-builder-security-guide`,
+  `agility-robotics-spac-aglt-first-public-humanoid-digit-v5-amazon-builder-guide`,
+  `anthropic-api-key-expiration-console-expires-at-admin-api-security-builder-guide`,
+  `codeql-2260-js-system-prompt-injection-javascript-typescript-ai-sdk-builder-security-guide`,
+  `cursor-v3-11-side-chats-team-mcp-cloud-agent-hooks-builder-guide`, and others in that cluster.
+- Continue the fabrication-audit cohort (250/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — not yet due, next
+  run should check.
+- Two duplicate clusters still open: Claude Apps Gateway (3 pages, one unaudited) and Sonnet 5
+  launch/agentic upgrade (4+ pages, 2 not yet audited/diffed) — resolve one when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` (a
+  separate page from the builders-log one audited 2026-08-05) is still unaudited in
+  fabrication-audit.md — possible near-duplicate topic worth a diff pass.
+
 ## Run 1673270 (2026-08-05, ~15:54 UTC) — Reddit recon (CEO directive) + citation audit: 11 pages
 
 ### Orientation

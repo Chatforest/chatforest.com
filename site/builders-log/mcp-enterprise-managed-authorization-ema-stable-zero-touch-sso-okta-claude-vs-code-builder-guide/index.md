@@ -3,7 +3,7 @@
 > The MCP Enterprise-Managed Authorization (EMA) extension reached stable status on June 18, 2026, replacing per-user OAuth consent screens with IdP-provisioned access. Anthropic, Microsoft, and Okta are already in. Here is what EMA does, what it does not do, and what MCP server builders need to implement today.
 
 
-The Model Context Protocol now has a stable enterprise authorization layer. The **Enterprise-Managed Authorization (EMA) extension** went stable on June 18, 2026, and the initial adopter list covers the major clients and identity providers most teams already use: Anthropic (Claude, Claude Code, Cowork), Microsoft (VS Code), and Okta.
+The Model Context Protocol now has a stable enterprise authorization layer. The **Enterprise-Managed Authorization (EMA) extension** [went stable on June 18, 2026](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/), and the initial adopter list covers the major clients and identity providers most teams already use: Anthropic (Claude, Claude Code, Cowork), Microsoft (VS Code), and Okta.
 
 If you are a builder using MCP at work, EMA means your IT team can now provision server access for your entire organization in one place. If you are building an MCP server, EMA is the enterprise requirement you should be shipping toward now.
 
@@ -27,7 +27,7 @@ EMA eliminates all three by moving authorization out of the user session and int
 
 ## How EMA works
 
-The flow has two building blocks: **XAA** (Okta's Cross App Access protocol) and **ID-JAG** (Identity Assertion JWT Authorization Grant, an IETF draft).
+The flow has two building blocks: **XAA** ([Okta's Cross App Access protocol](https://www.okta.com/identity-101/cross-app-access-securing-ai-agent-and-app-to-app-connections/)) and **ID-JAG** ([Identity Assertion JWT Authorization Grant](https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/), an IETF draft).
 
 At a high level:
 
@@ -39,7 +39,7 @@ At a high level:
 
 No browser redirects. No consent screens. No account picker. The user authenticates once to their org's IdP, and the MCP tools their IT provisioned are there.
 
-The ID-JAG JWT has a five-minute lifetime and includes a `jti` claim for replay protection. Each JWT is scoped to exactly one MCP server — there is no universal cross-server token.
+Per the [EMA specification](https://github.com/modelcontextprotocol/ext-auth/blob/main/specification/stable/enterprise-managed-authorization.mdx), the ID-JAG JWT has a five-minute lifetime and includes a `jti` claim for replay protection. Each JWT is scoped to exactly one MCP server — there is no universal cross-server token.
 
 ---
 
@@ -56,9 +56,9 @@ The ID-JAG JWT has a five-minute lifetime and includes a `jti` claim for replay 
 
 | Client | Status |
 |--------|--------|
-| Claude (Web, App) | Stable — admins provision via Claude Enterprise settings |
-| Claude Code | Stable — inherits org provisioning |
-| Claude Cowork | Stable — inherits org provisioning |
+| Claude (Web, App) | Beta (Team/Enterprise plans) — admins connect their IdP via Claude settings |
+| Claude Code | Beta — access stays consistent with Claude chat |
+| Claude Cowork | Beta — access stays consistent with Claude chat |
 | VS Code | Preview in v1.123 |
 
 **Servers**
@@ -74,6 +74,8 @@ The ID-JAG JWT has a five-minute lifetime and includes a `jti` claim for replay 
 | Supabase | Live |
 | Slack | In progress |
 
+Sources: [MCP Enterprise-Managed Authorization announcement](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/), [Claude's Enterprise-Managed Auth post](https://claude.com/blog/enterprise-managed-auth), and [VS Code 1.123 release notes](https://code.visualstudio.com/updates/v1_123).
+
 ---
 
 ## What MCP server builders need to implement
@@ -82,7 +84,7 @@ If you are building or maintaining an MCP server and want enterprise customers, 
 
 **Step 1: Declare EMA support in your authorization server metadata**
 
-Add `"urn:ietf:params:oauth:grant-profile:id-jag"` to the `authorization_grant_profiles_supported` array in your authorization server metadata endpoint (per RFC 9728). This is how clients discover EMA without a custom negotiation path.
+Add `"urn:ietf:params:oauth:grant-profile:id-jag"` to the `authorization_grant_profiles_supported` array in your authorization server metadata endpoint (per RFC 9728), as defined in the [EMA specification](https://github.com/modelcontextprotocol/ext-auth/blob/main/specification/stable/enterprise-managed-authorization.mdx). This is how clients discover EMA without a custom negotiation path.
 
 **Step 2: Validate the incoming ID-JAG JWT**
 
@@ -100,7 +102,7 @@ Accept the grant type `urn:ietf:params:oauth:grant-type:jwt-bearer` on your toke
 
 The user identity is `iss`+`sub` together — never `sub` alone (the same `sub` can appear from different issuers). The `scope` claim is a ceiling: issue equal or reduced permissions, never more. Do not drive authorization decisions from the `email` claim; it exists for account linking only.
 
-Authoritative specs: RFC 8693 (Token Exchange), RFC 7523 (JWT Bearer), RFC 9728 (Protected Resource Metadata), and the [Identity Assertion JWT Authorization Grant IETF draft](https://www.ietf.org/archive/id/draft-ietf-oauth-identity-chaining-01.html).
+Authoritative specs: RFC 8693 (Token Exchange), RFC 7523 (JWT Bearer), RFC 9728 (Protected Resource Metadata), and the [Identity Assertion JWT Authorization Grant IETF draft](https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/).
 
 The specification and reference implementation are at [modelcontextprotocol/ext-auth](https://github.com/modelcontextprotocol/ext-auth) on GitHub.
 
@@ -126,9 +128,9 @@ EMA handles the "can this employee connect at all" question. The "can this agent
 
 **If you are building an MCP server**: Implement EMA now. The metadata declaration is trivial. The token validation is standard JWT work. Enterprise IT teams at Okta shops will ask for it, and the servers that already support it (Atlassian, Figma, Linear) will have an advantage in deals where IT approval is required. The spec and reference implementation are in `modelcontextprotocol/ext-auth`.
 
-**If you are not on Okta**: Only Okta's XAA is supported as of stable. Microsoft Entra ID support has not been announced publicly. Follow the [EMA Interest Group](https://modelcontextprotocol.io/community/interest-groups/enterprise-managed-authorization) for additional IdP announcements.
+**If you are not on Okta**: [Okta is the first supported identity provider at launch](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/), and no other IdP vendor has been announced as EMA-supported yet. Follow the [EMA Interest Group](https://modelcontextprotocol.io/community/interest-groups/enterprise-managed-authorization) for additional IdP announcements.
 
-The July 28 MCP spec RC is next. That revision goes stateless and revamps auth to align more closely with standard OAuth/OIDC deployments — EMA is designed to compose cleanly with the new spec.
+The [July 28 MCP spec release candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) is next. That revision goes stateless and hardens auth to align more closely with standard OAuth/OIDC deployments — EMA is designed to compose cleanly with the new spec.
 
 ---
 

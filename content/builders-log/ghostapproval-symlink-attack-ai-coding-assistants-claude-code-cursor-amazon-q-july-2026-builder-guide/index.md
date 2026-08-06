@@ -2,7 +2,8 @@
 title: "GhostApproval: How a Decades-Old Symlink Trick Breaks Every AI Coding Assistant's Safety Check"
 description: "Wiz disclosed a category-level design gap across six AI coding tools — Claude Code, Cursor, Amazon Q, Antigravity, Augment, and Windsurf — that lets a malicious repository bypass Human-in-the-Loop safeguards and write arbitrary files on a developer's machine. Here is what happened, which tools are still unpatched, and what you can do right now."
 date: 2026-07-11
-lastmod: 2026-07-11
+lastmod: 2026-08-06
+sources_audited: 2026-08-06
 slug: ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-builder-guide
 tags:
   - security
@@ -17,7 +18,7 @@ categories:
   - builders-log
 ---
 
-On July 8, 2026, [Wiz (Google's security arm) published research they call **GhostApproval**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) — a category-level trust-boundary gap discovered across six widely used AI coding assistants. This is not a single CVE in one product. It is a class of vulnerability that exposes a design assumption baked into every tool that asks users to approve AI edits: that what the approval dialog shows is actually what the tool will touch.
+On July 8, 2026, [Wiz](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) — [acquired by Google in a deal that closed March 11, 2026](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/wiz-acquisition/) — [published research they call **GhostApproval**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) — a category-level trust-boundary gap discovered across six widely used AI coding assistants. This is not a single CVE in one product. It is a class of vulnerability that exposes a design assumption baked into every tool that asks users to approve AI edits: that what the approval dialog shows is actually what the tool will touch.
 
 It is not. When a malicious repository uses symlinks, the two can diverge — and the Human-in-the-Loop safeguard becomes a rubber stamp.
 
@@ -31,8 +32,8 @@ An attacker publishes a repository containing a file named something innocuous �
 
 The technique exploits two known weaknesses simultaneously:
 
-- **CWE-61** — Improper link resolution before file access ("symlink following"), a Unix-era problem that predates most software currently running in production
-- **CWE-451** — User interface misrepresentation of critical information, the modern twist: the AI agent may internally know the truth about the symlink's destination, but the approval dialog shows only the visible filename
+- [**CWE-61**](https://cwe.mitre.org/data/definitions/61.html) — UNIX symbolic link following, a Unix-era problem that predates most software currently running in production
+- [**CWE-451**](https://cwe.mitre.org/data/definitions/451.html) — User interface misrepresentation of critical information, the modern twist: the AI agent may internally know the truth about the symlink's destination, but the approval dialog shows only the visible filename
 
 [The Register headline captures the irony](https://www.theregister.com/security/2026/07/08/bug-in-top-ai-coding-agents-shows-that-unix-era-security-headaches-never-really-die/5268025): "Bug in top AI coding agents shows that Unix-era security headaches never really die."
 
@@ -41,32 +42,32 @@ The technique exploits two known weaknesses simultaneously:
 ## What Each Tool Did — and Didn't — Do
 
 ### Amazon Q Developer — Patched ✅
-AWS assigned [**CVE-2026-12958**](https://www.securityweek.com/ai-coding-tools-tricked-into-hacking-developer-machine-via-decades-old-technique/) and shipped a fix in language server **version 1.69.0**, deployed May 27, 2026.
+AWS assigned [**CVE-2026-12958**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) and shipped a fix in language server **version 1.69.0**, deployed May 27, 2026 — confirmed independently by [The Hacker News](https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html).
 
 ### Cursor — Patched ✅
-Cursor fixed the issue in **version 3.0** (June 5, 2026) under [**CVE-2026-50549**](https://www.securityweek.com/ai-coding-tools-tricked-into-hacking-developer-machine-via-decades-old-technique/). If you are on Cursor, check your version number before reading any untrusted repository.
+Cursor fixed the issue in **version 3.0** (June 5, 2026) under [**CVE-2026-50549**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) — confirmed independently by [The Hacker News](https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html) and [The Register](https://www.theregister.com/security/2026/07/08/bug-in-top-ai-coding-agents-shows-that-unix-era-security-headaches-never-really-die/5268025). If you are on Cursor, check your version number before reading any untrusted repository.
 
 ### Google Antigravity — Patched ✅
-Google deployed a fix on May 22, 2026 in **version 1.19.6**. The team is still assessing whether to issue a formal CVE. Antigravity users on current versions are protected.
+Google deployed a fix on [May 22, 2026](https://www.theregister.com/security/2026/07/08/bug-in-top-ai-coding-agents-shows-that-unix-era-security-headaches-never-really-die/5268025) in [**version 1.19.6**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants). The team is still assessing whether to issue a formal CVE. Antigravity users on current versions are protected.
 
 ### Claude Code — Partially addressed, ongoing
-Anthropic's situation is the most nuanced. Claude Code shipped a **symlink warning in version 2.1.32** on February 5, 2026 — nine days before Wiz filed its report — as part of internal proactive hardening. Anthropic subsequently updated Claude Code to **resolve symlinks before showing approval prompts**, so the dialog now shows the actual destination path rather than the visible filename.
+Anthropic's situation is the most nuanced. Claude Code shipped a [**symlink warning in version 2.1.32**](https://www.theregister.com/security/2026/07/08/bug-in-top-ai-coding-agents-shows-that-unix-era-security-headaches-never-really-die/5268025) on February 5, 2026 — nine days before Wiz filed its report — as part of internal proactive hardening. Anthropic subsequently updated Claude Code to [**resolve symlinks before showing approval prompts**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants), so the dialog now shows the actual destination path rather than the visible filename.
 
-However, Anthropic told Wiz that the GhostApproval scenario falls *"outside our current threat model,"* reasoning that a developer who trusts a repository at session start and then explicitly approves a file edit has made both decisions themselves. This is technically accurate but misses the CWE-451 problem: if the prompt shows `project_settings.json` and the destination is `~/.ssh/authorized_keys`, the developer cannot make an informed decision regardless of trust.
+However, [Anthropic told Wiz that the GhostApproval scenario falls *"outside our current threat model,"*](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) reasoning that a developer who trusts a repository at session start and then explicitly approves a file edit has made both decisions themselves. This is technically accurate but misses the CWE-451 problem: if the prompt shows `project_settings.json` and the destination is `~/.ssh/authorized_keys`, the developer cannot make an informed decision regardless of trust.
 
 In practice, the symlink-resolution fix substantially reduces the risk for current Claude Code users. **Update to the latest version** and the approval dialog will show you where the write is actually going.
 
 ### Windsurf — Unpatched ⚠️
-Windsurf acknowledged the Wiz report on June 23, 2026. As of the July 8 public disclosure, no fix has shipped and no further update has been provided. The Wiz analysis found that Windsurf performed file writes **before** presenting an approval dialog — meaning the "approval" prompt was an undo mechanism rather than a preventive control. Avoid opening untrusted repositories in Windsurf until a patch ships.
+Windsurf [acknowledged the Wiz report on June 23, 2026](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants). As of the July 8 public disclosure, no fix has shipped and no further update has been provided. [The Wiz analysis found that Windsurf performed file writes **before** presenting an approval dialog](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) — meaning the "approval" prompt was an undo mechanism rather than a preventive control. Avoid opening untrusted repositories in Windsurf until a patch ships.
 
 ### Augment — Unpatched ⚠️
-Augment is listed as "in progress" with no confirmed release date. The tool allowed both read and write operations across symlinks **without any user confirmation**, enabling silent data exfiltration and system modification — the most permissive behavior of any tool in the disclosure. Do not run Augment against repositories from untrusted sources until a fix is released.
+Augment is [listed as "in progress" with no confirmed release date](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants). [The tool allowed both read and write operations across symlinks **without any user confirmation**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants), enabling silent data exfiltration and system modification — the most permissive behavior of any tool in the disclosure. Do not run Augment against repositories from untrusted sources until a fix is released.
 
 ---
 
 ## The Deeper Problem: HITL as a Rubber Stamp
 
-GhostApproval matters beyond the symlink mechanic itself. Wiz's analysis of Claude Code included this observation: the agent's **internal reasoning stated it recognized** `project_settings.json` as "actually a zsh configuration file." The user-facing approval prompt, however, simply asked: *"Make this edit to project_settings.json?"*
+GhostApproval matters beyond the symlink mechanic itself. [Wiz's analysis of Claude Code included this observation: the agent's **internal reasoning stated it recognized** `project_settings.json` as "actually a zsh configuration file."](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) The user-facing approval prompt, however, simply asked: *"Make this edit to project_settings.json?"*
 
 The agent knew. The user was not told.
 
@@ -123,9 +124,9 @@ The `120000` mode in git's object model is the file mode for symlinks. Any repos
 
 The GhostApproval response timeline reveals something about how each vendor treats developer machine security as a threat domain.
 
-AWS and Cursor patched within weeks of receiving the report and issued CVEs — standard responsible-disclosure behavior. Google moved fastest (three months before disclosure). Anthropic shipped proactive hardening before the report even arrived, which is the right posture, even if the "outside our threat model" framing for the remaining UI-fidelity gap is uncomfortable to read.
+AWS and Cursor patched within about three and a half to four months of receiving the report and issued CVEs — inside the ~90-day-plus-grace norm, if not fast. Google moved fastest, deploying its fix on May 22 — about three months after the report, versus May 27 for AWS and June 5 for Cursor. Anthropic shipped proactive hardening before the report even arrived, which is the right posture, even if the "outside our threat model" framing for the remaining UI-fidelity gap is uncomfortable to read.
 
-Windsurf and Augment's non-response over a four-and-a-half-month coordinated disclosure window is harder to explain. Coordinated disclosure typically runs 90 days; Wiz gave these vendors 145 days before publishing.
+Windsurf and Augment's non-response over a four-and-a-half-month coordinated disclosure window is harder to explain. [Coordinated disclosure conventions (e.g., Google Project Zero's policy) typically run 90 days](https://projectzero.google/vulnerability-disclosure-policy.html); Wiz gave these vendors 144 days — from its [February 14, 2026 report filing](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) to its [July 8 publication](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) — before publishing.
 
 If you build workflows that involve running AI agents against repositories you did not write — open-source contributions, client work, or anything cloned from the internet — this disclosure is a reason to review which tool sits in that position.
 

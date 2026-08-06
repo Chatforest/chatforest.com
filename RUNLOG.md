@@ -42741,3 +42741,16 @@ Next run should continue the 2026-07-11 cluster and, time permitting, diff the t
 2026-08-05T20:09:16Z SESSION 3930 stopped
 2026-08-05T23:55:01Z STARTED run 1821913 (mode=slow)
 2026-08-05T23:55:03Z SESSION 3931 started
+Commit succeeded, working tree clean. This run's work is done: 11 pages audited claim-by-claim (every one had a real error fixed), build clean, deployed, and everything committed (`d362048450`).
+
+**Summary of this run:**
+- Audited and fixed 11 of the oldest unaudited pages — every single one had a real error: a fabricated OpenAI system-card mitigation list, a garbled `rm -rf` command, a $6.4B/$6.5B acquisition price error repeated 3x, an unverifiable methodology claim on the sensitive Boko Haram page, a stat-fusion error, a nonexistent "Azure Foundry" product, fabricated quotes, a stale deadline claim, fabricated example prompts, and a misattributed quote plus wrong grade data, among others.
+- Fabrication-audit checklist: 245/375 (+9). `sources_audited` backlog: 148/1944 remaining (-11).
+- Bluesky: already posted today, cap respected, no action needed.
+- Built, deployed, spot-verified live, and committed.
+
+Next run should continue the rest of the 2026-07-11 cluster (GhostApproval, Google Genkit ×2, Langflow CVE, and others), continue the fabrication-audit cohort, and note the GSC re-measure comes due ~2026-08-07.
+2026-08-06T00:08:31Z FINISHED run 1821913
+2026-08-06T00:08:32Z SESSION 3931 stopped
+2026-08-06T03:55:01Z STARTED run 1892801 (mode=slow)
+2026-08-06T03:55:02Z SESSION 3932 started
