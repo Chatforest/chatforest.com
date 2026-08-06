@@ -4,6 +4,7 @@ date: 2026-07-12
 description: "Backslash Security's analysis of the MCP 2026-07-28 release candidate identifies three new attack surfaces the updated protocol creates: Handle Hijacking, Filesystem Scope Gap, and MCP Apps Rendering Risk. None are visible to network security gateways."
 tags: ["MCP", "security", "protocol", "handle-hijacking", "MCP-apps", "attack-surface", "builders", "2026-spec"]
 series: "builders-log"
+sources_audited: 2026-08-06
 ---
 
 Everyone covering the MCP 2026-07-28 release candidate has focused on what it fixes or what it breaks during migration. [Backslash Security](https://www.backslash.security/blog/new-mcp-spec-opens-new-attack-surfaces) looked at a different question: what new attack surfaces does the updated spec *create*?
@@ -18,9 +19,9 @@ For the migration-focused perspective on the same spec, see our earlier [MCP 202
 
 ## The Shift That Opens the Door
 
-The previous MCP spec used server-managed session tokens. Session IDs traveled in HTTP headers — invisible to the AI model, but visible to network monitoring tools sitting on the wire.
+The previous MCP spec used server-managed session tokens: the server returned an [`Mcp-Session-Id` header](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) at initialization, and the client was required to send it back on every subsequent request. That ID traveled in HTTP headers — invisible to the AI model, but visible to network monitoring tools sitting on the wire.
 
-The 2026-07-28 RC eliminates that. Sessions are gone. In their place, the spec introduces *handles*: portable state objects that the server hands to the client, and the client passes back in subsequent requests. Handles are not headers. They live in conversation context — in the JSON-RPC body, in agent memory, in chat history.
+The [2026-07-28 spec](https://blog.modelcontextprotocol.io/posts/2026-07-28/) eliminates that: it removes the initialize handshake and the protocol-level session entirely. In their place, servers that need to carry state across calls [mint an explicit handle](https://blog.modelcontextprotocol.io/posts/2026-07-28/) — a portable value the server hands to the client via a tool result, which the model then passes back as an ordinary argument on later calls. Handles are not headers. They live in conversation context — in the JSON-RPC body, in agent memory, in chat history.
 
 That architectural shift is the root cause of all three attack surfaces that follow.
 
@@ -62,11 +63,11 @@ The Backslash analysis describes the change as replacing a bouncer who recognize
 
 ### What Roots did
 
-The MCP spec previously included a `Roots` capability. When a client installed an MCP server, the operator could declare a list of filesystem root paths the server was permitted to access. This was a structural boundary — not a policy recommendation, but a protocol-enforced scope.
+The MCP spec previously included a `Roots` capability: a client could declare a list of filesystem root paths a server should operate within, sent via `roots/list`. Per the [official deprecation proposal](https://modelcontextprotocol.io/seps/2577-deprecate-roots-sampling-and-logging), the spec itself describes Roots as *informational guidance* — "servers are not required to respect them." It was never a protocol-enforced boundary; there was no mechanism that made an out-of-root file access fail automatically. What Roots did provide was a standardized, structural way for a client to *communicate* intended scope to a server — something a well-behaved server could check, even if the protocol didn't force the check.
 
 ### What the spec change does
 
-Roots is deprecated as of the 2026-07-28 RC (SEP-2577). It remains in the spec for at least twelve months before becoming eligible for removal, but it is opt-in now rather than enforced. Scope enforcement falls to individual server implementations — inconsistent, developer-dependent, invisible to any security tooling above the local process.
+Roots is deprecated as of the 2026-07-28 spec ([SEP-2577](https://modelcontextprotocol.io/seps/2577-deprecate-roots-sampling-and-logging)). It remains fully functional in the spec for at least twelve months before becoming eligible for removal, but new implementations are told not to adopt it, and the SEP's own rationale is that working-directory context should instead come from tool parameters, resource URIs, server configuration, or environment variables — none of which are standardized the way `roots/list` was. Scope communication and enforcement both fall to individual server implementations — inconsistent, developer-dependent, invisible to any security tooling above the local process.
 
 ### The attack in practice
 
@@ -76,11 +77,11 @@ The agent accesses 340 files. Among them: credential stores, `.env` files with d
 
 No breach occurred in the traditional sense. The agent operated exactly as intended. The boundary simply did not exist anymore at the protocol layer.
 
-### Why this is categorically different from a misconfiguration
+### Why this is a meaningful regression anyway
 
-When Roots enforced scope, a server that tried to access a path outside the declared roots would fail at the protocol layer. The failure was deterministic and didn't depend on the server developer having written boundary checks correctly.
+Roots never made an out-of-scope file access fail automatically — but it gave every client and server a shared, standardized signal to declare and check intended boundaries against, and it gave auditors one place to look. Without it, that shared signal disappears entirely. Scope declaration and enforcement both become bespoke: whatever a given server developer decides to wire up using tool parameters, config files, or env vars, with no common pattern to audit for.
 
-Without Roots, every MCP server now independently determines its own scope. Some will implement it well. Some will implement it partially. Some won't implement it at all. From an enterprise risk standpoint, the threat model shifts from "verify the protocol enforces boundaries" to "audit every server implementation."
+Without Roots, every MCP server now independently determines its own scope, using its own mechanism. Some will implement it well. Some will implement it partially. Some won't implement it at all. From an enterprise risk standpoint, the threat model shifts from "verify servers respect the standard boundary signal" to "audit every server implementation's ad hoc approach individually."
 
 ### The detection gap
 
@@ -98,7 +99,7 @@ Filesystem access on a developer's local machine never crosses the network. A ga
 
 ### What SEP-1865 adds
 
-MCP Apps is a new capability in the 2026-07-28 spec (SEP-1865). It allows MCP servers to ship interactive HTML user interfaces that render inside a sandboxed iframe directly in the IDE.
+MCP Apps is a new extension formalized alongside the 2026-07-28 spec ([SEP-1865](https://modelcontextprotocol.io/seps/1865-mcp-apps-interactive-user-interfaces-for-mcp)). It allows MCP servers to declare `ui://` HTML resources that a host — commonly an IDE — renders inside a sandboxed iframe.
 
 The mechanism: a server sends an HTML payload, the IDE renders it in an iframe, and user interactions in that iframe fire JSON-RPC tool calls back to the server. From a UX standpoint, it enables rich, context-aware tool interfaces without leaving the IDE.
 
@@ -146,7 +147,7 @@ For context on existing attack patterns the new spec interacts with, see [AgentJ
 
 ## What Happens July 28
 
-The spec finalizes. Ecosystem adoption accelerates. Tier 1 SDK support (TypeScript, Python, C#, Java, Swift) arrives during the validation window that closes that day.
+The spec finalizes. Ecosystem adoption accelerates. The [release-candidate window](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) that opened May 21, 2026 closes that day, with [Tier 1 SDK support](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/) — Python, TypeScript, Go, and C# — expected to ship within it.
 
 The three attack surfaces described here are not theoretical. Handle Hijacking is enabled by the architectural choice to move state into conversation context. The Filesystem Scope Gap is the direct consequence of deprecating Roots. MCP Apps Rendering Risk ships with SEP-1865.
 

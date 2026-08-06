@@ -3,6 +3,7 @@ title: "GuardFall: 10 of 11 Open-Source AI Coding Agents Have Shell Guards That 
 description: "Adversa AI published GuardFall on June 30, 2026: a class of shell-injection bypasses that defeats the security guards in 10 of 11 major open-source AI coding agents — Aider, Cline, Roo-Code, Goose, Plandex, Open Interpreter, OpenHands, SWE-agent, opencode, and Hermes. There is no CVE and no patch. Here is what the bypass looks like, why it can't be fixed with a version bump, and what you can do now."
 date: 2026-07-12
 lastmod: 2026-07-12
+sources_audited: 2026-08-06
 slug: guardfall-shell-injection-open-source-ai-coding-agents-aider-cline-roo-code-builder-guide
 tags:
   - security
@@ -19,23 +20,23 @@ categories:
   - builders-log
 ---
 
-The same week GhostApproval disclosed that six commercial AI coding assistants write files outside their workspace sandboxes, a separate research disclosure went relatively quiet. Adversa AI's Omer Ben Simon published **GuardFall** on June 30, 2026, showing that 10 of the 11 most widely used open-source AI coding agents can be compromised with shell tricks that predate most of the developers using these tools.
+The same week [GhostApproval](/builders-log/ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-builder-guide/) disclosed that six commercial AI coding assistants write files outside their workspace sandboxes, a separate research disclosure went relatively quiet. Adversa AI's Omer Ben Simon published [**GuardFall**](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/) on June 30, 2026, showing that 10 of the 11 most-starred open-source AI coding agents can be compromised with shell tricks that predate most of the developers using these tools — [independently covered by The Hacker News](https://thehackernews.com/2026/06/guardfall-exposes-open-source-ai-coding.html) and [SecurityWeek](https://www.securityweek.com/decades-old-bash-tricks-expose-ai-coding-agents-to-supply-chain-attacks/).
 
-Unlike GhostApproval, GuardFall has no CVE number. Unlike the Claude Code v2.1.207 shell-injection fix that shipped July 11, it cannot be addressed with a version bump. The flaw is architectural — and it will stay open until maintainers rethink how command guards are built. Part of our **[Builder's Log](/builders-log/)**.
+Unlike GhostApproval, GuardFall has no CVE number. Unlike the [Claude Code v2.1.207 shell-injection fix that shipped July 11](/builders-log/claude-code-v2-1-207-shell-injection-plugin-breaking-changes-auto-mode-bedrock-builder-guide/), it cannot be addressed with a version bump. The flaw is architectural — and it will stay open until maintainers rethink how command guards are built. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
 ## What GuardFall found
 
-Adversa AI tested 11 of the most-starred open-source AI coding agents against a set of classic Bash-rewriting tricks: quote removal, variable expansion, command substitution, brace expansion, and process substitution. These are behaviors documented in the Bash manual that cause the shell to transform text before executing it.
+Adversa AI [tested 11 of the most-starred open-source AI coding agents](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/) against five classes of classic Bash-rewriting tricks: quote removal, `$IFS` word-splitting, command substitution, base64-piped payloads, and swapping in destructive commands a denylist doesn't cover (like `find -delete` in place of `rm`). Two other tricks the researchers tried — brace expansion and process substitution — did **not** produce working bypasses in their testing; most implementations correctly reject or fail to parse those forms. All of these are behaviors documented in the Bash manual that cause the shell to transform text before executing it.
 
 The pattern-based guards in these agents inspect the **raw command string** as the model produces it. Bash then **rewrites** that string and executes something different. The guard never sees what actually runs.
 
-**10 agents failed** every tested bypass category. The combined GitHub star count of the failing agents at the time of research was roughly **548,000**.
+**10 of the 11 agents failed to block at least one bypass category.** Per Adversa's breakdown, three (Hermes, opencode, Goose) ship a pattern guard that the researchers defeated outright; two (Cline, Roo-Code) ship a tokenized guard that closes some categories but still leaks on quoted substitution and destructive flags; the rest ship either no static guard at all or a container sandbox that can be disabled through a documented local-mode opt-out. [The combined GitHub star count across all 11 agents tested was roughly **548,000**](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/) — that figure includes Continue, the one agent that passed.
 
 Affected agents: **Aider, Cline, Roo-Code, Goose, Plandex, Open Interpreter, OpenHands, SWE-agent, opencode, NousResearch Hermes.**
 
-Only one agent passed: **Continue.** Its guard is built differently — it evaluates commands after shell rewriting rather than before.
+Only one agent passed: **[Continue](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/).** Its guard is built differently — instead of matching the raw string the model wrote, it reconstructs what Bash would do to that string (tokenizing, detecting variable expansion, recursively evaluating substitutions, checking pipe destinations) and pattern-matches against that reconstructed, post-rewrite form before anything executes.
 
 ---
 
@@ -51,7 +52,7 @@ echo safe_output
 echo safe_output; exfil_payload
 ```
 
-The construction is less obvious than that example suggests. Ben Simon demonstrated several variants:
+The construction is less obvious than that example suggests. Ben Simon demonstrated several variants in [the GuardFall report](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/):
 
 **Quote removal bypass:**
 ```bash
@@ -60,19 +61,21 @@ The construction is less obvious than that example suggests. Ben Simon demonstra
 'r''m' -rf /path/to/target
 ```
 
-**Brace expansion bypass:**
+**`$IFS` word-splitting bypass:**
 ```bash
-# Guard looks for "rm" and doesn't find it
-# Bash expands {r,}m to rm
-{r,}m -rf /path/to/target
+# Guard sees one word: "rm$IFS-rf$IFS/path/to/target"
+# Bash expands $IFS (the shell's internal field separator) to whitespace
+rm$IFS-rf$IFS/path/to/target
 ```
 
-**Variable substitution bypass:**
+**Command substitution bypass:**
 ```bash
 # Guard checks the string, sees no dangerous command
 # Bash evaluates $() first
 $(echo "rm") -rf /path/to/target
 ```
+
+Adversa also documented a base64-piped variant (a benign-looking payload decoded and handed to `sh` at execution time) and a class that swaps `rm` for destructive alternatives a denylist typically doesn't cover, like `find -delete` or `sed -i`.
 
 The key property of all these variants: they look different to a string-matching guard than they do to the shell. A denylist of patterns cannot close this — Bash will always have more rewriting rules than a guard can enumerate.
 
@@ -82,13 +85,13 @@ The key property of all these variants: they look different to a string-matching
 
 GuardFall is not a bug in a specific component. It is a design pattern: **agent produces shell string → guard inspects string → Bash executes rewritten string**. That sequence is wrong in a durable way.
 
-Adversa AI was explicit: fixing this requires removing the pattern-matching guard layer and replacing it with structural execution control. The practical options are:
+[Adversa AI's own structural recommendation](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/) is to replace the pattern-matching guard with what they call a **tokenize-and-canonicalize evaluator**: tokenize the command, detect and escalate variable expansion, recursively evaluate substitutions, check pipe destinations, and match an explicit denylist against the *reconstructed* command rather than the raw string — the same approach Continue already uses, which is why it was the one agent that passed. For immediate mitigation without a code change, Adversa also recommends running agents from a scoped shell with `$HOME` redirected, capturing multi-line scripts for out-of-band review before execution, and disabling auto-yes flags (`--auto-exec`, `--auto-run`, `dangerously-skip-permissions`) outside genuinely unattended workflows.
 
-1. **Exec format (no shell):** Execute commands as arrays (`["rm", "-rf", "/path"]`) through a process API that bypasses the shell entirely. No shell, no shell rewriting. This is what Anthropic enforced in Claude Code v2.1.207 for hook commands.
+Two further structural options exist beyond building a tokenize-and-canonicalize evaluator in-house:
+
+1. **Exec format (no shell):** Execute commands as arrays (`["rm", "-rf", "/path"]`) through a process API that bypasses the shell entirely. No shell, no shell rewriting. This is what Anthropic enforced in [Claude Code v2.1.207](https://github.com/anthropics/claude-code/releases/tag/v2.1.207) for hook commands.
 
 2. **Sandbox at the OS level:** Run the agent's command execution inside a container or virtual machine with an explicit allowlist of permitted syscalls and filesystem access. The guard lives below the shell layer where rewriting can't circumvent it.
-
-3. **Require human confirmation for all shell commands.** Not a technical fix, but eliminates the automated pathway that makes the bypass exploitable at scale.
 
 None of these are a version bump. All require maintainers to change how execution works, not just what patterns they block.
 
@@ -109,7 +112,7 @@ In auto-approve mode — enabled by default in some agents for non-destructive o
 
 ## The one agent that passed, and what it did differently
 
-**Continue** was the only agent that evaluated commands *after* Bash rewriting. Its guard does not inspect what the model wrote — it inspects what would actually execute. That design choice makes the entire bypass class irrelevant: there is nothing in the shell rewriting phase that happens between guard inspection and execution, because inspection happens at execution time.
+[**Continue**](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/) was the only agent whose guard reconstructs what Bash would do to a command — tokenizing it, expanding variables, evaluating substitutions — before pattern-matching, rather than matching the raw string the model wrote. That design choice makes the entire bypass class irrelevant: whatever quote-removal, `$IFS`, or substitution trick the model's string contains, the guard is checking the same post-rewrite form Bash would actually execute, not the pre-rewrite string an attacker can disguise.
 
 If you are choosing between open-source agents for a project where you will be running them against third-party codebases, Continue's architecture is the only one in this set that is structurally defended.
 
@@ -119,11 +122,11 @@ If you are choosing between open-source agents for a project where you will be r
 
 The same week as GuardFall's public disclosure, two other attacks against AI coding agents were disclosed (GhostApproval on July 8 and Friendly Fire the same week). The attacks are distinct attack classes:
 
-- **GhostApproval** (symlink following): Breaks out of the workspace sandbox to read and write files outside it. Affects six commercial tools. AWS and Cursor have patched; Windsurf and Augment remain unpatched.
-- **Friendly Fire** (prompt injection): Hides instructions in repository files that redirect an agent doing a security review into running the attacker's code.
-- **GuardFall** (shell guard bypass): Bypasses the pattern-matching guards that are supposed to stop dangerous commands in the first place. No patch. Architectural fix required.
+- **[GhostApproval](/builders-log/ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-builder-guide/)** (symlink following): Breaks out of the workspace sandbox to read and write files outside it. Affects six commercial tools. AWS and Cursor have patched; Windsurf and Augment remain unpatched as of that article's publication.
+- **[Friendly Fire](/builders-log/friendly-fire-hallusquatting-ai-coding-agent-auto-mode-prompt-injection-hallucination-builder-security-guide/)** (prompt injection): Hides instructions in repository files that redirect an agent doing a security review into running the attacker's code.
+- **[GuardFall](https://adversa.ai/blog/opensource-ai-coding-agents-shell-injection-vulnerability/)** (shell guard bypass): Bypasses the pattern-matching guards that are supposed to stop dangerous commands in the first place. No CVE has been assigned and no patch has shipped as of publication. Architectural fix required.
 
-On July 11, 2026, Anthropic's Claude Code v2.1.207 shipped a breaking change that enforces exec-format commands in hooks — rejecting the `${user_config.*}` interpolation pattern that enabled this class of injection in Claude Code specifically. That fix is Claude Code's implementation of option 1 above. It does not fix GuardFall in Aider, Cline, Roo-Code, or the other eight affected agents.
+On July 11, 2026, Anthropic's [Claude Code v2.1.207](https://github.com/anthropics/claude-code/releases/tag/v2.1.207) shipped a breaking change that enforces exec-format commands in hooks — rejecting the `${user_config.*}` interpolation pattern that enabled this class of injection in Claude Code specifically. That fix is Claude Code's implementation of option 1 above. It does not fix GuardFall in Aider, Cline, Roo-Code, or the other eight affected agents.
 
 ---
 

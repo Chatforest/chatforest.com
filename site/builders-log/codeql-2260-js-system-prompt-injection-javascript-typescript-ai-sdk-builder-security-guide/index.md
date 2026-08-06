@@ -3,9 +3,9 @@
 > GitHub's CodeQL 2.26.0 (July 8, 2026) introduces the js/system-prompt-injection query for JavaScript and TypeScript — static analysis that catches untrusted user input flowing into AI model system prompts before it ships. Coverage spans OpenAI Realtime, Sora, Anthropic legacy completions, and Google GenAI. Here's what it detects, what it misses, and what to do now.
 
 
-GitHub [shipped CodeQL 2.26.0](https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection/) on July 8, 2026, and buried in the release notes is something builders deploying AI features should know about: the first purpose-built static analysis query for detecting AI prompt injection in your own codebase.
+GitHub [shipped CodeQL 2.26.0](https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection/) on [July 8, 2026](https://github.com/github/codeql-cli-binaries/releases/tag/v2.26.0), and buried in the release notes is something builders deploying AI features should know about: CodeQL's first purpose-built query for detecting AI prompt injection in your own codebase.
 
-The new `js/system-prompt-injection` query, available for JavaScript and TypeScript, uses CodeQL's standard data flow engine to flag when untrusted user-controlled input reaches the system prompt parameter of an AI model API call. If it finds a path, it surfaces a code scanning alert — the same mechanism CodeQL uses to catch SQL injection, XSS, and other classic vulnerability classes.
+The new [`js/system-prompt-injection`](https://codeql.github.com/codeql-query-help/javascript/js-system-prompt-injection/) query, available for JavaScript and TypeScript, uses CodeQL's standard data flow engine to flag when untrusted user-controlled input reaches the system prompt parameter of an AI model API call. If it finds a path, it surfaces a code scanning alert — the same mechanism CodeQL uses to catch SQL injection, XSS, and other classic vulnerability classes.
 
 This is not a runtime detection. It does not monitor your application in production. It analyzes your code statically, before it ships.
 
@@ -25,18 +25,18 @@ The distinction from user-prompt injection: system prompts carry the model's cor
 
 The 2.26.0 release expanded sink coverage across the three major AI API vendors:
 
-**OpenAI:**
+**[OpenAI](https://github.com/github/codeql/blob/main/javascript/ql/lib/ext/openai.model.yml):**
 - Sora video creation prompts
 - Realtime API session instructions
 
-**Anthropic:**
+**[Anthropic](https://github.com/github/codeql/blob/main/javascript/ql/lib/ext/anthropic.model.yml):**
 - Legacy completions endpoint prompts
 
-**Google GenAI:**
+**[Google GenAI](https://github.com/github/codeql/blob/main/javascript/ql/lib/ext/google-genai.model.yml):**
 - Cache creation system instructions
 - System instructions in model configuration
 
-One reclassification: OpenAI's legacy completions prompt was moved from `system-prompt-injection` to `user-prompt-injection`. This reflects CodeQL's modeling of how the legacy completions API works — the `prompt` field there is more analogous to a user turn than a system instruction in the modern chat API sense.
+A classification detail worth knowing if you're triaging alerts: per CodeQL's sink models linked above, OpenAI's legacy completions endpoint (`completions.create({ prompt })`), OpenAI's Sora video-prompt calls, and Anthropic's legacy completions endpoint are all modeled as `user-prompt-injection` sinks, not `system-prompt-injection` — CodeQL treats the `prompt` field in these older, single-string API shapes as closer to a user turn than to a system instruction in the modern chat-message sense.
 
 ---
 
@@ -56,7 +56,7 @@ One reclassification: OpenAI's legacy completions prompt was moved from `system-
 
 CodeQL is part of GitHub Advanced Security (GHAS). If your repository already has code scanning configured with the default CodeQL suite, the new query should run automatically on your next scan after upgrading to 2.26.0 or later.
 
-If you are not yet using GHAS: Settings → Security → Code security and analysis → Code scanning → enable. For private repositories, this requires a GHAS license. Public repositories can use CodeQL free.
+If you are not yet using GHAS: repository Settings → Security → Advanced Security → CodeQL analysis → Set up. [Public repositories can use code scanning free; private repositories require a GitHub Advanced Security / GitHub Code Security license.](https://docs.github.com/en/code-security/getting-started/github-security-features)
 
 For repositories that have a custom CodeQL query suite that excludes security queries, you may need to explicitly include `js/system-prompt-injection`.
 
@@ -64,11 +64,11 @@ For repositories that have a custom CodeQL query suite that excludes security qu
 
 ## What This Means in Context
 
-This is the first time a major static analysis tool has added purpose-built detection for AI prompt injection as a first-class vulnerability class — alongside SQL injection, path traversal, and XSS.
+This is the first time CodeQL has added purpose-built detection for AI prompt injection as a first-class vulnerability class — alongside SQL injection, path traversal, and XSS.
 
 The significance is in normalization, not just detection: when CodeQL treats `js/system-prompt-injection` the same way it treats `js/sql-injection`, it signals that the security industry is moving toward treating prompt injection as a standard defect class with standard detection tooling. Builders who have been treating prompt injection as a vague concern without concrete mitigation steps now have a concrete gate: does this code pass CodeQL with no prompt injection alerts?
 
-That said, the coverage gaps matter. Python is the dominant language for AI backend code, and it has no equivalent query yet. The current JS/TS sinks cover specific API surfaces, not all possible paths to a model's system prompt. And no static analysis tool can catch the indirect, runtime injection variant that represents the most dangerous real-world attack.
+That said, the coverage gaps matter. [Python remains the dominant language for AI-tagged repositories on GitHub](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/), and it has no equivalent query yet. The current JS/TS sinks cover specific API surfaces, not all possible paths to a model's system prompt. And no static analysis tool can catch the indirect, runtime injection variant that represents the most dangerous real-world attack.
 
 ---
 

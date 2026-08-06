@@ -69,7 +69,7 @@
         <p><a href="https://docs.anthropic.com/en/release-notes/api">Anthropic shipped API key expiration to the Claude Console on July 8, 2026</a>. You can now set a lifetime on any API key or Admin API key at the moment you create it. The expiration is immutable: once set, it cannot be extended or removed. Existing keys are unaffected. Part of our <strong><a href="/builders-log/">Builder&rsquo;s Log</a></strong>.</p>
 <hr>
 <h2 id="what-changed">What Changed</h2>
-<p>When you create a key in the Claude Console (<code>Settings → API Keys</code>), you now choose a lifetime:</p>
+<p>When you create a key in the Claude Console (<code>Settings → API Keys</code>), you now choose a lifetime — <a href="https://platform.claude.com/docs/en/manage-claude/authentication#key-expiration">a preset of 3 hours, 1 day, 7 days, or 30 days, a custom duration, or Never</a>:</p>
 <table>
 <thead>
 <tr>
@@ -104,10 +104,10 @@
 </tr>
 </tbody>
 </table>
-<p>Both regular API keys (<code>sk-ant-*</code>) and Admin API keys support expiration.</p>
+<p><a href="https://platform.claude.com/docs/en/manage-claude/authentication#key-expiration">Both regular API keys (<code>sk-ant-*</code>) and Admin API keys support expiration.</a></p>
 <hr>
 <h2 id="what-happens-after-expiration">What Happens After Expiration</h2>
-<p>Requests made with an expired key return a <code>401 authentication_error</code>. The key cannot be reactivated; create a new one to restore access.</p>
+<p><a href="https://platform.claude.com/docs/en/manage-claude/authentication#key-expiration">Requests made with an expired key return a <code>401 authentication_error</code>. The key cannot be reactivated; create a new one to restore access.</a></p>
 <pre><code>{
   &quot;type&quot;: &quot;error&quot;,
   &quot;error&quot;: {
@@ -115,10 +115,10 @@
     &quot;message&quot;: &quot;invalid x-api-key&quot;
   }
 }
-</code></pre><p>This is the same error you get from an invalid key today, so any client code that already handles <code>401</code> handles expiration correctly.</p>
+</code></pre><p>This is <a href="https://platform.claude.com/docs/en/api/errors">the same <code>authentication_error</code> type used for other API-key problems</a> — malformed or revoked keys included — so any client code that already handles <code>401</code> handles expiration correctly.</p>
 <hr>
 <h2 id="email-warnings-before-expiration">Email Warnings Before Expiration</h2>
-<p>Anthropic emails the key&rsquo;s creator before the key expires, depending on the key&rsquo;s total lifetime:</p>
+<p><a href="https://platform.claude.com/docs/en/manage-claude/authentication#key-expiration">Anthropic emails the key&rsquo;s creator before the key expires, depending on the key&rsquo;s total lifetime</a>:</p>
 <table>
 <thead>
 <tr>
@@ -144,8 +144,8 @@
 <p>Short-lived keys (3-hour, 1-day) expire without a warning email, by design: they&rsquo;re intended to be disposable.</p>
 <hr>
 <h2 id="admin-api-expires_at-on-every-key">Admin API: <code>expires_at</code> on Every Key</h2>
-<p>The Admin API now includes <code>expires_at</code> on both the List API Keys endpoint and the Get API Key endpoint:</p>
-<pre><code>GET /v1/api_keys
+<p>The Admin API now includes <code>expires_at</code> on both the <a href="https://platform.claude.com/docs/en/api/admin/api_keys/list">List API Keys</a> endpoint and the <a href="https://platform.claude.com/docs/en/api/admin/api_keys/retrieve">Retrieve API Key</a> endpoint:</p>
+<pre><code>GET /v1/organizations/api_keys
 </code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;data&#34;</span>: [
     {
@@ -164,15 +164,15 @@
     }
   ]
 }
-</code></pre></div><p><code>expires_at</code> is <code>null</code> for keys created with the <strong>Never</strong> option, or for any key created before this feature shipped.</p>
+</code></pre></div><p><a href="https://platform.claude.com/docs/en/api/admin/api_keys/list"><code>expires_at</code> is <code>null</code> for keys without an expiration</a> — that includes keys created with the <strong>Never</strong> option, and existing keys created before this feature shipped.</p>
 <p>Use this to build a rotation dashboard: query the list, filter for keys expiring within the next 14 days, and alert on them before your pipelines break.</p>
 <hr>
 <h2 id="expiration-is-immutable">Expiration Is Immutable</h2>
-<p>The lifetime is set at creation and cannot be changed afterward — not extended, not shortened, not removed. This is intentional: the guarantee that a key will expire is only meaningful if it cannot be quietly extended later.</p>
+<p><a href="https://platform.claude.com/docs/en/manage-claude/authentication#key-expiration">The lifetime is set at creation and cannot be changed afterward</a> — not extended, not shortened, not removed. This is intentional: the guarantee that a key will expire is only meaningful if it cannot be quietly extended later.</p>
 <p><strong>Implication</strong>: if you need to extend a key, create a new one and rotate it in. Plan for this in long-running pipelines.</p>
 <hr>
 <h2 id="how-this-relates-to-wif">How This Relates to WIF</h2>
-<p><a href="/builders-log/anthropic-wif-workload-identity-federation-no-api-keys-builder-guide/">Workload Identity Federation</a> (GA since June 19) eliminates static API keys entirely for cloud workloads by using short-lived OIDC tokens from your existing identity provider (AWS IAM, GCP, GitHub Actions, Azure, Kubernetes).</p>
+<p><a href="/builders-log/anthropic-wif-workload-identity-federation-no-api-keys-builder-guide/">Workload Identity Federation</a> — <a href="https://claude.com/blog/workload-identity-federation">generally available since June 17, 2026</a> — eliminates static API keys entirely for cloud workloads by using short-lived OIDC tokens from your existing identity provider (AWS IAM, GCP, GitHub Actions, Azure, Kubernetes).</p>
 <p>Key expiration and WIF are <strong>complementary</strong>:</p>
 <ul>
 <li><strong>WIF</strong>: best for production cloud workloads where your IdP already issues tokens. No key to rotate, no expiration to track.</li>

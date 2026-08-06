@@ -1,6 +1,7 @@
 ---
 title: "GitHub Copilot July 2026: App Open to All Plans, Browser Tools GA, JetBrains Agent Sessions, Credit Controls — Builder's Guide"
 date: 2026-07-12
+sources_audited: 2026-08-06
 description: "GitHub Copilot shipped four significant updates in the first week of July 2026: the Copilot app is now available to Free and Education accounts, browser tools reached GA, Codex agent sessions landed in JetBrains IDEs for paid users, and new credit controls let you cap per-session and per-cost-center spend. Here is what changed and what it means for your setup."
 tags: ["github-copilot", "copilot-app", "agentic-coding", "browser-tools", "jetbrains", "ai-credits", "developer-tools", "enterprise-ai", "cost-management"]
 ---
@@ -27,52 +28,43 @@ What the app offers:
 - Free and Education users: sign in at github.com/features/copilot to download the app; you can also bring your own model provider API keys for sessions
 - Business and Enterprise users: admins must enable **Copilot CLI** in the organization's Copilot policy settings before the desktop app is available to members
 
-The Copilot Free tier has usage limits. The desktop app session features consume AI credits; Free users have a monthly included credit budget that limits how many agent sessions they can run.
+The Copilot Free tier has usage limits. The desktop app session features consume AI credits; [Free users have a limited monthly AI credit allowance](https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals) that constrains how many agent sessions they can run.
 
 ---
 
-## 2. Browser Tools Reach General Availability (July 7)
+## 2. Browser Tools Reach General Availability (July 1)
 
-Copilot's browser tools moved from preview to GA on July 7. The tools let an agent drive a real browser instance during a session.
+[Copilot's browser tools in VS Code moved from preview to GA on July 1](https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/). The tools let an agent drive a real browser instance during a session.
 
-**What agents can do with browser tools:**
+**What agents can do with browser tools** (per the [GA changelog](https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/)):
 
 | Action | Description |
 |--------|-------------|
-| Navigate | Open URLs, follow links, navigate back/forward |
-| Click | Interact with buttons, links, form elements |
-| Type | Fill in text fields and form inputs |
+| Navigate | Open pages, follow links, navigate back/forward |
+| Click / type / hover / drag | Interact with buttons, links, form elements, and dialogs |
 | Screenshot | Capture the current view for inspection or logging |
-| Console inspection | Read browser console errors with sourcemap-resolved stack traces |
+| Console inspection | Read page content, capture console errors, and take screenshots; DevTools are also available in the browser toolbar for manual inspection |
+| Scripted flows | Run a scripted sequence of steps when that's more efficient than individual tool calls |
 
 **Security model:**
 
-- Sensitive permissions — camera, microphone, geolocation — are blocked by default and require explicit user approval before any agent call
-- Each agent session runs in an isolated browser tab that cannot access tabs from other sessions or your personal browsing context
-- GitHub restricts what origins the agent can navigate to in automated contexts
+- Sensitive permissions — camera, microphone, location, notifications, clipboard reads — require explicit per-site user approval; agents cannot self-approve
+- Each agent-opened tab runs in an isolated session with no access to your existing cookies or personal browsing context; your own tabs stay private until explicitly shared
+- Enterprise admins can restrict which domains agents may navigate to via `chat.agent.allowedNetworkDomains` / `chat.agent.deniedNetworkDomains` settings (denied domains take precedence), and can toggle the feature off org-wide via `workbench.browser.enableChatTools`
 
-**Availability at GA:** VS Code. JetBrains browser tool support has not been announced.
+**Availability at GA:** VS Code only, enabled by default for paid Copilot subscribers. JetBrains browser tool support has not been announced.
 
 **Why this matters:** Before GA, builders using Copilot's browser tools in automation pipelines had to treat the feature as unstable — behavior could change, and support was limited. GA means the API and behavior are locked for production use.
 
 ---
 
-## 3. JetBrains Agent Sessions (July 7)
+## 3. Codex as an Agent Provider in JetBrains (July 7)
 
-Codex agent sessions — the multi-step background agents that take an issue and work toward a PR — are now available inside JetBrains IDEs through the JetBrains AI Assistant plugin.
+[Codex is now available as an agent provider in public preview inside JetBrains IDEs](https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides/), through the **GitHub Copilot plugin** for JetBrains — not a separate plugin.
 
-**Current availability:**
+**How it works:** you install the Codex CLI locally, then go to **Settings > Tools > GitHub Copilot > Chat**, enable Codex, and set the Codex CLI path. Once configured, you select Codex from the agent picker in the Copilot Chat panel to start a session. If you're a Copilot Business or Enterprise subscriber, an admin must enable the editor preview features policy before you can use it.
 
-| Plan | JetBrains Agent Sessions |
-|------|--------------------------|
-| Copilot Free | Not yet — planned late Q3 2026 |
-| Copilot Pro / Pro+ | Available |
-| Copilot Business | Available (admin must enable) |
-| Copilot Enterprise | Available (admin must enable) |
-
-**How it works:** Sessions run in the same Codex cloud sandbox used by the VS Code Copilot app — an ephemeral Linux container with access to your codebase. The JetBrains integration adds a session panel inside the IDE so you can issue tasks, monitor progress, and review proposed changes without switching to a browser or a different tool.
-
-The Copilot CLI, used from the desktop app and terminal, also reaches into JetBrains via the same session API, so you can start a session from the CLI and monitor it in the JetBrains panel.
+GitHub's changelog does not specify Codex-in-JetBrains availability by individual plan tier (Free vs. Pro vs. Pro+), so we are not going to guess at a table here — check [GitHub's own JetBrains documentation](https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides/) for your specific plan before relying on it.
 
 ---
 
@@ -80,16 +72,19 @@ The Copilot CLI, used from the desktop app and terminal, also reaches into JetBr
 
 Agentic Copilot sessions — especially multi-step Codex tasks — can use substantially more AI credits than simple chat completions. Before session limits, a single runaway agent task could exhaust a user's monthly included credits unexpectedly.
 
-As of July 1, users can set a per-session credit cap.
+As of July 1, [users can set a per-session credit cap in Copilot CLI and the Copilot SDK](https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk/).
 
-**How to set limits:**
+**How to set limits** (syntax per [GitHub's docs](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/set-session-limit)):
 
 ```bash
 # CLI: cap this run at 50 AI credits ($0.50 at $0.01/credit)
-copilot --max-ai-credits 50 "refactor the payment module to accept Stripe webhooks"
+copilot -p "refactor the payment module to accept Stripe webhooks" --max-ai-credits 50
 
-# Interactive sessions: view or set the current limit
-/limits
+# Interactive sessions: set the current limit
+/limits set max-ai-credits 50
+
+# Interactive sessions: remove the limit
+/limits unset
 ```
 
 **Behavior when the limit is hit:**
@@ -103,13 +98,13 @@ copilot --max-ai-credits 50 "refactor the payment module to accept Stripe webhoo
 
 **Requirements:** Copilot CLI 1.0.66+ or Copilot SDK 1.0.5+. Public preview — behavior is subject to change.
 
-**Pricing reference:** 1 AI Credit = $0.01 USD. Credit cost varies by model and token type. A typical coding session runs 5–50 credits depending on task length and model selection.
+**Pricing reference:** [1 AI Credit = $0.01 USD](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). Credit cost varies by model and token type; GitHub's docs note session limits work best set above 30 credits, since most individual model calls already cost more than 20.
 
 ---
 
 ## 5. AI Credit Pools for Enterprise Cost Centers (July 2)
 
-Separate from per-session limits, GitHub also shipped **AI credit pools** for enterprise cost centers on July 2. This is an enterprise billing control, not a developer-facing feature.
+Separate from per-session limits, GitHub also shipped [**AI credit pools** for enterprise cost centers on July 2](https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps/). This is an enterprise billing control, not a developer-facing feature.
 
 **The problem it solves:** Enterprise organizations with multiple cost centers (teams, departments, clients) had no way to prevent one cost center from consuming the entire organization's included AI credit budget. A single high-volume team running long Codex sessions could exhaust the budget before other teams got their allocation.
 
@@ -132,7 +127,7 @@ Separate from per-session limits, GitHub also shipped **AI credit pools** for en
 - Use `--max-ai-credits` or `/limits` to avoid unexpected budget exhaustion when experimenting
 
 **If you are on a paid individual plan (Pro / Pro+):**
-- JetBrains users: install or update the JetBrains AI Assistant plugin to access Codex agent sessions without switching to VS Code
+- JetBrains users: install or update the GitHub Copilot plugin, install the Codex CLI locally, and enable it under Settings > Tools > GitHub Copilot > Chat to access Codex as an agent provider without switching to VS Code
 - Browser tools are now stable — if you were avoiding them in production pipelines due to preview status, GA removes that blocker
 - Set per-session limits on any automated script or CI-triggered agent run
 
@@ -145,10 +140,9 @@ Separate from per-session limits, GitHub also shipped **AI credit pools** for en
 
 ## What's Not Yet Available
 
-The following were mentioned in the July 7 announcement period as planned but not yet shipped:
-- JetBrains agent sessions for Copilot Free — planned **late Q3 2026**
-- Cost center credit pool management in the GitHub web UI — currently **API only**, UI coming soon
-- Browser tools GA in JetBrains — no announced timeline
+The following are not yet shipped, per GitHub's own changelogs:
+- Cost center credit pool management in the GitHub web UI — currently **API only**, UI coming soon (per the [July 2 changelog](https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps/))
+- Browser tools GA in JetBrains — no announced timeline; the [July 1 GA changelog](https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/) scopes the feature to VS Code only
 
 ---
 

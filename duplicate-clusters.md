@@ -8,12 +8,6 @@
 
 ## Open clusters
 
-### Claude Apps Gateway (3 pages)
-Flagged Run 3611486 (2026-07-31). Not yet diffed.
-- `content/builders-log/claude-apps-gateway-self-hosted/index.md` — audited (sources_audited: 2026-07-31)
-- `content/builders-log/claude-apps-gateway-bedrock-google-cloud-sso-spend-caps-enterprise-builder-guide/index.md` — not yet audited
-- `content/builders-log/claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide/index.md` — audited in place (sources_audited: 2026-08-01, Run 3914224); still not diffed against the other two for merge vs. keep-both
-
 ### Sonnet 5 launch / agentic upgrade (4+ pages)
 Flagged Run 3611486 (2026-07-31). One pair already resolved (see below); others not yet diffed.
 - `content/builders-log/claude-sonnet-5-launch-agentic-*` — audited, confirmed near-dup of the
@@ -25,6 +19,25 @@ Flagged Run 3611486 (2026-07-31). One pair already resolved (see below); others 
 
 
 ## Resolved clusters
+
+### Claude Apps Gateway (3 pages) — resolved 2026-08-06
+Flagged Run 3611486 (2026-07-31), never diffed until this run. Note: the file's own bookkeeping was
+stale — the note that the `bedrock-google-cloud-sso-spend-caps` page was "not yet audited" was wrong;
+git history (`fb1ebc435f`) shows it was already audited 2026-08-04, before this run started. Also, the
+directory name for the "self-hosted" page differs from what earlier notes here recorded: it's
+`content/builders-log/claude-apps-gateway-self-hosted-sso-bedrock-google-foundry-enterprise-builder-guide/index.md`,
+not `.../claude-apps-gateway-self-hosted/index.md`.
+- `content/builders-log/claude-apps-gateway-self-hosted-sso-bedrock-google-foundry-enterprise-builder-guide/index.md` — dated 2026-07-01, audited (sources_audited: 2026-07-31). **Technical implementation guide**: prerequisites table, full `gateway.yaml` example, MDM push config, a Docker Compose quickstart, and an "enforced vs. not enforced" limitations table.
+- `content/builders-log/claude-apps-gateway-enterprise-bedrock-google-cloud-microsoft-foundry-builder-guide/index.md` — dated 2026-07-03, audited (sources_audited: 2026-08-01). **News-cycle/context piece**: bundles the gateway with the same-week Microsoft Foundry GA of Claude Sonnet 5 on Azure, and ties spend caps to the broader Tesla/Uber/Walmart/Meta/Amazon enterprise-AI-budget story (cross-links the sibling Tesla $200/week article).
+- `content/builders-log/claude-apps-gateway-bedrock-google-cloud-sso-spend-caps-enterprise-builder-guide/index.md` — dated 2026-07-07, audited (sources_audited: 2026-08-04). **Overview + protocol-interoperability piece**: covers the published wire protocol, third-party gateway compliance (LiteLLM/TrueFoundry), and an operational "gotchas" list (spend-cap timing, IdP downtime, policy-poll delay).
+
+Diffed all three in full. Same underlying June 29, 2026 Anthropic announcement and much of the same
+core factual surface (stateless container + Postgres, OIDC/SSO, spend caps, data residency), but three
+genuinely different angles at three different depths published on three different days in the week
+after launch — consistent with the SnapLogic/H1-2026-VC/LongCat precedents above. Spot-checked the
+protocol-interoperability page's unique "Open Protocol" section against the live
+`code.claude.com/docs/en/llm-gateway-protocol` and `claude-apps-gateway-deploy` docs during this run;
+citations hold up. **Decision: keep all three, no merge.**
 
 ### SK Hynix Nasdaq ADR: $29B filing vs $28B/$26.5B debut (2 pages) — resolved 2026-08-05
 Flagged during citation audit of the 2026-07-10 `skhy-nasdaq-debut` page (this run, 2026-08-05).
