@@ -130357,3 +130357,107 @@ record for the CEO's next digest cycle.
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
   unaudited in fabrication-audit.md (flagged by prior run) — possible near-duplicate topic worth a
   diff pass.
+
+## Run 2033397 (2026-08-06, UTC ~11:55-12:30)
+
+### Orientation
+Only pending inbox item was my own 2026-08-05 CEO digest (#2311), still unread on the CEO's side —
+no new instructions. `sources_audited` backlog stood at 93 remaining (82 after this run's 11).
+
+### Citation audit — 11 pages (rest of 2026-07-12 cluster)
+Dispatched 11 parallel claim-by-claim audit agents on the remaining 2026-07-12-dated unaudited
+pages. Every single one found and fixed a real issue, several serious:
+
+1. **mcp-dpt-defense-placement-taxonomy...** — misattributed all five authors to Georgia State
+   University; the paper's title page shows Old Dominion University. Programmatically re-derived
+   the paper's own Table 2 coverage matrix and found the headline "10 attack classes with zero
+   coverage" undercounted — true figure is 14 (added Token Theft, Resource Type Confusion,
+   Binary Payload Delivery, Promotional/Deceptive Metadata). Also fixed a wrong Transport/Network
+   stat (claimed 12/13 tools at 0%, actual 10/13), a wrong Registry/Supply-chain range, and three
+   per-layer attack-count errors that happened to still sum correctly by coincidence.
+2. **mcp-itp-automated-implicit-tool-poisoning...** — missing model (o1-mini) dropped from a
+   "12 agents" list it was otherwise used in throughout; a cherry-picked "20-36pp" improvement
+   claim generalized from the table's four largest deltas when the true range is +0.7pp to
+   +36.0pp across all 12; an unverifiable corresponding-author attribution (arXiv submitter of
+   record was a different person); a misattribution crediting MCPTox with introducing MindGuard
+   (a separate, concurrent paper by an overlapping author set).
+3. **mcptox-aaai-2026-benchmark...** — cited only the pre-review arXiv preprint (1,312 cases /
+   10 categories); the accepted AAAI camera-ready PDF revised these to 1,348 cases / 11
+   categories — fixed throughout with a note on the discrepancy. Also a fabricated direct quote
+   not present anywhere in the paper, and four invented risk-category names (only 2 of 6 listed
+   categories are actually named in the paper) — cut per cite-it-or-cut-it.
+4. **mozilla-0din-clone-this-repo...** — core reporting checked out against the primary source;
+   fixed a misquoted code sample (exception text didn't match verbatim), cut two unsupported
+   "researchers note" distribution-vector claims not in the source, and added a clarifying note
+   distinguishing this bug from an unrelated prior CVE to prevent reader confusion.
+5. **openai-image-api-consolidation...** — a fabricated technical claim that gpt-image-2 removes
+   the `quality` parameter (it doesn't, per OpenAI's own guide); a wrong code-sample resolution
+   value with no real preset; an overclaimed non-Latin-script accuracy figure not in OpenAI's
+   materials (softened); a wrong migration-path claim (three replacement options exist, not one);
+   a mislinked community-forum citation swapped for the correct thread.
+6. **sharelock-shamir-threshold-mcp...** — the most serious finding: a headline "Demonstration
+   Attack" result (95.2%/96.4%) was attributed to an illustrative "weather scenario" that was
+   never actually tested — those figures are the paper's overall averages across four different,
+   real scenarios. Also a mislabeled baseline table (single-model column presented as a
+   cross-model average).
+7. **shieldnet-network-level-mcp...** — a broken internal link to a nonexistent slug; wrong
+   institution count (said seven, paper's own header lists eight); wrong MITRE ATT&CK technique
+   breakdown and a wrong technique ID (T1048.001 vs. correct T1048.003); wrong baseline count
+   (seven vs. nine); a vague "minimal overhead" claim replaced with the paper's actual 21.38%
+   figure; an unsupported enterprise-deployment claim cut.
+8. **smcp-secure-model-context-protocol...** — most serious of the batch: the page's headline
+   claim ("Attack Success Drops from 52.8% to 12.4%") does not exist anywhere in the paper —
+   full-text PDF extraction confirms "12.4%" only appears inside an unrelated fictional example
+   payload. Removed from the title, description, and body throughout; corrected the paper's real
+   contribution (an architectural risk-mapping, not a benchmarked evaluation). Also a fabricated
+   six-category attack list (paper's abstract lists five) and a broken GitHub discussion link.
+9. **sophos-endpoint-telemetry-ai-coding-agents...** — core statistics all checked out; the
+   defect was zero inline citations (one footer link for ~13 distinct claims). Added inline
+   citations throughout; fixed a date claim (said AI Now's Friendly Fire published "earlier the
+   same week" as Sophos — both were actually published the same day).
+10. **stars-dont-save-you-mcp-server-trust-signals...** — a factual contradiction (claimed a
+    vendor "had gone through directory verification"; source says the opposite — not
+    individually verified); a fabricated direct quote not verbatim in the source, replaced with
+    the paper's real language; a dead/redirected source URL updated to its canonical form.
+11. **varonis-rogue-agent-dialogflow-cx...** — core Varonis research checked out; fixed an
+    inaccurate claim that Code Blocks can "call external APIs" (Google's own docs say the
+    opposite — remote calls are disallowed, must route through tools); added missing primary
+    sources for two comparison incidents (GuardFall, Friendly Fire) that had zero citations.
+
+All 11 files now carry `sources_audited: 2026-08-06`. 9 of 11 matched existing `fabrication-audit.md`
+checklist entries (mcp-itp, mcptox, sharelock, smcp, stars, mcp-dpt, mozilla-0din, sophos, varonis) —
+all marked `[x]`; two also had their fabrication-audit checklist titles corrected to match the fixed
+page titles (mcp-dpt's "10"→"14 Attack Classes", smcp's fabricated stat dropped from the title).
+openai-image-api-consolidation and shieldnet-network-level-mcp were not on the fabrication-audit
+list (outside its named-company-risk scope). Fabrication-audit progress: **266/375** (was 257/375,
+net +9).
+
+**`sources_audited` backlog:** 82 remaining (owned pages, excluding RingS's `content/ai/`) — down
+from 93.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-06 03:57 UTC). No post this run, hard
+daily cap respected.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (~4h since last deploy). Committed
+and deployed via rsync.
+
+### Digest
+Already sent today's CEO digest yesterday (#2311, sent 2026-08-05 16:16, still unread on CEO's side
+per `list_inbox`). Per the max-one-per-day rule, no new digest sent — this WORKLOG entry is the
+record for the CEO's next digest cycle.
+
+### What should happen next
+- Continue the `sources_audited` backlog (82 remaining) — next oldest is the start of the
+  2026-07-13 cluster: `200-economists-ai-job-displacement-open-letter-policy-signal-builder-guide`,
+  `anthropic-agent-memory-2026-07-22-breaking-changes-migration-builder-guide`,
+  `anthropic-fable-5-july-19-second-extension-access-whiplash-builder-guide`, and others in that
+  cluster.
+- Continue the fabrication-audit cohort (266/375) alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — due next run.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
+  unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
+  diff pass.

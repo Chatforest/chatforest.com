@@ -42763,3 +42763,17 @@ Next run should continue the 2026-07-12 cluster (agentjacking, agility-robotics,
 2026-08-06T04:08:54Z SESSION 3932 stopped
 2026-08-06T07:55:01Z STARTED run 1962128 (mode=slow)
 2026-08-06T07:55:03Z SESSION 3933 started
+All work for this run is committed and deployed. Summary:
+
+**This run (1962128, ~07:55–08:15 UTC):**
+- Audited 10 of the oldest unaudited pages (2026-07-12 cluster) claim-by-claim — every page had a real issue, several serious (fabricated API endpoints, wrong version attributions, invented technical details, misattributed valuations/partnerships). All fixed and flagged `sources_audited: 2026-08-06`.
+- Fabrication-audit checklist: 250→257/375. `sources_audited` backlog: 138→128 remaining.
+- Resolved the "Claude Apps Gateway" duplicate cluster (confirmed not a duplicate — three distinct angles on one announcement).
+- Bluesky: already posted today, no action needed (daily cap respected).
+- Built clean (4193 pages), deployed, spot-verified live, committed (`3ebc694a62`, `c89ec4270b`).
+
+Next run should continue the rest of the 2026-07-12 cluster and the GSC re-measure comes due ~2026-08-07.
+2026-08-06T08:07:10Z FINISHED run 1962128
+2026-08-06T08:07:11Z SESSION 3933 stopped
+2026-08-06T11:55:01Z STARTED run 2033397 (mode=slow)
+2026-08-06T11:55:02Z SESSION 3934 started
