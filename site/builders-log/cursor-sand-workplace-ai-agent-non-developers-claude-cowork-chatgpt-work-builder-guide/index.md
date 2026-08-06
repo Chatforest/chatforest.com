@@ -36,7 +36,7 @@ Sand enters a market that formed in early July 2026, within a few days:
 | ChatGPT Work | July 9, 2026 | OpenAI | Non-technical users |
 | Sand | Internal only (late June) | Cursor / SpaceXAI | Business users, non-developers |
 
-Claude Cowork launched July 7 on mobile and web, enabling background email, calendar, and file tasks that continue even when the device is offline — converting folders of contracts into renewal trackers, managing routine scheduling, and triaging inboxes. ChatGPT Work launched two days later, pairing ChatGPT with Codex so non-technical users can build documents, spreadsheets, and basic web apps.
+[Claude Cowork launched July 7 on mobile and web](https://claude.com/blog/cowork-web-mobile), enabling background email, calendar, and file tasks that continue even when the device is offline — converting folders of contracts into renewal trackers, managing routine scheduling, and drafting follow-up emails ([Anthropic](https://claude.com/blog/cowork-web-mobile); [TechCrunch](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)). [ChatGPT Work launched two days later](https://openai.com/chatgpt-work/), pairing ChatGPT with Codex so non-technical users can build documents, spreadsheets, and basic web apps ([OpenAI](https://openai.com/chatgpt-work/); [Tech Times](https://www.techtimes.com/articles/320087/20260710/chatgpt-work-free-every-plan-what-openais-codex-merger-changes-you.htm)).
 
 Sand would add a third entrant from a company that built its name on coding assistance. The strategic implication: Cursor wants to expand from "the IDE that developers love" into the full-stack of workplace productivity.
 
@@ -46,7 +46,7 @@ Sand would add a third entrant from a company that built its name on coding assi
 
 The business logic for Cursor's pivot is straightforward:
 
-Cursor's addressable market as a coding tool is bounded by the number of software developers — roughly 26–30 million worldwide. The addressable market for "workplace AI agent" is roughly everyone with a desk job. Claude Cowork and ChatGPT Work represent Anthropic and OpenAI each making the same bet: that the next growth vector in AI is not smarter coding assistants, but AI handling the communications and administrative load that consumes 30–40% of knowledge worker time.
+Cursor's addressable market as a coding tool is bounded by the number of software developers worldwide. The addressable market for "workplace AI agent" is roughly everyone with a desk job. Claude Cowork and ChatGPT Work represent Anthropic and OpenAI each making the same bet: that the next growth vector in AI is not smarter coding assistants, but AI that handles the communications and administrative work knowledge workers do every day.
 
 Cursor's differentiation angle would be that it can handle both: Sand for the emails and spreadsheets, Cursor itself for the code. A unified subscription model covering the whole knowledge worker.
 
@@ -56,9 +56,9 @@ Whether that's compelling against Claude Cowork and ChatGPT Work — both of whi
 
 ## The SpaceX Acquisition Complication
 
-The $60 billion SpaceX acquisition of Cursor, announced June 16, 2026, is the most significant variable in Sand's future.
+The [$60 billion SpaceX acquisition of Cursor](https://www.sec.gov/Archives/edgar/data/1181412/000162828026043411/spaceexplorationtechnologi.htm), announced June 16, 2026, is the most significant variable in Sand's future.
 
-SpaceX acquiring Cursor creates product roadmap uncertainty at the executive level. Decisions about what to build, what to cancel, and how to position against competitors shift under acquisition conditions — particularly when the acquirer has its own enterprise AI business (SpaceXAI, which already sells compute and API access).
+SpaceX acquiring Cursor creates product roadmap uncertainty at the executive level. Decisions about what to build, what to cancel, and how to position against competitors shift under acquisition conditions — particularly when the acquirer has its own enterprise AI business (SpaceXAI, which already [sells compute and API access](https://fortune.com/2026/07/19/spacex-ai-compute-renting-business-google-anthropic-pentagon-deals-revenue-valuation-elon-musk-colossus-data-centers/)).
 
 Two scenarios worth considering:
 

@@ -3,7 +3,7 @@
 > Citrix added MCP-aware governance to NetScaler on July 9. Existing customers get it free. For builders targeting enterprise, this is the network-layer control plane you'll need to design around.
 
 
-On July 9, 2026, [Citrix added MCP Gateway capabilities to NetScaler](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html) — the application delivery controller that already sits in front of most large enterprise web infrastructure. Existing Citrix Platform License and Universal Hybrid Multi-Cloud customers get it at no additional cost.
+On July 9, 2026, [Citrix added MCP Gateway capabilities to NetScaler](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html), its application delivery controller. Existing Citrix Platform License and Universal Hybrid Multi-Cloud customers get it at no additional cost.
 
 The move is quietly significant. [Snowflake bought Natoma](https://www.snowflake.com/en/news/press-releases/snowflake-announces-intent-to-acquire-natoma-providing-secure-connectivity-for-the-agentic-enterprise/) to govern what data agents can access. Citrix is governing how agent traffic moves — at the network layer, where the enterprise has always applied its controls.
 
@@ -15,11 +15,13 @@ Most MCP deployments in enterprise environments today look like a tangle of dire
 
 This is the MCP governance gap. It's not a model problem or a prompt problem. It's an infrastructure problem that enterprises recognize from every prior generation of distributed computing. The answer, historically, is always the same: put a governed control plane in front.
 
-Citrix is building that control plane into the infrastructure product most enterprises already have. NetScaler has sat in front of enterprise apps since the early web era. MCP agents are, from a network perspective, just another category of client making authenticated requests to backend services.
+Citrix is building that control plane into NetScaler, the application delivery controller it already sells into its existing enterprise base. MCP agents are, from a network perspective, just another category of client making authenticated requests to backend services.
 
 ---
 
 ## What the Gateway Actually Does
+
+Per [Citrix's announcement](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html) and [NetScaler's own product documentation](https://docs.netscaler.com/en-us/citrix-adc/current-release/ai-gateway.html), the gateway includes:
 
 **Single entry point.** All MCP client requests go through one governed ingress. The gateway dynamically routes each request to the appropriate approved backend MCP server. Agents don't connect to MCP servers directly — they connect to NetScaler, which handles the backend routing.
 
@@ -37,19 +39,19 @@ Citrix is building that control plane into the infrastructure product most enter
 
 ## The Single-Pass Architecture
 
-NetScaler has used a single-pass data path for years: in one traversal of the traffic, it handles load balancing, SSL offload, authentication, content switching, and observability. The MCP Gateway extends this pattern to AI agent traffic.
+NetScaler uses what Citrix calls a [proprietary single-pass architecture](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html): in one traversal of the traffic, it handles load balancing, SSL offload, authentication, content switching, and observability. The MCP Gateway extends this pattern to AI agent traffic.
 
-What that means practically: traffic management, authentication, routing, security inspection, rate limiting, and observability all happen in a single pass through the control plane rather than in a chain of middleware. For high-volume agent deployments — production workflows that process thousands of tool calls per minute — this keeps latency overhead low relative to layered middleware approaches.
+What that means practically: traffic management, authentication, routing, security inspection, rate limiting, and observability all happen in a single pass through the control plane rather than in a chain of middleware. Citrix says this design is meant to minimize latency and CPU overhead for high-volume AI workloads relative to layered middleware approaches, though the company has not published specific throughput or latency benchmarks for the MCP Gateway.
 
-Citrix runs this in their own production environment through Citrix Aidrien™, their internal AI assistant. That's not a pilot — it's the enterprise's own AI workloads running through the same gateway they're selling to customers.
+Citrix says it [runs NetScaler AI Gateway in production for Citrix Aidrien™](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html), its internal AI assistant, governing "every prompt, model interaction and token" Aidrien generates. That's dogfooding of the same single-pass platform Citrix is now extending with MCP Gateway capabilities for customer agent traffic — though Citrix's own description of Aidrien's production traffic is specifically prompt/model traffic, not agentic MCP tool calls.
 
 ---
 
 ## How This Differs from Natoma
 
-Snowflake's Natoma acquisition (May 2026) and Citrix's NetScaler MCP Gateway solve adjacent problems. Builders should understand the distinction.
+[Snowflake's Natoma acquisition (May 27, 2026)](https://www.snowflake.com/en/news/press-releases/snowflake-announces-intent-to-acquire-natoma-providing-secure-connectivity-for-the-agentic-enterprise/) and Citrix's NetScaler MCP Gateway solve adjacent problems. Builders should understand the distinction.
 
-**Natoma governs tool semantics.** It intercepts each tool call and evaluates the *content* of the call against policy: who is calling, what data does this tool touch, does the call match RBAC or ABAC rules, what goes in the audit log. It's a policy enforcement layer that understands what tools do.
+**Natoma governs tool semantics.** [Natoma's platform](https://natoma.ai/platform) intercepts each tool call and evaluates the *content* of the call against policy: who is calling, what data does this tool touch, does the call match RBAC or ABAC rules, what goes in the audit log. It's a policy enforcement layer that understands what tools do.
 
 **Citrix NetScaler MCP Gateway governs traffic.** It controls *how* requests move through the network: which agents can reach which servers, how fast, through which authentication path, with what session state. It's infrastructure — the same infrastructure NetScaler already uses for non-AI traffic.
 
@@ -67,7 +69,7 @@ Both are needed in a mature enterprise AI deployment. Natoma answers "was this a
 - Structured outputs with typed fields make the gateway's observability layer useful. Unstructured blobs produce incomplete audit entries.
 - Handle rate-limit errors explicitly. When the gateway throttles a tool call, your server receives a 429 with a reason. Return it to the agent in a structured way the orchestrator can handle gracefully.
 
-**You're a startup building with MCP, not selling to enterprises.** NetScaler is enterprise infrastructure; the gateway isn't relevant for smaller deployments. Focus on the Anthropic Managed Agents memory and session APIs for your own auth and state management. Enterprise infrastructure is a problem for the enterprise to solve on its end.
+**You're a startup building with MCP, not selling to enterprises.** NetScaler is enterprise infrastructure; the gateway isn't relevant for smaller deployments. Focus on [Anthropic's Managed Agents memory and session APIs](https://platform.claude.com/docs/en/managed-agents/overview) for your own auth and state management. Enterprise infrastructure is a problem for the enterprise to solve on its end.
 
 **You're evaluating MCP gateway options for a greenfield enterprise deployment.** The choice isn't just technical. Citrix customers should default to NetScaler MCP Gateway for the zero-incremental-cost economics. Cloud-native enterprises without an existing NetScaler footprint should evaluate purpose-built MCP governance solutions or cloud provider equivalents alongside Citrix.
 
@@ -85,8 +87,8 @@ Builders who understand what that layer enforces — and design their MCP server
 
 ## Timeline
 
-- **April 2026** — Citrix introduces NetScaler AI Gateway for LLM traffic governance (model routing, token-level usage tracking).
-- **July 9, 2026** — Citrix adds MCP Gateway capabilities to NetScaler, extending governance from LLM traffic to agentic AI tool-call traffic. No additional cost for existing Citrix Platform License or Universal Hybrid Multi-Cloud license holders.
+- **April 9, 2026** — [Citrix introduces NetScaler AI Gateway](https://www.citrix.com/news/announcements/apr-2026/netscaler-ai-gateway-to-bring-enterprise-governance-to-ai-application-delivery.html) for LLM traffic governance (token-latency-based model routing, spillover routing, token-level usage tracking).
+- **July 9, 2026** — [Citrix adds MCP Gateway capabilities to NetScaler](https://www.citrix.com/news/announcements/july-2026/citrix-brings-unified-governance-to-llm-and-agentic-ai-traffic-with-netscaler-mcp-gateway-capabilities.html), extending governance from LLM traffic to agentic AI tool-call traffic. No additional cost for existing Citrix Platform License or Universal Hybrid Multi-Cloud license holders.
 
 ---
 

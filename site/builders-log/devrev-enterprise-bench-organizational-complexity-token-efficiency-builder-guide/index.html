@@ -80,10 +80,10 @@
 <li>Questions whose correct answer requires cross-referencing five source systems, none of which share a schema</li>
 </ul>
 <p>Enterprise-Bench measures <strong>organizational complexity</strong> — how well an agent performs as data volume, fragmentation, and permission complexity scale up.</p>
-<p>Ahmed Bashir, CTO at DevRev, <a href="https://itbrief.co.uk/story/devrev-launches-enterprise-bench-for-enterprise-ai-agents">described the distinction</a>: &ldquo;What Enterprise-Bench adds is a way to measure organizational complexity, not just task complexity.&rdquo; UC Berkeley professor Alexandros Dimakis, who validated the benchmark design, noted: &ldquo;Most agent benchmarks test consumer tasks where data is clean and outcomes binary. What&rsquo;s different here is difficulty scales with the data itself.&rdquo;</p>
+<p>Ahmed Bashir, CTO at DevRev, <a href="https://itbrief.co.uk/story/devrev-launches-enterprise-bench-for-enterprise-ai-agents">described the distinction</a>: &ldquo;What Enterprise-Bench adds to the benchmark community is a way to measure organizational complexity, not just task complexity.&rdquo; <a href="https://itbrief.co.uk/story/devrev-launches-enterprise-bench-for-enterprise-ai-agents">UC Berkeley professor Alexandros Dimakis</a>, who validated the benchmark design, noted: &ldquo;Most agent benchmarks today test consumer-style tasks, like booking a flight, where the data is clean and the end state is binary&hellip; What&rsquo;s different here is that the difficulty scales with the data itself.&rdquo; (Dimakis is also <a href="https://www.webwire.com/ViewPressRel.asp?aId=342437">a DevRev board member</a> — see the vendor-benchmark caveat below.)</p>
 <hr>
 <h2 id="evaluation-framework">Evaluation Framework</h2>
-<p>Enterprise-Bench uses an autonomy ladder modeled on autonomous driving levels:</p>
+<p>Enterprise-Bench uses an autonomy ladder modeled on autonomous driving levels, <a href="https://www.manilatimes.net/2026/07/09/tmt-newswire/globenewswire/new-open-benchmark-creates-global-standard-for-evaluating-enterprise-ai-devrev-tops-the-leaderboard/2381686">per DevRev&rsquo;s July 9 announcement</a>:</p>
 <table>
 <thead>
 <tr>
@@ -152,7 +152,7 @@
 </tbody>
 </table>
 <p>Computer achieved 48% higher accuracy and used 4.4× fewer tokens per correct response. As dataset size grew, Computer&rsquo;s total token usage stayed roughly flat. Claude Code&rsquo;s climbed 29% — ~54M vs ~92M tokens on the largest runs.</p>
-<p>Jeff Smith, Office of the CTO at DevRev, on the benchmark design: &ldquo;Benchmarks that are not public are not benchmarks. They are marketing. We are publishing everything.&rdquo;</p>
+<p><a href="https://itbrief.co.uk/story/devrev-launches-enterprise-bench-for-enterprise-ai-agents">Jeff Smith, Office of the CTO at DevRev</a>, on the benchmark design: &ldquo;Benchmarks that are not public are not benchmarks. They are marketing&hellip; We are publishing everything, including the data, the methodology, our own traces.&rdquo;</p>
 <hr>
 <h2 id="why-the-same-model-produces-different-results">Why the Same Model Produces Different Results</h2>
 <p>This is the technically interesting part. DevRev used Opus 4.8 as the underlying model for both Computer and Claude Code. The 4.4× token efficiency gap cannot be attributed to model capability. It comes from <strong>data retrieval architecture</strong>.</p>
@@ -162,7 +162,7 @@
 <li>Search narrowly and risk missing relevant records (lower token cost, lower recall)</li>
 </ol>
 <p>Enterprise-Bench&rsquo;s XL dataset appears to amplify this tradeoff. As data volume increases, a context-stuffing approach costs more tokens for the same or worse answers.</p>
-<p>DevRev&rsquo;s Computer uses what it calls &ldquo;Native Shared Memory&rdquo; (GBrain) — a persistent, permission-aware knowledge graph that unifies enterprise data sources with real-time sync (AirSync). Instead of pulling raw records into the model&rsquo;s context window, Computer queries a structured graph layer and retrieves only the precise data the model needs. The model sees fewer tokens, answers more precisely, and the token cost doesn&rsquo;t grow with dataset size the way context stuffing does.</p>
+<p>DevRev&rsquo;s Computer uses what it calls <a href="https://devrev.ai/">&ldquo;Native Shared Memory&rdquo;</a> — a persistent, permission-aware knowledge graph built through <a href="https://support.devrev.ai/devrev/article/ART-21842">AirSync</a>, DevRev&rsquo;s two-way sync engine that unifies enterprise data sources in real time. Instead of pulling raw records into the model&rsquo;s context window, Computer queries a structured graph layer and retrieves only the precise data the model needs. The model sees fewer tokens, answers more precisely, and the token cost doesn&rsquo;t grow with dataset size the way context stuffing does.</p>
 <p>The architectural contrast:</p>
 <pre><code>Context-stuffing approach (Claude Code on enterprise tasks):
 Query → Search enterprise data → Pull matching chunks into context → Model reasons over 24K tokens → Answer
@@ -179,7 +179,7 @@ Query → Query structured knowledge graph → Retrieve targeted records → Mod
 <p><strong>Open-source methodology</strong>: The dataset, harness, evaluation criteria, and traces are all published. Any vendor or researcher can reproduce the results and submit to the leaderboard.</p>
 </li>
 <li>
-<p><strong>Academic validation</strong>: The benchmark design was validated by Professor Alexandros Dimakis of UC Berkeley, affiliated with the Harbor evaluation project run by researchers from UC Berkeley and Stanford.</p>
+<p><strong>Academic validation — with a real caveat</strong>: The benchmark design was reviewed by <a href="https://itbrief.co.uk/story/devrev-launches-enterprise-bench-for-enterprise-ai-agents">Professor Alexandros Dimakis of UC Berkeley</a>, co-founder of Bespoke Labs. That validation is not fully independent, though: Dimakis <a href="https://www.webwire.com/ViewPressRel.asp?aId=342437">joined DevRev&rsquo;s board of directors in August 2025</a>, before Enterprise-Bench shipped. Treat his endorsement as informed but not arm&rsquo;s-length.</p>
 </li>
 <li>
 <p><strong>The comparison is arguably category-inappropriate</strong>: Claude Code is an excellent coding agent. Enterprise-Bench tests enterprise data retrieval under organizational complexity. Comparing them is like running a database query benchmark against a text editor — the &ldquo;loser&rdquo; wasn&rsquo;t designed for those conditions. That DevRev Computer wins on a benchmark that maps to DevRev Computer&rsquo;s exact design purpose is not surprising.</p>
@@ -214,7 +214,7 @@ Query → Query structured knowledge graph → Retrieve targeted records → Mod
 <li>Run the Harbor evaluation harness against your agent</li>
 <li>Submit results (scores + execution traces) to the public leaderboard</li>
 </ol>
-<p>The Laude Institute researchers affiliated with the Harbor project built the harness to be agent-agnostic. If you run it, the leaderboard gets more useful — and the benchmark&rsquo;s vendor-bias concern gets proportionally weaker.</p>
+<p><a href="https://github.com/laude-institute/harbor">The Laude Institute team behind Harbor</a> — the framework built on their earlier Terminal-Bench project — designed the harness to evaluate arbitrary agents, not just DevRev&rsquo;s. If you run it, the leaderboard gets more useful — and the benchmark&rsquo;s vendor-bias concern gets proportionally weaker.</p>
 <hr>
 <h2 id="what-to-watch">What to Watch</h2>
 <ul>

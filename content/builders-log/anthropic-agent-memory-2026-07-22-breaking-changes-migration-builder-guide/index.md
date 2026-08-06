@@ -3,25 +3,28 @@ title: "Anthropic agent-memory-2026-07-22: Three Breaking Changes to Fix Before 
 date: 2026-07-13
 description: "On July 22, 2026, Anthropic's managed-agents-2026-04-01 beta header automatically adopts new memory-list behavior. If you call GET /v1/memory_stores/{id}/memories, three parameters silently change. Migrate before the deadline."
 tags: ["anthropic", "claude", "managed-agents", "memory", "api", "breaking-change", "migration", "python"]
+sources_audited: 2026-08-06
 ---
 
-Anthropic has introduced a new beta header — `agent-memory-2026-07-22` — that changes how memory listing works for Managed Agents memory stores. The new behavior is available now as an opt-in. On **July 22, 2026**, the older `managed-agents-2026-04-01` header automatically adopts the same behavior for memory store list calls.
+Anthropic has introduced a new beta header — `agent-memory-2026-07-22` — that changes how memory listing works for Managed Agents memory stores. The new behavior is available now as an opt-in. On **July 22, 2026**, the older `managed-agents-2026-04-01` header automatically adopts the same behavior for memory store list calls. This is documented in [Anthropic's July 2, 2026 API release note](https://platform.claude.com/docs/en/release-notes/api) announcing the `agent-memory-2026-07-22` header.
 
 If you call `GET /v1/memory_stores/{memory_store_id}/memories` in your agent and do not update your code before July 22, three things will silently change — and one of them will throw a `400` if your parameters are wrong.
 
-This is a research-based guide. We reviewed [Anthropic's Managed Agents memory documentation](https://platform.claude.com/docs/en/managed-agents/memory) and [API release notes](https://docs.anthropic.com/en/release-notes/api). We did not test the API endpoints ourselves.
+This is a research-based guide. We reviewed [Anthropic's Managed Agents memory documentation](https://platform.claude.com/docs/en/managed-agents/memory), the [API release notes](https://platform.claude.com/docs/en/release-notes/api), and the [beta headers reference](https://platform.claude.com/docs/en/api/beta-headers). We did not test the API endpoints ourselves.
 
 ---
 
 ## Context: What Is the Managed Agents Memory Store?
 
-Anthropic added persistent memory to Managed Agents in a public beta in mid-2026. Agents can write facts, preferences, or session state to a memory store, then retrieve them in future sessions. Each memory has a path (like a filesystem) — for example, `user/profile`, `project/123/context`.
+Anthropic launched persistent memory for Managed Agents in public beta on [April 23, 2026](https://platform.claude.com/docs/en/release-notes/api). Agents can write facts, preferences, or session state to a memory store, then retrieve them in future sessions. Each memory has a path (like a filesystem) — for example, `/user/profile.md`, `/project/123/context.md` — [addressed and mounted the same way documents are described in Anthropic's memory guide](https://platform.claude.com/docs/en/managed-agents/memory).
 
-The listing API — `GET /v1/memory_stores/{id}/memories` — lets you retrieve stored memories by path prefix, depth, and ordering. This is the endpoint that changes on July 22.
+The listing API — `GET /v1/memory_stores/{id}/memories` — lets you retrieve stored memories by [path prefix, depth, and ordering](https://platform.claude.com/docs/en/managed-agents/memory#list-memories). This is the endpoint that changes on July 22.
 
 ---
 
 ## What Changes on July 22
+
+All three changes below are documented together in [Anthropic's July 2, 2026 release note for the `agent-memory-2026-07-22` header](https://platform.claude.com/docs/en/release-notes/api) and reflected in the current [memory store listing reference](https://platform.claude.com/docs/en/managed-agents/memory#list-memories).
 
 ### Change 1: `order_by` and `order` Are Ignored
 
@@ -61,7 +64,7 @@ Additionally, if you pass a `path_prefix` without a trailing slash, you now get 
 
 The new behavior is gated behind the `agent-memory-2026-07-22` beta header. Sending this header opts you in **now** — you don't need to wait until July 22.
 
-**Critical rule:** Do **not** combine `agent-memory-2026-07-22` with `managed-agents-2026-04-01` on a single memory store request. Sending both returns a `400` error.
+**Critical rule:** Do **not** combine `agent-memory-2026-07-22` with `managed-agents-2026-04-01` on a single memory store request. Sending both returns a `400` error. This is stated explicitly in [Anthropic's beta headers reference](https://platform.claude.com/docs/en/api/beta-headers#endpoint-specific-headers), which also confirms memory store endpoints (`/v1/memory_stores` and sub-resources) require `agent-memory-2026-07-22` while agent, session, and environment endpoints keep using `managed-agents-2026-04-01`.
 
 ```python
 # Wrong — 400 error
@@ -81,7 +84,7 @@ If your agent already sends `managed-agents-2026-04-01` globally (e.g., in a sha
 
 ## Page Cursor Invalidation
 
-Page cursors issued **without** the `agent-memory-2026-07-22` header are not valid **with** it. If you use pagination over memory results, you must restart from the first page when you adopt the new header. Do not resume from an old cursor — it will not work across the header boundary.
+Page cursors issued **without** the `agent-memory-2026-07-22` header are not valid **with** it. If you use pagination over memory results, you must restart from the first page when you adopt the new header. Do not resume from an old cursor — it will not work across the header boundary. Anthropic states this directly in the [memory store documentation](https://platform.claude.com/docs/en/managed-agents/memory) and the [July 2, 2026 release note](https://platform.claude.com/docs/en/release-notes/api): "Page cursors issued without the header aren't valid with it, so restart from the first page when you adopt it."
 
 ---
 
@@ -133,12 +136,12 @@ memories_sorted = sorted(memories, key=lambda m: m.updated_at, reverse=True)
 
 ---
 
-## Why These Changes
+## Why These Changes (Our Read, Not Anthropic's Stated Rationale)
 
-Anthropic's documentation frames the changes as improvements to **predictability and scalability** for the memory store backend:
+Anthropic's [release note](https://platform.claude.com/docs/en/release-notes/api) and [memory documentation](https://platform.claude.com/docs/en/managed-agents/memory) describe *what* changes but do not publish an explicit rationale for *why*. The following is our own inference, not a quoted or sourced claim from Anthropic:
 
-- **Stable server ordering** removes dependence on sort-at-read semantics that are expensive at scale. Clients that need ordering can sort cheaply in memory.
-- **Depth restriction to 0 or 1** prevents expensive recursive tree traversals. Agent developers who find they need deeper nesting should flatten their path hierarchy or make targeted per-prefix queries.
+- **Stable server ordering** plausibly removes dependence on sort-at-read semantics that could be expensive at scale. Clients that need ordering can sort cheaply in memory.
+- **Depth restriction to 0 or 1** plausibly avoids expensive recursive tree traversals. Agent developers who find they need deeper nesting should flatten their path hierarchy or make targeted per-prefix queries.
 - **Whole-segment path matching** makes prefix semantics unambiguous — `user/` cannot accidentally match `username/`. This reduces a class of subtle bugs where agents read more (or less) than intended.
 
 ---

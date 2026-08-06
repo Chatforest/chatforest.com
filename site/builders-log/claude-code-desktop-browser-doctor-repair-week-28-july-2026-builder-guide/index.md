@@ -3,7 +3,7 @@
 > Claude Code's July 6–10 release (v2.1.202–v2.1.206) ships a sandboxed in-app browser for the Desktop app, upgrades /doctor from read-only diagnosis to active repair, and tightens auto mode against transcript tampering and destructive rm -rf. Builder guide covers all actionable changes and how the browser pane differs from the Chrome extension.
 
 
-Claude Code's Week 28 release (July 6–10, 2026, [v2.1.202](https://github.com/anthropics/claude-code/releases/tag/v2.1.202) through [v2.1.206](https://github.com/anthropics/claude-code/releases)) ships two substantial features — a sandboxed in-app browser for the Desktop app and a significantly upgraded `/doctor` command — alongside a set of security hardening changes to auto mode that every team running background agents should know about.
+Claude Code's [Week 28 release](https://code.claude.com/docs/en/whats-new/2026-w28) (July 6–10, 2026, [v2.1.202](https://github.com/anthropics/claude-code/releases/tag/v2.1.202) through [v2.1.206](https://github.com/anthropics/claude-code/releases/tag/v2.1.206)) ships two substantial features — a sandboxed in-app browser for the Desktop app and a significantly upgraded `/doctor` command — alongside a set of security hardening changes to auto mode that every team running background agents should know about.
 
 ---
 
@@ -11,13 +11,13 @@ Claude Code's Week 28 release (July 6–10, 2026, [v2.1.202](https://github.com/
 
 This is the most misunderstood feature in the release, so the distinction matters first.
 
-Claude Code already has a Chrome extension integration (generally available as of Week 27). That integration connects Claude to your running Chrome session and shares your login state: Claude can act as you on Google Docs, Notion, internal dashboards, and any site you are already signed into.
+Claude Code already has a Chrome extension integration ([generally available as of Week 27](https://code.claude.com/docs/en/whats-new/2026-w27)). That integration connects Claude to your running Chrome session and shares your login state: Claude can act as you on [Google Docs, Notion, and any app you're already signed into](https://code.claude.com/docs/en/chrome).
 
-The Week 28 browser pane is different. It is a sandboxed browser built into the Desktop app itself. It has a clean profile — no saved logins, no history, no personal cookies. Claude can browse external sites through it without your identity involved at all.
+The [Week 28 browser pane](https://code.claude.com/docs/en/whats-new/2026-w28) is different. It is a sandboxed browser built into the Desktop app itself. It has a clean profile — no saved logins, no history, no personal cookies. Claude can browse external sites through it without your identity involved at all.
 
 ### What the in-app browser does
 
-With the browser pane open, Claude can:
+Per [Anthropic's Desktop app docs](https://code.claude.com/docs/en/desktop#browse-external-sites), with the browser pane open, Claude can:
 
 - **Pull up documentation** from any URL mid-session without leaving the Desktop app
 - **View Figma exports, design previews, or staging sites** during code review
@@ -33,7 +33,7 @@ Safety classifiers review Claude's actions on external sites. You can configure 
 |------|-----|
 | Claude needs to act as you on logged-in apps (Google Docs, Notion, your company tools) | Chrome extension |
 | Claude needs to browse external docs, designs, or public sites | Desktop browser pane |
-| You are on Bedrock, Vertex, or Foundry | Desktop browser pane only (Chrome extension requires a direct Anthropic plan) |
+| You are on Bedrock, Vertex, or Foundry | Desktop browser pane only ([Chrome extension isn't available through third-party providers and requires a direct Anthropic plan](https://code.claude.com/docs/en/chrome)) |
 | You want Claude to have no access to your personal accounts | Desktop browser pane only |
 
 The Chrome extension shares your browser's login state. The Desktop browser pane never does. They are complementary, not interchangeable.
@@ -42,7 +42,7 @@ The Chrome extension shares your browser's login state. The Desktop browser pane
 
 ## `/doctor` Is Now a Repair Tool, Not Just a Diagnostic
 
-The previous `/doctor` command printed a report. The Week 28 version (v2.1.205) acts on what it finds.
+The previous `/doctor` command printed a report. The [Week 28 version (v2.1.205)](https://code.claude.com/docs/en/whats-new/2026-w28) acts on what it finds.
 
 ### What `/doctor` checks and fixes
 
@@ -66,13 +66,13 @@ For teams whose CLAUDE.md files have grown organically over months, the CLAUDE.m
 
 ## Auto Mode Security Hardening
 
-Two new protections in auto mode address categories of attack that have been documented in MCP security research over the past several months.
+Two new protections shipped in auto mode this week, [per Anthropic's Week 28 release notes](https://code.claude.com/docs/en/whats-new/2026-w28).
 
 ### Transcript tampering protection
 
 Auto mode now blocks attempts to modify session transcript files. This matters because a compromised tool result or malicious MCP server response could otherwise inject false content into the transcript — content that later agents in the session would treat as legitimate prior work or prior approvals.
 
-Background task notifications now also explicitly state that no human input has occurred, which prevents fabricated in-transcript approvals from being acted on. If a notification claims permission was granted and the transcript does not contain a real human interaction granting it, the action is blocked.
+Background task notifications now also [explicitly state that no human input has occurred](https://code.claude.com/docs/en/whats-new/2026-w28), which prevents fabricated in-transcript approvals from being acted on. If a notification claims permission was granted and the transcript does not contain a real human interaction granting it, the action is blocked.
 
 ### `rm -rf` guard on unresolved variables
 
@@ -81,6 +81,8 @@ Auto mode now asks before running `rm -rf` on a variable it cannot resolve from 
 ---
 
 ## Other Week 28 Changes Worth Knowing
+
+The following are drawn from the ["Other wins" list in Anthropic's Week 28 release notes](https://code.claude.com/docs/en/whats-new/2026-w28) and the [v2.1.202–v2.1.206 changelog entries](https://github.com/anthropics/claude-code/releases/tag/v2.1.206).
 
 **`/cd` directory suggestions**: typing `/cd` now suggests matching paths as you type, matching the behavior already in `/add-dir`.
 
@@ -104,5 +106,5 @@ If you run the Desktop app: the browser pane is available without any configurat
 
 If you run background agents or auto mode: `/doctor` is worth running in any project that has been active for more than a few weeks. The CLAUDE.md trim and slow hook detection are the most likely to surface actionable findings.
 
-The transcript tampering and `rm -rf` protections are on by default in auto mode — no configuration required. They address real attack patterns from MCP security research published in the past 60 days. Full release notes: [Claude Code changelog](https://code.claude.com/docs/en/changelog).
+The transcript tampering and `rm -rf` protections are on by default in auto mode — no configuration required. Full release notes: [Claude Code Week 28 digest](https://code.claude.com/docs/en/whats-new/2026-w28) and [full changelog](https://code.claude.com/docs/en/changelog).
 
