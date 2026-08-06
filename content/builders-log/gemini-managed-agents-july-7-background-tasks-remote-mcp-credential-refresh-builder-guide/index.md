@@ -1,6 +1,7 @@
 ---
 title: "Gemini Managed Agents July 7 Update: Background Tasks, Remote MCP, and the Production-Ready Feature Set — Builder's Guide"
 date: 2026-07-13
+sources_audited: 2026-08-07
 description: "Six weeks after launch, Google added four capabilities that move Gemini Managed Agents from prototype-grade to production-viable: background execution, remote MCP server integration, custom function calling, and in-session credential refresh. Here's what each does and what it means for builders."
 og_description: "background: true flag, remote MCP without tunnels, requires_action custom tools, credential refresh mid-session. Here's what the July 7 Gemini Managed Agents expansion actually changes for builders."
 content_type: "Builder's Log"
@@ -10,7 +11,7 @@ tags: ["google", "gemini", "managed-agents", "background-tasks", "remote-mcp", "
 
 Google expanded Gemini Managed Agents on July 7, 2026, adding four features that fill the biggest gaps between the original May 19 launch and what production deployments actually require. This is a research-based summary; we reviewed [Google's July 7 blog post](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/) and [third-party technical coverage](https://the-decoder.com/google-deepmind-adds-background-execution-and-mcp-support-to-gemini-api-managed-agents/), but did not build with these APIs ourselves.
 
-**Context**: If you haven't read our [original Gemini Managed Agents guide](/builders-log/gemini-api-managed-agents-antigravity-sandbox-builder-guide/), the short version is: one call to the Interactions API spins up an isolated cloud Linux sandbox running the Antigravity agent on Gemini 3.5 Flash. The sandbox handles reasoning, code execution, web search, and file management. State persists across calls within a session.
+**Context**: If you haven't read our [original Gemini Managed Agents guide](/builders-log/gemini-api-managed-agents-antigravity-sandbox-builder-guide/), the short version is: one call to the Interactions API spins up an isolated cloud Linux sandbox running the Antigravity agent, [built on Gemini 3.5 Flash](https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/). The sandbox handles reasoning, code execution, web search, and file management. State persists across calls within a session.
 
 The July 7 update adds four production-oriented capabilities on top of that foundation.
 
@@ -67,7 +68,7 @@ The alternative — custom function calling (see below) — works for simple, ap
 
 Not every integration belongs in an MCP server. App-specific operations — validate a customer entitlement, calculate a quote, open a pull request against a specific repo — are often too narrow to warrant a full MCP server, but still need to run client-side.
 
-The custom function calling feature handles this with the `requires_action` pattern (similar to OpenAI's function calling). The flow:
+The custom function calling feature handles this with the `requires_action` pattern — the same status name and pause-for-client-execution flow used by [OpenAI's Assistants API function calling](https://developers.openai.com/api/docs/assistants/tools/function-calling), where a run "enters a requires_action state" when a function call needs to run client-side. The flow:
 
 1. Developer declares custom tools alongside built-in sandbox tools
 2. When the agent decides to use a custom tool, the API returns `requires_action` with the function name and arguments
@@ -76,7 +77,7 @@ The custom function calling feature handles this with the `requires_action` patt
 
 Built-in tools (code execution, web search) run server-side automatically, without interrupting the synchronous flow. Custom functions pause and wait for the client.
 
-**Combining with background execution**: If you use `background: true` with custom functions, polling the job status also surfaces `requires_action` events so the client knows when a function call is waiting.
+**Combining with background execution**: [`requires_action` is one of the interaction states surfaced when polling a background job](https://ai.google.dev/gemini-api/docs/background-execution), so a client polling `background: true` job status can detect when a custom function call is waiting, not just when the job finishes.
 
 ---
 
@@ -92,14 +93,14 @@ This is primarily relevant for sessions that span multiple hours or that access 
 
 ## What This Means for Production Deployments
 
-The original Managed Agents were useful for prototyping and demos: low barrier to entry, free during preview, built-in tools. The gaps were the ones that matter for production: no way to run long jobs asynchronously, no standard protocol for external tools, no lifecycle management for credentials.
+The original Managed Agents were useful for prototyping and demos: low barrier to entry, [environment compute not billed during preview](https://ai.google.dev/gemini-api/docs/pricing), built-in tools. The gaps were the ones that matter for production: no way to run long jobs asynchronously, no standard protocol for external tools, no lifecycle management for credentials.
 
 The July 7 update closes three of those four gaps directly:
 - **Background execution** → long-running jobs without open connections
 - **Remote MCP** → external tools via standard protocol
 - **Credential refresh** → lifecycle management for auth
 
-What's still missing: Google hasn't published pricing for Managed Agents beyond "free during preview." For production deployments, cost per interaction and cost per background task-hour matter a lot. Until Google publishes that, Managed Agents has an evaluation ceiling: you can build and test, but committing to production scale requires a pricing conversation that hasn't happened publicly yet.
+What's still missing: Google hasn't published pricing for Managed Agents beyond ["not billed during the preview period"](https://ai.google.dev/gemini-api/docs/pricing). For production deployments, cost per interaction and cost per background task-hour matter a lot. Until Google publishes that, Managed Agents has an evaluation ceiling: you can build and test, but committing to production scale requires a pricing conversation that hasn't happened publicly yet.
 
 ---
 
@@ -107,12 +108,14 @@ What's still missing: Google hasn't published pricing for Managed Agents beyond 
 
 | Platform | Background tasks | Remote MCP | Custom tools | Pricing |
 |---|---|---|---|---|
-| Gemini Managed Agents | Yes (July 7) | Yes (July 7) | Yes (requires_action) | Preview only |
-| Anthropic Managed Agents | Yes | Via MCP tunnels | Yes | Published |
-| AWS AgentCore | Yes | Via connectors | Yes | Published |
-| OpenAI Responses API | No (sync only) | No | Yes (function_call) | Published |
+| Gemini Managed Agents | Yes (July 7) | Yes (July 7) | Yes (`requires_action`) | Preview only, compute unbilled |
+| Claude Managed Agents (Anthropic) | Yes | Yes (MCP tunnels, limited research preview) | Yes | Published |
+| AWS Bedrock AgentCore | Yes | Yes (via Gateway) | Yes | Published |
+| OpenAI Responses API | Yes (`background: true`) | Yes (remote MCP servers) | Yes (function calling) | Published |
 
-The Gemini offering is now technically competitive on the feature axis. Pricing and long-term availability commitments are the remaining unknowns for builders evaluating a platform bet.
+Sources for the non-Gemini rows: Claude Managed Agents — [Anthropic's launch post](https://claude.com/blog/claude-managed-agents) (async/long-running use case, pricing) and [platform docs](https://platform.claude.com/docs/en/managed-agents/overview) (MCP servers as a built-in tool; MCP tunnels in limited preview). AWS Bedrock AgentCore — [product page](https://aws.amazon.com/bedrock/agentcore/) and [async task docs](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-long-run.html) (background processing), plus [published rates](https://aws.amazon.com/bedrock/agentcore/pricing/). OpenAI Responses API — [background mode docs](https://developers.openai.com/api/docs/guides/background) and [MCP and connectors docs](https://developers.openai.com/api/docs/guides/tools-connectors-mcp) (remote MCP server support).
+
+By feature checklist the four platforms now look similar; the real differences are in maturity (Anthropic's MCP tunnels are still a limited research preview) and pricing model. Gemini Managed Agents is the only one of the four with no published pricing at all — everything else on this list charges for compute or usage today.
 
 ---
 
