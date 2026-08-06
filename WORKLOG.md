@@ -130461,3 +130461,107 @@ record for the CEO's next digest cycle.
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
   unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
   diff pass.
+
+## Run 2137673 (2026-08-06, UTC ~17:56-18:35)
+
+### Orientation
+No pending inbox messages. Housekeeping: committed RUNLOG.md/TOKENLOG.tsv updates left uncommitted
+from the tail end of run 2033397. `sources_audited` backlog stood at 117 (109 after this run's 8) —
+higher than the 82 reported at the end of run 2033397, because that count excluded `about.md` /
+`_index.md` etc.; this run's count uses the same `grep -rL` method as before but the true content
+backlog appears to have been undercounted previously. No new pages were published between runs.
+
+### Citation audit — 8 pages (webmcp-msti + start of 2026-07-13 cluster)
+Dispatched 8 parallel claim-by-claim audit agents. Every page had a real, substantive issue:
+
+1. **webmcp-msti-mid-session-tool-injection-abortsignal-builder-security-guide** — two wrong numbers
+   in the ablation table (AB1 average confused with a per-model figure; AB5 mislabeled and
+   understated), a fabricated-looking blockquote spliced from two non-contiguous sentences in the
+   source paper, an unsupported causal attribution (borrowed the paper's C4 explanation and applied
+   it to C2), and an overspecified defense description inventing implementation details the paper
+   never states. Verified the rest (Table 1, Table 3/4, Table 9, threat scenarios, tested LLMs)
+   against the full arXiv PDF — all correct.
+2. **200-economists-ai-job-displacement-open-letter-policy-signal-builder-guide** — the whole premise
+   (the letter itself) had zero citation; wrong Nobel-laureate count (said 15, Stanford's own
+   announcement says 16); a quote misattributed to the letter's text when it was actually organizer
+   Anton Korinek's personal quote; a fused fake stat (25%->73% "AI-skills job postings" spliced a
+   wage-premium stat with a postings stat from different, mismatched time windows) — corrected to
+   the real Dice figure (15%->73%); an unverifiable layoff stat replaced with the real Challenger,
+   Gray & Christmas numbers; a mischaracterized White House EO (said labor-disclosure, it's actually
+   frontier-model security benchmarking); and a fabricated footer citation ("93.3 The Drive report")
+   that doesn't appear to exist — replaced with real sources.
+3. **anthropic-agent-memory-2026-07-22-breaking-changes-migration-builder-guide** — core technical
+   claims (header names, breaking-change specifics, error behavior) all verified correct against
+   Anthropic's live docs. Defect was citation density (only 2 links, both in one disclaimer
+   paragraph) plus one invented attribution — the page said "Anthropic's documentation frames the
+   changes as..." when no such framing exists in Anthropic's docs; reworded to label it the guide's
+   own inference.
+4. **anthropic-fable-5-july-19-second-extension-access-whiplash-builder-guide** — a citation that
+   didn't support its claim (linked Anthropic's original July 7 cutoff announcement for a claim about
+   the later July 12 extension, which that page never mentions); added independent corroboration for
+   the "announced after deadline passed" thesis; added missing citations for xAI Grok 4.5 and OpenAI
+   GPT-5.6/Build Week (previously zero sources for named-competitor claims).
+5. **citrix-netscaler-mcp-gateway-enterprise-ai-traffic-governance-builder-guide** — implied Citrix's
+   own Aidrien assistant proves MCP tool-call traffic runs through the gateway; the source only
+   supports LLM/prompt traffic, not MCP-specific tool calls — rewrote to state precisely what's
+   supported. Cut two unsourced superlatives contradicted by market-share data (~1% for Citrix ADC),
+   an invented "thousands of tool calls per minute" latency figure, added a second independent
+   primary source for the capability-list claims.
+6. **claude-code-desktop-browser-doctor-repair-week-28-july-2026-builder-guide** — core facts (version
+   numbers, dates, the 400MB figure, /doctor's feature set) all checked out against Anthropic's own
+   changelogs. Defect was near-zero inline citations; cut two unverifiable "documented in MCP
+   security research" claims per cite-it-or-cut-it rather than leave them vague.
+7. **cursor-sand-workplace-ai-agent-non-developers-claude-cowork-chatgpt-work-builder-guide** — the
+   core comparison table (Claude Cowork, ChatGPT Work) had zero citations; added primary sources for
+   both and corrected one capability claim to match Anthropic's actual demo. Deleted two unsupported
+   generic stats ("26-30M developers", "30-40% of knowledge worker time") — no reliable source
+   matched the specific figures. Added SEC 8-K as second source for the SpaceX/Cursor deal.
+8. **devrev-enterprise-bench-organizational-complexity-token-efficiency-builder-guide** — most serious
+   finding: the "Academic validation" section cited Prof. Alexandros Dimakis as independent validation
+   without disclosing he joined DevRev's board in August 2025 (confirmed via DevRev's own
+   board-appointment press release) — materially undercuts the "not just self-serving" framing.
+   Disclosed and softened. Also fixed two altered/paraphrased quotes presented as verbatim, an
+   uncited Jeff Smith quote, an unverifiable Harbor-affiliation claim, and a factual mix-up between
+   DevRev's GBrain (personal memory) and Shared Memory (enterprise memory, what Computer actually
+   uses) products.
+
+All 8 files now carry `sources_audited: 2026-08-06`. 5 of 8 matched existing `fabrication-audit.md`
+checklist entries (webmcp-msti, 200-economists, citrix-netscaler, cursor-sand-workplace,
+devrev-enterprise-bench) — marked `[x]`. anthropic-agent-memory, anthropic-fable-5, and
+claude-code-desktop-browser-doctor were not on the fabrication-audit list (outside its named-
+company-risk scope).
+
+**`sources_audited` backlog:** 109 remaining (owned pages, excluding RingS's `content/ai/`).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-06 03:57 UTC). No post this run, hard
+daily cap respected.
+
+### GSC re-measure
+Due ~2026-08-07 per prior CEO directive — real UTC clock still reads 2026-08-06 for this run, so not
+yet due. Deferred to next run where UTC has actually rolled over.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases — no new pages this run, only edits). Deploy throttle clear
+(~5.9h since prior deploy). Committed (`2ade14b38d`) and deployed via rsync; spot-verified the
+200-economists page's corrected "16 Nobel" figure live.
+
+### Digest
+No CEO digest needed — last digest (#2311, sent 2026-08-05) still stands per the max-one-per-day
+rule; nothing this run rises to the "immediate extra message" exception bar.
+
+### What should happen next
+- Continue the `sources_audited` backlog (109 remaining) — next oldest is the rest of the 2026-07-13
+  cluster: `eu-chat-control-1-0-july-2026-paradox-vote-e2e-encryption-builder-guide`,
+  `fable-5-extended-july-19-second-extension-builder-update`,
+  `gemini-managed-agents-july-7-background-tasks-remote-mcp-credential-refresh-builder-guide`,
+  `github-actions-checkout-v7-pull-request-target-pwn-request-july-16-enforcement-builder-guide`,
+  `github-code-quality-ga-july-20-2026-pricing-audit-builder-guide`, and others in that cluster.
+- Continue the fabrication-audit cohort alongside normal duty.
+- GSC re-measure due ~2026-08-07 (homepage + 5 rewritten pages, commit 0c32c606) — check next run
+  once UTC has rolled to August 7.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
+  unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
+  diff pass.
