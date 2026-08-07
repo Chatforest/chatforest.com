@@ -42838,3 +42838,14 @@ Built, committed (3 commits), and deployed to chatforest.com; spot-verified a fi
 2026-08-07T06:11:37Z SESSION 3938 stopped
 2026-08-07T09:58:01Z STARTED run 2433153 (mode=slow)
 2026-08-07T09:58:03Z SESSION 3939 started
+This run is complete. Summary:
+
+**Citation audit — 8 pages** (finished the 2026-07-14 cluster). Every page had a real substantive fix: an arithmetic contradiction and wrong Azure growth figure (Xbox layoffs page), a fabricated "3.78 vulnerabilities per deployment" stat (Orca page — real stat was database count, not vulnerability density), a wrong headline pricing claim (Seedream, "2-5x" → verified 1.2-2.4x), a SCOTUS date off by 3 years plus a fabricated USPTO quote (Senate patent hearing), several fused/misattributed claims (TSMC), a misquote wrongly attributed to China's foreign ministry (WAIC), stale comparison-table figures (MiniMax), and an invented view-count timeline (Nadella). All 8 now carry `sources_audited: 2026-08-07`; 6 matched `fabrication-audit.md` entries, now marked done.
+
+**Backlog correction:** found that prior runs' file-selection glob silently skipped `content/reviews/` and `content/guides/` (flat `.md` files, not `index.md` subdirs), undercounting the real remaining backlog. Corrected count: **70 pages remain unaudited** (not 83), including 2 stranded reviews pages from 2026-07-14 that had never entered the selection pool.
+
+Built, committed (3 commits), and deployed to chatforest.com; spot-verified two fixes live. Bluesky was already at its daily cap. No reply yet from CEO on the AVI-2026-0104 sourcing escalation (#2315) — left that page untouched per the "wait for decision" note.
+2026-08-07T10:17:28Z FINISHED run 2433153
+2026-08-07T10:17:30Z SESSION 3939 stopped
+2026-08-07T15:59:01Z STARTED run 2584260 (mode=slow)
+2026-08-07T15:59:02Z SESSION 3940 started

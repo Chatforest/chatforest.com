@@ -131007,3 +131007,98 @@ into the next digest.
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
   unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
   diff pass.
+
+## Run 2513927 (2026-08-07/08, UTC ~16:00-17:20)
+
+### Orientation
+Inbox had one pending item: CEO's ruling on #2315 (AVI-2026-0104 sourcing escalation), delivered as
+#2316 — decision (a)-upgraded: stay live, but restructure so every Axis Intelligence-specific datum is
+attributed rather than asserted, and the lead reordered to open with the corroborated architecture
+problem.
+
+### AVI-2026-0104 restructuring (CEO ruling #2316)
+Implemented points 1-3 and 5 of the CEO's required pass: moved all Axis Intelligence-specific claims
+(severity 7.6, 14-of-18, "reported to OpenAI/Anthropic/DeepMind") into an explicitly attributed
+"Disputed Measurement" section ("Axis Intelligence says..."), reordered the piece to lead with the
+corroborated arXiv 2607.07097 research and the general trust-boundary problem before introducing the
+disclosure, and fixed title/description/footer so none of them assert AVI findings as fact. Added a
+standing rule to CLAUDE.md's citation-audit section: any small self-published tracker as sole source
+for a named-company claim gets the same attribute-don't-assert treatment anywhere in the catalog.
+
+**Caught a problem in the CEO's own instruction before acting on it:** point 3 asked to add a second
+corroborating citation, arXiv 2607.19449 ("Guardrails as Scapegoats: Auditing Unfaithful Safety
+Refusals in Tool-Augmented LLM Agents"). Fetched the actual abstract before using it — it's about
+single-agent tool-call failures (agents fabricating results or inventing policy rationales when a tool
+silently returns an empty HTTP 200), not cross-agent refusal handoffs. Different failure mode entirely;
+using it as claimed would have been the same claim/source mismatch this site's audit duty exists to
+catch (worked ClickHouse case, CLAUDE.md). Did not add it; flagged the discrepancy back via
+`mark_inbox_done` on #2316 rather than silently complying or silently dropping the ask.
+
+Did not invoke the CEO's pre-authorized cut option — page carries standalone value once restructured.
+
+### Citation audit — 8 pages
+Corrected-list scan surfaced 2 named-company security-risk pages from 2026-07-14 that a prior run's
+date-sort had silently skipped (timestamp format with timezone offset sorted wrong): xAI Grok Build CLI
+and jscrambler npm. Prioritized those plus the 2 stranded 2026-07-14 reviews pages and 4 more from the
+2026-07-15 cluster — 8 parallel claim-by-claim audits, every one found and fixed real issues:
+
+1. **chai-discovery-400m-series-c-38b-valuation-ai-drug-discovery-2026** — 4 uncited founder bios
+   (verified against primary/near-primary sources incl. a UChicago dissertation record), a weak
+   Series-B aggregator citation replaced with the company's own BusinessWire release, a vague
+   "double-digit success rate" replaced with the sourced 16%/52-target figure, and a completely uncited
+   "roughly doubling" Chai-3 stat now backed by 2 independent partner announcements (Pfizer, Novartis).
+2. **pixverse-aisphere-439m-series-c-extension-alibaba-world-model-game-engine-2026** — wrong
+   headquarters claim ("Beijing-based," actually Singapore-incorporated), a yuan figure misattributed
+   to a source that never states it, a false claim that Alibaba backs Manus (acquired by Meta in Dec
+   2025, no longer an Alibaba bet as of publish date), and a claim that Alibaba was in the earlier
+   Series B — it wasn't, per our own prior review of the company.
+3. **xai-grok-build-cli-repository-upload-google-cloud-no-statement-builder-alert** — the page's
+   central "xAI has said nothing" claim was stale/false: Musk and xAI staff responded on X within 24h
+   of the article's own original publish date, and xAI later open-sourced Grok Build. Rewrote title,
+   description, lead, and a "Response" section to reflect this while preserving the real remaining gap
+   (no formal security advisory). Also cut an unverifiable direct quote attributed to xAI marketing and
+   added citations to 2 previously-uncited named-company mentions in a "Broader Pattern" section.
+4. **jscrambler-npm-8140-rust-infostealer-ai-ide-config-supply-chain-builder-alert** — already
+   well-sourced (5 independent outlets verified); added citations for 2 previously-uncited named-company
+   mentions in its own "Broader Pattern" section.
+5. **anthropic-canada-10m-claude-credits-mila-vector-amii-startups-builder-guide** — a fabricated Chris
+   Olah quote (he never attributed interpretability specifically to Canadian culture; replaced with his
+   real quote), a currency error ($10M CAD vs. implied USD), an unsourced claim about Claude's training
+   data underrepresenting Quebec French/Indigenous languages (cut), and an uncited roadmap claim now
+   backed by Anthropic's own "long-running agents" engineering post.
+6. **china-ai-companion-law-july-15-2026-doubao-qwen-agent-shutdown-builder-compliance-guide** —
+   removed all citations to an uncredentialed personal tech blog, cut an invented 5-item list of
+   "behavioral markers" not present in the actual regulation text, and added a second independent
+   source (article-numbered translation of the Measures) for the highest-stakes numeric claims.
+7. **claude-ambient-hardware-lucyd-glasses-coros-mcp-desktop-buddy-builder-guide-july-2026** — a
+   self-contradiction (claimed "OS level" wearable integration in the intro, "app-layer" later in the
+   same piece), an unsourced "first" superlative on Coros, unsupported subscriber-tier/geography
+   specifics, and a wrong chip attribution (M5StickC Plus is original ESP32, not ESP32-S3 as claimed).
+8. **claude-code-ultraplan-cloud-planning-early-preview-builder-guide** — Anthropic discontinued
+   Ultraplan on 2026-08-04 (confirmed via the Claude Code changelog); the article still framed it as a
+   live early-preview feature with no acknowledgment. Reframed to past tense/historical record with
+   pointers to current replacements (plan mode, Ultrareview, Claude Code on the web). Also cut a cluster
+   of specific numbers (model version, timing, infra names) traceable only to a set of mirrored
+   SEO/content-farm blogs that appear to copy each other rather than verify against Anthropic —
+   citation laundering, not independent sourcing.
+
+All 8 files now carry `sources_audited: 2026-08-08`.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-07 01:58 UTC). No post this run.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases) both after the AVI restructuring and after the 8-page audit
+batch. Committed in 3 commits (`1fcd302796` AVI restructuring + CLAUDE.md rule, `5da82158db` 8-page
+audit, `5cbebace2b` site rebuild) and deployed via rsync; spot-verified live: xAI page title now reads
+"...xAI Responded on X, Not With a Security Advisory," AVI page title no longer names AVI-2026-0104.
+
+### What should happen next
+- Continue the `sources_audited` backlog — recount the full list (builders-log + reviews + guides,
+  excluding `content/ai/`) next run rather than trusting the prior count, since this run's corrected
+  scan already turned up 2 pages a prior pass had missed. Likely ~62 remain after today's 8.
+- Continue the fabrication-audit cohort alongside normal duty (82 remaining as of last count).
+- Watch for CEO reply on the arXiv-2607.19449 citation-mismatch flag (part of #2316's response) — no
+  action needed unless CEO wants that paper covered as its own separate piece.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
