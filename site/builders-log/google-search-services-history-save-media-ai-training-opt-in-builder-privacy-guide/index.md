@@ -3,27 +3,27 @@
 > Google quietly replaced Web & App Activity with 'Search Services History' in June 2026, adding a nested 'Save Media' toggle that defaults to ON — feeding your team's Google Lens images, voice searches, Search Live recordings, and uploaded files into Google's AI training pipeline for up to four years. Here is what builders and enterprise teams need to know and do.
 
 
-On June 10, 2026, Google quietly replaced the familiar Web & App Activity control for search data with a new framework called **Search Services History**. On July 12, it began rolling the change out broadly, with a nested **Save Media** toggle that is **on by default**. When Save Media is on, Google retains images, audio, and video from your interactions with Search services and uses them to develop and improve its AI models — including training generative AI — for up to four years.
+In late May 2026, Google began rolling out a replacement for the long-standing Web & App Activity control on search-related data: a new framework called **Search Services History**, paired with a separate **Personalized Recommendations** setting ([9to5Google, May 26, 2026](https://9to5google.com/2026/05/26/google-search-services-history-settings/); [Google Search Help: Get started with Search Services History](https://support.google.com/websearch/answer/17025248?hl=en)). By late June, coverage identified a nested **Save Media** sub-toggle inside that framework, and Google's own support documentation confirms it migrates to **on** for any account that previously had Web & App Activity turned on — which is most accounts, since that was itself the historical default ([9to5Google, June 22, 2026](https://9to5google.com/2026/06/22/google-saving-audio-images-used-to-search-how-to-turn-it-off/); [BleepingComputer, June 24, 2026](https://www.bleepingcomputer.com/news/google/google-releases-new-privacy-controls-for-activity-history-personalization/); [TechRepublic](https://www.techrepublic.com/article/news-google-search-uploads-train-ai-opt-out/)). When Save Media is on, Google retains images, audio, and video from your interactions with Search services and uses them to develop and improve its AI models — including the generative AI models behind AI Mode, Lens, Translate, and Search Live — disconnecting the media from your account first and retaining it for up to four years ([Google Search Help: Manage your saved media in Search Services History](https://support.google.com/websearch/answer/17028154?hl=en)).
 
-Most users never saw a notification. The change arrived via a customer email in late June. Most did not read it.
+TechCrunch described the update as "under-the-radar," reporting that Google announced it to users only via a customer email in June rather than a more prominent notice ([TechCrunch, July 6, 2026](https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/)).
 
 ---
 
-This is a research-based guide. Facts are drawn from Google's support documentation, TechCrunch, TechRepublic, Tom's Guide, Euronews, and reporting from multiple outlets. We did not test these settings ourselves.
+This is a research-based guide. Facts are drawn from Google's own support documentation and reporting from [9to5Google](https://9to5google.com/2026/06/22/google-saving-audio-images-used-to-search-how-to-turn-it-off/), [TechCrunch](https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/), [TechRepublic](https://www.techrepublic.com/article/news-google-search-uploads-train-ai-opt-out/), [Tom's Guide](https://www.tomsguide.com/ai/google-just-changed-a-major-privacy-setting-heres-the-switch-i-turned-off-immediately), [BleepingComputer](https://www.bleepingcomputer.com/news/google/google-releases-new-privacy-controls-for-activity-history-personalization/), and [Euronews](https://www.euronews.com/next/2026/07/07/is-google-using-your-searches-to-train-its-ai-heres-how-to-opt-out). We did not test these settings ourselves.
 
 ---
 
 ## What Is Being Captured
 
-When Save Media is on and you are signed into a Google account, Google saves:
+When Save Media is on and you are signed into a Google account, Google's own support documentation and contemporary reporting describe it saving:
 
-- **Google Lens** — images submitted for search, including screenshots from Circle to Search
-- **Google Search Live** — audio and video recordings from real-time search sessions
-- **Voice search** — recordings from spoken queries
-- **Google Translate** — spoken phrases entered for speaking-practice sessions
-- **Uploaded files** — documents and images you attach or upload during a search interaction
+- **Google Lens** — images submitted for search, including screenshots from Circle to Search ([BleepingComputer](https://www.bleepingcomputer.com/news/google/google-releases-new-privacy-controls-for-activity-history-personalization/))
+- **Google Search Live** — audio and video recordings from real-time search sessions ([Google Search Help](https://support.google.com/websearch/answer/17028154?hl=en))
+- **Voice search** — recordings from spoken queries ([Google Search Help](https://support.google.com/websearch/answer/17028154?hl=en))
+- **Google Translate** — spoken phrases entered for speaking-practice sessions ([9to5Google](https://9to5google.com/2026/06/22/google-saving-audio-images-used-to-search-how-to-turn-it-off/))
+- **Uploaded files** — documents and images attached during AI Mode or Ask Maps search interactions ([Euronews](https://www.euronews.com/next/2026/07/07/is-google-using-your-searches-to-train-its-ai-heres-how-to-opt-out))
 
-The data is not saved in identifiable form forever. Google says it disconnects saved media from your Google Account before using it for AI training, applies filtering for sensitive content, and retains it for up to four years.
+The data is not saved in identifiable form forever. Google's support page for the setting states that data is "disconnected from your Google Account before it is used to train our AI models or reviewed by our trained service providers," that Google uses "filters designed to automatically remove a broad range of identifying info or sensitive personal information," and that saved media used for training is retained for up to four years ([Google Search Help: Manage your saved media in Search Services History](https://support.google.com/websearch/answer/17028154?hl=en)). That same page notes disabling Save Media does not delete or disconnect media saved before the toggle was switched off.
 
 Four years is a long data retention window, and "disconnected from your account" is not the same as deleted.
 
@@ -37,7 +37,7 @@ The personal-privacy story is well covered elsewhere. The builder and enterprise
 
 If you build a product that uses Google Lens via the API, or that encourages users to run Google searches as part of your workflow — and those users are signed into Google — their submitted images and audio may now feed Google's AI training. That is a data-flow your privacy policy, terms of service, and enterprise agreements may not currently disclose.
 
-This does not apply to server-side API calls. The Google Lens API and Google Cloud Vision API operate under Google Cloud's separate data processing agreements, which have different data retention terms. The risk is specific to **browser-based and mobile interactions where users are signed into a personal Google account**.
+This does not apply to server-side API calls. Google Cloud's Vision API documentation states Google does not use customer image content "for any purpose except to provide you with the Vision API service," that content isn't used to train or fine-tune models without customer permission, and that the API is covered by the Cloud Data Processing Addendum rather than the consumer Search settings described here ([Google Cloud: Vision API data usage](https://docs.cloud.google.com/vision/docs/data-usage)). The risk described in this piece is specific to **browser-based and mobile interactions where users are signed into a personal Google account**, not to Google Cloud API usage.
 
 ### 2. Enterprise teams doing sensitive research face real exposure
 
@@ -54,9 +54,9 @@ Enterprise Google Workspace accounts with managed Chrome policies may have diffe
 
 ### 3. GDPR and CCPA exposure
 
-In July 2026, the European Union opened an investigation into whether Google's terms on content creators for AI are fair. For EU users, Google's claimed lawful basis for using uploaded media in AI training may face challenge — GDPR generally requires explicit consent, not an opt-out buried in nested account settings.
+This is our own analysis, not a reported fact: we found no formal regulatory complaint or investigation specifically targeting the Save Media default as of this writing. Separately, on December 9, 2025, the European Commission opened a formal antitrust investigation into Google's use of web publisher and YouTube content to power AI Overviews and AI Mode — a different issue (competition law, publisher/creator compensation for training content) from the consumer Save Media setting covered here ([European Commission press release IP/25/2964](https://ec.europa.eu/commission/presscorner/detail/en/ip_25_2964); [Computerworld](https://www.computerworld.com/article/4103262/european-commission-investigates-googles-ai-training-processes.html)). We mention it only as evidence that Google's AI-training data sourcing is under active EU scrutiny generally, not as an investigation into this specific setting.
 
-If you operate a product serving EU users that routes any data through Google Search services, this change may affect your GDPR compliance posture. Legal review is warranted before this becomes a regulatory issue.
+On the merits: where a company relies on consent as its lawful basis under the GDPR, that consent must be freely given, specific, informed, and given through a clear affirmative action — not inferred from a pre-set default a user never actively chose (GDPR [Article 6](https://gdpr-info.eu/art-6-gdpr/) and [Article 7](https://gdpr-info.eu/art-7-gdpr/)). Whether Google is instead relying on a different lawful basis (such as legitimate interest) for Save Media, and whether that basis would hold up, is a genuinely open legal question we are not able to resolve here. If you operate a product serving EU users that routes any data through Google Search services, that open question is a reason for your own legal review, not a settled compliance verdict.
 
 ---
 
@@ -69,7 +69,7 @@ The setting lives at [myactivity.google.com](https://myactivity.google.com). The
 3. To stop all search history collection: turn off Search Services History entirely
 4. To keep personal search history but stop media capture: leave Search Services History on, find the nested **Save Media** sub-toggle, and uncheck it
 
-The two controls are separate. Turning off Web & App Activity (the old control) does not affect Search Services History — this is a new framework.
+The two controls are separate. Turning off Web & App Activity (the old control) does not affect Search Services History — this is a new framework ([Google Search Help: Manage your saved media in Search Services History](https://support.google.com/websearch/answer/17028154?hl=en); [TechRepublic](https://www.techrepublic.com/article/news-google-search-uploads-train-ai-opt-out/)).
 
 ---
 
@@ -86,10 +86,10 @@ The two controls are separate. Turning off Web & App Activity (the old control) 
 
 This change is part of a broader pattern. Google is systematically expanding the data surface it can use for AI training:
 
-- June 10: Search Services History framework introduced, replacing Web & App Activity for search data
-- July 7: Rolling out broadly, privacy coverage begins
-- July 12: Save Media sub-toggle released to users
-- July 2026: EU opens investigation into Google's AI training terms for content creators
+- **December 9, 2025**: European Commission opens a formal antitrust investigation into Google's use of publisher and YouTube content for AI ([European Commission](https://ec.europa.eu/commission/presscorner/detail/en/ip_25_2964)) — a separate matter from Search Services History, included here only as evidence of the broader pattern
+- **May 26, 2026**: Search Services History and Personalized Recommendations settings begin rolling out, replacing Web & App Activity for Search services ([9to5Google](https://9to5google.com/2026/05/26/google-search-services-history-settings/))
+- **June 22, 2026**: Reporting identifies the Save Media sub-toggle capturing images, audio, and video by default for migrated accounts ([9to5Google](https://9to5google.com/2026/06/22/google-saving-audio-images-used-to-search-how-to-turn-it-off/))
+- **July 6–7, 2026**: Broader "how to opt out" press coverage begins ([TechCrunch](https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/); [Euronews](https://www.euronews.com/next/2026/07/07/is-google-using-your-searches-to-train-its-ai-heres-how-to-opt-out))
 
 The pattern is familiar from the AI industry broadly: expand what is collected, default new categories to on, provide opt-out mechanisms that require effort to discover. For enterprise builders, the appropriate response is not to trust that defaults will protect you — audit what your users' data is touching, what those services' terms permit, and whether your own disclosures are accurate.
 

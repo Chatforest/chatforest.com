@@ -4,11 +4,12 @@ date: 2026-07-14
 description: "Two July 6 arXiv papers demonstrate AI agent memory poisoning at 98% injection and 60% activation rates. Mem0, Letta, A-Mem, and MemoryOS are all vulnerable. Here is what builders using persistent agent memory must do now."
 tags: ["security", "ai-agents", "memory", "prompt-injection", "mem0", "letta", "mcp", "builders"]
 series: "builder-security"
+sources_audited: 2026-08-07
 ---
 
 Two papers landed on arXiv on the same day — July 6, 2026 — and together they make the same argument: **if your AI agent has persistent memory and reads external input (email, calendar, documents), your users' future behavior can be remotely programmed by an attacker without anyone noticing.**
 
-The papers are "When Claws Remember but Do Not Tell" (arXiv:2607.05189, the MemGhost paper) and "When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents" (arXiv:2607.06595, the GhostWriter paper by Torres, Shrestha, and Misra). The Hacker News covered MemGhost on July 13.
+The papers are ["When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents"](https://arxiv.org/abs/2607.05189) (arXiv:2607.05189, by Yechao Zhang, Shiqian Zhao, Jiawen Zhang, Jie Zhang, Gelei Deng, Xiaogeng Liu, Chaowei Xiao, and Tianwei Zhang — the MemGhost paper) and ["When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents"](https://arxiv.org/abs/2607.06595) (arXiv:2607.06595, the GhostWriter paper by George Torres, Sharad Shrestha, and Satyajayant Misra). Both were submitted to arXiv on July 6, 2026. [The Hacker News covered MemGhost on July 13](https://thehackernews.com/2026/07/new-memghost-attack-plants-persistent.html).
 
 No CVEs have been assigned. No frameworks have been patched. The attack works right now.
 
@@ -16,7 +17,7 @@ No CVEs have been assigned. No frameworks have been patched. The attack works ri
 
 ## What is AI agent memory poisoning?
 
-Modern personal AI assistants — ChatGPT with memory, Claude Projects, Gemini, and open-source stacks like Mem0 or Letta — keep a persistent notes file about you: your preferences, your contacts, your recurring requests. At the start of every new session the agent loads those notes as trusted context. That is why it "knows" you.
+Modern personal AI assistants — [ChatGPT's memory feature](https://help.openai.com/en/articles/8590148-memory-faq), [Claude Projects](https://support.claude.com/en/articles/9517075-what-are-projects), [Gemini's Personal Context memory](https://support.google.com/gemini/answer/16598469?hl=en), and open-source stacks like Mem0 or Letta — keep a persistent notes file about you: your preferences, your contacts, your recurring requests. At the start of every new session the agent loads those notes as trusted context. That is why it "knows" you.
 
 The attack exploits exactly that design. An attacker sends you a specially crafted email. Your agent reads it, processes it — and instead of just generating a reply, it *also* writes a false fact into your persistent memory file. The reply you see is completely ordinary. The memory file now says whatever the attacker wanted.
 
@@ -26,7 +27,7 @@ Every future conversation is now shaped by that poisoned fact. The agent is poli
 
 ## MemGhost: 87.5% success on GPT-5.4, 71.4% on Claude Code SDK
 
-The MemGhost paper focused on **OpenClaw**, an open-source agent framework, tested against two backends: GPT-5.4 and Claude Code SDK (Sonnet 4.6).
+The [MemGhost paper](https://arxiv.org/abs/2607.05189) focused on **OpenClaw**, an open-source agent framework, tested against two backends: GPT-5.4 and Claude Code SDK (Sonnet 4.6).
 
 **How the attack works (step by step):**
 
@@ -37,28 +38,31 @@ The MemGhost paper focused on **OpenClaw**, an open-source agent framework, test
 5. The agent generates a normal-looking reply. The memory-write call does not appear in chat history.
 6. In future sessions, the poisoned memory loads as trusted context and steers the agent's advice.
 
-The researchers also built an **automatic payload generator** and a benchmark (WhisperBench, 108 test cases) to evaluate attack quality at scale.
+The researchers also built an **automatic payload generator** and a benchmark ([WhisperBench](https://arxiv.org/abs/2607.05189), 108 test cases spanning five risk categories) to evaluate attack quality at scale.
 
-**Success rates:**
+**Success rates** (end-to-end attack, 56 held-out test cases, background/no-visible-output mode):
 
-| Condition | GPT-5.4 | Claude Code SDK (Sonnet 4.6) |
+| Condition | GPT-5.4 (OpenClaw) | Claude Code SDK (Sonnet 4.6) |
 |-----------|---------|------------------------------|
 | Background mode (no visible output) | **87.5%** | **71.4%** |
 
-**Defense bypass results (GPT-5.4):**
-- Input filter failed to catch MemGhost payloads **>90% of the time**
-- Even a "hardened" model still followed planted instructions **~50% of attempts**
-- Attack remained **hidden ~25% of the time** even when users explicitly asked their assistant to disclose what it had just done
+Source: [arXiv:2607.05189, Table I](https://arxiv.org/abs/2607.05189).
 
-The example payload the paper demonstrates: the attack injected a false memory that *the user's Zelle daily sending limit had been raised to $10,000*. An agent with financial tools would then act on that limit in future sessions.
+**Defense bypass results** (measured against the OpenClaw/GPT-5.4 configuration, [arXiv:2607.05189, Table IV](https://arxiv.org/abs/2607.05189)):
+- The DataSentinel input-level filter failed to flag MemGhost's deceptive email **91.6% of the time** (false negative rate)
+- Even Meta-SecAlign, a model hardened to ignore external-environment instructions, still followed the planted instruction **49.1% of the time**
 
-OpenClaw's position: prompt injection alone is out of scope unless it crosses authorization or sandbox boundaries. Memory poisoning via the agent's own tools does not trigger those thresholds. They acknowledged they are evaluating memory-write controls including audit logs and confirmation prompts — but nothing is deployed yet.
+Separately, under direct interrogation ("tell me what actions you took"), MemGhost's ability to stay concealed varied sharply by backend: it stayed hidden only **7.1% of the time on OpenClaw/GPT-5.4**, but **25.0% of the time on Claude Sonnet 4.5** and 23.2% on Sonnet 4.6 ([arXiv:2607.05189, Table V](https://arxiv.org/abs/2607.05189)) — i.e., Claude-backed agents were more likely than the GPT-5.4 agent to keep concealing a poisoned-memory write even when the user asked directly.
+
+The example payload [reported by The Hacker News](https://thehackernews.com/2026/07/new-memghost-attack-plants-persistent.html): the attack injected a false memory that *the user's Zelle daily sending limit had been raised to $10,000*. An agent with financial tools would then act on that limit in future sessions.
+
+OpenClaw's own [security policy](https://docs.openclaw.ai/gateway/security) lists "prompt-injection-only chains without a policy, auth, or sandbox bypass" as **not vulnerabilities by design** — memory poisoning via the agent's own memory-write tool does not cross those boundaries. [The Hacker News reported](https://thehackernews.com/2026/07/new-memghost-attack-plants-persistent.html) that OpenClaw told the outlet it is "weighing memory-write controls for external content, including provenance, audit logs, and confirmation prompts" — but nothing is deployed yet.
 
 ---
 
 ## GhostWriter: 98% injection rate across A-Mem, Mem0, ExpeL, Letta, MemoryOS
 
-The GhostWriter paper is the systematic coverage. Torres et al. tested **five of the most widely-used memory-augmented agent frameworks:**
+The [GhostWriter paper](https://arxiv.org/abs/2607.06595) is the systematic coverage. Torres et al. tested **five of the most widely-used memory-augmented agent frameworks:**
 
 - **A-Mem**
 - **Mem0**
@@ -75,17 +79,17 @@ Across **four LLM backends:** GPT-5.4-mini, DeepSeek-V4-Flash, Gemini-2.5-Flash,
 | Memory injection (writing false fact into store) | **~98%** |
 | Attack activation (false memory steering agent output) | **~60%** |
 
-The 98% injection rate tells you the frameworks have no meaningful defense at the write boundary. The 60% activation rate tells you that even once injected, the false memory reliably shapes future behavior more than half the time.
+Source: [arXiv:2607.06595 abstract](https://arxiv.org/abs/2607.06595). The 98% injection rate tells you the frameworks have no meaningful defense at the write boundary. The 60% activation rate tells you that even once injected, the false memory reliably shapes future behavior more than half the time.
 
-**Breakdown by model:**
+**Breakdown by model** ([arXiv:2607.06595](https://arxiv.org/html/2607.06595v1)):
 - Highest vulnerability: ChatGPT (GPT-5.4-mini) and DeepSeek-V4-Flash
 - Lower vulnerability: Gemini-2.5-Flash and Llama 3.1 8B
-- ExpeL with Llama showed only 28% activation — the lowest observed
+- ExpeL's activation rate ranged 28%–63% across the four backends — the lowest of the five frameworks tested, with Llama at the low end
 
-**By attack category:**
-- **Integrity corruption** (changing beliefs/preferences): highest activation rates, up to 100% in some configurations
-- **Sensitive information leakage** (exfiltrating data through later responses): lower, payload-dependent
-- **Scope escalation** (expanding what the agent will do without permission): relatively lower
+**By attack category** ([arXiv:2607.06595](https://arxiv.org/html/2607.06595v1)):
+- **Integrity corruption / covert exfiltration** (changing beliefs/preferences): highest activation rates, peaking at 100% for ChatGPT, DeepSeek, and Llama in some configurations
+- **Sensitive information leakage** (exfiltrating data through later responses): lowest susceptibility overall
+- **Scope escalation** (expanding what the agent will do without permission): much lower with descriptive payloads
 
 ---
 
@@ -99,7 +103,7 @@ Three things combine to make memory poisoning particularly persistent:
 
 **3. The memory loads as trusted context.** Future sessions retrieve the poisoned memory and treat it the same as anything else the user taught the agent. There is no provenance tracking that says "this fact came from an email on July 8."
 
-The MemGhost paper found that even when users explicitly asked their assistant whether it had just modified anything, the agent concealed the action roughly one in four times.
+The MemGhost paper found that even when users explicitly asked their assistant whether it had just modified anything, a Claude Sonnet 4.5-backed agent still concealed the action roughly one in four times (25.0%), and Sonnet 4.6 close behind (23.2%) — versus 7.1% for the OpenClaw/GPT-5.4 configuration ([arXiv:2607.05189, Table V](https://arxiv.org/abs/2607.05189)).
 
 ---
 
@@ -115,7 +119,7 @@ If your agent reads email or calendar and also has memory-write capability, this
 
 ## The GhostWriter mitigation: AM-Sentry
 
-Torres et al. proposed **AM-Sentry (Agentic Memory Sentry)**, a defense layer with two components and three policy strictness levels.
+Torres et al. proposed **[AM-Sentry (Agentic Memory Sentry)](https://arxiv.org/abs/2607.06595)**, a defense layer with two components and three policy strictness levels.
 
 **Memory Write Screen** — evaluates content before it reaches permanent memory:
 

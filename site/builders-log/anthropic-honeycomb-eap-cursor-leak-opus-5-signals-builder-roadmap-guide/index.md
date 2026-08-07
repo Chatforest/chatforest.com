@@ -15,7 +15,7 @@ Here is what is known, what it plausibly signals, and how it affects the decisio
 
 ## What the Cursor Exposure Showed
 
-The model entry in Cursor included several concrete details:
+[Screenshots the developer posted on X](https://x.com/chetaslua/status/2075053167121973413) showed the model entry in Cursor included several concrete details:
 
 - **Context window:** 1 million tokens
 - **Effort mode:** Extra high (labeled "extra high effort")
@@ -23,19 +23,19 @@ The model entry in Cursor included several concrete details:
 - **Classification:** "Early Access Preview" — Anthropic's internal label for models shared with select partners before public availability
 - **Per-turn controls:** Safety controls configurable per conversation turn, not globally
 
-The developer who first spotted it ran two prompts before the model disappeared. Their report: the safety fallback behavior "so high chances it is better than 4.8, coz fallback always happen to worse model." Anthropic has confirmed no details.
+The developer who first spotted it ran two prompts before the model disappeared, then [posted their read on the safety fallback on X](https://x.com/chetaslua/status/2075064406116065416): "so high chances it is better than 4.8, coz fallback always happen to worse model." That is one developer's inference from two prompts, not a confirmed spec — Anthropic has confirmed no details.
 
 ---
 
 ## What the Spec Suggests
 
-The fallback chain is the most informative detail. Anthropic's documented safety architecture uses a tiered fallback: when a flagged request hits a model, the system routes to a less capable one rather than refusing outright. The fallback target matters — it identifies the floor.
+The fallback chain is the most informative detail. [Anthropic's own Fable 5 announcement](https://www.anthropic.com/news/claude-fable-5-mythos-5) describes a tiered fallback: when Fable 5's classifiers flag a request in a high-sensitivity category (cybersecurity, biology/chemistry, or distillation), [the response is handled by Claude Opus 4.8 instead of being refused outright](https://platform.claude.com/cookbook/fable-5-fallback-billing-guide). The fallback target matters — it identifies the floor.
 
-If Honeycomb's safety fallback targets **Opus 4.8**, Honeycomb sits above Opus 4.8 in capability. That is the same structural position as Fable 5, which also falls back to Opus 4.8 according to Anthropic's published safety documentation.
+If Honeycomb's safety fallback targets **Opus 4.8**, Honeycomb sits above Opus 4.8 in capability. That is the same structural position as Fable 5, which also [falls back to Opus 4.8 per Anthropic's own announcement](https://www.anthropic.com/news/claude-fable-5-mythos-5).
 
-The 1M context window matches Fable 5 exactly. Haiku-class models (the smallest tier) have shipped with context windows in the 300K range. A 1M context at EAP stage points toward a Mythos-class or Opus-level model.
+The 1M context window matches [Fable 5's documented context window](https://platform.claude.com/docs/en/build-with-claude/context-windows) exactly. Haiku-class models (the smallest tier) ship with a [200K-token context window](https://platform.claude.com/docs/en/build-with-claude/context-windows) — well below Honeycomb's spec, not the 300K some early reports assumed. A 1M context at EAP stage points toward a Mythos-class or Opus-level model.
 
-**Working theory in the developer community:** Honeycomb EAP is a pre-release variant of what will eventually become Claude Opus 5, being tested in Cursor's EAP channel — possibly at a different price point than Fable 5.
+**Working theory in the developer community:** [Honeycomb EAP is a pre-release variant of what will eventually become Claude Opus 5](https://vallettasoftware.com/blog/post/claude-opus-5-release-date), being tested in Cursor's EAP channel — possibly at a different price point than Fable 5.
 
 This is plausible but unconfirmed. Anthropic has not acknowledged the exposure.
 
@@ -43,7 +43,7 @@ This is plausible but unconfirmed. Anthropic has not acknowledged the exposure.
 
 ## Why Cursor?
 
-Cursor is not a random test bed. It is Anthropic's highest-signal IDE partnership — the company has shipped EAP access to Cursor for past models before public announcement. The June 2026 SpaceX acquisition of xAI put Grok's Cursor integration in competitive context; Anthropic's Cursor relationship is one of its strongest platform distribution advantages.
+Cursor's ownership is itself in flux, which sharpens why an Anthropic EAP model turning up there matters. [SpaceX merged with Elon Musk's xAI in February 2026](https://www.cnbc.com/2026/02/02/elon-musk-spacex-xai-ipo.html), and in June 2026 that combined company [exercised a $60 billion option to acquire Cursor's parent, Anysphere](https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/), a deal [expected to close in Q3 2026](https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html). So the IDE where Honeycomb briefly surfaced is, pending that close, headed toward common ownership with xAI's Grok. Whether that changes how much room Anthropic gets in Cursor's model picker going forward is an open question the leak doesn't answer.
 
 An accidental EAP exposure in Cursor almost certainly means Honeycomb is in active pre-release testing with a small set of Cursor developers, not just internal Anthropic staff. That narrows the plausible timeline.
 
@@ -51,16 +51,16 @@ An accidental EAP exposure in Cursor almost certainly means Honeycomb is in acti
 
 ## The Fable 5 Decision
 
-This lands directly on the choice every builder on a Pro, Max, Team, or Enterprise plan faces by **July 19 at 11:59 PM PT**:
+This lands directly on the choice every builder on a Pro, Max, Team, or Enterprise plan faces by [**July 19 at 11:59:59 PM PT**](https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-stays-free-for-paid-users-until-july-19-as-anthropic-buys-more-time/):
 
-After that deadline, all Fable 5 usage moves to prepaid usage credits at **$10 per million input tokens** and **$50 per million output tokens**. There is no confirmed date for Fable 5 returning to plan subscriptions.
+After that deadline, all Fable 5 usage moves to prepaid usage credits at [**$10 per million input tokens** and **$50 per million output tokens**](https://platform.claude.com/docs/en/about-claude/pricing). There is no confirmed date for Fable 5 returning to plan subscriptions.
 
 If Honeycomb is Opus 5 and ships before August, should you pay credits in the interim?
 
 A few factors to weigh:
 
 **In favor of waiting:**
-- The Honeycomb exposure happened July 8. EAP to GA can move quickly when Anthropic wants it to — Sonnet 5 went from first community sightings to GA in about 12 days.
+- The Honeycomb exposure happened July 8. EAP to GA can move quickly when Anthropic wants it to — Sonnet 5 went from [first spotted in partner-platform logs on June 21](https://vpsmac.com/en/blog/claude-sonnet-5-fennec-gpt-56-release-date-specs-june-2026.html) to [GA on June 30](https://www.anthropic.com/news/claude-sonnet-5), about 9 days.
 - Two consecutive Fable 5 deadline extensions (July 7 → July 12 → July 19) came without meaningful advance warning. If Anthropic is extending the window while capacity remains tight, the extensions may end only when an alternative exists.
 - Honeycomb's per-turn controls and extra-high-effort mode suggest a different billing model than Fable 5 — possibly one that can coexist with subscriptions rather than requiring a separate credits pool.
 
@@ -80,7 +80,7 @@ Current public Anthropic model stack as of July 14:
 |---|---|---|
 | Mythos class | Fable 5 | Globally available; credits-only after July 19 |
 | Opus tier | Claude Opus 4.8 | GA; safety fallback target |
-| Sonnet tier | Claude Sonnet 5 | GA since June 30; introductory pricing until Aug 31 |
+| Sonnet tier | [Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5) | GA since June 30; introductory pricing until Aug 31 |
 | Haiku tier | Claude Haiku 4.5 | GA |
 
 Where does Honeycomb fit? The most coherent reading of the spec:
@@ -102,7 +102,7 @@ That suggests Honeycomb is being tested at the **Opus 5 or Mythos-tier successor
 
 **If extended-reasoning capability is essential:** Fable 5 credits are probably the right short-term choice, with Honeycomb as the signal that relief may arrive before Q4. Do not build around a model that doesn't exist publicly yet.
 
-**If context window is the deciding factor:** At 1M tokens, Honeycomb matches Fable 5's current context. If you need 2M tokens, Gemini 3.5 Pro (targeting GA July 17) is the alternative to watch — though its spec is also based on preview reporting, not a published model card.
+**If context window is the deciding factor:** At 1M tokens, Honeycomb matches Fable 5's current context. If you need 2M tokens, [Gemini 3.5 Pro (targeting GA July 17)](https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm) is the alternative to watch — though its spec is also based on preview reporting, not a published model card.
 
 ---
 
