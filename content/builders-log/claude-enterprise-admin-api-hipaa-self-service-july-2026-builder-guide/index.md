@@ -4,6 +4,7 @@ date: 2026-07-15
 slug: claude-enterprise-admin-api-hipaa-self-service-july-2026-builder-guide
 description: "Anthropic shipped two enterprise-grade features on July 14: a programmatic Admin API for automating member and group management, and a self-serve HIPAA enablement flow that replaces the sales/legal cycle. Here's what each unlocks for builders."
 tags: ["claude", "anthropic", "enterprise", "admin-api", "hipaa", "compliance", "user-management", "healthcare", "builder-guide"]
+sources_audited: 2026-08-08
 ---
 
 Anthropic released two enterprise features on July 14, 2026 that reduce operational friction for teams building on Claude at scale: a [User Management Admin API](https://platform.claude.com/docs/en/manage-claude/user-management) now in beta for all Claude Enterprise organizations, and a self-serve HIPAA configuration flow that eliminates the sales and legal cycle for eligible Enterprise admins.
@@ -42,7 +43,7 @@ For read-only queries across all user-management `GET` endpoints, an Admin API k
 
 **What it replaces:**
 
-The Console's admin panel still exists, but every action it supports for member management is now scriptable. Combined with [SCIM provisioning](https://platform.claude.com/docs/en/manage-claude/user-management) via Okta, Entra ID, or Google Workspace, this means you can treat Claude Enterprise membership as infrastructure — synced automatically rather than maintained manually.
+The Console's admin panel still exists, but every action it supports for member management is now scriptable. Combined with [SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning) via Okta, Entra ID, or Google Workspace, this means you can treat Claude Enterprise membership as infrastructure — synced automatically rather than maintained manually.
 
 Primary source: [Claude Platform release notes — July 14, 2026](https://platform.claude.com/docs/en/release-notes/api)
 
@@ -50,7 +51,7 @@ Primary source: [Claude Platform release notes — July 14, 2026](https://platfo
 
 ## HIPAA Self-Service: No Sales Cycle Required
 
-Healthcare builders have long been able to run Claude under HIPAA — Anthropic has offered a Business Associate Agreement (BAA) since 2024. What changed on July 14 is how you get there: [eligible Enterprise admins can now enable HIPAA configuration](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans) through a self-serve flow, with a click-to-accept BAA, without involving a sales rep or legal team.
+Healthcare builders have long been able to run Claude under HIPAA — Anthropic already offers a [Business Associate Agreement (BAA)](https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers) covering its HIPAA-ready services. What changed on July 14 is how you get there: [eligible Enterprise admins can now enable HIPAA configuration](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans) through a self-serve flow, with a click-to-accept BAA, without involving a sales rep or legal team.
 
 **Who qualifies:**
 
@@ -67,19 +68,15 @@ That's the entire process. No DocuSign, no back-and-forth, no waiting for a lega
 
 **What the BAA covers:**
 
-The self-serve BAA covers:
-- Messages API
-- Prompt caching
-- Structured outputs
-- Memory
-- Web search
-- Bash and text-editor tools
+Per Anthropic's [BAA coverage documentation](https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers), the self-serve BAA covers:
+- Messages API, including its Prompt caching, Structured outputs, Memory, Web search, and Bash/text-editor tool features
 - Token Counting, Models, Org Management, and Compliance APIs
 
 **What it does NOT cover:**
 
-- [Cowork](https://www.anthropic.com/product/enterprise) — explicitly excluded
-- [Claude Code](https://claude.ai/code) — covered only with zero data retention (ZDR) enabled on a qualified account
+- Batch API, Files API, Skills API, Code Execution, Computer Use, and Web Fetch — per the [BAA coverage documentation](https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers)
+- Cowork — [not yet covered](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans) under Anthropic's BAA
+- Claude Code — [covered only with zero data retention (ZDR) enabled](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans) on a qualified account; enabling HIPAA readiness alone does not bring it under the BAA
 
 **Critical caveat — this is a one-way decision:**
 
