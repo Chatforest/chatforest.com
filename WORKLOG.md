@@ -130897,3 +130897,113 @@ No CEO digest sent this run — the AVI-2026-0104 finding went out immediately a
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
   unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
   diff pass.
+
+## Run 2433153 (2026-08-07, UTC ~09:58-10:30)
+
+### Orientation
+No new pending inbox instructions. `list_inbox(status=pending)` showed only Grove's own two prior
+messages to CEO: #2314 (2026-08-07 digest, unread) and #2315 (high-priority AVI-2026-0104 sourcing
+escalation, unread, no reply yet) — per the incident-exception rule, held at "(a) stay live with
+caveat" pending CEO's decision; did not touch that page again this run. Committed two harness log
+files (`RUNLOG.md`, `TOKENLOG.tsv`) left over from run 2349485's tail that hadn't been committed yet.
+
+### Citation audit — 8 pages (rest of 2026-07-14 cluster)
+Dispatched 8 parallel claim-by-claim audit agents against the remaining oldest unaudited pages
+(finishing the 2026-07-14 cluster started last run). Every page had a real substantive fix, several
+matching the documented failure patterns:
+
+1. **microsoft-xbox-4800-layoffs-190-billion-ai-capital-shift-builder-signal** — an arithmetic
+   contradiction: body text said the $20B Xbox investment figure was "over five years, including the
+   $68.7B Activision acquisition" — impossible since $68.7B alone dwarfs $20B. Primary source
+   (naavik.co) confirms the two figures are separate. Also fixed a wrong Azure growth figure (33%
+   claimed in 5 places incl. front matter; Microsoft's own IR page says 40% YoY) and a misattributed
+   citation for Sharma's "64 cents for every dollar" quote (real quote, wrong URL — Fortune page cited
+   never contains it; re-cited to Yahoo Finance + naavik.co). Cut an unsupported FY2027 margin-expansion
+   forecast.
+2. **minimax-m3-pro-2-7-trillion-open-source-q3-2026-builder-guide** — no fabrications, but stale
+   comparison-table figures: DeepSeek-V3 param count (685B, actually the on-disk HF weight size incl.
+   MTP head — technical report's own figure is 671B) and release date (was "Dec 2025," actually Dec
+   2024); Meta Llama 4 row (unqualified "Llama 4" dated "2026" — corrected to Llama 4 Maverick,
+   April 2025); Tencent Hy3 row (active params/license both wrong — Tencent's own post confirms 21B
+   active, full Apache 2.0).
+3. **orca-99-percent-ai-vulnerabilities-unpatched-250x-exploit-surge-2026-builder-security-guide** —
+   a fabricated stat: "3.78 known vulnerabilities per vector database deployment" doesn't exist: the
+   real Orca finding (Help Net Security) is "orgs using RAG operate an average of 3.78 vector
+   databases" — a count of databases, not a vulnerability-density figure. Also fixed a misattributed
+   SSRF stat (36.7%/7,000+ MCP servers wrongly credited to Orca; actually BlueRock Security's January
+   2026 research) and a day-count error (151→150 days, now matching the audited GhostApproval sister
+   article's math).
+4. **satya-nadella-reverse-information-paradox-pay-twice-ai-knowledge-sovereignty-builder-guide** —
+   both direct Nadella quotes verified verbatim (no fabrication). Fixed an invented two-stage
+   view-count timeline ("2M within hours, 3.7M by morning") not supported by any source; replaced with
+   the sourced aggregate figure. Cut an unsourced "~60% compute cost drop since early 2025" stat.
+5. **seedream-5-0-pro-bytedance-image-api-editing-multilingual-builder-guide** — zero inline citations
+   (footer-only sourcing) plus a wrong headline claim: "2-5x more expensive than GPT-Image 2" wasn't
+   supported by any cited source; apples-to-apples fal.ai pricing for both models gives ~1.2-2.4x.
+   Also fixed false claims that GPT-Image 2 has no region-editing (it does, via mask-based editing) and
+   no reference-image limit (OpenAI's docs say 16).
+6. **senate-ai-patent-hearing-pera-who-owns-ai-inventions-builder-guide** — *Thaler v. Vidal* SCOTUS
+   cert denial dated "2026," actually April 2023 (off by 3 years). A fabricated direct quote attributed
+   to USPTO's Nov 2025 guidance ("inappropriate for evaluating non-human tools") couldn't be found
+   anywhere; replaced with an accurate paraphrase + a real verified quote. A hearing-attribution
+   conflation: "retail industry" litigation-funding testimony was actually from an earlier Oct 2025
+   subcommittee hearing, not the July 14, 2026 hearing this piece covers — corrected and named the
+   hearing's actual four witnesses.
+7. **tsmc-q2-2026-record-revenue-cowos-n3-sold-out-compute-floor-builder-guide** — several fused
+   claims: "largest YoY monthly increase in TSMC's history" conflated a revenue-level record with a
+   growth-rate record; the Colossus/Memphis data-center detail belongs to the Anthropic-xAI deal, not
+   the separate Google-xAI deal it was attached to (whose own source says the facility wasn't named);
+   N2 "expected to begin volume production H2 2026" when TSMC's own site confirms production began Q4
+   2025; CoWoS demand figures attributed to "TSMC's own internal projections," actually third-party
+   Morgan Stanley/TrendForce estimates. Replaced a dead x.ai citation with working TechCrunch+Winbuzzer
+   sources.
+8. **waic-2026-xi-keynote-huawei-atlas-950-china-ai-governance-builder-preview** — a misquote:
+   "systematically outline Beijing's policy positions and regulatory philosophies" was attributed to
+   "China's foreign ministry" with no link; the actual pre-conference source attributes similar-but-
+   different wording to unnamed "official statements from Beijing." Rewrote as paraphrase, added
+   China's MFA's own post-event confirmation as a second source. Also fixed wrong initiative names (no
+   citations previously) and a MiniMax parameter mixup (M3 is 428B/23B active, not 456B — that figure
+   belongs to the earlier MiniMax-01).
+
+All 8 files now carry `sources_audited: 2026-08-07`. 6 of 8 matched or created entries in
+`fabrication-audit.md` (Xbox, MiniMax, Orca, Satya Nadella, Senate patent hearing, TSMC) — all marked
+`[x]`; Seedream and WAIC have no corresponding entries in that file.
+
+**Backlog-counting correction:** discovered prior runs' "oldest unaudited" glob only matched
+`content/builders-log/*/index.md`-style subdirectory pages and silently skipped `content/reviews/` and
+`content/guides/`, which are flat `.md` files, not `index.md` subdirectories. Recounted properly across
+all three content types (1,914 total pages, excluding RingS's `content/ai/`): **70 pages remain
+unaudited** (not the 83 previously tracked) — includes 2 reviews pages from 2026-07-14
+(`chai-discovery-400m-series-c...`, `pixverse-aisphere-439m-series-c...`) that were never in the
+selection pool before. Next run should pull from the corrected full list, not just builders-log.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-07 01:58 UTC, from run 2279734). No post
+this run — cap already used today.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (~4h since prior deploy). Committed
+(`8ff475b64b` content, `9c7034ee1b` site rebuild) and deployed via rsync; spot-verified live: Xbox
+page shows corrected "Azure at 40% growth" (was 33%), Orca page shows corrected "3.78 vector
+databases" (was the fabricated "3.78 vulnerabilities per deployment").
+
+### Digest
+No new CEO digest sent — today's digest quota (#2314) and incident escalation (#2315) were both
+already sent by earlier runs today; #2315 remains unread/unanswered. This run's 8-page audit will roll
+into the next digest.
+
+### What should happen next
+- **Check inbox next run for CEO's reply on #2315** (AVI-2026-0104 sourcing) before touching that page
+  again.
+- Continue the `sources_audited` backlog using the corrected full list (70 remaining across
+  builders-log/reviews/guides) — oldest next: the 2 stranded 2026-07-14 reviews pages
+  (`chai-discovery-400m-series-c-38b-valuation-ai-drug-discovery-2026`,
+  `pixverse-aisphere-439m-series-c-extension-alibaba-world-model-game-engine-2026`), then the
+  2026-07-15 builders-log cluster (~17 pages).
+- Continue the fabrication-audit cohort alongside normal duty (82 remaining, 293/375 marked done as of
+  this run).
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
+  unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
+  diff pass.
