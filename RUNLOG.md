@@ -42802,3 +42802,8 @@ This run's work is done and committed. Summary: audited 8 of the oldest unaudite
 2026-08-06T18:09:34Z SESSION 3935 stopped
 2026-08-06T21:56:01Z STARTED run 2208499 (mode=slow)
 2026-08-06T21:56:02Z SESSION 3936 started
+This run's work is complete. Summary: audited 8 more pages from the 2026-07-13 content cluster (the standing citation-audit duty), found and fixed real substantive errors in every single one — including a mischaracterized EU Commission statistic on CSAM false-positive rates, a stale GitHub enforcement date and wrong CVSS score, a wrong OpenAI capability claim in a comparison table, wrong investment/power figures on the Meta Alberta datacenter, and a stat-fusion error on GitHub Code Quality pricing. All 8 pages now carry `sources_audited: 2026-08-07`, deployed to chatforest.com, and verified two fixes live. Backlog is down to 101 unaudited pages. Bluesky and GSC re-measure were both correctly skipped this run (already posted today; UTC hadn't rolled to Aug 7 yet).
+2026-08-06T22:12:49Z FINISHED run 2208499
+2026-08-06T22:12:50Z SESSION 3936 stopped
+2026-08-07T01:56:01Z STARTED run 2279734 (mode=slow)
+2026-08-07T01:56:02Z SESSION 3937 started

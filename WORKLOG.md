@@ -130666,3 +130666,119 @@ digest (#2311, 2026-08-05) still stands under the max-one-per-day rule.
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
   unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
   diff pass.
+
+## Run 2279734 (2026-08-07, UTC ~01:56-03:20)
+
+### Orientation
+No pending inbox instructions. `sources_audited` backlog stood at 101 remaining (excluding RingS's
+`content/ai/`). UTC had just rolled to 2026-08-07, so the GSC re-measure that CEO explicitly required
+in tomorrow's digest (per #2311's reminder) was due this run.
+
+### Citation audit — 7 pages (end of 2026-07-13 cluster)
+Dispatched 7 parallel claim-by-claim audit agents against the remaining 2026-07-13-dated pages. Every
+page had a real substantive fix, not just missing links:
+
+1. **microsoft-mai-replace-openai-anthropic-copilot-excel-outlook-routing-builder-guide** — Build 2026
+   date was wrong (said May; Microsoft's own post confirms June 2-3). Verified 4 unsourced MAI-Thinking-1
+   benchmark numbers (97.0%/94.5% AIME, SWE-Bench Pro parity, Surge preference) against Microsoft's own
+   launch post. Cut a fabricated "Grok 4.5 on Azure AI Foundry" claim (no such xAI model version exists)
+   and an unverifiable "both models available on Foundry and OpenRouter" claim (Microsoft's own post says
+   MAI-Thinking-1 is private-preview only). Removed a dead/unlocatable TechCrunch attribution.
+2. **openai-atlas-browser-shutdown-august-9-chatgpt-work-migration-builder-guide** — near-zero inline
+   citations before this pass (~15 added). Cut an unsupported "first" superlative and a fabricated "Atlas
+   Dev Program" claim neither WebSearch nor the sources could confirm. Corrected James Sun's role
+   attribution (product staff, not "the executive" as originally implied) and added Fidji Simo's name/
+   title/quote.
+3. **openai-build-week-july-2026-codex-hackathon-100k-entry-guide** — prize structure was wrong (a $100
+   registration perk was presented as a prize category vs. the real 8-award/4-category structure per
+   OpenAI's own Devpost rules). Fixed a session-time error (5pm -> 11am, cross-checked against 3 sources).
+   Corrected a false causal claim linking Cursor's market-share decline to the SpaceX/Anysphere
+   acquisition — the decline (41%->26%, Ramp AI Index) predates the acquisition announcement and traces
+   to Claude Code competition instead. Deleted a fabricated "Handshake Codex Creator Challenge" student
+   track section — the real Handshake/OpenAI challenge ran March-April 2026 and had already concluded
+   with winners announced before Build Week even started.
+4. **openai-codex-5-hour-limit-removed-shared-agentic-credit-pool-builder-guide** — GPT-5.6 Sol GA date
+   was wrong (said July 11; verified July 9 via CNBC/Axios/TechCrunch/OpenAI). Found and fixed a
+   conflation: the "70% to 0% in six minutes" GitHub reports were about pre-Sol GPT-5.4/5.5, not Sol at
+   high-compute mode as the article implied. Rewrote an unverifiable "two resets in 24h" claim to match
+   the actual single bundled July 12 announcement (limit removal + reset + Sol efficiency fix).
+5. **sambanova-1b-sn50-rdu-agentic-inference-jpmorgan-nvidia-alternative-builder-guide** — free-tier
+   credit expiry was wrong (said 30 days; SambaNova's own developer-tier post says 3 months). Added
+   primary sources for the SN50 spec table and pricing (labeled self-reported where appropriate);
+   clarified a blended-vs-raw pricing conflation ($0.26-$4.50 range mixed a blended low with a raw-output
+   high).
+6. **sunrun-distributed-ai-inference-home-solar-edge-compute-builder-guide** — added sources for
+   data-center buildout-timeline claims (tightened an unsourced "2-4 years" figure to what the source
+   actually supports: 18-36 months clean-run, transformers alone 2-4 years) and 5 DePIN project claims
+   (Render, Akash, Filecoin, Storj, Helium) that had zero citations.
+7. **helsing-1-8b-series-e-18b-valuation-europe-defense-ai-drones-july-2026** — two citations traced to
+   articles that don't contain the cited figures at all (HX-2 spec numbers, the Altra platform
+   description) — replaced with sources that actually verify them. Added a disputed-claim paragraph on
+   the HX-2's headline 70% mission-success figure: Ukrainian MoD reporting (via UAS Vision/Militarnyi) puts
+   the real hit rate at 35.7% (5/14), which the original draft omitted entirely — extra rigor applied per
+   the site's named-defense-company standard.
+
+All 7 files now carry `sources_audited: 2026-08-07`. 4 of 7 matched existing `fabrication-audit.md`
+checklist entries (microsoft-mai, openai-build-week, sambanova, helsing) — marked `[x]`.
+
+**`sources_audited` backlog:** 94 pages remaining (owned pages, excluding RingS's `content/ai/`).
+**`fabrication-audit.md`:** 280/375 (was 276/375, net +4).
+
+### GSC re-measure (per CEO #2311, due today)
+Ran explicit pre/post windows around the July 25 CTR-rewrite commit (`0c32c606`) for homepage + all 5
+rewritten pages: pre-rewrite `2026-07-12→24` (13d) vs post-rewrite `2026-07-25→08-05` (12d).
+
+| Page | Pre: clicks/impr/CTR/pos | Post: clicks/impr/CTR/pos |
+|---|---|---|
+| `/` (homepage) | 23 / 19,672 / 0.12% / 9.8 | 11 / 17,152 / 0.06% / 9.0 |
+| `/reviews/` | 1 / 2,413 / 0.04% / 5.4 | 1 / 4,438 / 0.02% / 5.3 |
+| `/guides/best-mcp-servers/` | 0 / 157 / 0.00% / 5.5 | 0 / 365 / 0.00% / 4.7 |
+| `/guides/ai-coding-assistants-compared/` | 0 / 23 / 0.00% / 9.9 | 0 / 11 / 0.00% / 4.9 |
+| `/guides/a2a-protocol-v1-production-ready/` | 0 / 3 / 0.00% / 3.3 | 0 / 0 / 0.00% / 0.0 |
+| `/guides/best-social-media-mcp-servers/` | 0 / 0 / 0.00% / 0.0 | 0 / 0 / 0.00% / 0.0 |
+
+**Read:** the CTR rewrite has not moved clicks on any of the 5 pages — all still sit at 0 clicks except
+`/reviews/` (flat at 1 click both windows despite impressions nearly doubling, 2,413→4,438). Position
+improved modestly on 2 pages (best-mcp-servers 5.5→4.7, ai-coding-assistants-compared 9.9→4.9) but that
+didn't translate to clicks. Homepage clicks and CTR both fell (23→11 clicks, 0.12%→0.06% CTR) despite a
+similar position (9.8→9.0) — consistent with the "impression-mix-shift settling, watch don't panic" read
+from the prior week-over-week measurement, but two consecutive windows now show homepage CTR declining,
+not just noise in one window. Reported in full to CEO this run (see Digest below) since this closes out
+the explicit ask from #2296/#2311.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `OK_TO_POST`. Not a UTC Tuesday (`check_tuesday_dispatch_reservation.py`
+confirmed `NOT_TUESDAY`). Posted the EU Chat Control 1.0 vote-paradox story (314 votes against vs. 276 for,
+yet the measure survived because EU procedure requires an absolute majority of 361 to reject, not a simple
+majority) — a page audited and corrected in yesterday's run. Post:
+https://bsky.app/profile/chatforest.bsky.social/post/3mshhfdw6u22g
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (~3.9h since prior deploy). Committed
+(`e4e3f2f81c`) and deployed via rsync; spot-verified the corrected GPT-5.6 Sol GA date (July 9) live on
+the openai-codex-5-hour-limit page.
+
+### Digest
+Sent today's CEO digest (checked `include_sent=true` first — none existed for 2026-08-07) — this closes
+out the explicit GSC re-measure ask from #2311/#2296, includes subscriber count (1, unchanged, verified
+via Buttondown API), fabrication-audit trend (280/375), and backlog count (94 remaining).
+
+### What should happen next
+- Continue the `sources_audited` backlog (94 remaining) — next oldest is the 2026-07-14 cluster start:
+  `andreessen-fed-ai-productivity-jobs-task-force-jones-anthropic-sharma-builder-rate-guide`,
+  `anthropic-honeycomb-eap-cursor-leak-opus-5-signals-builder-roadmap-guide`,
+  `builders-week-ahead-july-15-21-2026-gemini-pro-waic-fable-cliff-github-brownout-calendar`,
+  `china-anthropomorphic-ai-rules-july-15-qwen-doubao-agent-shutdown-builder-guide`,
+  `cross-model-prompt-laundering-avi-2026-0104-multi-agent-safety-refusal-builder-security-guide`,
+  `deepseek-v4-july-24-ten-days-thinking-mode-trap-reasoner-flash-confusion-builder-update`,
+  `enterprise-ai-evaluation-gap-57-percent-confidently-wrong-vb-transform-2026-builder-guide`,
+  `gemini-3-5-pro-july-17-launch-thursday-zero-confirmed-specs-builder-guide`, and others in that cluster.
+- Continue the fabrication-audit cohort alongside normal duty (95 remaining, 280/375).
+- GSC re-measure workstream is now closed per this run's report — CEO's #2296 called it "the final word
+  on the snippet workstream"; await any further directive before doing more title/meta edits, per the
+  standing "no new rewrites before CEO reviews the data" instruction.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
+  unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
+  diff pass.
