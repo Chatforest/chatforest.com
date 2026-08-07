@@ -130782,3 +130782,118 @@ via Buttondown API), fabrication-audit trend (280/375), and backlog count (94 re
 - Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
   unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
   diff pass.
+
+## Run 2349485 (2026-08-07, UTC ~05:57-06:12)
+
+### Orientation
+No pending inbox instructions (the one "pending" item was my own sent digest from run 2279734).
+`sources_audited` backlog stood at 94 remaining. Continued straight into the citation-audit standing
+duty.
+
+### Citation audit — 11 pages (2026-07-14 cluster start)
+Dispatched 11 parallel claim-by-claim audit agents against the oldest unaudited pages. Every page had
+at least one real substantive fix, not just missing links — several were the exact "two real facts
+fused into one fake claim" failure mode CLAUDE.md documents:
+
+1. **andreessen-fed-ai-productivity-jobs-task-force** — Jones's "GDP growth exceeding 5%/year" was a
+   media conflation of his real baseline (~2.3-3% by 2050) with a separate "too aggressive" hypothetical
+   he explicitly says doesn't apply. Goolsbee's stagflation argument was fabricated (his real argument is
+   anticipatory-capex-driven inflation, not a wage/automation mechanism). Fixed Warsh confirmation date
+   (April 21 hearing / May 13 vote, not "May 2026" vaguely).
+2. **anthropic-honeycomb-eap-cursor-leak** — wrong Haiku context window (200K per Anthropic's own docs,
+   not 300K). Fixed a SpaceX/xAI/Cursor-Anysphere timeline conflation: SpaceX-xAI merged February 2026,
+   then that combined company optioned Anysphere (Cursor's parent) for $60B in June — the article had
+   fused these into one wrong "SpaceX acquired xAI put Cursor in context" claim and was missing the more
+   relevant Anysphere fact entirely. Cut an unsupported "Anthropic shipped EAP before" claim.
+3. **builders-week-ahead-july-15-21** — fabricated Anthropic quote ("later this summer" — real language
+   is "as soon as capacity allows"), wrong Huawei chip name (Ascend 950DT, not 910D), a backwards
+   DeepSeek migration claim (had old/new alias direction reversed), wrong WAIC exhibitor count (1,000+
+   per CGTN, not "1,100+"), and a misattribution merging an unnamed SCMP-teased device with ZTE's
+   separate self-proclaimed "world's first" phone.
+4. **china-anthropomorphic-ai-rules** — re-pointed the regulation citation to the actual CAC primary
+   source (the existing link didn't support the 5-agency/date claim it was attached to). Removed a
+   likely-fabricated direct "CAC guidance explicitly states" quote that couldn't be found verbatim
+   anywhere. Fixed a training-data-ban overstatement (actual rule only restricts sensitive personal info
+   used without consent).
+5. **cross-model-prompt-laundering (AVI-2026-0104)** — fixed a claim that had Claude's resistance
+   mechanism backwards vs. the actual arXiv:2607.07097 abstract. **Bigger issue**: the entire
+   AVI-2026-0104 premise (severity 7.6, 14-of-18 chains, reported to OpenAI/Anthropic/Google DeepMind)
+   traces to exactly one source — a self-published tracker from a small/one-person outfit — with no
+   independent replication or company acknowledgment found. This fails the site's >=2-source bar for
+   named-company security claims. Added an explicit sourcing-note caveat rather than unilaterally
+   pulling the page, and **flagged to CEO immediately** (inbox #2315, outside the normal digest cadence
+   per the incident exception) for a decision: keep as-is with caveat, de-emphasize, or pull pending
+   corroboration.
+6. **deepseek-v4-july-24** — the "15:59 UTC" deadline time was fabricated; DeepSeek's changelog gives
+   only a date, and that exact time only appears attached to an unrelated Dec 2025 endpoint expiration
+   elsewhere on the same page (several SEO aggregators repeat the same mix-up). Removed everywhere,
+   replaced with a caution note. Also fixed wrong API syntax in the "how to fix it" instructions and cut
+   an unsupported "~4x token count" multiplier with no consistent source.
+7. **enterprise-ai-evaluation-gap-57-percent** — fixed a conflation attributing two sub-survey-specific
+   stats (66%/5%, from a 157-respondent sub-survey; 86% GPU, from a 107-respondent sub-survey) to the
+   full 573-respondent survey. Cut a fabricated bullet with no basis in any survey question. Fixed a
+   mis-attributed "7% data-ready" citation (traced to a different Cloudera/HBR report) and a Project
+   Glasswing "zero-day" mischaracterization (Anthropic's own post describes coordinated disclosure under
+   90-day windows, not zero-days).
+8. **gemini-3-5-pro-july-17** — fixed a false "two weeks before launch" Fable 5 timing claim (same-day
+   per Anthropic's own post) and, most notably, an LMArena claim that directly contradicted the article's
+   own "zero confirmed specs" thesis — no `gemini-3.5-pro` leaderboard entry existed as of the article's
+   own publish date. Rewrote as clearly-marked rumor. Fixed a paraphrase presented as a direct Pichai
+   quote and stale Ultra subscription pricing.
+9. **google-alphaevolve-ga** — no conflations found; verified all customer benchmark numbers exactly
+   against Google's GA post. Added independent second primary sources for named-company benchmark claims
+   (Klarna, JetBrains, Kinaxis, PacBio, BASF, FM Logistic, Schrödinger). One gap (Coolblue) had no
+   independent source found — flagged transparently in the article rather than padded with a weak link.
+10. **google-search-services-history** — fixed a real factual error: the article said the EU opened a
+    GDPR investigation into this specific feature in "July 2026"; the actual EU Commission investigation
+    (verified via the Commission's own press release) opened December 9, 2025 and is an unrelated
+    antitrust matter about publisher/YouTube compensation. Rewrote to separate the two issues and cite
+    GDPR Article 6/7 directly for the general consent argument instead.
+11. **memghost-ghostwriter** — confirmed the underlying research is real (arXiv:2607.05189 and
+    2607.06595, both July 6, 2026). Fixed a conflation where Claude Sonnet's 25% concealment rate was
+    attributed to GPT-5.4 in the "Defense bypass results (GPT-5.4)" section; actual GPT-5.4 rate is 7.1%.
+
+All 11 files now carry `sources_audited: 2026-08-07`. 7 of 11 matched existing `fabrication-audit.md`
+entries — marked `[x]` with a note on what was fixed.
+
+**`sources_audited` backlog:** 83 pages remaining (owned pages, excluding RingS's `content/ai/`).
+**`fabrication-audit.md`:** 287/375 (was 280/375, net +7).
+
+### CEO escalation (outside normal digest cadence)
+Sent inbox #2315 (high priority) immediately on discovering the AVI-2026-0104 sourcing problem — this
+is a legal/brand-risk incident per CLAUDE.md's escalation exceptions (a named-company security
+accusation resting on unverifiable provenance), not something to hold for the daily digest. Awaiting
+CEO's decision on next steps for that page.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-07 01:58 UTC, from run 2279734). No post
+this run — cap already used today.
+
+### Deploy
+Hugo build clean (4193 pages, 7 aliases). Deploy throttle clear (~4h since prior deploy). Committed
+(`fb3f6b005f`) and deployed via rsync; spot-verified the fabricated "15:59 UTC" deadline is gone from
+the live deepseek-v4-july-24 page and the corrected pricing citations resolve correctly.
+
+### Digest
+No CEO digest sent this run — the AVI-2026-0104 finding went out immediately as its own message
+(#2315) per the incident-exception rule rather than waiting for a daily digest; today's digest quota
+(#2314, sent by run 2279734) already stands for 2026-08-07.
+
+### What should happen next
+- Continue the `sources_audited` backlog (83 remaining) — next oldest (rest of 2026-07-14 cluster):
+  `microsoft-xbox-4800-layoffs-190-billion-ai-capital-shift-builder-signal`,
+  `minimax-m3-pro-2-7-trillion-open-source-q3-2026-builder-guide`,
+  `orca-99-percent-ai-vulnerabilities-unpatched-250x-exploit-surge-2026-builder-security-guide`,
+  `satya-nadella-reverse-information-paradox-pay-twice-ai-knowledge-sovereignty-builder-guide`,
+  `seedream-5-0-pro-bytedance-image-api-editing-multilingual-builder-guide`,
+  `senate-ai-patent-hearing-pera-who-owns-ai-inventions-builder-guide`,
+  `tsmc-q2-2026-record-revenue-cowos-n3-sold-out-compute-floor-builder-guide`, and
+  `waic-2026-xi-keynote-huawei-atlas-950-china-ai-governance-builder-preview`.
+- Continue the fabrication-audit cohort alongside normal duty (88 remaining, 287/375).
+- **Check inbox next run for CEO's reply on #2315** (AVI-2026-0104 sourcing) — act on whatever decision
+  comes back before touching that page again.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.
+- Worth checking: `content/reviews/future-of-life-institute-ai-safety-index-summer-2026-...md` still
+  unaudited in fabrication-audit.md (flagged by prior runs) — possible near-duplicate topic worth a
+  diff pass.
