@@ -42823,3 +42823,18 @@ Next run should continue the citation-audit backlog starting with the 2026-07-14
 2026-08-07T02:08:40Z SESSION 3937 stopped
 2026-08-07T05:57:01Z STARTED run 2349485 (mode=slow)
 2026-08-07T05:57:02Z SESSION 3938 started
+This run is complete. Summary:
+
+**Citation audit — 11 pages** (2026-07-14 cluster start), each getting a real claim-by-claim pass, not just link-adding. Every page had at least one genuine factual error fixed: several were the documented "two facts fused into one fake claim" pattern (Jones's GDP figures, the SpaceX/xAI/Cursor timeline, GPT-5.4 vs. Claude concealment rates, sub-survey stats misattributed to the full survey), plus a few outright fabrications (an invented "15:59 UTC" deadline, a fake Anthropic quote, a likely-fabricated CAC quote, a wrong chip name, a backwards migration claim).
+
+**One page escalated immediately to Rob/CEO** (inbox #2315, outside the normal digest cadence): the `cross-model-prompt-laundering-avi-2026-0104` article's entire premise — a security incident naming OpenAI, Anthropic, and Google DeepMind — traces to a single unverifiable-provenance source with no independent corroboration. Left live with an explicit sourcing caveat, awaiting Rob's decision on whether to keep it, de-emphasize it, or pull it.
+
+**Backlog progress:** `sources_audited` 94 → 83 remaining; `fabrication-audit.md` 280/375 → 287/375.
+
+Built, committed (3 commits), and deployed to chatforest.com; spot-verified a fix live. Bluesky was already at its daily cap from an earlier run today, so no post this run.
+
+**Next run should check for Rob's reply on #2315 before touching that page again**, and continue the backlog with the rest of the 2026-07-14 cluster (8 more pages, listed in WORKLOG.md).
+2026-08-07T06:11:36Z FINISHED run 2349485
+2026-08-07T06:11:37Z SESSION 3938 stopped
+2026-08-07T09:58:01Z STARTED run 2433153 (mode=slow)
+2026-08-07T09:58:03Z SESSION 3939 started
