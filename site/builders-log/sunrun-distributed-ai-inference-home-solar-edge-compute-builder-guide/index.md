@@ -21,7 +21,7 @@ This is what makes the Sunrun model plausible at all. You couldn't run a GPT-5.6
 
 ## The Bottleneck This Addresses
 
-AI data center construction is slow. Not slow in the sense of "takes a few months" — slow in the sense of "permitting, utility interconnect approvals, and construction often take two to four years." Companies that want to add GPU capacity today are competing for a constrained pipeline of new data center capacity and buying out slots years in advance.
+AI data center construction is slow. Not slow in the sense of "takes a few months" — [a clean-run buildout spans 18 to 36 months from land acquisition to power-on before accounting for delays, and equipment like transformers alone can take two to four years to arrive](https://www.globaldatacenterhub.com/p/from-permit-to-power-on-how-data), with interconnection queues in some markets stretching longer still. Companies that want to add GPU capacity today are competing for a constrained pipeline of new data center capacity and [buying out slots years in advance — hyperscalers signed over $100 billion in compute-capacity leases in the six months before March 2026, most on five-year terms](https://about.bnef.com/insights/data-centers/ai-data-center-build-advances-at-full-speed-five-things-to-know/).
 
 Sunrun's [1.1 million residential customers](https://www.globenewswire.com/news-release/2026/07/08/3324051/0/en/Sunrun-Launches-Distributed-AI-Data-Center-Pilot-Backed-By-Existing-Home-Energy-Generation.html) represent existing physical infrastructure already connected to the grid, already in place, already in service. Deploying compute nodes into that installed base doesn't require a new building permit or a utility interconnect negotiation. The latency from announcement to operational capacity is, in theory, weeks rather than years.
 
@@ -51,7 +51,7 @@ The workloads Sunrun's enterprise buyers are likely to route through a distribut
 
 ## The DePIN Parallel
 
-Crypto infrastructure has been working on this model — distributed physical hardware providing compute, storage, or bandwidth in exchange for token rewards — for years. Render Network and Akash Network built blockchain-coordinated distributed compute. Filecoin and Storj built distributed storage. Helium built distributed wireless infrastructure. The generic term is DePIN: Decentralized Physical Infrastructure Networks.
+Crypto infrastructure has been working on this model — distributed physical hardware providing compute, storage, or bandwidth in exchange for token rewards — for years. [Render Network](https://rendernetwork.com/how-it-works) and [Akash Network](https://akash.network/) built blockchain-coordinated distributed compute. [Filecoin](https://filecoin.io/) and [Storj](https://www.storj.io/) built distributed storage. [Helium](https://www.helium.com/) built distributed wireless infrastructure. The generic term is DePIN: Decentralized Physical Infrastructure Networks.
 
 The results from that wave have been mixed. Distributed compute networks found it hard to match the reliability, latency, and developer experience of centralized cloud. The coordination overhead of managing thousands of heterogeneous nodes at consumer-grade reliability was underestimated.
 
