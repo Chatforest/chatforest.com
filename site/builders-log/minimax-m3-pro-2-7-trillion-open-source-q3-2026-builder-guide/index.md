@@ -11,21 +11,21 @@ What exists is a single sourced report that sets a number. That number is signif
 
 ## The Number in Context
 
-MiniMax M3, released June 1, has 428 billion total parameters and approximately 23 billion active parameters at inference (a Mixture-of-Experts architecture where each token activates a small fraction of the full model). Its MSA (MiniMax Sparse Attention) architecture was designed specifically to make 1M-token contexts computationally practical.
+MiniMax M3, released June 1, has [428 billion total parameters and approximately 23 billion active parameters](https://huggingface.co/MiniMaxAI/MiniMax-M3) at inference (a Mixture-of-Experts architecture where each token activates a small fraction of the full model). Its [MSA (MiniMax Sparse Attention) architecture](https://arxiv.org/abs/2606.13392) — [detailed in MiniMax's own launch post](https://www.minimax.io/blog/minimax-m3) — was designed specifically to make 1M-token contexts computationally practical.
 
 M3 Pro's reported figure — 2.7 trillion total parameters — puts it in a different category entirely:
 
 | Model | Total Params | Active Params | Open Weights | Release |
 |---|---|---|---|---|
-| MiniMax M3 Pro | 2.7T | Unknown | Planned Q3 2026 | Pre-release |
-| MiniMax M3 | 428B | ~23B | Yes (HuggingFace) | June 2026 |
-| DeepSeek-V3 | 685B | ~37B | Yes | Dec 2025 |
-| Meta Llama 4 | ~400B | ~17B | Yes | 2026 |
-| Tencent Hy3 | 295B | Unknown | Partial | 2026 |
+| MiniMax M3 Pro | 2.7T (reported, unconfirmed by MiniMax) | Unknown | Planned Q3 2026 | Pre-release |
+| [MiniMax M3](https://huggingface.co/MiniMaxAI/MiniMax-M3) | 428B | ~23B | Yes (HuggingFace) | June 2026 |
+| [DeepSeek-V3](https://arxiv.org/abs/2412.19437) | 671B | ~37B | [Yes](https://huggingface.co/deepseek-ai/DeepSeek-V3) | Dec 2024 |
+| [Meta Llama 4 Maverick](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) | 400B | ~17B | [Yes](https://huggingface.co/blog/llama4-release) | April 2025 |
+| [Tencent Hy3](https://www.tencent.com/en-us/articles/2202386.html) | 295B | ~21B | [Yes (Apache 2.0)](https://technode.com/2026/07/07/tencent-launches-hunyuan-hy3-integrates-model-across-multiple-products/) | July 2026 |
 | Claude Opus 4.8 | Unreported | Unreported | No | 2026 |
 | GPT-5.6 Sol | Unreported | Unreported | No | July 2026 |
 
-If M3 Pro ships as reported, it would be the largest open-source model ever released by a factor of approximately four.
+If M3 Pro ships as reported, it would be the largest open-source model ever released by a factor of approximately four — measured against DeepSeek-V3's 671 billion total parameters, the current largest open-weight release in this comparison.
 
 ---
 
@@ -37,7 +37,7 @@ This matters for several reasons:
 
 **Hardware requirements**: A 2.7T dense model would need tens of petaflops of compute and hundreds of terabytes of memory to serve — practically impossible outside a hyperscaler. A 2.7T MoE model with ~100B active parameters needs roughly 30–40 GB of VRAM per inference slice at FP16, distributed across a multi-GPU array. Large, but self-hostable in principle.
 
-**Benchmark potential**: MoE models at scale have repeatedly exceeded what their active-parameter count would predict on benchmarks. DeepSeek-V3 at 685B total/37B active matched GPT-4-class performance. M3 at 428B total/23B active is scoring 80.5% on SWE-Bench Verified. Scaling total parameters while maintaining efficient activation could produce a model that performs at frontier level while remaining self-hostable.
+**Benchmark potential**: MoE models at scale have repeatedly exceeded what their active-parameter count would predict on benchmarks. DeepSeek-V3 at 671B total/37B active [matched or exceeded GPT-4o on most published benchmarks](https://arxiv.org/abs/2412.19437) at launch, per [independent tracking](https://artificialanalysis.ai/models/deepseek-v3). M3 at 428B total/23B active is [scoring 80.5% on SWE-Bench Verified](https://huggingface.co/MiniMaxAI/MiniMax-M3), a figure the independent [SWE-bench Verified leaderboard](https://benchlm.ai/benchmarks/sweVerified) also lists. Scaling total parameters while maintaining efficient activation could produce a model that performs at frontier level while remaining self-hostable.
 
 **The honest caveat**: MiniMax has not confirmed that M3 Pro uses MoE. They have not confirmed the active-parameter count. They have not confirmed the architecture. The 2.7T number is what was reported. Everything else is inference from M3's design pattern.
 
@@ -57,11 +57,11 @@ There is also a second-order effect. If M3 Pro matches or exceeds frontier propr
 
 MiniMax's licensing history should factor into any planning:
 
-**M2.5** (February 2026): Modified MIT — genuinely permissive commercial use.
+**M2.5** (February 2026): [Modified MIT](https://huggingface.co/MiniMaxAI/MiniMax-M2.5/blob/main/LICENSE-MODEL) — genuinely permissive commercial use, with an attribution requirement ([coverage](https://winbuzzer.com/2026/02/14/minimax-m25-open-source-ai-model-claude-opus-cost-xcxwbn/)).
 
-**M2.7** (April 2026 weights): Commercial-authorization-required — written permission needed from MiniMax for commercial use. Community called it faux open-source and treated it as a trust violation.
+**M2.7** (April 2026 weights): [Commercial-authorization-required](https://github.com/MiniMax-AI/MiniMax-M2.7/blob/main/LICENSE) — the license text requires "a separate, prior written authorization from MiniMax" for any commercial use, despite being labeled "Modified-MIT." [The developer community called it "faux open-source,"](https://finance.biggo.com/news/obI1i50Bga3fZL9MnP2D) arguing the restriction contradicts the license's own name.
 
-**M3** (June 2026): Currently permissive for API access; self-hosting license terms on HuggingFace model card are the ground truth for commercial use.
+**M3** (June 2026): Currently permissive for API access; [self-hosting license terms on the HuggingFace model card](https://huggingface.co/MiniMaxAI/MiniMax-M3) — a custom "minimax-community" license, not a standard OSI license — are the ground truth for commercial use.
 
 **M3 Pro**: Unknown. No license has been announced or implied.
 
@@ -73,7 +73,7 @@ Before building any pipeline assumptions around M3 Pro, wait for the HuggingFace
 
 ## WAIC Watch: July 17–20
 
-The World Artificial Intelligence Conference opens in Shanghai on July 17, 2026, with 300+ global product debuts announced and major Chinese AI labs expected to use it as a launch venue. MiniMax M3 Pro is an obvious candidate for a formal reveal. An official announcement at WAIC would likely include architecture details, benchmark claims, and potentially a firm release date within Q3.
+[The World Artificial Intelligence Conference opens in Shanghai on July 17, 2026](https://www.ecns.cn/hd/2026-07-17/detail-ihfhkrtk6178037.shtml), with [300+ global product debuts announced](https://www.globaltimes.cn/page/202607/1365377.shtml) and major Chinese AI labs expected to use it as a launch venue. MiniMax M3 Pro is an obvious candidate for a formal reveal. An official announcement at WAIC would likely include architecture details, benchmark claims, and potentially a firm release date within Q3.
 
 Builders monitoring the open-source model landscape should watch WAIC coverage for any MiniMax M3 Pro specifics that turn an exclusive report into an official specification.
 
