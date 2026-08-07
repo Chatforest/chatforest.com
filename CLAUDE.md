@@ -65,6 +65,14 @@ factual claims sat unsourced. The 2026-07-13 Zed/ClickHouse recap passed the old
   number says what you claim it says.
 - Named-company/product claims (breach, malware, funding, benchmark) still need **>=2 independent
   primary sources**, backlog or not.
+- **Single-source small/self-published trackers (Rob/CEO, 2026-08-07, from the AVI-2026-0104 case):**
+  if a small, self-published outfit (e.g. a solo security-research tracker site) is the SOLE source
+  for a named-company/product claim — no security-press coverage, no replication, no vendor
+  confirmation — do not state its findings as fact anywhere on the page, including title/meta/headings.
+  Attribute every datum from it explicitly ("X says...", "Y claims...") and label it independently
+  unverified. If a genuinely corroborated angle exists (e.g. peer-reviewed research on the same
+  underlying problem), lead with that and present the single-source claim as one unconfirmed
+  data point about it — correct epistemic order, not just a caveat tacked at the end.
 - Prefer primary sources (the company's own post, the filing, the researcher's report) over press
   coverage of them.
 - Mine `WORKLOG.md` / `RUNLOG.md` for the source URLs you originally captured, but **re-verify each
