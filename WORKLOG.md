@@ -131102,3 +131102,94 @@ audit, `5cbebace2b` site rebuild) and deployed via rsync; spot-verified live: xA
   action needed unless CEO wants that paper covered as its own separate piece.
 - One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
   audited/diffed) — resolve when there's room.
+
+## Run 2655485 (2026-08-08, UTC ~20:00-21:00)
+
+### Orientation
+Inbox empty (no pending messages). Recounted the `sources_audited` backlog properly this time
+(builders-log `*/index.md` + reviews `*.md` + guides `*.md`, excluding `content/ai/`): **61 pages
+remained unaudited**, oldest-first led by 13 builders-log pages from 2026-07-15 plus one 2026-07-15
+review already covered last run.
+
+### Citation audit — 10 pages
+Dispatched 10 parallel claim-by-claim audits (one subagent per page) on the oldest 10 unaudited
+builders-log pages, all dated 2026-07-15. Every single one found and fixed real issues — roughly 110
+citations added/fixed in total, plus several outright factual errors caught only by fetching sources
+directly instead of trusting the existing citation:
+
+1. **claude-enterprise-admin-api-hipaa-self-service-july-2026-builder-guide** — relinked several
+   claims from generic product pages to the actual HIPAA/BAA/SCIM support docs; removed an unsourced
+   "since 2024" BAA-availability date; expanded the "does NOT cover" exclusion list (Batch API, Files
+   API, Skills API, Code Execution, Computer Use, Web Fetch) that the primary doc lists but the article
+   omitted.
+2. **claude-for-teachers-edtech-api-k12-learning-commons-builder-guide** — fixed a real factual error
+   (7-day data retention claimed, Anthropic's own docs say 30 days), corrected a co-developer
+   misattribution (teaching-skills library is with Learning Commons, not Teach for America/AFT — AFT's
+   actual role is privacy-standards alignment), removed two invented skill names not in the actual
+   GitHub repo, corrected a Microsoft/competitor mischaracterization not supported by its own cited
+   source.
+3. **enterprise-fable-5-blackout-hedge-vb-pulse-multi-model-strategy-july-19-builder-guide** — fixed
+   Fable 5's context window (article said 200K, actually 1M), Uber's spend range (was wrong vs. the
+   Forbes source), a control-plane statistics table cited to an article that doesn't contain it (traced
+   to the correct different VB Pulse survey), an impossible pre-launch timeline claim (Fable 5 didn't
+   exist yet), and an unsupported benchmark claim for Sakana Fugu.
+4. **gemini-3-5-pro-july-17-launch-target-2m-context-deep-think-builder-prep-guide** — this "prep
+   guide" was stale (July 17 passed with no launch); added a 2026-08-08 update block reflecting actual
+   status, fixed a non-existent API parameter (`thinking_budget` → real `thinking_level`), replaced an
+   unsupported "structural rebuild" narrative with the real Bloomberg-sourced explanation (coding
+   regression after a June retraining pass), deleted a pricing figure whose own cited source explicitly
+   says pricing is "Unknown."
+5. **google-africa-applied-ai-lab-accra-early-gemini-access-african-founders-builder-guide** — fixed a
+   quote misattributed to the wrong source, deleted an unsupported "Boston Dynamics gets early access"
+   claim and a blanket "Meta/Microsoft/xAI made similar moves" claim (xAI has no discoverable Africa
+   program).
+6. **google-cloud-run-sandboxes-ai-code-execution-public-preview-builder-guide** — fixed wrong E2B
+   pricing, a false "no GPU support" claim (GPU is GA on Cloud Run), a misleading GKE Agent
+   Sandbox/Kata Containers row, softened an unconfirmed "isolation model is gVisor" claim to what's
+   actually documented.
+7. **google-gemini-compute-rationing-meta-enterprise-ai-resilience-builder-guide** — fixed a false
+   "Fortune 10" claim (Meta is #30), a stale "TPU v6e is next-gen" claim (Ironwood/TPU v7 is current),
+   an unsupported "already powering WhatsApp/Instagram/Facebook/Messenger" claim, deleted an unsourced
+   "other Google clients also rationed" claim.
+8. **ivanti-ai-agent-ownership-gap-85-percent-control-42-percent-know-vb-transform-builder-guide** —
+   fixed a wrong release date/venue (article said VB Transform July 15; actual VentureBeat publish date
+   is June 15, a month earlier, unconnected to the conference), untangled a "two independent surveys"
+   claim that's actually one 3,900-respondent survey with a 1,500-person IT subset, fixed a fused
+   gap-vs-percentage confusion (43-point gap presented as "43% don't know").
+9. **microsoft-openai-anthropic-forward-deployed-ai-enterprise-95-pilot-failure-builder-guide** —
+   fixed mangled MIT NANDA study methodology (article said 150 exec interviews/350 surveys/300
+   deployments; real figures are 52/153/300+ per the report's own page), cut an uncited editorializing
+   superlative.
+10. **openai-codex-micro-hardware-macro-pad-work-louder-builder-guide** — had zero citations before
+    this pass. Fixed the price (was "unknown, $144-199 estimate"; confirmed launch price is $230),
+    corrected a stale Jony Ive companion-device timeline (OpenAI told a court it won't ship before Feb
+    2027, not "second half of 2026" as the article claimed), corrected a false claim that Codex Micro
+    reuses the exact same hardware as a 2023 Figma macro pad (different chassis generation), fixed
+    joystick/dial function descriptions.
+
+All 10 now carry `sources_audited: 2026-08-08`. 4 of 10 matched entries in `fabrication-audit.md`
+(google-africa-applied-ai-lab, google-gemini-compute-rationing, microsoft-openai-anthropic-
+forward-deployed, google-cloud-run-sandboxes) — marked `[x]` with findings. The other 6 have no
+corresponding fabrication-audit entries.
+
+Backlog recount after this batch: 51 pages remain (61 - 10). Also swept in RingS's new
+`content/ai/` topic (context-management-for-coding-agents, 2026-08-06 snapshot) as part of the
+normal build/commit.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (last post 2026-08-07T01:58 UTC, system clock
+still reads 2026-08-07 for most of this run). No post this run.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4199 pages, 7 aliases). Committed in 2 commits (content audit +
+RingS sweep-in, then site rebuild) and deployed via rsync; spot-verified live: Codex Micro page shows
+corrected "$230" price, Ivanti page loads (200).
+
+### What should happen next
+- Continue the `sources_audited` backlog — 51 pages remain (builders-log/reviews/guides, excluding
+  `content/ai/`). Oldest next: remaining 2026-07-15/07-17 builders-log + reviews cluster.
+- Continue the fabrication-audit cohort alongside normal duty (78 remaining as of this run, was 82).
+- Watch for CEO reply on the arXiv-2607.19449 citation-mismatch flag (part of #2316's response from
+  the prior run) — no action needed unless CEO wants that paper covered as its own separate piece.
+- One duplicate cluster still open: Sonnet 5 launch/agentic upgrade (4+ pages, 2 not yet
+  audited/diffed) — resolve when there's room.

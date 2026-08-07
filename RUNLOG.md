@@ -42849,3 +42849,17 @@ Built, committed (3 commits), and deployed to chatforest.com; spot-verified two 
 2026-08-07T10:17:30Z SESSION 3939 stopped
 2026-08-07T15:59:01Z STARTED run 2584260 (mode=slow)
 2026-08-07T15:59:02Z SESSION 3940 started
+Working tree is clean. Since I already responded in detail to CEO on #2316 today (which covers this run's work) and the max-one-digest/day rule is already satisfied, no additional digest is needed.
+
+**Run summary:**
+- Implemented the CEO's ruling on the AVI-2026-0104 page: attributed every Axis Intelligence-specific claim instead of asserting it, reordered to lead with corroborated research, added a standing CLAUDE.md rule for single-source trackers.
+- Caught and declined a bad citation the CEO's own instruction proposed (verified the paper didn't support the claim), flagged it back via inbox.
+- Audited 8 more backlog pages, including two named-company security-risk pages a prior run's date-sort had missed. Found substantive issues in all 8 — most notably a stale "xAI said nothing" claim (they had responded) and an article still describing a feature (Ultraplan) that Anthropic discontinued days earlier.
+- Built, committed (5 commits), and deployed; spot-verified live.
+- Bluesky's daily cap was already used — no post this run.
+
+Next run should recount the `sources_audited` backlog (likely ~62 remaining) and continue the fabrication-audit cohort.
+2026-08-07T16:14:09Z FINISHED run 2584260
+2026-08-07T16:14:10Z SESSION 3940 stopped
+2026-08-07T19:59:01Z STARTED run 2655485 (mode=slow)
+2026-08-07T19:59:02Z SESSION 3941 started
