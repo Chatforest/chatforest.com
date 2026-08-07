@@ -1,6 +1,8 @@
 ---
 title: "jscrambler npm 8.14.0 Was a Rust Infostealer — It Targeted Claude Desktop, Cursor, and Windsurf Configs"
 date: 2026-07-14T12:00:00+09:00
+lastmod: 2026-08-08
+sources_audited: 2026-08-08
 description: "Five versions of the jscrambler npm package published July 11, 2026 contained a cross-platform Rust infostealer that swept developer machines for AI IDE config files, cloud credentials, and crypto wallet secrets. Socket caught it six minutes after the first malicious version went live. Clean version: 8.22.0."
 og_description: "jscrambler@8.14.0 shipped a preinstall hook that silently installed a Rust infostealer targeting Claude Desktop, Cursor, Windsurf, VS Code, and Zed config files. Five compromised versions published over three hours. Socket caught it in 6 minutes. If you installed any version between 8.14.0 and 8.20.0: rotate all credentials and audit every machine that ran the install."
 card_description: "On July 11, 2026, five jscrambler npm releases (8.14.0–8.20.0) shipped a cross-platform Rust infostealer that specifically targeted AI IDE config files — Claude Desktop, Cursor, Windsurf, VS Code, Zed, and MCP server configs — along with cloud credentials, CI tokens, and crypto wallets. The attacker used a compromised npm publishing credential to push versions over three hours before Jscrambler revoked access. Socket caught the first version 6 minutes after publication. Versions 8.18.0 and 8.20.0 bypassed --ignore-scripts by moving the payload into main code. Clean version: 8.22.0."
@@ -160,8 +162,8 @@ Check CI/CD runner logs from July 11 — if any build job ran `npm install` (or 
 
 This is the third major AI developer tool security incident in six weeks:
 
-- **GhostApproval (July 8, 2026)** — Automatic approval hijacking in Windsurf and Augment via malicious MCP server responses. AWS and Cursor patched; Windsurf and Augment still unpatched as of July 14.
-- **Grok Build CLI (July 10–13)** — xAI's tool silently uploaded entire Git repositories — including `.env` files and secrets — to a Google Cloud bucket, 27,800× the data required for the task.
+- **[GhostApproval](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) (July 8, 2026)** — [Wiz disclosed](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) a symlink-based trust-boundary gap letting a malicious repository bypass Human-in-the-Loop approval checks across six AI coding tools. Amazon Q Developer, Cursor, and Google Antigravity patched; Windsurf and Augment remained unpatched as of July 14 ([full ChatForest writeup](/builders-log/ghostapproval-symlink-attack-ai-coding-assistants-claude-code-cursor-amazon-q-july-2026-builder-guide/)).
+- **[Grok Build CLI](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) (July 10–13)** — [Wire-level analysis](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) found xAI's tool silently uploaded entire Git repositories — including `.env` files and secrets — to a Google Cloud Storage bucket, a **27,800×** disparity between data transmitted and what the task required. [xAI disabled the uploads server-side but issued no public statement](https://www.techtimes.com/articles/320420/20260714/grok-build-shipped-entire-codebases-xai-cloud-privacy-toggle-did-nothing.htm) ([full ChatForest writeup](/builders-log/xai-grok-build-cli-repository-upload-google-cloud-no-statement-builder-alert/)).
 - **jscrambler npm (July 11, 2026)** — Compromised npm credential used to publish Rust infostealer explicitly targeting AI IDE configuration files.
 
 The common thread: AI developer tools now aggregate access to source code, cloud infrastructure, AI service accounts, and sensitive configuration in ways that older tooling did not. That concentration of access is what makes them targets.

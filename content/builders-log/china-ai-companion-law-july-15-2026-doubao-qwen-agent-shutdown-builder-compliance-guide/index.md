@@ -12,6 +12,8 @@ tags:
   - builders-log
 categories:
   - builders-log
+sources_audited: 2026-08-08
+lastmod: 2026-08-08
 ---
 
 **Today, July 15, 2026,** China's [*Interim Measures for the Management of AI Human-Like Interaction Services*](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services) went into force. The regulation — co-issued on April 10, 2026, by five agencies including the Cyberspace Administration of China (CAC), the NDRC, MIIT, the Ministry of Public Security, and the State Administration for Market Regulation — is the world's first dedicated national AI companion law, and its effects are already visible.
@@ -53,26 +55,21 @@ For builders: if you operate services in China that collect emotional interactio
 ## The Five Technical Requirements Builders Must Meet
 
 ### 1. Minors Protection
-The regulation establishes an [absolute ban on virtual intimate relationships — virtual partners and virtual family members — for users under 18](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services). Services must:
-- Implement mandatory age verification
-- Build a "minor mode" with usage time limits, spending restrictions, and enhanced parental controls
-- Obtain guardian consent before creating accounts for users under 14
+The regulation establishes an [absolute ban on virtual intimate relationships — virtual partners and virtual family members — for users under 18](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services). Under [Article 14](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations), services must:
+- Take effective measures to identify minor users and switch them into "minor mode"
+- Give minor mode "personalized safety setting options" including usage time limits and guardian tools to view usage, block specific characters, and restrict recharge/spending
+- Obtain guardian consent before providing (non-prohibited) services to users under 14
 
 ### 2. Addiction and Dependency Detection
-Services must [deploy dependency and emotional attachment detection mechanisms](https://www.arturmarkus.com/chinas-ai-companion-rules-take-effect-july-15-2026-five-agencies-ban-virtual-partners-for-minors-mandate-addiction-detection/) and take corrective action when triggered. Behavioral markers the regulation expects you to monitor:
-- Accelerating session frequency
-- Lengthening conversation duration
-- Escalating emotional intensity
-- Displacement of human relationships by the AI product
-- Crisis language patterns
+Under Article 18 of the Measures, [providers must dynamically remind users, via a conspicuous pop-up, when the provider discovers signs of overdependence or addiction](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations) — a general trigger, not a prescribed checklist of behavioral signals. The regulation does not itemize specific metrics providers must track; it leaves detection method to the provider while mandating the response.
 
-Services are prohibited from designs that "replace real social interactions, control users' psychology, or induce addiction."
+Separately, under [Article 10, providers are barred from taking as a service objective "the replacement of social interaction, the control of users' psychology, or the inducement of addiction and dependence."](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations)
 
 ### 3. Session Reminders
-[Pop-up reminders are required after two consecutive hours of use.](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services) This is a technical requirement — the reminder must interrupt the session, not merely appear in a sidebar.
+[Providers must remind users, by dialogue or pop-up window, to watch their usage time once continuous use exceeds two hours](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations) (Article 18). [Latham & Watkins' summary confirms the same two-hour trigger.](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services)
 
 ### 4. AI Disclosure
-The AI nature of the service must be [disclosed at all interaction points](https://www.arturmarkus.com/chinas-ai-companion-rules-take-effect-july-15-2026-five-agencies-ban-virtual-partners-for-minors-mandate-addiction-detection/). You cannot allow the product to misrepresent itself as human. Personas are allowed; deceptive claims of humanity are not.
+Article 18 also requires providers to [label AI-generated content and take effective measures to alert users that they are interacting with an AI service, not a natural person](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations). You cannot allow the product to misrepresent itself as human. Personas are allowed; deceptive claims of humanity are not.
 
 ### 5. Crisis Escalation
 Services must [detect users in acute distress — self-harm, suicidal behavior, serious financial loss](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services) — and have human escalation protocols, including routes to emergency contacts and designated guardians. Emotional manipulation to induce "unreasonable decisions" is explicitly prohibited.
@@ -96,7 +93,7 @@ Providers must submit safety assessments to provincial cyberspace authorities wh
 
 - Launching a new service or adding significant new features
 - Implementing new underlying technologies
-- [Reaching 1 million registered users or 100,000 monthly active users](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services)
+- Reaching [1 million registered users or 100,000 monthly active users](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services) ([Article 22 confirms the same threshold](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations))
 - Discovering security risks that affect national security
 
 Assessment reports must cover: safety measures, training data handling, emergency response protocols, user demographics, and protections for minors and elderly users.
@@ -108,8 +105,8 @@ Assessment reports must cover: safety measures, training data handling, emergenc
 The penalty schedule is relatively modest compared to GDPR:
 
 - **Minor violations:** Warnings, public denouncements, mandatory rectification, suspension of new user registrations
-- **Serious violations:** Service cessation orders; [fines of RMB 10,000–100,000 (~$1,500–$15,000)](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services)
-- **Health/safety harm:** [Fines of RMB 100,000–200,000 (~$15,000–$30,000)](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services)
+- **Serious violations:** Service cessation orders; fines of [RMB 10,000–100,000 (~$1,500–$15,000)](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services) — [Article 30 confirms the same range](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations)
+- **Health/safety harm:** Fines of [RMB 100,000–200,000 (~$15,000–$30,000)](https://www.lw.com/en/insights/china-introduces-rules-for-ai-companion-and-emotional-interaction-services), also confirmed under [Article 30](https://www.geopolitechs.org/p/china-rolls-out-interim-regulations)
 
 The fines themselves are low. The meaningful enforcement lever is the service cessation order and suspension of new user registrations — effectively a market exclusion.
 
