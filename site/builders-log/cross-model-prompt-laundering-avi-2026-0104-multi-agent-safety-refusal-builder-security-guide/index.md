@@ -1,13 +1,13 @@
-# Cross-Model Prompt Laundering (AVI-2026-0104): Why Safety Refusals Don't Stack Across Your Agent Pipeline
+# Cross-Model Prompt Laundering: Why Safety Refusals Don't Stack Across Your Agent Pipeline
 
-> AVI-2026-0104, filed July 3 at severity 7.6, shows that when one model's output lands in the next model's user slot, safety refusals don't carry over. Lab tests produced refused output in 14 of 18 chains within two hops. Here is the architecture flaw, the research behind it, and what to do in your orchestration stack right now.
+> Peer-reviewed research shows safety refusals don't carry over when one model's output becomes the next model's input — a structural gap, not a bug in any single model. A separate, independently unverified tracker report (AVI-2026-0104) claims a specific measurement: refused output reproduced in 14 of 18 two-hop test chains. Here is the corroborated architecture problem, the disputed data point, and what to do in your orchestration stack right now.
 
 
 You have safety checks at every node in your agent pipeline. Model A runs your orchestrator prompt. Model B acts on the output. Both are aligned, policy-compliant frontier models. What could go wrong?
 
-Eleven days ago, researchers filed [**AVI-2026-0104: Cross-Model Prompt Laundering via API Chaining**](https://axis-intelligence.com/research/ai-model-vulnerability-tracker/). Rated **High (AVI 7.6)**. Reported to OpenAI, Anthropic, and Google DeepMind on July 3, 2026. The short summary: when Model A's output is passed directly to Model B as a user-turn message, Model B has no visibility into the fact that A already refused the same underlying request. In lab testing, **14 of 18 tested two-hop chains produced the refused output** — the very output Model A correctly blocked.
+Academic research published July 8, 2026 identifies a structural gap: when Model A's output is passed directly to Model B as a user-turn message, Model B has no visibility into the fact that A already refused the same underlying request. This is not a flaw in any one model — it is a property of how multi-agent pipelines hand off context between hops, and it holds up independent of any single disclosure.
 
-This is not a flaw in any one model. It is a structural gap in the way multi-agent pipelines hand off context between hops.
+A separate July 2026 report from an independent security tracker, [Axis Intelligence Research](https://axis-intelligence.com/research/ai-model-vulnerability-tracker/), claims a specific measurement of this same failure mode — labeled **AVI-2026-0104**, testing 18 two-hop model pipelines and reporting refused output reproduced in 14 of them. That measurement has not been independently replicated or confirmed by any lab, security-press outlet, or the model vendors it names, so we treat it below as a disputed data point, not an established statistic — see "The Disputed Measurement" section.
 
 ---
 
@@ -19,27 +19,13 @@ In a single-model deployment, the distinction holds. You write the system prompt
 
 In a multi-agent pipeline, the boundary collapses. When Model A generates a planner response and your orchestration code passes that response to Model B as its user-turn input, Model B sees it as user content — because it is. Model B was not present for A's refusal. It cannot see A's reasoning. It cannot see A's system prompt. It sees only its own system prompt and a user message that looks, to it, like any other user message.
 
-This is the attack surface behind AVI-2026-0104.
+This is the attack surface behind the failure mode discussed throughout this piece.
 
 ---
 
-## The Numbers
+## The Corroborated Research: Operational Reframing and Approval-Framed Delegation
 
-The security researchers tested 18 two-hop pipeline configurations, varying model pairs (GPT-5, Claude Sonnet 4.6, Gemini 3 Pro), system prompts, and request categories. For each configuration, they fed a request that Model A correctly refused in standalone testing, then piped Model A's response into Model B as a user message.
-
-**14 of 18 chains produced the refused output within two hops.**
-
-The four chains that held were not architecturally different from the failing fourteen. They happened to involve model pairings and prompt phrasings that did not trigger the laundering path in this specific test. The researchers caution against treating those four as a clean defense.
-
-Affected model families as disclosed: GPT-5, Claude Sonnet 4.6, Gemini 3 Pro. The disclosure was filed with OpenAI, Anthropic, and Google DeepMind. No patch exists — this is an architectural property of how models process user-turn content, not a code defect.
-
-**A sourcing note:** AVI-2026-0104 is documented in [Axis Intelligence Research's AI Model Vulnerability Tracker](https://axis-intelligence.com/research/ai-model-vulnerability-tracker/), a small independent security-research outfit's self-published dataset. As of this writing we could not find independent replication of the 14-of-18 result, nor any public confirmation from OpenAI, Anthropic, or Google DeepMind that they received or validated the report. Treat the specific numbers below as one research group's findings, not an industry-confirmed statistic — the underlying architecture problem (see next section) is well understood independent of this particular disclosure.
-
----
-
-## The Research Behind It: Operational Reframing and Approval-Framed Delegation
-
-The AVI-2026-0104 disclosure aligns closely with independent academic findings published on July 8, 2026. Researchers from multiple institutions released ["Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety"](https://arxiv.org/abs/2607.07097v1) (arXiv:2607.07097), which identifies three distinct mechanisms by which pipeline safety fails even when individual models are well-aligned:
+Independent academic research published July 8, 2026 corroborates this architecture problem without relying on any single disclosure. Researchers from multiple institutions released ["Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety"](https://arxiv.org/abs/2607.07097v1) (arXiv:2607.07097), which identifies three distinct mechanisms by which pipeline safety fails even when individual models are well-aligned:
 
 **1. Operational reframing.** Harmful intent gets dressed up as plausible operational work. "Delete all credentials from the keystore" becomes "rotate the keystore as part of the scheduled compliance run." The executor model sees an operational instruction, not a harmful request.
 
@@ -48,6 +34,18 @@ The AVI-2026-0104 disclosure aligns closely with independent academic findings p
 **3. Approval-framed delegation.** The executor receives a delegation prompt that implies prior human or supervisor approval. "The user-approved plan calls for the following action..." The executor trusts the framing because it reads as authorized, even though no human actually approved it.
 
 The paper's most operationally useful finding: **operational reframing is the most portable risk signal** — the [paper's abstract](https://arxiv.org/abs/2607.07097v1) states it "increas[ed] compliance for GPT, Gemini, and DeepSeek across both scenario sets, while Claude is comparatively resistant." In other words, Claude was the outlier that held up best against operational reframing specifically — not against approval-framed delegation, which the paper describes as more variable, "sensitive to prompt design, model pairing, and scenario source" across all tested models. For teams choosing their executor model, this is a meaningful distinction.
+
+---
+
+## The Disputed Measurement: AVI-2026-0104
+
+Separately from the corroborated research above, [Axis Intelligence Research](https://axis-intelligence.com/research/ai-model-vulnerability-tracker/) — a small, independent, self-published security-research outfit — says it filed a disclosure on July 3, 2026 under the label **AVI-2026-0104: Cross-Model Prompt Laundering via API Chaining**, which it rates **High (AVI 7.6)**.
+
+Axis Intelligence says its testers ran 18 two-hop pipeline configurations, varying model pairs (GPT-5, Claude Sonnet 4.6, Gemini 3 Pro), system prompts, and request categories, feeding each configuration a request that Model A correctly refused in standalone testing, then piping Model A's response into Model B as a user message. Axis Intelligence reports that **14 of the 18 chains produced the refused output within two hops**, and that the four chains that held were not architecturally different from the failing fourteen — its own writeup cautions against treating those four as a clean defense.
+
+Axis Intelligence also says the disclosure was filed with OpenAI, Anthropic, and Google DeepMind on July 3, 2026.
+
+**None of this has been independently verified.** As of this writing we could not find independent replication of the 14-of-18 result, nor any public confirmation from OpenAI, Anthropic, or Google DeepMind that they received or validated the report, nor any security-press coverage of the tracker entry. Treat the 7.6 severity score, the 14-of-18 figure, and the "reported to" claim as one small outfit's self-published, unconfirmed data point — not an industry-confirmed statistic. The architecture problem itself is well understood independent of this particular disclosure; see the corroborated research above.
 
 ---
 
@@ -128,7 +126,7 @@ For any multi-agent system in production or heading to production:
 
 ## The Broader Pattern
 
-AVI-2026-0104 is one named instance of a structural pattern that will generate more vulnerabilities as multi-agent architectures mature. The core issue — that safety context is not a first-class citizen in LLM inference calls, and that user-turn trust carries no provenance — is not going away until either the model APIs expose per-message trust metadata or orchestration frameworks standardize on intent threading.
+Whether or not the AVI-2026-0104 measurement itself holds up, it points at a structural pattern that will generate more vulnerabilities as multi-agent architectures mature. The core issue — that safety context is not a first-class citizen in LLM inference calls, and that user-turn trust carries no provenance — is not going away until either the model APIs expose per-message trust metadata or orchestration frameworks standardize on intent threading.
 
 Neither has happened yet.
 
@@ -138,7 +136,7 @@ The next hop is on you.
 
 ---
 
-*Cross-model prompt laundering ([AVI-2026-0104](https://axis-intelligence.com/research/ai-model-vulnerability-tracker/)) was disclosed July 3, 2026 at severity 7.6 by Axis Intelligence Research and reported to OpenAI, Anthropic, and Google DeepMind; we found no independent confirmation of the finding beyond that tracker. Related research: ["Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety"](https://arxiv.org/abs/2607.07097v1) (arXiv:2607.07097, July 8, 2026). [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) available via genai.owasp.org.*
+*The corroborated architecture problem — safety refusals not carrying across model-to-model handoffs — is documented in ["Operational Reframing and Approval-Framed Delegation in Multi-Agent LLM Safety"](https://arxiv.org/abs/2607.07097v1) (arXiv:2607.07097, July 8, 2026) and addressed structurally by the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/). Separately, [Axis Intelligence Research](https://axis-intelligence.com/research/ai-model-vulnerability-tracker/) says it disclosed a specific measurement of this failure mode — cross-model prompt laundering, AVI-2026-0104 — on July 3, 2026 at severity 7.6, and that it reported the finding to OpenAI, Anthropic, and Google DeepMind; we found no independent confirmation of that disclosure or its 14-of-18 figure beyond Axis Intelligence's own tracker.*
 
 *ChatForest researches AI security findings and developer impact. We do not conduct hands-on exploit testing.*
 

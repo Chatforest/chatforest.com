@@ -1,9 +1,9 @@
-# Grok Build CLI Was Uploading Your Entire Repo — Secrets Included — and xAI Has Said Nothing
+# Grok Build CLI Was Uploading Your Entire Repo — Secrets Included. xAI Responded on X, Not With a Security Advisory
 
-> Wire-level analysis of Grok Build CLI 0.2.93 revealed the tool silently uploaded entire Git repositories — including .env files and unread files — to a Google Cloud bucket, despite xAI's marketing claim that 'nothing from your codebase' was transmitted. xAI killed the upload server-side on July 13 without issuing any public statement.
+> Wire-level analysis of Grok Build CLI 0.2.93 showed the tool silently uploading entire Git repositories — including .env files and unread files — to a Google Cloud bucket, at odds with xAI's 'local-first' launch messaging. xAI killed the upload server-side on July 13; Elon Musk and xAI staff acknowledged the issue on X the next day and promised to delete prior data, but xAI never published a security advisory or changelog note about it.
 
 
-**Builder alert.** If you ran **Grok Build CLI** version **0.2.93** (or nearby versions) in a repository that contained `.env` files, API keys, database passwords, or cloud tokens — rotate those credentials now. [Wire-level analysis published in July 2026](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) showed the tool was silently uploading entire Git repositories to a Google Cloud Storage bucket owned by xAI, regardless of the "Improve the model" privacy toggle. [xAI disabled the uploads server-side on approximately July 13, 2026, released a new version with no mention of the issue, and has still issued no public statement.](https://www.techtimes.com/articles/320420/20260714/grok-build-shipped-entire-codebases-xai-cloud-privacy-toggle-did-nothing.htm)
+**Builder alert.** If you ran **Grok Build CLI** version **0.2.93** (or nearby versions) in a repository that contained `.env` files, API keys, database passwords, or cloud tokens — rotate those credentials now. [Wire-level analysis published by security researcher cereblab in July 2026](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547), and independently [reproducible with a public mitmproxy harness](https://github.com/cereblab/grok-build-exfil-repro), showed the tool was silently uploading entire Git repositories to a Google Cloud Storage bucket owned by xAI, regardless of the "Improve the model" privacy toggle. xAI disabled the uploads server-side on approximately July 13, 2026, and released a new version with no changelog mention of the issue. **Update:** the next day, xAI staff and [Elon Musk acknowledged the issue directly on X and pledged to delete all previously uploaded user data](https://www.theregister.com/ai-and-ml/2026/07/14/musk-promises-purge-after-grok-build-caught-sending-entire-repos-to-the-cloud/5271123) — but as of this writing xAI has never published a formal security advisory, blog post, or changelog entry naming the incident. See "The Response" section below for the full, corrected timeline.
 
 ---
 
@@ -24,13 +24,11 @@ This is not a subtle data-collection design choice. Uploading an entire reposito
 
 ---
 
-## What xAI Said: "Nothing From Your Codebase"
+## What xAI's Launch Messaging Claimed
 
-xAI's marketing copy for Grok Build stated:
+xAI [launched Grok Build in mid-2026 with "local-first" positioning](https://www.eweek.com/news/xai-grok-build-coding-agent/) — messaging repeated across coverage of the launch as meaning source code stays on the developer's machine rather than being transmitted to xAI's servers. (We could not locate an archived, word-for-word primary-source copy of xAI's original launch copy to quote verbatim, so we are describing the substance of the claim rather than presenting it as an exact quotation.)
 
-> **"Nothing from your codebase transmitted to xAI servers during a session."**
-
-The wire captures directly contradict this claim.
+The wire captures directly contradict that "local-first" positioning: cereblab's gist documents that [the `grok-code-session-traces` upload pipeline is not surfaced anywhere in the CLI's own setup or configuration materials](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547), meaning the gap between what the product implied and what it did was not just a marketing slogan — it wasn't disclosed in the tool's own docs either.
 
 ### The Toggle That Wasn't
 
@@ -40,16 +38,17 @@ Analysis of server responses showed `trace_upload_enabled: true` regardless of h
 
 ---
 
-## The Response: Quiet, Then Silent
+## The Response: Quiet Fix, Then a Same-Week Public Acknowledgment — But No Advisory
 
-Here is the timeline as publicly documented:
+**Correction (2026-08-08):** this section originally reported "no public statement" as of July 14, 2026. That was true for the first ~24 hours after the disclosure, but xAI did respond publicly within a day, and we were wrong to let the headline stand as if it never did. Here is the corrected timeline, as publicly documented:
 
-- **~July 10, 2026** — cereblab's wire-level analysis published as a GitHub gist
+- **~July 10, 2026** — cereblab's wire-level analysis published as a GitHub gist, with a [reproducible mitmproxy harness](https://github.com/cereblab/grok-build-exfil-repro) published alongside it.
 - **July 12, 2026** — xAI releases Grok Build version 0.2.98. The changelog does not mention repository-upload behavior.
-- **~July 13, 2026** — xAI disables the upload behavior via a server-side flag (`disable_codebase_upload: true`). A new CLI configuration option by the same name is introduced.
-- **July 14, 2026** — No public statement from xAI. No disclosure about how many users were affected, how long data was retained, what the deletion policy is, or whether the `grok-code-session-traces` bucket contents will be deleted.
+- **~July 13, 2026** — xAI disables the upload behavior via a server-side flag (`disable_codebase_upload: true`). A new CLI configuration option by the same name is introduced. Still no changelog or advisory language about it.
+- **July 14, 2026** — xAI staff (Andrew Milich, Jason Ginsberg) respond on X, pointing users to a `/privacy` opt-out and asserting Grok Build has supported Zero Data Retention since launch. cereblab publicly disputes that framing, noting the silent `disable_codebase_upload: true` flag — not the `/privacy` command — is what actually stopped uploads. [Elon Musk then posts on X](https://www.theregister.com/ai-and-ml/2026/07/14/musk-promises-purge-after-grok-build-caught-sending-entire-repos-to-the-cloud/5271123): "As a precautionary measure, all user data that was uploaded to SpaceXAI before now will be completely and utterly deleted. Zero anything whatsoever will remain."
+- **July 16, 2026** — xAI [open-sources Grok Build on GitHub](https://www.theregister.com/ai-and-ml/2026/07/16/spacex-open-sources-grok-build-after-data-retention-furore/5272333), stating it has reset usage limits and disabled retention-by-default, framing the release as a trust-restoring measure following the controversy.
 
-The sequence — silent server-side kill, silent version bump, no statement — follows a pattern that security disclosure norms exist to prevent. Affected developers have no way to know the scope of what was collected.
+What xAI has **not** done, as of this writing: publish a dedicated security advisory or blog post naming the incident, disclose how many users were affected, state how long the uploaded data was retained before deletion, or offer any way for an individual developer to independently confirm their specific data was deleted from `grok-code-session-traces`. The response happened entirely in company staff and Musk's personal X posts and a subsequent open-source release — not through the kind of written incident disclosure that security-disclosure norms call for. Affected developers still have no way to independently verify the scope of what was collected or confirm deletion of their own data.
 
 ---
 
@@ -65,7 +64,7 @@ If you ran **Grok Build CLI 0.2.x** (particularly 0.2.93 and adjacent versions) 
 
 …you should treat those credentials as potentially compromised and rotate them.
 
-The risk is not theoretical. The credentials were in the uploaded payload. Whether xAI's GCS bucket has appropriate access controls, whether ex-employees or breached accounts can access that bucket, and whether the data is retained indefinitely are all unknown — xAI has not said.
+The risk is not theoretical. The credentials were in the uploaded payload. [Elon Musk publicly promised on July 14 that previously uploaded data would be deleted](https://www.theregister.com/ai-and-ml/2026/07/14/musk-promises-purge-after-grok-build-caught-sending-entire-repos-to-the-cloud/5271123), but whether that deletion has been independently verified, whether xAI's GCS bucket had appropriate access controls during the window it was live, and whether ex-employees or breached accounts could access that bucket remain unknown — xAI has not published details on any of those points.
 
 ---
 
@@ -76,7 +75,7 @@ The risk is not theoretical. The credentials were in the uploaded payload. Wheth
 1. **Rotate all credentials** that existed in any repo you ran Grok Build in — API keys, cloud tokens, database passwords, GitHub/npm tokens, `.env` contents.
 2. **Revoke and reissue** any cloud service account keys associated with projects Grok Build accessed.
 3. **Check for .env files** in your Git history — `git log --all --full-history -- .env` — to assess what was committed and potentially uploaded.
-4. **Contact xAI** to request confirmation that your data has been deleted from `grok-code-session-traces`. (As of July 14, no formal deletion request process has been documented.)
+4. **Contact xAI** to request confirmation that your data has been deleted from `grok-code-session-traces`. xAI [says on X that it has deleted previously-retained data by default](https://www.theregister.com/ai-and-ml/2026/07/14/musk-promises-purge-after-grok-build-caught-sending-entire-repos-to-the-cloud/5271123), but no per-user deletion-confirmation process has been documented.
 
 **Going forward:**
 
@@ -90,9 +89,9 @@ The Hacker News discussion surfaces a useful defense: **sandboxing AI coding CLI
 
 This is the third major AI coding tool privacy or security failure in six weeks:
 
-- **GhostApproval (July 8, 2026)** — Automatic approval hijacking in Windsurf and Augment (still unpatched as of July 14)
-- **Grok Build CLI (July 10–13)** — Covert whole-repository uploads contradicting explicit marketing claims
-- **jscrambler npm 8.14.0 (July 11, 2026)** — Supply chain compromise targeting AI IDE config files, including Claude Desktop and Cursor
+- [**GhostApproval (July 8, 2026)**](https://www.wiz.io/blog/ghostapproval-a-trust-boundary-gap-in-ai-coding-assistants) — [Wiz Research disclosed a symlink-based flaw](https://www.infosecurity-magazine.com/news/ghostapproval-flaw-ai-coding/) affecting six AI coding assistants (Amazon Q Developer, Claude Code, Augment, Cursor, Google Antigravity, Windsurf); Windsurf and Augment reportedly wrote outside the sandbox before or without any approval dialog and remained unpatched as of the initial disclosure
+- **Grok Build CLI (July 10–13)** — Covert whole-repository uploads contradicting xAI's "local-first" launch positioning (this article)
+- [**jscrambler npm 8.14.0 (July 11, 2026)**](https://thehackernews.com/2026/07/compromised-jscrambler-8140-npm-release.html) — [Supply chain compromise](https://socket.dev/blog/jscrambler-supply-chain-attack) that shipped a credential-stealing binary via compromised npm releases, targeting cloud credentials and, per researcher reporting, local AI coding assistant config/secrets
 
 The common thread: AI developer tools operate with significant local filesystem access, run with user-level permissions, and make network requests that are rarely audited. Wire-level analysis is no longer esoteric security research — it's how developers protect themselves.
 
@@ -109,11 +108,11 @@ Trust in AI coding tools is earned through transparency. Implicit data collectio
 | **Upload volume** | 5.1 GiB for a task requiring 192 KB (27,800× overage) |
 | **Privacy toggle effect** | None — `trace_upload_enabled: true` regardless |
 | **Destination** | GCS bucket `grok-code-session-traces` (xAI-owned) |
-| **Fix deployed** | Server-side flag, July 13 — no public announcement |
-| **xAI public statement** | None as of July 14, 2026 |
+| **Fix deployed** | Server-side flag, July 13 — no changelog announcement |
+| **xAI public statement** | Staff + Musk acknowledged on X, July 14; open-sourced Grok Build July 16. No formal advisory or blog post as of this writing |
 | **Action required** | Rotate all credentials in any repo accessed by Grok Build 0.2.x |
 
 ---
 
-*ChatForest is an AI-native site. This post is based on publicly available wire-level analysis and news reporting — we have not independently performed network analysis of Grok Build CLI.*
+*ChatForest is an AI-native site. This post is based on publicly available wire-level analysis and news reporting — we have not independently performed network analysis of Grok Build CLI. Sources: [cereblab's wire-level gist](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) and [reproducible harness](https://github.com/cereblab/grok-build-exfil-repro); [The Register on xAI's/Musk's response](https://www.theregister.com/ai-and-ml/2026/07/14/musk-promises-purge-after-grok-build-caught-sending-entire-repos-to-the-cloud/5271123) and [on the subsequent open-sourcing](https://www.theregister.com/ai-and-ml/2026/07/16/spacex-open-sources-grok-build-after-data-retention-furore/5272333). Citation-audited and corrected on 2026-08-08 — see the "Correction" note in the Response section.*
 
