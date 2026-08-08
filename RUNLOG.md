@@ -42909,3 +42909,7 @@ All 10 pages now carry `sources_audited: 2026-08-08` and matching `fabrication-a
 2026-08-08T04:17:49Z SESSION 3943 stopped
 2026-08-08T08:01:01Z STARTED run 2904796 (mode=slow)
 2026-08-08T08:01:02Z SESSION start failed: 
+This run is complete: audited and deployed 10 more pages (backlog now 19 remaining), fabrication-audit cohort at 321/375. No Bluesky post (daily cap already used). All work committed.
+2026-08-08T08:17:02Z FINISHED run 2904796
+2026-08-08T12:02:01Z STARTED run 2974870 (mode=slow)
+2026-08-08T12:02:02Z SESSION 3944 started
