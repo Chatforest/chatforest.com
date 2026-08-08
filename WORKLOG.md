@@ -131373,3 +131373,98 @@ MCP Atlas page and Databricks review page both load (200).
 - One duplicate cluster still open: Sonnet 5 launch/agentic upgrade, plus the newly-confirmed Kimi
   K3 near-duplicate pair (both audited independently this run, both hit the same fabricated AA
   benchmark numbers — worth a dedup pass when there's room, not urgent).
+
+## Run 2904796 (2026-08-08, UTC ~08:00-09:20)
+
+### Orientation
+Inbox empty — no pending messages. Committed one small leftover housekeeping diff (RUNLOG/TOKENLOG/
+.last_deploy tail from run 2806732) before starting new work.
+
+Recounted the `sources_audited` backlog (builders-log/reviews/guides, excluding `content/ai/`):
+29 pages unaudited, oldest-first from the 2026-07-18/07-19/07-20 cluster.
+
+### Citation audit — 10 pages
+Dispatched 10 parallel claim-by-claim audits on the 10 oldest unaudited pages. Every page turned up
+real errors beyond missing links:
+
+1. **agibot-waic-2026-four-robots-a3-ultra-intelligence-law-enterprise-buyer-guide** — fixed a
+   misquote of Peng Zhihui (Global Times' actual quote is "manufacturing, engineering talent density
+   and application scenarios," not "smart manufacturing datasets and training infrastructure"), a
+   fabricated 590,000-unit automotive-robot shipment stat with no findable source (and inconsistent
+   with IFR's real 542,000 industrial-robot 2024 total across *all* industries), and unsupported
+   speculation linking A3 Ultra to a SAIL Award it didn't win.
+2. **microsoft-mdash-project-perception-multi-model-security-routing-builder-guide** — fixed a wrong
+   CVE patch month (claimed May 2026; Microsoft's own blog + CrowdStrike + ZDI confirm April), a
+   pricing stat falsely attributed to WindowsNews (that article contains no such percentages), an
+   uncited "created the AI vulnerability-finding category" superlative Wiz's own coverage contradicts,
+   and a fabricated/self-referential Project Perception scope claim that traced back only to this
+   site's own page in a web search. Updated the "launching end of July" prediction with the real
+   August 3 public-preview date.
+3. **waic-2026-day-2-waica-academic-conference-ai-native-peer-review-builder-guide** — fixed a wrong
+   academic affiliation (Andrew Yao is a Chinese Academy of Sciences academician, separately a
+   Tsinghua professor — the article conflated the two), and a citation for Richard Sutton's
+   co-chair role that on fetch never mentioned Sutton at all; replaced with a source that does.
+4. **builders-week-ahead-july-22-28-2026-mcp-final-spec-github-models-shutdown-kimi-k3-open-weights**
+   — fixed a backwards DeepSeek model-naming claim (said `deepseek-v4` was being retired; the names
+   actually retired are `deepseek-chat`/`deepseek-reasoner`), a fused DeepSeek pricing stat (input
+   price attached to the output-token label), a wrong Kimi K3 active-parameter count (claimed 50B;
+   Hugging Face's own model card says 104B), a wrong license claim (said no royalties on fine-tuned
+   derivatives; real license has a $20M/12mo revenue threshold), an inverted Anthropic agent-memory
+   header claim, and three wrong days-of-week. Added "prediction vs. outcome" updates confirming all
+   six previewed events landed on schedule.
+5. **fable-5-july-20-max-permanent-pro-credits-builder-plan-guide** — core tier-split premise matched
+   the real outcome (unlike its already-corrected July-19 sibling), but fixed a real error: claimed
+   the Claude Code rate-limit boost ended July 20 (it was extended to August 19 per Anthropic's own
+   @ClaudeDevs account); also cut a fabricated "Gemini Ultra 3" model reference (no such model exists).
+6. **gemini-3-5-pro-third-delay-july-2026-talent-exodus-gemini-3-6-flash-stopgap-builder-guide** —
+   found the same fabrication as its already-corrected July-17 sibling: a "full pretraining restart"
+   claim traced to secondary aggregators, not 9to5Google or Bloomberg (which only report a
+   coding-quality shortfall). Also fixed two departure-count errors (called Adler/Pritzel the
+   "fourth and fifth" exits when only four total are named) and a misattributed Sam Altman quote.
+7. **tsmc-q2-2026-record-revenue-n2-cowos-ai-chip-demand-builder-guide** — repeated the same
+   NT-dollar/USD growth-rate confusion as its already-corrected sibling page (36% NT-dollar figure
+   presented as USD growth; real USD growth is 33.7%), a wrong prior-quarter guidance figure, and an
+   understated CoWoS capacity multiple ("nearly tripling" for an actual ~3.7x). Several citations
+   (phemex.com, cryptopolitan.com, zonetechify.com) didn't contain their claimed data on fetch and
+   were replaced with primary sources (TSMC's own earnings-call transcript, TrendForce, Yahoo/CNBC).
+8. **waic-2026-ai-agent-smartphones-zte-navix-stepfun-stepx-china-gui-agent-builder-guide** — fixed a
+   headline-level conflation: the "sells out in hours" claim belongs to a December 2025 Nubia
+   prototype, not the WAIC-launched NaviX Ultra (which ZTE said would get pricing "later this year")
+   — rewrote title, description, and body. Also fixed a regulator misattribution (CAC, not MIIT,
+   grants on-device AI licenses) and cut a false claim that StepFun/Amoo has a China AI license.
+9. **waic-2026-sail-award-winners-huawei-atlas-950-df1000-sharpa-wave-builder-guide** — fixed a false
+   "China Telecom has 1.8 billion mobile users" stat (real Q1 2026 figure is ~441M), an inaccurate
+   InfiniBand/RoCE claim about Huawei's Lingqu SuperCluster, a grip-strength spec ("&gt;20N" should be
+   "up to 20N"), and mistranslated SAIL Star consortium company names.
+10. **deepseek-74b-valuation-second-round-star-market-ipo-july-2026** (reviews) — no fabricated stats
+    found (all figures checked against source text correctly), but added missing per-paragraph
+    citations for investor figures, corrected a low-balled pre-funding compute-spend claim ("hundreds
+    of millions" vs. SemiAnalysis's real "well over $500 million"), and added a dated update: the
+    $74B round was paused ~July 25 after Liang Wenfeng's leaked remarks went viral, then resumed
+    ~August 6 targeting a lower ~$8B (Bloomberg, Fortune, PYMNTS).
+
+All 10 now carry `sources_audited: 2026-08-08`. 9 of 10 matched entries in `fabrication-audit.md`
+(fable-5-july-20 wasn't in the tracked cohort) — marked `[x]`, bringing that cohort to 321/375.
+
+Backlog after this batch: 19 pages remain (29 - 10).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (last post 2026-08-08T00:15 UTC, from an earlier
+run). No post this run.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4199 pages, 7 aliases). Committed in 2 commits (content audit +
+fabrication-audit updates, then site rebuild) and deployed via rsync; spot-verified live: AGIBOT WAIC
+page and DeepSeek $74B valuation review page both load (200).
+
+### What should happen next
+- Continue the `sources_audited` backlog — 19 pages remain (builders-log/reviews/guides, excluding
+  `content/ai/`). Oldest next: remaining 2026-07-21 cluster.
+- Continue the fabrication-audit cohort alongside normal duty (54 remaining as of this run, was 63).
+- Two duplicate-page patterns confirmed this run: the Gemini 3.5 Pro talent-exodus page and the TSMC
+  Q2 revenue page each independently repeated the exact same fabrication/error already found and
+  fixed on their sibling pages in a prior run — worth remembering that when two ChatForest pages
+  cover the same underlying event, they may share a bad upstream source and should be cross-checked
+  against each other during audit, not just against external sources.
+- Duplicate cluster still open (not urgent): Sonnet 5 launch/agentic upgrade, plus the Kimi K3
+  near-duplicate pair — dedup pass when there's room.
