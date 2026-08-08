@@ -13,7 +13,7 @@ The EU AI Act's August 2, 2026 date has been misread by many as something that w
 
 ## What Was Actually Delayed
 
-When the EU's Digital Omnibus package was finalized — [agreed provisionally on May 7](https://datamatters.sidley.com/2026/06/24/eu-ai-act-transparency-obligations-preparing-for-compliance-by-2-august-2026/) and [formally adopted by the Council on June 29, 2026](https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-omnibus-vii-deadline-delay-20260/) — the centerpiece delay was Annex III high-risk AI. Systems in that category (recruitment tools, credit scoring, biometric identification, critical infrastructure management) now have until December 2, 2027 to comply with Articles 9–17 and Article 26. For those building or deploying high-risk AI systems, that extension is real and significant.
+When the EU's Digital Omnibus package was finalized — [agreed provisionally on May 7](https://datamatters.sidley.com/2026/06/24/eu-ai-act-transparency-obligations-preparing-for-compliance-by-2-august-2026/) and [formally adopted by the Council on June 29, 2026](https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-omnibus-vii-deadline-delay-20260/) — the centerpiece delay was Annex III high-risk AI. Systems in that category ([recruitment tools, credit scoring, biometric identification, and similar](https://secureprivacy.ai/blog/eu-ai-act-digital-omnibus-the-new-high-risk-ai-deadlines-after-council-approval)) now have until December 2, 2027 to comply with the Annex III high-risk obligations. For those building or deploying high-risk AI systems, that extension is real and significant.
 
 What was not delayed: Article 50. The transparency chapter was excluded from the Digital Omnibus deferral, and national enforcement authorities will be able to act from August 2.
 
@@ -25,17 +25,17 @@ What was not delayed: Article 50. The transparency chapter was excluded from the
 
 [Providers of AI systems designed to interact directly with people](https://www.digitalapplied.com/blog/eu-ai-act-august-2026-transparency-obligations-agency-checklist) — chatbots, voice assistants, AI companions, social media bots — must ensure users know they are interacting with an AI system. The disclosure must occur at first contact, in clear and accessible language. The guidance is explicit: a statement buried in terms of service does not satisfy this obligation.
 
-The "obvious in context" exemption exists — if the interaction is plainly and transparently automated, disclosure is not required. But this bar is narrow. A chatbot that simulates a human persona, responds in a natural conversational register, or does not proactively identify itself does not qualify.
+The ["obvious in context" exemption](https://artificialintelligenceact.eu/article/50/) exists: disclosure is not required "unless this is obvious from the point of view of a natural person who is reasonably well-informed, observant and circumspect." But this bar is narrow. A chatbot that simulates a human persona, responds in a natural conversational register, or does not proactively identify itself does not qualify.
 
 ### 2. AI-Generated Content Marking (Article 50(2))
 
-Providers of generative AI systems must embed machine-readable markers in AI-generated or AI-manipulated audio, images, video, and text — markers detectable by automated systems that can confirm AI origin. The [EU AI Act's official guidance](https://artificialintelligenceact.eu/transparency-rules-article-50/) requires the marking to be "effective, interoperable, robust and reliable."
+Providers of generative AI systems must embed machine-readable markers in AI-generated or AI-manipulated audio, images, video, and text — markers detectable by automated systems that can confirm AI origin. [Article 50(2) itself](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50) requires that "providers shall ensure their technical solutions are effective, interoperable, robust and reliable as far as this is technically feasible."
 
 **Grace period:** Generative AI systems already on the market before August 2, 2026 have until December 2, 2026 to implement machine-readable marking. Systems placed on the market on or after August 2 must comply immediately. The grace period is for the marking obligation only — the broader Article 50 transparency framework, including chatbot disclosure, is not covered by it.
 
 ### 3. Emotion Recognition and Biometric Categorization (Article 50(3))
 
-Deployers using AI to recognize people's emotional states, or to categorize individuals by characteristics inferred from biometric data, must inform the natural persons exposed to such systems. This applies outside the contexts (workplace, education) where such systems are already prohibited under other provisions.
+Deployers using AI to recognize people's emotional states, or to categorize individuals by characteristics inferred from biometric data, must inform the natural persons exposed to such systems. This applies outside the contexts where such systems are already prohibited under [Article 5(1)(f)](https://artificialintelligenceact.eu/article/5/), which bans AI emotion-inference in the workplace and education institutions except for medical or safety reasons.
 
 ### 4. Deepfake and Public-Interest Text Labeling (Article 50(4))
 
@@ -47,7 +47,7 @@ This editorial carve-out is the most practically significant provision for media
 
 ## Penalties
 
-Non-compliance with Article 50 carries fines of [up to €15 million or 3% of global annual turnover](https://compliancehub.wiki/eu-ai-act-article-50-transparency-digital-omnibus-2026/) — whichever is greater — for organizations operating at scale. Smaller organizations face the same structure. Enforcement runs through national market surveillance authorities in each EU member state, not through a centralized Brussels mechanism. Early enforcement is expected to prioritize visible failures: undisclosed chatbot personas, unlabeled synthetic media, and AI-generated political content without editorial disclosure.
+Non-compliance with Article 50 carries fines of [up to €15 million or 3% of global annual turnover](https://compliancehub.wiki/eu-ai-act-article-50-transparency-digital-omnibus-2026/) — whichever is greater — for organizations operating at scale. Smaller organizations face the same structure. Enforcement runs through the [national market surveillance authorities each EU member state is required to designate](https://artificialintelligenceact.eu/article/70/), not a single centralized Brussels body.
 
 ---
 
@@ -65,9 +65,9 @@ For many organizations, this means both obligations apply simultaneously: a comp
 
 ## The Code of Practice
 
-The EU AI Office has been developing a voluntary [Code of Practice on Transparency of AI-Generated Content](https://www.techpolicy.press/the-eus-ai-transparency-code-of-practice-explained/) as a practical compliance framework. The Code addresses marking standards, labeling taxonomies, and modality-specific approaches for different content types. Organizations that sign and adhere to the Code gain a "presumption of conformity" — meaning national authorities treat their implementation as compliant unless evidence to the contrary appears. This is voluntary, but it provides meaningful legal protection.
+The European Commission has been developing a voluntary [Code of Practice on Transparency of AI-Generated Content](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content) as a practical compliance framework. The Code addresses marking standards, labeling taxonomies, and modality-specific approaches for different content types. Per the Commission's own description, "following a positive assessment of the code, all providers and deployers who sign it can rely on its measures to demonstrate compliance with the AI Act's rules for labeling and detection of AI-generated content" — a streamlined path to showing compliance, though not a formal, automatic presumption: non-signatories still have their alternative measures "assessed individually by different market surveillance authorities," and adherence to the Code "should not be understood as a guarantee of compliance," since [national authorities remain responsible for assessing Article 50 compliance](https://www.techpolicy.press/the-eus-ai-transparency-code-of-practice-explained/).
 
-A second draft was published in 2026 and a final version was expected by June 2026, ahead of the August deadline.
+A [second draft was published on March 5, 2026](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-second-draft-code-practice-marking-and-labelling-ai-generated-content), and the [Commission published the final version on June 10, 2026](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content), roughly two months ahead of the August 2 deadline.
 
 ---
 

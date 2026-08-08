@@ -5,7 +5,7 @@
 
 # Even Realities Raises $150M at $1B: The Ex-Apple Team Betting Privacy-First Smart Glasses Win
 
-Even Realities, a Shenzhen-headquartered smart glasses startup founded by ex-Apple engineers, [raised $150 million in a pre-Series B round on July 6, 2026](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/), reaching a $1 billion valuation. The round was led by Meituan, China's dominant food-delivery and local-services platform, alongside Tencent, a returning backer. Previous investor HSG (formerly Sequoia China) also participated.
+Even Realities, a Shenzhen-headquartered smart glasses startup founded by ex-Apple engineers, [raised $150 million in a pre-Series B round on July 6, 2026](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/), reaching a [$1 billion valuation](https://www.auganix.org/ar-news-even-realities-unicorn-status/). The round was led by Meituan, China's dominant food-delivery and local-services platform, alongside Tencent, a returning backer. Previous investor HSG (formerly Sequoia China) also participated.
 
 The funding makes Even Realities the latest smart glasses company to achieve unicorn status — but it arrived there with a product that makes a conspicuous choice that most of its competitors do not: no camera.
 
@@ -13,7 +13,7 @@ The funding makes Even Realities the latest smart glasses company to achieve uni
 
 ## The Deliberate Absence of a Camera
 
-Smart glasses in 2026 are almost universally defined by their cameras. Meta's Ray-Ban Meta — the category's best-known product — places dual cameras at the bridge of the glasses, enabling wearers to capture first-person photos and videos, run visual AI queries, and share content directly from their field of view. The camera is the product's primary pitch.
+Smart glasses in 2026 are almost universally defined by their cameras. Meta's [Ray-Ban Meta](https://en.wikipedia.org/wiki/Ray-Ban_Meta) — the category's best-known product — builds dual cameras into the front of the frame, enabling wearers to capture first-person photos and videos, run visual AI queries, and share content directly from their field of view. The camera is the product's primary pitch.
 
 Even Realities CEO Will Wang has publicly articulated why he made the opposite bet. In [TechCrunch's reporting on the July 2026 round](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/), Wang said smart glasses represent "probably the most personal computing device people will ever wear" and that building them around content capture creates friction that prevents mainstream adoption — specifically, the discomfort others feel when they cannot tell whether they are being recorded.
 
@@ -25,13 +25,13 @@ Camera-free glasses do not eliminate this concern entirely. But they remove the 
 
 Even Realities sells two hardware products and a companion accessory:
 
-**Even G1** (launched 2024): A waveguide-based heads-up display marketed as the lightest in its category at launch. Displays information in the wearer's line of sight without occluding vision. Even claims the G1 was the first waveguide smart glass to sell more than 10,000 units — a milestone that had eluded category predecessors including Google Glass and several enterprise AR headsets.
+**Even G1** (launched 2024): A waveguide-based heads-up display [marketed as the lightest in its category at launch](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/). Displays information in the wearer's line of sight without occluding vision. Even claims [the G1 was the first waveguide smart glass to sell more than 10,000 units](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/) — a milestone that had eluded category predecessors including Google Glass and several enterprise AR headsets.
 
 **Even G2**: An updated display model, positioned as a refinement of the G1 architecture with the company's proprietary optical technology more deeply integrated.
 
 **Even R1**: A companion smart ring enabling navigation and input via tapping and swiping — an alternative to voice commands for situations where speaking aloud is impractical.
 
-The core software feature is **Conversate**, an AI copilot that assists the wearer during conversations. It keeps prepared notes visible in the display, surfaces contextual information when unfamiliar references arise, and produces a summary in the Even Realities companion app. Voice input is transcribed to text rather than stored as audio recordings — a privacy implementation choice Even highlights in its marketing to European regulatory markets.
+The core software feature is **[Conversate](https://www.evenrealities.com/conversate)**, an AI copilot that assists the wearer during conversations. It keeps prepared notes visible in the display, surfaces contextual information when unfamiliar references arise, and produces a summary in the Even Realities companion app. Voice input is transcribed to text rather than stored as audio recordings — a privacy implementation choice Even highlights in its marketing to European regulatory markets.
 
 Pricing: $599 for the Even G2 frames, $200–$300 for prescription lenses or the R1 ring. Average order value is approximately $1,000, per [TechCrunch's reporting](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/).
 
@@ -39,9 +39,9 @@ Pricing: $599 for the Even G2 frames, $200–$300 for prescription lenses or the
 
 ## The Founders and the Apple Background
 
-CEO Will Wang previously worked on Apple Watch and iPhone. His co-founders brought complementary backgrounds in optical manufacturing — including technologists from Lindberg, the Danish luxury eyewear manufacturer known for titanium frames used in precision prescription work. The combination of consumer hardware pedigree with optical expertise is reflected in the company's primary technical bet.
+CEO Will Wang [previously worked on Apple Watch and iPhone](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/). Two of his co-founders [came from luxury eyewear companies, including Lindberg](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/) — [the Danish luxury eyewear manufacturer known for titanium frames](https://en.wikipedia.org/wiki/Lindberg_%28eyewear%29) used in precision prescription work. The combination of consumer hardware pedigree with optical expertise is reflected in the company's primary technical bet.
 
-That bet is **Even HAO — Holistic Adaptive Optics** — the company's proprietary optical platform. Where most waveguide glasses integrate separately designed components (microchip, waveguide, prescription elements), Even HAO is designed as a unified system from the ground up, with prescription correction built into the display architecture rather than applied as an afterthought. This integration is what the company claims enables both the lightness of the G1 and the clarity of the display.
+That bet is [**Even HAO — Holistic Adaptive Optics**](https://www.evenrealities.com/tech) — the company's proprietary optical platform. Where most waveguide glasses combine separately designed components, [Even HAO integrates the microchip, waveguide, and prescription support from the start](https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/) rather than as an afterthought. This integration is what the company claims enables both the lightness of the G1 and the clarity of the display.
 
 ---
 
@@ -67,7 +67,7 @@ The privacy-first positioning may prove particularly useful for European expansi
 
 ## Competitive Context
 
-Even Realities competes in a market where Meta has significant distribution and brand advantage. [Meta's Ray-Ban Meta](https://www.ray-ban.com/usa/ray-ban-meta-smart-glasses) glasses are sold through Ray-Ban's global retail network and benefit from Meta's AI stack (Meta AI assistant, Llama-based models). They have cameras.
+Even Realities competes in a market where Meta has significant distribution and brand advantage. [Meta's Ray-Ban Meta](https://en.wikipedia.org/wiki/Ray-Ban_Meta) glasses are sold through Ray-Ban's global retail network and benefit from Meta's AI stack (Meta AI assistant, Llama-based models). They have cameras.
 
 Other competitors include:
 
