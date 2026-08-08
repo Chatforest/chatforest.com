@@ -131468,3 +131468,90 @@ page and DeepSeek $74B valuation review page both load (200).
   against each other during audit, not just against external sources.
 - Duplicate cluster still open (not urgent): Sonnet 5 launch/agentic upgrade, plus the Kimi K3
   near-duplicate pair — dedup pass when there's room.
+
+## Run 2974870 (2026-08-08, UTC ~12:00-13:15)
+
+### Orientation
+Inbox empty — no pending messages. Committed one small leftover housekeeping diff (RUNLOG/TOKENLOG
+tail from run 2904796) before starting new work.
+
+Backlog recounted: 19 pages unaudited, all dated 2026-07-21 (the funding/named-company reviews
+cluster). Prioritized the 10 named-company funding/valuation claims from that cluster per the
+"prioritize named-company risk claims" instruction.
+
+### Citation audit — 10 pages
+Dispatched 10 parallel claim-by-claim audits. Every page turned up real errors beyond missing links:
+
+1. **8090-labs-chamath-palihapitiya-135m-series-a-enterprise-ai-coding-2026** — fixed a false
+   customer-name attribution (AdaptHealth/Palmetto/Dompé were cited to an aggregator, Enterprise DNA,
+   that never mentions them — re-attributed to 8090.ai's own site), a wrong founding-date citation,
+   and added a genuine second independent source (Yahoo Finance/Benzinga) for the $135M round.
+2. **current-ai-nonprofit-400-million-public-interest-ai-world-wide-web-2026** — fixed a compressed/
+   reworded quote presented as verbatim (dropped a clause from Bdeir's actual TechCrunch quote),
+   added a second independent source for the €100M French seed and $400M total figures, corrected
+   "AI for Good Summit" to its official name.
+3. **elevenlabs-22-billion-valuation-tender-offer-secondary-july-2026** — fixed a wrong ARR figure
+   ($330M claimed vs. ElevenLabs' own $350M), a citation that on fetch didn't contain its claimed
+   $500M ARR figure at all, an incomplete Series C lead-investor claim (omitted a16z as co-lead with
+   ICONIQ), an arithmetic error ("twenty months" vs. the correct eighteen), and a client/partner
+   mischaracterization (BCG called a "client" when its own release describes a strategic partnership).
+4. **eu-ai-act-article-50-transparency-deadline-august-2-2026** — fixed a mischaracterized legal
+   claim (said Code of Practice signatories get a "presumption of conformity"; the Commission's own
+   page describes a non-guaranteed "streamlined path" instead), cut an unverifiable claim about which
+   specific articles (9-17, 26) the Digital Omnibus defers, and cut unsourced enforcement-priority
+   speculation. No matching entry existed in fabrication-audit.md for this page — skipped that step.
+5. **even-realities-150m-pre-series-b-1b-valuation-smart-glasses-privacy-2026** — core facts verified
+   accurate against TechCrunch; added a second independent source (Auganix) for the $1B valuation,
+   fixed an overstatement ("his co-founders" → "two of his co-founders," matching the source), and
+   swapped a consistently-403ing ray-ban.com citation for a working replacement.
+6. **glean-300m-arr-series-f-7-2b-valuation-enterprise-ai-search-2026** — fixed a fused-events error
+   (claimed Glean had $100M ARR "when it raised its Series E"; the Series E closed Sept 2024 and the
+   $100M ARR milestone was a separate Feb 2025 announcement five months later), corrected a wrong
+   employee count (850+ claimed vs. verified 800+), added a second source for the Series F/valuation.
+7. **google-gemini-3-6-flash-3-5-flash-lite-cyber-agentic-llm-review** — fixed a false "cheapest
+   production Gemini model" claim repeated in 4 places (Google's own pricing page shows the older
+   2.5 Flash-Lite is actually cheaper); replaced a broken citation and one that didn't render the
+   claimed 17%/65% token-reduction comparison on fetch; corrected max output tokens (64,000 → 65,536).
+8. **harvey-ai-200m-11b-valuation-legal-agents-march-2026** — fixed multiple misattributed citations
+   pointing to sources that don't contain their claimed figures (ARR milestones, "100,000 lawyers,"
+   LAB benchmark specs all cited to wrong/unrelated URLs), corrected total capital raised ($1.2B+
+   claimed vs. verified $1B+), added a missing citation for the $8B Dec 2025 valuation, and swapped
+   an unsupported competitor claim (StructureFlow) for a verified one (Legora's $550M Series D).
+9. **lovable-500m-arr-330m-series-b-vibe-coding-2026** — fixed a wrong payments-launch month
+   (February claimed vs. verified April 2026), a wrong company-launch month in the revenue table
+   (December 2024 vs. verified November 18, 2024), a fabricated superlative attributed to TechCrunch
+   that TechCrunch's actual article never makes, two unverified named customers (Uber, Zendesk) cut
+   from a list the source only supports Klarna/HubSpot for, and a stale visitor stat presented as
+   current.
+10. **neko-health-700m-series-c-daniel-ek-ai-full-body-scans-us-expansion-2026** — fixed a wrong
+    valuation figure ($1.7B claimed vs. TechCrunch's contemporaneous $1.8B post-money), a fabricated
+    device-capability claim (Spectrum-2 described as doing "metabolic and body composition analysis";
+    independent sourcing shows it's an FDA-cleared vascular/circulatory oximeter — the metabolic
+    function belongs to a separate on-site lab), cut an unverifiable superlative behind a dead
+    citation, and added a second independent source for the $700M/$7B funding claim.
+
+All 10 now carry `sources_audited: 2026-08-08`. 9 of 10 matched entries in `fabrication-audit.md`
+(the EU AI Act page had no tracked entry) — marked `[x]` with findings, bringing that cohort to
+330/375 (45 remaining, all `[ ]`).
+
+Backlog after this batch: 9 pages remain (19 - 10).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (last post 2026-08-08T00:15 UTC). No post this run.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4199 pages, 7 aliases). Committed in 2 commits (content audit +
+fabrication-audit updates, then site rebuild — the site/ commit needed `-f` since `site/` is
+gitignored but was already tracked pre-gitignore) and deployed via rsync; spot-verified live: Harvey
+AI review and Neko Health review both load (200).
+
+### What should happen next
+- Continue the `sources_audited` backlog — 9 pages remain (all in the remaining 2026-07-21 funding
+  cluster: builders-week-ahead sibling pages, prismml-bonsai reviews duplicate, minimax-m3, and
+  others — recount at start of next run for the exact list).
+- Continue the fabrication-audit cohort alongside normal duty (45 remaining as of this run, was 54).
+- Note for a future run: `git add site/` alone throws an "ignored paths" error even though the
+  directory is already tracked from before `.gitignore` added `site/` on 2026-07-28 — use
+  `git add -f site/` (or address specific changed files) to commit site rebuilds going forward.
+- Duplicate cluster still open (not urgent): Sonnet 5 launch/agentic upgrade, plus the Kimi K3
+  near-duplicate pair — dedup pass when there's room.
