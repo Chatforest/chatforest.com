@@ -17,9 +17,9 @@ The outcome is more nuanced than the simple "credits-only" scenario most builder
 
 [Starting July 20, Claude Fable 5 is permanently included in Max and Team Premium plans](https://www.dawn.com/news/2016483/anthropic-to-add-claudes-fable-5-model-to-max-team-premium-plans-at-50pc-of-usage-limits) — it won't disappear again. That's the good news.
 
-The catch: [Fable 5 is capped at 50% of the plan's standard weekly usage limits, and those standard limits themselves drop on July 20](https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/) when the 50% Claude Code rate limit boost that was bundled with the promo extension ends.
+The catch: [Fable 5 is capped at 50% of the plan's standard weekly usage limits, and those standard limits themselves drop on July 20](https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/) — a separate "bonus usage phase" that had been inflating regular Claude weekly limits ends that day, [cutting the baseline by roughly 33%](https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/). (This is distinct from the Claude Code-specific weekly rate-limit boost — see the correction below — which Anthropic actually extended rather than ended.)
 
-**Net effect:** During the promotion (July 7–19), you were using Fable 5 at 50% of a boosted limit. After July 20, you use it at 50% of a reduced limit. The actual weekly Fable 5 capacity available to Max subscribers is materially smaller than it has been for the past month.
+**Net effect:** During the promotion (July 7–19), you were using Fable 5 at 50% of an inflated "bonus phase" limit. After July 20, you use it at 50% of the ~33%-lower baseline. The actual weekly Fable 5 capacity available to Max subscribers is materially smaller than it has been for the past month.
 
 ### Pro and Team Standard: One-Time $100 Credit, Then API Rates
 
@@ -33,13 +33,13 @@ For most active builders, that credit runs out in hours to days depending on usa
 
 ### API Users
 
-No change. Fable 5 remains available at $10/M input, $50/M output — the same credits-based pricing that has applied to API users throughout.
+No change. Fable 5 remains available at [$10/M input, $50/M output](https://platform.claude.com/docs/en/about-claude/pricing) — the same credits-based pricing that has applied to API users throughout.
 
 ---
 
 ## Why Anthropic Reversed Course on Subscription Access
 
-The original plan was to pull Fable 5 from subscription plans entirely after July 19. The reversal for Max and Team Premium [likely has to do with competitive pressure](https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm): OpenAI's GPT-5.6 Sol offers comparable frontier performance at roughly one-third the cost, and Gemini Ultra 3 is positioned in the same tier. Removing Fable 5 entirely from subscriptions would have made Max a harder sell against those alternatives.
+The original plan was to pull Fable 5 from subscription plans entirely after July 19. The reversal for Max and Team Premium [likely has to do with competitive pressure](https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm): OpenAI's GPT-5.6 Sol reached general availability July 9 at roughly half Fable 5's per-token rate, and [Artificial Analysis found it completes comparable coding tasks at about one-third of Fable 5's cost](https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm) despite scoring within a point of Fable 5 on its Intelligence Index (59.9 vs. 58.9) — effectively a statistical tie in general capability at a fraction of the price. Removing Fable 5 entirely from subscriptions would have made Max a harder sell against that alternative.
 
 [Anthropic acknowledged in the July 18 announcement](https://x.com/claudeai/status/2078302415804379218) that demand for Fable has been "challenging to" — the sentence was cut off in the public post, but the context is clear: capacity management at frontier scale is hard, and the company is still investing in more compute. [Simon Willison's summary](https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/) notes the permanent inclusion is a meaningful commitment even if the limits are tighter than the promo period.
 
@@ -73,13 +73,11 @@ No structural change. You've always paid per token; pricing remains $10/M input,
 
 ---
 
-## The Hidden Limit Reduction (Claude Code Users)
+## Correction: The Claude Code Rate-Limit Boost Did Not End July 20 (2026-08-08)
 
-The most underreported aspect of July 20: the 50% boost to Claude Code weekly rate limits — which was extended alongside the Fable 5 promo — also ends.
+This section originally claimed the 50% Claude Code weekly rate-limit boost was ending July 20 alongside the Fable 5 promo, and told heavy Claude Code users to "plan for a noticeable reduction in available sessions per week." That was wrong. Anthropic separately extended the Claude Code-specific boost through **August 19, 2026**, for all Pro, Max, Team, and seat-based Enterprise users — confirmed directly by Anthropic's own [Claude Devs account on X](https://x.com/ClaudeDevs/status/2078511173759324328) ("We're also keeping Claude Code weekly limits 50% higher, now through August 19, for all Pro, Max, Team, and seat-based Enterprise users") and independently reported by [Help Net Security](https://www.helpnetsecurity.com/2026/07/13/claude-code-weekly-limits-promotion-extended/) and [Digital Applied](https://www.digitalapplied.com/blog/claude-code-limits-raised-fable-5-max-team-premium-2026).
 
-[Claude Code users on Max and Team Premium have had their weekly rate limits boosted 50% since the promo began](https://aiweekly.co/alerts/anthropic-caps-claude-fable-5-in-max-cuts-pro-users-off). Starting July 20, those limits revert to baseline. Fable 5 requests on Claude Code will count against the new (smaller) baseline, at 50% of that baseline.
-
-If you've been using Claude Code heavily during the promo period, plan for a noticeable reduction in available sessions per week starting tomorrow. Consider batching your highest-value Claude Code work today.
+What actually shrank on July 20 is the separate, non-Claude-Code-specific mechanism described above: the general "bonus usage phase" for standard weekly usage limits ended that day, [cutting the account-wide baseline by roughly 33%](https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/) — that's the baseline Fable 5's 50% cap applies against. Claude Code sessions specifically kept their extra 50% headroom through mid-August; only the general bonus phase ended on schedule.
 
 ---
 

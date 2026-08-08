@@ -25,7 +25,7 @@
 - **Compute:** NVIDIA Thor AI processor; 700 TOPS via proprietary three-layer heterogeneous design
 - **Positioning:** GPS, RTK, UWB support for centimeter-level indoor/outdoor accuracy
 
-WAIC 2026 organizers designated the A3 Ultra a **"Gem of the Exhibition"** — [the only embodied AI product among the ten items selected for that designation](https://autonews.gasgoo.com/articles/news/waic-2026-agibot-to-debut-multiple-new-products-2078355073401847808). AGIBOT is also deploying over 60 robots across all three WAIC venues for live guided tours, unmanned retail, interactive experiences, and entertainment — a real-world stress test of the A3 Ultra's commercial-environment claim.
+WAIC 2026 organizers designated the A3 Ultra a **"Gem of the Exhibition"** — [the only embodied AI product among the ten items selected for that designation](https://autonews.gasgoo.com/articles/news/waic-2026-agibot-to-debut-multiple-new-products-2078355073401847808). AGIBOT is also [deploying over 60 robots across four venues at WAIC's three exhibition locations](https://autonews.gasgoo.com/articles/news/waic-2026-agibot-to-debut-multiple-new-products-2078355073401847808) for live guided tours, unmanned retail, interactive experiences, and entertainment — a real-world stress test of the A3 Ultra's commercial-environment claim.
 
 ### X2 Edu — Humanoid Development Platform
 
@@ -58,13 +58,13 @@ The OmniHand 3 Ultra-M ships as a standalone end-effector, which means it can be
 
 [According to TechTimes](https://www.techtimes.com/articles/320899/20260718/agibot-debuts-four-robots-waic-2026-global-export-push-meets-chinas-spy-law-obligation.htm):
 
-- AGIBOT holds approximately **39% of the global humanoid robot supply market**
+- AGIBOT holds approximately **39% of the global humanoid robot supply market**, [per Omdia analyst data cited by TechTimes](https://www.techtimes.com/articles/320899/20260718/agibot-debuts-four-robots-waic-2026-global-export-push-meets-chinas-spy-law-obligation.htm) and [independently reported by gagadget](https://gagadget.com/en/719322-agibot-unveils-15000-robots-and-revolutionary-a3-ultra-humanoid-with-nvidia-thor-at-waic-2026/)
 - Produced its **15,000th robot in late June 2026**
-- [International sales already exceed 30% of annual revenue](https://www.globaltimes.cn/page/202607/1366238.shtml), with Southeast Asia, Thailand, and South Korea as primary targets
+- [International sales already exceed 30% of annual revenue](https://www.globaltimes.cn/page/202607/1366238.shtml), with Southeast Asia (particularly Malaysia), Thailand, and South Korea as primary targets
 
-The scale context matters. [China produced more than 40,000 humanoid robot units in the first half of 2026 alone](https://www.globaltimes.cn/page/202607/1366238.shtml) — a market on track to exceed 100,000 units for the full year. At 39% share, AGIBOT is the single largest supplier to that market. For reference, the global automotive robot market (all arm types, all brands) shipped roughly 590,000 units in 2024. Chinese humanoid output is compressing a decade of industrial robot adoption into two or three years.
+The scale context matters. [China produced more than 40,000 humanoid robot units in the first half of 2026 alone](https://www.globaltimes.cn/page/202607/1366238.shtml) — a market on track to exceed 100,000 units for the full year. At 39% share, AGIBOT is the single largest supplier to that market. For reference, [worldwide industrial robot installations across all industries and brands totaled roughly 542,000 units in 2024](https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years), per the IFR's World Robotics 2025 report. China's humanoid segment alone — a single robot category, in a single country — is on pace to exceed 100,000 units this year, roughly a fifth of the entire global industrial robot installation base.
 
-AGIBOT co-founder Peng Zhihui stated at WAIC that "only China and the US currently have the full combination of capabilities needed to compete in embodied AI," attributing China's advantage to smart manufacturing datasets and training infrastructure, while conceding the US leads in foundation models and compute.
+AGIBOT co-founder Peng Zhihui [told Global Times at WAIC](https://www.globaltimes.cn/page/202607/1366238.shtml) that "only China and the US currently have the full combination of capabilities needed to compete in embodied AI" — strong AI "brain" models, robot-body development, and large-scale manufacturing — citing China's advantages in "manufacturing, engineering talent density and application scenarios," while acknowledging the US still leads in large-scale foundation models and compute.
 
 ---
 
@@ -72,7 +72,7 @@ AGIBOT co-founder Peng Zhihui stated at WAIC that "only China and the US current
 
 This is the section that changes the risk calculus.
 
-[China's National Intelligence Law (2017), Article 7](https://www.techtimes.com/articles/320899/20260718/agibot-debuts-four-robots-waic-2026-global-export-push-meets-chinas-spy-law-obligation.htm) requires every Chinese company and citizen to support, assist, and cooperate with state intelligence work on demand. The same obligation is discussed in detail in TechTimes' June 2026 analysis of the [humanoid robot investment race and spy law implications](https://www.techtimes.com/articles/317693/20260603/humanoid-robots-investment-race-heats-goldman-6x-forecast-china-leads-spy-law.htm), and again in the July 16 coverage of [Unitree's IPO and the same structural exposure](https://www.techtimes.com/articles/320711/20260716/unitree-robotics-nears-shanghai-ipo-profitable-actuators-exposed-chinas-spy-law.htm).
+[Article 7 of China's National Intelligence Law (2017, amended 2018)](https://www.chinalawtranslate.com/en/national-intelligence-law-of-the-p-r-c-2017/) states: "All organizations and citizens shall support, assist, and cooperate with national intelligence efforts in accordance with law, and shall protect national intelligence work secrets they are aware of." [TechTimes' July 18 report on AGIBOT](https://www.techtimes.com/articles/320899/20260718/agibot-debuts-four-robots-waic-2026-global-export-push-meets-chinas-spy-law-obligation.htm) summarizes this as requiring every Chinese company and citizen to support, assist, and cooperate with state intelligence work. The same obligation is discussed in detail in TechTimes' June 2026 analysis of the [humanoid robot investment race and spy law implications](https://www.techtimes.com/articles/317693/20260603/humanoid-robots-investment-race-heats-goldman-6x-forecast-china-leads-spy-law.htm), and again in the July 16 coverage of [Unitree's IPO and the same structural exposure](https://www.techtimes.com/articles/320711/20260716/unitree-robotics-nears-shanghai-ipo-profitable-actuators-exposed-chinas-spy-law.htm).
 
 Three things are true simultaneously:
 
@@ -98,9 +98,9 @@ Three things are true simultaneously:
 
 ## What's Next
 
-WAIC 2026 closes July 20, and the SAIL Award (Super AI Leader) winner will be announced before close. AGIBOT's A3 Ultra is one of the ten "Gem of the Exhibition" honorees, positioning it as a SAIL Award contender. A win would be AGIBOT's highest-profile international recognition to date.
+[WAIC 2026 ran July 17–20 in Shanghai](https://english.shanghai.gov.cn/en-Events/20260624/9cc202d708504b56ba32f70fbd61ef79.html). AGIBOT's A3 Ultra was one of ten products named a WAIC 2026 "Gem of the Exhibition" — the only embodied-AI product to receive that designation this year. (Note: an earlier version of this piece speculated the A3 Ultra was a contender for WAIC's separate SAIL Award; no source ties the two together, so that claim has been removed.)
 
-For builders tracking the Chinese humanoid supply chain: the 15,000-unit production milestone, the 39% market share, and the live WAIC deployment across three venues all suggest AGIBOT is operating at a scale that makes it a realistic procurement option for large enterprises — subject to the legal and geopolitical risk assessment above.
+For builders tracking the Chinese humanoid supply chain: the 15,000-unit production milestone, the 39% market share, and the live WAIC deployment across four venues all suggest AGIBOT is operating at a scale that makes it a realistic procurement option for large enterprises — subject to the legal and geopolitical risk assessment above.
 
 ---
 
