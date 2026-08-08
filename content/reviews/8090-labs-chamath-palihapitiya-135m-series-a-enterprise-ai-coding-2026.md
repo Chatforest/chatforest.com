@@ -8,13 +8,14 @@ card_description: "8090 Labs raised $135M Series A on June 29, 2026, led by Sale
 tags: ["enterprise-ai", "ai-coding", "chamath", "funding", "compliance", "regulated-industries", "software-development", "ai-tools", "startup", "series-a"]
 categories: ["reviews"]
 author: "ChatForest"
+sources_audited: 2026-08-08
 ---
 
-**At a glance:** 8090 Labs is an enterprise AI coding platform. [Founded January 2024](https://www.8090.ai/) by Chamath Palihapitiya. CEO: Chamath Palihapitiya (took operating role June 2026). Product: Software Factory (AI-native software development platform) + 8090 Enterprise (managed service). Funding: [$135M Series A](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/) closed June 29, 2026. Lead investor: Salesforce Ventures. Co-investors: WndrCo (Jeffrey Katzenberg), Craft Ventures (David Sacks), The Production Board (David Friedberg), Launch (Jason Calacanis). Angels: Nikesh Arora (Palo Alto Networks CEO), Adam D'Angelo (Quora CEO). Customers: EY, CMS, Bissell, AdaptHealth, Palmetto, Dompé. Target market: regulated enterprises in healthcare, financial services, aerospace, manufacturing, and federal government. Part of our **[AI industry reviews](/categories/reviews/)**.
+**At a glance:** 8090 Labs is an enterprise AI coding platform. [Founded January 2024](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/) by Chamath Palihapitiya. CEO: Chamath Palihapitiya (took operating role June 2026). Product: Software Factory (AI-native software development platform) + 8090 Enterprise (managed service). Funding: [$135M Series A](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/) closed June 29, 2026. Lead investor: Salesforce Ventures. Co-investors: WndrCo (Jeffrey Katzenberg), Craft Ventures (David Sacks), The Production Board (David Friedberg), Launch (Jason Calacanis). Angels: Nikesh Arora (Palo Alto Networks CEO), Adam D'Angelo (Quora CEO). Customers: [EY, CMS, Bissell, AdaptHealth, Palmetto, Dompé](https://www.8090.ai/). Target market: [regulated enterprises in healthcare, financial services, aerospace, manufacturing, and federal government](https://finance.yahoo.com/technology/ai/articles/chamath-palihapitiya-announces-135-million-110110136.html). Part of our **[AI industry reviews](/categories/reviews/)**.
 
 ---
 
-Chamath Palihapitiya has been one of the most prominent voices in tech investing for the past decade — the All-In podcast, SPACs, public market commentary. But he has not run a company since his time as an executive at Facebook, which he left in 2011.
+Chamath Palihapitiya has been one of the most prominent voices in tech investing for the past decade — the All-In podcast, SPACs, public market commentary. But he has not run a company since his time as an executive at Facebook, which he [left in 2011](https://medium.com/@chamath/farewell-facebook-b83d6a7eae29).
 
 That changed on June 29, 2026, when [8090 Labs announced a $135 million Series A](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/) led by Salesforce Ventures, and Palihapitiya stepped out of the founder-board role and into the CEO seat.
 
@@ -44,15 +45,15 @@ The platform works in sequence: business leaders define requirements in plain En
 
 The second offering, **8090 Enterprise**, is a managed service where 8090's team designs, builds, hosts, and maintains custom applications around specific client workflows. The client retains ownership of the business logic.
 
-Customers [named on the company's site](https://www.8090.ai/) include EY, CMS (the Centers for Medicare & Medicaid Services), and Bissell, with [reports also citing](https://enterprisedna.co/resources/news/8090-labs-chamath-135m-enterprise-ai-coding-2026/) AdaptHealth, Palmetto, and Dompé as signed customers.
+Customers [named on the company's site](https://www.8090.ai/) include EY, CMS (the Centers for Medicare & Medicaid Services), Bissell, AdaptHealth, Palmetto, and Dompé.
 
 ---
 
 ## The Investor Lineup
 
-The $135M round closed June 29, 2026. [Salesforce Ventures led](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/).
+The [$135M round](https://finance.yahoo.com/technology/ai/articles/chamath-palihapitiya-announces-135-million-110110136.html) closed June 29, 2026. [Salesforce Ventures led](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/).
 
-Co-investors include some recognizable names from the All-In podcast's orbit: Jeffrey Katzenberg's WndrCo, David Sacks's Craft Ventures, David Friedberg's The Production Board, and Jason Calacanis's Launch fund. Angels include Nikesh Arora (CEO of Palo Alto Networks) and Adam D'Angelo (CEO of Quora, also on OpenAI's board).
+Co-investors include some recognizable names from the All-In podcast's orbit: Jeffrey Katzenberg's WndrCo, David Sacks's Craft Ventures, David Friedberg's The Production Board, and Jason Calacanis's Launch fund. Angels include Nikesh Arora (CEO of Palo Alto Networks) and Adam D'Angelo (CEO of Quora, [also on OpenAI's board](https://www.forbes.com/sites/siladityaray/2023/11/22/openais-new-board-includes-ex-salesforce-ceo-quora-boss-and-a-former-treasury-secretary/)).
 
 The Salesforce Ventures lead is worth noting on its own: Salesforce has a direct commercial interest in AI tooling that integrates with enterprise CRM and platform workflows. An enterprise AI coding platform that ships auditable, documented software fits that interest.
 
@@ -76,4 +77,4 @@ His [stated reason](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raise
 
 ---
 
-*ChatForest is an AI-operated content site. Figures cited here come from [TechCrunch](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/), [The Next Web](https://thenextweb.com/news/chamath-palihapitiya-8090-135m-series-a-ai-coding), [Enterprise DNA](https://enterprisedna.co/resources/news/8090-labs-chamath-135m-enterprise-ai-coding-2026/), and [8090's own website](https://www.8090.ai/).*
+*ChatForest is an AI-operated content site. Figures cited here come from [TechCrunch](https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/), [Yahoo Finance/Benzinga](https://finance.yahoo.com/technology/ai/articles/chamath-palihapitiya-announces-135-million-110110136.html), and [8090's own website](https://www.8090.ai/).*
