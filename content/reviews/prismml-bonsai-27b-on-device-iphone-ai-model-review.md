@@ -1,11 +1,12 @@
 ---
 title: "PrismML Bonsai 27B Review: The First 27B Model to Run on an iPhone"
 date: 2026-07-21
-description: "PrismML compressed a 27.8B-parameter reasoning model to 3.9 GB — small enough to run on an iPhone 17 Pro at 11 tokens/second. The benchmarks are self-reported, but the compression architecture is independently verifiable and the Apache 2.0 weights are public."
+description: "PrismML compressed a 27.8B-parameter reasoning model to 3.9 GB — small enough to run on an iPhone 17 Pro Max at 11 tokens/second. The benchmarks are self-reported, but the compression architecture is independently verifiable and the Apache 2.0 weights are public."
 categories: ["AI Models", "On-Device AI", "Mobile AI", "Model Compression", "Open Source"]
 tags: ["bonsai-27b", "prismml", "on-device-ai", "iphone", "mobile-llm", "quantization", "qwen3", "1-bit", "mlx", "open-weight"]
 content_type: "Review"
 rating: 4
+sources_audited: 2026-08-08
 ---
 
 On July 14, 2026, [PrismML released Bonsai 27B](https://prismml.com/news/bonsai-27b) — a 27.8-billion-parameter reasoning model compressed down to 3.9 GB and, according to the company, the first model at that parameter scale to run on an iPhone. The claim is plausible. The model weights are public on [Hugging Face](https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit), the compression architecture is documented, and independent developers can verify the iPhone claim themselves. The benchmarks, however, are entirely self-reported — which matters when evaluating the headline retention figures.
@@ -42,17 +43,15 @@ Throughput on specific hardware:
 
 ## The Honest Read on These Numbers
 
-The 76.1 vs. 85.0 gap deserves attention. That is not a minor rounding difference; it is a 10.5% drop in composite score from a model that is itself not at the frontier. Retention is uneven across task types: [MarkTechPost's analysis](https://www.marktechpost.com/2026/07/14/prismml-releases-bonsai-27b-1-bit-and-ternary-builds-of-qwen3-6-27b-that-run-on-laptops-and-phones/) and [9to5Mac's reporting](https://9to5mac.com/2026/07/14/prismml-releases-bonsai-27b-claiming-first-major-ai-model-of-its-size-fit-for-iphone/) both note that math and coding hold up better than instruction following and vision. Tool use and multi-step agentic tasks see sharper declines.
+The 76.1 vs. 85.0 gap deserves attention. That is not a minor rounding difference; it is a 10.5% drop in composite score from a model that is itself not at the frontier. Retention is uneven across task types: [PrismML's own benchmark table](https://prismml.com/news/bonsai-27b) and [MarkTechPost's analysis](https://www.marktechpost.com/2026/07/14/prismml-releases-bonsai-27b-1-bit-and-ternary-builds-of-qwen3-6-27b-that-run-on-laptops-and-phones/) show math (91.7 vs. 95.3 baseline) and coding (81.9 vs. 88.7) holding up much better than instruction following (65.8 vs. 78.4) and vision (59.6 vs. 72.6). The same MarkTechPost breakdown shows agentic and tool-calling tasks taking the steepest absolute hit (66.0 vs. 80.0).
 
 More importantly: every benchmark cited comes from PrismML. The suite is their own 15-benchmark "thinking mode" evaluation, not MMLU, AIME, HumanEval, or any independently-administered standard. The weights are public, so the community can verify — but as of the July 14 release date, no independent benchmark results have been published.
 
-[CryptoBriefing's summary](https://cryptobriefing.com/bonsai-27b-ai-model-mobile-devices/) notes the memory constraint: iOS restricts app RAM usage to roughly 6 GB on 12 GB-of-RAM devices, which leaves a narrow margin above the 3.9 GB model size once KV cache and runtime overhead are accounted for. PrismML's claim is specifically that Bonsai 27B passes through this constraint — plausible at 3.9 GB, but requiring that the model, KV cache, and framework overhead all fit within the available headroom simultaneously.
+[PrismML's own release](https://prismml.com/news/bonsai-27b) notes the memory constraint directly: a 12 GB iPhone gives apps roughly 6 GB of usable RAM, which leaves a narrow margin above the 3.9 GB model size once KV cache and runtime overhead are accounted for. PrismML's claim is specifically that Bonsai 27B passes through this constraint — plausible at 3.9 GB, but requiring that the model, KV cache, and framework overhead all fit within the available headroom simultaneously.
 
 ## Company and Context
 
-PrismML is a Caltech-spinout, founded by researchers in neural network compression. The company is backed by Khosla Ventures, Cerberus, Google, and Samsung — a funding roster that signals institutional confidence in the compression-as-a-strategy thesis. [The Decoder reports](https://the-decoder.com/bonsai-27b-is-a-full-open-reasoning-model-that-fits-on-an-iphone/) that PrismML is in conversations with Apple about its compression technology, though no formal partnership has been announced.
-
-Samsung's involvement is notable given Samsung's recent [early-stage discussions with Anthropic on a custom 2nm AI accelerator](https://chatforest.com/reviews/anthropic-samsung-2nm-custom-chip-talks-clive-chan-jalapeño-july-2026/). Both represent the same underlying trend: AI capability moving closer to the hardware, whether through chip co-design or aggressive model compression.
+PrismML is a [Caltech spinout](https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html), founded by CEO [Babak Hassibi](https://prismml.com/news/prismml-launches-worlds-first-1-bit-ai-model), a Caltech electrical engineering professor, along with co-founders who developed the underlying low-bit compression mathematics at the university. The company is [backed by Khosla Ventures and Cerberus Ventures, with compute grants from Google and Caltech](https://prismml.com/news/prismml-launches-worlds-first-1-bit-ai-model) — [CNBC independently confirms](https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html) it as "a Khosla Ventures-backed spinout from the California Institute of Technology." [CNBC reports](https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html) that PrismML is in early conversations with Apple about its compression technology — CEO Hassibi says Apple and other companies are testing the models for speed, power draw, and performance — and [The Decoder](https://the-decoder.com/bonsai-27b-is-a-full-open-reasoning-model-that-fits-on-an-iphone/) independently corroborates the CNBC report, though no formal partnership has been announced.
 
 Bonsai 27B is available via [Hugging Face](https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit) (weights, GGUF builds, MLX packs), GitHub, and a [limited-time free developer preview API via Together AI](https://prismml.com/news/bonsai-27b). For a builder-focused breakdown of integration patterns and deployment options, see our [Bonsai 27B Builder's Guide](/builders-log/prismml-bonsai-27b-first-27b-model-iphone-on-device-llm-apache-builder-guide/).
 
@@ -78,6 +77,9 @@ The deduction is for the benchmark situation. Every performance figure cited in 
 
 - [PrismML — Announcing Bonsai 27B: The First 27B-Class Model to Run on a Phone](https://prismml.com/news/bonsai-27b) (primary, July 14, 2026)
 - [PrismML Bonsai 27B on Hugging Face](https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit) (weights + model card)
+- [PrismML — Launches World's First 1-Bit AI Model to Redefine Intelligence at the Edge](https://prismml.com/news/prismml-launches-worlds-first-1-bit-ai-model) (primary, founding/funding announcement)
+- [PrismML seed-round press release — PR Newswire](https://www.prnewswire.com/news-releases/prismml-launches-worlds-first-1-bit-ai-model-to-redefine-intelligence-at-the-edge-302730568.html)
+- [Apple in talks with startup that shrinks AI models to run on an iPhone — CNBC](https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html)
 - [PrismML Releases Bonsai 27B: 1-bit and Ternary Builds of Qwen3.6-27B — MarkTechPost](https://www.marktechpost.com/2026/07/14/prismml-releases-bonsai-27b-1-bit-and-ternary-builds-of-qwen3-6-27b-that-run-on-laptops-and-phones/)
 - [PrismML releases Bonsai 27B, claiming first major AI model of its size fit for iPhone — 9to5Mac](https://9to5mac.com/2026/07/14/prismml-releases-bonsai-27b-claiming-first-major-ai-model-of-its-size-fit-for-iphone/)
 - [Bonsai 27B is a full open reasoning model that fits on an iPhone — The Decoder](https://the-decoder.com/bonsai-27b-is-a-full-open-reasoning-model-that-fits-on-an-iphone/)
