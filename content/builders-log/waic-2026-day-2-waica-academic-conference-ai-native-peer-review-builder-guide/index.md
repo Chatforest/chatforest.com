@@ -1,6 +1,7 @@
 ---
 title: "WAIC 2026 Day 2: China Launches Its First AI Academic Conference with AI-Native Review — Builder's Guide"
 date: 2026-07-18T12:00:00+09:00
+sources_audited: 2026-08-08
 description: "Day 2 of WAIC 2026 (July 18): the inaugural WAIC Academic Conference (WAICA) opened with Turing Award winners Andrew Yao and Richard Sutton at the helm, an AI-native submission and review system, 20.2% acceptance rate, and 300+ physical robots in the Embodied Intelligence Hall. What it signals for builders."
 og_description: "WAICA, China's first standalone AI academic conference, opened July 18 at WAIC 2026. Andrew Yao (Turing Award) chairs; Richard Sutton co-chairs. 57 of 282 papers accepted (20.2%). AI-native review system, Springer Nature indexed. Embodied Intelligence Hall: 300+ live robots from Unitree, SenseTime, BrainCo. Builder implications."
 content_type: "Builder's Log"
@@ -17,9 +18,9 @@ See [Day 1 coverage](/builders-log/waic-2026-opening-day-xi-waico-huawei-atlas-9
 
 ## WAICA Opens: China's First Standalone AI Academic Conference
 
-[The inaugural WAIC Academic Conference (WAICA)](https://aiwhatson.com/event/waica-2026-waic-academic-conference) opened July 18 and runs through July 20 — the first time in WAIC's eight-year history that a standalone peer-reviewed academic conference has been embedded in the main event. Until now, WAIC was primarily an industrial showcase; WAICA signals a structural push toward establishing Shanghai as a credible venue for frontier AI research.
+[The inaugural WAIC Academic Conference (WAICA)](https://waica2026.worldaic.com.cn/) opened July 18 and runs through July 20 — the first time in WAIC's eight-year history that a standalone peer-reviewed academic conference has been embedded in the main event. Until now, WAIC was primarily an industrial showcase; WAICA signals a structural push toward establishing Shanghai as a credible venue for frontier AI research.
 
-**Leadership:** [Andrew Chi-Chih Yao](https://eu.36kr.com/en/p/3897977781946249) — Turing Award winner and academician at Tsinghua University — chairs WAICA. Richard Sutton, who shared the 2024 Turing Award with Andrew Barto for foundational contributions to reinforcement learning, serves as international co-chair. That combination is not a token advisory board: Yao is arguably China's most credentialed active AI researcher, and Sutton is the intellectual founder of modern reinforcement learning.
+**Leadership:** [Andrew Chi-Chih Yao](https://eu.36kr.com/en/p/3897977781946249) — Turing Award winner, [Chinese Academy of Sciences academician](https://eu.36kr.com/en/p/3698417555976071), and Tsinghua University professor — chairs WAICA. [Richard Sutton](https://eu.36kr.com/en/p/3698417555976071), who [shared the 2024 Turing Award with Andrew Barto](https://www.acm.org/media-center/2025/march/turing-award-2024) for foundational contributions to reinforcement learning, is invited to serve as international co-chair. That combination is not a token advisory board: Yao is arguably China's most credentialed active AI researcher, and Sutton is the intellectual founder of modern reinforcement learning.
 
 **Paper statistics:** [282 submissions; 57 accepted — a 20.2% acceptance rate](https://eu.36kr.com/en/p/3897977781946249). Authors came from 12 countries plus Hong Kong, Macao, and Taiwan. Accepted papers are [indexed by Springer Nature and five major academic databases](https://eu.36kr.com/en/p/3897977781946249). Major Chinese AI companies — including Tencent, SenseTime, and Xiaohongshu — are formally recognizing WAICA papers as equivalent to top-tier conference credentials for internal researcher evaluation.
 
