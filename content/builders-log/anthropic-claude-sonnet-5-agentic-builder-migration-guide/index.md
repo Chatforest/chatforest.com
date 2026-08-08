@@ -6,8 +6,8 @@ og_description: "Claude Sonnet 5 (model ID: claude-sonnet-5) launches with adapt
 content_type: "Builder's Log"
 categories: ["Anthropic", "Claude", "Developer Tools"]
 tags: ["anthropic", "claude", "sonnet-5", "claude-sonnet-5", "agentic", "api", "migration", "adaptive-thinking", "tokenizer", "builders-log"]
-sources_audited: 2026-07-31
-aliases: ["/builders-log/claude-sonnet-5-agentic-model-june-2026-pricing-migration-builder-guide/"]
+sources_audited: 2026-08-08
+aliases: ["/builders-log/claude-sonnet-5-agentic-model-june-2026-pricing-migration-builder-guide/", "/builders-log/claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision/", "/builders-log/claude-sonnet-5-1m-context-adaptive-thinking-migration-builder-guide/"]
 ---
 
 Anthropic [released Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5) on June 30, 2026. The announcement framing is "most agentic Sonnet yet," and that's accurate — benchmark results confirm it. But the more urgent story for builders is the migration: three API changes break existing code silently or loudly, and a new tokenizer changes your cost math even if nothing else does.
@@ -134,6 +134,8 @@ Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safe
 
 **The API response shape for refusals is new:** refusals return as a successful **HTTP 200** response with `stop_reason: "refusal"`, not an error code — confirmed in the same [launch notes](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5#cybersecurity-safeguards), which also link to Anthropic's [Safeguards, warnings, and appeals](https://support.claude.com/en/articles/8241253-safeguards-warnings-and-appeals) article for background. If your application logic branches on HTTP status codes or error types, add handling for `stop_reason == "refusal"` to avoid treating a content refusal as a success.
 
+One billing nuance: per Anthropic's [Claude Platform release notes](https://platform.claude.com/docs/en/release-notes/overview) (June 2, 2026 entry), you are not billed for a request that returns `stop_reason: "refusal"` before Claude has generated any output; a refusal that happens only after partial output has already streamed still bills for that output. And if your work genuinely needs lighter cybersecurity guardrails — authorized penetration testing or vulnerability research, for instance — Anthropic's own [Sonnet 5 announcement](https://www.anthropic.com/news/claude-sonnet-5) is explicit: "we recommend Claude Opus 4.8 for cybersecurity work that requires reduced guardrails." Sonnet 5 ships with its cyber safeguards on and no comparable opt-out.
+
 ---
 
 ## What Did Not Change
@@ -153,6 +155,26 @@ Unrelated to the Sonnet 5 launch but relevant to anyone auditing their model IDs
 
 ---
 
+## When to Use Sonnet 5 vs. Opus 4.8
+
+**Use Sonnet 5 when:**
+- You need agentic multi-step task execution at lower cost than Opus 4.8
+- Your current Sonnet 4.6 workload stalls mid-task and you want a quality lift without paying Opus pricing
+- You're building autonomous agents that plan, use tools, and recover from errors
+- You need a 1M-token context window without moving to an Opus-class model
+
+**Use Opus 4.8 when:**
+- Your task requires the last several points of agentic coding performance (69.2% vs. 63.2% on SWE-Bench Pro, per the benchmark table above)
+- [Priority Tier](https://platform.claude.com/docs/en/api/service-tiers#supported-models) (guaranteed throughput) is a requirement — Sonnet 5 does not support it
+- Your work needs cybersecurity guardrails reduced below Sonnet 5's always-on cyber safeguards — see above
+
+**Stay on Sonnet 4.6 temporarily if:**
+- Your codebase sets `temperature` or other sampling parameters heavily and you haven't had time to test without them
+- Your integration is pinned to the legacy ARN-versioned Amazon Bedrock model IDs and you haven't migrated to current-generation Bedrock or Claude Platform on AWS yet
+- Your cost model was carefully calibrated on Sonnet 4.6's tokenizer counts
+
+---
+
 ## Migration Checklist
 
 Complete these before pointing production traffic at `claude-sonnet-5`:
@@ -169,6 +191,8 @@ Complete these before pointing production traffic at `claude-sonnet-5`:
 ---
 
 ## The Practical Case for Migrating
+
+[TechCrunch's launch coverage](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/) includes a concrete data point on what "more agentic" looks like in practice: a senior engineer at Zapier, Daniel Shepard, describes handing Sonnet 5 a two-part task — updating Salesforce account tiers, then sending a launch announcement to enterprise contacts — that "finished end to end," adding, "that used to stall halfway" on prior models.
 
 The benchmark gap between Sonnet 4.6 and Sonnet 5 on agentic coding (58.1% → 63.2%) is 5 percentage points — meaningful for multi-step agent loops where each tool call compounds. If you're running orchestrator agents, background coding agents, or long-horizon research agents on Sonnet 4.6, Sonnet 5 is worth evaluating.
 

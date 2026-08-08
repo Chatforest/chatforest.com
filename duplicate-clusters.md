@@ -8,17 +8,80 @@
 
 ## Open clusters
 
-### Sonnet 5 launch / agentic upgrade (4+ pages)
-Flagged Run 3611486 (2026-07-31). One pair already resolved (see below); others not yet diffed.
-- `content/builders-log/claude-sonnet-5-launch-agentic-*` — audited, confirmed near-dup of the
-  agentic-builder-migration-guide sibling below (Run 3611486); both kept, both cited per
-  "cite it or cut it" rule (duplicates still each need citing)
-- `anthropic-claude-sonnet-5-agentic-builder-migration-guide` — already audited (sibling above)
-- `claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide` — not yet audited/diffed
-- `claude-sonnet-5-adaptive-thinking-new-tokenizer-migration-builder-guide` — not yet audited/diffed
+(none currently open — see Resolved below for the two clusters closed out this run)
 
 
 ## Resolved clusters
+
+### Sonnet 5 launch / agentic upgrade (5 pages) — resolved 2026-08-08
+Flagged Run 3611486 (2026-07-31) as an open cluster; the earlier "both kept, both cited" note on
+`claude-sonnet-5-launch-agentic-*` was a quick triage, not a full diff — re-examined this run with a
+full read of all 5 candidate pages plus the exact merge precedent (commit `a7299d1171`).
+
+- `content/builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide/index.md` — dated
+  2026-06-30. **Survivor.** Already the survivor of one prior merge; sources_audited bumped to
+  2026-08-08 for this second merge pass.
+- `content/builders-log/claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision/index.md`
+  — dated 2026-07-01. **Merged into survivor, then deleted.** Same three breaking changes (identical
+  code samples), same tokenizer framing, same cybersecurity-refusal section, same migration checklist,
+  same availability section as the survivor — genuinely redundant prose, not just a similar title.
+  Pulled in and re-verified: the "When to Use Sonnet 5 vs. Opus 4.8" decision-framework section
+  (synthesizes facts already cited on the survivor, no new sourcing needed) and the TechCrunch
+  Zapier-engineer (Daniel Shepard) anecdote quote, re-verified live against
+  https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/.
+  Nothing cut — both pulled claims checked out. Alias added on survivor; directory deleted; 6 internal
+  links across 5 sibling pages repointed to the survivor's URL.
+- `content/builders-log/claude-sonnet-5-1m-context-adaptive-thinking-migration-builder-guide/index.md`
+  — dated 2026-07-01. **Merged into survivor, then deleted.** Same redundant structure as above. Pulled
+  in and re-verified two claims not on the survivor: the June 2, 2026 billing change (no charge for a
+  refusal with zero generated output — confirmed verbatim in Anthropic's release notes at
+  https://platform.claude.com/docs/en/release-notes/overview) and Anthropic's own recommendation to use
+  Opus 4.8 for cybersecurity work needing reduced guardrails (verbatim quote confirmed live against
+  https://www.anthropic.com/news/claude-sonnet-5). Cut a tangential "1M context since Sonnet 4.6,
+  March 13, 2026" historical aside as low-value padding rather than force it in. Alias added on
+  survivor; directory deleted.
+- `content/builders-log/claude-sonnet-5-adaptive-thinking-new-tokenizer-migration-builder-guide/index.md`
+  — dated 2026-07-07, already audited (sources_audited: 2026-08-04, including a real fabrication fix
+  that run). **Kept separate — no merge.** Has a genuinely distinct "Benchmark Surprise" section
+  (explicit Sonnet-5-vs-Opus-4.8 Terminal-Bench/OSWorld comparison numbers not spelled out on the
+  survivor, with a different editorial thesis: Sonnet 5 outright *beats* Opus 4.8 on agentic terminal
+  work rather than merely narrowing the gap) plus a corrected, more precise `output_config.effort`
+  top-level-field code sample the other pages don't have. Consistent with the SnapLogic/H1-2026-VC
+  counter-precedent: real distinct content, not just a similar title.
+- `content/builders-log/claude-sonnet-5-bedrock-deployment-always-on-thinking-inference-paths-builder-guide/index.md`
+  — dated 2026-07-01, already audited (sources_audited: 2026-07-31). **Kept separate — no merge.**
+  Entirely different subject matter (Bedrock-specific deployment: 5 model IDs/residency profiles,
+  3 API paths, prompt-caching parameter changes, service tiers, computer-use setup) and already
+  explicitly cross-links to the survivor as the API-level companion piece. Not a duplicate by any
+  reading.
+
+Also out of scope, not opened this run per the task brief (distinct angles: pricing deadline, effort
+tuning, GPT-5.6 comparison): `claude-sonnet-5-august-31-pricing-cliff-tokenizer-compound-budget-action-guide`,
+`claude-sonnet-5-effort-levels-thinking-token-overhead-practical-tuning-guide`,
+`claude-sonnet-5-migration-guide-adaptive-thinking-tokenizer-breaking-changes-builder-guide`,
+`claude-sonnet-5-vs-gpt-56-terra-benchmark-cost-context-window-builder-decision-july-2026`.
+
+### Kimi K3 launch cluster (3 pages) — resolved 2026-08-08
+Flagged for review this run (not previously tracked in this file). Same July 16, 2026 Moonshot AI
+Kimi K3 launch, all three already independently sources_audited: 2026-08-08.
+- `content/builders-log/kimi-k3-2-8t-open-moe-frontier-mcp-atlas-builder-guide/index.md` — MCP-Atlas-
+  centric builder guide: architecture (KDA/AttnRes/Stable LatentMoE), MCP Atlas category breakdown,
+  access paths, a "Builder Decision Matrix," and an "End of Cheap Chinese AI" pricing-inflection angle.
+- `content/builders-log/kimi-k3-moonshot-ai-2-8t-moe-open-weights-builder-guide/index.md` — broader
+  benchmark/open-weights builder guide with substantial content absent from the sibling above: the
+  **K3 Swarm Max** variant (an entirely different product SKU), the **Arena Frontend Code #1 ranking**
+  beating Claude Fable 5 (a significant fact the MCP-Atlas guide never mentions), a Terminal-Bench 2.1
+  score, GDPval-AA Elo trend vs. K2.6, and a launch-promotion bonus-credits detail.
+- `content/reviews/moonshot-kimi-k3-2-8t-open-weight-china-frontier-ai-july-2026.md` — a genuinely
+  different format (rated review, not a builder guide) with an entirely different subject focus:
+  US-China chip-sanctions policy, the Trump administration's revived ban push, a David Sacks quote,
+  and the Nvidia/Z.ai/MiniMax stock-market reaction — none of which appears in either builders-log
+  piece.
+
+**Decision: keep all three, no merge.** Same underlying launch event and some overlapping core specs
+(2.8T params, KDA/AttnRes, 1M context, $3/$15 pricing), but each carries a full section's worth of
+content the other two lack — consistent with the SnapLogic/H1-2026-VC/Claude-Apps-Gateway
+counter-precedent, not the Sonnet-5-launch-day merge precedent.
 
 ### Claude Apps Gateway (3 pages) — resolved 2026-08-06
 Flagged Run 3611486 (2026-07-31), never diffed until this run. Note: the file's own bookkeeping was

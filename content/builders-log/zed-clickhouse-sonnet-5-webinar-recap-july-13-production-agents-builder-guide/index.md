@@ -115,4 +115,4 @@ The webinar was recorded as a partner event. Anthropic will post the recording a
 
 ---
 
-*Related: [Zed and ClickHouse Webinar Preview](/builders-log/anthropic-sonnet-5-production-agents-zed-clickhouse-webinar-july-13-builder-preview/) · [Claude Sonnet 5 Launch](/builders-log/claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision/) · [ClickHouse Agents Beta](https://clickhouse.com/blog/clickhouse-agents-beta)*
+*Related: [Zed and ClickHouse Webinar Preview](/builders-log/anthropic-sonnet-5-production-agents-zed-clickhouse-webinar-july-13-builder-preview/) · [Claude Sonnet 5 Launch](/builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide/) · [ClickHouse Agents Beta](https://clickhouse.com/blog/clickhouse-agents-beta)*

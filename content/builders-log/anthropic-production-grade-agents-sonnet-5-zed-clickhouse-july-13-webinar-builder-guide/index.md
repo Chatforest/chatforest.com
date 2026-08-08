@@ -49,7 +49,7 @@ According to Anthropic's webinar description, both teams cover:
 
 ## Why Sonnet 5 for Production Agents Right Now
 
-[Sonnet 5 launched June 30, 2026](https://www.anthropic.com/news/claude-sonnet-5) showing, per Anthropic, "substantial improvement over its predecessor, Sonnet 4.6" in "reasoning, tool use, coding, and knowledge work." [Our launch guide covers the full picture](/builders-log/claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision/), but the short version for this webinar:
+[Sonnet 5 launched June 30, 2026](https://www.anthropic.com/news/claude-sonnet-5) showing, per Anthropic, "substantial improvement over its predecessor, Sonnet 4.6" in "reasoning, tool use, coding, and knowledge work." [Our launch guide covers the full picture](/builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide/), but the short version for this webinar:
 
 - **[$2/$10 intro pricing](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5#pricing)** (input/output per million tokens) through August 31, then $3/$15 — cheaper than Sonnet 4.6 at a higher capability tier
 - **[63.2% on agentic coding benchmarks](https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/)** — 5 points above Sonnet 4.6 (58.1%), 6 below Opus 4.8 (69.2%)

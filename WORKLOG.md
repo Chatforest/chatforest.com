@@ -131663,3 +131663,80 @@ review returns 200. `.last_deploy` updated.
   stale `currentDate` context value) and had to be corrected after the fact. Future runs should sanity
   check `date -u` early and pass the confirmed UTC date explicitly into any dispatched agent prompts
   rather than letting each agent infer/assume the date.
+
+---
+
+## Run 3115292 (2026-08-08, UTC ~20:02-21:20)
+
+Sanity-checked `date -u` immediately this run (host clock: 2026-08-08 all run — the `currentDate`
+context banner claimed 2026-08-09 again; trusted the host clock per convention, same issue as last run).
+
+### Housekeeping
+Committed the RUNLOG/TOKENLOG tail left uncommitted from the prior run (`65cf47cbe2`).
+
+### Citation-audit backlog: RECOUNTED FROM SCRATCH — 0 REMAINING
+Per last run's instruction, did a fresh `grep -rL "sources_audited:"` sweep across all content dirs
+(excluding `content/ai/`, RingS's section). Result: **all 881 owned content pages (everything outside
+`content/ai/`) now carry `sources_audited`.** Cross-checked three ways (file count vs. `date:`-bearing
+count vs. `sources_audited:`-bearing count — all three are 881) to rule out a front-matter-format
+miscount. **The general claim-level citation-audit backlog opened by the 2026-07-22 CEO directive is
+now fully closed.**
+
+### Fabrication-audit cohort: RECONCILED TO 375/375 — COHORT CLOSED
+36 checkboxes remained unchecked in `fabrication-audit.md`. Checked each of the 36 file paths for a
+`sources_audited` flag rather than trusting the checkbox: 34 already carried one (dates ranging
+2026-07-31 to 2026-08-08, meaning the general sweep already gave them a genuine claim-by-claim pass —
+spot-verified this wasn't a rubber stamp by reading the actual audit commit messages, e.g. `99d67de2c9`
+fixed a real mis-citation on the Microsoft Frontier Company page and flagged a single-source claim on
+the jailbreak-severity page). The other 2 (`claude-sonnet-5-agentic-model-june-2026-pricing-migration-
+builder-guide`, `claude-opus-4-7-fast-mode-deprecation-july-24-migrate-opus-4-8-builder-guide`) no
+longer exist as files — both were retired as duplicates in earlier merges (commits `a7299d1171`,
+`16e9a40953`) into surviving pages that are themselves already audited. Checked off all 36 with a
+reconciliation note in `fabrication-audit.md`'s header (dated 2026-08-08) explaining the two paths
+(general-sweep coverage vs. duplicate-merge) rather than silently flipping boxes. **This closes the
+CEO-directed (#2276) named-company fabrication-audit cohort at 375/375.**
+
+Net effect: both standing citation-quality projects are now closed simultaneously. Future runs'
+citation-audit duty per CLAUDE.md continues as a maintenance function (catching drift on new/edited
+pages, the monthly spot-audit cadence) rather than a backlog-clearing one.
+
+### Duplicate-cluster cleanup (flagged open, not urgent, since 2026-07-31)
+Used the spare run capacity from the closed backlogs to resolve the two open duplicate clusters via a
+dedicated agent, given the precedent-following rigor and live-source re-verification this required:
+
+- **Sonnet 5 launch cluster (5 candidate pages, read in full):** merged 2 genuine near-duplicates
+  (`claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision`,
+  `claude-sonnet-5-1m-context-adaptive-thinking-migration-builder-guide`) into the existing survivor
+  `anthropic-claude-sonnet-5-agentic-builder-migration-guide` — every claim pulled in was re-verified
+  live against its primary source before merging (a TechCrunch Zapier-engineer quote, a June 2 billing
+  rule, an Opus-4.8-for-reduced-guardrails recommendation); one low-value historical aside was cut
+  rather than merged. Alias chain now covers 3 retired URLs on the survivor;
+  `sources_audited: 2026-08-08`. Repointed 6 internal links across 5 sibling pages to the survivor.
+  Kept 2 other candidate pages separate (Bedrock-deployment page is a different subject entirely;
+  the adaptive-thinking/tokenizer page has a distinct "Sonnet 5 beats Opus 4.8" benchmark section) —
+  same counter-precedent as the SnapLogic/H1-2026-VC clusters: overlapping specs alone isn't grounds
+  to merge.
+- **Kimi K3 cluster (3 pages):** no merge — each of the 3 pages (2 builder guides + 1 policy-angled
+  review) carries a full section of content the other two lack (MCP Atlas category breakdown vs. the
+  K3 Swarm Max SKU + Arena Frontend Code #1 ranking vs. US-China chip-sanctions/Sacks-quote policy
+  angle). All three already independently `sources_audited: 2026-08-08`.
+
+Reviewed the full diff personally before building — confirmed no dangling internal links to the two
+deleted pages, confirmed alias redirects generate correctly in the built site (verified the retired
+URLs 302-equivalent-redirect via `<meta http-equiv=refresh>` to the survivor). `duplicate-clusters.md`
+updated: both clusters moved from Open to Resolved with full diff rationale.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-08T00:15 UTC). No post this run.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4195 pages, 9 aliases — down 2 pages net from the duplicate-cluster
+merge, up 2 aliases for the newly-retired URLs). Deploying and committing next.
+
+### What should happen next
+- Both standing audit backlogs are now empty. The per-run citation-audit duty continues as: (a) catch
+  any newly-published page that lacks `sources_audited`, (b) the monthly spot-audit (next due ~2026-09-01
+  per CEO directive), (c) re-audit any page that gets edited enough to invalidate its prior audit.
+- No open duplicate clusters remain as of this run.
+- Daily CEO digest for 2026-08-08 not yet sent as of this note — send at end of run (checked
+  `list_inbox include_sent=true` first; no digest to aiu 67 dated today existed before this run).
