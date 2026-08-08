@@ -118,6 +118,6 @@ If you're seeing intermittent tool call failures in production with Opus 4.8 or 
 
 - [Armin Ronacher — "Better Models: Worse Tools"](https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/) — the original post
 - [Simon Willison's coverage](https://simonwillison.net/2026/Jul/4/better-models-worse-tools/)
-- [Claude Sonnet 5 migration guide](/builders-log/claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision/) — three other breaking changes in Sonnet 5
+- [Claude Sonnet 5 migration guide](/builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide/) — three other breaking changes in Sonnet 5
 - [Claude Managed Agents: event deltas and session overrides](/builders-log/claude-managed-agents-june-30-event-deltas-session-overrides-vault-webhooks-builder-guide/) — June 30 agent SDK updates
 

@@ -5,7 +5,7 @@
 
 Claude Sonnet 5 (`anthropic.claude-sonnet-5`) launched on [Amazon Bedrock on June 30, 2026](https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-on-aws-anthropics-most-capable-sonnet-model/) — the same day Anthropic [announced Sonnet 5 on its own platform](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5). But the Bedrock version is not a straight mirror of the Anthropic API. Two things will catch builders who migrate from either Sonnet 4.6 on Bedrock or from the Anthropic API: **adaptive thinking cannot be disabled on Bedrock**, and the model ID you use determines your data residency and throughput profile. Part of our **[Builder's Log](/builders-log/)**.
 
-If you haven't read the Anthropic API overview yet, start with **[Claude Sonnet 5: The Agentic Upgrade, Three Breaking Changes, and a Hidden Cost Shift](/builders-log/claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision/)** — this guide covers the Bedrock-specific layer on top of that.
+If you haven't read the Anthropic API overview yet, start with **[Claude Sonnet 5: The Agentic Upgrade, Three Breaking Changes, and a Hidden Cost Shift](/builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide/)** — this guide covers the Bedrock-specific layer on top of that.
 
 ---
 
@@ -135,7 +135,7 @@ Prompt caching is supported. The [Bedrock-specific parameters](https://docs.aws.
 | TTL options | 5 minutes or 1 hour |
 | Eligible fields | system, messages, tools |
 
-**This is a change from Sonnet 4.6 on Bedrock, not a carryover:** [Sonnet 4.6's minimum cache checkpoint size was 1,024 tokens](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html); Sonnet 5 quadruples that minimum to 4,096. If you had cache breakpoints placed to satisfy the old 1,024-token floor, re-check them against the new minimum. The max-checkpoints (4) and TTL options (5 minutes / 1 hour) are unchanged. **Checkpoint your cache boundaries against Sonnet 5's tokenizer** — as noted in the [Anthropic API article](/builders-log/claude-sonnet-5-launch-agentic-upgrade-migration-guide-builder-decision/) and [Anthropic's own migration notes](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5), the new tokenizer produces ~30% more tokens for the same text, so cache breakpoints set against Sonnet 4.6's token counts may no longer fall at the right locations.
+**This is a change from Sonnet 4.6 on Bedrock, not a carryover:** [Sonnet 4.6's minimum cache checkpoint size was 1,024 tokens](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html); Sonnet 5 quadruples that minimum to 4,096. If you had cache breakpoints placed to satisfy the old 1,024-token floor, re-check them against the new minimum. The max-checkpoints (4) and TTL options (5 minutes / 1 hour) are unchanged. **Checkpoint your cache boundaries against Sonnet 5's tokenizer** — as noted in the [Anthropic API article](/builders-log/anthropic-claude-sonnet-5-agentic-builder-migration-guide/) and [Anthropic's own migration notes](https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5), the new tokenizer produces ~30% more tokens for the same text, so cache breakpoints set against Sonnet 4.6's token counts may no longer fall at the right locations.
 
 To enable caching in the Messages API path:
 
