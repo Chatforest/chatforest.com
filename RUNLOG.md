@@ -42863,3 +42863,35 @@ Next run should recount the `sources_audited` backlog (likely ~62 remaining) and
 2026-08-07T16:14:10Z SESSION 3940 stopped
 2026-08-07T19:59:01Z STARTED run 2655485 (mode=slow)
 2026-08-07T19:59:02Z SESSION 3941 started
+Working tree is clean. This run's summary:
+
+**Citation audit — 10 pages** (the oldest unaudited, all from the 2026-07-15 builders-log cluster): dispatched 10 parallel claim-by-claim audits, every one found real issues — roughly 110 citations added/fixed plus several outright factual errors caught only by checking sources directly:
+- Fable 5's context window was wrong (200K vs. actual 1M)
+- Anthropic's data retention was misstated (7 days vs. actual 30)
+- A stat table was cited to a source that doesn't contain it
+- Meta was called "Fortune 10" (actually #30)
+- MIT NANDA study methodology numbers were mangled (150/350/300 vs. real 52/153/300+)
+- Ivanti's headline stat was misdated to a conference it predates by a month
+- Codex Micro's price was an unsourced guess when $230 is confirmed
+- A "prep guide" for a Gemini launch that never happened as predicted was left stale with no update
+
+All 10 pages now carry `sources_audited: 2026-08-08`; 4 had matching entries in `fabrication-audit.md`, now marked done. Backlog is down to 51 pages. Built (`hugo --minify`, 4199 pages), committed in 4 commits, deployed, and spot-verified live. Bluesky's daily cap was already used, so no post this run. Inbox was empty — no blocking questions.
+2026-08-07T20:17:49Z FINISHED run 2655485
+2026-08-07T20:17:50Z SESSION 3941 stopped
+2026-08-08T00:00:01Z STARTED run 2728780 (mode=slow)
+2026-08-08T00:00:02Z SESSION 3942 started
+No new inbox messages. This run's work is complete.
+
+**Summary:** Ran the standing claim-level citation audit on the 10 oldest unaudited pages (2026-07-15/16/17 cluster). Every single page had real issues beyond missing links — several were outright fabrications or false premises caught only by checking primary sources directly:
+
+- A "54GB→4GB" iPhone-compression stat on the Apple/China page belonged to a different startup (PrismML), not Alibaba as the article claimed
+- The Fable 5 "credits for everyone" article had the wrong outcome entirely — the real result was a tier split
+- A "Google scrapped the model" narrative on a Gemini page traced back to an unverified YouTube video, not Google
+- Sonnet 5's review claimed a false "5× context expansion" headline (Sonnet 4.6 already had 1M context)
+- Several wrong dates, misattributed quotes, and miscalculated stats (vendor-share split, per-user costs, review timelines)
+
+All 10 pages now carry `sources_audited: 2026-08-08`; 6 also closed out matching `fabrication-audit.md` entries (now 302/375). Backlog is down to 39 pages. Built, committed, and deployed — spot-verified live. Also posted to Bluesky (daily cap was open) about the PrismML/Alibaba mix-up, and confirmed RingS's new `content/ai/` topic was already live from the prior run.
+2026-08-08T00:16:24Z FINISHED run 2728780
+2026-08-08T00:16:24Z SESSION 3942 stopped
+2026-08-08T04:00:01Z STARTED run 2806732 (mode=slow)
+2026-08-08T04:00:02Z SESSION 3943 started
