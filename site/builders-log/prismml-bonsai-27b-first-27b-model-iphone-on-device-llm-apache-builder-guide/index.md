@@ -11,7 +11,7 @@
 
 Until now, "27B on mobile" was a category that didn't exist. 27-billion-parameter models ran on workstations or cloud GPUs. The smallest class routinely deployed on iPhone was 3B–7B — adequate for many tasks, but below the quality threshold for reasoning-intensive or coding-heavy workflows.
 
-[PrismML's Bonsai 27B](https://prismml.com/news/prismml-releases-bonsai-27b) changes that with extreme quantization. The company applied its end-to-end low-bit architecture to Qwen3.6 27B — Alibaba's 27-billion-parameter multimodal model — producing two variants that fit in the RAM available on high-end phones:
+[PrismML's Bonsai 27B](https://prismml.com/news/prismml-releases-bonsai-27b) changes that with extreme quantization. The company applied its end-to-end low-bit architecture to [Qwen3.6 27B](https://github.com/QwenLM/Qwen3.6) — [Alibaba's 27-billion-parameter multimodal model](https://www.marktechpost.com/2026/04/22/alibaba-qwen-team-releases-qwen3-6-27b-a-dense-open-weight-model-outperforming-397b-moe-on-agentic-coding-benchmarks/), released April 22, 2026 with native text, image, and video input — producing two variants that fit in the RAM available on high-end phones:
 
 | Variant | Size | Target | Performance vs. FP16 | Speed (iPhone 17 Pro) |
 |---|---|---|---|---|
@@ -76,7 +76,7 @@ The use cases that become viable: offline travel assistants that analyze menus a
 
 ## Apple Evaluation Signal
 
-PrismML CEO Babak Hassibi confirmed to CNBC that Apple has been evaluating Bonsai models — measuring speed, energy efficiency, and performance on device. [AlphaSignal](https://alphasignal.ai/news/prismml-shrinks-bonsai-27b-to-3-9-gb-so-it-runs-on-an-iphone) reported this detail.
+PrismML CEO Babak Hassibi [confirmed to CNBC](https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html) that Apple has been evaluating Bonsai models — measuring speed, energy efficiency, and performance on device. "They're really evaluating our technology right now," Hassibi said, characterizing the talks as early-stage but adding "things are progressing nicely." [9to5Mac](https://9to5mac.com/2026/07/14/prismml-releases-bonsai-27b-claiming-first-major-ai-model-of-its-size-fit-for-iphone/) also reported on the CNBC account of Apple's evaluation.
 
 Apple does not comment on third-party model evaluations. What's notable is that the timeline aligns: Apple Intelligence in iOS 27 uses Foundation Models for on-device inference, but Foundation Models' on-device model is Apple's own. PrismML's models represent a different path — third-party models on Apple Silicon. Whether Apple's evaluation leads anywhere is unknown, but it's a signal that PrismML is on Apple's radar.
 
@@ -91,7 +91,7 @@ Bonsai 27B is the latest milestone in a competitive push toward mobile-capable L
 - **Apple Foundation Models** (iOS 27) — Apple's on-device model, available via the Foundation Models Swift API; size not disclosed but reported significantly larger than the iOS 26 version. See our [Foundation Models builder guide](/builders-log/apple-foundation-models-ios-27-on-device-llm-api-builder-guide/).
 - **Core AI vs. Windows Local AI Runtime** — platform comparison at [our June 2026 guide](/builders-log/core-ai-vs-windows-local-ai-runtime-june-2026-on-device-builder-comparison/).
 
-Bonsai 27B is the first third-party 27B model certified for iPhone hardware. The compression technique (end-to-end 1-bit training rather than post-training quantization) is meaningfully different from the approaches above — PrismML is training models specifically to operate at extreme bit widths, rather than quantizing full-precision models after training. This explains the unusually high performance retention (90%+) at 1-bit.
+Bonsai 27B is the first third-party 27B-class model [confirmed to run on iPhone hardware](https://prismml.com/news/prismml-releases-bonsai-27b) — not a formal Apple certification, just the first working release at this scale. The compression technique (end-to-end 1-bit training rather than post-training quantization) is meaningfully different from the approaches above — PrismML is training models specifically to operate at extreme bit widths, rather than quantizing full-precision models after training. This explains the unusually high performance retention (90%+) at 1-bit.
 
 ---
 

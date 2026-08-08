@@ -3,7 +3,7 @@
 > Moonshot AI released Kimi K3 on July 16, 2026 — the first open-weight model in the 2.8T-parameter class. It scores 84.2% on MCP Atlas, 93.5% on GPQA Diamond, and 91.2% on BrowseComp. Full weights drop July 27. Here is what builders need to know about the architecture, benchmarks, and how it fits an MCP-native agent stack.
 
 
-[Moonshot AI released Kimi K3 on July 16, 2026](https://www.kimi.com/blog/kimi-k3), making it the first publicly available model in the 2.8-trillion-parameter class — and committing to releasing the full open weights by July 27. For builders working in MCP-native agent stacks, the most significant number is **84.2% on MCP Atlas**, a benchmark measuring structured tool invocation, chained calls, and error recovery in agentic workflows.
+[Moonshot AI released Kimi K3 on July 16, 2026](https://www.kimi.com/blog/kimi-k3) — Tom's Hardware called it the [largest open-weight AI model released to date](https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3) at 2.8 trillion parameters — and Moonshot has committed to releasing the full open weights by July 27. For builders working in MCP-native agent stacks, the most significant number is **84.2% on MCP Atlas**, a benchmark measuring structured tool invocation, chained calls, and error recovery in agentic workflows.
 
 For context: [the Kimi K2.7-Code scored 81.1% on MCPMark Verified](/builders-log/kimi-k2-7-code-moonshot-open-source-coding-agent-mcp-hermes-builder-guide/) when it released in June. K3's MCP Atlas score, on a different but comparable benchmark, continues that upward trajectory. Part of our **[Builder's Log](/builders-log/)**.
 
@@ -17,7 +17,7 @@ K3 is not a scaled-up K2.7. Moonshot rebuilt the architecture on two new mechani
 
 **Attention Residuals (AttnRes):** A complement to KDA that preserves gradient signal through the depth of the model. At 2.8T total parameters, stable training requires architectural interventions; AttnRes is one of them.
 
-**Stable LatentMoE:** K3 uses a Mixture-of-Experts architecture activating 16 of 896 expert networks per forward pass — a higher sparsity ratio than K2 (which used 32 of 384 experts). More experts, fewer activated per token, and a new stability mechanism that reduces the expert collapse problems common in large MoE training runs.
+**Stable LatentMoE:** K3 uses a Mixture-of-Experts architecture activating 16 of 896 expert networks per forward pass. [Kimi K2's architecture](https://arxiv.org/abs/2507.20534) used 384 experts with 8 active per token (32B active parameters) — K3 more than doubles both the total and active expert counts while active parameters per token stay in a comparable ~50B range, alongside a new stability mechanism that reduces the expert collapse problems common in large MoE training runs.
 
 | Spec | Value |
 |---|---|
@@ -36,7 +36,7 @@ The 1M-token context window is native, not a position interpolation hack applied
 
 ## Benchmarks
 
-[Moonshot's release data](https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/) and the [Artificial Analysis tracking page](https://artificialanalysis.ai/) report the following:
+[Moonshot's own release data](https://www.kimi.com/blog/kimi-k3), [third-party launch coverage](https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/), and [independent benchmark tracking](https://benchlm.ai/models/kimi-3) report the following:
 
 ### Headline scores
 
@@ -49,11 +49,12 @@ The 1M-token context window is native, not a position interpolation hack applied
 
 ### Artificial Analysis indices
 
+[Artificial Analysis reported](https://artificialanalysis.ai/articles/kimi-k3-achieves-3-in-the-artificial-analysis-intelligence-index-comparable-to-opus-4-8-and-gpt-5-5) K3 at 57 on its Intelligence Index (rank #3, comparable to Claude Opus 4.8 and GPT-5.5) and, [running inside Kimi Code CLI](https://x.com/ArtificialAnlys/status/2078230240766345330), 57 on its Coding Agent Index (rank #5, just behind Grok 4.5). Artificial Analysis does not publish a single standalone "Agentic Index" score for K3; on its separate agentic-task suite it reported K3 reaching a 1,668 Elo on [GDPval-AA v2](https://x.com/ArtificialAnlys/status/2077832874183860404) and taking the #1 spot on AutomationBench-AA.
+
 | Index | Score |
 |---|---|
-| Intelligence Index | 57.11 |
-| Coding Index | 76.24 |
-| Agentic Index | 50.07 |
+| Intelligence Index | 57 |
+| Coding Agent Index | 57 |
 
 The MCP Atlas score is the one most directly relevant to this audience. Unlike academic benchmarks, MCP Atlas tests whether a model can reliably call tools in structured sequences, handle tool errors without breaking the loop, and plan multi-step tasks where subsequent tool inputs depend on prior outputs. An 84.2% score on this benchmark means K3 misses about 1 in 6 agentic tool sequences — a meaningful reliability level for production agent pipelines.
 
@@ -67,7 +68,7 @@ MCP Atlas tests five categories: single-tool invocation, multi-tool chaining, er
 
 For builders, the useful test is not "does K3 score well on MCP Atlas" but "does K3 score well on MY agent workflow." A model that gets 95% on single-tool calls but 65% on error recovery is a different operational risk than one that averages evenly at 84%.
 
-The [Kimi Code repository](https://platform.kimi.ai/docs/guide/kimi-k3-quickstart) shows K3 can read and edit files, run shell commands, fetch pages, use MCP integrations, dispatch subagents, and invoke lifecycle hooks — the standard agentic tool surface. The question is reliability at your failure modes, not the headline number.
+The [Kimi Code repository](https://github.com/MoonshotAI/kimi-code) documents that the CLI can read and edit files, run shell commands, search files, fetch web pages, configure MCP servers, dispatch built-in subagents, and invoke lifecycle hooks — the standard agentic tool surface. [K3 is available as a backend](https://platform.kimi.ai/docs/guide/kimi-k3-quickstart) under the `kimi-k3` model ID. The question is reliability at your failure modes, not the headline number.
 
 ---
 
@@ -89,13 +90,13 @@ At $3/$15, K3 API pricing lands at the same tier as Claude Sonnet 5 ($3/$15 post
 
 ### 2. Kimi Code (integrated coding agent)
 
-Kimi Code is Moonshot's coding agent interface, updated to use K3 as its backend. [Quick-start documentation](https://platform.kimi.ai/docs/guide/kimi-k3-quickstart) covers MCP server connections, file system access, shell integration, and subagent dispatch.
+Kimi Code is Moonshot's coding agent interface; [K3 is available as a backend model](https://platform.kimi.ai/docs/guide/kimi-k3-quickstart) under the `kimi-k3` ID. The [Kimi Code repository](https://github.com/MoonshotAI/kimi-code) covers MCP server connections, file system access, shell integration, and subagent dispatch.
 
 For builders who want a fully integrated coding agent without building the tool layer themselves, Kimi Code with K3 is the fastest path to evaluating K3's agentic capabilities.
 
 ### 3. Open Weights (July 27)
 
-Moonshot has committed to releasing full model weights by July 27, 2026. At 2.8T total parameters, self-hosting K3 requires substantial hardware — approximately 14–16× H100-80GB at BF16, or fewer at FP8/MXFP4 quantization. MXFP4 quantization is described in the technical blog as part of K3's training and inference stack.
+Moonshot has committed to releasing full model weights by July 27, 2026. At 2.8T total parameters, self-hosting K3 requires substantial hardware. At BF16, the raw weights alone run [roughly 5.6TB](https://huggingface.co/moonshotai/Kimi-K3/discussions/13) — around 70× H100-80GB before KV cache and runtime overhead. K3 [trains and ships natively at MXFP4 precision](https://www.kimi.com/blog/kimi-k3), where the same weights shrink to roughly 1.4–1.75TB, putting the floor closer to the high-teens/low-20s in H100-80GB count depending on parallelism strategy. Community estimates vary because full weights were not yet public at the time of writing — treat these as directional, not confirmed minimums.
 
 Community quantizations (Q4_K_M, GGUF formats) will appear on Hugging Face within days of the weight release, following the same pattern as K2.7-Code. If you are evaluating self-hosted K3, watch Hugging Face the week of July 27.
 
