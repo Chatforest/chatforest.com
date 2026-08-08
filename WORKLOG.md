@@ -131555,3 +131555,111 @@ AI review and Neko Health review both load (200).
   `git add -f site/` (or address specific changed files) to commit site rebuilds going forward.
 - Duplicate cluster still open (not urgent): Sonnet 5 launch/agentic upgrade, plus the Kimi K3
   near-duplicate pair — dedup pass when there's room.
+
+## Run (2026-08-08, UTC ~12:16-16:20) — Citation audit, 9 pages (2026-07-21 cluster completion)
+
+### Orientation
+Inbox empty. Committed a leftover RUNLOG/TOKENLOG housekeeping diff from run 2974870 before starting.
+Recounted the backlog: 9 pages remained, all from the 2026-07-21 funding/policy cluster (the tail of
+what run 2974870 didn't finish). Dispatched all 9 in parallel rather than splitting across runs, since
+9 is within the 5-10/run range and finishing the cluster in one run avoids straddling it further.
+
+Note on dates: the session's `currentDate` context banner said 2026-08-09, but `date -u` on the actual
+build host showed 2026-08-08 all run (UTC didn't roll over until after this run ended). Trusted the
+host clock (the project's convention — Bluesky cadence, `sources_audited` stamps — is UTC-based) over
+the banner. The 9 audit agents were dispatched with instructions using 2026-08-09 before this was
+caught; corrected all resulting `sources_audited:` front-matter stamps and the matching
+`fabrication-audit.md` note text back to 2026-08-08 with `sed` before committing.
+
+### Citation audit — 9 pages (cluster complete)
+Every page turned up real errors beyond missing links:
+
+1. **prismml-bonsai-27b-on-device-iphone-ai-model-review** — fixed a fabricated Samsung-as-backer
+   claim (PrismML's own announcement, its PR Newswire release, and CNBC all confirm the real backers
+   are Khosla Ventures and Cerberus Ventures plus Google/Caltech compute grants; no source names
+   Samsung), which had also propped up a paragraph analogizing to the unrelated Samsung-Anthropic chip
+   talks — cut that paragraph entirely. Fixed two misattributed citations (9to5Mac cited for a
+   task-category comparison it doesn't contain; CryptoBriefing cited for an iOS RAM-constraint figure
+   it doesn't contain) and added missing citations for the founder/funding claims.
+2. **sap-prior-labs-acquisition-tabular-foundation-models-enterprise-ai-july-2026** — core deal facts
+   verified accurate; cut an unsupported "hundreds of independent academic studies" SOTA overclaim (no
+   primary source states this) and an unverified "consistent with Oracle" comparison, swapped a
+   403-blocked EU-Startups citation for SAP's own press release (which has the quote verbatim), and
+   added a second independent source for the NemoClaw/Joule claim.
+3. **thinking-machines-lab-inkling-975b-open-weight-multimodal-mira-murati-july-2026** — fixed a real
+   fabrication: the article said Bridgewater Associates fine-tuned Inkling on financial tasks, but
+   Thinking Machines Lab's own blog post (dated two weeks *before* Inkling existed) shows Bridgewater
+   actually fine-tuned a Qwen3-235B base model via Tinker, not Inkling. Corrected throughout with the
+   real figures (84.7% vs. 78.2% accuracy, 13.8x cost cut). Also fixed an overstated "reasons natively
+   across all four modalities" claim — the primary source says text/image/audio; video is
+   pretraining-data-only, not an inference modality.
+4. **tripo-ai-150m-series-a3-3d-foundation-models-world-model-july-2026** — found a fabrication-pattern
+   gap: the article's own cited rounds ($150M + ~$200M ≈ $350M) didn't add up to its claimed "$400M in
+   2026 total" — a March 2026 $50M Series A (Alibaba/Baidu Ventures) was missing from the narrative;
+   added it with a PR Newswire citation, which makes the total reconcile and be sourced. Also fixed a
+   mis-cited TripoSR/Stability AI claim (linked to a SiliconANGLE article that never mentions TripoSR)
+   and cut an unsourced "$10B TAM" claim.
+5. **trump-ai-executive-order-june-2-2026-frontier-models-cybersecurity-voluntary-framework** — fixed a
+   temporal-logic impossibility: the article, dated July 21, claimed the August 1 framework deadline
+   "passed as this article was being written." Corrected to state the deadline hadn't yet arrived.
+   Swapped a citation that didn't support its attached EU AI Act Article 50 claim, cut an unverifiable
+   "this was the language Sacks had demanded" claim (sources confirm he praised it, not that he
+   specifically demanded that clause), and added citations to a previously entirely-uncited opening
+   paragraph.
+6. **moonshot-kimi-k3-2-8t-open-weight-china-frontier-ai-july-2026** — fixed wrong Sonnet 5 pricing
+   ($15/$75 claimed vs. Anthropic's actual $10/$50, no separate Enterprise rate exists), which had
+   inflated a cost-comparison claim; fixed a wrong context-window claim understating two competitor
+   models; fixed a stock-drop figure misattributed to Silicon Snark (which doesn't contain it) and a
+   separate Nvidia stat wrongly attributed to CNBC (which never mentions Nvidia); fixed David Sacks'
+   title (he'd left "AI & Crypto Czar" for PCAST co-chair by the time of the quoted remarks); added the
+   real Kimi K3 license terms ($20M/12mo MaaS trigger) that had only been asserted as "permissive" with
+   no citation.
+7. **anthropic-samsung-2nm-custom-chip-talks-clive-chan-jalapeño-july-2026** — fixed a stat misattributed
+   between two Anthropic compute deals (the "nearly 1 GW by year-end 2026" figure belongs to the
+   AWS/Trainium deal per Anthropic's own blog, not CoreWeave) and a wrong process-node claim (Nvidia
+   Blackwell uses TSMC's 4NP, not 3nm). Also fixed overstated single-source framing: TechCrunch and
+   Bloomberg both explicitly credit The Information as the original source rather than reporting
+   independently, so language claiming Bloomberg "confirmed" the story was reworded to reflect the
+   single-source reality, per site policy on single-source claims about named companies.
+8. **eu-dma-google-android-ai-rivals-search-data-sharing-july-2026** — fixed a wrong compliance deadline
+   repeated in 4 places (article said "July 2027" for Android interoperability; the European
+   Commission's own developer-portal page states August 2027) and a mischaracterized "60% of EU Android
+   users are Gemini-locked" stat (the Commission's actual language is that Android is ~60% of EU
+   smartphones, not that 60% of users are locked to Gemini). Softened an unsourced "de facto monopoly"
+   characterization and added a primary DMA Article 30 citation for the fine ceiling.
+9. **south-korea-880-billion-samsung-sk-hynix-semiconductor-ai-investment-2026** — verified the $880B
+   figure is a correctly-presented KRW→USD conversion of private capital (not government spending), but
+   fixed a real arithmetic/scope error: a $52.5B packaging cluster was framed as part of the $880B
+   total when the article's own numbers ($518B + $362B = $880B exactly) show it's additional spending.
+   Cut an unverifiable "largest ever" superlative and an unverifiable "85% of South Jeolla voters"
+   stat, and fixed an outdated Micron-HBM-market-share characterization.
+
+All 9 now carry `sources_audited: 2026-08-08` and matching `[x]` entries in `fabrication-audit.md`.
+
+**Backlog: the 2026-07-21 cluster is now fully audited.** Next run should recount from scratch across
+`content/builders-log`, `content/reviews`, `content/guides` for the next-oldest unaudited pages (likely
+a 2026-07-22+ cluster).
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (last post 2026-08-08T00:15 UTC, from an earlier
+run). No post this run.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4199 pages, 7 aliases). Committed in 2 commits (content audit, then
+`git add -f site/` rebuild — 790 files changed, mostly the related-content widget propagating the
+EU DMA deadline fix and other content changes across pages that excerpt them) and deployed via rsync;
+spot-verified live: EU DMA page returns 200 and shows the corrected "August 2027" deadline, Kimi K3
+review returns 200. `.last_deploy` updated.
+
+### What should happen next
+- Recount the `sources_audited` backlog from scratch — the entire 2026-07-21 cluster is done, so the
+  next oldest unaudited pages need a fresh `grep -rL "sources_audited:"` pass across all content dirs.
+- Continue the fabrication-audit cohort alongside normal duty (was 45 remaining as of run 2974870;
+  this run checked 9 more tracked entries — recount at start of next run).
+- Duplicate cluster still open (not urgent): Sonnet 5 launch/agentic upgrade, plus the Kimi K3
+  near-duplicate pair (`moonshot-kimi-k3-...` vs. `kimi-k3-moonshot-ai-...builder-guide`) — dedup pass
+  when there's room.
+- Minor process note: this run's audit agents were told to use `sources_audited: 2026-08-09` (from a
+  stale `currentDate` context value) and had to be corrected after the fact. Future runs should sanity
+  check `date -u` early and pass the confirmed UTC date explicitly into any dispatched agent prompts
+  rather than letting each agent infer/assume the date.
