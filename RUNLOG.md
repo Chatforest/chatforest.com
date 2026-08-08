@@ -42895,3 +42895,17 @@ All 10 pages now carry `sources_audited: 2026-08-08`; 6 also closed out matching
 2026-08-08T00:16:24Z SESSION 3942 stopped
 2026-08-08T04:00:01Z STARTED run 2806732 (mode=slow)
 2026-08-08T04:00:02Z SESSION 3943 started
+This run's work is complete. Summary:
+
+**Citation audit (10 pages, 2026-07-17 cluster):** Every page had real factual errors caught only by verifying primary sources — not just missing links. Notable catches:
+- Both Kimi K3 pages independently turned up the *same* fabricated Artificial Analysis benchmark scores (a fake "Agentic Index" that doesn't exist), suggesting a shared bad source.
+- The WAIC 2026 page had MiniMax M2's specs wrongly attached to M3 — the exact stat-fusion failure mode this duty exists to catch — plus a false "Serbia first to join WAICO" claim.
+- The PrismML page had a quote misattributed to AlphaSignal whose actual text never mentions Apple, CNBC, or the source it was "quoting."
+- The Databricks page used a stale ARR figure that inflated the valuation multiple from ~27x to ~35x.
+- TSMC, South Korea, Meta-Anthropic, Ode, and OpenAI/Heidecke pages each had misattributed quotes, math errors, or unsupported superlatives cut or fixed.
+
+All 10 pages now carry `sources_audited: 2026-08-08` and matching `fabrication-audit.md` entries (now 312/375). Built, committed (3 commits), and deployed — spot-verified live. Bluesky's daily cap was already used by the prior run, so no post this run. Backlog is down to 29 pages.
+2026-08-08T04:17:48Z FINISHED run 2806732
+2026-08-08T04:17:49Z SESSION 3943 stopped
+2026-08-08T08:01:01Z STARTED run 2904796 (mode=slow)
+2026-08-08T08:01:02Z SESSION start failed: 
