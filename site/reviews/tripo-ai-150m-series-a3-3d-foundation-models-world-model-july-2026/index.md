@@ -5,13 +5,13 @@
 
 # Tripo AI Raises $150M Series A3 for 3D Foundation Models and World Model Research
 
-Tripo AI, a Beijing-founded company building AI-native 3D generation technology, [completed a $150 million Series A3 financing round on July 2, 2026](https://www.globenewswire.com/news-release/2026/07/02/3321436/0/en/tripo-ai-raises-150-million-in-series-a3-financing-backed-by-investors-across-automotive-gaming-internet-and-technology-sectors.html), according to a GlobeNewswire press release. The raise came roughly one month after the company closed approximately [$200 million across two earlier extensions](https://www.globenewswire.com/news-release/2026/06/01/3304603/0/en/tripo-ai-raises-nearly-200-million-in-series-a-and-series-a-financing-to-advance-ai-3d-and-world-model-roadmap.html) — its Series A+ and A++ — in June 2026. In total, Tripo AI has raised approximately $400 million in 2026 alone, establishing it as one of the best-funded companies in generative 3D content.
+Tripo AI, a Beijing-founded company building AI-native 3D generation technology, [completed a $150 million Series A3 financing round on July 2, 2026](https://www.globenewswire.com/news-release/2026/07/02/3321436/0/en/tripo-ai-raises-150-million-in-series-a3-financing-backed-by-investors-across-automotive-gaming-internet-and-technology-sectors.html), according to a GlobeNewswire press release. The raise came roughly one month after the company closed approximately [$200 million across two earlier extensions](https://www.globenewswire.com/news-release/2026/06/01/3304603/0/en/tripo-ai-raises-nearly-200-million-in-series-a-and-series-a-financing-to-advance-ai-3d-and-world-model-roadmap.html) — its Series A+ and A++ — in June 2026, which itself followed a [$50 million Series A round on March 25, 2026](https://www.prnewswire.com/news-releases/tripo-ai-announces-50-million-in-funding-and-new-models-for-production-ready-3d-generation-302724894.html), led by Alibaba and Baidu Ventures. Across the three rounds, Tripo AI has raised approximately $400 million in 2026 alone, establishing it as one of the best-funded companies in generative 3D content.
 
 ---
 
 ## The Company and Founders
 
-Tripo AI was founded in 2023 by **Simon Song** (also written Song Yachen), who previously worked in the CEO's office at SenseTime — the large Chinese computer vision company — and co-founded Minimax, one of China's so-called "AI tiger" unicorns. The company is registered as "Vast" in the Cayman Islands and operates primarily from Beijing.
+Tripo AI was founded in 2023 by **Simon Song** (also written Song Yachen), who [previously worked in the CEO's office at SenseTime](https://www.scmp.com/tech/tech-trends/article/3323106/ex-minimax-co-founders-new-venture-aims-challenge-tencent-and-google-3d-ai-models) — the large Chinese computer vision company — and co-founded Minimax, one of China's so-called "AI tiger" unicorns, per the South China Morning Post. The company is [registered as "Vast" in the Cayman Islands](https://www.scmp.com/tech/tech-trends/article/3338202/china-founded-tripo-ai-updates-3d-content-creation-platform-users-more-double) and operates primarily from Beijing.
 
 The founding thesis was that 3D content creation was a significant bottleneck in gaming, robotics, and virtual environments, and that large-scale generative models could reduce the cost and time required to produce production-quality 3D assets by orders of magnitude. Tripo positioned itself as a builder of foundation models for 3D — the 3D equivalent of what Stable Diffusion or Midjourney did for 2D imagery.
 
@@ -19,16 +19,16 @@ The founding thesis was that 3D content creation was a significant bottleneck in
 
 ## Products and Models
 
-Tripo's core product is its **3D generation platform**, which generates textured 3D assets from image or text inputs. Its flagship open-source model, **TripoSR**, was developed in partnership with Stability AI and can generate a high-quality 3D model from a single image in [0.5 seconds](https://siliconangle.com/2026/07/02/tripo-ai-secures-additional-150m-funding-enhance-3d-world-models/), per SiliconANGLE.
+Tripo's core product is its **3D generation platform**, which generates textured 3D assets from image or text inputs. Its flagship open-source model, **TripoSR**, was [developed in partnership with Stability AI](https://stability.ai/news-updates/triposr-3d-generation) and, [per Tripo's own announcement](https://www.tripo3d.ai/blog/stabilityai-with-tripo), generates a draft-quality 3D model from a single image in about 0.5 seconds when tested on an Nvidia A100 GPU.
 
-In March 2026, Tripo launched **Tripo H3.1** and **Tripo P1.0**, two next-generation models:
+[In March 2026](https://www.prnewswire.com/news-releases/tripo-ai-announces-50-million-in-funding-and-new-models-for-production-ready-3d-generation-302724894.html), Tripo launched **Tripo H3.1** and **Tripo P1.0**, two next-generation models:
 
 - **H3.1** is a high-fidelity model focused on structural precision — suitable for products, vehicles, architectural components, and objects where geometry accuracy matters in manufacturing and CAD workflows.
 - **P1.0** targets physics-aware generation, producing assets that behave realistically in simulation environments — relevant for robotics training and interactive entertainment.
 
-The platform also introduced **8K Texture Generation**, which produces physically-based rendering (PBR) textures at production resolution, and **Segmentation V2**, which automatically decomposes a generated model into labeled, editable parts — a key feature for game pipelines that need to rig, animate, or swap components.
+The platform also introduced [**8K Texture Generation**](https://www.tripo3d.ai/blog/may-update-on-tripo), which produces PBR textures at up to 8K resolution, and [**Segmentation V2**](https://www.tripo3d.ai/blog/may-update-on-tripo), which automatically decomposes a generated model into labeled, editable parts — a key feature for game pipelines that need to rig, animate, or swap components.
 
-Exports support USD, FBX, OBJ, and STL — the standard formats for game engines, VFX pipelines, and manufacturing software.
+[Exports support USD, FBX, OBJ, and STL](https://www.tripo3d.ai/tutorials/tripo-ai-export-formats) — the standard formats for game engines, VFX pipelines, and manufacturing software.
 
 ---
 
@@ -52,7 +52,7 @@ Project Eden is currently a research preview, not a generally available product.
 
 The $150 million Series A3 round drew a diverse investor base [across four industry verticals](https://www.unite.ai/tripo-ai-raises-150m-series-a3-as-3d-foundation-models-move-toward-interactive-worlds/), per Unite.AI:
 
-- **Automotive**: Geely Capital (the investment arm of Geely, which owns Volvo and Polestar)
+- **Automotive**: Geely Capital (the investment arm of Geely, which [owns Volvo Cars](https://www.volvocars.com/intl/media/press-releases/2E2A7BED57F8C2C5/) and [holds a majority stake in Polestar](https://investors.polestar.com/news-releases/news-release-details/polestar-welcomes-geelys-long-term-commitment-its-development))
 - **Gaming**: 4399 Network, Tanwan, and Giant Network — all established Chinese gaming publishers with large content pipelines
 - **Strategic**: Fosun Capital, Orinno Capital
 - **Financial**: CoStone Capital, Addor Capital, T-Capital, Muhua Tech Ventures
@@ -74,7 +74,7 @@ Three rounds totaling roughly $400 million in four months is an unusually compre
 
 ## The Market
 
-Generative 3D is earlier-stage than generative 2D. Text-to-image models reached commercial adoption in 2022-2023; text-to-3D models are still working through the quality and reliability curve that image models completed. The gap matters: gaming, architecture, film VFX, and manufacturing all require 3D assets, and the manual production cost is significant. The total addressable market for 3D content creation software exceeds $10 billion annually by most estimates.
+Generative 3D is earlier-stage than generative 2D. Text-to-image models reached commercial adoption in 2022-2023; text-to-3D models are still working through the quality and reliability curve that image models completed. The gap matters: gaming, architecture, film VFX, and manufacturing all require 3D assets, and the manual production cost is significant.
 
 Tripo's closest public competitors include Meshy, CSM AI, and Shape.e-style approaches from larger AI labs. The company's open-source presence via TripoSR and its partnerships with Stability AI give it developer ecosystem credibility that purely closed competitors lack. Whether that translates into a durable platform position — the kind that a sustained world model research effort requires — depends on whether Project Eden becomes a genuine computing environment or remains a research demonstration.
 
