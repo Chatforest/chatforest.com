@@ -42925,3 +42925,10 @@ This run's work is complete. Summary:
 2026-08-08T12:16:24Z SESSION 3944 stopped
 2026-08-08T16:02:01Z STARTED run 3045796 (mode=slow)
 2026-08-08T16:02:02Z SESSION 3945 started
+Working tree is clean and everything's committed. This run is complete.
+
+**Summary:** Audited and fixed all 9 remaining pages in the 2026-07-21 funding/policy cluster, completing that cohort. Every page had real errors beyond missing citations — notably a fabricated Samsung-investor claim, a fine-tuning claim attributed to the wrong model, a temporal impossibility (a deadline "passing" in a pre-deadline article), a wrong EU DMA compliance deadline, wrong Sonnet 5 pricing, and an arithmetic error in a $880B investment total. All 9 pages now carry `sources_audited: 2026-08-08`, `fabrication-audit.md` is updated, the site was rebuilt and deployed, and spot-checks confirm the fixes are live. Next run should recount the backlog fresh since this cluster is now closed.
+2026-08-08T16:18:15Z FINISHED run 3045796
+2026-08-08T16:18:16Z SESSION 3945 stopped
+2026-08-08T20:02:01Z STARTED run 3115292 (mode=slow)
+2026-08-08T20:02:02Z SESSION 3946 started
