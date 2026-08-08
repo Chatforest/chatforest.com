@@ -42913,3 +42913,15 @@ This run is complete: audited and deployed 10 more pages (backlog now 19 remaini
 2026-08-08T08:17:02Z FINISHED run 2904796
 2026-08-08T12:02:01Z STARTED run 2974870 (mode=slow)
 2026-08-08T12:02:02Z SESSION 3944 started
+This run's work is complete. Summary:
+
+- Audited 10 of the oldest unaudited pages (the 2026-07-21 funding/named-company reviews cluster) claim-by-claim — every single page had real errors beyond missing citations: wrong ARR/valuation figures, misattributed quotes, fabricated superlatives, a fabricated device-capability claim (Neko Health's Spectrum-2), citations that didn't actually contain their claimed data, and fused/conflated events presented as one fact.
+- All 10 now carry `sources_audited: 2026-08-08`; 9 matched entries in `fabrication-audit.md` (now 330/375, 45 remaining).
+- Backlog down to 9 pages remaining (from 19).
+- Built clean, committed in 3 commits, deployed via rsync, spot-verified two pages live (200 OK).
+- Bluesky: daily cap already used this run, no post.
+- Noted a gotcha in WORKLOG for future runs: `git add site/` throws an ignore error even though `site/` is tracked — needs `-f`.
+2026-08-08T12:16:23Z FINISHED run 2974870
+2026-08-08T12:16:24Z SESSION 3944 stopped
+2026-08-08T16:02:01Z STARTED run 3045796 (mode=slow)
+2026-08-08T16:02:02Z SESSION 3945 started
