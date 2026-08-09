@@ -5,7 +5,7 @@ description: "OpenAI shut down Sora apps on April 26, 2026 and will kill the Vid
 content_type: "Builder's Log"
 categories: ["OpenAI", "AI Video", "Model Migration", "APIs"]
 tags: ["openai", "sora", "video-ai", "model-deprecation", "runway", "veo", "kling", "api-migration", "video-generation", "unit-economics"]
-sources_audited: 2026-07-24
+sources_audited: 2026-08-09
 ---
 
 OpenAI shut down Sora apps on April 26, 2026. The Sora API — `sora-2`, `sora-2-pro`, and the Videos API — stops accepting requests on **September 24, 2026**. All user data will be permanently deleted ([OpenAI Help Center](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation)).
@@ -25,7 +25,7 @@ OpenAI [announced the discontinuation on March 24, 2026](https://the-decoder.com
 The reasoning OpenAI gave publicly was limited. But industry analysis points to unit economics:
 
 **Estimated cost vs. revenue:**
-- Inference cost: approximately $1.30 per 10-second clip at scale (widely cited estimate from secondary sources — OpenAI has not confirmed exact figures)
+- Inference cost: approximately [$1.30 per 10-second clip at scale](https://www.forbes.com/sites/phoebeliu/2025/11/10/openai-spending-ai-generated-sora-videos/), an estimate from Cantor Fitzgerald analyst Deepak Mathivanan based on GPU rental time — OpenAI has not confirmed exact figures
 - A single $20/month Pro subscriber generating 50 clips per month would cost OpenAI roughly $65 in compute alone
 - Lifetime API and consumer revenue did not come close to covering inference costs
 
@@ -77,7 +77,7 @@ Four providers have emerged as the leading video AI APIs for builders in 2026. E
 
 **Best for:** Marketers, commercial video production, character consistency
 
-Runway's Gen-4 Turbo is the most mature video AI API from an enterprise reliability standpoint. It offers reference image controls (providing a reference image to anchor character or style consistency across clips), solid text-to-video and image-to-video support, and a stable developer API.
+[Runway's Gen-4 Turbo](https://docs.dev.runwayml.com/) is a video AI API aimed at enterprise reliability. It offers [reference image controls](https://help.scenario.com/articles/6803483730-runway-gen-4-references) (providing up to three reference images to anchor character or location consistency across clips), text-to-video and image-to-video support, and a documented developer API.
 
 The Runway API uses a simple generation request pattern:
 
@@ -104,9 +104,9 @@ Runway bills on credits, not per-minute. Check the Runway Developer Dashboard fo
 
 **Best for:** Builders already in the Google ecosystem, native audio generation
 
-Veo 3.1 is Google's current video generation model and is available through the Gemini API and Google AI Studio. Its distinguishing feature for builders is native audio generation — Veo 3.1 can produce clips with synchronized ambient sound and dialogue without requiring a separate audio model or post-processing step.
+[Veo 3.1](https://ai.google.dev/gemini-api/docs/veo) is Google's video generation model and is available through the Gemini API and Google AI Studio. A notable feature for builders is [native audio generation](https://developers.googleblog.com/introducing-veo-3-1-and-new-creative-capabilities-in-the-gemini-api/) — Veo 3.1 can produce clips with synchronized ambient sound and dialogue without requiring a separate audio model or post-processing step.
 
-Veo 3.1 is also available as Veo 3.1 Lite, which prices at under 50% of Veo 3.1 Fast. For high-volume generation where quality is sufficient at the Lite tier, this is a significant cost lever.
+Veo 3.1 is also available as [Veo 3.1 Lite, which prices at under 50% of Veo 3.1 Fast](https://ai.google.dev/gemini-api/docs/pricing) ($0.05/sec at 720p vs. $0.10/sec for Fast 720p, per Google's Gemini API pricing page). For high-volume generation where quality is sufficient at the Lite tier, this is a significant cost lever.
 
 ```python
 import google.generativeai as genai
@@ -127,7 +127,7 @@ Veo 3.1 requires Gemini API access. Check the Google AI Studio pricing page for 
 
 **Best for:** Audio-dialogue generation, multi-language lip-sync
 
-Kling 3.0 Omni from Kuaishou is notable for its native audio generation capabilities: background sound, dialogue, and automatic lip-sync in five languages. If your application needs video content with spoken language that must be synchronized to on-screen characters, Kling 3.0 leads on this capability.
+[Kling 3.0 Omni from Kuaishou](https://kling.ai/blog/kling-video-3-omni-native-lip-sync-audio-guide) is notable for its native audio generation capabilities: background sound, dialogue, and [automatic lip-sync in five languages](https://kling.ai/blog/kling-video-3-omni-native-lip-sync-audio-guide) (English, Chinese, Japanese, Korean, Spanish). If your application needs video content with spoken language that must be synchronized to on-screen characters, Kling 3.0 is a strong option for this capability.
 
 Kling is available through their API directly and through aggregation platforms like fal.ai.
 
@@ -135,13 +135,13 @@ Kling is available through their API directly and through aggregation platforms 
 
 **Best for:** Competitive alternative with synchronized audio
 
-Seedance 2.0 is a strong competitor in the audio-synchronized video space, comparable to Kling on audio features. It is worth evaluating alongside Kling if audio generation is a requirement.
+[Seedance 2.0](https://seed.bytedance.com/en/blog/official-launch-of-seedance-2-0) from ByteDance is a competitor in the audio-synchronized video space, with [binaural audio and synchronized multi-track sound generation](https://www.hedra.com/models/video/bytedance/seedance-20) comparable to Kling on audio features. It is worth evaluating alongside Kling if audio generation is a requirement.
 
 ---
 
 ## The Aggregator Path: fal.ai
 
-If you want to avoid provider lock-in this time, [fal.ai](https://fal.ai) provides unified API access to Veo 3.1, Kling 3.0, Seedance 2.0, Wan 2.7, and [600+ other AI models](https://fal.ai) through a single API key and consistent request format.
+If you want to avoid provider lock-in this time, [fal.ai](https://fal.ai) provides unified API access to Veo 3.1, Kling 3.0, Seedance 2.0, Wan 2.7, and [600+ other AI models](https://docs.fal.ai/model-apis/introduction) through a single API key and consistent request format.
 
 The advantage: when a specific video model is deprecated or a new model is released, you change a model name in your request rather than migrating your entire integration.
 
@@ -164,12 +164,12 @@ Swap `kling-video` for `veo/video-generation` or `seedance/v2/text-to-video` to 
 
 ## Open-Source Options
 
-If you need to run video generation locally or want to avoid cloud inference costs entirely:
+If you need to run video generation locally or want to avoid cloud inference costs entirely, the options are more limited than the API landscape above. Note that [Wan 2.7 (April 2026) is API/cloud-only](https://huggingface.co/Wan-AI) — Alibaba has not published its weights, so despite carrying the "Wan" name it is not a local-inference option (it's usable through cloud aggregators like fal.ai, as noted above, but not downloadable).
 
-- **Wan 2.7** (April 2026) — the current leading open-weight video model for local inference
-- **LTX-2.3** (March 2026) — competitive alternative, different architecture
+- **[Wan 2.2](https://github.com/Wan-Video/Wan2.2)** (July 2025) — Alibaba's most recent Wan release with published open weights (Apache 2.0), the current option for local inference in this family
+- **[LTX-2.3](https://huggingface.co/Lightricks/LTX-2.3)** (March 2026) — a 22B DiT open-weight model from Lightricks with native audio sync, released under a [custom community license](https://github.com/Lightricks/LTX-2/blob/main/LICENSE) (free for companies under $10M annual revenue) rather than Apache 2.0 — a genuinely local-runnable alternative to Wan 2.2
 
-Both require significant GPU resources. Wan 2.7 generation on an H100 takes several minutes per 10-second clip, making it viable for batch processing but not real-time or low-latency applications.
+Both require significant GPU resources for local inference. Verify current VRAM requirements and generation speed for your specific hardware before committing to a local pipeline — these change release to release.
 
 ---
 
@@ -182,7 +182,7 @@ Both require significant GPU resources. Wan 2.7 generation on an H100 takes seve
 | Multi-language lip-sync | Kling 3.0 Omni |
 | High volume, cost-sensitive | Veo 3.1 Lite |
 | Avoid future lock-in | fal.ai aggregator |
-| Local / private inference | Wan 2.7 |
+| Local / private inference | Wan 2.2 or LTX-2.3 |
 | Google Cloud ecosystem | Veo 3.1 via Gemini API |
 
 ---

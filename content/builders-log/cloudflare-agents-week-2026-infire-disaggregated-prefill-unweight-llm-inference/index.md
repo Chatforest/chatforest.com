@@ -6,7 +6,7 @@ og_description: "Cloudflare Agents Week 2026: disaggregated prefill cuts interto
 content_type: "Builder's Log"
 categories: ["AI Infrastructure", "LLM Serving", "Cloud AI"]
 tags: ["cloudflare", "inference", "llm-serving", "kv-cache", "speculative-decoding", "model-compression", "multi-gpu", "agents-week", "workers-ai", "infire"]
-sources_audited: 2026-07-24
+sources_audited: 2026-08-09
 ---
 
 During [Cloudflare Agents Week 2026](https://www.cloudflare.com/agents-week/) (April 13–17), Cloudflare published two infrastructure posts that are worth reading if you're thinking about large-model serving at scale. The first — ["Building the foundation for running extra-large language models"](https://blog.cloudflare.com/high-performance-llms/) — covers how they extended their Infire inference engine to handle multi-GPU models with disaggregated prefill/decode and distributed KV caching. The second — ["Unweight: Lossless Tensor Compression"](https://blog.cloudflare.com/unweight-tensor-compression/) — covers a lossless model weight compression system that reduces model footprint by 15–22% with zero accuracy cost.

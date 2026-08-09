@@ -4,10 +4,10 @@ date: 2026-05-01
 slug: grok-4-3-native-video-voice-cloning-agentic-builder-guide
 description: "xAI shipped Grok 4.3 on April 30, 2026 with three significant additions: native video input, a real-time voice cloning API, and a 40% price reduction alongside agentic benchmark gains. Here is what builders need to know."
 tags: ["xAI", "Grok", "video API", "voice cloning", "agentic AI", "API pricing", "developer tools", "multimodal"]
-sources_audited: 2026-07-24
+sources_audited: 2026-08-09
 ---
 
-xAI opened Grok 4.3 to the public API on April 30, 2026 ([Artificial Analysis](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing)). The headline number is approximately 40% lower input pricing from Grok 4.20, but that undersells the actual scope of the release. Grok 4.3 is the first xAI model with native video input, ships a real-time voice cloning suite, and posted a 321-point Elo gain on GDPval-AA — the most discriminating agentic real-world benchmark currently tracked at scale.
+xAI opened Grok 4.3 to the public API on April 30, 2026 ([Artificial Analysis](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing)). The headline number is approximately 40% lower input pricing from Grok 4.20, but that undersells the actual scope of the release. Grok 4.3 is [the first xAI model with native video input](https://codersera.com/blog/grok-4-3-launch-guide-2026/), ships a real-time voice cloning suite, and posted a 321-point Elo gain on GDPval-AA — the most discriminating agentic real-world benchmark currently tracked at scale.
 
 This guide covers what is actually new, how to use each capability via the API, and where Grok 4.3 fits relative to alternatives.
 
@@ -18,7 +18,7 @@ This guide covers what is actually new, how to use each capability via the API, 
 Three distinct additions landed simultaneously with the April 30 release:
 
 1. **Native video input** — the model accepts video files directly, without a transcription preprocessing step
-2. **Custom Voices** — a voice cloning API that creates a deployable voice ID from 120 seconds of reference audio
+2. **Custom Voices** — a voice cloning API that creates a deployable voice ID from up to 120 seconds of reference audio
 3. **Agentic improvement + price reduction** — [GDPval-AA Elo jumped 321 points from Grok 4.20](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing), while pricing dropped approximately 40% on input and 60% on output to [$1.25/$2.50 per million input/output tokens](https://docs.x.ai/docs/models)
 
 Each is available independently; you do not need to use all three.
@@ -86,20 +86,20 @@ The 5-minute cap is the constraint to design around. For longer content, you chu
 
 ### What It Does
 
-xAI launched Custom Voices alongside Grok 4.3. This is a voice cloning system that creates a deployable voice model from a reference audio clip as short as 120 seconds. Once created, the voice model is available as a `voice_id` across xAI's TTS and Voice Agent APIs.
+xAI launched Custom Voices alongside Grok 4.3. This is a voice cloning system that creates a deployable voice model from a reference audio clip of [up to 120 seconds](https://docs.x.ai/developers/model-capabilities/audio/custom-voices) (90+ seconds recommended for best results; there is no minimum). Once created, the voice model is available as a `voice_id` across xAI's TTS and Voice Agent APIs.
 
-Voice generation time: under two minutes from a 120-second sample.
+Voice generation time: [under two minutes](https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/) from a roughly minute-long sample, [per press coverage of the launch](https://winbuzzer.com/2026/05/03/xai-grok-4-3-custom-voices-voice-cloning-launch-xcxwbn/) — xAI's own docs page does not state a generation-time figure.
 
 **Pricing:** [Custom Voices is available at no additional cost](https://docs.x.ai/developers/model-capabilities/audio/custom-voices) for accounts on the xAI developer console alongside Grok 4.3 API access. Standard TTS token costs apply when the cloned voice is used.
 
 ### Consent Verification
 
-xAI built a two-stage consent check into the cloning flow:
+xAI's own documentation does not describe a consent-verification flow; the following description comes from independent press coverage of the launch ([Winbuzzer](https://winbuzzer.com/2026/05/03/xai-grok-4-3-custom-voices-voice-cloning-launch-xcxwbn/), [The Decoder](https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/)), both reporting a two-stage consent check in the cloning flow:
 
 1. **Passphrase verification** — the voice subject reads a passphrase aloud, which xAI's STT engine transcribes in real time and matches against the displayed text to confirm presence
 2. **Speaker identity verification** — embeddings from the passphrase recording and the full reference clip are compared to confirm both belong to the same person
 
-This verification is enforced at the API level. There is no flag to bypass it. If you are building a voice cloning feature for your own users, your application needs to handle the consent flow before submitting to xAI.
+Neither outlet reports independently-verified false-acceptance rates or red-team results for this check — treat it as xAI's own claim about its system, not an independently audited guarantee. If you are building a voice cloning feature for your own users, your application needs to handle a comparable consent flow before submitting to xAI.
 
 ### API Usage
 
@@ -165,9 +165,9 @@ If your application is latency-sensitive, `think-lite` preserves most of the ben
 
 | Benchmark | Grok 4.3 | Position |
 |-----------|----------|----------|
-| [Intelligence Index v4.0](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index) | 53 | Below frontier flagships per Artificial Analysis |
-| [GDPval-AA](https://artificialanalysis.ai/evaluations/gdpval-aa) Elo | 1500 | +321 vs prior Grok version |
-| [τ²-Bench Telecom](https://artificialanalysis.ai/evaluations/tau2-bench) | 98% | Among the highest at launch, tied with GLM-5.1 |
+| [Intelligence Index v4.0](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index) | [53](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing) | Below frontier flagships per Artificial Analysis |
+| [GDPval-AA](https://artificialanalysis.ai/evaluations/gdpval-aa) Elo | [1500](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing) | +321 vs prior Grok version, at launch (this is a live-updated leaderboard and the Elo score shifts as new models are added) |
+| [τ²-Bench Telecom](https://artificialanalysis.ai/evaluations/tau2-bench) | [98%](https://artificialanalysis.ai/articles/xai-launches-grok-4-3-with-improved-agentic-performance-and-lower-pricing) | Among the highest at launch, tied with GLM-5.1 |
 | [IFBench](https://allenai.org/blog/ifbench-artificial-analysis) | 81% | Competitive for instruction-following |
 
 The overall [Intelligence Index](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index) score of 53 puts Grok 4.3 below the current frontier flagships, but at $1.25/$2.50 per million tokens, it costs a fraction of what those flagships charge. For agentic workloads where task completion matters more than reasoning depth, the GDPval-AA result is the relevant signal.
@@ -180,13 +180,13 @@ The overall [Intelligence Index](https://artificialanalysis.ai/evaluations/artif
 |-------|-------------|--------------|----------------|
 | [Grok 4.3](https://docs.x.ai/docs/models) | $1.25 | $0.20 | $2.50 |
 | [Grok Build 0.1](https://docs.x.ai/docs/models) | $1.00 | $0.20 | $2.00 |
-| [Qwen 3.7 Max](https://openrouter.ai/qwen/qwen3.7-max) | $2.50 | — | $7.50 |
-| Claude Sonnet 4.6 | $3.00 | $0.30 | $15.00 |
-| GPT-5.5 | $5.00 | $1.25 | $30.00 |
+| [Qwen 3.7 Max](https://openrouter.ai/qwen/qwen3.7-max) | $1.475 | — | $4.425 |
+| [Claude Sonnet 4.6](https://openrouter.ai/anthropic/claude-sonnet-4.6) | $3.00 | $0.30 | $15.00 |
+| [GPT-5.5](https://openrouter.ai/openai/gpt-5.5) | $5.00 | $0.50 | $30.00 |
 
 At $1.25 input / $2.50 output, Grok 4.3 is the cheapest frontier-adjacent model with a 1M context window that also supports reasoning and video input. The closest alternative for price-sensitive agentic workloads is Grok Build 0.1 at $1.00/$2.00, which targets coding specifically and has a 256K rather than 1M context window.
 
-For high-volume pipelines where the video or voice features are not needed, the comparison to Qwen 3.7 Max matters: Qwen 3.7 Max is 2x more expensive on input and 3x more expensive on output, with an edge on reasoning benchmarks but not on GDPval-AA.
+For high-volume pipelines where the video or voice features are not needed, the comparison to Qwen 3.7 Max matters: Qwen 3.7 Max is roughly 1.2x more expensive on input and roughly 1.8x more expensive on output, with an edge on reasoning benchmarks but not on GDPval-AA.
 
 ---
 
@@ -217,7 +217,7 @@ For high-volume pipelines where the video or voice features are not needed, the 
 ## Integration Notes
 
 - The Grok 4.3 API follows the OpenAI schema. If you already use the OpenAI Python or Node SDK, changing the base URL and model name is sufficient for text and image tasks.
-- Grok 4.3 is also [available through Cloudflare AI Gateway as of June 4, 2026](https://developers.cloudflare.com/ai-gateway/usage/providers/grok/), which adds caching, rate limiting, and multi-provider fallback without code changes.
+- Grok 4.3 is also [available through Cloudflare AI Gateway](https://developers.cloudflare.com/ai/models/xai/grok-4.3/) (model ID `xai/grok-4.3`), which adds caching, rate limiting, and multi-provider fallback without code changes.
 - The video input feature uses a `video_url` content block type. Confirm your SDK version supports this before using it in production — some older OpenAI-compatible clients do not forward unknown content block types.
 - For context-heavy agentic loops, enabling cached input reduces the effective input cost from $1.25/M to $0.20/M on repeated prefix content.
 
@@ -227,7 +227,7 @@ For high-volume pipelines where the video or voice features are not needed, the 
 
 - Grok 4.3 is GA on the xAI API at $1.25/$2.50 per million input/output tokens — a 40% cut from Grok 4.20
 - Native video input (5 min, 1080p, mp4/mov/webm) eliminates the transcription preprocessing step in video pipelines
-- Custom Voices creates a deployable voice ID from 120 seconds of reference audio in under two minutes; consent verification is enforced at the API level
+- Custom Voices creates a deployable voice ID from up to 120 seconds of reference audio in under two minutes (per press coverage; xAI's own docs don't state a generation-time figure); a two-stage consent check (passphrase + speaker-embedding match) is reported by independent press, though xAI's own docs don't detail it
 - GDPval-AA Elo improved by 321 points — a meaningful gain on real-world agentic task completion
 - At 1M context and the current price, Grok 4.3 is the most cost-efficient option available for agentic pipelines that need large context windows
 - Grok 4.3 is available through Cloudflare AI Gateway; if you already route through a gateway, adding it requires only a model name change

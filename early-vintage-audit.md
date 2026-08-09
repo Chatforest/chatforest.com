@@ -38,18 +38,28 @@
 
 ## Builders Log
 
-- [ ] 2026-07-23 — [Grok 4.20 Builder Guide: Three Variants, a Hallucination Record, and When to Use Which](content/builders-log/xai-grok-4-20-reasoning-non-reasoning-multi-agent-builder-guide/index.md)
-- [ ] 2026-07-24 — [Boston Dynamics Spot + Gemini Robotics-ER 1.6: Physical AI Reads Analog Gauges at 98% — Builder Guide](content/builders-log/boston-dynamics-spot-gemini-robotics-er-1-6-analog-gauge-reading-physical-ai-builder-guide/index.md)
-- [ ] 2026-07-24 — [Cloudflare Agents Week 2026: Disaggregated Prefill, Mooncake KV Cache, and Lossless Weight Compression](content/builders-log/cloudflare-agents-week-2026-infire-disaggregated-prefill-unweight-llm-inference/index.md)
-- [ ] 2026-07-24 — [Grok 4.3: Native Video Input, Voice Cloning, and a 40% Price Cut — The Builder Guide](content/builders-log/grok-4-3-native-video-voice-cloning-agentic-builder-guide/index.md)
-- [ ] 2026-07-24 — [How Agents Talk to Each Other](content/builders-log/how-agents-talk-to-each-other/index.md)
-- [ ] 2026-07-24 — [Mistral Voxtral TTS: Streaming, Voice Cloning, and Deployment — Builder Guide](content/builders-log/mistral-voxtral-tts-streaming-voice-cloning-builder-guide/index.md)
-- [ ] 2026-07-24 — [OpenAI Bought a Talk Show: What TBPN Means for Builders](content/builders-log/openai-tbpn-acquisition-ai-media-narrative-builders/index.md)
-- [ ] 2026-07-24 — [OpenAI Killed Sora. Your API Deadline Is September 24. Here's What to Build With Instead.](content/builders-log/openai-sora-shutdown-api-migration-september-2026-video-ai-builder-guide/index.md)
-- [ ] 2026-07-24 — [Qwen3.6-27B: A Dense 27B Model That Beats the 397B MoE on Every Coding Benchmark](content/builders-log/qwen3-6-27b-dense-beats-397b-moe-coding-local-deployment-builder-guide/index.md)
-- [ ] 2026-07-24 — [Roots Is Dogfooding: The Agent That Built Its Own Coordination API Now Runs on It](content/builders-log/roots-dogfooding-ai-agent-builds-its-own-coordination-api/index.md)
-- [ ] 2026-07-24 — [ServiceNow Build Agent Goes Cross-Platform: Build Enterprise Apps from Claude Code, Cursor, or Windsurf](content/builders-log/servicenow-build-agent-sdk-claude-code-cursor-cross-platform/index.md)
-- [ ] 2026-07-24 — [What's Underneath an AI Agent](content/builders-log/whats-underneath-an-ai-agent/index.md)
+**Status: 12/12 — CLOSED 2026-08-09.** Full claim-by-claim pass on every page (4 parallel audit
+passes, one per ~3 pages): each existing citation re-fetched and checked against its specific
+claim, not just relevance. Real errors found and fixed, not just missing links — see WORKLOG
+2026-08-09 (~20:06 UTC run) for the full list. Headline catches: Boston Dynamics/Gemini
+Robotics-ER 1.6 headline accuracy stat was wrong (98%→93%, confirmed via DeepMind's own blog +
+2 independent outlets); Grok 4.3 guide cited a *live* AA leaderboard URL for a benchmark score
+that had already drifted since launch (1500→1088 Elo) — re-pointed to the dated launch article;
+Sora-shutdown guide claimed Wan 2.7 has open weights, which is false (API/cloud-only, no
+published weights); a "Jikan" link resolved to an unrelated product due to a stale URL.
+
+- [x] 2026-07-23 — [Grok 4.20 Builder Guide: Three Variants, a Hallucination Record, and When to Use Which](content/builders-log/xai-grok-4-20-reasoning-non-reasoning-multi-agent-builder-guide/index.md)
+- [x] 2026-07-24 — [Boston Dynamics Spot + Gemini Robotics-ER 1.6: Physical AI Reads Analog Gauges at 93% — Builder Guide](content/builders-log/boston-dynamics-spot-gemini-robotics-er-1-6-analog-gauge-reading-physical-ai-builder-guide/index.md)
+- [x] 2026-07-24 — [Cloudflare Agents Week 2026: Disaggregated Prefill, Mooncake KV Cache, and Lossless Weight Compression](content/builders-log/cloudflare-agents-week-2026-infire-disaggregated-prefill-unweight-llm-inference/index.md)
+- [x] 2026-07-24 — [Grok 4.3: Native Video Input, Voice Cloning, and a 40% Price Cut — The Builder Guide](content/builders-log/grok-4-3-native-video-voice-cloning-agentic-builder-guide/index.md)
+- [x] 2026-07-24 — [How Agents Talk to Each Other](content/builders-log/how-agents-talk-to-each-other/index.md)
+- [x] 2026-07-24 — [Mistral Voxtral TTS: Streaming, Voice Cloning, and Deployment — Builder Guide](content/builders-log/mistral-voxtral-tts-streaming-voice-cloning-builder-guide/index.md)
+- [x] 2026-07-24 — [OpenAI Bought a Talk Show: What TBPN Means for Builders](content/builders-log/openai-tbpn-acquisition-ai-media-narrative-builders/index.md)
+- [x] 2026-07-24 — [OpenAI Killed Sora. Your API Deadline Is September 24. Here's What to Build With Instead.](content/builders-log/openai-sora-shutdown-api-migration-september-2026-video-ai-builder-guide/index.md)
+- [x] 2026-07-24 — [Qwen3.6-27B: A Dense 27B Model That Beats the 397B MoE on Every Coding Benchmark](content/builders-log/qwen3-6-27b-dense-beats-397b-moe-coding-local-deployment-builder-guide/index.md)
+- [x] 2026-07-24 — [Roots Is Dogfooding: The Agent That Built Its Own Coordination API Now Runs on It](content/builders-log/roots-dogfooding-ai-agent-builds-its-own-coordination-api/index.md)
+- [x] 2026-07-24 — [ServiceNow Build Agent Goes Cross-Platform: Build Enterprise Apps from Claude Code, Cursor, or Windsurf](content/builders-log/servicenow-build-agent-sdk-claude-code-cursor-cross-platform/index.md)
+- [x] 2026-07-24 — [What's Underneath an AI Agent](content/builders-log/whats-underneath-an-ai-agent/index.md)
 
 ## Guides
 
