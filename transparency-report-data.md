@@ -87,13 +87,36 @@ By section (live recheck, 2026-08-09):
 
 ## (b) Error taxonomy with per-class counts
 
-**Status: pending.** A full read-through of all 375 `fabrication-audit.md` entries (dispatched to a
-background research agent) is compiling per-class counts with line-number citations for each
-occurrence, plus the 9 CEO-named worked examples and the audit-subagent-error case. This section
-will be appended once that pass completes and is spot-checked against the source file. Not
-publishing partial/estimated counts for this section per the "cite it or cut it" standard — an
-undercount here would itself be exactly the kind of unsourced-claim failure this report exists to
-avoid repeating.
+**Coverage caveat (read before using any number below):** `fabrication-audit.md` has 375 checked
+entries, but only **78 (21%) carry a per-page description of what was found**. The other 297 are
+either bare checkboxes (260, title + link, no findings text), boilerplate reconciliation notes (36,
+"already audited by the general sweep... no separate pass needed" — real, per the file's own
+2026-08-08 header note, but not itemized by page in this file) or one duplicate-retirement note.
+**The counts below cover only the 78 described entries.** They are a real, fully-cited sample of
+what the general citation-audit sweep + fabrication-audit project found — not a claim that these are
+all the errors that exist, or that the un-described 297 entries were error-free. Of the 78, 77
+describe at least one real correction; 1 (`google-alphaevolve-ga-gemini-evolutionary-optimizer-builder-guide`,
+`fabrication-audit.md` line 296) is the only unambiguous "audited, no error found" case.
+
+| Class | Occurrences (of 78 described entries) | Distinct contributing entries |
+|---|---|---|
+| 1. Fabricated events (invented claims/quotes/figures with no source basis) | 49 | 36 |
+| 2. Wrong numbers/benchmarks (real event, wrong figure) | 41 | 30 |
+| 3. Date-shifted facts (wrong month/year) | 21 | 17 |
+| 4. Fused/reversed stats (two real stats merged, or attribution reversed) | 29 | 26 |
+| 5. Misattributed sources (citation doesn't support the claim it's attached to) | 42 | 31 |
+| 6. Denied-rumors-as-fact / overstated certainty | 7 | 6 |
+| 7. Single-source-tracker claims presented without hedging | 1 | 1 |
+| 8. Other (wrong titles, arithmetic errors, misquotes, unsupported superlatives) | 68 | 46 |
+| 9. No error found (unambiguous) | — | 1 |
+| **Total classified occurrences** | **258** | **78 entries** (avg. ~3.3 distinct issues/audited page with findings text) |
+
+A page can land in multiple classes (e.g. `content/builders-log/tsmc-q2-2026-record-revenue-n2-cowos-ai-chip-demand-builder-guide/index.md`,
+`fabrication-audit.md` line 326, contributed to date-shift, fused-stat, and misattributed-source
+classes in one audit pass). Full per-entry citations (file path + `fabrication-audit.md` line
+number + quoted snippet) for every occurrence above are preserved in the research pass transcript
+and can be re-derived by re-running the same read of `fabrication-audit.md`; not reproduced in full
+here to keep this file a usable size, but every number in the table traces to a specific quoted line.
 
 ---
 
@@ -165,9 +188,15 @@ compilation does NOT begin auditing this cohort — per the directive, item 2 st
 
 ## (d) Worked examples, before → after
 
-**Status: partially compiled, pending the background taxonomy pass for the remaining CEO-named
-cases.** Confirmed so far, each independently re-verified against `fabrication-audit.md` /
-`WORKLOG.md` text (not just grepped):
+**Status: complete — 12 examples, each independently re-verified against `WORKLOG.md` /
+`fabrication-audit.md` text (not just grepped) and matched to a specific fixing commit.** Coverage
+note on the 9 CEO-named cases: all 9 are located and cited below (HFCE ticker, $40B Series I,
+Sonnet 4.6 GPQA, Opus 4.8 Terminal-Bench, Perplexity date-shift, Anthropic S-1, Microsoft Frontier,
+BYD, AVI-2026-0104). The Anthropic-S1 page's errors (#5 below) include both a fabricated issuance
+size AND a reversed Anthropic-vs-OpenAI revenue comparison — the reversed-comparison half is the
+"fused/reversed stats" match. Most of these 9 are NOT located in `fabrication-audit.md` itself (that
+file only carries a per-page description for 21% of its entries — see section b); they come from
+`WORKLOG.md`'s record of the broader, older-running general citation-audit sweep instead.
 
 1. **Audit-subagent-introduced error, caught via independent post-hoc cross-check** (CEO's specific
    ask for a credibility-strengthening case): page
@@ -200,10 +229,14 @@ cases.** Confirmed so far, each independently re-verified against `fabrication-a
    spot-audit).
 
 4. **Opus 4.8 Terminal-Bench — unsourced figure vs. real score, appearing in multiple pages.**
-   Anthropic's own Opus 4.8 launch page states 74.6% (below Sonnet 5's 80.4%); an unsourced ~84.6%
-   circulated across several site pages before correction. Fixed 2026-08-05 audit run (WORKLOG lines
-   84, 164-165, 240, 425, 935 — multiple pages independently carried the same wrong figure, corrected
-   across all of them once caught).
+   Page `terminal-bench-2-1-leaderboard-july-9-sol-ultra-access-gap-builder-guide`: Opus 4.8 was
+   listed at an unsourced **~84.6%**, tied for #4. Anthropic's own Opus 4.8 launch page puts it at
+   **74.6%**, below Sonnet 5 — corrected and the model moved to its accurate #9 rank, with a visible
+   correction note. Same wrong 84.6% figure had independently circulated on at least 4 other site
+   pages (WORKLOG lines 84, 164-165, 240, 425, 935), each corrected separately once caught. Fixing
+   commit: `d33a48f693460d4548c9f89e5b1f7de7592e8bce` (2026-08-06, "Citation audit: 11 pages
+   (2026-07-09/07-10 cluster) + fabrication-audit checklist update"). WORKLOG lines 162-165 (Run
+   1673270, 2026-08-05).
 
 5. **Anthropic S-1 fabricated issuance size.** Page `anthropic-s1-ipo-filing-june-2026-claude-platform-builder-guide`:
    Anthropic's own site confirms a real confidential draft S-1 (Rule 135 notice, June 1, 2026),
@@ -222,23 +255,58 @@ cases.** Confirmed so far, each independently re-verified against `fabrication-a
    capital raised vs. real $4B). WORKLOG lines 129593-129596 and 222 (two independent audit passes on
    sibling pages, same underlying story).
 
-7. **BYD denied-rumor treated as fact** — referenced as a founding fabrication-cohort example
-   (WORKLOG line 3439, "denied BYD rumor") alongside the HFCE case above. Full before/after text for
-   this specific page is part of the pending taxonomy pass (item b) — flagged here so it isn't lost,
-   full citation to follow.
+7. **BYD denied-rumor treated as fact.** Page `xpeng-iron-byd-yao-shun-yu-chinese-ev-humanoid-robot-builder-guide-2026`:
+   the "BYD 150 prototypes running 24/7" claim, plus the "Yao-Shun-Yu" codename, trace to
+   Chinese-media rumors **BYD officially denied on 2026-06-06**; the article had presented them as
+   fact. Rewrote to separate BYD-confirmed facts (humanoid program real, since 2022) from the denied
+   claims. Also fixed a Li Ke/BYD quote transcribed backwards (had US robots' limbs as the strong
+   point; the primary source says the opposite), a wrong XPeng IRON reveal date, and a fabricated
+   "BYD ET-i drive system" (no such product exists). Fixing commit:
+   `fe7f4270ff2f895b0db6d92ff686c49f24ca070b` (2026-07-29, Run 2542853). WORKLOG lines 3639-3646. This
+   incident (with HFCE above) is cited at WORKLOG line 3439 as one of the founding examples behind
+   CEO directive #2276.
 
-8. **AVI-2026-0104 single-source-tracker claim.** Per CLAUDE.md's "Single-source small/self-published
-   trackers" rule (added 2026-08-07 per CEO/CEO directive referencing this exact case): a small,
-   self-published security-research tracker was the sole source for a named-company/product claim
-   with no press corroboration, no replication, no vendor confirmation. Rule requires attributing
-   every datum from such a source explicitly ("X says...") rather than stating it as fact. Full
-   before/after page-level detail is part of the pending taxonomy pass.
+8. **AVI-2026-0104 single-source-tracker claim.** Page
+   `cross-model-prompt-laundering-avi-2026-0104-multi-agent-safety-refusal-builder-security-guide`:
+   the entire AVI-2026-0104 premise (naming OpenAI/Anthropic/Google DeepMind) traces to one
+   unverifiable-provenance, one-person outfit with no independent corroboration — fails the >=2-source
+   bar for named-company security claims. Also fixed a conflation on Claude's resistance mechanism
+   that had it backwards vs. the actual arXiv paper (2607.07097). Flagged to CEO (inbox #2315);
+   awaiting a decision on whether to keep as-is with the sourcing caveat, de-emphasize, or pull —
+   this is the incident that motivated CLAUDE.md's "single-source small/self-published trackers" rule
+   (added 2026-08-07). Fixing commit: `fb3f6b005fda615496cf613abf8ba1a8a89d6010` (2026-08-07, "Citation
+   audit: 11 pages (2026-07-14 cluster start)"). `fabrication-audit.md` line 406.
 
-**Remaining slots (target 10-12 total) awaiting the background taxonomy pass:** the fused/reversed
-Anthropic-S1-style stat pattern (a second distinct example beyond #5), a Perplexity date-shifted
-funding example (referenced at WORKLOG line 3395 as one of the four founding fabrication-cohort
-catches — "Perplexity funding date-shift" — full detail pending), and 1-2 more general-interest
-examples from the 375-entry corpus once the full taxonomy read is in.
+9. **Perplexity funding date-shifted to manufacture a false-coincidence thesis.** Page
+   `perplexity-200m-comet-browser-20b-valuation-june-2026-builder-guide`: the $200M/$20B round is
+   real but closed **September 2025**, not June 2026 as claimed; the article built a false "timing is
+   not a coincidence" thesis tying it to a June 11 Ninth Circuit hearing that hadn't happened yet
+   relative to the real round. Rewritten with a dated correction note; also cut unverifiable
+   MAU/query-volume figures with inconsistent aggregator sourcing and a defunct "OpenAI Operator"
+   reference (shut down August 2025). Fixing commit: `9798420d14d9a7d68da6ba576408a9fb31944124`
+   (2026-07-29, Run 2717280). WORKLOG lines 3488-3492.
+
+10. **Fabricated "$40B Series I" funding round.** Page `crunchbase-h1-2026-510b-vc-record-openai-anthropic-43-percent-builder-guide`:
+    a real SoftBank bank loan was conflated with a nonexistent OpenAI funding-round name ("Series I")
+    that does not exist in any primary source. Same audit also removed an invented "anonymized"
+    qualifier on a Musk/Cursor training-data claim (his own post doesn't say that) and fixed an
+    internal Q1/Q2 date contradiction (Anthropic's Series H closed in Q2, not Q1 as a different
+    section implied). Fixing commit: `48b65fa203069881e88fbbd363e9b362d8d518a4` (2026-08-04,
+    "Citation audit: 10 pages (2026-07-05 cluster) + 10 re-verification passes + Dispatch #5
+    scheduled"). WORKLOG lines 129815-129818.
+
+11. **Misattributed user-count stat (general-taxonomy example, "wrong numbers" class).** Page
+    `waic-2026-sail-award-winners-huawei-atlas-950-df1000-sharpa-wave-builder-guide`: article claimed
+    "China Telecom has 1.8 billion mobile users" — the real Q1 2026 figure is ~441M; 1.8B was likely
+    conflated with a global or industry-wide total. Fixing commit:
+    `a03d2255943e3da53d5662817884967e8a5364d6` (2026-08-08, "Citation audit: 10 pages (2026-07-18/07-20
+    cluster)"). `fabrication-audit.md` line 328.
+
+12. **Fused expert-count/active-parameter stat (general-taxonomy example, "fused/reversed" class).**
+    Page `kimi-k3-2-8t-open-moe-frontier-mcp-atlas-builder-guide`: article conflated Kimi K2's
+    active-parameter count with its expert count, stating "32 of 384 experts active" — the real
+    figure is 8 of 384. Fixing commit: `65dffa605fde9ba33c6fbd1d3be580f4924663ac` (2026-08-08,
+    "Citation audit: 10 pages (2026-07-17 cluster)"). `fabrication-audit.md` line 409.
 
 ---
 
@@ -260,10 +328,22 @@ examples from the 375-entry corpus once the full taxonomy read is in.
 
 ---
 
-## Open items / not yet included
+## Open items / caveats
 
-- Section (b) full error taxonomy with per-class counts — pending background research pass.
-- Section (d) target of 10-12 worked examples — 8 drafted, 2 flagged-but-incomplete (BYD, AVI-2026-0104
-  need full before/after text), 2-4 more pending the taxonomy pass.
+All 5 sections (a-e) are now compiled and cited. Known limitations to carry into the narrative draft:
+
+- **Section (b)'s counts cover only 78 of 375 fabrication-audit.md entries** (21% — the only ones
+  with per-page findings text in that file). The other 297 are real audit passes (per the file's own
+  close-out note) but weren't itemized there, so they can't be added to the per-class tally without
+  re-deriving from WORKLOG.md directly (a much larger follow-up pass, not done here). Do not present
+  the table in (b) as "all errors found" — it's a fully-cited sample, not a census.
+- **The "56 post-07-16 pages" figure from the original directive could not be reconciled** — see
+  (c.2). Used the directly-reproducible 50 instead and flagged the gap rather than forcing a match.
+- **The 881/1944 discrepancy (a.1) is a real finding, not a stylistic footnote** — it means one past
+  WORKLOG entry (run 3115292 / commit `b379a24e`) self-reported a materially wrong denominator. The
+  underlying "0 remaining" claim itself re-verified true; only the total was wrong. Worth deciding
+  explicitly whether the narrative draft mentions this (it's arguably a *second*, smaller instance of
+  the exact failure mode this report is about — an unverified number stated as fact) or treats it as
+  out of scope since it's a process-log error, not a published-page error.
 - This file has NOT been used to draft any public-facing page text. Per the directive, nothing from
   this compilation is to be published until the CEO's narrative draft comes back.
