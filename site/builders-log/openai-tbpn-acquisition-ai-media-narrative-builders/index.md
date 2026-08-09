@@ -11,7 +11,7 @@
 
 TBPN streams weekdays from 11 AM to 2 PM Pacific — three hours a day, five days a week — on YouTube, X, and Substack. It [launched in October 2024](https://www.npr.org/2026/04/08/nx-s1-5775734/openai-tbpn-tech-media-silicon-valley) as the "Technology Brothers Podcast" and [rebranded to TBPN in March 2025](https://www.npr.org/2026/04/08/nx-s1-5775734/openai-tbpn-tech-media-silicon-valley) when it shifted to daily live format.
 
-The [raw subscriber numbers (~58,000 on YouTube)](https://www.axios.com/2026/04/02/openai-acquires-tbpn) understate its influence. The audience is founders, VCs, and technology executives — the exact cohort that shapes what gets funded, what gets built, and what gets adopted. Notable guests include Zuckerberg, Altman, Nadella, Andreessen, and Karp. The *New York Times* called it "Silicon Valley's newest obsession."
+The [raw subscriber numbers (~58,000 on YouTube)](https://www.axios.com/2026/04/02/openai-acquires-tbpn) understate its influence. The audience is founders, VCs, and technology executives — the exact cohort that shapes what gets funded, what gets built, and what gets adopted. Notable guests include [Zuckerberg, Nadella, and Altman](https://www.aol.com/news/chatgpt-owner-openai-acquires-technology-203201403.html), and [Andreessen and Karp](https://www.thefp.com/p/the-most-influential-talk-show-youve). The [*New York Times* called it "Silicon Valley's newest obsession."](https://www.nytimes.com/2025/10/11/technology/tbpn-silicon-valley.html)
 
 Revenue: [approximately $5 million in ad revenue in 2025, projecting over $30 million for 2026](https://www.axios.com/2026/04/02/openai-acquires-tbpn). At "low hundreds of millions" acquisition price, the multiple reflects the audience more than the current P&L.
 
@@ -25,9 +25,9 @@ A few non-exclusive explanations:
 
 **Narrative as competitive infrastructure.** OpenAI is competing on at least three tracks simultaneously: model capabilities, developer adoption, and public legitimacy. The first two have direct technical feedback loops. The third depends on who shapes what AI means to people with power and money. TBPN reaches that audience every weekday.
 
-**Pre-IPO positioning.** An OpenAI IPO was being discussed for late 2026 or 2027. In the months before a public offering, the company that can most credibly define the frame — trustworthy AI, responsible deployment, builder-centric — has an advantage that doesn't show up on benchmark leaderboards. Owning a daily broadcast into the VC and founder class is one way to shape that frame.
+**Pre-IPO positioning.** [An OpenAI IPO was being discussed for late 2026 or 2027](https://finance.yahoo.com/news/exclusive-openai-lays-groundwork-juggernaut-232125990.html), per Reuters reporting on the company's IPO preparations. In the months before a public offering, the company that can most credibly define the frame — trustworthy AI, responsible deployment, builder-centric — has an advantage that doesn't show up on benchmark leaderboards. Owning a daily broadcast into the VC and founder class is one way to shape that frame.
 
-**Acquihire dimension.** John Coogan and Sam Altman have known each other for over a decade. Altman invested in Coogan's first company, Soylent. TBPN gave Coogan and Hays existing distribution and credibility. The acquisition is also an acquihire of operators who understand how to reach and engage the tech insider class.
+**Acquihire dimension.** John Coogan and Sam Altman have known each other for over a decade: [Altman (with his brother Jack, via their fund Hydrazine Capital) invested in Coogan's first company, Soylent](https://techcrunch.com/2013/10/21/soylent), back in its 2013 seed round. TBPN gave Coogan and Hays existing distribution and credibility. The acquisition is also an acquihire of operators who understand how to reach and engage the tech insider class.
 
 **Distribution ownership.** Every press story about OpenAI is filtered through a journalist. A TBPN interview with Altman or OpenAI leadership is unmediated — live, three hours, the hosts set the tone. That's a qualitatively different product than earned media.
 

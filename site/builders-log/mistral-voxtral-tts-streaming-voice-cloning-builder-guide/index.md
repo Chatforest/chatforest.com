@@ -3,7 +3,7 @@
 > Voxtral TTS ships as a $0.016/1k-char API and open CC BY-NC weights. This builder guide covers format selection for streaming vs. batch, voice cloning from base64 audio, the API-vs-self-host break-even, and vLLM-Omni setup for on-premises deployment.
 
 
-**At a glance:** Voxtral TTS released March 26, 2026. API: `voxtral-tts` or `voxtral-mini-tts-2603` at $0.016/1k chars. PCM streaming: 0.8s end-to-end time-to-first-audio. MP3: ~3s. Voice cloning: 3-second base64 reference clip. Self-hosted: vLLM-Omni 0.18.0+, 16 GB VRAM (BF16), 8 GB (quantized). CC BY-NC license: commercial self-hosting requires a separate Mistral license. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** [Voxtral TTS released March 26, 2026](https://mistral.ai/news/voxtral-tts/). API: `voxtral-tts` or `voxtral-mini-tts-2603` at $0.016/1k chars. PCM streaming: 0.8s end-to-end time-to-first-audio. MP3: ~3s. Voice cloning: 3-second base64 reference clip. Self-hosted: vLLM-Omni 0.18.0+, 16 GB VRAM (BF16), 8 GB (quantized). CC BY-NC license: commercial self-hosting requires a separate Mistral license. Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -37,6 +37,8 @@ Voxtral TTS outputs six formats: `mp3`, `wav`, `pcm`, `flac`, `aac`, and `opus`.
 | `flac` | ~3.0s | Audio archiving, lossless storage |
 | `aac` | ~3.0s | iOS/macOS native playback |
 
+[Mistral's own docs](https://docs.mistral.ai/studio-api/audio/text_to_speech) confirm the `pcm` (~0.8s) and `mp3` (~3s) end-to-end figures directly; the `wav`, `opus`, `flac`, and `aac` numbers above are our estimate based on those two measured data points (uncompressed formats behaving like `pcm`, compressed formats behaving like `mp3`) rather than individually published benchmarks — treat them as directional, not exact.
+
 **PCM is the right default for anything interactive.** Raw float32 PCM hits ~0.8s end-to-end and streams naturally into WebRTC or audio buffers without decoder overhead. If your client expects MP3, you can transcode PCM in memory with `pydub` or `ffmpeg` — the round-trip cost is well under the 2-second latency gap.
 
 **MP3 is better for batch.** For async jobs — narration pipelines, podcast episode generation, content localization — the per-character cost is identical and MP3 gives you a directly usable file.
@@ -67,13 +69,13 @@ audio_bytes = response.content        # raw float32 PCM at 24 kHz
 
 The response object's `.content` attribute contains the raw audio bytes. Pipe these directly into an audio buffer, write to a file, or stream to a client.
 
-**Available preset voices** cover American English (6 voices), British English (4), and French (3), plus regional variants for Spanish, Portuguese, German, Dutch, Hindi, and Arabic. The full list is in [Mistral Docs](https://docs.mistral.ai/studio-api/audio/text_to_speech).
+Voxtral TTS ships [20 preset voices across all 9 supported languages](https://huggingface.co/mistralai/Voxtral-4B-TTS-2603) — American English (6 voices), British English (4), and French (3), plus regional variants for Spanish, Portuguese, German, Dutch, Hindi, Italian, and Arabic. The full list is in [Mistral Docs](https://docs.mistral.ai/studio-api/audio/text_to_speech).
 
 ---
 
 ## Voice Cloning Integration
 
-Voice cloning requires a reference audio clip in base64-encoded format. The model needs roughly 3 seconds of clean speech — shorter clips work but produce less accurate accent reproduction.
+Voice cloning requires a reference audio clip in base64-encoded format. [Mistral's docs](https://docs.mistral.ai/studio-api/audio/text_to_speech) say the model can clone from as little as 2–3 seconds of audio — shorter clips work but produce less accurate accent reproduction.
 
 ```python
 import base64
@@ -102,7 +104,7 @@ audio_bytes = response.content
 
 **What the model captures from the reference clip:** accent, intonation pattern, speaking rhythm, natural pauses, and emotional register. Emotion-steering tags in the text (e.g., `[excited]`, `[calm]`) layer on top of the cloned voice characteristics — you do not need separate reference clips per emotion.
 
-**Quality calibration:** [Mistral's evaluation](https://mistral.ai/static/research/voxtral-tts.pdf) shows 68.4% overall voice-cloning win rate against ElevenLabs Flash v2.5 in blind listening tests by native speakers, with notably stronger results for Hindi (79.8%), Spanish (87.8%), and Arabic (72.9%). If you are building a multilingual product and cloning accuracy matters, these three languages are where Voxtral TTS has the clearest advantage.
+**Quality calibration:** [Mistral's own announcement](https://mistral.ai/news/voxtral-tts/) reports a 68.4% overall voice-cloning win rate against ElevenLabs Flash v2.5 in blind listening tests by native speakers (68.4% vs. 31.6%), with the per-language breakdown — Hindi (79.8%), Spanish (87.8%), and Arabic (72.9%) — [corroborated in independent coverage of the same test results](https://huggingface.co/blog/azhan77168/voxtral-tts). If you are building a multilingual product and cloning accuracy matters, these three languages are where Voxtral TTS has the clearest advantage.
 
 ---
 
@@ -178,15 +180,15 @@ You do not need to implement chunking yourself for API calls. For self-hosted de
 
 ## API vs. Self-Hosted Decision
 
-The CC BY-NC license creates a clear fork:
+The [CC BY-NC license](https://huggingface.co/mistralai/Voxtral-4B-TTS-2603) creates a clear fork:
 
 | Deployment | License | VRAM | Best for |
 |---|---|---|---|
 | Mistral API | Commercial, included | None | Most production workloads |
-| Self-hosted (non-commercial) | CC BY-NC, free | 16 GB (BF16) or 3 GB (quantized) | Research, internal tooling, non-revenue apps |
+| Self-hosted (non-commercial) | CC BY-NC, free | 16 GB (BF16) or 3–8 GB (quantized) | Research, internal tooling, non-revenue apps |
 | Self-hosted (commercial) | CC BY-NC + Mistral commercial license | 16 GB (BF16) | High-volume production requiring data sovereignty |
 
-**Break-even estimate for self-hosted (commercial API route):** At $0.016/1k characters, 100M characters per month costs $1,600. A single A10G instance (24 GB VRAM) runs roughly $300–500/month depending on provider and commitment. A single H200 GPU handles 30+ concurrent users and costs $2–4/hour on most cloud providers. At sustained utilization, self-hosting becomes cost-competitive around 200–350M characters per month — assuming you have the GPU management overhead already absorbed.
+**Break-even estimate for self-hosted (commercial API route):** At $0.016/1k characters, 100M characters per month costs $1,600. A single A10G instance runs roughly [$300–500/month at the low end of current cloud pricing](https://getdeploying.com/gpus/nvidia-a10g) (rates vary widely by provider and commitment level — up to several times that on-demand). A single H200 GPU handles 30+ concurrent users and costs roughly [$2–4/hour on the cheaper end of most cloud providers](https://getdeploying.com/gpus/nvidia-h200) (on-demand list prices can run higher). At sustained utilization near those low-end rates, self-hosting becomes cost-competitive around 200–350M characters per month — assuming you have the GPU management overhead already absorbed and are getting favorable pricing.
 
 For most teams shipping voice features, the API is the right call until you hit that volume. The licensing question is the harder one: commercial self-hosting requires a Mistral commercial license, which is not the same as just running the open weights.
 
@@ -194,15 +196,15 @@ For most teams shipping voice features, the API is the right call until you hit 
 
 ## Self-Hosted Deployment: vLLM-Omni Setup
 
-vLLM-Omni 0.18.0+ is the recommended serving stack for Voxtral TTS. It extends vLLM with multimodal audio support and exposes an OpenAI-compatible `/audio/speech` endpoint.
+[vLLM-Omni 0.18.0+ is Mistral's recommended serving stack](https://huggingface.co/mistralai/Voxtral-4B-TTS-2603) for Voxtral TTS. It extends vLLM with multimodal audio support and exposes an OpenAI-compatible `/audio/speech` endpoint.
 
 **Hardware requirements:**
 
 | Weights | VRAM | Notes |
 |---|---|---|
-| BF16 (full precision) | 16 GB | Single RTX 4080 or A10G |
-| W4A16 quantized | ~8 GB | RTX 3080/4070 class |
-| INT4 (aggressive) | ~3 GB | Edge/mobile; quality degrades slightly |
+| [BF16 (full precision)](https://huggingface.co/mistralai/Voxtral-4B-TTS-2603) | 16 GB | Single RTX 4080 or A10G — Mistral's own stated minimum |
+| W4A16 quantized | ~8 GB | RTX 3080/4070 class; not an official Mistral figure — approximate, based on typical W4A16 memory savings |
+| [INT4 (aggressive)](https://github.com/TheMHD1/voxtral-int4) | ~3 GB | Edge/mobile; quality degrades slightly — from a third-party community quantization, not officially published by Mistral |
 
 **Setup:**
 
@@ -263,10 +265,10 @@ response = client.audio.speech.create(
 - Multilingual voice cloning in the nine supported languages — especially Hindi, Spanish, or Arabic where the benchmark advantage versus ElevenLabs is largest
 - Research and non-commercial projects where CC BY-NC open weights provide full model access
 - Voice agents where PCM streaming and 0.8s time-to-first-audio is the priority
-- Cost-sensitive workloads where $0.016/1k chars ($16/1M) undercuts [ElevenLabs (~$50/1M for Flash v2.5)](https://elevenlabs.io/pricing)
+- Cost-sensitive workloads where $0.016/1k chars ($16/1M) undercuts [ElevenLabs (~$50/1M for Flash v2.5)](https://elevenlabs.io/pricing/api)
 
 **Weaker fit:**
-- Applications requiring more than nine languages (ElevenLabs: 32, Google Cloud TTS: 75+)
+- Applications requiring more than nine languages ([ElevenLabs Flash v2.5: 32 languages](https://elevenlabs.io/docs/overview/models), [Google Cloud TTS: 40+ languages](https://cloud.google.com/text-to-speech))
 - Commercial self-hosted deployments at sub-break-even volume (the API is cheaper until ~200–350M chars/month)
 - Workloads where independent benchmark validation of voice quality is required before committing — Mistral's published numbers are self-reported
 - English-only applications where [Microsoft MAI-Voice-1](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-transcribe-1-mai-voice-1-and-mai-image-2-in-microsoft-foundry/4507787) (under 1 second for 60-second audio on a single GPU) may offer faster full-document synthesis

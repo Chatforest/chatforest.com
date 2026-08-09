@@ -7,7 +7,7 @@ Alibaba's Qwen team released Qwen3.6-27B on April 22, 2026 ([HuggingFace model c
 
 The efficiency gap here is worth pausing on. The 397B MoE model activates 17B parameters per token. Qwen3.6-27B activates all 27B parameters per token — it is larger at inference time than the "397B" MoE, but far smaller in total storage and in the hardware overhead of loading and routing a massive sparse model. And it wins across the board.
 
-**At a glance:** Qwen3.6-27B. Dense 27B. Apache 2.0. 262K context (extensible to 1M). Native multimodal (text + image + video). Thinking Preservation across turns. Runs at Q4_K_M on a 16 GB GPU. OpenRouter: $0.29/$3.20 per 1M tokens. Part of our **[Builder's Log](/builders-log/)**.
+**At a glance:** Qwen3.6-27B. Dense 27B. Apache 2.0. 262K context (extensible to 1M). Native multimodal (text + image + video). Thinking Preservation across turns. Runs at Q4_K_M on a 16 GB GPU. OpenRouter: $0.29/$2.40 per 1M tokens (live pricing, may drift). Part of our **[Builder's Log](/builders-log/)**.
 
 ---
 
@@ -83,7 +83,7 @@ The tradeoff: retained thinking traces consume context. For a 262K window, this 
 
 ## VRAM and Local Hardware Guide
 
-Qwen3.6-27B's full BF16 weights are 55.6 GB on disk. In practice, you will run a quantized version. The table below uses Unsloth GGUF quantizations:
+Qwen3.6-27B's full BF16 weights are 55.6 GB on disk. In practice, you will run a quantized version. The table below uses [Unsloth GGUF quantizations](https://huggingface.co/unsloth/Qwen3.6-27B-GGUF):
 
 | Quantization | VRAM Required | Recommended Hardware |
 |---|---|---|
@@ -106,11 +106,13 @@ Qwen3.6-27B's full BF16 weights are 55.6 GB on disk. In practice, you will run a
 ```
 Model ID: qwen/qwen3.6-27b
 Input: $0.29 / 1M tokens
-Output: $3.20 / 1M tokens
+Output: $2.40 / 1M tokens
 Context: 262,144 tokens
 Output max: 262,140 tokens
 Modalities: text, image, video → text
 ```
+
+(Pricing per [OpenRouter's live listing](https://openrouter.ai/qwen/qwen3.6-27b) as of this audit — OpenRouter prices are dynamic and may differ from the launch-day figures originally reported.)
 
 OpenRouter also carries Qwen3.6 Plus (`qwen/qwen3.6-plus`) and Qwen3.6 Flash (`qwen/qwen3.6-flash`) — the full Qwen3.6 family. The 27B dense is the flagship coding variant.
 
@@ -145,9 +147,9 @@ Both frameworks support Qwen3.6-27B with OpenAI-compatible API endpoints. SGLang
 The 27B dense is not the only variant. The full Qwen3.6 release includes:
 
 - **Qwen3.6-27B** — dense, 27B, flagship coding, subject of this guide
-- **Qwen3.6-35B-A3B** — MoE variant: 35B total, 3B active. Much smaller active footprint for fast inference at lower cost; trades some coding accuracy for speed
+- **[Qwen3.6-35B-A3B](https://huggingface.co/Qwen/Qwen3.6-35B-A3B)** — MoE variant: 35B total, 3B active. Much smaller active footprint for fast inference at lower cost; trades some coding accuracy for speed
 - **Qwen3.6 Plus** — larger API-only model for maximum capability
-- **Qwen3.6 Flash** — lightweight speed-optimized variant
+- **Qwen3.6 Flash** — lightweight speed-optimized variant, built on the Qwen3.6-35B-A3B architecture
 
 For pure coding agent workloads with enough hardware, the 27B dense is the clear pick based on benchmarks. For high-throughput scenarios where latency matters more than accuracy, the 35B-A3B MoE's 3B active parameters will serve more requests per unit compute.
 
@@ -155,19 +157,19 @@ For pure coding agent workloads with enough hardware, the 27B dense is the clear
 
 ## Comparison With the Qwen3 Lineage
 
-The Qwen3.6-27B sits between [Qwen3-Coder-Next](https://huggingface.co/Qwen/Qwen3-Coder-Next) (released February 2026, 80B MoE, 3B active, focused specifically on agentic coding) and Qwen3.7 Max (released later, flagship general-purpose model). The 3.6 line is the general-purpose coding-optimized series; 3-Coder-Next was the specialized pure-coding release.
+The Qwen3.6-27B sits between [Qwen3-Coder-Next](https://huggingface.co/Qwen/Qwen3-Coder-Next) (released February 2026, 80B MoE, 3B active, focused specifically on agentic coding) and [Qwen3.7 Max](https://www.vals.ai/models/alibaba_qwen3.7-max) (released May 2026, flagship agent-focused model, not open-weight). The 3.6 line is the general-purpose coding-optimized series; 3-Coder-Next was the specialized pure-coding release.
 
 If you are choosing between them:
-- **[Qwen3-Coder-Next](https://huggingface.co/Qwen/Qwen3-Coder-Next):** [SWE-bench Verified 70.6](https://qwen.ai/blog?id=qwen3-coder-next). Smaller active footprint (3B). Best for high-volume coding pipelines where you want to run many parallel agents on limited hardware.
+- **[Qwen3-Coder-Next](https://huggingface.co/Qwen/Qwen3-Coder-Next):** [SWE-bench Verified 70.6](https://qwen.ai/blog?id=qwen3-coder-next) ([MarkTechPost](https://www.marktechpost.com/2026/02/03/qwen-team-releases-qwen3-coder-next-an-open-weight-language-model-designed-specifically-for-coding-agents-and-local-development/)). Smaller active footprint (3B). Best for high-volume coding pipelines where you want to run many parallel agents on limited hardware.
 - **Qwen3.6-27B:** SWE-bench Verified 77.2. Larger active footprint but higher accuracy. Best for fewer parallel tasks where result quality matters more than throughput.
 
 ---
 
 ## The Honest Section
 
-**The 77.2 on SWE-bench Verified is self-reported.** Alibaba runs these benchmarks themselves using the SWE-Agent scaffold. Independent reproduction may differ. That said, Qwen's benchmark reporting has been consistent with third-party reproduction in prior releases, and the methodology is published.
+**The 77.2 on SWE-bench Verified is self-reported.** Alibaba runs these benchmarks themselves using the SWE-Agent scaffold. Independent reproduction may differ. For the related SWE-bench Pro score, at least one independent attempt to reproduce Qwen3.6-27B's reported 53.5 [got close with a modified tool setup](https://github.com/QwenLM/Qwen3.6/issues/179) (50.7 pass@1 with a `str_replace` file-edit tool and reliable-test conditioning) — evidence the self-reported number is in the right range, though not an exact match.
 
-**Output tokens are expensive at $3.20/M on OpenRouter.** Coding tasks generate long outputs. A 10K-token fix costs $0.032 in output tokens. At scale (hundreds of tasks per day), output cost dominates. Monitor your token usage from the start rather than after your bill arrives.
+**Output tokens are expensive at $2.40/M on OpenRouter.** Coding tasks generate long outputs. A 10K-token fix costs $0.024 in output tokens. At scale (hundreds of tasks per day), output cost dominates. Monitor your token usage from the start rather than after your bill arrives.
 
 **The 262K context is real but has runtime cost.** Filling the context window with a large codebase and multi-turn thinking traces will slow inference and increase VRAM use significantly. Profile your actual use case before assuming the full window is practically available.
 
@@ -177,7 +179,7 @@ If you are choosing between them:
 
 ## What to Watch
 
-**Qwen3.7 Max** released after Qwen3.6-27B and is positioned as the general-purpose flagship. If you need maximum capability across domains (not just coding), compare 3.6-27B vs. 3.7 Max on your specific tasks before committing to either for production.
+**[Qwen3.7 Max](https://www.vals.ai/models/alibaba_qwen3.7-max)** released after Qwen3.6-27B (May 2026) and is positioned as Alibaba's flagship agent-focused model — API-only, not open-weight. If you need maximum agentic capability across domains (not just coding), compare 3.6-27B vs. 3.7 Max on your specific tasks before committing to either for production.
 
 **Quantization quality:** The Q4_K_M results may show meaningful degradation on repository-level tasks compared to BF16 at the top of its range. Run your own evaluation on a sample of SWE-bench tasks before deploying at scale — benchmark numbers are for BF16 unless otherwise specified.
 
@@ -185,5 +187,5 @@ If you are choosing between them:
 
 ---
 
-*Qwen3.6-27B was released April 22, 2026, by the Qwen team at Alibaba. Weights are available on [Hugging Face](https://huggingface.co/Qwen/Qwen3.6-27B) under Apache 2.0. API access via [OpenRouter](https://openrouter.ai/qwen/qwen3.6-27b) at $0.29/$3.20 per 1M tokens.*
+*Qwen3.6-27B was released April 22, 2026, by the Qwen team at Alibaba. Weights are available on [Hugging Face](https://huggingface.co/Qwen/Qwen3.6-27B) under Apache 2.0. API access via [OpenRouter](https://openrouter.ai/qwen/qwen3.6-27b) at $0.29/$2.40 per 1M tokens (live pricing as of this audit; may change).*
 
