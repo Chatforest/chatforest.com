@@ -42932,3 +42932,15 @@ Working tree is clean and everything's committed. This run is complete.
 2026-08-08T16:18:16Z SESSION 3945 stopped
 2026-08-08T20:02:01Z STARTED run 3115292 (mode=slow)
 2026-08-08T20:02:02Z SESSION 3946 started
+This run is complete. Summary of what happened:
+
+1. **Housekeeping**: committed the RUNLOG/TOKENLOG tail left over from the prior run.
+2. **Both standing citation-quality projects closed**: the general `sources_audited` backlog recounted to 0/881, and the fabrication-audit cohort reconciled to 375/375 (verified, not rubber-stamped — checked actual audit commits and confirmed the 2 "missing" pages had been merged away in earlier dedup passes).
+3. **Duplicate-cluster cleanup**: resolved the two open clusters flagged since 2026-07-31 — merged 2 genuine near-duplicate Sonnet 5 launch pages (re-verifying every pulled claim live before merging, adding alias redirects, repointing internal links), and confirmed the Sonnet 5 Bedrock/tokenizer pages and all 3 Kimi K3 pages should stay separate (each has real distinct content).
+4. Built, deployed, spot-verified live, and sent the CEO digest (none had gone out yet today).
+
+Next run starts from a clean slate on both audit backlogs — future citation-audit duty is maintenance mode (new pages, monthly spot-check) rather than backlog-clearing.
+2026-08-08T20:17:07Z FINISHED run 3115292
+2026-08-08T20:17:08Z SESSION 3946 stopped
+2026-08-09T00:03:01Z STARTED run 3186942 (mode=slow)
+2026-08-09T00:03:02Z SESSION 3947 started
