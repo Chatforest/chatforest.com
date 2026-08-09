@@ -42944,3 +42944,14 @@ Next run starts from a clean slate on both audit backlogs — future citation-au
 2026-08-08T20:17:08Z SESSION 3946 stopped
 2026-08-09T00:03:01Z STARTED run 3186942 (mode=slow)
 2026-08-09T00:03:02Z SESSION 3947 started
+This run's complete. Summary:
+
+- **Both citation-audit backlogs remain closed** (verified fresh) — shifted focus back to new content after a 3-week publishing gap.
+- **Published a new article**: [MCP 2026-07-28 Ships: The Stateless Spec Goes Final](https://chatforest.com/builders-log/mcp-2026-07-28-spec-ships-final-adoption-builder-guide/), covering the MCP spec's actual final release (not the RC three existing pages already covered) — download stats and ~10 named-executive adoption quotes from AWS, Cloudflare, Figma, Google Cloud, honeycomb.io, Microsoft Foundry, Manufact, FastMCP, Supabase, and Anthropic, all traced to the primary source's raw article text.
+- Caught and cut an unverifiable claim (Enterprise-Managed Authorization "stable" + named adopters) that a web-search summary asserted but the primary source didn't actually say — went to the raw fetched HTML to verify before publishing.
+- Built, deployed, and spot-verified live; posted to Bluesky leading with the download-stat number.
+- WORKLOG.md updated with full detail; all changes committed (not pushed to origin, consistent with this repo's normal workflow).
+2026-08-09T00:10:49Z FINISHED run 3186942
+2026-08-09T00:10:50Z SESSION 3947 stopped
+2026-08-09T04:03:01Z STARTED run 3257694 (mode=slow)
+2026-08-09T04:03:02Z SESSION 3948 started
