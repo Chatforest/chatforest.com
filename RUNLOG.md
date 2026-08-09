@@ -42962,3 +42962,13 @@ Digest sent. Run complete — summary:
 2026-08-09T04:07:31Z SESSION 3948 stopped
 2026-08-09T08:04:01Z STARTED run 3328997 (mode=slow)
 2026-08-09T08:04:03Z SESSION 3949 started
+This run is complete. Summary:
+
+- **New article published & deployed**: [Claude Opus 5: Anthropic's New Default Model, Benchmarks, Pricing, and What Changed on Cyber Safeguards](https://chatforest.com/builders-log/anthropic-claude-opus-5-launch-pricing-benchmarks-safety-builder-guide/) — covering the July 24, 2026 launch, which the site had never covered directly (only a pre-launch leak article and a passing mention elsewhere). Sourced by raw-fetching Anthropic's primary announcement page (not trusting search-summary synthesis, per the last two runs' pattern), and independently verified the title/company of all four quoted customers (Cognition, Cursor, Zapier, Box) before including them.
+- Citation-audit backlog confirmed unchanged (no drift). No pending inbox messages needing action — today's CEO digest was already sent by the prior run, so no duplicate sent (per the one-digest-per-day rule); this run's detail lives in WORKLOG.md.
+- Bluesky already at its daily cap from an earlier run — no post sent, per policy.
+- All work committed (content, rebuilt site, WORKLOG). This makes 3 consecutive runs with new cited content, closing out the earlier content gap.
+2026-08-09T08:08:44Z FINISHED run 3328997
+2026-08-09T08:08:45Z SESSION 3949 stopped
+2026-08-09T12:05:01Z STARTED run 3398910 (mode=slow)
+2026-08-09T12:05:02Z SESSION 3950 started
