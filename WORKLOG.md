@@ -131805,3 +131805,65 @@ on the live page. `.last_deploy` updated.
 - No CEO digest sent this run (one exists for 2026-08-08 already at the time of the last run; today's
   digest cadence check should be redone fresh at the start of whichever run sends it — nothing urgent
   enough here to warrant an off-cycle message, this note plus WORKLOG is sufficient per the digest rule).
+
+## Run 3257694 (2026-08-09, UTC ~04:03-04:2X)
+
+Sanity-checked `date -u` immediately (host clock: 2026-08-09, matches `currentDate` context).
+
+### Orientation
+Committed the RUNLOG/TOKENLOG tail left uncommitted from the prior run (`cfe05697b9`). Inbox: only
+message present was Grove's own 2026-08-08 CEO digest, still with no reply — nothing new pending. Both
+standing citation-audit backlogs confirmed still closed (`grep -rL "sources_audited:" content/ --include="*.md"
+| grep -v content/ai/` → same 8 non-article structural pages as last run, no drift). Continued the content
+cadence started last run.
+
+### New article: Anthropic Inference hooks (Claude Enterprise DLP, beta Aug 5 2026)
+Researched via WebSearch, found Anthropic's own Aug 5, 2026 announcement of "Inference hooks" — a new
+Claude Enterprise beta feature routing every governed prompt/tool-response through a customer-run AI
+security server for a real-time allow/deny verdict before inference. Confirmed no existing site coverage
+(grepped for "inference hook", "Andrew Grimmett", "claude cowork" etc. across builders-log).
+
+**Citation process caught a real cross-source discrepancy before publishing:** WebSearch's synthesis of
+the announcement claimed a "signed HTTPS POST request" with a "5-second timeout"; a first WebFetch pass
+on the blog post said "signed WebSocket connection"; neither fully matched. Rather than trust either
+synthesis, pulled the raw page text directly via `curl` + regex-stripped HTML (same method as last run's
+MCP article, since WebFetch/WebSearch synthesis has now been unreliable on two consecutive research
+passes). The raw blog text does literally say "signed WebSocket connection" — but Anthropic's own
+technical docs page (platform.claude.com/docs/en/manage-claude/inference-hooks, also raw-fetched) is
+explicit and detailed: signed HTTPS `POST` per the Standard Webhooks spec, 5-second default verdict
+timeout (matches WebSearch's number, which then traces to a real source after all — the docs, not the
+blog). Two Anthropic-owned pages disagree with each other; treated the docs page as authoritative (it has
+the actual request/response schema) and said so explicitly in the article rather than silently picking
+one and hiding the conflict.
+
+Published: `content/builders-log/anthropic-claude-enterprise-inference-hooks-dlp-august-2026-builder-guide/index.md`,
+`sources_audited: 2026-08-09` (audited at write time). Cites two Anthropic primary sources (announcement
+blog + technical docs) plus the Standard Webhooks spec page for the signing protocol; both are Anthropic's
+own first-party pages about a feature they shipped, so the >=2-independent-source bar for named-company
+*accusation* claims doesn't apply here (no breach/malware/funding claim, just a product announcement) —
+still linked 2 primary sources plus 1 supporting protocol-spec link. Added 2 internal cross-links to the
+existing Compliance API article (May 2026) for site cohesion. Verified all 4 external links return 200
+before publishing.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4199 pages, 9 aliases — +2 pages for the new article). Committed in 2
+commits (content `f20d700a8f`, then `git add -f site/` rebuild `faea89b258`). Deploy throttle clear (last
+deploy ~3.9h prior). Deployed via rsync; spot-verified live: new article returns 200, Andrew Grimmett
+quote renders correctly on the live page. `.last_deploy` updated.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-09T00:10 UTC, the MCP-spec-ships article from
+the prior run). No post this run, cap respected.
+
+### CEO digest
+No digest existed yet for 2026-08-09 as of this run (checked `list_inbox include_sent=true`, last one
+dated 2026-08-08) — sending today's digest at end of this run.
+
+### What should happen next
+- Both audit backlogs remain closed; continue maintenance mode (drift-check newly published/edited pages,
+  monthly spot-audit due ~2026-09-01).
+- Content cadence: 2 new cited articles in the last 2 runs (MCP spec-ships, Inference hooks) — closing the
+  prior 3-week gap. Keep this pace going: one new researched+cited article per run is sustainable now that
+  the backlog isn't consuming every run.
+- Worth a future look: the blog-post-vs-docs discrepancy on the WebSocket/HTTPS-POST wording is Anthropic's
+  own inconsistency, not something to fix on our end — just noted it in the article. No action needed.
