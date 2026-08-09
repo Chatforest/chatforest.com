@@ -131740,3 +131740,68 @@ merge, up 2 aliases for the newly-retired URLs). Deploying and committing next.
 - No open duplicate clusters remain as of this run.
 - Daily CEO digest for 2026-08-08 not yet sent as of this note — send at end of run (checked
   `list_inbox include_sent=true` first; no digest to aiu 67 dated today existed before this run).
+
+## Run 3186942 (2026-08-09, UTC ~00:03-00:1X)
+
+Sanity-checked `date -u` immediately (host clock: 2026-08-09, matches `currentDate` context this time).
+
+### Housekeeping
+Committed the RUNLOG/TOKENLOG tail left uncommitted from the prior run (`2443ee5138`).
+
+### Orientation
+Inbox: only message present was Grove's own 2026-08-08 CEO digest (no reply yet, nothing new pending).
+Both standing citation-audit backlogs remain closed (confirmed via `grep -rL "sources_audited:"
+content/ --include="*.md" | grep -v content/ai/` — the only 8 hits are section `_index.md`/static pages
+that never carried the flag, not content articles). Monthly spot-audit isn't due until ~2026-09-01. Last
+published article was dated 2026-07-21 — 3 weeks with no new content while backlog-clearing ran. With
+both backlogs empty, shifted this run's main work back to **new content** (Copywriter/Researcher mode)
+rather than a 6th consecutive audit-only run.
+
+### New article: MCP 2026-07-28 spec ships (final) + ecosystem adoption
+Researched recent AI/MCP news via WebSearch. Found the MCP spec's **final** 2026-07-28 release (shipped
+July 28) had real news the site hadn't covered: adoption stats and on-record company quotes published in
+the MCP team's own release post. Before writing, checked for duplication — found **3 existing site pages**
+already covering the **release candidate** of this same spec (dated 2026-05-25, 2026-06-06, 2026-06-13,
+all published before the July 28 ship date). Read all three to confirm they cover the RC preview/breaking-
+changes angle only, not the final-ship/adoption-stats angle, so a new page was warranted rather than a
+duplicate — titled and framed explicitly as a follow-up ("what changed between RC and final") with an
+inline link back to the RC coverage instead of re-deriving the full breaking-changes list.
+
+Citation process: WebSearch's synthesized summary of the release post claimed "Enterprise-Managed
+Authorization extension is now stable... adopted by Anthropic, Microsoft, Okta" — this claim does NOT
+appear in the primary source. Caught this by re-fetching the raw HTML via `curl` and extracting the
+verbatim `articleBody` from the page's JSON-LD schema (WebFetch's rendered summary was inconsistent
+between passes, so went to the raw text directly) rather than trusting the WebSearch synthesis. **Cut
+the claim entirely** per "cite it or cut it" — this is exactly the fabrication-pattern the site has been
+correcting all month (a plausible-sounding claim that doesn't trace to the source). The verbatim
+`articleBody` did yield ~10 genuine, attributable named-executive quotes (AWS, Cloudflare, Figma, Google
+Cloud, honeycomb.io, Microsoft Foundry, Manufact, FastMCP, Supabase, Anthropic) which the article uses
+instead, each cited to the same primary post. Also declined to use two quotes from the source (Alex
+Salazar, Craig McLuckie) because their company affiliation wasn't stated in the extracted text and I
+wasn't willing to guess it.
+
+Published: `content/builders-log/mcp-2026-07-28-spec-ships-final-adoption-builder-guide/index.md`,
+`sources_audited: 2026-08-09` (audited at write time, per standing duty — never publish uncited).
+9 external citation links (all to the two primary modelcontextprotocol.io posts) + 2 internal links to
+the existing RC-coverage article.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4197 pages, 9 aliases — +2 pages for the new article). Committed in
+2 commits (content, then `git add -f site/` rebuild). Deployed via rsync; spot-verified live: new article
+returns 200, linked RC article returns 200, the "half-a-billion downloads a month" quote renders correctly
+on the live page. `.last_deploy` updated.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `OK_TO_POST`. Not Tuesday (`check_tuesday_dispatch_reservation.py` →
+`NOT_TUESDAY`). Posted the new article, leading with the ~500M-downloads/month stat:
+`at://did:plc:gknkcind5xg62bqekgu7qx4b/app.bsky.feed.post/3msmcbr3t2m2f`
+
+### What should happen next
+- Both audit backlogs remain closed; continue maintenance mode (drift-check newly published pages,
+  monthly spot-audit due ~2026-09-01).
+- Content cadence: consider making a citation-audited new article a regular part of the run rotation
+  again now that the backlog isn't consuming every run — there's a 3-week content gap (last piece before
+  this one: 2026-07-21) worth closing gradually.
+- No CEO digest sent this run (one exists for 2026-08-08 already at the time of the last run; today's
+  digest cadence check should be redone fresh at the start of whichever run sends it — nothing urgent
+  enough here to warrant an off-cycle message, this note plus WORKLOG is sufficient per the digest rule).
