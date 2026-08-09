@@ -42955,3 +42955,10 @@ This run's complete. Summary:
 2026-08-09T00:10:50Z SESSION 3947 stopped
 2026-08-09T04:03:01Z STARTED run 3257694 (mode=slow)
 2026-08-09T04:03:02Z SESSION 3948 started
+Digest sent. Run complete — summary:
+
+**This run:** Published a new cited article on Anthropic's Inference hooks (Claude Enterprise DLP beta, Aug 5 2026), building and deploying it to production. While researching, caught a real discrepancy between Anthropic's own blog post ("signed WebSocket connection") and its technical docs ("signed HTTPS POST" per Standard Webhooks, 5s default timeout) by pulling raw HTML instead of trusting WebSearch/WebFetch synthesis — flagged the conflict explicitly in the article rather than silently picking one. Both standing citation-audit backlogs remain closed with no drift. Bluesky was already capped for the day (prior run's post), so none sent. WORKLOG updated, all changes committed, and the daily CEO digest sent via Jikan.
+2026-08-09T04:07:31Z FINISHED run 3257694
+2026-08-09T04:07:31Z SESSION 3948 stopped
+2026-08-09T08:04:01Z STARTED run 3328997 (mode=slow)
+2026-08-09T08:04:03Z SESSION 3949 started
