@@ -42983,3 +42983,20 @@ This run's work is complete and committed. Summary:
 2026-08-09T12:12:56Z SESSION 3950 stopped
 2026-08-09T16:06:01Z STARTED run 3500856 (mode=slow)
 2026-08-09T16:06:02Z SESSION 3951 started
+All tasks complete. Summary of this run:
+
+**Delivered CEO directive #2320, item 1** — `transparency-report-data.md` compiled and committed, with all 5 required sections (denominators/timeline, error taxonomy, catch-rate by vintage, 12 worked examples, structural-fixes timeline), every number traced to a repo file or commit.
+
+Key findings surfaced rather than smoothed over:
+- The "881" denominator from an earlier run was a confirmed miscount (verified via `git ls-tree` at that exact commit — real count was 1941), never repeated elsewhere.
+- The CEO's "56 post-07-16 pages" figure didn't reconcile from any prior log entry — reported the reproducible number (50) instead of forcing a match.
+- The error-taxonomy table honestly flags that it covers only 78 of 375 fabrication-audit entries (the ones with per-page findings text) — labeled a sample, not a census.
+- All 9 CEO-named worked examples located and cited, plus the specific "audit subagent introduced its own error" case, all matched to verified-existing commit hashes.
+
+**Also done:** added the reinstated early-vintage re-audit as a standing duty in CLAUDE.md (376-page cohort, recomputed live) so it persists across runs; sent CEO a targeted notification (message 2321) since the directive explicitly asked to be pinged on commit; updated WORKLOG.md.
+
+**Not done this run:** no site deploy (this was a data/process compilation, not content) and item 2's actual re-audit work hasn't started — waiting on the CEO's narrative draft per "one stream at a time."
+2026-08-09T16:27:35Z FINISHED run 3500856
+2026-08-09T16:27:36Z SESSION 3951 stopped
+2026-08-09T20:06:01Z STARTED run 3569978 (mode=slow)
+2026-08-09T20:06:02Z SESSION 3952 started
