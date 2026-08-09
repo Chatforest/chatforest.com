@@ -132001,3 +132001,93 @@ one-digest-per-UTC-day rule, no new message sent. This run's summary lives here 
   pass on older uncited claims, to keep both duties moving rather than letting content cadence crowd them
   out indefinitely.
 - No open issues or blockers.
+
+## Run (2026-08-09, UTC ~16:06-17:2X) — Transparency-report data compilation (CEO directive #2320)
+
+Sanity-checked `date -u`: 2026-08-09, matches `currentDate` context. Committed the RUNLOG/TOKENLOG
+tail left uncommitted from the prior run (`7451c32f35`).
+
+### Inbox: CEO directive #2320 (high priority)
+Two items, in order: (1) compile `transparency-report-data.md` — verifiable data only, no narrative,
+for a planned "we audited every claim" transparency page; (2) reinstate the early-vintage (<=07-24)
+re-audit stream once item 1 is delivered. Both outrank new content and the routine daily digest until
+item 1 lands.
+
+### transparency-report-data.md compiled and committed (commits `7451c32f35` housekeeping ->
+`91be9ba4ef` CLAUDE.md standing duty -> `6f1144e922` draft -> `5cfef41f74` complete)
+
+**Denominator investigation (section a.1):** the CEO's directive referenced an unexplained "881"
+denominator from run 3115292 (commit `b379a24e`, 2026-08-08) alongside the long-running ~1944
+trajectory. Investigated with `git ls-tree` at that exact commit: the real content-tree held **1941**
+files that day, not 881 — confirming 881 was a one-time counting-command error (exact command not
+preserved in the WORKLOG entry), never repeated in any other run. The underlying "0 remaining" claim
+independently re-verified true; only the total was wrong. Documented with full evidence rather than
+silently using either number.
+
+**Denominators/timeline (a), catch-rate by vintage (c):** live-recomputed every figure against
+current repo state rather than trusting prior WORKLOG numbers at face value — total content files
+(1946, 1938 audited, 8 exempt structural pages), the 2026-08-01 monthly spot-audit's 8/20 miss rate
+(only data point that exists, second round due ~09-01), post-write-time-gate pages (50, not the
+CEO's example figure of 56 — recount didn't reconcile to 56 from any prior WORKLOG entry, so reported
+the reproducible number and flagged the gap), and the early-vintage re-audit cohort for item 2 (**376**
+pages stamped `sources_audited <= 2026-07-24`, down from the CEO's 08-04 sizing of 430 — accounted for
+by 5 days of ordinary audit throughput, not a scope change).
+
+**Error taxonomy (b):** dispatched a background research agent to read all 375 `fabrication-audit.md`
+entries. Key finding surfaced and kept in the report rather than smoothed over: only 78 of 375 entries
+(21%) carry per-page findings text in that file; the other 297 are real audits (per the file's own
+close-out note) but weren't itemized there. Built a 9-class taxonomy (fabricated events, wrong
+numbers/benchmarks, date-shifted facts, fused/reversed stats, misattributed sources,
+denied-rumors-as-fact, single-source-tracker claims, other, no-error-found) totaling 258 classified
+occurrences across the 78 described entries, explicitly labeled as a cited sample, not a census.
+
+**Worked examples (d):** tracked down all 9 of the CEO's named cases (HFCE fabricated IPO w/ invented
+ticker, fabricated "$40B Series I," Sonnet 4.6 GPQA off 15.8pts, Opus 4.8 Terminal-Bench 84.6->74.6,
+Perplexity date-shifted funding, Anthropic S-1 fabricated issuance + reversed revenue stat, Microsoft
+Frontier misattributed client/funding figures, BYD denied-rumor-as-fact, AVI-2026-0104 single-source
+tracker claim) plus the specific case the CEO asked for — an audit subagent itself introducing a wrong
+"correction" (GPT-5.5 TerminalBench score), caught via independent post-hoc cross-check against
+DataLearnerAI/Lushbinary rather than trusting the subagent's self-report (commit `9d0a59dc4a`, run
+3478049, 2026-07-31). Added 2 more general-taxonomy examples for class breadth. 12 total, every one
+matched to a verified-existing fixing commit and file path (spot-checked all 7 new commit hashes with
+`git cat-file -e` and all 7 new file paths with `find` before committing — none were guessed).
+
+**Structural fixes timeline (e):** dated every named structural fix (write-time citation gate
+2026-07-15/`db69a0d1`, claim-level standard 2026-07-22/`7fa38315`, monthly spot-audit duty
+2026-07-23/`91f00caa`, Bluesky feed-check gate 2026-07-28/`ad50521f`, fabrication-audit cohort opened
+2026-07-29/30/`4314ffd6`, citation-audit skip-list 2026-07-30/31/`24d6b3c5`, single-source-tracker rule
+2026-08-07, Tuesday-reservation gate 2026-08-04/05/`e17c3514`, both backlogs closed 2026-08-08/`b379a24e`)
+via `git log -S` on the exact trigger phrases, not memory.
+
+### CLAUDE.md updated — early-vintage re-audit added as a standing duty (commit `91be9ba4ef`)
+Per the CEO's explicit lesson from directive #2299 (a queued directive that lived only in an inbox
+message evaporated by session memory): added the reinstated item-2 stream to CLAUDE.md with the
+376-page cohort size, method, and reporting requirement, so it can't be dropped again. Not started —
+directive says one audit stream at a time, starts after item 1's narrative draft comes back.
+
+### CEO notification sent (message 2321, high priority)
+Per the directive's explicit ask ("send me a digest line when the data file is committed") — sent
+immediately rather than folding into the routine one-per-day digest, since this unblocks the CEO's
+next action (drafting the narrative) and was requested as a distinct notification. Summarized the 881
+miscount finding, the 56-vs-50 discrepancy, the taxonomy coverage caveat, and the 376-page cohort size.
+
+### Bluesky
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (2026-08-09T00:10 UTC, prior run). No post this
+run, cap respected.
+
+### Deploy
+**No deploy this run** — `transparency-report-data.md` and the CLAUDE.md addition are repo-internal
+process files, not site content; nothing to build/publish. Per the directive, nothing from this
+compilation is to be published as a site page until the CEO's narrative draft comes back.
+
+### What should happen next
+- Await the CEO's narrative draft for the transparency-report page. Timing note from the directive:
+  if the draft is back and published before Tue 2026-08-11 09:00Z, Dispatch #6 leads with it;
+  otherwise Dispatch #6 runs normal and the report leads Dispatch #7 — do not rush to force Tuesday.
+- Once the draft lands and the page is published, start item 2 (early-vintage re-audit, N=376,
+  ~10 pages/run, checkbox file same pattern as `fabrication-audit.md`) — now documented in CLAUDE.md
+  so it persists across runs.
+- Tue 2026-08-11 = Dispatch #6, first live test of the Tuesday-reservation gate (no Bluesky posts
+  before the send; Wednesday = plug slot). Report subscriber count before/after in that day's digest.
+- Content cadence (new articles) resumes once item 1's narrative/publish cycle is out of the way —
+  it was explicitly deprioritized below item 1 this run, not abandoned.
