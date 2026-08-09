@@ -132091,3 +132091,120 @@ compilation is to be published as a site page until the CEO's narrative draft co
   before the send; Wednesday = plug slot). Report subscriber count before/after in that day's digest.
 - Content cadence (new articles) resumes once item 1's narrative/publish cycle is out of the way —
   it was explicitly deprioritized below item 1 this run, not abandoned.
+
+## Run (2026-08-09, UTC ~20:06-21:0X) — Early-vintage re-audit stream opened (CEO directive #2320 item 2)
+
+Sanity-checked `date -u`: 2026-08-09, matches. Committed the RUNLOG/TOKENLOG tail left uncommitted
+from the prior run (`e7d18fbed9`). Checked inbox: no new pending directives — only Grove's own #2321
+(item 1 delivery notice) sitting unread, no CEO reply/narrative yet. Bluesky: `check_bluesky_posted_today.py`
+-> `ALREADY_POSTED` (00:10 UTC, earlier run). No post this run.
+
+### Item 2 started: early-vintage re-audit stream
+
+Per directive #2320 ("starts after item 1 is delivered" — item 1 delivered and CEO-notified earlier
+today), opened the stream. Recomputed the cohort live with a proper YAML-aware front-matter parser
+(python, not grep/sed) over `content/builders-log`, `content/guides`, `content/reviews`
+(current `sources_audited` <= 2026-07-24):
+
+**N = 427** (builders-log 12, guides 130, reviews 285).
+
+**Unreconciled discrepancy flagged, not hidden:** the same-day `transparency-report-data.md`
+(section c.3, compiled a few hours earlier this same UTC day) reported this exact cohort at 376
+(builders-log 12, guides 130, reviews 234) — builders-log/guides match exactly, the entire 51-page
+gap is in reviews (285 here vs 234 there). Investigated 6 hypotheses before giving up and using the
+live number: quoted-date parsing (none of the 427 have quoted dates), draft:true pages (only 1),
+aliases/redirect stubs (only 1), content_type field variance (282/285 uniform "Review"), strict `<`
+vs inclusive `<=` comparison (neither threshold reproduces 234 cleanly), overlap with
+fabrication-audit.md's `[x]`-checked items (zero overlap — not a double-count issue). None explained
+the gap. Documented all of this in `early-vintage-audit.md`'s header rather than silently picking
+whichever number was more convenient — same standard as the 881/1941 and 56/50 discrepancies in the
+transparency report itself.
+
+Opened `early-vintage-audit.md` (same checkbox pattern as `fabrication-audit.md`), all 427 pages
+listed oldest-`sources_audited`-first within each section, committed (`1460c642b6`).
+
+### Builders-log section audited and closed: 12/12
+
+Dispatched 4 parallel subagents (3 pages each) to do full claim-by-claim verification — actually
+fetching every cited source and confirming it supports the specific claim attached to it, per the
+standard, not just checking a link exists. This is real editorial work, not a link-presence sweep,
+and it found real errors:
+
+- **Boston Dynamics/Gemini Robotics-ER 1.6** — the headline "98%" instrument-reading accuracy figure
+  was wrong. DeepMind's own blog plus two independent outlets (MarkTechPost, BigGo Finance) confirm
+  the real figure is **93%**. The 98% number traces only to low-quality SEO aggregator sites — exactly
+  the drift this audit exists to catch. Fixed in title, description, og_description, card_description,
+  and 6 body instances; recalculated the derived "1-in-50" failure rate to "1-in-14." Also fixed two
+  mis-cited stats (pointing/counting and multi-view figures cited to sources that don't state them)
+  and cut/softened two unsupported claims. Spot-verified live post-deploy: zero remaining "98%" on
+  the page, 17 correct "93%" instances.
+- **Grok 4.3 builder guide** — cited a *live* Artificial Analysis leaderboard URL for a benchmark
+  score (GDPval-AA Elo) that has since drifted from what the article claims (1500) to what the live
+  page now shows (1088) — repointed to the stable, dated launch article that actually supports the
+  claimed number. Also fixed: wrong Qwen 3.7 Max pricing ($2.50/$7.50 claimed vs. $1.475/$4.425
+  actual per the source cited), wrong GPT-5.5 cached-input price ($1.25 vs. actual $0.50), two
+  uncited pricing rows, a backwards min/max claim on voice-cloning duration (article said clips as
+  short as 120s; xAI's docs say 120s is the *maximum*), and a dead Cloudflare citation. Flagged
+  systemic lesson: citing a live leaderboard/dashboard for a point-in-time number is a recurring
+  failure mode on this site — worth a standing checklist line (prefer dated snapshot articles over
+  live URLs when citing a specific historical number).
+- **OpenAI Sora shutdown guide** — claimed Wan 2.7 is an open-weight model available for local
+  inference; verified false (Wan-AI's HuggingFace org and Wan-Video's GitHub both stop at Wan 2.2;
+  Wan 2.7 is API/cloud-only, no published weights). Corrected the open-source recommendation to
+  Wan 2.2 (genuinely open, Apache 2.0) and fixed a wrong license claim on LTX-2.3 (custom community
+  license, not Apache 2.0 as originally stated). Added missing citations for 4 other model claims.
+- **Qwen3.6-27B guide** — OpenRouter output pricing cited as $3.20/1M but the source (OpenRouter's
+  own live listing) now shows $2.40/1M — corrected 3 body instances with a "pricing is dynamic" note;
+  caught and fixed a resulting front-matter/body inconsistency (og_description + "at a glance" line
+  still said $3.20 after the subagent's body-only fix, per its instruction not to touch other
+  front-matter fields — fixed both by hand this run). Also fixed a mischaracterization of Qwen3.7 Max
+  as "general-purpose" (Alibaba's own framing positions it as agent-focused) and replaced a vague
+  "third-party reproduction" claim with a specific, verified GitHub reproduction figure.
+- **whats-underneath-an-ai-agent** — a "Jikan" link resolved to `mg.robnugen.com`, an unrelated
+  meditation-timer product, not Jikan/MCP/Rob Nugen — stale/wrong URL. Repointed to the actual
+  `github.com/thunderrabbit/jikan` repo, confirmed live and on-topic.
+- **How Agents Talk to Each Other** — caught IBM's ACP protocol being presented as an active peer to
+  MCP/A2A; IBM actually merged ACP into A2A and wound down independent development in August 2025,
+  before this article was even published. Added the correction with a Linux Foundation citation.
+- **ServiceNow Build Agent SDK** — an uncited "OpenAI Codex" support claim wasn't in ServiceNow's own
+  press release; verified true via a separate ServiceNow community blog post instead. Cut one
+  unsourced editorializing claim ("AEMC was previously a separate purchase") per cite-or-cut.
+- **TBPN acquisition, Mistral Voxtral TTS, Cloudflare Agents Week** — Cloudflare piece came back
+  clean (every number checked out against primary Cloudflare posts). TBPN and Voxtral each had
+  several previously-uncited claims (guest list, quotes, license terms, VRAM specs) added, plus one
+  dead 404 citation on Voxtral replaced with Mistral's working announcement page.
+
+All 12 re-stamped `sources_audited: 2026-08-09`. Committed content (`f43f0b3fea`) and the
+`early-vintage-audit.md` checkbox update (12/12 boxes checked, batch summary added inline) in the
+same commit.
+
+### Build/deploy
+
+`hugo --minify` clean both before and after the fix pass (4209 pages, 9 aliases, no page-count
+change — this is a correction pass, not new content). Deploy throttle clear (last deploy ~8.3h
+prior). Committed the site/ rebuild (`4875b4124c`), deployed via rsync (exit 0). Spot-verified live:
+the Gemini Robotics page shows 17 correct "93%" instances and zero "98%"; Qwen3.6-27B page returns
+200.
+
+### CEO digest
+
+Message #2321 (item 1 delivery) already sent today per `list_inbox include_sent=true` check — per
+the one-digest-per-UTC-day rule, no new message sent this run. Cohort size (N=427, discrepancy with
+the transparency report's 376 noted above) and this run's 12/427 progress will be reported in the
+next UTC-day digest, per directive #2320's "report cohort size N in your next digest, X/N +
+problems-found each digest after."
+
+### What should happen next
+
+- Early-vintage re-audit: 12/427 done (builders-log section closed). Next: guides section (130
+  pages), oldest-`sources_audited`-first, ~10/run pace. Consider whether to keep using parallel
+  subagent batches (worked well this run — found 8+ real substantive errors across 12 pages, not
+  just missing-link fixes) or revert to solo audits; subagent approach costs more tokens/time per
+  page but caught things a faster sweep likely would have missed (the 98%->93% headline error in
+  particular).
+- Flag for CLAUDE.md consideration: "don't cite a live leaderboard/dashboard URL for a point-in-time
+  historical number — prefer a dated snapshot article" as a standing citation-audit checklist line.
+  Surfaced twice now (Grok 4.3 this run, implicitly elsewhere) — worth codifying if it recurs again.
+- Reviews-cohort discrepancy (427 vs 376, all in reviews section) unreconciled — flag in tomorrow's
+  digest for CEO awareness; not blocking, using the live 427 number as authoritative going forward.
+- Tue 2026-08-11 = Dispatch #6, first live test of the Tuesday-reservation gate. No open blockers.
