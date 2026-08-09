@@ -131867,3 +131867,62 @@ dated 2026-08-08) — sending today's digest at end of this run.
   the backlog isn't consuming every run.
 - Worth a future look: the blog-post-vs-docs discrepancy on the WebSocket/HTTPS-POST wording is Anthropic's
   own inconsistency, not something to fix on our end — just noted it in the article. No action needed.
+
+## Run 3328997 (2026-08-09, UTC ~08:04-08:2X)
+
+Sanity-checked `date -u` immediately (host clock: 2026-08-09, matches `currentDate` context).
+
+### Orientation
+Committed the RUNLOG/TOKENLOG tail left uncommitted from the prior run (`c0e02305e1`). Inbox: only
+messages present were Grove's own prior CEO digests (most recently 2026-08-09 04:07, message 2319) —
+nothing new pending, no reply yet. Confirmed no drift on the citation-audit backlog (`grep -rL
+"sources_audited:" content/ --include="*.md" | grep -v content/ai/` → same 8 non-article structural
+pages as every prior run). Continued the content cadence (3rd consecutive run with a new article).
+
+### New article: Claude Opus 5 launch (pricing, benchmarks, cyber safeguards)
+Researched recent Anthropic news via WebSearch; found Opus 5 launched July 24, 2026 but the site had
+never covered the launch itself in depth — only a pre-launch leak article (Honeycomb EAP, July 14) and
+a passing mention inside the unrelated Opus 4.7 fast-mode-deprecation article. Confirmed the gap by
+grepping all `opus-5`/`opus 5` hits in builders-log before writing.
+
+Per the now-standard practice (WebSearch/WebFetch synthesis has needed raw-source verification the last
+two runs running), pulled the primary source directly: `curl` + Python regex-strip on
+anthropic.com/news/claude-opus-5 rather than trusting the rendered summary. This surfaced the full text:
+benchmark results (Frontier-Bench, CursorBench, ARC-AGI 3, Zapier AutomationBench, OSWorld 2.0), exact
+pricing ($5/$25 per MTok, same as Opus 4.8), the alignment/behavioral-audit score (2.3, lowest of recent
+models), the ~85%-fewer-cyber-classifier-interventions figure vs. Fable 5, and two new beta features
+(mid-conversation tool changes, automatic fallbacks).
+
+The piece also quotes 4 named early-access customers (Cognition's Scott Wu, Cursor's Sualeh Asif,
+Zapier's Wade Foster, Box's Ben Kus) — all direct quotes from Anthropic's own page, but before including
+them, independently verified each person's stated title/company via WebSearch (rather than trusting
+Anthropic's short "Name, Title" labels alone) since these are named-individual/company claims. All four
+checked out against public bios. Declined to use several other quotes from the same page whose company
+affiliation wasn't stated clearly enough in the surrounding text to attribute confidently.
+
+Published: `content/builders-log/anthropic-claude-opus-5-launch-pricing-benchmarks-safety-builder-guide/index.md`,
+`sources_audited: 2026-08-09` (audited at write time). All citation links point to the single Anthropic
+primary source (a straightforward first-party product-launch post, not a named-company accusation, so
+the >=2-source bar doesn't apply) plus one internal cross-link to the existing Opus 4.7 fast-mode
+migration article. Verified the primary link returns 200 before publishing.
+
+### Deploy
+Hugo build clean (`hugo --minify`, 4201 pages, 9 aliases — +2 pages for the new article). Committed in
+2 commits (content `d254a640bb`, then `git add -f site/` rebuild `87a5e4c572`). Deploy throttle clear
+(last deploy ~4h prior). Deployed via rsync; spot-verified live: new article returns 200, pricing text
+renders correctly on the live page. `.last_deploy` updated.
+
+### Bluesky
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (2026-08-09T00:10 UTC, from the earlier Inference
+Hooks article). No post this run, cap respected.
+
+### CEO digest
+A digest for 2026-08-09 already exists (message 2319, sent 04:07 UTC by the prior run) — per the
+one-digest-per-UTC-day rule, no new message sent. This run's summary lives here in WORKLOG only.
+
+### What should happen next
+- Both audit backlogs remain closed; continue maintenance mode (drift-check newly published/edited
+  pages, monthly spot-audit due ~2026-09-01).
+- Content cadence: 3 new cited articles in 3 consecutive runs now (MCP spec-ships, Inference hooks,
+  Opus 5 launch). Sustainable pace — keep going while the backlog stays clear.
+- No open issues or blockers.
