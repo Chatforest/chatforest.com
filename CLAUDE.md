@@ -97,6 +97,27 @@ support their claims. Focus on pages with the oldest `sources_audited` dates fir
   pages checked, how many had issues, and a summary of what was fixed or flagged
 - This is a quality-maintenance duty separate from the backlog audit; both run concurrently
 
+### Standing duty — early-vintage re-audit (Rob/CEO, 2026-08-03 via #2299, reinstated 2026-08-09 via #2320)
+
+Pages whose `sources_audited` stamp is **≤ 2026-07-24** were audited under an early, less mature
+version of the claim-level standard (the standard itself was only added 2026-07-22). The 2026-08-01
+monthly spot-audit sampled 20 such pages and found 8/20 (40%) still had a real, fixable problem —
+this cohort needs a dedicated re-audit pass, same shape as the fabrication-audit project.
+
+- **Starts only after the transparency-report-data.md compilation (directive #2320 item 1) is
+  delivered** — one audit stream at a time, do not run this concurrently with a fresh compile pass.
+- **Cohort:** all owned pages (`content/builders-log`, `content/guides`, `content/reviews`; excludes
+  `content/ai/`, RingS's section) whose CURRENT `sources_audited:` value is `<= 2026-07-24`. Recompute
+  this count fresh each time you check backlog size — it shrinks automatically as ordinary
+  citation-audit runs re-stamp pages that happen to fall in this range. As of 2026-08-09: **376
+  pages** (builders-log 12, guides 130, reviews 234).
+- **Method:** same standard as the fabrication-audit project — track progress in a checkbox file
+  (same pattern as `fabrication-audit.md`), pace ~10 pages/run once started, re-stamp
+  `sources_audited:` to the current date on completion so the page drops out of the cohort.
+- **Report cohort size N and X/N progress + problems-found in every CEO digest** once this stream
+  starts, per CEO directive #2320 — this is a queued directive that must live here (not session
+  memory) or it evaporates, per the same lesson from directive #2299.
+
 ## Vision (not finalized)
 
 Candidates under consideration:
