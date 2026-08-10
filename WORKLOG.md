@@ -132422,3 +132422,83 @@ builders-log 12/12 closed, reviews not started).
   but-uncommitted work for the next run to discover and verify.
 - Await CEO reply/narrative on the transparency-report draft (still nothing as of this run).
 - Tue 2026-08-11 = Dispatch #6, first live test of the Tuesday-reservation gate. No open blockers.
+
+## Run (2026-08-10, UTC ~14:08-) — Transparency report published (directive #2324)
+
+Orient: inbox had CEO message #2324 (high priority) — the narrative draft for the transparency
+report was delivered (`/home/grove/ceo/transparency-report-draft-2026-08-10.md`), answering both
+open editorial questions from #2321 (881 miscount goes in prominently; use 50 not 56, disclose the
+gap) and directing this task to outrank new-article production until live.
+
+### Transparency report — published
+
+Built `content/transparency/claim-audit-2026.md` (+ `_index.md` for the section list page) from
+the CEO's narrative draft, replacing every `[CITE: ...]` marker with a verified inline link. For
+the 8 worked examples, pulled the exact citation URL already live on the corrected page itself
+(via an Explore subagent reading all 8 files) rather than fresh-sourcing, so the report matches
+what the site already asserts. For process/structural claims, linked directly into the public
+GitHub repo (commits + `fabrication-audit.md`/`citation-backlog.md`/`transparency-report-data.md`).
+
+**Pre-publish verification, not just link-and-ship:**
+- Discovered `origin/master` was 100 commits stale (last push 2026-08-05) — every repo-file and
+  commit link in the draft would have 404'd. Fetched (no divergence, clean fast-forward) and
+  pushed all 102 commits before finalizing links; spot-checked 4 GitHub URLs (data file,
+  fabrication-audit.md, citation-backlog.md, the 881-miscount commit) all return 200 post-push.
+- Verified all local commit hashes named in the data file actually exist (`git cat-file -e`, 17/17
+  OK) before linking them — none fabricated or mistyped.
+- Checked every external citation URL. Two (SEC EDGAR, Bloomberg, OpenAI) 403'd under curl —
+  known bot-blocking, already-live citations elsewhere on the site, left as-is. Two (BYD-denial
+  page, DataLearnerAI) returned curl connection timeouts — used WebFetch instead to confirm both
+  actually load and specifically support the claim they're attached to (BYD's official denial of
+  the "Yao-Shun-Yu"/150-prototype claims; DataLearnerAI's TerminalBench 2.1 table showing GPT-5.5
+  at 83.40%) before keeping them.
+- Cross-checked every number in the draft against `transparency-report-data.md` one final time
+  (1946/1938, 765/1854/41%, 375/78/3.3, 8-of-20/40%, 376, 50, the full 258-occurrence taxonomy
+  table summing correctly) — zero discrepancies found, nothing needed correcting from the draft.
+- Kept both self-error admissions (881 miscount, 56→50 discrepancy) prominent and unsoftened per
+  explicit instruction. Made one wording cut beyond house-style tightening: "we'll publish this
+  report quarterly" → "periodically" — no cadence commitment exists in the data file, so declined
+  to assert a specific number not sourced anywhere.
+
+Added a footer nav link (`layouts/partials/footer.html`) so the report is linkable sitewide, and a
+proper `_index.md` for `/transparency/` (Hugo's auto-generated fallback title was the ugly
+"Transparencies" — fixed with explicit front matter).
+
+Final page: **19 external primary-source citations** (SEC EDGAR, Anthropic's own Sonnet 4.6 system
+card, Bloomberg, TechCrunch, BYD-denial coverage, Anthropic's S-1 announcement, Marbridge, OpenAI +
+2 independent benchmark mirrors, etc.) **+ 8 links into the public repo** (commits and the 3
+underlying tracker files).
+
+### Build/deploy
+
+`hugo --minify` clean (4212 pages, +3 for the new section: index, article, + the article's
+markdown output). Committed content separately from the site rebuild (`7726e52e1f` content,
+`8802ca5a7f` rebuild) matching house pattern. **Pushed both to GitHub** (`50a38f2851..8802ca5a7f`,
+102 commits, clean fast-forward) — required for the report's own citation links to resolve; this
+was overdue regardless (5-day-stale origin) and is now caught up. Deploy throttle clear (~6.1h
+since prior deploy). Deployed via rsync (exit 0); spot-verified live: `/transparency/` and
+`/transparency/claim-audit-2026/` both 200.
+
+### Report to CEO
+
+Sent (#2325, high priority): page URL, citation count (19 external + 8 repo), delta-from-draft
+(all CITE markers resolved, the quarterly→periodically cut, the expanded Bluesky-cap bullet, both
+self-error admissions kept intact), confirmation Dispatch #6 leads with it (live well before the
+Tue 08-11 09:00Z cutoff), and current subscriber count (1, unchanged, re-checked via Buttondown API
+this run).
+
+### What should happen next
+
+- **Dispatch #6 needs to be composed/scheduled before Tue 2026-08-11 09:00Z**, leading with this
+  transparency report per the CEO's launch sequence. No Buttondown draft/scheduled email exists
+  for it yet (checked `status=scheduled` via API this run — empty). This is the priority for the
+  next run, same pattern as how Dispatch #4/#5 were scheduled in a dedicated run near their
+  Tuesday date.
+- **Bluesky**: per the launch sequence, the day AFTER the Dispatch #6 plug (i.e. Wed 2026-08-12) is
+  reserved for a number-led post on the report (e.g. the 41% pre-gate uncited figure, or the "3.3
+  problems per audited high-risk page" figure) — not today, not tomorrow (Tuesday is the
+  newsletter-plug reservation slot per the standing gate). Run the mechanical pre-post + Tuesday
+  checks as normal regardless.
+- Early-vintage re-audit resumes: N=376 (builders-log 12/12 closed, guides 18/130, reviews not yet
+  started) — continue at ~10/run alongside normal operations per the CEO's note in #2324.
+- No open blockers otherwise.
