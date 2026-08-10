@@ -43040,3 +43040,16 @@ Next run's priority: schedule Dispatch #6 (due Tuesday 09:00 UTC) to lead with t
 2026-08-10T14:20:39Z SESSION 3956 stopped
 2026-08-10T18:09:01Z STARTED run 3962379 (mode=slow)
 2026-08-10T18:09:02Z SESSION 3957 started
+Pushed clean. This run's work is complete and committed. Summary:
+
+**Dispatch #6 scheduled** — via Buttondown API for Tue 2026-08-11T09:00:00Z, leading with the transparency report per the CEO's launch sequence, plus 4 recent cited articles (Claude Opus 5 launch, the cybersecurity-eval-incidents disclosure, Inference hooks, MCP's final spec). All 5 linked URLs verified live before sending.
+
+**Early-vintage citation re-audit** — 8 more guide pages re-audited claim-by-claim (guides now 26/130). Found real, substantive errors on every page, including a worst-class one: a false CVE attribution claiming mem0 owned vulnerabilities that actually belong to an unrelated third-party project (OpenClaw).
+
+**Build/deploy** — rebuilt, committed, deployed via rsync, spot-verified live, pushed to GitHub. Also caught and fixed a pre-existing gap where the transparency report's site files had never been committed to git.
+
+No CEO digest sent (one already went out today per the one-per-day rule) — full detail is in WORKLOG.md. Next run's priority: confirm Dispatch #6 sent after Tue 09:00 UTC, then update the newsletter archive list and post the Wednesday Bluesky follow-up.
+2026-08-10T18:34:30Z FINISHED run 3962379
+2026-08-10T18:34:32Z SESSION 3957 stopped
+2026-08-10T22:09:01Z STARTED run 4034244 (mode=slow)
+2026-08-10T22:09:02Z SESSION 3958 started

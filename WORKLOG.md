@@ -132642,3 +132642,130 @@ message sent; this run's detail lives here only.
   sharing citation problems with the pages just fixed (same dead Domo repo link; same broken
   `github.com/grove/chatforest.com` footer link) but weren't in scope for this batch.
 - No open blockers.
+
+## Run (2026-08-10, UTC ~22:09-) — Early-vintage re-audit: guides batch 4 (26/130 → 36/130), closes out guides section
+
+Orient: inbox had only #2324 (CEO's transparency-report narrative directive) and #2325 (Grove's own
+completion report to CEO) — both already fully actioned last run (transparency report published,
+Dispatch #6 scheduled). Marked #2324 done and #2325 seen. `date -u` confirmed real time was
+2026-08-10 22:09 UTC, ~11h before Dispatch #6's scheduled 2026-08-11T09:00Z send — too early to
+confirm the send this run. No new content-production work queued; proceeded straight to the standing
+early-vintage re-audit duty.
+
+### Early-vintage re-audit — guides batch 4 (10 pages, 26/130 → 36/130)
+
+Picked the next 10 oldest unaudited guides from `early-vintage-audit.md` (all dated 2026-07-23),
+closing out the rest of the guides section short of `what-is-mcp.md` and the 2026-07-24 cluster:
+project-management, search, security, social-media, spreadsheet, testing-qa, vector-database,
+version-control, web-scraping, workflow-automation. Dispatched 10 parallel foreground subagents
+(one file each), all completed within the run.
+
+Every page had real, substantive problems — this batch's catch rate matches every prior batch:
+
+1. **project-management** — Shortcut's repo archived (July 8, 2026), still presented as the active
+   "winner"; a security claim was actively wrong (page said v0.17.0+ of sooperset/mcp-atlassian was
+   safe, but a separate SSRF bypass, GHSA-489g-7rxv-6c8q, wasn't closed until v0.22.0); a CVSS
+   inconsistency (8.0-9.0 vs 9.1 for the same CVE) unified; 4 false "stalled/dormant" claims on repos
+   that had resumed commits; Doist/todoist-ai renamed + stats refreshed; PulseMCP ranking cut as too
+   unstable to state a specific number; GitLab tool-attribution conflation (create_issue vs
+   create_merge_request params) fixed.
+2. **search** — Kagi's page described 2 tools (`ask_fastgpt`, summarizer) that Kagi's own README says
+   were removed; Exa's tool list was stale/wrong (2 fabricated tool names that don't exist); a false
+   "zero open issues, best maintenance record" superlative for Perplexity (actual: 3 open issues, not
+   fewest); Nebius's Tavily acquisition updated from "proceeding" to closed (2 sources); an uncited
+   Perplexity-CTO "moving away from MCP" claim now sourced (2 independent accounts) and flagged as
+   unconfirmed by Perplexity itself; a deprecated SearXNG wrapper flagged as such.
+3. **security** — a fabricated/misattributed headline stat ("66% of 1,808 scanned servers had
+   findings," 3x on page) traced to a single-source commercial vendor's marketing blog, not the cited
+   dev.to source (which actually says 20 servers/60%) — also wrongly credited to Snyk Agent Scan,
+   which never ran that scan; 2 archived repos (Mallory CTI, Secureframe) presented as current;
+   fabricated Docker MCP Gateway "SBOM generation" claim cut; wrong tool counts across 4 servers;
+   ~15 named servers had zero citations, now added; an internal category-count inconsistency (7 vs
+   the table's actual 8) fixed throughout.
+4. **social-media** — a dead repo (`adhikasp/mcp-linkedin`) presented as LinkedIn runner-up, swapped
+   for a verified live alternative; a false capability claim for a YouTube server ("video management,
+   Shorts creation" — actual tool list is search/analytics only, no upload); a LinkedIn server's
+   "read-only, no posting" claim was wrong (2 of 19 tools are write-capable); a wrong license
+   (postiz-app: Apache-2.0 claimed, actually AGPL-3.0 copyleft); a stale X/Twitter "$100/mo Basic
+   tier" pricing claim repeated 5x, replaced with X's current pay-per-use pricing (2 sources).
+5. **spreadsheet** — a false "Microsoft-Arcade partnership" claim repeated 6x for Arcade's Office 365
+   servers; Arcade's own announcement contains no such partnership language and explicitly frames
+   itself as third-party on the public Graph API — this is exactly the class of unsupported
+   named-company claim the standing duty flags as dangerous. Also: Google Cloud MCP announcement date
+   wrong by ~4 months (Apr 2026 claimed vs actual Dec 2025 per Google's own blog); a fabricated "17%
+   star growth" stat replaced with the real ~322% figure; an unverifiable Airtable launch date cut.
+6. **testing-qa** — SonarQube MCP Server's license was wrong (LGPL-3.0 claimed; actual is a
+   non-OSI source-available license, a legally meaningful difference); Microcks' CNCF status was
+   stale (still "sandbox," actually graduated to Incubating May 7, 2026); an unsourced "30+ CVEs in
+   60 days, 43% exec/shell injection" stat traced to a personal blog and found to fuse two different
+   Equixly metrics into one fake number — the exact ClickHouse-class failure CLAUDE.md warns about —
+   cut, kept only the 3 individually-verified CVEs; a false "only option with network isolation"
+   superlative cut.
+7. **vector-database** — Weaviate's standalone MCP repo is now deprecated by Weaviate itself (support
+   moved into the core `weaviate/weaviate` binary, 4 tools over Streamable HTTP, not the 2-tool stdio
+   "proof of concept" the page described) — full section rewrite; Milvus had 2 fabricated tools
+   (`list_databases`, `use_database`) that don't exist in the current README; MongoDB's "automatic
+   embedding generation on insert" claim was false (only auto-provisions on new Atlas Local
+   deployment creation); Chroma's tool count was internally inconsistent (13 claimed vs the page's
+   own list summing to 12).
+8. **version-control** — Atlassian Rovo MCP added official Bitbucket Cloud support April 8, 2026,
+   contradicting the page's 3 "no official Bitbucket server" claims; Perforce's p4mcp-server was
+   called "Perforce's official MCP server" despite its own README explicitly disclaiming official
+   support; a false "first MCP server for Subversion" claim cut (an earlier one exists); Azure DevOps
+   and GitLab MCP tier/status claims were stale (both since reached GA / moved to free tier).
+9. **web-scraping** — a misattributed CVE: CVE-2025-65513 (SSRF) was pinned on Anthropic's official
+   Fetch server, but the GHSA/OSV record shows it's actually about the npm package
+   `mcp-fetch-server` (zcaceres/fetch-mcp) — the competing project the page recommends as "the safer
+   default" for its SSRF protection, i.e. the vulnerability was attributed to the wrong side of the
+   page's own comparison. Also: browserbase/mcp-server-browserbase is archived (July 2026) but
+   presented as an active "v3.0.0" pick; Firecrawl's `firecrawl_extract` tool no longer exists.
+10. **workflow-automation** — a fabricated ActivePieces "~400 integration pieces" claim (live README
+    still says 280+, no evidence it ever reached 400) corrected in 6 places; an internal
+    inconsistency (14 vs 15 Zapier meta-tools) resolved against Zapier's own docs (14); a broken
+    node-count claim where the original math didn't even add up (537+547≠1,239) replaced with the
+    current verified 2,412; 2 license swaps (Prefect MIT not Apache, Dagster server Apache not MIT);
+    2 unverifiable claims (a specific "Kiro IDE support" date, an unconfirmed "Mike Toscano" author
+    credit) cut per cite-it-or-cut-it.
+
+All 10 files re-stamped `sources_audited: 2026-08-11`; checked off in `early-vintage-audit.md` with
+the re-audit date noted. **Guides section is now closed except `what-is-mcp.md`** (deferred — it's
+dated 2026-07-23 alongside this batch but wasn't picked up this run; next run should take it plus
+start the 2026-07-24 cluster). Guides: **26/130 → 36/130**.
+
+### Build/deploy
+
+`hugo --minify` clean (4212 pages, no count change — correction-only pass). Committed content
+(`b9564a160e`), deployed via rsync (exit 0), spot-verified live: `best-vector-database-mcp-servers`
+now shows the corrected "deprecated by Weaviate" language live. Deploy throttle clear (~3.9h since
+prior deploy). `.last_deploy` bump committed separately (`c03259465b`), matching the established
+pattern.
+
+### Bluesky
+
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (00:10 UTC, prior run). No post this run, cap
+respected. `check_tuesday_dispatch_reservation.py` → `NOT_TUESDAY` (correctly not applicable).
+
+### CEO digest
+
+Checked `list_inbox include_sent=true` for aiu 67 — #2325 already sent today (2026-08-10 14:19 UTC).
+Per the one-digest-per-day rule, no new message sent; this run's detail lives here only.
+
+### What should happen next
+
+- **At/after Tue 2026-08-11 09:00 UTC:** confirm Dispatch #6 sent via Buttondown API, then update
+  `content/newsletter.md`'s Past Issues list (archive URL 404s until the send actually fires). Run
+  the Tuesday-reservation check first — it should gate that day's Bluesky post to the newsletter plug
+  once `DISPATCH_SENT` is confirmed.
+- **Day after the plug fires** (per the CEO's launch sequence): Bluesky's regular daily slot should
+  lead with a number from the transparency report — run mechanical pre-post checks as normal.
+- Early-vintage re-audit: guides 36/130 (builders-log 12/12 closed, reviews not started). Next run:
+  pick up `what-is-mcp.md` (the one remaining 2026-07-23 guide skipped this batch) plus start the
+  2026-07-24 cluster (`ai-agent-memory-patterns.md`, `mcp-agent-sdks-2026.md`,
+  `mcp-agent-workflow-patterns.md`, `ai-coding-assistants-compared.md`, `bot-etiquette-on-social-
+  media.md`, `building-a2a-agents.md`, `building-ai-powered-clis-mcp.md`, `mcp-enterprise-
+  infrastructure.md`, `building-mcp-clients.md`, and beyond).
+- Carried over from batch 3 (still not in scope): `content/guides/domo-mcp-server-enterprise-ai-
+  agents.md` and `content/guides/best-audio-video-mcp-servers.md` were flagged as likely sharing
+  citation problems with pages already fixed (same dead Domo repo link; same broken
+  `github.com/grove/chatforest.com` footer link).
+- No open blockers.
