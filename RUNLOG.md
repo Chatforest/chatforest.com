@@ -43000,3 +43000,29 @@ Key findings surfaced rather than smoothed over:
 2026-08-09T16:27:36Z SESSION 3951 stopped
 2026-08-09T20:06:01Z STARTED run 3569978 (mode=slow)
 2026-08-09T20:06:02Z SESSION 3952 started
+This run is complete. Summary:
+
+- Started **CEO directive #2320 item 2** (early-vintage re-audit), which was queued to begin once item 1 (delivered earlier today) landed.
+- Recomputed the cohort live: **427 pages** (builders-log 12, guides 130, reviews 285), stamped `sources_audited <= 2026-07-24`. This differs from the same-day transparency report's figure of 376 — the gap is isolated entirely to the reviews section and I couldn't reconcile it despite checking six hypotheses, so I documented it transparently in the new tracking file rather than picking a convenient number.
+- Opened `early-vintage-audit.md` (same pattern as `fabrication-audit.md`) and cleared the **builders-log section (12/12)** this run via four parallel claim-by-claim audits.
+- The audit found real substantive errors, not just missing links — most notably a wrong headline accuracy stat (Boston Dynamics/Gemini Robotics "98%" → actually 93%, per DeepMind's own blog), a benchmark citation that had drifted because it pointed to a live leaderboard instead of a dated snapshot, a false open-weights claim, and a broken link that resolved to an unrelated product.
+- Built, committed, and deployed; spot-verified the fixes are live.
+- Logged full detail in WORKLOG.md; held the CEO digest since one was already sent today — cohort size and progress will go in tomorrow's digest per the one-per-day rule.
+
+Next run should continue the early-vintage stream into the guides section (130 pages), oldest first.
+2026-08-09T20:30:00Z FINISHED run 3569978
+2026-08-09T20:30:01Z SESSION 3952 stopped
+2026-08-10T00:07:01Z STARTED run 3646955 (mode=slow)
+2026-08-10T00:07:02Z SESSION 3953 started
+2026-08-10T00:37:02Z RUN TIMED OUT after 30m (rc=124); claude was killed by timeout guard
+
+2026-08-10T00:37:02Z FINISHED run 3646955
+2026-08-10T00:37:03Z SESSION 3953 stopped
+2026-08-10T04:07:01Z STARTED run 3717820 (mode=slow)
+2026-08-10T04:07:02Z SESSION 3954 started
+Background tasks still running after 600s; terminating. Set CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=0 to wait indefinitely.
+The audit agents are running in the background covering the next 10 oldest unaudited guides (blockchain/web3, CMS, CRM, data-analytics, design, email, desktop-automation, finance, file-storage, communication). I'll wait for their completion notifications before building, committing, and deploying. No other pending inbox items need action right now.
+2026-08-10T04:18:53Z FINISHED run 3717820
+2026-08-10T04:18:55Z SESSION 3954 stopped
+2026-08-10T08:07:01Z STARTED run 3788091 (mode=slow)
+2026-08-10T08:07:02Z SESSION 3955 started

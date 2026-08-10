@@ -63,7 +63,25 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 10/130 done (2026-08-10 run), first batch.** 6 parallel full claim-by-claim passes
+**Status: 18/130 done (2026-08-10 runs).**
+
+**Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
+File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
+(`nicobailon/coingecko-mcp-server`, doesn't exist) replaced with CoinGecko's real official MCP
+server; an archived/deprecated repo (`base/base-mcp`, deprecated May 13 2026) flagged rather than
+recommended as current; a stat-fusion error on Endor Labs' 82% path-traversal figure (was
+"file-operation MCP servers," the source's actual finding is about MCP implementations overall —
+same ClickHouse-class failure the standing duty warns about); an internal Adobe/OneDrive tool-count
+undercount corrected against Microsoft's live tool reference (14->17, 33->35); dozens of stale
+GitHub star/download counts refreshed against live data (WordPress mcp-adapter 887->1,600, EmDash
+9,415->11,600, Framelink npm downloads 53K/wk->90K+/wk, Figma Dev Mode guide-repo stars
+443->1,900+); a wrongly-attributed "unique to SharePoint" binary-file-support claim corrected (Work
+IQ OneDrive supports it too); WordPress 7.0 status updated from "delayed, expected April 22" to its
+actual outcome (shipped May 20, 2026, without real-time collaboration, cited to the WP core team's
+own May 8 announcement); Coinbase AgentKit vs. World's separate "AgentKit" naming collision
+disambiguated with sources for both. All 8 re-stamped `sources_audited: 2026-08-10`.
+
+Batch 1 detail below (10/130, first batch). 6 parallel full claim-by-claim passes
 (one covering a 2-file security review, one covering both 2026-07-24 tutorial pages, plus 4
 paired-file passes). Real, substantive errors found on every single page — not link-presence
 sweeps. Headline catches:
@@ -109,16 +127,16 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Best AI & ML MCP Servers in 2026](content/guides/best-ai-ml-mcp-servers.md)
 - [x] 2026-07-23 — [Best API Gateway & API Management MCP Servers in 2026 — Kong vs Cloudflare vs Traefik vs AWS vs Azure vs Open Source](content/guides/best-api-gateway-mcp-servers.md)
 - [x] 2026-07-23 — [Best Audio & Video MCP Servers in 2026](content/guides/best-audio-video-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Blockchain & Web3 MCP Servers in 2026](content/guides/best-blockchain-web3-mcp-servers.md)
-- [ ] 2026-07-23 — [Best CMS & Content Management MCP Servers in 2026](content/guides/best-cms-mcp-servers.md)
-- [ ] 2026-07-23 — [Best CRM MCP Servers in 2026](content/guides/best-crm-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Communication MCP Servers in 2026](content/guides/best-communication-mcp-servers.md)
+- [x] 2026-07-23 — [Best Blockchain & Web3 MCP Servers in 2026](content/guides/best-blockchain-web3-mcp-servers.md)
+- [x] 2026-07-23 — [Best CMS & Content Management MCP Servers in 2026](content/guides/best-cms-mcp-servers.md)
+- [x] 2026-07-23 — [Best CRM MCP Servers in 2026](content/guides/best-crm-mcp-servers.md)
+- [x] 2026-07-23 — [Best Communication MCP Servers in 2026](content/guides/best-communication-mcp-servers.md)
 - [ ] 2026-07-23 — [Best Data & Analytics MCP Servers in 2026](content/guides/best-data-analytics-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Design MCP Servers in 2026](content/guides/best-design-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Desktop Automation MCP Servers in 2026](content/guides/best-desktop-automation-mcp-servers.md)
+- [x] 2026-07-23 — [Best Design MCP Servers in 2026](content/guides/best-design-mcp-servers.md)
+- [x] 2026-07-23 — [Best Desktop Automation MCP Servers in 2026](content/guides/best-desktop-automation-mcp-servers.md)
 - [ ] 2026-07-23 — [Best Email & Notifications MCP Servers in 2026](content/guides/best-email-mcp-servers.md)
-- [ ] 2026-07-23 — [Best File & Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms](content/guides/best-file-storage-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Finance & Payments MCP Servers in 2026](content/guides/best-finance-mcp-servers.md)
+- [x] 2026-07-23 — [Best File & Storage MCP Servers in 2026 — Local Filesystem vs Cloud Storage vs Enterprise Platforms](content/guides/best-file-storage-mcp-servers.md)
+- [x] 2026-07-23 — [Best Finance & Payments MCP Servers in 2026](content/guides/best-finance-mcp-servers.md)
 - [ ] 2026-07-23 — [Best IoT MCP Servers in 2026](content/guides/best-iot-mcp-servers.md)
 - [ ] 2026-07-23 — [Best Kubernetes & Container MCP Servers in 2026 — Native API vs kubectl Wrappers vs Docker Management](content/guides/best-kubernetes-container-mcp-servers.md)
 - [ ] 2026-07-23 — [Best Memory & Knowledge MCP Servers in 2026](content/guides/best-memory-mcp-servers.md)

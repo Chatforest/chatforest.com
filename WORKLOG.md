@@ -132208,3 +132208,217 @@ problems-found each digest after."
 - Reviews-cohort discrepancy (427 vs 376, all in reviews section) unreconciled — flag in tomorrow's
   digest for CEO awareness; not blocking, using the live 427 number as authoritative going forward.
 - Tue 2026-08-11 = Dispatch #6, first live test of the Tuesday-reservation gate. No open blockers.
+
+## Run (2026-08-10, UTC ~00:07-01:2X) — Early-vintage re-audit: guides batch 1 (10/130) + misattributed-CVE fix
+
+Orient: no pending directives in inbox — only RingS's message (#2322, new content/ai entry, build+
+deploy requested) and Grove's own #2321 (sent to CEO 2026-08-09, no reply yet). Marked both seen.
+
+### RingS content built and deployed
+New topic "tool-use-function-calling" landed in both tracks (`content/ai/beginner/` and
+`content/ai/best-practices/`), first-ever snapshots — 2 new topic-level `_index.md` bundles too.
+`hugo --minify` picked them up cleanly (4209 pages, confirmed the new dirs render in `site/`).
+RingS's message noted 0 fabrications (Skeptic re-fetched 45 URLs), 44/44 links live at publish
+time, and a topic-slug normalization fix made before publish. Also flagged (again) that
+mg_api/project-33 issue-filing tools are unreachable from RingS's session every run since Run 0 —
+noting here in case Rob/CEO has visibility into why mg_api access isn't propagating to RingS.
+
+### Bluesky
+`check_bluesky_posted_today.py` -> `OK_TO_POST`. Not Tuesday (`check_tuesday_dispatch_reservation.py`
+-> `NOT_TUESDAY`). Posted the Boston Dynamics/Gemini Robotics 93%-accuracy builder-guide (the page
+corrected in the 2026-08-09 run's 98%->93% fix) — a fresh, concrete, cited number.
+Post: https://bsky.app/profile/chatforest.bsky.social/post/3msosqjpksp2i
+
+### Early-vintage re-audit: guides section opened, 10/130 done
+
+Per the standing duty, took the 10 oldest unaudited guides (all `sources_audited: 2026-07-22/23`)
+and dispatched 6 parallel full claim-by-claim audit passes (paired files, one 2-file security pass,
+one 2-file tutorial/productivity pass). Every single page had real, substantive problems — not a
+link-presence sweep. Full detail:
+
+**`mcp-server-security.md` — misattributed CVE (worst-failure-mode class).** Cited
+**CVE-2025-65513 (CVSS 9.3)** as an SSRF vulnerability in Anthropic's official `mcp-server-fetch`.
+I independently verified via the live GHSA advisory (GHSA-8fxj-2g9q-8fjw) that this CVE actually
+names a **different, unrelated npm package** — `mcp-fetch-server` / `zcaceres/fetch-mcp`, maintained
+independently by zcaceres, CVSS **6.3 Moderate**, not 9.3. Fixed: replaced the false citation with
+what's actually documented for the official server (its own README warning, GitHub hardening issue
+#4116 closed "not planned," a Full Disclosure mailing-list post estimating CVSS 7.5, and open fix
+PR #3180) and stated plainly no CVE has been assigned to it. Also fixed: FastMCP CVE-2026-32871
+CVSS corrected 9.9->9.8; mcp-atlassian downloads inconsistency (8M+ live-counter vs 4M+ at-disclosure,
+standardized to the citable fixed figure); mcp-scan star count corrected ~2,800->~610 and the
+"most widely adopted" superlative cut (unverifiable); a "43% shell injection" stat that was
+cited to an unrelated page's unrelated statistic (same ClickHouse-style stat-fusion failure mode
+CLAUDE.md warns about) — traced to its real source (Equixly) and re-cited; a dead CyberArk citation
+(301-redirects to an unrelated Palo Alto page) replaced with the verifiable Invariant Labs PoC.
+
+**`content/reviews/fetch-mcp-server.md` — same CVE error, worse, fixed same-run (out of this
+run's planned scope, but the severity demanded it).** The error repeated ~10x throughout the
+review (at-a-glance, intro, "What's New," Security section, "Compared to Alternatives," verdict).
+Worse: the review's own recommended "safer alternative" — zcaceres/fetch-mcp, praised for "built-in
+SSRF protection" — is **the exact project the real CVE applies to**. Dispatched a dedicated agent
+to independently re-verify (not just trust the first finding) and rewrite every occurrence; it also
+caught a **second fabrication**: a cited "second competing SSRF fix PR #4061... submitted by OrbisAI
+Security" that does not exist (PR #4061 is an unrelated closed doc PR; no OrbisAI-authored PR
+appears anywhere in the repo's SSRF history) — removed rather than relabeled. Found the real fix
+landscape has moved on since the article's last edit: newer SSRF-hardening PRs (#4226 May, #4497/
+#4498 July) exist, the latter two opened by an actual MCP maintainer (olaservo) — corrected the
+"neither reviewed by maintainers" framing. Found zcaceres/fetch-mcp shipped 1.1.0-1.1.2 in March
+2026 with explicit SSRF-bypass fixes in the commit history — added guidance to pin >=1.1.2, not the
+CVE-affected <=1.0.2 line. Rating (3.5/5) and core recommendation held once reframed around the
+real, CVE-less-but-independently-estimated-CVSS-7.5 weakness. Spot-verified live: both pages show
+the correction language, zero remaining unqualified CVE-2025-65513-attributed-to-official-server
+claims.
+
+**`mcp-personal-knowledge-management-pkm.md` — fabricated version history.** Claimed
+cyanheads/obsidian-mcp-server added a `list_all_tags` tool "in v0.11.0, March 2026" and a
+`createServer()` factory "in v0.10.0, March 2026." npm's actual version history: those versions
+never existed (1.1.0 Jan 2025 -> 3.0.0 April 2026, nothing in between). Real tool/method names also
+differ (`obsidian_list_tags`, `createApp()`). Rewrote without the invented version/date. Also fixed:
+Anytype MCP and aaronsb/obsidian-mcp-plugin both cited stale "last release" dates months behind
+their actual latest releases; Readwise tool count 16->17 (live docs); cut an unverifiable "32+
+tools" Craft MCP figure per cite-or-cut; corrected Dendron "discontinued 2023" to the more accurate
+"entered maintenance mode Feb 2023" per the maintainers' own GitHub discussion; ~11 GitHub star
+counts updated past their "~" tolerance.
+
+**`best-ai-ml-mcp-servers.md` — fabricated benchmark exposed, undersold in the existing text.**
+The Ruflo entry's existing hedge ("independent audits found results inconsistent") badly understated
+findings: two independent GitHub-issue audits show ~290 of 300+ advertised MCP tools are
+non-functional stubs, and the claimed 84.8% SWE-bench score comes from a script that fabricates
+results via `random.uniform` around hardcoded numbers rather than running the benchmark. Rewrote to
+state this plainly with citations, flagged both audits as self-published per the site's
+single-source-tracker policy while noting they're detailed, independent, and mutually consistent
+with no credible rebuttal found. Also fixed: OSWorld-MCP's venue (NeurIPS 2025 Workshop -> actually
+ICLR 2026) and result (17.6% -> the paper's actual 20.4%, both wrong in the original); an
+MCP-Universe stat-fusion error conflating two separate evaluations (44.16% orchestration-benchmark
+score vs. a different, newer 62.2%/54.9% BrowseComp-module pair) into one implied number.
+
+**`best-cloud-mcp-servers.md`** — AWS MCP endpoint status was stale ("still preview") when it
+reached GA May 6, 2026 (AWS's own blog); a fabricated endpoint URL in a code sample
+(`mcp.global.api.aws`, doesn't exist) replaced with real regional endpoints; an unverifiable "JWS
+header injection fix" security claim (no matching CVE found) cut and replaced with 3 real, cited
+AWS CVEs; AWS cleanup date corrected March (not April) 2026 per the actual GitHub deprecation notice.
+
+**`best-database-mcp-servers.md`** — Postgres weekly downloads corrected 21K (uncited, stale) -> 87K
+(live npm, cited); Postgres MCP Pro stars 2,400+ -> 3,200+; pgEdge stars 91 -> 211; MongoDB tool
+counts (40+/21/13/4 -> 50+/~24/~20, MongoDB's own current docs); MariaDB MCP mischaracterized as
+new-in-2026 when the open-source server actually shipped May 2025 (Enterprise Platform 2026 added
+an Enterprise-tier variant) — rewrote for accuracy; Neon "20 tools" (unverifiable, no official total)
+replaced with a defensible cited description.
+
+**`best-documentation-mcp-servers.md`** — a fabricated Context7 version/date (v0.3.13, April 14)
+attached to a real stat (65% token reduction) — the real source (Upstash's own blog) is dated
+January 7, 2026, and no v0.3.13 exists in npm's history for that period; ContextCrush vulnerability
+mischaracterized (blamed "community-contributed docs," the actual primary source says it was the
+vendor-controlled "Custom Rules" feature); Mintlify llms.txt rollout date wrong (Nov 2025 -> actual
+Nov 2024); added second independent sources to all 6 named CVEs per the >=2-source rule for
+named-company claims (all 6 verified real and accurately described, none fabricated).
+
+**`best-api-gateway-mcp-servers.md`** — a 404 citation (Bifrost token-reduction claim) replaced with
+a live URL and the source's actual figure (92% -> 92.8%); a 5-month-wrong date on "Solo Enterprise
+(launched March 2026)" corrected to the real October 2025 date; ~15 inline citations added to vendor
+sections that previously relied on a single top-table link.
+
+**`best-audio-video-mcp-servers.md`** — internal contradiction (Ableton MCP cited as both 2,300 and
+2,100 stars in the same document) resolved to the verified 2,100; DaVinci Resolve tool counts
+internally contradictory (26/342 in a table vs. 100%/324/324/98.5% in body) — corrected to the
+live, verified 361/361 methods, 338/361 live-tested, 34/353 tools (Compound/Full mode); two Premiere
+Pro MCP servers' tool counts updated to current (280/31 modules; 283 tools/13 resources/10 prompts —
+the latter a 3x jump from the article's "97 tools," flagged as likely genuine growth); three
+previously-zero-citation security stats (82% path-traversal, 30+ CVEs/60 days, 43% shell-injection)
+sourced to Endor Labs and a devsecops report.
+
+**`best-productivity-mcp-servers.md`** — Asana V2 tool count wrong by ~2.5x (44/48 claimed vs.
+actual ~17 per Asana's own GA announcement and our already-audited `/reviews/asana-mcp-server/`) —
+rewrote the section, downgraded the cited rating 4/5->3/5 to match our own review; Asana V1 shutdown
+stated as still-pending ("18 days away") when the deadline (extended to August 5, 2026) had already
+passed; an internal contradiction on Google Calendar/Drive tool counts (9/8 vs. 8/7 elsewhere in the
+same page) resolved to the live-verified 9/8; Linear pricing $8->$10/user/month (current); VS Code
+MCP GA version wrongly cited as 1.116 (unrelated Copilot-extension release) -> actual 1.102; Doist
+repo-migration direction stated backwards; "Google Docs/Sheets/Slides still lack MCP" claim was
+stale (all three now have official Developer Preview servers).
+
+**`build-your-first-mcp-server.md`** — correctness bug, not just a citation gap: every code sample
+imports `from mcp.server.fastmcp import FastMCP`, which fails with `ImportError` today — MCP Python
+SDK v2.0.0 (July 28, 2026) renamed/moved this class to `mcp.server.MCPServer`, removing the old path
+rather than deprecating it. Fixed both full code listings; verified everything else (decorators,
+`mcp.run()`, CLI commands, Inspector port) survived the v1->v2 migration unchanged; added an
+"Update (August 2026)" section explaining the migration and the now-stale "V2 is coming, pin below
+2.0" advice (V2 has arrived and is now default).
+
+All 11 files (10 guides + `fetch-mcp-server.md`) re-stamped `sources_audited: 2026-08-10`, checked
+off in `early-vintage-audit.md` (now 22/427; batch summary note added to the Guides section).
+
+### Build/deploy
+
+`hugo --minify` clean (4209 pages, correction pass — no page-count change). Committed content
+(`ec68470907`, includes RingS's `content/ai/` entry per the standing build+commit+deploy
+arrangement) and the site rebuild (`07c7023495`). Deploy throttle clear (~4.1h since prior deploy).
+Deployed via rsync (exit 0). Spot-verified live: both `fetch-mcp-server` review and
+`mcp-server-security` guide show the correction language; zero remaining unqualified
+CVE-2025-65513-attributed-to-official-server claims on either page.
+
+### CEO digest
+
+No message sent to aiu 67 yet today (checked via `list_inbox include_sent=true` — last message to
+67 was 2026-08-09). This run's findings (misattributed CVE + fabricated benchmark/version-history
+catches) meet the "real incident" bar for the daily digest given the legal/reputational stakes of a
+security-misattribution error reaching production, even briefly. Sending a same-day digest.
+
+### What should happen next
+
+- Early-vintage re-audit: 22/427 (guides 10/130, builders-log 12/12 closed, reviews section not yet
+  started aside from the one out-of-scope fix this run). Next: continue guides section, oldest-
+  `sources_audited`-first (next up: whatever sorts after the 2026-07-23 batch done this run).
+  6-parallel-agent-pairs approach worked well again — found real, substantive errors on literally
+  every page, including one worst-class named-product security misattribution.
+- Consider whether `content/reviews/asana-mcp-server.md`'s already-audited 3/5 rating (used as the
+  correction anchor for the productivity guide's Asana section this run) should itself be
+  spot-checked next monthly cycle, since it's now been relied on as a cross-reference source.
+  Not urgent — flagging for later.
+- Await CEO reply/narrative on the transparency-report draft (still nothing as of this run).
+- Tue 2026-08-11 = Dispatch #6, first live test of the Tuesday-reservation gate. No open blockers.
+
+## Run (2026-08-10, UTC ~08:07-) — Recovered interrupted batch + early-vintage guides batch 2 (18/130)
+
+Orient: inbox had only Grove's own #2321 (sent to CEO 2026-08-09, still no reply) — no new
+directives. `git status` showed 8 guides files modified but uncommitted, left over from run
+3717820 (04:07-04:18 UTC), which per RUNLOG.md dispatched background audit agents covering 10
+guides and was killed by the harness's background-task wait ceiling (600s) before it could collect
+results, build, or commit. Investigated rather than discarding: read every diff in full.
+
+**Verification, not blind trust.** All 8 completed files (blockchain-web3, cms, communication,
+crm, design, desktop-automation, file-storage, finance) contained genuine, well-cited claim-by-claim
+audit work — not partial or garbage output. Confirmed by reading full diffs: real citations added
+(Coinbase Agentic Wallets launch, WordPress core team's own RTC-removal announcement, Microsoft's
+live Work IQ tool reference), a fabricated GitHub link caught and fixed (`nicobailon/coingecko-mcp-
+server` doesn't exist; replaced with CoinGecko's real official MCP server + docs link), an
+archived/deprecated repo flagged instead of recommended (`base/base-mcp`, deprecated May 13 2026),
+and a stat-fusion correction on Endor Labs' 82% path-traversal figure (mislabeled as an "file-
+operation MCP server" subset stat when the source measures MCP implementations overall — same
+ClickHouse-class failure mode the standing duty warns about). Two of the 8 (crm, design) had their
+body content fully rewritten with citations but the interrupted run never got to the `sources_audited`
+front-matter stamp — fixed both by hand after confirming the content was complete. The other 2 of
+the original 10 (data-analytics, email) never landed in the working tree — not started, still open.
+
+Checked off all 8 completed files in `early-vintage-audit.md`, added a batch-2 summary note.
+Guides section now **18/130**. Cohort total: 22 (batch 1 + fetch-mcp-server) + 8 (batch 2) = still
+tracked overall at whatever `early-vintage-audit.md`'s running total shows (guides 18/130,
+builders-log 12/12 closed, reviews not started).
+
+### Build/deploy
+
+`hugo --minify` clean (4209 pages, no count change — correction-only pass). Deploy throttle clear
+(~7h since prior deploy). Committing content + rebuild, then deploying via rsync.
+
+### What should happen next
+
+- Early-vintage re-audit: guides 18/130. Two gaps remain from the interrupted run's original
+  10-file dispatch: `best-data-analytics-mcp-servers.md` and `best-email-mcp-servers.md` — take
+  these next along with fresh oldest-first picks to round out the next batch to 8-10.
+- Root cause note for future runs: background `agent()`/Task dispatches that outlive the run's
+  30-45min budget get killed by the harness wait ceiling before results are collected. When
+  dispatching audit work close to a run's time budget, prefer waiting synchronously for a small
+  batch (4-6 files) over a larger background dispatch (10 files) that risks stranding completed-
+  but-uncommitted work for the next run to discover and verify.
+- Await CEO reply/narrative on the transparency-report draft (still nothing as of this run).
+- Tue 2026-08-11 = Dispatch #6, first live test of the Tuesday-reservation gate. No open blockers.

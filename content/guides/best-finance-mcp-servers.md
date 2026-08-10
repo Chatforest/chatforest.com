@@ -5,8 +5,8 @@ description: "Stripe, PayPal, Square, QuickBooks, Xero, Plaid, Mercury, and more
 og_description: "40+ finance and payment MCP servers reviewed across payment processors, accounting platforms, banking, market data, billing, crypto, and insurance. The definitive comparison with honest ratings."
 content_type: "Comparison"
 card_description: "The definitive guide to finance and payment MCP servers in 2026. We've reviewed 40+ servers across payment processing, accounting, banking, market data, billing, crypto, and insurance. Every recommendation links to a full review."
-last_refreshed: 2026-04-05
-sources_audited: 2026-07-23
+last_refreshed: 2026-08-10
+sources_audited: 2026-08-10
 ---
 
 Finance MCP servers are where AI agents meet real money. These servers let AI assistants process payments, manage invoices, reconcile books, pull market data, and interact with banking APIs — all through natural language instead of dashboard-hopping or manual API calls.
@@ -15,19 +15,19 @@ We've researched 40+ finance and payment MCP servers across the entire fintech l
 
 > **⚠ April 2026 update:** The x402 protocol has been contributed to the Linux Foundation as the [x402 Foundation](https://www.linuxfoundation.org/), with founding members including Stripe, Visa, Mastercard, AWS, Google, Microsoft, and Coinbase. [Visa's Agentic Ready programme](https://www.visa.co.uk/about-visa/newsroom/press-releases.3437886.html) launched in Europe with 21 bank partners. Mercury Bank launched an official MCP server. The gap between "experimental" and "production" agentic payments is closing fast.
 
-*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026.*
+*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were re-verified against live GitHub data on 2026-08-10 and will keep drifting — treat them as directional, not exact.*
 
 ## The short version
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| Payment processing | [stripe/ai](https://github.com/stripe/ai) | 1,434 | [paypal/agent-toolkit](https://github.com/paypal/agent-toolkit) (183 stars, 30+ tools) |
-| Commerce platform | [square/square-mcp-server](https://github.com/square/square-mcp-server) | 95 | [Adyen/adyen-mcp](https://github.com/Adyen/adyen-mcp) (20 stars, 21+ tools) |
-| Accounting | [XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) | 230 | [intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) (138 stars) |
-| Market data | [financial-datasets/mcp-server](https://github.com/financial-datasets/mcp-server) | 1,744 | [Alpha Vantage MCP](https://github.com/alphavantage/alpha_vantage_mcp) (114 stars, vendor-hosted) |
+| Payment processing | [stripe/ai](https://github.com/stripe/ai) | 1,730 | [paypal/agent-toolkit](https://github.com/paypal/agent-toolkit) (190 stars, 30+ tools) |
+| Commerce platform | [square/square-mcp-server](https://github.com/square/square-mcp-server) | 105 | [Adyen/adyen-mcp](https://github.com/Adyen/adyen-mcp) (25 stars, 10 tool categories) |
+| Accounting | [XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) | 348 | [intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) (348 stars, now 144 tools) |
+| Market data | [financial-datasets/mcp-server](https://github.com/financial-datasets/mcp-server) | 2,300 | [Alpha Vantage MCP](https://github.com/alphavantage/alpha_vantage_mcp) (192 stars, vendor-hosted) |
 | Banking | [Mercury MCP](https://docs.mercury.com/docs/supported-tools-on-mercury-mcp) | — | [Plaid Dashboard MCP](https://api.dashboard.plaid.com/mcp) (official, developer diagnostics) |
-| Crypto & agentic payments | [coinbase/payments-mcp](https://github.com/coinbase/payments-mcp) | 51 | [base/base-mcp](https://github.com/base/base-mcp) (342 stars, onchain tools) |
-| Insurance | [Socotra MCP](https://www.socotra.com/) | — | [Fenris Digital MCP](https://insurance-edge.net/2026/03/13/us-news-fenris-launches-mcp-server/) (enrichment + predictive intelligence) |
+| Crypto & agentic payments | [coinbase/payments-mcp](https://github.com/coinbase/payments-mcp) | 57 | [base/base-mcp](https://github.com/base/base-mcp) (351 stars, archived May 2026 — see below) |
+| Insurance | [Socotra MCP](https://www.socotra.com/socotra-launches-mcp-server-enabling-fast-and-secure-integrations-with-agentic-ai/) | — | [Fenris Digital MCP](https://insurance-edge.net/2026/03/13/us-news-fenris-launches-mcp-server/) (enrichment + predictive intelligence) |
 
 ## Why finance MCP servers matter
 
