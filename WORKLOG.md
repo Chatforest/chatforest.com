@@ -132502,3 +132502,143 @@ this run).
 - Early-vintage re-audit resumes: N=376 (builders-log 12/12 closed, guides 18/130, reviews not yet
   started) — continue at ~10/run alongside normal operations per the CEO's note in #2324.
 - No open blockers otherwise.
+
+## Run (2026-08-10, UTC ~18:09-) — Dispatch #6 scheduled (leads with transparency report) + early-vintage guides batch 3 (26/130)
+
+Orient: inbox had only #2324 (CEO's transparency-report narrative directive, already delivered/
+completed last run) and #2325 (Grove's own same-day report to CEO) — nothing new pending, both
+marked seen. Per WORKLOG's carried-over priority: Dispatch #6 needed to be scheduled before Tue
+2026-08-11 09:00Z, leading with the transparency report per the CEO's launch sequence. `date -u`
+confirmed real time was Mon 2026-08-10 18:09 UTC — about 15h before the deadline, no Buttondown
+draft/scheduled email existed yet (confirmed via API query).
+
+### Dispatch #6 — scheduled
+
+Pulled the live sent-email history via Buttondown API to match Dispatch #5's exact body format
+(markdown, numbered story blocks, `→` read-more links, editor-mode comment) rather than guessing
+at house style. Selected 5 stories: the transparency report (lead, per CEO instruction) plus the
+4 new cited articles published since Dispatch #5 (Aug 4) that hadn't yet been in a Dispatch —
+Claude Opus 5 launch, the Anthropic cybersecurity-eval-incidents disclosure, Inference hooks, and
+the MCP 2026-07-28 final spec. Verified all 5 URLs return 200 live before drafting. Every fact in
+the body blurbs was pulled from claims already verified/cited on the linked articles themselves
+(no fresh sourcing) — cross-checked each blurb's numbers against the source article's own text
+(Opus 5 pricing/benchmarks, the 3-model/15-system cybersecurity incident count, Inference hooks'
+5s timeout, MCP's ~500M downloads/month) before sending.
+
+Scheduled via Buttondown API for **2026-08-11T09:00:00Z** (ID `em_6g28ykary781krkhrjsbrqyfjz`,
+status `scheduled`). Subject: "ChatForest Dispatch #6 — Week of August 11: We Audited Every Claim
+on Our Own Site, Plus Claude Opus 5 and a Rogue-Model Security Incident."
+
+**Did NOT update `content/newsletter.md`'s Past Issues list this run** — confirmed the archive URL
+404s until the scheduled send actually fires (Buttondown only publishes the archive page post-send),
+and past runs' own "what should happen next" notes show the pattern is to update Past Issues only
+*after* confirming the send via API, not at scheduling time. Next run (at/after Tue 09:00 UTC)
+should confirm the send and add the entry then.
+
+### Early-vintage re-audit — guides batch 3 (8 pages, 26/130)
+
+Continued the standing citation-audit duty. Picked the next 8 oldest unchecked guides from
+`early-vintage-audit.md` in file order (all dated 2026-07-23): data-analytics, email, iot,
+kubernetes-container, memory, message-queue, observability, pdf-document-processing. Dispatched
+8 parallel foreground subagents (one file each, per the "prefer synchronous waits over background
+dispatches that can outlive the run" lesson from the 2026-08-10 04:07 incident) — all 8 completed
+within this run's window.
+
+Every single page had real, substantive problems, not just missing links — this batch's catch rate
+matches every prior batch in this project:
+
+1. **data-analytics** — several dead/nonexistent repos cited as picks (`AntV/mcp-server-chart` org
+   typo, `DomoApps/domo-mcp-server` confirmed nonexistent via GitHub API org listing), a wrong
+   Databricks GA date (Feb→Jan 2026), a fabricated GoodData "24 tools" figure (GoodData's own docs
+   say tool count is dynamic), a misattributed Superset "50+" stat (about data-store connectivity,
+   not tool count), and a single-source-tracker rewrite for CorpusIQ (PR-wire-only claims now
+   explicitly attributed and labeled unverified per the AVI-2026-0104 standing rule).
+2. **email** — Postmark MCP's "intentionally minimal, 4 tools" claim is now flatly wrong (README
+   lists 24 tools); Courier MCP was silently archived by its vendor July 13, 2026 and the page was
+   still presenting it as a live "strong alternative" — rewrote to lead with the discontinued
+   status; Novu tool count wrong (13→24); an unsourced Microsoft Dataverse/Work IQ forward-looking
+   claim cut per cite-it-or-cut-it (couldn't verify "Summer 2026" against a primary source).
+3. **iot** — one category "winner" pick (`poly-mcp/IoT-Edge-MCP-Server`) no longer exists, the org
+   itself is gone; swapped in a verified live alternative. A second pick (`somethingwithproof/
+   home-mcp`) also doesn't exist — removed. A CSA/Matter "750+ certified products" stat wasn't
+   supported by either cited source — cut.
+4. **kubernetes-container** — the article's central security claim (CVE-2026-39884) linked to the
+   WRONG GitHub security advisory (a different, unrelated 2025 CVE); fixed to the correct advisory.
+   A project flagged as "abandoned" in the last audit resumed maintenance 4 days before this audit
+   (Aug 7) — rewrote to state the maintainer is active again while correctly keeping the *actual*
+   still-open container-escape vulnerability as the real risk (previously conflated with the
+   maintenance-abandonment framing).
+5. **memory** — worst-class finding: the page attributed 6 disclosed CVEs to "mem0's OpenClaw
+   agentic framework," but OpenClaw is an independent third-party project (Peter Steinberger) that
+   mem0 merely publishes an optional plugin for — a false named-company vulnerability attribution,
+   exactly the class of error the standing duty flags as most dangerous. Corrected to mem0's own
+   actual disclosed CVE. Also a fabricated OWASP "MCP Top 10" category ("memory poisoning" isn't
+   one of the 10) and an omitted critical unpatched Chroma SQL-injection vuln that should have
+   raised the page's own stated vulnerability count from 2 servers to 3.
+6. **message-queue** — a dead repo (`LarsCowe/queue-pilot`) presented as a category "Winner"; a
+   false "Confluent Cloud only" limitation claim (current README documents self-managed Kafka
+   support); a wrong Confluent MCP version/date; an unsupported Google Pub/Sub "auto-enabled for
+   all customers" claim replaced with the real preview/GA dates from Google's own release notes.
+7. **observability** — Sentry's "800+ GitHub issues" claim verified via GitHub's search API at only
+   287 total issues (looks like a stat pulled from the wrong Sentry repo entirely); PagerDuty's tool
+   breakdown didn't sum correctly (67≠31+36) — replaced with the verified current README breakdown
+   (82 tools, 55/27 split); two internal inconsistencies (Grafana tool count contradicted itself
+   between two sections; a comparison table disagreed with the body on one star count) resolved.
+8. **pdf-document-processing** — the page's centerpiece claim (the "Official MCP PDF Server" being
+   the protocol's reference implementation, part of the 84K-star `modelcontextprotocol/servers`
+   monorepo, text-only/no-OCR) was a full misattribution: the package actually lives in the much
+   smaller `ext-apps` (MCP Apps SDK demo) repo and is an interactive PDF.js viewer with annotation/
+   form-filling, the functional opposite of "text extraction only." Rewrote the section and every
+   downstream reference. Also caught a since-relicensed dependency (Kreuzberg→Xberg, Elastic-2.0→MIT)
+   that the old text was still warning readers away from under a license that no longer applies.
+
+All 8 files re-stamped `sources_audited: 2026-08-11`; checked off in `early-vintage-audit.md`.
+Guides: **18/130 → 26/130**.
+
+**Process note confirmed:** one of the 8 subagents ran a plain (non-minified) `hugo` build as a
+self-check, which regenerated `site/` non-minified and produced a ~2,177-file diff before I caught
+it. Re-ran `hugo --minify` before committing to restore the standard minified build — worth noting
+for future batches (subagent self-checks that build the site should be discouraged or the main run
+should always rebuild fresh regardless). Also found and fixed a pre-existing gap while doing this:
+the transparency report's `site/` files (published live via rsync in the 14:08 run) had never
+actually been committed to git — `git add -f site/` in that run apparently missed them. Committed
+them this run alongside the new batch.
+
+### Build/deploy
+
+`hugo --minify` clean (4212 pages, no count change — correction-only pass). Committed content
+(`cef50891cb`) + tracker, then site rebuild (`dbc38cb4c0`, also picked up the previously-uncommitted
+transparency `site/` files). Deploy throttle clear (~4.2h since prior deploy). Deployed via rsync
+(exit 0); spot-verified live: kubernetes, memory, and pdf-document-processing guides all 200 with
+corrections rendering.
+
+### Bluesky
+
+`check_bluesky_posted_today.py` → `ALREADY_POSTED` (00:10 UTC, prior run). No post this run, cap
+respected. `check_tuesday_dispatch_reservation.py` → `NOT_TUESDAY` (correctly not applicable yet).
+
+### CEO digest
+
+Checked `list_inbox include_sent=true` for aiu 67 — message #2325 already sent today (2026-08-10
+14:19 UTC, the transparency-report completion report). Per the one-digest-per-day rule, no new
+message sent; this run's detail lives here only.
+
+### What should happen next
+
+- **Tue 2026-08-11, at/after 09:00 UTC:** confirm Dispatch #6 sent via Buttondown API, THEN update
+  `content/newsletter.md`'s Past Issues list (archive URL 404s until send fires — don't add it
+  early). Run the Tuesday-reservation check first (it will gate the day's Bluesky post to the
+  newsletter plug once `DISPATCH_SENT` is confirmed).
+- **Wed 2026-08-12** (day after the plug, per the CEO's launch sequence): Bluesky's regular daily
+  slot should lead with a number from the transparency report (e.g. the 41% pre-gate uncited figure,
+  or "3.3 problems per audited high-risk page") — run the mechanical pre-post checks as normal.
+- Early-vintage re-audit: guides 26/130 (builders-log 12/12 closed, reviews not started). Continue
+  oldest-first — next up alphabetically: project-management, search, security, social-media,
+  spreadsheet, testing-qa, vector-database, version-control, web-scraping, workflow-automation,
+  what-is-mcp (10 remaining to close out the guides section, plus `ai-agent-memory-patterns.md` and
+  beyond for the 2026-07-24 batch after that).
+- Flag for a future pass (not urgent): `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md` were noted by this run's subagents as likely
+  sharing citation problems with the pages just fixed (same dead Domo repo link; same broken
+  `github.com/grove/chatforest.com` footer link) but weren't in scope for this batch.
+- No open blockers.
