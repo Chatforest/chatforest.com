@@ -25,11 +25,11 @@ Personal knowledge management tools have evolved dramatically over the past deca
 
 ## Obsidian MCP Servers
 
-Obsidian is the most popular local-first PKM tool, and its MCP ecosystem reflects that — [more than 100 entries appear on MCP registries like PulseMCP](https://www.pulsemcp.com/servers?q=obsidian), though most are forks and variants; roughly a dozen are meaningfully distinct implementations. Most Obsidian MCP servers connect through the [Obsidian Local REST API](https://github.com/coddingtonbear/obsidian-local-rest-api) community plugin (~2,700 stars), which exposes vault operations over HTTP. As of July 2026, [Obsidian has no official MCP server](https://forum.obsidian.md/t/official-mcp-core-plugin/109276) — community members have opened a feature request, but all current implementations are community-built.
+Obsidian is the most popular local-first PKM tool, and its MCP ecosystem reflects that — [more than 100 entries appear on MCP registries like PulseMCP](https://www.pulsemcp.com/servers?q=obsidian), though most are forks and variants; roughly a dozen are meaningfully distinct implementations. Most Obsidian MCP servers connect through the [Obsidian Local REST API](https://github.com/coddingtonbear/obsidian-local-rest-api) community plugin (~2,800 stars), which exposes vault operations over HTTP. As of July 2026, [Obsidian has no official MCP server](https://forum.obsidian.md/t/official-mcp-core-plugin/109276) — community members have opened a feature request, but all current implementations are community-built.
 
 ### mcp-obsidian (MarkusPfundstein)
 
-**Repository:** [MarkusPfundstein/mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) | **Stars:** ~4,100 | **Type:** Community | **Language:** TypeScript
+**Repository:** [MarkusPfundstein/mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) | **Stars:** ~4,300 | **Type:** Community | **Language:** TypeScript
 
 One of the earliest and most widely used Obsidian MCP servers. It connects to Obsidian through the Local REST API plugin, providing fundamental vault operations.
 
@@ -45,16 +45,16 @@ This server is the go-to starting point for most Obsidian MCP users due to its s
 
 ### obsidian-mcp-server (cyanheads)
 
-**Repository:** [cyanheads/obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | **Stars:** ~638 | **Type:** Community | **Language:** TypeScript
+**Repository:** [cyanheads/obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) | **Stars:** ~655 | **Type:** Community | **Language:** TypeScript
 
 A more comprehensive Obsidian MCP server that expands beyond basic file operations into tag management and frontmatter manipulation.
 
-Key capabilities:
+Key capabilities (per the [current README](https://github.com/cyanheads/obsidian-mcp-server), v3.2.12 as of August 2026):
 - **Comprehensive vault access** — read, write, search, and manage notes and files
-- **Tag management** — list_all_tags tool scans for both frontmatter tags and inline #hashtags with occurrence counts (added in v0.11.0, March 2026)
+- **Tag management** — the `obsidian_list_tags` tool lists every tag found across the vault with usage counts, covering both frontmatter tags and inline hashtags
 - **Frontmatter operations** — read and modify YAML frontmatter safely without affecting note content
 - **Advanced search** — full-text and structured queries across the vault
-- **createServer() factory** — library-friendly API for programmatic use (v0.10.0, March 2026)
+- **createApp() entry point** — registers tools/resources and initializes the Obsidian service for programmatic use
 
 The tag management feature makes this server particularly useful for PKM workflows that rely on tagging taxonomies for organization.
 
@@ -68,17 +68,17 @@ A simpler, lightweight Obsidian MCP server focused on clean, reliable vault oper
 
 **Repository:** [bitbonsai/mcpvault](https://github.com/bitbonsai/mcpvault) | **Stars:** ~1,600 | **Type:** Community | **Language:** TypeScript
 
-A lightweight Obsidian MCP server for safe vault access. Works with Claude, ChatGPT, and any MCP client; 200+ commits with active maintenance as of mid-2026. Does not require the Local REST API plugin for some operations, making setup simpler for users who prefer not to install extra Obsidian plugins.
+A lightweight Obsidian MCP server for safe vault access. Works with Claude, ChatGPT, and any MCP client; 300+ commits with active maintenance as of mid-2026. Does not require the Local REST API plugin for some operations, making setup simpler for users who prefer not to install extra Obsidian plugins.
 
 ### obsidian-mcp-plugin (aaronsb)
 
-**Repository:** [aaronsb/obsidian-mcp-plugin](https://github.com/aaronsb/obsidian-mcp-plugin) | **Stars:** ~440 | **Type:** Community | **Language:** TypeScript
+**Repository:** [aaronsb/obsidian-mcp-plugin](https://github.com/aaronsb/obsidian-mcp-plugin) | **Stars:** ~450 | **Type:** Community | **Language:** TypeScript
 
-Runs as an Obsidian plugin itself — the MCP server process runs inside Obsidian via HTTP transport rather than as an external Node.js process. Supports semantic vault operations; last released July 2026.
+Runs as an Obsidian plugin itself — the MCP server process runs inside Obsidian via HTTP transport rather than as an external Node.js process. Supports semantic vault operations; [latest release (v0.12.6) shipped August 2026](https://github.com/aaronsb/obsidian-mcp-plugin/releases).
 
 ### Obsidian Vault as MCP (ebullient)
 
-**Repository:** [ebullient/obsidian-vault-mcp](https://github.com/ebullient/obsidian-vault-mcp) | **Type:** Community plugin | **Plugin downloads:** ~5,000
+**Repository:** [ebullient/obsidian-vault-mcp](https://github.com/ebullient/obsidian-vault-mcp) | **Type:** Community plugin | **Plugin downloads:** [~5,900](https://obsidian.md/plugins?id=vault-as-mcp)
 
 An Obsidian community plugin (installable from the Obsidian plugin marketplace) that runs an MCP server inside Obsidian. Works with Open WebUI and Claude Desktop. A distinct category from external MCP servers that call Obsidian's REST API — the server runs inside the app rather than alongside it.
 
@@ -227,7 +227,7 @@ All implementations are macOS-only. The on-device embedding approach (RafalWilin
 
 ### zotero-mcp (54yyyu) — recommended
 
-**Repository:** [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp) | **Stars:** ~4,400 | **Type:** Community | **Language:** Python
+**Repository:** [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp) | **Stars:** ~4,600 | **Type:** Community | **Language:** Python
 
 The most popular Zotero MCP server. Connects to Zotero's local HTTP API and provides semantic search, annotation extraction, and citation analysis.
 
@@ -253,7 +253,7 @@ For researchers and academics, Zotero MCP is one of the highest-value PKM integr
 
 Readwise's official MCP server provides access to your reading highlights and documents. Readwise is widely used in the PKM community as a bridge between reading and note-taking.
 
-Key capabilities (16 tools total):
+Key capabilities (17 tools total):
 - **Document search** — hybrid vector + full-text search across books, articles, and other sources
 - **Highlight retrieval** — access highlighted passages with their context; create, update, and delete highlights
 - **Spaced repetition** — access your daily review queue
@@ -305,9 +305,9 @@ For teams already using Slite as their central knowledge base, this MCP server b
 
 ### Anytype MCP (Official)
 
-**Repository:** [anyproto/anytype-mcp](https://github.com/anyproto/anytype-mcp) | **Stars:** ~484 | **Type:** Official | **Language:** TypeScript | **Package:** `@anyproto/anytype-mcp`
+**Repository:** [anyproto/anytype-mcp](https://github.com/anyproto/anytype-mcp) | **Stars:** ~500 | **Type:** Official | **Language:** TypeScript | **Package:** `@anyproto/anytype-mcp`
 
-Anytype is a local-first, privacy-focused PKM tool with its own object graph model. Its official MCP server (published by the anyproto organization, Anytype's development team) connects to the Anytype desktop app running locally at `http://127.0.0.1:31009`. Last updated June 2026 (v1.2.9).
+Anytype is a local-first, privacy-focused PKM tool with its own object graph model. Its official MCP server (published by the anyproto organization, Anytype's development team) connects to the Anytype desktop app running locally at `http://127.0.0.1:31009`. [Last updated July 2026 (v1.2.10)](https://github.com/anyproto/anytype-mcp/releases).
 
 Key capabilities:
 - **Space search** — search across all Anytype spaces
@@ -332,7 +332,7 @@ All implementations are macOS-only. The SQLite-based approach means no Bear API 
 
 Craft is a document editor for macOS and iOS. Its official MCP server runs as a remote hosted endpoint with OAuth authorization — no local installation required.
 
-Key capabilities (32+ tools):
+Key capabilities:
 - **Document operations** — read, summarize, update, and search documents across spaces
 - **Tag and date filtering** — filter searches by tag or date range
 - **Daily notes** — access and update your daily note
@@ -386,7 +386,7 @@ Capacities is a structured PKM tool that organizes knowledge into typed objects 
 
 ### Heptabase MCP Server (Official)
 
-**Documentation:** [support.heptabase.com](https://support.heptabase.com) | **Type:** Official
+**Documentation:** [support.heptabase.com](https://support.heptabase.com/en/articles/12679581-how-to-use-heptabase-mcp) | **Type:** Official
 
 Heptabase is a visual knowledge management tool that combines note-taking with whiteboard-style spatial organization. Its official MCP server lets AI agents interact directly with your Heptabase space.
 
@@ -453,9 +453,9 @@ Beyond specific note-taking apps, a category of MCP servers provides persistent 
 
 ### Knowledge Graph Memory Server (Anthropic Official)
 
-**Repository:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (see `src/memory`) | **Type:** Official (Anthropic) | **Monorepo stars:** ~88,700
+**Repository:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (see `src/memory`) | **Type:** Official (Anthropic) | **Monorepo stars:** ~89,400
 
-The most widely deployed memory MCP server, maintained as part of Anthropic's official MCP server collection. Note: `modelcontextprotocol/servers` is a monorepo containing many reference server implementations — the ~88,700 stars reflect the whole collection, not the memory server specifically (there is no standalone memory-server repository). It enables persistent memory for Claude through a local knowledge graph stored as JSON.
+The most widely deployed memory MCP server, maintained as part of Anthropic's official MCP server collection. Note: `modelcontextprotocol/servers` is a monorepo containing many reference server implementations — the ~89,400 stars reflect the whole collection, not the memory server specifically (there is no standalone memory-server repository). It enables persistent memory for Claude through a local knowledge graph stored as JSON.
 
 Key capabilities:
 - **Entity management** — create, read, update entities with properties
@@ -467,13 +467,13 @@ This server is frequently used as a PKM layer by users who don't have an existin
 
 ### Cognee
 
-**Repository:** [topoteretes/cognee](https://github.com/topoteretes/cognee) | **Stars:** ~29,000 | **Type:** Community/Commercial
+**Repository:** [topoteretes/cognee](https://github.com/topoteretes/cognee) | **Stars:** ~29,900 | **Type:** Community/Commercial
 
 A memory manager for AI apps and agents that supports various graph and vector stores, allowing ingestion from 30+ data sources. More suitable for developer and enterprise use cases than personal PKM.
 
 ### Basic Memory (basicmachines-co)
 
-**Repository:** [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory) | **Stars:** ~3,500 | **Type:** Community
+**Repository:** [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory) | **Stars:** ~3,600 | **Type:** Community
 
 A local-first knowledge management system that builds a semantic graph from Markdown files. All knowledge is stored in standard Markdown files on your computer.
 
@@ -490,7 +490,7 @@ Basic Memory addresses a fundamental PKM problem: conversations with AI assistan
 
 **Type:** Commercial | **Cloud MCP:** [app.mem0.ai](https://app.mem0.ai)
 
-Provides MCP-compatible knowledge graph memory for enterprise AI deployments, focusing on persistent memory across agent pipelines (LangGraph, CrewAI, AutoGen). The self-hosted open-source repo (`mem0ai/mem0-mcp`) was archived in March 2026; the active path is the cloud-hosted MCP endpoint at app.mem0.ai.
+Provides MCP-compatible knowledge graph memory for enterprise AI deployments, focusing on persistent memory across agent pipelines (LangGraph, CrewAI, AutoGen). The self-hosted open-source repo ([`mem0ai/mem0-mcp`](https://github.com/mem0ai/mem0-mcp)) was archived in March 2026; the active path is the cloud-hosted MCP endpoint at app.mem0.ai.
 
 ## PKM MCP Server Comparison
 
@@ -667,7 +667,7 @@ Despite the density of the PKM MCP ecosystem, significant gaps remain:
 - **Standard Notes** — no MCP server found as of July 2026
 - **Reflect** — no MCP server found
 - **DEVONthink** — no MCP server for this powerful macOS knowledge management tool
-- **Dendron** — no MCP server (project was discontinued in 2023)
+- **Dendron** — no MCP server ([the extension entered maintenance mode in February 2023](https://github.com/dendronhq/dendron/discussions/3890) after the team could not find product-market fit as a venture-backed business; it remains functional as local-first, open-source software but sees no active feature development)
 
 **No AI writing assistants with PKM context.** While MCP servers give AI agents access to your knowledge base, no server specifically focuses on the writing workflow — drafting with awareness of your existing notes, voice, and style conventions.
 

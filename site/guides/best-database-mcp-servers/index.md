@@ -30,7 +30,7 @@ Both official database MCP servers share the same story: built as reference impl
 
 **The SQLite server** is clean, educational code with a clever insight memo feature. But it has zero safety guardrails — `DROP TABLE` executes without hesitation. It was never meant for production, and now it never will be. [Read our full review](/reviews/sqlite-mcp-server/).
 
-**The PostgreSQL server** is worse. Its entire value proposition — read-only database access — is broken by a SQL injection vulnerability. `COMMIT; DROP SCHEMA public CASCADE;` escapes the read-only transaction. The npm package at v0.6.2 still gets 21,000 weekly downloads. [Read our full review](/reviews/postgres-mcp-server/).
+**The PostgreSQL server** is worse. Its entire value proposition — read-only database access — is broken by a SQL injection vulnerability. `COMMIT; DROP SCHEMA public CASCADE;` escapes the read-only transaction. The npm package is still at v0.6.2 and gets [roughly 87,000 weekly downloads](https://www.npmjs.com/package/@modelcontextprotocol/server-postgres) (npm registry data, checked August 2026). [Read our full review](/reviews/postgres-mcp-server/).
 
 If you're using either of these, stop. Not eventually — now.
 
@@ -38,7 +38,7 @@ If you're using either of these, stop. Not eventually — now.
 
 ### For Cloud Postgres: Neon MCP
 
-**[Neon MCP](/reviews/neon-mcp-server/)** (4/5) is Neon's first-party MCP server for their serverless Postgres platform. With 20 tools, OAuth authentication, and a hosted remote server at `mcp.neon.tech`, it's the most capable database MCP server we've reviewed.
+**[Neon MCP](/reviews/neon-mcp-server/)** (4/5) is Neon's first-party MCP server for their serverless Postgres platform. With [dozens of tools spanning project management, branching, SQL execution, and observability](https://neon.com/docs/ai/neon-mcp-server), OAuth authentication, and a hosted remote server at `mcp.neon.tech`, it's the most capable database MCP server we've reviewed.
 
 **The killer feature:** branch-based migrations. When your agent runs a migration, Neon creates an instant copy-on-write branch from your production data. The migration runs on this branch first. Your agent verifies the results, then merges to the main branch — or discards the branch if something went wrong. No rollback scripts, no downtime risk.
 
@@ -66,14 +66,14 @@ If you're using either of these, stop. Not eventually — now.
 
 ### For Supabase Users: Supabase MCP
 
-**[Supabase MCP](/reviews/supabase-mcp-server/)** (4/5) is the only BaaS MCP server we've reviewed — it manages your entire backend, not just the database. 8 tool groups cover database queries, edge function deployment, storage management, branch-based development, debugging logs, and TypeScript type generation.
+**[Supabase MCP](/reviews/supabase-mcp-server/)** (4/5) is the only BaaS MCP server we've reviewed — it manages your entire backend, not just the database. [8 tool groups](https://supabase.com/docs/guides/getting-started/mcp) cover database queries, edge function deployment, storage management, branch-based development, debugging logs, and TypeScript type generation.
 
 **What it offers beyond database:**
 - Edge function deployment directly from your AI assistant
 - Storage bucket management
 - Service logs (API, Postgres, edge functions, auth, storage, realtime)
 - TypeScript type generation from database schema
-- OAuth 2.1 authentication with project scoping
+- [OAuth 2.1 authentication](https://supabase.com/docs/guides/auth/oauth-server/mcp-authentication) with project scoping
 - Read-only mode using a real PostgreSQL role (not query filtering)
 
 **Setup (remote, recommended):**
@@ -91,11 +91,11 @@ If you're using either of these, stop. Not eventually — now.
 
 ### For MongoDB: MongoDB MCP Server
 
-**[MongoDB MCP](/reviews/mongodb-mcp-server/)** (4/5) is the most comprehensive database MCP server we've reviewed — 40+ tools across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search.
+**[MongoDB MCP](/reviews/mongodb-mcp-server/)** (4/5) is the most comprehensive database MCP server we've reviewed — [50+ tools](https://www.mongodb.com/docs/mcp-server/tools/) across five categories: database operations, Atlas cluster management, Atlas local deployments, performance advisory, and knowledge search.
 
-**What it offers:**
-- 21 database tools: find, aggregate, count, insert/update/delete, index management, schema inspection, explain, export, logs
-- 13 Atlas management tools: create projects, provision clusters, manage users, inspect access lists, monitor alerts, Atlas Stream Processing
+**What it offers** ([per MongoDB's official tool docs](https://www.mongodb.com/docs/mcp-server/tools/), current as of August 2026 — this server ships frequently and totals change often):
+- ~24 database tools: find, aggregate, count, insert/update/delete, index management, schema inspection, explain, export, logs
+- ~20 Atlas management tools: create projects, provision clusters, manage users, inspect access lists, monitor alerts, Atlas Stream Processing
 - 4 local deployment tools: create and manage local MongoDB clusters via Docker
 - Performance Advisor: suggested indexes, drop recommendations, schema advice, slow query analysis
 - Knowledge search: natural language queries against MongoDB documentation
@@ -117,11 +117,11 @@ If you're using either of these, stop. Not eventually — now.
 }
 ```
 
-**Why it wins:** No other database MCP server covers the full lifecycle — from provisioning infrastructure to querying data to optimizing performance. The v1.8 series added Atlas Stream Processing tools and process metrics. The Performance Advisor integration is unique: your agent can ask why a query is slow, get index suggestions, and create the index, all through MCP. The 1-2 week release cadence shows serious investment. Set `MDB_MCP_READ_ONLY=true` — the default-writable mode is the main safety concern. [Read our full review](/reviews/mongodb-mcp-server/).
+**Why it wins:** No other database MCP server covers the full lifecycle — from provisioning infrastructure to querying data to optimizing performance. The [v1.8 series added Atlas Stream Processing tools](https://github.com/mongodb-js/mongodb-mcp-server/releases) and process metrics. The Performance Advisor integration is unique: your agent can ask why a query is slow, get index suggestions, and create the index, all through MCP. Release history shows roughly weekly major/minor releases (with more frequent alpha builds), evidence of serious ongoing investment. Set `MDB_MCP_READ_ONLY=true` — the default-writable mode is the main safety concern. [Read our full review](/reviews/mongodb-mcp-server/).
 
 ### For Self-Hosted PostgreSQL: Postgres MCP Pro
 
-**[Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp)** (crystaldba) is the community server that does everything the official one should have done. 2,400+ GitHub stars, actively maintained, and designed for real-world use.
+**[Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp)** (crystaldba) is the community server that does everything the official one should have done. 3,200+ GitHub stars (as of August 2026), actively maintained, and designed for real-world use.
 
 **What it offers:**
 - Schema exploration (list schemas, objects, table details)
@@ -181,7 +181,7 @@ pgEdge uses a YAML configuration file for database connections, authentication, 
 
 **Why it wins:** Three things set pgEdge apart. First, it works with any Postgres — not just one vendor's managed service. If you're on RDS, self-hosted, or any other Postgres provider, pgEdge connects without requiring a specific platform. Second, the hybrid search (BM25 + MMR + vector similarity) is unique among database MCP servers — useful for RAG applications where you want both keyword and semantic matching. Third, custom YAML tool definitions let you expose stored procedures and complex queries as named MCP tools without writing Go or Python.
 
-**The catch:** The GitHub repo had 91 stars at last count — far less community validation than Postgres MCP Pro (2,400 stars). The GA announcement came April 2, 2026, so production track record is minimal. The Go-based server requires building from source or using Docker (no simple `npx` or `pip install`). Enterprise features like distributed Postgres and multi-region failover require pgEdge Cloud.
+**The catch:** The [GitHub repo](https://github.com/pgEdge/pgedge-postgres-mcp) had 91 stars shortly after launch and has grown to 200+ stars as of August 2026 — still far less community validation than Postgres MCP Pro (3,200+ stars). The [GA announcement came April 2, 2026](https://www.prnewswire.com/news-releases/pgedge-mcp-server-for-postgres-now-generally-available-including-in-pgedge-cloud-advancing-enterprise-ai-infrastructure-302732395.html), so production track record is still limited. The Go-based server requires building from source or using Docker (no simple `npx` or `pip install`). Enterprise features like distributed Postgres and multi-region failover require pgEdge Cloud.
 
 **Best for:** Teams running PostgreSQL on any provider who want hybrid search, natural language querying, and custom tool definitions. Especially useful for organizations that need to connect to multiple Postgres databases across different environments (dev/staging/production).
 
@@ -254,7 +254,7 @@ dsn = "sqlite:///path/to/local.db"
 
 ### For Enterprise Oracle: Oracle Autonomous AI Database MCP
 
-**[Oracle Autonomous AI Database MCP Server](https://www.oracle.com/autonomous-database/mcp-server/)** is the first enterprise database vendor to ship MCP as a built-in, managed feature of its cloud database. Announced March 2026, it supports Oracle Database 19c and 26ai on Autonomous Database Serverless — no separate MCP infrastructure to deploy or maintain.
+**[Oracle Autonomous AI Database MCP Server](https://www.oracle.com/autonomous-database/mcp-server/)** is the first enterprise database vendor to ship MCP as a built-in, managed feature of its cloud database. [Announced March 24, 2026](https://www.oracle.com/news/announcement/oracle-unveils-ai-database-agentic-innovations-for-business-data-2026-03-24/), it supports Oracle Database 19c and 26ai on Autonomous Database Serverless — no separate MCP infrastructure to deploy or maintain.
 
 **What it offers:**
 - Schema discovery — agents discover permitted schemas and objects through MCP endpoints
@@ -272,7 +272,7 @@ dsn = "sqlite:///path/to/local.db"
 
 ### For MariaDB: MariaDB MCP (Official)
 
-**[MariaDB MCP](https://github.com/MariaDB/mcp)** is MariaDB's official MCP server, shipped as part of the MariaDB Enterprise Platform 2026 release. It covers standard SQL operations and — unusually for a relational database MCP server — native vector search.
+**[MariaDB MCP](https://github.com/MariaDB/mcp)** is MariaDB's official MCP server. The open-source server [first shipped in May 2025](https://mariadb.com/resources/blog/mariadb-unlocks-your-data-for-secure-enterprise-grade-agentic-with-mariadb-ai-rag-and-mariadb-enterprise-mcp-server/); the [MariaDB Enterprise Platform 2026 release](https://mariadb.com/resources/blog/announcing-the-release-of-mariadb-enterprise-platform-2026/) added an Enterprise-tier MCP Server variant alongside it. It covers standard SQL operations and — unusually for a relational database MCP server — native vector search.
 
 **What it offers:**
 - Database and table discovery with metadata
@@ -333,7 +333,7 @@ dsn = "sqlite:///path/to/local.db"
 | Vector/hybrid search | Yes (with embeddings) | No | Yes (BM25+MMR+vector) | No | Yes (native) | No | No | No |
 | Safety guardrails | Read-only mode, maxTimeMS | Yes | Read-only default, TLS, token auth | Database policies, audit | Parameterized queries, timeouts | Row/char limits | Yes | Input validation |
 | Managed/hosted | No (local) | No (local) | Optional (pgEdge Cloud) | Yes (built-in to ADB) | No (local) | No (local) | No (local) | No (local) |
-| Tool count | 40+ | ~10 | 5+ custom YAML tools | Custom (Select AI Agent) | ~8 | ~3 | 2 | ~5 |
+| Tool count | 50+ | ~10 | 5+ custom YAML tools | Custom (Select AI Agent) | ~8 | ~3 | 2 | ~5 |
 
 ## Our Recommendations
 

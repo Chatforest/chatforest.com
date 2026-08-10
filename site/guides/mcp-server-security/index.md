@@ -5,7 +5,7 @@
 
 MCP servers connect your AI assistant to external tools and data. That connection is powerful — and risky. Every MCP server you install becomes a bridge between an AI model and your systems: your databases, your files, your cloud infrastructure.
 
-We've [reviewed 19 MCP servers](/reviews/) across every major category. Along the way, we found SQL injection vulnerabilities, SSRF bugs, prompt injection attacks, and servers that store credentials in plaintext. Meanwhile, the vulnerability count keeps climbing: the first quarter of 2026 alone saw critical CVEs in [Atlassian MCP](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) (unauthenticated RCE), [AWS MCP](https://www.thehackerwire.com/aws-mcp-server-remote-code-execution-via-command-injection-cve-2026-5058/) (command injection), and [FastMCP](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-vv7q-7jx5-f767) (SSRF/path traversal). This guide distills what we've learned into practical security advice.
+We've [reviewed 19 MCP servers](/reviews/) across every major category. Along the way, we found SQL injection vulnerabilities, SSRF bugs, prompt injection attacks, and servers that store credentials in plaintext. Meanwhile, the vulnerability count keeps climbing: the first four months of 2026 alone saw critical CVEs in [Atlassian MCP](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) (unauthenticated RCE, February), [AWS MCP](https://www.thehackerwire.com/aws-mcp-server-remote-code-execution-via-command-injection-cve-2026-5058/) (command injection, April), and [FastMCP](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-vv7q-7jx5-f767) (SSRF/path traversal, April). This guide distills what we've learned into practical security advice.
 
 ## Why MCP Security Matters More Than You Think
 
@@ -31,7 +31,7 @@ Before installing any MCP server, ask:
 
 ## Authentication: The Shift to OAuth 2.1
 
-The MCP ecosystem is in the middle of a major authentication transition. The June 2025 spec revision formalized MCP servers as **OAuth 2.1 Resource Servers**, separating them from authorization servers entirely. The November 2025 revision made PKCE mandatory for all clients.
+The MCP ecosystem is in the middle of a major authentication transition. The [June 18, 2025 spec revision](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) formalized MCP servers as **OAuth 2.1 Resource Servers**, separating them from authorization servers entirely and requiring RFC 8707 Resource Indicators. The [November 25, 2025 revision](https://den.dev/blog/mcp-november-authorization-spec/) made PKCE mandatory for all clients and introduced Client ID Metadata Documents (CIMD) as the recommended way to identify clients.
 
 What this means in practice:
 
@@ -65,7 +65,7 @@ The [PostgreSQL MCP server](/reviews/postgres-mcp-server/) claimed read-only pro
 SELECT 1; COMMIT; DROP SCHEMA public CASCADE; --
 ```
 
-The server executes the `COMMIT`, ending the read-only transaction, then runs the destructive command. This server was archived in May 2025 with no patch — yet it still gets 21,000 weekly npm downloads.
+The server executes the `COMMIT`, ending the read-only transaction, then runs the destructive command. The flaw was [reported by Datadog Security Labs](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) and an independent researcher in April 2025; the server was archived in May 2025 with no patch — yet the [npm package](https://www.npmjs.com/package/@modelcontextprotocol/server-postgres) still gets roughly 21,000 weekly downloads.
 
 **Lesson:** Client-side SQL safety is not real safety. Use database-level roles with restricted permissions, like Supabase's read-only PostgreSQL role.
 
@@ -79,7 +79,9 @@ http://localhost:8080/admin                (local services)
 http://10.0.0.1/                           (internal network)
 ```
 
-This was formally assigned [CVE-2025-65513](https://github.com/advisories/GHSA-8fxj-2g9q-8fjw) (CVSS 7.5, High per NVD) in December 2025, confirming that the `is_ip_private()` function fails to properly validate private IP addresses. A fix (PR #3180) was proposed but **still hasn't been merged** as of April 2026 — over a year after disclosure.
+**Correction:** An earlier version of this guide cited [CVE-2025-65513](https://github.com/advisories/GHSA-8fxj-2g9q-8fjw) as the CVE for this issue. That CVE is real, but it was assigned to a different, unrelated npm package that shares a confusingly similar name (`mcp-fetch-server`, an independent project, versions ≤1.0.2, CVSS 6.3 Moderate) — not to Anthropic's official `mcp-server-fetch`. We're correcting the record rather than propagating the mix-up.
+
+The official server's [README itself warns](https://github.com/modelcontextprotocol/servers/blob/main/src/fetch/README.md) that "this server can access local/internal IP addresses and may represent a security risk." No CVE has been assigned to `mcp-server-fetch` specifically, but the risk is independently documented in two places: a [hardening report filed as GitHub issue #4116](https://github.com/modelcontextprotocol/servers/issues/4116) (May 6, 2026) describing private-network access, redirect-validation gaps, and DNS-rebinding risk, and a [Full Disclosure mailing list post](https://seclists.org/fulldisclosure/2026/May/22) (May 25, 2026) estimating the SSRF-via-prompt-injection risk at CVSS 7.5 (High) and showing how it could be chained to reach cloud metadata endpoints. A fix ([PR #3180](https://github.com/modelcontextprotocol/servers/pull/3180), opened January 5, 2026) remains open and unmerged as of this writing.
 
 **Lesson:** Any tool that makes HTTP requests needs URL validation. Block private IP ranges, cloud metadata endpoints, and localhost by default.
 
@@ -93,7 +95,7 @@ The vulnerability was [patched within five days](https://noma.security/blog/cont
 
 ### MCPwnfluence — Atlassian MCP Server (April 2026)
 
-The most impactful MCP vulnerability of 2026 so far. [CVE-2026-27825](https://arcticwolf.com/resources/blog/cve-2026-27825/) (CVSS 9.1) and CVE-2026-27826 (CVSS 8.2) form an unauthenticated SSRF-to-RCE chain in [mcp-atlassian](https://github.com/plutosecurity/MCPwnfluence), the most widely used Atlassian MCP server ([8+ million PyPI downloads](https://pepy.tech/projects/mcp-atlassian)). Researchers at [Pluto Security](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) demonstrated that anyone on the same local network could execute code as root by sending two HTTP requests — no authentication required.
+The most impactful MCP vulnerability of 2026 so far. [CVE-2026-27825](https://arcticwolf.com/resources/blog/cve-2026-27825/) (CVSS 9.1) and CVE-2026-27826 (CVSS 8.2) form an unauthenticated SSRF-to-RCE chain in [mcp-atlassian](https://github.com/plutosecurity/MCPwnfluence), the most widely used Atlassian MCP server ([4M+ downloads at time of disclosure](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/), per Pluto Security). Researchers at [Pluto Security](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) demonstrated that anyone on the same local network could execute code as root by sending two HTTP requests — no authentication required.
 
 The attack chain works because: (1) the server honors attacker-controlled `X-Atlassian-Confluence-Url` headers without validation (SSRF), and (2) the Confluence attachment downloader writes files to attacker-specified paths without restricting them to a safe base directory. Combined, an attacker redirects attachment requests to their own server and writes a malicious payload to `~/.bashrc` or `~/.ssh/authorized_keys`.
 
@@ -103,11 +105,11 @@ The attack chain works because: (1) the server honors attacker-controlled `X-Atl
 
 [CVE-2026-5058](https://www.thehackerwire.com/aws-mcp-server-remote-code-execution-via-command-injection-cve-2026-5058/) (CVSS 9.8) is a critical command injection in aws-mcp-server, disclosed April 11, 2026. The flaw exists in the handling of the allowed commands list — a user-supplied string is passed directly to a system call without proper validation. No authentication is required for exploitation.
 
-**Lesson:** Any MCP server that executes system commands must sanitize inputs. The [30+ CVEs filed in early 2026](/guides/mcp-growing-pains-2026/) showed that 43% of MCP vulnerabilities are shell injection — this remains the single most common MCP vulnerability class.
+**Lesson:** Any MCP server that executes system commands must sanitize inputs. MCP has already seen [30+ CVEs filed in the first 60 days of 2026](/guides/mcp-growing-pains-2026/), and [Equixly's offensive-security testing of popular MCP implementations](https://equixly.com/blog/2026/02/26/offensive-security-for-mcp-servers/) found command injection flaws in 43% of tested servers — the single most common flaw class in their sample.
 
 ### SSRF & Path Traversal — FastMCP (April 2026)
 
-[CVE-2026-32871](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-vv7q-7jx5-f767) (CVSS 9.9) affects FastMCP's OpenAPI Provider. Path parameters are substituted into URL templates without URL-encoding, allowing `../` directory traversal to escape the intended API prefix and reach arbitrary backend endpoints — with the authorization headers configured in the MCP provider. Fixed in FastMCP >= 3.2.0.
+[CVE-2026-32871](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-vv7q-7jx5-f767) (CVSS 9.8, [per Endor Labs](https://www.endorlabs.com/vulnerability/cve-2026-32871)) affects FastMCP's OpenAPI Provider. Path parameters are substituted into URL templates without URL-encoding, allowing `../` directory traversal to escape the intended API prefix and reach arbitrary backend endpoints — with the authorization headers configured in the MCP provider. Fixed in FastMCP >= 3.2.0.
 
 **Lesson:** URL construction in MCP servers must use proper encoding. When an MCP server proxies requests to backend APIs, a path traversal becomes an authenticated SSRF — the attacker inherits the server's credentials.
 
@@ -154,7 +156,7 @@ We rated the security posture of all 19 servers we've reviewed, from strongest t
 
 **[Supabase MCP](/reviews/supabase-mcp-server/)** (4/5) — The best security model we reviewed. Real PostgreSQL read-only role, feature group filtering, OAuth 2.1, project-level scoping. Their approach to read-only mode sets the standard: it's a database-level restriction, not client-side filtering.
 
-**[Sentry MCP](/reviews/sentry-mcp-server/)** (4/5) — OAuth-first design, organization scoping, 748+ issues suggest thorough real-world testing. First-party remote server with enterprise compliance options.
+**[Sentry MCP](/reviews/sentry-mcp-server/)** (4/5) — OAuth-first design, organization scoping, [748+ historical issues/PRs](https://github.com/getsentry/sentry-mcp/issues) suggest thorough real-world testing. First-party remote server with enterprise compliance options.
 
 **[Slack MCP](/reviews/slack-mcp-server/)** (4/5) — Granular OAuth scopes, admin oversight, audit logging. The scope model lets you limit access to specific channels and operations.
 
@@ -172,9 +174,9 @@ We rated the security posture of all 19 servers we've reviewed, from strongest t
 
 **[Playwright MCP](/reviews/playwright-mcp-server/)** (4.5/5) — Zero-config with optional auth state persistence. Browser sandbox provides isolation. But saved auth state is plaintext JSON.
 
-**[Notion MCP](/reviews/notion-mcp-server/)** (3.5/5) — Transitioning to OAuth remote server. But tokens expire frequently (3+ times/week per Issue #225), and there's no easy database-level scoping.
+**[Notion MCP](/reviews/notion-mcp-server/)** (3.5/5) — Transitioning to OAuth remote server. But tokens expire frequently ([3+ times/week per Issue #225](https://github.com/makenotion/notion-mcp-server/issues/225)), and there's no easy database-level scoping.
 
-**[Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/)** (3.5/5) — OAuth remote server with aggressive rate limiting (6 calls/month free tier). The rate limiting, while frustrating, provides a natural security boundary.
+**[Figma Dev Mode MCP](/reviews/figma-dev-mode-mcp-server/)** (3.5/5) — OAuth remote server with aggressive rate limiting ([6 tool calls/month on the Starter plan](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/)). The rate limiting, while frustrating, provides a natural security boundary.
 
 ### Weak Security
 
@@ -182,7 +184,7 @@ We rated the security posture of all 19 servers we've reviewed, from strongest t
 
 **[Fetch MCP](/reviews/fetch-mcp-server/)** (3/5) — Unpatched SSRF vulnerability. No URL allowlisting. Use the community alternative [zcaceres/fetch-mcp](https://github.com/zcaceres/fetch-mcp) for SSRF protection.
 
-**[Context7 MCP](/reviews/context7-mcp-server/)** (3.5/5) — ContextCrush patched, but centralized registry architecture is inherently a prompt injection target. Rate limits slashed 83% in January 2026.
+**[Context7 MCP](/reviews/context7-mcp-server/)** (3.5/5) — ContextCrush patched, but centralized registry architecture is inherently a prompt injection target. [Free-tier rate limits cut 83%](https://blog.devgenius.io/context7-quietly-slashed-its-free-tier-by-92-16fa05ddce03) (from ~6,000 to 1,000 requests/month) in January 2026.
 
 **[SQLite MCP](/reviews/sqlite-mcp-server/)** (3/5) — No parameterized queries, no encryption, development-only. Archived but still useful for local prototyping.
 
@@ -238,7 +240,7 @@ The risks go beyond the servers themselves:
 - **Static credentials at scale.** [Astrix research](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) found that 53% of servers rely on static secrets, creating systemic risk across downstream systems. The CVE pace confirms this: [30+ CVEs in the first 60 days of 2026](/guides/mcp-growing-pains-2026/), with critical RCE chains like [MCPwnfluence](https://pluto.security/blog/mcpwnfluence-cve-2026-27825-critical/) (4M+ downloads affected) demonstrating real-world exploitation potential.
 - **No inventory.** Most organizations don't know how many MCP servers are running, who started them, or what they connect to.
 
-The [MCP Dev Summit 2026](/guides/mcp-dev-summit-2026-guide/) dedicated its largest track ([23 sessions](https://www.linuxfoundation.org/press/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule)) to security and operations, reflecting how central this concern has become. Key sessions covered mix-up attacks, host-layer security, and real-world MCP server exploitation.
+The [MCP Dev Summit 2026](/guides/mcp-dev-summit-2026-guide/) — [more than 95 sessions across four tracks](https://www.linuxfoundation.org/press/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule) — made security [the single most represented theme, with 23 dedicated sessions](https://www.digitalapplied.com/blog/mcp-dev-summit-2026-readout-protocol-roadmap-analysis), reflecting how central this concern has become. Key sessions covered mix-up attacks, host-layer security, and real-world MCP server exploitation.
 
 ### What Organizations Should Do
 
@@ -251,15 +253,15 @@ Qualys recommends a four-step operational playbook:
 
 ## Tool Poisoning: The Hidden Threat
 
-Tool poisoning is a specialized form of prompt injection where malicious instructions hide inside MCP tool metadata — descriptions, parameter names, and even tool outputs. The AI model follows these instructions while the user sees nothing unusual. Researchers at Invariant Labs and CyberArk have demonstrated working attacks that exfiltrate SSH keys, redirect emails, and steal credentials from Claude Desktop and Cursor.
+Tool poisoning is a specialized form of prompt injection where malicious instructions hide inside MCP tool metadata — descriptions, parameter names, and even tool outputs. The AI model follows these instructions while the user sees nothing unusual. [Researchers at Invariant Labs demonstrated](https://invariantlabs.ai/blog/mcp-security-notification) a working attack that hid an instruction inside a tool's description to read `~/.ssh/id_rsa` and exfiltrate it via an unrelated tool call — with Cursor shown as an affected client. CyberArk later extended the research to full-schema and tool-output poisoning (see our [tool poisoning deep-dive](/guides/mcp-tool-poisoning-attacks/) for that research in detail).
 
-This is serious enough that OWASP lists it as [MCP03](https://owasp.org/www-project-mcp-top-10/) in their MCP Top 10. Invariant Labs (an ETH Zurich spin-off [acquired by Snyk](https://labs.snyk.io/resources/snyk-labs-invariant-labs/) in June 2025) built [mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) — a dedicated scanner that detects tool poisoning, rug pulls, and cross-origin escalation. With ~2,800 GitHub stars, it is the most widely adopted MCP security scanner. Snyk also maintains [Agent Scan](https://github.com/snyk/agent-scan), a separate MCP security scanner.
+This is serious enough that OWASP lists it as [MCP03](https://owasp.org/www-project-mcp-top-10/) in their MCP Top 10. Invariant Labs (an ETH Zurich spin-off [acquired by Snyk](https://labs.snyk.io/resources/snyk-labs-invariant-labs/) in June 2025) built [mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) — a dedicated scanner that detects tool poisoning, rug pulls, and cross-origin escalation, with 600+ GitHub stars. Snyk also maintains [Agent Scan](https://github.com/snyk/agent-scan) (2.9k GitHub stars), a separate, more broadly-scoped MCP/agent security scanner.
 
 **We've written a full deep-dive:** [MCP Tool Poisoning Attacks: How They Work and How to Defend Against Them](/guides/mcp-tool-poisoning-attacks/) covers five attack vectors (description poisoning, tool shadowing, full-schema poisoning, output poisoning, and rug pulls), the research behind them, and a practical defense checklist.
 
 ## What's Next for MCP Security
 
-The protocol is maturing rapidly. The November 2025 spec revision mandated PKCE for all clients and introduced Client ID Metadata Documents for standardized registration. OWASP's MCP Top 10 gives the ecosystem a shared vocabulary for risks.
+The protocol is maturing rapidly. The [November 2025 spec revision](https://den.dev/blog/mcp-november-authorization-spec/) mandated PKCE for all clients and introduced Client ID Metadata Documents for standardized registration. OWASP's MCP Top 10 gives the ecosystem a shared vocabulary for risks.
 
 ### New Security Infrastructure (2026)
 
@@ -267,7 +269,7 @@ Several major developments are closing the gaps:
 
 **MCP maintainer team expanded (April 2026)** — [Den Delimarsky was promoted to Lead Maintainer](https://blog.modelcontextprotocol.io/posts/2026-04-08-maintainer-update/) alongside David Soria Parra, with Clare Liguori joining as Core Maintainer. Delimarsky co-authored the authorization specification and brought RFC 8707 Resource Indicators into the spec — his promotion signals that auth and security are now first-class priorities in MCP governance.
 
-**CoSAI MCP Security white paper (January 2026)** — The [Coalition for Secure AI](https://www.oasis-open.org/2026/01/27/coalition-for-secure-ai-releases-extensive-taxonomy-for-model-context-protocol-security/), an OASIS Open project, released a comprehensive threat taxonomy: 12 core threat categories and nearly 40 individual threats, organized into three tiers (MCP-specific, MCP-contextualized, and conventional). This gives security teams a structured framework for MCP risk assessment.
+**CoSAI MCP Security white paper (January 2026)** — The [Coalition for Secure AI](https://www.oasis-open.org/2026/01/27/coalition-for-secure-ai-releases-extensive-taxonomy-for-model-context-protocol-security/), an OASIS Open project, released [a comprehensive threat taxonomy](https://www.coalitionforsecureai.org/securing-the-ai-agent-revolution-a-practical-guide-to-mcp-security/): 12 core threat categories spanning nearly 40 individual threats, covering identity and access, input handling, data and code protection, network and transport, trust and design, and operational security. This gives security teams a structured framework for MCP risk assessment.
 
 **Microsoft internal MCP governance** — [Microsoft Digital and its CISO team](https://www.microsoft.com/insidetrack/blog/protecting-ai-conversations-at-microsoft-with-model-context-protocol-security-and-governance/) are enforcing MCP governance at enterprise scale: mandatory server inventory, drift monitoring, and the principle that "every server, regardless of where it's running, must be accounted for." Their [Agent Governance Toolkit](https://opensource.microsoft.com/blog/2026/04/02/introducing-the-agent-governance-toolkit-open-source-runtime-security-for-ai-agents/) (open source, April 2026) provides seven packages for zero-trust identities and runtime isolation.
 

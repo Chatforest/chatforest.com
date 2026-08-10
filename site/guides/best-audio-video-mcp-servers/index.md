@@ -48,7 +48,7 @@ The value comes in three forms:
 | jpoindexter/ableton-mcp | Not listed | 200+ tools, REST API | **NEW** — most comprehensive Ableton server |
 | Kokoro TTS ecosystem | 1 server (6 stars) | 3+ servers (mberg 51 stars, scottschram Apple Silicon) | Ecosystem expansion |
 | Spotify MCP servers | Not listed (gap) | Multiple community servers | Gap partially filled |
-| MCP Security | Not discussed | 30+ CVEs, 82% vulnerable | Crisis documented |
+| [MCP Security](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) | Not discussed | 30+ CVEs in 60 days, 82% vulnerable to path traversal | Crisis documented |
 
 The landscape splits into nine categories: **text-to-speech** (cloud and local), **transcription** (cloud, local, YouTube), **FFmpeg video processing**, **professional video editing** (DaVinci Resolve, Adobe), **dedicated Premiere Pro**, **dedicated After Effects**, **music production** (Ableton, REAPER, Logic Pro, SuperCollider), **media generation** (AI video/image creation), and **video streaming** (Mux).
 
@@ -202,11 +202,11 @@ The `remove_silence` tool is particularly useful for podcast/video editing. B-ro
 
 ### The winner: samuelgursky/davinci-resolve-mcp
 
-**Stars:** 700+ | **Language:** Python | **License:** MIT | **Tools:** 26/342
+**Stars:** 700+ | **Language:** Python | **License:** MIT | **Tools:** 34/353 ([per the current README](https://github.com/samuelgursky/davinci-resolve-mcp); the project's method count has grown since our original research, see note below)
 
-[samuelgursky/davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) has the deepest API coverage of any creative application MCP server — **100% of the DaVinci Resolve Scripting API** (324/324 methods), with 98.5% live-tested.
+[samuelgursky/davinci-resolve-mcp](https://github.com/samuelgursky/davinci-resolve-mcp) has the deepest API coverage of any creative application MCP server — the README claims **100% of the DaVinci Resolve Scripting API** (361/361 methods as of this audit, up from the figure we originally reported), with 93.6% (338/361) live-tested.
 
-Two modes: **Compound Server** (default, 26 tools) groups related operations to keep context windows lean — project management, media pool, timeline editing, color grading, Fusion compositions, render pipeline. **Full Server** (342 tools) exposes one tool per API method for maximum precision. Auto-detects OS and Resolve installation. Supports 10+ MCP clients.
+Two modes: **Compound Server** (default, 34 tools) groups related operations to keep context windows lean — project management, media pool, timeline editing, color grading, Fusion compositions, render pipeline. **Full Server** (353 tools) exposes one tool per API method for maximum precision. Auto-detects OS and Resolve installation. Supports 10+ MCP clients.
 
 **What's new (April 2026):** New `fusion_comp` tool provides a 20-action interface exposing the full Fusion composition node graph API — add/delete/find nodes, wire connections, set/get parameters, manage keyframes, control undo grouping, set render ranges, and trigger renders. Timeline item Fusion cache actions added (get/set cache on timeline items). Universal installer (`python install.py`) now supports macOS/Windows/Linux across 10 MCP clients. Dedicated timeline_item actions for retime/speed, transform, crop, composite, audio, and keyframes with validation.
 
@@ -226,9 +226,9 @@ Architecture: AI → MCP Server → Node Proxy → Adobe Plugin → Application.
 
 ### Dedicated Premiere Pro servers
 
-**[leancoderkavy/premiere-pro-mcp](https://github.com/leancoderkavy/premiere-pro-mcp)** (269 tools across 28 modules) — The most comprehensive Premiere Pro server. Covers project operations, ingest, sequence creation, timeline editing, transitions, effects, keyframes, metadata, exports, and assembly workflows via CEP/ExtendScript. Live instance at premiere-pro-mcp.fly.dev.
+**[leancoderkavy/premiere-pro-mcp](https://github.com/leancoderkavy/premiere-pro-mcp)** (280 core tools across 31 modules, per the current README — up from the figure we originally reported) — The most comprehensive Premiere Pro server. Covers project operations, ingest, sequence creation, timeline editing, transitions, effects, keyframes, metadata, exports, and assembly workflows via CEP/ExtendScript. [Live instance at premiere-pro-mcp.fly.dev](https://premiere-pro-mcp.fly.dev).
 
-**[hetpatel-11/Adobe_Premiere_Pro_MCP](https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP)** (97 tools, 43 live-tested) — Covers project operations, ingest, sequence creation, timeline editing, transitions, effects, keyframes, metadata, and exports.
+**[hetpatel-11/Adobe_Premiere_Pro_MCP](https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP)** (283 tools, 13 context resources, and 10 guided prompts, per the current README — up substantially from the figure we originally reported) — Covers project operations, ingest, sequence creation, timeline editing, transitions, effects, keyframes, metadata, and exports.
 
 **[jordanl61/premiere-pro-mcp-server](https://github.com/jordanl61/premiere-pro-mcp-server)** — For power users, workflow automation, and AI/scripting integration.
 
@@ -244,7 +244,7 @@ Architecture: AI → MCP Server → Node Proxy → Adobe Plugin → Application.
 
 ## Music production servers
 
-Music production is where MCP servers show the widest range in depth — from Ableton MCP's 15 tools (2,300 stars) to total-reaper-mcp's 600+ tools (29 stars). Adoption and comprehensiveness don't always correlate.
+Music production is where MCP servers show the widest range in depth — from Ableton MCP's 15 tools (2,100 stars) to total-reaper-mcp's 600+ tools (29 stars). Adoption and comprehensiveness don't always correlate.
 
 ### The adoption leader: ahujasid/ableton-mcp
 
@@ -304,7 +304,7 @@ The key innovation is **deployment profiles**: `dsl-production` (default, 53 too
 
 **[Epidemic Sound MCP Server](https://www.epidemicsound.com/blog/mcp-server/)** (Beta) — The first music licensing MCP server. Epidemic Sound's server connects AI creative tools directly to their catalog of royalty-free music, sound effects, and voiceovers. AI agents can search by text description, then filter by BPM range, duration, mood, featured instruments, musical key, artist, and vocal presence.
 
-Epidemic Sound owns 100% of the rights to its catalog (master, neighboring, and composition rights), which means clean licensing without the complexity of traditional music clearance. Monthly subscription pricing with no per-use fees.
+[Epidemic Sound says it owns 100% of the rights to its catalog](https://www.epidemicsound.com/how-it-works/music-licensing/) (master, neighboring/performer, and composition rights), which means clean licensing without the complexity of traditional music clearance. Monthly subscription pricing with no per-use fees.
 
 **Why it matters:** This is the first time a music licensing company has offered an MCP server. For video and podcast producers, the workflow of "find the right background music" is one of the most time-consuming creative tasks — having an AI agent search a licensed catalog by mood and tempo changes it fundamentally.
 
@@ -312,7 +312,7 @@ Epidemic Sound owns 100% of the rights to its catalog (master, neighboring, and 
 
 ### Video streaming
 
-**[Mux MCP](https://mcp.mux.com)** — Official Mux remote MCP server for video infrastructure management. Upload videos, create live streams, generate thumbnails, add captions, manage playback policies, and query engagement analytics. Hosted at mcp.mux.com with automatic OAuth authentication. Supports query parameters to customize which tools are exposed.
+**[Mux MCP](https://www.mux.com/blog/mux-mcp)** — Official Mux remote MCP server for video infrastructure management. Upload videos, create live streams, generate thumbnails, add captions, manage playback policies, and query engagement analytics. Hosted at [mcp.mux.com](https://mcp.mux.com) (the live JSON-RPC endpoint itself isn't browsable) with automatic OAuth authentication. Supports query parameters to customize which tools are exposed.
 
 **Best for:** Teams using Mux for video hosting who want AI-assisted video infrastructure management.
 
@@ -346,7 +346,7 @@ Use this decision flowchart:
 
 **3. Music licensing enters the MCP ecosystem.** Epidemic Sound's MCP server (Beta) is the first licensed music catalog accessible via MCP. This is a new category — not generating audio, but *finding and licensing existing audio*. Expect more content licensing platforms to follow.
 
-**4. Security is the elephant in the room.** The 2026 MCP security crisis (30+ CVEs in 60 days, 82% of file-operation servers vulnerable to path traversal) hits audio/video servers hard. Most FFmpeg servers pass user input to shell commands — the dominant attack vector (43% of all MCP vulnerabilities). Most creative tool servers allow arbitrary file operations without sandboxing. The convenience of "AI controls my video editor" has real security implications that the ecosystem hasn't addressed.
+**4. Security is the elephant in the room.** The 2026 MCP security crisis hits audio/video servers hard. [Endor Labs' analysis of 2,614 MCP implementations](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) found 82% use file operations prone to path traversal (CWE-22). Separately, [security researchers tallied 30+ CVEs filed against MCP servers in a single 60-day window in early 2026](https://www.practical-devsecops.com/mcp-security-statistics-2026-report/), with roughly 43% of those following command/shell-injection patterns — most FFmpeg servers pass user input to shell commands, which is exactly that attack vector. Most creative tool servers allow arbitrary file operations without sandboxing. The convenience of "AI controls my video editor" has real security implications that the ecosystem hasn't addressed.
 
 ---
 
@@ -361,7 +361,7 @@ The audio and video MCP ecosystem has narrowed some gaps but significant ones re
 - **FFmpeg servers remain fragmented** — Six or more implementations, none dominant. The ecosystem needs consolidation, and the security implications of passing user input to FFmpeg shell commands are increasingly concerning.
 - **No end-to-end subtitle pipeline** — Transcription and subtitle burning exist separately but no single server handles "transcribe this video and burn in the captions."
 - **No GarageBand MCP server** — Apple's most accessible music tool has no MCP integration.
-- **Security is now a documented crisis** — 82% of MCP servers with file operations are vulnerable to path traversal. 43% of all MCP CVEs involve shell/exec injection — exactly the pattern FFmpeg and creative tool servers exhibit. Most audio/video servers lack sandboxing, confirmation prompts, or input validation.
+- **Security is now a documented crisis** — [82% of MCP implementations with file operations are vulnerable to path traversal (Endor Labs, 2,614 implementations analyzed)](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec), and [roughly 43% of the 30+ MCP CVEs filed in a single 60-day window in early 2026 followed shell/exec-injection patterns](https://www.practical-devsecops.com/mcp-security-statistics-2026-report/) — exactly the pattern FFmpeg and creative tool servers exhibit. Most audio/video servers lack sandboxing, confirmation prompts, or input validation.
 
 The Deepgram and Spotify gaps have partially closed since our last review. The security gap has widened into a documented crisis.
 

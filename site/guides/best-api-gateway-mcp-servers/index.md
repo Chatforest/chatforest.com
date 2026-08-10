@@ -75,9 +75,9 @@ Kong's official MCP server connects AI assistants to the Kong Konnect platform f
 **What makes it stand out:**
 - **Hosted remote endpoint** — no local install needed, Konnect manages the server
 - **12 tools** across analytics, configuration (services, routes, consumers, plugins), and control plane management
-- **MCP Registry** (Tech Preview, launched Feb 2026) — enterprise directory within Konnect Catalog for registering, discovering, and governing MCP servers. Enables dynamic tool discovery with centralized security, ownership, and policy controls. Compliant with AAIF (AI Alliance Interoperability Framework) standard
+- **[MCP Registry](https://konghq.com/blog/product-releases/kong-mcp-registry-tech-preview)** (Tech Preview, [announced Feb 2, 2026](https://konghq.com/company/press-room/press-release/kong-introduces-mcp-registry)) — enterprise directory within Konnect Catalog for registering, discovering, and governing MCP servers. Enables dynamic tool discovery with centralized security, ownership, and policy controls. Compliant with the AAIF (AI Alliance Interoperability Framework) standard
 - **MCP Composer + Runner** (coming 2026) — auto-generate MCP servers from REST APIs, redesign existing APIs to be MCP-ready, and map tools with centralized OAuth
-- **AI Gateway 3.12** — Kong's gateway natively supports MCP, enabling API-to-MCP conversion at the infrastructure level
+- **[AI Gateway 3.12](https://konghq.com/blog/product-releases/enterprise-mcp-gateway)** — Kong's gateway natively supports MCP via the `ai-mcp-proxy` and `ai-mcp-oauth2` plugins, enabling API-to-MCP conversion and OAuth 2.1 resource-server behavior at the infrastructure level
 
 **Limitations:**
 - **Konnect-only** — requires Kong Konnect subscription (not open-source Kong Gateway)
@@ -97,7 +97,7 @@ Gravitee's MCP server is generated from the official Gravitee Management API v2 
 - **60+ tools** — the highest tool count of any gateway management MCP server. Covers APIs, plans, subscriptions, environments, deployments, and lifecycle
 - **Conversational API management** — ask questions about your APIs in natural language
 - **MCP Proxy** (Gravitee 4.10+) — a new API type purpose-built for proxying upstream MCP servers with governance
-- **MCP Resource Server V2** (Gravitee 4.11, April 2026) — full Client Credentials flows (servers obtain own tokens + introspection), AuthZen PDP upgraded from Basic Auth to Bearer tokens, production-grade secret management
+- **[MCP Resource Server V2](https://www.gravitee.io/blog/elevating-mcp-security-with-gravitees-mcp-resource-server-v2)** (Gravitee 4.11, April 2026) — full Client Credentials flows (servers obtain own tokens + introspection), AuthZen PDP upgraded from Basic Auth to Bearer tokens, production-grade secret management
 - **REST-to-MCP Tool Server** — auto-generates MCP tools from any OpenAPI spec, not just Gravitee's own APIs
 - **OpenFGA integration** — fine-grained relationship-based authorization for MCP tools
 
@@ -136,7 +136,7 @@ Tyk's approach is different — rather than managing Tyk itself, `api-to-mcp` tu
 **What makes it stand out:**
 - **Any OpenAPI → MCP** — load specs from local files or HTTP/HTTPS URLs
 - **OpenAPI overlay support** — customize tool names, descriptions, and parameters
-- **AI Studio** (open source since March 2026) — previously commercial, now available as Community Edition. MCP tool generation from OpenAPI specs, OpenAI-to-MCP server generation, remote MCP server exposure, and scoped tool access policies
+- **[AI Studio](https://tyk.io/blog/ai-studio-is-going-open-source-and-why-the-ai-control-plane-must-be-extensible/)** (open source since March 2026) — previously commercial, now available as Community Edition. MCP tool generation from OpenAPI specs, OpenAI-to-MCP server generation, remote MCP server exposure, and scoped tool access policies
 - **Protocol breadth** — Tyk gateway supports REST, GraphQL, gRPC, TCP, and SOAP
 
 **Limitations:**
@@ -152,18 +152,18 @@ The big three cloud providers now offer native MCP proxy capabilities that turn 
 
 ### AWS API Gateway — MCP Proxy Support
 
-**Status:** GA (December 2025) | **Transport:** Streamable HTTP
+**Status:** [GA (December 2025)](https://aws.amazon.com/about-aws/whats-new/2025/12/api-gateway-mcp-proxy-support/) | **Transport:** Streamable HTTP
 
-Amazon API Gateway added native MCP proxy support, translating between MCP protocol and REST APIs at the infrastructure level.
+[Amazon API Gateway added native MCP proxy support](https://aws.amazon.com/about-aws/whats-new/2025/12/api-gateway-mcp-proxy-support/), translating between MCP protocol and REST APIs at the infrastructure level.
 
 **What makes it stand out:**
 - **Protocol translation** — REST APIs communicate with AI agents through MCP without application modifications
 - **Dual authentication** — verifies agent identities inbound while managing secure connections to REST APIs outbound
-- **AgentCore Gateway integration** — your API Gateway becomes a single MCP URL for AI agents
+- **[AgentCore Gateway integration](https://aws.amazon.com/blogs/machine-learning/streamline-ai-agent-tool-interactions-connect-api-gateway-to-agentcore-gateway-with-mcp/)** — your API Gateway becomes a single MCP URL for AI agents
 - **AWS API MCP Server** — separate server that enables natural language interaction with any AWS API through CLI commands
 
 **Limitations:**
-- Available in 9 AWS regions only (tied to Bedrock AgentCore availability)
+- [Available in the 9 AWS regions](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agentcore-regions.html) where Bedrock AgentCore is available (Mumbai, Singapore, Sydney, Tokyo, Dublin, Frankfurt, N. Virginia, Ohio, Oregon)
 - Requires Amazon Bedrock AgentCore — not standalone
 - REST-to-MCP only — no GraphQL or gRPC translation
 
@@ -173,7 +173,7 @@ Amazon API Gateway added native MCP proxy support, translating between MCP proto
 
 **Status:** Preview | **Transport:** Streamable HTTP, SSE
 
-Azure APIM can expose REST APIs as remote MCP servers and proxy existing remote MCP servers with governance.
+[Azure APIM can expose REST APIs as remote MCP servers and proxy existing remote MCP servers with governance](https://learn.microsoft.com/en-us/azure/api-management/mcp-server-overview).
 
 **What makes it stand out:**
 - **Two modes** — expose your REST APIs as MCP tools, or govern existing MCP servers through APIM policies
@@ -192,7 +192,7 @@ Azure APIM can expose REST APIs as remote MCP servers and proxy existing remote 
 
 **Status:** GA | **Transport:** Remote MCP (managed)
 
-Apigee's MCP support is the most frictionless of the cloud platforms — no code changes, no server deployment, no infrastructure.
+[Apigee's MCP support](https://cloud.google.com/blog/products/ai-machine-learning/mcp-support-for-apigee) is the most frictionless of the cloud platforms — no code changes, no server deployment, no infrastructure.
 
 **What makes it stand out:**
 - **Zero-code, zero-deploy** — Apigee fully manages MCP servers, transcoding, and protocol handling. You point it at your OpenAPI spec and it works
@@ -213,16 +213,16 @@ These are purpose-built to sit between AI agents and MCP servers, adding securit
 
 ### Traefik Hub MCP Gateway — The Governance Leader
 
-**Status:** Reached GA in May 2026 (was Early Access v3.20) | **Transport:** Remote MCP
+**Status:** [Reached GA around May 2026](https://traefik.io/blog/traefik-proxy-3-7-is-available) (was Early Access as of the [v3.20 announcement](https://www.businesswire.com/news/home/20260316864823/en/Traefik-Labs-Advances-LLM-and-MCP-Runtime-Governance-with-Composable-Safety-Pipeline-Multi-Provider-Resilience-and-Token-Level-Cost-Controls) in March 2026) | **Transport:** Remote MCP
 
 Traefik Hub's MCP Gateway is the most feature-rich governance layer for MCP traffic. It's not an MCP server manager — it's an MCP-aware reverse proxy with identity, policy, and observability built in.
 
 **What makes it stand out:**
-- **Task-Based Access Control (TBAC)** — a new authorization paradigm: define tasks (business objectives), tools (system access), and transactions (parameter-level constraints) independently, then compose them. More granular than RBAC or ABAC for MCP use cases
+- **[Task-Based Access Control (TBAC)](https://traefik.io/solutions/mcp-gateway)** — a new authorization paradigm: define tasks (business objectives), tools (system access), and transactions (parameter-level constraints) independently, then compose them. More granular than RBAC or ABAC for MCP use cases
 - **OAuth 2.0/2.1 Resource Server** — standards-compliant MCP server protection with automatic resource metadata discovery
 - **List filtering** — control which tools, prompts, and resources appear in list responses per-client
 - **OpenTelemetry native** — operation duration histograms and method-level tracking tagged by tool names and resource URIs
-- **Triple Gate architecture** (March 2026) — composable safety pipeline with parallel guard execution, multi-provider failover, token-level cost controls, IBM Granite Guardian integration, and **Regex Guard** for custom guard rules
+- **[Triple Gate architecture](https://www.businesswire.com/news/home/20260316864823/en/Traefik-Labs-Advances-LLM-and-MCP-Runtime-Governance-with-Composable-Safety-Pipeline-Multi-Provider-Resilience-and-Token-Level-Cost-Controls)** (announced March 16, 2026) — composable safety pipeline with parallel guard execution, multi-provider failover, token-level cost controls, IBM Granite Guardian integration, and **Regex Guard** for custom guard rules
 - **Agent-aware error handling** — structured, schema-compliant refusal responses that agents can process gracefully
 - **Session-smart routing** — stabilizes long-running agent workflows with persistent session handling
 
@@ -242,7 +242,7 @@ ContextForge federates MCP servers, A2A agents, and REST/gRPC APIs into a single
 **What makes it stand out:**
 - **Protocol federation** — unifies MCP, REST, gRPC, and A2A behind one endpoint. REST/gRPC services are auto-translated into MCP-compliant tools
 - **A2A agent integration** — register external AI agents and expose them as MCP tools
-- **40+ security controls** (v1.0.0-RC2, March 2026) — SSRF strict defaults, OIDC id_token verification, OAuth secret at-rest protection, WebSocket/reverse-proxy gating, token scoping default-deny, session ownership enforcement
+- **[40+ security controls](https://github.com/IBM/mcp-context-forge/discussions/3548)** (v1.0.0-RC2, March 2026) — SSRF strict defaults, OIDC id_token verification, OAuth secret at-rest protection, WebSocket/reverse-proxy gating, token scoping default-deny, session ownership enforcement
 - **RBAC role management API** (RC2+) — team-scoped permission enforcement, ALLOW_PUBLIC_VISIBILITY flag, mTLS support
 - **Plugin framework** (decoupled in RC2) — plugins are now independent from core, enabling third-party plugin development
 - **Admin UI** — 30+ fixes in RC2, web interface for real-time management and log monitoring
@@ -266,7 +266,7 @@ Bifrost is both an LLM gateway and an MCP gateway in one binary. Built in Go for
 **What makes it stand out:**
 - **11µs overhead** — sub-millisecond latency at 5,000 RPS, [50x faster than LiteLLM](https://github.com/maximhq/bifrost) (per Bifrost's own benchmarks at [getmaxim.ai](https://www.getmaxim.ai/bifrost/resources/benchmarks))
 - **Dual gateway** — LLM routing (15+ providers) and MCP gateway (tool orchestration) in one
-- **MCP Gateway with governance** (April 2026) — centralized access control, cost governance, and policy enforcement for all MCP tool connections. [Claims 92% token cost reduction at scale](https://www.getmaxim.ai/blog/bifrost-mcp-gateway) through Code Mode + tool aggregation (per Bifrost's own published benchmarks)
+- **MCP Gateway with governance** (April 2026) — centralized access control, cost governance, and policy enforcement for all MCP tool connections. [Claims a 92.8% token cost reduction at scale](https://www.getmaxim.ai/bifrost/blog/bifrost-mcp-gateway-access-control-cost-governance-and-92-lower-token-costs-at-scale) through Code Mode + tool aggregation, in benchmarks at 508 tools/16 servers (per Bifrost's own published benchmarks)
 - **First-class tool logging** — every tool execution logged with tool name, server origin, arguments, result, latency, virtual key, and parent LLM request
 - **Code Mode + Agent Mode** — supports Cloudflare-style Code Mode and direct agent execution
 - **Tool filtering and hosting** — expose only the tools you need, host tools directly
@@ -285,14 +285,14 @@ Bifrost is both an LLM gateway and an MCP gateway in one binary. Built in Go for
 
 **Stars:** 2,500 | **Language:** Rust (57%), Go (29%) | **License:** Apache 2.0 | **Transport:** Multiple
 
-Built from the CNCF kgateway project, Agent Gateway is a Rust-based proxy for agent-to-agent and agent-to-tool communication. Now housed under The Linux Foundation (as of August 2025) with growing enterprise backing.
+Built from the CNCF kgateway project, Agent Gateway is a Rust-based proxy for agent-to-agent and agent-to-tool communication. Now housed under [The Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-welcomes-agentgateway-project-to-accelerate-ai-agent-adoption-while-maintaining-security-observability-and-governance) (as of August 25, 2025) with growing enterprise backing.
 
 **What makes it stand out:**
-- **Linux Foundation governance** (August 2025) — moved from CNCF Sandbox to broader Linux Foundation governance, expanding community collaboration
+- **[Linux Foundation governance](https://www.linuxfoundation.org/press/linux-foundation-welcomes-agentgateway-project-to-accelerate-ai-agent-adoption-while-maintaining-security-observability-and-governance)** (August 25, 2025) — moved from CNCF Sandbox to broader Linux Foundation governance, expanding community collaboration
 - **MCP OAuth 2.1** — tool-level RBAC, secure token exchange, and cryptographic audit trails
 - **MCP + A2A** — supports both Model Context Protocol and Agent-to-Agent protocol
-- **Solo Enterprise** (launched March 2026) — enterprise distribution with advanced security, observability, and governance. Includes Microsoft Entra SSO integration for MCP
-- **v1.1.0** (April 9, 2026) — latest release with enhanced capabilities
+- **[Solo Enterprise](https://www.solo.io/blog/introducing-solo-enterprise-for-agentgateway)** (announced October 2025) — enterprise distribution with advanced security, observability, and governance. Solo.io separately published a pattern for [Microsoft Entra ID SSO with agentgateway](https://www.solo.io/blog/enterprise-mcp-sso-with-microsoft-entra-and-agentgateway) (January 2026)
+- **[v1.1.0](https://github.com/agentgateway/agentgateway/releases)** (April 2026) — latest release at time of writing with enhanced capabilities; see the releases page for the current version
 - **Multi-tenancy** — multiple tenants with isolated resource sets
 - **Legacy API support** — transforms OpenAPI specs into MCP resources
 - **xDS dynamic config** — configuration updates without downtime (like Envoy)
@@ -322,7 +322,7 @@ Built on top of Envoy Proxy, Envoy AI Gateway adds first-class MCP support throu
 - **Dual deployment** — works in both standalone mode and Kubernetes environments with identical configurations
 
 **Limitations:**
-- v0.5.0 (January 2026) — still early, MCP support is new
+- [v0.5.0 (January 23, 2026)](https://aigateway.envoyproxy.io/release-notes/v0.5/) — still early; MCPRoute itself debuted in [v0.4.0 (November 2025)](https://github.com/envoyproxy/ai-gateway/releases), with v0.5.0 adding CEL-based MCP authorization
 - Envoy-based — requires familiarity with Envoy configuration patterns
 - No A2A support — MCP only
 - No TBAC or fine-grained task-based authorization (uses OAuth + tool filtering)
@@ -334,7 +334,7 @@ Built on top of Envoy Proxy, Envoy AI Gateway adds first-class MCP support throu
 
 **Stars:** 365 | **Language:** Python | **License:** Open source | **Transport:** stdio, SSE
 
-The first MCP gateway designed specifically for security, with reputation scanning, PII detection, and prompt injection defense.
+[Lasso's MCP Gateway](https://github.com/lasso-security/mcp-gateway) bills itself as the first MCP gateway designed specifically for security, with reputation scanning, PII detection, and prompt injection defense.
 
 **What makes it stand out:**
 - **Security Scanner** — analyzes MCP server reputation and security risks before loading them. Includes tool description scanning with pattern matching for suspicious capabilities
@@ -355,7 +355,7 @@ The first MCP gateway designed specifically for security, with reputation scanni
 
 **Stars:** 43 | **Language:** TypeScript | **License:** Elastic License 2.0 | **Transport:** OAuth 2.0, MCP proxy
 
-Peta is "1Password for AI agents" — a zero-trust credential management layer for MCP.
+[Peta](https://github.com/dunialabs/peta-core) is "1Password for AI agents" — a zero-trust credential management layer for MCP.
 
 **What makes it stand out:**
 - **Encrypted vault** — PBKDF2 + AES-GCM encryption at rest, secrets injected server-side at execution time — agents never see raw API keys
@@ -402,7 +402,7 @@ Peta is "1Password for AI agents" — a zero-trust credential management layer f
 
 ## What's Missing
 
-- **NGINX MCP is a cautionary tale** — nginx-ui added MCP support but shipped CVE-2026-33032 (CVSS 9.8), the first major MCP exploit in the wild. No official NGINX Inc. MCP server exists for core NGINX gateway management
+- **NGINX MCP is a cautionary tale** — nginx-ui added MCP support but shipped [CVE-2026-33032 (CVSS 9.8)](https://thehackernews.com/2026/04/critical-nginx-ui-vulnerability-cve.html), the first major MCP exploit in the wild. No official NGINX Inc. MCP server exists for core NGINX gateway management
 - ~~**No Envoy MCP server**~~ — **FILLED:** Envoy AI Gateway (1.5K stars) now ships MCPRoute for native MCP traffic handling
 - **No HAProxy MCP server** — another widely deployed proxy with zero MCP presence
 - **No unified multi-gateway management** — no server lets you manage Kong + Cloudflare + AWS from one interface
