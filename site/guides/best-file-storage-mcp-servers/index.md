@@ -29,15 +29,17 @@ What surprised us: the landscape flipped in a single month. Google, Microsoft, a
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| **Local filesystem** | [Official Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 84,300 (monorepo) | [mark3labs/mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) (633, Go) |
-| **Google Drive / Workspace** | [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,200 | [Google Official Drive MCP](https://developers.google.com/workspace/guides/configure-mcp-servers) (managed remote, NEW) |
-| **AWS S3** | [aws-samples/sample-mcp-server-s3](https://github.com/aws-samples/sample-mcp-server-s3) | 80 | [txn2/mcp-s3](https://github.com/txn2/mcp-s3) (Go, multi-account) |
-| **Dropbox** | [Dropbox Official Remote MCP](https://help.dropbox.com/integrations/connect-dropbox-mcp-server) | Beta (NEW) | [amgadabdelhafez/dbx-mcp-server](https://github.com/amgadabdelhafez/dbx-mcp-server) (27, self-hosted) |
-| **OneDrive / SharePoint** | [Work IQ OneDrive + SharePoint](https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview) | Official (NEW) | [ftaricano/mcp-onedrive-sharepoint](https://github.com/ftaricano/mcp-onedrive-sharepoint) (5, self-hosted) |
-| **Box** | [box-community/mcp-server-box](https://github.com/box-community/mcp-server-box) | 100 | [box/mcp-server-box-remote](https://github.com/box/mcp-server-box-remote) (hosted) |
-| **MinIO / S3-compatible** | [minio/mcp-server-aistor](https://github.com/minio/mcp-server-aistor) | 39 | [ucesys/minio-python-mcp](https://github.com/ucesys/minio-python-mcp) (4) |
-| **FTP / SFTP** | [alxspiker/mcp-server-ftp](https://github.com/alxspiker/mcp-server-ftp) | 16 | [gradyyoung/sftp-ssh-mcp](https://github.com/gradyyoung/sftp-ssh-mcp) (6) |
-| **Multi-cloud (universal)** | [Xuanwo/mcp-server-opendal](https://github.com/Xuanwo/mcp-server-opendal) | 34 | — |
+| **Local filesystem** | [Official Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | 89,400 (monorepo) | [mark3labs/mcp-filesystem-server](https://github.com/mark3labs/mcp-filesystem-server) (675, Go) |
+| **Google Drive / Workspace** | [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 3,000 | [Google Official Drive MCP](https://developers.google.com/workspace/guides/configure-mcp-servers) (managed remote, NEW) |
+| **AWS S3** | [aws-samples/sample-mcp-server-s3](https://github.com/aws-samples/sample-mcp-server-s3) | 78 | [txn2/mcp-s3](https://github.com/txn2/mcp-s3) (Go, multi-account) |
+| **Dropbox** | [Dropbox Official Remote MCP](https://help.dropbox.com/integrations/connect-dropbox-mcp-server) | Beta (NEW) | [amgadabdelhafez/dbx-mcp-server](https://github.com/amgadabdelhafez/dbx-mcp-server) (29, self-hosted) |
+| **OneDrive / SharePoint** | [Work IQ OneDrive + SharePoint](https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview) | Official (NEW) | [ftaricano/mcp-onedrive-sharepoint](https://github.com/ftaricano/mcp-onedrive-sharepoint) (7, self-hosted) |
+| **Box** | [box-community/mcp-server-box](https://github.com/box-community/mcp-server-box) | 102 | [box/mcp-server-box-remote](https://github.com/box/mcp-server-box-remote) (hosted) |
+| **MinIO / S3-compatible** | [minio/mcp-server-aistor](https://github.com/minio/mcp-server-aistor) | 41 | [ucesys/minio-python-mcp](https://github.com/ucesys/minio-python-mcp) (6) |
+| **FTP / SFTP** | [alxspiker/mcp-server-ftp](https://github.com/alxspiker/mcp-server-ftp) | 25 | [gradyyoung/sftp-ssh-mcp](https://github.com/gradyyoung/sftp-ssh-mcp) (9) |
+| **Multi-cloud (universal)** | [Xuanwo/mcp-server-opendal](https://github.com/Xuanwo/mcp-server-opendal) | 35 | — |
+
+*Star counts above verified live against GitHub as of August 2026; the "What Changed" table below preserves the original March→April 2026 snapshot for historical comparison.*
 
 ## Local Filesystem Servers
 
@@ -45,7 +47,7 @@ These give AI agents controlled access to files on your machine. They're the fou
 
 ### Official Filesystem — The Winner
 
-**Stars:** 84,300 (monorepo) | **Language:** TypeScript | **License:** MIT
+**Stars:** 89,400 (monorepo) | **Language:** TypeScript | **License:** MIT
 
 The reference implementation from Anthropic, included in the [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo. It's the default filesystem server recommended by most MCP clients and the one most developers start with.
 
@@ -70,7 +72,7 @@ Both were patched in version 2025.7.1. **If you're running an older version, upd
 
 ### mark3labs/mcp-filesystem-server — Go Alternative
 
-**Stars:** 633 | **Language:** Go | **License:** MIT
+**Stars:** 675 | **Language:** Go | **License:** MIT
 
 A Go reimplementation of the official filesystem server. Single binary, no Node.js dependency. Docker image available.
 
@@ -88,7 +90,7 @@ A Go reimplementation of the official filesystem server. Single binary, no Node.
 
 ### cyanheads/filesystem-mcp-server — HTTP + JWT Auth
 
-**Stars:** 34 | **Language:** TypeScript | **License:** Apache 2.0
+**Stars:** 47 | **Language:** TypeScript | **License:** Apache 2.0
 
 Adds HTTP transport with JWT authentication on top of standard filesystem operations. Supports both STDIO and HTTP modes.
 
@@ -105,14 +107,14 @@ The Google Drive MCP story transformed in March–April 2026. Google shipped off
 Google now ships fully-managed, remote MCP servers for Workspace as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/guides/configure-mcp-servers). No self-hosting needed — Google runs the infrastructure.
 
 **What makes it stand out:**
-- **7 tools** — create_file, download_file_content, get_file_metadata, get_file_permissions, list_recent_files, read_file_content, search_files
+- **8 tools** — copy_file, create_file, download_file_content, get_file_metadata, get_file_permissions, list_recent_files, read_file_content, search_files ([per Google's current documentation](https://developers.google.com/workspace/guides/configure-mcp-servers); `copy_file` was added after this guide's original April 2026 check, when the count was 7)
 - **Managed remote** — Google hosts it, no server to run or maintain
-- **Part of a suite** — alongside Gmail (10 tools), Calendar (8 tools), Chat (2 tools), and People API (3 tools)
+- **Part of a suite** — alongside Gmail (9 tools), Calendar (8 tools), Chat (4 tools), and People API (3 tools), [per Google's documentation](https://developers.google.com/workspace/guides/configure-mcp-servers)
 - **Enterprise-ready** — built on Google's existing API infrastructure with global endpoints
 
 **Limitations:**
 - Developer Preview — not yet GA, may change
-- Fewer tools than taylorwilsdon's community server (7 vs 12+ services)
+- Fewer tools than taylorwilsdon's community server (8 vs 12+ services)
 - Requires Google Cloud project with OAuth 2.0 credentials
 - No Docs/Sheets/Slides editing — just Drive file operations
 
@@ -120,7 +122,7 @@ Google now ships fully-managed, remote MCP servers for Workspace as part of the 
 
 ### taylorwilsdon/google_workspace_mcp — The Community Winner
 
-**Stars:** 2,200 | **Language:** Python | **License:** MIT
+**Stars:** 3,000 | **Language:** Python | **License:** MIT
 
 Still the most comprehensive Google Workspace MCP server, now covering **12 services**: Gmail, Drive, Calendar, Docs, Sheets, Slides, Forms, Chat, Apps Script, Tasks, Contacts, and Search.
 
@@ -129,7 +131,7 @@ Still the most comprehensive Google Workspace MCP server, now covering **12 serv
 - **OAuth 2.1** — modern authentication with multi-user bearer token support for organizations
 - **Streamable HTTP mode** — recommended modern transport for MCP clients
 - **Stateless mode** — fixed in recent updates to properly reach FastMCP's stateless_http runtime flag. Before this fix, the app advertised stateless behavior while FastMCP still kept in-memory sessions
-- **1,954 commits** — heavily maintained with active development
+- **2,604 commits** — heavily maintained with active development
 - **Tiered access levels** — core, extended, and complete tool sets plus granular permissions and read-only mode
 - **Re-auth improvements** — now uses `select_account` when user already has required scopes instead of forcing consent; preserves existing refresh token when Google omits it on reauth
 
@@ -142,7 +144,7 @@ Still the most comprehensive Google Workspace MCP server, now covering **12 serv
 
 ### felores/gdrive-mcp-server — Lightweight Read-Only
 
-**Stars:** 67 | **Language:** JavaScript | **License:** MIT
+**Stars:** 72 | **Language:** JavaScript | **License:** MIT
 
 A minimal Google Drive server with just two tools: `gdrive_search` and `gdrive_read_file`. Enforces read-only scopes — the AI can search and read but never modify or delete files.
 
@@ -164,7 +166,7 @@ AWS has official MCP presence, but the S3 story is fragmented across multiple re
 
 ### aws-samples/sample-mcp-server-s3 — The Winner
 
-**Stars:** 80 | **Language:** Python | **License:** MIT-0
+**Stars:** 78 | **Language:** Python | **License:** MIT-0
 
 An official AWS sample demonstrating S3 access via MCP. Three tools: ListBuckets, ListObjectsV2, and GetObject. Supports PDF document retrieval.
 
@@ -182,7 +184,7 @@ An official AWS sample demonstrating S3 access via MCP. Three tools: ListBuckets
 
 ### txn2/mcp-s3 — Multi-Account Go Server
 
-**Stars:** 1 | **Language:** Go | **License:** Apache 2.0
+**Stars:** 6 | **Language:** Go | **License:** Apache 2.0
 
 A Go-based S3 server with broader capabilities and safety controls.
 
@@ -196,7 +198,7 @@ A Go-based S3 server with broader capabilities and safety controls.
 
 ### samuraikun/aws-s3-mcp — TypeScript with Multiple Transports
 
-**Stars:** 23 | **Language:** TypeScript | **License:** MIT
+**Stars:** 29 | **Language:** TypeScript | **License:** MIT
 
 Supports STDIO, HTTP, and streamable HTTP transports. Handles both text and binary file retrieval with prefix filtering. MinIO compatible.
 
@@ -204,7 +206,7 @@ Supports STDIO, HTTP, and streamable HTTP transports. Handles both text and bina
 
 ### AWS Official S3 Tables
 
-The [awslabs/mcp](https://github.com/awslabs/mcp) monorepo (8,800 stars) includes an S3 Tables MCP server for table-formatted S3 data. It's specialized for structured data queries, not general file management. Note: as of May 2025, AWS removed SSE transport support from all their MCP servers, moving to Streamable HTTP only.
+The [awslabs/mcp](https://github.com/awslabs/mcp) monorepo (9,600 stars) includes an S3 Tables MCP server for table-formatted S3 data. It's specialized for structured data queries, not general file management. Note: as of May 2025, AWS removed SSE transport support from all their MCP servers, moving to Streamable HTTP only.
 
 ## Dropbox
 
@@ -231,7 +233,7 @@ Dropbox now hosts an official remote MCP server at `mcp.dropbox.com` with file m
 
 ### amgadabdelhafez/dbx-mcp-server — Self-Hosted Alternative
 
-**Stars:** 27 | **Language:** TypeScript | **License:** MIT
+**Stars:** 29 | **Language:** TypeScript | **License:** MIT
 
 The most complete community Dropbox file management server, with full CRUD operations and sharing. Still relevant for teams that need self-hosted control.
 
@@ -245,7 +247,7 @@ The most complete community Dropbox file management server, with full CRUD opera
 
 ### ngs/dropbox-mcp-server — Large Files + Version History
 
-**Stars:** 3 | **Language:** Go | **License:** MIT
+**Stars:** 6 | **Language:** Go | **License:** MIT
 
 A Go implementation with 17+ tools, including features neither the official nor TypeScript server offers.
 
@@ -258,7 +260,7 @@ A Go implementation with 17+ tools, including features neither the official nor 
 
 ### Dropbox Dash MCP — Enterprise Search
 
-Dropbox also offers a separate **Dash remote MCP server** (updated April 14, 2026) and a **local Dash MCP server** for AI-powered search across connected services. The original `dropbox/mcp-server-dash` (9 stars, Python) provides `dash_company_search` and `dash_get_file_details`. These focus on search and context, not file management — use the main Dropbox remote MCP for file operations.
+Dropbox also offers a separate **Dash remote MCP server** (updated April 14, 2026) and a **local Dash MCP server** for AI-powered search across connected services. The original `dropbox/mcp-server-dash` (10 stars, Python) provides `dash_company_search` and `dash_get_file_details`. These focus on search and context, not file management — use the main Dropbox remote MCP for file operations.
 
 ## OneDrive / SharePoint
 
@@ -271,13 +273,13 @@ Microsoft completely revamped its MCP story in March 2026. The old combined OneD
 Microsoft's official OneDrive MCP server with 14 tools for personal OneDrive file management.
 
 **What makes it stand out:**
-- **14 tools** — getOnedrive, getFolderChildrenInMyOnedrive, findFileOrFolderInMyDrive, getFileOrFolderMetadata (by ID or URL), readSmallTextFile, createSmallTextFile, createFolder, renameFileOrFolder, deleteFileOrFolder, moveSmallFile, shareFileOrFolder, setSensitivityLabelOnFile
-- **Concurrency control** — eTags on delete/rename/move operations prevent conflicts in concurrent editing
+- **17 tools** — getOnedrive, getFolderChildrenInMyOnedrive, findFileOrFolderInMyOnedrive, getFileOrFolderMetadataInMyOnedrive, getFileOrFolderMetadataByUrl, readSmallTextFileFromMyOnedrive, createSmallTextFileInMyOnedrive, createSmallBinaryFileInMyOnedrive, readSmallBinaryFileFromMyOnedrive, createFolderInMyOnedrive, renameFileOrFolderInMyOnedrive, deleteFileOrFolderInMyOnedrive, copyFileOrFolderInMyOnedrive, moveFileOrFolderInMyOnedrive, checkOperationStatusInMyOnedrive, shareFileOrFolderInMyOnedrive, setSensitivityLabelOnFileInMyOnedrive ([per Microsoft's current tool reference](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-onedrive-work-iq); includes binary file read/write, which this guide's earlier check missed)
+- **Concurrency control** — eTags on rename/delete operations prevent conflicts in concurrent editing
 - **Sensitivity labels** — apply/remove Microsoft Information Protection labels with audit justification
 - **Sharing** — role-based invitations (read, write) with email notifications
 
 **Limitations:**
-- **Requires M365 Copilot license** (~$30/user/month) — not free
+- **Requires M365 Copilot license** (~$30/user/month, [per Microsoft's pricing page](https://www.microsoft.com/microsoft-365-copilot/pricing/individuals)) — not free
 - File operations limited to ≤5MB — no large file support
 - Preview — tool names and parameters may change
 - Folder listing capped at 20 items per call
@@ -291,23 +293,22 @@ Microsoft's official OneDrive MCP server with 14 tools for personal OneDrive fil
 Microsoft's official SharePoint MCP server with a massive 33 tools covering files, folders, lists, columns, and sharing.
 
 **What makes it stand out:**
-- **33 tools** — site discovery (findSite, getSiteByPath, listSubsites), document libraries (list, get default), file operations (create/read/delete/rename/move/copy text and binary files), folder management, async operations (copyFileOrFolder + checkOperationStatus), list operations (CRUD for lists, items, columns), sharing with roles, sensitivity labels
-- **Binary file support** — read and create binary files via base64 encoding (unique among the Work IQ file servers)
-- **Cross-library copy** — async file/folder copy across different document libraries
+- **35 tools** — site discovery (findSite, getSiteByPath, listSubsites), document libraries (list, get default), file operations (create/read/delete/rename/move/copy text and binary files), folder management, async operations (copyFileOrFolder + checkOperationStatus), list operations (CRUD for lists, items, columns), sharing with roles, sensitivity labels ([per Microsoft's current tool reference](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-sharepoint-work-iq))
+- **Binary file support** — read and create binary files via base64 encoding (Work IQ OneDrive also supports this; it is not unique to SharePoint, contrary to what an earlier version of this guide claimed)
+- **Cross-library copy and move** — async file/folder copy and move across different document libraries
 - **Full list management** — create lists from templates, manage columns with 20+ types, CRUD list items
 - **Upload from URL** — copy files directly from SharePoint/OneDrive URLs
 
 **Limitations:**
-- **Requires M365 Copilot license** (~$30/user/month)
+- **Requires M365 Copilot license** (~$30/user/month, [per Microsoft's pricing page](https://www.microsoft.com/microsoft-365-copilot/pricing/individuals))
 - File operations limited to ≤5MB
-- Move operations only within the same document library
 - Preview — may change
 
 **Best for:** SharePoint-heavy organizations that need AI agents to manage sites, document libraries, lists, and files.
 
 ### ftaricano/mcp-onedrive-sharepoint — Self-Hosted Alternative
 
-**Stars:** 5 | **Language:** TypeScript | **License:** —
+**Stars:** 7 | **Language:** TypeScript | **License:** —
 
 The community option covering OneDrive, SharePoint, and Excel in one self-hosted server. Recent updates include working ESLint config, executable tests, reusable Graph helpers, and fixed `npm run setup-auth`.
 
@@ -336,7 +337,7 @@ Box stands out as the enterprise storage provider with the best MCP support — 
 
 ### box-community/mcp-server-box — The Winner
 
-**Stars:** 100 | **Language:** Python | **License:** MIT
+**Stars:** 102 | **Language:** Python | **License:** MIT
 
 The official self-hosted Box MCP server with enterprise-grade features.
 
@@ -354,7 +355,7 @@ The official self-hosted Box MCP server with enterprise-grade features.
 
 ### box/mcp-server-box-remote — Cloud Hosted
 
-**Stars:** 1 | **License:** MIT
+**Stars:** 6 | **License:** MIT
 
 The official remote/cloud-hosted alternative at mcp.box.com. No self-hosting needed.
 
@@ -369,7 +370,7 @@ The official remote/cloud-hosted alternative at mcp.box.com. No self-hosting nee
 
 ### minio/mcp-server-aistor — The Winner
 
-**Stars:** 39 | **Language:** Containerized | **License:** —
+**Stars:** 41 | **Language:** Containerized | **License:** —
 
 The official MinIO MCP server with an impressive 30+ tools and granular permission controls.
 
@@ -391,7 +392,7 @@ Legacy protocols, but still widely used. Options are limited but functional.
 
 ### alxspiker/mcp-server-ftp — The Winner
 
-**Stars:** 16 | **Language:** TypeScript | **License:** MIT
+**Stars:** 25 | **Language:** TypeScript | **License:** MIT
 
 The most complete FTP-specific MCP server.
 
@@ -401,7 +402,7 @@ The most complete FTP-specific MCP server.
 
 ### gradyyoung/sftp-ssh-mcp — SFTP + SSH
 
-**Stars:** 6 | **Language:** JavaScript | **License:** MIT
+**Stars:** 9 | **Language:** JavaScript | **License:** MIT
 
 Combines SFTP file transfer with SSH shell command execution. Supports password and private key authentication.
 
@@ -411,7 +412,7 @@ Combines SFTP file transfer with SSH shell command execution. Supports password 
 
 ### Xuanwo/mcp-server-opendal — The Universal Adapter
 
-**Stars:** 34 | **Language:** Python | **License:** Apache 2.0
+**Stars:** 35 | **Language:** Python | **License:** Apache 2.0
 
 Built on [Apache OpenDAL](https://github.com/apache/opendal), this server provides unified access to **S3, Azure Blob Storage, Google Cloud Storage, and 40+ other storage backends** through a single MCP server.
 
@@ -489,7 +490,7 @@ In a single month (March–April 2026), Google, Microsoft, and Dropbox all shipp
 
 ### 2. File MCP security is proven broken
 
-Anthropic's own filesystem server — the reference implementation used by most MCP setups — had critical sandbox escape vulnerabilities (CVE-2025-53109, CVE-2025-53110). A naive `startsWith()` path check and missing symlink validation let attackers escape the directory sandbox entirely. Across the broader ecosystem, [82% of file-operation MCP server implementations are vulnerable to path traversal](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) (per Endor Labs' analysis of 2,614 MCP implementations). This isn't theoretical — these are the specific patterns that file storage servers exhibit. Run the latest versions, use containers, and verify your path validation.
+Anthropic's own filesystem server — the reference implementation used by most MCP setups — had critical sandbox escape vulnerabilities (CVE-2025-53109, CVE-2025-53110). A naive `startsWith()` path check and missing symlink validation let attackers escape the directory sandbox entirely. Across the broader ecosystem, [82% use file-system operations prone to path traversal, CWE-22](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) (per Endor Labs' analysis of 2,614 MCP implementations overall — the finding is about the full analyzed population, not a "file-operation" subcategory, and describes an exposure pattern rather than confirmed exploitable vulnerabilities in each one). This isn't theoretical — these are the specific patterns that file storage servers exhibit. Run the latest versions, use containers, and verify your path validation.
 
 ### 3. Managed remote is becoming the default
 
@@ -497,13 +498,13 @@ Google, Microsoft, and Dropbox all chose managed remote hosting for their offici
 
 ## What's Missing
 
-- ~~No maintained official Google Drive MCP server~~ — **FILLED (April 2026).** Google shipped managed remote MCP servers for Workspace including Drive (7 tools). Developer Preview, not yet GA
-- ~~No official OneDrive/SharePoint MCP server~~ — **FILLED (March 2026).** Microsoft shipped Work IQ OneDrive (14 tools) and Work IQ SharePoint (33 tools). Requires M365 Copilot license
+- ~~No maintained official Google Drive MCP server~~ — **FILLED (April 2026).** Google shipped managed remote MCP servers for Workspace including Drive (now 8 tools). Developer Preview, not yet GA
+- ~~No official OneDrive/SharePoint MCP server~~ — **FILLED (March 2026).** Microsoft shipped Work IQ OneDrive (now 17 tools) and Work IQ SharePoint (now 35 tools). Requires M365 Copilot license
 - ~~No official Dropbox file management server~~ — **FILLED (April 2026).** Dropbox shipped remote MCP server (Beta) at mcp.dropbox.com with full file operations
 - **No iCloud MCP server** — Apple's ecosystem is completely absent from the MCP world. No official or community implementation exists
 - **No Backblaze B2 MCP server** — popular S3-compatible storage with no dedicated MCP support (OpenDAL covers it generically)
 - **No file sync/conflict resolution** — no MCP server handles bidirectional file sync between local and cloud storage
-- **File MCP security is fundamentally weak** — [82% of file-operation MCP server implementations vulnerable to path traversal](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) (Endor Labs), reference implementation had sandbox escape CVEs, no standard approach to path validation across the ecosystem
+- **File MCP security is fundamentally weak** — [82% use file-system operations prone to path traversal, CWE-22](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) (Endor Labs' analysis of 2,614 MCP implementations overall), reference implementation had sandbox escape CVEs, no standard approach to path validation across the ecosystem
 - **5MB file limits on official servers** — Microsoft Work IQ limits all file operations to ≤5MB. Community servers handle larger files but lack official backing
 - **No file preview/transformation** — no server generates thumbnails, converts formats, or previews documents. AI agents get raw content or nothing
 

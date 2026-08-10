@@ -13,15 +13,17 @@ We've published [in-depth reviews](/reviews/) covering 40+ CMS MCP servers acros
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| WordPress (official) | [WordPress/mcp-adapter](/reviews/cms-content-management-mcp-servers/) | 887 | [docdyhr/mcp-wordpress](/reviews/cms-content-management-mcp-servers/) (81 stars, 59 tools) |
-| WordPress (standalone) | [docdyhr/mcp-wordpress](/reviews/cms-content-management-mcp-servers/) | 81 | [InstaWP/mcp-wp](/reviews/cms-content-management-mcp-servers/) (77 stars, multi-site) |
-| Headless CMS (remote-first) | [Sanity MCP](/reviews/cms-content-management-mcp-servers/) | — | [Contentful MCP](/reviews/cms-content-management-mcp-servers/) (50 stars, AI Actions) |
-| Headless CMS (open-source) | [Directus MCP](/reviews/cms-content-management-mcp-servers/) | 76 | [Strapi MCP](/reviews/cms-content-management-mcp-servers/) (69 stars, meta-tools) |
-| Traditional CMS | [MFYDev/ghost-mcp](/reviews/cms-content-management-mcp-servers/) | 168 | [Drupal MCP module](/reviews/cms-content-management-mcp-servers/) (dynamic tools) |
-| Website builders | [Webflow MCP](/reviews/cms-content-management-mcp-servers/) | 123 | [Shopify Official MCP](/reviews/cms-content-management-mcp-servers/) (4 servers, GA) |
+| WordPress (official) | [WordPress/mcp-adapter](/reviews/cms-content-management-mcp-servers/) | 1,600 | [docdyhr/mcp-wordpress](/reviews/cms-content-management-mcp-servers/) (102 stars, 71 tools) |
+| WordPress (standalone) | [docdyhr/mcp-wordpress](/reviews/cms-content-management-mcp-servers/) | 102 | [InstaWP/mcp-wp](/reviews/cms-content-management-mcp-servers/) (91 stars, multi-site) |
+| Headless CMS (remote-first) | [Sanity MCP](/reviews/cms-content-management-mcp-servers/) | — | [Contentful MCP](/reviews/cms-content-management-mcp-servers/) (58 stars, AI Actions) |
+| Headless CMS (open-source) | [Directus MCP](/reviews/cms-content-management-mcp-servers/) | 83 | [Strapi MCP](/reviews/cms-content-management-mcp-servers/) (76 stars, meta-tools) |
+| Traditional CMS | [MFYDev/ghost-mcp](/reviews/cms-content-management-mcp-servers/) | 220 | [Drupal MCP module](/reviews/cms-content-management-mcp-servers/) (dynamic tools) |
+| Website builders | [Webflow MCP](/reviews/cms-content-management-mcp-servers/) | 135 | [Shopify Official MCP](/reviews/cms-content-management-mcp-servers/) (4 servers, GA) |
 | E-commerce | [Shopify Official MCP](/reviews/cms-content-management-mcp-servers/) | Official | [Wix MCP](/reviews/cms-content-management-mcp-servers/) (official, every site) |
-| Developer-focused CMS | [Storyblok Official MCP](/reviews/cms-content-management-mcp-servers/) | Official | [disruption-hub/payloadcmsmcp](/reviews/cms-content-management-mcp-servers/) (112 stars, dev tools) |
-| AI-native CMS | [EmDash (Cloudflare)](/reviews/cms-content-management-mcp-servers/) | 9,415 | Built-in MCP, agent-first, v0.5.0 |
+| Developer-focused CMS | [Storyblok Official MCP](/reviews/cms-content-management-mcp-servers/) | Official | [disruption-hub/payloadcmsmcp](/reviews/cms-content-management-mcp-servers/) (117 stars, dev tools) |
+| AI-native CMS | [EmDash (Cloudflare)](/reviews/cms-content-management-mcp-servers/) | 11,600 | Built-in MCP, agent-first, v0.32.0 |
+
+*Star counts and tool counts in this table were re-verified against live GitHub/npm data on 2026-08-10 and will drift again over time — treat them as directional, not exact-to-the-day.*
 
 ## Why CMS MCP servers matter
 
@@ -41,31 +43,31 @@ WordPress dominates the CMS MCP space — and for good reason. It's the only maj
 
 **[Full review: CMS & Content Management MCP Servers →](/reviews/cms-content-management-mcp-servers/)** | Rating: 4.5/5
 
-[WordPress/mcp-adapter](https://github.com/WordPress/mcp-adapter) — 887 stars, PHP, official. The strategic choice for any WordPress site.
+[WordPress/mcp-adapter](https://github.com/WordPress/mcp-adapter) — 1,600 stars ([verified live](https://github.com/WordPress/mcp-adapter), up from 887 when this guide first published), PHP, official. The strategic choice for any WordPress site.
 
 **Why it wins:** This isn't just another REST API wrapper. The MCP adapter bridges the **[Abilities API](https://make.wordpress.org/core/2025/11/10/abilities-api-in-wordpress-6-9/)** — a WordPress Core feature introduced in WP 6.9 — to the Model Context Protocol. Any WordPress plugin, theme, or core component that registers "abilities" automatically becomes available to AI agents through MCP. This means the MCP surface grows organically with the plugin ecosystem.
 
-**v0.5.0 shipped April 15, 2026** — a major internal upgrade. Full integration of `wordpress/php-mcp-schema` (typed DTOs instead of hand-built arrays). Protocol version negotiation supporting specs `2025-11-25`, `2025-06-18`, and `2024-11-05`. Security hardening with stricter input validation and fail-closed permission handling. Reduced `SessionManager` write amplification to lower lock contention. Better observability for protocol errors. Migration guide and expanded documentation included.
+**[v0.5.0 shipped April 15, 2026](https://github.com/WordPress/mcp-adapter/releases/tag/v0.5.0)** — a major internal upgrade. Full integration of `wordpress/php-mcp-schema` (typed DTOs instead of hand-built arrays). Protocol version negotiation supporting specs `2025-11-25`, `2025-06-18`, and `2024-11-05`. Security hardening with stricter input validation and fail-closed permission handling. Reduced `SessionManager` write amplification to lower lock contention. Better observability for protocol errors. Migration guide and expanded documentation included.
 
-**WordPress 7.0 delayed to mid-to-late May 2026.** Originally scheduled for April 9, WordPress 7.0 was delayed due to a performance problem in the real-time collaboration feature's data storage layer (cache invalidation and data model issues requiring an architectural fix, not a late-cycle patch). The core team returned to a beta-like testing phase after reaching RC2 — unprecedented in WordPress history. A revised final schedule is expected by April 22, 2026. When it ships, WP 7.0 will merge the **client-side JavaScript Abilities API** (announced March 24 on Make WordPress Core) alongside the server-side PHP API that shipped in WP 6.9. The Connectors UI under Settings gives users a central place in wp-admin to manage external AI connections.
+**WordPress 7.0 shipped without real-time collaboration.** Originally scheduled for April 9, WordPress 7.0 slipped repeatedly; [on May 8, 2026 the core team announced real-time collaboration would not ship in 7.0 at all](https://make.wordpress.org/core/2026/05/08/rtc-removed-from-7-0/), citing race conditions, server load, and memory-efficiency issues found in fuzz testing rather than a late-cycle patch. [WordPress 7.0 ultimately released May 20, 2026](https://www.searchenginejournal.com/wordpress-7-0-will-ship-without-real-time-collaboration/574330/) without that feature (it remains testable in the Gutenberg plugin for a future release). The **client-side JavaScript Abilities API** (announced March 24 on Make WordPress Core) shipped alongside the server-side PHP API that landed in WP 6.9. The Connectors UI under Settings gives users a central place in wp-admin to manage external AI connections.
 
 **Key features:** Multi-server management with unique configurations per server. HTTP transport compliant with MCP 2025-06-18 spec (plus backward compatibility via protocol negotiation). STDIO transport for WP-CLI integration. Custom transport support via defined interfaces. Permission control with granular access. Built-in observability and monitoring.
 
-**WooCommerce extends the pattern to e-commerce.** WooCommerce MCP first shipped as beta in WooCommerce 10.3 and has matured through **WooCommerce 10.7** — solid enough to build on, though still labeled "developer preview." WooCommerce held [April Office Hours](https://developer.woocommerce.com/2026/04/07/april-office-hours-ai-and-mcp-in-your-woo-workflows/) focused on "AI and MCP in your Woo workflows." A third-party community plugin (`iOSDevSK/mcp-for-woocommerce`) has also appeared, supporting STDIO and HTTP streamable transport with optional JWT auth.
+**WooCommerce extends the pattern to e-commerce.** WooCommerce MCP first shipped as beta in WooCommerce 10.3 and has matured through **WooCommerce 10.7** — solid enough to build on, though still labeled "developer preview." WooCommerce held [April Office Hours](https://developer.woocommerce.com/2026/04/07/april-office-hours-ai-and-mcp-in-your-woo-workflows/) focused on "AI and MCP in your Woo workflows." A third-party community plugin ([iOSDevSK/mcp-for-woocommerce](https://github.com/iOSDevSK/mcp-for-woocommerce)) has also appeared, supporting STDIO and HTTP streamable transport with optional JWT auth.
 
 **The catch:** WordPress 7.0 still hasn't shipped. Plugin adoption of the Abilities API is still ramping up. If you need comprehensive WordPress management today (not just what plugins have registered as abilities), a standalone server may cover more ground.
 
 ### Best standalone: docdyhr/mcp-wordpress
 
-[docdyhr/mcp-wordpress](https://github.com/docdyhr/mcp-wordpress) — 81 stars, TypeScript, 59 tools across 10 categories, 436 commits, 96.17% test coverage.
+[docdyhr/mcp-wordpress](https://github.com/docdyhr/mcp-wordpress) — 102 stars, TypeScript, 71 tools, ~76% line coverage ([figures re-verified against the live repo](https://github.com/docdyhr/mcp-wordpress) on 2026-08-10; up from 81 stars / 59 tools when this guide first published — this is a fast-moving project).
 
-**Why it's the standalone pick:** 59 tools covering posts, pages, users, comments, media/attachments, categories/taxonomies, plugins, themes, settings, and performance monitoring. Four authentication methods (Application Passwords, JWT, Basic Auth, API Key). Multi-site support. Intelligent caching with 50-70% performance improvement. 2,200+ tests and 512 security-focused tests.
+**Why it's the standalone pick:** 71 tools covering posts, pages, users, comments, media/attachments, categories/taxonomies, plugins, themes, settings, and performance monitoring. Four authentication methods (Application Passwords, JWT, Basic Auth, API Key). Multi-site support. Intelligent caching with 50-70% performance improvement. 2,750+ tests across 94 files, all passing per the current README.
 
 **Best for:** Teams that need comprehensive WordPress management right now, without waiting for plugins to adopt the Abilities API.
 
 ### Runner-up: InstaWP/mcp-wp
 
-[InstaWP/mcp-wp](https://github.com/InstaWP/mcp-wp) — 77 stars, TypeScript, 40+ tools. Strong multi-site management with smart URL resolution and universal content/taxonomy operations. Added local file uploads (April 2026). Particularly useful for agencies managing multiple WordPress sites.
+[InstaWP/mcp-wp](https://github.com/InstaWP/mcp-wp) — 91 stars, TypeScript, 40+ tools. Strong multi-site management with smart URL resolution and universal content/taxonomy operations. Added local file uploads (April 2026). Particularly useful for agencies managing multiple WordPress sites.
 
 ### The WordPress ecosystem problem
 

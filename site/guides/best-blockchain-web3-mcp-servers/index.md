@@ -7,21 +7,21 @@ Blockchain MCP servers are where AI agents meet onchain. These servers let AI as
 
 We've researched 40+ blockchain and Web3 MCP servers across the entire crypto ecosystem. This guide synthesizes all of that into one page: what's worth using, what's not, and where the gaps are.
 
-*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in March 2026.*
+*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were originally captured in March 2026 and re-verified against live GitHub data on 2026-08-10.*
 
 ## The short version
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| Multi-chain toolkit | [goat-sdk/goat](https://github.com/goat-sdk/goat) | 966 | [strangelove-ventures/web3-mcp](https://github.com/strangelove-ventures/web3-mcp) (10+ chains) |
-| EVM networks | [mcpdotdirect/evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | 362 | [tatumio/blockchain-mcp](https://github.com/tatumio/blockchain-mcp) (130+ networks) |
-| Solana | [sendaifun/solana-mcp](https://github.com/sendaifun/solana-mcp) | 153 | Solana Foundation (official, mcp.solana.com) |
-| Bitcoin & Lightning | [AbdelStark/bitcoin-mcp](https://github.com/AbdelStark/bitcoin-mcp) | 73 | Community alternatives |
-| Agentic wallets & payments | [coinbase/agentkit](https://github.com/coinbase/agentkit) | 1,200 | [coinbase/payments-mcp](https://github.com/coinbase/payments-mcp) (51 stars) |
+| Multi-chain toolkit | [goat-sdk/goat](https://github.com/goat-sdk/goat) | 1,009 | [strangelove-ventures/web3-mcp](https://github.com/strangelove-ventures/web3-mcp) (95 stars, 10+ chains) |
+| EVM networks | [mcpdotdirect/evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | 381 | [tatumio/blockchain-mcp](https://github.com/tatumio/blockchain-mcp) (130+ networks) |
+| Solana | [sendaifun/solana-mcp](https://github.com/sendaifun/solana-mcp) | 162 | Solana Foundation (official, mcp.solana.com) |
+| Bitcoin & Lightning | [AbdelStark/bitcoin-mcp](https://github.com/AbdelStark/bitcoin-mcp) | 76 | Community alternatives |
+| Agentic wallets & payments | [coinbase/agentkit](https://github.com/coinbase/agentkit) | 1,281 | [coinbase/payments-mcp](https://github.com/coinbase/payments-mcp) (57 stars) |
 | DeFi data & trading | [defi-llama MCP](https://github.com/demcp/demcp-defillama-mcp) | — | DexScreener MCP, Jupiter MCP |
 | Cross-chain execution | [deBridge MCP](https://github.com/debridge-finance/debridge-mcp) | — | VeChain AI Terminal (limited) |
 | NFT & marketplace | [thirdweb-dev/ai](https://github.com/thirdweb-dev/ai) (thirdweb-mcp) | — | OpenSea MCP (official hosted) |
-| Market analytics | [CoinGecko MCP](https://github.com/nicobailon/coingecko-mcp-server) | — | CoinMarketCap MCP |
+| Market analytics | [CoinGecko MCP (official)](https://docs.coingecko.com/reference/mcp-server) | — | CoinMarketCap MCP |
 
 ## Why blockchain MCP servers matter
 
@@ -39,7 +39,7 @@ Multi-chain toolkits provide a single MCP server interface to interact with mult
 
 ### The winner: goat-sdk/goat (GOAT — Great Onchain Agent Toolkit)
 
-**Stars:** 966 | **Language:** TypeScript, Python | **Status:** Production
+**Stars:** 1,009 ([verified live](https://github.com/goat-sdk/goat)) | **Language:** TypeScript, Python | **Status:** Production
 
 [goat-sdk/goat](https://github.com/goat-sdk/goat) is the largest agentic finance toolkit for AI agents, built by Crossmint. GOAT provides a single, unified library of onchain actions ready to use across 5 agent frameworks, two programming languages, on any wallet architecture across 30+ chains.
 
@@ -53,7 +53,7 @@ Multi-chain toolkits provide a single MCP server interface to interact with mult
 
 ### Runner-up: strangelove-ventures/web3-mcp
 
-**Stars:** — | **Language:** TypeScript | **Status:** Active
+**Stars:** 95 ([verified live](https://github.com/strangelove-ventures/web3-mcp)) | **Language:** TypeScript | **Status:** Active
 
 [strangelove-ventures/web3-mcp](https://github.com/strangelove-ventures/web3-mcp) — "1 MCP to rule all them chains." Supports Solana, Ethereum, Cardano, XRP Ledger, TON, THORChain, Bitcoin, Litecoin, Dogecoin, and Bitcoin Cash through a unified RPC interface. Environment variable toggles (`ENABLE_SOLANA_TOOLS`, `ENABLE_ETHEREUM_TOOLS`, etc.) let you control which chains are active. Comes from Strangelove Ventures, a well-known Cosmos ecosystem team.
 
@@ -63,7 +63,7 @@ Multi-chain toolkits provide a single MCP server interface to interact with mult
 
 ### Also notable
 
-- **[tatumio/blockchain-mcp](https://github.com/tatumio/blockchain-mcp)** (14 stars) — Access to Tatum's Blockchain Data API and RPC Gateway across 130+ networks. Eight tools covering balances, portfolios, transaction history, NFT metadata, and block queries. Read-focused — excellent for analytics but no write operations. Supports Bitcoin, Ethereum, Solana, Polygon, Arbitrum, Cardano, Stellar, Ripple, and many more.
+- **[tatumio/blockchain-mcp](https://github.com/tatumio/blockchain-mcp)** (15 stars) — Access to Tatum's Blockchain Data API and RPC Gateway across 130+ networks. Eight tools covering balances, portfolios, transaction history, NFT metadata, and block queries. Read-focused — excellent for analytics but no write operations. Supports Bitcoin, Ethereum, Solana, Polygon, Arbitrum, Cardano, Stellar, Ripple, and many more.
 
 ## EVM networks
 
@@ -71,7 +71,7 @@ EVM (Ethereum Virtual Machine) networks are the largest blockchain ecosystem. Th
 
 ### The winner: mcpdotdirect/evm-mcp-server
 
-**Stars:** 362 | **Language:** TypeScript | **Status:** Production
+**Stars:** 381 ([verified live](https://github.com/mcpdotdirect/evm-mcp-server)) | **Language:** TypeScript | **Status:** Production
 
 [mcpdotdirect/evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) is the most comprehensive EVM-focused MCP server, providing 22 tools and 10 AI-guided prompts across 60+ EVM networks (34 mainnets + 26 testnets).
 
@@ -83,7 +83,7 @@ EVM (Ethereum Virtual Machine) networks are the largest blockchain ecosystem. Th
 
 ### Also notable
 
-- **[dcSpark/mcp-server-dcspark](https://github.com/dcSpark/mcp-server-dcspark)** — Cardano + EVM tools. dcSpark builds infrastructure across chains and provides multi-chain read operations.
+- **[dcSpark](https://github.com/dcSpark)** — dcSpark, the team behind the Cardano Multiplatform Lib, maintains a family of chain-specific MCP servers rather than one unified multi-chain server, including [mcp-cryptowallet-evm](https://github.com/dcSpark/mcp-cryptowallet-evm), [mcp-server-etherscan](https://github.com/dcSpark/mcp-server-etherscan), and [mcp-server-helius](https://github.com/dcSpark/mcp-server-helius) (Solana, via Helius).
 - **Etherscan MCP** — Block explorer integration for transaction lookups, contract verification status, and address analytics.
 - **Bankless MCP** — Bankless-branded server for DeFi analytics and Ethereum ecosystem data.
 - **[Chainstack EVM MCP](https://docs.chainstack.com/docs/evm-mcp-server)** — Node provider Chainstack offers an EVM MCP server via their infrastructure, providing reliable RPC access.
@@ -94,7 +94,7 @@ Solana has become a hotbed for AI-agent blockchain interaction, driven by the Se
 
 ### The winner: sendaifun/solana-mcp
 
-**Stars:** 153 | **Language:** TypeScript | **Status:** Production
+**Stars:** 162 ([verified live](https://github.com/sendaifun/solana-mcp)) | **Language:** TypeScript | **Status:** Production
 
 [sendaifun/solana-mcp](https://github.com/sendaifun/solana-mcp) is powered by the Solana Agent Kit, providing 60+ Solana actions through MCP. Asset retrieval, token deployment, wallet management, transfers, NFT minting, domain resolution, and DeFi operations — all exposed as MCP tools.
 
@@ -116,7 +116,7 @@ Bitcoin MCP is smaller than EVM or Solana but covers the essentials — key gene
 
 ### The winner: AbdelStark/bitcoin-mcp
 
-**Stars:** 73 | **Language:** TypeScript | **Status:** Active
+**Stars:** 76 ([verified live](https://github.com/AbdelStark/bitcoin-mcp)) | **Language:** TypeScript | **Status:** Active
 
 [AbdelStark/bitcoin-mcp](https://github.com/AbdelStark/bitcoin-mcp) provides Bitcoin and Lightning Network tools through MCP. Key generation, address validation, transaction decoding, block queries, and Lightning invoice decoding and payment.
 
@@ -136,23 +136,23 @@ This is the fastest-moving category, driven by Coinbase's vision of AI agents as
 
 ### The winner: coinbase/agentkit
 
-**Stars:** 1,200 | **Language:** TypeScript, Python | **Status:** Production
+**Stars:** 1,281 ([verified live](https://github.com/coinbase/agentkit)) | **Language:** TypeScript, Python | **Status:** Production
 
-[coinbase/agentkit](https://github.com/coinbase/agentkit) is Coinbase Developer Platform's toolkit for giving AI agents crypto wallets and onchain interaction capabilities. In February 2026, Coinbase launched **Agentic Wallets** — the first wallet infrastructure specifically designed for autonomous AI agents.
+[coinbase/agentkit](https://github.com/coinbase/agentkit) is Coinbase Developer Platform's toolkit for giving AI agents crypto wallets and onchain interaction capabilities. On [February 11, 2026, Coinbase launched **Agentic Wallets**](https://www.coinbase.com/developer-platform/discover/launches/agentic-wallets) — wallet infrastructure built specifically for autonomous AI agents, giving them an MPC-secured wallet with programmable session caps, per-transaction spend limits, gasless settlement on Base, and native x402 support ([The Block](https://www.theblock.co/post/389524/coinbase-rolls-out-ai-tool-to-give-any-agent-a-wallet)).
 
-**Why it wins:** Coinbase brings institutional-grade infrastructure to agent wallets. Agentic Wallets allow agents to independently hold funds, send payments, trade tokens, earn yield, and transact onchain with built-in security guardrails. The toolkit supports MCP, Claude, LangChain, and other frameworks. Integration with the **x402 protocol** enables autonomous crypto payments between agents without human intervention.
+**Why it wins:** Coinbase brings institutional-grade infrastructure to agent wallets. Agentic Wallets allow agents to independently hold funds, send payments, trade tokens, earn yield, and transact onchain with built-in security guardrails — private keys are isolated in trusted execution environments and every transaction passes through Know Your Transaction (KYT) compliance screening ([Coinbase launch post](https://www.coinbase.com/developer-platform/discover/launches/agentic-wallets)). The toolkit supports MCP, Claude, LangChain, and other frameworks. Integration with the **x402 protocol** enables autonomous crypto payments between agents without human intervention.
 
-**Key features:** Wallet creation and management, token transfers, token trading, yield operations, Base L2 optimization, stablecoin payments, and security guardrails. The **Payments MCP** component (`coinbase/payments-mcp`, 51 stars) specifically enables agentic commerce with on-ramps and stablecoin operations.
+**Key features:** Wallet creation and management, token transfers, token trading, yield operations, Base L2 optimization, stablecoin payments, and security guardrails. The **Payments MCP** component (`coinbase/payments-mcp`, 57 stars) specifically enables agentic commerce with on-ramps and stablecoin operations.
 
-**The strategic angle:** Coinbase is building x402 with Cloudflare and other internet infrastructure companies as a protocol for machine-to-machine payments. AgentKit is the developer interface to that vision. In March 2026, World (Sam Altman's identity project) integrated with AgentKit to provide verified human identity behind AI agents using zero-knowledge proofs.
+**The strategic angle:** Coinbase is building x402 with Cloudflare and other internet infrastructure companies as a protocol for machine-to-machine payments. AgentKit is the developer interface to that vision. Note: there are two distinct products both named "AgentKit." In March 2026, [World (Sam Altman's identity project) launched its own AgentKit toolkit](https://www.coindesk.com/tech/2026/03/17/sam-altman-s-world-teams-up-with-coinbase-to-prove-there-is-a-real-person-behind-every-ai-transaction) — separate from Coinbase's `coinbase/agentkit` repo — which integrates the x402 protocol with World ID to attach verified human identity to AI agent transactions using zero-knowledge proofs.
 
 **The catch:** Optimized for Base (Coinbase's L2) — other chain support is secondary. The agentic wallet features are new and the security model is still being validated in production.
 
 ### Also notable
 
-- **[base/base-mcp](https://github.com/base/base-mcp)** — Base L2-specific onchain tools, tightly integrated with the Coinbase ecosystem.
-- **[coinbase/payments-mcp](https://github.com/coinbase/payments-mcp)** (51 stars) — Focused specifically on payment operations: on-ramps, stablecoin payments, and commerce flows.
-- **BitGo MCP Server** (March 2026) — BitGo, the institutional digital asset custody and infrastructure company (includes the federally chartered BitGo Bank & Trust), launched an MCP server for developer documentation access. The server connects AI agents to BitGo's Developer Portal — documentation, API references, setup guidance, wallet functionality, transaction flows, staking docs, webhook configuration, and policy features — all via natural language. Important limitation: the MCP server is currently read-only documentation access. It does not execute transactions, manage custody, or perform onchain operations through AI agents. Compatible with Claude Code, Claude Desktop, Cursor, ChatGPT, JetBrains IDEs, VS Code, and Windsurf.
+- **base/base-mcp** — Base L2-specific onchain tools. *Correction: the original `base/base-mcp` repo has since been [archived](https://github.com/base/base-mcp-legacy) (deprecated May 13, 2026); Base now directs developers to [docs.base.org/ai-agents](https://docs.base.org/ai-agents) for current AI-agent tooling, and the `base-mcp` npm package is marked deprecated.*
+- **[coinbase/payments-mcp](https://github.com/coinbase/payments-mcp)** (57 stars) — Focused specifically on payment operations: on-ramps, stablecoin payments, and commerce flows.
+- **[BitGo MCP Server](https://www.bitgo.com/en-eu/resources/blog/bitgo-launches-mcp-server-ai-powered-developer-workflows/)** (March 2026) — BitGo, the institutional digital asset custody and infrastructure company (whose regulated entity [BitGo Bank & Trust, N.A. received full OCC approval as a federally chartered national trust bank](https://www.bitgo.com/resources/blog/bitgo-secures-occ-approval/) in early 2026), launched an MCP server for developer documentation access. The server connects AI agents to BitGo's Developer Portal — documentation, API references, setup guidance, wallet functionality, transaction flows, staking docs, webhook configuration, and policy features — all via natural language. Important limitation: the MCP server is currently read-only documentation access. It does not execute transactions, manage custody, or perform onchain operations through AI agents. Compatible with Claude Code, Claude Desktop, Cursor, ChatGPT, JetBrains IDEs, VS Code, and Windsurf.
 
 ## DeFi data & trading
 
@@ -172,13 +172,13 @@ DeFi MCP servers split into two camps: **data servers** that provide analytics a
 
 ### Cross-chain execution
 
-**[deBridge MCP](https://github.com/debridge-finance/debridge-mcp)** — The first dedicated MCP server for cross-chain DeFi execution. deBridge MCP gives AI agents non-custodial swap, bridge, and trading capabilities across 25+ EVM chains and Solana through a single interface.
+**[deBridge MCP](https://github.com/debridge-finance/debridge-mcp)** — [Described by deBridge as the first open-source MCP server plugin connecting AI agents directly to live cross-chain execution](https://debridge.com/learn/blog/introducing-debridge-mcp-universal-api-for-ai-agents/). At launch it supported [24 blockchain networks](https://www.cryptotimes.io/2026/02/16/debridge-introduces-ai-driven-onchain-execution-across-24-blockchains/), described elsewhere as "25+ EVM chains and Solana," giving AI agents non-custodial swap, bridge, and trading capabilities through a single interface.
 
-**Key tools:** `get_supported_chains`, `search_tokens`, `create_tx`, `get_instructions`, `transaction_same_chain_swap` — covering the full lifecycle from token discovery to cross-chain execution.
+**Key tools:** `get_supported_chains`, `search_tokens`, `create_tx`, `get_instructions`, `transaction_same_chain_swap` — covering the full lifecycle from token discovery to cross-chain execution ([confirmed in the repo README](https://github.com/debridge-finance/debridge-mcp)).
 
-**Why it matters:** deBridge's April 2026 update added composable skills and an agent discovery layer, enabling what they call "Vibe Trading" — describe the outcome you want (e.g., "move 500 USDC from Ethereum to Arbitrum and swap for ARB"), and the agent handles routing, bridging, chain switching, and execution. The hosted MCP endpoint at `agents.debridge.com` means no local infrastructure needed.
+**Why it matters:** deBridge's April 2026 update added composable skills and an agent discovery layer, enabling what they call ["Vibe Trading"](https://x.com/debridge/status/2023382963875127655) — describe the outcome you want (e.g., "move 500 USDC from Ethereum to Arbitrum and swap for ARB"), and the agent handles routing, bridging, chain switching, and execution. The hosted MCP endpoint at `agents.debridge.com` means no local infrastructure needed.
 
-**Architecture:** MEV-aware routing optimized for reliability, deterministic execution with quotes designed to execute as intended, and full user custody throughout — the agent orchestrates but never holds funds. Supports Streamable HTTP transport.
+**Architecture:** [MEV-aware routing optimized for reliability, deterministic execution with quotes designed to execute as intended, and full user custody throughout](https://www.theblock.co/post/390021/debridge-launches-mcp-enabling-ai-agents-to-execute-non-custodial-cross-chain-transactions) — the agent orchestrates but never holds funds. Supports Streamable HTTP transport.
 
 **The catch:** Cross-chain operations carry inherent bridge risk. deBridge has processed significant volume but bridge exploits remain a real threat in DeFi. Agents executing cross-chain transfers should implement value limits and confirmation steps.
 
@@ -235,7 +235,7 @@ Starknet is positioning itself as both an Ethereum zk-rollup and a Bitcoin execu
 
 Market data MCP servers provide price feeds, trading volumes, and market statistics without direct onchain interaction.
 
-- **CoinGecko MCP** — Access to CoinGecko's data for 15,000+ coins: prices, market caps, trading volumes, DEX analytics, and trending tokens. The most comprehensive free crypto data API exposed via MCP.
+- **[CoinGecko MCP](https://docs.coingecko.com/reference/mcp-server)** (official, hosted at `mcp.api.coingecko.com`) — Free, no API key required, covering prices, market caps, trading volumes, DEX pools, NFT collections, and trending tokens across [100+ networks and over a million assets](https://mcp.api.coingecko.com/), via 76+ tools. *Correction: an earlier version of this guide linked to a GitHub repo (`nicobailon/coingecko-mcp-server`) that does not exist — this now points to CoinGecko's real, official MCP server.*
 - **CoinMarketCap MCP** — Similar coverage to CoinGecko with slightly different data sources and metrics.
 - **Cryptocurrency Technical Analysis MCP** (Lumif AI) — Technical analysis indicators and charting data for crypto assets.
 
@@ -269,7 +269,7 @@ What do you need?
 - **Transaction simulation.** No blockchain MCP server includes built-in transaction simulation (like Tenderly or Blowfish) before execution. This is a critical safety gap for autonomous agents handling real funds.
 - **Multi-sig and governance.** No MCP integration for Safe (Gnosis Safe) multi-sig wallets or DAO governance voting. Agents can't participate in protocol governance or manage shared treasuries.
 - **Ordinals and BRC-20.** Bitcoin's growing NFT and token ecosystem has no MCP coverage.
-- **Cross-chain bridges.** deBridge MCP (see DeFi section above) is the first dedicated cross-chain bridge MCP server, covering 25+ EVM chains and Solana. But coverage gaps remain: no MCP servers for Wormhole, LayerZero, Stargate, or other major bridge protocols. VeChain's AI Terminal also offers limited cross-chain support.
+- **Cross-chain bridges.** deBridge MCP (see DeFi section above) is [one of the first open-source MCP servers for cross-chain execution](https://debridge.com/learn/blog/introducing-debridge-mcp-universal-api-for-ai-agents/), covering 24+ networks including major EVM chains and Solana. But coverage gaps remain: no MCP servers for Wormhole, LayerZero, Stargate, or other major bridge protocols. VeChain's AI Terminal also offers limited cross-chain support.
 - **Portfolio management.** No unified server that tracks positions across chains, calculates P&L, monitors liquidation risks, and suggests rebalancing.
 - **MEV protection.** No MCP server integrates with MEV protection services (Flashbots, MEV Blocker) to protect agent transactions from sandwich attacks.
 

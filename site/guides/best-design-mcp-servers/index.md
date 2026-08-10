@@ -13,14 +13,14 @@ We've researched 30+ design MCP servers across the full landscape. This guide sy
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| Figma (design-to-code) | [Framelink MCP](https://github.com/GLips/Figma-Context-MCP) | 13,800+ | [Figma Dev Mode](https://mcp.figma.com/mcp) (official, 13 tools, OAuth) |
-| Figma (manipulation) | [TalkToFigma](https://github.com/grab/cursor-talk-to-figma-mcp) | 6,300+ | [Figma Dev Mode](https://mcp.figma.com/mcp) (code-to-canvas) |
-| Penpot (open-source) | [penpot/penpot-mcp](https://github.com/penpot/penpot-mcp) | 220 | [montevive/penpot-mcp](https://github.com/montevive/penpot-mcp) (community) |
-| Adobe Creative Suite | [VoidChecksum/adobe-mcp](https://github.com/VoidChecksum/adobe-mcp) | — | [alisaitteke/photoshop-mcp](https://github.com/alisaitteke/photoshop-mcp) (50+ Photoshop tools) |
-| UI component generation | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) | 5,700+ | [magicuidesign/mcp](https://github.com/magicuidesign/mcp) (Magic UI library) |
+| Figma (design-to-code) | [Framelink MCP](https://github.com/GLips/Figma-Context-MCP) | 15,600+ | [Figma Dev Mode](https://mcp.figma.com/mcp) (official, 13 tools, OAuth) |
+| Figma (manipulation) | [TalkToFigma](https://github.com/grab/cursor-talk-to-figma-mcp) | 7,000+ | [Figma Dev Mode](https://mcp.figma.com/mcp) (code-to-canvas) |
+| Penpot (open-source) | [penpot/penpot-mcp](https://github.com/penpot/penpot-mcp) | 414 | [montevive/penpot-mcp](https://github.com/montevive/penpot-mcp) (community) |
+| Adobe Creative Suite | [adobe-mcp (VoidChecksum, via PyPI)](https://pypi.org/project/adobe-mcp/) | — | [alisaitteke/photoshop-mcp](https://github.com/alisaitteke/photoshop-mcp) (89 Photoshop tools) |
+| UI component generation | [21st-dev/magic-mcp](https://github.com/21st-dev/magic-mcp) | 5,600+ | [magicuidesign/mcp](https://github.com/magicuidesign/mcp) (Magic UI library) |
 | Design systems | [shadcn/ui MCP](https://shadcnstudio.com/mcp) | — | [Flowbite MCP](https://flowbite.com/) (Tailwind components) |
 | Diagramming | [Lucid Software MCP](https://lucid.co/) | — | — (first mover) |
-| CAD / 3D modeling | [ahujasid/blender-mcp](https://github.com/ahujasid/blender-mcp) | 21,100+ | [jingcheng-chen/rhinomcp](https://github.com/jingcheng-chen/rhinomcp) (274 stars) |
+| CAD / 3D modeling | [blender-mcp (MCPBlender)](https://github.com/MCPBlender/blender-mcp) | 25,700+ | [jingcheng-chen/rhinomcp](https://github.com/jingcheng-chen/rhinomcp) (1,029 stars) |
 
 ## Why design MCP servers matter
 
@@ -42,7 +42,7 @@ This is the most mature and most competitive design MCP category. Two servers do
 
 ### The winner: Framelink MCP (GLips/Figma-Context-MCP)
 
-**Stars:** 13,800+ | **Forks:** 1,093 | **Language:** TypeScript | **License:** MIT | **Tools:** 2
+**Stars:** [15,600+](https://github.com/GLips/Figma-Context-MCP) | **Forks:** 1,238 | **Language:** TypeScript | **License:** MIT | **Tools:** 2
 
 [Framelink](https://github.com/GLips/Figma-Context-MCP) is the most adopted design-to-code MCP server by a wide margin. Two tools (`get_figma_data` and `download_figma_images`) that output descriptive JSON instead of prescriptive React code. [Full review →](/reviews/framelink-figma-mcp-server/)
 
@@ -51,9 +51,9 @@ This is the most mature and most competitive design MCP category. Two servers do
 **Key features:**
 - **Descriptive JSON output** — framework-agnostic design data
 - **Preserved component nesting** — official server flattens it
-- **~25% smaller payloads** — less token usage
+- **~25% smaller payloads** — [Framelink's own comparison](https://www.framelink.ai/) puts it at roughly 25% smaller than the official server's output (their words: "based on a few admittedly haphazard tests")
 - **Works with any Figma account** — no Dev seat required, no 6-calls/month cap
-- **53K+ weekly npm downloads**, 17 releases, v0.7.1 (March 2026)
+- **[90K+ weekly npm downloads](https://www.npmjs.com/package/figma-developer-mcp)** (93,092/week per the [npm registry API](https://api.npmjs.org/downloads/point/last-week/figma-developer-mcp) as of Aug 2026), current version [v0.13.2](https://github.com/GLips/Figma-Context-MCP/releases)
 - Compatible with Cursor, Claude Code, Windsurf, Cline, VS Code, Zed, Amp, and more
 
 **The catch:** Read-only — cannot create or modify designs. Two tools means no Code Connect, no design tokens, no FigJam support. No OAuth (uses personal access token).
@@ -62,7 +62,7 @@ This is the most mature and most competitive design MCP category. Two servers do
 
 ### Runner-up: Figma Dev Mode MCP (Official)
 
-**Stars:** 443 (guide repo) | **Language:** — | **License:** Proprietary | **Tools:** 13
+**Stars:** [1,900+ (guide repo)](https://github.com/figma/mcp-server-guide) | **Language:** — | **License:** Proprietary | **Tools:** 13
 
 [Figma Dev Mode MCP](https://mcp.figma.com/mcp) is Figma's official hosted server. Zero-install remote architecture with OAuth authentication. [Full review →](/reviews/figma-dev-mode-mcp-server/)
 

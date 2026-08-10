@@ -5,7 +5,7 @@
 
 Communication platforms are where work happens. Slack channels, Teams threads, Discord servers — they hold institutional knowledge, decisions, and context that AI agents need but can't reach without an MCP integration.
 
-> **🔒 Security note (April 2026):** CVE-2025-34072 (CVSS 9.3) affects the deprecated Anthropic community Slack MCP server — data exfiltration via link unfurling. Use Slack's official server at `mcp.slack.com` instead. CVE-2026-32211 (CVSS 9.1) exposes a critical authentication flaw in Azure MCP Server infrastructure — Microsoft has published mitigation guidance but no patch yet. Always pin to specific MCP server versions and audit permissions.
+> **🔒 Security note (April 2026):** [CVE-2025-34072](https://github.com/advisories/GHSA-gmx5-crwh-6vxg) (CVSS 9.3, disclosed by researcher wunderwuzzi of [Embrace The Red](https://embracethered.com/blog/posts/2025/security-advisory-anthropic-slack-mcp-server-data-leakage/)) affects the deprecated Anthropic community Slack MCP server — data exfiltration via link unfurling; Anthropic archived the server rather than patch it. Use Slack's official server at `mcp.slack.com` instead. [CVE-2026-32211](https://github.com/advisories/GHSA-5w7p-v6h9-q8c5) (CVSS 9.1) exposes a critical missing-authentication flaw in Azure MCP Server infrastructure — as of this audit, the GitHub Advisory Database lists no confirmed patched version. Always pin to specific MCP server versions and audit permissions.
 
 The three major platforms have taken dramatically different approaches to MCP. Slack shipped a polished official server and just announced Slackbot-as-MCP-client. Microsoft followed with an official Teams server but left gaps for community projects to fill. Discord hasn't shipped anything officially, but a new community server just broke the bot-token barrier with OAuth2.
 
@@ -58,7 +58,7 @@ Microsoft shipped an official server, which puts Teams ahead of Discord. But the
 
 **InditexTech/mcp-teams-server** (5 tools, 365 stars) is the most production-ready: Docker support, versioned releases from a major enterprise (Inditex), **v1.0.8 (March 16) with security enhancements**. Agent SDK migration underway. Narrowly focused on thread workflows — start threads, reply, read replies.
 
-**Security note:** CVE-2026-32211 (CVSS 9.1) affects Azure MCP Server infrastructure — a critical authentication flaw that could expose sensitive data. CVE-2026-26118 is an SSRF-based privilege escalation in the same infrastructure. No patch yet — only mitigation guidance. These affect the broader Azure MCP ecosystem, not specifically the Teams server tools, but worth monitoring.
+**Security note:** [CVE-2026-32211](https://github.com/advisories/GHSA-5w7p-v6h9-q8c5) (CVSS 9.1) affects Azure MCP Server infrastructure — a critical missing-authentication flaw that could expose sensitive data; no confirmed patched version is listed yet. [CVE-2026-26118](https://github.com/advisories/GHSA-hhfx-wfvq-7g9c) is a separate SSRF-based privilege-escalation flaw (CVSS 8.8) in the same infrastructure — unlike CVE-2026-32211, this one **has been patched** (fixed in `@azure/mcp` npm 2.0.0-beta.17/1.0.2, NuGet `Azure.Mcp` 2.0.0-beta.17/1.0.2, and pip `msmcp-azure` 2.0.0b17). These affect the broader Azure MCP ecosystem, not specifically the Teams server tools, but worth monitoring.
 
 **Bottom line:** If you need Teams integration today, use the official server for basic chat/channel work (requires M365 Copilot license), or floriscornel for search, files, and reactions. InditexTech's 365 stars validate its production-readiness for thread workflows. When the official server exits preview and adds search, this category will be a 4/5.
 
@@ -142,7 +142,7 @@ Search is the highest-value communication MCP feature. "Find that conversation a
 
 **Enterprise auth matters more than tool count.** Teams' official server has 24 tools. floriscornel has 28. But the official server's Entra ID OAuth and RBAC enforcement make it the right choice for enterprise use, even with fewer features. Tool count is a vanity metric — auth model is a security fundamental.
 
-**Security vulnerabilities are catching up.** CVE-2025-34072 (deprecated Slack community server), CVE-2026-32211 and CVE-2026-26118 (Azure MCP infrastructure) — the communication MCP space is no longer immune to the broader MCP security reckoning. Pin versions, audit permissions, prefer official servers.
+**Security vulnerabilities are catching up.** [CVE-2025-34072](https://github.com/advisories/GHSA-gmx5-crwh-6vxg) (deprecated Slack community server), [CVE-2026-32211](https://github.com/advisories/GHSA-5w7p-v6h9-q8c5) and [CVE-2026-26118](https://github.com/advisories/GHSA-hhfx-wfvq-7g9c) (Azure MCP infrastructure, now patched) — the communication MCP space is no longer immune to the broader MCP security reckoning. Pin versions, audit permissions, prefer official servers.
 
 ## The Bottom Line
 
