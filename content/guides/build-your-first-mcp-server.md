@@ -5,7 +5,7 @@ description: "A step-by-step tutorial for building an MCP server in Python. From
 content_type: "Guide"
 card_description: "A step-by-step Python tutorial. From zero to a working MCP server with tools, resources, and Claude Desktop integration."
 last_refreshed: 2026-04-23
-sources_audited: 2026-07-22
+sources_audited: 2026-08-10
 ---
 
 You've read about [what MCP is](/guides/what-is-mcp/). Now let's build something. By the end of this guide, you'll have a working MCP server that exposes custom tools to Claude Desktop, VS Code, Cursor, or Claude Code. We'll use Python because the SDK is clean and the code is readable — but the concepts apply to TypeScript too.
@@ -54,10 +54,10 @@ The `[cli]` extra gives you the `mcp` command-line tool — you'll use it to tes
 Create `server.py`:
 
 ```python
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
 # Create the server
-mcp = FastMCP("weather")
+mcp = MCPServer("weather")
 
 # Sample weather data (in a real server, this would call an API)
 WEATHER_DATA = {
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
 That's the whole server. Let's break down what's happening:
 
-- `FastMCP("weather")` creates a server named "weather." The name shows up in client UIs.
+- `MCPServer("weather")` creates a server named "weather." The name shows up in client UIs. (In [MCP Python SDK v1.x](https://py.sdk.modelcontextprotocol.io/v1/), this class was called `FastMCP` and lived at `mcp.server.fastmcp` — if you see that import in older tutorials or existing code, it's the pre-v2 API. `uv add "mcp[cli]"` installs [v2](https://py.sdk.modelcontextprotocol.io/whats-new/) by default as of SDK 2.0.0 (July 2026), and the two APIs aren't interchangeable — the old import path is removed, not just deprecated.)
 - `@mcp.tool()` registers a function as an MCP tool. The SDK reads the function signature and docstring to generate the tool's schema automatically.
 - The type hints (`city: str`) become the tool's input schema. The docstring becomes the tool's description — this is what the AI model reads to decide when and how to use the tool.
 - `mcp.run()` starts the server and handles the JSON-RPC protocol over stdio.
@@ -187,7 +187,7 @@ Restart Claude Desktop and look for the hammer icon.
 
 ### Option B: VS Code (Copilot)
 
-[VS Code has built-in MCP support](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) (since version 1.116). Create `.vscode/mcp.json` in your project:
+[VS Code has built-in MCP support](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) — it moved out of preview and became generally available in [VS Code 1.102](https://github.blog/changelog/2025-07-14-model-context-protocol-mcp-support-in-vs-code-is-generally-available/). Create `.vscode/mcp.json` in your project:
 
 ```json
 {
@@ -316,9 +316,9 @@ Key principle: **return error messages as strings, don't raise exceptions.** The
 Here's the full `server.py` with everything we've built:
 
 ```python
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
-mcp = FastMCP("weather")
+mcp = MCPServer("weather")
 
 WEATHER_DATA = {
     "london": {"temp_c": 12, "condition": "Cloudy", "humidity": 78},
@@ -414,7 +414,7 @@ if __name__ == "__main__":
 
 You now know the pattern. Every MCP server follows the same shape:
 
-1. Create a `FastMCP` instance
+1. Create an `MCPServer` instance
 2. Decorate functions with `@mcp.tool()` or `@mcp.resource()`
 3. Call `mcp.run()`
 
@@ -427,10 +427,10 @@ What changes is what's inside the functions. Some ideas for your next server:
 
 ### Features We Didn't Cover
 
-The [MCP Python SDK](https://pypi.org/project/mcp/) (v1.27.0 as of April 2026, pin to `mcp>=1.25,<2` — V2 is coming) has more capabilities for when you're ready:
+The [MCP Python SDK](https://pypi.org/project/mcp/) has more capabilities for when you're ready. **Update (August 2026):** [SDK v2.0.0 shipped in July 2026](https://py.sdk.modelcontextprotocol.io/whats-new/) and is now the default install — this guide originally targeted v1.27.0 and advised pinning `mcp>=1.25,<2` while "V2 was coming." V2 has arrived, the code above now reflects it (`MCPServer` instead of `FastMCP`), and v1.x is the legacy line (still receiving security patches, docs at [`/v1/`](https://py.sdk.modelcontextprotocol.io/v1/)) rather than the default:
 
 - **Prompts** (`@mcp.prompt()`) — reusable prompt templates that clients can discover and use
-- **Context object** — accept a `Context` parameter in your tools for logging (`ctx.info()`, `ctx.debug()`), progress reporting (`ctx.report_progress()`), and requesting user input via elicitation (`ctx.elicit()`)
+- **Context object** — accept a `Context` parameter in your tools for logging (`ctx.info()`, `ctx.debug()`), progress reporting (`ctx.report_progress()`), and requesting user input via elicitation (`ctx.elicit()`). Per the [v2 migration guide](https://py.sdk.modelcontextprotocol.io/migration/), `ctx.info()` and `ctx.report_progress()` now trigger deprecation warnings as protocol logging is phased out, and `ctx.elicit()` behaves differently against clients speaking the 2026-07-28 protocol revision — check the migration guide before relying on it in new code
 - **Structured output** — return Pydantic models, TypedDicts, or dataclasses from tools and the SDK auto-generates an output schema. Clients get validated JSON instead of free-form text
 - **Streamable HTTP transport** — call `mcp.run(transport="streamable-http")` to serve your MCP server over HTTP instead of stdio. This is the standard for remote/production deployments (SSE transport is deprecated — don't use it for new projects)
 - **Elicitation** — your tools can request information from the user through the client, in two modes: structured forms (for non-sensitive data) and URL redirects (for auth flows and payments)
@@ -455,3 +455,7 @@ Build something, publish it to GitHub, and let us know — we might [review it](
 | "Where to Go" expanded | Added Context object, structured output, Streamable HTTP, elicitation, sampling, tasks |
 | SSE deprecated | Streamable HTTP is now the standard for remote servers; SSE should not be used for new projects |
 | Version pinning advice | Pin to `mcp>=1.25,<2` — V2 is in development with breaking API changes |
+
+## Update (August 2026 audit)
+
+[MCP Python SDK v2.0.0 shipped July 28, 2026](https://py.sdk.modelcontextprotocol.io/whats-new/) and is now what `uv add "mcp[cli]"` / `pip install "mcp[cli]"` installs by default. This is a breaking change for this tutorial's original code: `from mcp.server.fastmcp import FastMCP` no longer works on a fresh v2 install — the class was renamed to `MCPServer` and moved to `from mcp.server import MCPServer` (see the [full migration guide](https://py.sdk.modelcontextprotocol.io/migration/) for every breaking change, including the camelCase→snake_case field renames if you're working with the lower-level protocol types directly). The code samples above have been updated to the v2 import. The `@mcp.tool()` / `@mcp.resource()` decorator pattern, `mcp.run()`, tool annotations, and the `mcp dev` / `mcp install` CLI commands are unchanged in v2. If you have existing v1.x code you're not ready to migrate, pin `mcp>=1.25,<2` explicitly — the v1 line still gets security patches but is no longer the default resolve.

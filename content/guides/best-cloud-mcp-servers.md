@@ -1,12 +1,12 @@
 ---
 title: "AWS vs Google Cloud vs Azure — Cloud Provider MCP Servers Compared (2026)"
 date: 2026-03-20T18:00:00+09:00
-description: "AWS ships 54 local servers plus a managed preview, Google Cloud ships 46 managed remote endpoints (most now GA), and Azure hits 2.0 with 276 tools across 57 services."
+description: "AWS ships 54 local servers plus a managed endpoint (GA since May 2026), Google Cloud ships 46 managed remote endpoints (most now GA), and Azure hits 2.0 with 276 tools across 57 services."
 og_description: "AWS vs Google Cloud vs Azure MCP servers compared: 54 servers vs 46 managed endpoints vs 276 tools in one binary. Architecture, coverage, and recommendations for April 2026."
 content_type: "Comparison"
 card_description: "AWS (54 servers, 8,800 stars) vs Google Cloud (46 managed endpoints, most GA, Toolbox v1.1 at 14.8K stars) vs Azure (2.0 stable, 276 tools, 57 services, remote hosting) — three architectures, all maturing fast."
 last_refreshed: 2026-04-23
-sources_audited: 2026-07-23
+sources_audited: 2026-08-10
 ---
 
 The three major cloud providers have all shipped MCP servers. Each took a fundamentally different approach — and a month later, each has evolved dramatically.
@@ -19,10 +19,10 @@ We've reviewed all three: [AWS MCP Servers](/reviews/aws-mcp-servers/) (4/5), [G
 
 | | AWS | Google Cloud | Azure |
 |---|---|---|---|
-| **Architecture** | 54 local servers + managed remote preview | 46 managed remote endpoints (most GA) + open-source CLI servers | 1 unified server (57 services, 276 tools) + specialized servers |
+| **Architecture** | 54 local servers + [managed remote (GA since May 2026)](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/) | 46 managed remote endpoints (most GA) + open-source CLI servers | 1 unified server (57 services, 276 tools) + specialized servers |
 | **GitHub** | [awslabs/mcp](https://github.com/awslabs/mcp) | [googleapis/gcloud-mcp](https://github.com/googleapis/gcloud-mcp) | [microsoft/mcp](https://github.com/microsoft/mcp) |
-| **Stars** | 8,800 | 745 (gcloud-mcp) + 14,800 (Toolbox) | 3,000 |
-| **Transport** | stdio (local) + streamable HTTP (preview) | HTTP (managed, auto-enabled) + stdio (open-source) | stdio (local) + HTTP (remote, new in 2.0) |
+| **Stars** | 8,800 (as of Apr 2026 refresh; live count runs higher — GitHub stars move continuously) | 745 (gcloud-mcp) + 14,800 (Toolbox), both as of Apr 2026 refresh | 3,000 (as of Apr 2026 refresh) |
+| **Transport** | stdio (local) + streamable HTTP (GA since May 2026) | HTTP (managed, auto-enabled) + stdio (open-source) | stdio (local) + HTTP (remote, new in 2.0) |
 | **Auth** | AWS credentials (IAM) | Google Cloud ADC + IAM deny policies | Entra ID + RBAC + managed identity + OBO flow |
 | **Language** | Python (primary) | Go, Python, TypeScript | C# / .NET (primary) |
 | **License** | Apache 2.0 | Apache 2.0 | MIT |
@@ -34,23 +34,23 @@ Google Cloud pulls ahead with the fastest expansion and the most production-read
 
 ### AWS: The Server-Per-Service Model (Consolidating)
 
-AWS built a server for everything — and has now started trimming. The April 2026 cleanup deprecated 12 servers (including CloudWatch AppSignals, Nova Canvas, Bedrock Data Automation, and the MSK server), bringing the count from 68 to 54. The Core MCP Server that previously orchestrated multi-server setups is also deprecated — modern MCP clients handle multi-server configs natively. The new recommended entry point is the AWS MCP Server (managed preview) at `mcp.global.api.aws`.
+AWS built a server for everything — and has now started trimming. The March 2026 cleanup [deprecated 12 servers](https://github.com/awslabs/mcp/discussions/2615) (including CloudWatch AppSignals, Nova Canvas, Bedrock Data Automation, and the MSK server), bringing the count from 68 to 54. The Core MCP Server that previously orchestrated multi-server setups is also deprecated — modern MCP clients handle multi-server configs natively. The new recommended entry point is the [AWS MCP Server](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/), a managed remote server that reached general availability on May 6, 2026 (after this piece's April refresh), with regional endpoints such as `https://aws-mcp.us-east-1.api.aws/mcp`.
 
 **Strengths:**
 - Deepest per-service coverage — 54 purpose-built servers spanning databases, AI/ML, observability, IoT, and healthcare
-- 8,800 stars with weekly releases — the most active community
-- The managed AWS MCP Server (preview) provides CloudTrail audit logging and syntactically validated API calls
+- 8,800 stars (Apr 2026) with weekly releases — the most active community
+- The [managed AWS MCP Server](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/) (GA since May 2026) provides a `call_aws` tool covering 15,000+ AWS API operations plus documentation search and sandboxed script execution
 - New specialized servers: AgentCore (intelligent agents), LZA (Landing Zone Accelerator, 20 tools), HealthOmics/HealthImaging/HealthLake
 
 **Trade-offs:**
 - Configuration complexity scales with services — using 10 AWS services means configuring 10 servers
 - Local-first architecture requires Python runtime on the agent's machine
-- Managed remote endpoint is still preview — no GA date announced
-- Security patching cadence is aggressive (IAM privilege escalation fix, path traversal prevention, JWS header injection fix — all in March/April 2026)
+- The managed remote endpoint was still preview at this piece's April 2026 refresh; it [reached GA on May 6, 2026](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/), with regional (not yet a single global) endpoints
+- Security patching cadence is aggressive: [CVE-2026-4270](https://aws.amazon.com/security/security-bulletins/rss/2026-007-aws/) (AWS API MCP Server path-traversal/file-access-restriction bypass, fixed in 1.3.9), [CVE-2026-16584](https://aws.amazon.com/security/security-bulletins/2026-054-aws/) (AWS API MCP Server security-policy fail-open bypass, fixed in 1.3.47), and [CVE-2026-18953](https://aws.amazon.com/security/security-bulletins/2026-075-aws/) (arbitrary file write via path traversal in aws-transform-mcp-server's `get_resource`, fixed in 0.1.5) all landed in March/April 2026
 
 ### Google Cloud: The Managed Endpoint Model (Now Dominant)
 
-Google's bet on managed remote endpoints has paid off massively. From 18 endpoints in March, Google Cloud now offers **46 managed MCP servers** — with the majority reaching GA status. Since March 17, 2026, MCP endpoints are auto-enabled when you enable a supported product, removing the separate enablement step. The ecosystem now spans databases (AlloyDB, Spanner, Cloud SQL, Firestore, Bigtable all GA), compute (Cloud Run, GKE, Compute Engine all GA), observability (Logging, Monitoring, Trace all GA), security (Google Security Operations GA), and new domains like Pub/Sub, Resource Manager, and the Developer Knowledge API.
+Google's bet on managed remote endpoints has paid off massively. From 18 endpoints in March, Google Cloud offered **46 managed MCP servers** by this piece's April 2026 refresh — with the majority reaching GA status — and has kept growing since, passing [50+ by late April](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) per Google's own announcement. Google Cloud [documents auto-enablement](https://docs.cloud.google.com/mcp/supported-products) — MCP endpoints turn on automatically when you enable a supported product, removing the separate enablement step. The ecosystem spans databases (AlloyDB, Spanner, Cloud SQL, Firestore, Bigtable all GA), compute (Cloud Run, GKE, Compute Engine all GA), observability (Logging, Monitoring, Trace all GA), security (Google Security Operations), and new domains like Pub/Sub, Resource Manager, and the Developer Knowledge API — see [Google's supported-products list](https://docs.cloud.google.com/mcp/supported-products) for current GA/Preview status of any specific service.
 
 **Strengths:**
 - 46 managed endpoints — the broadest managed MCP coverage by any cloud provider
@@ -68,12 +68,12 @@ Google's bet on managed remote endpoints has paid off massively. From 18 endpoin
 
 ### Azure: The Unified Server Model (Now Remote-Ready)
 
-Microsoft shipped Azure MCP Server 2.0 stable on April 10, 2026 — the biggest update since launch. The single binary now covers **57 services with 276 tools** (up from 47+ services). The headline feature: remote hosting support. Teams can deploy Azure MCP as a centrally managed service with HTTP transport, managed identity authentication, and On-Behalf-Of (OBO) delegation flows. Sovereign cloud support (US Government, 21Vianet) makes this the first cloud MCP server ready for regulated deployments.
+Microsoft [shipped Azure MCP Server 2.0 stable on April 10, 2026](https://devblogs.microsoft.com/azure-sdk/announcing-azure-mcp-server-2-0-stable-release/) — the biggest update since launch. The single binary covers **57 services with 276 tools** (up from 47+ services), per Microsoft's own release announcement. The headline feature: self-hosted remote MCP server support — teams can deploy Azure MCP as a centrally managed service with HTTP transport, managed identity authentication, and On-Behalf-Of (OBO) delegation flows. Sovereign cloud support (US Government, 21Vianet) is also called out in that announcement; we have not independently found a competing claim from AWS or Google Cloud to sovereign-cloud MCP support, but "first" claims like this are inherently hard to fully verify.
 
 **Strengths:**
 - One server, one install, 276 tools across 57 services — minimal configuration overhead
 - **Remote hosting** (new in 2.0) — deploy as a centralized managed service, not just local stdio
-- Sovereign cloud support (Azure US Gov, 21Vianet) — first cloud MCP for regulated environments
+- [Sovereign cloud support](https://devblogs.microsoft.com/azure-sdk/announcing-azure-mcp-server-2-0-stable-release/) (Azure US Gov, 21Vianet) — Microsoft markets this as a first for regulated environments; we haven't independently verified no competing cloud MCP server offers equivalent sovereign-cloud support
 - Built into Visual Studio 2026 GA + VS Code, IntelliJ, Eclipse, Cursor extensions
 - Tool annotations (destructive/readOnly/secret) enable smart safety checks
 - Azure DevOps MCP Server adds WIQL query tool and PAT authentication; remote MCP now in public preview
@@ -158,16 +158,16 @@ Microsoft shipped Azure MCP Server 2.0 stable on April 10, 2026 — the biggest 
 
 **Easiest to scale:** Azure (one server handles 57 services with 276 tools — add namespaces, not servers)
 
-**Most configuration needed:** AWS (each service is a separate server to install and configure, though the managed preview simplifies this)
+**Most configuration needed:** AWS (each service is a separate server to install and configure, though the [managed AWS MCP Server](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/) — GA since May 2026 — simplifies this)
 
 ### Quick Setup Comparison
 
-**AWS** — the managed preview (recommended) or per-server install:
+**AWS** — the managed endpoint (recommended, GA since May 2026) or per-server install. Endpoints are regional, e.g. US East (N. Virginia) or Europe (Frankfurt):
 ```json
 {
   "mcpServers": {
     "aws": {
-      "url": "https://mcp.global.api.aws",
+      "url": "https://aws-mcp.us-east-1.api.aws/mcp",
       "headers": {
         "Authorization": "Bearer <aws-credentials>"
       }
@@ -243,11 +243,11 @@ The most interesting difference isn't feature coverage — it's the transport mo
 
 **Local servers** (AWS's open-source approach) run on your machine. They're fast for development, work offline, and give you full control. But they require runtime dependencies, updates, and don't scale to production agent architectures.
 
-**Managed remote servers** (Google Cloud's approach, AWS's managed preview) run in the cloud. They eliminate local dependencies, live next to the data, and scale naturally. Google proved this model works — going from 18 to 46 endpoints while moving most to GA.
+**Managed remote servers** (Google Cloud's approach, and — since May 2026 — [AWS's managed endpoint too](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/)) run in the cloud. They eliminate local dependencies, live next to the data, and scale naturally. Google proved this model works — going from 18 to 46 endpoints while moving most to GA.
 
 **Self-hosted remote** (Azure 2.0's new approach) lets teams deploy the MCP server as a centralized internal service. This splits the difference — you control the deployment, but agents connect remotely.
 
-In March, we wrote "the industry is moving toward remote." In April, all three providers confirmed it: AWS is pushing its managed endpoint as the primary entry point, Google expanded managed endpoints by 2.5×, and Azure 2.0's headline feature is remote hosting. The local-only era is ending.
+In March, we wrote "the industry is moving toward remote." In April, all three providers confirmed it: AWS was pushing its (then-preview) managed endpoint as the primary entry point — it reached GA the following month — Google expanded managed endpoints by 2.5×, and Azure 2.0's headline feature is remote hosting. The local-only era is ending.
 
 ## What Changed (March → April 2026)
 
@@ -270,4 +270,4 @@ In March, we wrote "the industry is moving toward remote." In April, all three p
 
 ---
 
-*This comparison was originally researched on 2026-03-20 and refreshed on 2026-04-23 using Claude Opus 4.6 (Anthropic). Google Cloud upgraded to 4.5/5 based on the massive managed endpoint expansion and GA readiness. AWS and Azure hold at 4/5.*
+*This comparison was originally researched on 2026-03-20 and refreshed on 2026-04-23 using Claude Opus 4.6 (Anthropic). Google Cloud upgraded to 4.5/5 based on the massive managed endpoint expansion and GA readiness. AWS and Azure hold at 4/5. Star counts, endpoint counts, and GA/Preview status above reflect the April 2026 refresh unless a later date is noted inline (e.g. AWS's managed endpoint reaching GA in May 2026) — these are all live, fast-moving figures on the underlying platforms, so check the linked primary sources for the current state before making a decision today. Citations audited 2026-08-10.*

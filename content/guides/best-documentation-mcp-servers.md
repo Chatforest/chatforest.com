@@ -6,7 +6,7 @@ og_description: "Context7 vs GitMCP vs Docfork vs Deepcon — which documentatio
 content_type: "Comparison"
 card_description: "Context7 vs GitMCP vs Docfork vs Deepcon vs Nia vs Docs MCP — which documentation MCP server feeds the best context to your AI coding agent? A side-by-side comparison with clear recommendations."
 last_refreshed: 2026-04-23
-sources_audited: 2026-07-22
+sources_audited: 2026-08-10
 ---
 
 AI coding agents hallucinate APIs. They invent function signatures that don't exist, reference deprecated parameters, and confidently generate code against last year's version of a library. The fix is straightforward: feed your agent the current documentation at query time instead of relying on stale training data.
@@ -19,7 +19,7 @@ We've [reviewed the Context7 MCP server](/reviews/context7-mcp-server/) (3.5/5) 
 
 | Server | Change | Detail |
 |--------|--------|--------|
-| Context7 | 50,100→53,500 stars | v0.3.13, 65% token reduction via server-side reranking, Skills plugin system |
+| Context7 | 50,100→53,500 stars | [65% token reduction](https://upstash.com/blog/new-context7) via server-side reranking (Jan 2026), Skills plugin system |
 | GitMCP | 7,800→8,000 stars | Embedded chat interface, stable |
 | Docs MCP | 1,200→1,300 stars | v2.2.1 (March 30), "Grounded Docs" branding, 90+ source code languages |
 | Docfork | 438→463 stars | dgrep v0.2.1 (April 19), hybrid semantic+BM25 search |
@@ -29,6 +29,8 @@ We've [reviewed the Context7 MCP server](/reviews/context7-mcp-server/) (3.5/5) 
 | **MCP Security** | **Crisis** | [**OX Security disclosed systemic RCE flaw in MCP architecture**](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) **— 200K vulnerable instances, Anthropic declined protocol-level fix** |
 
 ## The Contenders
+
+*Stars, pricing, and version numbers below reflect this guide's last refresh (April 23, 2026, see note at the end) — check each project's own page for current figures, since these change continuously.*
 
 | Server | Stars | Type | Libraries | Free Tier | Paid | Best For |
 |--------|-------|------|-----------|-----------|------|----------|
@@ -51,7 +53,7 @@ A company maintains a cloud-hosted registry of pre-processed documentation. Your
 
 **When it works best:** Standard libraries with well-known docs. You ask about React hooks or FastAPI middleware, and the server returns current, pre-chunked documentation instantly. No setup, no indexing — it just works.
 
-**When it fails:** When the registry hasn't crawled the library you need. When the documentation is community-contributed and hasn't been verified against the official source (Context7's [ContextCrush vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) showed this risk). When the vendor changes pricing — [Context7 cut its free tier by 83–92% in January 2026](https://blog.devgenius.io/context7-quietly-slashed-its-free-tier-by-92-16fa05ddce03).
+**When it fails:** When the registry hasn't crawled the library you need. When user-controllable inputs to a centralized registry aren't fully sanitized — Context7's [ContextCrush vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) showed attackers could poison the library-owner-controlled "Custom Rules" feature to smuggle malicious instructions to agents through the MCP server (discovered Feb 18, 2026, patched Feb 23, 2026). When the vendor changes pricing — [Context7 cut its free tier by 83–92% in January 2026](https://blog.devgenius.io/context7-quietly-slashed-its-free-tier-by-92-16fa05ddce03).
 
 ### 2. Repo-Based Retrieval (GitMCP, rtfmbro)
 
@@ -75,14 +77,14 @@ These servers run entirely on your machine. You point them at documentation sour
 
 **[upstash/context7](https://github.com/upstash/context7)** | [Our full review](/reviews/context7-mcp-server/) | Rating: 3.5/5
 
-Context7 is the most popular MCP server of 2026. Period. Over 53,000 GitHub stars, support for 30+ AI coding clients, and 65 releases through April 2026. It started with two simple tools — `resolve-library-id` and `query-docs` — and that simplicity drove adoption. It now also offers a CLI (`npx ctx7`) and a Skills-based plugin system that can trigger documentation lookup automatically without explicit MCP calls. The latest release (v0.3.13, April 14) continues a performance push that moved filtering and ranking server-side with reranking models, reducing average token usage by 65% (~9.7K→~3.3K) and latency by 38% (24s→15s).
+Context7 is the most popular MCP server of 2026. Period. Over 53,000 GitHub stars, support for 30+ AI coding clients, and [65 releases through April 2026](https://www.npmjs.com/package/@upstash/context7-mcp?activeTab=versions). It started with two simple tools — `resolve-library-id` and `query-docs` — and that simplicity drove adoption. It now also offers a CLI (`npx ctx7`) and a Skills-based plugin system that can trigger documentation lookup automatically without explicit MCP calls. A [January 2026 architecture update](https://upstash.com/blog/new-context7) moved filtering and ranking server-side with reranking models, reducing average token usage by 65% (~9.7K→~3.3K) and latency by 38% (24s→15s).
 
 **Why it's good:**
 - Largest library coverage (9,000+) with version-specific documentation
 - Two-tool simplicity plus CLI and Skills-based plugin for automatic triggering
 - 30+ client integrations, OAuth setup, VS Code extension
 - Active development by Upstash (not a side project) — 65 releases and counting
-- April 2026 performance improvements: 65% token reduction, 38% latency reduction via server-side reranking
+- [January 2026 performance improvements](https://upstash.com/blog/new-context7): 65% token reduction, 38% latency reduction via server-side reranking
 
 **The catch:** The [ContextCrush context poisoning vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) (patched February 2026) exposed an architectural risk — community-contributed docs in a centralized registry are a trust surface. The free tier was cut from ~6,000 to 1,000 requests/month in January 2026. And as a cloud-dependent MCP server, Context7 is exposed to the broader [MCP supply chain crisis](#the-mcp-security-crisis) disclosed in April 2026.
 
@@ -163,7 +165,7 @@ Docfork's key differentiator is "Cabinets" — project-specific context isolatio
 
 **[nozomio-labs/nia](https://github.com/nozomio-labs/nia)** | 66 stars
 
-Nia is the most ambitious server in this category — it's less a documentation tool and more a knowledge platform. Beyond standard library docs (3,000+ packages from PyPI, npm, Crates.io, Go modules), it offers repository indexing, an autonomous "Oracle" research agent, cross-session context sharing, and arXiv paper indexing. April 2026 additions include a Document Agent that deploys autonomous AI into indexed PDFs with cited answers, structured Data Extraction from documents using custom schemas, and a Tracer tool for searching code across repos without requiring indexing. Backed by Y Combinator (S25) with $6.2M in seed funding.
+Nia is the most ambitious server in this category — it's less a documentation tool and more a knowledge platform. Beyond standard library docs (3,000+ packages from PyPI, npm, Crates.io, Go modules), it offers repository indexing, an autonomous "Oracle" research agent, cross-session context sharing, and arXiv paper indexing. April 2026 additions include a Document Agent that deploys autonomous AI into indexed PDFs with cited answers, structured Data Extraction from documents using custom schemas, and a Tracer tool for searching code across repos without requiring indexing. [Backed by Y Combinator (S25) with a $6.2M seed round](https://www.trynia.ai/blog/announcing-nozomio-seed-round) led by CRV, BoxGroup, and LocalGlobe.
 
 **Why it's good:**
 - Broadest feature set: library docs, repo indexing, arXiv papers, local folders, PDF analysis
@@ -172,8 +174,8 @@ Nia is the most ambitious server in this category — it's less a documentation 
 - Data Extraction: pull structured data from PDFs using custom schemas
 - Tracer: search code across repositories without indexing
 - Context sharing between agents and sessions (persistent knowledge)
-- Claims 52.1% hallucination rate vs Context7's 63.4%
-- YC-backed with $6.2M funding — resources for continued development
+- [Claims 52.1% hallucination rate vs Context7's 63.4%](https://www.trynia.ai/blog/nia-vs-context7) (Nia's own benchmark, on newly-released/beta features — not independently verified)
+- [YC-backed with a $6.2M seed round](https://www.trynia.ai/blog/announcing-nozomio-seed-round) — resources for continued development
 
 **The catch:** Feature complexity may be overkill for "just give me the docs." Tiny GitHub community (66 stars) despite VC backing — no formal releases published yet. Cloud-dependent. Vendor benchmarks need skepticism (small sample size, self-measured). Pricing adds up with $14.99/month plans and credit packs.
 
@@ -183,7 +185,7 @@ Nia is the most ambitious server in this category — it's less a documentation 
 
 **[deepcon.ai](https://deepcon.ai)** | Closed-source
 
-Deepcon claims 90% accuracy across 20 real-world coding scenarios vs Context7's 65%, using a proprietary "Query Composer" model that decomposes queries into parallel semantic searches. It also claims 2.4x better token efficiency (2,365 avg tokens vs Context7's 5,626).
+Deepcon [claims 90% accuracy across 20 real-world coding scenarios vs Context7's 65%](https://github.com/opactorai/context-bench), using a proprietary "Query Composer" model that decomposes queries into parallel semantic searches. It also claims 2.4x better token efficiency (2,365 avg tokens vs Context7's 5,626), per the same vendor-run benchmark.
 
 **Why it's noteworthy:**
 - Highest accuracy claims in the category
@@ -193,7 +195,7 @@ Deepcon claims 90% accuracy across 20 real-world coding scenarios vs Context7's 
 
 **Why we're skeptical:**
 - Closed-source — no code to verify claims
-- Benchmarks are vendor-run (their own "ContextBench" tool, 11 GitHub stars)
+- Benchmarks are vendor-run (their own ["ContextBench" tool](https://github.com/opactorai/context-bench), ~13 GitHub stars as of August 2026)
 - No independent verification of accuracy numbers
 - Lukewarm Hacker News reception
 - Paid tiers ($8–20/month) for meaningful usage
@@ -220,7 +222,7 @@ rtfmbro ("Read The F***ing Manual, Bro") takes a unique approach: it reads docum
 
 Worth mentioning: [llms.txt](https://llmstxt.org) is not an MCP server but a competing (and complementary) approach to the same problem. Proposed by Jeremy Howard (fast.ai, Answer.AI) in September 2024, it's a simple Markdown file at `/llms.txt` on a domain root that provides a curated overview of a site's content for AI consumption.
 
-**Adoption status:** Mintlify rolled out llms.txt across all hosted docs sites in November 2025, instantly giving thousands of libraries (including Anthropic and Cursor docs) support. Cloudflare, Vercel, and Astro also support it. GitMCP already prioritizes llms.txt when available. However, a 2026 analysis of 94,000+ cited URLs found **no measurable citation uplift** from having an llms.txt file — none of the major AI companies (Google, OpenAI, Meta, Anthropic, Mistral) actually use it for training or retrieval. The standard remains a proposal, not a W3C/IETF ratified specification.
+**Adoption status:** [Mintlify rolled out llms.txt across all hosted docs sites in November 2024](https://www.mintlify.com/blog/simplifying-docs-with-llms-txt), instantly giving thousands of libraries (including Anthropic and Cursor docs) support. Cloudflare, Vercel, and Astro also support it. GitMCP already prioritizes llms.txt when available. However, [a January 2026 ALLMO.ai analysis of 94,614 cited URLs](https://allmo.ai/articles/llms-txt) across five AI models found only 1 citation traced back to an llms.txt page — **no measurable citation uplift** — and none of the major AI companies (Google, OpenAI, Meta, Anthropic, Mistral) have publicly confirmed using it for training or retrieval. The standard remains a proposal, not a W3C/IETF ratified specification.
 
 **How it relates:** llms.txt is publisher-controlled — the library maintainer decides what AI agents see. MCP documentation servers are consumer-controlled — you choose which server processes the docs. These approaches are complementary: GitMCP + llms.txt gives you publisher-curated content through an MCP interface. Context7's registry approach bypasses publisher curation entirely. The llms.txt standard's main value today is within MCP — GitMCP reads it — not as a standalone discovery mechanism.
 
@@ -324,7 +326,7 @@ In April 2026, OX Security disclosed a systemic architectural vulnerability in t
 
 **Scale:** 150M+ downloads, 7,000+ publicly accessible servers, up to 200,000 vulnerable instances. OX Security researchers successfully executed commands on 6 live production platforms and bypassed security checks on 9 of 11 major MCP marketplaces.
 
-**CVEs:** CVE-2026-30615 (Windsurf MCP), CVE-2026-30623 (LiteLLM MCP SDK command injection), CVE-2026-22252 (LibreChat), CVE-2026-22688 (WeKnora), CVE-2025-54136 (Cursor), among others. These join the earlier CVE-2026-33032 (MCPwn, CVSS 9.8) we documented in our [API Gateway guide](/guides/best-api-gateway-mcp-servers/).
+**CVEs:** [CVE-2026-30615](https://github.com/advisories/GHSA-wj2m-jvpr-64cq) (Windsurf MCP — prompt-injection to zero-click RCE via auto-registered malicious stdio server), [CVE-2026-30623](https://docs.litellm.ai/blog/mcp-stdio-command-injection-april-2026) (LiteLLM MCP SDK command injection, patched in v1.83.7), [CVE-2026-22252](https://github.com/danny-avila/LibreChat/security/advisories/GHSA-cxhj-j78r-p88f) (LibreChat — unauthenticated-parameter RCE as root in container, fixed in v0.8.2-rc2), [CVE-2026-22688](https://www.cvedetails.com/cve/CVE-2026-22688/) (WeKnora — CVSS 9.9 command injection via MCP stdio config, fixed in v0.2.5), [CVE-2025-54136](https://research.checkpoint.com/2025/cursor-vulnerability-mcpoison/) (Cursor — "MCPoison," persistent RCE via post-approval MCP config swap, fixed in v1.3), among others. These join the earlier CVE-2026-33032 (MCPwn, CVSS 9.8) we documented in our [API Gateway guide](/guides/best-api-gateway-mcp-servers/).
 
 **Anthropic's response:** Declined to modify the protocol architecture, citing the behavior as "expected."
 

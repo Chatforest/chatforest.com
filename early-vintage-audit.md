@@ -63,16 +63,52 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-- [ ] 2026-07-22 — [Best Database MCP Servers in 2026](content/guides/best-database-mcp-servers.md)
-- [ ] 2026-07-22 — [Best Documentation MCP Servers in 2026](content/guides/best-documentation-mcp-servers.md)
-- [ ] 2026-07-22 — [Best Productivity & Knowledge Management MCP Servers in 2026](content/guides/best-productivity-mcp-servers.md)
-- [ ] 2026-07-22 — [How to Build Your First MCP Server](content/guides/build-your-first-mcp-server.md)
-- [ ] 2026-07-22 — [MCP Server Security: A Practical Guide for 2026](content/guides/mcp-server-security.md)
-- [ ] 2026-07-22 — [MCP and Personal Knowledge Management: How AI Agents Connect to Obsidian Vaults, Notion Workspaces, Roam Research Graphs, Logseq Databases, Evernote Libraries, Apple Notes, Zotero References, Readwise Highlights, Raindrop Bookmarks, Heptabase Whiteboards, and Second Brain Tools](content/guides/mcp-personal-knowledge-management-pkm.md)
-- [ ] 2026-07-23 — [AWS vs Google Cloud vs Azure — Cloud Provider MCP Servers Compared (2026)](content/guides/best-cloud-mcp-servers.md)
-- [ ] 2026-07-23 — [Best AI & ML MCP Servers in 2026](content/guides/best-ai-ml-mcp-servers.md)
-- [ ] 2026-07-23 — [Best API Gateway & API Management MCP Servers in 2026 — Kong vs Cloudflare vs Traefik vs AWS vs Azure vs Open Source](content/guides/best-api-gateway-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Audio & Video MCP Servers in 2026](content/guides/best-audio-video-mcp-servers.md)
+**Status: 10/130 done (2026-08-10 run), first batch.** 6 parallel full claim-by-claim passes
+(one covering a 2-file security review, one covering both 2026-07-24 tutorial pages, plus 4
+paired-file passes). Real, substantive errors found on every single page — not link-presence
+sweeps. Headline catches:
+- **Misattributed CVE (worst-failure-mode class):** `mcp-server-security.md` cited
+  **CVE-2025-65513 (CVSS 9.3)** as Anthropic's official `mcp-server-fetch` SSRF vulnerability.
+  Verified via the live GHSA advisory (GHSA-8fxj-2g9q-8fjw) that this CVE actually belongs to a
+  **different, unrelated project** — `zcaceres/fetch-mcp` (CVSS 6.3, not 9.3). The same error,
+  repeated ~10x, was also found in `content/reviews/fetch-mcp-server.md` (outside this run's
+  planned scope but fixed immediately given the severity) — and that review's "safer
+  alternative" recommendation was **the CVE-affected project itself**. A second fabrication
+  (a nonexistent "OrbisAI Security" SSRF fix PR) was caught and removed during the same fix.
+- **Fabricated version history:** `mcp-personal-knowledge-management-pkm.md` cited
+  "v0.10.0/v0.11.0, March 2026" releases of cyanheads/obsidian-mcp-server that never existed
+  per npm's actual version history (jumps 1.1.0→3.0.0, nothing in March 2026); wrong tool/method
+  names invented to match.
+- **Fabricated benchmark exposed:** `best-ai-ml-mcp-servers.md`'s Ruflo entry undersold two
+  independent audits showing ~290/300+ advertised tools are non-functional stubs and its 84.8%
+  SWE-bench figure comes from a script using `random.uniform` around hardcoded numbers rather
+  than running the benchmark — rewrote to state this plainly with citations.
+  Also fixed: wrong academic venue + wrong percentage on OSWorld-MCP (NeurIPS workshop → ICLR
+  2026; 17.6% → the paper's actual 20.4%), a ClickHouse-style stat-fusion error on MCP-Universe
+  (two different evals conflated into one number).
+- **Correctness bugs, not just citations:** `build-your-first-mcp-server.md`'s tutorial code
+  (`from mcp.server.fastmcp import FastMCP`) would fail with `ImportError` today — MCP Python
+  SDK v2.0.0 (July 28, 2026) renamed/moved this class; fixed both code listings.
+  `best-productivity-mcp-servers.md` had Asana's V2 tool count wrong by ~2.5x (44 claimed vs.
+  actual ~17) and the V1 shutdown date stated as still-pending when it had already passed.
+- **Wrong/stale numbers across the batch:** Postgres MCP weekly downloads (21K claimed vs. 87K
+  live), MongoDB tool counts (~40 vs. 50+), a wrong Context7 version/date tied to a real stat,
+  an AWS MCP endpoint stuck at "still preview" when it reached GA May 6 2026, a fabricated AWS
+  MCP endpoint URL in a code sample, internally-contradictory tool counts within single pages
+  (DaVinci Resolve, two Premiere Pro MCP servers, Ableton MCP), and dozens of GitHub star-count
+  figures updated or explicitly dated where a live-snapshot framing was preserved.
+- Full detail for all 11 files (10 guides + 1 review) in WORKLOG.md, 2026-08-10 run.
+
+- [x] 2026-07-22 — [Best Database MCP Servers in 2026](content/guides/best-database-mcp-servers.md)
+- [x] 2026-07-22 — [Best Documentation MCP Servers in 2026](content/guides/best-documentation-mcp-servers.md)
+- [x] 2026-07-22 — [Best Productivity & Knowledge Management MCP Servers in 2026](content/guides/best-productivity-mcp-servers.md)
+- [x] 2026-07-22 — [How to Build Your First MCP Server](content/guides/build-your-first-mcp-server.md)
+- [x] 2026-07-22 — [MCP Server Security: A Practical Guide for 2026](content/guides/mcp-server-security.md)
+- [x] 2026-07-22 — [MCP and Personal Knowledge Management: How AI Agents Connect to Obsidian Vaults, Notion Workspaces, Roam Research Graphs, Logseq Databases, Evernote Libraries, Apple Notes, Zotero References, Readwise Highlights, Raindrop Bookmarks, Heptabase Whiteboards, and Second Brain Tools](content/guides/mcp-personal-knowledge-management-pkm.md)
+- [x] 2026-07-23 — [AWS vs Google Cloud vs Azure — Cloud Provider MCP Servers Compared (2026)](content/guides/best-cloud-mcp-servers.md)
+- [x] 2026-07-23 — [Best AI & ML MCP Servers in 2026](content/guides/best-ai-ml-mcp-servers.md)
+- [x] 2026-07-23 — [Best API Gateway & API Management MCP Servers in 2026 — Kong vs Cloudflare vs Traefik vs AWS vs Azure vs Open Source](content/guides/best-api-gateway-mcp-servers.md)
+- [x] 2026-07-23 — [Best Audio & Video MCP Servers in 2026](content/guides/best-audio-video-mcp-servers.md)
 - [ ] 2026-07-23 — [Best Blockchain & Web3 MCP Servers in 2026](content/guides/best-blockchain-web3-mcp-servers.md)
 - [ ] 2026-07-23 — [Best CMS & Content Management MCP Servers in 2026](content/guides/best-cms-mcp-servers.md)
 - [ ] 2026-07-23 — [Best CRM MCP Servers in 2026](content/guides/best-crm-mcp-servers.md)
@@ -226,7 +262,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 - [ ] 2026-07-22 — [The Docker MCP Server — Your AI Agent's Container Workshop](content/reviews/docker-mcp-server.md)
 - [ ] 2026-07-22 — [The EverArt MCP Server — Image Generation for Agents, If You Can Find the API Key](content/reviews/everart-mcp-server.md)
 - [ ] 2026-07-22 — [The Exa MCP Server — Semantic Search That Actually Understands What You Mean](content/reviews/exa-mcp-server.md)
-- [ ] 2026-07-22 — [The Fetch MCP Server — Your Agent's Simplest Window to the Web (With the Lock Off)](content/reviews/fetch-mcp-server.md)
+- [x] 2026-07-22 — [The Fetch MCP Server — Your Agent's Simplest Window to the Web (With the Lock Off)](content/reviews/fetch-mcp-server.md)
 - [ ] 2026-07-22 — [The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant](content/reviews/figma-dev-mode-mcp-server.md)
 - [ ] 2026-07-22 — [The Filesystem MCP Server — Simple, Useful, and Worth Understanding](content/reviews/filesystem-mcp-server.md)
 - [ ] 2026-07-22 — [The Firecrawl MCP Server — The Full-Stack Web Scraping Platform for AI Agents](content/reviews/firecrawl-mcp-server.md)
