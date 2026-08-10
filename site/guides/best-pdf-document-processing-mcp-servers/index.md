@@ -5,7 +5,7 @@
 
 Document processing is one of the most immediately useful MCP capabilities. Converting PDFs to text, extracting tables, transforming between formats — these are tasks that come up constantly when working with AI assistants. The ecosystem has responded with servers ranging from simple PDF readers to comprehensive multi-format conversion suites.
 
-The landscape splits seven ways. **The official MCP PDF server** now ships in the reference implementation with 779K npm downloads/month. **Multi-format converters** like MarkItDown, kreuzberg, and Docling handle dozens of input formats and output clean Markdown. **Dedicated PDF readers** focus on fast, accurate text extraction with features like caching and parallel processing. **Format converters** use Pandoc or custom pipelines for bidirectional document transformation. **PDF manipulation tools** handle merging, splitting, watermarking, and OCR. **Word document servers** provide full DOCX creation and editing. And **cloud API wrappers** connect to services like Unstructured and PDF.co for heavy processing.
+The landscape splits seven ways. **The official @modelcontextprotocol/server-pdf** ships as an example app in the MCP team's [MCP Apps SDK repo](https://github.com/modelcontextprotocol/ext-apps) and has 779K npm downloads/month. **Multi-format converters** like MarkItDown, kreuzberg, and Docling handle dozens of input formats and output clean Markdown. **Dedicated PDF readers** focus on fast, accurate text extraction with features like caching and parallel processing. **Format converters** use Pandoc or custom pipelines for bidirectional document transformation. **PDF manipulation tools** handle merging, splitting, watermarking, and OCR. **Word document servers** provide full DOCX creation and editing. And **cloud API wrappers** connect to services like Unstructured and PDF.co for heavy processing.
 
 What surprised us: The biggest shift since March is how fast the landscape is consolidating. The **official @modelcontextprotocol/server-pdf** went from launch (January 2026) to 779K npm downloads/month — making it the most-downloaded PDF MCP server by far. **kreuzberg** exploded to 7,628 stars with its Rust-core, 97+ format document intelligence framework. Meanwhile, **MarkItDown** surged from 91K to 115K stars and remains the most-starred project in the space. Several previously-active servers have gone stale — mcp-pandoc hasn't been updated since September 2025, and Office-Word-MCP-Server since December 2025.
 
@@ -15,7 +15,7 @@ What surprised us: The biggest shift since March is how fast the landscape is co
 
 | Server | What changed |
 |--------|-------------|
-| **@modelcontextprotocol/server-pdf** | **NEW in guide.** Official MCP PDF server, v1.7.0, 779K npm downloads/month, chunked pagination + interactive viewer |
+| **@modelcontextprotocol/server-pdf** | **NEW in guide.** MCP-team interactive PDF viewer (MCP Apps SDK example, not the `modelcontextprotocol/servers` reference monorepo), v1.7.0, 779K npm downloads/month, chunked pagination + annotation |
 | **kreuzberg** | **NEW in guide.** 7,628 stars, Rust-core, 97+ formats, v4.9.4, 135K PyPI downloads/month, MCP serve mode |
 | **kordoc** | **NEW in guide.** 819 stars in <1 month, Korean document specialist (HWP/HWPX/PDF), formula OCR |
 | **PSPDFKit/nutrient-dws-mcp** | **NEW in guide.** Enterprise PDF processing via Nutrient API, 63 stars |
@@ -49,27 +49,28 @@ What surprised us: The biggest shift since March is how fast the landscape is co
 
 ## Official MCP PDF Server
 
-### @modelcontextprotocol/server-pdf — The Reference Implementation
+### @modelcontextprotocol/server-pdf — An Interactive Viewer, Not a Text-Extraction Reference Server
 
 **Downloads:** 779,217 npm/month (340K/week) | **Language:** TypeScript | **License:** MIT | **Version:** v1.7.0 (April 21, 2026)
 
-The official PDF server from the Model Context Protocol team. Part of the [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo (84,330 stars). Launched in January 2026 and already the most-downloaded PDF MCP server by a wide margin.
+Published by the MCP team — [npm maintainer list](https://www.npmjs.com/package/@modelcontextprotocol/server-pdf) includes `anthropic.com` and `modelcontextprotocol.io` accounts — but it is **not** part of the `modelcontextprotocol/servers` reference-implementations monorepo (the repo that holds fetch, filesystem, git, memory, sequentialthinking, and time). Its [package metadata](https://www.npmjs.com/package/@modelcontextprotocol/server-pdf) and [source](https://github.com/modelcontextprotocol/ext-apps/tree/main/examples/pdf-server) place it inside `modelcontextprotocol/ext-apps`, the repo for the **MCP Apps SDK** — a spec for embedding interactive UIs inside AI chat clients. The [ext-apps repo](https://github.com/modelcontextprotocol/ext-apps) (~2.7K stars, a much smaller and separate project from the ~89K-star `modelcontextprotocol/servers`) frames the PDF server explicitly as a demo of that SDK, not as a general PDF-processing reference implementation. Launched in January 2026 and already the most-downloaded PDF MCP server in this guide by npm download count.
+
+**What it actually is:** "an interactive PDF viewer using PDF.js" that supports local files and remote URLs from academic sources (arXiv, bioRxiv, Zenodo). It exposes `list_pdfs`, `display_pdf`, and an `interact` tool that handles navigation, search, annotation (highlights, notes, stamps), form-filling, and saving annotated PDFs — well beyond plain text extraction.
 
 **What makes it stand out:**
-- **Official reference implementation** — maintained by the MCP team alongside the protocol itself
-- **Chunked pagination** — reads PDFs in manageable chunks rather than loading entire documents, critical for large files
-- **Interactive viewer** — built-in PDF viewing capability
-- **7 releases in 3 months** — v1.0 to v1.7.0, active and rapid development
-- **Part of the reference monorepo** — benefits from shared infrastructure, testing, and MCP protocol updates
-- **779K npm downloads/month** — dwarfs every other PDF MCP server combined
+- **Built by the MCP/Anthropic team** — same org as the protocol itself, just a different repo than the reference servers
+- **Chunked data transmission** — streams PDF content through size-limited tool calls rather than loading entire documents at once
+- **Interactive, annotatable viewer** — highlighting, notes, stamps, form-filling, and saving annotated PDFs, not just read-only text
+- **Display modes, view persistence, dark mode/theming** — built specifically for embedding inside a chat UI
+- **779K npm downloads/month** — the highest download count of any PDF MCP server compared in this guide
 
 **Limitations:**
-- Text extraction only — no layout analysis, no table detection, no OCR
-- No image extraction from PDFs
-- No caching between reads
-- Part of a monorepo — can't easily star or track the PDF server independently
+- Requires an MCP client that supports embedded UI rendering (MCP Apps) to get the interactive viewer — it is not a drop-in headless extraction backend the way MarkItDown or kreuzberg are
+- No layout analysis or table-structure detection comparable to Docling
+- Its own repo positions it as an SDK demo, not a general-purpose PDF-processing reference implementation
+- Shares a repo (`ext-apps`) with other MCP Apps examples, so usage/stars specific to the PDF example are hard to track independently
 
-**Best for:** The default starting point for PDF text extraction in MCP. If you're setting up MCP for the first time and need PDF support, start here. For complex layouts or advanced features, pair with or switch to MarkItDown, kreuzberg, or Docling.
+**Best for:** Teams building or evaluating MCP clients that support embedded UI (MCP Apps) who want an interactive, annotatable PDF viewer inside the chat. For headless PDF text extraction with a standard (non-UI) MCP client, MarkItDown, kreuzberg, or Docling are the better starting points.
 
 ## Multi-Format Converters
 
@@ -119,7 +120,9 @@ Where MarkItDown has one tool, markdownify-mcp has ten — each specialized for 
 
 ### kreuzberg-dev/kreuzberg — Rust-Core Document Intelligence
 
-**Stars:** 7,628 | **Language:** Rust (Python/Ruby/Java/Go/PHP/Elixir/C#/R/C/TypeScript bindings) | **License:** Elastic-2.0 | **Version:** v4.9.4 (April 22, 2026)
+**Stars:** 7,628 (April 2026 snapshot below) | **Language:** Rust (Python/Ruby/Java/Go/PHP/Elixir/C#/R/C/TypeScript bindings) | **License:** Elastic-2.0 at the time of writing | **Version:** v4.9.4 (April 22, 2026)
+
+**Update (checked 2026-08-11):** [The project has since rebranded to Xberg](https://github.com/kreuzberg-dev/kreuzberg) (`xberg-io/xberg`) and relicensed to **MIT** as part of a v1 relaunch — the Elastic-2.0 caution below no longer applies. Figures in this entry are the guide's original April 2026 snapshot; check the linked repo for current stats.
 
 The fastest-growing document processing framework in the MCP ecosystem. Kreuzberg launched as a polyglot document intelligence platform with a Rust core and built-in MCP server mode. 10+ releases in April alone.
 
@@ -134,12 +137,12 @@ The fastest-growing document processing framework in the MCP ecosystem. Kreuzber
 - **Extremely active** — v4.8.1 through v4.9.4 in April alone
 
 **Limitations:**
-- **Elastic-2.0 license** — NOT traditional open source. Restricts competing SaaS offerings. Fine for internal use and most commercial use, but check the license if you're building a document processing service
+- ~~Elastic-2.0 license~~ — **update:** relicensed MIT after the Xberg rebrand (see note above); no longer a licensing concern
 - Newer project — less battle-tested than MarkItDown or Docling
 - Rust core means build complexity for contributors
-- MCP server mode is relatively new
+- MCP server mode is relatively new, and the project has since rebranded — verify you're pointing at the current package
 
-**Best for:** Teams that need high-performance document intelligence across many formats and languages. The Rust core makes it the fastest option for large-scale processing. Check the Elastic-2.0 license before adopting.
+**Best for:** Teams that need high-performance document intelligence across many formats and languages. The Rust core makes it the fastest option for large-scale processing. Check the current (post-rebrand) repo before adopting.
 
 ### docling-project/docling-mcp — AI-Powered Layout Understanding
 
@@ -181,7 +184,7 @@ A Pandoc wrapper for MCP. Pandoc is the Swiss Army knife of document conversion,
 - **Broad format support** — Markdown, HTML, PDF (output only), DOCX, reStructuredText, LaTeX, EPUB, plain text, Jupyter notebooks, ODT
 - **Pandoc's full power** — template support, reference documents for styling, custom filters, defaults files
 - **Mermaid diagram support** — converts Mermaid diagrams during conversion
-- **Active development** — 86+ commits, regular updates
+- **86+ commits** accumulated before development paused (see maintenance warning above) — the existing feature set is broad even if updates have stopped
 
 **Limitations:**
 - PDF is output-only (Pandoc limitation) — you can create PDFs but not read them
@@ -309,11 +312,11 @@ Tiny community, but wraps one of the most capable PDF processing platforms on th
 
 ## Word Document Servers
 
-### GongRzhe/Office-Word-MCP-Server — The Only Serious Option (⚠️ Stale)
+### GongRzhe/Office-Word-MCP-Server — The Only Serious Option (⚠️ Archived)
 
 **Stars:** 1,880 | **Language:** Python | **License:** Not specified
 
-⚠️ **Maintenance warning:** No pushes since December 2025 (4 months). Still functional but not actively maintained.
+⚠️ **Maintenance warning:** No pushes since December 2025. **Update (checked 2026-08-11):** [the repository has since been archived by its owner](https://github.com/GongRzhe/Office-Word-MCP-Server) and is now read-only — it will not receive further updates, security fixes, or bug fixes going forward.
 
 The dominant Word document MCP server by a wide margin. If you need to create or edit DOCX files, this is it.
 
@@ -333,7 +336,7 @@ The dominant Word document MCP server by a wide margin. If you need to create or
 - No remote/hosted option
 - License not clearly specified in the repository
 
-**Best for:** Any workflow that needs to create or edit Word documents programmatically. The only mature option in this space.
+**Best for:** Any workflow that needs to create or edit Word documents programmatically — with the caveat that the repo is now archived/read-only, so treat it as a fork-and-maintain-yourself starting point rather than an actively supported dependency.
 
 ## Cloud API Wrappers
 
@@ -404,11 +407,11 @@ AWS's official document loader for MCP, designed for the AWS ecosystem.
 
 ## Which Approach Should You Choose?
 
-**Start with the official @modelcontextprotocol/server-pdf** if you just need PDF text extraction. It's the reference implementation, has the most downloads (779K/month), and requires zero configuration beyond `npm install`.
+**Start with the official @modelcontextprotocol/server-pdf** if your MCP client supports embedded UI (MCP Apps) and you want an interactive, annotatable PDF viewer — it has the most downloads of any PDF MCP server compared here (779K/month). It is an MCP Apps SDK example, not a reference text-extraction server; if you just need plain headless PDF-to-text and your client doesn't render embedded UIs, start with MarkItDown or kreuzberg instead.
 
 **Use MarkItDown** if you need multi-format document-to-Markdown conversion beyond just PDFs. It handles 29+ formats, has 115K stars of community validation, and the single `convert_to_markdown` tool is dead simple.
 
-**Use kreuzberg** if you need high-performance document intelligence across 97+ formats with a Rust core. Best for large-scale processing or when you need GPU-accelerated OCR. Check the Elastic-2.0 license first.
+**Use kreuzberg** if you need high-performance document intelligence across 97+ formats with a Rust core. Best for large-scale processing or when you need GPU-accelerated OCR. Note: the project has since [rebranded to Xberg](https://github.com/kreuzberg-dev/kreuzberg) and relicensed MIT — check the current repo rather than relying on this guide's April 2026 snapshot.
 
 **Switch to Docling** if MarkItDown's output is garbled — complex layouts, multi-column PDFs, scientific papers, or financial reports. Docling's AI-powered layout analysis handles these better, at the cost of speed.
 
@@ -416,7 +419,7 @@ AWS's official document loader for MCP, designed for the AWS ecosystem.
 
 **Add mcp-pandoc** if you need to create documents — generating PDFs, DOCX, or EPUB from Markdown. Note: this server hasn't been updated since September 2025.
 
-**Use Office-Word-MCP-Server** if you need to create or edit Word documents with full formatting control. Note: this server hasn't been updated since December 2025.
+**Use Office-Word-MCP-Server** if you need to create or edit Word documents with full formatting control. Note: this server hasn't been updated since December 2025 and [its repo is now archived/read-only](https://github.com/GongRzhe/Office-Word-MCP-Server) — plan on forking it if you adopt it.
 
 **Use kordoc** if you work with Korean documents (HWP/HWPX formats) or need formula OCR in PDFs.
 
@@ -424,9 +427,9 @@ AWS's official document loader for MCP, designed for the AWS ecosystem.
 
 ## Four Trends Worth Watching
 
-**1. The official server changes the default.** The @modelcontextprotocol/server-pdf went from zero to 779K npm downloads/month in three months. It's now the most natural starting point for PDF extraction, pushing MarkItDown and others into "multi-format" or "advanced features" positioning. This is the MCP ecosystem maturing — official reference implementations establish baselines.
+**1. Download counts don't always mean what they look like.** The @modelcontextprotocol/server-pdf went from zero to 779K npm downloads/month in three months — but per its own repo, it's an MCP Apps SDK demo for an interactive, annotatable PDF *viewer*, not a headless text-extraction reference implementation. For plain PDF-to-text conversion, MarkItDown, kreuzberg, and Docling remain the directly comparable options.
 
-**2. Rust-core challengers arrive.** kreuzberg (7,628 stars, Rust core, 97+ formats) represents a new breed of document intelligence tool that prioritizes performance and polyglot access over Python-ecosystem convenience. Its Elastic-2.0 license signals a different business model than the MIT-licensed incumbents.
+**2. Rust-core challengers arrive.** kreuzberg (7,628 stars, Rust core, 97+ formats) represents a new breed of document intelligence tool that prioritizes performance and polyglot access over Python-ecosystem convenience. Its license history — Elastic-2.0 at launch, relicensed MIT after rebranding to Xberg mid-2026 — is a reminder that license terms for fast-moving tools can change quickly; always check the current repo before adopting.
 
 **3. Staleness is spreading.** Several established servers haven't been updated in months: mcp-pandoc (7 months), Office-Word-MCP-Server (4 months), docling-mcp (3 months since last release). Meanwhile MarkItDown, pdf-reader-mcp, and kreuzberg remain actively maintained. The gap between maintained and unmaintained servers is widening.
 
@@ -451,5 +454,5 @@ These servers are too new or niche for a full review, but worth watching:
 - **Limited table extraction** — most servers struggle with complex tables. Docling is best here but still imperfect
 - **No PDF comparison/diff** — comparing two versions of a document is a common need with no MCP solution
 - **No digital signature support** — signing PDFs or verifying signatures isn't available in any server
-- **Staleness risk** — mcp-pandoc (7 months without updates) and Office-Word-MCP-Server (4 months) may need community forks or replacements
+- **Staleness risk** — mcp-pandoc (7 months without updates as of this guide) may need a community fork; Office-Word-MCP-Server has since been [archived by its owner](https://github.com/GongRzhe/Office-Word-MCP-Server) and needs one now
 

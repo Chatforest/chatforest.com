@@ -15,7 +15,7 @@ We've published [3 in-depth reviews](/reviews/) covering 50+ email and notificat
 | Enterprise email (Outlook) | [Softeria/ms-365-mcp-server](/reviews/outlook-mcp-servers/) | 3.5/5 | [Microsoft Work IQ Mail](/reviews/outlook-mcp-servers/) (official, Copilot license required) |
 | Transactional email delivery | [Resend MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Mailtrap MCP](https://github.com/mailtrap/mailtrap-mcp) (official, sandbox testing built-in) |
 | SMS & multi-channel | [Infobip MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Twilio MCP](/reviews/notification-services-mcp-servers/) (official, OpenAPI-generated) |
-| Push notifications | [ntfy MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Pushover MCP](/reviews/notification-services-mcp-servers/) (30 stars, one-time $5) |
+| Push notifications | [ntfy MCP](/reviews/notification-services-mcp-servers/) | 3.5/5 | [Pushover MCP](/reviews/notification-services-mcp-servers/) (41 stars, one-time $5) |
 | Multi-provider email | [codefuturist/email-mcp](https://github.com/codefuturist/email-mcp) | — | [marlinjai/email-mcp](https://github.com/marlinjai/email-mcp) (24 tools, unified) |
 
 ## Why email MCP servers are different
@@ -33,11 +33,11 @@ Our recommendation across all categories: **start read-only**, enable send/compo
 
 **[Full review: Gmail MCP Servers →](/reviews/gmail-mcp-servers/)** | Rating: 3.5/5
 
-Gmail has the most mature MCP ecosystem of any email provider. Multiple solid options, an official Google endpoint, and a dominant community server with 1,700+ stars.
+Gmail has the most mature MCP ecosystem of any email provider. Multiple solid options, an official Google endpoint, and a dominant community server with 2,900+ stars.
 
 ### The winner: taylorwilsdon/google_workspace_mcp
 
-[google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) — 1,700+ stars, Python, MIT. Covers 12 Google services including Gmail with 10+ email tools: search, read, send, reply, draft, label management. Three-tier permission system (Core/Extended/Full) lets you start read-only and expand.
+[google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) — 2,900+ stars, Python, MIT. Covers 12 Google services including Gmail with 10+ email tools: search, read, send, reply, draft, label management. Three-tier permission system (Core/Extended/Full) lets you start read-only and expand.
 
 **Why it wins:** Largest community, most active development, tiered permissions are a real security advantage. Recent updates added **native OAuth 2.1 with multi-user support** and a **stateless mode** — making it the only Workspace MCP server you can host centrally for an entire organization. Other recent improvements include meeting URL extraction from calendar events, strikethrough support in Docs, and better Google Chat search with `createTime` filters. If you're already using Google Workspace, this is the default.
 
@@ -47,13 +47,13 @@ Gmail has the most mature MCP ecosystem of any email provider. Multiple solid op
 
 **Google's official Workspace MCP** — Hosted at `workspace-developer.goog/mcp`. First-party code, Google's security model, no third-party token handling. Documentation is sparser than community options. Choose this if you want maximum trust and don't need to inspect the server code.
 
-**[MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite)** — 477 stars, Gmail + Calendar only. Narrower OAuth scope is a genuine security advantage. Python 3.13+ requirement is strict.
+**[MarkusPfundstein/mcp-gsuite](https://github.com/MarkusPfundstein/mcp-gsuite)** — 490+ stars, Gmail + Calendar only. Narrower OAuth scope is a genuine security advantage. Python 3.13+ requirement is strict.
 
-**[baryhuang/mcp-headless-gmail](https://github.com/baryhuang/mcp-headless-gmail)** — 53 stars. Purpose-built for server/container deployments without a browser. Decoupled OAuth credential model is clever for headless environments.
+**[baryhuang/mcp-headless-gmail](https://github.com/baryhuang/mcp-headless-gmail)** — 55 stars. Purpose-built for server/container deployments without a browser. Decoupled OAuth credential model is clever for headless environments.
 
 ### Avoid
 
-**GongRzhe/Gmail-MCP-Server** — Abandoned since August 2025, 72+ unmerged PRs. Use the [ArtyMcLabin fork](https://github.com/ArtyMcLabin/Gmail-MCP-Server) if you want that codebase.
+**GongRzhe/Gmail-MCP-Server** — Abandoned since August 2025 and archived by its owner in March 2026 (now read-only), with 32 open, unmerged PRs. Use the [ArtyMcLabin fork](https://github.com/ArtyMcLabin/Gmail-MCP-Server) if you want that codebase.
 
 ## Enterprise Email — Outlook
 
@@ -63,19 +63,19 @@ Outlook MCP servers deal with corporate inboxes behind Entra ID, compliance poli
 
 ### The winner: Softeria/ms-365-mcp-server
 
-[ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) — 530+ stars, TypeScript, MIT. Now at **v0.36.0+** with **90+ tools** covering 8+ Microsoft 365 services from a single install: email, calendar, OneDrive, Excel, OneNote, tasks, contacts, user profile. With `--org-mode`: Teams, SharePoint, online meetings, shared mailboxes.
+[ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) — 900+ stars, TypeScript, MIT. Now at **v0.138.0+** with **300+ tools** covering 8+ Microsoft 365 services from a single install: email, calendar, OneDrive, Excel, OneNote, tasks, contacts, user profile. With `--org-mode`: Teams, SharePoint, online meetings, shared mailboxes.
 
-**Why it wins:** No Copilot license required. Broadest M365 coverage from a single server. Three auth modes (Device Code, OAuth, Bring Your Own Token). TOON output format saves 30-60% on tokens. Read-only mode and tool filtering for safety. Recent additions include **multi-account mode** for MCP multiplexers (Legate, Governor) — a single instance handles all accounts, reducing tool duplication from N×110 to 110. **Tool presets** (mail, calendar, files, etc.) reduce initial connection overhead when you don't need all 90+ tools.
+**Why it wins:** No Copilot license required. Broadest M365 coverage from a single server. Three auth modes (Device Code, OAuth, Bring Your Own Token). TOON output format saves 30-60% on tokens. Read-only mode and tool filtering for safety. Recent additions include **multi-account mode** for MCP multiplexers (Legate, Governor) — a single instance handles all accounts, reducing tool duplication from N×110 to 110. **Tool presets** (mail, calendar, files, etc.) reduce initial connection overhead when you don't need all 300+ tools.
 
 **The catch:** Loading 8+ services means tool sprawl if you only need email. Tool presets help, but the default is everything.
 
 ### Strong alternatives
 
-**Microsoft Work IQ Mail** — Official, hosted, 10 tools with KQL search. Microsoft runs it — no local install, no third-party code. ETag concurrency control for enterprise-grade safety. Now available in Copilot Studio (search "mail" in MCP connectors). Microsoft anticipates broad Dataverse access via Work IQ across all M365 Copilot experiences by Summer 2026. **But:** still in preview, still requires a Microsoft 365 Copilot license (~$30/user/month). No folder management, no attachment handling.
+**Microsoft Work IQ Mail** — Official, hosted, 10 tools with KQL search. Microsoft runs it — no local install, no third-party code. ETag concurrency control for enterprise-grade safety. Now available in Copilot Studio (search "mail" in MCP connectors). **But:** still in preview, still requires a Microsoft 365 Copilot license (~$30/user/month). No folder management, no attachment handling.
 
-**[ryaker/outlook-mcp](https://github.com/ryaker/outlook-mcp)** — 278 stars. Unique Power Automate integration alongside email and calendar. An agent that reads emails and triggers automation flows opens workflow possibilities no other server matches. Complex setup (5 steps) and no license specified.
+**[ryaker/outlook-mcp](https://github.com/ryaker/outlook-mcp)** — 420+ stars. Unique Power Automate integration alongside email and calendar. An agent that reads emails and triggers automation flows opens workflow possibilities no other server matches. Complex setup (5 steps) and no license specified.
 
-**[merill/lokka](https://github.com/merill/lokka)** — 228 stars, MIT. Exposes the raw Microsoft Graph API as MCP tools. Maximum flexibility — any Graph endpoint, including ones purpose-built servers haven't implemented. Best for developers who already know Graph API. Not for beginners.
+**[merill/lokka](https://github.com/merill/lokka)** — 288 stars, MIT. Exposes the raw Microsoft Graph API as MCP tools. Maximum flexibility — any Graph endpoint, including ones purpose-built servers haven't implemented. Best for developers who already know Graph API. Not for beginners.
 
 ### Gmail vs. Outlook — which ecosystem is stronger?
 
@@ -84,7 +84,7 @@ Outlook MCP servers deal with corporate inboxes behind Entra ID, compliance poli
 | Official server | Google Workspace MCP | Work IQ Mail | N/A |
 | Hosted | Yes | Yes | No (local) |
 | License cost | Free | Copilot ~$30/mo | Free (M365 account) |
-| Community standard | 1,700+ stars | N/A | 530 stars |
+| Community standard | 2,900+ stars | N/A | 900+ stars |
 | Services covered | 12 Google services | Mail only | 8+ M365 services |
 | Folder management | Labels | No | Yes |
 | Attachment handling | Limited | No | Via OneDrive |
@@ -97,19 +97,19 @@ A newer category: servers that work with any email provider through standard IMA
 
 ### codefuturist/email-mcp
 
-[email-mcp](https://github.com/codefuturist/email-mcp) — 21 stars, TypeScript. **47 tools** covering read, search, send, reply, forward, organize, schedule, and analytics across multiple accounts via IMAP/SMTP. Provider auto-detection for Gmail, Outlook, Yahoo, iCloud, Fastmail, ProtonMail, Zoho, GMX.
+[email-mcp](https://github.com/codefuturist/email-mcp) — 90+ stars, TypeScript. **47 tools** covering read, search, send, reply, forward, organize, schedule, and analytics across multiple accounts via IMAP/SMTP. Provider auto-detection for Gmail, Outlook, Yahoo, iCloud, Fastmail, ProtonMail, Zoho, GMX.
 
 **Standout features:** Real-time IMAP IDLE watcher with AI-powered triage, email scheduling with OS-level daemon, calendar extraction from ICS attachments, rate limiting with configurable token-bucket. OAuth2 support for Google and Microsoft (experimental).
 
-**The trade-off:** IMAP/SMTP is a lower-level protocol than Gmail REST API or Microsoft Graph. Feature coverage is broader but less deeply integrated with provider-specific features (Gmail labels, Outlook rules). 21 stars means limited community validation.
+**The trade-off:** IMAP/SMTP is a lower-level protocol than Gmail REST API or Microsoft Graph. Feature coverage is broader but less deeply integrated with provider-specific features (Gmail labels, Outlook rules). 90+ stars is still modest compared to the provider-specific leaders.
 
 ### marlinjai/email-mcp
 
-[email-mcp](https://github.com/marlinjai/email-mcp) — 5 stars, TypeScript, MIT. **24 tools** across Gmail (REST API), Outlook (Graph API), iCloud (IMAP), and generic IMAP/SMTP. Uses native APIs where available and falls back to IMAP.
+[email-mcp](https://github.com/marlinjai/email-mcp) — 18 stars, TypeScript, MIT. **24 tools** across Gmail (REST API), Outlook (Graph API), iCloud (IMAP), and generic IMAP/SMTP. Uses native APIs where available and falls back to IMAP.
 
 **Why it's interesting:** Encrypted credential storage (AES-256-GCM at rest), setup wizard, batch operations for bulk email management. The hybrid approach — REST API for Gmail, Graph for Outlook, IMAP for everything else — gets the best of each protocol.
 
-**The trade-off:** 5 stars, single maintainer. Not yet battle-tested.
+**The trade-off:** 18 stars, single maintainer. Not yet battle-tested.
 
 ### When to go multi-provider
 
@@ -123,7 +123,7 @@ These servers send email programmatically — receipts, password resets, marketi
 
 ### The winner: Resend MCP
 
-[resend/resend-mcp](https://github.com/resend/resend-mcp) — ~470 stars, TypeScript, MIT, v2.2.0. **20+ tools** covering email sending (HTML/plain/attachments/scheduling/tags), received email management, contact management, broadcast campaigns, domain verification, and webhook administration.
+[resend/resend-mcp](https://github.com/resend/resend-mcp) — 550+ stars, TypeScript, MIT, v2.12.0+. **20+ tools** covering email sending (HTML/plain/attachments/scheduling/tags), received email management, contact management, broadcast campaigns, domain verification, and webhook administration.
 
 **Why it wins:** Best developer experience in the category. Dual transport (stdio for local, HTTP with Bearer auth for remote) is rare — most servers are stdio-only. 18 contributors, active maintenance, official Resend team backing.
 
@@ -133,9 +133,9 @@ These servers send email programmatically — receipts, password resets, marketi
 
 **[Mailtrap MCP](https://github.com/mailtrap/mailtrap-mcp)** — official. A newer entrant combining **transactional email sending** with **sandbox testing** — send test emails, retrieve sandbox messages, and manage templates all from one server. Available as a Claude Desktop extension (search "Mailtrap" in Connectors). Especially useful during development when you want to test email workflows without hitting production inboxes.
 
-**[Postmark MCP](https://github.com/ActiveCampaign/postmark-mcp)** — 37 stars, official, MIT. Intentionally minimal: 4 tools (send, send with template, list templates, delivery stats). If you just need transactional email sending without the overhead, Postmark is the simplest option.
+**[Postmark MCP](https://github.com/ActiveCampaign/postmark-mcp)** — 54 stars, official, MIT. 24 tools covering send, templating, search, and delivery diagnostics for transactional email.
 
-**SendGrid (community)** — No official server despite being one of the largest email platforms. [deyikong/sendgrid-mcp](https://github.com/deyikong/sendgrid-mcp) is the most comprehensive community option with 59 tools and a smart read-only default. [Garoth/sendgrid-mcp](https://github.com/Garoth/sendgrid-mcp) (24 stars) is more popular but less featured.
+**SendGrid (community)** — No official server despite being one of the largest email platforms. [deyikong/sendgrid-mcp](https://github.com/deyikong/sendgrid-mcp) is the most comprehensive community option with 58 tools and a smart read-only default. [Garoth/sendgrid-mcp](https://github.com/Garoth/sendgrid-mcp) (29 stars) is more popular but less featured.
 
 ### What's missing
 
@@ -149,15 +149,15 @@ These servers send email programmatically — receipts, password resets, marketi
 
 [infobip/mcp](https://github.com/infobip/mcp) — **14 separate remote MCP servers**, cloud-hosted at `mcp.infobip.com`. Covers SMS, WhatsApp, Viber, RCS, Voice, Mobile App Messaging, WhatsApp Flows, 2FA, People (profiles/audiences), Account Management, and more. OAuth 2.1 support with scope discovery.
 
-**Why it wins:** No other vendor covers this many channels through MCP. The architecture — separate servers per channel, all cloud-hosted — is arguably the right design since SMS and WhatsApp have completely different tool shapes. Infobip joined the **Agentic AI Foundation as a Gold Member**, signaling long-term commitment to MCP as a standard. The underlying [infobip-openapi-mcp](https://github.com/infobip/infobip-openapi-mcp) framework (Java, Spring Boot) lets any team with OpenAPI specs build their own MCP servers.
+**Why it wins:** No other vendor covers this many channels through MCP. The architecture — separate servers per channel, all cloud-hosted — is arguably the right design since SMS and WhatsApp have completely different tool shapes. Infobip joined the [Agentic AI Foundation as a Gold Member](https://www.infobip.com/developers/blog/why-infobip-joined-the-agentic-ai-foundation-and-what-it-means-for-developers-building-with-mcp), signaling long-term commitment to MCP as a standard. The underlying [infobip-openapi-mcp](https://github.com/infobip/infobip-openapi-mcp) framework (Java, Spring Boot) lets any team with OpenAPI specs build their own MCP servers.
 
 ### Strong alternatives
 
-**[Twilio MCP](https://github.com/twilio-labs/mcp)** — 96 stars, official, MIT. Uses an OpenAPI-to-MCP generator that dynamically exposes Twilio's vast API surface. Must filter via `--services` or `--tags` to avoid overwhelming context windows. Powerful for developers who know Twilio APIs, less discoverable for newcomers. Twilio explicitly warns against running community servers alongside it.
+**[Twilio MCP](https://github.com/twilio-labs/mcp)** — 108 stars, official, MIT. Uses an OpenAPI-to-MCP generator that dynamically exposes Twilio's vast API surface. Must filter via `--services` or `--tags` to avoid overwhelming context windows. Powerful for developers who know Twilio APIs, less discoverable for newcomers. Twilio explicitly warns against running community servers alongside it.
 
-**[Courier MCP](https://github.com/trycourier/courier-mcp)** — ~60 tools, official, hosted at `mcp.courier.com`. The most tools in the notification category: message sending, profile administration, list/audience operations, bulk operations, JWT generation, audit logging. Zero GitHub stars despite 136 commits — likely limited awareness rather than quality issues.
+**[Courier MCP](https://github.com/trycourier/courier-mcp)** — 124 tools, official. **Archived by Courier on July 13, 2026** — the repository is now read-only and no longer maintained, so treat this as a historical reference rather than an active option. While maintained it had the most tools in the notification category: message sending, profile administration, list/audience operations, bulk operations, JWT generation, audit logging.
 
-**[Novu MCP](https://docs.novu.co/platform/additional-resources/mcp)** — 13 tools, official, hosted. Covers subscriber management, notifications, and workflow management. Narrower than Courier but backed by a popular open-source platform (37K+ main repo stars).
+**[Novu MCP](https://docs.novu.co/platform/additional-resources/mcp)** — 24 tools, official, hosted. Covers subscriber management, notifications, and workflow management. Backed by a popular open-source platform (39K+ main repo stars) and, unlike Courier, still actively maintained.
 
 ### The OpenAPI-to-MCP pattern
 
@@ -169,7 +169,7 @@ Simple tools that alert you when your AI agent finishes a task. Not full notific
 
 **[ntfy](https://github.com/cyanheads/ntfy-mcp-server)** — Open source, self-hostable, free. Extensive customization (priority, tags, actions, attachments). Also available via [gitmotion/ntfy-me-mcp](https://github.com/gitmotion/ntfy-me-mcp) supporting both self-hosted and public ntfy.sh.
 
-**[Pushover](https://github.com/AshikNesin/pushover-mcp)** — 30 stars, most popular push MCP server. Pushover costs a one-time $5 per platform. Multiple community implementations.
+**[Pushover](https://github.com/AshikNesin/pushover-mcp)** — 41 stars, most popular push MCP server. Pushover costs a one-time $5 per platform. Multiple community implementations.
 
 Both are simple — typically a single `send_notification` tool. That's appropriate for the use case.
 
@@ -201,13 +201,13 @@ Both are simple — typically a single `send_notification` tool. That's appropri
 
 **I use Gmail and want the safest option** → Google's official Workspace MCP endpoint. First-party, hosted, no third-party code.
 
-**I use Gmail and want the most features** → [taylorwilsdon/google_workspace_mcp](/reviews/gmail-mcp-servers/). 1,700+ stars, tiered permissions, 12 Google services.
+**I use Gmail and want the most features** → [taylorwilsdon/google_workspace_mcp](/reviews/gmail-mcp-servers/). 2,900+ stars, tiered permissions, 12 Google services.
 
 **I use Outlook with a Copilot license** → Microsoft Work IQ Mail. Official, hosted, KQL search.
 
-**I use Outlook without a Copilot license** → [Softeria/ms-365-mcp-server](/reviews/outlook-mcp-servers/). 530 stars, 8+ services, three auth modes.
+**I use Outlook without a Copilot license** → [Softeria/ms-365-mcp-server](/reviews/outlook-mcp-servers/). 900+ stars, 8+ services, three auth modes.
 
-**I need to send transactional email** → [Resend MCP](/reviews/notification-services-mcp-servers/). Best developer experience, dual transport, 470 stars.
+**I need to send transactional email** → [Resend MCP](/reviews/notification-services-mcp-servers/). Best developer experience, dual transport, 550+ stars.
 
 **I need to test email workflows in development** → [Mailtrap MCP](https://github.com/mailtrap/mailtrap-mcp). Sandbox testing + production sending in one server. Available as a Claude Desktop extension.
 

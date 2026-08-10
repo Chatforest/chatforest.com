@@ -21,7 +21,7 @@ We've researched 50+ IoT MCP servers across the full landscape. This guide cover
 | Arduino / robotics | [vishalmysore/choturobo](https://github.com/vishalmysore/choturobo) | 78 | [Volt23/mcp-arduino-server](https://github.com/Volt23/mcp-arduino-server) (10 stars) |
 | PlatformIO | [jl-codes/platformio-mcp](https://github.com/jl-codes/platformio-mcp) | 16 | — |
 | Apple HomeKit | [omarshahine/HomeClaw](https://github.com/omarshahine/HomeClaw) | 84 | [grahamaloo/HomeKitMCP](https://github.com/grahamaloo/HomeKitMCP) (Swift native) |
-| Industrial IoT | [poly-mcp/IoT-Edge-MCP-Server](https://github.com/poly-mcp/IoT-Edge-MCP-Server) | 22 | [kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp) (26 stars, OPC UA) |
+| Industrial IoT | [kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp) | 29 | [kukapay/modbus-mcp](https://github.com/kukapay/modbus-mcp) (26 stars, Modbus) |
 | Smart lighting | [rmrfslashbin/hue-mcp](https://github.com/rmrfslashbin/hue-mcp) | 2 | [ykhli/mcp-light-control](https://github.com/ykhli/mcp-light-control) (21 stars, Hue + Morse code) |
 
 *Monorepo star count; IoT SiteWise is one server within it.*
@@ -44,7 +44,7 @@ The landscape splits into ten categories: **Home Assistant** (the most mature, 5
 
 Home Assistant is the clear leader in smart home MCP integration — and it just got stronger. With 5+ community servers, a rapidly growing flagship project, **and native MCP support now built into Home Assistant Core**, it's the safest entry point for AI-controlled smart homes.
 
-**Major development (since HA 2025.2):** Home Assistant Core now includes native MCP integrations — both an **MCP Server** (lets external AI clients control your HA instance) and an **MCP Client** (lets HA consume external MCP tools). This is built-in, not a third-party add-on. Currently used by [~3.2% of active installations](https://www.home-assistant.io/integrations/mcp_server/).
+**Major development (since HA 2025.2):** Home Assistant Core now includes native MCP integrations — both an **MCP Server** (lets external AI clients control your HA instance) and an **MCP Client** (lets HA consume external MCP tools). This is built-in, not a third-party add-on. Currently used by [~3.5% of active installations](https://www.home-assistant.io/integrations/mcp_server/).
 
 ### The winner: homeassistant-ai/ha-mcp
 
@@ -204,7 +204,7 @@ MQTT is the backbone protocol of IoT. These servers let AI agents publish messag
 
 **[Volt23/mcp-arduino-server](https://github.com/Volt23/mcp-arduino-server)** (10 stars, Python, MIT) — FastMCP bridge to arduino-cli. Sketch management, build/deploy, library operations, serial monitoring. Unique: WireViz schematic generation for AI-powered circuit diagrams.
 
-**[jl-codes/platformio-mcp](https://github.com/jl-codes/platformio-mcp)** (16 stars, TypeScript, MIT, 11 tools) — Board-agnostic MCP server for PlatformIO supporting 1,000+ development boards across 30+ platforms. Project init, compile, upload, serial monitoring, and library management. Best for teams working across multiple hardware platforms.
+**[jl-codes/platformio-mcp](https://github.com/jl-codes/platformio-mcp)** (16 stars, TypeScript, MIT, 11 tools) — Board-agnostic MCP server for [PlatformIO](https://registry.platformio.org/search?t=platform), which supports a large and growing catalog of development boards across dozens of chip platforms. Project init, compile, upload, serial monitoring, and library management. Best for teams working across multiple hardware platforms.
 
 ---
 
@@ -228,29 +228,25 @@ MQTT is the backbone protocol of IoT. These servers let AI agents publish messag
 
 **[crlian/mcp-pyatv](https://github.com/crlian/mcp-pyatv)** (1 star, last pushed March 30, 2026) — Apple TV, HomePod, and AirPlay device control via MCP. Useful for controlling media playback across Apple devices.
 
-**[somethingwithproof/home-mcp](https://github.com/somethingwithproof/home-mcp)** (1 star, TypeScript, MIT, 9 tools) — Uses macOS Shortcuts app as the bridge to HomeKit. If you already have Shortcuts automations, this layers AI control on top.
-
 ---
 
 ## Industrial IoT servers
 
-### The winner: poly-mcp/IoT-Edge-MCP-Server
+### The winner: kukapay/opcua-mcp
 
-**Stars:** 22 | **Language:** Python | **Tools:** 15+ | **Protocols:** MQTT (TLS), Modbus TCP/RTU, InfluxDB, Redis
+**Stars:** 29 | **Language:** Python
 
-[poly-mcp/IoT-Edge-MCP-Server](https://github.com/poly-mcp/IoT-Edge-MCP-Server) is the most comprehensive industrial IoT MCP server. Unifies MQTT sensors, Modbus devices, and industrial equipment through a single interface. Real-time monitoring, historical data with aggregations, PLC register/coil operations, and multi-priority alarm management. Enterprise security (API keys, JWT, IP allowlisting, rate limiting, HMAC signatures, audit logging). Includes a simulation mode with 10 sensors, 6 actuators, and 1 Modbus PLC for testing.
+[kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp) is a dedicated OPC UA MCP server from the same author as modbus-mcp. Connects to OPC UA-enabled industrial systems for real-time monitoring, analysis, and control.
 
-**Why it wins:** Production-grade security and multi-protocol support in one server. The simulation mode is especially valuable — you can test industrial IoT workflows without actual hardware.
+**Why it wins:** OPC UA is the dominant interoperability standard for modern industrial automation, and this is the most-starred actively-available MCP server targeting it directly. (Our previous pick in this category, poly-mcp/IoT-Edge-MCP-Server, is no longer reachable on GitHub — the account appears to have been deleted or renamed, so we removed it rather than recommend a server we can no longer verify.)
 
-**The catch:** Relatively new (22 stars). Industrial IoT is high-stakes; thorough testing is essential before any production use.
+**The catch:** Relatively new and small (29 stars). Industrial IoT is high-stakes; thorough testing is essential before any production use.
 
-**Best for:** Industrial teams exploring AI-assisted equipment monitoring and control.
+**Best for:** Industrial teams working with OPC UA-enabled equipment who want AI-assisted monitoring and control.
 
 ### Also notable
 
-**[kukapay/opcua-mcp](https://github.com/kukapay/opcua-mcp)** (26 stars, Python) — Dedicated OPC UA MCP server from the same author as modbus-mcp. Connects to OPC UA-enabled industrial systems for real-time monitoring, analysis, and control. More stars than the older OPCUA-MCP below.
-
-**[kukapay/modbus-mcp](https://github.com/kukapay/modbus-mcp)** (21 stars, Python, MIT, 6 tools) — Focused Modbus-only server supporting TCP, UDP, and serial connections. Read/write holding registers and coils. Best for simple PLC integration without the overhead of a full IIoT platform.
+**[kukapay/modbus-mcp](https://github.com/kukapay/modbus-mcp)** (26 stars, Python, MIT, 6 tools) — Focused Modbus-only server from the same author, supporting TCP, UDP, and serial connections. Read/write holding registers and coils. Best for simple PLC integration without the overhead of a full IIoT platform.
 
 **[cadugrillo/s7-mcp-bridge](https://github.com/cadugrillo/s7-mcp-bridge)** (14 stars, TypeScript, Docker) — Connects AI agents to **Siemens S7-1500 and S7-1200 PLCs**. 21+ tools for PLC interaction including auth, data read/write, alarm management, and system diagnostics. Siemens is [the world's leading industrial automation vendor by revenue and PLC market share](https://www.evsint.com/top-10-global-industrial-automation-companies-2026/), making this a significant addition.
 
@@ -300,7 +296,7 @@ Use this decision flowchart:
 
 **Do you use Home Assistant?** → Start with the [native MCP Server integration](https://www.home-assistant.io/integrations/mcp_server/) built into HA Core. For more tools and power, use [homeassistant-ai/ha-mcp](https://github.com/homeassistant-ai/ha-mcp) (2,044 stars, 92+ tools). For IDE-based automation development, try [Coolver/home-assistant-vibecode-agent](https://github.com/Coolver/home-assistant-vibecode-agent) (512 stars).
 
-**Do you need industrial IoT?** → If on AWS, use [awslabs IoT SiteWise](https://github.com/awslabs/mcp/tree/main/src/aws-iot-sitewise-mcp-server). If self-hosted, try [IoT-Edge-MCP-Server](https://github.com/poly-mcp/IoT-Edge-MCP-Server). For Modbus-only, use [modbus-mcp](https://github.com/kukapay/modbus-mcp).
+**Do you need industrial IoT?** → If on AWS, use [awslabs IoT SiteWise](https://github.com/awslabs/mcp/tree/main/src/aws-iot-sitewise-mcp-server). For OPC UA equipment, try [opcua-mcp](https://github.com/kukapay/opcua-mcp). For Modbus-only, use [modbus-mcp](https://github.com/kukapay/modbus-mcp).
 
 **Do you use ThingsBoard?** → [thingsboard-mcp](https://github.com/thingsboard/thingsboard-mcp) with 120+ tools is the clear choice.
 
@@ -322,7 +318,7 @@ Use this decision flowchart:
 
 **3. On-device MCP is real.** Projects like ESP32MCPServer and esp32-cam-ai prove that MCP servers can run directly on microcontrollers. This eliminates the bridge server — the hardware itself speaks MCP. As edge computing grows, expect more embedded MCP servers.
 
-**4. Gaps are closing — slowly.** Matter protocol now has two small MCP servers (7 and 6 stars). SmartThings has community servers (5 stars). Ring has a 3-star server. But Google Home/Nest, Azure IoT Hub, Z-Wave, LoRaWAN, and Thread remain unserved. The practical bridge for all of these is Home Assistant — which, via its native MCP integration, effectively fills these gaps indirectly. [Matter 1.5](https://csa-iot.org/newsroom/matter-1-5-introduces-cameras-closures-and-enhanced-energy-management-capabilities/) (released November 2025) added cameras and energy management, with [750+ certified products](https://matter-smarthome.de/) per community tracker (CSA's own ledger includes 1,000+ counting variants) — see our [Matter Meets MCP deep dive](/guides/mcp-matter-smart-home-protocol/) for the full picture.
+**4. Gaps are closing — slowly.** Matter protocol now has two small MCP servers (7 and 6 stars). SmartThings has community servers (5 stars). Ring has a 3-star server. But Google Home/Nest, Azure IoT Hub, Z-Wave, LoRaWAN, and Thread remain unserved. The practical bridge for all of these is Home Assistant — which, via its native MCP integration, effectively fills these gaps indirectly. [Matter 1.5](https://csa-iot.org/newsroom/matter-1-5-introduces-cameras-closures-and-enhanced-energy-management-capabilities/) (released November 20, 2025) added cameras, closures, and enhanced energy management — see our [Matter Meets MCP deep dive](/guides/mcp-matter-smart-home-protocol/) for the full picture.
 
 ---
 
@@ -344,5 +340,5 @@ The practical workaround for most of these gaps is Home Assistant — which, via
 
 ---
 
-*Last updated: April 2026. Have a correction or suggestion? [Open an issue on GitHub](https://github.com/grove/chatforest.com).*
+*Last updated: April 2026. Have a correction or suggestion? [Open an issue on GitHub](https://github.com/Chatforest/chatforest.com).*
 
