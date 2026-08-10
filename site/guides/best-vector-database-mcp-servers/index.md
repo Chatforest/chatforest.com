@@ -15,20 +15,20 @@ We've [reviewed Chroma](/reviews/chroma-mcp-server/) (3.5/5), [Milvus](/reviews/
 
 | Server | Stars | Tools | Transport | Best For |
 |--------|-------|-------|-----------|----------|
-| [Chroma MCP](/reviews/chroma-mcp-server/) | 529 | 13 | stdio | Full vector DB management ⚠️ |
-| [Qdrant MCP](/reviews/qdrant-mcp-server/) | 1,321 | 2 | stdio, SSE, Streamable HTTP | Semantic memory layer |
-| [Pinecone MCP](/reviews/pinecone-mcp-server/) | 62 | 9 | stdio | Cloud vector search with reranking |
-| [Milvus MCP](/reviews/milvus-mcp-server/) (Zilliz) | 224 | 14 | stdio, SSE | Self-hosted vector operations |
-| Zilliz Cloud MCP | 32 | 16 | stdio, Streamable HTTP | Managed Milvus with cloud controls |
-| MongoDB MCP | 989 | 39 | stdio | Full database + vector search |
-| Weaviate MCP | 160 | 2 | stdio | Nothing yet (proof of concept) |
+| [Chroma MCP](/reviews/chroma-mcp-server/) | 585 | 12 | stdio | Full vector DB management ⚠️ |
+| [Qdrant MCP](/reviews/qdrant-mcp-server/) | 1,495 | 2 | stdio, SSE, Streamable HTTP | Semantic memory layer |
+| [Pinecone MCP](/reviews/pinecone-mcp-server/) | 70 | 9 | stdio | Cloud vector search with reranking |
+| [Milvus MCP](/reviews/milvus-mcp-server/) (Zilliz) | 239 | 12 | stdio, SSE | Self-hosted vector operations |
+| Zilliz Cloud MCP | 34 | 16 | stdio, Streamable HTTP | Managed Milvus with cloud controls |
+| MongoDB MCP | 1,095 | 52 | stdio | Full database + vector search |
+| Weaviate MCP | 162 | 4 | Streamable HTTP | Built into Weaviate itself (v1.37.1+) |
 | LanceDB MCP | 25 | 3 | stdio | Nothing yet (reference only) |
 
 ## Two Philosophies, One Category
 
 The vector database MCP space splits into two camps, and understanding the divide saves you from picking the wrong server.
 
-**Database management servers** give your agent full control: create collections, configure indexes, insert documents, query, update, delete. Chroma (12 tools), Milvus (14 tools), and MongoDB (39 tools, though not vector-specific) take this approach. Your agent can build and manage vector infrastructure from scratch.
+**Database management servers** give your agent full control: create collections, configure indexes, insert documents, query, update, delete. Chroma (12 tools), Milvus (12 tools), and MongoDB (52 tools, though not vector-specific) take this approach. Your agent can build and manage vector infrastructure from scratch.
 
 **Semantic memory servers** hide the database entirely. Your agent stores text and retrieves it by meaning. Qdrant (2 tools) is the purest version of this — there's no collection management, no index configuration, no delete. The server handles embeddings, storage, and retrieval behind the scenes.
 
@@ -42,16 +42,16 @@ Which philosophy you want depends on your use case. Building a RAG pipeline that
 
 **[Read our full review](/reviews/chroma-mcp-server/)**
 
-[Chroma's official MCP server](https://github.com/chroma-core/chroma-mcp) has 13 tools. Seven handle collection management (create, list, peek, get info, count, modify, delete), and the remaining tools cover document operations (add, query, get, update, delete). It's the only server that lets your agent configure HNSW index parameters at collection creation time.
+[Chroma's official MCP server](https://github.com/chroma-core/chroma-mcp) has 12 tools. Seven handle collection management (create, list, peek, get info, count, modify, delete), and the remaining five cover document operations (add, query, get, update, delete). It's the only server that lets your agent configure HNSW index parameters at collection creation time.
 
 **What sets it apart:**
 - Four deployment modes: ephemeral (in-memory), persistent (local files), self-hosted HTTP, and Chroma Cloud
 - Six embedding providers: Default, Cohere, OpenAI, Jina, VoyageAI, Roboflow
 - Combined semantic + full-text + regex search through a single `query_documents` tool
 
-**⚠️ Security warning (April 2026):** A critical [SQL injection vulnerability](https://github.com/chroma-core/chroma-mcp/issues/62) was reported on April 2, 2026. Eight of the server's tools (62%) pass collection name parameters unsanitized into SQLite queries, enabling a prompt-injection-to-SQL-injection attack chain. This is **unpatched** — the repo has had no commits since September 2025. Additionally, the pinned MCP SDK dependency (v1.6.0) contains known vulnerabilities (CVE-2025-53365, CVE-2025-53366), fixed in MCP SDK v1.10.0+.
+**⚠️ Security warning (April 2026, still unresolved as of this August 2026 update):** A critical [SQL injection vulnerability](https://github.com/chroma-core/chroma-mcp/issues/62) was reported on April 2, 2026. The report claims eight of the server's tools (62%, against a total of 13 tools per the report — the current README lists 12) pass collection name parameters unsanitized into SQLite queries, enabling a prompt-injection-to-SQL-injection attack chain. This is **still unpatched** — the repo has had no commits since September 17, 2025, and issue #62 remains open. Additionally, the pinned MCP SDK dependency (v1.6.0) contains known vulnerabilities ([CVE-2025-53365](https://github.com/advisories/GHSA-j975-95f5-7wqh), [CVE-2025-53366](https://github.com/advisories/GHSA-3qhf-m339-9g5v)), fixed in MCP SDK v1.10.0+.
 
-**The catch:** Stdio-only transport means no remote MCP connections. Python-only. Currently at v0.2.6 (August 2025) with development effectively **dormant for 7 months**. No community PRs are being merged (4 open PRs pending since late 2025). Query results can bloat your context window — a single query returns full document text, metadata, embeddings, and distances without any way to limit fields.
+**The catch:** Stdio-only transport means no remote MCP connections. Python-only. Currently at v0.2.6 (August 14, 2025) with development effectively **dormant for nearly a year**. No community PRs are being merged — 13 are open and unmerged, the oldest dating back to May 2025. Query results can bloat your context window — a single query returns full document text, metadata, embeddings, and distances without any way to limit fields.
 
 **Best for:** Developers who need full vector database management through their agent and are comfortable with local Python tooling. **Exercise caution** — sanitize collection names in your workflow until the SQL injection is patched.
 
@@ -66,9 +66,9 @@ Which philosophy you want depends on your use case. Building a RAG pipeline that
 - Local embedded mode via `QDRANT_LOCAL_PATH` — zero infrastructure semantic memory
 - Extensible `QdrantMCPServer` class for building custom servers on top
 - Customizable tool descriptions via environment variables
-- 1,321 GitHub stars and 256 forks — most adopted by far
+- 1,495 GitHub stars and 291 forks — most adopted by far
 
-**The catch:** Two tools is genuinely limiting. You can't delete stored information (open issues [#74](https://github.com/qdrant/mcp-server-qdrant/issues/74) and [#101](https://github.com/qdrant/mcp-server-qdrant/issues/101)) — though community PRs for [delete](https://github.com/qdrant/mcp-server-qdrant/pull/116) and [edit](https://github.com/qdrant/mcp-server-qdrant/pull/121) tools were submitted in late March 2026 and await review. No collection management means you can't organize information by project or topic through the MCP interface. FastEmbed-only embedding by default. Last release (v0.8.1) was December 2025.
+**The catch:** Two tools is genuinely limiting. You can't delete stored information — the feature request ([issue #69](https://github.com/qdrant/mcp-server-qdrant/issues/69)) has been open since mid-2025, and community PRs for a [delete](https://github.com/qdrant/mcp-server-qdrant/pull/116) tool and an [edit](https://github.com/qdrant/mcp-server-qdrant/pull/121) tool are both still open and awaiting review. No collection management means you can't organize information by project or topic through the MCP interface. FastEmbed-only embedding by default. Last release (v0.8.1) was December 2025.
 
 **Best for:** Adding persistent semantic memory to coding agents. Not for managing vector infrastructure.
 
@@ -76,7 +76,7 @@ Which philosophy you want depends on your use case. Building a RAG pipeline that
 
 **[Read our full review](/reviews/pinecone-mcp-server/)**
 
-[Pinecone's official Developer MCP server](https://github.com/pinecone-io/pinecone-mcp) (62 stars, v0.2.1) sits between the database-management and semantic-memory philosophies. Nine tools focus on search quality over infrastructure control — cascading search across indexes, built-in reranking, and documentation search without authentication.
+[Pinecone's official Developer MCP server](https://github.com/pinecone-io/pinecone-mcp) (70 stars, [v0.3.0](https://github.com/pinecone-io/pinecone-mcp/releases) as of August 7, 2026) sits between the database-management and semantic-memory philosophies. Nine tools focus on search quality over infrastructure control — cascading search across indexes, built-in reranking, and documentation search without authentication. The v0.3.0 release notes cite security fixes, dependency updates, and adaptation to Pinecone SDK v8's breaking API changes.
 
 **What sets it apart:**
 - `cascading-search` — the only vector DB MCP server with cross-index search and automatic deduplication
@@ -92,34 +92,35 @@ Which philosophy you want depends on your use case. Building a RAG pipeline that
 
 **[Read our full review](/reviews/milvus-mcp-server/)**
 
-[Zilliz's Milvus MCP server](https://github.com/zilliztech/mcp-server-milvus) (224 stars) brings the most popular open-source vector database (40,000+ GitHub stars) to MCP with 14 tools — the highest tool count among dedicated vector database MCP servers.
+[Zilliz's Milvus MCP server](https://github.com/zilliztech/mcp-server-milvus) (239 stars) brings the most popular open-source vector database (40,000+ GitHub stars) to MCP with 12 tools — tied with Chroma for the most tools among dedicated vector database MCP servers.
 
 **What sets it apart:**
-- Six search modes — text, vector, hybrid, text similarity, filter queries, plus the new `get_collection_info` tool — more than any other vector DB MCP server
+- Five search modes — text, vector, hybrid, text similarity, and filter queries
 - Native hybrid search combining keyword precision with semantic recall in one query (Milvus 2.5+)
-- Memory management controls (`load_collection`, `release_collection`) — unique in the category
+- Memory management controls (`milvus_load_collection`, `milvus_release_collection`) — unique in the category
 - Full delete capability via filter expressions (unlike Qdrant and Pinecone)
-- Database-level management (`list_databases`, `use_database`) for multi-tenant setups
 - Works identically with self-hosted Milvus and Zilliz Cloud
 - Stdio and SSE transport
 
-**⚠️ Security warning (April 2026):** The underlying Milvus database has two critical vulnerabilities. [CVE-2026-26190](https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6) (CVSS 9.8) allows unauthenticated access to the REST API on metrics port 9091, enabling data exfiltration, credential theft, and potential RCE. [CVE-2025-64513](https://github.com/milvus-io/milvus/security/advisories/GHSA-mhjq-8c7m-3f7p) is an authentication bypass via forged HTTP headers. [CVE-2026-26190](https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6) is patched in Milvus 2.5.27+ and 2.6.10+. [CVE-2025-64513](https://github.com/advisories/GHSA-mhjq-8c7m-3f7p) is patched in Milvus 2.4.24+, 2.5.21+, and 2.6.5+. **Ensure your Milvus instance is updated before connecting an MCP server to it.**
+**⚠️ Security warning (April 2026, CVEs remain unpatched-by-default risks as of this August 2026 update):** The underlying Milvus database has two critical vulnerabilities. [CVE-2026-26190](https://github.com/milvus-io/milvus/security/advisories/GHSA-7ppg-37fh-vcr6) (CVSS 9.8) allows unauthenticated access to the REST API on metrics port 9091, enabling data exfiltration, credential theft, and potential RCE. [CVE-2025-64513](https://github.com/milvus-io/milvus/security/advisories/GHSA-mhjq-8c7m-3f7p) is an authentication bypass via forged HTTP headers. CVE-2026-26190 is patched in Milvus 2.5.27+ and 2.6.10+. CVE-2025-64513 is patched in Milvus 2.4.24+, 2.5.21+, and 2.6.5+. **Ensure your Milvus instance is updated before connecting an MCP server to it.**
 
-**The catch:** No embedded/local mode — requires a running Milvus instance (Docker or Zilliz Cloud). No document update (must delete and re-insert). Pre-release maturity (no versioned releases, only dev builds on PyPI, last commit December 2025). The service hang bug ([#51](https://github.com/zilliztech/mcp-server-milvus/issues/51)) has a workaround merged (try-except blocks in PR #54) but the issue remains technically open. No Streamable HTTP transport. Python-only.
+**The catch:** No embedded/local mode — requires a running Milvus instance (Docker or Zilliz Cloud). No document update (must delete and re-insert). Still pre-release maturity — no versioned GitHub releases, and the latest PyPI package is still a dev build (0.1.1.dev9, published November 2025) — though GitHub commit activity resumed in May and July 2026 after a quiet Q4 2025/Q1 2026. The service hang bug ([#51](https://github.com/zilliztech/mcp-server-milvus/issues/51)) is now closed: a workaround (try-except blocks) merged in [PR #54](https://github.com/zilliztech/mcp-server-milvus/pull/54). No Streamable HTTP transport. Python-only.
 
-Zilliz also maintains a separate [Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) (32 stars, 16 tools) that adds cloud management — cluster creation, suspension, metrics — plus Streamable HTTP transport. Both repos have been dormant through Q1 2026.
+Zilliz also maintains a separate [Zilliz Cloud MCP server](https://github.com/zilliztech/zilliz-mcp-server) (34 stars, 16 tools) that adds cloud management — cluster creation, suspension, metrics — plus Streamable HTTP transport. That repo has been dormant since mid-2025, unlike the dedicated Milvus MCP server which resumed commits in 2026.
 
 **Best for:** Teams running Milvus in production who want AI-assisted vector operations, especially hybrid search combining keyword and semantic retrieval. **Patch your Milvus instance first.**
 
 ## The Unreviewed Servers
 
-### Weaviate MCP — Too Early
+### Weaviate MCP — Now Built Into Weaviate Itself
 
-[Weaviate's official MCP server](https://github.com/weaviate/mcp-server-weaviate) (160 stars, 43 forks) has two tools: `insert_one` and `query`. No releases. Written in Go, which is unusual for MCP servers. The README shows placeholder JSON examples. Weaviate has also launched a separate [Docs MCP Server](https://docs.weaviate.io/weaviate/mcp/docs-mcp-server) for documentation access, but the core data server remains unchanged.
+**Update (August 2026):** The standalone repo described in earlier versions of this guide — [weaviate/mcp-server-weaviate](https://github.com/weaviate/mcp-server-weaviate) (162 stars, 44 forks), a two-tool Go proof of concept — is now deprecated by Weaviate. Its README states: "This standalone server is deprecated. The Weaviate Model Context Protocol (MCP) server is now built into Weaviate itself — there is nothing to install or run separately."
 
-Despite the star count (likely from Weaviate's brand recognition), this is a proof of concept, not a usable server. The community [sajal2692/mcp-weaviate](https://github.com/sajal2692/mcp-weaviate) alternative has 11 tools and is more functional, but has minimal adoption.
+MCP support ships inside the main `weaviate/weaviate` binary starting from **v1.37.1**, enabled with a single environment variable (`MCP_SERVER_ENABLED=true`). It's served over **Streamable HTTP** at `/v1/mcp` on the same port as the REST API — not stdio — and authenticates through Weaviate's existing API-key and RBAC flow. Per [Weaviate's docs](https://docs.weaviate.io/weaviate/configuration/mcp-server), it exposes four tools: `weaviate-collections-get-config` (read schema), `weaviate-tenants-list` (multi-tenant status), `weaviate-query-hybrid` (vector + BM25 hybrid search), and `weaviate-objects-upsert` (batch insert/update, no delete). There's no collection-creation tool yet — schema management still has to happen outside MCP.
 
-**Best for:** Nothing yet. Wait for Weaviate to invest in this properly.
+The community [sajal2692/mcp-weaviate](https://github.com/sajal2692/mcp-weaviate) alternative (11 tools) still exists as a separate, independently-maintained option with broader read/search coverage, but minimal adoption (5 stars).
+
+**Best for:** Anyone running Weaviate v1.37.1+ who wants hybrid search and basic object writes through MCP without a separate process. Still no collection management or delete through MCP — pair it with the native SDK for anything beyond that.
 
 ### LanceDB MCP — Reference Only
 
@@ -131,23 +132,22 @@ LanceDB itself is excellent — embedded, serverless, multimodal, Rust-powered �
 
 ### MongoDB MCP — General-Purpose with Strong Vector Search
 
-[MongoDB's official MCP server](https://github.com/mongodb-js/mongodb-mcp-server) (989 stars, 211 forks) isn't a dedicated vector database server — it's a full MongoDB MCP with ~39 tools covering database management, Atlas cloud operations, and local cluster management. But its vector search capabilities are increasingly competitive.
+[MongoDB's official MCP server](https://github.com/mongodb-js/mongodb-mcp-server) (1,095 stars, 281 forks) isn't a dedicated vector database server — it's a full MongoDB MCP with 52 tools (per its README's tool list) covering database management, Atlas cloud operations, and local cluster management. Its own README doesn't describe general-purpose vector search capabilities as a first-class feature — worth noting since earlier coverage of this server overstated that.
 
 **What sets it apart:**
-- **Automatic embedding generation** via Voyage AI on insert — no need to pre-compute embeddings, dramatically lowering the barrier to vector search
-- Unified vector search index creation alongside regular indexes (behind a feature flag)
-- Full CRUD across collections, plus Atlas-specific tools (Performance Advisor, cluster management)
-- The sheer breadth: 22 database tools, 14 Atlas tools, 3 local management tools
+- A Voyage AI API key (`MDB_MCP_VOYAGE_API_KEY`) can auto-provision vector search when creating a new **Atlas Local** deployment — this is a deployment-setup convenience, not automatic per-document embedding generation on every insert
+- Full CRUD across collections, plus Atlas-specific tools (Performance Advisor, cluster management, Stream Processing)
+- The sheer breadth: 25 database tools, 21 Atlas tools, 4 Atlas Local deployment tools, and 2 MongoDB Assistant/knowledge-base tools
 
-**The catch:** This is a general-purpose MongoDB server, not a purpose-built vector database MCP. If you only need vector search, the tool surface is overwhelming. Requires MongoDB Atlas for vector search features (the vector search index type is an Atlas feature). No dedicated semantic memory abstraction like Qdrant's store/find simplicity.
+**The catch:** This is a general-purpose MongoDB server, not a purpose-built vector database MCP — there's no dedicated vector-search tool in its tool list at all; vector queries go through the generic `aggregate`/`find` tools against an Atlas Vector Search index you configure outside MCP. If you only need vector search, the tool surface is overwhelming. Requires MongoDB Atlas for vector search features (the vector search index type is an Atlas feature). No dedicated semantic memory abstraction like Qdrant's store/find simplicity.
 
 **Best for:** Teams already using MongoDB who want to add vector search alongside their existing document database operations. Not ideal if vector search is your primary use case.
 
 ### Elasticsearch MCP — Deprecated
 
-[Elastic's official MCP server](https://github.com/elastic/mcp-server-elasticsearch) (639 stars) had 5 tools including full-text search, ES|QL, and mapping inspection. However, as of Elasticsearch 9.2+, **this server is deprecated** in favor of the built-in [Elastic Agent Builder MCP endpoint](https://www.elastic.co/docs/solutions/search/mcp). Only critical security fixes will be applied to the standalone server.
+[Elastic's official MCP server](https://github.com/elastic/mcp-server-elasticsearch) (703 stars) has 5 tools including full-text search, ES|QL, and mapping inspection. However, as of Elasticsearch 9.2+, **this server is deprecated** in favor of the built-in [Elastic Agent Builder MCP endpoint](https://www.elastic.co/docs/solutions/search/mcp). Only critical security fixes will be applied to the standalone server.
 
-This signals a broader trend: vector databases are beginning to embed MCP support directly into their products rather than maintaining separate MCP server repositories.
+This signals a broader trend: vector databases are beginning to embed MCP support directly into their products rather than maintaining separate MCP server repositories. Weaviate followed the same path in 2026, folding its MCP server into the core `weaviate/weaviate` binary (see above).
 
 **Best for:** Migrate to the Elastic Agent Builder endpoint if you're on Elasticsearch 9.2+.
 
@@ -155,41 +155,41 @@ This signals a broader trend: vector databases are beginning to embed MCP suppor
 
 | Feature | Chroma | Qdrant | Pinecone | Milvus | MongoDB | Weaviate | LanceDB |
 |---------|--------|--------|----------|--------|---------|----------|---------|
-| **Tools** | 13 | 2 | 9 | 14 | 39 | 2 | 3 |
-| **Collection CRUD** | Full | None | Read-only | Full | Full | Insert only | Read-only |
+| **Tools** | 12 | 2 | 9 | 12 | 52 | 4 | 3 |
+| **Collection CRUD** | Full | None | Read-only | Full | Full | Read-only | Read-only |
 | **Document insert** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | **Document delete** | Yes | No | No | Yes | Yes | No | No |
-| **Document update** | Yes | No | No | No | Yes | No | No |
+| **Document update** | Yes | No | No | No | Yes | Yes | No |
 | **Semantic search** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | **Full-text search** | Yes | No | No | Yes | Yes | No | No |
 | **Hybrid search** | No | No | No | Yes | Yes | Yes | No |
 | **Reranking** | No | No | Yes | No | No | No | No |
-| **Auto-embeddings** | 6 providers | FastEmbed | Integrated | External | Voyage AI | External | Built-in |
+| **Auto-embeddings** | 6 providers | FastEmbed | Integrated | External | Voyage AI (Atlas Local only) | External | Built-in |
 | **Local/embedded mode** | Yes | Yes | No | No | Yes (local) | Yes | Yes |
 | **Cloud mode** | Yes | Yes | Yes (only) | Yes | Yes (Atlas) | Yes | No |
-| **stdio** | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| **stdio** | Yes | Yes | Yes | Yes | Yes | No | Yes |
 | **SSE** | No | Yes | No | Yes | No | No | No |
-| **Streamable HTTP** | No | Yes | No | No | No | No | No |
+| **Streamable HTTP** | No | Yes | No | No | No | Yes | No |
 | **OAuth** | No | No | No | No | No | No | No |
 | **Security issues** | ⚠️ SQLi | None | None | ⚠️ CVEs | None | None | None |
-| **GitHub stars** | 529 | 1,321 | 62 | 224 | 989 | 160 | 25 |
+| **GitHub stars** | 585 | 1,495 | 70 | 239 | 1,095 | 162 | 25 |
 | **Language** | Python | Python | TypeScript | Python | TypeScript | Go | Python |
 | **Rating** | 3.5/5 | 3/5 | 3/5 | 3.5/5 | — | — | — |
-| **Maturity** | v0.2.6 ⚠️ | v0.8.1 | v0.2.1 | Pre-release | Active | PoC | Reference |
+| **Maturity** | v0.2.6 ⚠️ | v0.8.1 | v0.3.0 | Pre-release | Active | Built-in (v1.37.1+) | Reference |
 
 ## The pgvector Gap
 
 Notably absent from this comparison: a dedicated pgvector MCP server. PostgreSQL's vector extension is one of the most popular ways to add vector search to existing applications, but there's no clear winner in the MCP space.
 
-The options are fragmented: [yusuf/mcp-pgvector-server](https://lobehub.com/mcp/yusuf-mcp-pgvector-server) for dedicated pgvector search, [neverinfamous/postgres-mcp](https://github.com/neverinfamous/postgres-mcp) for full Postgres with pgvector and 8 extensions support, [stuzero/pg-mcp-server](https://github.com/stuzero/pg-mcp-server) for enhanced Postgres with pgvector awareness, and [Knuckles-Team/vector-mcp](https://github.com/Knuckles-Team/vector-mcp) (9 stars) as a multi-database MCP supporting pgvector alongside ChromaDB, Qdrant, Couchbase, and MongoDB.
+The options are fragmented: [yusuf/mcp-pgvector-server](https://lobehub.com/mcp/yusuf-mcp-pgvector-server) for dedicated pgvector search, [neverinfamous/postgres-mcp](https://github.com/neverinfamous/postgres-mcp) for full Postgres with pgvector among [12 supported extensions](https://github.com/neverinfamous/postgres-mcp) (pgvector, PostGIS, pg_cron, pg_partman, and more), [stuzero/pg-mcp-server](https://github.com/stuzero/pg-mcp-server) for enhanced Postgres with pgvector awareness, and [Knuckles-Team/vector-mcp](https://github.com/Knuckles-Team/vector-mcp) (15 stars) as a multi-database MCP supporting pgvector alongside ChromaDB, Qdrant, Couchbase, and MongoDB.
 
-If you're already using PostgreSQL with pgvector, your best option today is a general Postgres MCP server rather than a dedicated vector database MCP server. This gap will likely close as the ecosystem matures — and the emergence of unified/federated MCP servers like [Knuckles-Team/vector-mcp](https://github.com/Knuckles-Team/vector-mcp) and MindsDB's universal MCP (which federates across Pinecone, Weaviate, and Qdrant) suggests the future may be multi-backend rather than vendor-specific.
+If you're already using PostgreSQL with pgvector, your best option today is a general Postgres MCP server rather than a dedicated vector database MCP server. This gap will likely close as the ecosystem matures — and the emergence of unified/federated MCP servers like [Knuckles-Team/vector-mcp](https://github.com/Knuckles-Team/vector-mcp) suggests the future may be multi-backend rather than vendor-specific.
 
 ## Our Recommendations
 
 ### For full vector database management: Chroma MCP (with caveats)
 
-If you need your agent to create collections, configure indexes, manage documents, and run queries — Chroma has the most complete lifecycle coverage. Twelve tools, four deployment modes, six embedding providers. **However**, the unpatched SQL injection vulnerability (April 2026) and 7 months of dormancy are serious concerns. If you use Chroma MCP, sanitize collection name inputs in your workflow and monitor [issue #62](https://github.com/chroma-core/chroma-mcp/issues/62) for a fix. Milvus MCP (14 tools) is now a viable alternative for full management if you can run a Milvus instance.
+If you need your agent to create collections, configure indexes, manage documents, and run queries — Chroma has the most complete lifecycle coverage. Twelve tools, four deployment modes, six embedding providers. **However**, the unpatched SQL injection vulnerability (reported April 2026, still open) and nearly a year of dormancy are serious concerns. If you use Chroma MCP, sanitize collection name inputs in your workflow and monitor [issue #62](https://github.com/chroma-core/chroma-mcp/issues/62) for a fix. Milvus MCP (also 12 tools) is a viable alternative for full management if you can run a Milvus instance.
 
 ### For semantic memory: Qdrant MCP
 
@@ -201,15 +201,19 @@ If search quality matters more than flexibility — cascading search across inde
 
 ### For self-hosted infrastructure: [Milvus MCP](/reviews/milvus-mcp-server/)
 
-If you're running Milvus and need full management through MCP — collections, inserts, deletes, hybrid search — the [Milvus server](/reviews/milvus-mcp-server/) (3.5/5) has the best self-hosted story. Fourteen tools with category-leading six search modes and both stdio and SSE transport. The lack of versioned releases is a concern, but the tool coverage is solid. **Critical: ensure your Milvus instance is updated to 2.5.27+ or 2.6.10+ to patch CVE-2026-26190.**
+If you're running Milvus and need full management through MCP — collections, inserts, deletes, hybrid search — the [Milvus server](/reviews/milvus-mcp-server/) (3.5/5) has the best self-hosted story. Twelve tools spanning five search modes, plus stdio and SSE transport. Versioned releases are still absent (PyPI is dev-build-only), but GitHub commit activity resumed in 2026 after a quiet stretch, and the tool coverage is solid. **Critical: ensure your Milvus instance is updated to 2.5.27+ or 2.6.10+ to patch CVE-2026-26190.**
 
 ### For existing MongoDB users: MongoDB MCP
 
-If you're already on MongoDB Atlas and want to add vector search alongside your existing database operations, the [MongoDB MCP server](https://github.com/mongodb-js/mongodb-mcp-server) (989 stars, ~39 tools) is the most actively maintained server in this category. Automatic embedding generation via Voyage AI removes the biggest friction point in vector search setup. Overkill if vector search is your only need.
+If you're already on MongoDB Atlas and want to add vector search alongside your existing database operations, the [MongoDB MCP server](https://github.com/mongodb-js/mongodb-mcp-server) (1,095 stars, 52 tools) is the most actively maintained server in this category. Note that its vector search support runs through the generic `aggregate`/`find` tools against an Atlas Vector Search index you configure yourself — there's no dedicated vector-search tool, and Voyage AI auto-embedding only applies when provisioning a new Atlas Local deployment. Overkill if vector search is your only need.
+
+### For Weaviate users: use the built-in server, not a standalone package
+
+Weaviate folded its MCP server into the core `weaviate/weaviate` binary (v1.37.1+) in 2026 — enable it with `MCP_SERVER_ENABLED=true` rather than installing anything separately. It's limited to four tools (schema read, tenant list, hybrid search, object upsert) and has no collection management or delete yet, but it's a real, maintained option now, not a proof of concept.
 
 ### For everything else: Wait
 
-Weaviate and LanceDB both have MCP servers that aren't ready for real use. If you're committed to either database, use their native SDKs and check back in six months. The community alternatives are more functional but lack the maintenance guarantees of first-party servers.
+LanceDB's MCP server still isn't ready for real use — three tools, three commits, explicitly a reference implementation. If you're committed to LanceDB, use the native SDK and check back later. The [adiom-data/lance-mcp](https://github.com/adiom-data/lance-mcp) community alternative exists but has seen no updates since early 2025.
 
 ## Decision Flowchart
 
@@ -221,17 +225,17 @@ Weaviate and LanceDB both have MCP servers that aren't ready for real use. If yo
 
 → **Managing existing vector infrastructure?** Match the server to your database: [Milvus MCP](/reviews/milvus-mcp-server/) for Milvus (patch your instance first), [Pinecone MCP](/reviews/pinecone-mcp-server/) for Pinecone (integrated embeddings only), Qdrant MCP for Qdrant, [MongoDB MCP](https://github.com/mongodb-js/mongodb-mcp-server) for MongoDB Atlas. Chroma MCP covers Chroma across all four deployment modes (watch the SQL injection issue).
 
-→ **Need remote MCP (not stdio)?** [Qdrant MCP](/reviews/qdrant-mcp-server/) is the only option with all three transports. [Milvus MCP](/reviews/milvus-mcp-server/) has SSE. Zilliz Cloud MCP has Streamable HTTP. Everyone else is stdio-only.
+→ **Need remote MCP (not stdio)?** [Qdrant MCP](/reviews/qdrant-mcp-server/) is the only option with all three transports. [Milvus MCP](/reviews/milvus-mcp-server/) has SSE. Zilliz Cloud MCP and Weaviate's built-in server both have Streamable HTTP. Everyone else is stdio-only.
 
 → **Need zero infrastructure?** [Qdrant MCP](/reviews/qdrant-mcp-server/) with `QDRANT_LOCAL_PATH` or [Chroma MCP](/reviews/chroma-mcp-server/) in persistent mode — both run embedded without a separate server process.
 
 ## The Bottom Line
 
-The vector database MCP space is young — and April 2026 reveals a category under strain. The two highest-rated dedicated servers — Chroma and [Milvus](/reviews/milvus-mcp-server/) at 3.5/5 each — both have active security concerns (Chroma: unpatched SQL injection; Milvus: critical CVEs on the underlying database). Chroma has been dormant for 7 months. Milvus hasn't committed since December 2025. The most adopted server — Qdrant at 1,321 stars — still has just two tools, with delete/edit PRs waiting for review. No dedicated vector DB MCP server in this category supports OAuth. None have reached 1.0.
+The vector database MCP space is young, and this category has been under real strain since April 2026. The two highest-rated dedicated servers — Chroma and [Milvus](/reviews/milvus-mcp-server/) at 3.5/5 each — both have active security concerns (Chroma: unpatched SQL injection; Milvus: critical CVEs on the underlying database). Chroma has been dormant for nearly a year (no commits since September 2025). Milvus's dedicated MCP server, by contrast, resumed active commits in 2026 after its own quiet stretch, though it still has no versioned releases. The most adopted server — Qdrant at 1,495 stars — still has just two tools, with delete/edit PRs waiting for review. No dedicated vector DB MCP server in this category supports OAuth. None have reached 1.0.
 
-Two trends are emerging. First, **general-purpose database MCP servers are eating into this category** — MongoDB's 39-tool server with automatic Voyage AI embeddings is more actively maintained than any dedicated vector DB server here. Elasticsearch has deprecated its standalone MCP server entirely in favor of built-in Agent Builder support. The future may not be "vector database MCP servers" as a separate category. Second, **federated/multi-backend approaches** like Knuckles-Team's vector-mcp and MindsDB's universal MCP are abstracting away the vendor choice entirely.
+Two trends are emerging. First, **general-purpose database MCP servers are eating into this category** — MongoDB's 52-tool server is more actively maintained than any dedicated vector DB server here, though its vector search story runs through generic query tools rather than a dedicated feature. Elasticsearch has deprecated its standalone MCP server entirely in favor of built-in Agent Builder support, and Weaviate has done the same, folding MCP support directly into its core binary. The future may not be "vector database MCP servers" as a separate category. Second, **federated/multi-backend approaches** like Knuckles-Team's vector-mcp are starting to abstract away the vendor choice entirely.
 
-Pick the server that matches your database — but check the security warnings first. If you don't have a database yet, [Qdrant](/reviews/qdrant-mcp-server/) remains the safest starting point for semantic memory. For full management, [Milvus](/reviews/milvus-mcp-server/) (14 tools) now edges out Chroma on capability — just ensure your instance is patched. And if you're already on MongoDB, its MCP server may be all you need.
+Pick the server that matches your database — but check the security warnings first. If you don't have a database yet, [Qdrant](/reviews/qdrant-mcp-server/) remains the safest starting point for semantic memory. For full management, [Milvus](/reviews/milvus-mcp-server/) and Chroma are now tied on tool count (12 each) — Milvus wins on hybrid search and active development, Chroma on deployment-mode flexibility, and both need their security issues addressed before production use. And if you're already on MongoDB, its MCP server may be all you need.
 
 For how vector databases fit into the broader MCP ecosystem, see our [mega-comparison of all MCP servers](/guides/best-mcp-servers/) and our [database MCP server comparison](/guides/best-database-mcp-servers/).
 

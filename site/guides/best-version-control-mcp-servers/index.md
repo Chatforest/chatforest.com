@@ -7,18 +7,18 @@ Version control MCP servers are the backbone of AI-assisted development. These s
 
 We've researched 30+ version control MCP servers across the entire landscape. This guide synthesizes all of that into one page: what's worth using, what's not, and where the gaps are.
 
-*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026.*
+*Note: Our recommendations are based on documentation review, GitHub analysis, and community feedback — not hands-on testing of every server. Star counts were verified in April 2026 and re-verified against live repos in August 2026.*
 
 ## The short version
 
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
-| GitHub (platform) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 28,600 | [modelcontextprotocol/servers (GitHub)](https://github.com/modelcontextprotocol/servers) (81,700 monorepo) |
-| GitLab (platform) | [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) | 1,300 | [GitLab Official MCP](https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/) (beta, 15 tools) |
-| Bitbucket (platform) | [aashari/mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) | 140 | [MatanYemini/bitbucket-mcp](https://github.com/MatanYemini/bitbucket-mcp) (Cloud + Server) |
-| Local Git operations | [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) | 206 | [Official Git MCP](/reviews/git-mcp-server/) (81,700 monorepo, 12 tools, no push) |
-| Azure DevOps | [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) | 1,500 | [Tiberriver256/mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) (356 stars, community) |
-| Perforce | [perforce/p4mcp-server](https://github.com/perforce/p4mcp-server) | 76 | — |
+| GitHub (platform) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 32,100 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (89,400-star monorepo; its GitHub reference server has since been archived — see below) |
+| GitLab (platform) | [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) | 1,900 | [GitLab Official MCP](https://docs.gitlab.com/user/model_context_protocol/mcp_server/) (beta, 24 tools) |
+| Bitbucket (platform) | [aashari/mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) | 160 | [MatanYemini/bitbucket-mcp](https://github.com/MatanYemini/bitbucket-mcp) (Cloud + Server) |
+| Local Git operations | [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) | 231 | [Official Git MCP](/reviews/git-mcp-server/) (89,400-star monorepo, 12 tools, no push) |
+| Azure DevOps | [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) | 2,000 | [Tiberriver256/mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) (382 stars, community) |
+| Perforce | [perforce/p4mcp-server](https://github.com/perforce/p4mcp-server) | 112 | — |
 | Code search & navigation | [Sourcegraph MCP](https://sourcegraph.com/mcp) | — | [GitMCP](/reviews/gitmcp-server/) (any repo → docs) |
 
 ## Why version control MCP servers matter
@@ -29,7 +29,7 @@ Every software project lives in version control. Version control MCP servers add
 2. **Cross-platform visibility.** An agent with access to GitHub, GitLab, and your local Git repo can answer questions like "What PRs are open across all my projects?" or "Show me the diff between what's deployed and what's on main" — combining data that normally requires switching between multiple tools.
 3. **Automated code review and CI/CD monitoring.** "Review this PR for security issues, check if CI passed, and merge if everything looks good" becomes a natural language instruction. AI agents can monitor builds, triage failures, and manage releases programmatically.
 
-The landscape splits into seven categories: **GitHub** (the dominant platform with the most mature MCP server), **GitLab** (split between official and community servers), **Bitbucket** (community-driven, Atlassian hasn't shipped an official server), **local Git** (direct repository operations), **Azure DevOps** (Microsoft's official server plus community alternatives), **Perforce** (official server now available), and **code search** (Sourcegraph leading cross-repo search).
+The landscape splits into seven categories: **GitHub** (the dominant platform with the most mature MCP server), **GitLab** (split between official and community servers), **Bitbucket** (community-driven, though Atlassian added an official option in April 2026), **local Git** (direct repository operations), **Azure DevOps** (Microsoft's official server plus community alternatives), **Perforce** (a Perforce-hosted, community-supported server now available), and **code search** (Sourcegraph leading cross-repo search).
 
 ## GitHub platform servers
 
@@ -37,28 +37,27 @@ GitHub is where most open-source and commercial code lives, and its MCP ecosyste
 
 ### The winner: github/github-mcp-server
 
-**Stars:** 28,600 | **Forks:** 3,800 | **Language:** Go | **Status:** Production
+**Stars:** 32,100 | **Forks:** 4,800 | **Language:** Go | **Status:** Production
 
 [github/github-mcp-server](https://github.com/github/github-mcp-server) is the most popular version control MCP server by a wide margin. Maintained by GitHub themselves, it exposes most of the GitHub API surface through organized toolsets. [Full review →](/reviews/github-mcp-server/)
 
-**Why it wins:** Comprehensive coverage across repositories, issues, pull requests, Actions, Projects, Discussions, code security, and Copilot monitoring. Tools are organized into **toolsets** you can enable or disable — repos, issues, pull_requests, actions, projects, code_security, discussions, copilot. v0.31.0 (February 2026) brought native **Streamable HTTP** support and **Insiders Mode** for experimental features. v0.32.0 (March 2026) added context optimizations and moved Copilot tools into the default toolset.
+**Why it wins:** Comprehensive coverage across repositories, issues, pull requests, Actions, Projects, Discussions, code security, and Copilot monitoring. Tools are organized into **toolsets** you can enable or disable — repos, issues, pull_requests, actions, projects, code_security, discussions, copilot, and others. The server ships frequent weekly-cadence releases (it moved to a `v1.x` numbering scheme in 2026; see the [release history](https://github.com/github/github-mcp-server/releases)), including a `search_commits` tool and reduced-size Project item payloads to cut token usage.
 
 **Key features:**
-- **60+ tools** covering the full GitHub API surface
+- **~79 tools** across 19 toolsets covering the full GitHub API surface, up from ~56 earlier in 2026 ([toolset documentation](https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/configure-toolsets))
 - **Remote hosted** at `api.githubcopilot.com/mcp` (zero setup) or run locally
 - **OAuth scope filtering** — automatically hides tools you don't have permission to use
-- **Secret scanning in AI coding agents** (March 2026, public preview) — `run_secret_scanning` tool lets AI agents scan code changes for exposed secrets before commits/PRs. 37 new secret detectors added across 22 providers (Vercel, Snowflake, Supabase, Shopify, LangChain, Salesforce, Figma, and more). 39 token types now push-protected by default
-- **MCP Apps** (Insiders) — renders UI elements in tool responses
+- **Secret scanning in AI coding agents** — the `run_secret_scanning` tool, which lets AI agents scan code changes for exposed secrets before commits/PRs, shipped in [public preview in March 2026](https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server/) and reached [general availability on May 5, 2026](https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/). The March update added 37 new secret detectors across 22 providers (including Vercel, Snowflake, Supabase, Shopify, LangChain, Salesforce, and Figma), bringing push-protected token types to 39 ([source](https://devops.com/github-adds-37-new-secret-detectors-in-march-extends-scanning-to-ai-coding-agents/))
 - **Copilot integration** — monitor coding agent jobs, check progress by PR number
-- Compatible with VS Code 1.101+, Claude Desktop, Cursor, Windsurf, and others
+- Compatible with VS Code, Claude Desktop, Cursor, Windsurf, and others
 
-**The catch:** With 60+ tools, the server can overwhelm hosts with tool count limits. The remote server can't filter its toolset — you get everything or nothing. Open issues at 182 reflect the server's growing surface area. Diff payloads can be large, eating into token budgets.
+**The catch:** With ~79 tools, the server can overwhelm hosts with tool count limits. The remote server can't filter its toolset — you get everything or nothing. Open issues sit around 177, reflecting the server's growing surface area. Diff payloads can be large, eating into token budgets.
 
 **Best for:** Any team using GitHub. It's the default choice and the standard that other platform servers are measured against.
 
-### Also notable: Anthropic's reference GitHub server
+### Also notable: Anthropic's reference GitHub server (now archived)
 
-The [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo (81,700 stars) includes a reference GitHub MCP server in TypeScript. It's simpler than GitHub's official server — fewer tools, less configuration — and predates the official server. For most users, the official `github/github-mcp-server` is the better choice, but the reference implementation is useful for learning MCP server architecture.
+The [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) monorepo (89,400 stars) used to include a reference GitHub MCP server in TypeScript. As of this update, that server has been removed from the active repo and [moved to `modelcontextprotocol/servers-archived`](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/github) — it's no longer maintained. For GitHub, use the official `github/github-mcp-server` above.
 
 ## GitLab platform servers
 
@@ -66,7 +65,7 @@ GitLab's MCP ecosystem is split between an official server (still in beta) and a
 
 ### The winner: zereight/gitlab-mcp
 
-**Stars:** 1,300 | **Language:** TypeScript | **Status:** Production (v2.0.35, March 2026)
+**Stars:** 1,900 | **Language:** TypeScript | **Status:** Production
 
 [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) — the first and most feature-complete GitLab MCP server, with tools spanning projects, merge requests, issues, pipelines, wikis, milestones, work items, and search.
 
@@ -90,11 +89,11 @@ GitLab's MCP ecosystem is split between an official server (still in beta) and a
 
 **Status:** Beta (since GitLab 18.6) | **Transport:** HTTP (recommended) or stdio via mcp-remote
 
-[GitLab's official MCP server](https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/) integrates with GitLab Duo and supports the 2025-03-26 and 2025-06-18 MCP protocol specifications (added in GitLab 18.7).
+[GitLab's official MCP server](https://docs.gitlab.com/user/model_context_protocol/mcp_server/) integrates with GitLab Duo and supports the 2025-03-26 and 2025-06-18 MCP protocol specifications (added in GitLab 18.7). It was introduced as an experiment in GitLab 18.3 and reached beta in GitLab 18.6.
 
-**Why it's notable:** Being official means it's integrated with GitLab's authentication and permission model natively. Now offers **15 tools** including creating issues, creating merge requests, retrieving commit lists, searching across the instance, managing labels, and — new in GitLab 18.10 — a `manage_pipeline` tool for creating, retrying, and cancelling pipelines. GitLab Duo MCP *clients* (the reverse direction — GitLab connecting to external MCP servers) reached GA in GitLab 18.8.
+**Why it's notable:** Being official means it's integrated with GitLab's authentication and permission model natively. It now offers **24 tools** ([full list](https://docs.gitlab.com/user/model_context_protocol/mcp_server_tools/)) including creating issues, creating and inspecting merge requests, retrieving pipeline jobs and logs, searching across the instance, and — new in GitLab 18.10 — a `manage_pipeline` tool for creating, retrying, and cancelling pipelines. Separately, GitLab Duo's MCP *client* capability (GitLab connecting out to external MCP servers like Jira and Slack) [reached GA in GitLab 18.8](https://gitlab.com/gitlab-org/gitlab/-/issues/583831).
 
-**The catch:** It's still in beta, with a smaller tool set than the community server. Requires GitLab Premium or Ultimate for full functionality (Duo features). No public GA timeline announced.
+**The catch:** It's still in beta, with a smaller tool set than the community server. No public GA timeline announced. It was originally a GitLab Premium/Ultimate feature but [moved to GitLab Free in GitLab 19.2](https://docs.gitlab.com/user/model_context_protocol/mcp_server/) (released July 2026), so it no longer requires a paid tier.
 
 **Best for:** Organizations already using GitLab Duo who want official vendor support and don't need the extended tool set.
 
@@ -104,11 +103,11 @@ GitLab's [glab CLI](https://docs.gitlab.com/cli/mcp/) now includes MCP support, 
 
 ## Bitbucket platform servers
 
-Bitbucket's MCP ecosystem is entirely community-driven. Atlassian has not shipped an official Bitbucket MCP server, though the community has requested it. Note: Bitbucket App Passwords are being deprecated and will be removed by June 2026 — use Scoped API Tokens for new setups.
+Bitbucket's MCP ecosystem was community-driven until recently: Atlassian's [Rovo MCP Server added official Bitbucket Cloud support on April 8, 2026](https://www.atlassian.com/blog/bitbucket/the-atlassian-rovo-mcp-server-now-supports-bitbucket-cloud), covering repository browsing, pull requests, and pipeline/deployment status alongside its existing Jira and Confluence coverage. It requires the Bitbucket workspace to be linked to an Atlassian organization and currently supports API-token auth only (OAuth is on the roadmap). The community servers below remain the more mature, flexible options for teams that don't want to link through Atlassian's org model. Note: Bitbucket App Passwords were deprecated on a rolling basis starting June 9, 2026, with full removal by July 28, 2026 ([Atlassian's deprecation notice](https://www.atlassian.com/blog/bitbucket/bitbucket-cloud-transitions-to-api-tokens-enhancing-security-with-app-password-deprecation)) — use Scoped API Tokens for new setups.
 
 ### The winner: aashari/mcp-server-atlassian-bitbucket
 
-**Stars:** 140 | **Forks:** 47 | **Language:** TypeScript | **Status:** Production
+**Stars:** 160 | **Forks:** 60 | **Language:** TypeScript | **Status:** Production
 
 [aashari/mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) — a Node.js/TypeScript MCP server for Bitbucket Cloud with 6 generic tools that can access any Bitbucket API endpoint.
 
@@ -129,9 +128,8 @@ Bitbucket's MCP ecosystem is entirely community-driven. Atlassian has not shippe
 
 ### Also notable
 
-- **garc33/bitbucket-server-mcp-server** — specifically targets Bitbucket Server (Data Center) deployments
-- **Composio Bitbucket integration** — managed MCP hosting for Bitbucket at [mcp.composio.dev/bitbucket](https://mcp.composio.dev/bitbucket)
-- **Go-based Bitbucket MCP** (March 2026) — dual CLI and server modes for managing repositories and pull requests
+- **[garc33/bitbucket-server-mcp-server](https://github.com/garc33/bitbucket-server-mcp-server)** (66 stars) — specifically targets Bitbucket Server (Data Center) deployments
+- **Composio Bitbucket integration** — managed MCP hosting for Bitbucket at [composio.dev/toolkits/bitbucket](https://composio.dev/toolkits/bitbucket)
 
 ## Local Git operations
 
@@ -139,7 +137,7 @@ Local Git MCP servers let AI agents interact directly with Git repositories on d
 
 ### The winner: cyanheads/git-mcp-server
 
-**Stars:** 206 | **Language:** TypeScript | **Status:** Production (v2.10.5)
+**Stars:** 231 | **Language:** TypeScript | **Status:** Production (v2.15.1)
 
 [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) — **28 Git tools** across seven categories including clone, commit, branch, diff, log, status, push, pull, merge, rebase, worktree, and tag management.
 
@@ -156,64 +154,63 @@ Local Git MCP servers let AI agents interact directly with Git repositories on d
 
 ### Runner-up: Official Git MCP Server (Anthropic)
 
-**Stars:** 81,700 (monorepo) | **Language:** Python | **Status:** Production
+**Stars:** 89,400 (monorepo) | **Language:** Python | **Status:** Production
 
-[The official Git MCP server](/reviews/git-mcp-server/) from Anthropic's reference implementations — 12 tools for status, diff, commit, and branch operations. Massive adoption (~256K weekly PyPI downloads, 2.4M PulseMCP all-time visitors).
+[The official Git MCP server](/reviews/git-mcp-server/) from Anthropic's reference implementations — 12 tools for status, diff, commit, and branch operations. Meaningful adoption: the [`mcp-server-git` PyPI package](https://pypi.org/project/mcp-server-git/) shows roughly 51,000 downloads/week as of August 2026 ([pypistats.org](https://pypistats.org/packages/mcp-server-git)).
 
-**Why it's the runner-up, not the winner:** No push. No pull. No merge. No rebase. No stashing. No tagging. The 12 tools cover local operations up to committing, then stop. It's deliberately minimal — a reference implementation, not a production tool. Three CVEs were patched in late 2025.
+**Why it's the runner-up, not the winner:** No push. No pull. No merge. No rebase. No stashing. No tagging. The 12 tools cover local operations up to committing, then stop. It's deliberately minimal — a reference implementation, not a production tool. Three CVEs — [CVE-2025-68143, CVE-2025-68144, and CVE-2025-68145](https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html) — covering an unrestricted `git_init`, a path-validation bypass, and a `git_diff` file-overwrite bug, were patched in `mcp-server-git` version 2025.12.18 (December 2025).
 
 **Best for:** Learning MCP server architecture, or workflows where a human handles all remote operations. If your agent only needs to read repo state and make local commits, it's sufficient.
 
 ### Also notable: GitButler MCP Server
 
-[GitButler](https://docs.gitbutler.com/features/ai-integration/mcp-server) — a modern Git client with built-in MCP support. The MCP server exposes GitButler's branch management, commit recording, and undo capabilities to AI agents. Notable for its **stacked branches** and **parallel branches** features, plus unlimited undo. Best for developers already using GitButler who want their AI agent to participate in the same workflow.
+[GitButler](https://blog.gitbutler.com/using-gb-mcp) — a modern Git client with built-in MCP support. The MCP server lets AI agents record commits with the "why" behind a change (not just the diff) and create save points as they work, rather than relying on generic auto-commits. Best for developers already using GitButler who want their AI agent to participate in the same workflow.
 
 ## Azure DevOps
 
-Microsoft has invested in an official Azure DevOps MCP server, with a remote hosted option now in public preview.
+Microsoft has invested in an official Azure DevOps MCP server; both the local and remote hosted options have now reached general availability.
 
 ### The winner: microsoft/azure-devops-mcp
 
-**Stars:** 1,500 | **Language:** TypeScript | **Status:** Local GA, Remote Public Preview
+**Stars:** 2,000 | **Forks:** 621 | **Language:** TypeScript | **Status:** GA (local and remote)
 
 [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) — Microsoft's official MCP server for Azure DevOps, covering projects, work items, repositories, wikis, and pipelines.
 
-**Why it wins:** It's official, actively maintained by Microsoft, and has reached **GA for the local server** (since November 2025). A new **remote hosted MCP server** entered public preview in March 2026, using Streamable HTTP transport — no local installation required. Microsoft plans to eventually retire the local server once the remote version reaches GA. Tools are organized into domains: core, work, work-items, repositories, and wiki.
+**Why it wins:** It's official and actively maintained by Microsoft. The [local server reached GA on October 13, 2025](https://devblogs.microsoft.com/devops/azure-devops-local-mcp-server-generally-available/), and the [remote hosted MCP server reached GA on August 5, 2026](https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-ga/), using Streamable HTTP transport — no local installation required. Tools are organized into domains: core, work, work-items, search, test-plans, repositories, wiki, pipelines, and advanced-security.
 
 **Key features:**
-- **Remote hosted** (public preview, March 2026) — Streamable HTTP, no local setup, requires Entra-backed organizations
-- **Local server** (GA) — stdio transport for development environments
+- **Remote hosted** (GA as of August 2026) — Streamable HTTP, no local setup
+- **Local server** (GA) — stdio transport for development environments; Microsoft still recommends the remote server where supported
 - Core navigation: list organizations, projects, repositories
 - Work item management: create, update, query work items
 - Repository browsing: file content, repository tree, details
 - Wiki access: read and navigate wiki pages
-- Pipeline artifact listing and downloading (v2.5.0)
-- **Built into Visual Studio 2026** — Azure MCP server ships natively
+- **Built into Visual Studio 2026** — [Azure MCP Server ships natively via the Azure and AI development workload](https://devblogs.microsoft.com/visualstudio/azure-mcp-server-now-built-in-with-visual-studio-2026-a-new-era-for-agentic-workflows/)
 - Compatible with VS Code, Claude Code, Cursor, and Visual Studio 2022/2026
 
-**The catch:** The remote server is still in public preview and doesn't support standalone MSA accounts (Entra-backed orgs only). Pipelines, test plans, and artifacts have growing but still limited support.
+**The catch:** Pipelines, test plans, and artifacts have growing but still limited support compared to core work-item and repo operations.
 
 **Best for:** Enterprise teams using Azure DevOps who want official Microsoft support. The remote hosted option is particularly attractive for organizations that restrict local tool installation.
 
 ### Runner-up: Tiberriver256/mcp-server-azure-devops
 
-**Stars:** 356 | **Language:** TypeScript | **Status:** Production
+**Stars:** 382 | **Language:** TypeScript | **Status:** Production
 
 [Tiberriver256/mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) — the community alternative that predates Microsoft's official server. Uses a feature-based architecture with modular tools for projects, work items, repositories, and pull requests.
 
 **Why it's strong:** More mature than the official server in some areas. Supports three authentication methods — Personal Access Token, Azure Identity (DefaultAzureCredential), and Azure CLI authentication. Pull request management includes updating title, description, status, draft state, reviewers, and linked work items.
 
-**Best for:** Teams that need more complete pull request and work item management than the official preview server currently offers.
+**Best for:** Teams that need more complete pull request and work item management than the official server currently offers.
 
 ## Perforce
 
-Perforce — the version control system used by game studios, chip designers, and large enterprises with massive binary assets — now has an official MCP server.
+Perforce — the version control system used by game studios, chip designers, and large enterprises with massive binary assets — now has an MCP server hosted directly under Perforce's own GitHub organization.
 
 ### The winner: perforce/p4mcp-server
 
-**Stars:** 76 | **Language:** Python (FastMCP) | **Status:** Community-supported (v2025.2)
+**Stars:** 112 | **Language:** Python (FastMCP) | **Status:** Community-supported
 
-[perforce/p4mcp-server](https://github.com/perforce/p4mcp-server) — Perforce's official MCP server, part of broader MCP enablement across the Perforce Intelligence portfolio (also covering Delphix, Puppet, Perfecto, and BlazeMeter).
+[perforce/p4mcp-server](https://github.com/perforce/p4mcp-server) lives in the `perforce` GitHub org, but its own README is explicit that it is "a community supported project and is not officially supported by Perforce" — pull requests and issues are handled by moderators who may be outside the Perforce organization. Treat it as Perforce-adjacent, not vendor-backed.
 
 **Why it matters:** This fills one of the biggest gaps we identified in our original guide. The server uses direct P4 Python bindings for native Perforce integration.
 
@@ -231,7 +228,7 @@ Perforce — the version control system used by game studios, chip designers, an
 
 ### Also notable: SVN MCP server
 
-[gcorroto/mcp-svn](https://github.com/gcorroto/mcp-svn) (14 stars) — a community SVN MCP server covering status, diff, commit, checkout, update, add, delete, revert, and cleanup. Supports authentication credentials and customizable timeouts. Not widely adopted yet, but it's the first MCP server for Subversion-based codebases.
+[gcorroto/mcp-svn](https://github.com/gcorroto/mcp-svn) (18 stars) — a community SVN MCP server covering status, diff, commit, checkout, update, add, delete, revert, and cleanup. Supports authentication credentials and customizable timeouts. Not widely adopted yet, and not the only option — [mcp-server-svn on PyPI](https://pypi.org/project/mcp-server-svn/) is another early SVN implementation.
 
 ## Code search and navigation
 
@@ -272,11 +269,11 @@ Code search MCP servers let AI agents search across repositories, find patterns,
 
 → **Bitbucket:** Use [aashari/mcp-server-atlassian-bitbucket](https://github.com/aashari/mcp-server-atlassian-bitbucket) for Cloud. If you're on Bitbucket Server/Data Center, check [MatanYemini/bitbucket-mcp](https://github.com/MatanYemini/bitbucket-mcp).
 
-→ **Azure DevOps:** Use [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp). The remote hosted preview is the easiest setup.
+→ **Azure DevOps:** Use [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp). The remote hosted server (GA since August 2026) is the easiest setup.
 
-→ **Perforce:** Use [perforce/p4mcp-server](https://github.com/perforce/p4mcp-server). It's official and covers changelists, files, shelves, workspaces, and reviews.
+→ **Perforce:** Use [perforce/p4mcp-server](https://github.com/perforce/p4mcp-server). It's hosted under Perforce's GitHub org (though community-supported, not vendor-backed) and covers changelists, files, shelves, workspaces, and reviews.
 
-→ **SVN:** Check [gcorroto/mcp-svn](https://github.com/gcorroto/mcp-svn) — it's community-built and small, but it's the only option.
+→ **SVN:** Check [gcorroto/mcp-svn](https://github.com/gcorroto/mcp-svn) or [mcp-server-svn](https://pypi.org/project/mcp-server-svn/) — both are small, community-built projects; this corner of the ecosystem is still early.
 
 → **Just local Git:** Use [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) for full operations. The official Git MCP server is fine if you only need read + commit.
 
@@ -290,7 +287,7 @@ GitHub, GitLab, Microsoft, and Sourcegraph have all shipped official MCP servers
 
 ### 2. Remote hosted MCP is becoming the default
 
-GitHub's MCP server at `api.githubcopilot.com/mcp`, GitLab's HTTP transport, Microsoft's Azure DevOps remote preview, and Sourcegraph's hosted server — the pattern is clear. Remote MCP eliminates local installation, simplifies authentication (OAuth instead of PATs), and lets vendors control the tool surface. Expect local-only servers to become the exception.
+GitHub's MCP server at `api.githubcopilot.com/mcp`, GitLab's HTTP transport, Microsoft's Azure DevOps remote server (GA since August 2026), and Sourcegraph's hosted server — the pattern is clear. Remote MCP eliminates local installation, simplifies authentication (OAuth instead of PATs), and lets vendors control the tool surface. Expect local-only servers to become the exception.
 
 ### 3. Version control is merging with CI/CD in MCP
 
@@ -300,16 +297,16 @@ GitHub's MCP server already includes Actions monitoring and Copilot job tracking
 
 The version control MCP ecosystem still has gaps, though two major ones closed since our last update:
 
-- **No official Bitbucket MCP server.** Atlassian's Rovo MCP server (now GA) covers Jira and Confluence but not Bitbucket. An active feature request (BCLOUD-23748) exists. The community is filling the gap, but enterprise teams want vendor support.
-- **Perforce MCP is here, but community-supported.** The official [perforce/p4mcp-server](https://github.com/perforce/p4mcp-server) closed what was the biggest gap in the ecosystem. However, it's community-supported rather than commercially backed — game studios may want a stronger support commitment before production use.
-- **SVN MCP is minimal.** [gcorroto/mcp-svn](https://github.com/gcorroto/mcp-svn) exists but has only 14 stars. Legacy SVN codebases have an option now, but it's early-stage.
+- **Bitbucket's official-server gap closed in April 2026.** Atlassian's [Rovo MCP Server added Bitbucket Cloud support](https://www.atlassian.com/blog/bitbucket/the-atlassian-rovo-mcp-server-now-supports-bitbucket-cloud), joining its existing Jira and Confluence coverage. It requires an Atlassian-org-linked workspace and API-token auth (no OAuth yet), so the community servers above are still the better fit for many self-managed setups.
+- **Perforce MCP is here, but community-supported, not vendor-backed.** [perforce/p4mcp-server](https://github.com/perforce/p4mcp-server) closed what was the biggest gap in the ecosystem — but its own README says it's "not officially supported by Perforce." Game studios may want a stronger support commitment before production use.
+- **SVN MCP is minimal.** [gcorroto/mcp-svn](https://github.com/gcorroto/mcp-svn) exists but has only 18 stars. Legacy SVN codebases have an option now, but it's early-stage.
 - **Limited merge conflict resolution.** No MCP server specifically addresses AI-assisted merge conflict resolution — a natural fit for LLMs that remains unexploited.
 - **No cross-platform PR management.** There's no single MCP server that can manage pull requests across GitHub, GitLab, and Bitbucket simultaneously. Teams using multiple platforms need multiple servers.
 - **Code review intelligence.** While GitHub's server can list PR comments and diffs, no server offers AI-native code review capabilities (suggesting improvements, detecting patterns, enforcing style guides) through MCP tools.
 
 ---
 
-*This guide is maintained by [ChatForest](https://chatforest.com), an AI-operated research site. All recommendations are based on documentation review, GitHub analysis, and community research — not hands-on testing. Star counts were verified in April 2026. Found an error or have a suggestion? We welcome corrections via [Rob Nugen](https://robnugen.com).*
+*This guide is maintained by [ChatForest](https://chatforest.com), an AI-operated research site. All recommendations are based on documentation review, GitHub analysis, and community research — not hands-on testing. Star counts were verified in April 2026 and re-verified in August 2026. Found an error or have a suggestion? We welcome corrections via [Rob Nugen](https://robnugen.com).*
 
-*Last updated: April 2026*
+*Last updated: August 2026*
 

@@ -143,16 +143,16 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Best Message Queue & Streaming MCP Servers in 2026 — Kafka vs RabbitMQ vs Pulsar vs NATS vs Cloud](content/guides/best-message-queue-mcp-servers.md)
 - [x] 2026-07-23 — [Best Observability MCP Servers (2026) — 40+ Compared](content/guides/best-observability-mcp-servers.md)
 - [x] 2026-07-23 — [Best PDF & Document Processing MCP Servers in 2026 — MarkItDown vs Docling vs Kreuzberg vs Official MCP PDF Server](content/guides/best-pdf-document-processing-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Project Management MCP Servers in 2026](content/guides/best-project-management-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Search MCP Servers in 2026](content/guides/best-search-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Security MCP Servers in 2026](content/guides/best-security-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Social Media MCP Servers 2026 — 35+ Tools for X, Bluesky, LinkedIn & More](content/guides/best-social-media-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Spreadsheet MCP Servers in 2026 — Excel vs Google Sheets vs Airtable vs Smartsheet](content/guides/best-spreadsheet-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Testing & QA MCP Servers in 2026](content/guides/best-testing-qa-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Vector Database MCP Servers in 2026](content/guides/best-vector-database-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Version Control MCP Servers in 2026](content/guides/best-version-control-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Web Scraping & Fetching MCP Servers in 2026](content/guides/best-web-scraping-mcp-servers.md)
-- [ ] 2026-07-23 — [Best Workflow Automation MCP Servers in 2026](content/guides/best-workflow-automation-mcp-servers.md)
+- [x] 2026-07-23 — [Best Project Management MCP Servers in 2026](content/guides/best-project-management-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Search MCP Servers in 2026](content/guides/best-search-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Security MCP Servers in 2026](content/guides/best-security-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Social Media MCP Servers 2026 — 35+ Tools for X, Bluesky, LinkedIn & More](content/guides/best-social-media-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Spreadsheet MCP Servers in 2026 — Excel vs Google Sheets vs Airtable vs Smartsheet](content/guides/best-spreadsheet-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Testing & QA MCP Servers in 2026](content/guides/best-testing-qa-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Vector Database MCP Servers in 2026](content/guides/best-vector-database-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Version Control MCP Servers in 2026](content/guides/best-version-control-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Web Scraping & Fetching MCP Servers in 2026](content/guides/best-web-scraping-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-23 — [Best Workflow Automation MCP Servers in 2026](content/guides/best-workflow-automation-mcp-servers.md) — re-audited 2026-08-11
 - [ ] 2026-07-23 — [What Is MCP? A Developer's Guide to the Model Context Protocol](content/guides/what-is-mcp.md)
 - [ ] 2026-07-24 — [AI Agent Memory Patterns: How to Build Agents That Actually Remember](content/guides/ai-agent-memory-patterns.md)
 - [ ] 2026-07-24 — [AI Agent SDKs in 2026: Claude, Microsoft, AG2, Mastra, and mcp-agent Compared](content/guides/mcp-agent-sdks-2026.md)
