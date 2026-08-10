@@ -5,8 +5,8 @@ description: "Grafana, Datadog, Sentry, New Relic, Prometheus, and 35+ more obse
 og_description: "40+ observability MCP servers compared — Grafana, Datadog, Sentry, Prometheus, New Relic, Dynatrace, Honeycomb, PagerDuty, and more. Honest, research-based recommendations."
 content_type: "Comparison"
 card_description: "40+ observability MCP servers compared — Grafana, Datadog, Sentry, Prometheus, New Relic, Dynatrace, Honeycomb, PagerDuty, Splunk, Elastic, and more. Research-based recommendations for every layer of the monitoring stack."
-last_refreshed: 2026-04-11
-sources_audited: 2026-07-23
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 Monitoring and observability is the most vendor-invested category in the MCP ecosystem. Every major platform — [Datadog](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-mcp-server/), [Grafana](https://github.com/grafana/mcp-grafana), [Sentry](https://github.com/getsentry/sentry-mcp), [New Relic](https://mcp.newrelic.com), [Honeycomb](https://www.honeycomb.io/blog/honeycomb-mcp-ga-support-bubbleup-heatmaps-histograms), [PagerDuty](https://www.pagerduty.com/newsroom/pagerduty-expands-ai-ecosystem-to-supercharge-ai-agents/), [Dynatrace](https://github.com/dynatrace-oss/dynatrace-mcp), [Splunk](https://community.splunk.com/t5/Product-News-Announcements/GA-Splunk-MCP-Server-Making-Your-Apps-quot-Agent-Ready-quot/ba-p/759935), [Elastic](https://www.elastic.co/docs/solutions/search/mcp), and more — has shipped an official MCP server. The open-source metrics stack (Prometheus, VictoriaMetrics, Grafana Loki) has strong community coverage too. No other MCP category has this level of first-party support.
@@ -22,16 +22,16 @@ The landscape splits into **six layers**: full-stack APM platforms (Datadog, New
 | Category | Our pick | Stars | Runner-up |
 |----------|----------|-------|-----------|
 | **Full-stack APM (enterprise)** | [Datadog MCP](https://mcp.datadoghq.com) | Hosted | [New Relic MCP](https://mcp.newrelic.com) (hosted) |
-| **Full-stack APM (AI-native)** | [Dynatrace MCP](https://github.com/dynatrace-oss/dynatrace-mcp) | 104 | — |
-| **Open-source visualization** | [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana) | 2,777+ | [grafana/loki-mcp](https://github.com/grafana/loki-mcp) (Loki-specific) |
-| **Prometheus metrics** | [pab1it0/prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | 412 | [giantswarm/mcp-prometheus](https://github.com/giantswarm/mcp-prometheus) (18 tools, OAuth) |
-| **Prometheus (full API)** | [tjhop/prometheus-mcp-server](https://github.com/tjhop/prometheus-mcp-server) | 42 | — |
-| **VictoriaMetrics** | [VictoriaMetrics/mcp-victoriametrics](https://github.com/VictoriaMetrics/mcp-victoriametrics) | 144 | — |
-| **Error tracking** | [getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp) | 630 | — |
+| **Full-stack APM (AI-native)** | [Dynatrace MCP](https://github.com/dynatrace-oss/dynatrace-mcp) | 134 | — |
+| **Open-source visualization** | [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana) | 3,332+ | [grafana/loki-mcp](https://github.com/grafana/loki-mcp) (Loki-specific) |
+| **Prometheus metrics** | [pab1it0/prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server) | 512 | [giantswarm/mcp-prometheus](https://github.com/giantswarm/mcp-prometheus) (18 tools, OAuth) |
+| **Prometheus (full API)** | [tjhop/prometheus-mcp-server](https://github.com/tjhop/prometheus-mcp-server) | 79 | — |
+| **VictoriaMetrics** | [VictoriaMetrics/mcp-victoriametrics](https://github.com/VictoriaMetrics/mcp-victoriametrics) | 208 | — |
+| **Error tracking** | [getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp) | 809 | — |
 | **Event-based observability** | [Honeycomb MCP](https://mcp.honeycomb.io/mcp) | Hosted | — |
 | **Log platform (enterprise)** | [Splunk MCP Server](https://splunkbase.splunk.com/app/7931) | Official | [Elastic Agent Builder MCP](https://www.elastic.co/docs/solutions/search/mcp) (9.2+) |
 | **Log platform (open source)** | [SigNoz MCP](https://github.com/SigNoz/signoz-mcp-server) | Official | [Axiom MCP](https://mcp.axiom.co) (hosted) |
-| **Incident management** | [PagerDuty MCP](https://github.com/PagerDuty/pagerduty-mcp-server) | 60 | [giantswarm/mcp-opsgenie](https://github.com/giantswarm/mcp-opsgenie) |
+| **Incident management** | [PagerDuty MCP](https://github.com/PagerDuty/pagerduty-mcp-server) | 75 | [giantswarm/mcp-opsgenie](https://github.com/giantswarm/mcp-opsgenie) |
 | **OpenTelemetry** | [traceloop/opentelemetry-mcp-server](https://github.com/traceloop/opentelemetry-mcp-server) | — | [mottibec/otelcol-mcp](https://github.com/mottibec/otelcol-mcp) |
 
 ## Full-Stack APM Platforms
@@ -45,7 +45,7 @@ These servers connect to commercial observability platforms that collect metrics
 The most feature-rich observability MCP server. Built around **toolsets** — modular capability groups you enable or disable via URL parameters.
 
 **What makes it stand out:**
-- **50+ tools across 10+ modular toolsets** — core monitoring, alerting, APM, database monitoring, error tracking, feature flags, LLM observability, product analytics, networks, security, software delivery, synthetics
+- **[100+ tools across 24 modular toolsets](https://docs.datadoghq.com/mcp_server/tools/)** — core monitoring, alerting, APM, database monitoring, error tracking, feature flags, LLM observability, product analytics, networks, security, software delivery, synthetics, and more
 - **Agent-native design** — token-budget pagination, [CSV output (50% fewer tokens than JSON), SQL-like log queries (40% cost reduction)](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/), error message suggestions
 - **LLM observability** — unique in this comparison, monitors your AI agents' own performance
 - **[GA status](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-mcp-server/)** — production-ready (not preview)
@@ -55,7 +55,7 @@ The most feature-rich observability MCP server. Built around **toolsets** — mo
 **Limitations:**
 - No permanent free tier (14-day trial only)
 - `/api/unstable/` path despite GA status
-- Community server ([winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog), 141 stars) covers gaps the official server doesn't (host muting, downtimes, RUM)
+- Community server ([winor30/mcp-server-datadog](https://github.com/winor30/mcp-server-datadog), 143 stars) covers gaps the official server doesn't (host muting, downtimes, RUM)
 - Closed-source — can't audit or self-host
 
 **Best for:** Enterprise teams already on Datadog who want the broadest operational context in their AI tools. For a deep dive into how Datadog's engineering team designed these tools for agents (and why their first API-wrapper version failed), see their [engineering blog post](https://www.datadoghq.com/blog/engineering/mcp-server-agent-tools/) and our [Datadog MCP Production Lessons](/guides/datadog-mcp-server-production-lessons/) guide.
@@ -77,14 +77,14 @@ New Relic's standout feature: you ask questions in plain English and the server 
 **Limitations:**
 - Public Preview (not GA)
 - Read-only — no muting, downtime scheduling, or alert acknowledgment
-- Minimal GitHub presence (3 stars, 2 commits)
+- [Minimal GitHub presence (7 stars, 2 commits)](https://github.com/newrelic/mcp-server)
 - 6 community alternatives suggest gaps
 
 **Best for:** Teams on New Relic who want natural language querying with the lowest barrier to entry.
 
 ### Dynatrace MCP — AI-Powered Observability
 
-**[dynatrace-oss/dynatrace-mcp](https://github.com/dynatrace-oss/dynatrace-mcp)** | **Stars:** 104 | **Language:** TypeScript
+**[dynatrace-oss/dynatrace-mcp](https://github.com/dynatrace-oss/dynatrace-mcp)** | **Stars:** 134 | **Language:** TypeScript
 
 Dynatrace integrates its AI engine (Davis AI) with MCP, providing real-time observability data directly in development workflows.
 
@@ -107,7 +107,7 @@ Dynatrace integrates its AI engine (Davis AI) with MCP, providing real-time obse
 
 ### Grafana MCP — The Open-Source Metrics Gateway (The Winner)
 
-**[grafana/mcp-grafana](https://github.com/grafana/mcp-grafana)** | [Our full review](/reviews/grafana-mcp-server/) | Rating: 4/5 | **Stars:** 2,777
+**[grafana/mcp-grafana](https://github.com/grafana/mcp-grafana)** | [Our full review](/reviews/grafana-mcp-server/) | Rating: 4/5 | **Stars:** 3,332
 
 The most popular observability MCP server by GitHub stars and the only one with a truly open-source architecture. Connects to your Grafana instance and the surrounding LGTM stack.
 
@@ -118,12 +118,12 @@ The most popular observability MCP server by GitHub stars and the only one with 
 - **[Azure Managed Grafana MCP](https://techcommunity.microsoft.com/blog/azureobservabilityblog/introducing-azure-managed-grafana-mcp-the-managed-telemetry-gateway-for-ai-agent/4503619)** launched March 18, 2026 — first managed cloud deployment
 - **Granular context management** — `--disable-<category>` and `--enabled-tools` flags
 - Open source (Apache 2.0), self-hostable, all three transports (stdio + SSE + Streamable HTTP)
-- v0.11.2 (Feb 2026), 15+ releases in 4 months, [1M+ Docker Hub pulls](https://hub.docker.com/r/grafana/mcp-grafana)
+- [v0.11.2 (Feb 25, 2026)](https://github.com/grafana/mcp-grafana/releases), 15+ releases in the prior 4 months, [1M+ Docker Hub pulls](https://hub.docker.com/r/grafana/mcp-grafana)
 
 **Limitations:**
 - No hosted remote server (must run yourself, except Azure Managed Grafana)
 - Service account token auth (not OAuth)
-- 61 open issues including security findings (TLS bypass, credential exposure)
+- [75+ open issues](https://github.com/grafana/mcp-grafana/issues), including an [automated security audit that flagged TLS-verification bypass and credential exposure in panic logs](https://github.com/grafana/mcp-grafana/issues/608) (unresolved as of this audit)
 - Some categories require Grafana Cloud (incidents, OnCall, Sift)
 - [grafana/grafana-ui-mcp-server](https://github.com/grafana/grafana-ui-mcp-server) is separate — for component library context, not observability
 
@@ -153,7 +153,7 @@ Prometheus has the most MCP server implementations of any open-source monitoring
 
 #### pab1it0/prometheus-mcp-server — The Most Popular
 
-**Stars:** 412 | **Language:** Python | **Transport:** stdio | **Docker MCP Catalog:** Listed
+**Stars:** 512 | **Language:** Python | **Transport:** stdio | **Docker MCP Catalog:** Listed
 
 **What makes it stand out:**
 - **Configurable tool list** — expose only the tools you need to minimize context window usage
@@ -165,7 +165,7 @@ Prometheus has the most MCP server implementations of any open-source monitoring
 
 #### tjhop/prometheus-mcp-server — Full API Coverage
 
-**Stars:** 43 | **Language:** Go | **Transport:** stdio, SSE, HTTP | **Latest:** v0.17.0 (March 21, 2026)
+**Stars:** 79 | **Language:** Go | **Transport:** stdio, SSE, HTTP | **Latest:** v0.17.0 (March 21, 2026)
 
 **What makes it stand out:**
 - **Full Prometheus API support** — goes far beyond basic PromQL queries
@@ -197,7 +197,7 @@ Prometheus has the most MCP server implementations of any open-source monitoring
 
 ### VictoriaMetrics MCP — Prometheus-Compatible Alternative
 
-**[VictoriaMetrics/mcp-victoriametrics](https://github.com/VictoriaMetrics/mcp-victoriametrics)** | **Stars:** 144
+**[VictoriaMetrics/mcp-victoriametrics](https://github.com/VictoriaMetrics/mcp-victoriametrics)** | **Stars:** 208
 
 The official MCP server for VictoriaMetrics, a high-performance Prometheus-compatible time-series database.
 
@@ -225,7 +225,7 @@ Sets the standard for how first-party MCP integrations should work.
 - Also: [getsentry/sentry-mcp-stdio](https://github.com/getsentry/sentry-mcp-stdio) for self-hosted Sentry
 
 **Limitations:**
-- [800+ GitHub issues](https://github.com/getsentry/sentry-mcp/issues) at pre-1.0
+- [65+ open GitHub issues (287 total, open and closed)](https://github.com/getsentry/sentry-mcp/issues?q=is%3Aissue) at pre-1.0
 - Cross-project queries fail
 - AI search needs separate LLM key
 
@@ -248,13 +248,13 @@ Honeycomb treats every request as a structured event with arbitrary dimensions, 
 - **OAuth 2.1** — matches Sentry as best auth in category
 - **[Hosted remote server](https://www.honeycomb.io/blog/hosted-mcp-now-available)** — zero-install, multi-region (US/EU), available on AWS Marketplace
 - Available on [all tiers including Free (20M events/mo)](https://honeycomb.io/pricing)
-- Self-hosted version ([honeycombio/honeycomb-mcp](https://github.com/honeycombio/honeycomb-mcp), 43 stars, MIT) is **deprecated** — use hosted instead
+- Self-hosted version ([honeycombio/honeycomb-mcp](https://github.com/honeycombio/honeycomb-mcp), 43 stars, MIT) is **deprecated and archived (April 22, 2026)** — use hosted instead
 - 14+ tools: `run_query`, `analyze_columns`, datasets, SLOs, triggers, boards, markers, trace links, OTel guidance
 
 **Limitations:**
 - Self-hosted deprecated — messy transition period
 - 50 calls/min rate limit, 24-hour session timeouts
-- Fewer tools than Datadog (50+) or Grafana (40+)
+- Fewer tools than Datadog (100+) or Grafana (60+)
 - `mcp-remote` bridge dependency for stdio clients
 
 **Best for:** Teams doing high-cardinality debugging on distributed systems.
@@ -276,7 +276,7 @@ Splunk's official MCP server for Enterprise and Cloud, enabling AI assistants to
 - Also: [splunk/splunk-mcp-server2](https://github.com/splunk/splunk-mcp-server2) — unofficial, Python + TypeScript, guardrails for SPL validation and output sanitization
 
 **Limitations:**
-- Low GitHub stars (2) — enterprise users tend not to star
+- [Low GitHub stars (4)](https://github.com/CiscoDevNet/Splunk-MCP-Server-official) — enterprise users tend not to star
 - Enterprise pricing (no free tier for meaningful use)
 - Community alternatives ([livehybrid/splunk-mcp](https://github.com/livehybrid/splunk-mcp), [guardiansphere/splunk-mcp](https://github.com/guardiansphere/splunk-mcp)) suggest gaps
 
@@ -284,7 +284,7 @@ Splunk's official MCP server for Enterprise and Cloud, enabling AI assistants to
 
 ### Elastic MCP — Search & Observability Platform
 
-**[elastic/mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch)** | **Stars:** 643 | [Docs](https://www.elastic.co/docs/solutions/search/mcp)
+**[elastic/mcp-server-elasticsearch](https://github.com/elastic/mcp-server-elasticsearch)** | **Stars:** 703 | [Docs](https://www.elastic.co/docs/solutions/search/mcp)
 
 Elastic offers MCP integration through two paths:
 
@@ -315,7 +315,7 @@ Axiom's MCP server provides AI assistants with direct access to Axiom's log and 
 - **APL (Axiom Processing Language)** queries via `queryApl` tool
 - **Hosted remote server** — zero-install at mcp.axiom.co
 - Saved queries, monitors, monitor history
-- Self-hosted version ([axiomhq/mcp-server-axiom](https://github.com/axiomhq/mcp-server-axiom), 60 stars) is **deprecated** — use hosted instead
+- Self-hosted version ([axiomhq/mcp-server-axiom](https://github.com/axiomhq/mcp-server-axiom), 60 stars) is **deprecated and archived (March 2, 2026)** — use hosted instead
 
 **Best for:** Teams on Axiom who want AI-powered log querying.
 
@@ -342,15 +342,15 @@ Official MCP server for SigNoz, the open-source observability platform (OpenTele
 PagerDuty doesn't collect telemetry — it manages the human response to incidents. The largest tool count of any server in this comparison.
 
 **What makes it stand out:**
-- **67 tools across 13 categories** — incidents (14), event orchestration (8), status pages (7), teams (7), schedules (6), alert grouping (5), change events (4), services (4), workflows (3), escalation policies (2), users (2), log entries (2), on-call (1)
-- **Read-only by default** — 31 tools enabled by default, 36 write tools require `--enable-write-tools`. Safest write-access model in any MCP server
+- **[82 tools across 18 categories](https://github.com/PagerDuty/pagerduty-mcp-server#available-tools-and-resources)** — incidents (12), status pages (8), teams (8), event orchestration (7), schedules (6), analytics (5), alert grouping (5), webhooks (5), escalation policies (4), change events (4), services (4), incident workflows (3), business services (3), log entries (2), users (2), extension schemas (2), on-call (1), priorities (1)
+- **Read-only by default** — 55 tools enabled by default (read-only), 27 write tools require `--enable-write-tools`. Safest write-access model in any MCP server
 - **Dual deployment** — hosted at `mcp.pagerduty.com/mcp` + self-hosted (Apache-2.0, Python)
-- **[Spring 2026 AI ecosystem](https://www.pagerduty.com/newsroom/pagerduty-expands-ai-ecosystem-to-supercharge-ai-agents/)** — [30+ AI partners across 11 categories](https://www.stocktitan.net/news/PD/pager-duty-expands-ai-ecosystem-to-supercharge-ai-agents-and-deliver-33p1d57iksyb.html), Anthropic Claude Code plugin with pre-commit risk scoring, Cursor MCP plugin, LangChain LangSmith integration
-- Active: 270+ commits, 30 forks, 60 stars
+- **[Spring 2026 AI ecosystem](https://www.pagerduty.com/newsroom/pagerduty-expands-ai-ecosystem-to-supercharge-ai-agents/)** — 30+ AI partners across 11 categories, Anthropic Claude Code plugin with pre-commit risk scoring, Cursor MCP plugin, LangChain LangSmith integration
+- Active: 360+ commits, 39 forks, 75 stars
 
 **Limitations:**
 - API token auth only (no OAuth browser flow)
-- 67 tools exceeds the 20-25 MCP recommendation
+- 82 tools far exceeds the 20-25 MCP recommendation
 - Limited free tier (5 users)
 
 **Best for:** On-call engineers who want AI-managed incident response.
@@ -420,7 +420,7 @@ Bridges real-time production context (logs, metrics, traces) into your local env
 | Transport | Remote (HTTP) | stdio+SSE+HTTP | Remote (SSE) | Remote (HTTP) | stdio | stdio | Remote | Both | stdio |
 | Open source | No | Yes | Yes | No | Community | OSS repo | Deprecated | Yes | Official |
 | Free tier | No (14d trial) | Yes (Cloud Free) | Yes (10K/mo) | Yes (100GB/mo) | Yes (OSS) | Consumption | Yes (20M/mo) | Yes (5 users) | No |
-| Tool count | 50+ | 60+ | ~20 | 35 | 6-18 | 5+ | 14+ | 67 | 5+ |
+| Tool count | 100+ | 60+ | ~20 | 35 | 6-18 | 5+ | 14+ | 82 | 5+ |
 | Status | GA | Active | Pre-1.0 | Preview | Active | Active | Hosted | Active | GA |
 
 ## How to Choose
@@ -435,7 +435,7 @@ Bridges real-time production context (logs, metrics, traces) into your local env
 
 **"I run my own observability stack"** → **[Grafana MCP](/reviews/grafana-mcp-server/) (4/5)** for dashboards and visualization. Add **[pab1it0/prometheus-mcp-server](https://github.com/pab1it0/prometheus-mcp-server)** or **[tjhop/prometheus-mcp-server](https://github.com/tjhop/prometheus-mcp-server)** for direct PromQL access. Add **[grafana/loki-mcp](https://github.com/grafana/loki-mcp)** for dedicated log querying.
 
-**"I use VictoriaMetrics"** → **[VictoriaMetrics/mcp-victoriametrics](https://github.com/VictoriaMetrics/mcp-victoriametrics)** (144 stars, official, comprehensive read-only APIs).
+**"I use VictoriaMetrics"** → **[VictoriaMetrics/mcp-victoriametrics](https://github.com/VictoriaMetrics/mcp-victoriametrics)** (208 stars, official, comprehensive read-only APIs).
 
 **"I need high-cardinality event debugging"** → **[Honeycomb MCP](/reviews/honeycomb-mcp-server/) (4/5)**. BubbleUp anomaly decomposition, OAuth 2.1, hosted, free tier.
 
