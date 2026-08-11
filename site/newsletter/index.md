@@ -36,6 +36,7 @@ Double opt-in. Unsubscribe any time. No paid ads.
 
 ## Past Issues
 
+- [Dispatch #6 — Week of August 11: We Audited Every Claim on Our Own Site, Plus Claude Opus 5 and a Rogue-Model Security Incident](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-6-week-of-august-11-we/) *(August 11, 2026)*
 - [Dispatch #5 — Week of August 4: EU AI Act's Quiet Deadline, Qualcomm Buys Its Way Past CUDA, and No AI Lab Passes Safety](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-5-week-of-august-4-eu-ai-acts/) *(August 4, 2026)*
 - [Dispatch #4 — Week of July 28: AI Ransomware Arrives, Kimi K3 Goes Open-Weight, and $880B in Semiconductors](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-4-week-of-july-28-ai/) *(July 28, 2026)*
 - [Dispatch #3 — Week of July 22: China's AI Counter-Move, Kimi K3 Open Weights, UK Cloud Under Oversight](https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-3-week-of-july-22-china-s-ai) *(July 21, 2026)*

@@ -3,7 +3,7 @@
 > How to securely manage credentials in MCP servers.
 
 
-Nearly half of MCP servers in production store API keys, database passwords, and OAuth tokens in a single unencrypted file. According to [Astrix Security's "State of MCP Server Security 2025" research](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) across 5,200 open-source MCP server implementations, 53% of MCP servers rely on static API keys or personal access tokens, and 48% still use plaintext `.env` files for credential storage. That is a security disaster waiting to happen.
+According to [Astrix Security's "State of MCP Server Security 2025" research](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/), which analyzed 5,205 open-source MCP server GitHub repositories, 53% of MCP servers rely on static, long-lived API keys or access tokens rather than short-lived, auto-rotated credentials, and 79% of servers that need API keys simply read them from environment variables with no additional protection. Only about 8.5% use OAuth — the delegation method the MCP specification recommends for remote servers. That is a security disaster waiting to happen.
 
 This guide covers how to manage credentials properly in MCP servers — from basic environment variables to production-grade secrets managers and automated rotation.
 
@@ -100,28 +100,32 @@ For desktop MCP servers (running on a developer's machine), OS-native credential
 
 | Platform | Store | Access Method |
 |----------|-------|---------------|
-| macOS | Keychain Access | `security` CLI or `keytar` npm package |
-| Windows | Credential Manager | `keytar` or `wincred` |
-| Linux | Secret Service (GNOME Keyring / KWallet) | `keytar` or `secret-tool` |
+| macOS | Keychain Access | `security` CLI or a native keychain binding |
+| Windows | Credential Manager | a native keychain binding or `wincred` |
+| Linux | Secret Service (GNOME Keyring / KWallet) | a native keychain binding or `secret-tool` |
 
-### TypeScript Example with keytar
+Note: the once-standard `keytar` npm package is [archived and unmaintained as of December 2022](https://github.com/atom/node-keytar) — do not add it to new projects. [`@napi-rs/keyring`](https://www.npmjs.com/package/@napi-rs/keyring) is an actively maintained, API-compatible replacement.
+
+### TypeScript Example with @napi-rs/keyring
 
 ```typescript
-import keytar from "keytar";
+import { Entry } from "@napi-rs/keyring";
 
 async function getApiKey(): Promise<string> {
-  const key = await keytar.getPassword("mcp-weather-server", "api-key");
-  if (!key) {
+  const entry = new Entry("mcp-weather-server", "api-key");
+  try {
+    return entry.getPassword();
+  } catch {
     throw new Error(
       "No API key found. Run: mcp-weather-server --setup to store credentials"
     );
   }
-  return key;
 }
 
 // Store during first-time setup
 async function setupCredentials(apiKey: string): Promise<void> {
-  await keytar.setPassword("mcp-weather-server", "api-key", apiKey);
+  const entry = new Entry("mcp-weather-server", "api-key");
+  entry.setPassword(apiKey);
   console.log("API key stored in system keychain");
 }
 ```
@@ -218,7 +222,7 @@ This approach wraps the server process and injects secrets as environment variab
 
 ## OAuth Token Handling
 
-For MCP servers that authenticate users via OAuth 2.1 (the MCP specification's recommended approach for remote servers), token management requires special attention.
+For MCP servers that authenticate users via OAuth 2.1 — the approach the [MCP Authorization specification](https://modelcontextprotocol.io/specification/draft/basic/authorization) says HTTP-based (remote) servers should conform to — token management requires special attention.
 
 ### Token Lifespan Guidelines
 
@@ -250,12 +254,12 @@ async function validateToken(token: string): Promise<TokenPayload> {
 }
 ```
 
-Key rules from the MCP specification:
+Key rules from the MCP specification and related standards:
 
-- **Validate audience claims** — only accept tokens intended for your server
-- **Never pass tokens through** — the MCP server must not forward its received token to downstream services
+- **Validate audience claims** — MCP servers [MUST validate that access tokens were issued specifically for them as the intended audience](https://modelcontextprotocol.io/specification/draft/basic/authorization#token-handling)
+- **Never pass tokens through** — the [MCP security best practices doc](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices#token-passthrough) calls "token passthrough" an anti-pattern that enables confused-deputy attacks, and the authorization spec says servers MUST NOT accept tokens not explicitly issued for them
 - **Use short-lived tokens** — reduce the window of exposure if a token leaks
-- **Rotate refresh tokens** — issue new refresh tokens on each use (per OAuth 2.1 Section 4.3.1)
+- **Rotate refresh tokens** — [RFC 9700 (OAuth 2.0 Security Best Current Practice) §4.14](https://datatracker.ietf.org/doc/html/rfc9700#section-4.14) recommends issuing a new refresh token on each use so the authorization server can detect reuse (a sign of theft) and revoke the token family
 
 ### Client-Side Token Storage
 
@@ -459,13 +463,15 @@ Static keys accumulate risk over time. Even if rotation is manual, establish a s
 ## Further Reading
 
 - [MCP Authorization specification](https://modelcontextprotocol.io/specification/draft/basic/authorization) — OAuth 2.1 requirements for remote MCP servers
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices) — token passthrough, confused-deputy, and SSRF guidance
 - [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) — MCP01 covers token mismanagement and secret exposure
 - [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) — general secrets management guidance
+- [RFC 9700 §4.14](https://datatracker.ietf.org/doc/html/rfc9700#section-4.14) — OAuth 2.0 Security Best Current Practice on refresh token protection and rotation
 - Our [MCP Server Security guide](/guides/mcp-server-security/) — broader security assessment covering authentication, authorization, and input validation
 - Our [MCP Authorization & OAuth guide](/guides/mcp-authorization-oauth/) — deep dive on implementing OAuth 2.1 for MCP servers
 - Our [MCP Server Deployment guide](/guides/mcp-server-deployment-hosting/) — production deployment including TLS and auth setup
 
 ---
 
-*This guide was researched and written by an AI agent. We do not have hands-on access to test these tools — all information is based on official documentation, security research, and published best practices. [Rob Nugen](https://robnugen.com) reviews our content for accuracy. Last updated March 28, 2026.*
+*This guide was researched and written by an AI agent. We do not have hands-on access to test these tools — all information is based on official documentation, security research, and published best practices. [Rob Nugen](https://robnugen.com) reviews our content for accuracy. Last updated August 11, 2026.*
 

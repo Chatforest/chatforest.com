@@ -63,7 +63,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 56/130 done (2026-08-09 through 2026-08-11 runs).**
+**Status: 66/130 done (2026-08-09 through 2026-08-11 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -173,16 +173,16 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [MCP + AI Agent Frameworks: LangChain, CrewAI, OpenAI Agents SDK & More](content/guides/mcp-agent-framework-integrations.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [MCP 2026 Roadmap: What's Coming in the Next Spec Release](content/guides/mcp-2026-roadmap-whats-coming.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [MCP AI Safety: Guardrails, Content Filtering, Sandboxing, and Responsible AI Patterns](content/guides/mcp-ai-safety-guardrails.md) — re-audited 2026-08-11
-- [ ] 2026-07-24 — [MCP Async Tasks: Building Long-Running AI Agent Operations That Don't Time Out](content/guides/mcp-async-tasks-long-running.md)
-- [ ] 2026-07-24 — [MCP Attack Vectors: Tool Poisoning, Prompt Injection, and How to Defend Against Them](content/guides/mcp-attack-vectors-defense.md)
-- [ ] 2026-07-24 — [MCP Authentication & OAuth 2.1: Authorization Flows, Token Management, and Enterprise Security Patterns](content/guides/mcp-authentication-oauth.md)
-- [ ] 2026-07-24 — [MCP Authorization and OAuth 2.1: How AI Agents Authenticate with Remote Servers](content/guides/mcp-authorization-oauth.md)
-- [ ] 2026-07-24 — [MCP Browser Automation: Playwright MCP, Stagehand, Chrome DevTools, and the Agentic Browser Landscape](content/guides/mcp-browser-automation.md)
-- [ ] 2026-07-24 — [MCP Caching Strategies: Prompt Caching, Server-Side Caching, Semantic Caching, and Gateway Patterns](content/guides/mcp-caching-strategies.md)
-- [ ] 2026-07-24 — [MCP Clients Compared: Which AI Tools Support the Model Context Protocol?](content/guides/mcp-clients-comparison.md)
-- [ ] 2026-07-24 — [MCP Cost Optimization: Reducing Token Waste and Controlling AI Agent Spend](content/guides/mcp-cost-optimization.md)
-- [ ] 2026-07-24 — [MCP Credential & Secret Management: Securing API Keys, Tokens, and Passwords](content/guides/mcp-credential-secret-management.md)
-- [ ] 2026-07-24 — [MCP Elicitation Explained: How Servers Request User Input at Runtime](content/guides/mcp-elicitation-explained.md)
+- [x] 2026-07-24 — [MCP Async Tasks: Building Long-Running AI Agent Operations That Don't Time Out](content/guides/mcp-async-tasks-long-running.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Attack Vectors: Tool Poisoning, Prompt Injection, and How to Defend Against Them](content/guides/mcp-attack-vectors-defense.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Authentication & OAuth 2.1: Authorization Flows, Token Management, and Enterprise Security Patterns](content/guides/mcp-authentication-oauth.md) — re-audited 2026-08-11 (flagged as substantively redundant with mcp-authorization-oauth.md — human merge/retire decision needed)
+- [x] 2026-07-24 — [MCP Authorization and OAuth 2.1: How AI Agents Authenticate with Remote Servers](content/guides/mcp-authorization-oauth.md) — re-audited 2026-08-11 (flagged as substantively redundant with mcp-authentication-oauth.md — human merge/retire decision needed)
+- [x] 2026-07-24 — [MCP Browser Automation: Playwright MCP, Stagehand, Chrome DevTools, and the Agentic Browser Landscape](content/guides/mcp-browser-automation.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Caching Strategies: Prompt Caching, Server-Side Caching, Semantic Caching, and Gateway Patterns](content/guides/mcp-caching-strategies.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Clients Compared: Which AI Tools Support the Model Context Protocol?](content/guides/mcp-clients-comparison.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Cost Optimization: Reducing Token Waste and Controlling AI Agent Spend](content/guides/mcp-cost-optimization.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Credential & Secret Management: Securing API Keys, Tokens, and Passwords](content/guides/mcp-credential-secret-management.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Elicitation Explained: How Servers Request User Input at Runtime](content/guides/mcp-elicitation-explained.md) — re-audited 2026-08-11
 - [ ] 2026-07-24 — [MCP Error Handling & Resilience: Protocol Errors, Tool Recovery, Circuit Breakers, and Production Fault Tolerance](content/guides/mcp-error-handling-resilience.md)
 - [ ] 2026-07-24 — [MCP Error Handling Explained: Protocol Errors, Tool Failures, and Recovery Patterns](content/guides/mcp-error-handling-explained.md)
 - [ ] 2026-07-24 — [MCP Gateway & Proxy Patterns: Aggregating, Securing, and Scaling MCP Servers](content/guides/mcp-gateway-proxy-patterns.md)

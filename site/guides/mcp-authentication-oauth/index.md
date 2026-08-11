@@ -1,11 +1,11 @@
 # MCP Authentication & OAuth 2.1: Authorization Flows, Token Management, and Enterprise Security Patterns
 
-> A comprehensive guide to MCP authentication and authorization — covering the OAuth 2.1 spec evolution (March→June→November 2025), Protected Resource Metadata (RFC 9728), Client ID
+> A comprehensive guide to MCP authentication and authorization — covering the OAuth 2.1 spec evolution (March 2025→July 2026), Protected Resource Metadata (RFC 9728), Client ID
 
 
 Authentication is the hardest problem in the MCP ecosystem. It's the area that has evolved the most since the protocol launched in late 2024, the area that drew the sharpest community criticism, and the area where real-world vulnerabilities caused the most damage. If you're deploying MCP servers beyond your local machine, you need to understand auth deeply.
 
-This guide covers the full MCP authentication and authorization landscape as of March 2026. Our analysis draws on the official MCP specification, IETF RFCs, security research disclosures, vendor documentation, and community discussions — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+This guide covers the full MCP authentication and authorization landscape as of August 2026, including the [2026-07-28 specification revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog). Our analysis draws on the [official MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization), IETF RFCs, security research disclosures, vendor documentation, and community discussions — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ## The Two Worlds: Stdio vs. Remote Auth
 
@@ -16,51 +16,62 @@ Before diving into OAuth flows and token management, understand the fundamental 
 | **stdio** (local subprocess) | No MCP-level auth needed — OS is your access control | Minimal | Desktop tools, coding assistants, personal servers |
 | **Remote HTTP** (Streamable HTTP, SSE) | OAuth 2.1 with PKCE required for public servers | Significant | Production APIs, shared services, enterprise deployments |
 
-**Stdio servers** run as subprocesses on your machine. Claude Desktop, Cursor, and VS Code launch them under your user account. The operating system provides access control — only processes running as your user can talk to the server. Credentials for upstream APIs (GitHub tokens, database passwords) are passed via environment variables, not OAuth flows. The MCP specification is explicit: stdio implementations should pull credentials from the environment.
+**Stdio servers** run as subprocesses on your machine. Claude Desktop, Cursor, and VS Code launch them under your user account. The operating system provides access control — only processes running as your user can talk to the server. Credentials for upstream APIs (GitHub tokens, database passwords) are passed via environment variables, not OAuth flows. The [MCP specification is explicit](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization): "Implementations using an STDIO transport SHOULD NOT follow this specification, and instead retrieve credentials from the environment."
 
-**Remote servers** are HTTP endpoints accessible over the network. Anyone who knows the URL can attempt to connect. This is where OAuth 2.1 becomes mandatory. The November 2025 MCP specification requires remote servers intended for public use to implement the full OAuth 2.1 authorization flow with PKCE.
+**Remote servers** are HTTP endpoints accessible over the network. Anyone who knows the URL can attempt to connect. This is where OAuth 2.1 becomes mandatory. The [current MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) requires authorization servers to implement OAuth 2.1, and MCP servers intended for public use to publish Protected Resource Metadata and validate token audience — in effect requiring the full OAuth 2.1 authorization flow with PKCE for public remote servers.
 
 For internal team tools and personal remote servers, simpler approaches — static Bearer tokens or API keys in the `Authorization` header — are acceptable and often preferable. But for anything public-facing, the spec mandates OAuth.
 
 ## How the Auth Spec Evolved: A Timeline
 
-The MCP authorization specification went through three major revisions, each fundamentally changing how authentication works:
+The MCP authorization specification went through four major revisions, each fundamentally changing how authentication works:
 
 ### March 2025 — The Original Design
 
-The initial spec coupled the MCP server and authorization server into a single entity. The MCP server was responsible for issuing tokens, managing client registrations, and validating credentials — all on top of serving MCP tools and resources.
-
-**Problem:** This created enormous implementation complexity. Every MCP server author had to build a full OAuth authorization server, manage token databases, handle client registrations, and implement consent flows. As one enterprise architect noted: "Just setting this up looks daunting, let alone doing so securely."
+The initial spec coupled the MCP server and authorization server into a single entity. The MCP server was responsible for issuing tokens, managing client registrations, and validating credentials — all on top of serving MCP tools and resources. Every MCP server author had to build a full OAuth authorization server, manage token databases, handle client registrations, and implement consent flows — enormous implementation complexity for what should have been a tool-serving endpoint.
 
 ### June 2025 — The Great Separation
 
-The June revision made the critical architectural change: **MCP servers became OAuth Resource Servers only**. Token issuance and client management were delegated to separate, dedicated authorization servers. This meant MCP server authors could rely on existing identity providers (Auth0, Keycloak, Okta) rather than building their own.
+The [June revision](https://modelcontextprotocol.io/specification/2025-06-18/changelog) made the critical architectural change: **MCP servers became OAuth Resource Servers only**. Token issuance and client management were delegated to separate, dedicated authorization servers. This meant MCP server authors could rely on existing identity providers (Auth0, Keycloak, Okta) rather than building their own.
 
 Key additions:
-- **Protected Resource Metadata (RFC 9728)** — MCP servers publish metadata documents telling clients where to find their authorization server
-- **Resource Indicators (RFC 8707)** — Tokens are bound to specific MCP servers, preventing token reuse across services
-- **Dynamic Client Registration (RFC 7591)** remained the primary registration mechanism
+- **Protected Resource Metadata ([RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728))** — MCP servers publish metadata documents telling clients where to find their authorization server
+- **Resource Indicators ([RFC 8707](https://www.rfc-editor.org/rfc/rfc8707.html))** — Tokens are bound to specific MCP servers, preventing token reuse across services
+- **Dynamic Client Registration ([RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591))** remained the primary registration mechanism
 
-### November 2025 — CIMD and Mandatory PKCE
+### November 2025 — CIMD Recommended
 
-The November revision brought the specification closer to enterprise reality:
+The [November 2025 revision](https://modelcontextprotocol.io/specification/2025-11-25/changelog) brought the specification closer to enterprise reality:
 
-- **Client ID Metadata Documents (CIMD)** replaced Dynamic Client Registration as the recommended default. Instead of servers issuing client IDs on demand, clients publish a static metadata document at an HTTPS URL. The URL itself becomes the client ID.
-- **PKCE became non-negotiable** — all clients must use it, period. S256 is required when technically capable.
-- **Explicit security guidance** was added after real-world vulnerabilities were disclosed (see the Vulnerabilities section below).
+- **Client ID Metadata Documents (CIMD)** were added as the *recommended* client registration mechanism alongside Dynamic Client Registration. Instead of servers issuing client IDs on demand, clients publish a static metadata document at an HTTPS URL. The URL itself becomes the client ID.
+- **Incremental scope consent** via `WWW-Authenticate` was formalized.
+- Protected Resource Metadata discovery was aligned with RFC 9728, making the `WWW-Authenticate` header's `resource_metadata` optional with a `.well-known` fallback.
 
-| Feature | March 2025 | June 2025 | November 2025 |
-|---|---|---|---|
-| Server role | Auth server + resource server | Resource server only | Resource server only |
-| Discovery | Ad-hoc | Protected Resource Metadata (RFC 9728) | RFC 9728 mandatory |
-| Registration | Dynamic Client Registration | DCR | CIMD preferred, DCR fallback |
-| PKCE | Recommended | Required | Required + S256 mandatory |
-| Token audience | Not specified | RFC 8707 resource indicators | RFC 8707 mandatory |
-| Scope management | Basic | Basic | Step-up authorization |
+### July 2026 — Issuer Validation and DCR Deprecation
+
+The [2026-07-28 specification revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) — the current spec as of this writing — tightened authorization further, closing a real gap the earlier revisions left open:
+
+- **Authorization Server Issuer Identification ([RFC 9207](https://datatracker.ietf.org/doc/html/rfc9207))**: authorization servers should return an `iss` parameter in the authorization response, and MCP clients **MUST** validate it against the recorded issuer before redeeming an authorization code — closing an authorization-server mix-up attack vector.
+- **Dynamic Client Registration ([RFC 7591](https://datatracker.ietf.org/doc/html/rfc7591)) is now formally deprecated** as a registration mechanism (retained only for backwards compatibility with authorization servers that don't support CIMD) — CIMD is the specified default going forward.
+- **Client credentials are bound to the issuing authorization server**: clients must key persisted credentials by issuer identifier and re-register if the authorization server changes.
+- MCP clients must specify an `application_type` during DCR to avoid OpenID Connect redirect-URI conflicts.
+
+The rest of this guide describes the current (2026-07-28) flow; where earlier-revision behavior differs, it's noted inline.
+
+| Feature | March 2025 | June 2025 | November 2025 | July 2026 (current) |
+|---|---|---|---|---|
+| Server role | Auth server + resource server | Resource server only | Resource server only | Resource server only |
+| Discovery | Ad-hoc | Protected Resource Metadata (RFC 9728) | RFC 9728 mandatory | RFC 9728 mandatory + issuer (RFC 9207) validation |
+| Registration | Dynamic Client Registration | DCR | CIMD recommended, DCR fallback | CIMD default, DCR formally deprecated |
+| PKCE | Recommended | Required | Required + S256 mandatory | Required + S256 mandatory |
+| Token audience | Not specified | RFC 8707 resource indicators | RFC 8707 mandatory | RFC 8707 mandatory |
+| Scope management | Basic | Basic | Step-up authorization | Step-up authorization |
+
+*Sources: [2025-11-25 changelog](https://modelcontextprotocol.io/specification/2025-11-25/changelog), [2026-07-28 changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog).*
 
 ## The OAuth 2.1 Authorization Flow in MCP
 
-Here's how the complete authorization flow works in the current (November 2025) specification:
+Here's how the complete authorization flow works in the [current (2026-07-28) specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization):
 
 ### Step 1: Discovery
 
@@ -98,7 +109,7 @@ The client generates PKCE parameters (`code_verifier` and `code_challenge` using
 - The `resource` parameter (the MCP server's canonical URI)
 - The requested `scope`
 
-The user authenticates, reviews the consent screen, and approves. The AS redirects back with an authorization code.
+The user authenticates, reviews the consent screen, and approves. The AS redirects back with an authorization code — and, [as of the 2026-07-28 revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization), an `iss` parameter identifying the issuing authorization server ([RFC 9207](https://datatracker.ietf.org/doc/html/rfc9207)). The client **MUST** validate this against the authorization server it originally recorded before proceeding — this closes an authorization-server mix-up attack where a malicious or compromised AS could otherwise substitute itself mid-flow.
 
 ### Step 5: Token Exchange
 
@@ -171,7 +182,7 @@ CIMD doesn't solve everything. Authorization servers must still guard against:
 
 ## Protected Resource Metadata and Discovery
 
-RFC 9728 (OAuth 2.0 Protected Resource Metadata) is the backbone of MCP's authorization discovery. Every remote MCP server must publish a metadata document telling clients where to authenticate.
+[RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728) (OAuth 2.0 Protected Resource Metadata) is the backbone of MCP's authorization discovery. Every remote MCP server [MUST implement it](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) — publishing a metadata document telling clients where to authenticate.
 
 ### Discovery Flow
 
@@ -222,19 +233,20 @@ The MCP auth ecosystem's first major security crisis hit in mid-2025, revealing 
 
 MCP servers that hold OAuth tokens for multiple users but fail to properly isolate actions create classic confused deputy vulnerabilities. An attacker tricks the server into using another user's credentials by exploiting the token-to-session mapping.
 
-### CVE-2025-6514: mcp-remote Shell Injection
+### CVE-2025-6514: mcp-remote Command Injection
 
-The popular `mcp-remote` OAuth proxy library ([over 437,000 downloads at time of disclosure](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/)) was vulnerable to a critical attack: a malicious MCP server could respond with an `authorization_endpoint` containing shell command injection. The proxy passed this endpoint directly to the system shell, enabling arbitrary code execution on developer machines.
+The popular `mcp-remote` OAuth proxy library — [downloaded more than 437,000 times by the time of disclosure](https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html) — [was vulnerable to a critical attack](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/) (CVSS 9.6): a malicious MCP server could respond with an `authorization_endpoint` value containing a crafted URI. The proxy passed this value to the Node.js `open` package to launch a browser; on Windows, `open` builds a PowerShell command from the URI, and JFrog researchers showed that a non-standard scheme using PowerShell's `$( )` subexpression operator (e.g. `"a:$(cmd.exe /c whoami)"`) achieved full arbitrary command execution on the developer's machine.
 
 ### CVE-2025-49596: MCP Inspector RCE
 
-[Anthropic's own MCP Inspector tool had a critical remote code execution vulnerability](https://www.tenable.com/blog/how-tenable-research-discovered-a-critical-remote-code-execution-vulnerability-on-anthropic) combining a browser flaw (0.0.0.0 Day) with a CSRF weakness, allowing attackers to execute arbitrary commands on developers' machines.
+[Anthropic's own MCP Inspector tool had a critical remote code execution vulnerability](https://www.tenable.com/blog/how-tenable-research-discovered-a-critical-remote-code-execution-vulnerability-on-anthropic) (CVSS 9.4), caused by the Inspector's proxy component accepting unauthenticated connections with permissive CORS defaults. Oligo Security, which disclosed the flaw, [described chaining it with "0.0.0.0 Day"](https://thehackernews.com/2025/07/critical-vulnerability-in-anthropics.html) — a known browser flaw that lets a malicious website reach services bound to all network interfaces — so that simply visiting a malicious site could trigger remote code execution on a developer's machine.
 
 ### Timeline and Response
 
 - **July–August 2025:** Vulnerabilities discovered and responsibly disclosed
 - **Late September 2025:** Vendors deployed fixes
-- **November 25, 2025:** MCP specification updated with explicit security guidance addressing these attack vectors
+- **November 25, 2025:** [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25/changelog) updated its Security Best Practices guidance
+- **July 28, 2026:** MCP specification added mandatory authorization-server issuer validation ([RFC 9207](https://datatracker.ietf.org/doc/html/rfc9207)), closing a related mix-up class of attack
 
 ### Lessons Learned
 
@@ -242,7 +254,7 @@ These vulnerabilities revealed systemic issues, not just individual bugs:
 
 1. **Static client IDs for proxies are dangerous** — each dynamically registered client needs its own consent flow
 2. **Token audience validation is non-negotiable** — servers must verify tokens were issued specifically for them
-3. **Never pass untrusted URLs to shell commands** — validate and sanitize all metadata endpoints
+3. **Never pass untrusted URLs to OS process-launching functions** — validate and sanitize all metadata endpoints before opening them
 4. **Cookie-based consent state is fragile** — `__Host-` prefix cookies and strict same-site policies are essential
 5. **Defense in depth matters** — consent screens must display client identity, redirect destination, and requested permissions clearly
 
@@ -252,11 +264,11 @@ For organizations deploying MCP at scale, the spec's OAuth flow is just the star
 
 ### The Enterprise Gap
 
-As Solo.io and others have documented, the MCP authorization spec has significant enterprise gaps:
+The [MCP maintainers' own 2026 roadmap](https://modelcontextprotocol.io/development/roadmap) lists "Enterprise Readiness" as a priority area precisely because the spec doesn't yet address these gaps, and [Solo.io has documented the SSO gap in detail](https://www.solo.io/blog/enterprise-sso-and-saas-mcp-servers---how-to-authorize-with-agent-gateway-enterprise):
 
-- **No gateway token propagation standard** — when requests pass through a gateway, how does the downstream server know what the original client was authorized to do?
-- **No multi-tenant patterns** — the spec doesn't address shared MCP servers serving multiple organizations
-- **No SSO integration path** — organizations want to manage MCP server access from the same IdP console they use for everything else
+- **No gateway authorization-propagation standard** — the roadmap names this directly: "well-defined behavior when a client does not connect directly to a server but routes through an intermediary," including "authorization propagation" and "what the gateway is allowed to see"
+- **No configuration portability** — the roadmap also flags the lack of "a way to configure a server once and have that configuration work across different MCP clients"
+- **No SSO integration path** — as Solo.io puts it, "SSO gives you user identity. What you need is user authorization: OAuth access tokens scoped to specific SaaS APIs on behalf of a specific user" — the spec doesn't define how a gateway should broker that exchange
 - **Authorization server discovery per-server** — every MCP server points to potentially different authorization servers, creating a fragmented discovery landscape
 
 ### Gateway-Based Authorization
@@ -272,15 +284,15 @@ MCP Client → MCP Gateway → MCP Server A
 The gateway handles:
 - **Authentication** — validates tokens from the enterprise IdP (Okta, Entra ID, Auth0)
 - **Authorization** — applies RBAC policies per tool, per server
-- **Token exchange** — uses RFC 8693 (Token Exchange) to swap broad access tokens for narrowly-scoped tokens per downstream MCP server
+- **Token exchange** — uses [RFC 8693 (OAuth 2.0 Token Exchange)](https://datatracker.ietf.org/doc/html/rfc8693) to swap broad access tokens for narrowly-scoped tokens per downstream MCP server
 - **Audit logging** — records every tool invocation with user identity
 - **Rate limiting** — prevents runaway agent token consumption
 
 Notable implementations:
-- **Kong MCP Gateway** — extends Kong's API gateway with MCP-aware routing and auth
-- **Agent Gateway** (agentgateway.dev) — open-source MCP gateway following the spec closely
-- **Red Hat** — published advanced authentication and authorization patterns for MCP gateways
-- **TrueFoundry MCP Gateway** — enterprise-focused with built-in RBAC
+- **[Kong MCP Gateway](https://konghq.com/blog/product-releases/enterprise-mcp-gateway)** — extends Kong's API gateway with MCP-aware routing and a dedicated MCP OAuth 2.1 authentication plugin
+- **[Agent Gateway](https://agentgateway.dev/)** (agentgateway.dev) — open-source (Apache 2.0), Linux Foundation-hosted MCP gateway with built-in OAuth support, now also offered as "Solo Enterprise for agentgateway" by [Solo.io](https://www.solo.io/press-releases/enterprise-agentgateway-mcp-labs)
+- **[Red Hat](https://developers.redhat.com/articles/2025/12/12/advanced-authentication-authorization-mcp-gateway)** — published advanced authentication and authorization patterns for its Envoy-based MCP Gateway, using Kuadrant for enterprise-grade security
+- **[TrueFoundry MCP Gateway](https://www.truefoundry.com/mcp-gateway)** — enterprise-focused with RBAC enforced per user/team at the gateway
 
 ### SSO Integration Pattern
 
@@ -296,13 +308,11 @@ This pattern means MCP servers don't need to know about the enterprise IdP at al
 
 ### Cross-Application Access (XAA)
 
-When MCP tool invocations trigger downstream API calls, the question of token propagation becomes critical. The emerging best practice:
+When MCP tool invocations trigger downstream API calls, the question of token propagation becomes critical. [Cross-App Access (XAA)](https://xaa.dev), referenced in the [MCP maintainers' own roadmap](https://modelcontextprotocol.io/development/roadmap) as a path toward "enterprise-managed auth," is the emerging pattern — it uses an OAuth Identity Assertion Authorization Grant (ID-JAG), a signed delegation token the identity provider issues once, so:
 
 - MCP servers **must not** forward client tokens to downstream services (this is the confused deputy problem)
-- Instead, downstream services receive tokens issued directly by the IdP
+- Instead, downstream services receive tokens issued directly by the IdP, scoped via the ID-JAG grant
 - Each service boundary requires its own token, with its own audience and scope
-
-This is the Cross-Application Access (XAA) pattern — ensuring least-privilege access across the entire workflow chain.
 
 ## Auth Provider Integration
 
@@ -310,7 +320,7 @@ Several identity platforms now offer specific MCP integration support:
 
 ### Keycloak (Open Source)
 
-Keycloak published official MCP authorization server documentation. It can serve as the authorization server for MCP servers, handling:
+Keycloak [published official documentation for using it as an MCP authorization server](https://www.keycloak.org/securing-apps/mcp-authz-server), starting with version 26.4/26.5. It can serve as the authorization server for MCP servers, handling:
 - Client registration (DCR and CIMD)
 - Token issuance with audience-restricted JWTs
 - Consent management
@@ -320,7 +330,7 @@ Good choice for teams that want full control over their identity infrastructure 
 
 ### Auth0
 
-Auth0 published detailed MCP integration guides covering Protected Resource Metadata, token management, and scope design. They support:
+Auth0 [published MCP integration guides](https://auth0.com/blog/an-introduction-to-mcp-and-authorization/) covering Protected Resource Metadata, token management, and scope design. Their own [open-source `auth0-mcp-server`](https://github.com/auth0/auth0-mcp-server) automatically redacts sensitive fields (`client_secret`, `token`) as `[REDACTED]` in tool responses so secrets don't leak into an AI assistant's context. Auth0's platform also supports:
 - CIMD-based registration
 - Fine-grained scope mapping to MCP tools
 - Step-up authentication for sensitive operations
@@ -328,7 +338,7 @@ Auth0 published detailed MCP integration guides covering Protected Resource Meta
 
 ### Stytch
 
-Stytch offers MCP-specific OAuth flows with:
+[Stytch offers MCP-specific OAuth flows](https://stytch.com/docs/connected-apps/guides/mcp-auth-overview) with:
 - Email, social login, SSO, and MFA support
 - Permission mapping to MCP tools
 - Consent page customization
@@ -336,11 +346,11 @@ Stytch offers MCP-specific OAuth flows with:
 
 ### Okta / Entra ID
 
-Enterprise IdPs that work as upstream authorization servers, typically behind an MCP gateway rather than directly. Okta has published MCP server implementations (97+ stars) with credential redaction features.
+Enterprise IdPs that work as upstream authorization servers, typically behind an MCP gateway rather than directly. Okta has published an [open-source Okta MCP server](https://github.com/okta/okta-mcp-server) for managing Okta itself via natural-language commands.
 
 ### mcp-auth.dev
 
-An open-source library specifically for adding MCP-compliant authentication to servers. Provides:
+An [open-source library specifically for adding MCP-compliant authentication to servers](https://mcp-auth.dev). Provides:
 - Spec-compliant OAuth 2.1 flows
 - Protected Resource Metadata serving
 - Token validation middleware
@@ -348,7 +358,7 @@ An open-source library specifically for adding MCP-compliant authentication to s
 
 ### Cloudflare Workers
 
-Cloudflare published a comprehensive MCP authorization implementation for Workers-based MCP servers, including:
+Cloudflare published a [comprehensive MCP authorization implementation for Workers-based MCP servers](https://blog.cloudflare.com/building-ai-agents-with-mcp-authn-authz-and-durable-objects/), including the [`workers-oauth-provider` library](https://github.com/cloudflare/workers-oauth-provider), which offers:
 - Built-in OAuth 2.1 handling
 - Durable Objects for session persistence
 - Token storage and refresh
@@ -365,7 +375,7 @@ If your MCP server runs as a local subprocess (the vast majority of current MCP 
 3. **Reference secrets with `${env:VAR}` syntax** in configuration files — never hardcode them
 4. **Never commit secrets** to `mcp.json` or configuration files
 
-Example Cursor configuration for a stdio server:
+[Example Cursor configuration](https://cursor.com/docs/mcp) for a stdio server:
 
 ```json
 {
@@ -420,15 +430,17 @@ For any MCP server handling authentication:
 
 ## The 2026 Roadmap and What's Coming
 
-The MCP 2026 roadmap explicitly prioritizes enterprise auth readiness. Key areas under development:
+The [MCP maintainers' roadmap](https://modelcontextprotocol.io/development/roadmap) lists "Enterprise Readiness" as one of four priority areas. Key areas under development:
 
 ### Enterprise Working Group
 
-The MCP maintainers have called for an Enterprise Working Group led by practitioners deploying MCP in enterprise environments. Focus areas include:
-- Gateway authorization propagation standards
-- Multi-tenant token patterns
+The roadmap states: "We expect an Enterprise WG to form" to own enterprise-readiness work, with focus areas including:
+- Gateway and proxy patterns, including authorization propagation
+- Enterprise-managed auth (SSO-integrated flows via [Cross-App Access](https://xaa.dev), replacing static client secrets)
 - Configuration portability across environments
-- Enterprise IdP integration best practices
+- Audit trails and observability enterprises can feed into existing compliance pipelines
+
+The roadmap notes these are not commitments — "some items may not materialize at all" — and much of the output is expected to land as optional extensions rather than core spec changes.
 
 ### Authorization Extensions
 
@@ -436,7 +448,7 @@ The [MCP Authorization Extensions repository](https://github.com/modelcontextpro
 
 ### Remaining Gaps
 
-Despite the November 2025 improvements, significant gaps remain:
+Despite the July 2026 improvements, significant gaps remain:
 
 - **Authorization propagation through gateways** — no standard for how downstream servers learn about original client authorization
 - **Token caching strategies** — the spec doesn't address how clients should cache and reuse tokens across reconnections

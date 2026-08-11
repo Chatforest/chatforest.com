@@ -7,7 +7,9 @@ Most MCP tools require all their inputs up front. The client sends a request, th
 
 Elicitation changes this. It lets an MCP server pause mid-execution, ask the user a question through the client, and resume once it has the answer. This enables genuine human-in-the-loop workflows where servers can gather missing context exactly when they need it.
 
-This guide explains how elicitation works, its two modes (form and URL), the security model, and which clients support it today. Our analysis is based on the [MCP specification (2025-11-25)](https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation) and published implementations — we haven't built production elicitation systems ourselves.
+This guide explains how elicitation works, its two modes (form and URL), the security model, and which clients support it today. Our analysis is based on the [MCP specification (2025-11-25)](https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation), the [current MCP specification (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation), and published implementations — we haven't built production elicitation systems ourselves.
+
+> **Spec update (2026-07-28):** MCP's [current specification](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation) redesigned how elicitation requests are transported. Elicitation itself was not deprecated or changed conceptually — form mode, URL mode, the `accept`/`decline`/`cancel` actions, and the security rules below are all still current. What changed is the wire-level mechanism: instead of a standalone nested `elicitation/create` JSON-RPC request answered independently mid-call, servers now return an [`InputRequiredResult`](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr#inputrequiredresult) containing the elicitation inside `inputRequests`, and the client retries the original request with the answer in `inputResponses` — a pattern MCP calls [multi-round-trip requests (MRTR)](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr). Capability declaration also moved from the top-level `capabilities` object sent once at initialization to a per-request `_meta.io.modelcontextprotocol/clientCapabilities` field, and URL mode's `elicitationId` was replaced by an opaque `requestState` that the client echoes back. The dedicated `-32042 URLElicitationRequiredError` code and the standalone `notifications/elicitation/complete` notification described below were both specific to the pre-2026-07-28 transport and do not appear in the current spec text — the sections below are marked accordingly. By contrast, [Sampling, Roots, and Logging were formally deprecated](https://blog.modelcontextprotocol.io/posts/2026-07-28/) in this same revision (they still work for at least 12 months); elicitation was not on that list.
 
 ## The Problem Elicitation Solves
 
@@ -21,11 +23,13 @@ Elicitation provides a third option: the tool starts executing, realizes it need
 
 ## How Elicitation Works
 
-Elicitation uses a nested request-response pattern. While handling a server request (like a tool call), the server sends an `elicitation/create` request back to the client. The client presents a UI to the user, collects their response, and returns it to the server. The server then continues its original operation.
+Conceptually, elicitation lets a server pause mid-operation, ask the user a question through the client, and resume once it has an answer. *How* that pause-and-resume happens at the wire level differs by spec version — see the update note above.
+
+Under the [2025-11-25 spec](https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation), which is what the JSON examples below illustrate, elicitation used a nested request-response pattern: while handling a server request (like a tool call), the server sent a standalone `elicitation/create` request back to the client, the client presented a UI and returned the response, and the server continued its original operation. Under the [current (2026-07-28) spec](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation), the server instead returns an `InputRequiredResult` carrying the `elicitation/create` request, and the client retries the original call with the answer attached — no held-open request is required. The data shapes shown below (schemas, `action` values, security rules) are the same in both versions; only the envelope that carries them changed.
 
 ### Capability Negotiation
 
-Before any elicitation can happen, the client must declare support during initialization:
+Before any elicitation can happen, the client must declare support. Under the 2025-11-25 spec, this happened once at initialization:
 
 ```json
 {
@@ -39,6 +43,21 @@ Before any elicitation can happen, the client must declare support during initia
 ```
 
 Clients can support form mode, URL mode, or both. An empty `elicitation` object defaults to form mode only (for backwards compatibility). Servers must not send elicitation requests for modes the client hasn't declared.
+
+Under the [current spec](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation), the same declaration is sent per-request instead, nested under `_meta`:
+
+```json
+{
+  "_meta": {
+    "io.modelcontextprotocol/clientCapabilities": {
+      "elicitation": {
+        "form": {},
+        "url": {}
+      }
+    }
+  }
+}
+```
 
 ### The Three Response Actions
 
@@ -152,7 +171,7 @@ This mode was introduced in the November 2025 spec revision.
 }
 ```
 
-Key differences from form mode: there's no `requestedSchema` (data isn't collected through the client). Instead, there's a `url` and an `elicitationId`. The `elicitationId` lets the server track the completion of out-of-band interactions.
+Key differences from form mode: there's no `requestedSchema` (data isn't collected through the client). Instead, there's a `url` and an `elicitationId`. The `elicitationId` lets the server track the completion of out-of-band interactions. (This example follows the 2025-11-25 spec's shape; the [current spec](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation) replaces `elicitationId` with an opaque `requestState` that the client echoes back on retry — same purpose, different field name.)
 
 ### How the Flow Works
 
@@ -163,9 +182,11 @@ Key differences from form mode: there's no `requestedSchema` (data isn't collect
 5. The user completes whatever interaction happens at the URL (entering credentials, completing an OAuth flow, making a payment)
 6. The server optionally sends a `notifications/elicitation/complete` notification when the out-of-band interaction finishes
 
-### URL Elicitation Required Error
+### URL Elicitation Required Error (2025-11-25 spec)
 
-Sometimes a server discovers it needs URL mode elicitation only after a client has already sent a request. In this case, the server can return a `URLElicitationRequiredError` (error code `-32042`):
+> This named error code was specific to the 2025-11-25 transport. The [current (2026-07-28) spec](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation) doesn't define `-32042` — instead the server returns an `InputRequiredResult` (the same MRTR mechanism used for every elicitation) and simply doesn't complete the original call until the required URL-mode interaction is answered. The underlying use case (server needs URL mode elicitation after the client has already sent a request) is unchanged, only the specific error code below has been retired.
+
+Under the 2025-11-25 spec, if a server discovered it needed URL mode elicitation only after a client had already sent a request, it could return a `URLElicitationRequiredError` (error code `-32042`):
 
 ```json
 {
@@ -269,17 +290,17 @@ A GitHub integration server that needs repository access. It sends a URL mode el
 
 ## Client Support
 
-Elicitation is still rolling out across the MCP ecosystem. As of March 2026:
+Elicitation is still rolling out across the MCP ecosystem, and support is uneven between clients. As of August 2026, verified against each vendor's own docs or changelog:
 
 | Client | Form Mode | URL Mode | Notes |
 |--------|-----------|----------|-------|
-| **Claude Code** | Yes | Yes | [Added in v2.1.76](https://www.claudeupdates.dev/version/2.1.76) (March 13–14, 2026). Displays interactive dialogs for elicitation requests. |
-| **Cursor** | Yes | Likely | Broad MCP protocol coverage, including elicitation. |
-| **Claude Desktop** | Partial | Unknown | MCP support is mature, but elicitation support may lag behind Claude Code. |
-| **VS Code (Copilot)** | Unknown | Unknown | MCP support added, but elicitation status unclear. |
-| **Cline** | Unknown | Unknown | Active MCP development; may add support via extensions. |
+| **Claude Code** | Yes | Yes | Added in [v2.1.76](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) (March 14, 2026): "MCP servers can now request structured input mid-task via an interactive dialog (form fields or browser URL)." Confirmed current in [Claude Code's MCP docs](https://code.claude.com/docs/en/mcp#respond-to-mcp-elicitation-requests). |
+| **Cursor** | Yes | Not confirmed | Added in [Cursor v1.5](https://cursor.com/changelog/1-5) (August 21, 2025): "Cursor now supports MCP elicitation... allows servers to request structured input from users." That changelog describes form-style structured input only; we found no Cursor documentation confirming URL mode specifically. |
+| **Claude Desktop** | No | No | Per a [tracked feature request](https://github.com/anthropics/claude-code/issues/41110) citing MCP's own client capabilities matrix, "elicitation is only available in the CLI" among Anthropic's clients — Claude Desktop does not yet support it. Anthropic's [Messages API MCP connector](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector#limitations) likewise states: "Of the feature set of the MCP specification, only tool calls are currently supported." |
+| **VS Code (Copilot)** | Yes | Not confirmed | [GitHub's own writeup](https://github.blog/ai-and-ml/github-copilot/building-smarter-interactions-with-mcp-elicitation-from-clunky-tool-calls-to-seamless-user-experiences/) (September 2025) confirms support and demonstrates form-mode dialogs; it doesn't demonstrate or mention URL mode. |
+| **Cline** | No | No | An [open feature-request discussion](https://github.com/cline/cline/discussions/4522) (opened June 2025, still unresolved as of an April 2026 comment) shows elicitation has not shipped. |
 
-The spec was designed so that clients can adopt elicitation incrementally — form mode first, then URL mode. Servers should always check client capabilities before sending elicitation requests.
+The spec was designed so that clients can adopt elicitation incrementally — form mode first, then URL mode. Servers should always check client capabilities before sending elicitation requests, and should not assume URL mode support just because a client supports form mode.
 
 ## Security Model
 
@@ -305,7 +326,7 @@ The elicitation spec includes unusually detailed security requirements. Key rule
 
 ## Elicitation vs. Sampling
 
-Both elicitation and [sampling](https://chatforest.com/guides/mcp-sampling-explained/) are server-initiated capabilities, but they serve different purposes:
+Both elicitation and [sampling](https://chatforest.com/guides/mcp-sampling-explained/) are server-initiated capabilities, but they serve different purposes. Note the two features are on different tracks as of the [2026-07-28 spec revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/): elicitation is current and unchanged in concept, while sampling (along with Roots and Logging) was formally deprecated — it still works and will keep working for at least 12 months, but new server implementations shouldn't adopt it.
 
 | | Elicitation | Sampling |
 |---|---|---|
@@ -320,9 +341,9 @@ They complement each other well. A server might use sampling to analyze a datase
 
 **Schema restrictions are intentional.** You can't use nested objects or arrays of objects in form schemas. The spec prioritizes simple, consistent client implementations over maximum flexibility. If you need complex multi-page forms, URL mode is the better fit.
 
-**Completion notifications are optional.** For URL mode, the `notifications/elicitation/complete` notification is a "may" in the spec, not a "must." Clients should provide manual retry controls in case the notification never arrives.
+**Completion notifications are optional (2025-11-25 spec).** Under the 2025-11-25 transport, the `notifications/elicitation/complete` notification for URL mode was a "may" in the spec, not a "must," so clients needed manual retry controls in case it never arrived. The [current (2026-07-28) spec](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation) removes this notification entirely — the client retries the original request with the echoed `requestState`, and the server itself determines from that state (or its own stored state) whether the out-of-band interaction is done, returning either the final result or another `InputRequiredResult`. Clients are still expected to offer manual retry/cancel controls.
 
-**Statefulness is required.** Servers using elicitation need to maintain user state — whether information has been collected, whether OAuth tokens have been obtained. This is a significant architectural consideration for server developers used to stateless tool implementations.
+**Statefulness requirements changed in the current spec.** Under the 2025-11-25 spec, most practical elicitation servers needed to maintain user state — whether information had been collected, whether OAuth tokens had been obtained. The [current (2026-07-28) spec](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation) relaxes this: because the MRTR pattern echoes a `requestState` back to the server on retry, "elicitations do not require that the server maintain state about users." Servers are still free to store state (e.g., OAuth tokens obtained via URL mode still have to be persisted somewhere), and if they do, the same security requirements apply — state must not be tied to session IDs alone and must be protected against unauthorized access.
 
 **Client support is uneven.** Not all MCP clients support elicitation yet, and some support form mode but not URL mode. Servers should degrade gracefully when elicitation isn't available.
 
@@ -330,15 +351,15 @@ They complement each other well. A server might use sampling to analyze a datase
 
 If you're building an MCP server that could benefit from runtime user input, here's the practical path:
 
-1. **Check client capabilities** during initialization. Look for `elicitation.form` and `elicitation.url` in the client's declared capabilities.
+1. **Check client capabilities** — declared once at initialization under the 2025-11-25 spec, or per-request under the [current spec](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation). Either way, look for `elicitation.form` and `elicitation.url` in what the client declares.
 2. **Start with form mode** for non-sensitive data collection — confirmations, preferences, disambiguation.
 3. **Use URL mode** for anything involving credentials, payments, or third-party OAuth flows.
 4. **Handle all three response actions** (`accept`, `decline`, `cancel`) in every elicitation call.
 5. **Degrade gracefully** if the client doesn't support elicitation — fall back to requiring all inputs up front, or return clear error messages.
 
-For implementation examples with specific SDKs, see the [official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) and [C# SDK documentation](https://modelcontextprotocol.github.io/csharp-sdk/concepts/elicitation/elicitation.html).
+For implementation examples with specific SDKs, see the [official MCP Python SDK's elicitation guide](https://py.sdk.modelcontextprotocol.io/handlers/elicitation/) (v2, targets the current 2026-07-28 spec) and the [C# SDK's elicitation docs](https://csharp.sdk.modelcontextprotocol.io/concepts/elicitation/elicitation.html).
 
 ---
 
-*This guide is maintained by [ChatForest](https://chatforest.com), an AI-operated content site. Written and researched by AI agents; reviewed by [Rob Nugen](https://robnugen.com). Last updated March 28, 2026.*
+*This guide is maintained by [ChatForest](https://chatforest.com), an AI-operated content site. Written and researched by AI agents; reviewed by [Rob Nugen](https://robnugen.com). Published March 28, 2026; last substantively updated August 11, 2026.*
 

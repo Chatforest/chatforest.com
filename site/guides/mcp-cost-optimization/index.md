@@ -5,7 +5,7 @@
 
 Connecting an AI agent to MCP servers is easy. Controlling the cost of those connections at scale is not.
 
-The core problem is what practitioners call the "MCP tax" — every tool schema from every connected MCP server gets injected into the LLM's context window on every conversation turn, whether the model uses those tools or not. Connect five MCP servers exposing 30 tools each, and you're burning thousands of tokens per turn on tool descriptions alone. At scale, this overhead can inflate API costs by 10-100x compared to optimized alternatives.
+The core problem is what practitioners call the "MCP tax" — every tool schema from every connected MCP server gets injected into the LLM's context window on every conversation turn, whether the model uses those tools or not. Connect five MCP servers exposing 30 tools each, and you're burning thousands of tokens per turn on tool descriptions alone. In [one benchmark](https://www.scalekit.com/blog/mcp-vs-cli-use) comparing identical tasks against GitHub's Copilot MCP server on Claude Sonnet 4, MCP-based tool calls used 4-32x more tokens than CLI-based equivalents — the simplest task ("what language is this repo?") cost 1,365 tokens via CLI versus 44,026 via MCP, translating to roughly $3.20/month versus $55.20/month at 10,000 operations.
 
 This guide covers the practical strategies available in 2026 for reducing MCP token consumption and controlling costs. Our analysis draws on published benchmarks, vendor documentation, and community reports — we research and analyze rather than running cost benchmarks ourselves.
 
@@ -13,13 +13,13 @@ This guide covers the practical strategies available in 2026 for reducing MCP to
 
 Before optimizing, you need to understand where your tokens go. In a typical MCP interaction, token consumption breaks down into several categories:
 
-**Tool schemas** are the primary cost driver. Each tool definition includes a name, description, and JSON schema for its parameters. A moderately complex tool consumes 80-150 tokens. With 30 tools connected, that's 2,400-4,500 tokens injected into every single LLM call — before the model processes any user input or generates any output.
+**Tool schemas** are the primary cost driver. Each tool definition includes a name, description, and JSON schema for its parameters. [Measured session data](https://dev.to/wartzarbee/i-added-mcp-servers-to-claude-code-heres-what-they-cost-in-tokens-50ef) puts a moderately complex tool at roughly 80-150 tokens. With 30 tools connected, that's 2,400-4,500 tokens injected into every single LLM call — before the model processes any user input or generates any output.
 
 **Tool call overhead** comes from the JSON-RPC request/response format. Each tool invocation includes the method name, parameters, and the full response payload. Large responses (database query results, API responses, file contents) flow through the context window, consuming tokens at both the input and output stages.
 
 **Repeated context** compounds the problem in multi-turn conversations. The model sees the full tool catalog on every turn, even if it already used the relevant tool and won't need it again.
 
-According to [The New Stack's analysis](https://thenewstack.io/how-to-reduce-mcp-token-bloat/), MCP tool schemas can consume 40-50% of available context windows before agents perform any actual work. For data-intensive workflows, the total overhead can reach 55,000+ tokens before processing a single query.
+According to [The New Stack's analysis](https://thenewstack.io/how-to-reduce-mcp-token-bloat/), MCP tool schemas can consume 40-50% of available context windows before agents perform any actual work. For data-intensive workflows, [Apideck measured](https://www.apideck.com/blog/mcp-server-eating-context-window-cli-alternative) 55,000+ tokens of overhead before processing a single query — in one case, three connected MCP servers consumed 143,000 of a 200,000-token context window (72%) before the agent did any real work.
 
 ## Strategy 1: Dynamic Tool Discovery
 
@@ -39,14 +39,13 @@ This means an agent connected to 200 tools might only see 5-8 tool descriptions 
 
 [Speakeasy's dynamic toolset approach](https://www.speakeasy.com/blog/how-we-reduced-token-usage-by-100x-dynamic-toolsets-v2) reports up to 160x token reduction compared to static toolsets while maintaining 100% task success rates. Their benchmarks show:
 
-- **96% reduction** in input tokens on average
+- **96% reduction** in input tokens on average (96.7% for simple tasks, 91.2% for complex tasks)
 - **90% reduction** in total token consumption
-- **Consistent cost** regardless of catalog size — progressive search uses 1,600-2,500 tokens whether you have 40 or 400 tools
 
 They offer two discovery modes:
 
 - **Progressive search** — hierarchical navigation through tool categories, providing complete visibility into available tools
-- **Semantic search** — natural language queries against tool descriptions, using just 1,300 tokens regardless of catalog size
+- **Semantic search** — natural language queries against tool descriptions, for direct lookups without browsing categories
 
 The tradeoff is that dynamic discovery adds 1-2 extra tool calls per interaction. But because each call carries far less context, total tokens and latency typically decrease.
 
@@ -95,7 +94,7 @@ That single change can save 40-60 tokens per tool — multiplied across 30+ tool
 
 ### Deduplicate and Standardize Schemas
 
-According to [The New Stack](https://thenewstack.io/how-to-reduce-mcp-token-bloat/), deduplicating schemas, scoping tools into namespaces, and caching frequently used tool metadata can cut token usage by 30-60% in combination.
+According to [Neeraj Abhyankar, VP of data and AI at R Systems, quoted in The New Stack](https://thenewstack.io/how-to-reduce-mcp-token-bloat/), deduplicating schemas, scoping tools into namespaces, and caching frequently used tool metadata can cut token usage by 30-60% in combination.
 
 Specific techniques:
 
@@ -106,9 +105,9 @@ Specific techniques:
 
 ### Use Tool Annotations
 
-MCP [tool annotations](https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/) (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`) communicate tool behavior through structured metadata rather than description text. This lets clients make routing decisions without the LLM needing to parse behavioral hints from natural language descriptions.
+MCP [tool annotations](https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/) (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`) communicate tool behavior through structured metadata rather than description text.
 
-A tool marked `readOnlyHint: true` might be auto-approved by the client, while `destructiveHint: true` triggers a confirmation step. This structured approach is more token-efficient than encoding the same information in description strings.
+A tool marked `readOnlyHint: true` from a trusted server might be auto-approved by the client, while `destructiveHint: true` triggers a confirmation step — for example, showing what's about to be deleted before a destructive call runs. This keeps behavioral information out of the description text agents (and the model) have to parse on every turn.
 
 ## Strategy 3: Response Optimization
 
@@ -158,7 +157,7 @@ Beyond per-request optimization, architectural decisions determine your overall 
 
 ### Tool Budgets
 
-Set explicit limits on how many tools an agent can access per session. Research from [Apideck](https://www.apideck.com/blog/mcp-server-eating-context-window-cli-alternative) suggests that LLMs start selecting wrong tools when they see too many options. Keeping the visible catalog under 15-20 tools per interaction improves both accuracy and cost.
+Set explicit limits on how many tools an agent can access per session. Flooding an agent's context with too many tool options degrades reasoning — tool descriptions blur together and even capable models struggle to pick the right one ([Lunar.dev](https://www.lunar.dev/post/why-is-there-mcp-tool-overload-and-how-to-solve-it-for-your-ai-agents)). Platform-level caps reflect this concern: Claude allows up to 120 tools per session, OpenAI limits developers to 128, and Cursor caps agents at 80 tools — treat these as hard ceilings, not targets, and scope your own catalog down further where you can.
 
 ### Smart Tool Routing
 
@@ -173,7 +172,7 @@ You can't optimize what you don't measure. Implement token tracking per:
 - **User/team** — who generates the most MCP token spend?
 - **Task type** — which workflows are most expensive?
 
-[OpenTelemetry MCP semantic conventions](https://earezki.com/ai-news/2026-03-21-how-i-monitor-mcp-servers-in-production-tools-and-lessons-learned/) provide a standardized approach to instrumenting MCP servers for observability, including token usage metrics.
+[OpenTelemetry's MCP semantic conventions work](https://github.com/open-telemetry/semantic-conventions/issues/2043) provides a standardized approach to instrumenting MCP servers for observability, including tool-call and token-usage attributes — useful since MCP servers ship with no built-in observability by default.
 
 ### Set Cost Ceilings
 
@@ -209,11 +208,11 @@ If you're starting from an unoptimized MCP deployment, tackle these in order:
 
 ## The Bigger Picture
 
-The MCP cost optimization conversation is part of a broader industry reckoning. In March 2026, Perplexity CTO Denis Yarats [announced](https://blogs.versalence.ai/mcp-model-context-protocol-evolution-2026) his company was moving away from MCP toward traditional APIs and CLI tools, citing context window consumption and authentication friction as core issues.
+The MCP cost optimization conversation is part of a broader industry reckoning. At Perplexity's Ask 2026 developer conference in March 2026, Perplexity co-founder and CTO Denis Yarats announced that Perplexity was moving away from MCP for its internal and enterprise-facing systems toward traditional REST APIs and CLI tools, citing context window consumption and authentication friction as core issues ([report 1](https://blogs.versalence.ai/mcp-model-context-protocol-evolution-2026), [report 2](https://repello.ai/blog/mcp-vs-cli)). Note this was Perplexity scaling back MCP for production/internal workloads specifically, not an industry-wide rejection — the company still maintains a public MCP server.
 
-The MCP community's response has been architectural rather than defensive. The [2026 MCP roadmap](https://thenewstack.io/model-context-protocol-roadmap-2026/) acknowledges these challenges. The dynamic discovery pattern, gateway optimizers, and improved transport mechanisms are all direct responses to the cost problem.
+The MCP community's response has been architectural rather than defensive. The official [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) prioritizes transport evolution and enterprise/production readiness — the same areas where the dynamic discovery patterns, gateway optimizers, and improved transport mechanisms covered in this guide are already delivering results.
 
-The protocol isn't going away — its adoption is too broad (97M+ SDK downloads, support from every major AI platform). But the era of "connect everything and let the LLM figure it out" is over. Production MCP deployments in 2026 require deliberate cost management, just like any other infrastructure component.
+The protocol isn't going away — its adoption is too broad: [97M+ monthly SDK downloads](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) across Python and TypeScript, more than 10,000 active public servers, and integration into ChatGPT, Cursor, Gemini, Microsoft Copilot, and VS Code. But the era of "connect everything and let the LLM figure it out" is over. Production MCP deployments in 2026 require deliberate cost management, just like any other infrastructure component.
 
 ## About This Guide
 
