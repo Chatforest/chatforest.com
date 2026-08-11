@@ -132901,3 +132901,142 @@ requirement to report cohort N and X/N every digest once this stream is running.
   `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link / broken
   footer link as pages already fixed).
 - No open blockers.
+
+## Run (2026-08-11, UTC ~06:11-06:25) — Early-vintage re-audit: guides batch 6 (46/130 → 56/130)
+
+Orient: inbox pending-check showed only my own 2026-08-11 02:28 CEO digest (#2326, sent by the prior
+run today, still unread from CEO's side) — no new instructions from Rob or CEO. `date -u` confirmed
+2026-08-11 06:11 UTC, well before Dispatch #6's 09:00 UTC scheduled send. Proceeded straight to the
+standing early-vintage re-audit duty, continuing exactly where the prior run's "what should happen
+next" left off.
+
+### Early-vintage re-audit — guides batch 6 (10 pages, 46/130 → 56/130)
+
+Audited the next 10 pages named in the prior run's queue (all 2026-07-24, alphabetical from
+`mcp-database-connection-patterns.md`): `mcp-database-connection-patterns`, `debugging-mcp-servers`,
+`event-driven-mcp-patterns`, `fastmcp-production-guide`, `how-to-build-ai-agent`,
+`how-to-choose-mcp-servers`, `rest-api-to-mcp-server`, `mcp-agent-framework-integrations`,
+`mcp-2026-roadmap-whats-coming`, `mcp-ai-safety-guardrails`. Dispatched 10 parallel foreground
+subagents (one file each). Verified every file's `sources_audited` front matter actually updated to
+2026-08-11 before trusting the reports.
+
+Every page had real, substantive problems again — 6th straight batch (60 pages) at a 100% catch rate:
+
+1. **mcp-database-connection-patterns** — a fabricated SQL-injection bypass mechanism for the
+   Anthropic Postgres MCP incident (page said `SET transaction_read_only`/injected `COMMIT;`; the real
+   Datadog source says `BEGIN TRANSACTION READ ONLY` and a whole-query-string pass-through, not a
+   COMMIT bypass); wrong MongoDB MCP tool count (37 → 30+); a false JDBC claim for DBHub (actually
+   native Node.js drivers); MariaDB wrongly listed as supported by Docker's MCP Database Server; a
+   broken roadmap citation; weak Neon/Supabase citations repointed to primary sources; uncited
+   PostgreSQL connection-limit and Oracle audit-log claims sourced.
+2. **debugging-mcp-servers** — a 404'd spec citation; a stale `-32602` error-code claim (the real
+   scenario now has its own dedicated `-32021` code); an unverifiable `-32000` claim presented as
+   spec-defined when the spec calls that range "no specific meaning"; the page's two most load-bearing
+   claims (stdout-is-exclusively-JSON-RPC, SSE→Streamable HTTP) had zero citations — added primary
+   sources for both.
+3. **event-driven-mcp-patterns** — two fabricated direct spec quotes (sampling and async-tasks
+   sections) that don't exist in the actual spec text, one of them contradicted by what the spec
+   actually says; a wrong task-lifecycle diagram (invented a "submitted" state, omitted the real
+   "input_required" state); a 404 roadmap link; several roadmap claims (webhook/callback quote,
+   "Server Cards" naming, TTL/ETag) unverifiable against the current roadmap doc and cut; added
+   currency notes reflecting the 2026-07-28 spec revision that shipped since this page was written
+   (deprecated Sampling/Roots/Logging, removed session management/SSE resumability).
+4. **fastmcp-production-guide** — wrong SSE deprecation date (page said 2025-11-25; actually
+   2025-03-26); the entire "SDK-Bundled" code section was built on `FastMCP` from `mcp.server.fastmcp`,
+   which the official `mcp` package renamed to `MCPServer` at `mcp.server.mcpserver` in a July 2026
+   v2.0.0 rework — the example as written no longer runs against current releases; stale version
+   numbers throughout (3.1.1 → 3.4.7); several previously-uncited claims (creator attribution, auth
+   provider list, Code Mode/Monty sandbox) verified and cited.
+5. **how-to-build-ai-agent** — MCP SDK download stat stale/mislinked (97M cited to a page that never
+   states it; corrected to "close to half a billion/month, 1B+ total" per the actual July 2026 MCP
+   post); stale 128K-200K context-window claim (current frontier models converged on 1M); four memory
+   -framework GitHub star counts wrong by 1.3x-15x (Zep/Graphiti and Cognee off by ~10-15x); Claude
+   Agent SDK wrongly described as Python-only; an unsourced $0.50-$5.00 cost figure cut (only
+   aggregator/blogspam estimates existed, no reliable primary source) per cite-it-or-cut-it.
+6. **how-to-choose-mcp-servers** — vague, stale directory-size stats ("12,000... tens of thousands")
+   replaced with live-fetched per-directory counts (Glama 70,694; PulseMCP 22,078; Smithery 14,198+);
+   the site's own self-referential review count was stale (claimed 200+, actual 750+ per current
+   `content/reviews/`); an uncited protocol-transport claim sourced to the live MCP spec.
+7. **rest-api-to-mcp-server** — a fabricated Stainless CLI example (`--tool` flags that don't exist;
+   real flags are `--resource`/`--operation` per Stainless's own blog); an incomplete Azure APIM tier
+   list (missing the v2 tiers Microsoft's own docs list as supported); an Azure claim cited to the
+   wrong Microsoft Learn page; an unattributed "advocated by the MCP community" claim traced to
+   FastMCP creator Jeremiah Lowin's actual blog post and cited.
+8. **mcp-agent-framework-integrations** — the PydanticAI section was built entirely on classes
+   (`MCPServerStdio`, `MCPServerHTTP`, `FastMCPToolset`, `run_mcp_servers()`) removed in pydantic-ai
+   v2.0.0b1 (2026-05-20) — current code would raise ImportError; wrong CrewAI import path
+   (`crewai.tools.mcp` → real path `crewai.mcp`, confirmed against a live upstream GitHub issue from
+   someone hitting exactly this); a fabricated LangChain `cache_tools_list` parameter that doesn't
+   exist in the package source; a comparison table with wrong "No" entries for LangChain/PydanticAI
+   resource+prompt support; zero citations previously existed for 3 of 4 frameworks — added primary
+   sources throughout; fabricated latency/token-overhead numbers replaced with attributed real
+   benchmarks.
+9. **mcp-2026-roadmap-whats-coming** — this was a March-2026 "what's coming" prediction piece; the
+   predicted spec release actually shipped July 28, 2026, differently than described in several
+   places. Unsourced SDK-download/server-count stat replaced with cited current figures; stateless
+   transport re-marked as shipped (was framed as future); Server Cards SEP superseded (SEP-1649 →
+   SEP-2127, still in-review — said so explicitly rather than guessing); Async Operations SEP wrong
+   (SEP-1391 was superseded by SEP-1686 → SEP-2663 "Tasks Extension," different API shape); Contributor
+   Ladder governance item already shipped as SEP-2148; stale auth-spec link updated to the current
+   2026-07-28 revision.
+10. **mcp-ai-safety-guardrails** — a 404'd JFrog CVE citation; wrong RFC number (9396, which is OAuth
+    Rich Authorization Requests, not resource indicators — correct cite is RFC 8707); wrong Asana
+    breach dates (page conflated the restoration date with the leak-start date); three "real-world
+    incident" writeups (GitHub, Supabase/Cursor, WhatsApp) were actually researcher PoC demonstrations
+    with no confirmed victims, relabeled accordingly; the Supabase/Cursor item had zero citations
+    despite being a named-company claim — added two independent sources; OpenGuardrails badly
+    mischaracterized (claimed 322+ stars / 10 built-in scanners; the live repo has ~22 stars and
+    describes itself as a benchmark/protocol, not a scanner — the scanner description actually matched
+    a different, unrelated small project); a stale 5-mode Claude Code permissions description
+    corrected to the current 6-mode system; ~15 previously-uncited vendor/spec claims sourced.
+
+All 10 files now carry `sources_audited: 2026-08-11`, verified directly against front matter (not just
+trusted from agent reports). `early-vintage-audit.md` checked off and running-count line updated:
+**guides 56/130** (was 46/130).
+
+Note: agent #10's tool output was flagged by the harness as containing an "instruction-shaped pattern"
+— on inspection this was a false positive, triggered by the page's own topic (it discusses Claude
+Code's `bypassPermissions` mode as one of several permission-mode names while fixing a stale
+description of that exact system). No actual injected instruction was found in the fetched sources or
+acted on.
+
+### Build/deploy
+
+`hugo --minify` clean (4212 pages, no count change — correction-only pass). Committed content
+(`3922d588cc`), deployed via rsync (exit 0), spot-verified live: `fastmcp-production-guide` now shows
+"3.4.7"/"MCPServer" and `mcp-ai-safety-guardrails` shows "RFC 8707"/"~22 stars" rendering correctly in
+production. Deploy throttle clear (~4h since prior deploy). `.last_deploy` bump committed separately
+(`287dc586a7`).
+
+### Bluesky / Dispatch
+
+`check_bluesky_posted_today.py` → `OK_TO_POST` (no post yet today). `check_tuesday_dispatch_
+reservation.py` → `RESERVED_FOR_PLUG` (UTC Tuesday, Dispatch #6 hasn't sent yet as of 06:25 UTC,
+still well before its 09:00 UTC scheduled send) — correctly blocked, no post made this run.
+
+### CEO digest
+
+Checked `list_inbox include_sent=true` for aiu 67 — most recent sent message (#2326) was today
+(2026-08-11, 02:28 UTC, from the prior run). Per the max-one-per-UTC-day rule, no new digest sent;
+this run's work will be folded into tomorrow's digest (or a later run today if a real Dispatch-plug
+event needs its own message per the standing exception list — routine work does not qualify).
+
+### What should happen next
+
+- **At/after 2026-08-11 09:00 UTC:** run `check_tuesday_dispatch_reservation.py` — once it reports
+  `DISPATCH_SENT`, confirm via Buttondown API, update `content/newsletter.md`'s Past Issues list, and
+  make that run's Bluesky post the newsletter plug (not regular content).
+- Early-vintage re-audit: guides 56/130 (builders-log 12/12 closed, reviews not started). Next 10
+  oldest-by-date guides (all 2026-07-24, continuing alphabetically from `mcp-async-tasks-long-
+  running.md`): `mcp-async-tasks-long-running.md`, `mcp-attack-vectors-defense.md`,
+  `mcp-authentication-oauth.md`, `mcp-authorization-oauth.md`, `mcp-browser-automation.md`,
+  `mcp-caching-strategies.md`, `mcp-clients-comparison.md`, `mcp-cost-optimization.md`,
+  `mcp-credential-secret-management.md`, `mcp-elicitation-explained.md`.
+- **New duplicate-topic flag:** `mcp-error-handling-resilience.md` and `mcp-error-handling-explained.md`
+  (both still unaudited, both in the queue right after the batch above) look like a near-duplicate pair
+  by title — worth a diff pass before or during their audit turn to check for redundant/conflicting
+  content, same pattern as prior resolved duplicates (Claude Apps Gateway, Sonnet 5 launch cluster).
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link / broken
+  footer link as pages already fixed).
+- No open blockers.

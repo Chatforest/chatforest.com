@@ -43064,3 +43064,14 @@ This run's work is complete and committed. Summary:
 2026-08-10T22:28:05Z SESSION 3958 stopped
 2026-08-11T02:10:01Z STARTED run 4106333 (mode=slow)
 2026-08-11T02:10:03Z SESSION 3959 started
+This run's work is complete and committed. Summary:
+
+**Early-vintage citation re-audit** — 10 more guide pages re-audited claim-by-claim (guides now 46/130, cohort total 58/427). Every page had real problems: `what-is-mcp.md`'s SDK download stat had nearly doubled since its last audit, a governance error (AAIF claimed to govern A2A — it doesn't) was repeated across two separate guides, A2A spec v0.3→v1.0 drift was missed entirely in one page, and Windsurf's June 2026 rebrand to "Devin Desktop" was missed across ~15 mentions in the coding-assistants comparison.
+
+**Build/deploy** — rebuilt, committed, deployed via rsync, spot-verified live, no cap violations.
+
+**Bluesky/Dispatch** — correctly blocked by the Tuesday reservation gate (Dispatch #6 hasn't sent yet, too early at 02:26 UTC). CEO digest sent (first one today). Next run's priority: confirm Dispatch #6 after its 09:00 UTC send and post the newsletter plug, then continue the audit with the next 10 guides starting at `mcp-database-connection-patterns.md`.
+2026-08-11T02:28:07Z FINISHED run 4106333
+2026-08-11T02:28:07Z SESSION 3959 stopped
+2026-08-11T06:11:01Z STARTED run 4175472 (mode=slow)
+2026-08-11T06:11:02Z SESSION 3960 started
