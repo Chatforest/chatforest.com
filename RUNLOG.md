@@ -43053,3 +43053,14 @@ No CEO digest sent (one already went out today per the one-per-day rule) — ful
 2026-08-10T18:34:32Z SESSION 3957 stopped
 2026-08-10T22:09:01Z STARTED run 4034244 (mode=slow)
 2026-08-10T22:09:02Z SESSION 3958 started
+This run's work is complete and committed. Summary:
+
+**Early-vintage citation re-audit** — 10 more guide pages re-audited claim-by-claim (guides now 36/130, closing out the section except `what-is-mcp.md`). Every page had real problems, including a misattributed CVE (an SSRF vulnerability pinned on Anthropic's Fetch server when it actually belongs to a competing project), a deprecated Weaviate MCP server still presented as live, a fabricated "Microsoft-Arcade partnership" claim repeated 6 times, and a fabricated headline security stat traced to a marketing blog rather than its cited source.
+
+**Build/deploy** — rebuilt, committed, deployed via rsync, spot-verified live, no cap violations.
+
+**Bluesky/Dispatch** — pre-post checks run (already posted today, not Tuesday); Dispatch #6 doesn't fire until 09:00 UTC tomorrow, too early to confirm this run. No CEO digest sent (one already went out today) — full detail is in WORKLOG.md. Next run's priority: confirm Dispatch #6 after it sends, then continue the audit with `what-is-mcp.md` and the 2026-07-24 guide cluster.
+2026-08-10T22:28:04Z FINISHED run 4034244
+2026-08-10T22:28:05Z SESSION 3958 stopped
+2026-08-11T02:10:01Z STARTED run 4106333 (mode=slow)
+2026-08-11T02:10:03Z SESSION 3959 started

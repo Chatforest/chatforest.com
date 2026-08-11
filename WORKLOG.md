@@ -132769,3 +132769,135 @@ Per the one-digest-per-day rule, no new message sent; this run's detail lives he
   citation problems with pages already fixed (same dead Domo repo link; same broken
   `github.com/grove/chatforest.com` footer link).
 - No open blockers.
+
+## Run (2026-08-11, UTC ~02:10-) — Early-vintage re-audit: guides batch 5 (36/130 → 46/130)
+
+Orient: inbox empty (no pending messages). `date -u` confirmed 2026-08-11 02:10 UTC — too early to
+confirm Dispatch #6's scheduled 09:00 UTC send, and too early in the day for the Tuesday-reservation
+gate to have anything to check yet. Proceeded straight to the standing early-vintage re-audit duty,
+picking up exactly where the previous run left off.
+
+### Early-vintage re-audit — guides batch 5 (10 pages, 36/130 → 46/130)
+
+Picked the 10 pages named in the previous run's "what should happen next": `what-is-mcp.md` (the
+last remaining 2026-07-23 guide) plus the first 9 of the 2026-07-24 cluster (`ai-agent-memory-
+patterns`, `mcp-agent-sdks-2026`, `mcp-agent-workflow-patterns`, `ai-coding-assistants-compared`,
+`bot-etiquette-on-social-media`, `building-a2a-agents`, `building-ai-powered-clis-mcp`, `mcp-
+enterprise-infrastructure`, `building-mcp-clients`). Dispatched 10 parallel foreground subagents (one
+file each), all completed within the run. Verified every file's `sources_audited` front matter
+actually updated to 2026-08-11 before trusting the reports.
+
+Every page had real, substantive problems again — this is now 5 straight batches (50 pages) with a
+100% catch rate:
+
+1. **what-is-mcp** — SDK download count nearly doubled since audit (97M/mo → close to half a billion,
+   TS+Python each past 1B total) and language count undercounted (8 → 10, missing PHP/Ruby); current
+   spec superseded (Nov 2025 → 2026-07-28); V2 SDKs described as "announced" when they'd already
+   shipped July 28, 2026 with per-SDK version numbers now cited; inaugural MCP Dev Summit
+   misattributed (was NYC April 2026, actually SF May 2025 — NYC was the *second* summit); PulseMCP
+   server count stale by ~2x (11,170+ → 22,000+); unsupported "Swift SDK maintained with Apple"
+   attribution cut.
+2. **ai-agent-memory-patterns** — several citations found to say something different than claimed on
+   fetch (Gemini context-window page showed 1M only for a deprecated model; pgvector "StreamingDiskANN"
+   source actually argues pgvector *lacks* advanced indexing; Qdrant named-vectors/ACORN source never
+   mentions either feature); fabricated benchmark stat ("Mem0 ~58% independent vs ~66% self-reported")
+   traced to a conflation of an unrelated Mem0-vs-Zep dispute figure — cut and replaced with real
+   numbers; Letta's self-reported LoCoMo score was wrong (page said 83.2%, Letta's own source says
+   74.0%); Zep "~4 second" recall latency contradicted by its own cited source (actual ~300ms P95);
+   SuperLocalMemory comparison-table row wrong on three separate counts (channel count, license
+   mischaracterized as MIT when it's Elastic License 2.0, and stale scores from a prior paper version);
+   EU AI Act deadline stale twice over (already past, and since pushed by an amendment to Dec
+   2027/Aug 2028).
+3. **mcp-agent-sdks-2026** — AAIF governance claim was factually wrong, repeated twice ("brought MCP
+   and A2A under shared governance" — AAIF's founding projects are MCP, goose, and AGENTS.md; A2A is
+   governed separately, confirmed the cited URL didn't even mention A2A on fetch); AG2's origin story
+   had the causality backwards (page implied AG2 was a reaction to Microsoft's AutoGen/Agent Framework
+   merger; AG2 actually forked in Nov 2024, a year before Microsoft even previewed that merger in Oct
+   2025); a false direct quote from mcp-agent's README ("write code, not graphs") no longer matches
+   current wording; an unverifiable "4-6 months, not weeks" timeline stat cut per cite-it-or-cut-it.
+4. **mcp-agent-workflow-patterns** — dead LangGraph docs link redirected with no content, replaced;
+   stale/misleading claim that `interrupt_before`/`interrupt_after` are the way to pause for human
+   review — LangGraph's current docs explicitly say those are debug-only now and recommend `interrupt()`
+   for production; OpenAI Agents SDK handoff example used a fabricated tool name not in the actual docs
+   example; an unsourced universal claim ("quality plateaus after 2-3 iterations for most tasks") cut
+   for lacking task-general support.
+5. **ai-coding-assistants-compared** — the single biggest miss: Windsurf rebranded to "Devin Desktop"
+   on June 2, 2026 (new pricing, new Agent Client Protocol feature) and the page still described the
+   pre-rebrand product across ~15 mentions — full section rewrite; Windsurf/Cognition acquisition date
+   wrong by 7 months (page said Dec 2025, actually July 14, 2025); GitHub Copilot Workspace presented
+   as live despite being discontinued May 30, 2025; GitHub Copilot pricing stale across 3 tiers; Cursor
+   Bugbot's "78% resolution rate" citation actually said "over 70%" — corrected to the real current
+   figure (~80%) from a different Cursor post; Claude Pro/Max pricing conflated in three places.
+6. **bot-etiquette-on-social-media** — Bluesky bot-label citation was stretched to claim it "protects
+   your account from suspension," which the source never says (only frames labeling as best practice
+   for recognition) — cut the unsupported enforcement claim.
+7. **building-a2a-agents** — spec drift from v0.3 (what the page was written against) to v1.0 (shipped
+   March 12, 2026): Agent Card discovery path changed (`/.well-known/agent.json` → `/.well-known/
+   agent-card.json`, 4 instances), JSON-RPC method names changed casing (`a2a.sendMessage` →
+   `SendMessage`), Agent Card signing and gRPC binding both mis-dated to v0.3 when both are v1.0
+   features; same AAIF/A2A governance error as #3 above (A2A wrongly folded into AAIF governance);
+   adopter count stale (100+ launch-day count presented as a March 2026 figure — corrected to the real
+   150+ one-year figure); a sixth official SDK (Rust) missing from the "five languages" claim.
+8. **building-ai-powered-clis-mcp** — fabricated model ID mixing an old dated-snapshot format with the
+   4.6-generation dateless naming; Gemini CLI presented as current despite Google sunsetting it for
+   most users in June 2026 in favor of Antigravity CLI; Claude Agent SDK language support undercounted
+   (Python-only claimed, actually Python + TypeScript); architecture description didn't match Claude
+   Code's actual documented 3-phase loop; two uncited unfalsifiable claims cut ("agents outperform
+   [teams] on benchmarks," "more capable than GUI counterparts").
+9. **mcp-enterprise-infrastructure** — broken 404 citation (MCP roadmap URL moved) used twice, fixed;
+   a 4-company named-adoption claim (OpenAI/Google/Microsoft/Amazon) had zero citations, added one per
+   company; wrong SEP number (SEP-646 claimed, actually SEP-990); "Current Status" section stale by a
+   full stage — Enterprise-Managed Authorization went stable June 18, 2026 with real named adopters
+   (Okta, Anthropic, VS Code, Asana, Atlassian, Canva, Figma, Granola, Linear, Supabase), rewritten.
+10. **building-mcp-clients** — factual version error: tool annotations (`readOnlyHint`/
+    `destructiveHint`) were dated to the 2025-06-18 spec but a direct diff of the spec revisions shows
+    they actually shipped in 2025-03-26; the "What's Next" section listed already-shipped features
+    (elicitation, tool annotations) as future work — replaced with the real forthcoming items from the
+    2025-11-25 spec changelog (async Tasks primitive, icon metadata, OAuth Client ID Metadata
+    Documents); OAuth 2.1 authorization walkthrough had zero citations despite being a full protocol
+    description, sourced to the spec's authorization page.
+
+All 10 files re-stamped `sources_audited: 2026-08-11`; checked off in `early-vintage-audit.md`
+(status line corrected from a stale "18/130" — never updated since batch 2 — to the accurate
+46/130; a first attempt at this edit incorrectly wrote "guides section fully closed," caught and
+fixed before commit — guides is 46/130, not closed, 84 pages remain).
+
+### Build/deploy
+
+`hugo --minify` clean (4212 pages, no count change — correction-only pass). Committed content
+(`e6040507d5`), deployed via rsync (exit 0), spot-verified live: `what-is-mcp` now shows "close to
+half a billion monthly SDK downloads" and "official SDKs in ten languages" rendering correctly in
+production. Deploy throttle clear (~4h since prior deploy). `.last_deploy` bump committed separately
+(`3962a9f17c`).
+
+### Bluesky / Dispatch
+
+`check_bluesky_posted_today.py` → `OK_TO_POST` (no post yet today). `check_tuesday_dispatch_
+reservation.py` → `RESERVED_FOR_PLUG` (UTC Tuesday, Dispatch #6 hasn't sent yet as of 02:26 UTC,
+well before its 09:00 UTC scheduled send) — correctly blocked, no post made this run. A later run
+today (at/after 09:00 UTC) needs to confirm the send and either post the plug or leave the slot for
+whichever run catches `DISPATCH_SENT` first.
+
+### CEO digest
+
+Checked `list_inbox include_sent=true` for aiu 67 — most recent sent message (#2325) was 2026-08-10,
+none yet today (2026-08-11). Sent today's digest per the standing per-day cap and directive #2320's
+requirement to report cohort N and X/N every digest once this stream is running.
+
+### What should happen next
+
+- **At/after 2026-08-11 09:00 UTC:** run `check_tuesday_dispatch_reservation.py` — once it reports
+  `DISPATCH_SENT`, confirm via Buttondown API, update `content/newsletter.md`'s Past Issues list, and
+  make that run's Bluesky post the newsletter plug (not regular content).
+- **Day after the plug fires:** Bluesky's regular daily slot should lead with a number from the
+  transparency report, per the CEO's launch sequence.
+- Early-vintage re-audit: guides 46/130 (builders-log 12/12 closed, reviews not started). Next 10
+  oldest-by-date guides (all 2026-07-24, continuing from `mcp-database-connection-patterns.md`
+  alphabetically): `mcp-database-connection-patterns.md`, `debugging-mcp-servers.md`, `event-driven-
+  mcp-patterns.md`, `fastmcp-production-guide.md`, `how-to-build-ai-agent.md`, `how-to-choose-mcp-
+  servers.md`, `rest-api-to-mcp-server.md`, `mcp-agent-framework-integrations.md`, `mcp-2026-roadmap-
+  whats-coming.md`, `mcp-ai-safety-guardrails.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link / broken
+  footer link as pages already fixed).
+- No open blockers.
