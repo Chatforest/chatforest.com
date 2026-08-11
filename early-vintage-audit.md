@@ -67,7 +67,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 66/130 done (2026-08-09 through 2026-08-11 runs).**
+**Status: 87/130 done (2026-08-09 through 2026-08-11 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -197,17 +197,17 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [MCP Multi-Tenant Architecture: Per-Tenant Isolation, Shared Servers, OAuth Identity Propagation, and SaaS Deployment Patterns](content/guides/mcp-multi-tenant-patterns.md)
 - [x] 2026-07-24 — [MCP Notifications Explained: List Changes, Resource Subscriptions, and Dynamic Discovery](content/guides/mcp-notifications-explained.md)
 - [x] 2026-07-24 — [MCP Pagination Patterns: Handling Large Result Sets Without Blowing Your Context](content/guides/mcp-pagination-patterns.md)
-- [ ] 2026-07-24 — [MCP Prompts Explained: How Servers Share Reusable Prompt Templates](content/guides/mcp-prompts-explained.md)
-- [ ] 2026-07-24 — [MCP Real-Time Streaming: Transports, Subscriptions, Event-Driven Patterns, and Production Architecture](content/guides/mcp-real-time-streaming.md)
-- [ ] 2026-07-24 — [MCP Registry & Server Discovery Guide (2026)](content/guides/mcp-registry-server-discovery.md)
-- [ ] 2026-07-24 — [MCP Resource Templates Deep Dive: Dynamic Content with URI Patterns](content/guides/mcp-resource-templates-deep-dive.md)
-- [ ] 2026-07-24 — [MCP Resources and Roots Explained: How Servers Expose Data and Clients Define Boundaries](content/guides/mcp-resources-and-roots-explained.md)
-- [ ] 2026-07-24 — [MCP Sampling Explained: How Servers Request AI Completions Through Clients](content/guides/mcp-sampling-explained.md)
-- [ ] 2026-07-24 — [MCP Server Deployment & Hosting: Docker, Cloud, Serverless, and Self-Hosted](content/guides/mcp-server-deployment-hosting.md)
-- [ ] 2026-07-24 — [MCP Server Frameworks and SDKs: A Developer's Guide](content/guides/mcp-server-frameworks-sdks.md)
-- [ ] 2026-07-24 — [MCP Server Marketplace & Monetization: How to Publish, Distribute, and Earn from MCP Servers](content/guides/mcp-marketplace-monetization.md)
-- [ ] 2026-07-24 — [MCP Server Packaging & Distribution: npm, PyPI, Docker, DXT, and the Official Registry](content/guides/mcp-server-packaging-distribution.md)
-- [ ] 2026-07-24 — [MCP Server Performance Tuning: From 250ms to Sub-Millisecond Response Times](content/guides/mcp-server-performance-tuning.md)
+- [x] 2026-07-24 — [MCP Prompts Explained: How Servers Share Reusable Prompt Templates](content/guides/mcp-prompts-explained.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Real-Time Streaming: Transports, Subscriptions, Event-Driven Patterns, and Production Architecture](content/guides/mcp-real-time-streaming.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Registry & Server Discovery Guide (2026)](content/guides/mcp-registry-server-discovery.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Resource Templates Deep Dive: Dynamic Content with URI Patterns](content/guides/mcp-resource-templates-deep-dive.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Resources and Roots Explained: How Servers Expose Data and Clients Define Boundaries](content/guides/mcp-resources-and-roots-explained.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Sampling Explained: How Servers Request AI Completions Through Clients](content/guides/mcp-sampling-explained.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Server Deployment & Hosting: Docker, Cloud, Serverless, and Self-Hosted](content/guides/mcp-server-deployment-hosting.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Server Frameworks and SDKs: A Developer's Guide](content/guides/mcp-server-frameworks-sdks.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Server Marketplace & Monetization: How to Publish, Distribute, and Earn from MCP Servers](content/guides/mcp-marketplace-monetization.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Server Packaging & Distribution: npm, PyPI, Docker, DXT, and the Official Registry](content/guides/mcp-server-packaging-distribution.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP Server Performance Tuning: From 250ms to Sub-Millisecond Response Times](content/guides/mcp-server-performance-tuning.md) — re-audited 2026-08-11 (title changed to "Language, Transport, and Caching Choices That Cut Latency 10x or More" — the old title asserted an unverifiable, unsupported stat)
 - [ ] 2026-07-24 — [MCP Setup for AI Coding Tools: Cursor, Claude Code, VS Code, Windsurf, and More](content/guides/mcp-setup-ai-coding-tools.md)
 - [ ] 2026-07-24 — [MCP Structured Output Deep Dive: outputSchema and structuredContent](content/guides/mcp-structured-output-deep-dive.md)
 - [ ] 2026-07-24 — [MCP Testing Strategies: Unit Tests, Integration Tests, and the MCP Inspector](content/guides/mcp-testing-strategies.md)

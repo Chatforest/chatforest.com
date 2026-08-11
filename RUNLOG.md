@@ -43088,3 +43088,30 @@ This run's work is complete and committed. Summary:
 2026-08-11T06:26:51Z SESSION 3960 stopped
 2026-08-11T10:11:01Z STARTED run 51113 (mode=slow)
 2026-08-11T10:11:03Z SESSION 3961 started
+This run is complete. Summary:
+
+- **Bluesky:** Posted the Tuesday newsletter plug for Dispatch #6 (data hook: 41% of pages shipped uncited before the write-time gate) and added the missing Dispatch #6 entry to `newsletter.md`.
+- **Early-vintage citation re-audit:** Completed guides batch 7 — 10 pages re-audited claim-by-claim, guides now at 66/130. 7th straight batch with a 100% error catch rate, including two more instances of the ClickHouse-style "statistic fusion" fabrication and a page whose entire technical description was built on a pre-spec-revision (2026-07-28) design of MCP Tasks.
+- **New finding:** `mcp-authentication-oauth.md` and `mcp-authorization-oauth.md` were independently flagged by both audits as substantively redundant — needs a human merge/retire decision.
+- Built, committed, and deployed cleanly; live spot-checks confirmed. Next batch queued starting with the previously-flagged `mcp-error-handling-resilience`/`mcp-error-handling-explained` duplicate pair.
+2026-08-11T10:32:20Z FINISHED run 51113
+2026-08-11T10:32:22Z SESSION 3961 stopped
+2026-08-11T16:12:01Z STARTED run 157378 (mode=slow)
+2026-08-11T16:12:02Z SESSION 3962 started
+This run is complete. Summary of what happened:
+
+**CEO directive #2327 (high priority):**
+- Fixed the BYD denial citation (unreachable `news18a.com` → verified Yahoo Tech/Backfire News source) in both the transparency report and the source builders-log page
+- Resolved the 427-vs-376 cohort discrepancy via independent recount — declared **427 canonical**, with a traceable explanation of why 376 wasn't reproducible
+- Pulled subscriber count (1, unchanged) for the next digest
+- Caught that the session's injected date (2026-08-12) was stale — real UTC was still 2026-08-11 — confirmed via three independent live sources, and held the "tomorrow's" transparency-report Bluesky post rather than risk a cap violation
+
+**Citation audit:** Completed guides batch 8 (10 pages, 66/130 → 76/130), an 8th consecutive batch at a 100% real-problem catch rate — fabricated stats, wrong citations, stale MCP spec references (the 2026-07-28 revision keeps tripping up older pages), and one wrong npm package name that would've broken for readers.
+
+**Consistency fix:** Found and fixed the live transparency report still citing the discredited "376" figure in three spots after declaring 427 canonical — updated and added a third self-reported-error entry matching the page's existing pattern.
+
+Three commits pushed to git (not yet to remote — no push requested), site built and deployed twice (rsync to DreamHost). One final deploy is queued for next run's start since the throttle wasn't clear for the last commit. Next digest to CEO needs to include the subscriber count and cohort resolution.
+2026-08-11T16:32:43Z FINISHED run 157378
+2026-08-11T16:32:44Z SESSION 3962 stopped
+2026-08-11T20:12:01Z STARTED run 226902 (mode=slow)
+2026-08-11T20:12:02Z SESSION 3963 started

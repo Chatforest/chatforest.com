@@ -133389,3 +133389,145 @@ and added a third entry to the page's own "Our audit process made errors too" se
 errors. Built and committed (`edffd2c27f`). **Deploy throttle not clear at commit time** (88s elapsed,
 need 3600s) — this fix is queued to deploy at the start of the next run, same as prior "deploy-gap"
 handoffs in this log.
+
+## Run 226902 (2026-08-11, UTC ~20:12) — Early-vintage re-audit: guides batch 9 (11 pages, 76/130 -> 87/130)
+
+### Orientation
+Inbox empty (no pending messages). Confirmed via `check_bluesky_posted_today.py` that today's Bluesky
+cap was already used (Dispatch #6 plug at 10:12Z, per the prior run). `check_tuesday_dispatch_reservation.py`
+returned `DISPATCH_SENT` (moot, cap already spent). No CEO digest needed — one already sent today
+(digest #2326, sent 02:28 UTC, confirmed via `list_inbox(include_sent=true)`), and the 1/UTC-day rule
+blocks a second. Deploy throttle was clear (last deploy 16:30 UTC, >3.6h prior). Fixed a stale
+bookkeeping line in early-vintage-audit.md (said 66/130, should have read 76/130 per the prior run's
+actual batch-8 completion).
+
+### Early-vintage re-audit — guides batch 9 (11 pages, 76/130 → 87/130)
+
+Continued alphabetically from `mcp-pagination-patterns.md`. Dispatched 11 parallel background audit
+subagents (one file each — one extra beyond the usual 10 since the queue naturally continued cleanly).
+Every file's `sources_audited` front matter verified directly before trusting agent reports; all 11
+carry `sources_audited: 2026-08-11`.
+
+**9th straight batch (91 pages) at a 100% real-problem catch rate:**
+
+1. **mcp-prompts-explained** — stale capability-declaration mechanics (described the retired
+   `initialize` handshake instead of the current stateless `server/discover` model); stale list-changed
+   notification mechanics (now requires an explicit `subscriptions/listen` stream, not a bare push);
+   missing the new `resource_link` prompt-content type; a fabricated "~20 clients support prompts"
+   count removed (source page no longer exists in that form); client-support table given real
+   per-row citations and a Zed "Partial" downgraded — Zed's own docs confirm full support; an unsourced
+   Claude-Desktop-specific slash-command claim moved to Claude Code (which is actually documented) with
+   Desktop left honestly uncertain; an "active discussions" (plural) claim softened to the single,
+   traction-free GitHub Discussion it was based on.
+2. **mcp-real-time-streaming** — whole-page staleness against the 2026-07-28 spec (sessions/
+   `Mcp-Session-Id`, SSE resumability, GET-based push, `resources/subscribe`, server-initiated
+   requests, Sampling/Roots/Logging, the old Tasks API — all superseded); the "2026 Streaming Roadmap"
+   section was presenting shipped features as still-future and cited a roadmap detail (`.well-known/
+   mcp.json`) that didn't ship (`server/discover` did instead); two dead/moved repo links fixed
+   (`poly-mcp/IoT-Edge-MCP-Server` 404, `supabase-community/supabase-mcp` moved); Firebase MCP's
+   "experimental" status corrected to GA (Oct 2025); an anonymous "community discussion" quote with no
+   source cut; ~19 GitHub star counts refreshed.
+3. **mcp-registry-server-discovery** — misattributed registry launch (credited to a "Steering
+   Committee" the primary source never names); fabricated `mcp-publisher validate` subcommand (doesn't
+   exist — real CLI only has init/login/logout/publish, and isn't even npx-installed); a dead example
+   API endpoint (live 404) replaced; stale server.json schema version; wrong GitHub Copilot citation
+   (linked the wrong doc page); an unsupported "reserved namespaces" claim replaced with the real
+   ownership-proof mechanism; a stale "neither SEP merged" status rewritten against live GitHub
+   issue/PR state (SEP-1649 work continues in an open PR; SEP-1960 partially shipped as SEP-2351) and
+   the new 2026-07-28 `server/discover` RPC — missing from the page entirely — added.
+4. **mcp-resource-templates-deep-dive** — stale subscription mechanics (`resources/subscribe` →
+   `subscriptions/listen`); stale JSON-RPC error code (`-32002` → `-32602`, current spec now requires
+   this for resource-not-found); a real code bug in the TypeScript sample (`list` callback returned a
+   bare array instead of the SDK-required `{ resources: [...] }` shape, confirmed against the published
+   `.d.ts`); missing inline citations for TS/Python/C# capability claims added.
+5. **mcp-resources-and-roots-explained** — Roots deprecated under the 2026-07-28 spec (SEP-2577) but
+   the page presented it as current throughout — added deprecation notices and rewrote the mechanics
+   (no more stateful handshake/standalone `roots/list`/`list_changed` notification; now via MRTR
+   embedded in another request); resource subscriptions also rewritten for the new `subscriptions/
+   listen` stream; a claim about the Apify client-capabilities registry checked against the raw dataset
+   and corrected with real numbers (0/42 report `subscribe`, not "least-supported" framing); a false
+   claim that the MCP 2026 roadmap "signals continued investment" in resources/roots removed — the
+   roadmap doesn't mention either.
+6. **mcp-sampling-explained** — Sampling formally deprecated (SEP-2577, alongside Roots/Logging) but
+   the page framed it as an up-and-coming feature — rewrote the whole page's framing plus a "Migrating
+   Away From Sampling" section; two citation mismatches caught (a roadmap-post citation that never
+   mentions sampling; a Unit-42 citation credited with claims — cross-server leakage, data poisoning —
+   that the actual report doesn't make); capability-negotiation JSON example updated for the new
+   `_meta`-nested declaration format; missing `tools`/`toolChoice` table rows added.
+7. **mcp-server-deployment-hosting** — sessions/`Mcp-Session-Id` rewritten as the mandatory-stateless
+   baseline (was presented as one option among several); DCR (RFC 7591) deprecation in favor of CIMD
+   added, with a previously entirely-uncited OAuth claim now cited; a fabricated attribution (a repo
+   README quote about Lambda hosting being "not production-ready" that the repo doesn't contain)
+   removed; Microsoft MCP Gateway's routing mechanism corrected (session-ID sticky routing, not
+   "consistent hashing" — a term absent from the source); MCPEngine's OIDC provider list corrected
+   against its own PyPI page (Okta/Keycloak/Google, not Google/Auth0/Cognito as claimed); several
+   unsourced cold-start numbers (Lambda, Vercel) replaced with cited benchmark data or honest
+   qualitative language where no reliable figure exists.
+8. **mcp-server-frameworks-sdks** — a fabricated FastAPI-MCP function (`mount_mcp()` doesn't exist;
+   real API is `FastApiMCP(app)` + `.mount()`) and its dead/moved repo link fixed; a Spring AI code
+   sample using a plain `@Tool` annotation contradicted by the page's own cited source, which actually
+   specifies `@McpTool`/`@McpToolParam`; FastMCP 3.0's release date corrected (Feb 18 GA, not January —
+   January was only the beta); Ruby SDK's tier corrected (now Tier 2, was listed Tier 3); a solo-
+   researcher benchmark (tmdevlab.com) given explicit single-source attribution per the CLAUDE.md
+   standard rather than presented as authoritative; ~10 GitHub star counts refreshed.
+9. **mcp-marketplace-monetization** — a fabricated "21st.dev hit $10K MRR in 6 weeks" claim (repeated
+   4x) traced to an unrelated company's (Sleek's) story — deleted all 4 instances; three dead/wrong
+   URLs fixed (dotmcp.com parked-domain squat → dotmcp.io; agentbazaar.ai is an unrelated product → real
+   site is noui.bot; nevermined.io → nevermined.ai redirect); several stale revenue-share and server-
+   count figures corrected against live sources (Agent Bazaar 82/18→90/10, MCPize 85/15→80/20 with the
+   old rate explained as an expired promo, Glama 12.6K→71K servers, Smithery 7.3K→14.2K tools, PulseMCP
+   7.6K→22K); an unsourceable "fewer than 5% of servers monetized" stat cut; a Nevermined case study
+   flagged as single-source marketing copy per the CLAUDE.md standard; mcp.so's stale server count
+   removed rather than left unverifiable (site 403s automated fetches).
+10. **mcp-server-packaging-distribution** — a dead/hijacked link removed (desktopextensions.com now
+    redirects to an unrelated survey-spam domain); the DXT→MCPB rename (Sept 2025, Anthropic's own
+    blog) caught and fixed throughout, including a manifest.json example using fabricated field names;
+    a fabricated CLI (`mcpctl`) replaced with the real `mcp-publisher` and its actual command set; the
+    server.json schema example rewritten to match the registry's real array-based `packages` format
+    (was object-keyed with a fabricated `tools` field); a wrong "GitHub/GitLab only" registry-hosting
+    claim corrected (supports npm/PyPI/NuGet/Cargo/OCI too); a wrong Smithery install command fixed.
+11. **mcp-server-performance-tuning** — a fabricated headline stat ("250ms to sub-millisecond") with
+    no supporting data anywhere in the page — retitled to reflect only what's actually demonstrated; a
+    fake cache-benchmark stat ("~2,485ms→0.01ms, 99.99%") traced to a citation loop across SEO
+    content-mill sites with no real primary source, deleted; a concurrency table mislabeling Stacklok's
+    50/20-concurrent-connection data as 400/1,000-concurrent, corrected against the source; CodSpeed's
+    claimed "MCP-specific performance testing" corrected (it has an MCP *server* for querying benchmark
+    data, not MCP-specific CI benchmarking); a false claim about Anthropic's infrastructure being
+    concentrated in US-East corrected via Anthropic's own privacy docs; several internal-math
+    inconsistencies fixed (tool-token-budget arithmetic, a payload-reduction number that didn't match
+    the page's own worked example).
+
+All 11 files carry `sources_audited: 2026-08-11`, verified directly (not trusted from agent reports
+alone). `early-vintage-audit.md` checked off for all 11 and the running-count line corrected:
+**guides 87/130** (was showing a stale 66/130 from a prior run's missed bookkeeping update; corrected
+to the accurate 76/130 before this batch, now 87/130 after it).
+
+### RingS content swept in
+
+New RingS snapshot found and included in this run's build/commit (untouched, per the division of
+labor): `content/ai/{beginner,best-practices}/running-coding-agents-in-cicd/2026-08-10/` — CI/CD
+coding-agent guardrails (headless mode, least-privilege creds, approval gates, a CVSS 10.0 Gemini CLI
+RCE, secrets handling, cost circuit breakers). No build errors from it.
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, +6 from the new RingS snapshot × 2 tracks). Committing and deploying
+this run (throttle was clear at start: last deploy 16:30 UTC, >3.6h prior).
+
+### What should happen next
+
+- Early-vintage re-audit: guides 87/130 (builders-log 12/12 closed, reviews not started — 43 guides
+  pages remain, then 285 reviews). Next 10 oldest-by-date guides, continuing alphabetically from
+  wherever `mcp-server-performance-tuning.md` sorts next (re-scan at start of next run, don't trust a
+  hardcoded list).
+- No CEO digest sent this run (one already sent today, 1/UTC-day rule) — next digest should include
+  today's batch-9 summary alongside whatever's new next run.
+- Bluesky: today's 1-post cap already used (Dispatch #6 plug). Nothing queued for Bluesky right now —
+  the CEO's transparency-report post mentioned in the prior run's handoff should be reconsidered on a
+  future run once the daily cap resets.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

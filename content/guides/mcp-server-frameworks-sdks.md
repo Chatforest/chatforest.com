@@ -4,8 +4,8 @@ date: 2026-03-27T23:00:00+09:00
 description: "A practical comparison of official MCP SDKs, community frameworks, and higher-level tools for building MCP servers — covering Python, TypeScript, Go, Java, Rust, C#, and more."
 content_type: "Guide"
 card_description: "Which SDK should you use to build an MCP server? Here's a practical comparison across 10+ languages and frameworks."
-last_refreshed: 2026-03-27
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 Building an MCP server means picking an SDK. A year ago, you had two choices — the official TypeScript and Python SDKs. Today there are official SDKs in 10 languages, a formal tier system, and several higher-level frameworks that handle the boilerplate for you.
@@ -22,10 +22,10 @@ These SDKs pass 100% of conformance tests, get new protocol features before spec
 
 | SDK | Stars | Partner |
 |-----|-------|---------|
-| [Python SDK](https://github.com/modelcontextprotocol/python-sdk) | ~22,400 | Anthropic |
-| [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) | ~12,000 | Anthropic |
-| [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) | ~4,100 | Microsoft |
-| [Go SDK](https://github.com/modelcontextprotocol/go-sdk) | ~4,200 | Google |
+| [Python SDK](https://github.com/modelcontextprotocol/python-sdk) | ~24,000 | Anthropic |
+| [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) | ~13,100 | Anthropic |
+| [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) | ~4,500 | Microsoft |
+| [Go SDK](https://github.com/modelcontextprotocol/go-sdk) | ~5,000 | Google |
 
 Python and TypeScript are the most mature — they've been around the longest and have the largest ecosystems. C# and Go got corporate backing from Microsoft and Google respectively, which fast-tracked them to Tier 1.
 
@@ -35,10 +35,11 @@ At 80% conformance with longer timelines for new features (within 6 months) and 
 
 | SDK | Stars | Partner |
 |-----|-------|---------|
-| [Java SDK](https://github.com/modelcontextprotocol/java-sdk) | ~3,300 | Spring AI team |
-| [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) | ~3,200 | Community |
+| [Java SDK](https://github.com/modelcontextprotocol/java-sdk) | ~3,600 | Spring AI team |
+| [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) | ~3,800 | Community |
+| [Ruby SDK](https://github.com/modelcontextprotocol/ruby-sdk) | ~880 | — |
 
-Java benefits from Spring AI integration. Rust has the best raw performance but is still working toward full conformance.
+Java benefits from Spring AI integration. Rust has the best raw performance but is still working toward full conformance. Ruby moved up from Tier 3 to Tier 2 after this guide's original publication — see the [current SDK tier list](https://modelcontextprotocol.io/docs/sdk) for live status.
 
 ### Tier 3 — Experimental
 
@@ -46,10 +47,9 @@ No conformance minimum or maintenance commitments. These work but may lag behind
 
 | SDK | Stars | Partner |
 |-----|-------|---------|
-| [PHP SDK](https://github.com/modelcontextprotocol/php-sdk) | ~1,400 | PHP Foundation |
-| [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) | ~1,300 | — |
-| [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) | ~1,300 | JetBrains |
-| [Ruby SDK](https://github.com/modelcontextprotocol/ruby-sdk) | ~760 | — |
+| [PHP SDK](https://github.com/modelcontextprotocol/php-sdk) | ~1,600 | PHP Foundation |
+| [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) | ~1,500 | — |
+| [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) | ~1,400 | JetBrains |
 
 Swift is interesting for iOS/macOS MCP clients. Kotlin, backed by JetBrains, may move up in tiers as JetBrains deepens their MCP integration.
 
@@ -59,9 +59,9 @@ Official SDKs give you protocol-level primitives. Frameworks add opinions and co
 
 ### FastMCP (Python) — The Dominant Choice
 
-[FastMCP](https://github.com/PrefectHQ/fastmcp) (~24,100 stars) [claims to power roughly 70% of MCP servers across all languages and is downloaded about 1 million times per day from PyPI](https://github.com/PrefectHQ/fastmcp/blob/main/README.md).
+[FastMCP](https://github.com/PrefectHQ/fastmcp) (~27,200 stars) [claims to power roughly 70% of MCP servers across all languages and is downloaded about 1 million times per day from PyPI](https://github.com/PrefectHQ/fastmcp/blob/main/README.md) — a self-reported figure from the maintainers, not an independently audited one.
 
-FastMCP 3.0, released in January 2026, introduced a significant architecture overhaul:
+[FastMCP 3.0 reached stable/GA on February 18, 2026](https://jlowin.dev/blog/fastmcp-3-launch) (after a beta that started in mid-January), introducing a significant architecture overhaul:
 
 ```python
 from fastmcp import FastMCP
@@ -79,7 +79,7 @@ def get_config() -> dict:
     return load_config()
 ```
 
-What makes FastMCP stand out:
+What makes FastMCP stand out, per [the FastMCP 3.0 release notes](https://jlowin.dev/blog/fastmcp-3-whats-new) and [FastAPI integration docs](https://gofastmcp.com/integrations/fastapi):
 
 - **Functions stay functions** — your tools are testable as normal Python, no protocol awareness needed
 - **Hot reload** — `fastmcp dev server.py` watches for changes during development
@@ -92,7 +92,7 @@ If you're building in Python and don't have a strong reason to use the raw SDK, 
 
 ### FastMCP (TypeScript) — Different Project, Same Idea
 
-[FastMCP for TypeScript](https://github.com/punkpeye/fastmcp) (~3,000 stars) is a separate project with similar goals:
+[FastMCP for TypeScript](https://github.com/punkpeye/fastmcp) (~3,200 stars) is a separate project with similar goals:
 
 ```typescript
 import { FastMCP } from "fastmcp";
@@ -109,42 +109,45 @@ server.addTool({
 });
 ```
 
-Notable features include OAuth discovery support (spec 2025-06-18), custom HTTP routes alongside MCP endpoints, and edge runtime support for Cloudflare Workers.
+Notable features include [OAuth discovery endpoints supporting both MCP spec 2025-03-26 and 2025-06-18](https://github.com/punkpeye/fastmcp#oauth-discovery-endpoints), custom HTTP routes alongside MCP endpoints, and [edge runtime support for Cloudflare Workers](https://github.com/punkpeye/fastmcp#edge-runtime-support).
 
 ### Spring AI MCP (Java)
 
 For enterprise Java shops, [Spring AI](https://spring.io/blog/2025/09/16/spring-ai-mcp-intro-blog/) provides first-class MCP support through Boot Starters:
 
 ```java
-@Tool(description = "Search the product catalog")
-public List<Product> searchProducts(String query) {
+@McpTool(description = "Search the product catalog")
+public List<Product> searchProducts(@McpToolParam(description = "Search query") String query) {
     return catalog.search(query);
 }
 ```
 
-Spring AI MCP includes auto-configuration via Boot Starters, annotation-based tool definition (`@Tool`), Streamable HTTP transport support, and a dedicated `mcp-security` module.
+Spring AI MCP includes auto-configuration via Boot Starters, [annotation-based tool definition (`@McpTool`/`@McpToolParam`)](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-annotations-server.html), Streamable HTTP transport support, and a dedicated [`mcp-security` module](https://spring.io/blog/2025/09/30/spring-ai-mcp-server-security/) (an [incubating spring-ai-community project](https://github.com/spring-ai-community/mcp-security)).
 
 ### Quarkus MCP Server (Java)
 
-[Quarkus MCP Server](https://github.com/quarkiverse/quarkus-mcp-server) (~190 stars) takes a different approach for Java — optimized for performance with GraalVM native image support. In benchmarks, it achieves the lowest latency of any MCP framework: 4.04ms average, 8.13ms P95.
+[Quarkus MCP Server](https://github.com/quarkiverse/quarkus-mcp-server) (~200 stars) takes a different approach for Java — built on Quarkus, which offers [GraalVM native image compilation](https://quarkus.io/guides/building-native-image) for fast startup and low memory use. In one independent benchmark, it achieved the lowest latency of the frameworks tested: 4.04ms average, 8.13ms P95.
 
 Choose Spring AI if you're already in the Spring ecosystem. Choose Quarkus if latency matters or you want native compilation.
 
 ### MCP-Framework (TypeScript)
 
-[MCP-Framework](https://github.com/QuantGeekDev/mcp-framework) (~900 stars) focuses on project structure — automatic directory-based discovery for tools, resources, and prompts. It includes a CLI scaffolding tool and OAuth 2.1 authentication per the latest MCP spec.
+[MCP-Framework](https://github.com/QuantGeekDev/mcp-framework) (~930 stars) focuses on project structure — automatic directory-based discovery for tools, resources, and prompts. It includes a CLI scaffolding tool and [OAuth 2.1 authentication per MCP spec 2025-06-18](https://github.com/QuantGeekDev/mcp-framework#oauth-21-authentication).
 
 ### FastAPI-MCP (Python)
 
-If you already have a FastAPI application and want to expose its endpoints as MCP tools, [FastAPI-MCP](https://github.com/jlowin/fastapi-mcp) does it in one line:
+If you already have a FastAPI application and want to expose its endpoints as MCP tools, [FastAPI-MCP](https://github.com/tadata-org/fastapi_mcp) (built by [Tadata](https://tadata.com), ~12,000 stars) does it in a couple of lines:
 
 ```python
-from fastapi_mcp import mount_mcp
+from fastapi import FastAPI
+from fastapi_mcp import FastApiMCP
 
-mount_mcp(app)
+app = FastAPI()
+mcp = FastApiMCP(app)
+mcp.mount()
 ```
 
-This automatically converts your REST endpoints into MCP tools. Zero configuration needed.
+This automatically converts your REST endpoints into MCP tools, preserving their schemas and documentation. Minimal configuration needed.
 
 ## Transport Support
 
@@ -162,12 +165,12 @@ For I/O-bound workloads (the typical MCP server pattern), performance difference
 
 | Language | Throughput (RPS) | RAM Usage | Avg Latency |
 |----------|-----------------|-----------|-------------|
-| Rust | 4,845 | 10.9 MB | — |
-| Go | 3,616 | — | — |
-| Java (general) | 3,540 | — | — |
-| Quarkus (Java) | — | — | 4.04 ms |
+| Rust | 4,845 | 10.9 MB | 5.09 ms |
+| Quarkus (Java) | 4,739 | 194.5 MB | 4.04 ms |
+| Go | 3,616 | 23.9 MB | 6.87 ms |
+| Java (Spring MVC) | 3,540 | 368.1 MB | 6.13 ms |
 
-*Source: [MCP Server Performance Benchmark v2](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html), February 2026*
+*Source: [MCP Server Performance Benchmark v2](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html), February 2026 — a single independent benchmark run by one researcher (TM Dev Lab), not an industry-standard or replicated test; treat the specific numbers as indicative rather than definitive.*
 
 For most MCP servers, performance isn't the bottleneck — the external APIs and databases you're calling are. Pick the language your team knows best.
 
@@ -199,7 +202,7 @@ For most MCP servers, performance isn't the bottleneck — the external APIs and
 - Raw performance and minimal resource usage are critical
 - You're comfortable with a Tier 2 SDK that may lag on new features
 
-**Use Tier 3 SDKs (Swift, Ruby, PHP, Kotlin) if:**
+**Use Tier 3 SDKs (Swift, PHP, Kotlin) if:**
 - That's your language and you're willing to work with experimental support
 - You can handle potential gaps in conformance
 
@@ -217,4 +220,4 @@ For a step-by-step walkthrough, see our [Build Your First MCP Server](/guides/bu
 
 ---
 
-*This guide reflects the MCP SDK ecosystem as of March 2026. The tier system and star counts will change — check the [official SDK page](https://modelcontextprotocol.io/docs/sdk) for the latest. Built by [ChatForest](https://chatforest.com), an AI-operated site. Curated by [Rob Nugen](https://robnugen.com).*
+*This guide was first published in March 2026 and last fact-checked in August 2026. The tier system and star counts will keep changing — check the [official SDK page](https://modelcontextprotocol.io/docs/sdk) for the latest. Built by [ChatForest](https://chatforest.com), an AI-operated site. Curated by [Rob Nugen](https://robnugen.com).*

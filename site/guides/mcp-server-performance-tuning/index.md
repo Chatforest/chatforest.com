@@ -1,4 +1,4 @@
-# MCP Server Performance Tuning: From 250ms to Sub-Millisecond Response Times
+# MCP Server Performance Tuning: Language, Transport, and Caching Choices That Cut Latency 10x or More
 
 > How to optimize MCP server performance — covering language selection, transport tuning, caching strategies, connection pooling, payload optimization, and production benchmarks.
 
@@ -48,7 +48,7 @@ For I/O-bound workloads (database queries, API calls), a [follow-up benchmark](h
 
 **Rust leads on raw performance** but the MCP SDK ecosystem is less mature. A noteworthy finding from the [v2 benchmark](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html): the Rust SDK (`rmcp`) had a bug that hardcoded `text/event-stream` content type, creating a 40ms latency floor. Fixing this via the `json_response: true` option (merged as PR #683 in rmcp v0.17.0) improved throughput from 1,283 to 4,845 RPS — a 3.8× gain from a single configuration change.
 
-**Python and Node.js are fine for low-traffic scenarios** — development tools, personal productivity servers, internal dashboards. But they saturate at 94-99% CPU under moderate load where Go and Java sit comfortably at 32%. Don't choose them for servers that will handle concurrent agent traffic.
+**Python and Node.js are fine for low-traffic scenarios** — development tools, personal productivity servers, internal dashboards. But [TM Dev Lab's testing](https://www.tmdevlab.com/mcp-server-performance-benchmark.html) found them saturating at 93.9-98.7% CPU under sustained load, versus 28.8-31.8% for Java and Go. Don't choose them for servers that will handle concurrent agent traffic.
 
 **GraalVM native images** offer a middle path: 27-81% less memory than JVM at the cost of 20-36% lower throughput. Quarkus-native hit 3,449 RPS with just 36 MB RAM — compelling for memory-constrained environments.
 
@@ -56,7 +56,7 @@ For I/O-bound workloads (database queries, API calls), a [follow-up benchmark](h
 
 If you're stuck with Python (because of FastMCP's ecosystem or team expertise), know that the bottleneck is FastMCP's session overhead in CPython, not the ASGI server. Testing with Granian (a Rust-based ASGI server) actually produced a 12% regression. To scale Python MCP servers, run multiple worker processes — 4 workers with uvloop reached 259 RPS as the practical ceiling.
 
-## Transport Protocol: The 10x Decision
+## Transport Protocol: The Session-Pooling Decision
 
 ### Streamable HTTP vs SSE vs stdio
 
@@ -66,26 +66,31 @@ Transport choice is the single highest-leverage decision for MCP servers that ha
 
 **SSE (Server-Sent Events)** works under light load (100% success at 20 concurrent connections) but degrades under sustained traffic: 1,861 out of 3,000 requests succeeded at 50 RPS with an average response time of 565ms. SSE is officially deprecated in favor of Streamable HTTP.
 
-**Streamable HTTP** dominates across all metrics:
+**Streamable HTTP** dominates across all metrics — but note the shared-pool and unique-session numbers below come from tests run at *different* concurrency levels, since [Stacklok's test suite](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb) didn't push unique sessions as far as shared pools:
 
-| Scenario | Shared Sessions | Unique Sessions |
-|----------|----------------|-----------------|
-| High load (400 concurrent) | 293 RPS, 1.28s avg | 33 RPS, 1.12s avg |
-| Very high load (1,000 concurrent) | 293 RPS, 3.09s avg | 36 RPS — |
-| Success rate | 100% | 100% |
+| Scenario | Shared Session Pool (10 sessions) | Unique Session Per Request |
+|----------|----------------------------------|----------------------------|
+| 20 concurrent | 48.40 RPS, 5.03ms avg | 36.07 RPS, 272.93ms avg |
+| 50 concurrent | 96.78 RPS, 6.68ms avg | 33.03 RPS, 1.12s avg |
+| 200 concurrent | 299.85 RPS, 622.20ms avg | not tested |
+| 400 concurrent | 293.16 RPS, 1.28s avg | not tested |
+| 1,000 concurrent | 292.62 RPS, 3.09s avg | not tested |
+| Success rate (all scenarios) | 100% | 100% |
 
-The critical finding: **session pooling creates a 10x performance difference.** Shared session pools (10 sessions serving all requests) reached 293 RPS versus 33-36 RPS with unique sessions per request. Session creation overhead — not network or computation — is the bottleneck.
+The measured finding: **at matched concurrency, session pooling already wins by ~34% at 20 concurrent connections and by ~3x at 50 concurrent** (96.78 vs 33.03 RPS). Stacklok didn't push unique-session tests past 50 concurrent, so we can't cite a directly-measured figure at higher load — but the shared pool kept scaling cleanly to 1,000 concurrent connections at ~293 RPS with 100% success, while unique-session throughput was already flattening out at 50. That trend is consistent with session creation overhead, not network or compute, being the bottleneck.
 
 ### Practical Transport Recommendations
 
 1. **Use Streamable HTTP for any remote deployment.** It's the only transport designed for production scale.
-2. **Implement session pooling.** A pool of 10 sessions handled 1,000 concurrent connections. Start there and tune based on your workload.
+2. **Implement session pooling.** A pool of 10 sessions handled 1,000 concurrent connections in testing. Start there and tune based on your workload.
 3. **Keep stdio for local development tools** connected to a single AI client (like Claude Desktop).
-4. **Migrate off SSE.** It's deprecated and performs 8-10x worse than Streamable HTTP under load.
+4. **Migrate off SSE.** It's deprecated (see the protocol note below) and, in Stacklok's testing, sustained roughly 31 effective RPS at 50 target RPS versus Streamable HTTP's ~293 RPS with shared sessions — call it a ~9x gap under that specific load pattern.
+
+**Protocol note (checked against the [current MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http), revision 2026-07-28):** the Stacklok benchmarks above were run against the session-based Streamable HTTP transport used in protocol versions 2025-03-26 through 2025-11-25, where a server issues an `Mcp-Session-Id` and clients reuse it across requests — that's the mechanism "session pooling" exploits. Revision 2026-07-28 [removed protocol-level sessions and the GET stream endpoint from Streamable HTTP entirely](https://modelcontextprotocol.io/specification/2026-07-28/changelog): there is no more `Mcp-Session-Id` header, and each request is independently validated. If you're building against the current spec, session-pooling gains will need to come from your own connection/transport layer (e.g., HTTP keep-alive and connection reuse) rather than an MCP-level session ID — verify which protocol version your SDK targets before assuming this technique applies unchanged.
 
 ## Caching: The Biggest Single Win
 
-Caching delivers the most dramatic improvement of any single optimization. [Published benchmarks](https://www.tmdevlab.com/mcp-server-performance-benchmark.html) show tool-call latency dropping from ~2,485ms (cold start) to ~0.01ms on cache hits — a reduction of over 99.99%.
+Caching delivers the most dramatic improvement of any single optimization, in principle: an in-memory cache hit resolves in microseconds, while a cold path that touches a database or an external API commonly costs tens to hundreds of milliseconds. [TM Dev Lab's benchmarks](https://www.tmdevlab.com/mcp-server-performance-benchmark.html) show what "warm" looks like for CPU-bound tool calls — 0.84-0.86ms average latency for Java and Go once the runtime is up and serving — though that source does not publish a specific cold-start-vs-cache-hit comparison; treat any precise cold/warm ratio you see quoted elsewhere with skepticism unless it links to its own benchmark.
 
 ### Multi-Level Cache Strategy
 
@@ -137,7 +142,7 @@ Database connections are a common silent bottleneck. Each MCP request that opens
 
 ### Configuration Guidelines
 
-**Pool size:** Start with 10-15 connections per CPU core. The Quarkus benchmark revealed a critical lesson — its default pool of ~50 connections caused **0 RPS** (complete failure) under load. Setting `connection-pool-size=1000` and `redis.max-pool-size=100` resolved it.
+**Pool size:** Start with 10-15 connections per CPU core as a baseline, then load-test. [TM Dev Lab's v2 benchmark](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html) revealed a critical lesson — Quarkus's default REST client pool of ~50 connections per host left all requests queued until a 30-second timeout under 50 virtual users, yielding **under 1 effective RPS** (functionally a stall, not a hard zero). Setting `quarkus.rest-client.api-service.connection-pool-size=1000` and `quarkus.redis.max-pool-size=100` resolved it.
 
 **Go HTTP client tuning:** Go's default `MaxIdleConnsPerHost` is 2, which is far too low for MCP servers making external API calls. The benchmark showed P95 latency spikes of 61ms with defaults, dropping to 17.62ms after setting `MaxIdleConnsPerHost: 100`.
 
@@ -189,7 +194,7 @@ Strip unnecessary fields from responses. A full database record with timestamps,
 }
 ```
 
-A 60-80% reduction in payload size is achievable for most MCP tools by returning only the fields the AI model needs to reason about.
+In the example above, trimming the response to just the fields the model needs cuts it from 847 to 127 tokens — an 85% reduction. The exact savings vary by tool, but any response carrying timestamps, internal IDs, or audit metadata the model never uses is a candidate for a similar cut.
 
 ### Consider Plain Text for Tabular Data
 
@@ -211,19 +216,19 @@ The tradeoff is reduced machine-parseability. Use plain text for results the AI 
 
 ### Optimize Tool Definitions
 
-A frequently overlooked cost: tool schemas consume context tokens before any work begins. Enterprise-grade tools with detailed parameter schemas can consume 500-1,000 tokens each. A server exposing 50+ tools might consume 10,000 tokens (5% of a 200K context window) just for tool definitions.
+A frequently overlooked cost: tool schemas consume context tokens before any work begins. Anthropic's own tool-use guidance recommends detailed, multi-sentence descriptions for best results — "aim for at least 3-4 sentences for each tool description, more if the tool is complex" — which is good for accuracy but directly trades against token budget. A server exposing dozens of such tools, each with a thorough description and a nested parameter schema, can burn a meaningful slice of a 200K-token context window purely on tool definitions before the model reads a single message. [Anthropic's engineering guidance on tool design](https://www.anthropic.com/engineering/writing-tools-for-agents) recommends consolidating related operations into fewer, more capable tools rather than counting on per-tool token estimates to stay small.
 
 Mitigation strategies:
 
-1. **Keep descriptions concise.** One sentence, not a paragraph.
+1. **Write descriptions that earn their tokens.** Anthropic's guidance favors thorough, multi-sentence descriptions because vague ones hurt tool selection accuracy — the fix for token bloat is fewer, well-designed tools, not terser descriptions on a sprawling tool list.
 2. **Use dynamic tool loading.** Only expose tools relevant to the current conversation context instead of advertising everything upfront.
-3. **Bundle related operations.** Instead of `get_user`, `get_user_email`, `get_user_plan`, offer a single `get_user` with a `fields` parameter.
+3. **Bundle related operations.** Instead of `get_user`, `get_user_email`, `get_user_plan`, offer a single `get_user` with a `fields` parameter — this is also [Anthropic's own recommendation](https://www.anthropic.com/engineering/writing-tools-for-agents) for reducing tool-selection ambiguity.
 
 ## Geographic Deployment
 
 Physical proximity to the AI provider's infrastructure matters for MCP servers. Round-trip latency between your MCP server and the AI provider adds up quickly across dozens of sequential tool calls in a conversation.
 
-For servers that will primarily be called by Anthropic-hosted models, deploy in US-East where Anthropic's infrastructure is concentrated. For multi-provider scenarios, use a CDN or edge deployment that routes to the nearest AI provider endpoint.
+Don't assume a single "AI provider region" to deploy near, though. Anthropic [states](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers) that it "utilizes multiple cloud service providers to process customer data" and "may route customer traffic to select countries in the US, Europe, Asia and Australia," and [Claude on AWS](https://aws.amazon.com/claude-platform/) is available across more than a dozen AWS regions spanning North America, Europe, and Asia-Pacific — data storage defaults to the US, but inference routing is not pinned to one region unless you configure it that way. For multi-provider or multi-region scenarios, use a CDN or edge deployment that routes to the nearest available AI provider endpoint rather than hardcoding a single target region.
 
 ## Monitoring and Performance Targets
 
@@ -248,7 +253,7 @@ Production MCP servers should aim for:
 
 ### CI/CD Integration
 
-Add latency benchmarks to your test suite. A tool that averages 50ms in development but 500ms after a dependency upgrade is a regression you want to catch before production. Tools like [CodSpeed](https://codspeed.io/) now offer MCP-specific performance testing integration.
+Add latency benchmarks to your test suite. A tool that averages 50ms in development but 500ms after a dependency upgrade is a regression you want to catch before production. General-purpose CI performance-regression tools like [CodSpeed](https://codspeed.io/) (which benchmarks Rust, C++, Go, Python, and Node.js in your PR pipeline) can catch this kind of drift; note that CodSpeed's own [MCP server](https://codspeed.io/changelog/2026-03-16-mcp-server) lets AI coding agents query *CodSpeed's* benchmark data, which is a different thing from testing your MCP server's runtime performance.
 
 ## Quick-Reference Decision Table
 
@@ -262,13 +267,13 @@ Add latency benchmarks to your test suite. A tool that averages 50ms in developm
 
 ## Common Pitfalls
 
-1. **Ignoring session pooling.** This is the easiest 10x win and the most commonly missed. Default "new session per request" behavior is a performance trap.
+1. **Ignoring session pooling.** This is the easiest big win and the most commonly missed — Stacklok's testing measured shared pools beating unique-session-per-request by ~3x at 50 concurrent connections, and the gap grows from there. Default "new session per request" behavior is a performance trap.
 
 2. **Defaulting to Python for everything.** FastMCP is excellent for prototyping but hits a hard ceiling around 259 RPS that no ASGI server swap can fix.
 
 3. **Returning full objects.** If your tool returns database records, strip them to the fields the AI actually needs. The context window is a shared resource.
 
-4. **Using SSE in production.** SSE is deprecated and performs 8-10x worse than Streamable HTTP. Migrate now.
+4. **Using SSE in production.** SSE is deprecated (Streamable HTTP replaced it as of protocol version 2025-03-26) and was roughly 9x slower than Streamable HTTP in Stacklok's sustained-load test. Migrate now.
 
 5. **Skipping connection pool configuration.** Default pool sizes cause cascading failures under load. Explicitly configure pool size, idle timeout, and max connections.
 
@@ -278,7 +283,8 @@ Add latency benchmarks to your test suite. A tool that averages 50ms in developm
 
 ## Further Reading
 
-- [MCP Specification — Transports](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports) — the official transport protocol documentation
+- [MCP Specification — Streamable HTTP transport (current, 2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http) — the official, currently-in-force transport protocol documentation; supersedes the 2025-06-18 revision cited in earlier versions of this guide and removed protocol-level sessions (see the protocol note above)
+- [MCP Specification 2026-07-28 changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog) — full list of protocol changes from the prior revision
 - [TM Dev Lab Benchmark v1](https://www.tmdevlab.com/mcp-server-performance-benchmark.html) — CPU-bound language comparison
 - [TM Dev Lab Benchmark v2](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html) — I/O-bound workloads with 15 implementations
 - [Stacklok Transport Testing](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb) — Kubernetes transport benchmarks

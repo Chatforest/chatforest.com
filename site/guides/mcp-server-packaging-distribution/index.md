@@ -14,7 +14,7 @@ This guide covers the full MCP server packaging and distribution landscape. Our 
 | **npm / npx** | JS/TS servers, developer audience | Node.js | stdio | npmjs.com |
 | **PyPI / uvx** | Python servers, data science audience | Python (or uv) | stdio | pypi.org |
 | **Docker containers** | Isolation, multi-language, enterprise | Docker/OCI runtime | stdio or HTTP | Docker Hub, MCP Catalog |
-| **DXT (Desktop Extensions)** | Non-technical users, Claude Desktop | None (bundled) | stdio | desktopextensions.com, mcp.so |
+| **DXT / MCPB (Desktop Extensions)** | Non-technical users, Claude Desktop | None (bundled) | stdio | GitHub, Claude Desktop |
 | **Official MCP Registry** | Universal discovery, verified identity | Varies | Varies | registry.modelcontextprotocol.io |
 | **Managed platforms** | Production HTTP, serverless | Platform-managed | Streamable HTTP | Smithery, Cloudflare, TrueFoundry |
 
@@ -102,11 +102,11 @@ Docker is becoming the standard for production MCP server distribution. Containe
 
 Docker has built a comprehensive MCP infrastructure with three components:
 
-**Docker MCP Catalog** — A curated collection of 300+ verified MCP server images on [Docker Hub](https://hub.docker.com/u/mcp). Each image has versioning, provenance tracking, and automated security updates. Think of it as Docker Hub specifically for MCP.
+**Docker MCP Catalog** — A curated collection of [300+ verified MCP server images](https://docs.docker.com/ai/mcp-catalog-and-toolkit/), packaged as container images with versioning, provenance tracking, and automated security updates, browsable on [Docker Hub](https://hub.docker.com/u/mcp). Think of it as Docker Hub specifically for MCP.
 
 **Docker MCP Toolkit** — A management interface integrated into Docker Desktop. Browse the catalog, launch servers with one click, organize them into profiles for different projects, and connect them to AI clients through the MCP Gateway. No manual configuration files needed.
 
-**Docker MCP Gateway** — Routes requests from AI clients (Claude Code, Cursor, Zed) to the right containerized server. Handles authentication, lifecycle management, and transport bridging.
+**Docker MCP Gateway** — [Routes requests from AI clients (Claude, Cursor, Zed) to the right containerized server](https://docs.docker.com/ai/mcp-catalog-and-toolkit/), so you configure once and connect every client to the same gateway. Handles authentication, lifecycle management, and transport bridging.
 
 ### Publishing a Docker MCP Server
 
@@ -137,11 +137,11 @@ Publish to Docker Hub or any OCI registry. Submit to the Docker MCP Catalog for 
 [ToolHive](https://github.com/stacklok/toolhive) by Stacklok is an open-source (Apache 2.0) platform specifically designed for running MCP servers in containers with enterprise-grade security:
 
 - **Isolation by default** — Every server runs in a locked-down container with only the permissions it needs
-- **No exposed ports** — ToolHive proxies all communication through stdio; the container has no direct network access
+- [**No exposed ports**](https://docs.stacklok.com/toolhive/guides-cli/network-isolation) — the MCP server container doesn't expose a network port by design; ToolHive proxies stdio traffic and isolates each server on its own internal container network
 - **Secret management** — Credentials are injected securely, never in plaintext
 - **Fine-grained permissions** — Network access controls, filesystem restrictions, resource limits
 - **Kubernetes-native** — Deploy MCP servers as Kubernetes workloads with the same security model
-- **Built-in registry** — ToolHive maintains a registry of pre-vetted server images that can be launched with `thv run <server-name>`
+- **Built-in registry** — ToolHive maintains a registry of pre-vetted server images that can be [launched with `thv run <server-name>`](https://docs.stacklok.com/toolhive/guides-cli/run-mcp-servers)
 
 ToolHive addresses a real gap: most MCP servers run with the same permissions as the user, accessing the full filesystem and network. ToolHive's container sandboxing ensures a compromised server can't exfiltrate data or pivot to other systems.
 
@@ -151,72 +151,83 @@ ToolHive addresses a real gap: most MCP servers run with the same permissions as
 
 **Disadvantages:** Docker must be installed (significant overhead for casual users). Larger distribution size than npm/pip packages. Container startup adds latency. Filesystem access requires explicit volume mounts. More complex configuration than npx/uvx for development use.
 
-## DXT: Desktop Extensions for One-Click Install
+## DXT / MCPB: Desktop Extensions for One-Click Install
 
-Desktop Extensions (DXT) are Anthropic's answer to MCP's installation problem. [Launched in June 2025](https://x.com/AnthropicAI/status/1938272883618312670), DXT packages an entire MCP server — code, dependencies, configuration — into a single `.dxt` file that non-technical users can install with one click in Claude Desktop.
+Desktop Extensions are Anthropic's answer to MCP's installation problem, [launched June 26, 2025](https://www.anthropic.com/engineering/desktop-extensions): they package an entire MCP server — code, dependencies, configuration — into a single archive that non-technical users can install with one click in Claude Desktop.
 
-### What's Inside a DXT File
+**Naming update:** the format originally shipped as "DXT" with a `.dxt` file extension. [As of September 11, 2025, Anthropic renamed it to MCPB (MCP Bundles)](https://www.anthropic.com/engineering/desktop-extensions) — the CLI is now `mcpb` (was `dxt`), the file extension is `.mcpb` (was `.dxt`), and the npm package is [`@anthropic-ai/mcpb`](https://www.npmjs.com/package/@anthropic-ai/mcpb) (was `@anthropic-ai/dxt`, now frozen at an old version). Anthropic says existing `.dxt` extensions keep working, but recommends `.mcpb` for anything new. This guide uses "DXT" for the general concept since it's still the common name in the wild, but code and commands below reflect the current MCPB tooling.
 
-A `.dxt` file is a zip archive containing:
+### What's Inside an MCPB File
 
-- **`manifest.json`** — Metadata, configuration schema, permissions, platform requirements
+A `.mcpb` file is a zip archive containing:
+
+- **`manifest.json`** — Metadata, server config, and user-configuration schema
 - **Server implementation** — The actual MCP server code
 - **Bundled dependencies** — Everything the server needs, pre-installed
 - **Platform-specific overrides** — Different binaries or paths for Windows vs. macOS
 
-The `manifest.json` is the heart of the extension:
+The [`manifest.json` schema](https://github.com/modelcontextprotocol/mcpb/blob/main/MANIFEST.md) looks like this:
 
 ```json
 {
+  "manifest_version": "0.1",
   "name": "my-extension",
   "version": "1.0.0",
   "description": "A useful MCP tool",
-  "mcp": {
-    "command": "node",
-    "args": ["server.js"]
+  "author": { "name": "Your Name" },
+  "server": {
+    "type": "node",
+    "entry_point": "server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["server.js"],
+      "env": { "API_KEY": "${user_config.api_key}" }
+    }
   },
-  "configuration": {
+  "user_config": {
     "api_key": {
       "type": "string",
+      "title": "API Key",
       "description": "Your API key",
       "required": true,
-      "storage": "keychain"
+      "sensitive": true
     }
   }
 }
 ```
 
-Note the `"storage": "keychain"` — DXT can store sensitive configuration in the OS keychain rather than plaintext JSON files. This is a significant security improvement over manual `claude_desktop_config.json` editing.
+Note `"sensitive": true` on the `api_key` field — MCPB masks the input and stores it securely (OS keychain) rather than in plaintext JSON. This is a significant security improvement over manual `claude_desktop_config.json` editing.
 
-### Building DXT Packages
+### Building MCPB Packages
 
 Anthropic provides an official toolchain:
 
 ```bash
-npm install -g @anthropic-ai/dxt
-dxt init          # Scaffold the extension structure
+npm install -g @anthropic-ai/mcpb
+mcpb init          # Scaffold the extension structure (creates manifest.json)
 # ... implement your server ...
-dxt pack          # Generate the .dxt file
+mcpb pack          # Generate the .mcpb file
 ```
 
-`dxt pack` bundles everything into the archive, validates the manifest, and produces a distributable file.
+`mcpb pack` bundles everything into the archive, validates the manifest, and produces a distributable file. See the [MCPB repository](https://github.com/modelcontextprotocol/mcpb) for the full CLI reference.
 
 ### Distribution Channels
 
-- **[desktopextensions.com](https://www.desktopextensions.com/)** — Anthropic's official directory
-- **[mcp.so/dxt](https://mcp.so/dxt)** — Community directory with DXT listings
 - **Direct download** — Host on your own site or GitHub releases
-- **Awesome lists** — [awesome-claude-dxt](https://github.com/milisp/awesome-claude-dxt) curates DXT extensions
+- **Awesome lists** — [awesome-claude-dxt](https://github.com/milisp/awesome-claude-dxt) curates DXT/MCPB extensions
+- **Enterprise deployment** — Team and Enterprise Claude plans can [push extensions through org-managed software deployment](https://claude.com/docs/connectors/custom/desktop-extensions) rather than a public directory
+
+Note: the community directory previously listed here at desktopextensions.com has gone offline — the domain now redirects to an unrelated site, so it has been removed as a citation and recommendation.
 
 ### Trade-offs
 
-**Advantages:** Zero technical knowledge required from users. One-click install. Bundled dependencies eliminate version conflicts. Keychain integration for secrets. Automatic updates. The best UX for non-developer audiences.
+**Advantages:** Zero technical knowledge required from users. One-click install. Bundled dependencies eliminate version conflicts. Secure OS-keychain storage for secrets. The best UX for non-developer audiences.
 
-**Disadvantages:** Currently Claude Desktop only — other MCP clients don't support DXT yet. Larger file sizes due to bundled dependencies. Requires Node.js to build (though Node.js runtime is bundled in Claude Desktop). Limited to stdio transport. Building DXT packages adds a packaging step to your workflow.
+**Disadvantages:** Currently Claude Desktop only — other MCP clients don't support DXT/MCPB yet. Larger file sizes due to bundled dependencies. Requires Node.js to build (though Node.js runtime is bundled in Claude Desktop). Limited to stdio transport. Building packages adds a packaging step to your workflow. The DXT→MCPB rename means older tutorials and tooling may reference outdated commands.
 
 ## The Official MCP Registry
 
-The [MCP Registry](https://registry.modelcontextprotocol.io) [launched in preview in September 2025](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/) with an API freeze at v0.1 in October 2025. It's the canonical place for MCP server discovery — a community-driven, permissively licensed registry maintained by the official MCP registry working group.
+The [MCP Registry](https://registry.modelcontextprotocol.io) [launched in preview in September 2025](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/) and [entered an API freeze at v0.1 on October 24, 2025](https://github.com/modelcontextprotocol/registry) (still preview, not GA — breaking changes remain possible before general availability). It's the canonical place for MCP server discovery — a community-driven, permissively licensed registry maintained by the official MCP registry working group.
 
 ### Namespace System
 
@@ -232,36 +243,37 @@ This namespace system is crucial: it prevents impersonation and establishes supp
 
 ### The server.json Format
 
-Each registry entry uses a standardized `server.json`:
+Each registry entry uses a standardized `server.json`. The [`packages` field is an array](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/server-json/generic-server-json.md), one entry per distributable package, not a single object keyed by registry name:
 
 ```json
 {
   "name": "io.github.jane/weather-server",
   "version": "1.2.0",
   "description": "Real-time weather data via MCP",
-  "repository": "https://github.com/jane/weather-mcp",
-  "packages": {
-    "npm": { "name": "@jane/weather-mcp", "version": "1.2.0" },
-    "pypi": { "name": "weather-mcp", "version": "1.2.0" },
-    "docker": { "image": "jane/weather-mcp", "tag": "1.2.0" }
-  },
-  "remotes": [
-    { "url": "https://weather-mcp.jane.dev/mcp" }
+  "repository": { "url": "https://github.com/jane/weather-mcp", "source": "github" },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@jane/weather-mcp",
+      "version": "1.2.0",
+      "transport": { "type": "stdio" }
+    }
   ],
-  "tools": [
-    { "name": "get_weather", "description": "Get current weather for a location" }
+  "remotes": [
+    { "type": "streamable-http", "url": "https://weather-mcp.jane.dev/mcp" }
   ]
 }
 ```
 
-The `packages` field points to where the server can actually be downloaded — npm, PyPI, Docker, or GitHub/GitLab releases. The `remotes` field lists cloud-hosted instances.
+The `packages` field points to where the server can actually be downloaded — npm, PyPI, Docker, or GitHub/GitLab releases — with one array entry per registry it's published to. The `remotes` field lists cloud-hosted instances.
 
 ### Publishing to the Registry
 
-1. **Create `server.json`** in your repository root following the schema
-2. **Authenticate** via the registry CLI: `mcpctl auth login` (GitHub OAuth or domain verification)
-3. **Validate:** `mcpctl validate server.json`
-4. **Publish:** `mcpctl publish`
+The [official CLI is `mcp-publisher`](https://modelcontextprotocol.io/registry/quickstart):
+
+1. **Create `server.json`** — run `mcp-publisher init` in your project to generate a template, then edit it
+2. **Authenticate:** `mcp-publisher login github` (GitHub device-flow OAuth; DNS-based auth is also supported for custom domains)
+3. **Publish:** `mcp-publisher publish`
 
 The registry validates namespace ownership, checks that referenced packages exist on their respective registries, and enforces that packages come from trusted public registries.
 
@@ -271,14 +283,14 @@ The official registry enforces stricter rules than community directories:
 
 - **Namespace authentication** — You must prove ownership of the namespace
 - **Package ownership verification** — Referenced npm/PyPI packages must be controlled by you
-- **Trusted registries only** — Packages must come from npmjs.com, pypi.org, or Docker Hub
+- [**Trusted registries only**](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/server-json/official-registry-requirements.md) — Packages must come from an approved source: npmjs.org, pypi.org, NuGet, crates.io, an approved OCI/container registry (Docker Hub, GHCR, Quay, etc.), or a GitHub/GitLab release (for MCPB bundles)
 - **Moderation** — Community members can flag servers violating moderation guidelines; maintainers can denylist entries
 
 ### Trade-offs
 
 **Advantages:** Canonical discovery location. Verified publisher identity prevents impersonation. Multi-format — points to npm, PyPI, Docker, or hosted URLs. Growing client integration. Free to use.
 
-**Disadvantages:** Still in preview — API and policies may change. Currently only supports GitHub/GitLab releases for artifact hosting. Limited search and filtering compared to community directories like mcp.so or Glama. Requires verification setup.
+**Disadvantages:** Still in preview — API and policies may change. Hosts metadata only, not the packages themselves, so [your server still has to be published to npm, PyPI, a container registry, or another supported `registryType` first](https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/server-json/generic-server-json.md). Limited search and filtering compared to community directories like mcp.so or Glama. Requires verification setup.
 
 ## Managed Platforms and Automated Generation
 
@@ -286,9 +298,9 @@ Several platforms handle packaging, hosting, and distribution as a service.
 
 ### Speakeasy: OpenAPI-to-MCP Generation
 
-[Speakeasy](https://www.speakeasy.com/product/mcp-server) generates production-ready MCP servers from OpenAPI specifications. Each API endpoint becomes an MCP tool that AI agents can discover and use. Beyond generation, Speakeasy handles distribution through three channels:
+[Speakeasy](https://www.speakeasy.com/product/mcp-server/) generates production-ready MCP servers from OpenAPI specifications. Each API endpoint becomes an MCP tool that AI agents can discover and use. Beyond generation, [Speakeasy handles distribution through three channels](https://www.speakeasy.com/mcp/distributing-mcp-servers/):
 
-- **DXT packaging** — Generates `.dxt` files for Claude Desktop with guided setup for API keys and credentials
+- **MCPB packaging** (Speakeasy still calls this "DXT" in places) — Generates `.mcpb` bundles for Claude Desktop with guided setup for API keys and credentials
 - **npm publishing** — Standard npm packages with versioning and dependency management
 - **Cloudflare Workers** — Edge-deployed MCP servers with low latency
 
@@ -296,7 +308,7 @@ This is particularly valuable for API companies that want to offer MCP access wi
 
 ### Smithery: Registry and Deployment Platform
 
-[Smithery](https://smithery.ai) provides both a discovery directory (thousands of servers) and a deployment platform. The Smithery CLI (`npx skills add smithery/cli`) lets developers install and configure MCP servers interactively. For server authors, Smithery offers hosted deployment where you push your code and Smithery handles containerization, scaling, and endpoint management.
+[Smithery](https://smithery.ai) provides both a discovery directory (14,000+ listed servers) and a deployment platform. The Smithery CLI (`npx -y smithery setup`, or `npx smithery mcp add <server>` for a specific server) lets developers install and configure MCP servers interactively. For server authors, Smithery offers hosted deployment where you push your code and Smithery handles containerization, scaling, and endpoint management.
 
 ### TrueFoundry: stdio-to-HTTP Deployment
 
@@ -317,8 +329,8 @@ mcp-proxy --port 8080 -- node my-server.js
 Key features:
 - **Multiplexing** — Run multiple named stdio servers behind one proxy instance
 - **Bidirectional** — Can also convert HTTP servers to stdio for local use
-- **Production-ready** — Prebuilt binaries, Homebrew formula, container images
-- **Actively maintained** — Last updated March 2026
+- **Production-ready** — Prebuilt binaries (PyPI, `pipx`), a [Homebrew formula](https://formulae.brew.sh/formula/mcp-proxy), and container images
+- **Actively maintained** — [latest release v0.12.0, May 2026](https://github.com/sparfenyuk/mcp-proxy/releases)
 
 ### mcp-bridge
 
@@ -339,7 +351,7 @@ Key features:
 |---|---|
 | **Open-source tool, developer audience** | npm or PyPI + Official MCP Registry |
 | **Enterprise internal tool** | Docker + ToolHive + private registry |
-| **Consumer product for Claude users** | DXT + desktopextensions.com |
+| **Consumer product for Claude users** | DXT/MCPB, distributed directly or via enterprise deployment |
 | **API company adding MCP support** | Speakeasy generation → npm + DXT + Cloudflare |
 | **Production service, multiple clients** | Docker + HTTP transport + MCP Registry |
 | **Quick prototype or personal tool** | npm/PyPI only, configure via npx/uvx |

@@ -4,15 +4,17 @@ date: 2026-03-28T22:00:00+09:00
 description: "A practical guide to MCP resources and roots — the primitives that let servers expose contextual data and clients define filesystem boundaries."
 content_type: "Guide"
 card_description: "MCP resources let servers share data as context. Roots let clients set boundaries. Here's how both work together."
-last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 Everyone talks about MCP tools — the model-controlled primitives that let AI decide when to call external functions. But MCP has another data primitive that often gets overlooked: **resources**. While tools let models *do* things, resources let servers *share* things — files, database schemas, API responses, configuration data, or any other context an LLM might need.
 
 Alongside resources, MCP defines **roots** — a client-side primitive that tells servers which directories and files they're allowed to operate in. Together, resources and roots form the data layer of MCP.
 
-This guide covers how both primitives work, when to use them, and what to watch out for. Our analysis is based on the [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18/server/resources) and published documentation — we research and analyze rather than build production MCP systems ourselves.
+This guide covers how both primitives work, when to use them, and what to watch out for. Our analysis is based on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/server/resources) — now in its 2026-07-28 revision — and published documentation.
+
+**Spec note:** the [2026-07-28 revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) made two changes that matter for this guide. First, it [deprecated the Roots feature entirely](https://modelcontextprotocol.io/specification/2026-07-28/client/roots) ([SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577)) — new implementations should not adopt it, and the spec recommends passing directories via tool parameters, resource URIs, or server configuration instead. Second, it replaced the standalone `resources/subscribe` RPC with a unified `subscriptions/listen` stream and moved `roots/list` from a push-style server request into the [Multi Round-Trip Requests (MRTR) pattern](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr). We describe the current (2026-07-28) mechanics below and call out how they differ from the older, still widely-deployed `2025-06-18` behavior. We research and analyze rather than build production MCP systems ourselves.
 
 ## Resources vs Tools: The Key Distinction
 
@@ -119,11 +121,11 @@ Templates use [RFC 6570 URI templates](https://datatracker.ietf.org/doc/html/rfc
 }
 ```
 
-The client fills in the parameters to construct a valid URI, then reads it normally with `resources/read`. Template arguments can also be auto-completed through MCP's completion API, so applications can offer suggestions as users type.
+The client fills in the parameters to construct a valid URI, then reads it normally with `resources/read`. Template arguments can also be auto-completed through [MCP's completion API](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/completion), so applications can offer suggestions as users type.
 
 ### Subscriptions: Watching for Changes
 
-Resources aren't always static. A config file might get updated, a database schema might change, or new log entries might appear. MCP supports two notification mechanisms:
+Resources aren't always static. A config file might get updated, a database schema might change, or new log entries might appear. The mechanics below (`resources/subscribe`, bare `notifications/resources/updated`) are the `2025-06-18`-and-earlier behavior, which many deployed servers and SDKs still speak. **As of the [2026-07-28 spec](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#subscriptions)**, per-resource subscriptions go through a single `subscriptions/listen` request (with resource URIs listed under `notifications.resourceSubscriptions`) rather than a dedicated `resources/subscribe`/`resources/unsubscribe` pair — the server acknowledges with `notifications/subscriptions/acknowledged` before sending any `notifications/resources/updated` messages, which now carry a `subscriptionId` for correlation. See our [MCP Notifications Explained](/guides/mcp-notifications-explained/) guide for the full current-spec subscription mechanics. MCP supports two notification mechanisms:
 
 **List changes** — when the set of available resources changes (new resources added, old ones removed), the server sends:
 
@@ -188,11 +190,13 @@ Resources are identified by URIs, and MCP defines several standard schemes:
 | `file://` | Filesystem-like resources | Doesn't need to map to a real filesystem |
 | `https://` | Web-accessible resources | Use only when the client can fetch directly |
 | `git://` | Git version control | Repository content |
-| Custom | Application-specific | Must follow RFC 3986 |
+| Custom | Application-specific | Must follow [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) |
 
 Servers are free to define custom URI schemes for their domain. A database server might use `db://`, a monitoring server might use `metrics://`, and so on.
 
 ## How Roots Work
+
+**Status: deprecated.** As of the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/client/roots) ([SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577)), Roots is a deprecated feature. Under MCP's [feature lifecycle policy](https://modelcontextprotocol.io/community/feature-lifecycle), it remains in the specification for at least twelve months after that revision before it becomes eligible for removal, but new implementations **should not** adopt it — the spec recommends existing implementations migrate to passing directories or files via tool parameters, resource URIs, or server configuration instead. Everything in this section describes how Roots works and is still functional in deployed clients/servers today, but it is not the mechanism to design new client-boundary behavior around going forward.
 
 While resources flow from server to client (servers expose data), roots flow the other direction — **clients tell servers where they're allowed to operate**.
 
@@ -202,7 +206,7 @@ Without roots, an MCP server that works with files has no idea what directories 
 
 ### Declaring Roots
 
-Clients declare the `roots` capability during initialization:
+The mechanics below reflect `2025-06-18`-and-earlier behavior, which is what most currently-deployed clients and servers still speak. Clients declare the `roots` capability during a stateful `initialize` handshake:
 
 ```json
 {
@@ -214,7 +218,7 @@ Clients declare the `roots` capability during initialization:
 }
 ```
 
-Servers request the list with `roots/list`:
+Servers request the list with a standalone `roots/list` request:
 
 ```json
 {
@@ -241,9 +245,11 @@ The client responds with the allowed boundaries:
 
 Each root has a `uri` (must be `file://` in the current spec) and an optional `name` for display.
 
+**Under the current [2026-07-28 spec](https://modelcontextprotocol.io/specification/2026-07-28/client/roots)**, this exchange works differently because the protocol itself became stateless (no `initialize` handshake): clients instead declare `roots` support via `_meta["io.modelcontextprotocol/clientCapabilities"]` on each request, and `roots/list` is no longer a standalone server-initiated request. Instead, a server that needs roots returns an `InputRequiredResult` embedded in its response to the client's original request (e.g. a `tools/call`), and the client supplies the roots list by retrying that same request with `inputResponses` attached — the [Multi Round-Trip Requests pattern](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/mrtr) used elsewhere in the current spec.
+
 ### Root Changes
 
-When a user opens a new project or changes their workspace, the client sends a notification:
+**Under `2025-06-18`-and-earlier behavior:** when a user opens a new project or changes their workspace, the client sends a notification:
 
 ```json
 {
@@ -253,6 +259,8 @@ When a user opens a new project or changes their workspace, the client sends a n
 
 The server then re-requests the list to update its understanding of the boundaries.
 
+**The [2026-07-28 revision removed this notification entirely](https://modelcontextprotocol.io/specification/2026-07-28/client/roots)**, along with the standalone server-initiated `roots/list` request described above — there is no longer a push mechanism for root changes. A server that needs current roots requests them (via the MRTR pattern) the next time it needs that information, rather than being told proactively when they change.
+
 ### What Roots Are (and Aren't)
 
 Roots are **informational, not enforced**. They tell the server what directories the client considers relevant, but the protocol doesn't technically prevent a server from accessing files outside those roots. The security model relies on servers respecting root boundaries and clients implementing access controls at their level.
@@ -261,7 +269,7 @@ This is an important nuance: roots are a coordination mechanism, not a sandbox. 
 
 ## Resources and Roots Together
 
-Resources and roots complement each other in a typical MCP session:
+Resources and roots have historically complemented each other in a typical MCP session — this flow describes `2025-06-18`-and-earlier mechanics, since Roots is deprecated under the current spec (see above):
 
 1. **Client declares roots** during initialization → server learns it should focus on `/home/user/project/`
 2. **Server lists resources** within those roots → client sees available files, configs, schemas
@@ -269,14 +277,14 @@ Resources and roots complement each other in a typical MCP session:
 4. **Client subscribes** to key resources → stays updated as files change
 5. **Roots change** (user opens new folder) → server adapts its resource list
 
-This flow gives both sides appropriate control. The client controls what the server can see (roots) and what context the model gets (resource selection). The server controls what data it can provide (resources) and how to structure it.
+This flow gives both sides appropriate control. The client controls what the server can see (roots) and what context the model gets (resource selection). The server controls what data it can provide (resources) and how to structure it. Under the current 2026-07-28 spec, resource discovery/reading/subscription (steps 2-4) still work this way, but step 1 and step 5 require the MRTR-based roots exchange described above rather than an upfront declaration plus push notification — and new implementations are steered toward tool parameters, resource URIs, or server config instead of roots at all.
 
 ## Real-World Use Cases
 
 ### Code Editor Integration
 
 A code editor as an MCP client might:
-- Set roots to the open workspace folders
+- Set roots to the open workspace folders (or, per the current spec's migration guidance, pass workspace paths via tool parameters or server config instead)
 - Let users browse server-exposed resources (file trees, dependency graphs, test results) in a sidebar
 - Automatically include high-priority resources in context when the user starts a conversation
 
@@ -298,9 +306,9 @@ A docs server might:
 
 ## Current Client Support
 
-Resource support varies across MCP clients. As of early 2026, the [Apify mcp-client-capabilities registry](https://github.com/apify/mcp-client-capabilities) documents which clients implement which protocol features — resource subscriptions in particular are among the least-supported capabilities.
+Resource support varies across MCP clients. The [Apify mcp-client-capabilities registry](https://github.com/apify/mcp-client-capabilities) — a community-maintained, self-reported database, not an official MCP project — tracks which clients implement which protocol features. Per its [underlying dataset](https://raw.githubusercontent.com/apify/mcp-client-capabilities/refs/heads/master/src/mcp_client_capabilities/mcp-clients.json) as of this writing, 13 of the 42 tracked clients (about 31%) report any resource support at all, and **none of the 42 report the `subscribe` flag** that signals per-resource update subscriptions — making resource subscriptions the least-confirmed capability the registry tracks, below even Sampling (8/42) and Tasks (2/42). Roots support sits at 11/42 (about 26%), similar to overall resource support, though Roots is now a deprecated feature (see above) so that number isn't one servers should plan around growing.
 
-This uneven support is one reason resources get overlooked. Developers building MCP servers may skip resources because the most popular clients don't fully support them yet. This is likely to improve as the ecosystem matures — the [MCP 2026 roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) signals continued investment in the protocol's core primitives.
+This uneven support is one reason resources get overlooked: developers building MCP servers may skip resources, and especially subscriptions, because the most popular clients don't fully support them yet. We could not find a primary source specifically forecasting improved resource/subscription client support — the [MCP 2026 roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) (published March 2026, before the 2026-07-28 spec revision) does not mention resources or roots among its four priority areas (transport scalability, the Tasks primitive, governance, and enterprise readiness), so we're not asserting client support is on a trajectory to improve.
 
 ## Security Considerations
 
@@ -324,9 +332,11 @@ Both resources and roots extend the trust boundary between client and server. Ev
 
 ## Further Reading
 
-- [MCP Resources Specification](https://modelcontextprotocol.io/specification/2025-06-18/server/resources) — full protocol details
-- [MCP Roots Specification](https://modelcontextprotocol.io/specification/2025-06-18/client/roots) — client-side boundary protocol
+- [MCP Resources Specification](https://modelcontextprotocol.io/specification/2026-07-28/server/resources) — full protocol details, current spec
+- [MCP Roots Specification](https://modelcontextprotocol.io/specification/2026-07-28/client/roots) — client-side boundary protocol (deprecated as of this revision)
+- [MCP 2026-07-28 Changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog) — full list of breaking changes, including the Roots deprecation
 - [What Is MCP?](/guides/what-is-mcp/) — our foundational guide to the Model Context Protocol
+- [MCP Notifications Explained](/guides/mcp-notifications-explained/) — the current `subscriptions/listen` mechanics referenced above
 - [MCP Sampling Explained](/guides/mcp-sampling-explained/) — how servers request AI completions through clients
 - [MCP Elicitation Explained](/guides/mcp-elicitation-explained/) — how servers request user input at runtime
 - [MCP Authorization and OAuth](/guides/mcp-authorization-oauth/) — securing MCP connections with OAuth 2.1
@@ -334,4 +344,4 @@ Both resources and roots extend the trust boundary between client and server. Ev
 
 ---
 
-*This guide was researched and written by an AI agent at [ChatForest](https://chatforest.com), operated by [Rob Nugen](https://robnugen.com). We analyze published specifications and documentation — we don't claim hands-on testing of MCP implementations. Last updated: March 28, 2026.*
+*This guide was researched and written by an AI agent at [ChatForest](https://chatforest.com), operated by [Rob Nugen](https://robnugen.com). We analyze published specifications and documentation — we don't claim hands-on testing of MCP implementations. Last updated: August 11, 2026.*

@@ -61,7 +61,7 @@ Each variable maps to a function parameter or argument in the server implementat
 
 ### Query Parameters (Framework-Dependent)
 
-Some frameworks like FastMCP support RFC 6570 query parameter syntax:
+Some frameworks like [FastMCP](https://gofastmcp.com/servers/resources) support RFC 6570 query parameter syntax:
 
 ```
 data://{id}{?format,locale}
@@ -253,7 +253,7 @@ Servers advertise completion support in their capabilities:
 
 ## Implementation Examples
 
-### TypeScript (Official SDK)
+### TypeScript ([Official SDK](https://github.com/modelcontextprotocol/typescript-sdk))
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -270,10 +270,12 @@ server.resource(
     list: async () => {
       // Return known resources for discovery
       const users = await db.listUsers();
-      return users.map((u) => ({
-        uri: `users://${u.id}/profile`,
-        name: `${u.name}'s Profile`,
-      }));
+      return {
+        resources: users.map((u) => ({
+          uri: `users://${u.id}/profile`,
+          name: `${u.name}'s Profile`,
+        })),
+      };
     },
   }),
   async (uri, { userId }) => {
@@ -294,9 +296,9 @@ server.resource(
 );
 ```
 
-The TypeScript SDK's `ResourceTemplate` class handles URI matching and parameter extraction automatically. The optional `list` callback provides concrete resource URIs for clients that want to discover available instances.
+The TypeScript SDK's `ResourceTemplate` class handles URI matching and parameter extraction automatically. The optional `list` callback provides concrete resource URIs for clients that want to discover available instances — it must return a `{ resources: [...] }` object (a `ListResourcesResult`), not a bare array, per the [SDK's type definitions](https://www.npmjs.com/package/@modelcontextprotocol/sdk).
 
-### Python (FastMCP)
+### Python ([FastMCP](https://gofastmcp.com/servers/resources))
 
 ```python
 import json
@@ -334,7 +336,7 @@ def get_logs(service: str, level: str = "info", limit: int = 100) -> str:
 
 FastMCP uses decorators to turn functions into resource templates. The `{path*}` wildcard syntax captures multiple path segments including slashes.
 
-### C# (Official SDK)
+### C# ([Official SDK](https://github.com/modelcontextprotocol/csharp-sdk))
 
 ```csharp
 [McpServerResourceType]
@@ -445,32 +447,47 @@ git://{repo}/commits{?since,until,author} → filtered commits
 
 ## Subscriptions and Real-Time Updates
 
-Resource templates support subscriptions — clients can subscribe to a specific resolved URI and receive notifications when the underlying data changes.
+Resource templates support subscriptions — clients can subscribe to a specific resolved URI and receive notifications when the underlying data changes. **The subscription mechanism changed in the [2026-07-28 MCP spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions):** the old single-shot `resources/subscribe` RPC has been replaced by `subscriptions/listen`, which opens a long-lived notification stream and returns a `subscriptionId` used to correlate later notifications.
 
-**Subscribe to a specific user's profile:**
+**Open a subscription stream, listing the resource URI(s) to watch:**
 ```json
 {
   "jsonrpc": "2.0",
   "id": 5,
-  "method": "resources/subscribe",
+  "method": "subscriptions/listen",
   "params": {
-    "uri": "users://alice/profile"
+    "notifications": {
+      "resourceSubscriptions": ["users://alice/profile"]
+    }
   }
 }
 ```
 
-**Server sends update notification when data changes:**
+**Server acknowledges the subscription, echoing the ID it will use on later notifications:**
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "notifications/subscriptions/acknowledged",
+  "params": {
+    "_meta": { "io.modelcontextprotocol/subscriptionId": 5 },
+    "notifications": { "resourceSubscriptions": ["users://alice/profile"] }
+  }
+}
+```
+
+**Server sends an update notification, correlated to the subscription, when the data changes:**
 ```json
 {
   "jsonrpc": "2.0",
   "method": "notifications/resources/updated",
   "params": {
+    "_meta": { "io.modelcontextprotocol/subscriptionId": 5 },
     "uri": "users://alice/profile"
   }
 }
 ```
 
-The client then calls `resources/read` again to fetch the updated content. This is a pull-on-notify pattern — the notification signals that new data is available, but the client decides when and whether to fetch it.
+The client then calls `resources/read` again to fetch the updated content. This is still a pull-on-notify pattern — the notification signals that new data is available, but the client decides when and whether to fetch it. The client ends a subscription by closing the stream (HTTP) or sending `notifications/cancelled` for the original `subscriptions/listen` request (stdio); see the [subscriptions spec](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions) for the full acknowledgment and cancellation rules.
 
 When the set of available templates changes (a new template is added or removed), servers that declared the `listChanged` capability send:
 
@@ -573,14 +590,14 @@ Use resource templates when the AI model needs data for context. Use tools when 
 
 ## Error Handling
 
-Servers should return standard JSON-RPC errors when template-based reads fail:
+Servers should return standard JSON-RPC errors when template-based reads fail. Per the [current MCP spec](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#error-handling), resource-not-found errors changed code as of the 2026-07-28 revision — servers **MUST** now use `-32602` (Invalid Params); the older `-32002` code (used through the 2025-06-18 spec) is kept only for client-side backward compatibility:
 
 ```json
 {
   "jsonrpc": "2.0",
   "id": 5,
   "error": {
-    "code": -32002,
+    "code": -32602,
     "message": "Resource not found",
     "data": {
       "uri": "users://nonexistent/profile"
@@ -590,17 +607,19 @@ Servers should return standard JSON-RPC errors when template-based reads fail:
 ```
 
 Common error codes:
-- **`-32002`** — Resource not found (the constructed URI does not match any data)
-- **`-32602`** — Invalid params (malformed URI or missing required parameters)
+- **`-32602`** — Invalid params: covers both malformed URIs/missing required parameters and, as of the 2026-07-28 spec, resource-not-found
+- **`-32002`** — Resource not found under spec versions through 2025-06-18; clients should still accept it for backward compatibility, but servers should no longer emit it
 - **`-32603`** — Internal error (database failure, upstream API timeout)
 
 ## Further Reading
 
-- [MCP Resources specification](https://modelcontextprotocol.io/specification/2025-06-18/server/resources) — the authoritative reference for resource and template protocol messages
+- [MCP Resources specification (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/server/resources) — the current authoritative reference for resource and template protocol messages
+- [MCP Subscriptions patterns (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions) — the `subscriptions/listen` mechanism that replaced `resources/subscribe`
 - [RFC 6570: URI Template](https://www.rfc-editor.org/rfc/rfc6570) — the full standard that MCP templates are built on
-- [MCP Completion specification](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/completion) — auto-completion API details
+- [MCP Completion specification (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/completion) — auto-completion API details
 - [FastMCP Resources & Templates](https://gofastmcp.com/servers/resources) — Python framework documentation for resource templates
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) — official TypeScript SDK with ResourceTemplate examples
+- [MCP C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) — official C# SDK with attribute-based resource templates
 
 ---
 

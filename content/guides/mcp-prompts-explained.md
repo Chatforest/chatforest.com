@@ -4,13 +4,13 @@ date: 2026-03-28T23:00:00+09:00
 description: "A practical guide to MCP prompts — the primitive that lets servers expose reusable prompt templates to clients."
 content_type: "Guide"
 card_description: "MCP prompts let servers share ready-made prompt templates that users can invoke like slash commands. Here's how they work."
-last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 MCP defines three server primitives: tools (actions), resources (data), and prompts (templates). Of the three, prompts are the least discussed — but they solve a real problem. They let servers expose reusable, parameterized prompt templates that users can discover and invoke through their AI client, like selecting a slash command.
 
-This guide explains how MCP prompts work, what they can contain, and when to use them. Our analysis is based on the [MCP specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts) and published implementations — we haven't built production prompt servers ourselves.
+This guide explains how MCP prompts work, what they can contain, and when to use them. Our analysis is based on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/server/prompts) — currently revision **2026-07-28**, which superseded the 2025-06-18 revision this guide originally cited — and published implementations. We haven't built production prompt servers ourselves. The prompts *primitive itself* (its purpose, discovery/get flow, and content types) is stable across both revisions; where the surrounding protocol mechanics changed in 2026-07-28 (capability declaration, list-changed notifications), this guide has been updated to match and calls out the difference.
 
 ## What Prompts Solve
 
@@ -27,7 +27,7 @@ Think of it this way:
 
 ### Declaring the Capability
 
-Servers that offer prompts must declare the `prompts` capability during initialization:
+Servers that offer prompts must declare the `prompts` capability:
 
 ```json
 {
@@ -39,7 +39,9 @@ Servers that offer prompts must declare the `prompts` capability during initiali
 }
 ```
 
-The `listChanged` flag tells the client whether the server will send notifications when its prompt list changes — for example, when a server dynamically adds prompts based on the connected project.
+**How that declaration reaches the client depends on the protocol revision.** Under the current [2026-07-28 specification](https://modelcontextprotocol.io/specification/2026-07-28/server/prompts#capabilities), MCP is stateless-first: there is no `initialize` handshake, and the server returns its capabilities in the `DiscoverResult` of the mandatory [`server/discover`](https://modelcontextprotocol.io/specification/2026-07-28/server/discover) call (or in response to any request tagged with per-request `_meta`). Under the legacy, handshake-based revisions (2025-11-25 and earlier), the server instead declared this capability once, during the `initialize` handshake that opened the session — that's the model this guide originally described. Servers built for [backward compatibility](https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning#backward-compatibility-with-initialization-based-versions) support both.
+
+The `listChanged` flag tells the client whether the server will send notifications when its prompt list changes — for example, when a server dynamically adds prompts based on the connected project. (See [List Change Notifications](#list-change-notifications) below — the current spec also changed how a client actually receives those notifications.)
 
 ### Listing Available Prompts
 
@@ -87,11 +89,11 @@ The server responds with an array of prompt definitions:
 }
 ```
 
-Each prompt has a unique `name` (the machine identifier), an optional `title` (human-readable display name), a `description`, and an optional list of `arguments`. The listing supports pagination via cursors for servers that expose many prompts.
+Each prompt has a unique `name` (the machine identifier), an optional `title` (human-readable display name), a `description`, and an optional list of `arguments`. The listing supports [pagination](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination) via cursors for servers that expose many prompts.
 
 ### How Clients Surface Prompts
 
-The MCP spec doesn't mandate how clients present prompts to users, but the most common pattern is **slash commands**. In Claude Desktop, for example, prompts from connected MCP servers appear in the `/` menu — type `/code_review` and you'll see the prompt with its description and argument fields.
+The [MCP spec doesn't mandate](https://modelcontextprotocol.io/specification/2026-07-28/server/prompts#user-interaction-model) how clients present prompts to users, but the most common pattern is **slash commands**. In Claude Code, for example, [connected MCP servers' prompts appear in the `/` menu as commands](https://code.claude.com/docs/en/mcp#use-mcp-prompts-as-commands) named `/mcp__servername__promptname` — type `/` to see them alongside built-in commands, then fill in any arguments space-separated after the command.
 
 Other clients may surface prompts differently: as toolbar buttons, context menu items, or sidebar entries. The protocol doesn't care — it just provides the data.
 
@@ -190,6 +192,8 @@ This is where prompts and resources intersect. A prompt can reference server-sid
 
 Embedded resources let prompts pull in live data from the server — documentation, code files, database schemas, API specs — and include it as context for the LLM. The server resolves the resource at prompt-get time, so the content is always current.
 
+The [current spec (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/server/prompts#resource-links) also added a lighter-weight `resource_link` content type — a prompt message can return a reference (`uri`, `name`, `mimeType`) that the client fetches separately, instead of embedding the resource's full content inline. Use `resource_link` when you want to point at a resource without paying the cost of inlining it; use the embedded `resource` type above when the content should travel with the prompt.
+
 ## Multi-Turn Prompts
 
 Prompts can return multiple messages with alternating `role` values — `"user"` and `"assistant"` — to set up multi-turn conversations:
@@ -232,7 +236,7 @@ Prompts aren't static templates — they can be fully dynamic. When a client cal
 - **Adapt to context** — a project-aware prompt could include relevant file contents from the current workspace
 - **Chain with resources** — resolve embedded resource URIs at request time for fresh data
 
-Arguments support auto-completion through the MCP [completion API](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/completion), so clients can offer suggestions as users type. A database prompt's `table` argument, for instance, could auto-complete with actual table names from the connected database.
+Arguments support auto-completion through the MCP [completion API](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/completion), so clients can offer suggestions as users type. A database prompt's `table` argument, for instance, could auto-complete with actual table names from the connected database.
 
 ## List Change Notifications
 
@@ -245,6 +249,8 @@ Servers that declared `listChanged: true` can notify clients when their prompt l
 ```
 
 The client then re-fetches the prompt list. This is useful for servers whose available prompts depend on context — a project management server might add or remove prompts based on which project is currently active.
+
+**How the client receives this changed under the current spec.** In the legacy (2025-11-25 and earlier) protocol, a server that had negotiated `listChanged: true` simply pushed this notification whenever the list changed. Under the [current 2026-07-28 spec](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions), the client must first open a long-lived [`subscriptions/listen`](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions) stream and explicitly request `promptsListChanged: true` in its notification filter — the server then delivers `notifications/prompts/list_changed` on that stream, tagged with a subscription ID, until the client cancels it or the connection closes.
 
 ## Real-World Use Cases
 
@@ -264,19 +270,19 @@ A documentation server offers `/write-api-docs`, `/changelog-entry`, and `/expla
 
 An infrastructure server provides `/diagnose-incident`, `/plan-migration`, and `/review-config` prompts. The diagnose prompt includes recent logs and metrics (via embedded resources) as context, so the LLM has real data to work with instead of asking the user to paste it in manually.
 
-## Client Support (March 2026)
+## Client Support (as of August 2026)
 
-Prompt support varies across MCP clients:
+Prompt support varies across MCP clients. Verified directly against each client's current documentation:
 
-| Client | Prompts Supported | How They Appear |
-|--------|:-:|---|
-| Claude Desktop | Yes | Slash commands in the `/` menu |
-| Claude Code | Yes | Available as slash commands |
-| Cursor | Yes | Accessible through the prompt interface |
-| Windsurf | Yes | Command palette integration |
-| Zed | Partial | Basic prompt listing |
+| Client | Prompts Supported | How They Appear | Source |
+|--------|:-:|---|---|
+| Claude Code | Yes | Slash commands, `/mcp__servername__promptname` | [code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp#use-mcp-prompts-as-commands) |
+| Claude Desktop | Yes | Prompts capability supported; the specific in-app UI isn't independently documented by Anthropic beyond the general MCP quickstart | [MCP build-server quickstart](https://modelcontextprotocol.io/docs/2026-07-28/develop/build-server), [support.claude.com](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) |
+| Cursor | Yes | Autocomplete when typing `/` followed by a trigger | [cursor.com/docs/context/mcp](https://cursor.com/docs/context/mcp) |
+| Windsurf (Cascade) | Yes | Cascade supports "an MCP server's tools, resources, and prompts" | [docs.windsurf.com/windsurf/cascade/mcp](https://docs.windsurf.com/windsurf/cascade/mcp) |
+| Zed | Yes | "Zed currently supports MCP's Tools and Prompts features" | [zed.dev/docs/ai/mcp](https://zed.dev/docs/ai/mcp) |
 
-Of the [MCP clients listed on the official MCP site](https://modelcontextprotocol.io/clients), roughly 20 support the prompts primitive. Support is growing but not universal — if your server relies heavily on prompts, check your target clients.
+Note: this guide previously listed Zed as "Partial" support; that's no longer accurate — Zed's own docs now describe full support for the Prompts feature. Previously this section also cited a specific count of MCP clients ("roughly 20") supporting prompts, sourced to `modelcontextprotocol.io/clients` — that page has since been folded into the site's general homepage and no longer publishes a per-client capability breakdown, so that count is no longer verifiable and has been removed rather than left stale. Support is growing but not universal — if your server relies heavily on prompts, check your target clients' own docs directly.
 
 ## Prompts vs. Tools vs. Resources
 
@@ -302,7 +308,7 @@ Prompt inputs and outputs need careful validation:
 
 ## Looking Ahead
 
-The prompts primitive is relatively simple today — and that's by design. There are [active discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/820) in the MCP community about evolving prompts into richer orchestration recipes that could compose tools from multiple servers into multi-step workflows. Whether that complexity lands in the prompts primitive or elsewhere in the protocol remains to be seen.
+The prompts primitive is relatively simple today — and that's by design. There is at least [one open community proposal](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/820) (filed June 2025, still an unadopted "Ideas" discussion as of this writing) arguing for evolving prompts into richer orchestration recipes that could compose tools from multiple servers into multi-step workflows. Whether that complexity lands in the prompts primitive or elsewhere in the protocol remains to be seen.
 
 For now, prompts are a practical way to share prompt engineering knowledge through the protocol. They bridge the gap between "this server has powerful tools" and "users know exactly how to use them."
 
