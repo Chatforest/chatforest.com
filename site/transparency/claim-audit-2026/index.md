@@ -14,7 +14,7 @@ The headline: **AI-generated content, published without claim-level verification
 - **1,946** content pages on the site as of this audit's close; **1,938** carry a completed claim-level audit stamp (the other 8 are section indexes with no factual claims). ([Source data, §a.2](https://github.com/Chatforest/chatforest.com/blob/master/transparency-report-data.md))
 - Before we enforced citations at write time, **765 of 1,854 pages (41%) had shipped with zero external citations.** ([Citation backlog baseline, 2026-07-16](https://github.com/Chatforest/chatforest.com/blob/master/citation-backlog.md))
 - Of the **375 highest-risk pages** (those making financial, security, or benchmark claims about named companies), the subset with itemized findings — **78 pages** — averaged **~3.3 distinct factual problems per page**. 77 of those 78 needed at least one real correction. ([Fabrication audit tracker](https://github.com/Chatforest/chatforest.com/blob/master/fabrication-audit.md); see "What we can and can't claim" below)
-- A spot re-audit of 20 pages checked under the earliest version of our standard found **8 of 20 (40%)** still had a real problem — so we've queued all 376 early-vintage pages for re-audit. ([Source data, §a.4 and §c.3](https://github.com/Chatforest/chatforest.com/blob/master/transparency-report-data.md))
+- A spot re-audit of 20 pages checked under the earliest version of our standard found **8 of 20 (40%)** still had a real problem — so we've queued all 427 early-vintage pages for re-audit (see "Our audit process made errors too" below for how we settled on 427 over an earlier, wrong count of 376). ([Source data, §a.4 and §c.3](https://github.com/Chatforest/chatforest.com/blob/master/transparency-report-data.md); [early-vintage-audit.md](https://github.com/Chatforest/chatforest.com/blob/master/early-vintage-audit.md))
 - Of the **50 pages** published after the write-time citation gate existed, **zero** ever shipped uncited. ([Source data, §c.2](https://github.com/Chatforest/chatforest.com/blob/master/transparency-report-data.md))
 
 ## Why we're publishing this
@@ -75,6 +75,7 @@ A transparency report that only reports errors it fixed is easy mode. Two of our
 
 - **A closure report claimed the wrong denominator.** The run that closed the claim-level sweep [reported](https://github.com/Chatforest/chatforest.com/commit/b379a24ee1f232d0db74d2ce22ba4d745036f302) "881/881 pages complete." The real tree count at that exact commit was 1,941 content files. The "zero remaining" claim re-verified as true — every page was in fact audited — but the total was a counting-command error that a later run caught by checking the git tree rather than trusting the log. An unverified number, stated confidently, in our own process reporting: the exact failure mode this report is about. ([Source data, §a.1](https://github.com/Chatforest/chatforest.com/blob/master/transparency-report-data.md))
 - **A cohort figure in the brief for this very report didn't reconcile.** The directive commissioning this report cited "56 post-gate pages"; a live recount gives 50. The gap couldn't be traced, so this report uses the reproducible number and says so, rather than quietly matching the brief. ([Source data, §c.2](https://github.com/Chatforest/chatforest.com/blob/master/transparency-report-data.md))
+- **Two scripts run the same day gave two different early-vintage cohort sizes** — 427 and 376 — both claiming the same method. We resolved it the same way as the other two: re-derive, don't average or guess. A fresh, independent recount (2026-08-11) reproduced the 427 figure almost exactly (284 vs. 285 for the reviews section, the gap fully explained by one page re-audited in the interim), and the working checklist independently enumerates 285 named review pages by title — real evidence a script's output number isn't. The 376 figure's script was never committed anywhere in the repo, so its specific bug is unrecoverable, but it isn't reproducible today by any method we tested (draft flags, content-type, categories, date-boundary inclusivity). **427 is canonical.**
 
 We're including these because the lesson generalizes: **numbers acquire false authority by repetition.** The only defense we've found is mechanical re-derivation from source — for our articles' claims and for our own process stats alike.
 
@@ -92,12 +93,12 @@ Every durable fix we made shares one property: it's a mechanical check against e
 
 - **Self-audit.** AI wrote the content, AI audited it, under standards we set. Worked example #8 is the honest picture: the process catches its own errors sometimes, not provably always.
 - **The taxonomy is a sample, not a census** (78 of 375 high-risk pages itemized), and the cohort was selected for risk. We publish no site-wide error rate because we can't compute one honestly.
-- **One data point on re-audit miss rates.** The 40% early-vintage figure comes from a single 20-page sample. The 376-page early-vintage re-audit now underway will give a real denominator; we'll publish the update.
+- **One data point on re-audit miss rates.** The 40% early-vintage figure comes from a single 20-page sample. The 427-page early-vintage re-audit now underway will give a real denominator; we'll publish the update.
 - **Fixes are corrections, not time travel.** These pages were live, wrong, for weeks. Dated correction notes mark the serious cases, but we can't un-serve stale reads.
 
 ## What's next
 
-The 376 pages audited under the earliest version of the standard are being re-audited now. The monthly spot-audit continues. If there's an audience for this, we'll publish this report periodically with trend lines: catch rates by vintage, taxonomy shifts, re-audit miss rates as the standard matures.
+The 427 pages audited under the earliest version of the standard are being re-audited now. The monthly spot-audit continues. If there's an audience for this, we'll publish this report periodically with trend lines: catch rates by vintage, taxonomy shifts, re-audit miss rates as the standard matures.
 
 We think every AI publisher should be able to produce this report. Here's ours.
 
