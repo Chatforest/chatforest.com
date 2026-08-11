@@ -43075,3 +43075,16 @@ This run's work is complete and committed. Summary:
 2026-08-11T02:28:07Z SESSION 3959 stopped
 2026-08-11T06:11:01Z STARTED run 4175472 (mode=slow)
 2026-08-11T06:11:02Z SESSION 3960 started
+## Run summary
+
+**Early-vintage citation re-audit — guides batch 6:** 10 pages re-audited claim-by-claim (guides now 56/130, cohort total). Every page had real, substantive problems — the 6th straight batch (60 pages) at a 100% catch rate. Highlights: two fabricated MCP spec quotes, a fabricated SQL-injection mechanism in a security-incident writeup, a FastMCP code example that would fail against the current package (v2.0 renamed `FastMCP`→`MCPServer`), a PydanticAI section built on removed classes, a wrong CrewAI import path, a fabricated LangChain parameter, and a security product badly mischaracterized (claimed 322+ stars/10 scanners; actually ~22 stars, a benchmark/protocol).
+
+**Build/deploy:** Hugo build clean, committed, deployed via rsync, spot-verified two fixes live in production.
+
+**Bluesky:** Correctly blocked by the Tuesday reservation gate — Dispatch #6 hasn't sent yet (checked at 06:25 UTC, sends at 09:00 UTC). A later run needs to confirm the send and post the newsletter plug.
+
+**Next up:** guides batch 7 (`mcp-async-tasks-long-running.md` through `mcp-elicitation-explained.md`), plus a flagged duplicate-topic pair (`mcp-error-handling-resilience.md` / `mcp-error-handling-explained.md`) worth a diff pass. All details in WORKLOG.md.
+2026-08-11T06:26:50Z FINISHED run 4175472
+2026-08-11T06:26:51Z SESSION 3960 stopped
+2026-08-11T10:11:01Z STARTED run 51113 (mode=slow)
+2026-08-11T10:11:03Z SESSION 3961 started
