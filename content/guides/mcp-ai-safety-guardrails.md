@@ -5,10 +5,10 @@ description: "A comprehensive guide to implementing AI safety with MCP — cover
 content_type: "Guide"
 card_description: "MCP gives AI agents real-world capabilities — database access, file operations, API calls, code execution. This guide covers the safety patterns you need: guardrail frameworks, content filtering, sandboxing, human-in-the-loop approvals, permission systems, audit logging, and lessons from real-world incidents."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
-MCP gives AI agents the ability to read files, query databases, execute code, send messages, and modify infrastructure. Every tool an MCP server exposes is a capability that can be used correctly — or catastrophically. In early 2026, the security research community documented 30 MCP CVEs in just 60 days. A single vulnerability in `mcp-remote` ([CVE-2025-6514](https://jfrog.com/blog/cve-2025-6514-critical-shell-injection-vulnerability-in-mcp-remote/), CVSS 9.6) affected over 437,000 downloads with a remote code execution flaw. Real-world attacks have [exfiltrated private GitHub repositories](https://invariantlabs.ai/blog/mcp-github-vulnerability), [leaked Asana data across tenant boundaries](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/), and [stolen complete WhatsApp message histories](https://invariantlabs.ai/blog/whatsapp-mcp-exploited) — all through MCP tool manipulation.
+MCP gives AI agents the ability to read files, query databases, execute code, send messages, and modify infrastructure. Every tool an MCP server exposes is a capability that can be used correctly — or catastrophically. In early 2026, security researchers [documented 30+ CVEs filed against MCP servers in a single 60-day window](https://www.practical-devsecops.com/mcp-security-statistics-2026-report/). A single vulnerability in `mcp-remote` ([CVE-2025-6514](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/), CVSS 9.6) affected over 437,000 downloads with a remote code execution flaw. [Asana's MCP server leaked customer data across organization boundaries](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/) in a real production incident, and security researchers at Invariant Labs built proof-of-concept attacks demonstrating how [a poisoned GitHub issue could leak private repository data](https://invariantlabs.ai/blog/mcp-github-vulnerability) and [a malicious MCP tool could exfiltrate WhatsApp message history](https://invariantlabs.ai/blog/whatsapp-mcp-exploited) — all through MCP tool manipulation.
 
 The safety challenge with MCP is unique. Traditional API security assumes the caller understands the API contract. MCP callers are language models that can be manipulated through prompt injection, confused by ambiguous tool descriptions, or tricked into calling tools with malicious parameters. Defending MCP systems requires a layered approach: protocol-level safety features, guardrail frameworks, content filtering, sandbox isolation, fine-grained permissions, human-in-the-loop approvals, audit logging, and cost controls.
 
@@ -16,14 +16,14 @@ This guide covers the patterns, tools, and frameworks for building safe MCP syst
 
 ## The MCP Safety Landscape
 
-Before diving into tools and patterns, it helps to understand the threat model. The [OWASP Agentic Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) (December 2025), [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (March 2026), [CoSAI MCP Security analysis](https://www.coalitionforsecureai.org/) (~40 threats, 12 categories), and [Adversa AI MCP TOP 25](https://adversa.ai/mcp-security-top-25-mcp-vulnerabilities/) collectively paint a picture of the attack surface.
+Before diving into tools and patterns, it helps to understand the threat model. The [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/2025/12/09/owasp-genai-security-project-releases-top-10-risks-and-mitigations-for-agentic-ai-security/) (released December 10, 2025), the [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (a draft standard, MCP01:2025–MCP10:2025, still in beta/pilot testing as of mid-2026), [CoSAI's "Securing the AI Agent Revolution" MCP security whitepaper](https://www.coalitionforsecureai.org/securing-the-ai-agent-revolution-a-practical-guide-to-mcp-security/) (released January 27, 2026, ~40 threats across 12 categories), and [Adversa AI's MCP Security TOP 25](https://adversa.ai/mcp-security-top-25-mcp-vulnerabilities/) (launched September 18, 2025) collectively paint a picture of the attack surface.
 
 **Key threat categories:**
 
 | Threat | Description | Real Example |
 |--------|-------------|-------------|
-| **Tool poisoning** | Malicious tool descriptions manipulate agent behavior | GitHub MCP: hidden instructions in issue text exfiltrated private repos |
-| **Prompt injection via tools** | External data returned by tools contains injected instructions | Supabase/Cursor: support ticket text triggered data exfiltration |
+| **Tool poisoning** | Malicious tool descriptions manipulate agent behavior | GitHub MCP demo: hidden instructions in issue text leaked private repo data via a public PR |
+| **Prompt injection via tools** | External data returned by tools contains injected instructions | Supabase/Cursor demo: support ticket text triggered data exfiltration |
 | **Rug pull** | Tool descriptions change after initial trust is established | Tools behave safely during review, then change behavior post-approval |
 | **Cross-tenant leakage** | MCP server shares state between users | [Asana MCP leaked data across ~1,000 customer accounts](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/) |
 | **Token amplification** | Adversarial tools consume excessive tokens | [Research showed 142.4x token amplification via "overthinking loops"](https://arxiv.org/abs/2602.14798) |
@@ -34,7 +34,7 @@ The core insight from these frameworks: **MCP safety is not just API security wi
 
 ## Protocol-Level Safety Features
 
-The MCP specification (2025-03-26 and 2025-06-18 revisions) includes four built-in safety mechanisms. These form the foundation that external tools build upon.
+The [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18) (2025-03-26 and 2025-06-18 revisions; a newer [2025-11-25 revision](https://modelcontextprotocol.info/specification/2025-11-25/changelog/) has since shipped, adding OpenID Connect Discovery, incremental OAuth scope consent, and tool-calling in sampling, among other changes not covered in depth here) includes four built-in safety mechanisms discussed below. These form the foundation that external tools build upon.
 
 ### Tool Annotations
 
@@ -52,7 +52,7 @@ MCP tool annotations provide metadata hints about what a tool does:
 }
 ```
 
-**Critical caveat:** The spec explicitly states these annotations are **untrusted hints**. Clients SHOULD NOT make security decisions based solely on annotations because a malicious server can lie about them. They're useful for UI presentation (showing a warning icon for destructive tools) but not for enforcement. A Tool Annotations Interest Group was forming as of March 2026 to potentially strengthen these guarantees.
+**Critical caveat:** The [spec explicitly states these annotations are **untrusted hints**](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#tool-annotations). Clients SHOULD NOT make security decisions based solely on annotations because a malicious server can lie about them. They're useful for UI presentation (showing a warning icon for destructive tools) but not for enforcement. A [Tool Annotations Interest Group](https://modelcontextprotocol.io/community/interest-groups/tool-annotations) was proposed in a [March 16, 2026 MCP blog post](https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/) and formally chartered April 20, 2026, to potentially strengthen these guarantees.
 
 **What annotations provide today:**
 - `readOnlyHint` — suggests the tool doesn't modify state (display only, no confirmation needed)
@@ -62,7 +62,7 @@ MCP tool annotations provide metadata hints about what a tool does:
 
 ### Sampling: Two-Checkpoint Human Approval
 
-MCP sampling allows a server to request an LLM completion from the client, but with a crucial safety feature: the spec requires clients to implement **two checkpoints** where a human can intervene:
+[MCP sampling](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling) allows a server to request an LLM completion from the client, but with a crucial safety feature: the spec requires clients to implement **two checkpoints** where a human can intervene:
 
 1. **Before sending** — the human reviews the prompt the server wants to send to the LLM
 2. **After receiving** — the human reviews the LLM response before it goes back to the server
@@ -71,11 +71,11 @@ This prevents MCP servers from using the client's LLM access for unauthorized pu
 
 ### Elicitation: Structured User Input
 
-Added in the 2025-06-18 revision, elicitation lets MCP servers request structured input from users during operations. Servers can define JSON schemas for the input they need, and the client presents an appropriate form. This enables consent flows, parameter confirmation, and explicit user choices mid-operation.
+Added in the [2025-06-18 revision](https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation), elicitation lets MCP servers request structured input from users during operations. Servers can define JSON schemas for the input they need, and the client presents an appropriate form. This enables consent flows, parameter confirmation, and explicit user choices mid-operation.
 
 ### OAuth 2.1 with Resource Indicators
 
-MCP mandates OAuth 2.1 with PKCE and supports resource indicators (RFC 9396) for scoping tokens to specific MCP servers. This means a token issued for a filesystem MCP server cannot be replayed against a database MCP server — the audience is bound into the token.
+MCP mandates OAuth 2.1 with PKCE and [requires Resource Indicators for OAuth 2.0 (RFC 8707)](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) for scoping tokens to specific MCP servers. This means a token issued for a filesystem MCP server cannot be replayed against a database MCP server — the audience is bound into the token. (Corrected 2026-08-11: an earlier version of this guide cited RFC 9396, which is actually OAuth 2.0 Rich Authorization Requests — a different, unrelated RFC. The resource-indicators RFC is 8707.)
 
 ## Guardrail Frameworks
 
@@ -105,20 +105,13 @@ Guardrails sit between the AI agent and MCP tool execution, intercepting request
 
 NeMo Guardrails is particularly strong for conversational safety — preventing social engineering attacks where a user tries to manipulate an agent into misusing MCP tools.
 
-### OpenGuardrails (322+ Stars)
+### OpenGuardrails
 
-[OpenGuardrails](https://github.com/OpenGuardrails/openguardrails) is purpose-built for agent security and includes MCP-specific protections. It provides 10 built-in scanners:
-
-- **MCP tool poisoning scanner** — detects malicious instructions hidden in tool descriptions
-- **Prompt injection scanner** — identifies injection attempts in tool inputs and outputs
-- **Sensitive data scanner** — catches PII, credentials, and secrets in data flows
-- **Excessive agency scanner** — flags when agents request more capabilities than needed
-
-This is the most MCP-aware guardrail framework, specifically designed for the attack vectors documented in the OWASP MCP Top 10.
+**Correction (2026-08-11 audit):** an earlier version of this guide described [OpenGuardrails](https://openguardrails.com/) as a guardrail framework with "10 built-in scanners" and put its star count at 322+. Neither claim checks out against the live project. [The GitHub repo](https://github.com/openguardrails/openguardrails) currently shows ~22 stars, and OpenGuardrails describes itself as "the open standard & benchmark for AI agent safety & security" — a vendor-neutral **protocol and benchmark that scores other guardrail vendors**, not a scanner product itself: "OGR is not a guardrail product: it defines the wire and referees the leaderboard." The specific "10 scanners" (MCP tool poisoning, prompt injection, sensitive data, excessive agency) most closely match a related but separate project, [MoltGuard](https://github.com/openafw/moltguard), which is a small (single-digit-star) tool for a different agent framework (OpenClaw), not OpenGuardrails itself. We've removed the unsupported claims rather than guess at which product the original draft meant.
 
 ### Javelin Guardrails MCP Server
 
-Javelin offers a dedicated MCP server that implements guardrails as an MCP tool. AI agents can call guardrail validation as a tool before executing other tools — a self-policing pattern where the agent checks its own actions.
+[Javelin](https://docs.getjavelin.io/javelin-core/mcp-usage-guides) offers a dedicated MCP server that implements guardrails as an MCP tool. AI agents can call guardrail validation as a tool before executing other tools — a self-policing pattern where the agent checks its own actions.
 
 **Key capabilities:**
 - Prompt injection detection as an MCP tool call
@@ -132,7 +125,7 @@ Content filtering in MCP systems serves two purposes: preventing harmful content
 
 ### Microsoft Presidio via MCP (mcp-presidio)
 
-The `mcp-presidio` server wraps Microsoft's Presidio PII detection engine as an MCP service, supporting detection of 25+ PII entity types:
+The `mcp-presidio` server wraps [Microsoft's Presidio PII detection engine](https://microsoft.github.io/presidio/supported_entities/) as an MCP service. Presidio itself [supports 25+ PII entity types globally, and 47+ once region-specific entities (US, UK, Spain, Italy, Poland, Singapore, Australia, India, Finland) are counted](https://microsoft.github.io/presidio/supported_entities/):
 
 - Names, email addresses, phone numbers
 - Credit card numbers, bank account numbers
@@ -144,13 +137,13 @@ The `mcp-presidio` server wraps Microsoft's Presidio PII detection engine as an 
 
 ### Skyflow Data Privacy
 
-Skyflow provides polymorphic data protection for MCP through tokenization, masking, and format-preserving encryption. Rather than detecting and blocking PII, Skyflow replaces sensitive values with tokens that preserve the data format but remove the sensitive content.
+[Skyflow](https://www.skyflow.com/post/building-secure-ai-agent-architecture-mcp) provides polymorphic data protection for MCP through tokenization, masking, and format-preserving encryption. Rather than detecting and blocking PII, Skyflow replaces sensitive values with tokens that preserve the data format but remove the sensitive content.
 
 **MCP pattern:** An agent querying a customer database through MCP receives tokenized credit card numbers (e.g., `tok_4242_xxxx`) instead of real ones. If the agent needs to process a payment, the tokenized value is resolved server-side without the agent ever seeing the real number.
 
 ### Pipelock Bidirectional DLP
 
-Pipelock provides 46 built-in Data Loss Prevention patterns with bidirectional scanning — checking both tool inputs and outputs. It operates as a transparent proxy that sits between the MCP client and MCP servers, scanning all traffic.
+[Pipelock](https://github.com/luckyPipewrench/pipelock) is an open-source AI agent firewall that provides [46 built-in credential/DLP patterns](https://github.com/luckyPipewrench/pipelock) with bidirectional scanning — checking both tool inputs and outputs. It operates as a transparent proxy that sits between the MCP client and MCP servers, scanning all traffic.
 
 **DLP capabilities:**
 - API key and credential detection (AWS, GCP, Azure, GitHub tokens)
@@ -169,9 +162,9 @@ Sandboxing ensures that even if an MCP tool is compromised, the damage is contai
 
 ### Docker MCP Toolkit
 
-Docker's official MCP Toolkit provides container-based isolation for MCP servers:
+[Docker's official MCP Toolkit](https://www.docker.com/blog/introducing-docker-mcp-catalog-and-toolkit/) provides container-based isolation for MCP servers:
 
-- **300+ verified servers** — pre-built, security-reviewed MCP server images
+- **[300+ verified servers](https://github.com/docker/mcp-registry)** — pre-built, security-reviewed MCP server images
 - **Container isolation** — each MCP server runs in its own container with restricted capabilities
 - **Signed images** — cryptographic verification that server images haven't been tampered with
 - **Gateway routing** — a central gateway manages authentication and routes requests to isolated containers
@@ -201,7 +194,7 @@ Docker's official MCP Toolkit provides container-based isolation for MCP servers
 
 ### MCP.run WebAssembly Servlets
 
-MCP.run provides a hosted platform where each MCP server runs as an isolated WebAssembly servlet:
+[MCP.run](https://docs.mcp.run/blog/2024/12/18/universal-tools-for-ai/) provides a hosted platform where each MCP server runs as an isolated WebAssembly servlet:
 
 - **Per-servlet isolation** — each MCP tool runs in its own WASM sandbox
 - **No filesystem access** — servlets cannot read or write the host filesystem
@@ -210,7 +203,7 @@ MCP.run provides a hosted platform where each MCP server runs as an isolated Web
 
 ### Pipelock OS-Native Sandboxing
 
-Pipelock uses Linux kernel security features for MCP server isolation:
+[Pipelock](https://github.com/luckyPipewrench/pipelock) uses Linux kernel security features for MCP server isolation:
 
 - **Landlock** — restricts filesystem access to explicitly allowed paths
 - **seccomp** — filters system calls to only those the MCP server needs
@@ -224,7 +217,7 @@ Fine-grained permissions determine which agents can use which MCP tools with whi
 
 ### Permit.io MCP Gateway
 
-Permit.io provides an authorization gateway for MCP with multiple policy models:
+[Permit.io](https://www.permit.io/mcp-gateway) provides an authorization gateway for MCP with multiple policy models:
 
 - **RBAC** — role-based access (admin agents can use destructive tools, read-only agents cannot)
 - **ABAC** — attribute-based access (agents can only query data matching their department)
@@ -285,7 +278,7 @@ Cedar's advantage is that policies are analyzable — you can mathematically ver
 
 ### QueryPie MCP PAM
 
-QueryPie provides Privileged Access Management specifically for AI agent MCP interactions:
+[QueryPie](https://www.querypie.com/features/documentation/white-paper/15/redefining-pam-for-the-mcp-era) provides Privileged Access Management specifically for AI agent MCP interactions:
 
 - **Session recording** — full transcript of agent-to-MCP interactions
 - **Just-in-time access** — agents request elevated privileges for specific operations
@@ -298,15 +291,9 @@ Human oversight is the last line of defense when automated guardrails aren't suf
 
 ### Claude Code's Permission Model
 
-Claude Code implements a five-mode permission system that demonstrates best practices for MCP client safety:
+**Updated for accuracy (2026-08-11 audit):** [Claude Code's current documented permission model](https://code.claude.com/docs/en/permission-modes) has six modes, not five, and the model has changed substantially since this guide was first written: `default`/Manual (reads only), `acceptEdits` (auto-approves file edits and common filesystem commands), `plan` (research and propose without editing), `auto` (a separate classifier model reviews actions in the background instead of prompting for each one), `dontAsk` (auto-denies anything not pre-approved — for locked-down CI), and `bypassPermissions` (skips checks entirely, for isolated containers/VMs only). Layering `permissions.allow`/`ask`/`deny` rules on top of any mode pre-approves or blocks specific tools.
 
-1. **Ask mode** — every tool call requires explicit human approval
-2. **Auto-edit mode** — file edits are auto-approved, but other tools require approval
-3. **Full auto mode** — all tool calls with allowed tools are auto-approved
-4. **Custom allowlists** — specific tools or tool patterns are pre-approved
-5. **Permission prompt tool** — delegates approval to an external MCP tool
-
-The `--permission-prompt-tool` flag is particularly innovative. It allows Claude Code to delegate approval decisions to an external service — enabling patterns like:
+The `--permission-prompt-tool` flag this section originally highlighted did exist (an undocumented but functional flag for delegating approval decisions to an external MCP tool), but it does not appear in Claude Code's current official documentation — that pattern is now largely superseded by [`auto` mode's classifier](https://code.claude.com/docs/en/permission-modes#eliminate-prompts-with-auto-mode) and by [PreToolUse/PermissionRequest hooks](https://code.claude.com/docs/en/hooks). The general pattern this section describes — delegating approval to an external service — enabled patterns like:
 
 - **Slack approval** — tool calls post to a Slack channel for human approval
 - **Risk scoring** — an ML model scores the risk of each tool call, only prompting for high-risk ones
@@ -339,7 +326,7 @@ Comprehensive logging of MCP interactions is essential for incident response, co
 
 ### OpenTelemetry MCP Semantic Conventions
 
-The OpenTelemetry project merged MCP semantic conventions in January 2026, providing standardized tracing for MCP interactions:
+The OpenTelemetry project [merged MCP semantic conventions in release v1.39.0 (January 12, 2026)](https://github.com/open-telemetry/semantic-conventions/releases/tag/v1.39.0), providing standardized tracing for MCP interactions. (As of [v1.42.0, June 2026](https://github.com/open-telemetry/semantic-conventions/releases), the GenAI/MCP conventions were split out into a dedicated [semantic-conventions-genai](https://github.com/open-telemetry/semantic-conventions-genai) repo — the attributes below still apply, just check the newer repo for the latest schema.)
 
 **Span attributes:**
 - `mcp.method` — the MCP method called (tools/call, resources/read, etc.)
@@ -352,7 +339,7 @@ The OpenTelemetry project merged MCP semantic conventions in January 2026, provi
 
 ### MintMCP SOC 2 Certified Logging
 
-MintMCP provides audit logging that meets SOC 2 Type II certification requirements:
+[MintMCP](https://www.mintmcp.com/blog/mcp-gateways-soc2-compliant-organizations) provides audit logging that meets SOC 2 Type II certification requirements — [MintMCP itself is SOC 2 Type II audited](https://www.mintmcp.com/about) with continuous compliance monitoring:
 
 - **Immutable audit trail** — all MCP interactions logged to append-only storage
 - **Tamper detection** — cryptographic hashing detects log modifications
@@ -392,35 +379,35 @@ Research ([arXiv:2602.14798](https://arxiv.org/abs/2602.14798)) has documented a
 
 ## Real-World Incidents and Lessons
 
-Understanding past incidents is essential for building safe MCP systems. Here are documented cases and their lessons.
+Understanding past incidents is essential for building safe MCP systems. Below, two are confirmed production incidents (Asana, the mcp-remote CVE) and two are proof-of-concept attacks that security researchers built and disclosed responsibly rather than confirmed thefts from real victims — the distinction matters for how much residual risk to assume, so we've labeled each.
 
-### GitHub MCP Private Repository Exfiltration
+### GitHub MCP Private Repository Leak (researcher demo)
 
-**What happened:** An attacker created a GitHub issue with hidden prompt injection instructions embedded in the text. When an AI agent with GitHub MCP access processed the issue, the injected instructions caused it to read private repository contents and post them to an attacker-controlled endpoint.
+**What happened:** Researchers at Invariant Labs [built a demonstration attack](https://invariantlabs.ai/blog/mcp-github-vulnerability) using their own public test repository. They created a GitHub issue with hidden prompt injection instructions embedded in the text; when an AI agent (Claude 4 Opus) with GitHub MCP access processed the issue, the injected instructions caused it to pull private repository details (including personal information) and open a pull request containing that data in the public repo — the PR itself, not an external server, was the leak vector, since anyone could view the public repo.
 
 **Lesson:** MCP servers that return user-generated content (issues, comments, tickets) are prompt injection vectors. All external content returned by MCP tools should be treated as untrusted and sandboxed from the agent's instruction-following context.
 
-### Supabase/Cursor Data Exfiltration
+### Supabase/Cursor Data Exfiltration (researcher demo)
 
-**What happened:** A Supabase support ticket contained injected instructions. When a Cursor IDE user with Supabase MCP processed the ticket, the agent followed the injected instructions and exfiltrated data.
+**What happened:** Researchers at [General Analysis demonstrated](https://generalanalysis.com/blog/supabase-mcp-blog) a "lethal trifecta" attack: a Supabase support ticket containing injected instructions, combined with a Cursor IDE agent running Supabase MCP with a `service_role` key that bypasses row-level security. When the agent processed the ticket, it followed the injected instructions to select data from private tables and post it back into the (customer-visible) support thread. [Supabase published its own response describing defense-in-depth mitigations](https://supabase.com/blog/defense-in-depth-mcp).
 
-**Lesson:** Even "trusted" data sources (your own support system) can contain injection attacks if they accept user input. Defense-in-depth requires filtering tool outputs, not just inputs.
+**Lesson:** Even "trusted" data sources (your own support system) can contain injection attacks if they accept user input. Defense-in-depth requires filtering tool outputs, not just inputs, and scoping MCP database credentials below admin/service-role privilege.
 
-### WhatsApp MCP Message Theft
+### WhatsApp MCP Message Theft (researcher demo)
 
-**What happened:** A malicious MCP tool, once granted WhatsApp access, exfiltrated complete message histories. The tool description appeared benign, but the actual implementation included data exfiltration code.
+**What happened:** Invariant Labs [researchers demonstrated](https://invariantlabs.ai/blog/whatsapp-mcp-exploited) two proof-of-concept attacks against agents connected to a WhatsApp MCP server: a malicious MCP tool with a "sleeper" description that activated exfiltration behavior after initial trust was established, and a direct prompt-injection message that hijacked the agent into leaking contacts and chat history. This was disclosed research, not a reported theft from real WhatsApp users.
 
 **Lesson:** Tool descriptions cannot be trusted for security decisions (as the MCP spec notes). Tools need sandboxing, network restrictions, and behavioral monitoring — not just description review.
 
-### Asana Cross-Tenant Leak
+### Asana Cross-Tenant Leak (confirmed production incident)
 
-**What happened:** [The Asana MCP server shared state between tenant sessions](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/), allowing one user's agent to access another user's project data. Approximately 1,000 customers were affected between June 5 and June 17, 2025.
+**What happened:** [A logic flaw in Asana's MCP server (launched May 1, 2025) shared data across tenant sessions](https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/), allowing one organization's agent to see data — task info, project metadata, comments, files — accessible to another organization's users. Asana discovered the flaw on June 4, 2025 and immediately took the MCP server offline; it restored service on June 17, 2025. Approximately 1,000 customers were affected, with exposure scoped to what each affected user's own permissions allowed.
 
 **Lesson:** MCP servers that serve multiple tenants must implement strict session isolation. Shared caches, connection pools, and in-memory state are all cross-tenant leak vectors.
 
-### mcp-remote RCE (CVE-2025-6514, CVSS 9.6)
+### mcp-remote RCE ([CVE-2025-6514](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/), CVSS 9.6)
 
-**What happened:** The `mcp-remote` package (437,000+ downloads), used to connect MCP clients to remote servers, had a remote code execution vulnerability. An attacker could craft a malicious MCP server that executed arbitrary code on the client machine when connected.
+**What happened:** The `mcp-remote` package ([437,000+ downloads](https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html)), used to connect MCP clients to remote servers, had an OS command-injection/remote code execution vulnerability (versions 0.0.5–0.1.15, fixed in 0.1.16). During the OAuth handshake, a malicious MCP server could return a crafted `authorization_endpoint` URL that got executed as a shell command on the client machine when connected.
 
 **Lesson:** MCP clients are also attack surfaces, not just servers. The protocol allows bidirectional capability exchange — a malicious server can attack the client through sampling requests, resource subscriptions, or malformed responses.
 
@@ -428,7 +415,7 @@ Understanding past incidents is essential for building safe MCP systems. Here ar
 
 Six major frameworks now address MCP security. Each approaches the problem from a different angle.
 
-### [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (March 2026)
+### [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (draft, beta/pilot testing as of mid-2026)
 
 The most MCP-specific framework, covering:
 1. Tool poisoning
@@ -442,7 +429,7 @@ The most MCP-specific framework, covering:
 9. Improper error handling
 10. Unsafe MCP marketplace practices
 
-### [OWASP Agentic Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) (December 2025)
+### [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/2025/12/09/owasp-genai-security-project-releases-top-10-risks-and-mitigations-for-agentic-ai-security/) (December 2025)
 
 Broader agentic AI security, applicable to MCP:
 - Excessive agency (agents with too many tools)
@@ -450,11 +437,11 @@ Broader agentic AI security, applicable to MCP:
 - Insecure output handling (trusting tool responses)
 - Supply chain attacks (malicious MCP servers)
 
-### [CoSAI MCP Security Analysis](https://www.coalitionforsecureai.org/)
+### [CoSAI MCP Security Analysis](https://www.coalitionforsecureai.org/securing-the-ai-agent-revolution-a-practical-guide-to-mcp-security/) (January 2026)
 
 The Coalition for Secure AI identified approximately 40 MCP-specific threats across 12 categories, with a focus on the protocol's unique attack surface (stateful sessions, bidirectional communication, tool discovery).
 
-### CSA Agentic Trust Framework (February 2026)
+### [CSA Agentic Trust Framework](https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents) (February 2026)
 
 The Cloud Security Alliance's framework applies Zero Trust principles to AI agents:
 - **Never trust an agent by default** — all agent actions require verification
@@ -466,9 +453,9 @@ The Cloud Security Alliance's framework applies Zero Trust principles to AI agen
 
 The earliest MCP-specific threat taxonomy, identifying 25 attack vectors with risk scores and mitigations. Particularly valuable for its practical attack demonstrations.
 
-### CSAI Foundation (March 2026)
+### [CSAI Foundation](https://cloudsecurityalliance.org/press-releases/2026/03/23/csa-securing-the-agentic-control-plane) (March 2026)
 
-Focused on industry-wide AI safety standards, with MCP-specific guidance on tool safety certification and trusted registry requirements.
+A 501(c)(3) non-profit launched by the Cloud Security Alliance, focused on industry-wide AI safety standards, with MCP-specific guidance on tool safety certification and trusted registry requirements.
 
 ## Building a Safety Architecture
 
@@ -486,7 +473,7 @@ Combining these tools and patterns into a coherent safety architecture requires 
 
 ### Layer 3: Input Validation
 - Guardrails AI or NeMo Guardrails on tool inputs
-- Prompt injection detection (OpenGuardrails, Javelin)
+- Prompt injection detection (Javelin, or a scanner benchmarked against the OpenGuardrails standard)
 - Schema validation against tool input specifications
 - PII detection on inputs (Presidio, Pipelock)
 
@@ -520,11 +507,11 @@ Combining these tools and patterns into a coherent safety architecture requires 
 |------|----------|-------|-------------|
 | **Guardrails AI** | Guardrail framework | 6,600+ | Validator Hub ecosystem |
 | **NeMo Guardrails** | Guardrail framework | 5,900+ | Colang safety language |
-| **OpenGuardrails** | Agent security | 322+ | MCP tool poisoning scanner |
-| **Javelin** | MCP guardrails | — | Guardrails as MCP tool |
-| **mcp-presidio** | PII detection | — | 25+ PII entity types |
-| **Skyflow** | Data privacy | — | Tokenization/masking |
-| **Pipelock** | DLP scanning | — | 46 patterns, OS sandboxing |
+| **[OpenGuardrails](https://openguardrails.com/)** | Vendor benchmark | ~22 | Vendor-neutral protocol/benchmark (not a scanner product) |
+| **[Javelin](https://docs.getjavelin.io/javelin-core/mcp-usage-guides)** | MCP guardrails | — | Guardrails as MCP tool |
+| **[mcp-presidio](https://microsoft.github.io/presidio/supported_entities/)** | PII detection | — | 47+ PII entity types (Presidio) |
+| **[Skyflow](https://www.skyflow.com/post/building-secure-ai-agent-architecture-mcp)** | Data privacy | — | Tokenization/masking |
+| **[Pipelock](https://github.com/luckyPipewrench/pipelock)** | DLP scanning | — | 46 credential patterns, OS sandboxing |
 | **Docker MCP Toolkit** | Container isolation | — | 300+ verified servers |
 | **ToolHive** | K8s MCP operator | 1,700+ | MCPServer CRD, policies |
 | **Wassette** | WASM sandbox | 867+ | Deny-by-default |

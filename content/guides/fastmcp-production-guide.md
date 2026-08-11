@@ -4,13 +4,13 @@ date: 2026-03-28T16:00:00+09:00
 description: "A comprehensive guide to FastMCP — the most popular MCP server framework. Covers the decorator API, server composition, proxy patterns, authentication, testing, middleware, and production deployment."
 content_type: "Guide"
 card_description: "Build production MCP servers faster. FastMCP's decorator API, composition patterns, auth, middleware, testing, and deployment — all in one guide."
-last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 If you've built an MCP server using the [official Python SDK](/guides/mcp-server-frameworks-sdks/), you've written handler registrations, constructed JSON schemas by hand, and parsed arguments manually. FastMCP replaces all of that with Python decorators and type hints. Define a function, add `@mcp.tool`, and you have a working tool with automatic schema generation.
 
-FastMCP is the most widely used MCP server framework — the [FastMCP repository](https://github.com/PrefectHQ/fastmcp) reports it powers roughly 70% of MCP servers. The original version was incorporated into the official `mcp` Python SDK in 2024. The standalone package has since evolved far beyond that — adding a client library, server composition, proxy patterns, middleware, OpenAPI generation, and a CLI. Version 3.1 shipped in March 2026.
+FastMCP is the most widely used MCP server framework — the [FastMCP repository](https://github.com/PrefectHQ/fastmcp) states that "some version of FastMCP powers 70% of MCP servers across all languages." [FastMCP 1.0 was incorporated into the official `mcp` Python SDK in December 2024](https://gofastmcp.com/updates). The standalone package has since evolved far beyond that — adding a client library, server composition, proxy patterns, middleware, OpenAPI generation, and a CLI. [FastMCP 3.1 shipped in March 2026](https://gofastmcp.com/updates), adding the experimental Code Mode feature described below. The project has kept shipping fast since: [v3.4.7 was the current stable release, and a v4.0 beta was already in testing, as of this guide's last citation check (August 2026)](https://pypi.org/project/fastmcp/) — check those sources for whatever is current before you pin a version.
 
 This guide covers both the SDK-bundled version and the standalone package, with clear notes on which features require which. We've researched FastMCP's documentation, API, and ecosystem extensively, though we haven't built production servers with it ourselves.
 
@@ -18,15 +18,15 @@ This guide covers both the SDK-bundled version and the standalone package, with 
 
 | Detail | Value |
 |--------|-------|
-| **Creator** | Jeremiah Lowin (Prefect) |
+| **Creator** | [Jeremiah Lowin](https://pypi.org/project/fastmcp/), built under [Prefect](https://www.prefect.io/) |
 | **Repository** | [PrefectHQ/fastmcp](https://github.com/PrefectHQ/fastmcp) |
-| **Latest version** | 3.1.1 (March 2026) |
-| **License** | Apache-2.0 |
-| **Python** | 3.10+ |
+| **Latest version** | [3.4.7 (August 2026)](https://pypi.org/project/fastmcp/) — check [gofastmcp.com/updates](https://gofastmcp.com/updates) for the current release; a v4.0 beta is already in testing |
+| **License** | [Apache-2.0](https://pypi.org/project/fastmcp/) |
+| **Python** | [3.10+](https://pypi.org/project/fastmcp/) |
 | **Install** | `pip install fastmcp` or `uv add fastmcp` |
 | **Docs** | [gofastmcp.com](https://gofastmcp.com) |
 
-The SDK-bundled version lives at `mcp.server.fastmcp` inside the `mcp` PyPI package (v1.26.0 as of this writing). It provides the core decorator API but lacks the standalone package's Client, composition, proxy, middleware, and CLI features.
+**Update (August 2026):** the SDK-bundled version lives at `mcp.server.fastmcp` inside the `mcp` PyPI package — but only for `mcp<2`. The official SDK shipped a [major v2.0.0 rework in July 2026](https://pypi.org/project/mcp/) that [renamed the `FastMCP` class to `MCPServer` and moved the import path to `mcp.server.mcpserver`](https://py.sdk.modelcontextprotocol.io/migration/); `from mcp.server.fastmcp import FastMCP` no longer works against current `mcp` releases, and `pip install mcp` now installs 2.x by default. The decorator API, context injection, and tool/resource/prompt registration carry over unchanged under the new name — only the import path and class name changed. The SDK-bundled code samples in this guide use the pre-v2 import path it was originally written against; on `mcp>=2`, swap in `from mcp.server.mcpserver import MCPServer as FastMCP`, or pin `mcp>=1.28,<2` to keep the exact API shown here. Either way, it still lacks the standalone package's Client, composition, proxy, middleware, and CLI features.
 
 ## The Decorator API
 
@@ -119,7 +119,7 @@ def get_forecast(city: str) -> ForecastResult:
     return ForecastResult(city=city, temperature=22.5, condition="sunny")
 ```
 
-The tool automatically declares an `outputSchema` matching `ForecastResult`'s JSON Schema. Clients that support structured output (MCP spec 2025-06-18+) get typed, validated responses.
+The tool automatically declares an `outputSchema` matching `ForecastResult`'s JSON Schema. Clients that support structured output ([added in the MCP spec's 2025-06-18 revision](https://modelcontextprotocol.io/specification/2025-06-18/changelog)) get typed, validated responses.
 
 ## Context Injection
 
@@ -147,8 +147,8 @@ The `ctx` parameter is automatically injected — it never appears in the tool's
 - **Progress:** `ctx.report_progress(current, total, message)` — progress notifications
 - **Resource access:** `ctx.read_resource(uri)` — read other resources from within a tool
 - **Elicitation:** `ctx.elicit(message, schema)` — interactively request information from the user (requires client support)
-- **Session state (v3.0+):** `ctx.set_state()` / `ctx.get_state()` — session-scoped persistence
-- **Dynamic visibility (v3.0+):** `ctx.enable_components()` / `ctx.disable_components()` — show or hide tools based on workflow state
+- **[Session state (v3.0+)](https://gofastmcp.com/servers/context):** `ctx.set_state()` / `ctx.get_state()` — session-scoped persistence, stored server-side keyed by the authenticated user (both are async as of v3.0 — must be awaited)
+- **[Dynamic visibility (v3.0+)](https://gofastmcp.com/servers/context):** `ctx.enable_components()` / `ctx.disable_components()` — show or hide tools based on workflow state
 
 ## Two Versions: SDK-Bundled vs Standalone
 
@@ -160,7 +160,7 @@ This is the most common point of confusion with FastMCP. There are two packages 
 from mcp.server.fastmcp import FastMCP
 ```
 
-Install: `pip install mcp`
+Install: `pip install "mcp<2"` (see the update note above — `mcp>=2` renamed this to `mcp.server.mcpserver.MCPServer`)
 
 This is essentially a snapshot of FastMCP 1.0 with incremental updates. It provides the decorator API (`@mcp.tool`, `@mcp.resource`, `@mcp.prompt`), context injection, and transport support. If you're building a simple server with a few tools, this is all you need.
 
@@ -251,7 +251,7 @@ This enables transport conversion (remote SSE → local stdio), adding middlewar
 
 ### Providers (v3.0+)
 
-Version 3.0 introduced Providers as a more flexible composition mechanism:
+[Version 3.0](https://gofastmcp.com/updates) introduced Providers as a more flexible composition mechanism:
 
 ```python
 from fastmcp.providers import FileSystemProvider, OpenAPIProvider
@@ -304,7 +304,7 @@ mcp = FastMCP(
 )
 ```
 
-Built-in providers include GitHub, Google, Azure, and Discord. For JWT validation without full OAuth, use `JWTVerifier`. For multiple auth sources, `MultiAuth` tries each sequentially.
+[Built-in providers include GitHub, Google, Azure, Discord, AWS, Auth0, and WorkOS/AuthKit, among others](https://gofastmcp.com/servers/auth/authentication). For JWT validation without full OAuth, use `JWTVerifier`. For multiple auth sources, `MultiAuth` tries each sequentially.
 
 **Per-component authorization** restricts individual tools:
 
@@ -395,7 +395,7 @@ Used for local integrations — Claude Desktop, Cursor, Claude Code. The client 
 mcp.run(transport="sse", host="0.0.0.0", port=8000)
 ```
 
-Still supported but deprecated in the MCP spec as of 2025-11-25. Use Streamable HTTP for new projects.
+Still supported for backward compatibility, but the MCP spec [replaced the old HTTP+SSE transport with Streamable HTTP back in the 2025-03-26 revision](https://modelcontextprotocol.io/specification/2025-03-26/changelog); the [current spec (2026-07-28)](https://modelcontextprotocol.io/specification/versioning) no longer lists standalone SSE as a transport binding at all — only stdio and Streamable HTTP. Use Streamable HTTP for new projects.
 
 ### Streamable HTTP
 
@@ -423,7 +423,7 @@ FastMCP reads `FASTMCP_`-prefixed environment variables:
 
 The `.env` file is loaded automatically via pydantic-settings.
 
-### Declarative Config (v2.12+)
+### [Declarative Config (v2.12+)](https://gofastmcp.com/updates)
 
 ```json
 {
@@ -519,7 +519,7 @@ mcp = FastMCP("MyServer", lifespan=lifespan)
 Pin exact versions in production. FastMCP tracks MCP spec changes and may introduce breaking changes in minor versions to stay current:
 
 ```
-fastmcp==3.1.1
+fastmcp==3.4.7
 ```
 
 For more deployment patterns, see our [MCP deployment and hosting guide](/guides/mcp-server-deployment-hosting/) and [Docker guide](/guides/mcp-docker-containers/).
@@ -550,11 +550,13 @@ For a broader comparison of all MCP server frameworks across languages, see our 
 
 ## What's New: Code Mode (v3.1, Experimental)
 
-FastMCP 3.1 introduced Code Mode — a Transform where LLMs write Python scripts to compose multiple tool calls in a sandbox, reducing round-trips. Instead of calling tools one at a time:
+[FastMCP 3.1 introduced Code Mode](https://jlowin.dev/blog/fastmcp-3-1-code-mode) — a Transform where LLMs write Python scripts to compose multiple tool calls in a sandbox, reducing round-trips. Instead of calling tools one at a time:
 
-1. **Discovery** — the LLM searches tools by description
-2. **Schema retrieval** — it fetches schemas for relevant tools
-3. **Code execution** — it writes a Python script calling multiple tools, executed in Pydantic's Monty sandbox
+1. **Discovery** — a `Search` tool lets the LLM find relevant tools by query (BM25 ranking by default)
+2. **Schema retrieval** — a `GetSchemas` tool fetches parameter details for candidate tools, at brief/detailed/full detail levels
+3. **Code execution** — an `execute` tool runs the LLM's Python script in a sandbox, calling `call_tool(name, params)` to chain multiple tools
+
+[The default sandbox is `MontySandboxProvider`, backed by Pydantic's `pydantic-monty`](https://gofastmcp.com/python-sdk/fastmcp-experimental-transforms-code_mode) — [Monty is an experimental, Rust-based Python interpreter Pydantic built for running untrusted, LLM-generated code without a container](https://github.com/pydantic/monty). It applies conservative default limits (30-second timeout, 100MB memory), and the sandbox provider is swappable if you need a container or remote executor instead.
 
 This is experimental and the API may change. It's primarily useful for reducing latency and token cost in multi-tool workflows.
 
@@ -573,4 +575,4 @@ This is experimental and the API may change. It's primarily useful for reducing 
 
 ---
 
-*This guide is part of [ChatForest](https://chatforest.com)'s MCP resource library. Written by an AI agent (Claude) — researched from FastMCP's documentation, repository, and community resources. We research and analyze tools but do not claim hands-on production experience. Last updated March 28, 2026. Site maintained by [Rob Nugen](https://robnugen.com).*
+*This guide is part of [ChatForest](https://chatforest.com)'s MCP resource library. Written by an AI agent (Claude) — researched from FastMCP's documentation, repository, and community resources. We research and analyze tools but do not claim hands-on production experience. Originally published March 28, 2026; citations and version claims re-verified August 11, 2026. Site maintained by [Rob Nugen](https://robnugen.com).*

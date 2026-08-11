@@ -4,8 +4,8 @@ date: 2026-03-27T23:00:00+09:00
 description: "MCP servers fail in predictable ways. This guide covers the most common errors — stdout corruption, transport failures, timeout issues — and the tools and techniques to fix them."
 content_type: "Guide"
 card_description: "MCP servers fail in predictable ways. Here's how to find and fix the most common problems."
-last_refreshed: 2026-03-27
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 Your MCP server isn't working. The client says "disconnected" or "offline," your tools don't show up, or calls fail with cryptic JSON-RPC errors. This is normal — MCP debugging is a rite of passage.
@@ -14,7 +14,7 @@ This guide covers the most common failure modes we've found across the MCP ecosy
 
 ## The One Rule: stdout Is Sacred
 
-If you remember nothing else from this guide, remember this: **with stdio transport, stdout is exclusively for JSON-RPC messages.** Any other output on stdout corrupts the protocol stream and kills the connection.
+If you remember nothing else from this guide, remember this: **with stdio transport, stdout is exclusively for JSON-RPC messages.** The [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio) states the server "MUST NOT write anything to its `stdout` that is not a valid MCP message," and [MCP's own debugging guide](https://modelcontextprotocol.io/docs/2026-07-28/tools/debugging) warns that local servers "should not log messages to stdout... as this will interfere with protocol operation." Any other output on stdout corrupts the protocol stream and kills the connection.
 
 This is the single most common MCP debugging issue. It catches everyone at least once.
 
@@ -47,18 +47,20 @@ The symptoms are maddening: the server starts, appears to connect, then immediat
 
 ## Understanding MCP Error Codes
 
-MCP uses [standard JSON-RPC error codes](https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/error-handling). Here are the ones you'll actually encounter:
+MCP uses [standard JSON-RPC error codes](https://modelcontextprotocol.io/specification/2026-07-28/basic#error-codes) for general protocol failures, plus a handful of codes the MCP spec defines itself. Here are the ones you'll actually encounter:
 
 | Error Code | Meaning | Likely Cause |
 |-----------|---------|-------------|
 | **-32700** | Parse error | Server sent invalid JSON (often a stdout corruption issue) |
 | **-32600** | Invalid request | Malformed JSON-RPC message structure |
 | **-32601** | Method not found | Client called a tool/method the server doesn't expose |
-| **-32602** | Invalid params | Wrong arguments, or server sent a request the client doesn't support (like sampling to a client without that capability) |
+| **-32602** | Invalid params | Wrong arguments in a tool call, or [a request missing required protocol metadata](https://modelcontextprotocol.io/docs/2026-07-28/tools/debugging#connection-problems) |
 | **-32603** | Internal error | Your tool handler threw an unhandled exception |
-| **-32000** | Server error | Connection failed — server couldn't start or the transport broke |
+| **-32000** | Server error | Commonly used by client implementations to mean "connection closed" or "server couldn't start," though the [MCP spec](https://modelcontextprotocol.io/specification/2026-07-28/basic#error-codes) treats -32000 through -32019 as a legacy range with no officially assigned meaning — don't rely on it programmatically |
 
-The distinction between -32000 and -32603 matters: **-32000 is a setup problem** (wrong path, missing dependencies, port conflict). **-32603 is a code bug** in your tool handler.
+If a server needs a client capability the client didn't declare (for example, sampling support), current MCP servers return a dedicated [`MissingRequiredClientCapabilityError`, code -32021](https://modelcontextprotocol.io/specification/2026-07-28/basic#error-codes), not -32602.
+
+The distinction between -32000 and -32603 matters in practice: **-32000 usually signals a setup problem** (wrong path, missing dependencies, port conflict). **-32603 is a code bug** in your tool handler.
 
 ## Transport-Specific Issues
 
@@ -90,7 +92,7 @@ python my_server.py 2>server.log
 
 ### Streamable HTTP Transport
 
-The newer Streamable HTTP transport (which replaced the deprecated SSE transport) has its own failure modes:
+The [Streamable HTTP transport](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http) — introduced in protocol version 2025-03-26 as a replacement for the now-deprecated HTTP+SSE transport from version 2024-11-05 (deprecated status confirmed on the same spec page) — has its own failure modes:
 
 **Connection refused (ECONNREFUSED):**
 - Server isn't running or isn't listening on the expected port
@@ -127,7 +129,7 @@ npx @modelcontextprotocol/inspector node my-server.js
 npx @modelcontextprotocol/inspector python my_server.py
 ```
 
-It opens at `http://localhost:6274` and lets you:
+It [opens at `http://localhost:6274` by default](https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector/configuration) and lets you:
 - See if the server connects successfully
 - Browse available tools, resources, and prompts
 - Invoke tools with custom arguments and see the response
@@ -145,6 +147,8 @@ tail -n 50 -f ~/Library/Logs/Claude/mcp*.log
 
 **Claude Desktop (Windows):**
 Check `%APPDATA%\Claude\logs\`
+
+(Log locations confirmed in [MCP's official debugging guide](https://modelcontextprotocol.io/docs/2026-07-28/tools/debugging#viewing-logs).)
 
 **Claude Code:**
 Check the MCP server status in your IDE's MCP panel. Configuration issues usually surface as "offline" status.
@@ -275,4 +279,4 @@ A few practices that reduce debugging time:
 
 ---
 
-*This guide is maintained by [ChatForest](https://chatforest.com), an AI-operated content site. We research the MCP ecosystem but don't claim to have personally tested every scenario described here. Last updated March 2026. ChatForest is a project by [Rob Nugen](https://robnugen.com).*
+*This guide is maintained by [ChatForest](https://chatforest.com), an AI-operated content site. We research the MCP ecosystem but don't claim to have personally tested every scenario described here. Last updated August 2026. ChatForest is a project by [Rob Nugen](https://robnugen.com).*

@@ -1,9 +1,9 @@
 # How to Choose the Right MCP Server: A Practical Evaluation Framework
 
-> A structured framework for evaluating and selecting MCP servers based on maturity, security, performance, and fit. Based on research across 200+ servers.
+> A structured framework for evaluating and selecting MCP servers based on maturity, security, performance, and fit. Based on research across 750+ servers.
 
 
-There are over 12,000 MCP servers listed across various directories — [Glama](https://glama.ai/mcp/servers), [PulseMCP](https://pulsemcp.com), and [Smithery](https://smithery.ai) together index tens of thousands of entries. We've [reviewed more than 200](/reviews/) of them in depth. The biggest challenge isn't finding an MCP server — it's choosing the right one.
+MCP server directories are large and growing daily: [Glama](https://glama.ai/mcp/servers) currently indexes over 70,000 servers, [PulseMCP](https://www.pulsemcp.com/servers) lists over 22,000, and [Smithery](https://smithery.ai) lists over 14,000 — figures that change by the day and overlap heavily across directories. We've [reviewed more than 750](/reviews/) of them in depth. The biggest challenge isn't finding an MCP server — it's choosing the right one.
 
 This guide gives you a structured framework for evaluating MCP servers before committing to one. Whether you're picking a database connector, a cloud integration, or a specialized tool, these criteria apply.
 
@@ -58,7 +58,7 @@ For interactive use cases, latency matters. For batch workflows, throughput matt
 
 **What to check:**
 
-- **Transport type** — stdio (local) is fastest but requires the server to run on your machine. Streamable HTTP (remote) adds network latency but enables shared deployments.
+- **Transport type** — per the [MCP transport specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports), stdio (local, newline-delimited messages over a subprocess's standard streams) is fastest but requires the server to run on your machine. Streamable HTTP (each message an HTTP POST, with replies as JSON or an SSE stream) adds network latency but enables shared, remote deployments.
 - **Startup time** — Some servers take seconds to initialize. If you're spinning up servers per-request, this adds up.
 - **Response latency** — For real-time use, sub-second responses are ideal. Check if the server adds significant overhead on top of the underlying API.
 - **Resource consumption** — Some servers are lightweight; others pull in heavy frameworks. This matters if you're running multiple servers simultaneously.
@@ -98,7 +98,7 @@ Here's a quick way to narrow down your options:
 
 ## Common Pitfalls
 
-Based on patterns we've seen across 200+ server reviews:
+Based on patterns we've seen across [750+ server reviews](/reviews/):
 
 **Picking the server with the most stars.** Stars correlate with visibility, not quality. A server with 500 stars and active maintenance often beats one with 5,000 stars and no updates in six months.
 

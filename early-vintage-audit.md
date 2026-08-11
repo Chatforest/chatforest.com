@@ -63,7 +63,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 46/130 done (2026-08-09 through 2026-08-11 runs).**
+**Status: 56/130 done (2026-08-09 through 2026-08-11 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -163,16 +163,16 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [Building AI-Powered CLIs with MCP: From Terminal Tools to Autonomous Agents](content/guides/building-ai-powered-clis-mcp.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [Building Enterprise MCP Infrastructure: Governance, Access Control, and Audit at Scale](content/guides/mcp-enterprise-infrastructure.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [Building MCP Clients: A Practical Guide to Host Applications](content/guides/building-mcp-clients.md) — re-audited 2026-08-11
-- [ ] 2026-07-24 — [Connecting AI Agents to Databases with MCP: Patterns, Security, and Production Best Practices](content/guides/mcp-database-connection-patterns.md)
-- [ ] 2026-07-24 — [Debugging MCP Servers: A Practical Troubleshooting Guide](content/guides/debugging-mcp-servers.md)
-- [ ] 2026-07-24 — [Event-Driven MCP Patterns: Notifications, Streaming, and Real-Time AI Agents](content/guides/event-driven-mcp-patterns.md)
-- [ ] 2026-07-24 — [FastMCP: The High-Level Framework for Building Production MCP Servers](content/guides/fastmcp-production-guide.md)
-- [ ] 2026-07-24 — [How to Build an AI Agent: Architecture, Tools, and Patterns for 2026](content/guides/how-to-build-ai-agent.md)
-- [ ] 2026-07-24 — [How to Choose the Right MCP Server: A Practical Evaluation Framework](content/guides/how-to-choose-mcp-servers.md)
-- [ ] 2026-07-24 — [How to Convert Your REST API to an MCP Server](content/guides/rest-api-to-mcp-server.md)
-- [ ] 2026-07-24 — [MCP + AI Agent Frameworks: LangChain, CrewAI, OpenAI Agents SDK & More](content/guides/mcp-agent-framework-integrations.md)
-- [ ] 2026-07-24 — [MCP 2026 Roadmap: What's Coming in the Next Spec Release](content/guides/mcp-2026-roadmap-whats-coming.md)
-- [ ] 2026-07-24 — [MCP AI Safety: Guardrails, Content Filtering, Sandboxing, and Responsible AI Patterns](content/guides/mcp-ai-safety-guardrails.md)
+- [x] 2026-07-24 — [Connecting AI Agents to Databases with MCP: Patterns, Security, and Production Best Practices](content/guides/mcp-database-connection-patterns.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [Debugging MCP Servers: A Practical Troubleshooting Guide](content/guides/debugging-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [Event-Driven MCP Patterns: Notifications, Streaming, and Real-Time AI Agents](content/guides/event-driven-mcp-patterns.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [FastMCP: The High-Level Framework for Building Production MCP Servers](content/guides/fastmcp-production-guide.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [How to Build an AI Agent: Architecture, Tools, and Patterns for 2026](content/guides/how-to-build-ai-agent.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [How to Choose the Right MCP Server: A Practical Evaluation Framework](content/guides/how-to-choose-mcp-servers.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [How to Convert Your REST API to an MCP Server](content/guides/rest-api-to-mcp-server.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP + AI Agent Frameworks: LangChain, CrewAI, OpenAI Agents SDK & More](content/guides/mcp-agent-framework-integrations.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP 2026 Roadmap: What's Coming in the Next Spec Release](content/guides/mcp-2026-roadmap-whats-coming.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [MCP AI Safety: Guardrails, Content Filtering, Sandboxing, and Responsible AI Patterns](content/guides/mcp-ai-safety-guardrails.md) — re-audited 2026-08-11
 - [ ] 2026-07-24 — [MCP Async Tasks: Building Long-Running AI Agent Operations That Don't Time Out](content/guides/mcp-async-tasks-long-running.md)
 - [ ] 2026-07-24 — [MCP Attack Vectors: Tool Poisoning, Prompt Injection, and How to Defend Against Them](content/guides/mcp-attack-vectors-defense.md)
 - [ ] 2026-07-24 — [MCP Authentication & OAuth 2.1: Authorization Flows, Token Management, and Enterprise Security Patterns](content/guides/mcp-authentication-oauth.md)

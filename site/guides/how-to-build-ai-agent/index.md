@@ -73,7 +73,7 @@ An agent without tools is just a chatbot that talks to itself. Tools are what gi
 
 ### The Model Context Protocol (MCP)
 
-[MCP](/guides/what-is-mcp/) has become the standard protocol for connecting AI agents to tools. [As of March 2026, the official SDKs see over 97 million monthly downloads](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/). Every major AI coding tool supports it.
+[MCP](/guides/what-is-mcp/) has become the standard protocol for connecting AI agents to tools. [As of July 2026, the official Tier 1 SDKs (Python and TypeScript) see close to half a billion downloads a month, with each SDK individually surpassing 1 billion total downloads](https://blog.modelcontextprotocol.io/posts/2026-07-28/). Every major AI coding tool supports it.
 
 MCP provides:
 - **A standard interface** — tools expose their capabilities via JSON-RPC, any compatible client can discover and call them
@@ -110,7 +110,7 @@ For a deep dive, see our [MCP tool design patterns](/guides/mcp-tool-design-patt
 
 ## Memory: How Agents Remember
 
-Context windows are large but not infinite. Most models give you 128K-200K tokens, but an agent that runs for hours will exceed its context window regardless. Memory solves this.
+Context windows are large but not infinite. Frontier models have converged on roughly [1 million tokens](https://platform.claude.com/docs/en/about-claude/models/overview) (some smaller/faster models, like Claude Haiku 4.5, stay at 200K), but an agent that runs for hours will exceed even a 1M-token window regardless. Memory solves this.
 
 ### Short-Term Memory (Context Window)
 
@@ -137,10 +137,10 @@ Several frameworks have emerged to handle agent memory:
 
 | Framework | Approach | Stars | Best for |
 |-----------|----------|-------|----------|
-| Mem0 | Managed memory layer with auto-extraction | ~48K | Drop-in memory for any agent |
-| Zep/Graphiti | Knowledge graph-based temporal memory | ~3K | Relationship-heavy domains |
-| Letta (MemGPT) | Self-editing memory with tiered storage | ~14K | Long-running conversational agents |
-| Cognee | Graph + vector hybrid | ~2K | RAG pipelines with structured data |
+| [Mem0](https://github.com/mem0ai/mem0) | Managed memory layer with auto-extraction | ~63K | Drop-in memory for any agent |
+| [Zep/Graphiti](https://github.com/getzep/graphiti) | Knowledge graph-based temporal memory | ~30K | Relationship-heavy domains |
+| [Letta (MemGPT)](https://github.com/letta-ai/letta) | Self-editing memory with tiered storage | ~24K | Long-running conversational agents |
+| [Cognee](https://github.com/topoteretes/cognee) | Graph + vector hybrid | ~30K | RAG pipelines with structured data |
 
 ### The Practical Advice
 
@@ -152,7 +152,7 @@ You don't need a framework to build an agent — a loop that calls an LLM API an
 
 ### The Major Frameworks in 2026
 
-**Claude Agent SDK** (Anthropic) — Minimal, Python-based. Provides the agentic loop, tool use, guardrails, and handoffs between agents. Designed for Claude models. Best when you want close control over agent behavior without framework abstractions getting in the way.
+**[Claude Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview)** (Anthropic) — Minimal, available for both Python and TypeScript. Provides the agentic loop, tool use, guardrails, and handoffs between agents. Designed for Claude models. Best when you want close control over agent behavior without framework abstractions getting in the way.
 
 **LangGraph** (LangChain) — Graph-based agent orchestration. Agents are defined as state machines with nodes (actions) and edges (transitions). The most flexible option for complex, multi-step workflows. Steeper learning curve.
 
@@ -310,7 +310,7 @@ Vague tool descriptions, tools that do too many things, tools that return unstru
 
 ### 3. Ignoring Cost
 
-A single agent task can cost $0.50-$5.00 in API calls. At scale, that adds up fast. Profile your token usage early and optimize aggressively. See [MCP cost optimization](/guides/mcp-cost-optimization/).
+Agent tasks make many sequential LLM calls and resend growing conversation history with each turn, so costs scale faster than a single-prompt chatbot. At scale, that adds up fast. Profile your token usage early and optimize aggressively. See [MCP cost optimization](/guides/mcp-cost-optimization/).
 
 ### 4. No Guardrails
 
@@ -347,6 +347,6 @@ If you're building your first agent:
 The technology is ready. The protocols are standardized. The hard part isn't building an agent that works once — it's building one that works reliably, safely, and affordably at scale.
 
 **Further Reading:**
-- [Claude Managed Agents: Dreaming, Outcomes, and Multi-Agent Orchestration](/guides/claude-managed-agents-dreaming-outcomes-multiagent/) — Anthropic's fully managed cloud platform for production agents, with built-in memory consolidation (Dreaming), goal-directed self-evaluation (Outcomes), and multi-agent orchestration — eliminates months of infrastructure engineering
+- [Claude Managed Agents: Dreaming, Outcomes, and Multi-Agent Orchestration](/guides/claude-managed-agents-dreaming-outcomes-multiagent/) — Anthropic's managed harness for production agents, with memory consolidation (Dreaming), goal-directed self-evaluation (Outcomes), and multi-agent orchestration
 - [Bluesky Attie](/guides/bluesky-attie-ai-social-feed-builder/) — A real-world example of Claude functioning as an agentic coding assistant, building custom social feed algorithms from natural language
 

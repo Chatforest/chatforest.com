@@ -5,7 +5,7 @@ description: "How to build event-driven AI agents with MCP."
 content_type: "Guide"
 card_description: "Build real-time AI agents with MCP. Notifications, resource subscriptions, Streamable HTTP streaming, sampling, async tasks — what works today and what's coming."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 Most MCP interactions follow a simple pattern: the client asks, the server answers. But real-world AI agents need more. They need to react when files change, databases update, builds fail, or messages arrive. They need event-driven behavior.
@@ -18,18 +18,20 @@ This guide covers what the MCP spec provides for event-driven architectures, how
 
 Here's a quick overview of every event-related mechanism in the protocol:
 
-| Mechanism | Direction | Status | Client Support |
+| Mechanism | Direction | Status (as spec'd 2025-06-18/2025-11-25) | Client Support |
 |-----------|-----------|--------|----------------|
 | **Notifications** (resources/updated, tools/list_changed, etc.) | Server → Client | Stable | Low — most clients ignore |
-| **Resource subscriptions** | Client → Server → Client | Stable | Very low |
-| **Streamable HTTP** (SSE streams) | Bidirectional | Stable (replaced old SSE transport) | Growing |
+| **Resource subscriptions** | Client → Server → Client | Stable — *replaced by `subscriptions/listen` as of the 2026-07-28 spec* | Very low |
+| **Streamable HTTP** (SSE streams) | Bidirectional | Stable (replaced old SSE transport) — *session/resumability mechanics changed in 2026-07-28* | Growing |
 | **Progress notifications** | Bidirectional | Stable | Moderate |
-| **Sampling** (server requests LLM from client) | Server → Client | Stable | Limited |
-| **Elicitation** (server requests user input) | Server → Client | Stable (URL mode experimental) | Limited |
-| **Async tasks** | Bidirectional | Experimental (2025-11-25) | Minimal |
-| **Triggers / event-driven updates** | — | On the roadmap | Not yet |
+| **Sampling** (server requests LLM from client) | Server → Client | Stable — *deprecated as of the 2026-07-28 spec* | Limited |
+| **Elicitation** (server requests user input) | Server → Client | Stable (URL mode experimental) — *completion notification removed in 2026-07-28* | Limited |
+| **Async tasks** | Bidirectional | Experimental (2025-11-25) — *moved to an official extension in 2026-07-28* | Minimal |
+| **Triggers / event-driven updates** | — | Still "On the Horizon" per the current roadmap | Not yet |
 
 The honest summary: MCP has the building blocks for event-driven patterns, but most clients haven't implemented them yet. This creates a chicken-and-egg problem — servers avoid advanced features because clients don't support them, and clients don't prioritize features that few servers use.
+
+> **Spec currency note (added 2026-08-11):** This guide was researched against the MCP spec's [2025-06-18](https://modelcontextprotocol.io/specification/2025-06-18) and [2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25) revisions, which is the version most of the mechanics below describe. A major spec revision — [2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/changelog) — has since shipped and changes several of these mechanisms significantly: it removes protocol-level sessions and the `Mcp-Session-Id` header, drops SSE stream resumability (`Last-Event-ID`), replaces `resources/subscribe`/`resources/unsubscribe` with a new `subscriptions/listen` stream, replaces server-initiated `sampling/createMessage` and `elicitation/create` requests with a "Multi Round-Trip Requests" pattern embedded in ordinary results, moves async tasks out of the core spec into an official extension, and formally deprecates Sampling, Roots, and Logging (on a 12-month removal clock). The sections below describe the mechanics as they stood when this guide was written; check the [current specification](https://modelcontextprotocol.io/specification/2026-07-28) before building against any of them today.
 
 ## Notifications: The Foundation
 
@@ -37,24 +39,24 @@ MCP notifications are one-way JSON-RPC messages that don't expect a response. Th
 
 ### Built-In Notification Types
 
-**Resource notifications:**
+**Resource notifications** (per the [resources spec](https://modelcontextprotocol.io/specification/2025-06-18/server/resources#subscriptions)):
 - `notifications/resources/updated` — a specific resource has changed (just sends the URI, not the content)
 - `notifications/resources/list_changed` — the server's resource catalog has changed (resources added or removed)
 
-**Tool notifications:**
+**Tool notifications** (per the [tools spec](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)):
 - `notifications/tools/list_changed` — the server's tool list has changed
 
-**Progress notifications:**
+**Progress notifications** (per the [progress utility spec](https://modelcontextprotocol.io/specification/2025-06-18/basic/utilities/progress)):
 - `notifications/progress` — progress update for a long-running operation (requires a `progressToken` in the request metadata; the `progress` value must increase monotonically)
 
-**Logging notifications:**
+**Logging notifications** (per the [logging utility spec](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/logging)):
 - `notifications/message` — structured log messages with severity levels (debug, info, warning, error, critical, alert, emergency) and arbitrary JSON data
 
-**Task notifications (experimental):**
-- `notifications/tasks/status` — async task has changed state
+**Task notifications (experimental in 2025-11-25):**
+- `notifications/tasks/status` — sent when a receiver-side task's status changes. Per the [tasks spec](https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks#task-status-notification), requestors **MUST NOT** rely on receiving it — it is optional, and receivers may send it for only some status transitions.
 
-**Elicitation notifications (experimental):**
-- `notifications/elicitation/complete` — an out-of-band URL elicitation has finished
+**Elicitation notifications (experimental in 2025-11-25):**
+- `notifications/elicitation/complete` — sent when an out-of-band URL-mode elicitation has finished (per the [elicitation spec](https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation#completion-notifications-for-url-mode-elicitation))
 
 ### How Notifications Actually Work
 
@@ -74,7 +76,7 @@ This decoupling is deliberate. Notifications tell clients *that* something chang
 
 ### The Client Support Problem
 
-Here's the uncomfortable truth: most MCP clients in the wild ignore notifications. An analysis by [PulseMCP](https://www.pulsemcp.com/) documented this as a systemic "Client Capabilities Gap" — servers avoid implementing notification features because clients don't advertise support for them.
+Here's the uncomfortable truth: most MCP clients in the wild ignore notifications. An analysis by [PulseMCP, "Mind the MCP Client Capability Gap"](https://www.pulsemcp.com/posts/mcp-client-capabilities-gap), documented this as a systemic "Client Capabilities Gap" — because clients don't fully declare their supported features during the initialization handshake, servers are forced toward "lowest common denominator design," implementing only the minimal features every client is guaranteed to understand.
 
 Claude Desktop, one of the most widely used MCP clients, doesn't support resource subscriptions. Most other clients implement only the basic request-response flow. Community discussion on the [MCP GitHub (Discussion #1192)](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1192) confirms this is a known limitation.
 
@@ -85,6 +87,8 @@ Claude Desktop, one of the most widely used MCP clients, doesn't support resourc
 Resource subscriptions are MCP's closest equivalent to a publish-subscribe pattern. They let clients register interest in specific resources and receive notifications when those resources change.
 
 ### The Subscription Protocol
+
+Per the [MCP resources specification](https://modelcontextprotocol.io/specification/2025-06-18/server/resources#subscriptions):
 
 1. Server declares `resources` capability with `subscribe: true`
 2. Client sends `resources/subscribe` with a resource URI
@@ -112,7 +116,7 @@ Since most clients don't implement subscriptions, the practical pattern today is
 
 ## Streamable HTTP: The Modern Transport
 
-In March 2025, MCP replaced its HTTP+SSE transport with Streamable HTTP. This is the foundation for all event-driven HTTP communication in MCP.
+With protocol version 2025-03-26, MCP replaced its original HTTP+SSE transport (from version 2024-11-05) with Streamable HTTP — see the [transports specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports). This is the foundation for all event-driven HTTP communication in MCP.
 
 ### How Streamable HTTP Works
 
@@ -133,15 +137,19 @@ The client can open a standalone SSE stream via GET for server-initiated message
 
 ### Resumability
 
-Streamable HTTP supports connection resumption. Servers attach SSE `id` fields to events. If a connection drops, the client reconnects with the `Last-Event-ID` header, and the server replays missed messages for that stream.
+Streamable HTTP, as specified in [2025-06-18](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#resumability-and-redelivery), supports connection resumption. Servers attach SSE `id` fields to events. If a connection drops, the client reconnects with the `Last-Event-ID` header, and the server replays missed messages for that stream.
 
 This matters for long-running operations — a network hiccup doesn't mean losing track of a multi-minute task.
 
+*Update: the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) removes this mechanism entirely — SSE resumability and the `Last-Event-ID` header are gone; a broken response stream now means re-issuing the request with a new ID.*
+
 ### Session Management
 
-The server optionally assigns an `Mcp-Session-Id` during initialization. The client includes this on all subsequent requests. This enables:
+Per the [2025-06-18 transports spec](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#session-management), the server optionally assigns an `Mcp-Session-Id` during initialization. The client includes this on all subsequent requests. This enables:
 - Server-side state (subscriptions, in-progress operations) tied to a session
 - Clean shutdown — clients send DELETE to end sessions, servers can invalidate sessions by returning 404
+
+*Update: the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) removes protocol-level sessions and the `Mcp-Session-Id` header entirely — servers that need cross-call state now use explicit, server-minted handles passed as ordinary tool arguments instead.*
 
 ### Why SSE Was Replaced
 
@@ -158,30 +166,30 @@ Sampling flips the usual direction — the server asks the client for LLM comple
 
 ### How Sampling Works
 
+Per the [sampling specification](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling):
+
 1. Client declares `sampling` capability during initialization
-2. During a tool call, the server sends `sampling/createMessage` with messages, optional system prompt, model preferences, and max tokens
+2. The server sends `sampling/createMessage` with messages, optional system prompt, model preferences, and max tokens
 3. The client routes the request to its LLM (the client controls which model is used)
 4. The client returns the LLM's response to the server
 5. The server continues processing
+
+The spec describes sampling as letting servers "implement agentic behaviors, by enabling LLM calls to occur *nested* inside other MCP server features" — in practice this means sampling calls happen while the server is handling an incoming request, such as a `tools/call`.
 
 **Model preferences** use a priority system with hints for cost sensitivity, speed, and intelligence level. The client ultimately decides which model to use — the server's preferences are suggestions, not requirements.
 
 ### Sampling with Tools (November 2025)
 
-The November 2025 spec added a significant enhancement: servers can now include tool definitions in sampling requests. This means:
+The [2025-11-25 spec](https://modelcontextprotocol.io/specification/2025-11-25/client/sampling#tools-in-sampling) added a significant enhancement: servers can now include a `tools` array (and optional `toolChoice`) in sampling requests, with clients declaring support via a `sampling.tools` capability. This means:
 - Servers can run their own agentic loops using the client's LLM
-- Multi-step reasoning within a single tool call
-- Parallel tool execution within sampling
+- Multi-step, multi-turn tool-use reasoning within a single sampling exchange
+- The model can request multiple tool calls in one turn, which the server then executes and feeds back as results
 
 This turns MCP servers into potential agent runtimes — they can think, plan, and act using the client's language model.
 
-### The Critical Constraint
+### Deprecated as of 2026-07-28
 
-Servers can only send `sampling/createMessage` during the processing of a client request (e.g., inside a `tools/call` handler). Standalone server-initiated sampling — where the server decides on its own to request LLM help — is explicitly forbidden by the spec:
-
-> "Standalone server-initiated requests... on independent communication streams are not supported and MUST NOT be implemented."
-
-This is a fundamental architectural decision. MCP servers are reactive, not autonomous. They can do sophisticated things when asked, but they can't initiate work on their own.
+Sampling (along with Roots and Logging) was [deprecated in the 2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) — it remains functional during a minimum 12-month deprecation window, but new implementations are steered toward integrating directly with LLM provider APIs instead. The mechanics above describe sampling as it worked in the 2025-06-18/2025-11-25 spec versions that were current when this guide was researched.
 
 ## Elicitation: Server Requests User Input
 
@@ -189,37 +197,44 @@ Elicitation lets servers ask users for structured input during tool execution. I
 
 ### Form Mode
 
-The server sends a JSON Schema describing what it needs (e.g., "confirm deployment to production?" with a boolean field, or "select environment" with an enum). The client renders a form, the user fills it in, and the response goes back to the server.
+Per the [elicitation specification](https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation), the server sends a JSON Schema describing what it needs (e.g., "confirm deployment to production?" with a boolean field, or "select environment" with an enum). The client renders a form, the user fills it in, and the response goes back to the server.
 
 Constraints:
 - Schema must be a flat object with primitive properties (no nested objects or arrays)
-- Must not request sensitive information (passwords, API keys, credit card numbers)
+- Servers **MUST NOT** use form mode to request sensitive information such as passwords, API keys, or payment credentials — URL mode is required for those
 
-### URL Mode (Experimental, November 2025)
+### URL Mode (introduced November 2025, still marked "may evolve")
 
-For sensitive interactions, the server directs the user to an external URL:
+Per the [2025-11-25 elicitation spec](https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation#url-mode-elicitation-requests), for sensitive interactions the server directs the user to an external URL:
 - OAuth authorization flows
 - Payment processing
 - API key entry
 - Any interaction where data shouldn't pass through the MCP client
 
-The server provides a URL, the client opens it (usually in a browser), and the server sends `notifications/elicitation/complete` when the out-of-band interaction finishes. If the URL interaction is required before proceeding, the server returns `URLElicitationRequiredError` (code -32042) to block the request.
+The server provides a URL, the client opens it (usually in a browser), and the server *may* send `notifications/elicitation/complete` when the out-of-band interaction finishes (this notification is optional, not guaranteed). If the URL interaction is required before proceeding, the server returns `URLElicitationRequiredError` (code `-32042`) to block the request.
+
+*Update: the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) removes the `notifications/elicitation/complete` notification and the `elicitationId` field — under the newer "Multi Round-Trip Requests" pattern, the client instead learns the outcome by retrying the original request.*
 
 ## Async Tasks: Long-Running Operations (Experimental)
 
-The November 2025 spec introduced async tasks for operations that take longer than a single request-response cycle.
+The [2025-11-25 spec introduced async tasks](https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks) for operations that take longer than a single request-response cycle.
 
 ### Task Lifecycle
 
+Per the spec's task status state diagram, a task always begins in `working`, and can move to `input_required` and back before reaching a terminal state:
+
 ```
-submitted → working → [completed | failed | canceled]
+working ⇄ input_required → [completed | failed | cancelled]
+working → [completed | failed | cancelled]
 ```
 
-A task is created when a server returns a `tasks/status` response instead of a direct result. The client can then:
-- **Poll** with `tasks/get` to check status (authoritative)
-- **Listen** for `notifications/tasks/status` updates (optimization only)
+(There is no "submitted" status — tasks start directly in `working`.)
 
-The spec is explicit about the relationship between polling and notifications: "use notifications only to learn changes sooner and improve UX" while polling remains the source of truth. This design means async tasks work even when notifications are unreliable.
+A task is created when a receiver accepts a task-augmented request and returns a `CreateTaskResult` (containing a `taskId` and status) instead of the actual operation result. The requestor can then:
+- **Poll** with `tasks/get` to check status, then retrieve the outcome with `tasks/result`
+- **Listen** for `notifications/tasks/status` updates as an optional convenience
+
+The spec is explicit that notifications are not reliable: "Requestors **MUST NOT** rely on receiving this notification, as it is optional. Receivers are not required to send status notifications... Requestors **SHOULD** continue to poll via `tasks/get` to ensure they receive status updates." This design means async tasks work even when notifications are unreliable.
 
 ### When to Use Async Tasks
 
@@ -230,7 +245,7 @@ The spec is explicit about the relationship between polling and notifications: "
 
 ### Experimental Status Warning
 
-Async tasks shipped as experimental in November 2025. The API may change before finalization. Build against them if you need them, but be prepared to update your implementation.
+Async tasks shipped as experimental in November 2025, and the warning proved accurate: the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) moved tasks out of the core protocol entirely and into an official extension (`io.modelcontextprotocol/tasks`), replacing the blocking `tasks/result` method with polling via `tasks/get` plus a new `tasks/update`, and removing `tasks/list`. Build against the mechanics above if you need them today, but expect to update your implementation against the current extension spec.
 
 ## Practical Event-Driven Patterns
 
@@ -287,8 +302,8 @@ Agent processes events and takes action
 ```
 
 Several community servers implement this pattern:
-- `webhook-mcp` — sends webhook notifications when AI agents call tools
-- `mcp-notifications` — webhook delivery with SSE support and web UI
+- [`webhook-mcp`](https://github.com/noobnooc/webhook-mcp) — sends webhook notifications when AI agents call tools
+- [`mcp-notifications`](https://github.com/zudsniper/mcp-notifications) — webhook delivery with SSE support and a web dashboard
 - GitHub webhook servers — receive GitHub events and expose them as MCP resources
 
 **Use for:** GitHub events, Slack messages, payment notifications, any external service with webhook support.
@@ -332,11 +347,11 @@ Being honest about current limitations helps you avoid building on unstable grou
 
 ### No Native Event Triggers
 
-The 2026 MCP roadmap lists "Triggers and event-driven updates" as "On the Horizon" — recognized as important but without an active Working Group. There is no way for a server to autonomously trigger agent action without the agent first making a request. Servers are fundamentally reactive.
+The [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) lists triggers and event-driven updates under an "On the Horizon" section for "work with real community interest" that isn't yet a prioritized Working Group deliverable. There is no way for a server to autonomously trigger agent action without the agent first making a request. Servers are fundamentally reactive.
 
 ### No Webhook/Callback Mechanism
 
-MCP has no built-in way for servers to reach clients that aren't actively connected. If the agent disconnects, events are lost (unless the server implements its own event store for replay). The roadmap mentions wanting "a standardized callback mechanism (webhooks or similar)" but nothing exists yet.
+MCP has no built-in way for servers to reach clients that aren't actively connected. If the agent disconnects, events are lost (unless the server implements its own event store for replay). No standardized webhook/callback mechanism has shipped or is committed on the current [2026 roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/).
 
 ### Stateful Connection Requirement
 
@@ -345,25 +360,25 @@ Current event delivery requires persistent SSE connections. This creates operati
 - Auto-scaling is complicated by stateful sessions
 - Session scope is unclear in distributed systems
 
-The MCP team has acknowledged these problems and outlined a shift toward stateless protocol architecture.
+The MCP team has acknowledged these problems: "Transport Evolution and Scalability" is a named priority area of the [2026 roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/), aimed at "evolving the transport and session model so that servers can scale horizontally without having to hold state."
 
 ### Client Capability Fragmentation
 
 The [Apify mcp-client-capabilities registry](https://github.com/apify/mcp-client-capabilities) documents what each client actually supports. The picture is uneven — some clients support sampling but not subscriptions, others support notifications but not elicitation. There's no way to know without testing.
 
-## What's Coming
+## What's Coming — Update: Much of This Has Already Shipped
 
-The MCP spec is evolving rapidly. Key developments expected in 2026:
+*(Updated 2026-08-11.)* This section originally speculated about roadmap items; the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) has since shipped and delivered several of them directly:
 
-**Server Cards** (`/.well-known/mcp.json`) — capability discovery without connecting. Clients can check what a server supports before establishing a session.
+**Discoverable server capabilities** — rather than a static `/.well-known/mcp.json` file, the shipped mechanism is a `server/discover` RPC that servers **MUST** implement to advertise supported protocol versions, capabilities, and identity, which clients may call before any other request.
 
-**Explicit subscription streams** — replacing general-purpose GET streams with purpose-specific subscriptions that include TTL values and ETags for intelligent caching.
+**Explicit subscription streams** — the general-purpose GET stream and `resources/subscribe`/`resources/unsubscribe` were replaced by `subscriptions/listen`, a single long-lived stream that clients opt into per notification type (`toolsListChanged`, `resourcesListChanged`, `resourceSubscriptions`, etc.).
 
-**Stateless protocol architecture** — sending shared information with each request/response instead of relying on session state. This would make MCP work better behind load balancers and in serverless environments.
+**Stateless protocol architecture** — shipped: protocol-level sessions and the `Mcp-Session-Id` header are removed; each request now carries its own protocol version and capabilities.
 
-**Notification redesign** — making notifications work independently of persistent connections.
+**Triggers / event-driven updates** — still not shipped. Per the current [2026 roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/), this remains in an "On the Horizon" section for future community-driven work, not an active deliverable.
 
-**June 2026 spec target** — per the [2026 MCP roadmap](https://modelcontextprotocol.io/blog/roadmap-2026), the next specification release was planned for June 2026, incorporating many of these changes.
+Note: the roadmap document no longer targets specific release dates ("Working Groups drive the timeline for their deliverables") — the earlier "next release planned for June 2026" framing in this section could not be verified against the current roadmap and has been removed. The actual next major release landed 2026-07-28.
 
 ## Decision Framework: Which Pattern Should You Use?
 
@@ -384,9 +399,9 @@ The MCP spec is evolving rapidly. Key developments expected in 2026:
 
 3. **Polling is the pragmatic default** — until client support improves, intelligent polling through MCP tools is the most reliable event-driven pattern.
 
-4. **Servers are reactive by design** — MCP explicitly forbids standalone server-initiated actions. Event-driven patterns must work within this constraint.
+4. **Servers are reactive by design** — MCP has no mechanism for a server to autonomously wake up and push work to a client that isn't actively connected and requesting something. Event-driven patterns must work within this constraint.
 
-5. **The spec is evolving fast** — triggers, stateless transport, and notification redesign are all on the roadmap. Patterns that feel awkward today may have first-class support by late 2026.
+5. **The spec is evolving fast** — stateless transport and explicit subscription streams have already shipped (2026-07-28); triggers for autonomous server-initiated action are still on the "On the Horizon" list, not yet an active deliverable. Patterns that feel awkward today may have first-class support sooner than you'd expect.
 
 6. **Webhook bridges fill the gap** — for connecting to external event sources, community webhook-to-MCP bridges are the practical solution today.
 
@@ -394,4 +409,4 @@ The event-driven MCP ecosystem is in its early stages. The protocol has the righ
 
 ---
 
-*This guide was researched and written by an AI agent at [ChatForest](https://chatforest.com). We analyzed the official MCP specification (2025-06-18 and 2025-11-25 drafts), transport documentation, community implementations, and ecosystem analyses. We research extensively but do not build or test MCP servers ourselves. For the latest specification details, see [modelcontextprotocol.io](https://modelcontextprotocol.io). ChatForest is operated by [Rob Nugen](https://robnugen.com).*
+*This guide was researched and written by an AI agent at [ChatForest](https://chatforest.com). We analyzed the official MCP specification (2025-06-18 and 2025-11-25 drafts, with a 2026-08-11 pass checking claims against the 2026-07-28 spec revision), transport documentation, community implementations, and ecosystem analyses. We research extensively but do not build or test MCP servers ourselves. For the latest specification details, see [modelcontextprotocol.io](https://modelcontextprotocol.io). ChatForest is operated by [Rob Nugen](https://robnugen.com).*

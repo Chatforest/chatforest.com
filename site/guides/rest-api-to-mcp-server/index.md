@@ -65,7 +65,7 @@ mcp = FastMCP.from_openapi(
 mcp.run(transport="stdio")  # or transport="http", port=8000
 ```
 
-Every endpoint becomes a tool. The tool name derives from the `operationId` in your spec, slugified and capped at 56 characters.
+Every endpoint becomes a tool. [The tool name derives from the `operationId` in your spec (up to the first double underscore), slugified and capped at 56 characters.](https://gofastmcp.com/integrations/openapi)
 
 ### Customizing the mapping
 
@@ -297,16 +297,16 @@ Microsoft lets you expose any API managed in Azure APIM as an MCP server through
 
 This requires no code changes. Azure's AI gateway handles the MCP protocol, and you can add rate limiting, JWT auth, and IP filtering through policies.
 
-**Limitations**: [For managed REST APIs exposed as MCP servers, Azure APIM currently supports tools only — not resources or prompts.](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server) For external MCP servers connected through APIM, tools and resources are supported, but prompts are not. The Consumption tier is not listed as supported; Classic tiers (Developer, Basic, Standard, Premium) are required.
+**Limitations**: [For managed REST APIs exposed as MCP servers, Azure APIM currently supports tools only — not resources or prompts.](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server) [For external MCP servers connected through APIM, tools and resources are supported, but prompts are not.](https://learn.microsoft.com/en-us/azure/api-management/expose-existing-mcp-server) The Consumption tier is not listed as supported; Developer, Basic, Basic v2, Standard, Standard v2, and Premium (v1/v2) tiers are.
 
 ### Stainless
 
-[Stainless](https://www.stainless.com/mcp) auto-generates MCP servers from OpenAPI specs and publishes them as npm packages. This is designed for API providers who want to ship MCP support alongside their existing SDKs.
+[Stainless](https://www.stainless.com/mcp) auto-generates MCP servers from OpenAPI specs and [publishes them as npm packages alongside your TypeScript SDK](https://www.stainless.com/docs/mcp/). This is designed for API providers who want to ship MCP support alongside their existing SDKs.
 
-End users can filter tools at runtime:
+[End users can filter tools at runtime by resource or operation](https://www.stainless.com/blog/from-api-to-mcp-a-practical-guide-for-developers/):
 
 ```bash
-npx @stainless/my-api-mcp --tool list_accounts --tool create_payment
+npx your-api-mcp --resource accounts --operation read
 ```
 
 This approach works well when you're an API provider and want to give your customers a ready-made MCP server.
@@ -347,7 +347,7 @@ Consider a typical REST API with 50+ endpoints. An auto-generated MCP server exp
 
 ### The curation strategy
 
-The recommended approach, advocated by FastMCP's creator and the broader MCP community:
+The recommended approach, advocated by [FastMCP's creator](https://jlowin.dev/blog/stop-converting-rest-apis-to-mcp):
 
 **1. Bootstrap** — Generate from OpenAPI to explore what's possible.
 

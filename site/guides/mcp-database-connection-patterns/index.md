@@ -26,7 +26,7 @@ The result: agents that understand your database structure and query it through 
 
 ## Choosing a Database MCP Server
 
-The landscape of database MCP servers has shifted significantly. Anthropic's original PostgreSQL and SQLite servers are archived — the PostgreSQL server has a [known SQL injection vulnerability](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) that bypasses its read-only protection. Community and vendor alternatives are now the right choice.
+The landscape of database MCP servers has shifted significantly. Anthropic's original PostgreSQL and SQLite reference servers are [archived](https://github.com/modelcontextprotocol/servers-archived) — the PostgreSQL server has a [known SQL injection vulnerability](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) that bypasses its read-only protection, and [Anthropic declined to patch the SQLite server's own injection flaw](https://www.theregister.com/2025/06/25/anthropic_sql_injection_flaw_unfixed/), calling it out of scope for an archived reference implementation. Community and vendor alternatives are now the right choice.
 
 ### Current Options (March 2026)
 
@@ -34,12 +34,12 @@ The landscape of database MCP servers has shifted significantly. Anthropic's ori
 |--------|----------|-------------|----------|
 | [Google MCP Toolbox](https://googleapis.github.io/genai-toolbox/) | PostgreSQL, MySQL, SQL Server, BigQuery, Spanner, Bigtable | Connection pooling, OAuth, OpenTelemetry | Production cloud deployments |
 | [Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp) | PostgreSQL | Read/write with configurable access, performance analysis | Self-hosted PostgreSQL |
-| [MongoDB MCP](https://www.mongodb.com/docs/mcp-server/) | MongoDB + Atlas | 37 tools, Atlas management, aggregation pipelines | MongoDB ecosystems |
+| [MongoDB MCP](https://www.mongodb.com/docs/mcp-server/) | MongoDB + Atlas | Atlas cluster management, aggregation pipelines, 30+ tools | MongoDB ecosystems |
 | [Oracle MCP Server](https://blogs.oracle.com/database/introducing-mcp-server-for-oracle-database) | Oracle Database | Enterprise features, audit logging, PL/SQL | Oracle shops |
-| [Neon MCP](https://neon.tech) | Neon Postgres | Serverless branching, schema diffing | Cloud-native Postgres |
-| [Supabase MCP](https://supabase.com) | Supabase (Postgres) | Full backend management, auth, storage | Supabase projects |
-| [DBHub (Bytebase)](https://github.com/bytebase/dbhub) | Multi-database | Universal connector via JDBC | Multi-database environments |
-| [Docker MCP Database Server](https://hub.docker.com/mcp/server/database-server) | PostgreSQL, MySQL, MariaDB | Containerized, zero-install | Quick local setups |
+| [Neon MCP](https://github.com/neondatabase/mcp-server-neon) | Neon Postgres | Serverless branching, schema diffing | Cloud-native Postgres |
+| [Supabase MCP](https://supabase.com/blog/mcp-server) | Supabase (Postgres) | Full backend management, auth, storage, 20+ tools | Supabase projects |
+| [DBHub (Bytebase)](https://github.com/bytebase/dbhub) | PostgreSQL, MySQL, SQL Server, MariaDB, SQLite | Minimal, token-efficient single interface | Multi-database environments |
+| [Docker MCP Database Server](https://hub.docker.com/mcp/server/database-server) | PostgreSQL, MySQL, SQLite | Containerized, zero-install | Quick local setups |
 | [DuckDB MCP](https://motherduck.com) | DuckDB | Analytics-optimized, Parquet/CSV support | Data analysis pipelines |
 
 For a detailed comparison with ratings and reviews, see our [Best Database MCP Servers](/guides/best-database-mcp-servers/) guide.
@@ -50,7 +50,7 @@ For a detailed comparison with ratings and reviews, see our [Best Database MCP S
 
 **Use Postgres MCP Pro when** you're self-hosting PostgreSQL and want configurable read/write access with built-in performance analysis (index suggestions, query optimization). It replaces the archived official server with actual security.
 
-**Use DBHub when** you have multiple database types and want a single MCP server that connects to all of them through a universal JDBC layer.
+**Use DBHub when** you have multiple database types and want a single, minimal MCP server ([built by Bytebase](https://github.com/bytebase/dbhub)) that connects to PostgreSQL, MySQL, SQL Server, MariaDB, and SQLite through one interface.
 
 **Use the Docker MCP Database Server when** you want to get started in minutes without installing anything beyond Docker.
 
@@ -164,7 +164,7 @@ This eliminates SQL injection entirely (the agent never constructs SQL) but limi
 
 ## Query Security: Preventing SQL Injection
 
-The Datadog security research on Anthropic's archived PostgreSQL MCP server revealed a critical pattern: the server used `SET transaction_read_only = true` to enforce read-only access, but an attacker could inject `COMMIT;` in a query string to end the read-only transaction and execute arbitrary write operations.
+[Datadog's security research](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) on Anthropic's archived PostgreSQL MCP server revealed a critical pattern: the server opened each session with `BEGIN TRANSACTION READ ONLY`, but passed the entire incoming query string straight to `client.query()`, which accepts multiple semicolon-delimited statements. An attacker could inject a payload like `COMMIT; DROP SCHEMA public CASCADE;` — the `COMMIT` ends the read-only transaction, and everything after it runs in a new, unrestricted transaction.
 
 This isn't a theoretical risk — it's how MCP database servers fail in practice. Here's how to prevent it.
 
@@ -215,7 +215,7 @@ Add a validation layer between the MCP tool handler and the database:
 3. **Result size limits** — cap the number of rows returned to prevent context window exhaustion
 4. **Query timeout** — kill queries that run longer than a threshold (e.g., 5 seconds)
 
-Oracle's MCP Server implements this pattern by logging all interactions to a `DBTOOLS$MCP_LOG` audit table, providing a full trail of what the agent queried and received.
+Oracle's [SQLcl MCP Server](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.4/sqcug/monitoring-sqlcl-mcp-server.html) implements this pattern by logging all interactions to a `DBTOOLS$MCP_LOG` audit table, providing a full trail of what the agent queried and received.
 
 ## Read-Only vs Read-Write: When to Allow Writes
 
@@ -256,7 +256,7 @@ A local MCP server handling one user's queries doesn't need connection pooling. 
 
 ### The Connection Exhaustion Problem
 
-Each MCP session that opens its own database connection can quickly exhaust the database's connection limit. PostgreSQL defaults to 100 max connections. If each AI agent session holds a connection, you hit the limit fast.
+Each MCP session that opens its own database connection can quickly exhaust the database's connection limit. PostgreSQL's [`max_connections` defaults to 100](https://www.postgresql.org/docs/current/runtime-config-connection.html). If each AI agent session holds a connection, you hit the limit fast.
 
 ### Pooling Strategies
 
@@ -446,7 +446,7 @@ Before connecting AI agents to a production database through MCP:
 
 **Exposing the full schema**: Dumping every table and column into the MCP schema wastes context tokens and leaks internal structure. Curate what the agent sees.
 
-**Trusting application-level read-only**: The Datadog research showed that `SET transaction_read_only = true` can be bypassed with SQL injection. Always enforce access at the database user level.
+**Trusting application-level read-only**: The [Datadog research](https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/) showed that a `BEGIN TRANSACTION READ ONLY` guard can be bypassed with an injected `COMMIT;`. Always enforce access at the database user level.
 
 **No result size limits**: An agent running `SELECT * FROM logs` against a table with 10 million rows will exhaust context tokens and possibly the database connection. Cap results.
 
@@ -458,7 +458,7 @@ Before connecting AI agents to a production database through MCP:
 
 ## What's Next
 
-Database MCP access is maturing rapidly. Google's MCP Toolbox set a high bar for production features (connection pooling, OAuth, OpenTelemetry), and other implementations are catching up. The [2026 MCP roadmap](https://modelcontextprotocol.io/blog/roadmap-2026) prioritizes enterprise readiness — expect standardized audit logging, improved configuration portability, and better tooling for schema management.
+Database MCP access is maturing rapidly. Google's MCP Toolbox set a high bar for production features (connection pooling, OAuth, OpenTelemetry), and other implementations are catching up. Enterprise readiness is one of four priorities in the [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) — though the roadmap itself describes this area as "the least defined of the four," with work focused on audit trails, SSO-integrated auth, gateway behavior, and configuration portability, mostly landing as extensions rather than core spec changes.
 
 For the current state of available database MCP servers and head-to-head comparisons, see our [Best Database MCP Servers](/guides/best-database-mcp-servers/) guide. For securing the credentials your MCP servers use to connect to databases, see [MCP Credential & Secret Management](/guides/mcp-credential-secret-management/). For the broader enterprise deployment picture, see [Building Enterprise MCP Infrastructure](/guides/mcp-enterprise-infrastructure/).
 
