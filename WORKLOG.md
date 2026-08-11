@@ -133040,3 +133040,157 @@ event needs its own message per the standing exception list — routine work doe
   `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link / broken
   footer link as pages already fixed).
 - No open blockers.
+
+## Run (2026-08-11, UTC ~10:11-11:30) — Dispatch #6 plug + early-vintage re-audit: guides batch 7 (56/130 → 66/130)
+
+Orient: inbox pending-check showed only my own 2026-08-11 02:28 CEO digest (#2326), unread, no new
+instructions. `date -u` at session start read 2026-08-11 10:11 UTC — past the 09:00 UTC Dispatch send
+time flagged as pending in the prior run's handoff.
+
+### Bluesky — Dispatch #6 newsletter plug
+
+`check_tuesday_dispatch_reservation.py` → `DISPATCH_SENT` (Dispatch #6 sent 2026-08-11T09:00:00Z,
+confirmed via Buttondown API). `check_bluesky_posted_today.py` → `OK_TO_POST` (no post yet today).
+Per the Tuesday reservation rule, made today's single post the newsletter plug rather than regular
+content. Pulled Dispatch #6's subject/body from the Buttondown API directly for the data hook
+(subject: "We Audited Every Claim on Our Own Site, Plus Claude Opus 5 and a Rogue-Model Security
+Incident") — used the transparency-report stat from the lead story: 41% of pages (765/1,854) shipped
+with zero citations before the write-time gate, riskiest pages averaged 3.3 real factual errors each.
+Post (298 chars, under the 300 limit): https://bsky.app/profile/chatforest.bsky.social/post/3msseu26mtb25
+Added Dispatch #6 to `content/newsletter.md`'s Past Issues list (was missing — #5 was still the most
+recent entry there).
+
+### Early-vintage re-audit — guides batch 7 (10 pages, 56/130 → 66/130)
+
+Continued exactly where the prior run's queue left off (alphabetical from `mcp-async-tasks-long-
+running.md`): `mcp-async-tasks-long-running`, `mcp-attack-vectors-defense`, `mcp-authentication-
+oauth`, `mcp-authorization-oauth`, `mcp-browser-automation`, `mcp-caching-strategies`, `mcp-clients-
+comparison`, `mcp-cost-optimization`, `mcp-credential-secret-management`, `mcp-elicitation-explained`.
+Dispatched 10 parallel background subagents (one file each). Verified every file's `sources_audited`
+front matter actually updated to 2026-08-11 before trusting the reports.
+
+**7th straight batch (70 pages) at a 100% catch rate** — every page had real, substantive problems:
+
+1. **mcp-async-tasks-long-running** — the entire technical description was built on the pre-
+   2026-07-28 experimental Tasks design (core-spec, `task:{ttl}` opt-in). The 2026-07-28 spec revision
+   moved Tasks to an official opt-in extension (SEP-2663) with breaking changes: `tasks/result`/
+   `tasks/list` removed, `tasks/update` added, server-autonomous task creation, `_meta`-based
+   negotiation, `notifications/tasks`+`subscriptions/listen` for progress. Rewrote 6 sections. Also
+   fixed a pre-existing `_meta.taskId` factual error, a wrong FastMCP `TaskConfig` import/parameter,
+   a Temporal citation mismatch (cited for content the linked page doesn't contain), an AWS AgentCore
+   mechanism error (claimed DynamoDB/S3, actually AgentCore Memory), and an unsupported OTel-
+   conventions-for-tasks claim (cut).
+2. **mcp-attack-vectors-defense** — another statistic-fusion fabrication matching the ClickHouse
+   worked-failure pattern: "43% shell/command injection" and "30+ CVEs in Jan/Feb" were attributed to
+   AgentSeal but don't appear anywhere in that source (real AgentSeal numbers: 66%/1,196 servers,
+   8,282 findings, 427 critical + 1,841 high) — the fused numbers belonged to unrelated tallies from
+   other outlets. Also: wrong Smithery incident discovery date (Oct 2025 → actually June 2025), a
+   citation mismatch on the Postmark incident (Snyk cited for a Koi Security claim Snyk never makes),
+   a substantially wrong OWASP MCP Top 10 table (wrong order/names, two categories missing entirely),
+   and unverified specifics in the WhatsApp incident writeup softened to match the actual source.
+3. **mcp-authentication-oauth** — a fabricated, unattributable "enterprise architect" quote deleted;
+   a misattributed feature (page credited Okta's MCP server with 97+ stars and credential redaction —
+   real Okta repo has 53 stars/no redaction, the redaction feature belongs to Auth0's server); a
+   download-stat citation fixed (437K figure wasn't in the cited JFrog post, added The Hacker News as
+   the real source); the page presented the Nov-2025 spec as current — added the 2026-07-28 revision
+   (RFC 9207 issuer validation, DCR→CIMD deprecation). All 5 RFC numbers it already cited were
+   verified correct (no repeat of the RFC 9396/8707 mixup found on an earlier sibling page).
+4. **mcp-authorization-oauth** — replaced two floating `/specification/draft/` links with the stable
+   2026-07-28 snapshot; rewrote the Dynamic Client Registration step to reflect CIMD-as-default/DCR-
+   as-fallback; added RFC 9207 issuer-validation coverage and a new "Authorization-Server Mix-Up
+   Attacks" risk entry; fixed three vendor citations that didn't actually support their attached
+   claims (Auth0, Stytch, Descope — each re-pointed to a source that does); corrected a Cloudflare
+   claim (OAuth Provider Library does NOT enable Dynamic Client Registration by default, contrary to
+   what the page said).
+5. **mcp-browser-automation** — GitHub star counts stale by 1.2-1.3x (Browser-Use 81K→108K being the
+   largest gap); a fabricated-precision "114,000 vs 27,000 tokens" MCP-vs-CLI stat traced to an
+   unverified Reddit measurement laundered through a blog post — removed the fake numbers, kept only
+   what Microsoft's own README actually claims; the Browserbase MCP GitHub repo is now archived,
+   redirected readers to the hosted server instead; WebMCP wrongly described as "published by the
+   W3C" (it's a Community Group document, not a W3C Standard) with a wrong report date.
+6. **mcp-caching-strategies** — like #1, the Protocol-Level Caching section predated the 2026-07-28
+   spec revision, which shipped the exact `ttlMs`/`cacheScope` fields the page still described as a
+   "coming June 2026" roadmap item — rewrote from scratch. Fixed a conflated-numbers claim (Anthropic's
+   specific 100K-token example is a 79% reduction, not the "up to 85%" headline it was presented as
+   demonstrating — same ClickHouse-pattern failure as #2 this batch). All model/pricing references were
+   stale (Sonnet 4.6/Opus 4.x → current Opus 5/Sonnet 5/Fable 5/Mythos 5 lineup). ~9 GitHub star counts
+   corrected via live API. One ecosystem-table row (`ib-mcp-cache-server`) cut — repo no longer
+   resolves, claimed star count unverifiable. Fixed a broken Upstash code example missing a required
+   parameter.
+7. **mcp-clients-comparison** — missed the Windsurf→Devin Desktop rebrand (2026-06-02) across 8
+   locations (front matter, heading, table, prose, cross-references) — same rebrand a sibling page
+   missed in an earlier batch. Corrected a wrong Claude Code config path (`.claude/` → `.mcp.json`/
+   `~/.claude.json`), an unsupported "Cursor is the most popular IDE-based MCP client" superlative
+   (replaced with a cited JetBrains Jan-2026 survey showing Copilot/ChatGPT ahead, Cursor tied with
+   Claude Code), and a stale "Cline requires approval for every action" claim (autopilot/auto-approve
+   now exists).
+8. **mcp-cost-optimization** — ~10 citation/attribution fixes: an unsourced "10-100x cost inflation"
+   headline replaced with a verified Scalekit benchmark (4-32x); a figure misattributed to The New
+   Stack that actually comes from Apideck; two specific token counts in the Speakeasy section that
+   don't appear in the cited source, cut; a fabricated/misattributed Apideck citation for a tool-
+   selection-accuracy claim, replaced with verified content plus real per-platform tool-count caps; a
+   dead 403 citation swapped for a live OpenTelemetry GitHub source; a second independent source added
+   for the named-company Perplexity/Yarats claim per the >=2-source rule.
+9. **mcp-credential-secret-management** — a fabricated "48% plaintext .env" statistic attributed to
+   the Astrix Security report that doesn't contain that figure anywhere (real figures: 53% static
+   credentials, 79% via env vars, 8.5% OAuth adoption) — rewrote to state only what the source
+   actually says. A wrong OAuth spec section citation fixed (cited §4.3.1 for token rotation, which is
+   actually about the token endpoint request format — replaced with the correct RFC 9700 §4.14). An
+   archived, unmaintained dependency (`keytar`, archived Dec 2022) was presented as the primary/only
+   OS-keychain tool with no caveat — replaced with its actively-maintained successor.
+10. **mcp-elicitation-explained** — like #1 and #6, described only the pre-2026-07-28 spec wire
+    format (standalone `elicitation/create` request, top-level capability declaration, `elicitationId`,
+    a `-32042` error code and a completion notification that no longer exist in current spec text) —
+    added inline currency notes throughout and corrected a "statefulness is required" claim the current
+    spec explicitly contradicts. No fabricated quotes found (checked every quoted string against the
+    spec directly). Rebuilt the Client Support table with real per-row citations (Claude Desktop and
+    Cline corrected from "Partial/Unknown" guesses to sourced "No/No"; Cursor, VS Code Copilot, Claude
+    Code all re-verified against changelogs).
+
+**Duplicate-topic flag confirmed independently by both agents:** `mcp-authentication-oauth.md` and
+`mcp-authorization-oauth.md` cover substantially overlapping ground (OAuth 2.1, PKCE, RFC 9728/8707/
+7591, DCR→CIMD, provider comparisons, even the same specific citations) from similar angles — flagging
+for a human merge/differentiate/retire decision, not resolved here per standing instructions on this
+kind of finding.
+
+**Harness false-positive note:** the mcp-clients-comparison agent's output was flagged for an
+"instruction-shaped pattern" (`settings-json`) — on inspection this is the same false-positive class
+seen in the prior run (page discusses config file paths like `.mcp.json`/`settings.json` as part of
+fixing a wrong Claude Code config path). No injected instruction found or acted on.
+
+All 10 files now carry `sources_audited: 2026-08-11`, verified directly against front matter.
+`early-vintage-audit.md` checked off and running-count line updated: **guides 66/130** (was 56/130).
+
+### Build/deploy
+
+`hugo --minify` clean (4212 pages, no count change — correction-only pass). Committed content +
+newsletter.md + early-vintage-audit.md + built site/ (`0b545b666e`), deployed via rsync (exit 0),
+spot-verified live: `mcp-clients-comparison` shows "Devin Desktop" and `newsletter/` shows the Dispatch
+#6 entry rendering correctly in production. Deploy throttle clear (~4h since prior deploy). `.last_deploy`
+bumped (uncommitted — will fold into next run's runlog/tokenlog commit per established pattern).
+
+### CEO digest
+
+Checked `list_inbox include_sent=true` for aiu 67 — most recent sent message (#2326) was earlier today
+(2026-08-11, 02:28 UTC). Per the max-one-per-UTC-day rule, no new digest sent this run; this run's work
+folds into tomorrow's digest.
+
+### What should happen next
+
+- Early-vintage re-audit: guides 66/130 (builders-log 12/12 closed, reviews not started). Next 10
+  oldest-by-date guides (all 2026-07-24, continuing alphabetically from `mcp-error-handling-
+  resilience.md`): `mcp-error-handling-resilience.md`, `mcp-error-handling-explained.md`, `mcp-gateway-
+  proxy-patterns.md`, `mcp-lifecycle-and-utilities-explained.md`, `mcp-logging-observability.md`,
+  `mcp-mobile-integration.md`, `mcp-multi-agent-architectures.md`, `mcp-multi-tenant-patterns.md`,
+  `mcp-notifications-explained.md`, `mcp-pagination-patterns.md`.
+- **Duplicate-topic pair due for audit next batch:** `mcp-error-handling-resilience.md` and `mcp-
+  error-handling-explained.md` are first in that queue — do the flagged diff pass (near-duplicate
+  titles, flagged by the prior run) during their audit turn rather than treating them as two
+  independent pages.
+- **New duplicate-topic flag from this run:** `mcp-authentication-oauth.md` / `mcp-authorization-
+  oauth.md` — both now re-audited and cited correctly, but confirmed substantively redundant by two
+  independent auditors. Needs a human decision (merge, differentiate, or retire one), not urgent.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link / broken
+  footer link as pages already fixed).
+- No open blockers.
