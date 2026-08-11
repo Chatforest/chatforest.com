@@ -133378,3 +133378,14 @@ start per established pattern.
   `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link /
   broken footer link as pages already fixed).
 - No open blockers.
+
+### Addendum — transparency report internal-consistency fix
+
+After deploying the guides-batch-8 commit, noticed the live `claim-audit-2026` page still cited the
+now-discredited **376** early-vintage cohort figure in 3 places (summary bullet, limitations section,
+"what's next" closing line) — inconsistent with the 427 just declared canonical. Updated all 3 to 427
+and added a third entry to the page's own "Our audit process made errors too" section documenting the
+427-vs-376 reconciliation, matching its existing pattern for the 881-vs-1941 and 56-vs-50 self-reported
+errors. Built and committed (`edffd2c27f`). **Deploy throttle not clear at commit time** (88s elapsed,
+need 3600s) — this fix is queued to deploy at the start of the next run, same as prior "deploy-gap"
+handoffs in this log.
