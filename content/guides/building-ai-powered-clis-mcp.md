@@ -5,10 +5,10 @@ description: "A practical guide to building AI-powered command-line tools using 
 content_type: "Guide"
 card_description: "Learn how to build CLI tools that AI agents can use, and how to build terminal-based AI agents powered by MCP."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
-The terminal is having a moment. In 2026, the most capable AI coding tools — Claude Code, Aider, OpenCode, Gemini CLI — all run in the terminal, not in a GUI. Teams that built elaborate graphical interfaces are watching terminal-first agents outperform them on benchmarks and in production. This guide covers both sides of the CLI-AI relationship: how to design CLI tools that agents can use effectively, and how to build your own terminal-based AI agents using the Model Context Protocol. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+The terminal is having a moment. In 2026, some of the most widely used AI coding tools — [Claude Code](https://code.claude.com/docs/en/how-claude-code-works), [Aider](https://aider.chat), [OpenCode](https://opencode.ai), and Google's [Antigravity CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) (the successor Google introduced in May 2026; [Gemini CLI stopped serving most users that June](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)) — all run in the terminal, not in a GUI. This guide covers both sides of the CLI-AI relationship: how to design CLI tools that agents can use effectively, and how to build your own terminal-based AI agents using the Model Context Protocol. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
 ## Why the Terminal Wins for AI Agents
 
@@ -22,7 +22,7 @@ The shift to terminal-first AI development isn't aesthetic — it's architectura
 
 **Reproducibility.** Every action is a command that can be logged, replayed, and audited. No clicking through menus or relying on UI state.
 
-The Claude Code architecture demonstrates this well: a single-threaded master loop that observes, reasons, acts (via tools), and reflects — all orchestrated through the terminal. The entire Unix philosophy of small, composable commands maps naturally to how language models prefer to work.
+The [Claude Code architecture](https://code.claude.com/docs/en/how-claude-code-works) demonstrates this well: an agentic loop that gathers context, takes action through tools, and verifies results, cycling until the task is complete — all orchestrated through the terminal. The entire Unix philosophy of small, composable commands maps naturally to how language models prefer to work.
 
 ## Two Sides of CLI + AI
 
@@ -37,7 +37,7 @@ Both benefit from MCP, but in different ways. Let's cover each.
 
 ## Part 1: Designing CLI Tools for AI Agents
 
-If you maintain a CLI tool, AI agents are probably already trying to use it. The question is whether your tool helps or fights them. Research across production agent deployments reveals consistent patterns that separate agent-friendly CLIs from tools that cause agents to loop, hallucinate, or fail.
+If you maintain a CLI tool, AI agents are probably already trying to use it. The question is whether your tool helps or fights them. Practitioners building and operating agent-facing CLIs in production have converged on a consistent set of patterns that separate agent-friendly tools from ones that cause agents to loop, hallucinate, or fail — summarized in the six rules below.
 
 ### The Core Principle: Machine-Readable by Default
 
@@ -58,11 +58,11 @@ $ mytool list --json
 ]
 ```
 
-The `--json` flag should be a presentation-layer concern only — identical behavior, structured output. This is the pattern that Terraform, GitHub CLI, Docker, and most modern CLIs have adopted.
+The `--json` flag should be a presentation-layer concern only — identical behavior, structured output. This is a pattern that [Terraform](https://developer.hashicorp.com/terraform/internals/json-format), [GitHub CLI](https://cli.github.com/manual/gh_help_formatting), and [Docker](https://docs.docker.com/reference/cli/docker/inspect/) have each adopted in their own commands.
 
 ### Six Rules for Agent-Friendly CLIs
 
-Based on published research and production experience across the industry:
+These six rules draw on recent practitioner writing about building CLIs that agents can use well — including [Speakeasy's guide to agent-friendly CLIs](https://www.speakeasy.com/blog/engineering-agent-friendly-cli), [Arcjet's CLI design notes](https://blog.arcjet.com/designing-a-cli-for-ai-agents/), [Terry Li's agent-facing CLI principles](https://terryli.ai/posts/4-principles-for-agent-facing-cli-design/), and [lessons from building the Memori CLI](https://archit15singh.github.io/posts/2026-02-28-designing-cli-tools-for-ai-agents/):
 
 **1. Structured output for every command.** Every command that produces output should support `--json` or `--output json`. Include error responses in the structured format too — an agent that gets a plain-text error message when it expected JSON will struggle to recover.
 
@@ -85,7 +85,7 @@ $ mytool --describe
 }
 ```
 
-**4. Accept JSON input.** Humans hate typing nested JSON in the terminal, but agents prefer it. Support both flag-based and JSON-based input:
+**4. Accept JSON input.** Humans hate typing nested JSON in the terminal, but agents prefer it. Support both flag-based and JSON-based input — [some agent-CLI designers recommend a single structured-argument flag over many separate flags for exactly this reason](https://archit15singh.github.io/posts/2026-02-28-designing-cli-tools-for-ai-agents/):
 
 ```bash
 # Human style
@@ -95,7 +95,7 @@ $ mytool create --name my-app --replicas 3
 $ mytool create --json '{"name": "my-app", "replicas": 3}'
 ```
 
-**5. Idempotent operations.** Agents retry. If `mytool create` fails halfway through and the agent runs it again, the tool should handle the duplicate gracefully — either succeeding silently or returning a clear "already exists" response.
+**5. Idempotent operations.** Agents retry. If `mytool create` fails halfway through and the agent runs it again, the tool should handle the duplicate gracefully — either succeeding silently or returning a clear "already exists" response. [Agents commonly run setup commands more than once, so idempotency needs to be a deliberate design choice, not an accident.](https://archit15singh.github.io/posts/2026-02-28-designing-cli-tools-for-ai-agents/)
 
 **6. No interactive prompts.** If a command would normally prompt for confirmation, provide a `--yes` or `--force` flag. An agent stuck at a `y/n` prompt is a dead agent. Every interactive path needs a non-interactive alternative.
 
@@ -225,7 +225,7 @@ async def agent_loop(user_message: str, mcp_session, llm_client):
     while True:
         # Send to LLM
         response = llm_client.messages.create(
-            model="claude-sonnet-4-6-20250514",
+            model="claude-sonnet-4-6",
             messages=messages,
             tools=tool_definitions,
             max_tokens=4096
@@ -266,7 +266,7 @@ Terminal agents face a unique context challenge. Every tool call result adds to 
 
 **Sliding window.** Drop the oldest messages when approaching the context limit. Simple but loses early context that might matter.
 
-**Summarization.** Periodically compress the conversation history into a summary. Claude Code does this automatically — it compresses prior messages as the conversation approaches context limits.
+**Summarization.** Periodically compress the conversation history into a summary. [Claude Code does this automatically](https://code.claude.com/docs/en/how-claude-code-works) — it clears older tool outputs first, then summarizes the conversation if needed as it approaches context limits.
 
 **Selective inclusion.** Only include tool results that are relevant to the current task. If the agent read 20 files but only 3 are relevant, summarize or drop the rest.
 
@@ -354,7 +354,7 @@ Detect whether stdout is a TTY to automatically switch between modes, or use an 
 
 Terminal agents that can run arbitrary commands need permission guardrails. The dominant patterns in 2026:
 
-**Allowlist.** Define which tools/commands the agent can use freely. Everything else requires confirmation. This is the Claude Code model — read operations are auto-approved, writes need user confirmation.
+**Allowlist.** Define which tools/commands the agent can use freely. Everything else requires confirmation. This is the [Claude Code model](https://code.claude.com/docs/en/permissions) — read-only operations (file reads, search) run without approval, while file modifications and most shell commands require confirmation unless explicitly allowlisted.
 
 **Tiered permissions.** Read-only operations run automatically. Mutations require confirmation. Destructive operations (delete, force-push) require explicit opt-in.
 
@@ -392,11 +392,11 @@ You don't have to build everything yourself. Several frameworks handle the plumb
 
 | Framework | Language | MCP Support | Best For |
 |-----------|----------|-------------|----------|
-| [Claude Agent SDK](/guides/mcp-agent-sdks-2026/) | Python | Native | Building on Claude models |
+| [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) | Python, TypeScript | Native | Building on Claude models |
 | [mcp-agent](https://github.com/lastmile-ai/mcp-agent) | Python | Native | Multi-server orchestration |
-| [LangGraph](/guides/mcp-agent-framework-integrations/) | Python | Via integration | Complex state machines |
-| [Mastra](https://mastra.ai) | TypeScript | Native | TypeScript-first agents |
-| [Pydantic AI](https://ai.pydantic.dev) | Python | Via integration | Type-safe tool definitions |
+| [LangGraph](https://www.langchain.com/langgraph) | Python | Via integration ([langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters)) | Complex state machines |
+| [Mastra](https://mastra.ai/docs/mcp/overview) | TypeScript | Native | TypeScript-first agents |
+| [Pydantic AI](https://ai.pydantic.dev/mcp/client/) | Python | Native | Type-safe tool definitions |
 
 The trade-off is always the same: frameworks save time on boilerplate but constrain your architecture. For a simple terminal agent with 2-3 MCP servers, building from scratch with the official SDK gives you more control. For complex multi-agent systems, a framework handles orchestration patterns you'd otherwise reinvent.
 
@@ -406,7 +406,7 @@ See our [framework integration guide](/guides/mcp-agent-framework-integrations/)
 
 The convergence of CLI tools and AI agents is reshaping how software gets built. The Unix philosophy — small tools, structured data, composable pipelines — turns out to be an excellent fit for AI agent architectures. MCP formalizes what Unix pipes did informally: a standard protocol for tools to expose capabilities and for agents to discover and use them.
 
-The practical takeaway: if you maintain CLI tools, add `--json` output and schema introspection. If you're building AI agents, start in the terminal — it's faster to iterate, easier to debug, and the resulting agents are more capable than their GUI counterparts. And use MCP to connect the pieces, because the ecosystem of available servers is [growing fast](/guides/best-mcp-servers/).
+The practical takeaway: if you maintain CLI tools, add `--json` output and schema introspection. If you're building AI agents, start in the terminal — it's faster to iterate and easier to debug than building a GUI first. And use MCP to connect the pieces, because the ecosystem of available servers is [growing fast](/guides/best-mcp-servers/).
 
 ## Further Reading
 

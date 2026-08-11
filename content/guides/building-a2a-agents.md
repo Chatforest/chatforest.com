@@ -4,17 +4,19 @@ date: 2026-03-28T19:00:00+09:00
 description: "How to build agents that discover and communicate with each other using the A2A protocol — covering Agent Cards, task lifecycle, streaming, multi-turn conversations, MCP"
 content_type: "Guide"
 card_description: "MCP connects agents to tools. A2A connects agents to each other. This guide walks through building agents that can discover, negotiate, and collaborate using the A2A protocol."
-last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 You've built an AI agent that can call tools via [MCP](/guides/what-is-mcp/). Now you want it to collaborate with *other* agents — a research agent that gathers data, a writing agent that drafts content, a review agent that checks quality. Each agent is an independent service with its own capabilities. How do they find each other? How do they exchange tasks and results?
 
-That's what the [A2A (Agent-to-Agent) protocol](https://a2a-protocol.org/) solves. [Created by Google in April 2025 and donated to the Linux Foundation in June 2025](https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/), A2A standardizes agent discovery, task delegation, and result exchange. As of March 2026, it's backed by [100+ companies](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents), governed by the Linux Foundation alongside MCP, and supported by stable SDKs in five languages.
+That's what the [A2A (Agent-to-Agent) protocol](https://a2a-protocol.org/) solves. [Google introduced A2A in April 2025](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) and [donated it to the Linux Foundation in June 2025](https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/); the protocol standardizes agent discovery, task delegation, and result exchange. A2A reached [v1.0, its first production-ready release, on March 12, 2026](https://a2a-protocol.org/latest/announcing-1.0/), and by its one-year anniversary in April 2026 it was backed by [150+ organizations](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year) and supported by [official SDKs in six languages](https://a2a-protocol.org/latest/sdk/) — Python, Go, Java, JavaScript/TypeScript, .NET, and Rust. It's governed by the Linux Foundation as its own project (distinct from the [Agentic AI Foundation](/guides/agentic-ai-foundation-mcp-governance/) that governs MCP — more on that distinction below).
 
 This guide covers how to actually build A2A agents. For a higher-level comparison of MCP and A2A, see our [MCP vs A2A protocol comparison](/guides/mcp-vs-a2a-protocol-comparison/). For multi-agent architecture patterns, see our [multi-agent architectures guide](/guides/mcp-multi-agent-architectures/).
 
 Our analysis draws on the [A2A specification](https://a2a-protocol.org/latest/specification/), official SDK documentation, published implementation examples, and the [a2a-samples repository](https://github.com/a2aproject/a2a-samples) — we research and analyze rather than building these systems ourselves.
+
+> **A note on spec versions:** this guide was originally written against A2A spec v0.3. A2A reached v1.0 on March 12, 2026, which renamed several JSON-RPC methods, moved the Agent Card discovery path, and unified the `TextPart`/`DataPart`/`FilePart` types into a single `Part` structure. We've corrected the version-specific details below, but for the complete list of what changed, see our dedicated [A2A Protocol Hits v1.0](/guides/a2a-protocol-v1-production-ready/) guide. The core concepts here — Agent Cards, Tasks, multi-turn conversations, and the MCP+A2A pattern — are unchanged.
 
 ## Why A2A Exists
 
@@ -32,7 +34,7 @@ The relationship between MCP and A2A is straightforward: **MCP is vertical (agen
 
 ### Agent Cards
 
-Every A2A agent publishes a JSON document — its Agent Card — at `/.well-known/agent.json`. This is how agents discover each other. An Agent Card describes identity, capabilities, skills, endpoints, and security requirements:
+Every A2A agent publishes a JSON document — its Agent Card — at [`/.well-known/agent-card.json`](https://a2a-protocol.org/latest/announcing-1.0/) (renamed from the pre-v1.0 path `/.well-known/agent.json`, which is still seen on agents that haven't updated). This is how agents discover each other. An Agent Card describes identity, capabilities, skills, endpoints, and security requirements:
 
 ```json
 {
@@ -118,6 +120,8 @@ Messages carry the actual content exchanged between agents. Each message has a `
 
 This flexible structure means agents can exchange anything from simple text to complex structured data to file attachments — all within the same protocol.
 
+*(Spec note: as of A2A v1.0, `TextPart`, `DataPart`, and `FilePart` were consolidated into a single unified `Part` structure, with content type determined by which field is populated rather than a `kind` discriminator. See [Part Type Unification](/guides/a2a-protocol-v1-production-ready/#part-type-unification) for the current wire format.)*
+
 ### Artifacts
 
 Artifacts are the tangible outputs of a completed task. While messages represent the conversation, artifacts represent the deliverables. An artifact includes an `id`, `mediaType`, and one or more Parts containing the actual content.
@@ -130,7 +134,7 @@ For example, a code review agent might return:
 
 ### SDK Setup
 
-A2A has stable SDKs in five languages:
+A2A has [official SDKs in six languages](https://a2a-protocol.org/latest/sdk/) (Rust was added after the protocol's initial five-language launch):
 
 | Language | Package | Install |
 |----------|---------|---------|
@@ -139,8 +143,9 @@ A2A has stable SDKs in five languages:
 | Go | `a2a-go` | `go get github.com/a2aproject/a2a-go` |
 | Java | `a2a-java` | Maven dependency |
 | .NET | `A2A` | `dotnet add package A2A` |
+| Rust | `a2a-lf` | `cargo add a2a-lf` |
 
-The Python SDK offers extras for specific needs:
+The Python SDK offers [extras for specific needs](https://pypi.org/project/a2a-sdk/):
 
 ```bash
 pip install a2a-sdk[http-server]     # HTTP server support
@@ -192,7 +197,7 @@ agent_card = AgentCard(
 
 # 3. Start the server
 # The SDK handles JSON-RPC routing, task state management,
-# and Agent Card serving at /.well-known/agent.json
+# and Agent Card serving at /.well-known/agent-card.json
 ```
 
 The key implementation work is in the task handler — the logic that processes incoming messages, manages task state transitions, and produces artifacts. The SDK handles protocol details like JSON-RPC routing and Agent Card serving.
@@ -203,7 +208,7 @@ A client agent discovers and communicates with server agents:
 
 ```python
 # 1. Discover agent by fetching its Agent Card
-# GET https://summarizer.example.com/.well-known/agent.json
+# GET https://summarizer.example.com/.well-known/agent-card.json
 
 # 2. Check capabilities and skills
 # Does this agent support streaming? Multi-turn?
@@ -334,31 +339,31 @@ The bridge MCP server translates MCP tool calls into A2A messages and returns A2
 
 ### Transport Options
 
-A2A spec 0.3 supports three protocol bindings:
+As of [spec v1.0](https://a2a-protocol.org/latest/specification/), A2A supports three protocol bindings:
 
-**JSON-RPC** — the original and most widely supported binding. Methods include:
-- `a2a.sendMessage` — initiate or continue interaction
-- `a2a.sendStreamingMessage` — with SSE streaming
-- `a2a.getTask` — retrieve task state
-- `a2a.listTasks` — enumerate tasks with cursor-based pagination
-- `a2a.cancelTask` — request task cancellation
-- `a2a.subscribeToTask` — stream updates for an existing task
+**JSON-RPC** — the original and most widely supported binding. v1.0 renamed the methods to PascalCase (they were dot-notation, e.g. `message/send`, before v1.0 — see [What's New in v1.0](https://a2a-protocol.org/latest/whats-new-v1/)):
+- `SendMessage` — initiate or continue interaction
+- `SendStreamingMessage` — with SSE streaming
+- `GetTask` — retrieve task state
+- `ListTasks` — enumerate tasks with cursor-based pagination
+- `CancelTask` — request task cancellation
+- `SubscribeToTask` — stream updates for an existing task
 
-**HTTP/REST** — added for broader compatibility:
+**HTTP/REST** — added for broader compatibility. Current (v1.0) paths:
 ```
-POST   /messages              (SendMessage)
-POST   /messages:stream       (SendStreamingMessage)
-GET    /tasks/{taskId}        (GetTask)
-GET    /tasks                 (ListTasks)
-POST   /tasks/{taskId}:cancel (CancelTask)
-GET    /tasks/{taskId}:subscribe (SubscribeToTask)
+POST   /message:send             (SendMessage)
+POST   /message:sendStreaming    (SendStreamingMessage)
+GET    /tasks/{id}               (GetTask)
+GET    /tasks                    (ListTasks)
+POST   /tasks/{id}:cancel        (CancelTask)
+GET    /tasks/{id}:subscribe     (SubscribeToTask)
 ```
 
-**gRPC** — added in spec 0.3 for high-performance scenarios. The normative source is now `spec/a2a.proto` (Protocol Buffers), and the gRPC binding maps directly to the same operations.
+**gRPC** — available since spec 0.3, formalized as a fully normative binding (equal standing with JSON-RPC and REST) in spec v1.0. Protocol Buffers (`a2a.proto`) are the canonical source of truth for the data model, and the gRPC binding maps directly to the same operations ([What's New in v1.0](https://a2a-protocol.org/latest/whats-new-v1/)).
 
 ### Agent Card Signing
 
-Spec 0.3 introduced Agent Card signing for authenticity verification. The `signature` field in an Agent Card lets clients verify that the card was published by the claimed provider — important in enterprise environments where agents must verify each other's identity before exchanging sensitive data.
+[Spec v1.0 introduced Agent Card signing](https://a2a-protocol.org/latest/whats-new-v1/) for authenticity verification, using JWS (JSON Web Signature) with [RFC 8785](https://www.rfc-editor.org/rfc/rfc8785) JSON Canonicalization. The `signature` field in an Agent Card lets clients verify that the card was published by the claimed provider — important in enterprise environments where agents must verify each other's identity before exchanging sensitive data.
 
 ### Error Handling
 
@@ -380,7 +385,7 @@ Each error includes a machine-readable code, human-readable message, and optiona
 
 A coordinator agent receives "Plan a 5-day trip to Tokyo." It:
 
-1. Fetches the Agent Card from a Weather Agent at `weather-agent.example.com/.well-known/agent.json`
+1. Fetches the Agent Card from a Weather Agent at `weather-agent.example.com/.well-known/agent-card.json`
 2. Sends an A2A task: "Get the 5-day forecast for Tokyo"
 3. Fetches the Agent Card from an Activities Agent
 4. Sends an A2A task: "Recommend outdoor activities in Tokyo" with the weather data as context
@@ -440,11 +445,11 @@ Key observability practices:
 - **Cursor-based pagination** for `listTasks` — `pageToken`/`nextPageToken` pattern, page sizes 1-100
 - **Streaming** reduces latency for large responses — the client starts processing before the full response is ready
 - **Push notifications** eliminate polling for long-running tasks
-- **gRPC binding** (spec 0.3) provides better performance for high-throughput scenarios with Protocol Buffer serialization
+- **gRPC binding** (fully normative as of spec v1.0) provides better performance for high-throughput scenarios with Protocol Buffer serialization
 
 ### Version Management
 
-A2A uses an `A2A-Version` header for version negotiation. Agents should handle `VersionNotSupportedError` gracefully and include deprecation timelines when evolving their Agent Cards.
+A2A uses an [`A2A-Version` header](https://a2a-protocol.org/latest/specification/) for version negotiation between client and server. Agents should handle `VersionNotSupportedError` gracefully and include deprecation timelines when evolving their Agent Cards.
 
 ### Extended Agent Cards
 
@@ -457,11 +462,11 @@ A2A doesn't exist in isolation. The current agent protocol landscape:
 | Protocol | Focus | Governance | Status |
 |----------|-------|------------|--------|
 | [MCP](/guides/what-is-mcp/) | Agent-to-tool | Linux Foundation (AAIF) | Mature, widely adopted |
-| A2A | Agent-to-agent | Linux Foundation | Stable, growing adoption |
-| [AGENTS.md](/guides/agentic-web-agents-md-llms-txt/) | Agent discovery on websites | Community | Rapidly adopted (60k+ repos) |
+| A2A | Agent-to-agent | Linux Foundation (own project) | [v1.0, production-ready](https://a2a-protocol.org/latest/announcing-1.0/), [150+ orgs](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year) |
+| [AGENTS.md](/guides/agentic-web-agents-md-llms-txt/) | Agent discovery on websites | [Linux Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) | Rapidly adopted ([60k+ repos](https://agents.md/)) |
 | [llms.txt](/guides/agentic-web-agents-md-llms-txt/) | LLM-readable site summaries | Community | Growing adoption |
 
-[IBM's Agent Communication Protocol (ACP) joined forces with A2A in August 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/), consolidating the agent-to-agent space. The Linux Foundation's [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation), co-founded by Anthropic, OpenAI, and Block in December 2025 (with AWS, Bloomberg, Cloudflare, Google, and Microsoft as platinum members), now governs both MCP and provides the broader context for A2A's governance.
+[IBM's Agent Communication Protocol (ACP) joined forces with A2A in August 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/), consolidating the agent-to-agent space. It's worth being precise about governance here, since it's easy to conflate: the Linux Foundation's [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation), co-founded by Anthropic, OpenAI, and Block in December 2025 (with AWS, Bloomberg, Cloudflare, Google, and Microsoft also among its platinum members), governs MCP and AGENTS.md as its founding projects — but **not** A2A. A2A remains a separate Linux Foundation project with its own Technical Steering Committee, whose members include [AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year). See our [AAIF governance guide](/guides/agentic-ai-foundation-mcp-governance/) for the full picture of what the foundation does and doesn't cover.
 
 Framework support is broad. The [a2a-samples repository](https://github.com/a2aproject/a2a-samples) includes examples for LangGraph, CrewAI, Google ADK, and Semantic Kernel agents exposed as A2A servers.
 
@@ -487,4 +492,4 @@ For agents that also need MCP capabilities, see our guides on [building your fir
 
 ---
 
-*This guide is part of the [ChatForest MCP guide series](/guides/), maintained by [Rob Nugen](https://www.robnugen.com/) and AI collaborators. Last updated March 28, 2026.*
+*This guide is part of the [ChatForest MCP guide series](/guides/), maintained by [Rob Nugen](https://www.robnugen.com/) and AI collaborators. Originally published March 28, 2026; last updated August 11, 2026.*

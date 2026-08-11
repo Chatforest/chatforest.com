@@ -5,7 +5,7 @@ description: "How to build multi-step AI agent workflows using MCP — covering 
 content_type: "Guide"
 card_description: "A single AI prompt is useful. A multi-step workflow that chains tool calls, makes decisions, and recovers from failures is where agents become genuinely productive."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 A single prompt to an AI agent can answer a question or generate text. But real-world automation — triaging a support ticket, processing a data pipeline, reviewing a pull request — requires *workflows*: sequences of steps with branching logic, shared state, error handling, and sometimes human approval gates.
@@ -97,7 +97,7 @@ Draft → Review → [acceptable?] → No: Revise → Review → ...
 
 **MCP role:** The review step might use an MCP server to check against a style guide or quality rubric. The revision step gets both the draft and review feedback.
 
-**Guard against:** Infinite loops. Always set a maximum iteration count. Three refinement cycles is usually the practical limit before diminishing returns — quality tends to plateau after 2–3 iterations for most tasks.
+**Guard against:** Infinite loops. Always set a maximum iteration count and a fallback behavior (e.g., publish the best draft so far, or escalate to a human) for when that count is reached.
 
 ### Human-in-the-Loop
 
@@ -111,7 +111,7 @@ Generate report → [await approval] → Publish → Notify stakeholders
 
 **MCP role:** [MCP elicitation](/guides/mcp-elicitation-explained/) allows servers to request user input at runtime without breaking the workflow. The server sends an elicitation request, the client prompts the user, and the response flows back into the workflow. For async approval gates, a [communication MCP server](/guides/best-communication-mcp-servers/) can send a message via Slack or email, and the workflow polls or receives a webhook when the human responds.
 
-**The spectrum:** Frameworks like the OpenAI Agents SDK provide a checkpoint system where any tool call can become an approval gate. You choose where to pause based on your risk tolerance — from fully autonomous (no pauses) to fully supervised (pause before every tool call).
+**The spectrum:** Frameworks like the [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/human_in_the_loop/) let you mark individual tools as `needs_approval`, which pauses the run and surfaces a pending approval that a human (or your application) must approve or reject before execution continues. You choose where to require approval based on your risk tolerance — from fully autonomous (no gates) to fully supervised (a gate on every sensitive tool call).
 
 ### Supervisor / Delegation
 
@@ -131,7 +131,7 @@ Each agent framework has its own approach to workflow definition. The choice mat
 
 ### LangGraph: Graph-Based State Machines
 
-[LangGraph](https://langchain-ai.github.io/langgraph/) (by LangChain) defines workflows as directed graphs where nodes are computation steps and edges define transitions.
+[LangGraph](https://docs.langchain.com/oss/python/langgraph/overview) (by LangChain) defines workflows as directed graphs where nodes are computation steps and edges define transitions.
 
 ```python
 from langgraph.graph import StateGraph, END
@@ -154,13 +154,13 @@ workflow.add_conditional_edges(
 workflow.add_edge("write", END)
 ```
 
-**State management:** LangGraph's `StateGraph` carries typed state between nodes. Each node receives and returns state, enabling persistent context across the workflow. State is checkpointed after every node execution — if the workflow crashes at step 3, it resumes from step 3's checkpoint, not from scratch.
+**State management:** LangGraph's `StateGraph` carries typed state between nodes. Each node receives and returns state, and a [checkpointer persists that state at each step](https://docs.langchain.com/oss/python/langgraph/persistence), giving the graph fault tolerance — a crashed run can recover from its last checkpoint rather than restarting.
 
-**MCP integration:** LangGraph has built-in MCP tool adapters. You wrap MCP servers as LangGraph tools and assign them to specific nodes, so each workflow step only sees the tools it needs.
+**MCP integration:** LangGraph has [built-in MCP tool adapters](https://docs.langchain.com/oss/python/langchain/mcp) (via the `langchain-mcp-adapters` package). You wrap MCP servers as LangGraph tools and assign them to specific nodes, so each workflow step only sees the tools it needs.
 
-**Human-in-the-loop:** The `interrupt_before` and `interrupt_after` parameters on nodes pause execution for human review. The checkpoint system persists the full state, so the workflow can resume hours or days later.
+**Human-in-the-loop:** LangGraph's docs now recommend the [`interrupt()` function](https://docs.langchain.com/oss/python/langgraph/interrupts) for human-in-the-loop pausing — it can be called dynamically from inside a node and resumed via the same `thread_id`. (The older `interrupt_before`/`interrupt_after` node parameters still exist but the docs now scope those to debugging, not production approval flows.) Either way, the checkpointer persists the full state, so the workflow can resume hours or days later.
 
-**Strengths:** Most flexible workflow definition. Explicit state typing catches errors early. Production-grade checkpointing with PostgreSQL backend.
+**Strengths:** Most flexible workflow definition. Explicit state typing catches errors early. Production-grade checkpointing with a [PostgreSQL-backed checkpointer](https://docs.langchain.com/oss/python/langgraph/persistence).
 
 ### CrewAI: Role-Based Task Pipelines
 
@@ -202,9 +202,9 @@ crew = Crew(
 result = crew.kickoff()
 ```
 
-**Process types:** `Process.sequential` runs tasks in order — each task automatically receives context from previous tasks. `Process.hierarchical` adds a manager agent that coordinates workers, breaking down goals and validating outputs before proceeding.
+**Process types:** [`Process.sequential` runs tasks in order](https://docs.crewai.com/concepts/processes) — each task automatically receives context from previous tasks. `Process.hierarchical` adds a manager agent (custom or auto-created) that handles planning, delegation, and validating outputs before proceeding.
 
-**MCP integration:** CrewAI agents can use MCP tools assigned to them. Each agent in the crew gets its own set of tools, keeping the interface focused.
+**MCP integration:** [CrewAI agents can use MCP tools](https://docs.crewai.com/en/mcp/overview) assigned to them via the `mcps` field, connecting to local (stdio) or remote (SSE/Streamable HTTP) MCP servers. Each agent in the crew gets its own set of tools, keeping the interface focused.
 
 **Strengths:** Intuitive mental model (roles + tasks). Low code overhead for common patterns. The hierarchical process is particularly good for open-ended tasks where the exact steps aren't known upfront.
 
@@ -230,22 +230,22 @@ triage_agent = Agent(
 )
 ```
 
-**Handoffs:** When a triage agent hands off to a billing agent, the billing agent receives the full conversation history and takes over. Handoffs appear as callable tools to the LLM — a handoff to "Billing Agent" becomes `transfer_to_billing_specialist` in the tool list. The model decides when to hand off based on its instructions.
+**Handoffs:** When a triage agent hands off to a billing agent, the billing agent receives the full conversation history and takes over. [Handoffs appear as callable tools to the LLM](https://openai.github.io/openai-agents-python/handoffs/) — a handoff to an agent named "Refund Agent" becomes `transfer_to_refund_agent` in the tool list (the naming pattern is the same for a "Billing specialist" agent). The model decides when to hand off based on its instructions.
 
-**Guardrails:** Three types protect workflow integrity:
+**Guardrails:** [Three types protect workflow integrity](https://openai.github.io/openai-agents-python/guardrails/):
 - **Input guardrails** validate user input before the first agent runs
 - **Output guardrails** validate the final agent's response before returning
-- **Tool guardrails** wrap individual tool calls with validation logic
+- **Tool guardrails** wrap individual tool calls with validation logic, running before and/or after each invocation
 
-When a guardrail trips, it raises an exception that your application handles — you might retry, reroute, or escalate.
+When a guardrail trips, it raises a tripwire exception (e.g. `InputGuardrailTripwireTriggered`) that your application handles — you might retry, reroute, or escalate.
 
-**MCP integration:** The SDK natively supports MCP servers as tool sources. Each agent can connect to different MCP servers based on its specialization.
+**MCP integration:** [The SDK natively supports MCP servers as tool sources](https://openai.github.io/openai-agents-python/mcp/), via hosted MCP tools, Streamable HTTP, SSE, or local stdio subprocesses. Each agent can connect to different MCP servers based on its specialization.
 
 **Strengths:** Clean handoff model maps naturally to customer support and triage workflows. Guardrails provide safety without complicating the workflow definition.
 
 ### Mastra: TypeScript-Native Workflows
 
-[Mastra](https://mastra.ai/) ([from the team behind Gatsby, Y Combinator W25](https://mastra.ai/about)) offers a TypeScript-first approach with graph-based workflow definition.
+[Mastra](https://mastra.ai/) — [built by the team behind Gatsby.js](https://mastra.ai/about) and [backed by Y Combinator's Winter 2025 batch](https://www.ycombinator.com/companies/mastra) — offers a TypeScript-first approach with graph-based workflow definition.
 
 ```typescript
 const workflow = new Workflow({ name: "content-pipeline" })
@@ -260,7 +260,7 @@ const workflow = new Workflow({ name: "content-pipeline" })
 
 **Workflow primitives:** `.then()` for sequential, `.branch()` for conditional, `.parallel()` for fan-out — a fluent API that reads like the workflow it describes.
 
-**MCP integration:** Mastra can both consume and serve MCP. Agents use MCP servers as tool sources, and Mastra can expose its own agents and tools as MCP servers — meaning a Mastra workflow can be a tool in someone else's MCP-based system.
+**MCP integration:** Mastra can both consume and serve MCP. Agents use MCP servers as tool sources via `MCPClient`, and [Mastra's `MCPServer` class can expose its own agents, tools, and workflows as an MCP server](https://mastra.ai/reference/tools/mcp-server) — meaning a Mastra workflow can be a tool in someone else's MCP-based system.
 
 **Strengths:** TypeScript-native with strong typing. The fluent API is more readable than graph construction for simple workflows. MCP server authoring is a unique capability.
 

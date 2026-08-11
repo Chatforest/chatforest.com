@@ -5,7 +5,7 @@
 
 MCP stands for Model Context Protocol. It's an open standard that lets AI models connect to external tools and data sources through a consistent interface. If you've used function calling or tool use with an LLM, MCP is the next step: a standardized way to package, distribute, and connect those tools.
 
-In December 2025, Anthropic donated MCP to the [Agentic AI Foundation](https://aaif.io/) (AAIF) under the Linux Foundation, co-founded by Anthropic, Block, and OpenAI. Platinum members include [Anthropic, AWS, Block, Bloomberg, Cloudflare, Google, Microsoft, and OpenAI](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation). With 97 million monthly SDK downloads, official SDKs in eight languages, and first-class client support across ChatGPT, Claude, Gemini, Copilot, and more, MCP has gone from experiment to cross-industry standard in just over a year.
+In December 2025, Anthropic donated MCP to the [Agentic AI Foundation](https://aaif.io/) (AAIF) under the Linux Foundation, co-founded by Anthropic, Block, and OpenAI. Platinum members include [Anthropic, AWS, Block, Bloomberg, Cloudflare, Google, Microsoft, and OpenAI](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation). With [close to half a billion monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2026-07-28/) (the TypeScript and Python SDKs have each crossed 1 billion total downloads) and [official SDKs in ten languages](https://modelcontextprotocol.io/docs/sdk), plus first-class client support across ChatGPT, Claude, Gemini, Copilot, and more, MCP has gone from experiment to cross-industry standard in under two years.
 
 Here's what you need to know.
 
@@ -44,7 +44,7 @@ When you add an MCP server to a client like Claude Desktop:
 MCP supports two transport types:
 
 - **stdio** — For local servers. The client launches the server as a subprocess and communicates via standard input/output. Simple, fast, no network required.
-- **Streamable HTTP** — For remote servers. The server runs as an HTTP service that any client can connect to. Replaced the earlier HTTP+SSE transport (deprecated in spec version 2025-03-26, sunset April 1, 2026). Fully stateless, enabling horizontal scaling behind load balancers. Supports streaming responses, multiple concurrent clients, and server-to-client notifications.
+- **Streamable HTTP** — For remote servers. The server runs as an HTTP service that any client can connect to. Replaced the earlier HTTP+SSE transport, which [the spec deprecated starting in revision 2025-03-26](https://blog.fka.dev/blog/2025-06-06-why-mcp-deprecated-sse-and-go-with-streamable-http/) and [still lists as deprecated — not yet removed — under the current 2026-07-28 spec](https://modelcontextprotocol.io/specification/versioning), which keeps deprecated features in place for at least twelve months before they're eligible for removal. The [2026-07-28 revision made the protocol core stateless](https://blog.modelcontextprotocol.io/posts/2026-07-28/), enabling horizontal scaling behind ordinary load balancers. Supports streaming responses, multiple concurrent clients, and server-to-client notifications.
 
 ## The Three Things a Server Can Expose
 
@@ -109,7 +109,7 @@ That's it. You now have an AI agent with file system access.
 
 The ecosystem is growing fast:
 - **Official MCP Registry** — The canonical source, now governed by the Agentic AI Foundation
-- **PulseMCP** — The largest community directory with 11,170+ curated servers (and growing daily)
+- **PulseMCP** — The largest community directory, with [22,000+ curated servers](https://www.pulsemcp.com/servers) (and growing daily)
 - **npm / PyPI** — Many servers are published as packages (`@modelcontextprotocol/server-*` on npm)
 - **GitHub** — Search for "mcp-server" to find community-built options
 
@@ -117,34 +117,36 @@ Not all servers are equal. Some are well-maintained reference implementations, o
 
 ## MCP Clients
 
-MCP is client-agnostic — a server built once works with any compliant client. Since AAIF launched, adoption has expanded well beyond Anthropic's ecosystem. Major clients include:
+MCP is client-agnostic — a server built once works with any compliant client. Since AAIF launched, adoption has expanded well beyond Anthropic's ecosystem. Major clients include (see the [official client directory](https://modelcontextprotocol.io/clients) for the full, ongoing list):
 
 - **Claude Desktop** — Anthropic's desktop app, the original MCP client
 - **Claude Code** — Anthropic's CLI coding agent with full MCP support
-- **ChatGPT Desktop** — OpenAI adopted MCP across ChatGPT desktop, the Agents SDK, and the Responses API
-- **Google Gemini** — Google DeepMind confirmed MCP support in Gemini models
+- **ChatGPT Desktop** — [OpenAI has built MCP into the Responses API, the Agents SDK, and ChatGPT's connectors/developer-mode tooling](https://developers.openai.com/api/docs/guides/tools-connectors-mcp), including [full MCP connectors rolling out to ChatGPT Business, Enterprise, and Edu plans](https://help.openai.com/en/articles/12584461-developer-mode-apps-and-full-mcp-connectors-in-chatgpt-beta)
+- **Google Gemini** — [Google DeepMind added native MCP support to the Gemini API and Managed Agents](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)
 - **VS Code** — GitHub Copilot supports MCP servers natively
-- **Visual Studio 2026** — Azure MCP Server tools built-in out of the box
+- **Visual Studio 2026** — [Azure MCP Server tools built in out of the box](https://devblogs.microsoft.com/visualstudio/azure-mcp-server-now-built-in-with-visual-studio-2026-a-new-era-for-agentic-workflows/)
 - **Cursor** — Built-in MCP support, no extension needed
 - **Windsurf** — MCP integration in the AI code editor
 - **Zed** — Native MCP support in the editor
 - **Cline** — Open-source VS Code extension with MCP support
 - **Continue.dev** — Open-source AI coding assistant with MCP support
-- **Replit** — Cloud IDE with MCP server support
+- **Replit** — [Cloud IDE with an MCP server for building and managing Replit apps](https://docs.replit.com/platforms/mcp-server)
 
-With PulseMCP tracking 546+ MCP clients, the ecosystem is broad and growing. If you build an MCP server, it works everywhere — that's a key advantage over proprietary plugin systems.
+With [PulseMCP tracking 600+ MCP clients](https://www.pulsemcp.com/clients), the ecosystem is broad and growing. If you build an MCP server, it works everywhere — that's a key advantage over proprietary plugin systems.
 
 ## Building Your Own MCP Server
 
-If you can write a function, you can build an MCP server. Official SDKs now cover eight languages:
-- **TypeScript:** `@modelcontextprotocol/sdk` (v1.27+, V2 in development)
-- **Python:** `mcp` (v1.26+, V2 path announced at MCP Dev Summit)
-- **Java:** Official SDK maintained with Spring
-- **Kotlin:** Multiplatform SDK (JVM, Native, JS, Wasm), maintained with JetBrains
-- **Go:** Official SDK maintained with Google (stable release expected August 2026)
-- **C#:** Official SDK maintained with Microsoft
-- **Swift:** Official SDK maintained with Apple
+If you can write a function, you can build an MCP server. [Official SDKs now cover ten languages](https://modelcontextprotocol.io/docs/sdk):
+- **TypeScript:** [`@modelcontextprotocol/client`/`server` v2.0 beta](https://github.com/modelcontextprotocol/typescript-sdk/releases), released July 2026 with support for the 2026-07-28 spec (the earlier `@modelcontextprotocol/sdk` v1 line still ships for 2025-era servers)
+- **Python:** [`mcp` v2.0.0](https://pypi.org/project/mcp/), a major rework released July 28, 2026 for the current spec
+- **Java:** Official SDK, [maintained in collaboration with the Spring team](https://github.com/modelcontextprotocol/java-sdk)
+- **Kotlin:** [Multiplatform SDK (JVM, Native, JS, Wasm), maintained in collaboration with JetBrains](https://github.com/modelcontextprotocol/kotlin-sdk)
+- **Go:** [`go-sdk` v1.7.0](https://github.com/modelcontextprotocol/go-sdk/releases), maintained in collaboration with Google, reached stable with full 2026-07-28 spec support in July 2026
+- **C#:** [Official SDK maintained in collaboration with Microsoft](https://devblogs.microsoft.com/dotnet/announcing-v20-of-the-official-mcp-csharp-sdk/), now at v2.0 implementing the 2026-07-28 revision
+- **Swift:** [Official SDK](https://github.com/modelcontextprotocol/swift-sdk)
 - **Rust:** Official SDK
+- **Ruby:** Official SDK
+- **PHP:** Official SDK
 
 A minimal Python MCP server:
 
@@ -173,9 +175,9 @@ If you build software, MCP matters for two reasons:
 1. **As a user:** MCP servers extend what AI tools can do for you. File access, database queries, API calls, deployment tools — the ecosystem grows with every new server.
 2. **As a builder:** Wrapping your API or tool as an MCP server makes it accessible to every AI agent in the ecosystem. It's a distribution channel for your tool's capabilities.
 
-The MCP ecosystem has matured rapidly. The current spec (November 2025) is stable, official SDKs cover eight languages, and governance now sits under the Agentic AI Foundation with backing from every major AI lab. The 2026 roadmap is organized around four priority areas — transport scalability, agent-to-agent communication, governance maturation, and enterprise readiness (audit trails, SSO-integrated auth via DPoP and Workload Identity Federation, gateway behavior). A V2 path for SDKs was announced at the inaugural MCP Dev Summit (April 2-3, 2026, NYC), with conformance testing across all SDKs now a formal initiative.
+The MCP ecosystem has matured rapidly. The [current spec (2026-07-28) is stable](https://modelcontextprotocol.io/specification/versioning), [official SDKs cover ten languages](https://modelcontextprotocol.io/docs/sdk), and governance now sits under the Agentic AI Foundation with backing from every major AI lab. The [2026 roadmap is organized around four priority areas](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) — transport scalability, agent-to-agent communication, governance maturation, and enterprise readiness (audit trails, SSO-integrated auth via proposals like DPoP and Workload Identity Federation, gateway behavior — these auth proposals are still in review, not yet shipped protocol). SDK maintainers previewed a V2 path at [MCP Dev Summit North America 2026](https://events.linuxfoundation.org/mcp-dev-summit-north-america/) (April 2-3, 2026, NYC — the second Dev Summit, following the inaugural one in San Francisco in May 2025), and [V2 SDKs for TypeScript, Python, Go, and C# shipped July 28, 2026](https://blog.modelcontextprotocol.io/posts/2026-07-28/) alongside conformance testing that's now a formal requirement for spec changes.
 
-With 97 million monthly SDK downloads and first-class support from Claude, ChatGPT, Gemini, Copilot, and dozens of other clients, MCP has moved past early-adopter into mainstream developer infrastructure.
+With [close to half a billion monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2026-07-28/) and first-class support from Claude, ChatGPT, Gemini, Copilot, and dozens of other clients, MCP has moved past early-adopter into mainstream developer infrastructure.
 
 ## Related Guides
 

@@ -5,14 +5,14 @@ description: "How enterprises deploy MCP at scale — covering governance models
 content_type: "Guide"
 card_description: "One developer running an MCP server locally is simple. Rolling it out to 500 engineers with compliance requirements is a different problem entirely."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 A single developer connecting Claude Code to a local MCP server is straightforward. An enterprise rolling out MCP across hundreds of engineers — with compliance requirements, access control policies, and audit obligations — faces an entirely different set of challenges.
 
-By 2025, MCP had gained [broad adoption](https://modelcontextprotocol.io/blog/roadmap-2026) across the AI tool ecosystem, including from OpenAI, Google, Microsoft, and Amazon. 2026 is the year enterprises move from pilot projects to production infrastructure. The [2026 MCP roadmap](https://modelcontextprotocol.io/blog/roadmap-2026) makes enterprise readiness one of its four top priorities, alongside transport evolution, agent communication, and governance maturation.
+By 2025, MCP had gained broad adoption across the AI tool ecosystem, including from [OpenAI](https://x.com/OpenAIDevs/status/1904957755829481737) (Agents SDK first, later the Responses API and ChatGPT), [Google](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services) (Gemini API and Google Cloud services), [Microsoft](https://devblogs.microsoft.com/foundry/announcing-model-context-protocol-support-preview-in-azure-ai-foundry-agent-service/) (Azure AI Foundry Agent Service and Copilot Studio), and [Amazon](https://aws.amazon.com/about-aws/whats-new/2025/10/model-context-protocol-proxy-available/) (the MCP Proxy for AWS and Bedrock AgentCore). 2026 is the year enterprises move from pilot projects to production infrastructure. The [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) makes enterprise readiness one of its four top priorities, alongside transport evolution, agent communication, and governance maturation.
 
-This guide covers the architecture, tooling, and organizational patterns for deploying MCP at enterprise scale. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25), the enterprise-managed authorization extension, published vendor documentation, and industry reports — we research and analyze rather than deploying enterprise MCP infrastructure ourselves.
+This guide covers the architecture, tooling, and organizational patterns for deploying MCP at enterprise scale. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/latest), the enterprise-managed authorization extension, published vendor documentation, and industry reports — we research and analyze rather than deploying enterprise MCP infrastructure ourselves.
 
 ## The Core Enterprise Challenge
 
@@ -68,7 +68,7 @@ Uncontrolled MCP server proliferation is the enterprise equivalent of shadow IT.
 A server registry is an organization-maintained catalog of approved MCP servers. [GitHub's Copilot registry](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-registry) provides a concrete example of this model:
 
 - Administrators configure an MCP registry URL at the organization or enterprise level
-- An access control policy determines which servers developers can use: "allow all" (no restrictions), or "registry only" (only approved servers may run)
+- An [access control policy](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-server-access) determines which servers developers can use: "allow all" (no restrictions), or "registry only" (only approved servers may run)
 - Developers discover available servers through their IDE, filtered by the registry
 
 This pattern separates *discovery* from *approval*. Developers can browse what's available without IT needing to configure each person's environment individually.
@@ -97,7 +97,7 @@ The coarsest control: who can connect to which MCP servers at all. This maps nat
 
 More granular: within a single MCP server, different users see different tools. A CRM MCP server might expose `search_contacts`, `update_contact`, and `delete_contact`. A sales representative's role permits the first two; only a sales manager can delete.
 
-[Lunar.dev's MCPX gateway](https://www.lunar.dev/product/mcp) implements this pattern with ACLs operating at global, service, and individual tool levels — allowing administrators to permit `read_leads` while denying `delete_leads` within the same MCP server without modifying the underlying server code.
+[Lunar.dev's MCPX gateway](https://docs.lunar.dev/mcpx/access_control_list/) implements this pattern with ACLs operating at global, service, and individual tool levels — allowing administrators to permit `read_leads` while denying `delete_leads` within the same MCP server without modifying the underlying server code.
 
 ### Parameter-Level Access
 
@@ -125,7 +125,7 @@ Most enterprises start with RBAC and add ABAC policies for specific compliance r
 
 The biggest friction point in enterprise MCP adoption has been authentication. In early MCP deployments, each developer managed their own credentials for each MCP server — an OAuth dance repeated for every tool connection. This doesn't scale, and it doesn't satisfy IT security teams who need centralized control.
 
-The [Enterprise-Managed Authorization extension](https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization) (SEP-646) addresses this by delegating authorization to the organization's existing identity provider.
+The [Enterprise-Managed Authorization extension](https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization) ([SEP-990](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/990)) addresses this by delegating authorization to the organization's existing identity provider.
 
 ### How It Works
 
@@ -159,7 +159,7 @@ The key improvement: IT administrators manage MCP access through the same policy
 
 ### Current Status
 
-As of March 2026, enterprise-managed authorization is a specification extension — implemented by some platforms but not yet universally supported. The [2026 roadmap](https://workos.com/blog/2026-mcp-roadmap-enterprise-readiness) identifies it as a priority, but full ecosystem adoption is still ahead.
+Enterprise-managed authorization moved from priority extension to [stable specification](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/) on June 18, 2026. Adoption is still partial: Okta is the first supported identity provider, Anthropic's Claude products and Visual Studio Code are early clients, and MCP servers including Asana, Atlassian, Canva, Figma, Granola, Linear, and Supabase have implemented it, with Slack actively adding support. The [2026 roadmap](https://workos.com/blog/2026-mcp-roadmap-enterprise-readiness) had identified it as a priority; full ecosystem adoption is still ahead.
 
 ## Audit Logging and Compliance
 
@@ -213,9 +213,9 @@ Several platforms have emerged to address enterprise MCP governance. Here's how 
 |----------|---------|---------------|---------------|------------|-------------------|
 | **[Lunar.dev MCPX](https://www.lunar.dev/product/mcp)** | Commercial | Tool-level ACLs | Immutable, SIEM-ready | Cloud/on-prem | [~4ms p99 latency](https://docs.lunar.dev/latency-footprint/), granular tool ACLs |
 | **Stacklok ToolHive** | Apache 2.0 | Tool-level via vMCP | OTel-aligned | Kubernetes | Open source, K8s native |
-| **MintMCP Gateway** | Commercial | Role-based | SOC 2 Type II attested | Cloud | One-click deploy, SOC 2 certification |
+| **[MintMCP Gateway](https://trust.mintmcp.com/)** | Commercial | Role-based | [SOC 2 Type II attested](https://trust.mintmcp.com/) | Cloud | One-click deploy, SOC 2 certification |
 | **GitHub Copilot Registry** | Platform feature | Organization-level | Via GitHub audit log | GitHub-managed | Native IDE integration |
-| **Agentic MCP Gateway** | Open source | OAuth + RBAC | Configurable | Self-hosted | Keycloak/Entra integration |
+| **[Agentic MCP Gateway](https://github.com/agentic-community/mcp-gateway-registry)** | Open source | OAuth + RBAC | Configurable | Self-hosted | Keycloak/Entra integration |
 
 ### Selection Criteria
 

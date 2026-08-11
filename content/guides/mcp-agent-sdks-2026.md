@@ -5,7 +5,7 @@ description: "A practical comparison of the major AI agent SDKs in 2026 — Clau
 content_type: "Guide"
 card_description: "The agent framework landscape shifted dramatically in early 2026. Here's how the new wave of SDKs compares for building production AI agent workflows."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 The AI agent SDK landscape in 2026 looks nothing like it did a year ago. While [LangChain, CrewAI, and the OpenAI Agents SDK](/guides/mcp-agent-framework-integrations/) remain popular, a new wave of SDKs has emerged — each with a different philosophy about how agents should work, how they should connect to tools via MCP, and how production systems should be built.
@@ -16,9 +16,9 @@ This guide covers five SDKs that represent distinct approaches to agent developm
 
 Three things changed in late 2025 and early 2026 that reshaped the SDK landscape:
 
-**MCP became table stakes.** With [over 97 million monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) and 10,000+ indexed MCP servers, every serious agent framework now supports MCP natively. The question isn't whether to use MCP — it's how deeply the SDK integrates with it.
+**MCP became table stakes.** With [over 97 million monthly SDK downloads and 10,000 active servers](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/), every serious agent framework now supports MCP natively. The question isn't whether to use MCP — it's how deeply the SDK integrates with it.
 
-**Agent-to-agent coordination matured.** The [A2A protocol](/guides/mcp-vs-a2a-protocol-comparison/) moved from proposal to adoption, and the [Agentic AI Foundation](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) (AAIF) brought MCP and A2A under shared governance. SDKs now need strategies for both tool access (MCP) and agent coordination (A2A).
+**Agent-to-agent coordination matured.** The [A2A protocol](/guides/mcp-vs-a2a-protocol-comparison/) moved from proposal to adoption. Separately, in December 2025 the Linux Foundation launched the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (AAIF) as neutral governance for MCP, alongside Block's goose and OpenAI's AGENTS.md as founding projects — A2A is not among AAIF's founding projects and remains governed separately. SDKs now need strategies for both tool access (MCP) and agent coordination (A2A).
 
 **Context window management became a first-class concern.** As documented in our [MCP cost optimization guide](/guides/mcp-cost-optimization/), MCP tool schemas can consume 40-50% of context windows. SDKs that solve this problem — through code execution patterns, context editing, or dynamic tool discovery — have a significant production advantage.
 
@@ -39,7 +39,7 @@ The SDK builds on three key ideas:
 
 **Subagents for parallel execution.** The orchestrator agent can spawn subagents that run in parallel with isolated context windows. Only relevant results return to the orchestrator, which keeps the main context clean. This is structurally similar to the supervisor/worker pattern described in our [multi-agent architectures guide](/guides/mcp-multi-agent-architectures/), but implemented as a first-class SDK feature rather than something you wire up yourself.
 
-**Context editing.** This is the SDK's most distinctive feature. In long agent sessions, stale tool call outputs accumulate in the context window, wasting tokens and degrading performance. Context editing automatically clears old outputs while preserving the conversation flow. According to [Anthropic's published evaluation](https://claude.com/blog/context-management), this reduces token consumption by 84% in 100-turn sessions — a dramatic improvement for long-running workflows.
+**Context editing.** This is the SDK's most distinctive feature. In long agent sessions, stale tool call outputs accumulate in the context window, wasting tokens and degrading performance. Context editing automatically clears old outputs while preserving the conversation flow. In [Anthropic's published evaluation](https://claude.com/blog/context-management), context editing reduced token consumption by 84% in a 100-turn web search evaluation — a dramatic improvement for that long-running workflow, though results will vary by task type.
 
 ### When to Use It
 
@@ -51,7 +51,7 @@ The Claude Agent SDK is the natural choice when you're already committed to Clau
 **Source:** Part of the broader Microsoft AI ecosystem
 **Model support:** Multi-model (Azure OpenAI, others)
 **MCP integration:** Protocol-level support
-**Status:** [RC 1.0 released February 19, 2026](https://devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/); GA targeted for late Q1 2026
+**Status:** [RC 1.0 released February 19, 2026](https://devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/); reached general availability as [version 1.0 on April 3, 2026](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) for both Python and .NET
 
 The Microsoft Agent Framework is the result of merging AutoGen and Semantic Kernel into a unified platform. It represents the enterprise approach to agent development — graph-based workflows, checkpointing, human-in-the-loop patterns, and deep integration with the Azure ecosystem.
 
@@ -59,13 +59,13 @@ The Microsoft Agent Framework is the result of merging AutoGen and Semantic Kern
 
 The framework is built around several core concepts:
 
-**Graph-based workflows.** Agent interactions are modeled as directed graphs. Nodes represent agents, tools, or decision points. Edges define flow control — sequential, parallel, or conditional. This gives you explicit control over execution order, which matters in regulated industries where you need auditable, deterministic workflows.
+**Graph-based workflows.** Agent interactions are modeled as [directed graphs with sequential, concurrent, handoff, and group-collaboration patterns](https://github.com/microsoft/agent-framework). Nodes represent agents, tools, or decision points. Edges define flow control — sequential, parallel, or conditional. This gives you explicit control over execution order, which matters in regulated industries where you need auditable, deterministic workflows.
 
-**Protocol-native.** The framework supports both MCP (for tool access) and A2A (for agent coordination) at the protocol level. This means you can connect to any MCP server for tools while using A2A to coordinate with agents running on different frameworks entirely.
+**Protocol-native.** The framework supports both [MCP (for tool access) and A2A (for agent coordination)](https://github.com/microsoft/agent-framework) at the protocol level. This means you can connect to any MCP server for tools while using A2A to coordinate with agents running on different frameworks entirely.
 
-**Streaming and checkpointing.** Long-running workflows can stream intermediate results and checkpoint state. If a workflow fails at step 47, you can resume from step 46 rather than starting over. Combined with human-in-the-loop patterns, this enables workflows where agents and humans alternate control.
+**Streaming and checkpointing.** Workflows support [checkpointing, streaming, human-in-the-loop, and time-travel](https://github.com/microsoft/agent-framework), letting long-running workflows stream intermediate results and resume from a saved checkpoint rather than starting over after a failure. Combined with human-in-the-loop patterns, this enables workflows where agents and humans alternate control.
 
-**Cross-language support.** Python and .NET are first-class citizens, which matters for organizations with mixed-language codebases — a common situation in enterprise environments.
+**Cross-language support.** [Python and .NET/C# are both first-class](https://github.com/microsoft/agent-framework), with consistent APIs across languages — which matters for organizations with mixed-language codebases, a common situation in enterprise environments.
 
 ### When to Use It
 
@@ -79,13 +79,13 @@ The Microsoft Agent Framework is purpose-built for enterprise teams already inve
 **MCP integration:** Native
 **Origin:** Community fork from the original AutoGen creators
 
-When Microsoft merged AutoGen into the Agent Framework, the original AutoGen team forked the project as AG2 — an open-source "AgentOS" focused on interoperability between agent frameworks.
+In [November 2024](https://github.com/ag2ai/ag2/blob/main/announcements.md), original AutoGen creators [Chi Wang and Qingyun Wu](https://x.com/Chi_Wang_/status/1857162880740934007) left Microsoft and forked the project as AG2 under a new, independently governed organization, AG2AI — nearly a year before Microsoft [previewed its own AutoGen + Semantic Kernel merger](https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/) as the Microsoft Agent Framework in October 2025. AG2 bills itself as an open-source "AgentOS" focused on interoperability between agent frameworks.
 
 ### Architecture
 
-AG2's distinctive feature is its **universal runtime**: it can connect agents from AG2, Google ADK, OpenAI, and LangChain into a single coordinated team. This means you're not locked into one framework per project — you can have a LangChain agent handling retrieval, an OpenAI agent handling generation, and an AG2 agent orchestrating both.
+AG2's distinctive feature is its **universal runtime**: it can [connect agents from AG2, Google ADK, OpenAI, and LangChain into a single coordinated team](https://www.ag2.ai/). This means you're not locked into one framework per project — you can have a LangChain agent handling retrieval, an OpenAI agent handling generation, and an AG2 agent orchestrating both.
 
-**A2A and MCP support** means AG2 agents can access tools via MCP servers and coordinate with external agents via A2A. Enterprise security features (authentication, authorization, audit logging) are built into the runtime rather than bolted on.
+**A2A and MCP support** means AG2 agents can access tools via MCP servers and coordinate with external agents via A2A. AG2 [describes its standardized A2A and MCP protocols as having "enterprise security built-in"](https://www.ag2.ai/), though the project's own docs don't itemize specific authentication/authorization/audit-logging implementations beyond that.
 
 **Conversational agent model.** Like the original AutoGen, AG2 models multi-agent interaction as conversations. Agents send messages to each other, and the runtime manages turn-taking, tool calls, and state. This is more intuitive than graph-based approaches for many developers, though it can be harder to debug in complex workflows.
 
@@ -99,9 +99,9 @@ AG2 makes sense when you need to compose agents from multiple frameworks into a 
 **Source:** [mastra.ai](https://mastra.ai/)
 **Model support:** Multi-model
 **MCP integration:** Native (client and server)
-**Origin:** From the team behind Gatsby
+**Origin:** [From the team behind Gatsby](https://mastra.ai/about)
 
-Mastra is the TypeScript-native option in the agent SDK space. Built by the team behind Gatsby, it brings web development patterns to agent development — including a graph-based workflow engine that reads like modern JavaScript.
+Mastra is the TypeScript-native option in the agent SDK space. Its co-founders, Sam Bhagwat, Shane Thomas, and Abhi Aiyer, [previously built Gatsby](https://mastra.ai/about), and Mastra brings web development patterns to agent development — including a graph-based workflow engine that reads like modern JavaScript.
 
 ### Architecture
 
@@ -118,11 +118,11 @@ workflow
   .parallel([notify, log])
 ```
 
-**Bidirectional MCP.** Mastra provides both `MCPClient` (connect to existing MCP servers) and `MCPServer` (expose Mastra tools and agents as MCP servers). This means a Mastra agent can both consume and provide MCP tools — useful for building composable agent systems.
+**Bidirectional MCP.** Mastra provides both [`MCPClient`](https://mastra.ai/reference/tools/mcp-client) (connect to existing MCP servers) and [`MCPServer`](https://mastra.ai/reference/tools/mcp-server) (expose Mastra tools and agents as MCP servers). This means a Mastra agent can both consume and provide MCP tools — useful for building composable agent systems.
 
-**Elicitation support.** Mastra implements MCP's [elicitation feature](/guides/mcp-elicitation-explained/), allowing MCP servers to pause mid-execution and request structured input from users. This enables human-in-the-loop patterns without custom UI code.
+**Elicitation support.** Mastra's `MCPClient` [implements MCP's elicitation feature](https://mastra.ai/reference/tools/mcp-client), allowing MCP servers to pause mid-execution and request structured input from users — see our [general elicitation explainer](/guides/mcp-elicitation-explained/) for how the underlying protocol feature works. This enables human-in-the-loop patterns without custom UI code.
 
-**Pause/resume storage.** Workflow state can be persisted, allowing long-running workflows to pause (for human input, external events, or scheduled delays) and resume later. This is essential for workflows that span hours or days rather than seconds.
+**Pause/resume storage.** [Workflow state can be persisted as a snapshot](https://mastra.ai/docs/workflows/suspend-and-resume), allowing long-running workflows to pause (for human input, external events, or scheduled delays) and resume later from exactly where they left off. This is essential for workflows that span hours or days rather than seconds.
 
 ### When to Use It
 
@@ -134,13 +134,13 @@ Mastra is the clear choice for TypeScript teams. If your backend is Node.js and 
 **Source:** [github.com/lastmile-ai/mcp-agent](https://github.com/lastmile-ai/mcp-agent)
 **Model support:** Multi-model
 **MCP integration:** MCP-first design
-**Philosophy:** "Write code, not graphs"
+**Philosophy:** ["Programmatic control flow" — code, not graphs](https://github.com/lastmile-ai/mcp-agent)
 
 mcp-agent from LastMile AI takes the opposite approach from graph-based frameworks. Its philosophy is that agent workflows should be regular Python code — branching with `if` statements, looping with `while` loops, composing with function calls.
 
 ### Architecture
 
-**Composable workflow patterns.** mcp-agent provides pre-built patterns as building blocks:
+**Composable workflow patterns.** mcp-agent [provides pre-built patterns as building blocks](https://github.com/lastmile-ai/mcp-agent), implementing [Anthropic's "Building Effective Agents" patterns](https://www.anthropic.com/engineering/building-effective-agents) as a batteries-included MCP runtime:
 
 - **Orchestrator** — decomposes tasks and delegates to sub-agents
 - **Evaluator-Optimizer** — two LLMs in a loop, one generating and one critiquing
@@ -150,7 +150,7 @@ mcp-agent from LastMile AI takes the opposite approach from graph-based framewor
 
 Each pattern is a Python class you can compose, nest, and extend. An orchestrator can contain evaluator-optimizers; a router can delegate to map-reduce workflows.
 
-**Deep Orchestrator.** The most ambitious pattern: an adaptive planning system inspired by Anthropic's multi-agent research. It dynamically creates sub-agents, accumulates knowledge across steps, and replans when results differ from expectations. Designed for long-horizon research tasks where the plan evolves as the agent learns.
+**Deep Orchestrator.** The most ambitious pattern: an [adaptive planning system inspired by Anthropic's multi-agent research system](https://github.com/lastmile-ai/mcp-agent/blob/main/src/mcp_agent/workflows/deep_orchestrator/README.md). It dynamically creates sub-agents, accumulates knowledge across steps, and replans when results differ from expectations. Designed for long-horizon research tasks where the plan evolves as the agent learns.
 
 **Code over configuration.** Where other frameworks define workflows as graphs, YAML, or DSLs, mcp-agent workflows are just Python. This means you get the full power of the language — exception handling, conditional logic, library imports — without learning a framework-specific abstraction.
 
@@ -209,11 +209,11 @@ Long-running agent sessions inevitably hit context limits. Only the Claude Agent
 
 ### Timeline Expectations
 
-Realistic timelines to production-ready agent systems are 4-6 months, not weeks. The SDK is the easy part — the hard work is tool design, error handling, observability, security hardening, and cost optimization. Choose your SDK based on where you want to spend your engineering time, not which one has the flashiest demo.
+Realistic timelines to a production-ready agent system are measured in months, not weeks — the SDK is the easy part. The hard work is tool design, error handling, observability, security hardening, and cost optimization. Choose your SDK based on where you want to spend your engineering time, not which one has the flashiest demo.
 
 ## What's Next
 
-The agent SDK landscape will continue consolidating through 2026. The [MCP 2026 roadmap](/guides/mcp-2026-roadmap-whats-coming/) prioritizes transport evolution, async task support, and enterprise readiness — all of which will flow into SDK capabilities. The AAIF's joint governance of MCP and A2A should drive better integration between tool access and agent coordination.
+The agent SDK landscape will continue consolidating through 2026. The [MCP 2026 roadmap](/guides/mcp-2026-roadmap-whats-coming/) prioritizes transport evolution, async task support, and enterprise readiness — all of which will flow into SDK capabilities. Neutral governance for MCP under the AAIF, alongside continued industry convergence around A2A for agent coordination, should drive better integration between tool access and agent coordination even though the two protocols remain separately governed.
 
 For now, the best SDK is the one that matches your team's language, model provider, and production requirements. The protocol layer (MCP + A2A) is converging; the SDK layer remains fragmented. Choose the SDK that lets you focus on your application logic rather than fighting framework complexity.
 

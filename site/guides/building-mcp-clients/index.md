@@ -45,6 +45,8 @@ Install the official SDK:
 npm install @modelcontextprotocol/sdk
 ```
 
+**Note:** the TypeScript SDK is mid-migration. A v2 line is rolling out alongside the [2026-07-28 spec release candidate](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) that splits this single package into separate [`@modelcontextprotocol/client` and `@modelcontextprotocol/server`](https://github.com/modelcontextprotocol/typescript-sdk) packages. The `@modelcontextprotocol/sdk` (v1.x) package used in the examples below remains fully supported — the SDK repo says v1.x keeps receiving bug fixes and security updates for at least 6 months after v2 stabilizes — but check the [typescript-sdk repo](https://github.com/modelcontextprotocol/typescript-sdk) before starting a new project to see which line is current by the time you read this.
+
 Create a basic client that connects to a server via stdio transport:
 
 ```typescript
@@ -69,7 +71,7 @@ console.log("Connected to server:", client.getServerVersion());
 
 ### Python SDK
 
-Install the official SDK:
+Install the [official SDK](https://github.com/modelcontextprotocol/python-sdk):
 
 ```bash
 pip install mcp
@@ -519,7 +521,7 @@ client.setRequestHandler("sampling/createMessage", async (request) => {
   return {
     role: "assistant",
     content: { type: "text", text: response.text },
-    model: "claude-sonnet-4-6",
+    model: response.modelId, // identify the actual model you called
   };
 });
 ```
@@ -532,7 +534,7 @@ Production clients need robust error handling.
 
 ### Protocol-Level Errors
 
-MCP uses JSON-RPC error codes. Handle these in your client:
+MCP uses [JSON-RPC 2.0 error codes](https://www.jsonrpc.org/specification#error_object). Handle these in your client:
 
 | Code | Meaning |
 |------|---------|
@@ -600,7 +602,7 @@ Only connect to servers you trust. Each server connection is a potential attack 
 
 ### Validate Tool Annotations
 
-The 2025-06-18 spec introduced tool annotations like `readOnlyHint` and `destructiveHint`. These are *hints*, not guarantees — a malicious server can lie about them. Use them for UX (showing warnings) but don't rely on them for security:
+Tool annotations like `readOnlyHint` and `destructiveHint` were introduced in the [2025-03-26 spec](https://modelcontextprotocol.io/specification/2025-03-26/server/tools) and carried forward unchanged into [2025-06-18](https://modelcontextprotocol.io/specification/2025-06-18/server/tools). These are *hints*, not guarantees — a malicious server can lie about them. Use them for UX (showing warnings) but don't rely on them for security:
 
 ```typescript
 for (const tool of tools) {
@@ -626,7 +628,7 @@ The host should implement human-in-the-loop approval for:
 
 ### OAuth and Authorization
 
-For remote servers using Streamable HTTP, MCP supports OAuth 2.1 for authorization. Your client may need to implement the OAuth flow:
+For remote servers using Streamable HTTP, MCP supports [OAuth 2.1 for authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization). Your client may need to implement the OAuth flow:
 
 1. Discover the server's authorization metadata
 2. Register as an OAuth client (dynamic client registration)
@@ -640,7 +642,7 @@ The TypeScript SDK provides helpers for this flow, but the specifics depend on t
 
 ### Against Reference Servers
 
-The MCP project maintains reference servers you can test against:
+The MCP project maintains [reference servers](https://github.com/modelcontextprotocol/servers) you can test against:
 
 - `@modelcontextprotocol/server-everything` — implements all MCP features
 - `@modelcontextprotocol/server-filesystem` — file system operations
@@ -690,12 +692,13 @@ await client.close();
 
 ## What's Next
 
-The MCP ecosystem is evolving rapidly. Key developments to watch on the client side:
+The MCP ecosystem is evolving rapidly. Key developments to watch on the client side, per the [2025-11-25 spec changelog](https://modelcontextprotocol.io/specification/2025-11-25/changelog):
 
-- **Registry integration** — clients discovering servers automatically through the MCP Registry API
+- **Registry integration** — clients discovering servers automatically through the [MCP Registry API](https://modelcontextprotocol.io/registry/about), the official centralized metadata catalog of publicly accessible MCP servers
+- **Async tasks** — an experimental primitive added in the 2025-11-25 spec that lets a request return a task handle instead of blocking, so clients can poll for status and fetch results later
+- **Icon metadata** — servers can now expose icons for tools, resources, and prompts (also added in 2025-11-25), letting clients render richer UIs
+- **OAuth Client ID Metadata Documents** — a new recommended client registration mechanism from 2025-11-25 that reduces reliance on Dynamic Client Registration
 - **Improved session management** — better patterns for Streamable HTTP sessions with load balancers
-- **Elicitation** — servers requesting structured user input through the client
-- **Tool annotations** — richer metadata to help clients make better UX decisions
 
 Building an MCP client puts you at the integration layer of the AI stack. As more tools and services adopt MCP, your client becomes the bridge between your application and an expanding ecosystem of capabilities.
 

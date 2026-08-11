@@ -63,7 +63,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 18/130 done (2026-08-10 runs).**
+**Status: 46/130 done (2026-08-09 through 2026-08-11 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -153,16 +153,16 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Best Version Control MCP Servers in 2026](content/guides/best-version-control-mcp-servers.md) — re-audited 2026-08-11
 - [x] 2026-07-23 — [Best Web Scraping & Fetching MCP Servers in 2026](content/guides/best-web-scraping-mcp-servers.md) — re-audited 2026-08-11
 - [x] 2026-07-23 — [Best Workflow Automation MCP Servers in 2026](content/guides/best-workflow-automation-mcp-servers.md) — re-audited 2026-08-11
-- [ ] 2026-07-23 — [What Is MCP? A Developer's Guide to the Model Context Protocol](content/guides/what-is-mcp.md)
-- [ ] 2026-07-24 — [AI Agent Memory Patterns: How to Build Agents That Actually Remember](content/guides/ai-agent-memory-patterns.md)
-- [ ] 2026-07-24 — [AI Agent SDKs in 2026: Claude, Microsoft, AG2, Mastra, and mcp-agent Compared](content/guides/mcp-agent-sdks-2026.md)
-- [ ] 2026-07-24 — [AI Agent Workflow Patterns: Building Multi-Step Automation with MCP](content/guides/mcp-agent-workflow-patterns.md)
-- [ ] 2026-07-24 — [AI Coding Assistants Compared (2026) — 8 Tools Ranked](content/guides/ai-coding-assistants-compared.md)
-- [ ] 2026-07-24 — [Bot Etiquette on Social Media: How AI Agents Should Behave Online](content/guides/bot-etiquette-on-social-media.md)
-- [ ] 2026-07-24 — [Building A2A Agents: A Practical Guide to Agent-to-Agent Communication](content/guides/building-a2a-agents.md)
-- [ ] 2026-07-24 — [Building AI-Powered CLIs with MCP: From Terminal Tools to Autonomous Agents](content/guides/building-ai-powered-clis-mcp.md)
-- [ ] 2026-07-24 — [Building Enterprise MCP Infrastructure: Governance, Access Control, and Audit at Scale](content/guides/mcp-enterprise-infrastructure.md)
-- [ ] 2026-07-24 — [Building MCP Clients: A Practical Guide to Host Applications](content/guides/building-mcp-clients.md)
+- [x] 2026-07-23 — [What Is MCP? A Developer's Guide to the Model Context Protocol](content/guides/what-is-mcp.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [AI Agent Memory Patterns: How to Build Agents That Actually Remember](content/guides/ai-agent-memory-patterns.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [AI Agent SDKs in 2026: Claude, Microsoft, AG2, Mastra, and mcp-agent Compared](content/guides/mcp-agent-sdks-2026.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [AI Agent Workflow Patterns: Building Multi-Step Automation with MCP](content/guides/mcp-agent-workflow-patterns.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [AI Coding Assistants Compared (2026) — 8 Tools Ranked](content/guides/ai-coding-assistants-compared.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [Bot Etiquette on Social Media: How AI Agents Should Behave Online](content/guides/bot-etiquette-on-social-media.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [Building A2A Agents: A Practical Guide to Agent-to-Agent Communication](content/guides/building-a2a-agents.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [Building AI-Powered CLIs with MCP: From Terminal Tools to Autonomous Agents](content/guides/building-ai-powered-clis-mcp.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [Building Enterprise MCP Infrastructure: Governance, Access Control, and Audit at Scale](content/guides/mcp-enterprise-infrastructure.md) — re-audited 2026-08-11
+- [x] 2026-07-24 — [Building MCP Clients: A Practical Guide to Host Applications](content/guides/building-mcp-clients.md) — re-audited 2026-08-11
 - [ ] 2026-07-24 — [Connecting AI Agents to Databases with MCP: Patterns, Security, and Production Best Practices](content/guides/mcp-database-connection-patterns.md)
 - [ ] 2026-07-24 — [Debugging MCP Servers: A Practical Troubleshooting Guide](content/guides/debugging-mcp-servers.md)
 - [ ] 2026-07-24 — [Event-Driven MCP Patterns: Notifications, Streaming, and Real-Time AI Agents](content/guides/event-driven-mcp-patterns.md)
