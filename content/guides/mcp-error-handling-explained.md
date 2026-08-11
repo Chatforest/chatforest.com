@@ -5,14 +5,16 @@ description: "A practical guide to error handling in MCP — covering JSON-RPC e
 content_type: "Guide"
 card_description: "MCP has two distinct error paths — protocol errors and tool execution errors. Here's how they work and how to handle both."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 Things go wrong in MCP integrations. Servers crash, tools fail, parameters get mangled, network connections drop. How you handle these failures determines whether your MCP system degrades gracefully or silently loses data.
 
 MCP defines two separate error paths: **protocol errors** (something went wrong with the message exchange itself) and **tool execution errors** (the tool ran but failed). These look completely different on the wire, and confusing them is one of the most common mistakes in MCP implementations.
 
-This guide covers both error paths, the specific error codes you'll encounter, and practical patterns for resilient error handling. Our analysis is based on the [MCP specification](https://modelcontextprotocol.io/specification/2025-03-26/basic) and published implementations — we research and analyze rather than building production MCP systems ourselves.
+This guide covers both error paths, the specific error codes you'll encounter, and practical patterns for resilient error handling. Our analysis is based on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic) and published implementations — we research and analyze rather than building production MCP systems ourselves.
+
+**Spec currency note:** the two-path error model below (protocol errors vs. `isError` tool execution errors) is unchanged in the [2026-07-28 spec revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/), the most recent breaking update to MCP. That revision did renumber some error codes and replace the old `initialize`-handshake initialization flow with per-request version negotiation — both are called out inline below where they affect this guide.
 
 ## Two Error Paths, One Protocol
 
@@ -63,6 +65,7 @@ Key points:
 - This is a `result`, not an `error` — the protocol exchange succeeded
 - The `isError` flag tells the client (and the LLM) that the tool failed
 - The `content` array contains human-readable error details
+- As of the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#calling-tools), `result` objects also carry a `resultType` field (e.g. `"complete"`); it's omitted from the example above for brevity, and per the spec clients treat an absent `resultType` as `"complete"` for backward compatibility with older servers
 - The LLM can read these details and decide what to do — retry, try a different approach, or report the failure
 
 ### Why the Split Matters
@@ -90,15 +93,17 @@ MCP inherits the standard JSON-RPC 2.0 error codes and adds server-specific rang
 
 ### Server Error Range (-32000 to -32099)
 
-The JSON-RPC specification reserves `-32000` to `-32099` for implementation-defined server errors. In MCP, you'll commonly see:
+The JSON-RPC specification reserves `-32000` to `-32099` for implementation-defined server errors. Historically (spec [2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25/basic) and earlier), MCP servers used this range loosely, and you'd commonly see:
 
-| Code | Common Usage |
+| Code | Legacy usage (pre-2026-07-28) |
 |------|-------------|
 | `-32000` | Generic server error — often used for operational issues like database connection failures |
 | `-32001` | Server busy or overloaded |
 | `-32002` | Resource not found — a specific resource URI doesn't exist or isn't accessible |
 
-These aren't standardized across all MCP servers, so the exact meanings may vary between implementations. Always check the `message` and `data` fields for details.
+**As of the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic#error-codes), this range is formally partitioned.** `-32000`–`-32019` is now legacy: new implementations must not allocate codes there, and — apart from `-32002` — receivers must not assume any specific meaning for them. `-32020`–`-32099` is reserved for codes the MCP spec itself defines, currently three: `-32020` (`HeaderMismatch`), `-32021` (`MissingRequiredClientCapability`), and `-32022` (`UnsupportedProtocolVersion`). Resource-not-found errors now use the standard `-32602` (Invalid Params) code rather than `-32002` — see the [resources error-handling spec](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#error-handling) — though clients should still accept `-32002` from servers running earlier protocol versions.
+
+Outside these newly-defined codes, meanings still aren't standardized across all MCP servers. Always check the `message` and `data` fields for details.
 
 ### Custom Error Codes
 
@@ -135,11 +140,13 @@ The `data` field is especially valuable for `-32602` Invalid Params errors, wher
 
 ### Initialization Errors
 
-The MCP connection starts with a three-message handshake (initialize request, response, initialized notification). Errors during initialization are critical because they prevent any further communication.
+**Spec history:** protocol versions [2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle) and earlier started every connection with a three-message handshake (`initialize` request, response, `initialized` notification) that negotiated the protocol version and capabilities once, for the life of the connection. The [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning) retired that handshake: MCP is now a stateless protocol where every individual request carries its own protocol version and capabilities in its `_meta` field, and there's no separate initialization step. Servers that still need to support older ("legacy," per the spec's own terminology) clients can implement both behaviors side by side.
 
-**Version mismatch**: If the client requests a protocol version the server doesn't support, the server may return an error or respond with its supported version. Implementations should handle version negotiation gracefully — the spec says the server should respond with the latest version it supports, and the client decides whether to proceed.
+**Version mismatch**: Under the current (2026-07-28+) spec, if a server doesn't implement the protocol version a request declares, it **must** respond with an [`UnsupportedProtocolVersionError`](https://modelcontextprotocol.io/specification/2026-07-28/schema#unsupportedprotocolversionerror) (code `-32022`) listing the versions it does support, and the client is expected to retry with a mutually supported version. Under the older handshake model, the server instead responded to `initialize` with its own supported version and left the decision on whether to proceed to the client.
 
-**Capability mismatch**: If a client requests a tool or resource that requires a capability the server didn't advertise, the server should return `-32601` Method Not Found. Clients should check the server's declared capabilities before making requests.
+**Capability mismatch**: If a client requests a tool or resource that requires a *server* capability the server didn't advertise, the server should return `-32601` Method Not Found — the spec doesn't define a dedicated code for this direction, so implementations vary. Clients should check the server's declared capabilities before making requests to avoid it.
+
+The 2026-07-28 revision *does* add a dedicated code for the reverse direction: if a request requires a *client* capability the client didn't declare (e.g. the server needs to elicit input but the client didn't declare support), the server returns a [`MissingRequiredClientCapabilityError`](https://modelcontextprotocol.io/specification/2026-07-28/schema#missingrequiredclientcapabilityerror) (code `-32021`), whose `data.requiredCapabilities` field lists what's missing.
 
 ### Tool Call Errors
 
@@ -165,7 +172,7 @@ The most common errors in practice involve tool calls:
 
 When reading resources via `resources/read`:
 
-- The resource URI may not exist (`-32002` or a protocol error)
+- The resource URI may not exist — current-spec servers ([2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#error-handling)) return `-32602` (Invalid Params) for this; `-32002` is accepted only for backward compatibility with servers on earlier protocol versions
 - The resource may have changed since it was listed
 - The server may fail to fetch the underlying data
 
@@ -237,8 +244,8 @@ This catches most `-32602` errors before they happen.
 
 Transport errors need different handling than JSON-RPC errors because there's no structured error to parse:
 
-- **stdio**: Monitor the server process. If it exits unexpectedly, restart it and re-initialize the MCP session.
-- **Streamable HTTP**: Handle HTTP-level errors (timeouts, 5xx responses) before attempting to parse JSON-RPC. Use connection health checks (the `ping` mechanism) to detect stale connections.
+- **stdio**: Monitor the server process. If it exits unexpectedly, restart it. Under the pre-2026-07-28 handshake model this meant re-running `initialize`; under the current [stateless model](https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning), there's no session to reinitialize — the client just resumes sending requests, each carrying its own protocol version and capabilities.
+- **Streamable HTTP**: Handle HTTP-level errors (timeouts, 5xx responses) before attempting to parse JSON-RPC. Note that the [2026-07-28 spec revision removed the `ping` utility](https://modelcontextprotocol.io/specification/2026-07-28/changelog) along with protocol-level sessions and SSE stream resumability (`Last-Event-ID`); a broken response stream now loses the in-flight request, and clients must re-issue it as a new request with a new ID rather than resuming it.
 
 ### Pattern 6: Use the Data Field
 
@@ -268,7 +275,7 @@ Error messages can leak sensitive information. MCP servers should be careful abo
 - **Do** include enough information for the LLM or developer to understand what went wrong
 - **Do** sanitize error messages from upstream services before passing them through
 
-The spec explicitly requires servers to validate all tool inputs and sanitize tool outputs. Error messages are part of that output.
+The spec's [Tools security considerations](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#security-considerations) explicitly require servers to validate all tool inputs and sanitize tool outputs. Error messages are part of that output.
 
 ## Common Mistakes
 
@@ -293,7 +300,9 @@ MCP error handling has a clean design once you understand the two-path model:
 
 Handle each path appropriately: log and retry protocol errors in client code, pass tool errors to the LLM for reasoning. Validate inputs to prevent errors, use the `data` field to make errors actionable, and be careful not to leak sensitive information.
 
-The full error code reference is available in the [MCP specification](https://modelcontextprotocol.io/specification/2025-03-26/basic) and [JSON-RPC 2.0 specification](https://www.jsonrpc.org/specification).
+The full error code reference is available in the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic) and [JSON-RPC 2.0 specification](https://www.jsonrpc.org/specification).
+
+For production fault-tolerance beyond this guide's scope — circuit breakers, retries with backoff, bulkhead isolation, rate limiting, timeout budgets, and Streamable HTTP session recovery — see [MCP Error Handling & Resilience](/guides/mcp-error-handling-resilience/).
 
 ---
 

@@ -5,7 +5,7 @@ description: "How MCP gateways and proxies aggregate multiple servers behind a s
 content_type: "Guide"
 card_description: "MCP gateways aggregate servers, bridge transports, and enforce security. Here's how they work and which tools to use."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 As MCP server deployments grow from a handful of tools to dozens or hundreds, a new layer is emerging between AI clients and MCP servers: the gateway. Gateways aggregate multiple servers behind a single endpoint, bridge incompatible transports, enforce security policies, and provide the observability that production systems require.
@@ -60,7 +60,7 @@ When a client calls a tool, the gateway knows which backend server owns that too
 
 - **[IBM ContextForge](https://github.com/IBM/mcp-context-forge)** (3,500+ stars) — the most comprehensive open-source gateway, federating MCP, A2A, and REST/gRPC APIs behind a single endpoint with plugins and guardrails
 - **[MetaMCP](https://github.com/metatool-ai/metamcp)** (2,200+ stars) — Docker-based aggregator that is itself an MCP server, with middleware support for dynamic tool filtering
-- **[Docker MCP Gateway](https://github.com/docker/mcp-gateway)** (1,300+ stars) — runs each MCP server in an isolated Docker container with resource limits, integrates with Docker Desktop's catalog of 300+ verified servers
+- **[Docker MCP Gateway](https://github.com/docker/mcp-gateway)** (1,300+ stars) — runs each MCP server in an isolated Docker container with resource limits, integrates with [Docker Desktop's catalog of 300+ verified servers](https://docs.docker.com/ai/mcp-catalog-and-toolkit/catalog/)
 - **[combine-mcp](https://github.com/nazar256/combine-mcp)** (30+ stars) — minimal Go tool that merges multiple stdio servers into one, good for simple setups
 
 ### Security Gateway
@@ -85,7 +85,7 @@ A security-focused gateway intercepts every MCP message and applies policies bef
 
 For production deployments at scale, cloud-native gateways provide horizontal scaling, load balancing, and integration with existing infrastructure.
 
-**[Envoy AI Gateway](https://github.com/envoyproxy/ai-gateway)** (1,500+ stars) deserves special attention. Built on Envoy's networking stack, it uses a token-encoding architecture for sessions — encoding session state into the client session ID rather than maintaining a centralized session store. This eliminates the need for Redis or a database for session management, enabling horizontal scaling without external dependencies. It also provides connection management, load balancing, circuit breaking, rate limiting, and observability out of the box.
+**[Envoy AI Gateway](https://github.com/envoyproxy/ai-gateway)** (1,500+ stars) deserves special attention. Built on Envoy's networking stack, it uses a [token-encoding architecture for MCP sessions](https://aigateway.envoyproxy.io/blog/mcp-in-envoy-ai-gateway/) — encoding upstream session state into an encrypted client session ID rather than maintaining a centralized session-store mapping. Because the session travels with the request, any gateway replica can handle it without syncing to a database, which eliminates the need for Redis or a session store and lets the gateway scale horizontally while remaining stateless. It also provides connection management, load balancing, circuit breaking, rate limiting, and observability out of the box.
 
 ## Managed Cloud Services
 
@@ -93,11 +93,11 @@ The major cloud providers have launched MCP gateway services:
 
 ### AWS
 
-**Amazon Bedrock AgentCore Gateway** converts APIs, Lambda functions, and existing services into MCP-compatible tools. It supports existing MCP servers as a target type, handles authentication centrally, and runs on serverless infrastructure. [Amazon API Gateway also added MCP proxy support in December 2025](https://aws.amazon.com/about-aws/whats-new/2025/12/api-gateway-mcp-proxy-support/), transforming REST APIs into MCP endpoints.
+**[Amazon Bedrock AgentCore Gateway](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html)** converts APIs, Lambda functions, and existing services into MCP-compatible tools. It supports existing MCP servers as a target type (in "aggregation mode"), handles authentication centrally (both inbound and outbound), and runs on serverless infrastructure. [Amazon API Gateway also added MCP proxy support in December 2025](https://aws.amazon.com/about-aws/whats-new/2025/12/api-gateway-mcp-proxy-support/), transforming REST APIs into MCP endpoints.
 
 ### Azure
 
-**Azure API Management** acts as an AI Gateway for MCP, centralizing authentication and authorization (via Entra ID) and wrapping existing REST APIs as MCP-compatible servers. **Azure API Center** provides a private MCP Registry for organizational tool catalogs. [An MCP extension for Azure Functions entered preview in April 2025](https://techcommunity.microsoft.com/blog/appsonazureblog/announcing-early-preview-byo-remote-mcp-server-on-azure-functions/4445317), supporting .NET, Java, JS, Python, and TypeScript. Microsoft also hosts [mcp.azure.com](https://mcp.azure.com) as a curated MCP center.
+**[Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/mcp-server-overview)** acts as an AI Gateway for MCP, centralizing authentication and authorization (via Microsoft Entra ID) and wrapping existing REST APIs as MCP-compatible servers. **[Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)** provides a private MCP Registry for organizational tool catalogs. [An MCP extension for Azure Functions entered preview in April 2025](https://techcommunity.microsoft.com/blog/appsonazureblog/announcing-early-preview-byo-remote-mcp-server-on-azure-functions/4445317), supporting .NET, Java, JS, Python, and TypeScript. Microsoft also publishes [mcp.azure.com](https://mcp.azure.com), a reference template for building your own enterprise MCP registry (open-sourced as [Azure/mcp-center](https://github.com/Azure/mcp-center)) — it's a starter kit, not a Microsoft-curated directory of third-party servers.
 
 ### Kong
 
@@ -105,20 +105,17 @@ The major cloud providers have launched MCP gateway services:
 
 ### Other Vendors
 
-- **Gravitee APIM 4.8** converts any HTTP proxy API into an MCP-compatible tool server with method-level governance
-- **WSO2 MCP Gateway** applies security, access control, rate limits, and policy enforcement across tool calls
-- **Tyk AI Studio** exposes internal APIs as MCP servers through a single gateway
+- **[Gravitee APIM](https://www.gravitee.io/blog/gravitee-mcp-the-complete-guide-to-mcp-support)** converts any HTTP proxy API into an MCP-compatible tool server (MCP Tool Server); its MCP Proxy, added in APIM 4.10, layers on method-level governance — an ACL policy that restricts individual `tools/list`, `tools/call`, and `resources/read` calls per tool
+- **[WSO2 MCP Gateway](https://wso2.com/library/blogs/what-is-an-mcp-gateway-key-features-and-benefits/)** applies security, access control, rate limits, and policy enforcement across tool calls
+- **[Tyk AI Studio](https://tyk.io/tyk-ai-studio/)** exposes internal APIs as MCP servers through a single gateway
 
 ## Edge-Based Patterns
 
-**[Cloudflare Workers MCP](https://github.com/cloudflare/workers-mcp)** (630+ stars) enables edge-based MCP gateway patterns. The multi-domain architecture works like this:
+**[Cloudflare Workers MCP](https://github.com/cloudflare/workers-mcp)** (630+ stars) is the simplest edge pattern: it turns a single Cloudflare Worker's methods into MCP tools, with a local Node.js process bridging stdio to the Worker running at the edge.
 
-1. A central **Gateway Worker** exposes a single `/mcp` endpoint
-2. **Domain Workers** own and execute tools independently
-3. The gateway maintains a central tool registry with scope checks
-4. Requests route to the appropriate domain worker at the edge
+For aggregating many internal MCP servers, [Cloudflare's own reference architecture for enterprise MCP](https://blog.cloudflare.com/enterprise-mcp/) takes a different shape — a centralized **MCP server portal** rather than per-domain workers. Employees connect to one portal, which reveals every internal and third-party MCP server they're authorized to use, with authentication, audit logging, and DLP controls co-located on Cloudflare's network. The portal also supports **Code Mode**: instead of loading every tool definition upfront, it collapses the catalog into two portal tools (`portal_codemode_search` and `portal_codemode_execute`) that agents call with generated JavaScript to discover and chain tools dynamically. Cloudflare reports that with Code Mode enabled, a four-server internal deployment exposing 52 tools (~9,400 tokens of tool definitions) collapsed to 2 portal tools (~600 tokens) — a 94% reduction.
 
-This pattern is appealing for globally distributed deployments where latency matters. Tools execute close to users, and the gateway handles routing and authorization at Cloudflare's edge network.
+This pattern is appealing for globally distributed deployments where latency matters, since governance and routing happen at Cloudflare's edge network rather than a centralized backend.
 
 ## Reverse Proxy Configuration
 
@@ -145,7 +142,7 @@ location /mcp {
 
 ### Streamable HTTP
 
-The newer Streamable HTTP transport (which replaced HTTP+SSE in the May 2025 spec) operates over standard HTTP/HTTPS. This simplifies reverse proxy configuration significantly — no SSE-specific buffering workarounds needed. If you're setting up a new deployment, Streamable HTTP is the recommended transport.
+The newer Streamable HTTP transport ([which replaced HTTP+SSE in the 2025-03-26 spec revision](https://modelcontextprotocol.io/specification/2025-03-26/changelog)) operates over standard HTTP/HTTPS. This simplifies reverse proxy configuration significantly — no SSE-specific buffering workarounds needed. If you're setting up a new deployment, Streamable HTTP is the recommended transport; as of the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog), HTTP+SSE is formally deprecated under MCP's feature lifecycle policy.
 
 ### Which Reverse Proxy to Choose
 
@@ -185,7 +182,7 @@ Gateways are uniquely positioned to address MCP security risks:
 
 **Credential management** — the most important security improvement gateways offer. Instead of distributing API keys across client configurations (where AI agents can see them), gateways inject credentials server-side at execution time. Peta's vault-backed approach is the most mature implementation of this pattern.
 
-**Data loss prevention** — Lasso's guardrail plugins and Cisco's semantic inspection proxy (integrated with AWS AgentCore) scan MCP traffic for sensitive data leaving the organization.
+**Data loss prevention** — Lasso's guardrail plugins and [Cisco Secure Access's MCP semantic inspection proxy, integrated with AWS Bedrock AgentCore Gateway](https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-how-aws-and-cisco-ai-defense-scale-mcp-and-a2a-deployments/), scan MCP traffic for sensitive data leaving the organization — inspecting messages for tool poisoning, prompt injection, and data exfiltration ([Cisco's announcement](https://blogs.cisco.com/ai/securing-ai-agents-with-cisco-ai-defense)).
 
 **Audit and compliance** — centralized logging through the gateway provides a single audit trail of every tool call, queryable by user, operation, time range, and policy decision. OpenTelemetry integration is the emerging standard.
 

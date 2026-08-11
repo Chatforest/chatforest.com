@@ -104,7 +104,7 @@ Bottom line for builders: treat "BYD is building a humanoid robot" as confirmed,
 | Metric | Value |
 |--------|-------|
 | Development start | [2022, per Li Ke](https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/) |
-| Prototypes active | Not confirmed by BYD — a widely reported "150 prototypes" figure was [officially denied on June 6, 2026](https://english.news18a.com/news/english_263357.html) |
+| Prototypes active | Not confirmed by BYD — a widely reported "150 prototypes" figure was [officially denied on June 6, 2026](https://tech.yahoo.com/ai/meta-ai/articles/byds-showroom-humanoid-coming-heres-000800356.html) ("It did not deny developing a humanoid. It denied the numbers."), also [reported by News18](https://english.news18a.com/news/english_263357.html) |
 | Commercial timeline | Not announced |
 | Technical specs | Not disclosed |
 | Investment target | Not disclosed |
@@ -163,7 +163,7 @@ XPeng and BYD enter a market that already has active deployments:
 | Figure AI | Figure 03 | [200-hour autonomous package-sorting run completed with no hardware failure, May 2026](https://x.com/adcock_brett/status/2057651077928145235) |
 | Unitree | H1 / G1 | [Shipping commercially, ~$13.5K (G1) to $90K (H1)](https://shop.unitree.com/collections/humanoid-robot) |
 | Xiaomi | CyberOne V2 | [Internal deployments at Xiaomi facilities, no broad commercial availability](https://www.humanoidsdaily.com/news/xiaomi-debuts-cyberone-v2-at-investor-day-moving-beyond-the-factory-floor) |
-| BYD | "Yao-Shun-Yu" (reported codename) | [Development confirmed; specific prototype/testing figures denied by BYD](https://english.news18a.com/news/english_263357.html) |
+| BYD | "Yao-Shun-Yu" (reported codename) | [Development confirmed; specific prototype/testing figures denied by BYD](https://tech.yahoo.com/ai/meta-ai/articles/byds-showroom-humanoid-coming-heres-000800356.html), also [reported by News18](https://english.news18a.com/news/english_263357.html) |
 | Li Auto | Nexus (internal) | [Codenamed internal project, described as top-secret as of March 2026](https://cnevpost.com/2026/03/06/li-auto-pivots-to-robotics-with-secret-nexus-project/) |
 
 The key distinction is between companies that have disclosed hardware specs and deployment timelines (XPeng, Unitree) and companies still in the development-confirmation phase (BYD, Li Auto). Figure AI's autonomous run milestone represents the current frontier of real-world reliability testing.

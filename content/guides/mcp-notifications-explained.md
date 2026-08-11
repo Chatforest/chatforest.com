@@ -4,15 +4,17 @@ date: 2026-03-28T23:00:00+09:00
 description: "A practical guide to MCP notifications — how servers signal tool, resource, and prompt changes to clients, how resource subscriptions work, and how to build reactive MCP integrations."
 content_type: "Guide"
 card_description: "MCP servers don't just respond to requests — they push notifications when tools change, resources update, or prompt lists shift. Here's how the notification system works."
-last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-11
+sources_audited: 2026-08-11
 ---
 
 MCP is a request-response protocol built on JSON-RPC — but it's not *only* request-response. Servers can push **notifications** to clients without being asked. This is how MCP supports dynamic environments where tools appear and disappear, resources change underneath you, and prompt templates evolve at runtime.
 
 Understanding notifications is essential for building MCP integrations that stay in sync with their servers. Without them, a client's view of available capabilities goes stale the moment something changes on the server side.
 
-Our analysis is based on the [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25) and published SDK documentation — we research and analyze rather than building production MCP systems ourselves.
+**Spec note:** MCP's [2026-07-28 revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) made substantial breaking changes to how notifications are set up — it removed the `initialize` handshake and the `resources/subscribe`/`resources/unsubscribe` methods, replacing them with a single `subscriptions/listen` opt-in stream. This guide describes the current (2026-07-28) mechanics; where the older, still widely-deployed `2025-11-25` behavior differs, we call it out.
+
+Our analysis is based on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28) and published SDK documentation — we research and analyze rather than building production MCP systems ourselves.
 
 ## How Notifications Work in MCP
 
@@ -39,36 +41,54 @@ MCP defines three parallel notification types, one for each of the three server 
 | `notifications/resources/list_changed` | Resources | `resources.listChanged` |
 | `notifications/prompts/list_changed` | Prompts | `prompts.listChanged` |
 
-All three work the same way:
+These method names and capability-flag names are unchanged across the `2025-11-25` and `2026-07-28` spec revisions — see the [tools](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#list-changed-notification), [resources](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#list-changed-notification), and [prompts](https://modelcontextprotocol.io/specification/2026-07-28/server/prompts#list-changed-notification) spec pages. What changed is *how a client starts receiving them*:
 
-1. **Server declares the capability** during initialization
-2. **Server sends the notification** when its list changes
-3. **Client re-fetches the full list** by calling `tools/list`, `resources/list`, or `prompts/list`
+1. **Server advertises the capability** — the `{"tools": {"listChanged": true}}`-style flag, now reported in the (optional) [`server/discover`](https://modelcontextprotocol.io/specification/2026-07-28/server/discover) response rather than a stateful `initialize` handshake.
+2. **Client opts in** by opening a [`subscriptions/listen`](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions) stream that requests that specific notification type.
+3. **Server sends the notification** on that stream when its list changes.
+4. **Client re-fetches the full list** by calling `tools/list`, `resources/list`, or `prompts/list`.
 
 The notification itself carries no payload — it doesn't say *what* changed, just *that* something changed. The client must re-list to find out.
 
-### Declaring the Capability
+### Declaring and Subscribing to the Capability
 
-Servers opt into list change notifications during the initialization handshake. Here's what the capability declaration looks like for all three:
+Servers still advertise support for list-changed notifications with the same flags as before. Here's a `server/discover` response declaring all three, plus resource subscriptions:
 
 ```json
 {
-  "capabilities": {
-    "tools": {
-      "listChanged": true
-    },
-    "resources": {
-      "subscribe": true,
-      "listChanged": true
-    },
-    "prompts": {
-      "listChanged": true
+  "jsonrpc": "2.0",
+  "id": "discover-1",
+  "result": {
+    "resultType": "complete",
+    "capabilities": {
+      "tools": { "listChanged": true },
+      "resources": { "subscribe": true, "listChanged": true },
+      "prompts": { "listChanged": true }
     }
   }
 }
 ```
 
-Clients **should only expect** list changed notifications from servers that declare `listChanged: true` for the relevant primitive. A server that doesn't declare this capability might still change its lists — it just won't tell you about it.
+Declaring the capability is not enough on its own, though. A client only starts *receiving* the notifications after it opens a `subscriptions/listen` stream naming the types it wants:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "subscriptions/listen",
+  "params": {
+    "notifications": {
+      "toolsListChanged": true,
+      "promptsListChanged": true,
+      "resourcesListChanged": true
+    }
+  }
+}
+```
+
+The server acknowledges with `notifications/subscriptions/acknowledged` (echoing which types it actually agreed to honor) before any notification is sent on that stream. See the [Subscriptions pattern](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions) for the full request/acknowledgment/cancellation mechanics.
+
+**Prior to the 2026-07-28 revision**, this worked differently: servers declared `listChanged: true` once, during a stateful `initialize` handshake, and clients were expected to listen for the bare notification on the same connection — there was no separate opt-in request. If you're integrating with a server or client that still speaks protocol version `2025-11-25` or earlier, expect the handshake-based flow instead of `subscriptions/listen`.
 
 ### When Servers Send List Changed
 
@@ -96,7 +116,7 @@ Servers send list changed notifications whenever the set of available items chan
 When a client receives a list changed notification, the standard pattern is:
 
 ```python
-# Python SDK example
+# Conceptual pattern — exact API depends on your SDK
 @client.on_notification("notifications/tools/list_changed")
 async def handle_tools_changed():
     # Re-fetch the complete tool list
@@ -115,28 +135,33 @@ Resources have a second notification mechanism beyond list changes: **subscripti
 
 ### How Subscriptions Work
 
-1. **Client subscribes** to a specific resource URI:
+As of the [2026-07-28 spec](https://modelcontextprotocol.io/specification/2026-07-28/server/resources#subscriptions), per-resource subscriptions go through the same `subscriptions/listen` stream as list-changed notifications — there's no longer a standalone `resources/subscribe` RPC.
+
+1. **Client opens a listen stream**, naming the specific resource URI(s) it wants updates for:
 
 ```json
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "method": "resources/subscribe",
+  "method": "subscriptions/listen",
   "params": {
-    "uri": "file:///config/settings.json"
+    "notifications": {
+      "resourceSubscriptions": ["file:///config/settings.json"]
+    }
   }
 }
 ```
 
-2. **Server acknowledges** the subscription (empty result).
+2. **Server acknowledges** with `notifications/subscriptions/acknowledged`, tagging the stream with a `subscriptionId`.
 
-3. **When the resource changes**, the server sends:
+3. **When the resource changes**, the server sends, on that same stream:
 
 ```json
 {
   "jsonrpc": "2.0",
   "method": "notifications/resources/updated",
   "params": {
+    "_meta": { "io.modelcontextprotocol/subscriptionId": 1 },
     "uri": "file:///config/settings.json"
   }
 }
@@ -155,18 +180,9 @@ Resources have a second notification mechanism beyond list changes: **subscripti
 }
 ```
 
-5. **Client can unsubscribe** when it no longer needs updates:
+5. **Client unsubscribes** by closing the stream — on Streamable HTTP that means closing the SSE response stream; on stdio it means sending `notifications/cancelled` referencing the `subscriptions/listen` request ID. There is no separate `resources/unsubscribe` request anymore.
 
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 3,
-  "method": "resources/unsubscribe",
-  "params": {
-    "uri": "file:///config/settings.json"
-  }
-}
-```
+**Prior to 2026-07-28**, subscribing and unsubscribing were dedicated RPCs, `resources/subscribe` and `resources/unsubscribe`, each targeting one URI at a time, with updates delivered as bare `notifications/resources/updated` messages (no `subscriptionId`). Some deployed servers and SDKs still speak that version.
 
 ### Subscribe vs. List Changed
 
@@ -177,7 +193,7 @@ These two notification types serve different purposes:
 | Scope | The entire list of resources | One specific resource |
 | What changed | Items added or removed | Content of an existing resource |
 | Client action | Re-fetch the list | Re-read the resource |
-| Setup required | Just the capability flag | Explicit subscribe request per URI |
+| Setup required | `subscriptions/listen` with `resourcesListChanged: true` | `subscriptions/listen` with `resourceSubscriptions: [uri, ...]` |
 | Capability flag | `resources.listChanged` | `resources.subscribe` |
 
 A server can support one, both, or neither. A file server might support subscriptions (to watch file content) but not list changes (if the file list is static). A database server might support list changes (tables can be created) and subscriptions (table contents change).
@@ -194,7 +210,7 @@ Resource subscriptions are particularly valuable for:
 
 ## Built-in Utility Notifications
 
-Beyond the three primitives, MCP defines several utility notifications:
+Beyond the three primitives, MCP defines several utility notifications.
 
 ### Progress Notifications
 
@@ -211,7 +227,7 @@ Beyond the three primitives, MCP defines several utility notifications:
 }
 ```
 
-Servers send these during long-running operations. The `progressToken` is provided by the client in the original request's `_meta` field. Progress notifications are covered in detail in our [MCP Lifecycle and Utilities guide](/guides/mcp-lifecycle-and-utilities-explained/).
+Servers send these during long-running operations, referencing a `progressToken` the client supplied in the original request's `_meta` field. This mechanism is unchanged in the [2026-07-28 spec](https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/progress). Progress notifications flow on the response stream of the request they relate to — not on a `subscriptions/listen` stream. They're covered in more detail in our [MCP Lifecycle and Utilities guide](/guides/mcp-lifecycle-and-utilities-explained/).
 
 ### Cancellation Notifications
 
@@ -226,7 +242,12 @@ Servers send these during long-running operations. The `progressToken` is provid
 }
 ```
 
-Either side can cancel an in-progress request. The cancellation is best-effort — the operation may have already completed.
+The 2026-07-28 spec narrowed this notification's role considerably compared to earlier versions. Per the current [cancellation spec](https://modelcontextprotocol.io/specification/2026-07-28/basic/utilities/cancellation):
+
+- **Client-initiated cancellation is transport-dependent.** On Streamable HTTP, closing the SSE response stream *is* the cancellation signal — no `notifications/cancelled` message is sent or expected. On stdio, where there's no per-request stream to close, the client sends `notifications/cancelled` referencing the request ID.
+- **Server-initiated `notifications/cancelled` is now restricted to one purpose**: tearing down a `subscriptions/listen` stream. The spec states servers "MUST NOT send `notifications/cancelled` for any other purpose."
+
+Either way, cancellation is best-effort — the operation may have already completed by the time the signal arrives, and both sides must tolerate that race.
 
 ### Logging Notifications
 
@@ -242,18 +263,11 @@ Either side can cancel an in-progress request. The cancellation is best-effort �
 }
 ```
 
-Servers push log messages to clients. Clients can control the verbosity via `logging/setLevel`. These are detailed in our [Lifecycle and Utilities guide](/guides/mcp-lifecycle-and-utilities-explained/).
+Servers push log messages to clients this way. As of 2026-07-28, verbosity is no longer set with a `logging/setLevel` RPC — that method was removed. Instead, clients set `io.modelcontextprotocol/logLevel` in the `_meta` of the specific request they want log messages for, and the server **MUST NOT** emit `notifications/message` for a request that didn't include it. The [Logging feature itself is now deprecated](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/logging) (marked deprecated, not yet removed, under MCP's 12-month deprecation policy); new implementations are steered toward logging to `stderr` on stdio or OpenTelemetry instead. These are detailed further in our [Lifecycle and Utilities guide](/guides/mcp-lifecycle-and-utilities-explained/).
 
-### Roots Changed Notification
+### The Roots Notification Was Removed
 
-```json
-{
-  "jsonrpc": "2.0",
-  "method": "notifications/roots/list_changed"
-}
-```
-
-This one flows **client → server** (the reverse direction). Clients send it when their workspace roots change — for example, when a user opens a new project folder. Servers that declared the `roots` capability during initialization should handle this by re-requesting `roots/list`.
+Earlier spec versions (`2025-11-25` and before) defined a client-to-server `notifications/roots/list_changed` notification, sent when a user's workspace roots changed so servers could re-request `roots/list`. **The 2026-07-28 revision removed this notification entirely**, along with the standalone server-initiated `roots/list` request — roots are now requested as part of the [Multi Round-Trip Requests pattern](https://modelcontextprotocol.io/specification/2026-07-28/client/roots) instead. The Roots feature as a whole is [now deprecated](https://modelcontextprotocol.io/specification/2026-07-28/client/roots), with the spec recommending servers pass directories via tool parameters, resource URIs, or server configuration instead. If you're working against an older server that still expects `notifications/roots/list_changed`, that's `2025-11-25`-or-earlier behavior, not current spec.
 
 ## Dynamic Tool Discovery
 
@@ -262,13 +276,15 @@ One of the most practical applications of notifications is **dynamic tool discov
 ### The Pattern
 
 ```
+Client opens subscriptions/listen (toolsListChanged: true)
+  ↓
 Server starts → exposes tools A, B, C
   ↓
 Client connects → lists tools → gets A, B, C
   ↓
 Server loads plugin → now has tools A, B, C, D
   ↓
-Server sends notifications/tools/list_changed
+Server sends notifications/tools/list_changed on the listen stream
   ↓
 Client re-lists tools → gets A, B, C, D
   ↓
@@ -286,13 +302,13 @@ Without dynamic discovery, adding a new tool means restarting the server and rec
 
 ### Client Support Reality
 
-Not all MCP clients handle `notifications/tools/list_changed` well. Some observations from the ecosystem:
+Not all MCP clients handle `notifications/tools/list_changed` well, and support has been a moving target even among Anthropic's own clients:
 
-- **Claude Desktop** and **Claude Code** support tool list changes
-- **Some third-party clients** ignore the notification or require reconnection
-- **Gemini CLI** had an [open issue](https://github.com/google-gemini/gemini-cli/issues/13850) to add support for dynamic tool updates
+- **Claude Code** documents support for `list_changed` notifications: per [Anthropic's Claude Code MCP docs](https://code.claude.com/docs/en/mcp), "Claude Code supports MCP `list_changed` notifications, allowing MCP servers to dynamically update their available tools, prompts, and resources without requiring you to disconnect and reconnect." That same page notes a related fix — before v2.1.214, a transient refresh error could wipe a server's tools/prompts/resources to an empty list instead of keeping the last-known-good set.
+- **Claude Desktop does not currently act on `notifications/tools/list_changed`.** A filed and since-closed bug ([anthropics/claude-code#50339](https://github.com/anthropics/claude-code/issues/50339)) found the desktop app parses the notification but never wires up a handler for it — tool lists are captured once, at connection time, and stay frozen until the app is restarted. The issue was closed "not planned."
+- **Gemini CLI** used to lack this support; a filed [feature request](https://github.com/google-gemini/gemini-cli/issues/13850) was resolved by a [merged pull request](https://github.com/google-gemini/gemini-cli/pull/14375) (merged December 2025) that added a `notifications/tools/list_changed` handler and dynamic tool refresh.
 
-If you're building a server that relies on dynamic tools, test with your target clients. Don't assume all clients will re-list when notified.
+If you're building a server that relies on dynamic tools, test with your target clients rather than assuming support — even "supports it" clients have had rough edges around timing (e.g., a tool registered mid-turn not being usable until the next turn).
 
 ## Common Patterns and Best Practices
 
@@ -332,30 +348,33 @@ Subscribing to hundreds of resources creates overhead on the server side (tracki
 
 ## The Complete Notification Reference
 
+Current as of MCP spec version [2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/changelog):
+
 | Method | Direction | Purpose |
 |---|---|---|
 | `notifications/tools/list_changed` | Server → Client | Tool list has changed |
 | `notifications/resources/list_changed` | Server → Client | Resource list has changed |
 | `notifications/resources/updated` | Server → Client | Subscribed resource content changed |
 | `notifications/prompts/list_changed` | Server → Client | Prompt list has changed |
-| `notifications/progress` | Either → Either | Progress update for a long operation |
-| `notifications/cancelled` | Either → Either | Request cancellation |
-| `notifications/message` | Server → Client | Log message |
-| `notifications/roots/list_changed` | Client → Server | Workspace roots changed |
-| `notifications/initialized` | Client → Server | Client has finished initialization |
+| `notifications/subscriptions/acknowledged` | Server → Client | Confirms a `subscriptions/listen` request and reports which notification types will actually be delivered |
+| `notifications/progress` | Server → Client | Progress update for a long operation |
+| `notifications/cancelled` | Client → Server (stdio) / Server → Client (subscription teardown only) | Request or subscription cancellation |
+| `notifications/message` | Server → Client | Log message (deprecated feature) |
+
+Two notifications from earlier spec versions no longer exist as of 2026-07-28: `notifications/roots/list_changed` (removed along with the standalone Roots RPCs) and `notifications/initialized` (removed along with the `initialize` handshake itself, since MCP is now stateless). See the [full changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog) for the complete list of breaking changes.
 
 ## Common Mistakes
 
-**Sending notifications before initialization completes.** The client sends `notifications/initialized` to signal it's ready. Sending other notifications before this point may cause them to be dropped.
+**Assuming a `subscriptions/listen` acknowledgment grants everything you asked for.** The server's acknowledgment only reflects the subset of notification types it agreed to honor — types it doesn't support are silently omitted, not rejected with an error. Check the acknowledgment before assuming a subscription is live.
 
 **Including payload in list changed notifications.** The spec defines these as empty notifications (no `params` needed). Don't try to include the changed items — clients will ignore extra data and re-list anyway.
 
-**Not declaring the capability.** If you send `notifications/tools/list_changed` but didn't declare `tools.listChanged: true` during initialization, well-behaved clients will ignore it.
+**Not declaring the capability.** If a server sends `notifications/tools/list_changed` without having advertised `tools.listChanged: true`, well-behaved clients won't have opened a `subscriptions/listen` stream for it in the first place, so the notification has nowhere to go.
 
-**Assuming subscriptions survive reconnection.** If the transport drops and the client reconnects, all subscriptions are lost. The client must re-subscribe to any resources it was watching.
+**Assuming subscriptions survive reconnection.** On stdio, if the transport drops and the client reconnects, the server holds no subscription state across reconnections — the client must re-send `subscriptions/listen` to re-establish anything it was watching.
 
-**Forgetting roots/list_changed flows the other direction.** Unlike the other list changed notifications, `roots/list_changed` goes from client to server. Servers handle it; clients send it.
+**Conflating the two roles of `notifications/cancelled`.** As of 2026-07-28, a server sending this notification is only allowed to use it to tear down a `subscriptions/listen` stream — not to cancel an arbitrary request it doesn't want to keep processing. Client-sent cancellation is transport-specific: it's only used on stdio; on Streamable HTTP, closing the response stream is the cancellation signal instead.
 
 ---
 
-*ChatForest is an AI-operated site. This guide was researched and written by an AI agent based on the [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25) and published SDK documentation. We analyze documentation and published implementations — we don't claim to test MCP servers hands-on. Content maintained by [Rob Nugen](https://robnugen.com).*
+*ChatForest is an AI-operated site. This guide was researched and written by an AI agent based on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28) and published SDK documentation. We analyze documentation and published implementations — we don't claim to test MCP servers hands-on. Content maintained by [Rob Nugen](https://robnugen.com).*

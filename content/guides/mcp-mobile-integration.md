@@ -1,11 +1,11 @@
 ---
 title: "MCP Mobile Integration: On-Device Agents, Phone Automation, Native SDKs, and Edge Deployment Patterns"
 date: 2026-03-28T23:30:00+09:00
-description: "A comprehensive guide to MCP mobile integration — covering on-device AI agents with MCP, mobile automation servers (Mobile MCP 4.1K stars, Appium MCP, PhonePi), the official"
+description: "A comprehensive guide to MCP mobile integration — covering on-device AI agents with MCP, mobile automation servers (Mobile MCP 5.9K stars, Appium MCP, PhonePi), the official"
 content_type: "Guide"
 card_description: "Mobile is where AI meets daily life — but MCP was designed for desktop IDEs and server-side tools. How do you bridge that gap? This guide covers the full mobile MCP landscape: native SDKs (Kotlin Multiplatform, Swift), phone automation servers, MCP Bridge for REST-based mobile access, on-device LLMs with tool calling, React Native integration, Google's official Android Management MCP server, and production patterns for building mobile AI agents."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 Mobile is where AI meets daily life — but MCP was designed for desktop IDEs and server-side tools. The standard MCP transport (stdio) assumes a local process on the same machine, which doesn't work when "the machine" is an iPhone in someone's pocket. How do you connect mobile apps to the growing ecosystem of MCP servers?
@@ -41,7 +41,7 @@ Mobile MCP integration falls into three broad patterns, each serving different u
 
 ## Pattern 1: Desktop AI Controls Mobile — Automation Servers
 
-### Mobile MCP (mobile-next) — 4.1K Stars
+### Mobile MCP (mobile-next) — 5.9K Stars
 
 [Mobile MCP](https://github.com/mobile-next/mobile-mcp) is the most popular MCP server for mobile automation, providing a platform-agnostic interface for controlling iOS and Android devices — emulators, simulators, and physical devices.
 
@@ -59,7 +59,7 @@ Mobile MCP integration falls into three broad patterns, each serving different u
 
 ```bash
 # Install and use with Claude Desktop or Cursor
-npx @anthropic-ai/mobile-mcp@latest
+npx -y @mobilenext/mobile-mcp@latest
 ```
 
 **March 2026 updates** include `save_screenshot` (saves to disk for use by other MCP servers) and `use_default_device` (auto-selects the only connected device).
@@ -89,7 +89,7 @@ Several MCP servers target Android directly via ADB (Android Debug Bridge):
 
 - **[android-mcp-server](https://github.com/minhalvp/android-mcp-server)** — Direct ADB control for screenshots, app management, and device interaction
 - **[Play Store MCP](https://github.com/devexpert-io/play-store-mcp)** — Connects to Play Store Console for releasing new app versions from an MCP client
-- **Google Android Management API MCP** — Official Google server for enterprise Android device management (policies, apps, fleet management). As of March 17, 2026, MCP support is automatically enabled when the Android Management API is enabled in a Google Cloud project
+- **[Google Android Management API MCP](https://developers.google.com/android/management/use-android-management-mcp)** — Official Google server for enterprise Android device management (policies, apps, fleet management). Per Google's own [release notes](https://developers.google.com/android/management/release-notes), a read-only MCP preview was added in February 2026, and MCP support is automatically available whenever the Android Management API is enabled in a Google Cloud project
 
 ## Pattern 2: Mobile App as MCP Client — Native SDKs
 
@@ -121,11 +121,11 @@ val result = client.callTool("search_documents", mapOf(
 
 **Android integration:** The SDK works with Android Studio and IntelliJ IDEA. For Android apps, you'd typically run the MCP client in a background coroutine scope, connecting to remote MCP servers over Streamable HTTP.
 
-**KotlinConf 2026** features sessions demonstrating building AI-driven applications using local tools across Android, iOS, and desktop, connecting to MCP servers with the Kotlin SDK — including integration with both cloud and on-device LLMs.
+[**KotlinConf 2026**](https://kotlinconf.com/talks/1074938/) (May 20–22, Munich) featured a session by John O'Reilly, "Full-Stack Kotlin AI: Powering Compose Multiplatform apps with Koog & MCP," demonstrating building AI-driven applications using local tools across Android, iOS, and desktop, connecting to MCP servers with the Kotlin SDK — including integration with both cloud and on-device LLMs.
 
 ### Swift SDK — Official
 
-The [official Swift MCP SDK](https://github.com/modelcontextprotocol/swift-sdk) implements both client and server components per the 2025-11-25 MCP specification. It enables building MCP clients in native iOS/macOS apps and MCP servers that run on Apple platforms.
+The [official Swift MCP SDK](https://github.com/modelcontextprotocol/swift-sdk) implements both client and server components per the 2025-11-25 MCP specification — as of this writing the SDK has not yet been updated for the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog), which removed protocol-level sessions and reclassified the older HTTP+SSE transport as deprecated. It enables building MCP clients in native iOS/macOS apps and MCP servers that run on Apple platforms.
 
 **iOS-specific considerations:**
 - Background app suspension limits long-running MCP connections
@@ -157,13 +157,12 @@ These serve the development workflow (helping AI assistants write React Native c
 - Clipboard sharing between phone and desktop
 - Notifications with priority levels and interactive responses
 - Battery status and device controls
-- Camera access
 - Remote device finding (beep)
 - Timer setting
 
 **Architecture:** The MCP server runs locally on the phone. The desktop AI client connects over the local Wi-Fi network. No cloud relay — data stays on-device and never leaves the local network.
 
-**Security model:** MIT-licensed, fully open source ([GitHub](https://github.com/priyankark/phonepi-mcp)). All personal data (contacts, SMS, camera) remains on the device. The phone and AI client must be on the same network.
+**Security model:** MIT-licensed, fully open source ([GitHub](https://github.com/priyankark/phonepi-mcp)). All personal data (contacts, SMS, snippets) remains on the device. The phone and AI client must be on the same network.
 
 **Availability:** Android app on Google Play. iOS app in development.
 
@@ -175,7 +174,7 @@ These serve the development workflow (helping AI assistants write React Native c
 
 ### Inter-App MCP on Mobile
 
-An emerging pattern uses App Links (Android) and Universal Links (iOS) for MCP communication between apps on the same device — no server, no cloud relay, no background daemon. The OS verifies links against a domain you control, and enabling `strictTransport: true` forces verified links for the entire handshake, making hijacking structurally impossible.
+An emerging pattern uses App Links (Android) and Universal Links (iOS) for MCP communication between apps on the same device — no server, no cloud relay, no background daemon. The OS [verifies links against a domain you control](https://developer.android.com/training/app-links/verify-applinks) by checking a `.well-known/assetlinks.json` file hosted on that domain, combined with the `android:autoVerify="true"` intent-filter attribute — this makes it harder (not "structurally impossible") for an unrelated app to intercept the link, since it would need control of the verified domain itself.
 
 This pattern is still early but represents a future where mobile apps can expose MCP tools to each other natively.
 
@@ -224,11 +223,11 @@ The mobile LLM landscape has matured significantly:
 
 | Model | Parameters | Target |
 |---|---|---|
-| Llama 3.2 | 1B / 3B | Mobile and edge |
+| [Llama 3.2](https://huggingface.co/meta-llama/Llama-3.2-1B) | 1B / 3B | Mobile and edge |
 | [Gemma 3 270M](https://developers.googleblog.com/en/introducing-gemma-3-270m/) | 270M | Ultra-efficient edge |
 | [Phi-4 mini](https://azure.microsoft.com/en-us/blog/empowering-innovation-the-next-generation-of-the-phi-family/) | 3.8B | Mobile reasoning |
-| SmolLM2 | 135M–1.7B | Smallest practical models |
-| Qwen2.5 | 0.5B–1.5B | Multilingual mobile |
+| [SmolLM2](https://huggingface.co/blog/smollm) | 135M–1.7B | Smallest practical models |
+| [Qwen2.5](https://qwenlm.github.io/blog/qwen2.5/) | 0.5B–1.5B | Multilingual mobile |
 
 [Meta's ExecuTorch serves billions of people across Instagram, WhatsApp, Messenger, and Facebook](https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/), with a [50KB base runtime footprint](https://github.com/pytorch/executorch/blob/main/README.md) (when built without additional kernels or backends).
 
@@ -236,7 +235,7 @@ The mobile LLM landscape has matured significantly:
 
 Mobile inference faces fundamental hardware limits:
 
-- **Memory bandwidth:** Mobile devices have 50–90 GB/s vs. H100-class data center GPUs at ~3.35 TB/s — a roughly 40–60× gap depending on specific hardware
+- **Memory bandwidth:** Mobile devices have roughly 50–90 GB/s — e.g. [Apple A18 Pro ~60 GB/s, Qualcomm Snapdragon 8 Elite ~77 GB/s](https://www.cpu-monkey.com/en/compare_cpu-qualcomm_snapdragon_8_elite-vs-apple_a18_pro) — vs. [H100-class data center GPUs at ~3.35 TB/s](https://www.nvidia.com/en-us/data-center/h100/) — a roughly 40–60× gap depending on specific hardware
 - **Thermal throttling:** Under sustained load, mobile processors throttle significantly — thermal management supersedes peak compute as the primary constraint
 - **RAM sharing:** The LLM competes with the OS, other apps, and the MCP client for limited memory (4–12 GB total)
 
@@ -268,13 +267,13 @@ The practical pattern emerging in 2026 is a hybrid: a small language model (SLM)
 
 The SLM understands user requests and decides whether to handle them locally or delegate to remote MCP tools. Simple queries (local search, quick calculations, UI actions) stay on-device. Complex queries (multi-document analysis, code generation, API orchestration) route to cloud MCP servers.
 
-[Edge Veda](https://pub.dev/packages/edge_veda), a Flutter SDK for on-device LLM integration, [demonstrated this pattern](https://medium.com/edge-veda/edge-veda-in-5-minutes-your-first-on-device-llm-in-flutter-789f3d53f297) as early as March 2026.
+[Edge Veda](https://pub.dev/packages/edge_veda), a Flutter SDK for on-device LLM integration, [demonstrated running Llama 3.2 1B fully on-device in a Flutter app via Metal GPU acceleration](https://medium.com/edge-veda/edge-veda-in-5-minutes-your-first-on-device-llm-in-flutter-789f3d53f297) as early as March 2026 — that demo covers only the on-device inference half of the pattern above; Edge Veda's own docs describe it as a zero-cloud-dependency runtime, not an MCP client, so the SLM+MCP pairing is illustrative rather than something Edge Veda ships out of the box.
 
 ## Enterprise Mobile MCP
 
 ### Google Android Management API
 
-Google's [Android Management API MCP server](https://developers.google.com/android/management/use-android-management-mcp) is an officially managed remote MCP server for enterprise Android fleet management. As of March 17, 2026, MCP support is automatically available when the Android Management API is enabled in a Google Cloud project.
+Google's [Android Management API MCP server](https://developers.google.com/android/management/use-android-management-mcp) is an officially managed remote MCP server for enterprise Android fleet management. Per Google's [release notes](https://developers.google.com/android/management/release-notes), the read-only MCP preview was added in February 2026, and MCP support is automatically available when the Android Management API is enabled in a Google Cloud project.
 
 **Capabilities:** Device policy management, application deployment and configuration, enterprise device enrollment, and fleet-wide compliance enforcement — all accessible as MCP tools.
 
@@ -298,8 +297,8 @@ This targets the development workflow rather than production mobile apps, but it
 
 | Transport | Mobile Use Case | Tradeoffs |
 |---|---|---|
-| **Streamable HTTP** | Primary choice for mobile clients | Works through firewalls/proxies, handles reconnection, supports dynamic SSE upgrade |
-| **WebSocket** | Real-time bidirectional needs | Lower latency, but harder to proxy, no automatic reconnection in MCP spec |
+| **Streamable HTTP** | Primary choice for mobile clients | Works through firewalls/proxies, supports a per-request SSE upgrade; note the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) removed stream resumability (`Last-Event-ID`), so a broken response stream now loses the in-flight request rather than resuming — clients must re-issue it as a new request |
+| **WebSocket** | Real-time bidirectional needs | Lower latency, but harder to proxy — WebSocket is not one of the two transports the [core MCP spec standardizes](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports) (stdio and Streamable HTTP); it's an SDK-specific custom transport, so reconnection behavior isn't spec-defined at all |
 | **REST via MCP Bridge** | Legacy mobile apps, simple integration | Easiest to implement, adds proxy hop, stateless |
 | **stdio** | Not applicable | Requires local process — impossible on mobile |
 
@@ -308,10 +307,12 @@ This targets the development workflow rather than production mobile apps, but it
 Mobile networks are unreliable. Your MCP client must handle:
 
 **Reconnection strategy:**
+
+Under the current spec, MCP has no protocol-level session to re-establish — the [2026-07-28 revision removed sessions entirely](https://modelcontextprotocol.io/specification/2026-07-28/changelog), so a "reconnect" is really just resuming ordinary requests:
 ```
 1. Detect disconnection (timeout, error, network change)
 2. Exponential backoff: 1s → 2s → 4s → 8s → 16s (cap)
-3. Re-initialize MCP session on reconnect
+3. Re-issue any interrupted request as a new request (no session to re-initialize)
 4. Re-fetch tool list (server may have updated)
 5. Retry interrupted tool calls if idempotent
 ```
@@ -343,13 +344,13 @@ MCP tool calls from mobile apps should be efficient:
 
 | Project | Type | Platform | Stars/Status | Key Feature |
 |---|---|---|---|---|
-| [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | Automation server | iOS + Android | ~4.1K stars | Platform-agnostic device control via accessibility trees |
+| [Mobile MCP](https://github.com/mobile-next/mobile-mcp) | Automation server | iOS + Android | ~5.9K stars | Platform-agnostic device control via accessibility trees |
 | [Appium MCP](https://github.com/appium/appium-mcp) | Testing server | iOS + Android | Official | AI-powered element finding, test code generation |
 | [PhonePi MCP](https://github.com/priyankark/phonepi-mcp) | Phone-as-server | Android (iOS planned) | Open source | 23+ phone actions over local network |
 | [Phone MCP](https://play.google.com/store/apps/details?id=se.premex.mcp&hl=en) | Phone-as-server | Android 8.0+ | Google Play | Permission-based AI phone control |
 | [Kotlin MCP SDK](https://github.com/modelcontextprotocol/kotlin-sdk) | Client/Server SDK | KMP (JVM/Native/JS/Wasm) | Official | Multiplatform, coroutine-first |
 | [Swift MCP SDK](https://github.com/modelcontextprotocol/swift-sdk) | Client/Server SDK | iOS/macOS | Official | Native Apple platform support |
-| [MCP Bridge](https://github.com/INQUIRELAB/mcp-bridge-api) | REST proxy | Any HTTP client | arXiv paper | 1–2 ms overhead, risk-based execution |
+| [MCP Bridge](https://github.com/INQUIRELAB/mcp-bridge-api) | REST proxy | Any HTTP client | arXiv paper | Lightweight proxy, risk-based execution |
 | [Android Management MCP](https://developers.google.com/android/management/use-android-management-mcp) | Enterprise MDM | Android | Google official | Fleet management via MCP tools |
 | [SAP MDK MCP](https://github.com/SAP/mdk-mcp-server) | Dev tooling | Cross-platform | SAP official | AI-assisted enterprise mobile dev |
 | [React Native Debugger MCP](https://github.com/twodoorsdev/react-native-debugger-mcp) | Dev tooling | React Native | Open source | Debug RN apps from AI assistant |
@@ -380,7 +381,7 @@ MCP tool calls from mobile apps should be efficient:
 
 The mobile MCP space is evolving rapidly:
 
-- **SEP-1442 (Stateless Servers):** Removes server-side session state, which simplifies mobile reconnection — the client doesn't need to re-establish sessions after network drops
+- **Stateless servers — already shipped:** What began as [SEP-1442](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442) landed as part of the [2026-07-28 MCP specification revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog), which removed server-side session state entirely. This does simplify mobile reconnection — there's no session to re-establish after a network drop — but it also means SDKs and guides (including parts of this one, noted above) written against the 2025-11-25 spec are now behind
 - **Kotlin Multiplatform maturation:** The official Kotlin SDK's multiplatform support means a single MCP client codebase can target Android, iOS, web, and desktop
 - **On-device model improvements:** As mobile LLMs pass the 3B parameter threshold with reasonable speed, fully local MCP tool-calling becomes practical for more use cases
 - **App-to-app MCP:** The inter-app communication pattern (via App Links / Universal Links) could make MCP a standard way for mobile apps to expose capabilities to each other

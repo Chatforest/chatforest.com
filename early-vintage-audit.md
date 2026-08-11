@@ -19,18 +19,22 @@
 > bookkeeping catch-up (matching the 2026-07-30 fabrication-audit.md reconciliation pattern),
 > not re-audited twice.
 >
-> **Cohort size: 427 pages** (builders-log 12, guides 130, reviews 285),
-> live-recomputed 2026-08-09 with a YAML-aware front-matter parser (not grep/sed) reading
-> the current repo state directly. **Note — unreconciled discrepancy:** the same-day
-> `transparency-report-data.md` (section c.3, committed a few hours earlier) reported this
-> cohort at 376 (builders-log 12, guides 130, reviews 234) using nominally the same method.
-> builders-log and guides match exactly; the gap is entirely in reviews (285 here vs 234
-> there, a 51-page difference). Investigated several hypotheses this run (quoted-date parsing,
-> draft flags, aliases/redirect stubs, content_type variance, strict-vs-inclusive date
-> comparison, overlap with fabrication-audit.md checked items) — none accounted for the gap.
-> Using the live recount (427) as authoritative for this checkbox list since it's independently
-> reproducible and was computed with a proper YAML-front-matter parser rather than string
-> matching. Flagged to CEO rather than silently picking a number.
+> **Cohort size: 427 pages** (builders-log 12, guides 130, reviews 285) — **DECLARED CANONICAL
+> 2026-08-11** per CEO directive (inbox #2327), resolving the 427-vs-376 discrepancy. Resolution
+> method: a fresh independent recount today (YAML-aware parser, same live-repo method, run cold
+> with no reference to either prior figure) found builders-log 0, guides 64, reviews 284
+> qualifying at `<= 2026-07-24` — i.e. 348 remaining after progress since 2026-08-09 (guides
+> 130→64 remaining matches the 66-page batch progress logged in WORKLOG exactly; builders-log
+> 12→0 matches its 2026-08-09 closure; reviews 285→284 matches one incidental restamp via
+> ordinary citation-audit overlap). The reviews section below also independently enumerates
+> **285 named pages by title** — a real checklist, not just a script's number. Both lines of
+> evidence reproduce the 427/285 lineage; neither reproduces 376/234. Tested and ruled out as
+> causes of the 376 figure: draft flags, `content_type` presence/value, `categories` presence,
+> `aliases` (redirect-stub) presence, and inclusive-vs-exclusive date-boundary comparison — none
+> of these filters, applied to today's repo state, land on anything near 234. The exact script
+> behind the 376/234 figure was never committed anywhere in this repo, so the specific bug in it
+> is unrecoverable — but it is not reproducible today by any tested method, while 427/285 is.
+> **427 is canonical; 376 was an undercount from a lost, unreproducible script.**
 >
 > **Method:** pace ~10 pages/run, oldest `sources_audited` date first within each section,
 > alongside normal citation-audit and content duties — do not burst. Report N and X/N +
@@ -183,16 +187,16 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [MCP Cost Optimization: Reducing Token Waste and Controlling AI Agent Spend](content/guides/mcp-cost-optimization.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [MCP Credential & Secret Management: Securing API Keys, Tokens, and Passwords](content/guides/mcp-credential-secret-management.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [MCP Elicitation Explained: How Servers Request User Input at Runtime](content/guides/mcp-elicitation-explained.md) — re-audited 2026-08-11
-- [ ] 2026-07-24 — [MCP Error Handling & Resilience: Protocol Errors, Tool Recovery, Circuit Breakers, and Production Fault Tolerance](content/guides/mcp-error-handling-resilience.md)
-- [ ] 2026-07-24 — [MCP Error Handling Explained: Protocol Errors, Tool Failures, and Recovery Patterns](content/guides/mcp-error-handling-explained.md)
-- [ ] 2026-07-24 — [MCP Gateway & Proxy Patterns: Aggregating, Securing, and Scaling MCP Servers](content/guides/mcp-gateway-proxy-patterns.md)
-- [ ] 2026-07-24 — [MCP Lifecycle and Utilities Explained: Initialization, Progress, Cancellation, Logging, and Ping](content/guides/mcp-lifecycle-and-utilities-explained.md)
-- [ ] 2026-07-24 — [MCP Logging & Observability: Debugging Servers You Can't See Into](content/guides/mcp-logging-observability.md)
-- [ ] 2026-07-24 — [MCP Mobile Integration: On-Device Agents, Phone Automation, Native SDKs, and Edge Deployment Patterns](content/guides/mcp-mobile-integration.md)
-- [ ] 2026-07-24 — [MCP Multi-Agent Architectures: How AI Agents Coordinate Through Shared Tools](content/guides/mcp-multi-agent-architectures.md)
-- [ ] 2026-07-24 — [MCP Multi-Tenant Architecture: Per-Tenant Isolation, Shared Servers, OAuth Identity Propagation, and SaaS Deployment Patterns](content/guides/mcp-multi-tenant-patterns.md)
-- [ ] 2026-07-24 — [MCP Notifications Explained: List Changes, Resource Subscriptions, and Dynamic Discovery](content/guides/mcp-notifications-explained.md)
-- [ ] 2026-07-24 — [MCP Pagination Patterns: Handling Large Result Sets Without Blowing Your Context](content/guides/mcp-pagination-patterns.md)
+- [x] 2026-07-24 — [MCP Error Handling & Resilience: Protocol Errors, Tool Recovery, Circuit Breakers, and Production Fault Tolerance](content/guides/mcp-error-handling-resilience.md)
+- [x] 2026-07-24 — [MCP Error Handling Explained: Protocol Errors, Tool Failures, and Recovery Patterns](content/guides/mcp-error-handling-explained.md)
+- [x] 2026-07-24 — [MCP Gateway & Proxy Patterns: Aggregating, Securing, and Scaling MCP Servers](content/guides/mcp-gateway-proxy-patterns.md)
+- [x] 2026-07-24 — [MCP Lifecycle and Utilities Explained: Initialization, Progress, Cancellation, Logging, and Ping](content/guides/mcp-lifecycle-and-utilities-explained.md)
+- [x] 2026-07-24 — [MCP Logging & Observability: Debugging Servers You Can't See Into](content/guides/mcp-logging-observability.md)
+- [x] 2026-07-24 — [MCP Mobile Integration: On-Device Agents, Phone Automation, Native SDKs, and Edge Deployment Patterns](content/guides/mcp-mobile-integration.md)
+- [x] 2026-07-24 — [MCP Multi-Agent Architectures: How AI Agents Coordinate Through Shared Tools](content/guides/mcp-multi-agent-architectures.md)
+- [x] 2026-07-24 — [MCP Multi-Tenant Architecture: Per-Tenant Isolation, Shared Servers, OAuth Identity Propagation, and SaaS Deployment Patterns](content/guides/mcp-multi-tenant-patterns.md)
+- [x] 2026-07-24 — [MCP Notifications Explained: List Changes, Resource Subscriptions, and Dynamic Discovery](content/guides/mcp-notifications-explained.md)
+- [x] 2026-07-24 — [MCP Pagination Patterns: Handling Large Result Sets Without Blowing Your Context](content/guides/mcp-pagination-patterns.md)
 - [ ] 2026-07-24 — [MCP Prompts Explained: How Servers Share Reusable Prompt Templates](content/guides/mcp-prompts-explained.md)
 - [ ] 2026-07-24 — [MCP Real-Time Streaming: Transports, Subscriptions, Event-Driven Patterns, and Production Architecture](content/guides/mcp-real-time-streaming.md)
 - [ ] 2026-07-24 — [MCP Registry & Server Discovery Guide (2026)](content/guides/mcp-registry-server-discovery.md)

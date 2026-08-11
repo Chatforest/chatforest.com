@@ -5,12 +5,12 @@ description: "How to implement pagination in MCP servers — covering the spec's
 content_type: "Guide"
 card_description: "MCP tools that return thousands of rows will choke your AI agent. Here's how to paginate properly at every level."
 last_refreshed: 2026-04-14
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 An MCP tool that returns 10,000 database rows in a single response will overwhelm any AI agent's context window. The tokens get consumed, the model loses focus, and the user gets a slow, expensive, unhelpful answer. Pagination solves this — but MCP handles it differently than traditional REST APIs.
 
-This guide covers pagination at every level of the MCP stack: the protocol's built-in list pagination, tool-level pagination for your own result sets, compact response design, and the ResourceLink pattern for truly large datasets. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18), published SDK documentation, [research papers](https://arxiv.org/abs/2510.05968), production patterns from teams like [Axiom](https://axiom.co/blog/designing-mcp-servers-for-wide-events), and practitioner guides from [JetBrains](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/), [Microsoft](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md), and [Workato](https://docs.workato.com/mcp/mcp-server-design.html) — we research and analyze rather than building production MCP systems ourselves.
+This guide covers pagination at every level of the MCP stack: the protocol's built-in list pagination, tool-level pagination for your own result sets, compact response design, and the ResourceLink pattern for truly large datasets. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28), published SDK documentation, a [research paper](https://arxiv.org/abs/2510.05968), production patterns from teams like [Axiom](https://axiom.co/blog/designing-mcp-servers-for-wide-events), and practitioner guides from [JetBrains](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/), [Microsoft](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md), and [Workato](https://docs.workato.com/mcp/mcp-server-design.html) — we research and analyze rather than building production MCP systems ourselves.
 
 ## The Two Pagination Problems
 
@@ -32,7 +32,7 @@ The MCP specification defines cursor-based pagination for four list operations:
 - `prompts/list` — list available prompts
 - `tools/list` — list available tools
 
-The model is simple. A client sends a list request with no cursor. The server returns a page of results and, if more exist, an opaque `nextCursor` string. The client sends the cursor back to get the next page. When no `nextCursor` appears in the response, you've [reached the end](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination).
+The model is simple. A client sends a list request with no cursor. The server returns a page of results and, if more exist, an opaque `nextCursor` string. The client sends the cursor back to get the next page. When no `nextCursor` appears in the response, you've [reached the end](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination).
 
 ```json
 // First request — no cursor
@@ -69,18 +69,18 @@ The model is simple. A client sends a list request with no cursor. The server re
 
 ### Key Rules
 
-The [spec](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination) establishes clear responsibilities:
+The [spec](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination) establishes clear responsibilities:
 
 **Servers SHOULD:**
 - Provide stable cursors (the same cursor should return the same position)
-- Handle invalid cursors gracefully (return [error code `-32602`](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination) — Invalid params)
+- Handle invalid cursors gracefully (return [error code `-32602`](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination) — Invalid params)
 
 **Clients SHOULD:**
 - Treat a missing `nextCursor` as the end of results
 - Support both paginated and non-paginated flows (not all servers paginate)
 
 **Clients MUST:**
-- Treat cursors as opaque tokens — no parsing, no modification, no persistence across sessions
+- Treat cursors as opaque tokens — no assumptions about format, no parsing, no modification. The current spec is explicit that clients must not read anything into a cursor's value beyond whether one was provided at all: an empty string is a valid cursor and [must not be treated as end-of-results](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination)
 - Not assume a fixed page size — the server decides how many items per page
 
 ### When List Pagination Matters
@@ -236,7 +236,7 @@ A columnar or table format is more compact:
 }
 ```
 
-Axiom's own benchmarks show the difference concretely: for 5 log events with 6 fields, [JSON costs 235 tokens (753 bytes) while CSV costs just 166 tokens (442 bytes) — a ~29% reduction](https://axiom.co/blog/designing-mcp-servers-for-wide-events). At scale, 50 rows saves ~690 tokens; 1,000 rows saves ~13,800 tokens. For wider tables with more columns, the savings can reach 40-60%.
+Axiom's own benchmarks show the difference concretely: for 5 log events with 6 fields, [JSON costs 235 tokens (753 bytes) while CSV costs just 166 tokens (442 bytes) — a ~29% reduction](https://axiom.co/blog/designing-mcp-servers-for-wide-events). Axiom projects this scales roughly linearly: [~690 tokens saved at 50 rows, ~1,380 at 100 rows, and ~13,800 at 1,000 rows, with the percentage reduction staying close to 29%](https://axiom.co/blog/designing-mcp-servers-for-wide-events).
 
 ### Cell Budgets
 
@@ -265,13 +265,13 @@ Always tell the model what you trimmed:
 }
 ```
 
-Models are generally good at adapting when they know the data is incomplete. Without this metadata, they may draw conclusions from a partial dataset without realizing it's partial. [Workato's MCP design guide](https://docs.workato.com/mcp/mcp-server-design.html) calls this part of the "contract" between tool and agent — explicit, deterministic pagination behavior that helps agents compose multi-tool workflows effectively.
+Models are generally good at adapting when they know the data is incomplete. Without this metadata, they may draw conclusions from a partial dataset without realizing it's partial. [Workato's MCP design guide](https://docs.workato.com/mcp/mcp-server-design.html) treats this kind of explicit, testable "tool contract" — clear parameters, response shape, and truncation signals like `has_more` instead of silent truncation — as what lets agents reliably compose multi-tool workflows.
 
 ## ResourceLink: Bypassing the Context Window
 
-For truly large datasets — report generation, data exports, full query results — even compact pagination may not be enough. The [MCP specification (version 2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/resources) introduced **ResourceLink**, which lets tool results reference external resources by URI rather than embedding data inline.
+For truly large datasets — report generation, data exports, full query results — even compact pagination may not be enough. The MCP spec's [tool result types](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#resource-links) define **Resource Links** (`resource_link` content blocks), which let tool results reference external resources by URI rather than embedding data inline.
 
-A [research paper by Wang et al.](https://arxiv.org/abs/2510.05968) formalized the "dual-response pattern" using ResourceLink:
+A [research paper by Scott Frees](https://arxiv.org/abs/2510.05968) formalized a "dual-response pattern" extending ResourceLink for large-dataset processing:
 
 ```json
 {
@@ -371,7 +371,7 @@ def encode_cursor(last_id: str, last_timestamp: str) -> str:
 # ORDER BY timestamp DESC, id DESC LIMIT 25
 ```
 
-Keyset pagination maintains consistent performance regardless of how deep you paginate, unlike OFFSET which degrades as the offset grows. [Microsoft's MCP for Beginners guide](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md) outlines three cursor strategies — index-based (simple but fragile), ID-based (stable when data changes), and encoded state (most flexible) — and recommends choosing based on how dynamic your underlying data is.
+Keyset pagination maintains consistent performance regardless of how deep you paginate, unlike OFFSET which degrades as the offset grows. [Microsoft's MCP for Beginners guide](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md) lays out the same trade-off across three cursor strategies: index-based (simple and stateless, but results can shift if items are added or removed), ID-based (stable even if items change, but requires ordered IDs), and encoded state (handles multiple state fields for more complex scenarios).
 
 ## Common Pitfalls
 
@@ -408,7 +408,7 @@ Always return `total_count` (or an estimate) and `has_more`. Without these, the 
 
 ### 7. Forgetting Error Handling
 
-When a client sends an invalid or expired cursor, return a clear error ([code `-32602` per the spec](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination)) rather than silently returning the first page. Silent fallback to page 1 can cause the model to loop, re-fetching the same data. As [JetBrains advises](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/): "Without telling the LLM what it should do differently, it has to figure it out by itself, which can result in additional unnecessary tool calls." Include actionable recovery instructions in error messages — e.g., "Page number 10 is out of range. Specify a page number between 1 and 3."
+When a client sends an invalid or expired cursor, return a clear error ([code `-32602` per the spec](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination)) rather than silently returning the first page. Silent fallback to page 1 can cause the model to loop, re-fetching the same data. As [JetBrains advises](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/): "Without telling the LLM what it should do differently, it has to figure it out by itself, which can result in additional unnecessary tool calls." Include actionable recovery instructions in error messages — e.g., "Page number 10 is out of range. Specify a page number between 1 and 3."
 
 ### 8. No Progress Reporting
 
@@ -452,7 +452,7 @@ The [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadm
 
 ## Further Reading
 
-- [MCP Specification: Pagination](https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination) — the official spec
+- [MCP Specification: Pagination](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination) — the official spec
 - [Designing MCP Servers for Wide Schemas and Large Result Sets](https://axiom.co/blog/designing-mcp-servers-for-wide-events) — Axiom's production experience with cell budgets and CSV format
 - [Building LLM-Friendly MCP Tools: Pagination, Filtering, and Error Design](https://blog.jetbrains.com/ruby/2026/02/rubymine-mcp-and-the-rails-toolset/) — JetBrains' guide covering context limits and tool call caps
 - [Microsoft MCP for Beginners: Pagination](https://github.com/microsoft/mcp-for-beginners/blob/main/04-PracticalImplementation/pagination/README.md) — hands-on tutorial with three cursor strategies

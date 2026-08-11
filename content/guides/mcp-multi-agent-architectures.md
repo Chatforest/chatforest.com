@@ -5,14 +5,14 @@ description: "How multiple AI agents coordinate through MCP — covering supervi
 content_type: "Guide"
 card_description: "One agent with tools is useful. Multiple agents sharing MCP infrastructure is where things get interesting — and complicated."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 A single AI agent connected to MCP servers can do impressive work. But complex tasks — triaging support tickets while monitoring infrastructure while updating documentation — often exceed what one agent can handle well. The solution is multiple agents, each specialized, coordinating through shared infrastructure.
 
 Here's the thing most people get wrong: MCP is not a protocol for agents to talk to each other. It's a protocol for agents to access tools and data. Multi-agent coordination through MCP happens *indirectly* — agents share state through MCP servers rather than messaging each other. Understanding this distinction is the key to building multi-agent systems that actually work.
 
-This guide covers the architecture patterns, coordination mechanisms, and security considerations for running multiple agents on MCP infrastructure. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25), framework documentation, published security research, and production reports — we research and analyze rather than building multi-agent MCP systems ourselves.
+This guide covers the architecture patterns, coordination mechanisms, and security considerations for running multiple agents on MCP infrastructure. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28) — now in its 2026-07-28 revision, which made the protocol stateless and deprecated the Sampling and Roots features discussed below (see the [full changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog)) — framework documentation, published security research, and production reports. We research and analyze rather than building multi-agent MCP systems ourselves.
 
 ## The Coordination Model: Shared State, Not Direct Messages
 
@@ -32,7 +32,7 @@ This mirrors how human teams often work. Two developers don't need a direct comm
 
 ### Why This Works Better Than You'd Think
 
-Direct agent-to-agent messaging creates an N×M complexity problem. Five agents that all need to communicate directly require managing 20 bidirectional channels. [Research from BCG](https://www.bcg.com/publications/2025/how-multi-agent-ai-systems-work) found that five-agent systems are "roughly twenty-five times harder to maintain than single-agent setups" when agents communicate directly without standardization.
+Direct agent-to-agent messaging creates an N×M complexity problem: full-mesh communication among N agents requires N×(N-1)/2 unique channels, which grows quadratically. Five agents that all need to talk to each other directly require 10 channels; add a sixth and you need 15. Every new agent means renegotiating connections with every existing one.
 
 Shared-state coordination through MCP servers reduces this to N+M — each agent connects to the servers it needs, and coordination emerges from the shared data. Adding a sixth agent means adding its MCP connections, not rewiring every other agent.
 
@@ -105,7 +105,7 @@ Ingest Agent ──write──→ MCP: Queue ──read──→ Transform Agent
 
 ### Parallel Fan-Out
 
-The MCP specification (2025-11-25) supports concurrent tool calls. Multiple agents can analyze the same data simultaneously, each writing to separate MCP namespaces. An aggregator agent reads all findings.
+Nothing in MCP's JSON-RPC transport prevents an agent (or its underlying LLM/orchestrator) from issuing multiple tool calls concurrently — the spec doesn't require calls to be serialized. Multiple agents can analyze the same data simultaneously, each writing to separate MCP namespaces. An aggregator agent reads all findings.
 
 ```
                     ┌──→ Security Agent ──→ MCP: findings/security
@@ -120,7 +120,9 @@ Coordinator ────────┼──→ Performance Agent ──→ MCP
 
 ## MCP Sampling: Nested Agent Capabilities
 
-The [sampling feature](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling) is MCP's most powerful mechanism for multi-agent behavior. It allows an MCP server to request LLM completions from the client — effectively enabling servers to act as agents themselves.
+**Status update:** the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) formally deprecated the Sampling feature (along with Roots and Logging), with a minimum twelve-month window before removal. New implementations are advised to integrate directly with LLM provider APIs instead of using Sampling. Everything below describes how Sampling works and was designed — it's still functional today and worth understanding for existing deployments, but it is not the mechanism to build new nested-agent behavior around going forward.
+
+The [sampling feature](https://modelcontextprotocol.io/specification/2026-07-28/client/sampling) was MCP's most powerful mechanism for multi-agent behavior. It allows an MCP server to request LLM completions from the client — effectively enabling servers to act as agents themselves.
 
 ### How Sampling Works
 
@@ -135,6 +137,8 @@ Sampling flow: Server → Client (please run this prompt through your LLM)
 5. Client returns response to server
 ```
 
+That's the flow as originally specified. Under the [2026-07-28 spec](https://modelcontextprotocol.io/specification/2026-07-28/client/sampling), the mechanics changed even before deprecation: MCP's protocol layer became stateless and server-initiated requests like `sampling/createMessage` were replaced by the **Multi Round-Trip Requests (MRTR)** pattern — the server returns an `InputRequiredResult` from its original response, and the client supplies the sampling result by retrying that same request with `inputResponses` attached, rather than the server pushing a separate message to the client mid-flight. The conceptual flow above (human review, then LLM, then response) still holds.
+
 The server can specify model preferences using priority scores (0 to 1):
 - `intelligencePriority` — prefer more capable models
 - `speedPriority` — prefer faster models
@@ -142,9 +146,9 @@ The server can specify model preferences using priority scores (0 to 1):
 
 These are advisory — the client makes the final model selection.
 
-### Sampling with Tools (2025-11-25 Spec)
+### Sampling with Tools
 
-The November 2025 spec update added a critical capability: servers can include tool definitions in sampling requests. This means an MCP server can:
+The [2025-11-25 spec update](https://modelcontextprotocol.io/specification/2025-11-25) added a capability that's still part of Sampling today (deprecated status notwithstanding): servers can include tool definitions in sampling requests. This means an MCP server can:
 
 1. Request an LLM completion from the client
 2. Include tools the LLM can call
@@ -152,7 +156,7 @@ The November 2025 spec update added a critical capability: servers can include t
 4. Request another completion with the results
 5. Repeat until the task is complete
 
-This enables **server-side agent loops** — an MCP server that is itself an autonomous agent, reasoning and acting through iterative LLM calls. The 2026 MCP roadmap envisions scenarios like a "Travel Agent" MCP server autonomously negotiating with a "Booking Agent" MCP server.
+This enables **server-side agent loops** — an MCP server that is itself an autonomous agent, reasoning and acting through iterative LLM calls. It's a real, documented capability of the spec — but with Sampling itself now deprecated in favor of servers integrating directly with LLM provider APIs, it's not the path the protocol is steering new implementations toward.
 
 ### The Human-in-the-Loop Requirement
 
@@ -166,7 +170,9 @@ This is a deliberate design choice. Sampling creates a vector for prompt injecti
 
 ## Scoping Agents with Roots
 
-MCP [roots](https://modelcontextprotocol.io/specification/2025-11-25/client/roots) define boundaries for where servers can operate. In multi-agent systems, roots enable **agent scoping** — giving each agent different access boundaries.
+**Status update:** like Sampling, the [Roots feature was deprecated](https://modelcontextprotocol.io/specification/2026-07-28/changelog) in the 2026-07-28 spec revision (minimum twelve-month removal window). The spec's suggested migration is to pass directories, files, or scope information via tool parameters, resource URIs, or server configuration instead. The pattern below — using Roots for agent scoping — describes how it worked and is still functional, but new multi-agent designs should plan to scope agents through those alternative mechanisms rather than Roots.
+
+MCP [roots](https://modelcontextprotocol.io/specification/2026-07-28/client/roots) define boundaries for where servers can operate. In multi-agent systems, roots enable **agent scoping** — giving each agent different access boundaries.
 
 ```json
 // Code Agent: scoped to the project directory
@@ -201,22 +207,24 @@ The LLM processes this as part of the tool's metadata and may follow the instruc
 
 ### Tool Poisoning and Rug-Pull Attacks
 
-MCP tools can mutate their own definitions after installation. A tool that appears safe during review could change its description or behavior later — a "rug-pull" attack. In multi-agent systems, this is especially dangerous because one compromised tool can influence all agents that connect to it.
+MCP tools can mutate their own definitions after installation — the same [Invariant Labs research](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) notes that "a malicious server can change the tool description after the client has already approved it," meaning even an initially-trusted server can turn malicious later. A tool that appears safe during review could change its description or behavior after approval — a "rug-pull" attack. In multi-agent systems, this is especially dangerous because one compromised tool can influence all agents that connect to it.
 
 ### The Security Numbers
 
-A [survey of MCP server security](https://www.practical-devsecops.com/mcp-security-vulnerabilities/) found alarming rates of vulnerabilities in the ecosystem:
-- 43% of tested servers allowed command injection
-- 22% had path traversal vulnerabilities
-- 30% had SSRF (server-side request forgery) vulnerabilities
+[Equixly's offensive-security assessment of MCP servers](https://equixly.com/blog/2025/03/29/mcp-server-new-security-nightmare/) found alarming rates of vulnerabilities in the tested implementations:
+- 43% of tested implementations contained command injection flaws
+- 22% allowed accessing files outside intended directories (path traversal / arbitrary file read)
+- 30% permitted unrestricted URL fetching (SSRF, server-side request forgery)
 
-OWASP released "Enterprise-Grade Security for the Model Context Protocol" guidelines in 2025 to address these gaps.
+These are results from one security firm's assessment, not a random sample of the whole ecosystem, so treat the exact percentages as directional rather than definitive — other assessments using different methodologies have reported different rates (for example, [Endor Labs' 2025 analysis](https://www.endorlabs.com/learn/classic-vulnerabilities-meet-ai-infrastructure-why-mcp-needs-appsec) of 2,614 MCP implementations found 82% use file operations prone to path traversal, a much broader "prone to" measure than Equixly's confirmed-exploit figure).
+
+OWASP's Gen AI Security Project published ["Enterprise-Grade Security for the Model Context Protocol (MCP): Frameworks and Mitigation Strategies"](https://genai.owasp.org/2025/04/22/securing-ais-new-frontier-the-power-of-open-collaboration-on-mcp-security/) ([full paper](https://arxiv.org/abs/2504.08623)) in 2025 to address these gaps, proposing a defense-in-depth security framework spanning network, application-gateway, identity, and tool-management layers.
 
 ### Mitigation Strategies
 
 **Principle of least privilege:** Each agent should connect only to the MCP servers it needs. Don't give every agent access to every server.
 
-**Root scoping:** Use MCP roots to limit each agent's operational boundaries, even when connecting to the same servers.
+**Scope boundaries:** Use MCP roots (or, going forward, tool parameters/resource URIs/server config — see the note on Roots' deprecated status above) to limit each agent's operational boundaries, even when connecting to the same servers.
 
 **Server vetting:** Only connect to MCP servers you've reviewed. Check for known vulnerabilities before adding to a multi-agent system.
 
@@ -226,7 +234,7 @@ OWASP released "Enterprise-Grade Security for the Model Context Protocol" guidel
 
 ## MCP vs A2A: When You Need Direct Agent Communication
 
-Google released the [Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/) in April 2025 for direct agent-to-agent communication. [IBM's Agent Communication Protocol (ACP) merged into A2A in August 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/), with IBM donating ACP's assets to A2A under the Linux Foundation's LF AI & Data umbrella. Both MCP and A2A are now governed by the [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agentic-ai-initiative) under the Linux Foundation, co-founded by Anthropic, OpenAI, Google, Microsoft, AWS, and Block.
+Google released the [Agent2Agent (A2A) protocol](https://github.com/a2aproject/A2A) in April 2025 for direct agent-to-agent communication, then transferred the protocol and its SDKs to the [Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents) in June 2025. [IBM's Agent Communication Protocol (ACP) merged into A2A in August 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/), consolidating ACP's technology into the A2A standard. MCP is now governed by the [Agentic AI Foundation (AAIF)](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation), a Linux Foundation directed fund [co-founded by Anthropic, OpenAI, and Block](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) in December 2025 (Anthropic donated MCP to it); AWS, Google, Microsoft, Bloomberg, and Cloudflare are Platinum members rather than co-founders. A2A remains under separate Linux Foundation governance via its own Technical Steering Committee (with AWS, Cisco, Google, IBM Research, Microsoft, Salesforce, SAP, and ServiceNow represented), and the two projects' governance is expected to align further as both mature under the Linux Foundation umbrella.
 
 The relationship is complementary:
 
@@ -241,22 +249,24 @@ The relationship is complementary:
 
 **Use A2A when:** Agents from different organizations or frameworks need to negotiate. An agent needs to discover and delegate to another agent it doesn't control. Real-time back-and-forth between agents is required.
 
-**Use both when:** Building production multi-agent systems at scale. Most enterprise deployments in 2026 combine MCP for tool access with A2A for inter-agent negotiation where needed. Framework support is growing — [OpenAgents](https://openagents.org/) and [CrewAI](https://www.crewai.com/) support both natively.
+**Use both when:** Building production multi-agent systems at scale — combining MCP for tool access with A2A for inter-agent negotiation where needed. Framework support for both protocols together is growing — [OpenAgents](https://openagents.org/platform) and [CrewAI](https://docs.crewai.com/en/mcp/overview) both support MCP and [A2A](https://a2a-protocol.org/latest/) natively.
 
 ## Framework Support
 
-Major AI agent frameworks vary in their MCP multi-agent support as of early 2026:
+Major AI agent frameworks' MCP and A2A multi-agent support as of mid-2026:
 
 | Framework | MCP Support | A2A Support | Multi-Agent Pattern |
 |-----------|-------------|-------------|-------------------|
 | OpenAgents | Native | Native | Supervisor, Pipeline |
-| CrewAI | Native | Native | Crew-based (supervisor variant) |
-| LangGraph | Via integration | Not yet | Graph-based orchestration |
-| AutoGen (AG2) | Via integration | Not yet | Conversation-based |
+| [CrewAI](https://docs.crewai.com/en/mcp/overview) | Native | [Native](https://docs.crewai.com/en/learn/a2a-agent-delegation) | Crew-based (supervisor variant) |
+| [LangGraph](https://docs.langchain.com/langsmith/server-a2a) | Via integration | Native (LangSmith Agent Server `/a2a` endpoint) | Graph-based orchestration |
+| [AutoGen (AG2)](https://docs.ag2.ai/latest/docs/blog/2025/10/27/A2A-Protocol-Support/) | Via integration | Native (since v0.10, Oct 2025) | Conversation-based |
 | Claude (Anthropic) | Native | — | Tool use with MCP |
 | ChatGPT (OpenAI) | Native | — | Tool use with MCP |
 
-The trend is toward native MCP support across all major frameworks. MCP crossed [97 million monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) (Python + TypeScript combined) by February 2026.
+Both LangGraph and AutoGen added native A2A support after this table's original early-2026 framing — a reminder that framework protocol support moves fast enough to check current docs rather than trust any point-in-time table, including this one.
+
+The trend is toward native MCP support across all major frameworks. MCP crossed [97 million monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) (Python + TypeScript combined) as of December 2025, when [Anthropic donated MCP to the AAIF](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation).
 
 ## Practical Recommendations
 
@@ -269,25 +279,20 @@ When you do need multiple agents, the supervisor/worker pattern with shared MCP 
 ### Keep coordination through MCP servers
 Don't build custom inter-agent messaging when shared MCP state will work. The database, filesystem, or queue MCP server you're already using is your coordination layer.
 
-### Scope aggressively with roots
-Every agent should have the narrowest possible root declarations. A code analysis agent doesn't need access to your email MCP server.
+### Scope agents with tool parameters, not just roots
+Every agent should have the narrowest possible access boundaries. A code analysis agent doesn't need access to your email MCP server. Roots were the original mechanism for declaring this, but with Roots [deprecated as of the 2026-07-28 spec](https://modelcontextprotocol.io/specification/2026-07-28/changelog), plan new designs around passing scope through tool parameters, resource URIs, or server configuration instead.
 
-### Be cautious with sampling
-Sampling with tools enables powerful nested agent behaviors, but each sampling request is a potential vector for prompt injection. Keep humans in the loop until you've thoroughly vetted every MCP server in the chain.
+### Be cautious with sampling — and plan its exit
+Sampling with tools enables powerful nested agent behaviors, but each sampling request is a potential vector for prompt injection, and Sampling itself is now [deprecated](https://modelcontextprotocol.io/specification/2026-07-28/client/sampling) (minimum twelve-month removal window from 2026-07-28). If you're building new server-side agent-loop behavior, favor integrating directly with LLM provider APIs, which is the spec's own suggested migration path — and keep humans in the loop for whichever approach you use until you've thoroughly vetted every MCP server in the chain.
 
 ### Plan for the MCP + A2A future
-If you're building for production at scale, architect with the assumption that MCP handles tool access and A2A handles agent negotiation. The protocols are converging under the same governance body, and most enterprise deployments are already using both.
+If you're building for production at scale, architect with the assumption that MCP handles tool access and A2A handles agent negotiation. Both protocols now live under the Linux Foundation umbrella — MCP under the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) and A2A under its own Linux Foundation project — and major frameworks (CrewAI, LangGraph, AG2/AutoGen) increasingly support both.
 
 ## What's Coming
 
-The [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) signals several developments relevant to multi-agent architectures:
+The [2026 MCP roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) lays out four priority areas for the year: **transport evolution and scalability** (letting MCP servers run as horizontally-scaled remote services rather than local processes), **agent communication** (building out the Tasks primitive with retry semantics and result-expiry policies for long-running operations), **governance maturation** (a contributor ladder so Working Groups can review proposals in their domain without full Core Maintainer sign-off on everything), and **enterprise readiness** (audit trails, SSO-integrated auth, gateway behavior, and configuration portability, mostly shipped as extensions rather than core spec changes).
 
-- **Agent communication extensions** — first-class support for agent-to-agent patterns within MCP itself
-- **Transport scalability** — improvements for high-throughput multi-agent deployments
-- **Enterprise readiness** — better identity management, audit logging, and policy enforcement
-- **Autonomous server agents** — MCP servers that use sampling with tools to act as independent agents, negotiating with other servers
-
-The line between "MCP server" and "AI agent" is blurring. A server that can request LLM completions, use tools, and maintain state is, functionally, an agent. The multi-agent future isn't agents talking to agents — it's agents and servers becoming the same thing.
+Notably, the roadmap's "agent communication" work is about the Tasks primitive's reliability semantics, not a new agent-to-agent messaging layer inside MCP — and the 2026-07-28 revision's deprecation of Sampling means the "MCP server as autonomous agent via sampling" pattern described earlier in this guide is a legacy technique, not where the protocol's roadmap is heading. For direct agent-to-agent negotiation, the ecosystem's actual answer is a separate protocol — A2A — not an extension of MCP itself.
 
 ---
 

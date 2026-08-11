@@ -5,14 +5,14 @@ description: "A comprehensive guide to MCP error handling and resilience — cov
 content_type: "Guide"
 card_description: "MCP servers fail. Networks drop. APIs time out. Databases lock. The question isn't whether your MCP server will encounter errors — it's whether your error handling helps the AI recover or leaves it stuck. This guide covers the full error handling stack: JSON-RPC protocol errors, tool execution errors with isError, structured messages for LLM self-correction, circuit breakers, retries, bulkheads, timeout budgets, session recovery, and production fault tolerance."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-11
 ---
 
 MCP servers fail. Networks drop. APIs time out. Databases lock. Rate limits trigger. Sessions expire. The question isn't whether your MCP server will encounter errors — it's whether your error handling helps the AI agent recover or leaves it stuck in a loop of identical failing requests.
 
 The Model Context Protocol builds on JSON-RPC 2.0, which provides a structured error format. But MCP adds a unique dimension: the caller is a language model, not a human developer. A raw stack trace like `KeyError: 'id'` might help a Python developer debug, but it gives an LLM no useful recovery path. Effective MCP error handling means crafting error responses that serve as recovery instructions — turning failures into self-correction opportunities.
 
-Production MCP deployments in early 2026 have exposed systematic failure patterns. A March 2026 taxonomy paper ([arXiv:2603.05637](https://arxiv.org/abs/2603.05637)) documented five categories of real-world MCP faults across hundreds of servers. [Claude Code users reported Streamable HTTP sessions dropping after ~89 minutes](https://github.com/anthropics/claude-code/issues/21721) (specifically 5,322 seconds) with no automatic reconnection. The "Bridging Protocol and Production" paper ([arXiv:2603.13417](https://arxiv.org/abs/2603.13417)) identified three missing protocol primitives — including structured error semantics — and proposed the Structured Error Recovery Framework (SERF) for deterministic agent self-correction.
+Production MCP deployments in early 2026 have exposed systematic failure patterns. A March 2026 taxonomy paper by researchers at Polytechnique Montréal ([arXiv:2603.05637](https://arxiv.org/abs/2603.05637)) documented five categories of real-world MCP faults, validated through a survey of MCP practitioners. [One Claude Code bug report](https://github.com/anthropics/claude-code/issues/21721) documented a Streamable HTTP session dropping after ~89 minutes (specifically 5,322 seconds) with no automatic reconnection — a single reported case (zero reactions, three comments as of this audit), not a broadly-corroborated pattern. The "Bridging Protocol and Production" paper ([arXiv:2603.13417](https://arxiv.org/abs/2603.13417)) identified three missing protocol primitives — identity propagation, adaptive tool budgeting, and structured error semantics — and proposed the Structured Error Recovery Framework (SERF) for deterministic agent self-correction.
 
 This guide covers the full error handling and resilience stack for MCP servers. Our analysis draws on published documentation, academic research, SDK source code, and community reports — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -66,7 +66,7 @@ The JSON-RPC 2.0 spec allows custom error codes outside the reserved range. Many
 
 ## Tool Execution Errors: The isError Flag
 
-Tool execution errors are the most important category for AI agent recovery. When a tool is found and invoked but something goes wrong during execution, you return a successful JSON-RPC response with the `isError` flag:
+Tool execution errors are the most important category for AI agent recovery. When a tool is found and invoked but something goes wrong during execution, you return a successful JSON-RPC response with the `isError` flag. (Note: the [current spec's tool-result examples](https://modelcontextprotocol.io/specification/2026-07-28/server/tools) also include a `resultType: "complete"` field alongside `isError` — added for the 2026-07-28 revision's multi-round-trip-request support — but the core protocol-error-vs-tool-error split described here is unchanged.)
 
 ```json
 {
@@ -94,7 +94,7 @@ The design separates protocol errors (the request itself was broken) from applic
 
 ### SEP-1303: Input Validation as Tool Errors
 
-SEP-1303 addresses a gap in the original spec: when a tool receives invalid input parameters, should that be a protocol error (-32602) or a tool execution error? The proposal argues for tool execution errors because the LLM needs to see the validation message to correct its parameters. With protocol errors, the model cannot see the error message and thus cannot self-correct — leading to repeated failures and poor user experiences.
+[SEP-1303](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1611) addressed a gap in the original spec: when a tool receives invalid input parameters, should that be a protocol error (-32602) or a tool execution error? The proposal argued for tool execution errors because the LLM needs to see the validation message to correct its parameters — with protocol errors, the model cannot see the error message and thus cannot self-correct. The SEP was accepted by core maintainers and merged into the spec on November 10, 2025, and the current spec's [Tools page](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#error-handling) confirms this: input validation errors are grouped with API failures and business-logic errors under tool execution errors (`isError: true`), while protocol errors are reserved for malformed requests and unknown tools.
 
 **Practical implication:** validate tool inputs in your tool handler and return `isError: true` with a descriptive message, rather than throwing exceptions that become protocol-level errors invisible to the LLM.
 
@@ -356,7 +356,9 @@ class TimeoutBudget:
 
 ## Session Recovery for Streamable HTTP
 
-Streamable HTTP transport (the successor to SSE, with SSE deprecated April 1, 2026) introduces session management via the `Mcp-Session-Id` header. Sessions can be invalidated by server restarts, idle timeouts, or explicit termination — and recovery is a known pain point.
+> **Spec-currency note:** the patterns in this section describe Streamable HTTP as defined in MCP protocol versions 2025-03-26 through 2025-11-25, which used a session model with the `Mcp-Session-Id` header. The [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http#backward-compatibility) removed protocol-level sessions and resumable streams entirely (see [SEP-1442](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442) below) — servers speaking the current spec no longer mint session IDs, and `Last-Event-ID` resumability is not part of this revision. Check which protocol version your MCP SDK targets before applying these patterns.
+
+Streamable HTTP transport (the successor to the older HTTP+SSE transport from protocol version 2024-11-05, [deprecated since protocol version 2025-03-26](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2596)) introduced session management via the `Mcp-Session-Id` header in the 2025-03-26 through 2025-11-25 revisions. Sessions could be invalidated by server restarts, idle timeouts, or explicit termination — and recovery was a known pain point in that design.
 
 ### Common Session Failure Modes
 
@@ -370,12 +372,12 @@ Production deployments have reported several systematic issues:
 
 1. **Client-side session monitoring:** Track session health, detect 404 responses as session expiration, and trigger reinitialization
 2. **Exponential backoff reconnection:** On session loss, reconnect with backoff to avoid thundering herd
-3. **Event replay via `Last-Event-ID`:** Streamable HTTP supports resumability — send the last received event ID to resume from where you left off
+3. **Event replay via `Last-Event-ID`** (protocol versions 2025-03-26 through 2025-11-25 only): Streamable HTTP supported resumability — send the last received event ID to resume from where you left off. The [2026-07-28 revision removed this mechanism](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http#backward-compatibility) along with sessions
 4. **Server-side session persistence:** Store session state in Redis or similar external store so sessions survive server restarts
 
-### SEP-1442: Stateless Future
+### SEP-1442: Stateless Future — Now Adopted
 
-SEP-1442 proposes eliminating mandatory session state entirely — stateless-by-default with per-request capabilities. This would resolve many session recovery issues by removing the session concept from the critical path. As of March 2026, the proposal has 88+ comments and is actively discussed.
+[SEP-1442](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442) proposed eliminating mandatory session state entirely — stateless-by-default with per-request capabilities, removing the session concept from the critical path. The proposal was accepted (92 comments as of this audit) and its design shipped in the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http): protocol-level sessions and the `Mcp-Session-Id` header were removed from Streamable HTTP, and every request now carries its own protocol version and capabilities via `_meta`. **This supersedes the session-based recovery patterns described above**, which applied to protocol versions 2025-03-26 through 2025-11-25.
 
 ## Graceful Degradation Patterns
 
@@ -416,7 +418,7 @@ async def search_tool(query):
 
 ## Interceptors: SEP-1763
 
-SEP-1763 proposes an interceptor framework for MCP — hooks that can intercept, validate, and transform messages at various points in the protocol lifecycle. For error handling, interceptors enable:
+[SEP-1763](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1763) proposed an interceptor framework for MCP — hooks that can intercept, validate, and transform messages at various points in the protocol lifecycle. The SEP was accepted and closed as completed (111 comments as of this audit). For error handling, interceptors enable:
 
 - **Validation interceptors:** Validate tool inputs before execution, with severity levels (info, warn, error)
 - **Error transformation interceptors:** Normalize error formats across different tools and servers
@@ -448,19 +450,21 @@ The [MCP Reliability Playbook](https://github.com/alexey-tyurin/reliable-mcp) is
 
 ### Nine Patterns Implemented
 
-1. Circuit breakers for external API calls
+Per the [project README](https://github.com/alexey-tyurin/reliable-mcp):
+
+1. Circuit breaker
 2. Retry with exponential backoff and jitter
-3. Bulkhead isolation per dependency
-4. Timeout management
-5. Graceful degradation with cached fallbacks
-6. Health check endpoints
-7. Structured logging and observability
-8. Chaos testing framework
-9. Error response sanitization (never leak stack traces)
+3. Timeout budgets
+4. Graceful degradation
+5. Semantic caching
+6. Chaos/fault injection
+7. Graceful shutdown
+8. Stale session reconnection
+9. Pre-deploy evaluation gate
 
 ### Testing Approach
 
-The playbook includes 317 tests and 63 evaluations, with 16 automated chaos tests covering scenarios like:
+The [playbook's README](https://github.com/alexey-tyurin/reliable-mcp) reports 317 tests and 63 evaluations, including 21 automated chaos tests covering scenarios like:
 
 - LLM calls tools during weather API faults — graceful degradation
 - Agent continues responding during Redis faults
@@ -469,11 +473,11 @@ The playbook includes 317 tests and 63 evaluations, with 16 automated chaos test
 
 ## OpenAI Agents SDK: Built-In MCP Resilience
 
-The [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) includes built-in MCP retry and error normalization, reflecting how the ecosystem is standardizing error handling:
+The [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) includes some built-in MCP resilience features, per its [MCP documentation](https://openai.github.io/openai-agents-python/mcp/):
 
-- Automatic retry for transient MCP connection failures
-- Error normalization across different MCP server implementations
-- Connection health monitoring and automatic reconnection
+- Configurable retries for `list_tools()` and `call_tool()` via `max_retry_attempts` and `retry_backoff_seconds_base` — opt-in, not automatic by default
+- Manual reconnection via `MCPServerManager.reconnect()`, which can retry only failed servers or restart all of them — this requires an explicit call, not automatic health monitoring
+- A customizable `failure_error_function` for shaping the error message a server failure surfaces to the model — the docs don't describe cross-server error-format normalization
 
 ## Production Error Handling Checklist
 
@@ -515,18 +519,17 @@ The [OpenAI Agents SDK](https://github.com/openai/openai-agents-python) includes
 
 | Project | What It Does | Stars/Status |
 |---------|-------------|-------------|
-| **MCP Reliability Playbook** | 9 resilience patterns with chaos testing | Reference impl, 317 tests |
-| **MCPcat** | MCP debugging, error guides, serialization diagnosis | Active, multiple guides |
-| **Alpic AI mcp-eval** | MCP server evaluation including error handling quality | Open source |
-| **OpenAI Agents SDK** | Built-in MCP retry and error normalization (v0.12.5+) | Part of Agents SDK |
-| **FastMCP** | Python framework with built-in error handling patterns | 24K+ stars |
-| **MCPEx (Elixir)** | Protocol error module with all standard codes | v0.1.0 |
-| **Resilience4j** | Circuit breaker / bulkhead / retry for JVM MCP servers | Mature, widely used |
-| **SEP-1303** | Input validation as tool errors (proposed) | Under discussion |
-| **SEP-1763** | Interceptor framework for validation/error transformation | Under discussion |
-| **SEP-1391** | Long-running operations with error state management | Under discussion |
-| **SERF** (arxiv 2603.13417) | Structured error recovery framework | Academic proposal |
-| **Fault Taxonomy** (arxiv 2603.05637) | 5-category MCP fault classification | Empirical study |
+| **[MCP Reliability Playbook](https://github.com/alexey-tyurin/reliable-mcp)** | 9 resilience patterns with chaos testing | Reference impl, 317 tests + 63 evals |
+| **[AgentCat](https://agentcat.com/) (formerly MCPcat)** | Analytics/observability for MCP tool calls — session replay, error grouping | Active; rebranded from MCPcat in 2026 |
+| **[Alpic AI mcp-eval](https://github.com/Alpic-AI/mcp-eval)** | CLI that checks whether an MCP server's tool calls match expected name/parameters | Open source |
+| **[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/mcp/)** | Configurable MCP retry + manual reconnect (see above) | Part of Agents SDK |
+| **[FastMCP](https://github.com/jlowin/fastmcp)** | Python framework with built-in error handling patterns | 27K+ stars |
+| **[Resilience4j](https://resilience4j.readme.io/docs/getting-started)** | Circuit breaker / bulkhead / retry for the JVM (not MCP-specific) | Mature, widely used |
+| **[SEP-1303](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1611)** | Input validation as tool errors | Accepted, merged Nov 2025 |
+| **[SEP-1763](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1763)** | Interceptor framework for validation/error transformation | Accepted, closed |
+| **[SEP-1391](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1391)** → **[SEP-2663](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2663)** | Long-running operations, evolved into the opt-in Tasks extension | SEP-2663 merged May 2026 |
+| **[SERF](https://arxiv.org/abs/2603.13417)** (arXiv:2603.13417) | Structured error recovery framework | Academic proposal |
+| **[Fault Taxonomy](https://arxiv.org/abs/2603.05637)** (arXiv:2603.05637) | 5-category MCP fault classification | Empirical study |
 
 ## Getting Started
 
@@ -539,7 +542,7 @@ If you're building an MCP server today, prioritize in this order:
 5. **Set up graceful degradation** — cached fallbacks, partial results, alternative tools
 6. **Add observability** — you can't fix what you can't see. Log errors to stderr with structured context
 
-The MCP error handling landscape is maturing rapidly. SEP-1303, SEP-1763, and the SERF proposal all aim to standardize patterns that are currently implemented ad hoc. Building on these patterns today means your servers will be ready when the protocol catches up.
+The MCP error handling landscape is maturing rapidly. SEP-1303 (input validation as tool errors) is already merged into the spec; SEP-1763 (interceptors) has been accepted but individual SDKs may not have implemented it yet; the SERF proposal remains an academic proposal, not adopted by the spec. Building on the resilience patterns in this guide today means your servers will be ready as SDK implementations catch up to the current spec.
 
 ## Further Reading
 

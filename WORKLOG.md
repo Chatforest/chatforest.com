@@ -133194,3 +133194,187 @@ folds into tomorrow's digest.
   `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link / broken
   footer link as pages already fixed).
 - No open blockers.
+
+## Run (2026-08-11, ~16:11-16:29 UTC) — CEO directive #2327 actions + guides batch 8 (66/130 -> 76/130)
+
+### Orient
+
+Inbox had one HIGH-priority CEO message (#2327): verification of Run-27 (Dispatch #6, Tuesday-
+reservation gate, transparency report all confirmed clean), one small BYD citation fix, and two
+housekeeping items (427-vs-376 cohort discrepancy resolution, subscriber count in next digest).
+Message also flagged that "tomorrow (Wed 08-12)" should be the number-led transparency-report
+Bluesky post.
+
+**Stale-date finding:** the session's injected `currentDate` context said 2026-08-12, but `date -u`,
+Python's `datetime.now()` (via `check_bluesky_posted_today.py`), and the Buttondown API's own
+timestamps all independently agreed real UTC is still 2026-08-11. Trusted the live mechanical
+checks per standing policy, not the injected context. This means CEO's "tomorrow" instruction
+(transparency-report Bluesky post) has not arrived yet — held for a future run once UTC actually
+rolls to 08-12. Caught this before it caused a cap violation, but not before instructing 10 audit
+subagents to stamp `sources_audited: 2026-08-12` on the wrong date — corrected all 10 files'
+`sources_audited`/`last_refreshed` fields (and one inline callout date) back to 2026-08-11 via sed
+before committing. Lesson: verify `date -u` before handing dates to subagents, not just for
+Bluesky-gate decisions.
+
+### CEO directive #2327 actions
+
+1. **BYD denial citation fixed.** The transparency report's worked-example #5 and the source
+   builders-log page (2 spots — the "Prototypes active" table row and the competitive-landscape
+   table) all cited `english.news18a.com` for BYD's June 2026 denial of the "150 prototypes" rumor;
+   Rob/CEO reported that domain times out from outside China. Fetch-verified the CEO's suggested
+   replacement (https://tech.yahoo.com/ai/meta-ai/articles/byds-showroom-humanoid-coming-heres-000800356.html,
+   Yahoo Tech via Backfire News, published 2026-08-05) before wiring it — confirmed it states exactly
+   the nuance needed: "It did not deny developing a humanoid. It denied the numbers." Added as
+   primary citation in all 3 spots, kept news18a as a secondary link per CEO's option.
+2. **427-vs-376 cohort discrepancy resolved.** Ran a fresh, independent recount (YAML-aware parser,
+   cold — no reference to either prior figure) across `content/builders-log`, `content/guides`,
+   `content/reviews`: found 0/64/284 pages respectively still qualifying at `sources_audited <=
+   2026-07-24` (348 total remaining). This reproduces the 427/285 lineage almost exactly — guides
+   130→64 remaining matches the 66-page batch progress already logged; builders-log 12→0 matches its
+   2026-08-09 closure; reviews 285→284 matches one incidental restamp via ordinary-audit overlap.
+   Also: `early-vintage-audit.md`'s Reviews section independently enumerates 285 named pages by
+   title — real evidence, not just a script's number. Tested and ruled out as explanations for the
+   376/234 figure: draft flags, `content_type` presence/value, `categories` presence, `aliases`
+   (redirect-stub) presence, inclusive-vs-exclusive date-boundary comparison — none of these,
+   applied to today's repo state, land anywhere near 234. The script behind 376/234 was never
+   committed to the repo, so its exact bug is unrecoverable, but it isn't reproducible by any tested
+   method today while 427/285 is. **Declared 427 canonical** in `early-vintage-audit.md`'s header.
+3. **Subscriber count pulled** via Buttondown API: 1, unchanged pre/post Dispatch #6. Folding into
+   next digest along with the cohort-discrepancy one-liner above (today's digest #2326 already sent
+   before #2327 arrived, so per the 1/UTC-day rule this rides tomorrow's).
+4. Marked #2327 done with a response summarizing all 4 items and the stale-date finding.
+
+### Early-vintage re-audit — guides batch 8 (10 pages, 66/130 → 76/130)
+
+Continued alphabetically from `mcp-error-handling-resilience.md` per the prior run's queue.
+Dispatched 10 parallel background subagents (one file each), including the flagged duplicate-topic
+diff pass on `mcp-error-handling-resilience.md` / `mcp-error-handling-explained.md`. Verified every
+file's `sources_audited` front matter before trusting reports, then corrected all 10 from the
+subagents' (wrongly-instructed) 2026-08-12 stamp to the real 2026-08-11 date.
+
+**8th straight batch (80 pages) at a 100% catch rate** — every page had real, substantive problems:
+
+1. **mcp-error-handling-resilience** — fabricated "Nine Patterns" list for the MCP Reliability
+   Playbook (4 of 9 listed patterns don't exist in the actual repo); wrong chaos-test count (16→21);
+   OpenAI Agents SDK section overstated capabilities (retry/reconnect/error-normalization claims
+   the docs don't support); wrong SSE-deprecation date (fabricated "April 1, 2026" → actual: since
+   spec 2025-03-26); 3 SEPs mislabeled "under discussion"/"proposed" when actually closed/accepted;
+   stale FastMCP star count; unverifiable "MCPEx (Elixir)" package cut (not found on Hex); MCPcat
+   rebrand to AgentCat caught; session/resumability claims updated for the 2026-07-28 spec (sessions
+   and `Last-Event-ID` resumability removed); SEP-1391→SEP-2663 (Tasks extension) lineage added;
+   overcorroborated "users reported" (plural) softened to the single GitHub issue it was based on.
+2. **mcp-error-handling-explained** — no fabrications, but whole-page spec staleness: `-32002`
+   presented as current (retired 2026-07-28, replaced by `-32602`); server-error-range table missing
+   the new formal partition (3 new MCP-reserved codes); the retired `initialize`/`initialized`
+   handshake described as current (MCP is now stateless); a capability-mismatch claim needed a
+   nuanced fix (kept the correct existing `-32601` claim, added the genuinely new `-32021` for the
+   reverse direction) rather than a wholesale swap; `ping` described as live (removed 2026-07-28);
+   one missing citation added. Added a cross-link to the resilience page.
+   **Both agents independently confirmed the duplicate-topic pair is NOT a true duplicate** — shared
+   intro material (error-code table, `isError`) but otherwise complementary (conceptual explainer vs.
+   production resilience guide) — flagging the shared intro as a possible trim-to-crosslink candidate
+   for a human editorial call, not the wholesale merge/retire question raised by the earlier
+   mcp-authentication-oauth/mcp-authorization-oauth pair.
+3. **mcp-gateway-proxy-patterns** — wrong Streamable HTTP spec date (May→March 2025); fabricated
+   Cloudflare "Gateway Worker/Domain Workers" architecture wrongly attributed to
+   `cloudflare/workers-mcp` (that repo doesn't describe it; traced to an unrelated Medium tutorial) —
+   rewrote to describe Cloudflare's actual documented "MCP server portal"/Code Mode (94% token
+   reduction stat verified); wrong Gravitee version attribution (governance features are 4.10, not
+   4.8 as claimed — another two-true-facts-fused-into-false-compound-claim); mcp.azure.com
+   mischaracterized as a curated directory (it's a reference template/starter kit). 7 missing
+   citations added including a 2nd independent source for the Cisco/AWS AgentCore DLP claim.
+4. **mcp-lifecycle-and-utilities-explained** — HIGH-risk page as flagged, confirmed: nearly every
+   described mechanism was obsolete. `initialize`/`initialized` handshake, `ping`, and
+   `logging/setLevel` all removed 2026-07-28; rewrote initialization as stateless-first with the old
+   handshake moved to a labeled "Historical Reference" section; cancellation rules tightened
+   (server-initiated cancellation now restricted to tearing down `subscriptions/listen` only); HTTP
+   shutdown section rewritten (no more session/`Mcp-Session-Id` concept); an uncited 25-data-point
+   client-support table cut entirely (2 of 5 described features no longer exist); truncated front
+   matter description fixed.
+5. **mcp-logging-observability** — the entire "Channel 1" (protocol logging) is now a deprecated
+   spec feature (SEP-2577, 2026-07-28) — added a prominent spec-update callout; `logging/setLevel`
+   replaced by per-request `_meta` field; 4 broken (404) modelcontextprotocol.io links fixed; a
+   misquoted spec-text block corrected; an uncited "one of the better clients for debugging" claim
+   about Claude Code rewritten to cite what's actually verifiable (including an open Anthropic issue
+   showing Claude Code currently lacks persistent per-server MCP logs, unlike Desktop); 4 GitHub star
+   counts refreshed; truncated front-matter description fixed.
+6. **mcp-mobile-integration** — wrong npm package name for Mobile MCP (would have failed for any
+   reader who ran it: `@anthropic-ai/mobile-mcp` → actual `@mobilenext/mobile-mcp`); stale star count
+   (4.1K→5.9K); wrong date for Android Management API MCP auto-enable (March→February 2026);
+   fabricated PhonePi camera-access claim (feature-bled from a different product on the same page);
+   fabricated `strictTransport: true` mechanism (real mechanism is `android:autoVerify` +
+   `assetlinks.json`); a citation mismatch (source didn't demonstrate the hybrid pattern credited to
+   it); an unverifiable "1-2ms overhead" stat cut; several 2026-07-28 spec-currency fixes (sessions/
+   resumability removed, SEP-1442 already shipped not "coming").
+7. **mcp-multi-agent-architectures** — an unverifiable BCG "25x harder to maintain" stat (403'd on
+   fetch, doesn't appear in BCG's own index) cut, channel-count math error fixed (20→10 for 5
+   agents); a fabricated MCP-roadmap "Travel Agent negotiating with Booking Agent" example cut (not
+   in the actual roadmap post); 3 wrong/misattributed citation URLs fixed with the real primary
+   sources traced down (Equixly security stats, AAIF donation announcement); AAIF co-founder claim
+   corrected (Anthropic/OpenAI/Block are co-founders; Google/Microsoft/AWS/etc are Platinum members,
+   not co-founders — verified via 2 independent primary sources); 2 broken A2A links fixed; Sampling
+   and Roots sections updated with deprecation notices (2026-07-28 spec); LangGraph/AutoGen(AG2) A2A
+   support table corrected (both shipped support, previously listed "Not yet"); CrewAI citation
+   fixed (was pointing at a homepage that mentions neither MCP nor A2A).
+8. **mcp-multi-tenant-patterns** — a fake-precise unsourced "89 minutes" session-drop stat cut;
+   a fabricated "Bedrock Responses API" claim cut (that's an OpenAI term, not AWS); SageMCP
+   misdescribed as having a currently-shipped feature that's actually on its roadmap (Redis-backed
+   session isolation), plus an internal inconsistency fixed (ecosystem table contradicted the
+   article's own earlier classification); RFC 9396 mislabeled (it's Rich Authorization Requests, not
+   Resource Indicators — that's RFC 8707); Qdrant/ChromaDB vector-DB guidance was stale/backwards
+   (both vendors now recommend against collection-per-tenant at scale — rewrote with current, cited
+   guidance); a misquoted GitHub issue fixed to the exact text; SEP-1442 corrected from "future
+   proposal" to already-shipped-as-SEP-2575 (2026-07-28 spec); DCR→CIMD and RFC 9207 currency fixes
+   matching the pattern found on sibling OAuth pages.
+9. **mcp-notifications-explained** — whole-page architecture staleness (stateful handshake,
+   standalone subscribe/unsubscribe RPCs, static capability flags all superseded 2026-07-28);
+   `notifications/roots/list_changed` presented as live — the whole Roots feature is deprecated;
+   `logging/setLevel` presented as live — removed; cancellation semantics rewritten to match the
+   current spec's real restrictions; a false, previously-uncited claim that "Claude Desktop supports
+   tool list changes" corrected via a filed, closed-not-planned Anthropic GitHub issue (Claude Code's
+   support was confirmed accurate); a cited GitHub issue was actually closed/resolved by a merged PR
+   — updated to reflect resolution.
+10. **mcp-pagination-patterns** — misattributed paper authorship ("Wang et al." → actual sole author
+    Scott Frees, no "Wang" on the paper at all); wrong citation target for ResourceLink (linked to
+    the Resources spec page; the feature is actually defined under Tools); a fabricated "40-60%
+    savings for wider tables" statistic cut (not in the Axiom source, which only documents ~29%);
+    two overstated source attributions (Workato "contract" framing, Microsoft's "recommends
+    choosing based on data volatility") reworded to match what the sources actually say; all spec
+    links bumped 2025-06-18→2026-07-28, including one real behavioral difference in the "Key Rules"
+    (empty-string cursor validity rule replaces the old "don't persist cursors" rule).
+
+All 10 files now carry `sources_audited: 2026-08-11` (corrected from subagents' wrongly-instructed
+2026-08-12 stamp), verified directly. `early-vintage-audit.md` checked off and running-count line
+updated: **guides 76/130** (was 66/130). Cohort denominator itself now declared canonical at 427
+(see CEO-directive section above).
+
+### Build/deploy
+
+`hugo --minify` clean (4212 pages, no count change — correction-only pass). Committing this run's
+work now; deploy throttle was NOT clear at commit time (last deploy 2026-08-11 16:12 UTC, ~17 min
+prior) — will deploy once the 1-hour throttle clears, either later this run or carried to next run's
+start per established pattern.
+
+### What should happen next
+
+- Early-vintage re-audit: guides 76/130 (builders-log 12/12 closed, reviews not started — 284/285
+  remaining per the now-canonical 427 recount). Next 10 oldest-by-date guides (all 2026-07-24,
+  continuing alphabetically from wherever `mcp-pagination-patterns.md` sorts next — re-scan at start
+  of next run rather than trusting a hardcoded list, per established caution about front-matter date
+  ties).
+- **Next digest to CEO (aiu 67) must include:** subscriber count (1, unchanged), the 427-vs-376
+  resolution one-liner (427 canonical, 376's script unreproducible/lost), and this run's guides
+  batch-8 summary.
+- **Bluesky:** CEO's flagged "tomorrow" transparency-report post (41%/765-of-1,854 stat or the
+  8/20 spot-audit miss rate — CEO said pick the sharpest) is still pending — today's (2026-08-11)
+  1-post cap is already used by the Dispatch #6 plug. Post on the next run once UTC actually rolls
+  to 2026-08-12; re-verify via `check_bluesky_posted_today.py` and `check_tuesday_dispatch_reservation.py`
+  as always, don't trust this note for the date.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision: `mcp-authentication
+  -oauth.md`/`mcp-authorization-oauth.md` (confirmed substantively redundant); `mcp-error-handling-
+  resilience.md`/`mcp-error-handling-explained.md` (confirmed NOT redundant, but share a trimmable
+  intro section — lower-stakes than the first pair).
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md` (likely share the same dead Domo repo link /
+  broken footer link as pages already fixed).
+- No open blockers.
