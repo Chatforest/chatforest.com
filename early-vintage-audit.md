@@ -67,7 +67,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 87/130 done (2026-08-09 through 2026-08-11 runs).**
+**Status: 97/130 done (2026-08-09 through 2026-08-12 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -208,16 +208,16 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [MCP Server Marketplace & Monetization: How to Publish, Distribute, and Earn from MCP Servers](content/guides/mcp-marketplace-monetization.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [MCP Server Packaging & Distribution: npm, PyPI, Docker, DXT, and the Official Registry](content/guides/mcp-server-packaging-distribution.md) — re-audited 2026-08-11
 - [x] 2026-07-24 — [MCP Server Performance Tuning: From 250ms to Sub-Millisecond Response Times](content/guides/mcp-server-performance-tuning.md) — re-audited 2026-08-11 (title changed to "Language, Transport, and Caching Choices That Cut Latency 10x or More" — the old title asserted an unverifiable, unsupported stat)
-- [ ] 2026-07-24 — [MCP Setup for AI Coding Tools: Cursor, Claude Code, VS Code, Windsurf, and More](content/guides/mcp-setup-ai-coding-tools.md)
-- [ ] 2026-07-24 — [MCP Structured Output Deep Dive: outputSchema and structuredContent](content/guides/mcp-structured-output-deep-dive.md)
-- [ ] 2026-07-24 — [MCP Testing Strategies: Unit Tests, Integration Tests, and the MCP Inspector](content/guides/mcp-testing-strategies.md)
-- [ ] 2026-07-24 — [MCP Testing Tools Cookbook: 10 Recipes Beyond Unit Tests](content/guides/mcp-testing-tools-cookbook.md)
-- [ ] 2026-07-24 — [MCP Tool Annotations Explained: Hints, Trust, and the Risk Vocabulary](content/guides/mcp-tool-annotations-explained.md)
-- [ ] 2026-07-24 — [MCP Tool Composition: Building Multi-Server Workflows](content/guides/mcp-tool-composition-workflows.md)
-- [ ] 2026-07-24 — [MCP Tool Design Patterns: Building Agent-Friendly, Composable Tools](content/guides/mcp-tool-design-patterns.md)
-- [ ] 2026-07-24 — [MCP Transports Explained: stdio vs Streamable HTTP (and Why SSE Was Deprecated)](content/guides/mcp-transports-explained.md)
-- [ ] 2026-07-24 — [MCP Versioning and Backward Compatibility: A Practical Guide](content/guides/mcp-versioning-backward-compatibility.md)
-- [ ] 2026-07-24 — [MCP Workflow Orchestration: Frameworks, Durable Execution, and Production Agent Pipelines](content/guides/mcp-workflow-orchestration-frameworks.md)
+- [x] 2026-07-24 — [MCP Setup for AI Coding Tools: Cursor, Claude Code, VS Code, Windsurf, and More](content/guides/mcp-setup-ai-coding-tools.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Structured Output Deep Dive: outputSchema and structuredContent](content/guides/mcp-structured-output-deep-dive.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Testing Strategies: Unit Tests, Integration Tests, and the MCP Inspector](content/guides/mcp-testing-strategies.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Testing Tools Cookbook: 10 Recipes Beyond Unit Tests](content/guides/mcp-testing-tools-cookbook.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Tool Annotations Explained: Hints, Trust, and the Risk Vocabulary](content/guides/mcp-tool-annotations-explained.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Tool Composition: Building Multi-Server Workflows](content/guides/mcp-tool-composition-workflows.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Tool Design Patterns: Building Agent-Friendly, Composable Tools](content/guides/mcp-tool-design-patterns.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Transports Explained: stdio vs Streamable HTTP (and Why SSE Was Deprecated)](content/guides/mcp-transports-explained.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Versioning and Backward Compatibility: A Practical Guide](content/guides/mcp-versioning-backward-compatibility.md) — re-audited 2026-08-12
+- [x] 2026-07-24 — [MCP Workflow Orchestration: Frameworks, Durable Execution, and Production Agent Pipelines](content/guides/mcp-workflow-orchestration-frameworks.md) — re-audited 2026-08-12
 - [ ] 2026-07-24 — [MCP and Anthropic Claude: How Claude Desktop, Claude Code, the Claude API, and the Agent SDK Use the Model Context Protocol](content/guides/mcp-anthropic-claude-integration.md)
 - [ ] 2026-07-24 — [MCP and Databases: Connecting AI Agents to Your Data](content/guides/mcp-database-patterns.md)
 - [ ] 2026-07-24 — [MCP and Environmental Monitoring: How AI Agents Connect to Weather Systems, Air Quality Sensors, Satellite Imagery, Carbon Tracking, and Climate Data](content/guides/mcp-environmental-monitoring.md)

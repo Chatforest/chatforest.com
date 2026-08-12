@@ -4,8 +4,8 @@ date: 2026-03-29T00:00:00+09:00
 description: "A cookbook of practical MCP testing recipes — schema drift detection, record/replay, fuzzing, performance benchmarks, CI/CD integration, and the best open-source tools for each job."
 content_type: "Guide"
 card_description: "Unit tests are table stakes. Here are 10 testing recipes that catch the bugs your test suite misses — schema drift, regressions, security holes, and performance cliffs."
-last_refreshed: 2026-03-29
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-12
+sources_audited: 2026-08-12
 ---
 
 You've written unit tests for your MCP server's tool handlers. You've got integration tests that run through `InMemoryTransport`. Good — that's the foundation. But MCP servers fail in ways that unit tests don't catch: schemas drift silently between releases, tool outputs change shape under load, and security vulnerabilities hide in input handling that "looks fine" in dev.
@@ -16,21 +16,22 @@ This cookbook picks up where our [MCP testing strategies guide](/guides/mcp-test
 
 **Problem:** You ship a new version and a downstream client breaks because a tool parameter changed from `required` to `optional` — or disappeared entirely. Nobody noticed because all existing tests still passed.
 
-**Tool:** [Bellwether](https://github.com/dotsetlabs/bellwether) — a schema drift detector that compares your MCP server's current tool/resource definitions against a known baseline.
+**Tool:** [Bellwether](https://www.npmjs.com/package/@dotsetlabs/bellwether) — a schema drift detector that compares your MCP server's current tool/resource definitions against a known baseline. (Its GitHub repo, `dotsetlabs/bellwether`, currently 404s — the org still exists on GitHub, but the repo itself is gone or private. The npm package, published by the same maintainer, [is still live at version 2.1.3](https://registry.npmjs.org/@dotsetlabs/bellwether/latest) and matches the CI example below.)
 
 Bellwether has two modes:
 - **`check`** — free, deterministic, compares schemas structurally
 - **`explore`** — LLM-powered, tests tool behavior for regressions
 
-It classifies changes by severity (0–4) and exits with the corresponding code, making it CI-friendly.
+It classifies changes across 6 severity levels (0 = no changes, 1 = info, 2 = warning, 3 = breaking, 4 = runtime error, 5 = low-confidence metrics) and exits with the corresponding code, making it CI-friendly.
 
 **GitHub Actions integration:**
 
 ```yaml
 - uses: dotsetlabs/bellwether@v2.1.3
   with:
-    server-command: "node dist/server.js"
-    fail-on-severity: 2  # Fail on warnings and above
+    version: '2.1.3'
+    server-command: 'node dist/server.js'
+    fail-on-severity: 'warning'
 ```
 
 **When to use it:** Every PR that touches tool definitions, resource URIs, or prompt templates. Run in `check` mode on every commit; run `explore` mode on release candidates.
@@ -55,13 +56,13 @@ It also includes quality scoring (0–100 across 5 dimensions) and a security au
 
 **Problem:** You have 35+ tools and writing test cases for each one is impractical.
 
-**Tool:** [Specmatic MCP Auto-Test](https://specmatic.io/) — reads your MCP server's tool schemas and automatically generates test calls with valid parameters.
+**Tool:** [Specmatic MCP Auto-Test](https://specmatic.io/updates/testing-mcp-servers-how-specmatic-mcp-auto-test-catches-schema-drift-and-automates-regression/) — reads your MCP server's tool schemas and automatically generates test calls with valid parameters.
 
 Key features:
 - Generates tests from tool schemas automatically — no hand-written test cases
 - Uses dictionary files for realistic test data (e.g., actual city names instead of random strings)
-- **Resiliency testing** — mutates enum values and optional fields to verify your server handles edge cases gracefully
-- Tested against Postman's MCP server: 35+ tools in a single run
+- **Resiliency testing** — generates positive tests (valid input permutations) and negative tests that mutate enum values and types to verify your server rejects bad input gracefully
+- [Specmatic reports running MCP Auto-Test against Postman's MCP server and generating/executing tests for 35+ tools in a single run](https://specmatic.io/updates/testing-mcp-servers-how-specmatic-mcp-auto-test-catches-schema-drift-and-automates-regression/)
 
 **When to use it:** Large servers with many tools where hand-writing tests is impractical. Especially useful as a smoke test — it won't verify business logic, but it catches crashes, schema violations, and missing error handling across your entire tool surface.
 
@@ -77,6 +78,8 @@ Supports protocol versions:
 - 2025-06-18
 
 Tests include OAuth 2.1 flows, batch processing, structured output (`outputSchema`), and HTTP compliance (7/7 standard checks).
+
+**Staleness note:** As of this writing, mcp-validator's newest supported version is 2025-06-18 — it does not yet cover the [2026-07-28 spec revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/), which removes the `initialize` handshake and the `Mcp-Session-Id` header entirely in favor of stateless, per-request protocol negotiation. If your server targets 2026-07-28, mcp-validator's "session management" checks are testing mechanics that spec no longer requires.
 
 **When to use it:** Before releasing a server that claims spec compliance. Run it against each protocol version you want to support.
 
@@ -101,8 +104,8 @@ Supports HTTP, SSE, stdio, and Streamable HTTP transports. Includes a safety sys
 # Docker
 docker pull princekrroshan01/mcp-fuzzer:latest
 
-# Or install directly
-pip install mcp-server-fuzzer
+# Or install directly (PyPI package is named mcp-fuzzer, not mcp-server-fuzzer)
+pip install mcp-fuzzer
 mcp-fuzzer --mode all --transport stdio -- python my_server.py
 ```
 
@@ -137,7 +140,7 @@ mcplint fuzz ./my-server --duration 300 --workers 4
 
 **Problem:** You need to know whether a change to your MCP server is breaking, a warning, or safe — before it reaches production.
 
-**Tool:** mcpdiff — stores contract snapshots as `.mcpc.json` files in git and classifies changes.
+**Tool:** [mcpdiff](https://github.com/mcp-contracts/mcp-contracts), the CLI from the `mcp-contracts` project ([npm: `@mcp-contracts/cli`](https://www.npmjs.com/package/@mcp-contracts/cli)) — stores contract snapshots as `.mcpc.json` files in git and classifies changes.
 
 Change classifications:
 - **Breaking** — removed tools, changed required parameters, narrowed types
@@ -146,13 +149,14 @@ Change classifications:
 
 ```bash
 # Capture baseline
-mcpdiff snapshot --server "node dist/server.js" > baseline.mcpc.json
+mcpdiff snapshot --command "node dist/server.js" -o baseline.mcpc.json
 
-# Compare against new version
-mcpdiff diff baseline.mcpc.json --server "node dist/server-v2.js"
+# Compare against a new version's snapshot
+mcpdiff snapshot --command "node dist/server-v2.js" -o v2.mcpc.json
+mcpdiff diff baseline.mcpc.json v2.mcpc.json
 
-# CI mode: exit codes + GitHub step summaries
-mcpdiff ci --baseline baseline.mcpc.json --server "node dist/server-v2.js"
+# CI: one command that snapshots, diffs against the stored baseline, and sets the exit code
+mcpdiff check --command "node dist/server-v2.js" --fail-on warning
 ```
 
 **When to use it:** In your CI pipeline on every PR. Commit the `.mcpc.json` baseline to git. Breaking changes should fail the build unless explicitly approved.
@@ -217,13 +221,15 @@ This pattern comes from [Arm's learning path on MCP testing](https://learn.arm.c
 
 **What the benchmarks show:**
 
-[TM Dev Lab's benchmark](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html) tested 15 MCP servers with 39.9M total requests:
+[TM Dev Lab's benchmark](https://www.tmdevlab.com/mcp-server-performance-benchmark-v2.html) tested 15 MCP server implementations across three runs, 39.9M total requests, 50 concurrent virtual users against real Redis + HTTP API I/O workloads:
 
 | Runtime | Avg Latency | Throughput | Memory |
 |---------|-------------|------------|--------|
-| Go | < 1ms | 1600+ req/sec | ~18 MB |
-| Java | < 1ms | 1600+ req/sec | ~220 MB |
-| Python | ~26ms | ~292 req/sec | Moderate |
+| Go | 6.87ms | 3,616 req/sec | ~24 MB |
+| Java (Spring MVC, blocking) | 6.13ms | 3,540 req/sec | ~368 MB |
+| Python (4 workers + uvloop) | 251.62ms | 259 req/sec | ~259 MB |
+
+(These are the current published figures as of this audit — they differ substantially from the numbers in an earlier version of this page, so if you've seen older figures cited elsewhere for this same benchmark, treat this table as the current source of truth.)
 
 [Stacklok's Kubernetes testing](https://dev.to/stacklok/performance-testing-mcp-servers-in-kubernetes-transport-choice-is-the-make-or-break-decision-for-1ffb) revealed that **transport choice matters more than you think**:
 

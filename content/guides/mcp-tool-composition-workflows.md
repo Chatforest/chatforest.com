@@ -5,12 +5,12 @@ description: "How to compose multiple MCP servers into powerful workflows — co
 content_type: "Guide"
 card_description: "One MCP server is useful. Multiple servers working together is where the real power lives. Here's how to compose them."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-12
 ---
 
 A single MCP server connects your AI agent to one system. But real-world tasks rarely live inside one system. Filing a bug requires reading from a project tracker, searching code, and writing to an issue tracker. Summarizing a meeting means pulling from calendar, notes, and email. The power of MCP isn't any single server — it's what happens when multiple servers work together.
 
-This guide covers the patterns and architectures for composing multiple MCP tools into workflows. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25), published SDK documentation, open-source orchestration frameworks, and community patterns — we research and analyze rather than building production MCP systems ourselves.
+This guide covers the patterns and architectures for composing multiple MCP tools into workflows. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28), published SDK documentation, open-source orchestration frameworks, and community patterns — we research and analyze rather than building production MCP systems ourselves.
 
 ## The Multi-Server Reality
 
@@ -65,10 +65,10 @@ When steps are independent, run them simultaneously instead of sequentially.
 └─ arxiv/search_papers("model context protocol")
 ```
 
-The [mcp-agent](https://github.com/lastmile-ai/mcp-agent) framework provides a built-in `Parallel` workflow pattern for this. Each subtask fans out to a separate agent with access to different MCP servers, and results fan back in:
+The [mcp-agent](https://github.com/lastmile-ai/mcp-agent) framework provides a built-in `Parallel` (fan-out/fan-in) workflow pattern for this — one of several patterns from Anthropic's ["Building Effective Agents"](https://www.anthropic.com/research/building-effective-agents) post that mcp-agent implements as composable pieces. Each subtask fans out to a separate agent with access to different MCP servers, and results fan back in. The snippet below is a simplified illustration of the pattern, not literal copy-paste code — mcp-agent's actual API uses a `create_parallel_llm(...)` factory function with `Agent` objects (see the [Parallel workflow docs](https://docs.mcp-agent.com/workflows/parallel) for the real signature):
 
 ```python
-# mcp-agent parallel pattern (conceptual)
+# mcp-agent parallel pattern (conceptual — simplified for illustration)
 parallel = Parallel(
     fan_in="Combine these research results into a summary",
     fan_out=[
@@ -100,9 +100,10 @@ User: "I can't log in"
   → auth/check_account_status(email)
 ```
 
-mcp-agent's `Router` pattern classifies input and routes to the most relevant agent or server:
+mcp-agent's `Router` pattern classifies input and routes to the most relevant agent or server. Again, this is a simplified illustration — the real API instantiates an `OpenAILLMRouter` or `AnthropicLLMRouter` class with a list of `Agent` objects (see the [Router workflow docs](https://docs.mcp-agent.com/workflows/router)):
 
 ```python
+# mcp-agent router pattern (conceptual — simplified for illustration)
 router = Router(
     routes=[
         AgentSpec(name="billing", servers=["stripe-mcp"]),
@@ -130,11 +131,11 @@ As the number of MCP servers grows, managing connections directly becomes unwiel
 
 **Notable gateway implementations:**
 
-- **[MCPProxy](https://dev.to/algis/mcp-proxy-pattern-secure-retrieval-first-tool-routing-for-agents-247c)** — An open-source Go proxy that exposes a `retrieve_tools` function. Instead of loading all tools upfront, the agent queries for relevant tools on demand using BM25 search across tool descriptions. This is particularly valuable when you have hundreds of tools — the agent discovers only what it needs.
+- **[MCPProxy](https://github.com/smart-mcp-proxy/mcpproxy-go)** — An open-source Go proxy (also see [mcpproxy.app](https://mcpproxy.app/) and this [write-up of the pattern](https://dev.to/algis/mcp-proxy-pattern-secure-retrieval-first-tool-routing-for-agents-247c)) that exposes a `retrieve_tools` function. Instead of loading all tools upfront, the agent queries for relevant tools on demand using BM25 search across tool descriptions. This is particularly valuable when you have hundreds of tools — the agent discovers only what it needs.
 
-- **[Lasso](https://www.requesty.ai/blog/top-mcp-gateways)** — An open-source proxy and orchestration layer that acts as a central coordination point between agents and MCP servers, launched in 2025.
+- **[Lasso MCP Gateway](https://github.com/lasso-security/mcp-gateway)** — An open-source proxy and orchestration layer, released by Lasso Security in April 2025 (see [Lasso's announcement](https://www.lasso.security/resources/lasso-releases-first-open-source-security-gateway-for-mcp)), that acts as a central coordination point between agents and MCP servers, adding policy, monitoring, and security controls on top of routing.
 
-- **Virtual MCP Servers** — As described by [TrueFoundry](https://www.truefoundry.com/blog/virtual-mcp-server), a virtual MCP server aggregates tools from multiple underlying servers into a single logical endpoint. It doesn't host tools itself — it references tools that exist elsewhere and presents them as one unified catalog.
+- **Virtual MCP Servers** — As described by [TrueFoundry](https://www.truefoundry.com/blog/virtual-mcp-server) and independently by [Stacklok's Toolhive](https://docs.stacklok.com/toolhive/concepts/vmcp), a virtual MCP server aggregates tools from multiple underlying servers into a single logical endpoint. It doesn't host tools itself — it references tools that exist elsewhere and presents them as one unified catalog.
 
 ## Pattern 5: Orchestrator-Workers
 
@@ -154,9 +155,10 @@ Orchestrator: "Migrate this service from REST to GraphQL"
       → Verify behavior matches
 ```
 
-mcp-agent provides this through its `Orchestrator` pattern, where a coordinator LLM dynamically plans and delegates:
+mcp-agent provides this through its `Orchestrator` pattern, where a coordinator LLM dynamically plans and delegates. As with the patterns above, this snippet simplifies the real API for illustration — the actual `Orchestrator` class takes an `llm_factory` and a list of instantiated `Agent` objects via `available_agents` (see the [Orchestrator workflow docs](https://docs.mcp-agent.com/workflows/orchestrator)):
 
 ```python
+# mcp-agent orchestrator pattern (conceptual — simplified for illustration)
 orchestrator = Orchestrator(
     agents=[
         AgentSpec(name="analyst", servers=["code-search", "ast-parser"]),
@@ -212,7 +214,7 @@ When an agent has access to many tools, the quality of tool descriptions directl
 - What it returns
 - When to use it vs. similar tools
 
-This aligns with MCP's [tool annotations](https://modelcontextprotocol.io/specification/2025-11-25/server/utilities/annotations) — see our [tool annotations guide](/guides/mcp-tool-annotations-explained/) for details.
+This aligns with MCP's [tool annotations](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#data-types) — see our [tool annotations guide](/guides/mcp-tool-annotations-explained/) for details.
 
 ### Handle errors across chains
 

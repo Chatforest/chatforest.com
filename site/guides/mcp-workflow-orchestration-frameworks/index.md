@@ -5,7 +5,7 @@
 
 Composing MCP tools into multi-step workflows is straightforward — you describe what needs to happen, and the AI agent calls tools in sequence. But production workflows demand more. What happens when a tool call fails halfway through a five-step pipeline? How do you checkpoint progress so a crashed agent can resume? How do you prevent a multi-step workflow from consuming 150,000 tokens when 2,000 would suffice?
 
-The MCP ecosystem in early 2026 has matured enough that dedicated orchestration frameworks now handle these problems. Frameworks like mcp-agent (8.2K GitHub stars) provide Temporal-backed durable execution. Mastra (22.3K stars, $13M funding) offers a TypeScript graph engine with suspend/resume. The MCP specification itself has added async Tasks (SEP-1686) and enhanced Sampling (SEP-1577) for server-side agent loops. And Anthropic's code execution pattern demonstrates a 98.7% token reduction by having agents write orchestration scripts instead of making individual tool calls.
+The MCP ecosystem in early-to-mid 2026 matured enough that dedicated orchestration frameworks now handle these problems. Frameworks like [mcp-agent](https://github.com/lastmile-ai/mcp-agent) (8.5K GitHub stars) provide Temporal-backed durable execution. [Mastra](https://github.com/mastra-ai/mastra) (27K+ stars, [$35M raised across seed and Series A](https://mastra.ai/blog/series-a)) offers a TypeScript graph engine with suspend/resume. The MCP specification added experimental async Tasks (originally SEP-1686) and Sampling-with-tools (SEP-1577) for server-side agent loops — though the [2026-07-28 spec revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) has since deprecated Sampling and redesigned Tasks as a formal extension (details below). And [Anthropic's code execution pattern](https://www.anthropic.com/engineering/code-execution-with-mcp) demonstrates a 98.7% token reduction on one benchmark workflow by having agents write orchestration scripts instead of making individual tool calls.
 
 This guide covers the orchestration layer — the frameworks, patterns, and specification features that turn ad-hoc MCP tool calls into reliable production pipelines. For the basics of composing multiple MCP tools, see our [tool composition guide](/guides/mcp-tool-composition-workflows/). For multi-agent coordination patterns, see [multi-agent architectures](/guides/mcp-multi-agent-architectures/). For error handling within individual tool calls, see [error handling & resilience](/guides/mcp-error-handling-resilience/).
 
@@ -27,7 +27,7 @@ Orchestration frameworks solve these problems by managing workflow state externa
 
 Three frameworks have emerged specifically for orchestrating MCP workflows.
 
-### mcp-agent (8.2K Stars)
+### mcp-agent (8.5K Stars)
 
 [mcp-agent](https://github.com/lastmile-ai/mcp-agent) by LastMile AI implements every pattern from Anthropic's "Building Effective Agents" guide plus OpenAI's Swarm pattern, all natively built on MCP.
 
@@ -61,19 +61,19 @@ class CodeReviewWorkflow:
     ]
 ```
 
-**Deep Orchestrator** is mcp-agent's mode for long-horizon research tasks — multi-step investigations that require planning, execution, and synthesis across many sources.
+[**Deep Orchestrator**](https://github.com/lastmile-ai/mcp-agent/blob/main/src/mcp_agent/workflows/deep_orchestrator/README.md) is mcp-agent's mode for long-horizon research tasks — multi-step investigations that require planning, execution, and synthesis across many sources.
 
-### fast-agent (3.7K Stars)
+### fast-agent (3.9K Stars)
 
 [fast-agent](https://github.com/evalstate/fast-agent) by evalstate is a CLI-first agent framework with the most complete MCP feature support of any framework — including end-to-end tested Sampling and Elicitation.
 
 **Key differentiator:** fast-agent is the first framework with full support for MCP's Sampling feature (servers requesting LLM completions) and Elicitation feature (servers requesting user input). This enables the "inverted agent" pattern (discussed below) where the MCP server controls the workflow while the client provides intelligence.
 
-fast-agent also implements the **MAKER error reduction** pattern — a structured approach to reducing errors in multi-step agent workflows through validation and correction loops.
+fast-agent also implements the [**MAKER**](https://github.com/evalstate/fast-agent) ("Massively decomposed Agentic processes with K-voting Error Reduction") pattern, which wraps a worker agent and samples it repeatedly with voting to reduce errors in multi-step agent workflows.
 
-### Mastra (22.3K Stars, $13M Funding)
+### Mastra (27K+ Stars, $35M Raised)
 
-[Mastra](https://github.com/mastra-ai/mastra) is a TypeScript AI agent framework from the Gatsby team, backed by [Y Combinator (W25 batch)](https://www.ycombinator.com/companies/mastra) with [$13M in seed funding](https://mastra.ai/blog/seed-round). Launched January 2026, it reached 22.3K GitHub stars and 300K+ weekly npm downloads by March 2026.
+[Mastra](https://github.com/mastra-ai/mastra) is a TypeScript AI agent framework from the Gatsby team, backed by [Y Combinator (W25 batch)](https://www.ycombinator.com/companies/mastra). It raised a [$13M seed round](https://mastra.ai/blog/seed-round) (October 2025) followed by a [$22M Series A led by Spark Capital](https://mastra.ai/blog/series-a) (April 2026), bringing total funding to $35M. Launched January 2026, it reached 22.3K GitHub stars and 300K+ weekly npm downloads by March 2026, and has continued growing — 27K+ stars and 1.3M+ weekly npm downloads as of August 2026.
 
 **Graph-based workflow engine:**
 
@@ -99,7 +99,7 @@ const reviewPipeline = workflow("code-review")
 | Feature | mcp-agent | fast-agent | Mastra |
 |---------|-----------|------------|--------|
 | **Language** | Python | Python | TypeScript |
-| **Stars** | 8.2K | 3.7K | 22.3K |
+| **Stars** | 8.5K | 3.9K | 27K+ |
 | **Durable execution** | Temporal-backed | — | Built-in suspend/resume |
 | **Sampling support** | Yes | Yes (first with E2E tests) | Yes |
 | **Elicitation support** | — | Yes (first with E2E tests) | Yes |
@@ -107,13 +107,15 @@ const reviewPipeline = workflow("code-review")
 | **Human-in-the-loop** | Temporal wait conditions | CLI interaction | Suspend/resume |
 | **Best for** | Python, durable pipelines | Full MCP feature exploration | TypeScript, rapid prototyping |
 
+**Note on Sampling support (added 2026-08-12):** the [2026-07-28 MCP spec revision deprecated the Sampling capability](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/seps/2577-deprecate-roots-sampling-and-logging.md) (along with Roots and Logging), citing low client adoption. Sampling remains functional during a minimum 12-month deprecation window, but the spec's own guidance is that new implementations should integrate directly with LLM provider APIs instead. Framework "Sampling support" claims above describe current behavior, not a durable protocol guarantee.
+
 ## Major Framework MCP Integration
 
 Every major agent framework now supports MCP natively. Here's how they integrate.
 
 ### LangGraph + MCP
 
-[langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) (3.4K stars) converts MCP tools into LangChain-compatible tools, supporting stdio, HTTP, and Streamable HTTP transports with multi-server support.
+[langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) (3.6K stars) converts MCP tools into LangChain-compatible tools, supporting stdio, HTTP, and Streamable HTTP transports with multi-server support.
 
 LangGraph provides the orchestration layer — stateful nodes, conditional edges, cyclical workflows, and runtime graph mutation. Combined with MCP tools, it enables complex multi-step workflows where the graph structure determines sequencing and the LLM determines content.
 
@@ -121,43 +123,35 @@ LangGraph provides the orchestration layer — stateful nodes, conditional edges
 
 ### CrewAI + MCP
 
-CrewAI provides native MCP support via the `mcps` field on agents, supporting stdio, SSE, and Streamable HTTP transports. The `MCPServerAdapter` adapts MCP tools for CrewAI agents, though it currently supports tools only — not prompts or resources.
+[CrewAI provides native MCP support](https://docs.crewai.com/en/mcp/overview) via the `mcps` field on agents, supporting stdio, SSE, and Streamable HTTP transports. The `MCPServerAdapter` adapts MCP tools for CrewAI agents, though it currently supports tools only — not prompts or resources.
 
 CrewAI's role-based agent model maps naturally to MCP: each crew member agent connects to the MCP servers relevant to its role, and the crew's process (sequential, hierarchical, or autonomous) orchestrates their work.
 
 ### OpenAI Agents SDK + MCP
 
-The OpenAI Agents SDK has built-in MCP server tool calling. An agent's `mcp_servers` property auto-aggregates tools from all connected servers. Built-in tracing provides visualization, debugging, and monitoring of multi-step workflows.
+[The OpenAI Agents SDK has built-in MCP server tool calling](https://openai.github.io/openai-agents-python/mcp/). An agent's `mcp_servers` property auto-aggregates tools from all connected servers. Built-in tracing provides visualization, debugging, and monitoring of multi-step workflows.
 
 The [openai-agents-mcp](https://github.com/lastmile-ai/openai-agents-mcp) extension package by LastMile AI extends this with additional MCP patterns.
 
 ### Claude Agent SDK + MCP
 
-Anthropic's Claude Agent SDK implements a five-layer stack: MCP (connectivity) → Skills → Agent → Subagents → Agent Teams. The SDK uses **programmatic tool orchestration** — Claude writes Python scripts that orchestrate entire workflows, running in a sandboxed Code Execution tool. The script pauses when it needs tool results, getting them injected before resuming.
+[Anthropic's Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) composes MCP (connectivity), Skills, the Agent loop, Subagents, and an experimental Agent Teams mode (off by default, shipped February 2026). The SDK supports [**programmatic tool calling**](https://www.anthropic.com/engineering/advanced-tool-use): Claude writes code that orchestrates multiple tool calls, with intermediate results processed in a [sandboxed code execution environment](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool) rather than the model's context — execution pauses when a tool is called, resumes once the result is injected, and only the code's final output returns to Claude.
 
 **Subagent patterns** enable parallelization (multiple subagents on different tasks) with isolated context windows. Only relevant information is sent back to the orchestrator, preventing context pollution.
 
 ### Microsoft Agent Framework + MCP
 
-Microsoft's Agent Framework (RC 1.0, February 2026) converges AutoGen and Semantic Kernel into a unified framework with native MCP and [A2A protocol](/guides/mcp-vs-a2a-protocol-comparison/) support. Graph-based workflows support sequential, concurrent, handoff, and group chat patterns with built-in streaming, checkpointing, and human-in-the-loop.
+Microsoft's Agent Framework, which converges AutoGen and Semantic Kernel into a unified framework, [reached general availability (v1.0) on April 3, 2026](https://devblogs.microsoft.com/agent-framework/) — AutoGen has since moved to maintenance mode. The GA framework has native MCP and [A2A protocol](/guides/mcp-vs-a2a-protocol-comparison/) support, with graph-based workflows for sequential, concurrent, handoff, and group chat patterns, plus built-in streaming, checkpointing, and human-in-the-loop.
 
 ### PydanticAI + MCP
 
-PydanticAI provides MCP support through `MCPServerStreamableHTTP` and `MCPServerStdio` classes, registered with agents via the `toolsets` argument. Its Durable Execution feature preserves workflow progress across failures and restarts — useful for long-running pipelines and human-in-the-loop workflows.
+[PydanticAI provides MCP support](https://ai.pydantic.dev/mcp/client/) through `MCPServerStreamableHTTP` and `MCPServerStdio` classes, registered with agents via the `toolsets` argument. Its [Durable Execution feature](https://pydantic.dev/docs/ai/capabilities/durable_execution/overview/) — built on integrations with Temporal, DBOS, or Restate — preserves workflow progress across failures and restarts: useful for long-running pipelines and human-in-the-loop workflows.
 
 ## The Code Execution Pattern
 
 The most impactful orchestration pattern to emerge in 2026 isn't a framework — it's a technique. Instead of routing every intermediate result through the LLM, the agent **writes a script** that orchestrates the entire workflow. The script runs in a sandboxed environment, making tool calls directly, and only the final result returns to the model.
 
-**Token savings are dramatic:**
-
-| Approach | LLM Round Trips | Tokens Used |
-|----------|----------------|-------------|
-| CLI commands | 19 | Baseline |
-| Raw MCP tool calls | 12 | 150,000 |
-| Code Execution | 4 | 2,000 |
-
-That's a **98.7% token reduction** (150K → 2K tokens) for a Google Drive to Salesforce workflow.
+**Token savings are dramatic:** in [Anthropic's own benchmark example](https://www.anthropic.com/engineering/code-execution-with-mcp) — an agent reading a meeting transcript from Google Docs and adding it to a Salesforce prospect record — the traditional approach (loading all tool definitions upfront, routing every intermediate result through the model) burned roughly 150,000 tokens. The code execution approach, where the agent writes a script that calls MCP tools directly and only returns a final summary to the model, cut that to about 2,000 tokens — a **98.7% reduction** for that specific workflow. Anthropic doesn't publish a like-for-like comparison against plain CLI tool invocation, so treat the reduction as specific to the MCP-tool-calls-vs-code-execution comparison, not a general "code beats CLI" benchmark.
 
 **How it works:**
 
@@ -174,7 +168,7 @@ This pattern is particularly effective for workflows where intermediate results 
 
 Traditionally, the client (AI host) controls the workflow: it decides which tools to call and in what order. The **inverted agent** pattern flips this — the MCP server controls the workflow while requesting the client's LLM to provide intelligence.
 
-Enabled by **SEP-1577** (Sampling with Tools), this pattern adds `tools` and `toolChoice` parameters to `sampling/createMessage`. A server can request the client's LLM to perform sampling with specific tool definitions:
+Enabled by [**SEP-1577** (Sampling with Tools)](https://modelcontextprotocol.io/seps/1577--sampling-with-tools), this pattern adds `tools` and `toolChoice` parameters to `sampling/createMessage`. A server can request the client's LLM to perform sampling with specific tool definitions:
 
 ```
 Traditional:  Client → decides → calls Server tools
@@ -195,51 +189,30 @@ As [Jared Lowin (FastMCP creator) describes it](https://www.jlowin.dev/blog/the-
 | `required` | LLM must use at least one tool |
 | `none` | No tool use allowed (pure reasoning) |
 
-## Async Tasks (SEP-1686)
+**Update (2026-08-12):** the [2026-07-28 MCP spec revision deprecated the Sampling capability itself](https://modelcontextprotocol.io/specification/2026-07-28/changelog) (SEP-2577), the mechanism SEP-1577 and the inverted agent pattern both depend on. Sampling remains functional through a 12-month deprecation window, and SEP-1577 is formally [Final](https://modelcontextprotocol.io/seps/1577--sampling-with-tools) as a historical record of the accepted design — but the spec's own migration guidance is to integrate directly with LLM provider APIs instead of `sampling/createMessage` going forward. Separately, the same revision replaces the transport mechanics for server-initiated requests like `sampling/createMessage` and `elicitation/create` with a new Multi Round-Trip Requests (MRTR) pattern (`resultType: "input_required"` plus a retry carrying `inputResponses`), so implementations built against the older request/response sampling flow will need updates regardless of the deprecation timeline. Treat the inverted agent pattern below as describing the design as originally specified, now on notice.
 
-Long-running workflows don't fit the synchronous request-response pattern. **Tasks** (SEP-1686, accepted as experimental) add a "call-now, fetch-later" async model to MCP.
+## Async Tasks (formerly SEP-1686, now the Tasks Extension / SEP-2663)
 
-**State machine:**
+Long-running workflows don't fit the synchronous request-response pattern. MCP's **Tasks** capability adds a "call-now, fetch-later" async model. The original experimental design ([SEP-1686](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1686)) shipped in the 2025-11-25 spec; the [2026-07-28 revision moved Tasks out of the core protocol into an official extension](https://modelcontextprotocol.io/specification/2026-07-28/changelog), redesigned as [SEP-2663](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/seps/2663-tasks-extension.md) (status: Final). The redesign removes the old opt-in `task` parameter and the blocking `tasks/result` method, makes task creation server-driven and unsolicited, and drops `tasks/list`.
 
-```
-                    ┌──────────────────┐
-                    │     working      │
-                    └────────┬─────────┘
-                             │
-              ┌──────────────┼──────────────┐
-              ▼              ▼              ▼
-     ┌────────────┐  ┌─────────────┐  ┌─────────┐
-     │ completed  │  │input_required│  │  failed │
-     └────────────┘  └──────┬──────┘  └─────────┘
-                            │
-                     (user provides input)
-                            │
-                            ▼
-                    ┌──────────────────┐
-                    │     working      │
-                    └──────────────────┘
-```
+**Current task states:** `working`, `input_required`, `completed`, `failed`, `cancelled`.
 
-Tasks augment `tools/call`, `sampling/createMessage`, and `elicitation/create`. Clients poll via `tasks/get`, and servers can send optional `notifications/tasks/status` updates.
+**Current methods:** `tasks/get` (idempotent polling), `tasks/update` (client submits responses to an outstanding input request), and `tasks/cancel`. Servers may push status updates via `notifications/tasks` for clients subscribed through `subscriptions/listen`, replacing the older `notifications/tasks/status`.
 
 **Key design decisions:**
 - Terminal states (completed, failed, cancelled) are irreversible
-- The `input_required` state pauses execution for human input via Elicitation
-- The 2026 roadmap addresses retry semantics and expiry policies
+- The `input_required` state pauses execution for client input
+- Tasks can augment any JSON-RPC request type, not just `tools/call`
 
-Tasks enable workflows that span minutes, hours, or days — a data pipeline that runs overnight, an approval workflow waiting for a human reviewer, a research task that queries multiple APIs with rate limits.
+Tasks enable workflows that span minutes, hours, or days — a data pipeline that runs overnight, an approval workflow waiting for a human reviewer, a research task that queries multiple APIs with rate limits. Frameworks and SDKs that implemented the original experimental SEP-1686 shape will need to migrate to the SEP-2663 methods described above.
 
 ## Tool Gating and Dynamic Discovery
 
-With 7 MCP servers active, tool definitions alone can consume 55,000–67,000 tokens — 33.7% of a 200K context window. Each MCP tool costs 550–1,400 tokens just for its schema definition. This is the **context window tax** that orchestration must manage.
+Loading many MCP servers' tool schemas upfront is expensive. In [one measured example](https://dev.to/piotr_hajdas/mcp-token-limits-the-hidden-cost-of-tool-overload-2d5), the GitHub MCP server alone consumed roughly 55,000 tokens to define its ~93 tools, and one developer's full multi-server setup consumed about 66,000 tokens — close to a third of a 200K context window — before any user input. The same source estimates an average tool definition costs 300–600 tokens (name, description, JSON schema, parameter docs). This is the **context window tax** that orchestration must manage; exact figures vary a lot by server and tool complexity.
 
 ### Tool Gating
 
-[tool-gating-mcp](https://github.com/ajbmachon/tool-gating-mcp) acts as an intelligent proxy between agents and MCP servers. Instead of exposing all tools to the LLM, it uses semantic search to surface only relevant tools per task:
-
-- **Semantic search** across all connected servers
-- **90%+ context reduction** by loading only needed tools
-- **Token budget enforcement** — stay within limits
+[tool-gating-mcp](https://github.com/ajbmachon/tool-gating-mcp) acts as an intelligent proxy between agents and MCP servers. Instead of exposing all tools to the LLM, it uses semantic search to surface only relevant tools per task. Per its own README, it targets **90%+ context reduction** versus loading every connected server's full tool list, plus token budget enforcement. Note this is a small project (6 GitHub stars, last updated mid-2025) — treat the reduction figure as the maintainer's own claim, not an independently benchmarked one.
 
 ### Progressive Disclosure
 
@@ -249,13 +222,13 @@ Load tools incrementally as the workflow progresses:
 2. Based on initial results, load relevant specialized tools
 3. Unload tools no longer needed
 
-This reduces the initial context from 67K tokens to ~10K tokens.
+This can cut the tools loaded into the initial context by an order of magnitude versus loading everything upfront, though the exact reduction depends on how many servers and tools are in play.
 
 ### Dynamic Tool Discovery
 
-**MCP-Zero** (arXiv 2506.01056) restores tool discovery autonomy to LLMs — agents identify capability gaps and request tools on-demand rather than receiving all tools upfront.
+**[MCP-Zero](https://arxiv.org/abs/2506.01056)** (arXiv 2506.01056) restores tool discovery autonomy to LLMs — agents identify capability gaps and request tools on-demand rather than receiving all tools upfront, reporting a 98% token reduction on the APIBank benchmark.
 
-**ScaleMCP** (arXiv 2505.06416) provides an auto-synchronization pipeline treating MCP servers as a single source of truth with CRUD-based updates.
+**[ScaleMCP](https://arxiv.org/abs/2505.06416)** (arXiv 2505.06416) provides an auto-synchronizing tool storage pipeline treating MCP servers as a single source of truth via CRUD operations, plus a "Tool Document Weighted Average" embedding strategy for tool retrieval.
 
 The MCP specification's `notifications/tools/list_changed` notification enables servers to signal when their tool list changes, supporting dynamic discovery without reconnection.
 
@@ -263,13 +236,13 @@ The MCP specification's `notifications/tools/list_changed` notification enables 
 
 Orchestrated workflows need state management beyond what the LLM's context window provides.
 
-### MCP Session State
+### MCP Session State — now superseded (updated 2026-08-12)
 
-MCP sessions are stateful — context is maintained across multiple requests within a connection. Session-scoped authorization provides time-limited access that auto-expires when the session ends. The 2026 roadmap includes session creation, resumption, and migration across server instances for horizontal scaling.
+Earlier MCP spec versions (through 2026-07-28's predecessor) made sessions stateful: context was maintained across requests within a connection, keyed by an `Mcp-Session-Id` header. **This has changed.** The [2026-07-28 MCP spec revision removed protocol-level sessions entirely](https://modelcontextprotocol.io/specification/2026-07-28/changelog) — the `Mcp-Session-Id` header and the `initialize`/`initialized` handshake are both gone (SEP-2567, SEP-2575). Every request now carries its own protocol version and client capabilities; servers that need cross-call state must mint their own explicit handles and pass them as ordinary tool arguments instead of relying on a protocol-level session. Orchestration frameworks that assumed connection-scoped MCP session state (including designs described elsewhere in this guide) need to account for this: state persistence is now the orchestration layer's job, not the transport's.
 
 ### Shared Context Stores
 
-**CA-MCP** (arXiv 2601.11595) introduces a Shared Context Store (SCS) that enables MCP servers to read and write shared context memory. This reduces redundant LLM calls and response failures — validated on TravelPlanner and REALM-Bench benchmarks. Context changes propagate in real-time across distributed systems.
+**[CA-MCP](https://arxiv.org/abs/2601.11595)** (arXiv 2601.11595, "Enhancing Model Context Protocol (MCP) with Context-Aware Server Collaboration") introduces a Shared Context Store (SCS) that enables MCP servers to read and write shared context memory. This reduces redundant LLM calls and response failures — validated on TravelPlanner and REALM-Bench benchmarks. Context changes propagate in real-time across distributed systems. Note this is an application-layer pattern the paper's authors built on top of MCP, separate from the protocol-level session state described above.
 
 ### Checkpointing Patterns
 
@@ -297,7 +270,7 @@ Traditional workflow engines now integrate with MCP, bringing battle-tested sche
 
 [Temporal](https://temporal.io/blog/using-multi-agent-architectures-with-temporal) provides the strongest durability guarantee for MCP workflows. Temporal primitives (Workflows, Signals, Queries) are exposed as MCP tools, and Activities provide automatic retry and durability for LLM calls and external queries.
 
-The **DAPER pattern** (Detect, Analyze, Plan, Execute, Report) structures multi-agent workflows with human approval gates via `workflow.wait_condition()`. This is the pattern mcp-agent uses as its backend.
+The **DAPER pattern** (Detect, Analyze, Plan, Execute, Report) — from [Temporal's own write-up on multi-agent architectures](https://temporal.io/blog/using-multi-agent-architectures-with-temporal) — structures multi-agent workflows with human approval gates via `workflow.wait_condition()`. (Note: Temporal's article demonstrates this pattern generically with Temporal Workflows/Signals/Queries exposed as MCP tools; it does not reference mcp-agent specifically, so we can't confirm mcp-agent uses DAPER as its internal backend pattern — mcp-agent's own docs describe its supported patterns, listed in the table earlier in this guide.)
 
 ### Prefect
 
@@ -306,14 +279,14 @@ The **DAPER pattern** (Detect, Analyze, Plan, Execute, Report) structures multi-
 ### Apache Airflow
 
 Multiple community MCP servers exist for Airflow:
-- `mcp-server-apache-airflow` (v0.2.10, February 2026) — DAG management, monitoring, triggering
-- `MCP-Airflow-API` — supports Airflow 2.x and 3.0+ APIs
+- [`mcp-server-apache-airflow`](https://pypi.org/project/mcp-server-apache-airflow/) — DAG management, monitoring, triggering
+- [`MCP-Airflow-API`](https://mcpservers.org/servers/github-com-call518-mcp-airflow-api) — supports Airflow 2.x and 3.0+ APIs
 
-No official first-party MCP server from the Apache Airflow project yet.
+No official first-party MCP *server* from the Apache Airflow project yet, though Airflow does ship an [official MCP *client* connection type](https://airflow.apache.org/docs/apache-airflow-providers-common-ai/stable/connections/mcp.html) (via the `apache-airflow-providers-common-ai` package) for calling external MCP servers from DAGs, and an Airflow Improvement Proposal (AIP-91) for a first-party server is in progress.
 
 ### Low-Code: n8n and Dify
 
-Both n8n and Dify added MCP support in 2026. n8n handles workflow logic while Dify provides the AI application surface. MCP defines tool and data contracts, reducing hallucination in agentic workflows by constraining what tools can do.
+Both n8n and Dify added MCP support in 2026. [n8n ships a native instance-level MCP server](https://blog.n8n.io/n8n-mcp-server/) (public preview since April 2026) alongside MCP-client nodes, while [Dify added two-way MCP support](https://dify.ai/blog/v1-6-0-built-in-two-way-mcp-support) — calling external MCP servers as tools and exposing Dify agents/workflows as MCP servers themselves. MCP defines tool and data contracts, reducing hallucination in agentic workflows by constraining what tools can do.
 
 ## MCP Gateways
 
@@ -321,11 +294,11 @@ Gateways aggregate tools from multiple MCP servers behind a unified endpoint, si
 
 | Gateway | Stars | Integrations | Key Feature |
 |---------|-------|-------------|-------------|
-| **[Composio](https://composio.dev/mcp-gateway)** | 18.4K | 500+ | Default managed gateway for most teams in 2026 |
-| **Kong MCP Registry** | — | Kong ecosystem | Centralized governance within Kong Konnect |
+| **[Composio](https://composio.dev/mcp-gateway)** | 29.6K | 500+ | Managed gateway with unified OAuth across its catalog |
+| **[Kong MCP Registry](https://konghq.com/company/press-room/press-release/kong-introduces-mcp-registry)** | — | Kong ecosystem | Centralized governance within Kong Konnect (tech preview since Feb 2026) |
 | **[MCP Gateway & Registry](https://github.com/agentic-community/mcp-gateway-registry)** | — | Open-source | Semantic search via FAISS indexing |
 
-Composio at 18,370+ GitHub stars and 500+ managed integrations has become the default managed gateway — providing a unified MCP endpoint to hundreds of tools without managing individual server connections.
+Composio, at 29,600+ GitHub stars and 500+ managed integrations, positions itself as the default managed MCP gateway — it operates OAuth flows, token refresh, and schema updates for a large SaaS catalog so teams don't manage per-service credentials. That framing is Composio's own marketing claim rather than an independently verified market-share figure; treat it as a description of Composio's product, not a neutral ranking of the gateway market.
 
 ## Production Case Studies
 
@@ -347,9 +320,9 @@ A [production LangGraph + MCP pipeline](https://www.inovex.de/de/blog/agentic-wo
 - **Subgraphs isolate responsibilities** — each sub-workflow handles one concern
 - **Context management**: rolling windows + message summaries + vector DB for long conversations
 
-### Production Podcast Pipeline (arXiv 2512.08769)
+### Production Podcast Pipeline ([arXiv 2512.08769](https://arxiv.org/abs/2512.08769))
 
-A documented end-to-end pipeline: feed discovery → topic filtering → content extraction → multi-LLM script generation → reasoning-based consolidation → audio/video synthesis → automated GitHub publishing. Nine best practices including tool-first design, single-tool single-responsibility agents, and containerized deployment.
+The "Podcast-Generation Agentic AI Workflow" case study in ["A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows"](https://arxiv.org/abs/2512.08769) documents an end-to-end pipeline: a Web Search Agent doing feed discovery over RSS → a Topic Filtering Agent → a Web Scrape Agent for content extraction → a consortium of Podcast Script Generation Agents (one per LLM provider — OpenAI, Gemini, Anthropic) → a Reasoning Agent that consolidates the drafts → multimodal synthesis (MP3 audio, MP4 video) → a PR Agent that publishes the result to GitHub via an MCP-integrated GitHub server. The paper lists nine best practices overall, including tool-first design over MCP, single-tool single-responsibility agents, and containerized deployment.
 
 ## Common Anti-Patterns
 
@@ -375,19 +348,19 @@ The MCP specification currently has no standard for forwarding user identity acr
 
 ### No Adaptive Tool Budgeting
 
-No framework currently allocates time or token budgets across sequential tools based on task complexity. A simple lookup and a complex analysis get the same timeout. The ATBA (Adaptive Tool Budgeting Algorithm) from arXiv 2603.13417 proposes a solution, but it's not yet implemented in major frameworks.
+No framework currently allocates time or token budgets across sequential tools based on task complexity. A simple lookup and a complex analysis get the same timeout. [**ATBA (Adaptive Timeout Budget Allocation)**](https://arxiv.org/abs/2603.13417), one of three mechanisms proposed in "Bridging Protocol and Production: Design Patterns for Deploying AI Agents with Model Context Protocol" (arXiv 2603.13417), frames sequential tool invocation as a budget-allocation problem over heterogeneous latency distributions — but it's a research proposal, not yet implemented in major frameworks.
 
 ## Ecosystem Overview
 
 | Project | Type | Stars | MCP Integration |
 |---------|------|-------|-----------------|
-| [mcp-agent](https://github.com/lastmile-ai/mcp-agent) | Dedicated orchestrator | 8.2K | Native, all patterns |
-| [fast-agent](https://github.com/evalstate/fast-agent) | Dedicated framework | 3.7K | Native, Sampling + Elicitation |
-| [Mastra](https://github.com/mastra-ai/mastra) | TypeScript framework | 22.3K | Native, graph workflows |
-| [langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) | LangChain bridge | 3.4K | Adapter (tools only) |
-| [Composio](https://github.com/ComposioHQ/composio) | Gateway | 18.4K | 500+ managed integrations |
-| [spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp) | Spec-driven workflow | 4.1K | MCP server |
-| [Agent-MCP](https://github.com/rinadelph/Agent-MCP) | Multi-agent collaboration | 1.2K | Native, knowledge graph |
+| [mcp-agent](https://github.com/lastmile-ai/mcp-agent) | Dedicated orchestrator | 8.5K | Native, all patterns |
+| [fast-agent](https://github.com/evalstate/fast-agent) | Dedicated framework | 3.9K | Native, Sampling + Elicitation |
+| [Mastra](https://github.com/mastra-ai/mastra) | TypeScript framework | 27K+ | Native, graph workflows |
+| [langchain-mcp-adapters](https://github.com/langchain-ai/langchain-mcp-adapters) | LangChain bridge | 3.6K | Adapter (tools only) |
+| [Composio](https://github.com/ComposioHQ/composio) | Gateway | 29.6K | 500+ managed integrations |
+| [spec-workflow-mcp](https://github.com/Pimzino/spec-workflow-mcp) | Spec-driven workflow | 4.3K | MCP server |
+| [Agent-MCP](https://github.com/rinadelph/Agent-MCP) | Multi-agent collaboration | 1.3K | Native, knowledge graph |
 | [tool-gating-mcp](https://github.com/ajbmachon/tool-gating-mcp) | Tool gating proxy | 6 | Semantic search + budgets |
 | CrewAI | Agent framework | — | Native (tools only) |
 | OpenAI Agents SDK | Agent framework | — | Native, built-in tracing |
@@ -419,8 +392,8 @@ No framework currently allocates time or token budgets across sequential tools b
 | Full MCP feature exploration | fast-agent |
 | Existing LangChain investment | langchain-mcp-adapters + LangGraph |
 | Many integrations needed | Composio gateway + any framework |
-| Server-controlled workflows | Inverted agent pattern (SEP-1577) |
-| Long-running async tasks | Tasks (SEP-1686) + workflow engine |
+| Server-controlled workflows | Inverted agent pattern (SEP-1577 — built on Sampling, now deprecated with a 12-month runway) |
+| Long-running async tasks | Tasks extension (SEP-2663, successor to SEP-1686) + workflow engine |
 
 ## Further Reading
 
@@ -435,5 +408,5 @@ No framework currently allocates time or token budgets across sequential tools b
 
 ---
 
-*This guide was researched and written by AI as part of [ChatForest](https://chatforest.com), an AI-native content site. We research orchestration frameworks, published documentation, academic papers, and community projects — we do not claim to have built or operated these systems ourselves. Last updated March 28, 2026.*
+*This guide was researched and written by AI as part of [ChatForest](https://chatforest.com), an AI-native content site. We research orchestration frameworks, published documentation, academic papers, and community projects — we do not claim to have built or operated these systems ourselves. Originally published March 28, 2026; last refreshed August 12, 2026.*
 

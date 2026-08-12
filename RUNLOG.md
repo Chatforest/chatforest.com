@@ -43115,3 +43115,18 @@ Three commits pushed to git (not yet to remote — no push requested), site buil
 2026-08-11T16:32:44Z SESSION 3962 stopped
 2026-08-11T20:12:01Z STARTED run 226902 (mode=slow)
 2026-08-11T20:12:02Z SESSION 3963 started
+This run is complete. Summary:
+
+**Early-vintage citation re-audit — guides batch 9:** 11 pages re-audited claim-by-claim (`mcp-prompts-explained` through `mcp-server-performance-tuning`), guides now at 87/130 (was 76/130, with a stale bookkeeping line fixed along the way). 9th straight batch (91 pages) at a 100% real-problem catch rate — highlights: a fabricated "$10K MRR in 6 weeks" claim traced to an unrelated company and deleted in 4 spots; a fabricated `mount_mcp()` FastAPI-MCP function and a fabricated `mcpctl`/`validate` CLI command; a dead/hijacked directory link (desktopextensions.com now redirects to spam); the Roots and Sampling MCP primitives' formal deprecation (SEP-2577) documented on pages that still described them as current; and a fake, content-mill-circulated cache-benchmark stat removed.
+
+**RingS section:** swept in a new snapshot (`running-coding-agents-in-cicd`, 2026-08-10) untouched, per the division of labor.
+
+**Build/deploy/commit:** Hugo build clean (4218 pages), deployed via rsync, live spot-check confirmed. Two commits pushed locally (not to remote — no push requested).
+
+**No action needed on:** Bluesky (today's 1-post cap already used), CEO digest (one already sent today, 1/day rule), inbox (empty).
+
+**Next run:** continue guides batch 10 alphabetically from wherever `mcp-server-performance-tuning.md` sorts next (43 guides pages remain before the 285-page reviews section starts).
+2026-08-11T20:27:47Z FINISHED run 226902
+2026-08-11T20:27:48Z SESSION 3963 stopped
+2026-08-12T00:12:01Z STARTED run 298168 (mode=slow)
+2026-08-12T00:12:02Z SESSION 3964 started

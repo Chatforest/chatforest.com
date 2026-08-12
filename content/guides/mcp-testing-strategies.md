@@ -5,14 +5,14 @@ description: "A practical guide to testing MCP servers — covering unit tests w
 content_type: "Guide"
 card_description: "Stop vibe-testing your MCP servers. Here's how to write real tests at every level — unit, integration, and end-to-end."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-12
 ---
 
 Most MCP servers get tested the same way: someone connects them to Claude or ChatGPT, tries a few tool calls, and declares "looks good." This is what [Jeremiah Lowin calls "vibe-testing"](https://www.jlowin.dev/blog/stop-vibe-testing-mcp-servers) — and it's a problem.
 
 LLM clients are inherently stochastic. What works once might not work again. Inputs vary, tool call sequences change, and edge cases hide behind the apparent simplicity of a chat interface. MCP servers are the **deterministic foundation** of your AI stack. If that foundation is unreliable, everything built on top becomes fragile.
 
-This guide covers practical testing strategies for MCP servers at every level — from fast unit tests to full integration tests to manual debugging with the Inspector. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2025-03-26), published SDK documentation, and community testing frameworks — we research and analyze rather than building production MCP systems ourselves.
+This guide covers practical testing strategies for MCP servers at every level — from fast unit tests to full integration tests to manual debugging with the Inspector. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28) — most recently revised on [2026-07-28](https://blog.modelcontextprotocol.io/posts/2026-07-28/), when the protocol moved to a stateless, per-request model and retired the session-based `initialize`/`initialized` handshake — published SDK documentation, and community testing frameworks — we research and analyze rather than building production MCP systems ourselves.
 
 ## Why MCP Servers Need Real Tests
 
@@ -206,6 +206,8 @@ describe("MCP Server Integration", () => {
 });
 ```
 
+One caveat as of the [2026-07-28 spec revision](https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/migration/support-2026-07-28.md): `InMemoryTransport.createLinkedPair()` in the official TypeScript SDK only exercises the legacy, session-based protocol path — there's no in-memory transport for the newer stateless model yet. To test 2026-07-28 behavior without sockets, drive your HTTP handler's `fetch` function directly instead of `InMemoryTransport`.
+
 ## Testing Specific MCP Features
 
 ### Testing Resources
@@ -241,7 +243,7 @@ async def test_prompt_resolves(client):
 
 ### Testing Pagination
 
-Servers that return large result sets should implement [cursor-based pagination](https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/pagination). Test both the happy path and edge cases:
+Servers that return large result sets should implement [cursor-based pagination](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination). Test both the happy path and edge cases:
 
 ```python
 @pytest.mark.asyncio
@@ -295,13 +297,13 @@ The [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) is an 
 
 ### Running the Inspector
 
-No installation required — run directly with npx:
+No installation required — run directly with npx ([Node 22.19.0 or newer](https://modelcontextprotocol.io/docs/tools/inspector) is required):
 
 ```bash
 npx @modelcontextprotocol/inspector
 ```
 
-This opens a web UI at `http://localhost:6274`. Connect it to your server via stdio, SSE, or streamable HTTP.
+This launches the Inspector's web client — one of [three clients (web, CLI, and TUI) shipped behind a single binary](https://modelcontextprotocol.io/docs/tools/inspector) — and prints a URL containing a one-time session token; open that printed URL rather than typing `localhost:6274` from memory, since the backend guards its API routes with that token. Connect it to your server via stdio, SSE (legacy servers), or streamable HTTP.
 
 ### What the Inspector Shows You
 
@@ -324,6 +326,8 @@ It's not a replacement for automated tests — it's a complement. Use the Inspec
 ## End-to-End Testing: Real Transports
 
 For full confidence, test with real transports. This catches issues that in-memory tests miss: process startup, stdio encoding, HTTP connection handling, and environment variable loading.
+
+The examples below exercise the classic `initialize` handshake. That handshake is now the *legacy* path — current SDKs and the Inspector [detect a connecting client's protocol era and fall back to it for backward compatibility](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports#backward-compatibility) — so it's still worth testing if you support older clients. If your server targets the current 2026-07-28 spec, add a stateless-mode test too: a bare request carrying its protocol version and capabilities in `_meta.io.modelcontextprotocol/*` fields, with no prior `initialize` call.
 
 ### Subprocess Testing (Python)
 
@@ -385,9 +389,9 @@ MCP server tests should run in your CI pipeline like any other tests. A few tips
 
 **Mock external dependencies in CI.** Your unit and integration tests should already mock databases, APIs, and file systems. In CI, make sure these mocks are active — flaky external calls are the top cause of unreliable test suites.
 
-**Run the Inspector in headless mode for smoke tests.** You can script the Inspector to connect, list tools, and verify basic connectivity without the browser UI.
+**Run the Inspector in headless mode for smoke tests.** The [Inspector's CLI client](https://modelcontextprotocol.io/docs/tools/inspector) (`npx @modelcontextprotocol/inspector --cli ...`) scripts a connect/list-tools/call-tool sequence for CI, with no browser UI involved.
 
-**Test against multiple protocol versions** if your server claims to support them. The MCP spec has evolved through several versions, and clients may negotiate different protocol versions.
+**Test against multiple protocol versions** if your server claims to support them. The MCP spec has evolved through several versions — most significantly the [2026-07-28 revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/), which retired the stateful `initialize` handshake for a stateless, per-request model — and clients and servers [detect and fall back to the era they're talking to](https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning#backward-compatibility-with-initialization-based-versions).
 
 **Include schema validation.** Verify that your tool input schemas are valid JSON Schema and that your responses match the expected MCP response types. A malformed schema won't cause a test failure — it causes confusing behavior when an LLM client tries to use your tool.
 
@@ -395,8 +399,8 @@ MCP server tests should run in your CI pipeline like any other tests. A few tips
 
 Several community projects provide structured testing for MCP servers:
 
-- **[mcp-testing-kit](https://github.com/thoughtspot/mcp-testing-kit)** — a Vitest-based framework with `connect` and `close` lifecycle management
-- **[mcp-jest](https://github.com/josharsh/mcp-jest)** — Jest-based testing for MCP servers with protocol compliance checks and CI/CD integration
+- **[mcp-testing-kit](https://github.com/thoughtspot/mcp-testing-kit)** — a framework-agnostic library (works with Vitest, Jest, and others) with `connect` and `close` lifecycle management
+- **[mcp-jest](https://github.com/ReallyArtificial/mcp-jest)** — Jest-based testing for MCP servers with protocol compliance checks and CI/CD integration
 - **[mcp-testing-framework](https://github.com/haakco/mcp-testing-framework)** — comprehensive testing including benchmarking and cross-server compatibility
 - **[FastMCP](https://gofastmcp.com/servers/testing)** — Python framework with built-in in-memory testing support
 

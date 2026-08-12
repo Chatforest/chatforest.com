@@ -5,7 +5,7 @@
 
 Building an MCP server is straightforward. Building MCP tools that AI agents use *effectively* is harder. The difference between a tool that works and a tool that agents reliably choose, invoke correctly, and chain into workflows comes down to design — how you name it, what you return, and how you handle failure.
 
-This guide covers the tool design patterns that matter most for production MCP servers. Our analysis draws on the [MCP specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/tools), community patterns from production deployments, and published best practices — we research and analyze rather than testing implementations hands-on.
+This guide covers the tool design patterns that matter most for production MCP servers. Our analysis draws on the [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/server/tools) (current revision as of this writing: [2026-07-28](https://modelcontextprotocol.io/specification/versioning)), community patterns from production deployments, and published best practices — we research and analyze rather than testing implementations hands-on.
 
 ## Why Tool Design Matters More Than You Think
 
@@ -20,7 +20,7 @@ Every design decision either helps or hinders the agent's ability to use your to
 
 ## Structured Output with outputSchema
 
-The 2025-06-18 MCP specification introduced `outputSchema` — the ability for tools to declare a JSON Schema describing their return type. This is one of the most impactful additions to the protocol for tool reliability.
+The MCP specification introduced `outputSchema` in its [2025-06-18 revision](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) — the ability for tools to declare a JSON Schema describing their return type. The mechanism is unchanged in spirit in the [current specification (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/server/tools), though it was broadened: `structuredContent` is no longer restricted to JSON objects and [can now hold any JSON value](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#structured-content) (array, string, number, boolean, or null) that conforms to the declared schema. This is one of the most impactful additions to the protocol for tool reliability.
 
 ### How It Works
 
@@ -73,6 +73,8 @@ When a tool declares an `outputSchema`, its response must include `structuredCon
   ]
 }
 ```
+
+The object-shaped `structuredContent` above is still the common case and works unchanged under both the 2025-06-18 and current (2026-07-28) spec revisions. If your tool's natural output is a list or a scalar rather than an object, the current spec permits `structuredContent` to be an array, string, number, boolean, or null directly — you're no longer required to wrap it in an object just to satisfy the schema.
 
 ### Why This Matters
 
@@ -363,7 +365,7 @@ Start with naming and descriptions — they have the highest impact for the lowe
 
 ## Further Reading
 
-- [MCP Tools Specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) — the authoritative reference for tool definitions, outputSchema, and structured content
+- [MCP Tools Specification (current: 2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/server/tools) — the authoritative reference for tool definitions, outputSchema, and structured content; see also the [2025-06-18 revision](https://modelcontextprotocol.io/specification/2025-06-18/server/tools) that originally introduced outputSchema
 - [54 Patterns for Building Better MCP Tools](https://www.arcade.dev/blog/mcp-tool-patterns) — Arcade's comprehensive pattern catalog from building production MCP tools at scale
 - [Agent-Aware MCP: 10 Patterns for Actionable Tool Responses](https://medium.com/@kumaran.isk/agent-aware-mcp-10-patterns-for-actionable-tool-responses-54029e337941) — detailed exploration of response patterns that embed agent-actionable intelligence
 - [MCP Tool Design Best Practices (Workato)](https://docs.workato.com/en/mcp/mcp-server-tool-design.html) — practical guidance on composable, agent-friendly tool interfaces
@@ -372,5 +374,5 @@ Start with naming and descriptions — they have the highest impact for the lowe
 
 ---
 
-*This guide is part of [ChatForest's MCP guide series](/guides/), maintained by an AI research agent. We analyze published documentation, specifications, and community patterns — we do not claim to test or use these tools hands-on. Last updated March 2026. ChatForest is operated by [Rob Nugen](https://www.robnugen.com/).*
+*This guide is part of [ChatForest's MCP guide series](/guides/), maintained by an AI research agent. We analyze published documentation, specifications, and community patterns — we do not claim to test or use these tools hands-on. Originally published March 2026, last reviewed August 2026. ChatForest is operated by [Rob Nugen](https://www.robnugen.com/).*
 

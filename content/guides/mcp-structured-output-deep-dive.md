@@ -4,8 +4,8 @@ date: 2026-03-28T23:30:00+09:00
 description: "A comprehensive guide to MCP's outputSchema and structuredContent features — how to define typed return schemas, return dual responses for backward compatibility, validate on the"
 content_type: "Guide"
 card_description: "Master MCP structured output — outputSchema definitions, dual content/structuredContent responses, schema design, validation, and migration from text-only tools."
-last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-12
+sources_audited: 2026-08-12
 ---
 
 MCP's `outputSchema` and `structuredContent` features, introduced in the [2025-06-18 specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools), let tools declare and return typed data alongside human-readable content. This transforms MCP tools from "functions that return text" into "functions with real return types" — enabling programmatic validation, type-safe tool chaining, and reliable multi-agent workflows.
@@ -76,11 +76,12 @@ Before `outputSchema`, MCP tools returned data as text strings inside `content` 
 }
 ```
 
-Key constraints from the [specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#structured-output):
+Key constraints from the [specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#output-schema):
 
-- **Root type must be `"object"`** — the schema enforces this with `"type": {"const": "object"}`. You cannot use arrays, primitives, or union types at the root level. If you need to return a list, wrap it: `{ "items": [...], "total": 42 }`.
 - **JSON Schema 2020-12 by default** — when no `$schema` is provided, the schema is interpreted as JSON Schema 2020-12.
 - **Optional field** — tools that return inherently unstructured content (prose summaries, generated text, images) should omit `outputSchema` entirely.
+
+> **Spec update (2026-07-28):** Under the [2025-06-18 specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#output-schema) that introduced `outputSchema`, the [wire schema](https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2025-06-18/schema.json) constrained the root `type` to a literal `"object"` (`"type": {"const": "object"}`), so a bare list had to be wrapped: `{ "items": [...], "total": 42 }`. The [current specification, 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#output-schema), **removed that constraint** — `outputSchema` and `structuredContent` may now be any valid JSON Schema 2020-12 value at the root, including an array. The spec's own example: a `list_users` tool can declare `"outputSchema": {"type": "array", "items": {...}}` and return `"structuredContent": [{"id": "1", ...}, ...]` directly, with no wrapper object required. If your server targets both spec versions (or clients that haven't upgraded), wrapping collections in an object is still the safer, more compatible choice — but it's no longer a hard requirement in the current spec.
 
 ### Returning structuredContent in Responses
 
@@ -119,7 +120,7 @@ The specification requires both fields to be present for tools with `outputSchem
 
 **Both fields must be semantically equivalent** — they represent the same information in different formats. `content` is optimized for token efficiency and natural language understanding. `structuredContent` is optimized for type-safe programmatic access.
 
-This dual approach exists for backward compatibility. Older clients that don't understand `structuredContent` continue to work by reading `content`. The [specification states](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#structured-output):
+This dual approach exists for backward compatibility. Older clients that don't understand `structuredContent` continue to work by reading `content`. The [specification states](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#structured-content) (unchanged in the [2026-07-28 revision](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#structured-content)):
 
 > A tool that returns structured content SHOULD also return the serialized JSON in a TextContent block.
 
@@ -130,6 +131,8 @@ Clients SHOULD NOT forward both fields to the LLM as separate inputs — they'd 
 If a tool declares `outputSchema` but a particular invocation can't produce structured output (e.g., an error condition), the server may omit `structuredContent` and return only `content` with `isError: true`. The absence of `structuredContent` combined with `isError` signals to the client that validation should not be attempted for this response.
 
 ## Implementation: TypeScript SDK
+
+> **SDK API note:** The code below shows the `server.tool(name, description, inputSchema, outputSchema, handler)` positional-argument form that was current when this guide was first written. As of the SDK's current major version, the [documented, recommended method is `server.registerTool(name, config, handler)`](https://github.com/modelcontextprotocol/typescript-sdk/blob/main/README.md), where `config` is an object carrying `description`, `inputSchema`, and (optionally) `outputSchema` — not four separate positional arguments. The underlying concepts below (Zod schemas, the dual `structuredContent`/`content` return shape) are unchanged; only the registration call's exact shape has moved. Check the [TypeScript SDK docs](https://ts.sdk.modelcontextprotocol.io/v2/) for the exact current signature before shipping.
 
 The TypeScript MCP SDK supports `outputSchema` through Zod schema definitions:
 
@@ -189,7 +192,7 @@ server.tool(
 );
 ```
 
-The SDK handles the Zod-to-JSON-Schema conversion automatically when registering the tool. The `outputSchema` parameter is the fourth argument to `server.tool()`, placed between `inputSchema` and the handler function.
+The SDK handles the Zod-to-JSON-Schema conversion automatically when registering the tool. (As noted above, the current SDK passes `outputSchema` as a field on the config object given to `registerTool()` rather than as a standalone positional argument — see the note at the top of this section.)
 
 ### Zod Schema Design Tips
 
@@ -219,6 +222,8 @@ const CustomerOutput = z.object({
 ```
 
 ## Implementation: Python SDK
+
+> **SDK API note:** The low-level `Server` class shown below (`from mcp.server import Server`, with `@server.list_tools()` / `@server.call_tool()` decorators and hand-written `output_schema` dicts) is the pattern from the Python SDK's 1.x line. The [Python SDK's current stable release (v2)](https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md) is a major rework built around a higher-level `MCPServer` class and an `@mcp.tool()` decorator that infers both input and output schema from type hints, instead of hand-written schema dicts — see [what's new in v2](https://py.sdk.modelcontextprotocol.io/whats-new/) and the [migration guide](https://py.sdk.modelcontextprotocol.io/migration/). `pip install mcp` now installs the 2.x line by default; the 1.x API below still exists on the SDK's `v1.x` branch for projects that haven't migrated, but it is no longer the default. The dictionary-based schema shown here remains valid JSON Schema and a correct mental model of what `outputSchema` looks like on the wire — just be aware the Python call pattern to produce it has changed.
 
 The Python SDK uses dictionary-based schemas (matching JSON Schema directly):
 
@@ -400,7 +405,7 @@ For untrusted servers, validation is a security measure — `structuredContent` 
 
 ### 1. Wrap Collections in Objects
 
-The root type must be `"object"`, so you can't return a bare array. This is actually good practice — it leaves room for metadata:
+Under the [2025-06-18 specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#output-schema), the root type had to be `"object"`, so a bare array wasn't allowed. The [2026-07-28 specification](https://modelcontextprotocol.io/specification/2026-07-28/server/tools#output-schema) lifted that restriction — a tool can now declare `"outputSchema": {"type": "array", ...}` and return an array directly as `structuredContent`. Even so, wrapping collections in an object is still good practice for most tools — it leaves room for metadata (pagination, counts, timing) without a breaking schema change later, and it stays compatible with clients still on the older spec revision:
 
 ```json
 {
@@ -609,7 +614,7 @@ async function purchaseWorkflow(client: McpClient, query: string) {
 
 ## Migrating from Text-Only to Structured Output
 
-If you have existing MCP tools that return JSON as text, migration is straightforward:
+If you have existing MCP tools that return JSON as text, migration is straightforward. (The Python snippets below use the same 1.x-line `types.CallToolResult` pattern as the [Python SDK section above](#implementation-python-sdk) — see the SDK API note there about the current v2 `@mcp.tool()` decorator API.)
 
 ### Step 1: Define the Schema
 

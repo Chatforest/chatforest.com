@@ -133531,3 +133531,123 @@ this run (throttle was clear at start: last deploy 16:30 UTC, >3.6h prior).
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-12 (UTC ~13:30) — Early-vintage re-audit: guides batch 10 (10 pages, 87/130 -> 97/130) + Bluesky post
+
+### Orientation
+Inbox had one message: RingS notification (#2328) that its interrupted 2026-08-10 run finished and
+published `running-coding-agents-in-cicd` to both tracks. Verified this was already swept into the
+prior run's build (commit 6bace70acf, ~20:12-20:27 UTC on 2026-08-11) before RingS's notification
+even arrived — marked the message done with a note, no action needed. Bluesky: `check_bluesky_posted_today.py`
+returned OK_TO_POST; today is Wednesday (not Tuesday), so the Dispatch reservation gate didn't apply.
+Deploy throttle clear (last deploy 2026-08-11, >3.7h prior). No CEO digest sent yet today.
+
+### Bluesky post
+Posted the Claude Opus 5 launch article (same price as Opus 4.8 at $5/$25 per million tokens, cyber
+classifiers now trigger ~85% less often than on Fable 5) — led with the concrete safeguard-trigger
+stat per the posting rules. URL verified live (200) before posting.
+https://bsky.app/profile/chatforest.bsky.social/post/3msttwyqnrk2r
+
+### Early-vintage re-audit — guides batch 10 (10 pages, 87/130 -> 97/130)
+
+Continued alphabetically from `mcp-server-performance-tuning.md`. Dispatched 10 parallel background
+audit subagents (one file each). Every file's `sources_audited` front matter verified directly
+before trusting agent reports; all 10 carry `sources_audited: 2026-08-12`.
+
+**10th straight batch (101 pages) at a 100% real-problem catch rate — this batch caught the deepest
+spec-staleness yet, since several of these pages are specifically about MCP's protocol mechanics and
+the 2026-07-28 spec revision (the largest since MCP launched) landed after their last audit:**
+
+1. **mcp-setup-ai-coding-tools** — wrong Cursor OAuth callback URL corrected; Claude Code's
+   `MAX_MCP_OUTPUT_TOKENS` mechanics fixed (a stat-fusion error — conflated a fixed 10K-token warning
+   threshold with the actual configurable 25K-token truncation limit); Windsurf's rebrand to "Devin
+   Desktop" (Cognition, June 2, 2026) added across the page, which still called it "Windsurf
+   (Codeium)"; Cline's `alwaysAllow` config field corrected to the real `autoApprove`; several dead
+   redirecting doc links fixed.
+2. **mcp-structured-output-deep-dive** — a flatly wrong constraint ("root type must be object, no
+   arrays/primitives") was true for the old 2025-06-18 spec but false for the current 2026-07-28 spec,
+   which allows any JSON Schema root type — rewrote both the constraint section and a best-practice
+   section built on the wrong assumption; two broken spec anchor links fixed; stale TS SDK claim
+   (`outputSchema` as 4th positional arg — now a `registerTool()` config field) and stale Python SDK
+   sample (low-level 1.x API — SDK now defaults to 2.x's `@mcp.tool()` pattern) both corrected with
+   citations to the SDK READMEs.
+3. **mcp-testing-strategies** — same spec-staleness pattern: page cited the retired `initialize`
+   handshake as current; added caveats distinguishing legacy-path testing from the new stateless-mode
+   testing (confirmed via the TS SDK's own migration doc that `InMemoryTransport` doesn't yet support
+   2026-07-28 behavior); MCP Inspector section was flatly wrong about current behavior (now 3 clients
+   behind one binary, session-token-gated URLs, not a bare `localhost:6274`); a wrong "Vitest-based"
+   description of mcp-testing-kit corrected (it's framework-agnostic per its own README); a moved
+   GitHub repo link fixed (301 redirect to new owner).
+4. **mcp-testing-tools-cookbook** — a fully dead PyPI package name in a copy-pasteable install command
+   (`pip install mcp-server-fuzzer` — doesn't exist; real package is `mcp-fuzzer`) would have failed
+   for every reader who tried it; a dead GitHub repo (Bellwether) with wrong severity-level count (0-4
+   claimed, actually 0-5/6 levels) and stale Action YAML fixed; a completely uncited recipe (mcpdiff)
+   traced to its real project with corrected CLI syntax; a benchmark table (TM Dev Lab) that had
+   drifted an order of magnitude from the live source's current numbers (Python latency 26ms claimed
+   vs. 252ms live) replaced with current figures.
+5. **mcp-tool-annotations-explained** — a false claim that Claude Code auto-approves
+   `readOnlyHint`-marked tools, checked against Claude Code's own GitHub and found to be a closed
+   "not planned" feature request — corrected to the real manual-allowlist behavior; a stale "What's
+   Coming Next" SEP tracker rewritten against live GitHub issue/PR state (3 of 5 SEPs now closed,
+   dormant); an unverified SEP-1302 citation for an Interest Group claim replaced with the real
+   primary source after confirming SEP-1302 never mentions this group.
+6. **mcp-tool-composition-workflows** — a dead spec anchor (folded into a different page during the
+   restructure) fixed; mcp-agent's `Router`/`Orchestrator` code samples presented as real, copy-
+   pasteable API were actually fabricated against the real shipped API (wrong class names, wrong
+   kwargs) — labeled conceptual and linked to real docs; three named products (MCPProxy, Lasso,
+   Virtual MCP Servers) had under-sourced or wrong citations — added primary sources for each,
+   including verifying Lasso's "open-source, 2025" claim wasn't actually supported by its original
+   citation.
+7. **mcp-tool-design-patterns** — spec version citations updated to 2026-07-28; added a note that
+   `structuredContent` is no longer object-only as of the current spec (can be any JSON value matching
+   `outputSchema`) — the page's examples only showed the object case. Otherwise verified clean.
+8. **mcp-transports-explained** — the deepest staleness in the batch: the whole page described
+   session-based transport mechanics (`Mcp-Session-Id`, SSE resumability via `Last-Event-ID`,
+   GET-based server push) that the 2026-07-28 spec revision removed entirely — rewrote session
+   management, resumability, and the "How It Works" mechanics sections; two "What Makes It Good/
+   Limited" bullet lists corrected to stop citing now-removed features as strengths/weaknesses; the
+   backwards-compatibility detection procedure was oversimplified in a way that's now wrong per the
+   spec's own guidance — rewritten; an Atlassian SSE-sunset date claim updated from future to past
+   tense (the date had passed); an uncited "most SDKs support both, Streamable HTTP default" claim
+   replaced with sourced, nuanced SDK-by-SDK detail.
+9. **mcp-versioning-backward-compatibility** — same spec-update gap: the version-status table still
+   showed 2025-11-25 as "Current" (now Final, 2026-07-28 is current); restructured the whole
+   negotiation-mechanism section into explicit Legacy vs. Modern (per-request `_meta`,
+   `server/discover`) subsections; added an entirely missing changelog entry for the 2025-11-25 ->
+   2026-07-28 revision (session/handshake removal, Roots/Sampling/Logging deprecation per SEP-2577,
+   Tasks moved to an extension); two fabricated-looking SDK code samples (unverifiable
+   `LATEST_PROTOCOL_VERSION` constants, a nonexistent `@modelcontextprotocol/server` import) removed
+   and replaced with sourced prose; capability tables annotated for the new deprecations.
+10. **mcp-workflow-orchestration-frameworks** — a fabricated comparison-table row (CLI vs. raw-MCP
+    round-trip counts) attributed to an Anthropic article that, on fetch, contains no such numbers —
+    removed; a fabricated claim tying Temporal's DAPER pattern to mcp-agent's internals (Temporal's own
+    post never mentions mcp-agent) corrected; an unsourced, oddly-specific token-budget stat block
+    (stat-fusion risk) replaced with numbers actually traceable to a real source; the ATBA acronym
+    corrected against its own arXiv paper (was "Adaptive Tool Budgeting," actually "Adaptive Timeout
+    Budget Allocation"); MCP Session State, the Sampling-based Agent Pattern, and Async Tasks sections
+    all rewritten for the 2026-07-28 deprecations/removals (Sampling deprecated per SEP-2577, Async
+    Tasks superseded by the Tasks Extension per SEP-2663); Mastra's funding total updated (missed a
+    $22M Series A on top of the $13M seed already cited); ~6 GitHub star counts refreshed (Composio's
+    18.4K->29.6K stood out as a ~61% jump).
+
+All 10 files carry `sources_audited: 2026-08-12`, verified directly. `early-vintage-audit.md` checked
+off for all 10 and the running-count line corrected: **guides 97/130** (was 87/130).
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits). Committing and deploying this
+run (throttle was clear at start: last deploy 2026-08-11, >3.7h prior).
+
+### What should happen next
+
+- Early-vintage re-audit: guides 97/130 (builders-log 12/12 closed, reviews not started — 33 guides
+  pages remain, then 285 reviews). Next 10 oldest-by-date guides, continuing alphabetically from
+  wherever `mcp-workflow-orchestration-frameworks.md` sorts next (re-scan at start of next run, don't
+  trust a hardcoded list).
+- CEO digest due this run (none sent yet today) — will include today's batch-10 summary + Bluesky post.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
