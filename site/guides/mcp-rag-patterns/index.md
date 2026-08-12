@@ -105,8 +105,8 @@ The practical foundation for MCP-based RAG is vector database servers that expos
 |--------|-----------|-------------|----------|
 | [qdrant/mcp-server-qdrant](https://github.com/qdrant/mcp-server-qdrant) | Qdrant | Official, store + find tools, FastEmbed, SSE/HTTP transport | General-purpose semantic memory |
 | [zilliztech/mcp-server-milvus](https://github.com/zilliztech/mcp-server-milvus) | Milvus/Zilliz | Official, collection management, search, CRUD | Milvus ecosystems |
-| [Pinecone MCP](https://github.com/zx8086/pinecone-vector-db-mcp-server) | Pinecone | Read/write vectors, metadata filtering | Managed vector search |
-| [Chroma MCP](https://github.com/modelcontextprotocol/servers) | Chroma | Embeddings, full-text search, document storage | Local development, prototyping |
+| [Pinecone MCP](https://github.com/pinecone-io/pinecone-mcp) | Pinecone | Official, docs search, index stats, create/upsert/search records (integrated-inference indexes only) | Managed vector search |
+| [Chroma MCP](https://github.com/chroma-core/chroma-mcp) | Chroma | Official, vector search, full-text search, metadata filtering, document storage | Local development, prototyping |
 | [qdrant-rag-mcp](https://github.com/ancoleman/qdrant-rag-mcp) | Qdrant | Codebase semantic search, context-aware | Code search and navigation |
 | [py-mcp-qdrant-rag](https://github.com/amornpan/py-mcp-qdrant-rag) | Qdrant | RAG pipeline, Ollama + OpenAI embeddings | Full RAG with local LLMs |
 | [rag-code-mcp](https://github.com/doITmagic/rag-code-mcp) | Qdrant | Multi-language code search, local LLMs | IDE code understanding |
@@ -133,7 +133,7 @@ This two-tool pattern (store + find) is the minimal interface for MCP-based sema
 
 ## RAG-MCP: Using RAG to Select MCP Tools
 
-An interesting inversion of the MCP+RAG pattern is using RAG *to improve MCP itself*. The [RAG-MCP paper](https://arxiv.org/abs/2505.03275) (Gan et al., 2025) addresses a real production problem: as agents connect to more MCP servers, tool descriptions bloat the prompt, degrading both performance and accuracy.
+An interesting inversion of the MCP+RAG pattern is using RAG *to improve MCP itself*. The [RAG-MCP paper](https://arxiv.org/abs/2505.03275) (Gan and Sun, 2025) addresses a real production problem: as agents connect to more MCP servers, tool descriptions bloat the prompt, degrading both performance and accuracy.
 
 **The problem:** An agent with 50+ MCP tools must include all tool descriptions in its context. This wastes tokens and confuses tool selection — the paper found baseline accuracy of just 13.62% when selecting among many tools.
 
@@ -209,21 +209,21 @@ MCP resources give the agent schema awareness before it searches, improving quer
 
 ### Latency Budget
 
-RAG adds retrieval latency to every query. With MCP, this latency is explicit:
+RAG adds retrieval latency to every query. With MCP, this latency is explicit and comes from three stages, each with a different bottleneck:
 
-- **Vector search:** 50-200ms (depends on collection size and hosting)
-- **Embedding generation:** 10-50ms (local FastEmbed) or 100-500ms (API-based)
-- **MCP protocol overhead:** Minimal (JSON-RPC, typically <10ms)
+- **Vector search:** scales with collection size and hosting (self-hosted vs. managed, disk vs. memory index) — there's no single number that applies across vector databases and deployment types.
+- **Embedding generation:** locally-run models (like Qdrant's default [FastEmbed](https://github.com/qdrant/fastembed)) avoid a network round-trip; API-based embedding calls add that round-trip plus provider queueing time.
+- **MCP protocol overhead:** the JSON-RPC message layer itself is lightweight, but actual overhead depends on the transport (stdio vs. SSE vs. Streamable HTTP) and server implementation.
 
-For real-time applications, consider pre-computing embeddings and caching frequent queries.
+For real-time applications, consider pre-computing embeddings and caching frequent queries. Benchmark against your own collection size, hosting choice, and transport rather than relying on generic latency figures — they vary too much by configuration to be meaningful as fixed numbers.
 
 ### Chunking Strategy
 
 When ingesting documents through MCP, chunking decisions matter:
 
-- **Too small** (< 100 tokens): Loses context, fragments information
-- **Too large** (> 1000 tokens): Dilutes relevance, wastes context window
-- **Sweet spot:** 200-500 tokens with 10-20% overlap for most use cases
+- **Too small:** loses surrounding context, fragments information across chunks
+- **Too large:** dilutes relevance in the similarity match and wastes context window when injected
+- **No universal size:** [Pinecone's chunking guide](https://www.pinecone.io/learn/chunking-strategies/) is explicit that "there's no one-size-fits-all solution to chunking" and recommends testing a range — it uses 128-256 tokens as an example for granular, factual queries and 512-1024 tokens for retaining more context on complex questions, then iterating against your own retrieval metrics rather than copying a fixed number.
 
 Some MCP RAG servers (like [mcp-rag-scanner](https://github.com/myonathanlinkedin/mcp-rag-scanner)) handle chunking automatically; others expect pre-chunked input.
 
@@ -235,7 +235,7 @@ Pure semantic search misses exact matches (error codes, product IDs, version num
 - **Keyword search** via full-text search MCP server or database (finds exact matches)
 - **Reranking** to merge and order results from both
 
-Chroma's MCP server supports both embedding-based and full-text search in a single tool, making it a good choice for hybrid search without multiple servers.
+[Chroma's official MCP server](https://github.com/chroma-core/chroma-mcp) supports both embedding-based (vector) and full-text search from a single server, making it a good choice for hybrid search without standing up multiple servers.
 
 ### Caching and Freshness
 
@@ -266,7 +266,7 @@ How does MCP-based retrieval compare to established RAG frameworks like LangChai
 | **Architecture** | Protocol-based, client-server | Library-based, in-process |
 | **Model coupling** | Model-agnostic by design | Often coupled to specific providers |
 | **Retrieval control** | Agent decides when/what to retrieve | Application defines fixed pipeline |
-| **Ecosystem** | Growing; MCP servers for major vector DBs | Mature; 700+ integrations |
+| **Ecosystem** | Growing; MCP servers for major vector DBs | Mature; [1,000+ integrations](https://docs.langchain.com/oss/python/integrations/providers/overview) |
 | **Complexity** | MCP server per data source | Single application with imports |
 | **Multi-agent** | Natural — agents share MCP servers | Requires additional coordination |
 | **Debugging** | Explicit tool calls in conversation | Internal pipeline, harder to trace |
@@ -282,7 +282,7 @@ How does MCP-based retrieval compare to established RAG frameworks like LangChai
 
 ### Where We Are (March 2026)
 
-- Official MCP servers exist for Qdrant, Milvus, and Chroma, with community servers for Pinecone and others
+- Official MCP servers exist for [Qdrant](https://github.com/qdrant/mcp-server-qdrant), [Milvus](https://github.com/zilliztech/mcp-server-milvus), [Chroma](https://github.com/chroma-core/chroma-mcp), and [Pinecone](https://github.com/pinecone-io/pinecone-mcp), with community servers filling gaps for other vector databases
 - The RAG-MCP paper demonstrated using retrieval to manage MCP tool selection at scale
 - Agentic RAG patterns are becoming standard across production AI deployments
 - Most production AI systems combine RAG for knowledge retrieval with MCP for tool use

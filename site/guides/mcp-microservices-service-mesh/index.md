@@ -5,7 +5,7 @@
 
 MCP servers are no longer standalone tools running on a developer's laptop. As organizations adopt MCP for production AI systems, these servers are becoming first-class microservices — deployed in Kubernetes, routed through service meshes, discovered via registries, and monitored with distributed tracing. The architectural challenge is clear: MCP's stateful session model collides with the stateless, horizontally-scalable world of microservices.
 
-The ecosystem is responding fast. Envoy's AI Gateway has native MCP proxy support. IBM's ContextForge (3,500+ stars) federates MCP, A2A, REST, and gRPC services. Stacklok's ToolHive (1,700+ stars) provides a Kubernetes operator with a dedicated `MCPServer` CRD. Traefik Labs introduced Task-Based Access Control specifically for AI agent authorization. And a major specification proposal (SEP-1442) aims to make MCP stateless by default, solving the load balancing problem at the protocol level.
+The ecosystem is responding fast. [Envoy's AI Gateway has native MCP proxy support](https://aigateway.envoyproxy.io/blog/mcp-implementation/). [IBM's ContextForge (4,300+ stars)](https://github.com/IBM/mcp-context-forge) federates MCP, A2A, REST, and gRPC services. [Stacklok's ToolHive (2,000+ stars)](https://github.com/stacklok/toolhive) provides a Kubernetes operator with a dedicated `MCPServer` CRD. [Traefik Labs introduced Task-Based Access Control](https://doc.traefik.io/traefik-hub/mcp-gateway/guides/understanding-tbac) specifically for AI agent authorization. And as of the [MCP spec's 2026-07-28 release](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/), [SEP-2575 "Make MCP Stateless"](https://modelcontextprotocol.io/seps/2575-stateless-mcp) has been adopted, removing the `initialize` handshake and the `Mcp-Session-Id` header from the base protocol, solving the load balancing problem described later in this guide at the protocol level.
 
 This guide covers the patterns, tools, and trade-offs for running MCP servers in distributed microservice architectures. Our analysis draws on published documentation, GitHub repositories, and vendor materials — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -53,7 +53,7 @@ The gateway pattern places multiple MCP servers behind a single gateway that han
 
 ### Spring Boot Integration: MCP as a Standard Java Microservice
 
-Spring AI provides official MCP Server Boot Starters (`spring-ai-mcp-server-spring-boot-starter`) that turn any Spring Boot application into an MCP server. This makes MCP a natural part of the Java microservice ecosystem — deploy with the same CI/CD pipelines, monitoring, and infrastructure as any other Spring service.
+[Spring AI provides official MCP Server Boot Starters](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) (`spring-ai-mcp-server-spring-boot-starter`) that turn any Spring Boot application into an MCP server. This makes MCP a natural part of the Java microservice ecosystem — deploy with the same CI/CD pipelines, monitoring, and infrastructure as any other Spring service.
 
 Stateless MCP servers built with Spring AI are specifically designed for cloud-native deployment, requiring Java 17+ and Spring Boot 3.x.
 
@@ -61,9 +61,9 @@ Stateless MCP servers built with Spring AI are specifically designed for cloud-n
 
 ### Envoy AI Gateway: Native MCP Support
 
-The Envoy AI Gateway has first-class MCP support, implemented as a lightweight Go-based MCP Proxy within the Envoy sidecar. Because it runs inside Envoy, it inherits the full networking stack — connection management, load balancing, circuit breaking, rate limiting, and observability — without adding additional infrastructure.
+[The Envoy AI Gateway has first-class MCP support](https://aigateway.envoyproxy.io/blog/mcp-implementation/), implemented as a lightweight Go-based MCP Proxy within the Envoy sidecar. Because it runs inside Envoy, it inherits the full networking stack — connection management, load balancing, circuit breaking, rate limiting, and observability — without adding additional infrastructure.
 
-**Session management:** Uses a token-encoding architecture instead of centralized session stores. Multiple backend session IDs are encoded into unified session tokens, eliminating the need for distributed session state.
+**Session management:** [Uses a token-encoding architecture](https://aigateway.envoyproxy.io/docs/0.5/capabilities/mcp/) instead of centralized session stores. Multiple backend session IDs are encoded into a single, encrypted session token, eliminating the need for a distributed session store while brokering access to multiple upstream MCP servers.
 
 **SSE reconnection:** Handles `Last-Event-ID` headers for SSE stream reconnection, critical for long-running MCP sessions that may experience network interruptions.
 
@@ -75,19 +75,19 @@ The Envoy AI Gateway has first-class MCP support, implemented as a lightweight G
 
 ### Istio and mTLS Between MCP Servers
 
-Service meshes like Istio and Linkerd deploy sidecar proxies alongside each microservice — including MCP servers — intercepting all traffic and automatically handling certificate management and encryption. IBM's ContextForge project has documented deployment patterns for MCP Gateway with mTLS in Kubernetes using Istio, where strict peer authentication policies enforce encrypted communication for all MCP traffic automatically.
+Service meshes like [Istio](https://istio.io/latest/docs/reference/config/security/peer_authentication/) and Linkerd deploy sidecar proxies alongside each microservice — including MCP servers — intercepting all traffic and automatically handling certificate management and encryption via `PeerAuthentication` policies that can require strict mTLS between pods. This is a general capability of the mesh itself, not something MCP-specific projects need to build. IBM's ContextForge gateway has an [open feature request (GitHub issue #568)](https://github.com/ibm/mcp-context-forge/issues/568) describing an Istio-mesh deployment scenario — "Istio automatically handles mTLS between all pods" — as a target use case; as of this writing that issue tracks planned work, not a shipped or documented ContextForge-specific mTLS integration, so treat mesh-level mTLS for MCP traffic as something you configure at the Istio layer rather than a ContextForge feature.
 
 This is particularly important for MCP because tool calls often carry sensitive data (database queries, API credentials, user context). With a service mesh, every MCP server-to-server call is encrypted without application-level changes.
 
 ### Traefik Hub: Triple Gate Pattern
 
-Traefik Labs developed a three-gate security architecture specifically for AI agent traffic:
+[Traefik Labs developed a three-gate security architecture](https://traefik.io/solutions/mcp-gateway) specifically for AI agent traffic:
 
 - **Gate 1 (AI Gateway):** Protects the client-to-LLM pathway — PII filtering, jailbreak detection, prompt injection defense
 - **Gate 2 (MCP Gateway):** Protects the LLM-to-MCP-Server pathway — TBAC authorization, tool-level policies, parameter validation
 - **Gate 3 (API Gateway):** Protects the MCP-Server-to-External-API pathway — rate limiting, input validation, credential management
 
-**Task-Based Access Control (TBAC):** Traefik introduced a three-dimensional authorization model replacing RBAC for AI agents:
+**Task-Based Access Control (TBAC):** [Traefik introduced a three-dimensional authorization model](https://doc.traefik.io/traefik-hub/mcp-gateway/guides/understanding-tbac) replacing RBAC for AI agents:
 - **Tasks** — what the agent is trying to accomplish
 - **Tools** — which MCP tools the agent can access
 - **Transactions** — limits on what each tool call can do
@@ -113,20 +113,22 @@ A second implementation, [`kswap/consul-mcp`](https://github.com/kswap/consul-mc
 
 Several projects provide Kubernetes-native discovery for MCP servers:
 
-- **ToolHive Kubernetes Operator** (Stacklok) — automated service discovery with ingress integration for MCP servers deployed as Kubernetes resources
-- **Microsoft MCP Gateway** — uses headless Kubernetes services for session-aware pod routing
-- **LiteLLM Proxy** — supports the MCP Registry spec for automatic server discovery, allowing external agent frameworks to discover hosted MCP servers through a standardized endpoint
-- **IBM ContextForge** — Redis-backed federation for multi-cluster discovery across Kubernetes environments
+- **[ToolHive Kubernetes Operator](https://github.com/stacklok/toolhive)** (Stacklok) — automated service discovery with ingress integration for MCP servers deployed as Kubernetes resources
+- **[Microsoft MCP Gateway](https://github.com/microsoft/mcp-gateway)** — uses headless Kubernetes services for session-aware pod routing
+- **[LiteLLM Proxy](https://docs.litellm.ai/docs/mcp)** — supports server discovery for MCP tools it fronts, allowing agent frameworks to discover hosted MCP servers through a standardized proxy endpoint
+- **[IBM ContextForge](https://github.com/IBM/mcp-context-forge)** — Redis-backed federation for multi-cluster discovery across Kubernetes environments
 
 ### Registry-Based Discovery
 
-ContextForge acts as both registry and proxy, federating MCP, A2A, REST, and gRPC services into a unified discovery endpoint. ToolHive provides a Registry Server that curates trusted server catalogs with provenance verification and custom server registration.
+[ContextForge](https://github.com/IBM/mcp-context-forge) acts as both registry and proxy, federating MCP, A2A, REST, and gRPC services into a unified discovery endpoint. [ToolHive provides a Registry Server](https://docs.stacklok.com/toolhive/) that curates trusted server catalogs with provenance verification and custom server registration.
 
 For deeper coverage of MCP registries and discovery, see our [MCP Registry and Server Discovery guide](/guides/mcp-registry-server-discovery/).
 
 ## Load Balancing Stateful MCP Sessions
 
-MCP's stateful session model creates a fundamental tension with standard load balancing. Clients receive an `mcp-session-id` during initialization, and all subsequent requests must route to the same backend instance. Standard round-robin load balancers break this.
+**Update:** As of the [MCP specification's 2026-07-28 release](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/), [SEP-2575 "Make MCP Stateless"](https://modelcontextprotocol.io/seps/2575-stateless-mcp) has been finalized and removes the `initialize` handshake and the `Mcp-Session-Id` header from the base protocol entirely — see the SEP-2575 subsection below. The problem description and workarounds in this section describe the stateful session model used by MCP spec versions prior to 2026-07-28, which is still what most production MCP servers and gateways implement today while the ecosystem migrates to the stateless model.
+
+MCP's (pre-2026-07-28) stateful session model creates a fundamental tension with standard load balancing. Clients receive an `mcp-session-id` during initialization, and all subsequent requests must route to the same backend instance. Standard round-robin load balancers break this.
 
 ### The Problem
 
@@ -140,21 +142,22 @@ Most cloud Application Load Balancers (AWS ALB, GCP LB) don't support header-bas
 
 **Distributed state stores.** Deploy stateless MCP servers that share session context via Redis or another external store. Each server instance can handle any request because state isn't local. This enables standard load balancing at the cost of latency (one additional network hop per request for state retrieval).
 
-**Token-encoding architecture (Envoy AI Gateway).** Encode session state directly in tokens rather than maintaining server-side session maps. The token carries enough information for any backend to reconstruct the session context.
+**Token-encoding architecture ([Envoy AI Gateway](https://aigateway.envoyproxy.io/docs/0.5/capabilities/mcp/)).** Encode session state directly in tokens rather than maintaining server-side session maps. The token carries enough information for any backend to reconstruct the session context.
 
-**StatefulSets with headless services (Microsoft MCP Gateway).** Use Kubernetes StatefulSets for predictable pod identities and headless services for direct pod routing. The gateway maintains a session-to-pod mapping and routes accordingly.
+**StatefulSets with headless services ([Microsoft MCP Gateway](https://github.com/microsoft/mcp-gateway)).** Use Kubernetes StatefulSets for predictable pod identities and headless services for direct pod routing. The gateway maintains a session-to-pod mapping and routes accordingly.
 
-### SEP-1442: Making MCP Stateless by Default
+### SEP-2575: MCP Is Now Stateless by Default
 
-A major specification proposal (SEP-1442) aims to solve this at the protocol level. Authored by engineers from multiple organizations, it proposes deprecating the initialization handshake and making MCP stateless by default.
+[SEP-2575 "Make MCP Stateless"](https://modelcontextprotocol.io/seps/2575-stateless-mcp) — originally tracked as [GitHub issue #1442](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442), authored by Jonathan Hefner, Mark Roth, Shaun Smith, Harvey Tuch, and Kurtis Van Gent — solves this at the protocol level. It removes the initialization handshake and makes MCP stateless by default. The SEP reached **Final** status and shipped as part of the [MCP specification's 2026-07-28 release](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/).
 
-**Key changes proposed:**
-- Per-request `MCP-Protocol-Version` headers replace the initialization handshake
+**What actually changed:**
+- Per-request `MCP-Protocol-Version` headers and `_meta` fields replace the initialization handshake
 - A new `server/discover` RPC replaces `initialize` for capability queries
-- The `MCP-Session-Id` header becomes optional, used only when stateful features are needed
-- Stateless MCP servers would work with any standard load balancer
+- The `Mcp-Session-Id` header is **removed entirely**, not made optional — protocol-level sessions are gone. A related proposal, [SEP-2567 "Sessionless MCP via Explicit State Handles"](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2567) (also merged/final), replaces sessions with explicit, server-minted state handles that applications thread through requests as parameters when they need statefulness
+- Resumable SSE streams via `Last-Event-ID` are removed for the same reason; workloads needing durability use the separate tasks extension instead
+- Stateless MCP servers now work with any standard load balancer, no sticky routing required
 
-**Status:** Draft, backward-incompatible change requiring a new protocol version. If adopted, this would be the single biggest improvement for MCP in microservice architectures.
+**Status:** Final and released — not a draft. This is a backward-incompatible protocol version change, so existing deployments (including the gateway and load-balancing strategies described above) continue running the pre-2026-07-28 stateful model until they're upgraded.
 
 For the current state of MCP transport evolution, see our [MCP Transports Explained guide](/guides/mcp-transports-explained/).
 
@@ -164,7 +167,7 @@ MCP tool calls that span multiple services need distributed tracing. Without it,
 
 ### OpenTelemetry Integration
 
-The MCP community has proposed integrating OpenTelemetry tracing directly into the protocol (GitHub Discussion #269, Issue #246). The proposal would include trace IDs and span IDs as part of MCP client-to-server communication, enabling end-to-end visibility across agent → MCP server → downstream service chains.
+The MCP community has proposed integrating OpenTelemetry tracing directly into the protocol ([GitHub Discussion #269](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/269), [Issue #246](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/246)). The proposal would include trace IDs and span IDs as part of MCP client-to-server communication, enabling end-to-end visibility across agent → MCP server → downstream service chains.
 
 **Typical trace structure:**
 
@@ -179,7 +182,7 @@ Key span attributes: `tool.name`, `tool.input_size`, `tool.output_size`, `http.s
 
 ### FastMCP: Built-in OpenTelemetry
 
-FastMCP includes native OpenTelemetry instrumentation with zero configuration:
+[FastMCP includes native OpenTelemetry instrumentation](https://gofastmcp.com/servers/telemetry) with zero configuration:
 
 - Traces auto-generated for tool, prompt, resource, and resource template operations
 - W3C TraceContext propagation between MCP client and server processes
@@ -190,7 +193,7 @@ FastMCP includes native OpenTelemetry instrumentation with zero configuration:
 
 ### MCPcat: MCP Events as OTLP Traces
 
-MCPcat (available on PyPI as `mcpcat`) transforms MCP events into OTLP-compliant traces:
+[MCPcat](https://mcpcat.io/guides/monitor-mcp-performance-opentelemetry/) (available on [PyPI as `mcpcat`](https://pypi.org/project/mcpcat/)) transforms MCP events into OTLP-compliant traces:
 
 - Maps MCP session IDs to trace IDs, event IDs to span IDs
 - GZIP compression reduces payload sizes by 60-80%
@@ -202,26 +205,27 @@ The [`traceloop/opentelemetry-mcp-server`](https://github.com/traceloop/opentele
 
 ### Python SDK Instrumentation
 
-The `opentelemetry-instrumentation-mcp` package (v0.52.3 on PyPI) instruments MCP Python SDK workflows, logging prompts, completions, and tool usage to span attributes. Privacy controls available via `TRACELOOP_TRACE_CONTENT=false`.
+The [`opentelemetry-instrumentation-mcp` package](https://pypi.org/project/opentelemetry-instrumentation-mcp/) (v0.62.3 on PyPI as of this writing) instruments MCP Python SDK workflows, logging prompts, completions, and tool usage to span attributes. Privacy controls available via `TRACELOOP_TRACE_CONTENT=false`.
 
 For deeper coverage of MCP observability, see our [MCP Logging and Observability guide](/guides/mcp-logging-observability/).
 
 ## API Gateways for MCP
 
-API gateways sit between clients and MCP servers, providing security, routing, rate limiting, and observability at the network edge. The MCP gateway market has exploded — the [`e2b-dev/awesome-mcp-gateways`](https://github.com/e2b-dev/awesome-mcp-gateways) list (87 stars) catalogs the full ecosystem.
+API gateways sit between clients and MCP servers, providing security, routing, rate limiting, and observability at the network edge. The MCP gateway market has exploded — the [`e2b-dev/awesome-mcp-gateways`](https://github.com/e2b-dev/awesome-mcp-gateways) list (160+ stars) catalogs the full ecosystem.
 
 ### Kong AI Gateway
 
-Kong's enterprise AI Gateway includes an **AI MCP Proxy Plugin** that operates in three modes:
-- **Proxy MCP** — Forward MCP traffic with added security and observability
-- **REST-to-MCP** — Convert existing REST APIs into MCP tools without modifying backends
-- **Tool grouping** — Expose curated tool sets from multiple backends through a single endpoint
+[Kong's enterprise AI Gateway includes an **AI MCP Proxy Plugin**](https://developer.konghq.com/plugins/ai-mcp-proxy/) that operates in four modes:
+- **`passthrough-listener`** — forward MCP traffic to an upstream MCP server, with Kong's security and observability layered on
+- **`conversion-listener`** — convert RESTful API paths into MCP tools and accept incoming MCP requests on the route
+- **`conversion-only`** — convert RESTful API paths into reusable MCP tool definitions without accepting MCP requests directly
+- **`listener`** — aggregate tools from multiple `conversion-only` plugins behind a single MCP endpoint
 
-The companion AI MCP OAuth2 Plugin adds OAuth 2.0 authentication for MCP traffic, with ACL rules at both default and per-tool levels. Enterprise-only.
+The companion [AI MCP OAuth2 Plugin](https://developer.konghq.com/plugins/ai-mcp-oauth2/) adds OAuth 2.0 authentication for MCP traffic, with ACL rules at both default and per-tool levels. Enterprise-only.
 
-### IBM ContextForge (3,500+ Stars)
+### IBM ContextForge (4,300+ Stars)
 
-ContextForge is an AI Gateway, registry, and proxy that federates MCP, A2A, REST, and gRPC into a unified endpoint:
+[ContextForge](https://github.com/IBM/mcp-context-forge) is an AI Gateway, registry, and proxy that federates MCP, A2A, REST, and gRPC into a unified endpoint:
 
 - 40+ plugins for transports, protocols, and integrations
 - Redis-backed federation for multi-cluster Kubernetes deployment
@@ -231,16 +235,16 @@ ContextForge is an AI Gateway, registry, and proxy that federates MCP, A2A, REST
 
 ### Docker MCP Gateway
 
-Docker's open-source MCP Gateway runs MCP servers in isolated Docker containers with restricted privileges:
+[Docker's open-source MCP Gateway](https://www.docker.com/blog/docker-mcp-gateway-secure-infrastructure-for-agentic-ai/) runs MCP servers in isolated Docker containers with restricted privileges:
 
 - Built-in logging and call-tracing
 - Generic interceptors for container image signature verification and secret scanning
-- Available in Docker Desktop and as an open-source project
-- Companion `mcp-compose` tool (by phildougherty) provides Docker Compose-style YAML for multi-server configurations with STDIO-to-HTTP translation, session management, and connection pooling
+- Available in Docker Desktop and as an [open-source project](https://github.com/docker/mcp-gateway)
+- Companion [`mcp-compose` tool](https://github.com/phildougherty/mcp-compose) (by phildougherty) provides Docker Compose-style YAML for multi-server configurations with STDIO-to-HTTP translation, session management, and connection pooling
 
-### Microsoft MCP Gateway (549 Stars)
+### Microsoft MCP Gateway (778 Stars)
 
-A .NET 8 implementation purpose-built for Kubernetes:
+[A .NET 8 implementation](https://github.com/microsoft/mcp-gateway) purpose-built for Kubernetes:
 
 - Session-aware stateful routing via headless services
 - Azure Entra ID authentication with RBAC
@@ -249,19 +253,19 @@ A .NET 8 implementation purpose-built for Kubernetes:
 
 ### Portkey MCP Gateway
 
-A managed gateway providing per-workspace and per-user tool access control, rate limits, content filters, approval workflows, and comprehensive audit logging of every tool call.
+[A managed gateway](https://portkey.ai/docs/product/mcp-gateway) providing per-workspace and per-user tool access control, rate limits, content filters, approval workflows, and comprehensive audit logging of every tool call.
 
 ### LiteLLM Proxy
 
-A unified proxy for 100+ LLM models, A2A agents, and MCP tools with:
+[A unified proxy for 100+ LLM models, A2A agents, and MCP tools](https://docs.litellm.ai/docs/mcp) with:
 
 - MCP tool access control by team/key via `allowed_tools`
 - OAuth token exchange mediation
-- MCP Registry spec support for automatic server discovery
+- Server-name-prefixed tool namespacing for discovering tools across multiple backend MCP servers through the proxy
 
 ### Apache APISIX
 
-SSE streaming support with per-tenant quotas via JWT claims, multi-server failover with retry logic, and distributed tracing via SkyWalking and Zipkin plugins.
+SSE streaming support with per-tenant quotas via JWT claims, multi-server failover with retry logic, and distributed tracing via [SkyWalking](https://apisix.apache.org/docs/apisix/plugins/skywalking/) and [Zipkin](https://apisix.apache.org/docs/apisix/plugins/zipkin/) plugins.
 
 For more on gateway patterns, see our [MCP Gateway and Proxy Patterns guide](/guides/mcp-gateway-proxy-patterns/).
 
@@ -273,20 +277,22 @@ MCP servers don't have to be request-response only. Event-driven architectures c
 
 - [`kanapuli/mcp-kafka`](https://github.com/kanapuli/mcp-kafka) — Create/list/delete topics, produce messages with keys and headers, consume with configurable timeouts
 - [`tuannvm/kafka-mcp-server`](https://github.com/tuannvm/kafka-mcp-server) — Go implementation using franz-go and mcp-go; produce/consume, list brokers, describe topics, consumer group lag metrics
-- **StreamNative MCP Server** — Connects any Kafka or Pulsar service to AI agents; cluster resource management via natural language
-- **AWS MSK MCP Server** — Official AWS server for Amazon Managed Streaming for Kafka
+- **[StreamNative MCP Server](https://github.com/streamnative/streamnative-mcp-server)** — [connects any Kafka or Pulsar service to AI agents](https://streamnative.io/blog/introducing-the-streamnative-mcp-server-connecting-streaming-data-to-ai-agents); cluster resource management via natural language
 
-Confluent published integration guidance on powering multi-agent systems with real-time data using MCP and their Kafka platform, specifically for decoupled, event-driven agent communication.
+AWS previously offered an `aws-msk-mcp-server` for Amazon MSK, but it was [deprecated in 2026 in favor of the general-purpose `aws-api-mcp-server` or direct MSK boto3 APIs](https://github.com/awslabs/mcp/discussions/2615) — do not deploy the old MSK-specific server for new work.
+
+[Confluent published integration guidance on powering multi-agent systems with real-time data using MCP and their Kafka platform](https://www.confluent.io/blog/ai-agents-using-anthropic-mcp/), specifically for decoupled, event-driven agent communication.
 
 ### RabbitMQ MCP Servers
 
 - [`amazon-mq/mcp-server-rabbitmq`](https://github.com/amazon-mq/mcp-server-rabbitmq) — Official Amazon MQ implementation supporting multiple simultaneous broker connections
-- [`LarsCowe/queue-pilot`](https://github.com/LarsCowe/queue-pilot) — Supports both RabbitMQ and Kafka with JSON Schema validation
 - [`kmitchell/rabbitmq-mcp`](https://github.com/kmitchell/rabbitmq-mcp) — RabbitMQ HTTP API integration
+
+A previously-listed third option, `LarsCowe/queue-pilot` (a RabbitMQ+Kafka server with JSON Schema validation), is no longer reachable at its published GitHub URL as of this audit — the repo now 404s — so it has been removed from this list pending confirmation it's back online.
 
 ### NATS MCP Servers
 
-- [`sinadarbouy/mcp-nats`](https://github.com/sinadarbouy/mcp-nats) — Go implementation with real-time subscriptions, JetStream support for persistent publishing, consumer management; supports both SSE and stdio transports
+- [`sinadarbouy/mcp-nats`](https://github.com/sinadarbouy/mcp-nats) — Go implementation covering server management, read-only stream inspection, object store and key-value operations, publish operations, and multi-account support; supports both SSE and stdio transports. Its README does not document consumer-group management or JetStream persistent-publish tooling, despite those being commonly expected NATS features — verify against the current README before relying on them.
 - [`bmorphism/nats-mcp-server`](https://github.com/bmorphism/nats-mcp-server) — NATS CLI-based with publish, subscribe, and request-reply messaging
 
 ### When to Use Event-Driven MCP
@@ -319,8 +325,8 @@ Set upper bounds on MCP tool call latency. This is critical because sequential a
 
 ### Framework Support
 
-- **Envoy** — Native circuit breaking, retry, and timeout for all proxied MCP traffic
-- **Resilience4j** (Java/Spring Boot) — Circuit breaker, retry, and bulkhead for Spring AI MCP servers
+- **[Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/circuit_breaking)** — Native circuit breaking, retry, and timeout for all proxied MCP traffic
+- **[Resilience4j](https://github.com/resilience4j/resilience4j)** (Java/Spring Boot) — Circuit breaker, retry, and bulkhead for Spring AI MCP servers
 - **Kong** — Rate limiting and circuit breaking via plugin architecture
 - **ContextForge** — Built-in retries and rate limiting
 
@@ -332,10 +338,10 @@ For resilience patterns specific to MCP, see our [MCP Error Handling and Resilie
 
 Two leading projects let AI agents manage Kubernetes clusters through MCP:
 
-- [`containers/kubernetes-mcp-server`](https://github.com/containers/kubernetes-mcp-server) (1,200+ stars) — Go-native, directly hits the Kubernetes API with no kubectl dependency. Supports CRUD on any Kubernetes or OpenShift resource plus Helm operations. Distributed as a single binary, npm package, Python package, and Docker image. Helm chart: `helm install kubernetes-mcp-server oci://ghcr.io/containers/charts/kubernetes-mcp-server`
-- [`Flux159/mcp-server-kubernetes`](https://github.com/Flux159/mcp-server-kubernetes) (1,100+ stars) — Node.js implementation with kubectl_apply, kubectl_scale, kubectl_patch, kubectl_rollout, and Helm operations. Optional OpenTelemetry integration, non-destructive mode, and secrets masking.
+- [`containers/kubernetes-mcp-server`](https://github.com/containers/kubernetes-mcp-server) (1,900+ stars) — Go-native, directly hits the Kubernetes API with no kubectl dependency. Supports CRUD on any Kubernetes or OpenShift resource plus Helm operations. Distributed as a single binary, npm package, Python package, and Docker image. Helm chart: `helm install kubernetes-mcp-server oci://ghcr.io/containers/charts/kubernetes-mcp-server`
+- [`Flux159/mcp-server-kubernetes`](https://github.com/Flux159/mcp-server-kubernetes) (1,500+ stars) — Node.js implementation with kubectl_apply, kubectl_scale, kubectl_patch, kubectl_rollout, and Helm operations. Optional OpenTelemetry integration, non-destructive mode, and secrets masking.
 
-### ToolHive Kubernetes Operator (1,700+ Stars)
+### ToolHive Kubernetes Operator (2,000+ Stars)
 
 Stacklok's ToolHive is the most mature MCP-to-Kubernetes operator:
 
@@ -352,8 +358,8 @@ Stacklok's ToolHive is the most mature MCP-to-Kubernetes operator:
 
 For development and smaller deployments, Docker Compose provides a straightforward orchestration model:
 
-- The [`phildougherty/mcp-compose`](https://github.com/phildougherty/mcp-compose) project offers Docker Compose-style YAML for multiple MCP servers with a unified HTTP proxy, STDIO-to-HTTP translation, session management, connection pooling, and health checks
-- Docker's official blog describes defining agents and MCP tools in `compose.yaml`, spinning up full agentic stacks with `docker compose up`
+- The [`phildougherty/mcp-compose`](https://github.com/phildougherty/mcp-compose) project offers Docker Compose-style YAML for multiple MCP servers with a unified HTTP proxy, STDIO-to-HTTP translation, session management, and connection pooling
+- [Docker's official blog describes defining agents and MCP tools in `compose.yaml`](https://www.docker.com/blog/build-ai-agents-with-docker-compose/), spinning up full agentic stacks with `docker compose up`
 
 For containerization patterns, see our [MCP with Docker and Containers guide](/guides/mcp-docker-containers/).
 
@@ -382,15 +388,15 @@ For containerization patterns, see our [MCP with Docker and Containers guide](/g
 
 | Project | Stars | What It Does |
 |---|---|---|
-| [IBM/mcp-context-forge](https://github.com/IBM/mcp-context-forge) | 3,500+ | AI Gateway, registry, proxy for MCP/A2A/REST/gRPC |
-| [stacklok/toolhive](https://github.com/stacklok/toolhive) | 1,700+ | Enterprise MCP platform with Kubernetes operator |
-| [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | 1,200+ | Go-native Kubernetes management via MCP |
-| [Flux159/mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | 1,100+ | Node.js Kubernetes management via MCP |
-| [microsoft/mcp-gateway](https://github.com/microsoft/mcp-gateway) | 549 | Session-aware reverse proxy for Kubernetes |
-| [e2b-dev/awesome-mcp-gateways](https://github.com/e2b-dev/awesome-mcp-gateways) | 87 | Curated list of MCP gateways |
-| [traceloop/opentelemetry-mcp-server](https://github.com/traceloop/opentelemetry-mcp-server) | — | OTel trace querying across backends |
+| [IBM/mcp-context-forge](https://github.com/IBM/mcp-context-forge) | 4,300+ | AI Gateway, registry, proxy for MCP/A2A/REST/gRPC |
+| [stacklok/toolhive](https://github.com/stacklok/toolhive) | 2,000+ | Enterprise MCP platform with Kubernetes operator |
+| [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | 1,900+ | Go-native Kubernetes management via MCP |
+| [Flux159/mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) | 1,500+ | Node.js Kubernetes management via MCP |
+| [microsoft/mcp-gateway](https://github.com/microsoft/mcp-gateway) | 778 | Session-aware reverse proxy for Kubernetes |
+| [e2b-dev/awesome-mcp-gateways](https://github.com/e2b-dev/awesome-mcp-gateways) | 160+ | Curated list of MCP gateways |
+| [traceloop/opentelemetry-mcp-server](https://github.com/traceloop/opentelemetry-mcp-server) | 198 | OTel trace querying across backends |
 | [3loka/consul-mcp-server](https://github.com/3loka/consul-mcp-server) | — | Consul service discovery MCP server |
-| [phildougherty/mcp-compose](https://github.com/phildougherty/mcp-compose) | — | Docker Compose for MCP servers |
+| [phildougherty/mcp-compose](https://github.com/phildougherty/mcp-compose) | 57 | Docker Compose for MCP servers |
 
 **Industry players actively building MCP microservice infrastructure:** Microsoft, IBM, Docker, Kong, Traefik Labs, Envoy/Tetrate, Amazon/AWS, Stacklok, Portkey, LiteLLM/BerriAI, Spring AI (VMware/Broadcom), Confluent, StreamNative, and Apache APISIX.
 
@@ -398,13 +404,13 @@ For containerization patterns, see our [MCP with Docker and Containers guide](/g
 
 The MCP microservices landscape is evolving toward enterprise readiness:
 
-**SEP-1442 (Stateless MCP)** — If adopted, this eliminates the sticky session problem entirely. Standard load balancers, auto-scaling, and blue-green deployments would work with MCP servers the same way they work with REST APIs. This is the most impactful pending change for microservice adoption.
+**[SEP-2575 (Stateless MCP) has already landed](https://modelcontextprotocol.io/seps/2575-stateless-mcp)**, as of the spec's 2026-07-28 release — it eliminates the sticky-session problem at the protocol level. Standard load balancers, auto-scaling, and blue-green deployments now work with MCP servers the same way they work with REST APIs. What remains is ecosystem migration: most production gateways and servers still run pre-2026-07-28 spec versions and the stateful patterns described in this guide, so this is now an adoption curve rather than a pending proposal.
 
-**Kubernetes operators maturing** — ToolHive's `MCPServer` CRD is alpha today but represents the direction: declaring MCP servers as Kubernetes-native resources with automated lifecycle management.
+**Kubernetes operators maturing** — [ToolHive's `MCPServer` CRD](https://docs.stacklok.com/toolhive/reference/crds/mcpserver) is alpha today but represents the direction: declaring MCP servers as Kubernetes-native resources with automated lifecycle management.
 
 **Gateway consolidation** — The current proliferation of 10+ gateway solutions will likely consolidate as the protocol stabilizes. Envoy's native MCP support positions it as a strong default for teams already using Envoy-based meshes.
 
-**OpenTelemetry standardization** — The pending proposals to embed trace context in the MCP protocol would make distributed tracing seamless rather than requiring per-framework instrumentation.
+**OpenTelemetry standardization** — [The pending proposals](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/269) to embed trace context in the MCP protocol would make distributed tracing seamless rather than requiring per-framework instrumentation.
 
 The trajectory is clear: MCP is becoming a standard component in the microservice toolkit, not a special-purpose add-on. The patterns for deploying, securing, scaling, and observing MCP servers are converging with established microservice practices — and the tooling is catching up fast.
 

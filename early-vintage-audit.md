@@ -67,7 +67,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 107/130 done (2026-08-09 through 2026-08-12 runs).**
+**Status: 117/130 done (2026-08-09 through 2026-08-12 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -228,16 +228,16 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil & Gas, and Commodity Trading Tools](content/guides/mcp-mining-natural-resources.md)
 - [x] 2026-07-24 — [MCP and Multimodal AI: How Agents Handle Images, Video, Audio, and Rich Media](content/guides/mcp-multimodal-patterns.md)
 - [x] 2026-07-24 — [MCP and OpenAI: How ChatGPT, the Agents SDK, Codex, and the Responses API Use the Model Context Protocol](content/guides/mcp-openai-integration.md)
-- [ ] 2026-07-24 — [MCP and RAG: Building Retrieval-Augmented Generation Pipelines with Model Context Protocol](content/guides/mcp-rag-patterns.md)
-- [ ] 2026-07-24 — [MCP at the Edge: Deploying AI Agent Tools Closer to Users, Devices, and Data](content/guides/mcp-edge-computing-patterns.md)
-- [ ] 2026-07-24 — [MCP for Accounting — 95+ Integrations (2026)](content/guides/mcp-accounting-tax-compliance.md)
-- [ ] 2026-07-24 — [MCP for Data Science: AI Agents for Notebooks, ML Experiments, Feature Stores, and Data Pipelines](content/guides/mcp-data-science-workflows.md)
-- [ ] 2026-07-24 — [MCP for DevOps and CI/CD: AI Agents Meet Infrastructure Automation](content/guides/mcp-devops-cicd.md)
-- [ ] 2026-07-24 — [MCP for Testing and QA: AI Agents in Software Testing Pipelines](content/guides/mcp-testing-qa.md)
-- [ ] 2026-07-24 — [MCP in Microservices: Service Mesh, API Gateways, and Distributed Architecture Patterns](content/guides/mcp-microservices-service-mesh.md)
-- [ ] 2026-07-24 — [MCP in Regulated Industries: Compliance, Audit Trails, and Data Protection for AI Agents](content/guides/mcp-compliance-regulated-industries.md)
-- [ ] 2026-07-24 — [MCP on Serverless: Deploying AI Agent Tools on Lambda, Cloudflare Workers, Vercel, and Beyond](content/guides/mcp-serverless-deployment.md)
-- [ ] 2026-07-24 — [MCP vs A2A: Understanding the Two Protocols Shaping AI Agent Infrastructure](content/guides/mcp-vs-a2a-protocol-comparison.md)
+- [x] 2026-07-24 — [MCP and RAG: Building Retrieval-Augmented Generation Pipelines with Model Context Protocol](content/guides/mcp-rag-patterns.md)
+- [x] 2026-07-24 — [MCP at the Edge: Deploying AI Agent Tools Closer to Users, Devices, and Data](content/guides/mcp-edge-computing-patterns.md)
+- [x] 2026-07-24 — [MCP for Accounting — 95+ Integrations (2026)](content/guides/mcp-accounting-tax-compliance.md)
+- [x] 2026-07-24 — [MCP for Data Science: AI Agents for Notebooks, ML Experiments, Feature Stores, and Data Pipelines](content/guides/mcp-data-science-workflows.md)
+- [x] 2026-07-24 — [MCP for DevOps and CI/CD: AI Agents Meet Infrastructure Automation](content/guides/mcp-devops-cicd.md)
+- [x] 2026-07-24 — [MCP for Testing and QA: AI Agents in Software Testing Pipelines](content/guides/mcp-testing-qa.md)
+- [x] 2026-07-24 — [MCP in Microservices: Service Mesh, API Gateways, and Distributed Architecture Patterns](content/guides/mcp-microservices-service-mesh.md)
+- [x] 2026-07-24 — [MCP in Regulated Industries: Compliance, Audit Trails, and Data Protection for AI Agents](content/guides/mcp-compliance-regulated-industries.md)
+- [x] 2026-07-24 — [MCP on Serverless: Deploying AI Agent Tools on Lambda, Cloudflare Workers, Vercel, and Beyond](content/guides/mcp-serverless-deployment.md)
+- [x] 2026-07-24 — [MCP vs A2A: Understanding the Two Protocols Shaping AI Agent Infrastructure](content/guides/mcp-vs-a2a-protocol-comparison.md)
 - [ ] 2026-07-24 — [MCP vs CLI for AI Agents: When to Use Which in 2026](content/guides/mcp-vs-cli-ai-agents.md)
 - [ ] 2026-07-24 — [MCP vs Function Calling: What's the Difference and When to Use Each](content/guides/mcp-vs-function-calling.md)
 - [ ] 2026-07-24 — [MCP vs REST APIs: When to Use Each for AI Integration](content/guides/mcp-vs-rest-apis.md)

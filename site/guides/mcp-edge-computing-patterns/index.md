@@ -29,7 +29,7 @@ But several scenarios demand lower latency or local execution:
 
 ### Cloudflare Workers: The Most Mature Edge MCP Platform
 
-Cloudflare has the deepest edge MCP integration. Their Agents SDK provides a `McpAgent` class that extends the base `Agent` class, backed by Durable Objects for stateful sessions with WebSocket Hibernation (the Worker sleeps during inactivity, preserving state without billing).
+Cloudflare has the deepest edge MCP integration. Their [Agents SDK](https://developers.cloudflare.com/agents/model-context-protocol/apis/agent-api/) provides a `McpAgent` class that extends the base `Agent` class, backed by Durable Objects for stateful sessions with [WebSocket Hibernation](https://blog.cloudflare.com/building-ai-agents-with-mcp-authn-authz-and-durable-objects/) (the Worker sleeps during inactivity, preserving state without billing).
 
 **Transport options:**
 - **Streamable HTTP** — Production standard for remote MCP access
@@ -37,9 +37,9 @@ Cloudflare has the deepest edge MCP integration. Their Agents SDK provides a `Mc
 - **RPC bindings** — Internal Worker-to-Worker communication via Durable Objects, no public internet traversal
 
 **Key projects:**
-- [`cloudflare/workers-mcp`](https://github.com/cloudflare/workers-mcp) (633+ stars, used by 848+ projects) — Connects Claude Desktop directly to Cloudflare Workers
-- [`mcp-server-cloudflare`](https://github.com/cloudflare/mcp-server-cloudflare) (3,600+ stars) — 16 official Cloudflare service MCP servers
-- [`mcp-server-worker`](https://github.com/dannwaneri/mcp-server-worker) — Semantic search with Workers AI + Vectorize at $5-10/month
+- [`cloudflare/workers-mcp`](https://github.com/cloudflare/workers-mcp) (644+ stars, used by [880+ repositories](https://github.com/cloudflare/workers-mcp/network/dependents)) — Connects Claude Desktop directly to Cloudflare Workers
+- [`mcp-server-cloudflare`](https://github.com/cloudflare/mcp-server-cloudflare) (4,000+ stars) — 16 official Cloudflare service MCP servers
+- [`mcp-server-worker`](https://github.com/dannwaneri/mcp-server-worker) — Semantic search with Workers AI + Vectorize; the project's own cost estimate for 100,000 monthly searches is [~$5.40/month](https://github.com/dannwaneri/mcp-server-worker)
 
 **Performance:** V8 isolate architecture means near-zero cold starts. A documented [distributed MCP architecture](https://gist.github.com/taslabs-net/112420921d06aee89336325e30d110b5) using 8 specialized Workers with service bindings reports sub-100ms global response times and auto-deployment across 300+ data centers.
 
@@ -57,13 +57,11 @@ Fastly supports both Streamable HTTP and SSE for backward compatibility.
 
 ### Vercel Edge Functions
 
-Vercel's Edge Runtime, built on V8 isolates, delivers cold starts up to 9x faster than traditional serverless functions. The [`mcp-handler`](https://github.com/vercel/mcp-handler) package (576+ stars) drops MCP into Next.js, Nuxt, and SvelteKit projects. Community boilerplate like [`sdiehl/mcp-on-vercel`](https://github.com/sdiehl/mcp-on-vercel) demonstrates stateless Python MCP on Vercel Functions with 4-second deploys.
-
-One reported case showed an MCP server cutting CPU usage in half after switching to Streamable HTTP transport.
+Vercel's [Edge Runtime](https://vercel.com/docs/functions/runtimes/edge), built on V8 isolates, is architected for sub-5ms cold starts versus the hundreds of milliseconds typical of container-based serverless functions. The [`mcp-handler`](https://github.com/vercel/mcp-handler) package (640+ stars) drops MCP into Next.js, Nuxt, SvelteKit, and Hono projects. Community boilerplate like [`sdiehl/mcp-on-vercel`](https://github.com/sdiehl/mcp-on-vercel) demonstrates stateless Python MCP on Vercel Functions.
 
 ### Netlify Edge Functions
 
-Built on the Deno runtime at Netlify's CDN edge. [Netlify's guide](https://developers.netlify.com/guides/write-mcps-on-netlify/) documents deploying MCP servers with Streamable HTTP transport. The official [`netlify-mcp`](https://github.com/netlify/netlify-mcp) server provides a community server with 43 tools covering Blobs, Dev Server, Analytics, and Forms.
+Built on the Deno runtime at Netlify's CDN edge. [Netlify's guide](https://developers.netlify.com/guides/write-mcps-on-netlify/) documents deploying MCP servers with Streamable HTTP transport. The official [`netlify-mcp`](https://github.com/netlify/netlify-mcp) server covers project creation and deployment, access controls, extensions, environment variables/secrets, and form submission management. (A separate, third-party [`DynamicEndpoints/Netlify-MCP-Server`](https://github.com/DynamicEndpoints/Netlify-MCP-Server) claims a larger 43-tool surface including Blobs and Analytics — that is a different, community-maintained project, not Netlify's own.)
 
 ### Supabase Edge Functions
 
@@ -71,23 +69,23 @@ Deno-based serverless functions on Fly.io with sub-50ms latency. Uses [`mcp-lite
 
 ### Akamai EdgeWorkers
 
-The [ALECS MCP server](https://github.com/gamittal-ak/alecs-mcp-server-akamai) exposes 198 tools covering Property Manager, Edge DNS, CPS, WAF, reporting, and more. It manages CDN configurations, cache purging, EdgeWorkers deployment, and DNS records through natural language — a practical example of using MCP to manage edge infrastructure itself.
+The [ALECS MCP server](https://github.com/gamittal-ak/alecs-mcp-server-akamai) breaks its tools out by domain — [per the project's README](https://github.com/gamittal-ak/alecs-mcp-server-akamai): Property Manager (31 tools), Edge DNS (24), Certificate/CPS (22), Security/WAF (95), and Reporting (19), around 190 tools in total. It manages CDN configurations, cache purging, EdgeWorkers deployment, and DNS records through natural language — a practical example of using MCP to manage edge infrastructure itself. Note the project describes itself as deliberately trimming scope ("stability over sprawl") to a smaller set of verified, production-ready tools, so the exact count is a moving target.
 
 ### AWS Lambda@Edge and CloudFront Functions
 
-Lambda@Edge supports MCP at 218+ edge locations for complex operations. CloudFront Functions are lighter (1/6th the price of Lambda@Edge) for simpler routing and transformation logic. AWS has the broadest serverless MCP ecosystem overall through [`awslabs/mcp`](https://github.com/awslabs/mcp) and [`aws-samples/sample-serverless-mcp-servers`](https://github.com/aws-samples/sample-serverless-mcp-servers).
+Lambda@Edge runs across CloudFront's global network, which AWS currently lists at [750+ points of presence in 100+ cities across 50+ countries](https://aws.amazon.com/cloudfront/features/) (AWS does not publish a Lambda@Edge-specific subset count). CloudFront Functions are lighter — [AWS pricing](https://aws.amazon.com/cloudfront/pricing/) puts CloudFront Functions at $0.10 per million invocations versus $0.60 per million requests for Lambda@Edge, a 1/6th ratio on the request-pricing axis (Lambda@Edge also bills separately for execution duration). AWS has the broadest serverless MCP ecosystem overall through [`awslabs/mcp`](https://github.com/awslabs/mcp) and [`aws-samples/sample-serverless-mcp-servers`](https://github.com/aws-samples/sample-serverless-mcp-servers).
 
 ### Platform Comparison for Edge MCP
 
 | Platform | Runtime | Cold Start | Global Locations | Stateful Sessions | MCP Transport |
 |---|---|---|---|---|---|
 | Cloudflare Workers | V8 isolates | ~0ms | 300+ | Durable Objects | Streamable HTTP, SSE, RPC |
-| Fastly Compute | WebAssembly | Near-instant | 80+ | No (stateless) | Streamable HTTP, SSE |
-| Vercel Edge | V8 isolates | ~10ms | 18+ regions | No | Streamable HTTP, SSE |
+| Fastly Compute | WebAssembly | Near-instant | ~80 | No (stateless) | Streamable HTTP, SSE |
+| Vercel Edge | V8 isolates | ~10ms | 20+ compute regions | No | Streamable HTTP, SSE |
 | Netlify Edge | Deno/V8 | Low | CDN edge | No | Streamable HTTP |
 | Supabase Edge | Deno | <50ms | Fly.io regions | No | Streamable HTTP |
-| Lambda@Edge | Node.js/Python | 100-500ms | 218+ | No | Streamable HTTP |
-| CloudFront Functions | JavaScript | ~0ms | 400+ | No | Limited |
+| Lambda@Edge | Node.js/Python | 100-500ms | 750+ (shared CloudFront network) | No | Streamable HTTP |
+| CloudFront Functions | JavaScript | ~0ms | 750+ (shared CloudFront network) | No | Limited |
 
 ## MCP on IoT and Embedded Devices
 
@@ -99,8 +97,8 @@ Multiple projects demonstrate MCP running on ESP32 hardware:
 
 - **[`navado/ESP32MCPServer`](https://github.com/navado/ESP32MCPServer)** — WebSocket-based MCP server for resource discovery and monitoring
 - **[ESP RainMaker MCP Server](https://developer.espressif.com/blog/2025/07/esp-rainmaker-mcp-server/)** — Official Espressif integration for natural language IoT control
-- **[`emqx/esp-mcp-over-mqtt`](https://github.com/emqx/esp-mcp-over-mqtt)** — MCP over MQTT protocol transport for ESP32, with a 4-part tutorial series on building AI companions with voice interaction
-- **[`xiaozhi-esp32`](https://github.com/78/xiaozhi-esp32)** (24,900+ stars) — Voice AI on ESP32 supporting 70+ hardware platforms
+- **[`emqx/esp-mcp-over-mqtt`](https://github.com/emqx/esp-mcp-over-mqtt)** — MCP over MQTT protocol transport for ESP32. EMQX's companion ["Building Your AI Companion with ESP32 & MCP over MQTT"](https://www.emqx.com/en/blog/esp32-and-mcp-over-mqtt) blog series (six-plus parts, hosted in the separate [`emqx/esp32-mcp-mqtt-tutorial`](https://github.com/emqx/esp32-mcp-mqtt-tutorial) repo) walks through building a voice-interactive AI companion, culminating in [Part 4: Enabling Voice Interaction](https://www.emqx.com/en/blog/esp32-and-mcp-over-mqtt-4)
+- **[`xiaozhi-esp32`](https://github.com/78/xiaozhi-esp32)** (28,800+ stars) — Voice AI on ESP32 supporting 70+ hardware platforms
 
 ### Raspberry Pi: Full MCP Server on ARM
 
@@ -116,11 +114,11 @@ A research paper ([arxiv.org/html/2510.01260](https://arxiv.org/html/2510.01260)
 
 Results from testing with 22 sensor types across 6 microcontroller families: 100% task success rate, 205ms average response time, 74KB peak memory usage. A 12-hour production deployment in a multi-story building used 6 ESP32-S3 units.
 
-An IEEE paper on IoT Robotics (IoRT) describes MCP enabling modular service composition and semantic decoupling — treating devices as callable resources and tools rather than requiring protocol-specific integration code.
+An [IEEE paper on IoT Robotics (IoRT)](https://ieeexplore.ieee.org/iel8/8548628/11333934/11235950.pdf), "Enabling Modular and Intelligent IoRT Systems: Integrating the Model Context Protocol for Semantic Decoupling at the Edge" (published January 2026), describes MCP enabling modular service composition and semantic decoupling — treating devices as callable resources and tools rather than requiring protocol-specific integration code.
 
 ### Home Assistant: The Local-First Smart Home MCP
 
-[Home Assistant's MCP Server integration](https://www.home-assistant.io/integrations/mcp_server/) (available since version 2025.2, used by 3.2% of active installations) runs entirely locally — data stays on your network. The unofficial [`ha-mcp`](https://github.com/homeassistant-ai/ha-mcp) (1,600+ stars) provides 96 tools for comprehensive smart home control.
+[Home Assistant's MCP Server integration](https://www.home-assistant.io/integrations/mcp_server/) (available since version 2025.2, used by 3.5% of active installations per Home Assistant's own integration page) runs entirely locally — data stays on your network. The unofficial [`ha-mcp`](https://github.com/homeassistant-ai/ha-mcp) (4,300+ stars) provides 88 tools for comprehensive smart home control.
 
 This is local-first edge computing in practice: no cloud dependency, low latency, full data privacy.
 
@@ -192,7 +190,7 @@ AWS's [Semantic MCP Server architecture](https://aws.amazon.com/blogs/industries
 - Fine-tuned SLMs on AWS Outposts perform "semantic compression" — converting gigabytes of raw telemetry into kilobytes of diagnostic signals
 - Only the compressed, meaningful data travels via MCP to cloud systems
 - Reference model: Qwen 3 14B
-- Results: 65% latency reduction, 85%+ prediction precision, 70% faster response in SIM-swapping detection
+- Results reported in the post: a 90% reduction in token consumption for root-cause analysis (by filtering noisy logs down to kilobytes of semantic data), 97.5% precision and 91.7% recall in root-cause identification (correctly identifying the cause in 773 of 1,000 test cases), a 93% reduction in false positives versus earlier iterations, and ~6.45 seconds average inference latency on a single NVIDIA A10 GPU
 
 This pattern applies beyond telco — any scenario with high-volume sensor data benefits from edge-side semantic filtering before MCP transport.
 
@@ -249,7 +247,7 @@ The [Envoy AI Gateway](https://aigateway.envoyproxy.io/blog/mcp-implementation/)
 
 ### IBM ContextForge
 
-[`IBM/mcp-context-forge`](https://github.com/IBM/mcp-context-forge) is an open-source AI Gateway, registry, and proxy that federates MCP, A2A, REST, and gRPC APIs. 40+ plugins, Redis-backed federation for multi-cluster Kubernetes, Rust-powered JSON serialization. Supports HTTP, JSON-RPC, WebSocket, SSE, stdio, and Streamable HTTP transports.
+[`IBM/mcp-context-forge`](https://github.com/IBM/mcp-context-forge) is an open-source AI Gateway, registry, and proxy that federates MCP, A2A, REST, and gRPC APIs. Per its README, it offers 40+ plugins and Redis-backed federation and caching for multi-cluster Kubernetes deployments. Supports HTTP, JSON-RPC, WebSocket, SSE, stdio, and Streamable HTTP transports.
 
 ### AWS Edge Architecture
 
@@ -297,7 +295,7 @@ MCP's OAuth 2.1 foundation supports distributed auth through:
 
 ### Session Management
 
-If MCP sessions (identified by `Mcp-Session-Id`) need to survive across edge locations, auth codes, tokens, and consent records must live in a shared external store (Redis, Firestore, Postgres). If `/authorize` and `/token` run on different edge instances, the shared database ensures continuity.
+**Updated for the current spec.** The [2026-07-28 MCP specification revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) removed protocol-level sessions and the `Mcp-Session-Id` header entirely ([SEP-2567](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2567)): servers that need cross-call state now mint their own explicit handles and pass them as ordinary tool arguments, rather than relying on a session ID header. For edge deployments, this removes a class of session-affinity problems outright — there is no protocol-level session to keep sticky across edge locations. Auth codes, tokens, and consent records still need to live in a shared external store (Redis, Firestore, Postgres) if `/authorize` and `/token` run on different edge instances, since OAuth flows are unaffected by the session-handling change.
 
 Azure's approach — [API Management with Entra ID](https://learn.microsoft.com/en-us/azure/api-management/secure-mcp-servers) — provides multi-layered security with OAuth, credential management for backend API tokens, and a self-hosted gateway option for edge deployment.
 
@@ -316,7 +314,7 @@ No MCP-specific offline-first framework exists yet, but the patterns are well-es
 - **Background Sync API** — Queue MCP tool calls when offline, execute when connectivity returns
 - **Conflict resolution** — Last-write-wins or user prompts when offline changes conflict with server state
 
-MCP's **stateless Streamable HTTP mode** is naturally compatible with store-and-forward patterns — each tool call is an independent HTTP request, so queuing and replaying is straightforward.
+MCP's **stateless-by-default Streamable HTTP transport** (see [above](#mcp-specification-features-that-enable-edge)) is naturally compatible with store-and-forward patterns — each tool call is an independent HTTP request, so queuing and replaying is straightforward.
 
 **Local MCP servers** using stdio transport run entirely offline on the device. The [MCP specification's local server documentation](https://modelcontextprotocol.io/docs/develop/connect-local-servers) covers this pattern. Combined with on-device SLMs, this enables fully offline AI tool access.
 
@@ -385,13 +383,13 @@ Everything runs on-device. The LLM, MCP server, and tools are all local. No netw
 
 ## MCP Specification Features That Enable Edge
 
-Two specification features are particularly important for edge deployment:
+The spec has moved fast on this front — the picture below reflects the [2026-07-28 specification revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog), the current version as of this update, which changed several of the mechanics edge deployments care about most.
 
-**Streamable HTTP** (specification version 2025-03-26) — Single HTTP endpoint, stateless mode, optional sessions via `Mcp-Session-Id` header, SSE resumability. This transport was designed for serverless and edge deployment. See our [MCP on Serverless guide](/guides/mcp-serverless-deployment/) for transport details.
+**Streamable HTTP** — Single HTTP endpoint using HTTP POST/GET, introduced in specification version 2025-03-26 to replace the older HTTP+SSE transport. This transport was designed for serverless and edge deployment. See our [MCP on Serverless guide](/guides/mcp-serverless-deployment/) for transport details. Two mechanics edge operators may remember from earlier versions were removed in 2026-07-28: the `Mcp-Session-Id` header and protocol-level sessions (superseded by explicit, server-minted state handles passed as ordinary tool arguments), and SSE stream resumability via `Last-Event-ID` (a broken response stream now means the client re-issues the request with a new request ID rather than resuming the old one).
 
-**November 2025 specification updates** — Async Tasks (track long-running server work, query status from any edge location), Extensions framework (edge-specific additions outside core spec), improved OAuth authorization for distributed auth.
+**Stateless by default** — The 2025-03-26 spec offered stateless mode as an *option*; the 2026-07-28 revision made it the protocol's baseline behavior by removing the `initialize`/`notifications/initialized` handshake entirely ([SEP-2575](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575)). Every request now carries its own protocol version and capabilities, so there's no connection-scoped setup step to keep pinned to one edge instance — a direct win for horizontal scaling across edge locations.
 
-**Stateless mode** — No session context between requests. Each request creates a new server instance. This enables true horizontal scaling across edge locations without shared session state.
+**Async Tasks moved to an extension** — The task-tracking mechanism for long-running server work (useful for querying status from any edge location) shipped inside the core spec in the 2025-11-25 revision, but the 2026-07-28 revision moved it out into an official extension (`io.modelcontextprotocol/tasks`) with a redesigned polling-based API ([SEP-2663](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2663)). The general extensions mechanism itself (for edge-specific additions outside the core spec) and continued OAuth authorization hardening for distributed auth are both part of the current spec.
 
 ## Getting Started
 
@@ -413,7 +411,7 @@ If you're considering edge MCP deployment:
 
 The edge MCP ecosystem is evolving rapidly:
 
-- **MCP specification** — SEP-1442 proposes making stateless mode the default, further simplifying edge deployment
+- **MCP specification** — The stateless-by-default push tracked here as a proposal ([SEP-1442](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1442)) has already shipped: the [2026-07-28 specification revision](https://modelcontextprotocol.io/specification/2026-07-28/changelog) removed the initialize handshake and made every request self-describing ([SEP-2575](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575)), which is exactly the edge-deployment simplification this was aiming at
 - **WASM ecosystem** — MCP.run's planned serverless execution and wasmcp's growing middleware library will make WASM MCP more accessible
 - **Edge AI hardware** — [Qualcomm Snapdragon NPU (45 TOPS)](https://www.qualcomm.com/snapdragon/laptops-and-tablets/npu-powered-ai-experiences), Apple Neural Engine, and Google Edge TPU will make on-device MCP + local inference increasingly practical
 - **Protocol transports** — MCP over MQTT is just the beginning; expect MCP over CoAP, BLE, and other IoT protocols

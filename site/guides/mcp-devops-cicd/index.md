@@ -18,9 +18,9 @@ The [awesome-devops-mcp-servers](https://github.com/rohitg00/awesome-devops-mcp-
 | Server | Maintainer | Language | Key Capability |
 |--------|-----------|----------|---------------|
 | [terraform-mcp-server](https://github.com/hashicorp/terraform-mcp-server) | HashiCorp (official) | Go | Registry docs, provider schemas, workspace management |
-| [pulumi/mcp-server](https://github.com/pulumi/mcp-server) | Pulumi (official) | TypeScript | Automation API, multi-language IaC (TS/Python/Go) |
+| [@pulumi/mcp-server](https://www.npmjs.com/package/@pulumi/mcp-server) | Pulumi (official) | TypeScript | Automation API, multi-language IaC (TS/Python/Go) |
 | [tfmcp](https://github.com/nwiizo/tfmcp) | Community | Rust | Local Terraform operations, plan/apply workflows |
-| terraform-cloud-mcp | Community | Python | Terraform Cloud API, workspace CRUD |
+| [terraform-cloud-mcp](https://github.com/severity1/terraform-cloud-mcp) | Community | Python | Terraform Cloud API, workspace management |
 
 **HashiCorp's official Terraform MCP server** is the most mature. It provides real-time access to Terraform Registry data — provider documentation, resource schemas, module interfaces, and configuration examples. Instead of an AI model relying on potentially outdated training data for Terraform syntax, it queries the live registry. The server also integrates with HCP Terraform and Terraform Enterprise for workspace management, variable handling, and run operations.
 
@@ -31,7 +31,7 @@ The [awesome-devops-mcp-servers](https://github.com/rohitg00/awesome-devops-mcp-
 | [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) | Red Hat | Go | Native K8s API, multi-cluster, OpenShift support |
 | [kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | Community | TypeScript | Natural language cluster interaction |
 | [k8s-mcp-server](https://github.com/alexei-led/k8s-mcp-server) | Community | Go | kubectl, helm, istioctl, argocd in Docker |
-| [k8m](https://github.com/weibaohui/k8m) | Community | Go | Multi-cluster, 50+ tools, logging, metrics |
+| [k8m](https://github.com/weibaohui/k8m) | Community | Go | Multi-cluster, 49 built-in MCP tools, logging, metrics |
 | [portainer-mcp](https://github.com/portainer/portainer-mcp) | Portainer | — | Container management interface |
 
 Red Hat's [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) stands out because it interacts directly with the Kubernetes API server rather than wrapping CLI commands. This means lower latency, native multi-cluster support, and CRUD operations on any Kubernetes resource type including custom resources. It ships as a single binary for Linux, macOS, and Windows.
@@ -41,10 +41,10 @@ Red Hat's [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-s
 | Server | Maintainer | Coverage |
 |--------|-----------|---------|
 | [awslabs/mcp](https://github.com/awslabs/mcp) | AWS (official) | Lambda, ECS, EKS, S3, EC2, RDS |
-| [Azure DevOps MCP](https://learn.microsoft.com/en-us/azure/devops/mcp-server/) | Microsoft (official) | Work items, PRs, builds, test plans, pipelines |
-| gcp-mcp | Community | Compute Engine, Cloud Run, GKE |
+| [Azure DevOps MCP](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview?view=azure-devops) | Microsoft (official) | Work items, PRs, builds, test plans, pipelines |
+| [gcp-mcp](https://github.com/eniayomi/gcp-mcp) | Community | GCP resource access via natural language |
 | [cloudflare/mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) | Cloudflare (official) | Workers, KV, R2, D1 |
-| alibaba-cloud-ops-mcp-server | Alibaba (official) | ECS, monitoring |
+| [alibaba-cloud-ops-mcp-server](https://github.com/aliyun/alibaba-cloud-ops-mcp-server) | Alibaba (official) | ECS, monitoring |
 
 The trend is clear: major cloud providers are releasing official MCP servers. AWS's official MCP server covers the most-used services and supports cost optimization analysis. Azure's integration connects to the full Azure DevOps suite. This official support matters for enterprise adoption — it means vetted security, maintained compatibility, and support channels.
 
@@ -53,9 +53,8 @@ The trend is clear: major cloud providers are releasing official MCP servers. AW
 | Server | Platform | Capabilities |
 |--------|---------|-------------|
 | [github-mcp-server](https://github.com/github/github-mcp-server) | GitHub | Repos, issues, PRs, code review, Actions |
-| [mcp-server-github-actions](https://github.com/Tiberriver256/mcp-server-github-actions) | GitHub Actions | Workflow triggers, run monitoring, log analysis |
-| [server-gitlab](https://github.com/modelcontextprotocol/server-gitlab) | GitLab | Merge requests, pipelines, security scanning |
-| Jenkins MCP | Jenkins | Build triggers, job status, log retrieval |
+| [server-gitlab](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/gitlab) | GitLab | Merge requests, pipelines, security scanning (archived May 2025 — no longer maintained) |
+| [MCP Server plugin](https://plugins.jenkins.io/mcp-server/) | Jenkins | Official Jenkins plugin: build triggers, job status, log retrieval |
 | [codemagic-mcp](https://github.com/stefanoamorelli/codemagic-mcp) | Codemagic | Mobile CI/CD pipeline management |
 
 ### Monitoring and Observability
@@ -63,10 +62,10 @@ The trend is clear: major cloud providers are releasing official MCP servers. AW
 | Server | What It Monitors |
 |--------|-----------------|
 | [prometheus-mcp-server](https://github.com/CaesarYangs/prometheus_mcp_server) | Time-series metrics, PromQL queries |
-| Datadog MCP | Logs, monitors, traces |
-| Grafana MCP | Dashboard generation, alerting |
-| VictoriaMetrics MCP | Metrics at scale |
-| Alertmanager MCP | Prometheus alert management |
+| [Datadog MCP Server](https://docs.datadoghq.com/mcp_server/) (official) | Logs, monitors, traces |
+| [grafana/mcp-grafana](https://github.com/grafana/mcp-grafana) (official) | Dashboard generation, alerting |
+| [VictoriaMetrics/mcp-victoriametrics](https://github.com/VictoriaMetrics/mcp-victoriametrics) (official) | Metrics at scale |
+| [alertmanager-mcp-server](https://github.com/ntk148v/alertmanager-mcp-server) (community) | Prometheus alert management |
 
 For a broader look at MCP servers across all categories, see our [best MCP servers](/guides/best-mcp-servers/) roundup and category-specific guides for [DevOps](/guides/best-devops-mcp-servers/), [Kubernetes](/guides/best-kubernetes-container-mcp-servers/), and [observability](/guides/best-observability-mcp-servers/).
 
@@ -255,7 +254,7 @@ For production use, the Kubernetes sidecar model combined with the agent gateway
 
 The agent checks pod status, events, logs, resource limits, node pressure, and recent deployments. It identifies OOMKilled events, recommends increasing the memory limit from 256Mi to 512Mi, and can generate the patch — waiting for human approval before applying.
 
-This isn't hypothetical. Kubernetes MCP servers like Red Hat's implementation include [specialized diagnostic prompts](https://developers.redhat.com/articles/2025/09/25/kubernetes-mcp-server-ai-powered-cluster-management) that guide systematic troubleshooting: identifying issues, collecting evidence, and suggesting remediation.
+This isn't hypothetical. Red Hat's [kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) ships named diagnostic prompts — `cluster-health-check`, `service-troubleshoot`, `vm-troubleshoot` — that guide this kind of systematic troubleshooting, and [Red Hat's own writeup](https://developers.redhat.com/articles/2025/09/25/kubernetes-mcp-server-ai-powered-cluster-management) shows the natural-language diagnostic workflow in practice.
 
 ### Terraform Workflow Acceleration
 
@@ -283,7 +282,7 @@ Connecting AI agents to infrastructure tools creates attack surfaces that tradit
 
 ### The GitHub MCP Prompt Injection Attack
 
-In May 2025, researchers demonstrated a critical vulnerability in GitHub's MCP integration. The attack chain:
+On May 26, 2025, [Invariant Labs demonstrated a critical vulnerability](https://invariantlabs.ai/blog/mcp-github-vulnerability) in GitHub's official MCP server ([independently covered by Simon Willison](https://simonwillison.net/2025/May/26/github-mcp-exploited/)). The attack chain:
 
 1. Attacker creates a malicious issue in a public repository
 2. Developer's AI assistant reads the issue through the GitHub MCP server
@@ -293,9 +292,9 @@ In May 2025, researchers demonstrated a critical vulnerability in GitHub's MCP i
 
 This attack worked because the agent had both read access to public issues (where the injection payload lived) and read access to private repositories (the target). The combination of permissions created the vulnerability — neither permission alone was dangerous.
 
-### The mcp-remote Supply Chain Attack ([CVE-2025-6514](https://jfrog.com/blog/cve-2025-6514-critical-shell-injection-vulnerability-in-mcp-remote/))
+### The mcp-remote Supply Chain Attack ([CVE-2025-6514](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/))
 
-A critical shell injection vulnerability in `mcp-remote` — a widely-used MCP proxy package with over 437,000 downloads — enabled remote code execution. This was one of the first documented cases of full system compromise through MCP infrastructure, turning a trusted development tool into an attack vector.
+A critical OS command injection vulnerability (CVSS 9.6) in `mcp-remote` — an npm package [with over 437,000 downloads](https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html) that proxies MCP clients to remote servers — let a malicious MCP server inject a crafted `authorization_endpoint` value during the OAuth flow, achieving remote code execution on the client machine. It affected versions 0.0.5 through 0.1.15 and was fixed in 0.1.16. This was one of the first documented cases of full system compromise through MCP infrastructure, turning a trusted development tool into an attack vector.
 
 ### The NeighborJack Vulnerability
 
@@ -313,7 +312,7 @@ A critical shell injection vulnerability in `mcp-remote` — a widely-used MCP p
 
 ### Security Best Practices for DevOps MCP
 
-1. **Use stdio transport for infrastructure operations.** Network transports expose credentials. As one CISO put it: "I can explain a breach in my infrastructure to the board. I cannot explain why I gave our production keys to a startup."
+1. **Use stdio transport for infrastructure operations.** Network transports expose credentials to whatever service sits between the agent and the target system — a risk that's hard to justify for production credentials.
 
 2. **Implement least-privilege from day one.** Start with read-only access. Add write permissions only for specific, approved operations.
 
@@ -338,7 +337,7 @@ This inverts the typical pattern:
 - **Typical:** AI agent → triggers CI/CD → waits for results
 - **Cicaddy:** CI/CD pipeline → runs AI agent step → agent uses MCP tools → continues pipeline
 
-Use cases include intelligent test selection (agent decides which tests to run based on changed files), deployment verification (agent checks health metrics after deploy), and incident auto-remediation within runbook-defined boundaries.
+Documented production use cases include service monitoring and reporting (daily health checks analyzing request volumes and failure rates), developer productivity metrics (DORA metrics via a DevLake MCP integration), and merge request code review (analyzing diffs and posting review comments, using Context7 for up-to-date library documentation).
 
 ## Transport Considerations for DevOps
 
@@ -350,18 +349,14 @@ The choice of MCP transport protocol matters more for infrastructure than for ot
 - Works with local credential stores (`~/.kube/config`, `~/.aws/credentials`)
 - Compatible with all MCP clients
 
-**HTTP/SSE:**
+**Streamable HTTP:**
+- The [current MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports) defines only two standard transports: stdio and Streamable HTTP. Streamable HTTP replaced the older, separate HTTP+SSE transport when it was introduced in the 2025-03-26 spec revision; SSE is now just an internal detail of how a Streamable HTTP response may stream back (a request-scoped SSE stream), not a distinct transport option.
 - Required for remote/shared MCP servers
 - Introduces network credential exposure
 - Needs TLS, authentication, and rate limiting
 - Useful for the bastion host or gateway patterns
 
-**Streamable HTTP (MCP 2025-03-26 spec):**
-- Modern replacement for SSE
-- Better connection management
-- Still requires the same network security controls
-
-The general rule: use stdio for anything touching production infrastructure. Use HTTP transports only when you need shared, centralized access — and put a gateway in front of it.
+The general rule: use stdio for anything touching production infrastructure. Use Streamable HTTP only when you need shared, centralized access — and put a gateway in front of it.
 
 For a deeper dive into transport protocols, see our [MCP transports guide](/guides/mcp-transports-explained/).
 
@@ -370,10 +365,9 @@ For a deeper dive into transport protocols, see our [MCP transports guide](/guid
 The DevOps MCP ecosystem is evolving fast:
 
 - **Multi-agent orchestration.** Coordinated agents managing Terraform, Kubernetes, and monitoring simultaneously. Early implementations exist but production patterns are still forming.
-- **Centralized MCP gateways.** Enterprise-grade proxies with authentication, rate limiting, audit logging, and policy enforcement. [PolicyLayer's Intercept](https://github.com/PolicyLayer/Intercept) enforces YAML security policies on MCP traffic.
+- **Centralized MCP gateways.** Enterprise-grade proxies with authentication, rate limiting, audit logging, and policy enforcement.
 - **Execution policy layers.** Moving beyond tool-level permissions to workflow-level policies — "this agent can deploy to staging but not production, and only during business hours."
 - **Signed artifact verification.** Extending the agent gateway pattern with cryptographic verification of infrastructure plans and configurations.
-- **Kubernetes SIG exploration.** The Kubernetes community is actively evaluating MCP integration patterns for cluster management.
 
 ## Getting Started
 

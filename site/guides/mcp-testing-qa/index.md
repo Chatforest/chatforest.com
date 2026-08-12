@@ -5,7 +5,7 @@
 
 Software testing is one of the most natural fits for MCP. Testing tools already expose structured APIs — navigate here, click this, assert that. MCP turns those APIs into tools that AI agents can discover and invoke. Instead of writing Playwright scripts by hand, an agent reads a test case description and drives a real browser through the accessibility tree. Instead of maintaining brittle selectors, a self-healing pipeline catches failures, asks an AI model what changed, and fixes the locator.
 
-The ecosystem has moved fast. Microsoft's Playwright MCP server has nearly 30,000 GitHub stars. Google shipped Chrome DevTools MCP. Appium brought MCP to mobile testing. Angie Jones built mcp-selenium for teams committed to WebDriver. Enterprise platforms like Tricentis and TestSprite have added MCP interfaces. And the patterns emerging — self-healing tests, AI-generated test suites, visual regression analysis — suggest this isn't a novelty but a genuine shift in how testing infrastructure works.
+The ecosystem has moved fast. [Microsoft's Playwright MCP server](https://github.com/microsoft/playwright-mcp) has passed 36,000 GitHub stars. Google shipped [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp). Appium brought MCP to mobile testing. [Angie Jones](https://en.wikipedia.org/wiki/Angie_Jones) built mcp-selenium for teams committed to WebDriver. Enterprise platforms like Tricentis and TestSprite have added MCP interfaces. And the patterns emerging — self-healing tests, AI-generated test suites, visual regression analysis — suggest this isn't a novelty but a genuine shift in how testing infrastructure works.
 
 But MCP-based testing isn't always better than traditional automation. It costs tokens, introduces nondeterminism, and adds security surface area. This guide covers what's available, how it works, where it genuinely helps, and where you should stick with conventional test scripts. Our analysis draws on published documentation, GitHub repositories, vendor materials, and case studies — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -17,15 +17,17 @@ These servers let AI agents control real browsers through MCP, turning web inter
 
 | Server | Stars | Tools | Key Feature | License |
 |--------|-------|-------|-------------|---------|
-| [Playwright MCP](https://github.com/microsoft/playwright-mcp) (Microsoft) | 29.9K | 26 | Accessibility tree snapshots, multi-browser | — |
-| [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) (Google) | 32K | 29 | Performance tracing, Lighthouse audits, auto-connect to existing browser | — |
-| [browser-use](https://github.com/browser-use/browser-use) | 84.8K | — | Makes websites accessible for AI agents | MIT |
-| [ExecuteAutomation Playwright MCP](https://github.com/executeautomation/mcp-playwright) | 5.4K | — | 143 device presets, dual transport (stdio/HTTP) | MIT |
-| [Browserbase + Stagehand](https://github.com/browserbase/mcp-server-browserbase) | 3.2K | 6 | Cloud browser automation | Apache 2.0 |
-| [mcp-selenium](https://github.com/angiejones/mcp-selenium) (Angie Jones) | 377 | 18 | WebDriver BiDi, accessibility tree snapshots | MIT |
-| [Appium MCP](https://github.com/appium/appium-mcp) (Official) | 269 | — | Mobile iOS/Android, AI-powered element discovery | Apache 2.0 |
+| [Playwright MCP](https://github.com/microsoft/playwright-mcp) (Microsoft) | 36K | 50+ | Accessibility tree snapshots, multi-browser | — |
+| [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) (Google) | 49K | 50+ | Performance tracing, Lighthouse audits, auto-connect to existing browser | — |
+| [browser-use](https://github.com/browser-use/browser-use) | 109K | — | Makes websites accessible for AI agents | MIT |
+| [ExecuteAutomation Playwright MCP](https://github.com/executeautomation/mcp-playwright) | 5.6K | — | 143 device presets, dual transport (stdio/HTTP) | MIT |
+| [Browserbase + Stagehand](https://github.com/browserbase/mcp-server-browserbase) | 3.4K | 6 | Cloud browser automation (repo archived by owner, July 2026) | Apache 2.0 |
+| [mcp-selenium](https://github.com/angiejones/mcp-selenium) ([Angie Jones](https://en.wikipedia.org/wiki/Angie_Jones)) | 424 | 18 | WebDriver BiDi, accessibility tree snapshots | MIT |
+| [Appium MCP](https://github.com/appium/appium-mcp) (Official) | 449 | — | Mobile iOS/Android, AI-powered element discovery | Apache 2.0 |
 
-**Notable discontinuation:** BrowserTools MCP (AgentDesk, 7.2K stars) has been discontinued. Its README states "THIS PROJECT IS NO LONGER ACTIVE." Teams still using it should migrate to one of the active alternatives above.
+**Note on Browserbase + Stagehand:** [the repo was archived by its owner in July 2026](https://github.com/browserbase/mcp-server-browserbase) and is now read-only; treat it as a frozen snapshot rather than an actively maintained option.
+
+**[BrowserTools MCP](https://github.com/AgentDeskAI/browser-tools-mcp) (AgentDesk, ~7.3K stars)** is still actively maintained — a prior version of this guide incorrectly described it as discontinued. The repo shipped a "version 2.0" rewrite addressing earlier security issues and had commits as recently as January 2026.
 
 ### Test Management Servers
 
@@ -51,15 +53,15 @@ These let agents generate and execute tests directly:
 
 Larger platforms have added MCP interfaces:
 
-**[TestSprite 2.0](https://www.prnewswire.com/news-releases/testsprite-2-0-aims-to-solve-ai-code-quality-crisis-with-its-new-mcp-server-302505031.html)** — an autonomous AI testing agent with MCP server integration for Cursor, GitHub Copilot, and other IDEs. Claims to boost AI-generated code pass rates from 42% to 93% after one testing iteration. Used by 6,000+ development teams. Ranked #2 product of the month for July 2025 on Product Hunt.
+**[TestSprite 2.0](https://www.prnewswire.com/news-releases/testsprite-2-0-aims-to-solve-ai-code-quality-crisis-with-its-new-mcp-server-302505031.html)** — an autonomous AI testing agent with MCP server integration for Cursor, GitHub Copilot, and other IDEs. TestSprite says its own (internal, not yet independently verified) benchmarks show AI-generated code pass rates rising from 42% to 93% after one testing iteration, and that it's used by 6,000+ development teams — take those two figures as company-reported rather than confirmed. Independently verifiable: TestSprite 2.0 [ranked #2 product of the month for July 2025 on Product Hunt](https://www.producthunt.com/products/testsprite).
 
-**Tricentis** — ships remote MCP servers for Tosca (test automation), NeoLoad (performance testing), qTest (test management), and SeaLights (test intelligence). NeoLoad 2025.1 introduced AI-driven "Augmented Analysis" and 2025.3 added Core Web Vitals. The 2026 roadmap includes a dedicated performance testing agent.
+**Tricentis** — [ships remote MCP servers](https://www.tricentis.com/learn/mcp-server-for-test-automation) for Tosca (test automation), NeoLoad (performance testing), qTest (test management), and SeaLights (test intelligence). [NeoLoad 2025.1 introduced AI-driven "Augmented Analysis"](https://www.tricentis.com/blog/introducing-neoload-2025-1-new-ui-sap-support) and [2025.3 added Core Web Vitals](https://www.tricentis.com/blog/new-neoload-2025-3-core-web-vitals-expanding-ai-mcp). [The 2026 roadmap includes a dedicated performance agent](https://www.tricentis.com/blog/neoload-ai-performance-testing-future).
 
-**Microsoft Power Platform Test Engine** — an MCP server for deterministic analysis of Power Apps. Combines rule-based analysis with generative AI for test recommendations and test creation. Open source.
+**[Microsoft Power Platform Test Engine](https://learn.microsoft.com/en-us/power-platform/test-engine/ai-mcp)** — an MCP server (preview) for deterministic analysis of Power Apps. Combines rule-based analysis with generative AI for test recommendations and test creation. The underlying [Test Engine is open source](https://github.com/microsoft/PowerApps-TestEngine).
 
 ## Playwright MCP: The De Facto Standard
 
-Microsoft's Playwright MCP server deserves a deeper look. With 29.9K stars, 499 commits, and integration support across VS Code, Cursor, Claude Desktop, Goose, Windsurf, Cline, LM Studio, Copilot CLI, Codex, and Gemini CLI, it has become the default choice for browser automation via MCP.
+Microsoft's Playwright MCP server deserves a deeper look. With [36K+ stars and 570+ commits](https://github.com/microsoft/playwright-mcp), and integration support across VS Code, Cursor, Claude Desktop, Goose, Windsurf, Cline, LM Studio, Copilot CLI, Codex, and Gemini CLI, it has become the default choice for browser automation via MCP.
 
 ### How It Works
 
@@ -69,29 +71,31 @@ The key innovation is **accessibility tree snapshots**. Instead of sending scree
 
 This means the AI agent sees "the Submit button in the login form" rather than `button.btn-primary:nth-child(2)`. The result: 2–5KB per snapshot versus 100KB+ for screenshots. The agent can reason about page structure without vision model costs.
 
-### The 26 Tools
+### The Toolset
 
-Playwright MCP exposes a comprehensive set of browser interaction tools:
+Playwright MCP has grown to [50+ browser interaction tools](https://github.com/microsoft/playwright-mcp) as of mid-2026 (it shipped with a smaller set at launch). The core tools most agents actually use:
 
 - **Navigation:** `browser_navigate`, `browser_navigate_back`, `browser_tabs`, `browser_close`
 - **Interaction:** `browser_click`, `browser_type`, `browser_fill_form`, `browser_select_option`, `browser_press_key`, `browser_hover`, `browser_drag`, `browser_file_upload`, `browser_handle_dialog`
 - **Observation:** `browser_snapshot`, `browser_take_screenshot`, `browser_network_requests`, `browser_console_messages`, `browser_evaluate`
-- **Control:** `browser_resize`, `browser_wait`, `browser_run_code`, `browser_install`
+- **Control:** `browser_resize`, `browser_wait`
+
+More recent additions cover network mocking, cookie/storage manipulation, DevTools tracing and video capture, and coordinate-based (vision) input — see the [full tool list in the repo](https://github.com/microsoft/playwright-mcp) for the current set.
 
 ### CLI Mode: 4x Token Reduction
 
-In early 2026, Playwright introduced a CLI mode (`@playwright/cli`) as an alternative to the MCP interface. [Third-party benchmarks](https://scrolltest.medium.com/playwright-mcp-burns-114k-tokens-per-test-the-new-cli-uses-27k-heres-when-to-use-each-65dabeaac7a0) found MCP requires ~114,000 tokens for a typical browser automation task vs. ~27,000 for CLI — roughly 4x less.
+In early 2026, Playwright introduced a CLI mode ([`@playwright/cli`](https://playwright.dev/agent-cli/introduction)) as an alternative to the MCP interface. [Third-party benchmarks](https://scrolltest.medium.com/playwright-mcp-burns-114k-tokens-per-test-the-new-cli-uses-27k-heres-when-to-use-each-65dabeaac7a0) found MCP requires ~114,000 tokens for a typical browser automation task vs. ~27,000 for CLI — roughly 4x less, a number the [official Playwright CLI docs](https://playwright.dev/agent-cli/introduction) also describe qualitatively as a lower token cost for CLI.
 
-The decision between CLI and MCP depends on the agent's work pattern:
-- **CLI** is better when the agent "acts more than it thinks" — high-throughput coding agents balancing browser automation with large codebases
-- **MCP** is better when the agent "thinks deeply" — needs full accessibility tree context for complex interactions
+Per [Playwright's own guidance](https://playwright.dev/agent-cli/introduction), the decision between CLI and MCP depends on the agent's work pattern:
+- **CLI** is better for coding agents working with large codebases — concise output and on-demand skills keep token use low
+- **MCP** is better for specialized agentic loops that benefit from persistent state and rich page introspection, such as exploratory automation or self-healing tests
 
 ### Limitations
 
 Playwright MCP isn't perfect:
 - **Non-textual assertions** (visual comparisons, charts, images) remain challenging without vision model fallback
 - **Dynamic UI inconsistency** — complex or highly dynamic application states can produce unreliable results
-- **Scalability concerns** — generating Playwright code for every test run on-the-fly doesn't scale for large test suites, as Sogeti noted in their production experiments
+- **Scalability concerns** — generating Playwright code for every test run on-the-fly doesn't scale for large test suites, as [Sogeti noted in their production experiments](https://labs.sogeti.com/building-self-healing-test-automation-with-robot-framework-mcp/)
 
 ## AI-Assisted Testing Patterns
 
@@ -113,7 +117,7 @@ Traditional test automation breaks when the UI changes — a renamed button, a r
 4. AI proposes a fix
 5. Apply fix and rerun
 
-Sogeti Labs published this pattern in February 2026 using Robot Framework MCP + RoboCop MCP. The AI model receives the full test context — what was expected, what happened, what the current page looks like — and can reason about what changed rather than just retrying blindly.
+[Sogeti Labs published this pattern in March 2026](https://labs.sogeti.com/building-self-healing-test-automation-with-robot-framework-mcp/) using Robot Framework MCP + RoboCop MCP. The AI model receives the full test context — what was expected, what happened, what the current page looks like — and can reason about what changed rather than just retrying blindly.
 
 ### Pattern 3: Hybrid Deterministic + AI Automation
 
@@ -131,7 +135,7 @@ MCP enables richer context than traditional test generators. The server passes s
 
 ### Applitools MCP Server
 
-Applitools ([named a Strong Performer in the Forrester Wave: Autonomous Testing Platforms, Q4 2025](https://applitools.com/blog/applitools-forrester-wave-autonomous-testing-q4-2025/)) offers an MCP server with 6 tools:
+Applitools ([named a Strong Performer in the Forrester Wave: Autonomous Testing Platforms, Q4 2025](https://applitools.com/blog/applitools-forrester-wave-autonomous-testing-q4-2025/)) offers [an MCP server with 6 tools](https://applitools.com/docs/eyes/integrations/mcp-servers/applitools-mcp):
 
 - `eyes_verify_api_key` / `eyes_setup_project` — configuration
 - `eyes_add_checkpoints_to_test` — define visual checkpoints
@@ -142,7 +146,7 @@ The Visual AI compares baseline images against current screenshots, detecting re
 
 ### TestMu AI (formerly LambdaTest) SmartUI MCP
 
-Published March 2026, this server provides multi-layered visual analysis through 8 tools:
+[This server](https://www.testmuai.com/support/docs/smartui-mcp-server/) provides multi-layered visual analysis through 6 tools, covering:
 
 - **Pixel-level diff** — raw pixel comparison
 - **Layout diff** — structural changes
@@ -153,17 +157,17 @@ It also includes context-aware fix suggestions — not just "this changed" but "
 
 ### Accessibility Testing via MCP
 
-TestMu AI's Accessibility MCP Server provides automated accessibility auditing with 3 tools. It tests both public sites and local React applications, producing detailed violation reports with remediation suggestions. This fills a gap — most testing MCP servers focus on functional correctness, not accessibility compliance.
+[TestMu AI's Accessibility MCP Server](https://www.testmuai.com/blog/introducing-testmu-mcp-servers/) provides automated accessibility auditing with 3 tools (`getAccessibilityReport`, `buildLocalAppForAnalysis`, `analyseAppViaTunnel`). It tests both public sites and local React applications, producing detailed violation reports with remediation suggestions. This fills a gap — most testing MCP servers focus on functional correctness, not accessibility compliance.
 
 ## CI/CD Integration
 
 ### The Azure DevOps Pipeline
 
-The most documented production pipeline: Azure DevOps MCP → fetch test cases → GitHub Copilot generates Playwright scripts → execute in Azure Pipelines → report results. Microsoft's Azure DevOps team published this as a case study with "hundreds of tests running automatically."
+The most documented production pipeline: Azure DevOps MCP → fetch test cases → GitHub Copilot generates Playwright scripts → execute in Azure Pipelines → report results. [Microsoft's Azure DevOps team published this as a case study](https://devblogs.microsoft.com/devops/from-manual-testing-to-ai-generated-automation-our-azure-devops-mcp-playwright-success-story/) enabling "hundreds of tests to run automatically."
 
 ### Self-Healing CI Loop
 
-Sogeti's production pattern for CI pipelines:
+[Sogeti's production pattern](https://labs.sogeti.com/building-self-healing-test-automation-with-robot-framework-mcp/) for CI pipelines:
 
 ```
 Test execution (Robot Framework)
@@ -181,11 +185,11 @@ This reduces the most painful aspect of test automation maintenance: keeping sel
 
 ### Enterprise Performance Testing
 
-Tricentis NeoLoad's MCP integration brings AI-driven performance testing into CI/CD. The 2025.1 release added "Augmented Analysis" — AI interprets load test results rather than requiring manual analysis. The 2025.3 release added Core Web Vitals monitoring. The 2026 roadmap includes a dedicated performance testing agent that can design, execute, and analyze load tests autonomously.
+[Tricentis NeoLoad's MCP integration](https://www.tricentis.com/learn/mcp-server-for-test-automation) brings AI-driven performance testing into CI/CD. [The 2025.1 release added "Augmented Analysis"](https://www.tricentis.com/blog/introducing-neoload-2025-1-new-ui-sap-support) — AI interprets load test results rather than requiring manual analysis. [The 2025.3 release added Core Web Vitals monitoring](https://www.tricentis.com/blog/new-neoload-2025-3-core-web-vitals-expanding-ai-mcp). [The 2026 roadmap includes a performance agent](https://www.tricentis.com/blog/neoload-ai-performance-testing-future) aimed at autonomous load-test design, execution, and analysis.
 
 ### The PromptOps Layer
 
-testrigor proposes adding a "PromptOps" layer to DevOps in 2026: AI agents access CI/CD pipeline data, assess deployment logs, open PRs, and execute runbook steps — all through MCP. This positions MCP not just as a testing protocol but as the interface layer between AI agents and the entire software delivery pipeline.
+[testrigor proposes adding a "PromptOps" layer to DevOps in 2026](https://testrigor.com/blog/why-devops-needs-a-promptops-layer/): AI agents access CI/CD pipeline data, assess deployment logs, open PRs, and execute runbook steps — all through MCP. This positions MCP not just as a testing protocol but as the interface layer between AI agents and the entire software delivery pipeline.
 
 ## Security Considerations
 
@@ -209,7 +213,7 @@ These aren't theoretical risks:
 
 **[CVE-2025-6514](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/) (mcp-remote).** A command injection vulnerability in the `mcp-remote` package allowed malicious MCP servers to execute arbitrary code on connected clients — full system compromise. The package had [437,000+ downloads](https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html) and affected users of Cloudflare, Hugging Face, and Auth0 integrations.
 
-**Supabase Cursor incident.** A Cursor agent with privileged service-role database access processed support tickets containing user-supplied SQL instructions. The agent executed the SQL, exfiltrating sensitive integration tokens into a public support thread. This demonstrates the risk of giving AI testing agents broad database access.
+**Supabase Cursor incident.** [Documented by researcher Simon Willison](https://simonwillison.net/2025/Jul/6/supabase-mcp-lethal-trifecta/) and [independently by General Analysis](https://generalanalysis.com/blog/supabase-mcp-blog): a Cursor agent connected to Supabase's MCP server with a privileged `service_role` key (bypassing row-level security) processed a support ticket containing a hidden prompt-injection instruction. The agent read a private `integration_tokens` table and inserted its contents back into the public support thread, exposing third-party API keys and OAuth tokens to the attacker. This demonstrates the risk of giving AI testing agents broad database access.
 
 ### Testing-Specific Risks
 
@@ -275,7 +279,7 @@ The most successful MCP testing rollouts start with one workflow. Pick a task yo
 
 **Web testing:** Playwright MCP (accessibility-first, broad IDE support, most active development)
 
-**Mobile testing:** Appium MCP (official, iOS + Android, AI-powered element discovery with NO_UI mode for 50–80% faster responses)
+**Mobile testing:** [Appium MCP](https://github.com/appium/appium-mcp) (official, iOS + Android, AI-powered element discovery with NO_UI mode for 50–80% faster responses)
 
 **Legacy WebDriver teams:** mcp-selenium (familiar Selenium API exposed as MCP tools, WebDriver BiDi support)
 

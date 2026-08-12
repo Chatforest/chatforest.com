@@ -7,7 +7,7 @@ Accounting runs on fragmented software. A typical small business might track inc
 
 MCP — the Model Context Protocol — provides a standardized way for AI agents to connect to these accounting platforms. Rather than building custom integrations for each tool, MCP-connected agents can query financial data, create journal entries, generate invoices, reconcile transactions, and produce reports through defined tool interfaces. The protocol transforms AI assistants from isolated chatbots into operational accounting tools that can work across bookkeeping, invoicing, tax preparation, payroll, and audit workflows. For an introduction to MCP itself, see our [introduction to MCP](/guides/what-is-mcp/).
 
-The accounting MCP ecosystem is remarkably mature. Six major accounting vendors have shipped official MCP implementations: Intuit/QuickBooks ([153 stars](https://github.com/intuit/quickbooks-online-mcp-server), open source), Xero ([237 stars](https://github.com/XeroAPI/xero-mcp-server), open source), Sage Intacct (developer portal), Zoho (15+ app coverage), Oracle/NetSuite (built into platform), and Microsoft Dynamics 365 (built into platform). Stripe's AI toolkit (formerly agent-toolkit) has [1,459 stars](https://github.com/stripe/ai) for payment processing. Community implementations cover everything from plain-text double-entry bookkeeping (Ledger CLI, Beancount, GnuCash) to tax law databases spanning the US, Japan, France, Korea, Portugal, and Denmark. Unified API platforms like CData Connect AI and Unified.to provide broad multi-platform coverage.
+The accounting MCP ecosystem is remarkably mature. Six major accounting vendors have shipped official MCP implementations: Intuit/QuickBooks ([351 stars](https://github.com/intuit/quickbooks-online-mcp-server), open source), Xero ([350 stars](https://github.com/XeroAPI/xero-mcp-server), open source), Sage Intacct ([AI Gateway on its developer portal](https://developer.sage.com/intacct/ais/intacct-ai-gateway/latest/intacct-ai-gateway/tools)), Zoho ([15+ app coverage](https://www.zoho.com/blog/books/model-context-protocol-accounting-software.html)), Oracle/NetSuite ([built into platform](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_7200233106.html)), and Microsoft Dynamics 365 ([built into platform](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/copilot-mcp)). Stripe's AI toolkit (formerly agent-toolkit) has [1,737 stars](https://github.com/stripe/ai) for payment processing. Community implementations cover everything from plain-text double-entry bookkeeping (Ledger CLI, Beancount, GnuCash) to tax law databases spanning the US, Japan, France, Korea, Portugal, and Denmark. Unified API platforms like CData Connect AI and Unified.to provide broad multi-platform coverage.
 
 This guide is research-based. We survey what MCP servers exist across the accounting and financial compliance landscape, analyze the architecture patterns they enable, and identify where significant gaps remain. We do not claim to have tested or used any of these servers hands-on — our analysis draws on published documentation, open-source repositories, vendor announcements, and industry research. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI. For background on MCP, see our [introduction to MCP](/guides/what-is-mcp/) and the [MCP server directory](/reviews/).
 
@@ -33,91 +33,89 @@ The core accounting platforms have the strongest MCP coverage of any vertical we
 
 Intuit's official QuickBooks Online MCP server is one of the most complete vendor implementations in the MCP ecosystem.
 
-**[intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server)** | 153 stars | **Official by Intuit** | OAuth 2.0
+**[intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server)** | 351 stars | **Official by Intuit** | OAuth 2.0
 
 According to repository documentation, the official server provides SQL-like queries across Customers, Vendors, Invoices, Bills, Accounts, Items, and Departments. Financial reports include Profit & Loss, Balance Sheet, and Trial Balance. Full CRUD operations cover journal entries, bills, expenses, sales receipts, invoices, deposits, and vendor credits. OAuth 2.0 authentication ensures proper access control.
 
-**[Scottcjn/qb-auto](https://github.com/Scottcjn/qb-auto)** | 23 stars | 8 automation tools
+**[Scottcjn/qb-auto](https://github.com/Scottcjn/qb-auto)** | 48 stars | 8 automation tools
 
 A focused alternative that replaces 50K-token accounting data snapshots with ~200-token targeted extractions — an efficiency-first approach for AI agents working with large QuickBooks datasets.
 
-**[CDataSoftware/quickbooks-mcp-server-by-cdata](https://github.com/CDataSoftware/quickbooks-mcp-server-by-cdata)** | 15 stars | Read-only via CData JDBC
+**[CDataSoftware/quickbooks-mcp-server-by-cdata](https://github.com/CDataSoftware/quickbooks-mcp-server-by-cdata)** | 18 stars | Read-only via CData JDBC
 
 Read-only access to QuickBooks data through CData drivers. Natural language queries without writing SQL. Full CRUD available through the managed CData Connect AI platform.
 
-**Additional community servers:** nikhilgy/quickbooks-mcp-server (9 stars, all public QuickBooks APIs), aallsbury/qb-time-mcp-server (9 stars, QuickBooks Time API), laf-rge/quickbooks-mcp (4 stars), vespo92/QBO-MCP-TS (3 stars, TypeScript), LibreChat-AI/quickbooks-online-mcp (2 stars, Cloudflare Workers with Streamable HTTP/SSE). QuickBooks is also available through n8n workflow templates with 42 operations.
+**Additional community servers:** [nikhilgy/quickbooks-mcp-server](https://github.com/nikhilgy/quickbooks-mcp-server) (10 stars, all public QuickBooks APIs), [aallsbury/qb-time-mcp-server](https://github.com/aallsbury/qb-time-mcp-server) (11 stars, QuickBooks Time API), [laf-rge/quickbooks-mcp](https://github.com/laf-rge/quickbooks-mcp) (11 stars), [vespo92/QBO-MCP-TS](https://github.com/vespo92/QBO-MCP-TS) (3 stars, TypeScript), [LibreChat-AI/quickbooks-online-mcp](https://github.com/LibreChat-AI/quickbooks-online-mcp) (8 stars, Cloudflare Workers with Streamable HTTP/SSE).
 
 ### Xero — Official
 
 Xero's official MCP server provides the broadest API coverage of any accounting MCP implementation.
 
-**[XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server)** | 237 stars | **Official by Xero** | 188 accounting endpoints | OAuth 2.0
+**[XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server)** | 350 stars | **Official by Xero** | 50+ tools | OAuth 2.0
 
-The official server exposes 188 accounting endpoints covering contacts, chart of accounts, invoices, and the full Xero accounting API. The highest-starred official accounting MCP server. Xero also publishes the **[xero-agent-toolkit](https://github.com/XeroAPI/xero-agent-toolkit)** (37 stars) with examples for building AI agents on top of the Xero API.
+The [official server's README](https://github.com/XeroAPI/xero-mcp-server) lists 50+ MCP tools/commands covering contacts, chart of accounts, invoices, and other core Xero accounting objects, and points to Xero's full API documentation for complete endpoint coverage. It's the highest-starred official accounting MCP server. Xero also publishes the **[xero-agent-toolkit](https://github.com/XeroAPI/xero-agent-toolkit)** (54 stars) with examples for building AI agents on top of the Xero API.
 
-**john-zhang-dev/xero-mcp** | 19 stars | Community alternative
+**[john-zhang-dev/xero-mcp](https://github.com/john-zhang-dev/xero-mcp)** | 21 stars | Community alternative
 
 Community Xero MCP implementation providing an alternative interface.
 
-**ag2-mcp-servers auto-generated suite:** Five auto-generated servers covering xero-accounting-api, xero-payroll-au-api, xero-bank-feeds-api, xero-assets-api, and xero-files-api. Generated by mcp.ag2.ai for comprehensive Xero API coverage.
+**[ag2-mcp-servers](https://github.com/ag2-mcp-servers) auto-generated suite:** Five auto-generated servers covering xero-accounting-api, xero-payroll-au-api, xero-bank-feeds-api, xero-assets-api, and xero-files-api. Generated by mcp.ag2.ai for comprehensive Xero API coverage.
 
 ### Sage Intacct — Official
 
-**Sage Intacct MCP Server** | **Official** | developer.sage.com
+**Sage Intacct AI Gateway / MCP Server** | **Official** | [developer.sage.com](https://developer.sage.com/intacct/ais/intacct-ai-gateway/latest/intacct-ai-gateway/tools)
 
-Sage's official MCP implementation is available through their developer portal rather than open source on GitHub. Built on REST APIs with an AI Gateway using MCP, it includes intelligent orchestration for multi-agent coordination. Sage targets mid-market and enterprise customers where Intacct has strong penetration in accounting firms and growing companies.
+Sage's official MCP implementation ships as an "[AI Gateway](https://www.sage.com/en-us/sage-business-cloud/intacct/product-capabilities/platform/ai-gateway/)" built into Intacct's R2 2026 release, described by Sage as "a single, structured entry point into financial data that requires no custom integration work." It's a read-only, OAuth 2.0-secured REST API accessible via the Model Context Protocol, letting tools like Claude, Microsoft Copilot, and Cursor connect directly to Intacct financial data — see [independent coverage of the R2 2026 rollout](https://www.erpimplementation.eu/en/sage-intacct-ai-gateway-mcp-llm-integration-r2-2026/). It's available through Sage's developer portal rather than open source on GitHub. Sage targets mid-market and enterprise customers where Intacct has strong penetration in accounting firms and growing companies.
 
-**CDataSoftware/sage-cloud-accounting-mcp-server-by-cdata** | 1 star | Read-only
+**[CDataSoftware/sage-cloud-accounting-mcp-server-by-cdata](https://github.com/CDataSoftware/sage-cloud-accounting-mcp-server-by-cdata)** | Read-only
 
 Read-only access to Sage Cloud Accounting data via CData JDBC drivers.
 
-**larrygmaguire-hash/sage-accounting-mcp** | Community | Sage Accounting API integration.
-
 ### Zoho Books — Official
 
-**Zoho MCP** | **Official** | zoho.com/mcp
+**[Zoho MCP](https://www.zoho.com/mcp/)** | **Official** | [zoho.com/mcp](https://www.zoho.com/mcp/)
 
-Zoho's official MCP platform covers 15+ Zoho applications including Books, CRM, Mail, Calendar, and Desk. Announced July 2025 with general availability expected in early 2026. The cross-app coverage is significant — an AI agent could read a customer record from Zoho CRM, create an invoice in Zoho Books, and send it via Zoho Mail through a single MCP integration layer.
+Zoho [announced Zia LLM, Zoho AI Agents, and Zoho MCP together on July 17, 2025](https://www.zoho.com/mcp/); the platform connects AI agents to CRM, Books, Desk, and [15+ other Zoho apps](https://www.zoho.com/blog/books/model-context-protocol-accounting-software.html). [Zoho Books MCP](https://www.zoho.com/us/books/help/mcp/zoho-books-mcp.html) is live, with setup documentation covering invoice creation, expense recording, and bank-statement reconciliation via natural-language prompts, and is available as a Claude connector. The cross-app coverage is significant — an AI agent could read a customer record from Zoho CRM, create an invoice in Zoho Books, and send it via Zoho Mail through a single MCP integration layer.
 
-**[kkeeling/zoho-mcp](https://github.com/kkeeling/zoho-mcp)** | 38 stars | Community | Python
+**[kkeeling/zoho-mcp](https://github.com/kkeeling/zoho-mcp)** | 39 stars | Community | Python
 
 Tools for invoices, contacts, expenses, items, and sales orders. The most popular community Zoho MCP server.
 
-**Additional Zoho servers:** Mgabr90/zoho-mcp-server (2 stars, unified CRM + Books with AnythingLLM), bu5hm4nn/zoho-bookkeeper-mcp (bookkeeping workflows with AI agents), CDataSoftware/zoho-books-mcp-server-by-cdata (read-only), zoho/analytics-mcp-server (official analytics MCP).
+**Additional Zoho servers:** [Mgabr90/zoho-mcp-server](https://github.com/Mgabr90/zoho-mcp-server) (2 stars, unified CRM + Books with AnythingLLM), [bu5hm4nn/zoho-bookkeeper-mcp](https://github.com/bu5hm4nn/zoho-bookkeeper-mcp) (bookkeeping workflows with AI agents), [CDataSoftware/zoho-books-mcp-server-by-cdata](https://github.com/CDataSoftware/zoho-books-mcp-server-by-cdata) (read-only), [zoho/analytics-mcp-server](https://github.com/zoho/analytics-mcp-server) (official analytics MCP).
 
 ### Oracle NetSuite — Official
 
-**Oracle NetSuite AI Connector Service** | **Official** | Built into NetSuite platform
+**[Oracle NetSuite AI Connector Service](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_7200233106.html)** | **Official** | Built into NetSuite platform
 
-Oracle's official MCP implementation for NetSuite includes the MCP Standard Tools SuiteApp, SuiteQL queries, full CRUD operations, reports, and saved searches. Uses OAuth 2.0 with PKCE and respects NetSuite role-based permissions — critical for enterprise deployments where different users should have different levels of financial data access.
+Oracle's official NetSuite documentation confirms NetSuite "has adopted the Model Context Protocol (MCP)" via the AI Connector Service and its **MCP Standard Tools SuiteApp**, which exposes NetSuite data (including SuiteQL access) plus custom tools and MCP Apps to external AI clients under NetSuite's existing role-based permissions.
 
-**[dsvantien/netsuite-mcp-server](https://github.com/dsvantien/netsuite-mcp-server)** | 11 stars | Listed on modelcontextprotocol/servers | OAuth 2.0 with PKCE
+**[dsvantien/netsuite-mcp-server](https://github.com/dsvantien/netsuite-mcp-server)** | 19 stars | Listed on [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | OAuth 2.0 with PKCE
 
 Community implementation listed on the official MCP servers directory.
 
-**CDataSoftware/netsuite-mcp-server-by-cdata** | 8 stars | Read-only via CData JDBC
+**[CDataSoftware/netsuite-mcp-server-by-cdata](https://github.com/CDataSoftware/netsuite-mcp-server-by-cdata)** | 9 stars | Read-only via CData JDBC
 
-**Improvado** — Hosted MCP for NetSuite via SuiteQL with natural language queries (commercial).
+**[Improvado](https://improvado.io/mcp/oracle-netsuite)** — Hosted, commercial MCP for NetSuite connecting via NetSuite's SuiteQL API with natural-language queries across financials, operations, and custom records.
 
 ### Microsoft Dynamics 365 — Official
 
-**Dynamics 365 ERP MCP Server** | **Official by Microsoft**
+**[Dynamics 365 ERP MCP Server](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/copilot-mcp)** | **Official by Microsoft**
 
-Microsoft's official MCP implementation for Dynamics 365 covers Finance, Supply Chain, HR, and Project Operations. Provides three tool categories: Data tools (CRUD operations), Form tools (navigate ERP forms), and Action tools (invoke business logic classes). Covers hundreds of thousands of ERP functions while respecting role-based security. Microsoft's [Dynamics 365 ERP MCP documentation](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/build-agent-mcp) recommends Claude Sonnet 4.5 in Copilot Studio for better success rates over GPT-4.1.
+Microsoft's official MCP implementation for Dynamics 365 covers Finance, Supply Chain, HR, and Project Operations. Per Microsoft's [Use Model Context Protocol for finance and operations apps documentation](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/copilot-mcp), it provides three tool categories: Data tools (CRUD operations against data entities), Form tools (navigate ERP forms the way a user would), and Action tools (invoke business-logic classes directly), together exposing "over 650,000 operations across the Dynamics 365 ERP suite" while respecting role-based security. Microsoft's [Dynamics 365 ERP MCP documentation](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/build-agent-mcp) states: "The recommended model for agents using the Dynamics 365 ERP MCP server is Claude Sonnet 4.5. This model provides a better success rate in Copilot Studio over other default models like GPT-4.1."
 
-**Dynamics 365 ERP Analytics MCP** | **Official** | Business Performance Analytics
+**[Dynamics 365 ERP Analytics MCP](https://learn.microsoft.com/en-us/dynamics365/finance/business-performance-analytics/erp-analytics-mcp-overview)** | **Official (preview)** | Business Performance Analytics
 
-Covers Record-to-Report, Procure-to-Pay, and Order-to-Cash value chains with analytics-focused MCP tools.
+Covers Record-to-Report, Procure-to-Pay, and Order-to-Cash value chains with analytics-focused MCP tools, per Microsoft's documentation. It's currently a preview feature, requiring Dynamics 365 finance and operations 10.0.38+ and Business performance analytics 2.4.3224+.
 
 ### Other Accounting Platforms
 
-**FreshBooks:** LokiMCPUniverse/freshbooks-mcp-server (2 stars), GomezMera-IO-LLC/gm-freshbooks-mcp (1 star), BusyBee3333/freshbooks-mcp-2026-complete (100+ tools), Good-Samaritan-Software-LLC/freshbooks-mcp (full API parity, OAuth2).
+**FreshBooks:** [LokiMCPUniverse/freshbooks-mcp-server](https://github.com/LokiMCPUniverse/freshbooks-mcp-server) (2 stars), [GomezMera-IO-LLC/gm-freshbooks-mcp](https://github.com/GomezMera-IO-LLC/gm-freshbooks-mcp), [BusyBee3333/freshbooks-mcp-2026-complete](https://github.com/BusyBee3333/freshbooks-mcp-2026-complete) (100+ tools), [Good-Samaritan-Software-LLC/freshbooks-mcp](https://github.com/Good-Samaritan-Software-LLC/freshbooks-mcp) (full API parity, OAuth2).
 
-**Wave Financial:** BusyBee3333/wave-mcp-2026-complete (100+ tools covering invoicing, customers, products, transactions, bills, estimates, taxes, reporting), vinnividivicci/wave_mcp (expense tracking, multi-business), CDataSoftware/wave-financial-mcp-server-by-cdata (read-only).
+**Wave Financial:** [BusyBee3333/wave-mcp-2026-complete](https://github.com/BusyBee3333/wave-mcp-2026-complete) (100+ tools covering invoicing, customers, products, transactions, bills, estimates, taxes, reporting), [vinnividivicci/wave_mcp](https://github.com/vinnividivicci/wave_mcp) (expense tracking, multi-business), [CDataSoftware/wave-financial-mcp-server-by-cdata](https://github.com/CDataSoftware/wave-financial-mcp-server-by-cdata) (read-only).
 
-**Tally ERP:** [dhananjay1405/tally-mcp-server](https://github.com/dhananjay1405/tally-mcp-server) (30 stars, Tally Prime integration), CDataSoftware/tally-mcp-server-by-cdata (read-only).
+**Tally ERP:** [dhananjay1405/tally-mcp-server](https://github.com/dhananjay1405/tally-mcp-server) (67 stars, Tally Prime integration), [CDataSoftware/tally-mcp-server-by-cdata](https://github.com/CDataSoftware/tally-mcp-server-by-cdata) (read-only).
 
-**Regional platforms:** marcusquinn/quickfile-mcp (3 stars, QuickFile UK accounting), StupidCodeFactory/freeagent-mcp (FreeAgent for UK sole traders), klausagnoletti/e-conomic-mcp-server (Danish e-conomic platform), CDataSoftware/myob-accountright MCP (Australian MYOB via CData).
+**Regional platforms:** [marcusquinn/quickfile-mcp](https://github.com/marcusquinn/quickfile-mcp) (4 stars, QuickFile UK accounting), [samaxbytez/freeagent-mcp](https://github.com/samaxbytez/freeagent-mcp) (FreeAgent for UK sole traders), [klausagnoletti/e-conomic-mcp-server](https://github.com/klausagnoletti/e-conomic-mcp-server) (Danish e-conomic platform), [CDataSoftware/myob-accountright-mcp-server-by-cdata](https://github.com/CDataSoftware/myob-accountright-mcp-server-by-cdata) (Australian MYOB via CData).
 
 ## Bookkeeping and Double-Entry Accounting
 
@@ -125,41 +123,39 @@ Beyond cloud accounting platforms, a distinct ecosystem serves accountants and d
 
 ### Plain-Text Accounting
 
-**[minhyeoky/mcp-server-ledger](https://github.com/minhyeoky/mcp-server-ledger)** | 47 stars | Ledger CLI
+**[minhyeoky/mcp-server-ledger](https://github.com/minhyeoky/mcp-server-ledger)** | 51 stars | Ledger CLI
 
 Exposes the Ledger CLI double-entry accounting system through MCP, providing financial reporting and budget analysis tools. Ledger CLI is popular among technical users who track finances in plain text files under version control — MCP adds an AI query layer on top.
 
-**[vanto/beanquery-mcp](https://github.com/vanto/beanquery-mcp)** | 45 stars | Beancount
+**[vanto/beanquery-mcp](https://github.com/vanto/beanquery-mcp)** | 51 stars | Beancount
 
 BQL (Beancount Query Language) access through MCP. Beancount is a Python-based double-entry bookkeeping system where transactions are stored as plain text. The MCP server allows AI agents to query financial data using BQL.
 
-**StdioA/beancount-mcp** | 8 stars | Beancount query and transaction submission.
+**[StdioA/beancount-mcp](https://github.com/StdioA/beancount-mcp)** | 11 stars | Beancount query and transaction submission.
 
 ### GnuCash
 
-**[ninetails-io/gnucash-mcp](https://github.com/ninetails-io/gnucash-mcp)** | 21 stars | 15 core tools
+**[ninetails-io/gnucash-mcp](https://github.com/ninetails-io/gnucash-mcp)** | 58 stars | 15 core tools
 
 Read/write access to GnuCash data with 15 core tools plus optional reporting and reconciliation modules. GnuCash is the most widely used open-source desktop accounting application.
 
 ### Bookkeeping-Focused Servers
 
-**[vanderheijden86/moneybird-mcp-server](https://github.com/vanderheijden86/moneybird-mcp-server)** | 27 stars | Moneybird (Dutch platform)
+**[vanderheijden86/moneybird-mcp-server](https://github.com/vanderheijden86/moneybird-mcp-server)** | 28 stars | Moneybird (Dutch platform)
 
 AI-powered bookkeeping for the Moneybird platform, popular in the Netherlands for small business accounting.
 
-**[norman-finance/norman-mcp-server](https://github.com/norman-finance/norman-mcp-server)** | 21 stars | European bookkeeping + tax filing
+**[norman-finance/norman-mcp-server](https://github.com/norman-finance/norman-mcp-server)** | 54 stars | European bookkeeping + tax filing
 
 AI-powered bookkeeping and automated tax filing for European entrepreneurs. Combines double-entry bookkeeping with compliance automation.
 
-**EDSTeam/hakan-accounting-mcp** | 1 star | Swedish compliance, double-entry bookkeeping, financial reporting.
+**[EDSTeam/hakan-accounting-mcp](https://github.com/EDSTeam/hakan-accounting-mcp)** | Swedish compliance, double-entry bookkeeping, financial reporting.
 
-**youssefaltai/finance-mcp** | Double-entry bookkeeping with 18 tools, PostgreSQL backend.
+**[youssefaltai/finance-mcp](https://github.com/youssefaltai/finance-mcp)** | Double-entry bookkeeping with 18 tools, PostgreSQL backend.
 
-**rivradev/recite-mcp** | Receipt processing with local ledger bookkeeping.
+**[rivradev/recite-mcp](https://github.com/rivradev/recite-mcp)** | Receipt processing with local ledger bookkeeping.
 
-**DrewDawson2027/smartledger-mcp** | Parse invoices, categorize by IRS Schedule C, produce tax-ready summaries.
-
-**AccountantInc/mcp-kiko** | KikoBooks, 50 tools for accounts, invoices, bills, payments, and journal entries.
+**[AccountantInc/mcp-kiko](https://github.com/AccountantInc/mcp-kiko)** | KikoBooks, 50 tools for accounts, invoices, bills, payments, and journal entries.
 
 ## Tax Preparation and Tax Law
 
@@ -167,35 +163,33 @@ Tax preparation is heavily jurisdiction-specific, and the MCP ecosystem reflects
 
 ### United States
 
-**[dma9527/irs-taxpayer-mcp](https://github.com/dma9527/irs-taxpayer-mcp)** | 4 stars | 39 tools
+**[dma9527/irs-taxpayer-mcp](https://github.com/dma9527/irs-taxpayer-mcp)** | 8 stars | 39 tools
 
-US individual taxpayer tools covering federal and state tax calculations, credits, deductions, and retirement strategies for tax years 2024 and 2025. The most comprehensive US-focused tax MCP server.
-
-**DrewDawson2027/smartledger-mcp** | Invoice parsing with IRS Schedule C categorization — specifically designed for freelancers and sole proprietors preparing business tax returns.
+US individual taxpayer tools covering federal and state tax calculations, credits, deductions, and retirement strategies for tax years 2024 and 2025, with full SE tax breakdown (Schedule C profit, SE tax, QBI deduction, quarterly payments). The most comprehensive US-focused tax MCP server.
 
 ### Japan
 
-**[kentaroajisaka/tax-law-mcp](https://github.com/kentaroajisaka/tax-law-mcp)** | 78 stars | Japanese tax law
+**[kentaroajisaka/tax-law-mcp](https://github.com/kentaroajisaka/tax-law-mcp)** | 94 stars | Japanese tax law
 
 The highest-starred tax MCP server overall. Provides access to Japan's e-Gov API and National Tax Agency administrative circulars. Enables AI agents to look up and reason about Japanese tax regulations.
 
-**yamayued/houjin-bangou-api-mcp** | 2 stars | Japan NTA Corporate Number API.
+**[yamayued/houjin-bangou-api-mcp](https://github.com/yamayued/houjin-bangou-api-mcp)** | Japan NTA Corporate Number API.
 
 ### Europe
 
-**[norman-finance/norman-mcp-server](https://github.com/norman-finance/norman-mcp-server)** | 21 stars | European bookkeeping + tax filing automation.
+**[norman-finance/norman-mcp-server](https://github.com/norman-finance/norman-mcp-server)** | 54 stars | European bookkeeping + tax filing automation.
 
-**[cornelcroi/french-tax-mcp](https://github.com/cornelcroi/french-tax-mcp)** | 11 stars | French tax calculations and guidance.
+**[cornelcroi/french-tax-mcp](https://github.com/cornelcroi/french-tax-mcp)** | 14 stars | French tax calculations and guidance.
 
-**Bloomidea/saft-mcp** | 1 star | Portuguese SAF-T (Standard Audit File for Tax) — validate, query, and extract data from SAF-T XML files, which are mandatory for Portuguese tax reporting.
+**[Bloomidea/saft-mcp](https://github.com/Bloomidea/saft-mcp)** | Portuguese SAF-T (Standard Audit File for Tax) — validate, query, and extract data from SAF-T XML files, which are mandatory for Portuguese tax reporting.
 
-**srivatsahg/mcp-statistics-denmark** | 1 star | Danish statistical data including tax and income statistics.
+**[srivatsahg/mcp-statistics-denmark](https://github.com/srivatsahg/mcp-statistics-denmark)** | Danish statistical data including tax and income statistics.
 
 ### Other Jurisdictions
 
-**pchuri/korean-capital-gains-tax-mcp** | 2 stars | Korean capital gains tax calculations for real estate transactions.
+**[pchuri/korean-capital-gains-tax-mcp](https://github.com/pchuri/korean-capital-gains-tax-mcp)** | 2 stars | Korean capital gains tax calculations for real estate transactions.
 
-**gama104/GamaMcpServer** | 1 star | Tax-related operations.
+**[gama104/GamaMcpServer](https://github.com/gama104/GamaMcpServer)** | Tax-related operations.
 
 ### What's Missing in Tax
 
@@ -205,31 +199,31 @@ The tax MCP ecosystem has notable gaps. No MCP servers exist for TurboTax/Intuit
 
 Invoicing generates substantial repetitive work — creating invoices, tracking payments, matching receipts, and managing vendor bills. Multiple MCP servers address different parts of this workflow.
 
-**[Aslan11/temporal-invoice-mcp](https://github.com/Aslan11/temporal-invoice-mcp)** | 19 stars | Human-in-the-loop via Temporal
+**[Aslan11/temporal-invoice-mcp](https://github.com/Aslan11/temporal-invoice-mcp)** | 21 stars | Human-in-the-loop via Temporal
 
 Uses Temporal durable workflows for invoice processing with human approval steps — particularly relevant for accounting where AI-generated invoices may need human review before sending.
 
-**[PromptPartner/bexio-mcp-server](https://github.com/PromptPartner/bexio-mcp-server)** | 6 stars | Swiss accounting (Bexio) | 310 tools
+**[PromptPartner/bexio-mcp-server](https://github.com/PromptPartner/bexio-mcp-server)** | 27 stars | Swiss accounting (Bexio) | 314 tools
 
-Covers invoices, contacts, projects, and accounting data for the Bexio platform. At 310 tools, this is one of the largest accounting MCP servers.
+Covers contacts, invoices/sales, banking, projects/time-tracking, accounting, purchasing/expenses, and payroll for the Bexio platform. At 314 tools, this is one of the largest accounting MCP servers.
 
-**Frihet-io/frihet-mcp** | 4 stars | 52 tools
+**[Frihet-io/frihet-mcp](https://github.com/Frihet-io/frihet-mcp)** | 9 stars | 52 tools
 
 Frihet ERP integration covering invoicing, expenses, clients, products, quotes, reports, and tax compliance.
 
-**[Szotasz/billingo-mcp](https://github.com/Szotasz/billingo-mcp)** | 8 stars | Billingo invoicing API v3 — manage invoices, partners, and products.
+**[Szotasz/billingo-mcp](https://github.com/Szotasz/billingo-mcp)** | 11 stars | Billingo invoicing API v3 — manage invoices, partners, and products.
 
-**iamsamuelfraga/mcp-holded** | 7 stars | Holded Invoice API.
+**[nubiia-dev/mcp-holded](https://github.com/nubiia-dev/mcp-holded)** | 19 stars | Holded Invoice API (formerly published as iamsamuelfraga/mcp-holded; GitHub now redirects to this location).
 
-**markslorach/invoice-mcp** | 6 stars | PDF invoice generation via natural language.
+**[markslorach/invoice-mcp](https://github.com/markslorach/invoice-mcp)** | 11 stars | PDF invoice generation via natural language.
 
-**Szotasz/nav-online-invoice-mcp** | 5 stars | Hungarian NAV Online Invoice API v3.0 — mandatory electronic invoicing for Hungarian businesses.
+**[Szotasz/nav-online-invoice-mcp](https://github.com/Szotasz/nav-online-invoice-mcp)** | 9 stars | Hungarian NAV Online Invoice API v3.0 — mandatory electronic invoicing for Hungarian businesses.
 
-**DojoCodingLabs/hacienda-cr** | 5 stars | Costa Rica electronic invoicing (Hacienda API).
+**[DojoCodingLabs/hacienda-cr](https://github.com/DojoCodingLabs/hacienda-cr)** | 6 stars | Costa Rica electronic invoicing (Hacienda API).
 
-**Continero/fakturoid-connector** | 5 stars | Fakturoid.cz invoice management with Discord notifications.
+**[Continero/fakturoid-connector](https://github.com/Continero/fakturoid-connector)** | 6 stars | Fakturoid.cz invoice management with Discord notifications.
 
-**SamDreamsMaker/facturx-mcp** | 1 star | Factur-X electronic invoices (EN 16931 standard) with automated tax calculations.
+**[SamDreamsMaker/facturx-mcp](https://github.com/SamDreamsMaker/facturx-mcp)** | Factur-X electronic invoices (EN 16931 standard) with automated tax calculations.
 
 **[MSFT-Innovation-Hub-India/p2p-anomaly-detection-foundry-agent](https://github.com/MSFT-Innovation-Hub-India/p2p-anomaly-detection-foundry-agent)** | 6 stars | Procure-to-pay invoice anomaly detection using Azure AI and GPT-4o vision — flags suspicious patterns in invoice processing.
 
@@ -237,21 +231,19 @@ Frihet ERP integration covering invoicing, expenses, clients, products, quotes, 
 
 Payroll MCP servers complement the accounting ecosystem by connecting AI agents to employee compensation systems.
 
-**[check-technologies/mcp-server-check](https://github.com/check-technologies/mcp-server-check)** | 17 stars | Check Payroll API
+**[check-technologies/mcp-server-check](https://github.com/check-technologies/mcp-server-check)** | 18 stars | Check Payroll API
 
 The most popular dedicated payroll MCP server. Check provides payroll infrastructure as an API — many payroll platforms are built on top of it.
 
-**rgrz/peoplesoft-mcp** | 3 stars | PeopleSoft HCM (HR, Payroll, Benefits).
+**[rgrz/peoplesoft-mcp](https://github.com/rgrz/peoplesoft-mcp)** | 12 stars | PeopleSoft HCM (HR, Payroll, Benefits).
 
-**rocketsciencegg/rippling-mcp-server** | 2 stars | Rippling HR/payroll/workforce management.
+**[bifrost-mcp/rippling-mcp](https://github.com/bifrost-mcp/rippling-mcp)** | 3 stars | Rippling with 18 tools for employees, departments, leave, and groups.
 
-**bifrost-mcp/rippling-mcp** | Rippling with 18 tools for employees, departments, leave, and groups.
+**[runpayrolla/payrolla-mcp](https://github.com/runpayrolla/payrolla-mcp)** | Payrolla services.
 
-**runpayrolla/payrolla-mcp** | 1 star | Payrolla services.
+**[Payroll-Engine/PayrollEngine.Mcp.Server](https://github.com/Payroll-Engine/PayrollEngine.Mcp.Server)** | Query and analyze payroll data with natural language.
 
-**Payroll-Engine/PayrollEngine.Mcp.Server** | Query and analyze payroll data with natural language.
-
-**Additional payroll-adjacent servers:** CodeGlide/workday-payroll-api (Workday Payroll), JonasDNielsen/deel-mcp-server (Deel HR/payroll read-only), ag2-mcp-servers/xero-payroll-au-api (Xero Payroll Australia).
+**Additional payroll-adjacent servers:** [CodeGlide/workday-payroll-api](https://github.com/CodeGlide/workday-payroll-api) (Workday Payroll), [ag2-mcp-servers/xero-payroll-au-api](https://github.com/ag2-mcp-servers/xero-payroll-au-api) (Xero Payroll Australia).
 
 Note: Gusto's official MCP server (7 tools, read-only) is covered in our [HR and recruiting guide](/guides/mcp-hr-recruiting-talent/) but is equally relevant for accounting teams managing payroll data.
 
@@ -259,15 +251,15 @@ Note: Gusto's official MCP server (7 tools, read-only) is covered in our [HR and
 
 Expense tracking is a critical link between employee spending and the general ledger.
 
-**[campusx-official/expense-tracker-mcp-server](https://github.com/campusx-official/expense-tracker-mcp-server)** | 20 stars | Local expense tracking — a standalone tool for personal or small business expense management.
+**[campusx-official/expense-tracker-mcp-server](https://github.com/campusx-official/expense-tracker-mcp-server)** | 22 stars | Local expense tracking — a standalone tool for personal or small business expense management.
 
 **[crazyrabbitLTC/mcp-brex-server](https://github.com/crazyrabbitLTC/mcp-brex-server)** | 4 stars | Brex expense tracking
 
 Read-only access to Brex corporate card data with projection and batching capabilities.
 
-**jageenshukla/claude-skills-mcp-expense-automation** | 4 stars | Automated expense management with PII redaction — important for handling receipt images that may contain sensitive data.
+**[jageenshukla/claude-skills-mcp-expense-automation](https://github.com/jageenshukla/claude-skills-mcp-expense-automation)** | 4 stars | Automated expense management with PII redaction — important for handling receipt images that may contain sensitive data.
 
-**expenselm/expenselm-mcp-server** | 1 star | ExpenseLM expense management.
+**[expenselm/expenselm-mcp-server](https://github.com/expenselm/expenselm-mcp-server)** | ExpenseLM expense management.
 
 ### What's Missing in Expense Management
 
@@ -275,7 +267,7 @@ No MCP servers exist for Expensify, Ramp, Mercury, or most major corporate card 
 
 ## Payments and Billing
 
-**[stripe/ai](https://github.com/stripe/ai)** (formerly stripe/agent-toolkit) | 1,459 stars | **Official by Stripe** | 25 tools
+**[stripe/ai](https://github.com/stripe/ai)** (formerly stripe/agent-toolkit) | 1,737 stars | **Official by Stripe** | 25 tools
 
 Stripe's official MCP server is one of the most popular in the entire MCP ecosystem. Provides 25 tools in Python and TypeScript for customers, subscriptions, invoices, payment intents, refunds, and product management. Available as a remote MCP at mcp.stripe.com with OAuth authentication. Any accounting workflow involving payment collection, subscription billing, or refund processing can leverage this server.
 
@@ -283,15 +275,15 @@ Stripe's official MCP server is one of the most popular in the entire MCP ecosys
 
 Bank reconciliation — matching transactions in accounting software against bank statements — is one of the most time-consuming accounting tasks. MCP servers in this category connect to banking data APIs.
 
-**Plaid MCP Server** | **Official** | Developer tools integration
+**[Plaid Dashboard MCP Server](https://plaid.com/docs/resources/mcp/)** | **Official** | Developer tools integration
 
-Plaid's official MCP server provides developer tools integration, API usage metrics, Link conversion optimization, and support diagnostics. [Plaid connects to 12,000+ financial institutions](https://plaid.com/), making it a natural bridge for bank reconciliation workflows.
+Plaid's [official Dashboard MCP server](https://plaid.com/docs/resources/mcp/) offers "production diagnostics and analytics tools, including tools for debugging Items, reviewing Link conversion data, and checking usage metrics" — support diagnostics, Link conversion analytics, and API usage metrics. Plaid notes the server "is under active development" with "limited support" for now. [Plaid connects to 12,000+ financial institutions](https://plaid.com/), making it a natural bridge for bank reconciliation workflows.
 
 **Community Plaid MCP** | .NET | Personal finance
 
 A community implementation exposing Plaid banking APIs for personal finance applications through MCP.
 
-**Xero Bank Feeds API** (ag2-mcp-servers/xero-bank-feeds-api) provides direct bank feed access through Xero's platform.
+**Xero Bank Feeds API** ([ag2-mcp-servers/xero-bank-feeds-api](https://github.com/ag2-mcp-servers/xero-bank-feeds-api)) provides direct bank feed access through Xero's platform.
 
 ## ERP Financial Modules
 
@@ -299,63 +291,57 @@ Enterprise resource planning systems contain the most comprehensive financial da
 
 ### SAP
 
-SAP's MCP ecosystem spans multiple implementation approaches.
+SAP's MCP ecosystem spans multiple implementation approaches, including community tooling and SAP's own agentic-AI initiatives on SAP BTP — see SAP's own community writeup on [building an agentic AI system with MCP and SAP BTP](https://community.sap.com/t5/technology-blog-posts-by-sap/building-an-agentic-ai-system-with-model-context-protocol-mcp-and-sap-btp/ba-p/14090900).
 
-**SAP ABAP MCP Add-on** — Supports SAP ABAP releases from 7.01 onwards with display, create, and update tools for SAP ECC and S/4HANA. Covers the full range of SAP financial transactions.
+**[DataZooDE/erpl-adt](https://github.com/DataZooDE/erpl-adt)** | 16 stars | CLI and MCP for SAP ADT REST API.
 
-**SAP HANA Cloud** — MCP support for Joule agents (SAP's AI assistant).
+**[chrbailey/SAP-Transaction-Forensics](https://github.com/chrbailey/SAP-Transaction-Forensics)** | 6 stars | Cross-system forensic pattern discovery for SAP ERP, Salesforce, and NetSuite data, backed by a 2,048-test suite — relevant for fraud detection and compliance auditing.
 
-**[DataZooDE/erpl-adt](https://github.com/DataZooDE/erpl-adt)** | 6 stars | CLI and MCP for SAP ADT REST API.
-
-**[chrbailey/SAP-Transaction-Forensics](https://github.com/chrbailey/SAP-Transaction-Forensics)** | 5 stars | Cross-system forensic analysis for SAP ERP and Salesforce, with 834 tests — relevant for fraud detection and compliance auditing.
-
-**CDataSoftware/sap-erp-mcp-server-by-cdata** | 5 stars | Read-only via CData JDBC.
+**[CDataSoftware/sap-erp-mcp-server-by-cdata](https://github.com/CDataSoftware/sap-erp-mcp-server-by-cdata)** | Read-only via CData JDBC.
 
 ### Odoo ERP (Accounting Module)
 
 Odoo's open-source ERP includes a comprehensive accounting module, and its MCP ecosystem is the largest among open-source ERPs.
 
-**[ivnvxd/mcp-server-odoo](https://github.com/ivnvxd/mcp-server-odoo)** | 239 stars | Standardized resources and tools for data retrieval and manipulation — the most popular open-source ERP MCP server.
+**[ivnvxd/mcp-server-odoo](https://github.com/ivnvxd/mcp-server-odoo)** | 365 stars | Standardized resources and tools for data retrieval and manipulation — the most popular open-source ERP MCP server.
 
-**[hachecito/odoo-mcp-improved](https://github.com/hachecito/odoo-mcp-improved)** | 40 stars | Advanced tools specifically for sales, stock, and accounting.
+**[hachecito/odoo-mcp-improved](https://github.com/hachecito/odoo-mcp-improved)** | 48 stars | Advanced tools specifically for sales, stock, and accounting.
 
-**[yourtechtribe/mcp-odoo-for-finance](https://github.com/yourtechtribe/mcp-odoo-for-finance)** | 13 stars | Specifically designed for Odoo's finance module.
+**[yourtechtribe/mcp-odoo-for-finance](https://github.com/yourtechtribe/mcp-odoo-for-finance)** | 14 stars | Specifically designed for Odoo's finance module.
 
-**jeevanism/odoo-accounting-mcp** | Experimental, focuses on journal entries for audit workflows.
+**[jeevanism/odoo-accounting-mcp](https://github.com/jeevanism/odoo-accounting-mcp)** | Experimental, focuses on journal entries for audit workflows.
 
 ## Unified Accounting APIs
 
 For organizations that need to connect AI agents across multiple accounting platforms, unified API platforms offer single-integration coverage.
 
-**NaimGQKC/coa-mapper-mcp** | Chart of accounts mapper
+**[NaimGQKC/coa-mapper-mcp](https://github.com/NaimGQKC/coa-mapper-mcp)** | Chart of accounts mapper
 
 Maps charts of accounts between QuickBooks, Xero, Wave, Sage, and FreshBooks. Zero API keys required, works entirely offline. Solves a critical problem: when migrating between accounting platforms or consolidating data from subsidiaries using different systems, chart of accounts mapping is a major bottleneck.
 
-**Unified.to MCP Server** — Built-in MCP for unified APIs including accounting, providing a single integration point for multiple platforms.
+**[Unified.to MCP Server](https://unified.to/mcp)** — Built-in MCP for unified APIs including accounting, providing a single integration point for multiple platforms.
 
-**CData Connect AI** — Managed MCP platform with connectors for 250+ data sources including QuickBooks, Xero, Sage, NetSuite, Wave, MYOB, Oracle Financials, and SAP Business One (commercial).
-
-**chrisgermon/crowdit-mcp-server** | 2 stars | HaloPSA + Xero + Front + Quoter — example of multi-platform integration for managed service providers.
+**[CData Connect AI](https://www.cdata.com/connect/ai/)** — Managed MCP platform advertising "270+ connectors," including the CData accounting connectors verified elsewhere in this guide for QuickBooks, Xero, Sage, NetSuite, Wave, MYOB, and SAP (commercial).
 
 ## Financial Compliance and Audit
 
 AI agents in accounting must operate within strict compliance frameworks. Several MCP servers address audit and compliance directly.
 
-**SYNTAAI/erp-security-mcp** | 20 tools | ERP security analysis and compliance for SAP systems.
+**[SYNTAAI/sap-security-mcp](https://github.com/SYNTAAI/sap-security-mcp)** | 17 security/compliance tools (10 security tools, 5 Basis tools, 2 report tools) | ERP security analysis and compliance for SAP systems via RFC calls.
 
-**[chrbailey/SAP-Transaction-Forensics](https://github.com/chrbailey/SAP-Transaction-Forensics)** | 5 stars | Cross-system transaction forensics with conformance checking — designed for auditors investigating transaction patterns across SAP and Salesforce.
+**[chrbailey/SAP-Transaction-Forensics](https://github.com/chrbailey/SAP-Transaction-Forensics)** | 6 stars | Cross-system transaction forensics with conformance checking — designed for auditors investigating transaction patterns across SAP, Salesforce, and NetSuite.
 
 **[MSFT-Innovation-Hub-India/p2p-anomaly-detection-foundry-agent](https://github.com/MSFT-Innovation-Hub-India/p2p-anomaly-detection-foundry-agent)** | 6 stars | Procure-to-pay anomaly detection using Azure AI — designed to flag procurement fraud patterns.
 
-**Impesud/italy-legacy-db-ai-bridge-template** | Italian ERP integration with PII masking and GDPR compliance.
+**[Impesud/italy-legacy-db-ai-bridge-template](https://github.com/Impesud/italy-legacy-db-ai-bridge-template)** | Italian ERP integration with PII masking and GDPR compliance.
 
 ## Time Tracking with Invoicing
 
 Time-based billing connects directly to invoicing and accounts receivable.
 
-**ianaleck/harvest-mcp-server** | 3 stars | 60+ tools | Harvest time tracking plus invoice management — covers the full cycle from time entry to client billing.
+**[ianaleck/harvest-mcp-server](https://github.com/ianaleck/harvest-mcp-server)** | 7 stars | 60+ tools | Harvest time tracking plus invoice management — covers the full cycle from time entry to client billing.
 
-**feamster/paymo-mcp** | 3 stars | Paymo time tracking plus invoice management.
+**[feamster/paymo-mcp](https://github.com/feamster/paymo-mcp)** | 5 stars | Paymo time tracking plus invoice management.
 
 ## Architecture Patterns
 
@@ -500,7 +486,7 @@ The EU AI Act introduces new requirements for AI systems used in financial servi
 
 ### CPA Professional Ethics
 
-The AICPA emphasizes that AI assists but cannot replace professional judgment, skepticism, or ethical reasoning. This has practical implications for MCP deployments:
+Professional-ethics guidance for CPAs, including [AICPA continuing-education material on AI and critical thinking](https://www.aicpa-cima.com/cpe-learning/course/ethics-and-critical-thinking-in-an-ai-world), frames AI as a tool that assists but does not replace professional judgment, skepticism, or ethical reasoning. This has practical implications for MCP deployments:
 
 - AI agents should prepare work products for CPA review, not make final decisions
 - Tax return preparation by AI requires qualified professional sign-off
@@ -520,16 +506,16 @@ Financial records contain highly sensitive personal and business information. GD
 
 | Platform | Official? | Stars | Tools/Endpoints | Auth | Key Strength |
 |----------|-----------|-------|----------------|------|-------------|
-| QuickBooks Online | Yes (Intuit) | 153 | SQL-like queries, CRUD, reports | OAuth 2.0 | Most complete SMB accounting MCP |
-| Xero | Yes (Xero) | 237 | 188 endpoints | OAuth 2.0 | Broadest API coverage |
+| QuickBooks Online | Yes (Intuit) | 351 | SQL-like queries, CRUD, reports | OAuth 2.0 | Most complete SMB accounting MCP |
+| Xero | Yes (Xero) | 350 | 50+ tools | OAuth 2.0 | Broadest API coverage |
 | Sage Intacct | Yes (Sage) | N/A | REST APIs + AI Gateway | Vendor auth | Mid-market/enterprise focus |
 | Zoho Books | Yes (Zoho) | N/A | 15+ app coverage | OAuth 2.0 | Cross-app Zoho integration |
 | NetSuite | Yes (Oracle) | N/A | SuiteQL, CRUD, reports | OAuth 2.0 + PKCE | Enterprise role-based security |
 | Dynamics 365 | Yes (Microsoft) | N/A | Data/Form/Action tools | Role-based | Enterprise ERP breadth |
-| Odoo | Community | 239 | General + finance-specific | Varies | Open-source, customizable |
-| Stripe | Yes (Stripe) | 1,459 | 25 tools | OAuth | Payment processing leader |
-| Tally ERP | Community | 30 | Data feed to AI | API key | India market leader |
-| Bexio | Community | 6 | 310 tools | API key | Swiss market, largest tool count |
+| Odoo | Community | 365 | General + finance-specific | Varies | Open-source, customizable |
+| Stripe | Yes (Stripe) | 1,737 | 25 tools | OAuth | Payment processing leader |
+| Tally ERP | Community | 67 | Data feed to AI | API key | India market leader |
+| Bexio | Community | 27 | 314 tools | API key | Swiss market, largest tool count |
 
 ## Ecosystem Gaps
 

@@ -49,17 +49,17 @@ The [Datalayer jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-serv
 
 ### Google Colab MCP Server
 
-In March 2026, [Google released the Colab MCP Server](https://www.marktechpost.com/2026/03/19/google-colab-now-has-an-open-source-mcp-model-context-protocol-server-use-colab-runtimes-with-gpus-from-any-local-ai-agent/) as open source. This lets AI agents interact with Google Colab notebooks — creating cells, writing code, executing it, and retrieving results.
+In March 2026, [Google released the Colab MCP Server](https://developers.googleblog.com/announcing-the-colab-mcp-server-connect-any-ai-agent-to-google-colab/) as open source (the [official repo](https://github.com/googlecolab/colab-mcp) is at `googlecolab/colab-mcp`). This lets AI agents interact with Google Colab notebooks — creating cells, writing code, executing it, and retrieving results.
 
 **What makes it different from Datalayer:**
-- **GPU access** — Colab provides free GPU/TPU runtimes, so agents can run computationally intensive ML training
-- **Pre-configured environment** — Deep learning libraries (PyTorch, TensorFlow, JAX) are pre-installed
+- **GPU/TPU access** — Colab's free tier offers [access to GPUs and TPUs](https://research.google.com/colaboratory/faq.html), though Google notes that access "is heavily restricted" and not guaranteed on the free tier
+- **Pre-configured environment** — Colab runtimes [ship with many libraries and packages pre-installed](https://research.google.com/colaboratory/runtime-version-faq.html), commonly including deep learning frameworks like PyTorch and TensorFlow
 - **Cloud execution** — Code runs on Google's infrastructure, not locally
-- **Two operational modes** — Session Proxy (syncs with the browser UI so you can watch the agent work) and Runtime Mode (direct Jupyter kernel execution for headless automation)
+- **Two operational modes** — [Session Proxy (syncs with the browser UI so you can watch the agent work) and Runtime Mode (direct Jupyter kernel execution for headless automation)](https://github.com/googlecolab/colab-mcp)
 - **Persistent state** — Variables persist across execution steps, enabling iterative reasoning and debugging within the same notebook
 - **Dynamic dependency management** — Agents can `pip install` packages on the fly to self-configure the environment
 
-**Compatible clients:** Claude Code, Cline, Cursor, Codex, and any MCP-compatible agent.
+**Compatible clients:** the [official repo lists](https://github.com/googlecolab/colab-mcp) Claude Code, Gemini CLI, and Windsurf as supported clients; as a standard MCP server it should work with any MCP-compatible agent.
 
 **Current limitations:**
 - Direct file upload through MCP is limited — use Google Drive integration or fetch data from URLs
@@ -89,7 +89,7 @@ The [MotherDuck MCP server](https://github.com/motherduckdb/mcp-server-motherduc
 - Handles datasets from megabytes to gigabytes without infrastructure setup
 - Excellent at aggregations (SUM, AVG, GROUP BY) that data scientists need constantly
 - Reads CSV, Parquet, JSON, and Excel files directly — no ETL step needed
-- MotherDuck adds cloud persistence with zero-copy clones for safe agent experimentation
+- MotherDuck adds cloud persistence with [zero-copy clones for safe agent experimentation](https://motherduck.com/blog/give-your-agents-write-access/) — a clone shares underlying storage until the agent writes to it, so mistakes stay isolated from production
 
 **Data pipeline pattern:** Agents use DuckDB MCP to explore source data on S3, understand schemas, and then generate dbt staging models — cutting down the trial-and-error loop that slows traditional data engineering.
 
@@ -97,14 +97,14 @@ The [MotherDuck MCP server](https://github.com/motherduckdb/mcp-server-motherduc
 
 The [MCP Pandas server](https://github.com/alistairwalsh/mcp_pandas) provides containerized pandas, NumPy, and matplotlib capabilities through a FastAPI service. Agents can perform data manipulation, statistical analysis, and visualization without managing Python environments.
 
-For heavier analysis, the [MCP Server for Data Exploration](https://github.com/reading-plus-ai/mcp-server-data-exploration) (343+ stars) goes further — loading CSV files and executing Python scripts that use scikit-learn, SciPy, and statsmodels for statistical modeling.
+For heavier analysis, the [MCP Server for Data Exploration](https://github.com/reading-plus-ai/mcp-server-data-exploration) (545+ stars) goes further — loading CSV files and executing Python scripts; its declared dependencies include scikit-learn, SciPy, and statsmodels for statistical modeling.
 
 ### BigQuery, Oracle, and Enterprise SQL
 
 Enterprise data teams have growing options:
 
 - **Google BigQuery** — [fully managed remote MCP server](https://cloud.google.com/blog/products/data-analytics/using-the-fully-managed-remote-bigquery-mcp-server-to-build-data-ai-agents) in preview since January 2026, with direct access to analytics data
-- **Oracle** — the [SQLcl MCP Server](https://blogs.oracle.com/ai-and-datascience/ai-driven-sql-made-simple-with-oracle-sqlcl-mcp-server) translates natural language to governed SQL against Autonomous Database with policy enforcement
+- **Oracle** — the [SQLcl MCP Server](https://blogs.oracle.com/ai-and-datascience/ai-driven-sql-made-simple-with-oracle-sqlcl-mcp-server) (see also [Oracle's official docs](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.2/sqcug/using-oracle-sqlcl-mcp-server.html)) translates natural language to governed SQL against Autonomous Database with policy enforcement
 - **PostgreSQL** — the standard MCP server for production relational data, read-only by default for safety
 
 The pattern across all SQL MCP servers: agents translate natural language questions into SQL, execute queries, and interpret results — handling the translation layer that traditionally requires data analysts to context-switch between business questions and SQL syntax.
@@ -115,14 +115,14 @@ Experiment tracking is where MCP shines for data scientists. Instead of manually
 
 ### MLflow MCP Server
 
-[MLflow's official MCP server](https://mlflow.org/docs/latest/genai/mcp/) provides programmatic access to experiment data, enabling agents to:
+[MLflow's official MCP server](https://mlflow.org/docs/latest/genai/mcp/) ships GenAI trace-management tools by default (searching/tagging traces, logging evaluation feedback and assessments); its `MLFLOW_MCP_TOOLS` setting can also expose broader `experiments`, `runs`, `models`, and `deployments` tool groups for traditional ML workflows.
+
+For the specific run-comparison and registry workflows data scientists want, the community server [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) documents them explicitly:
 
 - Query experiments, runs, and metrics across the tracking server
-- Compare metrics and hyperparameters across runs
-- Access artifacts (models, plots, data)
-- Browse the model registry (versions, stage transitions, annotations)
-
-Community implementations like [kkruglik/mlflow-mcp](https://github.com/kkruglik/mlflow-mcp) add advanced querying and run comparison capabilities.
+- Compare metrics and hyperparameters across runs, find best-performing models
+- Browse and download run artifacts (models, plots, data)
+- Manage the model registry (versions, stage transitions, tags, aliases)
 
 **Typical workflow:**
 - "Show me all runs from the churn-prediction experiment with accuracy > 0.85"
@@ -158,25 +158,24 @@ Feature stores manage the features (engineered data signals) that feed ML models
 
 ### Feast
 
-[Feast](https://feast.dev/) (the open-source feature store) integrates with MCP through its [FastAPI endpoints](https://docs.feast.dev/tutorials/mcp_feature_store). The `fastapi_mcp` integration automatically exposes the Feast feature server's API as MCP tools, enabling agents to:
+[Feast](https://feast.dev/) (the open-source feature store) integrates with MCP through its [FastAPI endpoints](https://docs.feast.dev/tutorials/mcp_feature_store); the `fastapi_mcp` integration exposes the feature server's API as MCP tools. Feast's own [write-up on agent integration](https://feast.dev/blog/feast-agents-mcp/) documents the resulting tools:
 
-- Retrieve online features for inference
-- Browse available feature views and entities
-- Understand feature definitions and data sources
+- `get-online-features` — entity-based retrieval of structured features for inference
+- `vector_store_search` / `retrieve_online_documents_v2` — vector similarity search over unstructured data
+- `write-to-online-store` — persist agent state or checkpoint memory back into Feast
 
 **Use case:** An agent building a prediction pipeline can call Feast MCP to discover what features are available for a given entity (e.g., customer features for churn prediction), retrieve feature values, and incorporate them into model training — all through natural language.
 
 ### Tecton
 
-[Tecton's MCP server](https://www.tecton.ai/blog/introducing-ai-assisted-feature-engineering-with-cursor-mcp/) takes a different approach — focused on feature **engineering** rather than just feature serving. The server runs locally and lets AI coding agents:
+[Tecton's MCP server](https://github.com/tecton-ai/tecton-mcp) takes a different approach — focused on feature **engineering** rather than just feature serving. The server runs locally and gives AI coding agents:
 
-- Understand the Tecton Feature Platform's structure
-- Write feature engineering code from natural language descriptions
-- Write unit tests for features
-- Validate syntax and semantics
-- Autonomously fix validation errors
+- A vector-searchable index of Tecton code examples and documentation
+- Full or targeted Tecton SDK reference lookups
+- Access to the Tecton Metrics API for point-in-time system metrics
+- (With a `TECTON_API_KEY`) tools to query live feature services
 
-**The workflow:** You describe a feature in plain English ("create a feature that counts the number of purchases a customer made in the last 30 days"), and the agent writes the Tecton feature definition code, tests it, validates it, and fixes any issues — all through MCP tool calls.
+**The workflow**, per [Tecton co-founder/CTO Kevin Stumpf](https://stumpfkevin.medium.com/ai-assisted-ml-engineering-with-cursor-mcp-lessons-from-building-a-feature-writing-agent-252221865d26): you describe a feature in plain English ("create a feature that counts the number of purchases a customer made in the last 30 days"), the coding agent (e.g., Cursor) writes the Tecton feature definition using the retrieved examples and docs, then validates it by running Tecton's `tecton plan` CLI — iterating in a control loop to autonomously fix syntax errors until validation passes.
 
 ## Dataset Discovery
 
@@ -184,7 +183,7 @@ Before analysis comes finding the right data.
 
 ### Hugging Face Hub MCP
 
-The [Hugging Face MCP server](https://github.com/shreyaskarnik/huggingface-mcp-server) (52+ stars) connects agents to Hugging Face Hub's ecosystem — searching and retrieving models, datasets, papers, Spaces, and collections. With an optional `HF_TOKEN` for higher rate limits, agents can discover publicly available datasets for any research topic.
+The [Hugging Face MCP server](https://github.com/shreyaskarnik/huggingface-mcp-server) (71+ stars) connects agents to Hugging Face Hub's ecosystem — searching and retrieving models, datasets, papers, Spaces, and collections. With an optional `HF_TOKEN` for higher rate limits, agents can discover publicly available datasets for any research topic.
 
 ### Specialized Data Sources
 
@@ -193,7 +192,7 @@ Several MCP servers target specific data domains:
 - **[NASA CMR-MCP](https://github.com/podaac/cmr-mcp)** — Earth science data from NASA's catalogs (no API key needed)
 - **[Data.gov MCP](https://github.com/melaodoidao/datagov-mcp-server)** — U.S. government datasets (public API)
 - **[Education Data MCP](https://github.com/ckz/edu_data_mcp_server)** — School, district, and college statistics from the Urban Institute
-- **[Fiscal Data MCP](https://github.com/QuantGeekDev/fiscal-data-mcp)** — U.S. Treasury financial data with 30-day caching
+- **[Fiscal Data MCP](https://github.com/QuantGeekDev/fiscal-data-mcp)** — U.S. Treasury financial data; its historical-data resource covers 30 days of statements and is cached for 1 hour
 
 These are niche but valuable — a researcher studying climate trends can chain NASA CMR → Dataset Viewer → pandas analysis without ever leaving their AI conversation.
 
@@ -203,9 +202,9 @@ Data science needs visual output. MCP servers are catching up.
 
 ### Current Options
 
-- **[MCP Data Visualization Server](https://lobehub.com/mcp/xoniks-mcp-visualization-duckdb)** — Multiple chart types (bar, line, scatter, pie, histogram, box, heatmap, area) with automatic statistical analysis and pattern detection
-- **[MCP Data Analyzer](https://mcpservers.org/servers/OuchiniKaeru/mcp_data_analyzer)** — Analyzes .xlsx and .csv files using matplotlib and plotly
-- **[Penrose MCP](https://snyk.io/articles/11-data-science-mcp-servers-for-sourcing-analyzing-and-visualizing-data/)** — Mathematical diagrams programmatically generated as SVG
+- **[MCP Data Visualization Server](https://github.com/xoniks/mcp-visualization-duckdb)** — Multiple chart types (bar, line, scatter, pie, histogram, box, heatmap, area) with automatic statistical analysis and pattern detection
+- **[MCP Data Analyzer](https://github.com/OuchiniKaeru/mcp-data-analyzer)** — Analyzes .xlsx and .csv files using matplotlib and plotly
+- **[Penrose MCP](https://github.com/bmorphism/penrose-mcp)** — Mathematical diagrams programmatically generated as SVG
 - **[Grafana MCP](https://github.com/grafana/mcp-grafana)** — Access distributed tracing data, dashboards, and metrics through AI agents
 
 ### The Visualization Gap
@@ -218,7 +217,7 @@ The practical workaround: use **Jupyter MCP** to execute matplotlib/plotly code 
 
 ### DataHub MCP
 
-The [DataHub MCP server](https://github.com/acryldata/datahub-mcp) (27+ stars) from Acryl Data connects agents to your data catalog:
+The [DataHub MCP server](https://github.com/acryldata/mcp-server-datahub) (78+ stars) from Acryl Data connects agents to your data catalog:
 
 - Search entities across databases, tables, dashboards, and pipelines
 - Retrieve metadata including schemas, ownership, and tags
@@ -243,14 +242,14 @@ Combined with DuckDB MCP for ad-hoc exploration, agents can explore raw data, un
 
 ### What's Emerging
 
-Dedicated Airflow, Dagster, and Prefect MCP servers aren't widely available yet, though the data orchestration space is moving toward AI integration. [Orchestra](https://www.getorchestra.io/) already incorporates MCP and Claude Code for pipeline generation. As pipeline orchestrators add MCP support, agents will be able to trigger DAG runs, monitor pipeline health, and debug failures through natural language.
+Dedicated Airflow, Dagster, and Prefect MCP servers aren't widely available yet, though the data orchestration space is moving toward AI integration. [Orchestra](https://www.getorchestra.io/product/orchestra-ai-and-mcp-for-data-teams) already exposes its pipeline context graph and end-to-end lineage via MCP so AI agents can reason about pipeline structure. As pipeline orchestrators add MCP support, agents will be able to trigger DAG runs, monitor pipeline health, and debug failures through natural language.
 
 ## Monitoring and Observability
 
 Once models are deployed, monitoring matters.
 
-- **[Datadog MCP](https://mcpguide.dev/blog/best-mcp-servers-for-data-scientists)** — Query metrics, traces, and logs for model monitoring, pipeline health, and resource usage tracking
-- **[Prometheus MCP](https://mcpguide.dev/blog/best-mcp-servers-for-data-scientists)** — Query time-series metrics using natural language instead of PromQL
+- **[Datadog MCP](https://github.com/datadog-labs/mcp-server)** — Query metrics, traces, and logs for model monitoring, pipeline health, and resource usage tracking
+- **[Prometheus MCP](https://github.com/prometheus/prometheus-mcp)** — Generate and execute PromQL queries, list and analyze metrics, using natural language
 - **[Grafana MCP](https://github.com/grafana/mcp-grafana)** — Access dashboards, tracing data, and alert information
 
 The pattern: instead of manually checking dashboards after a model deployment, ask the agent "how is the churn prediction model performing since the last deployment?" and it queries the relevant monitoring tools.

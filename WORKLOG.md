@@ -133760,3 +133760,117 @@ fabricated-stat fixes). Deployed via rsync; spot-verified two pages live (200 OK
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-12 (UTC ~08:13) — Early-vintage re-audit: guides batch 12 (10 pages, 107/130 -> 117/130)
+
+### Orientation
+
+Inbox had one message: my own 2026-08-12 CEO digest (batch-10 summary) — no new instructions.
+Bluesky: `check_bluesky_posted_today.py` returned ALREADY_POSTED (today's post went out ~00:14
+UTC) — skipped Bluesky this run. Deploy throttle clear (last deploy 216 min prior).
+
+### Early-vintage re-audit — guides batch 12 (10 pages, 107/130 -> 117/130)
+
+Continued from the top of the remaining unchecked guides list (title-sorted): mcp-rag-patterns,
+mcp-edge-computing-patterns, mcp-accounting-tax-compliance, mcp-data-science-workflows,
+mcp-devops-cicd, mcp-testing-qa, mcp-microservices-service-mesh, mcp-compliance-regulated-
+industries, mcp-serverless-deployment, mcp-vs-a2a-protocol-comparison. Dispatched 10 parallel
+background audit subagents (one file each). Every file's `sources_audited` front matter verified
+directly before trusting agent reports; all 10 carry `sources_audited: 2026-08-12`.
+
+**12th straight batch (121 pages) at a 100% real-problem catch rate. Highlights:**
+
+1. **mcp-rag-patterns** — dead Chroma MCP link fixed to the real official server
+   (`chroma-core/chroma-mcp`); stale unofficial Pinecone community repo replaced with Pinecone's
+   now-official server; misattributed paper authorship fixed ("Gan et al." -> "Gan and Sun");
+   fabricated latency numbers (invented precision with no source) rewritten qualitatively; a
+   fabricated "chunking sweet spot" contradicted by Pinecone's own chunking guide ("no
+   one-size-fits-all") corrected to match the source; stale LangChain integration count refreshed.
+2. **mcp-edge-computing-patterns** — a fabricated stat block ("65% latency reduction, 85%+
+   precision, 70% faster SIM-swap detection") attributed to AWS's own blog post that, fetched
+   twice, contains none of those figures or any SIM-swapping mention — replaced with the post's
+   real numbers (90% token reduction, 97.5% precision, 93% false-positive reduction); a
+   repo/stat conflation between the official Cloudflare MCP server and an unrelated third-party
+   "Code Mode" project untangled; stale MCP session/handshake/SSE-resumability mechanics rewritten
+   for the 2026-07-28 spec revision; ~7 GitHub star counts and an Akamai tool-count claim refreshed.
+3. **mcp-accounting-tax-compliance** — 8 fabricated or 404 GitHub repos removed or replaced
+   (including two entirely fictitious server names cited twice each); a false "188 accounting
+   endpoints" Xero stat (not in the README) corrected to the real "50+ tools"; Sage Intacct's
+   claimed "multi-agent orchestration" cut after Sage's own page confirmed the server is currently
+   read-only with no such capability; CData connector count and ~40 stale GitHub star counts
+   refreshed; total inline citation count on the page went from 36 to 129.
+4. **mcp-data-science-workflows** — MLflow, Feast, and Tecton tool-capability lists all corrected
+   against their real READMEs (previous lists didn't match any verifiable source); a dead Tecton
+   blog citation replaced with the real repo; DataHub's repo URL fixed (wrong slug, 404); a
+   cache-duration stat-fusion error (1-hour cache described as "30-day caching") corrected;
+   several aggregator-only citations (Datadog, Prometheus, three visualization tools) replaced
+   with primary-source repos.
+5. **mcp-devops-cicd** — 5 dead/fabricated repo links removed or fixed, including one entirely
+   nonexistent GitHub Actions MCP server; the "GitHub MCP Prompt Injection Attack" subsection — a
+   serious named-product security claim — had zero citations, now sourced to Invariant Labs plus
+   an independent Simon Willison corroboration; a fabricated, unsourced "CISO quote" removed; the
+   Transport Considerations section rewritten for the 2026-07-28 spec (SSE is no longer a distinct
+   transport, only an internal Streamable HTTP detail).
+6. **mcp-testing-qa** — a false "discontinued" claim about BrowserTools MCP corrected (it's
+   actively maintained with recent commits, contradicting the page's own quoted README text);
+   Browserbase/Stagehand found archived as of 2026-07-20, flagged; an invented quote attributed to
+   Playwright's docs/a Medium article (neither source contains it) replaced with real official
+   docs text; TestSprite's self-reported 42%->93% benchmark reframed as company-claimed per the
+   >=2-source rule for named-company claims; ~6 stale GitHub star/tool counts refreshed.
+7. **mcp-microservices-service-mesh** — an mTLS/Istio deployment claim attributed to IBM
+   ContextForge documentation turned out to be an open, unimplemented GitHub feature request, not
+   a shipped capability — corrected; AWS MSK MCP Server found deprecated in 2026 in favor of a
+   different server, was presented as current; a NATS MCP server's claimed real-time/JetStream
+   capabilities didn't match its actual read-mostly tool set; the SEP-1442 load-balancing section
+   rewritten (it shipped as SEP-2575/Final on 2026-07-28, not still-draft as the page claimed, and
+   `Mcp-Session-Id` is removed entirely, not "optional" as stated); ~6 stale star counts refreshed.
+8. **mcp-compliance-regulated-industries** — the entire FedMCP subsection cited a domain
+   (`fedmcp.org`) that no longer resolves (NXDOMAIN) for FedRAMP/HIPAA compliance claims — cut per
+   cite-it-or-cut-it; the EU AI Act section had a materially wrong deadline and penalty tier (said
+   high-risk obligations take effect August 2026 with up to 7% revenue penalties; the actual EU
+   Digital Omnibus in force 2026-07-27 postponed the deadline to Dec 2026/Aug 2028, and 7% is the
+   Article 5 prohibited-practices penalty, not the 3% high-risk tier) — fixed against EUR-Lex
+   directly; an unverifiable FDB quote cut; several vendor claims (Gopher Security's "4D
+   framework," Acuvity's certifications, Itential's tool count, Lunar.dev's SOC 2 claim) corrected
+   or removed for lacking primary-source support.
+9. **mcp-serverless-deployment** — a Cloudflare repo/stat conflation split into two correctly
+   attributed entries; Azure Flex Consumption and Google Cloud Run free-tier numbers were both
+   wrong (Azure's figure was actually AWS Lambda's; GCP's was a fused vCPU+memory stat) — both
+   corrected; an internal contradiction on Bedrock AgentCore statefulness fixed; a dead-content
+   citation (Featureform's repo now serves an unrelated project post-acquisition) cut; Vercel's npm
+   package name was wrong (`@vercel/mcp-adapter` -> real `mcp-handler`); Vercel/Azure/FastMCP Cloud
+   timeout and deployment details refreshed; the stateless-by-default roadmap section rewritten for
+   the shipped 2026-07-28 spec (was describing it as still-future SEP-1442).
+10. **mcp-vs-a2a-protocol-comparison** — cited the superseded MCP spec version; the example
+    AgentCard JSON used invented field names and a stale pre-GA version number despite the guide
+    being written after A2A's actual v1.0 release — rewritten to match the real v1.0 schema; a
+    fabricated protocol entry ("UCP: Unified Communication Protocol" as a unification effort) was
+    actually Google's real, unrelated Universal Commerce Protocol — corrected, which also resolved
+    a contradiction with the page's own later, correct UCP reference; roadmap claims for both
+    protocols rewritten to match their current official roadmap pages (several "planned" items had
+    already shipped).
+
+All 10 files carry `sources_audited: 2026-08-12`, verified directly. `early-vintage-audit.md`
+checked off for all 10 and the running-count line corrected: **guides 117/130** (was 107/130).
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits). Committing and deploying
+this run (throttle clear at start: last deploy 2026-08-12 04:37 UTC, ~3.6h prior).
+
+### What should happen next
+
+- Early-vintage re-audit: guides 117/130 (builders-log 12/12 closed, reviews not started — 13
+  guides pages remain, then 285 reviews). Next 10 (well, 13 remaining) oldest-by-title guides,
+  continuing from wherever `mcp-vs-a2a-protocol-comparison.md` sorts next (re-scan the checklist at
+  start of next run, don't trust a hardcoded list) — the guides section should close in 1-2 more
+  runs, after which the reviews section (285 pages) starts.
+- CEO digest due this run (last one sent ~00:28 UTC today, for batch 10) — will include today's
+  batch-11 and batch-12 summaries.
+- Bluesky: today's 1-post cap already used before this run started — nothing to do here.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
