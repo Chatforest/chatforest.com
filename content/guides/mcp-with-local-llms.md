@@ -3,9 +3,9 @@ title: "Using MCP with Local LLMs: Ollama, LM Studio, and Open Source Models"
 date: 2026-03-28T02:30:00+09:00
 description: "A practical guide to running MCP (Model Context Protocol) with local LLMs via Ollama, LM Studio, MCPHost, and Open WebUI. Updated April 2026 with Gemma 4, Qwen3.5, and Llama 4 model recommendations."
 content_type: "Guide"
-card_description: "Run MCP tools without cloud APIs. This guide covers how to connect Ollama, LM Studio (v0.4.11), and other local model runtimes to MCP servers — with setup instructions, model recommendations (Gemma 4 with native function calling, Qwen3.5, Llama 4 Scout/Maverick), and practical configuration examples."
-last_refreshed: 2026-04-16
-sources_audited: 2026-07-24
+card_description: "Run MCP tools without cloud APIs. This guide covers how to connect Ollama, LM Studio (v0.4.12), and other local model runtimes to MCP servers — with setup instructions, model recommendations (Gemma 4 with native function calling, Qwen3.5, Llama 4 Scout/Maverick), and practical configuration examples."
+last_refreshed: 2026-08-12
+sources_audited: 2026-08-12
 ---
 
 MCP was [designed by Anthropic](https://modelcontextprotocol.io/) for Claude, but the protocol is open and model-agnostic. You can run MCP servers with locally-hosted open source models — no API keys, no cloud dependencies, no data leaving your machine.
@@ -24,7 +24,7 @@ Three reasons keep coming up:
 
 **Offline operation.** Disconnected environments — air-gapped networks, field work, travel — can still use MCP-powered tool workflows if everything runs locally.
 
-The cost is capability. As of April 2026, the gap is narrowing fast — [Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) jumped from 6.6% to [86.4% tool calling accuracy](https://ai.google.dev/gemma/docs/capabilities/text/function-calling-gemma4), and [Qwen3.5](https://qwen.ai/research) models match frontier performance on many benchmarks — but local models still lag behind Claude, GPT-4, and Gemini on complex multi-step tool calling. Simpler tool workflows (single tool, clear parameters) work well. Complex chains with ambiguous inputs need more capable models.
+The cost is capability. As of April 2026, the gap is narrowing fast — on Google's own Tau2 agentic-tool-use benchmark, [Gemma 4 31B jumped to 76.9%, up from Gemma 3 27B's 16.2%](https://ai.google.dev/gemma/docs/core/model_card_4), and [Qwen3.5](https://github.com/QwenLM/Qwen3.5) models match frontier performance on many benchmarks — but local models still lag behind Claude, GPT-4, and Gemini on complex multi-step tool calling. Simpler tool workflows (single tool, clear parameters) work well. Complex chains with ambiguous inputs need more capable models.
 
 ## The Architecture: How Local MCP Works
 
@@ -49,7 +49,9 @@ The key insight: MCP servers don't care what model is calling them. They speak t
 
 ## Option 1: MCPHost + Ollama
 
-[MCPHost](https://github.com/mark3labs/mcphost) (1,500+ stars) is a Go-based CLI that bridges Ollama (and other providers) to MCP servers. It's the most lightweight option — a single binary with no runtime dependencies. The latest release (v0.32.0) added an option to require approval before tool execution.
+[MCPHost](https://github.com/mark3labs/mcphost) (1,600+ stars) is a Go-based CLI that bridges Ollama (and other providers) to MCP servers. It's the most lightweight option — a single binary with no runtime dependencies. Its v0.32.0 release added an option to require approval before tool execution.
+
+**Maintenance note:** [MCPHost was archived by its maintainer on April 13, 2026](https://github.com/mark3labs/mcphost) — active development has stopped, and the repository is now read-only. The maintainer's successor project is called Kit. MCPHost still works and its final release was v0.34.0, but if you're starting fresh, check whether Kit better fits your needs before committing to MCPHost long-term.
 
 ### Setup
 
@@ -119,7 +121,7 @@ MCPHost launches the MCP servers, connects to Ollama, and gives you an interacti
 
 ## Option 2: MCP Client for Ollama (ollmcp)
 
-[MCP Client for Ollama](https://github.com/jonigl/mcp-client-for-ollama) (530+ stars, v0.26.0) is a Python-based TUI (terminal user interface) client built specifically for Ollama + MCP. It's more feature-rich than MCPHost, with a polished interactive experience.
+[MCP Client for Ollama](https://github.com/jonigl/mcp-client-for-ollama) (790+ stars, v0.33.2) is a Python-based TUI (terminal user interface) client built specifically for Ollama + MCP. It's more feature-rich than MCPHost, with a polished interactive experience.
 
 ### Setup
 
@@ -160,11 +162,11 @@ ollmcp -H http://192.168.1.100:11434 -j servers.json
 | Auto-discovery | Reads Claude Desktop's existing MCP configuration |
 | [Ollama Cloud](https://github.com/jonigl/mcp-client-for-ollama#ollama-cloud-support) | Access cloud-hosted models without a powerful local GPU |
 
-ollmcp defaults to `qwen2.5:7b` (though `gemma4:e4b` or `qwen3.5:9b` are now stronger choices) and exposes [15+ model parameters](https://github.com/jonigl/mcp-client-for-ollama#model-parameters) (temperature, context window, top-k, repeat penalty, etc.) through an interactive settings menu. It supports three MCP transports: stdio, SSE, and Streamable HTTP.
+ollmcp has no hardcoded default model — it uses your saved configuration if set, otherwise the first model available in your local Ollama install (`gemma4:e4b` or `qwen3.5:9b` are good picks to pull first). It exposes [15+ model parameters](https://github.com/jonigl/mcp-client-for-ollama#model-parameters) (temperature, context window, top-k, repeat penalty, etc.) through an interactive settings menu. It supports three MCP transports: stdio, SSE, and Streamable HTTP.
 
 ## Option 3: LM Studio
 
-LM Studio provides a desktop application with [built-in MCP support since version 0.3.17](https://lmstudio.ai/blog/lmstudio-v0.3.17), now at [v0.4.11](https://lmstudio.ai/changelog/lmstudio-v0.4.11) (April 10, 2026) with OAuth support for MCP servers and improved Gemma 4 tool call reliability. It works as both an MCP client (connecting to external MCP servers) and an MCP server (exposing local models to other applications).
+LM Studio provides a desktop application with [built-in MCP support since version 0.3.17](https://lmstudio.ai/blog/lmstudio-v0.3.17), now at [v0.4.12](https://lmstudio.ai/changelog/lmstudio-v0.4.12) (April 17, 2026). [OAuth support for MCP servers landed in v0.4.10](https://lmstudio.ai/changelog/lmstudio-v0.4.10) (April 9, 2026); [v0.4.12 fixed MCP OAuth breaking on some Windows setups](https://lmstudio.ai/changelog/lmstudio-v0.4.12), on top of an updated Gemma 4 chat template added in v0.4.11. It works as both an MCP client (connecting to external MCP servers) and an MCP server (exposing local models to other applications).
 
 ### As MCP Client (Local Model → MCP Servers)
 
@@ -199,7 +201,7 @@ LM Studio's documentation emphasizes: never install MCP servers from untrusted s
 
 ## Option 4: Open WebUI + mcpo
 
-Open WebUI is a self-hosted web interface (similar to ChatGPT) that supports Ollama and has [native MCP support since v0.6.31](https://docs.openwebui.com/features/extensibility/mcp/). Recent updates added OAuth 2.1 Static Authentication (for MCP servers without dynamic client registration), improved OAuth header parsing, and collapsible tool call groups in chat responses.
+Open WebUI is a self-hosted web interface (similar to ChatGPT) that supports Ollama and has [native MCP support since v0.6.31](https://docs.openwebui.com/features/extensibility/mcp/). A later update added [OAuth 2.1 Static Authentication](https://docs.openwebui.com/features/extensibility/mcp/) for MCP servers that don't support dynamic client registration.
 
 ### Setup
 
@@ -227,7 +229,7 @@ Any model loaded in Open WebUI that supports tool calling can now use the connec
 
 ## Option 5: llama.cpp (Native MCP Client)
 
-As of March 2026, [llama.cpp merged full MCP client support](https://aiproductivity.ai/news/llamacpp-merges-mcp-support-agentic-loop/) into its built-in web UI — a major milestone for local MCP. The merge added MCP server management, tool calls with an agentic loop, MCP Prompts, and MCP Resources directly into `llama-server`.
+On March 6, 2026, [llama.cpp merged full MCP client support](https://github.com/ggml-org/llama.cpp/pull/18655) into its built-in web UI — a major milestone for local MCP. The merge added MCP server management, tool calls with an agentic loop, MCP Prompts, and MCP Resources to the browser-based UI served by `llama-server`.
 
 This means you can run MCP tools with any GGUF model through llama.cpp's web interface without any external bridge. The agentic loop lets the model call a tool, read the result, decide what to do next, and repeat — the same pattern used by Claude Code and Cursor's agent mode.
 
@@ -251,14 +253,14 @@ Not all local models handle tool calling well. The model needs to reliably:
 
 | Model | Size | Tool Calling | Notes |
 |-------|------|--------------|-------|
-| **[Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/)** | E2B, E4B, 26B MoE, 31B Dense | **Excellent** | Released April 2, 2026. Native function calling with [6 dedicated control tokens](https://lushbinary.com/blog/build-ai-agent-gemma-4-function-calling-mcp-tool-use/) — trained for tool use, not bolted on. Tool calling accuracy jumped from 6.6% (Gemma 3) to 86.4%. 256K context. Apache 2.0. The new default recommendation for local MCP |
-| **[Qwen3.5](https://qwen.ai/research)** | 0.8B–27B (dense), 35B-A3B, 122B-A10B, 397B-A17B (MoE) | **Excellent** | Released February 16, 2026. Native multimodal agents. [Qwen-Agent framework](https://github.com/QwenLM/Qwen-Agent) has built-in MCP support. The 9B model [delivers 120B-class performance](https://computertech.co/qwen-3-5-small-review-2026/) on consumer hardware. Apache 2.0 |
-| **[Qwen3-Coder](https://github.com/QwenLM/Qwen3-Coder)** | 30B-A3B, 480B-A35B | Strong | Specialized for coding agent tasks with strong tool calling. 256K context. Excels at long-horizon reasoning and recovery from execution failures |
-| **[Llama 4 Scout](https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/)** | 109B total / 17B active (16 experts) | Strong | Released April 5, 2026. MoE architecture — only 17B active per forward pass. Natively multimodal. Optimized for agentic workflows and tool calling. Outperforms Gemma 3 and Mistral 3.1 |
+| **[Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/)** | E2B, E4B, 26B MoE, 31B Dense | **Excellent** | Released April 2, 2026. Native function calling with [6 dedicated control tokens](https://lushbinary.com/blog/build-ai-agent-gemma-4-function-calling-mcp-tool-use/) — trained for tool use, not bolted on. On Google's Tau2 agentic-tool-use benchmark, [Gemma 4 31B scores 76.9%, up from Gemma 3 27B's 16.2%](https://ai.google.dev/gemma/docs/core/model_card_4). Up to 256K context. Apache 2.0. The new default recommendation for local MCP |
+| **[Qwen3.5](https://github.com/QwenLM/Qwen3.5)** | 0.8B–27B (dense), 35B-A3B, 122B-A10B, 397B-A17B (MoE) | **Excellent** | Released February 16, 2026. Native multimodal agents. [Qwen-Agent framework](https://github.com/QwenLM/Qwen-Agent) has built-in MCP support. The 9B model [delivers 120B-class performance](https://computertech.co/qwen-3-5-small-review-2026/) on select reasoning benchmarks (GPQA Diamond, MMLU-Pro) — it does not lead everywhere, trailing larger models on coding benchmarks like LiveCodeBench. Apache 2.0 |
+| **[Qwen3-Coder](https://github.com/QwenLM/Qwen3-Coder)** | 30B-A3B, 480B-A35B | Strong | Specialized for coding agent tasks with strong tool calling. 256K native context (extendable to 1M via Yarn) |
+| **[Llama 4 Scout](https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/)** | 109B total / 17B active (16 experts) | Strong | Released April 5, 2025 ([Meta's announcement](https://ai.meta.com/blog/llama-4-multimodal-intelligence/)). MoE architecture — only 17B active per forward pass. Natively multimodal. Optimized for agentic workflows and tool calling. Meta reports it [outperforms Gemma 3, Gemini 2.0 Flash-Lite, and Mistral 3.1](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) on a broad range of benchmarks |
 | **[Llama 4 Maverick](https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/)** | 400B total / 17B active (128 experts) | Strong | Scales up Scout's architecture. 128 experts, same 17B active. Needs significant hardware but delivers frontier-class local performance |
-| **[Qwen 2.5 Instruct](https://qwenlm.github.io/blog/qwen2.5/)** | 7B, 14B, 32B, 72B | Strong | Still a solid choice. Default in ollmcp. [Native tool calling support](https://qwen.readthedocs.io/en/latest/framework/function_call.html) via Hermes-style template |
+| **[Qwen 2.5 Instruct](https://qwenlm.github.io/blog/qwen2.5/)** | 7B, 14B, 32B, 72B | Strong | Still a solid choice. Native tool calling support via a Hermes-style chat template |
 | **[Qwen3](https://qwenlm.github.io/blog/qwen3/)** | 0.6B–32B (dense), 30B-A3B, 235B-A22B (MoE) | Strong | Supports thinking mode for complex tool chains. Still widely used |
-| **[DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)** | 7B, 8B, 14B, 32B, 70B (distilled) | Moderate | Better at reasoning, [less reliable at strict tool schemas](https://github.com/deepseek-ai/DeepSeek-R1/issues/9). Community tool-calling variants available |
+| **[DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)** | 7B, 8B, 14B, 32B, 70B (distilled) | Moderate | Optimized for reasoning first; tool calling was added after the fact and can be less consistent than in models built for it from the start. Community tool-calling variants available |
 
 **Key guidelines:**
 
@@ -350,7 +352,7 @@ For SSE or HTTP-based MCP servers, specify a URL instead of a command:
 
 ## Comparison: Local MCP Clients
 
-| Feature | [MCPHost](https://github.com/mark3labs/mcphost) | [ollmcp](https://github.com/jonigl/mcp-client-for-ollama) | [LM Studio](https://lmstudio.ai/changelog) | [Open WebUI](https://docs.openwebui.com/features/extensibility/mcp/) | [llama.cpp](https://aiproductivity.ai/news/llamacpp-merges-mcp-support-agentic-loop/) |
+| Feature | [MCPHost](https://github.com/mark3labs/mcphost) (archived) | [ollmcp](https://github.com/jonigl/mcp-client-for-ollama) | [LM Studio](https://lmstudio.ai/changelog) | [Open WebUI](https://docs.openwebui.com/features/extensibility/mcp/) | [llama.cpp](https://github.com/ggml-org/llama.cpp/pull/18655) |
 |---------|---------|--------|-----------|------------|-----------|
 | **Type** | CLI | TUI | Desktop app | Web UI | Web UI / CLI |
 | **Language** | Go | Python | Electron | Python | C/C++ |
@@ -395,8 +397,8 @@ For SSE or HTTP-based MCP servers, specify a URL instead of a command:
 | Multi-step reasoning with ambiguous inputs | Cloud — local models struggle here |
 | High-volume batch processing | Local — no rate limits or per-token costs |
 
-Local MCP is practical today for focused, well-defined tool workflows — and increasingly for complex ones. Gemma 4's jump from 6.6% to 86.4% tool calling accuracy in a single generation shows how fast the gap is narrowing. With Qwen3.5, Llama 4, and Gemma 4 all shipping native function calling in early 2026, local MCP is moving from "works for simple tasks" to "works for most tasks."
+Local MCP is practical today for focused, well-defined tool workflows — and increasingly for complex ones. Gemma 4's jump from a 16.2% to a 76.9% Tau2 agentic-tool-use score in a single generation shows how fast the gap is narrowing. With Qwen3.5, Llama 4, and Gemma 4 all shipping native function calling in early 2026, local MCP is moving from "works for simple tasks" to "works for most tasks."
 
 ---
 
-*This guide is maintained by [ChatForest](https://chatforest.com), an AI-native content site. Written by AI, fact-checked against current documentation. [Rob Nugen](https://robnugen.com) operates the site. Last updated April 16, 2026.*
+*This guide is maintained by [ChatForest](https://chatforest.com), an AI-native content site. Written by AI, fact-checked against current documentation. [Rob Nugen](https://robnugen.com) operates the site. Last updated August 12, 2026.*

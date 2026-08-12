@@ -67,7 +67,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 117/130 done (2026-08-09 through 2026-08-12 runs).**
+**Status: 130/130 done — CLOSED (2026-08-09 through 2026-08-12 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -238,23 +238,25 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [MCP in Regulated Industries: Compliance, Audit Trails, and Data Protection for AI Agents](content/guides/mcp-compliance-regulated-industries.md)
 - [x] 2026-07-24 — [MCP on Serverless: Deploying AI Agent Tools on Lambda, Cloudflare Workers, Vercel, and Beyond](content/guides/mcp-serverless-deployment.md)
 - [x] 2026-07-24 — [MCP vs A2A: Understanding the Two Protocols Shaping AI Agent Infrastructure](content/guides/mcp-vs-a2a-protocol-comparison.md)
-- [ ] 2026-07-24 — [MCP vs CLI for AI Agents: When to Use Which in 2026](content/guides/mcp-vs-cli-ai-agents.md)
-- [ ] 2026-07-24 — [MCP vs Function Calling: What's the Difference and When to Use Each](content/guides/mcp-vs-function-calling.md)
-- [ ] 2026-07-24 — [MCP vs REST APIs: When to Use Each for AI Integration](content/guides/mcp-vs-rest-apis.md)
-- [ ] 2026-07-24 — [MCP with Slack and Teams: Building AI Agents for Workplace Chat](content/guides/mcp-slack-teams-integration.md)
-- [ ] 2026-07-24 — [Migrating Your MCP Server from stdio to Streamable HTTP: A Step-by-Step Guide](content/guides/mcp-server-migration-stdio-to-http.md)
-- [ ] 2026-07-24 — [Running MCP Servers in Docker: Setup, Security, and Production Patterns](content/guides/mcp-docker-containers.md)
-- [ ] 2026-07-24 — [Running MCP Servers in Production: Patterns and Pitfalls](content/guides/mcp-in-production.md)
-- [ ] 2026-07-24 — [The Agentic Web: AGENTS.md, llms.txt, and Making Your Site Agent-Ready](content/guides/agentic-web-agents-md-llms-txt.md)
-- [ ] 2026-07-24 — [The Complete MCP Debugging Guide: From Silent Failures to Working Servers](content/guides/mcp-debugging-guide.md)
-- [ ] 2026-07-24 — [The MCP Ecosystem in 2026: How the Model Context Protocol Became the Universal Standard for AI Tool Integration](content/guides/mcp-ecosystem-2026-state-of-the-standard.md)
-- [ ] 2026-07-24 — [Using MCP Across AI Platforms: Claude, ChatGPT, Gemini, Copilot, and More](content/guides/mcp-across-ai-platforms.md)
-- [ ] 2026-07-24 — [Using MCP with Local LLMs: Ollama, LM Studio, and Open Source Models](content/guides/mcp-with-local-llms.md)
-- [ ] 2026-07-24 — [Writing Effective CLAUDE.md Files: The Complete Guide to Claude Code Project Instructions](content/guides/writing-effective-claude-md-files.md)
+- [x] 2026-07-24 — [MCP vs CLI for AI Agents: When to Use Which in 2026](content/guides/mcp-vs-cli-ai-agents.md)
+- [x] 2026-07-24 — [MCP vs Function Calling: What's the Difference and When to Use Each](content/guides/mcp-vs-function-calling.md)
+- [x] 2026-07-24 — [MCP vs REST APIs: When to Use Each for AI Integration](content/guides/mcp-vs-rest-apis.md)
+- [x] 2026-07-24 — [MCP with Slack and Teams: Building AI Agents for Workplace Chat](content/guides/mcp-slack-teams-integration.md)
+- [x] 2026-07-24 — [Migrating Your MCP Server from stdio to Streamable HTTP: A Step-by-Step Guide](content/guides/mcp-server-migration-stdio-to-http.md)
+- [x] 2026-07-24 — [Running MCP Servers in Docker: Setup, Security, and Production Patterns](content/guides/mcp-docker-containers.md)
+- [x] 2026-07-24 — [Running MCP Servers in Production: Patterns and Pitfalls](content/guides/mcp-in-production.md)
+- [x] 2026-07-24 — [The Agentic Web: AGENTS.md, llms.txt, and Making Your Site Agent-Ready](content/guides/agentic-web-agents-md-llms-txt.md)
+- [x] 2026-07-24 — [The Complete MCP Debugging Guide: From Silent Failures to Working Servers](content/guides/mcp-debugging-guide.md)
+- [x] 2026-07-24 — [The MCP Ecosystem in 2026: How the Model Context Protocol Became the Universal Standard for AI Tool Integration](content/guides/mcp-ecosystem-2026-state-of-the-standard.md)
+- [x] 2026-07-24 — [Using MCP Across AI Platforms: Claude, ChatGPT, Gemini, Copilot, and More](content/guides/mcp-across-ai-platforms.md)
+- [x] 2026-07-24 — [Using MCP with Local LLMs: Ollama, LM Studio, and Open Source Models](content/guides/mcp-with-local-llms.md)
+- [x] 2026-07-24 — [Writing Effective CLAUDE.md Files: The Complete Guide to Claude Code Project Instructions](content/guides/writing-effective-claude-md-files.md)
 
 ## Reviews
 
-- [ ] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md)
+**Status: 1/285 done (started 2026-08-12, immediately after Guides closed).**
+
+- [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [ ] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md)
 - [ ] 2026-07-22 — [Anthropic Acquires Vercept: A Computer-Use Bet, a $250M Talent Raid, and an Honest 'We're Throwing in the Towel](content/reviews/anthropic-acquires-vercept-computer-use-ai-startup-claude-agents-2026.md)
 - [ ] 2026-07-22 — [Apple's $1 Billion Surrender: Why the World's Most Valuable Company Chose Google to Build Its AI Future](content/reviews/apple-google-gemini-siri-1-billion-deal-2026.md)

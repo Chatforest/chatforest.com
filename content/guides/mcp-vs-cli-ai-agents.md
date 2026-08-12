@@ -5,10 +5,10 @@ description: "A practical decision framework for choosing between MCP and CLI to
 content_type: "Guide"
 card_description: "MCP or CLI? The answer depends on your use case. Here's a practical framework for choosing the right tool integration approach for your AI agents."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-12
 ---
 
-In March 2026, [Perplexity CTO Denis Yarats announced](https://awesomeagents.ai/news/perplexity-agent-api-mcp-shift/) his company was moving away from MCP toward traditional APIs and CLI tools. Y Combinator CEO Garry Tan [built a CLI instead of using MCP](https://news.ycombinator.com/item?id=46099222), citing reliability and speed ("I vibe coded a CLI wrapper in 30 minutes and it worked 100x better"). These high-profile moves sparked a debate: is MCP the wrong approach for AI agents?
+In March 2026, widely circulated reports — originating from social-media posts about comments Perplexity CTO Denis Yarats reportedly made around the company's Ask 2026 developer conference — said [Perplexity was moving away from MCP](https://awesomeagents.ai/news/perplexity-agent-api-mcp-shift/) toward traditional APIs and CLI tools, citing context-window and authentication overhead. ChatForest could not locate an on-the-record Perplexity statement, transcript, or recording confirming the specifics ([one detailed writeup flags the same sourcing gap](https://suthakamal.substack.com/p/perplexity-says-mcp-sucks)), so treat the attribution to Yarats as reported, not independently confirmed. What is verifiable: Y Combinator CEO Garry Tan reacted to the news on X, calling MCP a context-window and auth headache and saying he ["vibe coded a CLI wrapper" for Playwright in 30 minutes that "worked 100x better and was like 100LOC as a CLI"](https://x.com/garrytan/status/2031910564344262988). These reactions sparked a debate: is MCP the wrong approach for AI agents?
 
 The answer is nuanced. MCP and CLI tools solve different problems, and the best architectures in 2026 use both. This guide provides a practical framework for deciding which approach fits your use case — and how to avoid the pitfalls of each. [Rob Nugen](https://robnugen.com) operates ChatForest, but the site's content is researched and written by AI.
 
@@ -18,9 +18,9 @@ The central criticism driving the CLI movement is context window consumption. MC
 
 When an MCP server exposes its tools, each tool's name, description, parameters, and schema get loaded into the model's context window. For a server with 50+ tools — common in enterprise integrations — this overhead adds up fast:
 
-- **Tool schema overhead**: Each MCP tool definition consumes roughly 200–800 tokens depending on parameter complexity
-- **Cumulative cost**: A typical setup with multiple MCP servers can consume 30,000–55,000+ tokens of tool definitions
-- **Percentage impact**: Reports range from 40% to 72% of available context consumed by tool schemas alone
+- **Tool schema overhead**: Measured per-tool costs vary widely with complexity — from ~100 tokens for a light tool to 1,000+ tokens for one with nested objects and enums, per an [MCP spec GitHub issue tracking the problem](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2808) and [Apideck's measurements](https://www.apideck.com/blog/mcp-server-eating-context-window-cli-alternative) (550–1,400 tokens/tool)
+- **Cumulative cost**: A typical setup with multiple MCP servers can consume 30,000–55,000+ tokens of tool definitions — [Apideck reports](https://www.apideck.com/blog/mcp-server-eating-context-window-cli-alternative) one case of three MCP servers hitting 143,000 of a 200,000-token window, and [Scalekit's benchmark](https://www.scalekit.com/blog/mcp-vs-cli-use) found GitHub's official Copilot MCP server (43 tools) using 44,026 tokens for a task that took 1,365 tokens via CLI
+- **Percentage impact**: In the most-cited reported case, tool schemas consumed 72% of a 200K-token context window before the agent processed a single message ([Apideck](https://www.apideck.com/blog/mcp-server-eating-context-window-cli-alternative))
 
 This is not just a token cost problem. Less available context means the agent has less room for conversation history, retrieved documents, and reasoning — directly impacting response quality.
 
@@ -80,7 +80,7 @@ If you choose MCP, the context overhead problem is manageable with the right str
 
 ### Tool Search (Dynamic Loading)
 
-[Anthropic's MCP Tool Search](https://www.anthropic.com/engineering/advanced-tool-use), announced in January 2026, is the single biggest mitigation. Instead of loading every tool definition upfront, Claude Code discovers tools on-demand. Tools are deferred until relevant, then their schemas are fetched when the model determines it needs them. Internal testing showed token usage dropping from ~134k to ~5k — an 85% reduction.
+Anthropic's [Tool Search Tool](https://www.anthropic.com/engineering/advanced-tool-use), published November 2025, is the single biggest mitigation. Instead of loading every tool definition upfront, Claude discovers tools on-demand. Tools are deferred until relevant, then their schemas are fetched when the model determines it needs them. In Anthropic's own worked example, a 50+ tool MCP setup that would consume ~72K tokens upfront dropped to ~8.7K tokens with Tool Search Tool enabled — an 85% reduction that preserves 95% of the context window.
 
 Other platforms are implementing similar approaches. The pattern: do not load all tool schemas at session start. Load them when the agent determines a tool category is relevant.
 
@@ -167,9 +167,9 @@ The CLI-vs-MCP framing is misleading. Production systems rarely use one approach
 
 The MCP specification continues to evolve in ways that address current limitations:
 
-- **Triggers and event-driven updates** are on the MCP roadmap, which would enable webhook-like patterns for event-driven tool execution without persistent client connections
-- **Selective tool loading** is becoming standard across MCP clients, reducing the context overhead that drove Perplexity's decision
-- **Long-running operations** (SEP-1391) would improve MCP's handling of async tasks — an area where CLI tools currently have an edge through background processes
+- **Triggers and event-driven updates** are listed "on the horizon" on the [official MCP roadmap](https://modelcontextprotocol.io/development/roadmap), which would enable webhook-like patterns for event-driven tool execution without persistent client connections
+- **Selective tool loading**, pioneered by Anthropic's Tool Search Tool (above), is spreading to other MCP clients, reducing the context overhead that reportedly drove Perplexity's decision
+- **Long-running operations** already shipped as the [Tasks extension (SEP-2663)](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2663), giving MCP a call-now/fetch-later pattern for async work; per the [current roadmap](https://modelcontextprotocol.io/development/roadmap), the community's Agents Working Group is now refining retry and expiry semantics — an area where CLI tools still have more mature conventions through background processes
 
 The gap between CLI and MCP is narrowing. As MCP clients implement smarter tool loading and MCP servers adopt leaner designs, the context overhead argument weakens. But the fundamental trade-off — protocol overhead for structured governance versus raw efficiency for known tools — will persist.
 

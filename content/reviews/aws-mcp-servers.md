@@ -7,7 +7,7 @@ og_description: "AWS MCP servers: 54 active servers, 9 deprecated. 8,900 stars, 
 content_type: "Review"
 card_description: "The AWS MCP ecosystem — 54 active servers for compute, databases, AI/ML, serverless, containers, security, and cost analysis. Nine servers deprecated in consolidation wave. Google Cloud now matches count with 50 managed remote servers. Azure ships 230+ tools across 45 services."
 last_refreshed: 2026-04-29
-sources_audited: 2026-07-22
+sources_audited: 2026-08-12
 ---
 
 Fifty-four active MCP servers. Nine deprecated. One monorepo. Two CVEs. And a competitive landscape that just shifted under AWS's feet.
@@ -182,13 +182,13 @@ The **AWS Knowledge MCP Server** is the easiest to try — it's a fully managed 
 
 **The Serverless MCP Server is a standout.** SAM init, build, deploy, local invoke, logs, metrics, plus guidance tools for architecture and Lambda best practices. Read-only by default with explicit `--allow-write` and `--allow-sensitive-data-access` flags. This is the complete serverless development lifecycle in one server.
 
-**Proactive security patching.** The April 2026 releases upgraded aiohttp to 3.13.3 to resolve 8 CVEs and bumped urllib3 from 2.6.0 to 2.6.3. Dependency security is taken seriously.
+**Proactive security patching.** A January 8, 2026 release upgraded aiohttp to 3.13.3 to resolve 8 CVEs ([PR #2059](https://github.com/awslabs/mcp/pull/2059) — 1 high, 3 medium, 4 low severity, closing 16 code-scanning alerts across five servers) and bumped urllib3 from 2.6.0 to 2.6.3 the same day ([PR #2064](https://github.com/awslabs/mcp/pull/2064)). Dependency security is taken seriously.
 
 ## What Doesn't Work Well
 
-**Security fixes keep coming.** The two CVEs from early 2026 ([CVE-2026-4270](https://aws.amazon.com/security/security-bulletins/2026-007-AWS/) file access bypass, [CVE-2026-5058](https://www.sentinelone.com/vulnerability-database/cve-2026-5058/) command injection RCE) were patched, but April brought more: the IAM MCP Server had a privilege escalation vulnerability fixed (April 10), and EKS got a path traversal fix in app manifest generation (March 25). That's four distinct security issues across four months — the pace reflects both the attack surface of 54 servers and AWS's responsiveness, but the frequency is concerning.
+**Security fixes keep coming.** The two CVEs from early 2026 ([CVE-2026-4270](https://aws.amazon.com/security/security-bulletins/2026-007-AWS/) file access bypass, [CVE-2026-5058](https://www.sentinelone.com/vulnerability-database/cve-2026-5058/) command injection RCE) were patched, but more followed: the IAM MCP Server had a privilege escalation vulnerability fixed on April 9 ([PR #2861](https://github.com/awslabs/mcp/pull/2861) — blocks attachment of AdministratorAccess/IAMFullAccess, rejects wildcard `Action:*`/`Resource:*` policies, stops exposing secret access keys in responses), and EKS got a path traversal fix in `generate_app_manifest` on March 25 ([PR #2757](https://github.com/awslabs/mcp/pull/2757) — the `app_name` parameter wasn't sanitized, allowing `../` sequences to write manifest files outside the intended directory). That's four distinct security issues across four months — the pace reflects both the attack surface of 54 servers and AWS's responsiveness, but the frequency is concerning.
 
-**EKS security bypass is still open.** Issue [#2942](https://github.com/awslabs/mcp/issues/2942) reports that `list_k8s_resources` bypasses the `--allow-sensitive-data-access` flag, allowing enumeration of secret names, namespaces, labels, and annotations. The documented redaction logic (`HIDDEN_FOR_SECURITY_REASONS`) doesn't appear to exist in the actual codebase. A PR (#2948) is pending. This is now the *third* EKS security issue — after the secret exposure (#2588) and the path traversal fix. The EKS MCP Server did gain kubeconfig/OIDC authentication support (April 2), but the security track record remains shaky.
+**EKS security bypass is still open.** Issue [#2942](https://github.com/awslabs/mcp/issues/2942) reports that `list_k8s_resources` bypasses the `--allow-sensitive-data-access` flag, allowing enumeration of secret names, namespaces, labels, and annotations. The documented redaction logic (`HIDDEN_FOR_SECURITY_REASONS`) doesn't appear to exist in the actual codebase. A PR ([#2948](https://github.com/awslabs/mcp/pull/2948)) is pending. This is now the *third* EKS security issue — after the secret exposure ([#2588](https://github.com/awslabs/mcp/issues/2588), also still open) and the path traversal fix. The EKS MCP Server did gain kubeconfig/OIDC authentication support (April 2), but the security track record remains shaky.
 
 **Overwhelming complexity.** 54 active servers is not a feature — it's a configuration nightmare. The Core MCP Server that was supposed to simplify this with role-based groupings is deprecated. AWS's answer is "modern MCP clients support multi-server configurations natively" — which is true, but doesn't help with the "which of the 54 servers do I actually need?" question. Meanwhile, [Google offers 50 managed remote servers](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) that auto-enable when you enable the service, requiring zero local configuration.
 
@@ -240,8 +240,7 @@ For AWS-heavy teams, this remains essential infrastructure — the Knowledge ser
 | **Transport** | stdio (most), Streamable HTTP (Knowledge, [managed GA server](/reviews/aws-mcp-server-ga/)) |
 | **Language** | Python |
 | **License** | Apache 2.0 |
-| **PyPI Downloads** | 5M+ total (aws-api-mcp-server) |
-| **PulseMCP** | 219K all-time visitors, #185 globally |
+| **PyPI Downloads** | [7.3M+ total](https://pepy.tech/projects/awslabs-aws-api-mcp-server) (aws-api-mcp-server, as of Aug 2026) |
 | **CVEs** | [CVE-2026-4270](https://aws.amazon.com/security/security-bulletins/2026-007-AWS/) (file bypass, fixed), [CVE-2026-5058](https://www.sentinelone.com/vulnerability-database/cve-2026-5058/) (RCE, fixed) |
 | **Pricing** | Free (open source) + AWS service costs |
 | **Our rating** | 4/5 |

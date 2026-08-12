@@ -158,21 +158,21 @@ Before putting an MCP server in production, verify:
 
 ## Real-World Case Study: Pinterest
 
-Pinterest's MCP deployment is one of the most detailed public examples of MCP running at enterprise scale. Their engineering team published their architecture in March 2026, and the numbers are worth studying.
+Pinterest's MCP deployment is one of the most detailed public examples of MCP running at enterprise scale. Their engineering team published their architecture in [a March 2026 engineering blog post](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1), and the numbers are worth studying — also independently reported by [InfoQ](https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/).
 
 ### Scale
 
-As of early 2025, Pinterest's MCP infrastructure handles **66,000 tool invocations per month** across **844 active users**, saving roughly **7,000 engineering hours per month**. Their Presto MCP server — which lets agents query analytics data directly instead of context-switching to dashboards — is consistently the highest-traffic server.
+As of January 2025, Pinterest's MCP infrastructure handled **66,000 tool invocations per month** across **844 active users**, saving roughly **7,000 engineering hours per month**, [per Pinterest's own account](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1). Their Presto MCP server — which lets agents query analytics data directly instead of context-switching to dashboards — is [consistently their highest-traffic server](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1).
 
 ### Architecture
 
-Pinterest runs a **central MCP registry** that acts as the source of truth for approved servers and their connectivity metadata. Both a human-friendly UI and an API allow discovery, validation, and integration into internal AI clients and IDEs. Clients consult the registry to validate permissions and server status before calling tools, enforcing governance consistently across the organization.
+Pinterest runs a [**central MCP registry**](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) that acts as the source of truth for approved servers and their connectivity metadata. Both a human-friendly UI and an API allow discovery, validation, and integration into internal AI clients and IDEs. Clients consult the registry to validate permissions and server status before calling tools, enforcing governance consistently across the organization.
 
-This mirrors Pattern 1 (Gateway + Multiple MCP Servers) described above, but with a registry layer that adds discoverability and governance — something the broader MCP ecosystem is working toward through the [planned MCP Registry specification (Q4 2026 roadmap)](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/).
+This mirrors Pattern 1 (Gateway + Multiple MCP Servers) described above, but with a registry layer that adds discoverability and governance — a pattern the broader MCP ecosystem has also built toward centrally: the [official MCP Registry](https://modelcontextprotocol.io/registry/about) launched [in preview in September 2025](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/) as a centralized metadata repository for publicly accessible MCP servers, and remained in preview as of this writing.
 
 ### Security Model
 
-Pinterest uses a **two-layer authorization model**:
+Pinterest uses a [**two-layer authorization model**](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1):
 
 - **End-user JWTs** control human-in-the-loop access
 - **Service-only flows** rely on mesh identities for automated agent operations
@@ -181,7 +181,7 @@ Servers implement fine-grained authorization decorators and business-group gatin
 
 ### Key Takeaway
 
-Pinterest's deployment validates that MCP works at production scale when treated as infrastructure rather than a developer convenience. The registry pattern, two-layer auth model, and per-team gating are patterns other organizations can adopt. For details, see [Pinterest's engineering blog post](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1).
+Pinterest's deployment validates that MCP works at production scale when treated as infrastructure rather than a developer convenience. The registry pattern, two-layer auth model, and per-team gating are patterns other organizations can adopt. For details, see [Pinterest's engineering blog post](https://medium.com/pinterest-engineering/building-an-mcp-ecosystem-at-pinterest-d881eb4c16f1) and [InfoQ's independent coverage](https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/).
 
 ## Where Things Are Heading
 
@@ -201,7 +201,7 @@ For now, production MCP deployment requires borrowing patterns from microservice
 - [Salesforce's Slack AI Overhaul](/guides/salesforce-slack-mcp-ai-platform/) — Slackbot becomes an MCP client connecting to Agentforce and 6,000+ enterprise apps, with 30 new AI features
 - [Equinix's Distributed AI Hub](/guides/equinix-distributed-ai-hub-mcp-infrastructure/) — vendor-neutral network infrastructure automation with 40+ MCP tools across 280 data centers
 - [Red Hat's MCP Ecosystem for RHEL](/guides/red-hat-mcp-server-rhel-lightspeed/) — read-only MCP servers for log analysis, vulnerability management, image building, and infrastructure health
-- [FDB MedProof MCP](/guides/fdb-medproof-mcp-medication-ai-agents/) — the first MCP server for AI-driven medication decisions in healthcare
+- [FDB MedProof MCP](/guides/fdb-medproof-mcp-medication-ai-agents/) — FDB's server, which the company describes as the first MCP server built specifically for AI agent-driven medication decisions
 
 ---
 

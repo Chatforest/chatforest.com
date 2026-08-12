@@ -13,6 +13,23 @@ PASSWORD_FILE = "/home/grove/.config/chatforest/blue.sky.password"
 API = "https://bsky.social/xrpc"
 PUBLIC_FEED_API = "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed"
 TUESDAY_RESERVATION_SCRIPT = Path(__file__).with_name("check_tuesday_dispatch_reservation.py")
+RESERVED_SLOT_SCRIPT = Path(__file__).with_name("check_reserved_slot.py")
+
+
+def reserved_slot_blocked(topic):
+    """Mechanical generalized reserved-slot gate (CEO directive #2330,
+    2026-08-12): any UTC date can carry a reservation in
+    bluesky-reserved-slots.json (e.g. the CEO reserving tomorrow's post for a
+    specific article). Fails closed: any error blocks the post. See
+    check_reserved_slot.py and CLAUDE.md 'Bluesky cross-posting rules'."""
+    args = [sys.executable, str(RESERVED_SLOT_SCRIPT)]
+    if topic:
+        args.append(f"--topic={topic}")
+    result = subprocess.run(args, capture_output=True, text=True)
+    print(result.stdout.strip())
+    if result.returncode not in (0,):
+        return True
+    return False
 
 
 def tuesday_slot_reserved():
@@ -109,7 +126,9 @@ def post(text, facets=None):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] in ("-h", "--help"):
-        print("Usage: post_bluesky.py <text> [link_text=url ...]")
+        print("Usage: post_bluesky.py <text> [--topic=<slug>] [link_text=url ...]")
+        print("--topic=<slug> matches a reserved-slot entry in bluesky-reserved-slots.json;")
+        print("required only on a date that has a reservation. See check_reserved_slot.py.")
         print("There is no --help lookup: argv[1] is posted verbatim as the live post text.")
         sys.exit(0 if len(sys.argv) >= 2 else 1)
 
@@ -120,8 +139,18 @@ if __name__ == "__main__":
         sys.exit(1)
 
     text = sys.argv[1]
+    remaining = sys.argv[2:]
+    topic = None
+    for arg in remaining:
+        if arg.startswith("--topic="):
+            topic = arg.split("=", 1)[1]
+    remaining = [a for a in remaining if not a.startswith("--topic=")]
+
+    if reserved_slot_blocked(topic):
+        sys.exit(1)
+
     facets = []
-    for arg in sys.argv[2:]:
+    for arg in remaining:
         if "=" in arg:
             link_text, url = arg.split("=", 1)
             try:

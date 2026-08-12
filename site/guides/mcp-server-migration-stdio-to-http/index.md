@@ -7,6 +7,8 @@ Your MCP server works. It runs over stdio, your IDE picks it up, and tool calls 
 
 This guide walks through the migration step by step — from understanding what changes, to running both transports side by side, to deploying a production-ready HTTP server. We cover both TypeScript and Python SDKs with working code examples.
 
+> **Spec update note (2026-08-12):** This guide documents the *session-based* Streamable HTTP model — session IDs via the `Mcp-Session-Id` header, an `initialize` handshake, and an optional GET/SSE stream — defined by MCP spec revisions 2025-03-26 through 2025-11-25, which is what the current stable releases of the official SDKs (`@modelcontextprotocol/sdk` v1.x, FastMCP) implement by default. On July 28, 2026, the MCP project shipped [spec revision 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/changelog), a breaking change that removes protocol-level sessions, the `Mcp-Session-Id` header, and the `initialize` handshake entirely in favor of a stateless, per-request model. If you're targeting that newest revision, the session-management steps below don't apply as written — see the [changelog](https://modelcontextprotocol.io/specification/2026-07-28/changelog) and the [current Streamable HTTP transport spec](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http) for the new shape, and the [TypeScript SDK v2 migration guide](https://ts.sdk.modelcontextprotocol.io/v2/migration/support-2026-07-28) or [Python SDK "what's new in v2"](https://py.sdk.modelcontextprotocol.io/whats-new/) for the corresponding SDK changes.
+
 ## Why Migrate?
 
 stdio is perfect for local, single-user scenarios. But it has hard limits:
@@ -16,11 +18,11 @@ stdio is perfect for local, single-user scenarios. But it has hard limits:
 - **No web deployment.** You can't run a stdio server behind a load balancer, on a serverless platform, or as a shared service.
 - **No independent lifecycle.** The server process dies when the client disconnects.
 
-Streamable HTTP solves all of these. It's the [MCP spec's recommended transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) for anything beyond local development, and with the HTTP+SSE transport deprecated (sunset: June 30, 2026), it's the only HTTP-based option going forward.
+Streamable HTTP solves all of these. It's [MCP's primary HTTP transport](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http) for anything beyond local development. The older HTTP+SSE transport (from protocol version 2024-11-05) has been deprecated since the 2025-03-26 spec revision and [remains formally classified as Deprecated and eligible for removal in a future revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http#http-sse-transport-2024-11-05) — the spec itself sets no fixed removal date. Individual providers are setting their own cutoffs instead: [Atlassian's Rovo MCP server ends HTTP+SSE support June 30, 2026](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484), and [Keboola cut it off earlier still, April 1, 2026](https://changelog.keboola.com/sse-transport-deprecation-migration-to-streamable-http/). Check your specific vendors for their own deadlines.
 
 ## What Actually Changes
 
-The good news: your tool handlers, resource providers, and prompt templates don't change at all. MCP's transport layer is cleanly separated from your server logic. Here's what's different:
+The good news: your tool handlers, resource providers, and prompt templates don't change at all. MCP's transport layer is cleanly separated from your server logic. Here's what's different (this table describes the session-based Streamable HTTP model used by spec revisions 2025-03-26 through 2025-11-25, and by the current stable SDK releases — see the update note above for how the 2026-07-28 spec revision changes this):
 
 | Aspect | stdio | Streamable HTTP |
 |---|---|---|
@@ -279,7 +281,7 @@ stdio doesn't need authentication — the OS handles access control through proc
 
 **Bearer tokens** — Simplest option. Client includes an `Authorization: Bearer <token>` header. Good for server-to-server communication or personal API keys.
 
-**OAuth 2.1** — The MCP spec recommends OAuth 2.1 for user-facing authentication. The spec defines a standard authorization flow (described in the authorization specification).
+**OAuth 2.1** — The [MCP spec requires authorization servers to implement OAuth 2.1](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) for user-facing authentication, with a standard authorization flow described in the [authorization specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization).
 
 **mTLS** — Mutual TLS for high-security environments. Both client and server present certificates. Good for enterprise deployments where you control both ends.
 
@@ -299,7 +301,7 @@ app.use("/mcp", (req, res, next) => {
 
 ### Important: Origin Validation
 
-The MCP spec mandates that HTTP servers validate the `Origin` header to prevent DNS rebinding attacks. If your server runs on localhost during development, this is especially important — a malicious webpage could otherwise send requests to your local server through the browser.
+The [MCP spec mandates that HTTP servers validate the `Origin` header](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http#security--endpoint) to prevent DNS rebinding attacks. If your server runs on localhost during development, this is especially important — a malicious webpage could otherwise send requests to your local server through the browser.
 
 ```typescript
 app.use("/mcp", (req, res, next) => {
@@ -418,7 +420,7 @@ If you're currently running stdio only and planning to add HTTP support, here's 
 4. **Week 2:** Deploy to staging. Verify client configurations. Monitor session lifecycle.
 5. **Week 3:** Production deployment. Keep stdio as fallback for local development.
 
-For servers currently on the deprecated HTTP+SSE transport, the [MCP spec](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports) sets the backward-compatibility deadline at **June 30, 2026**. Some providers (like Keboola) have set earlier deadlines. Plan your migration accordingly.
+For servers currently on the deprecated HTTP+SSE transport: the MCP spec itself doesn't set a fixed removal date — HTTP+SSE is simply classified [Deprecated and eligible for removal in a future revision](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http#http-sse-transport-2024-11-05). Individual providers are setting their own cutoffs instead: [Atlassian's Rovo MCP server](https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/HTTP-SSE-Deprecation-Notice/ba-p/3205484) ends support **June 30, 2026**, while [Keboola cut it off earlier](https://changelog.keboola.com/sse-transport-deprecation-migration-to-streamable-http/), on **April 1, 2026**. Check your specific vendors for their deadlines and plan your migration accordingly.
 
 ## Choosing Stateful vs. Stateless HTTP
 

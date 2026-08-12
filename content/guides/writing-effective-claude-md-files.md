@@ -4,8 +4,8 @@ date: 2026-03-28T23:00:00+09:00
 description: "A practical guide to writing CLAUDE.md files that actually work."
 content_type: "Guide"
 card_description: "Your CLAUDE.md file shapes every Claude Code session. Here's how to write one that actually works — with structure, examples, and common mistakes to avoid."
-last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-12
+sources_audited: 2026-08-12
 ---
 
 CLAUDE.md is the single most important file in any Claude Code project. It loads at the start of every session, giving Claude persistent context about your codebase, your conventions, and how you want it to work. Get it right and Claude follows your patterns consistently. Get it wrong — or leave it empty — and every session starts from scratch.
@@ -25,19 +25,20 @@ This distinction matters. Claude does not parse CLAUDE.md for structured fields 
 
 ## The File Hierarchy
 
-Claude Code reads CLAUDE.md files from multiple locations, layered from broadest to most specific:
+Claude Code reads CLAUDE.md files from multiple locations, layered from broadest to most specific, per [Anthropic's documentation](https://code.claude.com/docs/en/memory#choose-where-to-put-claude-md-files):
 
 | Scope | Location | Purpose |
 |-------|----------|---------|
-| **Managed policy** | `/etc/claude-code/CLAUDE.md` (Linux) or `/Library/Application Support/ClaudeCode/CLAUDE.md` (macOS) | Organization-wide standards. Cannot be excluded. |
+| **Managed policy** | `/etc/claude-code/CLAUDE.md` (Linux/WSL), `/Library/Application Support/ClaudeCode/CLAUDE.md` (macOS), or `C:\Program Files\ClaudeCode\CLAUDE.md` (Windows) | Organization-wide standards. Cannot be excluded. |
 | **User global** | `~/.claude/CLAUDE.md` | Personal preferences that apply across all projects |
 | **Project root** | `./CLAUDE.md` or `./.claude/CLAUDE.md` | Team-shared project instructions, checked into git |
+| **Local (personal)** | `./CLAUDE.local.md` | Personal, project-specific preferences; gitignored |
 | **Subdirectory** | `./subdir/CLAUDE.md` | Loaded on demand when Claude reads files in that directory |
 | **Modular rules** | `.claude/rules/*.md` | Topic-specific instruction files, optionally path-scoped |
 
-More specific files take precedence over broader ones. When instructions conflict, Claude prioritizes the most local file.
+Anthropic's docs are explicit that these files are **concatenated into context rather than overriding one another**: content is ordered from the filesystem root down to your working directory, so local instructions simply appear later (closer to your actual request) rather than mechanically replacing broader ones. If two files genuinely conflict, Claude "may pick one arbitrarily" rather than always preferring the more local file — see [Anthropic's load-order documentation](https://code.claude.com/docs/en/memory#how-claude-md-files-load) for the exact resolution rules.
 
-**Subdirectory files load lazily.** A CLAUDE.md in `src/api/` only loads when Claude actually reads or modifies files in that directory — it does not consume context tokens until needed. This makes subdirectory files ideal for area-specific rules that should not bloat every session.
+**Subdirectory files load lazily.** A CLAUDE.md in `src/api/` only loads when Claude actually reads or modifies files in that directory — it does not consume context tokens until needed. This makes subdirectory files ideal for area-specific rules that should not bloat every session. ([Confirmed in Anthropic's docs](https://code.claude.com/docs/en/memory#how-claude-md-files-load): "Claude also discovers CLAUDE.md and CLAUDE.local.md files in subdirectories... they are included when Claude reads files in those subdirectories.")
 
 ## What Belongs in CLAUDE.md
 
@@ -112,7 +113,7 @@ uv run pytest tests/ -x
 - API design rules: @docs/api-guidelines.md
 ```
 
-Imports resolve relative to the containing file. Absolute paths and home directory references (`@~/...`) also work. Claude follows imports up to 5 levels deep.
+Imports resolve relative to the containing file, not the working directory. Absolute paths and home directory references (`@~/...`) also work. Imported files can recursively import further files, up to a maximum depth of four hops ([Anthropic's docs](https://code.claude.com/docs/en/memory#import-additional-files)).
 
 **When to use imports vs. inline content:**
 - **Inline** for rules Claude needs every session (commands, critical constraints)
@@ -163,7 +164,7 @@ Path-scoped rules that activate when working in specific directories.
 **Level 4: Subdirectory CLAUDE.md files**
 Hyper-specific context for isolated subsystems (e.g., a `mobile/CLAUDE.md` for the mobile app portion of a monorepo).
 
-This structure keeps the always-loaded context small while making detailed guidance available when Claude needs it. Anthropic recommends keeping the root file under 200 lines; community experience suggests even tighter — under 60 lines — produces more consistent instruction following. See the [Anthropic docs on memory](https://code.claude.com/docs/en/memory) for the official guidance.
+This structure keeps the always-loaded context small while making detailed guidance available when Claude needs it. Anthropic's own guidance targets under 200 lines per CLAUDE.md file, warning that longer files "consume more context and reduce adherence" ([Anthropic docs on memory](https://code.claude.com/docs/en/memory#write-effective-instructions)). Some practitioners run tighter still: HumanLayer, whose Claude Code workflow writeups are widely cited, reports keeping its own root CLAUDE.md under sixty lines ([HumanLayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md)).
 
 ## Writing Rules That Stick
 
@@ -175,10 +176,10 @@ Not all instructions are equally effective. Claude's compliance with rules follo
 
 To maximize compliance:
 
-1. **Use RFC 2119 language** for critical rules: MUST, MUST NOT, NEVER, ALWAYS. These signal non-negotiable constraints.
+1. **Use strong, unambiguous imperative language** for critical rules. [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119) formally defines MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY as requirement-level keywords for specifications; Claude Code community convention borrows MUST / MUST NOT and adds the everyday words NEVER and ALWAYS (which are not themselves part of RFC 2119) to flag non-negotiable constraints.
 2. **Make rules verifiable.** "Use 2-space indentation" is verifiable. "Format code properly" is not.
 3. **Include the trigger condition.** "When adding a new API endpoint, MUST add a corresponding test in tests/api/" is more actionable than "write tests."
-4. **Keep the total instruction count reasonable.** Your CLAUDE.md competes with Claude Code's own system prompt for the model's attention. Keep your CLAUDE.md to approximately 100-150 rules maximum before compliance starts to degrade.
+4. **Keep the total instruction count reasonable.** Your CLAUDE.md competes with Claude Code's own system prompt for the model's attention. The Claude Code agent-infrastructure company HumanLayer estimates frontier models follow roughly 150-200 instructions with reasonable consistency, and that Claude Code's own system prompt already uses about 50 of that budget — leaving a working budget of roughly 100-150 for your CLAUDE.md before compliance starts to degrade ([HumanLayer, "Writing a good CLAUDE.md"](https://www.humanlayer.dev/blog/writing-a-good-claude-md)).
 
 ## CLAUDE.md vs. Other AI Config Files
 
@@ -186,12 +187,12 @@ If your team uses multiple AI coding tools, you are dealing with a fragmented ec
 
 | File | Tool | Notes |
 |------|------|-------|
-| `CLAUDE.md` | Claude Code | Layered hierarchy, @imports, path-scoped rules |
-| `AGENTS.md` | Codex CLI, Cursor, Copilot, Windsurf, Amp, Devin | Widest cross-tool support (~60K+ repos) |
-| `.cursor/rules/*.mdc` | Cursor | MDC format with frontmatter, replaces deprecated `.cursorrules` |
-| `.github/copilot-instructions.md` | GitHub Copilot | Single file, no import system |
-| `GEMINI.md` | Gemini CLI | Similar concept to CLAUDE.md |
-| `.windsurfrules` | Windsurf | Single file |
+| `CLAUDE.md` | Claude Code | Layered hierarchy, @imports, path-scoped rules ([Anthropic docs](https://code.claude.com/docs/en/memory)) |
+| `AGENTS.md` | OpenAI Codex, Cursor, GitHub Copilot's coding agent, Gemini CLI, Aider, Devin/Windsurf, Zed, Factory, Jules, and more | Widest cross-tool support, 60,000+ repos ([agents.md](https://agents.md/)) |
+| `.cursor/rules/*.mdc` | Cursor | MDC format with frontmatter; `.cursorrules` is the older single-file predecessor ([Cursor docs](https://cursor.com/docs/context/rules)) |
+| `.github/copilot-instructions.md` | GitHub Copilot | Single repo-wide file, no import system ([GitHub docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)) |
+| `GEMINI.md` | Gemini CLI | Similar concept to CLAUDE.md, with its own hierarchy and @import syntax ([Gemini CLI docs](https://geminicli.com/docs/cli/gemini-md/)) |
+| `.windsurfrules` / `.devin/rules/*.md` | Windsurf (renamed Devin Desktop, June 2026) | Legacy single file still read; new rules use the `.devin/rules/` directory ([Devin Desktop FAQ](https://docs.devin.ai/desktop/devin-desktop-faq)) |
 
 **The pragmatic multi-tool approach:** Put shared instructions in `AGENTS.md` (the closest thing to a cross-tool standard), then import it from your tool-specific files:
 
@@ -204,7 +205,7 @@ If your team uses multiple AI coding tools, you are dealing with a fragmented ec
 - Run /compact after long refactoring sessions
 ```
 
-This avoids duplicating instructions while letting each tool receive its specific configuration. AGENTS.md has the broadest adoption — it is supported by 10+ major AI coding tools (Codex, Cursor, Copilot, Gemini CLI, Aider, Windsurf, Zed, Factory, Jules, and more) across 60,000+ repositories as of early 2026, and is stewarded by the [Linux Foundation's Agentic AI Foundation (AAIF)](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/).
+This avoids duplicating instructions while letting each tool receive its specific configuration. AGENTS.md has the broadest adoption — [its own site](https://agents.md/) lists direct support from OpenAI Codex, Cursor, GitHub Copilot's coding agent, Gemini CLI, Aider, Devin (formerly Windsurf), Zed, Factory, Jules, and more, and reports usage across 60,000+ open-source repositories on GitHub. It's a founding project of the Agentic AI Foundation (AAIF), a directed fund under the Linux Foundation co-founded by Anthropic, Block, and OpenAI ([AAIF launch post](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/); [agents.md](https://agents.md/)).
 
 For a deeper look at AGENTS.md and the broader agentic web standards, see our guide on [AGENTS.md, llms.txt, and Making Your Site Agent-Ready](/guides/agentic-web-agents-md-llms-txt/).
 
@@ -216,11 +217,11 @@ CLAUDE.md files are written and maintained by you. Claude Code also has an **aut
 |---|---|---|
 | **Author** | You (the developer) | Claude |
 | **Contains** | Instructions and rules | Learned patterns and context |
-| **Scope** | Project, user, or org | Per working tree |
-| **Survives compaction** | Yes (re-read from disk) | Yes (re-read from disk) |
+| **Scope** | Project, user, or org | Per git repository, shared across worktrees on the same machine |
+| **Survives compaction** | Root CLAUDE.md: yes, re-read from disk (nested/path-scoped files reload only on next matching read) | Yes, re-read from disk |
 | **Best for** | Coding standards, workflows, commands | Build quirks, debugging insights, user preferences |
 
-The two systems are complementary. Use CLAUDE.md for rules you want enforced consistently. Let auto memory handle things Claude discovers during work — like that a specific test is flaky, or that a particular build flag is needed on your machine.
+The two systems are complementary. Use CLAUDE.md for rules you want enforced consistently. Let auto memory handle things Claude discovers during work — like that a specific test is flaky, or that a particular build flag is needed on your machine. (Table details per [Anthropic's memory documentation](https://code.claude.com/docs/en/memory#auto-memory), including its notes that auto memory directories are shared "across all worktrees and subdirectories within the same repo," and that nested CLAUDE.md files "are not re-injected automatically" after `/compact`.)
 
 To save something to auto memory: tell Claude "remember that..." in conversation. To add something to CLAUDE.md instead: say "add this to CLAUDE.md."
 
@@ -228,7 +229,7 @@ To save something to auto memory: tell Claude "remember that..." in conversation
 
 ### The kitchen sink file
 
-A 500-line CLAUDE.md that tries to document everything. Compliance drops sharply as length increases — practitioners consistently report that adding more instructions past the 100–200 line range causes Claude to miss earlier rules. Fix: ruthlessly prune to rules that Claude cannot infer from code.
+A 500-line CLAUDE.md that tries to document everything. Compliance drops as length increases — Anthropic's own guidance targets under 200 lines because longer files "consume more context and reduce adherence" ([Anthropic docs](https://code.claude.com/docs/en/memory#write-effective-instructions)). Fix: ruthlessly prune to rules that Claude cannot infer from code.
 
 ### Linter rules in CLAUDE.md
 
@@ -260,7 +261,7 @@ How do you know your CLAUDE.md is working? A few practical techniques:
 
 3. **The compliance check.** After a work session, review Claude's output against your CLAUDE.md rules. If specific rules are consistently ignored, they may need to be rephrased, promoted higher in the file, or prefixed with stronger language (MUST, NEVER).
 
-4. **The token budget check.** If your CLAUDE.md plus all unconditionally loaded rules files exceeds 3,000-4,000 tokens, consider splitting into path-scoped rules or @imports.
+4. **The token budget check.** Run `/context` in a session to see exactly which memory files loaded and how many tokens they consume ([Anthropic docs](https://code.claude.com/docs/en/memory#set-up-a-project-claude-md)). If your CLAUDE.md is eating a large slice of your context window, or has grown past Anthropic's 200-line guidance, split it into path-scoped rules or @imports.
 
 ## Getting Started
 

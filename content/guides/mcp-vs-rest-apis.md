@@ -4,8 +4,8 @@ date: 2026-03-27T20:00:00+09:00
 description: "MCP and REST APIs both connect AI to external services, but they solve different problems. Here's a practical comparison to help you choose."
 content_type: "Guide"
 card_description: "MCP and REST APIs both connect AI to tools — but they work differently. Here's when to use each."
-last_refreshed: 2026-03-27
-sources_audited: 2026-07-24
+last_refreshed: 2026-08-12
+sources_audited: 2026-08-12
 ---
 
 If you're building AI integrations, you've probably asked: should I use MCP or just call a REST API? The answer depends on what you're building and who (or what) is making the decisions.
@@ -48,13 +48,13 @@ This matters for agent workflows. If you're building an agent that needs to hand
 
 **REST:** OAuth, API keys, bearer tokens — a mature ecosystem with well-established patterns. Libraries exist for every language.
 
-**MCP:** Still evolving. The spec now supports OAuth 2.1 for remote servers, but many servers rely on environment variables or config files for credentials. Authentication patterns are less standardized than REST.
+**MCP:** Still evolving. The [MCP authorization spec](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) defines an OAuth 2.1-based flow for HTTP-based (remote) servers, while stdio (local) servers are expected to get credentials from the environment instead. Authentication patterns are less standardized than REST.
 
 ### Ecosystem Size
 
 **REST:** Essentially every web service has a REST API (or REST-ish — many are actually RPC over HTTP). Decades of tooling, documentation, and developer experience.
 
-**MCP:** Over 12,000 servers listed across directories like [PulseMCP](https://pulsemcp.com/) and [Glama](https://glama.ai/mcp/servers) as of early 2026 (Glama alone now lists 22,000+). Growing rapidly, but still a fraction of the REST ecosystem. Many MCP servers are wrappers around REST APIs.
+**MCP:** As of August 2026, [PulseMCP lists over 22,000 servers](https://www.pulsemcp.com/servers) and [Glama lists over 71,000](https://glama.ai/mcp/servers). Growing rapidly, but still a fraction of the REST ecosystem. Many MCP servers are wrappers around REST APIs.
 
 ## Comparison Table
 
@@ -63,9 +63,9 @@ This matters for agent workflows. If you're building an agent that needs to hand
 | **Primary user** | Developer writing code | AI model choosing tools |
 | **Discovery** | Read docs, hardcode endpoints | Runtime tool discovery |
 | **Transport** | HTTP (stateless) | JSON-RPC over stdio or HTTP (stateful) |
-| **Maturity** | Decades | ~1 year |
+| **Maturity** | Decades | [~1.75 years](https://www.anthropic.com/news/model-context-protocol) (launched Nov. 2024) |
 | **Auth** | OAuth, API keys (mature) | OAuth 2.1, env vars (evolving) |
-| **Ecosystem** | Millions of APIs | [12,000+ servers](https://glama.ai/mcp/servers) |
+| **Ecosystem** | Millions of APIs | [70,000+ servers](https://glama.ai/mcp/servers) |
 | **Best for** | App-to-service calls | AI-to-tool integration |
 | **Flexibility** | Fixed at build time | Dynamic at runtime |
 
@@ -91,8 +91,8 @@ This matters for agent workflows. If you're building an agent that needs to hand
 This is actually the most common pattern. Many MCP servers are thin wrappers around REST APIs. The REST API does the heavy lifting; the MCP server packages it in a way AI models can discover and use.
 
 For example:
-- The **GitHub MCP server** calls GitHub's REST (and GraphQL) API under the hood
-- The **Slack MCP server** wraps Slack's Web API
+- The [GitHub MCP server](https://github.com/github/github-mcp-server) — GitHub's own, official server — exposes GitHub's REST API (repos, issues, PRs, Actions, and more) as MCP tools
+- The [official Slack MCP server](https://slack.com/blog/news/mcp-real-time-search-api-now-available), which reached general availability on February 17, 2026, gives AI agents access to Slack conversation data through its own purpose-built interface (paired with a separate Real-Time Search API) rather than being a thin wrapper around the older Slack Web API
 - **Database MCP servers** use standard database drivers, which use their own protocols
 
 If you're building a product that has both human-driven features and AI-driven features, you might use REST for the human-facing parts and MCP for the AI-facing parts — both calling the same backend services.
@@ -131,7 +131,7 @@ For most AI applications in 2026, the answer is "both" — MCP for the AI-facing
 - [How to Build Your First MCP Server](/guides/build-your-first-mcp-server/) — step-by-step tutorial
 - [MCP Server Security Guide](/guides/mcp-server-security/) — what to check before installing a server
 - [How to Choose the Right MCP Server](/guides/how-to-choose-mcp-servers/) — our evaluation framework
-- [All MCP Server Reviews](/reviews/) — 77+ detailed reviews across every category
+- [All MCP Server Reviews](/reviews/) — hundreds of detailed reviews across every category
 
 ---
 

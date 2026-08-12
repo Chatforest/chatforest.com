@@ -1,6 +1,6 @@
 # MCP with Slack and Teams: Building AI Agents for Workplace Chat
 
-> A practical guide to integrating MCP with Slack and Microsoft Teams — covering MCP servers for both platforms, architecture patterns, security risks (including the data
+> A practical guide to integrating MCP with Slack and Microsoft Teams — covering MCP servers for both platforms, architecture patterns, and security risks (including the data exfiltration flaw that got Anthropic's Slack server archived).
 
 
 Workplace chat platforms hold your organization's institutional knowledge — decisions made in threads, context buried in channels, tribal knowledge shared in DMs. AI agents that can read and act in these platforms become genuinely useful: triaging incidents, summarizing channels, answering questions from chat history, and automating routine messages.
@@ -13,7 +13,7 @@ But connecting an AI agent to your workplace chat comes with real security risks
 
 ### Slack's Official MCP Server
 
-Slack [released its first-party MCP server on February 17, 2026](https://docs.slack.dev/changelog/2026/02/17/slack-mcp/), after [previewing it at Dreamforce in October 2025](https://slack.com/blog/news/dreamforce-slack-native-ai). This is the production-grade option.
+Slack [released its first-party MCP server on February 17, 2026](https://docs.slack.dev/changelog/2026/02/17/slack-mcp/), after [previewing it at Dreamforce in October 2025](https://slack.com/blog/news/dreamforce-slack-native-ai). This is the production-grade option. Capabilities, auth, and rate limits below are documented on [Slack's official MCP server overview](https://docs.slack.dev/ai/slack-mcp-server/).
 
 **Endpoint:** `https://mcp.slack.com/mcp` (Streamable HTTP transport)
 
@@ -26,25 +26,25 @@ Slack [released its first-party MCP server on February 17, 2026](https://docs.sl
 | Canvases | Create, update, read and export as markdown |
 | User data | Full profiles, custom fields, statuses |
 
-**Auth:** Standard Slack OAuth 2.0 with user-level permissions. Only directory-published or internal apps are permitted — unlisted apps are blocked. Admin approval flows are built in.
+**Auth:** Standard Slack OAuth 2.0 with user-level permissions. Only [directory-published or internal apps are permitted](https://slack.com/blog/news/slackbot-mcp-security) — unlisted apps are blocked. Admin approval flows are built in through Slack's existing App Directory review process.
 
 **Rate limits:** Same tiers as the Slack Web API — Tier 2 (~20/min) for search, Tier 3 (~50/min) for reading, Tier 4 (~100/min) for profiles.
 
-**Key limitation:** It exposes a curated subset of the Slack Web API — roughly 10% of the 200+ available methods. If you need full API coverage, you'll still need the native Slack API.
+**Key limitation:** It exposes a curated subset of Slack's Web API, which [lists 500+ methods in total](https://docs.slack.dev/reference/methods) — the MCP server covers only search, messaging, canvases, and user-data operations. If you need full API coverage, you'll still need the native Slack API.
 
 **Supported MCP clients:** Claude.ai, Claude Code, Perplexity, Cursor — no custom code needed.
 
 ### The Archived Reference Server (Don't Use This)
 
-The original `@modelcontextprotocol/server-slack` from Anthropic's MCP project was archived in May 2025 after a critical data exfiltration vulnerability. It exposed 8 tools (list channels, post messages, reply to threads, add reactions, get history, get replies, list users, get profiles) via stdio transport.
+The original `@modelcontextprotocol/server-slack` from Anthropic's MCP project [was archived on May 29, 2025](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/slack) after a critical data exfiltration vulnerability. It exposed 8 tools (list channels, post messages, reply to threads, add reactions, get history, get replies, list users, get profiles).
 
 **Do not use this server.** It has a known security vulnerability that allows data exfiltration through Slack's link unfurling mechanism. We cover the details in the [Security section](#the-slack-mcp-data-exfiltration-vulnerability) below.
 
 ### Community Alternatives
 
-**[korotovsky/slack-mcp-server](https://github.com/korotovsky/slack-mcp-server)** (Go) is one of the most popular community options. It offers ~13 tools covering conversations, reactions, attachments, channels, and user groups. Notable features include GovSlack support (routes API calls to slack-gov.com for FedRAMP environments) and a "stealth mode" using browser session cookies — useful for testing but not suitable for production since it bypasses Slack's audit trails.
+**[korotovsky/slack-mcp-server](https://github.com/korotovsky/slack-mcp-server)** (Go) is one of the most popular community options. It offers [~18 tools](https://github.com/korotovsky/slack-mcp-server) covering conversations, reactions, saved items, channels, and user groups. Notable features include GovSlack support (routes API calls to slack-gov.com for FedRAMP environments) and a "stealth mode" using browser session cookies — useful for testing but not suitable for production since it bypasses Slack's audit trails.
 
-**AVIMBU/slack-mcp-server** (TypeScript) provides ~8 tools with standard OAuth. **Truto** offers a managed SaaS approach with dynamic tool generation from the full Slack API surface, managed OAuth lifecycle, and method-level filtering.
+**[AVIMBU/slack-mcp-server](https://github.com/AVIMBU/slack-mcp-server)** (TypeScript) is a much smaller project: 2 tools (post a message, list users), authenticated with a static bot token rather than an OAuth flow. **[Truto](https://truto.one/blog/best-mcp-server-for-slack-in-2026/)** offers a managed SaaS approach, dynamically generating tools from Slack's documented API surface, with managed OAuth token storage/refresh and method-level (read/write/tag) filtering.
 
 ## Microsoft Teams MCP Servers
 
@@ -52,15 +52,15 @@ The original `@modelcontextprotocol/server-slack` from Anthropic's MCP project w
 
 Microsoft has taken a multi-pronged approach to MCP in Teams:
 
-**Agent Connectors** (public developer preview) let you register any remote MCP server in the Microsoft 365 app manifest. Teams Channel Agent discovers and invokes the MCP tools. Auth options include OAuth 2.0 via Microsoft's secure vault or no auth for internal tools.
+**[Agent Connectors](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/agent-connectors)** (developer preview) let you register any remote MCP server in the Microsoft 365 app manifest, so Microsoft 365 agents can discover and invoke the MCP tools. Auth options include OAuth 2.0 via Microsoft's secure vault (Azure Key Vault) or no auth for internal tools.
 
-**Teams SDK** has native MCP support (GA in C# and JavaScript, preview in Python). Agents built with the Teams SDK can connect to any MCP server as a tool provider.
+**[Teams SDK](https://devblogs.microsoft.com/microsoft365dev/announcing-the-updated-teams-ai-library-and-mcp-support/)** has native MCP support, generally available in C# and JavaScript and in public preview for Python. Agents built with the Teams SDK can connect to any MCP server as a tool provider.
 
-**Copilot Studio** supports MCP at general availability, enabling no-code/low-code agent builders to connect MCP servers.
+**[Copilot Studio](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/model-context-protocol-mcp-is-now-generally-available-in-microsoft-copilot-studio/)** supports MCP at general availability, enabling no-code/low-code agent builders to connect MCP servers (SSE transport specifically remains in public preview).
 
-### floriscornel/teams-mcp (Community)
+### [floriscornel/teams-mcp](https://github.com/floriscornel/teams-mcp) (Community)
 
-The most comprehensive community Teams server with 25 tools across auth, users, teams, chats, media, and search. Key features:
+The most comprehensive community Teams server, with [26 tools](https://github.com/floriscornel/teams-mcp) across auth, users, teams, chats, media, and search. Key features:
 
 - **KQL-based search** across all Teams conversations
 - **HTML-to-markdown conversion** for LLM consumption
@@ -70,7 +70,7 @@ The most comprehensive community Teams server with 25 tools across auth, users, 
 
 Setup is straightforward: `npx @floriscornel/teams-mcp@latest authenticate`
 
-### InditexTech/mcp-teams-server (Community)
+### [InditexTech/mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) (Community)
 
 A simpler Python server focused on channel messaging — 5 tools for creating threads, replying, reading messages, and listing members. Limited to a single channel per instance (multi-channel requires multiple server instances). Available as a Docker image.
 
@@ -80,7 +80,7 @@ A simpler Python server focused on channel messaging — 5 tools for creating th
 |--------|-----------------|-------------------|--------------------------|---------------------|
 | Status | GA (Feb 2026) | Active | Public Preview | Active |
 | Transport | Streamable HTTP | stdio/SSE/HTTP | HTTPS/WSS | stdio (npx) |
-| Tools | Curated subset | ~13 tools | SDK-level | 25 tools |
+| Tools | Curated subset | ~18 tools | SDK-level | 26 tools |
 | Auth | OAuth 2.0 (user-level) | Bot token / session cookies | Azure AD / OAuth vault | Graph OAuth (auto-refresh) |
 | Read-only mode | No | No | No | Yes |
 | File support | Via canvases | Limited | N/A | Yes (large files) |
@@ -104,7 +104,7 @@ Good for personal productivity and ad-hoc queries. The limitation is that it req
 
 ### Pattern 2: Bot as MCP Client (Team Assistant)
 
-A Slack or Teams bot acts as the MCP client, bridging chat messages to MCP servers. Projects like `tuannvm/slack-mcp-client` and `sooperset/mcp-client-slackbot` implement this pattern.
+A Slack or Teams bot acts as the MCP client, bridging chat messages to MCP servers. Projects like [tuannvm/slack-mcp-client](https://github.com/tuannvm/slack-mcp-client) and [sooperset/mcp-client-slackbot](https://github.com/sooperset/mcp-client-slackbot) implement this pattern.
 
 ```
 User in Slack → Socket Mode/Events API → Bot Process (MCP Client)
@@ -127,7 +127,7 @@ The gateway handles auth, rate limiting, observability, and security policies. I
 
 ### Pattern 4: Slack Official MCP + Real-Time Search
 
-Slack's recommended production pattern combines their MCP server with the Real-time Search (RTS) API:
+Slack's recommended production pattern combines their MCP server with the [Real-time Search (RTS) API](https://slack.com/blog/news/mcp-real-time-search-api-now-available), released alongside the MCP server in February 2026:
 
 - **MCP Server:** tool execution (send messages, manage canvases)
 - **RTS API:** secure, permission-aware search across conversations, files, and threads
@@ -181,7 +181,7 @@ In May 2025, researchers discovered that Anthropic's `@modelcontextprotocol/serv
 
 Security researcher Simon Willison [coined the term "the lethal trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for this pattern — an AI agent with tool access, private data, and untrusted input in the same context.
 
-**Timeline:** Reported May 27, 2025 → Anthropic archived the server May 29, 2025. The [security advisory was publicly disclosed](https://embracethered.com/blog/posts/2025/security-advisory-anthropic-slack-mcp-server-data-leakage/) by researcher Johann Rehberger (CVE-2025-34072, CVSS 9.3).
+**Timeline:** Reported May 27, 2025 → Anthropic archived the server May 29, 2025. The [security advisory was publicly disclosed](https://embracethered.com/blog/posts/2025/security-advisory-anthropic-slack-mcp-server-data-leakage/) by researcher Johann Rehberger ("wunderwuzzi") of Embrace The Red; the issue was later catalogued as [CVE-2025-34072, CVSS 9.3](https://www.vulncheck.com/advisories/anthropic-slack-mcp-server-data-exfiltration).
 
 ### Broader Security Risks
 
@@ -217,7 +217,7 @@ MCP doesn't replace native Slack and Teams integrations — it complements them.
 
 ### When Native APIs Win
 
-- **Full API coverage:** 200+ Slack methods vs. ~10% via MCP
+- **Full API coverage:** [500+ Slack Web API methods](https://docs.slack.dev/reference/methods) vs. a curated subset via MCP
 - **Real-time events:** Native event subscriptions (Socket Mode, Events API, Graph webhooks) — MCP is request/response only
 - **Rich UI:** Full Block Kit (Slack) and Adaptive Cards (Teams) support with interactive elements
 - **Deterministic behavior:** Traditional code paths vs. LLM-decided tool selection
@@ -239,9 +239,9 @@ How major agent frameworks handle Slack and Teams MCP integration:
 
 | Framework | MCP Support Level | Notes |
 |-----------|------------------|-------|
-| CrewAI | Native, first-class | Agents declare MCP servers inline; framework handles lifecycle |
+| CrewAI | [Native, first-class](https://docs.crewai.com/en/mcp/overview) | Agents declare MCP servers inline via the `mcps` field; framework handles lifecycle |
 | LangChain / LangGraph | Supported | Requires more manual wiring; wraps MCP tools as LangChain tools |
-| Claude SDK | First-class | Auto-configures for Slack MCP; OAuth flow built in |
+| Claude SDK | First-class for MCP, but no Slack-specific auto-config | The [Agent SDK](https://code.claude.com/docs/en/agent-sdk/mcp) speaks standard MCP OAuth 2.1 like any client; it's Claude.ai/Claude Code's built-in Slack *plugin* (not the SDK) that ships a one-click OAuth flow |
 | Composio | Managed connectors | Pre-built Slack/Teams MCP with managed OAuth lifecycle |
 | Microsoft 365 Agents Toolkit | Official Teams MCP | Native support for the M365 ecosystem |
 | BeeAI Framework | Guide available | Provides MCP Slackbot integration patterns |
@@ -258,11 +258,11 @@ LLMs generate standard markdown. Slack uses `mrkdwn`, a non-standard variant whe
 
 ### Rate Limits Hit Fast with AI Agents
 
-AI agents making multiple tool calls per request exhaust rate limits quickly. Slack's tier system and Teams' per-tenant throttling (10,000 requests per 10 seconds per app) apply identically whether the call comes through MCP or the direct API. Implement backoff and batching.
+AI agents making multiple tool calls per request exhaust rate limits quickly. Slack's tier system and [Teams' bot API throttling](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/rate-limit) (a global cap of 50 requests/second per app per tenant, with tighter per-conversation limits) apply identically whether the call comes through MCP or the direct API. Implement backoff and batching.
 
 ### Message Size Limits
 
-Slack caps messages at 40,000 characters. Teams caps at 28 KB (including Adaptive Card JSON). Agents generating long summaries need chunking strategies.
+Slack [caps messages at 40,000 characters](https://docs.slack.dev/changelog/2018-truncating-really-long-messages/) (past which they get truncated). Teams [caps Incoming Webhook payloads at 28 KB](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) (including Adaptive Card JSON); bot-posted messages have a separate, larger limit. Agents generating long summaries need chunking strategies.
 
 ### Threading Models Differ
 

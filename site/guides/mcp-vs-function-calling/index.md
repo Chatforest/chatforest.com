@@ -46,11 +46,11 @@ Everything runs in a single process. Tool logic, credentials, and error handling
 // 4. You send the result back as a tool_result message
 ```
 
-Each LLM provider implements this differently. OpenAI returns `message.tool_calls` with serialized JSON string arguments. Anthropic uses `content[]` blocks with `tool_use` type and inline input objects. Gemini uses `functionCall` with flat `args`. Switching providers means rewriting your parsing logic.
+Each LLM provider implements this differently. [OpenAI](https://developers.openai.com/api/docs/guides/function-calling) returns `message.tool_calls` (Chat Completions API) with serialized JSON string arguments. [Anthropic](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) uses `content[]` blocks with `tool_use` type and inline input objects. [Gemini](https://ai.google.dev/gemini-api/docs/function-calling) uses `functionCall` with flat `args`. Switching providers means rewriting your parsing logic.
 
 ## How MCP Works
 
-MCP uses a client-server architecture with three components:
+MCP uses a [client-host-server architecture](https://modelcontextprotocol.io/docs/learn/architecture) with three components:
 
 - **MCP Host** — The AI application (Claude Desktop, Cursor, VS Code, your custom agent)
 - **MCP Client** — Maintains a 1:1 connection with an MCP server
@@ -67,7 +67,7 @@ The workflow:
 
 Here's the key insight: **the LLM itself doesn't know about MCP.** From the model's perspective, it's still doing function calling. MCP operates at the infrastructure layer beneath the model, standardizing how tools are discovered, managed, and executed.
 
-Transport options include **stdio** for local servers (near-zero overhead) and **Streamable HTTP** for remote servers (with OAuth 2.1 support).
+Transport options include **stdio** for local servers (near-zero overhead) and **Streamable HTTP** for remote servers, which the [MCP authorization specification](https://modelcontextprotocol.io/specification/draft/basic/authorization) requires to support OAuth 2.1.
 
 ## Key Differences at a Glance
 
@@ -161,17 +161,19 @@ Many projects follow a natural progression:
 
 **Latency:**
 - Function calling adds zero infrastructure overhead — tools execute in-process
-- MCP via stdio (local servers) adds roughly 5-10ms per call for the process hop
-- MCP via Streamable HTTP (remote servers) adds network latency on top
+- MCP via stdio (local servers, warm process) adds roughly 1-3ms per call for the process hop
+- MCP via Streamable HTTP (remote servers, same datacenter) adds roughly 5-10ms per call, more over longer network paths
+
+([Benchmark figures](https://www.truefoundry.com/blog/mcp-stdio-vs-streamable-http-enterprise) are engineering estimates assembled from published transport benchmarks, not a single controlled test — treat them as order-of-magnitude, not exact.)
 
 For most applications, MCP's latency overhead is negligible compared to LLM inference time (which dominates at 1-10+ seconds).
 
 **Token overhead:**
-This is where MCP costs can surprise you. Every connected MCP server's tool definitions get sent to the model as part of the prompt. [One analysis found](https://www.jdhodges.com/blog/claude-code-mcp-server-token-costs/) a 5-server setup consuming approximately 55,000 tokens before a single message was sent; adding a single complex server like Jira can add ~17,000 tokens.
+This is where MCP costs can surprise you. Every connected MCP server's tool definitions get sent to the model as part of the prompt. [One analysis](https://www.jdhodges.com/blog/claude-code-mcp-server-token-costs/) — citing a [developer-reported breakdown](https://mariogiancini.com/the-hidden-cost-of-mcp-servers-and-when-theyre-worth-it) that puts "heavy" setups of 5+ servers in the 55,000-100,000+ token range — put a 5-server setup at roughly 55,000 tokens before a single message was sent; the same analysis' own server-cost table lists Jira at approximately 17,000 tokens.
 
 Mitigations exist:
-- **Deferred tool loading** — Anthropic's Tool Search Tool (`defer_loading: true`) discovers tools on-demand instead of loading all definitions upfront
-- **Response caching** — OpenAI caches `tools/list` results via `previous_response_id`
+- **Deferred tool loading** — [Anthropic's Tool Search Tool](https://www.anthropic.com/engineering/advanced-tool-use) (`defer_loading: true`) discovers tools on-demand instead of loading all definitions upfront, including for MCP servers
+- **Response caching** — [OpenAI's Responses API](https://developers.openai.com/api/docs/guides/tools-connectors-mcp) avoids re-fetching `tools/list` on a server as long as the `mcp_list_tools` item (kept in context via `previous_response_id`) is present
 - **Selective connection** — Only connect the MCP servers needed for the current task
 
 **Integration complexity:**
@@ -179,15 +181,15 @@ Without MCP, connecting N models to M tools requires N × M integration points (
 
 ## Real-World Adoption
 
-MCP adoption has accelerated since its November 2024 launch:
+MCP adoption has accelerated since [Anthropic open-sourced the protocol in November 2024](https://www.anthropic.com/news/model-context-protocol):
 
-- **GitHub's MCP server** provides 20+ tools for PRs, issues, and code search
-- **Notion, Figma, Slack, and AWS** all maintain official MCP servers
-- **OpenAI's Agents SDK** supports both function calling and MCP in the same agent
+- **[GitHub's official MCP server](https://github.com/github/github-mcp-server)** provides dozens of tools across toolsets including pull requests, issues, code/commit search, Actions, and security alerts
+- **[Notion](https://developers.notion.com/docs/mcp), [Figma](https://www.figma.com/blog/introducing-figma-mcp-server/), [Slack](https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack), and [AWS](https://aws.amazon.com/about-aws/whats-new/2026/05/aws-mcp-server/)** all maintain official MCP servers
+- **[OpenAI's Agents SDK](https://openai.github.io/openai-agents-js/guides/mcp/)** supports both function calling and MCP in the same agent
 - **Claude Desktop, Cursor, VS Code, and Windsurf** are MCP-native development environments
-- **GitMCP** (gitmcp.io) automatically creates MCP servers for any GitHub repository
+- **[GitMCP](https://gitmcp.io/)** (gitmcp.io) automatically creates a documentation-focused MCP server for any public GitHub repository
 
-The ecosystem is still maturing. Community quality varies — researchers have found security vulnerabilities in a significant portion of third-party MCP servers, and token overhead remains a practical concern. Our [How to Choose MCP Servers](/guides/how-to-choose-mcp-servers/) guide covers evaluation criteria.
+The ecosystem is still maturing. Community quality varies — in a 2026 [Trend Micro audit of more than 19,000 open-source MCP server repositories](https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/hunt-them-all-an-ai-powered-vulnerability-sweep-of-19-000-mcp-servers), researchers estimated that 3.1%-8.6% (roughly 600-1,650 repos) contained genuinely exploitable vulnerabilities, most commonly SQL injection, remote code execution, and path traversal. Token overhead also remains a practical concern. Our [How to Choose MCP Servers](/guides/how-to-choose-mcp-servers/) guide covers evaluation criteria.
 
 ## Decision Framework
 

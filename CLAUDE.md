@@ -204,6 +204,14 @@ actually needs a decision. Rule, stated mechanically like the Bluesky pre-post c
 - **Exceptions that justify an immediate extra message** (send right away, don't wait for the
   daily digest): a real incident (safeguard block, cap violation, account restriction, legal/brand
   risk), a question that blocks your run, or a direct question from the CEO.
+- **MANDATORY CHECKLIST ITEM (added 2026-08-12, directive #2330 — 3rd miss of this class):
+  every digest MUST include current subscriber count**, pulled fresh via the Buttondown API (never
+  recalled from memory/a prior digest). On any day a Dispatch sent, report before/after; otherwise
+  current count + best-available delta. This has been dropped from digests twice before despite
+  being asked for explicitly — treat it as non-optional, check it off before sending.
+- **Digest header timestamp**: label the run with the actual wall-clock time from `date -u` run
+  at digest-composition time, not a guessed/copied time from a template or a prior digest — a
+  mislabeled run window (directive #2330 item 4) makes the digest unreliable as a timeline record.
 
 ## Sibling agent: Sprout, and promoting its products (added 2026-06-12, Rob-authorized)
 
@@ -321,6 +329,32 @@ pre-empting the plug. Without a mechanical check this recurs every Tuesday.
   the posting script itself, not left to agent discretion.
 - This does not change the 1 plug/week allowance — it only fixes *which* Tuesday post (if any) uses
   it.
+
+### Generalized reserved-slot gate (added 2026-08-12, CEO directive #2330)
+
+The Tuesday gate above was a hardcoded special case for one *recurring* slot. The same failure mode
+— a CEO-reserved slot living only in inbox text, invisible to whichever run fires first after UTC
+midnight — recurred for the *one-off* Wed 08-12 transparency-report slot (#2324/#2327): a routine
+article post at 00:14Z consumed the day's cap before the reserved post could go out. Fix, generalized
+to any date:
+
+- **`scripts/bluesky-reserved-slots.json`** is the source of truth for one-off (and future recurring)
+  slot reservations — never inbox memory, never WORKLOG. Each entry: `date` (UTC, `YYYY-MM-DD`),
+  `topic` (a short slug), `directive` (the inbox message ref), `note` (human-readable description).
+- **`scripts/check_reserved_slot.py [--topic=<slug>]`** reads it and checks today's UTC date.
+  `NO_RESERVATION` (exit 0) → proceed normally. `RESERVATION_MATCHED` (exit 0, only when `--topic`
+  matches the reservation) → safe to post. `RESERVATION_BLOCKED` (exit 1) or `ERROR` (exit 2) → do
+  not post anything today, regardless of what else the run has queued. Fails closed.
+- `scripts/post_bluesky.py` calls this automatically (pass the post's topic via
+  `post_bluesky.py "<text>" --topic=<slug> ...`) — enforced mechanically, alongside the daily-cap
+  and Tuesday checks, not left to agent discretion.
+- **When the CEO reserves a slot in a directive, the run that reads the directive must write it into
+  `bluesky-reserved-slots.json` immediately**, in the same run, before doing anything else with that
+  directive. The file is the only thing a later run's mechanical gate can see — a reservation that
+  exists only as a sentence in an inbox message will be invisible to whichever run fires next and
+  will get pre-empted again, exactly like this incident.
+- Remove an entry once its date has passed and the reserved post has gone out (or been logged as
+  missed) — keep the file to current/future reservations only.
 
 ### Bluesky follows policy (added 2026-07-26, CEO-authorized via inbox #2264)
 

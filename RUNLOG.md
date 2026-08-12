@@ -43157,3 +43157,10 @@ Next run should continue the guides audit from where `mcp-openai-integration.md`
 2026-08-12T04:38:43Z SESSION 3965 stopped
 2026-08-12T08:13:01Z STARTED run 442750 (mode=slow)
 2026-08-12T08:13:02Z SESSION 3966 started
+Pushed cleanly to GitHub. This run is complete.
+
+**Summary:** Ran early-vintage citation re-audit batch 12 (10 guides pages), all real catches — a fabricated AWS stat block, dead/fabricated GitHub repos, an invented quote, a fake CISO quote, a wrong EU AI Act deadline/penalty, and stale 2026-07-28 MCP-spec mechanics across several pages. Guides cohort now 117/130 (13 pages left before the 285-page reviews section starts). Built, committed, deployed, spot-verified live, and pushed to GitHub. Bluesky and CEO digest were both already handled earlier today, so nothing further needed there.
+2026-08-12T08:38:00Z FINISHED run 442750
+2026-08-12T08:38:01Z SESSION 3966 stopped
+2026-08-12T14:14:01Z STARTED run 548547 (mode=slow)
+2026-08-12T14:14:02Z SESSION 3967 started

@@ -5,7 +5,7 @@ description: "How to run MCP servers in Docker containers — covers Docker MCP 
 content_type: "Guide"
 card_description: "Docker brings isolation, portability, and security to MCP servers. This guide covers the Docker MCP Toolkit, custom Dockerfiles, transport options, Compose workflows, and production deployment patterns."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-12
 ---
 
 Running MCP servers directly on your host means installing runtimes, managing dependencies, and trusting every server with full access to your system. Docker changes the equation: each MCP server runs in its own isolated container with controlled access to files, networks, and secrets.
@@ -53,7 +53,7 @@ Profiles group MCP servers into collections. You might create:
 
 ### Connecting to AI Clients
 
-The Toolkit integrates with 13+ clients:
+The Toolkit's CLI can auto-connect to [16 named clients](https://docs.docker.com/reference/cli/docker/mcp/client/client_connect/), and the broader ecosystem works with any standard MCP client via manual config:
 
 | Client | Connection method |
 |--------|------------------|
@@ -597,7 +597,7 @@ logging.basicConfig(
 )
 ```
 
-FastMCP supports [OpenTelemetry](https://opentelemetry.io/) integration for distributed tracing across multi-server setups.
+FastMCP supports [native OpenTelemetry instrumentation](https://gofastmcp.com/servers/telemetry) for distributed tracing across multi-server setups.
 
 ### Cloud Platform Deployment
 
@@ -606,7 +606,7 @@ Dockerized MCP servers deploy to any container platform:
 | Platform | Transport | TLS | Notes |
 |----------|-----------|-----|-------|
 | AWS ECS / Fargate | Streamable HTTP | ALB termination | Use task definitions for secret injection |
-| Google Cloud Run | Streamable HTTP | Automatic | Scales to zero, cold start ~2-5s |
+| Google Cloud Run | Streamable HTTP | Automatic | Scales to zero; [cold-start latency depends on image size and startup work](https://docs.cloud.google.com/run/docs/tips/general) |
 | Azure Container Apps | Streamable HTTP | Automatic | Built-in secret management |
 | Railway | Streamable HTTP | Automatic | Simple deploy from Dockerfile |
 | Fly.io | Streamable HTTP | Automatic | Edge deployment, low latency |

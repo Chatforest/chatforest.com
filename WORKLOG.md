@@ -133874,3 +133874,170 @@ this run (throttle clear at start: last deploy 2026-08-12 04:37 UTC, ~3.6h prior
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-12 (UTC ~14:14-15:30) — CEO directive #2330 actions + early-vintage guides batch 13 (10/13 remaining, section CLOSED 130/130) + reviews section opened (1/285)
+
+### Orientation
+
+`date -u` confirmed 2026-08-12 14:14 UTC. Inbox had one HIGH-priority CEO message (#2330), reply to
+today's earlier digest (#2329). Verified-first items needed no action (BYD fix live, 427
+reconciliation published, guides batch 10 MCP-spec catches endorsed). Incident flagged: the 00:14Z
+run's Opus 5 launch post pre-empted the reserved Wed 08-12 transparency-report slot (#2324/#2327) —
+same structural failure as the July Tuesday pre-emption, a reservation living only in inbox text
+being invisible to whichever run fires first after UTC midnight. Four directed actions:
+
+### CEO directive #2330 actions
+
+1. **Tomorrow's (2026-08-13) post is reserved for the transparency-report piece** — not actionable
+   this run (today's Bluesky cap was already spent before this run started; confirmed via
+   `check_bluesky_posted_today.py` → ALREADY_POSTED). Seeded the reservation mechanically (below) so
+   the next run can't miss it.
+2. **Mechanical fix — generalized reserved-slots gate**, built and unit-tested this run:
+   - `scripts/bluesky-reserved-slots.json` — new source-of-truth file (never inbox/WORKLOG memory).
+     Seeded: `{"date": "2026-08-13", "topic": "transparency-report", "directive": "#2330", "note":
+     "..."}`.
+   - `scripts/check_reserved_slot.py` — generalizes the existing Tuesday-only gate to any UTC date.
+     Reads the JSON file, takes an optional `--topic=<slug>` arg. `NO_RESERVATION` (exit 0) when
+     today has no entry; `RESERVATION_MATCHED` (exit 0) only when `--topic` matches; otherwise
+     `RESERVATION_BLOCKED`/`ERROR` (exit 1/2), fail-closed. Unit-tested all three branches locally
+     against a temp reservations file before wiring in (no-reservation, wrong-topic-blocked,
+     matching-topic-safe) — all three behaved correctly.
+   - `scripts/post_bluesky.py` now calls this automatically (alongside the existing daily-cap and
+     Tuesday checks) before every post, and accepts a new `--topic=<slug>` CLI arg (parsed out
+     before link-facet parsing so it doesn't collide with `link_text=url` args).
+   - CLAUDE.md updated: new "Generalized reserved-slot gate" subsection under Bluesky rules,
+     including the write-through rule — **when the CEO reserves a slot in a directive, the run that
+     reads it must write the entry into `bluesky-reserved-slots.json` immediately**, same run, before
+     doing anything else with that directive. This is the actual fix: the file is now the only thing
+     a later run's mechanical gate can see, closing the gap that caused both the Tuesday (07-04) and
+     Wednesday (08-12) pre-emptions.
+3. **Subscriber count now a mandatory digest checklist item** — added to CLAUDE.md's "Report cadence
+   to CEO" section (3rd miss of this class per the CEO). Will pull fresh via Buttondown API and
+   include in the next digest sent (none due this run — one already sent today at 00:28 UTC, #2329,
+   under the max-1/day rule).
+4. **Digest timestamp accuracy** — added a CLAUDE.md line: label the digest's run window with the
+   actual `date -u` output at composition time, not a guessed/copied time. (Root cause of #2329's
+   mislabel not otherwise diagnosed; the mechanical fix is just "check the clock, don't guess.")
+
+### Early-vintage re-audit — guides batch 13 (10/13 remaining, section CLOSED 130/130)
+
+The remaining unchecked guides list (13 pages) was small enough to close the whole section in one
+batch. Dispatched 13 parallel background audit subagents (one file each) plus a 14th contingency
+agent instructed to pick up whatever's left in Guides or, if none, the oldest unchecked Reviews
+entry — it correctly found Guides exhausted and audited `content/reviews/aws-mcp-servers.md`,
+opening the 285-page Reviews section a run early. Every file's `sources_audited` front matter
+verified directly before trusting agent reports; all 14 carry `sources_audited: 2026-08-12`.
+
+**14 files, 100% real-problem catch rate continues. Highlights (full detail per-file in agent
+reports, condensed here):**
+
+1. **mcp-vs-rest-apis** — badly stale ecosystem-size numbers fixed (PulseMCP 22,074 / Glama 71,418,
+   live-checked, previously swapped/outdated); a wrong claim that the Slack MCP server "wraps Slack's
+   Web API" corrected against Slack's own Feb 2026 GA announcement (it's a purpose-built interface,
+   explicitly distinct from the Web API); MCP maturity claim corrected from "~1 year" to ~1.75 years.
+2. **mcp-in-production** — a fabricated MCP Registry timeline ("planned Q4 2026 roadmap," cited to a
+   roadmap page that doesn't say that) corrected to the real Sept 2025 preview launch; added a second
+   independent source (InfoQ) to the Pinterest case study per the >=2-source named-company rule.
+3. **mcp-docker-containers** — a fabricated-looking Cloud Run "cold start ~2-5s" figure with no real
+   primary source removed per cite-it-or-cut-it; stale Docker MCP Toolkit client count corrected
+   (13+ -> 16, live-checked against Docker's own CLI reference).
+4. **mcp-server-migration-stdio-to-http** — a misattributed spec "sunset: June 30, 2026" (that's
+   Atlassian's own Rovo cutoff, not an MCP-spec-mandated date; Keboola's is April 1, 2026, earlier)
+   fixed in two places; added a prominent dated disclosure box for the 2026-07-28 spec revision
+   (protocol-level sessions/`Mcp-Session-Id`/`initialize` handshake removed) since the guide's code
+   samples remain valid for the SDK versions most servers run today but the mechanics description
+   needed scoping.
+5. **mcp-debugging-guide** — dead JSON-RPC error-codes link fixed; caught a real spec-drift item:
+   error code `-32002` was standardized to `-32602` under SEP-2164 (Final) as of the 2026-07-28 spec,
+   page still described it as `-32002`; added a deprecation note for `notifications/message` logging
+   (also deprecated 2026-07-28, migrate to stderr/OpenTelemetry).
+6. **mcp-vs-function-calling** — stdio-vs-Streamable-HTTP latency numbers were swapped (5-10ms
+   claimed for stdio actually belongs to HTTP; stdio is closer to 1-3ms) — fixed with citation and
+   caveat; a vague "significant portion of servers have vulnerabilities" claim replaced with Trend
+   Micro's actual audited figures (3.1%-8.6% of 19,000+ scanned repos, named vuln types).
+7. **content/reviews/aws-mcp-servers.md** (bonus 14th file, Reviews section opened) — two uncited
+   security-fix-date claims traced to their real GitHub PRs (#2861 IAM, #2757 EKS) with corrected
+   dates; a dependency-patch date corrected (claimed April 2026, real PRs #2059/#2064 are Jan 8
+   2026); an unverifiable "219K PulseMCP visitors / #185 globally" stat cut; PyPI download figure
+   refreshed and cited (7.3M+ live vs uncited stale "5M+").
+8. **agentic-web-agents-md-llms-txt** — three citations traced to sources that didn't actually
+   contain the claimed stats (a 124-PR study misattributed to a blog that never mentions it, "40+
+   agent products" sourced to a page listing only 4, a top-50-domains llms.txt stat misattributed) —
+   all repointed to their real primary sources; an unverifiable "2,600+ skills" figure cut
+   (cite-it-or-cut-it); dead `anthropic.com/llms.txt` link fixed to the live `claude.com/llms.txt`;
+   stale A2A Agent Card path corrected (`/.well-known/agent.json` -> `agent-card.json`, current spec).
+9. **mcp-vs-cli-ai-agents** — a citogenesis case (an unsourced Perplexity/MCP claim amplified by
+   dozens of SEO content mills with no primary source found anywhere) rewritten as explicitly
+   attributed/unconfirmed rather than asserted; a Garry Tan quote traced to a wrong source (HN link
+   to a Reddit repost, quote didn't match) replaced with his real X post and the accurate quote; a
+   ClickHouse-class stat-fusion error caught (Anthropic's real 72K->8.7K/85%-reduction Tool Search
+   figures had been fused into a fabricated "~134k to ~5k" number) — corrected against the primary
+   source, also fixed the tool's real name and a stale SEP-1391 status (superseded by shipped
+   SEP-2663).
+10. **writing-effective-claude-md-files** — several real factual errors, not just missing citations:
+    wrong CLAUDE.md import depth (said 5 levels, Anthropic's docs say 4-hop max); a backwards
+    precedence claim (page said "most local file wins," Anthropic's docs say files concatenate, none
+    override — this also resolved an internal contradiction with the page's own "contradictory
+    rules" anti-pattern section); fabricated "100-150 rules maximum" and "3,000-4,000 token budget"
+    figures replaced with a real sourced HumanLayer analysis and the `/context` command; misattributed
+    RFC 2119 claim fixed (NEVER/ALWAYS aren't RFC 2119 terms); stale Windsurf listing updated to its
+    June 2026 Devin Desktop rebrand; a backwards auto-memory-scope claim fixed (shared across
+    worktrees, not per-worktree, per Anthropic's docs).
+11. **mcp-slack-teams-integration** — several wrong tool counts on named third-party repos (13 claimed
+    vs 18 actual on korotovsky/slack-mcp-server; 8-with-OAuth claimed vs the real 2-tools/static-token
+    AVIMBU/slack-mcp-server — a real factual error about a named product's auth model); a fabricated
+    Teams rate limit ("10,000 req/10s per app") replaced with Microsoft's actual documented figure
+    (50 req/sec); a CVE (CVE-2025-34072) reattached from a source that never mentions it to the
+    correct VulnCheck source.
+12. **mcp-with-local-llms** — a fabricated Gemma tool-calling benchmark stat repeated 3x across the
+    page (claimed 6.6%->86.4%, Google's real model card shows 16.2%->76.9%) corrected throughout; a
+    wrong Llama 4 release date (said April 2026, Meta's own post is April 2025) fixed; MCPHost
+    presented as current despite being archived April 2026 (succeeded by "Kit") — flagged; several
+    mismatched citations (a DeepSeek-R1 reliability claim sourced to an unrelated GitHub feature
+    request) removed or corrected.
+13. **mcp-across-ai-platforms** — multiple wrong platform dates (Claude Cowork said GA "April 2026,"
+    actually a Jan 12 2026 macOS research preview reaching Windows parity Feb 10; Copilot Studio GA
+    corrected from "early 2025" to Microsoft's actual May 29 2025 date); AG-UI mislabeled as
+    "Agent-to-Agent" (it's Agent-User Interaction, a distinct protocol from A2A) — fixed; an
+    overstated Gemini claim (MCP tools + Search grounding "simultaneously") contradicted by Google's
+    own docs — corrected with the real limitation.
+14. **mcp-ecosystem-2026-state-of-the-standard** — dead CVE-2025-6514 citation fixed plus a second
+    source added; a fabricated "weather MCP server exploited banking tools" example (untraceable to
+    Invariant Labs' actual research or anywhere else) cut, kept the two examples that do check out;
+    Pinterest post date/server-name errors fixed (March not April 2026; general knowledge server, not
+    "Airflow"); a backwards causality claim fixed (OpenAI/Google/Microsoft shipped MCP support 5-9
+    months *before* AAIF existed, not "within weeks of" its founding); added the 2026-07-28
+    stateless-transport spec revision that the page had still described as a future roadmap item;
+    ~35 new citations added, all named-company security incidents brought to >=2 independent sources.
+
+All 14 files carry `sources_audited: 2026-08-12`, verified directly. `early-vintage-audit.md`
+checked off for all 14: **Guides section CLOSED at 130/130.** Reviews section opened at 1/285
+(the `aws-mcp-servers.md` catch-all agent's work), status line added.
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits). Committing and deploying
+this run (throttle clear: last deploy 2026-08-12 08:37 UTC, ~5.9h prior).
+
+### What should happen next
+
+- Early-vintage re-audit: **Guides CLOSED (130/130)**. Reviews now the active section: 1/285 done
+  (`aws-mcp-servers.md`), 284 remain. Next run should re-scan `early-vintage-audit.md`'s Reviews
+  checklist fresh (don't trust a hardcoded list) and take the next ~10 oldest-by-title.
+- CEO digest: last one sent today 00:28 UTC (#2329) — max-1/day rule already spent, this run's work
+  folds into tomorrow's digest, which per directive #2330 must report: Thu (08-13) transparency-post
+  URL, the reserved-slots file + gate commit (this run), the CLAUDE.md lines (this run), and current
+  subscriber count (pull fresh via Buttondown API at digest time).
+- **Bluesky 2026-08-13: mechanically reserved for the transparency-report post** via
+  `scripts/bluesky-reserved-slots.json` — the next run's post (if any) will be blocked unless it
+  passes `--topic=transparency-report` to `post_bluesky.py`. Lead with one concrete number (CEO
+  suggested the 41%/765-of-1,854 pre-enforcement stat, or the 40%/8-of-20 early-vintage spot-audit
+  miss rate — CEO said pick the sharpest), link
+  `https://chatforest.com/transparency/claim-audit-2026/`. Remove the reservation entry from the
+  JSON file once that post goes out.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

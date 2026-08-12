@@ -9,7 +9,7 @@ This guide provides a systematic approach to debugging MCP servers and connectio
 
 ## The MCP Debugging Hierarchy
 
-The official MCP documentation recommends a three-tier approach, and we agree with this ordering:
+The [official MCP documentation](https://modelcontextprotocol.io/docs/tools/debugging) recommends a three-tier approach, and we agree with this ordering:
 
 1. **MCP Inspector** — interactive testing in isolation
 2. **Server logging** — structured diagnostics from your server code
@@ -154,6 +154,8 @@ server.tool("myTool", schema, async (args) => {
 **Severity levels** (from most to least verbose): `debug`, `info`, `notice`, `warning`, `error`, `critical`, `alert`, `emergency`. Clients can set the minimum level via `logging/setLevel` requests.
 
 **Important caveat**: Not all clients display these messages. The Inspector does, Claude Code surfaces them in the terminal, but other clients may ignore them. Always have a server-side logging fallback.
+
+**Deprecation note**: As of MCP protocol version `2026-07-28`, this protocol-level logging mechanism (`notifications/message`) is [deprecated](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/logging) — new servers **should not** adopt it; existing implementations should migrate to stderr logging (stdio transport) or [OpenTelemetry](https://opentelemetry.io/) for structured observability. Under MCP's feature-lifecycle policy it stays in the spec for at least 12 months after that revision, so the pattern above still works today — but treat it as a fallback, not the primary approach, for new servers.
 
 ### Redirect stderr for Capture
 
@@ -304,7 +306,7 @@ mcp_call() {
 
 ## MCP Error Codes Reference
 
-MCP uses [standard JSON-RPC error codes](https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/errors) plus some MCP-specific additions:
+MCP uses [standard JSON-RPC error codes](https://www.jsonrpc.org/specification#error_object) plus some MCP-specific additions:
 
 | Code | Name | Common Causes |
 |---|---|---|
@@ -314,7 +316,9 @@ MCP uses [standard JSON-RPC error codes](https://modelcontextprotocol.io/specifi
 | -32602 | Invalid Params | Wrong argument types, missing required fields, capability mismatch |
 | -32603 | Internal Error | Unhandled exception, dependency failure, resource limits |
 | -32000 to -32099 | Server Error | Rate limiting, auth failures, custom server errors |
-| -32002 | Resource Not Found | Invalid URI, file doesn't exist, permission denied |
+| -32002 | Resource Not Found (older spec versions) | Invalid URI, file doesn't exist, permission denied |
+
+*Note on `-32002`*: under MCP spec version 2025-03-26 (and through 2025-11-25), `-32002` was the recommended "Resource Not Found" code, though SDK implementations were inconsistent. [SEP-2164](https://modelcontextprotocol.io/seps/2164-resource-not-found-error) standardized this to `-32602` (Invalid Params) as of protocol version `2026-07-28`, since `-32000`–`-32099` is reserved for implementation-defined server errors, not protocol semantics. Robust clients should treat both codes as resource-not-found.
 
 ### Protocol Errors vs Tool Errors
 

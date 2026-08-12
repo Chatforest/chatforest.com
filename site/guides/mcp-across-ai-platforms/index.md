@@ -3,7 +3,7 @@
 > How to use MCP servers with every major AI platform — covers Claude Desktop and Code, ChatGPT Apps and Agents SDK, Google Gemini CLI and Cloud, Microsoft Copilot Studio, Amazon Q
 
 
-When Anthropic open-sourced the Model Context Protocol in late 2024, MCP was a single-vendor affair. That changed fast. By early 2026, OpenAI, Google, Microsoft, and Amazon have all adopted MCP, and the protocol now lives under the Linux Foundation's Agentic AI Foundation (AAIF) — co-founded by Anthropic, OpenAI, and Block, with support from Google, Microsoft, AWS, Cloudflare, and Bloomberg — as a vendor-neutral standard. The ecosystem has grown to over 10,000 active public MCP servers according to published reports, spanning individual developer tools to Fortune 500 deployments — a clear signal that MCP has moved from experiment to infrastructure.
+When [Anthropic open-sourced the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) in November 2024, MCP was a single-vendor affair. That changed fast. OpenAI, Google, Microsoft, and Amazon have all adopted MCP, and in December 2025 the protocol moved under the Linux Foundation's [Agentic AI Foundation (AAIF)](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) — a directed fund [co-founded by Anthropic, Block, and OpenAI, with support from Google, Microsoft, AWS, Cloudflare, and Bloomberg](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) — as a vendor-neutral standard. At the time of that move, Anthropic [reported over 10,000 active MCP servers and 97 million monthly SDK downloads](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/), spanning individual developer tools to enterprise deployments — a clear signal that MCP has moved from experiment to infrastructure.
 
 The promise is straightforward: build an MCP server once, and any compliant AI platform can connect to it. This guide covers how that works in practice across every major platform, with configuration examples and cross-platform patterns. Our analysis draws on official documentation from each platform, published SDK guides, and community reports — we research and analyze rather than testing these configurations ourselves.
 
@@ -25,7 +25,7 @@ The transport you choose determines which platforms can connect. stdio works wit
 
 ### Anthropic Claude
 
-Claude was the first platform to support MCP, and according to Anthropic's documentation, it offers the broadest transport support.
+Claude was the first platform to support MCP — Anthropic created and open-sourced the protocol — and [Anthropic's documentation](https://code.claude.com/docs/en/mcp) describes broad transport support across its products.
 
 **Claude Desktop** reads its MCP configuration from `claude_desktop_config.json`:
 
@@ -47,7 +47,7 @@ Claude was the first platform to support MCP, and according to Anthropic's docum
 }
 ```
 
-The config file location varies by OS — `~/Library/Application Support/Claude/` on macOS, `%APPDATA%\Claude\` on Windows, and `~/.config/Claude/` on Linux, according to Anthropic's documentation.
+The config file location varies by OS — `~/Library/Application Support/Claude/` on macOS and `%APPDATA%\Claude\` on Windows, per [Anthropic's MCP quickstart documentation](https://modelcontextprotocol.io/quickstart/user). Claude Desktop reached Linux (Ubuntu/Debian) as an [official beta in June 2026](https://support.claude.com/en/articles/10065433-install-claude-desktop), using `~/.config/Claude/`.
 
 **Claude Code** supports MCP through both CLI commands and project configuration:
 
@@ -80,18 +80,17 @@ For project-level sharing, Claude Code uses a `.mcp.json` file in the project ro
 
 **Supported transports:** stdio, SSE, Streamable HTTP.
 
-**Notable features:** Claude supports MCP sampling (letting the server request LLM completions), resource subscriptions, and prompt templates — the broadest feature set of any platform based on published documentation. As of April 2026, [Claude Code supports up to 500,000 characters per MCP tool result](https://code.claude.com/docs/en/mcp), significantly expanding capacity for large data sources. [Claude Cowork](https://www.anthropic.com/product/claude-cowork), Anthropic's agentic desktop workspace, reached general availability on macOS and Windows in April 2026.
+**Notable features:** Claude supports resource subscriptions and prompt templates. Note that [MCP sampling and logging (client primitives that let a server request LLM completions or send log messages) were marked deprecated in the protocol's 2026-07-28 specification revision](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture) — new server implementations are directed to integrate with LLM provider APIs directly instead, though many existing servers still implement the older pattern. On the output side, [Claude Code's default MCP output limit is 25,000 tokens (configurable via `MAX_MCP_OUTPUT_TOKENS`), and individual tools can raise their own result-size ceiling up to a hard cap of 500,000 characters](https://code.claude.com/docs/en/mcp) by declaring `_meta["anthropic/maxResultSizeChars"]` in their tool definition — useful for tools that return large but necessary output like full database schemas. [Claude Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop workspace, launched in [research preview on macOS for Max subscribers in January 2026](https://techcrunch.com/2026/01/12/anthropics-new-cowork-tool-offers-claude-code-without-the-code/) and reached [Windows with full feature parity in February 2026](https://www.unite.ai/anthropic-brings-claude-cowork-to-windows-with-full-feature-parity/).
 
 ### OpenAI ChatGPT
 
-OpenAI announced MCP support for ChatGPT in March 2025, with broader rollout through 2025 and into 2026. According to OpenAI's documentation, ChatGPT's MCP implementation is remote-first — a meaningful architectural difference from Claude's local-first approach.
+[OpenAI announced MCP support in March 2025](https://x.com/OpenAIDevs/status/1904957755829481737), starting with the Agents SDK immediately and flagging ChatGPT desktop and Responses API support as "coming soon" — [confirmed by contemporaneous reporting](https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/). Remote MCP servers followed in the [Responses API in May 2025](https://openai.com/index/new-tools-and-features-in-the-responses-api/), with ChatGPT's own connector UI rolling out afterward through 2025 and into 2026. ChatGPT's MCP implementation is remote-first — a meaningful architectural difference from Claude's local-first approach.
 
-**ChatGPT Apps via MCP** allow developers to register remote MCP servers through the OpenAI platform. Users can then add these servers to their ChatGPT sessions. According to OpenAI's published guides:
+**ChatGPT Apps via MCP** allow developers to register remote MCP servers through the OpenAI platform. Users can then add these servers to their ChatGPT sessions. According to [OpenAI's help center documentation](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt):
 
-- MCP servers are registered with OAuth 2.1 authentication
-- ChatGPT connects to remote servers via Streamable HTTP
-- Users on ChatGPT Plus, Pro, Enterprise, Business, and Edu plans can enable MCP connections
-- Enterprise/Business/Edu users get full read+write tool access
+- ChatGPT connects only to remote HTTPS MCP servers via SSE or Streamable HTTP, with OAuth-based authentication
+- Custom MCP connectors (via Developer Mode) are available on Plus, Pro, Business, Enterprise, and Edu plans — not the free tier
+- Full read+write tool access is in beta and is scoped by workspace admin settings on Business/Enterprise/Edu plans
 
 **OpenAI Agents SDK** provides programmatic MCP integration in Python:
 
@@ -113,17 +112,17 @@ async with MCPServerStreamableHTTP(
 
 **Supported transports:** SSE, Streamable HTTP (recommended). stdio is not supported — ChatGPT cannot launch local processes.
 
-**OpenAI Responses API** now includes native support for remote MCP servers, allowing developers to connect models to any MCP server with just a few lines of code. According to OpenAI's documentation, there is no additional cost for MCP tool calls — developers are billed only for output tokens from the API. The **Realtime API** also supports MCP by passing a remote server URL into the session configuration.
+**OpenAI Responses API** [includes native support for remote MCP servers](https://openai.com/index/new-tools-and-features-in-the-responses-api/), allowing developers to connect models to any MCP server with just a few lines of code. Per [OpenAI's API documentation](https://developers.openai.com/api/docs/guides/tools-connectors-mcp), there is no separate fee for the MCP tool itself — usage is billed at the model's standard input/output token rates. The **Realtime API** also [supports MCP by passing a remote server URL into the session configuration](https://developers.openai.com/api/docs/guides/realtime-mcp).
 
-**MCP Connectors** — OpenAI has rolled out a growing catalog of partner-built MCP connectors reviewed by OpenAI, including Amplitude, Fireflies, Vercel, Monday.com, Stripe, Hex, Atlassian Rovo (Jira, Confluence), and others. These are available to Enterprise, Edu, Business, Pro, and Plus customers.
+**MCP Connectors** — [OpenAI has rolled out a catalog of partner-built MCP connectors reviewed by OpenAI](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes), including Amplitude, Fireflies, Vercel, Monday.com, Stripe, and Hex, with Atlassian Rovo (Jira, Confluence) added separately. These are available to Enterprise, Edu, Business, Pro, and Plus customers.
 
-**Notable features:** Built-in OAuth 2.1 flow, meaning users authenticate with MCP servers through ChatGPT's UI rather than manually managing API keys. According to OpenAI's documentation, this makes ChatGPT's MCP support more accessible for non-technical users but limits it to remote servers only. Company knowledge now supports custom MCP connectors with search/fetch functionality.
+**Notable features:** A built-in OAuth flow means users authenticate with MCP servers through ChatGPT's UI rather than manually managing API keys — accessible for non-technical users, but limited to remote servers only. [Company knowledge / Developer Mode supports custom MCP connectors](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt) with search/fetch tool functionality.
 
 **Key limitation:** No stdio support means ChatGPT cannot connect to local MCP servers. If your server only speaks stdio, you will need to wrap it with an HTTP transport layer or use a gateway like `mcp-proxy` or `supergateway`.
 
 ### Google Gemini
 
-Google adopted MCP across multiple products through 2025-2026. According to Google's documentation, the Gemini CLI offers the most direct MCP configuration.
+Google adopted MCP across multiple products through 2025-2026. The [Gemini CLI's own docs](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md) offer the most direct MCP configuration reference.
 
 **Gemini CLI** reads MCP configuration from `settings.json`:
 
@@ -153,9 +152,9 @@ gemini mcp list
 gemini mcp remove my-server
 ```
 
-**Gemini Cloud and Enterprise** support MCP through custom data store configurations, allowing organizations to connect Gemini to internal tools and databases via MCP servers. According to Google Cloud documentation, this includes support for OAuth 2.0 authentication for remote servers.
+**Gemini Cloud and Enterprise** support MCP through custom data store configurations, allowing organizations to connect Gemini to internal tools and databases via MCP servers, per [Google Cloud's grounding documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/grounding/grounding-with-your-search-api).
 
-**Gemini SDK (Python/JS)** includes experimental MCP integration, allowing developers to build agents that connect to MCP servers programmatically:
+**Gemini SDK (Python/JS)** [includes built-in MCP support](https://ai.google.dev/gemini-api/docs/function-calling), allowing developers to build agents that connect to MCP servers programmatically — the SDK can automatically execute an MCP tool call the model generates and feed the result back in a follow-up request:
 
 ```python
 from google import genai
@@ -171,15 +170,15 @@ tools = types.Tool(mcp_servers=[
 
 **Supported transports:** stdio (CLI only), SSE, Streamable HTTP.
 
-**Gemini API/SDK native MCP** — As of March-April 2026, MCP tool calls and built-in function calling can be combined in a single Gemini API request. According to Google's documentation, this allows grounding Gemini in internal data via MCP while keeping Google Search grounding active simultaneously, and the combined call is more token-efficient than two separate requests.
+**Gemini API/SDK native MCP** — The [Python and JavaScript client SDKs automatically execute MCP tool calls](https://ai.google.dev/gemini-api/docs/function-calling) the model generates and loop the result back to the model, reducing the boilerplate of wiring MCP into a custom agent loop. One caveat worth noting: Google's own docs state that [the Gemini API does not support combining a built-in search tool (like Google Search grounding) with custom function declarations in the same request](https://ai.google.dev/gemini-api/docs/google-search) — so MCP tools and Search grounding are not simultaneously active in a single call.
 
-**Managed MCP servers** — Google released fully managed remote MCP servers for its services, providing a unified MCP layer across Google and Google Cloud services. According to Google Cloud documentation, additional services are rolling out through 2026, including Cloud Run, Cloud Storage, AlloyDB, Cloud SQL, Spanner, Looker, and Pub/Sub.
+**Managed MCP servers** — Google has released [more than 50 fully managed remote MCP servers, generally available or in preview](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone), spanning Cloud Run, Google Cloud Storage, AlloyDB, Cloud SQL, Spanner, Pub/Sub, BigQuery, GKE, and more, plus a separate [Looker-managed MCP server currently in preview](https://docs.cloud.google.com/looker/docs/mcp).
 
-**Notable features:** According to published documentation, Gemini CLI supports environment variable interpolation in config files using `${VAR_NAME}` syntax, and the Cloud integration supports Google's existing IAM authentication alongside OAuth 2.0.
+**Notable features:** Per the [Gemini CLI's documentation](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md), it supports environment variable interpolation in config files using `${VAR_NAME}` syntax.
 
 ### Microsoft Copilot
 
-Microsoft has integrated MCP across its Copilot product line. According to Microsoft's documentation, MCP support reached general availability in Copilot Studio in early 2025.
+Microsoft has integrated MCP across its Copilot product line. [MCP integration in Copilot Studio reached general availability on May 29, 2025](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/model-context-protocol-mcp-is-now-generally-available-in-microsoft-copilot-studio/), per Microsoft's own announcement.
 
 **Copilot Studio** provides a wizard-based setup for connecting MCP servers:
 
@@ -189,7 +188,7 @@ Microsoft has integrated MCP across its Copilot product line. According to Micro
 4. Configure authentication (OAuth 2.1, API key, or none)
 5. Copilot Studio dynamically discovers available tools from the server
 
-**VS Code Copilot** uses an `mcp.json` configuration file (typically in `.vscode/mcp.json`):
+**VS Code Copilot** uses an [`mcp.json` configuration file](https://code.visualstudio.com/docs/agent-customization/mcp-servers) (typically in `.vscode/mcp.json`):
 
 ```json
 {
@@ -206,15 +205,15 @@ Microsoft has integrated MCP across its Copilot product line. According to Micro
 }
 ```
 
-**GitHub Copilot Chat** supports MCP through extensions, and **Microsoft 365 Copilot** enables MCP through declarative agent configurations, according to Microsoft's published guides.
+**GitHub Copilot Chat** [supports MCP servers configured manually or installed through the GitHub MCP Registry](https://docs.github.com/copilot/customizing-copilot/using-model-context-protocol/extending-copilot-chat-with-mcp), and **Microsoft 365 Copilot** [enables MCP through declarative agent configurations](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-mcp-plugins), which Microsoft says reached general availability in that product.
 
 **Supported transports:** stdio (VS Code only), SSE, Streamable HTTP.
 
-**Notable features:** Dynamic tool and resource discovery is emphasized across all Copilot products — when you connect an MCP server, Copilot automatically detects what tools are available and presents them contextually. Copilot Studio also supports connecting multiple MCP servers simultaneously, with the platform routing requests to the appropriate server based on tool descriptions. As of early 2026, Copilot Studio's MCP integration includes enhanced tracing and analytics tools that show which MCP server and specific tool was invoked at runtime, improving debugging and observability. Microsoft's MCP Apps SDK has also expanded how agents connect to external work applications across the broader ecosystem.
+**Notable features:** Dynamic tool and resource discovery is emphasized across all Copilot products — when you connect an MCP server, Copilot automatically detects what tools are available and presents them contextually. Copilot Studio also supports connecting multiple MCP servers simultaneously, with the platform routing requests to the appropriate server based on tool descriptions. As of [April 2026, Copilot Studio's MCP integration includes enhanced tracing and analytics that show which MCP server and specific tool was invoked at runtime](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-agent-governance-intelligent-workflows-and-connected-app-experiences/), improving debugging and observability. Separately, [MCP Apps — a cross-vendor extension co-developed with OpenAI that lets MCP servers return interactive UI components — became available in Microsoft 365 Copilot chat](https://devblogs.microsoft.com/microsoft365dev/mcp-apps-now-available-in-copilot-chat/) in 2026.
 
 ### Amazon Q Developer
 
-Amazon integrated MCP into Q Developer across CLI and cloud environments. According to AWS documentation, the integration supports both local development and cloud-scale deployment.
+Amazon integrated MCP into Q Developer across CLI and cloud environments. [AWS's Bedrock AgentCore documentation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-mcp.html) covers both local development and cloud-scale deployment.
 
 **Q Developer CLI** supports MCP configuration for local and remote servers:
 
@@ -236,18 +235,18 @@ Amazon integrated MCP into Q Developer across CLI and cloud environments. Accord
 }
 ```
 
-**Amazon Bedrock AgentCore** provides managed MCP server hosting, according to AWS documentation. This allows organizations to deploy MCP servers as stateful services within AWS infrastructure, with support for:
+**Amazon Bedrock AgentCore** provides [managed MCP server hosting](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-mcp.html). This allows organizations to deploy MCP servers as stateful services within AWS infrastructure, with support for:
 
 - Automatic scaling across requests
 - Session persistence for stateful interactions
 - Integration with AWS IAM for authentication
-- Availability across 14 AWS regions
+- [Stateful MCP features available in 14 AWS regions as of the March 2026 launch](https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-bedrock-agentcore-runtime-stateful-mcp/) — AgentCore's overall regional footprint has continued to expand since ([São Paulo added in May 2026](https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/) and [four more regions added mid-2026](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-four-additional-regions/)), so check AWS's current region table for the up-to-date count
 
 **Supported transports:** stdio, SSE, Streamable HTTP.
 
-**Notable features:** According to AWS's published documentation, Q Developer supports MCP elicitation (servers can request additional input from users mid-interaction), sampling (servers can request LLM completions), and progress notifications (servers can report task progress back to the client). The Bedrock AgentCore integration also means MCP servers can be deployed once and accessed by multiple agents and applications.
+**Notable features:** [AWS documentation describes Q Developer's MCP support for elicitation](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/mcp-stateful-features.html) (servers can request additional input from users mid-interaction), sampling (servers can request LLM completions), and progress notifications (servers can report task progress back to the client) — note that sampling and logging were marked deprecated in the MCP protocol's 2026-07-28 specification revision, though AWS's stateful-MCP feature set (built to the prior spec) still documents them. The Bedrock AgentCore integration also means MCP servers can be deployed once and accessed by multiple agents and applications.
 
-**Recent additions (March-April 2026):** Bedrock AgentCore Runtime now supports stateful MCP server features, including elicitation, sampling, and progress notifications alongside existing resource, prompt, and tool support — available across 14 AWS regions. AgentCore also added AG-UI (Agent-User Interaction) protocol support for real-time agent experiences, complementing MCP and A2A. The new **AWS Agent Registry** (preview) provides a private, governed catalog for discovering agents, tools, skills, and MCP servers within an organization, accessible via console, CLI, SDK, or as an MCP server queryable from IDEs.
+**Recent additions (March-April 2026):** [Bedrock AgentCore Runtime added stateful MCP server features](https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-bedrock-agentcore-runtime-stateful-mcp/) — elicitation, sampling, and progress notifications alongside existing resource, prompt, and tool support. AgentCore also [added AG-UI (Agent-User Interaction) protocol support](https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-bedrock-agentcore-runtime-ag-ui-protocol) for real-time agent experiences; AG-UI standardizes how agents communicate with user-facing interfaces, distinct from the separate [A2A (Agent2Agent) protocol](https://aws.amazon.com/blogs/machine-learning/introducing-agent-to-agent-protocol-support-in-amazon-bedrock-agentcore-runtime/) that AgentCore uses for agent-to-agent communication. The [**AWS Agent Registry** (preview)](https://aws.amazon.com/blogs/machine-learning/the-future-of-managing-agents-at-scale-aws-agent-registry-now-in-preview/) provides a private, governed catalog for discovering agents, tools, skills, and MCP servers within an organization, accessible via console, CLI, SDK, or a native MCP endpoint.
 
 ## Platform Comparison
 
@@ -255,10 +254,10 @@ Amazon integrated MCP into Q Developer across CLI and cloud environments. Accord
 |----------|--------------|------------|------|---------------|----------------|-----------------|
 | Claude Desktop | JSON config file | stdio, SSE, HTTP | Env vars, headers | Yes | Yes | Broadest MCP feature support |
 | Claude Code | CLI + .mcp.json | stdio, SSE, HTTP | Env vars, headers | Yes | Yes | Project-level sharing via .mcp.json |
-| ChatGPT | Platform registration | SSE, HTTP | OAuth 2.1 | No | Yes | Built-in user-facing OAuth flow |
-| OpenAI Responses API | API code | SSE, HTTP | OAuth, headers | No | Yes | Native MCP in API, no extra cost |
+| ChatGPT | Platform registration | SSE, HTTP | OAuth | No | Yes | Built-in user-facing OAuth flow |
+| OpenAI Responses API | API code | SSE, HTTP | OAuth, headers | No | Yes | Native MCP in API, no extra tool fee |
 | OpenAI Agents SDK | Python code | SSE, HTTP | Headers, OAuth | No | Yes | Programmatic agent composition |
-| Gemini CLI | settings.json | stdio, SSE, HTTP | Env vars, OAuth 2.0 | Yes | Yes | Env var interpolation in config |
+| Gemini CLI | settings.json | stdio, SSE, HTTP | Env vars, OAuth | Yes | Yes | Env var interpolation in config |
 | Gemini Cloud | Cloud console | SSE, HTTP | Google IAM, OAuth | No | Yes | Enterprise data store integration |
 | Copilot Studio | Wizard UI | SSE, HTTP | OAuth 2.1, API key | No | Yes | Dynamic tool discovery UI |
 | VS Code Copilot | mcp.json | stdio, SSE, HTTP | Env vars, headers | Yes | Yes | Workspace-scoped config |
@@ -271,7 +270,7 @@ If you are building MCP servers intended for broad compatibility, several patter
 
 **Design for Streamable HTTP first.** stdio works well for local desktop and CLI clients, but web platforms like ChatGPT and Copilot Studio cannot launch local processes. Building your server with Streamable HTTP as the primary transport ensures it works everywhere. You can add stdio as a secondary transport for local development convenience.
 
-**Implement OAuth 2.1 for authentication.** ChatGPT requires OAuth 2.1, Copilot Studio supports it natively, and the MCP specification recommends it for remote servers. According to the MCP auth specification, servers should implement the full OAuth 2.1 authorization code flow with PKCE for maximum compatibility.
+**Implement OAuth for authentication.** ChatGPT requires OAuth-based authentication for its connectors, Copilot Studio supports OAuth 2.1 natively, and [the MCP authorization specification requires OAuth 2.1 with PKCE](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization) for remote servers — implementing the full OAuth 2.1 authorization code flow with PKCE gives the broadest compatibility.
 
 **Write clear, specific tool descriptions.** Every platform uses tool descriptions for discovery and routing. According to documentation from multiple vendors, vague descriptions like "manages data" lead to poor tool selection by the AI. Specific descriptions like "Creates a new row in a PostgreSQL database table, accepting column names and values as parameters" help every platform route requests correctly.
 
@@ -285,9 +284,9 @@ If you are building MCP servers intended for broad compatibility, several patter
 
 **stdio servers won't work with web platforms.** This is the most common source of confusion based on community reports. If you build a server that only speaks stdio, it will work with Claude Desktop, Claude Code, Gemini CLI, VS Code Copilot, and Amazon Q CLI — but not with ChatGPT, Copilot Studio, or any cloud-hosted platform. Tools like `mcp-proxy` and `supergateway` can bridge this gap by wrapping a stdio server with an HTTP transport.
 
-**Auth requirements differ significantly.** ChatGPT requires OAuth 2.1 with specific redirect URI patterns. Copilot Studio supports OAuth 2.1 and API keys. Claude Desktop typically uses environment variables for API keys. Amazon Q in AWS uses IAM roles. If you are building a server for multiple platforms, you may need to support multiple authentication methods.
+**Auth requirements differ significantly.** ChatGPT requires OAuth-based authentication with specific redirect URI patterns for its connectors. Copilot Studio supports OAuth 2.1 and API keys. Claude Desktop typically uses environment variables for API keys. Amazon Q in AWS uses IAM roles. If you are building a server for multiple platforms, you may need to support multiple authentication methods.
 
-**Tool naming conventions may cause issues.** According to the MCP specification, tool names should use lowercase with underscores (e.g., `read_file`). Some platforms may handle camelCase or other conventions differently. Sticking to the specification's naming convention avoids surprises.
+**Tool naming conventions may cause issues.** The [MCP specification (SEP-986) permits tool names 1–64 characters using alphanumerics, underscores, dashes, dots, and slashes](https://modelcontextprotocol.io/seps/986-specify-format-for-tool-names) — it doesn't mandate lowercase-with-underscores, but that pattern (e.g., `read_file`) is the de facto convention across reference implementations and the Python/JS SDKs. Some platforms may handle camelCase or other conventions differently, so sticking to the common convention avoids surprises.
 
 **Rate limits vary by platform and plan.** Each platform imposes its own limits on how frequently MCP tools can be called. Enterprise plans typically offer higher limits. According to published documentation, these limits apply on top of any rate limits your MCP server itself enforces — a tool call must pass both the platform's limits and the server's limits.
 
@@ -299,13 +298,13 @@ The MCP ecosystem continues to evolve rapidly. The official [2026 MCP Roadmap](h
 
 **Transport evolution** — The roadmap prioritizes improving Streamable HTTP for horizontal scaling and stateless operation, rather than adding new transports. A standard metadata format via `.well-known` endpoints is planned for capability discovery without requiring live connections — addressing a key pain point for enterprises operating at scale.
 
-**Agent communication** — Building on the experimental Tasks feature (SEP-1686), the focus is production-readiness: retry semantics for transient failures and expiry policies for result retention. The AG-UI (Agent-to-Agent) protocol, already supported by AWS Bedrock AgentCore, complements MCP by standardizing how agents communicate with user interfaces and each other.
+**Agent communication** — Building on the experimental [Tasks feature (SEP-1686)](https://modelcontextprotocol.io/seps/1686-tasks), the focus is production-readiness: retry semantics for transient failures and expiry policies for result retention. Note this is distinct from AG-UI (Agent-User Interaction) and A2A (Agent2Agent) — separate protocols, not part of MCP itself, that AWS Bedrock AgentCore [also supports](https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-bedrock-agentcore-runtime-ag-ui-protocol) for agent-to-UI and agent-to-agent communication respectively.
 
-**MCP Apps** — An emerging pattern where MCP servers can return UI components (not just data) for rendering in client applications. According to MCP specification discussions, this would allow servers to provide rich interactive interfaces alongside their tools.
+**MCP Apps** — An emerging pattern where MCP servers can return UI components (not just data) for rendering in client applications, [now live in Microsoft 365 Copilot chat](https://devblogs.microsoft.com/microsoft365dev/mcp-apps-now-available-in-copilot-chat/) among other clients.
 
 **Multimodal support** — The MCP specification is expanding to support image, audio, and video data in tool inputs and outputs. Several platforms have indicated support for multimodal MCP in their roadmaps.
 
-**Enterprise readiness** — Audit trails, SSO-integrated auth, gateway behavior, and configuration portability are the main enterprise pain points identified in the roadmap. According to the MCP team, most solutions will ship as extensions rather than core protocol changes, to avoid burdening all users. Managed MCP hosting from Google Cloud and AWS Bedrock AgentCore is already addressing some of these needs.
+**Enterprise readiness** — Audit trails, SSO-integrated auth, gateway behavior, and configuration portability are the main enterprise pain points identified in the [roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/). The roadmap indicates most solutions will ship as extensions rather than core protocol changes, to avoid burdening all users. Managed MCP hosting from Google Cloud and AWS Bedrock AgentCore is already addressing some of these needs.
 
 **Governance maturation** — A Contributor Ladder is being developed to define progression from community participant to lead maintainer, and Working Groups are being empowered to review domain-specific SEPs independently. The [first MCP Dev Summit North America took place in New York City (April 2-3, 2026) with over 95 sessions](https://events.linuxfoundation.org/2026/02/24/agentic-ai-foundation-unveils-mcp-dev-summit-north-america-2026-schedule/), and MCP Dev Summit Europe is scheduled for Amsterdam (September 17-18, 2026).
 
