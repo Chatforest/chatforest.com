@@ -1,10 +1,10 @@
 ---
 title: "Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond"
 date: 2026-03-15T02:30:00+09:00
-lastmod: 2026-07-22
-sources_audited: 2026-07-22
+lastmod: 2026-08-12
+sources_audited: 2026-08-12
 description: "Analytics MCP servers let AI agents query traffic data, analyze user behavior, run retention reports, and manage experiments across Google Analytics, Mixpanel, PostHog, Amplitude, Pendo, Microsoft Clarity"
-og_description: "Analytics MCP servers: Google Analytics (2K stars, official), PostHog (27+ tools, 34.2K mono), Amplitude (24+ tools, Session Replays, MCP App, 27 skills), Pendo (NEW official, Claude Connectors), Microsoft Clarity (81 stars), Mixpanel (beta + ChatGPT/Gemini), Sentry's Plausible MCP hosted. 25+ servers reviewed. Rating: 4/5."
+og_description: "Analytics MCP servers: Google Analytics (2.9K stars, official), PostHog (27+ tools, 37.6K mono), Amplitude (65+ tools, Session Replays, MCP App, 27 skills), Pendo (NEW official, Claude Connectors), Microsoft Clarity (104 stars), Mixpanel (beta + ChatGPT/Gemini), Sentry's Plausible MCP hosted. 25+ servers reviewed. Rating: 4/5."
 content_type: "Review"
 card_description: "Analytics MCP servers across Google Analytics, PostHog, Amplitude, Pendo, Mixpanel, Microsoft Clarity, Plausible, and Matomo. Six platforms now have official MCP servers. Amplitude expanded massively into Session Replays, Agent Skills, and in-client chart rendering. Sentry built a hosted Plausible MCP."
 last_refreshed: 2026-04-29
@@ -20,22 +20,22 @@ Giving an AI agent access to your analytics data is high-value. Instead of build
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) | 2,000 | Python | 7 | ADC (Google Cloud) | Apache 2.0 |
-| [surendranb/google-analytics-mcp](https://github.com/surendranb/google-analytics-mcp) | 205 | Python | 7 | Service account | Apache 2.0 |
-| [gomarble-ai/google-analytics-mcp-server](https://github.com/gomarble-ai/google-analytics-mcp-server) | 14 | Python | 7 | OAuth 2.0 | MIT |
-| [ruchernchong/mcp-server-google-analytics](https://github.com/ruchernchong/mcp-server-google-analytics) | 70 | JavaScript | — | Service account | MIT (archived) |
+| [googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) | 2,938 | Python | 7 | ADC (Google Cloud) | Apache 2.0 |
+| [surendranb/google-analytics-mcp](https://github.com/surendranb/google-analytics-mcp) | 235 | Python | 7 | Service account | Apache 2.0 |
+| [gomarble-ai/google-analytics-mcp-server](https://github.com/gomarble-ai/google-analytics-mcp-server) | 18 | Python | 7 | OAuth 2.0 | MIT |
+| [ruchernchong/mcp-server-google-analytics](https://github.com/ruchernchong/mcp-server-google-analytics) | 71 | JavaScript | — | Service account | MIT (archived) |
 
 ### PostHog
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [PostHog/posthog/services/mcp](https://github.com/PostHog/posthog/tree/master/services/mcp) (monorepo) | 34,200 | TypeScript | 27+ | API key / OAuth | MIT |
+| [PostHog/posthog/services/mcp](https://github.com/PostHog/posthog/tree/master/services/mcp) (monorepo) | 37,634 | TypeScript | 27+ | API key / OAuth | MIT |
 
 ### Amplitude
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [Amplitude MCP](https://amplitude.com/mcp-server) (official hosted) | — | — | 24+ | OAuth 2.0 | — |
+| [Amplitude MCP](https://amplitude.com/mcp-server) (official hosted) | — | — | 65+ | OAuth 2.0 | — |
 | [silviorodrigues/amplitude-mcp](https://github.com/silviorodrigues/amplitude-mcp) | 9 | TypeScript | 2 | API key + secret | MIT (archived) |
 
 ### Mixpanel
@@ -56,8 +56,8 @@ Giving an AI agent access to your analytics data is high-value. Instead of build
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [getsentry/plausible-mcp](https://github.com/getsentry/plausible-mcp) | — | TypeScript | 4 | API key | MIT |
-| [AVIMBU/plausible-mcp-server](https://github.com/AVIMBU/plausible-mcp-server) | 7 | TypeScript | — | API key | — |
+| [getsentry/plausible-mcp](https://github.com/getsentry/plausible-mcp) | 33 | TypeScript | 4 | API key | MIT |
+| [AVIMBU/plausible-mcp-server](https://github.com/AVIMBU/plausible-mcp-server) | 8 | TypeScript | — | API key | — |
 | [alexanderop/plausible-mcp](https://github.com/alexanderop/plausible-mcp) | 6 | TypeScript | 4 | API key | — |
 | [The-Focus-AI/plausible-mcp](https://github.com/The-Focus-AI/plausible-mcp) | 1 | TypeScript | 2 | API key | MIT |
 
@@ -67,7 +67,7 @@ Giving an AI agent access to your analytics data is high-value. Instead of build
 |--------|-------|----------|-------|------|---------|
 | [FGRibreau/mcp-matomo](https://github.com/FGRibreau/mcp-matomo) | 10 | Rust | Dynamic | API token | MIT |
 | [kitconcept/matomo-mcp](https://github.com/kitconcept/matomo-mcp) | 1 | Python | 6 | API token | MIT |
-| [Jaimeapo/matomo-mcp](https://github.com/Jaimeapo/matomo-mcp) | — | TypeScript | — | API token | — |
+| [Jaimeapo/matomo-mcp](https://github.com/Jaimeapo/matomo-mcp) | 2 | TypeScript | — | API token | — |
 
 ### Hotjar (New)
 
@@ -91,7 +91,7 @@ Giving an AI agent access to your analytics data is high-value. Instead of build
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [microsoft/fabric-rti-mcp](https://github.com/microsoft/fabric-rti-mcp) | 113 | Python | 30+ | Azure Identity | — |
+| [microsoft/fabric-rti-mcp](https://github.com/microsoft/fabric-rti-mcp) | 128 | Python | 39 | Azure Identity | — |
 
 The landscape splits into three tiers: enterprise platforms (Google Analytics, PostHog, Amplitude, Pendo, Mixpanel, Microsoft Clarity) with official servers, BI/data platforms (Microsoft Fabric community + official RTI) with growing coverage, and privacy-first alternatives (Plausible, Matomo) where Sentry's hosted Plausible MCP is starting to close the gap. Hotjar gets its first community server, though it's surveys-only.
 
@@ -99,12 +99,12 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 ## googleanalytics/google-analytics-mcp — The Official GA4 Server
 
-[googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) (2,000 stars, Apache 2.0) is Google's official MCP server for Google Analytics 4. Released in early 2026, it uses the GA4 Admin API and Data API. Stars crossed the 2K milestone — steady continued adoption.
+[googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) (2,938 stars, Apache 2.0) is Google's official MCP server for Google Analytics 4. Released in early 2026, it uses the GA4 Admin API and Data API. Stars have passed 2,900 — steady continued adoption.
 
 **7 tools across three categories:**
 
 - **Account/property retrieval** — get_account_summaries, get_property_details, get_custom_dimensions_and_metrics
-- **Core reporting** — run_report (standard reports with dimensions, metrics, date ranges)
+- **Core reporting** — run_report (standard reports), run_funnel_report (funnel analysis, added since our last check)
 - **Real-time reporting** — run_realtime_report (live data)
 - **Metadata** — list_google_ads_links (cross-platform advertising data)
 
@@ -112,7 +112,7 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 ### What works well
 
-**Official and active.** 2,000 stars, v0.2.0, 48 commits, active development. Google is promoting this alongside Gemini Code Assist and Gemini CLI integration. When Google invests in an MCP server, it gets maintained.
+**Official and active.** 2,938 stars, active development. Google is promoting this alongside Gemini Code Assist and Gemini CLI integration. When Google invests in an MCP server, it gets maintained.
 
 **Application Default Credentials.** Uses Google Cloud's ADC with the `analytics.readonly` scope. If you're already authenticated with `gcloud`, the server works immediately — no separate API key management. This is the cleanest auth model in the analytics MCP category.
 
@@ -122,23 +122,23 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 **GA4-only.** Universal Analytics is dead, so this is less of a limitation than it sounds. But if you have legacy reporting needs, they're not supported.
 
-**7 tools is thin.** Compare this to PostHog's 27+ tools or Amplitude's 24+. There's no funnel analysis, no cohort creation, no A/B test management, no audience building. It's a reporting server, not a full analytics platform interface.
+**7 tools is thin.** Compare this to PostHog's 27+ tools or Amplitude's 65+. Funnel reporting was added (run_funnel_report), but there's still no cohort creation, no A/B test management, no audience building. It's a reporting server, not a full analytics platform interface.
 
 **Google Cloud dependency.** You need a Google Cloud project and ADC credentials. For marketing teams who just want to query GA4 data, this setup is a barrier. The community server gomarble-ai uses OAuth with browser-based auth, which is friendlier for non-developers.
 
 ### Community alternatives
 
-**surendranb/google-analytics-mcp** (205 stars) — 200+ GA4 dimensions and metrics with smart data volume management and context window protection. Designed for AI agent workflows with built-in row estimation to prevent query overflows. More thoughtful about LLM integration than the official server.
+**surendranb/google-analytics-mcp** (235 stars) — 200+ GA4 dimensions and metrics with smart data volume management and context window protection. Designed for AI agent workflows with built-in row estimation to prevent query overflows. More thoughtful about LLM integration than the official server.
 
-**gomarble-ai/google-analytics-mcp-server** (14 stars) — OAuth 2.0 with automatic token refresh. One-time browser authentication, then the server handles token lifecycle. Lower friction than ADC for non-technical users.
+**gomarble-ai/google-analytics-mcp-server** (18 stars) — OAuth 2.0 with automatic token refresh. One-time browser authentication, then the server handles token lifecycle. Lower friction than ADC for non-technical users.
 
-**ruchernchong/mcp-server-google-analytics** (70 stars) — archived October 2025. Was an early GA4 MCP server in JavaScript. No longer maintained.
+**ruchernchong/mcp-server-google-analytics** (71 stars) — [archived Oct 5, 2025](https://github.com/ruchernchong/mcp-server-google-analytics). Was an early GA4 MCP server in JavaScript. No longer maintained.
 
 ---
 
 ## PostHog MCP — The All-in-One Product Analytics Server
 
-[PostHog/posthog/services/mcp](https://github.com/PostHog/posthog/tree/master/services/mcp) (PostHog monorepo: 34,200 stars, MIT) is PostHog's official MCP server, hosted at `mcp.posthog.com/mcp`. Originally a standalone repo (archived January 2026), it lives in PostHog's monorepo at `services/mcp` and sees very active development. Monorepo stars grew from 32,700 to 34,200 (+5%).
+[PostHog/posthog/services/mcp](https://github.com/PostHog/posthog/tree/master/services/mcp) (PostHog monorepo: 37,634 stars, MIT) is PostHog's official MCP server, hosted at `mcp.posthog.com/mcp`. Originally a standalone repo ([archived Jan 19, 2026](https://github.com/PostHog/mcp)), it lives in PostHog's monorepo at `services/mcp` and sees very active development.
 
 **27+ tools spanning PostHog's full product suite:**
 
@@ -164,7 +164,7 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 ### What doesn't
 
-**Monorepo move complicates contributions.** The standalone repo is archived. Contributing now means navigating PostHog's full monorepo (40,000+ commits). For a small bug fix or feature request, this raises the barrier.
+**Monorepo move complicates contributions.** The standalone repo is archived. Contributing now means navigating PostHog's full monorepo (55,000+ commits). For a small bug fix or feature request, this raises the barrier.
 
 **PostHog pricing structure.** PostHog Cloud has a [generous free tier (1M events/month)](https://posthog.com/pricing), but costs scale with usage. The MCP server makes it easier to query data, but PostHog's usage-based pricing means heavy agent usage of analytics queries could increase costs.
 
@@ -172,24 +172,20 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 ## Amplitude MCP — Enterprise-Grade Hosted Analytics (Major Expansion)
 
-[Amplitude MCP](https://amplitude.com/mcp-server) is Amplitude's official hosted MCP server — a cloud endpoint, not a GitHub repo you self-host. Since our last review, Amplitude expanded massively beyond core analytics.
+[Amplitude MCP](https://amplitude.com/mcp-server) is Amplitude's official hosted MCP server — a cloud endpoint, not a GitHub repo you self-host. Per Amplitude's own [changelog announcement](https://amplitude.com/releases/even-more-external-mcp-tools-agent-skills-and-the-mcp-app) (Mar 25, 2026), Amplitude expanded massively beyond core analytics; the [server docs](https://amplitude.com/docs/amplitude-ai/amplitude-mcp) now enumerate the full current tool set.
 
-**24+ tools covering:**
+**65+ tools** across discovery/context, content retrieval, taxonomy (events/properties/branches), [session replay](https://amplitude.com/releases/even-more-external-mcp-tools-agent-skills-and-the-mcp-app), query/analysis, creation, cohort sync, editing, guides/surveys, feedback, [agent analytics](https://amplitude.com/releases/even-more-external-mcp-tools-agent-skills-and-the-mcp-app), and data warehouse — per the [official tool docs](https://amplitude.com/docs/amplitude-ai/amplitude-mcp):
 
-- **Search & retrieval** — search content, retrieve objects from URLs, get charts/dashboards/cohorts/experiments
-- **Analysis** — query charts, datasets, experiments, user data
-- **Creation** — build charts, dashboards, notebooks, experiments, cohorts
-- **Feedback** — access customer insights, comments, mentions
-- **Session Replays** (new) — end-to-end qualitative analysis, replay debugging, friction indicators (rage clicks, dead clicks, user errors)
-- **Agent Analytics** (new) — AI agent topic analysis, session investigation, quality monitoring
-- **Feature Flags** (new) — flag management and monitoring
-- **Web Vitals** (new) — reliability monitoring, error debugging via autocapture data
+- **Session Replays** (new) — `get_session_replays`, `list_session_replays`, `get_session_replay_events`
+- **Agent Analytics** (new) — agent topic/session/span queries, conversation search
+- **Feature Flags** (new) — `get_flags`, `create_flags`, `update_flag`
+- **Web Vitals** (new) — Network Request, Status Code, Error Logged, and Error Click data from autocapture, per the [changelog](https://amplitude.com/releases/even-more-external-mcp-tools-agent-skills-and-the-mcp-app)
 
-**MCP App** (new) — renders Amplitude charts directly inside AI clients like Claude and Cursor. Replaces raw query results with actual visualizations. This is unique — no other analytics MCP server renders charts in-client.
+**MCP App** (new) — renders Amplitude charts directly inside AI clients like Claude and Cursor, per the [changelog announcement](https://amplitude.com/releases/even-more-external-mcp-tools-agent-skills-and-the-mcp-app): "replacing raw query results with actual visualizations." This is unique — no other analytics MCP server renders charts in-client.
 
-**Open-source skills repository** — [amplitude/mcp-marketplace](https://github.com/amplitude/mcp-marketplace) (22 stars, MIT, 48 commits) provides 27 pre-built agent skills organized into seven areas: core analytics, product insights, session replay/debugging, AI agent analytics, instrumentation, briefings, and bonus skills. Skills include `daily-brief`, `debug-replay`, `analyze-experiment`, `monitor-reliability`, and `what-would-lenny-do`. Works with Claude Code, Cursor, Codex, and Gemini CLI.
+**Open-source skills repository** — [amplitude/mcp-marketplace](https://github.com/amplitude/mcp-marketplace) (32 stars, MIT, 64 commits) provides 27 pre-built agent skills organized into seven areas: core analytics, product insights, session replay/debugging, AI agent analytics, instrumentation, briefings, and bonus skills. Skills include `daily-brief`, `debug-replay`, `analyze-experiment`, `monitor-reliability`, and `what-would-lenny-do`. Works with Claude Code, Cursor, Codex, and Gemini CLI.
 
-**Cloud-hosted with OAuth 2.0.** Available at `https://mcp.amplitude.com/mcp` (US) and a separate EU endpoint. Streaming HTTP transport. Quick-install support for Cursor, Claude, ChatGPT, Gemini CLI, Replit, Lovable, Figma Make, AWS Kiro, and more.
+**Cloud-hosted with OAuth 2.0.** Available at `https://mcp.amplitude.com/mcp` (US) and a [separate EU endpoint](https://amplitude.com/docs/amplitude-ai/amplitude-mcp) (`mcp.eu.amplitude.com/mcp`). Streaming HTTP transport. Quick-install support for Cursor, Claude, ChatGPT, Gemini CLI, Replit, Lovable, Figma Make, AWS Kiro, and more.
 
 ### What works well
 
@@ -205,7 +201,7 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 **Closed source.** No GitHub repo for the server itself. You can't self-host, audit the code, or contribute. The mcp-marketplace skills repo is open source (MIT), but the server remains proprietary.
 
-**Requires Amplitude subscription.** Available to "any existing Amplitude customer," but Amplitude's pricing starts at enterprise levels. There's a free Starter plan, but the MCP server's value increases with paid features (experiments, predictions, behavioral cohorts).
+**Amplitude account required, but not necessarily a paid one.** [Amplitude says](https://amplitude.com/mcp-server) the MCP server is available to all Amplitude customers, including the Free plan. Amplitude's paid pricing tiers start at enterprise levels, though, and the MCP server's value increases with paid features (experiments, predictions, behavioral cohorts).
 
 **No community fallback.** silviorodrigues/amplitude-mcp (9 stars, 2 tools) was **archived March 27, 2026** — the only community alternative is now read-only and unmaintained. If Amplitude's official hosted server doesn't meet your needs, there's no alternative.
 
@@ -213,7 +209,7 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 ## Mixpanel MCP — Beta Expanding to ChatGPT and Gemini
 
-[Mixpanel MCP](https://docs.mixpanel.com/docs/features/mcp) is Mixpanel's official MCP server, announced August 2025 as a beta — now expanded to support ChatGPT and Gemini alongside Claude, Cursor, and Notion.
+[Mixpanel MCP](https://docs.mixpanel.com/docs/features/mcp) is Mixpanel's official MCP server, [announced](https://docs.mixpanel.com/changelogs/2025-09-10-mixpanel-mcp) as a public beta in September 2025 — now expanded to support ChatGPT, Gemini, Codex, and Microsoft Copilot alongside Claude, Cursor, and Notion.
 
 **Key capabilities:**
 
@@ -234,11 +230,11 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 
 **Cross-source correlation.** The MCP server can combine Mixpanel data with external sources. Mixpanel highlights pulling order events from Mixpanel and merging with external purchase data to analyze revenue — something that normally requires a data warehouse and SQL.
 
-**Multi-client support expanded.** Now works with Claude, ChatGPT, Gemini, Cursor, and Notion — significantly broader than the initial Claude-only beta.
+**Multi-client support expanded.** Now works with Claude, ChatGPT, Gemini, Cursor, Notion, Codex, and Microsoft Copilot — significantly broader than the initial Claude-only beta.
 
 ### What doesn't
 
-**Beta status.** Launched August 2025, still in beta. US data center only — EU and IN expansion planned but not yet available. Feature set may change.
+**Some features still in beta.** [Mixpanel's own docs](https://docs.mixpanel.com/docs/features/mcp) say most of the MCP server is now generally available, but Experiments and Feature Flags tools, plus service-account authentication, remain in open beta. Feature set may still change. Data center availability has expanded since the September 2025 launch — [US, EU, and IN endpoints are all live now](https://docs.mixpanel.com/docs/features/mcp), not US-only.
 
 **Community alternatives are small.** dragonkhoi/mixpanel-mcp (19 stars) covers event queries, retention, and funnels with Mixpanel Service Account auth. moonbirdai/mixpanel-mcp-server offers tracking events and user profiles. Neither has significant adoption.
 
@@ -256,7 +252,7 @@ The landscape splits into three tiers: enterprise platforms (Google Analytics, P
 - Event-level aggregation queries
 - Visitor activity and engagement patterns
 
-**Cloud-hosted with OAuth.** Available through Claude's official Connectors Directory, plus ChatGPT (developer mode), Cursor, VS Code with GitHub Copilot, and Claude Code. Any paid Pendo customer can access the MCP server — admin enablement required.
+**Cloud-hosted with OAuth.** Available through [Claude's official Connectors Directory](https://www.pendo.io/pendo-blog/pendo-joins-claude-connectors-directory/), plus ChatGPT (developer mode), Cursor, VS Code with GitHub Copilot, and Claude Code. Any paid Pendo customer can access the MCP server — admin enablement required.
 
 ### Why it matters
 
@@ -274,9 +270,9 @@ Pendo brings product analytics to the MCP ecosystem from a platform focused on p
 
 If you use privacy-first analytics, your MCP options have improved — Sentry built a Plausible MCP server with a hosted instance.
 
-**Plausible:** The biggest change is **getsentry/plausible-mcp** (TypeScript, MIT, 23 commits, April 2026) — built by Sentry with a **hosted instance at `plausible-mcp.sentry.dev`**. Four tools: `get_timeseries` (traffic metrics over time), `get_breakdown` (segmentation by pages/sources/countries/devices), `get_conversions` (goal conversion rates), and `compare_periods` (side-by-side date range analysis). All read-only. Includes 53 tests and LLM evaluation. Also deployable to Cloudflare Workers for self-hosting. Having a company like Sentry build and host this is a significant credibility boost for the Plausible MCP ecosystem.
+**Plausible:** The biggest change is [getsentry/plausible-mcp](https://github.com/getsentry/plausible-mcp) (33 stars, TypeScript, MIT, 119 commits) — built by Sentry with a **hosted instance at `plausible-mcp.sentry.dev`**. Four tools: `get_timeseries` (traffic metrics over time), `get_breakdown` (segmentation by pages/sources/countries/devices), `get_conversions` (goal conversion rates), and `compare_periods` (side-by-side date range analysis). All read-only. Includes automated tests and an LLM-evals suite for tool-selection accuracy. Also deployable to Cloudflare Workers for self-hosting. Having a company like Sentry build and host this is a significant credibility boost for the Plausible MCP ecosystem.
 
-The-Focus-AI/plausible-mcp (1 star, MIT, 2 tools) adds 1Password integration for API key management. AVIMBU/plausible-mcp-server (7 stars) and alexanderop/plausible-mcp (6 stars, 4 tools) remain the original community options.
+The-Focus-AI/plausible-mcp (1 star, MIT, 2 tools) adds 1Password integration for API key management. AVIMBU/plausible-mcp-server (8 stars) and alexanderop/plausible-mcp (6 stars, 4 tools) remain the original community options.
 
 **Matomo:** FGRibreau/mcp-matomo (10 stars, Rust, MIT, 24 commits) remains the most interesting implementation with dynamic API introspection. kitconcept/matomo-mcp (1 star, Python, MIT, 6 tools) is a new addition covering site info, visit summaries, page URLs, geographic data, browser/device info, and custom API queries.
 
@@ -286,7 +282,7 @@ The gap is closing: Sentry's hosted Plausible server means privacy-first teams n
 
 ## Microsoft Clarity MCP — Free Heatmaps and Session Recordings (New)
 
-[microsoft/clarity-mcp-server](https://github.com/microsoft/clarity-mcp-server) (78 stars, MIT) is Microsoft's official MCP server for Clarity, their free web analytics tool focused on heatmaps and session recordings.
+[microsoft/clarity-mcp-server](https://github.com/microsoft/clarity-mcp-server) (104 stars, MIT) is Microsoft's official MCP server for Clarity, their free web analytics tool focused on heatmaps and session recordings.
 
 **3 tools:**
 
@@ -296,13 +292,13 @@ The gap is closing: Sentry's hosted Plausible server means privacy-first teams n
 
 ### Why it matters
 
-**Free and official.** [Clarity](https://clarity.microsoft.com/) is a completely free analytics tool (no usage caps). Combined with an official MCP server from the `microsoft/` GitHub organization, this is the lowest-cost entry point for analytics MCP integration. 81 stars and 52 commits show active development.
+**Free and official.** [Clarity](https://clarity.microsoft.com/) is a completely free analytics tool (no usage caps). Combined with an official MCP server from the `microsoft/` GitHub organization, this is the lowest-cost entry point for analytics MCP integration. 104 stars and 52 commits show active development.
 
 **Session recordings are unique.** No other analytics MCP server exposes session recording data. An AI agent can search for specific user sessions — useful for debugging UX issues or understanding user behavior patterns that aggregate metrics miss.
 
 ### Limitations
 
-**Narrow scope.** 3 tools compared to PostHog's 27+ or Amplitude's 24+. Clarity is intentionally focused on behavioral analytics (heatmaps, recordings, rage clicks), not product analytics (funnels, cohorts, A/B tests). The MCP server reflects this narrow scope.
+**Narrow scope.** 3 tools compared to PostHog's 27+ or Amplitude's 65+. Clarity is intentionally focused on behavioral analytics (heatmaps, recordings, rage clicks), not product analytics (funnels, cohorts, A/B tests). The MCP server reflects this narrow scope.
 
 **No self-hosting.** Clarity is a cloud-only service. Unlike PostHog or Matomo, you can't run it on your own infrastructure.
 
@@ -310,11 +306,11 @@ The gap is closing: Sentry's hosted Plausible server means privacy-first teams n
 
 ## Microsoft Fabric Analytics MCP — BI Platform Access (Now Two Servers)
 
-[santhoshravindran7/Fabric-Analytics-MCP](https://github.com/santhoshravindran7/Fabric-Analytics-MCP) (110 stars, MIT) is a community server connecting AI agents to Microsoft Fabric, Microsoft's unified analytics and BI platform.
+[santhoshravindran7/Fabric-Analytics-MCP](https://github.com/santhoshravindran7/Fabric-Analytics-MCP) (109 stars, MIT) is a community server connecting AI agents to Microsoft Fabric, Microsoft's unified analytics and BI platform.
 
 **52 tools** covering workspace management, notebook execution, Spark sessions via Livy API, and Synapse-to-Fabric migration. This is more of a BI/data platform server than a traditional web analytics server, but it fills a gap for teams using Microsoft's analytics stack. Multiple auth methods (Bearer token, Service Principal, Device Code, Azure CLI) make it enterprise-ready.
 
-**New: microsoft/fabric-rti-mcp** (113 stars, Python, public preview) is Microsoft's official MCP server for Fabric Real-Time Intelligence. 30+ tools: 13 for Eventhouse/Kusto KQL queries, 17 for Eventstream management, plus Activator alerts and Map visualization. Uses Azure Identity authentication. This is the second MCP server from the `microsoft/` GitHub organization in the analytics space (alongside Clarity), and brings real-time data streaming and KQL query capabilities to AI agents.
+**New: microsoft/fabric-rti-mcp** (128 stars, Python, public preview) is Microsoft's official MCP server for Fabric Real-Time Intelligence. [39 tools total](https://github.com/microsoft/fabric-rti-mcp): 13 for Eventhouse/Kusto KQL queries, 17 for Eventstream management, 2 for Activator alerts, and 7 for Map visualization. Uses Azure Identity authentication. This is the second MCP server from the `microsoft/` GitHub organization in the analytics space (alongside Clarity), and brings real-time data streaming and KQL query capabilities to AI agents.
 
 ---
 
@@ -329,8 +325,8 @@ The gap is closing: Sentry's hosted Plausible server means privacy-first teams n
 | Feature | Google Analytics | PostHog | Amplitude | Pendo | Mixpanel | MS Clarity | Plausible | Matomo |
 |---------|-----------------|---------|-----------|-------|----------|------------|-----------|--------|
 | Official server | **Yes** | **Yes** | **Yes** | **Yes** | **Yes** (beta) | **Yes** | No (Sentry-built) | No |
-| Stars (GitHub) | 2,000 | 34,200 (mono) | — (hosted) | — (hosted) | — (hosted) | 81 | — (hosted) | 10 |
-| Tools | 7 | 27+ | 24+ | — | — | 3 | 4 | Dynamic |
+| Stars (GitHub) | 2,938 | 37,634 (mono) | — (hosted) | — (hosted) | — (hosted) | 104 | — (hosted) | 10 |
+| Tools | 7 | 27+ | 65+ | — | — | 3 | 4 | Dynamic |
 | Read/write | Read-only | **Read + write** | **Read + write** | Read-only | Read + write | Read-only | Read-only | Read-only |
 | Self-hostable | **Yes** | **Yes** | No | No | No | No | **Yes** (Sentry) | **Yes** |
 | Auth model | ADC / Service account | API key / OAuth | OAuth 2.0 | OAuth 2.0 | OAuth | API token | API key | API token |
@@ -343,7 +339,7 @@ The gap is closing: Sentry's hosted Plausible server means privacy-first teams n
 
 ## Which one should you use?
 
-**Using Google Analytics?** Start with the [official google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp). 2,000 stars, active development, read-only safety. If you want friendlier auth, try gomarble-ai's OAuth-based server. If you need smarter LLM integration, surendranb's server has better context management.
+**Using Google Analytics?** Start with the [official google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp). 2,938 stars, active development, read-only safety. If you want friendlier auth, try gomarble-ai's OAuth-based server. If you need smarter LLM integration, surendranb's server has better context management.
 
 **Using PostHog?** The official MCP server is the clear choice. 27+ tools covering the full platform, read-only mode for safety, one-command installation. The broadest analytics MCP integration available.
 
@@ -372,11 +368,11 @@ Analytics MCP servers are lower-risk than most categories — analytics data is 
 
 **Rating: 4/5** (up from 3.5) — The analytics MCP ecosystem has the strongest vendor adoption of any MCP category and it widened its lead — six platforms now have official servers (Google Analytics, PostHog, Amplitude, Pendo, Mixpanel, Microsoft Clarity), plus two official Microsoft servers for Fabric (Clarity + RTI). Amplitude's expansion from analytics-only to Session Replays, Agent Skills, Feature Flags, Web Vitals, and in-client chart rendering sets a new bar for what an analytics MCP integration can be.
 
-What works: Google Analytics crossed 2,000 stars. PostHog offers the broadest tool set (27+ tools, 34.2K monorepo stars) with an automated codegen pipeline. Amplitude is now the most feature-rich — 24+ tools plus Session Replay Agent, 27 open-source skills, and MCP App for in-client visualizations. Pendo enters as the sixth official vendor, available in Claude's Connectors Directory. Mixpanel expanded its beta to ChatGPT and Gemini with session replay support. Microsoft ships two official servers (Clarity free, Fabric RTI with 30+ tools). Sentry built and hosts a Plausible MCP server, partially closing the privacy-first gap.
+What works: Google Analytics has passed 2,900 stars. PostHog offers the broadest tool set (27+ tools, 37.6K monorepo stars) with an automated codegen pipeline. Amplitude is now the most feature-rich — 65+ tools plus Session Replay Agent, 27 open-source skills, and MCP App for in-client visualizations. Pendo enters as the sixth official vendor, available in Claude's Connectors Directory. Mixpanel expanded its beta to ChatGPT and Gemini with session replay support. Microsoft ships two official servers (Clarity free, Fabric RTI with 39 tools). Sentry built and hosts a Plausible MCP server, partially closing the privacy-first gap.
 
 What holds it back: the privacy-first alternatives still lack official support (Sentry's Plausible server is community-built, not Plausible official). Hotjar gets its first server but it's surveys-only (2 stars, 3 commits). The hosted servers (Amplitude, Pendo, Mixpanel) remain closed-source. Google Analytics' 7 read-only tools look increasingly thin compared to Amplitude's expanding feature set.
 
-The strongest individual server is Amplitude's — broadest feature set with Session Replays, Agent Skills, in-client charts, and the most AI client integrations. PostHog remains the best open-source option — broadest tool set, self-hostable, codegen-powered expansion. The most accessible is Google Analytics (free GA4, 2,000 stars, read-only safety). The lowest-cost entry point is Microsoft Clarity (completely free, official). The biggest newcomer is Pendo (official, Claude Connectors). The most improved privacy-first option is Sentry's hosted Plausible MCP.
+The strongest individual server is Amplitude's — broadest feature set with Session Replays, Agent Skills, in-client charts, and the most AI client integrations. PostHog remains the best open-source option — broadest tool set, self-hostable, codegen-powered expansion. The most accessible is Google Analytics (free GA4, 2,938 stars, read-only safety). The lowest-cost entry point is Microsoft Clarity (completely free, official). The biggest newcomer is Pendo (official, Claude Connectors). The most improved privacy-first option is Sentry's hosted Plausible MCP.
 
 *Reviewed by [ChatForest](https://chatforest.com). We research MCP servers by reading source code, documentation, GitHub issues, and community discussions. For our methodology, see [How We Review](/about/).*
 

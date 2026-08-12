@@ -33,7 +33,7 @@ The CI/CD MCP landscape continues to mature. GitHub's official server is now at 
 
 | Server | Stars | Language | Tools | Auth | License |
 |--------|-------|----------|-------|------|---------|
-| [GitLab official MCP server](https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/) | — | — | 250+ (experimental) | OAuth 2.0 / PAT | — |
+| [GitLab official MCP server](https://docs.gitlab.com/user/model_context_protocol/mcp_server/) | — | — | Not disclosed (beta) | OAuth 2.0 / PAT | — |
 | [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) | 1,500 | TypeScript | 85+ | PAT / OAuth2 / MCP OAuth | MIT |
 | [Vijay-Duke/mcp-gitlab](https://github.com/Vijay-Duke/mcp-gitlab) | — | — | — | PAT | — |
 
@@ -141,7 +141,7 @@ GitHub's official MCP server remains the clear leader — now at v1.0.5 with fiv
 
 ### What doesn't
 
-**Still growing.** 83 stars (up from 77). Jenkins has [over 300,000 known installations](https://www.jenkins.io/press/), but the MCP plugin is still building adoption.
+**Still growing.** 83 stars (up from 77). Jenkins [reached 300,000 known installations in 2022](https://www.jenkins.io/press/), but the MCP plugin is still building adoption relative to that installed base.
 
 **No pipeline-specific tools.** The plugin handles jobs and builds generically but doesn't have tools specifically designed for Jenkins Pipeline (Jenkinsfile) stage-level analysis or shared library management.
 
@@ -174,7 +174,7 @@ Higher star count than the official plugin (121 vs. 83), showing continued commu
 
 ## CircleCI-Public/mcp-server-circleci — Diagnostic-First CI/CD
 
-[CircleCI-Public/mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) (84 stars, 57 forks, 308 commits, Apache 2.0) is the most thoughtfully designed CI/CD MCP server. Where GitHub's server treats CI/CD as one feature among many, CircleCI's server was built specifically for pipeline diagnostics. Now at **v0.15.1** (last updated April 21, 2026 — no new releases since last review).
+[CircleCI-Public/mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) (84 stars, 57 forks, 308 commits, Apache 2.0) is the most thoughtfully designed CI/CD MCP server. Where GitHub's server treats CI/CD as one feature among many, CircleCI's server was built specifically for pipeline diagnostics. Actively maintained on npm, with [steady incremental releases through v0.20.0 (published Aug 6, 2026)](https://www.npmjs.com/package/@circleci/mcp-server-circleci).
 
 **17 tools, purpose-built for CI/CD:**
 
@@ -232,7 +232,7 @@ Higher star count than the official plugin (121 vs. 83), showing continued commu
 - **Code search tools** — search across repositories (v2.1.1)
 - **Auto-refresh OAuth tokens** on 401 responses (v2.1.2)
 
-GitLab also has an **official MCP server** (`glab mcp serve`) providing 250+ tools with OAuth 2.0 authentication. Still marked **experimental** — not ready for production use — and carries a ~25K context token footprint that makes it impractical for many agents.
+GitLab also has an **official MCP server** (`glab mcp serve`) with [OAuth 2.0 Dynamic Client Registration support](https://docs.gitlab.com/user/model_context_protocol/mcp_server/) — GitLab's docs don't publish an exact tool count. It's now **Beta** (upgraded from experimental status in GitLab 18.6, per the same docs page) — closer to production-ready than earlier reviews suggested, though still newer than the community server.
 
 ### What works well
 
@@ -248,7 +248,7 @@ GitLab also has an **official MCP server** (`glab mcp serve`) providing 250+ too
 
 ### What doesn't
 
-**Community-maintained.** Not official GitLab. The official server exists with 250+ tools but is still experimental. If GitLab's official MCP server matures, this community server may become redundant.
+**Community-maintained.** Not official GitLab. The [official server](https://docs.gitlab.com/user/model_context_protocol/mcp_server/) exists and is now in Beta. If it matures further, this community server may become redundant.
 
 **CI/CD is secondary.** Pipelines are one of several optional toolsets. The server's primary focus is merge requests and issues. The pipeline tools cover the basics but lack the diagnostic depth of CircleCI's purpose-built server.
 
@@ -401,9 +401,9 @@ The runtime mode switching is a thoughtful feature: start agents in Dev mode for
 
 **Running Jenkins?** You have five options. [lanbaoshen/mcp-jenkins](https://github.com/lanbaoshen/mcp-jenkins) (v3.3.0, artifact support, 121 stars) is the most battle-tested standalone. The [official plugin](https://github.com/jenkinsci/mcp-server-plugin) (83 stars, ~20 tools) is best for native Jenkins integration with replay support. [Jordan-Jarvis/jenkins-mcp-enterprise](https://github.com/Jordan-Jarvis/jenkins-mcp-enterprise) is worth evaluating for multi-instance setups needing AI-powered failure analysis.
 
-**On GitLab?** Use [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) (v2.1.12, 1,500 stars) — the v2.1.x updates are substantial: 40% payload reduction, audit logging, policy controls, dynamic tool discovery, and tool annotations. GitLab's official MCP server (`glab mcp serve`) has 250+ tools but is still experimental and consumes ~25K context tokens.
+**On GitLab?** Use [zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp) (v2.1.12, 1,500 stars) — the v2.1.x updates are substantial: 40% payload reduction, audit logging, policy controls, dynamic tool discovery, and tool annotations. [GitLab's official MCP server](https://docs.gitlab.com/user/model_context_protocol/mcp_server/) (`glab mcp serve`) is now in Beta; GitLab hasn't published an exact tool count.
 
-**Using CircleCI?** The [official CircleCI MCP server](https://github.com/CircleCI-Public/mcp-server-circleci) is the obvious choice — 17 diagnostic tools, the best flaky test detection of any CI/CD MCP server. No new releases since April 21, but it remains the category's most intelligent server.
+**Using CircleCI?** The [official CircleCI MCP server](https://github.com/CircleCI-Public/mcp-server-circleci) is the obvious choice — 17 diagnostic tools, the best flaky test detection of any CI/CD MCP server, and [ongoing active releases on npm](https://www.npmjs.com/package/@circleci/mcp-server-circleci).
 
 **Using Buildkite?** The [official Buildkite MCP server](https://github.com/buildkite/buildkite-mcp-server) is at v1.1.0 (May 19). Go-based, container-first, 35 releases.
 
@@ -429,7 +429,7 @@ CI/CD MCP servers are high-risk integrations:
 
 The category's structural strengths hold: official vendor investment from GitHub, Jenkins, CircleCI, Microsoft, Buildkite, and Akuity. Real feature development — not just API bridges. The 40% payload reduction in GitLab's server and stateless scaling in Argo CD show MCP-native thinking, not just wrappers.
 
-What still holds it back: fragmentation. No cross-platform CI/CD MCP server monitors GitHub Actions, Jenkins, and GitLab pipelines from a single interface. If you use multiple CI systems, you need multiple MCP servers. Azure DevOps Remote MCP remains in public preview. And CircleCI — which has the category's best diagnostic tooling — has had no new releases since April 21, a worrying sign for the platform overall.
+What still holds it back: fragmentation. No cross-platform CI/CD MCP server monitors GitHub Actions, Jenkins, and GitLab pipelines from a single interface. If you use multiple CI systems, you need multiple MCP servers. Azure DevOps Remote MCP remains in public preview.
 
 The strongest individual server is GitHub MCP (30,000 stars, v1.0.5, active maintenance). The most innovative is CircleCI's (flaky test detection, resource optimization). The deepest self-hosted ecosystem is Jenkins (five servers, up to 87 tools including TeamCity's Dev mode). The most-improved this cycle is GitLab's zereight/gitlab-mcp (v2.1.12, audit logging, 40% payload reduction). The fastest growing is Argo CD (+16.5%, stateless scaling).
 

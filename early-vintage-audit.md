@@ -254,19 +254,19 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 1/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 12/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
-- [ ] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md)
-- [ ] 2026-07-22 — [Anthropic Acquires Vercept: A Computer-Use Bet, a $250M Talent Raid, and an Honest 'We're Throwing in the Towel](content/reviews/anthropic-acquires-vercept-computer-use-ai-startup-claude-agents-2026.md)
-- [ ] 2026-07-22 — [Apple's $1 Billion Surrender: Why the World's Most Valuable Company Chose Google to Build Its AI Future](content/reviews/apple-google-gemini-siri-1-billion-deal-2026.md)
-- [ ] 2026-07-22 — [Atlassian MCP Server — Jira and Confluence Access for AI Agents](content/reviews/atlassian-mcp-server.md)
-- [ ] 2026-07-22 — [CI/CD MCP Servers — GitHub Actions, Jenkins, GitLab CI, CircleCI, and Beyond](content/reviews/cicd-mcp-servers.md)
-- [ ] 2026-07-22 — [CRM MCP Servers — Salesforce, HubSpot, Pipedrive, and Beyond](content/reviews/crm-mcp-servers.md)
-- [ ] 2026-07-22 — [Claude Sonnet 4.6 Review — 1M Context, 58.3% ARC-AGI-2, and the Price-to-Performance Leader](content/reviews/anthropic-claude-sonnet-4-6-review-benchmarks-2026.md)
-- [ ] 2026-07-22 — [Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond](content/reviews/cloud-storage-mcp-servers.md)
-- [ ] 2026-07-22 — [Google Calendar MCP Server — Multi-Account Calendar Management for AI Assistants](content/reviews/google-calendar-mcp-server.md)
-- [ ] 2026-07-22 — [Grafana MCP Server Review — 40+ Tools, Open Source](content/reviews/grafana-mcp-server.md)
+- [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Anthropic Acquires Vercept: A Computer-Use Bet, a $250M Talent Raid, and an Honest 'We're Throwing in the Towel](content/reviews/anthropic-acquires-vercept-computer-use-ai-startup-claude-agents-2026.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Apple's $1 Billion Surrender: Why the World's Most Valuable Company Chose Google to Build Its AI Future](content/reviews/apple-google-gemini-siri-1-billion-deal-2026.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Atlassian MCP Server — Jira and Confluence Access for AI Agents](content/reviews/atlassian-mcp-server.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [CI/CD MCP Servers — GitHub Actions, Jenkins, GitLab CI, CircleCI, and Beyond](content/reviews/cicd-mcp-servers.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [CRM MCP Servers — Salesforce, HubSpot, Pipedrive, and Beyond](content/reviews/crm-mcp-servers.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Claude Sonnet 4.6 Review — 1M Context, 58.3% ARC-AGI-2, and the Price-to-Performance Leader](content/reviews/anthropic-claude-sonnet-4-6-review-benchmarks-2026.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond](content/reviews/cloud-storage-mcp-servers.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Google Calendar MCP Server — Multi-Account Calendar Management for AI Assistants](content/reviews/google-calendar-mcp-server.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Grafana MCP Server Review — 40+ Tools, Open Source](content/reviews/grafana-mcp-server.md) — re-audited 2026-08-12
 - [ ] 2026-07-22 — [Message Queue MCP Servers — Kafka, RabbitMQ, Pulsar, NATS, SQS, and Beyond](content/reviews/message-queue-mcp-servers.md)
 - [ ] 2026-07-22 — [Mistral Small 3.1 Review — 24B Vision Model, 128K Context, Runs on One GPU](content/reviews/mistral-small-3-1-vision-24b-llm-review.md)
 - [ ] 2026-07-22 — [New Relic MCP Server Review — 35 Tools, Free Tier](content/reviews/newrelic-mcp-server.md)

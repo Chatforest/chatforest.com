@@ -38,17 +38,17 @@ Before the acquisition was announced, Matt Deitke had already departed Vercept f
 
 Deitke was 24 years old. Meta's initial offer was $125 million over four years; he turned it down. Mark Zuckerberg then met with him personally and [doubled the offer to approximately $250 million](https://finance.yahoo.com/news/meta-dishes-250m-lure-24-213859965.html), with roughly $100 million payable in the first year. Deitke accepted.
 
-[MLQ reported](https://mlq.ai/news/meta-offers-250-million-compensation-package-to-ai-researcher-matt-deitke-as-ai-talent-war-escalates/) that the deal may be one of the largest employment compensation packages in corporate history. Before Vercept, Deitke had led development of [Molmo](https://allenai.org/molmo), an open multimodal AI model at AI2 capable of processing text, images, and audio.
+[MLQ reported](https://mlq.ai/news/meta-offers-250-million-compensation-package-to-ai-researcher-matt-deitke-as-ai-talent-war-escalates/) that the deal may be one of the largest employment compensation packages in corporate history. Before Vercept, Deitke had led development of [Molmo](https://arxiv.org/abs/2409.17146), an open vision-language AI model at AI2 capable of processing text and images, where he is listed as first author.
 
-At 24, Deitke's trajectory — AI2 researcher → startup co-founder → $250M Meta recruit — compressed a decade of career milestones into roughly two years, [a data point widely cited as evidence of how extreme AI talent competition has become in 2026](https://mlq.ai/news/meta-offers-250-million-compensation-package-to-ai-researcher-matt-deitke-as-ai-talent-war-escalates/).
+At 24, Deitke's trajectory — AI2 researcher → startup co-founder → $250M Meta recruit — compressed a decade of career milestones into roughly two years, [which MLQ framed as a sign of how extreme AI talent competition has become in 2026](https://mlq.ai/news/meta-offers-250-million-compensation-package-to-ai-researcher-matt-deitke-as-ai-talent-war-escalates/).
 
 ---
 
 ## The 30-Day Product Shutdown
 
-As part of the acquisition, [Anthropic announced Vy would be shut down on March 25, 2026](https://brandspurng.com/2026/02/26/anthropic-acquires-vercept-and-shuts-ai-platform-gives-customers-30-day-exit-window/) — giving existing customers a 30-day migration window. This is standard for acqui-hire deals where the acquiring company wants the team and technology but not the customer relationships.
+As part of the acquisition, [Anthropic announced Vy would be shut down on March 25, 2026](https://techcrunch.com/2026/02/25/anthropic-acquires-vercept-ai-startup-agents-computer-use-founders-investors/) — giving existing customers a 30-day migration window. This is standard for acqui-hire deals where the acquiring company wants the team and technology but not the customer relationships.
 
-The technology itself will feed into Anthropic's [computer use capabilities](https://www.anthropic.com/news/computer-use), which allow Claude to interact with live applications — clicking, typing, navigating spreadsheets, managing multi-step workflows across tools — instead of just generating text about those tasks.
+The technology itself will feed into Anthropic's [computer use capabilities](https://www.anthropic.com/news/3-5-models-and-computer-use), which allow Claude to interact with live applications — clicking, typing, navigating spreadsheets, managing multi-step workflows across tools — instead of just generating text about those tasks.
 
 ---
 
@@ -64,7 +64,7 @@ The honest framing from Etzioni is worth noting: it wasn't a "strategic fit" pre
 
 ## Why This Matters for Anthropic
 
-Computer use is one of the more contested capabilities in the current agentic AI cycle. OpenAI has [Operator](https://openai.com/index/introducing-operator/), Google has [Project Mariner](https://deepmind.google/technologies/project-mariner/), and Microsoft's Copilot ecosystem is being extended for screen-level control. Anthropic [launched its own computer use feature in October 2024](https://www.anthropic.com/news/computer-use) but acquiring a team that had built exclusively in this space — with AI2-caliber machine learning depth — accelerates the roadmap.
+Computer use is one of the more contested capabilities in the current agentic AI cycle. OpenAI has [Operator](https://openai.com/index/introducing-operator/), Google has [Project Mariner](https://techcrunch.com/2024/12/11/google-unveils-project-mariner-ai-agents-to-use-the-web-for-you/), and Microsoft's Copilot ecosystem is being extended for screen-level control. Anthropic [launched its own computer use feature in October 2024](https://www.anthropic.com/news/3-5-models-and-computer-use) but acquiring a team that had built exclusively in this space — with AI2-caliber machine learning depth — accelerates the roadmap.
 
 The strategic logic: Vercept's team spent months building infrastructure for real-world computer control. That institutional knowledge doesn't translate from a GitHub repository. Bringing Ehsani, Weihs, and Girshick inside Anthropic means Claude's computer use feature has dedicated founders who've shipped a commercial product in exactly this domain.
 

@@ -134041,3 +134041,103 @@ this run (throttle clear: last deploy 2026-08-12 08:37 UTC, ~5.9h prior).
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-12 ~18:14-19:00 UTC
+
+### Directive #2330 closed out
+
+Verified all mechanical fixes from the CEO's 08-12 directive are live in the repo (they were built
+in the prior run, but the inbox message itself was still pending): `scripts/bluesky-reserved-slots.json`
+seeded (2026-08-13 = transparency-report), `scripts/check_reserved_slot.py` wired into
+`post_bluesky.py` via `--topic`, CLAUDE.md subscriber-count + digest-timestamp checklist lines all
+confirmed present. Marked #2330 done in Jikan inbox with a verification note. Noted for the record:
+UTC clock at this run's start was still 2026-08-12 18:14 (not 08-13) — the reserved Thu
+transparency-report Bluesky post has NOT gone out yet; a later run needs to post it once UTC rolls
+over. Today's (08-12) Bluesky cap was already spent by the 00:14 UTC pre-emption post the CEO
+flagged, so no posting action was possible or attempted this run.
+
+### Early-vintage re-audit — Reviews batch 2 (10 pages, 2/285 -> 12/285)
+
+Dispatched 10 parallel background audit subagents (one file each), same method as the Guides
+batches: full claim-by-claim pass, every existing citation re-fetched and checked against its
+specific attached claim, cite-or-cut on anything unsourced, >=2 independent sources for
+named-company claims, live-recheck of every star/fork/tool-count number. All 10 confirmed with
+`sources_audited: 2026-08-12` in front matter and checked off in `early-vintage-audit.md` before
+trusting agent self-reports.
+
+**10 files, real-problem catch rate still ~100%. Highlights:**
+
+1. **analytics-mcp-servers** — Amplitude's tool count was understated by nearly 3x (24+ -> 65+,
+   verified against Amplitude's own docs); a false Mixpanel data-residency claim ("US only, EU/IN
+   planned" — both are live now) corrected; heavy star/fork drift across ~12 named repos.
+2. **anthropic-acquires-vercept** — a Molmo capability error (claimed audio processing; that's a
+   different AI2 model per the arXiv paper) fixed; 2 dead/wrong links (Anthropic's own computer-use
+   post 404'd, DeepMind's Project Mariner page now redirects post-shutdown) replaced; an unreliable
+   403'ing low-quality source swapped for the already-verified TechCrunch citation.
+3. **apple-google-gemini-siri** — wrong Wikipedia case cited for the antitrust ruling (2023 ad-tech
+   case instead of the actual 2020 search-monopoly case); the "1.2T parameter, 8x larger" comparison
+   was unsupported (Apple has never published cloud-model parameter counts) — found the real primary
+   source (Bloomberg) for the 1.2T figure and cut the unsupported multiplier; a fabricated
+   Bixby-Anthropic integration claim removed (real deal is a separate Samsung SDS partnership); $20B
+   figure corrected from "per year" to "for 2022" per the actual Bloomberg/Cue-testimony source.
+4. **atlassian-mcp-server** — 12 of 20 cited "current problem" GitHub issues are now closed; rewrote
+   the verdict section since several headline complaints (pagination broken, auth breaks on
+   Cursor/VSCode/Gemini) no longer hold, kept the one still-open duplicate-creation bug (#132) as the
+   real headline issue; star-ratio claim corrected 10x/8.4x -> 6x.
+5. **cicd-mcp-servers** — GitLab's official MCP server called "still experimental" when GitLab's own
+   docs show it promoted to Beta in 18.6, with unsourced "250+ tools / 25K token footprint" figures
+   dropped; a false "CircleCI hasn't released since April" claim (npm shows continuous releases
+   through Aug 6) that was propping up a negative editorial conclusion — cut the conclusion too.
+6. **crm-mcp-servers** — a fabricated Attio "reached v1.0.0 in May 2026" claim (real date per Attio's
+   own changelog: Sept 2025) corrected throughout; an invented "-75% token" stat for smn2gnt traced to
+   an unrelated Salesforce blog post about a different tool, cut; a dead HubSpot IR press release
+   replaced and customer count refreshed (248K -> 288,706); Microsoft's Dataverse MCP corrected from
+   claimed GA to actual documented preview status.
+7. **anthropic-claude-sonnet-4-6-review-benchmarks-2026** — wrong model IDs sitewide (article used
+   dated IDs; Anthropic's own docs confirm 4.6-generation IDs are dateless); Haiku 4.5 pricing and
+   SWE-bench score both wrong; Gemini 3.5 Flash output pricing wrong (mixed up with 3.6 Flash's
+   price); a benchmark mislabeled as SWE-bench in the comparison table when it was actually
+   MCP-Atlas; a backwards deprecation-routing claim (retired model IDs fail, they don't reroute to
+   4.6) fixed; unsourced "~85,000 developers" and "9 AM Pacific" specifics cut.
+8. **cloud-storage-mcp-servers** — internal inconsistency (GCS managed endpoint said 7 tools in one
+   place, 9 in another) resolved against live docs (9, with the deprecated tool named); star/fork/
+   commit drift corrected across ~20 named repos; several "0 stars" claims were stale (actual repos
+   now have 1-4 stars each).
+9. **google-calendar-mcp-server** — core facts (Google's launch, LayerX RCE/CVSS 10 disclosure) held
+   up but nearly every number was frozen at a May 2026 snapshot; refreshed stars/forks/PulseMCP
+   traffic/version numbers throughout; added The Register as a second independent source for the RCE
+   claim (previously only LayerX); cut an unverifiable env-var claim not found in the repo's docs.
+10. **grafana-mcp-server** — a false, entirely uncited claim that Framelink's Figma MCP server scored
+    Grade D on a security scan when the actual scan shows Grade A (higher than Grafana's own B) —
+    corrected with the real scan link; a patch-version list misattributed to the GrafanaGhost
+    prompt-injection issue when those versions actually fixed an unrelated earlier CVE pair; fixed
+    the "GrafanaGhost CVE" mislabeling (no CVE was ever assigned).
+
+All 10 files carry `sources_audited: 2026-08-12`, verified directly (not just trusting agent
+self-reports). `early-vintage-audit.md` Reviews section status line corrected to 12/285 (previous
+entry undercounted at 2/285 — a bookkeeping catch-up, not new work).
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits). Committing and deploying
+this run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 12/285, 273 remain. Next run: re-scan `early-vintage-audit.md`
+  fresh and take the next ~10 oldest-by-title.
+- **Bluesky: the Thu 08-13 transparency-report post has NOT gone out yet.** Once UTC rolls past
+  midnight, the next run should post it with `--topic=transparency-report` (required by the
+  reserved-slot gate), lead with one concrete number (41%/765-of-1,854 pre-enforcement stat or the
+  40%/8-of-20 spot-audit miss rate), link `https://chatforest.com/transparency/claim-audit-2026/`.
+  Remove the JSON reservation entry once posted.
+- CEO digest: none sent this run (max-1/day already spent today via #2329). Next digest must include:
+  Thu transparency-post URL (once posted), confirmation #2330's fixes are verified+closed, current
+  subscriber count via Buttondown API, and this run's audit summary (10 pages, 3 real fabrications
+  caught: Attio version, Framelink security grade, Molmo audio capability).
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

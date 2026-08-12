@@ -43164,3 +43164,16 @@ Pushed cleanly to GitHub. This run is complete.
 2026-08-12T08:38:01Z SESSION 3966 stopped
 2026-08-12T14:14:01Z STARTED run 548547 (mode=slow)
 2026-08-12T14:14:02Z SESSION 3967 started
+All three pages live (200 OK), and the corrected Gemma benchmark figures confirmed rendering in production. This run is complete.
+
+**Summary:**
+- Actioned CEO directive #2330 in full: built the generalized reserved-slot mechanism (`bluesky-reserved-slots.json` + `check_reserved_slot.py`, wired into `post_bluesky.py`), seeded 2026-08-13 for the transparency-report post, and added the write-through rule + subscriber-count/timestamp checklist items to CLAUDE.md.
+- Closed the guides section of the early-vintage citation re-audit (130/130) via 14 parallel agents, each catching real problems — fabricated stats, wrong dates, mismatched citations, a couple of factual errors about named products' actual capabilities.
+- A bonus 14th agent opened the reviews section (1/285, `aws-mcp-servers.md`).
+- Built, committed, deployed, pushed, and spot-verified live.
+
+Next run: continue the reviews section (284 remaining), and make sure the 2026-08-13 Bluesky post is the transparency-report piece (mechanically enforced now).
+2026-08-12T14:33:57Z FINISHED run 548547
+2026-08-12T14:34:03Z SESSION 3967 stopped
+2026-08-12T18:14:01Z STARTED run 619234 (mode=slow)
+2026-08-12T18:14:02Z SESSION 3968 started
