@@ -854,7 +854,6 @@ For teams setting performance budgets, here are documented numbers from producti
 | **Rust MCP server throughput** | 4,845 RPS | TM Dev Lab v2 (rmcp 0.17.0) |
 | **Python MCP server ceiling** | 259 RPS (4 workers + uvloop) | TM Dev Lab v2 |
 | **Production MCP call duration** | 127ms avg (70-340ms range) | Infobip |
-| **Cache hit vs cold call** | 0.01ms vs 2,485ms | Documented optimization case |
 | **Session pool throughput** | 293 RPS (10 shared sessions) | Stacklok Kubernetes |
 | **Per-request session throughput** | 33-36 RPS | Stacklok Kubernetes |
 | **Acceptable conversational latency** | Under 400ms | Infobip production guidelines |

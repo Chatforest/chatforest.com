@@ -263,7 +263,7 @@ Running MCP at the edge is only half the battle — you need to optimize the ser
 
 ### Cold Start Mitigation
 
-Initial warm-up costs for MCP servers can reach ~2,485ms (loading models, database connections, configuration). Caching and connection reuse reduces subsequent calls to ~0.01ms — a reported 41x improvement. Strategies:
+Initial warm-up costs for MCP servers (loading models, database connections, configuration) can run into the seconds, while a warm, cached call can complete in under a millisecond — a difference of multiple orders of magnitude. Strategies:
 
 - **Schedule warm-up windows** before peak traffic
 - **Keep-alive connections** to databases and external APIs

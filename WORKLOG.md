@@ -133651,3 +133651,112 @@ run (throttle was clear at start: last deploy 2026-08-11, >3.7h prior).
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-12 (UTC ~04:13) — Early-vintage re-audit: guides batch 11 (10 pages, 97/130 -> 107/130)
+
+### Orientation
+Inbox had one pending message: my own 2026-08-12 CEO digest (batch-10 summary), not yet marked
+seen by the CEO — no new instructions to act on. Bluesky: `check_bluesky_posted_today.py` returned
+ALREADY_POSTED (today's post already went out ~00:14 UTC) — skipped Bluesky this run. Deploy
+throttle clear (last deploy 249 min prior).
+
+### Early-vintage re-audit — guides batch 11 (10 pages, 97/130 -> 107/130)
+
+Continued from the top of the remaining unchecked guides list (title-sorted): mcp-anthropic-claude-
+integration, mcp-database-patterns, mcp-environmental-monitoring, mcp-food-restaurant, mcp-
+government-public-sector, mcp-graphql-integration, mcp-knowledge-graphs, mcp-mining-natural-
+resources, mcp-multimodal-patterns, mcp-openai-integration. Dispatched 10 parallel background audit
+subagents (one file each). Every file's `sources_audited` front matter verified directly before
+trusting agent reports; all 10 carry `sources_audited: 2026-08-12`.
+
+**11th straight batch (111 pages) at a 100% real-problem catch rate. Highlights:**
+
+1. **mcp-anthropic-claude-integration** — a fabricated `4,750% growth since launch` stat (no source
+   anywhere) cut; a stat-fusion error (Jan 2026 "50+ curated integrations" claim actually traced to
+   the May 2025 original 10-service launch post, conflated with a real but separate Jan 2026
+   Interactive Apps launch for 5 named services) untangled and re-sourced; Agentic AI Foundation
+   membership corrected from an unsourced "100+" to the real 45-member breakdown per the Linux
+   Foundation's own release; broken Claude API MCP Connector code sample (wrong field names,
+   deprecated `tool_configuration`) and wrong SDK import paths fixed; extended the MCP-2026-Roadmap
+   section for the 2026-07-28 spec revision that shipped since the last audit; several SDK version
+   numbers refreshed.
+2. **mcp-database-patterns** — a fabricated performance stat ("~2,485ms cold vs ~0.01ms cached — a
+   41x improvement") cut: the real ratio is ~248,500x, not 41x, and no source exists for either
+   number. **This same fabricated stat was found duplicated verbatim in two other pages not in this
+   batch** (`mcp-edge-computing-patterns.md`, `mcp-performance-testing-benchmarking.md`) — fixed both
+   directly this run as a targeted correction (not a full audit; their `sources_audited` stamps were
+   left untouched for their own turn). Also fixed: an Equixly citation pointing to the wrong article
+   (real 43%/22% stats are in a different, earlier Equixly post); a ClickHouse table that conflated
+   two access tiers the source keeps separate; MySQL/ClickHouse MCP server tool-count and
+   default-behavior errors; ~15 stale GitHub star counts.
+3. **mcp-environmental-monitoring** — ~25 named MCP server repos were plain, non-clickable text with
+   no way for a reader to verify any attached number — converted all to real verified links; a dead
+   Sentinel-2 citation replaced; a market-stat citation that didn't support its own attributed
+   numbers rewritten to match the live source; a false attribution (a weather MCP server credited
+   with wrapping NOAA's NWS API when its real repo wraps OpenWeatherMap) corrected; NASA Earthdata
+   MCP's claimed "semantic search via embeddings" found deprecated in the project's own current docs.
+4. **mcp-food-restaurant** — ~46 named GitHub repos plus a dozen Apify actors were unlinked
+   throughout; 3 fabricated/non-existent GitHub paths removed; the headline "79% of restaurants use
+   AI" stat (repeated 4x) traced to a Toast survey page that doesn't contain that figure — replaced
+   with the real 86%/81% figures from the same source; DoorDash/UberEats/Grubhub market-share numbers
+   updated to match current live source data; an "AI can cut food waste 40%" and other vendor-blog-
+   only claims cut for lack of a credible primary source.
+5. **mcp-government-public-sector** — ~34 named server repos were plain unlinked text; one entire
+   entry (`US_Compliance_MCP`) removed after its repo turned up 404; a FedRAMP stat-fusion error
+   (named vendors presented as already-authorized, not supported by the cited GSA release) fixed; an
+   ADA/Title-II enforcement deadline corrected from a misattributed 2026 to the DOJ rule's actual
+   2027 date; ~14 server entries with no confidently-matched primary source (multiple similarly-named
+   competing repos, no way to verify which matched the page's numbers) removed per "cite it or cut
+   it" rather than guessed at.
+6. **mcp-graphql-integration** — a fabricated Agoda APIAgent tool (`{prefix}_execute`, doesn't exist
+   in the live README) corrected to the real tool set; an overstated "Fabric IQ... now accessible"
+   claim (Microsoft's own docs frame it as future/preview, not current) cut; a dead Apollo Connectors
+   URL and a wrong Apollo MCP Server license claim (page said MIT/ELv2, repo LICENSE is MIT-only)
+   fixed.
+7. **mcp-knowledge-graphs** — a fabricated standalone package (`mcp-neo4j-gds`) that doesn't exist in
+   the real `neo4j-contrib/mcp-neo4j` repo removed (GDS access is actually a tool inside a different,
+   official Neo4j server); tool names corrected from hyphenated to the real underscored names; an
+   "industry consensus" framing corrected after the cited source turned out to be presenting its own
+   internal-benchmark opinion, not a consensus.
+8. **mcp-mining-natural-resources** — a false "Official by Microsoft" label on `Earth-Copilot`
+   removed after the repo's own README states it's explicitly not a supported Microsoft product; an
+   "AI-driven" claim softened to match its source (which says automation, not AI); two uncited
+   named-company technical claims (BHP/Rio Tinto LiDAR haul trucks, Anglo American Quellaveco
+   optimization) cut for lack of a source; AutoHaul's "fully autonomous" claim strengthened with a
+   second independent source after the originally-cited Rio Tinto release only said "automated."
+9. **mcp-multimodal-patterns** — MCPollinations found archived since 2026-07-12, marked throughout;
+   BrowserTools MCP's "discontinued" label found false (it shipped a v2.0.0 rewrite fixing a critical
+   unauthenticated-RCE, GHSA-xvrv-w8pg-f25f, CVSS 9.8) — replaced with the accurate, better-sourced
+   security story; an entire fabricated section (ImgMCP — its own README says "MCP" stands for
+   "Multimedia Control Protocol," unrelated to Model Context Protocol) cut; spec references updated
+   to 2026-07-28 and a nonexistent `Annotations.timestamp` field corrected to the real `lastModified`.
+10. **mcp-openai-integration** — a misattributed Sam Altman quote (linked to a different tweet from a
+    different account) fixed; the entire "MCP Adoption Timeline" section had zero citations on 9
+    dated claims — sourced all 9, correcting one wrong date in the process (ChatGPT Apps rollout was
+    misdated); the "Stateless MCP" section rewritten from "targeted for June 2026" (future tense) to
+    the shipped 2026-07-28 reality; an unverifiable Codex composer UI claim cut; a stale hardcoded
+    model list (GPT-4o/4.1/o3/o4-mini, several since retired) removed in favor of a live-docs link.
+
+All 10 files carry `sources_audited: 2026-08-12`, verified directly. `early-vintage-audit.md` checked
+off for all 10 and the running-count line corrected: **guides 107/130** (was 97/130).
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits plus the two targeted
+fabricated-stat fixes). Deployed via rsync; spot-verified two pages live (200 OK).
+
+### What should happen next
+
+- Early-vintage re-audit: guides 107/130 (builders-log 12/12 closed, reviews not started — 23 guides
+  pages remain, then 285 reviews). Next 10 oldest-by-title guides, continuing from wherever
+  `mcp-openai-integration.md` sorts next (re-scan the checklist at start of next run, don't trust a
+  hardcoded list).
+- CEO digest due this run (last one sent ~00:28 UTC today, for batch 10) — will include today's
+  batch-11 summary.
+- Bluesky: today's 1-post cap already used before this run started — nothing to do here.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

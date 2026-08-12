@@ -67,7 +67,7 @@ published weights); a "Jikan" link resolved to an unrelated product due to a sta
 
 ## Guides
 
-**Status: 97/130 done (2026-08-09 through 2026-08-12 runs).**
+**Status: 107/130 done (2026-08-09 through 2026-08-12 runs).**
 
 **Batch 2 (8 files):** Best Blockchain & Web3, CMS, Communication, CRM, Design, Desktop Automation,
 File & Storage, Finance & Payments. Real fixes on every page: a fabricated GitHub repo link
@@ -218,16 +218,16 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [MCP Transports Explained: stdio vs Streamable HTTP (and Why SSE Was Deprecated)](content/guides/mcp-transports-explained.md) — re-audited 2026-08-12
 - [x] 2026-07-24 — [MCP Versioning and Backward Compatibility: A Practical Guide](content/guides/mcp-versioning-backward-compatibility.md) — re-audited 2026-08-12
 - [x] 2026-07-24 — [MCP Workflow Orchestration: Frameworks, Durable Execution, and Production Agent Pipelines](content/guides/mcp-workflow-orchestration-frameworks.md) — re-audited 2026-08-12
-- [ ] 2026-07-24 — [MCP and Anthropic Claude: How Claude Desktop, Claude Code, the Claude API, and the Agent SDK Use the Model Context Protocol](content/guides/mcp-anthropic-claude-integration.md)
-- [ ] 2026-07-24 — [MCP and Databases: Connecting AI Agents to Your Data](content/guides/mcp-database-patterns.md)
-- [ ] 2026-07-24 — [MCP and Environmental Monitoring: How AI Agents Connect to Weather Systems, Air Quality Sensors, Satellite Imagery, Carbon Tracking, and Climate Data](content/guides/mcp-environmental-monitoring.md)
-- [ ] 2026-07-24 — [MCP and Food/Restaurant: How AI Agents Connect to Recipes, Nutrition Data, POS Systems, Food Delivery, Reservations, Kitchen Operations, and Grocery Platforms](content/guides/mcp-food-restaurant.md)
-- [ ] 2026-07-24 — [MCP and Government: How AI Agents Connect to Legislative Data, Open Data Portals, Census Systems, Procurement Platforms, and Public Sector Operations](content/guides/mcp-government-public-sector.md)
-- [ ] 2026-07-24 — [MCP and GraphQL: Why GraphQL Is Becoming the Backend for AI Agent Tools](content/guides/mcp-graphql-integration.md)
-- [ ] 2026-07-24 — [MCP and Knowledge Graphs: GraphRAG, Multi-Hop Reasoning, and Structured AI Memory](content/guides/mcp-knowledge-graphs.md)
-- [ ] 2026-07-24 — [MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil & Gas, and Commodity Trading Tools](content/guides/mcp-mining-natural-resources.md)
-- [ ] 2026-07-24 — [MCP and Multimodal AI: How Agents Handle Images, Video, Audio, and Rich Media](content/guides/mcp-multimodal-patterns.md)
-- [ ] 2026-07-24 — [MCP and OpenAI: How ChatGPT, the Agents SDK, Codex, and the Responses API Use the Model Context Protocol](content/guides/mcp-openai-integration.md)
+- [x] 2026-07-24 — [MCP and Anthropic Claude: How Claude Desktop, Claude Code, the Claude API, and the Agent SDK Use the Model Context Protocol](content/guides/mcp-anthropic-claude-integration.md)
+- [x] 2026-07-24 — [MCP and Databases: Connecting AI Agents to Your Data](content/guides/mcp-database-patterns.md)
+- [x] 2026-07-24 — [MCP and Environmental Monitoring: How AI Agents Connect to Weather Systems, Air Quality Sensors, Satellite Imagery, Carbon Tracking, and Climate Data](content/guides/mcp-environmental-monitoring.md)
+- [x] 2026-07-24 — [MCP and Food/Restaurant: How AI Agents Connect to Recipes, Nutrition Data, POS Systems, Food Delivery, Reservations, Kitchen Operations, and Grocery Platforms](content/guides/mcp-food-restaurant.md)
+- [x] 2026-07-24 — [MCP and Government: How AI Agents Connect to Legislative Data, Open Data Portals, Census Systems, Procurement Platforms, and Public Sector Operations](content/guides/mcp-government-public-sector.md)
+- [x] 2026-07-24 — [MCP and GraphQL: Why GraphQL Is Becoming the Backend for AI Agent Tools](content/guides/mcp-graphql-integration.md)
+- [x] 2026-07-24 — [MCP and Knowledge Graphs: GraphRAG, Multi-Hop Reasoning, and Structured AI Memory](content/guides/mcp-knowledge-graphs.md)
+- [x] 2026-07-24 — [MCP and Mining: How AI Agents Connect to Geological Modeling, Mine Planning, Resource Estimation, Environmental Monitoring, Oil & Gas, and Commodity Trading Tools](content/guides/mcp-mining-natural-resources.md)
+- [x] 2026-07-24 — [MCP and Multimodal AI: How Agents Handle Images, Video, Audio, and Rich Media](content/guides/mcp-multimodal-patterns.md)
+- [x] 2026-07-24 — [MCP and OpenAI: How ChatGPT, the Agents SDK, Codex, and the Responses API Use the Model Context Protocol](content/guides/mcp-openai-integration.md)
 - [ ] 2026-07-24 — [MCP and RAG: Building Retrieval-Augmented Generation Pipelines with Model Context Protocol](content/guides/mcp-rag-patterns.md)
 - [ ] 2026-07-24 — [MCP at the Edge: Deploying AI Agent Tools Closer to Users, Devices, and Data](content/guides/mcp-edge-computing-patterns.md)
 - [ ] 2026-07-24 — [MCP for Accounting — 95+ Integrations (2026)](content/guides/mcp-accounting-tax-compliance.md)

@@ -43130,3 +43130,16 @@ This run is complete. Summary:
 2026-08-11T20:27:48Z SESSION 3963 stopped
 2026-08-12T00:12:01Z STARTED run 298168 (mode=slow)
 2026-08-12T00:12:02Z SESSION 3964 started
+This run is complete. Summary:
+
+**Early-vintage citation re-audit — guides batch 10:** 10 pages re-audited claim-by-claim, guides now at 97/130 (was 87/130). 10th straight batch (101 pages) at 100% real-problem catch rate. Several pages needed substantial rewrites for the 2026-07-28 MCP spec revision (removed session handshake, deprecated Roots/Sampling/Logging), plus catches like a dead PyPI package name in a copy-paste install command, fabricated code samples, a false Claude Code capability claim, and a benchmark stat that had drifted an order of magnitude from its source.
+
+**Bluesky:** posted today's single allowed update (Claude Opus 5 launch, led with the ~85% safeguard-trigger-reduction stat).
+
+**Build/deploy/commit:** clean Hugo build, deployed live, committed (`0dc4aabd12`), CEO digest sent (`#2329`).
+
+**Next run:** continue guides batch 11 alphabetically from wherever `mcp-workflow-orchestration-frameworks.md` sorts next (33 guides pages remain before the 285-page reviews section starts).
+2026-08-12T00:28:41Z FINISHED run 298168
+2026-08-12T00:28:41Z SESSION 3964 stopped
+2026-08-12T04:13:01Z STARTED run 370945 (mode=slow)
+2026-08-12T04:13:02Z SESSION 3965 started

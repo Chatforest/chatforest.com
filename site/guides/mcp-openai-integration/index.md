@@ -3,7 +3,7 @@
 > A comprehensive guide to OpenAI's MCP integration — covering the Responses API's hosted MCP tool, the Agents SDK (Python and TypeScript) with MCPServerStdio and
 
 
-When Sam Altman [announced](https://x.com/OpenAIDevs/status/1904957755829481737) in March 2025 that "people love MCP and we are excited to add support across our products," it marked a turning point. The Model Context Protocol — created by Anthropic and open-sourced in late 2024 — went from a single-vendor experiment to an industry standard overnight. OpenAI's adoption meant that the two largest AI labs were now backing the same tool integration protocol.
+When Sam Altman [announced](https://x.com/sama/status/1904957253456941061) on March 26, 2025 that "people love MCP and we are excited to add support across our products," it marked a turning point. The Model Context Protocol — created by Anthropic and open-sourced in late 2024 — went from a single-vendor experiment to an industry standard overnight. OpenAI's adoption meant that the two largest AI labs were now backing the same tool integration protocol.
 
 Since that announcement, OpenAI has woven MCP into every layer of their platform: the **Responses API** for backend integrations, the **Agents SDK** for building autonomous agents, **ChatGPT Developer Mode** for interactive tool use, the **Apps SDK** for building interactive UIs inside ChatGPT, and **Codex** for AI-assisted coding. Each integration point serves a different use case, and understanding which one to use — and how — is essential for developers building on the OpenAI platform.
 
@@ -13,15 +13,17 @@ This guide covers all of OpenAI's MCP integration surfaces with practical code e
 
 Understanding when and how OpenAI adopted MCP helps explain the current state of their integrations:
 
-- **November 2024** — Anthropic open-sources MCP. Most teams, including OpenAI, take a wait-and-see approach.
-- **March 2025** — OpenAI officially adopts MCP. Support lands first in the Agents SDK (immediately available), with the Responses API and ChatGPT desktop support announced as coming soon. OpenAI joins the MCP steering committee.
-- **May 2025** — ChatGPT begins testing MCP integration. Microsoft and GitHub join the MCP steering committee at Build 2025.
-- **June 2025** — The Responses API adds remote MCP server support with the `type: "mcp"` tool configuration.
-- **September 2025** — ChatGPT Developer Mode launches in beta with full MCP support, including write actions. Previously, MCP connectors in ChatGPT were read-only.
-- **November 2025** — ChatGPT Apps (formerly "connectors") become available on all paid plans. The MCP Apps UI standard is proposed.
-- **December 2025** — Anthropic donates MCP to the Agentic AI Foundation (AAIF) under the Linux Foundation. OpenAI is a co-founder alongside Anthropic and Block.
-- **January 2026** — MCP Apps UI standard matures. ChatGPT, Claude, Goose, and VS Code ship support.
-- **March 2026** — OpenAI's Agents SDK TypeScript version ships with full MCP support. Codex adds MCP shortcuts. The steering committee reaches early consensus on making MCP fully stateless, targeting June 2026.
+- **November 2024** — [Anthropic open-sources MCP](https://www.anthropic.com/news/model-context-protocol). Most teams, including OpenAI, take a wait-and-see approach.
+- **March 26, 2025** — [OpenAI officially adopts MCP](https://x.com/sama/status/1904957253456941061), confirmed by [TechCrunch](https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/). Support lands first in the Agents SDK (immediately available), with the Responses API and ChatGPT desktop support announced as coming soon.
+- **May 19, 2025** — [Microsoft and GitHub join the MCP steering committee](https://techcrunch.com/2025/05/19/github-microsoft-embrace-anthropics-spec-for-connecting-ai-models-to-data-sources/) at Microsoft Build 2025.
+- **June 2025** — The Responses API adds remote MCP server support with the `type: "mcp"` tool configuration (see [OpenAI's MCP guide](https://developers.openai.com/api/docs/guides/tools-connectors-mcp)).
+- **September 9, 2025** — [ChatGPT Developer Mode launches in beta](https://developers.openai.com/api/docs/guides/developer-mode) with full MCP client support, including write actions. Previously, MCP connectors in ChatGPT were read-only.
+- **October 6, 2025** — [OpenAI announces the Apps SDK](https://openai.com/index/introducing-apps-in-chatgpt/) at DevDay, extending MCP with UI capabilities; apps preview to Business, Enterprise, and Edu customers on November 13, 2025, and "connectors" are renamed "apps" for Plus, Team, and Enterprise users on December 18, 2025 (per OpenAI's [2025 developer recap](https://developers.openai.com/blog/openai-for-developers-2025)).
+- **November 21, 2025** — Anthropic and OpenAI jointly [propose the MCP Apps UI extension (SEP-1865)](https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/).
+- **December 9, 2025** — [Anthropic donates MCP to the Agentic AI Foundation (AAIF)](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) under the Linux Foundation; OpenAI is a co-founder alongside Anthropic and Block, per [TechCrunch](https://techcrunch.com/2025/12/09/openai-anthropic-and-block-join-new-linux-foundation-effort-to-standardize-the-ai-agent-era/).
+- **January 26, 2026** — [MCP Apps reaches broader client support](https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/): Claude, VS Code, and Goose ship support alongside ChatGPT (also covered by [The Register](https://www.theregister.com/2026/01/26/claude_mcp_apps_arrives/)).
+- **March 2026** — [OpenAI's Agents SDK ships a TypeScript version](https://github.com/openai/openai-agents-js) with MCP support mirroring the Python SDK.
+- **July 28, 2026** — The MCP steering committee finalizes the [2026-07-28 specification revision](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/), making the protocol core stateless: the `initialize`/`initialized` handshake and `Mcp-Session-Id` header are removed, and Roots, Sampling, and Logging are deprecated (SEP-2577). This directly affects OpenAI's stateless-by-design Responses API architecture — see [Stateless MCP](#stateless-mcp) below.
 
 ## The Five Integration Points
 
@@ -133,7 +135,7 @@ response = client.responses.create(
 
 ### Model Support
 
-The MCP tool type works with GPT-4o series, GPT-4.1 series, and o-series reasoning models (o3, o4-mini). See the [OpenAI models documentation](https://platform.openai.com/docs/models) for the current list of models supporting the MCP tool type.
+Per [OpenAI's own MCP documentation](https://developers.openai.com/api/docs/guides/tools-connectors-mcp), the MCP tool "is available in the Responses API in most recent models." We don't list specific model names here because OpenAI has been actively retiring older models throughout 2026 — [GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini were retired from ChatGPT in February 2026](https://openai.com/index/retiring-gpt-4o-and-older-models/), and older GPT-5/o3 snapshots were deprecated in June 2026 for API removal in December 2026 — so check the linked docs for the current list rather than trusting a hardcoded model name in this guide.
 
 ### Limitations
 
@@ -304,11 +306,11 @@ The TypeScript SDK supports the same three server types:
 - **`MCPServerStreamableHttp`** — Direct remote connections
 - **`HostedMCPTool`** — OpenAI-managed remote connections
 
-Both SDKs include built-in tracing for debugging agent workflows, including MCP tool calls.
+Both SDKs include [built-in tracing](https://openai.github.io/openai-agents-python/tracing/) for debugging agent workflows, including MCP tool calls.
 
 ## ChatGPT Developer Mode: Interactive MCP
 
-[ChatGPT Developer Mode](https://help.openai.com/en/articles/12584461-developer-mode-apps-and-full-mcp-connectors-in-chatgpt-beta) launched in September 2025 as a beta feature that turns ChatGPT into a full MCP client with read **and** write capabilities.
+[ChatGPT Developer Mode](https://developers.openai.com/api/docs/guides/developer-mode) launched on September 9, 2025 as a beta feature that turns ChatGPT into a full MCP client with read **and** write capabilities.
 
 ### What Changed
 
@@ -324,7 +326,7 @@ Before Developer Mode, ChatGPT's MCP integrations (called "connectors") were lim
 
 ChatGPT displays an explicit confirmation modal before executing any write or modify operation. Users can expand the tool call details to inspect the full JSON payload, including inputs and expected outputs, before approving.
 
-This is important: the safety model relies on ChatGPT correctly identifying which operations are destructive. As OpenAI's own documentation [acknowledges](https://help.openai.com/en/articles/12584461-developer-mode-apps-and-full-mcp-connectors-in-chatgpt-beta), the AI's reasoning can make mistakes — potentially misclassifying harmful operations as benign. Developer Mode is intended for developers who understand how to safely configure and test their MCP servers.
+This is important: the safety model relies on ChatGPT correctly identifying which operations are destructive. As [OpenAI's own documentation acknowledges](https://developers.openai.com/api/docs/guides/developer-mode), Developer Mode is an "elevated risk" feature — the AI's reasoning can make mistakes, prompt injections from untrusted MCP servers are a live risk, and users should carefully review the tool input sent with any write action rather than approving on trust. Developer Mode is intended for developers who understand how to safely configure and test their MCP servers.
 
 ### What You Can Build
 
@@ -348,11 +350,11 @@ Apps SDK applications have two layers:
 1. **MCP Server** — The backend that exposes tools, just like any MCP server.
 2. **UI Widget** — A web component (HTML/CSS/JS, any framework) that renders inside an iframe in ChatGPT. The widget communicates with ChatGPT via the MCP Apps UI bridge — JSON-RPC messages over `postMessage`.
 
-UI resources are pre-declared in the MCP server manifest. OpenAI reviews assets before publication and uses the declarations for caching.
+UI resources are declared via `_meta.ui.resourceUri` in the server's tool metadata, and [OpenAI's Apps SDK docs](https://developers.openai.com/plugins/build/chatgpt-ui) treat that resource URI as a cache key — a breaking change to the widget's HTML/JS/CSS requires publishing a new URI. Public app submissions also go through [OpenAI's review process](https://developers.openai.com/apps-sdk/app-submission-guidelines), which scans the MCP endpoint's declared tools and metadata for policy compliance before approval.
 
 ### Cross-Client Compatibility
 
-The MCP Apps standard is not ChatGPT-specific. Since the spec was proposed in November 2025, Claude, Goose, and VS Code have also shipped support. An app built with the Apps SDK works across all MCP Apps-compatible clients without client-specific code — a significant advantage for developers building tools that need to work across AI platforms.
+The MCP Apps standard (SEP-1865) is not ChatGPT-specific. Proposed by Anthropic and OpenAI together in [November 2025](https://blog.modelcontextprotocol.io/posts/2025-11-21-mcp-apps/), it [reached broader client support in January 2026](https://blog.modelcontextprotocol.io/posts/2026-01-26-mcp-apps/): Claude, VS Code, and Goose shipped support alongside ChatGPT (also reported by [The Register](https://www.theregister.com/2026/01/26/claude_mcp_apps_arrives/)), and the extension was finalized as an official part of the MCP spec in the [2026-07-28 release](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/). An app built with the Apps SDK works across all MCP Apps-compatible clients without client-specific code — a significant advantage for developers building tools that need to work across AI platforms.
 
 ### When to Use It
 
@@ -370,7 +372,7 @@ For tools that only need text-based input and output, a standard MCP server (wit
 
 ### MCP in Codex
 
-Codex supports MCP servers through both stdio (local) and Streamable HTTP (remote) transports. Recent 2026 updates added MCP shortcuts in the composer — including install keyword suggestions and an MCP server submenu in the "Add context" menu — making it easier to discover and connect to MCP servers.
+Codex supports MCP servers through both stdio (local) and Streamable HTTP (remote) transports, per [OpenAI's Codex MCP documentation](https://learn.chatgpt.com/docs/extend/mcp?surface=cli). You can add a server via Settings → MCP servers in the desktop app and IDE extension, or via the `codex mcp add` command and the `/mcp` command in the terminal UI. MCP configuration is stored in `~/.codex/config.toml`, or scoped to a project via `.codex/config.toml`.
 
 ### Codex + Agents SDK
 
@@ -432,7 +434,7 @@ Security researchers have identified several risk categories specific to OpenAI'
 
 - **Prompt injection via tool responses** — A malicious MCP server can embed instructions in tool responses that manipulate the model's behavior. OpenAI's models have defenses against this, but it remains an active research area.
 - **Unintended data exposure** — The model may send more data to an MCP server than the user intended. For example, if the conversation contains sensitive information and the model decides to include it in a tool call argument.
-- **Malicious MCP servers** — Connecting to untrusted MCP servers exposes your workflow to potential data exfiltration, prompt injection, and destructive actions. OpenAI recommends connecting only to servers hosted by trusted providers (e.g., Stripe's official MCP server at `mcp.stripe.com` rather than a third-party Stripe MCP server).
+- **Malicious MCP servers** — Connecting to untrusted MCP servers exposes your workflow to potential data exfiltration, prompt injection, and destructive actions. Prefer official first-party MCP servers over third-party clones — for example, [Stripe hosts its own remote MCP server at `mcp.stripe.com`](https://docs.stripe.com/mcp), which can move money via refunds and payment links, so authenticity of the endpoint matters.
 - **Write action misclassification** — In ChatGPT Developer Mode, the safety model can make mistakes about which operations are destructive. Always inspect tool call payloads before approving write operations.
 
 For a comprehensive treatment of MCP security risks and mitigations, see our [MCP attack vectors guide](/guides/mcp-attack-vectors-defense/) and [server security guide](/guides/mcp-server-security/).
@@ -440,7 +442,7 @@ For a comprehensive treatment of MCP security risks and mitigations, see our [MC
 ### Recommendations
 
 1. **Start with `require_approval: "always"`** for any MCP server that performs write operations
-2. **Use official first-party MCP servers** when available (e.g., Stripe, Shopify, Twilio host their own servers)
+2. **Use official first-party MCP servers** when available (e.g., [Stripe hosts its own MCP server](https://docs.stripe.com/mcp))
 3. **Audit tool call logs** — Enable tracing in the Agents SDK to monitor what tools are being called and with what arguments
 4. **Keep MCP servers narrowly scoped** — A server that can only read from one database table is less risky than one with full database access
 5. **Use direct connections for sensitive data** — Prefer `MCPServerStreamableHttp` over `HostedMCPTool` when data shouldn't route through OpenAI
@@ -478,11 +480,11 @@ For a comprehensive treatment of MCP security risks and mitigations, see our [MC
 
 ## OpenAI and the Future of MCP
 
-OpenAI is not just adopting MCP — they're actively shaping its future. As a co-founder of the Agentic AI Foundation and a member of the MCP steering committee, OpenAI has influence over the protocol's direction.
+OpenAI is not just adopting MCP — they're actively shaping its future. As a [co-founder of the Agentic AI Foundation](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/) (alongside Anthropic and Block, per [TechCrunch](https://techcrunch.com/2025/12/09/openai-anthropic-and-block-join-new-linux-foundation-effort-to-standardize-the-ai-agent-era/)) and a member of the MCP steering committee, OpenAI has influence over the protocol's direction.
 
 ### Stateless MCP
 
-The steering committee has reached early consensus on making MCP a fully stateless protocol, with the specification change targeted for June 2026. This aligns with OpenAI's Responses API architecture, which is already essentially stateless — each API call is independent. The shift benefits cloud-native deployments and horizontal scaling, both priorities for OpenAI's infrastructure.
+This is no longer a future plan: it shipped. The [2026-07-28 MCP specification revision](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) made the protocol core fully stateless — the `initialize`/`initialized` handshake and the `Mcp-Session-Id` header are gone, so there's no more protocol-level session to pin a client to a specific server instance. The same release deprecates Roots, Sampling, and Logging (SEP-2577; they keep working for at least 12 months under the new deprecation policy) and drops the legacy HTTP+SSE transport (SEP-2596) in favor of Streamable HTTP. This aligns with OpenAI's Responses API architecture, which was already essentially stateless — each API call is independent — and benefits cloud-native deployments and horizontal scaling, both priorities for OpenAI's infrastructure. If you built against the pre-2026-07-28 handshake/session model, MCP server and client code needs updating to the current spec.
 
 ### MCP Apps
 

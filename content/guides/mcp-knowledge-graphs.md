@@ -5,7 +5,7 @@ description: "How to connect AI agents to knowledge graphs via MCP — GraphRAG 
 content_type: "Guide"
 card_description: "Vector search finds similar text. Knowledge graphs find connected facts. Here's how MCP brings graph-powered reasoning to AI agents — and when you need it."
 last_refreshed: 2026-03-28
-sources_audited: 2026-07-24
+sources_audited: 2026-08-12
 ---
 
 Vector databases find text that *sounds* similar to your query. Knowledge graphs find facts that are *structurally connected* to your query. For AI agents that need to reason across relationships — "which team members worked on projects that depend on this service?" or "what drugs interact with this patient's current medications?" — graph structure matters more than embedding similarity.
@@ -36,7 +36,7 @@ A knowledge graph represents information as **entities** (nodes) connected by **
 | **Update granularity** | Re-embed entire chunks | Update individual facts and relationships |
 | **Explainability** | "This chunk was similar" | "Entity A → relates to → Entity B → connects to → Entity C" |
 
-The key insight: knowledge graphs don't replace vector databases — they solve different problems. The [2026 industry consensus](https://ninthpost.com/rag-vs-graph-rag/) is that hybrid approaches (vector search for broad retrieval, graph traversal for relationship reasoning) outperform either alone.
+The key insight: knowledge graphs don't replace vector databases — they solve different problems. A [2026 comparative analysis of RAG vs. GraphRAG approaches](https://ninthpost.com/rag-vs-graph-rag/) concludes hybrid architectures — vector search for broad retrieval, graph traversal for relationship reasoning — are the pragmatic default, with full GraphRAG reserved for specialized, relationship-heavy workloads.
 
 ## GraphRAG vs Vector RAG: When to Use Which
 
@@ -74,9 +74,9 @@ Several MCP servers expose knowledge graph capabilities to AI agents. Here's the
 
 ### Neo4j MCP Servers
 
-[Neo4j](https://neo4j.com/) is the most mature graph database, and its MCP ecosystem is the most comprehensive.
+[Neo4j](https://neo4j.com/) is the [most widely used graph database by DB-Engines' popularity ranking](https://db-engines.com/en/ranking/graph+dbms), and its MCP ecosystem is the most comprehensive of the servers covered here.
 
-**[Official Neo4j MCP Server](https://github.com/neo4j/mcp)** — Production-ready binary supporting all deployment types (Aura, self-managed, Docker, Desktop, Sandbox):
+**[Official Neo4j MCP Server](https://github.com/neo4j/mcp)** — connects to [Aura, Neo4j Desktop, or self-managed instances](https://neo4j.com/docs/mcp/current/), installable via PyPI, Homebrew, or a standalone binary:
 - Schema retrieval — agents discover the graph structure
 - Read/write Cypher execution — full query capabilities
 - Graph algorithm execution via GDS plugin (centrality, path-finding, community detection)
@@ -86,11 +86,12 @@ Several MCP servers expose knowledge graph capabilities to AI agents. Here's the
 
 | Server | Purpose | Key Tools |
 |--------|---------|-----------|
-| **mcp-neo4j-cypher** | LLM-driven database queries | `get-neo4j-schema`, `read-neo4j-cypher`, `write-neo4j-cypher` |
+| **mcp-neo4j-cypher** | LLM-driven database queries | `get_neo4j_schema`, `read_neo4j_cypher`, `write_neo4j_cypher` |
 | **mcp-neo4j-memory** | Knowledge graph as agent memory | Create/delete entities, manage observations, search subgraphs |
-| **mcp-neo4j-data-modeling** | Schema design and validation | Mermaid visualization, Cypher constraint generation, 7 templates |
-| **mcp-neo4j-gds** | Graph algorithms as tools | Centrality, path-finding, community detection |
-| **mcp-neo4j-aura-manager** | Infrastructure management | Instance create/pause/resume/scale, tenant administration |
+| **mcp-neo4j-data-modeling** | Schema design and validation | Mermaid visualization, Cypher constraint generation, 7 example-model templates |
+| **mcp-neo4j-cloud-aura-api** | Aura infrastructure management | Instance create/find/scale, tenant administration |
+
+Graph algorithm execution (centrality, path-finding, community detection via the GDS plugin) lives in the [official Neo4j MCP server](https://github.com/neo4j/mcp) described above (`list-gds-procedures`), not as a separate Neo4j Labs package — the [neo4j-contrib/mcp-neo4j repo](https://github.com/neo4j-contrib/mcp-neo4j) currently ships four servers, listed above.
 
 The memory server is particularly interesting for agent architectures — it stores conversational context as a knowledge graph rather than flat text, enabling agents to recall structured relationships from prior interactions.
 
@@ -118,12 +119,12 @@ Setup via Docker:
 ```bash
 git clone https://github.com/getzep/graphiti
 cd graphiti/mcp_server
-docker-compose up
+docker compose up
 ```
 
 ### PuppyGraph MCP Server
 
-[PuppyGraph](https://www.puppygraph.com/) provides a graph query layer over existing data stores without requiring data migration. Its [MCP server](https://lobehub.com/mcp/puppygraph-puppygraph-mcp-server) supports both Gremlin and Cypher queries through Claude, connecting via Neo4j Bolt protocol (Cypher) or WebSocket (Gremlin). Useful for organizations that want graph capabilities over existing relational or lake data.
+[PuppyGraph](https://www.puppygraph.com/) provides a graph query layer over existing data stores without requiring data migration. Its [official MCP server](https://github.com/puppygraph/puppygraph-mcp-server) supports both Gremlin and Cypher queries through Claude, connecting via Neo4j Bolt protocol (Cypher) or WebSocket (Gremlin). Useful for organizations that want graph capabilities over existing relational or lake data.
 
 ### Comparison
 
@@ -150,7 +151,7 @@ User Question → Agent → [MCP] → Graph DB → Cypher results → Agent → 
 **How it works:** The agent uses the schema tool to understand available node types and relationships, constructs Cypher queries based on the user's question, and interprets results. The MCP server handles connection management and query execution.
 
 **Example flow:**
-1. Agent calls `get-neo4j-schema` — learns the graph has `Person`, `Company`, `Project` nodes with `WORKS_AT`, `CONTRIBUTES_TO` relationships
+1. Agent calls `get_neo4j_schema` — learns the graph has `Person`, `Company`, `Project` nodes with `WORKS_AT`, `CONTRIBUTES_TO` relationships
 2. User asks: "Who at Company X has worked on projects related to authentication?"
 3. Agent constructs: `MATCH (p:Person)-[:WORKS_AT]->(c:Company {name: 'Company X'}), (p)-[:CONTRIBUTES_TO]->(proj:Project) WHERE proj.tags CONTAINS 'authentication' RETURN p.name, proj.name`
 4. Agent returns structured results with the relationship path

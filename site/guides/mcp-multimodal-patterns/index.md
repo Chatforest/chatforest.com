@@ -3,15 +3,17 @@
 > A comprehensive guide to multimodal content in MCP — covering ImageContent, AudioContent, EmbeddedResource content types, image generation servers (DALL-E, Stable Diffusion
 
 
-AI agents are no longer text-only. The [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18/schema) now defines five content types — TextContent, ImageContent, AudioContent, EmbeddedResource, and ResourceLink — enabling agents to receive screenshots, generate images, transcribe audio, analyze video, and work with binary files through standardized tool interfaces. This shift from text-only to multimodal is one of the most significant changes in the MCP ecosystem in 2026.
+AI agents are no longer text-only. The [MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/schema) defines five content types — TextContent, ImageContent, AudioContent, EmbeddedResource, and ResourceLink — enabling agents to receive screenshots, generate images, transcribe audio, analyze video, and work with binary files through standardized tool interfaces. This shift from text-only to multimodal is one of the most significant changes in the MCP ecosystem in 2026.
 
 The practical impact is concrete. An agent debugging a UI issue can receive a screenshot through an MCP tool, analyze the layout, and suggest CSS fixes. A content creation agent can generate images with DALL-E, produce voiceovers with ElevenLabs, and analyze video footage with TwelveLabs — all through MCP tool calls. A data analysis agent can return charts as images alongside tabular results.
 
-But multimodal MCP introduces challenges that text-based tools don't face: base64 encoding inflates payload sizes, large media files can overwhelm context windows, and not all MCP clients support all content types. This guide covers the specification, the server ecosystem, practical implementation patterns, and the gotchas. Our analysis draws on the [official MCP specification](https://modelcontextprotocol.io/specification/2025-06-18/schema), published documentation, and community implementations — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+But multimodal MCP introduces challenges that text-based tools don't face: base64 encoding inflates payload sizes, large media files can overwhelm context windows, and not all MCP clients support all content types. This guide covers the specification, the server ecosystem, practical implementation patterns, and the gotchas. Our analysis draws on the [official MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/schema), published documentation, and community implementations — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
+
+**Spec update (2026-07-28):** the schema version this guide originally cited (2025-06-18) has since been superseded. The [current specification](https://modelcontextprotocol.io/specification/2026-07-28/schema) removed the `initialize` handshake and protocol-level sessions in favor of a fully stateless, per-request model, and marked Roots, Sampling, and Logging as deprecated (advisory-only, no wire changes yet) per [SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577). None of that affects the content-type mechanics below — the same five types are still members of the `ContentBlock` union in the current schema — but the version links throughout this page now point to 2026-07-28.
 
 ## MCP Content Types: The Foundation
 
-The [June 2025 MCP specification (2025-06-18)](https://modelcontextprotocol.io/specification/2025-06-18/schema) defines content types that tools can return in their `CallToolResult`. All five content types below are members of the [`ContentBlock` union type](https://modelcontextprotocol.io/specification/2025-06-18/schema) in the schema. Understanding these types is essential for building and consuming multimodal MCP servers.
+The [current MCP specification](https://modelcontextprotocol.io/specification/2026-07-28/schema) defines content types that tools can return in their `CallToolResult`. All five content types below are members of the [`ContentBlock` union type](https://modelcontextprotocol.io/specification/2026-07-28/schema) in the schema. Understanding these types is essential for building and consuming multimodal MCP servers.
 
 ### TextContent
 
@@ -92,7 +94,7 @@ All content types support optional annotations that provide metadata:
 
 - **`audience`** — who the content is intended for: `["user"]`, `["assistant"]`, or both
 - **`priority`** — a float from 0.0 to 1.0 indicating relative importance
-- **`timestamp`** — ISO 8601 timestamp for when the content was created or modified
+- **`lastModified`** — ISO 8601 timestamp for when the content was last modified (the field is named `lastModified` in the [schema](https://modelcontextprotocol.io/specification/2026-07-28/schema), not `timestamp`)
 
 Annotations help clients make rendering decisions — for instance, an image annotated with `audience: ["user"]` might be displayed in the UI but not sent to the LLM to save tokens.
 
@@ -106,23 +108,19 @@ These servers enable AI agents to create images from text prompts, edit existing
 
 Multiple community servers wrap OpenAI's DALL-E API for MCP access. They typically expose tools like `generate_image` (text-to-image), `edit_image` (inpainting with masks), and `create_variation`. The returned ImageContent is base64-encoded PNG or JPEG.
 
-Key implementations include [image-generator-mcp-server](https://github.com/sammyl720/image-generator-mcp-server) by sammyl720 (11 stars) and [imagegen-mcp](https://github.com/spartanz51/imagegen-mcp) by spartanz51 (33 stars), both providing text-to-image and image-to-image capabilities through MCP tool interfaces. These connect directly to the OpenAI API, requiring an API key configured in the server environment.
+Key implementations include [image-generator-mcp-server](https://github.com/sammyl720/image-generator-mcp-server) by sammyl720 (11 stars) — a single-tool `generate_image` wrapper around DALL-E 3 — and [imagegen-mcp](https://github.com/spartanz51/imagegen-mcp) by spartanz51 (38 stars), which wraps OpenAI's image generation and editing APIs (DALL-E 2/3, gpt-image-1). These connect directly to the OpenAI API, requiring an API key configured in the server environment.
 
 #### Stable Diffusion / Flux MCP Servers
 
 For local or self-hosted image generation:
 
-- **image-gen-mcp** ([GitHub](https://github.com/Ichigo3766/image-gen-mcp), 34 stars) — connects to Stable Diffusion WebUI (AUTOMATIC1111 or ForgeUI) running locally, exposing text-to-image generation through MCP
-- **Stability AI MCP Server** ([GitHub](https://github.com/tadasant/mcp-server-stability-ai), 83 stars) — integrates with the Stability AI API for generation, editing, upscaling, and style transfer
+- **image-gen-mcp** ([GitHub](https://github.com/Ichigo3766/image-gen-mcp), 43 stars) — connects to Stable Diffusion WebUI (AUTOMATIC1111 or ForgeUI) running locally, exposing text-to-image generation through MCP
+- **Stability AI MCP Server** ([GitHub](https://github.com/tadasant/mcp-server-stability-ai), 84 stars) — integrates with the Stability AI API for generation, editing (search-and-replace, background removal, outpainting), upscaling (fast 4x and creative 4K), and style transfer
 - **Flux-based servers** — several implementations use Replicate's Flux models for high-quality generation without local GPU requirements
 
-#### MCPollinations
+#### MCPollinations (archived)
 
-[MCPollinations](https://github.com/pinkpixel-dev/MCPollinations) (40 stars) provides a unified multimodal server covering image generation (via Pollinations API), text generation, and audio generation — all without requiring API keys or authentication. This makes it one of the most accessible multimodal MCP servers for experimentation.
-
-#### ImgMCP
-
-A commercial MCP server focused on image manipulation: resizing, cropping, format conversion, OCR text extraction, and object detection. Returns processed images as ImageContent blocks.
+[MCPollinations](https://github.com/pinkpixel-dev/MCPollinations) previously provided a unified multimodal server covering image generation (via the Pollinations API), text generation, and audio generation — all without requiring API keys — making it one of the most accessible multimodal MCP servers for experimentation. **As of July 12, 2026 the repo is archived by its maintainer**, who states in the README that it "no longer works with Pollinations['s] newer API" and points users to a successor, [Nectar-MCP](https://github.com/pinkpixel-dev/nectar-mcp), which covers image generation/editing and video generation but — unlike MCPollinations — requires a `POLLINATIONS_API_KEY` and does not include an audio-generation tool. Treat MCPollinations as a historical reference, not a current recommendation.
 
 ### Video Intelligence Servers
 
@@ -142,13 +140,13 @@ The [TwelveLabs MCP Server](https://www.twelvelabs.io/blog/twelve-labs-mcp-serve
 - **Generate summaries** — produce text descriptions of video content
 - **Analyze scenes** — identify objects, actions, and context within video segments
 
-TwelveLabs uses video-native models rather than frame-by-frame image analysis, understanding temporal relationships and narrative flow. When combined with video generation tools (like the Sora 2 MCP server), agents can both create and analyze video content.
+TwelveLabs uses video-native models rather than frame-by-frame image analysis, understanding temporal relationships and narrative flow. When combined with video generation tools — several community MCP servers wrap OpenAI's Sora video model, such as [sora-mcp](https://github.com/Doriandarko/sora-mcp) (209 stars) — agents can both create and analyze video content.
 
 The server works with Claude Desktop, Cursor, Windsurf, and custom MCP clients. It processes video asynchronously — indexing can take minutes for long videos — making it a good fit for the [MCP async tasks pattern](/guides/mcp-async-tasks-long-running/).
 
 #### MMAudio MCP
 
-An AI-powered server for video-to-audio and text-to-audio generation. Given a video file, it generates matching audio — useful for adding soundtracks or sound effects to video content.
+[MMAudio MCP](https://github.com/mmaudio/mmaudio-mcp) is a Desktop Extension implementing MCP for video-to-audio and text-to-audio generation — given a video file (via its `video_to_audio` tool) or a text prompt (via `text_to_audio`), it generates matching audio, useful for adding soundtracks or sound effects to video content.
 
 ### Audio and Speech Servers
 
@@ -171,17 +169,17 @@ The [official ElevenLabs MCP server](https://elevenlabs.io/blog/introducing-elev
 - **Speech-to-speech** — voice conversion between different voices
 - **Conversational AI agents** — create, manage, and deploy outbound voice calling agents via [Twilio/SIP integration](https://github.com/elevenlabs/elevenlabs-mcp)
 
-The server exposes [24 tools](https://github.com/elevenlabs/elevenlabs-mcp) in total, returning AudioContent blocks with generated speech and TextContent blocks with transcription results.
+The [GitHub README](https://github.com/elevenlabs/elevenlabs-mcp) does not publish an exact tool count; the server returns AudioContent blocks with generated speech and TextContent blocks with transcription results.
 
 #### Azure Speech MCP Server
 
-Part of the [Azure MCP Server](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/tools/ai-services-speech) collection (page last updated March 2026). Provides two core tools — Speech-to-Text (Recognize) and Text-to-Speech (Synthesize) — through Azure AI Services, supporting multiple audio formats (WAV, MP3, OPUS/OGG, FLAC) and custom voice models.
+Part of the [Azure MCP Server](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/tools/ai-services-speech) collection (Microsoft's docs metadata shows the page was last updated July 2026). Provides two core tools — Speech-to-Text (Recognize) and Text-to-Speech (Synthesize) — through Azure AI Services, supporting multiple audio formats (WAV, MP3, OPUS/OGG, FLAC, and others) and custom voice models.
 
 #### Whisper-Based Servers
 
 Several community servers wrap OpenAI's Whisper model (or the open-source whisper.cpp) for local speech-to-text:
 
-- **[Local Speech-to-Text](https://github.com/SmartLittleApps/local-stt-mcp)** by SmartLittleApps (12 stars) — uses whisper.cpp for fully offline transcription, optimized for Apple Silicon, with speaker diarization and multiple output formats (txt, json, vtt, srt, csv)
+- **[Local Speech-to-Text](https://github.com/SmartLittleApps/local-stt-mcp)** by SmartLittleApps (18 stars) — uses whisper.cpp for fully offline transcription, optimized for Apple Silicon, with speaker diarization and multiple output formats (txt, json, vtt, srt, csv)
 - **Speech Interface (Faster Whisper)** — optimized for speed with CTranslate2 backend
 - **Audio MCP Server** by GongRzhe — combined recording, transcription, and playback (**note:** [archived March 2026](https://github.com/GongRzhe/Audio-MCP-Server), now read-only)
 
@@ -191,35 +189,33 @@ These are particularly valuable for privacy-sensitive applications since audio n
 
 Lightweight TTS servers include:
 
-- **mcp-tts** — community server providing a unified MCP interface to multiple TTS backends
-- **play-sound-mcp-server** — simple audio playback for notification sounds when tasks complete
-- **Epidemic Sound MCP** — searches and retrieves music from the Epidemic Sound catalog for content creation
+- **[play-sound-mcp-server](https://github.com/davidteren/play-sound-mcp-server)** by davidteren — simple audio playback for notification sounds when tasks complete
+
+Beyond dedicated TTS wrappers, several MCP servers bundle other companies' catalogs (e.g., stock-music licensing APIs) behind MCP tools; we could not confirm a stable, well-sourced example at review time, so we're not naming one here.
 
 ### Screenshot and Screen Capture Servers
 
 Screenshot servers bridge the gap between visual interfaces and text-based agents:
 
-- **ScreenshotOne MCP** — captures website screenshots through the ScreenshotOne API, returning images as base64-encoded ImageContent
+- **[ScreenshotOne MCP](https://github.com/screenshotone/mcp)** — the ScreenshotOne team's own server, capturing website screenshots through the ScreenshotOne API and returning images as base64-encoded ImageContent
 - **Playwright MCP** ([GitHub](https://github.com/microsoft/playwright-mcp)) — Microsoft's browser automation server captures page screenshots as part of its tool suite (covered in detail in our [MCP for Testing/QA guide](/guides/mcp-testing-qa/))
-- **BrowserTools MCP** ([GitHub](https://github.com/AgentDeskAI/browser-tools-mcp), 7,186 stars) — captured browser screenshots and console logs (**discontinued:** the README states ["THIS PROJECT IS NO LONGER ACTIVE"](https://github.com/AgentDeskAI/browser-tools-mcp) as of March 2026; no code updates since March 2025)
+- **BrowserTools MCP** ([GitHub](https://github.com/AgentDeskAI/browser-tools-mcp), ~7,300 stars) — captures browser screenshots and console logs. The project went quiet for a stretch, but as of August 2026 it's active again: a [v2.0.0 release](https://github.com/AgentDeskAI/browser-tools-mcp/releases) rewrote the architecture specifically to fix a critical (CVSS 9.8) remote-code-execution flaw in versions before 2.0.0 — documented in [security advisory GHSA-xvrv-w8pg-f25f](https://github.com/AgentDeskAI/browser-tools-mcp/security/advisories/GHSA-xvrv-w8pg-f25f) — where an unauthenticated, all-interfaces WebSocket server let any visited web page or same-network host execute arbitrary commands as the user. If you're running a pre-2.0 version, upgrade immediately; the old releases were deprecated on npm.
 
 ### OCR and Document Processing
 
 Servers that extract text from images and documents:
 
-- **Image Reader MCP** — lists local image files and reads their content for LLM analysis
-- **Mistral OCR servers** — leverage Mistral's vision models for document understanding
-- **ModelScope-based servers** — Rust implementations providing OCR, object detection, and image analysis through ModelScope APIs
+- **[Image Reader MCP](https://github.com/2797565800/mimo-image-reader-mcp)** — lists local image files and reads their content for LLM analysis (one of several community implementations of this pattern)
+- **[Mistral OCR MCP](https://github.com/everaldo/mcp-mistral-ocr)** — wraps Mistral's OCR API for document understanding through MCP tool calls
 
 ### Image Generation Comparison
 
 | Server | Provider | Generation | Editing | Local | Auth Required |
 |--------|----------|-----------|---------|-------|--------------|
-| DALL-E MCP | OpenAI | Yes | Yes | No | Yes (API key) |
+| DALL-E MCP | OpenAI | Yes | Varies by implementation | No | Yes (API key) |
 | Stability AI MCP | Stability AI | Yes | Yes | No | Yes (API key) |
 | image-gen-mcp | SD WebUI | Yes | No | Yes | No |
-| MCPollinations | Pollinations | Yes | No | No | No |
-| ImgMCP | ImgMCP | No | Yes | No | Yes |
+| MCPollinations (archived) | Pollinations | Was Yes | No | No | Was No |
 
 ### Audio/Speech Server Comparison
 
@@ -228,8 +224,7 @@ Servers that extract text from images and documents:
 | ElevenLabs MCP | ElevenLabs | Yes | Yes | Yes | No | Yes |
 | Azure Speech MCP | Microsoft | Yes | Yes | Yes | No | Yes |
 | Whisper servers | Community | No | Yes | No | Yes | No |
-| mcp-tts | Community | Yes | No | No | Partial | Varies |
-| MCPollinations | Pollinations | Yes | No | No | No | No |
+| MCPollinations (archived) | Pollinations | Was Yes | No | No | Was No |
 
 ## Implementation Patterns
 
@@ -389,12 +384,12 @@ This pattern avoids sending image bytes through the MCP pipeline entirely. The t
 
 ### Pattern 3: Chunked Processing for Large Files
 
-The [Large File MCP server](https://github.com/willianpinho/large-file-mcp) (10 stars, actively maintained) demonstrates intelligent chunking for files that can't be loaded into memory at once:
+The [Large File MCP server](https://github.com/willianpinho/large-file-mcp) (19 stars, actively maintained) demonstrates intelligent chunking for files that can't be loaded into memory at once:
 
 - **Smart chunking** — automatically determines optimal chunk size based on file type
 - **Memory-efficient streaming** — processes files line-by-line without loading the entire file
-- **LRU caching** — 80–90% hit rates for frequently accessed file sections
-- **Seek-based access** — tools like `read_chunk(file, offset, length)` let agents request specific portions
+- **LRU caching** — the README is explicit that hit rate "depends entirely on your access pattern," so there's no universal number; on the project's own documented benchmark workload it currently measures 95%
+- **Seek-based access** — tools like `read_large_file_chunk(file, chunkIndex)` and `stream_large_file(file, startOffset)` let agents request specific portions
 
 For media files specifically, the pattern adapts:
 
@@ -490,6 +485,8 @@ An agent evaluating website accessibility:
 Not all MCP clients support all content types equally. This is one of the biggest practical challenges with multimodal MCP.
 
 ### Current Client Support
+
+We research and analyze MCP clients rather than deploying and testing them ourselves (see disclosure above), so treat the table below as a directional synthesis of public client documentation and issue trackers, not a hands-on benchmark. Client support for multimodal content changes quickly — the Gemini CLI example right after this table is a case in point — so verify current behavior against the client's own docs or changelog before relying on it.
 
 | Client | TextContent | ImageContent | AudioContent | EmbeddedResource |
 |--------|------------|-------------|-------------|-----------------|
@@ -605,9 +602,9 @@ If you want to add image support to an existing MCP server:
 
 For text-to-speech or transcription:
 
-1. Start with MCPollinations for zero-auth experimentation
-2. Move to ElevenLabs MCP for production-quality TTS
-3. Use Whisper-based servers for local, private transcription
+1. Use [ElevenLabs MCP](https://github.com/elevenlabs/elevenlabs-mcp) for production-quality TTS (API key required)
+2. Use Whisper-based servers, like [local-stt-mcp](https://github.com/SmartLittleApps/local-stt-mcp), for local, private, zero-auth transcription
+3. For zero-auth audio *generation* specifically, we don't currently have a well-sourced recommendation — [MCPollinations](https://github.com/pinkpixel-dev/MCPollinations), the previous zero-auth option, was archived in July 2026 and its successor requires an API key
 
 ### Production Considerations
 

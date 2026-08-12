@@ -5,7 +5,7 @@
 
 GraphQL and MCP are converging. Both protocols share a core philosophy: let the client ask for exactly what it needs, and nothing more. For AI agents that consume tokens with every API response, this precision matters. A REST endpoint that returns 50 fields when you need 3 wastes context window space. A GraphQL query that requests only those 3 fields keeps the agent focused and the token bill low.
 
-The ecosystem has responded quickly. Apollo launched an official MCP server. Microsoft built GraphQL MCP integration into Fabric. Agoda open-sourced APIAgent, which converts any GraphQL or REST API into an MCP server with zero code. Community implementations like mcp-graphql (375+ stars) and gqai provide lightweight alternatives. And WunderGraph is positioning its MCP Gateway as the enterprise-grade bridge between AI models and GraphQL APIs.
+The ecosystem has responded quickly. Apollo launched an official MCP server. Microsoft built GraphQL MCP integration into Fabric. Agoda open-sourced APIAgent, which converts any GraphQL or REST API into an MCP server with zero code. Community implementations like mcp-graphql (400+ stars) and gqai provide lightweight alternatives. And WunderGraph is positioning its MCP Gateway as the enterprise-grade bridge between AI models and GraphQL APIs.
 
 But "GraphQL + MCP" isn't automatically better than "REST + MCP." The advantages are real but situational. This guide covers what's available, how the integration works, where GraphQL genuinely helps AI agents, and where it adds unnecessary complexity. Our analysis draws on published documentation, GitHub repositories, and vendor materials — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -36,12 +36,12 @@ GraphQL isn't a universal upgrade for MCP:
 
 | Detail | Value |
 |--------|-------|
-| Stars | 276 |
+| Stars | 301 |
 | Language | Rust |
-| License | MIT / ELv2 |
-| Commits | 1,592 |
-| Contributors | 42 |
-| Releases | 62 |
+| License | MIT |
+| Commits | 1,685+ |
+| Contributors | 45 |
+| Releases | 68 |
 
 [Apollo MCP Server](https://github.com/apollographql/apollo-mcp-server) is the most actively developed GraphQL MCP server. Built by Apollo GraphQL — the company behind the most widely-used GraphQL platform — it exposes GraphQL operations as MCP tools that AI models can discover and invoke.
 
@@ -53,7 +53,7 @@ GraphQL isn't a universal upgrade for MCP:
 
 The persisted query approach is significant for production use. Instead of letting an AI agent construct arbitrary GraphQL queries against your schema, you define a curated set of operations and the agent can only call those. This is Apollo's answer to the "AI agents shouldn't have unlimited API access" problem.
 
-**Key differentiator:** Apollo MCP Server works with any GraphQL endpoint, but it's especially powerful with Apollo's platform features — [Apollo Connectors](https://www.apollographql.com/docs/graphos/schema-design/connectors) can expose REST APIs through a GraphQL layer, meaning you can use a single MCP server to access both GraphQL and REST services through a unified schema.
+**Key differentiator:** Apollo MCP Server works with any GraphQL endpoint, but it's especially powerful with Apollo's platform features — [Apollo Connectors](https://www.apollographql.com/docs/graphos/connectors) can expose REST APIs through a GraphQL layer, meaning you can use a single MCP server to access both GraphQL and REST services through a unified schema.
 
 **Deployment:** Run locally via Apollo's Rover CLI or deploy as a containerized service.
 
@@ -61,10 +61,10 @@ The persisted query approach is significant for production use. Instead of letti
 
 | Detail | Value |
 |--------|-------|
-| Stars | 375 |
+| Stars | 407 |
 | Language | TypeScript |
 | License | MIT |
-| Forks | 59 |
+| Forks | 61 |
 | Contributors | 7 |
 
 [mcp-graphql](https://github.com/blurrah/mcp-graphql) is the most popular community GraphQL MCP server. It takes a simpler, more open-ended approach than Apollo's server.
@@ -104,7 +104,7 @@ WunderGraph's approach sits between Apollo (curated operations) and mcp-graphql 
 
 | Detail | Value |
 |--------|-------|
-| Stars | 266 |
+| Stars | 284 |
 | Language | Python |
 | License | MIT |
 | Approach | Universal proxy (GraphQL + REST) |
@@ -118,17 +118,13 @@ WunderGraph's approach sits between Apollo (curated operations) and mcp-graphql 
 - OpenAI Agents SDK for LLM reasoning (requires `OPENAI_API_KEY`)
 - DuckDB for in-memory SQL processing
 
-**Two tools per API:**
-- `{prefix}_query` — natural language to results (LLM generates the query)
-- `{prefix}_execute` — direct GraphQL/REST execution
-
-**Recipe caching:** Successful queries become cached pipelines that can be reused without LLM reasoning, reducing latency and cost on repeated queries.
+**Core tool, plus learned recipes:** each API exposes a single `{prefix}_query` tool that takes a natural-language question; the agent plans and executes the underlying GraphQL/REST calls itself, using an internal `search_schema` tool to grep the introspected schema when needed. As it succeeds, it caches recipes and exposes them as additional `r_{slug}` tools that can be called directly and bypass LLM reasoning on repeat calls, per [the project's README](https://github.com/agoda-com/api-agent#mcp-tools).
 
 **Trade-off:** Requires an OpenAI API key for the reasoning layer, which means it depends on an external LLM service even when used with non-OpenAI clients. It's also read-only by default — mutations require explicit allowlisting.
 
 ### gqai
 
-[gqai](https://github.com/fotoetienne/gqai) (22 stars) is a lightweight Go tool that converts GraphQL operations into MCP tools. Unlike the schema introspection approach, gqai requires you to write `.graphql` operation files and configure them in a `.graphqlrc.yml` file. Each operation becomes an MCP tool with parameters extracted from GraphQL variables.
+[gqai](https://github.com/fotoetienne/gqai) (23 stars) is a lightweight Go tool that converts GraphQL operations into MCP tools. Unlike the schema introspection approach, gqai requires you to write `.graphql` operation files and configure them in a `.graphqlrc.yml` file. Each operation becomes an MCP tool with parameters extracted from GraphQL variables.
 
 This is the most controlled approach — the AI agent can only execute operations you've explicitly defined. But it requires manual setup and doesn't support dynamic schema discovery.
 
@@ -136,17 +132,17 @@ This is the most controlled approach — the AI agent can only execute operation
 
 Microsoft built GraphQL MCP integration directly into [Fabric API for GraphQL](https://learn.microsoft.com/en-us/fabric/data-engineering/api-graphql-local-model-context-protocol). This lets AI agents like GitHub Copilot and Claude query Fabric data warehouses and lakehouses through natural language via a local MCP server.
 
-This is less a general-purpose GraphQL MCP server and more a specific integration for the Microsoft data platform. But it demonstrates how enterprise platforms are using GraphQL as the interface layer between AI agents and complex data systems. With Fabric IQ's business ontology now accessible via MCP, any AI agent — not just Microsoft's — can query enterprise data through GraphQL.
+This is less a general-purpose GraphQL MCP server and more a specific integration for the Microsoft data platform. But it demonstrates how enterprise platforms are using GraphQL as the interface layer between AI agents and complex data systems.
 
 ## Server Comparison
 
 | Server | Stars | Language | Approach | Mutations | Auth | Best For |
 |--------|-------|----------|----------|-----------|------|----------|
-| Apollo MCP Server | 276 | Rust | Curated operations | Via operations | Headers, Apollo platform | Enterprise, governed access |
-| mcp-graphql | 375 | TypeScript | Full schema access | Opt-in | Custom headers | Quick setup, exploration |
+| Apollo MCP Server | 301 | Rust | Curated operations | Via operations | Headers, Apollo platform | Enterprise, governed access |
+| mcp-graphql | 407 | TypeScript | Full schema access | Opt-in | Custom headers | Quick setup, exploration |
 | WunderGraph | — | — | Governed gateway | Via approved ops | Platform auth, SOC 2 | Enterprise compliance |
-| Agoda APIAgent | 266 | Python | Universal proxy | Opt-in | Headers | Multi-API, REST + GraphQL |
-| gqai | 22 | Go | Operation files | Via defined ops | Headers, env vars | Strict control, simple setup |
+| Agoda APIAgent | 284 | Python | Universal proxy | Opt-in | Headers | Multi-API, REST + GraphQL |
+| gqai | 23 | Go | Operation files | Via defined ops | Headers, env vars | Strict control, simple setup |
 | Fabric GraphQL | — | Python | Data platform | Read-only | Azure AD | Microsoft data stack |
 
 ## Token Efficiency: The Core Advantage
@@ -265,7 +261,7 @@ AI Agent → MCP Client → APIAgent → [GraphQL API, REST API, ...] → DuckDB
 
 ### Pattern 4: Schema-as-Orchestration (Apollo's Vision)
 
-Apollo argues that GraphQL should serve as an orchestration layer where GraphQL operations define MCP tools that orchestrate multiple backend API calls. This is the "future of MCP is GraphQL" thesis — instead of building individual MCP servers for each API, you define a unified GraphQL schema that composes all your services, and the MCP server exposes operations against that schema.
+Apollo argues that GraphQL should serve as an orchestration layer where GraphQL operations define MCP tools that orchestrate multiple backend API calls. This is the ["future of MCP is GraphQL"](https://www.apollographql.com/blog/the-future-of-mcp-is-graphql) thesis — instead of building individual MCP servers for each API, you define a unified GraphQL schema that composes all your services, and the MCP server exposes operations against that schema.
 
 ```
 AI Agent → MCP Client → Apollo MCP Server → Apollo Router → [REST via Connectors, GraphQL services, databases]
@@ -384,7 +380,7 @@ Configure your APIs via MCP headers specifying the target URL and API type.
 
 ## What's Next for GraphQL + MCP
 
-The convergence is accelerating. Apollo has published extensively about GraphQL as the orchestration layer for AI agent tooling. Microsoft is integrating GraphQL MCP into its data platform. The Linux Foundation (which now stewards MCP) may standardize patterns that formalize the relationship.
+The convergence is accelerating. Apollo has published extensively about GraphQL as the orchestration layer for AI agent tooling. Microsoft is integrating GraphQL MCP into its data platform. The [Linux Foundation's Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) (which now stewards MCP, after Anthropic donated the protocol to it) may standardize patterns that formalize the relationship.
 
 Key trends to watch:
 

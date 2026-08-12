@@ -3,9 +3,9 @@
 > A comprehensive guide to Anthropic's MCP ecosystem — covering Claude Desktop's local servers and MCPB extensions, Claude Code's CLI-native MCP integration, the Claude API's MCP
 
 
-Anthropic didn't just adopt MCP — they created it. The Model Context Protocol started as an internal Anthropic project, was [open-sourced in November 2024](https://www.anthropic.com/news/model-context-protocol), and has since grown into an industry standard with 97 million monthly SDK downloads and adoption by every major AI platform. In December 2025, Anthropic [donated MCP](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) to the Agentic AI Foundation under the Linux Foundation, establishing open governance while remaining a platinum member and core maintainer.
+Anthropic didn't just adopt MCP — they created it. The Model Context Protocol started as an internal Anthropic project, was [open-sourced in November 2024](https://www.anthropic.com/news/model-context-protocol), and grew into an industry standard — Anthropic [reported over 97 million monthly SDK downloads](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) across the Python and TypeScript SDKs as of December 2025; by the [July 2026 spec revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/), the protocol's own maintainers put that figure at "close to half-a-billion downloads a month." In December 2025, Anthropic [donated MCP](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) to the Agentic AI Foundation under the Linux Foundation, establishing open governance while remaining a platinum member and core maintainer.
 
-Because MCP originated at Anthropic, Claude products have the deepest and most mature MCP integration of any AI platform. Claude Desktop was the first consumer AI product to support MCP servers. Claude Code treats MCP as a first-class extension mechanism. The Claude API now offers a native MCP Connector that handles server discovery and tool invocation without requiring developers to build their own MCP client. And Claude.ai's web interface exposes MCP through the Connectors feature, bringing tool integration to the browser.
+Because MCP originated at Anthropic, Claude products have among the deepest MCP integrations of any AI platform. Claude Desktop shipped with [local MCP server support on the day MCP itself launched](https://www.anthropic.com/news/model-context-protocol), November 25, 2024 — making it the first consumer AI product to support MCP servers, since no other product could have supported the protocol before it existed. Claude Code treats MCP as a first-class extension mechanism. The Claude API now offers a native MCP Connector that handles server discovery and tool invocation without requiring developers to build their own MCP client. And Claude.ai's web interface exposes MCP through the Connectors feature, bringing tool integration to the browser.
 
 This guide covers every MCP integration surface across Anthropic's products with configuration examples, SDK details, and architectural guidance. Our analysis draws on [Anthropic's official documentation](https://docs.anthropic.com), the [MCP specification](https://modelcontextprotocol.io), SDK source code, community reports, and published research — we research and analyze rather than deploying these systems ourselves. [Rob Nugen](https://robnugen.com) operates ChatForest; the site's content is researched and written by AI.
 
@@ -20,9 +20,11 @@ Understanding Anthropic's MCP journey helps explain why their integration is the
 - **September 2025** — The [official MCP Registry launches in preview](https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/). MCPB format replaces DXT (legacy files continue to work).
 - **November 2025** — The MCP specification's [third major revision](https://blog.modelcontextprotocol.io/posts/2025-11-25-first-mcp-anniversary/) lands, introducing Client ID Metadata Documents and mandatory PKCE S256 for [OAuth 2.1](https://modelcontextprotocol.io/specification/2025-11-25/changelog).
 - **December 2025** — Anthropic [donates MCP to the Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) (AAIF) under the Linux Foundation. OpenAI and Block are [co-founders](https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/).
-- **January 2026** — Claude.ai web interface [launches pre-built Connectors](https://www.anthropic.com/news/integrations) with 50+ integrations. [Interactive apps](https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/) arrive for Slack, Figma, and more.
-- **February 2026** — Claude API [MCP Connector enters public beta](https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector) (`mcp-client-2025-11-20`). Free and paid plan users get Connectors access.
-- **March 2026** — TypeScript SDK reaches [v1.28.0](https://github.com/modelcontextprotocol/typescript-sdk/releases) with 36,000+ dependent packages. The [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) is published.
+- **January 2026** — Anthropic [launches Interactive Claude Apps](https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/), rendering live interfaces for Slack, Canva, Figma, Box, and Clay directly inside conversations, on top of the Integrations/Connectors feature ([launched May 2025](https://www.anthropic.com/news/integrations) with an initial 10 services).
+- **February 2026** — Claude API [MCP Connector enters public beta](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector) (`mcp-client-2025-11-20`). Free and paid plan users get Connectors access. It remains in beta as of this writing.
+- **March 2026** — TypeScript SDK reaches [v1.28.0](https://github.com/modelcontextprotocol/typescript-sdk/releases). The [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) is published, targeting stateless Streamable HTTP and enterprise auth work for the next spec cycle.
+- **June 2026** — Anthropic [ships an Enterprise-Managed Authorization extension](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/) for zero-touch OAuth, and [publishes beta SDKs](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/) for the next spec revision — going further than the March roadmap by removing the `initialize` handshake and protocol-level sessions entirely in favor of stateless, self-contained requests.
+- **July 28, 2026** — The MCP spec's [2026-07-28 revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/) ships: the protocol is now stateless (no `initialize` handshake, no protocol-level session), Roots, Sampling, and Logging are [deprecated](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2577) (SEP-2577 — still functional for a one-year window, but signaled for eventual removal), and both official SDKs cut major versions — the Python SDK reaches [`mcp` 2.0.0](https://pypi.org/project/mcp/) and the TypeScript SDK splits into separate [`@modelcontextprotocol/client` and `@modelcontextprotocol/server`](https://github.com/modelcontextprotocol/typescript-sdk) packages at 2.0.0, alongside a final 1.30.0 release of the legacy `@modelcontextprotocol/sdk` package.
 
 ## The Integration Surfaces
 
@@ -234,7 +236,7 @@ During a coding session, MCP tools integrate seamlessly with Claude Code's built
 
 ## Claude API: The MCP Connector
 
-The [Claude API MCP Connector](https://docs.anthropic.com/en/docs/agents-and-tools/mcp-connector) lets developers connect to remote MCP servers directly from the Messages API without implementing a separate MCP client. It entered public beta in February 2026.
+The [Claude API MCP Connector](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector) lets developers connect to remote MCP servers directly from the Messages API without implementing a separate MCP client. It entered public beta in February 2026 and remains in beta as of this writing.
 
 ### How It Works
 
@@ -248,34 +250,31 @@ import anthropic
 
 client = anthropic.Anthropic()
 
-response = client.messages.create(
-    model="claude-sonnet-4-6",
+response = client.beta.messages.create(
+    model="claude-opus-5",
     max_tokens=1024,
     mcp_servers=[
         {
             "type": "url",
             "url": "https://mcp.example.com/api",
             "name": "my-server",
-            "authorization_token": "Bearer token123"
+            "authorization_token": "token123"
         }
     ],
     tools=[
         {
             "type": "mcp_toolset",
-            "server_label": "my-server",
-            "tool_configuration": {
-                "enabled": True
-            }
+            "mcp_server_name": "my-server"
         }
     ],
     messages=[
         {"role": "user", "content": "List all open issues"}
     ],
-    extra_headers={
-        "anthropic-beta": "mcp-client-2025-11-20"
-    }
+    betas=["mcp-client-2025-11-20"]
 )
 ```
+
+*(Field names verified against [Anthropic's current MCP Connector docs](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector) as of August 2026 — note the toolset field is `mcp_server_name`, not `server_label`, and the older `tool_configuration` object is deprecated in favor of `default_config`/`configs` on the toolset.)*
 
 ### Key Capabilities
 
@@ -303,9 +302,9 @@ The MCP Connector introduces two new content block types in API responses:
 
 For developers managing their own MCP client connections instead of using the hosted Connector, the SDKs provide helper functions:
 
-**TypeScript SDK:**
+**TypeScript SDK** (requires both `@anthropic-ai/sdk` and `@modelcontextprotocol/sdk`):
 ```typescript
-import { mcpTools, mcpMessages, mcpResourceToContent } from "@anthropic-ai/sdk";
+import { mcpTools, mcpMessages, mcpResourceToContent } from "@anthropic-ai/sdk/helpers/beta/mcp";
 
 // Convert MCP tools to Claude API tools
 const tools = mcpTools(mcpToolList, mcpClient);
@@ -317,14 +316,11 @@ const messages = mcpMessages(mcpPromptMessages);
 const content = mcpResourceToContent(resource);
 ```
 
-**Python SDK (v0.84.0+):**
+**Python SDK** (`pip install "anthropic[mcp]"`, requires Python 3.10+):
 ```python
-from anthropic.mcp import mcp_tool, async_mcp_tool, mcp_message
+from anthropic.lib.tools.mcp import async_mcp_tool, mcp_message
 
-# Convert MCP Tool + ClientSession into a BetaFunctionTool
-tool = mcp_tool(mcp_tool_definition, mcp_session)
-
-# Async variant
+# Convert an MCP Tool + ClientSession into a Claude API tool
 tool = await async_mcp_tool(mcp_tool_definition, mcp_session)
 
 # Convert MCP prompt messages to API format
@@ -345,7 +341,7 @@ MCP is available in Claude's web interface through the [Connectors](https://supp
 
 ### Pre-Built Connectors
 
-The Connectors Directory features **50+ curated integrations** spanning productivity, communication, design, engineering, finance, and healthcare. As of January 2026, some connectors support interactive apps — rendering live interfaces for Slack, Figma, Canva, Asana, and more directly inside Claude conversations.
+The Connectors Directory [launched in May 2025 with an initial 10 services](https://www.anthropic.com/news/integrations) and has grown substantially since — we could not confirm an exact current count from Anthropic's own materials, so treat any specific number you see elsewhere as a snapshot, not a stable fact. Since [January 2026](https://techcrunch.com/2026/01/26/anthropic-launches-interactive-claude-apps-including-slack-and-other-workplace-tools/), some connectors support **interactive apps** — rendering live interfaces for Slack, Canva, Figma, Box, and Clay directly inside Claude conversations, with Salesforce support announced as coming soon.
 
 ### Custom Connectors
 
@@ -370,31 +366,32 @@ Custom connectors connect to arbitrary, unverified services. Anthropic warns use
 
 Anthropic maintains the two official MCP SDKs that implement the full specification. These are the foundation on which MCP servers and clients are built.
 
-### TypeScript SDK (`@modelcontextprotocol/sdk`)
+### TypeScript SDK
 
-- **Latest version:** [1.28.0](https://github.com/modelcontextprotocol/typescript-sdk/releases) (March 25, 2026)
-- **Install:** `npm install @modelcontextprotocol/sdk`
+As of the [2026-07-28 spec revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/), the TypeScript SDK is split into separate client and server packages, both at [v2.0.0](https://github.com/modelcontextprotocol/typescript-sdk):
+
+- **Install:** `npm install @modelcontextprotocol/client` and/or `@modelcontextprotocol/server`
 - **GitHub:** [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)
-- **Dependents:** 36,000+ packages on npm
+- The pre-split single package, `@modelcontextprotocol/sdk`, [received a final 1.x release (v1.30.0) on July 27, 2026](https://www.npmjs.com/package/@modelcontextprotocol/sdk) and remains installable for existing projects, but new development should target the v2 packages.
 
 Key features:
 - Full MCP specification implementation
 - Server and client classes
-- All transports (stdio, SSE, Streamable HTTP)
+- All transports (stdio, Streamable HTTP)
 - Zod schema integration for type-safe tool definitions
 - OAuth authentication support
 - Conformance testing suite
 
 ### Python SDK (`mcp` package)
 
-- **Latest version:** [1.26.0](https://pypi.org/project/mcp/) (January 24, 2026)
+- **Latest version:** [2.0.0](https://pypi.org/project/mcp/) (July 28, 2026) — described by the maintainers as "a major rework of the SDK" to support the 2026-07-28 spec
 - **Install:** `pip install mcp` or `uv add "mcp[cli]"`
 - **GitHub:** [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
 
 Key features:
 - Full MCP specification implementation
 - **FastMCP** high-level API built into the SDK
-- All transports (stdio, SSE, Streamable HTTP)
+- All transports (stdio, Streamable HTTP)
 - Async-first design
 
 ### FastMCP
@@ -402,19 +399,21 @@ Key features:
 [FastMCP](https://gofastmcp.com) is a high-level Python framework for building MCP servers quickly. The core FastMCP API is built into the official Python SDK, while the standalone FastMCP package (maintained by Prefect/Jlowin) extends it further:
 
 - **FastMCP 3.0** (January 2026) added component versioning, granular authorization, OpenTelemetry instrumentation, multiple provider types (FileSystem, Skills, OpenAPI), hot reload, and custom providers
-- Currently at version **3.1.1**
-- [Claims to power approximately 70% of MCP servers across all languages](https://github.com/PrefectHQ/fastmcp) (per FastMCP's own README)
+- Currently at [version 3.4.7](https://pypi.org/project/fastmcp/) (August 2026); a 4.0 beta is in progress
+- FastMCP's own README [claims "some version of FastMCP powers 70% of MCP servers across all languages"](https://github.com/PrefectHQ/fastmcp) and cites roughly a million downloads a day — this is FastMCP's self-reported figure, not independently verified
 
 ### Combined SDK Downloads
 
-Anthropic reported **97 million monthly SDK downloads** across the Python and TypeScript SDKs as of December 2025, with 4,750% growth since launch.
+Anthropic [reported over 97 million monthly SDK downloads](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) across the Python and TypeScript SDKs as of December 2025. By the [2026-07-28 spec announcement](https://blog.modelcontextprotocol.io/posts/2026-07-28/), the protocol's own maintainers described monthly SDK downloads as "close to half-a-billion" — roughly a 5x increase in seven months. (We could not independently verify a specific growth percentage for the earlier period; a "4,750% growth since launch" figure in an earlier version of this page had no traceable source and has been removed.)
 
 ## Claude Agent SDK
 
-The [Claude Agent SDK](https://docs.anthropic.com/en/docs/agent-sdk/overview) gives developers programmatic access to the same tools, agent loop, and context management that power Claude Code. It's available in both Python and TypeScript.
+The [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) gives developers programmatic access to the same tools, agent loop, and context management that power Claude Code. It's available in both Python and TypeScript.
 
-- **Python:** `claude-agent-sdk-python` (v0.1.48 on PyPI)
-- **TypeScript:** `claude-agent-sdk-typescript` (v0.2.71 on npm)
+- **Python:** [`claude-agent-sdk`](https://pypi.org/project/claude-agent-sdk/) (v0.2.136 on PyPI as of this writing)
+- **TypeScript:** [`@anthropic-ai/claude-agent-sdk`](https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk) (v0.3.228 on npm as of this writing; developed in the [claude-agent-sdk-typescript](https://github.com/anthropics/claude-agent-sdk-typescript) repo)
+
+Both SDKs ship frequent releases — check the linked package pages for the current version before pinning a dependency.
 
 ### Native MCP Integration
 
@@ -435,7 +434,7 @@ On December 9, 2025, Anthropic donated MCP to the **Agentic AI Foundation (AAIF)
 
 **Platinum members:** Amazon Web Services, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, and OpenAI
 
-**[100+ total members](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)** across the foundation
+**[45 member organizations at launch](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)** per the Linux Foundation's formation announcement: 8 Platinum, 17 Gold (including Adyen, Cisco, Datadog, Docker, IBM, JetBrains, Oracle, SAP, and Snowflake), and 20 Silver (including Hugging Face, Uber, and Elastic). (An earlier version of this page cited "100+ total members" from Anthropic's own announcement — that figure does not appear in either Anthropic's or the Linux Foundation's launch materials and has been corrected.)
 
 Three projects were contributed at launch:
 1. **Model Context Protocol (MCP)** — by Anthropic
@@ -452,7 +451,7 @@ The [first MCP Dev Summit North America](/guides/mcp-dev-summit-2026-guide/) too
 
 ## The 2026 MCP Roadmap
 
-Anthropic published the [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) on March 9, 2026, outlining four priority areas:
+Anthropic published the [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/) on March 9, 2026, outlining four priority areas. **Update, August 2026:** the roadmap's transport-scalability goal shipped, but went further than originally planned — the [2026-07-28 spec revision](https://blog.modelcontextprotocol.io/posts/2026-07-28/) didn't just make Streamable HTTP support stateless scaling, it [removed the `initialize` handshake and protocol-level sessions from the protocol entirely](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/), replacing them with stateless, self-contained requests and a new Multi Round-Trip Requests (MRTR) mechanism. The roadmap items below are preserved as a historical snapshot of what Anthropic was planning as of March 2026:
 
 ### 1. Transport Evolution and Scalability
 - Evolving Streamable HTTP for **stateless horizontal scaling** (no sticky sessions or distributed stores)
@@ -476,7 +475,7 @@ Anthropic published the [2026 MCP Roadmap](https://blog.modelcontextprotocol.io/
 - Prioritizing extensions over core spec changes
 - Security SEPs: DPoP (SEP-1932) and Workload Identity Federation (SEP-1933)
 
-**Timeline:** The goal is to finalize SEPs in Q1 2026 for inclusion in the next spec release, tentatively slated for **June 2026**.
+**Timeline (as originally stated in March 2026):** the goal was to finalize SEPs in Q1 2026 for inclusion in the next spec release, tentatively slated for June 2026. In practice, [beta SDKs for the next revision shipped June 29, 2026](https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/) and the [finished 2026-07-28 spec](https://blog.modelcontextprotocol.io/posts/2026-07-28/) landed about a month after the original target — see the Anthropic MCP Timeline above and the [current spec](https://modelcontextprotocol.io/specification/2026-07-28) for what actually shipped.
 
 ## Choosing the Right Integration Point
 
