@@ -134213,3 +134213,78 @@ this run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-13 ~06:15-06:35 UTC (run 839354)
+
+### Early-vintage re-audit: Reviews batch 3 (10 pages, 20/285 -> 30/285)
+
+No pending inbox items (only my own 02:18 UTC CEO digest #2331). Continued the Reviews section of
+the early-vintage re-audit, taking the next 10 oldest-by-title unaudited pages in one parallel
+batch of background audit agents: outlook-mcp-servers, science-research-mcp-servers,
+browserbase-mcp-server, chroma-mcp-server, cloudflare-mcp-server, context7-mcp-server,
+crawl4ai-mcp-server, datadog-mcp-server, docker-mcp-server, everart-mcp-server. Read every diff
+line-by-line before trusting/committing (not just agent self-reports) — all 10 were complete,
+real claim-by-claim audits.
+
+**Real catches, most significant first:**
+- **browserbase-mcp-server** — the biggest single find: Browserbase archived the
+  `mcp-server-browserbase` GitHub repo on July 20, 2026 (read-only, "no longer maintained"), which
+  the prior May audit had no way to know. Rewrote the intro/verdict/What-Doesn't-Work around this;
+  also caught the setup instructions pointing at a now-deprecated npm package
+  (`@browserbasehq/mcp-server-browserbase` -> `@browserbasehq/mcp`) and a wrong tool-removal count
+  (v3.0.0 removed 3 tools, not 2, per the actual release notes).
+- **chroma-mcp-server** — textbook application of the CLAUDE.md single-source-tracker rule: a
+  "critical SQL injection vulnerability" stated as flat fact throughout the page traced to one solo
+  researcher's own unreplicated scan (0-star tool, no CVE, no maintainer response) — and reading
+  chroma-mcp's actual server.py showed it contains zero SQL statements, contradicting the report's
+  own framing. Rewrote every instance to explicit attribution + unconfirmed framing per the
+  standing directive.
+- **docker-mcp-server** — narrative-breaking update: the "maintainer unresponsive 14+ months,
+  abandoned" framing is now only half true — the maintainer resumed activity Aug 7 (merged PR #56,
+  cut v0.3.0) but the specific disclosed security vulnerability (issue #50) still has zero response.
+  Rewrote sections to reflect the nuance rather than either "abandoned" or "fixed." (Caught one
+  citation-quality issue myself post-agent: swapped a `vulert.com` aggregator link for `osv.dev`,
+  a primary Google-run vuln DB, for CVE-2026-33252 — NVD itself was 502ing during this run.)
+- **outlook-mcp-servers** — fabricated-adjacent claim caught: article said the April 27 Outlook.com
+  outage was "caused by authentication key failures"; the actual cited source says no such thing —
+  Microsoft attributed it to "a recently introduced change," fixed via config rollback. Corrected
+  throughout + added a second independent source (Thurrott).
+- **crawl4ai-mcp-server** — the article's central "stdio transport broken, fix pending in PR #1971"
+  claim was wrong, not just stale: PR #1971 was closed in favor of PR #1969, which is what actually
+  merged and fixed it (May 25, 2026). Corrected everywhere the claim appeared rather than leaving a
+  false "still broken" claim live.
+- **everart-mcp-server** — Recraft's tool count was wrong sitewide (claimed 16, live README shows
+  9); the "#1 on Hugging Face Text-to-Image Arena" superlative for Recraft V4 didn't trace to its
+  cited source and is now false (live leaderboard ranks it 48th) — retracted.
+- **science-research-mcp-servers** — a fabricated spec-history claim ("OAuth 2.1 added to MCP spec,
+  April 2026") deleted entirely; OAuth 2.1 has been in the spec since 2025, no such event happened.
+  Also removed 3 dead repos confirmed via direct 404s (one author's entire GitHub account is gone).
+- **cloudflare-mcp-server, context7-mcp-server, datadog-mcp-server** — mostly numeric/version drift
+  (stars, forks, release versions, PulseMCP traffic) refreshed with citations across ~15 named
+  repos/products; datadog audit also caught an internal inconsistency (two different star counts
+  for the same repo on the same page) and a wrong per-unit pricing claim ($/GB confused with
+  $/million events).
+
+All 10 files carry `sources_audited: 2026-08-13`. Checked off all 10 in `early-vintage-audit.md`,
+Reviews status line corrected 20/285 -> 30/285.
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits). Committing and deploying
+this run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 30/285, 255 remain. Next run: re-scan `early-vintage-audit.md`
+  fresh and take the next ~10 oldest-by-title.
+- CEO digest: none sent this run (max-1/day already spent today via #2331 at 02:18 UTC). Next
+  digest must include: this run's 10-page audit summary (real catches above), updated cohort
+  progress (30/285 Reviews), current subscriber count via Buttondown API.
+- Bluesky: no post needed/attempted this run (Thursday transparency-report slot already fulfilled
+  earlier today per #2331; daily cap already used for today).
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

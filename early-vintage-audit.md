@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 20/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 30/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -271,20 +271,20 @@ sweeps. Headline catches:
 - [x] 2026-07-22 — [Mistral Small 3.1 Review — 24B Vision Model, 128K Context, Runs on One GPU](content/reviews/mistral-small-3-1-vision-24b-llm-review.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [New Relic MCP Server Review — 35 Tools, Free Tier](content/reviews/newrelic-mcp-server.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Obsidian MCP Servers — Eight Servers, Three Architectures, No Official Blessing](content/reviews/obsidian-mcp-servers.md) — re-audited 2026-08-12
-- [ ] 2026-07-22 — [Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era](content/reviews/outlook-mcp-servers.md)
+- [x] 2026-07-22 — [Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era](content/reviews/outlook-mcp-servers.md) — re-audited 2026-08-13
 - [x] 2026-07-22 — [PDF & Document Processing MCP Servers — MarkItDown, Docling, PDF Reader, and More](content/reviews/pdf-document-mcp-servers.md) — re-audited 2026-08-12
-- [ ] 2026-07-22 — [Science & Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More](content/reviews/science-research-mcp-servers.md)
+- [x] 2026-07-22 — [Science & Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More](content/reviews/science-research-mcp-servers.md) — re-audited 2026-08-13
 - [x] 2026-07-22 — [Search Engine MCP Servers — Elasticsearch, OpenSearch, Meilisearch, Algolia, Solr, and Beyond](content/reviews/search-engine-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Shopify MCP Servers — From 2 Servers to an Agentic Commerce Platform](content/reviews/shopify-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [The Brave Search MCP Server — The Best Search Option for Agents](content/reviews/brave-search-mcp-server.md) — re-audited 2026-08-12
-- [ ] 2026-07-22 — [The Browserbase MCP Server — Cloud Browser Automation With AI-Native Targeting](content/reviews/browserbase-mcp-server.md)
-- [ ] 2026-07-22 — [The Chroma MCP Server — Vector Database Operations Through Your AI Assistant](content/reviews/chroma-mcp-server.md)
-- [ ] 2026-07-22 — [The Cloudflare MCP Server — 2,500 API Endpoints in 1,000 Tokens](content/reviews/cloudflare-mcp-server.md)
-- [ ] 2026-07-22 — [The Context7 MCP Server — Real-Time Library Docs, Registry Risk Included](content/reviews/context7-mcp-server.md)
-- [ ] 2026-07-22 — [The Crawl4AI MCP Server — The Most Popular Crawler Goes LLM-Native](content/reviews/crawl4ai-mcp-server.md)
-- [ ] 2026-07-22 — [The Datadog MCP Server — Enterprise Observability With Agent-Native Tool Design](content/reviews/datadog-mcp-server.md)
-- [ ] 2026-07-22 — [The Docker MCP Server — Your AI Agent's Container Workshop](content/reviews/docker-mcp-server.md)
-- [ ] 2026-07-22 — [The EverArt MCP Server — Image Generation for Agents, If You Can Find the API Key](content/reviews/everart-mcp-server.md)
+- [x] 2026-07-22 — [The Browserbase MCP Server — Cloud Browser Automation With AI-Native Targeting](content/reviews/browserbase-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Chroma MCP Server — Vector Database Operations Through Your AI Assistant](content/reviews/chroma-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Cloudflare MCP Server — 2,500 API Endpoints in 1,000 Tokens](content/reviews/cloudflare-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Context7 MCP Server — Real-Time Library Docs, Registry Risk Included](content/reviews/context7-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Crawl4AI MCP Server — The Most Popular Crawler Goes LLM-Native](content/reviews/crawl4ai-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Datadog MCP Server — Enterprise Observability With Agent-Native Tool Design](content/reviews/datadog-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Docker MCP Server — Your AI Agent's Container Workshop](content/reviews/docker-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The EverArt MCP Server — Image Generation for Agents, If You Can Find the API Key](content/reviews/everart-mcp-server.md) — re-audited 2026-08-13
 - [ ] 2026-07-22 — [The Exa MCP Server — Semantic Search That Actually Understands What You Mean](content/reviews/exa-mcp-server.md)
 - [x] 2026-07-22 — [The Fetch MCP Server — Your Agent's Simplest Window to the Web (With the Lock Off)](content/reviews/fetch-mcp-server.md)
 - [ ] 2026-07-22 — [The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant](content/reviews/figma-dev-mode-mcp-server.md)
