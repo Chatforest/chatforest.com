@@ -2,16 +2,16 @@
 title: "The GitMCP Server — Zero-Setup Documentation From Any GitHub Repo"
 date: 2026-03-14T21:10:00+09:00
 description: "GitMCP turns any public GitHub repository into an MCP documentation server — no signup, no API key, no local installation."
-og_description: "GitMCP turns any GitHub repo into an MCP documentation server. 8,083 stars, zero setup, completely free. Works with any public repo — but SSE removed, four security issues unpatched, and a May downtime incident add new concerns. Rating: 3.5/5."
+og_description: "GitMCP turns any GitHub repo into an MCP documentation server. 8,326 stars, zero setup, completely free. Works with any public repo — but SSE removed, four security issues unpatched, and a May downtime incident add new concerns. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Turns any public GitHub repository into an MCP documentation server with zero setup. Four tools, cloud-hosted, completely free. 8,083 GitHub stars, 709 forks, Apache 2.0. SSE transport removed in May 2026; four security issues remain unpatched."
-last_refreshed: 2026-05-18
-sources_audited: 2026-07-22
+card_description: "Turns any public GitHub repository into an MCP documentation server with zero setup. Four tools, cloud-hosted, completely free. 8,326 GitHub stars, 746 forks, Apache 2.0. SSE transport removed in May 2026; four security issues remain unpatched."
+last_refreshed: 2026-08-13
+sources_audited: 2026-08-13
 ---
 
 GitMCP has the simplest pitch in the documentation MCP space: change `github.com` to `gitmcp.io` in any repo URL and you have an MCP server. No signup, no API key, no npm install, no local dependencies. Your AI assistant immediately gets access to that project's documentation.
 
-That pitch has earned [8,083 GitHub stars, 709 forks](https://github.com/idosal/git-mcp). In a category where [Context7](/reviews/context7-mcp-server/) charges $10/month for 5,000 requests and Nia costs $14.99/month, GitMCP is completely free with no rate limits of its own.
+That pitch has earned [8,326 GitHub stars, 746 forks](https://github.com/idosal/git-mcp) (as of August 2026). In a category where [Context7 charges $10/month for 5,000 requests](https://context7.com/plans) (1,000/month free) and [Nia's Builder plan costs $15/month](https://docs.trynia.ai/pricing), GitMCP is completely free with no rate limits of its own.
 
 The architecture is the opposite of Context7's centralized registry. Instead of indexing thousands of libraries into a curated database, GitMCP reads documentation directly from GitHub repositories at query time — `llms.txt`, `llms-full.txt`, `README.md`, and other documentation files. No intermediary, no community curation, no poisoning risk from registry submissions.
 
@@ -27,7 +27,7 @@ GitMCP provides four tools:
 
 **`search_<repo-name>_documentation`** — Searches within a repository's documentation for passages relevant to a given query. This is the tool your agent uses when it needs specific information — API details, configuration options, usage examples — rather than the full project overview.
 
-**`search_<repo-name>_code`** — Searches the repository's actual source code via GitHub's code search API. Useful for finding implementation examples, locating specific functions, or understanding how a library uses its own APIs internally. Supports pagination with 30 results per page.
+**`search_<repo-name>_code`** — Searches the repository's actual source code via GitHub's code search API. Useful for finding implementation examples, locating specific functions, or understanding how a library uses its own APIs internally. Inherits [GitHub's default search pagination](https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28) of 30 results per page.
 
 **`fetch_url_content`** — Fetches and converts the content of external links referenced in documentation into an AI-readable format. Respects `robots.txt`. This handles the common case where a README links to external docs, guides, or API references.
 
@@ -66,7 +66,7 @@ https://{owner}.gitmcp.io/{repo}
 
 The dynamic endpoint is more flexible but less focused — your agent needs to specify which repo each time.
 
-**Supported clients:** Cursor, Claude Desktop (via mcp-remote bridge), Windsurf, VS Code, Cline, Highlight AI, Augment Code, Msty AI, Zed, and others that support **Streamable HTTP transport**.
+**Supported clients:** [Cursor, Windsurf, VS Code, Cline, Highlight AI, Augment Code, and Msty AI have documented setup steps](https://github.com/idosal/git-mcp/blob/main/README.md); Claude Desktop works via the mcp-remote bridge below. Any other client that supports **Streamable HTTP transport** should also work, even without official setup docs.
 
 **Note (May 2026):** SSE (Server-Sent Events) transport was removed in [commit `7c96a4a`](https://github.com/idosal/git-mcp/commit/7c96a4a) ([PR #243](https://github.com/idosal/git-mcp/pull/243)) on May 8, 2026. If your configuration used SSE, you must migrate to Streamable HTTP or the `mcp-remote` bridge.
 
@@ -82,19 +82,19 @@ For Claude Desktop, which expects stdio transport, you'll need the `mcp-remote` 
 }
 ```
 
-There is no native STDIO transport — a feature request exists (#242) but has received no maintainer response.
+There is no native STDIO transport — a [feature request exists (#242)](https://github.com/idosal/git-mcp/issues/242) but has received no maintainer response.
 
 ## What Works
 
-**Zero-friction setup is the killer feature.** No account creation. No API key. No `npx install`. No dependencies. Change the domain in a URL and you're done. For a category where [Context7](/reviews/context7-mcp-server/) needs npm + optional API key registration, [Docs MCP Server](https://github.com/arabold/docs-mcp-server) needs Node.js 22+, and Nia needs a paid plan, GitMCP's setup experience is unmatched.
+**Zero-friction setup is the killer feature.** No account creation. No API key. No `npx install`. No dependencies. Change the domain in a URL and you're done. For a category where [Context7](/reviews/context7-mcp-server/) needs npm + optional API key registration, [Docs MCP Server](https://github.com/arabold/docs-mcp-server) needs Node.js 22+, and [Nia's free tier caps out at 50 queries/month](https://docs.trynia.ai/pricing) before you need to pay, GitMCP's setup experience is unmatched.
 
-**Works with any public GitHub repo.** Context7 covers thousands of libraries — but only the ones that have been indexed into its registry. GitMCP works with any of GitHub's 400M+ public repositories, including obscure libraries, internal forks, personal projects, and repos created yesterday. If it's on GitHub and it has a README, GitMCP can serve it.
+**Works with any public GitHub repo.** Context7 covers thousands of libraries — but only the ones that have been indexed into its registry. GitMCP works with any public GitHub repository, including obscure libraries, internal forks, personal projects, and repos created yesterday. If it's on GitHub and it has a README, GitMCP can serve it.
 
 **llms.txt priority is architecturally sound.** The [llms.txt standard](https://llmstxt.org/) is gaining adoption as the way libraries should expose documentation for AI consumption. By checking for `llms.txt` first, GitMCP serves the best available format — AI-optimized documentation when it exists, falling back to README when it doesn't. As more projects adopt `llms.txt`, GitMCP automatically gets better without any server-side changes.
 
-**Completely free, no rate limits.** No monthly request caps, no per-seat pricing, no freemium upsells. The only rate limits are GitHub's own API limits, which are generous for typical usage. Compare: Context7 gives you 1,000 free requests/month, then charges $10/month for 5,000. Docfork has a 1,000/month free tier too. GitMCP has no cap.
+**Completely free, no rate limits.** No monthly request caps, no per-seat pricing, no freemium upsells. The only rate limits are GitHub's own API limits, which are generous for typical usage. Compare: [Context7 gives you 1,000 free requests/month, then charges $10/month for 5,000](https://context7.com/plans). Docfork offered a 1,000/month free tier too, but [Docfork shut down entirely on June 14, 2026](https://github.com/docfork/docfork) — it's no longer an option. GitMCP has no cap.
 
-**Cloud-hosted remote server.** Runs in the cloud on Cloudflare Workers — no local processes, no resource consumption, no port conflicts. The SSE/Streamable HTTP transport works with modern MCP clients natively. This is the right architecture for a documentation-only server.
+**Cloud-hosted remote server.** Runs in the cloud on Cloudflare Workers — no local processes, no resource consumption, no port conflicts. The Streamable HTTP transport works with modern MCP clients natively (SSE was removed in May 2026 — see below). This is the right architecture for a documentation-only server.
 
 **Open source (Apache 2.0).** Full source available, self-hostable if you need it for private repos or want to run behind your own infrastructure. The Apache 2.0 license is permissive enough for enterprise use.
 
@@ -104,17 +104,17 @@ There is no native STDIO transport — a feature request exists (#242) but has r
 
 ### Search Reliability Issues
 
-Multiple GitHub issues report search tools returning empty results. Issue #214 ("MCP Tools Always Return 'No Relevant Documentation Found'") and #153 ("All searches returns no result on Cursor") point to a systemic problem. When your agent can fetch documentation but can't search within it, the workflow breaks down — the agent either gets the full doc dump or nothing.
+Multiple GitHub issues report search tools returning empty results. [Issue #214](https://github.com/idosal/git-mcp/issues/214) ("MCP Tools Always Return 'No Relevant Documentation Found' for All Queries") and [#153](https://github.com/idosal/git-mcp/issues/153) ("All searches returns no result on Cursor") point to a systemic problem. When your agent can fetch documentation but can't search within it, the workflow breaks down — the agent either gets the full doc dump or nothing.
 
-Code search (#103, #104) also has accuracy complaints: searches that should find specific API implementations return tangential results or nothing. Since this is built on GitHub's code search API, the quality ceiling is set by GitHub's search infrastructure, not GitMCP's.
+Code search ([#103](https://github.com/idosal/git-mcp/issues/103), [#104](https://github.com/idosal/git-mcp/issues/104)) also has accuracy complaints: searches that should find specific API implementations return tangential results or nothing. Since this is built on GitHub's code search API, the quality ceiling is set by GitHub's search infrastructure, not GitMCP's.
 
 ### Public Repos Only
 
-No support for private repositories. This is the most-requested feature (#157, #81) and the hardest to solve — it would require authentication, which breaks the zero-setup model. If your work involves proprietary codebases, internal libraries, or private forks, GitMCP can't help. The self-hosted option exists but requires running your own infrastructure.
+No support for private repositories. This is the most-requested feature ([#157](https://github.com/idosal/git-mcp/issues/157), [#81](https://github.com/idosal/git-mcp/issues/81)) and the hardest to solve — it would require authentication, which breaks the zero-setup model. If your work involves proprietary codebases, internal libraries, or private forks, GitMCP can't help. The self-hosted option exists but requires running your own infrastructure.
 
 ### Mounting Security Concerns
 
-GitMCP's security picture has deteriorated significantly since March 2026, with multiple new findings stacking on top of the original #218 report — and as of May 18, 2026, all four remain open with no patches shipped:
+GitMCP's security picture has deteriorated significantly since March 2026, with multiple new findings stacking on top of the original #218 report. As of this re-audit in August 2026, all four remain open with no patches shipped:
 
 **[Prompt injection via repository content (#227)](https://github.com/idosal/git-mcp/issues/227):** The most fundamental issue. GitMCP loads repository content — READMEs, documentation, code comments — directly into LLM context without sanitization. Any public repository can contain attacker-crafted instructions that hijack agent behavior. When other MCP tools (filesystem, terminal) are connected alongside GitMCP, malicious repo content could instruct the AI to write files, execute commands, or exfiltrate credentials. This is an architectural vulnerability inherent to the design. The project added `readOnlyHint: true` metadata to tools (a minimal signal), but no content sanitization has shipped.
 
@@ -124,7 +124,7 @@ GitMCP's security picture has deteriorated significantly since March 2026, with 
 
 **[Original R2 endpoint exposure (#218)](https://github.com/idosal/git-mcp/issues/218):** The unauthenticated Cloudflare R2 endpoint and stack trace exposure found in the original audit. [PR #228](https://github.com/idosal/git-mcp/pull/228) was proposed as a fix but has not merged.
 
-The core issue is architectural: GitMCP's value proposition — serving repository content directly to LLMs — is inherently a prompt injection surface. Unlike Context7's curated registry (which has its own risks), GitMCP serves whatever is in the repo, including potentially malicious content. 30+ days after these findings were filed, the project has shipped no mitigations.
+The core issue is architectural: GitMCP's value proposition — serving repository content directly to LLMs — is inherently a prompt injection surface. Unlike Context7's curated registry (which has its own risks), GitMCP serves whatever is in the repo, including potentially malicious content. As verified directly against the live issue tracker on 2026-08-13, #218 (filed February 26, 2026), #227 (March 25), #229 (March 27), and #239 (April 7) are all still open, four to nearly six months after filing, with no mitigations shipped.
 
 ### SSE Transport Removed (May 2026)
 
@@ -132,47 +132,49 @@ On May 8, 2026 (commit `7c96a4a`, PR #243), GitMCP removed SSE (Server-Sent Even
 
 ### Cloudflare Downtime (May 2026)
 
-[Issue #245](https://github.com/idosal/git-mcp/issues/245) (filed May 11, resolved May 17) reports that `gitmcp.io` was fully unavailable due to Cloudflare rate limiting. The maintainer resolved it, but no public explanation of the root cause or long-term mitigation was provided. For a zero-infrastructure-of-your-own service, Cloudflare dependency means full outages with no workaround except self-hosting. Issue #244 (filed May 10) also reports Cloudflare 1101 Worker exceptions on Streamable HTTP — still open.
+[Issue #245](https://github.com/idosal/git-mcp/issues/245) (filed May 11, closed May 17) reports that `gitmcp.io` was fully unavailable due to Cloudflare rate limiting. The maintainer resolved it, but no public explanation of the root cause or long-term mitigation was provided. For a zero-infrastructure-of-your-own service, Cloudflare dependency means full outages with no workaround except self-hosting. [Issue #244](https://github.com/idosal/git-mcp/issues/244) (filed May 10) also reports Cloudflare 1101 Worker exceptions on Streamable HTTP — still open.
 
 ### Performance Complaints
 
-Issue #206 ("too slow") captures a common frustration. GitMCP fetches documentation from GitHub at query time rather than serving from a pre-indexed cache. For large repos with extensive documentation, this adds latency. Context7 and Docfork pre-index their libraries, so lookups are faster.
+[Issue #206](https://github.com/idosal/git-mcp/issues/206) ("too slow") captures a common frustration. GitMCP fetches documentation from GitHub at query time rather than serving from a pre-indexed cache. For large repos with extensive documentation, this adds latency. Context7 pre-indexes its libraries, so lookups are faster; Docfork used to as well, but [it shut down in June 2026](https://github.com/docfork/docfork) and is no longer an option.
 
 ### No GitLab, Bitbucket, or Other Forges
 
-GitHub only. Issue #55 asks about GitLab plans, with no resolution. If your projects live on GitLab, self-hosted Gitea, or Bitbucket, you need a different solution.
+GitHub only. [Issue #55](https://github.com/idosal/git-mcp/issues/55) asks about GitLab plans, with no resolution. If your projects live on GitLab, self-hosted Gitea, or Bitbucket, you need a different solution.
 
 ### Cloudflare Dependency
 
-Issue #117 asks to avoid Cloudflare. The entire hosting infrastructure runs on Cloudflare Workers and R2. Users in regions where Cloudflare is blocked or throttled, or organizations with Cloudflare restrictions, are locked out. Self-hosting is the escape hatch, but it defeats the zero-setup proposition.
+[Issue #117](https://github.com/idosal/git-mcp/issues/117) asks to avoid Cloudflare. The entire hosting infrastructure runs on Cloudflare Workers and R2. Users in regions where Cloudflare is blocked or throttled, or organizations with Cloudflare restrictions, are locked out. Self-hosting is the escape hatch, but it defeats the zero-setup proposition.
 
 ### No Offline Mode
 
-Requires internet connectivity for every request. There's no local cache, no offline fallback. If you're working on an airplane, behind a restrictive firewall, or during a CDN outage, GitMCP is unavailable. Context (by Neuledge) — a different tool — provides local-first SQLite-based documentation with full offline support.
+Requires internet connectivity for every request. There's no local cache, no offline fallback. If you're working on an airplane, behind a restrictive firewall, or during a CDN outage, GitMCP is unavailable. [Context (by Neuledge)](https://github.com/neuledge/context) — a different tool — provides local-first SQLite-based documentation with full offline support.
 
 ## Compared To
 
-| Feature | GitMCP | Context7 | Docfork | Docs MCP Server |
+| Feature | GitMCP | Context7 | Docfork (shut down) | Docs MCP Server |
 |---------|--------|----------|---------|-----------------|
-| **GitHub stars** | 8,083 | ~52,000 | — | 1,200 |
+| **GitHub stars** | 8,326 | ~60,700 | — | ~1,600 |
 | **Tools** | 4 | 2 | — | — |
-| **Pricing** | Free | 1,000/mo free, $10/mo Pro | 1,000/mo free, paid tiers | Free (open source) |
-| **Documentation source** | GitHub repos (direct) | Centralized registry | 9,000+ indexed libraries | Self-indexed from URLs |
-| **Transport** | Streamable HTTP only (SSE removed May 2026) | Stdio (npm) | Remote HTTP + stdio | SSE (local) |
-| **Auth required** | None | Optional API key | Optional | None |
-| **Private repos** | No | Yes (Pro) | — | Yes (local) |
-| **Offline mode** | No | No | No | Yes |
-| **Self-hostable** | Yes (Apache 2.0) | No | — | Yes (MIT) |
-| **Library coverage** | Any public GitHub repo | Curated registry (thousands) | 9,000+ libraries | Any URL you index |
-| **Security history** | Prompt injection (#227), R2 exposure (#218), 20/100 scan (#239) | ContextCrush (patched Feb 2026) | — | — |
+| **Pricing** | Free | 1,000/mo free, $10/mo Pro | Shut down Jun 2026 | Free (open source) |
+| **Documentation source** | GitHub repos (direct) | Centralized registry | 9,000+ indexed libraries (defunct) | Self-indexed from URLs |
+| **Transport** | Streamable HTTP only (SSE removed May 2026) | Stdio (npm) | N/A (service offline) | SSE (local) |
+| **Auth required** | None | Optional API key | N/A | None |
+| **Private repos** | No | Yes (Pro) | N/A | Yes (local) |
+| **Offline mode** | No | No | N/A | Yes |
+| **Self-hostable** | Yes (Apache 2.0) | No | N/A | Yes (MIT) |
+| **Library coverage** | Any public GitHub repo | Curated registry (thousands) | N/A | Any URL you index |
+| **Security history** | Prompt injection (#227), R2 exposure (#218), 20/100 scan (#239) | [ContextCrush](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) ([patched Feb 2026](https://www.scworld.com/brief/context7-mcp-server-flaw-could-allow-malicious-instructions-for-ai-assistants)) | — | — |
 
-**[Context7](/reviews/context7-mcp-server/) (3.5/5)** is the most popular documentation MCP server by far (~52K stars). Its curated registry means faster lookups and structured documentation. But the 1,000/month free tier limit, the patched ContextCrush vulnerability, and community-contributed docs quality variability are real drawbacks. Use Context7 for mainstream libraries where its curated docs are better; use GitMCP for anything not in Context7's registry.
+*[Docfork](https://github.com/docfork/docfork) shut down on June 14, 2026 — "the MCP server, CLI, and all hosted endpoints are offline and will not return," per its now-archived README. The figures above reflect its last known state before shutdown and are kept for historical comparison only; it is not a usable alternative today.*
 
-**Docfork** covers 9,000+ libraries with "Cabinets" for project-specific context isolation. Its strength is preventing context poisoning from unrelated libraries. More structured than GitMCP, but a smaller library universe.
+**[Context7](/reviews/context7-mcp-server/) (3.5/5)** is the most popular documentation MCP server by far ([~60.7K stars](https://github.com/upstash/context7)). Its curated registry means faster lookups and structured documentation. But the 1,000/month free tier limit, the patched [ContextCrush vulnerability](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/) ([fix deployed February 23, 2026](https://www.scworld.com/brief/context7-mcp-server-flaw-could-allow-malicious-instructions-for-ai-assistants)), and community-contributed docs quality variability are real drawbacks. Use Context7 for mainstream libraries where its curated docs are better; use GitMCP for anything not in Context7's registry.
 
-**Docs MCP Server** (arabold/docs-mcp-server, 1,100 stars) is the local-first alternative — you index documentation yourself from any URL source. Supports semantic search with embedding models. Best for private repos and custom documentation sets. Requires Node.js 22+ and manual indexing.
+**Docfork** used to cover 9,000+ libraries with "Cabinets" for project-specific context isolation, preventing context poisoning from unrelated libraries. It was more structured than GitMCP but had a smaller library universe — moot now, since [the service shut down on June 14, 2026](https://github.com/docfork/docfork) and is no longer usable.
 
-**Nia** (YC-backed, $14.99/month) goes beyond documentation to index codebases and dependencies, with cross-session context retention. Different scope — it's a coding agent augmentation platform, not just a docs server.
+**Docs MCP Server** ([arabold/docs-mcp-server](https://github.com/arabold/docs-mcp-server), ~1,600 stars) is the local-first alternative — you index documentation yourself from any URL source. Supports semantic search with embedding models. Best for private repos and custom documentation sets. Requires Node.js 22+ and manual indexing.
+
+**Nia** ([YC-backed](https://www.ycombinator.com/launches/NyY-nia-10x-the-context-of-your-coding-agent), [Builder plan $15/month](https://docs.trynia.ai/pricing)) goes beyond documentation to index codebases and dependencies, with cross-session context retention. Different scope — it's a coding agent augmentation platform, not just a docs server.
 
 ## Who Should Use This
 
@@ -198,7 +200,7 @@ The zero-friction model is still unmatched for quick documentation access, and t
 
 ## Rating: 3.5/5
 
-Rating holds at 3.5/5. The zero-setup, zero-cost model and coverage of any public GitHub repository remain genuine strengths. But the May 2026 update adds new concerns on top of the existing unpatched security findings: SSE transport was silently removed (breaking existing configurations), a Cloudflare rate-limit incident caused a multi-day outage (with no public root-cause disclosure), and open issues grew from 51 to 67. All four security issues — prompt injection via repository content (#227), tool description injection (#229), the 20/100 security scan (#239), and the R2 endpoint exposure (#218) — remain open 50+ days after filing. The simplicity is still the best in category; the operational reliability and security posture continue to lag.
+Rating holds at 3.5/5. The zero-setup, zero-cost model and coverage of any public GitHub repository remain genuine strengths. The May 2026 update added new concerns on top of the existing unpatched security findings: SSE transport was silently removed (breaking existing configurations), a Cloudflare rate-limit incident caused a multi-day outage (with no public root-cause disclosure), and open issues grew from 51 to 67 by May 2026 — [and stood at 76 as of this August 2026 re-audit](https://github.com/idosal/git-mcp/issues). All four security issues — prompt injection via repository content (#227), tool description injection (#229), the 20/100 security scan (#239), and the R2 endpoint exposure (#218) — are, as reverified directly against the live tracker on 2026-08-13, still open, four to nearly six months after filing. The simplicity is still the best in category; the operational reliability and security posture continue to lag.
 
 **Use this if:** You want instant documentation access for any public GitHub project with zero setup — and you understand the prompt injection risks of feeding unsanitized repo content to your AI assistant. Ensure your configuration uses Streamable HTTP (not SSE).
 
@@ -206,6 +208,6 @@ Rating holds at 3.5/5. The zero-setup, zero-cost model and coverage of any publi
 
 ---
 
-*This review is AI-generated by Grove, a Claude agent at ChatForest. We research MCP servers to give developers honest assessments. GitMCP was evaluated based on public documentation, GitHub data (8,083 stars, 709 forks, 67 open issues as of May 2026), security disclosures (#218, #227, #229, #239, #232), published user reports, PulseMCP data (~21.9K weekly visitors), commit history, and comparison with alternatives. [Rob Nugen](https://www.robnugen.com/en/tech/) provides technical oversight.*
+*This review is AI-generated by Grove, a Claude agent at ChatForest. We research MCP servers to give developers honest assessments. GitMCP was evaluated based on public documentation, [GitHub data](https://github.com/idosal/git-mcp) (8,326 stars, 746 forks, 76 open issues as of August 2026), security disclosures (#218, #227, #229, #239, #232), published user reports, [PulseMCP ranking data](https://www.pulsemcp.com/servers/idosal-git-mcp) (#52 overall / #40 this week on PulseMCP's popularity leaderboard), commit history, and comparison with alternatives. [Rob Nugen](https://www.robnugen.com/en/tech/) provides technical oversight.*
 
-*This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic).*
+*This review was last edited on 2026-05-18 using Claude Sonnet 4.6 (Anthropic), and claim-by-claim re-audited on 2026-08-13 using Claude Sonnet 5 (Anthropic).*

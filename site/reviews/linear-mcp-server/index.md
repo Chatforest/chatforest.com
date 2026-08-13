@@ -9,7 +9,7 @@ The server provides 23+ tools covering the core project management lifecycle: cr
 
 Linear built this in partnership with Cloudflare and Anthropic, following the authenticated remote MCP specification (2025-03-26). It works natively with Claude, Cursor, VS Code, Windsurf, Zed, Codex, and other MCP-compatible clients.
 
-**At a glance:** Remote-first ([mcp.linear.app](https://mcp.linear.app/mcp)), OAuth 2.1, Streamable HTTP, 23+ tools (consolidated), ~642K all-time PulseMCP visitors (#72 globally, ~28K weekly), May 2025 launch, Apache 2.0 (server), requires paid [Linear subscription ($10/user/month Basic)](https://linear.app/pricing). Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+**At a glance:** Remote-first ([mcp.linear.app](https://mcp.linear.app/mcp)), OAuth 2.1, Streamable HTTP, 23+ tools (consolidated), [~2M all-time PulseMCP visitors (#46 globally, ~90K weekly)](https://www.pulsemcp.com/servers/linear), May 2025 launch, closed-source (Linear hasn't published the remote server's code, so no public license applies), requires paid [Linear subscription ($10/user/month Basic)](https://linear.app/pricing). Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 The key question: is Linear's remote-first approach to MCP better than the community-built local servers that came before it?
 
@@ -44,7 +44,7 @@ Since our last review, Linear has launched a major AI product and continued iter
 - **Skills** — save reusable workflows that the agent can execute on demand
 - **Automations** — trigger agent workflows automatically when issues enter triage (Business/Enterprise)
 - **Code Intelligence** (coming soon) — non-technical team members can ask questions about codebases (Business/Enterprise)
-- CEO Karri Saarinen declared ["issue tracking is dead,"](https://www.theregister.com/2026/03/26/linear_agent/) positioning Linear as an agent-first platform. [Coding agents are installed in 75% of Linear enterprise workspaces, and 25% of new issues are now agent-created](https://www.theregister.com/2026/03/26/linear_agent/) (5× increase over three months)
+- CEO Karri Saarinen declared ["issue tracking is dead,"](https://www.theregister.com/2026/03/26/linear_agent/) positioning Linear as an agent-first platform. [Coding agents are installed in 75% of Linear enterprise workspaces, and the volume of work done by agents has increased 5× over the prior three months](https://www.theregister.com/2026/03/26/linear_agent/)
 - **MCP server**: `list_comments` now supports pagination via `cursor`, `limit`, and `orderBy` parameters. Initiatives accept multiple parent initiatives instead of a single parent
 
 **April 2, 2026 — Web Forms for Linear Asks:**
@@ -64,7 +64,7 @@ Since our last review, Linear has launched a major AI product and continued iter
 
 **SSE removal completed:** The `/sse` endpoint deprecated in February 2026 has been fully removed. All configurations must use `https://mcp.linear.app/mcp` (Streamable HTTP). WSL/Windows users can still connect using SSE-only transport as an alternative.
 
-**Known issues:** Claude Code users have reported OAuth failures with "Invalid client" errors (#47185) — each new session requires re-authentication because no refresh token is obtained. Connection failures (#46254) and plugin configuration conflicts (#39511) have also been reported. These appear to be client-side issues rather than Linear server bugs.
+**Known issues (resolved as of this audit):** Claude Code users previously reported OAuth failures with "Invalid client" errors ([#47185](https://github.com/anthropics/claude-code/issues/47185)) — each new session required re-authentication because no refresh token was obtained; that issue is now closed as completed. Connection failures ([#46254](https://github.com/anthropics/claude-code/issues/46254), closed as a duplicate) and plugin configuration conflicts ([#39511](https://github.com/anthropics/claude-code/issues/39511), closed as not-planned/cosmetic) were also reported. These were client-side Claude Code issues rather than Linear server bugs, and all three are now closed.
 
 The April 23 update is the biggest story this cycle. Linear Agent becoming an MCP client — not just an MCP server — is a significant architectural move. It means Linear is positioning itself as a hub in the MCP ecosystem: external agents connect *to* Linear via the MCP server, while Linear Agent reaches *out* to other tools via their MCP servers. The admin allowlist and workspace-level permissions show Linear is thinking about enterprise governance of agent-to-agent communication. Combined with the ongoing token usage reductions, Linear is actively optimizing both sides of the MCP equation.
 
@@ -174,7 +174,7 @@ The transport protocol is **Streamable HTTP** at `https://mcp.linear.app/mcp`. L
 
 **The remote-first design is the right call.** No npm packages to install, no API keys to manage locally, no Node.js dependency. You point your MCP client at a URL, authenticate via OAuth, and you're done. This is how MCP servers should work for SaaS products — the vendor hosts it, handles authentication, and manages updates. You always get the latest tools without updating anything locally.
 
-**Thoughtful API abstraction.** Linear's underlying API is GraphQL, which is powerful but verbose and complex for AI agents. The MCP server flattens GraphQL's nested filter objects into simple, flat parameters. Instead of constructing `{ filter: { assignee: { id: { eq: "..." } } } }`, an agent just passes `assigneeId: "..."`. This is a deliberate design decision that reduces token consumption and makes it easier for models to construct correct tool calls. The Fiberplane analysis noted that this approach represents "a middle ground between raw API exposure and opinionated task automation."
+**Thoughtful API abstraction.** Linear's underlying API is GraphQL, which is powerful but verbose and complex for AI agents. The MCP server flattens GraphQL's nested filter objects into simple, flat parameters. Instead of constructing `{ filter: { assignee: { id: { eq: "..." } } } }`, an agent just passes `assigneeId: "..."`. This is a deliberate design decision that reduces token consumption and makes it easier for models to construct correct tool calls. [The Fiberplane analysis](https://blog.fiberplane.com/blog/mcp-server-analysis-linear/) described this as "a thoughtfully designed abstraction layer, not just a mechanical mapping."
 
 **Explicit value mappings reduce errors.** Priority levels, status values, and other enums are documented directly in the tool schemas. The agent doesn't need to make a separate call to figure out what priority values are valid before creating an issue. Small detail, large impact on reliability.
 
@@ -188,7 +188,7 @@ The transport protocol is **Streamable HTTP** at `https://mcp.linear.app/mcp`. L
 
 **Performance optimization.** Linear has invested in multiple rounds of "improved performance and reduced token usage through better tool documentation." They're actively refining tool descriptions to help models make better decisions with fewer tokens — a sign that Linear understands the practical constraints of LLM-driven workflows.
 
-**Linear Agent as the bigger picture.** The March 2026 launch of Linear Agent — a built-in AI assistant with Skills, Automations, and upcoming Code Intelligence — shows that the MCP server is part of a larger agent strategy, not an isolated feature. The April 23 update took this further: Linear Agent can now connect to external MCP servers (Granola, Glean, Notion, PostHog), making Linear both an MCP server and an MCP client. The MCP server handles external agent access (Cursor, Claude Code, etc.), while Linear Agent reaches out to other tools via their MCP servers. Admin allowlists and workspace-level permissions provide enterprise governance. 25% of new issues are now agent-created, and coding agents are installed in 75% of enterprise workspaces. This bidirectional MCP architecture signals serious long-term investment.
+**Linear Agent as the bigger picture.** The March 2026 launch of Linear Agent — a built-in AI assistant with Skills, Automations, and upcoming Code Intelligence — shows that the MCP server is part of a larger agent strategy, not an isolated feature. The April 23 update took this further: Linear Agent can now connect to external MCP servers (Granola, Glean, Notion, PostHog), making Linear both an MCP server and an MCP client. The MCP server handles external agent access (Cursor, Claude Code, etc.), while Linear Agent reaches out to other tools via their MCP servers. Admin allowlists and workspace-level permissions provide enterprise governance. [Coding agents are installed in 75% of enterprise workspaces, and the volume of agent work has grown 5× in three months](https://www.theregister.com/2026/03/26/linear_agent/). This bidirectional MCP architecture signals serious long-term investment.
 
 **Growing platform reach.** The April 2026 Microsoft Teams integration (mention @Linear to create work from conversations) and custom coding tool support (any tool, not just Linear's built-in list) expand the surface area of agent interactions. Combined with Slack mentions and web forms for external users, Linear is becoming genuinely multi-channel for agent workflows.
 
@@ -204,18 +204,18 @@ The transport protocol is **Streamable HTTP** at `https://mcp.linear.app/mcp`. L
 
 **Remote-only means no offline or custom deployments.** The server is centrally hosted by Linear. You can't run it locally, customize the tool definitions, add your own tools, or use it offline. If you need to integrate Linear data into a custom agent pipeline with additional logic, you'll need one of the community alternatives.
 
-**OAuth reliability issues.** Multiple Claude Code users have reported OAuth connections failing or disconnecting. Linear fixed a ~1-day disconnect bug in April 2026, but "Invalid client" errors (#47185) and connection failures (#46254) persist for some users. The troubleshooting advice — clear `~/.mcp-auth` and restart — works but shouldn't be needed regularly. This is partly a client-side ecosystem problem, but it impacts the "just connect and go" promise of remote MCP.
+**OAuth reliability issues (mostly resolved).** Multiple Claude Code users reported OAuth connections failing or disconnecting earlier in 2026. Linear fixed a ~1-day disconnect bug in April 2026, and the client-side "Invalid client" bug ([#47185](https://github.com/anthropics/claude-code/issues/47185)) that forced re-authentication every session is now closed as completed; a related connection-failure report ([#46254](https://github.com/anthropics/claude-code/issues/46254)) was closed as a duplicate. The troubleshooting advice — clear `~/.mcp-auth` and restart — is still worth knowing for edge cases, but the major tracked bugs are resolved as of this audit.
 
 ## Community & Alternatives
 
 Before Linear shipped their official server (May 2025), the community built several alternatives:
 
-- **jerhadf/linear-mcp-server** — The original community server with 344 stars and 57 forks. Now deprecated in favor of the official server. Last commit December 2024.
-- **dvcrn/mcp-server-linear** — Supports multiple workspaces simultaneously via configurable tool prefixes. Uses local API keys, runs via stdio. Good option if you need multi-workspace support or local deployment.
-- **cline/linear-mcp** — Built specifically for Cline users.
-- **tacticlaunch/mcp-linear** — Community implementation using Linear's GraphQL API directly.
-- **geropl/linear-mcp-go** — A Go implementation for teams that prefer Go over TypeScript.
-- **keegancsmith/linear-issues-mcp-server** — Read-only access, simpler and lighter weight.
+- **[jerhadf/linear-mcp-server](https://github.com/jerhadf/linear-mcp-server)** — The original community server, with 346 stars and 55 forks as of this audit. Now deprecated in favor of the official server — the README says it's "no longer being maintained." Last commit May 2025.
+- **[dvcrn/mcp-server-linear](https://github.com/dvcrn/mcp-server-linear)** — Supports multiple workspaces simultaneously via configurable tool prefixes. Uses local API keys, runs via stdio. Good option if you need multi-workspace support or local deployment.
+- **[cline/linear-mcp](https://github.com/cline/linear-mcp)** — Built specifically for Cline users.
+- **[tacticlaunch/mcp-linear](https://github.com/tacticlaunch/mcp-linear)** — Community implementation using Linear's GraphQL API directly.
+- **[geropl/linear-mcp-go](https://github.com/geropl/linear-mcp-go)** — A Go implementation for teams that prefer Go over TypeScript.
+- **[keegancsmith/linear-issues-mcp-server](https://github.com/keegancsmith/linear-issues-mcp-server)** — Read-only access, simpler and lighter weight.
 
 The community reception has been positive. The official server effectively consolidated a fragmented ecosystem — most community projects now recommend the official server for standard use cases. The community alternatives remain relevant for specific needs: multi-workspace support, local deployment, custom tooling, or read-only access.
 
@@ -233,11 +233,11 @@ Linear's MCP server exists alongside several other project management MCP server
 | **Setup complexity** | Low | Low | Low | Low |
 | **Local option** | No (community only) | No | Community only | No |
 
-**vs. Asana:** Asana's V2 MCP server (at `mcp.asana.com/v2/mcp`) takes a similar remote-first approach with OAuth and Streamable HTTP. Asana dynamically exposes tools rather than publishing a static list, which keeps definitions current but makes it harder to evaluate coverage upfront. Asana has the edge in enterprise access controls (Enterprise+ can manage MCP client access per-client). Linear has the edge in developer experience and tool documentation quality.
+**vs. Asana:** [Asana's V2 MCP server](https://developers.asana.com/docs/integrating-with-asanas-mcp-server) (at `mcp.asana.com/v2/mcp`) takes a similar remote-first approach with OAuth and Streamable HTTP. Asana dynamically exposes tools rather than publishing a static list, which keeps definitions current but makes it harder to evaluate coverage upfront. Asana has the edge in enterprise access controls (Enterprise+ can manage MCP client access per-client). Linear has the edge in developer experience and tool documentation quality.
 
-**vs. Atlassian (Jira/Confluence):** Atlassian's Rovo MCP server covers Jira, Confluence, and Compass in one server — broader scope than Linear's single-product focus. Atlassian launched with Anthropic as their first official partner and hosts on Cloudflare. The enterprise security story (OAuth 2.1, TLS 1.2+, per-user permission enforcement) is comprehensive. Linear is simpler to set up and better documented for individual developers; Atlassian targets larger organizations with more complex permission needs.
+**vs. Atlassian (Jira/Confluence):** [Atlassian's Rovo MCP server](https://www.atlassian.com/blog/announcements/remote-mcp-server) covers Jira, Confluence, Jira Service Management, Bitbucket, and Compass in one server — broader scope than Linear's single-product focus. Atlassian launched with Anthropic as its first official partner and hosts on Cloudflare. The enterprise security story (OAuth 2.1, TLS 1.2+, per-user permission enforcement) is comprehensive. Linear is simpler to set up and better documented for individual developers; Atlassian targets larger organizations with more complex permission needs.
 
-**vs. Todoist:** Todoist's MCP server (at `ai.todoist.net/mcp`) is simpler — roughly 10 tools focused on task CRUD and natural language task creation. It's a personal/small-team task manager, not a project management platform, so the comparison is limited. Todoist's natural language task creation ("Submit report by Friday 5pm #Work") is a nice touch that Linear doesn't offer.
+**vs. Todoist:** [Todoist's MCP server](https://www.todoist.com/help/articles/use-claude-code-with-todoist-cli-and-mcp-b1USJ4HB3) (at `ai.todoist.net/mcp`) is simpler — roughly 10 tools focused on task CRUD and natural language task creation. It's a personal/small-team task manager, not a project management platform, so the comparison is limited. Todoist's natural language task creation ("Submit report by Friday 5pm #Work") is a nice touch that Linear doesn't offer.
 
 **Linear's advantage:** Among project management MCP servers, Linear stands out for the quality of its tool design — flat parameters instead of nested objects, explicit value mappings, convenience features like "me" as an assignee value. The Fiberplane analysis specifically praised this thoughtful abstraction layer as a model for how MCP servers should be built.
 
@@ -273,7 +273,7 @@ But the high context cost (17.3k tokens), verbose responses, and remote-only dep
 
 Among project management MCP servers, Linear's is the most polished in tool design. Atlassian's Jira MCP has broader scope (Jira + Confluence + Compass), and Asana's has stronger enterprise controls, but neither matches Linear's attention to how agents actually consume tool schemas. If you're on Linear, connecting the MCP server is an easy recommendation.
 
-**Rating: 4/5** — Best-in-class tool design with thoughtful schema abstractions and active iteration (pagination, relationship management, OAuth fixes, token reduction). Linear Agent's expansion into MCP client territory — connecting to external tools like Granola, Glean, Notion, and PostHog — makes Linear a bidirectional hub in the MCP ecosystem. Code Intelligence (May 2026 beta) adds GitHub codebase access to complete the loop between PM tracking and engineering reality. Still limited by high context cost, remote-only deployment, and paid platform requirement — but PulseMCP growth (506K → 642K all-time, 28K weekly, #72 globally) shows accelerating adoption.
+**Rating: 4/5** — Best-in-class tool design with thoughtful schema abstractions and active iteration (pagination, relationship management, OAuth fixes, token reduction). Linear Agent's expansion into MCP client territory — connecting to external tools like Granola, Glean, Notion, and PostHog — makes Linear a bidirectional hub in the MCP ecosystem. Code Intelligence (May 2026 beta) adds GitHub codebase access to complete the loop between PM tracking and engineering reality. Still limited by high context cost, remote-only deployment, and paid platform requirement — but [PulseMCP growth](https://www.pulsemcp.com/servers/linear) (642K all-time in May 2026 to ~2M all-time / ~90K weekly / #46 globally as of this August 2026 audit) shows accelerating adoption.
 
 ---
 

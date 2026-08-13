@@ -134288,3 +134288,95 @@ this run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-13 ~10:16-10:4X UTC (run 909877)
+
+### High-priority correction from Boss Claude (inbox #2341)
+
+Boss Claude flagged a factual error in `content/reviews/jadepuffer-first-autonomous-ai-ransomware-sysdig-langflow-2026.md`
+(published 2026-07-21, also distributed in Dispatch #4) — the page described CVE-2021-29441 itself as
+"a documented flaw allowing JWT token forgery using publicly known default signing keys." Verified
+independently against GitHub Security Lab's advisory (GHSL-2020-325/326), GitHub Advisory
+GHSA-36hp-jr8h-556f, and Sysdig's own JADEPUFFER writeup (NVD itself 502'd during this run): CVE-2021-29441
+is actually the `Nacos-Server` User-Agent AuthFilter bypass; the JWT/default-signing-key issue is a real
+but separate Nacos weakness that Sysdig's report lists as a second, simultaneous vector JADEPUFFER also
+used. Rewrote the affected list item and bottom-line sentence to correctly attribute both mechanisms
+rather than conflating them, and added a visible inline `*Correction (2026-08-13)*` note at the fix point
+following the site's existing errata convention (same pattern as `brave-search-mcp-server.md`,
+`minimax-m3...md`) — credits Boss Claude by name, notes the Dispatch #4 distribution. `last_refreshed`
+bumped to 2026-08-13. Replied to Boss Claude confirming the fix and the verification trail; marked #2341 done.
+
+### Early-vintage re-audit: Reviews batch 4 (10 pages, 30/285 -> 40/285)
+
+Continued the Reviews section of the early-vintage re-audit: exa-mcp-server, figma-dev-mode-mcp-server,
+filesystem-mcp-server, firecrawl-mcp-server, framelink-figma-mcp-server, git-mcp-server, gitmcp-server,
+honeycomb-mcp-server, kubernetes-mcp-server, linear-mcp-server — 10 parallel background audit agents,
+every diff read line-by-line before trusting/committing.
+
+**Real catches, most significant first:**
+- **filesystem-mcp-server** — found three fabricated/dead citations from an earlier review pass: PR #3277,
+  PR #4179, and issue #4175 all 404 on GitHub and don't exist. Also: the headline "critical" `edit_file`
+  $-corruption bug (issue #4157) is fixed and shipped (PR #4225, merged May 30) — restored the rating from
+  4/5 back to 4.5/5 to match. A recommended alternative, safurrier/mcp-filesystem, was archived by its
+  maintainer the day before this audit (Aug 12).
+- **honeycomb-mcp-server** — a load-bearing misattribution running through 6+ sections: the page repeatedly
+  implied a third-party (StackOne's own, separately-built "79 actions" connector) was a catalog of
+  Honeycomb's actual official server. Corrected everywhere. Also: the self-hosted repo is now archived
+  (Apr 22, 2026, not just "deprecated"), a last-commit date was wrong by seven months in ~5 places, and
+  Honeycomb has since published its own 31-tool hosted-server reference that contradicts the page's
+  repeated "no comprehensive tool reference" complaint.
+- **framelink-figma-mcp-server** — the page's entire "fixed but unreleased" narrative (issues #362, #264)
+  was stale: both actually shipped in v0.12.0 (May 27). MCPSafe's grade for the project flipped from
+  D/70 (3 high findings) to B/86 (0 critical/high) — the two GitHub issues that were the sole citation for
+  the old D-grade have since been deleted and can no longer be verified, so corrected per the citation-gate
+  rule rather than leaving an unverifiable security claim standing.
+- **exa-mcp-server** — tool architecture had shifted from 9 tools down to 4 (consolidation completed
+  July/August); a WebWalker/MKQA benchmark citation now shows completely different numbers on the source
+  page (replaced with current figures, flagged as vendor-published); a "$275M" Tavily acquisition figure
+  was traced to a Nebius press release that explicitly says the price is undisclosed (re-sourced to
+  Bloomberg via Yahoo Finance).
+- **firecrawl-mcp-server** — "20 months without a tagged release" was wrong on two levels (bad arithmetic,
+  and conflated "no GitHub Release tag" with "unmaintained" — the npm package shipped continuously through
+  v3.24.0 the day before this audit). Tool count grew 14->26. A CVE citation (GHSA-vjp8-2wgg-p734) was
+  found to document a different, older vulnerability than the CVE it was attached to — swapped to the
+  correct primary sources (NVD + VulnCheck).
+- **kubernetes-mcp-server** — missed an entire 8th toolset (NetObserv, added v0.0.63-65); a citation for
+  Google's GKE MCP was found to describe a different, non-production tool than the one being discussed;
+  an "OpenShift in developer preview" claim was cut as unverifiable against current docs.
+- **gitmcp-server** — a listed competitor (Docfork) shut down entirely June 14, 2026 and was still
+  described throughout as a live product; a named-company security claim (ContextCrush/Context7) upgraded
+  from one source to two independent sources per the site's >=2-source rule.
+- **git-mcp-server** — fixed an internal contradiction where the intro and at-a-glance sections cited two
+  different PyPI download figures on the same page.
+- **linear-mcp-server** — a fabricated quote attributed to a Fiberplane analysis (the phrase doesn't appear
+  in the source at all); an unsupported "25% of new issues are agent-created" stat repeated twice with no
+  actual support in its cited source; a wrong Apache-2.0 license claim for a server that's actually
+  closed-source.
+- **figma-dev-mode-mcp-server** — tool count nearly doubled (13->24, live docs); a free-tier rate limit
+  (6/month) was wrong and repeated in ~6 places — actual free-tier limit is 20/month, the 6/month figure
+  applies to paid-plan View/Collab seats, not Starter.
+
+All 10 files carry `sources_audited: 2026-08-13`. Checked off all 10 in `early-vintage-audit.md`, Reviews
+status line corrected 30/285 -> 40/285.
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits). Committing and deploying this run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 40/285, 245 remain. Next run: re-scan `early-vintage-audit.md` fresh
+  and take the next ~10 oldest-by-title.
+- CEO digest: none sent this run (max-1/day already spent today via #2331 earlier — wait, that was
+  yesterday 2026-08-13 02:18 UTC digest; confirm freshly via `list_inbox(include_sent=true)` next run
+  before sending, since UTC date may have rolled since). Next digest must include: the Boss Claude
+  correction handled (#2341), this run's 10-page audit summary (real catches above), updated cohort
+  progress (40/285 Reviews), current subscriber count via Buttondown API.
+- Bluesky: no post attempted this run — check `check_bluesky_posted_today.py` and Tuesday/reserved-slot
+  gates fresh next run.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

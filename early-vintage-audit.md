@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 30/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 40/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -285,17 +285,17 @@ sweeps. Headline catches:
 - [x] 2026-07-22 — [The Datadog MCP Server — Enterprise Observability With Agent-Native Tool Design](content/reviews/datadog-mcp-server.md) — re-audited 2026-08-13
 - [x] 2026-07-22 — [The Docker MCP Server — Your AI Agent's Container Workshop](content/reviews/docker-mcp-server.md) — re-audited 2026-08-13
 - [x] 2026-07-22 — [The EverArt MCP Server — Image Generation for Agents, If You Can Find the API Key](content/reviews/everart-mcp-server.md) — re-audited 2026-08-13
-- [ ] 2026-07-22 — [The Exa MCP Server — Semantic Search That Actually Understands What You Mean](content/reviews/exa-mcp-server.md)
+- [x] 2026-07-22 — [The Exa MCP Server — Semantic Search That Actually Understands What You Mean](content/reviews/exa-mcp-server.md) — re-audited 2026-08-13
 - [x] 2026-07-22 — [The Fetch MCP Server — Your Agent's Simplest Window to the Web (With the Lock Off)](content/reviews/fetch-mcp-server.md)
-- [ ] 2026-07-22 — [The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant](content/reviews/figma-dev-mode-mcp-server.md)
-- [ ] 2026-07-22 — [The Filesystem MCP Server — Simple, Useful, and Worth Understanding](content/reviews/filesystem-mcp-server.md)
-- [ ] 2026-07-22 — [The Firecrawl MCP Server — The Full-Stack Web Scraping Platform for AI Agents](content/reviews/firecrawl-mcp-server.md)
-- [ ] 2026-07-22 — [The Framelink MCP Server for Figma — Community Design-to-Code That Outperforms the Official](content/reviews/framelink-figma-mcp-server.md)
-- [ ] 2026-07-22 — [The Git MCP Server — The Missing Push Button](content/reviews/git-mcp-server.md)
-- [ ] 2026-07-22 — [The GitMCP Server — Zero-Setup Documentation From Any GitHub Repo](content/reviews/gitmcp-server.md)
-- [ ] 2026-07-22 — [The Honeycomb MCP Server — Event-Based Observability With a Hosted MCP That Replaced Its Own Open-Source Server](content/reviews/honeycomb-mcp-server.md)
-- [ ] 2026-07-22 — [The Kubernetes MCP Server — Native API Access Without the kubectl Tax](content/reviews/kubernetes-mcp-server.md)
-- [ ] 2026-07-22 — [The Linear MCP Server — AI-Powered Project Management From Your Editor](content/reviews/linear-mcp-server.md)
+- [x] 2026-07-22 — [The Figma Dev Mode MCP Server — Design-to-Code Translation Through Your AI Assistant](content/reviews/figma-dev-mode-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Filesystem MCP Server — Simple, Useful, and Worth Understanding](content/reviews/filesystem-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Firecrawl MCP Server — The Full-Stack Web Scraping Platform for AI Agents](content/reviews/firecrawl-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Framelink MCP Server for Figma — Community Design-to-Code That Outperforms the Official](content/reviews/framelink-figma-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Git MCP Server — The Missing Push Button](content/reviews/git-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The GitMCP Server — Zero-Setup Documentation From Any GitHub Repo](content/reviews/gitmcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Honeycomb MCP Server — Event-Based Observability With a Hosted MCP That Replaced Its Own Open-Source Server](content/reviews/honeycomb-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Kubernetes MCP Server — Native API Access Without the kubectl Tax](content/reviews/kubernetes-mcp-server.md) — re-audited 2026-08-13
+- [x] 2026-07-22 — [The Linear MCP Server — AI-Powered Project Management From Your Editor](content/reviews/linear-mcp-server.md) — re-audited 2026-08-13
 - [ ] 2026-07-22 — [The Mem0 MCP Server — AI Memory That Actually Scales (If You Pay)](content/reviews/mem0-mcp-server.md)
 - [ ] 2026-07-22 — [The Memory MCP Server — A Knowledge Graph That Needs a Better Brain](content/reviews/memory-mcp-server.md)
 - [ ] 2026-07-22 — [The Milvus MCP Server — The Most Popular Vector Database Gets an AI Interface](content/reviews/milvus-mcp-server.md)

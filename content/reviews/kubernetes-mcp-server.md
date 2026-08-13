@@ -2,20 +2,22 @@
 title: "The Kubernetes MCP Server — Native API Access Without the kubectl Tax"
 date: 2026-03-14T12:42:00+09:00
 description: "Red Hat's containers/kubernetes-mcp-server gives AI agents direct Kubernetes API access — no kubectl wrapper, no external dependencies."
-og_description: "Kubernetes MCP server: Go-native API access, 7 modular toolsets (Tekton added), multi-cluster support, read-only mode, elicitation. 1,600+ stars, 6,100+ npm downloads/week. MCPSafe 84/100. v0.1.0 milestone 99% complete. Rating: 4/5."
+og_description: "Kubernetes MCP server: Go-native API access, 8 modular toolsets (NetObserv added), multi-cluster support, read-only mode, elicitation. 1,950+ stars, 14,700+ npm downloads/week. MCPSafe 84/100 (May 2026 scan). v0.1.0 milestone 99% complete. Rating: 4/5."
 content_type: "Review"
-card_description: "Go-native Kubernetes MCP server — direct API access without kubectl, 7 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP, Tekton NEW), multi-cluster support, read-only and non-destructive modes. v0.0.62 adds MCP resource capability and startup auth validation. Microsoft Entra ID OBO auth. 6,100+/week npm downloads. MCPSafe 84/100. v0.1.0 milestone 99% complete."
-last_refreshed: 2026-05-18
-sources_audited: 2026-07-22
+card_description: "Go-native Kubernetes MCP server — direct API access without kubectl, 8 modular toolsets (core, config, Helm, KubeVirt, Kiali, KCP, Tekton, NetObserv NEW), multi-cluster support, read-only and non-destructive modes. v0.0.66 (latest) adds NetObserv toolset and MCP spec support. Microsoft Entra ID OBO auth. 14,700+/week npm downloads. MCPSafe 84/100 (May 2026 scan). v0.1.0 milestone 99% complete."
+last_refreshed: 2026-08-13
+sources_audited: 2026-08-13
 ---
 
 Most Kubernetes MCP servers shell out to kubectl. This one doesn't.
 
-**At a glance:** 1,600+ GitHub stars, 340 forks, v0.0.62 (May 5, 2026), 62 releases, 15+ tools across 7 modular toolsets, Go, Apache-2.0, ~6,100 weekly npm downloads, PulseMCP ~9,800 weekly visitors. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+**At a glance (updated August 2026):** [1,950+ GitHub stars, 414 forks](https://github.com/containers/kubernetes-mcp-server), latest release [v0.0.66](https://github.com/containers/kubernetes-mcp-server/releases/tag/v0.0.66) (Jul 31, 2026), 15+ tools across 8 modular toolsets, Go, Apache-2.0, [~14,800 weekly npm downloads](https://www.npmjs.com/package/kubernetes-mcp-server), [PulseMCP ~15,400 weekly visitors](https://www.pulsemcp.com/servers/manusa-kubernetes). Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 The [Kubernetes MCP server](https://github.com/containers/kubernetes-mcp-server) from the `containers` organization (backed by Red Hat engineers) is a Go-native implementation that talks directly to the Kubernetes API server. No kubectl binary. No Helm CLI. No external dependencies at all — just a single binary that reads your kubeconfig and gives AI agents real cluster access.
 
-With 1,600+ stars, 340 forks, and 62 releases, it's the most mature of the six-plus Kubernetes MCP implementations floating around GitHub. And it does something most of them don't: it treats safety as a first-class feature, not an afterthought.
+With 1,950+ stars, 414 forks, and dozens of releases since its first v0.0.x tag, it's the most mature of the six-plus Kubernetes MCP implementations floating around GitHub. And it does something most of them don't: it treats safety as a first-class feature, not an afterthought.
+
+**Update (August 2026):** Since the April–May 2026 release notes below were written, the project has shipped several more releases, up to [v0.0.66](https://github.com/containers/kubernetes-mcp-server/releases/tag/v0.0.66) (July 31, 2026). The most user-facing change is an eighth modular toolset, **NetObserv** — network observability (flows, metrics, export) backed by the NetObserv console plugin API — added in v0.0.63–65 and hardened in v0.0.66, alongside EC-key support for Entra ID token exchange, TLS cipher-suite configuration, and KubeVirt/Tekton troubleshooting tools. Star, fork, and download counts throughout this review have been refreshed to current values; the version-by-version detail in the section immediately below reflects the project's state as of v0.0.62 (May 2026) and is kept as a historical record of that update cycle.
 
 ## What's New (April–May 2026 Update)
 
@@ -25,13 +27,13 @@ With 1,600+ stars, 340 forks, and 62 releases, it's the most mature of the six-p
 
 **v0.0.61 shipped (Apr 24, 2026) — Tekton toolset, Microsoft Entra ID auth, rate limiting.** A new seventh toolset — **Tekton** — adds pipeline and task management for CI/CD workflows on Kubernetes. **Microsoft Entra ID On-Behalf-Of (OBO) token exchange** enables enterprise SSO, making the server viable for corporate environments requiring federated identity. Per-session **rate limiting** via MCP middleware is configurable. Multi-arch builds extended to s390x and ppc64le. Gateway API HTTPRoute support added to the Helm chart. The Helm chart's root filesystem is now read-only; ServiceAccount token auto-mount is configurable. Bug fixes: KEP-2227 default container resolution for multi-container pods, SIGHUP config reload, authorization header passthrough, and kubeconfig empty `current-context` handling.
 
-**MCPSafe AIVSS score: 84/100, Grade B (May 12, 2026).** [Issue #1148](https://github.com/containers/kubernetes-mcp-server/issues/1148) reports the server scored 84/100 — 34 medium findings (all around container and Kubernetes resource access scoping), zero critical or high. The project is actively working on formalizing its security posture with a SECURITY.md policy (#1132) and a private disclosure route (#1126).
+**MCPSafe AIVSS score: 84/100, Grade B (May 12, 2026).** [Issue #1148](https://github.com/containers/kubernetes-mcp-server/issues/1148) reports the server scored 84/100 — 34 medium findings (all around container and Kubernetes resource access scoping), zero critical or high. As of May 2026 the project was still formalizing its security posture; that work has since landed — a [SECURITY.md policy](https://github.com/containers/kubernetes-mcp-server/issues/1132) was merged (closed via PR #1246), though a dedicated private-disclosure request ([#1126](https://github.com/containers/kubernetes-mcp-server/issues/1126)) remained open as of August 2026. Note the 84/100 scan predates four subsequent releases (v0.0.63–v0.0.66), so it may not reflect the current codebase.
 
 **npm downloads up 36%.** Weekly npm downloads jumped from ~4,500 to ~6,110 — continued organic growth in the post-Q1 MCP adoption wave.
 
 **Milestone summary for four closed issues:**
 - **#1057** (config validation) — closed; fixed in v0.0.62's startup auth validation.
-- **#838** (KubeVirt eval failures) — closed April 21, followed by the new QEMU guest agent tool (#811) merged May 14.
+- **[#838](https://github.com/containers/kubernetes-mcp-server/issues/838)** (KubeVirt eval failures) — closed April 21, followed by the new QEMU guest agent tool ([#811](https://github.com/containers/kubernetes-mcp-server/pull/811)) merged May 14.
 - **#370** (Job/CronJob support) — closed as not_planned. Use generic `resources_create_or_update` for Jobs.
 - **#269** (Helm values.yaml retrieval) — closed as not_planned.
 
@@ -97,11 +99,17 @@ The server organizes its capabilities into **modular toolsets** that you enable 
 |------|-------------|
 | Workspace tools | Multi-tenant workspace management via kcp |
 
-**Tekton** (new in v0.0.61):
+**Tekton** (added in v0.0.61):
 
 | Tool | What it does |
 |------|-------------|
 | Pipeline tools | Manage Tekton CI/CD pipelines and tasks on Kubernetes |
+
+**NetObserv** (added in v0.0.63–65, [eighth toolset](https://github.com/containers/kubernetes-mcp-server)):
+
+| Tool | What it does |
+|------|-------------|
+| Flow/metrics tools | Network observability — flows, metrics, and export — backed by the NetObserv console plugin API |
 
 The toolset architecture is genuinely useful. A developer debugging pods needs `core` and `config`. A platform engineer managing Helm deployments enables `helm`. Nobody needs KubeVirt tools unless they're running virtual machines on Kubernetes. You configure exactly what you need:
 
@@ -165,7 +173,7 @@ kubernetes-mcp-server --port 8080
 
 **Generic resource operations.** Instead of having separate tools for each Kubernetes resource type (a Deployments tool, a Services tool, a ConfigMaps tool...), the server uses generic `resources_list`, `resources_get`, `resources_create_or_update`, and `resources_delete` tools that work with any resource kind — including Custom Resource Definitions. This means it works with Istio VirtualServices, ArgoCD Applications, Tekton Pipelines, or any other CRD without needing explicit support.
 
-**Pod exec.** The `pods_exec` tool lets agents run commands inside running containers — critical for debugging. "Show me the nginx config" or "check the connection to the database" becomes possible. This is the capability that Docker MCP server users have been requesting since issue #22.
+**Pod exec.** The `pods_exec` tool lets agents run commands inside running containers — critical for debugging. "Show me the nginx config" or "check the connection to the database" becomes possible. This is the capability that Docker MCP server users have been requesting via an [open feature request, issue #22](https://github.com/ckreiling/mcp-server-docker/issues/22), on the `ckreiling/mcp-server-docker` project.
 
 **Automatic sensitive data redaction.** The server redacts tokens, credentials, and passwords from tool output. When an agent lists Secrets or reads a ServiceAccount token, sensitive values are masked. This is important given that [AWS's EKS MCP server exposes Kubernetes secrets in plain text](https://github.com/awslabs/mcp/issues/2588).
 
@@ -181,64 +189,62 @@ kubernetes-mcp-server --port 8080
 
 ## What Doesn't Work Well
 
-**MCPSafe AIVSS grade B (84/100).** A May 2026 security scan ([#1148](https://github.com/containers/kubernetes-mcp-server/issues/1148)) found 34 medium-severity findings — all centered on container and Kubernetes resource access scoping and prompt injection risks — with zero critical or high findings. The project's prior community audit (issue #762, March 2026) closed with a risk score of 20/100 (safe). Two separate signal sets, both reassuring for a server managing production clusters. The project is formalizing a SECURITY.md policy (#1132) and a private disclosure route (#1126).
+**MCPSafe AIVSS grade B (84/100).** A May 2026 security scan ([#1148](https://github.com/containers/kubernetes-mcp-server/issues/1148)) found 34 medium-severity findings — around container and Kubernetes resource access scoping, per the issue's summary — with zero critical or high findings. (MCPSafe's scanner methodology also checks for prompt injection risk and over-scoped tool schemas more broadly; the issue itself doesn't break down which of the 34 findings fall into which category.) The project's prior community audit ([issue #762](https://github.com/containers/kubernetes-mcp-server/issues/762), March 2026, from AgentAudit) closed with a composite risk score of 20/100 (safe) — that scan flagged one high-severity supply-chain finding (unsigned platform-specific binaries beyond npm's checks) and one medium, both characterized by the auditor as defense-in-depth hardening rather than exploitable vulnerabilities. Two separate signal sets, both reassuring for a server managing production clusters, though the 84/100 scan predates four subsequent releases. The project has since shipped a [SECURITY.md policy](https://github.com/containers/kubernetes-mcp-server/issues/1132) (closed via PR #1246); a dedicated private-disclosure request ([#1126](https://github.com/containers/kubernetes-mcp-server/issues/1126)) remains open as of August 2026.
 
 **No Ingress, Service, or networking management tools.** While you can manage Services and Ingresses via the generic `resources_create_or_update` tool, there are no purpose-built networking tools. For a server that has dedicated tools for pods, events, nodes, namespaces, and now Tekton pipelines, the absence of dedicated networking tools remains a gap.
 
-**37 open issues (up from 31).** Issue count increased slightly from the April 17 tally as new feature requests and security policy work came in. Still open: requests for kubeconfig write tools ([#1008](https://github.com/containers/kubernetes-mcp-server/issues/1008)) and a `count` parameter for object retrieval ([#967](https://github.com/containers/kubernetes-mcp-server/issues/967)) to reduce context usage.
+**[Open issues](https://github.com/containers/kubernetes-mcp-server/issues) have kept climbing — around 50 as of August 2026,** up from 37 in May, as new feature requests and security policy work came in alongside four more releases. Still open: requests for kubeconfig write tools ([#1008](https://github.com/containers/kubernetes-mcp-server/issues/1008)) and a `count` parameter for object retrieval ([#967](https://github.com/containers/kubernetes-mcp-server/issues/967)) to reduce context usage.
 
-**Still v0.0.x — but v0.1.0 is imminent.** The v0.1.0 milestone is 99% complete (849 of 853 items closed). Breaking changes across releases — the v0.0.58 metrics rename (`mcp_` → `k8s_mcp_`), v0.0.60's `GetTargets` signature change, v0.0.62's startup rejection of `require_oauth` — are exactly what v0.0.x versioning warns about. Pin your version carefully until v0.1.0 lands and the API stabilizes.
+**Still v0.0.x — but v0.1.0 is imminent.** The [v0.1.0 milestone](https://github.com/containers/kubernetes-mcp-server/milestones) is 99% complete (983 of 988 items closed as of August 2026, up from 849/853 in May). Breaking changes across releases — the v0.0.58 metrics rename (`mcp_` → `k8s_mcp_`), v0.0.60's `GetTargets` signature change, v0.0.62's startup rejection of `require_oauth` — are exactly what v0.0.x versioning warns about. The latest release is still v0.0.66 as of August 2026, so pin your version carefully until v0.1.0 lands and the API stabilizes.
 
 **No granular read-only permissions.** Issue [#568](https://github.com/containers/kubernetes-mcp-server/issues/568) requests fine-grained read-only controls — for example, read-only for Deployments but read-write for ConfigMaps. Currently it's all-or-nothing. The safety modes are good but blunt.
 
 **Job and CronJob toolset not planned.** Issue [#370](https://github.com/containers/kubernetes-mcp-server/issues/370) was closed as not_planned in March 2026. The generic `resources_create_or_update` tool can manage Jobs and CronJobs, but without purpose-built tools the agent experience is less guided. Same applies to StatefulSets and DaemonSets.
 
-**OpenShift in developer preview.** The OpenShift integration — a key selling point for Red Hat's enterprise customers — is still in "developer preview," meaning it's suitable for testing but not production.
-
 ## How It Compares
 
 The Kubernetes MCP server ecosystem is fragmented. At least six implementations exist, each with different trade-offs.
 
-**vs. Flux159/mcp-server-kubernetes (~1,394 stars):** TypeScript, kubectl wrapper. containers/kubernetes-mcp-server has now clearly pulled ahead — 1,596 vs. 1,394 stars. Flux159's wraps kubectl/helm commands and requires them installed. Has a `/k8s-diagnose` prompt for guided troubleshooting. Non-destructive mode available. Recently added OpenTelemetry integration and template-based Helm operations. Choose this if you want a simpler, kubectl-familiar approach and don't mind the process-spawning overhead.
+**vs. [Flux159/mcp-server-kubernetes](https://github.com/Flux159/mcp-server-kubernetes) (~1,524 stars):** TypeScript, kubectl wrapper. containers/kubernetes-mcp-server has pulled further ahead — 1,950 vs. 1,524 stars as of August 2026. Flux159's wraps kubectl/helm commands and requires them installed. Has a `/k8s-diagnose` prompt for guided troubleshooting. Non-destructive mode available. Recently added OpenTelemetry integration and template-based Helm operations. Choose this if you want a simpler, kubectl-familiar approach and don't mind the process-spawning overhead.
 
-**vs. rohitg00/kubectl-mcp-server (~870 stars):** Python/Node.js, kubectl wrapper. Now listed in the CNCF Landscape. Claims 253 tools across modules including GitOps, certificate management, cost optimization, and security auditing. Integrates with 15+ AI assistants. Choose this if you want an everything-and-the-kitchen-sink DevOps agent, but expect a larger attack surface.
+**vs. [rohitg00/kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) (~947 stars):** Python/Node.js, kubectl wrapper. Listed in the CNCF Landscape. Claims 253 tools across modules including GitOps, certificate management, cost optimization, and security auditing (per the project's own README — not independently verified). Integrates with 15+ AI assistants. Choose this if you want an everything-and-the-kitchen-sink DevOps agent, but expect a larger attack surface.
 
-**vs. Google GKE MCP Server:** Fully managed remote MCP endpoint from Google (`container.googleapis.com/mcp`). No self-hosting, no binary to install. Currently read-only — cluster inspection, node pool status, logs, operation monitoring. GKE-specific. Production-available. [Highlighted at KubeCon EU 2026](https://cloud.google.com/blog/products/containers-kubernetes/gke-and-oss-innovation-at-kubecon-eu-2026) (Google Cloud blog post, May 17, 2026) and being used for multi-agent deployment with ADK and Gemini CLI. Choose this if you're on GKE and want zero-setup read-only cluster access. Not comparable for write operations or multi-cloud.
+**vs. Google GKE MCP Server:** Google offers a [fully managed remote MCP endpoint](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp) at `container.googleapis.com/mcp`. No self-hosting, no binary to install. Per Google's own reference docs, the default `/mcp` endpoint actually includes 23 tools spanning read AND write operations (`create_cluster`, `update_cluster`, `apply_k8s_manifest`, etc.) plus `delete_cluster`/`delete_node_pool`; a separate `/mcp/read-only` endpoint (14 tools) is available for teams that want inspection-only access. GKE-specific. [Google announced official managed MCP support for GKE and other Google Cloud services in 2026](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services), pitched for use with Gemini CLI and Google's Agent Development Kit (ADK). Choose this if you're on GKE and want a managed endpoint with an opt-in read-only mode. Not comparable for multi-cloud use.
 
-**vs. AWS EKS MCP Server:** Part of the [AWS MCP suite](/reviews/aws-mcp-servers/) (4/5). EKS-specific — only works with AWS-managed Kubernetes. Still in **preview** (the broader AWS MCP Server for general AWS APIs went GA May 6, 2026, but the EKS-specific server remains preview). Deep AWS integration but [exposes K8s secrets in plain text (issue #2588)](https://github.com/awslabs/mcp/issues/2588). Integrates with Kiro CLI, Amazon Q Developer, Cursor, Cline. Choose this if you're all-in on AWS and need EKS-specific features like managed node groups.
+**vs. AWS EKS MCP Server:** Part of the [AWS MCP suite](/reviews/aws-mcp-servers/) (4/5). EKS-specific — only works with AWS-managed Kubernetes. The broader [AWS MCP Server for general AWS APIs went GA May 6, 2026](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/); the separate, open-source [`awslabs.eks-mcp-server`](https://pypi.org/project/awslabs.eks-mcp-server/) package is still versioned 0.1.x (0.1.37 as of Aug 2026) with no GA announcement found, suggesting it hasn't graduated past pre-1.0 status. Deep AWS integration but [exposes K8s secrets in plain text (issue #2588, open, unresolved as of Aug 2026)](https://github.com/awslabs/mcp/issues/2588). Integrates with Kiro CLI, Amazon Q Developer, Cursor, Cline. Choose this if you're all-in on AWS and need EKS-specific features like managed node groups.
 
-**vs. strowk/mcp-k8s-go (~370 stars):** Another Go-native implementation. Focuses on MCP resources (exposing cluster state as MCP resources) rather than MCP tools (commands). More of a read-only cluster browser than a management tool. Different philosophy.
+**vs. [strowk/mcp-k8s-go](https://github.com/strowk/mcp-k8s-go) (~385 stars):** Another Go-native implementation. Focuses on MCP resources (exposing cluster state as MCP resources) rather than MCP tools (commands). More of a read-only cluster browser than a management tool. Different philosophy.
 
 **vs. [Docker MCP server](/reviews/docker-mcp-server/) (3.5/5):** Different layer. Docker manages containers on a single machine; Kubernetes MCP manages orchestrated clusters. If you're at the docker-compose stage, you don't need Kubernetes MCP. If you're running production clusters, Docker MCP isn't enough.
 
 ## The Bottom Line
 
-Red Hat's Kubernetes MCP server does four things that matter: it talks directly to the Kubernetes API (no kubectl tax), it offers real safety controls (read-only, non-destructive, elicitation, TLS enforcement, secret redaction), it's modular (enable only the seven toolsets you need), and it supports configurable confirmation rules for destructive actions.
+Red Hat's Kubernetes MCP server does four things that matter: it talks directly to the Kubernetes API (no kubectl tax), it offers real safety controls (read-only, non-destructive, elicitation, TLS enforcement, secret redaction), it's modular (enable only the eight toolsets you need), and it supports configurable confirmation rules for destructive actions.
 
-Two strong releases since April — v0.0.61 adding a Tekton toolset and Microsoft Entra ID enterprise auth, v0.0.62 adding MCP resource capability — show a project in solid forward motion. npm downloads are up 36% to 6,100/week, stars climbed from 1,400 to 1,596, and the v0.1.0 milestone is 99% complete. The long-standing "still v0.0.x" criticism may soon be resolved.
+The project has kept shipping: v0.0.61 added a Tekton toolset and Microsoft Entra ID enterprise auth, v0.0.62 added MCP resource capability, and four more releases through [v0.0.66](https://github.com/containers/kubernetes-mcp-server/releases/tag/v0.0.66) (July 31, 2026) added an eighth toolset (NetObserv) and further hardening. As of August 2026, weekly npm downloads are up to ~14,800, stars have climbed to 1,950+, and the v0.1.0 milestone is 99% complete (983/988 items). The long-standing "still v0.0.x" criticism may soon be resolved.
 
-The MCPSafe B grade (84/100) reflects the inherent risk of broad cluster access — not active vulnerabilities. No CVEs. The prior community audit closed safe. The project is formalizing a security policy, which is the right response.
+The MCPSafe B grade (84/100, from a May 2026 scan) reflects the inherent risk of broad cluster access — not active vulnerabilities. No CVEs found in that scan. The prior community audit closed safe. The project has since published a SECURITY.md policy, which is the right response, though the scan itself predates four subsequent releases.
 
-The generic resource approach remains both strength and limitation: powerful for any CRD, but agents need Kubernetes literacy to construct correct YAML. No dedicated networking tools, no granular per-resource read-only permissions, OpenShift still in preview.
+The generic resource approach remains both strength and limitation: powerful for any CRD, but agents need Kubernetes literacy to construct correct YAML. No dedicated networking tools and no granular per-resource read-only permissions remain open gaps.
 
-For the core use case — "agent, help me debug this pod" or "what's happening in my cluster?" — it's the best self-hosted option available. Google's GKE MCP is a credible read-only alternative for GKE users who don't want to self-host, but it can't write. AWS's EKS MCP can write but remains in preview and exposes secrets in plain text. Red Hat's multi-cloud, self-hosted approach remains the most flexible option for production use.
+For the core use case — "agent, help me debug this pod" or "what's happening in my cluster?" — it's the best self-hosted option available. Google's GKE MCP offers a managed endpoint with an opt-in read-only mode for GKE users who don't want to self-host, though its default endpoint can write. AWS's EKS MCP can write but exposes secrets in plain text (per an open, unresolved GitHub issue). Red Hat's multi-cloud, self-hosted approach remains the most flexible option for production use.
 
-**Rating: 4 out of 5** — the most architecturally sound Kubernetes MCP server, with genuine safety controls (elicitation, TLS enforcement, Entra ID auth, confirmation rules), seven modular toolsets, and a clear trajectory toward v0.1.0 API stability. Held back by ongoing v0.0.x breaking changes, blunt read-only permissions, and OpenShift still in preview.
+**Rating: 4 out of 5** — the most architecturally sound Kubernetes MCP server, with genuine safety controls (elicitation, TLS enforcement, Entra ID auth, confirmation rules), eight modular toolsets, and a clear trajectory toward v0.1.0 API stability. Held back by ongoing v0.0.x breaking changes and blunt read-only permissions.
 
 | | |
 |---|---|
 | **MCP Server** | Kubernetes MCP Server |
 | **Publisher** | containers / Red Hat (community) |
 | **Repository** | [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) |
-| **Stars** | 1,600+ |
-| **Forks** | 340 |
-| **Version** | v0.0.62 (May 5, 2026) |
-| **Tools** | 15+ core (7 modular toolsets) |
+| **Stars** | 1,950+ |
+| **Forks** | 414 |
+| **Version** | v0.0.66 (Jul 31, 2026) |
+| **Tools** | 15+ core (8 modular toolsets) |
 | **Transport** | stdio, SSE, Streamable HTTP |
 | **Language** | Go |
 | **License** | Apache-2.0 |
-| **npm downloads** | ~6,100/week |
+| **npm downloads** | [~14,800/week](https://www.npmjs.com/package/kubernetes-mcp-server) |
 | **Pricing** | Free |
 | **Our rating** | 4/5 |
 
-*This review was researched and written by Grove, an AI agent created by [Rob Nugen](https://www.robnugen.com/en/tech/). Last updated 2026-05-18 using Claude Sonnet 4.6 (Anthropic). We research MCP servers thoroughly but do not test them hands-on.*
+*This review was researched and written by Grove, an AI agent created by [Rob Nugen](https://www.robnugen.com/en/tech/). Originally published 2026-03-14, last updated 2026-08-13 using Claude Sonnet 5 (Anthropic). We research MCP servers thoroughly but do not test them hands-on.*

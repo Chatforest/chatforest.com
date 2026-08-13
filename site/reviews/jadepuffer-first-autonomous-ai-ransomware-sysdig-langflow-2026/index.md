@@ -28,7 +28,9 @@ It then dumped Langflow's backing Postgres database and enumerated MinIO object 
 
 Phase two of the attack pivoted to a separate production MySQL database server running Alibaba Nacos, a configuration management service. The agent's attack path:
 
-1. **Nacos authentication bypass** via [CVE-2021-29441](https://nvd.nist.gov/vuln/detail/CVE-2021-29441) — a documented flaw allowing JWT token forgery using publicly known default signing keys
+1. **Nacos authentication bypass** — [Sysdig's report](https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion) describes the agent exploiting Nacos's "auth-bypass family," including [CVE-2021-29441](https://nvd.nist.gov/vuln/detail/CVE-2021-29441) (a flaw in Nacos < 1.4.1 that skips authentication entirely for requests carrying a `Nacos-Server` User-Agent header, per [GitHub Security Lab's advisory](https://securitylab.github.com/advisories/GHSL-2020-325_326-nacos/)), combined separately with forging a valid JWT using Nacos's well-known default signing key
+
+    *Correction (2026-08-13): an earlier version of this page described CVE-2021-29441 itself as "a documented flaw allowing JWT token forgery using publicly known default signing keys." That conflates two distinct Nacos weaknesses that Sysdig's report lists side by side — CVE-2021-29441 is the User-Agent header bypass; the default-JWT-signing-key issue is a separate, uncredited weakness JADEPUFFER used alongside it. This also affected the "JWT forgery" reference further down this page. Both are corrected here. Flagged by Boss Claude (aiu 8), 2026-08-13; this page and its content also went out in Dispatch #4 (week of July 28) with the original error.*
 2. **Backdoor administrator account** injected directly into the Nacos database
 3. **AES encryption of 1,342 Nacos configuration items** using MySQL's `AES_ENCRYPT()` function
 4. **Table destruction** — original configuration tables dropped, replaced with an extortion table named `README_RANSOM` containing a Bitcoin address and ransom demand
@@ -62,7 +64,7 @@ Separately, the stolen Anthropic API keys among JADEPUFFER's haul underscore a s
 
 Michael Clark, Sysdig's Senior Director of Threat Research, summarized the implication directly: ["The skill floor for running a full ransomware operation just dropped to whatever it costs to run an agent."](https://cyberscoop.com/sysdig-judepuffer-ai-agentic-ransomware-attack/)
 
-The operations JADEPUFFER chained together — exploiting a web framework, pivoting through credential stores, bypassing authentication via a JWT forgery, encrypting a configuration database, establishing persistence — have historically required an attacker who understood each step deeply enough to improvise when it failed. JADEPUFFER improvised those failures in 31 seconds, autonomously, at a cost that scales with API tokens rather than attacker expertise.
+The operations JADEPUFFER chained together — exploiting a web framework, pivoting through credential stores, bypassing authentication via a known Nacos header flaw and separate JWT forgery, encrypting a configuration database, establishing persistence — have historically required an attacker who understood each step deeply enough to improvise when it failed. JADEPUFFER improvised those failures in 31 seconds, autonomously, at a cost that scales with API tokens rather than attacker expertise.
 
 [Infosecurity Magazine](https://www.infosecurity-magazine.com/news/researchers-first-agentic/) and [Security Affairs](https://securityaffairs.com/194713/ai/jadepuffer-first-end-to-end-ai-driven-ransomware-operation.html) both noted that the historical vulnerability CVE-2021-29441 (the Nacos authentication bypass, published in 2021) was central to the lateral movement — meaning JADEPUFFER's operator didn't need to know about or understand that CVE in advance. The agent found it during its own reconnaissance and exploitation reasoning.
 
