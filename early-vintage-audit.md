@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 40/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 50/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -296,16 +296,16 @@ sweeps. Headline catches:
 - [x] 2026-07-22 — [The Honeycomb MCP Server — Event-Based Observability With a Hosted MCP That Replaced Its Own Open-Source Server](content/reviews/honeycomb-mcp-server.md) — re-audited 2026-08-13
 - [x] 2026-07-22 — [The Kubernetes MCP Server — Native API Access Without the kubectl Tax](content/reviews/kubernetes-mcp-server.md) — re-audited 2026-08-13
 - [x] 2026-07-22 — [The Linear MCP Server — AI-Powered Project Management From Your Editor](content/reviews/linear-mcp-server.md) — re-audited 2026-08-13
-- [ ] 2026-07-22 — [The Mem0 MCP Server — AI Memory That Actually Scales (If You Pay)](content/reviews/mem0-mcp-server.md)
-- [ ] 2026-07-22 — [The Memory MCP Server — A Knowledge Graph That Needs a Better Brain](content/reviews/memory-mcp-server.md)
-- [ ] 2026-07-22 — [The Milvus MCP Server — The Most Popular Vector Database Gets an AI Interface](content/reviews/milvus-mcp-server.md)
-- [ ] 2026-07-22 — [The MongoDB MCP Server — The Most Comprehensive Database Server We've Reviewed](content/reviews/mongodb-mcp-server.md)
-- [ ] 2026-07-22 — [The Neon MCP Server — Serverless Postgres Management Through Natural Language](content/reviews/neon-mcp-server.md)
-- [ ] 2026-07-22 — [The Notion MCP Server — Your Workspace in Your Agent's Hands (Both Versions)](content/reviews/notion-mcp-server.md)
-- [ ] 2026-07-22 — [The PagerDuty MCP Server — 67+ Tools for Incident Management With the Most Comprehensive Write API in the Category](content/reviews/pagerduty-mcp-server.md)
-- [ ] 2026-07-22 — [The Perplexity MCP Server — When Your Agent Wants Answers, Not Links](content/reviews/perplexity-mcp-server.md)
-- [ ] 2026-07-22 — [The Pinecone MCP Server — Cloud Vector Search With Built-In Reranking](content/reviews/pinecone-mcp-server.md)
-- [ ] 2026-07-22 — [The Playwright MCP Server — The New Standard for Browser Automation](content/reviews/playwright-mcp-server.md)
+- [x] 2026-07-22 — [The Mem0 MCP Server — AI Memory That Actually Scales (If You Pay)](content/reviews/mem0-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Memory MCP Server — A Knowledge Graph That Needs a Better Brain](content/reviews/memory-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Milvus MCP Server — The Most Popular Vector Database Gets an AI Interface](content/reviews/milvus-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The MongoDB MCP Server — The Most Comprehensive Database Server We've Reviewed](content/reviews/mongodb-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Neon MCP Server — Serverless Postgres Management Through Natural Language](content/reviews/neon-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Notion MCP Server — Your Workspace in Your Agent's Hands (Both Versions)](content/reviews/notion-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The PagerDuty MCP Server — 67+ Tools for Incident Management With the Most Comprehensive Write API in the Category](content/reviews/pagerduty-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Perplexity MCP Server — When Your Agent Wants Answers, Not Links](content/reviews/perplexity-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Pinecone MCP Server — Cloud Vector Search With Built-In Reranking](content/reviews/pinecone-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Playwright MCP Server — The New Standard for Browser Automation](content/reviews/playwright-mcp-server.md) — re-audited 2026-08-14
 - [ ] 2026-07-22 — [The PostgreSQL MCP Server — Read-Only Protection That Wasn't](content/reviews/postgres-mcp-server.md)
 - [ ] 2026-07-22 — [The Pulumi MCP Server — From Registry Lookups to Autonomous Infrastructure via Neo](content/reviews/pulumi-mcp-server.md)
 - [ ] 2026-07-22 — [The Puppeteer MCP Server — Give Your Agent a Real Browser](content/reviews/puppeteer-mcp-server.md)

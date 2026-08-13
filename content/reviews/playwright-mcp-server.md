@@ -2,20 +2,20 @@
 title: "The Playwright MCP Server — The New Standard for Browser Automation"
 date: 2026-03-14T01:06:39+09:00
 description: "The Playwright MCP server is the full-featured browser automation standard for AI agents."
-og_description: "The Playwright MCP server is the full-featured browser automation standard for AI agents. 32.4K stars, v0.0.75, #1 on PulseMCP, now on MCP Registry. Playwright 1.60 adds HAR tracing API and browser_drop for drag-and-drop. Rating: 4.5/5."
+og_description: "The Playwright MCP server is the full-featured browser automation standard for AI agents. 36K+ stars, v0.0.75 (now v0.0.79), #2 on PulseMCP, on the MCP Registry. Playwright 1.60 adds HAR tracing API and browser_drop for drag-and-drop. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Microsoft's browser MCP server uses accessibility tree targeting instead of CSS selectors. Three browser engines, 25+ tools, CLI companion for 4x token savings. Now on the official MCP Registry. v0.0.74 adds auto-recovery and multi-tab extension support. Playwright 1.60 adds HAR tracing and browser_drop."
+card_description: "Microsoft's browser MCP server uses accessibility tree targeting instead of CSS selectors. Three browser engines, 50+ tools, CLI companion for lower token usage. Now on the official MCP Registry. v0.0.74 adds auto-recovery and multi-tab extension support. Playwright 1.60 adds HAR tracing and browser_drop."
 last_refreshed: 2026-05-17
-sources_audited: 2026-07-22
+sources_audited: 2026-08-14
 ---
 
-If you read our [Puppeteer MCP review](/reviews/puppeteer-mcp-server/), you know the punchline: Playwright MCP has overtaken it for most use cases. Now it's time to explain why. The Playwright MCP server (`@playwright/mcp`) is Microsoft's official MCP interface for browser automation, maintained by the same team that builds Playwright itself. It has 32,400+ GitHub stars, 2,500+ forks, support from 15+ MCP clients, and one architectural decision that changes everything: the accessibility tree.
+If you read our [Puppeteer MCP review](/reviews/puppeteer-mcp-server/), you know the punchline: Playwright MCP has overtaken it for most use cases. Now it's time to explain why. The Playwright MCP server (`@playwright/mcp`) is Microsoft's official MCP interface for browser automation, maintained by the same team that builds Playwright itself. It has [36,000+ GitHub stars and 3,000+ forks](https://github.com/microsoft/playwright-mcp) as of this audit, support from 15+ MCP clients, and one architectural decision that changes everything: the accessibility tree.
 
 Instead of making agents craft CSS selectors to target page elements, Playwright MCP represents pages as structured accessibility trees — semantic labels like "Submit button" and "Email input" that agents can reference by stable IDs. This single design choice makes browser automation dramatically more reliable for AI agents. Part of our **[Developer Tools MCP category](/categories/developer-tools/)**. Here's the full picture.
 
 ## What It Does
 
-The server exposes 25+ tools organized into capability tiers:
+The server exposed 25+ tools at the time of our original review; as of this audit the [tool list](https://github.com/microsoft/playwright-mcp#tools) has grown to 50+, organized into capability tiers, with entire new opt-in categories — cookie/localStorage/sessionStorage management and a DevTools set (tracing, video, highlighting) — added since our last full refresh. The core tiers below are still current:
 
 **Core tools (always available):**
 - **`browser_navigate`** / **`browser_navigate_back`** — Navigate to URLs and go back in history.
@@ -26,7 +26,7 @@ The server exposes 25+ tools organized into capability tiers:
 - **`browser_select_option`** / **`browser_hover`** / **`browser_drag`** — Standard interactions.
 - **`browser_press_key`** — Send keyboard events (Enter, Escape, shortcuts).
 - **`browser_take_screenshot`** — Visual capture when the accessibility tree isn't enough.
-- **`browser_evaluate`** / **`browser_run_code`** — Execute JavaScript or Playwright code snippets.
+- **`browser_evaluate`** / **`browser_run_code_unsafe`** — Evaluate a JavaScript expression on the page, or run a raw Playwright code snippet. Microsoft's own docs flag the latter as "RCE-equivalent" — it executes arbitrary JavaScript in the Playwright server process, so treat it like running untrusted code.
 - **`browser_file_upload`** — Upload files directly. (Puppeteer doesn't have this.)
 - **`browser_drop`** — Simulate external drag-and-drop of files or clipboard-like data onto an element. Added with Playwright 1.60's `locator.drop()` API.
 - **`browser_handle_dialog`** — Manage alerts, confirms, and prompts.
@@ -68,7 +68,7 @@ VS Code, Cursor, and most other MCP clients use the same format. Many have one-c
 - `--storage-state=auth.json` — Load saved authentication state.
 - `--user-data-dir=./profile` — Use a persistent browser profile.
 - `--allowed-origins` / `--blocked-origins` — Network security controls.
-- `--save-trace` — Save Playwright traces for debugging.
+- `--save-session` — Save the Playwright MCP session into the output directory for debugging.
 
 All flags are also available as environment variables (`PLAYWRIGHT_MCP_HEADLESS=true`, etc.).
 
@@ -76,18 +76,18 @@ All flags are also available as environment variables (`PLAYWRIGHT_MCP_HEADLESS=
 
 ## What's New (January–May 2026)
 
-The Playwright MCP server has shipped 20+ releases since our original review, now at **v0.0.75** (May 7, 2026). The January–March features remain significant, and the March–May updates bring Playwright 1.59 and 1.60 integration and meaningful stability improvements.
+The Playwright MCP server has shipped 20+ releases since our original review, reaching **v0.0.75** (May 7, 2026) by the time of our last content refresh. The January–March features remain significant, and the March–May updates bring Playwright 1.59 and 1.60 integration and meaningful stability improvements. (As of this citation audit, [the project has continued shipping](https://github.com/microsoft/playwright-mcp/releases) and is up to v0.0.79 (August 6, 2026); we haven't done a full changelog refresh for June–August yet, so the "What's New" detail below stops at v0.0.75.)
 
 ### April–May 2026: MCP Registry, Stability, and Playwright 1.60
 
-**Official MCP Registry (v0.0.73)** — Playwright MCP is now published to the [official MCP Registry](https://github.com/mcp/microsoft/playwright-mcp) on every release. Tools and clients that use the Registry for server discovery can resolve Playwright MCP without manual configuration or npm package lookups. Also: extension channel and `executablePath` are now resolvable from CLI flags and environment variables, making containerized and CI deployments cleaner.
+**Official MCP Registry (v0.0.73)** — Playwright MCP is now published on every release to both [GitHub's MCP Registry](https://github.com/mcp/microsoft/playwright-mcp) and the community-run [official MCP Registry](https://registry.modelcontextprotocol.io/) (`io.github.microsoft/playwright-mcp`, confirmed listed there starting at v0.0.72). Tools and clients that use either registry for server discovery can resolve Playwright MCP without manual configuration or npm package lookups. Also: extension channel and `executablePath` are now resolvable from CLI flags and environment variables, making containerized and CI deployments cleaner.
 
 **v0.0.74 — Stability and extension improvements**:
 - **Multi-tab extension support** — The `--extension` mode now supports managing multiple open tabs. Previously, tab management in extension mode required workarounds.
 - **Screenshot optimization** — `browser_take_screenshot` skips the base64 image payload in the response when a filename is explicitly provided. Useful in agent workflows where the file path is sufficient and avoiding a large base64 blob saves context window space.
 - **Auto-recovery** — Automatic reconnection when a remote browser disconnects mid-session; recovery from page renderer crashes. Long-running agent workflows no longer require manual restart after transient browser failures.
 
-**v0.0.75** (May 7, 2026) — the current release.
+**v0.0.75** (May 7, 2026) — the release current as of our last content refresh.
 
 **Playwright 1.60** (May 11, 2026) — The underlying framework shipped two agent-relevant features that flow into the MCP server:
 - **`tracing.startHar()` / `tracing.stopHar()`** — HAR recording is now a first-class tracing API, with the same `content`, `mode`, and `urlFilter` options as `recordHar`. Agents can capture full network traffic logs programmatically as part of automated diagnostic workflows, without separate configuration.
@@ -117,7 +117,7 @@ The Playwright MCP server has shipped 20+ releases since our original review, no
 
 ### January–March 2026 (still relevant)
 
-**@playwright/cli — the 4x token-saving companion.** Microsoft released `@playwright/cli` as a standalone companion tool that uses plain shell commands instead of the MCP protocol. MCP streams entire accessibility snapshots into the LLM's context window; CLI saves them to disk. The [Playwright team's benchmarks](https://github.com/microsoft/playwright-mcp): ~114,000 tokens via MCP versus ~27,000 via CLI — roughly a 4x reduction. Use CLI when your agent has filesystem access (Claude Code, Copilot, Cursor); use MCP when it doesn't (Claude Desktop, web-based clients). The CLI exposes 50+ commands with persistent session configuration via `playwright-cli.json`.
+**@playwright/cli — the token-saving companion.** Microsoft released [`@playwright/cli`](https://playwright.dev/agent-cli/introduction) as a standalone companion tool that uses plain shell commands instead of the MCP protocol. MCP streams entire accessibility snapshots and tool schemas into the LLM's context window; CLI saves snapshots to disk and lets the agent read only what it needs, so [Playwright's own docs](https://playwright.dev/agent-cli/introduction) describe its context cost as "lower" versus MCP's "higher." (A specific "~114,000 vs. ~27,000 tokens, ~4x reduction" figure circulates widely across third-party blogs attributed to "the Playwright team's benchmarks," but we could not find that number in any Playwright/Microsoft primary source — official docs, READMEs, or release notes — so we're not repeating it here.) Use CLI when your agent has filesystem access (Claude Code, Copilot, Cursor); use MCP when it doesn't (Claude Desktop, web-based clients). The CLI exposes 50+ commands with persistent configuration via [`.playwright/cli.config.json`](https://playwright.dev/agent-cli/configuration).
 
 **Network mocking** (v0.0.63). Route requests by URL pattern, mock responses with custom status codes, bodies, and headers. Agents can test against simulated API responses without modifying backend code.
 
@@ -139,7 +139,7 @@ The Playwright MCP server has shipped 20+ releases since our original review, no
 
 **Three browser engines, one API.** Chromium, Firefox, and WebKit. Switch with a single flag. This matters for cross-browser testing and for sites that behave differently across engines. Puppeteer gives you Chrome and nothing else.
 
-**The tool set is comprehensive.** 25+ tools cover the full range of browser automation needs. File uploads, dialog handling, tab management, form bulk-fill, keyboard events, network monitoring — Puppeteer MCP has 7 tools. The gap is significant. You rarely hit a wall where you need to drop into raw JavaScript.
+**The tool set is comprehensive.** 50+ tools (as of this audit; 25+ at our original review) cover the full range of browser automation needs. File uploads, dialog handling, tab management, form bulk-fill, keyboard events, network monitoring, cookie/storage management, DevTools tracing — Puppeteer MCP has 7 tools. The gap is significant. You rarely hit a wall where you need to drop into raw JavaScript.
 
 **Code generation bridges agent work and test suites.** The `--codegen=typescript` flag records agent actions as reproducible Playwright test scripts. An agent debugging a workflow can produce a test that captures exactly what it did. This is a unique capability no other browser MCP server offers.
 
@@ -151,7 +151,7 @@ The Playwright MCP server has shipped 20+ releases since our original review, no
 
 **Screencast and bind bring accountability to agent workflows.** Playwright 1.59's `page.screencast` API lets agents produce annotated video recordings with action highlights and chapter markers — visual proof of what the agent did. The `browser.bind()` API means a human can inspect an agent's browser session in real time via the observability dashboard (`playwright-cli show`). These aren't just nice-to-haves: for production agent workflows, having an audit trail and the ability to intervene is table stakes.
 
-**The ecosystem support is unmatched.** 15+ MCP clients have explicit installation instructions. VS Code uses it as the example MCP server in their quickstart docs. GitHub Copilot now auto-configures it. Claude Code, Cursor, Windsurf, Gemini CLI — everyone points to Playwright MCP as the browser server to use. PulseMCP ranks it #1 globally with 40.5 million all-time visitors. This matters for documentation, community support, and long-term maintenance.
+**The ecosystem support is unmatched.** 15+ MCP clients have explicit installation instructions. VS Code uses it as the example MCP server in their quickstart docs. [GitHub Copilot's coding agent now auto-configures it](https://github.blog/changelog/2025-07-02-copilot-coding-agent-now-has-its-own-web-browser/) for localhost browser access during code generation. Claude Code, Cursor, Windsurf, Gemini CLI — everyone points to Playwright MCP as the browser server to use. [PulseMCP ranks it #2 globally](https://www.pulsemcp.com/servers/microsoft-playwright) (as of this audit) with 76.9 million all-time visitors. This matters for documentation, community support, and long-term maintenance.
 
 ## What Doesn't Work Well
 
@@ -173,13 +173,13 @@ The Playwright MCP server has shipped 20+ releases since our original review, no
 
 ## Compared to Alternatives
 
-**vs. Puppeteer MCP Server:** The most direct comparison, and we covered it extensively in [that review](/reviews/puppeteer-mcp-server/). Summary: Playwright wins on element targeting (accessibility tree vs. CSS selectors), browser support (three engines vs. one), tool count (25+ vs. 7), and ecosystem adoption. Puppeteer wins on simplicity (fewer options, smaller surface area) and stability (mature, rarely changes). For new projects, start with Playwright. For quick one-off browser tasks where you want the simplest possible setup, Puppeteer still has a place.
+**vs. Puppeteer MCP Server:** The most direct comparison, and we covered it extensively in [that review](/reviews/puppeteer-mcp-server/). Summary: Playwright wins on element targeting (accessibility tree vs. CSS selectors), browser support (three engines vs. one), tool count (50+ vs. 7), and ecosystem adoption. Puppeteer wins on simplicity (fewer options, smaller surface area) and stability (mature, rarely changes). For new projects, start with Playwright. For quick one-off browser tasks where you want the simplest possible setup, Puppeteer still has a place.
 
 **vs. Browserbase MCP Server:** Browserbase runs browsers in the cloud — no local Chromium process eating your RAM. Better for production workloads, CI/CD, and environments where you can't install a browser. Playwright MCP is better for local development, testing, and workflows where you need fine-grained control. Different trade-offs: convenience vs. control.
 
 **vs. Firecrawl MCP Server:** Firecrawl extracts clean content from web pages. If you just need to read a webpage, Firecrawl is more efficient — no browser process, lower resource usage, structured output. Playwright is for when you need to interact: click, type, navigate multi-step flows. Use both: Firecrawl for content extraction, Playwright for interaction.
 
-**vs. @playwright/cli (SKILLS approach):** Now an officially published companion package. The CLI saves snapshots and screenshots to disk instead of streaming them into context, cutting token usage by ~4x (27K vs. 114K tokens per typical task). It exposes 50+ commands and supports persistent sessions via `playwright-cli.json`. With Playwright 1.59's `browser.bind()`, CLI and MCP can now share the same browser session — use MCP for the initial setup and CLI for subsequent low-token interactions. Use CLI when your agent has filesystem access (Claude Code, Copilot, Cursor); use MCP when it doesn't (Claude Desktop, web-based clients).
+**vs. @playwright/cli (SKILLS approach):** Now an officially published companion package. The CLI saves snapshots and screenshots to disk instead of streaming them into context, meaningfully cutting token usage per [Playwright's own docs](https://playwright.dev/agent-cli/introduction) (we're deliberately not repeating the specific "~4x, 114K vs. 27K tokens" figure that circulates on third-party blogs — see note above; we couldn't verify it against a Microsoft/Playwright primary source). It exposes 50+ commands and supports persistent configuration via `.playwright/cli.config.json`. With Playwright 1.59's `browser.bind()`, CLI and MCP can now share the same browser session — use MCP for the initial setup and CLI for subsequent low-token interactions. Use CLI when your agent has filesystem access (Claude Code, Copilot, Cursor); use MCP when it doesn't (Claude Desktop, web-based clients).
 
 **vs. Cloudflare Playwright MCP:** Cloudflare maintains a [fork](https://github.com/cloudflare/playwright-mcp) (`@cloudflare/playwright-mcp`) that runs browsers in Cloudflare's Browser Rendering infrastructure. Cloud-hosted, no local browser process. Currently synced to upstream v0.0.30, so it lags behind on features (no video recording, no network mocking, no v0.0.69 tools). Better for serverless deployments and environments where you can't install a local browser. The official Playwright MCP is better for local development, full feature access, and keeping up with the rapid release cadence.
 
@@ -204,11 +204,11 @@ The Playwright MCP server has shipped 20+ releases since our original review, no
 - Your target sites aggressively block automated browsers
 
 {{< verdict rating="4.5" summary="The browser server to beat" >}}
-The Playwright MCP server has earned its position as the default browser automation tool for AI agents — confirmed by PulseMCP's #1 global ranking and now official presence in the MCP Registry. At v0.0.75 with 32,400+ stars, the gap between Playwright MCP and every alternative continues to widen. The accessibility tree approach to element targeting remains genuinely superior to CSS selectors — more reliable, more agent-friendly, no vision model required. The Playwright 1.59 integration (April 2026) brought the landmark features: `browser.bind()` for shared browser sessions, `page.screencast` for annotated video receipts, and the observability dashboard for real-time inspection. Playwright 1.60 (May 2026) adds `browser_drop` for drag-and-drop workflows and first-class HAR tracing — two capabilities that previously required workarounds. The v0.0.74 stability improvements (auto-recovery from disconnects and renderer crashes, multi-tab extension support) address real operational pain points for long-running agent workflows. The 0.5 point deduction still applies: snapshot size on complex pages remains high (CLI mitigates this, but requires filesystem access), the v0.0.x release cadence means breaking changes remain possible, process lifecycle issues surface in long-running hosts (see Codex #17832), and Playwright 1.60 introduced temporary compatibility issues with some tooling. But the trajectory is clear — Playwright MCP is pulling away from every alternative, and the May 2026 updates consolidate that lead.
+The Playwright MCP server has earned its position as the default browser automation tool for AI agents — confirmed by [PulseMCP's #2 global ranking](https://www.pulsemcp.com/servers/microsoft-playwright) and its presence in the [official MCP Registry](https://registry.modelcontextprotocol.io/). At [36,000+ GitHub stars](https://github.com/microsoft/playwright-mcp) (v0.0.79 as of this audit, up from v0.0.75 at our last full refresh), the gap between Playwright MCP and every alternative continues to widen. The accessibility tree approach to element targeting remains genuinely superior to CSS selectors — more reliable, more agent-friendly, no vision model required. The Playwright 1.59 integration (April 2026) brought the landmark features: `browser.bind()` for shared browser sessions, `page.screencast` for annotated video receipts, and the observability dashboard for real-time inspection. Playwright 1.60 (May 2026) adds `browser_drop` for drag-and-drop workflows and first-class HAR tracing — two capabilities that previously required workarounds. The v0.0.74 stability improvements (auto-recovery from disconnects and renderer crashes, multi-tab extension support) address real operational pain points for long-running agent workflows. The 0.5 point deduction still applies: snapshot size on complex pages remains high (CLI mitigates this, but requires filesystem access), the v0.0.x release cadence means breaking changes remain possible, process lifecycle issues surface in long-running hosts (see Codex #17832), and Playwright 1.60 introduced some upstream compatibility regressions (e.g. [Node version detection](https://github.com/microsoft/playwright/issues/41045), [UI mode test execution](https://github.com/microsoft/playwright/issues/40800)) that third-party tooling had to catch up on. But the trajectory is clear — Playwright MCP is pulling away from every alternative, and the May 2026 updates consolidate that lead.
 {{< /verdict >}}
 
 ---
 
-**Sources:** [microsoft/playwright-mcp (GitHub)](https://github.com/microsoft/playwright-mcp) · [Playwright 1.59 release notes](https://playwright.dev/docs/release-notes#version-159) · [Playwright 1.60 release notes](https://playwright.dev/docs/release-notes#version-160) · [Official MCP Registry — Playwright MCP](https://github.com/mcp/microsoft/playwright-mcp) · [Cloudflare playwright-mcp fork (GitHub)](https://github.com/cloudflare/playwright-mcp)
+**Sources:** [microsoft/playwright-mcp (GitHub)](https://github.com/microsoft/playwright-mcp) · [Playwright 1.59 release notes](https://playwright.dev/docs/release-notes#version-159) · [Playwright 1.60 release notes](https://playwright.dev/docs/release-notes#version-160) · [GitHub MCP Registry — Playwright MCP](https://github.com/mcp/microsoft/playwright-mcp) · [Official MCP Registry](https://registry.modelcontextprotocol.io/) · [Cloudflare playwright-mcp fork (GitHub)](https://github.com/cloudflare/playwright-mcp) · [Playwright CLI docs](https://playwright.dev/agent-cli/introduction) · [PulseMCP — Playwright MCP](https://www.pulsemcp.com/servers/microsoft-playwright) · [OpenAI Codex issue #17832](https://github.com/openai/codex/issues/17832)
 
-*This review was last edited on 2026-05-17 using Claude Sonnet 4.6 (Anthropic).*
+*This review was last edited on 2026-05-17; citations re-verified 2026-08-14 using Claude Sonnet 5 (Anthropic).*

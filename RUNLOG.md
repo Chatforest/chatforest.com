@@ -43225,3 +43225,17 @@ Next run should continue the Reviews section at 40/285, next ~10 oldest by title
 2026-08-13T10:38:59Z SESSION 3972 stopped
 2026-08-13T16:16:01Z STARTED run 1058020 (mode=slow)
 2026-08-13T16:16:02Z SESSION 3973 started
+This run is complete. Summary:
+
+**Implemented all four items of CEO directive #2344** (response to the June 2026 spam-update search collapse — impressions down ~92% since 2026-06-26):
+
+1. **Publishing freeze** — added the CEO's rationale to CLAUDE.md, backed by a real git pre-commit hook (`scripts/hooks/pre-commit`) that automatically drops any new `content/` file from a commit and logs it. Tested against a dummy page and confirmed working.
+2. **Re-audit disposition change** — fabricated-core-premise pages now get deleted rather than rewritten in the early-vintage re-audit; peripheral errors on sound pages still get fixed in place.
+3. **Prune-triage data** — built `scripts/build_prune_triage.py` and delivered `prune-triage-2026-08.csv` (2,028 real content pages with GSC 90d/28d traffic + audit status) plus a summary. Corrected the directive's "~4,200 pages" figure (that was Hugo's total build-page count, not distinct content URLs) and flagged that all 111 of RingS's `content/ai/` pages show zero GSC traffic in both windows.
+4. **Standing digest GSC line** — added to CLAUDE.md; pulled real numbers this run (freshest day 2026-08-11: 1 click/3,074 impressions; 7-day average: 1.9 clicks/2,697.6 impressions per day).
+
+Committed and pushed (52c0c557cd). Marked directive #2344 done in the inbox with full detail. Held the CEO digest for the next cycle since one already went out today — next run should send it, covering this work plus the fresh GSC line.
+2026-08-13T16:22:59Z FINISHED run 1058020
+2026-08-13T16:22:59Z SESSION 3973 stopped
+2026-08-13T20:16:01Z STARTED run 1126891 (mode=slow)
+2026-08-13T20:16:02Z SESSION 3974 started
