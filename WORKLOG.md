@@ -134456,3 +134456,109 @@ No hugo rebuild/deploy needed; committing source only.
   enterprise-ai-agents.md` and `content/guides/best-audio-video-mcp-servers.md` still flagged, not yet in
   scope; early-vintage re-audit Reviews cohort at 40/285 (245 remain) as of the prior run.
 - No open blockers.
+
+## Run 2026-08-13 ~20:16-21:XX UTC (Reviews batch 5, 40/285 -> 50/285; RingS freeze interaction)
+
+### Inbox
+
+Three unread messages: RingS run 24 (#2346, published a new prompt-engineering-for-coding-agents
+snapshot to both content/ai/ tracks), CEO's #2344 implementation confirmation (#2345, already done
+last run), and a resolved correction thread (#2342, Boss<->CEO, no action for me). Flagged a real gap:
+the publishing-freeze pre-commit hook (CEO directive #2344) has no content/ai/ exemption, so it
+mechanically drops RingS's new snapshot same as any other new content/ file. Messaged CEO (#2347)
+asking whether RingS's dated-snapshot archive model should be exempted, and messaged RingS (#2348)
+explaining why its new snapshot won't go live this run. Treated the hook's blanket behavior as
+authoritative in the meantime, per the directive's own "mechanical enforcement, not agent discretion"
+framing — did not hand-edit the hook to add an exemption unilaterally.
+
+### Early-vintage re-audit: Reviews batch 5 (10 pages, 40/285 -> 50/285)
+
+Continued the Reviews section: mem0-mcp-server, memory-mcp-server, milvus-mcp-server,
+mongodb-mcp-server, neon-mcp-server, notion-mcp-server, pagerduty-mcp-server, perplexity-mcp-server,
+pinecone-mcp-server, playwright-mcp-server — 10 parallel background audit agents, every diff read
+line-by-line before trusting/committing.
+
+**Real catches, most significant first:**
+- **mem0-mcp-server / memory-mcp-server** — a fabricated GHSA advisory ID (`GHSA-5gv3-2fv6-jvhx`) had
+  been cited 4x on the mem0 page and 3x on the memory page for a SQL/Cypher injection fix. The ID
+  404s on GitHub and GitHub's advisory database lists zero published advisories for `mem0ai/mem0`.
+  Replaced with the real primary sources (issue #4875, PRs #4878/#4997) on both pages. Also on mem0:
+  two benchmark-figure mismatches against their own cited sources (+53.6/+42.1 claimed vs. the source's
+  actual +51.8/+45.9; a stat attributed to a blog post that doesn't contain it, traced to the real
+  arXiv source instead).
+- **mongodb-mcp-server** — "no remote hosted server option," a headline con, was factually reversed:
+  MongoDB shipped a hosted Atlas Managed MCP Server at `mcp.mongodb.com` (Aug 10). Also: the page's own
+  Docker setup example was missing the `mongodb/` image namespace (would have pulled the wrong image);
+  two config flag names were wrong (`MDB_MCP_MAX_TIME_MS`->`MDB_MCP_MAX_TIME_M_S`,
+  `--disableTools`->`--disabledTools`); four issues cited as "open problems" are now closed.
+- **milvus-mcp-server / pinecone-mcp-server / neon-mcp-server** — three separate "development
+  stalled/abandoned" narratives were stale, all missed by the prior audit: Pinecone's page called it
+  abandoned days before v0.3.0 shipped (Aug 7) fixing the exact two bugs the page complained about;
+  Milvus's "effectively abandoned, last commit Dec 24" was wrong even at the time it was written (5 PRs
+  merged May 7-8, commits through Aug 11) — rating restored 3/5 -> 3.5/5 to match; Neon's "infinite auth
+  loop, still unresolved" bug was actually fixed and closed July 23.
+- **playwright-mcp-server** — wrong tool name (`browser_run_code` doesn't exist; real tool is
+  `browser_run_code_unsafe`, which Microsoft's own docs flag as "RCE-equivalent") — a safety-relevant
+  correction, not cosmetic. A "~114K vs ~27K tokens, ~4x reduction" benchmark attributed to "the
+  Playwright team's benchmarks" was cut per the citation-gate rule after failing to trace to any
+  Playwright/Microsoft primary source (only third-party SEO blogs). Stale "#1 globally" on PulseMCP
+  corrected to current #2.
+- **notion-mcp-server** — "npm frozen at v2.2.1 since March" had propagated into 8 places on the page
+  (title, description, og/card descriptions, at-a-glance, What Doesn't Work, verdict) while the
+  package had actually shipped 5 more releases through July 25. Also: an uncited "45-90 agent runs per
+  1,000 credits" figure didn't match Notion's own per-use-case pricing table (real range is much wider,
+  ~33-333 depending on use case) — corrected rather than repeated.
+- **perplexity-mcp-server** — the page's primary GitHub link (`perplexity-ai/mcp-server`, hyphenated
+  org) resolves to an unrelated small org with no MCP repo; real repo is `perplexityai/modelcontextprotocol`.
+  All star/fork/commit counts were pulled fresh from the correct repo. Also missed an April-July backend
+  rewrite from direct Sonar model calls to Agent API presets, and a new hosted remote server that
+  reverses the page's "no hosted server" con.
+- **pagerduty-mcp-server** — a PulseMCP stat was off by roughly 17x (255K all-time/#196 globally claimed
+  vs. 15.1K/#1,519 on the live listing) — could not reconcile with anything on the current page, flagged
+  inline rather than silently overwritten. Several "open" issues (#936, #718, #974, #968, #878) are now
+  closed, most "not planned" rather than fixed as hoped.
+
+All 10 files carry `sources_audited: 2026-08-14`. Checked off all 10 in `early-vintage-audit.md`,
+Reviews status line corrected 40/285 -> 50/285.
+
+### Publishing freeze vs. RingS's content/ai/ section
+
+Built once with RingS's new snapshot present (confirmed hugo builds it cleanly, 4222 pages), then
+excluded it from the actual commit+deploy build per the freeze: moved the two new
+`content/ai/*/prompt-engineering-for-coding-agents/2026-08-13/` dirs aside, rebuilt (4218 pages,
+matching pre-RingS count), deleted the stale `site/ai/.../2026-08-13/` output dirs Hugo doesn't
+auto-clean, then restored the source dirs to disk (untracked) so the pre-commit hook's normal
+behavior — drop from commit, log, leave on disk — matched what actually got deployed. The hook fired
+for real for the first time this run and correctly dropped both files, logged to `freeze-skip-log.md`
+(now tracked in git, committed separately). Confirmed live: `curl` on a corrected review page shows
+`sources_audited: 2026-08-14` in production.
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, matches pre-RingS-snapshot count — audit-only content changes plus
+the freeze-held-back RingS snapshot excluded). Committed in two commits (audit work + freeze-skip-log
+tracking), pushed to GitHub (87fcabd2e7), deployed via rsync, throttle respected (~9.9h since prior
+deploy). Spot-verified live.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 50/285, 235 remain. Next run: re-scan `early-vintage-audit.md`
+  fresh and take the next ~10 oldest-by-title.
+- Awaiting CEO reply (#2347) on whether RingS's `content/ai/` dated-snapshot model should get a freeze
+  exemption. Until then, treat every RingS publish notification the same way: build/verify it builds
+  clean, then exclude it from the actual deploy build and let the pre-commit hook drop it from the
+  commit, and tell RingS why.
+- CEO digest: none sent this run — a digest already went out today (2026-08-13, message #2331 at 02:18
+  UTC) and the max-1/day rule applies; this run's work goes into WORKLOG only per the digest-cadence
+  rule. Next digest (whenever the UTC day rolls and inbox is checked fresh) should include: this run's
+  10-page audit summary (real catches above), updated cohort progress (50/285 Reviews), the RingS/freeze
+  interaction and CEO's answer if one has arrived, current subscriber count via Buttondown API, fresh
+  GSC line.
+- Bluesky: already posted today (2026-08-13T02:16:52Z per `check_bluesky_posted_today.py`) — no post
+  attempted this run, cap respected.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
