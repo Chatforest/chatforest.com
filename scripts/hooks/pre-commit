@@ -1,0 +1,46 @@
+#!/bin/sh
+# Publishing freeze enforcement — CEO directive #2344 item 1 (2026-08-13).
+# June 2026 spam update classified the site (scaled content abuse pattern);
+# every new automated page deepens it. No new content/ URLs until a CEO
+# directive names a specific exception page.
+#
+# Any staged NEW file under content/ is unstaged (dropped from this commit,
+# left on disk untouched) and logged to freeze-skip-log.md. Everything else
+# in the commit proceeds normally — this only blocks new content pages, not
+# edits, corrections, or deletions.
+#
+# Installed as .git/hooks/pre-commit -> this file. Re-run
+# scripts/hooks/install.sh after cloning fresh, since .git/hooks/ isn't
+# tracked by git.
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root" || exit 1
+
+new_content_files=$(git diff --cached --name-only --diff-filter=A -- content/)
+
+if [ -z "$new_content_files" ]; then
+    exit 0
+fi
+
+log_file="$repo_root/freeze-skip-log.md"
+ts=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+
+{
+    echo ""
+    echo "## $ts"
+    echo "Publishing freeze (CEO directive #2344) dropped the following new content/ file(s) from this commit:"
+    echo ""
+    echo "$new_content_files" | while IFS= read -r f; do
+        echo "- $f"
+    done
+} >> "$log_file"
+
+echo "$new_content_files" | while IFS= read -r f; do
+    git reset -q HEAD -- "$f"
+    echo "PUBLISHING FREEZE: dropped new content page from commit: $f" >&2
+done
+
+echo "See $log_file for the log. Files remain on disk, untracked/unstaged." >&2
+echo "Exception: only a CEO directive naming this specific page can re-allow it." >&2
+
+exit 0

@@ -33,6 +33,32 @@ This rule lives here — in the always-loaded instructions — because it was pr
 an inbox message and the WORKLOG, so it degraded and new pages shipped uncited. It lives here now
 so it cannot be dropped again.
 
+## PUBLISHING FREEZE — CEO directive 2026-08-13 (#2344)
+
+**No new content pages.** June 2026 spam update classified the site (scaled content abuse pattern);
+every new automated page deepens it. Zero new URLs under `content/` — reviews, guides, builders-log,
+everything — until a CEO directive names a specific exception page. Everything else continues
+unchanged: citation audits, corrections, deletions, newsletter Dispatches, Bluesky (all existing
+gates), site infra.
+
+- **Mechanical enforcement, not agent discretion:** `.git/hooks/pre-commit` (installed from the
+  tracked copy at `scripts/hooks/pre-commit` — run `sh scripts/hooks/install.sh` after any fresh
+  clone, since `.git/hooks/` itself isn't tracked) inspects every commit's staged files. Any
+  newly-added file under `content/` is automatically unstaged (dropped from the commit, left on disk
+  untouched) and logged to `freeze-skip-log.md` with a timestamp. The rest of the commit proceeds.
+  This runs on every `git commit` regardless of what the agent intends — the same pattern as the
+  Bluesky mechanical gates.
+- Context: GSC impressions fell ~92% overnight on 2026-06-26 (29.6K/day -> 2.4K/day; 55 clicks in the
+  trailing 28 days as of 2026-08-13). No manual action in GSC — purely algorithmic. Profile (~2,000+
+  content pages, AI-authored, continuous automated publishing) matches Google's "scaled content abuse"
+  spam policy. Recovery requires actually changing the pattern, then waiting for re-evaluation at a
+  future spam update — months, not weeks.
+- Rob-facing prune-triage data lives in `prune-triage-YYYY-MM.csv` (regenerate with
+  `scripts/build_prune_triage.py`) — see the early-vintage re-audit section below for the disposition
+  rule this feeds.
+- Lift condition: explicit CEO directive naming the freeze as lifted (partially or fully), logged
+  here with the directive reference, same as any other standing-duty change.
+
 ### Standing duty — claim-level citation audit, every run (Rob, 2026-07-22)
 
 The old page-level backlog is closed: all 957 content pages now carry at least one external link.
@@ -117,6 +143,15 @@ this cohort needs a dedicated re-audit pass, same shape as the fabrication-audit
 - **Report cohort size N and X/N progress + problems-found in every CEO digest** once this stream
   starts, per CEO directive #2320 — this is a queued directive that must live here (not session
   memory) or it evaporates, per the same lesson from directive #2299.
+
+**Disposition change (CEO directive 2026-08-13, #2344 item 2 — flips the #2276 "correction or cut"
+default):** a page whose **core premise is fabricated or unverifiable** gets **DELETED** (removed
+from the site, one-line reason logged in the audit checkbox file), not rewritten. Correcting a page
+in place does not repair a page that should never have existed, and it doesn't change the signal
+that got the domain classified under the publishing freeze above. Peripheral errors on pages whose
+core premise is sound — wrong numbers, stale links, misattributed quotes, drifted stats — are still
+fixed in place exactly as before; this only changes the call for pages where the central claim itself
+doesn't hold up.
 
 ## Vision (not finalized)
 
@@ -212,6 +247,13 @@ actually needs a decision. Rule, stated mechanically like the Bluesky pre-post c
 - **Digest header timestamp**: label the run with the actual wall-clock time from `date -u` run
   at digest-composition time, not a guessed/copied time from a template or a prior digest — a
   mislabeled run window (directive #2330 item 4) makes the digest unreliable as a timeline record.
+- **MANDATORY CHECKLIST ITEM (added 2026-08-13, CEO directive #2344 item 4):** every digest MUST
+  include a GSC traffic line — freshest complete day's impressions + clicks, and the trailing 7-day
+  daily average, pulled fresh via `scripts/gsc_query.py` (never recalled from memory or a prior
+  digest). Root cause this fixes: the June 2026 spam-update collapse (~92% impressions drop starting
+  2026-06-26) ran seven weeks unnoticed because digests reported pages-published and
+  newsletters-sent — output counts, not the outcome metric that actually matters. This line is what
+  prevents that recurring silently again.
 
 ## Sibling agent: Sprout, and promoting its products (added 2026-06-12, Rob-authorized)
 

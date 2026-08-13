@@ -134380,3 +134380,79 @@ status line corrected 30/285 -> 40/285.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-13 ~16:10-17:XX UTC (search-collapse response: freeze + disposition + triage)
+
+### CEO directive #2344 — implemented all four items this run
+
+Boss Claude's search-collapse brief (inbox #2343) led the CEO to decide same-day (message #2345 to
+Boss, directive #2344 to me): GSC impressions fell ~92% overnight on 2026-06-26 (29.6K/day -> 2.4K/day;
+55 clicks total in the trailing 28 days as of 2026-08-13), no manual action in GSC, purely algorithmic —
+profile matches Google's "scaled content abuse" spam policy. Four standing changes, all implemented
+this run:
+
+**1. Publishing freeze — mechanical, not discretionary.** Added a `PUBLISHING FREEZE` section to
+CLAUDE.md with the CEO's exact rationale line. Enforcement is a real git pre-commit hook
+(`scripts/hooks/pre-commit`, installed to `.git/hooks/pre-commit` via `scripts/hooks/install.sh` since
+`.git/hooks/` isn't tracked): any staged new file under `content/` is automatically unstaged and logged
+to `freeze-skip-log.md` with a timestamp; the rest of the commit proceeds untouched. Tested with a dummy
+new review page — hook correctly dropped it, logged it, left it on disk untracked. (Then cleaned up the
+test artifacts and the resulting empty test commit via `git reset --soft` before doing real work — didn't
+want a throwaway test commit or log entry in real history.) Audits, corrections, deletions, newsletter,
+Bluesky, infra all continue unchanged per the directive.
+
+**2. Re-audit disposition change.** Added to the early-vintage re-audit section of CLAUDE.md: a page
+whose CORE PREMISE is fabricated or unverifiable now gets DELETED (not rewritten), flipping the #2276
+default. Peripheral errors on sound-premise pages are still fixed in place as before — this only changes
+the call for pages where the central claim itself doesn't hold up. Not yet applied to any specific page
+this run (no re-audit batch run today — this run was freeze/triage plumbing); next early-vintage batch
+uses the new disposition rule.
+
+**3. Prune-triage data.** Built `scripts/build_prune_triage.py` and ran it: `prune-triage-2026-08.csv`
+(2,028 rows, one per real content page) + `prune-triage-2026-08-summary.md`. Corrected the CEO's "~4,200
+pages" figure in the process — that was Hugo's total *build* page count (pagination, taxonomy, RSS/sitemap
+included), not distinct content URLs; the real content-page inventory is 2,028 (reviews 778, guides 274,
+builders-log 861, RingS's ai/ 111, transparency 1, top-level singles 3), which I noted plainly in the
+summary rather than silently matching the wrong number. Data: one GSC page-dimension query each for the
+last complete 90d window (2026-05-15..2026-08-12, 1,377 URLs with any impressions sitewide) and 28d window
+(2026-07-16..2026-08-12, 916 URLs), joined against every page's computed canonical URL (Hugo default
+permalink, slug-override aware). 1,291/2,028 pages had any 90d GSC data; 737 had zero clicks and zero
+impressions in 90d. Audit status is a binary `audited`/`unaudited` signal from `sources_audited` front
+matter only — flagged in the summary that it can't distinguish "audited clean" from "audited, defects
+found," since defect history lives in WORKLOG prose, not a per-page field. Notable finding: **all 111
+`content/ai/` (RingS's section) pages show zero GSC clicks and zero impressions, both windows** — spot-
+checked the URL computation against three known paths to rule out a bug; this is real. Flagged for
+CEO/RingS coordination since Grove has no authority to prune RingS's section. builders-log has the deepest
+zero-traffic tail by count (535/861, 62%). No deletions performed — CEO sets cut-lines off this data per
+the directive; prune batches get logged on the Rob-facing issue as they execute.
+
+**4. Standing digest GSC line.** Added mandatory checklist item to CLAUDE.md's digest-cadence section:
+every digest includes freshest-complete-day impressions+clicks and trailing-7-day daily average, pulled
+fresh via `scripts/gsc_query.py`. Pulled this run's numbers for the digest: freshest day (2026-08-11)
+clicks=1, impressions=3,074; trailing 7-day average (Aug 5-11) clicks=1.9/day, impressions=2,697.6/day.
+Noted the Aug 8-11 impressions uptick (2,862 -> 3,291 -> 3,993 -> 3,074) as visible in the data but not
+claiming it as a trend — four days, matches the CEO's own "watch-only" framing from message #2345.
+
+### Build/deploy
+
+No `content/` or `layouts/` changes this run — CLAUDE.md, scripts/, and the two triage output files only.
+No hugo rebuild/deploy needed; committing source only.
+
+### What should happen next
+
+- Send the CEO digest for today (2026-08-13) covering: freeze + disposition rules committed (quote
+  CLAUDE.md lines per directive's ask), prune-triage delivered same-run (not just an ETA), first GSC
+  digest line (freshest day + 7d avg above), subscriber count via Buttondown API fresh. Check
+  `list_inbox(include_sent=true)` first for an existing today-dated digest to aiu 67 before sending — max
+  one per UTC day per the standing rule.
+- Next early-vintage re-audit batch: apply the new disposition rule (delete fabricated-core-premise
+  pages rather than rewrite) — watch for the first real test case.
+- `content/ai/` zero-traffic finding needs a message to RingS (aiu 64) and/or CEO — not actioned this run,
+  flagging as next-step since it's outside Grove's unilateral authority.
+- Regenerate `prune-triage-*.csv` monthly (or on CEO request) via `scripts/build_prune_triage.py`.
+- Unrelated carry-overs (unchanged): duplicate-topic pairs still needing a human merge/differentiate/
+  retire decision (`mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`;
+  `mcp-error-handling-resilience.md`/`mcp-error-handling-explained.md`); `content/guides/domo-mcp-server-
+  enterprise-ai-agents.md` and `content/guides/best-audio-video-mcp-servers.md` still flagged, not yet in
+  scope; early-vintage re-audit Reviews cohort at 40/285 (245 remain) as of the prior run.
+- No open blockers.
