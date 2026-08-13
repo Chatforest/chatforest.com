@@ -9,7 +9,7 @@ categories: ["reviews"]
 rating: 4
 author: "ChatForest"
 last_refreshed: 2026-05-14
-sources_audited: 2026-07-22
+sources_audited: 2026-08-12
 ---
 
 **At a glance:** Mistral Small 3.1, released March 17, 2025. 24B dense parameters. 128K context (4× over Small 3). Apache 2.0. Vision input added. 150 tokens/second. Single RTX 4090 deployable. MMLU 80.62%. HumanEval 88.41%. DocVQA 94.08%. $0.10/$0.30 per million tokens. Part of our **[AI Models & Companies reviews](/categories/ai-tools/)**.
@@ -20,7 +20,7 @@ sources_audited: 2026-07-22
 
 The model takes the 24-billion-parameter foundation of Mistral Small 3 — released in January 2025, already competitive with GPT-4o Mini — and addresses its two most obvious gaps: it adds vision understanding, and it quadruples the context window from 32K to 128K tokens. The parameter count does not change. The Apache 2.0 license does not change. A single RTX 4090 or a Mac with 32GB RAM still runs it. But the model now processes images and 128K-token documents in the same inference call.
 
-For the small-model tier in March 2025, that package was genuinely differentiated. [GPT-4o Mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) had no open weights and was API-only. [Gemma 3 27B](https://developers.googleblog.com/introducing-gemma3/) had just launched with its own multimodal capabilities, but under a custom Google license rather than Apache 2.0. Claude 3.5 Haiku was vision-capable but closed-source and hosted-only. Mistral Small 3.1 offered multimodal capability, large context, Apache 2.0 open weights, and consumer hardware deployment — all four simultaneously.
+For the small-model tier in March 2025, that package was genuinely differentiated. [GPT-4o Mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) had no open weights and was API-only. [Gemma 3 27B](https://developers.googleblog.com/introducing-gemma3/) had just launched with its own multimodal capabilities, but under a [custom Gemma license](https://ai.google.dev/gemma/terms) rather than Apache 2.0. Claude 3.5 Haiku was vision-capable but closed-source and hosted-only. Mistral Small 3.1 offered multimodal capability, large context, Apache 2.0 open weights, and consumer hardware deployment — all four simultaneously.
 
 Companion to our **[Mistral AI review](/reviews/mistral-ai-le-chat-frontier-llm-company-review/)**, which covers the broader company model lineup, business model, and Le Chat platform.
 
@@ -28,9 +28,9 @@ Companion to our **[Mistral AI review](/reviews/mistral-ai-le-chat-frontier-llm-
 
 ## Background: Two Gaps Closed in One Release
 
-Mistral Small 3 launched January 2025. It was a 24B dense model, text-only, with a 32K context window and Apache 2.0 licensing. It outperformed Llama 3.1 8B and Qwen 2.5 7B on most benchmarks for its tier, and it ran on consumer hardware. But two limitations stood out immediately in developer feedback: no vision, and a context window that capped out well below what cloud-hosted competitors offered.
+[Mistral Small 3](https://mistral.ai/news/mistral-small-3/) launched January 30, 2025. It was a 24B dense model, text-only, with a 32K context window and Apache 2.0 licensing. Mistral's own published evaluations showed it competitive with much larger models — [on par with Llama 3.3 70B Instruct while running more than 3x faster on the same hardware, and ahead of Qwen 2.5 32B and Gemma 2 27B on most reported benchmarks](https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501) — and it ran on consumer hardware. But two limitations stood out immediately in developer feedback: no vision, and a context window that capped out well below what cloud-hosted competitors offered.
 
-Mistral Small 3.1 was released seventy-six days later. It is not a new training run from scratch — Mistral describes it as a capability upgrade to the Small 3 base that adds visual understanding and extends the rope embeddings to support 128K context. The architecture remains a dense transformer. The weights are available on HuggingFace under the same Apache 2.0 license. The hardware requirement is unchanged.
+Mistral Small 3.1 was released forty-six days later. It is not a new training run from scratch — Mistral describes it as a capability upgrade to the Small 3 base that adds visual understanding and extends the rope embeddings to support 128K context. The architecture remains a dense transformer. The weights are available on HuggingFace under the same Apache 2.0 license. The hardware requirement is unchanged.
 
 The release date matters for competitive context. March 2025 was a crowded month:
 
@@ -39,7 +39,7 @@ The release date matters for competitive context. March 2025 was a crowded month
 - **Mistral Small 4** (119B MoE, 6B active) would not arrive until March 2026 — a full year later.
 - **Mistral Small 3.2**, an incremental refinement of 3.1, would follow in June 2025.
 
-The direct competition Mistral cited most explicitly: Gemma 3 27B (larger, same week), GPT-4o Mini (smaller context, no open weights), and Claude 3.5 Haiku (closed-source, similar tier). On Mistral's published benchmarks, Small 3.1 leads across multilingual tasks and vision document understanding.
+The direct competition Mistral cited most explicitly: Gemma 3 27B (larger, launched five days earlier), GPT-4o Mini (smaller context, no open weights), and Claude 3.5 Haiku (closed-source, similar tier). [On Mistral's published benchmark comparisons](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503), Small 3.1 leads all three of these models on multilingual average (71.18% vs 70.19–70.36%) and on DocVQA (94.08% vs 86.60–90.00%).
 
 ---
 
@@ -49,13 +49,13 @@ Mistral Small 3.1 is a dense Transformer model — not a Mixture-of-Experts desi
 
 The key architectural changes from Mistral Small 3:
 
-**Context window expansion: 32K → 128K tokens.** Mistral achieved this via extended RoPE (Rotary Position Embedding) frequencies — the same technique used for long-context extensions in Llama 3.1, GPT-4 Turbo, and other 2024–2025 models. The model was trained on longer sequences; it is not a naive rope-scaling hack applied post hoc. RULER 128k benchmark performance at 81.20% — and 93.96% at 32k — confirms the extension holds quality.
+**Context window expansion: 32K → 128K tokens.** Mistral achieved this via extended RoPE (Rotary Position Embedding) frequencies, the standard technique the Mistral model family uses for context extension. RULER 128k benchmark performance at 81.20% — and 93.96% at 32k — confirms the extension holds quality.
 
 **Vision encoder added.** The 3.1 release adds a visual feature extractor that processes image inputs alongside text tokens. The encoder handles standard web formats (JPEG, PNG, WebP) and feeds visual representations into the main transformer. Output remains text-only. The vision stack covers: document understanding (DocVQA 94.08%), scientific diagrams (AI2D 93.72%), charts (ChartQA 86.24%), general visual question answering (MMMU-Pro 49.25%), and mathematical visual reasoning (MathVista 68.91%).
 
 **Function calling and structured output.** Inherited from Small 3 and retained in 3.1 — low-latency tool use for agentic pipelines. The instruct variant supports Mistral's standard tool-call format compatible with the OpenAI function-calling interface.
 
-**Hardware reality:** 24B parameters in BF16 requires ~48GB VRAM. In practice, quantized variants (Q4 GGUF) reduce this to ~14–16GB — accessible on a single RTX 4090 (24GB) with room to spare, or on a Mac with 32GB unified memory. At FP16 in Ollama or llama.cpp, an RTX 4090 runs it comfortably. This deployment story is the 24B sweet spot: large enough to be capable, small enough to be local.
+**Hardware reality:** [Running the model at full precision (BF16/FP16) requires roughly 55GB of GPU RAM](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503) — too much for a single consumer card. Quantized builds close that gap: [Ollama's default Q4 quantization of Mistral Small 3.1 is a 15GB download](https://ollama.com/library/mistral-small3.1), which is what [Mistral's own model card](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503) means when it says the model fits "within a single RTX 4090 or a 32GB RAM MacBook once quantized." This deployment story is the 24B sweet spot: large enough to be capable, small enough to be local once quantized.
 
 **HuggingFace identifiers:**
 - Instruct: [`mistralai/Mistral-Small-3.1-24B-Instruct-2503`](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503)
@@ -77,11 +77,11 @@ Mistral published the following text benchmark results for Mistral Small 3.1 in 
 | GPQA Main | 44.42% |
 | SimpleQA | 10.43% |
 
-**MMLU at 80.62%** places it just below GPT-4o Mini (82.0%) and slightly above Mistral Small 3 on this metric. At the 24B scale, this is a strong result — well above Llama 3.1 8B (~68%) and competitive with models twice its size from six months earlier.
+**MMLU at 80.62%** places it just below GPT-4o Mini (82.0%) and roughly flat with — if anything [slightly below](https://mistral.ai/news/mistral-small-3/) — Mistral Small 3's own reported "over 81% accuracy" on the same benchmark. At the 24B scale, this is still a strong result — well above [Llama 3.1 8B Instruct (66.7%)](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) and competitive with models twice its size from six months earlier.
 
 **HumanEval at 88.41%** is the standout text number. [Per Mistral's published benchmarks](https://mistral.ai/news/mistral-small-3-1/), GPT-4o Mini scores ~87% on HumanEval. At the 24B scale for an Apache-licensed model, this coding performance is exceptional — it implies meaningful productivity on real code tasks, not just benchmark-optimized toy problems.
 
-**MATH at 69.3%** is solid for a non-reasoning model. Mistral notes that Small 3 (the predecessor) actually edged ahead of 3.1 on MATH in some evaluations, suggesting the vision training may have introduced a slight regression on this specific benchmark — a known trade-off when adding modalities.
+**MATH at 69.3%** is solid for a non-reasoning model, but it is a step down from [Mistral Small 3's own reported 70.6% on the same internal MATH eval](https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501) — a small but real regression from predecessor to successor, consistent with the kind of trade-off sometimes seen when a text model is retrained to add a new modality.
 
 **GPQA Diamond at 45.96%** reflects the ceiling for a dense instruct model without chain-of-thought reasoning. Expert-level scientific Q&A requires the kind of deliberate multi-step reasoning that Mistral Small 3.1 does not provide — frontier models with extended thinking significantly outperform this tier on GPQA. A reasoning model this size did not exist in Mistral's lineup at this time — that would wait until Magistral Small in June 2025.
 

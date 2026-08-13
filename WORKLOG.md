@@ -134141,3 +134141,75 @@ this run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-13 ~02:15-02:30 UTC (run 762967)
+
+### Recovered interrupted work from prior run
+
+Found 8 uncommitted review-page edits on disk at run start: `brave-search-mcp-server`,
+`message-queue-mcp-servers`, `mistral-small-3-1-vision-24b-llm-review`, `newrelic-mcp-server`,
+`obsidian-mcp-servers`, `pdf-document-mcp-servers`, `search-engine-mcp-servers`,
+`shopify-mcp-servers`. These were the product of run 690366's (2026-08-12 22:14-22:26 UTC)
+background audit agents, which the run terminated before committing ("Background tasks still
+running after 600s; terminating"). Read every diff line-by-line before trusting them — all 8 were
+complete, real claim-by-claim audits, not partial/corrupted work. 5 of the 8 were missing their
+`sources_audited` stamp update (agents finished the content edit but not the front-matter bump);
+restamped those to `2026-08-12` to match the other 3 that already had it.
+
+**Real catches confirmed in this batch:**
+- **pdf-document-mcp-servers** — a fabricated claim that Adobe shipped an official Acrobat/PDF MCP
+  server; corrected to what Adobe/Anthropic actually shipped April 28, 2026 ("Adobe for
+  Creativity," a Claude connector covering Photoshop/Illustrator/Firefly/Premiere/Express/
+  Lightroom/InDesign/Stock — no Acrobat, no PDF, verified against both companies' own announcement
+  posts). Also corrected a Linux Foundation donation misattribution (Docling went to the Linux
+  Foundation AI & Data Foundation, not the Agentic AI Foundation).
+- **shopify-mcp-servers** — an unverifiable "5.6 million merchants" figure removed after it
+  couldn't be traced to any Shopify primary source; a "chasewnorton/shopify-admin" listing and a
+  "Vexly" server removed as unverifiable; the 83%-of-merchants-use-ChatGPT stat re-sourced off a
+  Shopify page that didn't actually contain it, to independent coverage of Finkelstein's quote.
+- **message-queue-mcp-servers** — LarsCowe/queue-pilot (previously covered for its JSON Schema
+  validation) removed: the repo has been deleted by its author and could no longer be verified.
+- **obsidian-mcp-servers** — two HIGH-severity mcpvault security issues previously reported as
+  "open/unclear fix status" are now confirmed patched (v0.11.4 + PR #183/#151, with commit links);
+  a trademark-enforcement claim about Obsidian forcing an npm rename was softened to what the
+  changelog actually documents (a naming request, not confirmed legal action).
+- **brave-search-mcp-server, mistral-small-3-1-vision, newrelic, search-engine** — numeric drift
+  (stars/forks/downloads/tool counts) refreshed and re-verified across ~15 named repos/products,
+  several dead or unreliable citations replaced.
+
+Checked off all 8 in `early-vintage-audit.md`, corrected the Reviews status line 12/285 -> 20/285.
+
+### Bluesky: Thu transparency-report post
+
+UTC rolled past midnight this run. Ran the full gate chain: `check_bluesky_posted_today.py` ->
+`OK_TO_POST`, `check_tuesday_dispatch_reservation.py` -> `NOT_TUESDAY`,
+`check_reserved_slot.py --topic=transparency-report` -> `RESERVATION_MATCHED`. Posted, leading with
+the 8-of-20 (40%) early-vintage spot-audit miss rate (picked over the 41%/765-of-1,854 figure as
+the sharper, more self-critical number), linking `https://chatforest.com/transparency/claim-audit-2026/`:
+https://bsky.app/profile/chatforest.bsky.social/post/3mswla43cwi2f
+Removed the fulfilled reservation entry from `scripts/bluesky-reserved-slots.json` (now `[]`).
+
+### CEO digest sent
+
+No digest had gone out yet today (2026-08-13) per `list_inbox(include_sent=true)` check. Sent one
+covering: the Bluesky post URL, #2330 fixes reconfirmed live, this run's 8-page Reviews recovery
+(12/285 -> 20/285) with the real catches above, cohort size (427, per the corrected
+transparency-report figure), subscriber count (1, unchanged, fresh via Buttondown API), no
+blockers. Message ID 2331.
+
+### Build/deploy
+
+`hugo --minify` clean (4218 pages, no count change — audit-only edits). Committing and deploying
+this run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 20/285, 265 remain. Next run: re-scan `early-vintage-audit.md`
+  fresh and take the next ~10 oldest-by-title.
+- CEO digest: sent today (#2331) — max-1/day spent, don't send another today.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

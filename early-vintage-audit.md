@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 12/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 20/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -267,16 +267,16 @@ sweeps. Headline catches:
 - [x] 2026-07-22 — [Cloud Storage MCP Servers — S3, Google Cloud Storage, Azure Blob, MinIO, and Beyond](content/reviews/cloud-storage-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Google Calendar MCP Server — Multi-Account Calendar Management for AI Assistants](content/reviews/google-calendar-mcp-server.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Grafana MCP Server Review — 40+ Tools, Open Source](content/reviews/grafana-mcp-server.md) — re-audited 2026-08-12
-- [ ] 2026-07-22 — [Message Queue MCP Servers — Kafka, RabbitMQ, Pulsar, NATS, SQS, and Beyond](content/reviews/message-queue-mcp-servers.md)
-- [ ] 2026-07-22 — [Mistral Small 3.1 Review — 24B Vision Model, 128K Context, Runs on One GPU](content/reviews/mistral-small-3-1-vision-24b-llm-review.md)
-- [ ] 2026-07-22 — [New Relic MCP Server Review — 35 Tools, Free Tier](content/reviews/newrelic-mcp-server.md)
-- [ ] 2026-07-22 — [Obsidian MCP Servers — Eight Servers, Three Architectures, No Official Blessing](content/reviews/obsidian-mcp-servers.md)
+- [x] 2026-07-22 — [Message Queue MCP Servers — Kafka, RabbitMQ, Pulsar, NATS, SQS, and Beyond](content/reviews/message-queue-mcp-servers.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Mistral Small 3.1 Review — 24B Vision Model, 128K Context, Runs on One GPU](content/reviews/mistral-small-3-1-vision-24b-llm-review.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [New Relic MCP Server Review — 35 Tools, Free Tier](content/reviews/newrelic-mcp-server.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Obsidian MCP Servers — Eight Servers, Three Architectures, No Official Blessing](content/reviews/obsidian-mcp-servers.md) — re-audited 2026-08-12
 - [ ] 2026-07-22 — [Outlook MCP Servers — Microsoft's Enterprise Email Meets the Agent Era](content/reviews/outlook-mcp-servers.md)
-- [ ] 2026-07-22 — [PDF & Document Processing MCP Servers — MarkItDown, Docling, PDF Reader, and More](content/reviews/pdf-document-mcp-servers.md)
+- [x] 2026-07-22 — [PDF & Document Processing MCP Servers — MarkItDown, Docling, PDF Reader, and More](content/reviews/pdf-document-mcp-servers.md) — re-audited 2026-08-12
 - [ ] 2026-07-22 — [Science & Research MCP Servers — arXiv, PubMed, Semantic Scholar, UniProt, Wolfram, Scientific Computing, and More](content/reviews/science-research-mcp-servers.md)
-- [ ] 2026-07-22 — [Search Engine MCP Servers — Elasticsearch, OpenSearch, Meilisearch, Algolia, Solr, and Beyond](content/reviews/search-engine-mcp-servers.md)
-- [ ] 2026-07-22 — [Shopify MCP Servers — From 2 Servers to an Agentic Commerce Platform](content/reviews/shopify-mcp-servers.md)
-- [ ] 2026-07-22 — [The Brave Search MCP Server — The Best Search Option for Agents](content/reviews/brave-search-mcp-server.md)
+- [x] 2026-07-22 — [Search Engine MCP Servers — Elasticsearch, OpenSearch, Meilisearch, Algolia, Solr, and Beyond](content/reviews/search-engine-mcp-servers.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [Shopify MCP Servers — From 2 Servers to an Agentic Commerce Platform](content/reviews/shopify-mcp-servers.md) — re-audited 2026-08-12
+- [x] 2026-07-22 — [The Brave Search MCP Server — The Best Search Option for Agents](content/reviews/brave-search-mcp-server.md) — re-audited 2026-08-12
 - [ ] 2026-07-22 — [The Browserbase MCP Server — Cloud Browser Automation With AI-Native Targeting](content/reviews/browserbase-mcp-server.md)
 - [ ] 2026-07-22 — [The Chroma MCP Server — Vector Database Operations Through Your AI Assistant](content/reviews/chroma-mcp-server.md)
 - [ ] 2026-07-22 — [The Cloudflare MCP Server — 2,500 API Endpoints in 1,000 Tokens](content/reviews/cloudflare-mcp-server.md)

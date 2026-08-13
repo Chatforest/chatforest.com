@@ -3,9 +3,9 @@
 > Obsidian has no official MCP server, but community projects compete to give AI agents access to your vault. Direct file access, REST API integration, or native plugin — here's how they compare.
 
 
-Obsidian has a large and passionate community that treats their vaults like a second brain. When AI agents need access to that brain, there's no official path — Obsidian has published no MCP server, made no announcement about MCP support, and a [feature request for an official MCP core plugin](https://forum.obsidian.md/t/official-mcp-core-plugin/109276) sits unanswered on the forum. The Obsidian team is paying attention to the ecosystem — they issued a trademark enforcement that forced the popular `mcp-obsidian` npm package to rename to `@bitbonsai/mcpvault` in March 2026 — but that's brand protection, not product commitment.
+Obsidian has a large and passionate community that treats their vaults like a second brain. When AI agents need access to that brain, there's no official path — Obsidian has published no MCP server, made no announcement about MCP support, and a [feature request for an official MCP core plugin](https://forum.obsidian.md/t/official-mcp-core-plugin/109276) sits unanswered on the forum (still just the original post, no Obsidian staff reply, as of this audit). The Obsidian team is paying attention to the ecosystem — the maintainer of the vault-access server now published as `@bitbonsai/mcpvault` [renamed the npm package from the unscoped `mcpvault` to that scoped name "at Obsidian's request"](https://github.com/bitbonsai/mcpvault/blob/main/CHANGELOG.md) in March 2026 (v0.9.0) — but the project's own changelog doesn't use trademark or legal language for this, so it reads as a naming request, not confirmed brand enforcement, and it's still not a product commitment.
 
-The community filled the gap. PulseMCP now lists **79 Obsidian-related MCP servers** (up from 66 in April), though only about eight have meaningful traction. Three fundamentally different architectural approaches compete. The most popular — mcp-obsidian (Markus) with 3,700 stars — went dormant for 17 months and then revived in May 2026 with the maintainer returning. The most technically sophisticated server runs inside Obsidian itself and has shipped 13 releases since April 20 alone. And the highest-downloaded — obsidian-mcp-server (cyanheads), with 9,700 downloads per week — was written off as stale in April and has now released v3.2.0 adapted for the new Local REST API v4.
+The community filled the gap. PulseMCP now lists [**104 Obsidian-related MCP servers**](https://www.pulsemcp.com/servers?q=obsidian) (up from 66 in April), though only about eight have meaningful traction. Three fundamentally different architectural approaches compete. The most popular — mcp-obsidian (Markus) with 4,292 stars — went dormant for 17 months and then revived in May 2026 with the maintainer returning. The most technically sophisticated server runs inside Obsidian itself and has shipped dozens of releases since April 20. And the highest-downloaded — obsidian-mcp-server (cyanheads), with roughly [6,100 downloads per week](https://www.npmjs.com/package/obsidian-mcp-server) — was written off as stale in April and has continued shipping releases (now v3.2.12) adapted for the new Local REST API v4/v5.
 
 The biggest infrastructure development since our last review: **Local REST API v4.0.0 shipped a built-in Streamable HTTP MCP server** at `/mcp/`. You can now point MCP clients directly at the plugin — no intermediate Node.js server required. This changes the calculus for Approach 1.
 
@@ -13,17 +13,19 @@ Here's how the landscape breaks down.
 
 ## The Contenders
 
+*Star counts verified against the GitHub API as of this audit (2026-08-12); they were accurate as of the original May 2026 snapshot but every repo in this table has grown since — see the per-server sections below for what else changed.*
+
 | Server | Stars | Tools | Language | Transport | Needs Plugin? | Auth | Active? |
 |--------|-------|-------|----------|-----------|---------------|------|---------|
-| [mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) (Markus) | 3,720 | 7 | Python | stdio | Yes (REST API) | API key | **Active (May 2026)** |
-| [mcpvault](https://github.com/bitbonsai/mcpvault) | 1,277 | ~14 | TypeScript | stdio | No | None | **Very Active** |
-| [obsidian-mcp-tools](https://github.com/jacksteamdev/obsidian-mcp-tools) | 815 | ~6 | TypeScript | HTTP | Yes (REST API) | API key | **ARCHIVED** |
-| [obsidian-mcp](https://github.com/StevenStavrakis/obsidian-mcp) (Steven) | 708 | 12 | TypeScript | stdio | No | None | Dormant (Jun 2025) |
-| [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) (cyanheads) | 536 | 8 | TypeScript | stdio + HTTP | Yes (REST API) | API key/JWT/OAuth | **Active (May 2026)** |
-| [obsidian-mcp](https://github.com/newtype-01/obsidian-mcp) (Newtype) | 302 | 11 | JavaScript | stdio | Yes + fallback | API token | Stale (Aug 2025) |
-| [obsidian-mcp-plugin](https://github.com/aaronsb/obsidian-mcp-plugin) | 317 | 8 categories | TypeScript | HTTP + SSE | Is the plugin | Bearer token | **Very Active (May 2026)** |
+| [mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) (Markus) | 4,292 | 7 | Python | stdio | Yes (REST API) | API key | **Active (May 2026)** |
+| [mcpvault](https://github.com/bitbonsai/mcpvault) | 1,605 | 18 | TypeScript | stdio | No | None | **Very Active** |
+| [obsidian-mcp-tools](https://github.com/jacksteamdev/obsidian-mcp-tools) | 831 | ~6 | TypeScript | HTTP | Yes (REST API) | API key | **ARCHIVED** |
+| [obsidian-mcp](https://github.com/StevenStavrakis/obsidian-mcp) (Steven) | 721 | 12 | TypeScript | stdio | No | None | Dormant (Jun 2025) |
+| [obsidian-mcp-server](https://github.com/cyanheads/obsidian-mcp-server) (cyanheads) | 657 | 14 | TypeScript | stdio + HTTP | Yes (REST API) | API key/JWT/OAuth | **Active (Aug 2026)** |
+| [obsidian-mcp](https://github.com/newtype-01/obsidian-mcp) (Newtype) | 313 | 11 | JavaScript | stdio | Yes + fallback | API token | Stale (Aug 2025) |
+| [obsidian-mcp-plugin](https://github.com/aaronsb/obsidian-mcp-plugin) | 455 | 8 categories | TypeScript | HTTP | Is the plugin | Bearer token | **Very Active (Aug 2026)** |
 
-~~[mcp-obsidian (Smithery)](https://github.com/smithery-ai/mcp-obsidian)~~ — formerly 1,300 stars — **no longer exists** (404 since April 2026).
+~~[mcp-obsidian (Smithery)](https://github.com/smithery-ai/mcp-obsidian)~~ — formerly 1,300 stars — **no longer exists** (404, confirmed still gone as of this audit).
 
 The maintenance picture has shifted significantly since April. Three servers that appeared dormant — mcp-obsidian (Markus), obsidian-mcp-server (cyanheads), and obsidian-mcp-plugin — are all actively shipping code. One server that was active — obsidian-mcp-tools — is now archived. Let's look at the three architectural approaches first.
 
@@ -33,9 +35,9 @@ The maintenance picture has shifted significantly since April. Three servers tha
 
 **Used by:** mcp-obsidian (Markus), obsidian-mcp-tools, obsidian-mcp-server (cyanheads), obsidian-mcp (Newtype)
 
-These servers depend on the [Obsidian Local REST API](https://github.com/coddingtonbear/obsidian-local-rest-api) community plugin (2,259 stars). What changed since April: [**v4.0.0 shipped on May 15, 2026**](https://github.com/coddingtonbear/obsidian-local-rest-api/releases/tag/v4.0.0) and added a built-in Streamable HTTP MCP server at `/mcp/`. You can now connect MCP clients directly to the plugin, bypassing intermediate Node.js servers entirely. v4.0.1 removed deprecated 2.x PATCH format; v4.0.2 (May 17) adds workflow fixes.
+These servers depend on the [Obsidian Local REST API](https://github.com/coddingtonbear/obsidian-local-rest-api) community plugin (2,786 stars). What changed since April: [**v4.0.0 shipped on May 15, 2026**](https://github.com/coddingtonbear/obsidian-local-rest-api/releases/tag/4.0.0) and added a built-in Streamable HTTP MCP server at `/mcp/`. You can now connect MCP clients directly to the plugin, bypassing intermediate Node.js servers entirely. [v4.0.1](https://github.com/coddingtonbear/obsidian-local-rest-api/releases/tag/4.0.1) removed deprecated 2.x PATCH format; [v4.0.2](https://github.com/coddingtonbear/obsidian-local-rest-api/releases/tag/4.0.2) (May 17) adds workflow fixes. **Update as of this audit:** the plugin has kept moving fast — it's now at [v5.1.0 (July 31, 2026)](https://github.com/coddingtonbear/obsidian-local-rest-api/releases), several major versions past the v4.0.x line described below; the built-in MCP server and the v4.0.0 breaking changes (Dataview DQL removal) remain in place in the current release.
 
-**Issue #237** (data loss bug — POST `/vault/{path}` silently overwrites files when metadata cache misses) was closed "not planned" on May 4. The bug was acknowledged but v4.0.0's architectural changes may have addressed it implicitly. The close is reassuring but the fix path isn't documented.
+[**Issue #237**](https://github.com/coddingtonbear/obsidian-local-rest-api/issues/237) (data loss bug — POST `/vault/{path}` silently overwrites files when metadata cache misses) was closed "not planned" on May 4, and remains closed as of this audit. The bug was acknowledged but v4.0.0's architectural changes may have addressed it implicitly. The close is reassuring but the fix path isn't documented.
 
 Dataview DQL search was **removed** in v4.0.0 per the changelog. Servers that relied on it (obsidian-mcp-server adapted in v3.2.0) needed updates.
 
@@ -53,7 +55,7 @@ These servers skip the middleman entirely — they read and write Markdown files
 
 **Cons:** No access to Obsidian-specific features. Potential file conflicts if Obsidian and the server write simultaneously. Bypasses Obsidian's own safeguards. Full filesystem access to your notes with no auth.
 
-**Security note:** Two HIGH-severity issues were found in mcpvault — "case-insensitive blocklist bypass" and "dotfile filter gap" — that allowed writes to restricted directories like `.Git/hooks/post-merge` on case-insensitive filesystems (macOS, Windows). These were reported in PR #115, which was closed. Whether the fixes were merged into the codebase is not clearly documented in the changelog. Issue #122 (path resolution bug that could put files in the wrong location) remains open as of May 19. macOS and Windows users of mcpvault should verify their version status.
+**Security note:** Two HIGH-severity issues were found in mcpvault — "case-insensitive blocklist bypass" and "dotfile filter gap" — that allowed writes to restricted directories like `.Git/hooks/post-merge` on case-insensitive filesystems (macOS, Windows), reported in [PR #115](https://github.com/bitbonsai/mcpvault/pull/115). **Update as of this audit: both are now fixed.** The case-insensitivity bug shipped a fix in v0.11.4 ([GHSA-j99q-93c9-h869](https://github.com/bitbonsai/mcpvault/security/advisories/GHSA-j99q-93c9-h869)); the dotfile gap was closed by [PR #183](https://github.com/bitbonsai/mcpvault/pull/183), merged August 8, 2026 and released as v0.14.1. [Issue #122](https://github.com/bitbonsai/mcpvault/issues/122) (path resolution bug that could put files in the wrong location) was also closed, via [PR #151](https://github.com/bitbonsai/mcpvault/pull/151). The current published package (v0.15.0, Aug 9, 2026) includes all three fixes — macOS and Windows users just need to be on v0.14.1 or later.
 
 ### Approach 3: Native Obsidian Plugin
 
@@ -69,42 +71,42 @@ This server runs *inside* Obsidian as a plugin. As of v0.11.29 (May 19, 2026), i
 
 ### mcp-obsidian (Markus) — The Revived Leader
 
-The most popular Obsidian MCP server, 3,720 stars. In April we wrote it off: last commit November 2024, 85 open issues, 17 months dormant. That changed. **Markus Pfundstein committed directly on May 15, 2026** — "test: expand unit coverage" and a version bump. 86 issues remain open, but the maintainer is alive and in the repo.
+The most popular Obsidian MCP server, [4,292 stars](https://github.com/MarkusPfundstein/mcp-obsidian) as of this audit. In April we wrote it off: last commit November 2024, 85 open issues, 17 months dormant. That changed. **Markus Pfundstein committed directly on May 15, 2026** — "test: expand unit coverage" and a version bump. [98 issues remain open](https://github.com/MarkusPfundstein/mcp-obsidian/issues) as of this audit (86 in May), but the maintainer is alive and in the repo — [there's been continued activity since](https://github.com/MarkusPfundstein/mcp-obsidian/commits/master).
 
-The npm package (v1.0.0) hasn't been updated — the GitHub activity is development-track work that hasn't cut a new release yet. Weekly downloads: ~3,330/week. PulseMCP shows this remains the most-visited Obsidian MCP entry.
+Correction from the original review: this server is distributed via [**PyPI, not npm**](https://pypi.org/project/mcp-obsidian/) — its `pip`/`uv` package is `mcp-obsidian`, latest release **v0.2.2 (April 2025)**, and it hasn't been updated since; the GitHub activity is development-track work that hasn't cut a new release yet. (An unrelated npm package that happens to share the name `mcp-obsidian`, published by a different author, is not this project — don't confuse the two.) Per [pypistats.org](https://pypistats.org/packages/mcp-obsidian), recent download volume runs in the thousands per week, though PyPI stats are known to be inflated by CI/mirror traffic and shouldn't be read as precise. PulseMCP shows this remains the most-visited Obsidian MCP entry.
 
-**7 tools:** `list_files_in_vault`, `list_files_in_dir`, `get_file_contents`, `search`, `patch_content`, `append_content`, `delete_file`.
+**7 tools:** `list_files_in_vault`, `list_files_in_dir`, `get_file_contents`, `search`, `patch_content`, `append_content`, `delete_file` — confirmed against the [current README](https://github.com/MarkusPfundstein/mcp-obsidian/blob/master/README.md).
 
-Known issues remain: `patch_content` timeout/validation errors (#9), UTF-8 handling failures (#25), Dataview plugin dependency failures (#70), no multi-vault support (#63). The maintainer's return doesn't instantly close 86 issues, but it changes the prognosis.
+Known issues remain: `patch_content` timeout/validation errors ([#9](https://github.com/MarkusPfundstein/mcp-obsidian/issues/9)), UTF-8 handling failures ([#25](https://github.com/MarkusPfundstein/mcp-obsidian/issues/25)), Dataview plugin dependency failures ([#70](https://github.com/MarkusPfundstein/mcp-obsidian/issues/70)), no multi-vault support ([#63](https://github.com/MarkusPfundstein/mcp-obsidian/issues/63)) — all still open as of this audit. The maintainer's return doesn't instantly close 98 issues, but it changes the prognosis.
 
 Previously we said "skip this." Now: watch it. If Markus ships a new npm release addressing the known bugs, it becomes a viable option again.
 
 ### mcpvault — The Practical Default (With Caveats)
 
-1,277 stars, actively developed through May 18. The npm package is at v0.11.0 (March 22) — no new release in two months despite ongoing development. Weekly downloads: ~2,663/week.
+[1,605 stars](https://github.com/bitbonsai/mcpvault) as of this audit, actively developed — [the npm package is now at v0.15.0 (August 9, 2026)](https://www.npmjs.com/package/@bitbonsai/mcpvault), a large jump from the v0.11.0 (March) this review originally flagged as stale; releases have been shipping regularly since. Weekly downloads are now [roughly 26,000/week](https://www.npmjs.com/package/@bitbonsai/mcpvault) per npm's own download stats — far higher than this review's original estimate.
 
-**~14 tools:** `read_note`, `write_note`, `patch_note`, `delete_note`, `move_note`, `move_file`, directory listing, batch reading, BM25 search with relevance reranking, frontmatter management, tag operations, `list_all_tags`, vault statistics.
+**18 tools** as of the [current README](https://raw.githubusercontent.com/bitbonsai/mcpvault/main/README.md) (up from ~14 in May): `read_note`, `write_note`, `patch_note`, `delete_note`, `move_note`, `move_file`, `get_note_outline`, `read_note_lines`, `list_directory`, `read_multiple_notes`, `search_notes` (BM25 with relevance reranking), `get_frontmatter`, `update_frontmatter`, `get_notes_info`, `get_vault_stats`, `manage_tags`, `list_all_tags`, `wiki_link`.
 
-**Security concerns since April:**
-- **PR #115 (HIGH severity, closed):** "Case-insensitive blocklist bypass" and "dotfile filter gap" allowed writes to `.Git/hooks/post-merge` and other restricted paths on macOS/Windows (case-insensitive filesystems). The PR was closed but merge status is unclear from changelogs.
-- **Issue #122 (open):** Absolute and tilde paths cause double-path resolution (ENOENT or files written to wrong location) — path traversal-adjacent bug.
+**Security concerns from April/May — resolved as of this audit:**
+- [**PR #115**](https://github.com/bitbonsai/mcpvault/pull/115) **(HIGH severity):** "Case-insensitive blocklist bypass" and "dotfile filter gap" allowed writes to `.Git/hooks/post-merge` and other restricted paths on macOS/Windows (case-insensitive filesystems). The case-insensitivity bug was fixed in v0.11.4 ([GHSA-j99q-93c9-h869](https://github.com/bitbonsai/mcpvault/security/advisories/GHSA-j99q-93c9-h869)); the dotfile gap was closed by [PR #183](https://github.com/bitbonsai/mcpvault/pull/183), merged August 8, 2026 (v0.14.1).
+- [**Issue #122**](https://github.com/bitbonsai/mcpvault/issues/122) **(now closed):** Absolute and tilde paths caused double-path resolution (ENOENT or files written to wrong location). Fixed via [PR #151](https://github.com/bitbonsai/mcpvault/pull/151) with a `normalizePath()` helper.
 - **Previously patched (v0.9.1, March 2026):** Symlink path traversal fixed.
 
-The gap between GitHub activity and npm releases is a yellow flag — users running `npx @bitbonsai/mcpvault@latest` are on v0.11.0 (March), while security fixes may or may not be in unreleased development commits.
+The gap between GitHub activity and npm releases that this review originally flagged as a "yellow flag" has closed — the maintainer has kept npm releases current with the security fixes, and the package published today (v0.15.0) includes all of the above.
 
-mcpvault remains the easiest entry point (one-line install, no plugin required, BM25 search), but the open security questions are material for anyone on macOS or Windows.
+mcpvault remains the easiest entry point (one-line install, no plugin required, BM25 search), and the security concerns flagged in the original review are now resolved in the current release — just make sure you're not pinned to a version older than v0.14.1.
 
 ### obsidian-mcp-server (cyanheads) — The Quiet Giant
 
-536 stars (up from 459) — but 9,776 weekly downloads, the highest of any Obsidian MCP server. In April we wrote "stale since October 2025." This was wrong: **v3.2.0 shipped May 17, 2026**, adapting to Local REST API v4.0.0 (removed Dataview DQL search per upstream, updated API calls). Last commit: May 17.
+[657 stars](https://github.com/cyanheads/obsidian-mcp-server) as of this audit (536 in May, 459 in April) — and, per [npm's own download stats](https://www.npmjs.com/package/obsidian-mcp-server), roughly 6,100 weekly downloads (this review's original "9,776" figure was uncited and doesn't match npm's registry API; correcting it here). In April we wrote "stale since October 2025." This was wrong: **v3.2.0 shipped May 17, 2026**, adapting to Local REST API v4.0.0 (removed Dataview DQL search per upstream, updated API calls), and [development has continued since](https://www.npmjs.com/package/obsidian-mcp-server) — the package is now at v3.2.12 (August 2, 2026).
 
-**8 tools:** `obsidian_read_note`, `obsidian_update_note`, `obsidian_search_replace` (regex), `obsidian_global_search` (paginated), `obsidian_list_notes`, `obsidian_manage_frontmatter`, `obsidian_manage_tags`, `obsidian_delete_note`.
+**14 tools** as of the [current README](https://raw.githubusercontent.com/cyanheads/obsidian-mcp-server/main/README.md) (up from 8 in May — the toolset was restructured, so several tool names below are new): `obsidian_get_note`, `obsidian_list_notes`, `obsidian_list_tags`, `obsidian_list_commands`, `obsidian_search_notes`, `obsidian_write_note`, `obsidian_append_to_note`, `obsidian_patch_note`, `obsidian_replace_in_note`, `obsidian_manage_frontmatter`, `obsidian_manage_tags`, `obsidian_delete_note`, `obsidian_open_in_ui`, `obsidian_execute_command`.
 
-The only server with dual transport (stdio + HTTP/SSE), JWT/OAuth auth options, in-memory vault cache, structured logging with file rotation, Zod schema validation, and Docker support. The regex-powered `search_replace` and paginated `global_search` remain standout features.
+The only server with dual transport (stdio + HTTP), JWT/OAuth auth options, in-memory vault cache, structured logging with file rotation, Zod schema validation, and Docker support.
 
-The 9,700 downloads/week tell you something real. People are running this in production. The v3.2.0 release shows the maintainer is responsive to upstream changes. This is no longer "needs revival" — it's one of the most solid options in the landscape.
+The ~6,100 downloads/week tell you something real. People are running this in production. The continued release cadence through v3.2.12 shows the maintainer is responsive to upstream changes. This is no longer "needs revival" — it's one of the most solid options in the landscape.
 
-**Setup:** Requires Local REST API plugin (now v4.0.2 recommended). More configuration than mcpvault but considerably more production-ready.
+**Setup:** Requires the Local REST API plugin. The plugin itself has moved past the v4.0.x line this review originally cited — it's now at [v5.1.0](https://github.com/coddingtonbear/obsidian-local-rest-api/releases). More configuration than mcpvault but considerably more production-ready.
 
 ### obsidian-mcp-plugin (aaronsb) — The Native Approach, Accelerating
 
