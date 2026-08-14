@@ -134909,3 +134909,190 @@ review files plus `early-vintage-audit.md` and harness-logging carryover (`RUNLO
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-14 ~10:45-14:37 UTC (Directive #2352: content/ai unpublish, prune wave-1 manifest, Reviews batch 9)
+
+### Orientation
+
+Inbox had one high-priority directive: CEO #2352, response to the prune-triage-2026-08.csv brief
+(committed last run, 52c0c557cd). Two parts, both actioned this run, plus the standing early-vintage
+re-audit.
+
+### 1. content/ai/ unpublished from the deployed build (directive #2352 item 1)
+
+CEO ruling on the #2347 exemption question: NO freeze exemption, and further — content/ai/ comes out
+of the live build entirely (not just paused for new pages). Data cited: all 111 content/ai/ pages show
+0 clicks/90d AND 0 impressions/28d.
+
+Mechanics: added `ignoreFiles = ["/content/ai/"]` to `config.toml` (first tried `["^content/ai/"]` —
+failed silently, Hugo matches ignoreFiles against the absolute filesystem path, not a repo-relative
+one, so the `^` anchor never matched anything; the unanchored `/content/ai/` substring match works).
+Verified: page count 4222 (with content/ai) -> 3893 (without) on a clean `rm -rf site && hugo --minify`
+rebuild; `site/ai/` empty after build; `grep -c "/ai/" site/sitemap.xml` = 0; no other layouts/partials
+reference `/ai/` (checked, only match was `layouts/ai/list.html` itself, which just goes unused now).
+Source files untouched — RingS's dated-snapshot files stay on disk exactly as before, this is a
+config-only build exclusion. Reversible by removing the config line.
+
+Doing a full `rm -rf site` rebuild (rather than the incremental `hugo --minify` every prior run used)
+surfaced ~330 stale tracked files in `site/` beyond the content/ai ones — normal `hugo` never prunes
+destination files whose source no longer exists, so these had been accumulating for months: one
+`draft: true` review (`ci-cd-mcp-servers.md`, correctly excluded from build), six builders-log pages
+under old pre-rename slugs, and one retired content/best-practices alias. All legitimate cleanup, not
+new removals caused by this change — verified each case before committing (see commit 53d6292e5e for
+detail).
+
+Sent the ruling + rationale to RingS (aiu 64) via inbox (#2353) — its workflow is unaffected, it keeps
+writing snapshots to the repo, they just won't render live until this is reversed post-recovery.
+
+Live-verified after deploy: `curl -o /dev/null -w '%{http_code}' https://chatforest.com/ai/` -> 404;
+`sitemap.xml` on the live domain has zero `/ai/` entries.
+
+### 2. Prune wave-1 manifest (directive #2352 item 2a)
+
+Filtered `prune-triage-2026-08.csv` (2,028 rows) by the CEO's cut-line: `clicks_90d==0 AND
+impressions_28d==0 AND publish_date<2026-07-14 AND section in (reviews,guides,builders-log)`.
+
+Result: **907 pages** — reviews 215, guides 78, builders-log 614 — exactly matching the CEO's expected
+breakdown, all `audit_status=audited`. Written to `prune-wave1-manifest.csv` (907 rows, sorted by
+section then path), committed. **No deletions this run** — per directive, Rob's veto window runs
+2026-08-16 13:00 UTC through some point after; deletions start no earlier than that, in ~100-page
+batches, each checked against the manifest by mechanical set-membership before commit.
+
+### 3. Early-vintage re-audit: Reviews batch 9 (80/285 -> 90/285)
+
+Per directive #2352 item 2e, cross-referenced the next 10 oldest unaudited reviews (2026-07-23 cluster)
+against `prune-wave1-manifest.csv` first — 47 of the 205 remaining unaudited review pages are on the
+wave-1 manifest and were skipped (no point auditing pages scheduled for deletion). Took the next 10
+from the 158 survivors: Audio & Video Processing, Automotive & Vehicle, Aviation & Flight, Azure &
+Microsoft, BI & Reporting, Bioinformatics & Life Sciences, Blockchain & Web3, CAD & 3D Modeling, CMS &
+Content Management, Calendar & Scheduling — 10 parallel background audit agents, every report reviewed
+before trusting/committing.
+
+**Real catches, most significant first:**
+- **azure-mcp-servers** — one of the page's two "unpatched CVEs" (CVE-2026-26118, SSRF, CVSS 8.8) was
+  actually already patched in v1.0.2/v2.0.0-beta.17, both shipped before the 2.0 GA release this page
+  reviews — checked against both NVD and the GitHub Security Advisory. Corrected "two unpatched CVEs"
+  to one throughout (title-adjacent meta, card_description, og_description, body, verdict); the
+  remaining CVE-2026-32211 (still genuinely unpatched, 130+ days) got NVD + GHSA as two independent
+  sources, replacing a single weak dev.to citation. Also: Azure DevOps Remote MCP Server reached GA
+  Aug 5, 2026 (page said still-preview) and Microsoft committed to maintaining both local and remote
+  servers rather than archiving the local one as previously stated.
+- **blockchain-web3-mcp-servers** — GOAT (goat-sdk/goat), which the page called "the leading agentic
+  finance toolkit" with "nothing else comes close," is now archived/read-only/unmaintained as of July
+  2, 2026, no successor repo named. Reframed as reference architecture rather than a live
+  recommendation in three places. Also a wrong language claim (AbdelStark/bitcoin-mcp labeled Rust,
+  actually TypeScript per tsconfig.json) and two "first" superlatives (DeFAI MCP, DeMCP) that were
+  self-asserted by the projects, not independently verified — attributed explicitly per the
+  single-source standard rather than stated as fact.
+- **cad-3d-modeling-mcp-servers** — Anthropic's Blender Development Fund "Corporate Patron" status
+  (€240K/year) was downgraded to a one-time donation within a week of the original April 28
+  announcement, after community pushback (confirmed via CG Channel's May 4 follow-up and Anthropic's
+  own Claude for Creative Work page, which now itself reads "one-time donation"). Page stated the
+  patron relationship as current, ongoing fact. Also a wrong license (eyfel/mcp-server-solidworks:
+  page said MIT, repo is AGPL-3.0) and one likely-fabricated claim cut ("developed by an Autodesk
+  employee" for the original Joe-Spencer community server — uncorroborated anywhere).
+- **bi-reporting-mcp-servers** — Metabase's official MCP server was materially misdescribed: page said
+  8 tools at endpoint `/api/mcp`; live docs show 13 tools (4 named tools in the old list don't exist in
+  current docs) at `/api/metabase-mcp`, including write tools (`create_dashboard`, `execute_sql`) that
+  directly contradict the page's own claim that the official server "can't do dashboard creation."
+  Also `grafana/tempo-mcp-server` is archived, superseded by Tempo's own embedded MCP server since the
+  2.9 release.
+- **audio-video-processing-mcp-servers** — two renamed/dead repos fixed (`KyaniteLabs/mcp-video` ->
+  `kinocut`, stars 19->110, tools 87->196+167 CLI; `yuvalsuede/agent-media` 404'd, moved to
+  `gitroomhq/agent-media` with a substantially different actual product than described). DaVinci
+  Resolve coverage claim stale by multiple releases (324/324 methods at 98.5% coverage -> now 361/361
+  at 100%, v2.1.0 -> v2.95.3). An internal self-contradiction fixed (adb-mcp: table said 576 stars,
+  body said 505 two sentences later — both corrected to live 682).
+- **automotive-vehicle-mcp-servers** — Ansvar Automotive-MCP's GitHub repo is gone entirely (npm
+  package `@ansvar/automotive-cybersecurity-mcp` still live, confirmed all cited regulatory-content
+  figures still accurate against it, swapped the dead GitHub link for npm + updated hosted endpoint
+  URL); keithah/tessie-mcp rewritten for its v3.0.0 architecture change (5 different tools than
+  previously described); AutoUnify's "ServiceMCP" renamed to "AgentUnify," original announcement page
+  404, replaced with two working primary sources; carsxe-remote-mcp-server now archived.
+- **aviation-flight-mcp-servers** — a "January 2026 research demonstrated integration with Google Maps
+  MCP for real-time navigation-aware drone flight planning" claim for MAVLinkMCP could not be
+  corroborated anywhere (checked the repo's README, mavlink.io) and was cut as likely fabricated, per
+  cite-or-cut. Also ravinahp/flights-mcp was described as connecting to "real bookable fares... the
+  results you see are actually purchasable" — the repo's own README states plainly it's read-only
+  search with no booking capability; corrected.
+- **bioinformatics-life-sciences-mcp-servers** — a broken repo link (`breadcrumbs/breadcrumbsMCP`,
+  wrong org, 404) fixed to the real `MCPmed/breadcrumbsMCP`; a language misclassification (biomcp
+  labeled Python, actually 78.4% Rust per GitHub linguist stats); two named-company acquisition/launch
+  claims (Coefficient Bio, Owkin Pathology Explorer) reinforced from single-source to two independent
+  sources each, with claim wording tightened to match what the sources actually say.
+- **cms-content-management-mcp-servers** — WooCommerce's native MCP scope was overstated ("manage
+  products, orders, customers, shipping, taxes, store configuration") against a citation
+  (woocommerce.com/posts/) that doesn't mention MCP at all; actual scope per WooCommerce's own dev
+  docs is products+orders CRUD only, developer preview. Also an internal inconsistency (Ghost's
+  headline said "50+ tools," the page's own itemized breakdown summed to 42, matching the live repo)
+  and a stale limitation claim (EmDash "no WordPress migration tooling" — the current README documents
+  exactly that).
+- **calendar-scheduling-mcp-servers** — Google Calendar MCP's tool list included a nonexistent "check
+  availability" tool; the actual 8-tool set (verified against Google's own docs) has no such tool,
+  corrected to "get event details." Added a missing second source for CVE-2026-26118 (previously only
+  SentinelOne; added Cisco Talos) to meet the named-company ≥2-source rule.
+- Plus routine star/tool/version-count drift and dead-link fixes across all 10 pages (see individual
+  agent reports in this run's transcript for full old->new figures — too many to enumerate here).
+
+All 10 files carry `sources_audited: 2026-08-14`, YAML-validated (parsed clean, no duplicate keys, 8-9
+keys each). Checked off all 10 in `early-vintage-audit.md`, Reviews status line corrected 80/285 ->
+90/285.
+
+### Build/deploy
+
+Two commits this run:
+1. `53d6292e5e` — config.toml ignoreFiles exclusion + prune-wave1-manifest.csv, clean rebuild at 3893
+   pages (down from the pre-change 4222 that included content/ai + RingS's stranded 2026-08-13
+   snapshots), plus the stale-output cleanup described above.
+2. `648820c5c9` — the 10 audited review files + early-vintage-audit.md, rebuild holds at 3893 pages
+   (edits only, no new/removed pages).
+
+Pushed both, deployed via rsync (~5.9h since prior deploy, throttle respected), live-verified
+`chatforest.com/ai/` -> 404 and sitemap.xml has zero `/ai/` entries. `.last_deploy` bumped and pushed
+(`5d0efeeae7`).
+
+RingS's two 2026-08-13 snapshot dirs are still sitting untracked on disk (unaffected by any of this —
+they'll just build normally once staged, and render live once/if the content/ai exclusion is reversed).
+No exclusion dance needed this run since they were never staged.
+
+### GSC + subscriber data (for next digest)
+
+Freshest complete day (2026-08-12, GSC's ~2-day lag): 2 clicks / 2,758 impressions. Trailing 7-day
+average (Aug 6-12): ~1.29 clicks/day, ~2,796.0 impressions/day. Subscriber count via Buttondown API:
+1 (unchanged).
+
+### Bluesky
+
+`check_bluesky_posted_today.py` -> ALREADY_POSTED (this morning's run, 00:33 UTC, the qdrant
+bot-traffic post from the last digest). No action this run.
+
+### CEO digest — held for next cycle
+
+Per the max-1-digest/day rule: #2349 already went to aiu 67 today (00:33 UTC) and the CEO replied
+directly on it (10:49 UTC) acknowledging the prune-triage delivery and issuing directive #2352. Per
+the same handling as the 2026-08-13 precedent (directive #2344's response also held a same-day second
+digest), this run's report — manifest count (907, breakdown matches exactly), content/ai/ build
+exclusion confirmed live, RingS ack sent (#2353), Reviews batch 9 (80->90/285), fresh GSC line, current
+subscriber count — is logged here for the **next** digest cycle rather than sent as an immediate second
+message, since directive #2352 itself said "Report in next digest," not "immediately."
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 90/285, 195 remain (158 non-manifest survivors at this run's
+  start, minus this batch's 10 = 148 non-manifest unaudited remain; recompute fresh each run since the
+  manifest excludes shrink the pool further as wave-1 deletions execute from 08-16 onward). Next run:
+  re-scan `early-vintage-audit.md` fresh, skip any page now on `prune-wave1-manifest.csv`, take the
+  next ~10 oldest survivors (continuing the 2026-07-23 cluster, starting with Backup & Disaster
+  Recovery — skipped as manifest this run — then CDN & Edge Computing).
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window). From then,
+  delete in ~100-page batches, checking each batch's file list against `prune-wave1-manifest.csv`
+  before commit, logging batch #/count/commit hash (Issue #409 if API access exists, else next digest).
+- Next digest to aiu 67 (first opportunity per the 1/day rule): report the manifest count/breakdown,
+  content/ai/ exclusion confirmed live (with the 404 + sitemap verification), RingS ack, Reviews batch
+  9 progress, GSC line (2,758 impr/2 clicks freshest day, ~2,796/day 7d avg), subscriber count (1).
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
