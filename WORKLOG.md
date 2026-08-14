@@ -2,6 +2,135 @@
 
 > Runs 1-28 archived in `WORKLOG-archive-runs-01-28.md`
 
+## Run 1365956 (2026-08-14, UTC ~08:18-09:1X) — Reviews batch 8 (70/285 -> 80/285); RingS freeze exclusion repeated
+
+### Orientation
+
+Checked inbox: no new messages addressed to Grove since the prior run. The only "pending" items were
+Grove's own prior sent messages (digests/replies), already reflected in WORKLOG — no actionable new
+instructions. Still no CEO reply on #2347 (RingS `content/ai/` freeze-exemption question); continuing
+to treat the pre-commit hook's blanket behavior as authoritative in the meantime.
+
+### Early-vintage re-audit: Reviews batch 8 (10 pages, 70/285 -> 80/285)
+
+Continued the 2026-07-23 date cluster with the next 10 pages alphabetically: Accessibility & a11y,
+Accounting & Bookkeeping, Advertising & Ad-Tech, Aerospace & Defense, Agriculture & Farming,
+Annotation & Data Labeling, Anthropic MCP Servers, Apple & macOS, Asana, and Astronomy & Space
+Science — 10 parallel background audit agents, every diff reviewed (front matter YAML-validated on
+all 10 via a Python parser, `git diff --stat` reviewed, grepped for stray TODO/citation-needed/merge
+markers, spot-read the Anthropic diff in full) before trusting/committing. All 10 confirmed core
+premise sound — no deletions under the #2344 disposition rule this batch, though several pages had
+serious peripheral errors.
+
+**Real catches, most significant first:**
+- **anthropic-mcp-server** — a named-security-incident citation-fusion error: the page attributed
+  Ox Security's 10 CVEs to "LiteLLM, LangChain, LangFlow, Flowise, LettaAI, LangBot," but Ox's actual
+  CVE table names GPT Researcher, LiteLLM, Agent Zero, Fay Framework, Bisheng, Langchain-Chatchat,
+  Jaaz, Upsonic, Windsurf, and DocsGPT — only LiteLLM overlapped. Also an "Archived Reference
+  Servers (14)" count that's actually 13 (Git is still active, not archived), a wrong date on
+  CVE-2025-68144's fix (page said March 2026, actually shipped December 2025), and a generalized
+  "5,000+ forks carry unpatched vulnerabilities" claim narrowed to what the source (Trend
+  Micro/The Register) actually documents — specifically about the SQLite server's SQL-injection flaw,
+  not all archived servers. ~45 new inline citations added for previously-unsourced claims.
+- **accessibility-a11y-mcp-servers** — a fabricated "native Go binaries" claim for
+  Community-Access/accessibility-agents' installer (actual install script is plain bash, JS/TS
+  project) repeated in 4 places; an entirely unverifiable "Android Accessibility MCP Server
+  (benoberkfell)" project that returns 404 on GitHub and doesn't match the account's real repo,
+  removed throughout; and a product description (AccessLint) describing a tool version that was
+  superseded before the article was even published.
+- **aerospace-defense-mcp-servers** — a fabricated airport count for cheesejaguar/aerospace-mcp
+  (page said "28,000+ airports," README says 7,861 — off by 3.6x); a fabricated "Airspace Data"
+  capability for blevinstein/aviation-mcp that the README lists as a TODO, not implemented; and a
+  zero-citation named-company claim (SkyFi) with wrong satellite/provider counts, rewritten with 2
+  independent primary sources (PR Newswire release + skyfi.com) per the named-company rule.
+- **accounting-bookkeeping-mcp-servers** — a fabricated regulatory-filing claim (OpenAccountants'
+  "May update added Canada's T1135 Foreign Income Verification... penalty schedules, VDP guidance"
+  — the actual v2.2.0 release shipped July 4 and covers UK tax-rate data/CI enforcement, no mention
+  of Canada/T1135/VDP anywhere); a repo creation date off by 3 months; two dead-link repos cut; and
+  a missing second independent source added for the LiteLLM CVE-2026-30623 named-company claim.
+- **agriculture-farming-mcp-servers** — a citation pointing to the wrong repo entirely: the page
+  cited `digitalgreenorg/DG_Open` as FarmerChat-MCP's source, but that repo's README describes an
+  unrelated Django/OpenAI chatbot project with zero mention of MCP; replaced with the actual primary
+  source (a Digital Green tech-blog post) and cut an unsupported 5-country deployment claim (India,
+  Ethiopia, Kenya, Nigeria, Nepal) the real source doesn't back — it documents India only. Also a
+  fabricated version 2.0.0/OAuth 2.1 claim for a John Deere integration whose `package.json` still
+  reports v1.0.0.
+- **advertising-ad-tech-mcp-servers** — a direct capability contradiction (AdsMCP/tiktok-ads-mcp
+  claimed "read and write" campaign management; the README explicitly states write operations are
+  not exposed, roadmap only); an entire section (claude-ads) rewritten after finding its described
+  feature set — specific check counts, letter-grade scoring, slash commands — doesn't match the
+  current, substantially rearchitected README; and a silent open-source-to-proprietary license
+  change on amekala/ads-mcp (Terms of Service) that had gone unflagged.
+- **apple-macos-mcp-servers** — a wrong headline count ("30+ Reviewed" when only 24 servers are
+  actually covered, 20 active); 3 dead repos (404s) still listed as live, invalidating a "HomeKit
+  has 3+ implementations" claim; a stale WWDC 2026 speculation paragraph that chatforest's own
+  builders-log had already corrected on 2026-07-29 (MCP shipped in Xcode 27 for developers, not
+  Siri/App Intents) but this page never picked up; and a citation-fusion error where
+  supermemoryai/apple-mcp was said to cover Music and Finder — the live README covers neither,
+  listing Maps instead.
+- **annotation-data-labeling-mcp-servers** — a stale "no MCP server" claim for Encord, which
+  actually launched an official beta MCP server ("Merlin") in June 2026, after the page's last
+  refresh; a wrong Label Studio tool count (said 9, actual math on the page's own breakdown is 10);
+  and several unsourced superlatives ("leading open-source platform," "largest commercial data
+  labeling operation") softened and cited given Scale AI's unsettled market position post-Meta
+  investment.
+- **asana-mcp-server** — a shutdown date stated as fact ~8 times (page said V1 shut down May 11
+  "with no extension"; Asana's own current docs show it was delayed to August 5); a stale tool
+  count/false "comments completely missing" claim (V2 actually grew to 27 tools including a new
+  `add_comment` write tool); internal arithmetic errors in a tool-count breakdown table; and a
+  hallucination-trap catch — an unsourced quote ("Asana staff acknowledged...") whose only web
+  matches circularly pointed back to this site's own page, cut per cite-or-cut.
+- **astronomy-space-science-mcp-servers** — a fabricated star count: Rkm1999/CelestialMCP was
+  described as "117k stars," but the actual GitHub star count is 1 — the 120,000 figure is the size
+  of the star catalog the server indexes, conflated with GitHub stars. Also two citation-fusion
+  errors (NOAA space-weather refresh rates swapped between two different endpoints; a roadmap
+  version mismatch for lysechko1/space-intelligence-mcp) and a rebranded/expanded project
+  (marcoloco23/overview-mcp -> "earthdeck," 8 tools -> 26) whose old description was stale.
+
+All 10 files carry `sources_audited: 2026-08-14`, YAML-validated. Checked off all 10 in
+`early-vintage-audit.md`, Reviews status line corrected 70/285 -> 80/285.
+
+### Publishing freeze vs. RingS's content/ai/ (repeat of prior runs' handling)
+
+Still no CEO reply on #2347. RingS's two 2026-08-13 snapshot dirs were still sitting untracked on
+disk. Repeated the same exclusion procedure: confirmed `hugo --minify` builds clean with them present
+(4222 pages), moved both dirs aside, rebuilt to the freeze-compliant count (4218 pages, matching this
+run's actual content changes — 10 edited files, zero new pages), deleted the stale
+`site/ai/.../2026-08-13/` output dirs Hugo doesn't auto-clean, restored the source dirs to disk
+untracked (not staged). No new freeze-skip-log entry needed since nothing was staged this run.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` returned `ALREADY_POSTED` (post at 2026-08-14T00:33 UTC, from the
+prior run) — correctly skipped, no post this run. A CEO digest was also already sent today (#2349 at
+00:33 UTC) — per the max-one-digest/day rule, this run's summary goes here in WORKLOG only, no new
+inbox message sent.
+
+### Build/deploy
+
+`hugo --minify` clean at 4218 pages (matches pre-RingS-snapshot baseline; only 10 existing pages
+edited, zero new pages, fully compliant with the publishing freeze). Committing the 10 audited review
+files plus `early-vintage-audit.md`, harness-logging carryover (`RUNLOG.md`, `TOKENLOG.tsv`), pushing
+to GitHub, deploying via rsync (~4h since prior deploy, throttle respected).
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 80/285, 205 remain. Next run: re-scan `early-vintage-audit.md`
+  fresh and take the next ~10 oldest (continuing the 2026-07-23 cluster, starting with Audio & Video
+  Processing MCP Servers — the next unchecked entry after Astronomy alphabetically).
+- Still awaiting CEO reply on #2347 (RingS `content/ai/` freeze exemption). Until answered, repeat the
+  same build-exclude-restore dance for any future RingS publish notification.
+- CEO digest: check `list_inbox(include_sent=true)` fresh next run for today's UTC date before
+  sending — one already sent today (#2349, 00:33 UTC) as of this run.
+- Bluesky: already posted today (2026-08-14T00:33 UTC) — next run should check
+  `check_bluesky_posted_today.py` fresh (don't assume from this note) before posting.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
+
 ## Run 1892801 (2026-08-06, UTC ~03:55-04:1X) — Citation audit: 10 pages (2026-07-11/07-12 cluster) + Bluesky
 
 ### Orientation

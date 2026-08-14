@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 70/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 80/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -326,16 +326,16 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [AI Agent Supply Chain Security MCP Servers — Scanning, Vetting, and Securing the MCP Ecosystem](content/reviews/ai-agent-supply-chain-security-mcp-servers.md) — re-audited 2026-08-14
 - [x] 2026-07-23 — [API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond](content/reviews/api-gateway-mcp-servers.md) — re-audited 2026-08-14
 - [x] 2026-07-23 — [API Testing MCP Servers — REST Clients, GraphQL Tools, OpenAPI Converters, and gRPC Bridges](content/reviews/api-testing-mcp-servers.md) — re-audited 2026-08-14
-- [ ] 2026-07-23 — [Accessibility & a11y MCP Servers — Axe-Core, WCAG Auditing, Color Contrast, BrowserStack, and More](content/reviews/accessibility-a11y-mcp-servers.md)
-- [ ] 2026-07-23 — [Accounting & Bookkeeping MCP Servers — QuickBooks, Xero, Zoho Books, Sage, Wave, Beancount, and More](content/reviews/accounting-bookkeeping-mcp-servers.md)
-- [ ] 2026-07-23 — [Advertising & Ad-Tech MCP Servers — Google Ads, Meta Ads, Amazon Ads, TikTok Ads, LinkedIn Ads, Programmatic DSPs, Multi-Platform Campaign Management, and Ad Auditing](content/reviews/advertising-ad-tech-mcp-servers.md)
-- [ ] 2026-07-23 — [Aerospace & Defense MCP Servers — NASA Official Earthdata, Flightradar24 Official, STK, MAVLink, Axion V2.0, Satellite Imagery, Drones, and More](content/reviews/aerospace-defense-mcp-servers.md)
-- [ ] 2026-07-23 — [Agriculture & Farming MCP Servers — Leaf, John Deere, FieldMCP, FarmerChat, Weather, Satellite Imagery, and More](content/reviews/agriculture-farming-mcp-servers.md)
-- [ ] 2026-07-23 — [Annotation & Data Labeling MCP Servers — Label Studio, Roboflow, Labelbox, and More](content/reviews/annotation-data-labeling-mcp-servers.md)
-- [ ] 2026-07-23 — [Anthropic MCP Servers — The Company That Created the Model Context Protocol](content/reviews/anthropic-mcp-server.md)
-- [ ] 2026-07-23 — [Apple & macOS MCP Servers (2026) — 30+ Reviewed](content/reviews/apple-macos-mcp-servers.md)
-- [ ] 2026-07-23 — [Asana MCP Server — Official Remote Server for Enterprise Project Management](content/reviews/asana-mcp-server.md)
-- [ ] 2026-07-23 — [Astronomy & Space Science MCP Servers — NASA APIs, Telescope Control, Satellite Tracking, SpaceX, Astronomical Surveys, and Research Tools](content/reviews/astronomy-space-science-mcp-servers.md)
+- [x] 2026-07-23 — [Accessibility & a11y MCP Servers — Axe-Core, WCAG Auditing, Color Contrast, BrowserStack, and More](content/reviews/accessibility-a11y-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Accounting & Bookkeeping MCP Servers — QuickBooks, Xero, Zoho Books, Sage, Wave, Beancount, and More](content/reviews/accounting-bookkeeping-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Advertising & Ad-Tech MCP Servers — Google Ads, Meta Ads, Amazon Ads, TikTok Ads, LinkedIn Ads, Programmatic DSPs, Multi-Platform Campaign Management, and Ad Auditing](content/reviews/advertising-ad-tech-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Aerospace & Defense MCP Servers — NASA Official Earthdata, Flightradar24 Official, STK, MAVLink, Axion V2.0, Satellite Imagery, Drones, and More](content/reviews/aerospace-defense-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Agriculture & Farming MCP Servers — Leaf, John Deere, FieldMCP, FarmerChat, Weather, Satellite Imagery, and More](content/reviews/agriculture-farming-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Annotation & Data Labeling MCP Servers — Label Studio, Roboflow, Labelbox, and More](content/reviews/annotation-data-labeling-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Anthropic MCP Servers — The Company That Created the Model Context Protocol](content/reviews/anthropic-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Apple & macOS MCP Servers (2026) — 30+ Reviewed](content/reviews/apple-macos-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Asana MCP Server — Official Remote Server for Enterprise Project Management](content/reviews/asana-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Astronomy & Space Science MCP Servers — NASA APIs, Telescope Control, Satellite Tracking, SpaceX, Astronomical Surveys, and Research Tools](content/reviews/astronomy-space-science-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Audio & Video Processing MCP Servers — ElevenLabs, FFmpeg, DaVinci Resolve, Ableton, REAPER, and More](content/reviews/audio-video-processing-mcp-servers.md)
 - [ ] 2026-07-23 — [Automotive & Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More](content/reviews/automotive-vehicle-mcp-servers.md)
 - [ ] 2026-07-23 — [Aviation & Flight MCP Servers — Flight Tracking, Booking, Weather, NOTAMs, ADS-B, Flightradar24, and Pilot Tools](content/reviews/aviation-flight-mcp-servers.md)
