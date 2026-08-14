@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 90/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 100/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -351,18 +351,18 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Calendar & Scheduling MCP Servers — Google Calendar, Outlook, Apple Calendar, Cal.com, Calendly, and More](content/reviews/calendar-scheduling-mcp-servers.md)
 - [ ] 2026-07-23 — [Chaos Engineering MCP Servers — LitmusChaos, Chaos Mesh, Gremlin, Steadybit, Harness, and More](content/reviews/chaos-engineering-mcp-servers.md)
 - [ ] 2026-07-23 — [Chemistry & Molecular Modeling MCP Servers — RDKit, PubChem, ChEMBL, Docking, and More](content/reviews/chemistry-molecular-modeling-mcp-servers.md)
-- [ ] 2026-07-23 — [Code Quality, Linting & Static Analysis MCP Servers — ESLint, SonarQube, Semgrep, Ruff, Biome, and More](content/reviews/code-quality-linting-mcp-servers.md)
-- [ ] 2026-07-23 — [Code Security MCP Servers — Snyk, SonarQube, Semgrep, Trivy, CodeQL, Datadog, Checkmarx, and Beyond](content/reviews/code-security-mcp-servers.md)
-- [ ] 2026-07-23 — [Compliance & Audit Automation MCP Servers — Vanta, Drata, Secureframe, IBM OpenPages, CISO Assistant, ComplianceCow, and More](content/reviews/compliance-audit-automation-mcp-servers.md)
-- [ ] 2026-07-23 — [Compliance & Audit MCP Servers — Vanta, Drata, SentinelGate, Agentic Gateway Registry, and More](content/reviews/compliance-audit-mcp-servers.md)
+- [x] 2026-07-23 — [Code Quality, Linting & Static Analysis MCP Servers — ESLint, SonarQube, Semgrep, Ruff, Biome, and More](content/reviews/code-quality-linting-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Code Security MCP Servers — Snyk, SonarQube, Semgrep, Trivy, CodeQL, Datadog, Checkmarx, and Beyond](content/reviews/code-security-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Compliance & Audit Automation MCP Servers — Vanta, Drata, Secureframe, IBM OpenPages, CISO Assistant, ComplianceCow, and More](content/reviews/compliance-audit-automation-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Compliance & Audit MCP Servers — Vanta, Drata, SentinelGate, Agentic Gateway Registry, and More](content/reviews/compliance-audit-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Compliance & Data Governance MCP Servers — SOC 2, HIPAA, GDPR, Data Catalogs, Metadata Management, and More](content/reviews/compliance-data-governance-mcp-servers.md)
 - [ ] 2026-07-23 — [Configuration Management MCP Servers — Ansible, NixOS, Chef, SaltStack, Consul, and More](content/reviews/configuration-management-mcp-servers.md)
-- [ ] 2026-07-23 — [Construction & Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More](content/reviews/construction-architecture-mcp-servers.md)
-- [ ] 2026-07-23 — [Container Registry MCP Servers — Docker Hub, ECR, ACR, JFrog, Harbor, and Beyond](content/reviews/container-registry-mcp-servers.md)
-- [ ] 2026-07-23 — [Container, Docker & Kubernetes MCP Servers — Docker Management, Kubernetes Orchestration, Helm Charts, Podman, Portainer, and More](content/reviews/container-docker-kubernetes-mcp-servers.md)
-- [ ] 2026-07-23 — [Cryptocurrency & DeFi MCP Servers — Ethereum, Solana, Bitcoin, Wallets, DEX Trading, On-Chain Analytics, and More](content/reviews/cryptocurrency-defi-mcp-servers.md)
-- [ ] 2026-07-23 — [Customer Support & Helpdesk MCP Servers — Zendesk, Intercom, Freshdesk, ServiceNow, Plain, and More](content/reviews/customer-support-helpdesk-mcp-servers.md)
-- [ ] 2026-07-23 — [DNS & Domain Management MCP Servers — Registrars, DNS Providers, WHOIS, and Lookup Tools](content/reviews/dns-domain-management-mcp-servers.md)
+- [x] 2026-07-23 — [Construction & Architecture MCP Servers — Revit, AutoCAD, SketchUp, Rhino, ArchiCAD, Tekla, BIM/IFC, and More](content/reviews/construction-architecture-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Container Registry MCP Servers — Docker Hub, ECR, ACR, JFrog, Harbor, and Beyond](content/reviews/container-registry-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Container, Docker & Kubernetes MCP Servers — Docker Management, Kubernetes Orchestration, Helm Charts, Podman, Portainer, and More](content/reviews/container-docker-kubernetes-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Cryptocurrency & DeFi MCP Servers — Ethereum, Solana, Bitcoin, Wallets, DEX Trading, On-Chain Analytics, and More](content/reviews/cryptocurrency-defi-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Customer Support & Helpdesk MCP Servers — Zendesk, Intercom, Freshdesk, ServiceNow, Plain, and More](content/reviews/customer-support-helpdesk-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [DNS & Domain Management MCP Servers — Registrars, DNS Providers, WHOIS, and Lookup Tools](content/reviews/dns-domain-management-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Data Pipeline & ETL MCP Servers — Airflow, dbt, Kafka, Snowflake, Databricks, Airbyte, and More](content/reviews/data-pipeline-etl-mcp-servers.md)
 - [ ] 2026-07-23 — [Data Visualization MCP Servers — AntV, ECharts, Vega-Lite, Plotly, Matplotlib, D3, and More](content/reviews/data-visualization-mcp-servers.md)
 - [ ] 2026-07-23 — [Data Warehouse & Lakehouse MCP Servers — Snowflake, BigQuery, Databricks, ClickHouse, DuckDB, Teradata, Redshift, and More](content/reviews/data-warehouse-lakehouse-mcp-servers.md)

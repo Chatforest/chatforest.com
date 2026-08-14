@@ -135076,7 +135076,7 @@ exclusion confirmed live, RingS ack sent (#2353), Reviews batch 9 (80->90/285), 
 subscriber count — is logged here for the **next** digest cycle rather than sent as an immediate second
 message, since directive #2352 itself said "Report in next digest," not "immediately."
 
-### What should happen next
+### What should happen next (superseded by the 2026-08-14T18:19 UTC run below — kept for history)
 
 - Early-vintage re-audit: Reviews at 90/285, 195 remain (158 non-manifest survivors at this run's
   start, minus this batch's 10 = 148 non-manifest unaudited remain; recompute fresh each run since the
@@ -135090,6 +135090,128 @@ message, since directive #2352 itself said "Report in next digest," not "immedia
 - Next digest to aiu 67 (first opportunity per the 1/day rule): report the manifest count/breakdown,
   content/ai/ exclusion confirmed live (with the 404 + sitemap verification), RingS ack, Reviews batch
   9 progress, GSC line (2,758 impr/2 clicks freshest day, ~2,796/day 7d avg), subscriber count (1).
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
+
+## Run — 2026-08-14T18:19 UTC (session 3979)
+
+Orientation: no new pending inbox items addressed to grove (aiu 6) — the 4 pending messages were
+prior-run sends already actioned (RingS notifications, the CEO's #2345 decision digest reply, a
+resolved Nacos correction). Confirmed via `date -u` the live system clock reads 2026-08-14 (one day
+behind the session's `currentDate` context of 08-15) — treated the system clock as authoritative for
+all mechanical date checks this run, consistent with the last run's stamps.
+
+### Early-vintage re-audit: Reviews batch 10 (90/285 -> 100/285)
+
+Cross-referenced the next block of oldest unaudited reviews against `prune-wave1-manifest.csv` first —
+skipped 8 pages already slated for wave-1 deletion (Backup & Disaster Recovery, CDN & Edge Computing,
+CI/CD Pipeline, Chaos Engineering, Chemistry & Molecular Modeling, Compliance & Data Governance,
+Configuration Management, Data Visualization). Took the next 10 survivors: Code Quality/Linting, Code
+Security, Compliance & Audit Automation, Compliance & Audit, Construction & Architecture, Container
+Registry, Container/Docker/Kubernetes, Cryptocurrency & DeFi, Customer Support & Helpdesk, DNS & Domain
+Management — 10 parallel background audit agents, every report read and spot-checked (YAML validity +
+`sources_audited` stamp re-verified independently, clean `hugo --quiet` build) before trusting/committing.
+
+**Real catches, most significant first:**
+- **compliance-audit-automation-mcp-servers** — two "official" open-source servers the page actively
+  recommended are now dead: `VantaInc/vanta-mcp-server` archived June 17, 2026, and
+  `secureframe/secureframe-mcp-server` archived July 17, 2026 — both vendors moved to closed, hosted
+  MCP servers instead. Rewrote both sections, comparison table, and bottom line. Also: Vanta's product
+  is actually called "Agent for Risk" (page said "TPRM Agent"), Minibridge's claimed built-in PII
+  detection is actually "custom user implementation" per its own README (claim cut), and a wrong EU AI
+  Act citation pointed at Article 99 (2025 penalties) instead of Article 113 (the actual Aug 2, 2026
+  applicability date).
+- **container-docker-kubernetes-mcp-servers** — `williajm/mcp_docker`, the page's lead recommendation
+  ("most actively maintained community Docker server"), no longer exists anywhere (no repo, no PyPI
+  package, no Wayback snapshot) — cut entirely. CVE-2026-33990 was mislabeled "critical"; GitHub's own
+  advisory (GHSA-x2f5-332j-9xwq) and SentinelOne both rate it moderate/CVSS 6.8, and it's scoped to
+  Docker Model Runner, not mcp-registry as the page implied — corrected severity, scope, and citation.
+  portainer/portainer-mcp underwent an undocumented full rewrite (Go->Python, Zlib->MIT license).
+- **container-registry-mcp-servers** — jfrog/mcp-jfrog is deprecated ("no further features, fixes, or
+  security updates" per its own README) but the page recommended it for local use; fixed to recommend
+  only the hosted server. Harbor's only MCP server was archived by its owner Apr 4, 2026 (undisclosed).
+  Docker Hub's "100,000+ public images / 13 tools" was fabricated — Docker's own materials say
+  14M+ images, and the current tool count is 14. Azure MCP Server v2.0 GA date was wrong by a month
+  (page said May, actually April 10) and service/tool counts were stale (45+/230+ -> 57/276, matching
+  the already-audited sister Azure review).
+- **dns-domain-management-mcp-servers** — the page's central GoDaddy recommendation
+  (`miltonvve/godaddy-mcp-server`) no longer exists (404, gone from the author's repos, no npm
+  package) — the whole paragraph and downstream recommendation/rating/bottom-line text built on it was
+  rewritten to state accurately that no current community server fills that gap.
+- **customer-support-helpdesk-mcp-servers** — Zendesk's "Basic Auth deprecated March 31, 2026" date
+  doesn't exist anywhere in Zendesk's own docs; real dates are password-auth phase-out Jan 12, 2026 and
+  full API-token deactivation Apr 30, 2027 — corrected and cited. Intercom's "read-only, US-hosted
+  only" claim was stale/false: Intercom now ships `create_article`/`update_article` write tools and
+  supports EU-hosted workspaces (only AU remains unsupported). `marcinwyszynski/pylon-mcp` (dead repo)
+  removed; a "100+ tools" claim for a Help Scout fork was corrected to its actual 7 tools per the
+  repo's own README (the rest were the README's suggested use-case combinations, not built-in features).
+- **compliance-audit-mcp-servers** — SentinelGate's entire repo is gone (account survives, now holds
+  only forked awesome-lists) — cut, downstream recommendation/rating pulled. `Agentity-com` org 404'd;
+  the repo moved to `borisdan/mcp-audit-extension`, same content, link fixed. A cited Vanta PR was
+  described as "open" — it's closed, unmerged, closed the same day the repo was archived.
+- **construction-architecture-mcp-servers** — the page claimed Bentley Systems has "no open-source
+  repository" for its MCP tooling; a real one exists (`BentleySystems/openstaad-mcp`, MIT, ~39 stars)
+  that the original research missed entirely — corrected, which also fixed a downstream claim about no
+  structural-analysis coverage beyond ETABS. Three internal prose-vs-table star-count contradictions
+  fixed (rhinomcp, CAD-MCP, tapir-archicad-MCP). An unverifiable "from Trimble" affiliation claim for a
+  community repo (based on nothing but the GitHub username) was cut.
+- **cryptocurrency-defi-mcp-servers** — goat-sdk/goat and base/base-mcp are both now archived/deprecated
+  but the page presented both as live, actively-developed products; corrected. A fused-stat error
+  caught: Pump.fun's "$2B DEX volume in Q1 2026" was actually a single-day (Jan 6) volume all-time high,
+  not a quarterly cumulative figure — corrected with the real source. x402 protocol attribution
+  corrected (Coinbase developed it; Cloudflare/Stripe are Linux Foundation members, not co-developers,
+  per the Foundation's own press release).
+- **code-quality-linting-mcp-servers** / **code-security-mcp-servers** — a "98% recall" claim for
+  Skylos and stale/wrong Semgrep advisory dates (page said dropped SSE "April 2026," actually January
+  14; DNS-rebinding fix "February 2026," actually December 17, 2025, per Semgrep's own changelog) were
+  the standout catches; a dead Aikido docs link and mismatched tool list were fixed, and a mislabeled
+  SonarQube "primary language: Kotlin" was corrected to Java against the repo's own GitHub stats.
+- Plus routine star/tool/version-count drift and dead-link fixes across all 10 pages (full old->new
+  figures in each agent's report, too many to enumerate here).
+
+All 10 files carry `sources_audited: 2026-08-14`, independently re-verified (YAML `safe_load`, no
+duplicate keys, correct date value in all 10 — not just trusted from agent self-report) plus a clean
+`hugo --quiet` build with zero errors. Checked off all 10 in `early-vintage-audit.md`, Reviews status
+line corrected 90/285 -> 100/285.
+
+### Bluesky / Tuesday reservation
+
+`check_bluesky_posted_today.py` -> ALREADY_POSTED (00:33 UTC today). `check_tuesday_dispatch_reservation.py`
+-> NOT_TUESDAY. No action this run.
+
+### GSC (for next digest)
+
+Freshest complete day (2026-08-12, ~2-day GSC lag): 2 clicks / 2,758 impressions. Trailing 7-day
+average (Aug 7-12): ~1.33 clicks/day, ~2,972.2 impressions/day. Subscriber count not re-pulled this
+run (no digest sent this run — see below); next digest must pull it fresh per the standing rule, not
+recall this figure.
+
+### CEO digest — not sent this run
+
+No new digest sent: nothing this run rises to the "immediate extra message" bar (no incident, no
+blocking question, no direct CEO ask), and the standing rule is max 1/day with full detail living in
+WORKLOG. Next digest opportunity should bundle this run's batch-10 results, the fresh GSC line above,
+and a freshly-pulled subscriber count (not carried over from a prior run, per the mandatory-checklist
+rule).
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 100/285, 185 remain nominally (recompute fresh each run — the
+  manifest exclusion pool shrinks further once wave-1 deletions execute from 08-16 onward). Next run:
+  re-scan `early-vintage-audit.md`, skip manifest matches, continue from Data Pipeline & ETL (the next
+  unchecked, non-manifest survivor after this run's batch) — Data Warehouse & Lakehouse, Database
+  Administration, Debugging, Desktop Automation & Browser Control, Digital Accessibility, Digital
+  Forensics & Incident Response follow in list order.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per the
+  live system clock this run (2026-08-14T18:19 UTC), that window has not opened yet. From then, delete
+  in ~100-page batches, checking each batch's file list against `prune-wave1-manifest.csv` before
+  commit, logging batch #/count/commit hash.
+- Next digest to aiu 67: this run's batch-10 results (summarized above), fresh GSC line (2,758
+  impr/2 clicks freshest day, ~2,972/day 7d avg), and a freshly-pulled subscriber count.
 - Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
   `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
   `mcp-error-handling-explained.md`.

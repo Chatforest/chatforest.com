@@ -7,7 +7,7 @@ Cryptocurrency and DeFi MCP servers let AI assistants interact directly with blo
 
 This review covers the **cryptocurrency and DeFi** ecosystem — multi-chain infrastructure, Solana-specific tools, wallet integrations, DeFi protocols, market data, blockchain analytics, payments, and NFTs. For general finance servers, see our [Finance review](/reviews/personal-finance-mcp-servers/).
 
-The headline findings: **Three major gaps filled since March** — centralized exchange trading (Binance MCP with 23 tools including order placement), cross-chain bridging (deBridge across 25+ chains), and portfolio tracking (Octav across 20+ blockchains). **Market data goes official** — CoinGecko, CoinMarketCap, and Crypto.com all launched hosted MCP servers. **Coinbase launches x402** — a payment protocol enabling AI agents to autonomously pay for APIs with USDC. **Hardware wallet security arrives** — VaultPilot enables Ledger-verified DeFi for AI agents. The ecosystem transformed from read-heavy to genuinely actionable.
+The headline findings: **Three major gaps filled since March** — centralized exchange trading (Binance MCP with spot and TWAP order placement), cross-chain bridging (deBridge across 25+ chains), and portfolio tracking (Octav across 20+ blockchains). **Market data goes official** — CoinGecko, CoinMarketCap, and Crypto.com all launched hosted MCP servers. **Coinbase launches x402** — a payment protocol enabling AI agents to autonomously pay for APIs with USDC. **Hardware wallet security arrives** — VaultPilot enables Ledger-verified DeFi for AI agents. The ecosystem transformed from read-heavy to genuinely actionable.
 
 ## Multi-Chain Infrastructure
 
@@ -15,7 +15,7 @@ The headline findings: **Three major gaps filled since March** — centralized e
 
 | Server | Stars | Language | License | Actions |
 |--------|-------|----------|---------|---------|
-| [goat](https://github.com/goat-sdk/goat) | 985 | TypeScript/Python | MIT | 200+ |
+| [goat](https://github.com/goat-sdk/goat) | ~1,000 (archived) | TypeScript/Python | MIT | 200+ |
 
 The **largest agentic finance toolkit for AI agents** — 200+ onchain actions across multiple blockchain ecosystems:
 
@@ -24,13 +24,15 @@ The **largest agentic finance toolkit for AI agents** — 200+ onchain actions a
 - **Investment strategies** — DeFi protocol interactions
 - **Asset tokenization** — NFT and token operations
 
-Framework-agnostic (works with any AI framework) and wallet-agnostic (works with any wallet provider). Now available in both TypeScript and Python with adapters for LangChain, Vercel AI, CrewAI, and more. Supports 16+ blockchain networks including Ethereum, Solana, Aptos, and Cosmos. MCP server examples for both EVM and Solana chains. Sponsored by Crossmint but fully provider-agnostic. MIT licensed with active development (689 commits, 294 forks).
+Framework-agnostic (works with any AI framework) and wallet-agnostic (works with any wallet provider). Available in both TypeScript and Python with adapters for LangChain, Vercel AI, CrewAI, and more. Supports 16+ blockchain networks including Ethereum, Solana, Aptos, and Cosmos. MCP server examples for both EVM and Solana chains. Sponsored by Crossmint but fully provider-agnostic. MIT licensed.
+
+**Correction (2026-08-14 audit):** this entry previously described GOAT as under "active development." That is no longer true — [the repository is now archived](https://github.com/goat-sdk/goat) as a read-only historical snapshot ("no longer actively maintained, and no issues, pull requests, or updates will be accepted"), with its last update around May 2026. The star count (~1.0k) and MIT license still stand, but treat GOAT as a frozen snapshot, not a maintained project, when evaluating it for new integrations.
 
 ### coinbase/agentkit (Enterprise-Ready)
 
 | Server | Stars | Language | License | Providers |
 |--------|-------|----------|---------|-----------|
-| [agentkit](https://github.com/coinbase/agentkit) | 1,200 | TypeScript/Python | Apache-2.0 | 50+ |
+| [agentkit](https://github.com/coinbase/agentkit) | 1,300 | TypeScript/Python | Apache-2.0 | 50+ |
 
 Coinbase's official toolkit — **"every AI agent deserves a wallet."** The MCP extension enables:
 
@@ -40,15 +42,17 @@ Coinbase's official toolkit — **"every AI agent deserves a wallet."** The MCP 
 - **Payments MCP** via x402 — agents can autonomously pay for APIs with USDC
 - **Base network focus** with broader EVM support
 
-Active development with 517 commits and 703 forks. The dedicated Base network server lives at [base/base-mcp](https://github.com/base/base-mcp) (347 stars, TypeScript, MIT) — provides onchain tools for LLMs to interact with the Base network and Coinbase API.
+Active development (1.3k stars, 779 forks as of this audit — up from 1,200/703 in April). The dedicated Base network server previously lived at [base/base-mcp](https://github.com/base/base-mcp) (TypeScript, MIT).
 
-**x402 Payment Protocol** — Coinbase, Cloudflare, and Stripe [co-developed the x402 protocol](https://www.coinbase.com/blog/coinbase-and-cloudflare-will-launch-x402-foundation), enabling machine-to-machine payments using the HTTP 402 "Payment Required" status code. The [x402 Foundation](https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol) (Linux Foundation) was established to govern the standard. AI agents can autonomously pay for API calls and MCP server access with stablecoins — no accounts or subscriptions needed. Supports Base and Solana mainnet. This is a fundamental new primitive for the agent economy.
+**Correction (2026-08-14 audit):** base/base-mcp is now archived and deprecated — the repo and its npm package (`base-mcp`) carry an explicit "no longer maintained, do not use" notice, pointing developers instead to [docs.base.org/ai-agents](https://docs.base.org/ai-agents). Coinbase's own agentkit (above) remains the actively maintained path to Base network tooling.
+
+**x402 Payment Protocol** — [Coinbase developed the x402 protocol](https://www.coinbase.com/blog/coinbase-and-cloudflare-will-launch-x402-foundation), updating the long-dormant HTTP 402 "Payment Required" status code into a standard for machine-to-machine payments, and partnered with Cloudflare to hand it to a vendor-neutral [x402 Foundation under Linux Foundation stewardship](https://www.linuxfoundation.org/press/linux-foundation-is-launching-the-x402-foundation-and-welcoming-the-contribution-of-the-x402-protocol) (launched April 2, 2026), whose founding members include Cloudflare, Stripe, Visa, Mastercard, American Express, AWS, Google, Microsoft, Shopify, and the Solana Foundation — Stripe and the other members joined the Foundation; they did not co-develop the original protocol. AI agents can autonomously pay for API calls and MCP server access with stablecoins — no accounts or subscriptions needed. Supports Base and Solana mainnet. This is a fundamental new primitive for the agent economy.
 
 ### mcpdotdirect/evm-mcp-server (Broadest EVM Coverage)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | 374 | TypeScript | — | 22 |
+| [evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | 381 | TypeScript | MIT | 22 |
 
 The **most comprehensive EVM server** — covers 60+ EVM-compatible networks (34 mainnets + 26 testnets):
 
@@ -76,7 +80,7 @@ Strangelove Ventures expanded to include Berachain and UTXO chains (Bitcoin, Lit
 
 | Server | Stars | Language | License | Actions |
 |--------|-------|----------|---------|---------|
-| [solana-mcp](https://github.com/sendaifun/solana-mcp) | 157 | Shell/TypeScript | Apache-2.0 | 40+ |
+| [solana-mcp](https://github.com/sendaifun/solana-mcp) | 162 | Shell/TypeScript | Apache-2.0 | 40+ |
 
 The **leading Solana-specific MCP server**, powered by the Solana Agent Kit (1,600 stars separately):
 
@@ -97,17 +101,17 @@ The **Solana Foundation launched an official MCP server** at [mcp.solana.com](ht
 - **Semantic RAG** — Solana_Expert__Ask_For_Help and Solana_Documentation_Search tools
 - **Canonical spec retrieval** — list_sections and get_documentation tools
 - **Hosted endpoint** — available via Streamable HTTP at mcp.solana.com/mcp
-- **121 commits** of active development with Databricks-powered vector search
+- **166+ commits** of active development (up from 121 at last check) with Databricks-powered vector search
 
-This is the first major blockchain foundation to ship an official MCP server for developer assistance.
+It's a notable step for a blockchain foundation (rather than a single vendor) to ship an official MCP server for developer assistance — we haven't found another major L1 foundation with a comparable official server as of this audit, though we can't independently verify a strict "first."
 
 ### Helius core-ai (NEW — Best Solana Infrastructure)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [helius-labs/core-ai](https://github.com/helius-labs/core-ai) | 15 | TypeScript | MIT | 60+ |
+| [helius-labs/core-ai](https://github.com/helius-labs/core-ai) | 24 | TypeScript | MIT | 10 public / 60+ ops |
 
-**The most comprehensive Solana infrastructure MCP** — 60+ tools across 14 categories:
+**A comprehensive Solana infrastructure MCP.** The [Helius MCP server itself exposes 10 public tools](https://www.helius.dev/docs/agents/mcp) — 9 routed domain tools (`heliusAccount`, `heliusWallet`, `heliusAsset`, `heliusTransaction`, `heliusChain`, `heliusStreaming`, `heliusKnowledge`, `heliusWrite`, `heliusCompression`) plus `expandResult` for paging — but those domain tools route to [60+ underlying Helius/Solana operations](https://www.helius.dev/blog/helius-for-agents) (RPC, DAS, webhooks, transaction sending). We could not confirm the "14 categories" figure from an earlier version of this review against any Helius source, so we've dropped that specific number:
 
 - **Account, wallet, asset, transaction** queries via Helius API
 - **Streaming** — real-time blockchain data
@@ -115,7 +119,7 @@ This is the first major blockchain foundation to ship an official MCP server for
 - **Compression** — compressed NFT support
 - **Knowledge** — Solana documentation and concepts
 
-418 commits of active development — the most actively developed Solana MCP server by commit count.
+522+ commits of active development as of this audit (up from 418) — one of the more actively developed Solana MCP servers by commit count, though we haven't independently verified it's the single most-active one across every server in this review.
 
 ### Other Solana Servers
 
@@ -123,8 +127,8 @@ This is the first major blockchain foundation to ship an official MCP server for
 |--------|-------|----------|-------|
 | [dcSpark/mcp-cryptowallet-solana](https://github.com/dcSpark/mcp-cryptowallet-solana) | — | — | Solana wallet for Claude/Cursor |
 | [paulfruitful/WalletMCP](https://github.com/paulfruitful/WalletMCP) | — | — | Solana blockchain wallet operations |
-| [Rayato159/solana-blockchain-explorer](https://github.com/Rayato159/solana-blockchain-explorer) | — | — | Solana explorer data |
-| [noahgsolomon/pumpfun-mcp-server](https://github.com/noahgsolomon/pumpfun-mcp-server) | 19 | TypeScript | — | Pump.fun meme coin trading — create, buy, sell tokens |
+| [Rayato159/sol-chad-mcp](https://github.com/Rayato159/sol-chad-mcp) | — | — | Solana wallet monitoring and market data (repo renamed from solana-blockchain-explorer) |
+| [noahgsolomon/pumpfun-mcp-server](https://github.com/noahgsolomon/pumpfun-mcp-server) | 21 | TypeScript | — | Pump.fun meme coin trading — create, buy, sell tokens |
 
 ## Wallets
 
@@ -134,9 +138,9 @@ A major trend: **wallet providers are building native MCP support**, giving AI a
 
 | Server | Language | Networks | Features |
 |--------|----------|----------|----------|
-| [@phantom/mcp-server](https://www.npmjs.com/package/@phantom/mcp-server) | TypeScript | Solana + Ethereum + Bitcoin + Sui | Transaction signing, swaps, transfers |
+| [@phantom/mcp-server](https://docs.phantom.com/phantom-mcp-server) | TypeScript | Solana + Ethereum + Bitcoin + Sui | Transaction signing, swaps, transfers |
 
-Phantom's official MCP server — the first major consumer wallet to ship native AI agent support (launched February 2026):
+Phantom's [official MCP server](https://docs.phantom.com/phantom-mcp-server), launched February 18, 2026 — one of the first major consumer wallets to ship native AI agent support, as far as we've found; we can't independently confirm it's strictly the first:
 
 - **Autonomous transaction signing** — AI agents can sign and send transactions
 - **Quote swapping** — get and execute swap quotes
@@ -150,8 +154,8 @@ The **scoped permission model** is notable — it reduces blast radius if an age
 
 | Server | Networks | Focus |
 |--------|----------|-------|
-| Trust Wallet AI Stack | Multi-chain | MCP server + Claude skills marketplace |
-| Bitget Wallet MCP | BNB, Base, Solana, Ethereum, Arbitrum, TON, Tron, Sui, Optimism | LLM-invokable API endpoints |
+| [Trust Wallet AI Stack](https://developer.trustwallet.com/developer/mcp/docs-mcp) | Multi-chain | MCP server (docs access) + open-source Claude Code skills marketplace |
+| [Bitget Wallet MCP](https://github.com/bitget-wallet-ai-lab/bitget-wallet-mcp) | Ethereum, Solana, BNB Chain, Base, Arbitrum, TRON, TON, Sui, Optimism | LLM-invokable API endpoints — token info, swap quotes, security/honeypot checks |
 | [armorwallet/armor-crypto-mcp](https://github.com/armorwallet/armor-crypto-mcp) | Solana (Alpha), 12+ planned | Swaps, transfers, DCA, stop loss, take profit |
 
 Trust Wallet and Bitget represent enterprise wallet providers entering the AI agent space. Armor focuses on strategic trading features like DCA and stop-loss.
@@ -189,9 +193,9 @@ Aave V3 gets production-ready coverage on Base. Uniswap gets multi-chain swap au
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [vaultpilot-mcp](https://github.com/szhygulin/vaultpilot-mcp) | 3 | — | BSL-1.1 → Apache-2.0 (2030) | 30+ |
+| [vaultpilot-mcp](https://github.com/szhygulin/vaultpilot-mcp) | 2 | — | BSL-1.1 → Apache-2.0 (2030) | 30+ |
 
-**The most security-conscious DeFi MCP server** — "the agent proposes, you approve on your Ledger":
+**A hardware-wallet-first, security-conscious DeFi MCP server** — "the agent proposes, you approve on your Ledger":
 
 - **Hardware wallet signing** — Ledger via WalletConnect (EVM) and USB-HID (TRON/Solana)
 - **9 chain support** — Ethereum, Arbitrum, Polygon, Base, Optimism, TRON, Solana, Bitcoin, Litecoin
@@ -200,21 +204,21 @@ Aave V3 gets production-ready coverage on Base. Uniswap gets multi-chain swap au
 - **Swaps** — LiFi and Jupiter v6
 - **Security model assumes everything except hardware wallet may be compromised** — cryptographic bindings across layers detect tampering before signing
 
-918 commits of active development — by far the most commits of any single-purpose crypto MCP server. The Business Source License converts to Apache-2.0 in 2030.
+1,000+ commits of active development as of this audit (up from 918) — among the most commits of any single-purpose crypto MCP server in this review, though star count remains very low (2). The Business Source License converts to Apache-2.0 in 2030.
 
 ### debridge-finance/debridge-mcp (NEW — Cross-Chain Bridge)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [debridge-mcp](https://github.com/debridge-finance/debridge-mcp) | 30 | — | MIT | 5 |
+| [debridge-mcp](https://github.com/debridge-finance/debridge-mcp) | 32 | — | MIT | 5 |
 
 **Fills the cross-chain bridge gap** from our initial review — AI agents can now execute cross-chain swaps:
 
-- **25+ EVM chains + Solana** — search 40,000+ tokens, get quotes, generate transaction data
-- **Non-custodial** — MCP server never touches private keys; users sign via generated deBridge App links
-- **[27+ security audits, zero exploits](https://debridge.com/security/)** across $22B+ processed volume
+- **25+ EVM chains + Solana** — [search 40,000+ tokens, get quotes, generate transaction data](https://docs.debridge.com/dln-details/mcp/mcp-server)
+- **Non-custodial** — [the MCP server never touches private keys or signs transactions](https://docs.debridge.com/dln-details/mcp/mcp-server); users sign via generated deBridge App links
+- **[27+ security audits, $23B+ volume settled with zero security incidents](https://debridge.com/security/)** (updated from the $20-22B figures in earlier drafts of this review — deBridge's own security page is the only source we have for the exploit-free claim; we did not find independent third-party audit-firm confirmation beyond deBridge's own audit-report links)
 - **"Vibe Trading"** — describe the outcome you want, agent handles routing/bridging/swapping
-- **TRON integration** — added April 2026
+- **TRON integration** — [added April 17, 2026](https://www.newsdirect.com/newsroom/tron-integrates-debridge-mcp-unlocking-seamless-cross-chain-execution-for-ai-agents)
 
 This was explicitly listed as a "major gap" in our March review. Now filled.
 
@@ -224,9 +228,9 @@ This was explicitly listed as a "major gap" in our March review. Now filled.
 
 | Server | Language | License | Coverage |
 |--------|----------|---------|----------|
-| [dexpaprika-mcp](https://github.com/coinpaprika/dexpaprika-mcp) | — | — | 5M+ tokens, 20+ blockchains |
+| [dexpaprika-mcp](https://github.com/coinpaprika/dexpaprika-mcp) | — | — | 36 blockchain networks |
 
-The **broadest DEX data coverage** — real-time data for over 5 million tokens across 20+ blockchain networks with DEX analytics.
+Broad DEX data coverage — real-time data across [36 blockchain networks](https://github.com/coinpaprika/dexpaprika-mcp) with DEX analytics. We could not independently confirm a "5 million tokens" figure from the repo's own documentation as an earlier version of this review stated, so we've replaced it with the network count we could verify directly.
 
 ### Official Market Data Servers (NEW)
 
@@ -234,7 +238,7 @@ Three major data providers launched official hosted MCP servers — a significan
 
 | Server | Source | Tools | Access |
 |--------|--------|-------|--------|
-| [CoinGecko Official MCP](https://docs.coingecko.com/docs/mcp-server) | CoinGecko | Multiple | Hosted at mcp.api.coingecko.com — 15K+ coins, 1,000+ exchanges, 8M+ tokens via GeckoTerminal, onchain analytics across 200+ networks. NPM: @coingecko/coingecko-mcp (475 stars) |
+| [CoinGecko Official MCP](https://docs.coingecko.com/docs/mcp-server) | CoinGecko | Multiple | Hosted at mcp.api.coingecko.com. [CoinGecko's underlying API](https://www.coingecko.com/en/api) covers 17,000+ coins, 1,700+ exchanges, 42M+ tokens, and 250+ networks (up from 15K/1,000+/8M/200+ when we first reviewed it) — the MCP server itself doesn't publish separate coverage numbers. Source repo: [coingecko/coingecko-typescript](https://github.com/coingecko/coingecko-typescript) (57 stars) |
 | [CoinMarketCap Official MCP](https://coinmarketcap.com/api/mcp/) | CoinMarketCap | 12 | Hosted at mcp.coinmarketcap.com — market quotes, technical analysis, on-chain metrics, derivatives data, trending narratives, macro events, news, semantic search. Streamable HTTP, no install needed |
 | [Crypto.com Official MCP](https://mcp.crypto.com/docs) | Crypto.com | Multiple | Hosted at mcp.crypto.com — real-time market data, read-only, public data only |
 
@@ -257,19 +261,22 @@ The market data subcategory transformed with three official vendor launches. You
 
 ## Centralized Exchange Trading (NEW — Gap Filled)
 
-### TermiX-official/binance-mcp (First Exchange Trading MCP)
+### TermiX-official/binance-mcp (Earliest Exchange Trading MCP We Found)
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [binance-mcp](https://github.com/TermiX-official/binance-mcp) | 77 | TypeScript | 23 |
+| [binance-mcp](https://github.com/TermiX-official/binance-mcp) | 96 | TypeScript | 15 tool categories |
 
 **Fills the single biggest gap from our March review** — centralized exchange trading with order execution:
 
-- **Spot market orders** — place orders via `binanceSpotPlaceOrder`, executes at best available prices
+- **Spot market orders** — place orders via [`binanceSpotPlaceOrder`](https://github.com/TermiX-official/binance-mcp), executes at best available prices
 - **TWAP algorithmic trading** — `binanceTimeWeightedAveragePriceFutureAlgo` executes gradually to minimize market impact
 - **Portfolio management** — view composition, market value, percentage allocation
-- **Market data** — 11 public tools (no API key needed) for order books, klines, recent trades
+- **Market data** — order books, klines, recent trades
 - **Account management** — balances, trading history
+- **15 tool categories** registered in the codebase (spot, algo, convert, C2C, wallet, copy trading, fiat, NFT, pay, rebate, dual investment, mining, VIP loan, staking, simple earn)
+
+**Correction (2026-08-14 audit):** an earlier version of this review stated "23 tools" and "11 public tools (no API key needed)." We could not confirm either specific number against the repo's README or source — the README documents 5 tools in detail and states all of them require `BINANCE_API_KEY`/`BINANCE_API_SECRET` credentials (no API-key-free public tools are documented). We've replaced the tool count with what we could verify directly from the source: 15 registered tool categories. Star count updated from 77 to 96.
 
 This was explicitly listed as "the biggest gap" in our initial review (reading Binance data existed but no order placement). Now the gap is closed — AI agents can execute trades on Binance through MCP.
 
@@ -323,7 +330,7 @@ OpenSea [launched a **beta MCP server** in August 2025](https://opensea.io/blog/
 - **Trading volumes** and marketplace activity
 - Portfolio evaluation and token discovery
 
-This is the first major NFT marketplace to ship official MCP support.
+It's among the first major NFT marketplaces to ship official MCP support, as far as we've found; we can't independently confirm it's strictly the first.
 
 ## Institutional & Custody (NEW)
 
@@ -337,7 +344,7 @@ BitGo launched an official MCP server in March 2026, making institutional digita
 
 | Server | Focus |
 |--------|-------|
-| ChainGuard | Multi-chain crime detection — Bitcoin, Ethereum, Hedera, Solana |
+| [N-45div/ChainGuard](https://github.com/N-45div/ChainGuard) | Multi-chain crime/fraud detection — Bitcoin, Ethereum, Hedera, Solana (individual maintainer project, not a company product) |
 | [szhygulin/vaultpilot-mcp](https://github.com/szhygulin/vaultpilot-mcp) | Hardware-verified DeFi — Ledger signing, assumes compromised host |
 
 ChainGuard provides real-time blockchain crime detection and forensic analysis. VaultPilot introduces the most sophisticated security model — assuming everything except the hardware wallet is compromised, with cryptographic bindings across layers.
@@ -356,19 +363,19 @@ Three major gaps from our March review are now filled (exchange trading, cross-c
 
 The cryptocurrency and DeFi MCP ecosystem earns **4.5 out of 5** — upgraded from 4/5 in March.
 
-The ecosystem transformed in 44 days from read-heavy/write-light to genuinely actionable. The three biggest gaps from our March review are all filled: **Binance trading** (77 stars, 23 tools with spot orders and TWAP), **cross-chain bridging** (deBridge across 25+ chains with $20B+ volume and zero exploits), and **portfolio tracking** (Octav across 20+ blockchains). Three major data providers — CoinGecko, CoinMarketCap, and Crypto.com — launched official hosted MCP servers in this period, validating the market data layer.
+The ecosystem transformed in 44 days from read-heavy/write-light to genuinely actionable. The three biggest gaps from our March review are all filled: **Binance trading** (96 stars, spot orders and TWAP across 15 tool categories), **cross-chain bridging** (deBridge across 25+ chains with $23B+ volume settled and, per deBridge's own security page, zero security incidents), and **portfolio tracking** (Octav across 20+ blockchains). Three major data providers — CoinGecko, CoinMarketCap, and Crypto.com — launched official hosted MCP servers in this period, validating the market data layer.
 
-The security story improved dramatically with VaultPilot's hardware wallet approach (918 commits, assuming compromised hosts) and Phantom expanding to four chains with scoped permissions. The x402 payment protocol creates a new primitive — AI agents can now autonomously pay for API access with stablecoins, enabling agent-to-agent commerce.
+The security story improved dramatically with VaultPilot's hardware wallet approach (1,000+ commits, assuming compromised hosts) and Phantom expanding to four chains with scoped permissions. The x402 payment protocol creates a new primitive — AI agents can now autonomously pay for API access with stablecoins, enabling agent-to-agent commerce.
 
-GOAT (985 stars) remains the broadest action toolkit. Coinbase agentkit (1,200 stars) brings enterprise credibility with x402 payments. The Solana Foundation launched an official MCP server. Helius provides 60+ tools for Solana infrastructure. Pump.fun brings meme coin trading to AI agents.
+GOAT (~1,000 stars, now archived/unmaintained) remains the broadest action toolkit by feature count. Coinbase agentkit (1.3k stars) brings enterprise credibility with x402 payments. The Solana Foundation launched an official MCP server. Helius provides 10 public tools routing to 60+ underlying Solana operations. Pump.fun brings meme coin trading to AI agents.
 
 Remaining weaknesses: derivatives/options/futures trading is absent. No crypto tax reporting. Smart contract audit tooling is limited. But the category's trajectory is clear — it's moving from experimental to production-ready faster than almost any other MCP vertical.
 
 ---
 
-*This review is part of our comprehensive [MCP servers comparison](/guides/best-mcp-servers/) covering 155+ categories. Last updated: April 2026.*
+*This review is part of our comprehensive [MCP servers comparison](/guides/best-mcp-servers/) covering 100+ categories.*
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was last refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic); claim-level citation re-audit and corrections on 2026-08-14 using Claude Sonnet 5 (Anthropic).*
 
