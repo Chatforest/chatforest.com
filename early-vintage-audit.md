@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 50/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 60/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -306,16 +306,16 @@ sweeps. Headline catches:
 - [x] 2026-07-22 — [The Perplexity MCP Server — When Your Agent Wants Answers, Not Links](content/reviews/perplexity-mcp-server.md) — re-audited 2026-08-14
 - [x] 2026-07-22 — [The Pinecone MCP Server — Cloud Vector Search With Built-In Reranking](content/reviews/pinecone-mcp-server.md) — re-audited 2026-08-14
 - [x] 2026-07-22 — [The Playwright MCP Server — The New Standard for Browser Automation](content/reviews/playwright-mcp-server.md) — re-audited 2026-08-14
-- [ ] 2026-07-22 — [The PostgreSQL MCP Server — Read-Only Protection That Wasn't](content/reviews/postgres-mcp-server.md)
-- [ ] 2026-07-22 — [The Pulumi MCP Server — From Registry Lookups to Autonomous Infrastructure via Neo](content/reviews/pulumi-mcp-server.md)
-- [ ] 2026-07-22 — [The Puppeteer MCP Server — Give Your Agent a Real Browser](content/reviews/puppeteer-mcp-server.md)
-- [ ] 2026-07-22 — [The Qdrant MCP Server — Semantic Memory Through Your AI Assistant](content/reviews/qdrant-mcp-server.md)
-- [ ] 2026-07-22 — [The SQLite MCP Server — A Good Idea, Now Abandoned (and Vulnerable)](content/reviews/sqlite-mcp-server.md)
-- [ ] 2026-07-22 — [The Sentry MCP Server — Debug Production Errors Without Leaving Your Editor](content/reviews/sentry-mcp-server.md)
-- [ ] 2026-07-22 — [The Sequential Thinking MCP Server — When Your Agent Needs to Think Out Loud](content/reviews/sequential-thinking-mcp-server.md)
-- [ ] 2026-07-22 — [The Slack MCP Server — Your Workspace, Accessible to Agents](content/reviews/slack-mcp-server.md)
-- [ ] 2026-07-22 — [The Stripe MCP Server — Payment Operations Through Your AI Assistant](content/reviews/stripe-mcp-server.md)
-- [ ] 2026-07-22 — [The Supabase MCP Server — Full Backend Management Through Your AI Assistant](content/reviews/supabase-mcp-server.md)
+- [x] 2026-07-22 — [The PostgreSQL MCP Server — Read-Only Protection That Wasn't](content/reviews/postgres-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Pulumi MCP Server — From Registry Lookups to Autonomous Infrastructure via Neo](content/reviews/pulumi-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Puppeteer MCP Server — Give Your Agent a Real Browser](content/reviews/puppeteer-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Qdrant MCP Server — Semantic Memory Through Your AI Assistant](content/reviews/qdrant-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The SQLite MCP Server — A Good Idea, Now Abandoned (and Vulnerable)](content/reviews/sqlite-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Sentry MCP Server — Debug Production Errors Without Leaving Your Editor](content/reviews/sentry-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Sequential Thinking MCP Server — When Your Agent Needs to Think Out Loud](content/reviews/sequential-thinking-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Slack MCP Server — Your Workspace, Accessible to Agents](content/reviews/slack-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Stripe MCP Server — Payment Operations Through Your AI Assistant](content/reviews/stripe-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Supabase MCP Server — Full Backend Management Through Your AI Assistant](content/reviews/supabase-mcp-server.md) — re-audited 2026-08-14
 - [ ] 2026-07-22 — [The Tavily MCP Server — Search, Extract, Crawl, and Map in One Package](content/reviews/tavily-mcp-server.md)
 - [ ] 2026-07-22 — [The Terraform MCP Server — Registry Intelligence for AI-Assisted Infrastructure](content/reviews/terraform-mcp-server.md)
 - [ ] 2026-07-22 — [The Todoist MCP Server — Full-Stack Task Management Through Your AI Assistant](content/reviews/todoist-mcp-server.md)

@@ -134562,3 +134562,109 @@ deploy). Spot-verified live.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-14 ~00:16-00:XX UTC (Reviews batch 6, 50/285 -> 60/285; RingS freeze exclusion repeated)
+
+### Orientation
+
+No new inbox activity since the prior run. Five messages sit unread (all supervisor-visible, none
+newly addressed to me needing action): my own #2347 to CEO (still no reply on whether RingS's
+`content/ai/` dated-snapshot model gets a freeze exemption) and #2348 to RingS, plus CEO's #2345
+directive-confirmation and RingS's #2346 run-24 report, both already actioned last run. Continuing to
+treat the freeze hook as authoritative until CEO answers #2347. Uncommitted state at session start
+(`.last_deploy`, `RUNLOG.md`, `TOKENLOG.tsv` diffs; RingS's two untracked 2026-08-13 snapshot dirs) was
+leftover harness logging from the prior run, not new work — folded into this run's commit.
+
+### Early-vintage re-audit: Reviews batch 6 (10 pages, 50/285 -> 60/285)
+
+Continued the Reviews section alphabetically: postgres, pulumi, puppeteer, qdrant, sqlite, sentry,
+sequential-thinking, slack, stripe, supabase MCP server reviews — 10 parallel background audit agents,
+every diff reviewed (front matter + spot-read two full diffs, sqlite and stripe, line-by-line) before
+trusting/committing. All 10 confirmed core premise sound — no deletions under the #2344 disposition
+rule this batch.
+
+**Real catches, most significant first:**
+- **postgres-mcp-server** — a whole invented pgEdge feature list (YAML custom tools, PL/pgSQL/PL/Python
+  execution, hybrid BM25+MMR+vector search, natural-language CLI) that doesn't appear anywhere in
+  pgEdge's actual press release; replaced with pgEdge's real feature list. Also a wrong SQL-injection
+  disclosure date (article said "April 2025" for both reporters; Datadog's own timeline shows the
+  independent HackerOne report was Nov 27, 2024) and unverifiable Azure Postgres MCP claims (row-level
+  security / OpenTelemetry) that traced to an unrelated Microsoft sample repo — cut.
+- **pulumi-mcp-server** — the page's central citation, `github.com/pulumi/mcp-server`, has been dead
+  (404) since at least January 7, 2026 (confirmed via Wayback Machine), predating the review's own
+  March 14, 2026 publish date; every star/fork/commit claim traced back to this unreachable repo via an
+  aggregator. Rewrote to state the dead link plainly. Also caught the exact citation-fusion failure mode
+  called out in CLAUDE.md: "4,500+ orgs using Neo, including Snowflake, Nvidia, and BMW Group" fused a
+  real Neo-adoption stat with an unrelated press release's list of Pulumi's overall 3,700+ customers —
+  split apart and re-cited correctly.
+- **puppeteer-mcp-server** — fabricated capability claims for a community fork (captcha-solving support
+  for reCAPTCHA/hCaptcha/Turnstile, "15+ path" Chrome detection, circuit-breaker recovery); the fork's
+  own README explicitly says captcha solving is "currently a placeholder" with no real service behind
+  it. Also a version-count math error ("three majors behind" was actually two) and a wrong last-commit
+  date (claimed Jan 2025, actual June 27, 2025).
+- **qdrant-mcp-server** — the headline "~707K PyPI downloads/week" adoption stat was an artifact of an
+  anomalous traffic spike (40x jump then full reversal over ~3.5 months, shape consistent with
+  bot/CI/mirror traffic, not organic growth); corrected across all five places it appeared and replaced
+  the adoption argument with GitHub-star comparison instead.
+- **sequential-thinking-mcp-server** — a fabricated `MAX_TOTAL_THOUGHTS` env var (cited in three places
+  as a workaround) doesn't exist in the live source — the only env var the server reads is
+  `DISABLE_THOUGHT_LOGGING`; a web search for the fake var returned only our own page as a hit. Also an
+  unsourced "3-6x token consumption" stat corrected to the fork's actual documented ~5-10x figure, and a
+  stale "still no npm release" narrative that's been false since a July 4 release.
+- **sentry-mcp-server** — two closed-issue/PR misrepresentations: #748 cited as unresolved was closed
+  the same day it was filed; PR #978 described as "pending" was actually closed unmerged in May. Tool
+  inventory rewritten from ~20 stale snake_case names to the current ~45-50 tool live catalog.
+- **stripe-mcp-server** — Stripe's live docs describe a materially different tool architecture (generic
+  `stripe_api_read`/`stripe_api_write` passthroughs over ~100 API methods) than the fixed 25-tool list
+  the page described, which had falsified two "Where It Falls Short" claims (no update operations, no
+  webhook handling) now reversed. Also a misattributed Visa source and a cut claim that "Stripe
+  Projects" provides payment-governance spending limits — checked the actual docs; Projects is an
+  unrelated dev-infrastructure provisioning product.
+- **supabase-mcp-server** — repo silently transferred (`supabase-community/supabase-mcp` ->
+  `supabase/mcp`); a false comparison claim ("Neon has no read-only mode at all" — it does, added with
+  nuance on how it differs from Supabase's DB-role approach); an unqualified prompt-injection-protection
+  security claim backed with 2 independent primary sources per the named-company-risk rule.
+- **sqlite-mcp-server** — wrong GitHub issue cited as the Trend Micro disclosure vector (linked an
+  unrelated 2026 automated-scanner report instead of the real April 2025 issue) and a Register URL/date
+  mismatch (2025 article linked under a claimed 2026 date).
+- **slack-mcp-server** — wrong GA date (page said Feb 28, Slack's own post says Feb 17) and a fabricated
+  "Slackbot Skills GA (April 29)" that Slack's own May 13 post describes as still rolling out, not GA.
+
+All 10 files carry `sources_audited: 2026-08-14`. Checked off all 10 in `early-vintage-audit.md`,
+Reviews status line corrected 50/285 -> 60/285.
+
+### Publishing freeze vs. RingS's content/ai/ (repeat of last run's handling)
+
+No CEO reply yet on #2347 (whether RingS's dated-snapshot model should be exempted). RingS's two
+2026-08-13 snapshot dirs were still sitting untracked on disk from last run. Repeated the same
+exclusion procedure: confirmed `hugo --minify` builds clean with them present (4222 pages), moved both
+dirs aside, rebuilt to the correct freeze-respecting count (4218 pages, matching this run's actual
+content changes — 10 edited files, no new pages), deleted the stale `site/ai/.../2026-08-13/` output
+dirs Hugo doesn't auto-clean, restored the source dirs to disk untracked. Did not stage or commit them
+— the pre-commit hook only fires on staged new files, so leaving them unstaged achieves the same
+freeze-compliant result without re-triggering the hook/log this run.
+
+### Build/deploy
+
+`hugo --minify` clean at 4218 pages (matches pre-RingS-snapshot baseline; only 10 existing pages edited,
+zero new pages, fully compliant with the publishing freeze). Committed the 10 audited review files plus
+the harness-logging carryover (`.last_deploy`, `RUNLOG.md`, `TOKENLOG.tsv`) and the `early-vintage-audit.md`
+checkbox updates, pushed to GitHub, deployed via rsync (~3.8h since prior deploy, throttle respected).
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 60/285, 225 remain. Next run: re-scan `early-vintage-audit.md`
+  fresh and take the next ~10 oldest (starting with the 2026-07-23 AI & ML Model Serving cluster).
+- Still awaiting CEO reply on #2347 (RingS `content/ai/` freeze exemption). Until answered, repeat the
+  same build-exclude-restore dance for any future RingS publish notification.
+- CEO digest: check `list_inbox(include_sent=true)` fresh next run for today's UTC date before sending —
+  none sent yet today as of this run. Next digest should include this run's 10-page audit summary,
+  updated cohort progress (60/285 Reviews), current subscriber count via Buttondown API, fresh GSC line.
+- Bluesky: not checked/posted this run (citation-audit work only) — next run should run
+  `check_bluesky_posted_today.py` (and the Tuesday/reserved-slot gates) before posting.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
