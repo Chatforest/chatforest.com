@@ -7,7 +7,7 @@ Aviation and flight MCP servers connect AI agents to flight tracking platforms, 
 
 This review covers **flight tracking, fare search and booking, aviation weather, pilot planning tools, flight simulation, and drone control** — FlightAware, Flightradar24, OpenSky Network, ADS-B Exchange, AviationStack, Duffel, Amadeus, Google Flights, Skyscanner, FAA weather data, MSFS, and MAVLink. For general travel and hotel booking, see our [Travel & Tourism review](/reviews/travel-tourism-mcp-servers/) if available.
 
-The headline findings: **Flight search was transformed** — punitarani/fli (2,100 stars) reverse-engineers the Google Flights API directly with no SerpAPI costs, making it the dominant flight search MCP by far. **FlightAware now has a 27-tool MCP server** filling our biggest previously-identified gap. **OpenSky Network is now accessible** via aviation-mcp-server combining live tracking with weather and airline data. **Flight simulation broke through** — two MSFS MCP servers let AI agents read instruments and even control aircraft. **Drone control arrived** via MAVLinkMCP for PX4 drones. **Airport lounges now covered** — a hosted MCP server searches 8,500+ lounges worldwide for free.
+The headline findings: **Flight search was transformed** — punitarani/fli (3,094 stars) reverse-engineers the Google Flights API directly with no SerpAPI costs, making it the dominant flight search MCP by far. **FlightAware now has a 27-tool MCP server** filling our biggest previously-identified gap. **OpenSky Network is now accessible** via aviation-mcp-server combining live tracking with weather and airline data. **Flight simulation broke through** — two MSFS MCP servers let AI agents read instruments and even control aircraft. **Drone control arrived** via MAVLinkMCP for PX4 drones. **Airport lounges now covered** — a hosted MCP server searches 8,500+ lounges worldwide for free.
 
 ---
 
@@ -17,7 +17,7 @@ The headline findings: **Flight search was transformed** — punitarani/fli (2,1
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [flightradar24-mcp-server](https://github.com/sunsetcoder/flightradar24-mcp-server) | 46 | JavaScript/TypeScript | MIT | 4 |
+| [flightradar24-mcp-server](https://github.com/sunsetcoder/flightradar24-mcp-server) | 47 | JavaScript/TypeScript | MIT | 4 |
 
 **Real-time flight tracking via Flightradar24 data:**
 
@@ -33,7 +33,7 @@ The most popular community-built Flightradar24 server. Uses unofficial Flightrad
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [fr24api-mcp](https://github.com/Flightradar24/fr24api-mcp) | 16 | TypeScript | MIT | 13 |
+| [fr24api-mcp](https://github.com/Flightradar24/fr24api-mcp) | 22 | TypeScript | MIT | 13 |
 
 **The official Flightradar24 MCP server with comprehensive API access:**
 
@@ -52,7 +52,7 @@ At 13 tools, this is the most comprehensive flight tracking MCP server. The offi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [aviationstack-mcp](https://github.com/Pradumnasaraf/aviationstack-mcp) | 20 | Python | MIT | 12 |
+| [aviationstack-mcp](https://github.com/Pradumnasaraf/aviationstack-mcp) | 25 | Python | MIT | 12 |
 
 **Comprehensive aviation reference data via AviationStack API:**
 
@@ -86,7 +86,7 @@ ADS-B Exchange is notable for being unfiltered — unlike FlightAware or Flightr
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [variflight-mcp](https://github.com/variflight/variflight-mcp) | 26 | TypeScript | ISC | 7 |
+| [variflight-mcp](https://github.com/variflight/variflight-mcp) | 31 | TypeScript | ISC | 8 |
 
 **VariFlight's official MCP server for Chinese and global aviation data:**
 
@@ -97,8 +97,9 @@ ADS-B Exchange is notable for being unfiltered — unlike FlightAware or Flightr
 - **getRealtimeLocationByAnum** — live aircraft position tracking
 - **getFutureWeatherByAirport** — 3-day airport weather forecasts
 - **searchFlightItineraries** — purchasable flight options with pricing
+- **getFlightPriceByCities** — structured city-to-city pricing with cabin-level breakdowns
 
-VariFlight is the leading aviation data provider in China. The "flight happiness index" is unique — a comfort score factoring in on-time performance, aircraft type, and service quality. The itinerary search with pricing makes this part booking tool, part tracking tool.
+[VariFlight](https://www.variflight.com/) reports covering [1,200+ airlines, 10,000+ airports, and 97% global flight coverage](https://www.variflight.com/), tracking over 170,000 daily flights. The "flight happiness index" is unique — a comfort score factoring in on-time performance, aircraft type, and service quality. The itinerary search with pricing makes this part booking tool, part tracking tool.
 
 ### mikedarke/mcp-server-flight-aware-aeroapi — FlightAware AeroAPI *(NEW)*
 
@@ -152,7 +153,7 @@ This fills the second biggest gap — OpenSky Network's unfiltered ADS-B data is
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [fli](https://github.com/punitarani/fli) | 2,100 | Python | MIT | 2 |
+| [fli](https://github.com/punitarani/fli) | 3,094 | Python | MIT | 2 |
 
 **The dominant flight search MCP server — direct Google Flights API access with zero scraping costs:**
 
@@ -162,15 +163,15 @@ This fills the second biggest gap — OpenSky Network's unfiltered ADS-B data is
 - **Smart filtering** — cabin class, airline preferences, stops, departure windows
 - **Rate limiting** — built-in rate limiting and automatic retry mechanisms
 
-At 2,100 stars and 242 forks, fli has become the most popular flight-related MCP server by a wide margin. The key advantage over SerpAPI-based alternatives: it accesses Google Flights data directly with no API costs or usage limits. Also available as a CLI (`fli`) and Python library (`flights` on PyPI). The lack of SerpAPI dependency makes this genuinely free to use.
+At [3,094 stars and 381 forks](https://github.com/punitarani/fli), fli has become the most popular flight-related MCP server by a wide margin. The key advantage over SerpAPI-based alternatives: it accesses Google Flights data directly with no API costs or usage limits. Also available as a CLI (`fli`) and Python library (`flights` on PyPI). The lack of SerpAPI dependency makes this genuinely free to use.
 
 ### ravinahp/flights-mcp — Duffel-Powered Flight Search
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [flights-mcp](https://github.com/ravinahp/flights-mcp) | 187 | Python | MIT | 3 |
+| [flights-mcp](https://github.com/ravinahp/flights-mcp) | 220 | Python | MIT | 3 |
 
-**Real bookable fares via Duffel API:**
+**Real-fare search (read-only) via Duffel API:**
 
 - **Search Flights** — one-way and round-trip search with cabin class, passenger count, and connection limits
 - **Get Offer Details** — detailed pricing and routing for specific offers
@@ -178,13 +179,13 @@ At 2,100 stars and 242 forks, fli has become the most popular flight-related MCP
 - **Flexible date search** — search across multiple days to find optimal pricing
 - **Contextual memory** — remembers previous searches within a conversation
 
-At 187 stars, this remains the top server for actual bookable fares. While fli dominates search, flights-mcp connects to Duffel's real booking inventory — the results you see are actually purchasable. The multi-day search feature is particularly useful for finding the cheapest travel dates.
+At 220 stars, this remains the top server for searching real bookable fares. While fli dominates search, flights-mcp draws on Duffel's live booking inventory, so prices reflect actual purchasable fares — but [the server itself is explicitly read-only](https://github.com/ravinahp/flights-mcp): it can search and price offers but cannot complete a booking or charge a payment method. Any actual purchase happens outside the MCP tool, directly through Duffel. The multi-day search feature is particularly useful for finding the cheapest travel dates.
 
 ### donghyun-chae/mcp-amadeus — Amadeus Flight Offers
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-amadeus](https://github.com/donghyun-chae/mcp-amadeus) | 53 | Python | MIT | 1 |
+| [mcp-amadeus](https://github.com/donghyun-chae/mcp-amadeus) | 58 | Python | MIT | 1 |
 
 **Amadeus API integration for flight offer search:**
 
@@ -198,7 +199,7 @@ Amadeus is one of the three major GDS platforms (alongside Sabre and Travelport)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-flight-search](https://github.com/arjunprabhulal/mcp-flight-search) | 42 | Python | MIT | 2 |
+| [mcp-flight-search](https://github.com/arjunprabhulal/mcp-flight-search) | 43 | Python | MIT | 2 |
 
 **Flight search using Google Flights data through SerpAPI:**
 
@@ -213,7 +214,7 @@ Google Flights aggregates fares from multiple sources and is widely used for pri
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [google-flights-mcp-server](https://github.com/manohar42/google-flights-mcp-server) | — | Python | MIT | 9 |
+| [google-flights-mcp-server](https://github.com/manohar42/google-flights-mcp-server) | 1 | Python | MIT | 9 |
 
 **The most complete flight workflow — search via Google Flights, book via Duffel:**
 
@@ -229,11 +230,11 @@ The only MCP server that covers the complete flight journey from search to payme
 
 ### Additional Flight Search Servers
 
-- **smamidipaka6/flights-mcp-server** (22 stars, Python, MIT, 4 tools) — Google Flights MCP with best flights, cheapest flights, and time-filtered search. Supports one-way currently, round-trip planned *(NEW)*
-- **maratsarbasov/flights-mcp** (11 stars, Python, GPL-3.0, 4 tools) — Aviasales API integration with granular filtering, sorting by price/duration/time, baggage info, and booking link generation. Supports stdio, HTTP, and SSE transports *(NEW)*
-- **HaroldLeo/google-flights-mcp** (3 stars, Python, MIT, 6 tools) — Google Flights with alliance filtering (Star Alliance, SkyTeam, OneWorld), multi-date range search, Hugging Face Spaces deployment, and 10 built-in travel planning prompts *(NEW)*
-- **shadyvb/mcp-skyscanner** (4 stars, Python, GPL-3.0) — reverse-engineered Skyscanner API for flight and airport search. Experimental/educational only — uses an unofficial API client
-- **JamesANZ/flight-finder-mcp** (1 star, TypeScript, MIT) — multi-source search across Skyscanner and Google Flights with 5 tools, including monthly price analysis and best-price recommendations
+- **[smamidipaka6/flights-mcp-server](https://github.com/smamidipaka6/flights-mcp-server)** (27 stars, Python, MIT, 4 tools) — Google Flights MCP with best flights, cheapest flights, and time-filtered search. Supports one-way currently, round-trip planned *(NEW)*
+- **[maratsarbasov/flights-mcp](https://github.com/maratsarbasov/flights-mcp)** (14 stars, Python, GPL-3.0, 4 tools) — Aviasales API integration with granular filtering, sorting by price/duration/time, baggage info, and booking link generation. Supports stdio, HTTP, and SSE transports *(NEW)*
+- **[HaroldLeo/google-flights-mcp](https://github.com/HaroldLeo/google-flights-mcp)** (4 stars, Python, MIT, 6 tools) — Google Flights with alliance filtering (Star Alliance, SkyTeam, OneWorld), multi-date range search, Hugging Face Spaces deployment, and 10 built-in travel planning prompts *(NEW)*
+- **[shadyvb/mcp-skyscanner](https://github.com/shadyvb/mcp-skyscanner)** (12 stars, Python, GPL-3.0) — reverse-engineered Skyscanner API for flight and airport search. Experimental/educational only — uses an unofficial API client
+- **[JamesANZ/flight-finder-mcp](https://github.com/JamesANZ/flight-finder-mcp)** (1 star, TypeScript, MIT) — multi-source search across Skyscanner and Google Flights with 5 tools, including monthly price analysis and best-price recommendations
 
 ---
 
@@ -289,7 +290,7 @@ The route weather tool is particularly useful — instead of checking individual
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Airport Lounge List MCP](https://mcp.airportloungelist.com/) | hosted | — | Free | 6 |
+| [Airport Lounge List MCP](https://airportloungelist.com/mcp) | hosted | — | Free | 21 |
 
 **Search 8,500+ airport lounges worldwide — free, no API key required:**
 
@@ -297,10 +298,11 @@ The route weather tool is particularly useful — instead of checking individual
 - **get_airport_lounges** — all lounges at a specific airport with interactive UI
 - **get_lounge_details** — comprehensive info including hours, capacity, and amenities
 - **find_lounges_by_access** — filter by credit card, membership, or airline status
-- **list_access_methods** — 22 supported access types
-- **get_network_lounges** — browse by network (Priority Pass, LoungeKey, DragonPass, Plaza Premium, Amex Centurion)
+- **list_access_methods** — [22 supported access types](https://airportloungelist.com/mcp)
+- **list_networks** / **get_network_lounges** — browse by network (Priority Pass, LoungeKey, DragonPass, Plaza Premium, Amex Centurion)
+- **Account tools (15, OAuth-authenticated)** — profile, "lounge passport" visit history, reviews (write/update/delete), visit tracking, and wishlist management
 
-This fills the airport lounge gap entirely. A hosted remote MCP server at `mcp.airportloungelist.com/mcp` with Streamable HTTP transport — no local installation needed. Renders interactive visual interfaces directly in conversations. Compatible with ChatGPT, Claude Desktop, Cursor, and Claude Code.
+The server has grown from the 6 lounge-search tools in our initial review to [21 tools total](https://airportloungelist.com/mcp) — the newer tools add authenticated account features (reviews, visit tracking, wishlists) on top of the original free lounge-search capability. It's a hosted remote MCP server at `airportloungelist.com/mcp` with Streamable HTTP transport — no local installation needed. Renders interactive visual interfaces directly in conversations. Compatible with ChatGPT, Claude Desktop, Cursor, and Claude Code.
 
 ---
 
@@ -310,7 +312,7 @@ This fills the airport lounge gap entirely. A hosted remote MCP server at `mcp.a
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [MSFS-SimConnect-MCP](https://github.com/TheDigitalNinja/MSFS-SimConnect-MCP) | 2 | C# | Unlicense | 11 |
+| [MSFS-SimConnect-MCP](https://github.com/TheDigitalNinja/MSFS-SimConnect-MCP) | 3 | C# | Unlicense | 11 |
 
 **Read-only flight data from Microsoft Flight Simulator 2024 for AI-powered flight instruction:**
 
@@ -349,16 +351,16 @@ Unlike the read-only server above, this one gives the AI full control. Uses cust
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [MAVLinkMCP](https://github.com/ion-g-ion/MAVLinkMCP) | 16 | Python | MIT | — |
+| [MAVLinkMCP](https://github.com/ion-g-ion/MAVLinkMCP) | 22 | Python | MIT | — |
 
 **MCP server for controlling MAVLink-enabled drones via PX4:**
 
-- **MAVLink protocol** — the standard communication protocol used by millions of drones worldwide
-- **PX4 support** — compatible with the most widely-used open-source drone autopilot
+- **[MAVLink protocol](https://mavlink.io/en/)** — a lightweight messaging protocol, field-proven and used since 2009 to communicate between vehicles, ground stations, and autopilots from different manufacturers
+- **PX4 support** — compatible with the [PX4](https://px4.io/) open-source drone autopilot
 - **Agent integration** — includes example agent using the fastagent library
 - **Human-in-the-loop** — human input support for supervised drone control
 
-MAVLink is the universal language of drone control (Ardupilot, PX4), so this server potentially covers a huge range of hardware. Research from January 2026 demonstrated integration with Google Maps MCP for real-time navigation-aware drone flight planning. This fills the drone/UAV gap from our initial review.
+MAVLink is a widely-used open protocol for drone control (ArduPilot, PX4), so this server potentially covers a broad range of hardware. This fills the drone/UAV gap from our initial review.
 
 ---
 
@@ -384,7 +386,7 @@ Aviation coverage has expanded significantly, but gaps remain:
 
 ## Bottom Line
 
-The aviation and flight MCP server category has **matured significantly** since our initial review, with four of our biggest identified gaps now filled. Flight search was transformed by fli (2,100 stars) which reverse-engineers Google Flights directly — no API costs, no scraping — while flights-mcp (187 stars) remains the leader for actual bookable fares through Duffel. Flight tracking is now comprehensive with FlightAware's 27-tool AeroAPI server joining Flightradar24 (official + community), OpenSky Network, and ADS-B Exchange.
+The aviation and flight MCP server category has **matured significantly** since our initial review, with four of our biggest identified gaps now filled. Flight search was transformed by fli (3,094 stars) which reverse-engineers Google Flights directly — no API costs, no scraping — while flights-mcp (220 stars) remains the leader for searching real Duffel fares, though it's read-only and cannot complete a booking itself. Flight tracking is now comprehensive with FlightAware's 27-tool AeroAPI server joining Flightradar24 (official + community), OpenSky Network, and ADS-B Exchange.
 
 The professional pilot tools remain a standout — METAR, TAF, PIREP, SIGMET, G-AIRMET, charts, and NOTAMs from FAA sources via blevinstein/aviation-mcp (now 9 stars, 88 commits). The new airport lounge finder (8,500+ lounges, free) adds genuine consumer value. Flight simulation and drone control opened entirely new use cases — from AI flight instruction in MSFS to MAVLink-based drone operations.
 

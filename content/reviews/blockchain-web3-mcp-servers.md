@@ -2,16 +2,16 @@
 title: "Blockchain & Web3 MCP Servers — Ethereum, Solana, Bitcoin, Multi-Chain, DeFi, and More"
 date: 2026-03-15T17:00:00+09:00
 description: "Blockchain and Web3 MCP servers let AI agents query balances, send transactions, interact with smart contracts, and execute DeFi operations through natural language."
-og_description: "Blockchain & Web3 MCP servers: EVM MCP Server (362 stars, 22 tools, 60+ EVM networks, ENS resolution, automatic ABI fetching), GOAT (398 stars, 200+ onchain actions, multi-chain DeFi/minting/analytics), Solana Foundation official (42 stars, developer docs via mcp.solana.com), SendAI solana-mcp (139 stars, 11 tools, Agent Kit powered), Tatum (14 stars, 130+ networks, RPC gateway), Bitcoin MCP (73 stars, key gen/address validation/Lightning invoices), CoinGecko official (15,000+ coins, DEX analytics, trending), Strangelove web3-mcp (10+ chains including Cardano/XRP/TON). 25+ servers reviewed. Rating: 3.5/5."
+og_description: "Blockchain & Web3 MCP servers: EVM MCP Server (381 stars, 22 tools, 60+ EVM networks, ENS resolution, automatic ABI fetching), GOAT (1,008 stars, archived/unmaintained since mid-2026, 200+ onchain actions, multi-chain DeFi/minting/analytics), Solana Foundation official (79 stars, developer docs via mcp.solana.com), SendAI solana-mcp (162 stars, 11 tools, Agent Kit powered), Tatum (15 stars, 130+ networks, RPC gateway), Bitcoin MCP (76 stars, key gen/address validation/Lightning invoices), CoinGecko official (15,000+ coins, DEX analytics, trending), Strangelove web3-mcp (95 stars, 10+ chains including Cardano/XRP/TON). 25+ servers reviewed. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Blockchain and Web3 MCP servers across multi-chain platforms, single-chain specialists, DeFi, and market data. The EVM MCP Server (362 stars) offers the most comprehensive Ethereum ecosystem coverage — 22 tools across 60+ EVM networks with automatic ABI fetching and ENS resolution. GOAT (398 stars) provides the broadest onchain action coverage with 200+ tools spanning DeFi, minting, analytics, and betting across EVM, Solana, and 10+ other chains. For Solana, the official Foundation server serves developer documentation while SendAI's Agent Kit powers protocol-level operations. Bitcoin has a solid Lightning-enabled server. The category is large but fragmented — most servers cover either reading or writing, rarely both safely."
-last_refreshed: 2026-05-15
-sources_audited: 2026-07-23
+card_description: "Blockchain and Web3 MCP servers across multi-chain platforms, single-chain specialists, DeFi, and market data. The EVM MCP Server (381 stars) offers the most comprehensive Ethereum ecosystem coverage — 22 tools across 60+ EVM networks with automatic ABI fetching and ENS resolution. GOAT (1,008 stars, though archived and no longer maintained as of mid-2026) provides the broadest onchain action coverage with 200+ tools spanning DeFi, minting, analytics, and betting across EVM, Solana, and 10+ other chains. For Solana, the official Foundation server serves developer documentation while SendAI's Agent Kit powers protocol-level operations. Bitcoin has a solid Lightning-enabled server. The category is large but fragmented — most servers cover either reading or writing, rarely both safely."
+last_refreshed: 2026-08-14
+sources_audited: 2026-08-14
 ---
 
 Blockchain and Web3 is one of the largest MCP categories by server count but also one of the most fragmented. AI agents that can query balances, decode transactions, interact with smart contracts, and execute DeFi operations through natural language represent a natural evolution — blockchains are API-native systems with deterministic interfaces, ideal for tool-based interaction. The category spans six areas: **multi-chain platforms** (EVM MCP Server, Tatum, GOAT, Strangelove web3-mcp), **Solana** (official Foundation server, SendAI Agent Kit, openSVM), **Ethereum/EVM wallets and explorers** (dcSpark, Etherscan, Bankless), **Bitcoin** (AbdelStark bitcoin-mcp with Lightning), **DeFi and trading** (defi-trading-mcp, DeFAI), and **market data** (CoinGecko, CoinMarketCap).
 
-The headline finding: **The EVM MCP Server has the strongest multi-network coverage** — 22 tools across 60+ EVM networks with automatic ABI fetching from block explorers and ENS resolution on every address parameter. **GOAT has the broadest onchain action coverage** with 200+ tools spanning DeFi protocols (Uniswap, Jupiter, Orca), NFT marketplaces (OpenSea, MagicEden), prediction markets (Polymarket), and analytics (CoinGecko, BirdEye) across EVM, Solana, and 10+ other chains. **The main gap is safety** — most servers that support write operations (sending transactions, executing trades) have minimal guardrails, making autonomous agent usage risky for anything involving real funds.
+The headline finding: **The EVM MCP Server has the strongest multi-network coverage** — 22 tools across 60+ EVM networks with automatic ABI fetching from block explorers and ENS resolution on every address parameter. **GOAT has the broadest onchain action coverage** with 200+ tools spanning DeFi protocols (Uniswap, Jupiter, Orca), NFT marketplaces (OpenSea, MagicEden), prediction markets (Polymarket), and analytics (CoinGecko, BirdEye) across EVM, Solana, and 10+ other chains — though as of this audit its [GitHub repository is archived and no longer maintained](https://github.com/goat-sdk/goat), so treat it as a reference rather than a moving target. **The main gap is safety** — most servers that support write operations (sending transactions, executing trades) have minimal guardrails, making autonomous agent usage risky for anything involving real funds.
 
 ## Multi-Chain Platforms
 
@@ -19,9 +19,9 @@ The headline finding: **The EVM MCP Server has the strongest multi-network cover
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [mcpdotdirect/evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | 362 | TypeScript | 22 | stdio |
+| [mcpdotdirect/evm-mcp-server](https://github.com/mcpdotdirect/evm-mcp-server) | 381 | TypeScript | 22 | stdio |
 
-**mcpdotdirect/evm-mcp-server** (362 stars, TypeScript, 94 forks) is the most comprehensive EVM-focused MCP server. Twenty-two tools plus 10 AI-guided prompts covering:
+**mcpdotdirect/evm-mcp-server** (381 stars, TypeScript, 104 forks, MIT license) is the most comprehensive EVM-focused MCP server. Twenty-two tools plus 10 AI-guided prompts covering:
 
 **Blockchain state** — reading balances (native + ERC-20), transaction history, block data, gas prices, and contract storage across 60+ EVM networks (34 mainnets + 26 testnets). Supports Ethereum, Optimism, Arbitrum, Base, Polygon, and dozens more.
 
@@ -37,9 +37,9 @@ The standout feature is the breadth: 60+ networks from a single server with cons
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [tatumio/blockchain-mcp](https://github.com/tatumio/blockchain-mcp) | 14 | TypeScript | 8+ | stdio |
+| [tatumio/blockchain-mcp](https://github.com/tatumio/blockchain-mcp) | 15 | TypeScript | 8+ | stdio |
 
-**tatumio/blockchain-mcp** (14 stars, TypeScript, MIT) provides access to the Tatum Blockchain Data API and RPC Gateway across 130+ networks including Bitcoin, Ethereum, Solana, Polygon, Arbitrum, Base, and Avalanche. Tools include `get_wallet_balance_by_time`, `get_wallet_portfolio`, `get_transaction_history`, `get_metadata` (NFT/multitoken), `get_owners`, `check_owner`, `get_tokens`, and `get_block_by_time`.
+**tatumio/blockchain-mcp** (15 stars, TypeScript, MIT) provides access to the Tatum Blockchain Data API and RPC Gateway across 130+ networks including Bitcoin, Ethereum, Solana, Polygon, Arbitrum, Base, and Avalanche. Tools include `get_wallet_balance_by_time`, `get_wallet_portfolio`, `get_transaction_history`, `get_metadata` (NFT/multitoken), `get_owners`, `check_owner`, `get_tokens`, and `get_block_by_time`.
 
 The 130+ network count is the highest of any blockchain MCP server, but Tatum is primarily a read-only data API — you can query blockchain state comprehensively but can't send transactions. This makes it safe for analytics and monitoring but not useful for agents that need to execute operations. Requires a Tatum API key (free tier available).
 
@@ -47,21 +47,21 @@ The 130+ network count is the highest of any blockchain MCP server, but Tatum is
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [goat-sdk/goat](https://github.com/goat-sdk/goat) | 398 | TypeScript | 200+ | stdio |
+| [goat-sdk/goat](https://github.com/goat-sdk/goat) | 1,008 | TypeScript | 200+ | stdio |
 
-**goat-sdk/goat** (398 stars, TypeScript, MIT) is the leading agentic finance toolkit. Rather than a single MCP server, GOAT is a modular framework where you install only the plugins you need. Over 200 onchain actions across:
+**goat-sdk/goat** (1,008 stars, TypeScript, MIT) was, at its peak, the most broadly capable agentic finance toolkit in this category — but as of this audit **the [repository is archived](https://github.com/goat-sdk/goat)**: GitHub shows it as "a read-only historical snapshot. It is no longer actively maintained, and no issues, pull requests, or updates will be accepted." The GOAT SDK organization's other repositories are unrelated agent frameworks, not a designated successor. Rather than a single MCP server, GOAT was a modular framework where you'd install only the plugins you need, exposing over 200 onchain actions across:
 
 **DeFi** — Uniswap, Jupiter, KIM, Orca, and more for swaps and liquidity. **Minting** — OpenSea, MagicEden for NFT operations. **Betting** — Polymarket for prediction market interaction. **Analytics** — CoinGecko, BirdEye, Allora for market data and price feeds.
 
-Chain support spans EVM (Base, Polygon, Mode, Sei), Solana, Aptos, Chromia, Fuel, Sui, Starknet, Zilliqa, and more. The MCP adapter (`@goat-sdk/adapter-model-context-protocol`) wraps any combination of GOAT plugins into an MCP server compatible with Claude Desktop.
+Chain support spanned EVM (Base, Polygon, Mode, Sei), Solana, Aptos, Chromia, Fuel, Sui, Starknet, Zilliqa, and more. The MCP adapter (`@goat-sdk/adapter-model-context-protocol`) wrapped any combination of GOAT plugins into an MCP server compatible with Claude Desktop.
 
-The design philosophy is right — keep the core minimal, let users compose their toolset. The tradeoff is complexity: setting up GOAT requires choosing chains, wallets, and plugins, which is more involved than single-purpose servers. But for agents that need broad cross-chain DeFi capabilities, nothing else comes close.
+The design philosophy was right — keep the core minimal, let users compose their toolset — and setup complexity (choosing chains, wallets, and plugins) was always higher than single-purpose servers. **With the repo now archived and unmaintained, new projects should treat GOAT as a reference architecture rather than a production dependency** — pin a known-good version if you build on it, since there will be no further security fixes or protocol updates upstream.
 
 ### Strangelove web3-mcp
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [strangelove-ventures/web3-mcp](https://github.com/strangelove-ventures/web3-mcp) | — | TypeScript | varies | stdio |
+| [strangelove-ventures/web3-mcp](https://github.com/strangelove-ventures/web3-mcp) | 95 | TypeScript | varies | stdio |
 
 **strangelove-ventures/web3-mcp** is a unified MCP server for interacting with multiple blockchains — Solana, Ethereum, THORChain, XRP Ledger, TON, Cardano, and UTXO chains (Bitcoin, Litecoin, Dogecoin, Bitcoin Cash). Configuration via environment variables: `ENABLE_SOLANA_TOOLS`, `ENABLE_ETHEREUM_TOOLS`, `ENABLE_CARDANO_TOOLS`, `ENABLE_BITCOIN_TOOLS`, etc.
 
@@ -73,9 +73,9 @@ The standout feature is non-EVM chain support — Cardano, XRP Ledger, and TON a
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [solana-foundation/solana-mcp-official](https://github.com/solana-foundation/solana-mcp-official) | 42 | TypeScript | docs | HTTP |
+| [solana-foundation/solana-mcp-official](https://github.com/solana-foundation/solana-mcp-official) | 79 | TypeScript | docs | HTTP |
 
-**solana-foundation/solana-mcp-official** (42 stars) is the official Solana Developer MCP, hosted at mcp.solana.com. Unlike most blockchain MCP servers, this is a **documentation server** — it serves up-to-date Solana ecosystem documentation to AI agents and IDE assistants (Cursor, Windsurf, Claude CLI). The purpose is helping developers build on Solana, not interacting with the blockchain directly. Uses Vercel's `@vercel/mcp-adapter` for dual endpoint support (mcp.solana.com/mcp and mcp.solana.com/sse).
+**solana-foundation/solana-mcp-official** (79 stars) is the official Solana Developer MCP, hosted at [mcp.solana.com](https://mcp.solana.com). Unlike most blockchain MCP servers, this is a **documentation server** — it serves up-to-date Solana ecosystem documentation to AI agents and IDE assistants (Cursor, Windsurf, Claude CLI). The purpose is helping developers build on Solana, not interacting with the blockchain directly.
 
 This is a developer experience play, not a blockchain interaction tool. Valuable if you're building Solana applications; not useful if you want an agent to read/write onchain data.
 
@@ -83,19 +83,19 @@ This is a developer experience play, not a blockchain interaction tool. Valuable
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [sendaifun/solana-mcp](https://github.com/sendaifun/solana-mcp) | 139 | TypeScript | 11 | stdio |
+| [sendaifun/solana-mcp](https://github.com/sendaifun/solana-mcp) | 162 | TypeScript | 11 | stdio |
 
-**sendaifun/solana-mcp** (139 stars, TypeScript) extends Claude's capabilities with Solana blockchain interaction, powered by the Solana Agent Kit. Eleven tools: `GET_ASSET` (token info), `DEPLOY_TOKEN` (deploy new tokens), `GET_PRICE` (price feeds), `WALLET_ADDRESS`, `BALANCE`, `TRANSFER`, `MINT_NFT`, `TRADE` (token swaps), `REQUEST_FUNDS` (devnet faucet), `RESOLVE_DOMAIN` (Solana domain names), `GET_TPS` (network performance).
+**sendaifun/solana-mcp** (162 stars, TypeScript) extends Claude's capabilities with Solana blockchain interaction, powered by the Solana Agent Kit. Eleven tools: `GET_ASSET` (token info), `DEPLOY_TOKEN` (deploy new tokens), `GET_PRICE` (price feeds), `WALLET_ADDRESS`, `BALANCE`, `TRANSFER`, `MINT_NFT`, `TRADE` (token swaps), `REQUEST_FUNDS` (devnet faucet), `RESOLVE_DOMAIN` (Solana domain names), `GET_TPS` (network performance).
 
-This is the most practical Solana MCP server for agents that need to execute operations. The Agent Kit (sendaifun/solana-agent-kit, separate repo) supports 40+ protocol actions and growing. The MCP server exposes the most common ones. Note: operations like `DEPLOY_TOKEN`, `TRANSFER`, and `TRADE` involve real funds on mainnet — use with extreme caution.
+This is the most practical Solana MCP server for agents that need to execute operations. The Agent Kit ([sendaifun/solana-agent-kit](https://github.com/sendaifun/solana-agent-kit), separate repo) now supports [60+ Solana actions](https://github.com/sendaifun/solana-agent-kit) and growing. The MCP server exposes the most common ones. Note: operations like `DEPLOY_TOKEN`, `TRANSFER`, and `TRADE` involve real funds on mainnet — use with extreme caution.
 
 ### openSVM Solana MCP Server
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [openSVM/solana-mcp-server](https://github.com/openSVM/solana-mcp-server) | 33 | Rust | RPC methods | stdio, HTTP |
+| [openSVM/solana-mcp-server](https://github.com/openSVM/solana-mcp-server) | 63 | Rust | RPC methods | stdio, HTTP |
 
-**openSVM/solana-mcp-server** (33 stars, Rust) provides comprehensive access to Solana RPC methods — querying account data, managing tokens, and analyzing transactions. Built in Rust for performance. Supports both stdio transport and HTTP JSON-RPC mode. Multi-network support and flexible deployment options (Docker, Kubernetes, AWS Lambda, Google Cloud Functions, Vercel Edge, Netlify).
+**openSVM/solana-mcp-server** (63 stars, Rust, MIT) provides comprehensive access to Solana RPC methods — querying account data, managing tokens, and analyzing transactions. Built in Rust for performance. Supports both stdio transport and HTTP JSON-RPC mode. Multi-network support and flexible deployment options (Docker, Kubernetes, AWS Lambda, Google Cloud Functions, Vercel Edge, Netlify).
 
 The deployment flexibility is notable — one-liner scripts for every major platform. This is primarily a read-focused server exposing standard Solana RPC methods through MCP, making it useful for monitoring and analysis rather than transaction execution.
 
@@ -105,19 +105,19 @@ The deployment flexibility is notable — one-liner scripts for every major plat
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [dcSpark/mcp-cryptowallet-evm](https://github.com/dcSpark/mcp-cryptowallet-evm) | 8 | TypeScript | 10+ | stdio |
+| [dcSpark/mcp-cryptowallet-evm](https://github.com/dcSpark/mcp-cryptowallet-evm) | 10 | TypeScript | 10+ | stdio |
 
-**dcSpark/mcp-cryptowallet-evm** (8 stars, TypeScript, MIT) provides wallet operations via ethers.js v5 — `wallet_create_random`, `wallet_from_private_key`, `wallet_from_mnemonic`, `wallet_from_encrypted_json`, plus balance checking, transaction sending, and smart contract interaction.
+**dcSpark/mcp-cryptowallet-evm** (10 stars, TypeScript, MIT) provides wallet operations via ethers.js v5 — `wallet_create_random`, `wallet_from_private_key`, `wallet_from_mnemonic`, `wallet_from_encrypted_json`, plus balance checking, transaction sending, and smart contract interaction.
 
-This is a wallet-focused server rather than a blockchain data server. It handles key generation and transaction signing. Low adoption (8 stars) but functional for basic EVM wallet operations.
+This is a wallet-focused server rather than a blockchain data server. It handles key generation and transaction signing. Low adoption (10 stars) but functional for basic EVM wallet operations.
 
 ### Etherscan MCP Server
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [crazyrabbitLTC/mcp-etherscan-server](https://github.com/crazyrabbitLTC/mcp-etherscan-server) | 26 | TypeScript | 6 | stdio |
+| [crazyrabbitLTC/mcp-etherscan-server](https://github.com/crazyrabbitLTC/mcp-etherscan-server) | 30 | TypeScript | 6 | stdio |
 
-**crazyrabbitLTC/mcp-etherscan-server** (26 stars, TypeScript, MIT) provides Ethereum blockchain data through Etherscan's API. Six tools: check ETH balance, view transaction history, track ERC-20 transfers, fetch contract ABIs, monitor gas prices, and resolve ENS names. Created by [Dennison Bertram](https://www.tally.xyz/team) (CEO of Tally.xyz, former OpenZeppelin Developer Advocate).
+**crazyrabbitLTC/mcp-etherscan-server** (30 stars, TypeScript, MIT) provides Ethereum blockchain data through Etherscan's API. Six tools: check ETH balance, view transaction history, track ERC-20 transfers, fetch contract ABIs, monitor gas prices, and resolve ENS names. GitHub user [crazyrabbitLTC](https://github.com/crazyrabbitLTC) is [Dennison Bertram](https://www.tally.xyz/team), co-founder and CEO of [Tally.xyz](https://www.tally.xyz/team), previously listed as a Developer Advocate at [OpenZeppelin](https://www.crunchbase.com/person/dennison-bertram).
 
 Focused and well-built for its scope, but the EVM MCP Server (above) covers Etherscan data access plus much more across 60+ networks. This is useful if you only need Ethereum mainnet and want a lightweight server.
 
@@ -127,11 +127,11 @@ Focused and well-built for its scope, but the EVM MCP Server (above) covers Ethe
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [AbdelStark/bitcoin-mcp](https://github.com/AbdelStark/bitcoin-mcp) | 73 | Rust | 5+ | stdio |
+| [AbdelStark/bitcoin-mcp](https://github.com/AbdelStark/bitcoin-mcp) | 76 | TypeScript | 5+ | stdio |
 
-**AbdelStark/bitcoin-mcp** (73 stars, Rust) enables AI models to interact with Bitcoin and Lightning Network. Key tools: **key generation** (create Bitcoin key pairs with address, public key, and WIF private key), **address validation** (check address correctness), **transaction decoding** (parse raw transactions into human-readable format), plus Lightning Network support including **invoice decoding** and **payment** capabilities.
+**AbdelStark/bitcoin-mcp** (76 stars, TypeScript, MIT) enables AI models to interact with Bitcoin and Lightning Network. Key tools: **key generation** (create Bitcoin key pairs with address, public key, and WIF private key), **address validation** (check address correctness), **transaction decoding** (parse raw transactions into human-readable format), plus Lightning Network support including **invoice decoding** and **payment** capabilities.
 
-This is the most capable Bitcoin-focused MCP server. Lightning Network support is unique — no other blockchain MCP server handles L2 payment channels. The Rust implementation is a good fit for cryptographic operations. AbdelStark also maintains a separate `lightning-mcp` repository focused specifically on Lightning.
+This is the most capable Bitcoin-focused MCP server. Lightning Network support is unique — no other blockchain MCP server handles L2 payment channels. AbdelStark also maintains a separate, smaller [`lightning-mcp`](https://github.com/AbdelStark/lightning-mcp) repository (6 stars) focused specifically on paying Lightning invoices.
 
 ## DeFi and Trading
 
@@ -139,37 +139,37 @@ This is the most capable Bitcoin-focused MCP server. Lightning Network support i
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [edkdev/defi-trading-mcp](https://github.com/edkdev/defi-trading-mcp) | 39 | TypeScript | 10+ | stdio |
+| [edkdev/defi-trading-mcp](https://github.com/edkdev/defi-trading-mcp) | 52 | TypeScript | 10+ | stdio |
 
-**edkdev/defi-trading-mcp** (39 stars, TypeScript) transforms AI into an autonomous crypto trading agent with real-time market analysis, portfolio management, and trade execution across 17+ blockchains including Ethereum, Polygon, BSC, Arbitrum, Optimism, Base, Avalanche, Worldchain, Berachain, Blast, Linea, Scroll, Mantle, Ink, and MonadTestnet.
+**edkdev/defi-trading-mcp** (52 stars, TypeScript) transforms AI into an autonomous crypto trading agent with real-time market analysis, portfolio management, and trade execution across 17+ blockchains including Ethereum, Base, Polygon, Arbitrum, Optimism, BSC, Avalanche, Blast, Linea, Scroll, Mantle, Mode, Worldchain, Unichain, Berachain, Ink, and MonadTestnet.
 
 **Important safety warning:** autonomous trading agents executing real trades with real funds is inherently high-risk. This server is better suited for monitoring, analysis, and paper trading than unsupervised live trading. There's no mention of transaction limits, confirmation steps, or emergency stop mechanisms.
 
 ### DeFAI MCP (BNB Chain)
 
-DeFAI MCP is an AI-powered DeFi agent for BNB Chain with yield optimization, cross-DEX arbitrage, and delta-neutral strategies, using ERC-4337 account abstraction for gasless transactions. It was the first on-chain DeFi MCP server specifically targeting BNB Chain. Early-stage but architecturally interesting for its account abstraction approach.
+[**harshranjan-art/DEFAI-MCP**](https://github.com/harshranjan-art/DEFAI-MCP) (3 stars) is a small, self-published AI-powered DeFi agent for BNB Chain with 19 MCP tools for yield farming, cross-DEX arbitrage, token transfers, and delta-neutral strategies, using ERC-4337 account abstraction for gasless transactions. Its own README describes it as "the first MCP server that gives AI agents real DeFi execution on BNB Chain" — that "first" claim is the project's own, unverified by any independent source, so treat it as a self-description rather than an established fact. It was built for a BNBChain hackathon and requires a private key to be configured server-side; this is early-stage, low-adoption software, architecturally interesting for its account-abstraction approach but not something to hand real funds to without independent security review.
 
 ## Market Data
 
 ### CoinGecko MCP (Official)
 
-CoinGecko provides an official MCP server offering real-time market data with aggregated prices, market cap, and trading volume for 15,000+ coins across 1,000+ exchanges. Capabilities include onchain DEX price and liquidity data, trending coins, new token listings, top gainers/losers, and popular NFT collections. This is the strongest market data source — CoinGecko's data coverage is industry-standard.
+CoinGecko provides an [official MCP server](https://docs.coingecko.com/reference/mcp-server) offering real-time market data with aggregated prices, market cap, and trading volume for 15,000+ coins across 1,000+ exchanges, plus onchain DEX price and liquidity data for millions of tokens via GeckoTerminal. [Documented capabilities](https://docs.coingecko.com/ai-integration/mcp-tools) include trending coins, newly-listed tokens, top gainers/losers, and NFT collection data. This is the strongest market data source — CoinGecko's data coverage is industry-standard.
 
 ### CoinMarketCap MCP Servers
 
-Multiple community CoinMarketCap MCP servers exist: **longmans/coin_api_mcp** provides cryptocurrency listings and quotes. **shinzo-labs/coinmarketcap-mcp** is another implementation. **szcharlesji/crypto-mcp** offers tools for listings, quotes, ID mappings, metadata, global metrics, and exchange information. All require CoinMarketCap API keys (free tier available).
+Multiple community CoinMarketCap MCP servers exist: [**longmans/coin_api_mcp**](https://github.com/longmans/coin_api_mcp) provides cryptocurrency listings, coin info, and quotes. [**shinzo-labs/coinmarketcap-mcp**](https://github.com/shinzo-labs/coinmarketcap-mcp) is another implementation with tiered access matching CoinMarketCap's subscription levels. [**szcharlesji/crypto-mcp**](https://github.com/szcharlesji/crypto-mcp) offers tools for listings, quotes, ID mappings, metadata, global metrics, and exchange information. All require CoinMarketCap API keys (free tier available).
 
 ## Also notable
 
-**Bankless Onchain** — query onchain data including ERC-20 tokens, transaction history, and smart contract state. **kukapay/chainlist-mcp** — gives AI agents fast access to verified EVM chain information (RPC URLs, chain IDs, explorers, native tokens). **magnetai/mcp-free-usdc-transfer** — send USDC on Base for free using Coinbase CDP's MPC wallet technology. **SettleMint MCP** — enterprise blockchain platform integration for smart contract management, deployment, and blockchain network interaction. **OpenSea MCP** — official hosted server for NFT operations, token swaps, collection analytics, and wallet management across major chains. **BitGo MCP Server** (March 2026) — documentation-access MCP server from the institutional digital asset custody company BitGo (federally chartered BitGo Bank & Trust). Connects AI agents to BitGo's Developer Portal for wallet functionality, transaction flows, staking docs, webhooks, and policy features via natural language. Read-only — does not execute transactions or manage custody. **royyannick/awesome-blockchain-mcps** — a curated awesome-list specifically for blockchain and crypto MCP servers.
+[**Bankless Onchain**](https://github.com/Bankless/onchain-mcp) — query onchain data including ERC-20 tokens, transaction history, and smart contract state. [**kukapay/chainlist-mcp**](https://github.com/kukapay/chainlist-mcp) — gives AI agents fast access to verified EVM chain information (RPC URLs, chain IDs, explorers, native tokens) sourced from Chainlist.org. [**magnetai/mcp-free-usdc-transfer**](https://github.com/magnetai/mcp-free-usdc-transfer) — send USDC on Base for free using Coinbase CDP's MPC wallet technology. [**SettleMint MCP**](https://console.settlemint.com/documentation/blockchain-platform/blockchain-and-ai/mcp) — enterprise blockchain platform integration for smart contract management, deployment, and blockchain network interaction. [**OpenSea MCP**](https://docs.opensea.io/reference/mcp) — official hosted server, [launched in beta August 2025](https://www.tekedia.com/opensea-mcp-merges-blockchains-decentralized-data-with-ais-analytical-power/), for NFT operations, token swaps, collection analytics, and wallet management across 20+ chains. **BitGo MCP Server** ([launched March 2026](https://www.bitgo.com/en-eu/resources/blog/bitgo-launches-mcp-server-ai-powered-developer-workflows/)) — documentation-access MCP server from institutional digital asset custody company BitGo, which [became a federally chartered national trust bank (BitGo Bank & Trust, N.A.) via OCC approval in early 2026](https://www.bitgo.com/resources/blog/bitgo-secures-occ-approval/). Connects AI agents to BitGo's Developer Portal for wallet functionality, transaction flows, staking docs, webhooks, and policy features via natural language. Read-only — does not execute transactions or manage custody. [**royyannick/awesome-blockchain-mcps**](https://github.com/royyannick/awesome-blockchain-mcps) — a curated awesome-list specifically for blockchain and crypto MCP servers.
 
 ## What's New (May 2026)
 
-**Chainstack MCP expands to 70+ chains (May 2026).** [Chainstack's MCP server](https://chainstack.com/mcp/) was updated May 5, 2026, adding structured access to live RPC data, smart contract storage, and on-chain state across 70+ chains — including Ethereum, Solana, BNB Smart Chain, Base, Arbitrum, Polygon, Hyperliquid, Monad, and MegaETH. This is the broadest single-server chain coverage yet, eclipsing EVM MCP Server's 60+ networks by also covering non-EVM chains.
+**Chainstack MCP expands to 70+ chains (May 2026).** [Chainstack's MCP server announcement](https://chainstack.com/mcp-for-web3-builders-solana-evm-and-documentation-server-by-chainstack/) was updated May 5, 2026, and [Chainstack's MCP page](https://chainstack.com/mcp/) confirms structured access to live RPC data, smart contract storage, and on-chain state across 70+ chains — including Ethereum, Solana, BNB Smart Chain, Base, Arbitrum, Polygon, Hyperliquid, Monad, and MegaETH. This is the broadest single-server chain coverage yet, eclipsing EVM MCP Server's 60+ networks by also covering non-EVM chains.
 
 **MCP reaches "de facto protocol" status (April 2026).** For blockchain, MCP is accelerating institutional adoption: BitGo's documentation MCP server, SettleMint's enterprise integration, and OpenSea's official server are all seeing broader use as developers treat MCP as the standard connection layer.
 
-**DeMCP: first decentralized MCP network launches.** DeMCP launched as a fully decentralized MCP network with pay-as-you-go LLM access (GPT-4, Claude) via stablecoins — an interesting experiment in applying blockchain payment rails to MCP server economics. Early-stage, but architecturally notable.
+**DeMCP: a decentralized MCP network launches.** [DeMCP](https://github.com/demcp/awesome-web3-mcp-servers) describes itself as the first decentralized MCP network, offering pay-as-you-go LLM access (GPT-4, Claude) via stablecoins (USDT/USDC) combined with TEE and a blockchain registry — an interesting experiment in applying blockchain payment rails to MCP server economics. That "first" framing is the project's own description rather than an independently verified claim. Early-stage, but architecturally notable.
 
 **Web3 MCP security guidance from Google Cloud.** [Google Cloud published guidance](https://cloud.google.com/blog/products/identity-security/using-mcp-with-web3-how-to-secure-blockchain-interacting-agents/) on securing blockchain-interacting MCP agents, covering key management, transaction signing safety, and network isolation. Given the financial stakes, this is essential reading before deploying any write-capable blockchain MCP server.
 
@@ -177,7 +177,7 @@ Multiple community CoinMarketCap MCP servers exist: **longmans/coin_api_mcp** pr
 
 Blockchain and Web3 is a large but uneven MCP category. The **read side is strong** — between EVM MCP Server (60+ networks), Tatum (130+ networks), and CoinGecko (15,000+ coins), agents can access virtually any blockchain data. The **write side is risky** — servers like SendAI's Solana MCP and defi-trading-mcp enable real transaction execution, but safety controls are minimal. There's no standardized way to limit transaction amounts, require confirmation, or prevent agents from draining wallets.
 
-The fragmentation is notable. Rather than a few comprehensive servers, the space has dozens of chain-specific and protocol-specific tools. GOAT's modular approach is the right architecture for this — compose what you need rather than running one massive server. But it requires more setup knowledge than other MCP categories.
+The fragmentation is notable. Rather than a few comprehensive servers, the space has dozens of chain-specific and protocol-specific tools. GOAT's modular approach was the right architecture for this — compose what you need rather than running one massive server — though its archived, unmaintained status (see above) means it's now better read as a design reference than a first choice for new builds. Setup, in general, requires more knowledge than other MCP categories.
 
 **Who should use these:** Developers building blockchain analytics tools, portfolio trackers, or blockchain-aware AI assistants. For read-only use cases (querying balances, analyzing transactions, monitoring prices), these servers are practical today. For write operations (sending transactions, executing trades), proceed with extreme caution — preferably on testnets first.
 
@@ -185,4 +185,4 @@ The fragmentation is notable. Rather than a few comprehensive servers, the space
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
+*This review was last edited on 2026-08-14 using Claude Sonnet 5 (Anthropic).*

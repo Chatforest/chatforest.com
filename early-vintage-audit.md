@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 80/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 90/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -336,19 +336,19 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Apple & macOS MCP Servers (2026) — 30+ Reviewed](content/reviews/apple-macos-mcp-servers.md) — re-audited 2026-08-14
 - [x] 2026-07-23 — [Asana MCP Server — Official Remote Server for Enterprise Project Management](content/reviews/asana-mcp-server.md) — re-audited 2026-08-14
 - [x] 2026-07-23 — [Astronomy & Space Science MCP Servers — NASA APIs, Telescope Control, Satellite Tracking, SpaceX, Astronomical Surveys, and Research Tools](content/reviews/astronomy-space-science-mcp-servers.md) — re-audited 2026-08-14
-- [ ] 2026-07-23 — [Audio & Video Processing MCP Servers — ElevenLabs, FFmpeg, DaVinci Resolve, Ableton, REAPER, and More](content/reviews/audio-video-processing-mcp-servers.md)
-- [ ] 2026-07-23 — [Automotive & Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More](content/reviews/automotive-vehicle-mcp-servers.md)
-- [ ] 2026-07-23 — [Aviation & Flight MCP Servers — Flight Tracking, Booking, Weather, NOTAMs, ADS-B, Flightradar24, and Pilot Tools](content/reviews/aviation-flight-mcp-servers.md)
-- [ ] 2026-07-23 — [Azure & Microsoft MCP Servers — Build 2026: App Service MCP, Copilot Studio GA, Foundry Toolboxes, Two CVEs](content/reviews/azure-mcp-servers.md)
-- [ ] 2026-07-23 — [BI & Reporting MCP Servers — Tableau, Power BI, Grafana, Metabase, Looker, and Superset](content/reviews/bi-reporting-mcp-servers.md)
+- [x] 2026-07-23 — [Audio & Video Processing MCP Servers — ElevenLabs, FFmpeg, DaVinci Resolve, Ableton, REAPER, and More](content/reviews/audio-video-processing-mcp-servers.md)
+- [x] 2026-07-23 — [Automotive & Vehicle MCP Servers — Tesla, OBD-II Diagnostics, EV Charging, VIN Decoding, CAN Bus, Fleet Telematics, and More](content/reviews/automotive-vehicle-mcp-servers.md)
+- [x] 2026-07-23 — [Aviation & Flight MCP Servers — Flight Tracking, Booking, Weather, NOTAMs, ADS-B, Flightradar24, and Pilot Tools](content/reviews/aviation-flight-mcp-servers.md)
+- [x] 2026-07-23 — [Azure & Microsoft MCP Servers — Build 2026: App Service MCP, Copilot Studio GA, Foundry Toolboxes, Two CVEs](content/reviews/azure-mcp-servers.md)
+- [x] 2026-07-23 — [BI & Reporting MCP Servers — Tableau, Power BI, Grafana, Metabase, Looker, and Superset](content/reviews/bi-reporting-mcp-servers.md)
 - [ ] 2026-07-23 — [Backup & Disaster Recovery MCP Servers — Veeam, Commvault, Velero, File Snapshots, and More](content/reviews/backup-disaster-recovery-mcp-servers.md)
-- [ ] 2026-07-23 — [Bioinformatics & Life Sciences MCP Servers — Genomics, Proteomics, Drug Discovery, Clinical Trials, and Medical Imaging](content/reviews/bioinformatics-life-sciences-mcp-servers.md)
-- [ ] 2026-07-23 — [Blockchain & Web3 MCP Servers — Ethereum, Solana, Bitcoin, Multi-Chain, DeFi, and More](content/reviews/blockchain-web3-mcp-servers.md)
-- [ ] 2026-07-23 — [CAD & 3D Modeling MCP Servers — Blender, FreeCAD, AutoCAD, KiCad, SolidWorks, Fusion 360, OpenSCAD, and More](content/reviews/cad-3d-modeling-mcp-servers.md)
+- [x] 2026-07-23 — [Bioinformatics & Life Sciences MCP Servers — Genomics, Proteomics, Drug Discovery, Clinical Trials, and Medical Imaging](content/reviews/bioinformatics-life-sciences-mcp-servers.md)
+- [x] 2026-07-23 — [Blockchain & Web3 MCP Servers — Ethereum, Solana, Bitcoin, Multi-Chain, DeFi, and More](content/reviews/blockchain-web3-mcp-servers.md)
+- [x] 2026-07-23 — [CAD & 3D Modeling MCP Servers — Blender, FreeCAD, AutoCAD, KiCad, SolidWorks, Fusion 360, OpenSCAD, and More](content/reviews/cad-3d-modeling-mcp-servers.md)
 - [ ] 2026-07-23 — [CDN & Edge Computing MCP Servers — Cloudflare, Fastly, Akamai, Gcore, and Beyond](content/reviews/cdn-edge-computing-mcp-servers.md)
 - [ ] 2026-07-23 — [CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, TeamCity, Harness, and More](content/reviews/ci-cd-pipeline-mcp-servers.md)
-- [ ] 2026-07-23 — [CMS & Content Management MCP Servers — WordPress, Contentful, Sanity, Strapi, Directus, Ghost, and More](content/reviews/cms-content-management-mcp-servers.md)
-- [ ] 2026-07-23 — [Calendar & Scheduling MCP Servers — Google Calendar, Outlook, Apple Calendar, Cal.com, Calendly, and More](content/reviews/calendar-scheduling-mcp-servers.md)
+- [x] 2026-07-23 — [CMS & Content Management MCP Servers — WordPress, Contentful, Sanity, Strapi, Directus, Ghost, and More](content/reviews/cms-content-management-mcp-servers.md)
+- [x] 2026-07-23 — [Calendar & Scheduling MCP Servers — Google Calendar, Outlook, Apple Calendar, Cal.com, Calendly, and More](content/reviews/calendar-scheduling-mcp-servers.md)
 - [ ] 2026-07-23 — [Chaos Engineering MCP Servers — LitmusChaos, Chaos Mesh, Gremlin, Steadybit, Harness, and More](content/reviews/chaos-engineering-mcp-servers.md)
 - [ ] 2026-07-23 — [Chemistry & Molecular Modeling MCP Servers — RDKit, PubChem, ChEMBL, Docking, and More](content/reviews/chemistry-molecular-modeling-mcp-servers.md)
 - [ ] 2026-07-23 — [Code Quality, Linting & Static Analysis MCP Servers — ESLint, SonarQube, Semgrep, Ruff, Biome, and More](content/reviews/code-quality-linting-mcp-servers.md)

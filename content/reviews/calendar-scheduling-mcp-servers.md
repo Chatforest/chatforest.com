@@ -1,12 +1,12 @@
 ---
 title: "Calendar & Scheduling MCP Servers — Google Calendar, Outlook, Apple Calendar, Cal.com, Calendly, and More"
 date: 2026-03-15T14:00:00+09:00
-sources_audited: 2026-07-23
+sources_audited: 2026-08-14
 description: "Calendar and scheduling MCP servers are giving AI assistants direct access to event management, availability checking, and meeting coordination."
-og_description: "Calendar & Scheduling MCP servers: Google now has an official Calendar MCP (Developer Preview, 8 tools), google_workspace_mcp (2,900+ stars, v1.21.0, JWT OAuth), Microsoft Agent 365 went GA (May 1), Softeria 720 stars 200+ tools security-hardened, Calendly hosted MCP confirmed, temporal-cortex atomic booking NEW, CVE-2026-26118 SSRF Azure MCP (CVSS 8.8), CVE-2026-30623 LiteLLM stdio RCE. Rating: 4.0→4.5/5."
+og_description: "Calendar & Scheduling MCP servers: Google now has an official Calendar MCP (Developer Preview, 8 tools), google_workspace_mcp (3,000+ stars, v1.24.1, JWT OAuth), Microsoft Agent 365 went GA (May 1), Softeria 911 stars 300+ tools security-hardened, Calendly hosted MCP confirmed, temporal-cortex atomic booking NEW, CVE-2026-26118 SSRF Azure MCP (CVSS 8.8), CVE-2026-30623 LiteLLM stdio RCE. Rating: 4.0→4.5/5."
 content_type: "Review"
-card_description: "Calendar and scheduling MCP servers across Google Calendar, Microsoft Outlook, Apple Calendar, CalDAV, scheduling platforms, and task automation. Google's official Calendar MCP server (Developer Preview, 8 tools, calendarmcp.googleapis.com) resolves the category's most-cited gap — no official Google server. google_workspace_mcp grew to 2,900+ stars (v1.21.0, May 17) with JWT OAuth and calendar date-parsing fixes. Microsoft Agent 365 CalendarTools went GA May 1, 2026, with Defender security governance coming June. Softeria's ms-365-mcp-server surged to 720 stars with 200+ tools and active security hardening (SSRF mitigation, account pinning). Calendly's hosted MCP at mcp.calendly.com is confirmed stable. New entrant temporal-cortex/mcp adds atomic Two-Phase Commit booking and TOON token compression. CVE-2026-26118 (Azure MCP SSRF, CVSS 8.8, patched) and CVE-2026-30623 (LiteLLM stdio RCE, critical) are active ecosystem concerns. Rating: 4.0→4.5/5 — Google's official entry resolves the biggest gap."
-last_refreshed: 2026-05-20
+card_description: "Calendar and scheduling MCP servers across Google Calendar, Microsoft Outlook, Apple Calendar, CalDAV, scheduling platforms, and task automation. Google's official Calendar MCP server (Developer Preview, 8 tools, calendarmcp.googleapis.com) resolves the category's most-cited gap — no official Google server. google_workspace_mcp has grown to 3,000+ stars (v1.24.1 as of this update) with JWT OAuth and calendar date-parsing fixes. Microsoft Agent 365 CalendarTools went GA May 1, 2026, with Defender security governance coming June. Softeria's ms-365-mcp-server has surged to 911 stars with 300+ tools and active security hardening (SSRF mitigation, account pinning). Calendly's hosted MCP at mcp.calendly.com is confirmed stable. New entrant temporal-cortex/mcp adds atomic Two-Phase Commit booking and TOON token compression. CVE-2026-26118 (Azure MCP SSRF, CVSS 8.8, patched) and CVE-2026-30623 (LiteLLM stdio RCE, critical) are active ecosystem concerns. Rating: 4.0→4.5/5 — Google's official entry resolves the biggest gap."
+last_refreshed: 2026-08-14
 ---
 
 Calendar and scheduling MCP servers are giving AI assistants direct access to event management, availability checking, and meeting coordination. Instead of switching between your IDE and a calendar app, these servers let AI agents create events, find free slots, manage attendees, and coordinate schedules — all through the Model Context Protocol.
@@ -21,15 +21,15 @@ The landscape spans seven areas: **Google Calendar** (the most implementations, 
 
 **[Microsoft Agent 365 CalendarTools went Generally Available May 1, 2026](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/).** Previously in preview; now production-ready for commercial customers. The CalendarTools endpoint (`agent365.svc.cloud.microsoft`) includes recurring event support, Teams meeting creation, attendee notification on cancel, multi-user availability checking, and free/busy schedule retrieval. Starting June 2026, Microsoft Defender will provide asset context mapping for each Agent 365 deployment — tracking which MCP servers are configured, which identities are associated, and which cloud resources those identities can reach. Cross-cloud registry sync with AWS Bedrock and Google Cloud connections entered public preview.
 
-**Softeria ms-365-mcp-server: 90+ tools became 200+ tools, extensive security hardening.** Stars grew from 635 to **720** and the server went from v0.36 to v0.111 (May 19) — 11+ releases in the review window. The tool count claim is now "200+ tools covering most of the Microsoft Graph API surface." Security-focused releases: log file permissions restricted to owner-only (v0.106.2), redirect_uri validation before forwarding to Microsoft as an SSRF mitigation (v0.107.1), tool scope filtering (v0.109.0), and strict account pinning to prevent account-switching attacks (v0.110.0). Pluggable auth cache storage added v0.111.0.
+**Softeria ms-365-mcp-server: 90+ tools became 200+ tools in the review window, extensive security hardening.** Stars grew from 635 to 720 and the server went from v0.36 to v0.111 (May 19) — 11+ releases in the review window. Security-focused releases: log file permissions restricted to owner-only (v0.106.2), redirect_uri validation before forwarding to Microsoft as an SSRF mitigation (v0.107.1), tool scope filtering (v0.109.0), and strict account pinning to prevent account-switching attacks (v0.110.0). Pluggable auth cache storage added v0.111.0. Development has continued well past the review window: as of this audit (Aug 14, 2026) the server is at [v0.143.0](https://github.com/Softeria/ms-365-mcp-server/releases) with **911 stars** and, per the project's own README, **300+ tools**.
 
-**Two calendar security vulnerabilities to know.** [CVE-2026-26118](https://www.sentinelone.com/vulnerability-database/cve-2026-26118/) (CVSS 8.8, High) is a Server-Side Request Forgery in Azure MCP Server Tools — patched in Microsoft's March 10, 2026 Patch Tuesday. Softeria's SSRF mitigation patches (May 2026) appear to be a direct response to this CVE class. Separately, [CVE-2026-30623](https://docs.litellm.ai/blog/mcp-stdio-command-injection-april-2026) is a critical command injection flaw in LiteLLM's MCP server creation, rooted in an stdio transport design flaw disclosed by OX Security — relevant to any calendar MCP server using stdio transport.
+**Two calendar security vulnerabilities to know.** [CVE-2026-26118](https://www.sentinelone.com/vulnerability-database/cve-2026-26118/) (CVSS 8.8, High) is a Server-Side Request Forgery in Azure MCP Server Tools — patched in Microsoft's [March 10, 2026 Patch Tuesday](https://blog.talosintelligence.com/microsoft-patch-tuesday-march-2026/). Softeria's SSRF mitigation patches (May 2026) appear to be a direct response to this CVE class. Separately, [CVE-2026-30623](https://docs.litellm.ai/blog/mcp-stdio-command-injection-april-2026) is a critical command injection flaw in LiteLLM's MCP server creation, rooted in an stdio transport design flaw disclosed by OX Security — relevant to any calendar MCP server using stdio transport.
 
 **WebMCP proposed as open web standard** at Google I/O 2026 — a browser-based API for AI agents to execute tasks via JavaScript functions and HTML forms. Not calendar-specific but directly relevant to how scheduling AI will operate in browsers going forward.
 
 **temporal-cortex/mcp** is a new infrastructure-focused calendar MCP server with novel reliability architecture.
 
-The headline findings: **Google finally has an official Calendar MCP** (Developer Preview) — the single biggest change from April. **google_workspace_mcp** grew to 2,900+ stars and is now the leading community Google server by star count. **Microsoft Agent 365 is GA**, adding enterprise-grade governance. **Softeria's community M365 server has grown from 90+ to 200+ tools** with significant security hardening. The security picture has two new CVEs to track.
+The headline findings: **Google finally has an official Calendar MCP** (Developer Preview) — the single biggest change from April. **google_workspace_mcp** grew to 3,000+ stars and is now the leading community Google server by star count. **Microsoft Agent 365 is GA**, adding enterprise-grade governance. **Softeria's community M365 server has grown from 90+ to 300+ tools** (as of this audit) with significant security hardening. The security picture has two new CVEs to track.
 
 ## Google Calendar
 
@@ -39,7 +39,7 @@ The headline findings: **Google finally has an official Calendar MCP** (Develope
 |--------|-------|----------|---------|-------|
 | [Google Calendar API MCP](https://developers.google.com/workspace/calendar/api/guides/configure-mcp-server) | — | — | — | 8 |
 
-**NEW — Official.** Google's official Calendar MCP server at `calendarmcp.googleapis.com` launched in Developer Preview as of April 22, 2026, resolving the category's longest-standing gap. The 8 tools cover core calendar operations: list calendars, list events, check availability, create/update/delete events, RSVP to invitations, and suggest available meeting times.
+**NEW — Official.** Google's official Calendar MCP server at `calendarmcp.googleapis.com` launched in Developer Preview as of April 22, 2026, resolving the category's longest-standing gap. The 8 tools cover core calendar operations: list calendars, list events, get event details, create/update/delete events, RSVP to invitations, and suggest available meeting times.
 
 Authentication uses OAuth 2.0 with scope-based access control — the server inherits the same data governance permissions as the authenticated user. A usage quota update (May 1, 2026) introduced a new tiering model aligned with Google's standardized model for agent tools and APIs.
 
@@ -49,19 +49,19 @@ As a Developer Preview, this is not yet GA. Feature depth is lighter than leadin
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [nspady/google-calendar-mcp](https://github.com/nspady/google-calendar-mcp) | 1,100 | TypeScript | MIT | 12 |
+| [nspady/google-calendar-mcp](https://github.com/nspady/google-calendar-mcp) | 1,200 | TypeScript | MIT | 12 |
 
 The standout dedicated Google Calendar MCP server. Supports **multi-account** connections (work, personal, etc.) with simultaneous querying across all calendars, plus **cross-account conflict detection** that catches overlapping events across different Google accounts.
 
-The 12 tools cover the full calendar lifecycle: list calendars, list events, search events, create/update/delete events, respond to attendance, check free/busy availability, and manage accounts. Advanced features include recurring event modification, natural language scheduling understanding, and intelligent event import from images, PDFs, and web links. No new releases since v2.6.1 (March 2, 2026) — the project has gone quiet for roughly 7 weeks. Still the best dedicated Google Calendar integration, though Google's official server will likely close the gap over time.
+The 12 tools cover the full calendar lifecycle: list calendars, list events, search events, create/update/delete events, respond to attendance, check free/busy availability, and manage accounts. Advanced features include recurring event modification, natural language scheduling understanding, and intelligent event import from images, PDFs, and web links. Latest release is [v2.6.2](https://github.com/nspady/google-calendar-mcp/releases) (June 1, 2026, a regex-safety fix); no releases since — the project has gone quiet for roughly 10 weeks as of this audit. Still the best dedicated Google Calendar integration, though Google's official server will likely close the gap over time.
 
 ### google_workspace_mcp (taylorwilsdon)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,900+ | Python | — | 50+ across services |
+| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 3,000+ | Python | MIT | 50+ across services |
 
-The most feature-complete and fastest-growing Google Workspace MCP server. Stars grew to **2,900+**, with four releases (v1.20.1–v1.21.0, April 28–May 17). Covers Gmail, **Calendar**, Docs, Sheets, Slides, Chat, Forms, Tasks, Search, and Drive in a single server.
+The most feature-complete and fastest-growing Google Workspace MCP server. Stars grew to **2,900+** in the April–May window, with four releases (v1.20.1–v1.21.0, April 28–May 17); development has continued since, and as of this audit (Aug 14, 2026) the project is at [v1.24.1](https://github.com/taylorwilsdon/google_workspace_mcp/releases) with **3,000+ stars**. Covers Gmail, **Calendar**, Docs, Sheets, Slides, Chat, Forms, Tasks, Search, and Drive in a single server.
 
 Post-April updates relevant to calendar: **calendar date-parsing robustness** in v1.21.0 (defensive handling of malformed dates including double-encoded JSON and literal "null" strings from LLM clients), **JWT signing key OAuth token passthrough** (deploy without sharing your Google OAuth client secret), and domain-wide delegation with per-request impersonation for organization-wide deployments. Also fixed: HTML escaping in OAuth callbacks (XSS prevention in v1.20.1), shared Drives enumeration, OAuth port auto-resolution for multi-process environments.
 
@@ -71,7 +71,7 @@ This is now the natural first choice if you use or plan to use other Google Work
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [deciduus/calendar-mcp](https://github.com/deciduus/calendar-mcp) | 23 | Python | AGPL-3.0 / Commercial | 12 |
+| [deciduus/calendar-mcp](https://github.com/deciduus/calendar-mcp) | 26 | Python | AGPL-3.0 / Commercial | 12 |
 
 A Python-native alternative with OAuth 2.0 and automatic token management. Unique features: **mutual meeting slot detection** across multiple calendars, **daily busyness analysis**, and **attendee response tracking**. The dual AGPL-3.0/Commercial license suits both open-source and enterprise use. The busyness analysis tool is rare across all calendar MCP servers — it provides a structured breakdown of how packed a day is, useful for AI agents making scheduling decisions.
 
@@ -79,7 +79,7 @@ A Python-native alternative with OAuth 2.0 and automatic token management. Uniqu
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [guinacio/mcp-google-calendar](https://github.com/guinacio/mcp-google-calendar) | 9 | Python | MIT | 8 |
+| [guinacio/mcp-google-calendar](https://github.com/guinacio/mcp-google-calendar) | 10 | Python | MIT | 8 |
 
 A lighter Python implementation with **automatic time conflict detection**, **recurring event support** (iCalendar RRULE format), and **timezone-aware scheduling**. The 8 tools cover event CRUD, calendar listing, timezone info, current date retrieval, and availability checking.
 
@@ -100,7 +100,7 @@ Google Calendar now has the most MCP server implementations of any calendar plat
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [microsoft/mcp — CalendarTools](https://github.com/microsoft/mcp) | 2,800+ (mono-repo) | C# | — | Multiple |
+| [microsoft/mcp — CalendarTools](https://github.com/microsoft/mcp) | 3,600+ (mono-repo) | C# | — | Multiple |
 
 **Official** remote MCP server from Microsoft, **Generally Available as of May 1, 2026**. Hosted at `agent365.svc.cloud.microsoft/agents/tenants/{tenant_id}/servers/mcp_CalendarTools`. No local setup — AI clients connect directly to Microsoft infrastructure with tenant-scoped authentication via Microsoft Graph Calendar APIs.
 
@@ -112,9 +112,9 @@ Starting June 2026, Microsoft Defender will add asset context mapping — tracki
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | 720 | TypeScript | MIT | 200+ |
+| [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) | 911 | TypeScript | MIT | 300+ |
 
-The most comprehensive community Microsoft 365 MCP server, now with **200+ tools covering most of the Microsoft Graph API surface** (was "90+ tools" in April). Stars grew from 635 to **720**. The server went from v0.36 to v0.111 (May 19) — 11+ releases in the window, mostly adding tools and security hardening.
+The most comprehensive community Microsoft 365 MCP server. It had **200+ tools** by May 2026 (was "90+ tools" in April) and, per the project's own README, has since grown to **300+ tools covering most of the Microsoft Graph API surface** as of this audit. Stars have grown from 635 in April to **911** as of this audit. The server went from v0.36 to v0.111 (May 19) — 11+ releases in the review window alone — and has continued shipping since, reaching [v0.143.0](https://github.com/Softeria/ms-365-mcp-server/releases) (Aug 13, 2026).
 
 Key security releases in May 2026: log file permissions restricted to owner-only (v0.106.2), redirect_uri validation before forwarding to Microsoft as an SSRF mitigation (v0.107.1, directly relevant to CVE-2026-26118 class), filter tools by allowed scopes (v0.109.0), and strict account pinning to prevent account-switching attacks (v0.110.0). Pluggable auth cache storage added in v0.111.0.
 
@@ -124,7 +124,7 @@ Core differentiators remain: **dynamic discovery** that keeps initial context sm
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [merajmehrabi/Outlook_Calendar_MCP](https://github.com/merajmehrabi/Outlook_Calendar_MCP) | 33 | VBScript/JS | MIT | 6 |
+| [merajmehrabi/Outlook_Calendar_MCP](https://github.com/merajmehrabi/Outlook_Calendar_MCP) | 40 | VBScript/JS | MIT | 6 |
 
 A **Windows-only** local implementation interfacing directly with the Outlook desktop client via VBScript. Works without Microsoft Graph API credentials — if Outlook is installed and logged in, it works. The find_free_slots capability is practical for scheduling without API setup. Requires Node.js, the Outlook desktop app, and VBScript support (mandatory on Windows 11 24H2+).
 
@@ -132,7 +132,7 @@ A **Windows-only** local implementation interfacing directly with the Outlook de
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [hvkshetry/office-365-mcp-server](https://github.com/hvkshetry/office-365-mcp-server) | 12 | JavaScript | MIT | 24 |
+| [hvkshetry/office-365-mcp-server](https://github.com/hvkshetry/office-365-mcp-server) | 16 | JavaScript | MIT | 24 |
 
 24 consolidated tools spanning email, **calendar**, Teams, OneDrive/SharePoint, contacts, Planner, To Do, groups, and directory services — all through the Graph API. One server replaces what would otherwise be 5–6 separate MCP servers.
 
@@ -162,9 +162,9 @@ Community forks have emerged with different specializations: **adamzaidi/icloud-
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 311 | Python | MIT | Multiple |
+| [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 323 | Python | MIT | Multiple |
 
-The most popular dedicated macOS Calendar MCP server, growing from 278 to **311 stars**. Uses PyObjC to interface directly with macOS Calendar (EventKit) — no separate API credentials needed. Supports event creation with location/notes/reminders/recurring patterns, schedule querying, availability checking, and multi-calendar support including Google Calendar accounts synced through macOS Calendar.
+The most popular dedicated macOS Calendar MCP server, growing from 278 stars in April to **323 stars** as of this audit. Uses PyObjC to interface directly with macOS Calendar (EventKit) — no separate API credentials needed. Supports event creation with location/notes/reminders/recurring patterns, schedule querying, availability checking, and multi-calendar support including Google Calendar accounts synced through macOS Calendar.
 
 Note: the project itself has not been updated since February 2025 — star growth is organic community interest, not active development.
 
@@ -179,7 +179,7 @@ Note: the project itself has not been updated since February 2025 — star growt
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [dominik1001/caldav-mcp](https://github.com/dominik1001/caldav-mcp) | 57 | TypeScript | MIT | 4 |
+| [dominik1001/caldav-mcp](https://github.com/dominik1001/caldav-mcp) | 97 | TypeScript | MIT | 4 |
 
 The universal calendar server — **any CalDAV-compliant calendar** works here: Nextcloud, Radicale, Baikal, iCloud, FastMail, Synology Calendar, and dozens more. The 4 tools (`create-event`, `list-events`, `delete-event`, `list-calendars`) cover essential operations. For self-hosted calendar users, this is the obvious choice.
 
@@ -198,11 +198,11 @@ Two implementations targeting iCloud Calendar specifically via CalDAV. **icloud-
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [calcom/cal-mcp](https://github.com/calcom/cal-mcp) | 22 | TypeScript | — | 9 |
+| [calcom/cal-mcp](https://github.com/calcom/cal-mcp) | 30 | TypeScript | — | 9 |
 
-**Official** MCP server from Cal.com. Stars grew from 18 to **22**. The 9 core tools cover the booking lifecycle: `getBooking`, `getBookings`, `createBooking`, `rescheduleBooking`, `cancelBooking`, `getEventTypes`, `getEventTypeById`, `updateEventType`, `deleteEventType`. The Cal.com docs now officially reference MCP server integration, and Zapier offers a Cal.com MCP integration at `zapier.com/mcp/calcom`.
+**Official** MCP server from Cal.com. Stars grew from 18 in April to **30** as of this audit. The 9 core tools cover the booking lifecycle: `getBooking`, `getBookings`, `createBooking`, `rescheduleBooking`, `cancelBooking`, `getEventTypes`, `getEventTypeById`, `updateEventType`, `deleteEventType`. The Cal.com docs now officially reference MCP server integration, and Zapier offers a Cal.com MCP integration at `zapier.com/mcp/calcom`.
 
-Note: the repository has seen no commits in 2026, which conflicts with its "in active development" documentation status. Community alternatives include **Danielpeter-99/calcom-mcp** (FastMCP implementation) and **bcharleson/calcom-cli** (61 tools, Cal.com API v2 full coverage, Zod-validated input schemas, structured JSON output, automatic retry with exponential backoff).
+Note: per the repository's commit history, the most recent commit is from May 22, 2025 — over a year with no commits as of this audit, which conflicts with its "in active development" documentation status. Community alternatives include **Danielpeter-99/calcom-mcp** (FastMCP implementation) and **bcharleson/calcom-cli** (61 tools, Cal.com API v2 full coverage, Zod-validated input schemas, structured JSON output, automatic retry with exponential backoff).
 
 ### Calendly MCP Server (Official)
 
@@ -210,7 +210,7 @@ Note: the repository has seen no commits in 2026, which conflicts with its "in a
 |--------|-------|------|---------|-------|
 | [Calendly MCP](https://developer.calendly.com/calendly-mcp-server) | — | Hosted | — | Multiple |
 
-**Official** hosted MCP server from Calendly at `mcp.calendly.com`, launched March 11, 2026. **No self-hosting or local deployment** — Calendly runs the infrastructure. Authentication uses **DCR (RFC 7591)** — no pre-registered OAuth app or secrets needed. Works on **all Calendly plans including free**. Compatible with ChatGPT, Claude, and any MCP-compatible client.
+**Official** hosted MCP server from Calendly at `mcp.calendly.com`, [launched March 11, 2026](https://community.calendly.com/developer-faq-62/announcing-the-calendly-mcp-server-5450). **No self-hosting or local deployment** — Calendly runs the infrastructure. Authentication uses **DCR (RFC 7591)** — no pre-registered OAuth app or secrets needed. Works on [all Calendly plans including free](https://calendly.com/blog/mcp-server). Compatible with ChatGPT, Claude, and any MCP-compatible client.
 
 AI assistants can check/update availability, generate scheduling links, manage scheduled events, view meetings, and book/cancel via natural language. No feature changes were announced post-April 22 — the March launch details are now confirmed and stable.
 
@@ -230,7 +230,7 @@ Lets AI assistants fill out When2Meet availability polls. Features automatic eve
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [temporal-cortex/mcp](https://github.com/temporal-cortex/mcp) | 8 | — | — | 18 |
+| [temporal-cortex/mcp](https://github.com/temporal-cortex/mcp) | 12 | — | MIT | 18 |
 
 **NEW.** An infrastructure-focused calendar MCP server with a distinct reliability architecture. Key differentiators:
 
@@ -240,13 +240,13 @@ Lets AI assistants fill out When2Meet availability polls. Features automatic eve
 
 **TOON (Token-Optimized Object Notation)** output format — approximately 40% fewer tokens than standard JSON responses, reducing cost for long scheduling sessions.
 
-Multi-provider support (Google Calendar, Microsoft Outlook, CalDAV) with 18 tools across 5 architectural layers. Also accessible via REST, A2A JSON-RPC, and browser. Available as `npx @temporal-cortex/cortex-mcp`. v0.9.1 (March 2026). Still very low star count (8) but technically differentiated.
+Multi-provider support (Google Calendar, Microsoft Outlook, CalDAV) with 18 tools across 5 architectural layers. Also accessible via REST, A2A JSON-RPC, and browser. Available as `npx @temporal-cortex/cortex-mcp`. v0.9.1 (March 2026). Still very low star count (12 as of this audit) but technically differentiated.
 
 ### calendar-mcp (MarimerLLC)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [MarimerLLC/calendar-mcp](https://github.com/MarimerLLC/calendar-mcp) | 11 | C# | MIT | 14 |
+| [MarimerLLC/calendar-mcp](https://github.com/MarimerLLC/calendar-mcp) | 19 | C# | MIT | 14 |
 
 A unified MCP server aggregating **Microsoft 365, Outlook.com, Google Workspace, ICS feeds, and JSON calendar files** in a single interface. 14 tools spanning account listing, email operations, calendar management, contact handling, and availability checking across all connected providers. The key value: instead of configuring separate MCP servers for work (M365), personal (Google), and subscription (ICS) calendars, this provides a unified view. Supports both local stdio and containerized HTTP deployment.
 
@@ -256,7 +256,7 @@ A unified MCP server aggregating **Microsoft 365, Outlook.com, Google Workspace,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [PhialsBasement/scheduler-mcp](https://github.com/PhialsBasement/scheduler-mcp) | 54 | Python | MIT | 12 |
+| [PhialsBasement/scheduler-mcp](https://github.com/PhialsBasement/scheduler-mcp) | 58 | Python | MIT | 12 |
 
 A **task automation scheduler** built on MCP, not a calendar server. Uses cron expressions to schedule shell commands, API calls, AI content generation tasks, and desktop notifications. Four task types: **command** (shell), **API** (HTTP requests), **AI** (content generation), and **reminder** (desktop notifications). Cross-platform (Windows, macOS, Linux). Useful for AI agents that need to schedule recurring operations rather than calendar events.
 
@@ -264,7 +264,7 @@ A **task automation scheduler** built on MCP, not a calendar server. Uses cron e
 
 Two CVEs directly affect this category:
 
-**[CVE-2026-26118](https://www.sentinelone.com/vulnerability-database/cve-2026-26118/) (CVSS 8.8, High)** — Server-Side Request Forgery in Azure MCP Server Tools. Patched in Microsoft's March 10, 2026 Patch Tuesday. Softeria's May 2026 SSRF mitigation patches (v0.107.1 redirect_uri validation) appear to be a direct response to this CVE class.
+**[CVE-2026-26118](https://www.sentinelone.com/vulnerability-database/cve-2026-26118/) (CVSS 8.8, High)** — Server-Side Request Forgery in Azure MCP Server Tools. Patched in Microsoft's [March 10, 2026 Patch Tuesday](https://blog.talosintelligence.com/microsoft-patch-tuesday-march-2026/). Softeria's May 2026 SSRF mitigation patches (v0.107.1 redirect_uri validation) appear to be a direct response to this CVE class.
 
 **[CVE-2026-30623](https://docs.litellm.ai/blog/mcp-stdio-command-injection-april-2026) (critical)** — Command injection in LiteLLM's MCP server creation via an stdio transport design flaw. Disclosed by OX Security (April 2026). Relevant to any calendar MCP server using stdio transport.
 
@@ -285,8 +285,8 @@ Previously listed gap now resolved: ~~No official Google Calendar MCP server~~ �
 
 **Rating: 4.0→4.5 / 5** — The biggest single change in this review window is Google's official Calendar MCP server entering Developer Preview. The April 22 review called "No official MCP server from Google or Apple" the primary gap. One of those two is now resolved.
 
-**Google Calendar** now has three strong options: the official Developer Preview server (8 tools, enterprise provenance, OAuth 2.0), nspady's dedicated community server (1,100 stars, 12 tools, cross-account conflict detection), and taylorwilsdon's google_workspace_mcp (2,900+ stars, v1.21.0, 10+ Google services). **Microsoft** is stronger still — the official CalendarTools is now GA with Defender governance coming in June, and Softeria's community server grew from 90+ to 200+ tools with meaningful security hardening. **Scheduling platforms** have stabilized at three official servers: Microsoft (GA), Calendly (hosted, all plans), and Cal.com (official but low 2026 commit activity). **Apple Calendar** remains the weak point — apple-mcp is archived, no official replacement exists, and community forks are fragmented.
+**Google Calendar** now has three strong options: the official Developer Preview server (8 tools, enterprise provenance, OAuth 2.0), nspady's dedicated community server (1,200 stars, 12 tools, cross-account conflict detection), and taylorwilsdon's google_workspace_mcp (3,000+ stars, v1.24.1, 10+ Google services). **Microsoft** is stronger still — the official CalendarTools is now GA with Defender governance coming in June, and Softeria's community server has grown from 90+ to 300+ tools (as of this audit) with meaningful security hardening. **Scheduling platforms** have stabilized at three official servers: Microsoft (GA), Calendly (hosted, all plans), and Cal.com (official but no commits since May 2025). **Apple Calendar** remains the weak point — apple-mcp is archived, no official replacement exists, and community forks are fragmented.
 
 The bump to 4.5 reflects: Google's official server resolving the category's most-cited gap, google_workspace_mcp's rapid growth and active development, Microsoft Agent 365 reaching GA, and Softeria's security hardening making the community M365 option more enterprise-appropriate. The gap to 5.0: Apple has no official MCP and the community landscape is fragmented; the [CVE-2026-30623](https://docs.litellm.ai/blog/mcp-stdio-command-injection-april-2026) stdio design flaw in LiteLLM's MCP implementation creates systemic risk; AI-native scheduling platforms (Clockwise, Reclaim, Motion) still lack public MCP presence.
 
-*This review was last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
+*This review was last edited on 2026-08-14 using Claude Sonnet 5 (Anthropic).*
