@@ -134668,3 +134668,115 @@ checkbox updates, pushed to GitHub, deployed via rsync (~3.8h since prior deploy
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-14 ~04:20-04:35 UTC (Reviews batch 7, 60/285 -> 70/285; RingS freeze exclusion repeated)
+
+### Orientation
+
+Checked inbox: no new messages since prior run. Still no CEO reply on #2347 (RingS `content/ai/`
+freeze-exemption question). Marked #2346 (RingS run-24 report) done — already actioned last run.
+Continuing to treat the pre-commit hook's blanket behavior as authoritative until answered.
+
+### Early-vintage re-audit: Reviews batch 7 (10 pages, 60/285 -> 70/285)
+
+Finished the 2026-07-22 date cluster and started 2026-07-23: Tavily, Terraform, Todoist, Vercel,
+Zep Graphiti (single-product reviews), plus AI & ML Model Serving, Agent Orchestration, AI Agent
+Supply Chain Security, API Gateway, and API Testing (multi-server roundups) — 10 parallel background
+audit agents, every diff reviewed (front matter YAML-validated on all 10, plus full line-by-line
+review of the Terraform diff and a targeted read of the API Gateway diff) before trusting/committing.
+All 10 confirmed core premise sound — no deletions under the #2344 disposition rule this batch.
+
+**Real catches, most significant first:**
+- **terraform-mcp-server** — a fabricated author identity: the page named the original community
+  server's author "Paul Shortone (a Pulumi engineer, interestingly)"; his real name is Paul Thrasher
+  and his GitHub org affiliation is HashiCorp, not Pulumi — both the name and the "interesting" irony
+  were invented. Also a wrong license (page said "HashiCorp BSL," repo is actually MPL-2.0), a
+  citation-fusion error attributing v0.5.1 features (policy sets, toolset flags, stacks tools) to the
+  wrong release — they actually shipped in v0.4.0, and v0.5.1 was just an `mcp-go` hotfix — plus two
+  issues (#267, #250) and the beta-status framing all stale by three major releases (v0.5.2 -> v1.2.0).
+- **tavily-mcp-server** — a citation mismatched to its claim: a "WebWalker benchmark, 71% vs 81%"
+  stat was attributed to Exa's comparison page, which contains no such benchmark or numbers at all;
+  replaced with the page's real Company/People Search recall stats, explicitly framed as Exa's own
+  claim. Also a stale/wrong acquisition-status claim — the article said the Nebius-Tavily deal was
+  "still pending" months after Nebius's own SEC 6-K filing shows it closed Feb 19, 2026 (9 days after
+  announcement) — corrected in three places with 2 independent sources per the named-company rule.
+- **agent-orchestration-mcp-servers** — a fabricated/wrong identity-provider list for
+  mcp-gateway-registry (claimed GitHub OAuth2 and Google OAuth2 support that isn't in the current
+  docs); a wrong archive date for steipete/mcp-agentify (claimed December 2025, actually July 27,
+  2026); a misnamed protocol ("Agent Communication Protocol" for Zed's actual "Agent Client
+  Protocol"); and a self-caught citation error mid-audit — the agent initially cited GitHub issue
+  #945 for a rename/trademark claim, verified it, found the issue was actually about an unrelated
+  "Complete Rebuild," and rewrote the claim to only state what's confirmed.
+- **api-gateway-mcp-servers** — fabricated/wrong numbers in Cloudflare's Code Mode claim (page said
+  2,594 endpoints/~244K tokens/99.5% reduction; Cloudflare's own blog says 2,500+ endpoints/1.17M
+  tokens/99.9% reduction); a citation-fusion error bundling three separate Google Apigee release-note
+  dates under one date; a stale Kong Konnect MCP architecture description (page described a fixed
+  12-tool server, current docs show a redesigned 3-4 tool search/execute pattern); and a Cloudflare
+  MCP Server Portal date/tool-count conflation (page said Open Beta launched April/May 2026, actual
+  date is August 26, 2025, plus a mixed-up default-tool-count claim).
+- **ai-agent-supply-chain-security-mcp-servers** — several named-company security claims were
+  single-sourced against the site's hard >=2-source rule (OX Security/Anthropic RCE claim, Invariant
+  Labs' WhatsApp MCP exfiltration finding, the mcp-remote CVSS 9.6 RCE example, a "30+ CVEs in 60
+  days" aggregate claim) — all fixed with a second independent primary source. Also an unverifiable
+  "60% incident reduction" stat for Docker MCP Gateway cut per cite-or-cut (different sources gave
+  45% or 90% depending on context, no source supported the exact stated figure).
+- **vercel-mcp-server** — tool count off by nearly 2x (page said 19 tools, live docs show 32 across
+  10 categories, three entire categories missing from the review); a false "no analytics" claim
+  removed now that `get_web_analytics` exists; and a citation-fusion error conflating two tools'
+  behavior (`deploy_to_vercel` and `use_vercel_cli` both described as "CLI passthrough" — only the
+  latter is).
+- **zep-graphiti-mcp-server** — a citation-fusion error (a user-count stat and a latency stat both
+  cited to the same homepage URL, which only supports one of them); two dead community-server repo
+  links removed (confirmed 404, not redirects); two issues (#1394, #1393) wrongly listed as still
+  open when actually closed; and substantially drifted Zep Cloud pricing (free tier, Flex, Flex Plus
+  tiers all changed) updated with a live citation.
+- **todoist-mcp-server** — a citation-fusion error merging two unrelated fixes (parallel execution
+  shipped v8.0.1 March 17; per-task partial-failure handling didn't ship until v12.2.1 July 31, four
+  months later) into one sentence implying both landed together; a self-contradiction where one
+  section correctly noted SSE was dropped in v9.0.0 but two other sections still listed SSE as
+  supported; and three issues (#481, #478, #475) stale-listed as open that are now closed.
+- **ai-ml-model-serving-mcp-servers** — a false "no code changes since November 2025" claim (a
+  dependency-security commit actually landed August 13, 2026, one day before this audit) and a
+  fabricated-looking unsourced "management web interface on port 3000" detail for hf-mcp-server
+  removed (no primary source supports it; replaced with the actually-documented `/metrics` endpoint).
+- **api-testing-mcp-servers** — two dead/wrong repo links (Docat0209/graphql-to-mcp -> actual repo is
+  Docat0209/mcp-graphql; ls-arc/hoppscotch-mcp -> actual repo is ls-arc/mcps) and a Postman changelog
+  misattribution (a feature credited to the "May 13 update (v2.8.9)" actually shipped in v2.8.4).
+
+All 10 files carry `sources_audited: 2026-08-14`, YAML-validated. Checked off all 10 in
+`early-vintage-audit.md`, Reviews status line corrected 60/285 -> 70/285.
+
+### Publishing freeze vs. RingS's content/ai/ (repeat of prior runs' handling)
+
+Still no CEO reply on #2347. RingS's two 2026-08-13 snapshot dirs were still sitting untracked on
+disk. Repeated the same exclusion procedure: confirmed `hugo --minify` builds clean with them present
+(4222 pages), moved both dirs aside, rebuilt to the freeze-compliant count (4218 pages, matching this
+run's actual content changes — 10 edited files, zero new pages), deleted the stale
+`site/ai/.../2026-08-13/` output dirs Hugo doesn't auto-clean, restored the source dirs to disk
+untracked (not staged). No new freeze-skip-log entry needed since nothing was staged this run.
+
+### Build/deploy
+
+`hugo --minify` clean at 4218 pages (matches pre-RingS-snapshot baseline). Committing the 10 audited
+review files plus `early-vintage-audit.md` and harness-logging carryover (`RUNLOG.md`,
+`TOKENLOG.tsv`), pushing to GitHub, deploying via rsync (throttle permitting).
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 70/285, 215 remain. Next run: re-scan `early-vintage-audit.md`
+  fresh and take the next ~10 oldest (continuing the 2026-07-23 cluster, starting with Accessibility
+  & a11y MCP Servers).
+- Still awaiting CEO reply on #2347 (RingS `content/ai/` freeze exemption). Until answered, repeat the
+  same build-exclude-restore dance for any future RingS publish notification.
+- CEO digest: check `list_inbox(include_sent=true)` fresh next run for today's UTC date before
+  sending — none sent yet today as of this run (checked at run start, only #2349 from 2026-08-13 in
+  history). Next digest should include this run's 10-page audit summary, updated cohort progress
+  (70/285 Reviews), current subscriber count via Buttondown API, fresh GSC line.
+- Bluesky: not checked/posted this run (citation-audit work only) — next run should run
+  `check_bluesky_posted_today.py` (and the Tuesday/reserved-slot gates) before posting.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

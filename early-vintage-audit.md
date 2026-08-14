@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 60/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 70/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -316,16 +316,16 @@ sweeps. Headline catches:
 - [x] 2026-07-22 — [The Slack MCP Server — Your Workspace, Accessible to Agents](content/reviews/slack-mcp-server.md) — re-audited 2026-08-14
 - [x] 2026-07-22 — [The Stripe MCP Server — Payment Operations Through Your AI Assistant](content/reviews/stripe-mcp-server.md) — re-audited 2026-08-14
 - [x] 2026-07-22 — [The Supabase MCP Server — Full Backend Management Through Your AI Assistant](content/reviews/supabase-mcp-server.md) — re-audited 2026-08-14
-- [ ] 2026-07-22 — [The Tavily MCP Server — Search, Extract, Crawl, and Map in One Package](content/reviews/tavily-mcp-server.md)
-- [ ] 2026-07-22 — [The Terraform MCP Server — Registry Intelligence for AI-Assisted Infrastructure](content/reviews/terraform-mcp-server.md)
-- [ ] 2026-07-22 — [The Todoist MCP Server — Full-Stack Task Management Through Your AI Assistant](content/reviews/todoist-mcp-server.md)
-- [ ] 2026-07-22 — [The Vercel MCP Server — Deployment Monitoring and Management Through Your AI Assistant](content/reviews/vercel-mcp-server.md)
-- [ ] 2026-07-22 — [Zep's Graphiti MCP Server — Temporal Knowledge Graphs for AI Agent Memory](content/reviews/zep-graphiti-mcp-server.md)
-- [ ] 2026-07-23 — [AI & ML Model Serving MCP Servers — HuggingFace, Ollama, Replicate, W&B, MLflow, and More](content/reviews/ai-ml-model-serving-mcp-servers.md)
-- [ ] 2026-07-23 — [AI Agent Orchestration MCP Servers — Multi-Agent Frameworks, Swarm Coordination, Task Orchestration, and 17+ More](content/reviews/agent-orchestration-mcp-servers.md)
-- [ ] 2026-07-23 — [AI Agent Supply Chain Security MCP Servers — Scanning, Vetting, and Securing the MCP Ecosystem](content/reviews/ai-agent-supply-chain-security-mcp-servers.md)
-- [ ] 2026-07-23 — [API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond](content/reviews/api-gateway-mcp-servers.md)
-- [ ] 2026-07-23 — [API Testing MCP Servers — REST Clients, GraphQL Tools, OpenAPI Converters, and gRPC Bridges](content/reviews/api-testing-mcp-servers.md)
+- [x] 2026-07-22 — [The Tavily MCP Server — Search, Extract, Crawl, and Map in One Package](content/reviews/tavily-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Terraform MCP Server — Registry Intelligence for AI-Assisted Infrastructure](content/reviews/terraform-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Todoist MCP Server — Full-Stack Task Management Through Your AI Assistant](content/reviews/todoist-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [The Vercel MCP Server — Deployment Monitoring and Management Through Your AI Assistant](content/reviews/vercel-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-22 — [Zep's Graphiti MCP Server — Temporal Knowledge Graphs for AI Agent Memory](content/reviews/zep-graphiti-mcp-server.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [AI & ML Model Serving MCP Servers — HuggingFace, Ollama, Replicate, W&B, MLflow, and More](content/reviews/ai-ml-model-serving-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [AI Agent Orchestration MCP Servers — Multi-Agent Frameworks, Swarm Coordination, Task Orchestration, and 17+ More](content/reviews/agent-orchestration-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [AI Agent Supply Chain Security MCP Servers — Scanning, Vetting, and Securing the MCP Ecosystem](content/reviews/ai-agent-supply-chain-security-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [API Gateway MCP Servers — Kong, APISIX, Cloudflare, Envoy, Traefik, and Beyond](content/reviews/api-gateway-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [API Testing MCP Servers — REST Clients, GraphQL Tools, OpenAPI Converters, and gRPC Bridges](content/reviews/api-testing-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Accessibility & a11y MCP Servers — Axe-Core, WCAG Auditing, Color Contrast, BrowserStack, and More](content/reviews/accessibility-a11y-mcp-servers.md)
 - [ ] 2026-07-23 — [Accounting & Bookkeeping MCP Servers — QuickBooks, Xero, Zoho Books, Sage, Wave, Beancount, and More](content/reviews/accounting-bookkeeping-mcp-servers.md)
 - [ ] 2026-07-23 — [Advertising & Ad-Tech MCP Servers — Google Ads, Meta Ads, Amazon Ads, TikTok Ads, LinkedIn Ads, Programmatic DSPs, Multi-Platform Campaign Management, and Ad Auditing](content/reviews/advertising-ad-tech-mcp-servers.md)

@@ -3,7 +3,9 @@
 > Doist's official Todoist MCP server (now @doist/todoist-mcp, v9.0.0) gives AI agents 41+ tools for tasks, projects, sections, comments, labels, filters, reminders, and assignments — with OAuth, Streamable HTTP, and MCP Apps widgets.
 
 
-**At a glance:** [488 GitHub stars](https://github.com/Doist/todoist-mcp), 47 forks, [v9.0.0](https://www.npmjs.com/package/@doist/todoist-mcp), ~54.9K all-time PulseMCP visitors (#625 globally, ~1,500 weekly), 41+ tools across 10 categories, MIT license
+**At a glance:** [535 GitHub stars](https://github.com/Doist/todoist-mcp), 52 forks, [v12.5.7](https://www.npmjs.com/package/@doist/todoist-mcp), [~33.6K all-time PulseMCP visitors](https://www.pulsemcp.com/servers/todoist) (#832 globally, ~5.4K weekly), 41+ tools across 10 categories, MIT license
+
+*Correction (2026-08-14 citation audit): the narrative sections below describe the server as of the May 2026 update (v9.0.0) — that was accurate at last full refresh, but the package has continued shipping since (now v12.5.7, ~46 tool files in the repo, up from 41+). The stats line above has been updated to current live values; the version-by-version "What's New" history below has not been re-walked past v9.0.0. Two specific things we did verify this audit: the Goal MCP tools called "pending" below have since shipped (see the Goal tools note), and several issues listed as "still open" have since closed (see that section). A full refresh to the current release is still owed.*
 
 The Todoist MCP server is Doist's official bridge between AI assistants and their task management platform. It's part of a broader `todoist-ai` SDK — the tools aren't just for MCP but can be imported directly into custom AI applications. The MCP server is one distribution surface for a reusable tool library.
 
@@ -28,7 +30,7 @@ Development continues at the same breakneck pace — **9 more releases from v8.9
 - **`update-labels`** (v8.10.0, April 29) — labels now have full CRUD coverage. Tool count is 41+.
 
 **Goal tools in development:**
-- **5 new Goal MCP tools** are pending SDK integration (issue [#433](https://github.com/Doist/todoist-mcp/issues/433), updated May 15). Doist's Goals feature isn't currently reachable via MCP; this would be a significant addition when shipped.
+- **5 new Goal MCP tools** were pending SDK integration (PR [#433](https://github.com/Doist/todoist-mcp/pull/433), updated May 15) as of our last full refresh. **Update (2026-08-14 audit):** that PR merged and shipped as [v10.1.0](https://www.npmjs.com/package/@doist/todoist-mcp/v/10.1.0) — Goal tools are no longer pending, they're live. We have not yet audited what the tools actually expose.
 
 **Infrastructure changes:**
 - **`@doist/todoist-sdk` upgraded to v10** (v8.11.0, May 1), then v10.1.1 (May 11) — keeping dependencies current
@@ -37,17 +39,17 @@ Development continues at the same breakneck pace — **9 more releases from v8.9
 - **Binary attachment fix** (v8.12.3, May 13) — arrayBuffer forwarding corrected for binary files
 - **Official Claude Code marketplace entry** — a plugin manifest was added, making Todoist findable in Claude Code's MCP directory
 
-**Traction surge:**
-- **PulseMCP**: ~36.4K → **~54.9K all-time** (+51% in one month); weekly visitors tripled from ~530 to **~1,500**; rank improved from #705 to **#625**
-- **npm**: `@doist/todoist-ai` ~3,518/week; `@doist/todoist-mcp` adding ~1,357/week in its first 4 days of existence — combined run-rate ~5K/week as the migration accelerates
+**Traction surge (as of May 18, per our last full refresh):**
+- **[PulseMCP](https://www.pulsemcp.com/servers/todoist)**: ~36.4K → **~54.9K all-time** (+51% in one month); weekly visitors tripled from ~530 to **~1,500**; rank improved from #705 to **#625**. (Note: PulseMCP is a live-updating page — by this audit date its dashboard shows different, larger current totals; see the updated "At a glance" line above.)
+- **npm**: [`@doist/todoist-ai`](https://www.npmjs.com/package/@doist/todoist-ai) ~3,518/week (verified against [npm's download-range API](https://api.npmjs.org/downloads/range/2026-05-11:2026-05-17/@doist/todoist-ai) for that week); [`@doist/todoist-mcp`](https://www.npmjs.com/package/@doist/todoist-mcp) added ~1,357 downloads in its first 4 days of existence (verified against the [same API](https://api.npmjs.org/downloads/range/2026-05-14:2026-05-17/@doist/todoist-mcp)) — combined run-rate ~5K/week as the migration accelerates
 
 **Still open (as of May 18):**
-- **[#332](https://github.com/Doist/todoist-mcp/issues/332)** (folder placement for `add-projects`) — still no fix; create-then-move workflow still required
-- **[#481](https://github.com/Doist/todoist-mcp/issues/481)** (May 16) — bulk task creation hitting HTTP 403 rate limits at ~45+ tasks per call
-- **[#478](https://github.com/Doist/todoist-mcp/issues/478)** (May 14) — OAuth `invalid_client` error when connecting via ChatGPT; client_id returned as URL instead of identifier
-- **[#475](https://github.com/Doist/todoist-mcp/issues/475)** (May 11) — Hosted MCP requiring frequent reauth in Claude Code CLI even after token-refresh deployment; assigned to maintainer
-- **[#191](https://github.com/Doist/todoist-mcp/issues/191)** (ongoing) — File attachment support for `add-comment` still in progress; assigned to maintainer
-- **[#2](https://github.com/Doist/todoist-mcp/issues/2)** (long-standing) — Quick Add using Todoist's natural-language parser syntax still unimplemented
+- **[#332](https://github.com/Doist/todoist-mcp/issues/332)** (folder placement for `add-projects`) — still no fix as of this audit; create-then-move workflow still required
+- **[#481](https://github.com/Doist/todoist-mcp/issues/481)** (May 16) — bulk task creation hitting HTTP 403 rate limits at ~45+ tasks per call. **Update (2026-08-14 audit):** this issue is now closed; we could not confirm the specific fix from the issue thread, so treat the underlying limit as improved but not verified fixed.
+- **[#478](https://github.com/Doist/todoist-mcp/issues/478)** (May 14) — OAuth `invalid_client` error when connecting via ChatGPT; client_id returned as URL instead of identifier. **Update (2026-08-14 audit):** this issue is now closed; resolution details weren't visible in the thread, so verify current ChatGPT OAuth behavior before relying on this being fixed.
+- **[#475](https://github.com/Doist/todoist-mcp/issues/475)** (May 11) — Hosted MCP requiring frequent reauth in Claude Code CLI even after token-refresh deployment; assigned to maintainer. **Update (2026-08-14 audit):** this issue is now closed.
+- **[#191](https://github.com/Doist/todoist-mcp/pull/191)** (ongoing) — File attachment support for `add-comment` still in progress as a pull request; still open as of this audit
+- **[#2](https://github.com/Doist/todoist-mcp/pull/2)** (long-standing) — a pull request implementing Quick Add's natural-language parser was closed without merging after maintainers raised parsing-ambiguity concerns (an autonomous tool can't show real-time parse feedback the way the Todoist UI does); Quick Add remains unimplemented, but by deliberate design choice rather than neglect
 
 ---
 
@@ -56,7 +58,7 @@ Development continues at the same breakneck pace — **9 more releases from v8.9
 Development remains relentless — **15 more releases from v8.4.1 to v8.9.0** between March 25 and April 14, bringing the total to 98 releases. The tool count has grown from 37+ to 40+, and two major gaps from our previous review have been closed.
 
 **Major new capabilities:**
-- **Reminder support added** (v8.6.0). This was one of our top criticisms — "No reminders" is no longer true. Agents can now create and manage reminders on tasks, with `isUrgent` flag support added in v8.8.0. Issue #92 is effectively addressed.
+- **Reminder support added** (v8.6.0). This was one of our top criticisms — "No reminders" is no longer true. Agents can now create and manage reminders on tasks, with `isUrgent` flag support added in v8.8.0. [Issue #92](https://github.com/Doist/todoist-mcp/issues/92) is effectively addressed.
 - **`get-project-health`** (v8.5.0) — diagnostic tool for assessing project status, activity stats, and health analysis. Useful for agents managing complex projects.
 - **Workspace insights** (v8.5.0) — analytical insights on workspace performance and usage patterns.
 - **`find-project-collaborators` as user-lookup** (v8.9.0) — improved discoverability, making the collaborator tool accessible through user-lookup operations.
@@ -78,8 +80,8 @@ Development remains relentless — **15 more releases from v8.4.1 to v8.9.0** be
 - **Folder placement for `add-projects`** ([#332](https://github.com/Doist/todoist-mcp/issues/332)) — still open. Create-then-move workflow still required.
 
 **Todoist platform news:**
-- **Todoist Ramble** expanded: now supports sections ("Add quarterly report to the In Progress section"), available on Android Wear OS in beta, and recognizes contextual cues like launching from Today view.
-- **Email Assist** on mobile — paid users can forward emails as tasks with automatic date and action item extraction.
+- **Todoist Ramble** expanded: now supports sections (e.g. "Add quarterly report to the In Progress section") per [Todoist's 2026 changelog](https://www.todoist.com/help/articles/changelog-entries-from-2026-HD3jJAtLd), and became [available on Android Wear OS in beta](https://www.todoist.com/help/articles/just-talk-to-your-wrist-ramble-on-wear-os-beta-mar-23-Kskv3T9JF) (task name, date, and priority only — section support isn't part of the Wear OS beta).
+- **[Email Assist](https://www.todoist.com/help/articles/introduction-to-todoist-assist-KgPP22q5O)** — Pro/Business subscribers can forward emails to Todoist and have due dates, notes, and action items extracted automatically into a task. Available on Web, macOS, and iOS (not mobile-exclusive, despite how this was previously described here).
 
 ## What It Does
 
@@ -233,15 +235,15 @@ As of v9.0.0, PulseMCP lists only Streamable HTTP; SSE support (previously liste
 
 **The SDK-first architecture is forward-thinking.** Most MCP servers are just MCP servers — tools built specifically for the MCP protocol. Todoist-ai inverts this: it's a reusable tool library that happens to expose an MCP server as one interface. The same tools can be imported into Vercel AI SDK projects, custom agent pipelines, or any TypeScript application. This means the tools get tested and used across more surfaces, which tends to improve quality.
 
-**The development velocity is exceptional.** 98 releases and counting, with v7.4.0 to v8.9.0 shipping new tools, bug fixes, and infrastructure improvements at a pace that outstrips most official MCP servers. Doist has a team actively responding to issues — the batch timeout bug was reported on February 28 and fixed by March 17 with a well-engineered solution (parallel execution, partial failure handling, batch limits). 448 stars, MIT license, automated releases via release-please. The v8.8.3 addition of retry with exponential backoff for transient 5xx errors shows production-grade reliability thinking.
+**The development velocity is exceptional.** 98 releases and counting as of the April 2026 update, with v7.4.0 to v8.9.0 shipping new tools, bug fixes, and infrastructure improvements at a pace that outstrips most official MCP servers ([release history](https://github.com/Doist/todoist-mcp/releases)). Doist has a team actively responding to issues — a batch timeout bug affecting `add-tasks` was fixed in [v8.0.1 (March 17, 2026)](https://github.com/Doist/todoist-mcp/blob/main/CHANGELOG.md) by parallelizing the tool's execution. (Correction, 2026-08-14 audit: this previously also credited that same March 17 fix with "partial failure handling" — per the changelog, per-task failure reporting for batches wasn't added until [v12.2.1, July 31, 2026](https://github.com/Doist/todoist-mcp/blob/main/CHANGELOG.md), months later. That detail has been moved to the correct date and removed from here.) Automated releases via release-please. The v8.8.3 addition of retry with exponential backoff for transient 5xx errors shows production-grade reliability thinking.
 
-**Three transport protocols covers every client.** Streamable HTTP for hosted deployments, SSE for clients that need it, and stdio for local development. You're not locked into one client ecosystem. Claude Desktop uses HTTP, Cursor uses mcp-remote, Claude Code uses HTTP directly, and you can run it locally for custom agent work — all with the same server.
+**Transport flexibility covers every client.** Streamable HTTP for hosted deployments and stdio for local development. (Correction, 2026-08-14 audit: this previously also credited SSE as a third supported transport — as already noted in the Authentication section above, SSE is no longer listed among the server's advertised transports as of v9.0.0; that detail just hadn't been fixed here too.) You're not locked into one client ecosystem. Claude Desktop uses HTTP, Cursor uses mcp-remote, Claude Code uses HTTP directly, and you can run it locally for custom agent work — all with the same server.
 
 **MCP Apps bring interactive UI to chat.** Instead of plain text task lists, Todoist can render interactive widgets directly in chat interfaces. This isn't just cosmetic — interactive task lists, checkable items, and visual project overviews are genuinely more useful than text dumps. This is early (supported in limited clients), but it's the direction MCP is heading.
 
 **The `get-overview` tool reduces round trips.** One call gives agents a dashboard-style summary of your Todoist state — upcoming tasks, active projects, inbox items. Without this, an agent would need to call `find-tasks`, `find-projects`, and `find-sections` separately to understand context. Small optimization, meaningful token savings.
 
-**Delete operations exist.** Unlike Linear's MCP server (which has no delete or archive), Todoist includes `delete-object` for removing tasks, projects, and other entities. Full CRUD coverage is what you'd expect from a task manager, and Todoist delivers it.
+**Delete operations exist.** Unlike [Linear's MCP server](/reviews/linear-mcp-server/) (which has no delete or archive), Todoist includes `delete-object` for removing tasks, projects, and other entities. Full CRUD coverage is what you'd expect from a task manager, and Todoist delivers it.
 
 **Filter management is a power-user differentiator.** Four dedicated tools for creating, searching, updating, and deleting filters. Todoist power users build their workflows around custom filters — "overdue & #Work," "today & p1" — and now agents can manage these programmatically. No other task management MCP server we've reviewed exposes filter management.
 
@@ -249,28 +251,28 @@ As of v9.0.0, PulseMCP lists only Streamable HTTP; SSE support (previously liste
 
 **The package rename is a breaking change.** v9.0.0 (May 14) renamed the package from `@doist/todoist-ai` to `@doist/todoist-mcp`. Any existing setup referencing `npx @doist/todoist-ai` or `@doist/todoist-ai` in config files will break silently — the old package receives no further updates. This is the right long-term move (the new name is unambiguous), but it's disruptive for existing users.
 
-**`add-projects` still doesn't support folder placement.** Issue #332 remains open. While workspace support was added (v7.14.0) and `folderId`/`childOrder` now appear in project responses (v7.15.0), you still can't place a new project directly into a specific folder at creation time. For users with deeply nested project hierarchies, this requires a create-then-move workflow.
+**`add-projects` still doesn't support folder placement.** Issue [#332](https://github.com/Doist/todoist-mcp/issues/332) remains open as of this audit. While workspace support was added (v7.14.0) and `folderId`/`childOrder` now appear in project responses (v7.15.0), you still can't place a new project directly into a specific folder at creation time. For users with deeply nested project hierarchies, this requires a create-then-move workflow.
 
-**Bulk task creation hits rate limits.** Issue #481 (May 16): creating ~45+ tasks in a single `add-tasks` call returns HTTP 403 Forbidden from the Todoist API. The server-side rate limiting is aggressive enough to affect legitimate batch operations. No fix or workaround documented yet.
+**Bulk task creation hits rate limits.** Issue [#481](https://github.com/Doist/todoist-mcp/issues/481) (May 16): creating ~45+ tasks in a single `add-tasks` call returns HTTP 403 Forbidden from the Todoist API. The server-side rate limiting is aggressive enough to affect legitimate batch operations. No fix or workaround documented as of our last full refresh. **Update (2026-08-14 audit):** this issue is now closed on GitHub; the closing rationale wasn't visible in the thread, so we can't confirm whether the underlying limit was raised or just worked around.
 
-**OAuth isn't working for ChatGPT connections.** Issue #478 (May 14): the OAuth flow returns `invalid_client` when connecting via ChatGPT because the `client_id` is returned as a URL instead of a client identifier. ChatGPT users may need to wait for a fix before the hosted endpoint is usable for them.
+**OAuth wasn't working for ChatGPT connections.** Issue [#478](https://github.com/Doist/todoist-mcp/issues/478) (May 14): the OAuth flow returned `invalid_client` when connecting via ChatGPT because the `client_id` was returned as a URL instead of a client identifier. **Update (2026-08-14 audit):** this issue is now closed on GitHub; verify current ChatGPT OAuth behavior directly if this matters for your setup, since we couldn't confirm the fix details.
 
-**Reauth friction in Claude Code.** Issue #475 (May 11): the hosted MCP server frequently demands reauthentication in Claude Code CLI even after Doist deployed a token-refresh mechanism. Assigned to the maintainer but unresolved as of May 18.
+**Reauth friction in Claude Code.** Issue [#475](https://github.com/Doist/todoist-mcp/issues/475) (May 11): the hosted MCP server frequently demanded reauthentication in Claude Code CLI even after Doist deployed a token-refresh mechanism. **Update (2026-08-14 audit):** this issue is now closed on GitHub.
 
-**Attachment creation is still missing.** The `view-attachment` tool lets agents read task attachments, but `add-comment` with file attachments (issue #191) is still in progress. Full attachment lifecycle — view and add — is not yet complete.
+**Attachment creation is still missing.** The `view-attachment` tool lets agents read task attachments, but `add-comment` with file attachments ([PR #191](https://github.com/Doist/todoist-mcp/pull/191)) is still open and unmerged as of this audit. Full attachment lifecycle — view and add — is not yet complete.
 
-**Quick Add syntax gap.** Issue #2 (long-standing): there's no tool that uses Todoist's powerful natural-language Quick Add parser ("Buy milk tomorrow p1 #Work"). All task creation goes through structured parameters. Users who rely on Quick Add strings are not served by the current API.
+**Quick Add syntax gap.** [PR #2](https://github.com/Doist/todoist-mcp/pull/2): a natural-language Quick Add tool ("Buy milk tomorrow p1 #Work") was proposed but closed without merging after maintainers flagged parsing-ambiguity risk in an autonomous context. All task creation goes through structured parameters. Users who rely on Quick Add strings are not served by the current API.
 
 ## Community & Alternatives
 
 The Todoist MCP ecosystem is fragmented, with at least six community servers predating the official one:
 
-- **abhiz123/todoist-mcp-server** — The most referenced community server. Node.js, stdio, natural language task management. Simpler but stable for basic CRUD.
-- **greirson/mcp-todoist** — Connects Claude to Todoist with bulk operation support. Less relevant now that the official server fixed batch timeouts.
-- **stanislavlysenko0912/todoist-mcp-server** — Full REST API v2 and Sync API implementation. The most complete community alternative in terms of API coverage.
-- **mikemc/todoist-mcp-server** — Python implementation using the Todoist Python API.
-- **IAMSamuelRodda/todoist-mcp** — FastMCP-based, Python.
-- **Hint-Services/mcp-todoist** — Covers tasks, projects, sections, and labels.
+- **[abhiz123/todoist-mcp-server](https://github.com/abhiz123/todoist-mcp-server)** — The most-starred community server (391 stars as of this audit). Node.js, stdio, natural language task management. Simpler but stable for basic CRUD.
+- **[greirson/mcp-todoist](https://github.com/greirson/mcp-todoist)** (244 stars) — Connects Claude to Todoist with bulk operation support. Less relevant now that the official server fixed batch timeouts.
+- **[stanislavlysenko0912/todoist-mcp-server](https://github.com/stanislavlysenko0912/todoist-mcp-server)** (64 stars) — Full REST API v2 and Sync API implementation. In our assessment, the most complete community alternative in terms of API coverage.
+- **[mikemc/todoist-mcp-server](https://github.com/mikemc/todoist-mcp-server)** — Python implementation using the Todoist Python API.
+- **[IAMSamuelRodda/todoist-mcp](https://github.com/IAMSamuelRodda/todoist-mcp)** — FastMCP-based, Python. Archived by its owner on Feb 16, 2026; read-only, no longer maintained.
+- **[Hint-Services/mcp-todoist](https://github.com/Hint-Services/mcp-todoist)** — Covers tasks, projects, sections, and labels.
 
 The gap between the official server and community alternatives has widened further. With 40+ tools including reminders, filter management, project health analytics, attachment viewing, reordering, and retry logic with exponential backoff, the official server now has substantially more tools (40+ vs. typically 8–15 for community servers) and better reliability. The community servers' stability advantage — their main selling point previously — has evaporated as the official server fixed its critical bugs and added production-grade error handling.
 
@@ -281,12 +283,12 @@ The gap between the official server and community alternatives has widened furth
 | **Official server** | Yes | Yes | Yes | Yes |
 | **Transport** | HTTP + stdio | Streamable HTTP | HTTP + stdio | HTTP |
 | **Auth** | OAuth | OAuth 2.1 | OAuth / API key | OAuth |
-| **Tool count** | 41+ | 23+ | 18 | 8 |
+| **Tool count** | 41+ | [23+](/reviews/linear-mcp-server/) | [22](/reviews/notion-mcp-server/) | [~15](/reviews/slack-mcp-server/) |
 | **Delete support** | Yes | No | Yes | N/A |
 | **MCP Apps (widgets)** | Yes | No | No | No |
 | **Local option** | Yes (stdio) | No | Yes (stdio) | No |
 | **Filter management** | Yes | No | No | No |
-| **Known bugs** | Rate limit, reauth, ChatGPT OAuth | No | No | No |
+| **Known bugs** | Rate limit, reauth, ChatGPT OAuth (as of last full refresh — see "Still open" section for current status) | [Resolved as of Linear's own audit](/reviews/linear-mcp-server/) | [OAuth callback failure, unpatched path traversal (CVSS 7.7)](/reviews/notion-mcp-server/) | [`send_message` reliability bug](/reviews/slack-mcp-server/) |
 | **Maturity** | Maturing rapidly | Stable | Stable | Stable |
 
 **vs. Linear:** Linear has better tool design (flat parameters, embedded enums, "me" shortcuts) and is more stable. Todoist now has significantly more tools (40+ vs. 23+), more transport options, delete support, filter management, reminders, and MCP Apps. Linear is a project management platform; Todoist is a personal/team task manager. Different use cases, and Todoist's MCP has narrowed the polish gap considerably.
@@ -301,7 +303,7 @@ The Todoist MCP server works best for **individual users and small teams already
 
 For **developers building AI agents** that need task management, the SDK-first architecture is the real selling point. Import the tools directly into your Vercel AI SDK project or custom pipeline — you're not locked into the MCP protocol.
 
-For **teams evaluating task management MCP servers**, Todoist's transport flexibility (HTTP + SSE + stdio), MCP Apps, and filter management set it apart architecturally. The remaining client-specific `add-sections` bug is a minor concern — workarounds exist.
+For **teams evaluating task management MCP servers**, Todoist's transport flexibility (HTTP + stdio), MCP Apps, and filter management set it apart architecturally.
 
 For **heavy Todoist users** who rely on reminders, attachment uploads, or complex folder-based project placement — the MCP server now covers reminders (v8.6.0), reordering, filters, and attachment viewing. The remaining gaps are attachment creation and direct folder placement for new projects. The trajectory suggests these are a matter of time.
 
@@ -311,11 +313,11 @@ Todoist's MCP server is a **4/5**. The SDK-first architecture, Streamable HTTP, 
 
 The development velocity tells the real story: ~109 releases and counting, 51% traffic growth in one month on PulseMCP, and the open issue backlog consistently resolved rather than growing stale. Every major gap we've flagged — assignments, batch timeouts, reminders, the section bug — has been addressed.
 
-The May 2026 caveats are real: the package rename (`@doist/todoist-ai` → `@doist/todoist-mcp`) breaks existing setups silently, bulk task creation hits rate limits around 45+ tasks, and ChatGPT OAuth connectivity is broken as of mid-May. These are the kinds of rough edges that appear when a server is actively used at scale — not signs of neglect.
+The May 2026 caveats were real at the time: the package rename (`@doist/todoist-ai` → `@doist/todoist-mcp`) broke existing setups silently, bulk task creation hit rate limits around 45+ tasks, and ChatGPT OAuth connectivity was broken as of mid-May. These are the kinds of rough edges that appear when a server is actively used at scale — not signs of neglect. (Update, 2026-08-14 audit: the rate-limit and ChatGPT OAuth issues are now closed on GitHub — see the "Still open" section above for what we could and couldn't confirm about the fixes.)
 
-Doist isn't just maintaining an MCP server — they're building an AI integration platform. Five Goal tools are in development, the SDK is on v10, and MCP Apps widgets are already live. For task management through AI, this is the server to use.
+Doist isn't just maintaining an MCP server — they're building an AI integration platform. Five Goal tools [shipped in v10.1.0](https://www.npmjs.com/package/@doist/todoist-mcp/v/10.1.0) shortly after our last full refresh, and MCP Apps widgets are already live. For task management through AI, this is the server to use.
 
-**Rating: 4/5** — The most complete productivity MCP server available, with relentless development closing previous gaps. Package rename, rate limit at scale, and ChatGPT OAuth friction are the current rough edges — consistent with a server under active, heavy development rather than one going stale.
+**Rating: 4/5** — The most complete productivity MCP server available, with relentless development closing previous gaps. The package rename remains a live rough edge for anyone still on the old package name; the rate-limit and ChatGPT OAuth issues that were open as of our last full refresh have since closed on GitHub. Consistent with a server under active, heavy development rather than one going stale.
 
 ---
 

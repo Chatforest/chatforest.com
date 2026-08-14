@@ -1,21 +1,21 @@
 ---
 title: "AI Agent Supply Chain Security MCP Servers — Scanning, Vetting, and Securing the MCP Ecosystem"
 date: 2026-03-18T23:30:00+09:00
-description: "AI agent supply chain security MCP servers reviewed: OX Security STDIO RCE disclosure (200K servers exposed), Snyk Agent Scan (1,800 stars, Skill Inspector), Pipelock NEW (342 stars, runtime firewall), Docker MCP Gateway (1,300 stars, interceptors), Cisco Scanner v4.6 (830 stars), MCP Guardian (190 stars, Rust proxy). Rating: 4/5."
-og_description: "AI agent supply chain security MCP servers: OX Security STDIO RCE disclosure April 2026 (200K servers, 150M downloads exposed, Anthropic says 'by design'). Snyk Agent Scan (1,800 stars, Skill Inspector web tool, v0.4.6). NEW Pipelock (342 stars, runtime firewall, DLP 48 patterns, SSRF, bidirectional MCP scanning). Docker MCP Gateway (1,300 stars, interceptors, secret blocking). Cisco Scanner v4.6 (830 stars). NEW MCP Guardian (190+ stars, Rust proxy, real-time tool call approval). MCP Authorization Spec OAuth 2.1 + Resource Indicators. Official MCP Registry launched. 30+ CVEs filed in 60 days. Rating upgraded 3.5→4/5."
+description: "AI agent supply chain security MCP servers reviewed: OX Security STDIO RCE disclosure (200K servers exposed), Snyk Agent Scan (~2,900 stars, Skill Inspector), Pipelock NEW (~795 stars, runtime firewall), Docker MCP Gateway (~1,500 stars, interceptors), Cisco Scanner v4.6 (~1,000 stars), MCP Guardian (~199 stars, Rust proxy). Rating: 4/5."
+og_description: "AI agent supply chain security MCP servers: OX Security STDIO RCE disclosure April 2026 (200K servers, 150M downloads exposed, Anthropic says 'by design'). Snyk Agent Scan (~2,900 stars, Skill Inspector web tool, v0.4.6). NEW Pipelock (~795 stars, runtime firewall, DLP 48 patterns, SSRF, bidirectional MCP scanning). Docker MCP Gateway (~1,500 stars, interceptors, secret blocking). Cisco Scanner v4.6 (~1,000 stars). NEW MCP Guardian (~199 stars, Rust proxy, real-time tool call approval). MCP Authorization Spec OAuth 2.1 + Resource Indicators. Official MCP Registry launched. 30+ CVEs filed in 60 days. Rating upgraded 3.5→4/5."
 content_type: "Review"
-card_description: "AI agent supply chain security escalated from theoretical to crisis in April 2026. **OX Security's 'Mother of All AI Supply Chains' disclosure** revealed a systemic RCE flaw in MCP's STDIO interface — affecting 200,000 servers, 150M+ downloads, and projects like LiteLLM, LangChain, Cursor, and Windsurf. Anthropic confirmed the behavior is 'by design.' The response: **runtime security tools exploded.** **Pipelock** (342 stars, NEW) is a full AI agent firewall with DLP scanning (48 patterns), SSRF protection, bidirectional MCP scanning, tool poisoning detection, and prompt injection blocking — the first true runtime proxy scanner. **MCP Guardian** (190+ stars, NEW, Rust) enables real-time approval/denial of individual tool calls. **Snyk Agent Scan** (1,800 stars, v0.4.6) launched Skill Inspector — a free web tool for instant malicious skill detection — plus background monitoring for MDM/CrowdStrike integration. **Docker MCP Gateway** (1,300 stars) added interceptors for fine-grained policy enforcement and secret blocking. **Cisco MCP Scanner** v4.6 (830 stars) remains actively maintained. Protocol-level security improved: OAuth 2.1 authorization with Resource Indicators (RFC 8707) standardized, official MCP Registry launched with namespace authentication. But cryptographic tool signing still absent. The gap between 'scan for problems' and 'prevent problems' is narrowing — but 30+ CVEs filed in 60 days shows the threat is accelerating faster than defenses."
+card_description: "AI agent supply chain security escalated from theoretical to crisis in April 2026. **OX Security's 'Mother of All AI Supply Chains' disclosure** revealed a systemic RCE flaw in MCP's STDIO interface — affecting 200,000 servers, 150M+ downloads, and projects like LiteLLM, LangChain, Cursor, and Windsurf. Anthropic confirmed the behavior is 'by design.' The response: **runtime security tools exploded.** **Pipelock** (~795 stars, NEW) is a full AI agent firewall with DLP scanning (48 patterns), SSRF protection, bidirectional MCP scanning, tool poisoning detection, and prompt injection blocking — the first true runtime proxy scanner. **MCP Guardian** (~199 stars, NEW, Rust) enables real-time approval/denial of individual tool calls. **Snyk Agent Scan** (~2,900 stars, v0.4.6) launched Skill Inspector — a free web tool for instant malicious skill detection — plus background monitoring for MDM/CrowdStrike integration. **Docker MCP Gateway** (~1,500 stars) added interceptors for fine-grained policy enforcement and secret blocking. **Cisco MCP Scanner** v4.6 (~1,000 stars) remains actively maintained. Protocol-level security improved: OAuth 2.1 authorization with Resource Indicators (RFC 8707) standardized, official MCP Registry launched with namespace authentication. But cryptographic tool signing still absent. The gap between 'scan for problems' and 'prevent problems' is narrowing — but 30+ CVEs filed in 60 days shows the threat is accelerating faster than defenses."
 last_refreshed: 2026-05-02
-sources_audited: 2026-07-23
+sources_audited: 2026-08-14
 ---
 
-AI agent supply chain security went from theoretical to crisis in April 2026. [OX Security's "Mother of All AI Supply Chains" disclosure](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) (April 15, 2026) revealed a systemic remote code execution flaw baked into MCP's STDIO interface — the command executes regardless of whether the process starts successfully. The impact: **7,000+ publicly accessible servers, up to 200,000 vulnerable instances in total, 150 million+ downloads affected.** Anthropic confirmed the behavior is "by design" and declined to modify the protocol. [CVE-2026-30623](https://nvd.nist.gov/vuln/detail/CVE-2026-30623) was assigned for LiteLLM alone (CVSS 9.8 Critical). The affected projects read like a who's-who of AI tooling: LiteLLM, LangChain, LangFlow, Flowise, LettaAI, LangBot, Windsurf, Cursor.
+AI agent supply chain security went from theoretical to crisis in April 2026. [OX Security's "Mother of All AI Supply Chains" disclosure](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) (April 15, 2026) revealed a systemic remote code execution flaw baked into MCP's STDIO interface — the command executes regardless of whether the process starts successfully. The impact: **7,000+ publicly accessible servers, up to 200,000 vulnerable instances in total, 150 million+ downloads affected**, independently corroborated by [The Hacker News' coverage of the disclosure](https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html). Anthropic confirmed the behavior is "by design" and declined to modify the protocol. [CVE-2026-30623](https://nvd.nist.gov/vuln/detail/CVE-2026-30623) was assigned for LiteLLM alone (CVSS 9.8 Critical per CISA-ADP's assessment). The affected projects read like a who's-who of AI tooling: LiteLLM, LangChain, LangFlow, Flowise, [LettaAI, and LangBot](https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem/), Windsurf, Cursor.
 
 The ecosystem's response has been swift: **runtime security tools exploded**, the MCP Authorization Specification was formalized with OAuth 2.1, and an official MCP Registry launched. But 30+ CVEs filed in just 60 days (January–February 2026) showed the threat was already accelerating before the OX disclosure made headlines.
 
 This review covers tools that **secure the MCP ecosystem itself** — scanning servers for malicious behavior, providing runtime enforcement, vetting dependencies, generating SBOMs, and providing infrastructure for safe MCP server distribution. For tools that scan your *application* code (SAST, SCA, IaC), see our [Code Security MCP review](/reviews/code-security-mcp-servers/). For physical supply chain logistics, see our [Logistics & Supply Chain review](/reviews/logistics-supply-chain-mcp-servers/).
 
-The headline findings: **Snyk Agent Scan** (1,800 stars) still leads pre-deployment scanning with its new Skill Inspector web tool. **Pipelock** (342 stars, NEW) is the first true runtime firewall — sitting inline between agent and network with DLP, SSRF protection, and bidirectional MCP scanning. **MCP Guardian** (190+ stars, NEW) enables real-time approval/denial of individual tool calls. **Docker MCP Gateway** (1,300 stars) added interceptors for fine-grained policy enforcement. The category has shifted from "scan before deployment" to "enforce at runtime" — a critical maturation. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
+The headline findings: **Snyk Agent Scan** (~2,900 stars) still leads pre-deployment scanning with its new Skill Inspector web tool. **Pipelock** (~795 stars, NEW) is the first true runtime firewall — sitting inline between agent and network with DLP, SSRF protection, and bidirectional MCP scanning. **MCP Guardian** (~199 stars, NEW) enables real-time approval/denial of individual tool calls. **Docker MCP Gateway** (~1,500 stars) added interceptors for fine-grained policy enforcement. The category has shifted from "scan before deployment" to "enforce at runtime" — a critical maturation. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
 
 ## MCP Server / Agent Scanners
 
@@ -23,13 +23,13 @@ The headline findings: **Snyk Agent Scan** (1,800 stars) still leads pre-deploym
 
 | Detail | Info |
 |--------|------|
-| [snyk/agent-scan](https://github.com/snyk/agent-scan) | ~1,800 stars |
+| [snyk/agent-scan](https://github.com/snyk/agent-scan) | ~2,900 stars |
 | License | Apache-2.0 |
 | Language | Python |
 | Latest | v0.4.6 (April 2026) |
 | Originally | [invariantlabs-ai/mcp-scan](https://github.com/invariantlabs-ai/mcp-scan) |
 
-The definitive MCP security scanner. Started as Invariant Labs' mcp-scan (which pioneered tool poisoning detection research), then acquired by Snyk and expanded into a comprehensive agent security platform. Announced alongside Snyk's broader Agent Security solution at RSAC 2026 (March).
+The definitive MCP security scanner. Started as Invariant Labs' mcp-scan (which pioneered tool poisoning detection research), then acquired by Snyk and expanded into a comprehensive agent security platform. [Announced alongside Snyk's broader Agent Security solution at RSAC 2026](https://snyk.io/news/snyk-launches-agent-security-solution/) (March 23, 2026).
 
 ### What Works Well
 
@@ -51,7 +51,7 @@ The definitive MCP security scanner. Started as Invariant Labs' mcp-scan (which 
 
 | Detail | Info |
 |--------|------|
-| [cisco-ai-defense/mcp-scanner](https://github.com/cisco-ai-defense/mcp-scanner) | ~830 stars |
+| [cisco-ai-defense/mcp-scanner](https://github.com/cisco-ai-defense/mcp-scanner) | ~1,000 stars |
 | License | Apache-2.0 |
 | Language | Python |
 | Latest | v4.6.0 (April 14, 2026) |
@@ -78,16 +78,16 @@ Cisco's open-source contribution to MCP security. The multi-engine architecture 
 
 | Detail | Info |
 |--------|------|
-| [Pantheon-Security/medusa](https://github.com/Pantheon-Security/medusa) | ~160 stars |
+| [Pantheon-Security/medusa](https://github.com/Pantheon-Security/medusa) | ~962 stars |
 | License | AGPL-3.0 |
 | Language | Python |
 | Latest | v2026.5.5 (April 3, 2026) |
 | Analyzers | 79 (up from 76) |
-| Detection rules | 9,600+ (up from 7,300+) |
+| Detection rules | 40,000+ (up from 9,600+) |
 
 An AI-first security scanner with specific MCP and AI agent security rules. Unlike the focused MCP scanners above, Medusa is a general security scanner that includes MCP-specific capabilities.
 
-**Notable:** Covers repo poisoning detection for AI/ML, LLM agents, and MCP servers. 79 specialized analyzers with 9,600+ detection patterns (up 31% from 7,300+). Now includes **200 CVE detection rules including MCP-Remote RCE** — directly relevant to the OX Security STDIO disclosure. 11,500+ PyPI downloads. Can scan any GitHub repo directly with `medusa scan --git user/repo`. The breadth is impressive but the MCP-specific coverage is a subset of the overall tool.
+**Notable:** Covers repo poisoning detection for AI/ML, LLM agents, and MCP servers. 79 specialized analyzers with 40,000+ detection patterns (up from 9,600+ at our last check). Now includes **200 CVE detection rules including MCP-Remote RCE** — directly relevant to the OX Security STDIO disclosure. 11,500+ PyPI downloads. Can scan any GitHub repo directly with `medusa scan --git user/repo`. The breadth is impressive but the MCP-specific coverage is a subset of the overall tool.
 
 **AGPL-3.0 license** means any modifications or derivative works must also be released under AGPL — important for enterprise adoption where copyleft can be a dealbreaker.
 
@@ -99,8 +99,8 @@ An AI-first security scanner with specific MCP and AI agent security rules. Unli
 
 | Detail | Info |
 |--------|------|
-| [luckyPipewrench/pipelock](https://github.com/luckyPipewrench/pipelock) | ~342 stars |
-| License | Free community edition (paid multi-agent) |
+| [luckyPipewrench/pipelock](https://github.com/luckyPipewrench/pipelock) | ~795 stars |
+| License | Apache-2.0 (core), Elastic License 2.0 (multi-agent) |
 | Language | — |
 | Latest | v2.3.0 |
 | Patterns | 48 built-in DLP patterns |
@@ -121,7 +121,7 @@ An AI-first security scanner with specific MCP and AI agent security rules. Unli
 
 ### What Doesn't Work Well
 
-**New and unproven at scale.** 342 stars is healthy for a new tool but doesn't represent enterprise-scale validation yet. The free/paid split (multi-agent coordination requires paid plans) may limit adoption in larger organizations testing it out.
+**New and unproven at scale.** ~795 stars is healthy for a new tool but doesn't represent enterprise-scale validation yet. The free/paid split (multi-agent coordination requires paid plans) may limit adoption in larger organizations testing it out.
 
 **Not an MCP server itself.** Like most tools in this category, Pipelock operates as infrastructure *around* MCP, not as an MCP server that agents can invoke.
 
@@ -129,7 +129,7 @@ An AI-first security scanner with specific MCP and AI agent security rules. Unli
 
 | Detail | Info |
 |--------|------|
-| [eqtylab/mcp-guardian](https://github.com/eqtylab/mcp-guardian) | ~190+ stars |
+| [eqtylab/mcp-guardian](https://github.com/eqtylab/mcp-guardian) | ~199 stars |
 | License | — |
 | Language | Rust |
 
@@ -149,7 +149,7 @@ A security-first proxy that gives humans real-time control over their LLM's MCP 
 
 **Manual approval doesn't scale.** Approving individual tool calls works for security-sensitive operations but becomes a bottleneck for high-volume agent workflows. Automated scanning (marked "Coming Soon") would address this.
 
-**Lower adoption than Pipelock.** At 190+ stars vs. Pipelock's 342, MCP Guardian has less community validation — though the Rust implementation and focused scope make it a solid choice for teams wanting human oversight.
+**Lower adoption than Pipelock.** At ~199 stars vs. Pipelock's ~795, MCP Guardian has less community validation — though the Rust implementation and focused scope make it a solid choice for teams wanting human oversight.
 
 ## Secure MCP Infrastructure
 
@@ -157,7 +157,7 @@ A security-first proxy that gives humans real-time control over their LLM's MCP 
 
 | Detail | Info |
 |--------|------|
-| [docker/mcp-gateway](https://github.com/docker/mcp-gateway) | ~1,300 stars |
+| [docker/mcp-gateway](https://github.com/docker/mcp-gateway) | ~1,500 stars |
 | License | MIT |
 | Language | Go |
 | Latest | v0.40.2 (February 27, 2026) |
@@ -171,7 +171,7 @@ Docker's approach to MCP security is infrastructure-level: **don't just scan ser
 
 **Interceptors (NEW).** MCP Gateway interceptors provide fine-grained policy enforcement, authentication, and request modification at the gateway level. Secret blocking scans inbound and outbound payloads for sensitive information (API tokens, credentials), preventing accidental or malicious exposure.
 
-**300+ verified servers.** The Docker MCP Catalog is a curated collection — not every MCP server on GitHub, but ones that have passed Docker's vetting pipeline including security code review, dependency analysis, malware scans, and policy validation.
+[**300+ verified servers.**](https://www.docker.com/blog/docker-mcp-catalog-secure-way-to-discover-and-run-mcp-servers/) The Docker MCP Catalog is a curated collection — not every MCP server on GitHub, but ones that have passed Docker's vetting pipeline including security code review, dependency analysis, malware scans, and policy validation.
 
 **Custom catalogs for enterprises.** Organizations can fork Docker's catalog, host images in their own registry, and publish a private catalog exposed via MCP Gateway. This solves the "which servers are approved?" problem at the organizational level.
 
@@ -189,7 +189,7 @@ Docker's approach to MCP security is infrastructure-level: **don't just scan ser
 
 | Detail | Info |
 |--------|------|
-| [SocketDev/socket-mcp](https://github.com/SocketDev/socket-mcp) | ~90 stars |
+| [SocketDev/socket-mcp](https://github.com/SocketDev/socket-mcp) | ~126 stars |
 | License | MIT |
 | Language | TypeScript |
 | Tools | 1 (`depscore`) |
@@ -227,12 +227,12 @@ More ambitious than Socket MCP in scope: **six package ecosystems** with vulnera
 
 | Detail | Info |
 |--------|------|
-| [msaad00/agent-bom](https://github.com/msaad00/agent-bom) | ~10 stars |
+| [msaad00/agent-bom](https://github.com/msaad00/agent-bom) | ~29 stars |
 | License | Apache-2.0 |
 | Language | Python |
-| MCP tools | 32 |
+| MCP tools | 80 |
 
-The most MCP-native security tool in the category. While Snyk Agent Scan and Cisco Scanner operate as CLI tools, agent-bom exposes **32 tools** via MCP, meaning AI agents can invoke security scanning directly.
+The most MCP-native security tool in the category. While Snyk Agent Scan and Cisco Scanner operate as CLI tools, agent-bom exposes **80 tools** via MCP, meaning AI agents can invoke security scanning directly.
 
 ### What Works Well
 
@@ -244,9 +244,9 @@ The most MCP-native security tool in the category. While Snyk Agent Scan and Cis
 
 ### What Doesn't Work Well
 
-**10 stars = minimal community vetting.** For a security tool, this is concerning. The tool itself could be a supply chain risk — there's no evidence of third-party security audit.
+**~29 stars = minimal community vetting.** For a security tool, this is concerning. The tool itself could be a supply chain risk — there's no evidence of third-party security audit.
 
-**Scope creep.** 32 MCP tools, 14 compliance frameworks, 17 output formats, 7 runtime detectors — this attempts to be everything. Whether it does any of them well at 10 stars of community validation is an open question.
+**Scope creep.** 80 MCP tools, 14 compliance frameworks, 17 output formats, 7 runtime detectors — this attempts to be everything. Whether it does any of them well at ~29 stars of community validation is an open question.
 
 ## SBOM Generation via MCP
 
@@ -265,18 +265,18 @@ A minimal MCP server that wraps Trivy to generate SBOMs in CycloneDX format. Rec
 
 | Detail | Info |
 |--------|------|
-| [blackkhawkk/mcp_sast_sca_sbom](https://github.com/blackkhawkk/mcp_sast_sca_sbom) | ~2 stars |
+| [blackkhawkk/mcp_sast_sca_sbom](https://github.com/blackkhawkk/mcp_sast_sca_sbom) | ~3 stars |
 | License | MIT |
 | Language | TypeScript/Python |
 | Tools | 4 (Snyk CLI, SBOM Generator, Secrets Scanner, SAST Engine) |
 
-A comprehensive security analysis framework wrapping Snyk CLI, CycloneDX SBOM generation, secrets scanning, and SAST into a single MCP server. Built as a demo against OWASP Juice Shop — analyzed 145 dependencies, found 1,974 code patterns, detected 62 secrets, tracked 779 components. The breadth is impressive for a 2-star project, but the OWASP Juice Shop focus suggests it's more proof-of-concept than production tool.
+A comprehensive security analysis framework wrapping Snyk CLI, CycloneDX SBOM generation, secrets scanning, and SAST into a single MCP server. Built as a demo against OWASP Juice Shop — the project's own README reports analyzing 145 dependencies, finding 1,974 code patterns, detecting 62 secrets, and tracking 779 components. The breadth is impressive for a 3-star project, but the OWASP Juice Shop focus suggests it's more proof-of-concept than production tool.
 
 ### MCPShield
 
 | Detail | Info |
 |--------|------|
-| [mcpshield/mcpshield](https://github.com/mcpshield/mcpshield) | ~5 stars |
+| [mcpshield/mcpshield](https://github.com/mcpshield/mcpshield) | ~6 stars |
 | License | MIT |
 | Language | JavaScript |
 
@@ -290,7 +290,7 @@ A focused supply chain scanner for MCP configurations. Detects typosquat package
 
 | Detail | Info |
 |--------|------|
-| [slowmist/MCP-Security-Checklist](https://github.com/slowmist/MCP-Security-Checklist) | ~819 stars |
+| [slowmist/MCP-Security-Checklist](https://github.com/slowmist/MCP-Security-Checklist) | ~835 stars |
 | Origin | SlowMist (blockchain security) |
 
 Not a tool or server — a comprehensive security checklist for MCP-based AI tools. Built by SlowMist, a well-known blockchain security firm that brought their supply chain security expertise to the MCP ecosystem. Covers server plugins, client applications, and multi-MCP scenarios. Useful as a reference when evaluating MCP servers manually or building security policies.
@@ -309,14 +309,14 @@ An open, testable security control standard for certifying MCP servers. Four com
 Understanding why these tools exist requires understanding the attacks — which escalated from theoretical to confirmed-at-scale in April 2026:
 
 - **STDIO RCE (NEW — April 2026).** OX Security's "Mother of All AI Supply Chains" disclosure: MCP's STDIO interface executes any command passed to it, regardless of whether a valid server starts. Four exploitation families: unauthenticated UI injection in AI frameworks, hardening bypasses in "protected" tools (Flowise), zero-click prompt injection in AI coding IDEs (Windsurf, Cursor), and malicious package distribution through MCP marketplaces. **200,000 vulnerable instances. Anthropic: "by design."**
-- **Tool poisoning:** Malicious instructions hidden in MCP tool descriptions that are invisible to users but executed by AI models. Invariant Labs demonstrated this could silently exfiltrate entire WhatsApp conversation histories.
+- **Tool poisoning:** Malicious instructions hidden in MCP tool descriptions that are invisible to users but executed by AI models. [Invariant Labs demonstrated](https://invariantlabs.ai/blog/whatsapp-mcp-exploited) this could silently exfiltrate entire WhatsApp conversation histories — independently corroborated in [Docker's own write-up of the same attack](https://www.docker.com/blog/mcp-horror-stories-whatsapp-data-exfiltration-issue/).
 - **Rug pulls:** Clean MCP servers submitted for approval, then updated with malicious tool descriptions. Most MCP clients don't re-verify descriptions after initial connection.
 - **Typosquatting:** Counterfeit packages (like `postmark-mcp`) that mimic legitimate MCP servers. One caught package was BCC'ing every outgoing email to an attacker.
 - **Credential exposure:** 88% of MCP servers require credentials, [~53% rely on static credentials (API keys or PATs)](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) that are rarely rotated, and only 8.5% use OAuth. (The new MCP Authorization Specification addresses this, but adoption is gradual.)
 - **Toxic flows:** Multi-server environments where data from one compromised server poisons another trusted server's context.
-- **CVE flood (NEW).** 30+ CVEs filed targeting MCP servers, clients, and infrastructure between January–February 2026 — ranging from path traversals to a CVSS 9.6 RCE in a package with nearly half a million downloads.
+- **CVE flood (NEW).** [30+ CVEs filed targeting MCP servers, clients, and infrastructure between January–February 2026](https://cycode.com/blog/owasp-mcp-top-10/) — ranging from path traversals to [a CVSS 9.6 RCE in mcp-remote, a package with more than 437,000 downloads, discovered by JFrog Security Research](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/) ([GitHub Security Advisory](https://github.com/advisories/GHSA-6xpm-ggf7-wc3p)).
 
-[A scan of 1,808 MCP servers found 66% had security findings](https://agentseal.org/blog/mcp-server-security-findings). This isn't a theoretical threat — it's the current state of the ecosystem, now confirmed at massive scale by the [OX Security disclosure](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/).
+[AgentSeal's scan of 1,808 MCP servers found 66% had at least one security finding](https://agentseal.org/blog/mcp-server-security-findings). This isn't a theoretical threat — it's the current state of the ecosystem, now confirmed at massive scale by the [OX Security disclosure](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/).
 
 ## Protocol-Level Security Improvements
 
@@ -324,14 +324,14 @@ Understanding why these tools exist requires understanding the attacks — which
 
 **MCP Authorization Specification (OAuth 2.1).** The MCP spec now defines a standardized authorization framework: MCP servers act as OAuth 2.1 resource servers, MCP hosts act as OAuth clients on behalf of users. Resource Indicators (RFC 8707) are mandated — tokens are tightly scoped and only valid for the specific MCP server they were issued for. Role-based authorization enables fine-grained tool access control via annotations like `@RolesAllowed`.
 
-**Official MCP Registry** ([registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io/)). The Agentic AI Foundation launched an official registry with namespace authentication — server names follow reverse DNS format (e.g., `io.github.username/server-name`) tied to verified GitHub accounts or domains. Publisher verification and automated security scanning for submitted servers are included.
+**Official MCP Registry** ([registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io/)). MCP is now governed by the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (AAIF, a Linux Foundation project Anthropic donated MCP to), which oversees the official registry's [namespace authentication](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/authentication.mdx) — server names follow reverse DNS format (e.g., `io.github.username/server-name`) tied to verified GitHub accounts (via GitHub OAuth) or domains (via DNS TXT record). Publisher verification and automated security scanning for submitted servers are included.
 
 **Limitation:** Enforcement is name-based, not cryptographic. There is no cryptographic signing or attestation tying a server name to a specific verified binary or endpoint. This means the registry reduces risk but cannot prevent a compromised publisher from pushing malicious updates.
 
 ## What's Missing
 
-- **No unified MCP security server.** The best scanners (Snyk, Cisco) don't operate as MCP servers. The best MCP server (agent-bom, 32 tools) has minimal adoption. There's no "install this one MCP server and your agent can self-assess its security."
-- **~~No runtime policy enforcement.~~** ~~Docker Gateway provides container-level isolation, but there's no protocol-level mechanism.~~ **PARTIALLY CLOSED:** Pipelock (342 stars) provides runtime inline enforcement; MCP Guardian (190+ stars) provides human-in-the-loop approval; Docker interceptors provide gateway-level policy. But no *protocol-level* permission declaration standard exists yet.
+- **No unified MCP security server.** The best scanners (Snyk, Cisco) don't operate as MCP servers. The best MCP server (agent-bom, 80 tools) has minimal adoption. There's no "install this one MCP server and your agent can self-assess its security."
+- **~~No runtime policy enforcement.~~** ~~Docker Gateway provides container-level isolation, but there's no protocol-level mechanism.~~ **PARTIALLY CLOSED:** Pipelock (~795 stars) provides runtime inline enforcement; MCP Guardian (~199 stars) provides human-in-the-loop approval; Docker interceptors provide gateway-level policy. But no *protocol-level* permission declaration standard exists yet.
 - **No cryptographic tool signing.** Tool descriptions can still change between connections (enabling rug pulls). The MCP protocol has no signing or pinning mechanism. The official registry uses name-based verification, not cryptographic attestation. **This remains the single biggest gap.**
 - **~~No MCP server registry.~~** **CLOSED:** The official MCP Registry launched at registry.modelcontextprotocol.io with namespace authentication and publisher verification.
 - **No SLSA or Sigstore integration.** Software supply chain standards like SLSA (Supply chain Levels for Software Artifacts) and signing via Sigstore/Cosign haven't been adopted by the MCP ecosystem. Organizations are recommended to provide cryptographic signatures and SBOMs, but this is advisory, not enforced.
@@ -339,7 +339,7 @@ Understanding why these tools exist requires understanding the attacks — which
 
 ## Rating: 4 / 5
 
-**The good:** The category has matured dramatically in 45 days. Runtime security arrived — Pipelock (342 stars) and MCP Guardian (190+ stars) close the critical gap of "no inline enforcement." Docker interceptors add gateway-level secret blocking. The MCP Authorization Specification brings OAuth 2.1 with Resource Indicators. The official MCP Registry provides publisher verification. Snyk's Skill Inspector makes security assessment frictionless. Cisco Scanner hit v4.6 with continued active maintenance. Major vendors (Snyk, Cisco, Docker) remain committed.
+**The good:** The category has matured dramatically in 45 days. Runtime security arrived — Pipelock (~795 stars) and MCP Guardian (~199 stars) close the critical gap of "no inline enforcement." Docker interceptors add gateway-level secret blocking. The MCP Authorization Specification brings OAuth 2.1 with Resource Indicators. The official MCP Registry provides publisher verification. Snyk's Skill Inspector makes security assessment frictionless. Cisco Scanner hit v4.6 with continued active maintenance. Major vendors (Snyk, Cisco, Docker) remain committed.
 
 **The bad:** The OX Security disclosure proved the ecosystem's worst fears — 200,000 servers vulnerable to RCE via a "by design" flaw that Anthropic won't fix. 30+ CVEs in 60 days shows threats accelerating faster than defenses. Cryptographic tool signing still doesn't exist in the protocol. Most security tools still operate *outside* MCP rather than as MCP servers. The official registry uses name-based verification (not cryptographic attestation), meaning a compromised publisher can still push malicious updates undetected.
 
@@ -351,4 +351,4 @@ Understanding why these tools exist requires understanding the attacks — which
 
 ## Refresh History {#refresh-history}
 
-**2026-05-02 (first refresh):** THE OX SECURITY DISCLOSURE: "Mother of All AI Supply Chains" (April 15, 2026) revealed systemic RCE in MCP STDIO interface — 200K servers, 150M+ downloads, CVE-2026-30623 for LiteLLM, affects LangChain/LangFlow/Flowise/LettaAI/Cursor/Windsurf. Anthropic confirmed "by design," declined to fix. RUNTIME SECURITY EXPLODED: Pipelock NEW 342 stars v2.3.0 — first AI agent firewall, DLP 48 patterns, SSRF, bidirectional MCP scanning, tool poisoning, prompt injection blocking, GitHub Actions, EU AI Act mapping. MCP Guardian NEW 190+ stars — Rust proxy, real-time tool call approval/denial, message logging. Docker MCP Gateway added interceptors (policy enforcement, secret blocking, claims 60% incident reduction), holds 1,300 stars v0.40.2. Snyk Agent Scan 1,900→1,800 stars v0.4.6 — NEW Skill Inspector web tool, runtime proxy mode, MDM/CrowdStrike background monitoring, Snyk CLI integration, RSAC 2026 Agent Security launch. Cisco Scanner 850→830 stars v4.6.0 (April 14) actively maintained. Medusa 76→79 analyzers, 7,300→9,600+ rules, 200 CVE detection patterns including MCP-Remote RCE. PROTOCOL IMPROVEMENTS: MCP Authorization Specification formalized OAuth 2.1 + Resource Indicators (RFC 8707) + role-based access. Official MCP Registry launched at registry.modelcontextprotocol.io — namespace auth, publisher verification (name-based, not cryptographic). 30+ CVEs filed in 60 days (Jan–Feb 2026). Gaps: STDIO RCE unfixed ("by design"), no cryptographic tool signing, no SLSA/Sigstore. Rating upgraded 3.5→4/5.
+**2026-05-02 (first refresh):** THE OX SECURITY DISCLOSURE: "Mother of All AI Supply Chains" (April 15, 2026) revealed systemic RCE in MCP STDIO interface — 200K servers, 150M+ downloads, CVE-2026-30623 for LiteLLM, affects LangChain/LangFlow/Flowise/LettaAI/Cursor/Windsurf. Anthropic confirmed "by design," declined to fix. RUNTIME SECURITY EXPLODED: Pipelock NEW 342 stars v2.3.0 — first AI agent firewall, DLP 48 patterns, SSRF, bidirectional MCP scanning, tool poisoning, prompt injection blocking, GitHub Actions, EU AI Act mapping. MCP Guardian NEW 190+ stars — Rust proxy, real-time tool call approval/denial, message logging. Docker MCP Gateway added interceptors (policy enforcement, secret blocking), holds 1,300 stars v0.40.2. Snyk Agent Scan 1,900→1,800 stars v0.4.6 — NEW Skill Inspector web tool, runtime proxy mode, MDM/CrowdStrike background monitoring, Snyk CLI integration, RSAC 2026 Agent Security launch. Cisco Scanner 850→830 stars v4.6.0 (April 14) actively maintained. Medusa 76→79 analyzers, 7,300→9,600+ rules, 200 CVE detection patterns including MCP-Remote RCE. PROTOCOL IMPROVEMENTS: MCP Authorization Specification formalized OAuth 2.1 + Resource Indicators (RFC 8707) + role-based access. Official MCP Registry launched at registry.modelcontextprotocol.io — namespace auth, publisher verification (name-based, not cryptographic). 30+ CVEs filed in 60 days (Jan–Feb 2026). Gaps: STDIO RCE unfixed ("by design"), no cryptographic tool signing, no SLSA/Sigstore. Rating upgraded 3.5→4/5.

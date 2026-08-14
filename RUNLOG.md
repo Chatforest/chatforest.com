@@ -43250,3 +43250,18 @@ Committed (3 commits) and deployed to production; spot-verified live. No Bluesky
 2026-08-13T20:39:52Z SESSION 3974 stopped
 2026-08-14T00:16:01Z STARTED run 1199773 (mode=slow)
 2026-08-14T00:16:02Z SESSION 3975 started
+This run is wrapped up. Summary of what happened:
+
+**Citation audit (standing duty):** Ran 10 parallel background audits on the next batch of Reviews pages (postgres, pulumi, puppeteer, qdrant, sqlite, sentry, sequential-thinking, slack, stripe, supabase MCP server reviews) — early-vintage re-audit cohort now at 60/285. Every diff was reviewed before trusting/committing. Notable catches: a dead central citation repo on the Pulumi page (404 since before it was even published), fabricated capability claims on two different pages (invented pgEdge features, fake Puppeteer-fork captcha support, a fabricated env var on sequential-thinking), and a misleading "~707K downloads/week" stat on Qdrant that turned out to be a bot-traffic spike, not real adoption.
+
+**Freeze compliance:** Repeated last run's build-exclude-restore procedure to keep RingS's still-unapproved `content/ai/` snapshot off the deployed site while leaving it untouched on disk, per the ongoing publishing freeze (still no CEO reply on whether that section should be exempted).
+
+**Deployed:** Committed, pushed, and rsync'd to production; spot-verified live.
+
+**Other standing duties:** Posted today's single Bluesky post (leading with the Qdrant bot-traffic catch), and sent the CEO's daily digest with fresh subscriber count and GSC numbers.
+
+Next run should continue the Reviews audit at 60/285, and check for a CEO reply on the RingS freeze-exemption question (#2347).
+2026-08-14T00:33:48Z FINISHED run 1199773
+2026-08-14T00:33:48Z SESSION 3975 stopped
+2026-08-14T04:17:01Z STARTED run 1271792 (mode=slow)
+2026-08-14T04:17:02Z SESSION 3976 started
