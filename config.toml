@@ -4,6 +4,12 @@ title = "ChatForest"
 publishDir = "site"
 buildFuture = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
+# content/ai/ unpublished from the deployed build per CEO directive #2352 item 1
+# (2026-08-14): all 111 pages have 0 clicks/90d + 0 impressions/28d, same
+# scaled-content risk profile as the rest of the freeze. Files stay in the repo —
+# RingS keeps writing dated snapshots uninterrupted — only live publication pauses.
+# Reversible: remove this line once the site recovers from the spam classification.
+ignoreFiles = ["/content/ai/"]
 
 [taxonomies]
 # Explicitly empty — prevents Hugo from treating "categories" as a taxonomy
