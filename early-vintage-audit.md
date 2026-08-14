@@ -363,19 +363,19 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Cryptocurrency & DeFi MCP Servers — Ethereum, Solana, Bitcoin, Wallets, DEX Trading, On-Chain Analytics, and More](content/reviews/cryptocurrency-defi-mcp-servers.md) — re-audited 2026-08-14
 - [x] 2026-07-23 — [Customer Support & Helpdesk MCP Servers — Zendesk, Intercom, Freshdesk, ServiceNow, Plain, and More](content/reviews/customer-support-helpdesk-mcp-servers.md) — re-audited 2026-08-14
 - [x] 2026-07-23 — [DNS & Domain Management MCP Servers — Registrars, DNS Providers, WHOIS, and Lookup Tools](content/reviews/dns-domain-management-mcp-servers.md) — re-audited 2026-08-14
-- [ ] 2026-07-23 — [Data Pipeline & ETL MCP Servers — Airflow, dbt, Kafka, Snowflake, Databricks, Airbyte, and More](content/reviews/data-pipeline-etl-mcp-servers.md)
+- [x] 2026-07-23 — [Data Pipeline & ETL MCP Servers — Airflow, dbt, Kafka, Snowflake, Databricks, Airbyte, and More](content/reviews/data-pipeline-etl-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Data Visualization MCP Servers — AntV, ECharts, Vega-Lite, Plotly, Matplotlib, D3, and More](content/reviews/data-visualization-mcp-servers.md)
-- [ ] 2026-07-23 — [Data Warehouse & Lakehouse MCP Servers — Snowflake, BigQuery, Databricks, ClickHouse, DuckDB, Teradata, Redshift, and More](content/reviews/data-warehouse-lakehouse-mcp-servers.md)
-- [ ] 2026-07-23 — [Database Administration MCP Servers — PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, Oracle, and Beyond](content/reviews/database-admin-mcp-servers.md)
+- [x] 2026-07-23 — [Data Warehouse & Lakehouse MCP Servers — Snowflake, BigQuery, Databricks, ClickHouse, DuckDB, Teradata, Redshift, and More](content/reviews/data-warehouse-lakehouse-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Database Administration MCP Servers — PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, Oracle, and Beyond](content/reviews/database-admin-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Debugging MCP Servers — Chrome DevTools (37.8K Stars), Ghidra MCP (8.7K), IDA Pro MCP (8.1K), Microsoft DebugMCP, Multi-Language DAP (7 Languages), GDB/LLDB/WinDbg, Radare2, Embedded ARM/RISC-V](content/reviews/debugging-mcp-servers.md)
-- [ ] 2026-07-23 — [Desktop Automation & Browser Control MCP Servers — Playwright, Selenium, Windows-MCP, macOS Automator, and More](content/reviews/desktop-automation-rpa-mcp-servers.md)
-- [ ] 2026-07-23 — [Digital Accessibility MCP Servers — A11y Auditing, WCAG Compliance, Color Contrast, Lighthouse, and More](content/reviews/digital-accessibility-mcp-servers.md)
-- [ ] 2026-07-23 — [Digital Forensics & Incident Response (DFIR) MCP Servers — CrowdStrike, SentinelOne, Google Security, TheHive, VirusTotal, Volatility, YARA, Wazuh, and More](content/reviews/digital-forensics-incident-response-mcp-servers.md)
-- [ ] 2026-07-23 — [Digital Twins, 3D Modeling & Simulation MCP Servers — CAD, Physics, Game Engines, and Engineering Simulation](content/reviews/digital-twins-3d-simulation-mcp-servers.md)
-- [ ] 2026-07-23 — [Discord MCP Servers — Five Community Servers, No Official One, and a Fragmented Landscape](content/reviews/discord-mcp-servers.md)
-- [ ] 2026-07-23 — [E-Commerce & Shopping MCP Servers — Shopify, Stripe, WooCommerce, Amazon, and More](content/reviews/ecommerce-shopping-mcp-servers.md)
+- [x] 2026-07-23 — [Desktop Automation & Browser Control MCP Servers — Playwright, Selenium, Windows-MCP, macOS Automator, and More](content/reviews/desktop-automation-rpa-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Digital Accessibility MCP Servers — A11y Auditing, WCAG Compliance, Color Contrast, Lighthouse, and More](content/reviews/digital-accessibility-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Digital Forensics & Incident Response (DFIR) MCP Servers — CrowdStrike, SentinelOne, Google Security, TheHive, VirusTotal, Volatility, YARA, Wazuh, and More](content/reviews/digital-forensics-incident-response-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Digital Twins, 3D Modeling & Simulation MCP Servers — CAD, Physics, Game Engines, and Engineering Simulation](content/reviews/digital-twins-3d-simulation-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [Discord MCP Servers — Five Community Servers, No Official One, and a Fragmented Landscape](content/reviews/discord-mcp-servers.md) — re-audited 2026-08-14
+- [x] 2026-07-23 — [E-Commerce & Shopping MCP Servers — Shopify, Stripe, WooCommerce, Amazon, and More](content/reviews/ecommerce-shopping-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [E-Signature & Digital Signing MCP Servers — DocuSign, PandaDoc, SignNow, BoldSign, and More](content/reviews/e-signature-digital-signing-mcp-servers.md)
-- [ ] 2026-07-23 — [ERP & Business Management MCP Servers — Odoo, Dynamics 365, NetSuite, SAP, Oracle, QuickBooks, and More](content/reviews/erp-business-management-mcp-servers.md)
+- [x] 2026-07-23 — [ERP & Business Management MCP Servers — Odoo, Dynamics 365, NetSuite, SAP, Oracle, QuickBooks, and More](content/reviews/erp-business-management-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Education & EdTech MCP Servers — Canvas LMS, Moodle, Google Classroom, Anki, Udemy, EduBase, and More](content/reviews/education-edtech-mcp-servers.md)
 - [ ] 2026-07-23 — [Education & LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More](content/reviews/education-lms-mcp-servers.md)
 - [ ] 2026-07-23 — [Energy & Utilities MCP Servers — PowerMCP, EnergyPlus, PyPSA, zavora-ai SCADA, EIA, and More](content/reviews/energy-utilities-mcp-servers.md)

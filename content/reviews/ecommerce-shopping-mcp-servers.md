@@ -5,8 +5,8 @@ description: "E-commerce and shopping MCP servers are turning AI agents into sto
 og_description: "E-Commerce & Shopping MCP servers: Shopify Storefront Catalog MCP now implements UCP (May 30 migration deadline); Agentic Storefronts gets dedicated admin home (May 11). BigCommerce launches official Storefront MCP (May 11) — closes the last major platform gap. Easyship Global Shipping MCP (April 30): 550+ couriers, 200+ countries, 25 tools. Stripe Sessions 2026 (April 29-30): 288 features, Link agent wallet. Google UCP Universal Cart at Google I/O. WooCommerce official MCP in public beta. FIDO Alliance forms Agentic Authentication + Payments Working Groups. eBay CVE-2026-27203 still unpatched. Adobe Commerce makes MCP default. 12+ active agentic commerce protocols. 40+ servers reviewed. Rating: 4.5/5."
 content_type: "Review"
 card_description: "E-commerce and shopping MCP servers across platform-native commerce, payment processing, store management, marketplaces, and emerging protocols. **May 2026 headline:** BigCommerce launched an official Storefront MCP (May 11) for every live BigCommerce store — the last major platform gap in this category is now closed. Shopify's Storefront Catalog MCP began implementing UCP with a May 30 mandatory migration deadline, and Agentic Storefronts (ChatGPT/Perplexity/Copilot/Google AI Mode) moved to a dedicated admin section (May 11) as a peer sales channel alongside Online Store and B2B. Easyship launched the first cross-border shipping MCP server (April 30): 550+ courier services, 200+ countries, 25 tools for rate comparison, label generation, and customs. Stripe Sessions 2026 (April 29-30) announced 288 features including a Link agent wallet for AI-initiated payments. Google announced the Universal Cart at Google I/O (May 2026) — cross-merchant shopping across Search, Gemini, YouTube, and Gmail. WooCommerce official MCP entered public beta. FIDO Alliance formed Agentic Authentication and Payments Working Groups (April 28), with contributions from Google (AP2 v0.2) and Mastercard (Verifiable Intent). Adobe Commerce made MCP its default agent protocol. **Security alert:** eBay MCP CVE-2026-27203 (environment variable injection) remains unpatched as of May 2026. The category remains **4.5/5** — BigCommerce official closes the last major gap and FIDO standards work signals regulatory maturity, but Amazon's walled garden persists, eBay's CVE is unaddressed, and 12+ competing protocols are intensifying fragmentation."
-last_refreshed: 2026-05-20
-sources_audited: 2026-07-23
+last_refreshed: 2026-08-14
+sources_audited: 2026-08-14
 ---
 
 E-commerce and shopping MCP servers are turning AI agents into store operators, shopping assistants, and payment processors. Instead of navigating web interfaces or building custom integrations, these servers let agents manage product catalogs, process orders, handle payments, track customers, and guide shoppers through checkout — all through the Model Context Protocol.
@@ -44,7 +44,7 @@ Shopify also shipped **MCP UI** — interactive components that let the MCP serv
 
 Second, **Agentic Storefronts received a dedicated home in the Shopify admin (May 11)**. AI shopping channels — ChatGPT, Microsoft Copilot, Google AI Mode, and Gemini — are now treated as first-class sales channels alongside Online Store, B2B, and POS. Merchants can track sales attributed to AI channels and see which queries their products rank for. Shopify also introduced Web Bot Auth signatures (May 7) for agent traffic with stricter rate limits on Storefront API and store pages.
 
-PulseMCP: ~196K all-time visitors, ~8.8K weekly, #210 globally (#170 weekly).
+[PulseMCP](https://www.pulsemcp.com/servers/shopify-storefront): ~574K all-time visitors, ~45.7K weekly, #118 globally (#57 weekly) — up sharply from ~196K/#210 at the last audit, consistent with Storefront MCP's zero-setup rollout to every Shopify store.
 
 ### Shopify Customer Account MCP (Official — Authenticated Customer Actions)
 
@@ -85,9 +85,9 @@ Covers Admin GraphQL API, Polaris components, Shopify Functions, Hydrogen, and S
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [stripe/ai](https://github.com/stripe/ai) | 1,500 | TypeScript | MIT | 25 |
+| [stripe/ai](https://github.com/stripe/ai) | 1,700 | TypeScript | MIT | 25 |
 
-**stripe/ai** (1,500 stars, 326 commits, 257 forks) is Stripe's consolidated monorepo for AI-powered commerce — formerly stripe/agent-toolkit. It now includes three packages: **@stripe/agent-toolkit** (framework integrations for OpenAI, LangChain, CrewAI, Vercel AI SDK), **@stripe/ai-sdk** (connects Stripe billing with Vercel's AI libraries), and **@stripe/token-meter** (usage-based billing metering with native SDKs from OpenAI, Anthropic, and Google). The MCP server provides 25 tools spanning the full Stripe API surface, with both local deployment and a hosted remote MCP server at `mcp.stripe.com` with OAuth access.
+**stripe/ai** (~1,700 stars, 383 commits, 325 forks as of this audit — up from 1,500/326/257) is Stripe's consolidated monorepo for AI-powered commerce — formerly stripe/agent-toolkit. It now includes three packages: **@stripe/agent-toolkit** (framework integrations for OpenAI, LangChain, CrewAI, Vercel AI SDK), **@stripe/ai-sdk** (connects Stripe billing with Vercel's AI libraries), and **@stripe/token-meter** (usage-based billing metering with native SDKs from OpenAI, Anthropic, and Google). The MCP server provides 25 tools spanning the full Stripe API surface, with both local deployment and a hosted remote MCP server at `mcp.stripe.com` with OAuth access.
 
 **Customer & Account:**
 - `create_customer`, `list_customers` — customer record management
@@ -122,9 +122,9 @@ Supports OpenAI Agent SDK, LangChain, CrewAI, and Vercel AI SDK integrations. Py
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [GeLi2001/shopify-mcp](https://github.com/GeLi2001/shopify-mcp) | 195 | TypeScript | 31 |
+| [GeLi2001/shopify-mcp](https://github.com/GeLi2001/shopify-mcp) | 235 | TypeScript | 31 |
 
-**GeLi2001/shopify-mcp** (195 stars, 35 commits, 88 forks) is the most comprehensive community Shopify Admin MCP server with 31 tools across product, customer, order, and inventory management via Shopify's GraphQL Admin API.
+**GeLi2001/shopify-mcp** (235 stars, 115 forks as of this audit — up from 195/88) is the most comprehensive community Shopify Admin MCP server with 31 tools across product, customer, order, and inventory management via Shopify's GraphQL Admin API.
 
 **Product Management (8 tools):** list/search products with pagination and sorting, retrieve product details, create/update/delete products, manage options and variants, handle variant bulk operations.
 
@@ -148,9 +148,9 @@ Supports both OAuth client credentials (January 2026+ Dev Dashboard apps) and st
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [antoineschaller/shopify-mcp-server](https://github.com/antoineschaller/shopify-mcp-server) | 10 | JavaScript | MIT | 22 |
+| [antoineschaller/shopify-mcp-server](https://github.com/antoineschaller/shopify-mcp-server) | 18 | JavaScript | MIT | 22 |
 
-**antoineschaller/shopify-mcp-server** (10 stars, 7 commits) provides 22 tools including analytics and reporting capabilities (`get_analytics`, `get_reports`) not found in other Shopify servers, plus inventory tracking, order fulfillment, and discount creation.
+**antoineschaller/shopify-mcp-server** (18 stars as of this audit, up from 10) provides 22 tools including analytics and reporting capabilities (`get_analytics`, `get_reports`) not found in other Shopify servers, plus inventory tracking, order fulfillment, and discount creation.
 
 ## Open-Source E-Commerce Platforms
 
@@ -158,11 +158,11 @@ Supports both OAuth client credentials (January 2026+ Dev Dashboard apps) and st
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [techspawn/woocommerce-mcp-server](https://github.com/techspawn/woocommerce-mcp-server) | 86 | TypeScript | 50+ |
+| [techspawn/woocommerce-mcp-server](https://github.com/techspawn/woocommerce-mcp-server) | 99 | TypeScript | 50+ |
 
-**May 2026 update:** The **official WooCommerce MCP server entered public beta** — built directly by WooCommerce/Automattic, it runs inside WordPress with full site visibility, enabling agents to suggest theme changes, debug plugins, and rewrite checkout pages alongside standard store management operations.
+**May 2026 update:** WooCommerce/Automattic's **[official WooCommerce MCP integration](https://woocommerce.com/posts/woocommerce-mcp/)** — built on the [WordPress Abilities API](https://developer.woocommerce.com/2026/05/12/mcp-abilities-api-10-9/) via the `wordpress/mcp-adapter` package rather than a standalone protocol implementation — first shipped as a beta in WooCommerce 10.3 and remains in **developer preview** as of this audit. Its scope is deliberately limited to CRUD operations on **products and orders** (list/get/create/update/delete for each); official WooCommerce/Automattic sources do not describe theme editing, plugin debugging, or checkout-page rewriting as part of this server. (An earlier version of this review overstated the official server's scope with those claims — corrected here; full-site-access tools like that do exist, but from unofficial third-party WordPress MCP plugins, not the official WooCommerce integration.)
 
-**techspawn/woocommerce-mcp-server** (86 stars, 44 forks, 8 commits) remains the most comprehensive community WooCommerce MCP server, providing full WordPress REST API coverage across virtually every WooCommerce resource.
+**techspawn/woocommerce-mcp-server** (99 stars, 50 forks, 8 commits as of this audit — up from 86/44) remains the most comprehensive community WooCommerce MCP server, providing full WordPress REST API coverage across virtually every WooCommerce resource.
 
 **Product Management:** CRUD operations, categories, tags, attributes, variations, reviews, metadata.
 
@@ -186,9 +186,9 @@ Supports both WooCommerce API key and WordPress username/password authentication
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [SGFGOV/medusa-mcp](https://github.com/SGFGOV/medusa-mcp) | 54 | TypeScript | MIT | 30 |
+| [SGFGOV/medusa-mcp](https://github.com/SGFGOV/medusa-mcp) | 68 | TypeScript | MIT | 30 |
 
-**SGFGOV/medusa-mcp** (54 stars, 30 commits, 19 forks) bridges AI tools with MedusaJS commerce systems through standardized JSON-RPC communication. Built on the Medusa JS SDK with OpenAPI schema-based endpoints, it provides a modular, extensible plugin system for workflow automation — managing inventory, pricing, and service integrations.
+**SGFGOV/medusa-mcp** (68 stars, 30 commits, 22 forks as of this audit — up from 54/19) bridges AI tools with MedusaJS commerce systems through standardized JSON-RPC communication. Built on the Medusa JS SDK with OpenAPI schema-based endpoints, it provides a modular, extensible plugin system for workflow automation — managing inventory, pricing, and service integrations.
 
 Supports both admin and storefront API endpoints, Docker deployment, and Claude Skill generation. MedusaJS itself (30,900+ GitHub stars) is one of the most popular open-source headless commerce platforms.
 
@@ -196,9 +196,9 @@ Supports both admin and storefront API endpoints, Docker deployment, and Claude 
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [saleor/saleor-mcp](https://github.com/saleor/saleor-mcp) | 13 | Python | AGPL-3.0 | 38 |
+| [saleor/saleor-mcp](https://github.com/saleor/saleor-mcp) | 16 | Python | AGPL-3.0 | 38 |
 
-**saleor/saleor-mcp** (13 stars, 38 commits) is the official Saleor Commerce MCP server, providing **read-only** access to products, customers, and orders through GraphQL. Uses Streamable HTTP transport with domain validation via regex patterns and custom header authentication (`X-Saleor-API-URL`, `X-Saleor-Auth-Token`).
+**saleor/saleor-mcp** (16 stars as of this audit, up from 13; 38 commits) is the official Saleor Commerce MCP server, providing **read-only** access to products, customers, and orders through GraphQL. Uses Streamable HTTP transport with domain validation via regex patterns and custom header authentication (`X-Saleor-API-URL`, `X-Saleor-Auth-Token`).
 
 Code generation via ariadne-codegen, Docker deployment support, compatible with Saleor 3.21+. The read-only design is an intentional safety choice for an official vendor server.
 
@@ -206,9 +206,9 @@ Code generation via ariadne-codegen, Docker deployment support, compatible with 
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [commercetools/commerce-mcp](https://github.com/commercetools/commerce-mcp) | 2 | TypeScript | MIT* | 87 |
+| [commercetools/commerce-mcp](https://github.com/commercetools/commerce-mcp) | 4 | TypeScript | MIT* | 100 |
 
-**commercetools/commerce-mcp** (2 stars, 87 commits) is the official commercetools MCP server with the most comprehensive tool set of any enterprise commerce MCP implementation. Despite low stars, the 87 commits indicate active development.
+**commercetools/commerce-mcp** (4 stars, 100 commits as of this audit — up from 2/87) is the official commercetools MCP server with the most comprehensive tool set of any enterprise commerce MCP implementation. Despite low stars, the 87 commits indicate active development.
 
 Provides tools across: Products, Orders, Carts, Customers, Customer Groups, Categories, Channels, Stores, Inventory, Pricing, Product Discounts, Cart Discounts, Quotes, Business Units, Payments, Shopping Lists, Extensions, Custom Objects, Custom Types, Tax, Shipping, Zones, and Recurring Orders — each with read, create, and update operations.
 
@@ -220,19 +220,17 @@ Configurable tool loading with `all` (everything) or `all.read` (read-only) pres
 
 | Server | Stars | Language | Commits |
 |--------|-------|----------|---------|
-| [Fewsats/amazon-mcp](https://github.com/Fewsats/amazon-mcp) | 75 | Python | 14 |
+| [Fewsats/amazon-mcp](https://github.com/Fewsats/amazon-mcp) | 80 | Python | 14 |
 
-**Fewsats/amazon-mcp** (75 stars, 14 commits) enables searching and purchasing Amazon products through AI agents using the **L402 payment protocol** via Fewsats infrastructure. Custom budget limits, spending caps, approval thresholds, and manual review options provide purchase safety controls.
-
-Compatible with Claude Desktop and Cursor IDE. The L402 protocol integration is notable — it provides a standardized payment layer rather than requiring direct Amazon account credentials.
+**Discontinued as of this audit.** [The repository was archived by its owner on April 24, 2026](https://github.com/Fewsats/amazon-mcp) — before this review's own May 20, 2026 refresh — and its README states "this project has been discontinued and is no longer maintained." It is now read-only (80 stars, 11 forks). It previously enabled searching and purchasing Amazon products through AI agents using the **L402 payment protocol** via Fewsats infrastructure, with custom budget limits, spending caps, approval thresholds, and manual review options for purchase safety. Do not deploy this server for new integrations; treat rigwild/mcp-server-amazon below as the only actively maintained community Amazon option.
 
 ### rigwild/mcp-server-amazon (Cart-Based Shopping)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rigwild/mcp-server-amazon](https://github.com/rigwild/mcp-server-amazon) | 19 | TypeScript | MIT | 5 |
+| [rigwild/mcp-server-amazon](https://github.com/rigwild/mcp-server-amazon) | 43 | TypeScript | MIT | 5 |
 
-**rigwild/mcp-server-amazon** (19 stars, 22 commits) provides a more traditional Amazon shopping flow — search products, view details, manage shopping cart, place orders, and access order history. Generates Amazon checkout links for purchase completion rather than handling payment directly.
+**rigwild/mcp-server-amazon** (43 stars as of this audit, up from 19; 21 forks) provides a more traditional Amazon shopping flow — search products, view details, manage shopping cart, place orders, and access order history. Generates Amazon checkout links for purchase completion rather than handling payment directly.
 
 ### profplum700/etsy-mcp-server (Shop Management)
 
@@ -240,7 +238,7 @@ Compatible with Claude Desktop and Cursor IDE. The L402 protocol integration is 
 |--------|-------|----------|---------|-------|
 | [profplum700/etsy-mcp-server](https://github.com/profplum700/etsy-mcp-server) | 9 | TypeScript | MIT | 11 |
 
-**profplum700/etsy-mcp-server** (9 stars, 25 commits) bridges Etsy's API with MCP for shop management — retrieve shop info, view inventory with state filtering, create draft listings, upload listing images, update listings, access transaction history, manage shop sections, and explore product taxonomy hierarchies.
+**profplum700/etsy-mcp-server** (9 stars, 27 commits as of this audit) bridges Etsy's API with MCP for shop management — retrieve shop info, view inventory with state filtering, create draft listings, upload listing images, update listings, access transaction history, manage shop sections, and explore product taxonomy hierarchies.
 
 Docker containerization and MCP Inspector debugging support. Designed for sellers managing their shops through AI agents rather than consumer shopping.
 
@@ -248,9 +246,9 @@ Docker containerization and MCP Inspector debugging support. Designed for seller
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [YosefHayim/ebay-mcp](https://github.com/YosefHayim/ebay-mcp) | 48 | TypeScript | 325 |
+| [YosefHayim/ebay-mcp](https://github.com/YosefHayim/ebay-mcp) | 122 | TypeScript | 298 |
 
-**YosefHayim/ebay-mcp** (48 stars, 617 commits, 29 forks) fills what was previously a major gap — comprehensive eBay integration with **325 tools** covering 270 unique eBay Sell API endpoints at 100% coverage. Covers inventory management, order fulfillment, marketing campaigns, analytics, and developer tools.
+**YosefHayim/ebay-mcp** (122 stars, 709 commits, 56 forks as of this audit — up from 48/617/29) fills what was previously a major gap — comprehensive eBay integration with **298 tools** (down slightly from a previously reported 325 as the tool set was reorganized) covering 270 unique eBay Sell API endpoints at 100% coverage, per the current README. Covers inventory management, order fulfillment, marketing campaigns, analytics, and developer tools.
 
 Key features:
 - **OAuth 2.0 authentication** with smart fallback mechanisms
@@ -259,17 +257,17 @@ Key features:
 - **Interactive setup wizard** (`npm run setup`) for credential configuration
 - **Scalable API access** — from 1,000 to 10,000-50,000 daily API requests via OAuth escalation
 
-Built with TypeScript and Zod validation for type safety. **Security warning:** [CVE-2026-27203](https://github.com/YosefHayim/ebay-mcp/security/advisories) (environment variable injection in `updateEnvFile` in `src/auth/oauth.ts`) was disclosed February 19, 2026 and remains **unpatched as of May 2026** — all versions through v1.7.2 are affected. Attackers can inject arbitrary environment variables; do not deploy this server in production environments handling real commerce data until a patched release ships.
+Built with TypeScript and Zod validation for type safety. **Security warning:** [GHSA-97rm-xj73-33jh / CVE-2026-27203](https://github.com/YosefHayim/ebay-mcp/security/advisories/GHSA-97rm-xj73-33jh) (environment variable injection in `updateEnvFile` in `src/auth/oauth.ts`), also tracked independently by [Tenable](https://www.tenable.com/cve/CVE-2026-27203) and [GitLab Advisory Database](https://advisories.gitlab.com/pkg/npm/ebay-mcp/CVE-2026-27203/), was disclosed February 18-19, 2026 and affects all versions through v1.7.2. As of this audit, GitHub's own advisory record still lists **no patched version** — the package has since progressed to v1.14.3, and its changelog notes "hardened environment variable handling" in v1.7.3, but no changelog entry or advisory update ties that change to a confirmed fix for this specific CVE, so it should still be treated as **unresolved**. Attackers can inject arbitrary environment variables; do not deploy this server in production environments handling real commerce data until GitHub's advisory record shows a patched version.
 
 ### Square MCP Server (Official — Payments & Commerce)
 
 | Server | Stars | Auth | Transport |
 |--------|-------|------|-----------|
-| [Square MCP](https://mcp.squareup.com/) | 99 | OAuth | SSE (remote) |
+| [Square MCP](https://developer.squareup.com/docs/mcp) | 106 | OAuth | SSE (remote) |
 
-**Square MCP Server** (99 stars) is Square's official remote MCP server — filling another previously-noted gap. Provides a bridge between Square's complete API ecosystem and AI assistants, covering payments, orders, inventory, and customer management. OAuth-based authentication at `mcp.squareup.com` with no API key setup required.
+**Square MCP Server** ([106 stars on GitHub](https://github.com/square/square-mcp-server) as of this audit, up from 99) is Square's [official remote MCP server](https://developer.squareup.com/docs/mcp), currently in beta — filling another previously-noted gap. Provides a bridge between Square's complete API ecosystem and AI assistants, covering payments, orders, inventory, and customer management. OAuth-based authentication at `mcp.squareup.com` with no API key setup required.
 
-Note: This is a **paid service with no free tier** — requires an active Square account. Uses the SSE transport protocol. PulseMCP: ~53.8K all-time visitors, ~1.9K weekly, #559 globally.
+**Correction (this audit):** the earlier claim that Square is "a paid service with no free tier" is inaccurate — [Square offers a free plan](https://squareup.com/us/en/pricing) (no monthly fee, pay only per-transaction processing fees) alongside paid Plus/Premium tiers, and the MCP server itself is free to connect to any of them via OAuth; only the underlying Square account's transaction-processing fees apply. Uses the SSE transport protocol. [PulseMCP](https://www.pulsemcp.com/servers/square): ~20.9K all-time visitors, ~508 weekly, #1,217 globally — down from ~53.8K/#559 at the last audit.
 
 ### Zendrop MCP Server (Dropshipping — First in Category)
 
@@ -306,7 +304,7 @@ Available via the MCP Registry; no additional cost on existing Easyship plans.
 
 | Server | Type | Tools | Auth | Available |
 |--------|------|-------|------|-----------|
-| BigCommerce Storefront MCP | Platform-native | Catalog + Cart | None (guest) / OAuth (auth'd) | Early Access |
+| BigCommerce Storefront MCP | Platform-native | Catalog + Cart | None (guest) / OAuth (auth'd) | Open Beta (enable via Settings → Early Access) |
 | CData BigCommerce MCP | Read-only | Query-based | JDBC | GA |
 | StackOne BigCommerce MCP | Full CRUD | 120 | OAuth | GA |
 | Community BigCommerce MCP | Products/Orders/Customers | varies | API key | GA |
@@ -315,7 +313,7 @@ Available via the MCP Registry; no additional cost on existing Easyship plans.
 
 The significance mirrors Shopify's Storefront MCP launch: every BigCommerce store now has a standard AI-agent-accessible endpoint with zero custom integration required. BigCommerce has the second-largest US market share among hosted commerce platforms.
 
-Third-party options remain available for more advanced use cases: **StackOne** offers **120 pre-built actions** with managed authentication, prompt injection defense, and a Connector Builder. **CData** provides read-only access via JDBC drivers. **Zapier** and **Truto** offer managed integrations. Open-source community implementations (isaacgounton/bigcommerce-api-mcp) cover products, customers, and orders.
+Third-party options remain available for more advanced use cases: **StackOne** offers **120 pre-built actions** with managed authentication, prompt injection defense, and a Connector Builder. **CData** provides read-only access via JDBC drivers. **Zapier** and **Truto** offer managed integrations. Open-source community implementations — [etugrand/bigcommerce-api-mcp](https://github.com/etugrand/bigcommerce-api-mcp) (5 stars; this repo was previously under the isaacgounton account and has since transferred owners) — cover products, customers, and orders.
 
 ## Digital Product & Creator Platforms
 
@@ -325,7 +323,7 @@ Third-party options remain available for more advanced use cases: **StackOne** o
 |--------|-------|----------|---------|-------|
 | [rmarescu/gumroad-mcp](https://github.com/rmarescu/gumroad-mcp) | 19 | TypeScript | MIT | 7 |
 
-**rmarescu/gumroad-mcp** (19 stars, 39 commits) manages digital product sales on Gumroad — product retrieval, enable/disable listings, sales analytics, offer code CRUD (create, view, update, delete promotions), and user account information.
+**rmarescu/gumroad-mcp** (29 stars as of this audit, up from 19; 39 commits) manages digital product sales on Gumroad — product retrieval, enable/disable listings, sales analytics, offer code CRUD (create, view, update, delete promotions), and user account information.
 
 ### atharvagupta2003/mcp-lemonsqueezy (Subscriptions & Checkouts)
 
@@ -333,7 +331,7 @@ Third-party options remain available for more advanced use cases: **StackOne** o
 |--------|-------|----------|---------|-------|
 | [atharvagupta2003/mcp-lemonsqueezy](https://github.com/atharvagupta2003/mcp-lemonsqueezy) | 9 | Python | MIT | 10+ |
 
-**atharvagupta2003/mcp-lemonsqueezy** (9 stars, 23 commits) provides store, product, variant, order, customer, subscription, license key, checkout session, and webhook management for the Lemon Squeezy platform. Includes audit logging of all actions — useful for tracking what AI agents do with your commerce data.
+**atharvagupta2003/mcp-lemonsqueezy** (10 stars as of this audit, up from 9; 23 commits) provides store, product, variant, order, customer, subscription, license key, checkout session, and webhook management for the Lemon Squeezy platform. Includes audit logging of all actions — useful for tracking what AI agents do with your commerce data.
 
 ## Other Platforms
 
@@ -343,9 +341,9 @@ Third-party options remain available for more advanced use cases: **StackOne** o
 |--------|-------|----------|---------|-------|
 | [latinogino/prestashop-mcp](https://github.com/latinogino/prestashop-mcp) | 9 | Python | 46 | 20+ |
 
-**latinogino/prestashop-mcp** (9 stars, 46 commits) enables comprehensive PrestaShop store management — product CRUD with stock/price management, category management with hierarchy filtering, customer management, order management with status updates, module management (install/activate/deactivate), main menu navigation customization, cache management, and theme configuration.
+**latinogino/prestashop-mcp** (8 stars as of this audit, 46 commits) enables comprehensive PrestaShop store management — product CRUD with stock/price management, category management with hierarchy filtering, customer management, order management with status updates, module management (install/activate/deactivate), main menu navigation customization, cache management, and theme configuration.
 
-Async/await architecture with comprehensive error handling and a production-ready test suite.
+Async/await architecture with comprehensive error handling and a production-ready test suite. **Note (this audit):** the maintainer's README now states "I currently do not plan to actively maintain this repository" — the code is functional but should be evaluated as effectively unmaintained rather than actively developed.
 
 ## Emerging Commerce Protocols
 
@@ -383,18 +381,18 @@ ACP provides a standardized way for AI agents to submit orders, manage transacti
 
 The agentic commerce protocol space has expanded rapidly — as of Q2 2026, **10 active protocols** target agent-driven commerce:
 
-1. **ACP** (Stripe + OpenAI) — order processing between AI agents and merchants
-2. **UCP** (Google + 20+ partners) — universal commerce primitives across transports
-3. **Shopify Agents** — platform-native agentic storefronts
-4. **Amazon Buy for Me** — AI-assisted purchasing on Amazon
-5. **Mastercard Verifiable Intent** — cryptographic purchase verification
-6. **Stripe Machine Payments** — autonomous agent payment infrastructure
-7. **x402** — HTTP-native micropayments protocol
-8. **Google Agentic Checkout** — checkout flows in AI Mode
-9. **Visa Ready** — agent authentication via network tokens
-10. **Klarna Agent Mode** — buy-now-pay-later for AI agents
+1. **[ACP](https://docs.stripe.com/agentic-commerce/acp)** (Stripe + OpenAI) — order processing between AI agents and merchants
+2. **[UCP](https://io.google/2026/)** (Google + 20+ partners) — universal commerce primitives across transports
+3. **[Shopify Agents](https://www.shopify.com/)** — platform-native agentic storefronts (see Platform-Native Commerce above)
+4. **[Amazon Buy for Me](https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands)** — AI-assisted purchasing on Amazon for items outside Amazon's own catalog
+5. **Mastercard Verifiable Intent** — cryptographic purchase verification (see FIDO Alliance section below)
+6. **[Stripe Machine Payments Protocol (MPP)](https://stripe.com/blog/machine-payments-protocol)**, co-developed with Tempo — session-based autonomous agent payment infrastructure
+7. **[x402](https://www.coinbase.com/developer-platform/discover/launches/x402)** (Coinbase, now under Linux Foundation governance) — HTTP-native micropayments protocol
+8. **[Google Agentic Checkout](https://business.google.com/us/think/ai-excellence/agentic-commerce-ai-tools-protocol-retailers-platforms/)** — checkout flows in AI Mode and the Gemini app
+9. **[Visa's "Agentic Ready" program](https://investor.visa.com/news/news-details/2026/Visa-Announces-Global-Expansion-of-Agentic-Ready-Program/default.aspx)** — agent authentication via tokenized network credentials (corrected from "Visa Ready," which is the name of an unrelated, longstanding Visa fintech-partner program)
+10. **[Klarna's BNPL support for AI agents](https://investors.klarna.com/News--Events/news/news-details/2026/Klarna-Expands-Further-Into-Agentic-Commerce-Offering-Flexible-Payments-to-Merchants-via-Stripes-Shared-Payment-Tokens/default.aspx)**, delivered via Stripe's Shared Payment Tokens — buy-now-pay-later for AI-agent checkout (corrected: Klarna has not branded this "Agent Mode"; its separately-named "Agentic Product Protocol" is a different, product-discovery feature)
 
-**April 28, 2026 update:** Two new protocols enter the count via [FIDO Alliance](https://fidoalliance.org/) contributions:
+**April 28, 2026 update:** Two new protocols enter the count via [FIDO Alliance](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/) contributions, also reported independently by [PYMNTS](https://www.pymnts.com/artificial-intelligence-2/2026/google-and-mastercard-contribute-agentic-commerce-standards-to-fido-alliance/):
 
 11. **AP2 v0.2** (Google → FIDO) — "Human Not Present" autonomous payments support; v0.2 released as Google donated AP2 to FIDO Alliance's new Agentic Authentication Technical Working Group
 12. **Mastercard Verifiable Intent** (open-sourced April 28) — cryptographic proof of consumer authorization for agent transactions using Selective Disclosure; co-developed with Google; now part of FIDO's Payments Technical Working Group (chaired by Mastercard and Visa representatives)
@@ -411,7 +409,7 @@ This proliferation signals that agentic commerce is entering a standards competi
 |--------|------|-------|--------|-----------|
 | Meta Ads AI Connectors | Commercial remote | 29 | MCP-compatible | ChatGPT, Claude, others |
 
-**Meta launched [AI Connectors for Meta Ads](https://www.facebook.com/business/news) on April 29, 2026** in open beta globally — enabling any MCP-compatible AI client to access and manage Meta advertising campaigns. This is the first official MCP integration from Meta, covering the advertising layer of Facebook, Instagram, and Messenger commerce.
+**Meta launched [AI Connectors for Meta Ads](https://www.facebook.com/business/news/meta-ads-ai-connectors) on April 29, 2026** in open beta globally — enabling any MCP-compatible AI client to access and manage Meta advertising campaigns. This is the first official MCP integration from Meta, covering the advertising layer of Facebook, Instagram, and Messenger commerce.
 
 29 tools cover:
 - **Performance Reporting:** Campaign analytics, ad set metrics, ad-level data, audience insights
@@ -430,10 +428,10 @@ Read/write capable — agents can create campaigns, adjust budgets, and pause un
 The e-commerce MCP ecosystem has narrowed its gaps significantly since March 2026, but notable holes remain:
 
 - **No cross-platform price comparison** — no MCP server compares prices across Amazon, Walmart, Target, etc.
-- **No official Amazon MCP server** — Amazon's "Buy for Me" is a platform feature, not an open MCP server; community servers (Fewsats, rigwild) remain unofficial; Amazon Ads MCP is advertising-only
+- **No official Amazon MCP server** — Amazon's "Buy for Me" is a platform feature, not an open MCP server; community options are thinner than previously reported — Fewsats/amazon-mcp was archived/discontinued April 24, 2026, leaving rigwild/mcp-server-amazon as the main actively maintained unofficial option; Amazon Ads MCP is advertising-only
 - ~~No official BigCommerce MCP server~~ — **FILLED** (official Storefront MCP May 11, 2026; StackOne, CData, community also available)
-- ~~No Square POS MCP server~~ — **FILLED** (official at mcp.squareup.com, 99 stars, OAuth)
-- ~~No official eBay MCP server~~ — **PARTIALLY FILLED** (YosefHayim/ebay-mcp community server with 325 tools, but CVE-2026-27203 unpatched and still no official eBay server)
+- ~~No Square POS MCP server~~ — **FILLED** (official at mcp.squareup.com, 106 stars, OAuth)
+- ~~No official eBay MCP server~~ — **PARTIALLY FILLED** (YosefHayim/ebay-mcp community server with 298 tools, but CVE-2026-27203 unpatched and still no official eBay server)
 - **Fragmented Shopify Admin landscape** — still 6+ community servers with overlapping features
 - **Limited purchase safety controls** — most shopping servers don't enforce spending limits or confirmation flows
 - **No product review aggregation** — no server collects and analyzes customer reviews across platforms
@@ -448,10 +446,10 @@ The e-commerce MCP ecosystem holds at **4.5/5** — the May 2026 update brings m
 
 **Positive developments:** **BigCommerce launched its official Storefront MCP (May 11)**, closing the last major platform gap — every major commerce platform now has at least one official MCP server. **Easyship** opened a new subcategory (cross-border shipping/fulfillment) that fills a genuine operational gap. **Stripe Sessions 2026** (288 features, Link agent wallet) and **Google UCP Universal Cart** demonstrate the protocol layer is solidifying into real consumer-facing products. **FIDO Alliance involvement** (April 28) signals the agentic commerce space is mature enough for standards-body attention. **Adobe Commerce** making MCP its default extends coverage to the enterprise segment.
 
-**Countervailing concerns:** **eBay's CVE-2026-27203 remains unpatched** — a production server with 325 tools and a security hole with no fix is a meaningful deduction. **Protocol fragmentation intensified** to 12+ standards; FIDO's work is promising but adds complexity short-term. **Shopify's UCP migration deadline (June 15)** creates a breaking change that will catch developers off-guard. **Amazon's walled garden remains complete** — Buy for Me, Rufus, and Alexa+ all bypass open protocols.
+**Countervailing concerns:** **eBay's CVE-2026-27203 remains unpatched** — a production server with 298 tools and a security hole with no fix is a meaningful deduction. **Protocol fragmentation intensified** to 12+ standards; FIDO's work is promising but adds complexity short-term. **Shopify's UCP migration deadline (June 15)** creates a breaking change that will catch developers off-guard. **Amazon's walled garden remains complete** — Buy for Me, Rufus, and Alexa+ all bypass open protocols.
 
 At this rate, the category is tracking toward 5/5 — but not yet. Consumer-side shopping intelligence (price comparison, deal aggregation, review synthesis) remains entirely absent, and the gap between "agents can sell things" and "agents can intelligently shop for things" is still wide.
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic).*
+*This review was last edited on 2026-05-20 using Claude Sonnet 4.6 (Anthropic); citations and vendor/repo stats re-audited 2026-08-14 using Claude Sonnet 5 (Anthropic).*

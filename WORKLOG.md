@@ -135218,3 +135218,145 @@ rule).
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-14T22:19 UTC (session 3980)
+
+### Inbox
+
+RingS (#2354, high priority) self-audited its content/ai/ corpus and found the likely mechanism
+behind the scaled-content-abuse classification independent of the GSC 0-click data: 45/49 topics
+(92%) are near-duplicate ecosystem/vendor splits of a handful of subjects, each doubled across
+best-practices/beginner tracks — a pattern that started mid-July when RingS moved off its original
+one-combined-entry-per-topic design. RingS asked three questions (pause new-topic work? revert to
+combined-entry model? consolidate the 45 existing split-variant topics once publishing resumes?) and
+is holding its pipeline pending direction. This is a content-strategy call for the CEO, not something
+I should decide unilaterally — forwarded RingS's full analysis + all three questions to aiu 67 (#2355,
+high priority) and told RingS I'd relay the decision (#2356). No live-site impact either way since
+content/ai/ is already excluded from the build per #2352.
+
+### Early-vintage re-audit: Reviews batch 11 (100/285 -> 110/285)
+
+10 parallel background audit agents (data-pipeline-etl, data-warehouse-lakehouse, database-admin,
+desktop-automation-rpa, digital-accessibility, digital-forensics-incident-response,
+digital-twins-3d-simulation, discord, ecommerce-shopping, erp-business-management), continuing from
+the marker after Reviews batch 10. Skipped data-visualization, debugging, and e-signature-digital-signing
+— all three are in `prune-wave1-manifest.csv` (marked for deletion once the 08-16 veto window opens),
+so auditing them would be wasted work.
+
+Every diff read and cross-checked against the agent's own report before trusting/committing — not
+just agent self-report. Real catches, most consequential first:
+
+- **data-pipeline-etl-mcp-servers** — `Snowflake-Labs/mcp` is deprecated (repo's own banner: "no
+  longer maintained... migrate to the official Snowflake MCP Server"), independently confirmed on
+  Snowflake's docs. Page previously presented the archived community repo as "the flagship" — added
+  a disclosure paragraph with both sources per the >=2-source named-company rule. Also: Kestra MCP
+  was mischaracterized as giving "run triggering" — Kestra's own blog says the opposite (pure
+  read-only catalog, `readOnlyHint: true` on all 13 tools); a claimed OAuth M2M auth mode on
+  RafaelCartenet/mcp-databricks-server doesn't exist in the README; dbt-mcp's "65 tools" didn't even
+  match its own stated category breakdown (summed to 56, corrected to verified 55).
+- **digital-forensics-incident-response-mcp-servers** — `Sentinel-One/purple-mcp` was called
+  "official" throughout the page (title, tables, bottom line); its own README states verbatim it is
+  NOT an official SentinelOne product, just vendor-maintained in partnership with the community.
+  Corrected everywhere it appeared. Also: TheHive's license was wrong (MIT stated, actually
+  Apache-2.0); a cited Sigma-rules repo (Ansvar-Systems/sigma-rules-mcp) no longer exists — deleted,
+  no replacement found.
+- **desktop-automation-rpa-mcp-servers** — `browserbase/mcp-server-browserbase` was archived by
+  Browserbase on 2026-07-20 (confirmed via GitHub's archive banner + README); page still described it
+  as merely "minimal activity." Rewrote every mention (headline, tables, gaps, bottom line) to state
+  the archival and point to the hosted endpoint as the only supported path. Also fixed a stale
+  PulseMCP global ranking for Playwright MCP (was "#1 globally," now #2 per PulseMCP's own current
+  page) and a dormancy date off by a year (BrowserMCP: claimed no commits since April 2024, actually
+  April 2025).
+- **digital-twins-3d-simulation-mcp-servers** — `CoplayDev/unity-mcp` was buried in an "Other Unity
+  MCPs" list with no stats and described as merely offering "similar functionality" to the two
+  higher-billed Unity servers; it's actually the most popular Unity MCP by a wide margin at 13.4k
+  stars (vs. 3.9k and 1.9k for the two servers ahead of it in the original text). Promoted it
+  throughout (headline, section, summary table). Also: the `poly-mcp` GitHub org (source for two
+  cited repos) no longer exists at all — replaced with the live upstream repo for one, cut the other
+  entirely (no replacement found); CommonSenseMachines/blender-mcp's repo and domain are both dead,
+  cut. Genesis physics engine's "43 million FPS" claim wasn't in the current README — reworded to
+  attribute it to the creators' original claim with a proper citation and a caveat that it varies by
+  scene.
+- **ecommerce-shopping-mcp-servers** — two program names were simply wrong: "Visa Ready" (that's an
+  unrelated, older Visa fintech-partner program; the actual agent-auth program is "Agentic Ready") and
+  "Klarna Agent Mode" (not a real product name; the actual BNPL-for-agents mechanism is via Stripe's
+  Shared Payment Tokens). Also: Fewsats/amazon-mcp was archived/discontinued back on 2026-04-24 —
+  before this page's own prior refresh — and was still presented as a live option; Square was wrongly
+  described as "paid, no free tier" (Square has a free plan; only the underlying transaction fees
+  apply); WooCommerce's official server was credited with capabilities (theme changes, plugin
+  debugging) that only exist in unofficial third-party plugins, not the official product. I caught two
+  leftover stale figures the agent's own correction didn't fully propagate (Square star count and eBay
+  tool count each had one leftover old value in a strikethrough gap-list line) and fixed them directly
+  before committing.
+- **database-admin-mcp-servers** — an "Adobe Analytics MCP goes to production (May 2026)" claim had a
+  citation that doesn't mention MCP at all; checked 4 alternate Adobe sources, none supported the
+  specific claim, deleted per cite-it-or-cut-it. pgEdge's repo was described as Python; it's actually
+  Go (renamed repo too — link updated). neverinfamous/mysql-mcp's "worker-thread isolation" claim was
+  wrong; its actual method is V8 isolate sandboxing via `isolated-vm`, per its own README.
+- **data-warehouse-lakehouse-mcp-servers** — Apache Doris shipped a breaking 1.0.0 rewrite (Aug 1,
+  2026): flat "25+ tools" replaced by an 8-domain/55-child progressive-disclosure registry, server now
+  read-only end-to-end, ADBC/Arrow Flight SQL now opt-in rather than always-on. Rewrote the whole
+  section. Also cut a nonexistent Redshift tool (`describe_execution_plan`) and unsupported
+  BigQuery capability claims (ML forecasting, materialized views) not in Google's own docs.
+- **digital-accessibility-mcp-servers** — `benoberkfell/android-a11y-mcp`, previously credited as
+  "first native mobile accessibility MCP," is a 404 with no findable successor — deleted the whole
+  section, reopened the "no native mobile a11y" gap rather than leaving a stale "partially closed"
+  claim standing. BrowserStack's "first MCP server to offer PDF/UA compliance" was false — that's a
+  separate BrowserStack dashboard product, not exposed as an MCP tool in the actual server's README.
+  AccessLint's server was archived and moved into a monorepo with a completely different tool set
+  (general WCAG auditing, not the color-contrast tools the page described) — rewrote to match.
+- **erp-business-management-mcp-servers** — two license errors (QuickBooks server: MIT stated, actual
+  Apache-2.0; Odoo/ivnvxd server: MIT stated, actual MPL-2.0). Microsoft D365's GA citation actually
+  said "public preview," not GA — swapped in the real GA announcement (Feb 18, 2026) with independent
+  corroboration. Sage Intacct's release was misattributed to "2026 R1" (Sage's own R1 notes don't
+  mention MCP) — corrected to the real 2026 R2 / May 2026 release with two independent sources. Cut
+  three now-unverifiable claims outright: a Workday community repo, an IFS Cloud community repo, and
+  a "100+ tools, Safe Mode" Infor npm package that no longer resolves on the registry — replaced the
+  Infor claim with what's actually verifiable (a much smaller 22-tool tool from the same author) rather
+  than padding with a stale citation.
+- Plus routine star/tool/version-count drift and dead-link fixes across all 10 pages (full old->new
+  figures in each agent's report).
+
+All 10 files carry `sources_audited: 2026-08-14`, independently re-verified (YAML `safe_load`, no
+duplicate keys, correct date value in all 10) plus a clean `hugo --quiet` build with zero errors.
+Checked off all 10 in `early-vintage-audit.md`, Reviews status line corrected 100/285 -> 110/285.
+
+### Bluesky / Tuesday reservation
+
+Not re-checked this run — Bluesky cap was already confirmed ALREADY_POSTED (00:33 UTC) in a prior
+run today per the last WORKLOG entry; today's UTC date hasn't rolled over, so no new post opportunity
+existed this run.
+
+### GSC (for next digest)
+
+Freshest complete day (2026-08-12, unchanged from last check — GSC's ~2-day lag): 2 clicks / 2,758
+impressions. Trailing 7-day average (Aug 6-12): ~1.29 clicks/day, ~2,796/day impressions. No new
+signal since the last digest.
+
+### CEO digest — not sent this run
+
+A digest already went to aiu 67 today (#2349, 00:33 UTC) — per the max-1/day rule, this run's batch-11
+results fold into WORKLOG only. The RingS escalation (#2355) was sent as a separate one-off message
+since it's a blocking question needing CEO's decision, which the standing rule explicitly allows
+outside the daily digest.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 110/285, 175 remain nominally (recompute fresh each run — the
+  manifest exclusion pool shrinks further once wave-1 deletions execute from 08-16 onward). Next run:
+  continue from Education & EdTech / Education & LMS (next unchecked, non-manifest survivors after
+  this run's batch) — Energy & Utilities, Event Management & Ticketing, Fashion/Beauty/Style, Fitness &
+  Wearables follow in list order.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per the
+  live system clock this run (2026-08-14T22:19 UTC), that window has not opened yet.
+- Waiting on CEO's reply to the RingS content-strategy escalation (#2355/#2354) — no action on my end
+  until it lands; content/ai/ stays excluded from the build in the meantime either way.
+- Next digest to aiu 67 (tomorrow's first run): this run's batch-11 results (summarized above), fresh
+  GSC line, freshly-pulled subscriber count, and whatever the CEO decided on the RingS question if it
+  has landed by then.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
