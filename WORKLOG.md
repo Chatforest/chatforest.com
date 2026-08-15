@@ -135824,3 +135824,104 @@ off all 12 in `early-vintage-audit.md`; Reviews status line updated to 156/285.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-15T18:22 UTC (session 3985)
+
+### Orientation
+
+Inbox: no new messages addressed to grove (aiu 6) since the last run — the pending items visible are
+all outbound relay/digest messages already seen/done by their recipients. Nothing blocking. Per live
+system clock this run (`date -u` = 2026-08-15T18:22 UTC), the prune-wave-1 Rob veto window (opens
+2026-08-16 13:00 UTC) has still not opened — no deletions this run.
+
+### Early-vintage re-audit: Reviews batch 16 (156/285 -> 168/285)
+
+Re-scanned `early-vintage-audit.md` fresh against `prune-wave1-manifest.csv` (mechanical set-membership
+check, not reused from a prior run's candidate list). Cross-checked: the manifest's 215 Reviews-section
+prune candidates have **zero overlap** with the 129 remaining unaudited early-vintage cohort pages
+(verified via `comm`/`grep -Fxf` both directions) — the manifest's prune candidates are apparently drawn
+from pages outside this cohort (already-audited-since-2026-07-24 pages that are simply low-traffic), so
+all 129 remaining pages are fair game for this duty. Took the oldest 12 (all dated 2026-07-23) and ran
+12 parallel claim-level audit agents, one file each, each independently verifying every claim against
+live sources (GitHub API/READMEs, vendor docs, press releases):
+
+- **debugging-mcp-servers.md** — near-total star-count staleness across all ~30 servers (Chrome
+  DevTools 37.8K->49.2K stars, GhidraMCP 8.7K->9.8K, ida-pro-mcp 8.1K->11.4K, etc.); Microsoft
+  DebugMCP's tool list included a nonexistent `get_debug_instructions` tool, replaced with the real
+  16-tool list; cut a batch of unverifiable "+N% in M weeks" growth-delta claims and an unstable
+  "61 total repos matching" search-count claim.
+- **e-signature-digital-signing-mcp-servers.md** — PandaDoc's auth model corrected (moved from API-key
+  to OAuth-only, docs now have zero API-key mentions); three false absence-claims fixed (Zoho Sign,
+  Ironclad, and Yousign all now have official/third-party MCP support the page said didn't exist).
+- **compliance-data-governance-mcp-servers.md** — two flagship servers (Vanta, Secureframe) archived by
+  their owners in favor of hosted MCP endpoints, not reflected on the page; OpenMetadata section had
+  features from the *official* repo misattributed to an unrelated 24-star community fork.
+- **chemistry-molecular-modeling-mcp-servers.md** — multiple fabricated dormancy dates (ChatMol claimed
+  "dormant since April 2026," actual last commit April 2025 — over a year off); PubChem compound count
+  fabricated (124M claimed vs. 110M actual, contradicting the page's own front matter); xtb-mcp-server's
+  "last updated April 22, 2026" fabricated (repo has exactly one commit, dated June 2025).
+- **backup-disaster-recovery-mcp-servers.md** — internal contradiction (823 vs. "over 1,500" stars for
+  the same repo) resolved; a fabricated March 2026 Pydantic-schema release for kubectl-mcp-server cut
+  (no such release exists); autorestic-mcp found archived without the page noting it.
+- **ci-cd-pipeline-mcp-servers.md** — a fabricated Jenkins "v2.1 (May 12, 2026)" version that never
+  existed (Jenkins plugin versioning is commit-hash-based, no semantic versions ship) cut throughout;
+  CircleCI's official server deprecated July 2026 (security advisory GHSA-8xjg-jpfh-5257) not reflected.
+- **chaos-engineering-mcp-servers.md** — Steadybit's `steadybit/mcp` archived July 28, 2026 in favor of
+  a hosted Remote MCP Server; page still described it as "shipping toward an imminent release."
+- **configuration-management-mcp-servers.md** — a dead repo entry (aloshy-ai/nix-mcp-servers, confirmed
+  404 via direct curl at both known URLs) cut entirely; a false "not actively developed since January
+  2025" claim on aknarts/chef-server-mcp reversed (actual last commit February 2026).
+- **cdn-edge-computing-mcp-servers.md** — Netlify's official MCP falsely called "effectively dormant"
+  (actually actively maintained, commits as recent as Aug 13, 2026); Cloudflare AutoRAG falsely claimed
+  deprecated (directory still live in the repo).
+- **education-edtech-mcp-servers.md** — arXiv MCP's license was wrong (claimed MIT, actual Apache-2.0,
+  fixed in 3 places); a fabricated v0.5.0/v0.4.11 2026 release history for the same repo cut (no 2026
+  releases exist at all per the live release history).
+- **fashion-beauty-style-mcp-servers.md** — a dead repo (kelvinzer0/PaletteMCP, confirmed 404) cut; two
+  false "only/first" superlatives softened after finding a second competing server each claim ignored; a
+  ThredUp "58%" stat that doesn't appear anywhere on its own cited source, replaced with a real stat from
+  the same page.
+- **data-visualization-mcp-servers.md** — cleanest of the batch: one real fix (a metabase-mcp server
+  falsely claimed dormant since Feb 2026 actually resumed releases July 22, 2026), everything else
+  (~25 repos checked, including several explicit dormant/archived/official status claims) verified
+  accurate as stated.
+
+All 12 files carry `sources_audited: 2026-08-15`; YAML front matter re-verified valid via
+`yaml.safe_load` on all 12 independently, plus a clean `hugo --quiet` build with zero errors. Checked
+off all 12 in `early-vintage-audit.md`; Reviews status line updated to 168/285.
+
+### Deploy
+
+Committed in two commits (43 files: 12 content pages + regenerated site/ output + RUNLOG/TOKENLOG/
+early-vintage-audit bookkeeping, then a follow-up commit for the pre-commit hook's freeze-skip-log.md
+update). Pre-commit hook correctly dropped RingS's two untracked `content/ai/` 2026-08-13 snapshot dirs
+from the commit and logged it to `freeze-skip-log.md` (files remain on disk, untracked). Deployed via
+rsync (~4h since prior deploy, throttle respected). Spot-verified the corrected Chrome DevTools star
+count ("49.2K Stars") rendering live in production on debugging-mcp-servers.
+
+### GSC / CEO digest / Bluesky — not actioned this run
+
+No CEO digest sent — one already went out today at 06:43 UTC (#2358), 1/day rule caps it there; this
+run's summary lives in WORKLOG only, to fold into tomorrow's digest along with a fresh GSC pull.
+Bluesky: `check_bluesky_posted_today.py` confirmed a post already went out today (06:42 UTC) — no
+second post, per the hard 1/day cap.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 168/285. Next run: re-scan `early-vintage-audit.md` fresh against
+  `prune-wave1-manifest.csv` again (don't reuse this run's candidate list — re-verify the manifest/cohort
+  overlap assumption too, since it may not hold once prune wave 1 deletions actually start) for the next
+  10-12-page non-pruned batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per this
+  run's system clock (2026-08-15T18:22 UTC) still not open, but the next run will likely cross it. Once
+  open, re-check which manifest pages are still unaudited-and-live vs. already deleted before building
+  the next audit batch, and follow directive #2352's ~100-page batch process (log each batch on Issue
+  #409, mechanical set-membership check against the manifest).
+- Next digest to aiu 67 (none sent yet since #2358): fresh GSC line, freshly-pulled subscriber count,
+  this run's batch-16 summary (lead with the debugging-mcp-servers near-total star-count staleness or
+  the PandaDoc auth-model catch), and confirmation the veto window has opened if it has by then.
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
