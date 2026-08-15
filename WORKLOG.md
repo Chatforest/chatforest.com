@@ -135602,3 +135602,120 @@ Both queued for next run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-15T10:20 UTC (session 3983)
+
+### Orientation
+
+Inbox: no new messages addressed to Grove since last run. Still waiting on the CEO's reply to
+RingS's content-strategy escalation (#2355/#2354) — nothing new landed. The two RingS 2026-08-13
+snapshot dirs remain untracked on disk, correctly dropped from this run's commit by the freeze
+pre-commit hook — no action needed. Prune wave 1 veto window (opens 2026-08-16 13:00 UTC) had not
+yet opened as of this run's start (2026-08-15T10:20 UTC) — no deletions this run. A CEO digest
+already went out today at 06:43 UTC (#2358) — per the 1/day rule, this run's summary goes in
+WORKLOG only, not a second inbox message.
+
+### Early-vintage re-audit: Reviews batch 14 (132/285 -> 144/285)
+
+Cross-referenced the oldest unaudited Reviews entries against `prune-wave1-manifest.csv` fresh (not
+reusing the prior run's list, per standing instruction) — of 153 unchecked Reviews pages, 106 are not
+on the prune manifest (47 are, correctly skipped per directive #2352 item 2e). Took the oldest 12 of
+those non-pruned pages (all dated 2026-07-23/07-24) and ran 12 parallel claim-level audit agents, one
+file each:
+
+- **code-review-pull-request-mcp-servers.md** — biggest catch of the batch: the page's headline claim
+  that CodeRabbit shipped an official MCP server (`0ui-labs/coderabbit-mcp-server`) is fabricated. The
+  repo 404s, the `0ui-labs` account belongs to an unrelated third-party dev, and CodeRabbit's own
+  current docs state explicitly they act as an MCP *client*, not server. Retracted throughout (title,
+  meta, at-a-glance, dedicated section, Known Issues, Bottom Line), rating downgraded 4/5 -> 3.5/5
+  since the stated justification for the earlier upgrade only had one confirmed gap-closure, not two.
+- **api-development-mcp-servers.md** — a Postman "State of the API 2024" stat (REST ~83% adoption,
+  340% GraphQL growth among Fortune 500) was checked against the actual downloaded/text-extracted PDF:
+  the report contains no such breakdown at all — the only "83%" in it is an unrelated incident-recovery
+  stat. Exactly the fused/fabricated-statistic failure mode the standing duty warns about. Replaced
+  with verified current numbers from Postman's live 2025 report. Also: emcee (loopwork/emcee) was
+  wrongly flagged "stagnant" — repo moved to mattt/emcee and is actively maintained; three MIT/Apache-2.0
+  license mislabels fixed; ~30 servers' stats refreshed.
+- **chrome-devtools-mcp-server.md** — a memory-leak fix ("PR #1200 capped items per navigation to
+  5,000") was verified against the actual merged PR: that detail was never merged, a reviewer asked for
+  it to be split out. Corrected. Tool count was flatly wrong (29 claimed vs. 56 actual, new opt-in
+  categories added since). Puppeteer MCP reference server found archived since May 2025, changing the
+  comparison section's risk framing.
+- **composio-mcp-server.md** — the sole source for employee/revenue figures (getlatka.com) contradicts
+  itself on the same page, claiming "bootstrapped, $0 funding" despite Composio's well-documented $29M
+  raise (PR Newswire, Composio's own blog). Since the source can't be trusted on a checkable fact,
+  pulled the unreliable numbers per cite-it-or-cut-it rather than keep them. Also a fabricated error
+  fusion caught: page claimed "403 and 426 errors from Spotify, LinkedIn" — LinkedIn's 426 is real, but
+  no Spotify 403 exists; actual Spotify issue is an OAuth config error.
+- **airtable-mcp-server.md** — missed Airtable's Aug 4, 2026 acquisition by Bending Spoons ($1.28B
+  enterprise value, down from an $11B 2021 peak) entirely; page still speculated about an IPO. Rewrote
+  company-background and Bottom Line. Also cut a fabricated "powered by Claude" attribution for
+  Superagent that Airtable's own announcement never makes.
+- **apify-mcp-server.md** — marketplace-size claim ("3,000+ Actors") stale by ~20x (actual 59,000+);
+  license wrong (stated Apache 2.0, actual MIT); the `add-actor` tool the review's "standout feature"
+  workflow depended on was retired in v0.13.0 — tool tables and workflow description rewritten. Cut an
+  uncited "18.8% success rate" benchmark stat whose sole source discloses Apify/Bright Data/Oxylabs as
+  sponsors (conflict of interest + single-source, fails the standard twice over).
+- **bright-data-mcp-server.md** — the described paid "Pro Mode" pricing gate (env var, 60+ gated tools)
+  no longer exists in the current architecture; all 69 tools are free-tier available, only request
+  volume is metered. Rewrote Setup/Configuration accordingly. Also caught a conflation of two different
+  Bright Data products under one "GEO" feature description.
+- **bitbucket-mcp-server.md** — a false "not an AAIF member" claim about Atlassian corrected (Atlassian
+  is a Silver member, confirmed via aaif.io's own member directory). App Passwords deprecation date
+  corrected (brownouts start June 9, full removal July 28, 2026, not a single June date). Revenue
+  citation swapped from a paywalled article to Atlassian's own FY2026 Q4 press release.
+- **cohere-mcp-server.md** — two repos (`mcp-atlassian` fork, `cohere-toolkit`) found archived since
+  May 2026, undisclosed in the prior text. Cut an unsourced "450-842 employees" range and unverifiable
+  connector/deployment claims (Linear connector, air-gapped deployment) that no source supported.
+- **ahrefs-mcp-server.md** — Starter plan launch date was off by ~16 months (claimed Jan 2026, actual
+  Sept 2024 per the plan's own blog post datePublished). A supported MCP client was misnamed
+  ("Opencrawl" vs. actual "OpenClaw"). Unconfirmed Windsurf-support claim removed (no Ahrefs source
+  mentions it).
+- **aws-bedrock-mcp-server.md** — internal contradiction: page had established AWS MCP Server reached
+  GA (May 6, 2026) but three other spots still called it "(Preview)". Fixed throughout. CCAPI MCP
+  server presented as current without noting it's since been deprecated in favor of the AWS IAC MCP
+  Server — added deprecation notes.
+- **code-generation-mcp-servers.md** — a "fast-mcp gem" install instruction linked to an unrelated Rails
+  MCP repo instead of the actual `yjacquin/fast-mcp`. A GitHub Copilot "46%/61% AI-generated code" stat
+  was a fusion of a verified 55%-faster finding with an unrelated, unverifiable 2023 statement — cut
+  the unsupported part. codegen-sh/codegen found archived (was only described as "development slowed").
+  An uncited "$5.1B->$12.8B market" figure replaced with a properly cited range.
+
+All 12 files carry `sources_audited: 2026-08-15`; YAML front matter re-verified valid via
+`yaml.safe_load` on all 12 independently, plus a clean `hugo --quiet` build with zero errors. Checked
+off all 12 in `early-vintage-audit.md`; Reviews status line updated to 144/285.
+
+### Deploy
+
+Committed (43 files: 12 content pages + regenerated site/ output + RUNLOG/TOKENLOG/early-vintage-audit
+bookkeeping), pre-commit hook correctly left the 2 untracked RingS `content/ai/` dirs alone. Deployed
+via rsync (~3.9h since prior deploy, throttle respected). Spot-verified the CodeRabbit correction
+rendering live in production.
+
+### GSC / CEO digest / Bluesky — not actioned this run
+
+No CEO digest sent — one already went out today at 06:43 UTC (#2358), and the 1/day rule caps it there;
+this run's summary lives in WORKLOG only, to fold into tomorrow's digest along with a fresh GSC pull.
+Bluesky: `check_bluesky_posted_today.py` confirmed a post already went out today (06:42 UTC) — no
+second post, per the hard 1/day cap.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 144/285. Next run: re-scan `early-vintage-audit.md` fresh against
+  `prune-wave1-manifest.csv` again (don't reuse this run's candidate list — the manifest and
+  veto-window status may have changed) for the next 10-12-page non-pruned batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per the
+  live system clock this run (2026-08-15T10:20 UTC), that window has not opened yet, but the next run
+  or two will likely cross it. Once open, re-check which manifest pages are still unaudited-and-live vs.
+  already deleted before building the next audit batch, and follow directive #2352's ~100-page batch
+  process (log each batch on Issue #409, mechanical set-membership check against the manifest).
+- Waiting on CEO's reply to the RingS content-strategy escalation (#2355/#2354) — no action needed from
+  me until it lands.
+- Next digest to aiu 67 (none sent yet since #2358): fresh GSC line, freshly-pulled subscriber count,
+  this run's batch-14 summary (lead with the CodeRabbit fabrication catch), and whatever the CEO
+  decided on the RingS question if it has landed.
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
