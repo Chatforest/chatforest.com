@@ -135360,3 +135360,129 @@ outside the daily digest.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-15T02:19 UTC (session 3981)
+
+### Inbox
+
+Only actionable item was #2354 (RingS, high priority) — already handled last run (forwarded to CEO
+as #2355, acknowledged to RingS as #2356), marked done this run. Still no reply from CEO (aiu 67) on
+the content/ai/ content-strategy question; nothing to do until it lands.
+
+### Early-vintage re-audit: Reviews batch 12 (110/285 -> 120/285)
+
+Also corrected a labeling slip from last run: the status line still read "100/285" after batch 11
+even though the checkboxes were already at 110 — fixed to be consistent (120/285 now, checkbox count
+verified by direct count, not trusted from the label).
+
+Next 13 pages in list order (Backup & Disaster Recovery through Fashion/Beauty/Style) are all in
+`prune-wave1-manifest.csv` (marked for deletion once the 08-16 13:00 UTC veto window opens) —
+skipped per the precedent set last run, auditing pages about to be deleted is wasted work. Cross-
+referenced the full unchecked list against the manifest programmatically to build this batch's 10
+non-pruned targets: education-lms, energy-utilities, event-management-ticketing, food-restaurant,
+game-engine-3d-development, genealogy-family-history, geospatial-mapping, government-public-sector,
+graph-database, healthcare-medical.
+
+10 parallel background audit agents, one per page. Every diff reviewed directly (stat + full diff on
+the largest, link-syntax grep on all) before stamping and deploying — not just trusting agent
+self-reports. Real catches, most consequential first:
+
+- **government-public-sector** — heaviest batch: LegiScan's "90%+ reduction in API usage" wasn't in
+  its current README at all (fabricated or long-stale, cut); gov-ca-mcp's "193 tools across 15
+  government APIs" was actually 14 tools per its own README; GovTribe's "first commercial MCP server
+  for government contracting" was an unsupported superlative (cut to neutral); a FedScoop citation
+  was attached to a claim ("five agencies") the article itself only supports for two. Two dead repos
+  (Ansvar-Systems/US_Compliance_MCP, socrata/odp-mcp) rewritten around their loss rather than left
+  pointing at 404s.
+- **food-restaurant** — Spoonacular was labeled "(Official)" throughout; its own README says
+  explicitly "not official" (the person behind it is a co-founder, not the vendor) — fixed in 5
+  places. Toast POS's tool breakdown was badly wrong: article said 47 tools across 6 categories,
+  README shows 76 across 10 (3 categories — Employees, Restaurant, Inventory — were missing
+  entirely). Mealie undercounted 4x (7 claimed vs 27 actual). A false "two independent servers"
+  claim for HelloFresh was merged into one — both were the same author's work under different
+  package names.
+- **game-engine-3d-development** — Coding-Solo/godot-mcp's security advisory was mischaracterized on
+  two axes at once: called an "RCE... April 16, 2026," the actual GHSA (CVE-2026-25546) is a
+  command-injection flaw published February 4, 2026. boshyxd/robloxstudio-mcp was archived
+  2026-06-06 (hardware failure per owner) but still described as an active "Community Leader" —
+  rewritten. Epic Games shipped an official Unreal MCP plugin in UE 5.8 (June 2026) that the page
+  missed entirely, still framing it as "Epic hints... may address this." A Three.js star count
+  (178,000+) had no citation and was wrong — corrected to the real 114,500+ with a source.
+  StraySpark's tool/category counts were badly stale (207 tools/34 categories vs current 370-400+/
+  54-60).
+- **healthcare-medical** — a ranking flip: cyanheads/pubmed-mcp-server grew past both servers the
+  page described as ahead of it, but the page's framing wasn't updated — rewrote section headers to
+  match current standings. Cut three Innovaccer/HMCP capability claims (radiology/genomics plugins,
+  "GxP profile," real-time risk scoring) not supported anywhere in its README or docs. The entire
+  Keragon section had zero citations despite HIPAA/SOC2/beta-limit claims — added sources, and
+  softened an "MCP-powered" attribution the source didn't actually support (it described Keragon's
+  general automation product, not the MCP layer specifically).
+- **event-management-ticketing** — delorenj/mcp-server-ticketmaster's table claimed 6 tools; the
+  repo exposes exactly 1. A dead repo claim (somethingwithproof/calendar-mcp) cut. An unsourced
+  direct quote attributed to Eventtia was corrected against the real source text and cited. ~18
+  previously bare repo mentions got citation links added.
+- **education-lms** — an internal contradiction: "Canvas MCP grows to 88 tools... up from 92" (a
+  decrease framed as growth, and the "88" wasn't verifiable anywhere) — rewritten with confirmed
+  values (92 at v1.2.0 -> 99 at current v1.9.0). odewahn/orm-discovery-mcp was labeled "Official"
+  with no vendor designation found — downgraded to "Built by O'Reilly's CTO." Added a second
+  independent source (Inside Higher Ed) to the Instructure/ShinyHunters breach claim per the
+  >=2-source named-company rule (previously single-sourced to CNN).
+- **genealogy-family-history** — the article's only featured FamilySearch server
+  (smithery-ai/familysearch-mcp) is a 404 with the whole `smithery-ai` org now empty; rewrote the
+  section to say the server is gone rather than link a dead repo (did not substitute an unverified
+  low-star fork per the no-hands-on-testing rule).
+- **geospatial-mapping** — FrankXia/arcgis-mcp-servers doesn't exist (404, no such repo under a real
+  GitHub user) — cut entirely, was the page's only citation for that claim. datalayer/
+  jupyter-earth-mcp-server has been archived with an explicit redirect to a successor repo the page
+  didn't mention — fixed. Several unverifiable sub-claims (Axion's "5 pre-trained models," QGIS's
+  "36->7 tool overhaul" narrative) cut per cite-or-cut since they don't appear in current READMEs.
+- **graph-database** — neo4j-contrib/mcp-neo4j's license was wrong (Apache 2.0 stated, actual MIT).
+  ArangoDB's tool count was a 4x undercount (7 claimed, 31 actual). Two release-count figures ("52
+  releases," "143 releases") couldn't be reconfirmed (GitHub API rate-limited) and were cut rather
+  than left unverified.
+- **energy-utilities** — ha-mcp's Read-Only Mode toggle was misattributed to v7.7.0; changelog shows
+  it shipped in v7.8.0, 5 days later. A dead repo link (RomeCar/mcp-energy-data) replaced with two
+  verified live alternatives. Internal self-contradictions on star counts (same server given two
+  different numbers in different parts of the same page) reconciled to the verified current value.
+- Plus routine star/tool/version-count drift fixed across all 10 pages (full old->new figures in
+  each agent's report); several previously-bare repo mentions across multiple pages got citation
+  links added for the first time.
+
+All 10 files carry `sources_audited: 2026-08-15`; YAML front matter re-verified valid via
+`yaml.safe_load` on all 10 independently (not just trusting agent self-report), plus a clean
+`hugo --quiet` build with zero errors. Checked off all 10 in `early-vintage-audit.md`; Reviews status
+line corrected to 120/285 (also fixed the stale 100/285 label left over from last run).
+
+### GSC (for next digest)
+
+Not re-pulled this run — no new digest going out this run (see below), and the last pull (freshest
+complete day 2026-08-12: 2 clicks/2,758 impressions; 7d avg ~1.29 clicks/day, ~2,796/day impressions)
+is still current per GSC's ~2-day lag. Will pull fresh for the next digest.
+
+### CEO digest / Bluesky — not actioned this run
+
+Deploy is this run's only outbound action. No CEO digest sent (would be the first of the UTC day —
+allowed — but nothing new to report beyond the batch-12 summary above, which folds into WORKLOG per
+the usual pattern; will fold into tomorrow's digest instead along with a fresh GSC pull and
+subscriber count). Bluesky not checked this run — citation-audit work took the full run; will check
+next run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 120/285. Next run: cross-reference the unchecked list against
+  `prune-wave1-manifest.csv` again fresh (don't reuse this run's list — the manifest and veto-window
+  status may have changed by 2026-08-16 13:00 UTC) to build the next 10-page non-pruned batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per the
+  live system clock this run (2026-08-15T02:19 UTC), that window has not opened yet, but the next run
+  or two may cross it. Once it opens, re-check which manifest pages are still unaudited-and-live vs.
+  already deleted before building the next audit batch.
+- Waiting on CEO's reply to the RingS content-strategy escalation (#2355/#2354) — no action needed
+  from me until it lands.
+- Next digest to aiu 67: fresh GSC line, freshly-pulled subscriber count, this run's batch-12 summary,
+  and whatever the CEO decided on the RingS question if it has landed by then.
+- Duplicate-topic pairs still needing a human merge/differentiate/retire decision (unchanged):
+  `mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`; `mcp-error-handling-resilience.md`/
+  `mcp-error-handling-explained.md`.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

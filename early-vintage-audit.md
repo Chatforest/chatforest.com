@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 100/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 120/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -377,21 +377,21 @@ sweeps. Headline catches:
 - [ ] 2026-07-23 — [E-Signature & Digital Signing MCP Servers — DocuSign, PandaDoc, SignNow, BoldSign, and More](content/reviews/e-signature-digital-signing-mcp-servers.md)
 - [x] 2026-07-23 — [ERP & Business Management MCP Servers — Odoo, Dynamics 365, NetSuite, SAP, Oracle, QuickBooks, and More](content/reviews/erp-business-management-mcp-servers.md) — re-audited 2026-08-14
 - [ ] 2026-07-23 — [Education & EdTech MCP Servers — Canvas LMS, Moodle, Google Classroom, Anki, Udemy, EduBase, and More](content/reviews/education-edtech-mcp-servers.md)
-- [ ] 2026-07-23 — [Education & LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More](content/reviews/education-lms-mcp-servers.md)
-- [ ] 2026-07-23 — [Energy & Utilities MCP Servers — PowerMCP, EnergyPlus, PyPSA, zavora-ai SCADA, EIA, and More](content/reviews/energy-utilities-mcp-servers.md)
-- [ ] 2026-07-23 — [Event Management & Ticketing MCP Servers — Google Official Calendar, Eventbrite, Ticketmaster, Meetup, and More](content/reviews/event-management-ticketing-mcp-servers.md)
+- [x] 2026-07-23 — [Education & LMS MCP Servers — Canvas, Moodle, Google Classroom, Anki, LeetCode, and More](content/reviews/education-lms-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Energy & Utilities MCP Servers — PowerMCP, EnergyPlus, PyPSA, zavora-ai SCADA, EIA, and More](content/reviews/energy-utilities-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Event Management & Ticketing MCP Servers — Google Official Calendar, Eventbrite, Ticketmaster, Meetup, and More](content/reviews/event-management-ticketing-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Fashion, Beauty & Style MCP Servers — Virtual Try-On, Secondhand Shopping, Skincare AI, Wardrobe Management, and K-Beauty](content/reviews/fashion-beauty-style-mcp-servers.md)
 - [ ] 2026-07-23 — [Fitness & Wearables MCP Servers — Strava, Garmin, WHOOP, Apple Health, Oura Ring, Fitbit, and Multi-Platform Health Data](content/reviews/fitness-wearables-mcp-servers.md)
-- [ ] 2026-07-23 — [Food & Restaurant MCP Servers — Yelp, Instacart, Spoonacular, Uber Eats, Swiggy, Zomato, OpenFoodFacts, and More](content/reviews/food-restaurant-mcp-servers.md)
-- [ ] 2026-07-23 — [Game Engine & 3D Development MCP Servers — Unity, Unreal Engine, Godot, Roblox, Cocos Creator, Bevy, and More](content/reviews/game-engine-3d-development-mcp-servers.md)
+- [x] 2026-07-23 — [Food & Restaurant MCP Servers — Yelp, Instacart, Spoonacular, Uber Eats, Swiggy, Zomato, OpenFoodFacts, and More](content/reviews/food-restaurant-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Game Engine & 3D Development MCP Servers — Unity, Unreal Engine, Godot, Roblox, Cocos Creator, Bevy, and More](content/reviews/game-engine-3d-development-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Gaming & Esports MCP Servers — Roblox Studio (Official!), Minecraft, OP.GG, Chess, Steam, GameBoy, F1, and More](content/reviews/gaming-esports-mcp-servers.md)
-- [ ] 2026-07-23 — [Genealogy & Family History MCP Servers — GEDCOM, Gramps, FamilySearch, WikiTree, and More](content/reviews/genealogy-family-history-mcp-servers.md)
-- [ ] 2026-07-23 — [Geospatial & Mapping MCP Servers — Mapbox, Google Earth Engine, NASA Earthdata, QGIS, and More](content/reviews/geospatial-mapping-mcp-servers.md)
+- [x] 2026-07-23 — [Genealogy & Family History MCP Servers — GEDCOM, Gramps, FamilySearch, WikiTree, and More](content/reviews/genealogy-family-history-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Geospatial & Mapping MCP Servers — Mapbox, Google Earth Engine, NASA Earthdata, QGIS, and More](content/reviews/geospatial-mapping-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Google Cloud MCP Servers — 50+ Servers, 22+ GA, MCP Toolbox v1.4, Gemini 3.5 Flash MCP Optimization, and ADK 2.0](content/reviews/google-cloud-mcp-servers.md)
-- [ ] 2026-07-23 — [Government & Public Sector MCP Servers — GovInfo, Census Bureau, Congress.gov, Data.gov, Procurement, and More](content/reviews/government-public-sector-mcp-servers.md)
-- [ ] 2026-07-23 — [Graph Database MCP Servers — Neo4j, ArangoDB, Neptune, TigerGraph, Dgraph, Memgraph, FalkorDB, NebulaGraph, and More](content/reviews/graph-database-mcp-servers.md)
+- [x] 2026-07-23 — [Government & Public Sector MCP Servers — GovInfo, Census Bureau, Congress.gov, Data.gov, Procurement, and More](content/reviews/government-public-sector-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Graph Database MCP Servers — Neo4j, ArangoDB, Neptune, TigerGraph, Dgraph, Memgraph, FalkorDB, NebulaGraph, and More](content/reviews/graph-database-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [HR & Recruiting MCP Servers — BambooHR, Workday, Greenhouse, Workable, Payroll, ATS, and More](content/reviews/hr-recruiting-mcp-servers.md)
-- [ ] 2026-07-23 — [Healthcare & Medical MCP Servers — FHIR, PubMed, Clinical Trials, DICOM, Drug Databases, and More](content/reviews/healthcare-medical-mcp-servers.md)
+- [x] 2026-07-23 — [Healthcare & Medical MCP Servers — FHIR, PubMed, Clinical Trials, DICOM, Drug Databases, and More](content/reviews/healthcare-medical-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Hospitality & Hotels MCP Servers — Airbnb Search, Hotel Booking, Restaurant Reservations, and Travel Planning](content/reviews/hospitality-hotels-mcp-servers.md)
 - [ ] 2026-07-23 — [Identity & Authentication MCP Servers — Okta, Auth0, Keycloak, Entra ID, Casdoor, and More](content/reviews/identity-authentication-mcp-servers.md)
 - [ ] 2026-07-23 — [Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More](content/reviews/image-generation-mcp-servers.md)

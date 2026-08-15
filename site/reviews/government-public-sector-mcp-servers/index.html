@@ -6,14 +6,14 @@
   <title>Government &amp; Public Sector MCP Servers — GovInfo, Census Bureau, Congress.gov, Data.gov, Procurement, and More — ChatForest</title>
   <meta name="description" content="Government and public sector MCP servers are connecting AI agents to official data, legislation, procurement, and civic infrastructure.">
   <meta property="og:title" content="Government &amp; Public Sector MCP Servers — GovInfo, Census Bureau, Congress.gov, Data.gov, Procurement, and More — ChatForest">
-  <meta property="og:description" content="Government MCP servers: GovInfo (official GPO, first U.S. federal MCP), Census Bureau (official, 34 stars), data.gouv.fr (official French, 85 stars), India NSO eSankhyiki (official), us-gov-open-data-mcp (188&#43; tools, 36&#43; APIs), European Parliament (61 tools, OSINT), LegiScan (50 states), Data.gov CKAN, Socrata, SAM.gov procurement, IRS tax (39 tools), FEC campaign finance. Rating: 4.0/5.">
+  <meta property="og:description" content="Government MCP servers: GovInfo (official GPO, first U.S. federal MCP), Census Bureau (official, 90 stars), data.gouv.fr (official French, ~1,600 stars), India NSO eSankhyiki (official), us-gov-open-data-mcp (300&#43; tools, 40&#43; APIs), European Parliament (63 tools, OSINT), LegiScan (50 states), Data.gov CKAN, Socrata, SAM.gov procurement, IRS tax (39 tools), FEC campaign finance. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/government-public-sector-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Government &amp; Public Sector MCP Servers — GovInfo, Census Bureau, Congress.gov, Data.gov, Procurement, and More — ChatForest">
-  <meta name="twitter:description" content="Government MCP servers: GovInfo (official GPO, first U.S. federal MCP), Census Bureau (official, 34 stars), data.gouv.fr (official French, 85 stars), India NSO eSankhyiki (official), us-gov-open-data-mcp (188&#43; tools, 36&#43; APIs), European Parliament (61 tools, OSINT), LegiScan (50 states), Data.gov CKAN, Socrata, SAM.gov procurement, IRS tax (39 tools), FEC campaign finance. Rating: 4.0/5.">
+  <meta name="twitter:description" content="Government MCP servers: GovInfo (official GPO, first U.S. federal MCP), Census Bureau (official, 90 stars), data.gouv.fr (official French, ~1,600 stars), India NSO eSankhyiki (official), us-gov-open-data-mcp (300&#43; tools, 40&#43; APIs), European Parliament (63 tools, OSINT), LegiScan (50 states), Data.gov CKAN, Socrata, SAM.gov procurement, IRS tax (39 tools), FEC campaign finance. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/government-public-sector-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -68,11 +68,11 @@
       <div class="article-body">
         <h2 id="recent-updates-may-2026">Recent Updates (May 2026)</h2>
 <p><strong>GovInfo March 2026 Release</strong> — The U.S. GPO added 85 tracked content changes including United States Reports volumes through volume 582 (2017), digitized Congressional Serial Set volumes, additional digitized U.S. Statutes at Large in USLM XML, and new fields in Statute Compilations responses (display title, official title, original law number, amended law number). The MCP endpoint coverage grows with each release.</p>
-<p><strong>UK Government Internal MCP (May 14, 2026)</strong> — The Department for Business and Trade (DBT) published a <a href="https://digitaltrade.blog.gov.uk/2026/05/14/using-single-sign-on-and-mcp-to-safely-connect-ai-to-live-government-data/">blog post</a> describing their deployment of an MCP server connected to their CRM system via Single Sign-On (SSO) within a Virtual Private Cloud. This is the first documented UK government MCP implementation — though internal rather than a public data endpoint. The post details OAuth 2.0 patterns for &ldquo;safely connecting AI to live government data&rdquo; and signals that UK government IT teams are actively adopting MCP for secure internal tooling. Public government APIs remain unaddressed.</p>
+<p><strong>UK Government Internal MCP (May 14, 2026)</strong> — The Department for Business and Trade (DBT) published a <a href="https://digitaltrade.blog.gov.uk/2026/05/14/using-single-sign-on-and-mcp-to-safely-connect-ai-to-live-government-data/">blog post</a> describing their deployment of an MCP server connected to their CRM system via Single Sign-On (SSO) within a Virtual Private Cloud. This is the first documented UK government MCP implementation — though internal rather than a public data endpoint. The post describes SSO authentication inside a VPC with no external access points, laying out patterns for &ldquo;safely connecting AI to live government data,&rdquo; and signals that UK government IT teams are actively adopting MCP for secure internal tooling. Public government APIs remain unaddressed.</p>
 <hr>
 <p>Government MCP servers are connecting AI agents to official data, legislation, procurement systems, and civic infrastructure. Instead of manually navigating government portals, downloading CSV files, or parsing complex API documentation, these servers let AI assistants query census data, track legislation across 50 states, search federal contracts, calculate taxes, analyze campaign finance, and access open data portals — all through the Model Context Protocol.</p>
 <p>The landscape spans eight areas: <strong>official agency servers</strong> (GovInfo, Census Bureau, India NSO, France data.gouv.fr, GSA), <strong>mega-aggregators</strong> (multi-API collections spanning dozens of federal data sources), <strong>legislative &amp; congressional</strong> (bill tracking, voting records, parliamentary intelligence), <strong>census &amp; demographics</strong> (population data, statistical analysis), <strong>open data portals</strong> (Data.gov, Socrata, international equivalents), <strong>government procurement</strong> (contracts, spending, tenders), <strong>tax &amp; revenue</strong> (IRS calculations, compliance), and <strong>elections &amp; campaign finance</strong> (FEC data, political research).</p>
-<p>The headline findings: <strong>Five government agencies have released official MCP servers</strong> (<a href="https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/">FedScoop</a>) — more institutional adoption than any other vertical category. <strong>The U.S. has the deepest coverage</strong> — from official Census Bureau and GPO servers to a community mega-aggregator with <a href="https://github.com/lzinga/us-gov-open-data-mcp">300+ tools across 40+ APIs</a>. <strong>Legislative tracking is remarkably complete</strong> — LegiScan covers all 50 states, and the European Parliament server includes OSINT-grade political intelligence with <a href="https://github.com/Hack23/European-Parliament-MCP-Server">62 tools</a>. <strong>Procurement is surprisingly international</strong> — servers exist for U.S., Indian, Turkish, and Ukrainian government contracts. <strong>The biggest gap is municipal services</strong> — no city-level 311 systems, utility management, or local government portals have MCP implementations.</p>
+<p>The headline findings: <strong>Five government agencies have released official MCP servers</strong> — the Government Publishing Office and the Census Bureau were the first two, covered together in <a href="https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/">FedScoop</a>; France&rsquo;s data.gouv.fr, India&rsquo;s NSO, and GSA-TTS followed (each detailed with its own source below) — more institutional adoption than any other vertical category. <strong>The U.S. has the deepest coverage</strong> — from official Census Bureau and GPO servers to a community mega-aggregator with <a href="https://github.com/lzinga/us-gov-open-data-mcp">300+ tools across 40+ APIs</a>. <strong>Legislative tracking is remarkably complete</strong> — LegiScan covers all 50 states, and the European Parliament server includes OSINT-grade political intelligence with <a href="https://github.com/Hack23/European-Parliament-MCP-Server">63 tools</a>. <strong>Procurement is surprisingly international</strong> — servers exist for U.S., Indian, Turkish, and Ukrainian government contracts. <strong>The biggest gap is municipal services</strong> — no city-level 311 systems, utility management, or local government portals have MCP implementations.</p>
 <h2 id="official-government-agency-servers">Official Government Agency Servers</h2>
 <h3 id="govinfo-mcp--us-government-publishing-office">GovInfo MCP — U.S. Government Publishing Office</h3>
 <table>
@@ -95,7 +95,7 @@
 </tr>
 </tbody>
 </table>
-<p>Among the <strong>first official U.S. federal MCP servers</strong>, <a href="https://www.govinfo.gov/features/mcp-public-preview">released as a public preview</a> on January 22, 2026 by the Government Publishing Office. GovInfo is the world&rsquo;s only GPO-certified trustworthy digital repository for U.S. government documents, hosting <a href="https://github.com/usgpo/api/blob/main/docs/mcp.md">100+ collections</a> and providing AI access to:</p>
+<p>Among the <strong>first official U.S. federal MCP servers</strong>, <a href="https://www.govinfo.gov/features/mcp-public-preview">released as a public preview</a> on January 22, 2026 by the Government Publishing Office. GovInfo is the world&rsquo;s only GPO-certified trustworthy digital repository for U.S. government documents, and the MCP server provides AI access to:</p>
 <ul>
 <li><strong>Bills and laws</strong> — full text of introduced, enrolled, and enacted legislation</li>
 <li><strong>Federal Register</strong> — proposed rules, final rules, notices, executive orders</li>
@@ -121,7 +121,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/uscensusbureau/us-census-bureau-data-api-mcp">uscensusbureau/us-census-bureau-data-api-mcp</a></td>
-<td>63</td>
+<td>90</td>
 <td>TypeScript</td>
 <td>CC0-1.0</td>
 <td>4 tools</td>
@@ -151,7 +151,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/datagouv/datagouv-mcp">datagouv/datagouv-mcp</a></td>
-<td>~1,300</td>
+<td>~1,600</td>
 <td>Python</td>
 <td>MIT</td>
 <td>9 tools</td>
@@ -175,17 +175,17 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/nso-india/esankhyiki-mcp">nso-india/esankhyiki-mcp</a></td>
-<td>119</td>
+<td>136</td>
 <td>Python</td>
 <td>MIT</td>
-<td>21 datasets</td>
+<td>31 datasets</td>
 </tr>
 </tbody>
 </table>
-<p>The <strong>official Indian government MCP server</strong> from the Ministry of Statistics and Programme Implementation (MoSPI), <a href="https://pib.gov.in/PressReleasePage.aspx?PRID=2224472">launched February 6, 2026</a> ahead of India&rsquo;s AI Impact Summit. Built on <a href="https://github.com/nso-india/esankhyiki-mcp">FastMCP 3.0</a> with Python 3.11+, it launched with 7 core statistical datasets and has since expanded to <strong>21 datasets</strong>:</p>
+<p>The <strong>official Indian government MCP server</strong> from the Ministry of Statistics and Programme Implementation (MoSPI), <a href="https://pib.gov.in/PressReleasePage.aspx?PRID=2224472">launched February 6, 2026</a> ahead of India&rsquo;s AI Impact Summit. Built on <a href="https://github.com/nso-india/esankhyiki-mcp">FastMCP</a> (currently 3.3) with Python 3.11+, it launched with 7 core statistical datasets and has since expanded to <strong>31 datasets</strong>:</p>
 <ul>
 <li><strong>Original 7:</strong> Periodic Labour Force Survey, Consumer Price Index, Annual Survey of Industries, Index of Industrial Production, National Account Statistics, Wholesale Price Index, Environmental Statistics</li>
-<li><strong>Expanded to include:</strong> Energy Statistics, AISHE (higher education), Gender Statistics, NFHS (family health), RBI data, NSS rounds (77/78/79), CPI-AL/RL, Household Consumer Expenditure, Time Use Survey, Economic Census, UDISE (school education)</li>
+<li><strong>Expanded to include (partial list):</strong> Energy Statistics, AISHE (higher education), Gender Statistics, NFHS (family health), RBI data, NSS rounds (77/78/79), CPI-AL/RL, Household Consumer Expenditure, Time Use Survey, Economic Census, UDISE (school education), and 13 further datasets spanning agriculture, banking, telecom, and more</li>
 </ul>
 <p>The server uses a 4-step workflow: <code>list_datasets()</code> → <code>get_indicators()</code> → <code>get_metadata()</code> → <code>get_data()</code>, with OpenTelemetry/Jaeger tracing built in. Notable as one of the few non-Western government MCP implementations, demonstrating that official adoption is not limited to the U.S. and Europe.</p>
 <h3 id="gsa-tts-usaspending-mcp">GSA-TTS USASpending MCP</h3>
@@ -225,7 +225,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/lzinga/us-gov-open-data-mcp">lzinga/us-gov-open-data-mcp</a></td>
-<td>94</td>
+<td>108</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>300+ tools</td>
@@ -265,7 +265,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/martc03/gov-mcp-servers">martc03/gov-mcp-servers</a></td>
-<td>—</td>
+<td>5</td>
 <td>TypeScript/Node.js</td>
 <td>—</td>
 <td>45 endpoints</td>
@@ -288,16 +288,16 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/Hack23/European-Parliament-MCP-Server">Hack23/European-Parliament-MCP-Server</a></td>
-<td>11</td>
+<td>23</td>
 <td>TypeScript</td>
 <td>Apache 2.0</td>
-<td>62 tools</td>
+<td>63 tools</td>
 </tr>
 </tbody>
 </table>
 <p>The <strong>most sophisticated parliamentary MCP server</strong> in any jurisdiction. Complete EP API v2 coverage with features that go well beyond basic data access:</p>
 <ul>
-<li><strong>8 core tools</strong> — MEP profiles, votes, documents, committees</li>
+<li><strong>9 core tools</strong> — MEP profiles, votes, documents, committees</li>
 <li><strong>3 advanced tools</strong> — cross-referencing, historical analysis</li>
 <li><strong>15 OSINT tools</strong> — MEP influence scoring, coalition analysis, voting anomaly detection, network mapping</li>
 <li><strong>Phase 4 tools (8)</strong> — expanded analytics</li>
@@ -319,7 +319,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/sh-patterson/legiscan-mcp">sh-patterson/legiscan-mcp</a></td>
-<td>—</td>
+<td>10</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>10 tools</td>
@@ -333,7 +333,7 @@
 <li>Track legislation changes and monitor specific bills</li>
 <li>Look up legislators by state and chamber</li>
 </ul>
-<p><a href="https://github.com/sh-patterson/legiscan-mcp">90%+ reduction in API usage</a> via composite tools that batch multiple API calls into single operations. Free tier allows 30,000 queries/month. For anyone tracking state-level legislation across multiple jurisdictions, this is the most comprehensive single server available.</p>
+<p><a href="https://github.com/sh-patterson/legiscan-mcp">Composite tools</a> batch up to 10 concurrent API calls into single operations and cache repeated lookups within a request, reducing workflow friction for multi-step queries. Free tier allows 30,000 queries/month. For anyone tracking state-level legislation across multiple jurisdictions, this is the most comprehensive single server available.</p>
 <h3 id="congressmcp">CongressMCP</h3>
 <table>
 <thead>
@@ -348,14 +348,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/amurshak/congressMCP">amurshak/congressMCP</a></td>
-<td>28</td>
+<td>32</td>
 <td>TypeScript</td>
 <td>Sustainable Use</td>
-<td>91+ operations</td>
+<td>90+ operations</td>
 </tr>
 </tbody>
 </table>
-<p>Congress.gov API interface organized into <a href="https://github.com/amurshak/congressMCP">6 toolsets with 91+ operations</a> — Bills (16), Amendments (7), Treaties &amp; Summaries (5), Members &amp; Committees (13), Voting &amp; Nominations (13), and Records &amp; Hearings (10+). A hosted service runs at congressmcp.lawgiver.ai, eliminating the need for local setup. Works with Claude, Cursor, VS Code, and any MCP client.</p>
+<p>Congress.gov API interface organized into <a href="https://github.com/amurshak/congressMCP">7 toolsets with 90+ operations</a> — Bills (16), Laws (2), Amendments (7), Treaties &amp; Summaries (5), Members &amp; Committees (13), Voting &amp; Nominations (13), and Records &amp; Hearings (10+). A hosted service runs at congressmcp.lawgiver.ai, eliminating the need for local setup. Works with Claude, Cursor, VS Code, and any MCP client.</p>
 <h3 id="us-legal-mcp">US Legal MCP</h3>
 <table>
 <thead>
@@ -370,14 +370,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/JamesANZ/us-legal-mcp">JamesANZ/us-legal-mcp</a></td>
-<td>~3</td>
+<td>36</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>Multiple</td>
 </tr>
 </tbody>
 </table>
-<p>Cross-source U.S. legal data from Congress.gov, Federal Register, US Code, CourtListener, and Regulations.gov. Features a &ldquo;search-all-legal&rdquo; tool for querying across all sources simultaneously.</p>
+<p>Cross-source U.S. legal and regulatory data from <a href="https://github.com/JamesANZ/us-legal-mcp">Congress.gov, Federal Register, CourtListener, and GovInfo</a>, plus RSS/press-release feeds from the OCC, SEC, CFTC, Federal Reserve, Treasury, and FinCEN. Features a &ldquo;search-all-legal&rdquo; tool for querying across all sources simultaneously.</p>
 <h3 id="federal-register-mcp">Federal Register MCP</h3>
 <table>
 <thead>
@@ -420,21 +420,20 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/brockwebb/open-census-mcp-server">brockwebb/open-census-mcp-server</a></td>
-<td>~2</td>
+<td>20</td>
 <td>Python</td>
 <td>MIT</td>
 <td>Multiple</td>
 </tr>
 </tbody>
 </table>
-<p>Natural language Census queries with statistical rigor that goes beyond simple API wrapping:</p>
+<p>Natural language Census queries with statistical rigor that goes beyond simple API wrapping. The project has gone through several architectural iterations — <a href="https://github.com/brockwebb/open-census-mcp-server">earlier versions used the tidycensus R package and a ChromaDB vector store</a>, but the current v3 architecture is a <strong>pure Python server with a pragmatic rules engine and no R dependency</strong>, pairing direct Census API calls with a knowledge base of extracted methodology guidance:</p>
 <ul>
-<li>Uses the <strong>tidycensus</strong> R package for robust data retrieval</li>
-<li><strong>ChromaDB vector database</strong> for semantic search over Census variables</li>
-<li><strong>Fitness-for-use constraints</strong> — margin of error thresholds, coverage bias warnings</li>
+<li><strong>Fitness-for-use constraints</strong> — margin of error thresholds, coverage bias warnings, temporal validity checks</li>
 <li>Prevents users from drawing invalid conclusions from small-sample data</li>
+<li>README notes the project is still in &ldquo;active research &amp; rebuild,&rdquo; so treat it as beta-quality</li>
 </ul>
-<p>The ~4GB Docker image reflects the statistical infrastructure bundled in. This is Census access designed for researchers who care about methodological correctness.</p>
+<p>This is Census access designed for researchers who care about methodological correctness.</p>
 <h3 id="google-data-commons-mcp">Google Data Commons MCP</h3>
 <table>
 <thead>
@@ -506,22 +505,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/socrata/odp-mcp">socrata/odp-mcp</a></td>
-<td>—</td>
-<td>TypeScript</td>
-<td>—</td>
-<td>4 tools</td>
-</tr>
-<tr>
 <td><a href="https://github.com/srobbin/opengov-mcp-server">srobbin/opengov-mcp-server</a></td>
-<td>~10</td>
+<td>14</td>
 <td>TypeScript</td>
 <td>—</td>
 <td>Multiple</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Two Socrata implementations</strong> — one <a href="https://github.com/socrata/odp-mcp">official from Socrata</a> (part of Tyler Technologies), one community-built. Socrata powers thousands of government open data portals at the city, county, state, and federal level. The official odp-mcp provides <code>list_datasets</code>, <code>get_metadata</code>, <code>preview_dataset</code>, and <code>query_dataset</code> (SoQL builder) with LRU caching, per-call auth overrides, and client-side rate limiting with exponential backoff. Read-only by design with a max of 5,000 rows per query. The community <a href="https://github.com/srobbin/opengov-mcp-server">opengov-mcp-server</a> works with any Socrata portal — no API key required, SQL-like querying supported.</p>
+<p>Socrata powers thousands of government open data portals at the city, county, state, and federal level. A previous version of this section cited an &ldquo;official&rdquo; Socrata repo (<code>socrata/odp-mcp</code>) — as of this audit that repository no longer exists (404, not listed among Socrata&rsquo;s public repos), so the &ldquo;official Socrata implementation&rdquo; claim has been removed pending a working, verifiable source. The community-built <a href="https://github.com/srobbin/opengov-mcp-server">opengov-mcp-server</a> works with any Socrata portal — no API key required, SQL-like (SoQL) querying supported.</p>
 <h3 id="canada-open-government-mcp">Canada Open Government MCP</h3>
 <table>
 <thead>
@@ -536,14 +528,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/krunal16-c/gov-ca-mcp">krunal16-c/gov-ca-mcp</a></td>
-<td>—</td>
+<td>4</td>
 <td>Python</td>
 <td>—</td>
-<td>193 tools</td>
+<td>14 tools</td>
 </tr>
 </tbody>
 </table>
-<p>Two MCP servers in one: <strong>Dataset MCP</strong> for 250,000+ Canadian government datasets and <strong>Transportation MCP</strong> for bridges, tunnels, airports, ports, and railways with Statistics Canada cost data. Combined coverage spans <strong>193 tools across 15 federal, provincial, and municipal government APIs</strong> — making it one of the most comprehensive single-country government MCP packages outside the U.S.</p>
+<p>Two MCP servers in one: <strong>Dataset Discovery MCP</strong> (7 tools) for 250,000+ Canadian government datasets via Statistics Canada and open.canada.ca, and <strong>Transportation Infrastructure MCP</strong> (7 tools) for bridges, tunnels, airports, ports, and railways, pulling in provincial and municipal sources (British Columbia, Quebec, Montreal, Ontario, Nova Scotia). Combined, <a href="https://github.com/krunal16-c/gov-ca-mcp">14 tools</a> across federal, provincial, and municipal sources — a rare single-country package this broad outside the U.S.</p>
 <h2 id="government-procurement--spending">Government Procurement &amp; Spending</h2>
 <h3 id="capture-mcp-server--federal-procurement">Capture MCP Server — Federal Procurement</h3>
 <table>
@@ -559,7 +551,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/blencorp/capture-mcp-server">blencorp/capture-mcp-server</a></td>
-<td>16</td>
+<td>30</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>15 tools</td>
@@ -595,7 +587,7 @@
 </tr>
 </tbody>
 </table>
-<p>The <strong>first commercial MCP server for government contracting</strong>, <a href="https://blog.govtribe.com/govtribe-mcp-server-connect-govtribe-to-your-ai-tools">launched February 20, 2026</a>. <a href="https://docs.govtribe.com/user-guide/integrations/govtribe-mcp">50+ tools</a> covering opportunities, awards, IDVs, contract vehicles, vendors, forecasts, contacts, pipeline management, and saved searches. Real-time journalism from GovExec media (parent company <a href="https://about.govexec.com/company/blog/govtribe-mcp-server/">GovExec Media Group</a>). Credit-based pricing (pay-as-you-go or prepaid at discount, 100 free credits for trial). Compatible with ChatGPT, Claude, Microsoft Copilot, and custom AI applications.</p>
+<p>A <strong>commercial MCP server for government contracting intelligence</strong>, <a href="https://blog.govtribe.com/govtribe-mcp-server-connect-govtribe-to-your-ai-tools">launched February 20, 2026</a>. <a href="https://docs.govtribe.com/user-guide/integrations/govtribe-mcp">50+ tools</a> covering opportunities, awards, IDVs, contract vehicles, vendors, forecasts, contacts, pipeline management, and saved searches. Real-time journalism from GovExec media (parent company <a href="https://about.govexec.com/company/blog/govtribe-mcp-server/">GovExec Media Group</a>). Credit-based pricing (pay-as-you-go or prepaid at discount, 100 free credits for trial). Compatible with ChatGPT, Claude, Microsoft Copilot, and custom AI applications.</p>
 <h3 id="international-procurement">International Procurement</h3>
 <table>
 <thead>
@@ -649,7 +641,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/dma9527/irs-taxpayer-mcp">dma9527/irs-taxpayer-mcp</a></td>
-<td>—</td>
+<td>9</td>
 <td>TypeScript</td>
 <td>MIT</td>
 <td>39 tools</td>
@@ -719,15 +711,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/Ansvar-Systems/US_Compliance_MCP">Ansvar-Systems/US_Compliance_MCP</a></td>
+<td>Ansvar Systems — US regulations MCP</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td>Multiple</td>
+<td>—</td>
 </tr>
 </tbody>
 </table>
-<p>Comprehensive compliance analysis covering <a href="https://github.com/Ansvar-Systems/US_Compliance_MCP">50 U.S. regulations</a> across healthcare (HIPAA, HITECH), financial (SOX, GLBA, FFIEC, NYDFS 500, BSA/AML, Dodd-Frank), federal security (FISMA, FedRAMP, CMMC 2.0, CIRCIA), export controls (ITAR, EAR), education/privacy (FERPA, COPPA), medical devices (FDA 21 CFR Part 11), environmental (EPA RMP), and 18 state privacy laws. Uses SQLite FTS5 full-text search across 2,079 sections and 135 definitions with verbatim regulatory text (no LLM paraphrasing). Remotely hosted at <code>https://mcp.ansvar.eu/us-regulations/mcp</code> with daily freshness monitoring and security scanning (CodeQL, Semgrep, Trivy, Gitleaks).</p>
+<p><strong>Update (this audit):</strong> the previously-cited repository (<code>Ansvar-Systems/US_Compliance_MCP</code>) and its hosted endpoint (<code>mcp.ansvar.eu</code>) no longer resolve — the repo 404s and the hostname no longer has a DNS record. Ansvar Systems appears to have restructured its compliance tooling into several narrower MCP servers under the <a href="https://github.com/Ansvar-Systems">Ansvar-Systems GitHub org</a> (e.g. an npm package covering HIPAA, CCPA, SOX, GLBA, FERPA, COPPA, FDA 21 CFR Part 11 and other U.S. rules, plus a separate <code>security-controls-mcp</code> for frameworks like NIST 800-53 and FedRAMP), rather than one single &ldquo;50 regulations&rdquo; server. The specific figures previously stated here (50 regulations, 2,079 sections, 135 definitions) could not be re-verified against a live source and have been removed rather than carried forward unverified.</p>
 <h3 id="additional-compliance--legal-servers">Additional Compliance &amp; Legal Servers</h3>
 <ul>
 <li><strong>TCoder920x/open-legal-compliance-mcp</strong> — GovInfo + CourtListener + EUR-Lex for multi-jurisdiction compliance</li>
@@ -793,7 +785,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/Cicatriiz/pophive-mcp-server">Cicatriiz/pophive-mcp-server</a></td>
-<td>—</td>
+<td>23</td>
 <td>TypeScript</td>
 <td>—</td>
 <td>5 tools</td>
@@ -869,8 +861,8 @@
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p><strong>Rating: 4.0 out of 5</strong> — Government and public sector MCP servers earn a strong rating on the strength of institutional adoption and comprehensive U.S. federal data coverage.</p>
-<p>The standout fact: <strong>at least five government agencies across four countries have released official MCP servers</strong> (two covered in <a href="https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/">FedScoop</a>). The U.S. Government Publishing Office (<a href="https://www.govinfo.gov/features/mcp-public-preview">public preview Jan 2026</a>), U.S. Census Bureau (<a href="https://github.com/uscensusbureau/us-census-bureau-data-api-mcp">63 stars</a>), India&rsquo;s Ministry of Statistics (<a href="https://github.com/nso-india/esankhyiki-mcp">119 stars, 21 datasets</a>), France&rsquo;s national data platform (<a href="https://github.com/datagouv/datagouv-mcp">~1,300 stars</a>), and GSA&rsquo;s Technology Transformation Services have all officially embraced MCP. No other vertical category has this level of institutional adoption.</p>
-<p>The community ecosystem is equally impressive. The <a href="https://github.com/lzinga/us-gov-open-data-mcp">300-tool US Government Open Data MCP server</a> alone covers more federal data sources than many civic tech organizations access in total. The European Parliament MCP server&rsquo;s OSINT capabilities — influence scoring, voting anomaly detection, coalition analysis across <a href="https://github.com/Hack23/European-Parliament-MCP-Server">62 tools</a> — represent some of the most sophisticated analytical tooling in the entire MCP ecosystem.</p>
+<p>The standout fact: <strong>at least five government agencies across four countries have released official MCP servers</strong> (two covered in <a href="https://fedscoop.com/federal-goverment-mcp-improve-ai-access-public-data/">FedScoop</a>). The U.S. Government Publishing Office (<a href="https://www.govinfo.gov/features/mcp-public-preview">public preview Jan 2026</a>), U.S. Census Bureau (<a href="https://github.com/uscensusbureau/us-census-bureau-data-api-mcp">90 stars</a>), India&rsquo;s Ministry of Statistics (<a href="https://github.com/nso-india/esankhyiki-mcp">136 stars, 31 datasets</a>), France&rsquo;s national data platform (<a href="https://github.com/datagouv/datagouv-mcp">~1,600 stars</a>), and GSA&rsquo;s Technology Transformation Services have all officially embraced MCP. No other vertical category has this level of institutional adoption.</p>
+<p>The community ecosystem is equally impressive. The <a href="https://github.com/lzinga/us-gov-open-data-mcp">300-tool US Government Open Data MCP server</a> alone covers more federal data sources than many civic tech organizations access in total. The European Parliament MCP server&rsquo;s OSINT capabilities — influence scoring, voting anomaly detection, coalition analysis across <a href="https://github.com/Hack23/European-Parliament-MCP-Server">63 tools</a> — represent some of the most sophisticated analytical tooling in the entire MCP ecosystem.</p>
 <p>Procurement and legislative tracking are the practical winners. Government contractors can integrate SAM.gov and USASpending.gov data via <a href="https://github.com/blencorp/capture-mcp-server">15 tools</a> directly into AI workflows, or use <a href="https://docs.govtribe.com/user-guide/integrations/govtribe-mcp">GovTribe&rsquo;s 50+ commercial tools</a>. Policy analysts can track legislation across all 50 states simultaneously via <a href="https://github.com/sh-patterson/legiscan-mcp">LegiScan MCP</a>. Tax professionals get <a href="https://github.com/dma9527/irs-taxpayer-mcp">39 tools</a> for federal and state calculations — including <a href="https://www.irs.gov/newsroom/one-big-beautiful-bill-act-tax-deductions-for-working-americans-and-seniors">TY2025 One Big Beautiful Bill Act</a> updates — without sending data to external services.</p>
 <p>The category loses a full point for international coverage — outside the U.S., France, India, Canada, and Japan, government MCP adoption is nearly nonexistent. The UK&rsquo;s DBT internal deployment (May 2026) is an encouraging signal — a major European government is actively building with MCP — but it&rsquo;s internal tooling connected to a CRM system, not a public data endpoint. Germany, Australia, and most G20 governments remain absent. Community-built World Bank and IMF MCP servers exist but lack official backing. The municipal gap is also significant: MunicipalMCP covers Municode&rsquo;s municipal code library, but active city services — 311 systems, permit offices, transit — remain inaccessible through MCP.</p>
 <p>For civic technologists, policy researchers, government contractors, and anyone who regularly works with public data, this is one of the most practically useful categories in the MCP ecosystem. The official agency backing provides a level of data authority and reliability that community-wrapped APIs cannot match.</p>

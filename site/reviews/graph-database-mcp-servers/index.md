@@ -1,6 +1,6 @@
 # Graph Database MCP Servers — Neo4j, ArangoDB, Neptune, TigerGraph, Dgraph, Memgraph, FalkorDB, NebulaGraph, and More
 
-> Graph database MCP servers reviewed: Neo4j (official + Labs, 1,100+ combined stars), ArangoDB (NOW OFFICIAL), NebulaGraph (NEW), Memgraph SURGED +265%, Graphiti 25.5K stars MCP Server 1.0
+> Graph database MCP servers reviewed: Neo4j (official + Labs, 1,200+ combined stars), ArangoDB (NOW OFFICIAL), NebulaGraph (NEW), Memgraph SURGED +323%, Graphiti 29.9K stars MCP Server 1.0
 
 
 Graph databases are having a moment in AI. Knowledge graphs, RAG with structured relationships, agent memory — they all benefit from graph traversal that relational databases can't match. And the MCP ecosystem has noticed. Part of our **[Databases MCP category](/categories/databases/)**.
@@ -9,7 +9,7 @@ We found 20+ MCP servers across 12+ graph databases, from major players like [Ne
 
 Here's what's available and what's worth using.
 
-> **What changed since March 2026:** ArangoDB shipped an official MCP server (Docker image), filling our biggest identified gap. NebulaGraph launched an open-source MCP server. Memgraph's ai-toolkit nearly quadrupled in stars (26→95) with a major architecture overhaul. Neo4j Labs hit v0.6.0 with a new Aura cloud API server. Graphiti reached 25.5K stars and shipped MCP Server 1.0. CodeGraphContext nearly tripled to 3,100 stars. TigerGraph expanded to 40+ tools. Rating upgraded from 3.5 to 4/5.
+> **What changed since March 2026:** ArangoDB shipped an official MCP server (Docker image), filling our biggest identified gap. NebulaGraph launched an open-source MCP server. Memgraph's ai-toolkit more than quadrupled in stars (26→110) with a major architecture overhaul. Neo4j Labs hit v0.6.0 with a new Aura cloud API server. Graphiti reached 29.9K stars and shipped MCP Server 1.0. CodeGraphContext nearly quadrupled to 4,100 stars. TigerGraph expanded to 60+ tools. Rating upgraded from 3.5 to 4/5.
 
 ## Neo4j
 
@@ -19,7 +19,7 @@ Neo4j dominates the graph database market, and its MCP story reflects that — t
 
 | Detail | Info |
 |--------|------|
-| [neo4j/mcp](https://github.com/neo4j/mcp) | ~218 stars |
+| [neo4j/mcp](https://github.com/neo4j/mcp) | ~282 stars |
 | Language | Go |
 | Transport | stdio, HTTP |
 | License | Apache 2.0 |
@@ -35,13 +35,13 @@ Simple, focused, and reliable. If you just need Cypher access via MCP, this is i
 
 | Detail | Info |
 |--------|------|
-| [neo4j-contrib/mcp-neo4j](https://github.com/neo4j-contrib/mcp-neo4j) | ~940 stars |
+| [neo4j-contrib/mcp-neo4j](https://github.com/neo4j-contrib/mcp-neo4j) | ~979 stars |
 | Language | Python (TypeScript port available) |
 | Transport | stdio, SSE, HTTP |
-| License | Apache 2.0 |
+| License | MIT |
 | Tools | 3+ (4 sub-servers) |
 
-The Labs server has 4x the stars of the official one, which tells you something about community preference. Now at v0.6.0 with 52 releases, it ships the same core Cypher tools but bundles four sub-servers:
+The Labs server has roughly 3.5x the stars of the official one, which tells you something about community preference. Now at v0.6.0 and actively maintained with regular releases, it ships the same core Cypher tools but bundles four sub-servers:
 
 - **mcp-neo4j-cypher** — the main Cypher interface
 - **mcp-neo4j-memory** — knowledge graph memory management
@@ -50,7 +50,7 @@ The Labs server has 4x the stars of the official one, which tells you something 
 
 The GraphRAG and knowledge graph features are what drive the higher star count. The new Aura API server lets agents spin up and manage cloud database instances directly. If you're building AI agents that need persistent memory in a graph structure, this is more useful than the bare-bones official server.
 
-### neo4j-contrib/sandbox-mcp-server
+### [neo4j-contrib/sandbox-mcp-server](https://github.com/neo4j-contrib/sandbox-mcp-server)
 
 A companion server for managing Neo4j Sandbox instances — list, start, stop, and extend. Useful for development and experimentation, not production.
 
@@ -60,7 +60,7 @@ A companion server for managing Neo4j Sandbox instances — list, start, stop, a
 
 | Detail | Info |
 |--------|------|
-| [awslabs/mcp](https://github.com/awslabs/mcp/tree/main/src/amazon-neptune-mcp-server) | Part of AWS MCP monorepo (~8,900 stars) |
+| [awslabs/mcp](https://github.com/awslabs/mcp/tree/main/src/amazon-neptune-mcp-server) | Part of AWS MCP monorepo (~9,600 stars) |
 | Language | Python |
 | Transport | stdio |
 | License | Apache 2.0 |
@@ -78,19 +78,19 @@ Minimal but functional. The dual openCypher/Gremlin support means you can query 
 
 | Detail | Info |
 |--------|------|
-| [tigergraph/tigergraph-mcp](https://github.com/tigergraph/tigergraph-mcp) | Low stars |
+| [tigergraph/tigergraph-mcp](https://github.com/tigergraph/tigergraph-mcp) | ~3 stars |
 | Language | Python |
 | Transport | stdio |
 | License | — |
-| Tools | 40+ |
+| Tools | 60+ |
 
-**40+ tools** — expanded from 34 at our initial review. Now the highest tool count of any dedicated graph database MCP server. New additions include vector operations (TigerGraph 4.2+), GSQL operations with LLM-powered query generation, and expanded loading job support.
+**60+ tools** (61 counted in the current README) — expanded from 34 at our initial review. Now the highest tool count of any dedicated graph database MCP server. New additions include vector operations (TigerGraph 4.2+), GSQL operations with LLM-powered query generation, and expanded loading job support.
 
 Coverage spans queries, schema management, vertex operations, edge operations, vector search, and UDFs. All tools use pyTigerGraph's async APIs. Requires TigerGraph 4.1+ and Python 3.10-3.12. Published on PyPI as `tigergraph-mcp`. Supports LangGraph, CrewAI, and GitHub Copilot Chat integration.
 
 Despite the low star count, the tool breadth is the best in the category for a dedicated server.
 
-### custom-discoveries/TigerGraph_MCP (Community)
+### [custom-discoveries/TigerGraph_MCP](https://github.com/custom-discoveries/TigerGraph_MCP) (Community)
 
 A community alternative rebuilt on the AG2 agent framework (v3.1). Includes schema introspection, query viewing, and vertex/edge creation. Much less comprehensive than the official server.
 
@@ -102,7 +102,7 @@ Dgraph has gone further than any other graph database — MCP is built directly 
 
 | Detail | Info |
 |--------|------|
-| [hypermodeinc/dgraph](https://github.com/hypermodeinc/dgraph) | ~21,700 stars (main repo) |
+| [hypermodeinc/dgraph](https://github.com/hypermodeinc/dgraph) | ~21,800 stars (main repo) |
 | Language | Go |
 | Transport | HTTP (alpha endpoint) |
 | License | Apache 2.0 |
@@ -110,13 +110,13 @@ Dgraph has gone further than any other graph database — MCP is built directly 
 
 Two server modes: `mcp` (full access) and `mcp-ro` (read-only). Accessible via the alpha HTTP endpoint or Go code. All enterprise features are now free.
 
-No separate installation, no configuration, no additional dependencies. Start Dgraph, and MCP is there. Works with Cursor, Windsurf, and Claude Desktop. Now at v25.3.3 (April 2026) with 143 releases.
+No separate installation, no configuration, no additional dependencies. Start Dgraph, and MCP is there. Works with Cursor, Windsurf, and Claude Desktop. Now at [v25.4.0](https://github.com/hypermodeinc/dgraph/releases/tag/v25.4.0) (July 2026).
 
 ### johnymontana/dgraph-mcp-server (Community)
 
 | Detail | Info |
 |--------|------|
-| [johnymontana/dgraph-mcp-server](https://github.com/johnymontana/dgraph-mcp-server) | Low stars |
+| [johnymontana/dgraph-mcp-server](https://github.com/johnymontana/dgraph-mcp-server) | ~5 stars |
 | Language | Go |
 | Transport | stdio |
 | Tools | 4 |
@@ -129,7 +129,7 @@ No separate installation, no configuration, no additional dependencies. Start Dg
 
 | Detail | Info |
 |--------|------|
-| [FalkorDB/FalkorDB-MCPServer](https://github.com/FalkorDB/FalkorDB-MCPServer) | ~34 stars |
+| [FalkorDB/FalkorDB-MCPServer](https://github.com/FalkorDB/FalkorDB-MCPServer) | ~39 stars |
 | Language | Node.js |
 | Transport | stdio, Streamable HTTP |
 | License | MIT |
@@ -145,16 +145,16 @@ Available via npm (`@falkordb/mcpserver@latest`) or Docker. Can run locally or i
 
 | Detail | Info |
 |--------|------|
-| [memgraph/ai-toolkit](https://github.com/memgraph/ai-toolkit) | ~95 stars |
+| [memgraph/ai-toolkit](https://github.com/memgraph/ai-toolkit) | ~110 stars |
 | Language | Python |
 | Transport | HTTP (default), stdio |
 | License | — |
-| Tools | 11 |
-| Version | v0.1.8 |
+| Tools | 14 |
+| Version | [v0.3.0](https://pypi.org/project/mcp-memgraph/) |
 
-**Nearly quadrupled in stars** (26→95) since our initial review, reflecting a major architecture overhaul. The ai-toolkit now bundles four packages: memgraph-toolbox (core), langchain-memgraph, mcp-memgraph, and unstructured2graph.
+**More than quadrupled in stars** (26→110) since our initial review, reflecting a major architecture overhaul. The ai-toolkit now bundles four packages: memgraph-toolbox (core), langchain-memgraph, mcp-memgraph, and unstructured2graph.
 
-The MCP server ships two implementations: **memgraph-production** (stable) and **memgraph-experimental** (testing ground for sampling, elicitation, and adaptive index management). 11 tools backed by memgraph-toolbox include graph analytics (PageRank, betweenness centrality), vector search (`search_node_vectors`), and standard query/schema operations.
+The MCP server ships two implementations: **memgraph-production** (stable) and **memgraph-experimental** (testing ground for sampling, elicitation, and adaptive index management). 14 tools backed by memgraph-toolbox include graph analytics (PageRank, betweenness centrality), vector search (`search_node_vectors`), and standard query/schema operations.
 
 New stricter read-only mode blocks write operations by default. HTTP is now the default transport (replaces stdio). Memgraph Lab also ships a **built-in MCP Client** that bridges Memgraph with external MCP servers (GitHub, AWS, Tavily).
 
@@ -182,18 +182,18 @@ Deploy via `docker run -i --rm --network host arangodb/mcp-arangodb:latest` with
 
 | Detail | Info |
 |--------|------|
-| [ravenwits/mcp-server-arangodb](https://github.com/ravenwits/mcp-server-arangodb) | ~46 stars |
+| [ravenwits/mcp-server-arangodb](https://github.com/ravenwits/mcp-server-arangodb) | ~47 stars |
 | Language | TypeScript |
 | Transport | stdio |
-| Tools | 7 |
+| Tools | 31 |
 
-7 tools: execute AQL queries, insert/update/remove documents, create/list collections, backup to JSON. Works with Claude Desktop and Cline/VSCode. Available via npm (`arango-server`). Designed for local development — the README explicitly discourages production use for security reasons.
+**Grew from 7 to 31 tools** since our initial review, spanning query (AQL execute/read-only/validate/explain), discovery, collections, documents (including bulk insert/update up to 1,000 docs), indexes, ArangoSearch views/analyzers, graph management (create, insert edge, traverse, shortest path), and backup to JSON. Works with Claude Desktop and Cline/VSCode. Available via npm (`arango-server`). Designed for local development — the README explicitly discourages production use for security reasons.
 
 ### PCfVW/mcp-arangodb-async (Community)
 
 | Detail | Info |
 |--------|------|
-| [PCfVW/mcp-arangodb-async](https://github.com/PCfVW/mcp-arangodb-async) | Low stars |
+| [PCfVW/mcp-arangodb-async](https://github.com/PCfVW/mcp-arangodb-async) | ~3 stars |
 | Language | Python (async) |
 | Transport | stdio |
 | Tools | 46 |
@@ -217,7 +217,7 @@ If you're using PostgreSQL and want graph capabilities without a separate databa
 
 | Detail | Info |
 |--------|------|
-| [nebula-contrib/nebulagraph-mcp-server](https://github.com/nebula-contrib/nebulagraph-mcp-server) | ~27 stars |
+| [nebula-contrib/nebulagraph-mcp-server](https://github.com/nebula-contrib/nebulagraph-mcp-server) | ~28 stars |
 | Language | Python |
 | Transport | stdio |
 | License | Apache 2.0 |
@@ -230,7 +230,7 @@ NebulaGraph describes this as the "first foundational component in the NebulaGra
 
 **ArcadeDB** ([ArcadeData/arcadedb](https://github.com/ArcadeData/arcadedb)) — Multi-model database (graph, document, key-value, time-series, vector) with a **built-in MCP server**. Supports SQL, Cypher, Gremlin, and MongoDB query language. Like Dgraph, no separate installation needed.
 
-**Ontotext GraphDB** — [keonchennl/mcp-graphdb](https://github.com/keonchennl/mcp-graphdb) (~14 stars, JavaScript) provides read-only SPARQL access to RDF repositories. 2 tools: `sparqlQuery` and `listGraphs`. If you're in the semantic web / RDF world, this is the only option.
+**Ontotext GraphDB** — [keonchennl/mcp-graphdb](https://github.com/keonchennl/mcp-graphdb) (~16 stars, JavaScript) provides read-only SPARQL access to RDF repositories. 2 tools: `sparqlQuery` and `listGraphs`. If you're in the semantic web / RDF world, this is the only option.
 
 **No MCP servers found for:** JanusGraph, TerminusDB, or TypeDB.
 
@@ -238,28 +238,28 @@ NebulaGraph describes this as the "first foundational component in the NebulaGra
 
 For general-purpose knowledge graphs (not tied to a specific database):
 
-- **[Graphiti by Zep](https://github.com/getzep/graphiti)** (~25,500 stars) — **MCP Server 1.0 shipped.** Temporal knowledge graph engine now supports Neo4j, FalkorDB, KuzuDB, and Amazon Neptune backends. Multi-LLM provider support (OpenAI, Anthropic, Google, Groq, Azure). Single-container setup with bundled FalkorDB, YAML config, health check endpoints. See our [separate Graphiti review](/reviews/zep-graphiti-mcp-server/).
+- **[Graphiti by Zep](https://github.com/getzep/graphiti)** (~29,900 stars) — **MCP Server 1.0 shipped** ([mcp_server package at v1.0.2](https://github.com/getzep/graphiti/blob/main/mcp_server/pyproject.toml)). Temporal knowledge graph engine now supports Neo4j, FalkorDB, Amazon Neptune, and (deprecated, being phased out) KuzuDB backends. Multi-LLM provider support (OpenAI, Anthropic, Google, Groq, Azure). Single-container setup with bundled FalkorDB, YAML config, health check endpoints. See our [separate Graphiti review](/reviews/zep-graphiti-mcp-server/).
 - **MCP Knowledge Graph Memory Server** (part of [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)) — Official Anthropic reference implementation using a local JSON-file knowledge graph. Entities, relations, observations.
-- **[CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext)** (~3,100 stars, Python) — **Nearly tripled** (1,100→3,100). Indexes code into a graph database for code analysis (call chains, dead code, complexity). Now at v0.4.2 with 975 commits. Supports KuzuDB, FalkorDB, and Neo4j backends. 14+ language parsers. Interactive web-based visualization.
+- **[CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext)** (~4,100 stars, Python) — **Nearly quadrupled** (1,100→4,100). Indexes code into a graph database for code analysis (call chains, dead code, complexity). Now at [v0.5.8](https://pypi.org/project/codegraphcontext/) with 1,700+ commits. Supports KuzuDB, FalkorDB, and Neo4j backends. 23 language parsers. Interactive web-based visualization.
 
 ## Comparison Table
 
 | Database | Server | Stars | Tools | Official? | Standout Feature |
 |----------|--------|-------|-------|-----------|-----------------|
-| Neo4j | neo4j/mcp | ~218 | 4 | Yes | Multi-deployment, TLS/HTTPS |
-| Neo4j | neo4j-contrib/mcp-neo4j | ~940 | 3+ (4 sub-servers) | Semi-official | GraphRAG + Aura cloud API |
-| Neptune | awslabs/mcp | ~8,900* | 3 | Yes (AWS) | openCypher + Gremlin dual query |
-| TigerGraph | tigergraph/tigergraph-mcp | Low | 40+ | Yes | Highest tool count (dedicated server) |
-| Dgraph | Built-in (v25+) | ~21,700* | 2 modes | Yes | Zero-install, built into core |
-| FalkorDB | FalkorDB-MCPServer | ~34 | ~6 | Yes | Redis-based, Streamable HTTP |
-| Memgraph | mcp-memgraph | ~95 | 11 | Yes | Graph analytics + vector search |
+| Neo4j | neo4j/mcp | ~282 | 4 | Yes | Multi-deployment, TLS/HTTPS |
+| Neo4j | neo4j-contrib/mcp-neo4j | ~979 | 3+ (4 sub-servers) | Semi-official | GraphRAG + Aura cloud API |
+| Neptune | awslabs/mcp | ~9,600* | 3 | Yes (AWS) | openCypher + Gremlin dual query |
+| TigerGraph | tigergraph/tigergraph-mcp | ~3 | 60+ | Yes | Highest tool count (dedicated server) |
+| Dgraph | Built-in (v25+) | ~21,800* | 2 modes | Yes | Zero-install, built into core |
+| FalkorDB | FalkorDB-MCPServer | ~39 | ~6 | Yes | Redis-based, Streamable HTTP |
+| Memgraph | mcp-memgraph | ~110 | 14 | Yes | Graph analytics + vector search |
 | ArangoDB | arangodb/mcp-arangodb | Official | — | **Yes (NEW)** | Official Docker image |
-| ArangoDB | mcp-arangodb-async | Low | 46 | Community | Highest tool count overall |
-| ArangoDB | mcp-server-arangodb | ~46 | 7 | Community | Simple, TypeScript |
-| NebulaGraph | nebulagraph-mcp-server | ~27 | — | Community | **NEW** — NebulaGraph 3.x |
-| Apache AGE | agemcp | Low | ~7 | Community | PostgreSQL graph extension |
-| ArcadeDB | Built-in | — | — | Yes | Multi-model, built into core |
-| GraphDB | mcp-graphdb | ~14 | 2 | Community | SPARQL / RDF access |
+| ArangoDB | mcp-arangodb-async | ~3 | 46 | Community | Highest tool count overall |
+| ArangoDB | mcp-server-arangodb | ~47 | 31 | Community | Simple, TypeScript |
+| NebulaGraph | nebulagraph-mcp-server | ~28 | — | Community | **NEW** — NebulaGraph 3.x |
+| Apache AGE | agemcp | ~4 | ~7 | Community | PostgreSQL graph extension |
+| ArcadeDB | Built-in | ~1,100 | — | Yes | Multi-model, built into core |
+| GraphDB | mcp-graphdb | ~16 | 2 | Community | SPARQL / RDF access |
 
 *Stars for parent/monorepo, not the MCP server specifically.
 
@@ -271,7 +271,7 @@ For general-purpose knowledge graphs (not tied to a specific database):
 
 **Graph algorithm access is rare.** Only Memgraph exposes graph algorithms (PageRank, centrality, vector search) as MCP tools. Neo4j's GDS integration exists but is limited. Most servers treat graph databases as query endpoints rather than analytics platforms.
 
-**No cross-database graph federation.** There's no MCP server that can query across multiple graph databases or bridge property graph and RDF models. Graphiti's multi-backend support (Neo4j, FalkorDB, KuzuDB, Neptune) is the closest thing, but it's a knowledge graph layer, not a federation tool.
+**No cross-database graph federation.** There's no MCP server that can query across multiple graph databases or bridge property graph and RDF models. Graphiti's multi-backend support (Neo4j, FalkorDB, Neptune, plus deprecated KuzuDB) is the closest thing, but it's a knowledge graph layer, not a federation tool.
 
 ## The Bottom Line
 
@@ -279,15 +279,15 @@ The graph database MCP ecosystem is stronger than ever. Most major graph databas
 
 **If you use Neo4j:** Start with the [official server](https://github.com/neo4j/mcp) for basic Cypher access. Use the [Labs server](https://github.com/neo4j-contrib/mcp-neo4j) if you need GraphRAG, knowledge graph memory, or Aura cloud management.
 
-**If you need graph analytics:** [Memgraph's server](https://github.com/memgraph/ai-toolkit) is the only one with built-in PageRank, centrality, and vector search — and it nearly quadrupled in community adoption.
+**If you need graph analytics:** [Memgraph's server](https://github.com/memgraph/ai-toolkit) is the only one with built-in PageRank, centrality, and vector search — and it more than quadrupled in community adoption.
 
-**If you want maximum tool coverage:** [TigerGraph](https://github.com/tigergraph/tigergraph-mcp) (40+ tools) or [ArangoDB async](https://github.com/PCfVW/mcp-arangodb-async) (46 tools) lead the pack.
+**If you want maximum tool coverage:** [TigerGraph](https://github.com/tigergraph/tigergraph-mcp) (60+ tools) or [ArangoDB async](https://github.com/PCfVW/mcp-arangodb-async) (46 tools) lead the pack.
 
 **If you want zero-install simplicity:** Dgraph v25+ and ArcadeDB both ship MCP built into the database.
 
-**If you need a knowledge graph layer:** [Graphiti](https://github.com/getzep/graphiti) (25.5K stars) now supports four database backends and shipped MCP Server 1.0.
+**If you need a knowledge graph layer:** [Graphiti](https://github.com/getzep/graphiti) (29.9K stars) now supports four database backends and shipped MCP Server 1.0.
 
-**Rating: 4 out of 5.** Upgraded from 3.5. ArangoDB's official server fills the biggest previous gap. NebulaGraph adds coverage to the ecosystem. Memgraph's surge (+265% stars) and architecture overhaul show the category is maturing. Neo4j Labs at 940 stars with four sub-servers demonstrates depth. Still loses a point for missing JanusGraph/TerminusDB and limited graph algorithm exposure outside Memgraph.
+**Rating: 4 out of 5.** Upgraded from 3.5. ArangoDB's official server fills the biggest previous gap. NebulaGraph adds coverage to the ecosystem. Memgraph's surge (+323% stars) and architecture overhaul show the category is maturing. Neo4j Labs at 979 stars with four sub-servers demonstrates depth. Still loses a point for missing JanusGraph/TerminusDB and limited graph algorithm exposure outside Memgraph.
 
 ---
 

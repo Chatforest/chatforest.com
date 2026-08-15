@@ -7,7 +7,7 @@ Event management and ticketing MCP servers let AI agents discover live events, m
 
 This review covers the **event management and ticketing** vertical — calendar scheduling, ticket discovery, event platforms, community events, and conference navigation. For meeting/video call servers, see our [Communication & Messaging MCP review](/reviews/telecommunications-messaging-mcp-servers/). For restaurant/venue booking, see our [Food & Restaurant MCP review](/reviews/food-restaurant-mcp-servers/).
 
-The headline finding: **Google shipped official Calendar MCP** — a remote MCP server at `calendarmcp.googleapis.com/mcp/v1` with 8 tools and OAuth 2.0 authentication. This is the first major platform to offer official MCP support in this category. Meanwhile, the community side continues to grow, with nspady/google-calendar-mcp holding at 1,100 stars and taylorwilsdon/google_workspace_mcp reaching 2,900 stars. But outside calendaring, no Ticketmaster, Eventbrite, or Live Nation official servers exist.
+The headline finding: **Google shipped official Calendar MCP** — a remote MCP server at `calendarmcp.googleapis.com/mcp/v1` with 8 tools and OAuth 2.0 authentication. This is the first major platform to offer official MCP support in this category. Meanwhile, the community side continues to grow, with nspady/google-calendar-mcp holding at 1,200 stars and taylorwilsdon/google_workspace_mcp reaching 3,000 stars. But outside calendaring, no Ticketmaster, Eventbrite, or Live Nation official servers exist.
 
 **Category:** [Business & Productivity](/categories/business-productivity/)
 
@@ -28,7 +28,7 @@ The headline finding: **Google shipped official Calendar MCP** — a remote MCP 
 
 The server lives at `https://calendarmcp.googleapis.com/mcp/v1` and works with Gemini CLI, Claude, and any MCP-compatible client. It inherits the user's existing Google Workspace permissions and data governance controls — no separate authorization model needed.
 
-Google also launched official MCP servers for **Gmail** (10 tools), **Google Drive** (7 tools), **People API** (3 tools), and **Google Chat** (2 tools) as part of the same Workspace MCP initiative. This makes Google the first major productivity platform to ship official MCP across multiple services.
+Google also launched official MCP servers for **[Gmail](https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server)** (11 tools), **[Google Drive](https://developers.google.com/workspace/drive/api/guides/configure-mcp-server)** (8 tools), **People API**, and **[Google Chat](https://developers.google.com/workspace/chat/api/guides/configure-mcp-server)** (4 tools) as part of the same Workspace MCP initiative. This makes Google the first major productivity platform to ship official MCP across multiple services.
 
 **June 2026 update**: Google highlighted all Workspace MCP servers at **Google Cloud Next '26** as part of the [broader Google-managed MCP platform](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) (50+ servers, generally available or in preview). The Calendar MCP server itself remains in Developer Preview. Also notable: the Google Calendar API is adding a new access level, **`writerWithoutPrivateAccess`** (GA June 29, 2026 per [Calendar API release notes](https://developers.google.com/workspace/calendar/release-notes)), which allows read/write access to non-private events while marking private events as busy blocks — a useful addition for agent workflows that need to schedule around private appointments without exposing their content.
 
@@ -56,7 +56,7 @@ The intelligent import feature is particularly useful — paste a screenshot of 
 
 | Server | Stars | Language | License | Services |
 |--------|-------|----------|---------|----------|
-| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,900 | Python | MIT | 12 |
+| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 3,000 | Python | MIT | 12 |
 
 The **most-starred community server touching Google Calendar** — though it's a comprehensive Workspace MCP, not calendar-specific. Covers Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Chat, Tasks, Contacts, Apps Script, and Custom Search. Features OAuth 2.1 multi-user support, tiered tool loading (core/extended/complete), read-only mode, and stateless container-friendly deployment. If you need calendar plus other Google services from a single MCP server, this is the leading option.
 
@@ -81,14 +81,14 @@ The analytics tools are unique in the calendar space — no other server offers 
 
 ### Additional Google Calendar Implementations
 
-At least 8 more Google Calendar MCP servers exist:
+At least 6 more Google Calendar MCP servers exist:
 
-- **guinacio/mcp-google-calendar** — scheduling and availability checking
-- **deciduus/calendar-mcp** — Python-based, natural language operations
-- **markelaugust74/mcp-google-calendar** — event creation via Claude
-- **feamster/calendar-mcp** — Google Calendar MCP server
-- **surana-mudit/google-calendar-mcp** — another community implementation
-- **KhurramDevOps/Google_Calender_MCP** — automation and synchronization
+- **[guinacio/mcp-google-calendar](https://github.com/guinacio/mcp-google-calendar)** — scheduling and availability checking
+- **[deciduus/calendar-mcp](https://github.com/deciduus/calendar-mcp)** — Python-based, natural language operations
+- **[markelaugust74/mcp-google-calendar](https://github.com/markelaugust74/mcp-google-calendar)** — event creation via Claude
+- **[feamster/calendar-mcp](https://github.com/feamster/calendar-mcp)** — Google Calendar MCP server
+- **[surana-mudit/google-calendar-mcp](https://github.com/surana-mudit/google-calendar-mcp)** — another community implementation
+- **[KhurramDevOps/Google_Calender_MCP](https://github.com/KhurramDevOps/Google_Calender_MCP)** — automation and synchronization
 
 The duplication pattern is extreme — Google Calendar may have more MCP implementations than any other single API.
 
@@ -96,7 +96,7 @@ The duplication pattern is extreme — Google Calendar may have more MCP impleme
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 315 | Python | MIT | ~5 |
+| [Omar-V2/mcp-ical](https://github.com/Omar-V2/mcp-ical) | 323 | Python | MIT | ~5 |
 
 The **most popular Apple Calendar MCP server.** Uses PyObjC to interact directly with macOS Calendar (not iCloud API), supporting:
 
@@ -106,13 +106,13 @@ The **most popular Apple Calendar MCP server.** Uses PyObjC to interact directly
 - Recurring events
 - Schedule queries
 
-Two additional Apple Calendar implementations exist: **shadowfax92/apple-calendar-mcp** for full CRUD via standardized MCP interface, and **somethingwithproof/calendar-mcp** for search and management.
+One additional Apple Calendar implementation: **[shadowfax92/apple-calendar-mcp](https://github.com/shadowfax92/apple-calendar-mcp)** for full CRUD via standardized MCP interface.
 
 ### iCloud Calendar (CalDAV)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [icloud-calendar-mcp/icloud-calendar-mcp](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp) | 9 | Kotlin/JVM | Apache 2.0 | 5 |
+| [icloud-calendar-mcp/icloud-calendar-mcp](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp) | 14 | Kotlin/JVM | Apache 2.0 | 5 |
 
 The **first iCloud Calendar MCP server via CalDAV** — works with any CalDAV-compatible calendar, not just Apple's. The standout feature is security: built with **OWASP MCP Top 10 compliance** and 282 dedicated security tests covering credential protection, input validation with SSRF protection, rate limiting (60 reads/min, 20 writes/min), ReDoS protection, and audit logging for all mutations. Available on npm, PyPI, and as a standalone JAR.
 
@@ -120,17 +120,17 @@ The **first iCloud Calendar MCP server via CalDAV** — works with any CalDAV-co
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [anoopt/outlook-meetings-scheduler-mcp-server](https://github.com/anoopt/outlook-meetings-scheduler-mcp-server) | — | TypeScript | — | ~3 |
+| [anoopt/outlook-meetings-scheduler-mcp-server](https://github.com/anoopt/outlook-meetings-scheduler-mcp-server) | 16 | TypeScript | ISC | 8 |
 
 Schedules meetings in Microsoft Outlook via **Microsoft Graph API** with attendee email discovery and calendar event creation. Requires configurable authentication.
 
-**elyxlz/microsoft-mcp** provides a broader Microsoft Graph integration covering Outlook, Calendar, OneDrive, and Contacts in a single minimal server.
+**[elyxlz/microsoft-mcp](https://github.com/elyxlz/microsoft-mcp)** provides a broader Microsoft Graph integration covering Outlook, Calendar, OneDrive, and Contacts in a single minimal server.
 
-**merajmehrabi/Outlook_Calendar_MCP** takes a local approach — accesses the Windows Outlook desktop application directly (Windows only).
+**[merajmehrabi/Outlook_Calendar_MCP](https://github.com/merajmehrabi/Outlook_Calendar_MCP)** takes a local approach — accesses the Windows Outlook desktop application directly (Windows only).
 
 ### iCal / Cross-Platform
 
-**calendar-mcp.com** offers a hosted iCal (.ics) remote MCP server compatible with any calendar that supports the iCal standard — works with Apple Calendar, Outlook, Google Calendar, and others without platform-specific API integration.
+**[calendar-mcp.com](https://calendar-mcp.com)** offers a hosted iCal (.ics) remote MCP server compatible with any calendar that supports the iCal standard — works with Apple Calendar, Outlook, Google Calendar, and others without platform-specific API integration.
 
 ## Ticket Discovery & Live Events
 
@@ -138,20 +138,20 @@ Schedules meetings in Microsoft Outlook via **Microsoft Graph API** with attende
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [delorenj/mcp-server-ticketmaster](https://github.com/delorenj/mcp-server-ticketmaster) | 24 | TypeScript | MIT | 6 |
+| [delorenj/mcp-server-ticketmaster](https://github.com/delorenj/mcp-server-ticketmaster) | 24 | TypeScript | MIT | 1 |
 
-The **most popular ticketing MCP server.** Searches events, venues, and attractions via the Ticketmaster Discovery API with:
+The **most popular ticketing MCP server.** Exposes a single `search_ticketmaster` tool that searches events, venues, and attractions via the Ticketmaster Discovery API with:
 
 - Keyword and date range filtering
 - Location-based search
 - Venue discovery
-- Attraction classification
+- Attraction classification (via a `type` parameter)
 - **Dual output** — JSON for programmatic use, text for human readability
 - Pricing, images, and ticket URLs
 
 Two additional Ticketmaster implementations exist:
-- **mmmaaatttttt/mcp-live-events** (2 stars, Python) — focused specifically on live music events with LLM-optimized response formatting
-- **mochow13/ticketmaster-mcp-server** (1 star, TypeScript, ISC) — notable for implementing **Streamable HTTP transport** via Express.js, making it accessible without stdio
+- **[mmmaaatttttt/mcp-live-events](https://github.com/mmmaaatttttt/mcp-live-events)** (2 stars, Python) — focused specifically on live music events with LLM-optimized response formatting
+- **[mochow13/ticketmaster-mcp-server](https://github.com/mochow13/ticketmaster-mcp-server)** (1 star, TypeScript, ISC) — notable for implementing **Streamable HTTP transport** via Express.js, making it accessible without stdio
 
 ### SeatGeek MCP
 
@@ -186,15 +186,15 @@ The **most complete Eventbrite implementation** with full event lifecycle manage
 This is one of the few event MCP servers that supports **write operations** — most are read-only discovery tools.
 
 One additional Eventbrite implementation:
-- **vishalsachdev/eventbrite-mcp** (3 stars, API Blueprint, MIT) — event listing with planned analytics and attendee management
+- **[vishalsachdev/eventbrite-mcp](https://github.com/vishalsachdev/eventbrite-mcp)** (3 stars, JavaScript, MIT) — event listing with planned analytics and attendee management
 
 ### The Events Calendar (WordPress)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [the-events-calendar/mcp-server](https://github.com/the-events-calendar/mcp-server) | 1 | TypeScript | — | ~8 |
+| [the-events-calendar/mcp-server](https://github.com/the-events-calendar/mcp-server) | 2 | TypeScript | ISC | 3 |
 
-An **official vendor server** — The Events Calendar WordPress plugin team built this MCP bridge. Provides unified CRUD operations for:
+An **official vendor server** — The Events Calendar WordPress plugin team built this MCP bridge. Three tools (`tec-calendar-create-update-entities`, `tec-calendar-read-entities`, `tec-calendar-delete-entities`) provide unified CRUD across four post types:
 
 - **Events** (tribe_events)
 - **Venues** (tribe_venue)
@@ -227,7 +227,7 @@ The only server that creates **entire event pages from scratch** — unique in t
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [d4nshields/mcp-meetup](https://github.com/d4nshields/mcp-meetup) | 0 | Python | MIT | 4 |
+| [d4nshields/mcp-meetup](https://github.com/d4nshields/mcp-meetup) | 2 | Python | MIT | 4 |
 
 Integrates Meetup.com with Claude for intelligent event discovery:
 
@@ -236,11 +236,11 @@ Integrates Meetup.com with Claude for intelligent event discovery:
 - `get_event_recommendations` — AI-powered suggestions
 - `get_oauth_url` — OAuth authentication
 
-**ajeetraina/meetup-mcp-server** (1 star, JavaScript, MIT) provides general Meetup context management and session tracking.
+**[ajeetraina/meetup-mcp-server](https://github.com/ajeetraina/meetup-mcp-server)** (1 star, JavaScript, MIT) provides general Meetup context management and session tracking.
 
 ### Events MCP (Meetup + Luma)
 
-**imagineering-cc/events-mcp** manages events across both **Meetup and Luma** via Playwright browser automation — no paid API tiers required. This is a pragmatic approach: rather than using official APIs (which can be expensive or limited), it automates the browser directly.
+**[imagineering-cc/events-mcp](https://github.com/imagineering-cc/events-mcp)** manages events across both **Meetup and Luma** via Playwright browser automation — no paid API tiers required. This is a pragmatic approach: rather than using official APIs (which can be expensive or limited), it automates the browser directly.
 
 ## Conference Navigation
 
@@ -286,11 +286,11 @@ A good template for how smaller conferences can make their events AI-navigable w
 
 ### Event Information MCP
 
-**ajot/event-information-mcp-server** (0 stars, Python) uses DigitalOcean's Gradient AI platform for event discovery with speaker information and schedule management. Supports remote deployment on DigitalOcean App Platform.
+**[ajot/event-information-mcp-server](https://github.com/ajot/event-information-mcp-server)** (0 stars, Python) uses DigitalOcean's Gradient AI platform for event discovery with speaker information and schedule management. Supports remote deployment on DigitalOcean App Platform.
 
 ## Commercial & Enterprise
 
-**Eventtia** has publicly committed to making their enterprise event platform MCP-accessible, describing "agentic event software" where organizers state outcomes in natural language ("set up registration for 500 VIPs with tiered pricing, approval workflows, and custom badge printing") and AI agents handle configuration. No public server exists yet, but Eventtia's framing — "the competitive question changes from 'which platform has the best interface?' to 'which platform exposes the richest capabilities to agents?'" — signals where the industry is heading.
+**[Eventtia](https://www.eventtia.com/en/agentic-event-software-mcp-ai-agents/)** has publicly written about making their enterprise event platform MCP-accessible, describing "agentic event software" where organizers state outcomes in natural language ("I need to set up registration for 500 VIPs with tiered pricing, approval workflows, and custom badge printing") and AI agents handle configuration. No public server is confirmed to exist yet, but Eventtia's framing — "It's no longer 'which platform has the best interface?' It's 'which platform exposes the richest capabilities to agents?'" — signals where the industry is heading.
 
 ## What's Missing
 
@@ -308,7 +308,7 @@ The calendar gap has narrowed significantly with Google's official MCP, but even
 
 ## The Bottom Line
 
-The event management and ticketing MCP ecosystem remains **split**: calendaring is now officially supported by Google (Developer Preview, 8 tools, remote MCP — highlighted at Cloud Next '26) alongside mature community options (nspady at 1,100 stars, google_workspace_mcp at 2,700 stars, mcp-ical at 315 stars, plus iCloud Calendar via CalDAV). But event management proper is still early-stage. Most ticketing servers are thin read-only wrappers around discovery APIs. The few write-capable servers (joshuachestang's Eventbrite, The Events Calendar) are promising but low-traction.
+The event management and ticketing MCP ecosystem remains **split**: calendaring is now officially supported by Google (Developer Preview, 8 tools, remote MCP — highlighted at Cloud Next '26) alongside mature community options (nspady at 1,200 stars, google_workspace_mcp at 3,000 stars, mcp-ical at 323 stars, plus iCloud Calendar via CalDAV). But event management proper is still early-stage. Most ticketing servers are thin read-only wrappers around discovery APIs. The few write-capable servers (joshuachestang's Eventbrite, The Events Calendar) are promising but low-traction.
 
 The biggest remaining opportunity: **official MCP servers from major ticketing platforms.** Eventbrite alone processes billions of dollars in ticket sales — an official MCP server enabling agents to create events, manage attendees, and track sales would be immediately useful. Eventtia's "agentic event software" vision points the way, but the industry hasn't followed yet.
 
