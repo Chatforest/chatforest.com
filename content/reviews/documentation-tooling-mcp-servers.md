@@ -1,15 +1,15 @@
 ---
 title: "Documentation Tooling MCP Servers — Google Developer Knowledge API Goes Official, GitBook Auto-MCP Joins Platform Wave, llms.txt Emerges as Documentation Standard"
 date: 2026-03-24T10:00:00+09:00
-description: "Documentation tooling MCP servers feature GitMCP (8k stars), Google Developer Knowledge API (official), LangChain mcpdoc (982 stars, llms.txt bridge), Microsoft Learn MCP (1.6k stars)"
-og_description: "Documentation tooling MCP servers: GitMCP (8k stars), Google Developer Knowledge (official), LangChain mcpdoc (982 stars), Microsoft Learn (1.6k stars), GitBook/Mintlify/ReadMe auto-MCP. Rating: 4/5."
+description: "Documentation tooling MCP servers feature GitMCP (8k stars), Google Developer Knowledge API (official), LangChain mcpdoc (1k+ stars, llms.txt bridge), Microsoft Learn MCP (1.8k stars)"
+og_description: "Documentation tooling MCP servers: GitMCP (8k stars), Google Developer Knowledge (official), LangChain mcpdoc (1k+ stars), Microsoft Learn (1.8k stars), GitBook/Mintlify/ReadMe auto-MCP. Rating: 4/5."
 content_type: "Review"
-card_description: "Documentation tooling MCP servers cover a critical developer need — getting accurate, up-to-date documentation into AI workflows. GitMCP (8k stars) transforms any GitHub repository or GitHub Pages site into a searchable documentation hub with zero setup. Google Developer Knowledge API & MCP Server (official, public preview) provides programmatic access to all Google developer documentation — Firebase, Android, Cloud, and more — with 24-hour re-indexing. LangChain mcpdoc (982 stars) bridges the emerging llms.txt standard to IDEs, letting AI agents fetch documentation from any site publishing llms.txt files. Microsoft Learn MCP Server (1.6k stars, 3 tools) provides free, no-auth access to all official Microsoft documentation. Grounded Docs MCP (1.3k stars, v2.2.1) is an open-source Context7 alternative that fetches version-specific docs. Documentation platforms are consolidating around auto-generated MCP: GitBook now auto-generates MCP servers for every published space (joining Mintlify, ReadMe, Stainless, and Fern). The Docusaurus plugin (22 stars, v0.12.0) has nearly doubled its community. Sphinx MCP servers have appeared (sphinxdocs_mcp) partially closing the biggest documentation framework gap. The llms.txt standard is emerging as the documentation-to-AI bridge, with Mintlify and GitBook auto-generating these files alongside MCP endpoints."
+card_description: "Documentation tooling MCP servers cover a critical developer need — getting accurate, up-to-date documentation into AI workflows. GitMCP (8k stars) transforms any GitHub repository or GitHub Pages site into a searchable documentation hub with zero setup. Google Developer Knowledge API & MCP Server (official, public preview) provides programmatic access to all Google developer documentation — Firebase, Android, Cloud, and more — with 24-hour re-indexing. LangChain mcpdoc (1k+ stars) bridges the emerging llms.txt standard to IDEs, letting AI agents fetch documentation from any site publishing llms.txt files. Microsoft Learn MCP Server (1.8k stars, 3 tools) provides free, no-auth access to all official Microsoft documentation. Grounded Docs MCP (1.6k stars, v3.0.1) is an open-source Context7 alternative that fetches version-specific docs. Documentation platforms are consolidating around auto-generated MCP: GitBook now auto-generates MCP servers for every published space (joining Mintlify, ReadMe, Stainless, and Fern). The Docusaurus plugin (30 stars, v1.0.0) has grown its community. Sphinx MCP servers have appeared (sphinxdocs_mcp) partially closing the biggest documentation framework gap. The llms.txt standard is emerging as the documentation-to-AI bridge, with Mintlify and GitBook auto-generating these files alongside MCP endpoints."
 last_refreshed: 2026-05-02
-sources_audited: 2026-07-24
+sources_audited: 2026-08-16
 ---
 
-**At a glance:** Documentation tooling MCP servers solve one of the most persistent problems in AI-assisted development: **getting accurate, current documentation into AI context**. The ecosystem has matured significantly since our original review. **Documentation access** is now strong and diversifying — [GitMCP](https://github.com/idosal/git-mcp) (8k stars) transforms any GitHub repo into a searchable doc hub with zero setup, **Google Developer Knowledge API & MCP Server** (official, public preview) provides programmatic access to all Google developer documentation with 24-hour re-indexing, [LangChain mcpdoc](https://github.com/langchain-ai/mcpdoc) (982 stars) bridges the emerging llms.txt standard to IDEs, [Microsoft Learn MCP](https://github.com/MicrosoftDocs/mcp) (1.6k stars) provides free access to all Microsoft documentation, and [Grounded Docs MCP](https://github.com/arabold/docs-mcp-server) (1.3k stars, v2.2.1) fetches version-specific docs. Documentation platforms are consolidating around auto-generated MCP: [GitBook](https://gitbook.com/) now auto-generates MCP servers for every published space, joining [Mintlify](https://www.mintlify.com/), [ReadMe](https://readme.com/), [Stainless](https://www.stainless.com/), and [Fern](https://buildwithfern.com/). The **llms.txt standard** is emerging as a documentation-to-AI bridge, with platforms auto-generating these files alongside MCP endpoints. **Documentation generation** remains weak but Sphinx MCP servers have appeared, partially closing the biggest framework gap. This is the **seventeenth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
+**At a glance:** Documentation tooling MCP servers solve one of the most persistent problems in AI-assisted development: **getting accurate, current documentation into AI context**. The ecosystem has matured significantly since our original review. **Documentation access** is now strong and diversifying — [GitMCP](https://github.com/idosal/git-mcp) (8k stars) transforms any GitHub repo into a searchable doc hub with zero setup, **Google Developer Knowledge API & MCP Server** (official, public preview) provides programmatic access to all Google developer documentation with 24-hour re-indexing, [LangChain mcpdoc](https://github.com/langchain-ai/mcpdoc) (1k+ stars) bridges the emerging llms.txt standard to IDEs, [Microsoft Learn MCP](https://github.com/MicrosoftDocs/mcp) (1.8k stars) provides free access to all Microsoft documentation, and [Grounded Docs MCP](https://github.com/arabold/docs-mcp-server) (1.6k stars, v3.0.1) fetches version-specific docs. Documentation platforms are consolidating around auto-generated MCP: [GitBook](https://gitbook.com/) now auto-generates MCP servers for every published space, joining [Mintlify](https://www.mintlify.com/), [ReadMe](https://readme.com/), [Stainless](https://www.stainless.com/), and [Fern](https://buildwithfern.com/). The **llms.txt standard** is emerging as a documentation-to-AI bridge, with platforms auto-generating these files alongside MCP endpoints. **Documentation generation** remains weak but Sphinx MCP servers have appeared, partially closing the biggest framework gap. This is the **seventeenth review in our [Developer Tools MCP category](/categories/developer-tools/)**.
 
 Documentation is a universal need in software development — every project depends on it, yet it is frequently outdated or incomplete by the time developers reach for it. Making accurate documentation available to AI agents through MCP is increasingly critical as developers rely on AI coding assistants. The MCP ecosystem's strength in documentation access rather than generation mirrors the broader trend: AI is better at consuming and searching existing docs than producing new ones from code.
 
@@ -24,7 +24,7 @@ Documentation is a universal need in software development — every project depe
 | Repository | [idosal/git-mcp](https://github.com/idosal/git-mcp) |
 | Language | TypeScript |
 | Stars | 8k |
-| License | See LICENSE file |
+| License | [Apache-2.0](https://github.com/idosal/git-mcp/blob/main/LICENSE) |
 | Transport | Remote (Streamable HTTP, SSE) |
 | Creator | Ido Salomon (community) |
 
@@ -47,7 +47,7 @@ Documentation is a universal need in software development — every project depe
 |--------|--------|
 | Repository | [MicrosoftDocs/mcp](https://github.com/MicrosoftDocs/mcp) |
 | Language | TypeScript |
-| Stars | 1.6k |
+| Stars | 1.8k |
 | License | CC-BY-4.0 (docs) / MIT (code) |
 | Transport | Remote (cloud-hosted) |
 | Creator | Microsoft (official) |
@@ -62,7 +62,7 @@ Documentation is a universal need in software development — every project depe
 
 **Key differentiator:** **No authentication required** — free access with no API key or sign-up. Covers Microsoft Learn, Azure documentation, Microsoft 365 documentation, and all official Microsoft sources. Supply chain security: only accesses first-party Microsoft content, avoiding potentially compromised third-party sources. Includes 3 agent skills (microsoft-docs, microsoft-code-reference, microsoft-skill-creator) that teach AI agents how to use the tools effectively. Token budget control for managing response sizes. CLI tool (`@microsoft/learn-cli`) available for terminal-based access. Works with VS Code, Cursor, Claude, GitHub Copilot, and 10+ other environments.
 
-**Limitation:** Microsoft-only — no access to non-Microsoft documentation. The 1.6k stars reflect Microsoft's ecosystem reach, not necessarily documentation quality. Semantic search quality depends on Microsoft's indexing. Remote-only — no local caching or offline access. Response sizes can be large, hence the experimental token budget feature.
+**Limitation:** Microsoft-only — no access to non-Microsoft documentation. The 1.8k stars reflect Microsoft's ecosystem reach, not necessarily documentation quality. Semantic search quality depends on Microsoft's indexing. Remote-only — no local caching or offline access. Response sizes can be large, hence the experimental token budget feature.
 
 ### Google Developer Knowledge API & MCP Server — Official Access to All Google Developer Docs
 
@@ -92,9 +92,9 @@ Documentation is a universal need in software development — every project depe
 |--------|--------|
 | Repository | [arabold/docs-mcp-server](https://github.com/arabold/docs-mcp-server) |
 | Language | TypeScript (99.8%) |
-| Stars | 1.3k |
+| Stars | 1.6k |
 | License | MIT |
-| Version | v2.2.1 (March 30, 2026) |
+| Version | v3.0.1 (August 14, 2026) |
 | Transport | stdio (local) |
 | Creator | arabold (community) |
 
@@ -108,9 +108,9 @@ Documentation is a universal need in software development — every project depe
 | Privacy | Runs entirely on your machine — code never leaves your network |
 | CLI + MCP | Both command-line and MCP server interfaces |
 
-**Key differentiator:** **Version-specific documentation queries** — unlike remote servers that serve the latest docs, Grounded Docs targets the exact version of libraries in your project. This directly reduces hallucinations caused by version mismatches (e.g., an LLM referencing React 19 APIs when your project uses React 18). Open-source MIT alternative to commercial Context7 and Nia. The local-first architecture means sensitive codebases stay private. Actively maintained with v2.2.1 released March 30, 2026. Also has its own Mintlify-hosted documentation site.
+**Key differentiator:** **Version-specific documentation queries** — unlike remote servers that serve the latest docs, Grounded Docs targets the exact version of libraries in your project. This directly reduces hallucinations caused by version mismatches (e.g., an LLM referencing React 19 APIs when your project uses React 18). Open-source MIT alternative to commercial Context7 and Nia. The local-first architecture means sensitive codebases stay private. Actively maintained, with [v3.0.1 released August 14, 2026](https://github.com/arabold/docs-mcp-server/releases) (v3.0.0 replaced the admin interface with a React/Vite/tRPC single-page app). Also has its own Mintlify-hosted documentation site.
 
-**Limitation:** Requires local setup and storage for the documentation index. Initial fetching can be slow for large documentation sites. Search quality depends on the source documentation's structure. CLI-focused — no remote MCP transport option. 1.3k stars is healthy for a community project but small compared to Context7's 54.2k.
+**Limitation:** Requires local setup and storage for the documentation index. Initial fetching can be slow for large documentation sites. Search quality depends on the source documentation's structure. CLI-focused — no remote MCP transport option. 1.6k stars is healthy for a community project but small compared to Context7's 60.8k.
 
 ### Mintlify — Auto-Generated MCP Servers for All Documentation Customers
 
@@ -119,7 +119,7 @@ Documentation is a universal need in software development — every project depe
 | Platform | [Mintlify](https://www.mintlify.com/) |
 | MCP endpoint | `{your-docs-url}/mcp` |
 | Transport | Remote (hosted) |
-| Creator | Mintlify (official vendor, 28k+ GitHub stars for platform) |
+| Creator | Mintlify (official vendor) |
 
 **Automatically generated for all Mintlify customers:**
 
@@ -130,7 +130,7 @@ Documentation is a universal need in software development — every project depe
 | API execution | AI agents can call your API endpoints through the MCP server |
 | Search | Natural language queries across all documentation content |
 
-**Key differentiator:** **You don't build the MCP server — it's generated from your docs.** Every Mintlify documentation site automatically gets an MCP endpoint at the `/mcp` path. This covers both API references (from OpenAPI specs) and long-form content (tutorials, guides). End users connect their AI coding assistants to the MCP endpoint and get real-time, contextual answers about how to use your product. The API execution capability means AI agents can both read documentation and call the API. Clients include Stripe.
+**Key differentiator:** **You don't build the MCP server — it's generated from your docs.** Every Mintlify documentation site automatically gets an MCP endpoint at the `/mcp` path. This covers both API references (from OpenAPI specs) and long-form content (tutorials, guides). End users connect their AI coding assistants to the MCP endpoint and get real-time, contextual answers about how to use your product. The API execution capability means AI agents can both read documentation and call the API. [Customers include Anthropic, Coinbase, and PayPal](https://www.mintlify.com/customers).
 
 **Limitation:** Mintlify-only — requires your documentation to be hosted on Mintlify. Not an open-source MCP server you can self-host. Pricing tied to Mintlify's documentation platform. The auto-generated nature means less control over what's exposed through MCP. No documentation generation — this exposes existing docs, not creates new ones.
 
@@ -142,7 +142,7 @@ Documentation is a universal need in software development — every project depe
 |--------|--------|
 | Repository | [langchain-ai/mcpdoc](https://github.com/langchain-ai/mcpdoc) |
 | Language | Python |
-| Stars | 982 |
+| Stars | 1k+ |
 | License | MIT |
 | Version | v0.0.10 |
 | Transport | stdio (local) |
@@ -156,7 +156,7 @@ Documentation is a universal need in software development — every project depe
 | fetch_docs | Fetch and parse content from URLs within any provided llms.txt |
 | IDE integration | Works with Cursor, Windsurf, Claude Code/Desktop |
 
-**Key differentiator:** **Bridges the emerging llms.txt standard to MCP.** The llms.txt specification (2,352 stars for the original spec) is becoming the standard way for websites to expose documentation to AI agents — a simple index file pointing to detailed Markdown pages. LangChain's mcpdoc loads user-defined llms.txt files and exposes a `fetch_docs` tool that AI agents use to retrieve specific documentation pages. This means any website that publishes an llms.txt file becomes accessible through MCP — no per-site MCP server needed. At 982 stars and actively maintained (pushed today), it's approaching the scale of established documentation MCP servers.
+**Key differentiator:** **Bridges the emerging llms.txt standard to MCP.** The llms.txt specification (2,352 stars for the original spec) is becoming the standard way for websites to expose documentation to AI agents — a simple index file pointing to detailed Markdown pages. LangChain's mcpdoc loads user-defined llms.txt files and exposes a `fetch_docs` tool that AI agents use to retrieve specific documentation pages. This means any website that publishes an llms.txt file becomes accessible through MCP — no per-site MCP server needed. At [1k+ stars and actively maintained (latest release v0.0.10, July 22, 2026)](https://github.com/langchain-ai/mcpdoc/releases), it's approaching the scale of established documentation MCP servers.
 
 **Limitation:** Depends on websites publishing llms.txt files — coverage is growing but not universal. The llms.txt standard is still emerging; not all documentation sites support it. Keyword-based retrieval through llms.txt indices, not semantic search. Local-only (stdio transport). The v0.0.10 version number suggests early maturity despite the star count.
 
@@ -198,7 +198,7 @@ Documentation is a universal need in software development — every project depe
 
 **Key differentiator:** **Generates MCP servers directly from your OpenAPI spec** — the same spec that powers your docs site also generates your MCP endpoint. The two-tool architecture (code execution + docs search) is more accurate and token-efficient than architectures that expose one tool per API method. Documentation is served in Markdown format optimized for LLM consumption. Stainless also generates SDKs, so the MCP server, SDKs, and documentation all derive from the same source.
 
-**Limitation:** Stainless-only — requires using Stainless for your API toolchain. The two-tool architecture is simpler but less granular than competitors. Pricing tied to Stainless platform. Still moving toward GA in 2026.
+**Limitation:** Stainless-only — requires using Stainless for your API toolchain. The two-tool architecture is simpler but less granular than competitors. Pricing tied to Stainless platform. [Stainless's own docs label MCP server generation "experimental"](https://www.stainless.com/docs/mcp/), not yet GA.
 
 ### GitBook — Auto-Generated MCP Servers for Every Published Space
 
@@ -253,7 +253,7 @@ Documentation is a universal need in software development — every project depe
 |--------|--------|
 | Repository | [alekspetrov/mcp-docs-service](https://github.com/alekspetrov/mcp-docs-service) |
 | Language | TypeScript |
-| Stars | 53 |
+| Stars | 58 |
 | License | MIT |
 | Transport | stdio (local) |
 | Creator | alekspetrov (community) |
@@ -271,7 +271,7 @@ Documentation is a universal need in software development — every project depe
 
 **Key differentiator:** **Quality analysis** — the only MCP server focused on documentation quality rather than just access. Identifies missing metadata, broken links, and structural issues. Maintains a minimum health score of 80. The LLM optimization feature generates consolidated output specifically designed for large language model consumption, with token counting for context window management. Works with Cursor and Claude Desktop.
 
-**Limitation:** Small project (53 stars). Markdown-only — no support for reStructuredText, AsciiDoc, or other documentation formats. Local-only. Quality analysis is basic (metadata checks, broken links) rather than content quality assessment.
+**Limitation:** Small project (58 stars). Markdown-only — no support for reStructuredText, AsciiDoc, or other documentation formats. Local-only. Quality analysis is basic (metadata checks, broken links) rather than content quality assessment.
 
 ### MCP-Typescribe — TypeDoc API Reference Querying
 
@@ -279,7 +279,7 @@ Documentation is a universal need in software development — every project depe
 |--------|--------|
 | Repository | [yWorks/mcp-typescribe](https://github.com/yWorks/mcp-typescribe) |
 | Language | TypeScript (98.4%) |
-| Stars | 44 |
+| Stars | 46 |
 | License | MIT |
 | Transport | stdio (local) |
 | Creator | yWorks (community, no longer actively developed) |
@@ -300,7 +300,7 @@ Documentation is a universal need in software development — every project depe
 
 **Key differentiator:** **The only MCP server purpose-built for exploring TypeScript API references** — loads TypeDoc-generated JSON data and exposes structured querying. The 9 specialized tools enable deep API exploration: finding implementations of interfaces, tracing type hierarchies, discovering functions by return type. This goes far beyond text search — it understands TypeScript's type system.
 
-**Limitation:** TypeScript-only. Requires pre-generated TypeDoc JSON data. No longer under active public development by yWorks. 44 stars indicates niche adoption. Only queries existing documentation — doesn't generate it. No support for JSDoc (JavaScript without TypeScript), Python docstrings, or other languages.
+**Limitation:** TypeScript-only. Requires pre-generated TypeDoc JSON data. No longer under active public development by yWorks. 46 stars indicates niche adoption. Only queries existing documentation — doesn't generate it. No support for JSDoc (JavaScript without TypeScript), Python docstrings, or other languages.
 
 ### Docusaurus Plugin MCP Server — FlexSearch-Powered Documentation Access
 
@@ -308,9 +308,9 @@ Documentation is a universal need in software development — every project depe
 |--------|--------|
 | Repository | [scalvert/docusaurus-plugin-mcp-server](https://github.com/scalvert/docusaurus-plugin-mcp-server) |
 | Language | TypeScript |
-| Stars | 22 |
+| Stars | 30 |
 | License | MIT |
-| Version | v0.12.0 (April 12, 2026) |
+| Version | [v1.0.0 (June 27, 2026)](https://github.com/scalvert/docusaurus-plugin-mcp-server/releases) |
 | Transport | Remote (serverless) |
 | Creator | scalvert (community) |
 
@@ -326,7 +326,7 @@ Documentation is a universal need in software development — every project depe
 
 **Key differentiator:** **Docusaurus is the most popular React documentation framework** (60k+ GitHub stars, used by Meta, Algolia, Supabase, and hundreds of open-source projects). This plugin makes any Docusaurus site's documentation available to AI agents through MCP. Build-time processing means the search index is generated during `docusaurus build` — no runtime overhead. Pre-built adapters for Vercel, Netlify, and Cloudflare Workers enable deployment anywhere.
 
-**Limitation:** Still small (22 stars, up from 13). Docusaurus-only — no support for VitePress, Nextra, MkDocs, Sphinx, or other documentation frameworks. Requires serverless deployment for the MCP endpoint. CORS configuration needed for browser-based clients. The FlexSearch approach is keyword-based, not semantic.
+**Limitation:** Still small (30 stars, up from 22). Docusaurus-only — no support for VitePress, Nextra, MkDocs, Sphinx, or other documentation frameworks. Requires serverless deployment for the MCP endpoint. CORS configuration needed for browser-based clients. The FlexSearch approach is keyword-based, not semantic.
 
 ### Additional Documentation Servers
 
@@ -337,7 +337,7 @@ Documentation is a universal need in software development — every project depe
 | [OpenAI Docs MCP](https://developers.openai.com/learn/docs-mcp) | Official read-only access to OpenAI developer documentation (search + page content) |
 | [Vonage Documentation MCP](https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server) | Query Vonage's API documentation inline from your editor |
 | [AWS Documentation MCP](https://awslabs.github.io/mcp/servers/aws-documentation-mcp-server/) | Search AWS documentation using the official AWS Documentation Search API |
-| [Fern MCP Server](https://github.com/fern-api/fern-mcp-server) (4 stars) | ask_fern_ai tool for querying Fern's documentation and SDK generation knowledge. NEW: Claude Code integration button auto-adds MCP server to Claude Code (April 24, 2026). Fern now generates MCP servers for customers (e.g., Webflow uses Fern MCP) |
+| [Fern MCP Server](https://github.com/fern-api/fern-mcp-server) (5 stars) | ask_fern_ai tool for querying Fern's documentation and SDK generation knowledge. One-click "Connect to Claude Code" button on docs sites with Ask Fern enabled. Fern now generates MCP servers for customers — [Webflow uses Fern](https://buildwithfern.com/post/webflow-product-switcher) to generate its SDKs, OpenAPI docs, and MCP server |
 | [Apidog MCP Server](https://docs.apidog.com/apidog-mcp-server) | Connect AI to API specifications within Apidog projects (beta) |
 | [Espressif Documentation MCP](https://mcp.espressif.com/docs) | Official vendor — search_espressif_sources tool provides semantic retrieval against latest Espressif (ESP32/ESP-IDF) documentation with source URLs. Hosted remote MCP |
 | [Google Developer Knowledge MCP](https://developers.google.com/knowledge/mcp) | Official Google — covered in detail above. SearchDocumentChunks, GetDocument, AnswerQuery across all Google developer docs |
@@ -364,7 +364,7 @@ Documentation is a universal need in software development — every project depe
 
 **No documentation linting/testing MCP** — Tools like vale (prose linting), markdownlint, doc8 (reStructuredText), and write-good have no MCP servers. Documentation quality checking beyond basic metadata validation doesn't exist in MCP.
 
-**No VitePress or Nextra MCP plugins** — Docusaurus has a plugin (13 stars); VitePress (Vue-based, 14k+ stars) and Nextra (Next.js-based, 12k+ stars) have none. Two of the three major JavaScript documentation frameworks are missing.
+**No VitePress or Nextra MCP plugins** — Docusaurus has a plugin (30 stars); VitePress (Vue-based, 14k+ stars) and Nextra (Next.js-based, 12k+ stars) have none. Two of the three major JavaScript documentation frameworks are missing.
 
 **No Hugo/Jekyll/Astro documentation MCP** — Static site generators used for documentation (Hugo, Jekyll, Astro Starlight) have no documentation-specific MCP integration.
 
@@ -374,29 +374,29 @@ Documentation is a universal need in software development — every project depe
 
 | Aspect | GitHub | GitLab | Bitbucket | Docker | Kubernetes | CI/CD | IDE/Editor | Testing/QA | Monitoring | Security | IaC | Packages | Code Gen | API Dev | Logging | DB Migration | Doc Tooling | Debugging | Profiling | Code Review |
 |--------|--------|--------|-----------|--------|------------|-------|------------|------------|------------|----------|-----|----------|----------|---------|---------|--------------|-------------|-----------|-----------|-------------|
-| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright, 9.8k stars, 24 tools) | Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana) | Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | Yes (Terraform 1.4k, Pulumi remote, AWS IaC, Bicep, Ansible AAP) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 227, Apollo 275, openapi-mcp-server 889, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview, Prisma built-in CLI) | Yes (Google Developer Knowledge, Microsoft Learn 1.6k, GitBook auto, Mintlify auto, ReadMe, Stainless, OpenAI Docs, Espressif) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 544 stars, Codacy 56 stars, Graphite GT built-in) |
-| **Top community server** | GitMCP (8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible (27 stars, 40+ tools) | mcp-devtools (140 stars, 20+ tools) | Context7 (54.2k stars), magic-mcp (4.8k stars) | openapi-mcp-server (889 stars), openapi-mcp-generator (576 stars), mcp-graphql (383 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (8k stars), LangChain mcpdoc (982 stars), Grounded Docs (1.3k stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
+| **Official MCP server** | Yes (28.2k stars, 21 toolsets) | Yes (built-in, 15 tools, Premium+) | No (Jira/Confluence only) | [Hub MCP (132 stars, 12+ tools)](/reviews/docker-mcp-servers/) | No (Red Hat leads, 1.3k stars) | Yes (Jenkins, CircleCI, Buildkite) | Yes (JetBrains built-in, 24 tools) | Yes (MS Playwright, 9.8k stars, 24 tools) | Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana) | Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | Yes (Terraform 1.4k, Pulumi remote, AWS IaC, Bicep, Ansible AAP) | Yes (NuGet built-in VS 2026, Homebrew built-in) | Partial (Vercel next-devtools 694, E2B 384, JetBrains built-in server) | Yes (Postman 227, Apollo 275, openapi-mcp-server 889, Apigee, MuleSoft) | Yes (Splunk 13 tools GA, Grafana Tempo built-in, Grafana Loki 103 stars) | Partial (Liquibase private preview, Prisma built-in CLI) | Yes (Google Developer Knowledge, Microsoft Learn 1.8k, GitBook auto, Mintlify auto, ReadMe, Stainless, OpenAI Docs, Espressif) | Yes (Chrome DevTools 31k, Microsoft DebugMCP 263, MCP Inspector 9.2k official) | Partial (CodSpeed MCP, Polar Signals remote, Grafana Pyroscope via mcp-grafana) | Yes (SonarQube 544 stars, Codacy 56 stars, Graphite GT built-in) |
+| **Top community server** | GitMCP (8k stars) | zereight/gitlab-mcp (1.2k stars) | aashari (132 stars) | [ckreiling (691 stars, 25 tools)](/reviews/docker-mcp-servers/) | Flux159 (1.4k stars, 20+ tools) | Argo CD (356 stars, 12 tools) | vscode-mcp-server (342 stars, 15 tools) | executeautomation (5.3k stars) | pab1it0/prometheus (340 stars) | CodeQL community (143 stars) | Ansible (27 stars, 40+ tools) | mcp-devtools (140 stars, 20+ tools) | Context7 (60.8k stars), magic-mcp (4.8k stars) | openapi-mcp-server (889 stars), openapi-mcp-generator (576 stars), mcp-graphql (383 stars) | cr7258/elasticsearch (259 stars), Traceloop OTel (178 stars) | mpreziuso/mcp-atlas (Atlas), defrex/drizzle-mcp (Drizzle) | GitMCP (8k stars), LangChain mcpdoc (1k+ stars), Grounded Docs (1.6k stars) | claude-debugs-for-you (496 stars), x64DbgMCPServer (398 stars), devtools-debugger (341 stars) | theSharque/mcp-jperf (Java JFR), PageSpeed Insights MCP servers | kopfrechner/gitlab-mr-mcp (86 stars), crazyrabbitLTC (32 stars) |
 | **Primary function** | Repository operations | Repository operations | Repository operations | Container lifecycle | Cluster management | Pipeline management | Editor integration | Test execution | Observability queries | Vulnerability scanning | Infrastructure provisioning | Dependency intelligence | Context provision + UI generation | Spec-to-server conversion + API interaction | Log search/analysis + trace correlation | Schema migration & version control | Doc access, search, generation & quality | Breakpoints, stepping, variable inspection, crash analysis | Flamegraph analysis, CPU/memory profiling, benchmarks, web audits, load testing | Code quality analysis, PR management, diff review, stacked PR creation |
 | **Vendor count** | 1 (GitHub) | 1 (GitLab) | 0 (Atlassian via Jira only) | 1 (Docker) + community | 0 (Red Hat leads community) | 3 (Jenkins, CircleCI, Buildkite) | 1 (JetBrains) | 1 (Microsoft) | 6 (Grafana, Datadog, Sentry, Dynatrace, New Relic, Instana) | 7+ (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast) | 7+ (HashiCorp, Pulumi, AWS, Bicep, Ansible AAP, Spacelift, StackGen) | 3 (Microsoft/NuGet, WinGet, Homebrew) | 3 (Vercel, E2B, Upstash/Context7) | 5+ (Postman, Apollo, openapi-mcp-server, Apigee, MuleSoft, Salesforce) | 6+ (Splunk, Grafana/Loki, Grafana/Tempo, Coralogix, Axiom, Mezmo) | 2 (Liquibase, Prisma) + Google partial | 8+ (Google, Microsoft, GitBook, Mintlify, ReadMe, Stainless, OpenAI, Vonage, Fern, Espressif, Apidog) | 3 (Google/Chrome DevTools, Microsoft/DebugMCP, LLVM/LLDB built-in) | 3 (CodSpeed, Polar Signals, Tricentis/NeoLoad) + Grafana partial | 3 (SonarSource, Codacy, Graphite) + CodeRabbit as client |
 | **Code generation role** | Context (repos, issues, PRs) | Context (repos, issues, MRs) | Context (repos, PRs) | Context (images, containers) | Context (cluster state) | Context (pipeline status) | Bidirectional (tools + context) | Context (test results) | Context (metrics, logs) | Context (vulnerabilities) | Generation (IaC templates) | Context (versions, advisories) | Direct (UI components, docs, execution) | Bidirectional (spec-to-tools, API execution) | Context (log patterns, traces, errors) | Bidirectional (migration generation + schema inspection) | Context (doc access/search) + Generation (doc output) | Bidirectional (set breakpoints + inspect state) | Context (profiles, flamegraphs, benchmarks) + Generation (benchmark harnesses) | Bidirectional (quality data as context + review comments as output) |
 | **Authentication** | PAT / GitHub App | OAuth 2.0 / PAT | App Password / OAuth | Docker Desktop credentials | kubeconfig / OAuth / OIDC | API tokens per platform | Local connection (port/stdio) | None (local browsers) | API tokens / OAuth (remote) | API tokens / CLI auth | API tokens / OAuth / CLI auth | None (public registries) | API keys (Context7, magic-mcp, E2B) | API keys / Bearer / OAuth / 1Password | API tokens / OAuth / RBAC (Splunk) | Database credentials / API keys | None (GitMCP, MS Learn) / API keys (platform MCP) | None (local debuggers) / Chrome DevTools auto-connect | API keys (CodSpeed, Polar Signals) / Grafana auth / Google API key (PageSpeed) | API tokens (SonarQube, Codacy) / GitHub PAT / GitLab PAT |
 | **AAIF membership** | No (but Microsoft is Platinum) | No | No | [Gold](/reviews/docker-mcp-servers/) | No (but Google/AWS/MS are Platinum) | No | No (but Microsoft is Platinum) | No (but Microsoft is Platinum) | No | No | No | No (but Microsoft is Platinum) | No | No | No | No | No (but Microsoft is Platinum) | No (but Google/Microsoft are Platinum) | No | No |
-| **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users | 5.6M developers | Jenkins: 11.3M devs | VS Code: 75.9% market share | Playwright: 45.1% QA adoption | Datadog: 32.7k customers | SonarQube: 17.7% SAST mindshare | Terraform: millions of users, 45% IaC adoption | npm: 5B+ weekly downloads | Copilot: 20M+ users, Cursor: 1M+ DAU | Postman: 30M+ users, REST: ~83% of web APIs | Splunk: 15k+ customers, ELK: most-deployed log stack | Flyway: 10.7k stars, Liquibase: 5.2k stars, Prisma: 43k stars | Mintlify: 28k+ stars, Docusaurus: 60k+ stars, ReadMe: powering major API docs | Chrome: 65%+ browser share, VS Code: 75.9% IDE share, x64dbg: 45k+ stars | APM market: $7-10B, Pyroscope: 11k+ stars, async-profiler: 9k+ stars | SonarQube: 7.4M+ users, CodeRabbit: top AI reviewer, Qodo/PR-Agent: 10.5k stars |
+| **Platform users** | 180M+ developers | 30M+ users | ~41k companies | 20M+ users | 5.6M developers | Jenkins: 11.3M devs | VS Code: 75.9% market share | Playwright: 45.1% QA adoption | Datadog: 32.7k customers | SonarQube: 17.7% SAST mindshare | Terraform: millions of users, 45% IaC adoption | npm: 5B+ weekly downloads | Copilot: 20M+ users, Cursor: 1M+ DAU | Postman: 30M+ users, REST: ~83% of web APIs | Splunk: 15k+ customers, ELK: most-deployed log stack | Flyway: 10.7k stars, Liquibase: 5.2k stars, Prisma: 43k stars | Docusaurus: 65.9k stars, GitMCP: 8k+ stars, ReadMe: powering major API docs | Chrome: 65%+ browser share, VS Code: 75.9% IDE share, x64dbg: 45k+ stars | APM market: $7-10B, Pyroscope: 11k+ stars, async-profiler: 9k+ stars | SonarQube: 7.4M+ users, CodeRabbit: top AI reviewer, Qodo/PR-Agent: 10.5k stars |
 | **Our rating** | [4.5/5](/reviews/github-mcp-server/) | [3.5/5](/reviews/gitlab-mcp-server/) | [2.5/5](/reviews/bitbucket-mcp-server/) | [4/5](/reviews/docker-mcp-servers/) | [4/5](/reviews/kubernetes-mcp-servers/) | [3/5](/reviews/ci-cd-mcp-servers/) | [3.5/5](/reviews/ide-code-editor-mcp-servers/) | [3.5/5](/reviews/testing-qa-mcp-servers/) | [4/5](/reviews/monitoring-observability-mcp-servers/) | [4/5](/reviews/security-scanning-mcp-servers/) | [4/5](/reviews/infrastructure-as-code-mcp-servers/) | [3.5/5](/reviews/package-management-mcp-servers/) | [3.5/5](/reviews/code-generation-mcp-servers/) | [4/5](/reviews/api-development-mcp-servers/) | [3.5/5](/reviews/logging-tracing-mcp-servers/) | [2.5/5](/reviews/database-migration-mcp-servers/) | 4/5 | [4.5/5](/reviews/debugging-mcp-servers/) | [3/5](/reviews/profiling-performance-mcp-servers/) | [3.5/5](/reviews/code-review-pull-request-mcp-servers/) |
 
 ## Known Issues
 
 1. **Documentation generation MCP servers are mostly deprecated or tiny** — AWS Labs' Code Doc Gen MCP (the most complete generation server with 4 tools and repomix integration) is officially deprecated, with the README stating "modern LLMs now handle documentation generation more effectively using native file and code intelligence tools." The remaining generators — mcp-doc-generator (2 stars), README Gen MCP, Documentation MCP Server — are experimental. The ecosystem has effectively concluded that AI agents don't need specialized servers to generate documentation.
 
-2. **No documentation framework MCP servers (Sphinx, MkDocs, JSDoc, TypeDoc, Javadoc, Rustdoc)** — Every major programming language has a documentation generator; none has an MCP server that runs the generator, updates documentation, or manages documentation builds. The closest is MCP-Typescribe (44 stars), which queries existing TypeDoc JSON but doesn't generate it.
+2. **No documentation framework MCP servers (Sphinx, MkDocs, JSDoc, TypeDoc, Javadoc, Rustdoc)** — Every major programming language has a documentation generator; none has an MCP server that runs the generator, updates documentation, or manages documentation builds. The closest is MCP-Typescribe (46 stars), which queries existing TypeDoc JSON but doesn't generate it.
 
-3. **Platform lock-in for auto-generated MCP endpoints** — GitBook, Mintlify, ReadMe, Stainless, and Fern all auto-generate MCP servers, but only for their respective platforms. If your documentation is on Docusaurus (60k+ stars), VitePress (14k+ stars), or self-hosted, you don't get auto-generated MCP. The Docusaurus plugin (22 stars, v0.12.0) is the only framework integration, and while growing it's still small. The llms.txt standard partially addresses this — any site can publish an llms.txt file and be accessible via LangChain mcpdoc (982 stars) — but MCP tool access is still platform-dependent.
+3. **Platform lock-in for auto-generated MCP endpoints** — GitBook, Mintlify, ReadMe, Stainless, and Fern all auto-generate MCP servers, but only for their respective platforms. If your documentation is on Docusaurus (60k+ stars), VitePress (14k+ stars), or self-hosted, you don't get auto-generated MCP. The Docusaurus plugin (30 stars, v1.0.0) is the only framework integration, and while growing it's still small. The llms.txt standard partially addresses this — any site can publish an llms.txt file and be accessible via LangChain mcpdoc (1k+ stars) — but MCP tool access is still platform-dependent.
 
 4. **GitMCP depends on GitHub — no GitLab, Bitbucket, or self-hosted support** — At 8k stars, GitMCP is the most adopted documentation MCP server, but it only works with GitHub repositories and GitHub Pages. GitLab (30M+ users) and Bitbucket (~41k companies) projects have no equivalent zero-setup documentation hub.
 
-5. **Version-specific documentation is rare** — Only Grounded Docs MCP (1.3k stars) supports targeting the exact library version in your project. GitMCP serves the default branch. Microsoft Learn and Google Developer Knowledge serve the latest documentation. Version mismatches cause hallucinations — an LLM suggesting deprecated APIs or nonexistent features based on the wrong version of documentation.
+5. **Version-specific documentation is rare** — Only Grounded Docs MCP (1.6k stars) supports targeting the exact library version in your project. GitMCP serves the default branch. Microsoft Learn and Google Developer Knowledge serve the latest documentation. Version mismatches cause hallucinations — an LLM suggesting deprecated APIs or nonexistent features based on the wrong version of documentation.
 
-6. **Documentation quality analysis is nearly nonexistent** — mcp-docs-service (55 stars) provides basic metadata and broken link checking. No MCP server integrates prose linting (vale), readability scoring, API coverage analysis (are all public methods documented?), or documentation completeness checking. The "quality" of documentation is assumed, never measured.
+6. **Documentation quality analysis is nearly nonexistent** — mcp-docs-service (58 stars) provides basic metadata and broken link checking. No MCP server integrates prose linting (vale), readability scoring, API coverage analysis (are all public methods documented?), or documentation completeness checking. The "quality" of documentation is assumed, never measured.
 
 7. **No documentation-as-code workflow MCP** — Modern documentation workflows involve writing docs alongside code, running doc builds in CI, publishing to documentation platforms, and tracking documentation coverage. No MCP server supports this full workflow — doc access and doc generation are separate capabilities with no integration.
 
@@ -404,13 +404,13 @@ Documentation is a universal need in software development — every project depe
 
 9. **No cross-platform documentation search** — Each MCP server covers one source: GitMCP covers GitHub, Microsoft Learn covers Microsoft, Grounded Docs covers configured sources. No MCP server provides unified search across multiple documentation sources (e.g., search both React docs and your company's internal docs in one query).
 
-10. **Overlap with Code Generation category** — Context7 (50.3k stars, covered in our [Code Generation review](/reviews/code-generation-mcp-servers/)) also provides documentation access. The distinction between "documentation tooling" and "context provision for code generation" is blurry. GitMCP and Grounded Docs serve the same fundamental need as Context7 (get accurate docs into AI context) through different mechanisms.
+10. **Overlap with Code Generation category** — Context7 (60.8k stars, covered in our [Code Generation review](/reviews/code-generation-mcp-servers/)) also provides documentation access. The distinction between "documentation tooling" and "context provision for code generation" is blurry. GitMCP and Grounded Docs serve the same fundamental need as Context7 (get accurate docs into AI context) through different mechanisms.
 
 ## Bottom Line
 
 **Rating: 4 out of 5** *(upgraded from 3.5/5)*
 
-Documentation tooling MCP servers have **matured significantly**, with Google entering officially, GitBook joining the auto-MCP platform wave, and the llms.txt standard emerging as a cross-platform bridge. The access side is now genuinely strong and diversified: GitMCP (8k stars) provides zero-setup access for any GitHub repo, Google Developer Knowledge API (official) opens all Google developer docs with 24-hour re-indexing, LangChain mcpdoc (982 stars) bridges llms.txt to any IDE, Microsoft Learn MCP (1.6k stars) covers all Microsoft docs, and Grounded Docs MCP (1.3k stars, v2.2.1) adds version-specific queries with local privacy. Documentation platforms have consolidated around auto-generated MCP — GitBook now joins Mintlify, ReadMe, Stainless, and Fern in auto-generating both MCP endpoints and llms.txt files.
+Documentation tooling MCP servers have **matured significantly**, with Google entering officially, GitBook joining the auto-MCP platform wave, and the llms.txt standard emerging as a cross-platform bridge. The access side is now genuinely strong and diversified: GitMCP (8k stars) provides zero-setup access for any GitHub repo, Google Developer Knowledge API (official) opens all Google developer docs with 24-hour re-indexing, LangChain mcpdoc (1k+ stars) bridges llms.txt to any IDE, Microsoft Learn MCP (1.8k stars) covers all Microsoft docs, and Grounded Docs MCP (1.6k stars, v3.0.1) adds version-specific queries with local privacy. Documentation platforms have consolidated around auto-generated MCP — GitBook now joins Mintlify, ReadMe, Stainless, and Fern in auto-generating both MCP endpoints and llms.txt files.
 
 The **4/5 rating** (upgraded from 3.5/5) reflects: **8+ vendors** now shipping official documentation MCP servers (up from 5+), Google's entry validating documentation-as-MCP-endpoint as a standard cloud vendor offering, the llms.txt ecosystem emerging as a cross-platform alternative to platform-locked MCP endpoints, GitBook auto-MCP expanding the platform coverage, and Sphinx MCP servers partially closing the biggest documentation framework gap. Points are still lost for weak documentation generation tooling (the most feature-rich generator remains deprecated), no MkDocs/VitePress/Nextra MCP servers, documentation quality analysis remaining nonexistent, and version-specific targeting limited to one server.
 
@@ -419,8 +419,8 @@ The **4/5 rating** (upgraded from 3.5/5) reflects: **8+ vendors** now shipping o
 - **Any developer using GitHub** — GitMCP provides instant, zero-setup documentation access for any GitHub repository. Connect your MCP client to `gitmcp.io/{owner}/{repo}` and start querying
 - **Google ecosystem developers** — Google Developer Knowledge API gives official access to Firebase, Android, Cloud, Maps, and all Google developer documentation with 24-hour re-indexing
 - **Microsoft ecosystem developers** — Microsoft Learn MCP gives free, no-auth access to Azure, .NET, Microsoft 365, and all Microsoft documentation. Three focused tools with agent skills
-- **Teams wanting cross-platform doc access** — LangChain mcpdoc (982 stars) lets AI agents fetch documentation from any site publishing llms.txt files — no per-site MCP server needed
-- **Teams wanting version-specific docs** — Grounded Docs MCP (1.3k stars) fetches documentation for the exact library versions in your project, reducing version-mismatch hallucinations
+- **Teams wanting cross-platform doc access** — LangChain mcpdoc (1k+ stars) lets AI agents fetch documentation from any site publishing llms.txt files — no per-site MCP server needed
+- **Teams wanting version-specific docs** — Grounded Docs MCP (1.6k stars) fetches documentation for the exact library versions in your project, reducing version-mismatch hallucinations
 - **API documentation providers on GitBook/Mintlify/ReadMe/Stainless** — Auto-generated MCP endpoints mean your users' AI assistants can query your API docs and execute calls without any additional work from you
 
 **Who should wait:**

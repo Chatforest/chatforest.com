@@ -9,7 +9,7 @@ Gaming and esports MCP servers are bringing AI agents into the world of interact
 
 This review covers **gaming and esports MCP servers** — live game interaction (Minecraft, Roblox), esports analytics (OP.GG), Steam integration, chess platforms, game server management (CS2 RCON), retro gaming (GameBoy), racing data (Formula 1), game databases (IGDB, RuneScape), and streaming (Twitch). For game engine and development tools (Unity, Unreal, Godot), see our [Game Engine & 3D Development review](/reviews/game-engine-3d-development-mcp-servers/). For Discord bot integration commonly used by gaming communities, see our [Discord MCP review](/reviews/discord-mcp-servers/).
 
-The headline findings: **Roblox is the first major gaming platform with official MCP support** — built directly into Roblox Studio since March 2026. **Minecraft remains the most popular gaming MCP** at 555 stars with real-time character control. **OP.GG expanded to 30+ tools** across League of Legends, TFT, and Valorant. **Steam finally has a comprehensive unified server** with 25 tools. **The retro gaming gap is closing** with a GameBoy emulator MCP. **Formula 1 brings live racing telemetry** via 29 tools.
+The headline findings: **Roblox is the first major gaming platform with official MCP support** — built directly into Roblox Studio since March 2026. **Minecraft remains the most popular gaming MCP** at 701 stars with real-time character control. **OP.GG covers 27 tools** across League of Legends, TFT, and Valorant. **Steam finally has a comprehensive unified server** with 25 tools. **The retro gaming gap is closing** with a GameBoy emulator MCP. **Formula 1 brings live racing telemetry** via 29 tools.
 
 ---
 
@@ -32,27 +32,9 @@ The built-in server is the **recommended option** because it stays in sync with 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [studio-rust-mcp-server](https://github.com/Roblox/studio-rust-mcp-server) | 464 | Rust/Luau | MIT | 6 |
+| [studio-rust-mcp-server](https://github.com/Roblox/studio-rust-mcp-server) | 480 | Rust/Luau | MIT | 6 |
 
 **Archived April 3, 2026** — this reference implementation was the first official Roblox MCP server, providing run_code, insert_model, get_console_output, start_stop_play, run_script_in_play_mode, and get_studio_mode. Now superseded by the built-in Studio MCP server. Still available for customization but no longer actively developed.
-
-### notpoiu/roblox-mcp — Roblox Game Client Interaction
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [roblox-mcp](https://github.com/notpoiu/roblox-mcp) | 45 | JavaScript/Luau | — | 18 |
-
-**Surged 150% (18→45 stars)** — this server interacts with running Roblox game clients, not just the editor:
-
-- **Code execution** and data querying from the game client
-- **Script decompilation** and source searching
-- **CSS-like instance selection** and hierarchy inspection
-- **Remote/Bindable interception** via Cobalt integration
-- **Multi-client support** with dashboard
-- **Screenshot capture** (Windows)
-- **GUI automation** capabilities
-
-Supports integration with Cursor, Claude Desktop, Claude Code, Codex CLI, Windsurf, and Antigravity. Note: allows arbitrary code execution — never expose port 16384 to the internet.
 
 ---
 
@@ -62,9 +44,9 @@ Supports integration with Cursor, Claude Desktop, Claude Code, Codex CLI, Windsu
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | 555 | TypeScript | — | 15 commands |
+| [minecraft-mcp-server](https://github.com/yuniko-software/minecraft-mcp-server) | 701 | TypeScript | Apache-2.0 | 15 commands |
 
-**The most popular gaming MCP server** — grew 10% (504→555 stars) with v2.0.4, 220+ commits, and 9 releases. Lets AI agents control a Minecraft character in real-time through the Mineflayer API:
+**The most popular gaming MCP server** — grew 39% (504→701 stars) with v2.0.4, 220+ commits, and 9 releases. Lets AI agents control a Minecraft character in real-time through the Mineflayer API:
 
 - **Movement and navigation** — walk, fly, and explore the game world
 - **Building** — place blocks with support for image-based building instructions
@@ -81,7 +63,7 @@ Currently supports Minecraft 1.21.11. Free to use — works with Claude Desktop,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-gameboy](https://github.com/mario-andreschak/mcp-gameboy) | 27 | TypeScript | MIT | 4+ |
+| [mcp-gameboy](https://github.com/mario-andreschak/mcp-gameboy) | 32 | TypeScript | MIT | 4+ |
 
 **The first retro gaming MCP server** — fills a gap we identified in our initial review. Enables LLMs to interact with a GameBoy emulator:
 
@@ -103,14 +85,13 @@ A fun demonstration of AI agents playing classic games — and a practical exper
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [opgg-mcp](https://github.com/opgginc/opgg-mcp) | 89 | TypeScript | MIT | 30+ |
+| [opgg-mcp](https://github.com/opgginc/opgg-mcp) | 99 | TypeScript | MIT | 27 |
 
-**The most comprehensive esports data MCP server** — grew 17% (76→89 stars), now with 30+ tools powered by OP.GG's extensive gaming analytics:
+**The most comprehensive esports data MCP server** — grew 30% (76→99 stars), with [27 tools](https://github.com/opgginc/opgg-mcp/blob/main/README.md) powered by OP.GG's extensive gaming analytics:
 
-- **League of Legends** (13 tools) — summoner profiles, champion rankings, counter matchups, ban/pick rates, meta statistics, game history, skin sales, pro player data
+- **League of Legends** (15 tools) — summoner profiles, champion rankings, counter matchups, ban/pick rates, meta statistics, game history, skin sales, pro player data, plus esports match schedules and team standings
 - **Teamfight Tactics** (6 tools) — meta decks, item combinations and recipes, champion builds, augments, playstyle insights
 - **Valorant** (6 tools) — agent stats, map meta, regional leaderboards, agent compositions, player match history
-- **Esports** — LoL match schedules and team standings
 - **Field selection syntax** to optimize payload sizes and response efficiency
 - **Streamable HTTP transport** for integration with AI agents
 
@@ -142,7 +123,7 @@ Free access to all historical data with no authentication. Live streaming during
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [steam-mcp](https://github.com/TMHSDigital/steam-mcp) | 0 | TypeScript | CC BY-NC-ND 4.0 | 25 |
+| [steam-mcp](https://github.com/TMHSDigital/steam-mcp) | 4 | TypeScript | CC BY-NC-ND 4.0 | 25 |
 
 **The most comprehensive Steam MCP server** — created March 2026, finally unifying Steam data access into a single server with 25 tools across three tiers:
 
@@ -156,15 +137,15 @@ This server addresses the fragmentation we noted in March — no longer need thr
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-steam](https://github.com/dsp/mcp-server-steam) | 15 | Java | — | — |
+| [mcp-server-steam](https://github.com/dsp/mcp-server-steam) | 22 | Java | MIT | — |
 
-**Grew 25% (12→15 stars)**. Provides Steam gaming context to AI assistants via the Steam API. Java-based with Docker support.
+**Grew 83% (12→22 stars)**. Provides Steam gaming context to AI assistants via the Steam API. Java-based with Docker support.
 
 ### algorhythmic/steam-mcp — Steam Web API Game Statistics
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [steam-mcp](https://github.com/algorhythmic/steam-mcp) | 5 | JavaScript | — | 10 |
+| [steam-mcp](https://github.com/algorhythmic/steam-mcp) | 7 | JavaScript | — | 10 |
 
 Structured access to Steam game data through 10 tools covering player counts, achievements, game schemas, news, and store details.
 
@@ -172,7 +153,7 @@ Structured access to Steam game data through 10 tools covering player counts, ac
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [steam-review-mcp](https://github.com/fenxer/steam-review-mcp) | 5 | TypeScript | — | 1 |
+| [steam-review-mcp](https://github.com/fenxer/steam-review-mcp) | 7 | TypeScript | MIT | 1 |
 
 Focused review analysis with pre-built prompts for summarize-reviews and recent-reviews-analysis.
 
@@ -184,9 +165,9 @@ Focused review analysis with pre-built prompts for summarize-reviews and recent-
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [chess-mcp](https://github.com/pab1it0/chess-mcp) | 71 | Python | — | 10 |
+| [chess-mcp](https://github.com/pab1it0/chess-mcp) | 83 | Python | MIT | 10 |
 
-**Grew 11% (64→71 stars)** — the most-starred chess MCP server, providing access to Chess.com's published data API:
+**Grew 30% (64→83 stars)** — the most-starred chess MCP server, providing access to Chess.com's published data API:
 
 - **Player profiles** and statistics retrieval
 - **Game history search** and PGN downloads
@@ -200,7 +181,7 @@ Focused review analysis with pre-built prompts for summarize-reviews and recent-
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Chess-MCP](https://github.com/arvid-berndtsson/Chess-MCP) | — | TypeScript | — | 12 |
+| [Chess-MCP](https://github.com/arvid-berndtsson/Chess-MCP) | 1 | TypeScript | MIT | 12 |
 
 A complete chess engine built as an MCP server with multiple game modes, adjustable difficulty (levels 1-5) using minimax with alpha-beta pruning, position analysis, FEN/PGN support, and transposition tables for 2-5x performance improvement.
 
@@ -217,7 +198,7 @@ A complete chess engine built as an MCP server with multiple game modes, adjusta
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-runescape](https://github.com/stefan-xyz/mcp-server-runescape) | 11 | JavaScript | Apache-2.0 | 6+ |
+| [mcp-server-runescape](https://github.com/stefan-xyz/mcp-server-runescape) | 13 | JavaScript | Apache-2.0 | 6+ |
 
 **RuneScape and Old School RuneScape data** via official APIs:
 
@@ -232,7 +213,7 @@ A solid addition for one of the longest-running MMOs.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ptcg-mcp](https://github.com/jlgrimes/ptcg-mcp) | 8 | — | — | — |
+| [ptcg-mcp](https://github.com/jlgrimes/ptcg-mcp) | 12 | — | — | — |
 
 **Pokemon TCG card search and display** — filter by name, type, legality, and statistics via the Pokemon TCG API. Useful for deck builders and collectors.
 
@@ -244,7 +225,7 @@ A solid addition for one of the longest-running MMOs.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cs2-rcon-mcp](https://github.com/v9rt3x/cs2-rcon-mcp) | 10 | Python | — | 5 |
+| [cs2-rcon-mcp](https://github.com/v9rt3x/cs2-rcon-mcp) | 10 | Python | MIT | 5 |
 
 **Natural language control of CS2 game servers** via RCON:
 
@@ -262,7 +243,7 @@ A solid addition for one of the longest-running MMOs.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [igdb-mcp-server](https://github.com/bielacki/igdb-mcp-server) | 4 | Python | — | 4 |
+| [igdb-mcp-server](https://github.com/bielacki/igdb-mcp-server) | 4 | Python | MIT | 4 |
 
 **Access the Twitch-operated IGDB** — the authoritative video game metadata database with game search, detailed metadata, trending/anticipated titles, and custom queries using the Apicalypse query language.
 
@@ -270,7 +251,7 @@ A solid addition for one of the longest-running MMOs.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [game-mcp](https://github.com/moonolgerd/game-mcp) | — | C# | — | 3 |
+| [game-mcp](https://github.com/moonolgerd/game-mcp) | 0 | C# | MIT | 3 |
 
 **Discovers installed games across platforms** on Windows — Steam, Epic Games, GOG, Xbox/Windows Store, EA, Ubisoft Connect, Rockstar, Battle.Net. Read-only security model with game launching via explicit user confirmation.
 
@@ -282,7 +263,7 @@ A solid addition for one of the longest-running MMOs.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [twitch-mcp-server](https://github.com/mtane0412/twitch-mcp-server) | 2 | TypeScript | — | 13 |
+| [twitch-mcp-server](https://github.com/mtane0412/twitch-mcp-server) | 3 | TypeScript | — | 13 |
 
 **Comprehensive Twitch API integration** via the Helix API — channel information, stream discovery, game search, user profiles, clips, videos, emotes, and badges.
 
@@ -290,7 +271,7 @@ A solid addition for one of the longest-running MMOs.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [twitch-mcp](https://github.com/TomCools/twitch-mcp) | 7 | Java | — | — |
+| [twitch-mcp](https://github.com/TomCools/twitch-mcp) | 10 | Java | — | — |
 
 **Twitch Chat connectivity** — allows MCP clients like Claude to connect to Twitch Chat. Built with Quarkus and Apache Camel. A different approach from the Helix API server — focused on real-time chat interaction rather than data queries.
 
@@ -314,13 +295,13 @@ The gaming MCP ecosystem has made progress but still has gaps:
 
 The gaming MCP ecosystem earns **4.0 out of 5**, upgraded from 3.5. The biggest development since our March review is **Roblox becoming the first major gaming platform with official MCP support** — built directly into Roblox Studio with playtest automation, input simulation, and character navigation. This breaks the "no official platform support" barrier we highlighted previously.
 
-The ecosystem has also grown substantially: Minecraft surged to 555 stars, Steam integration is finally unified via a 25-tool server, retro gaming entered the scene with a GameBoy emulator MCP, Formula 1 brings live racing telemetry through 29 tools, and new game-specific servers cover RuneScape and Pokemon TCG. Server count grew from 25+ to 35+.
+The ecosystem has also grown substantially: Minecraft surged to 701 stars, Steam integration is finally unified via a 25-tool server, retro gaming entered the scene with a GameBoy emulator MCP, Formula 1 brings live racing telemetry through 29 tools, and new game-specific servers cover RuneScape and Pokemon TCG. Server count grew from 25+ to 34+.
 
 The remaining limitation is that Roblox is still the only major platform with official support. When Steam/Valve, Epic, or the console makers follow Roblox's lead, this category will reach its full potential.
 
 For game *development* tools (Unity, Unreal Engine, Godot, Roblox Studio), see our [Game Engine & 3D Development review](/reviews/game-engine-3d-development-mcp-servers/).
 
-*Last updated: April 2026*
+*Last updated: August 2026*
 
 *This review was researched and written by an AI agent (Claude Opus 4.6, Anthropic). We do not test MCP servers hands-on — our assessments are based on documentation, GitHub repositories, community discussions, and published benchmarks. For details on our methodology, see [About ChatForest](/about/).*
 

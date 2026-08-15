@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anyquery MCP Server — SQL Everything: Query 40&#43; Apps, Files, and Databases from Your AI Agent — ChatForest</title>
-  <meta name="description" content="Anyquery MCP server lets AI agents query 40&#43; apps (GitHub, Notion, Slack, Gmail), files (CSV, JSON, Parquet), and databases (MySQL, PostgreSQL) using SQL.">
+  <meta name="description" content="Anyquery MCP server lets AI agents query 40&#43; apps (GitHub, Notion, Discord, Google Sheets), files (CSV, JSON, Parquet), and databases (MySQL, PostgreSQL) using SQL.">
   <meta property="og:title" content="Anyquery MCP Server — SQL Everything: Query 40&#43; Apps, Files, and Databases from Your AI Agent — ChatForest">
-  <meta property="og:description" content="Anyquery MCP server: query 40&#43; apps with SQL from AI agents. ~1,600 stars, Go, AGPLv3. 47 plugins, 13 databases, MySQL server mode. Rating: 3.5/5.">
+  <meta property="og:description" content="Anyquery MCP server: query 40&#43; apps with SQL from AI agents. ~1,750 stars, Go, AGPLv3. 44 plugins, 13 databases, MySQL server mode. Rating: 4.0/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/anyquery-mcp-server/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anyquery MCP Server — SQL Everything: Query 40&#43; Apps, Files, and Databases from Your AI Agent — ChatForest">
-  <meta name="twitter:description" content="Anyquery MCP server: query 40&#43; apps with SQL from AI agents. ~1,600 stars, Go, AGPLv3. 47 plugins, 13 databases, MySQL server mode. Rating: 3.5/5.">
+  <meta name="twitter:description" content="Anyquery MCP server: query 40&#43; apps with SQL from AI agents. ~1,750 stars, Go, AGPLv3. 44 plugins, 13 databases, MySQL server mode. Rating: 4.0/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/anyquery-mcp-server/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -67,8 +67,8 @@
 
       <div class="article-body">
         <p>Part of our <strong><a href="/categories/databases/">Databases MCP category</a></strong>.</p>
-<p><strong>At a glance:</strong> ~1,600 GitHub stars · <a href="https://github.com/julien040/anyquery/releases/tag/v0.4.4">v0.4.4</a> (October 2, 2025, <strong>no release in 7 months</strong>) · Go · AGPLv3 license · 47 plugins + 13 database connectors + 22 SQLite extensions · stdio/SSE/HTTP transports</p>
-<p>Most MCP servers connect to one thing. The <a href="https://github.com/julien040/anyquery">Anyquery MCP server</a> by Julien Cagniart connects to everything — or tries to. Install a plugin, and your GitHub issues, Notion databases, Slack messages, Gmail inbox, Spotify playlists, and CSV files all become SQL tables that your AI agent can query.</p>
+<p><strong>At a glance:</strong> <a href="https://github.com/julien040/anyquery">~1,750 GitHub stars</a> · <a href="https://github.com/julien040/anyquery/releases/tag/0.5.0">v0.5.0</a> (August 5, 2026) · Go · AGPLv3 license · 44 plugins + 13 database connectors + 22 SQLite extensions · stdio/SSE/HTTP transports</p>
+<p>Most MCP servers connect to one thing. The <a href="https://github.com/julien040/anyquery">Anyquery MCP server</a> by Julien Cagniart connects to everything — or tries to. Install a plugin, and your GitHub issues, Notion databases, Discord messages, Google Sheets rows, Spotify playlists, and CSV files all become SQL tables that your AI agent can query.</p>
 <p>That breadth is the pitch. One binary, one SQL interface, 40+ data sources. No per-API MCP server to install and configure separately. For agents that need to correlate data across multiple systems, this is a genuinely different approach.</p>
 <h2 id="what-it-does">What It Does</h2>
 <p>Anyquery is a SQL query engine built on SQLite. When you run <code>anyquery mcp --stdio</code>, it becomes an MCP server that exposes your installed plugins as queryable tables. Your AI agent discovers the available tables, understands their schemas, and writes SQL to answer questions.</p>
@@ -79,7 +79,7 @@
 <li><strong>Start the MCP server</strong> — your agent can now query across all sources with SQL</li>
 </ol>
 <h3 id="plugin-ecosystem">Plugin Ecosystem</h3>
-<p>The 47 available plugins span SaaS apps, local applications, and developer tools (down from 54 at launch — some consolidation since the October 2025 release):</p>
+<p>As of this audit (August 2026), <a href="https://registry.anyquery.dev/v0/registry/">Anyquery&rsquo;s plugin registry</a> lists <strong>44 plugins</strong> spanning SaaS apps, local applications, and developer tools — down from 54 at the March 2026 launch and 47 at the May 2026 refresh, with two new additions (Asana, Atlas Cloud) since then offsetting further removals elsewhere:</p>
 <table>
 <thead>
 <tr>
@@ -90,7 +90,7 @@
 <tbody>
 <tr>
 <td><strong>Productivity</strong></td>
-<td>Notion, Todoist, ClickUp, Coda, Trello, Google Tasks, Google Forms</td>
+<td>Notion, Todoist, ClickUp, Coda, Trello, Google Tasks, Google Forms, Asana</td>
 </tr>
 <tr>
 <td><strong>Communication</strong></td>
@@ -98,7 +98,7 @@
 </tr>
 <tr>
 <td><strong>Developer</strong></td>
-<td>GitHub, Git, Docker, Homebrew, PyPI, Vercel</td>
+<td>GitHub, Git, Docker, Homebrew, PyPI, Vercel, Atlas Cloud</td>
 </tr>
 <tr>
 <td><strong>CRM/Sales</strong></td>
@@ -130,7 +130,8 @@
 </tr>
 </tbody>
 </table>
-<p>Beyond plugins, Anyquery connects directly to <strong>13 databases</strong>: MySQL, PostgreSQL, SQLite, DuckDB, ClickHouse, Cassandra, MariaDB, CockroachDB, ScyllaDB, SingleStore, TiDB, YugabyteDB, and AWS Aurora (MySQL and PostgreSQL variants).</p>
+<p>There is no dedicated Slack or Gmail plugin — Gmail access goes through the generic Imap plugin instead, per <a href="https://anyquery.dev/integrations/">Anyquery&rsquo;s own Gmail guide</a>.</p>
+<p>Beyond plugins, Anyquery connects directly to <a href="https://anyquery.dev/docs/database"><strong>13 databases</strong></a>: MySQL, PostgreSQL, SQLite, DuckDB, ClickHouse, Cassandra, MariaDB, CockroachDB, ScyllaDB, SingleStore, TiDB, YugabyteDB, and AWS Aurora (MySQL and PostgreSQL variants).</p>
 <h3 id="the-power-of-sql-joins">The Power of SQL Joins</h3>
 <p>The real value isn&rsquo;t querying one source — it&rsquo;s joining across sources. An agent can write:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">g</span>.title, n.status
@@ -166,7 +167,7 @@
 </tr>
 </tbody>
 </table>
-<p>The MySQL server mode (port 8070, MySQL 5.7-compatible) isn&rsquo;t MCP — it&rsquo;s a separate capability that lets you connect any MySQL client to your Anyquery data. Useful for visualization tools and dashboards.</p>
+<p>The <a href="https://anyquery.dev/docs/usage/mysql-server/">MySQL server mode</a> (port 8070 by default) isn&rsquo;t MCP — it&rsquo;s a separate capability that lets you connect any MySQL-protocol client to your Anyquery data. Useful for visualization tools and dashboards.</p>
 <h2 id="setup">Setup</h2>
 <h3 id="claude-desktop">Claude Desktop</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -192,19 +193,19 @@ anyquery install google_sheets
 </code></pre></div><p>Plugin configuration happens once. After setup, the MCP server automatically exposes all installed plugins as tables.</p>
 <h2 id="performance">Performance</h2>
 <ul>
-<li><strong>Read-only</strong> — write operations are in development but not yet available</li>
+<li><strong>Write support is plugin-specific, not universal</strong> — this review&rsquo;s earlier claim that Anyquery is blanket read-only was wrong as of this audit</li>
 </ul>
-<p>The read-only limitation matters. Your agent can query GitHub issues but can&rsquo;t close them. Can read Notion pages but can&rsquo;t update them. For data analysis and correlation this is fine; for workflow automation, you&rsquo;ll still need separate write-capable MCP servers.</p>
+<p>Coverage varies a lot by plugin. <a href="https://anyquery.dev/integrations/notion">Notion</a> and <a href="https://anyquery.dev/integrations/google_sheets">Google Sheets</a> support full <code>INSERT</code>/<code>UPDATE</code>/<code>DELETE</code>. <a href="https://anyquery.dev/integrations/todoist">Todoist</a> supports <code>INSERT</code> and <code>DELETE</code> (creating and closing tasks) but not <code>UPDATE</code>. <a href="https://anyquery.dev/integrations/github">GitHub</a> remains explicitly read-only — you can query issues but not close or comment on them. There&rsquo;s no single answer to &ldquo;can Anyquery write to X&rdquo; — you have to check each plugin&rsquo;s own docs page before relying on it for workflow automation.</p>
 <h2 id="security-considerations">Security Considerations</h2>
 <p>Anyquery handles sensitive credentials (API tokens for GitHub, Notion, Gmail, etc.), so security design matters:</p>
 <ul>
 <li><strong>Token encryption</strong> via <code>anyquery config set --encrypt</code> — encrypts stored API credentials</li>
 <li><strong>Localhost binding</strong> recommended for server mode — don&rsquo;t expose the MySQL port to the network</li>
 <li><strong>Schema-only transit</strong> — only table schemas pass through the MCP protocol; raw credentials stay on-device</li>
-<li>v0.4.4 added default authorization for MCP HTTP servers (security fix)</li>
+<li><a href="https://github.com/julien040/anyquery/releases/tag/0.4.4">v0.4.4</a> added default authorization for MCP HTTP servers (security fix)</li>
 <li><strong>AGPLv3 license</strong> means modifications to Anyquery itself must be shared (plugins are independently licensed)</li>
 </ul>
-<p>The v0.4.4 security fix is notable: prior versions running MCP over HTTP had no default authentication, meaning anyone who could reach the port could query your data. This is now fixed with default authorization, but it highlights why localhost binding matters.</p>
+<p>The v0.4.4 fix addressed a real gap: prior versions running MCP over HTTP had no default authentication, meaning anyone who could reach the port could query your data. But that wasn&rsquo;t the last security issue. Since then, <a href="https://github.com/julien040/anyquery/releases/tag/0.4.5">v0.4.5</a> (June 2026) patched two CVEs (<a href="https://www.cve.org/CVERecord?id=CVE-2026-50006">CVE-2026-50006</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2026-47253">CVE-2026-47253</a>) by adding server-side sandboxing, <a href="https://github.com/julien040/anyquery/releases/tag/0.4.6">v0.4.6</a> (July 2026) fixed another advisory (<a href="https://github.com/julien040/anyquery/security/advisories/GHSA-j4wj-p47h-f9cc">GHSA-j4wj-p47h-f9cc</a>), and <a href="https://github.com/julien040/anyquery/releases/tag/0.5.0">v0.5.0</a> (August 2026) closed five more advisories, including a sandbox bypass where a crafted <code>ATTACH DATABASE</code>/<code>VACUUM INTO</code> target could get read-write disk access despite looking like an in-memory database. Read that history as a mixed signal: the maintainer has been responsive, but a single-developer project running with credentials for GitHub, Notion, Gmail-via-IMAP, and more has had a real string of exploitable bugs in 2026. Keep it updated and keep the port off the network.</p>
 <h2 id="alternatives-and-comparison">Alternatives and Comparison</h2>
 <p>How does Anyquery compare to building a stack of individual MCP servers?</p>
 <table>
@@ -218,7 +219,7 @@ anyquery install google_sheets
 <tbody>
 <tr>
 <td><strong>Data sources</strong></td>
-<td>54 plugins + 13 databases via one binary</td>
+<td>44 plugins + 13 databases via one binary</td>
 <td>One server per data source</td>
 </tr>
 <tr>
@@ -233,7 +234,7 @@ anyquery install google_sheets
 </tr>
 <tr>
 <td><strong>Write operations</strong></td>
-<td>Read-only (writes in development)</td>
+<td>Plugin-dependent (some full read-write, some read-only)</td>
 <td>Most support writes</td>
 </tr>
 <tr>
@@ -258,8 +259,8 @@ anyquery install google_sheets
 </tr>
 </tbody>
 </table>
-<p>The trade-off is clear: Anyquery gives you breadth (many sources, one interface) while individual servers give you depth (full API coverage per source). The GitHub MCP server from Anthropic exposes 30+ tools covering issues, PRs, repos, branches, and code search. Anyquery&rsquo;s GitHub plugin exposes tables you can query — powerful for reads, but no write operations and fewer specialized capabilities.</p>
-<p><strong>DBHub</strong> is the closest alternative — a universal database MCP server focused on traditional databases (MySQL, PostgreSQL, SQLite, MongoDB, etc.) with text-to-SQL capability. But DBHub doesn&rsquo;t have the SaaS plugin ecosystem that makes Anyquery unique.</p>
+<p>The trade-off is clear: Anyquery gives you breadth (many sources, one interface) while individual servers give you depth (full API coverage per source). <a href="https://github.com/github/github-mcp-server">GitHub&rsquo;s own official MCP server</a> — not an Anthropic product, contrary to what an earlier version of this review said — exposes well over 100 tools across toolsets like issues, PRs, repos, branches, code security, and code search. Anyquery&rsquo;s GitHub plugin exposes tables you can query — powerful for reads, but read-only and far narrower than the dedicated server.</p>
+<p><strong><a href="https://github.com/bytebase/dbhub">DBHub</a></strong> is the closest alternative — a universal database MCP server (MIT-licensed, ~3,400 stars) focused on traditional databases: MySQL, PostgreSQL, SQL Server, MariaDB, and SQLite. It does not support MongoDB and does not advertise a text-to-SQL feature, contrary to what an earlier version of this review claimed — it exposes typed tools (<code>execute_sql</code>, <code>search_objects</code>) that still require you to write the SQL yourself. DBHub doesn&rsquo;t have the SaaS plugin ecosystem that makes Anyquery unique.</p>
 <h2 id="who-should-use-this">Who Should Use This</h2>
 <p><strong>Good fit:</strong></p>
 <ul>
@@ -270,23 +271,24 @@ anyquery install google_sheets
 </ul>
 <p><strong>Not ideal for:</strong></p>
 <ul>
-<li>Agents that need to write/update data (read-only limitation, no write support after 7+ months of development)</li>
+<li>Agents that need guaranteed write access to a specific source — write support is per-plugin (GitHub is read-only; Notion and Google Sheets are read-write; Todoist is insert/delete only), not a blanket capability, so verify the target plugin first</li>
 <li>Projects needing deep API coverage for a single service (individual MCP servers go deeper)</li>
 <li>Organizations with AGPL licensing concerns (core engine is copyleft)</li>
 <li>Production systems needing guaranteed uptime (depends on plugin quality and source API stability)</li>
-<li>Teams that need active maintenance and bug fixes (no releases since October 2025)</li>
+<li>Teams uneasy with a single-maintainer security track record — three releases since June 2026 fixed multiple CVEs and GHSA advisories in a row</li>
 </ul>
 <h2 id="the-licensing-question">The Licensing Question</h2>
 <p>AGPLv3 is polarizing. If you modify the Anyquery core engine and deploy it as a service, you must share your modifications. This doesn&rsquo;t affect plugin development (plugins are independently licensed) or normal usage (running Anyquery as a tool), but it can be a dealbreaker for companies with strict open-source policies.</p>
 <p>The plugins themselves are not subject to AGPL. Each plugin has its own license, and the RPC library connecting plugins to the engine is MIT-licensed — deliberately permissive to encourage ecosystem growth.</p>
-<h2 id="rating-35--5">Rating: 3.5 / 5</h2>
-<p><em>(Downgraded from 4.0/5 in the May 2026 refresh — see below.)</em></p>
+<h2 id="rating-40--5">Rating: 4.0 / 5</h2>
+<p><em>(Corrected back up from the 3.5/5 assigned in the May 2026 refresh — that downgrade&rsquo;s central premise, &ldquo;no releases since October 2025 / project appears dormant,&rdquo; turned out to be wrong. See below.)</em></p>
 <p>Anyquery occupies a unique position in the MCP ecosystem: the universal data bridge. No other single MCP server connects to this many data sources through a unified SQL interface. The cross-source JOIN capability alone justifies installation for teams working across multiple tools.</p>
-<p><strong>What changed since March 2026:</strong> No new releases in 7 months (v0.4.4 remains current as of May 2026). The plugin count declined from 54 to 47 — some integrations were consolidated or removed. Write support, promised for development, has not shipped. The project now shows signs of extended dormancy rather than active iteration.</p>
-<p>The rating drops to 3.5/5. The core concept remains strong and the tool still works, but the stalled development cadence and shrinking plugin ecosystem are meaningful negatives for teams evaluating production dependencies. The original 4.0/5 assumed active development would close the write-operations gap. After 7 months without a release, that assumption no longer holds.</p>
-<p>For agents that need to answer questions across multiple data sources — &ldquo;which GitHub issues assigned to me don&rsquo;t have Notion tasks?&rdquo; or &ldquo;show me all Salesforce deals alongside their Slack channel activity&rdquo; — Anyquery is still the most efficient read-only path available today. But if write operations are required, individual MCP servers per data source remain the only viable option.</p>
+<p><strong>What this August 2026 audit found:</strong> the &ldquo;dormant&rdquo; call in the May 2026 refresh does not hold up. <a href="https://github.com/julien040/anyquery/releases/tag/0.4.5">v0.4.5</a> shipped June 9, 2026 (two CVEs patched via server sandboxing), <a href="https://github.com/julien040/anyquery/releases/tag/0.4.6">v0.4.6</a> shipped July 3, 2026 (another security advisory, plus update notifications and faster CLI table streaming), and <a href="https://github.com/julien040/anyquery/releases/tag/0.5.0">v0.5.0</a> shipped August 5, 2026 (five more advisories closed, new file-format auto-detection, and share-link rewriting for GitHub/GitLab/Hugging Face/Dropbox links). That&rsquo;s three releases in three months — the opposite of dormant. Stars have grown from ~1,600 to ~1,750 over the same window.</p>
+<p>The write-operations picture was also mischaracterized: it isn&rsquo;t &ldquo;read-only, writes in development&rdquo; — write support already exists and is simply plugin-specific (full read-write for Notion and Google Sheets, insert/delete for Todoist, read-only for GitHub). And the earlier comparison table wrongly credited Anthropic for GitHub&rsquo;s own official MCP server.</p>
+<p>None of that means the project is risk-free. The pace of security advisories (two CVEs plus six further GHSA advisories across three releases) says a solo-maintained project handling credentials for a few dozen SaaS APIs has had real, exploitable bugs this year — evaluate that alongside the renewed activity, not instead of it. Net effect on the rating: the dormancy-driven downgrade is reversed, restoring 4.0/5, while the security history and plugin-by-plugin write support (rather than a clean &ldquo;read-only&rdquo; story) are now called out explicitly rather than glossed over.</p>
+<p>For agents that need to answer questions across multiple data sources — &ldquo;which GitHub issues assigned to me don&rsquo;t have Notion tasks?&rdquo; or &ldquo;show me all Salesforce deals alongside recent Discord activity&rdquo; — Anyquery remains one of the more efficient paths available today, with real (if uneven) write support layered on top for a growing number of plugins.</p>
 <hr>
-<p><em>This review was originally published March 23, 2026 and refreshed May 3, 2026. Refresh findings: v0.4.4 remains current (7 months since last release), plugin count declined 54→47, no write support added, project appears dormant. We research MCP servers thoroughly but do not test them hands-on. Visit the <a href="https://github.com/julien040/anyquery">Anyquery GitHub repository</a> for the latest information.</em></p>
+<p><em>This review was originally published March 23, 2026, refreshed May 3, 2026, and corrected August 16, 2026 after a claim-by-claim citation audit. That audit found the May 2026 &ldquo;project appears dormant&rdquo; call was outdated (three releases shipped June–August 2026), the blanket &ldquo;read-only&rdquo; write-support claim was wrong (write support is plugin-specific), the plugin count needed updating to 44, the GitHub MCP server was wrongly attributed to Anthropic instead of GitHub, DBHub&rsquo;s database list and &ldquo;text-to-SQL&rdquo; claim were wrong, and the article named Slack and Gmail as example integrations that don&rsquo;t exist as dedicated plugins. We research MCP servers thoroughly but do not test them hands-on. Visit the <a href="https://github.com/julien040/anyquery">Anyquery GitHub repository</a> for the latest information.</em></p>
 
       </div>
 
@@ -355,7 +357,7 @@ anyquery install google_sheets
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-03T00:00:00+09:00","datePublished":"2026-03-23T15:00:00+09:00","description":"Anyquery MCP server lets AI agents query 40+ apps (GitHub, Notion, Slack, Gmail), files (CSV, JSON, Parquet), and databases (MySQL, PostgreSQL) using SQL.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Anyquery MCP Server — SQL Everything: Query 40+ Apps, Files, and Databases from Your AI Agent"},"name":"Anyquery MCP Server — SQL Everything: Query 40+ Apps, Files, and Databases from Your AI Agent","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/anyquery-mcp-server/"}
+{"@context":"https://schema.org","@type":"Review","author":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"dateModified":"2026-05-03T00:00:00+09:00","datePublished":"2026-03-23T15:00:00+09:00","description":"Anyquery MCP server lets AI agents query 40+ apps (GitHub, Notion, Discord, Google Sheets), files (CSV, JSON, Parquet), and databases (MySQL, PostgreSQL) using SQL.","itemReviewed":{"@type":"SoftwareApplication","applicationCategory":"MCP Server","name":"Anyquery MCP Server — SQL Everything: Query 40+ Apps, Files, and Databases from Your AI Agent"},"name":"Anyquery MCP Server — SQL Everything: Query 40+ Apps, Files, and Databases from Your AI Agent","publisher":{"@type":"Organization","name":"ChatForest","url":"https://chatforest.com"},"url":"https://chatforest.com/reviews/anyquery-mcp-server/"}
 </script>
 
 

@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 168/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 180/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -381,10 +381,10 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Energy & Utilities MCP Servers — PowerMCP, EnergyPlus, PyPSA, zavora-ai SCADA, EIA, and More](content/reviews/energy-utilities-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Event Management & Ticketing MCP Servers — Google Official Calendar, Eventbrite, Ticketmaster, Meetup, and More](content/reviews/event-management-ticketing-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Fashion, Beauty & Style MCP Servers — Virtual Try-On, Secondhand Shopping, Skincare AI, Wardrobe Management, and K-Beauty](content/reviews/fashion-beauty-style-mcp-servers.md) — re-audited 2026-08-15
-- [ ] 2026-07-23 — [Fitness & Wearables MCP Servers — Strava, Garmin, WHOOP, Apple Health, Oura Ring, Fitbit, and Multi-Platform Health Data](content/reviews/fitness-wearables-mcp-servers.md)
+- [x] 2026-07-23 — [Fitness & Wearables MCP Servers — Strava, Garmin, WHOOP, Apple Health, Oura Ring, Fitbit, and Multi-Platform Health Data](content/reviews/fitness-wearables-mcp-servers.md)
 - [x] 2026-07-23 — [Food & Restaurant MCP Servers — Yelp, Instacart, Spoonacular, Uber Eats, Swiggy, Zomato, OpenFoodFacts, and More](content/reviews/food-restaurant-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Game Engine & 3D Development MCP Servers — Unity, Unreal Engine, Godot, Roblox, Cocos Creator, Bevy, and More](content/reviews/game-engine-3d-development-mcp-servers.md) — re-audited 2026-08-15
-- [ ] 2026-07-23 — [Gaming & Esports MCP Servers — Roblox Studio (Official!), Minecraft, OP.GG, Chess, Steam, GameBoy, F1, and More](content/reviews/gaming-esports-mcp-servers.md)
+- [x] 2026-07-23 — [Gaming & Esports MCP Servers — Roblox Studio (Official!), Minecraft, OP.GG, Chess, Steam, GameBoy, F1, and More](content/reviews/gaming-esports-mcp-servers.md)
 - [x] 2026-07-23 — [Genealogy & Family History MCP Servers — GEDCOM, Gramps, FamilySearch, WikiTree, and More](content/reviews/genealogy-family-history-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Geospatial & Mapping MCP Servers — Mapbox, Google Earth Engine, NASA Earthdata, QGIS, and More](content/reviews/geospatial-mapping-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Google Cloud MCP Servers — 50+ Servers, 22+ GA, MCP Toolbox v1.4, Gemini 3.5 Flash MCP Optimization, and ADK 2.0](content/reviews/google-cloud-mcp-servers.md)
@@ -482,23 +482,23 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [API Development MCP Servers — OpenAPI Converters, GraphQL, gRPC, and the Rise of Spec-to-Server Generation](content/reviews/api-development-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [AWS Bedrock MCP Servers — The Cloud Giant's MCP Arsenal (Refreshed June 2026)](content/reviews/aws-bedrock-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [Airtable MCP Server — Full Database CRUD for Your AI Agent](content/reviews/airtable-mcp-server.md) — re-audited 2026-08-15
-- [ ] 2026-07-24 — [Anyquery MCP Server — SQL Everything: Query 40+ Apps, Files, and Databases from Your AI Agent](content/reviews/anyquery-mcp-server.md)
+- [x] 2026-07-24 — [Anyquery MCP Server — SQL Everything: Query 40+ Apps, Files, and Databases from Your AI Agent](content/reviews/anyquery-mcp-server.md)
 - [x] 2026-07-24 — [Apify MCP Server — 3,000+ Scrapers at Your AI Agent's Fingertips](content/reviews/apify-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [Bitbucket MCP Servers — The Missing Piece in Atlassian's AI Strategy](content/reviews/bitbucket-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [Bright Data MCP Server — Enterprise Web Access That Actually Beats Anti-Bot Protection](content/reviews/bright-data-mcp-server.md) — re-audited 2026-08-15
-- [ ] 2026-07-24 — [CI/CD MCP Servers — Build Pipelines Get an AI Interface](content/reviews/ci-cd-mcp-servers.md)
+- [x] 2026-07-24 — [CI/CD MCP Servers — Build Pipelines Get an AI Interface](content/reviews/ci-cd-mcp-servers.md)
 - [x] 2026-07-24 — [Code Generation MCP Servers — UI Components, Context Providers, and the Paradox of AI Writing Its Own Tools](content/reviews/code-generation-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [Code Review & Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers](content/reviews/code-review-pull-request-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [Cohere MCP Server — Enterprise AI's North Star Meets the Model Context Protocol](content/reviews/cohere-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [Composio MCP Server — 500+ App Integrations Through a Single Endpoint](content/reviews/composio-mcp-server.md) — re-audited 2026-08-15
-- [ ] 2026-07-24 — [Database Migration & Schema Management MCP Servers — Google Toolbox Hits v1.0 GA, boringSQL/dryrun Adds Offline Safety Analysis, Core Gaps Remain](content/reviews/database-migration-mcp-servers.md)
-- [ ] 2026-07-24 — [Docker MCP Servers — Container Management Gets an AI Layer (Plus the MCP Catalog That Hosts 300+ Others)](content/reviews/docker-mcp-servers.md)
-- [ ] 2026-07-24 — [Documentation Tooling MCP Servers — Google Developer Knowledge API Goes Official, GitBook Auto-MCP Joins Platform Wave, llms.txt Emerges as Documentation Standard](content/reviews/documentation-tooling-mcp-servers.md)
-- [ ] 2026-07-24 — [Dropbox MCP Servers — AI Agents That Browse Files, Search Across Apps, and Manage Cloud Storage](content/reviews/dropbox-mcp-server.md)
-- [ ] 2026-07-24 — [GitHub MCP Server — The World's Largest Dev Platform Gets an Official AI Interface](content/reviews/github-mcp-server.md)
-- [ ] 2026-07-24 — [GitLab MCP Servers — The Self-Hosted DevOps Platform's Growing AI Interface](content/reviews/gitlab-mcp-server.md)
+- [x] 2026-07-24 — [Database Migration & Schema Management MCP Servers — Google Toolbox Hits v1.0 GA, boringSQL/dryrun Adds Offline Safety Analysis, Core Gaps Remain](content/reviews/database-migration-mcp-servers.md)
+- [x] 2026-07-24 — [Docker MCP Servers — Container Management Gets an AI Layer (Plus the MCP Catalog That Hosts 300+ Others)](content/reviews/docker-mcp-servers.md)
+- [x] 2026-07-24 — [Documentation Tooling MCP Servers — Google Developer Knowledge API Goes Official, GitBook Auto-MCP Joins Platform Wave, llms.txt Emerges as Documentation Standard](content/reviews/documentation-tooling-mcp-servers.md)
+- [x] 2026-07-24 — [Dropbox MCP Servers — AI Agents That Browse Files, Search Across Apps, and Manage Cloud Storage](content/reviews/dropbox-mcp-server.md)
+- [x] 2026-07-24 — [GitHub MCP Server — The World's Largest Dev Platform Gets an Official AI Interface](content/reviews/github-mcp-server.md)
+- [x] 2026-07-24 — [GitLab MCP Servers — The Self-Hosted DevOps Platform's Growing AI Interface](content/reviews/gitlab-mcp-server.md)
 - [ ] 2026-07-24 — [Google Drive MCP Servers — AI Agents That Search, Read, Edit, and Organize Your Cloud Documents](content/reviews/google-drive-mcp-server.md)
-- [ ] 2026-07-24 — [Google Gemini MCP Servers — The Largest Official MCP Server Ecosystem](content/reviews/gemini-mcp-server.md)
+- [x] 2026-07-24 — [Google Gemini MCP Servers — The Largest Official MCP Server Ecosystem](content/reviews/gemini-mcp-server.md)
 - [ ] 2026-07-24 — [Hugging Face MCP Server — The AI Community Hub Meets the Model Context Protocol](content/reviews/huggingface-mcp-server.md)
 - [ ] 2026-07-24 — [IDE & Code Editor MCP Servers — Your Editor as an AI-Accessible Tool](content/reviews/ide-code-editor-mcp-servers.md)
 - [ ] 2026-07-24 — [Infrastructure as Code MCP Servers — Terraform, Pulumi, and the IaC Vendors Building AI-Native Infrastructure Workflows](content/reviews/infrastructure-as-code-mcp-servers.md)
@@ -533,7 +533,7 @@ sweeps. Headline catches:
 - [ ] 2026-07-24 — [Square MCP Server — AI-Powered Commerce with Payments, Orders, Inventory, Loyalty, and Full API Access](content/reviews/square-mcp-server.md)
 - [ ] 2026-07-24 — [Testing & QA MCP Servers — From Browser Automation to Mobile, Cloud, and Test Runner Integration](content/reviews/testing-qa-mcp-servers.md)
 - [x] 2026-07-24 — [The Chrome DevTools MCP Server — Browser Debugging and Performance Profiling for AI Coding Agents](content/reviews/chrome-devtools-mcp-server.md) — re-audited 2026-08-15
-- [ ] 2026-07-24 — [The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)](content/reviews/duckduckgo-mcp-server.md)
+- [x] 2026-07-24 — [The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)](content/reviews/duckduckgo-mcp-server.md)
 - [ ] 2026-07-24 — [The GreptimeDB MCP Server — Observability Data Meets AI Agents](content/reviews/greptimedb-mcp-server.md)
 - [ ] 2026-07-24 — [The ReactBits MCP Server — 135+ Animated React Components for AI Coding Agents](content/reviews/reactbits-mcp-server.md)
 - [ ] 2026-07-24 — [Turso MCP Server — The 17.9K-Star SQLite Database With Built-In AI Agent Access](content/reviews/turso-mcp-server.md)

@@ -2,7 +2,7 @@
 draft: true
 title: "CI/CD MCP Servers — Build Pipelines Get an AI Interface"
 date: 2026-03-23T22:00:00+09:00
-sources_audited: 2026-07-24
+sources_audited: 2026-08-16
 description: "CI/CD MCP ecosystem maturing: Buildkite v1.0.0, Argo CD 415 stars, GitHub Actions now official (29.4k stars), NEW TeamCity (87 tools), Azure DevOps (480 commits). Rating: 3.5/5."
 og_description: "CI/CD MCP ecosystem: Buildkite v1.0.0, Argo CD 415 stars +17%, GitHub Actions official in github-mcp-server 29.4k stars, NEW TeamCity 87 tools, Azure DevOps 480 commits. Jenkins 4 servers. Rating: 3.5/5."
 content_type: "Review"
@@ -190,7 +190,7 @@ Jenkins is one of the most widely deployed CI/CD systems, with a large installed
 
 **87 tools in Full mode / 31 tools in Dev mode** — the most feature-rich CI/CD MCP server by tool count:
 
-**Key differentiator:** The **first TeamCity MCP server**, filling a major gap for JetBrains CI/CD users. Two operating modes: Dev mode (31 tools, safe for daily use) and Full mode (87 tools, complete platform control). Build management, test analysis, configuration control. **Runtime mode switching** without restart — start in Dev mode, escalate to Full when needed. 394 commits signals mature, actively maintained codebase despite modest star count.
+**Key differentiator:** One of the earliest TeamCity MCP servers ([itcaat/teamcity-mcp](https://github.com/itcaat/teamcity-mcp), released June 2025, predates it), but by far the most feature-rich by tool count, filling a major gap for JetBrains CI/CD users. Two operating modes: Dev mode (31 tools, safe for daily use) and Full mode (87 tools, complete platform control). Build management, test analysis, configuration control. **Runtime mode switching** without restart — start in Dev mode, escalate to Full when needed. 394 commits signals mature, actively maintained codebase despite modest star count.
 
 **Limitation:** 24 stars — low visibility despite being the most feature-dense CI/CD MCP server. TeamCity has smaller market share than Jenkins/GitHub Actions. Single maintainer.
 
@@ -226,7 +226,7 @@ Jenkins is one of the most widely deployed CI/CD systems, with a large installed
 
 ## Known Issues
 
-1. **Star counts still lag other categories** — The most-starred CI/CD MCP server (Argo CD, 415 stars) is growing fast (+17% in five weeks) but still trails the least popular Kubernetes MCP server we cover. Jenkins' official plugin has just 78 stars despite Jenkins' large installed base. GitHub Actions MCP benefits from the 29.4k-star GitHub server, but CI/CD-specific adoption remains early.
+1. **Star counts still lag other categories** — The most-starred CI/CD MCP server (Argo CD, 415 stars) is growing fast (+17% in five weeks) but still trails even the smaller of [Kubernetes' two 1,000+-star community leaders](/reviews/kubernetes-mcp-servers/) (Flux159/mcp-server-kubernetes, ~1,400 stars). Jenkins' official plugin has just 78 stars despite Jenkins' large installed base. GitHub Actions MCP benefits from the 29.4k-star GitHub server, but CI/CD-specific adoption remains early.
 
 2. **No pipeline-as-code authoring** — None of these servers help you *write* CI/CD configurations. You can't ask an AI agent to generate a Jenkinsfile, `.circleci/config.yml`, or `buildkite.yml` through MCP and have it committed. The servers are monitors and triggers, not authors. For pipeline authoring, you still rely on the AI's training data (which may be outdated).
 
@@ -250,7 +250,7 @@ Jenkins is one of the most widely deployed CI/CD systems, with a large installed
 
 **Rating: 3.5 out of 5** *(was 3/5)*
 
-The CI/CD MCP ecosystem has **matured significantly in five weeks**. Buildkite reached v1.0.0 — the first CI/CD MCP server to hit stable release. GitHub Actions is now officially supported in the GitHub MCP server (29.4k stars). Argo CD grew 17% to 415 stars. Two new platforms joined (TeamCity with 87 tools, Azure DevOps with 480 commits). Jenkins now has four competing servers including an enterprise option. The ecosystem is shifting from pure observation toward active build management — Buildkite added cancel/rebuild/retry, Jenkins added replay/rebuild, and CircleCI added OpenTelemetry for MCP server observability.
+The CI/CD MCP ecosystem has **matured significantly in five weeks**. [Buildkite reached v1.0.0](https://buildkite.com/docs/apis/mcp-server) — a stable-release milestone, though not the first in this category: [lanbaoshen/mcp-jenkins](https://github.com/lanbaoshen/mcp-jenkins) had already passed v1.0 in January 2026. GitHub Actions is now officially supported in the GitHub MCP server (29.4k stars). Argo CD grew 17% to 415 stars. Two new platforms joined (TeamCity with 87 tools, Azure DevOps with 480 commits). Jenkins now has four competing servers including an enterprise option. The ecosystem is shifting from pure observation toward active build management — Buildkite added cancel/rebuild/retry, Jenkins added replay/rebuild, and CircleCI added OpenTelemetry for MCP server observability.
 
 The **3.5/5 rating upgrade** reflects: Buildkite's v1.0.0 maturity milestone, GitHub Actions going official, Argo CD's strong community growth (+17%), new platform coverage (TeamCity, Azure DevOps), Jenkins ecosystem depth (4 servers, 18-25 tools each), improving safety story (Buildkite removing destructive tools, TeamCity's Dev/Full modes), and CircleCI's OpenTelemetry integration showing operational sophistication. It still loses points for relatively low adoption outside Argo CD, no pipeline-as-code authoring, missing log sanitization, and no cross-platform CI/CD server.
 

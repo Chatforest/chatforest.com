@@ -1,15 +1,15 @@
 ---
 title: "GitHub MCP Server — The World's Largest Dev Platform Gets an Official AI Interface"
 date: 2026-03-23T23:30:00+09:00
-sources_audited: 2026-07-24
-description: "GitHub's official MCP server (~54k stars, Go, v1.0.0+) is the most adopted developer-tool MCP server in existence — with secret scanning now GA."
-og_description: "GitHub MCP ecosystem: official server (~54k stars, v1.0.0+, 21 toolsets), GitMCP (8.1k stars, documentation), git-mcp-server (28 Git tools, v2.1.5 security patch), plus reference Git server. The developer-tool MCP category leader. Rating: 4.5/5."
+sources_audited: 2026-08-16
+description: "GitHub's official MCP server (~32k stars, Go, v1.0.0+) is the most adopted developer-tool MCP server in existence — with secret scanning now GA."
+og_description: "GitHub MCP ecosystem: official server (~32k stars, v1.0.0+, 23 toolsets), GitMCP (8.3k stars, documentation), git-mcp-server (28 Git tools, patched since v2.1.5), plus reference Git server. The developer-tool MCP category leader. Rating: 4.5/5."
 content_type: "Review"
-card_description: "GitHub's official MCP server (~54k stars, v1.0.0+) connects AI agents to repos, issues, PRs, Actions, code security, and more across 21 toolsets. Agent Mode with MCP now rolled out to all VS Code users. GitMCP (8.1k stars) turns any repo into a documentation hub. cyanheads/git-mcp-server provides 28 local Git tools."
-last_refreshed: 2026-05-18
+card_description: "GitHub's official MCP server (~32k stars, v1.0.0+) connects AI agents to repos, issues, PRs, Actions, code security, and more across 23 toolsets. Agent Mode with MCP rolled out to all VS Code users in April 2025. GitMCP (8.3k stars) turns any repo into a documentation hub. cyanheads/git-mcp-server provides 28 local Git tools."
+last_refreshed: 2026-08-16
 ---
 
-**At a glance:** GitHub's **official MCP server** ([github/github-mcp-server](https://github.com/github/github-mcp-server) — ~54k stars, Go) **reached v1.0.0 on April 16, 2026** and has continued shipping rapidly since — including **Secret Scanning GA** (May 5, 2026) and a new `list_org_issue_fields` tool. It's the **most adopted developer-tool MCP server in existence**, providing AI agents full access to GitHub's platform across **21 toolsets** covering repos, issues, pull requests, Actions, code security, discussions, projects, and more. Available as a **remote server** (hosted by GitHub at `api.githubcopilot.com/mcp/`), via Docker, or built from source. **GitHub Agent Mode with MCP support** has rolled out to all VS Code users as of May 2026, and the **GitHub MCP Registry** lets users install MCP servers directly within VS Code. MCP Apps (interactive UI in agent chat) continue maturing via the `remote_mcp_ui_apps` feature flag. The ecosystem also includes [GitMCP](https://github.com/idosal/git-mcp) (8.1k stars) for turning any GitHub repo into a documentation hub, [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) (v2.1.5 security patch, 28 tools) for local Git operations, and the reference [Git MCP server](https://github.com/modelcontextprotocol/servers) from the MCP project itself.
+**At a glance:** GitHub's **official MCP server** ([github/github-mcp-server](https://github.com/github/github-mcp-server) — [~32k stars](https://github.com/github/github-mcp-server/stargazers), Go) **reached v1.0.0 on [April 16, 2026](https://github.com/github/github-mcp-server/releases/tag/v1.0.0)** and has continued shipping rapidly since — including **[Secret Scanning GA](https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/)** (May 5, 2026) and a new [`list_issue_fields` tool](https://github.com/github/github-mcp-server/releases/tag/v1.1.0) in v1.1.0. It's the **most adopted developer-tool MCP server in existence**, providing AI agents full access to GitHub's platform across **23 toolsets** covering repos, issues, pull requests, Actions, code security, discussions, projects, and more. Available as a **remote server** (hosted by GitHub at `api.githubcopilot.com/mcp/`), via Docker, or built from source. **[GitHub Agent Mode with MCP support](https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/)** rolled out to all VS Code users back in April 2025, and the **[GitHub MCP Registry](https://github.blog/ai-and-ml/github-copilot/meet-the-github-mcp-registry-the-fastest-way-to-discover-mcp-servers/)** (in preview since September 2025) lets users install MCP servers directly within VS Code. MCP Apps (interactive UI in agent chat) continue maturing via the `remote_mcp_ui_apps` feature flag. The ecosystem also includes [GitMCP](https://github.com/idosal/git-mcp) (8.3k stars) for turning any GitHub repo into a documentation hub, [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) (patched since v2.1.5 for [CVE-2025-53107](https://github.com/cyanheads/git-mcp-server/security/advisories/GHSA-3q26-f695-pp76), 28 tools) for local Git operations, and the reference [Git MCP server](https://github.com/modelcontextprotocol/servers) from the MCP project itself.
 
 GitHub is the **world's largest software development platform** — with [**180M+ developers**, **4M+ organizations**, and **420M+ repositories**](https://github.com/about) as of 2026. A subsidiary of Microsoft since the [$7.5B acquisition in 2018](https://news.microsoft.com/source/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/). While GitHub is not a formal member of the [Agentic AI Foundation (AAIF)](https://aaif.io/), it actively contributes to the MCP ecosystem — the [MCP Registry](https://registry.modelcontextprotocol.io/) was developed with contributions from GitHub, and the company published a [blog post](https://github.blog/open-source/maintainers/mcp-joins-the-linux-foundation-what-this-means-for-developers-building-the-next-era-of-ai-tools-and-agents/) supporting MCP's move to the Linux Foundation.
 
@@ -25,21 +25,23 @@ The **definitive GitHub MCP server**, maintained by GitHub itself:
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [github/github-mcp-server](https://github.com/github/github-mcp-server) — ~54k stars, 4k+ forks |
+| GitHub | [github/github-mcp-server](https://github.com/github/github-mcp-server) — [~32k stars, 4.8k forks](https://github.com/github/github-mcp-server/stargazers) |
 | Language | Go |
 | Latest release | **v1.0.0+** (v1.0.0 April 16; Secret Scanning GA May 5, 2026) |
 | Transport | Remote (hosted by GitHub), Streamable HTTP, Docker, binary from source |
 | License | MIT |
 | Created | April 2025 (public preview) |
 
-**21 toolsets** organized by function:
+**23 toolsets** ([per the current README](https://github.com/github/github-mcp-server#toolsets)) organized by function:
 
 | Toolset | What it covers |
 |---------|---------------|
+| `context` | Context about the current user and GitHub context (strongly recommended) |
 | `repos` | Browse code, search files, analyze commits, create/fork repositories |
 | `issues` | Create, update, and manage issues with AI-assisted triage |
 | `pull_requests` | Create, review, merge PRs with code review capabilities |
 | `actions` | Monitor GitHub Actions workflows, analyze build failures |
+| `code_quality` | GitHub Code Quality tools |
 | `code_security` | Review Code Scanning findings, examine vulnerability patterns |
 | `secret_protection` | Secret scanning alerts and management |
 | `dependabot` | Dependabot alert management |
@@ -54,9 +56,11 @@ The **definitive GitHub MCP server**, maintained by GitHub itself:
 | `gists` | GitHub Gist operations |
 | `security_advisories` | Security advisory management |
 | `copilot` | Copilot-specific tools (assign to issues, request reviews) |
+| `copilot_issue_intents` | Opt-in Copilot issue-assignment tools carrying intent metadata |
 | `copilot_spaces` | Copilot Spaces functionality (remote only) |
 | `github_support_docs_search` | GitHub product documentation search (remote only) |
-| `all` | Enable everything |
+
+The special value `all` can be passed to `--toolsets` to enable every toolset at once — it isn't a toolset itself.
 
 **Default toolsets:** `repos`, `issues`, `pull_requests`, `users`, and `context` are enabled automatically. Additional toolsets can be enabled via `--toolsets` flag or individual tools via `--tools` flag.
 
@@ -65,17 +69,18 @@ The **definitive GitHub MCP server**, maintained by GitHub itself:
 **Key differentiator:** The only MCP server with **first-party GitHub API access** — including remote hosting at GitHub's infrastructure (no API key management needed with OAuth), Copilot integration, code security scanning, and full Actions/CI/CD visibility. The tool consolidation approach (e.g., `issue_read` and `issue_write` as unified multi-operation tools) keeps the tool count manageable while covering extensive functionality.
 
 **Timeline:**
-- April 4, 2025 — Public preview launched
-- June 12, 2025 — Remote server public preview
-- September 4, 2025 — Remote server GA
-- October 14, 2025 — GitHub Projects support added
-- December 10, 2025 — Tool-specific configuration
-- January 28, 2026 — OAuth scope filtering, new Projects tools
-- March 6, 2026 — v0.32.0, context optimization, `get_check_runs` tool
-- April 14, 2026 — v0.33.0, `resolve_review_threads`, enhanced `list_commits` with `path`/`since`/`until` parameters, OSS granular toolsets
-- **April 16, 2026 — v1.0.0**, `set_issue_fields` tool, MCP Apps migrated to feature flag, MCP SDK v1.5.0, Insiders Mode for experimental features
-- **May 5, 2026** — Secret Scanning with GitHub MCP Server now **generally available**
-- **May 2026** — `list_org_issue_fields` tool added; granular issue field values tool; GitHub Agent Mode with MCP support rolled out to all VS Code users; GitHub MCP Registry (install MCP servers directly in VS Code)
+- [April 4, 2025](https://github.blog/changelog/2025-04-04-github-mcp-server-public-preview/) — Public preview launched, alongside [GitHub Agent Mode with MCP support rolling out to all VS Code users](https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/)
+- [June 12, 2025](https://github.blog/changelog/2025-06-12-remote-github-mcp-server-is-now-available-in-public-preview/) — Remote server public preview
+- [September 4, 2025](https://github.blog/changelog/2025-09-04-remote-github-mcp-server-is-now-generally-available/) — Remote server GA
+- [September 8, 2025](https://github.blog/ai-and-ml/github-copilot/meet-the-github-mcp-registry-the-fastest-way-to-discover-mcp-servers/) — GitHub MCP Registry launched in preview
+- [October 14, 2025](https://github.blog/changelog/2025-10-14-github-mcp-server-now-supports-github-projects-and-more/) — GitHub Projects support added
+- [December 10, 2025](https://github.blog/changelog/2025-12-10-the-github-mcp-server-adds-support-for-tool-specific-configuration-and-more/) — Tool-specific configuration
+- [January 28, 2026](https://github.blog/changelog/2026-01-28-github-mcp-server-new-projects-tools-oauth-scope-filtering-and-new-features/) — OAuth scope filtering, new Projects tools
+- March 6, 2026 — [v0.32.0](https://github.com/github/github-mcp-server/releases/tag/v0.32.0), context optimization, `get_check_runs` tool
+- April 14, 2026 — [v0.33.0](https://github.com/github/github-mcp-server/releases/tag/v0.33.0), `resolve_review_threads`, enhanced `list_commits` with `path`/`since`/`until` parameters, OSS granular toolsets
+- **April 16, 2026 — [v1.0.0](https://github.com/github/github-mcp-server/releases/tag/v1.0.0)**, `set_issue_fields` tool, MCP Apps migrated to feature flag, MCP SDK v1.5.0, Insiders Mode for experimental features
+- **[May 5, 2026](https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/)** — Secret Scanning with GitHub MCP Server now **generally available**
+- **May 28, 2026** — [v1.1.0](https://github.com/github/github-mcp-server/releases/tag/v1.1.0), `list_issue_fields` tool added, issue field filtering and read/write support, new `search_commits` tool
 
 ### GitMCP — idosal/git-mcp
 
@@ -83,7 +88,7 @@ A **documentation-focused MCP server** that turns any GitHub repository into an 
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [idosal/git-mcp](https://github.com/idosal/git-mcp) — 8.1k stars |
+| GitHub | [idosal/git-mcp](https://github.com/idosal/git-mcp) — [8.3k stars](https://github.com/idosal/git-mcp/stargazers) |
 | Language | TypeScript |
 | Transport | Remote (cloud-hosted at gitmcp.io) |
 | License | Apache 2.0 |
@@ -107,7 +112,7 @@ The **most comprehensive local Git operations server**:
 |--------|--------|
 | GitHub | [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) — Apache 2.0 |
 | Language | TypeScript (Bun/Node.js) |
-| Latest version | v2.10.5+ (security patch released addressing command injection vulnerability) |
+| Latest version | [v2.15.1](https://github.com/cyanheads/git-mcp-server/tags) (patched since v2.1.5 for a command injection vulnerability, [CVE-2025-53107](https://github.com/cyanheads/git-mcp-server/security/advisories/GHSA-3q26-f695-pp76)) |
 | Transport | stdio + HTTP |
 
 **28 MCP tools** across 7 categories:
@@ -130,7 +135,7 @@ A **lightweight repo analysis server** for understanding codebases:
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [adhikasp/mcp-git-ingest](https://github.com/adhikasp/mcp-git-ingest) — 211 stars, Python, MIT |
+| GitHub | [adhikasp/mcp-git-ingest](https://github.com/adhikasp/mcp-git-ingest) — [313 stars](https://github.com/adhikasp/mcp-git-ingest/stargazers), Python, MIT |
 | Install | `pip install mcp-git-ingest` |
 | Transport | stdio |
 
@@ -149,7 +154,7 @@ The **official MCP reference implementation** for Git operations:
 
 | Aspect | Detail |
 |--------|--------|
-| Location | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) — part of the 81k-star reference servers monorepo |
+| Location | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) — part of the [~90k-star](https://github.com/modelcontextprotocol/servers/stargazers) reference servers monorepo |
 | Language | TypeScript |
 | Transport | stdio |
 
@@ -159,9 +164,9 @@ Provides tools to read, search, and manipulate Git repositories. As a reference 
 
 | Aspect | GitHub MCP | GitLab MCP | Bitbucket MCP | Docker MCP | Kubernetes MCP | CI/CD MCP | Azure DevOps MCP | IDE/Editor MCP | Testing/QA MCP | Monitoring MCP | Security MCP | IaC MCP |
 |--------|-----------|-----------|--------------|-----------|---------------|----------|-----------------|---------------|---------------|---------------|------------- | ------- |
-| Stars | ~54k | 1.4k (zereight/gitlab-mcp) | 132 (aashari) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) | 342 (vscode-mcp-server) | [9.8k (Playwright)](/reviews/testing-qa-mcp-servers/) | [2.5k (Grafana)](/reviews/monitoring-observability-mcp-servers/) | [143 (CodeQL community)](/reviews/security-scanning-mcp-servers/) | [1.3k (Terraform)](/reviews/infrastructure-as-code-mcp-servers/) |
+| Stars | [~32k](https://github.com/github/github-mcp-server/stargazers) | [1.9k (zereight/gitlab-mcp)](https://github.com/zereight/gitlab-mcp/stargazers) | 132 (aashari) | [691 (ckreiling)](/reviews/docker-mcp-servers/) | [1.4k (Flux159)](/reviews/kubernetes-mcp-servers/) | [356 (Argo CD)](/reviews/ci-cd-mcp-servers/) | 300+ (Tiberriver256) | 342 (vscode-mcp-server) | [9.8k (Playwright)](/reviews/testing-qa-mcp-servers/) | [2.5k (Grafana)](/reviews/monitoring-observability-mcp-servers/) | [143 (CodeQL community)](/reviews/security-scanning-mcp-servers/) | [1.3k (Terraform)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Official | Yes (standalone) | Yes (built-in, Premium+) | No — [Atlassian excludes Bitbucket](/reviews/bitbucket-mcp-server/) | [Hub MCP only (132 stars)](/reviews/docker-mcp-servers/) | [No (Red Hat leads, 1.3k stars)](/reviews/kubernetes-mcp-servers/) | [Yes (Jenkins, CircleCI, Buildkite)](/reviews/ci-cd-mcp-servers/) | No (community) | Yes (JetBrains built-in, 24 tools) | [Yes (MS Playwright, 9.8k stars, 24 tools)](/reviews/testing-qa-mcp-servers/) | [Yes (Grafana 2.5k, Datadog, Sentry, Dynatrace, New Relic, Instana)](/reviews/monitoring-observability-mcp-servers/) | [Yes (Semgrep, SonarQube, Snyk, Trivy, GitGuardian, Cycode, Contrast)](/reviews/security-scanning-mcp-servers/) | [Yes (Terraform 1.3k, Pulumi, AWS, OpenTofu)](/reviews/infrastructure-as-code-mcp-servers/) |
-| Official tools | 21 toolsets | 15 tools | N/A (Jira/Confluence only) | 12+ (Hub operations) | N/A | [15 (Jenkins), 15 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A | 24 (JetBrains) | [24 (official)](/reviews/testing-qa-mcp-servers/) | [16+ (Datadog) to 100+ (Instana)](/reviews/monitoring-observability-mcp-servers/) | [7 (Semgrep) to full platform (Snyk)](/reviews/security-scanning-mcp-servers/) | [20+ (Terraform), full platform (Pulumi)](/reviews/infrastructure-as-code-mcp-servers/) |
+| Official tools | 23 toolsets | 15 tools | N/A (Jira/Confluence only) | 12+ (Hub operations) | N/A | [15 (Jenkins), 15 (CircleCI)](/reviews/ci-cd-mcp-servers/) | N/A | 24 (JetBrains) | [24 (official)](/reviews/testing-qa-mcp-servers/) | [16+ (Datadog) to 100+ (Instana)](/reviews/monitoring-observability-mcp-servers/) | [7 (Semgrep) to full platform (Snyk)](/reviews/security-scanning-mcp-servers/) | [20+ (Terraform), full platform (Pulumi)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Community tools | 28 (cyanheads) | 100+ (zereight) | 25+ (MatanYemini) | 25 (ckreiling) | [20+ (Flux159) + Helm](/reviews/kubernetes-mcp-servers/) | [21 (mcp-jenkins), 12 (Argo CD)](/reviews/ci-cd-mcp-servers/) | Limited | 13-19 per server | [24 (official) + API testing](/reviews/testing-qa-mcp-servers/) | [pab1it0/prometheus (340 stars)](/reviews/monitoring-observability-mcp-servers/) | [CodeQL community (143 stars)](/reviews/security-scanning-mcp-servers/) | [Ansible (25 stars, 40+ tools)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Remote hosting | Yes (GitHub infrastructure) | No | No | No | [AWS EKS MCP (preview)](/reviews/kubernetes-mcp-servers/) | [Yes (Buildkite remote MCP)](/reviews/ci-cd-mcp-servers/) | No | No (requires running IDE) | [No (local browser required)](/reviews/testing-qa-mcp-servers/) | [Yes (Datadog, Sentry — OAuth)](/reviews/monitoring-observability-mcp-servers/) | [No (all local/CLI-based)](/reviews/security-scanning-mcp-servers/) | [Yes (Pulumi remote MCP)](/reviews/infrastructure-as-code-mcp-servers/) |
 | Language | Go | TypeScript | TypeScript | Python | TypeScript / Go | Java / TypeScript / Go | TypeScript | TypeScript | TypeScript | TypeScript / Go / Python | TypeScript / Python | Go / TypeScript / Python |
@@ -186,23 +191,23 @@ Provides tools to read, search, and manipulate Git repositories. As a reference 
 
 6. **GitMCP depends on cloud availability** — GitMCP's zero-setup appeal comes from running on hosted infrastructure at gitmcp.io. If the service goes down, all users relying on it for documentation access are affected. Self-hosting is possible but negates the zero-setup advantage.
 
-7. **Local Git servers and GitHub server serve different purposes** — cyanheads/git-mcp-server handles local Git operations; github/github-mcp-server handles GitHub API operations. Users often need both, which means configuring two MCP servers. Note: a command injection vulnerability in cyanheads/git-mcp-server was patched in a security release — update immediately if running an older version.
+7. **Local Git servers and GitHub server serve different purposes** — cyanheads/git-mcp-server handles local Git operations; github/github-mcp-server handles GitHub API operations. Users often need both, which means configuring two MCP servers. Note: a [command injection vulnerability (CVE-2025-53107)](https://github.com/cyanheads/git-mcp-server/security/advisories/GHSA-3q26-f695-pp76) in cyanheads/git-mcp-server was patched in v2.1.5 — update immediately if running an older version.
 
-8. **Context window pressure** — With 21 toolsets and dozens of tools, enabling everything at once can consume significant context window space. GitHub recommends enabling only the toolsets you need via `--toolsets` or using dynamic tool discovery.
+8. **Context window pressure** — With 23 toolsets and dozens of tools, enabling everything at once can consume significant context window space. GitHub recommends enabling only the toolsets you need via `--toolsets` or using dynamic tool discovery.
 
 9. **Rate limiting** — GitHub API rate limits apply to all MCP operations. Heavy use (especially with Actions monitoring or code search) can exhaust rate limits quickly, particularly for free-tier GitHub accounts ([5,000 requests/hour for authenticated users](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)).
 
-10. **Bitbucket and Azure DevOps lag far behind** — GitLab now has a built-in MCP server (15 tools, Premium/Ultimate) and a strong community ecosystem (1.2k-star zereight/gitlab-mcp with 100+ tools), but Atlassian's Bitbucket and Microsoft's Azure DevOps still have no equivalent first-party MCP support. Teams using those platforms face a significantly weaker MCP experience.
+10. **Bitbucket and Azure DevOps lag far behind** — GitLab now has a built-in MCP server (15 tools, Premium/Ultimate) and a strong community ecosystem ([1.9k-star zereight/gitlab-mcp](https://github.com/zereight/gitlab-mcp/stargazers) with 100+ tools), but Atlassian's Bitbucket and Microsoft's Azure DevOps still have no equivalent first-party MCP support. Teams using those platforms face a significantly weaker MCP experience.
 
 ## Bottom Line
 
 **Rating: 4.5 out of 5**
 
-GitHub's MCP ecosystem is the **strongest of any developer tool platform** — and it's not close. The official [github/github-mcp-server](https://github.com/github/github-mcp-server) (~54k stars as of May 2026) reached **v1.0.0 on April 16, 2026** — one of the first major MCP servers to achieve a stable 1.0 release — and has continued shipping: **Secret Scanning is now generally available** (May 5), a `list_org_issue_fields` tool was added, and **GitHub Agent Mode with MCP support** rolled out to all VS Code users. The new **GitHub MCP Registry** lets users install MCP servers directly within VS Code, cementing GitHub as a distribution channel for the broader MCP ecosystem.
+GitHub's MCP ecosystem is the **strongest of any developer tool platform** — and it's not close. The official [github/github-mcp-server](https://github.com/github/github-mcp-server) ([~32k stars](https://github.com/github/github-mcp-server/stargazers) as of August 2026) reached **v1.0.0 on [April 16, 2026](https://github.com/github/github-mcp-server/releases/tag/v1.0.0)** — one of the first major MCP servers to achieve a stable 1.0 release — and has continued shipping: **[Secret Scanning is now generally available](https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/)** (May 5), a [`list_issue_fields` tool was added in v1.1.0](https://github.com/github/github-mcp-server/releases/tag/v1.1.0), and **[GitHub Agent Mode with MCP support](https://github.blog/news-insights/product-news/github-copilot-agent-mode-activated/)** has been rolled out to all VS Code users since April 2025. The **[GitHub MCP Registry](https://github.blog/ai-and-ml/github-copilot/meet-the-github-mcp-registry-the-fastest-way-to-discover-mcp-servers/)** (in preview since September 2025) lets users install MCP servers directly within VS Code, cementing GitHub as a distribution channel for the broader MCP ecosystem.
 
-The star count growth — from 29.1k to ~54k in under four weeks — reflects the compound effect of Agent Mode rollout, MCP Registry discoverability, and developer mindshare around AI-native workflows. **MCP Apps** (interactive forms, profiles, dashboards rendered directly in agent chat) continue maturing via the `remote_mcp_ui_apps` feature flag — a glimpse of where MCP is heading: from text-only tool use to rich visual interactions.
+**MCP Apps** (interactive forms, profiles, dashboards rendered directly in agent chat) continue maturing via the `remote_mcp_ui_apps` feature flag — a glimpse of where MCP is heading: from text-only tool use to rich visual interactions.
 
-The ecosystem extends beyond the official server: [GitMCP](https://github.com/idosal/git-mcp) (8.1k stars) provides zero-setup documentation access for any GitHub repository, [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) (28 tools, security-patched for command injection) covers comprehensive local Git operations with safety features, and [mcp-git-ingest](https://github.com/adhikasp/mcp-git-ingest) enables quick codebase analysis. The reference Git server in the MCP project itself rounds out the picture.
+The ecosystem extends beyond the official server: [GitMCP](https://github.com/idosal/git-mcp) (8.3k stars) provides zero-setup documentation access for any GitHub repository, [cyanheads/git-mcp-server](https://github.com/cyanheads/git-mcp-server) (28 tools, security-patched for [command injection](https://github.com/cyanheads/git-mcp-server/security/advisories/GHSA-3q26-f695-pp76)) covers comprehensive local Git operations with safety features, and [mcp-git-ingest](https://github.com/adhikasp/mcp-git-ingest) enables quick codebase analysis. The reference Git server in the MCP project itself rounds out the picture.
 
 The **4.5/5 rating** holds. The v1.0.0 milestone removed the pre-1.0 stability concern, and continued post-v1.0.0 shipping confirms GitHub's commitment. The half-point deduction reflects the [unresolved prompt injection risk](https://invariantlabs.ai/blog/mcp-github-vulnerability) (architecturally inherent, not patchable by GitHub alone), tool name conflicts, the need for two servers to cover both GitHub API and local Git operations, and the significant gap for teams on GitLab or Bitbucket.
 
@@ -217,8 +222,8 @@ The **4.5/5 rating** holds. The v1.0.0 milestone removed the pre-1.0 stability c
 
 - **Non-GitHub teams** — if your organization uses GitLab, Bitbucket, or Azure DevOps, the MCP experience is dramatically weaker; no equivalent official servers exist
 - **Security-conscious teams** — carefully scope PAT permissions and toolsets; an AI agent with full write access to your GitHub org is a significant attack surface
-- **Context-sensitive workloads** — enabling all 21 toolsets floods the context window; use `--toolsets` to enable only what you need for each task
+- **Context-sensitive workloads** — enabling all 23 toolsets floods the context window; use `--toolsets` to enable only what you need for each task
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official announcements. Information is current as of August 2026. See our [About page](/about/) for details on our review process.*

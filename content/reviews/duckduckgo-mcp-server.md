@@ -1,21 +1,21 @@
 ---
 title: "The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)"
 date: 2026-03-23T23:30:00+09:00
-sources_audited: 2026-07-24
-description: "DuckDuckGo MCP server gives AI agents free web search with no API key. 1.1K GitHub stars, 2 tools, Python, MIT license."
-og_description: "DuckDuckGo MCP server: free web search for AI agents, no API key needed. 1.1K stars, 2 tools, Python, MIT. The free alternative to Brave Search MCP. Rating: 3.5/5."
+sources_audited: 2026-08-16
+description: "DuckDuckGo MCP server gives AI agents free web search with no API key. 1.4K GitHub stars, 2 tools, Python, MIT license."
+og_description: "DuckDuckGo MCP server: free web search for AI agents, no API key needed. 1.4K stars, 2 tools, Python, MIT. The free alternative to Brave Search MCP. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Free web search for AI agents with no API key or account required. 1.1K GitHub stars, 2 tools (search + content fetch), built-in rate limiting, SafeSearch controls, regional localization. v0.3.0 adds Chrome TLS impersonation to bypass Cloudflare bot detection. The most popular free search MCP server — a solid default for agents that need basic web search without cost."
-last_refreshed: 2026-05-03
+card_description: "Free web search for AI agents with no API key or account required. 1.4K GitHub stars, 2 tools (search + content fetch), built-in rate limiting, SafeSearch controls, regional localization. v0.6.1 adds automatic Chrome TLS impersonation fallback after DuckDuckGo's own search endpoint began blocking the default HTTP client. The most popular free search MCP server — a solid default for agents that need basic web search without cost."
+last_refreshed: 2026-08-16
 ---
 
-*Refreshed May 3, 2026 — v0.3.0 released April 26, 2026. Stars grew 913 → 1.1K. Chrome 131 TLS impersonation added for Cloudflare bypass. PulseMCP traffic reached 609K all-time. Rating holds 3.5/5.*
+*Refreshed August 16, 2026 — now at [v0.6.1](https://pypi.org/project/duckduckgo-mcp-server/#history) (July 28, 2026), up from v0.3.0. Stars grew 1.1K → 1.4K. DuckDuckGo's own search endpoint (`html.duckduckgo.com`) started fingerprint-blocking the default `httpx` client, so `search` now auto-falls-back to Chrome-TLS-impersonating `curl_cffi` when the `[browser]` extra is installed. PulseMCP traffic reached ~1M all-time. Rating holds 3.5/5.*
 
 ---
 
 Part of our **[Web Search & Data Extraction MCP category](/categories/web-search-scraping/)**.
 
-**At a glance:** 1.1K GitHub stars · 159 forks · v0.3.0 (April 26, 2026) · Python · MIT license · 2 tools · ~609K all-time PulseMCP visitors · #89 globally · stdio/SSE/Streamable HTTP transports
+**At a glance:** [1.4K GitHub stars · 184 forks](https://github.com/nickclyde/duckduckgo-mcp-server) · [v0.6.1](https://pypi.org/project/duckduckgo-mcp-server/) (July 28, 2026) · Python · MIT license · 2 tools · [~1M all-time PulseMCP visitors · #80 globally](https://www.pulsemcp.com/servers/nickclyde-duckduckgo-search) · stdio/SSE/Streamable HTTP transports
 
 Every agent needs web search, but not every project needs a paid API. The [DuckDuckGo MCP server](https://github.com/nickclyde/duckduckgo-mcp-server) by Nick Clyde is the most popular free search MCP server — no API key, no account, no credit card. Install it and search.
 
@@ -36,10 +36,10 @@ That's it. Two tools. Compare this to Brave Search MCP's six tools (web, local, 
 
 ```
 search(query: str, max_results: int = 10, region: str = "")
-fetch_content(url: str)
+fetch_content(url: str, start_index: int = 0, max_length: int = 8000, backend: Optional[str] = None)
 ```
 
-The `region` parameter accepts DuckDuckGo region codes (`us-en`, `jp-ja`, `de-de`, `fr-fr`, `cn-zh`, `wt-wt` for worldwide). If omitted, it uses the default set via environment variable.
+The `region` parameter accepts DuckDuckGo region codes (`us-en`, `jp-ja`, `de-de`, `fr-fr`, `cn-zh`, `wt-wt` for worldwide). If omitted, it uses the default set via environment variable. `fetch_content` gained pagination (`start_index`/`max_length`) and a per-call `backend` override in later releases — see the [README's tool documentation](https://github.com/nickclyde/duckduckgo-mcp-server#available-tools) for the current signature.
 
 ## The "Free" Question
 
@@ -48,9 +48,9 @@ The biggest draw of this server is zero cost. Here's how the search MCP landscap
 | Server | Cost | API Key Required | Search Index |
 |--------|------|------------------|--------------|
 | **DuckDuckGo MCP** | Free | No | Bing (via DuckDuckGo) |
-| **Brave Search MCP** | $5/1,000 queries | Yes | Brave's independent index |
-| **Tavily MCP** | $0.01/query (1,000 free/month) | Yes | Proprietary (optimized for AI) |
-| **Exa MCP** | $0.005/query (1,000 free/month) | Yes | Proprietary neural search |
+| **[Brave Search MCP](https://brave.com/search/api/)** | $5/1,000 queries | Yes | Brave's independent index |
+| **[Tavily MCP](https://www.tavily.com/pricing)** | $0.008/credit pay-as-you-go (1,000 free/month) | Yes | Proprietary (optimized for AI) |
+| **[Exa MCP](https://exa.ai/pricing)** | $7/1,000 queries (~$0.007 each); $20 free credit for new accounts, +$10/month ongoing | Yes | Proprietary neural search |
 | **Perplexity MCP** | Pay-per-use | Yes | Multi-source |
 
 DuckDuckGo is the only option that requires absolutely nothing — no signup, no key, no billing. For personal projects, prototyping, or agents that search occasionally, this removes all friction.
@@ -146,7 +146,7 @@ pip install "duckduckgo-mcp-server[browser]"
 uvx "duckduckgo-mcp-server[browser]" --fetch-backend curl
 ```
 
-Options are `httpx` (default, no extra deps), `curl` (requires `curl_cffi`, impersonates Chrome 131), and `auto` (tries curl first, falls back to httpx).
+Options are `httpx` (no extra deps), `curl` (requires `curl_cffi`, impersonates Chrome 131), and `auto` (tries `httpx` first, falls back to `curl` on a block). For `fetch_content` the default backend is still `httpx`. For the `search` tool specifically, the [current release defaults to `auto`](https://github.com/nickclyde/duckduckgo-mcp-server#search-backend) rather than `httpx` alone, because DuckDuckGo's own search endpoint now fingerprint-blocks plain `httpx` — without the `[browser]` extra installed, a blocked search just returns a message telling you to install it, rather than silently degraded results.
 
 ## The Ecosystem: Many DDG MCP Servers
 
@@ -154,14 +154,14 @@ DuckDuckGo's free, no-key nature has attracted many MCP server implementations. 
 
 | Server | Stars | Language | Tools | Distinguishing Feature |
 |--------|-------|----------|-------|----------------------|
-| **[nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)** | 1.1K | Python | 2 | Most popular, best maintained, 3 transports, Chrome TLS impersonation |
-| **[zhsama/duckduckgo-mcp-server](https://github.com/zhsama/duckduckgo-mcp-server)** | 74 | TypeScript | 1 | Node.js alternative, 15K req/month cap |
-| **[gianlucamazza/mcp-duckduckgo](https://github.com/gianlucamazza/mcp-duckduckgo)** | 13 | Python | 3 | Adds related search suggestions |
-| **[Nipurn123/duckduckgo-mcp](https://github.com/Nipurn123/duckduckgo-mcp)** | 3 | JavaScript | 3 | search_and_crawl + research with relevance ranking |
-| **[misanthropic-ai/ddg-mcp](https://github.com/misanthropic-ai/ddg-mcp)** | — | — | — | Lightweight alternative |
+| **[nickclyde/duckduckgo-mcp-server](https://github.com/nickclyde/duckduckgo-mcp-server)** | 1.4K | Python | 2 | Most popular, best maintained, 3 transports, Chrome TLS impersonation |
+| **[zhsama/duckduckgo-mcp-server](https://github.com/zhsama/duckduckgo-mcp-server)** | 86 | TypeScript | 1 | Node.js alternative, 15K req/month cap |
+| **[gianlucamazza/mcp-duckduckgo](https://github.com/gianlucamazza/mcp-duckduckgo)** | 16 | Python | 3 | Adds related search suggestions |
+| **[Nipurn123/duckduckgo-mcp](https://github.com/Nipurn123/duckduckgo-mcp)** | 4 | JavaScript | 3 | search_and_crawl + research with relevance ranking |
+| **[misanthropic-ai/ddg-mcp](https://github.com/misanthropic-ai/ddg-mcp)** | 16 | Python | 5 | Broadest tool set: text, image, news, video search + DuckDuckGo AI chat |
 | **[mmkal/duck-duck-scrape-mcp](https://github.com/mmkal/duck-duck-scrape-mcp)** | 1 | JavaScript | — | Direct scraping approach |
 
-Nick Clyde's server is the clear winner — it has 10x the stars of the next largest, offers three transport modes, and is the only one listed on PyPI with a proper package (`duckduckgo-mcp-server`). The TypeScript alternative by zhsama is worth noting if you prefer a Node.js toolchain, but it only provides a single search tool with no content fetching.
+Nick Clyde's server is the clear winner — it has more than 16x the stars of the next largest, offers three transport modes, and is the only one listed on PyPI with a proper package (`duckduckgo-mcp-server`). The TypeScript alternative by zhsama is worth noting if you prefer a Node.js toolchain, but it only provides a single search tool with no content fetching. misanthropic-ai/ddg-mcp is the outlier on capability — its five tools (including image, news, and video search) cover more ground than nickclyde's server, but it trails badly on stars and stated maintenance signals.
 
 ## DuckDuckGo vs. Brave Search MCP: Which Should You Use?
 
@@ -189,12 +189,12 @@ This is the question most people are actually asking. Here's the honest comparis
 
 ## What's Good
 
-- **Zero friction.** No signup, no API key, no billing. `uvx duckduckgo-mcp-server` and you're searching. This is the lowest-barrier search MCP server available.
+- **Zero friction.** No signup, no API key, no billing. `uvx duckduckgo-mcp-server` and you're searching — though see the "What's Not" note below on installing the `[browser]` extra for reliable search today. This is still the lowest-barrier search MCP server available.
 - **Content fetching included.** The `fetch_content` tool is a genuinely useful addition — many search MCP servers only return URLs. Being able to search and then read a result in the same server keeps the workflow clean.
 - **SafeSearch lock.** Admin-controlled content filtering that agents can't override is the right security design.
 - **Three transports.** stdio, SSE, and Streamable HTTP cover all deployment scenarios.
-- **Active maintenance.** v0.3.0 released April 2026. The release cadence has picked up meaningfully — three major versions shipped within six weeks of launch.
-- **Cloudflare bypass (v0.3.0).** The new `curl_cffi` backend impersonates a Chrome 131 TLS handshake, passing through Cloudflare Bot Management. Enable with `pip install duckduckgo-mcp-server[browser]` and `--fetch-backend curl` or `--fetch-backend auto`. This directly addresses the most common content-fetch failure mode.
+- **Active maintenance.** Four releases ([v0.4.0 through v0.6.1](https://pypi.org/project/duckduckgo-mcp-server/#history)) shipped in the roughly three months after v0.3.0 (April 26 → July 28, 2026) — a steady cadence, not a one-off burst.
+- **Cloudflare bypass, expanded.** The `curl_cffi` backend (introduced v0.3.0) impersonates a Chrome 131 TLS handshake, passing through Cloudflare Bot Management. Enable it with `pip install "duckduckgo-mcp-server[browser]"` and `--fetch-backend curl` or `--fetch-backend auto`. As of the current release, the same impersonation is also used for the `search` tool itself: [DuckDuckGo's own search endpoint started fingerprint-blocking the default `httpx` client](https://github.com/nickclyde/duckduckgo-mcp-server#backends-bypassing-bot-detection), so `search` now defaults to `auto` (try `httpx`, fall back to `curl`) — meaning the `[browser]` extra has gone from optional to effectively required for reliable search.
 
 ## What's Not
 
@@ -202,6 +202,7 @@ This is the question most people are actually asking. Here's the honest comparis
 - **Scraping fragility.** This is the fundamental risk. DuckDuckGo doesn't offer a programmatic API, so the server depends on scraping their HTML endpoint. The `duckduckgo-search` library has had multiple rate-limit and breaking-change episodes. It works well today, but there's no guarantee it will tomorrow.
 - **Rate limit ceiling.** 30 searches per minute sounds generous, but DuckDuckGo's own bot detection can trigger well before that. Heavy automated use from a single IP is a known pain point across the entire DuckDuckGo scraping ecosystem (not just this MCP server).
 - **No official backing.** This is a community project, not affiliated with DuckDuckGo. If DuckDuckGo decided to block automated scraping, this server would break.
+- **The bare install no longer reliably searches.** [DuckDuckGo's own search endpoint began fingerprint-blocking the default `httpx` client](https://github.com/nickclyde/duckduckgo-mcp-server#backends-bypassing-bot-detection). The server detects the block and, without the `[browser]` extra installed, `search` now returns a message telling you to install it rather than results. For dependable search you need `uvx --with "duckduckgo-mcp-server[browser]" duckduckgo-mcp-server`, which pulls in `curl_cffi`. "Zero friction" now comes with an asterisk.
 - **Alpha status.** The PyPI package is classified as "Development Status: 3 - Alpha." The author is transparent about this — it works well for its scope, but don't expect enterprise-grade guarantees.
 
 ## The Bottom Line
@@ -210,7 +211,7 @@ The DuckDuckGo MCP server is the best free search option for AI agents. It remov
 
 But "free" means "scraping," and scraping means fragility. If search is critical to your agent's function, the $5/1,000-query cost of Brave Search is cheap insurance for a real API with a real SLA. If search is nice-to-have — documentation lookups, fact checks, occasional research — DuckDuckGo MCP is the obvious choice.
 
-1.1K stars and 609K all-time PulseMCP visitors say what words can't: a lot of people need free search, and this server delivers it. v0.3.0's Chrome TLS impersonation is a meaningful step toward reliability — but the fundamental architecture is still scraping, not an API.
+1.4K stars and roughly 1M all-time PulseMCP visitors say what words can't: a lot of people need free search, and this server delivers it. The Chrome TLS impersonation added in v0.3.0 — and now used by default for `search` itself — is a meaningful step toward reliability, but the fundamental architecture is still scraping, not an API.
 
 **Rating: 3.5 out of 5**
 

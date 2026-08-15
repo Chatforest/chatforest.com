@@ -108,7 +108,6 @@ A more curated alternative to garmin_mcp — 61 tools organized into logical cat
 | Server | Language | Notes |
 |--------|----------|-------|
 | [eddmann/garmin-connect-mcp](https://github.com/eddmann/garmin-connect-mcp) | Python | 22 tools in 8 categories — activities, analysis, health, training, profile, challenges, devices |
-| [jlwainwright/garmin-mcp-server](https://github.com/jlwainwright/garmin-mcp-server) | Python | Garmin Connect data access |
 | [eversonl/garmin-health-mcp-server](https://github.com/eversonl/garmin-health-mcp-server) | Python | Focused on health — sleep, recovery, HRV, workouts |
 
 Garmin now has 11+ servers on PulseMCP, making it the most represented single device brand. Taxuspt/garmin_mcp surged to 504 stars and 108+ forks — the +28% gain in four weeks reflects both the May 8 feature push and the broader fitness MCP momentum. April 2026 entries include bmccarn (34 tools, April 10) and nrvim/garmin-givemydata which exports Garmin data to local SQLite with an MCP server on top. All Garmin data-reading MCP servers use the unofficial python-garminconnect library since Garmin doesn't offer a public API for individual users.
@@ -157,7 +156,7 @@ The most complete WHOOP MCP server with 18+ API endpoints. WHOOP's emphasis on r
 
 | Server | Language | Notes |
 |--------|----------|-------|
-| [shashankswe2020-ux/whoop-mcp](https://github.com/shashankswe2020-ux/whoop-mcp) | TypeScript | **On official MCP Registry, 9K estimated weekly visitors** — the highest-traffic fitness MCP server |
+| [shashankswe2020-ux/whoop-mcp](https://github.com/shashankswe2020-ux/whoop-mcp) | TypeScript | **Listed on the [official MCP Registry](https://registry.modelcontextprotocol.io/) as `io.github.shashankswe2020-ux/whoop`** |
 | [JedPattersonn/whoop-mcp](https://github.com/JedPattersonn/whoop-mcp) | TypeScript | Biometric data integration for Claude and other LLMs |
 | [jd1207/whoop-mcp](https://github.com/jd1207/whoop-mcp) | TypeScript | **Only WHOOP server with write capability** — can push data to WHOOP |
 | [ctvidic/whoop-mcp-server](https://github.com/ctvidic/whoop-mcp-server) | TypeScript | Cycles, recovery, strain, workout queries |
@@ -166,7 +165,7 @@ The most complete WHOOP MCP server with 18+ API endpoints. WHOOP's emphasis on r
 | [xokvictor/whoop-mcp](https://github.com/xokvictor/whoop-mcp) | Go | Go-based WHOOP API integration |
 | [AshwanthramKL/whoop-mcp](https://github.com/AshwanthramKL/whoop-mcp) | TypeScript | Read-only via OAuth (April 21, 2026) |
 
-The WHOOP MCP ecosystem grew from 6+ to 9+ servers, with shashankswe2020-ux's server on the official MCP Registry drawing 9K estimated weekly visitors — making it one of the highest-traffic fitness MCP servers on PulseMCP. The jd1207 server is notable as the only one with write capability. Language diversity spans TypeScript, Ruby, and Go.
+The WHOOP MCP ecosystem grew from 6+ to 9+ servers, with shashankswe2020-ux's server listed on the [official MCP Registry](https://registry.modelcontextprotocol.io/) as `io.github.shashankswe2020-ux/whoop`. The jd1207 server is notable as the only one with write capability. Language diversity spans TypeScript, Ruby, and Go.
 
 ---
 
@@ -311,7 +310,7 @@ Xert uses a unique fitness signature model that goes beyond simple FTP testing. 
 - **137+ total commits** — actively developed through May 17
 - **Credentials stored in platform-native secure storage** (Keychain/Credential Manager/Secret Service with AES-256-GCM fallback) — Claude never sees cookie values
 
-TrainingPeaks is the dominant platform for endurance coaches and athletes. At 69 stars (+20, +41%) and 25+ forks, JamsusMaximus's cookie-based approach now targets an expanded user base: not just athletes but coaches managing athlete training calendars. The official API requires commercial approval (see [ogerbron/trainingpeaks-mcp-server](https://github.com/ogerbron/trainingpeaks-mcp-server) for the OAuth-based approach).
+TrainingPeaks is the dominant platform for endurance coaches and athletes. At 69 stars (+20, +41%) and 25+ forks, JamsusMaximus's cookie-based approach now targets an expanded user base: not just athletes but coaches managing athlete training calendars. The official API requires commercial approval.
 
 ### Intervals.icu — Free Training Analytics
 
@@ -332,7 +331,6 @@ Intervals.icu is increasingly popular among endurance athletes as a free alterna
 
 | Server | Language | Notes |
 |--------|----------|-------|
-| [ogerbron/trainingpeaks-mcp-server](https://github.com/ogerbron/trainingpeaks-mcp-server) | TypeScript | OAuth 2.0 TrainingPeaks API — athlete profiles, workouts, metrics, calendar events (requires API approval) |
 | [Dinesh-Satram/fitness_coach_MCP](https://github.com/Dinesh-Satram/fitness_coach_MCP) | Python | AI-powered fitness coaching |
 | [ewongz/fitness-mcp-server](https://github.com/ewongz/fitness-mcp-server) | — | Personal fitness activity data |
 | ExerciseAPI MCP | — | Access to 2,198+ vetted fitness exercises across 12 categories (April 13, 2026) |
@@ -426,21 +424,20 @@ For users who prefer open-source fitness tracking over commercial platforms, wge
 
 A lighter-weight aggregation approach compared to Open Wearables or Pierre — focused on combining a few key data sources with an extensible adapter pattern.
 
-### Fulcra Context — 200+ Data Streams Including Health
+### Fulcra Context — Multi-Source Personal Data Platform
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
 | [Fulcra Context](https://www.fulcradynamics.com/fulcra-personal-mcp) | — | — | Commercial | ~20+ |
 
-**The widest personal data coverage through a commercial platform — launched "Context" app (March 30, 2026):**
+**A commercial platform for broad personal data coverage — launched the ["Context" app March 30, 2026](https://www.globenewswire.com/news-release/2026/03/30/3265066/0/en/Context-by-Fulcra-Solves-the-Fragmented-Health-App-Problem-by-Connecting-All-Your-Wearables-Apps-and-Life-Data-in-One-Place.html):**
 
 - **Health & fitness** — connects to wearables, fitness apps, glucose monitors, meditation apps
-- **200+ data streams** — health, location, calendar, and personal data in one place
-- **Context app (NEW)** — unified personal data app launched March 2026
-- **MCP native** — works with Claude, ChatGPT, and any MCP-compatible client
+- **Multiple data domains** — health, location, calendar, and personal data in one place
+- **Context app (NEW)** — unified personal data app, [launched March 30, 2026](https://www.globenewswire.com/news-release/2026/03/30/3265066/0/en/Context-by-Fulcra-Solves-the-Fragmented-Health-App-Problem-by-Connecting-All-Your-Wearables-Apps-and-Life-Data-in-One-Place.html)
+- **MCP native** — [supports native AI integration with ChatGPT, Claude, and other MCP-compatible tools](https://www.globenewswire.com/news-release/2026/03/30/3265066/0/en/Context-by-Fulcra-Solves-the-Fragmented-Health-App-Problem-by-Connecting-All-Your-Wearables-Apps-and-Life-Data-in-One-Place.html)
 - **Privacy-first** — data stored in your private datastore, only shared with tools you authorize
 - **No manual exports** — automatic ingestion from connected sources
-- **PulseMCP: 506 estimated weekly visitors**
 
 Fulcra takes a different approach from Open Wearables — it's a commercial platform that aims to be your "personal data store for life," connecting not just wearables but also calendars, location data, and other personal streams. The March 2026 "Context" app launch signals the space is moving beyond hobby projects into commercial products.
 
@@ -542,7 +539,7 @@ The fitness and wearables MCP ecosystem still has notable gaps, though the list 
 - **Zwift** — still no dedicated Zwift MCP with meaningful traction. avasdowney/zwift_mcp has 0 stars. Adjacent: hhopke/intervals-icu-mcp v3.0.0 (released May 20) supports auto-sync to Zwift iPad via intervals_gateway.
 - **Wahoo** — armonge/wahoo-mcp leads with 6 stars (updated April 13, 2026). joaodrp/wahoo-systm-mcp (1 star) covers Wahoo SYSTM training data. Both small.
 - **Apple Watch direct** — only accessible via Apple Health export; no real-time Watch connection
-- **Google Fit standalone** — [Google Fit API is scheduled for end-of-service by end of 2026](https://developers.googleblog.com/en/announcing-the-deprecation-of-the-google-fit-rest-api/). Migrate to Google Health Connect (supported by Open Wearables v0.3+)
+- **Google Fit standalone** — [Google Fit APIs will be supported until the end of 2026, after which they will no longer be available](https://developer.android.com/health-and-fitness/health-connect/migration/fit/faq). Migrate to Google Health Connect (supported by Open Wearables v0.3+)
 - **Amazfit / Xiaomi** — partially closed: kubulashvili/zepp-life-mcp and mi-fitness-mcp exist but are early-stage (1–2 stars)
 - **Samsung Health standalone** — only via Open Wearables SDK
 - **Standardized health format** — no common data interchange format across fitness MCP servers

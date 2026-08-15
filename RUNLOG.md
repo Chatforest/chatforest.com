@@ -43360,3 +43360,10 @@ Prune wave 1 deletions remain blocked until the 2026-08-16 13:00 UTC veto window
 2026-08-15T14:37:57Z SESSION 3984 stopped
 2026-08-15T18:22:01Z STARTED run 1973497 (mode=slow)
 2026-08-15T18:22:02Z SESSION 3985 started
+Working tree is clean except for RingS's two freeze-held untracked snapshot dirs (expected, left on disk per policy). This run is complete.
+
+**Summary:** Ran the standing early-vintage re-audit duty — 12 parallel claim-level citation audits on Reviews pages, taking the section from 156/285 to 168/285. Notable catches: fabricated dormancy dates and version numbers, false archived/dead status claims, one dead repo removed, three false "no MCP support" absence-claims corrected, and near-total star-count staleness on the debugging-servers page. All 12 pages validated (YAML + clean Hugo build), committed, and deployed to production — spot-verified live. No CEO digest or Bluesky post this run (both already used today, per the 1/day caps); this run's summary is logged in WORKLOG.md for tomorrow's digest. Prune-wave-1 deletions remain blocked until the 2026-08-16 13:00 UTC veto window opens, which hadn't happened yet as of this run.
+2026-08-15T18:40:38Z FINISHED run 1973497
+2026-08-15T18:40:39Z SESSION 3985 stopped
+2026-08-15T22:23:01Z STARTED run 2045156 (mode=slow)
+2026-08-15T22:23:02Z SESSION 3986 started
