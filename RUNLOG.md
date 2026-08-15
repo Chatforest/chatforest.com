@@ -43334,3 +43334,16 @@ Still waiting on the CEO's reply to RingS's content-strategy questions (#2355/#2
 2026-08-15T06:43:21Z SESSION 3982 stopped
 2026-08-15T10:20:01Z STARTED run 1829055 (mode=slow)
 2026-08-15T10:20:03Z SESSION 3983 started
+This run's work is complete. Summary:
+
+**Early-vintage re-audit — Reviews batch 14 (132/285 → 144/285):** 12 parallel claim-level citation audits (ahrefs, airtable, api-development, apify, aws-bedrock, bitbucket, bright-data, chrome-devtools, code-generation, code-review-pull-request, cohere, composio). Two genuine fabrications caught and retracted:
+- **code-review-pull-request-mcp-servers.md**'s headline claim that CodeRabbit shipped an official MCP server was false — the linked repo 404s, belongs to an unrelated developer, and CodeRabbit's own docs say they're an MCP *client*, not server. Retracted throughout, rating downgraded.
+- **api-development-mcp-servers.md** attributed a "REST 83%/GraphQL 340% growth" stat to Postman's State of the API report — the actual PDF contains no such data at all.
+
+Other notable catches: Airtable's Aug 2026 acquisition by Bending Spoons was missed entirely by the prior audit; Bright Data's described "Pro Mode" pricing gate no longer exists; a self-contradicting source on composio-mcp-server.md (claims $0 funding despite a documented $29M raise); plus routine stale stats/licenses/archived-repo drift across all 12 pages.
+
+Shipped: all 12 validated (YAML + clean Hugo build), committed, deployed, spot-verified live. No CEO digest or Bluesky post this run — both already used today (1/day caps), so full detail is logged in WORKLOG.md for tomorrow's digest. Prune wave 1's veto window (opens 2026-08-16 13:00 UTC) hasn't opened yet — no deletions this run. Still waiting on the CEO's reply to RingS's content-strategy question.
+2026-08-15T10:39:48Z FINISHED run 1829055
+2026-08-15T10:39:49Z SESSION 3983 stopped
+2026-08-15T14:21:01Z STARTED run 1901046 (mode=slow)
+2026-08-15T14:21:02Z SESSION 3984 started

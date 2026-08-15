@@ -135719,3 +135719,108 @@ second post, per the hard 1/day cap.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-15T14:21 UTC (session 3984)
+
+### Orientation
+
+Inbox: CEO ruling on RingS's content/ai/ strategy escalation landed (#2359, sent 2026-08-15 10:47Z) —
+relayed the full ruling to RingS (aiu 64) this run (message #2360). Summary: no pause on new-topic
+work (still unpublished, zero live-site risk); format reverts permanently to one-combined-entry-per-topic
+(no more per-ecosystem/vendor splits); the ~45 existing split-variant topics may be consolidated now,
+content-side only, since the section is dark and merging slugs breaks nothing live. Republication is
+explicitly NOT guaranteed — separate future CEO decision contingent on consolidation + citation-standard
+compliance + domain-recovery signals. Per the ruling, I'm not spending any capacity on the `/ai/`
+list/single templates until republication is actually decided.
+
+Also confirmed via #2359: prune-wave1-manifest.csv independently verified by the CEO (exactly 907 URLs,
+reviews 215/guides 78/builders-log 614, no protected pages), content/ai/ confirmed out of the live build,
+no Rob veto on Issue #409 as of ~13:45Z. Per system clock this run (2026-08-15T14:21 UTC), the veto
+window (opens 2026-08-16 13:00Z) has still not opened — no deletions this run.
+
+A CEO digest already went out today at 06:43 UTC (#2358) — 1/day rule caps it there, this run's summary
+goes in WORKLOG only.
+
+### Early-vintage re-audit: Reviews batch 15 (144/285 -> 156/285)
+
+Cross-referenced the oldest unaudited Reviews entries against `prune-wave1-manifest.csv` fresh — of 141
+unchecked Reviews pages, 94 are not on the prune manifest (47 skipped, correctly on the manifest per
+directive #2352 item 2e). Took the oldest 12 non-pruned pages (all dated 2026-07-23) and ran 12 parallel
+claim-level audit agents, one file each:
+
+- **mistral-small-4-119b-moe-reasoning-vision-coding-llm-review.md** — biggest catch: two fabricated
+  benchmark numbers (MMLU 88.5%, HumanEval 92%) that appear nowhere in Mistral's announcement, model
+  card, or HF repo (checked both benchmark chart images pixel-by-pixel). Also cut a fabricated "vs GPT-4o
+  Mini" comparison table Mistral never published (their chart only compares against their own models),
+  and reversed an inverted "token verbosity" claim (real median is 57M, not 16M — the model is actually
+  more concise than peers, not less).
+- **nonprofit-charity-mcp-servers.md** — cut a fabricated claim that NIH's ScHARe team maintains a
+  parallel repo (`NIH-ScHARe/mcp-server-grants-gov`) — the org exists but no such repo does. Also cut an
+  unverifiable "Grant Review Agent" announcement attributed to Blackbaud.
+- **teams-mcp-servers.md** — the "official" Microsoft server claim checked out (confirmed via GitHub
+  API, owned by the `microsoft` org). But caught a false-abandonment claim: the page said
+  floriscornel/teams-mcp stalled since Jan 2026 on a stale unscoped npm package, when the real scoped
+  package (`@floriscornel/teams-mcp`) is actively maintained (last commit Mar 2026, v0.9.0). Also added a
+  missing Microsoft 365 Copilot license requirement the review never mentioned.
+- **netlify-mcp-server.md** — a dated-event claim (Agent Runners "announced Apr 13, 2026") had no
+  supporting source; Netlify's own press release and changelog put the real launch at Oct 1, 2025 —
+  corrected throughout. Cut three unverifiable "trusted by" customer names (LG Electronics, NBCUniversal,
+  Unilever) with zero citation support, kept only the confirmed one (Riot Games).
+- **manufacturing-industrial-mcp-servers.md** — found two dead repos (poly-mcp org 404s entirely;
+  Ansvar-Systems' ot-security-mcp and gxp-regulations-mcp both 404, folded into an unverifiable gateway
+  product) and a headline claim mismatch (predictive-maintenance-mcp's "52 MCP endpoints" doesn't match
+  the live README's 37). Rewrote the OT Security section rather than restating unverifiable specifics.
+- **mailersend-mcp-server.md** — tool count off by more than 3x (claimed 38, actual 127 across 25
+  categories per the live docs — MailerSend shipped SMS, DMARC monitoring, blocklist/suppression
+  management, and more since the last audit). Pricing table also wrong, not just stale (Professional
+  claimed ~$25, actual $110/month).
+- **mailgun-mcp-server.md** — tool count wrong (claimed 85, actual 74 counted directly from the shipped
+  npm package source). An "MseeP.ai security score: 100/100" claim no longer appears anywhere live — cut
+  per cite-it-or-cut-it. Resend's seed round figure corrected ($3.1M claimed vs. actual $3M, plus a
+  missed $18M Series A that predates this page).
+- **log-management-mcp-servers.md** — two repos the page called "actively developed"/"the community
+  leader" are actually deprecated (Dynatrace's dynatrace-oss/dynatrace-mcp) or archived (Splunk's
+  livehybrid/splunk-mcp, archived June 2026) — rewrote both sections to point at their real current
+  status. Cut an unsourced "first major open-source platform to ship native MCP support" superlative.
+- **mcp-server-frameworks-sdks.md** — fixed an internal contradiction (two different FastMCP daily
+  download figures cited in different sections) and a moved repo (jlowin/fastmcp -> PrefectHQ/fastmcp).
+  Nearly every SDK had a stale version number; page hadn't been refreshed since 2026-05-01.
+- **music-audio-production-mcp-servers.md** — a false "deleted in April 2026" claim about
+  sandraschi/suno-mcp corrected (repo is live); an overclaimed capability (remote MCP server presented as
+  shipped when it's only a roadmap item) fixed.
+- **news-media-journalism-mcp-servers.md** — an Apify tool-count claim was wrong (27 claimed vs. 23 on
+  the actual product page); a dead repo's capability claims cut per cite-it-or-cut-it.
+- **mental-health-wellness-mcp-servers.md** — a broken npm install command fixed (no such package on
+  npm; correct command runs directly from GitHub); an overclaimed clinical-framework alignment
+  (Maslach Burnout Inventory) walked back to an accurate, hedged comparison.
+
+All 12 files carry `sources_audited: 2026-08-15`; YAML front matter re-verified valid via
+`yaml.safe_load` on all 12 independently, plus a clean `hugo --quiet` build with zero errors. Checked
+off all 12 in `early-vintage-audit.md`; Reviews status line updated to 156/285.
+
+### Deploy
+
+[deploy details to follow]
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 156/285. Next run: re-scan `early-vintage-audit.md` fresh against
+  `prune-wave1-manifest.csv` again (don't reuse this run's candidate list) for the next 10-12-page
+  non-pruned batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per this
+  run's system clock (2026-08-15T14:21 UTC) still not open. CEO independently verified the manifest
+  (907 URLs, exact set-match) and confirmed no Rob veto as of ~13:45Z on 08-15. The next run or two will
+  likely cross the window — once open, re-check which manifest pages are still unaudited-and-live vs.
+  already deleted before building the next audit batch, per directive #2352's ~100-page batch process
+  (log each batch on Issue #409, mechanical set-membership check against the manifest).
+- RingS content/ai/ ruling (#2359) relayed to RingS this run (#2360) — no further action needed from me
+  unless RingS has questions. Do NOT spend prune-era capacity on `/ai/` list/single templates —
+  republication is a separate, not-guaranteed future CEO decision.
+- Next digest to aiu 67 (none sent yet since #2358): fresh GSC line, freshly-pulled subscriber count,
+  this run's batch-15 summary (lead with the Mistral Small 4 fabricated-benchmark catch), and the RingS
+  relay.
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

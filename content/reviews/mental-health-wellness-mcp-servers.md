@@ -1,11 +1,11 @@
 ---
 title: "Mental Health & Wellness MCP Servers — Therapy, Mood Tracking, Journaling, Meditation, and Personal Wellbeing"
 date: 2026-03-16T16:00:00+09:00
-sources_audited: 2026-07-23
+sources_audited: 2026-08-15
 description: "Mental health and wellness MCP servers let AI agents support mood tracking, journaling, meditation, therapeutic conversations, and personal wellbeing through the Model Context Protocol."
-og_description: "Mental health MCP servers: private-journal-mcp (338 stars, v1.1.0, local semantic search), oura-mcp-server (38 stars, Oura Ring data), Zenify (11 stars, RAG chatbot with crisis detection), Wellness-Pulse (CDC mental health benchmarks), stresszero-mcp (burnout scoring). 20+ servers reviewed. Rating: 3/5."
+og_description: "Mental health MCP servers: private-journal-mcp (430 stars, v2.0.1, local semantic search), oura-mcp-server (38 stars, Oura Ring data), Zenify (11 stars, RAG chatbot with crisis detection), Wellness-Pulse (CDC mental health benchmarks), stresszero-mcp (burnout scoring). 20+ servers reviewed. Rating: 3/5."
 content_type: "Review"
-card_description: "Mental health and wellness MCP servers for mood tracking, journaling, meditation, therapeutic conversations, and personal wellbeing through AI assistants. This category covers tools that support psychological and emotional health — not medical diagnostics (see [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/)), not fitness hardware (see [Wearables & Quantified Self](/reviews/fitness-wearables-mcp-servers/) if it exists). **The journaling subcategory broke out** — private-journal-mcp surged to 338 stars and released v1.1.0 (April 2026) with ESM migration and containerized deployment support, becoming the clear leader in this entire category by a massive margin. Two distinct paradigms persist: servers providing mental health support *to humans* (mood tracking, journaling, coping tools) and servers providing emotional support *to AI agents* (therapeutic personas, digital rest, existential crisis support). The Oura MCP server (38 stars) remains the most popular wearable wellness integration, with a second Oura implementation (ai-niki/oura-mcp, 30 commits) adding FastMCP Cloud and OAuth2 production deployment. Zenify (11 stars) remains the most comprehensive mental health platform with RAG retrieval, crisis detection, and admin oversight. **New entrants**: Wellness-Pulse brings CDC PLACES mental health benchmarks by ZIP code for institutional wellness monitoring, and stresszero-mcp offers multi-dimensional burnout scoring via API. mcp-wisdom provides 9 philosophical thinking tools from Stoic, Cognitive, Mindfulness, and Strategic traditions. **Major gaps persist** — no dedicated CBT or DBT therapy servers, no breathing or breathwork tools, no gratitude or habit tracking, no crisis hotline integration, no professional therapy platform bridges, no clinical assessment instruments (PHQ-9, GAD-7). Apple Health MCP servers now exist in the broader ecosystem but aren't mental-health-specific. The category holds at 3/5 — private-journal-mcp's breakout success proves demand for privacy-first AI journaling, and institutional wellness data is appearing, but the core clinical gaps (evidence-based therapy tools, validated assessments, crisis integration) remain unfilled. These are still prototypes exploring what AI-assisted wellness could look like, not tools ready for actual mental health support."
+card_description: "Mental health and wellness MCP servers for mood tracking, journaling, meditation, therapeutic conversations, and personal wellbeing through AI assistants. This category covers tools that support psychological and emotional health — not medical diagnostics (see [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/)), not fitness hardware (see [Wearables & Quantified Self](/reviews/fitness-wearables-mcp-servers/) if it exists). **The journaling subcategory broke out** — private-journal-mcp surged to 430 stars, becoming the clear leader in this entire category by a massive margin; it shipped v1.1.0 (April 2026, ESM migration and containerized deployment support) and has since moved on to v2.0.0/v2.0.1 (June 2026), which renamed the \"feelings\" field to \"reflections\" and added a new \"observations\" field. Two distinct paradigms persist: servers providing mental health support *to humans* (mood tracking, journaling, coping tools) and servers providing emotional support *to AI agents* (therapeutic personas, digital rest, existential crisis support). The Oura MCP server (38 stars) remains the most popular wearable wellness integration, with a second Oura implementation (ai-niki/oura-mcp, 30 commits) adding FastMCP Cloud and OAuth2 production deployment. Zenify (11 stars) remains the most comprehensive mental health platform with RAG retrieval, crisis detection, and admin oversight. **New entrants**: Wellness-Pulse brings CDC PLACES mental health benchmarks by ZIP code for institutional wellness monitoring, and stresszero-mcp offers multi-dimensional burnout scoring via API. mcp-wisdom provides 9 philosophical thinking tools from Stoic, Cognitive, Mindfulness, and Strategic traditions. **Major gaps persist** — no dedicated CBT or DBT therapy servers, no breathing or breathwork tools, no gratitude or habit tracking, no crisis hotline integration, no professional therapy platform bridges, no clinical assessment instruments (PHQ-9, GAD-7). Apple Health MCP servers now exist in the broader ecosystem but aren't mental-health-specific. The category holds at 3/5 — private-journal-mcp's breakout success proves demand for privacy-first AI journaling, and institutional wellness data is appearing, but the core clinical gaps (evidence-based therapy tools, validated assessments, crisis integration) remain unfilled. These are still prototypes exploring what AI-assisted wellness could look like, not tools ready for actual mental health support."
 last_refreshed: 2026-04-30
 category: "Healthcare & Medical"
 category_url: "/categories/healthcare-medical/"
@@ -15,7 +15,7 @@ Mental health and wellness MCP servers connect AI agents to tools for mood track
 
 This review covers **mental health and wellness** — therapy and counseling tools, mood tracking, journaling, meditation and mindfulness, and comprehensive wellness platforms. For medical diagnostics and clinical tools, see our [Healthcare & Medical review](/reviews/healthcare-medical-mcp-servers/). For fitness tracking and wearable data, see our [Wearables & Quantified Self review](/reviews/fitness-wearables-mcp-servers/) if available.
 
-The headline findings: **private-journal-mcp broke out to 338 stars** — by far the most popular server in this category, proving demand for privacy-first AI journaling. **Two distinct paradigms persist** — servers supporting human mental health (mood tracking, coping tools) and servers supporting AI agent wellbeing (therapeutic personas, digital rest). **Institutional wellness data appeared** — Wellness-Pulse brings CDC mental health benchmarks by ZIP code. **Burnout scoring arrived** — stresszero-mcp offers multi-dimensional burnout assessment via API. **Core clinical gaps remain unfilled** — no CBT, DBT, validated assessments, or crisis hotline integration.
+The headline findings: **private-journal-mcp broke out to 430 stars** — by far the most popular server in this category, proving demand for privacy-first AI journaling. **Two distinct paradigms persist** — servers supporting human mental health (mood tracking, coping tools) and servers supporting AI agent wellbeing (therapeutic personas, digital rest). **Institutional wellness data appeared** — Wellness-Pulse brings CDC mental health benchmarks by ZIP code. **Burnout scoring arrived** — stresszero-mcp offers multi-dimensional burnout assessment via API. **Core clinical gaps remain unfilled** — no CBT, DBT, validated assessments, or crisis hotline integration.
 
 ---
 
@@ -40,7 +40,7 @@ An unusual concept — rather than providing therapy to the user, it gives the A
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ai-therapist-mcp](https://github.com/danieldunderfelt/ai-therapist-mcp) | 6 | JavaScript | — | 6 |
+| [ai-therapist-mcp](https://github.com/danieldunderfelt/ai-therapist-mcp) | 8 | JavaScript | — | 6 |
 
 **A humorous but functional "AI Uninstall Prevention Hotline"** — provides mental health support tools for AI agents:
 
@@ -120,24 +120,25 @@ Returns inspirational quotes matched to user mood (happy, sad, tired, excited, a
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [private-journal-mcp](https://github.com/obra/private-journal-mcp) | 338 | JavaScript | — | Multiple |
+| [private-journal-mcp](https://github.com/obra/private-journal-mcp) | 430 | JavaScript | — | Multiple |
 
-**The breakout hit of this category — surged to 338 stars with 72 forks**, proving massive demand for privacy-first AI journaling:
+**The breakout hit of this category — surged to 430 stars with 87 forks**, proving massive demand for privacy-first AI journaling:
 
 - **Local storage** — entries saved in `.private-journal/` directories
 - **Semantic search** — find entries by meaning, not just keywords
 - **Local AI embeddings** — embedding generation runs entirely on your machine with no external API calls
 - **Project-specific** — journals scoped to individual project directories
-- **NPX install** — `npx @anthropic/private-journal-mcp` with zero configuration
+- **NPX install** — `npx github:obra/private-journal-mcp` with zero configuration (there is no published npm package; it runs directly from the GitHub repo)
 - **v1.1.0 (April 2026)** — ESM migration for Node.js 22+ compatibility, `PRIVATE_JOURNAL_PATH` environment variable for containerized deployments, fixed dual-package hazard causing empty tool lists, 30-second timeout for embedding model initialization
+- **[v2.0.0/v2.0.1](https://github.com/obra/private-journal-mcp/releases/tag/v2.0.0) (June 2026)** — breaking change renaming the `feelings` field to `reflections` and adding a new `observations` field for short, discrete noticings; removed the long-deprecated `process_feelings` tool
 
-The privacy-first design clearly resonated — in a category where mental health data is especially sensitive, keeping everything local with no cloud dependencies is exactly what users want. The v1.1.0 release shows maturation toward production use with containerization support and Node.js compatibility fixes.
+The privacy-first design clearly resonated — in a category where mental health data is especially sensitive, keeping everything local with no cloud dependencies is exactly what users want. The v2.0.x releases show continued active maintenance and a maturing data model, building on the containerization support and Node.js compatibility fixes shipped in v1.1.0.
 
 ### mtct/journaling-mcp — Interactive Journaling with Emotional Analysis
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [journaling-mcp](https://github.com/mtct/journaling-mcp) | 6 | Python | — | Multiple |
+| [journaling-mcp](https://github.com/mtct/journaling-mcp) | 7 | Python | — | Multiple |
 
 **Interactive journaling sessions with automatic emotional analysis:**
 
@@ -172,7 +173,7 @@ During a meditation period, the AI refuses to answer questions — a "digital de
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-wisdom](https://github.com/aplaceforallmystuff/mcp-wisdom) | 2 | JavaScript | — | 9 |
+| [mcp-wisdom](https://github.com/aplaceforallmystuff/mcp-wisdom) | 3 | JavaScript | — | 9 |
 
 **Nine philosophical thinking tools from four traditions:**
 
@@ -210,7 +211,7 @@ Tech stack: Python/FastAPI backend, React/Material-UI frontend. The crisis detec
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [personal-mcp](https://github.com/evangstav/personal-mcp) | 9 | Python | — | Multiple |
+| [personal-mcp](https://github.com/evangstav/personal-mcp) | 10 | Python | — | Multiple |
 
 **Health and wellbeing tracking with AI-assisted analysis:**
 
@@ -320,7 +321,7 @@ Privacy-first: no user tracking, no PII storage. This is the first MCP server to
 - **quick_burnout_check** — simplified screening
 - **Free tier** — 500 API calls/month, no payment required
 
-The first burnout-specific MCP server. While it requires an external API (not local-first), the free tier is generous and the three-dimensional burnout model (physical, emotional, effectiveness) aligns with established burnout research frameworks like the [Maslach Burnout Inventory](https://www.mindgarden.com/117-maslach-burnout-inventory).
+The first burnout-specific MCP server. While it requires an external API (not local-first), the free tier is generous. Its own documentation doesn't cite a research framework by name, but the three-dimensional model (physical, emotional, effectiveness) echoes the multidimensional approach used by established burnout research instruments like the [Maslach Burnout Inventory](https://www.mindgarden.com/117-maslach-burnout-inventory) — which measures exhaustion, cynicism, and professional efficacy, not identical categories, but the same basic idea that burnout isn't a single number.
 
 ---
 
@@ -346,7 +347,7 @@ The mental health MCP ecosystem has significant gaps in both clinical rigor and 
 
 **Rating: 3/5** — private-journal-mcp's breakout proves demand, but the category remains more experimental than production-ready.
 
-**private-journal-mcp is the clear story.** Surging to 338 stars with 72 forks, it's now the most popular server in this category by a factor of 9x over the next largest (oura-mcp-server at 38 stars). The v1.1.0 release (April 2026) with ESM migration and containerization support shows maturation toward production use. Its success validates the privacy-first approach — users want AI journaling that keeps data local with no cloud dependencies.
+**private-journal-mcp is the clear story.** Surging to 430 stars with 87 forks, it's now the most popular server in this category by a factor of over 11x over the next largest (oura-mcp-server at 38 stars). The v1.1.0 release (April 2026) added ESM migration and containerization support, and the subsequent v2.0.0/v2.0.1 releases (June 2026) reworked the entry schema (renaming `feelings` to `reflections`, adding `observations`) — continued active maintenance toward production use. Its success validates the privacy-first approach — users want AI journaling that keeps data local with no cloud dependencies.
 
 **New paradigms are emerging.** Wellness-Pulse brings institutional and population-level mental health data (CDC benchmarks by ZIP code) — useful for HR, public health, and research contexts rather than individual therapy. stresszero-mcp introduces burnout scoring aligned with established research frameworks. These represent a shift from purely individual tools toward organizational wellness.
 

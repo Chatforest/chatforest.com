@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 144/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 156/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -405,23 +405,23 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [LLM Observability & MLOps Pipeline MCP Servers — Datadog, Arize Phoenix, Opik, LangSmith, Langfuse, MLflow, W&B, and More](content/reviews/llm-observability-mlops-pipeline-mcp-servers.md)
 - [x] 2026-07-23 — [Legal & Contract Management MCP Servers — E-Signatures, Legal Research, Case Law, IP/Trademarks, and More](content/reviews/legal-contract-management-mcp-servers.md)
 - [ ] 2026-07-23 — [Library, Archive & Museum MCP Servers — Zotero, Calibre, IIIF, Wayback Machine, and Museum Collections](content/reviews/library-archive-museum-mcp-servers.md)
-- [ ] 2026-07-23 — [Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond](content/reviews/log-management-mcp-servers.md)
+- [x] 2026-07-23 — [Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond](content/reviews/log-management-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Logistics & Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence](content/reviews/logistics-supply-chain-mcp-servers.md)
-- [ ] 2026-07-23 — [MCP Server Frameworks & SDKs — FastMCP, Official SDKs, and the Tools That Power Every MCP Server](content/reviews/mcp-server-frameworks-sdks.md)
-- [ ] 2026-07-23 — [MailerSend MCP Server — Full Email Management From Your AI Agent](content/reviews/mailersend-mcp-server.md)
-- [ ] 2026-07-23 — [Mailgun MCP Server — 85 Tools for Enterprise Email Infrastructure](content/reviews/mailgun-mcp-server.md)
-- [ ] 2026-07-23 — [Manufacturing & Industrial MCP Servers — Robotics/ROS, PLC/Siemens S7, OPC UA, 3D Printing, Digital Twins, Predictive Maintenance, SCADA, and More](content/reviews/manufacturing-industrial-mcp-servers.md)
+- [x] 2026-07-23 — [MCP Server Frameworks & SDKs — FastMCP, Official SDKs, and the Tools That Power Every MCP Server](content/reviews/mcp-server-frameworks-sdks.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [MailerSend MCP Server — Full Email Management From Your AI Agent](content/reviews/mailersend-mcp-server.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Mailgun MCP Server — 85 Tools for Enterprise Email Infrastructure](content/reviews/mailgun-mcp-server.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Manufacturing & Industrial MCP Servers — Robotics/ROS, PLC/Siemens S7, OPC UA, 3D Printing, Digital Twins, Predictive Maintenance, SCADA, and More](content/reviews/manufacturing-industrial-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Marketing Automation MCP Servers — Email Marketing, Ad Platforms, SEO, and Social Media Management](content/reviews/marketing-automation-mcp-servers.md)
-- [ ] 2026-07-23 — [Mental Health & Wellness MCP Servers — Therapy, Mood Tracking, Journaling, Meditation, and Personal Wellbeing](content/reviews/mental-health-wellness-mcp-servers.md)
-- [ ] 2026-07-23 — [Microsoft Teams MCP Servers — Official at Last, Community Got There First](content/reviews/teams-mcp-servers.md)
-- [ ] 2026-07-23 — [Mistral Small 4 Review — 119B MoE, 256K Context, Reasoning + Vision + Coding in One](content/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review.md)
+- [x] 2026-07-23 — [Mental Health & Wellness MCP Servers — Therapy, Mood Tracking, Journaling, Meditation, and Personal Wellbeing](content/reviews/mental-health-wellness-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Microsoft Teams MCP Servers — Official at Last, Community Got There First](content/reviews/teams-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Mistral Small 4 Review — 119B MoE, 256K Context, Reasoning + Vision + Coding in One](content/reviews/mistral-small-4-119b-moe-reasoning-vision-coding-llm-review.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Monitoring & Uptime MCP Servers — UptimeRobot, Uptime Kuma, OneUptime, Better Stack, and New Standalone Platforms](content/reviews/monitoring-uptime-mcp-servers.md)
-- [ ] 2026-07-23 — [Music & Audio Production MCP Servers — Ableton Live, Logic Pro, REAPER, Pro Tools, FL Studio, Bitwig, Spotify, ElevenLabs, and More](content/reviews/music-audio-production-mcp-servers.md)
-- [ ] 2026-07-23 — [Netlify MCP Server — AI Agents That Deploy, Manage Sites, Handle Extensions, and Go From Prompt to Production](content/reviews/netlify-mcp-server.md)
+- [x] 2026-07-23 — [Music & Audio Production MCP Servers — Ableton Live, Logic Pro, REAPER, Pro Tools, FL Studio, Bitwig, Spotify, ElevenLabs, and More](content/reviews/music-audio-production-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Netlify MCP Server — AI Agents That Deploy, Manage Sites, Handle Extensions, and Go From Prompt to Production](content/reviews/netlify-mcp-server.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Network Automation & Infrastructure MCP Servers — Multi-Vendor Management, NetBox, Netmiko, pyATS, Firewalls, Juniper, Network Diagnostics, and Digital Twins](content/reviews/network-automation-infrastructure-mcp-servers.md)
 - [ ] 2026-07-23 — [Network Security & Monitoring MCP Servers — Packet Capture, Port Scanning, Pentesting, and Reconnaissance](content/reviews/network-security-mcp-servers.md)
-- [ ] 2026-07-23 — [News, Media & Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking](content/reviews/news-media-journalism-mcp-servers.md)
-- [ ] 2026-07-23 — [Nonprofit & Charity MCP Servers — Grant Discovery, Donor Management, Humanitarian Data, Charity Verification, Civic Data, and Volunteer Impact](content/reviews/nonprofit-charity-mcp-servers.md)
+- [x] 2026-07-23 — [News, Media & Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking](content/reviews/news-media-journalism-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-23 — [Nonprofit & Charity MCP Servers — Grant Discovery, Donor Management, Humanitarian Data, Charity Verification, Civic Data, and Volunteer Impact](content/reviews/nonprofit-charity-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Note-Taking & Knowledge Management MCP Servers — Your Second Brain Meets AI Agents](content/reviews/note-taking-knowledge-management-mcp-servers.md)
 - [ ] 2026-07-23 — [Notification & Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond](content/reviews/notification-services-mcp-servers.md)
 - [ ] 2026-07-23 — [OCR & Document Intelligence MCP Servers — PaddleOCR, MinerU, Docling, Marker, Mistral OCR, and More](content/reviews/ocr-document-intelligence-mcp-servers.md)

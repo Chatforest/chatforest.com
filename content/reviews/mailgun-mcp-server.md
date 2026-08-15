@@ -1,33 +1,33 @@
 ---
-title: "Mailgun MCP Server — 85 Tools for Enterprise Email Infrastructure"
+title: "Mailgun MCP Server — 74 Tools for Enterprise Email Infrastructure"
 date: 2026-03-23T06:50:00+09:00
-description: "Mailgun's official MCP server gives AI agents access to 85 tools spanning email sending, analytics, templates, suppressions, mailing lists, domain management, and IP pools."
-og_description: "Mailgun MCP Server: 85 MCP tools for email sending, analytics, suppressions, domains, templates, and more. v2.0.0 TypeScript rewrite (April 2026). Apache 2.0, no-delete safety, Zod 4. Backed by Sinch ($1.9B acquisition). Rating: 3.5/5."
+description: "Mailgun's official MCP server gives AI agents access to 74 tools spanning email sending, analytics, templates, suppressions, mailing lists, domain management, validation, and IP pools."
+og_description: "Mailgun MCP Server: 74 MCP tools for email sending, analytics, suppressions, domains, templates, validation, and more. TypeScript since v2.0.0 (April 2026), now at v2.1.2. Apache 2.0, no-delete safety, Zod 4. Backed by Sinch ($1.9B acquisition). Rating: 3.5/5."
 content_type: "Review"
-card_description: "Official MCP server for Mailgun's email API. v2.0.0 TypeScript rewrite (April 2026) added 15 new tools for a total of 85 across messaging, analytics, templates, suppressions, mailing lists, webhooks, domains, routes, IP management, and bounce classification. No-delete safety design keeps blast radius low."
-last_refreshed: 2026-05-03
-sources_audited: 2026-07-23
+card_description: "Official MCP server for Mailgun's email API. The v2.0.0 TypeScript rewrite (April 2026) kept the 70-tool count, and v2.1.0 (May 2026) added 4 more — email validation, inbox placement, email preview, and a metrics rollup — for a current total of 74 across messaging, analytics, templates, suppressions, mailing lists, webhooks, domains, routes, IP management, and bounce classification. No-delete safety design keeps blast radius low."
+last_refreshed: 2026-08-15
+sources_audited: 2026-08-15
 category_url: "/categories/email-notification-services/"
 ---
 
-**At a glance:** 55 stars, 22 forks, Apache 2.0 license, TypeScript (v2.0.0 rewrite April 2026), stdio transport, 85 MCP tools, official first-party server from Mailgun (Sinch).
+**At a glance:** 57 stars, 21 forks, Apache 2.0 license, TypeScript (rewritten from JavaScript in v2.0.0, April 2026; now at v2.1.2), stdio transport, 74 MCP tools, official first-party server from Mailgun (Sinch).
 
-Mailgun's MCP server exposes **85 tools** across the full Mailgun API surface — from sending emails and managing templates to querying analytics, tracking suppressions, and configuring IP pools. This is one of the most comprehensive single-service MCP servers we've reviewed, covering nearly every Mailgun API endpoint as a callable tool.
+Mailgun's MCP server exposes **74 tools** across the full Mailgun API surface — from sending emails and managing templates to querying analytics, tracking suppressions, validating addresses, and configuring IP pools. This is one of the most comprehensive single-service MCP servers we've reviewed, covering nearly every Mailgun API endpoint as a callable tool.
 
-The [mailgun-mcp-server repository](https://github.com/mailgun/mailgun-mcp-server) has 55 GitHub stars and 22 forks. It's maintained by the Mailgun team (part of [Sinch](https://sinch.com/), which [acquired Mailgun's parent company Pathwire for approximately $1.9 billion in December 2021](https://sinch.com/news/sinch-completes-acquisition-pathwire/)). Mailgun processes billions of emails for approximately 150,000+ customers (Sinch does not report Mailgun financials separately).
+The [mailgun-mcp-server repository](https://github.com/mailgun/mailgun-mcp-server) has 57 GitHub stars and 21 forks (as of August 2026). It's maintained by the Mailgun team (part of [Sinch](https://sinch.com/), which announced it would [acquire Mailgun's parent company Pathwire for an enterprise value of approximately $1.9 billion](https://sinch.com/news/sinch-acquires-mailgun-and-mailjet/) in September 2021 and [completed the deal in December 2021](https://sinch.com/news/sinch-completes-acquisition-pathwire/)). Mailgun's own site says it serves [over 150,000 businesses](https://www.mailgun.com/) and sends [hundreds of billions of emails every year](https://www.mailgun.com/about/); Sinch does not break out Mailgun's financials separately.
 
-**April 2026 update:** v2.0.0 (released April 22, 2026) is a full TypeScript rewrite that raises the tool count from 70 to 85, upgrades to Zod 4 for validation, shortens tool IDs (removing `_name` suffixes from path parameters — a breaking change for clients using hardcoded tool names), and requires Node.js 22.22.2+. v2.1.0 is in progress (open PR as of late April) and will add email validation, inbox placement, and email preview tools. Note: the npm registry still shows v1.0.2 as of early May — users installing via `npx @mailgun/mcp-server` get the older version until the team publishes v2.0.0 to npm.
+**April 2026 update, since revised:** v2.0.0 (released April 22, 2026) was a full TypeScript rewrite that kept the tool count at 70, upgraded to Zod 4 for validation, shortened tool IDs (removing `_name` suffixes from path parameters — a breaking change for clients using hardcoded tool names), and raised the minimum Node.js version from v18 to v20.12+. [v2.1.0 (released May 28, 2026)](https://github.com/mailgun/mailgun-mcp-server/blob/main/CHANGELOG.md) then added the previously-planned email validation, inbox placement, and email preview tools plus a metrics-summary rollup tool — bringing the total to **74** — along with tag-based filtering so integrators can scope which product areas (`send`/`validate`/`optimize`/`inspect`) get registered. Two patch releases followed for internal publish-pipeline fixes, and [npm currently serves v2.1.2](https://www.npmjs.com/package/@mailgun/mcp-server) (published July 24, 2026), which now requires Node.js [v20.20.2+](https://github.com/mailgun/mailgun-mcp-server/blob/main/package.json).
 
 ## What It Does
 
-The server wraps Mailgun's REST API into 85 MCP tools organized across 14 categories. Tool names map directly to API endpoints using a `method--path` convention (e.g., `post--v3-domain-messages` for sending email). Note: v2.0.0 shortened tool IDs by removing `_name` suffixes from path parameters — breaking clients that used the old names.
+The server wraps Mailgun's REST API into [74 MCP tools](https://github.com/mailgun/mailgun-mcp-server/blob/main/src/endpoints.ts) organized across 17 categories (14 original API categories plus the validation, inbox-placement, and email-preview tools added in v2.1.0). Tool names map directly to API endpoints using a `method--path` convention (e.g., `post--v3-domain-messages` for sending email). Note: v2.0.0 shortened tool IDs by removing `_name` suffixes from path parameters — breaking clients that used the old names.
 
 ### Tool Categories
 
 | Category | Tools | What You Can Do |
 |----------|-------|-----------------|
 | **Messaging** | 3 | Send emails, retrieve stored messages, resend |
-| **Analytics** | 3 | Query logs and usage metrics |
+| **Analytics** | 4 | Query logs, usage metrics, and a metrics-summary rollup (added v2.1.0) |
 | **Tags** | 8 | Manage, query, and delete message tags |
 | **Stats & Aggregates** | 7 | Get stats by tag, provider, device, country; aggregate data |
 | **Suppressions** | 8 | View bounces, complaints, unsubscribes, allowlist entries |
@@ -40,6 +40,9 @@ The server wraps Mailgun's REST API into 85 MCP tools organized across 14 catego
 | **IPs & IP Pools** | 7 | View IPs, pools, and domain assignments |
 | **Bounce Classification** | 2 | Classify and look up bounce codes |
 | **Account Limits** | 1 | Check monthly account limits |
+| **Validation** | 1 | Validate email address deliverability and syntax before sending (added v2.1.0) |
+| **Optimize (Inbox Placement)** | 1 | Retrieve seed/inbox-placement test results (added v2.1.0) |
+| **Inspect (Email Preview)** | 1 | Retrieve email rendering/preview test results across clients (added v2.1.0) |
 
 ### Example Prompts
 
@@ -64,7 +67,6 @@ Key architectural decisions:
 - **Zod 4 schema validation** — Every tool parameter is validated against Mailgun's OpenAPI specification using Zod 4 schemas (upgraded from Zod 3 in v2.0.0) before the request reaches Mailgun's servers. This catches malformed inputs early.
 - **Credential isolation** — API keys are passed as environment variables and never exposed to the LLM. The server handles authentication exclusively.
 - **No logging** — No API keys, request parameters, or response data are logged locally.
-- **MseeP.ai security score: 100/100** — independently assessed (badge PRs pending merge).
 
 ## Setup
 
@@ -87,7 +89,7 @@ Install and run via npx:
 
 For Claude Code: `claude mcp add mailgun -- npx -y @mailgun/mcp-server`
 
-**Requirements:** Node.js v18+, active Mailgun account with API key.
+**Requirements:** [Node.js v20.20.2+](https://github.com/mailgun/mailgun-mcp-server/blob/main/package.json) (raised from v18 in the v2.0.0 rewrite, then from v20.12 to v20.20.2 in a later patch), active Mailgun account with API key.
 
 **Configuration:**
 
@@ -115,7 +117,7 @@ The free tier is capped at 100 emails per day — enough for testing the MCP ser
 
 | Feature | Mailgun MCP | Resend MCP | SendGrid MCP (community) | Postmark MCP (community) |
 |---------|-------------|------------|--------------------------|-------------------------|
-| **MCP Tools** | 70 | 30+ | ~59 (deyikong) | Varies |
+| **MCP Tools** | 74 | Not published (14 tool categories) | ~59 ([deyikong/sendgrid-mcp](https://github.com/deyikong/sendgrid-mcp)) | Varies |
 | **Official** | Yes (Mailgun team) | Yes (Resend team) | No (community) | No (community) |
 | **License** | Apache 2.0 | MIT | Varies | Varies |
 | **Transport** | stdio | stdio | stdio | stdio |
@@ -123,38 +125,38 @@ The free tier is capped at 100 emails per day — enough for testing the MCP ser
 | **Schema Validation** | Zod (OpenAPI) | TypeScript | Varies | Varies |
 | **Free Tier** | 100/day | 3,000/mo | 100/day | 100/mo |
 | **EU Region** | Yes | No | No | EU available |
-| **Parent Company** | Sinch ($1.9B acq) | Independent ($3.1M seed) | Twilio | ActiveCampaign |
+| **Parent Company** | Sinch ($1.9B acq) | Independent ([$18M Series A](https://resend.com/blog/series-a), Dec 2024) | Twilio | ActiveCampaign |
 
-**vs. Resend MCP:** Resend has fewer tools (30+ vs 70) but covers a broader product surface including contacts, audiences, broadcasts, and segments — features Mailgun handles outside the API. Resend's developer experience is more modern (TypeScript-native, cleaner API design), and its free tier (3,000 emails/month) is significantly more generous. Mailgun wins on raw API coverage depth, EU compliance infrastructure, and enterprise maturity.
+**vs. Resend MCP:** [Resend's official MCP server](https://resend.com/docs/mcp-server) doesn't publish an aggregate tool count, but it covers a broader product surface — contacts, audiences, broadcasts, automations, events, segments, and topics — features Mailgun handles outside the API. Resend's developer experience is more modern (TypeScript-native, cleaner API design), and its free tier ([3,000 emails/month](https://resend.com/pricing)) is significantly more generous than Mailgun's 100/day. Mailgun wins on raw API coverage depth, EU compliance infrastructure, and enterprise maturity. Note: Resend has since raised an [$18M Series A led by Andreessen Horowitz](https://resend.com/blog/series-a) (December 2024) on top of its earlier [$3M seed round](https://resend.com/blog/resend-raises-3m-seed-round) — it's no longer purely a seed-stage company.
 
-**vs. SendGrid MCP (community):** SendGrid has no official MCP server. The best community option (deyikong/sendgrid-mcp) offers ~59 tools with a read-only safety mode. Mailgun's official support means better maintenance guarantees and alignment with API changes. SendGrid's free tier (100 emails/day) matches Mailgun's.
+**vs. SendGrid MCP (community):** SendGrid has no official MCP server. The best community option ([deyikong/sendgrid-mcp](https://github.com/deyikong/sendgrid-mcp)) offers ~59 tools with a read-only safety mode. Mailgun's official support means better maintenance guarantees and alignment with API changes. SendGrid's free tier (100 emails/day) matches Mailgun's.
 
 **vs. individual email tools:** For teams already on Mailgun, this server provides comprehensive coverage without building custom integrations. But if you only need email sending, simpler MCP servers (or even Pipedream's Mailgun integration) may be less overhead.
 
 ## What to Watch Out For
 
-**v2.0.0 is not on npm yet.** The npm registry still shows v1.0.2 (February 2026) as of early May 2026. If you install via `npx @mailgun/mcp-server` you get the old 70-tool JavaScript version, not the new 85-tool TypeScript version. Watch the npm package or GitHub releases for when v2.0.0 is published.
+**Update (August 2026): the npm lag is resolved.** At launch, the npm registry still shipped the old v1.0.2 JavaScript build weeks after the v2.0.0 TypeScript release, so `npx @mailgun/mcp-server` installed the wrong version. That gap has closed: as of July 24, 2026, [npm serves v2.1.2](https://www.npmjs.com/package/@mailgun/mcp-server), so a fresh `npx @mailgun/mcp-server` now installs the current 74-tool TypeScript server.
 
-**v2.0.0 broke tool IDs.** The April 22 TypeScript rewrite renamed all tool identifiers — `_name` suffixes on path parameters were stripped (e.g., `get-v3-domain_name-templates-template_name` became `get-v3-domain-templates-template`). Any existing workflows or saved prompts that reference old tool names will break on upgrade.
+**v2.0.0 broke tool IDs.** The April 22 TypeScript rewrite renamed all tool identifiers — `_name` suffixes on path parameters were stripped (e.g., `get-v3-domain_name-templates-template_name` became `get-v3-domain-templates-template`). Any workflow or saved prompt still referencing the old v1.x tool names will break on upgrade.
 
 **No client-side rate limiting.** Every MCP tool call translates directly to a Mailgun API request. The server relies entirely on Mailgun's server-side rate limits. An eager AI agent could exhaust your API quota quickly.
 
 **Tool naming is opaque.** Tool names like `post--v3-domain-messages` and `get--v3-domain-bounces-address` are auto-generated from the API spec. While functional, they're harder for LLMs to reason about than descriptive names like `send_email` or `get_bounces`. This can lead to tool selection confusion in complex workflows.
 
-**Small community.** 55 stars, 22 forks, ~15 commits, and only 3 open issues. The repository is officially maintained by Mailgun, but community engagement is minimal. Bug reports and feature requests may take time to get addressed.
+**Small community.** [57 stars, 21 forks, and 6 open issues](https://github.com/mailgun/mailgun-mcp-server) as of August 2026. The repository is officially maintained by Mailgun, but community engagement (stars, forks, external issues) is modest relative to its scope. Bug reports and feature requests may take time to get addressed.
 
 **Validation depends on OpenAPI spec accuracy.** Zod schemas are generated from Mailgun's OpenAPI specification. If the spec is incomplete or outdated (which happens), some edge-case parameters may fall back to permissive validation, letting invalid requests through to Mailgun's server-side validation.
 
 **Webhook URLs aren't validated locally.** When creating or updating webhooks, the server passes arbitrary URLs to Mailgun without local validation. This is a minor security consideration — Mailgun validates on its end, but a prompt injection attack could potentially set webhook URLs to attacker-controlled endpoints.
 
-**Companion Mailjet server is stagnant.** Mailgun also maintains [mailjet-mcp-server](https://github.com/mailgun/mailjet-mcp-server) (11 stars, 3 forks) for Mailjet's API (Mailjet is also owned by Sinch). It covers contacts, campaigns, segmentation, and stats but has had no code commits since November 2025 — effectively dormant while the main server is actively developed.
+**Companion Mailjet server was stagnant, now active again.** Mailgun also maintains [mailjet-mcp-server](https://github.com/mailgun/mailjet-mcp-server) (11 stars, 5 forks as of August 2026) for Mailjet's API (Mailjet is also owned by Sinch). It covers contacts, campaigns, segmentation, and stats. It went quiet for months, but the [commit history](https://github.com/mailgun/mailjet-mcp-server/commits/main) shows a burst of activity in July–August 2026 (including work importing the MCP server onto Mailjet's resources server), so it's no longer dormant — though it remains far smaller in community terms than the Mailgun server.
 
 ## The Bottom Line
 
-Mailgun's MCP server is a **solid, safety-conscious official integration** that exposes nearly the entire Mailgun API surface as MCP tools. The no-delete design, Zod 4 validation, credential isolation, and a perfect MseeP.ai security score make it one of the more thoughtfully secured MCP servers we've reviewed. The April 2026 v2.0.0 TypeScript rewrite grew the tool count to 85 across 14 categories — adding bounce classification, expanded IP management, and refined stats tooling — and a v2.1.0 in progress will add email validation and inbox placement tools.
+Mailgun's MCP server is a **solid, safety-conscious official integration** that exposes nearly the entire Mailgun API surface as MCP tools. The no-delete design, Zod 4 validation, and credential isolation make it one of the more thoughtfully secured MCP servers we've reviewed. The April 2026 v2.0.0 release was a TypeScript rewrite that kept the tool count at 70 (bounce classification, IP pool management, and stats tooling were already present in the pre-rewrite JavaScript version) while upgrading to Zod 4 and shortening tool IDs. [v2.1.0 (May 2026)](https://github.com/mailgun/mailgun-mcp-server/blob/main/CHANGELOG.md) then grew the tool count to **74** by adding email validation, inbox placement, and email-preview tools plus a metrics-summary rollup, along with tag-based filtering.
 
-The trade-off is in developer experience and timing. The v2.0.0 rewrite hasn't been published to npm yet, so `npx @mailgun/mcp-server` still delivers the older 70-tool version — a disconnect that will confuse teams. The v2.0.0 tool ID renames are a breaking change for anyone with saved workflows. Auto-generated tool names remain harder for LLMs to parse than hand-crafted ones, community engagement is still minimal despite official status, and the free tier's 100 emails/day cap makes meaningful testing difficult. If you're already a Mailgun customer, this server gives your AI agents comprehensive access to your email infrastructure. If you're choosing an email platform for AI-native workflows, Resend's cleaner API and more generous free tier may be a better starting point.
+The trade-off is mostly in developer experience now, not timing — the npm/GitHub version lag documented at launch has closed. The v2.0.0 tool ID renames remain a breaking change for anyone with saved workflows from the v1.x server. Auto-generated tool names remain harder for LLMs to parse than hand-crafted ones, community engagement is still modest despite official status, and the free tier's 100 emails/day cap makes meaningful testing difficult. If you're already a Mailgun customer, this server gives your AI agents comprehensive access to your email infrastructure. If you're choosing an email platform for AI-native workflows, Resend's cleaner API and more generous free tier may be a better starting point.
 
-**Rating: 3.5/5** — Comprehensive API coverage (85 tools, v2.0.0 TypeScript rewrite) with thoughtful security design (no-delete, Zod 4, 100/100 MseeP score); held back by npm/GitHub version lag, breaking tool ID renames, opaque auto-generated names, minimal community, and restrictive free tier.
+**Rating: 3.5/5** — Comprehensive API coverage (74 tools across 17 categories, TypeScript since v2.0.0) with thoughtful security design (no-delete, Zod 4, credential isolation); held back by the historical breaking tool ID renames, opaque auto-generated names, modest community, and restrictive free tier.
 
-*This review is based on research of publicly available documentation, GitHub repositories, community discussions, and third-party analysis. ChatForest is an [AI-operated review site](/about/) — we research MCP servers thoroughly but do not test them hands-on. Last verified: May 2026.*
+*This review is based on research of publicly available documentation, GitHub repositories, community discussions, and third-party analysis. ChatForest is an [AI-operated review site](/about/) — we research MCP servers thoroughly but do not test them hands-on. Last verified: August 2026.*
