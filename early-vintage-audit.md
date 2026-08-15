@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 132/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 144/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -461,7 +461,7 @@ sweeps. Headline catches:
 - [ ] 2026-07-23 — [Telecommunications & Communications MCP Servers — Twilio, Telnyx, Vonage, Sinch, Plivo, Cisco Meraki, NetBox, UniFi, and More](content/reviews/telecommunications-communications-mcp-servers.md)
 - [ ] 2026-07-23 — [Telecommunications & Messaging MCP Servers — SMS, Voice, WhatsApp, Telegram, CPaaS, and Unified Communications](content/reviews/telecommunications-messaging-mcp-servers.md)
 - [ ] 2026-07-23 — [Terminal & CLI Tools MCP Servers — Shell Execution, tmux, SSH, and MCP Inspectors](content/reviews/terminal-cli-tools-mcp-servers.md)
-- [ ] 2026-07-23 — [The Ahrefs MCP Server — SEO Intelligence for Your AI Agent](content/reviews/ahrefs-mcp-server.md)
+- [x] 2026-07-23 — [The Ahrefs MCP Server — SEO Intelligence for Your AI Agent](content/reviews/ahrefs-mcp-server.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [The Google Colab MCP Server — GPU-Powered Notebooks for Your AI Agent](content/reviews/google-colab-mcp-server.md)
 - [ ] 2026-07-23 — [The HubSpot MCP Server — CRM Data at Your AI Agent's Fingertips](content/reviews/hubspot-mcp-server.md)
 - [ ] 2026-07-23 — [The Semgrep MCP Server — Security Scanning for AI-Generated Code](content/reviews/semgrep-mcp-server.md)
@@ -479,18 +479,18 @@ sweeps. Headline catches:
 - [ ] 2026-07-23 — [Web Scraping & Crawling MCP Servers — Firecrawl, Crawl4AI, Bright Data, Apify, Jina Reader, and More](content/reviews/web-scraping-crawling-mcp-servers.md)
 - [ ] 2026-07-23 — [Workflow Automation MCP Servers — n8n, Zapier, Make & More](content/reviews/workflow-automation-mcp-servers.md)
 - [ ] 2026-07-23 — [Zapier MCP Server — 9,000+ Apps and 40,000+ Actions for AI Agents](content/reviews/zapier-mcp-server.md)
-- [ ] 2026-07-24 — [API Development MCP Servers — OpenAPI Converters, GraphQL, gRPC, and the Rise of Spec-to-Server Generation](content/reviews/api-development-mcp-servers.md)
-- [ ] 2026-07-24 — [AWS Bedrock MCP Servers — The Cloud Giant's MCP Arsenal (Refreshed June 2026)](content/reviews/aws-bedrock-mcp-server.md)
-- [ ] 2026-07-24 — [Airtable MCP Server — Full Database CRUD for Your AI Agent](content/reviews/airtable-mcp-server.md)
+- [x] 2026-07-24 — [API Development MCP Servers — OpenAPI Converters, GraphQL, gRPC, and the Rise of Spec-to-Server Generation](content/reviews/api-development-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-24 — [AWS Bedrock MCP Servers — The Cloud Giant's MCP Arsenal (Refreshed June 2026)](content/reviews/aws-bedrock-mcp-server.md) — re-audited 2026-08-15
+- [x] 2026-07-24 — [Airtable MCP Server — Full Database CRUD for Your AI Agent](content/reviews/airtable-mcp-server.md) — re-audited 2026-08-15
 - [ ] 2026-07-24 — [Anyquery MCP Server — SQL Everything: Query 40+ Apps, Files, and Databases from Your AI Agent](content/reviews/anyquery-mcp-server.md)
-- [ ] 2026-07-24 — [Apify MCP Server — 3,000+ Scrapers at Your AI Agent's Fingertips](content/reviews/apify-mcp-server.md)
-- [ ] 2026-07-24 — [Bitbucket MCP Servers — The Missing Piece in Atlassian's AI Strategy](content/reviews/bitbucket-mcp-server.md)
-- [ ] 2026-07-24 — [Bright Data MCP Server — Enterprise Web Access That Actually Beats Anti-Bot Protection](content/reviews/bright-data-mcp-server.md)
+- [x] 2026-07-24 — [Apify MCP Server — 3,000+ Scrapers at Your AI Agent's Fingertips](content/reviews/apify-mcp-server.md) — re-audited 2026-08-15
+- [x] 2026-07-24 — [Bitbucket MCP Servers — The Missing Piece in Atlassian's AI Strategy](content/reviews/bitbucket-mcp-server.md) — re-audited 2026-08-15
+- [x] 2026-07-24 — [Bright Data MCP Server — Enterprise Web Access That Actually Beats Anti-Bot Protection](content/reviews/bright-data-mcp-server.md) — re-audited 2026-08-15
 - [ ] 2026-07-24 — [CI/CD MCP Servers — Build Pipelines Get an AI Interface](content/reviews/ci-cd-mcp-servers.md)
-- [ ] 2026-07-24 — [Code Generation MCP Servers — UI Components, Context Providers, and the Paradox of AI Writing Its Own Tools](content/reviews/code-generation-mcp-servers.md)
-- [ ] 2026-07-24 — [Code Review & Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers](content/reviews/code-review-pull-request-mcp-servers.md)
-- [ ] 2026-07-24 — [Cohere MCP Server — Enterprise AI's North Star Meets the Model Context Protocol](content/reviews/cohere-mcp-server.md)
-- [ ] 2026-07-24 — [Composio MCP Server — 500+ App Integrations Through a Single Endpoint](content/reviews/composio-mcp-server.md)
+- [x] 2026-07-24 — [Code Generation MCP Servers — UI Components, Context Providers, and the Paradox of AI Writing Its Own Tools](content/reviews/code-generation-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-24 — [Code Review & Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers](content/reviews/code-review-pull-request-mcp-servers.md) — re-audited 2026-08-15
+- [x] 2026-07-24 — [Cohere MCP Server — Enterprise AI's North Star Meets the Model Context Protocol](content/reviews/cohere-mcp-server.md) — re-audited 2026-08-15
+- [x] 2026-07-24 — [Composio MCP Server — 500+ App Integrations Through a Single Endpoint](content/reviews/composio-mcp-server.md) — re-audited 2026-08-15
 - [ ] 2026-07-24 — [Database Migration & Schema Management MCP Servers — Google Toolbox Hits v1.0 GA, boringSQL/dryrun Adds Offline Safety Analysis, Core Gaps Remain](content/reviews/database-migration-mcp-servers.md)
 - [ ] 2026-07-24 — [Docker MCP Servers — Container Management Gets an AI Layer (Plus the MCP Catalog That Hosts 300+ Others)](content/reviews/docker-mcp-servers.md)
 - [ ] 2026-07-24 — [Documentation Tooling MCP Servers — Google Developer Knowledge API Goes Official, GitBook Auto-MCP Joins Platform Wave, llms.txt Emerges as Documentation Standard](content/reviews/documentation-tooling-mcp-servers.md)
@@ -532,7 +532,7 @@ sweeps. Headline catches:
 - [ ] 2026-07-24 — [Spotify MCP Server Review — Playback, Playlists & More](content/reviews/spotify-mcp-server.md)
 - [ ] 2026-07-24 — [Square MCP Server — AI-Powered Commerce with Payments, Orders, Inventory, Loyalty, and Full API Access](content/reviews/square-mcp-server.md)
 - [ ] 2026-07-24 — [Testing & QA MCP Servers — From Browser Automation to Mobile, Cloud, and Test Runner Integration](content/reviews/testing-qa-mcp-servers.md)
-- [ ] 2026-07-24 — [The Chrome DevTools MCP Server — Browser Debugging and Performance Profiling for AI Coding Agents](content/reviews/chrome-devtools-mcp-server.md)
+- [x] 2026-07-24 — [The Chrome DevTools MCP Server — Browser Debugging and Performance Profiling for AI Coding Agents](content/reviews/chrome-devtools-mcp-server.md) — re-audited 2026-08-15
 - [ ] 2026-07-24 — [The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)](content/reviews/duckduckgo-mcp-server.md)
 - [ ] 2026-07-24 — [The GreptimeDB MCP Server — Observability Data Meets AI Agents](content/reviews/greptimedb-mcp-server.md)
 - [ ] 2026-07-24 — [The ReactBits MCP Server — 135+ Animated React Components for AI Coding Agents](content/reviews/reactbits-mcp-server.md)

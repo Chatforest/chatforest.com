@@ -1,13 +1,13 @@
-# Composio MCP Server — 500+ App Integrations Through a Single Endpoint
+# Composio MCP Server — 1,000+ App Integrations Through a Single Endpoint
 
-> Composio's MCP server connects AI agents to 500+ apps — Gmail, Slack, GitHub, Notion, Salesforce, and more — through a single managed endpoint with built-in OAuth.
+> Composio's MCP server connects AI agents to 1,000+ apps — Gmail, Slack, GitHub, Notion, Salesforce, and more — through a single managed endpoint with built-in OAuth.
 
 
-**At a glance:** ~28,000 stars, 4,542 forks, MIT license, TypeScript/Python SDKs, stdio + HTTPS transport, ~982 toolkits / 20,000+ tools across 500+ apps, $29M funded (Series A). Tool Router is now GA. Rube (the standalone universal MCP repo) has been absorbed into the main SDK. mcp.composio.dev is fully deprecated.
+**At a glance:** ~29,700 stars, 4,704 forks, MIT license, TypeScript/Python SDKs, stdio + HTTPS transport, [~1,109 toolkits / 20,000+ tools across 1,000+ apps](https://composio.dev/toolkits), $29M funded (Series A). Tool Router is now GA. Rube (the standalone universal MCP repo) has been absorbed into the main SDK. mcp.composio.dev is fully deprecated.
 
-Composio is an **agentic integration platform** that connects AI agents to 500+ SaaS applications through a unified MCP endpoint. Rather than installing and configuring separate MCP servers for each service, Composio acts as a gateway — one server that routes requests to Gmail, Slack, GitHub, Notion, Salesforce, HubSpot, Google Sheets, Linear, Jira, and hundreds of other apps.
+Composio is an **agentic integration platform** that connects AI agents to [1,000+ SaaS applications](https://composio.dev/toolkits) through a unified MCP endpoint. Rather than installing and configuring separate MCP servers for each service, Composio acts as a gateway — one server that routes requests to Gmail, Slack, GitHub, Notion, Salesforce, HubSpot, Google Sheets, Linear, Jira, and hundreds of other apps.
 
-The [ComposioHQ/composio repository](https://github.com/ComposioHQ/composio) has ~28,000 GitHub stars and 4,542 forks. The company [raised $29M total](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html) — a $4M seed from Together Fund and a $25M Series A led by Lightspeed Venture Partners (announced July 2025), with participation from Elevation Capital. As of May 2026, Composio has ~65 employees (up from ~57 in January 2026), [200+ paying customers, and hit $2M in revenue by mid-2025](https://getlatka.com/companies/composio.dev).
+The [ComposioHQ/composio repository](https://github.com/ComposioHQ/composio) has ~29,700 GitHub stars and 4,704 forks (as of August 2026). The company has [raised $29M total](https://composio.dev/blog/series-a) — a [$4M seed led by Together Fund and Elevation Capital (2024)](https://www.together.fund/perspectives/insights/investing-in-composio-building-the-learning-layer-for-agentic-ai) and a [$25M Series A led by Lightspeed Venture Partners (announced July 22, 2025)](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html), with participation from Elevation Capital, Together Fund, and angel investors including Vercel CEO Guillermo Rauch and HubSpot co-founder Dharmesh Shah. Composio was [founded in 2023](https://www.forbesindia.com/article/ai-special-2025/soham-ganatra-and-karan-vaidyas-composio-enabling-ai-systems-to-talk-to-each-other-and-the-real-world/96246/1) by Soham Ganatra and Karan Vaidya. Reliable, independently-corroborated figures for employee count and revenue are not available — the only source that publishes them (a third-party estimate tracker) elsewhere states on the same page that Composio is "bootstrapped" with "$0" in funding, which the funding round announcements above directly contradict, so those figures are omitted here rather than repeated from an unreliable source.
 
 ## What It Does
 
@@ -26,7 +26,7 @@ You configure which toolkit and which specific tools to expose. For example, a G
 
 ### 2. Tool Router — Universal MCP Access (Now GA)
 
-Composio's **Tool Router** (now generally available as of May 2026) is the evolution of the Rube concept. Originally launched as a separate product under the name Rube (its standalone GitHub repo has since been removed), it's now integrated into the main Composio platform as the core way to build with Composio.
+Composio's [**Tool Router**](https://composio.dev/blog/introducing-tool-router-%28beta%29) (launched in beta October 2025, now generally available) is the evolution of the Rube concept. Originally launched as a separate product under the name Rube (its standalone GitHub repo now returns a 404), it's now integrated into the main Composio platform as the core way to build with Composio.
 
 Tool Router creates **pre-signed MCP session URLs per user** with automatic tool selection from 20,000+ tools. Instead of exposing every tool to the model, it surfaces only the relevant tools for a given task:
 
@@ -47,7 +47,7 @@ This lets agent-driven environments invoke Composio tools directly, alongside MC
 
 ## Supported Apps (Sample)
 
-Composio connects to 500+ apps across categories:
+Composio connects to [1,000+ apps](https://composio.dev/toolkits) across categories:
 
 | Category | Example Apps |
 |----------|-------------|
@@ -69,7 +69,7 @@ Authentication is Composio's core differentiator. The platform handles:
 - **Managed OAuth** — Composio manages the full OAuth flow for each app. Users authenticate once through Composio's UI, and tokens are encrypted end-to-end. The MCP server never exposes credentials to the LLM.
 - **Token lifecycle** — Automatic refresh, rotation, and revocation management.
 - **Multi-tenant support** — Each user gets isolated credentials via `user_id` parameters. A single Composio server can serve multiple users without credential mixing.
-- **API key enforcement** — As of March 2026, all new organizations require `x-api-key` headers on MCP requests by default.
+- **API key enforcement** — [As of March 5, 2026, `require_mcp_api_key` defaults to `true` for newly created organizations](https://docs.composio.dev/docs/projects), meaning MCP requests without a valid `x-api-key` header are rejected.
 
 This eliminates the biggest pain point of self-hosted MCP servers: manually configuring OAuth flows, managing token expiry, and securing credentials for each integration.
 
@@ -127,12 +127,11 @@ This means you can use Composio's integrations whether your client supports MCP 
 
 ## Company & Ecosystem
 
-- **Founded:** 2023
-- **Funding:** [$29M total](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html) ($4M seed + $25M Series A, announced July 2025)
+- **Founded:** [2023](https://www.forbesindia.com/article/ai-special-2025/soham-ganatra-and-karan-vaidyas-composio-enabling-ai-systems-to-talk-to-each-other-and-the-real-world/96246/1), by Soham Ganatra and Karan Vaidya
+- **Funding:** [$29M total](https://composio.dev/blog/series-a) ($4M seed + $25M Series A, [announced July 22, 2025](https://www.prnewswire.com/news-releases/composio-raises-29m-to-solve-ais-learning-problem-building-skills-that-actually-improve-over-time-302510684.html))
 - **Lead investors:** Lightspeed Venture Partners, Elevation Capital, Together Fund
-- **Employees:** ~65 (May 2026, up from ~57 in January 2026)
-- **Revenue:** $2M by mid-2025, 200+ paying customers
-- **Repository:** ~28,000 stars, 4,542 forks, MIT license
+- **Employees / revenue:** No independently-corroborated figures available (see note above)
+- **Repository:** ~29,700 stars, 4,704 forks, MIT license (as of August 2026)
 - **Tool Router (formerly Rube):** Now GA and integrated into the main SDK; standalone Rube repo removed
 
 The company positions itself as "the integration layer for AI agents" — handling auth, tool management, and API routing so developers focus on agent logic.
@@ -154,7 +153,7 @@ The free tier is genuinely generous — 20,000 tool calls per month with no cred
 
 | Feature | Composio | Pipedream MCP | Zapier MCP | Individual Servers |
 |---------|----------|---------------|------------|-------------------|
-| **Apps** | 500+ | 2,800+ | 8,000+ | 1 per server |
+| **Apps** | [1,000+](https://composio.dev/toolkits) | [3,000+](https://pipedream.com/docs/connect/mcp) | [8,000+](https://help.zapier.com/hc/en-us/sections/41038080083981-MCP) | 1 per server |
 | **MCP tools** | 1,000+ toolkits | 10,000+ auto-generated | Varies by action | Purpose-built |
 | **Auth management** | Managed OAuth | Managed OAuth | Managed (existing Zapier) | Manual per-server |
 | **Context management** | Dynamic discovery (Rube) | Per-app endpoints | Action-based | N/A |
@@ -163,7 +162,7 @@ The free tier is genuinely generous — 20,000 tool calls per month with no cred
 | **License** | MIT | Proprietary | Proprietary | Varies |
 | **Transport** | stdio + HTTPS | HTTP/SSE/stdio | HTTPS | Varies |
 
-**vs. Pipedream:** Pipedream has far more integrations (2,800+ apps) but auto-generates tools from API specs, leading to variable quality. Composio's tools are more curated. Pipedream was acquired by Workday (November 2025), introducing platform uncertainty. Composio remains independent.
+**vs. Pipedream:** Pipedream has far more integrations (3,000+ apps) but auto-generates tools from API specs, leading to variable quality. Composio's tools are more curated. [Pipedream was acquired by Workday (announced November 19, 2025)](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream), introducing platform uncertainty. Composio remains independent.
 
 **vs. Zapier:** Zapier covers 8,000+ apps but its task-based pricing can escalate quickly with AI agents that make many small calls. Composio's tool-call pricing is more predictable for agent workloads.
 
@@ -171,14 +170,14 @@ The free tier is genuinely generous — 20,000 tool calls per month with no cred
 
 ## Known Issues
 
-- **Parameter mismatch bug (still open)** — The Python SDK's `MCP.update()` method incorrectly maps `allowed_tools` to `custom_tools`, causing TypeErrors when updating server configurations ([#2161](https://github.com/ComposioHQ/composio/issues/2161)). PR #2862 fixes this but remains unmerged as of May 2026.
-- **LlamaIndex schema parsing** — Composio's JSON schemas use `additionalProperties: false`, which caused parsing failures in LlamaIndex's MCP tool parser (fixed upstream in LlamaIndex).
+- **Parameter mismatch bug — resolved without the proposed fix** — The Python SDK's `MCP.update()` method incorrectly mapped `allowed_tools` to `custom_tools`, causing TypeErrors when updating server configurations ([#2161](https://github.com/ComposioHQ/composio/issues/2161), now closed). The fix PR that had been open for months, [#2862](https://github.com/ComposioHQ/composio/pull/2862), was ultimately closed without being merged (May 4, 2026); the issue was resolved through other means. Worth confirming current SDK behavior before relying on `MCP.update()`.
+- **LlamaIndex schema parsing** — Composio's JSON schemas use `additionalProperties: false`, which caused parsing failures in LlamaIndex's MCP tool parser, dropping tool counts to zero for servers like Gmail and Google Calendar (fixed upstream via [llama_index PR #20082](https://github.com/run-llama/llama_index/pull/20082)).
 - **Context window consumption** — Even with Tool Router's dynamic discovery, meta-tools still consume context. In Cursor, the 30-tool limit means Composio competes with other MCP servers for tool slots.
 - **Tool quality varies by app** — Popular apps (Gmail, GitHub, Slack) have well-tested tools. Less popular integrations may have incomplete or untested tool definitions.
 - **mcp.composio.dev fully deprecated** — The original hosted MCP servers now return a 301 redirect to `composio.dev/toolkits/`. Users must migrate to the SDK (`composio.mcp.create()`) or use the Tool Router.
-- **152 open GitHub issues** — Nearly double the 79 issues from March 2026. Growth reflects an expanding user base generating more support requests and bug reports.
-- **X/Twitter integration broken** — X moved to pay-per-use API access in February 2026. Composio's X integration no longer works with managed credentials; users must now supply their own X Developer credentials. Open issues reference 403 and 426 errors from other providers (Spotify, LinkedIn) with deprecated endpoints.
-- **Python SDK breaking change (py@0.12.0, April 28, 2026)** — Automatic file upload/download is now opt-in via `dangerously_allow_auto_upload_download_files` flag (default: False). Users upgrading from earlier versions must explicitly enable this behavior.
+- **[~27 open GitHub issues](https://github.com/ComposioHQ/composio/issues)** as of August 2026 — down substantially from the 152 open issues reported in an earlier version of this review (May 2026), suggesting an active triage/cleanup pass by maintainers.
+- **X/Twitter integration broken** — [X moved to pay-per-use API access in February 2026](https://composio.dev/blog/incident-report-february-9-2026); Composio's X integration no longer works with managed credentials, and users must now supply their own X Developer credentials. Other provider-side breakage is also open: LinkedIn's API version `20241101` was sunset, causing `LINKEDIN_CREATE_LINKED_IN_POST` to fail with a 426 error ([#3113](https://github.com/ComposioHQ/composio/issues/3113), [#3468](https://github.com/ComposioHQ/composio/issues/3468)), and Spotify OAuth cannot currently be initiated from Claude Code's MCP client due to a missing auth-config parameter ([#3451](https://github.com/ComposioHQ/composio/issues/3451)).
+- **Python SDK breaking change ([py@0.12.0, April 28, 2026](https://pypi.org/project/composio/#history))** — Automatic file upload/download is now opt-in via `dangerously_allow_auto_upload_download_files` flag (default: False). Users upgrading from earlier versions must explicitly enable this behavior.
 
 ## What We Think
 
@@ -190,7 +189,7 @@ Composio solves the right problem: connecting AI agents to dozens of apps withou
 
 **Where it falls short:** Composio is a gateway, not a deep integration. Purpose-built MCP servers for individual services (GitHub, Slack, Notion) will always offer more complete API coverage and better tool design. Composio's value is in breadth — when you need 10+ integrations, setting up 10 separate MCP servers with individual OAuth configurations is painful.
 
-The platform has matured considerably — the original `mcp.composio.dev` is now fully deprecated and replaced, the Tool Router is GA, and the product direction is clearer. However, the X/Twitter breakage (API cost changes forcing users to self-supply credentials), a near-doubling of open GitHub issues (79→152), and a parameter mismatch bug still unmerged after months point to an operation that's growing faster than its QA can keep pace.
+The platform has matured considerably — the original `mcp.composio.dev` is now fully deprecated and replaced, the Tool Router is GA, and the product direction is clearer. The X/Twitter breakage (API cost changes forcing users to self-supply credentials) and similar breakage on LinkedIn and Spotify show that Composio's breadth comes with ongoing exposure to third-party API changes outside its control; the open GitHub issue count has come down substantially since this review was last refreshed, which is a positive maintenance signal.
 
 **Best for:** Teams building multi-app AI agents who need many integrations quickly. **Not ideal for:** Deep single-service automation where a dedicated MCP server would be more complete and reliable, or workflows dependent on X/Twitter, Spotify, or LinkedIn (currently broken).
 

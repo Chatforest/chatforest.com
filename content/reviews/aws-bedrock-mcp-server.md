@@ -2,16 +2,16 @@
 title: "AWS Bedrock MCP Servers — The Cloud Giant's MCP Arsenal (Refreshed June 2026)"
 date: 2026-03-23T18:00:00+09:00
 description: "AWS operates the largest official MCP server collection: 54 open-source servers plus a managed GA remote server, covering databases, compute, security, cost management, and more."
-og_description: "AWS publishes 54 open-source MCP servers (8.9K stars) plus a GA managed remote server, moved OpenAI GPT-5.5/5.4/Codex to GA on Bedrock, and added Terraform support for AgentCore. Rating: 4.5/5."
+og_description: "AWS publishes 54+ open-source MCP servers (9.6K stars) plus a GA managed remote server, moved OpenAI GPT-5.5/5.4/Codex to GA on Bedrock, and added Terraform support for AgentCore. Rating: 4.5/5."
 content_type: "Review"
 card_description: "AWS operates the largest official MCP server collection: 54 open-source servers in a single Apache 2.0 monorepo plus a GA managed remote MCP server. Combined with MCP client support in Kiro IDE and Bedrock AgentCore, AWS has built the most comprehensive cloud-native MCP ecosystem."
 last_refreshed: 2026-06-11
-sources_audited: 2026-07-24
+sources_audited: 2026-08-15
 ---
 
-**At a glance:** AWS publishes **54 open-source MCP servers** in [awslabs/mcp](https://github.com/awslabs/mcp) (8,900 stars, Apache 2.0) plus a **GA managed remote MCP server** (AWS MCP Server) — the largest MCP server collection from any single organization. Servers cover databases (DynamoDB, Neptune, Redshift), compute (ECS, EKS, Lambda), security (IAM, Well-Architected), cost management, and more. MCP client support exists in **Kiro IDE** (replacing Amazon Q Developer), the Q Developer CLI, and Bedrock AgentCore. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** AWS publishes **54+ open-source MCP servers** (grown to [62 as of this audit](https://awslabs.github.io/mcp/servers)) in [awslabs/mcp](https://github.com/awslabs/mcp) (9,600 stars, Apache 2.0) plus a **GA managed remote MCP server** (AWS MCP Server) — the largest MCP server collection from any single organization. Servers cover databases (DynamoDB, Neptune, Redshift), compute (ECS, EKS, Lambda), security (IAM, Well-Architected), cost management, and more. MCP client support exists in **Kiro IDE** (replacing Amazon Q Developer), the Q Developer CLI, and Bedrock AgentCore. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
-**June 2026 update:** The **AWS MCP Server reached general availability** (May 6, 2026) with major new capabilities: **Agent Skills** replacing Agent SOPs, **sandboxed Python execution** against AWS APIs, IAM context keys for human/agent permission separation, and no additional charge. It is now part of the **Agent Toolkit for AWS** umbrella. **OpenAI GPT-5.5, GPT-5.4, and Codex moved from limited preview to GA on Bedrock** (June 1, 2026) with pricing now matching OpenAI first-party rates. **AgentCore gained Terraform support** via provider v6.49.0 (June 4, 2026), and the Runtime added AG-UI protocol support and bring-your-own filesystem via S3/EFS. **Kiro IDE** added parallel task execution, Quick Plan mode, and Requirements Analysis in June. Three new CVEs to note.
+**June 2026 update:** The [**AWS MCP Server reached general availability**](https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/) (May 6, 2026) with major new capabilities: **Agent Skills** replacing Agent SOPs, **sandboxed Python execution** against AWS APIs, IAM context keys for human/agent permission separation, and no additional charge. It is now part of the **Agent Toolkit for AWS** umbrella. [**OpenAI GPT-5.5, GPT-5.4, and Codex moved from limited preview to GA on Bedrock**](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/) (June 1, 2026) with pricing now matching OpenAI first-party rates. **AgentCore gained Terraform support** via [provider v6.49.0](https://github.com/hashicorp/terraform-provider-aws/releases/tag/v6.49.0) (June 4, 2026), and the Runtime added AG-UI protocol support and bring-your-own filesystem via S3/EFS. **Kiro IDE** added [parallel task execution, Quick Plan mode, and Requirements Analysis](https://kiro.dev/changelog/ide/0-12/) in May (not June as an earlier version of this review stated). Three new CVEs to note.
 
 AWS has taken a **go-wide infrastructure approach** to MCP, treating it as a protocol for connecting AI agents to cloud services. Rather than wrapping a single API, AWS built dozens of purpose-specific servers — each one a gateway to a different AWS service. This reflects AWS's core business: they don't sell models (though Bedrock now hosts models from 15+ providers including OpenAI), they sell the infrastructure those models connect to.
 
@@ -23,7 +23,7 @@ AWS has taken a **go-wide infrastructure approach** to MCP, treating it as a pro
 
 ### The awslabs/mcp Monorepo (54 Open-Source Servers)
 
-The primary repository at [awslabs/mcp](https://github.com/awslabs/mcp) contains 54 individual MCP servers organized by AWS service. The April 21, 2026 release removed 12 deprecated server directories and consolidated functionality, reducing the count from the original 68. Since then, several new servers have been added (including the CCAPI and AgentCore MCP servers), and third-party trackers suggest the count has grown past 54 — check [awslabs.github.io/mcp/servers](https://awslabs.github.io/mcp/servers) for the current authoritative list.
+The primary repository at [awslabs/mcp](https://github.com/awslabs/mcp) contained 54 individual MCP servers organized by AWS service as of the last refresh. The April 21, 2026 release removed 12 deprecated server directories and consolidated functionality, reducing the count from the original 68. Since then, several new servers have been added — as of this audit (2026-08-15), [awslabs.github.io/mcp/servers](https://awslabs.github.io/mcp/servers) lists **62 servers** ("Showing 62 of 62 servers"); check that page for the current authoritative list, as the count changes frequently. **Note:** the AWS Cloud Control API (CCAPI) MCP server referenced below has since been [deprecated](https://awslabs.github.io/mcp/servers/ccapi-mcp-server) in favor of the AWS IAC MCP Server.
 
 | Category | Servers |
 |----------|---------|
@@ -38,12 +38,12 @@ The primary repository at [awslabs/mcp](https://github.com/awslabs/mcp) contains
 | Agent Infrastructure | Bedrock AgentCore |
 | Networking & Storage | VPC, S3, Cloud Storage, Network |
 | Enterprise | AWS Systems Manager for SAP, AWS For SAP Management (NEW April 29, 2026) |
-| Infrastructure | AWS Cloud Control API (CCAPI) — natural language CRUDL for 1,200+ resource types via Cloud Control API (NEW May/June 2026) |
+| Infrastructure | AWS Cloud Control API (CCAPI) — natural language CRUDL for 1,200+ resource types via Cloud Control API. **Since [deprecated](https://awslabs.github.io/mcp/servers/ccapi-mcp-server)** in favor of the AWS IAC MCP Server (as of this audit) |
 | Agent Infrastructure | Amazon Bedrock AgentCore MCP Server (NEW 2026) |
 
 | Aspect | Detail |
 |--------|--------|
-| GitHub | [awslabs/mcp](https://github.com/awslabs/mcp) — 8,900 stars, 1,566 forks |
+| GitHub | [awslabs/mcp](https://github.com/awslabs/mcp) — 9,600 stars, 1,700 forks (as of 2026-08-15) |
 | Language | Python |
 | License | Apache 2.0 |
 | Commits | 1,500+ |
@@ -71,12 +71,12 @@ This is AWS's answer to the "stdio only" limitation of the open-source servers �
 
 | Repository | Stars | Description |
 |-----------|-------|-------------|
-| [aws/mcp-proxy-for-aws](https://github.com/aws/mcp-proxy-for-aws) | 249 | AWS MCP Proxy Server with SigV4 authentication |
-| [awslabs/run-model-context-protocol-servers-with-aws-lambda](https://github.com/awslabs/run-model-context-protocol-servers-with-aws-lambda) | 353 | Run stdio MCP servers as Lambda functions |
-| [aws-samples/sample-serverless-mcp-servers](https://github.com/aws-samples/sample-serverless-mcp-servers) | 230 | Sample MCP servers on AWS Serverless compute |
-| [aws-samples/aws-mcp-servers-samples](https://github.com/aws-samples/aws-mcp-servers-samples) | 191 | Additional AWS MCP server samples |
-| [awslabs/Log-Analyzer-with-MCP](https://github.com/awslabs/Log-Analyzer-with-MCP) | 154 | Log analysis via MCP |
-| [aws-solutions-library-samples/guidance-for-deploying-model-context-protocol-servers-on-aws](https://github.com/aws-solutions-library-samples/guidance-for-deploying-model-context-protocol-servers-on-aws) | 147 | Deployment guidance for MCP on AWS infrastructure |
+| [aws/mcp-proxy-for-aws](https://github.com/aws/mcp-proxy-for-aws) | 339 | AWS MCP Proxy Server with SigV4 authentication |
+| [awslabs/run-model-context-protocol-servers-with-aws-lambda](https://github.com/awslabs/run-model-context-protocol-servers-with-aws-lambda) | 378 | Run stdio MCP servers as Lambda functions |
+| [aws-samples/sample-serverless-mcp-servers](https://github.com/aws-samples/sample-serverless-mcp-servers) | 243 | Sample MCP servers on AWS Serverless compute |
+| [aws-samples/aws-mcp-servers-samples](https://github.com/aws-samples/aws-mcp-servers-samples) | 189 | Additional AWS MCP server samples — **now archived** (read-only) |
+| [awslabs/Log-Analyzer-with-MCP](https://github.com/awslabs/Log-Analyzer-with-MCP) | 167 | Log analysis via MCP |
+| [aws-solutions-library-samples/guidance-for-deploying-model-context-protocol-servers-on-aws](https://github.com/aws-solutions-library-samples/guidance-for-deploying-model-context-protocol-servers-on-aws) | 153 | Deployment guidance for MCP on AWS infrastructure |
 
 ### MCP Client Support
 
@@ -84,7 +84,7 @@ AWS offers MCP client support across multiple products:
 
 | Product | MCP Support | Detail |
 |---------|------------|--------|
-| **Kiro IDE** | Yes | AWS's agentic IDE replacing Q Developer IDE plugins. Native MCP support including remote servers. Specs, hooks, steering files, custom subagents. [**GA November 2025.**](https://siliconangle.com/2025/11/17/aws-launches-kiro-general-availability-team-features-cli-support/) June 2026: parallel task execution (up to 4x faster), Quick Plan mode (single-pass spec generation), Requirements Analysis (automated reasoning to catch logical gaps). Claude Opus 4.8 added experimentally (1M context). |
+| **Kiro IDE** | Yes | AWS's agentic IDE replacing Q Developer IDE plugins. Native MCP support including remote servers. Specs, hooks, steering files, custom subagents. [**GA November 2025.**](https://siliconangle.com/2025/11/17/aws-launches-kiro-general-availability-team-features-cli-support/) [May 2026](https://kiro.dev/changelog/ide/0-12/): parallel task execution (up to 4x faster), Quick Plan mode (single-pass spec generation), Requirements Analysis (automated reasoning to catch logical gaps). [Claude Opus 4.8 added experimentally](https://kiro.dev/changelog/models/claude-opus-4-8-now-available/) (1M context), May 29, 2026. |
 | Amazon Q Developer CLI | Yes (since April 2025) | stdio and HTTP MCP server support. Progressive server loading — tools become available as servers initialize |
 | Amazon Q Developer IDE | **Sunsetting** | End of support April 30, 2027. New signups end May 15, 2026. Users should migrate to Kiro |
 | Bedrock Agents | Yes | Native MCP server invocation via AgentCore |
@@ -101,7 +101,7 @@ AgentCore is AWS's platform for deploying and managing AI agents with native MCP
 - **AgentCore Runtime** — GA October 2025. Deploys MCP servers in managed infrastructure with stateful session support (dedicated microVMs). Available across [15 AWS regions](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-four-additional-regions/). **March 2026**: added AG-UI protocol support. **May 2026**: bring-your-own file system via Amazon S3 Files and Amazon EFS
 - **AgentCore Policy** — GA March 3, 2026. Security controls defining agent action boundaries; verification happens outside the agent's reasoning loop before reaching tools or data
 - **AgentCore Evaluations** — GA March 31, 2026. Automated quality evaluations for deployed agents based on real-world behavior
-- **AgentCore CLI** — launched April 2026. **Terraform support now available** via Terraform AWS provider v6.49.0 (June 4, 2026), adding `aws_bedrockagentcore_gateway` and related resources alongside existing CDK support. Available in 15 regions at no additional charge
+- **AgentCore CLI** — launched April 2026. Terraform resources for AgentCore (`aws_bedrockagentcore_gateway` and related) have existed in the AWS provider since mid-2025; [**provider v6.49.0**](https://github.com/hashicorp/terraform-provider-aws/releases/tag/v6.49.0) (June 4, 2026) extended the `aws_bedrockagentcore_gateway` resource with new MCP session/streaming configuration blocks, alongside existing CDK support. Available in 15 regions at no additional charge
 - Supports elicitation, sampling, and progress notifications for stateful MCP sessions
 
 ## Community Servers
@@ -183,7 +183,7 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 
 | Feature | AWS | Anthropic | Google | OpenAI | Meta/Llama | Hugging Face | Mistral |
 |---------|-----|-----------|--------|--------|------------|-------------|---------|
-| Official MCP servers | Yes (54 open-source + managed remote, 8.9K stars) | No (reference servers) | Yes (24+ servers, 3.4K stars) | No | No | Yes (210 stars) | No |
+| Official MCP servers | Yes (54+ open-source + managed remote, 9.6K stars) | No (reference servers) | Yes (24+ servers, 3.4K stars) | No | No | Yes (210 stars) | No |
 | Server approach | Infrastructure-wide monorepo + managed remote servers | Reference implementations | Managed remote + open-source | Client only | Client only (Llama Stack) | Hub access + Gradio Spaces | Client only |
 | MCP client | Yes (Kiro IDE, Q Developer CLI, AgentCore) | Yes (all Claude products) | Yes (Gemini CLI, SDKs) | Yes (ChatGPT, Agents SDK) | Yes (Llama Stack) | No | Yes (Le Chat, Agents API) |
 | AAIF member | Yes (Platinum) | Yes (Platinum, co-founder) | Yes (Platinum) | Yes (Platinum, co-founder) | No | No | Yes (Silver) |
@@ -193,9 +193,9 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 
 ## Known Issues
 
-1. **Open-source server count reduced 68→54** — The April 21 release removed 12 deprecated server directories. While this is good housekeeping, it means some servers that existed at initial review no longer have standalone directories. The AWS MCP Server (Preview) consolidates some of this functionality.
+1. **Open-source server count reduced 68→54, since grown to 62** — The April 21 release removed 12 deprecated server directories. While this is good housekeeping, it means some servers that existed at initial review no longer have standalone directories. The AWS MCP Server (now GA) consolidates some of this functionality.
 
-2. **stdio only (open-source servers)** — SSE transport was removed in May 2025, and Streamable HTTP is not yet available for open-source servers. The managed AWS MCP Server (Preview) communicates over HTTPS, partially addressing this limitation.
+2. **stdio only (open-source servers)** — SSE transport was removed in May 2025, and Streamable HTTP is not yet available for open-source servers. The managed AWS MCP Server (GA) communicates over HTTPS, partially addressing this limitation.
 
 3. **OpenAPI MCP Server fixed** — Issue [#2533](https://github.com/awslabs/mcp/issues/2533) from our initial review has been resolved: the April 21 release migrated the OpenAPI MCP server to FastMCP 3.x.
 
@@ -209,7 +209,7 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 
 8. [**CVE-2026-4270: File access restriction bypass**](https://aws.amazon.com/security/security-bulletins/2026-007-AWS/) — Improper protection in the no-access and workdir feature of AWS API MCP Server (versions >= 0.2.14, < 1.3.9) allowed bypass of intended file access restrictions and exposure of arbitrary local file contents. Patched in v1.3.9.
 
-9. [**CVE-2026-5058**](https://www.sentinelone.com/vulnerability-database/cve-2026-5058/) and [**CVE-2026-5059: Critical RCE in community aws-mcp-server**](https://www.sentinelone.com/vulnerability-database/cve-2026-5059/) — Two critical command injection vulnerabilities (CVSS 9.8) disclosed April 11, 2026 in community aws-mcp-server packages allow remote code execution without authentication. These affect community-maintained packages, not the official awslabs/mcp monorepo. If you use third-party AWS MCP server packages, verify they are not affected.
+9. [**CVE-2026-5058**](https://www.sentinelone.com/vulnerability-database/cve-2026-5058/) ([NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-5058)) and [**CVE-2026-5059: Critical RCE in community aws-mcp-server**](https://www.sentinelone.com/vulnerability-database/cve-2026-5059/) ([NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-5059)) — Two critical command injection vulnerabilities (CVSS 9.8) disclosed April 11, 2026 in community aws-mcp-server packages allow remote code execution without authentication. These affect community-maintained packages, not the official awslabs/mcp monorepo. If you use third-party AWS MCP server packages, verify they are not affected.
 
 10. **AgentCore maturing rapidly** — The platform continues to evolve. AgentCore CLI now supports both CDK and Terraform (June 4, 2026). Runtime added AG-UI protocol and bring-your-own filesystem. The overall pattern is rapid iteration, so check release notes before upgrading.
 
@@ -219,24 +219,24 @@ AWS Bedrock hosts models from 15+ providers — and now **OpenAI** (limited prev
 
 **Rating: 4.5 out of 5** (holds from initial review)
 
-AWS continues to operate the **most extensive MCP server infrastructure** of any company. The shift from 68 to 54 open-source servers is actually a positive — removing deprecated directories and consolidating into managed remote servers shows maturation, not retreat. The **AWS MCP Server (Preview)** with 15,000+ API access and Agent SOPs represents the industry's most comprehensive managed MCP offering.
+AWS continues to operate the **most extensive MCP server infrastructure** of any company. The shift from 68 to 54 (now 62) open-source servers is actually a positive — removing deprecated directories and consolidating into managed remote servers shows maturation, not retreat. The **AWS MCP Server (GA)** with 15,000+ API access and Agent Skills represents the industry's most comprehensive managed MCP offering.
 
 **What changed since May 2026:**
 
 - **AWS MCP Server → GA** (May 6, 2026): Agent Skills replace Agent SOPs, sandboxed Python execution, IAM context keys, now part of Agent Toolkit for AWS; available in N. Virginia + Frankfurt; no additional charge
 - **OpenAI on Bedrock → GA** (June 1, 2026): GPT-5.5, GPT-5.4, Codex move from limited preview to production; pricing matches OpenAI first-party rates; GovCloud availability added
-- **AgentCore Terraform**: Provider v6.49.0 (June 4, 2026) adds AgentCore resources to Terraform Registry, closing the CDK-only gap
+- **AgentCore Terraform**: [Provider v6.49.0](https://github.com/hashicorp/terraform-provider-aws/releases/tag/v6.49.0) (June 4, 2026) extends the existing `aws_bedrockagentcore_gateway` resource with MCP session/streaming config blocks
 - **AgentCore Runtime updates**: AG-UI protocol support (March 2026); bring-your-own filesystem via S3 Files and EFS (May 2026)
-- **Kiro IDE June updates**: Parallel task execution (up to 4x faster), Quick Plan mode, Requirements Analysis, Claude Opus 4.8 experimental
+- **Kiro IDE updates** ([May 2026](https://kiro.dev/changelog/ide/0-12/), not June as an earlier version of this review stated): Parallel task execution (up to 4x faster), Quick Plan mode, Requirements Analysis, [Claude Opus 4.8 experimental](https://kiro.dev/changelog/models/claude-opus-4-8-now-available/) (May 29)
 - **Security**: CVE-2026-4270 patched (file access bypass in AWS API MCP Server); CVE-2026-5058/5059 critical RCE in community aws-mcp-server packages (CVSS 9.8)
-- **Cloud Control API MCP Server**: New server managing 1,200+ AWS resources through natural language via Cloud Control API
+- **Cloud Control API MCP Server**: Server managing 1,200+ AWS resources through natural language via Cloud Control API — **since deprecated** in favor of the AWS IAC MCP Server (noted as of this audit)
 
 **Prior changes (March → May 2026):**
 - Cleaned house: 12 deprecated servers removed (68→54), Core MCP deprecated, OpenAPI server fixed
 - OpenAI arrived on Bedrock (limited preview, April 28)
 - Q Developer → Kiro announced; IDE plugins sunset by April 2027
 - AgentCore: Policy GA (March 3), Evaluations GA (March 31), CLI launched (April), server-side tool execution (February)
-- URL allowlist bypass patched; 170% Bedrock spending growth QoQ
+- URL allowlist bypass patched; [170% Bedrock spending growth QoQ](https://finance.yahoo.com/technology/ai/articles/amazon-strengthens-bedrock-ecosystem-whats-145700198.html)
 
 **Why rating holds 4.5/5:** The managed server reaching GA and OpenAI models moving to production are meaningful positive milestones. The new CVEs in community packages are a warning, and the open-source/managed transition is still ongoing. The Q Developer sunset transition continues to carry friction risk. The overall trajectory is the strongest of any cloud provider — AWS is investing more in MCP infrastructure than anyone else — but the platform is in continuous transition and that carries inherent risk.
 

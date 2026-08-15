@@ -7,10 +7,10 @@ content_type: "Review"
 card_description: "Ahrefs' official MCP server for AI agents. Access backlink profiles, keyword data, domain ratings, and competitor insights through the Model Context Protocol. Remote server with OAuth — no local setup or API keys needed. Requires Ahrefs Lite plan ($129/mo) or higher."
 last_refreshed: 2026-05-03
 categories: ["/categories/web-search-scraping/"]
-sources_audited: 2026-07-23
+sources_audited: 2026-08-15
 ---
 
-**At a glance:** Official Ahrefs remote MCP server, OAuth authentication (no API keys), backlink analysis, keyword research, domain ratings, site audit, rank tracking, batch analysis, requires Lite plan or higher ($129/mo+), Streamable HTTP transport (SSE deprecated), ~94 GitHub stars on the legacy local server (now archived)
+**At a glance:** Official Ahrefs remote MCP server, OAuth authentication (no API keys), backlink analysis, keyword research, domain ratings, site audit, rank tracking, batch analysis, requires Lite plan or higher ($129/mo+), [Streamable HTTP transport (SSE deprecated)](https://docs.ahrefs.com/en/mcp/docs/introduction), [~101 GitHub stars](https://github.com/ahrefs/ahrefs-mcp-server) on the legacy local server (now archived)
 
 Ahrefs has released an [official MCP server](https://ahrefs.com/mcp/) that connects AI agents directly to one of the most comprehensive SEO data platforms in existence. If you're an SEO professional, content marketer, or digital strategist who works with AI coding agents, your agent can now pull backlink profiles, research keywords, check domain authority, and analyze competitors without you navigating the Ahrefs dashboard.
 
@@ -26,9 +26,9 @@ The Ahrefs MCP server exposes tools across [Ahrefs' core platform modules](https
 
 - **Keyword research** — explore keyword overviews, search volumes by country, keyword difficulty scores, traffic potential, and discover matching or related terms. The same data that powers Ahrefs' Keywords Explorer, accessible through your agent.
 
-- **Domain Rating (DR)** — check the strength and authority of any website's backlink profile on Ahrefs' logarithmic 0–100 scale. Quick competitive benchmarking without opening a browser.
+- **Domain Rating (DR)** — check the strength and authority of any website's backlink profile on [Ahrefs' logarithmic 0–100 scale](https://ahrefs.com/blog/domain-rating/). Quick competitive benchmarking without opening a browser.
 
-- **Batch analysis** — analyze up to 100 URLs or domains simultaneously using Ahrefs' SEO metrics. Useful for auditing large link lists, comparing competitor portfolios, or processing prospect lists.
+- **Batch analysis** — [analyze up to 100 URLs or domains simultaneously](https://docs.ahrefs.com/en/api/reference/batch-analysis/post-batch-analysis) using Ahrefs' SEO metrics. Useful for auditing large link lists, comparing competitor portfolios, or processing prospect lists.
 
 - **Search volume data** — country-specific search volume trends and click metrics for keyword targeting decisions.
 
@@ -38,7 +38,7 @@ The Ahrefs MCP server exposes tools across [Ahrefs' core platform modules](https
 
 ## Setup
 
-Ahrefs uses a remote MCP server with OAuth — no local installation required. The server initiates an OAuth flow when you connect, so there's no API key management. **The recommended transport is now Streamable HTTP** — the legacy SSE endpoint is deprecated.
+Ahrefs uses a remote MCP server with OAuth — no local installation required. The server initiates an OAuth flow when you connect, so there's no manual API key management. [**The recommended transport is Streamable HTTP** — the legacy SSE endpoint is deprecated](https://docs.ahrefs.com/en/mcp/docs/introduction).
 
 ### Claude Desktop
 
@@ -52,7 +52,7 @@ Ahrefs uses a remote MCP server with OAuth — no local installation required. T
 }
 ```
 
-When you first connect, Ahrefs will prompt you to authenticate through your browser. One-click setup is also available through Claude Desktop, Cursor, and Windsurf — no manual JSON configuration needed.
+When you first connect, Ahrefs will prompt you to authenticate through your browser. [Claude Desktop/Web offers a connector-directory flow](https://docs.ahrefs.com/en/mcp/docs/claude-desktop-web) (search "Ahrefs" in Connectors, click Connect, approve) with no manual JSON configuration needed; [Cursor is also officially supported](https://ahrefs.com/mcp/) via the same Streamable HTTP endpoint.
 
 ### Claude Code
 
@@ -64,9 +64,11 @@ claude mcp add ahrefs --transport http https://api.ahrefs.com/mcp/mcp
 
 ### Requirements
 
-- An active Ahrefs subscription: **Lite** ($129/mo), **Standard**, **Advanced**, or **Enterprise**
-- The new **Starter plan** ($29/mo, launched January 2026) does **not** include MCP access
+- An active Ahrefs subscription: [**Lite** ($129/mo), **Standard** ($249/mo), **Advanced** ($449/mo), or **Enterprise** ($1,499/mo)](https://ahrefs.com/pricing)
+- The [**Starter plan**](https://ahrefs.com/blog/starter-plan/) ($29/mo, introduced September 2024) does **not** [include MCP access](https://ahrefs.com/mcp/)
 - MCP calls consume Integration API units from your plan allocation
+
+Per-plan [MCP limits](https://ahrefs.com/mcp/):
 
 | Plan | API Units/Month | Max Rows/Request |
 |------|----------------|-----------------|
@@ -75,11 +77,11 @@ claude mcp add ahrefs --transport http https://api.ahrefs.com/mcp/mcp
 | Advanced | 1,000,000 | 500 |
 | Enterprise | 2,000,000 | Unlimited |
 
-At a minimum of 50 units per call, the Lite plan supports up to 2,000 MCP calls per month. Workspace admins can set per-key monthly limits to prevent overages.
+At a [minimum of 50 units per call](https://docs.ahrefs.com/en/api/docs/limits-consumption), the Lite plan supports up to 2,000 MCP calls per month. Workspace admins can set per-key monthly limits to prevent overages.
 
 ### Supported AI Clients
 
-Setup guides exist for: Claude (Web/Desktop/Mobile/Code), ChatGPT Web, Copilot Studio, Cursor, Windsurf, Lovable, n8n, Manus, and Opencrawl.
+[Dedicated setup guides](https://docs.ahrefs.com/en/mcp/docs/introduction) exist for: Claude (Web/Desktop/Mobile/Code), ChatGPT Web, Copilot Studio, Lovable, n8n, Manus, Mistral's Le Chat, and [OpenClaw](https://docs.ahrefs.com/en/mcp/docs/openclaw). Cursor and other standard MCP clients connect via the generic Streamable HTTP endpoint above.
 
 ## Who This Is For
 
@@ -101,9 +103,9 @@ Setup guides exist for: Claude (Web/Desktop/Mobile/Code), ChatGPT Web, Copilot S
 
 **World-class data.** Ahrefs has one of the largest web crawl indexes, with data on billions of pages. The SEO data you get through MCP is the same data that powers Ahrefs' dashboard tools.
 
-**Generous API limits (significantly upgraded).** Lite plan now includes 100,000 API units/month (up from 25,000) and 100 rows per request (up from 10). The original entry-level constraints were a real concern — both have been addressed substantially.
+**Generous API limits (significantly upgraded).** [Lite plan now includes 100,000 API units/month and 100 rows per request](https://ahrefs.com/mcp/) — up from the 25,000 units/month and 10 rows/request this review recorded at launch in March 2026. The original entry-level constraints were a real concern — both have been addressed substantially.
 
-**Broad client support.** ChatGPT Web, Copilot Studio, n8n, and Lovable support added since launch, alongside the original Claude and Cursor integrations.
+**Broad client support.** [ChatGPT Web, Copilot Studio, n8n, Lovable, Manus, Mistral's Le Chat, and OpenClaw](https://docs.ahrefs.com/en/mcp/docs/introduction) support added since launch, alongside the original Claude and Cursor integrations.
 
 **Streamable HTTP transport.** Migration to Streamable HTTP (from SSE) aligns with the current MCP spec, offering better performance and reliability for streaming responses.
 
@@ -113,17 +115,17 @@ Setup guides exist for: Claude (Web/Desktop/Mobile/Code), ChatGPT Web, Copilot S
 
 **API units are consumed.** Every MCP call uses Integration API units from your plan. At 50 units minimum per call, even with the Lite plan's upgraded 100,000 units, intensive agent usage could burn through your allocation.
 
-**Starter plan exclusion is a missed opportunity.** Ahrefs launched a $29/month Starter plan in January 2026, but MCP is locked to Lite ($129/month) and above. This creates a large price gap for users who want to experiment with agentic SEO workflows before committing.
+**Starter plan exclusion is a missed opportunity.** Ahrefs' [$29/month Starter plan](https://ahrefs.com/blog/starter-plan/), on the market since September 2024, still does not include MCP access — [MCP is locked to Lite ($129/month) and above](https://ahrefs.com/mcp/). This creates a large price gap for users who want to experiment with agentic SEO workflows before committing.
 
-**Community alternatives are limited.** [cnych/seo-mcp](https://github.com/cnych/seo-mcp) provides free Ahrefs-derived SEO tools and has grown to 240 stars, but its last commit was April 2025 — dormant for over a year. No active, full-featured community alternative exists.
+**Community alternatives are limited.** [cnych/seo-mcp](https://github.com/cnych/seo-mcp) provides free Ahrefs-derived SEO tools and has grown to ~255 stars, but its [last commit was April 2025](https://github.com/cnych/seo-mcp/commits/main) — dormant for well over a year. No active, full-featured community alternative exists.
 
-**Legacy local server archived.** The [ahrefs/ahrefs-mcp-server](https://github.com/ahrefs/ahrefs-mcp-server) GitHub repo (~94 stars) was archived February 2026. If you were using the local server with API v3 keys, migration to the remote server is required.
+**Legacy local server archived.** The [ahrefs/ahrefs-mcp-server](https://github.com/ahrefs/ahrefs-mcp-server) GitHub repo (~101 stars) was archived February 2026. If you were using the local server with API v3 keys, migration to the remote server is required.
 
 ## The Bottom Line
 
 Ahrefs' MCP server brings enterprise-grade SEO intelligence into the AI agent workflow. The data quality is unmatched — you're accessing the same backlink, keyword, and authority metrics that SEO professionals rely on daily, now through natural language queries.
 
-Since launch, Ahrefs has meaningfully improved the Lite plan experience: API unit allocation quadrupled (25,000 → 100,000) and row limits increased tenfold (10 → 100 per request). The original criticisms about constrained entry-level access are substantially addressed.
+Since this review's [March 2026 launch coverage](https://ahrefs.com/mcp/), Ahrefs has meaningfully improved the Lite plan experience: API unit allocation quadrupled (25,000 → 100,000) and row limits increased tenfold (10 → 100 per request). The original criticisms about constrained entry-level access are substantially addressed.
 
 The migration to Streamable HTTP transport and the expanded tool set (spanning backlinks, keywords, site audit, and rank tracking) round out a maturing integration. New client support for ChatGPT Web and Copilot Studio extends reach beyond the initial Claude/Cursor audience.
 

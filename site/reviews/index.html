@@ -3442,14 +3442,14 @@
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-24 23:00:00</span></div>
   <h3><a href="/reviews/code-review-pull-request-mcp-servers/">Code Review &amp; Pull Request MCP Servers — SonarQube, Codacy, CodeRabbit, Azure DevOps, Graphite GT, GitLab MR, Community PR Reviewers</a></h3>
-  <p>Code review and pull request MCP servers spanning code quality platforms, PR management, stacked PR workflows, and AI-powered diff analysis. May 2026 update: Azure DevOps MCP server (Microsoft official, public preview) closes the biggest enterprise gap — PR support, remote server in Microsoft Foundry, April 2026 update adds vote_pull_request and PAT auth. CodeRabbit launched an official MCP server (0ui-labs/coderabbit-mcp-server) — shifting from MCP client-only to also offering a server that can trigger reviews, generate reports, review uncommitted changes, and configure per-repo settings. SonarQube MCP expanded with actionable issue management: mark false positives, bulk actions, assign/unassign issues without leaving your AI assistant; SonarQube Server 2026.1 LTA released. Codacy launched Guardrails — pairing the Codacy MCP server with Codacy CLI so agents can write, fix, and report on code quality without leaving the chat panel. SonarQube MCP (SonarSource, Kotlin, native in SonarQube Cloud, 11&#43; platform support) leads code quality integration. Codacy MCP (official, TypeScript, MIT) covers SAST, secrets, coverage, and PR analysis. Graphite GT MCP (built into CLI v1.6.7&#43;, Go, still beta) enables AI-driven stacked PR creation. For GitLab, kopfrechner/gitlab-mr-mcp (86 stars, JavaScript, MIT, 10 tools) enables full MR lifecycle management. Community code review MCP servers (crazyrabbitLTC 32 stars, praneybehl 30 stars) connect LLMs to diffs for automated feedback. Qodo/PR-Agent (10.5k stars, now community-governed under Apache 2.0) remains the biggest remaining gap — no MCP server yet. Rating upgraded 3.5→4/5: Azure DevOps gap closed, CodeRabbit now has official MCP server.</p>
+  <p>Code review and pull request MCP servers spanning code quality platforms, PR management, stacked PR workflows, and AI-powered diff analysis. May 2026 update: Azure DevOps MCP server (Microsoft official, public preview) closes the biggest enterprise gap — PR support, remote server in Microsoft Foundry, April 2026 update adds repo_vote_pull_request (remote server) and PAT auth (local server). CodeRabbit remains MCP-client-only — its own documentation states it &#39;acts as the MCP client, not the server&#39;; a third-party GitHub project once listed here as an &#39;official&#39; CodeRabbit MCP server could not be verified and has been removed. SonarQube MCP expanded with actionable issue management: mark false positives, bulk actions, assign/unassign issues without leaving your AI assistant; SonarQube Server 2026.1 LTA released. Codacy launched Guardrails — pairing the Codacy MCP server with Codacy CLI so agents can write, fix, and report on code quality without leaving the chat panel. SonarQube MCP (SonarSource, Kotlin, native in SonarQube Cloud, 11&#43; platform support) leads code quality integration. Codacy MCP (official, TypeScript, MIT) covers SAST, secrets, coverage, and PR analysis. Graphite GT MCP (built into CLI v1.6.7&#43;, Go, still beta) enables AI-driven stacked PR creation. For GitLab, kopfrechner/gitlab-mr-mcp (94 stars, JavaScript, MIT, 10 tools) enables full MR lifecycle management. Community code review MCP servers (crazyrabbitLTC 34 stars, praneybehl 33 stars) connect LLMs to diffs for automated feedback. Qodo/PR-Agent (12.6k stars, now community-governed at The-PR-Agent org) remains the biggest remaining gap — no MCP server yet. Rating: 3.5/5 — Azure DevOps gap closed and SonarQube/Codacy gained real agentic features, but the CodeRabbit &#39;official server&#39; gap closure claimed in an earlier version of this review did not hold up on re-verification.</p>
 </div>
 
     
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-24 23:00:00</span></div>
   <h3><a href="/reviews/code-generation-mcp-servers/">Code Generation MCP Servers — UI Components, Context Providers, and the Paradox of AI Writing Its Own Tools</a></h3>
-  <p>Code generation MCP servers reveal a paradox: every major AI coding platform (GitHub Copilot, Cursor 3, Windsurf, Amazon Q, JetBrains AI, Claude Code) supports MCP as a client — consuming external tools and context — but none exposes its code generation engine as an MCP server. The real ecosystem is context provision: Context7 (54.2k stars, 65% token reduction via new architecture) delivers version-specific library documentation, magic-mcp (4.8k stars) generates UI components from natural language, shadcn-ui MCP server (2.8k stars) provides component context, and Vercel&#39;s next-devtools-mcp (733 stars) gives coding agents real-time Next.js 16.2 Agent DevTools. The framework gap is partially closing: Django MCP Server and Rails fast-mcp gem now bridge web frameworks to MCP. E2B&#39;s sandbox MCP server has been archived. Figma expanded with diagram generation and FigJam skills.</p>
+  <p>Code generation MCP servers reveal a paradox: every major AI coding platform (GitHub Copilot, Cursor 3, Windsurf, Amazon Q, JetBrains AI, Claude Code) supports MCP as a client — consuming external tools and context — but none exposes its code generation engine as an MCP server. The real ecosystem is context provision: Context7 (60.8k stars, 65% token reduction via new architecture) delivers version-specific library documentation, magic-mcp (5.7k stars) generates UI components from natural language, shadcn-ui MCP server (2.9k stars) provides component context, and Vercel&#39;s next-devtools-mcp (807 stars) gives coding agents real-time Next.js 16.2 Agent DevTools. The framework gap is partially closing: Django MCP Server and Rails fast-mcp gem now bridge web frameworks to MCP. E2B&#39;s sandbox MCP server has been archived. Figma expanded with diagram generation and FigJam skills.</p>
 </div>
 
     
@@ -3526,7 +3526,7 @@
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-23 23:55:00</span></div>
   <h3><a href="/reviews/bitbucket-mcp-server/">Bitbucket MCP Servers — The Missing Piece in Atlassian&#39;s AI Strategy</a></h3>
-  <p>Atlassian&#39;s Rovo MCP server added official Bitbucket Cloud support in April 2026 — closing the BCLOUD-23748 gap that defined the original review. Community servers continue for Server/Data Center. App Passwords deprecated June 2026. Rating upgraded 2.5→3.5/5.</p>
+  <p>Atlassian&#39;s Rovo MCP server added official Bitbucket Cloud support in April 2026 — closing the BCLOUD-23748 gap that defined the original review. Community servers continue for Server/Data Center. App Passwords deprecation starts June 2026, full removal July 28, 2026. Rating upgraded 2.5→3.5/5.</p>
 </div>
 
     
@@ -3673,7 +3673,7 @@
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-23 22:00:00</span></div>
   <h3><a href="/reviews/chrome-devtools-mcp-server/">The Chrome DevTools MCP Server — Browser Debugging and Performance Profiling for AI Coding Agents</a></h3>
-  <p>Official Google Chrome DevTools MCP server for AI coding agents. 29 tools covering browser automation, performance tracing with Core Web Vitals, memory heap snapshots, Lighthouse audits, network request inspection, and console debugging. Connect to your existing browser session or launch headless. 34K GitHub stars, 414K weekly npm downloads.</p>
+  <p>Official Google Chrome DevTools MCP server for AI coding agents. 56 tools (31 enabled by default) covering browser automation, performance tracing with Core Web Vitals, memory heap snapshots, Lighthouse audits, network request inspection, and console debugging. Connect to your existing browser session or launch headless. 49K GitHub stars, ~1.6M weekly npm downloads.</p>
 </div>
 
     
@@ -3750,7 +3750,7 @@
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-23 21:00:00</span></div>
   <h3><a href="/reviews/airtable-mcp-server/">Airtable MCP Server — Full Database CRUD for Your AI Agent</a></h3>
-  <p>Community-built MCP server exposing 15 tools for Airtable database operations including record CRUD, table/field schema management, comments, and file attachments. TypeScript, MIT license, stdio and HTTP transport, personal access token authentication. 444 GitHub stars, actively maintained. Airtable also launched an official MCP server in February 2026.</p>
+  <p>Community-built MCP server exposing 15 tools for Airtable database operations including record CRUD, table/field schema management, comments, and file attachments. TypeScript, MIT license, stdio and HTTP transport, personal access token authentication. 455 GitHub stars, actively maintained. Airtable also launched an official MCP server in February 2026.</p>
 </div>
 
     
@@ -3764,7 +3764,7 @@
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-23 20:00:00</span></div>
   <h3><a href="/reviews/bright-data-mcp-server/">Bright Data MCP Server — Enterprise Web Access That Actually Beats Anti-Bot Protection</a></h3>
-  <p>Enterprise-grade web access for AI agents. Anti-bot bypass, CAPTCHA solving, 150M&#43; IP proxy network, 60&#43; specialized scrapers for e-commerce, social, finance, and more. Free tier with 5,000 requests/month. Hosted or local deployment.</p>
+  <p>Enterprise-grade web access for AI agents. Anti-bot bypass, CAPTCHA solving, 400M&#43; IP proxy network, 69 specialized tools for e-commerce, social, finance, and more. Free tier with 5,000 requests/month. Hosted or local deployment.</p>
 </div>
 
     
@@ -3798,8 +3798,8 @@
     
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-23 18:00:00</span></div>
-  <h3><a href="/reviews/apify-mcp-server/">Apify MCP Server — 3,000&#43; Scrapers at Your AI Agent&#39;s Fingertips</a></h3>
-  <p>Connects AI agents to Apify&#39;s marketplace of 3,000&#43; web scrapers and automation tools. Search for scrapers, inspect their details, run them, and get structured data back — all through MCP. Hosted mode with OAuth or run locally via npx. SSE transport removed April 1, 2026 — update to Streamable HTTP.</p>
+  <h3><a href="/reviews/apify-mcp-server/">Apify MCP Server — 59,000&#43; Scrapers at Your AI Agent&#39;s Fingertips</a></h3>
+  <p>Connects AI agents to Apify&#39;s marketplace of 59,000&#43; web scrapers and automation tools. Search for scrapers, inspect their details, run them, and get structured data back — all through MCP. Hosted mode with OAuth or run locally via npx. SSE transport removed April 1, 2026 — update to Streamable HTTP.</p>
 </div>
 
     
@@ -3847,8 +3847,8 @@
     
     <div class="article-card">
   <div class="card-meta"><span>Review</span> <span>2026-03-23 15:30:00</span></div>
-  <h3><a href="/reviews/composio-mcp-server/">Composio MCP Server — 500&#43; App Integrations Through a Single Endpoint</a></h3>
-  <p>Agentic integration platform exposing 500&#43; apps as MCP tools. Managed OAuth handles authentication for Gmail, Slack, GitHub, Notion, and hundreds more. Dynamic tool discovery prevents context overload. Single endpoint, multiple AI clients.</p>
+  <h3><a href="/reviews/composio-mcp-server/">Composio MCP Server — 1,000&#43; App Integrations Through a Single Endpoint</a></h3>
+  <p>Agentic integration platform exposing 1,000&#43; apps as MCP tools. Managed OAuth handles authentication for Gmail, Slack, GitHub, Notion, and hundreds more. Dynamic tool discovery prevents context overload. Single endpoint, multiple AI clients.</p>
 </div>
 
     

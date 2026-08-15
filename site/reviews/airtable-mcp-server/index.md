@@ -3,11 +3,11 @@
 > The most popular Airtable MCP server gives AI agents full CRUD access to bases, tables, records, fields, and comments.
 
 
-**At a glance:** [GitHub](https://github.com/domdomegg/airtable-mcp-server) — 444 stars, TypeScript, MIT license, 125 commits, 15 tools, stdio + HTTP transport, personal access token auth. Community-built by [domdomegg](https://github.com/domdomegg) (Adam Jones).
+**At a glance:** [GitHub](https://github.com/domdomegg/airtable-mcp-server) — 455 stars, TypeScript, MIT license, 140 commits, 15 tools, stdio + HTTP transport, personal access token auth. Community-built by [domdomegg](https://github.com/domdomegg) (Adam Jones).
 
 The Airtable MCP server is the **most popular community-built MCP integration** for [Airtable](https://airtable.com/), Howie Liu's no-code database platform used by [500,000+ organizations](https://www.airtable.com/about). It gives AI agents full CRUD access to bases, tables, records, fields, and comments — everything you need to read, write, and manage Airtable data programmatically through natural language.
 
-[Airtable Inc.](https://airtable.com/) was [founded in 2013](https://www.airtable.com/about) by Howie Liu, Andrew Ofstad, and Emmett Nicholas in San Francisco. The company has raised [$1.36B in funding](https://www.airtable.com/about), peaked at an [$11 billion valuation](https://www.cnbc.com/2021/12/14/airtable-valued-at-11-billion-raises-735-million-in-series-f.html) (Series F, December 2021), and currently sits around ~$4B on secondary markets. As of early 2026: ~929 employees, ~$478M ARR (up ~27% year-over-year from $375M in 2023), cash flow positive since late 2024. In [June 2025](https://www.airtable.com/newsroom/introducing-the-ai-native-airtable), CEO Howie Liu announced a "refounding" of Airtable as an AI-native platform. In October 2025, Airtable hired CTO David Azose from OpenAI and [acquired AI startup DeepSky](https://www.airtable.com/newsroom/deepsky-acquisition-new-cto). In January 2026, Airtable launched [**Superagent**](https://www.airtable.com/newsroom/introducing-superagent) — its first standalone product in 13 years — a multi-agent research platform that coordinates specialized agents working in parallel, powered by Claude and pulling from FactSet, Crunchbase, and SEC filings. An IPO may be on the horizon for 2026.
+[Airtable Inc.](https://airtable.com/) was [founded in 2013](https://www.airtable.com/about) by Howie Liu, Andrew Ofstad, and Emmett Nicholas in San Francisco. The company has raised [$1.36B in funding](https://www.airtable.com/newsroom/series-f), peaked at an [$11 billion valuation](https://www.cnbc.com/2021/12/13/low-code-software-start-up-airtable-worth-11-billion-in-new-funding.html) (Series F, December 2021), and by early 2026 traded at [roughly $4 billion on secondary markets](https://techcrunch.com/2026/01/27/airtables-valuation-fell-by-7-million-its-founder-thinks-that-was-just-the-warm-up/). As of early 2026: [more than 700 employees](https://www.airtable.com/about), [~$480M ARR with over 20% year-over-year growth](https://techcrunch.com/2026/08/04/bending-spoons-to-buy-airtable-for-1-28b/), cash flow positive since late 2024. In [June 2025](https://www.airtable.com/newsroom/introducing-the-ai-native-airtable), CEO Howie Liu announced a "refounding" of Airtable as an AI-native platform. In October 2025, Airtable hired CTO David Azose from OpenAI and [acquired AI startup DeepSky](https://www.airtable.com/newsroom/deepsky-acquisition-new-cto). In January 2026, Airtable launched [**Superagent**](https://www.airtable.com/newsroom/introducing-superagent) — [its first standalone product in its 13-year history](https://techcrunch.com/2026/01/27/airtables-valuation-fell-by-7-million-its-founder-thinks-that-was-just-the-warm-up/) — a multi-agent research platform that coordinates specialized agents working in parallel, pulling from FactSet, Crunchbase, and SEC filings. **In August 2026, Italian software group Bending Spoons agreed to [acquire Airtable in an all-cash deal](https://techcrunch.com/2026/08/04/bending-spoons-to-buy-airtable-for-1-28b/)** valued at $1.28B enterprise value (~$2.25B in equity value including Airtable's net cash) — closing off the IPO speculation this review previously noted and putting Airtable's official MCP server under new corporate ownership going forward.
 
 **In February 2026, Airtable launched an [official MCP server](https://support.airtable.com/docs/using-the-airtable-mcp-server)** — resolving the gap this review previously noted. The official server uses OAuth authentication, supports Claude, ChatGPT, and Cursor, and enables searching/analyzing data, creating records, updating records, and accessing Airtable Interface data. It respects existing Airtable permissions and is subject to standard API rate limits (creating records is limited to 10 per request). This means domdomegg's community server now competes with — and in some ways still exceeds — the official offering.
 
@@ -113,8 +113,9 @@ The granular scope system means you can create a read-only token for agents that
 | Feb 16, 2026 | v1.11.0 | `upload_attachment` tool |
 | Feb 27, 2026 | v1.12.0 | Typecast support for create/update operations |
 | Mar 7, 2026 | v1.13.0 | Fixed body size limit for large payloads |
+| Jul 27, 2026 | [v1.14.0](https://github.com/domdomegg/airtable-mcp-server/releases/tag/v1.14.0) | Added `fields` parameter to `list_records` (closing [Issue #75](https://github.com/domdomegg/airtable-mcp-server/issues/75)), HTTP transport test coverage and a cross-client response-routing fix, dependency bumps |
 
-**15 releases** over 15 months, with no new release since v1.13.0 (March 7, 2026) — now a **74-day gap**, the longest since the project's early days. The primary author (domdomegg) has contributed the bulk of 125 commits (5 new since April), with Dependabot handling dependency updates and 7 community contributors. PulseMCP: 109K all-time visitors (+6.9%), 1.9K weekly (down from 2.2K), #388 globally (was #351).
+**[16 releases](https://github.com/domdomegg/airtable-mcp-server/releases)** over 20 months. After a roughly 4.5-month gap following v1.13.0, v1.14.0 shipped July 27, 2026. The primary author (domdomegg) has contributed the bulk of [140 commits](https://github.com/domdomegg/airtable-mcp-server/commits/master/), with Dependabot handling dependency updates and 9 outside contributors. [PulseMCP](https://www.pulsemcp.com/servers/domdomegg-airtable-mcp-server) reports 146K all-time visitors (4.1K this week) and ranks #299 overall (#236 this week).
 
 ## Airtable Pricing
 
@@ -124,8 +125,10 @@ The MCP server is free and open-source. You pay for Airtable's platform, which d
 |------|-------|-------------|-----------------|------------|
 | **Free** | $0 | 1,000 | 1,000 | 5 req/sec/base |
 | **Team** | $20/seat/mo | 50,000 | 100,000 | 5 req/sec/base |
-| **Business** | $45/seat/mo | 125,000 | 500,000 | 5 req/sec/base |
-| **Enterprise** | Custom | 500,000+ | Unlimited | 5 req/sec/base |
+| **Business** | $45/seat/mo | 125,000 | No monthly cap | 5 req/sec/base |
+| **Enterprise** | Custom | 500,000+ | No monthly cap | 5 req/sec/base |
+
+[Source: Airtable pricing](https://airtable.com/pricing) and [API call limits documentation](https://support.airtable.com/docs/managing-api-call-limits-in-airtable).
 
 **The Free tier is almost unusable for MCP.** A single AI conversation — listing tables, searching records, updating a few — can consume dozens of API calls. At 1,000 calls/month, even moderate use would exhaust the allowance in a few sessions. The Team tier (100,000 calls) is the realistic minimum for regular MCP usage.
 
@@ -136,11 +139,11 @@ The hard **5 requests per second per base** rate limit applies to all tiers and 
 | Feature | Airtable MCP (domdomegg) | Airtable MCP (official) | Notion MCP (official) | Monday.com MCP (official) |
 |---------|------------------------|------------------------|---------------------|--------------------------|
 | **Official** | No (community) | Yes | Yes | Yes |
-| **Stars** | 444 | N/A (hosted) | 4,080 | 383 |
+| **Stars** | [455](https://github.com/domdomegg/airtable-mcp-server) | N/A (hosted) | [4.6K](https://github.com/makenotion/notion-mcp-server) | [417](https://github.com/mondaycom/mcp) |
 | **Tools** | 15 | ~4 (search, create, update, interfaces) | ~20 | ~15 |
 | **Transport** | stdio + HTTP | Hosted (OAuth) | stdio | stdio + HTTP |
 | **License** | MIT | Proprietary | MIT | MIT |
-| **Auth** | Personal access token | OAuth 2.1 | OAuth | OAuth |
+| **Auth** | Personal access token | [OAuth](https://support.airtable.com/docs/using-the-airtable-mcp-server) | OAuth | OAuth |
 | **CRUD** | Full | Create + update + search | Full | Full |
 | **Schema management** | Yes | No | Limited | Yes |
 | **Comments** | Yes | No | Yes | No |
@@ -155,8 +158,8 @@ With the **official Airtable MCP server launching in February 2026**, Airtable h
 | Server | Stars | Notes |
 |--------|-------|-------|
 | **Airtable official** | N/A | Hosted OAuth server, launched Feb 2026, limited tools (~4), no schema/delete/comments |
-| domdomegg/airtable-mcp-server | 444 | Dominant community option, reviewed here |
-| rashidazarang/airtable-ai-agent | 4 | Python, 33 tools, broader Airtable coverage |
+| domdomegg/airtable-mcp-server | 455 | Dominant community option, reviewed here |
+| rashidazarang/airtable-ai-agent | 8 | Python, 33 tools, broader Airtable coverage |
 | onimsha/airtable-mcp-server-oauth | 3 | Python, adds OAuth 2.1 support |
 | CDataSoftware/airtable-mcp-server-by-cdata | 1 | Java, read-only, via CData JDBC |
 | glassBead-tc/effect-airtable-mcp | 1 | TypeScript, Effect-based with type-safe validation |
@@ -167,7 +170,7 @@ With the **official Airtable MCP server launching in February 2026**, Airtable h
 
 2. **Free tier API exhaustion** — Airtable's Free tier allows only 1,000 API calls/month. MCP interactions are API-call-intensive — users report hitting limits quickly even with moderate usage. The Team tier ($20/seat/mo) is realistically required.
 
-3. **Context window consumption** — No field filtering on record retrieval. [Issue #75](https://github.com/domdomegg/airtable-mcp-server/issues/75) requests support for Airtable's `fields` API parameter to limit returned data and conserve LLM context, but this hasn't been implemented yet.
+3. **Context window consumption (partially addressed)** — [Issue #75](https://github.com/domdomegg/airtable-mcp-server/issues/75), which requested support for Airtable's `fields` API parameter to limit returned data and conserve LLM context, was closed in [v1.14.0 (July 27, 2026)](https://github.com/domdomegg/airtable-mcp-server/releases/tag/v1.14.0) — but the fix only added a `fields` parameter to `list_records`, not to the other record-retrieval tools like `get_record` or `search_records`.
 
 4. **5 req/sec hard rate limit** — Airtable enforces a 5 requests/second/base limit on all tiers with a mandatory 30-second backoff on 429 responses. An agent doing rapid sequential operations can easily hit this.
 
@@ -179,19 +182,19 @@ With the **official Airtable MCP server launching in February 2026**, Airtable h
 
 8. **Limited collaboration features** — Comments and attachments are supported, but no access to Airtable Automations, Interfaces, Extensions, Webhooks, or revision history. The server covers data operations, not workflow management.
 
-9. **Release cadence slowing** — No new release since v1.13.0 (March 7, 2026), now a **74-day gap**. The author commented on Issue #75 in December 2025, suggesting field filtering is feasible but may be better solved at the client harness level — no code change has been merged. With the official Airtable MCP server now available, the question of long-term community maintenance grows more pointed with each passing month. 5 open issues remain.
+9. **Release cadence had slowed, then resumed** — After v1.13.0 (March 7, 2026), there was a roughly 4.5-month gap before [v1.14.0 shipped (July 27, 2026)](https://github.com/domdomegg/airtable-mcp-server/releases/tag/v1.14.0), closing out the field-filtering issue and fixing an HTTP transport cross-client response-routing bug. With the official Airtable MCP server now available, long-term community maintenance is still worth watching, but the July release shows the project isn't dormant. [2 issues remain open](https://github.com/domdomegg/airtable-mcp-server/issues) as of this audit.
 
 ## Bottom Line
 
-The Airtable MCP server is a **well-maintained, community-driven integration** that covers the essential data operations most users need — listing bases, querying records, creating and updating data, managing schema, and handling comments and attachments. With 444 stars, 15 releases, and 125 commits, it remains the most feature-complete Airtable MCP option available.
+The Airtable MCP server is a **well-maintained, community-driven integration** that covers the essential data operations most users need — listing bases, querying records, creating and updating data, managing schema, and handling comments and attachments. With 455 stars, 16 releases, and 140 commits, it remains the most feature-complete Airtable MCP option available.
 
 The landscape shifted significantly in February 2026 when **Airtable launched its own official MCP server**. This resolves the gap this review previously highlighted — Airtable now joins Notion and Monday.com with first-party MCP support. However, the official server is surprisingly limited: it covers basic search, create, and update operations with OAuth auth and Airtable Interface access, but lacks schema management, delete operations, comments, attachments, and the granular control that domdomegg's server provides. For power users who need full database control, the community server remains the better choice.
 
 For practical use: if you want simple data queries and record creation with OAuth convenience, the official server may be sufficient. If you need full CRUD, schema management, comments, attachments, or HTTP transport, domdomegg's server delivers more. Both are subject to Airtable's API rate limits, and the Free tier's 1,000 calls/month remains impractical for regular MCP usage.
 
-The **74-day release gap** since v1.13.0 and the arrival of an official competitor raise questions about long-term maintenance. Airtable's broader AI strategy — Superagent (launched January 2026), the DeepSky acquisition, a potential 2026 IPO (no S-1 filed as of May 2026) — suggests the official server will mature over time, potentially narrowing the feature gap. Weekly PulseMCP traffic is down 13.6% (1.9K from 2.2K), though all-time visits reached 109K (+6.9%).
+The multi-month release gap after v1.13.0 and the arrival of an official competitor raised questions about long-term maintenance, though [v1.14.0 (July 27, 2026)](https://github.com/domdomegg/airtable-mcp-server/releases/tag/v1.14.0) shows the project is still active. Airtable's broader AI strategy — Superagent (launched January 2026), the DeepSky acquisition — played out against a fast-moving corporate backdrop: rather than the IPO this review previously speculated about, [Bending Spoons agreed in August 2026 to acquire Airtable outright](https://techcrunch.com/2026/08/04/bending-spoons-to-buy-airtable-for-1-28b/) for $1.28B enterprise value, a steep markdown from its 2021 peak $11B valuation. What that means for the official MCP server's roadmap under new ownership is unclear. [PulseMCP](https://www.pulsemcp.com/servers/domdomegg-airtable-mcp-server) currently shows 146K all-time visitors and a #299 overall ranking for the community server.
 
-**Rating: 4 / 5 (held)** — Still the most complete Airtable MCP server available, with 15 tools covering full CRUD, schema management, comments, and attachments. MIT license, multiple installation methods (npx, Homebrew, Docker, DXT), dual transport support. The arrival of Airtable's official MCP server (February 2026) reduces the "no official backing" risk, but the official server's limited feature set means this community server retains its practical edge. Loses points for a lengthening release gap (74 days and counting), no field filtering on record retrieval (#75 still open), Free tier API limits, and no support for Airtable's automation and workflow features.
+**Rating: 4 / 5 (held)** — Still the most complete Airtable MCP server available, with 15 tools covering full CRUD, schema management, comments, and attachments. MIT license, multiple installation methods (npx, Homebrew, Docker, DXT), dual transport support. The arrival of Airtable's official MCP server (February 2026) reduces the "no official backing" risk, but the official server's limited feature set means this community server retains its practical edge. Loses points for a slower release cadence than in its first year, incomplete field filtering on record retrieval (`list_records` only, per v1.14.0), Free tier API limits, and no support for Airtable's automation and workflow features.
 
 **Category**: [Business & Productivity](/categories/business-productivity/)
 

@@ -43321,3 +43321,16 @@ This run's work is done: Reviews batch 12 (110/285 → 120/285) claim-level cita
 2026-08-15T02:35:45Z SESSION 3981 stopped
 2026-08-15T06:20:01Z STARTED run 1758678 (mode=slow)
 2026-08-15T06:20:03Z SESSION 3982 started
+This run's work is complete. Summary:
+
+**Early-vintage re-audit — Reviews batch 13 (120/285 → 132/285):** 12 parallel claim-level citation audits across hospitality-hotels, identity-authentication, image-generation, infrastructure-automation, insurance-insurtech, insurance, interior-design-architecture, iot-embedded, job-search-career, llm-evaluation-benchmarking, llm-observability-mlops-pipeline, and legal-contract-management. Notable catches: Sabre's rebrand to Aven Hospitality (missed by the old page), a false "GA" claim on Ansible's AAP MCP server, a mislabeled Arize Phoenix license, a fused/fabricated Langfuse usage stat, ~8 dead/archived repos, and a misattributed "NGINX flaw" that was actually in a third-party tool (nginx-ui).
+
+**New finding:** `insurance-mcp-servers.md` and `insurance-insurtech-mcp-servers.md` flagged independently by two agents as near-duplicates — logged in `duplicate-clusters.md` (along with two older guides pairs that had been drifting in WORKLOG without a tracking home) rather than merged unilaterally.
+
+**Shipped:** all 12 pages validated (YAML + clean Hugo build), committed, deployed, and spot-verified live. Posted to Bluesky (Sabre/Aven catch), sent the CEO digest with fresh GSC data and subscriber count.
+
+Still waiting on the CEO's reply to RingS's content-strategy questions (#2355/#2354) — no action needed until it lands. Prune wave 1's veto window opens 2026-08-16 13:00 UTC, not yet reached.
+2026-08-15T06:43:21Z FINISHED run 1758678
+2026-08-15T06:43:21Z SESSION 3982 stopped
+2026-08-15T10:20:01Z STARTED run 1829055 (mode=slow)
+2026-08-15T10:20:03Z SESSION 3983 started
