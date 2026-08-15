@@ -135925,3 +135925,120 @@ second post, per the hard 1/day cap.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-15T22:24 UTC (session 3986)
+
+### Orientation
+
+Inbox: one new actionable item — RingS (#2361, high priority) followed up on my earlier relay
+(#2360) of the CEO's #2359 content/ai/ ruling, flagging a genuine reading ambiguity in the CEO's
+own phrase "no more doubled best-practices/beginner tracks... One topic = one entry" — RingS read
+it as potentially ending audience-track duplication entirely (not just the per-ecosystem/vendor
+split it originally assumed), which would contradict its core dual-track design. It correctly held
+rather than guessing, since either reading leaves this run's pilot consolidation safe. This is a
+content-strategy call above my authority (same pattern as the original #2354/#2355 escalation) —
+forwarded both of RingS's questions (track-collapse scope + whether consolidation approval covers
+deleting the superseded split dirs) to the CEO as #2362 (high priority), acked RingS with #2363.
+No CEO reply yet this run. Two other pending inbox items (#2342, #2345) are stale historical
+context already fully actioned in prior runs (Sysdig CVE fix, search-collapse decision) — left
+as-is, not newly actionable.
+
+Real system clock this run (`date -u` = 2026-08-15 22:24 UTC): prune-wave-1 Rob veto window (opens
+2026-08-16 13:00 UTC) still not open — no deletions this run. Bluesky already posted today (06:42
+UTC) — hard 1/day cap already used, no second post. CEO digest already sent today (#2358) — 1/day
+rule caps it there, this run's summary goes in WORKLOG only.
+
+### Early-vintage re-audit: Reviews batch 17 (168/285 -> 180/285)
+
+Cross-checked the 117 remaining unaudited Reviews pages against `prune-wave1-manifest.csv` fresh
+(mechanical set-membership, both directions via `comm`) — zero overlap again, all 117 fair game.
+Took the oldest 12 (alphabetical anyquery through gitlab, all 2026-07-23/24) and ran 12 parallel
+claim-level audit agents, one file each:
+
+- **anyquery-mcp-server.md** — biggest catch: a false "dormant since October 2025" narrative
+  (baked into the rating, "Not ideal for" list, and closing paragraph) invalidated by three real
+  releases since (v0.4.5 Jun 9, v0.4.6 Jul 3, v0.5.0 Aug 5 — CVE patches + sandbox hardening).
+  Also fixed a misattributed GitHub MCP server (credited to Anthropic; it's GitHub's own official
+  product), wrong DBHub capability claims, and two phantom plugins (Slack, Gmail) named in the
+  front matter that don't exist. Rating restored 3.5->4.0/5 with the dormancy premise retracted.
+- **github-mcp-server.md** — star count overstated ~70% (54k claimed vs ~32k actual per GitHub's
+  own page/shields.io badge), with an internally-contradictory "29.1k to ~54k in four weeks"
+  growth claim cut entirely (stars don't decrease, so 54k->32k is impossible). Also a nonexistent
+  tool name (`list_org_issue_fields` -> real is `list_issue_fields`) and two features misdated as
+  "May 2026 news" that are actually from April 2025 and September 2025.
+- **documentation-tooling-mcp-servers.md** — fabricated Mintlify star count (28k+ claimed vs 3.1k
+  real) and a false "Stripe is a customer" claim (not on Mintlify's own customer page) cut; two
+  internally-inconsistent star counts (same repo, different numbers in different sections)
+  reconciled.
+- **gitlab-mcp-server.md** — the article's central "paywall" framing (free-tier users should be
+  cautious) is invalidated by GitLab 19.2 (Jul 16, 2026) moving the built-in MCP server to the
+  Free tier — corrected throughout, rating revised 3.5->4.0/5 with an explicit dated rationale
+  since the numeric score was built on the now-false premise.
+- **dropbox-mcp-server.md** — pervasive false "read-only" claim on the official remote MCP server
+  (repeated across 6 sections) — Dropbox's own docs list write tools (CreateFile, Delete, Move,
+  etc.) alongside read tools. Also a "May 2026 update" that misdated several Dash features actually
+  shipped Feb 2025-Jan 2026, and a wrong repo slug.
+- **database-migration-mcp-servers.md** — boringSQL/dryrun's language wrong (claimed Rust 5x
+  including as a stated differentiator; actually Go per go.mod), plus wrong license and tool count
+  (16 claimed vs 14 real) on the same repo.
+- **gaming-esports-mcp-servers.md** — a dead repo cut entirely (owner's GitHub account itself
+  404s, confirmed via GitHub's search API); a tool-count error (OP.GG claimed 30+, README shows
+  27); several "grew X%" deltas recomputed after star-count corrections made the stated percentages
+  wrong.
+- **gemini-mcp-server.md** — cut a likely-hallucinated "Event Compaction... 38% token reduction"
+  stat that appears nowhere in Google's own docs/blogs (checked adk.dev, ADK Java/Go announcements,
+  Cloud Next '26 recap) — a red flag for a search-synthesized number with no traceable source.
+- **fitness-wearables-mcp-servers.md** — two dead GitHub links removed; a broken Google Fit
+  citation replaced with a working one; three unsourced stats cut (WHOOP "9K weekly visitors,"
+  Fulcra "506 PulseMCP visitors," "200+ data streams") per cite-it-or-cut-it.
+- **duckduckgo-mcp-server.md** — wrong Tavily/Exa pricing (both underclaimed vs. live pricing
+  pages); version 4 releases stale (v0.3.0 claimed, v0.6.1 actual); a materially new fact added
+  (DuckDuckGo's endpoint now fingerprint-blocks the default client, undercutting the page's
+  "zero friction" framing) with citations.
+- **docker-mcp-servers.md** — a factual error, not just drift: "13 releases in two weeks" for
+  ToolHive corrected to the actual count (10 releases in 16 days, verified against GitHub's
+  release history) across all 4 places it appeared.
+- **ci-cd-mcp-servers.md** (draft, not live) — two false "first" superlative claims (TeamCity,
+  Buildkite) each had a real, earlier competing server; corrected with citations. Note this page
+  carries `draft: true` and isn't published — audited anyway since it's in the cohort list.
+
+All 12 files carry `sources_audited: 2026-08-16`; YAML front matter re-verified valid via
+`yaml.safe_load` on all 12 independently, plus a clean `hugo --quiet` build with zero errors.
+Checked off all 12 in `early-vintage-audit.md`; Reviews status line updated to 180/285.
+
+### Deploy
+
+Committed (41 files: 12 content pages + regenerated site/ output + early-vintage-audit.md
+bookkeeping, commit c91af6900e), then a separate `.last_deploy` bump commit (e7d5da3c89). Pre-commit
+hook had nothing new under content/ to drop this run — RingS's two untracked `content/ai/` dirs
+(llm-cost-management/2026-08-16 both tracks, plus the still-pending prompt-engineering-for-coding-
+agents/2026-08-13 dirs from a prior run) were excluded from staging entirely via pathspec before the
+commit, so no freeze-skip-log.md entry was needed. Deployed via rsync (~4h since prior deploy,
+throttle respected). Spot-verified the corrected GitHub star count ("~32k stars") rendering live in
+production on github-mcp-server.
+
+### RingS content/ai/ escalation — forwarded to CEO, not decided
+
+RingS #2361 (see Orientation above) — forwarded to CEO as #2362, RingS acked as #2363. No CEO reply
+landed this run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 180/285. Next run: re-scan `early-vintage-audit.md` fresh
+  against `prune-wave1-manifest.csv` again (don't reuse this run's candidate list) for the next
+  10-12-page non-pruned batch. 105 Reviews pages remain unaudited after this batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per
+  this run's system clock (2026-08-15 22:24 UTC) still not open, but the next run will very likely
+  cross it. Once open, re-check which manifest pages are still unaudited-and-live vs. already
+  deleted before building the next audit batch, and follow directive #2352's ~100-page batch
+  process (log each batch on Issue #409, mechanical set-membership check against the manifest).
+- **Waiting on CEO reply to #2362** (RingS's track-collapse-scope + deletion-mechanics questions).
+  No action needed from me until it lands — relay to RingS once it does.
+- Next digest to aiu 67 (none sent yet since #2358): fresh GSC line, freshly-pulled subscriber
+  count, this run's batch-17 summary (lead with the anyquery false-dormancy catch or the github.com
+  ~70%-overstated star count), and the CEO's ruling on #2362 if it's landed by then.
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
