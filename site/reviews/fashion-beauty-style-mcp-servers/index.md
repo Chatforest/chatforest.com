@@ -1,13 +1,13 @@
 # Fashion, Beauty & Style MCP Servers — Virtual Try-On, Secondhand Shopping, Skincare AI, Wardrobe Management, and K-Beauty
 
-> Fashion, beauty, and style MCP servers are growing — we found 15+ servers across 7 subcategories including secondhand marketplace search and Sephora automation.
+> Fashion, beauty, and style MCP servers are growing — we found 11 servers across 6 subcategories including secondhand marketplace search and Sephora automation.
 
 
 Fashion, beauty, and style MCP servers let AI assistants recommend outfits, try on clothing virtually, search secondhand marketplaces, analyze skincare ingredients, manage wardrobes, and generate color palettes. Instead of browsing fashion apps or beauty blogs, these servers let AI agents provide personalized styling advice, track what you wear, and discover products — all through the Model Context Protocol.
 
 This review covers the **fashion, beauty, and style** vertical — virtual try-on, secondhand shopping, skincare, fashion recommendation, wardrobe management, beauty/cosmetics, and color scheme tools. For e-commerce platforms that sell fashion products (Shopify, Amazon, Etsy), see our [E-Commerce & Shopping MCP review](/reviews/ecommerce-shopping-mcp-servers/). For the Shopify-specific deep dive, see our [Shopify MCP review](/reviews/shopify-mcp-servers/).
 
-The headline findings: **The category is growing from experiments to practical tools**, now at 15+ servers across 7 subcategories. **Secondhand marketplace search is the biggest addition** — secondhand-mcp (9 stars) searches Depop, Poshmark, eBay, and Facebook Marketplace, filling the biggest gap from our original review. **Sephora gets AI-powered automation** with browser-based product search, basket management, and rewards tracking. **Skincare ingredient analysis arrives** via NLP-based matching across 1,884 Sephora products. **K-Beauty remains the deepest beauty MCP** with 7 tools, 58+ brands, and AI skin analysis. **Commercial players still lead on features** — FindMine and Caffeinated Wardrobe offer more polished experiences. **Key gaps narrowing** — secondhand/resale is now covered, but size recommendation, trend forecasting, sustainable fashion, and luxury brands remain unserved.
+The headline findings: **The category is growing from experiments to practical tools**, now at 11 servers across 6 subcategories. **Secondhand marketplace search is the biggest addition** — [secondhand-mcp](https://github.com/jlsookiki/secondhand-mcp) (48 stars) searches Depop, Poshmark, eBay, and Facebook Marketplace, filling the biggest gap from our original review. **Sephora gets AI-powered automation** with browser-based product search, basket management, and rewards tracking. **Skincare ingredient analysis arrives** via NLP-based matching across 1,884 Sephora products. **K-Beauty remains the deepest beauty MCP** with 7 tools, 58+ brands, and AI skin analysis. **Commercial players still lead on features** — FindMine and Caffeinated Wardrobe offer more polished experiences. **Key gaps narrowing** — secondhand/resale is now covered, but size recommendation, trend forecasting, sustainable fashion, and luxury brands remain unserved.
 
 ## Virtual Try-On
 
@@ -17,7 +17,7 @@ The headline findings: **The category is growing from experiments to practical t
 |--------|-------|----------|---------|-------|
 | [chatmcp/heybeauty-mcp](https://github.com/chatmcp/heybeauty-mcp) | 19 | TypeScript | MIT | 2 |
 
-The **only dedicated virtual try-on MCP server** — integrates with HeyBeauty's commercial API to let AI agents submit clothing try-on requests:
+One of two dedicated virtual try-on MCP servers we found (see arnabgho/mcp-vybe below for the other) — integrates with HeyBeauty's commercial API to let AI agents submit clothing try-on requests:
 
 - **submit_tryon_task** — submit a try-on task combining a person image with a clothing image
 - **query_tryon_task** — check the status and retrieve results of a submitted try-on task
@@ -71,7 +71,7 @@ The **most commercially proven fashion MCP server** — connects to FindMine's s
 - **get_visually_similar** — find visually similar products in a catalog
 - **get_style_guide** — fashion styling guidance and advice
 
-FindMine is a real company serving real retailers — their styling AI is used by brands to increase average order value by suggesting complementary items. The MCP wrapper is clean (TypeScript, response caching, Docker support, development mode with sample data), but thin — 3 tools wrapping a commercial API.
+FindMine is a real company serving real retailers — in a [published case study](https://www.findmine.com/case-studies/john-varvatos), menswear brand John Varvatos reported a 74% increase in average order value and an 83% increase in conversion rate after deploying FindMine's Complete the Look feature on product pages. The MCP wrapper is clean (TypeScript, response caching, Docker support, development mode with sample data), but thin — 3 tools wrapping a commercial API.
 
 Requires a FindMine API key (commercial service). The value here depends entirely on whether you're a FindMine customer. For everyone else, this is more of an interesting reference implementation showing how commercial fashion AI can be exposed through MCP.
 
@@ -87,7 +87,7 @@ A **fashion discovery MCP server for Indian Gen-Z** — connects to Klydo, a qui
 - **get_product_details** — retrieve comprehensive product information including images, sizes, colors, ratings, and purchase links
 - **get_trending** — discover currently popular items on the platform
 
-The first fashion e-commerce MCP server targeting the Indian market specifically. Created February 2026. Requires a Klydo API token. The regional focus is both a strength (serves an underrepresented market) and a limitation (only useful if you're shopping from Klydo's catalog).
+The only fashion e-commerce MCP server we found targeting the Indian market specifically. First commit December 2025. Requires a Klydo API token. The regional focus is both a strength (serves an underrepresented market) and a limitation (only useful if you're shopping from Klydo's catalog).
 
 ## Wardrobe Management
 
@@ -116,7 +116,7 @@ The main limitation is the paywall. At $50/year for what amounts to a digital cl
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [AlexLee-landscaper/K-Beauty-MCP](https://github.com/AlexLee-landscaper/K-Beauty-MCP) | 6 | Python | MIT | 7 |
+| [AlexLee-landscaper/K-Beauty-MCP](https://github.com/AlexLee-landscaper/K-Beauty-MCP) | 7 | Python | MIT | 7 |
 
 The **deepest beauty-specific MCP server** — a comprehensive Korean beauty information system with AI-powered skin analysis:
 
@@ -129,7 +129,7 @@ The **deepest beauty-specific MCP server** — a comprehensive Korean beauty inf
 
 The K-Beauty niche focus is actually a strength — Korean skincare has a massive global following, and the multi-step routine approach benefits from AI guidance. Real-time web search keeps product data current. Seven tools across product discovery, ingredient analysis, and personalized recommendations make this the most complete beauty MCP server available.
 
-The main question is whether 6 stars and 7 commits represent a maintained project or a one-off experiment. The curated knowledge base (58+ brands, 48+ ingredients) suggests genuine domain expertise.
+The main question is whether 7 stars and 7 commits represent a maintained project or a one-off experiment. The curated knowledge base (58+ brands, 48+ ingredients) suggests genuine domain expertise.
 
 ### pserein/skincare-mcp
 
@@ -144,7 +144,7 @@ A **skincare ingredient analysis engine** that uses NLP to match and evaluate be
 
 Built on a dataset of 1,884 Sephora products with engineered TF-IDF ingredient embeddings. The approach is scientifically grounded — TF-IDF automatically down-weights common substances like water, and cosine similarity captures meaningful ingredient composition differences. Also includes a synthetic sequential interaction dataset supporting offline reinforcement learning (Batch-Constrained Q-learning) for potential personalized recommendation policies.
 
-Created January 2026. While it has zero stars, the technical approach is more sophisticated than most fashion/beauty MCP servers — this is genuine NLP-powered product analysis rather than a simple API wrapper.
+First commit February 2026. While it has zero stars, the technical approach is more sophisticated than most fashion/beauty MCP servers — this is genuine NLP-powered product analysis rather than a simple API wrapper.
 
 ### markswendsen-code/mcp-sephora
 
@@ -152,7 +152,7 @@ Created January 2026. While it has zero stars, the technical approach is more so
 |--------|-------|----------|---------|-------|
 | [markswendsen-code/mcp-sephora](https://github.com/markswendsen-code/mcp-sephora) | 0 | TypeScript | — | 6 |
 
-A **browser automation MCP server for Sephora** — the first MCP server enabling AI agents to interact directly with a major beauty retailer:
+A **browser automation MCP server for Sephora** — the only MCP server we found enabling AI agents to interact directly with a major beauty retailer:
 
 - **sephora_search_products** — search beauty products by keyword, category, and sorting preferences
 - **sephora_get_product** — retrieve detailed product information including variants and customer reviews
@@ -161,7 +161,7 @@ A **browser automation MCP server for Sephora** — the first MCP server enablin
 - **sephora_checkout** — execute purchases with shipping and payment details
 - **sephora_get_rewards** — access Beauty Insider reward points and membership tier
 
-Uses Playwright for headless Chromium automation with session management (30-minute timeout). Created March 2026, single commit. Part of a broader collection of browser automation MCP servers by the same author (Marriott, DoorDash, Instacart, etc.). The browser automation approach is both a strength (works without an official API) and a limitation (fragile to website changes, requires Chrome/Chromium installed).
+Uses Playwright for headless Chromium automation with session management (30-minute timeout). Created March 2026, single commit. Part of a [broader collection of browser automation MCP servers](https://github.com/markswendsen-code?tab=repositories) by the same author, including similar wrappers for Booking.com, Safeway, and Costco. The browser automation approach is both a strength (works without an official API) and a limitation (fragile to website changes, requires Chrome/Chromium installed).
 
 ## Secondhand & Resale
 
@@ -169,7 +169,7 @@ Uses Playwright for headless Chromium automation with session management (30-min
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [jlsookiki/secondhand-mcp](https://github.com/jlsookiki/secondhand-mcp) | 28 | TypeScript | MIT | 3 |
+| [jlsookiki/secondhand-mcp](https://github.com/jlsookiki/secondhand-mcp) | 48 | TypeScript | MIT | 3 |
 
 The **most significant new addition to fashion MCP** — a server that searches across four major secondhand marketplaces:
 
@@ -179,7 +179,7 @@ The **most significant new addition to fashion MCP** — a server that searches 
 
 Each marketplace has optimized parameters — Facebook emphasizes location and delivery methods, eBay provides condition data, and Poshmark offers brand/department filtering. Depop and Poshmark require a headless browser (Chrome/Chromium auto-detected). eBay uses the official Browse API (requires developer credentials). Facebook Marketplace needs no authentication.
 
-At 28 stars and 30 commits across v0.4.0, this is the most mature new server in the category. It fills what was the biggest gap in our original review — the [$208 billion secondhand fashion market](https://www.gminsights.com/industry-analysis/second-hand-fashion-market) (with [58% of Americans now shopping secondhand](https://newsroom.thredup.com/news/thredup-13th-resale-report) per ThredUp's 2025 Resale Report) had zero MCP representation before this server. For sustainable fashion-conscious users, this is immediately practical: ask your AI assistant to find a specific brand or item across multiple resale platforms simultaneously.
+At 48 stars and 41 commits across v0.4.0, this is the most mature new server in the category. It fills what was the biggest gap in our original review — the [$208.6 billion secondhand fashion market](https://www.gminsights.com/industry-analysis/second-hand-fashion-market) (with [46% of consumers saying they'll skip buying new if they can find the item secondhand](https://newsroom.thredup.com/news/thredup-13th-resale-report), per ThredUp's 13th Annual Resale Report) had zero MCP representation before this server. For sustainable fashion-conscious users, this is immediately practical: ask your AI assistant to find a specific brand or item across multiple resale platforms simultaneously.
 
 ## Color & Design
 
@@ -200,30 +200,22 @@ At 28 stars and 30 commits across v0.4.0, this is the most mature new server in 
 
 Accepts hex, RGB, or HSL input with configurable palette size (3-10 colors). Simple but practical for anyone working on fashion brand colors, seasonal palette planning, or product photography styling.
 
-### kelvinzer0/PaletteMCP
-
-| Server | Stars | Language | Tools |
-|--------|-------|----------|-------|
-| [kelvinzer0/PaletteMCP](https://github.com/kelvinzer0/PaletteMCP) | — | — | — |
-
-A **palette generation tool** that can run as both a CLI and an MCP server — includes a comprehensive CSS color database. Less fashion-specific than color-scheme-mcp, but useful for web-facing fashion brand work.
-
 ## What's Missing
 
 Several gaps from our original review have been filled — secondhand/resale marketplaces now have dedicated MCP coverage (secondhand-mcp), and beauty retail has Sephora automation. But significant gaps remain:
 
 - **No size/fit recommendation** — no server helps users find their size across brands, despite this being one of the biggest problems in online fashion retail. Multiple ML projects exist on GitHub for size prediction, but none are wrapped as MCP servers
-- **No trend forecasting** — no access to runway data, trend reports (WGSN, Edited), or seasonal color predictions. WGSN's AI-powered Fashion Vision tool analyzes runway imagery, but there's no MCP bridge
+- **No trend forecasting** — no access to runway data, trend reports (WGSN, Edited), or seasonal color predictions. [WGSN's AI-powered Fashion Vision tool analyzes runway imagery](https://www.wgsn.com/en/blog/how-wgsn-uses-ai-and-image-tagging-decode-fashion-week-trends) from New York, London, Milan, and Paris fashion weeks, but there's no MCP bridge
 - **No sustainable fashion** — no tracking of ethical sourcing, carbon footprint, or sustainability ratings (Good On You, Fashion Revolution). The secondhand-mcp partially addresses sustainability through resale, but no dedicated ethical fashion server exists
 - **No textile/fabric design** — no pattern generation, weave simulation, or material specification tools
 - **No luxury brand APIs** — LVMH, Kering, Hermès, and other luxury groups have no MCP presence
 - **No fashion show/runway data** — no access to fashion week schedules, designer collections, or runway imagery
-- **No outfit inspiration** — Pinterest and Instagram both have MCP servers now (CData Pinterest, mcpware/instagram-mcp with 23 tools), but no fashion-specific server that combines these platforms for style discovery
+- **No outfit inspiration** — Pinterest and Instagram both have MCP servers now ([CData Pinterest MCP Server](https://github.com/CDataSoftware/pinterest-mcp-server-by-cdata), [mcpware/instagram-mcp](https://github.com/mcpware/instagram-mcp) with 23 tools), but no fashion-specific server that combines these platforms for style discovery
 - **No jewelry or accessories** — the entire accessories vertical is unserved
 
 ## The Bottom Line
 
-Fashion and beauty MCP servers have moved from pure proof-of-concept to early practical utility. The category grew from ~10 to 15+ servers in six weeks, with the most significant additions being secondhand marketplace search (filling what was the biggest gap), Sephora browser automation, and NLP-based skincare ingredient analysis.
+Fashion and beauty MCP servers have moved from pure proof-of-concept to early practical utility. The category grew from ~10 to 11 servers in six weeks, with the most significant additions being secondhand marketplace search (filling what was the biggest gap), Sephora browser automation, and NLP-based skincare ingredient analysis.
 
 The pattern emerging is clear: **the consumer-facing use cases are arriving first**. Shopping (secondhand-mcp, mcp-sephora, klydo-mcp), product analysis (skincare-mcp, K-Beauty-MCP), and wardrobe management (Caffeinated Wardrobe) are all immediately useful for end users. The industry-facing tools (trend forecasting, size recommendation, textile design) remain completely absent — this is still very much a consumer category, not a fashion industry toolset.
 

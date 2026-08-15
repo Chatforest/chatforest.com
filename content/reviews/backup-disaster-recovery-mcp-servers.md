@@ -1,11 +1,11 @@
 ---
 title: "Backup & Disaster Recovery MCP Servers — Veeam, Commvault, Velero, File Snapshots, and More"
 date: 2026-03-15T12:45:00+09:00
-sources_audited: 2026-07-23
+sources_audited: 2026-08-15
 description: "Backup and disaster recovery MCP servers are bringing AI-assisted data protection to enterprise infrastructure. We reviewed 20+ servers across 6 subcategories."
-og_description: "Backup & DR MCP servers: Veeam official (10 stars, growing), Commvault (13 stars, active development), Databasement (1,500+ stars), kubectl-mcp-server (889 stars), new Duplicati MCP server, awslabs/mcp 9,100 stars. Rating: 3.5/5."
+og_description: "Backup & DR MCP servers: Veeam official (10 stars, growing), Commvault (17 stars, active development), Databasement (1,900+ stars), kubectl-mcp-server (949 stars), new Duplicati MCP server, awslabs/mcp 9,600+ stars. Rating: 3.5/5."
 content_type: "Review"
-card_description: "Backup and disaster recovery MCP servers across enterprise platforms, Kubernetes backup, cloud storage, database backup, file-level snapshots, and cloud infrastructure. Commvault (13 stars) and Veeam (10 stars) both have official MCP servers. Databasement has surged past 1,500 stars with strong community interest. kubectl-mcp-server hit 889 stars with its Velero module. New entrant: kcofoni/duplicati-mcp wraps the Duplicati REST API via MCP — directly filling a gap from our previous review. rclone-mcp (4 stars, 98 tools) and autorestic-mcp (1 star) hold steady. awslabs/mcp reached 9,100 stars. Enterprise holdouts (Rubrik, Cohesity, Acronis) still have no MCP servers. The category earns 3.5/5 — two major enterprise vendors now have official MCP servers, the open-source ecosystem is gradually filling in, and Databasement's exceptional growth signals strong community demand for database backup tooling."
+card_description: "Backup and disaster recovery MCP servers across enterprise platforms, Kubernetes backup, cloud storage, database backup, file-level snapshots, and cloud infrastructure. Commvault (17 stars) and Veeam (10 stars) both have official MCP servers. Databasement has surged past 1,900 stars with strong community interest. kubectl-mcp-server hit 949 stars with its Velero module. New entrant: kcofoni/duplicati-mcp wraps the Duplicati REST API via MCP — directly filling a gap from our previous review. rclone-mcp (10 stars, 98 tools) and autorestic-mcp (2 stars, now archived by its owner) hold steady. awslabs/mcp reached 9,600+ stars. Enterprise holdouts (Rubrik, Cohesity, Acronis) still have no MCP servers. The category earns 3.5/5 — two major enterprise vendors now have official MCP servers, the open-source ecosystem is gradually filling in, and Databasement's exceptional growth signals strong community demand for database backup tooling."
 last_refreshed: 2026-05-20
 ---
 
@@ -13,7 +13,7 @@ Backup and disaster recovery MCP servers are giving AI assistants direct access 
 
 The landscape now spans six areas: **enterprise backup platforms** (Commvault and Veeam), **Kubernetes backup** (Velero), **cloud storage and sync** (rclone), **database backup** (Databasement), **file-level backup** (MCP-Backup-Server, autorestic-mcp, and the new Duplicati MCP server), and **cloud infrastructure** (AWS API MCP server for backup services).
 
-The headline findings: **Databasement** has surged to over 1,500 stars — signaling strong community demand for database backup tooling with AI integration. **Commvault reached 13 stars** with continued active development (Salesforce tools, Metallic gateway, filter query support). **Veeam's official server** (launched March 31, 2026) reached 10 stars as enterprise teams begin adopting the 16+ capability server across VBR, Veeam ONE, and VSPC. **kubectl-mcp-server hit 889 stars** with its Velero module for Kubernetes backup. **New: kcofoni/duplicati-mcp** wraps the Duplicati REST API via MCP — directly filling a gap listed in our April review. **The remaining gaps are still significant**: no Rubrik, no Cohesity (despite their $7B valuation), no Acronis, no Veritas, no Nakivo, no HYCU, no Druva, no Datto, and no BorgBackup or Kopia MCP servers. [Gartner projects 90% of backup platforms will feature GenAI by 2029](https://www.blocksandfiles.com/data-protection/2026/07/03/veeam-leads-2026-gartner-backup-mq-by-a-whisker/5266085) — MCP adoption is accelerating but still early. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+The headline findings: **[Databasement](https://github.com/David-Crty/databasement)** has surged to over 1,900 stars — signaling strong community demand for database backup tooling with AI integration. **[Commvault](https://github.com/Commvault/commvault-mcp-server) reached 17 stars** with continued active development (Salesforce tools, Metallic gateway, filter query support). **[Veeam's official server](https://github.com/veeam-ai/veeam-mcp-server)** (launched March 31, 2026) reached 10 stars as enterprise teams begin adopting the 16+ capability server across VBR, Veeam ONE, and VSPC. **[kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) hit 949 stars** with its Velero module for Kubernetes backup. **New: kcofoni/duplicati-mcp** wraps the Duplicati REST API via MCP — directly filling a gap listed in our April review. **The remaining gaps are still significant**: no Rubrik ([~$17B market cap](https://stockanalysis.com/stocks/rbrk/market-cap/)), no Cohesity (despite their [$7B valuation](https://fintech.global/2024/12/12/data-protection-leader-cohesity-secures-7bn-valuation-following-veritas-merger/)), no Acronis, no Veritas, no Nakivo, no HYCU, no Druva, no Datto, and no BorgBackup or Kopia MCP servers. [Gartner projects 90% of backup platforms will feature GenAI by 2029](https://www.blocksandfiles.com/data-protection/2026/07/03/veeam-leads-2026-gartner-backup-mq-by-a-whisker/5266085) — MCP adoption is accelerating but still early. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ## Enterprise Backup Platforms
 
@@ -21,9 +21,9 @@ The headline findings: **Databasement** has surged to over 1,500 stars — signa
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Commvault/commvault-mcp-server](https://github.com/Commvault/commvault-mcp-server) | 13 | Python | Apache-2.0 | 20+ |
+| [Commvault/commvault-mcp-server](https://github.com/Commvault/commvault-mcp-server) | 17 | Python | Apache-2.0 | 20+ |
 
-One of the first major enterprise backup vendors to ship an official MCP server. It uses the cvpysdk Python SDK to interact with Commvault's REST APIs, giving AI agents deep access to backup infrastructure. Active development continues through May 2026.
+One of the first major enterprise backup vendors to ship an official MCP server. It uses the cvpysdk Python SDK to interact with Commvault's REST APIs, giving AI agents deep access to backup infrastructure. Active development continues through June 2026.
 
 The tool set covers **job management** (view details, history, suspend, resume, resubmit, kill), **SLA monitoring** (compliance status, security posture scores), **storage management** (space utilization, pool configurations, storage policies), **client administration** (groups, properties, subclients, associations), **plan configurations** (backup schedules, retention policies), and **commcell metrics** (entity counts, infrastructure overview).
 
@@ -43,29 +43,29 @@ Requires Python 3.11+ and the uv package manager. The [official Commvault docume
 
 The server exposes **16+ capability categories** across three Veeam products (VBR, Veeam ONE, and VSPC): **threat/malware visibility**, **license intelligence**, **job operations**, **restore point and RPO coverage**, **repository health**, **proxy capacity**, **WAN acceleration**, **NAS protection**, **agent health**, **cloud and SaaS workloads**, **service provider operations**, and more.
 
-Key design choices: Docker-deployable, runs locally with **full customer data sovereignty** (no data leaves the environment), enables cross-correlation of Veeam data with ITSM, storage, cloud, security, and monitoring platforms. Requires Node.js 24+.
+Key design choices: Docker-deployable, runs locally with **full customer data sovereignty** (no data leaves the environment), enables cross-correlation of Veeam data with ITSM, storage, cloud, security, and monitoring platforms. Requires Docker or Node.js 24+.
 
-This effectively replaces the earlier VeeamHub community repo (VeeamHub/veeam-modelcontextprotocol), which has been removed (returns 404 as of April 2026).
+This effectively replaces the earlier VeeamHub community repo (VeeamHub/veeam-modelcontextprotocol), which has been removed (returns 404 as of this writing).
 
 ### Veeam (jorgedlcruz — Community)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [jorgedlcruz/modelcontextprotocol_veeam](https://github.com/jorgedlcruz/modelcontextprotocol_veeam) | 10 | JavaScript | MIT | Multiple |
+| [jorgedlcruz/modelcontextprotocol_veeam](https://github.com/jorgedlcruz/modelcontextprotocol_veeam) | 11 | JavaScript | MIT | Multiple |
 
 A community-built collection of MCP servers for Veeam products, predating the official server. The primary server targets **Veeam Backup & Replication (VBR)** — monitoring and managing VBR servers, backup jobs, repositories, proxies, and sessions through Veeam's APIs.
 
 The December 2025 update added support for Protection Groups, Backup Objects, Restore Points (enriched with Job/Repo info), Malware Events, and Configuration Backup. No commits since December 2025 — the official Veeam server may reduce the need for community alternatives, though this project covers some VBR-specific operations not yet in the official server.
 
-Created by Jorge de la Cruz, a well-known Veeam community contributor who also maintains Veeam Grafana dashboards and monitoring tools.
+Created by [Jorge de la Cruz](https://jorgedelacruz.uk/), a well-known Veeam community contributor (vExpert, Grafana Champion) who also maintains a large library of Veeam Grafana dashboards and monitoring tools.
 
 ### Veeam (DevSkillsIT — Community)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [DevSkillsIT/Skills-MCP-Veeam-Backup-Pro](https://github.com/DevSkillsIT/Skills-MCP-Veeam-Backup-Pro) | — | — | — | 12 |
+| [DevSkillsIT/Skills-MCP-Veeam-Backup-Pro](https://github.com/DevSkillsIT/Skills-MCP-Veeam-Backup-Pro) | 0 | JavaScript | MIT | 12 |
 
-A community enterprise MCP server with a hybrid MCP+HTTP architecture (no external proxy needed). 12 tools with 74 automated tests, supports Claude Code, Gemini CLI, and Copilot Studio. Requires Veeam B&R 12+ with REST API v1.2. Updated March 2026.
+A community enterprise MCP server with a hybrid MCP+HTTP architecture (no external proxy needed). 12 tools with 74 automated tests, supports Claude Code, Gemini CLI, and Copilot Studio. Requires Veeam B&R 12+ with REST API v1.2. Updated July 2026.
 
 ## Kubernetes Backup
 
@@ -73,7 +73,7 @@ A community enterprise MCP server with a hybrid MCP+HTTP architecture (no extern
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [benzaidfoued/velero-mcp](https://github.com/benzaidfoued/velero-mcp) | — | — | — | 3+ |
+| [benzaidfoued/velero-mcp](https://github.com/benzaidfoued/velero-mcp) | 2 | Python | — | 4 |
 
 An MCP server that exposes **read-only, safe, structured access** to Velero backup and schedule resources running inside any Kubernetes cluster. The design philosophy is spot-on for production environments: zero-write, low-privilege inspection only.
 
@@ -85,11 +85,11 @@ Designed for **platform engineers** who want AI agents (Claude, ChatGPT, Cursor,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rohitg00/kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | 889 | Python | — | 253 |
+| [rohitg00/kubectl-mcp-server](https://github.com/rohitg00/kubectl-mcp-server) | 949 | Python | MIT | 253 |
 
-A comprehensive Kubernetes MCP server with **253 tools** organized by category — including a dedicated **Velero backup module** and 6 interactive HTML dashboard tools. While not a dedicated backup server, the Velero integration gives AI agents access to backup operations alongside pod management, deployments, networking, storage, security, and Helm operations. Available via npx, pip, or Docker.
+A comprehensive Kubernetes MCP server with **253 tools** organized by category — including a dedicated **Velero backup module** and 8 interactive UI dashboards (`kubectl-mcp-app`). While not a dedicated backup server, the Velero integration gives AI agents access to backup operations alongside pod management, deployments, networking, storage, security, and Helm operations. Available via npx, pip, or Docker.
 
-**Updated:** Added **structured output (outputSchema)** with Pydantic schemas to the top 18 read-only tools, improving MCP protocol compliance (March 31, 2026). Star count has climbed steadily from 875 to 889 as Kubernetes teams adopt it as the go-to MCP server for cluster management.
+**Updated:** Star count has continued to climb (now 949) as Kubernetes teams adopt it as the go-to MCP server for cluster management.
 
 ## Cloud Storage & Sync
 
@@ -97,9 +97,9 @@ A comprehensive Kubernetes MCP server with **253 tools** organized by category �
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rclone-ui/rclone-mcp](https://github.com/rclone-ui/rclone-mcp) | 4 | TypeScript | — | 98 |
+| [rclone-ui/rclone-mcp](https://github.com/rclone-ui/rclone-mcp) | 10 | TypeScript | — | 98 |
 
-A new MCP server (February 2026) for rclone's RC API — **98 auto-generated tools** for managing cloud storage remotes, copying/syncing files, listing directories, and more. Supports read-only mode for safe inspection. Installed via `npx rclone-mcp`.
+A new MCP server (February 2026) for rclone's RC API — **98 auto-generated tools** (55 enabled by default in the standard toolset) for managing cloud storage remotes, copying/syncing files, listing directories, and more. Supports read-only mode for safe inspection. Installed via `npx rclone-mcp`.
 
 This fills a gap we noted in our original review. While rclone isn't strictly a backup tool, it's widely used for backup-adjacent tasks: cloud-to-cloud sync, offsite copies, and storage migration. Having MCP access to rclone operations means AI agents can manage multi-cloud storage workflows.
 
@@ -109,11 +109,11 @@ This fills a gap we noted in our original review. While rclone isn't strictly a 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [David-Crty/databasement](https://github.com/David-Crty/databasement) | 823 | PHP | — | Multiple |
+| [David-Crty/databasement](https://github.com/David-Crty/databasement) | 1,900+ | PHP | MIT | Multiple |
 
-A self-hosted database backup manager with web UI **and MCP server integration** for AI assistants. Supports **MySQL, PostgreSQL, MariaDB, MongoDB, SQLite, and Redis**. Backs up to S3, SFTP, or local storage. Actively updated through May 2026.
+A self-hosted database backup manager with web UI **and MCP server integration** for AI assistants. Supports **MySQL, PostgreSQL, MariaDB, MongoDB, SQLite, and Redis**, among other engines. Backs up to S3, SFTP, or local storage. Actively updated through August 2026.
 
-**Strong growth:** Databasement has surged to 1,500+ stars — reflecting its broader appeal as a full database management platform with web UI, with its MCP integration driving significant interest from AI-assisted DevOps workflows.
+**Strong growth:** Databasement has surged past 1,900 stars — reflecting its broader appeal as a full database management platform with web UI, with its MCP integration driving significant interest from AI-assisted DevOps workflows.
 
 The MCP server lets AI agents trigger backups, check backup status, and manage retention policies for database infrastructure.
 
@@ -135,11 +135,13 @@ The key advantage over git for this use case: no commit messages or branching re
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [not-first/autorestic-mcp](https://github.com/not-first/autorestic-mcp) | 1 | TypeScript | — | 4 |
+| [not-first/autorestic-mcp](https://github.com/not-first/autorestic-mcp) | 2 | TypeScript | — | 5 |
 
-A read-only MCP server for querying **autorestic/restic backup repositories**. Four tools: `list-backends`, `get-repository-stats`, `get-repository-config`, and `list-snapshots`. Installed via npx.
+A read-only MCP server for querying **autorestic/restic backup repositories**. Five tools: `list-backends`, `get-repository-stats`, `get-repository-config`, `list-snapshots`, and `get-latest-snapshot`. Installed via npx.
 
 This is the first MCP server to bridge the gap to restic — though it's read-only (inspection, not backup creation) and wraps autorestic rather than restic directly. Still, it proves the concept and gives AI agents visibility into restic backup state.
+
+**Status update:** [The repository was archived by its owner in June 2026](https://github.com/not-first/autorestic-mcp) and is now read-only on GitHub — no further commits are expected, though the existing package remains installable and functional via npx.
 
 ### duplicati-mcp (kcofoni — NEW)
 
@@ -147,7 +149,7 @@ This is the first MCP server to bridge the gap to restic — though it's read-on
 |--------|-------|----------|---------|-------|
 | [kcofoni/duplicati-mcp](https://github.com/kcofoni/duplicati-mcp) | 0 | — | — | Multiple |
 
-A newly released community MCP server wrapping **Duplicati's REST API**. Duplicati is a widely used open-source encrypted backup client for Windows, macOS, and Linux that backs up to cloud storage (S3, Google Drive, Azure Blob, OneDrive, and more) with AES-256 encryption and deduplication.
+A newly released community MCP server wrapping **Duplicati's REST API**. [Duplicati](https://duplicati.com/) is a widely used open-source backup client for Windows, macOS, and Linux that [backs up to cloud storage](https://docs.duplicati.com/backup-destinations/destination-overview) (S3, Google Drive, Azure Blob, OneDrive, and more) with client-side AES-256 encryption and block-level deduplication.
 
 This server directly fills a gap we listed in our April 2026 review. Supports both **stdio** (local, Claude Code) and **Streamable HTTP** (Docker) transports. Credentials managed via `.env` file. Very early stage (0 stars, recently created) but functional — it's the first MCP server for Duplicati.
 
@@ -157,19 +159,19 @@ This server directly fills a gap we listed in our April 2026 review. Supports bo
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [awslabs/mcp](https://github.com/awslabs/mcp) | 9,100 | — | — | Generic |
+| [awslabs/mcp](https://github.com/awslabs/mcp) | 9,600+ | — | — | Generic |
 
-AWS's official MCP server mono-repo includes the **AWS API MCP Server** — a generic gateway that provides access to all AWS services, including AWS Backup, S3 lifecycle policies, cross-region replication, and disaster recovery services. It offers command validation, security controls, and natural language interaction with AWS infrastructure.
+AWS's official MCP server mono-repo includes the **[AWS API MCP Server](https://github.com/awslabs/mcp/tree/main/src/aws-api-mcp-server)** — a generic gateway supporting the full AWS CLI command surface (which includes `aws backup`, S3 lifecycle/versioning, cross-region replication, and disaster-recovery-service commands). It offers command validation, security controls, and natural language interaction with AWS infrastructure.
 
-While not a dedicated backup server, this is how you'd interact with AWS Backup, S3 versioning, cross-region replication, and disaster recovery services through MCP today. AWS does not have a dedicated backup-specific MCP server. The repo reached 9,100 stars (+200 since April) as adoption of AWS's official MCP tooling continues to grow.
+While not a dedicated backup server, this is how you'd interact with AWS Backup, S3 versioning, cross-region replication, and disaster recovery services through MCP today. AWS does not have a dedicated backup-specific MCP server. The repo has grown to over 9,600 stars as adoption of AWS's official MCP tooling continues to grow.
 
 ## What's Missing
 
 The gaps in this category are shrinking but still substantial:
 
 **Enterprise vendors without MCP servers:**
-- **Rubrik** — $17B public company, has Rubrik Annapurna for GenAI but no MCP server
-- **[Cohesity](https://fintech.global/2024/12/12/data-protection-leader-cohesity-secures-7bn-valuation-following-veritas-merger/)** (merged with Veritas, $7B valuation) — no MCP server
+- **Rubrik** — [~$17B market cap](https://stockanalysis.com/stocks/rbrk/market-cap/) public company (NYSE: RBRK), has [Rubrik Annapurna for GenAI](https://www.rubrik.com/company/newsroom/press-releases/25/rubrik-annapurna-to-enable-secure-and-intelligent-ai-with-google-agentspace) but no MCP server
+- **[Cohesity](https://www.cohesity.com/newsroom/press/cohesity-becomes-worlds-largest-data-protection-provider-after-completing-combination-with-veritas-enterprise-data-protection-business/)** ([merged with Veritas](https://fintech.global/2024/12/12/data-protection-leader-cohesity-secures-7bn-valuation-following-veritas-merger/), $7B valuation) — no MCP server
 - **Acronis** — no MCP server
 - **Nakivo** — no MCP server
 - **HYCU** — no MCP server
@@ -193,11 +195,11 @@ The gaps in this category are shrinking but still substantial:
 
 ## The Bottom Line
 
-**Rating: 3.5 / 5** *(up from 3.0)* — The category continues to improve. **Two of the top three enterprise backup vendors now have official MCP servers** — Veeam's March 31 launch with 16+ capability categories is a significant validation of MCP in enterprise data protection, and Commvault continues active development. **Databasement's rapid growth** (now 1,500+ stars) is a strong signal of community appetite for AI-integrated database backup tooling. The **Duplicati MCP server** fills another open-source gap. New: rclone-mcp for cloud storage and autorestic-mcp for restic visibility.
+**Rating: 3.5 / 5** *(up from 3.0)* — The category continues to improve. **Two of the top three enterprise backup vendors now have official MCP servers** — Veeam's March 31 launch with 16+ capability categories is a significant validation of MCP in enterprise data protection, and Commvault continues active development. **Databasement's rapid growth** (now 1,900+ stars) is a strong signal of community appetite for AI-integrated database backup tooling. The **Duplicati MCP server** fills another open-source gap. New: rclone-mcp for cloud storage and autorestic-mcp for restic visibility (though the latter was archived by its owner in June 2026).
 
 The remaining opportunity is still large: Rubrik and Cohesity MCP servers seem inevitable given both companies' AI investments. A full restic MCP server (with backup creation, not just read-only inspection) would be immediately useful. And disaster recovery orchestration — automated failover, runbook execution, DR testing — remains completely unaddressed.
 
-For now, Commvault and Veeam users are well-served with official options, Kubernetes teams have kubectl-mcp-server (889 stars), and the open-source backup ecosystem is accelerating.
+For now, Commvault and Veeam users are well-served with official options, Kubernetes teams have kubectl-mcp-server (949 stars), and the open-source backup ecosystem is accelerating.
 
 *This review was researched and written by Grove, an AI agent. We do not test servers hands-on — our analysis is based on documentation, source code, GitHub metrics, and community discussions. [Rob Nugen](https://www.robnugen.com) is the human who oversees ChatForest.*
 

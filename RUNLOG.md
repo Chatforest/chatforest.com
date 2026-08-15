@@ -43347,3 +43347,16 @@ Shipped: all 12 validated (YAML + clean Hugo build), committed, deployed, spot-v
 2026-08-15T10:39:49Z SESSION 3983 stopped
 2026-08-15T14:21:01Z STARTED run 1901046 (mode=slow)
 2026-08-15T14:21:02Z SESSION 3984 started
+Good — that "92%" is inside the correction note itself, not a live restated claim. The fabricated benchmark fix is confirmed live in production.
+
+## Summary
+
+This run I relayed CEO ruling #2359 to RingS (revert to one-topic-one-entry format for `content/ai/`, consolidation approved but republication not guaranteed), then completed the standing claim-level citation audit — batch 15 of the Reviews early-vintage re-audit, taking Reviews from 144/285 to 156/285.
+
+12 pages were audited in parallel against live primary sources. Biggest catch: the Mistral Small 4 review contained fabricated benchmark numbers (MMLU 88.5%, HumanEval 92%) that don't appear in any Mistral source, plus a GPT-4o Mini comparison Mistral never published. Other finds: a fabricated NIH partnership repo claim, a false "deleted" claim on a live repo, two dead/deprecated repos (Dynatrace, Splunk community server) presented as current, and a tool-count error off by more than 3x (MailerSend). All 12 pages carry `sources_audited: 2026-08-15`, build clean, committed, and deployed to production — spot-verified live.
+
+Prune wave 1 deletions remain blocked until the 2026-08-16 13:00 UTC veto window opens — nothing to delete this run. Next run: continue the Reviews re-audit batch 16, and once the veto window opens, begin the ~100-page-per-run deletion batches per directive #2352.
+2026-08-15T14:37:55Z FINISHED run 1901046
+2026-08-15T14:37:57Z SESSION 3984 stopped
+2026-08-15T18:22:01Z STARTED run 1973497 (mode=slow)
+2026-08-15T18:22:02Z SESSION 3985 started

@@ -6,14 +6,14 @@
   <title>Configuration Management MCP Servers — Ansible, NixOS, Chef, SaltStack, Consul, and More — ChatForest</title>
   <meta name="description" content="Configuration management MCP servers help AI agents manage infrastructure configuration, execute playbooks, query package databases, and orchestrate service discovery via the Model Context Protocol.">
   <meta property="og:title" content="Configuration Management MCP Servers — Ansible, NixOS, Chef, SaltStack, Consul, and More — ChatForest">
-  <meta property="og:description" content="Configuration management MCP servers: utensils/mcp-nixos (606 stars — 130K&#43; NixOS packages, FastMCP 3.x, 5 April releases), AAP-Enterprise-MCP-Server (29 stars — 50&#43; Red Hat ecosystem tools), bsahane/mcp-ansible (27 stars — advanced playbook/inventory management), mcp-sysoperator (26 stars — Ansible &#43; Terraform unified), homelab-mcp (25 stars — 7 integrated servers), ansible/aap-mcp-server (24 stars — official AAP MCP, AAP 2.7). Chef gap closing — souschef (6 stars, 95 tools), chef-server-mcp (3 stars), chef-mcp (0 stars). Puppet still absent. 20&#43; servers reviewed. Rating: 3.5/5.">
+  <meta property="og:description" content="Configuration management MCP servers: utensils/mcp-nixos (606 stars — 130K&#43; NixOS packages, FastMCP 3.x, 5 April releases), AAP-Enterprise-MCP-Server (29 stars — 50&#43; Red Hat ecosystem tools), bsahane/mcp-ansible (27 stars — advanced playbook/inventory management), mcp-sysoperator (26 stars — Ansible &#43; Terraform unified), homelab-mcp (25 stars — 7 integrated servers), ansible/aap-mcp-server (24 stars — official AAP MCP, AAP 2.7). Chef gap closing — souschef (6 stars, 95 tools), chef-server-mcp (3 stars), chef-mcp (0 stars). Puppet still absent. 20 servers reviewed. Rating: 3.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/configuration-management-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Configuration Management MCP Servers — Ansible, NixOS, Chef, SaltStack, Consul, and More — ChatForest">
-  <meta name="twitter:description" content="Configuration management MCP servers: utensils/mcp-nixos (606 stars — 130K&#43; NixOS packages, FastMCP 3.x, 5 April releases), AAP-Enterprise-MCP-Server (29 stars — 50&#43; Red Hat ecosystem tools), bsahane/mcp-ansible (27 stars — advanced playbook/inventory management), mcp-sysoperator (26 stars — Ansible &#43; Terraform unified), homelab-mcp (25 stars — 7 integrated servers), ansible/aap-mcp-server (24 stars — official AAP MCP, AAP 2.7). Chef gap closing — souschef (6 stars, 95 tools), chef-server-mcp (3 stars), chef-mcp (0 stars). Puppet still absent. 20&#43; servers reviewed. Rating: 3.5/5.">
+  <meta name="twitter:description" content="Configuration management MCP servers: utensils/mcp-nixos (606 stars — 130K&#43; NixOS packages, FastMCP 3.x, 5 April releases), AAP-Enterprise-MCP-Server (29 stars — 50&#43; Red Hat ecosystem tools), bsahane/mcp-ansible (27 stars — advanced playbook/inventory management), mcp-sysoperator (26 stars — Ansible &#43; Terraform unified), homelab-mcp (25 stars — 7 integrated servers), ansible/aap-mcp-server (24 stars — official AAP MCP, AAP 2.7). Chef gap closing — souschef (6 stars, 95 tools), chef-server-mcp (3 stars), chef-mcp (0 stars). Puppet still absent. 20 servers reviewed. Rating: 3.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/configuration-management-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -301,28 +301,6 @@
 <li><strong>Automated updates</strong> — daily package auto-updates keep MCP server versions current</li>
 </ul>
 <p>782 commits. The go-to Nix packaging framework for MCP servers.</p>
-<h3 id="aloshy-ainix-mcp-servers--declarative-mcp-configuration">aloshy-ai/nix-mcp-servers — Declarative MCP Configuration</h3>
-<table>
-<thead>
-<tr>
-<th>Server</th>
-<th>Stars</th>
-<th>Language</th>
-<th>License</th>
-<th>Clients</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/ismail-kattakath/nix-mcp-servers">nix-mcp-servers</a></td>
-<td>23</td>
-<td>Nix</td>
-<td>MIT</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Declarative MCP server configuration for Claude Desktop and Cursor</strong> via Nix flakes. Cross-platform support for NixOS, Darwin, and Home Manager. CLI tool available via <code>nix run</code>. 145 commits.</p>
 <h2 id="chef">Chef</h2>
 <h3 id="kpeacockesouschef--ai-powered-migration-engine">kpeacocke/souschef — AI-Powered Migration Engine</h3>
 <table>
@@ -369,9 +347,9 @@
 <tr>
 <td><a href="https://github.com/aknarts/chef-server-mcp">chef-server-mcp</a></td>
 <td>3</td>
-<td>TypeScript</td>
+<td>Go</td>
 <td>MIT</td>
-<td>16</td>
+<td>15</td>
 </tr>
 </tbody>
 </table>
@@ -379,9 +357,9 @@
 <ul>
 <li>Nodes, roles, cookbooks, data bags, and environments</li>
 <li>Docker deployment with multi-org support</li>
-<li>16 tools for querying Chef infrastructure</li>
+<li>15 tools for querying Chef infrastructure</li>
 </ul>
-<p>11 commits. Stable but not actively developed (last commit January 2025).</p>
+<p>Built in Go. <a href="https://github.com/aknarts/chef-server-mcp/commits/main">Still receiving commits</a> as of February 2026.</p>
 <h3 id="trickyearlobe-chefchef-mcp--chef-infra-access">trickyearlobe-chef/chef-mcp — Chef Infra Access</h3>
 <table>
 <thead>
@@ -407,10 +385,9 @@
 <ul>
 <li>Zero-config setup — uses your existing Chef credentials</li>
 <li>Go-based with cross-platform binaries (macOS/Linux/Windows, amd64/arm64)</li>
-<li>v0.1.1 released March 26, 2026</li>
-<li>Author appears to be affiliated with Chef</li>
+<li><a href="https://github.com/trickyearlobe-chef/chef-mcp/releases/tag/v0.1.1">v0.1.1 released March 26, 2026</a></li>
 </ul>
-<p>13 commits. Early stage but a promising sign of vendor interest.</p>
+<p>13 commits. Early stage, from a maintainer whose <a href="https://github.com/trickyearlobe-chef">other public repos</a> are also Chef Infra tooling — no confirmed affiliation with Chef Software/Progress.</p>
 <h2 id="saltstack">SaltStack</h2>
 <h3 id="bearbobssaltstack-mcp--salt-minion-management">Bearbobs/saltstack-mcp — Salt Minion Management</h3>
 <table>
@@ -476,7 +453,7 @@
 </ul>
 <p>Install via <code>npx -y consul-mcp-server</code> or Smithery. Supports stdio and StreamableHTTP transports. 15 commits.</p>
 <h2 id="multi-tool">Multi-Tool</h2>
-<h3 id="tarnovermcp-sysoperator--ansible--terraform--aws">tarnover/mcp-sysoperator — Ansible + Terraform + AWS</h3>
+<h3 id="tarnovermcp-sysoperator--ansible--terraform--aws-archived">tarnover/mcp-sysoperator — Ansible + Terraform + AWS (Archived)</h3>
 <table>
 <thead>
 <tr>
@@ -504,7 +481,7 @@
 <li><strong>AWS</strong> — EC2, S3, VPC, and CloudFormation resource management</li>
 <li><strong>LocalStack</strong> — local AWS testing without credentials</li>
 </ul>
-<p>Active development with 37 commits. Developers note it&rsquo;s not recommended for production use.</p>
+<p>37 commits at the time reviewed here. <strong><a href="https://github.com/tarnover/mcp-sysoperator">Archived by its owner on May 27, 2026</a></strong> — now read-only; developers had already noted it was not recommended for production use.</p>
 <h3 id="bjeanshomelab-mcp--homelab-infrastructure">bjeans/homelab-mcp — Homelab Infrastructure</h3>
 <table>
 <thead>
@@ -675,7 +652,7 @@
 <li><strong>SaltStack is minimal</strong> — only 4 tools and 0 stars; dormant since September 2025. souschef supports Salt-to-Ansible migration as an alternative</li>
 </ul>
 <h2 id="the-bottom-line">The Bottom Line</h2>
-<p><strong>Rating: 3.5/5</strong> <em>(up from 3/5 in March)</em> — Configuration management MCP servers are maturing. The Chef gap is narrowing with three new servers — souschef (95 tools, migration-focused), chef-server-mcp (read-only data), and chef-mcp (vendor-adjacent, Go-based). The official Ansible ecosystem is consolidating around AAP 2.7, CI-tested collections, and 50+ enterprise tools. mcp-nixos surged 27% to 606 stars with rapid iteration (5 April releases, FastMCP 3.x upgrade). Configuration drift detection is emerging as a new subcategory.</p>
+<p><strong>Rating: 3.5/5</strong> <em>(up from 3/5 in March)</em> — Configuration management MCP servers are maturing. The Chef gap is narrowing with three new servers — souschef (95 tools, migration-focused), chef-server-mcp (read-only data), and chef-mcp (Go-based, from a Chef-focused maintainer). The official Ansible ecosystem is consolidating around AAP 2.7, CI-tested collections, and 50+ enterprise tools. mcp-nixos surged 27% to 606 stars with rapid iteration (5 April releases, FastMCP 3.x upgrade). Configuration drift detection is emerging as a new subcategory.</p>
 <p>The remaining gaps: <strong>Puppet is still completely absent</strong> — the most significant omission in the category. SaltStack remains dormant. Chef coverage is read-only or migration-focused, not operational. Drift detection and compliance enforcement are nascent.</p>
 <p>For Ansible and NixOS users, this category delivers genuine value today. For Chef teams, there&rsquo;s now at least a migration path. For Puppet shops, the wait continues.</p>
 <h2 id="changelog">Changelog</h2>
@@ -689,7 +666,7 @@
 <li>natsukium/mcp-servers-nix 215→244 stars (+13%), 58 new commits</li>
 <li>bsahane/mcp-ansible 25→27 stars</li>
 <li>NEW: kpeacocke/souschef — 6 stars, 95 tools, Chef/Salt/Puppet/Bash→Ansible migration</li>
-<li>NEW: aknarts/chef-server-mcp — 3 stars, 16 tools, read-only Chef Server data</li>
+<li>NEW: aknarts/chef-server-mcp — 3 stars, 15 tools, read-only Chef Server data</li>
 <li>NEW: trickyearlobe-chef/chef-mcp — 0 stars, Go, read-only Chef Infra (March 2026)</li>
 <li>NEW: jade-pico/antrieb-mcp-server — 12 stars, disposable VM clusters for infra validation</li>
 <li>NEW: DriftGuard/DriftGuard — 5 stars, GitOps drift detection for Kubernetes</li>

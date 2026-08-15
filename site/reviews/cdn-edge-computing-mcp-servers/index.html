@@ -6,14 +6,14 @@
   <title>CDN &amp; Edge Computing MCP Servers — Cloudflare, Fastly, Akamai, Gcore, and Beyond — ChatForest</title>
   <meta name="description" content="CDN and edge computing MCP servers let AI agents manage content delivery, cache purging, edge workers, and performance analytics across major CDN platforms.">
   <meta property="og:title" content="CDN &amp; Edge Computing MCP Servers — Cloudflare, Fastly, Akamai, Gcore, and Beyond — ChatForest">
-  <meta property="og:description" content="CDN &amp; edge computing MCP servers: Cloudflare (3,800 stars &#43; Code Mode 466 stars), Fastly v2.1.0 (secret encryption, search/inspect/execute architecture), official Akamai edge serverless MCP, Bunny CDN newcomer. Rating: 3.5/5.">
+  <meta property="og:description" content="CDN &amp; edge computing MCP servers: Cloudflare (4,000&#43; stars &#43; Code Mode 700&#43; stars), Fastly v2.1.x (token encryption, search/inspect/execute architecture), official Akamai edge serverless MCP, Bunny CDN newcomer. Rating: 3.5/5.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://chatforest.com/reviews/cdn-edge-computing-mcp-servers/">
   <meta property="og:site_name" content="ChatForest">
   <meta property="og:image" content="https://chatforest.com/images/chatforest-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CDN &amp; Edge Computing MCP Servers — Cloudflare, Fastly, Akamai, Gcore, and Beyond — ChatForest">
-  <meta name="twitter:description" content="CDN &amp; edge computing MCP servers: Cloudflare (3,800 stars &#43; Code Mode 466 stars), Fastly v2.1.0 (secret encryption, search/inspect/execute architecture), official Akamai edge serverless MCP, Bunny CDN newcomer. Rating: 3.5/5.">
+  <meta name="twitter:description" content="CDN &amp; edge computing MCP servers: Cloudflare (4,000&#43; stars &#43; Code Mode 700&#43; stars), Fastly v2.1.x (token encryption, search/inspect/execute architecture), official Akamai edge serverless MCP, Bunny CDN newcomer. Rating: 3.5/5.">
   <meta name="twitter:image" content="https://chatforest.com/images/chatforest-og.png">
   <link rel="canonical" href="https://chatforest.com/reviews/cdn-edge-computing-mcp-servers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -67,7 +67,7 @@
 
       <div class="article-body">
         <p>Content delivery networks are the invisible backbone of the modern web — <strong>caching, routing, edge compute, security, and performance optimization</strong>. CDN &amp; edge computing MCP servers let AI agents manage these systems directly: purging caches, deploying edge workers, analyzing traffic patterns, configuring domains, and monitoring performance metrics.</p>
-<p>The headline finding: <strong>CDN MCP coverage is vendor-driven and uneven</strong>. Cloudflare dominates with multiple official servers totaling 4,200+ stars and a novel Code Mode architecture that maps 2,500 API endpoints into ~1,000 tokens. Fastly&rsquo;s v2.1.0 is now a substantially more capable server with a differentiated security feature: sensitive credential values are encrypted before being returned to the LLM. Akamai now has official MCP servers through the akamai-developers org, and Bunny CDN has its first community MCP. The pattern is clear: MCP adoption correlates directly with developer-platform ambitions. Part of our <strong><a href="/categories/cloud-infrastructure/">Cloud &amp; Infrastructure MCP category</a></strong>.</p>
+<p>The headline finding: <strong>CDN MCP coverage is vendor-driven and uneven</strong>. Cloudflare dominates with multiple official servers totaling <a href="https://github.com/cloudflare/mcp-server-cloudflare">4,800+ stars</a> and a novel Code Mode architecture that maps <a href="https://blog.cloudflare.com/code-mode-mcp/">~2,500 API endpoints into ~1,000 tokens</a>. Fastly&rsquo;s <a href="https://github.com/fastly/mcp">official server</a> is a substantially capable search/inspect/execute design with an optional token-encryption feature: sensitive credential values can be encrypted before being returned to the LLM. Akamai now has official MCP servers through the <a href="https://github.com/akamai-developers">akamai-developers org</a>, and Bunny CDN has its first community MCP. The pattern is clear: MCP adoption correlates directly with developer-platform ambitions. Part of our <strong><a href="/categories/cloud-infrastructure/">Cloud &amp; Infrastructure MCP category</a></strong>.</p>
 <h2 id="the-landscape">The Landscape</h2>
 <h3 id="cloudflare">Cloudflare</h3>
 <table>
@@ -83,21 +83,21 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/cloudflare/mcp">cloudflare/mcp</a></td>
-<td>466</td>
+<td>733</td>
 <td>TypeScript</td>
-<td>2 or ~2,500 (dual mode)</td>
-<td>stdio</td>
+<td>3 (<code>docs</code>/<code>search</code>/<code>execute</code>) or ~2,500 (dual mode)</td>
+<td>stdio, HTTP</td>
 </tr>
 <tr>
 <td><a href="https://github.com/cloudflare/mcp-server-cloudflare">cloudflare/mcp-server-cloudflare</a></td>
-<td>~3,800</td>
+<td>~4,077</td>
 <td>TypeScript</td>
-<td>15 servers</td>
+<td>18 app directories</td>
 <td>stdio</td>
 </tr>
 <tr>
 <td><a href="https://github.com/cloudflare/workers-mcp">cloudflare/workers-mcp</a></td>
-<td>—</td>
+<td>644</td>
 <td>TypeScript</td>
 <td>varies</td>
 <td>stdio</td>
@@ -105,8 +105,8 @@
 </tbody>
 </table>
 <p><strong>Cloudflare has the most extensive CDN MCP ecosystem by a wide margin.</strong> Three distinct approaches, each serving different use cases.</p>
-<p><strong>cloudflare/mcp-server-cloudflare</strong> (~3,800 stars, Apache-2.0) is the original and most popular option — now 15 separate MCP servers (down from 16: the AutoRAG server was deprecated in April 2026 in favor of the unified mcp.cloudflare.com endpoint). Covers Workers bindings, observability, Radar analytics, containers, browser rendering, logging, AI Gateway, audit logs, DNS analytics, digital experience monitoring, CASB security, and GraphQL APIs. The April 30 batch release (<a href="mailto:workers-bindings@0.4.7">workers-bindings@0.4.7</a>) updated all servers to shared <code>@repo/mcp-common@0.20.5</code>, including an observability schema fix adding <code>workflow</code> to the eventType enum.</p>
-<p><strong>cloudflare/mcp</strong> (466 stars, up +20% since last review, Apache-2.0) is the newer, architecturally interesting option. Originally <a href="https://developers.cloudflare.com/agents/tools/codemode/api-reference/">Code Mode</a> only (2 tools: <code>search</code> and <code>execute</code>), a <strong><a href="https://developers.cloudflare.com/changelog/post/2026-03-26-mcp-portal-code-mode/">March 26 update</a> added <code>?codemode=false</code></strong> — a query parameter that registers ~2,500 individual tools instead, each making direct API calls. This gives teams a choice: Code Mode for token efficiency (~1,000 tokens for 2,500 endpoints) or individual-tool mode for simpler agent workflows. May 2026 updates continue hardening OAuth: API token identity is now cached via KV to reduce redundant API calls, the OAuth refresh token retry storm bug (cascading 401 → infinite refresh loop) is fixed, and registrar and logs OAuth scopes were added. Supports OAuth authentication (recommended) or API tokens, with automatic account ID detection.</p>
+<p><strong>cloudflare/mcp-server-cloudflare</strong> (~4,077 stars, Apache-2.0) is the original and most popular option — a monorepo of <a href="https://github.com/cloudflare/mcp-server-cloudflare/tree/main/apps">18 app directories</a>, including Workers bindings, observability, Radar analytics, sandboxed containers, browser rendering, logpush, AI Gateway, audit logs, DNS analytics, digital-experience-monitoring (dex-analysis), CASB security, GraphQL, and AutoRAG.</p>
+<p><strong>cloudflare/mcp</strong> (733 stars, Apache-2.0) is the newer, architecturally interesting option. It exposes three tools by default — <code>docs</code>, <code>search</code>, and <code>execute</code> — where <code>search</code>/<code>execute</code> let an agent write JavaScript against the <a href="https://github.com/cloudflare/mcp">Cloudflare OpenAPI spec</a> instead of registering a tool per endpoint (<a href="https://blog.cloudflare.com/code-mode-mcp/">Code Mode</a> pattern). Per the <a href="https://github.com/cloudflare/mcp">project README</a>, appending <strong><code>?codemode=false</code></strong> to the MCP URL disables Code Mode and instead registers a discrete tool for each of the ~2,500 Cloudflare API endpoints — useful when composing with another Code Mode system, at the cost of roughly 244k tokens of context versus ~1,000-1,100 tokens in Code Mode. The repo&rsquo;s own <a href="https://github.com/cloudflare/mcp/blob/main/AGENTS.md">AGENTS.md</a> documents ongoing OAuth hardening work, including a per-grant KV-based refresh-admission gate and canonical OAuth scope definitions for auth flows. Supports OAuth authentication (recommended) or API tokens, with automatic account ID detection.</p>
 <p><strong>cloudflare/workers-mcp</strong> acts as a proxy between local MCP clients and Cloudflare Workers, letting you expose Worker functions directly to AI agents. Useful for custom edge logic rather than platform management.</p>
 <p><strong>CDN-specific capabilities across the ecosystem:</strong> Cache purging, DNS management, firewall rules, load balancer configuration, R2 storage, KV store operations, Pages deployment, Stream video, Images optimization, and Workers deployment. The Radar server provides global internet traffic insights useful for CDN optimization decisions.</p>
 <h3 id="fastly">Fastly</h3>
@@ -123,19 +123,19 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/fastly/mcp">fastly/mcp</a></td>
-<td>37</td>
+<td>38</td>
 <td>Go</td>
-<td>search/inspect/execute</td>
-<td>stdio, HTTP</td>
+<td>search/inspect/execute (<code>fastly_list_commands</code>/<code>fastly_describe</code>/<code>fastly_execute</code>)</td>
+<td>stdio, HTTP, SSE</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Fastly&rsquo;s official MCP server underwent a major architectural shift with <a href="https://github.com/fastly/mcp/releases">v2.1.0</a></strong> (released May 11, 2026). What was a CLI-wrapping server with 8 fixed tools is now a <strong>search/inspect/execute pattern</strong> similar to Cloudflare&rsquo;s Code Mode — the agent discovers available CLI commands, inspects their details, and executes them. This dramatically increases capability coverage without token bloat.</p>
-<p><strong>The most differentiated security feature in the CDN MCP space:</strong> fastly/mcp v2.0.0 introduced <strong>secret encryption</strong> — sensitive credential values in API responses are replaced with encrypted stand-ins before being returned to the LLM. This goes beyond the existing CLI-wrapping approach (which already kept API keys out of the LLM&rsquo;s reach) to also protect credential data surfaced in command output. No other CDN MCP server does this.</p>
-<p><strong>Other v2.x additions:</strong></p>
+<p><strong>Fastly&rsquo;s official MCP server underwent a major architectural shift with <a href="https://github.com/fastly/mcp/releases/tag/v2.1.0">v2.1.0</a></strong> (released May 11, 2026; the <a href="https://github.com/fastly/mcp/tags">tag history</a> shows the server has continued shipping patch releases since, up to v2.1.4). The current design is a <strong>search/inspect/execute pattern</strong> (<code>fastly_list_commands</code> → <code>fastly_describe</code> → <code>fastly_execute</code>) similar in spirit to Cloudflare&rsquo;s Code Mode — the agent discovers available CLI commands, inspects their details, and executes them. This dramatically increases capability coverage without token bloat.</p>
+<p><strong>A differentiated security feature in the CDN MCP space:</strong> fastly/mcp supports optional <strong>token encryption</strong> — per the <a href="https://raw.githubusercontent.com/fastly/mcp/main/CHANGELOG.md">project changelog</a>, format-preserving token encryption plus automatic PII sanitization in command output shipped as far back as v0.1.2 (January 2025), and the current <a href="https://github.com/fastly/mcp#configuration-options">README</a> documents it as an opt-in <code>--encrypt-tokens</code> flag: hex tokens and base64 secrets in command output are detected, encrypted with an ephemeral session key, and replaced with <code>[ENCRYPTED-TOKEN:xxxxx]</code> placeholders that are decrypted automatically when processing further commands. This goes beyond the existing CLI-wrapping approach (which already kept API keys out of the LLM&rsquo;s reach) to also protect credential data surfaced in command output.</p>
+<p><strong>Other current features (per the <a href="https://github.com/fastly/mcp#key-features">README</a>):</strong></p>
 <ul>
-<li><strong>HTTP transport mode:</strong> Supports running over HTTP (not just stdio), enabling multi-client and remote deployment behind reverse proxies</li>
-<li><strong>Expanded client support:</strong> Claude Desktop, Claude Code, Gemini CLI, Opencode, Qwen Code, Cline, Swival</li>
+<li><strong>Flexible transport:</strong> stdio (default), HTTP, and Server-Sent Events, enabling multi-client and remote deployment behind reverse proxies</li>
+<li><strong>Client setup documented for:</strong> Augment Code, Claude Desktop, and Claude Code</li>
 <li>Still requires the Fastly CLI (authenticated separately) — the key security model remains: your API keys never reach the LLM directly</li>
 </ul>
 <p><strong>CDN capabilities:</strong> Service creation and management, domain configuration, backend setup, cache purging (URL and surrogate key), TLS certificate management, ACL configuration, version management, and real-time performance analytics including traffic patterns and cache hit ratios.</p>
@@ -154,38 +154,38 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/akamai-developers/akamai-functions-mcp-server">akamai-developers/akamai-functions-mcp-server</a></td>
-<td>0</td>
+<td>2</td>
 <td>Go</td>
 <td>edge serverless mgmt</td>
 <td>stdio</td>
 </tr>
 <tr>
 <td><a href="https://github.com/akamai-developers/serverless-decision-log-mcp-server">akamai-developers/serverless-decision-log-mcp-server</a></td>
-<td>2</td>
+<td>3</td>
 <td>Rust/WASM</td>
 <td>decision log</td>
 <td>Akamai Functions</td>
 </tr>
 <tr>
 <td><a href="https://github.com/gamittal-ak/alecs-mcp-server-akamai">ALECS (gamittal-ak)</a></td>
-<td>2</td>
+<td>4</td>
 <td>TypeScript</td>
 <td>~25 (was 191)</td>
 <td>stdio</td>
 </tr>
 <tr>
 <td><a href="https://github.com/deepakjd2004/akamai-mcp-server">deepakjd2004/akamai-mcp-server</a></td>
-<td>0</td>
+<td>1</td>
 <td>Python</td>
 <td>4</td>
 <td>stdio</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Akamai now has official MCP servers</strong> through the <code>akamai-developers</code> organization — a significant change from the previous review when no official option existed.</p>
-<p><strong>akamai-developers/akamai-functions-mcp-server</strong> (Go, v0.1.5, April 10, 2026) manages Akamai Functions — Akamai&rsquo;s edge serverless offering. Covers listing accounts, deploying apps, retrieving logs and status, and real-time monitoring. Installable via Homebrew. Early stage (0 stars on GitHub), but official and actively developed.</p>
-<p><strong>akamai-developers/serverless-decision-log-mcp-server</strong> (Rust/WASM, 2 stars, updated late April 2026) takes an unusual approach: it&rsquo;s an MCP server that itself runs <em>on</em> Akamai Functions as a serverless workload, built on wasmcp and Spin. Reads the Akamai Functions decision log — useful for monitoring edge routing decisions. More of a niche tool than a general Akamai management MCP.</p>
-<p><strong>ALECS</strong> (A LaunchGrid for Edge &amp; Cloud Services) remains the broadest community option with Property Management, DNS Operations (24 tools), and Certificate Management (22 tools) — but has seen <strong>no commits since June 2025</strong>. The project appears stalled, which is worth noting given the &ldquo;stability over sprawl&rdquo; plan to slowly re-add the tools removed in v1.6. Stars have barely moved (1 → 2). With official Akamai options now available, ALECS&rsquo;s relevance as a primary recommendation has diminished.</p>
+<p><strong>Akamai now has official MCP servers</strong> through the <a href="https://github.com/akamai-developers"><code>akamai-developers</code> organization</a> — a significant change from the previous review when no official option existed.</p>
+<p><strong>akamai-developers/akamai-functions-mcp-server</strong> (Go, v0.1.5, April 10, 2026) manages Akamai Functions — Akamai&rsquo;s edge serverless offering. Covers listing accounts, deploying apps, retrieving logs and status, and real-time monitoring. <a href="https://github.com/akamai-developers/akamai-functions-mcp-server#install-with-homebrew-recommended">Installable via Homebrew</a>. Early stage (2 stars on GitHub), but official and actively developed.</p>
+<p><strong>akamai-developers/serverless-decision-log-mcp-server</strong> (Rust/WASM, 3 stars, updated late April 2026) takes an unusual approach: it&rsquo;s an MCP server that itself runs <em>on</em> Akamai Functions as a serverless workload, built on wasmcp and Spin. Reads the Akamai Functions decision log — useful for monitoring edge routing decisions. More of a niche tool than a general Akamai management MCP.</p>
+<p><strong>ALECS</strong> (A LaunchGrid for Edge &amp; Cloud Services) remains the broadest community option with Property Management (31 tools), DNS Operations (24 tools), and Certificate Management (22 tools) — but has seen <strong>no commits since June 2025</strong>. The project appears stalled, which is worth noting given the <a href="https://github.com/gamittal-ak/alecs-mcp-server-akamai">README&rsquo;s</a> &ldquo;stability over sprawl&rdquo; note: v1.6 deliberately cut the toolset from 191 tools down to ~25 &ldquo;core tools that actually work,&rdquo; with broader features meant to return gradually. With official Akamai options now available, ALECS&rsquo;s relevance as a primary recommendation has diminished.</p>
 <p><strong>deepakjd2004/akamai-mcp-server</strong> is a minimal Python proof-of-concept: 4 capabilities (contracts, groups, property listing, filtering).</p>
 <h3 id="gcore">Gcore</h3>
 <table>
@@ -201,14 +201,14 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/G-Core/gcore-mcp-server">G-Core/gcore-mcp-server</a></td>
-<td>12</td>
+<td>11</td>
 <td>Python</td>
 <td>14 toolsets</td>
 <td>stdio</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Gcore&rsquo;s official MCP server</strong> provides unified access across their entire platform — CDN, GPU Cloud, AI Inference, Video Streaming, WAAP, and cloud resources. Apache-2.0 licensed. 14 predefined toolsets selectable via the <code>GCORE_TOOLS</code> environment variable. No commits since March 2026 (last update: Claude Code setup instructions). Maintenance mode. 10 → 12 stars (+2). The CDN capabilities remain part of a broader platform management story rather than CDN-focused.</p>
+<p><strong>Gcore&rsquo;s official MCP server</strong> provides unified access across their entire platform — CDN, GPU Cloud, AI Inference, Video Streaming, WAAP, and cloud resources. Apache-2.0 licensed. <a href="https://github.com/G-Core/gcore-mcp-server#available-toolsets">14 predefined toolsets</a> selectable via the <code>GCORE_TOOLS</code> environment variable. No commits since March 16, 2026 (last update: <a href="https://github.com/G-Core/gcore-mcp-server/commits/main">Claude Code setup instructions</a>). Maintenance mode. The CDN capabilities remain part of a broader platform management story rather than CDN-focused.</p>
 <h3 id="bunny-cdn">Bunny CDN</h3>
 <table>
 <thead>
@@ -222,16 +222,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/bytekcorp/bunny-tools">bytekcorp/bunny-tools</a></td>
-<td>0</td>
+<td><a href="https://github.com/chienqan/bunny-tools">chienqan/bunny-tools</a></td>
+<td>1</td>
 <td>TypeScript</td>
 <td>15</td>
 <td>stdio (via CLI)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Bunny CDN&rsquo;s MCP gap is now partially closed.</strong> Previously identified as a zero-coverage provider, Bunny now has a community MCP via <code>bytekcorp/bunny-tools</code> (updated May 4, 2026). It&rsquo;s a CLI tool with a built-in MCP server — 15 tools covering deploy, purge, storage CRUD, pull zone management, DNS, and <code>bunny.run</code> as an escape-hatch for arbitrary CLI commands. 185 unit tests with nightly live API testing suggests this is more than a quick prototype. v0.1 is released; v0.2 plans GitHub Actions wrapper. Unofficial but appears well-engineered.</p>
-<p>0 stars at time of writing — very new and undiscovered. Watch this space.</p>
+<p><strong>Bunny CDN&rsquo;s MCP gap is now partially closed.</strong> Previously identified as a zero-coverage provider, Bunny now has a community MCP via <code>bunny-tools</code> (formerly published as <code>bytekcorp/bunny-tools</code>, now at <a href="https://github.com/chienqan/bunny-tools"><code>chienqan/bunny-tools</code></a>; the old URL redirects there). It&rsquo;s a CLI tool with a built-in MCP server — 15 high-level tools covering deploy, purge, storage CRUD, pull zone management, DNS, and <code>bunny.run</code> as an escape-hatch for arbitrary CLI commands. The <a href="https://github.com/chienqan/bunny-tools">README</a> states 185 unit tests with nightly drift detection against a real Bunny account, suggesting this is more than a quick prototype. The current npm-install form is v0.1&rsquo;s canonical install path; a <a href="https://github.com/chienqan/bunny-tools#github-actions">composite GitHub Actions wrapper is on the v0.2 roadmap</a>. Unofficial but appears well-engineered.</p>
+<p>Still under 5 stars at time of writing — very new and undiscovered. Watch this space.</p>
 <h3 id="platform-deployment-vercel-netlify">Platform Deployment (Vercel, Netlify)</h3>
 <table>
 <thead>
@@ -246,7 +246,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/netlify/netlify-mcp">netlify/netlify-mcp</a></td>
-<td>42</td>
+<td>58</td>
 <td>TypeScript</td>
 <td>15+</td>
 <td>Deployment, project management</td>
@@ -260,31 +260,31 @@
 </tr>
 </tbody>
 </table>
-<p>Vercel and Netlify MCP servers focus on <strong>deployment platform management</strong> rather than CDN configuration specifically. We&rsquo;ve covered <a href="/reviews/vercel-mcp-server/">Vercel MCP</a> separately. Netlify&rsquo;s official MCP (42 stars, last commit March 2025 — effectively dormant) handles project creation, deployment, access control, environment variables, and form management. The community DynamicEndpoints server wraps the full Netlify CLI (43 tools) including blob storage, dev server, recipes, and analytics.</p>
+<p>Vercel and Netlify MCP servers focus on <strong>deployment platform management</strong> rather than CDN configuration specifically. We&rsquo;ve covered <a href="/reviews/vercel-mcp-server/">Vercel MCP</a> separately. Netlify&rsquo;s official MCP (58 stars) handles project creation, deployment, access control, environment variables, and form management — <a href="https://github.com/netlify/netlify-mcp/commits/main">commit history</a> shows it is actively maintained, with fixes landing as recently as mid-August 2026. The community DynamicEndpoints server wraps the full Netlify CLI (43 tools) including blob storage, dev server, recipes, and analytics.</p>
 <p>These are worth mentioning because both platforms include built-in CDN/edge capabilities, but the MCP servers don&rsquo;t expose CDN-specific controls (cache headers, edge rules, purging) as discrete tools.</p>
 <h3 id="aws-cloudfront">AWS CloudFront</h3>
-<p><strong>No dedicated CloudFront MCP server exists.</strong> The AWS MCP ecosystem (awslabs/mcp, 9,100 stars, 30+ servers) covers EKS, ECS, Lambda, CloudFormation, and more — but CloudFront is conspicuously absent. Community search surfaces only 0-star auto-generated repos. The AWS Serverless MCP Server can optionally invalidate CloudFront caches when uploading frontend assets to S3, but that&rsquo;s a side feature, not CDN management.</p>
+<p><strong>No dedicated CloudFront MCP server exists.</strong> The <a href="https://github.com/awslabs/mcp">AWS MCP ecosystem</a> (awslabs/mcp, ~9,600 stars, 30+ servers) covers EKS, ECS, Lambda, CloudFormation, and more — but CloudFront is conspicuously absent as a first-class server. The AWS Serverless MCP Server can optionally invalidate CloudFront caches when uploading frontend assets to S3, but that&rsquo;s a side feature, not CDN management.</p>
 <p>This remains a notable gap. CloudFront is one of the most widely-used CDNs, and the lack of MCP tooling means teams using CloudFront can&rsquo;t give AI agents the same CDN management capabilities available for Cloudflare or Fastly.</p>
 <h2 id="what-actually-works">What Actually Works</h2>
-<p><strong>Cache management</strong> is the most consistently supported operation. Cloudflare, Fastly, Akamai (via both ALECS and the new official edge serverless server), and now Bunny CDN (via bytekcorp/bunny-tools) all support cache purging — by URL, tag/surrogate key, or full purge. This is the highest-value CDN automation use case: agents can detect stale content issues and trigger targeted purges.</p>
-<p><strong>Configuration management</strong> varies widely. Cloudflare&rsquo;s dual-mode approach — Code Mode (2 tools, 2,500 endpoints) or individual-tool mode (~2,500 discrete tools) — is the most comprehensive and flexible. Fastly&rsquo;s v2.1.0 search/inspect/execute pattern now rivals this elegance, with the added benefit of secret encryption on all credential-containing responses. Akamai&rsquo;s official server covers edge serverless deployment rather than full CDN configuration. You&rsquo;re still locked into one vendor&rsquo;s MCP server per CDN — there&rsquo;s no cross-CDN abstraction layer.</p>
+<p><strong>Cache management</strong> is the most consistently supported operation. Cloudflare, Fastly, Akamai (via both ALECS and the new official edge serverless server), and now Bunny CDN (via chienqan/bunny-tools) all support cache purging — by URL, tag/surrogate key, or full purge. This is the highest-value CDN automation use case: agents can detect stale content issues and trigger targeted purges.</p>
+<p><strong>Configuration management</strong> varies widely. Cloudflare&rsquo;s dual-mode approach — Code Mode (3 tools, ~2,500 endpoints reachable) or individual-tool mode (~2,500 discrete tools) — is the most comprehensive and flexible. Fastly&rsquo;s search/inspect/execute pattern now rivals this elegance, with the added option of token encryption for credential-containing responses when the <code>--encrypt-tokens</code> flag is enabled. Akamai&rsquo;s official server covers edge serverless deployment rather than full CDN configuration. You&rsquo;re still locked into one vendor&rsquo;s MCP server per CDN — there&rsquo;s no cross-CDN abstraction layer.</p>
 <p><strong>Performance analytics</strong> is supported by Cloudflare (Radar, DNS analytics, digital experience monitoring), Fastly (traffic patterns, cache hit ratios), and Akamai (via ALECS analytics tools). These are genuinely useful for AI-assisted optimization — an agent can identify low cache hit ratios and suggest configuration changes.</p>
 <p><strong>Edge compute deployment</strong> is primarily a Cloudflare story through Workers MCP. Fastly supports Compute service deployment through its CLI wrapper. Akamai now has dedicated MCP tooling for Akamai Functions via the official akamai-functions-mcp-server.</p>
 <h2 id="what-doesnt-work">What Doesn&rsquo;t Work</h2>
 <p><strong>No cross-CDN management.</strong> If you use multiple CDNs (common for enterprise), you need separate MCP servers for each. No one has built a unified CDN MCP interface.</p>
-<p><strong>CloudFront gap persists.</strong> AWS&rsquo;s most popular CDN still has no meaningful MCP tooling despite awslabs/mcp growing to 9,100 stars. Given AWS&rsquo;s extensive MCP investment elsewhere, this remains a surprising omission. KeyCDN, StackPath, and Azure CDN remain at zero coverage.</p>
-<p><strong>Security trade-offs.</strong> CDN configuration is security-critical — a misconfigured origin, exposed admin endpoint, or wrong cache rule can cause data leaks. Fastly&rsquo;s v2.1.0 is now the gold standard: API keys never reach the LLM (CLI wrapping) <em>and</em> credential values in responses are encrypted before reaching the LLM context. Cloudflare&rsquo;s OAuth consent UI with resource/action matrix gives fine-grained control over agent scopes. ALECS uses EdgeGrid authentication through environment variables — be thoughtful about what CDN operations you expose to AI agents.</p>
+<p><strong>CloudFront gap persists.</strong> AWS&rsquo;s most popular CDN still has no meaningful MCP tooling despite <a href="https://github.com/awslabs/mcp">awslabs/mcp</a> growing to ~9,600 stars. Given AWS&rsquo;s extensive MCP investment elsewhere, this remains a surprising omission. KeyCDN, StackPath, and Azure CDN remain at zero coverage.</p>
+<p><strong>Security trade-offs.</strong> CDN configuration is security-critical — a misconfigured origin, exposed admin endpoint, or wrong cache rule can cause data leaks. Fastly&rsquo;s design is a strong model: API keys never reach the LLM (CLI wrapping) <em>and</em>, when <code>--encrypt-tokens</code> is enabled, credential values in responses are encrypted before reaching the LLM context. Cloudflare&rsquo;s OAuth consent UI with resource/action matrix gives fine-grained control over agent scopes. ALECS uses EdgeGrid authentication through environment variables — be thoughtful about what CDN operations you expose to AI agents.</p>
 <p><strong>Smaller CDN providers mostly invisible.</strong> Bunny CDN now has a community option; KeyCDN, StackPath, Azure CDN do not. If you use these providers, you&rsquo;re writing custom integrations.</p>
 <h2 id="the-bottom-line">The Bottom Line</h2>
 <p>The CDN MCP landscape is a <strong>two-tier story</strong>:</p>
-<p><strong>Tier 1 — Production-ready:</strong> Cloudflare (Code Mode or the 15-server suite) and Fastly (official, v2.1.0 now substantially more capable with secret encryption and search/inspect/execute architecture). Both are officially maintained, actively developed, and suitable for production CDN management through AI agents.</p>
-<p><strong>Tier 2 — Maturing:</strong> Official Akamai edge serverless MCP (akamai-developers/akamai-functions-mcp-server, v0.1.5) is new and promising but early-stage. Gcore&rsquo;s official server is quiet (12 stars, no recent commits). bytekcorp/bunny-tools fills the Bunny CDN gap but is very new. Everything else is experimental or stalled.</p>
+<p><strong>Tier 1 — Production-ready:</strong> Cloudflare (Code Mode or the 18-directory mcp-server-cloudflare suite) and Fastly (official, search/inspect/execute architecture with optional token encryption). Both are officially maintained, actively developed, and suitable for production CDN management through AI agents.</p>
+<p><strong>Tier 2 — Maturing:</strong> Official Akamai edge serverless MCP (akamai-developers/akamai-functions-mcp-server, v0.1.5) is new and promising but early-stage. Gcore&rsquo;s official server is quiet (11 stars, no commits since March 2026). chienqan/bunny-tools fills the Bunny CDN gap but is very new. Everything else is experimental or stalled.</p>
 <p><strong>Who should use what:</strong></p>
 <ul>
 <li><strong>Cloudflare users:</strong> Start with cloudflare/mcp — choose Code Mode for token efficiency or <code>?codemode=false</code> for ~2,500 individual tools. Fall back to mcp-server-cloudflare if you need specific server integrations (Radar, AI Gateway, etc.)</li>
-<li><strong>Fastly users:</strong> fastly/mcp v2.1.0 is excellent — secret encryption is a unique security feature, and the new search/inspect/execute architecture gives full CLI coverage without tool bloat</li>
+<li><strong>Fastly users:</strong> fastly/mcp is excellent — optional token encryption is a differentiated security feature, and the search/inspect/execute architecture gives full CLI coverage without tool bloat</li>
 <li><strong>Akamai users:</strong> The new akamai-developers/akamai-functions-mcp-server is the best starting point for edge serverless. For broader CDN configuration, ALECS still exists but has been stalled since June 2025</li>
-<li><strong>Bunny CDN users:</strong> bytekcorp/bunny-tools is early but promising — 15 tools, well-tested, actively developed</li>
+<li><strong>Bunny CDN users:</strong> chienqan/bunny-tools is early but promising — 15 tools, well-tested, actively developed</li>
 <li><strong>AWS CloudFront users:</strong> Wait. Or use the AWS Serverless MCP Server for basic cache invalidation alongside S3 deployments</li>
 <li><strong>Multi-CDN users:</strong> No good solution yet. You&rsquo;ll need to configure separate MCP servers per provider</li>
 </ul>

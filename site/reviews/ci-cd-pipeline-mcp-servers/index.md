@@ -1,11 +1,11 @@
 # CI/CD Pipeline MCP Servers — Jenkins, CircleCI, GitHub Actions, Argo CD, Buildkite, TeamCity, Harness, and More
 
-> CI/CD pipeline MCP servers reviewed: Jenkins (v2.1 plugin), CircleCI (14 tools), GitHub Actions (via github-mcp-server), Argo CD (v0.7.0), TeamCity 2026.1, Harness (30 toolsets, 139 resource types), Buildkite, Azure DevOps
+> CI/CD pipeline MCP servers reviewed: Jenkins (official plugin), CircleCI (14 tools, now deprecated), GitHub Actions (via github-mcp-server), Argo CD (v0.7.0), TeamCity 2026.1, Harness (30 toolsets, 139 resource types), Buildkite, Azure DevOps
 
 
 CI/CD is one of the better-covered categories in the MCP ecosystem — and that makes sense. Developers spend enormous amounts of time context-switching between their editor and their CI dashboard to check build statuses, debug failures, and re-trigger pipelines. MCP servers that bring pipeline data into the AI assistant eliminate that context switch.
 
-The landscape breaks into three tiers: platform-native official servers ([Jenkins](https://www.jenkins.io/) v2.1, [CircleCI](https://circleci.com/), [GitHub](https://github.com/features/actions), [GitLab](https://about.gitlab.com/), [Buildkite](https://buildkite.com/), [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), [TeamCity](https://www.jetbrains.com/teamcity/) 2026.1, [Harness](https://www.harness.io/)), GitOps deployment servers ([Argo CD](https://argo-cd.readthedocs.io/en/stable/) v0.7.0, [Flux CD](https://fluxcd.io/), [Tekton](https://tekton.dev/)), and community alternatives that fill gaps. The May 2026 wave of updates — Jenkins v2.1, Argo CD v0.7.0, TeamCity native MCP, Tekton and Flux CD official servers — means essentially every major CI/CD platform now has official coverage.
+The landscape breaks into three tiers: platform-native official servers ([Jenkins](https://www.jenkins.io/), [CircleCI](https://circleci.com/), [GitHub](https://github.com/features/actions), [GitLab](https://about.gitlab.com/), [Buildkite](https://buildkite.com/), [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), [TeamCity](https://www.jetbrains.com/teamcity/) 2026.1, [Harness](https://www.harness.io/)), GitOps deployment servers ([Argo CD](https://argo-cd.readthedocs.io/en/stable/) v0.7.0, [Flux CD](https://fluxcd.io/), [Tekton](https://tekton.dev/)), and community alternatives that fill gaps. The May 2026 wave of updates — the Jenkins plugin's MCP spec 2025-06-18 upgrade, Argo CD v0.7.0, TeamCity native MCP, Tekton and Flux CD official servers — means essentially every major CI/CD platform now has official coverage.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -17,11 +17,11 @@ The landscape breaks into three tiers: platform-native official servers ([Jenkin
 | Language | Java |
 | Transport | stdio, SSE, Streamable HTTP |
 | License | MIT |
-| Requires | [Jenkins 2.533+](https://www.jenkins.io/changelog/2.533/) |
-| Latest | [v2.1](https://plugins.jenkins.io/mcp-server/) (May 12, 2026) |
+| Requires | [Jenkins 2.541.3+](https://plugins.jenkins.io/mcp-server/) (as of this audit; requirement rises with each release) |
+| Versioning | [Continuous-delivery style](https://plugins.jenkins.io/mcp-server/releases/) — no semantic version numbers; releases are tagged by build/commit |
 | Plugin page | [plugins.jenkins.io/mcp-server](https://plugins.jenkins.io/mcp-server/) |
 
-The official [Jenkins](https://www.jenkins.io/) MCP Server plugin runs inside Jenkins itself as a standard plugin. v2.1 (May 12, 2026) upgrades to MCP Java SDK v0.17.2 and implements MCP spec 2025-06-18. It exposes 15+ tools across four categories:
+The official [Jenkins](https://www.jenkins.io/) MCP Server plugin runs inside Jenkins itself as a standard plugin. It ships continuously rather than in named semantic-version releases; as of this audit it runs on [MCP Java SDK v0.17.2 and implements MCP spec 2025-06-18](https://plugins.jenkins.io/mcp-server/). It exposes 15+ tools across four categories:
 
 **Job Management** — List jobs, get job details, trigger builds. The basics of interacting with Jenkins from an AI assistant.
 
@@ -37,13 +37,13 @@ The transport support is notably good — SSE, Streamable HTTP, and stateless en
 
 **Runs inside Jenkins.** As a native plugin, it has direct access to Jenkins internals. No external API calls, no authentication token juggling — the plugin inherits Jenkins's own security model.
 
-**Extensible.** Third-party Jenkins plugins can add MCP tools via the `McpServerExtension` interface. This means the ecosystem can grow without forking the core server.
+**Extensible.** Third-party Jenkins plugins can add MCP tools via the [`McpServerExtension` interface](https://javadoc.jenkins.io/plugin/mcp-server/io/jenkins/plugins/mcp/server/extensions/DefaultMcpServer.html). This means the ecosystem can grow without forking the core server.
 
 **Three transport options.** SSE and Streamable HTTP mean this server works with remote MCP clients — not just local stdio. For teams running Jenkins on a central server, this is essential.
 
 ### What Doesn't Work Well
 
-**Requires Jenkins 2.533+.** Organizations running older Jenkins versions can't use it. Given how many teams run years-old Jenkins installations, this is a real barrier.
+**Requires a recent Jenkins release** ([2.541.3+ as of this audit](https://plugins.jenkins.io/mcp-server/), and the floor keeps rising with each plugin update). Organizations running older Jenkins versions can't use it. Given how many teams run years-old Jenkins installations, this is a real barrier.
 
 **Plugin installation required.** Unlike standalone MCP servers that run independently, this requires admin access to install a Jenkins plugin. In locked-down enterprise Jenkins instances, getting a new plugin approved can take weeks.
 
@@ -71,14 +71,14 @@ If you can't install the official plugin on your Jenkins instance, this is the b
 | Language | Python |
 | Status | Actively developed |
 
-An enterprise-focused Jenkins MCP server that goes well beyond the other two implementations. Key capabilities:
+An enterprise-focused Jenkins MCP server that goes well beyond the other two implementations. Key capabilities, per the [project README](https://github.com/Jordan-Jarvis/jenkins-mcp-enterprise#readme):
 
-- **AI-powered build failure diagnostics** with hierarchical sub-build discovery — traces failures across multi-stage pipelines automatically
-- **Multi-instance Jenkins management** with load-balanced routing — manage a fleet of Jenkins servers from a single MCP connection
-- **Massive log handling (10+ GB)** with intelligent streaming and chunking — avoids the context window overflow that crashes other servers on large monorepo builds
-- **Vector-powered semantic search** across build history — find similar past failures without knowing the exact job name or timestamp
+- **AI-powered build failure diagnostics** with hierarchical sub-build discovery — the `diagnose_build_failure` and `trigger_build_with_subs` tools trace downstream/sub-build hierarchies automatically
+- **Multi-instance Jenkins routing** — each tool call resolves to the correct configured Jenkins instance based on the `jenkins_url` you pass in, so one MCP connection can reach several Jenkins servers (each call targets a single resolved instance, not a load-balanced fan-out across a fleet)
+- **Targeted log search and retrieval** — `ripgrep_search`, `filter_errors_grep`, `navigate_log`, and `get_log_context` let an agent search and pull specific log ranges instead of loading entire build logs, reducing the context-window overflow risk on large builds
+- **Vector-powered semantic search** across build history — the optional `semantic_search` tool (requires a Qdrant vector store) finds similar past failures without knowing the exact job name or timestamp
 
-If you're managing enterprise Jenkins at scale — multiple instances, 10+ GB build logs, coordinated failure analysis — this server is worth evaluating despite its early star count.
+If you're managing multiple Jenkins instances with coordinated, AI-assisted failure analysis, this server is worth evaluating despite its early star count.
 
 ## CircleCI — Official Server
 
@@ -100,13 +100,15 @@ If you're managing enterprise Jenkins at scale — multiple instances, 10+ GB bu
 - `run_pipeline` / `rerun_workflow` — Trigger and retry builds
 - `analyze_diff` — Understand what changed between runs
 
+**Status update (August 2026):** CircleCI [announced the deprecation](https://discuss.circleci.com/t/security-notice-and-deprecation-standalone-circleci-mcp-server/54805) of this standalone server in July 2026, alongside a security advisory (GHSA-8xjg-jpfh-5257) recommending an upgrade to v0.19.0+ for anyone still running it. The package is "no longer receiving feature work" and will get security patches only; CircleCI now directs users to its hosted MCP server or the MCP support built into the CircleCI CLI instead. The repo is not yet marked archived on GitHub, but treat the standalone server described below as a maintenance-mode option, not the current recommended path.
+
 ### What Works Well
 
 **Flaky test detection.** The `find_flaky_tests` tool uses CircleCI's built-in flaky test analysis, which tracks test reliability over time. This isn't something you'd get by just parsing logs — it's leveraging platform-specific intelligence that only CircleCI has.
 
 **Config validation.** The `config_helper` tool lets an AI agent validate CircleCI configuration files, catching syntax errors and suggesting improvements before you push. This is genuinely useful for complex CircleCI configs.
 
-**Multiple deployment options.** NPX, Docker, or self-managed remote server. [CircleCI](https://circleci.com/) also provides an official cookbook repository with examples and integration guides. Available on AWS Marketplace.
+**Multiple deployment options.** NPX, Docker, or self-managed remote server. [CircleCI](https://circleci.com/) also provides an official [cookbook repository](https://github.com/CircleCI-Public/circleci-mcp-cookbook) with examples and integration guides, and the server is [available on AWS Marketplace](https://circleci.com/newsroom/circleci-mcp-server-aws-marketplace-ai-agents).
 
 **Rollback operations.** `run_rollback_pipeline` with guided parameter collection and environment selection. Most CI/CD servers stop at diagnosing failures — this one can actually roll back.
 
@@ -118,7 +120,7 @@ If you're managing enterprise Jenkins at scale — multiple instances, 10+ GB bu
 
 **stdio only.** No remote server option built-in (though Docker deployment partially addresses this).
 
-**CircleCI-specific.** Obviously. If your team uses CircleCI, this is excellent. If you're multi-platform, you'll need additional servers.
+**CircleCI-specific.** Obviously. If your team uses CircleCI, this is excellent — but see the deprecation note above; CircleCI's own recommendation is now the hosted MCP server or CLI MCP, not this standalone package. If you're multi-platform, you'll need additional servers regardless.
 
 ## GitHub Actions — Via the Official GitHub MCP Server
 
@@ -162,7 +164,7 @@ This is the most popular MCP server by stars (28.9k), though that's because it c
 | Language | TypeScript |
 | Transport | stdio, HTTP stream |
 | License | Apache 2.0 |
-| Latest | [v0.7.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.7.0) (May 14, 2026) |
+| Latest | [v0.7.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.7.0) (May 2, 2026) |
 
 [Argo CD](https://argo-cd.readthedocs.io/en/stable/) is the dominant GitOps deployment tool for [Kubernetes](https://kubernetes.io/), and its MCP server — maintained by [Akuity](https://akuity.io/) — brings deployment management into AI assistants. 12 tools cover:
 
@@ -182,7 +184,7 @@ This is the only MCP server in this review that focuses on the deployment side o
 
 **Kubernetes-only.** If you're not on [Kubernetes](https://kubernetes.io/) with [Argo CD](https://argo-cd.readthedocs.io/en/stable/), this server has no value. It's narrow by design.
 
-**Active releases.** [v0.7.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.7.0) shipped May 14, 2026, following v0.6.0 in March and v0.5.0 in October 2025. The cadence is now roughly monthly, which is healthy for a project backed by [Akuity](https://akuity.io/).
+**Active releases.** [v0.7.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.7.0) shipped May 2, 2026, following [v0.6.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.6.0) in March and [v0.5.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.5.0) in October 2025. The cadence is now roughly monthly, which is healthy for a project backed by [Akuity](https://akuity.io/).
 
 ## Buildkite — Official Server
 
@@ -223,11 +225,11 @@ Active development — [v1.0.0](https://github.com/buildkite/buildkite-mcp-serve
 
 The most popular [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) MCP server (358 stars, 229 commits) covers the full Azure DevOps surface: projects, work items, repositories, pipelines, pull requests, wiki, and code search.
 
-For CI/CD specifically, it provides pipeline execution and monitoring tools. But like the GitHub MCP server, pipelines are one part of a broader platform integration. [Microsoft](https://www.microsoft.com/) has also released an [official Azure DevOps MCP Server](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview) in public preview, which runs locally and provides access to builds, releases, and test plans.
+For CI/CD specifically, it provides pipeline execution and monitoring tools. But like the GitHub MCP server, pipelines are one part of a broader platform integration. [Microsoft](https://www.microsoft.com/) has also released an [official Azure DevOps MCP Server](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview), which runs locally and provides access to builds, releases, and test plans.
 
-Microsoft's official server now has two deployment modes: the **local version** reached general availability in October 2025 (VS Code + Visual Studio with GitHub Copilot agent mode), and a **remote version** entered public preview in March 2026 via Microsoft Foundry. Microsoft has indicated it plans to eventually consolidate on the remote version and archive the local repo.
+Microsoft's official server now has two deployment modes, and as of this audit **both are generally available**: the **local version** [reached GA in October 2025](https://devblogs.microsoft.com/devops/azure-devops-local-mcp-server-generally-available/) (VS Code + Visual Studio with GitHub Copilot agent mode), and the **remote version** — after [entering public preview in March 2026](https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-public-preview/) via Microsoft Foundry — [reached GA on August 5, 2026](https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-ga/). That GA post explicitly commits to maintaining both versions ("We remain committed to maintaining feature parity between the local and remote servers... We will continue to support and maintain the local MCP Server"), so — contrary to earlier speculation about consolidating on the remote version — Microsoft is not archiving the local server.
 
-If your team is on [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), you have two solid options — the mature community server or Microsoft's official GA offering.
+If your team is on [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/), you have two solid options — the mature community server or Microsoft's official offering, now GA in both local and remote form.
 
 ## GitLab — Built-in MCP Server
 
@@ -254,7 +256,7 @@ Community alternatives include [zereight/gitlab-mcp](https://github.com/zereight
 
 [JetBrains](https://www.jetbrains.com/) shipped native MCP support in [TeamCity 2026.1](https://blog.jetbrains.com/teamcity/2026/05/teamcity-20261/) (May 2026), alongside a new TeamCity CLI. TeamCity is one of the most widely deployed enterprise CI/CD platforms — particularly in .NET and JVM shops — so this is a meaningful addition to the landscape. The MCP integration exposes build pipelines, run history, and test results through the standard MCP interface.
 
-Community implementations also exist — [itcaat/teamcity-mcp](https://github.com/itcaat/teamcity-mcp) (Go-based, MIT) and a TypeScript server exposing 87 typed tools — but the native 2026.1 support is the authoritative path for TeamCity shops.
+Community implementations also exist — [itcaat/teamcity-mcp](https://github.com/itcaat/teamcity-mcp) (Go-based, MIT) and [Daghis/teamcity-mcp](https://github.com/Daghis/teamcity-mcp) (TypeScript, exposing up to [87 tools in its full mode](https://github.com/Daghis/teamcity-mcp)) — but the native 2026.1 support is the authoritative path for TeamCity shops.
 
 ### What Works Well
 
@@ -270,7 +272,7 @@ Community implementations also exist — [itcaat/teamcity-mcp](https://github.co
 
 | Detail | Info |
 |--------|------|
-| [Harness MCP Server](https://developer.harness.io/docs/platform/harness-ai/harness-mcp-server/) | Official |
+| [Harness MCP Server](https://developer.harness.io/docs/platform/harness-ai/connect-with-ai/harness-mcp-server/) | Official |
 | Publisher | [Harness](https://www.harness.io/) |
 | Resource types | 139 across 30 toolsets |
 | Prompt templates | 27 pre-built |
@@ -279,7 +281,7 @@ Community implementations also exist — [itcaat/teamcity-mcp](https://github.co
 
 [Harness](https://www.harness.io/) is one of the most comprehensive MCP servers in the CI/CD space — and it extends well beyond CI/CD. The server covers 30 toolsets with 139 resource types spanning the full software delivery lifecycle: CI/CD, GitOps, Feature Management, Cloud Cost Management, Security Testing (STO), Chaos Engineering, and broader SDLC management. 27 pre-built prompt templates accelerate common agent workflows.
 
-Harness is also available in [Google's Gemini Enterprise](https://workspace.google.com/products/gemini/) alongside Google Cloud integration, giving it a second distribution channel beyond direct MCP configuration.
+The Harness MCP Server is also [accessible within Google's Gemini Enterprise](https://www.harness.io/press-and-news/harness-delivers-unified-ai-intelligence-across-software-delivery-with-google-cloud) app environment, announced alongside a Google Cloud Developer Connect integration in April 2026, giving it a second distribution channel beyond direct MCP configuration.
 
 ### What Works Well
 
@@ -297,11 +299,11 @@ Harness is also available in [Google's Gemini Enterprise](https://workspace.goog
 
 ## Other Notable Servers
 
-**[Woodpecker CI](https://woodpecker-ci.org/)** — [denysvitali/woodpecker-ci-mcp](https://github.com/denysvitali/woodpecker-ci-mcp) (4 stars) provides pipeline management, build status monitoring, and repository management for [Woodpecker CI](https://woodpecker-ci.org/). There's also a specialized pipeline failure analysis server for Woodpecker with IDE integration.
+**[Woodpecker CI](https://woodpecker-ci.org/)** — [denysvitali/woodpecker-ci-mcp](https://github.com/denysvitali/woodpecker-ci-mcp) (4 stars) provides pipeline management, build status monitoring, and repository management for [Woodpecker CI](https://woodpecker-ci.org/). There's also [aman-11/woodpecker-mcp-server](https://github.com/aman-11/woodpecker-mcp-server), a specialized pipeline failure analysis server that resolves pipelines from IDE context (repo name, PR number, or branch) rather than requiring manual ID lookups.
 
 **[Tekton](https://tekton.dev/)** — [tektoncd/mcp-server](https://github.com/tektoncd/mcp-server) is now an official server from the Tekton project. It focuses on tektoncd/pipeline objects with future expansion planned, and integrates with Artifact Hub for task and pipeline discovery. An earlier [OpenShift Pipelines Tekton MCP server](https://www.pulsemcp.com/servers/openshift-pipelines-tekton) also provides natural language control of [Tekton](https://tekton.dev/) pipelines in [Kubernetes](https://kubernetes.io/) environments.
 
-**[Flux CD](https://fluxcd.io/)** — [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) includes an MCP server for AI-assisted GitOps (published April 21, 2026). Flux is one of the two dominant GitOps tools for Kubernetes (alongside Argo CD), and this fills an important gap for teams that chose Flux over Argo CD. The integration focuses on Flux Operator resources and GitOps reconciliation workflows.
+**[Flux CD](https://fluxcd.io/)** — [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) includes an MCP server for AI-assisted GitOps, which the Flux project [demonstrated at KubeCon EU 2026](https://fluxcd.io/kubecon/). Flux is one of the two dominant GitOps tools for Kubernetes (alongside Argo CD), and this fills an important gap for teams that chose Flux over Argo CD. The integration focuses on Flux Operator resources and GitOps reconciliation workflows.
 
 **[Drone CI](https://www.drone.io/)** — Community implementation [madappa-sharath/drone-ci-mcp](https://github.com/madappa-sharath/drone-ci-mcp) exposes Drone CI/CD pipelines as MCP tools. Early stage but covers the basics for teams on the Drone/Harness Drone stack.
 
@@ -309,17 +311,17 @@ Harness is also available in [Google's Gemini Enterprise](https://workspace.goog
 
 | Platform | Server | Stars | Tools | Official? |
 |----------|--------|-------|-------|-----------|
-| [Jenkins](https://www.jenkins.io/) | [jenkinsci/mcp-server-plugin](https://github.com/jenkinsci/mcp-server-plugin) v2.1 | 76 | 15+ | Yes |
+| [Jenkins](https://www.jenkins.io/) | [jenkinsci/mcp-server-plugin](https://github.com/jenkinsci/mcp-server-plugin) | 76 | 15+ | Yes |
 | [Jenkins](https://www.jenkins.io/) | [lanbaoshen/mcp-jenkins](https://github.com/lanbaoshen/mcp-jenkins) | 112 | 10+ | No |
 | [CircleCI](https://circleci.com/) | [CircleCI-Public/mcp-server-circleci](https://github.com/CircleCI-Public/mcp-server-circleci) | 83 | 14 | Yes |
 | [GitHub Actions](https://github.com/features/actions) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 28,900+ | 6+ (Actions) | Yes |
 | [Argo CD](https://argo-cd.readthedocs.io/en/stable/) | [akuity/argocd-mcp](https://github.com/akuity/argocd-mcp) v0.7.0 | 398 | 12 | Yes ([Akuity](https://akuity.io/)) |
 | [Buildkite](https://buildkite.com/) | [buildkite/buildkite-mcp-server](https://github.com/buildkite/buildkite-mcp-server) | 50 | — | Yes |
 | [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) | [Tiberriver256/mcp-server-azure-devops](https://github.com/Tiberriver256/mcp-server-azure-devops) | 358 | 20+ | No |
-| [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) | [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) (local GA + remote preview) | — | — | Yes |
+| [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) | [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp) (local GA + remote GA) | — | — | Yes |
 | [GitLab](https://about.gitlab.com/) | [Built-in](https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/) | — | — | Yes |
 | [TeamCity](https://www.jetbrains.com/teamcity/) | Native in [TeamCity 2026.1](https://blog.jetbrains.com/teamcity/2026/05/teamcity-20261/) | — | — | Yes |
-| [Harness](https://www.harness.io/) | [Harness MCP Server](https://developer.harness.io/docs/platform/harness-ai/harness-mcp-server/) | — | 139 types / 30 toolsets | Yes |
+| [Harness](https://www.harness.io/) | [Harness MCP Server](https://developer.harness.io/docs/platform/harness-ai/connect-with-ai/harness-mcp-server/) | — | 139 types / 30 toolsets | Yes |
 | [Tekton](https://tekton.dev/) | [tektoncd/mcp-server](https://github.com/tektoncd/mcp-server) | — | — | Yes |
 | [Flux CD](https://fluxcd.io/) | [controlplaneio-fluxcd/flux-operator](https://github.com/controlplaneio-fluxcd/flux-operator) | — | — | Yes |
 | [Woodpecker](https://woodpecker-ci.org/) | [denysvitali/woodpecker-ci-mcp](https://github.com/denysvitali/woodpecker-ci-mcp) | 4 | 6+ | No |
@@ -330,11 +332,11 @@ Harness is also available in [Google's Gemini Enterprise](https://workspace.goog
 
 **[Jenkins](https://www.jenkins.io/) shops:** Start with the [official plugin](https://plugins.jenkins.io/mcp-server/) if you can install it. If plugin installation is blocked, use [lanbaoshen/mcp-jenkins](https://github.com/lanbaoshen/mcp-jenkins) with an API token.
 
-**[CircleCI](https://circleci.com/) users:** The official server is excellent — flaky test detection and config validation are genuine differentiators over generic CI/CD tools.
+**[CircleCI](https://circleci.com/) users:** Flaky test detection and config validation are genuine differentiators over generic CI/CD tools — but the standalone server covered above [was deprecated in July 2026](https://discuss.circleci.com/t/security-notice-and-deprecation-standalone-circleci-mcp-server/54805); start with CircleCI's hosted MCP server or the CLI's built-in MCP support instead.
 
 **[Kubernetes](https://kubernetes.io/) / GitOps teams:** Add [Argo CD](https://argo-cd.readthedocs.io/en/stable/)'s MCP server alongside your CI server. Build-side and deploy-side are complementary, not competing.
 
-**[Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) teams:** The community server (358 stars) is mature and well-maintained. [Microsoft's official offering](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview) is in public preview.
+**[Azure DevOps](https://azure.microsoft.com/en-us/products/devops/) teams:** The community server (358 stars) is mature and well-maintained. [Microsoft's official offering](https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview) is now GA in both [local](https://devblogs.microsoft.com/devops/azure-devops-local-mcp-server-generally-available/) and [remote](https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-ga/) form.
 
 **[TeamCity](https://www.jetbrains.com/teamcity/) shops:** Upgrade to 2026.1 and use the native MCP support — no separate configuration required. If you're on an older version, community servers (itcaat/teamcity-mcp) fill the gap.
 
@@ -346,7 +348,7 @@ Harness is also available in [Google's Gemini Enterprise](https://workspace.goog
 
 ## Rating: 4/5
 
-The CI/CD MCP server ecosystem continues to strengthen. May 2026 brought Jenkins v2.1 (updated to MCP spec 2025-06-18), Argo CD v0.7.0, TeamCity 2026.1's native MCP bundled into the platform, and Tekton/Flux CD official servers demonstrated at KubeCon EU 2026. Every major CI/CD platform now has official MCP coverage.
+The CI/CD MCP server ecosystem continues to strengthen. May 2026 brought an [MCP spec 2025-06-18 update](https://plugins.jenkins.io/mcp-server/) to the Jenkins plugin, [Argo CD v0.7.0](https://github.com/akuity/argocd-mcp/releases/tag/v0.7.0), and TeamCity 2026.1's native MCP bundled into the platform; Tekton shipped an [official server](https://github.com/tektoncd/mcp-server), and [Flux CD's operator MCP server was demonstrated at KubeCon EU 2026](https://fluxcd.io/kubecon/). Every major CI/CD platform now has official MCP coverage.
 
 Harness represents the most ambitious server in the category — 30 toolsets and 139 resource types spans far beyond build/deploy into cost management, feature flags, and chaos engineering. It's not for every team, but it shows what a comprehensive SDLC MCP server can look like.
 
