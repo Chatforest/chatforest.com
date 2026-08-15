@@ -8,7 +8,27 @@
 
 ## Open clusters
 
-(none currently open — see Resolved below for the two clusters closed out this run)
+### Insurance / InsurTech (2 pages) — flagged 2026-08-15
+Flagged by two independent audit agents during early-vintage-audit batch 13 (each auditing one file,
+blind to the other) — both independently reported the pages look like near-duplicates.
+- `content/reviews/insurance-mcp-servers.md` — audited 2026-08-15
+- `content/reviews/insurance-insurtech-mcp-servers.md` — audited 2026-08-15
+
+Same rating (3.5/5) and same publish date (2026-03-15); both cover the same core servers (Socotra,
+Sixfold, Sure, EIOPA/Ansvar compliance tooling) from a near-identical angle. Both were audited
+claim-by-claim in this run (dead repos removed, citations added) but NOT diffed against each other or
+merged — needs a full side-by-side diff-and-merge-or-differentiate pass next, same process as the
+resolved clusters below.
+
+### MCP Auth guides (2 pages) — carried in WORKLOG since before 2026-08-01, migrated here 2026-08-15
+Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes without a resolution pass.
+- `content/guides/mcp-authentication-oauth.md`
+- `content/guides/mcp-authorization-oauth.md`
+
+### MCP Error Handling guides (2 pages) — carried in WORKLOG since before 2026-08-01, migrated here 2026-08-15
+Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes without a resolution pass.
+- `content/guides/mcp-error-handling-resilience.md`
+- `content/guides/mcp-error-handling-explained.md`
 
 
 ## Resolved clusters

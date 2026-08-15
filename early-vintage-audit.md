@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 120/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 132/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -392,18 +392,18 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Graph Database MCP Servers — Neo4j, ArangoDB, Neptune, TigerGraph, Dgraph, Memgraph, FalkorDB, NebulaGraph, and More](content/reviews/graph-database-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [HR & Recruiting MCP Servers — BambooHR, Workday, Greenhouse, Workable, Payroll, ATS, and More](content/reviews/hr-recruiting-mcp-servers.md)
 - [x] 2026-07-23 — [Healthcare & Medical MCP Servers — FHIR, PubMed, Clinical Trials, DICOM, Drug Databases, and More](content/reviews/healthcare-medical-mcp-servers.md) — re-audited 2026-08-15
-- [ ] 2026-07-23 — [Hospitality & Hotels MCP Servers — Airbnb Search, Hotel Booking, Restaurant Reservations, and Travel Planning](content/reviews/hospitality-hotels-mcp-servers.md)
-- [ ] 2026-07-23 — [Identity & Authentication MCP Servers — Okta, Auth0, Keycloak, Entra ID, Casdoor, and More](content/reviews/identity-authentication-mcp-servers.md)
-- [ ] 2026-07-23 — [Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More](content/reviews/image-generation-mcp-servers.md)
-- [ ] 2026-07-23 — [Infrastructure Automation MCP Servers — Ansible, Terraform, Pulumi, OpenTofu, and Beyond](content/reviews/infrastructure-automation-mcp-servers.md)
-- [ ] 2026-07-23 — [Insurance & InsurTech MCP Servers — Policy Management, Claims Processing, Underwriting Intelligence, and Compliance](content/reviews/insurance-insurtech-mcp-servers.md)
-- [ ] 2026-07-23 — [Insurance MCP Servers — Claims Processing, Underwriting, Policy Management, Socotra, Sure, EMPLOYERS, and More](content/reviews/insurance-mcp-servers.md)
-- [ ] 2026-07-23 — [Interior Design & Architecture MCP Servers — CAD, BIM, 3D Modeling, SketchUp, Blender, Rhino, and Floor Planning](content/reviews/interior-design-architecture-mcp-servers.md)
-- [ ] 2026-07-23 — [IoT & Embedded MCP Servers — Home Assistant, MQTT, ESP32, ROS, Industrial PLCs, 3D Printers, and More](content/reviews/iot-embedded-mcp-servers.md)
-- [ ] 2026-07-23 — [Job Search & Career MCP Servers — LinkedIn, Indeed, Resume Building, Interview Prep, Multi-Platform Job Aggregation](content/reviews/job-search-career-mcp-servers.md)
-- [ ] 2026-07-23 — [LLM Evaluation & Benchmarking MCP Servers — Eval Frameworks, MCP Benchmarks, Red-Teaming, and 20+ More](content/reviews/llm-evaluation-benchmarking-mcp-servers.md)
-- [ ] 2026-07-23 — [LLM Observability & MLOps Pipeline MCP Servers — Datadog, Arize Phoenix, Opik, LangSmith, Langfuse, MLflow, W&B, and More](content/reviews/llm-observability-mlops-pipeline-mcp-servers.md)
-- [ ] 2026-07-23 — [Legal & Contract Management MCP Servers — E-Signatures, Legal Research, Case Law, IP/Trademarks, and More](content/reviews/legal-contract-management-mcp-servers.md)
+- [x] 2026-07-23 — [Hospitality & Hotels MCP Servers — Airbnb Search, Hotel Booking, Restaurant Reservations, and Travel Planning](content/reviews/hospitality-hotels-mcp-servers.md)
+- [x] 2026-07-23 — [Identity & Authentication MCP Servers — Okta, Auth0, Keycloak, Entra ID, Casdoor, and More](content/reviews/identity-authentication-mcp-servers.md)
+- [x] 2026-07-23 — [Image Generation MCP Servers — DALL-E, Stable Diffusion, ComfyUI, Flux, Midjourney, and 50+ More](content/reviews/image-generation-mcp-servers.md)
+- [x] 2026-07-23 — [Infrastructure Automation MCP Servers — Ansible, Terraform, Pulumi, OpenTofu, and Beyond](content/reviews/infrastructure-automation-mcp-servers.md)
+- [x] 2026-07-23 — [Insurance & InsurTech MCP Servers — Policy Management, Claims Processing, Underwriting Intelligence, and Compliance](content/reviews/insurance-insurtech-mcp-servers.md)
+- [x] 2026-07-23 — [Insurance MCP Servers — Claims Processing, Underwriting, Policy Management, Socotra, Sure, EMPLOYERS, and More](content/reviews/insurance-mcp-servers.md)
+- [x] 2026-07-23 — [Interior Design & Architecture MCP Servers — CAD, BIM, 3D Modeling, SketchUp, Blender, Rhino, and Floor Planning](content/reviews/interior-design-architecture-mcp-servers.md)
+- [x] 2026-07-23 — [IoT & Embedded MCP Servers — Home Assistant, MQTT, ESP32, ROS, Industrial PLCs, 3D Printers, and More](content/reviews/iot-embedded-mcp-servers.md)
+- [x] 2026-07-23 — [Job Search & Career MCP Servers — LinkedIn, Indeed, Resume Building, Interview Prep, Multi-Platform Job Aggregation](content/reviews/job-search-career-mcp-servers.md)
+- [x] 2026-07-23 — [LLM Evaluation & Benchmarking MCP Servers — Eval Frameworks, MCP Benchmarks, Red-Teaming, and 20+ More](content/reviews/llm-evaluation-benchmarking-mcp-servers.md)
+- [x] 2026-07-23 — [LLM Observability & MLOps Pipeline MCP Servers — Datadog, Arize Phoenix, Opik, LangSmith, Langfuse, MLflow, W&B, and More](content/reviews/llm-observability-mlops-pipeline-mcp-servers.md)
+- [x] 2026-07-23 — [Legal & Contract Management MCP Servers — E-Signatures, Legal Research, Case Law, IP/Trademarks, and More](content/reviews/legal-contract-management-mcp-servers.md)
 - [ ] 2026-07-23 — [Library, Archive & Museum MCP Servers — Zotero, Calibre, IIIF, Wayback Machine, and Museum Collections](content/reviews/library-archive-museum-mcp-servers.md)
 - [ ] 2026-07-23 — [Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond](content/reviews/log-management-mcp-servers.md)
 - [ ] 2026-07-23 — [Logistics & Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence](content/reviews/logistics-supply-chain-mcp-servers.md)

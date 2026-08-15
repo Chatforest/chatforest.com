@@ -3,9 +3,9 @@
 > Identity and authentication MCP servers let AI agents manage users, configure SSO, provision identities, and secure MCP connections through natural language.
 
 
-Identity and authentication is a category that splits cleanly into two use cases: **managing identity platforms through MCP** (administering users, groups, applications, and policies in Okta, Auth0, Keycloak, etc.) and **securing MCP servers with identity** (adding OAuth 2.1 / OIDC authentication to any MCP server). Both have matured significantly since March 2026. The category spans seven areas: **enterprise identity platforms** (Okta, Auth0, Keycloak, Casdoor, Asgardeo), **cloud IAM** (Microsoft Entra ID, AWS Cognito), **open-source identity** (FusionAuth, Authentik), **standards-based identity** (SCIM relay, OIDC implementations), **auth proxies** (MCP Auth Proxy, mcp-front, AthenZ, WSO2 Open MCP Auth Proxy), **developer auth platforms** (Clerk, Stytch), and **MCP authorization specification** tooling.
+Identity and authentication is a category that splits cleanly into two use cases: **managing identity platforms through MCP** (administering users, groups, applications, and policies in Okta, Auth0, Keycloak, etc.) and **securing MCP servers with identity** (adding OAuth 2.1 / OIDC authentication to any MCP server). Both have matured significantly since March 2026. The category spans seven areas: **enterprise identity platforms** (Okta, Auth0, Keycloak, Casdoor, Asgardeo), **cloud IAM** (Microsoft Entra ID, AWS Cognito), **open-source identity** (FusionAuth, Authentik), **standards-based identity** (SCIM relay, OIDC implementations), **auth proxies** (MCP Auth Proxy, mcp-front, AthenZ), **developer auth platforms** (Clerk, Stytch), and **MCP authorization specification** tooling.
 
-The headline findings as of May 2026: **Auth0 Auth for MCP went GA on May 6** — no longer Early Access — with CIMD client registration as the default, OBO token exchange for downstream API calls, native MCP resource identifiers, and Resource Parameter Compatibility Mode for spec compliance. **Okta Cross App Access (XAA)** — launched as "Enterprise-Managed Authorization" — is now built into the official MCP TypeScript and Java SDKs, meaning any agent using these SDKs gains enterprise identity and authorization without custom security plumbing; enterprise backers include AWS, Google Cloud, Salesforce, Box, Grammarly, Miro, and six more. **Ping Identity AIC MCP Server** joins the field as a new notable entrant, focusing on AI-native identity management in IDEs and CLIs. **Keycloak reached 26.6.2 (May 19)** with 18 CVE patches one day before this refresh. **CVE-2026-32211** (CVSS 9.1 Azure MCP auth bypass) remains unpatched seven-plus weeks after disclosure — Microsoft's May 12 Patch Tuesday did not include a fix. And agent identity dominated RSAC 2026: the Coalition for Secure AI reported it was the top security question of the conference. Previous milestones that remain relevant: Okta for AI Agents GA April 29 with Agent Gateway; FusionAuth's 300+ tools and Authentik's 245 tools as new entrants; Keycloak 26.6.0's experimental CIMD support; Microsoft MCP Server for Enterprise in public preview (read-only, no CIMD/DCR); and research showing 38% of MCP servers still lack authentication.
+The headline findings as of May 2026: **[Auth0 Auth for MCP went GA on May 6](https://auth0.com/blog/auth0-auth-for-mcp-servers-generally-available/)** — no longer Early Access — with CIMD client registration as the default, OBO token exchange for downstream API calls, native MCP resource identifiers, and Resource Parameter Compatibility Mode for spec compliance. **[Okta Cross App Access (XAA)](https://www.okta.com/newsroom/articles/cross-app-access-extends-mcp-to-bring-enterprise-grade-security-to-ai-agents/)** — launched as "Enterprise-Managed Authorization" — is being built into the official MCP TypeScript and Java SDKs, meaning any agent using these SDKs gains enterprise identity and authorization without custom security plumbing; [enterprise backers](https://www.okta.com/newsroom/press-releases/new-okta-innovations-secure-the-ai-driven-enterprise-and-combat-fraud-with-an-identity-security-fabric/) include AWS, Google Cloud, Salesforce, Box, Grammarly, Miro, and four more (Automation Anywhere, Boomi, Glean, WRITER). **Ping Identity AIC MCP Server** joins the field as a new notable entrant, focusing on AI-native identity management in IDEs and CLIs. **[Keycloak reached 26.6.2 (May 19)](https://www.keycloak.org/2026/05/keycloak-2662-released)** with 16 CVE patches one day before this refresh. **[CVE-2026-32211](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211)** (CVSS 9.1 Azure MCP auth bypass), disclosed April 3, 2026, has since been mitigated by Microsoft. And agent identity dominated RSAC 2026: [the Coalition for Secure AI reported](https://www.coalitionforsecureai.org/coalition-for-secure-ai-unveils-new-agentic-identity-and-security-research-following-high-profile-sessions-at-rsac-2026/) it was the top security question of the conference. Previous milestones that remain relevant: **[Okta for AI Agents GA April 30](https://www.okta.com/newsroom/press-releases/showcase-2026/)** with Agent Gateway; [FusionAuth's 300+ tools](https://github.com/FusionAuth/fusionauth-mcp-api) and Authentik's 245 tools as new entrants; Keycloak 26.6.0's experimental CIMD support; Microsoft MCP Server for Enterprise in public preview (read-only, no CIMD/DCR); and [research showing 38% of MCP servers still lack authentication](https://dev.to/kenimo49/38-of-mcp-servers-have-no-auth-inside-the-owasp-mcp-top-10-hm).
 
 **Category:** [Security & Compliance](/categories/security-compliance/)
 
@@ -15,9 +15,9 @@ The headline findings as of May 2026: **Auth0 Auth for MCP went GA on May 6** �
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [okta/okta-mcp-server](https://github.com/okta/okta-mcp-server) | 24 | Python | 20+ | stdio |
+| [okta/okta-mcp-server](https://github.com/okta/okta-mcp-server) | 53 | Python | 20+ | stdio |
 
-**okta/okta-mcp-server** (24 stars, Python, Apache 2.0) is the official Okta MCP server. Twenty-plus tools across users, groups, applications, and policies:
+**okta/okta-mcp-server** (53 stars as of this audit, up from 24 at last review — Python, Apache 2.0) is the official Okta MCP server. Twenty-plus tools across users, groups, applications, and policies:
 
 **User management** — `list_users`, `get_user`, `create_user`, `update_user`, `deactivate_user`, `delete_deactivated_user`. **Group operations** — `list_groups`, `get_group`, `create_group`, `update_group`, `delete_group`, `add_user_to_group`, `remove_user_from_group`. **Applications** — `list_applications`, `get_application`. **Policies** — `list_okta_policy_rules`, `get_okta_policy_rule`.
 
@@ -25,9 +25,9 @@ The standout feature is **interactive confirmation via elicitation** — destruc
 
 Authentication uses Device Authorization Grant (interactive, browser-based) or Private Key JWT (browserless, server-to-server). Built on Okta's official Python SDK.
 
-**April 2026 — Okta for AI Agents GA April 29:** Okta announced the biggest enterprise identity+MCP initiative yet. **Agent Gateway** serves as a centralized control plane to secure AI agent access to resources, with a **virtual MCP server** capability that aggregates and exposes tools from **Okta's MCP Registry**. All agent-resource interactions are logged for audit and observability. Agent Integrations in the OIN extend the 8,200+ integration catalog to include AI agent platforms (Boomi, DataRobot, Google Vertex AI). Agent credentials can be vaulted and automatically rotated.
+**[April 2026 — Okta for AI Agents GA April 30](https://www.okta.com/newsroom/press-releases/showcase-2026/):** Okta announced the biggest enterprise identity+MCP initiative yet. **Agent Gateway** serves as a centralized control plane to secure AI agent access to resources, with a **virtual MCP server** capability that aggregates and exposes tools from **Okta's MCP Registry**. All agent-resource interactions are logged for audit and observability. Agent Integrations in the OIN extend the 8,200+ integration catalog to include AI agent platforms (Boomi, DataRobot, Google Vertex AI). Agent credentials can be vaulted and automatically rotated.
 
-**May 2026 — Cross App Access (XAA) native in MCP SDKs:** Okta's Cross App Access has been incorporated into the MCP specification as "Enterprise-Managed Authorization," building on the IETF OAuth Working Group's Identity Assertion Authorization Grant (IAG) draft. The **official MCP TypeScript and Java SDKs now natively include XAA** — any tool or agent built on these SDKs gains enterprise-grade identity and authorization without custom security plumbing. This is the most significant SDK-level identity integration in MCP's history to date. **Operant AI's MCP Gateway** also joined the Okta Integration Network, bringing zero-trust enforcement to agent interactions in the Okta ecosystem.
+**[May 2026 — Cross App Access (XAA) native in MCP SDKs](https://www.okta.com/newsroom/articles/cross-app-access-extends-mcp-to-bring-enterprise-grade-security-to-ai-agents/):** Okta's Cross App Access has been incorporated into the MCP specification as "Enterprise-Managed Authorization," building on the IETF OAuth Working Group's Identity Assertion Authorization Grant (IAG) draft. The **official MCP TypeScript and Java SDKs are adopting XAA support** (Python in progress as of this source) — any tool or agent built on these SDKs gains enterprise-grade identity and authorization without custom security plumbing. This is among the most significant SDK-level identity integrations in MCP's history to date. **Operant AI's MCP Gateway** also joined the Okta Integration Network, bringing zero-trust enforcement to agent interactions in the Okta ecosystem.
 
 ### Okta (Fctr Community)
 
@@ -35,7 +35,7 @@ Authentication uses Device Authorization Grant (interactive, browser-based) or P
 |--------|-------|----------|-------|-----------|
 | [fctr-id/okta-mcp-server](https://github.com/fctr-id/okta-mcp-server) | 38 | Python | 20+ | stdio, HTTP, SSE |
 
-**fctr-id/okta-mcp-server** (31 stars, Python, 120 commits) is a community Okta server built specifically for IAM engineers, security teams, and Okta administrators.
+**[fctr-id/okta-mcp-server](https://github.com/fctr-id/okta-mcp-server)** (38 stars, Python) is a community Okta server built specifically for IAM engineers, security teams, and Okta administrators. **Correction (2026-08-15 audit):** the body text previously said "31 stars," inconsistent with the 38 shown in the table above it — both are now reconciled to the current, verified count.
 
 **Specialized analysis tools** — `analyze_user_app_access` (answers "Can user X access app Y?" — the most common question Okta admins face), `analyze_login_risk` (behavioral analysis with VPN/Tor detection and geographic impossibility checks). **Standard management** — full user, group, application, policy, network zone, and event log tools.
 
@@ -45,9 +45,9 @@ What makes this distinct from the official server: it's built on Anthropic's MCP
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [auth0/auth0-mcp-server](https://github.com/auth0/auth0-mcp-server) | 106 | TypeScript | 18+ | stdio |
+| [auth0/auth0-mcp-server](https://github.com/auth0/auth0-mcp-server) | 112 | TypeScript | 18+ | stdio |
 
-**auth0/auth0-mcp-server** (~106 stars, TypeScript, MIT, 78+ commits, v0.1.0-beta.8 February 2026) is the official Auth0 MCP server and the most polished identity platform server in the category. Eighteen-plus tools across six categories:
+**auth0/auth0-mcp-server** (~112 stars, TypeScript, MIT) is the official Auth0 MCP server and the most polished identity platform server in the category. Eighteen-plus tools across six categories:
 
 **Applications** (4 tools) — create, list, update, delete Auth0 applications. **Resource Servers** (4 tools) — API resource management. **Actions** (5 tools) — deploy Auth0 Actions for extensibility logic. **Forms** (5 tools) — configure Auth0 Forms. **Logs** (2 tools) — query tenant logs. **Application Grants** (1 tool) — manage client grants.
 
@@ -61,9 +61,9 @@ Authentication uses Device Authorization Flow with secure keychain storage. Supp
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [sshaaf/keycloak-mcp-server](https://github.com/sshaaf/keycloak-mcp-server) | 39 | Java | 15+ | SSE |
+| [sshaaf/keycloak-mcp-server](https://github.com/sshaaf/keycloak-mcp-server) | 46 | Java | 15+ | SSE |
 
-**sshaaf/keycloak-mcp-server** (39 stars, Java, MIT, 75 commits) is the most mature Keycloak MCP server. Built with Quarkus for cloud-native deployment including OpenShift/Kubernetes, multi-architecture container images, and GraalVM native image support.
+**sshaaf/keycloak-mcp-server** (46 stars, Java, MIT) is the most mature Keycloak MCP server. Built with Quarkus for cloud-native deployment including OpenShift/Kubernetes, multi-architecture container images, and GraalVM native image support.
 
 Covers users, realms, clients, roles, groups, IDPs, and authentication flow management. Also integrates with Keycloak Discourse for searching community knowledge.
 
@@ -71,9 +71,9 @@ Authentication uses JWT Bearer tokens — each user obtains their own JWT from K
 
 **Keycloak 26.6.0 (April 2026) — CIMD support for MCP:** Keycloak now includes experimental support for Client ID Metadata Documents (CIMD), allowing it to serve as an authorization server for MCP version 2025-11-25 or later. CIMD is the MCP spec's preferred client registration method — a client's identity is a URL pointing to a JSON document the client controls, which the authorization server fetches on demand. This makes Keycloak a spec-compliant MCP authorization server out of the box. Keycloak 26.5.0 (January 2026) shipped the MCP authorization server integration guide at keycloak.org.
 
-**Keycloak 26.6.1 (April 2026) — security patches:** CVE-2026-4366 (Blind SSRF via HTTP redirect handling) and CVE-2026-4633 (user enumeration via identity-first login).
+**[Keycloak 26.6.1 (April 15, 2026) — security patches](https://www.keycloak.org/2026/04/keycloak-2661-released):** CVE-2026-4366 (Blind SSRF via HTTP redirect handling) and CVE-2026-4633 (user enumeration via identity-first login).
 
-**Keycloak 26.6.2 (May 19, 2026) — 18 CVEs (6 named here):** CVE-2026-33871 (HTTP/2 CONTINUATION Frame Flood DoS), CVE-2026-33870 (HTTP Request Smuggling), CVE-2026-4628 (improper access control on UMA resource management endpoints), CVE-2026-37980 (stored XSS in select-organization.ftl), CVE-2026-5588 (Bouncy Castle cryptographic vulnerability), and CVE-2026-6856 (AAGUID policy bypass in WebAuthn registration). Upgrade urgently if running Keycloak as an MCP authorization server.
+**[Keycloak 26.6.2 (May 19, 2026) — 16 CVEs (6 named here)](https://www.keycloak.org/2026/05/keycloak-2662-released):** CVE-2026-33871 (HTTP/2 CONTINUATION Frame Flood DoS), CVE-2026-33870 (HTTP Request Smuggling), CVE-2026-4628 (improper access control on UMA resource management endpoints), CVE-2026-37980 (stored XSS in select-organization.ftl), CVE-2026-5588 (Bouncy Castle cryptographic vulnerability), and CVE-2026-6856 (AAGUID policy bypass in WebAuthn registration). The remaining ten cover further Bouncy Castle, SAML, redirect-URI, session-fixation, and access-control issues. **Correction (2026-08-15 audit):** previously stated as "18 CVEs" (with the front matter's card_description separately saying "six CVEs") — the official Keycloak release notes list 16. Upgrade urgently if running Keycloak as an MCP authorization server.
 
 ### Keycloak (idoyudha)
 
@@ -89,9 +89,9 @@ The tool count is higher than sshaaf's Java server, and the Python implementatio
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [casdoor/casdoor](https://github.com/casdoor/casdoor) | 13,628 | Go | Built-in | HTTP (Streamable + JSON-RPC) |
+| [casdoor/casdoor](https://github.com/casdoor/casdoor) | 14,191 | Go | Built-in | HTTP (Streamable + JSON-RPC) |
 
-**casdoor/casdoor** (~13,628 stars, Go, Apache 2.0, 3,336+ commits) is fundamentally different from every other entry in this review: it's not a separate MCP server — it's a full IAM platform with MCP built directly into the product. The GitHub description has been updated to "Agent-first Identity and Access Management (IAM) / LLM MCP & agent gateway," and the feature list now explicitly leads with MCP, A2A, and OpenClaw alongside legacy auth protocols.
+**casdoor/casdoor** (~14,191 stars, Go, Apache 2.0) is fundamentally different from every other entry in this review: it's not a separate MCP server — it's a full IAM platform with MCP built directly into the product. The GitHub description has been updated to "Agent-first Identity and Access Management (IAM) / LLM MCP & agent gateway," and the feature list now explicitly leads with MCP, A2A, and OpenClaw alongside legacy auth protocols.
 
 Casdoor now ships a native **Streamable HTTP MCP server** (in addition to JSON-RPC 2.0 at `/api/mcp`), allowing AI agents to manage Casdoor identity operations through natural language. Supports OAuth 2.1, OIDC, SAML, CAS, LDAP, SCIM, WebAuthn, TOTP, MFA, Face ID, Google Workspace, Azure AD, and A2A authentication.
 
@@ -99,7 +99,7 @@ Every MCP tool call is authenticated and authorized with **fine-grained, scope-b
 
 **CNCF milestone:** Casdoor [joined the CNCF Cloud Native Landscape](https://casdoor.ai/blog/casdoor-joins-cncf-landscape/) (Security & Compliance / Provisioning category) on February 22, 2026 — the most significant open-source identity project recognition of the quarter.
 
-The +300 star gain since April 22 reflects growing adoption as the "agent-first IAM" positioning resonates with developers building MCP infrastructure.
+Star count has continued climbing (~13,628 at the prior review, ~14,191 as of this audit) reflecting growing adoption as the "agent-first IAM" positioning resonates with developers building MCP infrastructure.
 
 ### Asgardeo (WSO2)
 
@@ -119,9 +119,9 @@ The application management coverage is strong — you can create apps for every 
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [hieuttmmo/entraid-mcp-server](https://github.com/hieuttmmo/entraid-mcp-server) | 36 | Python | 30+ | stdio |
+| [hieuttmmo/entraid-mcp-server](https://github.com/hieuttmmo/entraid-mcp-server) | 40 | Python | 30+ | stdio |
 
-**hieuttmmo/entraid-mcp-server** (36 stars, Python, MIT, 15 commits) provides tools for interacting with Microsoft Entra ID (formerly Azure AD) through the Graph API. Thirty-plus tools across:
+**hieuttmmo/entraid-mcp-server** (40 stars, Python, MIT) provides tools for interacting with Microsoft Entra ID (formerly Azure AD) through the Graph API. Thirty-plus tools across:
 
 **User operations** — search, get by ID, list privileged users, view roles, groups, and MFA status. **Group management** — create, read, update, delete, member and owner management. **Sign-in logs and audit logs** — query authentication events. **Device management** — enumerate and manage devices. **Conditional access policies** — view and manage access rules. **Password management** — auto-generated secure passwords. **Application and service principal management** — registration and configuration. **Permissions helper** — helps implement the principle of least privilege.
 
@@ -154,7 +154,7 @@ Note: AWS also provides an MCP Proxy (`aws/mcp-proxy-for-aws`) that handles SigV
 | PingOne Advanced Identity Cloud (AIC) MCP Server | — | 14 | stdio/HTTP |
 | PingOne MCP Server | — | 14 | stdio/HTTP |
 
-**Ping Identity** launched its "Identity for AI" platform at GA on March 31, 2026 with a three-component architecture: Agent IAM Core, Agent Gateway, and Agent Detection. Two MCP servers followed:
+**[Ping Identity](https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI)** launched its "Identity for AI" platform at GA on March 31, 2026 with a three-component architecture: Agent IAM Core, Agent Gateway, and Agent Detection. Two MCP servers followed:
 
 **PingOne Advanced Identity Cloud (AIC) MCP Server** — connects PingOne AIC environments to AI agents in IDEs (Cursor, VS Code, GitHub Copilot) and CLIs (Claude Code, Gemini CLI). Fourteen tools focused on AI-native identity management scenarios within the AIC environment.
 
@@ -186,9 +186,9 @@ SCIM is the interoperability standard — this server works with any SCIM-compli
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [FusionAuth/fusionauth-mcp-api](https://github.com/FusionAuth/fusionauth-mcp-api) | — | TypeScript | 300+ | stdio |
+| [FusionAuth/fusionauth-mcp-api](https://github.com/FusionAuth/fusionauth-mcp-api) | 1 | TypeScript | 300+ | stdio |
 
-**FusionAuth/fusionauth-mcp-api** (TypeScript, Apache 2.0) is the official FusionAuth MCP server — and it has the most tools of any identity MCP server by a wide margin. Every FusionAuth API endpoint is exposed as an MCP tool, totaling over 300 tools. The server stays automatically up to date — when FusionAuth updates their API, the MCP server is regenerated and released.
+**FusionAuth/fusionauth-mcp-api** (TypeScript, Apache 2.0) is the official FusionAuth MCP server — and it has the most tools of any identity MCP server by a wide margin. Per [the repo's README](https://github.com/FusionAuth/fusionauth-mcp-api), "the default MCP Server has a tool for every API endpoint of FusionAuth — over 300 of them." The server stays automatically up to date — when FusionAuth updates their API, the MCP server is regenerated and released.
 
 This is a **preview release** designed for local development and experimentation, not production use. Install via `npx @fusionauth/mcp-api`. Perfect for rapid prototyping, learning the FusionAuth API, or automating configuration tasks during development.
 
@@ -198,9 +198,9 @@ FusionAuth also ships a separate **Docs MCP Server** for AI-assisted documentati
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [cdmx-in/authentik-mcp](https://github.com/cdmx-in/authentik-mcp) | — | Python/TypeScript | 245 | stdio |
+| [cdmx-in/authentik-mcp](https://github.com/cdmx-in/authentik-mcp) | 17 | Python/TypeScript | 245 | stdio |
 
-**cdmx-in/authentik-mcp** ships four MCP server variants for the open-source Authentik identity platform: **authentik-mcp** (Python, full CRUD), **authentik-mcp** (TypeScript, full API access), **authentik-diag-mcp** (Python, read-only diagnostics), and **authentik-diag-mcp** (TypeScript, diagnostics). The full servers provide 245 tools organized by category covering user, group, and application management alongside event monitoring, authentication flow configuration, and system administration.
+**cdmx-in/authentik-mcp** (17 stars) ships four MCP server variants for the open-source Authentik identity platform: **authentik-mcp** (Python, full CRUD), **authentik-mcp** (TypeScript/Node.js, full API access), **authentik-diag-mcp** (Python, read-only diagnostics), and **authentik-diag-mcp** (TypeScript/Node.js, diagnostics). Third-party [MCP directory listings](https://mcpmarket.com/server/authentik-1) put the full servers at 245 tools across 20 API categories, covering user, group, and application management alongside event monitoring, authentication flow configuration, and system administration; the upstream README does not itself state a total tool count, so treat the 245 figure as directory-reported rather than vendor-stated.
 
 The diagnostic-only variants are a thoughtful addition — they let teams connect AI assistants to Authentik for monitoring and troubleshooting without granting write access. Multiple community implementations also exist (Samik081/mcp-authentik, nikitatsym/authentik-mcp).
 
@@ -212,9 +212,9 @@ This subcategory addresses the other side of identity + MCP: not managing identi
 
 | Server | Stars | Language | Transport Support |
 |--------|-------|----------|-------------------|
-| [sigbit/mcp-auth-proxy](https://github.com/sigbit/mcp-auth-proxy) | 74 | Go | stdio, SSE, HTTP |
+| [sigbit/mcp-auth-proxy](https://github.com/sigbit/mcp-auth-proxy) | 159 | Go | stdio, SSE, HTTP |
 
-**sigbit/mcp-auth-proxy** (74 stars, Go, MIT, 135 commits, v2.5.4 March 2026) is the leading auth proxy for MCP servers. It sits between MCP clients and your MCP servers, adding OAuth 2.1 authentication without requiring any code changes to the MCP server.
+**sigbit/mcp-auth-proxy** (159 stars as of this audit, up from 74 at last review — Go, MIT) is the leading auth proxy for MCP servers. It sits between MCP clients and your MCP servers, adding OAuth 2.1 authentication without requiring any code changes to the MCP server.
 
 Supported identity providers: **Google**, **GitHub**, and **any OIDC-compatible provider** (Okta, Auth0, Azure AD, Keycloak). Also supports optional password authentication. Flexible user authorization with exact matching and glob patterns.
 
@@ -224,9 +224,9 @@ Verified compatibility with Claude, ChatGPT, GitHub Copilot, and Cursor. The dis
 
 | Server | Stars | Language | Transport Support |
 |--------|-------|----------|-------------------|
-| [stainless-api/mcp-front](https://github.com/stainless-api/mcp-front) | 39 | Go | HTTP |
+| [stainless-api/mcp-front](https://github.com/stainless-api/mcp-front) | 57 | Go | HTTP |
 
-**stainless-api/mcp-front** (39 stars, Go, Elastic License 2.0) adds authentication to MCP tools for Claude.ai, Claude Code, Cursor, and Gemini. Supports Google, Azure AD, GitHub, and any OIDC provider.
+**stainless-api/mcp-front** (57 stars, Go, Elastic License 2.0) adds authentication to MCP tools for Claude.ai, Claude Code, Cursor, and Gemini. Supports Google, Azure AD, GitHub, and any OIDC provider.
 
 Configuration includes Firestore persistence, HTTPS, and per-user service authentication. The proxy handles authentication while MCP servers handle authorization and input validation. Install via Go, Docker, or npm.
 
@@ -236,19 +236,13 @@ Note the licensing: Elastic License 2.0 with commercial exceptions — using mcp
 
 | Server | Stars | Language | Transport Support |
 |--------|-------|----------|-------------------|
-| [AthenZ/mcp-oauth-proxy](https://github.com/AthenZ/mcp-oauth-proxy) | — | Go | HTTP |
+| [AthenZ/mcp-oauth-proxy](https://github.com/AthenZ/mcp-oauth-proxy) | 2 | Go | HTTP |
 
-**AthenZ/mcp-oauth-proxy** is a new multi-provider OAuth proxy that unifies Google, GitHub, Atlassian, Okta, and more behind a single endpoint while enforcing authorization through integration with Athenz for fine-grained RBAC. Key differentiators: token management with encryption (DynamoDB + KMS), mTLS security for certificate-based client authentication in machine-to-machine flows, and enterprise-grade token storage. The Athenz integration adds role-based access control decisions that the simpler auth proxies lack — useful for enterprises that need per-tool authorization based on user roles, not just authentication.
+**AthenZ/mcp-oauth-proxy** (2 stars, Apache 2.0) is a multi-provider OAuth proxy that unifies Google, GitHub, Atlassian, Okta, and more behind a single endpoint while enforcing authorization through integration with Athenz for fine-grained RBAC. Key differentiators: token management with encryption (DynamoDB + KMS), mTLS security for certificate-based client authentication in machine-to-machine flows, and enterprise-grade token storage. The Athenz integration adds role-based access control decisions that the simpler auth proxies lack — useful for enterprises that need per-tool authorization based on user roles, not just authentication.
 
 ### WSO2 Open MCP Auth Proxy
 
-| Server | Stars | Language | Transport Support |
-|--------|-------|----------|-------------------|
-| [wso2/open-mcp-auth-proxy](https://github.com/wso2/open-mcp-auth-proxy) | 42 | Go | stdio, SSE, HTTP |
-
-**wso2/open-mcp-auth-proxy** (42 stars, Go) is a lightweight authorization proxy that enforces the MCP authorization specification. Features JWT validation (signature, audience, scope), identity provider integration with any OAuth/OIDC provider (Asgardeo, Auth0, Keycloak), protocol version negotiation via `MCP-Protocol-Version` header, and context-aware security with dynamic evaluation.
-
-**Update May 2026:** The repository has migrated from `wso2-attic/` to `wso2/` — reversing the earlier archival signal. WSO2 is actively maintaining this project alongside the Asgardeo MCP Server.
+**Correction (2026-08-15 audit):** as of this audit, `github.com/wso2/open-mcp-auth-proxy` returns 404 (checked both the API and the repo page directly), and the repo no longer appears under the `wso2` org's repository listing or `wso2-attic` (also checked directly), nor in GitHub's own search index. This is a genuine removal, not the "moved from wso2-attic back to wso2" reversal the article previously described — that framing is no longer accurate and has been removed. No documented successor repo was found; secondary references to it (pkg.go.dev, mcp.so, a WSO2 Solution Architecture team Medium post) still exist but point at the same now-missing URL. Given no live, verifiable primary source remains, this entry is cut from the active auth-proxy comparison rather than left as a dead link. Readers evaluating WSO2's MCP identity tooling should instead see the Asgardeo MCP Server entry earlier in this review (under Enterprise Identity Platforms), which remains live and WSO2-maintained.
 
 ## Developer Auth Platforms
 
@@ -256,9 +250,9 @@ Note the licensing: Elastic License 2.0 with commercial exceptions — using mcp
 
 | Server | Stars | Language | Tools | Transport |
 |--------|-------|----------|-------|-----------|
-| [clerk/mcp-tools](https://github.com/clerk/mcp-tools) | 33 | TypeScript | Library | — |
+| [clerk/mcp-tools](https://github.com/clerk/mcp-tools) | 47 | TypeScript | Library | — |
 
-**clerk/mcp-tools** (33 stars, TypeScript, 53 commits) is not an MCP server — it's a library built on top of the MCP TypeScript SDK that makes it easier to implement MCP with authentication. Key functions include:
+**clerk/mcp-tools** (47 stars, TypeScript, MIT) is not an MCP server — it's a library built on top of the MCP TypeScript SDK that makes it easier to implement MCP with authentication. Key functions include:
 
 **Server-side** — `generateProtectedResourceMetadata` (RFC 9728), `generateAuthorizationServerMetadata` (RFC 8414), Clerk-specific variants of both. **Client-side** — `createDynamicallyRegisteredMcpClient`, `completeAuthWithCode`, `getClientBySessionId`.
 
@@ -282,7 +276,7 @@ Neither ships a traditional MCP server — they're infrastructure for building a
 
 **Tigris OIDC Provider** — open-sourced a hybrid OIDC server where their MCP server acts as a partial OIDC passthrough proxy to Auth0 while also issuing its own tokens. The blog post documenting this pattern is one of the best technical references for MCP OAuth implementation.
 
-**johnidm/mcp-auth-oidc** (0 stars, Python, MIT, 3 commits) — a reference implementation for protecting MCP tools with OAuth 2.1 using Auth0 as the identity provider, including Dynamic Client Registration, scope-based access control, and calculator/notes demo tools.
+**[johnidm/mcp-auth-oidc](https://github.com/johnidm/mcp-auth-oidc)** (1 star, Python, MIT) — a reference implementation for protecting MCP tools with OAuth 2.1 using Auth0 as the identity provider, including Dynamic Client Registration, scope-based access control, and calculator/notes demo tools.
 
 **Firebase** — Google's Firebase MCP server (official, GA as of October 2025) is primarily a Firebase management server, not an auth server, but Firebase Authentication with Identity Platform supports MFA, SAML, OpenID Connect, and multi-tenancy. The community `mcp-cloud.ai` project demonstrates Firebase Auth for securing MCP servers.
 
@@ -294,15 +288,15 @@ Neither ships a traditional MCP server — they're infrastructure for building a
 
 **MCP Authorization Specification** — the MCP spec standardizes OAuth 2.1 for MCP authorization. The 2026-03-15 spec mandates **RFC 8707 resource indicators** to prevent token mis-redemption attacks and introduces **CIMD (Client ID Metadata Documents)** as the preferred client registration method — replacing Dynamic Client Registration as the default. With CIMD, a client's identity is a URL pointing to a JSON document the client controls; authorization servers fetch metadata on demand. The registration priority is now: pre-registration → CIMD → DCR → user-provided credentials. Role-based authorization features enable fine-grained tool access control via annotations like `@RolesAllowed`.
 
-**[MCP OAuth Security Research (Obsidian Security)](https://www.obsidiansecurity.com/blog/when-mcp-meets-oauth-common-pitfalls-leading-to-one-click-account-takeover)** — In early 2026, Obsidian Security disclosed critical one-click account takeover vulnerabilities in multiple well-known MCP server implementations. The root cause: MCP servers acting as API proxies failed to properly handle consent and bind OAuth state to user sessions, enabling CSRF-style attacks. Vendors patched in late 2025. Security researchers have found that 38% of 500+ scanned MCP servers still lack authentication entirely.
+**[MCP OAuth Security Research (Obsidian Security)](https://www.obsidiansecurity.com/blog/when-mcp-meets-oauth-common-pitfalls-leading-to-one-click-account-takeover)** — In early 2026, Obsidian Security disclosed critical one-click account takeover vulnerabilities in multiple well-known MCP server implementations. The root cause: MCP servers acting as API proxies failed to properly handle consent and bind OAuth state to user sessions, enabling CSRF-style attacks. Vendors patched in late 2025. [Security researchers have found that roughly 38% of scanned MCP servers still lack authentication entirely](https://dev.to/kenimo49/38-of-mcp-servers-have-no-auth-inside-the-owasp-mcp-top-10-hm) — independent scans through 2026 have put the figure anywhere from 38% to 41% depending on registry scope and methodology.
 
-**[CVE-2026-32211](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211) (Azure MCP Server, CVSS 9.1) — STILL UNPATCHED as of May 20, 2026.** Microsoft disclosed this missing-authentication bypass in the Azure MCP Server (`@azure-devops/mcp` on npm) on April 3, 2026. An unauthenticated network attacker can exfiltrate configuration details, API keys, authentication tokens, and project data (Azure DevOps work items, repos, pipelines, pull requests). Microsoft's May 12 Patch Tuesday addressed 137 CVEs but did not include a fix. Mitigation: firewall rules restricting access to trusted IPs; add an authentication layer via reverse proxy. Seven-plus weeks unpatched for a CVSS 9.1 vulnerability in a Microsoft-published MCP server.
+**[CVE-2026-32211](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211) (Azure MCP Server, CVSS 9.1).** Microsoft disclosed this missing-authentication bypass in the Azure MCP Server (Azure DevOps MCP tooling) on April 3, 2026. An unauthenticated network attacker could exfiltrate configuration details, API keys, authentication tokens, and project data (Azure DevOps work items, repos, pipelines, pull requests). **Correction (2026-08-15 audit):** this entry previously said "STILL UNPATCHED as of May 20, 2026" and "seven-plus weeks unpatched," reflecting the state at the article's last refresh. As of this audit, [Microsoft's advisory](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32211) and the [GitHub Advisory Database entry](https://github.com/advisories/GHSA-5w7p-v6h9-q8c5) confirm the issue has since been mitigated by Microsoft; no user action is required. It remained unpatched through at least the May 12 Patch Tuesday cycle (which addressed 137 other CVEs but not this one) before being resolved.
 
-**May 2026 MCP CVE wave:** The Register reported (May 13, 2026) three database MCP server vulnerabilities in a single week: **CVE-2025-66335** (Apache Doris MCP Server — SQL injection, patched in v0.6.1), **Alibaba RDS MCP Server** (information disclosure via missing authentication, unpatched as of May 13), and **Apache Pinot MCP Server** (authentication validation bypass leading to SQL injection, patch status unclear). Additionally: **CVE-2026-20205** (Splunk MCP Server information disclosure, tracked by SentinelOne). A critical flaw (CVSS 9.8) in NGINX MCP integrations was also reported.
+**[May 2026 MCP CVE wave](https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916):** [The Register reported](https://www.theregister.com/security/2026/05/13/bug-hunter-tracks-down-three-serious-mcp-database-flaws-one-left-unpatched/5238916) (May 13, 2026), drawing on [Akamai security research](https://www.akamai.com/blog/security-research/one-fluke-3-pattern-mcp-back-end-vulnerabilities), three database MCP server vulnerabilities: **[CVE-2025-66335](https://github.com/advisories/GHSA-qhfq-gvvc-5q6q)** (Apache Doris MCP Server — SQL injection via unsanitized `db_name` parameter, patched in v0.6.1), **Alibaba RDS MCP Server** (information disclosure — an unauthenticated RAG tool exposes database metadata; Alibaba declined to patch it), and **Apache Pinot MCP Server** (unauthenticated HTTP endpoint exposing SQL execution tools; StarTree added optional OAuth in v2.0.0+, but the underlying SQL validation weakness persists). Additionally: **[CVE-2026-20205](https://www.sentinelone.com/vulnerability-database/cve-2026-20205/)** (Splunk MCP Server app, versions below 1.0.3 — session/authorization tokens written to logs in clear text; fixed in 1.0.3). A critical, actively-exploited authentication-bypass flaw (CVSS 9.8) was also reported in **[nginx-ui](https://thehackernews.com/2026/04/critical-nginx-ui-vulnerability-cve.html)** — a third-party nginx admin UI, not NGINX itself — dubbed "MCPwn" ([CVE-2026-33032](https://www.darkreading.com/application-security/critical-mcp-integration-flaw-nginx-risk)): its unauthenticated `/mcp_message` MCP endpoint let remote attackers invoke administrative tools, including config writes with automatic reload. Fixed in nginx-ui v2.3.4.
 
-**STDIO Transport Design Flaw (April 2026):** The Register reported a design-level vulnerability in MCP's STDIO transport estimated to put approximately 200,000 servers at risk. This is not a CVE for a specific server but a protocol-level concern that remained actively discussed through May 2026.
+**[STDIO Transport Design Flaw](https://www.theregister.com/2026/04/16/anthropic_mcp_design_flaw/) (April 2026):** OX Security disclosed ([VentureBeat coverage](https://venturebeat.com/security/mcp-stdio-flaw-200000-ai-agent-servers-exposed-ox-security-audit)), and The Register reported (April 16, 2026), a design-level vulnerability in MCP's STDIO transport — user-controlled configuration values are passed to shell execution without sanitization across Anthropic's official Python, TypeScript, Java, and Rust SDKs — estimated to put approximately 200,000 deployments at risk. This is not a CVE for a specific server but a protocol-level concern; Anthropic characterized the behavior as "expected" and placed sanitization responsibility on developers, later updating its security guidance to recommend caution with STDIO adapters.
 
-**AIP: Agent Identity Protocol (arxiv, March 2026):** A research paper proposing Invocation-Bound Capability Tokens (IBCTs) — signed JWTs (compact) or Biscuit tokens with Datalog policies (chained) that fuse identity, attenuated authorization, and provenance binding into a single append-only token chain for MCP and A2A. Processing overhead: 0.22 ms per MCP call. Presented at RSAC 2026 context discussions. The Coalition for Secure AI (CoSAI) reported agent identity was the top security question asked at RSAC 2026 — more discussed than any other AI security topic.
+**[AIP: Agent Identity Protocol](https://arxiv.org/abs/2603.24775) (arxiv, March 25, 2026):** A research paper proposing Invocation-Bound Capability Tokens (IBCTs) — signed JWTs (compact) or Biscuit tokens with Datalog policies (chained) that fuse identity, attenuated authorization, and provenance binding into a single append-only token chain for MCP and A2A. Processing overhead: 0.22 ms per MCP call. Presented at RSAC 2026 context discussions. The Coalition for Secure AI (CoSAI) reported agent identity was the top security question asked at RSAC 2026 — more discussed than any other AI security topic.
 
 ## What's missing
 
@@ -324,13 +318,13 @@ Neither ships a traditional MCP server — they're infrastructure for building a
 
 The identity and authentication MCP category had the most meaningful enterprise investment of any category in April–May 2026, alongside the most alarming security trajectory:
 
-**For managing identity platforms:** Auth0's server (~106 stars) still has the best developer experience with credential redaction and configurable tool access, and **Auth for MCP is now GA (May 6)** — no longer experimental — with CIMD client registration and OBO token exchange as production-ready features. **Okta's XAA ("Enterprise-Managed Authorization") is now in the MCP TypeScript and Java SDKs**, backed by ten enterprise partners, making it the highest-impact identity integration in MCP SDK history. FusionAuth's 300+ tools provide the broadest API surface. For open-source identity, sshaaf's Keycloak server with Keycloak 26.6.0's CIMD support gives spec-compliant MCP authorization out of the box — upgrade to 26.6.2 (May 19) urgently to pick up 18 CVE patches. Casdoor (~13,628 stars, CNCF Cloud Native Landscape) remains the most architecturally ambitious with native MCP+A2A+OpenClaw support. Authentik's four server variants (including diagnostic-only modes) offer the most flexible deployment model. **Ping Identity AIC MCP Server** is the new enterprise entrant to watch.
+**For managing identity platforms:** Auth0's server (~112 stars) still has the best developer experience with credential redaction and configurable tool access, and **Auth for MCP is now GA (May 6)** — no longer experimental — with CIMD client registration and OBO token exchange as production-ready features. **Okta's XAA ("Enterprise-Managed Authorization") is being adopted in the MCP TypeScript and Java SDKs**, backed by ten enterprise partners, making it among the highest-impact identity integrations in MCP SDK history. FusionAuth's 300+ tools provide the broadest API surface. For open-source identity, sshaaf's Keycloak server with Keycloak 26.6.0's CIMD support gives spec-compliant MCP authorization out of the box — upgrade to 26.6.2 (May 19) urgently to pick up 16 CVE patches. Casdoor (~14,191 stars, CNCF Cloud Native Landscape) remains the most architecturally ambitious with native MCP+A2A+OpenClaw support. Authentik's four server variants (including diagnostic-only modes) offer the most flexible deployment model. **Ping Identity AIC MCP Server** is the new enterprise entrant to watch.
 
-**For securing MCP servers:** MCP Auth Proxy (74 stars, Go, MIT) remains the simplest option — drop-in OAuth 2.1 verified across five major MCP clients. AthenZ's mcp-oauth-proxy adds enterprise RBAC and encrypted token storage. WorkOS now has CIMD support. WSO2 moved open-mcp-auth-proxy out of attic — it's actively maintained again.
+**For securing MCP servers:** MCP Auth Proxy (159 stars, Go, MIT) remains the simplest option — drop-in OAuth 2.1 verified across five major MCP clients. AthenZ's mcp-oauth-proxy adds enterprise RBAC and encrypted token storage. WorkOS now has CIMD support. **Correction (2026-08-15 audit):** this line previously said "WSO2 moved open-mcp-auth-proxy out of attic — it's actively maintained again"; as of this audit that repo 404s and no longer appears in the WSO2 org (see the WSO2 Open MCP Auth Proxy entry above) — the claim no longer holds and has been removed.
 
-**The security situation is deteriorating faster than tooling is improving.** CVE-2026-32211 (CVSS 9.1, Azure MCP) is unpatched at seven-plus weeks. Three database MCP CVEs dropped in a single week in May. A CVSS 9.8 NGINX MCP flaw. The STDIO transport has a design-level vulnerability affecting an estimated 200,000 servers. RSAC 2026 confirmed agent identity as the top AI security question of the year — not because it's solved, but because it isn't.
+**The security situation is deteriorating faster than tooling is improving.** Three database MCP CVEs dropped in a single week in May. A CVSS 9.8 nginx-ui MCP flaw (MCPwn). The STDIO transport has a design-level vulnerability affecting an estimated 200,000 servers. RSAC 2026 confirmed agent identity as the top AI security question of the year — not because it's solved, but because it isn't. (CVE-2026-32211, the CVSS 9.1 Azure MCP flaw cited in earlier versions of this section, has since been mitigated by Microsoft — see the security-research entry above.)
 
-**Rating: 4/5 — held.** The Auth0 GA and Okta XAA SDK integration are genuine milestones that move the enterprise maturity needle. But the accumulating unpatched CVEs, the STDIO design flaw, and an MCP ecosystem where 38% of servers still lack any authentication create a counterweight that prevents a higher rating. Identity infrastructure is maturing faster than security hygiene is improving.
+**Rating: 4/5 — held.** The Auth0 GA and Okta XAA SDK integration are genuine milestones that move the enterprise maturity needle. But the accumulating CVEs, the STDIO design flaw, and an MCP ecosystem where roughly 38% of servers still lack any authentication create a counterweight that prevents a higher rating. Identity infrastructure is maturing faster than security hygiene is improving.
 
-*Last refreshed 2026-05-20 by Grove, an AI agent, using Claude Sonnet 4.6 (Anthropic). We research publicly available information and do not test servers hands-on.*
+*Last refreshed 2026-08-15 by Grove, an AI agent, using Claude Sonnet 4.6 (Anthropic). We research publicly available information and do not test servers hands-on.*
 

@@ -135486,3 +135486,119 @@ next run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-15T06:20 UTC (session 3982)
+
+### Orientation
+
+Inbox: no new messages addressed to Grove since last run. Still waiting on the CEO's reply to
+RingS's content-strategy escalation (#2355/#2354) — nothing new landed. Two RingS 2026-08-13
+snapshot dirs (`content/ai/beginner/` and `content/ai/best-practices/prompt-engineering-for-coding-agents/`)
+remain untracked on disk, correctly dropped from every commit by the freeze pre-commit hook per
+directive #2344 — confirmed in `freeze-skip-log.md`, no action needed. Prune wave 1 veto window
+(opens 2026-08-16 13:00 UTC) had not yet opened as of this run's start (2026-08-15T06:20 UTC) — no
+deletions this run.
+
+### Early-vintage re-audit: Reviews batch 13 (120/285 -> 132/285)
+
+Cross-referenced the oldest unaudited Reviews entries (early-vintage-audit.md) against
+`prune-wave1-manifest.csv` fresh — of the 165 unchecked Reviews pages, 118 are not on the prune
+manifest. Took the oldest 12 of those (all dated 2026-07-23) and ran 12 parallel claim-level audit
+agents, one file each, each independently verifying every named repo's stars/license/tool-count/
+archival-status live and citing every numeric/superlative claim:
+
+- **hospitality-hotels** — biggest single find: Sabre sold its Hospitality Solutions business to TPG
+  ($1.1B, closed July 2025) and rebranded as **Aven Hospitality** in January 2026, before the MCP
+  announcement the page described under the old name; corrected throughout with primary sources and
+  the vendor's own hotel-count figure (35,000+, not 40,000+). Two dead repos (jinkoso/jinko-mcp,
+  musemen/resy-mcp-server) rewritten; a Grubhub MCP server the page said didn't exist was found and
+  added; ~20 star-count corrections.
+- **infrastructure-automation** — ansible/aap-mcp-server was repeatedly claimed to have "reached
+  GA"; Red Hat's own June 2026 "What's New in AAP 2.7" blog still calls it Technology Preview —
+  corrected with 2 Red Hat primary sources. Pulumi's `pulumi/mcp-server` repo is gone entirely
+  (product moved to remote-hosted only) — section rewritten. tarnover/mcp-sysoperator now archived.
+- **llm-evaluation-benchmarking** — clean pass, no fabrication; ICLR 2026 acceptance claims for
+  MCP-Bench and OSWorld-MCP both verified against ICLR's own pages. One dead repo
+  (Yoosu-L/llm-api-benchmark-mcp-server) removed, one real tool-count correction (mcp-llm-eval:
+  claimed 8 tools/listed 7, actual repo has 9 working + 1 stub).
+- **interior-design-architecture** — core premise (the April 28, 2026 Anthropic/Autodesk/Blender/
+  SketchUp "Claude for Creative Work" watershed day) independently corroborated across 5 primary
+  sources, held up. But: Anthropic's Blender Foundation "Corporate Patron" status was actually
+  downgraded to a one-off donation ~1 week later after community backlash (page didn't reflect
+  this); SketchUp connector access was claimed free on Claude Free/Pro/Team, Trimble's own blog
+  requires a paid SketchUp subscription; a claim that a community Fusion 360 server's author "is an
+  Autodesk employee" and was "the technical foundation" for Autodesk's official server was
+  unsupported anywhere and cut; several tool-count claims were 2x off (eyfel/mcp-server-solidworks
+  claimed 90+ tools, actual 46).
+- **job-search-career** — stickerdaniel/linkedin-mcp-server undercounted badly (1,700 claimed vs.
+  3,100 actual stars, wrong language listed as TypeScript vs. actual Python). Two notable finds:
+  Upwork itself shipped an official MCP server (upwork.com/ai/mcp, Aug 2026), obsoleting a
+  community server's "first for Upwork" framing; AndreaCadonna/resumake-mcp is now discontinued,
+  reopening a capability gap the page had marked closed. A wrong repo slug for a LinkedIn job-search
+  server was corrected.
+- **llm-observability-mlops-pipeline** — Arize Phoenix's license was wrong (Apache 2.0 stated,
+  actual Elastic License 2.0 — source-available, not OSI open-source); LangSmith's repo was archived
+  the day before this audit (2026-08-14) in favor of a hosted remote MCP; a Langfuse "50M+ SDK
+  installs/month" figure wasn't supported by its own cited source (actual: 26M+) — the exact
+  two-real-stats-fused-into-a-fake-one failure mode the standing duty calls out.
+- **iot-embedded** — voska/hass-mcp was described as "Go-based, the only major HA server in Go" —
+  it's actually Python. Two more language/license misattributions fixed (thingsboard-mcp language,
+  tevonsb/homeassistant-mcp license). Two dead repos removed, one org page gone entirely.
+- **image-generation** — deepfates/mcp-replicate now archived; AceDataCloud/MCPMidjourney renamed
+  to MidjourneyMCP. An internally-inconsistent gpt-image-2 spec claim (both "2x" and "3-5x faster"
+  stated in different places, neither sourced) corrected to OpenAI's actual documented "~2x" figure.
+  A Midjourney "enterprise API launched" claim overstated an application/survey process — reworded
+  with Midjourney's own page as source.
+- **identity-authentication** — a "NGINX MCP flaw" was actually in nginx-ui, a third-party admin
+  tool, not NGINX itself — corrected with the real CVE (CVE-2026-33032) and 2 sources. Keycloak
+  26.6.2 CVE count was wrong AND internally inconsistent (front matter said 6, body said 18, actual
+  16 per Keycloak's own release notes). wso2/open-mcp-auth-proxy confirmed fully dead (gone from
+  org, attic, and search).
+- **insurance-insurtech** and **insurance** — audited by two independent agents, each blind to the
+  other, and both independently flagged the pages as likely near-duplicates (same 3.5/5 rating, same
+  2026-03-15 publish date, overlapping servers). Logged as a new open cluster in
+  `duplicate-clusters.md` rather than merged unilaterally. Each page had its own dead repos found and
+  removed (5 dead repos in `insurance-mcp-servers.md` alone — an unusually high one-month decay
+  rate) and misattributions fixed (a "Sure MCP" wrapper was actually for an unrelated personal-
+  finance app also named Sure, not the insurance company).
+- **legal-contract-management** — heaviest edit of the batch (231 lines changed). Open Agreements'
+  license was wrong (MIT stated, actual Apache-2.0). Three of Ansvar-Systems' four compliance repos
+  are now archived and folded into a consolidated fleet repo; a Clio connector described as
+  "launching April 30" turned out to already be live with more than double the claimed tool count.
+  ~40 previously-uncited servers got citation links added.
+- Plus routine star/tool/version-count drift fixed across all 12 pages.
+
+All 12 files carry `sources_audited: 2026-08-15`; YAML front matter re-verified valid via
+`yaml.safe_load` on all 12 independently, plus a clean `hugo --quiet` build with zero errors.
+Checked off all 12 in `early-vintage-audit.md`; Reviews status line updated to 132/285.
+
+**Duplicate-cluster tracking migrated**: added the new insurance/insurance-insurtech open cluster to
+`duplicate-clusters.md`, and moved the two long-carried guides pairs
+(`mcp-authentication-oauth.md`/`mcp-authorization-oauth.md`,
+`mcp-error-handling-resilience.md`/`mcp-error-handling-explained.md`) into that file too — they'd
+been repeated in WORKLOG's "what's next" section for weeks without a resolution pass, which is
+exactly the failure mode `duplicate-clusters.md` (CEO directive #2296) exists to prevent.
+
+### GSC / CEO digest / Bluesky — not actioned this run
+
+Citation-audit work took the full run. GSC not re-pulled — will pull fresh for the next digest, due
+either way since no digest has gone out yet today (2026-08-15 UTC). Bluesky not checked this run.
+Both queued for next run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 132/285. Next run: re-scan `early-vintage-audit.md` fresh
+  against `prune-wave1-manifest.csv` again (don't reuse this run's candidate list) for the next
+  10-12-page non-pruned batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — the
+  next run or two will likely cross this. Once open, re-check which manifest pages are still
+  unaudited-and-live vs. already deleted before building the next audit batch.
+- Waiting on CEO's reply to the RingS content-strategy escalation (#2355/#2354) — no action needed
+  from me until it lands.
+- Next digest to aiu 67 (none sent yet today): fresh GSC line, freshly-pulled subscriber count, this
+  run's batch-13 summary, and whatever the CEO decided on the RingS question if it has landed.
+- Duplicate clusters needing a human merge/differentiate/retire decision are now tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) rather than repeated here.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

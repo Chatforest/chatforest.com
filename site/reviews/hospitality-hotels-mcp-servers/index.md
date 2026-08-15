@@ -7,7 +7,7 @@ Hospitality and hotel MCP servers let AI assistants search for accommodations, b
 
 This review covers the **hospitality and hotels** vertical — vacation rentals, hotel booking, restaurant reservations, review platforms, and travel planning. For broader travel infrastructure like flights and transit, see our travel-adjacent reviews. For event and conference management, see our [Event Management & Ticketing MCP review](/reviews/event-management-ticketing-mcp-servers/).
 
-The headline findings: **Travel hacking toolkit matches Airbnb** as co-leader at 585 stars. **Strider Labs ships 5+ consumer hospitality servers** in a single sprint. **Three major gaps filled** — food delivery, hotel loyalty programs, and per-OTA rate comparison. **Uber Eats POC hits 221 stars** proving massive demand. **Enterprise hospitality goes MCP** — [Sabre](https://www.sabre.com/) (40,000+ hotels), SiteMinder (53,000 hotels), Agentic Hospitality, and Apaleo all launch or announce MCP integrations. **ExpediaGroup goes official.** Rating upgraded from **3.5 to 4.0/5**.
+The headline findings: **Travel hacking toolkit matches Airbnb** as co-leader at 626 stars. **Strider Labs ships 6 consumer hospitality servers** in a single sprint. **Three major gaps filled** — food delivery, hotel loyalty programs, and per-OTA rate comparison. **Uber Eats POC hits 235 stars** proving massive demand. **Enterprise hospitality goes MCP** — [Aven Hospitality](https://www.avenhospitality.com/insights/aven-hospitality-announces-mcp-enablement) (formerly Sabre Hospitality Solutions, 35,000+ hotels via SynXis), [SiteMinder](https://www.siteminder.com/news/siteminder-ai-hotel-distribution/) (53,000 hotels), [Agentic Hospitality](https://www.hospitalitynet.org/news/4131210/agentic-hospitality-launches-travelos-mcp-server-enabling-agentic-hotel-distribution-inside-ai-platforms), and [Apaleo](https://apaleo.com/blog/apaleo-news/apaleo-launches-mcp-server) all launch or announce MCP integrations. **ExpediaGroup goes official.** Rating upgraded from **3.5 to 4.0/5**.
 
 ## Vacation Rentals
 
@@ -15,7 +15,7 @@ The headline findings: **Travel hacking toolkit matches Airbnb** as co-leader at
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [openbnb-org/mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | 437 | TypeScript | MIT | 2 |
+| [openbnb-org/mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | 509 | TypeScript | MIT | 2 |
 
 The **most popular hospitality MCP server** — searches Airbnb listings by scraping the website HTML rather than using an official API:
 
@@ -26,36 +26,27 @@ Packaged as a Desktop Extension (DXT) for one-click install with compatible AI c
 
 The approach means no authentication, no rate limiting concerns, and no cost. But it also means no booking capability — you can search and explore, but completing a reservation requires visiting Airbnb directly. Not affiliated with Airbnb, Inc.
 
-*Updated April 2026: 393→437 stars (+11%). No new releases or tools added since v0.2.0 (transitioned to MCP Bundle format). Steady growth but development has slowed.*
+*Updated April 2026: 393→437 stars (+11%). No new releases or tools added since v0.2.0 (transitioned to MCP Bundle format). Steady growth but development has slowed.* **Update (2026-08-15 audit): 437→[509 stars](https://github.com/openbnb-org/mcp-server-airbnb)** — growth continued through the summer; still MIT-licensed, still 2 tools, no new releases found.
 
 ### Other Airbnb Implementations
 
-- **Domoteek/mcp-server-airbnb** (JavaScript, MIT) — similar scraping approach with search and detail tools, plus an `ignore_robots_txt` option
-- **vedantparmar12/airbnb-mcp** — adds LiveKit voice interaction support and both HTTP and STDIO transport
-- **akktrsst/MCP_Agent_Airbnb** (6 stars) — AI-powered property search with Gradio chatbot UI, GPT-4o-mini + LangChain
+- **[Domoteek/mcp-server-airbnb](https://github.com/Domoteek/mcp-server-airbnb)** (JavaScript, MIT, 1 star) — a fork of openbnb-org's server with search and detail tools, plus an `ignore_robots_txt` option
+- **[vedantparmar12/airbnb-mcp](https://github.com/vedantparmar12/airbnb-mcp)** (1 star) — adds LiveKit voice interaction support and both HTTP and STDIO transport
+- **[akktrsst/MCP_Agent_Airbnb](https://github.com/akktrsst/MCP_Agent_Airbnb)** (6 stars, MIT) — AI-powered property search with Gradio chatbot UI, GPT-4o-mini + LangChain
 
 ## Hotel Booking
 
-### jinkoso/jinko-mcp
+### Jinko (formerly jinkoso/jinko-mcp) — repo taken down
 
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [jinkoso/jinko-mcp](https://github.com/jinkoso/jinko-mcp) | 8 | TypeScript | — | 4 |
+**Correction (2026-08-15 audit):** the original `jinkoso/jinko-mcp` repository this section described now [404s on GitHub](https://github.com/jinkoso/jinko-mcp) — it has been deleted, not just renamed. The `jinkoso` GitHub org still exists but no longer lists this repo among its public projects. A community fork, [dumyCq/jinko-mcp](https://github.com/dumyCq/jinko-mcp) (1 star, no listed license), preserves the original code and its README notes the upstream repo "is no longer available on GitHub." The company itself is alive and has rebranded: it now operates at [gojinko.com](https://gojinko.com/), advertising "MCP & API" access as part of a broader travel-infrastructure platform (flights, trains, activities) rather than a standalone hotel-booking repo, and now claims **2.6M+ hotels** (up from the "2M+" this section originally cited). No public tool count or star count is available for the current MCP offering since it isn't an open GitHub repo.
 
-Access to **2M+ hotels** with actual booking capability:
-
-- **find_place** — convert location text (city names, landmarks, hotel names) to coordinates for hotel search
-- **search_hotels** — search by coordinates with check-in/out dates, guest count, and facility filters; returns paginated results with name, address, star rating, price range, and room types
-- **get_hotel_details** — comprehensive information about a specific hotel
-- **book_hotel** — create a booking quote and return a payment link for the user to complete
-
-The workflow is real: search → select → book → get payment link. Multi-language support for facility names and hotel descriptions. Commercial API key required from [jinko.so](https://www.jinko.so/).
+Previously documented tools (per the surviving fork): **find_place** (location text to coordinates), **search_hotels** (coordinate-based search with dates/guests/facility filters), **get_hotel_details**, and **book_hotel** (creates a booking quote and payment link). Whether these still match Jinko's current commercial MCP offering is unverified — treat this as historical, not current, documentation. Commercial API key required from [gojinko.com](https://gojinko.com/).
 
 ### him229/stays — NEW
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [him229/stays](https://github.com/him229/stays) | 1 | — | — | 3 |
+| [him229/stays](https://github.com/him229/stays) | 10 | — | MIT | 3 |
 
 A **Google Hotels aggregator** that shows per-OTA rates — the first MCP server to enable hotel price comparison across booking platforms:
 
@@ -69,7 +60,7 @@ The key innovation: reverse-engineers Google Hotels' `batchexecute` RPC (no scra
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [markswendsen-code/mcp-marriott](https://github.com/markswendsen-code/mcp-marriott) | 3 | TypeScript | — | 16 |
+| [markswendsen-code/mcp-marriott](https://github.com/markswendsen-code/mcp-marriott) | 8 | TypeScript | — | 16 |
 
 The **first hotel loyalty program MCP server** — full Marriott Bonvoy integration via browser automation:
 
@@ -101,7 +92,7 @@ Created March 2026. Zero stars but functional. Combined with the Marriott server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| Gondola MCP (hosted at mcp.gondola.ai) | — | — | — | 6 |
+| [Gondola MCP](https://www.gondola.ai/mcp) (hosted at mcp.gondola.ai) | — | — | — | 6 |
 
 A **multi-chain hotel search service** covering Marriott, Hilton, Hyatt, IHG, Accor, Wyndham, and more:
 
@@ -109,15 +100,15 @@ A **multi-chain hotel search service** covering Marriott, Hilton, Hyatt, IHG, Ac
 - **book_hotel** / **get_booking_link** — booking with direct links to preserve loyalty status
 - **create_rate_alert** — price monitoring
 
-Free to use, no API key required. Supports member rates, AAA discounts, and points redemption comparisons. Not open source — hosted service only. Notable because it's the only way to search Hyatt, IHG, Accor, and Wyndham via MCP, where no standalone servers exist.
+Free to use, no API key required for search. Supports member rates, AAA discounts, and points redemption comparisons — surfacing rates other travel APIs don't expose. Not open source — hosted service only. Notable because it's the only way to search Hyatt, IHG, Accor, and Wyndham via MCP, where no standalone servers exist.
 
 ### ExpediaGroup/expedia-travel-recommendations-mcp — NEW
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ExpediaGroup/expedia-travel-recommendations-mcp](https://github.com/ExpediaGroup/expedia-travel-recommendations-mcp) | 18 | — | — | 4 |
+| [ExpediaGroup/expedia-travel-recommendations-mcp](https://github.com/ExpediaGroup/expedia-travel-recommendations-mcp) | 21 | — | Apache-2.0 | 4 |
 
-The **official Expedia Group MCP server** — recommendations for hotels, flights, activities, and car rentals. Supports stdio and streamable HTTP transport. v1.0.2 released August 2025.
+The **official Expedia Group MCP server** — recommendations for hotels, flights, activities, and car rentals. Supports stdio and streamable HTTP transport. [v1.0.2 released August 28, 2025](https://github.com/ExpediaGroup/expedia-travel-recommendations-mcp/releases).
 
 This is significant as the first major OTA (Online Travel Agency) to publish an official MCP server. Expedia Group operates Expedia, Hotels.com, Vrbo, and other brands.
 
@@ -138,7 +129,7 @@ Two implementations wrapping the **Amadeus Travel API**, the global distribution
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [markswendsen-code/mcp-booking](https://github.com/markswendsen-code/mcp-booking) | 0 | TypeScript | — | 14 |
+| [markswendsen-code/mcp-booking](https://github.com/markswendsen-code/mcp-booking) | 5 | TypeScript | — | 14 |
 
 **Full Booking.com workflow** via browser automation:
 
@@ -153,7 +144,7 @@ Uses Playwright with cookie-based sessions. Created March 2026. The most feature
 ### Other Hotel Servers
 
 - **woodstocksoftware/hotel-concierge-mcp** (Python, 7 tools) — hotel concierge simulation on SQLite; reference implementation for PMS integration
-- **esakrissa/hotels_mcp_server** (18 stars, Python, 2 tools) — basic Booking.com API via RapidAPI; 4 commits, stale since March 2025
+- **[esakrissa/hotels_mcp_server](https://github.com/esakrissa/hotels_mcp_server)** (28 stars, Python, 2 tools) — basic Booking.com API via RapidAPI; 4 commits, stale since March 2025
 - **EmilyThaHuman/booking-mcp-server** (TypeScript) — Booking.com search with ChatGPT Apps SDK widgets
 - **corneyc/hotels-mcp** — Cloudflare Worker for Hotels.com via RapidAPI
 
@@ -163,7 +154,7 @@ Uses Playwright with cookie-based sessions. Created March 2026. The most feature
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [jrklein343-svg/restaurant-mcp](https://github.com/jrklein343-svg/restaurant-mcp) | 2 | TypeScript | — | 11 |
+| [jrklein343-svg/restaurant-mcp](https://github.com/jrklein343-svg/restaurant-mcp) | 4 | TypeScript | — | 11 |
 
 The **most feature-rich restaurant MCP server** — unified search across both Resy and OpenTable with a single query:
 
@@ -181,20 +172,20 @@ The reservation sniping feature is notable — set your desired restaurant, date
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [markswendsen-code/mcp-opentable](https://github.com/markswendsen-code/mcp-opentable) | 0 | TypeScript | — | 5 |
+| [markswendsen-code/mcp-opentable](https://github.com/markswendsen-code/mcp-opentable) | 1 | TypeScript | — | 5 |
 
 **OpenTable-specific** browser automation:
 
 - **search** / **details** / **availability** — restaurant discovery
 - **reserve** / **booking_history** — make and track reservations
 
-Part of Strider Labs' suite. 187 weekly npm downloads, 85%+ task completion rate. Created March 2026. A simpler alternative to restaurant-mcp for users who only need OpenTable.
+Part of Strider Labs' suite, distributed as [`@striderlabs/mcp-opentable`](https://www.npmjs.com/package/@striderlabs/mcp-opentable) on npm — currently ~39 weekly downloads (down from a vendor-reported 187/week snapshot in April 2026; per-package download counts on npm fluctuate week to week). The vendor's README claims an "85%+ task completion rate," which is a self-reported, unverified figure — no independent benchmark was found. Created March 2026. A simpler alternative to restaurant-mcp for users who only need OpenTable.
 
 ### Resy Booker (Apify) — NEW
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| Apify clearpath/resy-booker | — | — | — | 6 |
+| [Apify clearpath/resy-booker](https://apify.com/clearpath/resy-booker) | — | — | — | 6 |
 
 A **pay-per-action Resy automation** on the Apify platform:
 
@@ -206,8 +197,9 @@ A different model from the self-hosted servers — pay for each action rather th
 
 ### Other Restaurant Servers
 
-- **musemen/resy-mcp-server** (Python) — Resy-focused with encrypted token storage, waitlist management, calendar integration
-- **samwang0723/mcp-booking** (14 stars, Go, 5 tools) — Google Maps Places API for restaurant discovery with mood-based filtering and event-specific matching. 65 commits, actively maintained. Default location centered on Taiwan.
+**Correction (2026-08-15 audit):** this section previously listed `musemen/resy-mcp-server` (encrypted token storage, waitlist management, calendar integration). That repository now [404s on GitHub](https://github.com/musemen/resy-mcp-server) — it appears to have been deleted, and no fork or successor could be found (only stale third-party marketplace listings that still point at the dead URL) — so it has been removed rather than corrected.
+
+- **[samwang0723/mcp-booking](https://github.com/samwang0723/mcp-booking)** (16 stars, Go, 5 tools) — Google Maps Places API for restaurant discovery with mood-based filtering and event-specific matching. 65 commits, actively maintained. Default location centered on Taiwan.
 
 ## Food Delivery — NEW CATEGORY
 
@@ -215,9 +207,9 @@ A different model from the self-hosted servers — pay for each action rather th
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ericzakariasson/uber-eats-mcp-server](https://github.com/ericzakariasson/uber-eats-mcp-server) | 221 | Python | — | — |
+| [ericzakariasson/uber-eats-mcp-server](https://github.com/ericzakariasson/uber-eats-mcp-server) | 235 | Python | — | — |
 
-A **proof-of-concept Uber Eats automation** that has become the strongest demand signal in the hospitality MCP space. 221 stars with only 5 commits and minimal documentation — the star count reflects how badly people want food delivery automation via AI agents, not the maturity of this particular implementation.
+A **proof-of-concept Uber Eats automation** that has become the strongest demand signal in the hospitality MCP space. 235 stars with only 5 commits and minimal documentation — the star count reflects how badly people want food delivery automation via AI agents, not the maturity of this particular implementation.
 
 Uses Playwright browser automation. WIP status with no documentation on available tools. But the adoption signal is unmistakable: this is one of the most-wanted MCP use cases.
 
@@ -225,7 +217,7 @@ Uses Playwright browser automation. WIP status with no documentation on availabl
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [markswendsen-code/mcp-doordash](https://github.com/markswendsen-code/mcp-doordash) | 3 | TypeScript | — | 4 |
+| [markswendsen-code/mcp-doordash](https://github.com/markswendsen-code/mcp-doordash) | 6 | TypeScript | — | 4 |
 
 The **first functional food delivery MCP server**:
 
@@ -234,11 +226,15 @@ The **first functional food delivery MCP server**:
 - **place orders** — complete the ordering workflow
 - **track orders** — monitor delivery status
 
-Uses Playwright browser automation with persistent sessions. 395 weekly npm downloads. No public DoorDash API exists, so browser automation is the only path. Created March 2026.
+Uses Playwright browser automation with persistent sessions. Distributed as [`@striderlabs/mcp-doordash`](https://www.npmjs.com/package/@striderlabs/mcp-doordash) on npm — currently ~69 weekly downloads (down from a vendor-reported 395/week snapshot in April 2026). No public DoorDash API exists, so browser automation is the only path. Created March 2026.
 
 ### Grubhub MCP (Strider Labs) — NEW
 
-Also released March 2026 — browser automation for Grubhub search, menus, cart management, ordering, and delivery tracking. No dedicated public GitHub repo found; likely distributed via npm as part of Strider Labs' suite.
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [markswendsen-code/mcp-grubhub](https://github.com/markswendsen-code/mcp-grubhub) | 1 | TypeScript | MIT | 15 |
+
+**Correction (2026-08-15 audit):** this section previously said no public GitHub repo could be found for the Grubhub server. That was wrong — it's public at [markswendsen-code/mcp-grubhub](https://github.com/markswendsen-code/mcp-grubhub) (1 star, MIT license, 15 tools across authentication, ordering, and order tracking). Released March 10, 2026 — browser automation for Grubhub search, menus, cart management, ordering, and delivery tracking, using the same Playwright approach as the rest of Strider Labs' suite.
 
 ## Review & Discovery Platforms
 
@@ -246,7 +242,7 @@ Also released March 2026 — browser automation for Grubhub search, menus, cart 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Yelp/yelp-mcp](https://github.com/Yelp/yelp-mcp) | 24 | TypeScript | — | 1 |
+| [Yelp/yelp-mcp](https://github.com/Yelp/yelp-mcp) | 26 | TypeScript | Apache-2.0 | 1 |
 
 The **official first-party Yelp MCP server** — connects to Yelp's Fusion AI API with a single conversational tool:
 
@@ -257,13 +253,13 @@ The **official first-party Yelp MCP server** — connects to Yelp's Fusion AI AP
 
 This is significant because it's official — maintained by Yelp, not a community scraper. Requires a Yelp Fusion AI API key.
 
-*Updated April 2026: No commits since July 2025 — 9+ months without activity despite being the only official first-party offering in the category. 24 stars but appears neglected.*
+*Updated April 2026: No commits since July 2025 — 9+ months without activity despite being the only official first-party offering in the category. 24 stars but appears neglected.* **Correction (2026-08-15 audit):** this was wrong even measured from April 2026, and is more clearly wrong now — [the repo's commit history](https://github.com/Yelp/yelp-mcp/commits/main) shows a commit ("Add security review workflow") on April 2, 2026, after two initial commits in July 2025. It is not neglected; it's a low-commit-volume repo with sparse but real maintenance. 26 stars as of this audit.
 
 ### pab1it0/tripadvisor-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pab1it0/tripadvisor-mcp](https://github.com/pab1it0/tripadvisor-mcp) | 54 | Python | MIT | 5 |
+| [pab1it0/tripadvisor-mcp](https://github.com/pab1it0/tripadvisor-mcp) | 62 | Python | MIT | 5 |
 
 Access to **TripAdvisor's Content API** for location discovery and reviews:
 
@@ -275,7 +271,7 @@ Access to **TripAdvisor's Content API** for location discovery and reviews:
 
 The tool list is configurable — choose which tools to expose to your MCP client. Unofficial community implementation with Docker support.
 
-*Updated April 2026: 46→54 stars (+17%). Steady organic growth.*
+*Updated April 2026: 46→54 stars (+17%). Steady organic growth.* **Update (2026-08-15 audit): 54→[62 stars](https://github.com/pab1it0/tripadvisor-mcp)** — growth continues.
 
 ## Travel Planning
 
@@ -283,22 +279,22 @@ The tool list is configurable — choose which tools to expose to your MCP clien
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [borski/travel-hacking-toolkit](https://github.com/borski/travel-hacking-toolkit) | 585 | — | — | 22 |
+| [borski/travel-hacking-toolkit](https://github.com/borski/travel-hacking-toolkit) | 626 | — | MIT | — |
 
-The **most comprehensive travel MCP toolkit** and the new co-leader of the hospitality category:
+The **most comprehensive travel MCP toolkit** and the new co-leader of the hospitality category. **Update (2026-08-15 audit):** the [README](https://github.com/borski/travel-hacking-toolkit/blob/main/README.md) now describes a larger toolkit than this section originally documented — 42 skills, not 16, are installed by the plugin command:
 
-- **22 integrated tools** across 6 MCP servers + 16 skills
-- Points/miles optimization across **25+ airline loyalty programs**
-- Integrates Skiplagged, Kiwi, Trivago, Ferryhopper, Airbnb, LiteAPI, Duffel, Google Flights, Seats.aero, Southwest, Chase Travel, Amex Travel, AwardWallet, TripAdvisor, and more
-- Drop-in skills for Claude Code and OpenCode
+- **6 MCP servers** (5 free — Skiplagged, Kiwi, Trivago, Ferryhopper, Airbnb — plus LiteAPI which needs an API key) and **42 skills**
+- Points/miles optimization via Seats.aero, which searches award availability across **27 mileage programs**
+- Also integrates Duffel, Google Flights, Southwest, Chase Travel, Amex Travel, AwardWallet, TripAdvisor, and more via additional skills
+- Drop-in skills/plugins for Claude Code, OpenCode, and Codex
 
-This is a paradigm shift for travel MCP — rather than individual servers for each platform, this toolkit orchestrates across dozens of travel services with a focus on finding the best deals using points, miles, and hidden-city ticketing. 585 stars and 32 forks make it the fastest-growing server in the category.
+This is a paradigm shift for travel MCP — rather than individual servers for each platform, this toolkit orchestrates across dozens of travel services with a focus on finding the best deals using points, miles, and hidden-city ticketing. 626 stars and 62 forks as of this audit, up from 585 stars and 32 forks in April 2026.
 
 ### skarlekar/mcp_travelassistant
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [skarlekar/mcp_travelassistant](https://github.com/skarlekar/mcp_travelassistant) | 40 | Python | — | 6 servers |
+| [skarlekar/mcp_travelassistant](https://github.com/skarlekar/mcp_travelassistant) | 56 | Python | — | 6 servers |
 
 A **suite of 6 specialized MCP servers** for end-to-end travel planning:
 
@@ -309,13 +305,13 @@ A **suite of 6 specialized MCP servers** for end-to-end travel planning:
 5. **Weather Search Server** — get forecasts, current conditions, weather alerts
 6. **Finance Search Server** — currency conversion, exchange rates, financial analysis
 
-Requires API keys for SerpAPI (flights, hotels, events, finance), OpenWeatherMap or National Weather Service (weather), and OpenStreetMap Nominatim (geocoder). 40 stars and 11 forks. Appears dormant since January 2025.
+Requires API keys for SerpAPI (flights, hotels, events, finance), OpenWeatherMap or National Weather Service (weather), and OpenStreetMap Nominatim (geocoder). 56 stars and 12 forks as of this audit. **Correction (2026-08-15 audit):** previously said "appears dormant since January 2025" — the [actual commit history](https://github.com/skarlekar/mcp_travelassistant/commits/main) shows the last commit was June 19, 2025, not January 2025. Still stale (14+ months as of this audit), but the date was wrong.
 
 ### abhinavmathur-atlan/mcp-travel-assistant — NEW
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [abhinavmathur-atlan/mcp-travel-assistant](https://github.com/abhinavmathur-atlan/mcp-travel-assistant) | 5 | — | — | 18 |
+| [abhinavmathur-atlan/mcp-travel-assistant](https://github.com/abhinavmathur-atlan/mcp-travel-assistant) | 6 | — | MIT | 18 |
 
 A **dual-search travel assistant** combining consumer (SerpAPI/Google Travel) and professional (Amadeus) APIs:
 
@@ -343,7 +339,7 @@ Uses stealth browser automation. Created March 2026. The price prediction featur
 ### Other Travel Servers
 
 - **EmilyThaHuman/booking-mcp-server** (TypeScript) — Booking.com search with ChatGPT Apps SDK widgets
-- **gs-ysingh/travel-mcp-server** (13 stars, 5 tools) — flights, accommodation, exchange rates, weather, trip budget
+- **[gs-ysingh/travel-mcp-server](https://github.com/gs-ysingh/travel-mcp-server)** (14 stars, 5 tools) — flights, accommodation, exchange rates, weather, trip budget
 - **hirochachacha/rakuten_travel_mcp** (Japan-focused, 2 tools) — Rakuten Travel hotel search for Japan
 
 ## Enterprise Hospitality & Distribution — NEW CATEGORY
@@ -356,15 +352,15 @@ The enterprise side of hospitality MCP went from completely absent to rapidly em
 |--------|-------|----------|---------|-------|
 | Agentic Hospitality TravelOS (commercial) | — | — | Proprietary | — |
 
-Claims the **industry's first hotel MCP booking transaction**. Connects hotel CRS/PMS systems directly to AI platforms (ChatGPT, Claude). Enables real-time availability, rates, and inventory surfacing inside AI assistants. Includes an "Agentic Booking Engine" overlay for conversational booking flows. Launched March 2026. No public GitHub repo — commercial platform only.
+Claims the **industry's first hotel MCP booking transaction** — press coverage (independent of the company) confirms the claim was made and describes the specific booking: a five-unit short-term rental (Rose St. Gardens, Roseau, Dominica) booked via a ChatGPT app request, matched and confirmed through TravelOS MCP. Connects hotel CRS/PMS systems directly to AI platforms (ChatGPT, Claude). Enables real-time availability, rates, and inventory surfacing inside AI assistants. Includes an "Agentic Booking Engine" overlay for conversational booking flows. Launched March 2026. No public GitHub repo — commercial platform only. Sources: [Hospitality Net](https://www.hospitalitynet.org/news/4131210/agentic-hospitality-launches-travelos-mcp-server-enabling-agentic-hotel-distribution-inside-ai-platforms), [Hotel Online](https://www.hotel-online.com/news/agentic-hospitalitys-travelos-mcp-chatgpt-app-is-putting-brands-not-intermediaries-at-the-center-of-ai-bookings).
 
-### Sabre Hospitality — MCP Enablement
+### Aven Hospitality (formerly Sabre Hospitality Solutions) — MCP Enablement
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| Sabre Hospitality MCP (commercial) | — | — | Proprietary | — |
+| Aven Hospitality MCP (commercial) | — | — | Proprietary | — |
 
-**MCP integration across the [SynXis CRS platform](https://www.sabre.com/hospitality/) serving 40,000+ hotels globally.** Hotels can expose official rates, availability, and amenities to AI-driven discovery surfaces without custom integrations. Q2 2026 Early Access Program announced. This is massive — [Sabre](https://www.sabre.com/) is one of the "Big Three" global distribution systems alongside Amadeus and Travelport. No public GitHub repo — enterprise product.
+**Correction (2026-08-15 audit):** this section previously attributed this MCP integration to "Sabre." That's stale — [TPG closed its acquisition of Sabre's Hospitality Solutions business for $1.1 billion on July 3, 2025](https://www.prnewswire.com/news-releases/aven-hospitality-launches-to-continue-shaping-future-of-hospitality-technology-302669325.html), and the unit rebranded as **Aven Hospitality** on January 27, 2026 — before this MCP announcement. Sabre Corporation no longer owns this business; [sabre.com/hospitality no longer resolves](https://www.sabre.com/hospitality/). It's Aven Hospitality, not Sabre, that is embedding MCP into the [SynXis Central Reservation System and Booking Engine](https://www.avenhospitality.com/insights/aven-hospitality-announces-mcp-enablement), serving **35,000+ hotels globally** (not the "40,000+" this section originally claimed) — the platform still traces to Sabre's original SynXis acquisition, but the operating company is now independent. Hotels can expose official rates, availability, and amenities to AI-driven discovery surfaces without custom integrations. An MCP Early Access Programme with select hotel chains is scheduled for Q2 2026. No public GitHub repo — enterprise product. Sources: [Aven Hospitality](https://www.avenhospitality.com/insights/aven-hospitality-announces-mcp-enablement), [Hotel Management Network](https://www.hotelmanagement-network.com/news/aven-hospitality-enables-mcp-hotel/).
 
 ### SiteMinder — MCP-Powered AI Distribution
 
@@ -372,7 +368,7 @@ Claims the **industry's first hotel MCP booking transaction**. Connects hotel CR
 |--------|-------|----------|---------|-------|
 | SiteMinder MCP (commercial) | — | — | Proprietary | — |
 
-The **first channel manager with MCP integration** — uses MCP to deliver real-time hotel data from its **53,000-hotel inventory** to AI systems. "Demand Plus" extended into AI conversational environments (ChatGPT, Claude). "Channels Plus" gives AI-enabled OTAs access to SiteMinder's inventory. DirectBooker is the first AI demand partner. Announced April 2026. No public GitHub repo — commercial platform.
+The **first channel manager with MCP integration** — uses MCP to deliver real-time hotel data from its **53,000-hotel inventory across 150 countries** to AI systems. "Demand Plus" extended beyond metasearch (Google, Trivago, TripAdvisor) into AI conversational environments (ChatGPT, Claude). "Channels Plus" gives AI-enabled OTAs access to SiteMinder's inventory. DirectBooker is the first AI demand partner. Announced April 2026. No public GitHub repo — commercial platform. Sources: [SiteMinder's own announcement](https://www.siteminder.com/news/siteminder-ai-hotel-distribution/), [PhocusWire](https://www.phocuswire.com/news/technology/siteminder-links-hotel-inventory-ai-booking-channels-mcp).
 
 This directly fills the "no channel managers" gap from the original review — though only as a proprietary offering, not an open-source tool.
 
@@ -382,24 +378,24 @@ This directly fills the "no channel managers" gap from the original review — t
 |--------|-------|----------|---------|-------|
 | Apaleo MCP (via Composio) | — | — | — | 29 |
 
-The **first property management system to offer MCP integration** (launched September 2025):
+The **first property management system to offer MCP integration**, per [Apaleo's own announcement](https://apaleo.com/blog/apaleo-news/apaleo-launches-mcp-server) and corroborating trade coverage from [HFTP](https://www.hftp.org/news/4129031/apaleo-becomes-first-property-management-platform-to-launch-mcp-server-bridging-ai-agents-with-hotel-systems) and [PhocusWire](https://www.phocuswire.com/apaleo-mcp-server-launch-hospitality-property-management):
 
 - AI agents can check availability, modify bookings, coordinate housekeeping, create payment links
 - Includes an AI Copilot for check-ins, room assignments, and housekeeping
 - Property creation, cloning, unit management, bulk operations
-- Available via Composio integration at composio.dev
+- Available via [Composio integration](https://mcp.composio.dev/apaleo) at composio.dev
 
-Apaleo is a cloud-native PMS used by boutique and lifestyle hotels. No public GitHub repo yet.
+Apaleo is a cloud-native PMS used by boutique and lifestyle hotels. The server is currently in alpha. No public GitHub repo yet.
 
 ### Enterprise Assessment
 
-The pattern is clear: **enterprise hospitality platforms are building proprietary MCP servers** (Agentic Hospitality, Sabre, SiteMinder, Apaleo) while **open-source GitHub repos remain mostly consumer-facing booking wrappers**. Industry publications (Hospitality Net, Skift, PhocusWire) are declaring "2026 is the year of MCP" for hotels. The enterprise gap is closing fast at the commercial level, even though open-source enterprise tooling remains absent.
+The pattern is clear: **enterprise hospitality platforms are building proprietary MCP servers** (Agentic Hospitality, Aven Hospitality/formerly Sabre, SiteMinder, Apaleo) while **open-source GitHub repos remain mostly consumer-facing booking wrappers**. Industry publications ([Hospitality Net](https://www.hospitalitynet.org/), [Skift](https://skift.com/), [PhocusWire](https://www.phocuswire.com/)) are covering multiple such launches in 2026. The enterprise gap is closing fast at the commercial level, even though open-source enterprise tooling remains absent.
 
 ## What's Missing
 
 The hospitality MCP ecosystem has narrowed dramatically since March 2026. Enterprise platforms are arriving commercially, but open-source gaps remain:
 
-- **No open-source PMS or CRS servers** — Apaleo, Sabre, and Agentic Hospitality all offer MCP but as proprietary products. Oracle Hospitality/OPERA, Mews ($2.5B valuation), Cloudbeds, and Guesty have no MCP presence at all.
+- **No open-source PMS or CRS servers** — Apaleo, Aven Hospitality (formerly Sabre), and Agentic Hospitality all offer MCP but as proprietary products. Oracle Hospitality/OPERA, Mews, Cloudbeds, and Guesty have no MCP presence at all.
 - **No revenue management** — no dynamic pricing, demand forecasting, or rate optimization servers (open or proprietary)
 - **No guest experience platforms** — Revinate, TrustYou, ReviewPro for reputation management
 - **No event/conference venue management** — Cvent, Social Tables, Tripleseat for event planning
@@ -413,13 +409,13 @@ The enterprise gap is closing — but almost exclusively through proprietary com
 
 Hospitality MCP servers earn **4.0/5** (up from 3.5). The category saw remarkable growth in just six weeks: server count jumped from 25+ to 40+, three major gaps were filled (food delivery, hotel loyalty programs, price comparison), and the first enterprise PMS integration appeared.
 
-**Strider Labs is the story of this refresh** — a single developer (markswendsen-code) shipped Marriott Bonvoy, Hilton Honors, DoorDash, OpenTable, Booking.com, and Grubhub MCP servers all in March 2026, using a consistent Playwright browser automation architecture. While individual star counts are low, the npm download numbers (395/week for DoorDash) show real usage.
+**Strider Labs is the story of this refresh** — a single developer (markswendsen-code) shipped Marriott Bonvoy, Hilton Honors, DoorDash, OpenTable, Booking.com, and Grubhub MCP servers all in March 2026, using a consistent Playwright browser automation architecture. Individual star counts are low, and the npm download numbers have come down since an April 2026 peak (69/week for DoorDash as of this audit, down from a vendor-reported 395/week snapshot) — real but modest usage.
 
-**The travel planning space transformed** with borski/travel-hacking-toolkit (585 stars) — a comprehensive points/miles optimization toolkit that integrates 22+ tools across dozens of travel services. It joins mcp-server-airbnb (437 stars) as the category's co-leader.
+**The travel planning space transformed** with borski/travel-hacking-toolkit (626 stars) — a comprehensive points/miles optimization toolkit with 6 MCP servers and 42 skills spanning dozens of travel services. It joins mcp-server-airbnb (509 stars) as the category's co-leader.
 
-**The demand signal is clear**: uber-eats-mcp-server hit 221 stars as a bare POC, proving that food delivery automation is one of the most wanted MCP use cases. ExpediaGroup publishing an official server (18 stars) adds commercial credibility.
+**The demand signal is clear**: uber-eats-mcp-server hit 235 stars as a bare POC, proving that food delivery automation is one of the most wanted MCP use cases. ExpediaGroup publishing an official server (21 stars) adds commercial credibility.
 
-What still holds the category back from a higher rating: enterprise hospitality is arriving but behind closed doors. Sabre (40,000+ hotels), SiteMinder (53,000 hotels), Agentic Hospitality, and Apaleo have all launched or announced MCP integrations — but all are proprietary commercial products with no open-source repos. Mews, Cloudbeds, and Oracle Hospitality haven't published any MCP integrations at all. Revenue management and guest experience platforms remain completely absent. The enterprise gap is closing fast commercially, but the open-source ecosystem still serves travelers far better than hoteliers.
+What still holds the category back from a higher rating: enterprise hospitality is arriving but behind closed doors. Aven Hospitality (formerly Sabre Hospitality Solutions, 35,000+ hotels), SiteMinder (53,000 hotels), Agentic Hospitality, and Apaleo have all launched or announced MCP integrations — but all are proprietary commercial products with no open-source repos. Mews, Cloudbeds, and Oracle Hospitality haven't published any MCP integrations at all. Revenue management and guest experience platforms remain completely absent. The enterprise gap is closing fast commercially, but the open-source ecosystem still serves travelers far better than hoteliers.
 
-*This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic). Original review published 2026-03-15.*
+*This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic); claim-level citation audit completed 2026-08-15. Original review published 2026-03-15.*
 
