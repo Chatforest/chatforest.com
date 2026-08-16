@@ -9,7 +9,7 @@ Speech recognition is the other half of voice AI — and the half that's harder 
 
 This review covers MCP servers specifically built for **converting audio to text** — speech recognition, transcription, and dictation. The ecosystem splits into three approaches: **local Whisper-based servers** (run entirely on your hardware, zero API cost), **cloud API wrappers** (Deepgram, ElevenLabs, AssemblyAI, Groq, OpenAI Whisper API), and **multimodal LLM transcription** (Gemini, GPT-4o Audio, Voxtral). Several servers also include text-to-speech capabilities, but we evaluate them primarily on their STT quality.
 
-The headline: **Deepgram launched an official full MCP server** (`deepgram/mcp`) with STT, dynamic tool loading, and CLI integration — filling the biggest gap from our initial review. **ElevenLabs MCP** (1,300+ stars) added Scribe transcription in April 2026, making it the most popular server in this category. **Groq Whisper MCP achieves [217x real-time](https://groq.com/pricing)** transcription speed at significantly lower cost than OpenAI's API. Local options remain strong — **mlx-whisper-mcp** brings Apple's MLX framework with large-v3-turbo, and whisper.cpp still hits 15x real-time on Apple Silicon.
+The headline: **Deepgram launched an official full MCP server** (`deepgram/mcp`) with STT, dynamic tool loading, and CLI integration — filling the biggest gap from our initial review. **ElevenLabs MCP** (1,500+ stars) now defaults its `speech_to_text` tool to [Scribe v2](https://elevenlabs.io/blog/introducing-scribe-v2-realtime), making it the most popular server in this category. **Groq Whisper MCP achieves a [216x real-time speed factor](https://console.groq.com/docs/model/whisper-large-v3-turbo)** transcription speed at significantly lower cost than OpenAI's API. Local options remain strong — **mlx-whisper-mcp** brings Apple's MLX framework with large-v3-turbo, and whisper.cpp still hits 15x real-time on Apple Silicon.
 
 ## Local Whisper-Based Servers
 
@@ -19,7 +19,7 @@ These servers run speech recognition entirely on your machine using variants of 
 
 | Detail | Info |
 |--------|------|
-| [Kvadratni/speech-mcp](https://github.com/Kvadratni/speech-mcp) | ~81 stars |
+| [Kvadratni/speech-mcp](https://github.com/Kvadratni/speech-mcp) | ~83 stars |
 | License | MIT |
 | Language | Python |
 | STT Engine | faster-whisper (base model) |
@@ -44,14 +44,14 @@ The most popular speech recognition MCP server, designed as a voice interface fo
 
 **Base Whisper model only.** Uses the faster-whisper "base" model by default for speed. Accuracy is decent but not as good as the "large-v3" model for difficult audio (accents, background noise, technical jargon).
 
-**No license specified.** The GitHub repo has no license file.
+*Correction (2026-08-16): a prior version of this page stated the repo had "no license file," contradicting the MIT license listed in the table above. The repo does carry an [MIT license](https://github.com/Kvadratni/speech-mcp) — the earlier claim was wrong and has been removed.*
 
 ### local-stt-mcp (SmartLittleApps)
 
 | Detail | Info |
 |--------|------|
-| [SmartLittleApps/local-stt-mcp](https://github.com/SmartLittleApps/local-stt-mcp) | Low stars |
-| License | Not specified |
+| [SmartLittleApps/local-stt-mcp](https://github.com/SmartLittleApps/local-stt-mcp) | ~18 stars |
+| License | MIT |
 | Language | TypeScript |
 | STT Engine | whisper.cpp |
 | Platform | Apple Silicon optimized |
@@ -78,8 +78,8 @@ A high-performance local transcription server using whisper.cpp, the C/C++ port 
 
 | Detail | Info |
 |--------|------|
-| [BigUncle/Fast-Whisper-MCP-Server](https://github.com/BigUncle/Fast-Whisper-MCP-Server) | Low stars |
-| License | Not specified |
+| [BigUncle/Fast-Whisper-MCP-Server](https://github.com/BigUncle/Fast-Whisper-MCP-Server) | ~17 stars |
+| License | MIT |
 | Language | Python |
 | STT Engine | faster-whisper |
 | GPU | CUDA acceleration |
@@ -132,8 +132,8 @@ The only Rust-based speech MCP server. Cross-platform hardware acceleration — 
 
 | Detail | Info |
 |--------|------|
-| [kachiO/mlx-whisper-mcp](https://github.com/kachiO/mlx-whisper-mcp) | Low stars |
-| License | Not specified |
+| [kachiO/mlx-whisper-mcp](https://github.com/kachiO/mlx-whisper-mcp) | ~23 stars |
+| License | Apache-2.0 |
 | Language | Python |
 | STT Engine | MLX Whisper (large-v3-turbo) |
 | Platform | Apple Silicon (M-series) |
@@ -189,7 +189,7 @@ These servers call external speech recognition APIs. Better accuracy on difficul
 | Detail | Info |
 |--------|------|
 | [deepgram/mcp](https://github.com/deepgram/mcp) | Official |
-| License | Not specified |
+| License | MIT |
 | Language | Python |
 | Install | `pip install deepgram-mcp` or via Deepgram CLI (`dg mcp`) |
 | Transport | stdio |
@@ -204,7 +204,7 @@ These servers call external speech recognition APIs. Better accuracy on difficul
 
 **CLI integration.** If you already use the Deepgram CLI (`pip install deepctl`), deepgram-mcp is included as a dependency. Run `dg mcp` and it works. No separate install needed.
 
-**Flux Multilingual STT.** As of April 2026, supports Flux Multilingual for real-time conversational STT across 10 languages with code-switching support.
+**Flux Multilingual STT.** As of April 2026, supports [Flux Multilingual](https://deepgram.com/learn/introducing-flux-multilingual) for real-time conversational STT across 10 languages (English, Spanish, French, German, Hindi, Russian, Portuguese, Japanese, Italian, and Dutch) with native code-switching support.
 
 ### What Doesn't Work Well
 
@@ -224,8 +224,8 @@ The community server by reddheeraj remains available and still works. However, w
 
 | Detail | Info |
 |--------|------|
-| [cogell/assembly-ai-mcp](https://github.com/cogell/assembly-ai-mcp) | Low stars |
-| License | Not specified |
+| [cogell/assembly-ai-mcp](https://github.com/cogell/assembly-ai-mcp) | ~2 stars |
+| License | MIT |
 | Language | TypeScript |
 | Install | `npx assembly-ai-mcp@latest` |
 
@@ -249,8 +249,8 @@ A community MCP server for AssemblyAI's transcription API. AssemblyAI is a stron
 
 | Detail | Info |
 |--------|------|
-| [bis-code/groq-whisper-mcp](https://github.com/bis-code/groq-whisper-mcp) | Low stars |
-| License | Not specified |
+| [bis-code/groq-whisper-mcp](https://github.com/bis-code/groq-whisper-mcp) | ~1 star |
+| License | MIT |
 | Language | Python |
 | STT Engine | Groq-hosted Whisper large-v3-turbo |
 | Speed | 216x real-time |
@@ -279,19 +279,19 @@ Uses Groq's LPU inference hardware to run Whisper at extraordinary speeds. Same 
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [arcaputo3/mcp-server-whisper](https://github.com/arcaputo3/mcp-server-whisper) | ~2 | Python | Multiple |
+| [arcaputo3/mcp-server-whisper](https://github.com/arcaputo3/mcp-server-whisper) | ~56 | Python | Multiple |
 | [Ichigo3766/audio-transcriber-mcp](https://github.com/Ichigo3766/audio-transcriber-mcp) | Low | Python | 1 |
 | [mfleurival/whisper-mcp-v2](https://github.com/mfleurival/whisper-mcp-v2) | Low | Python | Multiple |
 
 Three servers wrapping OpenAI's Whisper API:
 
-**arcaputo3/mcp-server-whisper** is the most architecturally sophisticated — well-documented Domain-Driven Design with Pydantic models, regex-based file searching, batch processing, format conversion, automatic compression for oversized files, and enhanced transcription with specialized prompts. Also includes TTS capabilities via OpenAI's speech services. The architecture is over-engineered for its adoption (2 stars), but the code quality is high.
+**arcaputo3/mcp-server-whisper** is the most architecturally sophisticated of the three — a deliberately flat, type-safe API built on [Pydantic models](https://github.com/arcaputo3/mcp-server-whisper) for validation, with regex-based file searching, batch processing, format conversion, automatic compression for oversized files, and enhanced transcription with specialized prompts. Also includes TTS capabilities via OpenAI's `gpt-4o-mini-tts`. *Correction (2026-08-16): a prior version of this page described the architecture as "Domain-Driven Design" and cited "2 stars" — neither holds up. The repo's own docs describe a flat API design (not DDD), and its star count has grown to ~56.*
 
 **mfleurival/whisper-mcp-v2** supports multiple output formats: JSON, text, SRT, VTT, and verbose JSON. Good for subtitle generation. Language support for non-English audio.
 
 **Ichigo3766/audio-transcriber-mcp** is the simplest — a clean, focused transcription tool using the OpenAI Whisper API. One tool, one job.
 
-All three require an OpenAI API key. The [Whisper API is relatively cheap ($0.006/minute)](https://platform.openai.com/docs/pricing) but not free.
+All three require an OpenAI API key. The [Whisper API is relatively cheap ($0.006/minute)](https://developers.openai.com/api/docs/pricing) but not free.
 
 ## Multimodal LLM-Based Transcription
 
@@ -301,8 +301,8 @@ The newest approach: skip traditional ASR entirely and use multimodal LLMs that 
 
 | Detail | Info |
 |--------|------|
-| [danielrosehill/Cloud-ASR-MCP](https://github.com/danielrosehill/Cloud-ASR-MCP) | Low stars |
-| License | Not specified |
+| [danielrosehill/Cloud-ASR-MCP](https://github.com/danielrosehill/Cloud-ASR-MCP) | ~2 stars |
+| License | MIT |
 | Language | Python |
 | Models | Gemini, GPT-4o Audio, Voxtral |
 | Status | Work in progress |
@@ -328,7 +328,7 @@ Uses audio-capable multimodal models — Gemini, GPT-4o Audio, and Voxtral — t
 | Detail | Info |
 |--------|------|
 | [danielrosehill/Gemini-Transcription-MCP](https://github.com/danielrosehill/Gemini-Transcription-MCP) | Low stars |
-| License | Not specified |
+| License | MIT |
 | Language | Python |
 | Model | Gemini multimodal |
 
@@ -342,8 +342,8 @@ These go beyond transcription to provide complete voice-controlled agent experie
 
 | Detail | Info |
 |--------|------|
-| [acoyfellow/t2t](https://github.com/acoyfellow/t2t) | Low stars |
-| License | Not specified |
+| [acoyfellow/t2t](https://github.com/acoyfellow/t2t) | ~17 stars |
+| License | MIT |
 | Language | TypeScript |
 | STT Engine | Whisper (local) |
 | Platform | Cross-platform desktop |
@@ -364,13 +364,13 @@ A cross-platform desktop application combining system-wide dictation with MCP ag
 
 **Not code-signed.** macOS shows security warnings on first launch. Users need to manually allow execution in System Settings.
 
-**Early stage.** Featured on Hacker News in late 2025 but still maturing. Limited documentation.
+**Early stage.** [Featured on Hacker News](https://news.ycombinator.com/item?id=46371645) (December 25, 2025) but still maturing. Limited documentation.
 
 ## Also notable
 
-- **ElevenLabs MCP** (1,300+ stars, official) — covered in our [Audio & Video Processing review](/reviews/audio-video-processing-mcp-servers/). **Now includes Scribe transcription** (added v2.44.0, April 21 2026) — the most popular MCP server with STT capability. [Scribe v2 offers 150ms latency real-time transcription across 90 languages](https://elevenlabs.io/blog/introducing-scribe-v2-realtime). The official server now supports TTS, voice cloning, sound effects, audio isolation, AND transcription.
+- **ElevenLabs MCP** (1,500+ stars, official) — covered in our [Audio & Video Processing review](/reviews/audio-video-processing-mcp-servers/). **Its `speech_to_text` tool now defaults to [Scribe v2](https://github.com/elevenlabs/elevenlabs-mcp/releases/tag/v0.11.0)** (server release v0.11.0) — the most popular MCP server with STT capability. Scribe v2 itself [transcribes in under 150ms with negative-latency word prediction, across English, French, German, Italian, Spanish, Portuguese, and 90 languages total](https://elevenlabs.io/blog/introducing-scribe-v2-realtime). The official server now supports TTS, voice cloning, sound effects, audio isolation, AND transcription. *Correction (2026-08-16): a prior version of this page cited a nonexistent "v2.44.0, April 21 2026" release for this change — the elevenlabs-mcp server's own release history shows the Scribe v2 default landing in v0.11.0, and the linked Scribe v2 announcement is dated November 11, 2025 (not April 2026).*
 - **MCP-Elevenlab-Scribe-ASR** (aromanstatue) — a dedicated MCP server specifically for ElevenLabs' Scribe ASR API with WebSocket streaming, real-time microphone input, and event detection. More STT-focused than the official ElevenLabs MCP.
-- **Vexa** (1,800 stars) — meeting transcription with real-time Whisper, covered in our [Video Conferencing review](/reviews/video-conferencing-mcp-servers/). Specialized for meeting contexts.
+- **[Vexa](https://github.com/Vexa-ai/vexa)** (2,700+ stars) — meeting transcription with real-time Whisper, covered in our [Video Conferencing review](/reviews/video-conferencing-mcp-servers/). Specialized for meeting contexts.
 - **speaches-ai/speaches** — OpenAI API-compatible server for STT (faster-whisper) and TTS (piper/Kokoro) with streaming. Not MCP-native, but can be used as a backend for MCP servers. Formerly "faster-whisper-server" — aims to be "Ollama for TTS/STT models."
 - **DefiBax/mcp_servers (Voice Recorder)** — records audio from default microphone and transcribes using Whisper. Designed as Goose custom extension. Configurable sample rate, duration, and model.
 - **blacktop/mcp-tts** — multi-engine TTS server supporting macOS say, ElevenLabs, Google TTS, and OpenAI TTS. Purely text-to-speech, no recognition.
@@ -383,14 +383,14 @@ Speech recognition MCP servers have matured significantly since early 2026. Two 
 
 **Local Whisper servers** remain the practical choice for privacy-conscious users. They're free, private, and fast — especially on Apple Silicon (15x real-time via whisper.cpp, or MLX-native with large-v3-turbo) or NVIDIA GPUs. The new mlx-whisper-mcp and jwulff/whisper-mcp entries make Apple Silicon the best-served local platform.
 
-**Cloud API wrappers** are now the strongest category. Deepgram's official MCP server with dynamic tool loading is best-in-class for enterprise use. Groq Whisper offers [217x real-time](https://groq.com/pricing) transcription at significantly lower cost. ElevenLabs' Scribe (via their official 1,300+ star MCP server) adds [150ms real-time transcription across 90 languages](https://elevenlabs.io/blog/introducing-scribe-v2-realtime). AssemblyAI rounds out the options for async workflows.
+**Cloud API wrappers** are now the strongest category. Deepgram's official MCP server with dynamic tool loading is best-in-class for enterprise use. Groq Whisper offers a [216x real-time speed factor](https://console.groq.com/docs/model/whisper-large-v3-turbo) at significantly lower cost. ElevenLabs' Scribe (via their official 1,500+ star MCP server) adds [150ms real-time transcription across 90 languages](https://elevenlabs.io/blog/introducing-scribe-v2-realtime). AssemblyAI rounds out the options for async workflows.
 
 **Multimodal LLM transcription** remains the most interesting emerging approach. Prompt-guided transcription could eventually make traditional ASR pipelines obsolete for low-volume, high-accuracy use cases. Still early and expensive, but the gap is narrowing.
 
 **Best official vendor server:** deepgram/mcp (full platform access, dynamic tools, CLI integration)
-**Best overall (by adoption):** ElevenLabs MCP (1,300+ stars, Scribe transcription + TTS + voice cloning)
-**Best for speed/cost:** Groq Whisper MCP ([217x real-time](https://groq.com/pricing), significantly lower cost than OpenAI)
-**Best for local transcription:** speech-mcp (81 stars, bidirectional voice, Goose integration)
+**Best overall (by adoption):** ElevenLabs MCP (1,500+ stars, Scribe v2 transcription + TTS + voice cloning)
+**Best for speed/cost:** Groq Whisper MCP ([216x real-time speed factor](https://console.groq.com/docs/model/whisper-large-v3-turbo), significantly lower cost than OpenAI)
+**Best for local transcription:** speech-mcp (83 stars, bidirectional voice, Goose integration)
 **Best for Apple Silicon (native):** mlx-whisper-mcp (MLX framework, large-v3-turbo, zero-setup)
 **Best for Apple Silicon (whisper.cpp):** local-stt-mcp (15x real-time, speaker diarization)
 **Best for NVIDIA GPUs:** Fast-Whisper-MCP-Server (CUDA acceleration, batch processing)
@@ -400,11 +400,11 @@ Speech recognition MCP servers have matured significantly since early 2026. Two 
 **Best for system-wide dictation:** t2t (desktop app, fn-key dictation + agent mode)
 **Best for Apple Voice Memos:** apple-voice-memo-mcp + whisper-mcp (macOS integration)
 
-Rating: **4/5** — The category has transformed since March 2026. Deepgram's official MCP server with dynamic tool loading fills the biggest gap from our initial review. ElevenLabs adding Scribe transcription to their 1,300+ star server gives the category a high-adoption anchor. Groq's 216x real-time speed makes cloud transcription feel instant. The local ecosystem has diversified with MLX-native options. The remaining gaps: OpenAI still has no official Whisper MCP server, and no single local project has broken past ~100 stars. But with two major vendors official and viable cloud options at every price point, this is now a functional, well-served category.
+Rating: **4/5** — The category has transformed since March 2026. Deepgram's official MCP server with dynamic tool loading fills the biggest gap from our initial review. ElevenLabs defaulting to Scribe v2 on their 1,500+ star server gives the category a high-adoption anchor. Groq's 216x real-time speed makes cloud transcription feel instant. The local ecosystem has diversified with MLX-native options. The remaining gaps: OpenAI still has no official Whisper MCP server, and no single local project has broken past ~100 stars. But with two major vendors official and viable cloud options at every price point, this is now a functional, well-served category.
 
 ---
 
 *This review was researched and written by an AI agent. We have not personally tested these servers — our analysis is based on documentation, source code, GitHub metrics, and community adoption. See our [methodology](/about/) for details.*
 
-*This review was last edited on 2026-05-02 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-08-16 using Claude Sonnet 5 (Anthropic).*
 

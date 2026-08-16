@@ -43389,3 +43389,14 @@ This run is complete. Summary:
 2026-08-16T02:42:32Z SESSION 3987 stopped
 2026-08-16T06:23:01Z STARTED run 2187870 (mode=slow)
 2026-08-16T06:23:02Z SESSION 3988 started
+This run's work is complete. Summary:
+
+- **Early-vintage re-audit — Reviews batch 19: 192/285 → 204/285.** Ran 12 parallel claim-level citation audits on the next oldest unaudited pages (excluding 7 that overlap the prune-wave-1 manifest).
+- **Most significant catches:** a fabricated MCP server entry (`wildlife-insights-mcp`) cut from the pet-care page — sourced to a URL with a literal `yourusername` placeholder and no real repo; a reversed claim on the presentations page (Figma Slides is now supported, the page said it wasn't); a citation-fusion error attributing another company's EHR integrations to FDB's MedProof server; a year-stale EU AI Act deadline; and several archived/moved repos and license misattributions across the batch.
+- Build was clean, changes committed and deployed, and two of the fixes were spot-verified live in production.
+- No Bluesky post or CEO digest this run — both already used today's 1/day allowance from the prior run; full detail logged in WORKLOG.md for the next digest.
+- Nothing blocking: still waiting on the CEO's reply to #2362 (RingS's question), and the prune-wave-1 veto window doesn't open until 13:00 UTC today.
+2026-08-16T06:44:07Z FINISHED run 2187870
+2026-08-16T06:44:07Z SESSION 3988 stopped
+2026-08-16T10:24:01Z STARTED run 2258815 (mode=slow)
+2026-08-16T10:24:02Z SESSION 3989 started

@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 204/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 216/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -436,25 +436,25 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Printing & 3D Printing MCP Servers — OctoPrint, FreeCAD, Fusion 360, SolidWorks, OpenSCAD, CUPS, Print-on-Demand, and More](content/reviews/printing-3d-printing-mcp-servers.md)
 - [x] 2026-07-23 — [Privacy & Data Protection MCP Servers — PII Redaction, GDPR, BigID, DataGrail, Pangea, and More](content/reviews/privacy-data-protection-mcp-servers.md)
 - [x] 2026-07-23 — [Prompt Engineering & Optimization MCP Servers — Optimizers, Template Managers, Multi-LLM Routers, Security Guards, and 25+ More](content/reviews/prompt-engineering-optimization-mcp-servers.md)
-- [ ] 2026-07-23 — [Real Estate & Property MCP Servers — Zillow, MLS, Airbnb, BatchData, Mortgage Analysis, and More](content/reviews/real-estate-property-mcp-servers.md)
+- [x] 2026-07-23 — [Real Estate & Property MCP Servers — Zillow, MLS, Airbnb, BatchData, Mortgage Analysis, and More](content/reviews/real-estate-property-mcp-servers.md) — re-audited 2026-08-16
 - [ ] 2026-07-23 — [Redis MCP Servers — The Official Server, Agent Memory, Cloud Management, and Community Alternatives](content/reviews/redis-mcp-servers.md)
-- [ ] 2026-07-23 — [Regex & Text Processing MCP Servers — Pattern Matching, Diff, Translation, Format Conversion, Grammar, and Encoding](content/reviews/regex-text-processing-mcp-servers.md)
+- [x] 2026-07-23 — [Regex & Text Processing MCP Servers — Pattern Matching, Diff, Translation, Format Conversion, Grammar, and Encoding](content/reviews/regex-text-processing-mcp-servers.md) — re-audited 2026-08-16
 - [ ] 2026-07-23 — [Robotics & IoT MCP Servers — ROS, Home Assistant, MQTT, Arduino, Isaac Sim, and More](content/reviews/robotics-iot-mcp-servers.md)
-- [ ] 2026-07-23 — [Robotics MCP Servers — ROS, Home Assistant, ESP32, Robot Arms, Drones, and More (Updated)](content/reviews/robotics-mcp-servers.md)
-- [ ] 2026-07-23 — [SEO & Search Optimization MCP Servers — Google Search Console, Ahrefs, Semrush, DataForSEO, SE Ranking, Frase, Moz, Screaming Frog, and Google Trends](content/reviews/seo-search-optimization-mcp-servers.md)
-- [ ] 2026-07-23 — [SQLite MCP Servers — From Anthropic's Reference Server to 139-Tool Powerhouses and Edge Database Solutions](content/reviews/sqlite-mcp-servers.md)
-- [ ] 2026-07-23 — [Scientific Computing & Mathematics MCP Servers — MATLAB, Wolfram, R, Julia, SymPy, and More](content/reviews/scientific-computing-mathematics-mcp-servers.md)
-- [ ] 2026-07-23 — [Secret Management MCP Servers — Vault, 1Password, Bitwarden, Infisical, and Beyond](content/reviews/secret-management-mcp-servers.md)
-- [ ] 2026-07-23 — [Serverless & FaaS MCP Servers — AWS Lambda, Cloudflare Workers, Azure Functions, Google Cloud Run, Vercel, Firebase, and More](content/reviews/serverless-faas-mcp-servers.md)
+- [x] 2026-07-23 — [Robotics MCP Servers — ROS, Home Assistant, ESP32, Robot Arms, Drones, and More (Updated)](content/reviews/robotics-mcp-servers.md) — re-audited 2026-08-16
+- [x] 2026-07-23 — [SEO & Search Optimization MCP Servers — Google Search Console, Ahrefs, Semrush, DataForSEO, SE Ranking, Frase, Moz, Screaming Frog, and Google Trends](content/reviews/seo-search-optimization-mcp-servers.md) — re-audited 2026-08-16
+- [x] 2026-07-23 — [SQLite MCP Servers — From Anthropic's Reference Server to 180-Tool Powerhouses and Edge Database Solutions](content/reviews/sqlite-mcp-servers.md) — re-audited 2026-08-16
+- [x] 2026-07-23 — [Scientific Computing & Mathematics MCP Servers — MATLAB, Wolfram, R, Julia, SymPy, and More](content/reviews/scientific-computing-mathematics-mcp-servers.md) — re-audited 2026-08-16
+- [x] 2026-07-23 — [Secret Management MCP Servers — Vault, 1Password, Bitwarden, Infisical, and Beyond](content/reviews/secret-management-mcp-servers.md) — re-audited 2026-08-16
+- [x] 2026-07-23 — [Serverless & FaaS MCP Servers — AWS Lambda, Cloudflare Workers, Azure Functions, Google Cloud Run, Vercel, Firebase, and More](content/reviews/serverless-faas-mcp-servers.md) — re-audited 2026-08-16
 - [ ] 2026-07-23 — [Smart Home & Home Automation MCP Servers — Home Assistant, Apple HomeKit, Samsung SmartThings, Amazon Alexa, Google Home, Philips Hue, Tuya, Zigbee2MQTT, and IoT Device Control](content/reviews/smart-home-automation-mcp-servers.md)
-- [ ] 2026-07-23 — [Social Media & Marketing MCP Servers — Twitter/X, Bluesky, Instagram, LinkedIn, Meta Ads, Google Ads, SEO, and More](content/reviews/social-media-marketing-mcp-servers.md)
-- [ ] 2026-07-23 — [Social Networking & Community MCP Servers — Twitter/X, Bluesky, LinkedIn, Reddit, Discord, Mastodon, YouTube, TikTok, and More](content/reviews/social-networking-community-mcp-servers.md)
-- [ ] 2026-07-23 — [Speech Recognition & Transcription MCP Servers — Whisper, Deepgram, ElevenLabs, Groq, and More](content/reviews/speech-recognition-transcription-mcp-servers.md)
+- [x] 2026-07-23 — [Social Media & Marketing MCP Servers — Twitter/X, Bluesky, Instagram, LinkedIn, Meta Ads, Google Ads, SEO, and More](content/reviews/social-media-marketing-mcp-servers.md) — re-audited 2026-08-16
+- [x] 2026-07-23 — [Social Networking & Community MCP Servers — Twitter/X, Bluesky, LinkedIn, Reddit, Discord, Mastodon, YouTube, TikTok, and More](content/reviews/social-networking-community-mcp-servers.md) — re-audited 2026-08-16
+- [x] 2026-07-23 — [Speech Recognition & Transcription MCP Servers — Whisper, Deepgram, ElevenLabs, Groq, and More](content/reviews/speech-recognition-transcription-mcp-servers.md) — re-audited 2026-08-16
 - [ ] 2026-07-23 — [Sports & Athletics MCP Servers — Live Scores, Fantasy Leagues, Betting Odds, Fitness Tracking, and Motorsport Telemetry](content/reviews/sports-athletics-mcp-servers.md)
 - [ ] 2026-07-23 — [Sports & Fitness Analytics MCP Servers — Live Scores, F1 Telemetry, Betting Odds, Strava, Garmin, and Workout Tracking](content/reviews/sports-fitness-analytics-mcp-servers.md)
 - [ ] 2026-07-23 — [Sports & Fitness MCP Servers — Strava, Garmin, Fitbit, F1, NFL, MLB, Soccer, and More](content/reviews/sports-fitness-mcp-servers.md)
 - [ ] 2026-07-23 — [Spreadsheet & Office Suite MCP Servers — Google Sheets, Excel, Word, Google Docs, LibreOffice, Google Workspace, and More](content/reviews/spreadsheet-office-suite-mcp-servers.md)
-- [ ] 2026-07-23 — [Spreadsheet MCP Servers — Google Sheets, Excel, Airtable, Smartsheet, and More](content/reviews/spreadsheet-mcp-servers.md)
+- [x] 2026-07-23 — [Spreadsheet MCP Servers — Google Sheets, Excel, Airtable, Smartsheet, and More](content/reviews/spreadsheet-mcp-servers.md) — re-audited 2026-08-16
 - [ ] 2026-07-23 — [Supply Chain & Logistics MCP Servers — SAP, Dynamics 365, Kinaxis, ShipStation, Karrio, Shippo, and More](content/reviews/supply-chain-logistics-mcp-servers.md)
 - [ ] 2026-07-23 — [Sustainability & Climate MCP Servers — Carbon Emissions, Building Energy, Air Quality, Power Grid Intelligence, ESG Reporting, and More](content/reviews/sustainability-climate-mcp-servers.md)
 - [ ] 2026-07-23 — [Tax & Payroll MCP Servers — IRS Calculations, Tax Filing, VAT Compliance, Payroll Management, and International Tax Law](content/reviews/tax-payroll-mcp-servers.md)

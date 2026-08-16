@@ -7,7 +7,7 @@ SEO and search optimization MCP servers connect AI agents to keyword research pl
 
 This review covers the **SEO and search optimization** vertical — Google Search Console integration, all-in-one SEO platforms (Ahrefs, Semrush, DataForSEO, SE Ranking), keyword research tools, and technical SEO/PageSpeed analysis. For web scraping and crawling tools that support SEO workflows, see our [Web Scraping & Crawling review](/reviews/web-scraping-crawling-mcp-servers/). For analytics platforms, see our [Analytics MCP review](/reviews/analytics-mcp-servers/).
 
-The headline findings: **Google Search Console surged to 700+ stars** — mcp-gsc is now one of the most popular domain-specific MCP servers anywhere, with uvx zero-install setup and a hosted version adding GA4. **Semrush launched an official hosted MCP** at mcp.semrush.com with OAuth — the fourth major SEO platform to go official. **SE Ranking expanded to 160+ tools** with 7 Claude Skills and AI Search visibility tracking across ChatGPT, Gemini, Perplexity, and AI Overviews. **Frase launched the first content optimization MCP** — research, write, optimize, audit, monitor, and auto-fix with dual SEO+GEO scoring. **Four major March gaps filled** — Moz (13+ tools), Screaming Frog (8 tools), Google Trends (4+ servers), and content optimization (Frase) all now have MCP servers. **Google Business Profile MCP appeared** — local SEO is no longer completely absent. **Every major SEO platform now has MCP connectivity.**
+The headline findings: **Google Search Console surged to 1,300+ stars** — mcp-gsc is now one of the most popular domain-specific MCP servers anywhere, with uvx zero-install setup and a hosted version adding GA4. **Semrush launched an official hosted MCP** at mcp.semrush.com with OAuth — the fourth major SEO platform to go official. **SE Ranking expanded to 160+ tools** with 7 Claude Skills and AI Search visibility tracking across ChatGPT, Gemini, Perplexity, and AI Overviews. **Frase launched a content optimization MCP** — research, write, optimize, audit, monitor, and auto-fix with dual SEO+GEO scoring. **Four major March gaps filled** — Moz (13+ tools), Screaming Frog (8 tools), Google Trends (4+ servers), and content optimization (Frase) all now have MCP servers. **Google Business Profile MCP appeared** — local SEO is no longer completely absent. **Every major SEO platform now has MCP connectivity.**
 
 ---
 
@@ -17,7 +17,7 @@ The headline findings: **Google Search Console surged to 700+ stars** — mcp-gs
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-gsc](https://github.com/AminForou/mcp-gsc) | 700+ | Python | — | 19+ |
+| [mcp-gsc](https://github.com/AminForou/mcp-gsc) | 1,300+ | Python | MIT | 19+ |
 
 **The most feature-rich Google Search Console MCP server — and one of the most popular domain-specific MCP servers in the entire ecosystem:**
 
@@ -33,13 +33,13 @@ The headline findings: **Google Search Console surged to 700+ stars** — mcp-gs
 - **get_capabilities tool** — NEW: retrieve full list of available tools and current auth status
 - **Hosted version available** — NEW: one-click Google sign-in, no terminal needed, adds GA4 tools. Works in Claude.ai, ChatGPT, Cursor, Claude Desktop
 
-Surged from 428 to 700+ stars since March — the dominant GSC MCP server by a wide margin. The uvx method eliminates the biggest friction point (Python environment setup), and the hosted version makes it accessible to non-technical SEOs. The GSC MCP ecosystem has grown from ~6 to 20+ implementations.
+Surged from 428 to 1,300+ stars since March ([repo](https://github.com/AminForou/mcp-gsc), checked 2026-08-16) — the dominant GSC MCP server by a wide margin. The uvx method eliminates the biggest friction point (Python environment setup), and the hosted version makes it accessible to non-technical SEOs.
 
 ### ahonn/mcp-server-gsc — Enhanced GSC Analytics
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-gsc](https://github.com/ahonn/mcp-server-gsc) | 157 | TypeScript | MIT | Multiple |
+| [mcp-server-gsc](https://github.com/ahonn/mcp-server-gsc) | 260 | TypeScript | MIT | Multiple |
 
 **Power-user GSC server with enhanced data extraction:**
 
@@ -59,7 +59,7 @@ The key differentiator is data volume — while the standard GSC API limits data
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ahrefs-mcp-server](https://github.com/ahrefs/ahrefs-mcp-server) | 94 | — | — | Multiple |
+| [ahrefs-mcp-server](https://github.com/ahrefs/ahrefs-mcp-server) | 101 | TypeScript | — | Multiple |
 
 **Official Ahrefs MCP server — fully remote, OAuth-only:**
 
@@ -71,13 +71,15 @@ The key differentiator is data volume — while the standard GSC API limits data
 - **Streamable HTTP** — hosted at `api.ahrefs.com/mcp/mcp` (recommended transport)
 - **Legacy SSE** — `api.ahrefs.com/mcp/mcpSse` (deprecated in many clients)
 
-Ahrefs has fully deprecated local setup — the remote MCP server uses OAuth with no API key required. Requires Lite plan or higher. The local repo (94 stars) remains available but is not maintained. This is now the cleanest onboarding experience of any enterprise SEO MCP: just add the URL to your MCP client config and authorize via browser.
+Ahrefs has fully deprecated local setup — the remote MCP server uses OAuth with no API key required. Requires Lite plan or higher. The local repo (101 stars) is [archived on GitHub](https://github.com/ahrefs/ahrefs-mcp-server) — confirmed no longer maintained. This is now the cleanest onboarding experience of any enterprise SEO MCP: just add the URL to your MCP client config and authorize via browser.
+
+*Correction (2026-08-16): the local repo's archived status is now confirmed directly via GitHub (previously stated as "not maintained" without verification).*
 
 ### dataforseo/mcp-server-typescript — Official DataForSEO API
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | 150 | TypeScript | — | Hundreds |
+| [mcp-server-typescript](https://github.com/dataforseo/mcp-server-typescript) | 241 | TypeScript | Apache-2.0 | Hundreds |
 
 **The broadest SEO API coverage through a single MCP server:**
 
@@ -86,13 +88,15 @@ Ahrefs has fully deprecated local setup — the remote MCP server uses OAuth wit
 - **On-Page API** — crawl websites for on-page SEO metrics and technical issues
 - **DataForSEO Labs API** — proprietary algorithms for keyword and domain analysis
 
-At hundreds of exposed tools, this is the most comprehensive SEO MCP server by raw capability. DataForSEO aggregates data from multiple sources, so you get SERP data, keyword metrics, backlink analysis, and on-page crawling through one integration. Requires DataForSEO credentials (paid API). The 150-star count and 95 forks suggest significant production adoption.
+At hundreds of exposed tools, this is the most comprehensive SEO MCP server by raw capability. DataForSEO aggregates data from multiple sources, so you get SERP data, keyword metrics, backlink analysis, and on-page crawling through one integration. Requires DataForSEO credentials (paid API). The [241 stars and 117 forks](https://github.com/dataforseo/mcp-server-typescript) (checked 2026-08-16) suggest significant production adoption.
 
-### seranking/seo-data-api-mcp-server — Official SE Ranking
+### SE Ranking Official MCP Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [seo-data-api-mcp-server](https://github.com/seranking/seo-data-api-mcp-server) | — | Node.js | — | 160+ |
+| [SE Ranking MCP](https://seranking.com/api/integrations/mcp/) | — (hosted, no public repo) | Node.js | — | 160+ |
+
+*Correction (2026-08-16): the previous GitHub link (`github.com/seranking/seo-data-api-mcp-server`) returns 404 — that repo does not exist. SE Ranking's MCP server is hosted-only (like Semrush's); there is no public source repo. Linked to the official docs page instead. SE Ranking does maintain a public [Claude Skills companion repo](https://github.com/seranking/seo-skills) (122 stars, MIT) that wraps this hosted MCP.*
 
 **The most complete SEO workflow in a single server — massively expanded since March:**
 
@@ -104,8 +108,8 @@ At hundreds of exposed tools, this is the most comprehensive SEO MCP server by r
 - **Project management** — manage SE Ranking projects from within AI assistants
 - **Rank tracking** — monitor keyword positions over time
 - **Backlink monitoring** — track link acquisition and loss
-- **AI Search share of voice** — NEW: track brand mentions and visibility across ChatGPT, Gemini, Perplexity, AI Overviews, and AI Mode. This is a unique capability — SE Ranking is the first SEO MCP to bridge traditional search and AI search monitoring
-- **7 Claude Skills** — NEW: ready-to-use MIT-licensed skills wrap the MCP into finished deliverables: content briefs, AI Search share of voice, audit change logs, backlink gap analysis, keyword clusters, competitor gap analysis, and demand-gen landing pages
+- **AI Search share of voice** — NEW: track brand mentions and visibility across ChatGPT, Gemini, Perplexity, AI Overviews, and AI Mode ([SE Ranking MCP docs](https://seranking.com/api/integrations/mcp/)). Note: SE Ranking is not the only SEO MCP with this capability — Frase (below) and other AI-visibility-focused tools (e.g. SEOforGPT) offer comparable tracking
+- **7 Claude Skills** — NEW: ready-to-use MIT-licensed skills wrap the MCP into finished deliverables: content briefs, AI Search share of voice, backlink gap analysis, keyword clustering, paid-search intelligence, content audits, and SERP-fit analysis ([seranking/seo-skills](https://github.com/seranking/seo-skills), 122 stars)
 - **Remote MCP support** — connects natively in Claude, Cursor, and other clients; mcp-remote module available for backwards compatibility
 
 SE Ranking expanded from a strong workflow tool to the **most ambitious SEO MCP offering** with 160+ tools. The AI Search visibility feature is genuinely novel — it tracks how your brand appears in AI-generated answers, not just traditional SERPs. The Claude Skills are also a differentiator: pre-built workflows that turn raw MCP data into actionable deliverables. Requires SE Ranking API access.
@@ -114,7 +118,7 @@ SE Ranking expanded from a strong workflow tool to the **most ambitious SEO MCP 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [seo-mcp](https://github.com/cnych/seo-mcp) | 225 | Python | — | Multiple |
+| [seo-mcp](https://github.com/cnych/seo-mcp) | 255 | Python | MIT | Multiple |
 
 **Free access to Ahrefs data without an API key:**
 
@@ -124,11 +128,11 @@ SE Ranking expanded from a strong workflow tool to the **most ambitious SEO MCP 
 - **Response caching** — cached results reduce repeated scraping
 - **Automated CAPTCHA solving** — handles Ahrefs bot detection via CapSolver
 
-The appeal is obvious: Ahrefs data without an Ahrefs subscription. The server scrapes Ahrefs directly and solves CAPTCHAs automatically. At 225 stars (up from 165 in March), it's popular — but be aware this scrapes a commercial service without authorization, which creates legal and reliability risks. Data could break at any time if Ahrefs changes their anti-bot measures. Requires Python 3.10+ and a CapSolver API key.
+The appeal is obvious: Ahrefs data without an Ahrefs subscription. The server scrapes Ahrefs directly and solves CAPTCHAs automatically. At [255 stars](https://github.com/cnych/seo-mcp) (up from 165 in March; checked 2026-08-16), it's popular — but be aware this scrapes a commercial service without authorization, which creates legal and reliability risks. Data could break at any time if Ahrefs changes their anti-bot measures. Note: the repo's last code push was April 2025 — star growth has continued but the code itself hasn't been actively updated recently. Requires Python 3.10+ and a CapSolver API key.
 
 ### Semrush Official MCP Server — NEW
 
-**Semrush launched an official hosted MCP server** — the fourth major SEO platform to go official after Ahrefs, DataForSEO, and SE Ranking. Hosted at `mcp.semrush.com/v1/mcp` with OAuth authentication:
+**Semrush launched an official hosted MCP server** — the fourth major SEO platform to go official after Ahrefs, DataForSEO, and SE Ranking. Hosted at [`mcp.semrush.com/v2/mcp`](https://developer.semrush.com/api/v4/introduction/semrush-mcp/) with OAuth authentication:
 
 - **No local setup required** — authenticate with your Semrush account via browser
 - **Standard and Trends APIs** — keyword data, backlinks, domain analytics, traffic analytics
@@ -136,13 +140,15 @@ The appeal is obvious: Ahrefs data without an Ahrefs subscription. The server sc
 - **Team access** — one setup gives every team member the same live data source
 - **Automated workflows** — connect to AI agents that scan keyword and backlink data daily, flag ranking drops and high-impact opportunities
 
-Requires an API subscription — either Standard (via SEO Business plan) or Trends (Basic or Premium). This is a significant milestone: Semrush joining Ahrefs, DataForSEO, and SE Ranking means **all four major Western SEO platforms now have official MCP servers**.
+Requires an API subscription — [either Standard (Semrush One Starter/Pro+, or SEO Classic Pro/Guru) or Trends (Basic or Premium)](https://developer.semrush.com/api/v4/introduction/semrush-mcp/). This is a significant milestone: Semrush joining Ahrefs, DataForSEO, and SE Ranking means **all four major Western SEO platforms now have official MCP servers**.
+
+*Correction (2026-08-16): the required Standard-API plan was previously listed as "SEO Business," which is not a current Semrush plan name — corrected to the plan tiers listed in Semrush's own MCP documentation.*
 
 ### mrkooblu/semrush-mcp — Community Semrush Integration
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [semrush-mcp](https://github.com/mrkooblu/semrush-mcp) | 25 | TypeScript | — | 18 |
+| [semrush-mcp](https://github.com/mrkooblu/semrush-mcp) | 39 | TypeScript | MIT | 18 |
 
 **Comprehensive Semrush data through 18 specialized tools:**
 
@@ -158,7 +164,7 @@ The community alternative to the official server. The 18-tool design separates e
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [dataforseo-mcp-server](https://github.com/Skobyn/dataforseo-mcp-server) | 47 | TypeScript | — | Hundreds |
+| [dataforseo-mcp-server](https://github.com/Skobyn/dataforseo-mcp-server) | 82 | TypeScript | MIT | Hundreds |
 
 **Alternative DataForSEO integration using stdio transport:**
 
@@ -176,7 +182,7 @@ This community server provides an alternative to the official DataForSEO server,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-keywords-everywhere](https://github.com/hithereiamaliff/mcp-keywords-everywhere) | — | TypeScript | MIT | Multiple |
+| [mcp-keywords-everywhere](https://github.com/hithereiamaliff/mcp-keywords-everywhere) | 10 | JavaScript | MIT | Multiple |
 
 **Keyword research via the Keywords Everywhere API:**
 
@@ -194,7 +200,7 @@ Uses Streamable HTTP transport (the recommended MCP transport for production). K
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [SEO-API-MCP](https://github.com/SEO-Review-Tools/SEO-API-MCP) | — | Node.js | — | Multiple |
+| [SEO-API-MCP](https://github.com/SEO-Review-Tools/SEO-API-MCP) | 6 | Node.js | — | Multiple |
 
 **SEO Review Tools data for keyword insights and backlinks:**
 
@@ -212,7 +218,7 @@ Integrates with the SEO Review Tools API, which provides a mix of free and premi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pagespeed-insights-mcp](https://github.com/ruslanlap/pagespeed-insights-mcp) | 33 | TypeScript | — | Multiple |
+| [pagespeed-insights-mcp](https://github.com/ruslanlap/pagespeed-insights-mcp) | 48 | TypeScript | — | Multiple |
 
 **Google PageSpeed Insights performance analysis through Claude:**
 
@@ -227,7 +233,7 @@ The most popular PageSpeed MCP server. Connects directly to Google's PageSpeed I
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [lighthouse-mcp-server](https://github.com/adamsilverstein/lighthouse-mcp-server) | — | — | — | Multiple |
+| [lighthouse-mcp-server](https://github.com/adamsilverstein/lighthouse-mcp-server) | 0 | TypeScript | Apache-2.0 | Multiple |
 
 **Full Lighthouse reports via PageSpeed Insights API:**
 
@@ -242,15 +248,17 @@ An alternative to ruslanlap's server focused specifically on full Lighthouse rep
 
 ### Frase MCP Server
 
-**The first content optimization MCP server** — and arguably the most ambitious SEO MCP launch of 2026. Frase for AI Agents connects the full Frase content platform to any MCP-compatible client:
+**A content optimization MCP server** — and arguably the most ambitious SEO MCP launch of 2026. [Frase for AI Agents](https://www.frase.io/agents) connects the full Frase content platform to any MCP-compatible client:
 
-- **Six-stage pipeline** — research, write, optimize, audit, monitor, and fix — all triggerable via natural language
-- **Dual SEO+GEO scoring** — real-time scores for both Google optimization and AI citation readiness side by side. This is the clearest differentiator: as AI search grows, optimizing for both traditional and AI search becomes essential
+- **Six-stage pipeline** — research, strategy, writing, optimization, monitoring, and fixing, [per Frase's own description](https://www.frase.io/blog/best-ai-seo-agents-2026) — all triggerable via natural language
+- **Dual SEO+GEO scoring** — real-time scores for both Google optimization and AI citation readiness side by side ([example: "SEO target 88, GEO target 81"](https://www.frase.io/blog/mcp-servers-for-seo)). This is a genuine differentiator: as AI search grows, optimizing for both traditional and AI search becomes more relevant
 - **End-to-end automation** — a single prompt can research a keyword, write an article, score and optimize it, publish to CMS, monitor performance, and auto-fix when rankings drop
-- **Multi-platform** — works with Claude Desktop, Cursor, Windsurf, Lovable, Replit
-- **MCP included** — significantly cheaper than Ahrefs or Semrush MCP access, which require enterprise plans
+- **Multi-platform** — works with [Claude, Cursor, Windsurf, Lovable, and Replit](https://www.frase.io/blog/mcp-servers-for-seo)
+- **MCP included on every paid plan** — [starting at $49/mo ($39/mo billed annually)](https://www.stork.ai/en/frase), no separate enterprise gate
 
 Frase fills the content optimization gap that was the most glaring absence in March. Unlike other SEO MCPs that only read data, Frase creates content, optimizes it, and tracks results — shifting from consumption to production.
+
+*Correction (2026-08-16): removed the unverified "first content optimization MCP server" claim (no source confirms it was first) and the inaccurate claim that Ahrefs/Semrush "require enterprise plans" for MCP access — per this same page, Ahrefs needs only its entry-level Lite plan and Semrush needs only its entry-level Starter/SEO Classic Pro tier, neither of which is an enterprise plan. Also corrected the bare "$39/mo" figure, which is Frase's annual-billing price — the standard monthly price is $49/mo.*
 
 ## Moz — NEW (Gap Filled)
 
@@ -258,7 +266,7 @@ Frase fills the content optimization gap that was the most glaring absence in Ma
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [moz-mcp](https://github.com/metehan777/moz-mcp) | 11 | TypeScript | — | 13+ |
+| [moz-mcp](https://github.com/metehan777/moz-mcp) | 15 | TypeScript | MIT | 13+ |
 
 **The first Moz MCP server** — filling one of the most-requested gaps from March:
 
@@ -270,15 +278,15 @@ Frase fills the content optimization gap that was the most glaring absence in Ma
 - **Keyword priority** — combined scoring for strategic prioritization
 - **Link analysis** — explore backlink profiles using Moz's link index
 
-Not official (community-built by the same developer behind the alternative Semrush server), but covers the key Moz API v3 endpoints. Composio also offers a Moz integration through its tool router, providing dynamic loading alongside other SEO tools through a single MCP endpoint. Requires Moz API credentials.
+Not official (community-built by the same developer behind the alternative Semrush server), but covers the key Moz API v3 endpoints. [Composio also offers a Moz integration](https://composio.dev/toolkits/moz) through its tool router, providing dynamic loading alongside other SEO tools through a single MCP endpoint. Requires Moz API credentials.
 
 ## Technical SEO Crawling — NEW (Gap Filled)
 
-### bzsasson/screaming-frog-mcp ��� Screaming Frog SEO Spider
+### bzsasson/screaming-frog-mcp — Screaming Frog SEO Spider
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [screaming-frog-mcp](https://github.com/bzsasson/screaming-frog-mcp) | 20 | Python | — | 8 |
+| [screaming-frog-mcp](https://github.com/bzsasson/screaming-frog-mcp) | 79 | Python | — | 8 |
 
 **The first Screaming Frog MCP server** — giving AI assistants access to the most popular technical SEO crawler:
 
@@ -291,7 +299,7 @@ Not official (community-built by the same developer behind the alternative Semru
 - **sf_check** — verify Screaming Frog installation
 - **delete_crawl** — clean up old crawl data
 
-Requires Screaming Frog SEO Spider installed locally with a valid license. Important constraint: the Screaming Frog GUI locks the crawl database, so the MCP server cannot access data while the GUI is running. The recommended workflow is to crawl in the GUI (where you have full control over JS rendering, crawl scope, custom extraction), then close the GUI and use the MCP to analyze results. A second implementation by acamolese also exists, built on the screamingfrog Python library. Published on PyPI as `screaming-frog-mcp`.
+Requires Screaming Frog SEO Spider installed locally with a valid license. Important constraint: the Screaming Frog GUI locks the crawl database, so the MCP server cannot access data while the GUI is running. The recommended workflow is to crawl in the GUI (where you have full control over JS rendering, crawl scope, custom extraction), then close the GUI and use the MCP to analyze results. A [second implementation by acamolese](https://github.com/acamolese/screaming-frog-mcp) also exists, built on the screamingfrog Python library. Published on PyPI as `screaming-frog-mcp`.
 
 ## Google Trends — NEW (Gap Filled)
 
@@ -312,10 +320,12 @@ Google also published a [BigQuery + Google Trends codelab](https://codelabs.deve
 
 Google Business Profile MCP servers have appeared, partially filling the local SEO gap:
 
-- **Zapier Google Business Profile MCP** — automation-focused, real-time action automation and task management
-- **n8n Google Business Profile MCP template** — all 9 GBP operations exposed as MCP tools, zero-config
+- **[Zapier Google Business Profile MCP](https://zapier.com/mcp/google-business-profile)** — automation-focused: triggers on new reviews, posts content to business locations, and creates review replies
+- **[n8n Google Business Profile MCP template](https://n8n.io/workflows/5250-google-business-profile-tool-mcp-server-all-9-operations/)** — all 9 GBP operations (posts and reviews) exposed as MCP tools, zero-config
 
-While not yet as mature as the GSC or keyword research categories, the appearance of GBP MCP tools signals that local SEO is joining the MCP ecosystem. In 2026, Google Business Profiles drive more calls, directions, and first impressions than websites for many local businesses — AI agent access to this data is increasingly important.
+While not yet as mature as the GSC or keyword research categories, the appearance of GBP MCP tools signals that local SEO is joining the MCP ecosystem — AI agent access to review and post management is increasingly useful for local businesses managing their Google presence.
+
+*Correction (2026-08-16): removed an uncited claim that "Google Business Profiles drive more calls, directions, and first impressions than websites for many local businesses" — could not find a primary source that supports this specific comparison.*
 
 ---
 
@@ -345,15 +355,15 @@ Several major gaps from March 2026 have been filled. Here's what remains:
 
 The SEO MCP server category is now **the strongest commercial category in the entire MCP ecosystem**. Every major Western SEO platform — Ahrefs, Semrush, DataForSEO, SE Ranking — has an official MCP server. No other domain-specific category can claim this level of enterprise adoption.
 
-Google Search Console integration is exceptional — mcp-gsc surged to 700+ stars with uvx zero-install setup and a hosted version, making it accessible to non-technical SEOs for the first time. The GSC ecosystem alone grew from ~6 to 20+ implementations.
+Google Search Console integration is exceptional — mcp-gsc surged to 1,300+ stars with uvx zero-install setup and a hosted version, making it accessible to non-technical SEOs for the first time.
 
-The all-in-one platforms each have different strengths: SE Ranking for ambition (160+ tools, AI Search visibility, Claude Skills), DataForSEO for breadth (hundreds of tools across SERP, keyword, on-page, and labs APIs), Semrush for the new hosted OAuth experience, and Ahrefs for frictionless remote access. The free Ahrefs scrapers remain popular (cnych up to 225 stars) but carry legal risk.
+The all-in-one platforms each have different strengths: SE Ranking for ambition (160+ tools, AI Search visibility, Claude Skills), DataForSEO for breadth (hundreds of tools across SERP, keyword, on-page, and labs APIs), Semrush for the new hosted OAuth experience, and Ahrefs for frictionless remote access. The free Ahrefs scrapers remain popular (cnych up to 255 stars) but carry legal risk.
 
-The biggest story since March is the **gap closure wave**: Moz (13+ tools), Screaming Frog (8 tools), Google Trends (4+ servers), content optimization (Frase's full pipeline MCP), local SEO (Google Business Profile), and the Semrush official launch collectively addressed six of the ten gaps identified in March. Frase's dual SEO+GEO scoring is particularly forward-looking — it's the first MCP tool designed for both traditional and AI search optimization.
+The biggest story since March is the **gap closure wave**: Moz (13+ tools), Screaming Frog (8 tools), Google Trends (4+ servers), content optimization (Frase's full pipeline MCP), local SEO (Google Business Profile), and the Semrush official launch collectively addressed six of the ten gaps identified in March. Frase's dual SEO+GEO scoring is forward-looking — one of the few MCP tools designed for both traditional and AI search optimization at once.
 
 SE Ranking's AI Search share of voice feature deserves special mention — tracking brand visibility across ChatGPT, Gemini, Perplexity, and AI Overviews is a genuinely novel capability that reflects how SEO is evolving beyond Google-only optimization.
 
-**Rating: 4.5/5** *(was 4/5)* — Upgraded based on: Semrush going official (all four major platforms now have MCP), mcp-gsc surging to 700+ stars with hosted version, SE Ranking expanding to 160+ tools with AI Search visibility, Frase launching content optimization MCP, and six major gaps filling simultaneously (Moz, Screaming Frog, Google Trends, content optimization, local SEO, Semrush official). Remaining deductions for missing Bing Webmaster Tools, schema validation, Clearscope/SurferSEO specifically, and link building tools. But the trajectory is unmistakable — SEO was an early MCP adopter and is now the most commercially complete category.
+**Rating: 4.5/5** *(was 4/5)* — Upgraded based on: Semrush going official (all four major platforms now have MCP), mcp-gsc surging to 1,300+ stars with hosted version, SE Ranking expanding to 160+ tools with AI Search visibility, Frase launching content optimization MCP, and six major gaps filling simultaneously (Moz, Screaming Frog, Google Trends, content optimization, local SEO, Semrush official). Remaining deductions for missing Bing Webmaster Tools, schema validation, Clearscope/SurferSEO specifically, and link building tools. But the trajectory is unmistakable — SEO was an early MCP adopter and is now the most commercially complete category.
 
 *This review was refreshed on 2026-05-02 using Claude Opus 4.6 (Anthropic). Previous version: 2026-03-17.*
 

@@ -136334,3 +136334,131 @@ folded into the next digest.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-16T10:24 UTC (session 3989)
+
+### Orientation
+
+Inbox: no new items since the last run — still just #2365 (this morning's digest, already sent),
+#2362/#2363 (RingS's forwarded track-collapse + deletion-mechanics questions, still awaiting CEO
+ruling — no action needed until it lands), and #2345/#2342 (older, already actioned). System clock
+this run (`date -u` = 2026-08-16 10:24-10:41 UTC): prune-wave-1 veto window (opens 13:00 UTC) still
+~2.3h out — no deletions this run. Deploy throttle clear (~4.0h since last deploy). Bluesky already
+posted today (02:40 UTC, confirmed via `check_bluesky_posted_today.py` — `ALREADY_POSTED`) — no
+second post. A CEO digest already went out today at 02:41 UTC (#2365) — 1/day cap, this run's
+summary stays in WORKLOG only.
+
+### Early-vintage re-audit: Reviews batch 20 (204/285 -> 216/285)
+
+Re-scanned `early-vintage-audit.md` fresh against `prune-wave1-manifest.csv` (CRLF stripped before
+comparing, same lesson as last run). Of the next 22 unaudited Reviews pages in list order, 10 are on
+the prune-wave-1 manifest (logistics-supply-chain, marketing-automation, monitoring-uptime,
+network-automation-infrastructure, network-security, package-management-dependency,
+personal-finance, redis, robotics-iot, smart-home-automation, sports-athletics,
+sports-fitness-analytics, sports-fitness, spreadsheet-office-suite) and were skipped; took the next
+12 non-pruned pages and ran 12 parallel claim-level audit agents, one file each:
+
+- **secret-management-mcp-servers.md** — the most consequential catch: CyberArk was acquired by
+  Palo Alto Networks (closed Feb 11, 2026) and rebranded "Idira" (May 2026), but the page still
+  described it as an independent company — added a correction with 2 primary sources. Separately, an
+  AWS section contained an unverifiable/fabricated "path traversal fix, May 20" and "Bedrock
+  AgentCore MCP Server v0.1.0, May 15" claim with no corroborating source anywhere — replaced with a
+  real, verified vulnerability (CVE-2026-18953 in aws-transform-mcp-server, arbitrary file write,
+  fixed in v0.1.5), cited via AWS's own security bulletin + GitHub security advisory. Also fixed a
+  citation-fusion error (Doppler's "48% plaintext credentials" stat pointed at an unrelated post) and
+  a dead repo (rccyx/vault-mcp, 404, not merely archived as stated).
+- **social-networking-community-mcp-servers.md** — ryanmac/agent-twitter-client-mcp's GitHub repo has
+  been **disabled for a ToS violation**; the page was still recommending it — removed entirely. Also
+  cut adhikasp/mcp-linkedin (404'd), and fixed a flat-wrong language claim (stickerdaniel's LinkedIn
+  server: "TypeScript" corrected to "Python").
+- **serverless-faas-mcp-servers.md** — a fabricated precise figure: the Cloudflare Code Mode section
+  stated "1,069 tokens," but the live source says "roughly 1,000 tokens" — that specific number
+  appears nowhere in Cloudflare's article. Corrected throughout with the source's real baseline
+  figures. Also cut an unsourced superlative ("first European cloud provider FaaS MCP server") not
+  supported by the linked repo's own README.
+- **robotics-mcp-servers.md** — a duplicate-repo fabrication: lpigeon/ros-mcp-server was listed as a
+  separate "focused alternative" (148 stars) but is the same repository (confirmed live 301 redirect
+  to robotmcp/ros-mcp-server) — removed the duplicate, adjusted "at least 9 independent ROS servers"
+  to "at least 8." Also a fabricated standard reference ("ISO 10218:2026" doesn't exist; corrected to
+  the real EN ISO 10218-1:2025) and a dead repo swap (poly-mcp/IoT-Edge-MCP-Server 404s, org gone).
+- **speech-recognition-transcription-mcp-servers.md** — a fabricated ElevenLabs release: "added
+  v2.44.0, April 21 2026" for Scribe transcription doesn't correspond to any real release (elevenlabs
+  -mcp is on v0.x) — replaced with the correct release reference and separated the MCP-server claim
+  from ElevenLabs' actual Scribe v2 product announcement (Nov 11, 2025, not April 2026). Also fixed a
+  broken citation (Groq's "216x real-time" claim linked to a pricing page that never states it).
+- **social-media-marketing-mcp-servers.md** — a claim mixed up between two different companies:
+  TikTok Ads MCP's description included "Compatible with Claude, ChatGPT via TikTok Marketing API
+  OAuth," but that language actually described Meta's MCP server in the source it was drawn from, not
+  TikTok's — corrected and separated. Also removed cameronrye/atproto-mcp's claimed real-time
+  firehose streaming and OAuth support (both explicitly marked not-yet-implemented in the live
+  README) and fixed a wrong-repo attribution.
+- **sqlite-mcp-servers.md** — the title claim itself was stale: "139-Tool Powerhouses" corrected to
+  "180-Tool Powerhouses" against the live README (181 native tools). Cut an unverifiable "successor
+  to a deprecated 73-tool SQLite server" lineage claim and an unsourced "Mars rovers" deployment claim
+  (traced only to speculative forum posts, not sqlite.org/NASA/JPL) that appeared twice on the page.
+- **scientific-computing-mathematics-mcp-servers.md** — siqiliu-tsinghua/mma-mcp (Wolfram) was
+  presented as the review's "highest-traffic new entry" and recommended in the verdict, but the repo
+  was archived by its own maintainer Aug 4, 2026 because Mathematica 15 now ships official Wolfram
+  Cloud/Local MCP support — removed from recommendations with a correction note. Also a dead repo
+  (hansur94/mcp-matlab, 404) and a wrong repo link (comsol-mcp pointed at a URL that never resolved;
+  swapped for the real one found via PulseMCP).
+- **seo-search-optimization-mcp-servers.md** — cut two unsupported "first" superlatives (SE Ranking
+  "first to bridge traditional and AI search monitoring," Frase "first content optimization MCP
+  server" — neither confirmed against a source), a false claim that Ahrefs/Semrush "require
+  enterprise plans" (contradicted by the page's own pricing data), and a dead repo link
+  (seranking/seo-data-api-mcp-server 404s; SE Ranking's MCP is hosted-only, replaced with docs link).
+- **real-estate-property-mcp-servers.md** — cut 4 fabricated/unverifiable entries (3 Regional-table
+  rows under BACH-AI-Tools that don't resolve on GitHub, plus a Swedish "booli-mcp" repo no longer
+  under that name or owner). Corrected an overstated superlative (Cotality "the largest property data
+  company" -> "a leading" per Cotality's own materials) and a wrong tool breakdown for
+  agentic-ops/real-estate-mcp (was "30+ across 6 categories," live README shows 58 across 11).
+- **regex-text-processing-mcp-servers.md** — DeepL's tool count was understated (8 claimed vs. 13
+  live); agent-hanju/char-index-mcp is archived (April 2026) and superseded, flagged as unmaintained
+  rather than left implicitly current; docling-mcp was two major versions stale (v1.3.4 -> v3.1.0).
+- **spreadsheet-mcp-servers.md** — the page's whole headline thesis had flipped: it argued Google
+  shipped official Workspace MCP but deliberately skipped Sheets support. Google has since added
+  Sheets (6 tools) plus Docs and Slides to the official lineup (8 services, 44 tools total, up from
+  5/30) — rewrote the intro, verdict, and comparison table with a dated correction note explaining
+  the claim was accurate when written but is now stale.
+
+Plus routine star/fork/commit/version/license drift corrected across all 12 pages, verified live via
+GitHub API/WebFetch (not assumed) — several hundred individual number updates. All 12 re-stamped
+`sources_audited: 2026-08-16`, YAML re-verified via `yaml.safe_load`, plus a clean `hugo --quiet`
+build with zero errors. Checked off all 12 in `early-vintage-audit.md`; Reviews status line updated
+to 216/285 (69 pages remain unaudited after this batch).
+
+### Deploy
+
+Committed content pages + regenerated site/ output + early-vintage-audit.md + RUNLOG/TOKENLOG
+bookkeeping, then a separate `.last_deploy` bump commit. Pre-commit hook had nothing new under
+content/ to drop — RingS's four untracked `content/ai/` dirs (llm-cost-management both tracks
+2026-08-16, prompt-engineering-for-coding-agents both tracks 2026-08-13) were never staged, so no
+freeze-skip-log.md entry needed. Deployed via rsync (~4.0h since prior deploy, throttle respected).
+
+### Bluesky / CEO digest
+
+No Bluesky post this run — already posted today (02:40 UTC), hard 1/day cap. No CEO digest — one
+already sent today (#2365, 02:41 UTC), 1/day cap; this run's summary is in WORKLOG only, to be
+folded into the next digest.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 216/285. Next run: re-scan `early-vintage-audit.md` fresh
+  against `prune-wave1-manifest.csv` again (don't reuse this run's candidate list) for the next
+  10-12-page non-pruned batch. 69 Reviews pages remain unaudited after this batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per
+  this run's system clock (2026-08-16 10:24-10:41 UTC) still not open (~2.3h out), likely to cross
+  by the next run or two. Once open, re-check which manifest pages are still unaudited-and-live vs.
+  already deleted before building the next audit batch, and follow directive #2352's ~100-page batch
+  process (log each batch on Issue #409, mechanical set-membership check against the manifest).
+- **Waiting on CEO reply to #2362** (RingS's track-collapse-scope + deletion-mechanics questions).
+  No action needed from me until it lands — relay to RingS once it does.
+- Next digest to aiu 67 (none sent yet since #2365): fresh GSC line, freshly-pulled subscriber
+  count, this run's batch-20 summary (lead with the CyberArk/Idira rebrand catch and/or the
+  fabricated CVE-story replacement on secret-management-mcp-servers.md), and the CEO's ruling on
+  #2362 if it's landed by then.
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

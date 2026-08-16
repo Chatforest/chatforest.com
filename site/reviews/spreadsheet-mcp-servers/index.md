@@ -1,17 +1,17 @@
 # Spreadsheet MCP Servers — Google Sheets, Excel, Airtable, Smartsheet, and More
 
-> Spreadsheet MCP servers reviewed: Excel via haris-musa/excel-mcp-server (3,800 stars, Python, most popular, 20+ tools, no Excel needed), Google Sheets via google_workspace_mcp (2,200 stars), Airtable official, Smartsheet migrated to hosted official. Google official Workspace MCP ships but SKIPS Sheets.
+> Spreadsheet MCP servers reviewed: Excel via haris-musa/excel-mcp-server (4,100 stars, Python, most popular, 20+ tools, no Excel needed), Google Sheets via google_workspace_mcp (3,000 stars), Airtable official, Smartsheet migrated to hosted official. Google's official Workspace MCP servers now include Sheets (added after launch).
 
 
-Spreadsheets are arguably the world's most-used data tool, and connecting AI agents to them is a high-value use case — from financial modeling to data cleaning to report generation. The MCP ecosystem has responded with dozens of servers, and the picture shifted significantly in April 2026: **Google shipped official Workspace MCP servers at [Cloud Next 2026](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026) — but deliberately skipped Google Sheets**, covering only Gmail, Drive, Calendar, People, and Chat. Meanwhile, **Smartsheet deprecated its GitHub repo** in favor of a new hosted official server, and the **sbroenne Windows COM Excel server surged 77% in stars** with 113 releases. Part of our **[Business & Productivity MCP category](/categories/business-productivity/)**.
+Spreadsheets are arguably the world's most-used data tool, and connecting AI agents to them is a high-value use case — from financial modeling to data cleaning to report generation. The MCP ecosystem has responded with dozens of servers, and the picture shifted significantly through 2026: **Google shipped official Workspace MCP servers at [Cloud Next 2026](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026)**, initially covering Gmail, Drive, Calendar, People, and Chat. *Correction (2026-08-16): Google has since added Google Sheets (plus Docs and Slides) to the official Workspace MCP lineup — as of this audit, [Google's own configuration guide](https://developers.google.com/workspace/guides/configure-mcp-servers) (last updated 2026-08-12) lists 8 services including a 6-tool Sheets MCP server. Earlier versions of this page said Google "deliberately skipped" Sheets; that was accurate when written but is no longer current.* Meanwhile, **Smartsheet deprecated its GitHub repo** in favor of a new hosted official server, and the **sbroenne Windows COM Excel server** has grown to 532 stars with 142 releases. Part of our **[Business & Productivity MCP category](/categories/business-productivity/)**.
 
-The landscape splits four ways: **Excel** has the most popular single server (3,800 stars), **Google Sheets** has the most options (10+ repos but still no official), **Airtable** bridges spreadsheet and database with both official and community servers, and **Smartsheet** migrated to a [hosted official MCP server](https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server). A new entrant — **[Aanerud/MCP-Microsoft-Office](https://github.com/Aanerud/MCP-Microsoft-Office)** (46 stars) — brings 30 Excel-specific tools via Microsoft Graph API, the deepest cloud Excel integration available.
+The landscape splits four ways: **Excel** has the most popular single server (4,100 stars), **Google Sheets** has the most options (10+ community repos, plus a new official one), **Airtable** bridges spreadsheet and database with both official and community servers, and **Smartsheet** migrated to a [hosted official MCP server](https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server). A new entrant — **[Aanerud/MCP-Microsoft-Office](https://github.com/Aanerud/MCP-Microsoft-Office)** (54 stars) — brings 30 Excel-specific tools via Microsoft Graph API, the deepest cloud Excel integration available.
 
 ## Excel — Python File Server (Most Popular)
 
 | Detail | Info |
 |--------|------|
-| [haris-musa/excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | 3,800 stars |
+| [haris-musa/excel-mcp-server](https://github.com/haris-musa/excel-mcp-server) | 4,100 stars |
 | Language | Python |
 | License | MIT |
 | Tools | 20+ |
@@ -27,7 +27,7 @@ The most popular spreadsheet MCP server of any kind. It manipulates Excel files 
 
 **Multiple transports.** Supports stdio and streamable HTTP transport modes, making it flexible for desktop apps, web services, and remote deployments. (SSE transport deprecated as of v0.1.8, April 2026.)
 
-**High adoption.** At 3,800 stars, this is by far the most battle-tested spreadsheet MCP server. The large user base means bugs get found and fixed quickly.
+**High adoption.** At 4,100 stars, this is by far the most battle-tested spreadsheet MCP server. The large user base means bugs get found and fixed quickly.
 
 ### What Doesn't Work Well
 
@@ -41,7 +41,7 @@ The most popular spreadsheet MCP server of any kind. It manipulates Excel files 
 
 | Detail | Info |
 |--------|------|
-| [negokaz/excel-mcp-server](https://github.com/negokaz/excel-mcp-server) | 938 stars |
+| [negokaz/excel-mcp-server](https://github.com/negokaz/excel-mcp-server) | 1,000 stars |
 | Language | Go |
 | License | MIT |
 | Tools | 7 |
@@ -61,19 +61,19 @@ A lighter-weight alternative written in Go.
 
 ### What Doesn't Work Well
 
-**Limited tool count.** Only 7 tools — no charts, pivot tables, data validation, or conditional formatting. Fine for simple read/write tasks, but the Python server (3,800 stars) is more capable for complex work.
+**Limited tool count.** Only 7 tools — no charts, pivot tables, data validation, or conditional formatting. Fine for simple read/write tasks, but the Python server (4,100 stars) is more capable for complex work.
 
 ## Excel — Windows COM Automation
 
 | Detail | Info |
 |--------|------|
-| [sbroenne/mcp-server-excel](https://github.com/sbroenne/mcp-server-excel) | 143 stars |
+| [sbroenne/mcp-server-excel](https://github.com/sbroenne/mcp-server-excel) | 532 stars |
 | Language | C# |
 | License | MIT |
-| Tools | 25 (230 operations across 16 categories) |
-| Releases | 113 (v1.8.54, April 28, 2026) |
+| Tools | 31 (326 operations) |
+| Releases | 142 (v1.10.7, August 15, 2026) |
 
-A Windows-only MCP server that controls a live Excel instance through the COM API. **The most actively developed spreadsheet MCP server** — 383 commits, 113 releases, and stars nearly doubled from 81 to 143 (+77%) since our last review.
+A Windows-only MCP server that controls a live Excel instance through the COM API. **The most actively developed spreadsheet MCP server** — 504 commits, 142 releases, and stars up to 532, from 143 at our April 2026 review and 81 before that. *Correction (2026-08-16): tool/operation counts, release count, and star count updated from live GitHub data — this server has kept expanding faster than our refresh cadence.*
 
 ### What Works Well
 
@@ -95,15 +95,15 @@ A Windows-only MCP server that controls a live Excel instance through the COM AP
 
 Two new options bring cloud-hosted Excel (OneDrive/SharePoint) to MCP without requiring a local Excel installation:
 
-- **[Aanerud/MCP-Microsoft-Office](https://github.com/Aanerud/MCP-Microsoft-Office)** (46 stars, TypeScript) — **30 Excel-specific tools** out of 117 total across 12 M365 modules. Session management (persistent or temporary), worksheet CRUD, range read/write with formulas, table management (create, sort, filter, add/delete rows/columns), call 300+ Excel functions (SUM, VLOOKUP, PMT, etc.), formatting (font, fill, borders, number formats), and formula recalculation. Works directly with OneDrive/SharePoint files via Graph API — no downloads needed. AES-256 encrypted token storage, PKCE auth.
+- **[Aanerud/MCP-Microsoft-Office](https://github.com/Aanerud/MCP-Microsoft-Office)** (54 stars, TypeScript) — **30 Excel-specific tools** out of 117 total across 12 M365 modules. Session management (persistent or temporary), worksheet CRUD, range read/write with formulas, table management (create, sort, filter, add/delete rows/columns), call 300+ Excel functions (SUM, VLOOKUP, PMT, etc.), formatting (font, fill, borders, number formats), and formula recalculation. Works directly with OneDrive/SharePoint files via Graph API — no downloads needed. AES-256 encrypted token storage, PKCE auth.
 - **[Arcade.dev Office 365 MCP servers](https://www.arcade.dev/blog/microsoft-office-365-mcp-servers-launch)** (March 2026) — Third-party production-grade Excel server with workbook creation, paginated reads for large sheets, cell/range updates, formula support, worksheet management, and etag-based conflict detection for concurrent edits. Part of a 5-server suite (Word, Excel, PowerPoint, OneDrive, SharePoint).
 
 ## Other Excel Options
 
-- **[yzfly/mcp-excel-server](https://github.com/yzfly/mcp-excel-server)** (~84 stars, Python, MIT) — Natural language interaction with Excel files including visualization and analysis using pandas/matplotlib.
-- **[Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server)** — Microsoft 365 integration via Graph API, includes Excel as one of several services.
-- **[OfficeMCP/ExcelMCP](https://github.com/OfficeMCP/ExcelMCP)** — Another Windows COM-based server for controlling Excel.
-- **[guillehr2/Excel-MCP-Server-Master](https://github.com/guillehr2/Excel-MCP-Server-Master)** (~25 stars, JavaScript/Python) — No Excel needed, supports import/export to CSV, JSON, SQL, PDF.
+- **[yzfly/mcp-excel-server](https://github.com/yzfly/mcp-excel-server)** (95 stars, Python, MIT) — Natural language interaction with Excel files including visualization and analysis using pandas/matplotlib.
+- **[Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server)** (913 stars) — Microsoft 365 integration via Graph API, includes Excel as one of several services.
+- **[OfficeMCP/ExcelMCP](https://github.com/OfficeMCP/ExcelMCP)** (4 stars) — Windows-only server that automates a live Excel application (Launch/Visible/Quit-style controls); README does not name COM explicitly but the live-application control it describes is COM automation under the hood.
+- **[guillehr2/Excel-MCP-Server-Master](https://github.com/guillehr2/Excel-MCP-Server-Master)** (33 stars, JavaScript/Python) — No Excel needed, supports import/export to CSV, JSON, SQL, PDF.
 
 **Notable absence:** Microsoft's [official MCP catalog](https://github.com/microsoft/mcp) still includes Azure, Fabric, DevOps, and many Microsoft 365 services — but no dedicated Excel MCP server. The community has stepped up with Graph API options (Aanerud, Arcade.dev), but official Microsoft Excel MCP support remains missing.
 
@@ -111,11 +111,11 @@ Two new options bring cloud-hosted Excel (OneDrive/SharePoint) to MCP without re
 
 | Detail | Info |
 |--------|------|
-| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 2,200 stars |
+| [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | 3,000 stars |
 | Language | Python |
 | License | MIT |
 | Tools | 12 Google services (Sheets, Docs, Drive, Gmail, Calendar, Slides, Forms, Chat, Apps Script, Tasks, Contacts, Custom Search) |
-| Commits | 2,054 |
+| Commits | 2,680 |
 
 The most popular way to access Google Sheets via MCP is through this comprehensive Google Workspace server. Now covering 12 services with .dxt one-click installation for Claude Desktop.
 
@@ -139,7 +139,7 @@ The most popular way to access Google Sheets via MCP is through this comprehensi
 
 | Detail | Info |
 |--------|------|
-| [xing5/mcp-google-sheets](https://github.com/xing5/mcp-google-sheets) | 829 stars |
+| [xing5/mcp-google-sheets](https://github.com/xing5/mcp-google-sheets) | 981 stars |
 | Language | Python |
 | License | MIT |
 | Tools | 19 |
@@ -164,21 +164,21 @@ The most popular dedicated Google Sheets MCP server.
 
 | Detail | Info |
 |--------|------|
-| [freema/mcp-gsheets](https://github.com/freema/mcp-gsheets) | 61 stars |
+| [freema/mcp-gsheets](https://github.com/freema/mcp-gsheets) | 92 stars |
 | Language | TypeScript |
 | License | MIT |
-| Tools | 40+ |
+| Tools | 44 |
 
-Despite lower star count, this is the most feature-complete dedicated Google Sheets server. **40+ tools** across reading (4), writing (8+), sheet management (6), formatting (6), charts (3), and snapshot/read operations (7+) — covering batch operations, cell formatting, borders, merge/unmerge cells, conditional formatting, chart CRUD, sheet duplication, date/link insertion, and copying. If you need deep Sheets-specific functionality, this is the one to look at — the trade-off is a smaller community.
+Despite lower star count, this is the most feature-complete dedicated Google Sheets server. **44 tools** across reading (4), writing (9), sheet management (8), formatting (5), native tables (4), charts (3), and read/snapshot operations (11) — covering batch operations, cell formatting, borders, merge/unmerge cells, conditional formatting, chart CRUD, sheet duplication, date/link insertion, and copying. If you need deep Sheets-specific functionality, this is the one to look at — the trade-off is a smaller community.
 
 ## Other Google Sheets Options
 
-- **[mkummer225/google-sheets-mcp](https://github.com/mkummer225/google-sheets-mcp)** (~123 stars, JavaScript, MIT) — 14-15 tools for read/write cells, rows, columns; create sheets and spreadsheets.
+- **[mkummer225/google-sheets-mcp](https://github.com/mkummer225/google-sheets-mcp)** (137 stars, JavaScript, MIT) — 14-15 tools for read/write cells, rows, columns; create sheets and spreadsheets.
 - **[shionhonda/mcp-gsheet](https://github.com/shionhonda/mcp-gsheet)** — Lightweight, minimal (3 tools: list, read, write). Good for simple use cases.
 - **[distrihub/mcp-google-workspace](https://github.com/distrihub/mcp-google-workspace)** — A Rust-based Google Drive and Sheets MCP server, notable for using Rust in a space dominated by Python and TypeScript.
 - **[a-bonus/google-docs-mcp](https://github.com/a-bonus/google-docs-mcp)** — Google Docs, Sheets, and Drive access with direct formatting and editing capabilities.
 
-**Google official Workspace MCP — Sheets skipped.** At [Cloud Next 2026](https://developers.google.com/workspace/guides/configure-mcp-servers) (April 2026), Google launched official Workspace MCP servers in Developer Preview covering Gmail (10 tools), Drive (7 tools), Calendar (8 tools), People (3 tools), and Chat (2 tools) — 30 tools total. **Google Sheets was deliberately not included** in this initial preview. All Google Sheets MCP servers remain community-built, making this the most prominent gap in Google's official MCP coverage.
+**Google official Workspace MCP — Sheets added since launch.** At Cloud Next 2026 (April 2026), Google launched official Workspace MCP servers in Developer Preview covering Gmail, Drive, Calendar, People, and Chat — Sheets was not part of that initial preview. *Correction (2026-08-16): that gap has since closed.* [Google's configuration guide](https://developers.google.com/workspace/guides/configure-mcp-servers) (last updated 2026-08-12) now lists 8 official Workspace MCP services — Gmail (10 tools), Drive (8 tools), Docs (2 tools), **Sheets (6 tools)**, Slides (2 tools), Calendar (9 tools), Chat (4 tools), and People (3 tools), 44 tools total. Sheets now has an official, Google-built MCP server alongside the community options below — though at 6 tools it's far narrower than the dedicated community servers (19-44 tools).
 
 ## Airtable — Official + Community
 
@@ -190,11 +190,11 @@ Airtable released an [official MCP server](https://support.airtable.com/docs/usi
 
 | Detail | Info |
 |--------|------|
-| [domdomegg/airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | 440 stars |
+| [domdomegg/airtable-mcp-server](https://github.com/domdomegg/airtable-mcp-server) | 455 stars |
 | Language | TypeScript |
 | License | MIT |
 | Tools | 17 |
-| Version | v1.13.0 (March 2026) |
+| Version | v1.14.0 (July 2026) |
 
 The leading open-source Airtable MCP server.
 
@@ -214,8 +214,8 @@ The leading open-source Airtable MCP server.
 
 ### Other Airtable Options
 
-- **[rashidazarang/airtable-mcp](https://github.com/rashidazarang/airtable-mcp)** (78 stars, TypeScript) — Most tools of any Airtable server (42 tools), including webhooks, batch operations, PII masking, and AI prompt templates.
-- **[felores/airtable-mcp](https://github.com/felores/airtable-mcp)** (72 stars, JavaScript, MIT) — 12 tools with staged table building and rich field type support.
+- **[rashidazarang/airtable-mcp](https://github.com/rashidazarang/airtable-mcp)** (87 stars, TypeScript) — Most tools of any Airtable server (42 tools), including webhooks, batch operations, PII masking, and AI prompt templates.
+- **[felores/airtable-mcp](https://github.com/felores/airtable-mcp)** (75 stars, JavaScript, MIT) — 12 tools with staged table building and rich field type support.
 
 ## Smartsheet — Official MCP Server (Migrated)
 
@@ -225,42 +225,43 @@ The leading open-source Airtable MCP server.
 | [smartsheet-platform/smar-mcp](https://github.com/smartsheet-platform/smar-mcp) | DEPRECATED (26 stars) |
 | Requires | Business, Enterprise, or Advanced Work Management plan |
 
-**Smartsheet deprecated its GitHub repo** and migrated to a new [hosted official MCP server](https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server). The new server adds attachment management (add, access, delete attachments on sheets, rows, and discussions) alongside the existing tools for sheet querying, row CRUD, cell history, discussions, and workspaces. Works with Claude, Cursor, and custom MCP clients. The trade-off: requires a paid Smartsheet plan (Business or higher), whereas the old GitHub repo was open source.
+**Smartsheet deprecated its GitHub repo** — the repo's own README now states "This project has been deprecated. Please use the official Smartsheet MCP server instead" (confirmed live, 26 stars) — and migrated to a new [hosted official MCP server](https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server). Per the [full tool reference](https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server-tools), the new server includes attachment management (`list_attachments`, `get_attachment`, `attach_url`, `delete_attachment`) alongside tools for sheet querying, row CRUD, cell history (`get_cell_history`), discussions/comments, and workspaces. Works with Claude, Cursor, and custom MCP clients. The trade-off: requires a paid Smartsheet plan (Business or higher), whereas the old GitHub repo was open source.
 
 ## What About Notion?
 
-Notion's database features make it a spreadsheet alternative for many teams. The [official Notion MCP server](https://github.com/makenotion/notion-mcp-server) (4,300 stars) provides access to Notion databases, pages, and blocks. If your "spreadsheet" workflow is actually structured data in Notion, the official server is well-maintained and one of the most popular MCP servers of any kind.
+Notion's database features make it a spreadsheet alternative for many teams. The [official Notion MCP server](https://github.com/makenotion/notion-mcp-server) (4,600 stars) provides access to Notion databases, pages, and blocks. If your "spreadsheet" workflow is actually structured data in Notion, the official server is well-maintained and one of the most popular MCP servers of any kind.
 
 ## The Big Picture
 
 | Platform | Top Server | Stars | Tools | Official? |
 |----------|-----------|-------|-------|-----------|
-| Excel (Python) | haris-musa/excel-mcp-server | 3,800 | 20+ | No |
-| Excel (Go) | negokaz/excel-mcp-server | 938 | 7 | No |
-| Excel (Windows COM) | sbroenne/mcp-server-excel | 143 | 25 / 230 ops | No |
-| Excel (M365 Graph) | Aanerud/MCP-Microsoft-Office | 46 | 30 Excel tools | No |
-| Google Sheets (workspace) | taylorwilsdon/google_workspace_mcp | 2,200 | 12 services | No |
-| Google Sheets (dedicated) | xing5/mcp-google-sheets | 829 | 19 | No |
-| Google Sheets (feature-rich) | freema/mcp-gsheets | 61 | 40+ | No |
-| Google Workspace (official) | developers.google.com | N/A | 30 (no Sheets) | Yes |
+| Excel (Python) | haris-musa/excel-mcp-server | 4,100 | 20+ | No |
+| Excel (Go) | negokaz/excel-mcp-server | 1,000 | 7 | No |
+| Excel (Windows COM) | sbroenne/mcp-server-excel | 532 | 31 / 326 ops | No |
+| Excel (M365 Graph) | Aanerud/MCP-Microsoft-Office | 54 | 30 Excel tools | No |
+| Google Sheets (workspace) | taylorwilsdon/google_workspace_mcp | 3,000 | 12 services | No |
+| Google Sheets (dedicated) | xing5/mcp-google-sheets | 981 | 19 | No |
+| Google Sheets (feature-rich) | freema/mcp-gsheets | 92 | 44 | No |
+| Google Sheets (official) | developers.google.com | N/A | 6 | Yes |
+| Google Workspace (official) | developers.google.com | N/A | 44 (8 services) | Yes |
 | Airtable | Official (support.airtable.com) | N/A | Official | Yes |
-| Airtable (community) | domdomegg/airtable-mcp-server | 440 | 17 | No |
+| Airtable (community) | domdomegg/airtable-mcp-server | 455 | 17 | No |
 | Smartsheet | developers.smartsheet.com (hosted) | N/A | Official | Yes |
-| Notion | makenotion/notion-mcp-server | 4,300 | Official | Yes |
+| Notion | makenotion/notion-mcp-server | 4,600 | Official | Yes |
 
 ## Who Should Use These
 
-**Excel users** should start with haris-musa's Python server (3,800 stars, 20+ tools) — it's by far the most popular and capable cross-platform option. If you need deep Windows automation (Power Query, VBA, DAX), sbroenne's COM server (143 stars, 113 releases) is unmatched but Windows-only. For cloud Excel on OneDrive/SharePoint, Aanerud's MCP-Microsoft-Office (30 Excel tools via Graph API) is the best option.
+**Excel users** should start with haris-musa's Python server (4,100 stars, 20+ tools) — it's by far the most popular and capable cross-platform option. If you need deep Windows automation (Power Query, VBA, DAX), sbroenne's COM server (532 stars, 142 releases) is unmatched but Windows-only. For cloud Excel on OneDrive/SharePoint, Aanerud's MCP-Microsoft-Office (30 Excel tools via Graph API) is the best option.
 
-**Google Sheets users** have the best selection — the workspace server (2,200 stars) is mature and covers 12 Google services with one-click install. For Sheets-only depth, xing5's dedicated server (829 stars, 19 tools) or freema's feature-rich server (40+ tools) are better choices. Note that Google's new official Workspace MCP (April 2026) covers Gmail, Drive, Calendar, People, and Chat — but not Sheets.
+**Google Sheets users** have the best selection — the workspace server (3,000 stars) is mature and covers 12 Google services with one-click install. For Sheets-only depth, xing5's dedicated server (981 stars, 19 tools) or freema's feature-rich server (44 tools) are better choices. Google's official Workspace MCP, launched at Cloud Next 2026 without Sheets, now includes a 6-tool Sheets server alongside Gmail, Drive, Docs, Slides, Calendar, People, and Chat (confirmed via [Google's configuration guide](https://developers.google.com/workspace/guides/configure-mcp-servers), last updated 2026-08-12) — but the community servers above still offer far deeper Sheets-specific functionality.
 
-**Airtable users** should try the official Airtable MCP server first. Fall back to domdomegg's community server (440 stars, 17 tools) if you need open source or HTTP transport.
+**Airtable users** should try the official Airtable MCP server first. Fall back to domdomegg's community server (455 stars, 17 tools) if you need open source or HTTP transport.
 
 **Smartsheet users** should use the new [hosted official server](https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server) — the old GitHub repo is deprecated. Requires Business plan or higher.
 
-**The gap narrows but persists.** Google shipped official Workspace MCP servers in April 2026 but skipped Sheets — the most requested Workspace service for AI integration. Microsoft's MCP catalog still has no dedicated Excel server. The community continues to fill the gap impressively — the 3,800-star Excel server proves demand is massive, and Graph API options (Aanerud, Arcade.dev) are closing the cloud Excel gap from the community side.
+**The gap narrows.** Google shipped official Workspace MCP servers in April 2026 without Sheets, then added a Sheets server to that same official lineup by August 2026 — closing what was, at the time this piece was first written, the most-cited gap in Google's MCP coverage. Microsoft's MCP catalog still has no dedicated Excel server, official or otherwise. The community continues to fill that remaining gap impressively — the 4,100-star Excel server proves demand is massive, and Graph API options (Aanerud, Arcade.dev) are closing the cloud Excel gap from the community side.
 
 ## Rating: 3.5 / 5
 
-The spreadsheet MCP ecosystem is **broad and surprisingly capable**. The Excel Python server's 3,800 stars make it one of the most popular MCP servers period, and official vendor servers exist for Airtable, Smartsheet, and now Google Workspace (though Sheets was excluded). The sbroenne COM server's 77% star surge and 113 releases show the Windows Excel automation niche is thriving. But the two biggest platforms — Google Sheets and Microsoft Excel — still lack official dedicated MCP servers. Google shipping Workspace MCP but skipping Sheets is the most telling gap in the entire MCP ecosystem. Rating holds at 3.5/5 — the community options are excellent, but official vendor support for the two dominant spreadsheet platforms remains absent.
+The spreadsheet MCP ecosystem is **broad and surprisingly capable**. The Excel Python server's 4,100 stars make it one of the most popular MCP servers period, and official vendor servers now exist for Airtable, Smartsheet, and Google Workspace — including, as of this audit, Google Sheets itself. The sbroenne COM server has grown to 532 stars and 142 releases, showing the Windows Excel automation niche is thriving. But Microsoft Excel is now the one dominant spreadsheet platform with no official, vendor-built MCP server — the community fills that gap, but nobody at Microsoft has shipped one. Rating holds at 3.5/5: the community options are excellent and the Google Sheets gap has closed, but the remaining Excel gap, plus the general fragmentation across a dozen-plus competing community servers per platform, keeps this from a higher score.
 
