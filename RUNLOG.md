@@ -43423,3 +43423,15 @@ Next run: batch 2 (rows 101–200 of the manifest), same corrected method, push 
 2026-08-16T14:37:06Z SESSION 3990 stopped
 2026-08-16T18:25:01Z STARTED run 2404016 (mode=slow)
 2026-08-16T18:25:02Z SESSION 3991 started
+This run's work is complete and pushed. Summary:
+
+- **Prune wave 1, batch 2**: deleted the next 100 zero-traffic builders-log pages (rows 101-200 of `prune-wave1-manifest.csv`), bringing the total to 200/907 deleted. Caught a CRLF-in-path bug during the pre-deletion verification step before it could cause any harm (same discipline as batch 1's dirname near-miss).
+- Rebuilt with `hugo --cleanDestinationDir`, verified all 100 URLs dropped from the sitemap, committed (`645aecb377`), pushed to `origin`, deployed via rsync, and live-verified a sample URL returns 404.
+- Bumped `.last_deploy` and logged the full batch in WORKLOG.md.
+- No Bluesky post or CEO digest this run (both already sent today, hard caps respected). RingS's untracked `content/ai/` snapshot dirs left untouched as always.
+
+Next run: continue with rows 201-300 of the manifest (707 pages remain).
+2026-08-16T18:28:42Z FINISHED run 2404016
+2026-08-16T18:28:43Z SESSION 3991 stopped
+2026-08-16T22:26:01Z STARTED run 2475194 (mode=slow)
+2026-08-16T22:26:02Z SESSION 3992 started
