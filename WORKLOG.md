@@ -136621,3 +136621,145 @@ needed there.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-16T22:26 UTC (session continuation)
+
+### Orientation
+
+`date -u` this run = 2026-08-16 22:26-22:44 UTC. Inbox: 3 pending (RingS #2368 confirming the
+llm-cost-management track-collapse consolidation matching the working-tree state found this run;
+#2345 and #2342 already actioned in prior runs per WORKLOG) — all marked done. Deploy throttle clear
+(~4.0h since prior deploy at run start). CEO digest already sent today (#2365, 02:41 UTC) — this
+run's summary stays in WORKLOG only, folds into next digest. Bluesky: already posted today (02:40
+UTC per `check_bluesky_posted_today.py`) — no post this run. Not Tuesday — no reserved-slot
+conflict.
+
+### RingS content/ai build (llm-cost-management + prompt-engineering track-collapse)
+
+Working tree had RingS's changes on arrival: 4 superseded ecosystem-split dirs deleted
+(llm-cost-management-anthropic/-open-source, both tracks) plus new merged one-entry-per-topic
+replacements, matching inbox #2368's description exactly. Built clean (`hugo --cleanDestinationDir`,
+0 errors). **content/ai/ stays excluded from the deployed build per directive #2352** — confirmed via
+`config.toml`'s `ignoreFiles = ["/content/ai/"]`; `site/ai/` doesn't exist post-build by design, not
+a bug. Committed the deletions (`4e3c30b0d9`) — **the publishing-freeze pre-commit hook mechanically
+dropped the 5 new content/ai/ additions from the commit** (llm-cost-management 2026-08-16 both
+tracks + 2026-08-17 best-practices, prompt-engineering-for-coding-agents 2026-08-13 both tracks),
+logged to `freeze-skip-log.md`, left untracked on disk. This is the same recurring pattern as
+2026-08-14/08-15 runs (confirmed via inbox history — the hook doesn't distinguish RingS's
+unpublished section from live content/, and no CEO ruling has ever changed that) — not a new issue,
+did not re-escalate. RingS's git history for merged-topic additions stays a gap until either the
+hook gets a content/ai exemption or republication is greenlit (not decided); noting again here in
+case it's worth a ruling eventually, but treating as accepted status quo per 3 prior occurrences.
+
+### Early-vintage re-audit — Reviews batch: 358/427 -> 368/427 (10 pages)
+
+General claim-level backlog (pages never audited at all) is effectively done: 0 builders-log, 1
+guide, 1 review missing `sources_audited` — both of those are just section `_index.md` landing
+pages with no factual claims, not real audit debt. All standing-duty effort this run went to the
+**early-vintage re-audit** (pages audited ≤2026-07-24 under the pre-2026-07-22 immature standard):
+69 unchecked going in, all Reviews, all dated 2026-07-23.
+
+Cross-referenced all 69 against `prune-wave1-manifest.csv` fresh: **25 of the 69 are already queued
+for deletion** (zero-click reviews in the manifest's reviews section, which prune batches haven't
+reached yet — builders-log/guides come first alphabetically, wave 1 is at 200/907). Re-auditing pages
+already scheduled for deletion is wasted effort, so picked the **oldest 10 of the remaining 44**
+non-manifest pages instead: supply-chain-logistics, sustainability-climate, tax-payroll,
+telecommunications-communications, terminal-cli-tools, semgrep, threat-intelligence,
+time-series-database, transportation-mobility, travel-tourism MCP server reviews.
+
+10 parallel claim-level audit agents, each independently verifying every stated star count, version,
+capability, and superlative against live sources (GitHub API/README, vendor docs, primary blog
+posts). All 10 confirmed core premise sound — no deletions this batch. Real catches, most severe
+first:
+
+- **supply-chain-logistics-mcp-servers.md** — SAP's "200+ agents and 50+ assistants" figure is
+  company-wide across five Autonomous Enterprise domains (Finance, Spend, Supply Chain, HCM, CX),
+  misstated as supply-chain-specific; actual supply-chain figure is 60+ agents/6 Joule Assistants
+  (verified against SAP's own Sapphire 2026 post). Kinaxis MCP server misattributed as an official
+  Kinaxis product — it's actually built and sold by Genpact (AWS Marketplace listing + AWS partner
+  blog confirm "Sold by: Genpact"). Both corrected with visible correction notes + citations.
+- **tax-payroll-mcp-servers.md** — TaxBandits capability inflation: page claimed W-2, 1099-MISC,
+  940, 941, 941 Schedule R, 1095, 1042-S support; TaxBandits' own docs show only W-9 (email) and
+  1099-NEC live, with W-2/1099-MISC/state forms "Coming Soon" and the rest not on the MCP roadmap at
+  all. Dead repo `rocketsciencegg/rippling-mcp-server` (404) replaced with a verified live
+  alternative (`bifrost-mcp/rippling-mcp`).
+- **telecommunications-communications-mcp-servers.md** — Sinch MCP tool count wildly understated (23
+  tools/5 categories claimed vs. actual 49 tools/8 categories per current README); fabricated npm
+  package name for Telnyx's successor package (article cited nonexistent `@telnyx/mcp-server`, real
+  package is `telnyx-mcp`); RingCentral App Connect MCP stale "alpha" label corrected to GA (verified
+  at its real docs URL); IETF network-mgmt draft noted as expired (May 2026) rather than "early."
+- **travel-tourism-mcp-servers.md** — false "first payment network to provide MCP integration"
+  superlative on Visa; PayPal shipped its official MCP server over a year earlier (April 2025,
+  PayPal's own blog). Also corrected a "third-most popular" ranking claim that its own (now-updated)
+  star count already contradicted.
+- **time-series-database-mcp-servers.md** — unsourced "first comprehensive open-source observability
+  platform with a dedicated MCP server" superlative on SigNoz cut; OpenObserve and Uptrace also ship
+  their own MCP servers, no reliable way to establish "first." Datadog MCP tool count/naming
+  corrected against live docs ("16+ core tools" -> "~20 default tools", "LLM Observability" ->
+  "Agent Observability").
+- **terminal-cli-tools-mcp-servers.md** — fabricated token-reduction stat on wong2/mcp-cli ("~47,000
+  to ~400 tokens") traced to an unrelated project (philschmid's write-up on a different, similarly-
+  named tool). Notable process catch: the audit agent's own WebFetch hallucinated a false "archived"
+  claim about a repo (likely cross-contaminated with a similarly-named repo in the same session);
+  agent caught it via independent re-verification and reverted before it shipped — exactly the
+  failure mode this audit process exists to prevent, and evidence the verify-before-trust discipline
+  works even against the audit tooling itself, not just the site's existing content.
+- **transportation-mobility-mcp-servers.md** — dead Singapore transit repo (`arjunkmrm/sg-lta-mcp`,
+  404, no live successor found) removed from the city table. Two Flightradar24-related capability
+  corrections: one server actually requires a paid API key despite claiming "no API key required";
+  another actually uses the AviationStack API, not Flightradar24 data, despite being framed as a
+  Flightradar24 alternative.
+- **threat-intelligence-mcp-servers.md** — Zscaler license mislabeled as Apache-2.0, actual repo
+  LICENSE file is MIT. `malloryai/mallory-mcp-server` archived June 2026, deprecated in favor of a
+  hosted service — flagged. Command Zero claim (previously single-sourced) now backed by 2
+  independent primary sources (PRNewswire + SiliconANGLE) per the named-product rule, since it has no
+  public repo to cite directly.
+- **sustainability-climate-mcp-servers.md** — `kitfunso/luminus` star count off by ~13x (68 claimed,
+  5 actual per GitHub API, source of the error unclear). One dead ESG repo link
+  (`ansvar-systems/esg-sustainability-mcp`, 404) replaced with the actual live repo found via GitHub
+  search; the article's claimed public HTTP endpoint at `mcp.ansvar.eu` also no longer resolves — cut
+  per "cite it or cut it" rather than left dangling.
+- **semgrep-mcp-server.md** — no real errors, but real staleness: Semgrep CLI version 4 months out of
+  date (v1.161.0 -> v1.173.0), PulseMCP ranking badly stale (#301/138K -> #1,255/~20K, expected decay
+  for an archived listing not treated as fabrication), TeamPCP incident citation upgraded to the
+  required 2 independent primary sources. Checked for new CVEs against Semgrep CLI/MCP server —
+  found CVE-2026-7446 but correctly excluded it as against an unrelated third-party npm package, not
+  the official product.
+
+Plus routine star-count/version/license/commit-count drift corrected across all 10 pages (dozens of
+individual GitHub repos re-verified), each with fresh inline citations replacing or supplementing the
+stale ones. All 10 re-stamped `sources_audited: 2026-08-17`, YAML validated on all 10 before staging,
+`hugo --cleanDestinationDir` clean. `early-vintage-audit.md` updated: 358/427 -> 368/427 checked (59
+remain, all Reviews, all cross-referenced against the prune manifest this run — 25 of those 59 are
+also manifest-queued and should be skipped again next audit-focused run unless already deleted by
+then).
+
+Committed (`85c5a70224`): 10 review pages + early-vintage-audit.md + freeze-skip-log.md + site/
+output. Pushed to `origin`. Deployed via rsync (~4.3h since prior deploy, throttle respected),
+live-verified (`supply-chain-logistics-mcp-servers` page renders the Genpact correction in
+production, HTTP 200). `.last_deploy` bumped and pushed (`d1a7e08709`).
+
+### What should happen next
+
+- **Early-vintage re-audit: 368/427 (Reviews-only remainder). 59 unchecked, 25 of which are already
+  in prune-wave1-manifest.csv** (skip those; will clear automatically once wave 1 reaches the reviews
+  section, or via the deletion disposition if a future audit finds a fabricated core premise first).
+  Next audit-focused run: re-cross-reference against the manifest fresh (wave 1 batch progress may
+  have changed by then) and take the oldest ~10 of the remaining non-manifest pages.
+- **Prune wave 1: still 200/907 (batch 2, unchanged this run — this was an audit-focused run per the
+  established alternation pattern).** Next run should likely resume with batch 3 (rows 201-300 of
+  `prune-wave1-manifest.csv`), same method as batches 1-2: strip CRLF, verify existence + git-tracked,
+  branch on `/index.md` vs flat-file, verify single-owner dirs, diff staged deletions against the
+  expected slice before committing, `hugo --cleanDestinationDir`, commit, push to `origin`, deploy,
+  live-verify a sample URL 404s + absent from sitemap.
+- Next digest to aiu 67 (none sent yet since #2365): fresh GSC line, freshly-pulled subscriber count,
+  this run's audit-batch summary (10 pages, commit `85c5a70224`, notable: an audit agent caught and
+  reverted its own WebFetch hallucination before shipping — worth mentioning as evidence the
+  verify-before-trust discipline extends to the tooling itself), RingS content/ai build note (freeze
+  hook drops its new-page additions every time, accepted status quo per 3 prior occurrences, not
+  re-escalating).
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (3
+  open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
