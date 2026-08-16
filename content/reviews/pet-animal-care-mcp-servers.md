@@ -3,10 +3,10 @@ title: "Pet & Animal Care MCP Servers — Virtual Pets, Wildlife ID, Birding, Li
 date: 2026-03-16T22:00:00+09:00
 description: "Pet and animal care MCP servers let AI agents interact with virtual pets, identify wildlife species, access bird observation data, manage livestock genetics, and explore pet"
 og_description: "Pet & animal care MCP servers: inaturalist-mcp (9 tools, iNaturalist 300M+ biodiversity observations), rescuedogs-mcp-server (8 tools, European rescue adoption), BirdNET-Pi MCP (acoustic bird detection, 6,000+ species), mcpet (virtual pets), ebird-mcp-server (bird observations, 2B+), nsip-api-client (sheep genetics, 15 tools). 15+ servers reviewed. Rating: 3/5."
-sources_audited: 2026-07-23
+sources_audited: 2026-08-16
 content_type: "Review"
-card_description: "Pet and animal care MCP servers for virtual pets, wildlife identification, birding, livestock genetics, and pet adoption through AI assistants. This category spans a wide range — from playful virtual pet simulations to serious wildlife conservation and livestock breeding tools. It does *not* cover medical diagnostics (see [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/)) or general nutrition tracking (see [Health & Fitness](/reviews/health-fitness-mcp-servers/) if available). **This category is growing and diversifying** — the March–April 2026 period brought several meaningful additions. **The iNaturalist MCP server** (9 tools, no API key required) is the biggest addition, connecting AI assistants to iNaturalist's biodiversity database with 300M+ observations and species search, taxonomy, conservation status, and look-alike identification. **The rescuedogs-mcp-server** (8 tools, 70 commits) brings real pet adoption functionality at last — searching 1,500+ dogs across 12+ European/UK rescue organizations with breed, size, age, and lifestyle matching. **The BirdNET-Pi MCP ecosystem** adds acoustic bird identification — a fundamentally different approach to birding that uses sound rather than sight. The NSIP sheep genetics client remains the most sophisticated server (15 tools, 148 commits) with active development. The virtual pet subcategory (MCPet 10 stars, Chatagotchi 11 stars) is charming but recreational. **Practical pet ownership gaps are slowly filling** — rescue dog adoption is now covered, but veterinary records, vaccination tracking, GPS monitoring, and breed identification remain absent. Given that [US pet industry spending reached $158B in 2025](https://americanpetproducts.org/news/the-american-pet-products-association-appa-releases-2025-state-of-the-industry-report) per the American Pet Products Association, significant opportunities remain. The category earns 3/5 (up from 2.5) — iNaturalist biodiversity data, real rescue dog adoption, acoustic bird detection, and continued NSIP development show genuine ecosystem growth beyond novelty projects."
-last_refreshed: 2026-04-30
+card_description: "Pet and animal care MCP servers for virtual pets, wildlife identification, birding, livestock genetics, and pet adoption through AI assistants. This category spans a wide range — from playful virtual pet simulations to serious wildlife conservation and livestock breeding tools. It does *not* cover medical diagnostics (see [Healthcare & Medical](/reviews/healthcare-medical-mcp-servers/)) or general nutrition tracking (see [Health & Fitness](/reviews/health-fitness-mcp-servers/) if available). **This category is growing and diversifying** — the March–April 2026 period brought several meaningful additions. **The iNaturalist MCP server** (9 tools, no API key required) is the biggest addition, connecting AI assistants to iNaturalist's biodiversity database with 300M+ observations and species search, taxonomy, conservation status, and look-alike identification. **The rescuedogs-mcp-server** (8 tools, 86 commits) brings real pet adoption functionality at last — searching 1,500+ dogs across 12+ European/UK rescue organizations with breed, size, age, and lifestyle matching. **The BirdNET-Pi MCP ecosystem** adds acoustic bird identification — a fundamentally different approach to birding that uses sound rather than sight. The NSIP sheep genetics client remains the most sophisticated server (15 tools, 148 commits) with active development. The virtual pet subcategory (MCPet 13 stars, Chatagotchi 11 stars) is charming but recreational. **Practical pet ownership gaps are slowly filling** — rescue dog adoption is now covered, but veterinary records, vaccination tracking, GPS monitoring, and breed identification remain absent. Given that [US pet industry spending reached $158B in 2025](https://americanpetproducts.org/news/the-american-pet-products-association-appa-releases-2025-state-of-the-industry-report) per the American Pet Products Association, significant opportunities remain. The category earns 3/5 (up from 2.5) — iNaturalist biodiversity data, real rescue dog adoption, acoustic bird detection, and continued NSIP development show genuine ecosystem growth beyond novelty projects."
+last_refreshed: 2026-08-16
 category_url: "/categories/lifestyle-personal/"
 ---
 
@@ -14,7 +14,7 @@ Pet and animal care MCP servers connect AI agents to tools for virtual pet inter
 
 This review covers **pet and animal care** — virtual pets, wildlife identification, birding, livestock breeding, and pet adoption tools. For medical and health diagnostics, see our [Healthcare & Medical review](/reviews/healthcare-medical-mcp-servers/). For wearable fitness trackers, see our [Wearables & Quantified Self review](/reviews/fitness-wearables-mcp-servers/) if available.
 
-The headline findings: **This category is growing beyond its fragmented roots** — the March–April 2026 period brought several meaningful additions. **The iNaturalist MCP** (9 tools) connects AI to one of the world's largest biodiversity databases — species search, taxonomy, conservation status, no API key required. **The rescuedogs-mcp-server** (8 tools, 70 commits) finally brings real pet adoption — 1,500+ dogs from 12+ European/UK rescue organizations with lifestyle matching. **The BirdNET-Pi MCP ecosystem** adds acoustic bird detection — sound-based species ID from Raspberry Pi microphones. **The NSIP sheep genetics client remains the most sophisticated** at 15 tools and 148 commits. **Virtual pets are charming but recreational.** **Practical pet ownership gaps are narrowing** — rescue dog adoption is now covered, but veterinary records, vaccination tracking, and breed identification remain absent.
+The headline findings: **This category is growing beyond its fragmented roots** — the March–April 2026 period brought several meaningful additions. **The iNaturalist MCP** (9 tools) connects AI to one of the world's largest biodiversity databases — species search, taxonomy, conservation status, no API key required. **The rescuedogs-mcp-server** (8 tools, 86 commits) finally brings real pet adoption — 1,500+ dogs from 12+ European/UK rescue organizations with lifestyle matching. **The BirdNET-Pi MCP ecosystem** adds acoustic bird detection — sound-based species ID from Raspberry Pi microphones. **The NSIP sheep genetics client remains the most sophisticated** at 15 tools and 148 commits. **Virtual pets are charming but recreational.** **Practical pet ownership gaps are narrowing** — rescue dog adoption is now covered, but veterinary records, vaccination tracking, and breed identification remain absent.
 
 ---
 
@@ -24,7 +24,7 @@ The headline findings: **This category is growing beyond its fragmented roots** 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcpet](https://github.com/shreyaskarnik/mcpet) | 10 | TypeScript | — | 6 |
+| [mcpet](https://github.com/shreyaskarnik/mcpet) | 13 | TypeScript | MIT | 6 |
 
 **A digital Tamagotchi powered by MCP** — adopt, nurture, and play with a virtual companion:
 
@@ -58,7 +58,7 @@ Built by Stytch (the auth company) as a demo project. Shows how pet simulation c
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [inaturalist-mcp](https://github.com/cvsouth/inaturalist-mcp) | 3 | Python | MIT | 9 |
+| [inaturalist-mcp](https://github.com/cvsouth/inaturalist-mcp) | 4 | Python | MIT | 9 |
 
 **The biggest addition to this category** — connects AI assistants to iNaturalist's massive biodiversity database ([300M+ observations](https://www.inaturalist.org/blog/126478-inaturalist-at-300-million-observations) from citizen scientists worldwide):
 
@@ -86,21 +86,7 @@ iNaturalist (an independent nonprofit since 2023; previously jointly operated by
 
 Practical for naturalists, educators, and citizen scientists. Requires a Nature Vision API key.
 
-### wildlife-insights-mcp — Camera Trap Analytics & Conservation
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [wildlife-insights-mcp](https://lobehub.com/mcp/yourusername-wildlife-insights-mcp) | — | TypeScript | — | 12+ |
-
-**Comprehensive MCP server for the Wildlife Insights GraphQL API:**
-
-- **Data navigation** — getMyOrganizations, exploreMyData, getMyProjects
-- **Species identification** — getIdentifyPhotosCount, submitIdentification, bulkIdentifyImages for camera trap photos
-- **Analytics & insights** — getRanchManagementInsights, getSpeciesAnalytics, getProjectAnalytics
-- **Upload management** — createUpload, uploadImageWorkflow, completeUpload
-- **Texas ranch optimization** — specifically tuned for Texas wildlife management with native game species
-
-The most feature-rich server in this category. Requires Wildlife Insights API credentials (WI_GRAPHQL_ENDPOINT, WI_BEARER_TOKEN).
+**Correction (2026-08-16 audit):** this section previously featured a "wildlife-insights-mcp" server as "the most feature-rich server in this category," linked to `lobehub.com/mcp/yourusername-wildlife-insights-mcp`. That URL contains the literal placeholder string "yourusername" rather than a real GitHub account — a sign the listing was never a real, filled-in entry. We could not find any matching GitHub repository (a GitHub code/repo search for "wildlife-insights-mcp" returns zero results) and no independent source confirms the tool names, "Texas ranch optimization" framing, or Wildlife Insights GraphQL integration the entry described. Per this site's "cite it or cut it" standard, the entry has been removed rather than left uncited. Readers looking for camera-trap or Wildlife Insights integrations should verify any current listing directly before relying on it.
 
 ---
 
@@ -110,7 +96,7 @@ The most feature-rich server in this category. Requires Wildlife Insights API cr
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ebird-mcp-server](https://github.com/moonbirdai/ebird-mcp-server) | 6 | TypeScript | — | 5+ |
+| [ebird-mcp-server](https://github.com/moonbirdai/ebird-mcp-server) | 7 | JavaScript | MIT | 5+ |
 
 **Connects AI assistants to eBird's massive bird observation database:**
 
@@ -120,7 +106,7 @@ The most feature-rich server in this category. Requires Wildlife Insights API cr
 - **Birding hotspots** — find popular birdwatching locations by region or coordinates
 - **Taxonomy data** — access eBird's comprehensive bird taxonomy
 
-[eBird](https://ebird.org/about) (run by the Cornell Lab of Ornithology) has [over 2 billion bird observations](https://news.cornell.edu/stories/2025/08/lab-ornithology-hits-2-billion-bird-sightings-3-million-recordings) from citizen scientists worldwide. This MCP server makes that data conversationally accessible. Built by Moonbird AI, which also maintains Mixpanel and Amplitude MCP servers.
+[eBird](https://ebird.org/about) (run by the Cornell Lab of Ornithology) has [over 2 billion bird observations](https://news.cornell.edu/stories/2025/08/lab-ornithology-hits-2-billion-bird-sightings-3-million-recordings) from citizen scientists worldwide. This MCP server makes that data conversationally accessible. Built by [Moonbird AI](https://github.com/moonbirdai), whose GitHub org also lists [Mixpanel](https://github.com/moonbirdai/mixpanel-mcp-server) and [Amplitude](https://github.com/moonbirdai/amplitude-mcp-server) MCP servers.
 
 ### siansiansu/ebird-mcp-server — eBird (Python Alternative)
 
@@ -128,7 +114,7 @@ The most feature-rich server in this category. Requires Wildlife Insights API cr
 |--------|-------|----------|---------|-------|
 | [ebird-mcp-server](https://github.com/siansiansu/ebird-mcp-server) | 5 | Python | MIT | Multiple |
 
-**A Python implementation of the eBird MCP server** — provides the same core functionality (observations, hotspots, taxonomy, checklists) in Python rather than TypeScript. Includes contributor rankings and statistics. A solid alternative for Python-centric environments.
+**A Python implementation of the eBird MCP server** — provides the same core functionality (observations, hotspots, taxonomy, checklists) in Python rather than JavaScript. Includes contributor rankings and statistics. A solid alternative for Python-centric environments.
 
 ### DMontgomery40/mcp-local-server — BirdNET-Pi Acoustic Detection (NEW)
 
@@ -170,7 +156,7 @@ Complements the BirdNET-Pi server by adding BirdWeather station data alongside e
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [nsip-api-client](https://github.com/epicpast/nsip-api-client) | 1 | Python | — | 15 |
+| [nsip-api-client](https://github.com/epicpast/nsip-api-client) | 1 | Python | MIT | 15 |
 
 **The most sophisticated server in this category** — a Python client for the National Sheep Improvement Program with a full MCP server:
 
@@ -181,7 +167,7 @@ Complements the BirdNET-Pi server by adding BirdWeather station data alongside e
 - **Context management** — automatic response summarization to prevent LLM context overflow
 - **Smart caching** — intelligent caching of large datasets
 
-Automates complex breeding calculations that would otherwise require specialized spreadsheet work. Extremely niche but genuinely valuable for sheep breeders using NSIP data. With 148 commits and 2 forks, this remains the most actively developed server in the category.
+Automates complex breeding calculations that would otherwise require specialized spreadsheet work. Extremely niche but genuinely valuable for sheep breeders using NSIP data. With 148 commits and 1 fork, this remains the most actively developed server in the category.
 
 ---
 
@@ -191,7 +177,7 @@ Automates complex breeding calculations that would otherwise require specialized
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rescuedogs-mcp-server](https://github.com/ssatama/rescuedogs-mcp-server) | 0 | TypeScript | MIT | 8 |
+| [rescuedogs-mcp-server](https://github.com/ssatama/rescuedogs-mcp-server) | 1 | TypeScript | MIT | 8 |
 
 **The first real pet adoption MCP server** — searches across vetted European and UK rescue organizations with genuine adoption data:
 
@@ -203,7 +189,7 @@ Automates complex breeding calculations that would otherwise require specialized
 - **Country-specific adoption guides** — step-by-step adoption process information by country
 - **Powered by rescue-dog-aggregator** — open-source data aggregation from vetted organizations
 
-This is a significant milestone for the category — the first MCP server connected to real rescue dog data rather than demo APIs. With 70 commits, it's actively developed and fills the biggest gap identified in previous reviews. Currently focused on European/UK organizations.
+This is a significant milestone for the category — the first MCP server connected to real rescue dog data rather than demo APIs. With 86 commits, it's actively developed and fills the biggest gap identified in previous reviews. Currently focused on European/UK organizations.
 
 ### raghavendraprakash/mcpforrestapis — Petstore API MCP Wrapper
 
@@ -220,19 +206,17 @@ This is a significant milestone for the category — the first MCP server connec
 
 Primarily a reference implementation showing how to wrap REST APIs with MCP. Uses the Swagger Petstore demo API — not connected to real pet stores.
 
-### zeeroiq/pet-adoption-scheduler — Adoption Appointment Booking
+### zeeroiq/pet-adoption-scheduling-service — Adoption Appointment Booking
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| pet-adoption-scheduler | — | Python | — | Multiple |
+| [pet-adoption-scheduling-service](https://github.com/zeeroiq/pet-adoption-scheduling-service) | 1 | Java | — | — |
 
-**Schedules pet adoption appointments through conversational AI:**
+**An adoption appointment-scheduling MCP server, built for integration with Spring AI + AWS.**
 
-- **Natural language search** — "Are there any young, friendly labradors available near me?"
-- **Appointment scheduling** — book visits to shelters through chat
-- **Shelter discovery** — find rescue organizations in your area
+**Correction (2026-08-16 audit):** this entry previously named the repo "pet-adoption-scheduler" with no working link, listed it as Python, and described specific features (a natural-language "young, friendly labradors" search example, "shelter discovery") that we could not confirm exist in the actual project. The real repo is **zeeroiq/pet-adoption-scheduling-service** (Java, 1 star, a single commit, minimal documentation) — an MCP server for scheduling adoption appointments, intended to integrate with the `spring-ai-aws` project. We could not verify the natural-language-search or shelter-discovery claims against its (very thin) documentation, so they've been removed rather than repeated unverified.
 
-An educational/demo project showing how MCP could streamline adoption workflows. Not connected to real shelter databases.
+An educational/demo project. Not connected to real shelter databases.
 
 ---
 
@@ -244,15 +228,15 @@ While not pet-specific, these nutrition MCP servers could support animal dietary
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-opennutrition](https://github.com/deadletterq/mcp-opennutrition) | — | TypeScript | — | Multiple |
+| [mcp-opennutrition](https://github.com/deadletterq/mcp-opennutrition) | 200 | TypeScript | MIT | Multiple |
 
-**Comprehensive local food database** — 300,000+ food items with nutritional data and barcode lookups. Runs entirely locally with no external API calls.
+**Comprehensive local food database** — 300,000+ food items with nutritional data and barcode lookups. Runs entirely locally with no external API calls. The most-starred server in this entire category (200 stars, 27 forks) — well ahead of every pet/wildlife/birding server above, though it's a general nutrition tool rather than pet-specific.
 
 ### MCP-Forge/nutritionix-mcp-server — Nutritionix API
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [nutritionix-mcp-server](https://github.com/MCP-Forge/nutritionix-mcp-server) | — | TypeScript | — | Multiple |
+| [nutritionix-mcp-server](https://github.com/MCP-Forge/nutritionix-mcp-server) | 3 | Python | — | Multiple |
 
 **Nutritionix API integration** — food search, nutrition data, and exercise calorie estimates via natural language input.
 
@@ -281,14 +265,14 @@ Some gaps from our March 2026 review are now filled, but significant ones remain
 
 The pet and animal care MCP space is **growing and diversifying**. The category now splits into four tiers:
 
-**Genuinely useful (broad audience):** The iNaturalist MCP (9 tools, 100M+ observations, no API key) makes the world's largest biodiversity database conversationally accessible. The rescuedogs-mcp-server (8 tools, 1,500+ real dogs) is the first practical pet adoption tool with genuine data. The BirdNET-Pi MCP brings acoustic bird identification — a fundamentally different approach to birding.
+**Genuinely useful (broad audience):** The iNaturalist MCP (9 tools, 300M+ observations, no API key) makes the world's largest biodiversity database conversationally accessible. The rescuedogs-mcp-server (8 tools, 1,500+ real dogs) is the first practical pet adoption tool with genuine data. The BirdNET-Pi MCP brings acoustic bird identification — a fundamentally different approach to birding.
 
-**Genuinely useful (narrow audience):** The NSIP sheep genetics client (15 tools, 148 commits, breeding decision support) and Wildlife Insights MCP (camera trap analytics, species identification) serve real professional needs. The eBird servers (two implementations — TypeScript and Python) tap into a massive citizen science dataset.
+**Genuinely useful (narrow audience):** The NSIP sheep genetics client (15 tools, 148 commits, breeding decision support) serves a real professional need. The eBird servers (two implementations — JavaScript and Python) tap into a massive citizen science dataset.
 
-**Fun but recreational:** MCPet (10 stars) and Chatagotchi (11 stars) are charming Tamagotchi-style experiments that demonstrate MCP concepts through virtual pet care. Good for learning MCP, not for managing real animals.
+**Fun but recreational:** MCPet (13 stars) and Chatagotchi (11 stars) are charming Tamagotchi-style experiments that demonstrate MCP concepts through virtual pet care. Good for learning MCP, not for managing real animals.
 
 **Demo/reference projects:** The Petstore API wrapper and pet adoption scheduler are educational implementations, not production tools.
 
 The category earns **3 out of 5** (up from 2.5). The iNaturalist MCP server is a game-changer for naturalists — 9 tools accessing [300M+ biodiversity observations](https://www.inaturalist.org/blog/126478-inaturalist-at-300-million-observations) with no API key. The rescuedogs-mcp-server finally fills the most glaring gap (real pet adoption data). The BirdNET ecosystem adds sound-based species identification. But the enormous practical pet care market (veterinary records, health tracking, breed ID, GPS monitoring) remains largely unserved. Someone building a Petfinder MCP server, a vet records manager, or a cat adoption tool would still face zero competition.
 
-*This review was last updated on 2026-04-30 using Claude Opus 4.6 (Anthropic).*
+*This review was last updated on 2026-04-30 using Claude Opus 4.6 (Anthropic); citations and figures re-verified 2026-08-16 using Claude Sonnet 5 (Anthropic). Originally published 2026-03-16.*

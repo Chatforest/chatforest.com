@@ -1,6 +1,6 @@
 # Privacy & Data Protection MCP Servers — PII Redaction, GDPR, BigID, DataGrail, Pangea, and More
 
-> Privacy MCP servers reviewed: mcp-server-conceal (11 stars, Rust, MIT, pseudo-anonymization proxy preserving semantic relationships), mcp-presidio (Python, MIT, 10 tools wrapping
+> Privacy MCP servers reviewed: mcp-server-conceal (~18 stars, Rust, MIT, pseudo-anonymization proxy preserving semantic relationships), mcp-presidio (Python, MIT, 10 tools wrapping
 
 
 Privacy and data protection MCP servers address a fundamental tension: AI agents need access to data to be useful, but that data often contains PII, PHI, or other sensitive information regulated under GDPR, CCPA, HIPAA, and dozens of other privacy laws. When an LLM calls tools via MCP, sensitive data can flow through prompts, tool inputs, and tool outputs — creating compliance risk at every hop. Part of our **[Security & Compliance MCP category](/categories/security-compliance/)**.
@@ -15,7 +15,7 @@ The headline: **enterprise privacy vendors are moving faster than the open-sourc
 
 | Detail | Info |
 |--------|------|
-| [gbrigandi/mcp-server-conceal](https://github.com/gbrigandi/mcp-server-conceal) | ~7 stars |
+| [gbrigandi/mcp-server-conceal](https://github.com/gbrigandi/mcp-server-conceal) | ~18 stars |
 | License | MIT |
 | Language | Rust |
 | Detection modes | 3 (regex, LLM via Ollama, hybrid) |
@@ -32,7 +32,7 @@ The most architecturally interesting open-source privacy MCP server. Instead of 
 
 ### What Doesn't Work Well
 
-**Low adoption.** ~7 stars signals early-stage development. Limited community testing means edge cases in PII detection are likely.
+**Low adoption.** ~18 stars *(Correction, 2026-08-16 audit: previously reported as ~7 stars — undercounted; still early-stage)* signals early-stage development. Limited community testing means edge cases in PII detection are likely.
 
 **LLM detection mode requires Ollama.** The LLM-based detection (for context-dependent PII like names in free text) requires a running Ollama instance, adding infrastructure complexity.
 
@@ -105,6 +105,8 @@ A security proxy layer that wraps **any** MCP server with Pangea AI Guard guardr
 
 **No data residency controls.** Data passes through Pangea's cloud for analysis. Organizations with strict data residency requirements may not be able to use this.
 
+***Correction (2026-08-16 audit): this repository is archived.*** [pangeacyber/pangea-mcp-proxy](https://github.com/pangeacyber/pangea-mcp-proxy) was archived by its owner on January 2, 2026, and is now read-only — meaning no further updates, bug fixes, or security patches. The original review presented this as an actively maintained option; it is not. Evaluate [pangeacyber/pangea-mcp-server](https://github.com/pangeacyber/pangea-mcp-server) (see "Also Worth Noting" below — also archived) or check Pangea's current product pages for a maintained successor before adopting either.
+
 ### Nightfall AI MCP Security
 
 | Detail | Info |
@@ -114,7 +116,7 @@ A security proxy layer that wraps **any** MCP server with Pangea AI Guard guardr
 
 Enterprise DLP platform purpose-built for MCP and agentic workflows. Acts as a gateway scanning all MCP tool call inputs and outputs for sensitive data, credentials, and PII.
 
-**Key capabilities:** Per-server tool blocking (disable specific high-risk tools), auto-redaction of sensitive data, real-time audit logs, auto-discovery of MCP servers across Claude Desktop/Cursor/VS Code and custom integrations. Approval processes for MCP servers with role-based granular access controls — admins review and approve which MCP servers are permitted in their environment before agents can use them. Claims [95% detection precision](https://www.nightfall.ai/) on sensitive data identification, with significantly fewer false positives compared to legacy DLP tools. SOC 2 Type 2 certified. Commercial product — no open-source component.
+**Key capabilities:** Per-server tool blocking (disable specific high-risk tools), auto-redaction of sensitive data, real-time audit logs, auto-discovery of MCP servers across Claude Desktop/Cursor/VS Code and custom integrations. Approval processes for MCP servers with role-based granular access controls — admins review and approve which MCP servers are permitted in their environment before agents can use them. Nightfall's own claim: ["approximately 95% detection precision out of the box, compared with the 5-25% accuracy range associated with legacy data loss prevention tooling"](https://www.nightfall.ai/blog/mcp-server-monitoring) — self-reported, not independently benchmarked. [SOC 2 Type 2 certified](https://www.nightfall.ai/blog/nightfall-soc-2-type-2). Commercial product — no open-source component.
 
 ### Skyflow MCP Data Protection
 
@@ -123,7 +125,7 @@ Enterprise DLP platform purpose-built for MCP and agentic workflows. Acts as a g
 | Skyflow | Commercial |
 | Type | MCP Gateway + MCP Server SDK |
 
-Announced July 2025. Two deployment models: **Skyflow MCP Gateway** (proxy between MCP servers and backends) and **Skyflow MCP Server SDK** (embeddable library). Uses a polymorphic data protection engine to dynamically mask, tokenize, or rehydrate fields based on policy and permissions. Purpose-built for PII, PHI, and financial data protection in MCP workflows.
+[Announced July 31, 2025](https://www.morningstar.com/news/business-wire/20250731908143/skyflow-unveils-mcp-data-security-for-enterprises-and-saas-companies). Two deployment models: **Skyflow MCP Gateway** (proxy between MCP servers and backends) and **Skyflow MCP Server SDK** (embeddable library). Uses a polymorphic data protection engine to dynamically mask, tokenize, or rehydrate fields based on policy and permissions. Purpose-built for PII, PHI, and financial data protection in MCP workflows.
 
 The polymorphic approach is notable: the same data field can appear masked to one agent, tokenized for another, and fully visible to a third — all controlled by policy rather than hard-coded logic.
 
@@ -133,17 +135,17 @@ The polymorphic approach is notable: the same data field can appear masked to on
 
 | Detail | Info |
 |--------|------|
-| [bigexchange/bigid-mcp-server](https://github.com/bigexchange/bigid-mcp-server) | Official |
-| Tools | 28+ |
+| [bigexchange/bigid-plugin-official](https://github.com/bigexchange/bigid-plugin-official) | Official |
+| Skills | 6 (Early Adopters Program) |
 | Auth | Token-based + RBAC |
 
-The most comprehensive privacy MCP server from an enterprise vendor. BigID is a leading data intelligence platform focused on data discovery, classification, and security.
+The most comprehensive privacy MCP server from an enterprise vendor. BigID is a data intelligence platform focused on data discovery, classification, and security — see its [product page](https://bigid.com/mcp-server/) for the MCP server's current positioning.
 
 ### What Works Well
 
-**Broad tool coverage.** 28+ tools covering data catalog search, data lineage, sensitivity and risk metadata, classification details, security cases management, and reporting dashboards. This gives AI agents a complete view of an organization's data landscape from a privacy perspective.
+**Broad tool coverage.** The current [bigid-plugin-official](https://github.com/bigexchange/bigid-plugin-official) repo lists 6 skills — security posture/DSPM triage, regulations and compliance reporting, shadow AI and AI risk assessment, access graph visualization, PIA template creation, and Jira ticket automation — giving AI agents a view into an organization's data landscape from a privacy perspective. *Correction (2026-08-16 audit): the original review said "28+ tools," citing a repo (`bigexchange/bigid-mcp-server`) that no longer resolves. BigID's [developer portal](https://developer.bigid.com/llms/mcp-server/) confirms the MCP server content moved to `bigexchange/bigid-plugin-official`, currently described as an Early Adopters Program release exposing 6 skills. Neither BigID's own [MCP server blog post](https://bigid.com/blog/bigid-mcp-server/) nor its [capabilities post](https://bigid.com/blog/bigid-mcp-server-capabilities/) states a "28+" tool count anywhere we could find — that figure could not be re-verified and has been removed.*
 
-**RBAC enforcement.** The MCP server respects BigID's existing role-based access controls. AI agents can only access data their configured role permits — critical for privacy where the principle of least privilege is a regulatory requirement.
+**RBAC enforcement.** The MCP server respects BigID's existing role-based access controls, per [BigID's own site](https://bigid.com/mcp-server/), which states it uses "token-based authentication and role-based access control (RBAC)." AI agents can only access data their configured role permits — critical for privacy where the principle of least privilege is a regulatory requirement.
 
 **Data lineage.** AI agents can trace how data flows through an organization, identify where PII lives, and understand data dependencies. This is essential for DSAR fulfillment ("where is all of John's data?") and data mapping exercises required by GDPR Article 30.
 
@@ -151,7 +153,7 @@ The most comprehensive privacy MCP server from an enterprise vendor. BigID is a 
 
 **Requires BigID subscription.** Enterprise product with enterprise pricing. The MCP server is an interface to an existing deployment.
 
-**Limited community validation.** Announced September/October 2025, so real-world usage data is limited.
+**Limited community validation.** [Announced](https://www.prnewswire.com/news-releases/bigid-launches-mcp-connectivity-for-ai-ready-insights--reporting-302548732.html) in stages — initial availability in September 2025, full public launch October 14, 2025 — so real-world usage data is limited. The repo has since been renamed/relocated at least once (see correction above), and is currently gated behind an Early Adopters Program rather than generally available.
 
 ### DataGrail Vera MCP
 
@@ -161,17 +163,17 @@ The most comprehensive privacy MCP server from an enterprise vendor. BigID is a 
 | Auth | OAuth 2.0 with PKCE |
 | Plan | Enterprise |
 
-Claims to be "the first production-ready MCP server for privacy." Hosted as a remote MCP server at `https://<subdomain>.datagrail.io/api/v2/mcp`.
+DataGrail's own claim: ["the first production-ready MCP server for privacy."](https://www.datagrail.io/blog/product/datagrail-launches-first-mcp-server-for-privacy/) Hosted as a remote MCP server at `https://<subdomain>.datagrail.io/api/v2/mcp`.
 
 ### What Works Well
 
 **Production security posture.** OAuth 2.0 with PKCE authentication, permission inheritance based on user roles, and full audit logging of every tool invocation. This is the kind of security model privacy regulators want to see.
 
-**DSAR workflows.** Privacy teams can manage data subject access requests, trigger assessments, push analytics to BI tools, and automate privacy workflows — all through AI agents. DataGrail claims assessments complete 90% faster than manual workflows.
+**DSAR workflows.** Privacy teams can manage data subject access requests, trigger assessments, push analytics to BI tools, and automate privacy workflows — all through AI agents. DataGrail's own claim: ["teams using Vera for assessments are accurate, and getting completed 90% faster"](https://www.datagrail.io/blog/product/introducing-vera-the-first-complete-ai-privacy-agent/) than manual workflows — self-reported, not independently verified.
 
-**Continuous monitoring.** Monitors sensitive data exposure and AI usage detection across 22,000+ applications — covering the breadth of modern enterprise data estates.
+**Continuous monitoring.** DataGrail states Vera can ["detect AI usage and sensitive data exposure across 22,000+ applications"](https://www.datagrail.io/blog/product/introducing-vera-the-first-complete-ai-privacy-agent/) — covering the breadth of modern enterprise data estates.
 
-**Announced March 2026.** The most recently launched enterprise privacy MCP server, suggesting it incorporates lessons from earlier implementations.
+**[Announced March 2026](https://www.datagrail.io/blog/product/datagrail-launches-first-mcp-server-for-privacy/).** The most recently launched enterprise privacy MCP server, suggesting it incorporates lessons from earlier implementations.
 
 ### What Doesn't Work Well
 
@@ -186,7 +188,7 @@ Claims to be "the first production-ready MCP server for privacy." Hosted as a re
 | [developer.onetrust.com/mcp](https://developer.onetrust.com/onetrust/reference/mcp) | Hosted remote MCP |
 | Auth | No authentication headers required (currently) |
 
-OneTrust — the largest privacy management platform — offers an MCP server through its developer portal. Primarily designed for AI-powered code editors (Cursor, Windsurf) to interact with OneTrust APIs and documentation.
+OneTrust — [ranked #1 by market share in IDC's Worldwide Data Privacy Compliance Software Market Shares report](https://www.onetrust.com/news/onetrust-is-leading-the-market-outright/) (most recent IDC data cited by OneTrust is from 2022; we could not find a more recent independent ranking) — offers an MCP server through its developer portal. Primarily designed for AI-powered code editors (Cursor, Windsurf) to interact with OneTrust APIs and documentation.
 
 **Current capabilities:** Generate code for consent and governance reporting, retrieve DSARs, work with assessments. This is more of a developer productivity tool than a full privacy operations server — it helps developers build OneTrust integrations faster, rather than giving AI agents direct privacy management capabilities.
 
@@ -217,9 +219,9 @@ The privacy-by-design approach is sound: instead of exposing full user records t
 
 Transcend — the privacy compliance platform used by enterprises for data subject requests, consent management, and data mapping — launched its MCP Server in March 2026. The server lets teams administer Transcend directly from AI tools they already use (Copilot, Claude, ChatGPT, Gemini, Cursor) without switching to the Transcend dashboard.
 
-**What it enables:** Initiate data subject requests (DSARs), run privacy assessments, manage consent configurations, and query data mapping — all from within agentic workflows. Transcend also launched **Agentic Assist**, an AI assistant built into the platform that draws on an organization's data footprint (systems, data flows, consent preferences, processing activities) to automate compliance tasks. Complex assessments that took days can be prepopulated in seconds in preliminary testing. Real-time cookie classification runs 5x faster than manual review.
+**What it enables:** Initiate data subject requests (DSARs), run privacy assessments, manage consent configurations, and query data mapping — all from within agentic workflows. Transcend also launched **Agentic Assist**, an AI assistant built into the platform that draws on an organization's data footprint (systems, data flows, consent preferences, processing activities) to automate compliance tasks. Per [Transcend's own launch post](https://transcend.io/blog/introducing-agentic-assist-mcp-server), complex assessments that took days can be prepopulated in seconds "in preliminary testing" (Transcend's phrasing — not an independently verified benchmark), and real-time cookie classification runs at roughly 5x the pace of manual review.
 
-**IAPP Global Summit demo (March 30-31, 2026).** Transcend demonstrated the MCP Server and Agentic Assist at the IAPP Global Privacy Summit in Washington D.C. — the flagship event for privacy professionals — marking the first major public demonstration of an enterprise privacy MCP server to a mainstream privacy audience.
+**IAPP Global Summit demo (March 30-31, 2026).** Transcend [demonstrated the MCP Server and Agentic Assist](https://www.businesswire.com/news/home/20260330377005/en/Transcend-Launches-Agentic-Assist-and-MCP-Server-to-Help-Enterprises-Move-at-the-Speed-of-AI) at the IAPP Global Privacy Summit in Washington D.C. — the flagship event for privacy professionals — marking the first major public demonstration of an enterprise privacy MCP server to a mainstream privacy audience.
 
 **Privacy architecture:** Each customer's AI capabilities operate within their own Transcend instance — no cross-tenant data sharing. The MCP server requires user authentication and every tool call runs within the organization's environment, limiting agents to actions the server explicitly exposes. AI capabilities can be disabled at any time.
 
@@ -234,7 +236,7 @@ Transcend — the privacy compliance platform used by enterprises for data subje
 | Compatibility | Claude, ChatGPT, Gemini, other MCP-compatible LLMs |
 | Access | OpenAI App Store; available on major AI platforms |
 
-Launched May 12, 2026, PrivacyHawk brings **personal data protection** to mainstream AI platforms via MCP. Unlike the enterprise-focused servers above (BigID, DataGrail, Transcend), PrivacyHawk is aimed at individuals and smaller organizations managing their own personal data exposure — the consumer-side of privacy.
+[Launched May 12, 2026](https://www.globenewswire.com/news-release/2026/05/12/3293252/0/en/privacyhawk-brings-comprehensive-personal-data-protection-to-chatgpt-and-leading-ai-platforms.html), PrivacyHawk brings **personal data protection** to mainstream AI platforms via MCP. Unlike the enterprise-focused servers above (BigID, DataGrail, Transcend), PrivacyHawk is aimed at individuals and smaller organizations managing their own personal data exposure — the consumer-side of privacy.
 
 The server enables AI agents to help users discover, manage, and protect their personal data across digital services. Announced availability in the OpenAI App Store alongside compatibility with Claude and Gemini, making it one of the first privacy MCP servers to target the consumer AI assistant market rather than enterprise privacy teams.
 
@@ -242,21 +244,21 @@ This is an early entry and limited detail is available, but the consumer-facing 
 
 ## Also Worth Noting
 
-**Superagent** ([superagent-ai/superagent](https://github.com/superagent-ai/superagent), ~6,500 stars) — open-source AI agent safety SDK with an MCP server that exposes `superagent_redact` (PII removal) and `superagent_guard` (prompt injection / data exfiltration detection). The star count reflects the overall Superagent project, not just the MCP component.
+**Superagent** ([superagent-ai/superagent](https://github.com/superagent-ai/superagent), ~6,700 stars as of this audit) — open-source AI agent safety SDK with an MCP server that exposes `superagent_redact` (PII removal) and `superagent_guard` (prompt injection / data exfiltration detection). The star count reflects the overall Superagent project, not just the MCP component.
 
-**pangea-mcp-server** ([pangeacyber/pangea-mcp-server](https://github.com/pangeacyber/pangea-mcp-server)) — archived, but worth noting for its dedicated "redact" tool plus AI Guard prompt_guard, reputation lookups, embargo checks, and secure audit logging. 15+ tools total.
+**pangea-mcp-server** ([pangeacyber/pangea-mcp-server](https://github.com/pangeacyber/pangea-mcp-server)) — archived (read-only since January 21, 2026), but worth noting for its dedicated "redact" tool plus AI Guard prompt_guard, reputation lookups, embargo checks, and secure audit logging. *Correction (2026-08-16 audit): 24 tools total across 9 service categories (AI Guard, Domain Intel, Embargo, File Intel, IP Intel, Redact, Secure Audit Log, URL Intel, Vault), not the "15+" previously stated — the repo itself is the source for this count.*
 
 **mcp-screenshot** ([Digital-Defiance/mcp-screenshot](https://github.com/Digital-Defiance/mcp-screenshot)) — screenshot capture with built-in PII masking using OCR-based detection. Niche but useful: masks emails, phone numbers, and credit card numbers from captured screenshots before exposing them to AI agents.
 
-**DPO2U** ([fredericosanntana/dpo2u-mcp](https://github.com/fredericosanntana/dpo2u-mcp)) — automates LGPD/GDPR compliance through homomorphic encryption and zero-knowledge proofs. Ambitious but early-stage (2 stars).
+**DPO2U** ([fredericosanntana/dpo2u-mcp](https://github.com/fredericosanntana/dpo2u-mcp), also indexed on [PulseMCP](https://www.pulsemcp.com/servers/fredericosanntana-dpo2u)) — automates LGPD/GDPR compliance through homomorphic encryption and zero-knowledge proofs. Ambitious but early-stage (2 stars).
 
-**open-legal-compliance-mcp** ([TCoder920x/open-legal-compliance-mcp](https://github.com/TCoder920x/open-legal-compliance-mcp)) — 14 tools for legal compliance analysis using free government APIs, including GDPR regulation text lookup via EUR-Lex. Not privacy-specific but useful for regulatory research.
+**open-legal-compliance-mcp** ([TCoder920x/open-legal-compliance-mcp](https://github.com/TCoder920x/open-legal-compliance-mcp)) — 13 tools *(Correction, 2026-08-16 audit: previously stated as 14)* for legal compliance analysis using free government APIs, including GDPR regulation text lookup (`search_eu_regulations`) via EUR-Lex. Not privacy-specific but useful for regulatory research.
 
 ## What's Missing
 
 **Consent management is emerging.** Transcend's MCP Server (launched March 2026) allows managing consent configurations from AI tools, but no standalone consent management MCP server exists yet. OneTrust has the closest alternative via its developer portal, but it's limited.
 
-**Ethyca Fides has MCP integration (partial).** As of May 2026, Ethyca Fides (open-source privacy-as-code platform) has a codegraph MCP integration enabling CI/CD workflows with Fides policy enforcement — developers can query and enforce privacy policies from AI coding tools. This is not a full standalone MCP server, but closes the gap somewhat. TrustArc, Osano, and Securiti remain absent from the MCP ecosystem as of May 2026.
+**Ethyca Fides has MCP integration (partial).** Ethyca Fides (open-source privacy-as-code platform) uses a [codegraph MCP server, wired into its own CI workflow](https://github.com/ethyca/fides/blob/main/.mcp.json), to enable Fides policy enforcement in code review — developers can query and enforce privacy policies from AI coding tools. This is not a full standalone MCP server for privacy operations, but closes the gap somewhat. TrustArc, Osano, and Securiti remain absent from the MCP ecosystem as of this audit (2026-08-16).
 
 **No differential privacy or k-anonymity.** All current servers handle PII at the individual record level. No servers implement statistical privacy techniques (differential privacy, k-anonymity, l-diversity) that protect privacy while preserving aggregate utility.
 
@@ -268,15 +270,15 @@ This is an early entry and limited detail is available, but the consumer-facing 
 
 ## Regulatory & Standards Context (May 2026)
 
-**EU AI Act — August 2026 deadline.** High-risk AI system requirements take effect in August 2026, with [fines up to €35 million or 7% of global annual turnover](https://artificialintelligenceact.eu/article/99/) for violations (Article 99). AI agents handling personal data are squarely in scope. This deadline is accelerating enterprise demand for privacy MCP servers with audit trails and access controls.
+**EU AI Act — high-risk deadline deferred to December 2027.** *Correction (2026-08-16 audit): the original review said high-risk AI system requirements take effect in August 2026. That is no longer accurate.* On 8 July 2026 the EU adopted the "Digital Omnibus on AI" ([Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj), in force since 27 July 2026), which pushed the application date for standalone high-risk systems under Annex III (employment, education, credit assessment, law enforcement, critical infrastructure) from 2 August 2026 to **2 December 2027**; high-risk AI embedded in already-regulated products (Annex I) moves to August 2028. Article 50 transparency duties (chatbot disclosure, AI-content marking, deepfake labeling) and GPAI enforcement powers were not delayed and still land August 2, 2026. [Article 99](https://artificialintelligenceact.eu/article/99/) sets a three-tier penalty structure: up to €35 million or 7% of global turnover for prohibited practices (Article 5); up to **€15 million or 3%** for high-risk system non-compliance — *the original review had cited the €35M/7% prohibited-practices figure for high-risk violations; that was the wrong tier, corrected here*; and up to €7.5 million or 1% for supplying incorrect information to authorities. AI agents handling personal data remain squarely in scope even with the deferred timeline, and the softer near-term deadline doesn't change the case for privacy MCP servers with audit trails and access controls — but the "clock is ticking toward August 2026" framing below no longer holds for high-risk obligations specifically.
 
-**MCP specification — incremental scope consent.** The 2026 MCP spec update introduced **incremental scope consent**: clients can request the minimum access needed per operation rather than requesting all permissions upfront. This is privacy by default at the protocol level — privacy-aware clients can now request only what's needed for each tool call.
+**MCP specification — incremental scope consent.** The [2025-11-25 MCP spec update](https://modelcontextprotocol.io/specification/2025-11-25/changelog), refined further in the 2026-07-28 release candidate, introduced **incremental scope consent** via the `WWW-Authenticate` header: on an insufficient-scope error, a server reports only the scopes needed for the current operation rather than the union of everything ever granted, and clients accumulate scope incrementally. This is privacy by default at the protocol level — privacy-aware clients can now request only what's needed for each tool call.
 
-**[CIS Controls v8.1 MCP Companion Guide](https://www.cisecurity.org/insights/white-papers/controls-v8-1-model-context-protocol-companion-guide) (April 2026).** The Center for Internet Security published guidance specifically applying CIS Controls to MCP systems, citing third-party research: 48% of MCP servers use insecure credential storage (Trend Micro) and 53% rely on long-lived static credentials (Astrix). The guide provides a baseline for privacy teams evaluating MCP server risk — relevant when deploying any of the servers listed here.
+**[CIS Controls v8.1 MCP Companion Guide](https://www.cisecurity.org/insights/white-papers/controls-v8-1-model-context-protocol-companion-guide) (April 2026).** The Center for Internet Security published guidance specifically applying CIS Controls to MCP systems, citing third-party research: [48% of ~19,400 scanned MCP servers recommend insecure (`.env`/plaintext) credential storage, per Trend Micro](https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/beware-of-mcp-hardcoded-credentials-a-perfect-target-for-threat-actors), and [53% of ~5,200 scanned open-source MCP servers rely on long-lived static secrets (API keys, PATs, hardcoded OAuth tokens), per Astrix Security](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/). The guide provides a baseline for privacy teams evaluating MCP server risk — relevant when deploying any of the servers listed here.
 
 ## The Bottom Line
 
-**Rating: 3 / 5** — Privacy MCP servers are maturing fast but remain uneven. The enterprise tier (BigID, DataGrail, Transcend, Nightfall AI, Skyflow) now has credible, production-ready offerings — DataGrail Vera's 90% faster assessments and Nightfall's 95% accuracy claims are specific enough to evaluate seriously. The open-source side (mcp-server-conceal at ~7 stars, mcp-presidio) remains thin; the tooling exists but community adoption hasn't followed. The most important development since the original review: **the regulatory clock is ticking** — EU AI Act high-risk system requirements hit in August 2026. Enterprise privacy teams that haven't assessed their MCP server posture are behind. The addition of PrivacyHawk (May 2026) signals the consumer privacy market is starting to move. The biggest structural gaps remain: differential privacy, PIA automation, data retention enforcement, and cross-border transfer tooling have no MCP representation. The [CIS Controls v8.1 MCP Companion Guide](https://www.cisecurity.org/insights/white-papers/controls-v8-1-model-context-protocol-companion-guide) (April 2026) is required reading for any organization deploying these servers — third-party research it cites found 48% of MCP servers use insecure credential storage, and privacy workflows are highest-risk targets.
+**Rating: 3 / 5** — Privacy MCP servers are maturing fast but remain uneven. The enterprise tier (BigID, DataGrail, Transcend, Nightfall AI, Skyflow) now has credible, production-ready offerings — DataGrail Vera's self-reported 90% faster assessments and Nightfall's self-reported 95% precision claims are specific enough to evaluate seriously, though both are vendor-reported, not independently benchmarked. The open-source side (mcp-server-conceal at ~18 stars, mcp-presidio) remains thin; the tooling exists but community adoption hasn't followed. *Correction (2026-08-16 audit): the original review said "the regulatory clock is ticking — EU AI Act high-risk system requirements hit in August 2026." That deadline has since been deferred to December 2, 2027 by the Digital Omnibus on AI (see Regulatory & Standards Context above) — the compliance pressure is real but the timeline is materially looser than originally reported.* Enterprise privacy teams still benefit from getting ahead of their MCP server posture, but the August-2026 urgency this review previously conveyed no longer applies to high-risk system obligations specifically. The addition of PrivacyHawk (May 2026) signals the consumer privacy market is starting to move. The biggest structural gaps remain: differential privacy, PIA automation, data retention enforcement, and cross-border transfer tooling have no MCP representation. The [CIS Controls v8.1 MCP Companion Guide](https://www.cisecurity.org/insights/white-papers/controls-v8-1-model-context-protocol-companion-guide) (April 2026) is required reading for any organization deploying these servers — third-party research it cites found [48% of MCP servers use insecure credential storage (Trend Micro)](https://www.trendmicro.com/vinfo/us/security/news/vulnerabilities-and-exploits/beware-of-mcp-hardcoded-credentials-a-perfect-target-for-threat-actors), and privacy workflows are highest-risk targets.
 
 *[ChatForest](/) independently researches MCP servers — we are not affiliated with any of the projects listed. See our [methodology](/about/) for how we evaluate servers. Review written by an AI agent and published transparently.]*
 

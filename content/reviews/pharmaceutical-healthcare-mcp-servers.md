@@ -2,20 +2,20 @@
 title: "Pharmaceutical & Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More"
 date: 2026-03-15T23:30:00+09:00
 description: "Pharmaceutical and healthcare MCP servers are enabling AI agents to query EHR systems, search biomedical literature, analyze drug interactions, process medical images, and access clinical trial data."
-og_description: "Pharmaceutical & healthcare MCP servers: FHIR/EHR integration (WSO2 98 stars, health-record-mcp 75 stars), drug discovery (ChEMBL 22 tools, DrugBank 17K+ drugs), medical literature (PubMed 5+ servers), imaging (DICOM 86 stars), genomics (NCBI 31 tools), OpenPharma suite (45 repos). The deepest MCP vertical. Rating: 4.5/5."
+og_description: "Pharmaceutical & healthcare MCP servers: FHIR/EHR integration (WSO2 132 stars, health-record-mcp 84 stars), drug discovery (ChEMBL 22 tools, DrugBank 17K+ drugs), medical literature (PubMed 5+ servers), imaging (DICOM 99 stars), genomics (NCBI 31 tools), OpenPharma suite (50 repos). The deepest MCP vertical. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Pharmaceutical and healthcare MCP servers for EHR/FHIR integration, drug discovery, biomedical research, medical imaging, genomics, and clinical trials. This is the deepest and most mature vertical MCP category we have reviewed — with 40+ servers, multiple well-starred projects, an entire organizational initiative (OpenPharma with 45 repositories), a healthcare-specific protocol extension (Innovaccer HMCP), and genuine production-grade implementations from healthcare technology companies. WSO2 fhir-mcp-server (98 stars, Python, Apache 2.0) bridges any FHIR-compliant server to MCP with SMART on FHIR authentication, OAuth 2.0, and multi-transport support (stdio/SSE/streamable HTTP) — the most polished FHIR-to-MCP bridge available. health-record-mcp by Josh Mandel (75 stars, TypeScript, MIT) is a secure gateway enabling AI to access patient data from Epic and Cerner EHRs via SMART on FHIR, with grep/SQL/JavaScript tools for record analysis — notable for its creator's deep FHIR expertise (co-architect of SMART on FHIR). FHIR-MCP (TypeScript, MIT) takes enterprise security seriously with OWASP-compliant hardening, ML-powered PHI classification, break-glass emergency access, multi-tier rate limiting, and HIPAA-compliant audit logging — the most security-focused healthcare MCP server. Innovaccer's HMCP (28 stars, Python, MIT) extends MCP itself with healthcare-specific capabilities: patient context isolation, SMART on FHIR OAuth, bidirectional agent-to-agent communication, and a low-code interface for building healthcare AI agents — the most ambitious structural contribution to healthcare MCP. healthcare-mcp-public (102 stars, Node.js) is the most popular general-purpose medical MCP server with 9 tools covering FDA drug lookup, PubMed search, clinical trials, ICD-10 codes, DICOM metadata, and a medical calculator — a one-stop shop for medical data access. ChEMBL-MCP-Server (77 stars, TypeScript) provides 22 specialized tools for drug discovery research across compound search, target analysis, bioactivity data, clinical pipeline tracking, and ADMET analysis — the most comprehensive drug discovery MCP server. DrugBank MCP (JavaScript, MIT) offers access to 17,430+ drugs with sub-10ms query speeds via SQLite, covering drug interactions, metabolic pathways, chemical structures, and target proteins. medical-mcp by JamesANZ (75 stars, TypeScript, MIT) queries FDA, WHO, PubMed, RxNorm, and Google Scholar with zero API keys required and local-only operation — ideal for privacy-conscious medical research. PubMed MCP servers are the most replicated category with 5+ independent implementations — cyanheads/pubmed-mcp-server (66 stars, Apache 2.0) leads with 7 tools, citation formatting (APA/MLA/BibTeX/RIS), and Cloudflare Workers deployment. dicom-mcp (86 stars, Python, MIT) enables AI interaction with PACS/VNA medical imaging systems through 10 tools for querying patients, studies, series, and instances, plus report text extraction — an important niche that no other MCP vertical covers. NCBI-Datasets-MCP-Server (11 stars, TypeScript, MIT) provides 31 tools across genome, gene, taxonomy, assembly, virus, protein, annotation, and comparative genomics — the most comprehensive genomics MCP server. The OpenPharma initiative (openpharma-org on GitHub) maintains 45 repositories providing MCP access to FDA (drug labels, adverse events, recalls), EMA (European approvals, EPARs), DrugBank, ClinicalTrials.gov, PubMed, CDC disease surveillance, NLM medical codes (ICD-10/11, HCPCS, NPI), USPTO patents, HMDB metabolomics, GWAS catalog, ClinVar, and more — the largest coordinated MCP server collection for any industry vertical. AgenticCare (JavaScript/TypeScript, MIT) provides 16 tools for Epic and Cerner EMR interaction with FHIR and medical research integration. Gaps: no pharmacy dispensing or medication management workflow servers; no clinical decision support rule engines; no insurance claims adjudication from the provider side; no nursing/clinical documentation MCP servers; no medical device integration (IoMT) beyond DICOM; no population health analytics; no public health reporting (eCQM/HEDIS); no operating room scheduling or surgical workflow tools; no pathology/lab information systems integration; no ambulance/EMS dispatch. The category earns 4.5/5 — pharmaceutical and healthcare represents the gold standard for vertical MCP development, with genuine depth, production-grade security, protocol-level innovation (HMCP), institutional backing (WSO2, Innovaccer, OpenPharma), and the largest coordinated server collection of any industry we have reviewed."
-last_refreshed: 2026-05-15
-sources_audited: 2026-07-23
+card_description: "Pharmaceutical and healthcare MCP servers for EHR/FHIR integration, drug discovery, biomedical research, medical imaging, genomics, and clinical trials. This is the deepest and most mature vertical MCP category we have reviewed — with 40+ servers, multiple well-starred projects, an entire organizational initiative (OpenPharma with 50 repositories), a healthcare-specific protocol extension (Innovaccer HMCP), and genuine production-grade implementations from healthcare technology companies. WSO2 fhir-mcp-server (132 stars, Python, Apache 2.0) bridges any FHIR-compliant server to MCP with SMART on FHIR authentication, OAuth 2.0, and multi-transport support (stdio/SSE/streamable HTTP) — the most polished FHIR-to-MCP bridge available. health-record-mcp by Josh Mandel (84 stars, TypeScript, MIT) is a secure gateway enabling AI to access patient data from Epic and Cerner EHRs via SMART on FHIR, with grep/SQL/JavaScript tools for record analysis — notable for its creator's deep FHIR expertise (co-architect of SMART on FHIR). FHIR-MCP (TypeScript, MIT) takes enterprise security seriously with OWASP-compliant hardening, ML-powered PHI classification, break-glass emergency access, multi-tier rate limiting, and HIPAA-compliant audit logging — the most security-focused healthcare MCP server. Innovaccer's HMCP (31 stars, Python, MIT) extends MCP itself with healthcare-specific capabilities: patient context isolation, SMART on FHIR OAuth, bidirectional agent-to-agent communication, and a low-code interface for building healthcare AI agents — the most ambitious structural contribution to healthcare MCP. healthcare-mcp-public (125 stars, Node.js, MIT) is the most popular general-purpose medical MCP server with 9 tools covering FDA drug lookup, PubMed search, clinical trials, ICD-10 codes, DICOM metadata, and a medical calculator — a one-stop shop for medical data access. ChEMBL-MCP-Server (89 stars, TypeScript, MIT) provides 22 specialized tools for drug discovery research across compound search, target analysis, bioactivity data, clinical pipeline tracking, and ADMET analysis — the most comprehensive drug discovery MCP server. DrugBank MCP (JavaScript, MIT) offers access to 17,430+ drugs with sub-10ms query speeds via SQLite, covering drug interactions, metabolic pathways, chemical structures, and target proteins. medical-mcp by JamesANZ (108 stars, TypeScript, MIT) queries FDA, WHO, PubMed, RxNorm, and Google Scholar with zero API keys required and local-only operation — ideal for privacy-conscious medical research. PubMed MCP servers are the most replicated category with 5+ independent implementations — cyanheads/pubmed-mcp-server (136 stars, Apache 2.0) leads with 7 tools, citation formatting (APA/MLA/BibTeX/RIS), and Cloudflare Workers deployment. dicom-mcp (99 stars, Python, MIT) enables AI interaction with PACS/VNA medical imaging systems through 10 tools for querying patients, studies, series, and instances, plus report text extraction — an important niche that no other MCP vertical covers. NCBI-Datasets-MCP-Server (16 stars, TypeScript, MIT) provides 31 tools across genome, gene, taxonomy, assembly, virus, protein, annotation, and comparative genomics — the most comprehensive genomics MCP server. The OpenPharma initiative (openpharma-org on GitHub) maintains 50 repositories providing MCP access to FDA (drug labels, adverse events, recalls), EMA (European approvals, EPARs), DrugBank, ClinicalTrials.gov, PubMed, CDC disease surveillance, NLM medical codes (ICD-10/11, HCPCS, NPI), USPTO patents, HMDB metabolomics, GWAS catalog, ClinVar, and more — the largest coordinated MCP server collection for any industry vertical. AgenticCare (JavaScript/TypeScript, MIT) provides 16 tools for Epic and Cerner EMR interaction with FHIR and medical research integration. Gaps: no pharmacy dispensing or medication management workflow servers; no clinical decision support rule engines; no insurance claims adjudication from the provider side; no nursing/clinical documentation MCP servers; no medical device integration (IoMT) beyond DICOM; no population health analytics; no public health reporting (eCQM/HEDIS); no operating room scheduling or surgical workflow tools; no pathology/lab information systems integration; no ambulance/EMS dispatch. The category earns 4.5/5 — pharmaceutical and healthcare represents the gold standard for vertical MCP development, with genuine depth, production-grade security, protocol-level innovation (HMCP), institutional backing (WSO2, Innovaccer, OpenPharma), and the largest coordinated server collection of any industry we have reviewed."
+last_refreshed: 2026-08-16
+sources_audited: 2026-08-16
 category: "Healthcare & Medical"
 category_url: "/categories/healthcare-medical/"
 ---
 
 Pharmaceutical and healthcare MCP servers are connecting AI agents to electronic health records, biomedical literature, drug databases, medical imaging systems, genomic data, and clinical trial registries. Instead of navigating complex FHIR APIs or manually searching PubMed, an AI agent can query a patient's EHR through SMART on FHIR authentication, search 36 million biomedical articles, analyze drug interactions across 17,000+ compounds, or retrieve DICOM imaging data from a hospital PACS — all through standardized MCP tools.
 
-The landscape divides into seven areas: **EHR/FHIR integration** (WSO2, health-record-mcp, FHIR-MCP — bridging AI to electronic health records), **healthcare platforms** (Innovaccer HMCP extending the protocol itself, healthcare-mcp-public as a general medical data gateway), **drug discovery** (ChEMBL for compound research, DrugBank for pharmaceutical data), **medical literature** (5+ PubMed implementations, medical-mcp for multi-source queries), **medical imaging** (dicom-mcp for PACS/VNA interaction), **genomics and bioinformatics** (NCBI Datasets, MCPmed), and the **OpenPharma initiative** (45 coordinated repositories covering FDA, EMA, clinical trials, and more).
+The landscape divides into seven areas: **EHR/FHIR integration** (WSO2, health-record-mcp, FHIR-MCP — bridging AI to electronic health records), **healthcare platforms** (Innovaccer HMCP extending the protocol itself, healthcare-mcp-public as a general medical data gateway), **drug discovery** (ChEMBL for compound research, DrugBank for pharmaceutical data), **medical literature** (5+ PubMed implementations, medical-mcp for multi-source queries), **medical imaging** (dicom-mcp for PACS/VNA interaction), **genomics and bioinformatics** (NCBI Datasets, MCPmed), and the **OpenPharma initiative** (50 coordinated repositories covering FDA, EMA, clinical trials, and more).
 
-The headline findings: **this is the deepest vertical MCP category we have reviewed** — not just by server count but by maturity, institutional backing, and protocol-level innovation. **FHIR has proven to be the perfect complement to MCP** — healthcare already had a standardized data format, so MCP servers could focus on the AI integration layer rather than data normalization. **Security is taken seriously** — multiple servers implement HIPAA-compliant audit logging, PHI protection, and SMART on FHIR authentication, reflecting the regulatory reality of healthcare data. **The OpenPharma initiative is unprecedented** — 45 coordinated MCP servers for pharmaceutical data is the largest organized effort in any vertical. **Drug discovery and biomedical research are the strongest use cases** — ChEMBL's 22 tools and multiple PubMed implementations show genuine demand from researchers.
+The headline findings: **this is the deepest vertical MCP category we have reviewed** — not just by server count but by maturity, institutional backing, and protocol-level innovation. **FHIR has proven to be the perfect complement to MCP** — healthcare already had a standardized data format, so MCP servers could focus on the AI integration layer rather than data normalization. **Security is taken seriously** — multiple servers implement HIPAA-compliant audit logging, PHI protection, and SMART on FHIR authentication, reflecting the regulatory reality of healthcare data. **The OpenPharma initiative is unprecedented** — 50 coordinated MCP servers for pharmaceutical data is the largest organized effort in any vertical. **Drug discovery and biomedical research are the strongest use cases** — ChEMBL's 22 tools and multiple PubMed implementations show genuine demand from researchers.
 
 ## EHR & FHIR Integration
 
@@ -23,7 +23,7 @@ The headline findings: **this is the deepest vertical MCP category we have revie
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) | ~98 | Python | Apache 2.0 | 7 tools |
+| [wso2/fhir-mcp-server](https://github.com/wso2/fhir-mcp-server) | ~132 | Python | Apache 2.0 | 7 tools |
 
 The **most polished FHIR-to-MCP bridge** available, from enterprise integration company WSO2. Exposes any FHIR-compliant server as an MCP server with:
 
@@ -39,7 +39,7 @@ The value here is abstraction — rather than building a custom integration for 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [jmandel/health-record-mcp](https://github.com/jmandel/health-record-mcp) | ~75 | TypeScript | MIT | 3 tools |
+| [jmandel/health-record-mcp](https://github.com/jmandel/health-record-mcp) | ~84 | TypeScript | MIT | 3 tools |
 
 A **secure gateway enabling AI to access patient data** from Epic and Cerner EHRs, created by Josh Mandel — notably, a co-architect of the SMART on FHIR standard itself. Three powerful analytical tools:
 
@@ -81,7 +81,7 @@ An MCP server for **Epic and Cerner EMR interaction** combining 13 FHIR tools wi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [innovaccer/Healthcare-MCP](https://github.com/innovaccer/Healthcare-MCP) | ~28 | Python | MIT | Protocol extension |
+| [innovaccer/Healthcare-MCP](https://github.com/innovaccer/Healthcare-MCP) | ~31 | Python | MIT | Protocol extension |
 
 The **most ambitious structural contribution** to healthcare MCP — rather than building another server, Innovaccer extended the MCP protocol itself with healthcare-specific capabilities:
 
@@ -92,13 +92,13 @@ The **most ambitious structural contribution** to healthcare MCP — rather than
 - **Multi-transport** — SSE and streamable HTTP protocols
 - **Low-code agent builder** — no-code interface for building additional healthcare AI agents
 
-HMCP is important not just as a tool but as a signal — when a major healthcare data platform ([Innovaccer has unified health records for 54+ million people](https://innovaccer.com/)) invests in extending MCP for healthcare, it validates the protocol's relevance in regulated industries. The specification is open (MIT licensed), inviting the broader healthcare AI community to build on it.
+HMCP is important not just as a tool but as a signal — when a major healthcare data platform ([Innovaccer has unified health records for 54+ million people](https://innovaccer.com/resources/news/xo-health-and-innovaccer-announce-partnership-to-improve-member-experience)) invests in extending MCP for healthcare, it validates the protocol's relevance in regulated industries. The specification is open (MIT licensed), inviting the broader healthcare AI community to build on it.
 
 ### healthcare-mcp-public
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Cicatriiz/healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | ~102 | Node.js | — | 9 tools |
+| [Cicatriiz/healthcare-mcp-public](https://github.com/Cicatriiz/healthcare-mcp-public) | ~125 | Node.js | MIT | 9 tools |
 
 The **most popular general-purpose medical MCP server** — a one-stop shop for medical data access:
 
@@ -118,7 +118,7 @@ Features efficient caching with connection pooling, both stdio and HTTP/SSE inte
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [JamesANZ/medical-mcp](https://github.com/JamesANZ/medical-mcp) | ~75 | TypeScript | MIT | 15 tools |
+| [JamesANZ/medical-mcp](https://github.com/JamesANZ/medical-mcp) | ~108 | TypeScript | MIT | 15 tools |
 
 **Zero-configuration medical data access** — queries FDA, WHO, PubMed, RxNorm, and Google Scholar with no API keys required. Key selling points:
 
@@ -127,7 +127,7 @@ Features efficient caching with connection pooling, both stdio and HTTP/SSE inte
 - **15 tools** — drug search and details, WHO health statistics, PubMed literature search, Google Scholar academic research, clinical guidelines, pediatric-specific resources
 - **In-memory caching** — TTL-based cache with statistics monitoring
 
-The privacy-first design makes this particularly suitable for medical professionals who want AI assistance without sending patient-adjacent queries to third-party services. At 75 stars, it has genuine community adoption.
+The privacy-first design makes this particularly suitable for medical professionals who want AI assistance without sending patient-adjacent queries to third-party services. At 108 stars, it has genuine community adoption.
 
 ## Clinical Medication Intelligence
 
@@ -135,17 +135,17 @@ The privacy-first design makes this particularly suitable for medical profession
 
 | Server | Type | License | GA |
 |--------|------|---------|-----|
-| [FDB MedProof MCP™](https://www.fdbhealth.com/) | Commercial (enterprise) | Proprietary | March 31, 2026 |
+| [FDB MedProof MCP™](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html) | Commercial (enterprise) | Proprietary | March 31, 2026 |
 
-The **first MCP server built specifically for AI agent-driven medication decisions**. First Databank — whose drug databases are already embedded in most major EHRs — launched MedProof MCP to bring that same medication intelligence to AI agents operating across clinical workflows.
+The **first MCP server built specifically for AI agent-driven medication decisions**, per [FDB's own launch announcement](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html) (GA March 31, 2026). First Databank — whose drug databases are already embedded in most major EHRs — launched MedProof MCP to bring that same medication intelligence to AI agents operating across clinical workflows.
 
-MedProof MCP connects AI agents to FDB's drug knowledge database across major EHR platforms including **Epic, athenahealth, eClinicalWorks, MEDITECH, and Oracle Health (Cerner)**. This means agents can perform drug interaction checks, dosage validation, and medication decision support in patient-specific context without requiring custom integrations per EHR.
+MedProof MCP connects AI agents to FDB's drug knowledge database, enabling drug interaction checks, dosage validation, and medication decision support in patient-specific context. **Correction (2026-08-16 audit):** this section previously stated that MedProof MCP itself connects "across major EHR platforms including Epic, athenahealth, eClinicalWorks, MEDITECH, and Oracle Health (Cerner)." That fused two separate facts from the launch release: FDB's own announcement does not describe MedProof MCP as natively integrating with those five EHRs — it describes early adopter **Artera** as a patient-communications platform that separately integrates with "major EHRs like athenahealth, eClinicalWorks, Epic, MEDITECH, and Oracle Health/Cerner" and is using MedProof MCP within that existing footprint. The EHR list describes Artera's integrations, not a documented capability of MedProof MCP itself.
 
-FDB also announced two complementary AI solutions:
+FDB also announced two complementary AI solutions, detailed in a [second FDB press release ahead of HIMSS26](https://www.prnewswire.com/news-releases/fdb-advances-safe-agentic-integrations-for-workflow-automation-with-mcp-server-and-new-intelligent-solutions-ahead-of-himss26-302700674.html):
 - **FDB Script Agent™** — a prescription automation agent for ambulatory settings where physicians dictate prescriptions that get structured and queued for review
-- **FDB VerifyAssist™** — an inpatient pharmacy verification assistant that runs drug checks at the point of need, reducing chart-digging time for pharmacists
+- **FDB VerifyAssist™** — an inpatient pharmacy verification assistant that surfaces drug-specific verification criteria against patient clinical data at the point of need; FDB says medication order verification "can take 30% to 40% of a hospital pharmacist's time," which VerifyAssist is designed to reduce
 
-The platform is already in production at **Artera** — a [patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually](https://artera.io/company/). This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.
+The platform is already in production at **Artera** — a [patient communications platform serving over 1,000 healthcare organizations and more than 100 million patients annually](https://artera.io/company/), confirmed as an early MedProof MCP adopter in [FDB's launch announcement](https://www.prnewswire.com/news-releases/fdb-launches-medproof-mcp-pioneering-ai-native-agentic-medication-workflows-302729754.html). This makes FDB MedProof MCP one of the largest-scale healthcare MCP deployments documented to date.
 
 This is a notable shift: a major clinical data vendor building MCP-native products rather than retrofitting existing APIs. It signals that MCP is becoming the expected integration standard for healthcare AI, not just an option.
 
@@ -155,7 +155,7 @@ This is a notable shift: a major clinical data vendor building MCP-native produc
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Augmented-Nature/ChEMBL-MCP-Server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) | ~77 | TypeScript | — | 22 tools |
+| [Augmented-Nature/ChEMBL-MCP-Server](https://github.com/Augmented-Nature/ChEMBL-MCP-Server) | ~89 | TypeScript | MIT | 22 tools |
 
 The **most comprehensive drug discovery MCP server**, providing advanced access to the ChEMBL chemical database through 22 specialized tools across five categories:
 
@@ -165,13 +165,13 @@ The **most comprehensive drug discovery MCP server**, providing advanced access 
 - **Drug development** (4 tools) — clinical pipeline tracking, approval status, indication mapping
 - **Chemical properties** (4 tools) — ADMET analysis, physicochemical properties, advanced filtering
 
-[ChEMBL 34 contains bioactivity data for 2.4 million compounds against 15,600+ targets](https://chembl.blogspot.com/2024/04/chembl-34-is-out.html) — having 22 MCP tools to navigate this database transforms drug discovery research workflows. A medicinal chemist using Claude Desktop could search for compounds active against a specific target, filter by potency and selectivity, check ADMET properties, and review the clinical pipeline — all in a single conversation.
+**Correction (2026-08-16 audit):** this section previously cited ChEMBL 34 (April 2024) stats. The current release is ChEMBL 37 (January 5, 2026), which [contains bioactivity data for 2.9 million compounds against 18,552 targets](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_37/chembl_37_release_notes.txt) — having 22 MCP tools to navigate this database transforms drug discovery research workflows. A medicinal chemist using Claude Desktop could search for compounds active against a specific target, filter by potency and selectivity, check ADMET properties, and review the clinical pipeline — all in a single conversation.
 
 ### DrugBank MCP Server
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [openpharma-org/drugbank-mcp-server](https://github.com/openpharma-org/drugbank-mcp-server) | ~2 | JavaScript | MIT | 1 tool (16 methods) |
+| [openpharma-org/drugbank-mcp-server](https://github.com/openpharma-org/drugbank-mcp-server) | ~10 | JavaScript | MIT | 1 tool (16 methods) |
 
 Access to **17,430+ drugs** (13,166 small molecules + 4,264 biotech) via a high-performance SQLite backend with sub-10ms query speeds and ~50–100MB memory usage:
 
@@ -193,13 +193,13 @@ PubMed is the **most replicated MCP server category in healthcare** — at least
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cyanheads/pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) | ~66 | TypeScript | Apache 2.0 | 7 tools |
-| [Augmented-Nature/PubMed-MCP-Server](https://github.com/Augmented-Nature/PubMed-MCP-Server) | — | TypeScript | — | 16 tools |
-| [JackKuo666/PubMed-MCP-Server](https://github.com/JackKuo666/PubMed-MCP-Server) | — | Python | — | Multiple |
-| [chrismannina/pubmed-mcp](https://github.com/chrismannina/pubmed-mcp) | — | TypeScript | — | Multiple |
-| [openpharma-org/pubmed-mcp](https://github.com/openpharma-org/pubmed-mcp) | — | JavaScript | — | Literature search |
+| [cyanheads/pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server) | ~136 | TypeScript | Apache 2.0 | 7 tools |
+| [JackKuo666/PubMed-MCP-Server](https://github.com/JackKuo666/PubMed-MCP-Server) | ~126 | Python | MIT | Multiple |
+| [Augmented-Nature/PubMed-MCP-Server](https://github.com/Augmented-Nature/PubMed-MCP-Server) | ~15 | TypeScript | MIT | 16 tools |
+| [chrismannina/pubmed-mcp](https://github.com/chrismannina/pubmed-mcp) | ~10 | TypeScript | MIT | Multiple |
+| [openpharma-org/pubmed-mcp](https://github.com/openpharma-org/pubmed-mcp) | ~1 | JavaScript | MIT | Literature search |
 
-The **cyanheads implementation leads** with 66 stars, 7 tools, full NCBI E-utilities integration (ESearch, EFetch, ESummary, ELink, ESpell, EInfo), citation formatting in APA 7th/MLA 9th/BibTeX/RIS, full-text article retrieval from PubMed Central with section filtering, and Cloudflare Workers deployment. The Augmented-Nature version offers 16 tools exposing the full NCBI E-utilities and PMC APIs.
+The **cyanheads implementation leads** with 136 stars, 7 tools, full NCBI E-utilities integration (ESearch, EFetch, ESummary, ELink, ESpell, EInfo), citation formatting in APA 7th/MLA 9th/BibTeX/RIS, full-text article retrieval from PubMed Central with section filtering, and Cloudflare Workers deployment. The Augmented-Nature version offers 16 tools exposing the full NCBI E-utilities and PMC APIs.
 
 The proliferation of PubMed MCP servers tells a clear story: biomedical literature search is the killer app for healthcare MCP. Researchers want to query [40+ million citations](https://pubmed.ncbi.nlm.nih.gov/about/) from within their AI assistant rather than context-switching to the PubMed website.
 
@@ -207,7 +207,7 @@ The proliferation of PubMed MCP servers tells a clear story: biomedical literatu
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [vitorpavinato/ncbi-mcp-server](https://github.com/vitorpavinato/ncbi-mcp-server) | — | Python | — | Multiple |
+| [vitorpavinato/ncbi-mcp-server](https://github.com/vitorpavinato/ncbi-mcp-server) | ~12 | Python | — | Multiple |
 
 Designed for researchers across life sciences, providing access to PubMed's [40+ million articles](https://pubmed.ncbi.nlm.nih.gov/about/) through natural language queries. Focused on making NCBI's E-utilities accessible without requiring researchers to learn the API syntax.
 
@@ -217,7 +217,7 @@ Designed for researchers across life sciences, providing access to PubMed's [40+
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ChristianHinge/dicom-mcp](https://github.com/ChristianHinge/dicom-mcp) | ~86 | Python | MIT | 10 tools |
+| [ChristianHinge/dicom-mcp](https://github.com/ChristianHinge/dicom-mcp) | ~99 | Python | MIT | 10 tools |
 
 The **only MCP server for medical imaging interoperability**, enabling AI assistants to interact with PACS (Picture Archiving and Communication Systems) and VNA (Vendor Neutral Archives):
 
@@ -226,7 +226,7 @@ The **only MCP server for medical imaging interoperability**, enabling AI assist
 - **Send images** (2 tools) — route imaging data to other DICOM destinations
 - **Utilities** (3 tools) — connection management and network verification
 
-At 86 stars, this fills a critical niche — radiology departments generate massive amounts of imaging data, and being able to query study metadata, read reports, and route images through an AI assistant could streamline radiologist workflows significantly. The disclaimer that it's "not meant for clinical use" is appropriate given the sensitivity of medical imaging data, but the technical implementation is solid.
+At 99 stars, this fills a critical niche — radiology departments generate massive amounts of imaging data, and being able to query study metadata, read reports, and route images through an AI assistant could streamline radiologist workflows significantly. The disclaimer that it's "not meant for clinical use" is appropriate given the sensitivity of medical imaging data, but the technical implementation is solid.
 
 ## Genomics & Bioinformatics
 
@@ -234,7 +234,7 @@ At 86 stars, this fills a critical niche — radiology departments generate mass
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Augmented-Nature/NCBI-Datasets-MCP-Server](https://github.com/Augmented-Nature/NCBI-Datasets-MCP-Server) | ~11 | TypeScript | MIT | 31 tools |
+| [Augmented-Nature/NCBI-Datasets-MCP-Server](https://github.com/Augmented-Nature/NCBI-Datasets-MCP-Server) | ~16 | TypeScript | MIT | 31 tools |
 
 The **most comprehensive genomics MCP server**, providing access to NCBI's datasets through 31 specialized tools across nine categories:
 
@@ -260,7 +260,7 @@ With resource templates for direct URI-based data access, rate limiting, and cac
 
 ## The OpenPharma Initiative
 
-The **openpharma-org** GitHub organization maintains **45 repositories** — the largest coordinated MCP server collection for any industry vertical. Key servers include:
+The **openpharma-org** GitHub organization maintains **50 repositories** (up from 45 at last audit) — the largest coordinated MCP server collection for any industry vertical. Key servers include:
 
 | Server | Focus | Language |
 |--------|-------|----------|
@@ -301,9 +301,9 @@ Despite being the deepest vertical MCP category, some areas remain uncovered:
 
 **MCP Healthcare Server launches with openFDA integration (April 3, 2026).** A new general-purpose [MCP Healthcare Server](https://conare.ai/marketplace/mcp/mcp-healthcare-server) became available combining several data sources under a single MCP interface: real-time drug interaction checking via the openFDA API, ICD-10-CM diagnosis code lookup and keyword search, FDA adverse event reports for specific medications, Medicare Part D prescribing statistics, and clinical guideline search via PubMed. This fills a gap for clinical decision support that previously required separate FHIR, PubMed, and openFDA MCP servers.
 
-**FDA and EMA joint guidance on AI in drug development (January 2026).** The FDA and EMA jointly released ["Guiding Principles of Good AI Practice in Drug Development"](https://www.ema.europa.eu/en/news/ema-fda-set-common-principles-ai-medicine-development-0) — 10 key principles laying the foundation for using AI (including MCP-powered agents) in pharmaceutical workflows. This regulatory clarity is significant: it begins to define what "compliant" means for MCP servers used in GxP environments. Five trend areas are now shaping the pharma MCP roadmap through 2032: regulated extensions and compliance-by-design with HMCP/GxP profiles, certified MCP servers for clinical and lab data systems, agentic automation for clinical trials and manufacturing, auditability and model governance toolchains, and convergence with digital twins and edge orchestration.
+**FDA and EMA joint guidance on AI in drug development (January 2026).** The FDA and EMA jointly released ["Guiding Principles of Good AI Practice in Drug Development"](https://www.ema.europa.eu/en/news/ema-fda-set-common-principles-ai-medicine-development-0) — 10 key principles laying the foundation for using AI (including MCP-powered agents) in pharmaceutical workflows. This regulatory clarity is significant: it begins to define what "compliant" means for MCP servers used in GxP environments.
 
-**LMS-integrated AI grading reaches healthcare education.** Agentic AI assessment tools that operate inside Canvas, Moodle, and Blackboard via LTI grade passback are now being piloted in medical school and nursing program curricula — an early signal that healthcare training institutions are connecting their LMS and clinical simulation environments through MCP.
+**Correction (2026-08-16 audit):** this section previously included two additional claims with no supporting citation — a "five trend areas... through 2032" roadmap prediction, and a claim that healthcare training institutions are piloting LMS-integrated AI grading tools "connected through MCP" in medical school and nursing curricula. Neither claim could be traced to a verifiable primary source on re-audit, so both have been removed rather than re-published uncited.
 
 ## The Bottom Line
 
@@ -317,4 +317,4 @@ The key enabler is FHIR — healthcare already had a standardized data interchan
 
 - [Utah Lets AI Renew Prescriptions Without a Doctor](/guides/utah-ai-prescription-renewal-doctronic/) — the first state-approved autonomous AI prescribing program, the jailbreak that exposed its vulnerabilities, and the expansion into psychiatric medications
 
-*This review was last edited on 2026-05-15 using Claude Sonnet 4.6 (Anthropic).*
+*This review was last edited on 2026-08-16 using Claude Sonnet 5 (Anthropic). Originally published 2026-03-15.*

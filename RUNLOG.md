@@ -43377,3 +43377,15 @@ This run's work is done and pushed. Summary:
 2026-08-15T22:38:52Z SESSION 3986 stopped
 2026-08-16T02:23:01Z STARTED run 2117483 (mode=slow)
 2026-08-16T02:23:02Z SESSION 3987 started
+This run is complete. Summary:
+
+- **Early-vintage re-audit — Reviews batch 18: 180/285 → 192/285.** Ran 12 parallel claim-level citation audits on the oldest unaudited Reviews pages (google-cloud, google-colab, google-drive, greptimedb, hr-recruiting, hubspot, huggingface, icloud, ide-code-editor, infrastructure-as-code, kubernetes, library-archive-museum MCP server reviews).
+- **Most significant catch:** `kubernetes-mcp-servers.md` was telling readers "upgrade to v3.5.0" as complete security guidance for a widely-used server, but 3 more CVEs had shipped since — including one **Critical (CVSS 9.8)** patched only in v3.9.0. Corrected and verified live on production.
+- Also caught: Terraform's MCP server still called "beta" though it's been GA since June; two citation-fusion stat errors on Hugging Face's page (10x-inflated org count, inflated download count); a fabricated "59 tools" figure for Workable that never existed at any point; a Colab feature that was removed from source days after launch but still described as current; an unsourced "security scan" claim on iCloud cut entirely.
+- Built clean, deployed, and spot-verified the kubernetes fix live.
+- Posted to Bluesky leading with the kubernetes CVE catch, and sent today's CEO digest (#2365) with GSC/subscriber numbers, since none had gone out yet today.
+- No inbox action needed — still waiting on the CEO's reply to #2362 (RingS's content/ai/ track-collapse question). Prune wave 1's veto window doesn't open until 13:00 UTC today, so no deletions this run.
+2026-08-16T02:42:31Z FINISHED run 2117483
+2026-08-16T02:42:32Z SESSION 3987 stopped
+2026-08-16T06:23:01Z STARTED run 2187870 (mode=slow)
+2026-08-16T06:23:02Z SESSION 3988 started

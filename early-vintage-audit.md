@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 192/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 204/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -422,20 +422,20 @@ sweeps. Headline catches:
 - [ ] 2026-07-23 — [Network Security & Monitoring MCP Servers — Packet Capture, Port Scanning, Pentesting, and Reconnaissance](content/reviews/network-security-mcp-servers.md)
 - [x] 2026-07-23 — [News, Media & Journalism MCP Servers — RSS Feeds, Hacker News, News APIs, Podcasts, and Fact-Checking](content/reviews/news-media-journalism-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Nonprofit & Charity MCP Servers — Grant Discovery, Donor Management, Humanitarian Data, Charity Verification, Civic Data, and Volunteer Impact](content/reviews/nonprofit-charity-mcp-servers.md) — re-audited 2026-08-15
-- [ ] 2026-07-23 — [Note-Taking & Knowledge Management MCP Servers — Your Second Brain Meets AI Agents](content/reviews/note-taking-knowledge-management-mcp-servers.md)
-- [ ] 2026-07-23 — [Notification & Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond](content/reviews/notification-services-mcp-servers.md)
-- [ ] 2026-07-23 — [OCR & Document Intelligence MCP Servers — PaddleOCR, MinerU, Docling, Marker, Mistral OCR, and More](content/reviews/ocr-document-intelligence-mcp-servers.md)
+- [x] 2026-07-23 — [Note-Taking & Knowledge Management MCP Servers — Your Second Brain Meets AI Agents](content/reviews/note-taking-knowledge-management-mcp-servers.md)
+- [x] 2026-07-23 — [Notification & Email Delivery MCP Servers — Twilio, Resend, SendGrid, Mailgun, Postmark, Infobip, Courier, Novu, and Beyond](content/reviews/notification-services-mcp-servers.md)
+- [x] 2026-07-23 — [OCR & Document Intelligence MCP Servers — PaddleOCR, MinerU, Docling, Marker, Mistral OCR, and More](content/reviews/ocr-document-intelligence-mcp-servers.md)
 - [ ] 2026-07-23 — [Package Management & Dependency MCP Servers — npm, PyPI, Maven, Cargo, NuGet, WinGet, Homebrew, Version Checking, Vulnerability Scanning, and More](content/reviews/package-management-dependency-mcp-servers.md)
-- [ ] 2026-07-23 — [Performance & Load Testing MCP Servers — k6, JMeter, Locust, Gatling, Artillery, and Lighthouse](content/reviews/performance-load-testing-mcp-servers.md)
+- [x] 2026-07-23 — [Performance & Load Testing MCP Servers — k6, JMeter, Locust, Gatling, Artillery, and Lighthouse](content/reviews/performance-load-testing-mcp-servers.md)
 - [ ] 2026-07-23 — [Personal Finance MCP Servers — YNAB, Plaid, Firefly III, QuickBooks, Alpaca, Monarch Money, and More](content/reviews/personal-finance-mcp-servers.md)
-- [ ] 2026-07-23 — [Pet & Animal Care MCP Servers — Virtual Pets, Wildlife ID, Birding, Livestock Genetics, and Pet Adoption](content/reviews/pet-animal-care-mcp-servers.md)
-- [ ] 2026-07-23 — [Pharmaceutical & Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More](content/reviews/pharmaceutical-healthcare-mcp-servers.md)
-- [ ] 2026-07-23 — [Photography MCP Servers — Lightroom, Photoshop, GIMP, Photopea, Stock Photos, Image Optimization, Camera Control, RAW Processing, and More](content/reviews/photography-mcp-servers.md)
-- [ ] 2026-07-23 — [Podcasting & Audio Content MCP Servers — MimikaStudio, ElevenLabs, MiniMax, Reaper DAW, Kokoro TTS, Suno Music, Podcast Workflows, and More](content/reviews/podcasting-audio-content-mcp-servers.md)
-- [ ] 2026-07-23 — [Presentation & Slides MCP Servers — PowerPoint, Google Slides, Keynote, Canva, and More](content/reviews/presentation-slides-mcp-servers.md)
-- [ ] 2026-07-23 — [Printing & 3D Printing MCP Servers — OctoPrint, FreeCAD, Fusion 360, SolidWorks, OpenSCAD, CUPS, Print-on-Demand, and More](content/reviews/printing-3d-printing-mcp-servers.md)
-- [ ] 2026-07-23 — [Privacy & Data Protection MCP Servers — PII Redaction, GDPR, BigID, DataGrail, Pangea, and More](content/reviews/privacy-data-protection-mcp-servers.md)
-- [ ] 2026-07-23 — [Prompt Engineering & Optimization MCP Servers — Optimizers, Template Managers, Multi-LLM Routers, Security Guards, and 25+ More](content/reviews/prompt-engineering-optimization-mcp-servers.md)
+- [x] 2026-07-23 — [Pet & Animal Care MCP Servers — Virtual Pets, Wildlife ID, Birding, Livestock Genetics, and Pet Adoption](content/reviews/pet-animal-care-mcp-servers.md)
+- [x] 2026-07-23 — [Pharmaceutical & Healthcare MCP Servers — FHIR, EHR Integration, Drug Discovery, PubMed, Medical Imaging, and More](content/reviews/pharmaceutical-healthcare-mcp-servers.md)
+- [x] 2026-07-23 — [Photography MCP Servers — Lightroom, Photoshop, GIMP, Photopea, Stock Photos, Image Optimization, Camera Control, RAW Processing, and More](content/reviews/photography-mcp-servers.md)
+- [x] 2026-07-23 — [Podcasting & Audio Content MCP Servers — MimikaStudio, ElevenLabs, MiniMax, Reaper DAW, Kokoro TTS, Suno Music, Podcast Workflows, and More](content/reviews/podcasting-audio-content-mcp-servers.md)
+- [x] 2026-07-23 — [Presentation & Slides MCP Servers — PowerPoint, Google Slides, Keynote, Canva, and More](content/reviews/presentation-slides-mcp-servers.md)
+- [x] 2026-07-23 — [Printing & 3D Printing MCP Servers — OctoPrint, FreeCAD, Fusion 360, SolidWorks, OpenSCAD, CUPS, Print-on-Demand, and More](content/reviews/printing-3d-printing-mcp-servers.md)
+- [x] 2026-07-23 — [Privacy & Data Protection MCP Servers — PII Redaction, GDPR, BigID, DataGrail, Pangea, and More](content/reviews/privacy-data-protection-mcp-servers.md)
+- [x] 2026-07-23 — [Prompt Engineering & Optimization MCP Servers — Optimizers, Template Managers, Multi-LLM Routers, Security Guards, and 25+ More](content/reviews/prompt-engineering-optimization-mcp-servers.md)
 - [ ] 2026-07-23 — [Real Estate & Property MCP Servers — Zillow, MLS, Airbnb, BatchData, Mortgage Analysis, and More](content/reviews/real-estate-property-mcp-servers.md)
 - [ ] 2026-07-23 — [Redis MCP Servers — The Official Server, Agent Memory, Cloud Management, and Community Alternatives](content/reviews/redis-mcp-servers.md)
 - [ ] 2026-07-23 — [Regex & Text Processing MCP Servers — Pattern Matching, Diff, Translation, Format Conversion, Grammar, and Encoding](content/reviews/regex-text-processing-mcp-servers.md)
