@@ -136042,3 +136042,159 @@ landed this run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-16T02:23 UTC (session 3987)
+
+### Orientation
+
+Inbox: no new actionable items. All open threads (#2362 forwarded to CEO re: RingS's track-collapse-
+scope + deletion-mechanics questions) remain unreplied — no action needed until CEO responds.
+System clock this run (`date -u` = 2026-08-16 02:23-02:50 UTC): prune-wave-1 Rob veto window (opens
+2026-08-16 13:00 UTC) still not open — no deletions this run. Deploy throttle clear (~4h since last
+deploy). Bluesky not yet posted today, not Tuesday, no reserved-slot conflict — clear to post. No
+CEO digest sent yet today (last was #2358, dated 2026-08-15) — clear to send.
+
+### Early-vintage re-audit: Reviews batch 18 (180/285 -> 192/285)
+
+Cross-checked the 105 remaining unaudited Reviews pages against `prune-wave1-manifest.csv` fresh
+(mechanical set-membership via `comm` on the path column — first attempt used the wrong CSV column
+(url instead of path) and produced a false 0-overlap result; caught and fixed before trusting it,
+re-ran against the correct `path` column, still 0 overlap, genuinely confirmed this time). Took the
+oldest 12 alphabetically (google-cloud through library-archive-museum, all 2026-07-23/24) and ran 12
+parallel claim-level audit agents, one file each:
+
+- **kubernetes-mcp-servers.md** — most significant catch of the batch, a live security-relevance
+  issue rather than ordinary drift: the Flux159/mcp-server-kubernetes advisory section told readers
+  "Fixed in v3.5.0 — upgrade immediately" as complete guidance. Live GitHub advisory data shows 6
+  CVEs total against that repo, not the 5 the page listed — missing CVE-2026-46519 (CVSS 8.8, High,
+  patched 3.6.0), CVE-2026-47250 (CVSS 6.1, Moderate, patched 3.7.0), and CVE-2026-61459 (CVSS 9.8,
+  **Critical**, patched only in 3.9.0, found via web search since it wasn't yet showing in the GHSA
+  advisories list the agent first fetched). Also caught CVE-2025-66404 mislabeled "Moderate" when
+  NVD/GitHub list it High (8.8). Current release is v4.1.4, not v3.5.0 the page assumed — three of
+  six CVEs postdate v3.5.0, so the old advice would leave readers vulnerable. Rewrote the advisory
+  section, Known Issues, Bottom Line, and "Who should be cautious" with all 6 CVEs, correct
+  severities, and current-release guidance. Also caught a citation-fusion error: "Google GKE Agent
+  Sandbox... up to 90% improvement over cold starts" conflated two separate Google products and
+  fabricated a stat (source actually says "90% of allocations complete within 200ms"). Plus:
+  strowk/mcp-k8s-go dormancy understated by over a year (misdated Nov 2025 vs. actual Nov 2024);
+  SUSE Rancher Prime partner announcement misattributed to KubeCon EU 2026 (actually SUSECON 2026);
+  jmrplens/portainer-mcp-enhanced now archived; star/fork/commit drift across 8+ repos.
+- **infrastructure-as-code-mcp-servers.md** — Terraform's MCP server was still called "beta, not
+  recommended for production" though HashiCorp shipped GA at v1.0 in June 2026 (latest is now
+  v1.2.0). Also: a37ai/ansible-tower-mcp repo gone (404), removed; cfn-mcp-server now deprecated
+  and folded into AWS's unified IaC MCP server, page treated it as a live "NEW" server; Ansible AAP
+  launch date wrong (Jan 30 claimed vs. Red Hat's own Feb 2 blog date); uncited Spacelift
+  Intelligence/KubeCon paragraph and StackGen "70% MTTR" claim both sourced; VS 2026 Bicep built-in
+  claim cited.
+- **huggingface-mcp-server.md** — two citation-fusion errors: "500,000+ organizations" cited to
+  originality.ai, which actually says 50,000 (10x inflation, likely confused with the "500,000
+  datasets" stat); "50 billion cumulative model downloads" cited to an HF blog post that actually
+  reports ~45.4 billion. Also: wrong GitHub issue cited for a session-closing bug (swapped in the
+  correct one); a repo's "last updated" date off by a year; a VSCode polling bug presented as open
+  when HF's own blog confirms it was fixed; ~684-employees estimate cut as unverifiable (third-party
+  estimates ranged 250-988 with no consistent figure).
+- **hr-recruiting-mcp-servers.md** — Workable's MCP server cited as "59 tools" everywhere on the
+  page — that number never existed at any point; Workable's own press releases show 38 tools at May
+  2026 launch, expanded to 94 by July 2026 (confirmed against live docs). Corrected throughout,
+  plus an unsupported "35,000+ companies" claim fixed to the verified 6,200+ figure from the same
+  release. Also found 3 dead repos (the-sid-dani/lever-mcp-server, Morfeu333/GupyMCP,
+  evrimalacan/mcp-bamboohr, all 404) and a contradicted claim (FactorialHR's page said it excludes
+  payroll data "for security" but the README documents a read-only payroll tool).
+- **google-colab-mcp-server.md** — the article's central "two operational modes" framing (session
+  proxy + opt-in "runtime mode" for direct Jupyter-kernel access) was invalidated by the actual
+  source tree: runtime mode, along with runtime.py/client.py/auth.py and the associated CLI flags,
+  was deleted in a March 24, 2026 cleanup PR just 5 days after launch and never returned. Rewrote
+  What It Does, Setup, and Bottom Line/Rating to reflect this as a correction of the earlier review.
+  Also fixed a launch-date conflation (article said "released March 17," conflating the Google
+  Developers Blog announcement date with the separate GitHub v1.0.0 tag date of March 19).
+- **icloud-mcp-server.md** — cut an unverifiable "SafeSkill security scan 87/100... 40 findings, 6
+  critical" claim for icloud-calendar-mcp, appearing in 4 places, with no discoverable source
+  anywhere (not in the repo, not indexed on the web) — cite-it-or-cut-it. Fixed an 850M-users
+  citation-fusion error: Apple's own newsroom source shows 850M is App Store *weekly users*, not an
+  iCloud-specific figure Apple doesn't publish. Fixed a market-cap citation pointing at an earnings
+  press release that never mentions market cap.
+- **google-cloud-mcp-servers.md** — the Managed Agents API "does not support MCP" was stated as
+  current fact in 3 places; Google actually added `mcp_server` support July 7, 2026, ~6 weeks stale.
+  Cut an unsupported "67% fewer errors, 45% better task completion" WebMCP stat (no traceable
+  primary source, only circular SEO-aggregator references). Gemini 3.5 Flash citation had drifted to
+  a page now showing Gemini 3.7 Flash content — repointed to the actual primary announcement.
+- **google-drive-mcp-server.md** — cut two unsupported adoption stats ("8 million paying business
+  customers" — source actually says 6M, dated 2023; "47% cloud storage market share" — source
+  doesn't mention 47% at all), replaced with Google's own April 2026 Workspace post (3B users,
+  13M+ customers). Fixed Alphabet market cap ($3.8T claimed vs. actual ~$4.2T — internally
+  inconsistent, claiming less than a milestone the page itself said was already reached).
+- **hubspot-mcp-server.md** — "Self-Service MCP Auth Apps graduated to stable alongside GA" was
+  false per HubSpot's own Spring 2026 Spotlight changelog (still Public Beta); PulseMCP rank/visits
+  stale (#88/642K claimed vs. live #59/1.5M); landing pages table said read-only, HubSpot's June
+  2026 changelog confirms write capability shipped.
+- **greptimedb-mcp-server.md** — "still experimental... APIs may change without notice" warning no
+  longer appears anywhere in current docs/README/CHANGELOG, deleted; "no write operations" claim
+  invalidated by v0.5.0 (June 8, 2026) adding an opt-in `--allow-write` flag — exactly the
+  dormancy-claim failure mode the standing duty calls out; prompt-template count wrong (7 claimed
+  incl. one nonexistent template, actual 10).
+- **ide-code-editor-mcp-servers.md** — Known Issue #2 claimed VS Code's MCP star count is "barely
+  above Neovim's for a 50x smaller user base" — the cited Stack Overflow survey actually shows ~5x
+  (75.9% vs 14%), not 50x. JetBrains' live docs now list a bundled Debugger MCP toolset directly
+  contradicting the page's claim that JetBrains lacks debugger-stepping tools — added correction
+  notes rather than silently leaving the now-false claim. Dead Copilot-users citation swapped for a
+  working one.
+- **library-archive-museum-mcp-servers.md** — molanojustin/smithsonian-mcp's "155+ million objects"
+  claim was a citation-fusion error: the server's own README says 3M+ digitized objects; 155M is the
+  Smithsonian's total physical holdings across all collections, a different number entirely.
+  iosifache/annas-mcp mislabeled "(Python, MIT)" — actual repo is Go with no LICENSE file; also
+  turns out to be the highest-starred server in the whole vertical (995 stars), previously buried
+  under the wrong label.
+
+Plus routine star/fork/commit-count and version drift corrected across all 12 pages (verified live
+via GitHub API/WebFetch, not assumed). All 12 files re-stamped `sources_audited: 2026-08-16`, YAML
+re-verified valid via `yaml.safe_load` independently on all 12, plus a clean `hugo --quiet` build
+with zero errors. Checked off all 12 in `early-vintage-audit.md`; Reviews status line updated to
+192/285 (93 pages remain unaudited after this batch).
+
+### Deploy
+
+Committed (43 files: 12 content pages + regenerated site/ output + early-vintage-audit.md +
+RUNLOG/TOKENLOG bookkeeping, commit 4ff2c67567), then a separate `.last_deploy` bump commit
+(20109ed41a). Pre-commit hook had nothing new under content/ to drop this run — RingS's four
+untracked `content/ai/` dirs (llm-cost-management both tracks 2026-08-16, prompt-engineering-for-
+coding-agents both tracks 2026-08-13, all still pending from prior runs) were never staged, so no
+freeze-skip-log.md entry needed. Deployed via rsync (~4.0h since prior deploy, throttle respected).
+Spot-verified live: all 4 kubernetes-mcp-servers.md CVE IDs (including the previously-missing
+Critical CVE-2026-61459) confirmed rendering in production via curl.
+
+### Bluesky
+
+Posted, leading with the kubernetes CVE catch (concrete security-relevant number, fits the
+transparency/self-correction positioning): https://bsky.app/profile/chatforest.bsky.social/post/3mt65x7qu622f
+— cap respected, not Tuesday, no reserved-slot conflict. First post attempt hit HTTP 400 (301-char
+text, 1 over Bluesky's 300 limit) — verified via `check_bluesky_posted_today.py` that the failed
+attempt did not actually post before retrying with shortened text.
+
+### CEO digest
+
+Sent #2365 — first digest since #2358 (2026-08-15), so within the 1/day cap. Included this run's
+batch-18 summary (led with the kubernetes CVE catch), fresh GSC line (freshest complete day
+2026-08-13: 4 clicks/2,911 impressions; trailing 7-day avg ~1.71 clicks/day, ~2,963 impressions/day
+— noted the 4-click uptick without calling it a trend), fresh subscriber count (1, unchanged),
+Bluesky post link, and deploy confirmation. No CEO reply yet this run.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 192/285. Next run: re-scan `early-vintage-audit.md` fresh
+  against `prune-wave1-manifest.csv` again (don't reuse this run's candidate list) for the next
+  10-12-page non-pruned batch. 93 Reviews pages remain unaudited after this batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per
+  this run's system clock (2026-08-16 02:23-02:50 UTC) still not open, but very likely to cross by
+  the next run or two. Once open, re-check which manifest pages are still unaudited-and-live vs.
+  already deleted before building the next audit batch, and follow directive #2352's ~100-page
+  batch process (log each batch on Issue #409, mechanical set-membership check against the
+  manifest).
+- **Waiting on CEO reply to #2362** (RingS's track-collapse-scope + deletion-mechanics questions).
+  No action needed from me until it lands — relay to RingS once it does.
+- Next digest to aiu 67 (none sent yet since #2365): fresh GSC line, freshly-pulled subscriber
+  count, next batch's summary, and the CEO's ruling on #2362 if it's landed by then.
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
