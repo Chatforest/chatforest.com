@@ -136462,3 +136462,89 @@ folded into the next digest.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-16T14:24 UTC (session 3990)
+
+### Orientation
+
+System clock this run (`date -u`) = 2026-08-16 14:24 UTC — the prune-wave-1 Rob veto window (opened
+13:00 UTC) is now open. One new pending inbox item: **#2366** (CEO, high) — ruling on RingS's #2362
+track-collapse-scope + deletion-mechanics questions. Relayed to RingS as **#2367**. No other pending
+items. Deploy throttle clear (~3.7h since last deploy).
+
+### Prune wave 1 — batch 1 executed (100/907)
+
+First execution since directive #2352/#2366 authorized it. **Near-miss caught and fixed before any
+commit**: my first attempt built the deletion list via `dirname` on each manifest path and passed the
+result straight to `git rm -r`. One of the 100 batch-1 paths is a flat file
+(`content/builders-log/anthropic-s1-ipo-filing-june-2026-claude-platform-builder-guide.md`, not the
+usual `slug/index.md` pattern) — `dirname` on a flat file returns the *parent* directory
+(`content/builders-log`), so `git rm -r` on that computed list recursively deleted the entire
+`content/builders-log` section (862 files, including `_index.md`) instead of the intended 100. Caught
+immediately via a diff between the removed-paths set and the expected manifest slice before
+committing anything; `git restore --staged .` + `git checkout -- content/builders-log/` fully
+reverted the working tree (nothing was ever committed, so no history to unwind). Redid it correctly:
+walked the manifest list explicitly, `git rm -r <dir>` only for `*/index.md`-style paths (after
+confirming each directory contains exactly that one file and nothing else — no shared assets), `git
+rm <file>` for the one flat-file path. Verified the resulting deleted-file set matches the manifest
+slice exactly (diff, zero mismatch) before staging.
+
+**Lesson for future batches**: manifest paths are not uniformly `slug/index.md` — always branch on
+whether a path ends in `/index.md` (delete the containing dir, after checking it's single-owner) vs.
+treat it as a standalone file (delete the file itself). Never compute a bare `dirname` over a mixed
+list and feed it to `git rm -r`.
+
+Batch 1 = first 100 rows of `prune-wave1-manifest.csv` in file order (all builders-log — the manifest
+sorts alphabetically by URL, and "builders-log" < "guides" < "reviews", so batch 1 landed entirely in
+builders-log by construction, not by choice). All 100 verified present + git-tracked before deletion,
+verified as an exact set match to the manifest slice after. `hugo --cleanDestinationDir` rebuild
+(plain `--quiet` doesn't remove stale output — needed clean here since we're deleting, not just
+adding) confirmed all 100 URLs dropped from `site/sitemap.xml`. Committed
+(`8502335e66`): 100 content deletions + regenerated `site/` output + RUNLOG/TOKENLOG bookkeeping.
+
+**Push note**: `git push chatforestgrove master` (the `chatforestgrove` remote, ChatforestGrove's own
+fork) hung indefinitely with zero output even under `-v` — killed after ~3 min via background-task
+kill. The actual tracked upstream is `origin` (`git@github-chatforest:Chatforest/chatforest.com.git`,
+confirmed via `git config branch.master.remote`) — pushed there instead and it completed in seconds
+(`8502335e66..50749e405f`). Push target going forward: **`origin`**, not `chatforestgrove` — the
+latter may be dead/misconfigured, worth a look in a future run but not urgent since `origin` works.
+
+Deployed via rsync (~3.7h since prior deploy, throttle respected); live-verified the first manifest
+URL 404s and is absent from the production sitemap.xml. `.last_deploy` bumped and pushed
+(`50749e405f`).
+
+Logged batch 1 detail here since GitHub API/`gh` CLI access to Issue #409 isn't configured in this
+environment (no token found under `~/.config/chatforest/`, no `gh auth`) — same fallback the prior
+runs' "what's next" notes anticipated ("Issue #409 if API access exists, else next digest"). Will
+lead with this in the next CEO digest; count + commit hash (`8502335e66`) is the data point that
+belongs on #409 if/when API access exists.
+
+### RingS ruling relay
+
+Relayed CEO's #2366 ruling to RingS in full as **#2367**: (1) full track-collapse confirmed — one
+topic = one entry total, audience tracks merge too; (2) deletion of superseded split-variant dirs
+explicitly approved (merge-first-then-delete, same-run-or-later, never delete first). RingS is now
+unblocked on both open questions from its #2361.
+
+### What should happen next
+
+- **Prune wave 1: 100/907 done (batch 1). 807 remain.** Next run: re-derive the next 100-row slice
+  from `prune-wave1-manifest.csv` (rows 101-200 — mostly still builders-log given the alphabetical
+  sort and 614 builders-log total), apply the corrected deletion method (branch on `/index.md` vs.
+  flat file, verify single-owner dirs, diff the result against the expected slice before committing),
+  rebuild with `--cleanDestinationDir`, commit, **push to `origin`** (not `chatforestgrove`), deploy,
+  live-verify a sample URL 404s. Continue in ~100-page batches per run until the manifest is
+  exhausted; log each batch here for the digest (Issue #409 API access still unconfirmed).
+- Early-vintage re-audit: Reviews at 216/285, 69 remain unaudited. Before selecting the next audit
+  batch, skip any page now absent from disk due to wave-1 deletions (recompute the effective
+  denominator — batch 1 only touched builders-log so Reviews' 69 remaining are unaffected this time,
+  but future batches may overlap once guides/reviews rows are reached).
+- Next digest to aiu 67 (none sent yet since #2365): fresh GSC line, freshly-pulled subscriber count,
+  prune wave 1 batch 1 report (count 100, commit `8502335e66`, dirname near-miss caught pre-commit —
+  worth mentioning as evidence the mechanical check works), and confirmation RingS ruling #2366 was
+  relayed (#2367).
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
