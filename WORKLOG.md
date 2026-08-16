@@ -136198,3 +136198,139 @@ Bluesky post link, and deploy confirmation. No CEO reply yet this run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-16T06:23 UTC (session 3988)
+
+### Orientation
+
+Inbox: no new items since the last run — still just #2365 (this morning's digest), #2362/#2363
+(RingS's forwarded track-collapse + deletion-mechanics questions, still awaiting CEO ruling), and
+#2345/#2342 (older, already actioned). No action needed from me this run. System clock this run
+(`date -u` = 2026-08-16 06:23-06:50 UTC): prune-wave-1 veto window (opens 13:00 UTC) still ~6.5h
+out — no deletions this run. Deploy throttle clear (~4h since last deploy). Bluesky already posted
+today (02:40 UTC, confirmed via `check_bluesky_posted_today.py` — `ALREADY_POSTED`) — no second
+post, per the hard 1/day cap. Not Tuesday. A CEO digest already went out today at 02:41 UTC (#2365)
+— 1/day cap means this run's summary stays in WORKLOG only.
+
+### Early-vintage re-audit: Reviews batch 19 (192/285 -> 204/285)
+
+Re-scanned `early-vintage-audit.md` fresh against `prune-wave1-manifest.csv` (CSV has CRLF line
+endings — first `comm` pass silently zero-overlapped everything until `\r` was stripped; caught
+before trusting it). Of the 93 unaudited Reviews pages, 7 of the next-alphabetical candidates
+(logistics-supply-chain, marketing-automation, monitoring-uptime, network-automation-infrastructure,
+network-security, package-management-dependency, personal-finance) are on the prune-wave-1 manifest
+and were skipped; took the next 12 non-pruned pages in list order and ran 12 parallel claim-level
+audit agents, one file each:
+
+- **pet-animal-care-mcp-servers.md** — cut a fabricated entry: "wildlife-insights-mcp," sourced
+  solely to a lobehub.com URL containing the literal placeholder string "yourusername" instead of a
+  real GitHub account. A GitHub search for the repo name returns zero results, and no independent
+  source confirmed the tool list or "Texas ranch optimization" framing the page described — removed
+  with an inline correction rather than left uncited. Also fixed a wrong repo (zeeroiq's real repo is
+  `pet-adoption-scheduling-service`, not `-scheduler`, and is Java not Python), an internal
+  contradiction (Bottom Line said iNaturalist has "100M+ observations," five other spots on the same
+  page correctly said 300M+), and two mislabeled languages (ebird-mcp-server is JS not TS,
+  nutritionix-mcp-server is Python not TS).
+- **presentation-slides-mcp-servers.md** — Figma Slides support claim was reversed: the page said
+  Figma's official MCP server "still does NOT support Figma Slides," headlined "Gap Partially
+  Filled." Figma shipped native Slides support June 16, 2026 (confirmed via Figma's own MCP server
+  guide + a dedicated `figma-use-slides` skill file) — rewrote the section and cut the now-false
+  "no official support" bullet from What's Missing. Also: Gamma's tool count was stale (4 claimed,
+  17 per Gamma's own docs reference), and one repo's star count (PPT_MCP_Server, claimed 42) had no
+  traceable basis — live repo has 1 star, corrected rather than guessed at.
+- **pharmaceutical-healthcare-mcp-servers.md** — citation-fusion error: the FDB MedProof section
+  attributed an EHR-integration list (Epic, athenahealth, eClinicalWorks, MEDITECH, Oracle Health) to
+  MedProof MCP itself, but FDB's own press release shows that list describes early adopter Artera's
+  EHR integrations, not a MedProof capability. Corrected and added a second independent FDB source.
+  Also: ChEMBL citation was two releases stale (34 → current 37, 2.4M → 2.92M compounds).
+- **privacy-data-protection-mcp-servers.md** — EU AI Act high-risk deadline was over a year stale:
+  page said August 2026; the Digital Omnibus on AI (Reg. (EU) 2026/1744, in force July 27, 2026)
+  deferred the Annex III deadline to December 2, 2027. Also a fused fine figure — page cited "€35M or
+  7%" for high-risk violations, which is actually the *prohibited-practices* tier; high-risk
+  non-compliance is €15M or 3%, a separate tier. BigID's cited repo 404s; content moved to a
+  gated "Early Adopters" repo exposing 6 skills, not the "28+ tools" claimed — corrected and flagged
+  as unverifiable at the new figure. Pangea MCP Proxy is archived (Jan 2026), not disclosed.
+- **prompt-engineering-optimization-mcp-servers.md** — MerabyLabs/promptarchitect-mcp repo no longer
+  exists (404, org shows one unrelated repo) — cut. sparesparrow/mcp-prompts's claimed default
+  feature set (AWS/DynamoDB/S3/SQS backend, RBAC, Stripe payments) moved to an archived opt-in
+  module; the shipped default is now a plain local JSON store — corrected. minipuft/claude-prompts's
+  license was wrong (MIT, not AGPL-3.0) and a claimed tool rename never happened.
+- **performance-load-testing-mcp-servers.md** — MCPMark benchmark figure (51.6% pass@1 "even the
+  best model") is from a retired task set; MCPMark now defaults to "MCPMark Verified," current leader
+  92.9%. Azure/azure-mcp repo is archived, tools moved to microsoft/mcp (3.6k stars) — was cited with
+  no link at all. AWS Distributed Load Testing MCP section had zero citations for a named-company
+  claim — added AWS's own docs page, confirmed it matches the 7 tools already listed.
+- **ocr-document-intelligence-mcp-servers.md** — Docu-Scan's "Google Document AI backend" claim cut
+  (Spocont's own live product page doesn't mention Google Document AI, no independent confirmation).
+  MinerU's "most-visited OCR server on PulseMCP" claim was a stale traffic-spike snapshot — live data
+  shows ~122 weekly visits now vs. the ~1,200 claimed; reworded to past tense with the real number
+  cited. MinerU's license is a custom source-available license with a revenue carve-out, not plain
+  Apache-2.0 as stated.
+- **notification-services-mcp-servers.md** — Courier's GitHub repo (`trycourier/courier-mcp`) was
+  archived by its owner July 13, 2026, contradicting the page's "active development" framing (the
+  hosted endpoint and npm package are still shipping). Klaviyo's tool count was overstated (15+
+  claimed vs. ~40 actual per Klaviyo's own docs). Postmark's security-incident claim had zero
+  citations despite being a named-company security claim — added Postmark's own incident post + press
+  coverage.
+- **note-taking-knowledge-management-mcp-servers.md** — Supermemory MCP's cited repo now carries its
+  own deprecation notice (MCP v1 deprecated, new hosted server requires OAuth) directly contradicting
+  the page's "no login required, completely free" claim — rewritten. A false "no updates since Nov
+  2024" claim on mcp-obsidian was wrong even at original publication (repo has 2025-2026 commits,
+  most recent May 15, 2026). Joplin's install command was pointed at the wrong plugin marketplace
+  (Claude Code's, not Joplin's).
+- **photography-mcp-servers.md** — ImmichMCP was badly stale (v0.3.2/40 tools claimed vs. live
+  v3.3.3/49 tools). shinpr/mcp-image's generation backend claim was wrong (Gemini 2.5 Flash now used
+  only for prompt optimization, not generation). Cloudinary's "5 billion+ transformations monthly"
+  claim didn't appear anywhere in the cited source — cut per cite-it-or-cut-it.
+- **printing-3d-printing-mcp-servers.md** — two license misattributions (Kiln is AGPL-3.0 + commercial,
+  not "MIT + Commercial"; eyfel/mcp-server-solidworks is AGPL-3.0, not MIT). One dead repo
+  (hunter-stradley/bambustudio-mcp, 404) — claims removed with a correction note rather than silently
+  deleted.
+- **podcasting-audio-content-mcp-servers.md** — MimikaStudio's license was misstated as Apache 2.0;
+  actual is Business Source License 1.1 (commercial use restricted until a future conversion date).
+  bonfire-audio/reaper-mcp org name was wrong (real org is bonfire-systems). kaslin.rocks
+  podcast-assistant-mcp had zero citation — added the actual repo.
+
+Plus routine star/fork/commit/version drift corrected across all 12 pages, verified live via GitHub
+API/WebFetch (not assumed) — several hundred individual number updates. All 12 re-stamped
+`sources_audited: 2026-08-16`, YAML re-verified via `yaml.safe_load`, plus a clean `hugo --quiet`
+build with zero errors. Checked off all 12 in `early-vintage-audit.md`; Reviews status line updated
+to 204/285 (81 pages remain unaudited after this batch).
+
+### Deploy
+
+Committed (43 files: 12 content pages + regenerated site/ output + early-vintage-audit.md +
+RUNLOG/TOKENLOG bookkeeping, commit a58621e6a0), then a separate `.last_deploy` bump commit
+(d6b51fd12d). Pre-commit hook had nothing new under content/ to drop — RingS's four untracked
+`content/ai/` dirs (llm-cost-management both tracks 2026-08-16, prompt-engineering-for-coding-agents
+both tracks 2026-08-13) were never staged, so no freeze-skip-log.md entry needed. Deployed via rsync
+(~4.0h since prior deploy, throttle respected). Spot-verified live: the pet-animal-care correction
+note (wildlife-insights-mcp removal) and the presentation-slides Figma Slides fix both confirmed
+rendering in production via curl.
+
+### Bluesky / CEO digest
+
+No Bluesky post this run — already posted today (02:40 UTC), hard 1/day cap. No CEO digest — one
+already sent today (#2365, 02:41 UTC), 1/day cap; this run's summary is in WORKLOG only, to be
+folded into the next digest.
+
+### What should happen next
+
+- Early-vintage re-audit: Reviews at 204/285. Next run: re-scan `early-vintage-audit.md` fresh
+  against `prune-wave1-manifest.csv` again (don't reuse this run's candidate list) for the next
+  10-12-page non-pruned batch. 81 Reviews pages remain unaudited after this batch.
+- **Prune wave 1: deletions start no earlier than 2026-08-16 13:00 UTC** (Rob veto window) — per
+  this run's system clock (2026-08-16 06:23-06:50 UTC) still not open, but likely to cross by the
+  next run or two. Once open, re-check which manifest pages are still unaudited-and-live vs. already
+  deleted before building the next audit batch, and follow directive #2352's ~100-page batch process
+  (log each batch on Issue #409, mechanical set-membership check against the manifest).
+- **Waiting on CEO reply to #2362** (RingS's track-collapse-scope + deletion-mechanics questions).
+  No action needed from me until it lands — relay to RingS once it does.
+- Next digest to aiu 67 (none sent yet since #2365): fresh GSC line, freshly-pulled subscriber
+  count, this run's batch-19 summary (lead with the fabricated wildlife-insights-mcp catch and/or the
+  Figma Slides reversal), and the CEO's ruling on #2362 if it's landed by then.
+- Duplicate clusters needing a human merge/differentiate/retire decision are tracked in
+  `duplicate-clusters.md` (3 open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
