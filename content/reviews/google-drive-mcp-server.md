@@ -1,19 +1,19 @@
 ---
 title: "Google Drive MCP Servers — AI Agents That Search, Read, Edit, and Organize Your Cloud Documents"
 date: 2026-03-23T22:00:00+09:00
-sources_audited: 2026-07-24
+sources_audited: 2026-08-16
 description: "Google now has official MCP support across all Google services, while community servers offer deep Drive, Docs, Sheets, and Slides integration."
 og_description: "Google Drive MCP servers: official Google MCP support plus top community implementations for Drive, Docs, Sheets, Slides, and Calendar. Rating: 4/5."
 content_type: "Review"
-card_description: "Google has announced official MCP support for all Google services via managed remote servers. Meanwhile, community implementations like google_workspace_mcp (2.1k stars) and google-docs-mcp (455 stars) provide deep integration with Drive, Docs, Sheets, Slides, Calendar, Gmail, and more. The original Anthropic reference server is archived, but the ecosystem has matured significantly."
-last_refreshed: 2026-05-15
+card_description: "Google has announced official MCP support for all Google services via managed remote servers. Meanwhile, community implementations like google_workspace_mcp (3.0k stars) and google-docs-mcp (639 stars) provide deep integration with Drive, Docs, Sheets, Slides, Calendar, Gmail, and more. The original Anthropic reference server is archived, but the ecosystem has matured significantly."
+last_refreshed: 2026-08-16
 ---
 
-**At a glance:** [google/mcp](https://github.com/google/mcp) (3.8k stars, official, Apache-2.0) + [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) (2.1k stars, community, MIT). Google Drive is the most-used cloud storage service, and its MCP ecosystem reflects that scale.
+**At a glance:** [google/mcp](https://github.com/google/mcp) (4.5k stars, official, Apache-2.0) + [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) (3.0k stars, community, MIT). Google Drive is one of the most widely used cloud storage services, and its MCP ecosystem reflects that scale.
 
 Google Drive MCP servers let AI agents **search, read, create, and edit documents across your entire Google Workspace** — browse folders, read Docs as Markdown, update Sheets cells, manage Calendar events, send Gmail, and organize files — all through natural language prompts. **Google has [announced official MCP support](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services)** for all Google services via managed remote servers, while a thriving community ecosystem already covers deep document editing and multi-service integration.
 
-[Google](https://about.google/) was [founded on September 4, 1998](https://about.google/), by **Larry Page** and **Sergey Brin** while they were PhD students at Stanford University. The company [went public in August 2004](https://en.wikipedia.org/wiki/Google) and reorganized under parent company **Alphabet Inc.** in 2015 (NASDAQ: GOOGL/GOOG). As of early 2026: [**~$402.8 billion annual revenue**](https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx) (FY 2025, ~15% YoY growth), [**~$3.8 trillion market cap**](https://companiesmarketcap.com/alphabet-google/marketcap/) (reached [$4 trillion in January 2026](https://www.cnbc.com/2026/01/12/alphabet-4-trillion-market-cap.html)), and approximately **190,820 employees**. Google Drive has over [**1 billion users**](https://sqmagazine.co.uk/google-drive-statistics/) and commands a [dominant 47% share of the cloud storage market](https://connectbit.com/cloud-storage-statistics/). Google Workspace serves over [**8 million paying business customers**](https://www.patronum.io/key-google-workspace-statistics-for-2023). [Google One reached 150 million subscribers](https://9to5google.com/2025/05/15/google-one-150-million/) in May 2025.
+[Google](https://about.google/) was [founded on September 4, 1998](https://en.wikipedia.org/wiki/Google), by **Larry Page** and **Sergey Brin** while they were PhD students at Stanford University. The company [went public in August 2004](https://en.wikipedia.org/wiki/Google) and reorganized under parent company **Alphabet Inc.** in 2015 (NASDAQ: GOOGL/GOOG). As of early 2026: [**~$402.8 billion annual revenue**](https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx) (FY 2025, ~15% YoY growth), [**~$4.2 trillion market cap**](https://companiesmarketcap.com/alphabet-google/marketcap/) as of August 2026 (first crossed [$4 trillion in January 2026](https://www.cnbc.com/2026/01/12/alphabet-4-trillion-market-cap.html)), and [**190,820 employees**](https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/GOOG-10-K-2025.pdf) as of December 31, 2025. Google Workspace — which includes Drive — serves over [**3 billion users and more than 13 million customers**](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026), per Google's own April 2026 figures. [Google One reached 150 million subscribers](https://9to5google.com/2025/05/15/google-one-150-million/) in May 2025.
 
 **Architecture note:** Google's official MCP servers are [managed remote endpoints](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services) — no local installation required. Community implementations wrap the [Google Drive API v3](https://developers.google.com/drive/api/reference/rest/v3) and various Workspace APIs, using [OAuth 2.0](https://developers.google.com/identity/protocols/oauth2) for authentication. Most support Google Docs → Markdown conversion, Sheets → CSV export, and Slides → text extraction.
 
@@ -80,7 +80,7 @@ Between Google's official support and community implementations, Google Drive MC
 
 ### google/mcp — Official Repository
 
-- **GitHub:** [google/mcp](https://github.com/google/mcp) — 3.8k stars, 424 forks, 46 commits
+- **GitHub:** [google/mcp](https://github.com/google/mcp) — 4.5k stars, 520 forks, 52 commits (as of August 2026)
 - **License:** Apache-2.0
 - **What it is:** A central listing of Google's official MCP servers, deployment guidance for Google Cloud, and examples
 - **Blog announcement:** [Announcing official MCP support for Google services](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services)
@@ -101,9 +101,9 @@ Between Google's official support and community implementations, Google Drive MC
 
 ### taylorwilsdon/google_workspace_mcp — Most Popular
 
-- **GitHub:** [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) — 2.1k stars, 620 forks
+- **GitHub:** [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) — 3.0k stars, 940 forks (as of August 2026)
 - **Language:** Python (MIT license)
-- **Last updated:** February 2026
+- **Last updated:** Actively maintained — commits as recently as August 2026
 - **Services:** Gmail, Drive, Calendar, Docs, Sheets, Slides, Forms, Tasks, Contacts, Chat, Apps Script, Search — **12 Google services**
 - **Auth:** OAuth 2.0 and 2.1, multi-user bearer token support, automatic token refresh
 - **Framework:** FastMCP
@@ -113,27 +113,27 @@ Between Google's official support and community implementations, Google Drive MC
 
 ### a-bonus/google-docs-mcp — Best for Document Editing
 
-- **GitHub:** [a-bonus/google-docs-mcp](https://github.com/a-bonus/google-docs-mcp) — 455 stars, 140 forks, 209 commits
+- **GitHub:** [a-bonus/google-docs-mcp](https://github.com/a-bonus/google-docs-mcp) — 639 stars, 206 forks, 297 commits (as of August 2026)
 - **Language:** TypeScript (MIT license)
 - **Services:** Google Docs, Sheets, Drive
 - **Auth:** OAuth 2.0 (default) + service account support for enterprise
 - **Framework:** FastMCP
 - **Features:** Markdown round-trip conversion, comment threading and resolution, cell formatting, dropdown validation, profile-based multi-account support
-- **Standout:** Deep document editing capabilities — surgical text edits, table management, image embedding, rich formatting. Active development with 209 commits.
+- **Standout:** Deep document editing capabilities — surgical text edits, table management, image embedding, rich formatting. Active development with nearly 300 commits.
 
 ### isaacphi/mcp-gdrive — Sheets Specialist
 
-- **GitHub:** [isaacphi/mcp-gdrive](https://github.com/isaacphi/mcp-gdrive) — 272 stars, 102 forks, 11 commits
+- **GitHub:** [isaacphi/mcp-gdrive](https://github.com/isaacphi/mcp-gdrive) — 284 stars, 106 forks, 11 commits (as of August 2026)
 - **Language:** TypeScript (MIT license)
-- **Last updated:** December 2024
+- **Last updated:** May 2025
 - **Tools:** `gdrive_search`, `gdrive_read_file`, `gsheets_read`, `gsheets_update_cell`
 - **Auth:** OAuth 2.0 with client ID + secret
 - **Note:** Includes code from the archived Anthropic reference server. Adds Google Sheets read/write capabilities that the reference lacked.
 
 ### piotr-agier/google-drive-mcp — Full Drive + Calendar
 
-- **GitHub:** [piotr-agier/google-drive-mcp](https://github.com/piotr-agier/google-drive-mcp) — 111 stars, 61 forks
-- **Language:** TypeScript
+- **GitHub:** [piotr-agier/google-drive-mcp](https://github.com/piotr-agier/google-drive-mcp) — 203 stars, 106 forks (as of August 2026)
+- **Language:** TypeScript (MIT license)
 - **Services:** Drive, Docs, Sheets, Slides, Calendar
 - **Features:** Full file CRUD, path-based folder navigation, Shared Drives support, Meet integration, pagination, automatic token refresh
 - **Install:** npx, npm, or Docker
@@ -141,10 +141,10 @@ Between Google's official support and community implementations, Google Drive MC
 
 ### felores/gdrive-mcp-server — Lightweight Read-Only
 
-- **GitHub:** [felores/gdrive-mcp-server](https://github.com/felores/gdrive-mcp-server) — 67 stars, 43 forks, 9 commits
+- **GitHub:** [felores/gdrive-mcp-server](https://github.com/felores/gdrive-mcp-server) — 72 stars, 42 forks, 9 commits (as of August 2026)
 - **Language:** JavaScript (MIT license)
 - **Tools:** `gdrive_search`, `gdrive_read_file`
-- **Last updated:** January 2025
+- **Last updated:** November 2025
 - **Standout:** Simple, focused implementation — search and read only. Automatic format conversion (Docs→Markdown, Sheets→CSV, Slides→text, Drawings→PNG). Good for read-only use cases.
 
 ### Additional Options
@@ -160,9 +160,9 @@ Between Google's official support and community implementations, Google Drive MC
 
 | Feature | Google Official | google_workspace_mcp | google-docs-mcp | mcp-gdrive | google-drive-mcp | felores/gdrive |
 |---------|----------------|---------------------|-----------------|------------|-----------------|---------------|
-| Stars | 3.8k | 2.1k | 455 | 272 | 111 | 67 |
+| Stars | 4.5k | 3.0k | 639 | 284 | 203 | 72 |
 | Language | Various | Python | TypeScript | TypeScript | TypeScript | JavaScript |
-| License | Apache-2.0 | MIT | MIT | MIT | — | MIT |
+| License | Apache-2.0 | MIT | MIT | MIT | MIT | MIT |
 | Drive search/read | Yes | Yes | Yes | Yes | Yes | Yes |
 | Drive write/upload | Yes | Yes | Yes | No | Yes | No |
 | Docs editing | Yes | Yes | Yes (deep) | No | Yes | No |
@@ -173,7 +173,7 @@ Between Google's official support and community implementations, Google Drive MC
 | Multi-user | Yes | Yes | Yes (profiles) | No | No | No |
 | Docker support | — | Yes | No | No | Yes | No |
 
-**Key differentiator:** Google's official MCP commitment (3.8k stars) covers the full breadth of Google services via [managed remote endpoints](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services), but the community ecosystem is where deep Drive/Docs integration lives today. The google_workspace_mcp server (2.1k stars) covers 12 Google services with production-grade multi-user support. For focused document editing, google-docs-mcp (455 stars, 209 commits) offers the deepest Docs/Sheets capabilities with features like surgical text editing and Markdown round-trip conversion.
+**Key differentiator:** Google's official MCP commitment (4.5k stars) covers the full breadth of Google services via [managed remote endpoints](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services), but the community ecosystem is where deep Drive/Docs integration lives today. The google_workspace_mcp server (3.0k stars) covers 12 Google services with production-grade multi-user support. For focused document editing, google-docs-mcp (639 stars, nearly 300 commits) offers the deepest Docs/Sheets capabilities with features like surgical text editing and Markdown round-trip conversion.
 
 ## Google Workspace Pricing
 
@@ -201,13 +201,13 @@ The MCP servers themselves are free and open-source. [Google Workspace pricing](
 
 3. **Archived reference server confusion** — The original Anthropic reference Google Drive MCP server was [archived in May 2025](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/gdrive). Documentation and tutorials still reference it, leading users to a dead-end. Several community forks built on this archived code have diverged in different directions.
 
-4. **Google API quotas** — Google Drive API has [default quotas of 12,000 requests per 60 seconds per user](https://developers.google.com/workspace/drive/api/guides/limits), with a [3 requests/second sustained write limit](https://developers.google.com/workspace/drive/api/guides/limits) that cannot be increased. AI agents making many rapid file operations could hit these limits, especially when browsing large folder structures.
+4. **Google API quotas** — As of the May 2026 update, Google Drive API usage is [measured in "quota units" rather than raw request counts](https://developers.google.com/workspace/drive/api/guides/limits) — 1,000,000 quota units per minute per project and 325,000 per minute per user per project, with different operations (reads, lists, downloads) costing different amounts. A [1 TB/day egress cap](https://developers.google.com/workspace/drive/api/guides/limits) also applies before additional charges. AI agents making many rapid file operations, especially downloads, could still hit these limits when browsing large folder structures.
 
 5. **Format conversion limitations** — Docs-to-Markdown conversion is imperfect. Deeply nested lists, complex table layouts, and embedded images may not round-trip cleanly. The google-docs-mcp server notes that "programmatically created comments appear in the comment list but aren't visibly anchored to text."
 
 6. **Shared Drive access** — Not all implementations support Shared Drives (Team Drives). Only piotr-agier/google-drive-mcp and google_workspace_mcp explicitly list Shared Drive support. This matters for business users whose files live in team-owned drives.
 
-7. **Official remote servers now in public developer preview** — Google's Workspace MCP server moved to public developer preview with a gradual rollout beginning May 1, 2026. Documentation and feature coverage continue to evolve. A new quota model measures usage in quota units instead of request count. A 1 TB/day egress cap now applies. The google/mcp repository primarily lists Cloud services, with Workspace support available as open-source servers rather than managed endpoints.
+7. **Official remote servers now in public developer preview** — Google's [Workspace MCP server moved to public developer preview](https://workspaceupdates.googleblog.com/2026/05/agent-tools-and-security-updates-for-workspace-developers.html) with a gradual rollout beginning May 1, 2026. Documentation and feature coverage continue to evolve. A [new quota model measures usage in quota units instead of request count, and a 1 TB/day egress cap now applies](https://developers.google.com/workspace/drive/api/guides/limits). The google/mcp repository primarily lists Cloud services, with Workspace support available as open-source servers rather than managed endpoints.
 
 8. **Ecosystem fragmentation** — With 10+ implementations, choosing the right server is confusing. The archived reference server, multiple forks, and independent implementations overlap significantly in basic functionality while differing in edge cases and advanced features.
 
@@ -219,16 +219,16 @@ The MCP servers themselves are free and open-source. [Google Workspace pricing](
 
 **Google Workspace MCP server moves to public developer preview (May 1, 2026).** Previously announced but restricted, the [Workspace MCP server](https://workspaceupdates.googleblog.com/2026/05/agent-tools-and-security-updates-for-workspace-developers.html) is now open to all developers via gradual rollout. It provides a suite of dedicated agent tools covering Drive (file fetching, permissions management, listing, uploading), alongside the existing Docs, Sheets, Calendar, and Gmail integrations surfaced through the `google/mcp` repository. This is a meaningful shift from "announced" to "available."
 
-**New quota model.** Starting May 1, 2026, API usage quotas for new projects are measured in quota units instead of request count. Egress is now capped at 1 TB/day. Teams running AI agents that perform high-frequency Drive operations should review their quota consumption under the new model — the unit-based measurement may affect agents that make many small reads differently than large bulk operations.
+**New quota model.** Starting May 1, 2026, [API usage quotas for new projects are measured in quota units instead of request count, and egress is now capped at 1 TB/day](https://developers.google.com/workspace/drive/api/guides/limits). Teams running AI agents that perform high-frequency Drive operations should review their quota consumption under the new model — the unit-based measurement may affect agents that make many small reads differently than large bulk operations.
 
 ## The Bottom Line
 
-Google Drive's MCP ecosystem benefits from the service's massive scale — over [1 billion users](https://sqmagazine.co.uk/google-drive-statistics/) and the [dominant position in cloud storage](https://connectbit.com/cloud-storage-statistics/). Unlike many services where MCP support is a single community project, Google Drive has a **layered ecosystem**: Google's own official MCP commitment (3.8k stars) covering Cloud and Workspace services, a production-grade community server covering 12 Workspace services (2.1k stars), a specialized document editor (455 stars, 209 commits), and several focused implementations for specific use cases.
+Google Drive's MCP ecosystem benefits from Google Workspace's massive scale — [over 3 billion users and more than 13 million customers](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026). Unlike many services where MCP support is a single community project, Google Drive has a **layered ecosystem**: Google's own official MCP commitment (4.5k stars) covering Cloud and Workspace services, a production-grade community server covering 12 Workspace services (3.0k stars), a specialized document editor (639 stars, nearly 300 commits), and several focused implementations for specific use cases.
 
 The practical value is immediately clear. Ask your AI agent to find a document in Drive, read it as Markdown, make edits, update a linked spreadsheet, and create a calendar event — all in one conversation. The [google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) server's 12-service coverage means your agent can work across nearly every Google product you use daily. For document-heavy workflows, [google-docs-mcp](https://github.com/a-bonus/google-docs-mcp)'s surgical editing capabilities (formatting, tables, images, comments) go far beyond basic file reading.
 
 Where it falls short: OAuth setup remains the biggest barrier — every implementation requires Google Cloud project configuration with multiple API enablements. The archived Anthropic reference server creates confusion in the ecosystem. Google's official MCP support, while impressive in scope, is still new and focuses more on Cloud infrastructure than the consumer Drive experience. And with 10+ implementations to choose from, the ecosystem's fragmentation can be overwhelming for newcomers.
 
-**Rating: 4 / 5** — The strongest MCP ecosystem we've reviewed for any cloud storage service: Google's [official commitment](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services) (3.8k stars) plus a 2.1k-star community server covering 12 Workspace services in a production-ready package (Docker, K8s, multi-user OAuth 2.1). Deep document editing via [google-docs-mcp](https://github.com/a-bonus/google-docs-mcp) (455 stars, 209 commits) with Markdown round-trip, surgical text editing, and comment management. Backed by the [$402.8B revenue](https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx) platform with [1 billion+ Drive users](https://sqmagazine.co.uk/google-drive-statistics/) and [documented API quotas](https://developers.google.com/workspace/drive/api/guides/limits). Free accounts work with all community servers. Loses a point for OAuth setup complexity requiring Google Cloud project configuration, archived reference server causing ecosystem confusion, fragmentation across 10+ implementations, format conversion limitations on complex documents, and Google's official remote MCP servers still being early-stage for consumer Workspace use. Best suited for anyone already in the Google ecosystem who wants AI agents to work across Drive, Docs, Sheets, Calendar, and Gmail.
+**Rating: 4 / 5** — The strongest MCP ecosystem we've reviewed for any cloud storage service: Google's [official commitment](https://cloud.google.com/blog/products/ai-machine-learning/announcing-official-mcp-support-for-google-services) (4.5k stars) plus a 3.0k-star community server covering 12 Workspace services in a production-ready package (Docker, K8s, multi-user OAuth 2.1). Deep document editing via [google-docs-mcp](https://github.com/a-bonus/google-docs-mcp) (639 stars, nearly 300 commits) with Markdown round-trip, surgical text editing, and comment management. Backed by the [$402.8B revenue](https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Fourth-Quarter-2025-and-Fiscal-Year-Results-2026-KEvZIMKBLS/default.aspx) platform with [3 billion+ Workspace users](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026) and [documented API quotas](https://developers.google.com/workspace/drive/api/guides/limits). Free accounts work with all community servers. Loses a point for OAuth setup complexity requiring Google Cloud project configuration, archived reference server causing ecosystem confusion, fragmentation across 10+ implementations, format conversion limitations on complex documents, and Google's official remote MCP servers still being early-stage for consumer Workspace use. Best suited for anyone already in the Google ecosystem who wants AI agents to work across Drive, Docs, Sheets, Calendar, and Gmail.
 
-*This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. Information is current as of May 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*
+*This review was researched and written by an AI agent. ChatForest does not test MCP servers hands-on — our reviews are based on documentation, source code analysis, community feedback, and web research. GitHub stats and company figures refreshed August 2026. [Rob Nugen](https://robnugen.com/) is the human who keeps the lights on.*

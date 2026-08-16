@@ -7,12 +7,12 @@ og_description: "HubSpot MCP Server went GA April 13, 2026. Full R/W across 12 C
 content_type: "Review"
 card_description: "HubSpot's official MCP server — generally available since April 13, 2026. Full read/write across 12 CRM object types and 5 engagement types. Two server types: remote (CRM data, GA) and local developer (app scaffolding, GA Feb 19). OAuth 2.1/PKCE auth."
 last_refreshed: 2026-05-03
-sources_audited: 2026-07-23
+sources_audited: 2026-08-16
 ---
 
-**At a glance:** Official GA (April 13, 2026), two server types (remote CRM + local developer), OAuth 2.1/PKCE, 12 tools, full R/W across 12 CRM object types, community server (peakmojo) at ~121 GitHub stars, 642K all-time PulseMCP visits (#88 globally)
+**At a glance:** Official GA (April 13, 2026), two server types (remote CRM + local developer), OAuth 2.1/PKCE, 12 tools at GA (16 as of August 2026), full R/W across 12 CRM object types, community server (peakmojo) at ~128 GitHub stars, 1.5M all-time PulseMCP visits (#59 globally)
 
-HubSpot's [official MCP server](https://developers.hubspot.com/mcp) is now [generally available](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available), making one of the world's most popular CRMs directly accessible to AI agents through the Model Context Protocol. What launched in public beta in early 2026 with nine read-focused tools graduated to GA on April 13 with full read/write access across 12 CRM object types and 5 engagement types.
+HubSpot's [official MCP server](https://developers.hubspot.com/mcp) is now [generally available](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available), making one of the world's most popular CRMs directly accessible to AI agents through the Model Context Protocol. The [public beta](https://developers.hubspot.com/changelog/public-beta-self-service-mcp-auth-apps-for-the-hubspot-remote-mcp-server) that preceded it was read-only; it graduated to GA on April 13 with full read/write access across 12 CRM object types and 5 engagement types.
 
 If you're a sales rep, marketer, or service team member who uses AI coding agents, your agent can now pull contacts, search deals, review engagement history — and create contacts, update deal stages, and log activities — without you manually querying the HubSpot API.
 
@@ -43,13 +43,15 @@ The remote server connects MCP-compatible clients directly to your HubSpot accou
 
 The `manage_crm_objects` tool is the critical GA addition — beta was read-only. The campaign analytics suite (tools 8–11) was also new at GA.
 
+**Update, August 2026:** HubSpot has continued shipping new tools since GA — [current documentation](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server) lists 16 tools, adding conversations search, conversation channel metadata, and marketing email analytics/management on top of the 12 listed above.
+
 ### Object Coverage
 
 **Full read/write (12 object types):** contacts, companies, deals, tickets, carts, products, orders, line items, invoices, quotes, subscriptions, and segments (lists)
 
 **Full read/write engagements (5 types):** calls, emails, meetings, notes, and tasks
 
-**Read-only:** campaigns, landing pages, website pages, blog posts, marketing events, and organizational context (users, teams, owners, roles, seats, reporting structures)
+**Read-only:** campaigns, website pages, blog posts, marketing events, and organizational context (users, teams, owners, roles, seats, reporting structures). Landing pages were read-only at GA but [gained write access](https://developers.hubspot.com/changelog/june-2026-rollup) (create, edit, publish) in a June 2026 update.
 
 **Not supported:** Custom objects. Community threads flag this as the biggest remaining gap for advanced teams. HubSpot has pointed users to a Developer Feedback form rather than committing to a timeline.
 
@@ -63,7 +65,7 @@ Tools include: docs search, project creation, feature addition, project deployme
 
 ### Remote MCP Server
 
-Requires a HubSpot developer platform app with appropriate OAuth scopes. Setup now uses **Self-Service MCP Auth Apps** — a dedicated UI in the Developer Platform for creating and managing OAuth 2.1 connectors. This graduated to stable alongside the remote server GA.
+Requires a HubSpot developer platform app with appropriate OAuth scopes. Setup now uses **Self-Service MCP Auth Apps** — a dedicated UI in the Developer Platform for creating and managing OAuth 2.1 connectors. Per HubSpot's [Spring 2026 Spotlight](https://developers.hubspot.com/changelog/spring-2026-spotlight), the Auth Apps *screen* remains in public beta even though the underlying remote MCP server it configures reached GA the same day.
 
 Add to Claude Desktop or compatible client:
 
@@ -86,7 +88,7 @@ Zapier, Claude.ai, and other major platforms have HubSpot MCP integrations using
 
 ### Developer MCP Server
 
-Requires HubSpot CLI version 8.2.0 or later (upgraded from 7.60.0 at beta):
+Requires [HubSpot CLI version 8.2.0 or later](https://developers.hubspot.com/docs/developer-tooling/local-development/developer-mcp/setup) (up from 7.60.0 during beta):
 
 ```bash
 npm install -g @hubspot/cli
@@ -109,35 +111,35 @@ The CLI walks you through selecting which agentic tools to enable.
 
 **GA with full read/write.** The beta was read-only. GA added `manage_crm_objects` — agents can now create contacts, update deal stages, log engagements, and manage records across 12 object types. This is the feature teams were waiting for.
 
-**OAuth 2.1 with PKCE.** Upgraded from OAuth 2.0 at beta. Proper modern auth standard with PKCE for added security. The Self-Service MCP Auth Apps UI makes creating and managing connectors straightforward.
+**OAuth 2.1 with PKCE.** [Upgraded from OAuth 2.0 at beta](https://developers.hubspot.com/mcp); [required for all GA connections](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available). Proper modern auth standard with PKCE for added security. The Self-Service MCP Auth Apps UI makes creating and managing connectors straightforward (though, per above, that setup UI itself is still labeled beta).
 
-**Official and well-maintained.** [Spring 2026 Spotlight](https://developers.hubspot.com/changelog/spring-2026-spotlight) featured MCP GA as a flagship developer announcement. HubSpot has [approximately 300,000 customers](https://ir.hubspot.com/) (299,458 as of Q1 2026) and the resources to maintain this long-term.
+**Official and well-maintained.** [Spring 2026 Spotlight](https://developers.hubspot.com/changelog/spring-2026-spotlight) featured MCP GA as a flagship developer announcement. HubSpot [reported 299,458 customers as of Q1 2026](https://ir.hubspot.com/news-releases/news-release-details/hubspot-reports-strong-q1-2026-results) and the resources to maintain this long-term.
 
-**Wide app/platform coverage.** HubSpot maintains setup guides for Claude Desktop, Claude Code, Cursor, VS Code, Copilot Studio, n8n, and more. This is one of the most widely integrated CRM MCP servers.
+**Wide app/platform coverage.** HubSpot's [MCP integration docs](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server) confirm the server works with any MCP-compatible client that supports OAuth 2.1/PKCE, including Claude Desktop and Claude Code (per the config example above). This is one of the most widely integrated CRM MCP servers.
 
-**Postman collection available.** HubSpot published an official Postman collection for testing and exploring the server's capabilities — a useful developer resource.
+**Postman collection available.** HubSpot published an [official Postman collection](https://www.postman.com/hubspot/hubspot-public-api-workspace/collection/682b44c55ac051812a5ee1de) for testing and exploring the server's capabilities — a useful developer resource.
 
-**Community alternative exists.** The [peakmojo/mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) community server (~121 stars, up from 72 at original review — +68% in 6 weeks) adds FAISS vector storage, semantic search, duplicate prevention, and persistent embedding caches. Useful when the official server's caching or custom object gaps matter.
+**Community alternative exists.** The [peakmojo/mcp-hubspot](https://github.com/peakmojo/mcp-hubspot) community server (~128 stars as of this audit) adds FAISS vector storage, semantic search, duplicate prevention, and persistent embedding caches. Useful when the official server's caching or custom object gaps matter.
 
 ## What's Not
 
 **Custom objects not supported.** This is the most frequently cited limitation post-GA. Teams with heavily customized HubSpot deployments — which is a significant portion of professional accounts — can't expose their custom object data through MCP. No timeline from HubSpot.
 
-**Auth issues in the wild.** Community threads report 401 errors with user-level OAuth tokens, OAuth 500 errors during auth flows, and PKCE compatibility problems with some clients. The standard PKCE flow works with major clients, but edge cases exist.
+**Auth issues in the wild.** Community threads report [401 errors with user-level OAuth tokens](https://community.hubspot.com/t5/APIs-Integrations/401-Error-with-User-Level-OAuth-Token-for-mcp-hubspot-com/m-p/1191357) and [OAuth 500 errors during auth flows](https://community.hubspot.com/t5/Third-Party-Apps/MCP-OAuth-authentication-failed-error-500/m-p/1250875). The standard PKCE flow works with major clients, but edge cases exist.
 
-**Sensitive data mode blocks engagements.** If your HubSpot account has "Sensitive Data" mode enabled, all engagement objects (calls, emails, meetings, notes, tasks) are blocked from MCP access. This is a MCP-specific restriction — standard CRM APIs aren't affected. Accounts with PHI or highly sensitive data classifications face the same block.
+**Sensitive data mode blocks engagements.** If your HubSpot account has "Sensitive Data" mode enabled, [Activity objects (calls, emails, meetings, notes, tasks) are blocked from MCP access](https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available). This is a MCP-specific restriction — standard CRM APIs aren't affected. Accounts with PHI or highly sensitive data classifications face the same block.
 
-**Distribution limits for MCP Auth Apps.** Unverified/unlisted MCP Auth Apps are capped at 25 installs, 10 customers (100 for Solution Partners). Teams building multi-tenant MCP integrations need marketplace listing to scale.
+**Distribution limits for MCP Auth Apps.** Per HubSpot's [distribution limits changelog](https://developers.hubspot.com/changelog/new-marketplace-distribution-app-install-limits), apps on the current Developer Platform version are capped at 25 installs pre-marketplace-listing, or 10 customers for private distribution (100 for Solution Partners). Teams building multi-tenant MCP integrations need marketplace listing to scale.
 
-**Smithery CLI friction.** Users report 500 Internal Server errors when installing via Smithery CLI, even in debug mode — a rough experience for developers using that toolchain.
+**Smithery CLI friction.** Users report [500 Internal Server errors when installing via Smithery CLI](https://community.hubspot.com/t/trouble-installing-hubspot-mcp-via-smithery-cli-multiple-errors-500-internal-server-error/131338), even in debug mode — a rough experience for developers using that toolchain.
 
-**API rate limits apply.** HubSpot's API has rate limits that apply to MCP server calls. High-frequency agent queries could hit limits, especially on lower-tier plans.
+**API rate limits apply.** [HubSpot's API usage limits](https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines) (as low as 100 requests per 10 seconds for OAuth apps) apply to MCP server calls too. High-frequency agent queries could hit limits, especially on lower-tier plans.
 
 ## The Bottom Line
 
 HubSpot's MCP server graduated from beta to GA on April 13, 2026, and the difference is meaningful. Full read/write access across 12 CRM object types and 5 engagement types transforms the server from a useful read layer into a genuine agent-native CRM interface. Agents can now close the loop — not just surface information, but act on it.
 
-The security model is production-grade: OAuth 2.1/PKCE, scoped access, audit trails. HubSpot published official setup guides for every major AI client. PulseMCP puts it at #88 globally with 642K all-time visits — strong adoption for a server less than three months old.
+The security model is production-grade: OAuth 2.1/PKCE, scoped access, audit trails. HubSpot's [MCP integration docs](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server) confirm compatibility with any MCP client supporting OAuth 2.1/PKCE. [PulseMCP](https://www.pulsemcp.com/servers/hubspot) puts it at #59 globally with 1.5M all-time visits (as of this audit) — strong adoption for an official CRM server.
 
 The gaps are real but known: custom objects are unaddressed, auth edge cases surface in community threads, and sensitive data mode creates unexpected restrictions. These don't disqualify the server — they define where it fits. If your HubSpot instance relies heavily on custom objects, you're waiting. If you're on standard CRM objects with engagement workflows, GA is ready for production use.
 

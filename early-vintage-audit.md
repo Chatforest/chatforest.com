@@ -254,7 +254,7 @@ sweeps. Headline catches:
 
 ## Reviews
 
-**Status: 180/285 done (started 2026-08-12, immediately after Guides closed).**
+**Status: 192/285 done (started 2026-08-12, immediately after Guides closed).**
 
 - [x] 2026-07-22 — [AWS MCP Servers — 54 Active Servers, Nine Deprecated, and Google Just Matched the Count](content/reviews/aws-mcp-servers.md) — re-audited 2026-08-12
 - [x] 2026-07-22 — [Analytics MCP Servers — Google Analytics, Mixpanel, PostHog, Amplitude, Microsoft Clarity, and Beyond](content/reviews/analytics-mcp-servers.md) — re-audited 2026-08-12
@@ -387,10 +387,10 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Gaming & Esports MCP Servers — Roblox Studio (Official!), Minecraft, OP.GG, Chess, Steam, GameBoy, F1, and More](content/reviews/gaming-esports-mcp-servers.md)
 - [x] 2026-07-23 — [Genealogy & Family History MCP Servers — GEDCOM, Gramps, FamilySearch, WikiTree, and More](content/reviews/genealogy-family-history-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Geospatial & Mapping MCP Servers — Mapbox, Google Earth Engine, NASA Earthdata, QGIS, and More](content/reviews/geospatial-mapping-mcp-servers.md) — re-audited 2026-08-15
-- [ ] 2026-07-23 — [Google Cloud MCP Servers — 50+ Servers, 22+ GA, MCP Toolbox v1.4, Gemini 3.5 Flash MCP Optimization, and ADK 2.0](content/reviews/google-cloud-mcp-servers.md)
+- [x] 2026-07-23 — [Google Cloud MCP Servers — 50+ Servers, 22+ GA, MCP Toolbox v1.4, Gemini 3.5 Flash MCP Optimization, and ADK 2.0](content/reviews/google-cloud-mcp-servers.md)
 - [x] 2026-07-23 — [Government & Public Sector MCP Servers — GovInfo, Census Bureau, Congress.gov, Data.gov, Procurement, and More](content/reviews/government-public-sector-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Graph Database MCP Servers — Neo4j, ArangoDB, Neptune, TigerGraph, Dgraph, Memgraph, FalkorDB, NebulaGraph, and More](content/reviews/graph-database-mcp-servers.md) — re-audited 2026-08-15
-- [ ] 2026-07-23 — [HR & Recruiting MCP Servers — BambooHR, Workday, Greenhouse, Workable, Payroll, ATS, and More](content/reviews/hr-recruiting-mcp-servers.md)
+- [x] 2026-07-23 — [HR & Recruiting MCP Servers — BambooHR, Workday, Greenhouse, Workable, Payroll, ATS, and More](content/reviews/hr-recruiting-mcp-servers.md)
 - [x] 2026-07-23 — [Healthcare & Medical MCP Servers — FHIR, PubMed, Clinical Trials, DICOM, Drug Databases, and More](content/reviews/healthcare-medical-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [Hospitality & Hotels MCP Servers — Airbnb Search, Hotel Booking, Restaurant Reservations, and Travel Planning](content/reviews/hospitality-hotels-mcp-servers.md)
 - [x] 2026-07-23 — [Identity & Authentication MCP Servers — Okta, Auth0, Keycloak, Entra ID, Casdoor, and More](content/reviews/identity-authentication-mcp-servers.md)
@@ -404,7 +404,7 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [LLM Evaluation & Benchmarking MCP Servers — Eval Frameworks, MCP Benchmarks, Red-Teaming, and 20+ More](content/reviews/llm-evaluation-benchmarking-mcp-servers.md)
 - [x] 2026-07-23 — [LLM Observability & MLOps Pipeline MCP Servers — Datadog, Arize Phoenix, Opik, LangSmith, Langfuse, MLflow, W&B, and More](content/reviews/llm-observability-mlops-pipeline-mcp-servers.md)
 - [x] 2026-07-23 — [Legal & Contract Management MCP Servers — E-Signatures, Legal Research, Case Law, IP/Trademarks, and More](content/reviews/legal-contract-management-mcp-servers.md)
-- [ ] 2026-07-23 — [Library, Archive & Museum MCP Servers — Zotero, Calibre, IIIF, Wayback Machine, and Museum Collections](content/reviews/library-archive-museum-mcp-servers.md)
+- [x] 2026-07-23 — [Library, Archive & Museum MCP Servers — Zotero, Calibre, IIIF, Wayback Machine, and Museum Collections](content/reviews/library-archive-museum-mcp-servers.md)
 - [x] 2026-07-23 — [Log Management MCP Servers — Splunk, Elasticsearch, Loki, Datadog, CloudWatch, and Beyond](content/reviews/log-management-mcp-servers.md) — re-audited 2026-08-15
 - [ ] 2026-07-23 — [Logistics & Supply Chain MCP Servers — Shipping, Fleet Tracking, Inventory Management, and Maritime Intelligence](content/reviews/logistics-supply-chain-mcp-servers.md)
 - [x] 2026-07-23 — [MCP Server Frameworks & SDKs — FastMCP, Official SDKs, and the Tools That Power Every MCP Server](content/reviews/mcp-server-frameworks-sdks.md) — re-audited 2026-08-15
@@ -462,8 +462,8 @@ sweeps. Headline catches:
 - [ ] 2026-07-23 — [Telecommunications & Messaging MCP Servers — SMS, Voice, WhatsApp, Telegram, CPaaS, and Unified Communications](content/reviews/telecommunications-messaging-mcp-servers.md)
 - [ ] 2026-07-23 — [Terminal & CLI Tools MCP Servers — Shell Execution, tmux, SSH, and MCP Inspectors](content/reviews/terminal-cli-tools-mcp-servers.md)
 - [x] 2026-07-23 — [The Ahrefs MCP Server — SEO Intelligence for Your AI Agent](content/reviews/ahrefs-mcp-server.md) — re-audited 2026-08-15
-- [ ] 2026-07-23 — [The Google Colab MCP Server — GPU-Powered Notebooks for Your AI Agent](content/reviews/google-colab-mcp-server.md)
-- [ ] 2026-07-23 — [The HubSpot MCP Server — CRM Data at Your AI Agent's Fingertips](content/reviews/hubspot-mcp-server.md)
+- [x] 2026-07-23 — [The Google Colab MCP Server — GPU-Powered Notebooks for Your AI Agent](content/reviews/google-colab-mcp-server.md)
+- [x] 2026-07-23 — [The HubSpot MCP Server — CRM Data at Your AI Agent's Fingertips](content/reviews/hubspot-mcp-server.md)
 - [ ] 2026-07-23 — [The Semgrep MCP Server — Security Scanning for AI-Generated Code](content/reviews/semgrep-mcp-server.md)
 - [ ] 2026-07-23 — [Threat Intelligence MCP Servers — CVE MCP (506 Stars, 27 Tools, 21 APIs), Google GTI, CrowdStrike Falcon v0.9.0, Microsoft Sentinel OFFICIAL, Elastic SIEM, Zscaler 300+ Tools, Team Cymru Pure Signal, Command Zero Autonomous SOC](content/reviews/threat-intelligence-mcp-servers.md)
 - [ ] 2026-07-23 — [Time-Series Database MCP Servers — Grafana, ClickHouse, Prometheus, InfluxDB, VictoriaMetrics, SigNoz, and More](content/reviews/time-series-database-mcp-servers.md)
@@ -497,12 +497,12 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [Dropbox MCP Servers — AI Agents That Browse Files, Search Across Apps, and Manage Cloud Storage](content/reviews/dropbox-mcp-server.md)
 - [x] 2026-07-24 — [GitHub MCP Server — The World's Largest Dev Platform Gets an Official AI Interface](content/reviews/github-mcp-server.md)
 - [x] 2026-07-24 — [GitLab MCP Servers — The Self-Hosted DevOps Platform's Growing AI Interface](content/reviews/gitlab-mcp-server.md)
-- [ ] 2026-07-24 — [Google Drive MCP Servers — AI Agents That Search, Read, Edit, and Organize Your Cloud Documents](content/reviews/google-drive-mcp-server.md)
+- [x] 2026-07-24 — [Google Drive MCP Servers — AI Agents That Search, Read, Edit, and Organize Your Cloud Documents](content/reviews/google-drive-mcp-server.md)
 - [x] 2026-07-24 — [Google Gemini MCP Servers — The Largest Official MCP Server Ecosystem](content/reviews/gemini-mcp-server.md)
-- [ ] 2026-07-24 — [Hugging Face MCP Server — The AI Community Hub Meets the Model Context Protocol](content/reviews/huggingface-mcp-server.md)
-- [ ] 2026-07-24 — [IDE & Code Editor MCP Servers — Your Editor as an AI-Accessible Tool](content/reviews/ide-code-editor-mcp-servers.md)
-- [ ] 2026-07-24 — [Infrastructure as Code MCP Servers — Terraform, Pulumi, and the IaC Vendors Building AI-Native Infrastructure Workflows](content/reviews/infrastructure-as-code-mcp-servers.md)
-- [ ] 2026-07-24 — [Kubernetes MCP Servers — Cluster Management Gets an AI Interface](content/reviews/kubernetes-mcp-servers.md)
+- [x] 2026-07-24 — [Hugging Face MCP Server — The AI Community Hub Meets the Model Context Protocol](content/reviews/huggingface-mcp-server.md)
+- [x] 2026-07-24 — [IDE & Code Editor MCP Servers — Your Editor as an AI-Accessible Tool](content/reviews/ide-code-editor-mcp-servers.md)
+- [x] 2026-07-24 — [Infrastructure as Code MCP Servers — Terraform, Pulumi, and the IaC Vendors Building AI-Native Infrastructure Workflows](content/reviews/infrastructure-as-code-mcp-servers.md)
+- [x] 2026-07-24 — [Kubernetes MCP Servers — Cluster Management Gets an AI Interface](content/reviews/kubernetes-mcp-servers.md)
 - [ ] 2026-07-24 — [Logging & Tracing MCP Servers — Splunk v1.1.1 Doubles Adoption, SigNoz Surges, Logfire Archived](content/reviews/logging-tracing-mcp-servers.md)
 - [ ] 2026-07-24 — [Mailtrap MCP Server — Send Transactional Emails From Your AI Agent](content/reviews/mailtrap-mcp-server.md)
 - [ ] 2026-07-24 — [Meta Llama MCP Servers — AI Agents for Llama 4, Ollama, and the Open-Weight LLM Ecosystem](content/reviews/meta-llama-mcp-server.md)
@@ -534,11 +534,11 @@ sweeps. Headline catches:
 - [ ] 2026-07-24 — [Testing & QA MCP Servers — From Browser Automation to Mobile, Cloud, and Test Runner Integration](content/reviews/testing-qa-mcp-servers.md)
 - [x] 2026-07-24 — [The Chrome DevTools MCP Server — Browser Debugging and Performance Profiling for AI Coding Agents](content/reviews/chrome-devtools-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [The DuckDuckGo MCP Server — Free Web Search for AI Agents (No API Key Required)](content/reviews/duckduckgo-mcp-server.md)
-- [ ] 2026-07-24 — [The GreptimeDB MCP Server — Observability Data Meets AI Agents](content/reviews/greptimedb-mcp-server.md)
+- [x] 2026-07-24 — [The GreptimeDB MCP Server — Observability Data Meets AI Agents](content/reviews/greptimedb-mcp-server.md)
 - [ ] 2026-07-24 — [The ReactBits MCP Server — 135+ Animated React Components for AI Coding Agents](content/reviews/reactbits-mcp-server.md)
 - [ ] 2026-07-24 — [Turso MCP Server — The 17.9K-Star SQLite Database With Built-In AI Agent Access](content/reviews/turso-mcp-server.md)
 - [ ] 2026-07-24 — [Windows-MCP Server — Give Your AI Agent Eyes and Hands on Windows](content/reviews/windows-mcp-server.md)
 - [ ] 2026-07-24 — [Zoom MCP Servers — AI Agents That Manage Meetings, Retrieve Transcripts, and Access Recordings](content/reviews/zoom-mcp-server.md)
-- [ ] 2026-07-24 — [iCloud MCP Servers — Calendar, Mail, Contacts & More](content/reviews/icloud-mcp-server.md)
+- [x] 2026-07-24 — [iCloud MCP Servers — Calendar, Mail, Contacts & More](content/reviews/icloud-mcp-server.md)
 - [ ] 2026-07-24 — [n8n MCP Server — Build, Expose, and Orchestrate Workflows with AI](content/reviews/n8n-mcp-server.md)
 

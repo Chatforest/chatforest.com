@@ -2,16 +2,16 @@
 title: "The GreptimeDB MCP Server — Observability Data Meets AI Agents"
 date: 2026-03-23T15:00:00+09:00
 description: "GreptimeDB's MCP server connects AI agents to unified observability data — metrics, logs, and traces in one database."
-og_description: "GreptimeDB MCP server: AI-powered observability queries across metrics, logs, and traces. 27 stars, 13 tools, Perses dashboard management, read-only enforcement, data masking. Rating: 4.0/5."
+og_description: "GreptimeDB MCP server: AI-powered observability queries across metrics, logs, and traces. 29 stars, 13 tools, Perses dashboard management, read-only enforcement, data masking. Rating: 4.0/5."
 content_type: "Review"
-card_description: "GreptimeDB's MCP server gives AI agents structured access to unified observability data — metrics, logs, and traces through one database. 27 GitHub stars, 13 tools, SQL and PromQL support, pipeline management, Perses dashboard management, and an unusually strong security posture including read-only enforcement, data masking, and audit logging."
-last_refreshed: 2026-05-03
-sources_audited: 2026-07-24
+card_description: "GreptimeDB's MCP server gives AI agents structured access to unified observability data — metrics, logs, and traces through one database. 29 GitHub stars, 13 tools, SQL and PromQL support, pipeline management, Perses dashboard management, and an unusually strong security posture including read-only enforcement, data masking, and audit logging."
+last_refreshed: 2026-08-16
+sources_audited: 2026-08-16
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** Official GreptimeDB MCP server, 27 GitHub stars, 13 tools, SQL + TQL (PromQL-compatible) queries, pipeline management, Perses dashboard management, read-only enforcement with data masking, 7 prompt templates, stdio/SSE/streamable-http transport, MIT license
+**At a glance:** Official GreptimeDB MCP server, [29 GitHub stars](https://github.com/GreptimeTeam/greptimedb-mcp-server), 13 tools, SQL + TQL (PromQL-compatible) queries, pipeline management, Perses dashboard management, read-only enforcement with data masking, 10 prompt templates, stdio/SSE/streamable-http transport, MIT license
 
 GreptimeDB has shipped an [MCP server](https://github.com/GreptimeTeam/greptimedb-mcp-server) that gives AI agents structured access to observability data — metrics, logs, and traces — through a single database. In a world where observability stacks typically involve separate tools for each signal type, GreptimeDB's unified approach means one MCP connection covers what would otherwise require three or more.
 
@@ -47,7 +47,7 @@ The GreptimeDB MCP server exposes two categories of tools:
 
 ### Dashboard Management (3 tools)
 
-Added in v0.4.8 (April 14, 2026), aligned with GreptimeDB v1.0.0's built-in Perses dashboard support:
+Added in [v0.4.8 (April 14, 2026)](https://github.com/GreptimeTeam/greptimedb-mcp-server/releases/tag/v0.4.8), aligned with GreptimeDB v1.0.0's [built-in Perses dashboard support](https://docs.greptime.com/release-notes/release-1-0-0/):
 
 - **list_dashboards** — list all Perses dashboards stored in the connected GreptimeDB instance.
 
@@ -55,7 +55,7 @@ Added in v0.4.8 (April 14, 2026), aligned with GreptimeDB v1.0.0's built-in Pers
 
 - **delete_dashboard** — remove a dashboard by name.
 
-The server also provides **MCP resources** for browsing table data via `greptime://<table>/data` URIs, and **7 prompt templates** for common tasks: pipeline creation, log pipeline setup, metrics analysis, PromQL analysis, IoT monitoring, trace analysis, and table operations.
+The server also provides **MCP resources** for browsing table data via `greptime://<table>/data` URIs, and **[10 prompt templates](https://github.com/GreptimeTeam/greptimedb-mcp-server#features)** for common tasks: pipeline creation, log pipeline setup, metrics analysis, PromQL analysis, trace analysis, table operations, schema design, observability correlation, ingestion troubleshooting, and query performance tuning.
 
 ## Setup
 
@@ -95,7 +95,7 @@ greptimedb-mcp-server --transport streamable-http --port 3000
 
 ### Requirements
 
-- Python 3.10 or later
+- [Python 3.11 or later](https://pypi.org/project/greptimedb-mcp-server/)
 - A running GreptimeDB instance (local or GreptimeCloud)
 - Configuration via environment variables (`GREPTIMEDB_HOST`, `GREPTIMEDB_PORT`, `GREPTIMEDB_DATABASE`, etc.) or command-line arguments
 - Optional: `GREPTIMEDB_USER` and `GREPTIMEDB_PASSWORD` for authenticated instances
@@ -118,7 +118,7 @@ This is where the GreptimeDB MCP server stands out among database MCP servers. T
 
 **Audit logging** — all tool invocations logged with query text, success status, and duration. Useful for compliance and debugging.
 
-**DNS rebinding protection** — configurable `--allowed-hosts` parameter (added in v0.4.2) to prevent DNS rebinding attacks against the HTTP transport.
+**DNS rebinding protection** — configurable `--allowed-hosts` parameter ([added in v0.4.2](https://github.com/GreptimeTeam/greptimedb-mcp-server/releases/tag/v0.4.2)) to prevent DNS rebinding attacks against the HTTP transport.
 
 **CORS support** — configurable allowed origins for web-based clients.
 
@@ -144,37 +144,35 @@ For a database exposed to an AI agent, this is the right level of paranoia.
 
 **Pipeline management is a differentiator.** Most database MCP servers only handle queries. The ability to create, test, and manage data ingestion pipelines through MCP is genuinely useful for operations teams.
 
-**Dashboard management closes the loop.** The v0.4.8 dashboard tools (list/create/delete Perses dashboards) extend the MCP server beyond read-only analysis. You can now query your observability data *and* build dashboards against it — all through the same MCP connection. This directly leverages GreptimeDB v1.0.0's built-in Perses support.
+**Dashboard management closes the loop.** The v0.4.8 dashboard tools (list/create/delete Perses dashboards) extend the MCP server beyond read-only analysis. You can now query your observability data *and* build dashboards against it — all through the same MCP connection. This directly leverages [GreptimeDB v1.0.0's built-in Perses support](https://docs.greptime.com/release-notes/release-1-0-0/).
 
 **GreptimeDB reached GA.** [v1.0.0 shipped April 8, 2026](https://github.com/GreptimeTeam/greptimedb/releases/tag/v1.0.0), followed by [v1.0.1 stability release on April 23](https://github.com/GreptimeTeam/greptimedb/releases/tag/v1.0.1). The "experimental on top of experimental" concern from earlier this year is resolved on the database side.
 
-**7 prompt templates.** Pre-built templates for common observability tasks (metrics analysis, log pipelines, trace analysis, IoT monitoring) help AI agents produce useful results without extensive prompting. These encode domain knowledge about observability patterns.
+**10 prompt templates.** Pre-built templates for common observability tasks (metrics analysis, log pipelines, trace analysis, schema design, observability correlation) help AI agents produce useful results without extensive prompting. These encode domain knowledge about observability patterns.
 
 **Three transport modes.** stdio for local development, streamable-http for production, SSE for legacy clients. Covers the deployment spectrum.
 
 ## What's Not
 
-**27 GitHub stars.** The MCP server remains lightly adopted — one additional star in six weeks. Compare this to the main GreptimeDB repo (~6,100 stars) — the MCP integration hasn't yet attracted significant community attention despite the GA milestone.
-
-**MCP server still marked experimental.** Even though GreptimeDB itself reached GA, the MCP server documentation still carries the "APIs and features may change without notice" warning. The database is production-ready; the MCP layer is catching up.
+**[29 GitHub stars](https://github.com/GreptimeTeam/greptimedb-mcp-server).** The MCP server remains lightly adopted. Compare this to the [main GreptimeDB repo (~6,500 stars)](https://github.com/GreptimeTeam/greptimedb) — the MCP integration hasn't yet attracted significant community attention despite the GA milestone.
 
 **Requires a GreptimeDB instance.** Unlike some MCP servers that work with widely-deployed services, this one only works with GreptimeDB. If you're not already running GreptimeDB or evaluating it, this server has no standalone utility.
 
-**No write operations.** The read-only enforcement is a security feature, but it also means the MCP server can't be used for data insertion or schema management. The pipeline tools partially compensate, but direct data writes aren't possible through MCP.
+**Write access requires explicit opt-in.** The server enforces read-only by default, but [v0.5.0 (June 2026) added an `--allow-write` flag](https://github.com/GreptimeTeam/greptimedb-mcp-server/releases/tag/v0.5.0) that bypasses the security gate for `execute_sql`, logging a startup warning when enabled. The [maintainers' own README warns it should never be enabled against production data](https://github.com/GreptimeTeam/greptimedb-mcp-server/blob/main/README.md#write-mode-disabled-by-default) — treat it as a local/dev escape hatch, not a production write path. The pipeline tools remain the main sanctioned way to move data in.
 
-**[GreptimeCloud pricing starts at $290/month](https://greptime.com/pricing).** The open-source database is free, but if you want managed hosting, the entry point is steep. A hobby tier exists with 5GB storage and 3-month retention, but production use requires significant investment.
+**[GreptimeDB Enterprise (fully-managed) pricing starts at $290/month](https://greptime.com/pricing).** The open-source database is free to self-host, and [GreptimeCloud offers a free trial with no credit card required](https://greptime.com/product/cloud), but production-scale managed hosting requires the paid Enterprise tier.
 
 ## The Bottom Line
 
 GreptimeDB's MCP server occupies a genuinely unique position: it's the only MCP server that gives AI agents access to unified observability data — metrics, logs, and traces through one connection. In a space where most database MCP servers handle general-purpose SQL, this one is purpose-built for the observability use case, complete with PromQL compatibility, time-range aggregation, and pipeline management.
 
-The security posture is impressive for a 26-star project. Read-only enforcement with encoded bypass prevention, automatic data masking, audit logging, and DNS rebinding protection — this team clearly thought about what it means to expose a database to an AI agent. Most database MCP servers with ten times the adoption don't ship this level of protection.
+The security posture is impressive for a 29-star project. Read-only enforcement with encoded bypass prevention, automatic data masking, audit logging, and DNS rebinding protection — this team clearly thought about what it means to expose a database to an AI agent. Most database MCP servers with ten times the adoption don't ship this level of protection.
 
-Since March 2026, the story has meaningfully improved. GreptimeDB shipped v1.0.0 GA on April 8 — the "pre-GA database" concern is resolved. The MCP server added three Perses dashboard management tools in v0.4.8 (April 14), closing the loop between querying observability data and visualizing it. The database is now production-ready and the MCP server is tracking that trajectory.
+Since March 2026, the story has meaningfully improved. GreptimeDB shipped v1.0.0 GA on April 8 — the "pre-GA database" concern is resolved. The MCP server added three Perses dashboard management tools in v0.4.8 (April 14), closing the loop between querying observability data and visualizing it. Development hasn't stopped there either: [v0.5.0 (June 8)](https://github.com/GreptimeTeam/greptimedb-mcp-server/releases/tag/v0.5.0) added an opt-in write mode and table-profile schema inspection, and [v0.5.1 (June 17)](https://github.com/GreptimeTeam/greptimedb-mcp-server/releases/tag/v0.5.1) added verbose query-plan diagnostics. The database is now production-ready and the MCP server is tracking that trajectory.
 
-The remaining catch is adoption. The community is small (27 stars), activity is minimal, and the MCP server itself still carries an experimental label. If you're already running GreptimeDB for observability, this MCP server now offers a more complete story — conversational queries, pipeline management, dashboard management, and AI-assisted analysis across metrics, logs, and traces, backed by a stable database. If you're not yet in the GreptimeDB ecosystem, this alone isn't a reason to adopt it.
+The remaining catch is adoption. The community is small (29 stars) and the project doesn't see frequent releases, but it isn't dormant — three releases have shipped since the April GA. If you're already running GreptimeDB for observability, this MCP server now offers a more complete story — conversational queries, pipeline management, dashboard management, and AI-assisted analysis across metrics, logs, and traces, backed by a stable database. If you're not yet in the GreptimeDB ecosystem, this alone isn't a reason to adopt it.
 
-**Rating: 4.0 / 5** — A well-engineered MCP server with standout security features, a unique observability niche, and 3 new dashboard management tools. Now backed by a GA database. Held back primarily by low adoption and a still-experimental MCP label. Strong choice for teams already invested in GreptimeDB.
+**Rating: 4.0 / 5** — A well-engineered MCP server with standout security features, a unique observability niche, and 3 new dashboard management tools. Now backed by a GA database. Held back primarily by low adoption. Strong choice for teams already invested in GreptimeDB.
 
 ---
 
