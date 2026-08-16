@@ -7,7 +7,7 @@ Tax and payroll MCP servers connect AI agents to tax calculations, filing workfl
 
 This review covers **tax and payroll** — tax calculation engines, filing and compliance tools, international tax law, and payroll/HR integrations. For general accounting platforms (Xero, QuickBooks, Zoho Books, ledger tools), see our [Accounting & Bookkeeping review](/reviews/accounting-bookkeeping-mcp-servers/). For financial markets and trading, see our [Finance & Trading review](/reviews/personal-finance-mcp-servers/) if available.
 
-The headline findings: **One standout US tax server exists** — irs-taxpayer-mcp (6 stars, 44 commits) provides 39 tools covering federal and state tax calculations, retirement strategies, and year-end optimization, all running locally. **Enterprise tax compliance has expanded** — Avalara now ships seven production MCP servers (up from five) and TaxBandits offers natural-language W-9/1099 automation. **The biggest international gap is filled** — durbs182/uk-tax-mcp provides a deterministic HMRC UK tax rule engine with 141 commits covering income tax, capital gains, dividends, pensions, and Scottish rates (TY2025-31). **Japanese tax law surged** — kentaroajisaka/tax-law-mcp reached 80 stars with 14 forks. **Payroll is strengthening** — PeopleSoft HCM MCP provides 41 tools for enterprise HR/payroll/benefits, and finance-calc-mcp adds FICA/FUTA/SUTA payroll tax calculations. **Consumer tax prep is still absent** — no TurboTax, H&R Block, or similar.
+The headline findings: **One standout US tax server exists** — irs-taxpayer-mcp (9 stars, 44 commits) provides 39 tools covering federal and state tax calculations, retirement strategies, and year-end optimization, all running locally. **Enterprise tax compliance has expanded** — Avalara now ships seven production MCP servers (up from five) and TaxBandits offers natural-language W-9/1099 automation, though several of the forms TaxBandits' own docs describe are still marked "coming soon" (see below). **The biggest international gap is filled** — durbs182/uk-tax-mcp provides a deterministic HMRC UK tax rule engine with 198 commits covering income tax, capital gains, dividends, pensions, and Scottish rates (TY2025-31). **Japanese tax law surged** — kentaroajisaka/tax-law-mcp reached 94 stars with 22 forks. **Payroll is strengthening** — PeopleSoft HCM MCP provides 41 tools for enterprise HR/payroll/benefits, and finance-calc-mcp adds FICA/FUTA/SUTA payroll tax calculations. **Consumer tax prep is still absent** — no TurboTax, H&R Block, or similar.
 
 ---
 
@@ -17,7 +17,7 @@ The headline findings: **One standout US tax server exists** — irs-taxpayer-mc
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [irs-taxpayer-mcp](https://github.com/dma9527/irs-taxpayer-mcp) | 6 | TypeScript | MIT | 39 |
+| [irs-taxpayer-mcp](https://github.com/dma9527/irs-taxpayer-mcp) | 9 | TypeScript | MIT | 39 |
 
 **The most comprehensive individual tax MCP server in the ecosystem.** Provides 39 tools for US individual taxpayers covering the full federal and state tax landscape:
 
@@ -50,7 +50,7 @@ Single-command install via `uvx` — no cloning required. Integrates with Claude
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [GamaMcpServer](https://github.com/gama104/GamaMcpServer) | 8 | C# | — | 9 tools, 18 resources, 3 prompts |
+| [GamaMcpServer](https://github.com/gama104/GamaMcpServer) | 1 | C# | — | 9 tools, 18 resources, 3 prompts |
 
 A **production-ready MCP server** built in C# for tax-related operations. Validated against the MCP 2025-03-26 specification with 30 total capabilities:
 
@@ -88,13 +88,15 @@ More of a tax practice management tool than a calculator — designed for tax pr
 
 **TaxBandits' remote MCP server** brings a new paradigm to tax form processing — issue plain-language commands and the system handles compliance, validation, and IRS transmission:
 
-- **W-9 automation** — collect W-9 forms via email, text, secure URL, or Drop-in UI
-- **1099 processing** — generate, validate, and e-file 1099-NEC, 1099-MISC, and other variants ("Generate 1099-NEC forms for all contractors who earned $600+ in 2024")
-- **IRS e-filing** — direct submission with all compliance checks and validations
-- **Additional forms** — W-2, 940, 941, 941 Schedule R, 1095, 1042-S
-- **Recipient copies** — automated distribution of tax documents
+- **Business setup** — business registration and entity creation
+- **W-9 automation** — request W-9 forms by email (a secure link is included in the email), track submission status, list requests, and retrieve PDFs
+- **1099-NEC processing** — generate, validate, and e-file 1099-NEC forms, with pre-submission error checking ("Generate 1099-NEC forms for all contractors who earned $600+ in 2024")
+- **IRS e-filing** — direct electronic transmission of 1099-NEC to the IRS
+- **Recipient copies** — 1099-NEC recipient copies emailed automatically as part of the filing workflow
 
-This is a **commercial, hosted MCP server** — it connects to TaxBandits' existing API infrastructure. The natural-language interface sits on top of their battle-tested e-filing platform. Best suited for businesses and accounting firms handling volume filings.
+*Correction (2026-08-17): an earlier version of this review listed 1099-MISC, W-2, 940, 941, 941 Schedule R, 1095, and 1042-S as forms the MCP server already supported, and described W-9 collection as available via email, text, secure URL, or a "Drop-in UI." [TaxBandits' own MCP documentation](https://developer.taxbandits.com/docs/mcp/) shows the server currently supports only W-9 (email-based collection) and 1099-NEC. W-2, 1099-MISC, and state tax forms are explicitly listed as "Coming Soon," alongside a QuickBooks connector, Zapier integration, and white-label options — 940, 941, 941 Schedule R, 1095, and 1042-S are not mentioned on the MCP roadmap at all. The list above has been corrected to match what the documentation currently states is live.*
+
+This is a **commercial, hosted MCP server** — it connects to TaxBandits' existing API infrastructure. The natural-language interface sits on top of their battle-tested e-filing platform. Best suited for businesses and accounting firms handling volume filings, though today's automation surface is narrower (W-9 + 1099-NEC) than the eventual roadmap.
 
 ### Avalara MCP Servers — Enterprise Tax Compliance Suite
 
@@ -109,27 +111,27 @@ This is a **commercial, hosted MCP server** — it connects to TaxBandits' exist
 - **E-Invoicing and Live Reporting** — international e-invoicing compliance
 - **Tax Registrations and Business Licenses** — registration management across jurisdictions
 - **Exemption Certificate Management** — certificate storage and validation
-- **Cross Border Trade** *(new)* — duty calculations, trade and tariff content libraries, import trade restrictions
-- **Tax Content** *(new)* — access to Avalara's regularly updated tax content database
+- [**Cross Border Trade**](https://developer.avalara.com/mcp-servers/cross-border/) *(new)* — duty calculations, trade and tariff content libraries, import trade restrictions
+- [**Tax Content**](https://developer.avalara.com/mcp-servers/atc/) *(new)* — access to Avalara's regularly updated tax content database
 
-All servers use OAuth 2.1 authorization. Avalara's MCP servers act as AI-ready guides to their APIs, exposing machine-readable descriptions of each service. This is enterprise tax infrastructure — transaction-level tax calculation across thousands of jurisdictions, automated filing, and compliance monitoring. Not for individual tax prep, but for businesses that need to collect and remit sales tax, VAT, or GST at scale.
+All servers use OAuth 2.1 authorization. Avalara's MCP servers act as AI-ready guides to their APIs, exposing machine-readable descriptions of each service. Note: Avalara's [main MCP servers overview page](https://developer.avalara.com/mcp-servers/) still lists only the first five by name as of this check, but the Cross Border Trade and Tax Content servers each have their own live documentation page with working installation instructions (`https://mcp.avalara.com/cross-border` and `https://mcp.avalara.com/atc`), confirming both are production, not roadmap items — the overview page's copy just hasn't caught up. This is enterprise tax infrastructure — transaction-level tax calculation across thousands of jurisdictions, automated filing, and compliance monitoring. Not for individual tax prep, but for businesses that need to collect and remit sales tax, VAT, or GST at scale.
 
 ### norman-finance/norman-mcp-server — German Tax Filing + Bookkeeping
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [norman-mcp-server](https://github.com/norman-finance/norman-mcp-server) | 44 | Python | MIT | 10 skills |
+| [norman-mcp-server](https://github.com/norman-finance/norman-mcp-server) | 54 | Python | MIT | 11+ skills |
 
-**Surged from 8 to 44 stars** — the fastest-growing server in this category. Connects accounting, invoicing, and VAT filing directly to Claude, Cursor, ChatGPT, and OpenClaw:
+**Now at 54 stars** — up from 44 at the last check (and 8 originally), still the fastest-growing server in this category. Connects accounting, invoicing, and VAT filing directly to Claude, Cursor, ChatGPT, and OpenClaw:
 
 - **Invoicing** — create, send, and track invoices including recurring and ZUGFeRD e-invoices
 - **Bookkeeping** — categorize transactions, match receipts, verify entries
 - **Tax filing** — generate Finanzamt previews, file VAT returns, track deadlines
 - **Company overview** — balance, revenue, and financial health at a glance
 - **Documents** — upload and attach receipts, invoices, and supporting files
-- **10 ready-to-use skills** — financial overviews, invoice creation, client management, tax reporting, transaction categorization, receipt discovery via Gmail, payment reminders, expense analysis, deduction identification, monthly reconciliation
+- **11+ ready-to-use skills** — financial overview, invoice creation, client management, tax reporting, transaction categorization, receipt discovery, overdue-payment reminders, expense reporting, tax-deduction finding, monthly reconciliation, and a newly added company-incorporation skill
 
-Now at v0.1.7 with 169 commits. OAuth 2.1 authentication. Supports local stdio, remote HTTP, and containerized deployment. Currently in **beta**. The German-market focus (Finanzamt, ZUGFeRD e-invoicing) fills a gap — most tax MCP servers target the US market.
+[Still at v0.1.7 on PyPI](https://pypi.org/project/norman-mcp-server/) (up to 217 commits on GitHub since). [PyPI's own classifier still lists the package as "4 - Beta."](https://pypi.org/project/norman-mcp-server/) OAuth 2.1 authentication. Supports local stdio, remote HTTP, and containerized deployment. The German-market focus (Finanzamt, ZUGFeRD e-invoicing) fills a gap — most tax MCP servers target the US market.
 
 ---
 
@@ -153,7 +155,7 @@ Now at v0.1.7 with 169 commits. OAuth 2.1 authentication. Supports local stdio, 
 
 The architecture is notably rigorous — six-layer design (AST schema, evaluator engine, DSL compiler, rule registry, validation pipeline, MCP server), `decimal.Decimal` arithmetic to prevent floating-point errors, SHA-256 hashing for rule reproducibility, and a mandatory human review gate before publication. All rules require HMRC source citations. No Turing-complete rules (no loops or recursion) — this is a deterministic calculator, not a programmable engine.
 
-141 commits with 86/86 worked examples covering all published rules. Created April 2026.
+198 commits with 86/86 worked examples covering all published rules. Created April 2026.
 
 ### CSOAI-ORG/tax-calculator-ai-mcp — Multi-Country Tax Calculator
 
@@ -169,15 +171,15 @@ A **multi-country tax calculator** covering UK and US income tax, EU VAT, UK cor
 - **Capital gains tax** — UK calculations by asset classification
 - **Tax deadlines** — UK and US jurisdiction deadlines
 
-Free tier allows 15 calls/day. Available via pip and MCP registry. Created April 2026. The EU VAT coverage partially fills a gap — while not a full VAT OSS/IOSS implementation, it provides basic rate calculations across EU countries.
+Free tier allows [10 calls/day](https://github.com/CSOAI-ORG/tax-calculator-ai-mcp) (a paid Pro tier at £79/mo removes the cap and adds signed compliance attestations). Available via pip and the Smithery MCP registry. Created April 2026. The EU VAT coverage partially fills a gap — while not a full VAT OSS/IOSS implementation, it provides basic rate calculations across EU countries.
 
 ### kentaroajisaka/tax-law-mcp — Japanese Tax Statutes and Rulings
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tax-law-mcp](https://github.com/kentaroajisaka/tax-law-mcp) | 80 | TypeScript | — | Multiple |
+| [tax-law-mcp](https://github.com/kentaroajisaka/tax-law-mcp) | 94 | TypeScript | — | Multiple |
 
-**Surged to 80 stars with 14 forks** — proving strong demand for jurisdiction-specific tax law MCP servers. An MCP server for **Japanese tax law** that pulls directly from official government sources:
+**Surged to 94 stars with 22 forks** — proving strong demand for jurisdiction-specific tax law MCP servers. An MCP server for **Japanese tax law** that pulls directly from official government sources:
 
 - **e-Gov Law API v2** — retrieves Japanese tax law provisions in Markdown format
 - **NTA administrative circulars** (通達) — National Tax Agency interpretive guidance
@@ -221,7 +223,7 @@ Part of the ANKR Platform — India's AI-native enterprise operating system. The
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [peoplesoft-mcp](https://github.com/rgrz/peoplesoft-mcp) | 7 | Python | MIT | 41 |
+| [peoplesoft-mcp](https://github.com/rgrz/peoplesoft-mcp) | 12 | Python | MIT | 41 |
 
 **The most comprehensive enterprise HRIS/payroll MCP server.** Enables AI assistants to query and understand PeopleSoft HCM databases with 41 semantic tools across all major modules:
 
@@ -235,21 +237,24 @@ Part of the ANKR Platform — India's AI-native enterprise operating system. The
 
 Direct Oracle database access without JDBC. Built-in effective dating support and PeopleTools introspection. Four embedded resources provide guidance on PeopleSoft concepts, schema organization, query patterns, and architecture. Created February 2026.
 
-### rocketsciencegg/rippling-mcp-server — Rippling HR & Payroll
+### bifrost-mcp/rippling-mcp — Rippling HR & Payroll
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [rippling-mcp-server](https://github.com/rocketsciencegg/rippling-mcp-server) | 3 | TypeScript | — | 5+ |
+| [rippling-mcp](https://github.com/bifrost-mcp/rippling-mcp) | 3 | TypeScript | MIT | 18 |
 
-An MCP server for **Rippling** — one of the leading HR/payroll platforms:
+*Correction (2026-08-17): an earlier version of this review covered `rocketsciencegg/rippling-mcp-server` (5+ tools: `search_workers`, `get_headcount_snapshot`, `get_compensation_summary`, `get_org_structure`, `get_worker_details`). That repository has since been removed — it no longer resolves on GitHub and no longer appears in the `rocketsciencegg` account's repository list. It has been replaced here with [bifrost-mcp/rippling-mcp](https://github.com/bifrost-mcp/rippling-mcp), a currently live, verifiable alternative for the Rippling HR/IT/Finance platform.*
 
-- **search_workers** — search employees by name or email, returns name, title, department, manager, location, compensation
-- **get_headcount_snapshot** — headcount by department and location, employment type breakdown, recent hires/departures (30-day window)
-- **get_compensation_summary** — total cash compensation aggregated by department with min/max/avg ranges
-- **get_org_structure** — department hierarchy, teams, manager names, direct report counts
-- **get_worker_details** — full worker profile with compensation, level, and location
+An MCP server for **Rippling** — one of the leading HR/payroll platforms — with 18 tools across six domains:
 
-Clean, focused tool design — each tool returns shaped, useful data rather than raw API dumps. Good for HR analytics queries like "who reports to Sarah?" or "what's the average compensation in engineering?"
+- **Company** — company details, departments, work locations
+- **Employees** — list, search, and retrieve individual employee records
+- **Organization** — teams, position levels, custom field definitions
+- **Leave management** — PTO balances, leave requests, leave types
+- **Groups** — create, update, and manage employee groups
+- **Activity** — track company events like hiring and terminations
+
+Uses bearer-token auth and respects Rippling's rate-limit headers. Good for HR analytics and workflow queries against a live Rippling workspace.
 
 ### merge-api/merge-mcp — Unified API for 70+ HRIS/Payroll Platforms
 
@@ -270,9 +275,9 @@ The power of Merge is abstraction — instead of building separate MCP integrati
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| payroll-mcp-server | — | TypeScript + Express | — | Multiple |
+| [payroll-mcp-server](https://github.com/csainath0210/payroll-mcp-server) | 1 | TypeScript + Express | — | Few |
 
-A **salary management MCP server** providing standard interfaces for interacting with payroll AI models. Built with TypeScript and Express, it exposes payroll management functionality for AI model interaction. Limited documentation available — appears to be an early-stage project.
+A **salary management MCP server** exposing payroll functionality (e.g. `calculatePayroll`, computing gross pay, a flat tax deduction, and net pay from hours worked and hourly rate) for AI model interaction. Built with TypeScript and Express; supports Server-Sent Events. 1 star, 1 commit as of this check — genuinely early-stage, more a proof-of-concept than a production tool.
 
 ---
 
@@ -316,7 +321,7 @@ The tax and payroll MCP space has narrowed its gaps but significant ones remain:
 
 The tax and payroll MCP category earns **4 out of 5** — up from 3.5 in the initial review.
 
-**What works well:** irs-taxpayer-mcp remains the standout — 39 tools for US individual tax planning, all running locally. Avalara has expanded to seven enterprise servers including cross-border trade and tax content. The **biggest improvement** is international: durbs182/uk-tax-mcp fills the HMRC gap with a rigorous, deterministic UK tax engine (141 commits, 86 worked examples, SHA-256 reproducibility), and kentaroajisaka/tax-law-mcp surged to 80 stars proving demand for jurisdiction-specific servers. Norman's 44-star growth validates German tax/VAT automation. TaxBandits continues to lead commercial filing.
+**What works well:** irs-taxpayer-mcp remains the standout — 39 tools for US individual tax planning, all running locally. Avalara has expanded to seven enterprise servers including cross-border trade and tax content. The **biggest improvement** is international: durbs182/uk-tax-mcp fills the HMRC gap with a rigorous, deterministic UK tax engine (198 commits, 86 worked examples, SHA-256 reproducibility), and kentaroajisaka/tax-law-mcp surged to 94 stars proving demand for jurisdiction-specific servers. Norman's growth to 54 stars validates German tax/VAT automation. TaxBandits continues to lead commercial filing, though its MCP server today only automates W-9 and 1099-NEC — its own docs mark W-2, 1099-MISC, and state forms as "Coming Soon."
 
 **What's improved:** Three major gaps from the initial review are now filled or partially filled — UK HMRC tax (fully filled), payroll tax calculations with FICA/FUTA/SUTA (finance-calc-mcp), and EU VAT rate calculations (tax-calculator-ai-mcp). PeopleSoft HCM adds enterprise-grade HRIS/payroll with 41 tools covering HR, payroll, benefits, and performance.
 
@@ -326,5 +331,5 @@ The tax and payroll MCP category earns **4 out of 5** — up from 3.5 in the ini
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 
-*This review was refreshed on 2026-04-30 using Claude Opus 4.6 (Anthropic). Initial review: 2026-03-16.*
+*This review was refreshed on 2026-08-17 (claim-level citation re-audit) using Claude Sonnet 5 (Anthropic). Previously refreshed 2026-04-30. Initial review: 2026-03-16.*
 

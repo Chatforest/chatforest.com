@@ -1,12 +1,12 @@
 ---
-title: "Travel & Tourism MCP Servers — Fli (2.1K Stars), Skiplagged Official, Airbnb, Amadeus GDS, Mapbox, Expedia, and More"
+title: "Travel & Tourism MCP Servers — Fli (3.1K Stars), Skiplagged Official, Airbnb, Amadeus GDS, Mapbox, Expedia, and More"
 date: 2026-03-15T16:00:00+09:00
 description: "Travel and tourism MCP servers are turning AI assistants into trip planners. We reviewed 50+ servers across 8 subcategories including Amadeus GDS, Skiplagged, Mapbox, and travel hacking."
-og_description: "Travel & tourism MCP servers: Fli (2,100 stars, Google Flights API), Airbnb (437 stars), travel-hacking-toolkit (440 stars, points/miles), Mapbox official (335 stars, 18 tools), Google Maps (224 stars, 13 tools), flights-mcp (188 stars, Duffel API), Amadeus (53 stars, GDS access), Skiplagged official (5 tools, no API key), Expedia official (14 stars, 4 tools), Marriott (16 tools, Bonvoy loyalty), Hertz (10 tools, car rental). Rating: 4.5/5."
+og_description: "Travel & tourism MCP servers: Fli (3,100 stars, Google Flights API), Airbnb (510 stars), travel-hacking-toolkit (628 stars, points/miles), Mapbox official (351 stars, 18 tools), Google Maps (426 stars, 13 tools), flights-mcp (221 stars, Duffel API), Amadeus (58 stars, GDS access), Skiplagged official (5 tools, no API key), Expedia official (21 stars, 4 tools), Marriott (16 tools, Bonvoy loyalty), Hertz (10 tools, car rental). Rating: 4.5/5."
 content_type: "Review"
-card_description: "Travel and tourism MCP servers for flight search, accommodation booking, destination research, maps, and trip planning. This is now one of the strongest consumer-facing MCP categories with four official vendor servers (Expedia, Kiwi.com, Skiplagged, Mapbox) and Amadeus GDS finally bridged. Fli (2,100 stars) has emerged as the dominant flight search server with reverse-engineered Google Flights API access, zero web scraping, and both CLI and MCP interfaces. Skiplagged launched an official MCP server with hidden-city deals, flexible dates, hotel/rental car search — all with no API key required. Airbnb's community server grew to 437 stars with v0.2.0 adding international geocoding. The travel-hacking-toolkit (440 stars) revolutionizes points/miles travel with 20+ tools across 5 MCP servers covering award flights, credit card portals, and loyalty programs. Mapbox's official MCP server (335 stars, 18 tools) provides a powerful Google Maps alternative with offline geospatial calculations, isochrone generation, and route optimization. The biggest structural gap filled: Amadeus GDS now has 6+ MCP implementations led by donghyun-chae's server (53 stars), giving AI agents access to professional travel industry inventory. Car rental coverage expanded via Hertz MCP (10 tools), hotel chains via Marriott MCP (16 tools with Bonvoy loyalty), and UK rail via National Rail MCP (4 tools). Remaining gaps: no official Google Flights, Booking.com, or Kayak servers; Sabre/Travelport GDS still missing; cruise lines absent; visa/passport requirements uncovered; rail coverage minimal beyond UK. Rating upgraded to 4.5/5 — Fli's massive adoption, three new official vendor servers, Amadeus GDS integration, and the travel hacking ecosystem represent a major maturation of the category."
-last_refreshed: 2026-04-27
-sources_audited: 2026-07-23
+card_description: "Travel and tourism MCP servers for flight search, accommodation booking, destination research, maps, and trip planning. This is now one of the strongest consumer-facing MCP categories with four official vendor servers (Expedia, Kiwi.com, Skiplagged, Mapbox) and Amadeus GDS finally bridged. Fli (3,100 stars) has emerged as the dominant flight search server with reverse-engineered Google Flights API access, zero web scraping, and both CLI and MCP interfaces. Skiplagged launched an official MCP server with hidden-city deals, flexible dates, hotel/rental car search — all with no API key required. Airbnb's community server grew to 510 stars with v0.2.0 adding international geocoding. The travel-hacking-toolkit (628 stars) revolutionizes points/miles travel with 20+ tools across 5 MCP servers covering award flights, credit card portals, and loyalty programs. Mapbox's official MCP server (351 stars, 18 tools) provides a powerful Google Maps alternative with offline geospatial calculations, isochrone generation, and route optimization. The biggest structural gap filled: Amadeus GDS now has 6+ MCP implementations led by donghyun-chae's server (58 stars), giving AI agents access to professional travel industry inventory. Car rental coverage expanded via Hertz MCP (10 tools), hotel chains via Marriott MCP (16 tools with Bonvoy loyalty), and UK rail via National Rail MCP (4 tools). Remaining gaps: no official Google Flights, Booking.com, or Kayak servers; Sabre/Travelport GDS still missing; cruise lines absent; visa/passport requirements uncovered; rail coverage minimal beyond UK. Rating upgraded to 4.5/5 — Fli's massive adoption, three new official vendor servers, Amadeus GDS integration, and the travel hacking ecosystem represent a major maturation of the category."
+last_refreshed: 2026-08-17
+sources_audited: 2026-08-17
 category_url: "/categories/lifestyle-personal/"
 ---
 
@@ -14,9 +14,9 @@ Travel and tourism MCP servers are turning AI assistants into capable trip plann
 
 The landscape now spans eight areas: **flight search** (Fli/Google Flights, Skiplagged, Skyscanner, Duffel, Kiwi.com, Amadeus), **accommodation** (Airbnb, Booking.com, Marriott, hotel search), **travel platforms** (Expedia, Tripadvisor, Hopper), **maps and navigation** (Google Maps, Mapbox, route planning, place discovery), **GDS and professional travel** (Amadeus integrations), **travel hacking** (points, miles, award flights, credit card portals), **ground transportation** (car rental, rail), and **multi-service travel assistants** (orchestrated trip planning across multiple data sources).
 
-The headline findings: **Fli has exploded to 2,100 stars** — a Python library with reverse-engineered Google Flights API access, now the most popular flight search MCP server by a wide margin. **Skiplagged launched an official MCP server** — hidden-city deals, flexible dates, hotels, and rental cars with no API key required. **Amadeus GDS now has 6+ MCP implementations** — filling the biggest structural gap from our initial review. **The travel-hacking-toolkit (440 stars) created a new subcategory** — AI-powered points/miles optimization across 25+ award programs. **Mapbox shipped an official MCP server** (335 stars, 18 tools) — a powerful Google Maps alternative. **Four official vendor servers** now exist (Expedia, Kiwi.com, Skiplagged, Mapbox), up from two in March.
+The headline findings: **Fli has exploded to 3,100 stars** — a Python library with reverse-engineered Google Flights API access, now the most popular flight search MCP server by a wide margin. **Skiplagged launched an official MCP server** — hidden-city deals, flexible dates, hotels, and rental cars with no API key required. **Amadeus GDS now has 6+ MCP implementations** — filling the biggest structural gap from our initial review. **The travel-hacking-toolkit (628 stars) created a new subcategory** — AI-powered points/miles optimization across 27 award programs. **Mapbox shipped an official MCP server** (351 stars, 18 tools) — a powerful Google Maps alternative. **Four official vendor servers** now exist (Expedia, Kiwi.com, Skiplagged, Mapbox), up from two in March.
 
-*This review was refreshed on April 27, 2026 — 43 days after the initial review on March 15.*
+*This review was refreshed on April 27, 2026 — 43 days after the initial review on March 15. Star counts and other volatile figures below were re-verified against live GitHub data on 2026-08-17; see the correction notes inline for anything that changed materially.*
 
 ## Flight Search
 
@@ -24,9 +24,9 @@ The headline findings: **Fli has exploded to 2,100 stars** — a Python library 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [punitarani/fli](https://github.com/punitarani/fli) | 2,100 | Python | MIT | 2 |
+| [punitarani/fli](https://github.com/punitarani/fli) | 3,100 | Python | MIT | 2 |
 
-**NEW — The most popular flight search MCP server by a massive margin.** Fli has exploded to 2,100 stars, dwarfing every other flight search implementation. Unlike web scraping approaches, it uses a **reverse-engineered Google Flights API** for direct data access — faster, more reliable, and less prone to breakage.
+**NEW — The most popular flight search MCP server by a massive margin.** Fli has exploded to 3,100 stars (up from 2,100 at last audit), dwarfing every other flight search implementation. *(Correction, 2026-08-17 audit: star count refreshed from live GitHub data.)* Unlike web scraping approaches, it uses a **reverse-engineered Google Flights API** for direct data access — faster, more reliable, and less prone to breakage.
 
 Two MCP tools cover the core use case:
 
@@ -57,9 +57,9 @@ Public endpoint at `mcp.skiplagged.com/mcp`. Works with Claude, ChatGPT, Cursor,
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ravinahp/flights-mcp](https://github.com/ravinahp/flights-mcp) | 188 | Python | MIT | 3 |
+| [ravinahp/flights-mcp](https://github.com/ravinahp/flights-mcp) | 221 | Python | MIT | 3 |
 
-The **most popular Duffel API flight server** (up from 169 stars). Built on Duffel — a modern flight booking API used by travel companies — it provides real-time flight data from multiple airlines through a clean 3-tool interface:
+The **most popular Duffel API flight server** (up from 188 stars). Built on Duffel — a modern flight booking API used by travel companies — it provides real-time flight data from multiple airlines through a clean 3-tool interface:
 
 - **search_flights** — one-way, round-trip, and multi-city searches with cabin class and passenger options
 - **get_offer_details** — detailed information on specific flight offers
@@ -90,7 +90,7 @@ Google Flights implementations have expanded from 3 to 6+ (not counting Fli abov
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [shadyvb/mcp-skyscanner](https://github.com/shadyvb/mcp-skyscanner) | 4 | Python | GPL-3.0 | 2 |
+| [shadyvb/mcp-skyscanner](https://github.com/shadyvb/mcp-skyscanner) | 12 | Python | GPL-3.0 | 2 |
 | [JamesANZ/flight-finder-mcp](https://github.com/JamesANZ/flight-finder-mcp) | 1 | TypeScript | MIT | 5 |
 | [Kiwi.com Official MCP](https://github.com/alpic-ai/kiwi-mcp-server-public) | 11 | — | — | — |
 
@@ -106,9 +106,9 @@ Google Flights implementations have expanded from 3 to 6+ (not counting Fli abov
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [openbnb-org/mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | 437 | JavaScript | MIT | 2 |
+| [openbnb-org/mcp-server-airbnb](https://github.com/openbnb-org/mcp-server-airbnb) | 510 | JavaScript | MIT | 2 |
 
-The **most popular accommodation MCP server** (up from 394 stars, +11%). v0.2.0 released April 2026. Two tools cover the core use case:
+The **most popular accommodation MCP server** (up from 437 stars, +17%). v0.2.0 released April 2026. Two tools cover the core use case:
 
 - **airbnb_search** — location-based listing discovery with filters for dates, guests, price range, and Google Maps Place IDs
 - **airbnb_listing_details** — comprehensive property information including amenities, policies, coordinates, and photos
@@ -119,7 +119,7 @@ The key feature: **no API key required**. It retrieves Airbnb data while respect
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [markswendsen-code/mcp-marriott](https://github.com/markswendsen-code/mcp-marriott) | 3 | TypeScript | MIT | 16 |
+| [markswendsen-code/mcp-marriott](https://github.com/markswendsen-code/mcp-marriott) | 8 | TypeScript | MIT | 16 |
 
 **NEW — The first hotel chain MCP server with loyalty program integration.** 16 tools cover the full hotel workflow plus Bonvoy loyalty:
 
@@ -154,9 +154,9 @@ Uses Playwright browser automation with cookie-based session persistence. Safety
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ExpediaGroup/expedia-travel-recommendations-mcp](https://github.com/ExpediaGroup/expedia-travel-recommendations-mcp) | 14 | Python | Apache-2.0 | 4 |
+| [ExpediaGroup/expedia-travel-recommendations-mcp](https://github.com/ExpediaGroup/expedia-travel-recommendations-mcp) | 21 | Python | Apache-2.0 | 4 |
 
-An **official Expedia server** — maintained by ExpediaGroup on GitHub (up from 11 stars). Four tools cover the major travel verticals:
+An **official Expedia server** — maintained by ExpediaGroup on GitHub (up from 14 stars). Four tools cover the major travel verticals:
 
 - **Hotel recommendations** — accommodation discovery and comparison
 - **Flight recommendations** — flight search across airlines
@@ -169,9 +169,9 @@ Dual protocol support (stdio and streamable-http) means it works both as a local
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pab1it0/tripadvisor-mcp](https://github.com/pab1it0/tripadvisor-mcp) | 54 | Python | MIT | 5 |
+| [pab1it0/tripadvisor-mcp](https://github.com/pab1it0/tripadvisor-mcp) | 62 | Python | MIT | 5 |
 
-Connects AI agents to Tripadvisor's Content API — [the world's largest travel guidance platform](https://www.tripadvisor.com/business/about) with reviews for hotels, restaurants, attractions, and experiences (up from 53 stars).
+Connects AI agents to Tripadvisor's Content API — [the world's largest travel guidance platform](https://www.tripadvisor.com/business/about) with reviews for hotels, restaurants, attractions, and experiences (up from 54 stars).
 
 Five tools cover the core research workflow:
 
@@ -205,7 +205,7 @@ The price forecasting integration is unique in the travel MCP space — no other
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mapbox/mcp-server](https://github.com/mapbox/mcp-server) | 335 | TypeScript | MIT | 18 |
+| [mapbox/mcp-server](https://github.com/mapbox/mcp-server) | 351 | TypeScript | MIT | 18 |
 
 **NEW — Official Mapbox MCP server**, and a major addition to the travel navigation landscape. 18 tools split between online API tools and **offline geospatial calculations** (no API calls needed):
 
@@ -215,23 +215,23 @@ The price forecasting integration is unique in the travel MCP space — no other
 
 The **isochrone generation** is unique among travel MCP servers — it calculates reachability areas ("show me everywhere I can reach within 30 minutes of my hotel"). Route optimization solves the traveling salesman problem for multi-stop itineraries. Static map image generation provides visual context. Supports MCP Apps protocol for interactive map previews.
 
-At 335 stars, this is now the **second-most popular mapping MCP server** and provides capabilities Google Maps servers don't offer (isochrones, offline calculations, route optimization).
+At 351 stars, this is the **second-most popular mapping MCP server** in this review (see correction below), and provides capabilities Google Maps servers don't offer (isochrones, offline calculations, route optimization).
 
 ### Google Maps MCP Servers
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cablate/mcp-google-map](https://github.com/cablate/mcp-google-map) | 224 | TypeScript | MIT | 13 |
-| [GongRzhe/TRAVEL-PLANNER-MCP-Server](https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server) | 90 | JavaScript | MIT | 4 |
+| [cablate/mcp-google-map](https://github.com/cablate/mcp-google-map) | 426 | TypeScript | MIT | 13 |
+| [GongRzhe/TRAVEL-PLANNER-MCP-Server](https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server) | 99 | JavaScript | MIT | 4 |
 | [vicpeacock/google-maps-comprehensive-mcp](https://github.com/vicpeacock/google-maps-comprehensive-mcp) | — | — | — | 8 |
 
 Google Maps MCP servers remain **the navigation backbone for travel AI agents** — they provide the spatial intelligence that connects flights and hotels to actual trip experiences.
 
-**cablate/mcp-google-map** (224 stars, up from 193, +16%) is the most comprehensive Google Maps server with 13 tools split between atomic and composite operations:
+**cablate/mcp-google-map** (426 stars, up from 224, +90%) is the most comprehensive Google Maps server with 13 tools split between atomic and composite operations. *(Correction, 2026-08-17 audit: this repo's star growth has overtaken Mapbox's official server since the April refresh — it is now the most-starred mapping server in this review, not Mapbox.)*
 
-Atomic tools: nearby search, place search, place details, geocode, reverse geocode, distance matrix, directions, elevation, timezone, weather. Composite tools: **explore_area** (discover what's around a location), **plan_route** (multi-stop optimized routing), **compare_places** (side-by-side comparison). All operations are read-only. Now at v0.0.19 with configurable tool limiting to reduce context usage.
+Atomic tools: nearby search, place search, place details, geocode, reverse geocode, distance matrix, directions, elevation, timezone, weather. Composite tools: **explore_area** (discover what's around a location), **plan_route** (multi-stop optimized routing), **compare_places** (side-by-side comparison). All operations are read-only. Version and tool-limiting details were not independently re-verified in this audit; treat the v0.0.19 reference as unconfirmed.
 
-**GongRzhe/TRAVEL-PLANNER-MCP-Server** (90 stars) focuses on the core travel planning tools: searchPlaces, getPlaceDetails, calculateRoute (with driving/walking/bicycling/transit modes), and getTimeZone.
+**GongRzhe/TRAVEL-PLANNER-MCP-Server** (99 stars) focuses on the core travel planning tools: searchPlaces, getPlaceDetails, calculateRoute (with driving/walking/bicycling/transit modes), and getTimeZone.
 
 ## GDS & Professional Travel (NEW)
 
@@ -239,7 +239,7 @@ Atomic tools: nearby search, place search, place details, geocode, reverse geoco
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [donghyun-chae/mcp-amadeus](https://github.com/donghyun-chae/mcp-amadeus) | 53 | Python | MIT | 1 |
+| [donghyun-chae/mcp-amadeus](https://github.com/donghyun-chae/mcp-amadeus) | 58 | Python | MIT | 1 |
 | [fiqcodes/amadeus-mcp-server](https://github.com/fiqcodes/amadeus-mcp-server) | 1 | Python | — | 4 |
 | [lev-corrupted/travel-mcp-server](https://github.com/lev-corrupted/travel-mcp-server) | 2 | Python | MIT | 7 |
 | [technicalerikchan/flight-mcp-server](https://github.com/technicalerikchan/flight-mcp-server) | — | — | — | — |
@@ -248,7 +248,7 @@ Atomic tools: nearby search, place search, place details, geocode, reverse geoco
 
 **NEW — This fills the biggest structural gap from our initial review.** Amadeus is one of the three major Global Distribution Systems (along with Sabre and Travelport) that power professional travel booking worldwide. Six or more MCP implementations now provide AI agents access to Amadeus inventory.
 
-**donghyun-chae/mcp-amadeus** (53 stars) leads the pack with Docker support and the official amadeus-python SDK. Searches flight offers with cabin class, non-stop preferences, currency, max price, and multi-traveler support. Claude Desktop integration included.
+**donghyun-chae/mcp-amadeus** (58 stars) leads the pack with Docker support and the official amadeus-python SDK. Searches flight offers with cabin class, non-stop preferences, currency, max price, and multi-traveler support. Claude Desktop integration included.
 
 **fiqcodes/amadeus-mcp-server** is the most feature-rich with 4 tools — flight search, city information (IATA codes, coordinates), tours and activities, and hotel search. Automatic USD currency conversion for all prices.
 
@@ -260,7 +260,7 @@ While Sabre and Travelport still lack MCP implementations, Amadeus coverage mean
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [visa/mcp](https://github.com/visa/mcp) | 25 | TypeScript | MIT | 3 packages |
+| [visa/mcp](https://github.com/visa/mcp) | 40 | TypeScript | MIT | 3 packages |
 
 **NEW — Official Visa MCP integration toolkit.** Enables AI agents to connect to Visa Intelligent Commerce — a platform that allows AI agents to securely browse, shop, and purchase on behalf of consumers. Three npm packages:
 
@@ -268,7 +268,7 @@ While Sabre and Travelport still lack MCP implementations, Amadeus coverage mean
 - **@visa/mcp-client** — MCP client connections with automatic authentication
 - **@visa/api-client** — API clients for VIC and VDP with X-Pay authentication and MLE encryption
 
-Includes card tokenization, device binding with FIDO authentication, and Visa Passkey creation. This is significant for travel commerce — it's the first payment network to provide MCP integration, enabling AI agents to potentially complete bookings end-to-end rather than just searching.
+Includes card tokenization, device binding with FIDO authentication, and Visa Passkey creation. This is significant for travel commerce, potentially enabling AI agents to complete bookings end-to-end rather than just searching. **Correction (2026-08-17 audit):** this section previously called Visa's server "the first payment network to provide MCP integration." That's false — [PayPal announced its own MCP server rollout in April 2025](https://developer.paypal.com/community/blog/paypal-model-context-protocol/), over a year before Visa's, and PayPal now [ships an official MCP server](https://github.com/paypal/paypal-mcp-server) supporting invoicing, payments, and dispute management. Visa's is still notable as a card-network (rather than payment-platform) MCP integration, but the "first payment network" framing is removed.
 
 ## Travel Hacking & Points Optimization (NEW)
 
@@ -276,18 +276,18 @@ Includes card tokenization, device binding with FIDO authentication, and Visa Pa
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [borski/travel-hacking-toolkit](https://github.com/borski/travel-hacking-toolkit) | 440 | Python | MIT | 20+ |
+| [borski/travel-hacking-toolkit](https://github.com/borski/travel-hacking-toolkit) | 628 | Python | MIT | 20+ |
 
-**NEW — The most comprehensive travel optimization project in the MCP ecosystem.** At 440 stars, this is the third-most popular travel MCP project overall. It bundles 5 free MCP servers and 15+ skills covering the entire points/miles travel workflow:
+**NEW — The most comprehensive travel optimization project in the MCP ecosystem.** At 628 stars, this is the **second**-most popular travel MCP project in this review, behind only Fli. *(Correction, 2026-08-17 audit: this was previously called "third-most popular," which was inaccurate even at the original star counts — its star count already exceeded Airbnb's and Mapbox's at the time. Corrected to reflect the actual ranking.)* It bundles 5 free MCP servers and 15+ skills covering the entire points/miles travel workflow:
 
 **MCP Servers included:** Skiplagged (flights + hidden-city), Kiwi (flights), Trivago (hotels), Ferryhopper (ferries across 33 countries), Airbnb.
 
 **Key capabilities:**
-- **Unified flight comparison** — searches across 25+ award programs and multiple cash booking sources simultaneously
+- **Unified flight comparison** — searches across [27 mileage/award programs](https://github.com/borski/travel-hacking-toolkit) and multiple cash booking sources simultaneously
 - **Points vs. cash analysis** — automatic cost-per-point calculations with transfer optimization
 - **Credit card portal access** — Chase Ultimate Rewards and Amex Membership Rewards travel portals including Points Boost rates
 - **Loyalty balance tracking** — AwardWallet integration plus airline-specific scrapers
-- **Premium hotel database** — 4,659 Amex Fine Hotels & Resorts and Chase Luxury Hotel Collection properties with stacking detection
+- **Premium hotel database** — [4,659 Amex Fine Hotels & Resorts and Chase Luxury Hotel Collection properties](https://github.com/borski/travel-hacking-toolkit) with stacking detection
 - **Award flight search** — Duffel GDS, Ignav, Google Flights, Seats.aero combined
 
 Also includes ferry route planning, Scandinavian transit, aircraft seat map visualization, and destination discovery. This project single-handedly creates a "travel hacking" subcategory that didn't exist in the MCP ecosystem before.
@@ -315,7 +315,7 @@ Uses Playwright browser automation. Fallback placeholder responses when live dat
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [lucygoodchild/mcp-national-rail](https://github.com/lucygoodchild/mcp-national-rail) | 4 | TypeScript | — | 4 |
+| [lucygoodchild/mcp-national-rail](https://github.com/lucygoodchild/mcp-national-rail) | 7 | TypeScript | — | 4 |
 
 **NEW — First rail MCP server**, partially filling another gap from our initial review. Covers UK National Rail via the Realtime Trains API:
 
@@ -330,9 +330,9 @@ UK-specific, but it establishes the pattern. European rail (Eurostar, SNCF, Deut
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [skarlekar/mcp_travelassistant](https://github.com/skarlekar/mcp_travelassistant) | 32 | Python | MIT | 6 servers |
+| [skarlekar/mcp_travelassistant](https://github.com/skarlekar/mcp_travelassistant) | 56 | Python | MIT | 6 servers |
 
-The **most architecturally ambitious travel MCP project** — a suite of 6 specialized servers designed to be orchestrated together by Claude for comprehensive trip planning (up from 28 stars):
+The **most architecturally ambitious travel MCP project** — a suite of 6 specialized servers designed to be orchestrated together by Claude for comprehensive trip planning (up from 32 stars):
 
 1. **Flight Search Server** — find and compare flights with pricing analysis
 2. **Hotel Search Server** — discover accommodations filtered by budget and amenities
@@ -371,7 +371,7 @@ Simpler to set up than multi-server approaches. Good for users who want basic tr
 
 Several gaps from March have been filled (Amadeus GDS, car rental, rail), but important ones remain:
 
-- **No official Google Flights or Booking.com MCP servers** — the two most popular travel search tools still lack vendor-supported MCP integration (though Fli's 2,100-star reverse-engineered approach may reduce the urgency for an official Google Flights server)
+- **No official Google Flights or Booking.com MCP servers** — the two most popular travel search tools still lack vendor-supported MCP integration (though Fli's 3,100-star reverse-engineered approach may reduce the urgency for an official Google Flights server)
 - **Sabre and Travelport GDS still absent** — Amadeus is now covered, but the other two major GDS platforms have no public MCP implementations
 - **No cruise line servers** — Royal Caribbean, Carnival, Norwegian, and MSC remain completely absent
 - **No visa/passport requirement checkers** — Visa's MCP is for payments, not travel documents. No server tells you whether you need a visa for your destination based on your nationality
@@ -385,14 +385,14 @@ Several gaps from March have been filled (Amadeus GDS, car rental, rail), but im
 
 Travel and tourism MCP servers earn a **4.5 out of 5**, up from 4.0 in March. This category has matured significantly in 43 days.
 
-**Fli's explosion to 2,100 stars** makes it the most popular flight search MCP server by a massive margin — its reverse-engineered Google Flights API approach has clearly resonated with developers. **Three new official vendor servers** (Skiplagged, Mapbox, Visa) join Expedia and Kiwi.com, bringing the official count to five. **Amadeus GDS integration** fills the biggest structural gap from our initial review — AI agents now have access to professional travel industry inventory through 6+ implementations.
+**Fli's explosion to 3,100 stars** makes it the most popular flight search MCP server by a massive margin — its reverse-engineered Google Flights API approach has clearly resonated with developers. **Three new official vendor servers** (Skiplagged, Mapbox, Visa) join Expedia and Kiwi.com, bringing the official count to five. **Amadeus GDS integration** fills the biggest structural gap from our initial review — AI agents now have access to professional travel industry inventory through 6+ implementations.
 
-The **travel-hacking-toolkit** (440 stars) created an entirely new subcategory — AI-powered points/miles optimization across 25+ award programs, credit card portals, and loyalty programs. This kind of specialized, high-value use case is where MCP servers deliver outsized impact.
+The **travel-hacking-toolkit** (628 stars) created an entirely new subcategory — AI-powered points/miles optimization across 27 award programs, credit card portals, and loyalty programs. This kind of specialized, high-value use case is where MCP servers deliver outsized impact.
 
-**Mapbox's official server** (335 stars, 18 tools) provides capabilities Google Maps doesn't — isochrone generation, route optimization, and offline geospatial calculations. Car rental (Hertz), hotel chains (Marriott with Bonvoy loyalty), and UK rail fill additional gaps.
+**Mapbox's official server** (351 stars, 18 tools) provides capabilities Google Maps doesn't — isochrone generation, route optimization, and offline geospatial calculations. Car rental (Hertz), hotel chains (Marriott with Bonvoy loyalty), and UK rail fill additional gaps.
 
 What prevents a 5.0 rating: cruise lines remain absent, rail coverage is minimal, most servers are search-only without end-to-end booking, and Sabre/Travelport GDS access is still missing. But the trajectory is clear — travel is becoming one of the most complete and commercially viable MCP categories.
 
-*Last updated: April 2026*
+*Last updated: April 2026. Star counts and the Visa "first payment network" claim (see correction above) were re-verified against live sources on 2026-08-17.*
 
-*This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic).*
+*This review was refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic); citations re-audited 2026-08-17.*

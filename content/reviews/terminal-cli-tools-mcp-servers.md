@@ -1,19 +1,19 @@
 ---
 title: "Terminal & CLI Tools MCP Servers — Shell Execution, tmux, SSH, and MCP Inspectors"
 date: 2026-03-16T12:00:00+09:00
-sources_audited: 2026-07-23
+sources_audited: 2026-08-17
 description: "Terminal and CLI tools MCP servers let AI agents execute shell commands, manage terminal sessions, connect to remote servers via SSH, and inspect MCP servers from the command line."
-og_description: "Terminal MCP servers: tumf/mcp-shell-server (170 stars — allowlist/blocklist), nickgnd/tmux-mcp (233 stars — tmux control), MladenSU/cli-mcp-server (170 stars — whitelisted commands), bvisible/mcp-ssh-manager (146 stars, 37 tools), wong2/mcp-cli (430 stars), modelcontextprotocol/inspector (9,500 stars). TWO GAPS FILLED: process management (systemd-mcp + supervisord-mcp) and PowerShell-native (PowerShell.MCP). 30+ servers reviewed. Rating: 4/5."
+og_description: "Terminal MCP servers: tumf/mcp-shell-server (186 stars — allowlist/blocklist), nickgnd/tmux-mcp (297 stars — tmux control), MladenSU/cli-mcp-server (177 stars — whitelisted commands), bvisible/mcp-ssh-manager (449 stars, 37 tools), wong2/mcp-cli (443 stars), modelcontextprotocol/inspector (10,700+ stars). TWO GAPS FILLED: process management (systemd-mcp + supervisord-mcp) and PowerShell-native (PowerShell.MCP). 30+ servers reviewed. Rating: 4/5."
 content_type: "Review"
-card_description: "Terminal and CLI tools MCP servers for AI-powered command execution, terminal session management, SSH remote access, and MCP protocol inspection. **Shell execution servers focus on security** — tumf/mcp-shell-server (170 stars, Python) leads with allowlists/blocklists and validated execution. MladenSU/cli-mcp-server (170 stars, Python) takes security further with per-command flag whitelisting. sonirico/mcp-shell (26 stars, Go) offers the strictest security model with injection-proof secure mode and audit trails. **tmux integration is the most active subcategory** with 8+ competing servers — nickgnd/tmux-mcp (233 stars, TypeScript) is the most popular. NEW bnomei/tmux-mcp (Rust) adds cross-client support for Claude Code, Codex CLI, OpenCode, and Amp. **SSH remote management is production-ready** — bvisible/mcp-ssh-manager (146 stars) offers 37 tools with 92% context reduction in minimal mode. **MCP CLI inspectors exploded in popularity** — wong2/mcp-cli surged to 430 stars (+274%), modelcontextprotocol/inspector reached 9,500 stars. NEW apify/mcpc adds persistent sessions, OAuth 2.1, and x402 payment protocol. **TWO MAJOR GAPS FILLED** — process management now covered by openSUSE/systemd-mcp (6 tools, polkit/dbus auth) and aether-platform/supervisord-mcp. PowerShell-native MCP now available via yotsuda/PowerShell.MCP (10,000+ modules). Windows terminal support improved with fernandomenuk/wmux (Tauri desktop app + MCP server). Only terminal emulator integration (Ghostty/WezTerm/Kitty) and a unified terminal orchestrator remain as gaps."
-last_refreshed: 2026-04-28
+card_description: "Terminal and CLI tools MCP servers for AI-powered command execution, terminal session management, SSH remote access, and MCP protocol inspection. **Shell execution servers focus on security** — tumf/mcp-shell-server (186 stars, Python) leads with allowlists/blocklists and validated execution. MladenSU/cli-mcp-server (177 stars, Python) takes security further with per-command flag whitelisting. sonirico/mcp-shell (96 stars, Go) offers the strictest security model with injection-proof secure mode and audit trails. **tmux integration is the most active subcategory** with 8+ competing servers — nickgnd/tmux-mcp (297 stars, TypeScript) is the most popular. NEW bnomei/tmux-mcp (Rust) adds cross-client support for Claude Code, Codex CLI, OpenCode, and Amp. **SSH remote management is production-ready** — bvisible/mcp-ssh-manager (449 stars) offers 37 tools with 92% context-window reduction in minimal mode. **MCP CLI inspectors exploded in popularity** — wong2/mcp-cli grew to 443 stars, modelcontextprotocol/inspector passed 10,700 stars. NEW apify/mcpc (751 stars) adds persistent sessions, OAuth 2.1, and an experimental x402 payment protocol. **TWO MAJOR GAPS FILLED** — process management now covered by openSUSE/systemd-mcp (6 tools, polkit/dbus auth) and aether-platform/supervisord-mcp. PowerShell-native MCP now available via yotsuda/PowerShell.MCP (10,000+ modules). Windows terminal support improved with fernandomenuk/wmux (Tauri desktop app + MCP server). Only terminal emulator integration (Ghostty/WezTerm/Kitty) and a unified terminal orchestrator remain as gaps."
+last_refreshed: 2026-08-17
 ---
 
 Terminal and CLI tools MCP servers let AI agents execute shell commands, manage persistent terminal sessions, connect to remote servers via SSH, and inspect MCP servers from the command line. Instead of copy-pasting commands or switching between terminal windows, AI assistants can directly operate in the shell environment.
 
 This review covers **terminal-focused MCP servers** — shell execution, tmux integration, SSH remote access, and MCP CLI inspectors. For related servers, see our [Desktop Automation review](/reviews/desktop-automation-rpa-mcp-servers/), [Configuration Management review](/reviews/configuration-management-mcp-servers/), and [Container, Docker & Kubernetes review](/reviews/container-docker-kubernetes-mcp-servers/).
 
-The headline findings: **Two major gaps filled since our initial review** — process management (systemd + supervisord) and PowerShell-native MCP servers now exist. **MCP CLI inspectors exploded** — wong2/mcp-cli surged 274% to 430 stars, the official inspector hit 9,500 stars. **Security remains the defining challenge** for shell execution, with the best servers using allowlists, flag validation, and audit trails. **tmux integration is the most active subcategory** with 8+ competing servers including a new Rust implementation. **SSH management is production-ready** with bvisible/mcp-ssh-manager at 146 stars and 37 tools.
+The headline findings: **Two major gaps filled since our initial review** — process management (systemd + supervisord) and PowerShell-native MCP servers now exist. **MCP CLI inspectors exploded** — wong2/mcp-cli grew to 443 stars, the official inspector passed 10,700 stars. **Security remains the defining challenge** for shell execution, with the best servers using allowlists, flag validation, and audit trails. **tmux integration is the most active subcategory** with 8+ competing servers including a new Rust implementation. **SSH management is production-ready** with bvisible/mcp-ssh-manager at 449 stars and 37 tools.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -23,7 +23,7 @@ The headline findings: **Two major gaps filled since our initial review** — pr
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-shell-server](https://github.com/tumf/mcp-shell-server) | 170 | Python | — | 3+ |
+| [mcp-shell-server](https://github.com/tumf/mcp-shell-server) | 186 | Python | — | 3+ |
 
 **The most-starred dedicated shell execution MCP server** — provides a practical security model for AI-controlled command execution:
 
@@ -38,7 +38,7 @@ Good default choice for teams that want controlled shell access without the comp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cli-mcp-server](https://github.com/MladenSU/cli-mcp-server) | 170 | Python | — | 2+ |
+| [cli-mcp-server](https://github.com/MladenSU/cli-mcp-server) | 177 | Python | — | 2+ |
 
 **The most granular security controls** — goes beyond command allowlists to validate individual flags:
 
@@ -54,7 +54,7 @@ Strongest choice when you need fine-grained control over exactly what an AI agen
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-shell](https://github.com/sonirico/mcp-shell) | 26 | Go | — | 2+ |
+| [mcp-shell](https://github.com/sonirico/mcp-shell) | 96 | Go | — | 2+ |
 
 **Strictest security model available** — built on the official MCP SDK for Go (mark3labs/mcp-go):
 
@@ -70,7 +70,7 @@ Best option for security-conscious environments where audit logging and injectio
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [shell-mcp-server](https://github.com/blazickjp/shell-mcp-server) | — | Python | — | 2+ |
+| [shell-mcp-server](https://github.com/blazickjp/shell-mcp-server) | 21 | Python | — | 2+ |
 
 **Cross-platform shell execution** with directory-scoped access:
 
@@ -85,7 +85,7 @@ Useful if you need to support both Unix and Windows environments from a single M
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [shell-command-mcp](https://github.com/egoist/shell-command-mcp) | — | TypeScript | — | 1+ |
+| [shell-command-mcp](https://github.com/egoist/shell-command-mcp) | 58 | TypeScript | — | 1+ |
 
 **Minimal approach** — a single tool for executing shell commands. No allowlists, no complex configuration. Useful for trusted environments where security constraints are handled at a different layer.
 
@@ -95,7 +95,7 @@ Useful if you need to support both Unix and Windows environments from a single M
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tmux-mcp](https://github.com/nickgnd/tmux-mcp) | 233 | TypeScript | — | 6+ |
+| [tmux-mcp](https://github.com/nickgnd/tmux-mcp) | 297 | TypeScript | — | 6+ |
 
 **The most-starred tmux MCP server** — provides full tmux session lifecycle management:
 
@@ -111,7 +111,7 @@ The default choice for adding persistent terminal sessions to AI assistants. Act
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tmux-mcp-server](https://github.com/lox/tmux-mcp-server) | — | Go | — | 6+ |
+| [tmux-mcp-server](https://github.com/lox/tmux-mcp-server) | 6 | Go | — | 6+ |
 
 **Lightweight Go implementation** for teams that prefer compiled binaries over Node.js:
 
@@ -126,7 +126,7 @@ Good alternative to nickgnd/tmux-mcp if you want a Go-based solution.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [persistent-shell-mcp](https://github.com/TNTisdial/persistent-shell-mcp) | — | TypeScript | — | 4+ |
+| [persistent-shell-mcp](https://github.com/TNTisdial/persistent-shell-mcp) | 1 | TypeScript | — | 4+ |
 
 **Workspace-level abstraction** on top of tmux:
 
@@ -140,7 +140,7 @@ Useful when you need to manage multiple concurrent terminal environments as name
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [terminal-control-mcp](https://github.com/wehnsdaefflae/terminal-control-mcp) | — | Python | — | 4+ |
+| [terminal-control-mcp](https://github.com/wehnsdaefflae/terminal-control-mcp) | 12 | Python | — | 4+ |
 
 **Designed for interactive commands** where timing matters:
 
@@ -155,7 +155,7 @@ Stands out for interactive use cases where the AI agent needs to watch output in
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tmux-mcp](https://github.com/bnomei/tmux-mcp) | — | Rust | — | 8+ |
+| [tmux-mcp](https://github.com/bnomei/tmux-mcp) | 48 | Rust | — | 8+ |
 
 **NEW — Rust-based tmux MCP server** with broad AI client support:
 
@@ -180,7 +180,7 @@ Strong choice if you want a compiled, low-overhead tmux server that works across
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-ssh-manager](https://github.com/bvisible/mcp-ssh-manager) | 146 | TypeScript | — | 37 |
+| [mcp-ssh-manager](https://github.com/bvisible/mcp-ssh-manager) | 449 | TypeScript | MIT | 37 |
 
 **The most comprehensive SSH MCP server** — 37 tools organized into 6 groups:
 
@@ -189,18 +189,18 @@ Strong choice if you want a compiled, low-overhead tmux server that works across
 - **Database operations** — automated backups for MySQL, PostgreSQL, MongoDB with smart scheduling and cron integration
 - **Health monitoring** — server health checks and status monitoring
 - **SSH key support** — key authentication, passphrase-protected keys, SSH agent compatibility
-- **Context optimization** — 92% context reduction in minimal mode (5 tools vs 37)
+- **Context optimization** — 92% context-window reduction in minimal mode: the [README's tool-management table](https://github.com/bvisible/mcp-ssh-manager#readme) shows minimal mode (5 tools, ~3.5k tokens) versus the full 37-tool set (~43.5k tokens)
 - **Interactive wizard** — configure which tool groups to enable for your specific workflow
 
-Available via npm (`mcp-ssh-manager`). Compatible with Claude Code and OpenAI Codex. April 2026 update fixed global installation and added CLI binary registration. Best choice for DevOps teams managing remote infrastructure.
+Available via npm (`mcp-ssh-manager`). Compatible with Claude Code and OpenAI Codex. A [v3.2.2 release (April 2026)](https://github.com/bvisible/mcp-ssh-manager/releases) fixed global installation (`.env` path resolution no longer hardcodes `__dirname`) and registered `ssh-manager` as a second CLI binary. Best choice for DevOps teams managing remote infrastructure.
 
 ### 1999AZZAR/terminal-mcp-server — Local + Remote with Session Persistence
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [terminal-mcp-server](https://github.com/1999AZZAR/terminal-mcp-server) | — | Python | — | 3+ |
+| [terminal-mcp-server](https://github.com/1999AZZAR/terminal-mcp-server) | 2 | Python | MIT | 3+ |
 
-**Unified local and remote execution** with robustness features:
+**Unified local and remote execution** with robustness features. The repository describes itself as "a maintained fork of the original project with significant robustness improvements and new features":
 
 - **Dual mode** — execute commands locally or on remote hosts via SSH
 - **Session persistence** — reuses terminal environment for a configurable duration (default 20 minutes)
@@ -208,13 +208,13 @@ Available via npm (`mcp-ssh-manager`). Compatible with Claude Code and OpenAI Co
 - **Connection pooling** — efficient management of multiple SSH connections
 - **Security features** — command validation and dangerous pattern detection
 
-Good for workflows that mix local and remote command execution in the same session.
+Good for workflows that mix local and remote command execution in the same session. Confirmed active (not archived) as of this audit, though the smallest repo by star count in this section.
 
 ### tufantunc/ssh-mcp — Basic SSH Control
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ssh-mcp](https://github.com/tufantunc/ssh-mcp) | — | TypeScript | — | 2+ |
+| [ssh-mcp](https://github.com/tufantunc/ssh-mcp) | 619 | TypeScript | — | 2+ |
 
 **Simple SSH control** for Linux and Windows servers:
 
@@ -229,7 +229,7 @@ Minimalist option when you just need basic remote command execution without the 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [terminal-mcp-server](https://github.com/weidwonder/terminal-mcp-server) | — | TypeScript | — | 3+ |
+| [terminal-mcp-server](https://github.com/weidwonder/terminal-mcp-server) | 28 | TypeScript | — | 3+ |
 
 **Remote terminal with environment management**:
 
@@ -244,7 +244,7 @@ Minimalist option when you just need basic remote command execution without the 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcptools](https://github.com/f/mcptools) | — | Go | — | CLI |
+| [mcptools](https://github.com/f/mcptools) | 1,600+ | Go | MIT | CLI |
 
 **The Swiss Army knife for MCP server development and debugging** — not an MCP server itself, but an essential CLI tool for the MCP ecosystem:
 
@@ -262,7 +262,7 @@ The most powerful CLI for working with MCP servers. The proxy mode is particular
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-cli](https://github.com/wong2/mcp-cli) | 430 | JavaScript | GPL-3.0 | CLI |
+| [mcp-cli](https://github.com/wong2/mcp-cli) | 443 | JavaScript | GPL-3.0 | CLI |
 
 **Focused MCP server inspector**:
 
@@ -270,21 +270,22 @@ The most powerful CLI for working with MCP servers. The proxy mode is particular
 - **Multi-source** — connect via NPM packages, local Node.js files, HTTP URLs, or SSE
 - **OAuth support** — authenticate with SSE and streamable HTTP servers
 - **Tool calling** — call tools with or without arguments from the command line
-- **Token efficiency** — dynamic discovery reduces token usage from ~47,000 to ~400 tokens
+
+**Correction (2026-08-17 audit):** this entry previously claimed "dynamic discovery reduces token usage from ~47,000 to ~400 tokens." That statistic does not appear in [wong2/mcp-cli's README](https://github.com/wong2/mcp-cli) — it belongs to a different, unrelated project ([philschmid's write-up on dynamic MCP tool discovery](https://www.philschmid.de/mcp-cli), "6 MCP servers, 60 tools ~ 47,000 tokens" -> "~400 tokens" after dynamic discovery). The two projects share a similar name but are not the same tool. Removed rather than re-sourced, since no equivalent published number exists for wong2/mcp-cli specifically.
 
 ### modelcontextprotocol/inspector — Official Visual Testing Tool
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [inspector](https://github.com/modelcontextprotocol/inspector) | 9,500 | TypeScript | MIT | Web UI |
+| [inspector](https://github.com/modelcontextprotocol/inspector) | 10,700+ | TypeScript | MIT | Web UI |
 
-**The official MCP debugging tool** from the protocol maintainers — now at 9,500 stars, making it by far the most popular tool in this category:
+**The official MCP debugging tool** from the protocol maintainers — now past 10,700 stars, making it by far the most popular tool in this category:
 
 - **React web UI** — interactive visual interface for testing MCP servers (MCPI client)
 - **Protocol bridge** — Node.js proxy (MCPP) connecting the web UI to servers via stdio, SSE, or streamable-http
 - **Zero install** — run directly via `npx @modelcontextprotocol/inspector`
 - **Full protocol support** — test tools, resources, prompts, and sampling
-- **v0.21.2** — latest release adds proxy fetch for auth, sanitized error responses to prevent stack trace exposure
+- **[v2.2.0](https://github.com/modelcontextprotocol/inspector/releases)** (August 2026) is the latest release — the project has moved fast, shipping multiple releases per month; check the release notes for current-version specifics rather than relying on a fixed feature list here
 
 The reference tool for MCP server development. Not a CLI per se, but the web-based counterpart to f/mcptools.
 
@@ -292,16 +293,16 @@ The reference tool for MCP server development. Not a CLI per se, but the web-bas
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcpc](https://github.com/apify/mcpc) | — | TypeScript | — | CLI |
+| [mcpc](https://github.com/apify/mcpc) | 751 | TypeScript | — | CLI |
 
 **NEW — The most feature-rich MCP CLI client**, going beyond inspection to full client functionality:
 
 - **Persistent sessions** — lightweight bridge process maintains connection and state across commands
-- **OAuth 2.1 support** — full authentication for HTTP-based MCP servers
+- **OAuth 2.1 support** — full authentication for HTTP-based MCP servers, including CIMD and DCR, with OS keychain credential storage
 - **Interactive shell** — discovery and testing of MCP servers in a persistent session
 - **JSON code mode** — structured output for programmatic use by AI coding agents
 - **Proxy mode** — works inside AI sandboxes and restricted environments
-- **x402 payment protocol** — machine-to-machine payments via USDC on Base blockchain (no API token needed)
+- **x402 payment protocol** — [experimental support](https://github.com/apify/mcpc) for agentic USDC payments on the Base blockchain (no API token needed)
 
 A significant step up from simple inspectors — mcpc is a universal MCP client designed for real workflows, not just debugging.
 
@@ -311,9 +312,9 @@ A significant step up from simple inspectors — mcpc is a universal MCP client 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [MCPShell](https://github.com/inercia/MCPShell) | 58 | Go | — | Dynamic |
+| [MCPShell](https://github.com/inercia/MCPShell) | 70 | Go | — | Dynamic |
 
-**Turns any shell script into an MCP tool** (58 stars) — a bridge between shell scripting and the MCP protocol:
+**Turns any shell script into an MCP tool** (70 stars) — a bridge between shell scripting and the MCP protocol:
 
 - **YAML-based tool definitions** — configure tools with parameters and constraints in YAML
 - **CEL expression constraints** — security through Common Expression Language validation before execution
@@ -321,13 +322,13 @@ A significant step up from simple inspectors — mcpc is a universal MCP client 
 - **Secure execution** — controlled bridge between LLMs and operating system commands
 - **Dynamic tools** — the number of tools depends on how many scripts you register
 
-Similar to f/mcptools' proxy mode, but designed as a standalone MCP server rather than a CLI tool. v0.1.4 available.
+Similar to f/mcptools' proxy mode, but designed as a standalone MCP server rather than a CLI tool. [v0.1.8](https://github.com/inercia/MCPShell) is the current version, up from v0.1.4 at last refresh.
 
 ### sammcj/mcp-devtools — Modular Developer Tools
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-devtools](https://github.com/sammcj/mcp-devtools) | — | TypeScript | — | Multiple |
+| [mcp-devtools](https://github.com/sammcj/mcp-devtools) | 157 | Go | — | Multiple |
 
 **Modular collection of developer tools** for AI coding agents — provides commonly used utilities in a single MCP server rather than requiring separate installations.
 
@@ -337,7 +338,7 @@ Similar to f/mcptools' proxy mode, but designed as a standalone MCP server rathe
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [systemd-mcp](https://github.com/openSUSE/systemd-mcp) | — | Python | — | 6 |
+| [systemd-mcp](https://github.com/openSUSE/systemd-mcp) | 10 | Python | — | 6 |
 
 **NEW — FILLS A GAP we identified in our initial review.** Official openSUSE project providing MCP access to systemd:
 
@@ -355,7 +356,7 @@ The first MCP server to wrap a major process manager. Particularly valuable for 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [supervisord-mcp](https://github.com/aether-platform/supervisord-mcp) | — | Python | — | 6+ |
+| [supervisord-mcp](https://github.com/aether-platform/supervisord-mcp) | 4 | Python | — | 6+ |
 
 **NEW — Complements systemd-mcp** for environments using Supervisord:
 
@@ -374,7 +375,7 @@ Together with systemd-mcp, this completely fills the process management gap we i
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [PowerShell.MCP](https://github.com/yotsuda/PowerShell.MCP) | — | PowerShell | — | Dynamic |
+| [PowerShell.MCP](https://github.com/yotsuda/PowerShell.MCP) | 91 | PowerShell | — | Dynamic |
 
 **NEW — FILLS A GAP we identified.** Universal MCP server giving AI access to the entire PowerShell ecosystem:
 
@@ -390,7 +391,7 @@ The PowerShell-native MCP server we said was missing. Particularly valuable for 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [wmux](https://github.com/fernandomenuk/wmux) | — | TypeScript/Rust | — | Dynamic |
+| [wmux](https://github.com/fernandomenuk/wmux) | 16 | TypeScript/Rust | — | Dynamic |
 
 **NEW — Addresses limited Windows support** by bringing tmux-like functionality to Windows natively:
 
@@ -405,7 +406,7 @@ The first serious attempt at bringing terminal multiplexing + MCP to Windows wit
 
 The terminal/CLI MCP ecosystem has closed two of its biggest gaps since March, but some remain:
 
-- **No terminal emulator integration** — no MCP server provides native integration with modern terminal emulators (Ghostty, WezTerm, Kitty, Alacritty). Despite [Ghostty reaching 58,000+ stars](https://github.com/ghostty-org/ghostty) and WezTerm offering a built-in multiplexer, you can't control or observe terminal emulator features through MCP.
+- **No terminal emulator integration** — no MCP server provides native integration with modern terminal emulators (Ghostty, WezTerm, Kitty, Alacritty). Despite [Ghostty reaching nearly 60,000 stars](https://github.com/ghostty-org/ghostty) and WezTerm offering a built-in multiplexer, you can't control or observe terminal emulator features through MCP.
 - **No unified terminal orchestrator** — no single server combines shell execution, session persistence, SSH access, and output streaming. You still need 2-3 servers for a complete terminal workflow.
 - ~~**No process management**~~ — **FILLED.** openSUSE/systemd-mcp and aether-platform/supervisord-mcp now cover the two most popular process managers.
 - ~~**No PowerShell-native MCP**~~ — **FILLED.** yotsuda/PowerShell.MCP provides access to 10,000+ PowerShell modules.
@@ -413,15 +414,15 @@ The terminal/CLI MCP ecosystem has closed two of its biggest gaps since March, b
 
 ## The Verdict
 
-**Rating: 4/5** (up from 3.5) — The terminal/CLI MCP ecosystem filled two of its biggest gaps since March — process management and PowerShell — and saw explosive growth in CLI inspectors (wong2/mcp-cli +274%, official inspector at 9,500 stars). The category is maturing from fragmented small projects into a functional ecosystem.
+**Rating: 4/5** (up from 3.5) — The terminal/CLI MCP ecosystem filled two of its biggest gaps since March — process management and PowerShell — and saw continued growth in CLI inspectors (wong2/mcp-cli up to 443 stars, official inspector past 10,700 stars). The category is maturing from fragmented small projects into a functional ecosystem.
 
-**For shell execution,** tumf/mcp-shell-server and MladenSU/cli-mcp-server are now tied at 170 stars each — pick based on whether you want simpler allowlists (tumf) or per-flag whitelisting (MladenSU).
+**For shell execution,** tumf/mcp-shell-server (186 stars) and MladenSU/cli-mcp-server (177 stars) remain close competitors — pick based on whether you want simpler allowlists (tumf) or per-flag whitelisting (MladenSU).
 
-**For persistent sessions,** nickgnd/tmux-mcp (233 stars) remains the leader. The new bnomei/tmux-mcp (Rust) is worth watching for its multi-client support across Claude Code, Codex CLI, OpenCode, and Amp.
+**For persistent sessions,** nickgnd/tmux-mcp (297 stars) remains the leader. The new bnomei/tmux-mcp (Rust) is worth watching for its multi-client support across Claude Code, Codex CLI, OpenCode, and Amp.
 
-**For SSH/remote access,** bvisible/mcp-ssh-manager (146 stars) continues to be the most complete DevOps SSH solution with 37 tools.
+**For SSH/remote access,** bvisible/mcp-ssh-manager (449 stars) continues to be the most complete DevOps SSH solution with 37 tools.
 
-**For MCP debugging,** the ecosystem has exploded — modelcontextprotocol/inspector (9,500 stars) is the visual standard, wong2/mcp-cli (430 stars) leads CLI inspection, and apify/mcpc adds persistent sessions and OAuth 2.1 for production workflows.
+**For MCP debugging,** the ecosystem has exploded — modelcontextprotocol/inspector (10,700+ stars) is the visual standard, wong2/mcp-cli (443 stars) leads CLI inspection, and apify/mcpc (751 stars) adds persistent sessions and OAuth 2.1 for production workflows.
 
 **For process management,** openSUSE/systemd-mcp and aether-platform/supervisord-mcp are new but fill a critical gap for server administration.
 
@@ -429,6 +430,6 @@ The terminal/CLI MCP ecosystem has closed two of its biggest gaps since March, b
 
 The remaining gaps — terminal emulator integration and a unified orchestrator — would take this category to 4.5 or 5, but the current ecosystem is now functional enough for most terminal workflows.
 
-*Reviewed 2026-03-16, refreshed 2026-04-28. Stars and features reflect the state at refresh time. AI-researched, not hands-on tested — [read our methodology](/about/).*
+*Reviewed 2026-03-16, refreshed 2026-04-28, citation-audited and re-refreshed 2026-08-17. Stars and features reflect the state at refresh time. AI-researched, not hands-on tested — [read our methodology](/about/).*
 
-*This review was last edited on 2026-04-28 using Claude Opus 4.6 (Anthropic).*
+*This review was last edited on 2026-08-17 using Claude Sonnet 5 (Anthropic).*

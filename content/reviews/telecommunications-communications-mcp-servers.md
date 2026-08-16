@@ -2,20 +2,20 @@
 title: "Telecommunications & Communications MCP Servers — Twilio, Telnyx, Vonage, Sinch, Plivo, Cisco Meraki, NetBox, UniFi, and More"
 date: 2026-03-15T18:00:00+09:00
 description: "Telecommunications and communications MCP servers are giving AI agents the ability to send SMS, make phone calls, manage network infrastructure, and orchestrate multi-channel messaging."
-og_description: "Telecom & communications MCP servers: UniFi Suite (274 stars, 224 tools), NetBox (158 stars, DCIM/IPAM), Twilio official (103 stars, full API), Voice Call MCP (59 stars, AI calls), Cisco Docker Suite (34 stars, 10 servers), Vonage upgraded (14 tools + docs), RingCentral alpha. Rating: 4.0/5."
+og_description: "Telecom & communications MCP servers: UniFi Suite (692 stars, 286 tools), NetBox (213 stars, DCIM/IPAM), Twilio official (109 stars, full API), Voice Call MCP (61 stars, AI calls), Cisco Docker Suite (52 stars, 10 servers), Vonage upgraded (14 tools + docs), RingCentral now GA. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Telecommunications and communications MCP servers for CPaaS platforms, network infrastructure management, SMS/voice, messaging, and video conferencing. This category stands out for strong official vendor participation — Twilio, Telnyx, Sinch, Vonage, and Plivo all have official or vendor-community MCP servers, making it one of the best-supported MCP categories by established companies. The biggest development since our initial review is the UniFi explosion — sirkirby/unifi-mcp (274 stars, 224 tools) now covers Network, Protect, and Access, making it the most popular network infrastructure MCP server by star count, surpassing even NetBox (158 stars). Vonage has upgraded from a minimal 2-tool server to a full 14-tool API binding platform plus a dedicated documentation MCP server. Voice AI is emerging as a new subcategory — popcornspace/voice-call-mcp-server (59 stars) enables real-time AI voice calls via Twilio and GPT-4o Realtime. RingCentral's App Connect MCP (alpha) partially fills the biggest UCaaS gap. Cisco's Network MCP Docker Suite (34 stars, +36%) continues growing with 10 containerized servers for unified AIOps. The CAMARA project expanded to 60 APIs including 10 stable/production-ready, though public MCP implementations remain pending. Gaps narrowing: RingCentral partially addressed, voice AI emerging, European CPaaS represented (sipgate). Still missing: Asterisk/FreeSWITCH/SIP PBX, WebRTC-native, full UCaaS platforms (8x8, Genesys), carrier network APIs. Rating holds at 4.0/5."
-last_refreshed: 2026-04-27
-sources_audited: 2026-07-23
+card_description: "Telecommunications and communications MCP servers for CPaaS platforms, network infrastructure management, SMS/voice, messaging, and video conferencing. This category stands out for strong official vendor participation — Twilio, Telnyx, Sinch, Vonage, and Plivo all have official or vendor-community MCP servers, making it one of the best-supported MCP categories by established companies. The biggest development since our initial review is the UniFi explosion — sirkirby/unifi-mcp (692 stars, 286 tools) now covers Network, Protect, and Access, making it the most popular network infrastructure MCP server by star count, surpassing even NetBox (213 stars). Vonage has upgraded from a minimal 2-tool server to a full 14-tool API binding platform plus a dedicated documentation MCP server. Voice AI is emerging as a new subcategory — popcornspace/voice-call-mcp-server (61 stars) enables real-time AI voice calls via Twilio and GPT-4o Realtime. RingCentral's App Connect MCP has moved from alpha to general availability. Cisco's Network MCP Docker Suite (52 stars) continues growing with 10 containerized servers for unified AIOps. The CAMARA project expanded to 60 APIs including 10 stable/production-ready, though public MCP implementations remain pending. Gaps narrowing: RingCentral partially addressed, voice AI emerging, European CPaaS represented (sipgate). Still missing: Asterisk/FreeSWITCH/SIP PBX, WebRTC-native, full UCaaS platforms (8x8, Genesys), carrier network APIs. Rating holds at 4.0/5."
+last_refreshed: 2026-08-17
+sources_audited: 2026-08-17
 ---
 
 Telecommunications and communications MCP servers are giving AI agents the power to send messages, make phone calls, manage network infrastructure, and orchestrate multi-channel communications — all through natural language. Instead of writing custom integrations for each provider, an AI agent can discover and use Twilio's SMS API, check Cisco Meraki network health, or send a WhatsApp message through a standardized MCP interface.
 
 The landscape spans seven areas: **CPaaS platforms** (Twilio, Telnyx, Sinch, Vonage, Plivo — official vendor servers), **network infrastructure** (UniFi, NetBox, Cisco Meraki, Catalyst Center), **voice AI** (real-time AI-powered calling), **community SMS/voice** (focused Twilio wrappers for messaging and payments), **messaging platforms** (WhatsApp, Telegram), **network scanning and security** (Nmap, vulnerability scanning), and **video conferencing** (Zoom, tl;dv meeting intelligence).
 
-**What's changed since our March 2026 review:** The biggest story is the **UniFi explosion** — sirkirby/unifi-mcp (274 stars, 224 tools) now covers Network, Protect, and Access, becoming the most popular network infrastructure MCP server by star count, surpassing NetBox. **Vonage upgraded massively** from 2 tools to a full 14-tool API binding platform plus a dedicated documentation server. **Voice AI emerged as a new subcategory** — popcornspace/voice-call-mcp-server (59 stars) enables real-time AI voice calling via Twilio + GPT-4o Realtime. **RingCentral partially filled its gap** with App Connect MCP in alpha. **sipgate adds European CPaaS representation**. WhatsApp MCP exploded from 394 to 5,600 stars.
+**What's changed since our March 2026 review:** The biggest story is the **UniFi explosion** — sirkirby/unifi-mcp ([692 stars](https://github.com/sirkirby/unifi-mcp), 286 tools) now covers Network, Protect, and Access, becoming the most popular network infrastructure MCP server by star count, surpassing NetBox. **Vonage upgraded massively** from 2 tools to a full 14-tool API binding platform plus a dedicated documentation server, and is [now listed on Postman](https://developer.vonage.com/en/blog/the-vonage-server-and-tooling-mcp-servers-are-live-on-postman). **Voice AI emerged as a new subcategory** — popcornspace/voice-call-mcp-server ([61 stars](https://github.com/popcornspace/voice-call-mcp-server)) enables real-time AI voice calling via Twilio + GPT-4o Realtime. **RingCentral's App Connect MCP has moved from alpha to [general availability](https://mcp.labs.ringcentral.com/docs/servers/app-connect/)**. **sipgate adds European CPaaS representation**. WhatsApp MCP grew from 394 to [6,157 stars](https://github.com/lharries/whatsapp-mcp).
 
-The headline findings: **Official vendor participation remains exceptional** — Twilio, Telnyx, Sinch, Vonage, and Plivo all have official MCP servers, with Vonage now providing three separate servers. **UniFi leads network infrastructure** at 274 stars with 224 tools across Network, Protect, and Access. **NetBox hit v1.1.0** at 158 stars (+24%) with improved field filtering. **Cisco's Docker Suite grew to 34 stars** (+36%) for unified AIOps. **CAMARA expanded to 60 APIs** including 10 stable/production-ready, though public MCP implementations remain pending. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+The headline findings: **Official vendor participation remains exceptional** — Twilio, Telnyx, Sinch, Vonage, and Plivo all have official MCP servers, with Vonage now providing three separate servers. **UniFi leads network infrastructure** at 692 stars with 286 tools across Network, Protect, and Access. **NetBox reached [v1.2.1](https://github.com/netboxlabs/netbox-mcp-server/blob/main/CHANGELOG.md)** at 213 stars with improved field filtering and optional bearer-token auth. **Cisco's Docker Suite grew to 52 stars** for unified AIOps. **CAMARA expanded to 60 APIs** including 10 stable/production-ready, though public MCP implementations remain pending. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## CPaaS Platforms (Official Vendor Servers)
 
@@ -23,7 +23,7 @@ The headline findings: **Official vendor participation remains exceptional** —
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [twilio-labs/mcp](https://github.com/twilio-labs/mcp) | 103 | TypeScript | MIT | Dynamic (full API) |
+| [twilio-labs/mcp](https://github.com/twilio-labs/mcp) | 109 | TypeScript | MIT | Dynamic (full API) |
 
 The **most comprehensive communications MCP server**. This official monorepo takes a unique approach: instead of hand-coding individual tools, it includes an OpenAPI-to-MCP generator that dynamically converts Twilio's entire public API catalog into MCP-compatible tools.
 
@@ -34,13 +34,13 @@ Key capabilities:
 
 This is the right architecture for a company with hundreds of API endpoints. Rather than maintaining a static list of MCP tools, the server auto-generates tools from the same OpenAPI specs that power Twilio's SDKs. The trade-off is that dynamically generated tools may have less polished descriptions than hand-crafted ones.
 
-Deploy via `npx` with your Twilio account SID and auth token. Twilio's blog warns against using community MCP servers alongside the official one due to potential credential conflicts.
+Deploy via `npx` with your Twilio account SID and auth token. [Twilio's ETI team recommends against running community MCP servers alongside the official one](https://www.twilio.com/en-us/blog/introducing-twilio-alpha-mcp-server), specifically to guard against injection attacks that could give an untrusted server access to tools that touch your Twilio account.
 
 ### Telnyx MCP (Official, Archived)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [team-telnyx/telnyx-mcp-server](https://github.com/team-telnyx/telnyx-mcp-server) | 24 | Python | — | 8 categories |
+| [team-telnyx/telnyx-mcp-server](https://github.com/team-telnyx/telnyx-mcp-server) | 25 | Python | — | 8 categories |
 
 An official Telnyx implementation covering **telephony, messaging, AI assistants, cloud storage, and credential management** — the broadest feature set of any telecom MCP server:
 
@@ -53,23 +53,26 @@ An official Telnyx implementation covering **telephony, messaging, AI assistants
 - **Connections** — manage voice connections
 - **Secrets Manager** — manage integration credentials securely
 
-Supports tool filtering via environment variables and includes a webhook receiver with ngrok tunnel for real-time event handling. **Note:** This Python version was archived September 2025. Telnyx has released a new TypeScript MCP server at `@telnyx/mcp-server` (available via npx) that takes a different approach — a "Code Mode" where agents write TypeScript code against the Telnyx SDK, which is then executed in an isolated sandbox. This gives agents access to the full Telnyx API surface without pre-defining individual tools.
+Supports tool filtering via environment variables and includes a webhook receiver with ngrok tunnel for real-time event handling. **Note:** This Python version [was archived by Telnyx on September 29, 2025](https://github.com/team-telnyx/telnyx-mcp-server), with the README pointing users to migrate to the [TypeScript successor in team-telnyx/telnyx-node](https://github.com/team-telnyx/telnyx-node/tree/master/packages/mcp-server), published to npm as [`telnyx-mcp`](https://www.npmjs.com/package/telnyx-mcp) (not `@telnyx/mcp-server` as an earlier version of this review stated). It takes a different approach — a "Code Mode" where agents write TypeScript code against the Telnyx SDK, which is then executed in an isolated sandbox. This gives agents access to the full Telnyx API surface without pre-defining individual tools.
 
 ### Sinch MCP (Official)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sinch/sinch-mcp-server](https://github.com/sinch/sinch-mcp-server) | 0 | TypeScript | — | 23 |
+| [sinch/sinch-mcp-server](https://github.com/sinch/sinch-mcp-server) | 1 | TypeScript | — | 49 |
 
-The **most feature-complete multi-channel communications MCP** with 23 tools across five categories:
+The **most feature-complete multi-channel communications MCP**. The server has grown substantially since our last check — [the current README](https://github.com/sinch/sinch-mcp-server) lists 49 tools across eight categories:
 
-- **Conversation (8 tools)** — text/media/template/interactive/location/choice messages, app and template management
-- **Email (5 tools)** — SendGrid-style message sending, template management, delivery status, event tracking, analytics
+- **Conversation (17 tools)** — text/media/template/interactive/location/choice messages, app and template management
+- **Email / Mailgun (5 tools)** — Mailgun-branded message sending, template management, delivery status, event tracking, analytics
 - **Verification (3 tools)** — phone number lookup, SMS verification, OTP submission
-- **Voice (4 tools)** — text-to-speech callouts, conference calling, participant management, conference termination
+- **Voice (5 tools)** — text-to-speech callouts, conference calling, participant management, conference termination
+- **RCS Sender (10 tools)** — RCS-specific messaging and sender management
+- **WhatsApp Template (3 tools)** — WhatsApp template management
+- **Numbers (5 tools)** — phone number search and management
 - **Configuration (1 tool)** — tool availability and status listing
 
-Supports tool filtering by tags and remote deployment via Server-Sent Events (SSE). Despite zero GitHub stars, this is a well-structured official server that covers more communication channels than any single competitor. The conversation tools support WhatsApp, SMS, RCS, and other channels through Sinch's unified API.
+Supports tool filtering by tags (`conversation`, `rcs`, `whatsapp`, `email`, `verification`, `voice`, `numbers`, `notification`, `configuration`, `all`) and remote deployment via Server-Sent Events (SSE) using the `supergateway` library. Despite modest GitHub stars, this is a well-structured official server that covers more communication channels than any single competitor. The conversation tools support WhatsApp, SMS, RCS, and other channels through Sinch's unified API.
 
 ### Vonage MCP Platform (Official — Now 3 Servers)
 
@@ -81,7 +84,7 @@ Vonage has significantly expanded its MCP presence since our initial review, goi
 | [Vonage/vonage-mcp-server-documentation](https://github.com/Vonage/vonage-mcp-server-documentation) | 0 | — | Apache-2.0 | 7 |
 | [Vonage-Community/telephony-mcp-server](https://github.com/Vonage-Community/telephony-mcp-server) | 1 | Python | MIT | 2 |
 
-**Vonage MCP Tooling Server** (NEW) — The headline upgrade. 14 tools across 4 categories: account management (balance, applications, API keys, secrets), number management (search, link), reporting (activity records), and messaging/communication (SMS, WhatsApp, RCS with failover, voice messages). Available via npm as `@vonage/vonage-mcp-server-api-bindings` (v1.3.0). Now available on Postman. Open-source and accepting contributions.
+**Vonage MCP Tooling Server** (NEW) — The headline upgrade. [14 tools across 5 categories](https://github.com/Vonage-Community/vonage-mcp-server-api-bindings): account management (balance, list/create applications, list purchased numbers), number management (search, link to application), reporting (activity records), messaging/communication (SMS, WhatsApp with SMS failover, RCS with SMS failover, outbound voice messages), and a data-visualization tool (chart generation from retrieved data). Available via npm as [`@vonage/vonage-mcp-server-api-bindings`](https://www.npmjs.com/package/@vonage/vonage-mcp-server-api-bindings) (v1.5.1). [Now available on Postman](https://developer.vonage.com/en/blog/the-vonage-server-and-tooling-mcp-servers-are-live-on-postman) alongside the Documentation server. Open-source and accepting contributions.
 
 **Vonage Documentation MCP Server** (NEW) — 7 tools for AI-assisted development: `vonage_docs_search`, `vonage_code_generator`, `vonage_api_reference`, `vonage_sdk_info`, `vonage_troubleshooter`, `vonage_tutorial_finder`, `vonage_use_case_examples`. Hosted at `documentation-mcp.vonage.dev/mcp`.
 
@@ -112,13 +115,13 @@ The CDR/MDR retrieval tools are notable — most telecom MCP servers focus on se
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sirkirby/unifi-mcp](https://github.com/sirkirby/unifi-mcp) | 274 | Python | MIT | 224 |
+| [sirkirby/unifi-mcp](https://github.com/sirkirby/unifi-mcp) | 692 | Python | MIT | 286 |
 
 The **most popular network infrastructure MCP server by star count**, surpassing even NetBox. This monorepo provides MCP servers for three UniFi applications:
 
-- **Network (161 tools)** — network diagnostics, firewall policy management with audit scoring, WiFi configuration, VLAN management, client monitoring, DPI analysis, VPN, and full device lifecycle management
-- **Protect (34 tools)** — camera event detection, recording access, cross-product timeline correlation with Network events
-- **Access (29 tools)** — door management, visitor credentials, access control policies
+- **Network (189 tools)** — network diagnostics, firewall policy management with audit scoring, WiFi configuration, VLAN management, client monitoring, DPI analysis, VPN, and full device lifecycle management
+- **Protect (61 tools)** — camera event detection, recording access, cross-product timeline correlation with Network events
+- **Access (36 tools)** — door management, visitor credentials, access control policies
 
 Key architectural features:
 - **Preview-then-confirm workflow** for all configuration changes — the AI agent shows proposed changes before applying them
@@ -126,7 +129,7 @@ Key architectural features:
 - **Multi-location capability** with annotation-based tool fan-out
 - **Shared permission model** ensuring consistent security across all three servers
 
-The rapid growth from zero to 274 stars reflects strong demand from the homelab and small-business networking community. Where NetBox serves enterprise DCIM/IPAM, this serves the hands-on network operator who wants AI-assisted management of their entire UniFi deployment.
+The rapid growth from zero to nearly 700 stars reflects strong demand from the homelab and small-business networking community. Where NetBox serves enterprise DCIM/IPAM, this serves the hands-on network operator who wants AI-assisted management of their entire UniFi deployment.
 
 **UniFi ecosystem expanded to 6+ implementations** — other notable entries include [DataKnifeAI/unifi-network-mcp](https://github.com/DataKnifeAI/unifi-network-mcp) (27 tools, Go), [enuno/unifi-mcp-server](https://github.com/enuno/unifi-mcp-server), [ry-ops/unifi-mcp-server](https://github.com/ry-ops/unifi-mcp-server) (with A2A support), and [jmagar/unifi-mcp](https://github.com/jmagar/unifi-mcp).
 
@@ -134,7 +137,7 @@ The rapid growth from zero to 274 stars reflects strong demand from the homelab 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pamosima/network-mcp-docker-suite](https://github.com/pamosima/network-mcp-docker-suite) | 34 | Python | — | 10 servers |
+| [pamosima/network-mcp-docker-suite](https://github.com/pamosima/network-mcp-docker-suite) | 52 | Python | — | 10 servers |
 
 The **most architecturally ambitious networking MCP project** — a Docker Compose suite bundling 10 specialized MCP servers for unified AI-driven network operations:
 
@@ -159,7 +162,7 @@ The cross-platform correlation is where this shines: an AI agent can investigate
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [netboxlabs/netbox-mcp-server](https://github.com/netboxlabs/netbox-mcp-server) | 158 | Python | Apache-2.0 | 3 |
+| [netboxlabs/netbox-mcp-server](https://github.com/netboxlabs/netbox-mcp-server) | 213 | Python | Apache-2.0 | 3 |
 
 The **most popular enterprise DCIM/IPAM MCP server** (surpassed in total stars by UniFi Suite, but serving a different audience). Provides read-only access to NetBox — the leading open-source DCIM/IPAM platform — through 3 focused tools:
 
@@ -169,13 +172,13 @@ The **most popular enterprise DCIM/IPAM MCP server** (surpassed in total stars b
 
 The standout feature is **token optimization**: field filtering reduces API response size by up to 90%, with pre-defined "common field patterns" for devices, IPs, interfaces, and sites. This matters because LLM context windows are expensive, and network infrastructure queries can return massive payloads.
 
-Supports stdio and HTTP transports, Docker deployment, and flexible configuration via environment variables, `.env` files, and CLI arguments. Now at v1.1.0 (April 2026) with improved project structure — command changed from `uv run server.py` to `uv run netbox-mcp-server`.
+Supports stdio and HTTP transports, Docker deployment, and flexible configuration via environment variables, `.env` files, and CLI arguments. Now at [v1.2.1 (June 2026)](https://github.com/netboxlabs/netbox-mcp-server/blob/main/CHANGELOG.md), which added optional bearer-token authentication for HTTP transport and dependency security fixes; the command changed from `uv run server.py` to `uv run netbox-mcp-server` back in v1.0.0.
 
 ### Meraki Magic MCP (Cisco DevNet)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [CiscoDevNet/meraki-magic-mcp-community](https://github.com/CiscoDevNet/meraki-magic-mcp-community) | 25 | Python | — | 12-804 |
+| [CiscoDevNet/meraki-magic-mcp-community](https://github.com/CiscoDevNet/meraki-magic-mcp-community) | 41 | Python | — | 12-804 |
 
 Two implementation approaches in one repository:
 
@@ -211,7 +214,7 @@ Written in Go with dual transport support (stdio and HTTP). Covers the full life
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [YiyangLi/sms-mcp-server](https://github.com/YiyangLi/sms-mcp-server) | 12 | JavaScript | MIT | 1 |
+| [YiyangLi/sms-mcp-server](https://github.com/YiyangLi/sms-mcp-server) | 15 | JavaScript | MIT | 1 |
 | [deshartman/twilio-messaging-mcp-server](https://github.com/deshartman/twilio-messaging-mcp-server) | 5 | — | — | — |
 | [griffinwork40/twilio-mcp](https://github.com/griffinwork40/twilio-mcp) | — | — | — | — |
 | [mustafa-boorenie/twilio_sms_mcp](https://github.com/mustafa-boorenie/twilio_sms_mcp) | — | — | — | — |
@@ -219,7 +222,7 @@ Written in Go with dual transport support (stdio and HTTP). Covers the full life
 
 Five community Twilio SMS servers with different approaches:
 
-**YiyangLi/sms-mcp-server** (12 stars) — the most popular community option. Simple SMS/MMS sending with pre-built prompts for common scenarios.
+**YiyangLi/sms-mcp-server** (15 stars) — the most popular community option. Simple SMS/MMS sending with pre-built prompts for common scenarios.
 
 **deshartman/twilio-messaging-mcp-server** (5 stars) — provides tools, resources, and prompts for Twilio Messaging API interaction. Goes beyond simple sending to include message management.
 
@@ -261,7 +264,7 @@ The first **European CPaaS MCP server** — an unofficial integration for sipgat
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [popcornspace/voice-call-mcp-server](https://github.com/popcornspace/voice-call-mcp-server) | 59 | TypeScript | MIT | — |
+| [popcornspace/voice-call-mcp-server](https://github.com/popcornspace/voice-call-mcp-server) | 61 | TypeScript | MIT | — |
 
 The **first significant AI-powered voice calling MCP server** — enables Claude and other AI assistants to initiate and manage phone calls through Twilio with real-time audio processing via OpenAI's GPT-4o Realtime model.
 
@@ -272,17 +275,18 @@ Key capabilities:
 - **Pre-built conversation templates** for common scenarios (appointments, surveys, support)
 - **Optional call recording** for compliance and review
 
-This represents an emerging pattern: MCP servers that combine telephony infrastructure (Twilio) with real-time AI models (GPT-4o) to create autonomous voice agents. Requires Node.js 22+, Twilio credentials, OpenAI API key, and ngrok auth token.
+This represents an emerging pattern: MCP servers that combine telephony infrastructure (Twilio) with real-time AI models (GPT-4o) to create autonomous voice agents. Requires Node.js 22+, Twilio credentials, OpenAI API key, and ngrok auth token. **Note:** the repository has [had no commits since April 2025](https://github.com/popcornspace/voice-call-mcp-server) — star growth has continued but active development appears to have stalled.
 
-## RingCentral App Connect MCP (NEW — Alpha)
+## RingCentral App Connect MCP (NEW — Now GA)
 
-RingCentral has partially filled its gap with an **App Connect MCP Server** currently in alpha at `appconnect.labs.ringcentral.com/mcp`. This hosted MCP server provides 8 tools focused on CRM integration:
+RingCentral has partially filled its gap with an **App Connect MCP Server**, [now listed as generally available](https://mcp.labs.ringcentral.com/docs/servers/app-connect/) (this review previously described it as alpha; RingCentral has since shipped it). This hosted MCP server provides 9 tools focused on CRM integration:
 
 - **findContactByPhone** / **findContactByName** — CRM contact lookup
 - **createContact** — create CRM records
 - **createCallLog** — log call activities in CRM
 - **rcGetCallLogs** — retrieve RingCentral call history
 - **getPublicConnectors** — catalog of supported CRMs
+- **getSessionInfo** — session/authentication status
 - **getHelp** / **logout** — utility tools
 
 This is CRM-focused rather than full telephony — you can look up contacts and log calls, but not yet send SMS or initiate calls through MCP. Still, it signals RingCentral's entry into the MCP ecosystem and could expand to cover their full UCaaS platform.
@@ -291,11 +295,11 @@ This is CRM-focused rather than full telephony — you can look up contacts and 
 
 The consumer messaging MCP space overlaps with our [Communication MCP Servers](/guides/best-communication-mcp-servers/) comparison. Key telecom-relevant entries:
 
-**WhatsApp** — [lharries/whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) (5,600 stars, up from 394 — a **14x increase**) and [FelixIsaac/whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended) (41 tools including reactions, polls, group management, newsletters). A maintained fork at [verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp) provides continued development. These use Baileys/unofficial WhatsApp Web bridges — not the official WhatsApp Business API.
+**WhatsApp** — [lharries/whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) (6,157 stars, up from 394 — roughly a **15.6x increase**; the original repo hasn't been updated since April 2025) and [FelixIsaac/whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended) (26 tools by default, 15 in "lean" mode, including reactions, message editing, polls, group management, presence, and newsletters — a correction from an earlier version of this review, which stated 41 tools). A maintained fork at [verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp) provides continued development, including call capture and full-history sync. These use Baileys/unofficial WhatsApp Web bridges — not the official WhatsApp Business API.
 
 **Telegram** — Multiple implementations including [sparfenyuk/mcp-telegram](https://github.com/sparfenyuk/mcp-telegram) (MTProto), [chigwell/telegram-mcp](https://github.com/chigwell/telegram-mcp) (Telethon), and several Bot API servers. The MTProto implementations provide full client access (read chats, manage groups, send/modify messages, media, contacts).
 
-**Email/Transactional** — [mailgun/mailgun-mcp-server](https://github.com/mailgun/mailgun-mcp-server) (official, messaging/domains/webhooks/routes/mailing lists/templates/analytics), [Garoth/sendgrid-mcp](https://github.com/Garoth/sendgrid-mcp) (SendGrid marketing API), [deyikong/sendgrid-mcp](https://github.com/deyikong/sendgrid-mcp) (59 tools covering all SendGrid v3 functionality).
+**Email/Transactional** — [mailgun/mailgun-mcp-server](https://github.com/mailgun/mailgun-mcp-server) (official, messaging/domains/webhooks/routes/mailing lists/templates/analytics), [Garoth/sendgrid-mcp](https://github.com/Garoth/sendgrid-mcp) (SendGrid marketing API), [deyikong/sendgrid-mcp](https://github.com/deyikong/sendgrid-mcp) (58 tools covering email management and performance analysis).
 
 ## Network Scanning & Security
 
@@ -316,12 +320,12 @@ Four competing Nmap MCP servers that expose network scanning through AI agents �
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) | 26 | Python | MIT | — |
-| [tldv-public/tldv-mcp-server](https://github.com/tldv-public/tldv-mcp-server) | — | — | — | 4 |
+| [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) | 28 | Python | MIT | — |
+| [tldv-public/tldv-mcp-server](https://github.com/tldv-public/tldv-mcp-server) | 13 | — | — | 4 |
 
-**Zoom MCP** (26 stars) — connects Claude to Zoom for meeting management, user data, and recording access via Server-to-Server OAuth 2.0.
+**Zoom MCP** (28 stars) — connects Claude to Zoom for meeting management, user data, and recording access via Server-to-Server OAuth 2.0.
 
-**tl;dv MCP** — meeting intelligence across **Google Meet, Zoom, and Microsoft Teams** with 4 tools: `list_meetings` (filtered by date/query/platform), `get_meeting_metadata`, `get_transcript`, and `get_highlights` (AI-generated). Requires Business or Enterprise tl;dv account. Positions itself as "the first and only MCP solution for video conferencing platforms."
+**tl;dv MCP** (13 stars) — meeting intelligence across **Google Meet, Zoom, and Microsoft Teams** with 4 tools: `list_meetings` (filtered by date/query/platform), `get_meeting_metadata`, `get_transcript`, and `get_highlights` (AI-generated); an `import_meeting` tool is listed as "coming soon." Requires Business or Enterprise tl;dv account. The [repo's own README](https://github.com/tldv-public/tldv-mcp-server) brands it "The First and Only MCP Server for Google Meet, Zoom, and Microsoft Teams Integration."
 
 ## The CAMARA Initiative
 
@@ -341,7 +345,7 @@ The [January 2026 white paper from the Linux Foundation](https://www.linuxfounda
 
 Some gaps from our initial review have narrowed, but several remain:
 
-- **~~No official RingCentral MCP server~~** — PARTIALLY FILLED. App Connect MCP is in alpha with 8 CRM-focused tools, but full telephony (SMS, voice) not yet exposed via MCP
+- **~~No official RingCentral MCP server~~** — PARTIALLY FILLED. App Connect MCP is [generally available](https://mcp.labs.ringcentral.com/docs/servers/app-connect/) with 9 CRM-focused tools, but full telephony (SMS, voice) not yet exposed via MCP
 - **No Bandwidth MCP server** — despite owning carrier infrastructure, no official MCP integration
 - **No MessageBird/Bird MCP server** — major CPaaS player with no MCP implementation
 - **No Asterisk/FreeSWITCH/SIP PBX integration** — open-source PBX systems still have no MCP servers for configuration or management
@@ -349,12 +353,12 @@ Some gaps from our initial review have narrowed, but several remain:
 - **No WebRTC-native MCP** — despite WebRTC being the foundation of modern real-time communications (voice-call-mcp-server uses WebRTC indirectly through Twilio, but no standalone WebRTC MCP)
 - **No carrier network APIs** — CAMARA's MCP bridge is still conceptual despite 60 APIs and 10 stable (the API platform is ahead of MCP integration)
 - **No emergency services/E911** — regulatory complexity likely blocks this
-- **No IETF standards integration** — despite an [IETF draft for MCP network management extensions](https://www.ietf.org/archive/id/draft-zw-opsawg-mcp-network-mgmt-00.html), adoption is early
+- **No IETF standards integration** — an [IETF Internet-Draft for MCP network management extensions](https://datatracker.ietf.org/doc/draft-zw-opsawg-mcp-network-mgmt/) (authored by Huawei researchers) was published in November 2025 proposing capability tokens and tools for routers/switches to act as MCP servers, but it [expired in May 2026 with no follow-up revision or working-group adoption](https://datatracker.ietf.org/doc/draft-zw-opsawg-mcp-network-mgmt/) — standards-track progress has stalled, not just been "early"
 
 ## The bottom line
 
-**Rating: 4.0/5** — Telecommunications remains one of the strongest MCP categories for official vendor support, and the April 2026 refresh shows meaningful growth across all subcategories. The UniFi explosion (sirkirby/unifi-mcp at 274 stars, 224 tools covering Network/Protect/Access) makes network infrastructure MCP tooling deeper than ever. Vonage's upgrade from 2 to 14+ tools plus a documentation server demonstrates how CPaaS vendors are taking MCP seriously beyond initial proof-of-concepts. Voice AI is emerging as a genuine subcategory — popcornspace's 59-star voice call server combining Twilio with GPT-4o Realtime points to a future where AI agents conduct phone conversations autonomously. RingCentral's alpha MCP entry partially fills the biggest UCaaS gap. WhatsApp MCP's 14x growth (394→5,600 stars) shows consumer messaging MCP demand is massive. CAMARA's expansion to 60 APIs (10 stable) means the underlying telco API platform is maturing faster than MCP adoption. The category holds at 4.0/5 rather than upgrading because core gaps persist: no Asterisk/FreeSWITCH PBX integration, no WebRTC-native MCP, no full UCaaS coverage, and CAMARA's MCP bridge remains conceptual despite strong API-side progress.
+**Rating: 4.0/5** — Telecommunications remains one of the strongest MCP categories for official vendor support, and this refresh shows meaningful growth across all subcategories. The UniFi explosion (sirkirby/unifi-mcp now at 692 stars, 286 tools covering Network/Protect/Access) makes network infrastructure MCP tooling deeper than ever. Vonage's upgrade from 2 to 14+ tools plus a documentation server, now cross-listed on Postman, demonstrates how CPaaS vendors are taking MCP seriously beyond initial proof-of-concepts. Voice AI is emerging as a genuine subcategory — popcornspace's voice call server (61 stars, though undeveloped since April 2025) combining Twilio with GPT-4o Realtime points to a future where AI agents conduct phone conversations autonomously. RingCentral's App Connect MCP has now shipped as generally available, partially filling the biggest UCaaS gap. WhatsApp MCP's growth (394→6,157 stars, roughly 15.6x) shows consumer messaging MCP demand is massive. CAMARA's expansion to 60 APIs (10 stable) means the underlying telco API platform is maturing faster than MCP adoption. The category holds at 4.0/5 rather than upgrading because core gaps persist: no Asterisk/FreeSWITCH PBX integration, no WebRTC-native MCP, no full UCaaS coverage, and CAMARA's MCP bridge remains conceptual despite strong API-side progress.
 
 *Reviewed by ChatForest. We research MCP servers by analyzing GitHub repositories, documentation, community discussions, and published benchmarks. We do not claim to have installed or hands-on tested every server listed. See our [methodology](/about/) for details.*
 
-*This review was last refreshed on 2026-04-27 using Claude Opus 4.6 (Anthropic).*
+*This review was last refreshed on 2026-08-17 using Claude Sonnet 5 (Anthropic).*
