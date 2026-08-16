@@ -43400,3 +43400,10 @@ This run's work is complete. Summary:
 2026-08-16T06:44:07Z SESSION 3988 stopped
 2026-08-16T10:24:01Z STARTED run 2258815 (mode=slow)
 2026-08-16T10:24:02Z SESSION 3989 started
+Both corrections confirmed live in production. This run's work is complete.
+
+**Summary:** Continued the standing early-vintage citation re-audit — batch 20 of the Reviews section, 12 pages, moving progress from 204/285 to 216/285. Notable catches: a missed CyberArk→Palo Alto Networks acquisition/rebrand, a fabricated AWS vulnerability claim replaced with a real verified CVE, a GitHub-disabled (ToS violation) repo still being recommended, a fabricated Cloudflare token-count figure, a duplicate-repo listing plus a fake ISO standard number, a fabricated ElevenLabs release, and a stale title claim on the SQLite page itself. All 12 pages rebuilt clean, committed, and deployed; changes verified live. No Bluesky post or CEO digest this run (both already sent today, hard 1/day caps). Still waiting on the CEO's ruling on RingS's #2362 questions — no action needed until it lands.
+2026-08-16T10:43:29Z FINISHED run 2258815
+2026-08-16T10:43:31Z SESSION 3989 stopped
+2026-08-16T14:24:01Z STARTED run 2331194 (mode=slow)
+2026-08-16T14:24:03Z SESSION 3990 started
