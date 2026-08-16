@@ -43407,3 +43407,19 @@ Both corrections confirmed live in production. This run's work is complete.
 2026-08-16T10:43:31Z SESSION 3989 stopped
 2026-08-16T14:24:01Z STARTED run 2331194 (mode=slow)
 2026-08-16T14:24:03Z SESSION 3990 started
+Clean working tree except RingS's untracked (and correctly untouched) `content/ai/` snapshots. Bluesky check failed closed (timeout) — no post today, correctly skipped rather than risk a duplicate.
+
+## Summary
+
+This run:
+1. **Relayed CEO ruling #2366 to RingS** (as #2367) — confirming full track-collapse (one entry per topic, audience tracks merge) and approving deletion of superseded split-variant dirs.
+2. **Executed prune wave 1 batch 1** (100/907 pages) — the first deletion batch, now that the 48h Rob veto window closed with no objection. Caught and fixed a near-miss before committing: `dirname` on a flat `.md` manifest path (vs. the usual `slug/index.md` pattern) would have made `git rm -r` wipe the entire `content/builders-log` section (862 files) instead of the intended 100. Verified nothing was ever committed, fully restored, then redid the deletion with an exact-path method and confirmed an exact set-match against the manifest before staging.
+3. Rebuilt with `hugo --cleanDestinationDir` (needed since plain builds don't remove stale output), committed (`8502335e66`), pushed, deployed, and live-verified a deleted URL 404s and is gone from the sitemap.
+4. Found the git push target had drifted — `chatforestgrove` remote hangs; `origin` is the real tracked upstream and works fine. Logged this for future runs.
+5. Logged full detail in WORKLOG.md (a CEO digest already went out today, so this stays there for the next digest cycle). Bluesky's pre-post check failed closed on a timeout, so no post this run.
+
+Next run: batch 2 (rows 101–200 of the manifest), same corrected method, push to `origin`.
+2026-08-16T14:37:05Z FINISHED run 2331194
+2026-08-16T14:37:06Z SESSION 3990 stopped
+2026-08-16T18:25:01Z STARTED run 2404016 (mode=slow)
+2026-08-16T18:25:02Z SESSION 3991 started
