@@ -1,13 +1,13 @@
-# Zapier MCP Server — 9,000+ Apps and 40,000+ Actions for AI Agents
+# Zapier MCP Server — 9,000+ Apps and 30,000+ Actions for AI Agents
 
-> Zapier's official MCP server connects AI agents to 9,000+ apps and 40,000+ actions — Gmail, Slack, Salesforce, HubSpot, Google Sheets, and thousands more — through a hosted remote endpoint.
+> Zapier's official MCP server connects AI agents to 9,000+ apps and 30,000+ actions — Gmail, Slack, Salesforce, HubSpot, Google Sheets, and thousands more — through a hosted remote endpoint.
 
 
-**At a glance:** ~45 GitHub stars, 19 forks, remote-only (hosted), Streamable HTTP + SSE transport, 9,000+ apps, 40,000+ actions, $5B valuation, ~$300M+ revenue (2026 projected).
+**At a glance:** 380+ GitHub stars, 55+ forks, remote-only (hosted), Streamable HTTP + SSE transport, 9,000+ apps, 30,000+ actions, ~$5B valuation.
 
-Zapier MCP is the **official MCP server from the world's largest automation platform**. It connects AI agents like Claude, ChatGPT, and Cursor to 9,000+ apps and 40,000+ actions through Zapier's hosted infrastructure — no self-hosting, no local setup, no OAuth plumbing. Two configuration modes are available: **Classic** (manually select actions via web dashboard) and **Agentic** (Beta — 14 built-in meta-tools for in-chat action discovery and execution).
+Zapier MCP is the **official MCP server from Zapier**, a workflow automation platform [Zapier says is trusted by 3 million+ businesses](https://zapier.com/). It connects AI agents like Claude, ChatGPT, and Cursor to [9,000+ apps and 30,000+ actions](https://zapier.com/mcp) through Zapier's hosted infrastructure — no self-hosting, no local setup, no OAuth plumbing. Two configuration modes are available: **Classic** (manually select actions via web dashboard) and **Agentic** (Beta — 14 built-in meta-tools for in-chat action discovery and execution).
 
-The [zapier/zapier-mcp repository](https://github.com/zapier/zapier-mcp) has 30 GitHub stars and 14 forks — modest numbers because the actual server runs on Zapier's infrastructure. The repo contains plugins, skills, and configuration guides rather than server source code. [Zapier](https://zapier.com/) was [founded in 2011](https://www.ycombinator.com/companies/zapier), is valued at [~$5B](https://www.forbes.com/sites/alexkonrad/2021/03/08/zapier-bootstraps-to-5-billion-valuation/), operates fully remote across 40 countries with 10 million monthly active users across 750,000+ organizations, and projects annual revenue exceeding $300M in 2026.
+The [zapier/zapier-mcp repository](https://github.com/zapier/zapier-mcp) has 380+ GitHub stars and 55+ forks (as of August 2026) — modest numbers because the actual server runs on Zapier's infrastructure. The repo contains plugins, skills, and configuration guides rather than server source code. [Zapier](https://zapier.com/) was [founded in 2011](https://www.ycombinator.com/companies/zapier), was valued at [~$5B](https://www.forbes.com/sites/alexkonrad/2021/03/08/zapier-bootstraps-to-5-billion-valuation/) in a 2021 secondary share sale, and operates as a fully remote company. Zapier is privately held and does not publish official revenue or user-count figures; third-party estimates of its revenue vary widely (from roughly $310M to $420M+ ARR depending on source and date) and are not reliable enough to cite as fact here.
 
 ## How It Works
 
@@ -105,15 +105,13 @@ Zapier also offers a distinct [Agents MCP Server](https://zapier.com/mcp/agents)
 
 ## Recent Updates (May 2026)
 
-**Tool Bundle Sharing (Open Beta)** — You can now export your MCP server's tool configuration as a shareable link. Teammates click the link, see your tool list, and import the bundle to their own MCP server in one step. Credentials and connected accounts are never shared — only the tool configuration. Useful for onboarding teams to a standard Zapier MCP setup without everyone manually recreating the same action list.
+**[Tool Bundle Sharing (Open Beta)](https://help.zapier.com/hc/en-us/articles/40499984299277-Share-an-MCP-tool-bundle)** — You can now export your MCP server's tool configuration as a shareable link. Teammates click the link, see your tool list, and import the bundle to their own MCP server in one step. Credentials and connected accounts are never shared — only the tool configuration. Useful for onboarding teams to a standard Zapier MCP setup without everyone manually recreating the same action list.
 
-**Action Naming** — Actions can now be assigned custom display names, making it easier to call them by a meaningful label within your AI tool rather than relying on Zapier's default action naming.
-
-**AI Field Suggestions** — When configuring actions, Zapier can now suggest field values automatically, reducing the manual effort required to set up complex actions in the web dashboard.
+**[Action Naming and AI Field Suggestions](https://help.zapier.com/hc/en-us/articles/36265551472781-Manage-tools-for-your-Zapier-MCP-server)** — Actions can now be assigned custom display names, making it easier to call them by a meaningful label within your AI tool rather than relying on Zapier's default action naming. When configuring actions, Zapier can also suggest or constrain field values automatically, reducing the manual effort required to set up complex actions in the web dashboard.
 
 ## App Coverage
 
-With 9,000+ apps and 40,000+ actions, Zapier has the largest integration library of any MCP server:
+With [9,000+ apps and 30,000+ actions](https://zapier.com/mcp), Zapier has the largest integration library of any MCP server we've reviewed:
 
 | Category | Example Apps |
 |----------|-------------|
@@ -132,18 +130,20 @@ In **Classic mode**, you manually select which actions to expose through the web
 
 ## Pricing
 
-Zapier MCP is available on all plans — bundled with Zaps, Tables, and Forms at no additional cost. Each MCP tool call costs **2 Zapier tasks**. Tool discovery, authentication setup, action history viewing, and failed calls (auth errors, missing fields) are free.
+Zapier MCP is available on all plans — bundled with Zaps, Tables, and Forms at no additional cost. [Each MCP tool call costs **2 Zapier tasks**](https://help.zapier.com/hc/en-us/articles/45645738385805-How-Zapier-MCP-usage-works). Tool discovery, authentication setup, action history viewing, and failed calls (auth errors, missing fields) are free.
 
-| Plan | Price | Tasks/Month | MCP Calls Equivalent | Features |
+| Plan | Price (annual billing) | Tasks/Month | MCP Calls Equivalent | Features |
 |------|-------|-------------|---------------------|----------|
 | **Free** | $0 | 100 | ~50 MCP calls | 2-step Zaps only |
-| **Professional** | $19.99/mo | 750 | ~375 MCP calls | Multi-step Zaps |
-| **Team** | $69/mo | 2,000 | ~1,000 MCP calls | 25 seats, SAML SSO, shared folders |
+| **Professional** | $19.99/mo ($29.99/mo billed monthly) | 750 | ~375 MCP calls | Multi-step Zaps |
+| **Team** | $69/mo ($103.50/mo billed monthly) | 2,000 | ~1,000 MCP calls | 25 seats, SAML SSO, shared folders |
 | **Enterprise** | Custom | Custom | Custom | Dedicated support, governance tools |
 
-**The pricing shift matters.** Before September 2025, Zapier MCP had a separate monthly limit of 300 tool calls. Now every call counts against your Zapier task quota at a 2:1 ratio. Batch operations multiply usage — 5 rows created = 5 tool calls = 10 tasks. For AI agents that make many small calls — checking data, searching records, sending messages — this can burn through tasks quickly. An agent making 20 tool calls in a conversation uses 40 tasks, which is 40% of the free tier's monthly allowance.
+[Current pricing verified at zapier.com/pricing, August 2026.](https://zapier.com/pricing)
 
-Annual billing offers a 33% discount over monthly billing across all paid plans.
+**Every MCP call counts against your Zapier task quota at a 2:1 ratio.** Batch operations multiply usage — 5 rows created = 5 tool calls = 10 tasks. For AI agents that make many small calls — checking data, searching records, sending messages — this can burn through tasks quickly. An agent making 20 tool calls in a conversation uses 40 tasks, which is 40% of the free tier's monthly allowance.
+
+Annual billing offers a roughly 33% discount over monthly billing on paid plans (e.g. Professional: $19.99/mo annual vs. $29.99/mo monthly).
 
 ## Security
 
@@ -151,30 +151,32 @@ Annual billing offers a 33% discount over monthly billing across all paid plans.
 - **Endpoint encryption** — all traffic over HTTPS
 - **Rate limiting** — prevents abuse and runaway agents
 - **Activity audit logs** — centralized log for admins to see all server and tool changes for compliance and troubleshooting
-- **[SOC 2 Type II compliance](https://trust.zapier.com/)** — Zapier's platform-level security certification
+- **[SOC 2 Type II compliance](https://zapier.com/blog/zapier-completes-soc-2-compliance-audit/)** — Zapier's platform-level security certification; details available via the [Zapier Trust Center](https://trust.zapier.com/)
 - **Credential isolation** — app credentials stored on Zapier's side, never exposed to the AI model
 - **URL rotation** — regenerate your MCP server URL if compromised
 - **Granular action control** — on/off toggles for individual actions without deletion
-- **[AI Guardrails](https://help.zapier.com/hc/en-us/articles/43960366238221-How-to-get-started-with-AI-Guardrails-by-Zapier)** (launched March 30, 2026) — inline safety checks that detect PII (30+ types), prompt injection attempts, toxic language, and negative sentiment before AI outputs reach downstream systems. Powered by AWS Comprehend (ML actions with confidence scores) and Amazon Bedrock (LLM actions). Available on all plans and callable as MCP tools directly from AI clients
+- **[AI Guardrails](https://help.zapier.com/hc/en-us/articles/43960366238221-How-to-get-started-with-AI-Guardrails-by-Zapier)** ([launched March 30, 2026](https://www.financialcontent.com/article/bizwire-2026-3-30-ai-guardrails-by-zapier-gives-teams-inline-safety-checks-for-every-ai-powered-workflow)) — inline safety checks that detect PII (30+ types), prompt injection attempts, toxic language, and negative sentiment before AI outputs reach downstream systems. Powered by AWS Comprehend (ML actions with confidence scores) and Amazon Bedrock (LLM actions). Available on all plans and callable as MCP tools directly from AI clients
 
 ## Comparison With Alternatives
 
 | Feature | **Zapier** | **Composio** | **Pipedream** | **n8n** |
 |---------|-----------|-------------|--------------|---------|
-| **Apps** | 9,000+ | 850+ | 2,800+ | 400+ |
-| **Actions/Tools** | 40,000+ | 1,000+ toolkits | 10,000+ | Varies |
+| **Apps** | 9,000+ | 1,000+ | 3,000+ | 400+ |
+| **Actions/Tools** | 30,000+ | 20,000+ | 10,000+ | Varies |
 | **Architecture** | Remote only | SDK + hosted | Remote + npm | Self-hosted + MCP both sides |
 | **Action selection** | Manual (Classic) or dynamic (Agentic Beta) | Per-toolkit or dynamic (Rube) | Per-app endpoints | Node-based |
 | **Self-hosted** | No | Yes (SDK) | npx (stale) | Yes |
 | **Transport** | HTTP/SSE | stdio + HTTPS | HTTP/SSE/stdio | stdio |
-| **Free tier** | 100 tasks (~50 calls) | 20K calls/mo | 100 credits | Unlimited (self-hosted) |
+| **Free tier** | 100 tasks (~50 calls) | 100K tool calls/mo | 100 credits | Unlimited (self-hosted) |
 | **Pricing model** | Task-based (2 tasks/call) | Call-based | Credit-based (1 credit = 30s) | Execution-based |
 | **AI safety** | AI Guardrails (PII, injection, toxicity) | SOC2, RBAC, sandboxed | — | — |
 | **License** | Proprietary | MIT | Proprietary | Fair-code (Sustainable Use) |
 
-**vs. Composio:** Composio has fewer apps (850+ vs. 9,000+) but offers self-hosting, MIT-licensed code, and a dramatically more generous free tier (20K calls/month vs. ~50 MCP calls). Composio now enforces MCP API key authentication by default (since March 2026) with SOC2/ISO certification. For agent-heavy workloads, Composio's pricing is significantly cheaper.
+*Figures verified against each vendor's own site, August 2026: [Zapier](https://zapier.com/mcp) ([pricing](https://zapier.com/pricing)), [Composio toolkits](https://composio.dev/toolkits) ([pricing](https://composio.dev/pricing)), [Pipedream](https://pipedream.com), [n8n integrations](https://n8n.io/integrations/).*
 
-**vs. Pipedream:** Pipedream sits between them — 2,800+ apps, per-app MCP endpoints that auto-generate tools, and a credit-based pricing model. Pipedream offers more developer control (three tool modes, self-hosted option) but was [acquired by Workday (November 2025)](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream), introducing platform uncertainty.
+**vs. Composio:** Composio has fewer apps ([1,000+ vs. 9,000+](https://composio.dev/toolkits)) but offers self-hosting, MIT-licensed code, and a dramatically more generous free tier ([100K tool calls/month](https://composio.dev/pricing) vs. ~50 MCP calls). Composio [enforces MCP API key authentication by default for new organizations since March 5, 2026](https://docs.composio.dev/reference/changelog#2026-04-22) and holds [SOC 2 and ISO 27001 certification](https://composio.dev/enterprise). For agent-heavy workloads, Composio's pricing is significantly cheaper.
+
+**vs. Pipedream:** Pipedream sits between them — [3,000+ apps](https://pipedream.com), per-app MCP endpoints that auto-generate tools, and a credit-based pricing model. Pipedream offers more developer control (three tool modes, self-hosted option) but was [acquired by Workday (November 2025)](https://newsroom.workday.com/2025-11-19-Workday-Signs-Definitive-Agreement-to-Acquire-Pipedream), introducing platform uncertainty.
 
 **vs. n8n:** n8n is the developer-first choice — self-hosted, fair-code licensed, unlimited executions on self-hosted instances. Far fewer integrations (400+) but n8n now supports MCP on both sides: it can consume MCP servers as tools for its AI agents *and* expose its own workflows as MCP servers for external agents. Best for teams that want full control and don't mind managing infrastructure.
 
@@ -182,25 +184,24 @@ Annual billing offers a 33% discount over monthly billing across all paid plans.
 
 ## Known Issues
 
-- **Reliability concerns** — Independent reviewers describe the MCP implementation as "not ready for production" and "feels more like an alpha: unstable, poorly documented, and inconsistent in execution." Identical prompts can produce different results across runs.
-- **OAuth failures** — Users report OAuth login failures, redirect URI mismatches with Claude Desktop (`invalid_request: Mismatching redirect URI`), and HTTP 500 errors during token exchange with Claude Code.
-- **ChatGPT limitations** — MCP tools in ChatGPT only work in Developer Mode and don't automatically refresh available tools.
-- **Inconsistent action execution** — Actions that work once may fail on retry, with unclear root causes related to latency, caching, or backend issues.
+- **Reliability concerns (early, dated report)** — One independent developer who tested the server wrote in a [April 2025 review](https://dev.to/therealmrmumba/i-tested-zapier-mcp-server-and-here-are-my-thoughts-2dk2) that it was "not ready for production" and "feels more like an alpha: unstable, poorly documented, and inconsistent in execution." This is a single source from over a year before this audit, and Zapier MCP has since moved out of an earlier beta and added the Agentic mode described above — treat it as a historical data point, not a claim about current reliability.
+- **OAuth failures** — Users on [Zapier's own community forum](https://community.zapier.com/ai-actions-zapier-mcp-126/zapier-mcp-connection-to-claude-49147) report OAuth login/redirect-URI mismatches connecting to Claude Desktop, and a separate thread documents [HTTP 500 errors during OAuth token exchange](https://community.zapier.com/ai-actions-zapier-mcp-126/mcp-oauth-token-exchange-returning-http-500-error-52483).
+- **ChatGPT limitations** — Per [Zapier's own documentation](https://help.zapier.com/hc/en-us/articles/36265392843917-Use-Zapier-MCP-with-your-client), MCP tools in ChatGPT only work in Developer Mode, and the tool list doesn't automatically refresh when you add, edit, or remove tools — you have to manually refresh the connector.
 - **No self-hosted option** — Unlike Composio and n8n, there's no way to run Zapier MCP on your own infrastructure. You're fully dependent on Zapier's hosted service.
 - **Manual action curation (Classic mode)** — In Classic mode, you must individually select and configure each action through the web UI. The new Agentic mode (Beta) addresses this with dynamic in-chat discovery, but it's still rolling out and not yet stable for all users.
 - **Task cost escalation** — At 2 tasks per call, AI agent workloads can consume task quotas quickly. Batch operations multiply costs (5 rows = 10 tasks). A moderately active agent could exhaust the free tier in a single conversation.
-- **Multi-account gaps** — Some integrations (e.g., Google Ads) automatically link to the primary account with no way to select or switch between accounts.
+- **Multi-account gaps** — [Zapier's own community forum confirms](https://community.zapier.com/ai-actions-zapier-mcp-126/limitations-of-google-ads-mcp-integration-with-claude-for-account-management-51979) that the Google Ads integration automatically links to the primary account with no way to select or switch between accounts.
 - **Agentic mode maturity** — The 14-tool Agentic configuration is in beta and still rolling out. Early adopters should expect rough edges in action discovery and skill management.
 
 ## What We Think
 
 **Rating: 3 out of 5**
 
-Zapier MCP has the widest app coverage of any MCP server — 9,000+ apps and 40,000+ actions is unmatched. The setup experience is genuinely easy for non-technical users: visit a web page, pick your actions, paste a URL. No Docker, no npm, no OAuth configuration. Zapier handles all of that.
+Zapier MCP has the widest app coverage of any MCP server — 9,000+ apps and 30,000+ actions is unmatched. The setup experience is genuinely easy for non-technical users: visit a web page, pick your actions, paste a URL. No Docker, no npm, no OAuth configuration. Zapier handles all of that.
 
-**The Agentic mode is a meaningful step forward.** The 14 built-in meta-tools let AI agents discover and enable actions on the fly — no more manual pre-configuration for every workflow. Skills let you save and reuse multi-step sequences. Combined with AI Guardrails for PII detection and prompt injection prevention, Zapier is building toward a safer, more autonomous agent experience. But Agentic is still in beta, and the reliability concerns from Classic mode haven't been fully resolved.
+**The Agentic mode is a meaningful step forward.** The 14 built-in meta-tools let AI agents discover and enable actions on the fly — no more manual pre-configuration for every workflow. Skills let you save and reuse multi-step sequences. Combined with AI Guardrails for PII detection and prompt injection prevention, Zapier is building toward a safer, more autonomous agent experience. But Agentic is still in beta, and the OAuth and account-management issues documented above (per Zapier's own community forum) haven't been fully resolved.
 
-**The pricing model remains the bigger concern.** At 2 tasks per MCP call, AI agents burn through quotas fast. The free tier gives you ~50 MCP calls per month — enough to try it, not enough to build on. A Professional plan ($19.99/mo) gets you ~375 calls, which a busy agent could exhaust in a day. Compare this to Composio's 20,000 free calls/month or n8n's unlimited self-hosted executions.
+**The pricing model remains the bigger concern.** At 2 tasks per MCP call, AI agents burn through quotas fast. The free tier gives you ~50 MCP calls per month — enough to try it, not enough to build on. A Professional plan ($19.99/mo, annual billing) gets you ~375 calls, which a busy agent could exhaust in a day. Compare this to [Composio's 100,000 free calls/month](https://composio.dev/pricing) or n8n's unlimited self-hosted executions.
 
 **Where Zapier wins:** Non-technical users already paying for a Zapier plan with unused task capacity. The breadth of integrations is unmatched, and the web-based action configuration is the simplest in the market. The new Agentic mode adds dynamic discovery, and AI Guardrails add a safety layer no competitor currently matches. If you need to connect an AI agent to 10+ apps quickly and you don't care about self-hosting, Zapier is the fastest path.
 

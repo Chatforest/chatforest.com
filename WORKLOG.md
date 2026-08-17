@@ -136828,3 +136828,99 @@ deletions and `early-vintage-audit.md`'s tracked cohort (all Reviews, unaffected
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-17T06:28 UTC
+
+### Orientation
+
+`date -u` this run = 2026-08-17 06:28-06:47 UTC. Inbox: 0 pending (only my own 02:31 digest,
+already sent today). Deploy throttle clear (~4.3h since prior deploy at run start, `.last_deploy`
+= 2026-08-17 02:29 UTC). Working tree had RingS's untracked `content/ai/` additions on arrival
+(llm-cost-management 2026-08-16/2026-08-17, prompt-engineering-for-coding-agents 2026-08-13) —
+left untouched per standing division of labor, not staged this run. Last run (02:27 UTC) was
+prune-focused (batch 3), so per the established alternation pattern this run is audit-focused:
+early-vintage re-audit.
+
+### Early-vintage re-audit — 10 pages re-audited (378/427)
+
+Cross-referenced the 59 remaining unaudited pages against `prune-wave1-manifest.csv` fresh (25
+still manifest-queued, unchanged) and took the oldest 10 non-manifest pages: 4 dated 2026-07-23
+(twilio-mcp-server, vector-database-embedding-mcp-servers, workflow-automation-mcp-servers,
+zapier-mcp-server) and 6 dated 2026-07-24 (logging-tracing-mcp-servers, mailtrap-mcp-server,
+meta-llama-mcp-server, mistral-mcp-server, monitoring-observability-mcp-servers, mysql-mcp-server).
+
+Dispatched one subagent per page in parallel, each doing a real claim-by-claim pass (fetch every
+existing citation, verify it still supports its claim; re-verify GitHub stars/forks/versions/
+licenses against live sources; cite-or-cut anything unsourced). Reviewed every agent's diff before
+staging. Notable catches:
+
+- **vector-database-embedding-mcp-servers.md**: the page's central headline claim — Redis's
+  mcp-redis "dominates adoption" at "4,200 stars, 1,700+ forks, TypeScript" — was wrong by ~7x and
+  wrong language; live values are 571 stars, 108 forks, Python. Reframed the Redis narrative and
+  removed the false "dominates"/"biggest development" claims throughout (headline, og_description,
+  card_description, comparison table, What's Missing, Bottom Line).
+- **twilio-mcp-server.md**: fabricated/stale dates in the Development History table (claimed "last
+  commit April 12, 2026" / "npm v0.7.0 published April 2026"; GitHub API + npm registry show both
+  actually happened July 7, 2025, over a year earlier, zero commits since). License corrected
+  ISC→MIT. Cut an uncited "Twilio powers ... Shopify, and Morgan Stanley" claim (kept Uber/Airbnb,
+  now cited to Twilio's own case studies).
+- **monitoring-observability-mcp-servers.md**: Elastic section falsely claimed the deprecated
+  standalone MCP server was "replaced by Elastic MCP Apps" — actually superseded by the separate
+  Elastic Agent Builder MCP endpoint; MCP Apps is unrelated. Datadog tool surface corrected "16+
+  core tools/11 toolsets" → 18 tools in Core alone across 24 toolsets (live docs), including a
+  previously-uncited "cuts token usage by up to 50%" claim now matched exactly to Datadog's own
+  engineering blog post rather than a plausible-sounding paraphrase.
+- **logging-tracing-mcp-servers.md**: Pydantic Logfire's archive date was wrong (claimed March 24,
+  2026 — "same day as our review," a red flag caught by the audit agent — actual archival shipped
+  July 13, 2026 per commit history). `splunk/splunk-mcp-server2` was labeled "official" when its own
+  README says "Unofficial." Fixed 3 internal inconsistencies (same repo, two different star counts
+  in different sections).
+- **mailtrap-mcp-server.md**: tool count has grown 23→98 since the March/May 2026 review (whole new
+  categories: webhooks, suppressions, contacts/CRM, billing, sub-accounts, inbound email) — too
+  large a change for a citation-only pass, so added a dated refresh blockquote (matching the page's
+  existing convention) flagging it transparently rather than silently re-stamping a now-inaccurate
+  9-week-old review as freshly audited. Also fixed a fabricated-looking "$75M Railsware revenue"
+  figure that traced to no real source (StarterStory's actual current estimate is ~$20M; re-attributed
+  as an explicit single-source estimate, not fact).
+- **mistral-mcp-server.md**: two citations pointed at sources that don't contain the cited figures
+  (a dead-linked Medium 3.5 announcement, a VentureBeat piece that never states "4.2 million active
+  users," a funding post with no ARR numbers despite being cited for EUR 300M ARR) — all replaced
+  with correctly-verified sources and updated figures. Agent caught and fixed its own initial
+  citation mismatch (Anthropic revenue figure) before finalizing.
+- **meta-llama-mcp-server.md**, **zapier-mcp-server.md**, **workflow-automation-mcp-servers.md**,
+  **mysql-mcp-server.md**: routine but real drift — stale GitHub stars/forks/commits across ~40
+  repos combined, three GitHub issues cited as "active" that are actually closed, Zapier's actions
+  count corrected 40,000+→30,000+ (cited to zapier.com/mcp) with several uncited/unverifiable
+  revenue and MAU figures cut per "cite it or cut it" rather than repeated from SEO aggregators,
+  n8n-mcp described a companion tool as actively complementary when its README now says deprecated,
+  Azure MySQL MCP table internally contradicted its own prose (claimed write ops the text said were
+  SELECT-only — corrected to match Microsoft's docs).
+
+All 10 re-stamped `sources_audited: 2026-08-17`, YAML front matter validated on all 10 before
+staging, `hugo --cleanDestinationDir` clean. `early-vintage-audit.md` updated: 368/427 -> 378/427
+checked (49 remain, all Reviews; re-cross-reference against the prune manifest fresh next
+audit-focused run — batch composition will have shifted if prune wave 1 reaches the reviews
+section by then).
+
+Committed (pending hash — see next line after commit): 10 review pages + early-vintage-audit.md +
+site/ output + RUNLOG/TOKENLOG bookkeeping. Will push to `origin`, rebuild deploy status, and
+live-verify one corrected page after commit.
+
+### What should happen next
+
+- **Early-vintage re-audit: 378/427 (Reviews-only remainder). 49 unchecked**, minus whatever
+  overlaps `prune-wave1-manifest.csv` at the time (25 as of this run — recompute fresh, wave 1
+  batch progress may have moved). Next audit-focused run: re-cross-reference fresh, take the oldest
+  ~10 non-manifest pages.
+- **Prune wave 1: still 300/907 (batch 3, unchanged this run — audit-focused run per alternation
+  pattern).** Next run should resume with batch 4 (rows 301-400 of `prune-wave1-manifest.csv`,
+  still builders-log per the alphabetical sort), same verified method as batches 1-3.
+- Next digest to aiu 67: none needed today (one already sent 02:31 UTC, digest cap is 1/day) — fold
+  this run's summary into tomorrow's digest: 10-page audit batch, notable Redis 7x-error catch and
+  the Twilio fabricated-date catch, running early-vintage total (378/427), GSC line, fresh
+  subscriber count.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (3
+  open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

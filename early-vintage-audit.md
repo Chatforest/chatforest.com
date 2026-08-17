@@ -470,15 +470,15 @@ sweeps. Headline catches:
 - [ ] 2026-07-23 — [Translation & Localization MCP Servers — DeepL, Crowdin, Phrase, Lokalise, Smartling, and More](content/reviews/translation-localization-mcp-servers.md)
 - [x] 2026-07-23 — [Transportation & Mobility MCP Servers — Public Transit, Flight Tracking, Ride-Hailing, Aviation Data, and Smart City Transport](content/reviews/transportation-mobility-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Travel & Tourism MCP Servers — Fli (2.1K Stars), Skiplagged Official, Airbnb, Amadeus GDS, Mapbox, Expedia, and More](content/reviews/travel-tourism-mcp-servers.md) — re-audited 2026-08-17
-- [ ] 2026-07-23 — [Twilio MCP Server — All 2,000 Twilio APIs Available to Your AI Agent](content/reviews/twilio-mcp-server.md)
-- [ ] 2026-07-23 — [Vector Database & Embedding MCP Servers — Qdrant, Chroma, Milvus, Pinecone, Weaviate, Redis, LanceDB, pgvector, and More](content/reviews/vector-database-embedding-mcp-servers.md)
+- [x] 2026-07-23 — [Twilio MCP Server — All 2,000 Twilio APIs Available to Your AI Agent](content/reviews/twilio-mcp-server.md) — re-audited 2026-08-17
+- [x] 2026-07-23 — [Vector Database & Embedding MCP Servers — Qdrant, Chroma, Milvus, Pinecone, Weaviate, Redis, LanceDB, pgvector, and More](content/reviews/vector-database-embedding-mcp-servers.md) — re-audited 2026-08-17
 - [ ] 2026-07-23 — [Veterinary & Pet Care MCP Servers — Animal Health, Livestock Genetics, Pet Management, and More](content/reviews/veterinary-pet-care-mcp-servers.md)
 - [ ] 2026-07-23 — [Video Conferencing & Meeting Intelligence MCP Servers — Zoom Official, Joinly, Vexa, Otter.ai, Fireflies, tl;dv, and More](content/reviews/video-conferencing-mcp-servers.md)
 - [ ] 2026-07-23 — [Video Production & Streaming MCP Servers — OBS, YouTube, HeyGen, Runway, Twitch, Mux, Remotion, Short-Video-Maker, and More](content/reviews/video-production-streaming-mcp-servers.md)
 - [ ] 2026-07-23 — [Weather & Climate MCP Servers — Open-Meteo, OpenWeatherMap, NOAA/NWS, AccuWeather, Aviation METAR/TAF, Climatiq, Stormglass, and More](content/reviews/weather-climate-mcp-servers.md)
 - [ ] 2026-07-23 — [Web Scraping & Crawling MCP Servers — Firecrawl, Crawl4AI, Bright Data, Apify, Jina Reader, and More](content/reviews/web-scraping-crawling-mcp-servers.md)
-- [ ] 2026-07-23 — [Workflow Automation MCP Servers — n8n, Zapier, Make & More](content/reviews/workflow-automation-mcp-servers.md)
-- [ ] 2026-07-23 — [Zapier MCP Server — 9,000+ Apps and 40,000+ Actions for AI Agents](content/reviews/zapier-mcp-server.md)
+- [x] 2026-07-23 — [Workflow Automation MCP Servers — n8n, Zapier, Make & More](content/reviews/workflow-automation-mcp-servers.md) — re-audited 2026-08-17
+- [x] 2026-07-23 — [Zapier MCP Server — 9,000+ Apps and 40,000+ Actions for AI Agents](content/reviews/zapier-mcp-server.md) — re-audited 2026-08-17
 - [x] 2026-07-24 — [API Development MCP Servers — OpenAPI Converters, GraphQL, gRPC, and the Rise of Spec-to-Server Generation](content/reviews/api-development-mcp-servers.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [AWS Bedrock MCP Servers — The Cloud Giant's MCP Arsenal (Refreshed June 2026)](content/reviews/aws-bedrock-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-24 — [Airtable MCP Server — Full Database CRUD for Your AI Agent](content/reviews/airtable-mcp-server.md) — re-audited 2026-08-15
@@ -503,13 +503,13 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [IDE & Code Editor MCP Servers — Your Editor as an AI-Accessible Tool](content/reviews/ide-code-editor-mcp-servers.md)
 - [x] 2026-07-24 — [Infrastructure as Code MCP Servers — Terraform, Pulumi, and the IaC Vendors Building AI-Native Infrastructure Workflows](content/reviews/infrastructure-as-code-mcp-servers.md)
 - [x] 2026-07-24 — [Kubernetes MCP Servers — Cluster Management Gets an AI Interface](content/reviews/kubernetes-mcp-servers.md)
-- [ ] 2026-07-24 — [Logging & Tracing MCP Servers — Splunk v1.1.1 Doubles Adoption, SigNoz Surges, Logfire Archived](content/reviews/logging-tracing-mcp-servers.md)
-- [ ] 2026-07-24 — [Mailtrap MCP Server — Send Transactional Emails From Your AI Agent](content/reviews/mailtrap-mcp-server.md)
-- [ ] 2026-07-24 — [Meta Llama MCP Servers — AI Agents for Llama 4, Ollama, and the Open-Weight LLM Ecosystem](content/reviews/meta-llama-mcp-server.md)
+- [x] 2026-07-24 — [Logging & Tracing MCP Servers — Splunk v1.1.1 Doubles Adoption, SigNoz Surges, Logfire Archived](content/reviews/logging-tracing-mcp-servers.md) — re-audited 2026-08-17
+- [x] 2026-07-24 — [Mailtrap MCP Server — Send Transactional Emails From Your AI Agent](content/reviews/mailtrap-mcp-server.md) — re-audited 2026-08-17
+- [x] 2026-07-24 — [Meta Llama MCP Servers — AI Agents for Llama 4, Ollama, and the Open-Weight LLM Ecosystem](content/reviews/meta-llama-mcp-server.md) — re-audited 2026-08-17
 - [ ] 2026-07-24 — [MindsDB MCP Server — Federated Queries Across 200+ Data Sources From a Single Interface](content/reviews/mindsdb-mcp-server.md)
-- [ ] 2026-07-24 — [Mistral AI MCP Server — Europe's Open-Weight Champion Embraces the Model Context Protocol](content/reviews/mistral-mcp-server.md)
-- [ ] 2026-07-24 — [Monitoring & Observability MCP Servers — From Grafana to Datadog, Vendor-Led Observability Meets MCP](content/reviews/monitoring-observability-mcp-servers.md)
-- [ ] 2026-07-24 — [MySQL MCP Servers — The World's Most Popular Database Meets AI](content/reviews/mysql-mcp-server.md)
+- [x] 2026-07-24 — [Mistral AI MCP Server — Europe's Open-Weight Champion Embraces the Model Context Protocol](content/reviews/mistral-mcp-server.md) — re-audited 2026-08-17
+- [x] 2026-07-24 — [Monitoring & Observability MCP Servers — From Grafana to Datadog, Vendor-Led Observability Meets MCP](content/reviews/monitoring-observability-mcp-servers.md) — re-audited 2026-08-17
+- [x] 2026-07-24 — [MySQL MCP Servers — The World's Most Popular Database Meets AI](content/reviews/mysql-mcp-server.md) — re-audited 2026-08-17
 - [ ] 2026-07-24 — [New Relic MCP Server — AI-Powered Observability with NRQL Queries, Alerts, Entity Discovery, and Log Analysis](content/reviews/new-relic-mcp-server.md)
 - [ ] 2026-07-24 — [Nimble MCP Server — Enterprise Web Intelligence With the Best Google Maps Tools](content/reviews/nimble-mcp-server.md)
 - [ ] 2026-07-24 — [OneDrive MCP Servers — AI Agents That Manage Your Microsoft 365 Files, Email, Calendar, and Teams](content/reviews/onedrive-mcp-server.md)
