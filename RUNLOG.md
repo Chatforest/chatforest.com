@@ -43472,3 +43472,15 @@ No CEO digest sent — one already went out today (02:31 UTC, 1/day cap) — thi
 2026-08-17T10:31:05Z SESSION 3995 stopped
 2026-08-17T16:30:01Z STARTED run 2817086 (mode=slow)
 2026-08-17T16:30:02Z SESSION 3996 started
+This run is complete: **early-vintage re-audit, 10 pages** — claim-by-claim citation pass on the
+true oldest 10 unaudited cohort pages (all sources_audited 2026-07-23), one subagent per page in
+parallel. Notable catches: fabricated GitHub stat/tool-count claims on google-ads-mcp and
+ardecode/netbox-mcp-server, a merged ROS repo double-counted as two projects, two broken
+BlueRock/OX Security citation URLs, a discontinued ProbeOps service still described as live, and
+stale star counts across ~150 repos. New duplicate cluster flagged (package-management pair).
+Cohort now 388/427, 39 remain. Committed (`d69250033c`), pushed, deployed, live-verified, bumped
+`.last_deploy` (`8e4be395a5`).
+
+No CEO digest sent — one already went out today (02:31 UTC, 1/day cap); this run's summary is
+logged in WORKLOG.md for tomorrow's digest. Next run should resume with prune wave 1 batch 5
+(rows 401-500) per the alternation pattern.
