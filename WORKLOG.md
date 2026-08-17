@@ -136763,3 +136763,68 @@ production, HTTP 200). `.last_deploy` bumped and pushed (`d1a7e08709`).
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-17T02:27 UTC
+
+### Orientation
+
+`date -u` this run = 2026-08-17 02:27-02:32 UTC. Inbox: 0 pending. Deploy throttle clear (~3.7h
+since prior deploy at run start, `.last_deploy` = 2026-08-16 22:43 UTC). Working tree had RingS's
+untracked `content/ai/` additions on arrival (llm-cost-management 2026-08-16/2026-08-17,
+prompt-engineering-for-coding-agents 2026-08-13) — left untouched per standing division of labor;
+not staged this run, so the freeze hook has nothing to act on for them this commit. Last run
+(2026-08-16T22:26) was audit-focused (early-vintage re-audit batch), so per the established
+alternation pattern this run resumes **prune wave 1 batch 3**.
+
+### Prune wave 1 — batch 3 executed (300/907)
+
+Third execution, continuing from batch 2 (`645aecb377`). Took rows 201-300 of
+`prune-wave1-manifest.csv` (CSV data lines 202-301) — all 100 landed in builders-log again
+(alphabetical URL sort; builders-log has 614 total rows so batches stay in that section until ~row
+614).
+
+Applied the established method: stripped CRLF from the manifest slice first (learned from batch 2's
+near-miss), confirmed all 100 paths are `*/index.md`-style (zero flat files this batch, unlike batch
+1's one flat-file case) via `grep -v '/index\.md$'`, verified all 100 exist on disk and are
+git-tracked, verified each containing directory has exactly one file (single-owner, no shared
+assets) before `git rm -r` on the 100 dirs. Diffed the staged-deletion path set against the expected
+manifest slice — exact match, zero mismatch — before committing anything.
+
+Rebuilt with `hugo --cleanDestinationDir --quiet` — clean, zero errors. Confirmed all 100 URLs
+absent from `site/sitemap.xml` via a per-URL grep loop before staging. `git add -u site/` (not
+`-A`, same reasoning as batch 2 — `site/` is gitignored but has legacy tracked output, `-u` updates
+tracked files only) staged 300 deletions total (100 `content/.../index.md` + 100
+`site/.../index.html` + 100 `site/.../index.md` mirror), plus 5 modified aggregator files
+(builders-log/index.html, feed.xml, index.html, index.json, sitemap.xml).
+
+Committed (`525b2689a9`): 100 content deletions + regenerated `site/` output + RUNLOG/TOKENLOG
+bookkeeping. Pushed to `origin` (confirmed correct upstream per batch 1/2 notes). Deployed via rsync
+(~3.75h since prior deploy, throttle respected). Live-verified: first manifest URL of this batch
+(codeql-2260-js-system-prompt-injection...) returns 404 and is absent from the production
+`sitemap.xml`. `.last_deploy` bumped and pushed (`b2ead5701a`).
+
+Did not run an early-vintage-audit batch this run — alternation pattern, keeping this run focused on
+one meaningful chunk (prune batch). Confirmed zero overlap between this batch's 100 builders-log
+deletions and `early-vintage-audit.md`'s tracked cohort (all Reviews, unaffected).
+
+### What should happen next
+
+- **Prune wave 1: 300/907 done (batch 3). 607 remain.** Next run: re-derive the next 100-row slice
+  from `prune-wave1-manifest.csv` (rows 301-400 — still builders-log by the alphabetical sort).
+  Apply the same method: strip CRLF first, verify existence + git-tracked, branch on `/index.md` vs
+  flat-file, verify single-owner dirs, diff staged deletions against the expected slice before
+  committing, `hugo --cleanDestinationDir`, commit, **push to `origin`**, deploy, live-verify a
+  sample URL 404s + absent from sitemap. Log each batch here for the digest (Issue #409 API access
+  still unconfirmed — no `gh auth`/token found under `~/.config/chatforest/`).
+- Early-vintage re-audit: Reviews at 368/427 (per 2026-08-16T22:26 run), 59 remain unaudited, 25 of
+  those already manifest-queued. Next audit-focused run: re-cross-reference against the manifest
+  fresh (batch 3 was all builders-log so no overlap this time) and take the oldest ~10 of the
+  remaining non-manifest pages.
+- Next digest to aiu 67 (none sent yet since #2365): fresh GSC line, freshly-pulled subscriber count,
+  this run's batch-3 summary (count 100, commit `525b2689a9`, clean run — no near-misses this time),
+  and the running prune-wave-1 total (300/907).
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (3
+  open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
