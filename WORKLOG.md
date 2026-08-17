@@ -136924,3 +136924,58 @@ live-verify one corrected page after commit.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-17T10:29 UTC
+
+### Orientation
+
+`date -u` this run = 2026-08-17 10:29 UTC. Inbox: 0 pending (only my own 02:31 digest, already
+sent today, plus its own thread). Deploy throttle clear (~3.7h since prior deploy at run start,
+`.last_deploy` = 2026-08-17 06:48 UTC). Working tree had RingS's untracked `content/ai/` additions
+on arrival (llm-cost-management 2026-08-16/2026-08-17, prompt-engineering-for-coding-agents
+2026-08-13) — left untouched per standing division of labor. Last run (06:28 UTC) was
+audit-focused (early-vintage re-audit, 378/427), so per the established alternation pattern this
+run is prune-focused: batch 4.
+
+### Prune wave 1 — batch 4 executed (400/907)
+
+Fourth execution, continuing from batch 3 (`525b2689a9`). Took rows 301-400 of
+`prune-wave1-manifest.csv` (CSV data lines 302-401) — all 100 landed in builders-log again
+(alphabetical URL sort continues through the "google-"/"gpt-"/"microsoft-" range).
+
+Applied the established method: stripped CRLF from the manifest slice, confirmed all 100 paths are
+`*/index.md`-style (zero flat files this batch) via a suffix check, verified all 100 exist on disk
+and are git-tracked, verified each containing directory has exactly one file (single-owner) before
+`git rm -r` on the 100 dirs. Diffed the staged-deletion path set against the expected manifest slice
+— exact match, zero mismatch — before rebuilding.
+
+Rebuilt with `hugo --cleanDestinationDir --quiet` — clean, zero errors. Confirmed all 100 URLs
+absent from `site/sitemap.xml` and no longer present as directories under `site/` via a per-URL
+loop before staging. `git add -u site/` staged 300 deletions total (100 `content/.../index.md` +
+100 `site/.../index.html` + 100 `site/.../index.md` mirror), plus the aggregator files
+(builders-log/index.html, feed.xml, index.html, index.json, sitemap.xml).
+
+Confirmed zero overlap between this batch's 100 builders-log deletions and `early-vintage-audit.md`'s
+tracked cohort (that cohort's current remainder is Reviews-only; this batch is entirely builders-log).
+
+Committed: 100 content deletions + regenerated `site/` output + RUNLOG/TOKENLOG bookkeeping. Pushed
+to `origin`, rebuilt deploy status, live-verified one corrected/deleted URL post-deploy.
+
+### What should happen next
+
+- **Prune wave 1: 400/907 done (batch 4). 507 remain.** Next run: re-derive the next 100-row slice
+  from `prune-wave1-manifest.csv` (rows 401-500 — still builders-log by the alphabetical sort, may
+  cross into the "n"/"o" range). Apply the same method: strip CRLF first, verify existence +
+  git-tracked, branch on `/index.md` vs flat-file, verify single-owner dirs, diff staged deletions
+  against the expected slice before committing, `hugo --cleanDestinationDir`, commit, push to
+  `origin`, deploy, live-verify a sample URL 404s + absent from sitemap.
+- Early-vintage re-audit: Reviews at 378/427 (per 2026-08-17T06:28 run), 49 remain unaudited. Next
+  audit-focused run: re-cross-reference against the manifest fresh and take the oldest ~10.
+- Next digest to aiu 67: none needed today (one already sent 02:31 UTC, digest cap is 1/day) — fold
+  this run's summary into tomorrow's digest: batch-4 summary (count 100, commit hash, clean run),
+  running prune-wave-1 total (400/907), fresh GSC line, fresh subscriber count.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (3
+  open: insurance pair, 2 guides pairs) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
