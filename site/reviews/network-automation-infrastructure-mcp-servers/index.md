@@ -7,7 +7,7 @@ Network automation and infrastructure MCP servers let AI agents manage routers, 
 
 This review covers **network automation and infrastructure MCP servers** — multi-vendor management platforms, Cisco-specific tools, DCIM/IPAM, SSH device automation, network diagnostics, and network digital twins. For security-focused network tools (packet capture, port scanning, pentesting), see our [Network Security review](/reviews/network-security-mcp-servers/). For monitoring and observability platforms, see [Time-Series Database MCP](/reviews/time-series-database-mcp-servers/).
 
-The headline findings: **Three of the biggest gaps have been filled** — Juniper now has an official MCP server, Palo Alto launched the Cortex MCP Server in open beta, and Fortinet has an entire ecosystem of 4 community servers. **netclaw has become a platform** — surging from 135 to 460 stars with 112 skills across 69 MCP servers, adding Cisco AI Defense governance, institutional memory, and a 3D operations dashboard. **NetBox MCP reached v1.0.0** with native field filtering and HTTP/SSE transport. **Itential brings enterprise orchestration** with 56+ tools and policy-driven automation. **Forward Networks launched Forward AI** with MCP-powered agentic workflows and mathematical verification. **IETF is standardizing MCP for networking** — multiple drafts define extensions for YANG datastores and NETCONF integration. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
+The headline findings: **Three of the biggest gaps have been filled** — Juniper now has an official MCP server, Palo Alto launched the Cortex MCP Server in open beta, and Fortinet has an entire ecosystem of 4 community servers. **netclaw has become a platform** — surging from 135 to 636 stars with 222 skills across 165 MCP servers, adding Cisco AI Defense governance, institutional memory, and a 3D operations dashboard. **NetBox MCP reached v1.0.0** with native field filtering and HTTP/SSE transport. **Itential brings enterprise orchestration** with 56+ tools and policy-driven automation. **Forward Networks announced Forward AI**, scheduled for GA April 2026, with MCP-powered agentic workflows built on its mathematically accurate digital twin. **IETF discussions on MCP for networking are underway** — multiple individual drafts (no working-group standing yet) propose extensions for YANG datastores and NETCONF integration. Part of our **[Cloud & Infrastructure MCP category](/categories/cloud-infrastructure/)**.
 
 ---
 
@@ -17,7 +17,7 @@ The headline findings: **Three of the biggest gaps have been filled** — Junipe
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [NetworkOps_Platform](https://github.com/E-Conners-Lab/NetworkOps_Platform) | — | Python | — | 178 |
+| [NetworkOps_Platform](https://github.com/E-Conners-Lab/NetworkOps_Platform) | 8 | Python | — | 178 |
 
 **The most ambitious network automation MCP project** — supports Cisco, Juniper, Nokia, Arista, and Linux devices through natural language:
 
@@ -35,11 +35,11 @@ The go-to platform for network engineers who manage heterogeneous environments a
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [netclaw](https://github.com/automateyournetwork/netclaw) | 460 ⬆️ | Python | — | 112 skills / 69 MCPs |
+| [netclaw](https://github.com/automateyournetwork/netclaw) | 636 ⬆️ | Python | Apache-2.0 | 222 skills / 165 MCPs |
 
-**An autonomous network engineering coworker**, not just a tool — netclaw operates as a peer engineer powered by Anthropic Claude. **SURGED from 135 to 460 stars (+241%)** and now the most comprehensive network automation agent available:
+**An autonomous network engineering coworker**, not just a tool — netclaw operates as a peer engineer powered by Anthropic Claude. **SURGED from 135 to 636 stars (+371%)** and now the most comprehensive network automation agent available, per the [live repo](https://github.com/automateyournetwork/netclaw):
 
-- **112 deployable skills** backed by **69 MCP servers** (was 82 skills / 37 MCPs) for comprehensive network operations
+- **222 deployable skills** backed by **165 MCP servers** (was 82 skills / 37 MCPs, then 112/69) for comprehensive network operations
 - **Device automation** via pyATS (IOS-XE, NX-OS, IOS-XR), Juniper PyEZ/NETCONF, Arista CloudVision
 - **Platform integrations** — Cisco Catalyst Center, CML, NSO, ISE, Meraki, FMC, F5 BIG-IP
 - **NEW DefenseClaw** — Cisco AI Defense integration with kernel-level sandbox isolation, component scanning, audit logging for SOC2/PCI-DSS compliance
@@ -61,7 +61,7 @@ Built on the OpenClaw agent framework. The safety constraints and governance fea
 
 | Server | Stars | Language | Transport | Tools |
 |--------|-------|----------|-----------|-------|
-| [ThousandEyes-MCP-Server-official](https://github.com/CiscoDevNet/ThousandEyes-MCP-Server-official) | 1 | Remote hosted | Streamable HTTP | 28 |
+| [ThousandEyes-MCP-Server-official](https://github.com/CiscoDevNet/ThousandEyes-MCP-Server-official) | 3 | Remote hosted | Streamable HTTP | 28 |
 
 **→ [Full review: Cisco ThousandEyes MCP Server](/reviews/thousandeyes-mcp-server/)**
 
@@ -81,7 +81,7 @@ ThousandEyes is Cisco's network intelligence platform — it monitors what's *be
 
 Tools are split into two configurable permission groups: **read-only** (22 tools, safe to enable broadly) and **write/delete** (6 tools, test management and template deployment). Cisco recommends enabling only what you need — too many tools active simultaneously causes latency and timeouts.
 
-The official GitHub repo is essentially a configuration guide (1 star, 3 commits); the actual server is proprietary and Cisco-hosted. Notable gap: **Internet Insights data is not exposed** — the collective ISP/CDN outage intelligence that distinguishes ThousandEyes from general observability tools cannot be queried through MCP. Alert rule management is also absent.
+The official GitHub repo is essentially a configuration guide (3 stars, 3 commits); the actual server is proprietary and Cisco-hosted. Notable gap: **Internet Insights data is not exposed** — the collective ISP/CDN outage intelligence that distinguishes ThousandEyes from general observability tools cannot be queried through MCP. Alert rule management is also absent.
 
 **Target audience**: NOC engineers, MSPs, and SREs whose organizations already use ThousandEyes. ThousandEyes subscription with API Access role required. Government deployments not supported.
 
@@ -89,7 +89,7 @@ The official GitHub repo is essentially a configuration guide (1 star, 3 commits
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [network-mcp-docker-suite](https://github.com/pamosima/network-mcp-docker-suite) | 35 | Python | — | 10 servers |
+| [network-mcp-docker-suite](https://github.com/pamosima/network-mcp-docker-suite) | 52 | Python | — | 10 servers |
 
 **A complete Docker-based MCP suite for Cisco-centric network operations**, featured on the Cisco Switzerland Technology Blog and Cisco Code Exchange:
 
@@ -109,7 +109,7 @@ Each server runs in its own Docker container with dedicated ports. Best for Cisc
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pyATS_MCP](https://github.com/automateyournetwork/pyATS_MCP) | 72 ⬆️ | Python | — | 5+ |
+| [pyATS_MCP](https://github.com/automateyournetwork/pyATS_MCP) | 79 ⬆️ | Python | — | 5+ |
 
 **Structured network device interaction** through Cisco's pyATS and Genie testing frameworks:
 
@@ -125,7 +125,7 @@ pyATS is the standard testing framework for Cisco's own engineering teams. Havin
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [MCPyATS](https://github.com/automateyournetwork/MCPyATS) | 66 | Python | — | Multiple |
+| [MCPyATS](https://github.com/automateyournetwork/MCPyATS) | 68 | Python | — | Multiple |
 
 **VibeOps — a framework combining MCP, Agent-to-Agent (A2A), LangGraph, and Cisco pyATS** for intelligent distributed network agents:
 
@@ -139,12 +139,11 @@ pyATS is the standard testing framework for Cisco's own engineering teams. Havin
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cml-mcp](https://github.com/xorrkaz/cml-mcp) | — | Python | — | — |
+| [cml-mcp](https://github.com/xorrkaz/cml-mcp) | 69 | Python | — | — |
 
 **Speak your lab into existence** — create and manage Cisco Modeling Labs environments via natural language:
 
 - Build network labs and topologies through conversational commands
-- Featured on the official Cisco Learning blog
 - Available via PyPI: `pip install cml-mcp`
 
 ---
@@ -155,9 +154,9 @@ pyATS is the standard testing framework for Cisco's own engineering teams. Havin
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [netbox-mcp-server](https://github.com/netboxlabs/netbox-mcp-server) | 158 ⬆️ | Python | Apache 2.0 | 3 core tools |
+| [netbox-mcp-server](https://github.com/netboxlabs/netbox-mcp-server) | 214 ⬆️ | Python | Apache 2.0 | 3 core tools |
 
-**The official MCP server from NetBox Labs** for the industry-standard DCIM/IPAM platform. **Reached v1.0.0** — 127→158 stars (+24%), 199 commits, major maturity milestone:
+**The official MCP server from NetBox Labs** for the industry-standard DCIM/IPAM platform. **Reached v1.0.0** — 127→214 stars (+69%), 232 commits, major maturity milestone, per the [live repo](https://github.com/netboxlabs/netbox-mcp-server):
 
 - **Read-only access** to NetBox data — deliberately safe for AI agent queries
 - **Three core tools**: get_objects (filtered retrieval), get_object_by_id (detail view), get_changelogs (audit trail)
@@ -175,8 +174,8 @@ NetBox is the premier source of truth for network infrastructure. The v1.0.0 rel
 
 Additional NetBox MCP implementations exist:
 
-- **ardecode/netbox-mcp-server** — community alternative with 142+ tools across DCIM (73), Virtualization (30), IPAM (16), and Tenancy (8) domains
-- **Deployment-Team/netbox-mcp** — NetBox Cloud integration
+- **[ardecode/netbox-mcp-server](https://github.com/ardecode/netbox-mcp-server)** — a lighter community alternative currently exposing 3 tools (`get_all_clusters`, `get_cluster_virtual_machines`, `get_cluster_interfaces`) for NetBox virtualization-cluster queries
+- **[Deployment-Team/netbox-mcp](https://github.com/Deployment-Team/netbox-mcp)** — NetBox Cloud integration
 
 ### gt732/nautobot-app-mcp — Nautobot Network Source of Truth 🆕
 
@@ -202,7 +201,7 @@ Note: This repository has been archived, but provides a reference implementation
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [junos-mcp-server](https://github.com/Juniper/junos-mcp-server) | 88 | Python | — | 5+ |
+| [junos-mcp-server](https://github.com/Juniper/junos-mcp-server) | 103 | Python | Apache-2.0 | 5+ |
 
 **FILLS THE BIGGEST VENDOR GAP** — Juniper Networks now has an official MCP server for Junos devices. Previously, Juniper access was only available through multi-vendor tools like netclaw:
 
@@ -212,7 +211,7 @@ Note: This repository has been archived, but provides a reference implementation
 - **Command guardrails** — block.cmd configuration prevents dangerous commands
 - **Token-based authentication** for secure streamable-http transport
 - **Docker deployment** support
-- 78 commits, actively maintained with comprehensive documentation
+- 99 commits, actively maintained with comprehensive documentation
 
 The official Juniper investment in MCP validates the protocol for enterprise networking. Network engineers can now manage Junos devices through natural language with proper safety controls.
 
@@ -230,14 +229,13 @@ The official Juniper investment in MCP validates the protocol for enterprise net
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
 | [Cortex MCP Server](https://www.paloaltonetworks.com/blog/security-operations/introducing-the-cortex-mcp-server/) | Official | — | Commercial | SOC tools |
-| [Palo-MCP](https://github.com/apius-tech/Palo-MCP) | 9 | TypeScript | — | 116 |
-| [pan-os-mcp](https://github.com/cdot65/pan-os-mcp) | 10 | Python | MIT | 4+ |
+| [Palo-MCP](https://github.com/apius-tech/Palo-MCP) | 24 | TypeScript | — | 117 |
+| [pan-os-mcp](https://github.com/cdot65/pan-os-mcp) | 12 | Python | MIT | 4+ |
 
 **FILLS THE FIREWALL GAP** — Palo Alto Networks launched the Cortex MCP Server in open beta, plus two community PanOS servers:
 
-- **Cortex MCP Server (Official, open beta)** — real-time intelligence from Cortex XDR to LLM applications. SOC analysts can query cases, investigate incidents, review event timelines, analyze related assets and indicators. Part of the broader Cortex AgentiX platform
-- **Prisma AIRS MCP** — centralized security gateway for AI agent interactions, validates all tool invocations, real-time threat detection
-- **apius-tech/Palo-MCP** — **116 tools across 16 modules** for PanOS firewalls via XML API. v1.3.16 with OS keychain credential storage, 74 commits. Every tool labeled READ-ONLY or MODIFIES CONFIG for safety. Supports Panorama centralized management
+- **[Cortex MCP Server](https://www.paloaltonetworks.com/blog/security-operations/introducing-the-cortex-mcp-server/) (Official, open beta)** — real-time intelligence from Cortex to LLM applications such as Claude for Desktop; lets analysts query cases, issues, assets, endpoints, compliance results, and tenant metadata, and pull event timelines and related-asset context for high-severity investigations
+- **[apius-tech/Palo-MCP](https://github.com/apius-tech/Palo-MCP)** — **117 tools across 16 modules** for PanOS firewalls via XML API, with OS-keychain credential storage (never plaintext) and 103 commits. Every tool labeled READ-ONLY or MODIFIES CONFIG for safety. Supports Panorama centralized management
 - **cdot65/pan-os-mcp** — MCP server for XML API interaction with NGFW appliances, supports standalone firewalls and Panorama, HTTP/SSE endpoints
 
 The first major firewall vendor with an official MCP server marks a turning point for AI-driven security operations.
@@ -246,16 +244,16 @@ The first major firewall vendor with an official MCP server marks a turning poin
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [fortigate-mcp-server](https://github.com/alpadalar/fortigate-mcp-server) | 17 | Python | MIT | 30 |
-| [fortianalyzer-mcp](https://github.com/rstierli/fortianalyzer-mcp) | 3 | Python | MIT | 63 |
-| [fortimonitor-mcp-server](https://github.com/gjenkins20/unofficial-fortimonitor-mcp-server) | — | Python | MIT | 241 |
+| [fortigate-mcp-server](https://github.com/alpadalar/fortigate-mcp-server) | 34 | Python | MIT | 33 |
+| [fortianalyzer-mcp](https://github.com/rstierli/fortianalyzer-mcp) | 12 | Python | MIT | 73 |
+| [fortimonitor-mcp-server](https://github.com/gjenkins20/unofficial-fortimonitor-mcp-server) | 3 | Python | MIT | 241 |
 
 **Fortinet ecosystem EXPLODED from zero to 4 servers**, covering the full Fortinet Security Fabric:
 
-- **alpadalar/fortigate-mcp-server** — 30 tools for FortiGate firewall management: policies, network objects, VIPs/NAT, routing, system health. Fully async Python with persistent HTTP pooling. Production-ready
-- **rstierli/fortianalyzer-mcp** — 63 tools for SOC operations: log analysis, real-time analytics (FortiView), alert management, incident tracking, device management, reporting (PDF/HTML/CSV/XML). Requires FortiAnalyzer 7.x
-- **gjenkins20/unofficial-fortimonitor-mcp-server** — **241 tools across 33 modules** for FortiMonitor/Panopta monitoring infrastructure. Near-complete coverage of the FortiMonitor v2 API
-- **jmpijll/fortimanager-mcp** — Archived, deprecated in favor of fortimanager-code-mode-mcp. Original had 590+ tools (too many for LLM context); replacement uses Code Mode pattern with just 2 tools for flexible API interaction
+- **[alpadalar/fortigate-mcp-server](https://github.com/alpadalar/fortigate-mcp-server)** — 33 tools for FortiGate firewall management (30 registrations via stdio, 31 via HTTP transport): policies, network objects, VIPs/NAT, routing, system health. Fully async Python with persistent HTTP pooling. Production-ready
+- **[rstierli/fortianalyzer-mcp](https://github.com/rstierli/fortianalyzer-mcp)** — 73 tools across 12 categories for SOC operations: log analysis, real-time analytics (FortiView), alert management, incident tracking, device management, reporting (PDF/HTML/CSV/XML). Requires FortiAnalyzer 7.x
+- **[gjenkins20/unofficial-fortimonitor-mcp-server](https://github.com/gjenkins20/unofficial-fortimonitor-mcp-server)** — **241 tools across 33 modules** for FortiMonitor/Panopta monitoring infrastructure. Near-complete coverage of the FortiMonitor v2 API
+- **[jmpijll/fortimanager-mcp](https://github.com/jmpijll/fortimanager-mcp)** — Archived March 2026, deprecated in favor of **[fortimanager-code-mode-mcp](https://github.com/jmpijll/fortimanager-code-mode-mcp)**. Original had 590+ tools (118K+ tokens just for tool definitions — too many for LLM context); replacement uses a Code Mode pattern with just 2 tools (`search` + `execute`) for flexible API interaction
 
 No official Fortinet MCP server yet, but the community has built comprehensive coverage across FortiGate, FortiAnalyzer, FortiMonitor, and FortiManager.
 
@@ -267,7 +265,7 @@ No official Fortinet MCP server yet, but the community has built comprehensive c
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [itential-mcp](https://github.com/itential/itential-mcp) | 31 | Python | GPL v3 | 56+ |
+| [itential-mcp](https://github.com/itential/itential-mcp) | 35 | Python | GPL v3 | 56+ |
 
 **The AI control layer for enterprise network automation** — bridges AI-generated intent with infrastructure execution:
 
@@ -317,7 +315,7 @@ Arista has publicly embraced MCP, with blog posts on "Generative and Agentic AI 
 - **Log and metric collection** for analysis
 - **Troubleshooting automation** — streamline diagnostic workflows
 
-[Netmiko](https://github.com/ktbyers/netmiko) (14,300+ stars) is the most widely used Python library for SSH to network devices. This MCP wrapper makes it accessible to AI agents.
+[Netmiko](https://github.com/ktbyers/netmiko) (4,200+ stars) is a widely used Python library for SSH to network devices. This MCP wrapper makes it accessible to AI agents.
 
 ### upa/mcp-netmiko-server — LLM-to-Device Interaction
 
@@ -343,7 +341,7 @@ Dedicated subnet calculator for AI agents — useful for IP planning tasks where
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-netutils](https://github.com/patrickdappollonio/mcp-netutils) | 9 | Go | — | 6+ |
+| [mcp-netutils](https://github.com/patrickdappollonio/mcp-netutils) | 10 | Go | — | 6+ |
 
 **Comprehensive network and domain analysis** in a single MCP server (formerly mcp-domaintools, renamed to mcp-netutils):
 
@@ -390,16 +388,16 @@ Particularly valuable for diagnosing latency issues, DNS propagation problems, o
 
 ## Network Analysis & Digital Twins
 
-### forwardnetworks/forward-mcp — Network Digital Twin with 55+ Tools ⬆️ Forward AI GA
+### forwardnetworks/forward-mcp — Network Digital Twin with 54 Tools ⬆️ Forward AI GA
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [forward-mcp](https://github.com/forwardnetworks/forward-mcp) | 3 | Python | — | 55+ |
+| [forward-mcp](https://github.com/forwardnetworks/forward-mcp) | 4 | Python | — | 54 |
 
-**Enterprise-grade network analysis** powered by Forward Networks' vendor-agnostic digital twin technology. **Forward AI launched GA April 2026** — agentic AI built on the mathematical network digital twin:
+**Enterprise-grade network analysis** powered by Forward Networks' vendor-agnostic digital twin technology. **[Forward AI was announced January 29, 2026, scheduled for GA in April 2026](https://www.forwardnetworks.com/newsroom/forward-networks-introduces-forward-ai/)** — agentic AI built on the mathematical network digital twin:
 
-- **55+ tools** for network topology analysis, path tracing, device management, and configuration auditing
-- **NEW Forward AI (GA April 2026)** — agentic workflows that dynamically plan and execute multi-step operations across hybrid and multi-cloud environments with **mathematical verification** of recommendations
+- **54 tools** (plus 6 workflow prompts and a network-context resource) for network topology analysis, path tracing, device management, and configuration auditing
+- **NEW Forward AI** — agentic workflows that dynamically plan and execute multi-step operations across hybrid and multi-cloud environments, built on a "mathematically accurate digital twin" so results come with evidence teams can inspect and validate, per [Forward Networks' announcement](https://www.forwardnetworks.com/newsroom/forward-networks-introduces-forward-ai/)
 - **Path verification** — trace traffic paths across the entire network, identify where packets would be dropped or redirected
 - **Semantic search** using embedding-based similarity matching of network queries (NQE)
 - **Bloomsearch integration** for efficient handling of large result sets with automatic bloom filter generation
@@ -411,14 +409,14 @@ Forward Enterprise creates a mathematical model of your entire network — this 
 
 ## IETF Standardization 🆕
 
-The networking industry is formalizing MCP for network management through multiple IETF Internet-Drafts:
+The networking industry is formalizing MCP for network management through multiple individual IETF Internet-Drafts (none yet adopted by a working group or carrying formal IETF standing):
 
-- **draft-zeng-mcp-network-mgmt** — defines MCP extensions for network equipment, allowing routers/switches to act as MCP servers exposing CLI, YANG datastores, and event streams. Includes new capability tokens, tools, and error codes
-- **draft-yang-nmrg-mcp-nm** — applicability of MCP for network management, comparing MCP with NETCONF/RESTCONF/gNMI
-- **draft-zeng-opsawg-applicability-mcp-a2a** — "When NETCONF Is Not Enough" — explores scenarios where MCP and Agent-to-Agent (A2A) complement traditional protocols
-- **draft-zeng-mcp-troubleshooting** — using MCP for intent-based network troubleshooting automation
+- **[draft-zw-nmrg-mcp-network-mgmt](https://datatracker.ietf.org/doc/draft-zw-nmrg-mcp-network-mgmt/)** ("Model Context Protocol (MCP) Extensions for Network Equipment Management") — defines MCP extensions for network equipment, allowing routers/switches to act as MCP servers exposing CLI, YANG datastores, and event streams. The original draft-zeng-mcp-network-mgmt was replaced by draft-zw-rtgwg-mcp-network-mgmt, now current as draft-zw-nmrg-mcp-network-mgmt
+- **[draft-yang-nmrg-mcp-nm](https://datatracker.ietf.org/doc/draft-yang-nmrg-mcp-nm/)** ("Applicability of MCP for the Network Management") — applicability of MCP for network management, comparing MCP with NETCONF/RESTCONF/gNMI; authored by contributors from Huawei, Telefónica, Deutsche Telekom, Orange, and Nokia
+- **[draft-zeng-opsawg-applicability-mcp-a2a](https://datatracker.ietf.org/doc/draft-zeng-opsawg-applicability-mcp-a2a/)** ("When NETCONF Is Not Enough") — explores scenarios where MCP and Agent-to-Agent (A2A) complement traditional protocols
+- **[draft-zeng-mcp-troubleshooting](https://datatracker.ietf.org/doc/draft-zeng-mcp-troubleshooting/)** ("Using MCP for Intent-Based Network Troubleshooting Automation") — now superseded by draft-zm-rtgwg-mcp-troubleshooting
 
-These drafts signal that MCP is being taken seriously by the networking standards community, not just the AI community. The YANG datastore extensions are particularly significant — they could bridge model-driven programmability with AI-driven operations.
+These drafts signal that MCP is being discussed within the networking standards community, not just the AI community — though as individual submissions with no working-group adoption, they carry no formal IETF standing yet. The YANG datastore extensions are particularly significant — they could bridge model-driven programmability with AI-driven operations.
 
 ---
 
@@ -426,8 +424,8 @@ These drafts signal that MCP is being taken seriously by the networking standard
 
 Major gaps have been filled since the initial review, but some remain:
 
-- ~~No dedicated Juniper MCP~~ — **FILLED**: Juniper/junos-mcp-server (88 stars, official)
-- ~~No Palo Alto or Fortinet firewall MCP~~ — **FILLED**: Palo Alto Cortex MCP (official, open beta) + community PanOS (116 tools), Fortinet 4 community servers (334+ tools combined)
+- ~~No dedicated Juniper MCP~~ — **FILLED**: Juniper/junos-mcp-server (103 stars, official)
+- ~~No Palo Alto or Fortinet firewall MCP~~ — **FILLED**: Palo Alto Cortex MCP (official, open beta) + community PanOS (117 tools), Fortinet 4 community servers (347+ tools combined)
 - ~~No Arista-specific MCP~~ — **PARTIALLY FILLED**: community CloudVision and automation servers, but no official Arista MCP yet
 - ~~No YANG/NETCONF-native MCP~~ — **PARTIALLY FILLED**: IETF drafts define MCP extensions for YANG datastores, but no standalone implementation yet
 - **No carrier/ISP routing policy management** — BGP policy, route filtering, and peering management tools are still missing
@@ -442,7 +440,7 @@ Major gaps have been filled since the initial review, but some remain:
 
 ## The Bottom Line
 
-Network automation MCP servers have crossed from early-phase to **enterprise production-ready**. **Cisco remains dominant** — netclaw's surge to 460 stars with 112 skills and 69 MCPs makes it the most comprehensive network automation agent available, backed by DefenseClaw governance and 3D visualization. **The vendor gap is closing fast** — Juniper now has an official MCP server, Palo Alto launched Cortex MCP in open beta, and Fortinet has 4 community servers covering 334+ tools across the Security Fabric. **NetBox v1.0.0 is production-ready** — the premier DCIM/IPAM source of truth now has proper field filtering, multi-transport, and Docker support. **Enterprise orchestration arrived** — Itential brings policy-driven AI execution with 56+ tools, while Forward AI adds mathematical verification to agentic workflows. **IETF standardization validates the approach** — multiple Internet-Drafts define MCP extensions for YANG datastores and NETCONF, bridging model-driven programmability with AI operations. **Safety and governance are maturing** — from netclaw's ServiceNow Change Request enforcement and DefenseClaw sandbox isolation, to Palo-MCP's READ-ONLY/MODIFIES CONFIG labeling, to Prisma AIRS real-time threat detection, the ecosystem takes production safety seriously.
+Network automation MCP servers have crossed from early-phase to **enterprise production-ready**. **Cisco remains dominant** — netclaw's surge to 636 stars with 222 skills and 165 MCP integrations makes it the most comprehensive network automation agent available, backed by DefenseClaw governance and 3D visualization. **The vendor gap is closing fast** — Juniper now has an official MCP server, Palo Alto launched Cortex MCP in open beta, and Fortinet has 4 community servers covering 347+ tools across the Security Fabric. **NetBox v1.0.0 is production-ready** — the premier DCIM/IPAM source of truth now has proper field filtering, multi-transport, and Docker support. **Enterprise orchestration arrived** — Itential brings policy-driven AI execution with 56+ tools, while Forward AI adds mathematical verification to agentic workflows. **IETF standardization discussions are underway** — multiple individual Internet-Drafts define MCP extensions for YANG datastores and NETCONF, bridging model-driven programmability with AI operations, though none carry formal IETF working-group standing yet. **Safety and governance are maturing** — from netclaw's ServiceNow Change Request enforcement and DefenseClaw sandbox isolation to Palo-MCP's READ-ONLY/MODIFIES CONFIG labeling, the ecosystem takes production safety seriously.
 
 The biggest gap is vendor diversity — network engineers running Juniper, Arista, Palo Alto, or Fortinet equipment are underserved compared to Cisco shops. And the absence of YANG/NETCONF-native tooling means the industry's model-driven programmability direction hasn't yet reached MCP.
 

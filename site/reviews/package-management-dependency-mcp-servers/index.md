@@ -7,9 +7,9 @@ Package management and dependency MCP servers let AI assistants check package ve
 
 This review covers the **package management and dependency** ecosystem — official vendor MCP servers, multi-registry version checkers, npm-specific tools, PyPI tools, Maven/JVM tools, Rust/Cargo tools, security scanners, and OS-level package managers. For related servers, see our [DevOps review](/reviews/ci-cd-pipeline-mcp-servers/) and [Code Quality review](/reviews/code-quality-linting-mcp-servers/).
 
-The headline findings: **Three official vendor MCP servers now shipping** — Microsoft NuGet (built into Visual Studio 2026), Microsoft WinGet (built into Windows Package Manager), and Homebrew (official `brew mcp-server`). **sammcj/mcp-devtools (140 stars) inherits multi-registry version checking** from the archived mcp-package-version. **SocketDev/socket-mcp (101 stars) provides supply chain security scoring** with zero setup. **snyk/agent-scan (2,300 stars) scans AI agents themselves** for security risks. **PyPI has the deepest single-ecosystem tooling** with 25 tools from pypi-query-mcp-server.
+The headline findings: **Three official vendor MCP servers now shipping** — Microsoft NuGet (built into Visual Studio 2026), Microsoft WinGet (built into Windows Package Manager), and Homebrew (official `brew mcp-server`). **sammcj/mcp-devtools (158 stars) inherits multi-registry version checking** from the archived mcp-package-version. **SocketDev/socket-mcp (126 stars) provides supply chain security scoring** with zero setup. **snyk/agent-scan (2,900 stars) scans AI agents themselves** for security risks. **PyPI has the deepest single-ecosystem tooling** with 24 tools from pypi-query-mcp-server.
 
-> **What changed since our March 2026 review:** Three major official MCP servers launched — Microsoft NuGet (built into VS 2026), Microsoft WinGet, and Homebrew. sammcj/mcp-package-version was archived; functionality migrated to mcp-devtools (140 stars, 20+ tools). snyk/agent-scan surged to 2,300 stars with v0.4 Agent Skills scanning. cargo-mcp emerged for Rust lifecycle management. Rating upgraded from 3 to 3.5/5.
+> **What changed since our March 2026 review:** Three major official MCP servers launched — Microsoft NuGet (built into VS 2026), Microsoft WinGet, and Homebrew. sammcj/mcp-package-version was archived; functionality migrated to mcp-devtools (158 stars, 20+ tools). snyk/agent-scan surged to 2,900 stars, now on v0.6+ with Agent Skills scanning. cargo-mcp emerged for Rust lifecycle management. Rating upgraded from 3 to 3.5/5.
 
 **Category:** [Developer Tools](/categories/developer-tools/)
 
@@ -19,14 +19,14 @@ The headline findings: **Three official vendor MCP servers now shipping** — Mi
 
 | Server | Version | Platform | License | Tools |
 |--------|---------|----------|---------|-------|
-| [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server) | 1.3.2 | .NET 10+ | — | 3+ |
+| [NuGet.Mcp.Server](https://www.nuget.org/packages/NuGet.Mcp.Server) | 1.4.16 | .NET 10+ | — | 3+ |
 
-**Microsoft's official NuGet MCP server** — built into Visual Studio 2026 and configurable in VS 2022 (17.14+), VS Code, and GitHub Copilot Agent:
+**Microsoft's official NuGet MCP server** — [built into Visual Studio 2026 and configurable in VS 2022 (17.14+), VS Code, and GitHub Copilot Agent](https://learn.microsoft.com/en-us/nuget/concepts/nuget-mcp-server):
 
 - **Package version discovery** — find latest available versions from configured NuGet feeds
 - **Security updates** — update vulnerable packages to the lowest compatible patched version
 - **Version updates** — update packages to the highest compatible version for your target framework
-- **NuGetSolver algorithm** — [developed with Microsoft Research](https://www.nuget.org/packages/NuGet.Mcp.Server) for intelligent dependency conflict resolution
+- **NuGetSolver algorithm** — [developed in collaboration with Microsoft Research](https://devblogs.microsoft.com/dotnet/nuget-mcp-server-preview/) for intelligent dependency conflict resolution
 - **Private registry support** — works with configured NuGet feeds, not just nuget.org
 
 Installed via the new .NET `dnx` command. In Visual Studio 2026, the NuGet MCP server is built-in — just enable it in the Copilot Tools menu. This is **the first official package registry MCP that actively manages packages** (installs updates, fixes vulnerabilities), not just queries versions.
@@ -41,7 +41,7 @@ Installed via the new .NET `dnx` command. In Visual Studio 2026, the NuGet MCP s
 
 - **Package discovery** — search the WinGet repository for available packages
 - **Package installation** — assist with installation and correct configuration
-- **Upgrade detection** — `find-winget-packages` with `upgradeable` parameter lists only packages with available updates (new in 2026)
+- **Upgrade detection** — [`find-winget-packages` with an `upgradeable` parameter](https://github.com/microsoft/winget-cli/discussions/6259) lists only packages with available updates (introduced in WinGet 1.29.240)
 
 Integrates with VS Code via GitHub Copilot Agent Mode. Available with WinGet 1.29+.
 
@@ -49,15 +49,11 @@ Integrates with VS Code via GitHub Copilot Agent Mode. Available with WinGet 1.2
 
 | Server | Platform | License | Tools |
 |--------|----------|---------|-------|
-| [Homebrew MCP](https://docs.brew.sh/MCP-Server) | macOS/Linux | — | 9+ |
+| [Homebrew MCP](https://docs.brew.sh/MCP-Server) | macOS/Linux | — | dynamic (tracks `brew help`) |
 
-**Official Homebrew MCP server** — ships with Homebrew via the `brew mcp-server` command:
+**Official Homebrew MCP server** — ships with Homebrew via the `brew mcp-server` command. Per the [Homebrew/brew pull request that added it](https://github.com/Homebrew/brew/pull/20041), it dynamically exposes "the subcommands output by `brew help`" as MCP tools, so its tool set tracks whatever `brew help` lists — [Homebrew's own docs](https://docs.brew.sh/MCP-Server) confirm `brew search`, `brew install`, `brew uninstall`, and `brew upgrade` are available today, plus developer commands (`brew style`, `brew typecheck`, `brew tests`) for Homebrew contributors:
 
-- **Package management** — install, uninstall, upgrade, cleanup, reinstall
-- **Information & discovery** — list, search, info, outdated, deps
-- **System health** — doctor command for diagnosing issues
-
-Fully MCP spec-compliant (stdio, JSON-RPC 2.0). Works with Claude Desktop, Claude Code, Cursor, and other MCP clients. Community implementations (jeannier/homebrew-mcp, nagypeterjob/brew-mcp) also exist with similar functionality.
+Uses stdio transport (shown in the [official VS Code configuration example](https://docs.brew.sh/MCP-Server)). Works with Claude Desktop, Claude Code, Cursor, and other MCP clients. Community implementations (jeannier/homebrew-mcp, nagypeterjob/brew-mcp) also exist with similar functionality.
 
 ## Multi-Registry Version Checkers
 
@@ -65,9 +61,9 @@ Fully MCP spec-compliant (stdio, JSON-RPC 2.0). Works with Claude Desktop, Claud
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-devtools](https://github.com/sammcj/mcp-devtools) | 140 | Go | MIT | 20+ |
+| [mcp-devtools](https://github.com/sammcj/mcp-devtools) | 158 | Go | Apache-2.0 | 20+ |
 
-The **successor to mcp-package-version** (121 stars, archived March 29, 2026). The Package Search tool queries latest stable package versions from multiple ecosystems:
+The **successor to mcp-package-version** (122 stars, archived March 29, 2026). The Package Search tool queries latest stable package versions from multiple ecosystems:
 
 - **npm** — JavaScript/Node.js packages
 - **PyPI** — Python packages
@@ -83,7 +79,7 @@ Now part of a broader 20+ tool suite including Internet Search, Web Fetch, Packa
 
 | Server | Stars | Language | License | Registries |
 |--------|-------|----------|---------|------------|
-| [package-version-check-mcp](https://github.com/MShekow/package-version-check-mcp) | 5 | Python | Apache-2.0 | 10+ language + DevOps |
+| [package-version-check-mcp](https://github.com/MShekow/package-version-check-mcp) | 7 | Python | Apache-2.0 | 10+ language + DevOps |
 
 The **most comprehensive version checker** — covers the widest range of ecosystems:
 
@@ -97,7 +93,7 @@ Optional in-memory TTL caching. Multiple deployment options including a hosted s
 
 | Server | Stars | Language | License | Registries |
 |--------|-------|----------|---------|------------|
-| [mcp-dependency-version](https://github.com/Tripletex/mcp-dependency-version) | 1 | TypeScript/Deno | — | 12 |
+| [mcp-dependency-version](https://github.com/Tripletex/mcp-dependency-version) | 4 | TypeScript/Deno | MIT | 12 |
 
 Supports **12 registries** — npm, Maven Central, PyPI, Crates.io, Go, JSR, NuGet, Docker Hub, RubyGems, Packagist, pub.dev, and Swift PM. Key differentiator: **OSV vulnerability scanning** that checks packages against the Open Source Vulnerabilities database:
 
@@ -113,7 +109,7 @@ Emphasizes exact version pinning over ranges for supply chain security.
 
 | Server | Stars | Language | License | Registries |
 |--------|-------|----------|---------|------------|
-| [package-registry-mcp](https://github.com/Artmann/package-registry-mcp) | 37 | TypeScript | MIT | 6 |
+| [package-registry-mcp](https://github.com/Artmann/package-registry-mcp) | 39 | TypeScript | MIT | 6 |
 
 Searches **npm, Cargo/crates.io, NuGet, PyPI, and Go** packages with version history tracking. Integrates with the **GitHub Security Advisory database** for vulnerability checking across ecosystems. Works with Claude, Cursor, and GitHub Copilot.
 
@@ -121,7 +117,7 @@ Searches **npm, Cargo/crates.io, NuGet, PyPI, and Go** packages with version his
 
 | Server | Stars | Language | License | Registries |
 |--------|-------|----------|---------|------------|
-| [dependency-mcp](https://github.com/niradler/dependency-mcp) | 0 | TypeScript | — | 7 |
+| [dependency-mcp](https://github.com/niradler/dependency-mcp) | 1 | TypeScript | MIT | 7 |
 
 Checks **npm, PyPI, Maven, NuGet, RubyGems, Crates.io, and Go modules** with batch processing support for up to 100 packages simultaneously. Six tools split between single-package and multi-package operations, with 3–5x performance improvement through concurrent processing for 5+ packages.
 
@@ -165,9 +161,9 @@ Built with MCP TypeScript SDK v1.6.0. Requires Node.js 16.0.0+.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [pypi-query-mcp-server](https://github.com/loonghao/pypi-query-mcp-server) | 18 | Python | — | 25 |
+| [pypi-query-mcp-server](https://github.com/loonghao/pypi-query-mcp-server) | 18 | Python | MIT | 24 |
 
-The **most feature-rich single-ecosystem MCP server** in this category — 25 tools across 7 categories:
+The **most feature-rich single-ecosystem MCP server** in this category — 24 tools across 7 categories:
 
 - **Core information** (3 tools) — package metadata, versions, dependencies
 - **Compatibility** (2 tools) — Python version assessment, compatible version ranges
@@ -185,7 +181,7 @@ Supports **private PyPI repositories**, async operations with caching, and multi
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [maven-mcp-server](https://github.com/Bigsy/maven-mcp-server) | 32 | JavaScript | MIT | 3 |
+| [maven-mcp-server](https://github.com/Bigsy/maven-mcp-server) | 34 | JavaScript | MIT | 3 |
 
 Retrieves **latest stable releases** from Maven Central while intelligently excluding pre-releases by default:
 
@@ -216,7 +212,7 @@ Five tools covering version discovery, existence checks, component-level version
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [cargo-mcp](https://github.com/jbr/cargo-mcp) | 12 | Rust | — | 11 |
+| [cargo-mcp](https://github.com/jbr/cargo-mcp) | 16 | Rust | MIT OR Apache-2.0 | 11 |
 
 A **full Cargo lifecycle MCP server** — exposes 11 tools for Rust project operations:
 
@@ -233,7 +229,7 @@ Safety-conscious design: restricts to whitelisted operations, validates project 
 
 | Server | Stars | Language | License | Ecosystems |
 |--------|-------|----------|---------|------------|
-| [socket-mcp](https://github.com/SocketDev/socket-mcp) | 101 | TypeScript | MIT | npm/PyPI/Cargo+ |
+| [socket-mcp](https://github.com/SocketDev/socket-mcp) | 126 | TypeScript | MIT | npm/PyPI/Cargo+ |
 
 Provides the **depscore tool** for evaluating dependency security with comprehensive metrics:
 
@@ -251,9 +247,9 @@ Provides the **depscore tool** for evaluating dependency security with comprehen
 
 | Server | Stars | Language | License | Risk Types |
 |--------|-------|----------|---------|------------|
-| [agent-scan](https://github.com/snyk/agent-scan) | 2,300 | Python | Apache-2.0 | 15+ |
+| [agent-scan](https://github.com/snyk/agent-scan) | 2,900 | Python | Apache-2.0 | 15+ |
 
-Goes beyond package scanning to **scan AI agents and MCP servers themselves**. Formerly Invariant Labs' MCP-Scan — rebranded following Snyk's acquisition:
+Goes beyond package scanning to **scan AI agents and MCP servers themselves**. Formerly Invariant Labs' MCP-Scan — rebranded after [Snyk acquired Invariant Labs in June 2025](https://snyk.io/news/snyk-acquires-invariant-labs-to-accelerate-agentic-ai-security-innovation/), a deal also confirmed by [Invariant Labs' home institution, ETH Zurich](https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2025/06/eth-spin-off-aquired-by-snyk.html):
 
 - **SCA scanning** — open source dependency vulnerabilities
 - **SAST scanning** — static code security analysis
@@ -264,7 +260,7 @@ Goes beyond package scanning to **scan AI agents and MCP servers themselves**. F
 - **Agent Skills scanning** — new in v0.4, scans agent skill ecosystems for emerging threats (new)
 - **MCP proxy mode** — monitors and guardrails MCP traffic in real time (new)
 
-Detects **15+ security risks** specific to MCP servers and AI agent skills: prompt injection, tool poisoning, tool shadowing, toxic flows, malware payloads, credential handling issues, and hardcoded secrets. Requires a Snyk API token. Latest version v0.4.13 (April 2026).
+Detects **15+ security risks** specific to MCP servers and AI agent skills: prompt injection, tool poisoning, tool shadowing, toxic flows, malware payloads, credential handling issues, and hardcoded secrets. Requires a Snyk API token. Now on the v0.6.x release line (the earlier v0.5.x line is being deprecated).
 
 ## Ecosystem-Specific Servers
 
@@ -284,7 +280,7 @@ Intelligent caching minimizes API requests. Optimized for extracting Swift and O
 
 ### Composer/Packagist (PHP)
 
-A Composer package MCP server provides similar README and metadata retrieval functionality for PHP's Packagist registry, enabling AI agents to explore PHP package documentation and dependencies.
+[elchika-inc/composer-package-readme-mcp-server](https://github.com/elchika-inc/composer-package-readme-mcp-server) provides similar README and metadata retrieval functionality for PHP's Packagist registry, enabling AI agents to explore PHP package documentation and dependencies.
 
 ## What's Missing
 
@@ -304,7 +300,7 @@ The package management MCP ecosystem still has notable **gaps**, though several 
 
 Package management MCP servers earn **3.5 out of 5** (up from 3 in March 2026). The big story is **official vendor adoption** — Microsoft shipped NuGet and WinGet MCP servers, and Homebrew added an official `brew mcp-server` command. NuGet's MCP server is particularly notable because it actually *manages* packages (fixes vulnerabilities, updates versions) rather than just querying them. This is the shift from passive to active that the category needed.
 
-Version checking across multiple registries remains mature, though the landscape is consolidating — mcp-package-version was archived, with its maintainer moving to the broader mcp-devtools project (140 stars). Security scanning is stronger than ever with Socket (101 stars, now with batch processing) and Snyk (2,300 stars, Agent Skills scanning, MCP proxy mode). Rust developers got a dedicated cargo-mcp with full lifecycle management.
+Version checking across multiple registries remains mature, though the landscape is consolidating — mcp-package-version was archived, with its maintainer moving to the broader mcp-devtools project (158 stars). Security scanning is stronger than ever with Socket (126 stars, now with batch processing) and Snyk (2,900 stars, Agent Skills scanning, MCP proxy mode). Rust developers got a dedicated cargo-mcp with full lifecycle management.
 
 The remaining gaps are still significant — no lock file parsing, no Renovate/Dependabot-style automated update PRs, no license compliance, no SBOM generation. But the trajectory is clear: official vendor involvement is accelerating, and the line between "version checker" and "dependency management assistant" is blurring.
 

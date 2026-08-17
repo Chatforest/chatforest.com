@@ -2,18 +2,18 @@
 title: "Personal Finance MCP Servers — YNAB, Plaid, Firefly III, QuickBooks, Alpaca, Monarch Money, and More"
 date: 2026-03-15T17:20:00+09:00
 description: "Personal finance MCP servers are enabling AI agents to manage budgets, track expenses, analyze investments, file taxes, and connect to banking and brokerage accounts."
-og_description: "Personal finance MCP servers: Alpaca V2 (683 stars, 50+ tools, official), financial-datasets (2,000 stars, 10 tools), Firefly III (76 tools), YNAB (10+ implementations), QuickBooks (180 stars, 143 tools, official), Xero (257 stars, 49 tools, official), Plaid (official AI Toolkit), Alpha Vantage (official, 129 stars), EODHD (official, 77 tools), Stripe (official, 25 tools), Truthifi (18,000+ institutions), CCXT crypto (100+ exchanges). Rating: 4.5/5."
+og_description: "Personal finance MCP servers: Alpaca V2 (918 stars, 50+ tools, official), financial-datasets (2,300+ stars, 10 tools), Firefly III (76 tools), YNAB (10+ implementations), QuickBooks (354 stars, 143 tools, official), Xero (350 stars, 49 tools, official), Plaid (official AI Toolkit), Alpha Vantage (official, 199 stars), EODHD (official, 77 tools), Stripe (official), Truthifi (18,000+ institutions), CCXT crypto (100+ exchanges). Rating: 4.5/5."
 content_type: "Review"
-card_description: "Personal finance MCP servers for budgeting, expense tracking, investment analysis, tax planning, banking integration, and cryptocurrency portfolio management. This is one of the most commercially relevant MCP categories — personal finance touches everyone, and the combination of AI assistants with financial data creates genuinely useful workflows like automated budget analysis, tax optimization, and portfolio rebalancing. The standout on the investment side is alpacahq/alpaca-mcp-server (683 stars, 50+ tools) — an official V2 rewrite covering stocks, options, crypto, portfolio management, watchlists, and market data, with Alpaca reporting nearly 4x API trading growth in Q1 2026 driven by AI. financial-datasets/mcp-server (2,000 stars, 10 tools) has nearly tripled in popularity for financial research. For budgeting, YNAB now has 10+ MCP implementations with Jtewen/ynab-mcp (10 stars, 13 tools) emerging as the most featured. Monarch Money has 6+ implementations including keithah/monarchmoney-ts-mcp with 70+ operations and dynamic SDK discovery. The self-hosted champion Firefly III now has a second comprehensive server — fabianonetto/mcp-server-firefly-iii (66 tools, 100% API coverage, created March 2026). The accounting space exploded: Intuit's QuickBooks server grew from ~12 to 180 stars and expanded to 143 tools (29 entity types + 11 reports). Xero's official server has 257 stars and 49 tools. Plaid launched its official AI Toolkit with Dashboard and Sandbox MCP servers. Alpha Vantage and EODHD both launched official MCP servers for market data. Truthifi emerged as a commercial aggregator connecting 18,000+ financial institutions including Fidelity, Vanguard, and Schwab via OAuth. Cryptocurrency gained lazy-dinosaur/ccxt-mcp (82 stars) with risk management and altFINS with 150+ pre-computed indicators. Gaps narrowing: Fidelity/Vanguard access now possible via Truthifi ($79.99/year), but no official YNAB or Monarch servers yet. Rating upgraded to 4.5/5 — the category matured significantly with vendor participation accelerating across accounting, market data, and brokerage."
+card_description: "Personal finance MCP servers for budgeting, expense tracking, investment analysis, tax planning, banking integration, and cryptocurrency portfolio management. This is one of the most commercially relevant MCP categories — personal finance touches everyone, and the combination of AI assistants with financial data creates genuinely useful workflows like automated budget analysis, tax optimization, and portfolio rebalancing. The standout on the investment side is alpacahq/alpaca-mcp-server (918 stars, 50+ tools) — an official V2 rewrite covering stocks, options, crypto, portfolio management, watchlists, and market data, with Alpaca reporting nearly 4x API trading growth in Q1 2026 driven by AI. financial-datasets/mcp-server (2,300+ stars, 10 tools) has more than tripled in popularity for financial research. For budgeting, YNAB now has 10+ MCP implementations; calebl/ynab-mcp-server has grown fastest by star count (140 stars) while Jtewen/ynab-mcp (11 stars, 13 tools) remains the most feature-complete. Monarch Money has 6+ implementations including keithah/monarchmoney-ts-mcp with 70+ operations and dynamic SDK discovery. The self-hosted champion Firefly III now has multiple comprehensive servers — fabianonetto/mcp-server-firefly-iii (66 tools, 100% API coverage, created March 2026) and etnperlong/firefly-iii-mcp (82 stars). The accounting space exploded: Intuit's QuickBooks server grew from ~12 to 354 stars and expanded to 143 tools (29 entity types + 11 reports). Xero's official server has 350 stars and 49 tools. Plaid launched its official AI Toolkit with Dashboard and Sandbox MCP servers. Alpha Vantage and EODHD both launched official MCP servers for market data. Truthifi emerged as a commercial aggregator claiming 18,000+ connected financial institutions with credential-free, revocable access; it does not name specific supported brokerages on its site. Cryptocurrency gained lazy-dinosaur/ccxt-mcp (93 stars) with risk management and altFINS with 150+ pre-computed indicators. Gaps narrowing: Truthifi offers broad institution coverage starting free (paid tiers from $5.99/month), but Fidelity/Vanguard support is unconfirmed and there's still no official YNAB or Monarch server. Rating upgraded to 4.5/5 — the category matured significantly with vendor participation accelerating across accounting, market data, and brokerage."
 last_refreshed: 2026-04-27
-sources_audited: 2026-07-23
+sources_audited: 2026-08-17
 ---
 
 Personal finance MCP servers are enabling AI agents to manage budgets, track expenses, analyze investment portfolios, calculate taxes, connect to bank accounts, and trade stocks — all through natural language. Instead of logging into five different apps to understand your financial picture, an AI agent can query your YNAB budget, check your Schwab portfolio, review your Firefly III transactions, and calculate your tax liability in a single conversation.
 
 The landscape spans eleven areas: **budgeting apps** (YNAB, Monarch Money, Actual Budget, LunchMoney, Copilot Money), **self-hosted personal finance** (Firefly III), **expense tracking** (CSV and SQLite-based trackers), **banking integration** (Plaid for connecting to bank accounts, Truthifi for multi-institution aggregation), **tax preparation** (IRS calculations, depreciation), **financial planning** (SIP calculators, goal planning), **accounting software** (QuickBooks, Xero, FreshBooks), **stock market and investment data** (Financial Datasets, Alpha Vantage, EODHD, Yahoo Finance, FMP), **brokerage platforms** (Alpaca, Schwab, Robinhood, Interactive Brokers), **cryptocurrency** (CCXT multi-exchange, altFINS analytics, portfolio trackers, blockchain data), and **payments** (Stripe).
 
-The headline findings: **YNAB now has 10+ MCP implementations** with Jtewen/ynab-mcp (10 stars, 13 tools) emerging as the most featured. **Alpaca shipped V2** — a complete FastMCP rewrite growing to 683 stars and 50+ tools, with Alpaca reporting nearly 4x API trading growth in Q1 2026 driven by AI. **Financial Datasets nearly tripled** to 2,000 stars. **QuickBooks exploded** from ~12 to 180 stars and expanded to 143 tools covering 29 entity types. **Official vendor participation accelerated** — Plaid launched its AI Toolkit, Alpha Vantage and EODHD both released official MCP servers for market data, and Stripe now has 25 tools in its consolidated ai monorepo. **Truthifi emerged** as a commercial MCP aggregator connecting 18,000+ financial institutions including Fidelity, Vanguard, and Schwab. **The crypto space matured** with lazy-dinosaur/ccxt-mcp (82 stars) adding risk management and altFINS launching 150+ pre-computed indicators. **The gap between budgeting duplicates and investment depth remains** but is narrowing as new implementations add differentiated features.
+The headline findings: **YNAB now has 10+ MCP implementations** — [Jtewen/ynab-mcp](https://github.com/Jtewen/ynab-mcp) (11 stars, 13 tools) remains the most feature-complete, though [calebl/ynab-mcp-server](https://github.com/calebl/ynab-mcp-server) has since pulled far ahead on star count (140 stars). **Alpaca shipped V2** — a complete FastMCP rewrite that has grown to [918 stars](https://github.com/alpacahq/alpaca-mcp-server) and 50+ tools, with Alpaca reporting nearly 4x API trading growth in Q1 2026 driven by AI. **Financial Datasets more than tripled** to [2,300+ stars](https://github.com/financial-datasets/mcp-server). **QuickBooks exploded** from ~12 to [354 stars](https://github.com/intuit/quickbooks-online-mcp-server) and expanded to 143 tools covering 29 entity types. **Official vendor participation accelerated** — Plaid launched its AI Toolkit, Alpha Vantage and EODHD both released official MCP servers for market data, and Stripe's [official MCP server](https://docs.stripe.com/mcp) exposes both dedicated and generic tools reaching dozens of Stripe API resources. **Truthifi emerged** as a commercial MCP aggregator claiming connections to [18,000+ financial institutions](https://truthifi-connect.ai/) (specific supported brokerages aren't named on its site). **The crypto space matured** with [lazy-dinosaur/ccxt-mcp](https://github.com/lazy-dinosaur/ccxt-mcp) (93 stars) adding risk management and altFINS launching 150+ pre-computed indicators. **The gap between budgeting duplicates and investment depth remains** but is narrowing as new implementations add differentiated features.
 
 ## Budgeting Apps
 
@@ -23,8 +23,8 @@ YNAB has the most MCP implementations of any personal finance app — now 10+ se
 
 | Server | Stars | Language | Notes |
 |--------|-------|----------|-------|
-| [Jtewen/ynab-mcp](https://github.com/Jtewen/ynab-mcp) | 10 | TypeScript | **Most featured** — 13 tools: financial overview, accounts, categories, transactions, scheduled transactions, budgets, payees |
-| [calebl/ynab-mcp-server](https://github.com/calebl/ynab-mcp-server) | ~3 | TypeScript | Built with mcp-framework, budget/account/transaction tools |
+| [Jtewen/ynab-mcp](https://github.com/Jtewen/ynab-mcp) | 11 | TypeScript | **Most feature-complete** — 13 tools: financial overview, accounts, categories, transactions, scheduled transactions, budgets, payees |
+| [calebl/ynab-mcp-server](https://github.com/calebl/ynab-mcp-server) | 140 | TypeScript | Built with mcp-framework, budget/account/transaction tools — now the most-starred YNAB server by a wide margin |
 | [klauern/mcp-ynab](https://github.com/klauern/mcp-ynab) | 6 | Python | Nick Klauer's implementation — 2 tools, clean Python/uv/Taskfile setup |
 | [EthanKang1/ynab-mcp](https://github.com/EthanKang1/ynab-mcp) | Low | TypeScript | Claude Desktop integration |
 | [mattweg/ynab-mcp](https://github.com/mattweg/ynab-mcp) | Low | TypeScript | Claude Code integration |
@@ -34,7 +34,7 @@ YNAB has the most MCP implementations of any personal finance app — now 10+ se
 | [dizzlkheinz/ynab-mcpb](https://github.com/dizzlkheinz/ynab-mcpb) | Low | — | Receipt itemization, bank statement reconciliation |
 | [ntdef/ynab-mcp](https://github.com/ntdef/ynab-mcp) | Low | — | Basic YNAB interaction |
 
-The YNAB MCP landscape has matured since our last review. **Jtewen/ynab-mcp** (10 stars, 13 tools) has emerged as the most comprehensive implementation with tools for financial overview, budget management, scheduled transactions, and payee cleanup. **klauern/mcp-ynab** takes a minimalist approach with just 2 tools but clean Python tooling. dizzlkheinz/ynab-mcpb still stands out for receipt itemization and bank reconciliation. No official YNAB MCP server exists, but community implementations are getting more differentiated rather than just duplicating each other.
+The YNAB MCP landscape has matured since our last review. **Jtewen/ynab-mcp** (11 stars, 13 tools) remains the most feature-complete implementation with tools for financial overview, budget management, scheduled transactions, and payee cleanup — though **calebl/ynab-mcp-server** has since grown to 140 stars, far more than any other YNAB server, without a published tool-count breakdown to compare directly. **klauern/mcp-ynab** takes a minimalist approach with just 2 tools but clean Python tooling. dizzlkheinz/ynab-mcpb still stands out for receipt itemization and bank reconciliation. No official YNAB MCP server exists, but community implementations are getting more differentiated rather than just duplicating each other.
 
 ### Monarch Money
 
@@ -46,11 +46,11 @@ The YNAB MCP landscape has matured since our last review. **Jtewen/ynab-mcp** (1
 | [ezra-quemuel/monarch-mcp](https://github.com/ezra-quemuel/monarch-mcp) | Low | Python | Account, transaction, budget tools |
 | [tsheil/monarch-mcp](https://github.com/tsheil/monarch-mcp) | Low | — | Basic Monarch Money access |
 
-Now six implementations for Monarch Money — the popular Mint replacement. **keithah/monarchmoney-ts-mcp** (7 stars) is the standout newcomer with 70+ operations through dynamic SDK method discovery, MCPB bundle format for one-click install, smart context management with verbosity levels, MFA/TOTP support, and AES-256 session encryption. It automatically discovers all MonarchMoney TypeScript SDK functions, so new capabilities appear without code changes. No official Monarch Money MCP server exists, but keithah's implementation is approaching the comprehensiveness of one.
+Now six implementations for Monarch Money — the popular Mint replacement. **keithah/monarchmoney-ts-mcp** (9 stars) is the standout newcomer with 70+ operations through dynamic SDK method discovery, MCPB bundle format for one-click install, smart context management with verbosity levels, MFA/TOTP support, and AES-256 session encryption. It automatically discovers all MonarchMoney TypeScript SDK functions, so new capabilities appear without code changes. No official Monarch Money MCP server exists, but keithah's implementation is approaching the comprehensiveness of one.
 
 | Server | Stars | Language | Notes |
 |--------|-------|----------|-------|
-| [keithah/monarchmoney-ts-mcp](https://github.com/keithah/monarchmoney-ts-mcp) | 7 | TypeScript | **Most comprehensive** — 70+ operations, dynamic SDK discovery, MCPB bundle, MFA support |
+| [keithah/monarchmoney-ts-mcp](https://github.com/keithah/monarchmoney-ts-mcp) | 9 | TypeScript | **Most comprehensive** — 70+ operations, dynamic SDK discovery, MCPB bundle, MFA support |
 
 ### Actual Budget
 
@@ -84,14 +84,16 @@ lunchflow/mcp is notable for claiming connection to 20,000+ banks across 40+ cou
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [horsfallnathan/firefly-iii-mcp-server](https://github.com/horsfallnathan/firefly-iii-mcp-server) | ~7 | Python | AGPL-3.0 | Up to 76 |
-| [fabianonetto/mcp-server-firefly-iii](https://github.com/fabianonetto/mcp-server-firefly-iii) | 7 | — | — | 66 |
+| [horsfallnathan/firefly-iii-mcp-server](https://github.com/horsfallnathan/firefly-iii-mcp-server) | 8 | Python | AGPL-3.0 | Up to 76 |
+| [fabianonetto/mcp-server-firefly-iii](https://github.com/fabianonetto/mcp-server-firefly-iii) | 22 | — | — | 66 |
+| [etnperlong/firefly-iii-mcp](https://github.com/etnperlong/firefly-iii-mcp) | 82 | — | — | — |
+| [dnsnpl/firefly-iii-mcp](https://github.com/dnsnpl/firefly-iii-mcp) | 0 | — | — | — |
 
 Firefly III now has **two comprehensive MCP servers**. horsfallnathan's original offers up to 76 tools in direct mode (or 3 meta-tools in consolidated mode) covering the full API: accounts, transactions, budgets, categories, tags, bills, piggy banks, rules, and recurring transactions.
 
 **fabianonetto/mcp-server-firefly-iii** (created March 29, 2026) is a newer "professional-grade, AI-agnostic bridge" providing 66 tools with 100% API coverage. It positions itself as a universal bridge for any AI platform supporting MCP, not just Claude Desktop.
 
-Firefly III remains the leading open-source self-hosted personal finance manager. Two additional implementations exist (etnperlong/firefly-iii-mcp, dnsnpl/firefly-iii-mcp) bringing the total to four Firefly III MCP servers.
+Firefly III remains the leading open-source self-hosted personal finance manager. Two additional implementations exist — [etnperlong/firefly-iii-mcp](https://github.com/etnperlong/firefly-iii-mcp) (82 stars, notably more than either server above, though its feature scope isn't independently confirmed here) and [dnsnpl/firefly-iii-mcp](https://github.com/dnsnpl/firefly-iii-mcp) (a Cloudflare Workers implementation, still at 0 stars) — bringing the total to four Firefly III MCP servers.
 
 ## Expense Tracking
 
@@ -119,9 +121,9 @@ Plaid is the standard banking data aggregation layer in the US, and these server
 
 | Server | Notes |
 |--------|-------|
-| [Truthifi Connect](https://truthifi-connect.ai/) | **Commercial** — connects to 18,000+ financial institutions via OAuth ($79.99/year) |
+| [Truthifi Connect](https://truthifi-connect.ai/) | **Commercial** — claims 18,000+ connected financial institutions; free tier plus paid plans from $5.99/month |
 
-**The biggest banking integration news** is Truthifi Connect — a commercial MCP server that connects to Fidelity, Vanguard, Schwab, and 18,000+ other financial institutions simultaneously via OAuth. This partially fills the biggest gap from our last review (no Fidelity/Vanguard access). Read-only, no credential sharing, works with both Claude and ChatGPT. The trade-off: it's a paid service at $79.99/year (with 30-day trial), compared to free open-source alternatives that cover fewer institutions.
+**The biggest banking integration news** is Truthifi Connect — a commercial MCP server that [claims connections to 18,000+ financial institutions](https://truthifi-connect.ai/). Its own site does not name specific supported brokerages, so we cannot independently confirm Fidelity, Vanguard, or Schwab support — treat that as unverified rather than assume it fills the gap from our last review. Truthifi describes its connections as "institution-approved," with credentials never exposed to the AI and access revocable at any time; it does not explicitly claim OAuth or a strictly read-only design. **Pricing has also changed since our last check**: Truthifi currently lists a free tier (5 connections, 5 daily credits) plus Pro ($5.99/month or $59.99/year) and Max ($12.99/month or $129.99/year) tiers — there is no $79.99/year plan on the current pricing page, and no trial period is advertised. Compared to free open-source alternatives, it covers far more institutions, but confirm current pricing and coverage directly before relying on it for a specific brokerage.
 
 ## Tax Preparation & Planning
 
@@ -165,13 +167,13 @@ norman-finance/norman-mcp-server blurs the line between personal finance and sma
 
 | Server | Stars | Language | Notes |
 |--------|-------|----------|-------|
-| [intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) | 180 | TypeScript | **Official** Intuit server — 143 tools, 29 entity types, 11 reports, 100% test coverage |
+| [intuit/quickbooks-online-mcp-server](https://github.com/intuit/quickbooks-online-mcp-server) | 354 | TypeScript | **Official** Intuit server — 143 tools, 29 entity types, 11 reports, 100% test coverage |
 | [laf-rge/quickbooks-mcp](https://github.com/laf-rge/quickbooks-mcp) | Low | — | Community QuickBooks server |
-| [XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) | 257 | — | **Official** Xero server — 49 tools including payroll, timesheets, leave management |
+| [XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) | 350 | — | **Official** Xero server — 49 tools including payroll, timesheets, leave management |
 | [john-zhang-dev/xero-mcp](https://github.com/john-zhang-dev/xero-mcp) | Low | — | Community Xero server |
 | [roboulos/freshbooks-mcp](https://github.com/roboulos/freshbooks-mcp) | Low | — | FreshBooks invoicing and time tracking |
 
-The accounting subcategory **exploded since our last review**. Intuit's QuickBooks server grew from ~12 to **180 stars** and expanded massively to **143 tools** covering CRUD operations across 29 entity types plus 11 financial reports — with 335 tests at 100% code coverage. This is now one of the most comprehensive official MCP servers in any category. Xero's server grew to **257 stars** with **49 tools** including payroll-specific commands (timesheets, employees, leave management) alongside standard accounting operations. Note: [QuickBooks Desktop 2023 service features (payroll, bank feeds, payment processing) end May 31, 2026](https://quickbooks.intuit.com/learn-support/en-us/help-article/feature-preferences/quickbooks-desktop-service-discontinuation-policy/L17cXxlie_US_en_US), pushing more users to QBO — and this MCP server.
+The accounting subcategory **exploded since our last review**. Intuit's QuickBooks server grew from ~12 to **354 stars** and expanded massively to **143 tools** covering CRUD operations across 29 entity types plus 11 financial reports — with 335 tests at 100% code coverage. This is now one of the most comprehensive official MCP servers in any category. Xero's server grew to **350 stars** with **49 tools** including payroll-specific commands (timesheets, employees, leave management) alongside standard accounting operations. Note: [QuickBooks Desktop 2023 service features (payroll, bank feeds, payment processing) end May 31, 2026](https://quickbooks.intuit.com/learn-support/en-us/help-article/feature-preferences/quickbooks-desktop-service-discontinuation-policy/L17cXxlie_US_en_US), pushing more users to QBO — and this MCP server.
 
 ## Stock Market & Investment Data
 
@@ -179,17 +181,17 @@ The accounting subcategory **exploded since our last review**. Intuit's QuickBoo
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [financial-datasets/mcp-server](https://github.com/financial-datasets/mcp-server) | 2,000 | Python | — | 10 |
+| [financial-datasets/mcp-server](https://github.com/financial-datasets/mcp-server) | 2,300+ | Python | — | 10 |
 
-The **most popular finance MCP server by star count** — nearly tripling from 715 to **2,000 stars** since our last review. Now 10 tools covering income statements, balance sheets, cash flow statements, stock prices (current and historical), financial news, crypto tickers and prices, and stock screening. Authentication now uses OAuth flow — no API key setup required.
+The **most popular finance MCP server by star count** — more than tripling from 715 to **2,300+ stars** since our last review. Now 10 tools covering income statements, balance sheets, cash flow statements, stock prices (current and historical), financial news, crypto tickers and prices, and stock screening. Authentication now uses OAuth flow — no API key setup required.
 
 ### Alpaca MCP Server V2 (Official)
 
 | Server | Stars | Language | Tools |
 |--------|-------|----------|-------|
-| [alpacahq/alpaca-mcp-server](https://github.com/alpacahq/alpaca-mcp-server) | 683 | Python | 50+ |
+| [alpacahq/alpaca-mcp-server](https://github.com/alpacahq/alpaca-mcp-server) | 918 | Python | 50+ |
 
-The **most feature-rich brokerage MCP server**, now in **V2** — a complete rewrite built with FastMCP and OpenAPI. Grew from 519 to **683 stars** (+32%) and from 43 to **50+ tools** across 9 categories:
+The **most feature-rich brokerage MCP server**, now in **V2** — a complete rewrite built with FastMCP and OpenAPI. Grew from 519 stars at our last review to **918 stars** now, and from 43 to **50+ tools** across 9 categories:
 
 - **Account & Portfolio** (6 tools) — positions, account info, P&L, activity history
 - **Trading/Orders** (9 tools) — market, limit, trailing-stop, bracket, multi-leg options
@@ -207,7 +209,7 @@ Alpaca reported [nearly 4x API trading growth in Q1 2026 driven by AI](https://a
 
 | Server | Stars | Language | Notes |
 |--------|-------|----------|-------|
-| [alphavantage/alpha_vantage_mcp](https://github.com/alphavantage/alpha_vantage_mcp) | 129 | — | **Official** — remote at mcp.alphavantage.co, Progressive Tool Discovery |
+| [alphavantage/alpha_vantage_mcp](https://github.com/alphavantage/alpha_vantage_mcp) | 199 | — | **Official** — remote at mcp.alphavantage.co, Progressive Tool Discovery |
 
 **New since last review.** Alpha Vantage launched an official MCP server for stocks, forex, crypto, commodities, and built-in technical indicators (RSI, etc.). Notable for **Progressive Tool Discovery** — an optimization that minimizes token consumption while preserving response quality. Free API key required.
 
@@ -225,7 +227,7 @@ Alpaca reported [nearly 4x API trading growth in Q1 2026 driven by AI](https://a
 |--------|-------|----------|-------|
 | [wshobson/maverick-mcp](https://github.com/wshobson/maverick-mcp) | Low | Python | 29+ |
 
-Successor to the archived mcp-trader (248 stars). 29+ tools including technical indicators, stock screening, portfolio optimization, and backtesting. The most sophisticated technical analysis MCP server, with moving averages, momentum indicators, volatility measures, and portfolio optimization algorithms.
+Successor to the [archived mcp-trader](https://github.com/wshobson/mcp-trader) (archived Aug 24, 2025; 273 stars). 29+ tools including technical indicators, stock screening, portfolio optimization, and backtesting. The most sophisticated technical analysis MCP server, with moving averages, momentum indicators, volatility measures, and portfolio optimization algorithms.
 
 ### Yahoo Finance MCP Servers
 
@@ -261,8 +263,7 @@ Multiple Yahoo Finance implementations via the yfinance Python library. Alex2Yan
 | [arindhimar/ContextCraft](https://github.com/arindhimar/ContextCraft) | — | Zerodha KiteConnect — live trading, portfolio risk, stock analysis (India) |
 | [mayankthole/dhan-mcp-trades](https://github.com/mayankthole/dhan-mcp-trades) | — | Dhan trading platform (India) |
 | [laukikk/alpaca-mcp](https://github.com/laukikk/alpaca-mcp) | — | Community Alpaca implementation |
-
-| [trayders/trayd-mcp](https://github.com/trayders/trayd-mcp) | — | — | Robinhood trading — 24-hour extended trading, dual-source quotes |
+| [trayders/trayd-mcp](https://github.com/trayders/trayd-mcp) | — | Robinhood trading — 24-hour extended trading, dual-source quotes |
 
 Notable design choice: verygoodplugins/robinhood-mcp is explicitly **read-only** — it can analyze your portfolio but cannot place trades. In contrast, **trayders/trayd-mcp** (new since last review) goes all-in on trading, supporting 24-hour extended trading limit orders and dual-source quotes (live Robinhood data during market hours, automatic fallback pre-market and overnight). The Interactive Brokers servers are in alpha/early stages. Indian brokerages (Zerodha, Dhan) show MCP adoption extending beyond US markets.
 
@@ -281,10 +282,10 @@ Notable design choice: verygoodplugins/robinhood-mcp is explicitly **read-only**
 | [truss44/mcp-crypto-price](https://github.com/truss44/mcp-crypto-price) | — | CoinCap API for prices, market trends, historical data |
 | [kukapay/crypto-projects-mcp](https://github.com/kukapay/crypto-projects-mcp) | — | Crypto project information and research |
 
-| [lazy-dinosaur/ccxt-mcp](https://github.com/lazy-dinosaur/ccxt-mcp) | 82 | — | **NEW** — CCXT with risk management, position sizing, leverage up to 100x |
+| [lazy-dinosaur/ccxt-mcp](https://github.com/lazy-dinosaur/ccxt-mcp) | 93 | — | **NEW** — CCXT with risk management, position sizing, leverage up to 100x |
 | [altFINS MCP](https://altfins.com/crypto-market-and-analytical-data-api/documentation/mcp-server/) | — | — | **NEW commercial** — 150+ pre-computed indicators, 15,000+ coins, 1,000+ exchanges |
 
-The crypto MCP space matured significantly. **lazy-dinosaur/ccxt-mcp** (82 stars) is the most sophisticated new entry — beyond basic CCXT exchange access, it adds performance analytics (win rates, profit factors, consecutive loss analysis), position sizing (capital ratio trading, leverage up to 100x), and risk controls (technical indicator-based stop losses, ATR multiples, daily loss limits). This is the first crypto MCP server to take risk management seriously.
+The crypto MCP space matured significantly. **lazy-dinosaur/ccxt-mcp** (93 stars) is the most sophisticated new entry — beyond basic CCXT exchange access, it adds performance analytics (win rates, profit factors, consecutive loss analysis), position sizing (capital ratio trading, leverage up to 100x), and risk controls (technical indicator-based stop losses, ATR multiples, daily loss limits). This is the first crypto MCP server to take risk management seriously.
 
 **altFINS** launched a commercial MCP with 150+ pre-computed technical indicators, 7 years of historical data, and 15,000+ coins tracked across 1,000+ exchanges — aimed at algo trading, AI agents, and trading signal platforms.
 
@@ -294,17 +295,17 @@ Nayshins/mcp-server-ccxt remains the original CCXT implementation for broad exch
 
 | Server | Notes |
 |--------|-------|
-| [Stripe Official MCP](https://docs.stripe.com/mcp) | **Official** — remote at mcp.stripe.com (OAuth) or `npx @stripe/mcp` (API key), 25 tools |
+| [Stripe Official MCP](https://docs.stripe.com/mcp) | **Official** — remote at mcp.stripe.com (OAuth) or `npx @stripe/mcp` (API key) |
 | [atharvagupta2003/mcp-stripe](https://github.com/atharvagupta2003/mcp-stripe) | Community Python implementation |
 
-Stripe's official MCP server now lives in the **stripe/ai monorepo** alongside @stripe/agent-toolkit, @stripe/ai-sdk, and @stripe/token-meter. It provides **25 tools** covering customers, products, prices, invoices, subscriptions, refunds, and searching Stripe's documentation/knowledge base. Connection via hosted remote (OAuth) or local (API key). Relevant for personal finance in the context of side businesses, freelancing, or subscription billing.
+Stripe's [official MCP server documentation](https://docs.stripe.com/mcp) lists a set of dedicated tools (account info, refunds, Treasury balance summaries, documentation search, an implementation planner) plus generic `stripe_api_read`/`stripe_api_write` tools that reach dozens of underlying Stripe API resources — customers, products, prices, invoices, subscriptions, coupons, disputes, webhooks, and more — without a separate named tool per resource. (An earlier version of this review cited "25 tools in a stripe/ai monorepo alongside @stripe/agent-toolkit" — that specific figure and package grouping is no longer confirmable against current Stripe documentation, so it has been removed.) Connection is via hosted remote (OAuth) or local (a [restricted API key](https://docs.stripe.com/keys/restricted-api-keys)). Relevant for personal finance in the context of side businesses, freelancing, or subscription billing.
 
 ## What's Missing
 
 Despite 80+ servers, some significant gaps remain — though several from our last review have been partially addressed:
 
 - **No official YNAB or Monarch Money MCP servers** — community demand keeps growing (10+ YNAB, 6+ Monarch implementations), but still no vendor participation
-- **Fidelity/Vanguard only via commercial aggregator** — Truthifi ($79.99/year) fills this gap, but no free/open-source option and no official servers from the largest US brokerages
+- **Fidelity/Vanguard support unconfirmed** — [Truthifi](https://truthifi-connect.ai/) claims broad coverage (18,000+ institutions, free tier plus paid plans from $5.99/month) but doesn't name specific supported brokerages on its site, so it can't be confirmed to fill this gap; there's still no free/open-source option and no official servers from the largest US brokerages
 - **No mortgage management** — no loan servicing, refinance calculators, or mortgage provider integrations
 - **No insurance** — no health, auto, home, or life insurance data via MCP
 - **No credit score access** — no Experian, Equifax, or TransUnion integrations, no Credit Karma
@@ -316,11 +317,11 @@ Despite 80+ servers, some significant gaps remain — though several from our la
 
 ## The Bottom Line
 
-Personal Finance MCP servers earn **4.5 out of 5**, up from 4.0 in March. This category matured dramatically in just six weeks. **Official vendor participation accelerated** — Plaid launched its AI Toolkit, Alpha Vantage and EODHD both released official MCP servers, and existing official servers from QuickBooks (now 180 stars, 143 tools) and Xero (257 stars, 49 tools) saw massive growth. **Alpaca's V2 rewrite** (683 stars, 50+ tools) coincided with their reporting [nearly 4x API trading growth in Q1 2026](https://alpaca.markets/blog/alpaca-reports-sharp-growth-in-api-trading-as-ai-reshapes-market-access/). **financial-datasets/mcp-server** nearly tripled to 2,000 stars, making it the most starred finance MCP server.
+Personal Finance MCP servers earn **4.5 out of 5**, up from 4.0 in March. This category matured dramatically in just six weeks. **Official vendor participation accelerated** — Plaid launched its AI Toolkit, Alpha Vantage and EODHD both released official MCP servers, and existing official servers from QuickBooks (now 354 stars, 143 tools) and Xero (350 stars, 49 tools) saw massive growth. **Alpaca's V2 rewrite** (918 stars, 50+ tools) coincided with their reporting [nearly 4x API trading growth in Q1 2026](https://alpaca.markets/blog/alpaca-reports-sharp-growth-in-api-trading-as-ai-reshapes-market-access/). **financial-datasets/mcp-server** more than tripled to 2,300+ stars, making it the most starred finance MCP server.
 
-The budgeting space is finally differentiating — Jtewen/ynab-mcp (13 tools) and keithah/monarchmoney-ts-mcp (70+ operations with dynamic SDK discovery) stand out from the pack. Firefly III added a second comprehensive server. **Truthifi emerged** as the first commercial MCP aggregator covering 18,000+ financial institutions, partially filling the Fidelity/Vanguard gap. The crypto space gained serious risk management tools with lazy-dinosaur/ccxt-mcp and commercial analytics from altFINS.
+The budgeting space is finally differentiating — Jtewen/ynab-mcp (13 tools) and keithah/monarchmoney-ts-mcp (70+ operations with dynamic SDK discovery) stand out from the pack, though calebl/ynab-mcp-server has since become the most-starred YNAB server (140 stars). Firefly III added multiple additional servers. **Truthifi emerged** as a commercial MCP aggregator claiming coverage of 18,000+ financial institutions, though it doesn't name specific brokerages on its site, so we can't confirm it closes the Fidelity/Vanguard gap. The crypto space gained serious risk management tools with lazy-dinosaur/ccxt-mcp and commercial analytics from altFINS.
 
-The remaining weaknesses: no official YNAB or Monarch servers despite massive community demand, Fidelity/Vanguard only via paid aggregator, no insurance or credit score access, Plaid's official MCP only covers developer dashboard analytics not end-user data, and international tax coverage is still US-only. But the trajectory is clearly upward — this is one of the fastest-maturing MCP categories.
+The remaining weaknesses: no official YNAB or Monarch servers despite massive community demand, Fidelity/Vanguard support still unconfirmed via any MCP server, no insurance or credit score access, Plaid's official MCP only covers developer dashboard analytics not end-user data, and international tax coverage is still US-only. But the trajectory is clearly upward — this is one of the fastest-maturing MCP categories.
 
 **Category**: [Finance & Fintech](/categories/finance-fintech/)
 

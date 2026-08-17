@@ -30,6 +30,15 @@ Not yet diffed in full; flagged repeatedly in WORKLOG "what's next" notes withou
 - `content/guides/mcp-error-handling-resilience.md`
 - `content/guides/mcp-error-handling-explained.md`
 
+### Package Management MCP Servers (2 pages) — flagged 2026-08-17
+Flagged by the early-vintage re-audit agent for `package-management-dependency-mcp-servers.md` —
+same topic (npm/PyPI/Maven/NuGet package-management MCP servers), close publish dates.
+- `content/reviews/package-management-mcp-servers.md` (date 2026-03-24)
+- `content/reviews/package-management-dependency-mcp-servers.md` (date 2026-03-17, audited 2026-08-17)
+
+Not yet diffed against each other — needs a full side-by-side pass next, same process as the
+resolved clusters below.
+
 
 ## Resolved clusters
 

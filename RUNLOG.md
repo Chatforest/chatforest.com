@@ -43465,3 +43465,10 @@ No CEO digest sent this run — one already went out at 02:31 UTC and the digest
 2026-08-17T06:48:24Z SESSION 3994 stopped
 2026-08-17T10:29:01Z STARTED run 2710021 (mode=slow)
 2026-08-17T10:29:02Z SESSION 3995 started
+This run is complete: **prune wave 1 batch 4** executed — deleted 100 zero-traffic builders-log pages (rows 301-400 of the manifest), verified via the established method (CRLF-stripped, existence/tracking/single-owner checks, exact manifest-slice diff before commit), rebuilt clean with Hugo, committed (`3ee461c247`), pushed, deployed, and live-verified (404 + absent from sitemap). Wave 1 now stands at **400/907** with 507 remaining. `.last_deploy` bumped (`478a8fc636`).
+
+No CEO digest sent — one already went out today (02:31 UTC, 1/day cap) — this run's summary is logged in WORKLOG.md for tomorrow's digest. Next run should resume with batch 5 (rows 401-500) per the alternation pattern (prune ↔ audit).
+2026-08-17T10:31:04Z FINISHED run 2710021
+2026-08-17T10:31:05Z SESSION 3995 stopped
+2026-08-17T16:30:01Z STARTED run 2817086 (mode=slow)
+2026-08-17T16:30:02Z SESSION 3996 started

@@ -9,7 +9,7 @@ Smart home and home automation MCP servers connect AI agents to the systems that
 
 This review covers **smart home and home automation** — device control (lights, switches, thermostats, locks, cameras), automation management, state monitoring, and IoT orchestration. For IoT hardware protocols and embedded systems, see our [IoT & Embedded review](/reviews/iot-embedded-mcp-servers/). For energy utilities and grid management, see our [Energy & Utilities review](/reviews/energy-utilities-mcp-servers/).
 
-The headline findings: **Home Assistant surged** — ha-mcp more than doubled to 2,600+ stars with 86+ tools. **The consumer platform gap is closing fast** — Apple HomeKit, Samsung SmartThings, Amazon Alexa, and Google Home all gained MCP servers since our initial review. **Philips Hue exploded** with 5+ dedicated MCP servers. **Tuya shipped an official MCP SDK.** **Nine of ten originally-identified gaps now have at least one server.** This category transformed from "Home Assistant or nothing" to a genuine multi-platform ecosystem.
+The headline findings: **Home Assistant surged** — ha-mcp grew to [4,400+ stars](https://github.com/homeassistant-ai/ha-mcp) with 86+ tools. **The consumer platform gap is closing fast** — Apple HomeKit, Samsung SmartThings, Amazon Alexa, and Google Home all gained MCP servers since our initial review. **Philips Hue exploded** with 5+ dedicated MCP servers. **Tuya shipped an official MCP SDK.** **Nine of ten originally-identified gaps now have at least one server.** This category transformed from "Home Assistant or nothing" to a genuine multi-platform ecosystem.
 
 ---
 
@@ -19,7 +19,7 @@ The headline findings: **Home Assistant surged** — ha-mcp more than doubled to
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 2,600+ | Python | MIT | 86+ |
+| [ha-mcp](https://github.com/homeassistant-ai/ha-mcp) | 4,400+ | Python | MIT | 86+ |
 
 **The most comprehensive smart home MCP server by far** — 86+ tools covering the full Home Assistant ecosystem:
 
@@ -36,13 +36,13 @@ The headline findings: **Home Assistant surged** — ha-mcp more than doubled to
 
 Runs locally on your machine — smart home data stays on your network with no cloud dependency. No paid subscription required. Setup wizard supports 15+ AI clients including Claude Desktop, Claude Code, Gemini CLI, ChatGPT, Open WebUI, VSCode, Cursor, and more. Can be paired with Home Assistant Agent Skills for better configuration suggestions. MIT licensed.
 
-**Since our initial review:** Stars more than doubled (1,100+ → 2,600+), tools grew from 80+ to 86+, MIT license confirmed, v7.3.0 released with custom component support and Home Assistant add-on deployment with webhook proxy for remote access via Nabu Casa.
+**Since our initial review:** Stars quadrupled (1,100+ → 4,400+ as of this 2026-08-17 audit, verified via the [live repo](https://github.com/homeassistant-ai/ha-mcp)), tools grew from 80+ to 86+, MIT license confirmed, and the project has continued shipping — v7.3.0 added custom component support and Home Assistant add-on deployment with webhook proxy for remote access via Nabu Casa, and the [release history](https://github.com/homeassistant-ai/ha-mcp/releases) now shows v8.2.0 as the current version.
 
 ### tevonsb/homeassistant-mcp — Real-Time Device Bridge
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 569 | TypeScript | — | Multiple |
+| [homeassistant-mcp](https://github.com/tevonsb/homeassistant-mcp) | 575 | TypeScript | — | Multiple |
 
 **A powerful alternative with real-time event streaming:**
 
@@ -57,13 +57,13 @@ Runs locally on your machine — smart home data stays on your network with no c
 
 The SSE support is notable — it means the AI assistant can receive real-time notifications when device states change, enabling reactive automations like "let me know when the front door opens."
 
-**Since our initial review:** Stars grew from 500+ to 569 (+14%), now at 60 commits with 95% test coverage.
+**Since our initial review:** Stars grew from 500+ to 575 (as of this 2026-08-17 audit), now at [60 commits](https://github.com/tevonsb/homeassistant-mcp/commits/main/) with 95% test coverage per the repo's own coverage badge.
 
 ### ganhammar/hass-mcp-server — HTTP Transport with OAuth 2.0
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [hass-mcp-server](https://github.com/ganhammar/hass-mcp-server) | 30 | Python | MIT | 50+ |
+| [hass-mcp-server](https://github.com/ganhammar/hass-mcp-server) | 64 | Python | MIT | 50+ |
 
 **A Home Assistant custom component with HTTP transport — works remotely, not just locally:**
 
@@ -81,9 +81,9 @@ The HTTP transport (rather than stdio) makes this ideal for remote access to Hom
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [hass-mcp](https://github.com/voska/hass-mcp) | 278 | Python | — | Multiple |
+| [hass-mcp](https://github.com/voska/hass-mcp) | 317 | Python | — | Multiple |
 
-**A well-established Home Assistant MCP server** with 278 stars and 45 forks — entity state queries, device control, and home automation summaries through a standardized MCP interface. Lightweight and focused.
+**A well-established Home Assistant MCP server** with [317 stars and 51 forks](https://github.com/voska/hass-mcp) (as of this 2026-08-17 audit) — entity state queries, device control, and home automation summaries through a standardized MCP interface. Lightweight and focused.
 
 ### Other Home Assistant MCP Servers
 
@@ -112,7 +112,7 @@ Three MCP servers now provide Apple HomeKit control — this was one of the bigg
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [HomeClaw](https://github.com/omarshahine/HomeClaw) | 99 | Swift | — | 10 |
+| [HomeClaw](https://github.com/omarshahine/HomeClaw) | 155 | Swift | — | 10 |
 
 **The most capable Apple HomeKit MCP server:**
 
@@ -133,7 +133,7 @@ Works with Claude Desktop, Claude Code, and OpenClaw. CLI interface for terminal
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [HomeKitMCP](https://github.com/grahamaloo/HomeKitMCP) | 1 | Swift | MIT | 10 |
+| [HomeKitMCP](https://github.com/grahamaloo/HomeKitMCP) | 2 | Swift | MIT | 10 |
 
 **Mac Catalyst app using the native Apple HomeKit framework and official Swift MCP SDK:**
 
@@ -148,7 +148,7 @@ Works with Claude Desktop, Claude Code, and OpenClaw. CLI interface for terminal
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [HomeMCPBridge](https://github.com/coalsi/HomeMCPBridge) | 2 | Swift | MIT | 13 |
+| [HomeMCPBridge](https://github.com/coalsi/HomeMCPBridge) | 3 | Swift | MIT | 13 |
 
 **Native HomeKit integration with camera and NVR support:**
 
@@ -171,7 +171,7 @@ Two MCP servers now provide Samsung SmartThings control — another major gap cl
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [Samsung-SmartThings-MCP](https://glama.ai/mcp/servers/@bjornhovd/Samsung-SmartThings-MCP) | 4 | — | — | Multiple |
+| [Samsung-SmartThings-MCP](https://github.com/bjornhovd/Samsung-SmartThings-MCP) | 0 | — | — | Multiple |
 
 **Production-ready, Dockerized MCP server for SmartThings:**
 
@@ -204,7 +204,7 @@ Two MCP servers now provide Amazon Alexa smart home control — perhaps the most
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [alexa-mcp-server](https://github.com/sijan2/alexa-mcp-server) | 10 | TypeScript | — | Multiple |
+| [alexa-mcp-server](https://github.com/sijan2/alexa-mcp-server) | 13 | TypeScript | — | Multiple |
 
 **Amazon Alexa integration through MCP** — enables Alexa functionality through MCP clients like Poke. Built on Cloudflare Workers infrastructure. Uses reverse-engineered Alexa API endpoints discovered through network analysis.
 
@@ -245,6 +245,8 @@ Two MCP servers now provide Amazon Alexa smart home control — perhaps the most
 
 Currently limited to smart plugs — broader Google Home device support is the next frontier.
 
+**Update (2026-08-17 audit):** the underlying `jmagar/ghome-mcp-server` GitHub repository now returns a 404 — it appears to have been deleted or made private since our last refresh, and no equivalent repo is listed on the author's [current GitHub profile](https://github.com/jmagar?tab=repositories). The [mcp.so listing](https://mcp.so/server/ghome-mcp-server/jmagar) above is still live but is a secondary aggregator, not a primary source, so treat the capability details above as unverified pending a working source. This is currently the only Google Home MCP server we're aware of, so the "Gap Filled" status for this platform should be read with that caveat.
+
 ---
 
 ## Philips Hue — New Subcategory
@@ -269,7 +271,7 @@ If you have Philips Hue lights and want AI control without running Home Assistan
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tuya-mcp-sdk](https://github.com/tuya/tuya-mcp-sdk) | 16 | Python/Go/C# | Apache 2.0 | Multiple |
+| [tuya-mcp-sdk](https://github.com/tuya/tuya-mcp-sdk) | 65 | Python/Go/C# | Apache 2.0 | Multiple |
 
 **The first major IoT platform vendor to ship an official MCP SDK:**
 
@@ -291,7 +293,7 @@ Community implementations also exist, including mcp-server-tuya on PyPI for dire
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [MCP2ZigBee2MQTT](https://github.com/ichbinder/MCP2ZigBee2MQTT) | 5 | TypeScript | MIT | 10 |
+| [MCP2ZigBee2MQTT](https://github.com/ichbinder/MCP2ZigBee2MQTT) | 12 | TypeScript | MIT | 10 |
 
 **Intelligent Zigbee device discovery and control for AI assistants:**
 
@@ -422,7 +424,7 @@ A second implementation, MvdMunnik26/Hubitat-MCP, also connects to Hubitat Eleva
 
 The smart home MCP ecosystem has closed most of its original gaps. What remains:
 
-- **Matter protocol** — no direct MCP-to-Matter bridge (the [home-assistant-matter-hub project was archived March 2026](https://github.com/t0bst4r/home-assistant-matter-hub), though a community fork continues). Matter is accessible indirectly through Home Assistant's Matter integration + ha-mcp
+- **Matter protocol** — no direct MCP-to-Matter bridge (the [home-assistant-matter-hub project was archived March 11, 2026](https://github.com/t0bst4r/home-assistant-matter-hub), with the original maintainer directing users to the [RiDDiX/home-assistant-matter-hub community fork](https://github.com/RiDDiX/home-assistant-matter-hub)). Matter is accessible indirectly through Home Assistant's Matter integration + ha-mcp
 - **Energy monitoring** — no solar panel management, battery storage, or whole-home energy monitoring MCP servers (energy data is available through Home Assistant's energy dashboard + ha-mcp, but no standalone solution)
 - **ADT / SimpliSafe** — Ring has an MCP server but ADT and SimpliSafe do not
 - **Google Home breadth** — current server is limited to smart plugs; broader device control not yet available
@@ -436,7 +438,7 @@ The smart home MCP ecosystem has closed most of its original gaps. What remains:
 
 **The consumer platform gap is closing fast.** In March 2026, we identified ten major gaps — Google Home, Amazon Alexa, Apple HomeKit, Samsung SmartThings, Tuya, Zigbee2MQTT, Matter, energy monitoring, security systems, and robot vacuums. Nine of those ten now have at least one MCP server. Apple HomeKit alone went from zero to three implementations. Samsung SmartThings went from zero to two. Amazon Alexa went from zero to two. Tuya shipped an official SDK — the first major IoT platform vendor to do so.
 
-**Home Assistant's lead grew even stronger.** ha-mcp more than doubled from 1,100+ to 2,600+ stars, making it one of the highest-starred MCP servers in any category. With 86+ tools, MIT license, custom component support, and a setup wizard for 15+ AI clients, it's a reference implementation for how a platform MCP server should work. Four major community alternatives (tevonsb at 569 stars, voska at 278 stars, ganhammar at 30 stars with 50+ tools and OAuth 2.0, plus the built-in integration) give users genuine choice.
+**Home Assistant's lead grew even stronger.** ha-mcp grew from 1,100+ to [4,400+ stars](https://github.com/homeassistant-ai/ha-mcp) (verified as of this 2026-08-17 audit), making it one of the highest-starred MCP servers in any category. With 86+ tools, MIT license, custom component support, and a setup wizard for 15+ AI clients, it's a reference implementation for how a platform MCP server should work. Four major community alternatives ([tevonsb at 575 stars](https://github.com/tevonsb/homeassistant-mcp), [voska at 317 stars](https://github.com/voska/hass-mcp), [ganhammar at 64 stars](https://github.com/ganhammar/hass-mcp-server) with 50+ tools and OAuth 2.0, plus the built-in integration) give users genuine choice.
 
 **Philips Hue became the most MCP-served individual device brand** outside of Home Assistant, with 5+ dedicated servers offering different approaches (multi-bridge, CLI, Docker, native lighting effects, even Morse code signaling).
 

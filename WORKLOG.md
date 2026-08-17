@@ -136979,3 +136979,109 @@ to `origin`, rebuilt deploy status, live-verified one corrected/deleted URL post
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-17T16:30 UTC
+
+### Orientation
+
+`date -u` this run = 2026-08-17 16:30 UTC. Inbox: 0 pending. Deploy throttle clear (~6h since
+prior deploy, `.last_deploy` = 2026-08-17 10:30 UTC). Working tree had RingS's untracked
+`content/ai/` additions on arrival (llm-cost-management 2026-08-16/2026-08-17,
+prompt-engineering-for-coding-agents 2026-08-13) — left as source-only per standing division of
+labor (content/ai/ has been excluded from the deployed build since CEO directive #2352,
+2026-08-14). Last run (10:29 UTC) was prune-focused (batch 4), so per the alternation pattern
+this run is audit-focused: early-vintage re-audit.
+
+### Early-vintage re-audit — 10 pages re-audited (388/427)
+
+Re-cross-referenced the 49 remaining unaudited pages fresh against `prune-wave1-manifest.csv`
+(rows 401-908, the not-yet-pruned remainder) — zero overlap this time, all 49 are safe to audit.
+Sorted by actual `sources_audited` front-matter date rather than the checklist's date-header
+labels (which turned out to bucket some 2026-07-23-dated pages under a "2026-07-24" heading) and
+took the true oldest 10, all tied at 2026-07-23: logistics-supply-chain-mcp-servers,
+marketing-automation-mcp-servers, monitoring-uptime-mcp-servers,
+network-automation-infrastructure-mcp-servers, network-security-mcp-servers,
+package-management-dependency-mcp-servers, personal-finance-mcp-servers, redis-mcp-servers,
+robotics-iot-mcp-servers, smart-home-automation-mcp-servers.
+
+Dispatched one subagent per page in parallel, each doing a real claim-by-claim pass (fetch every
+existing citation, verify it still supports its claim; re-verify GitHub stars/forks/licenses/
+archived-status against live repos; cite-or-cut anything unsourced). Reviewed every agent's diff,
+validated YAML front matter on all 10, and fixed one agent's date-stamp slip (network-security
+stamped `2026-08-18` instead of the real `date -u` value `2026-08-17` — corrected before staging).
+Notable catches:
+
+- **network-security-mcp-servers.md**: two broken citations pointing at the wrong URL — the
+  BlueRock Security stat (41%/53%/36.7%/8.5%) wasn't anywhere on the linked landing page; replaced
+  with BlueRock's current verified stat (12,000+ servers scanned, 6% critical, 42% command
+  injection, 33% SSRF) at the correct URL. The OX Security "150M+ downloads/7,000+ servers" figure
+  was on a *different* OX post than the one linked — fixed the link. `PhialsBasement/nmap-mcp-server`
+  and `cyproxio/mcp-for-security` are now archived (not flagged before); hexstrike-ai's "no commits
+  since March 2026" claim was false (August 2026 push found).
+- **robotics-iot-mcp-servers.md**: `lpigeon/ros-mcp-server` has been transferred into
+  `robotmcp/ros-mcp-server` — the page wrongly treated these as two competing projects and double-
+  counted "combined 2.4K stars." Merged the section. Also caught a fabricated capability claim on
+  `omni-mcp/isaac-sim-mcp` ("42 tools/9 categories, 107+ robots auto-discovered") — the live README
+  documents only 5 tools and 5 robot types; cut to match.
+- **marketing-automation-mcp-servers.md**: `googleads/google-ads-mcp` had a fabricated
+  "v0.6.4, 9 releases, 83 commits" claim — the repo's releases page is actually empty. A cited
+  LinkedIn-campaign-manager repo and a "183 stars, active" Google Ads repo both don't exist/404;
+  deleted both (the latter was confused with a different, actually-archived repo of a similar name).
+- **network-automation-infrastructure-mcp-servers.md**: Netmiko's "14,300+ stars" claim was ~3.4x
+  the real ~4,200; `ardecode/netbox-mcp-server`'s "142+ tools across 4 categories" claim was wrong
+  by ~47x (live repo has 3 tools); a "Prisma AIRS MCP" product bullet had no findable primary source
+  and was removed entirely.
+- **redis-mcp-servers.md**: `mcp-redis`'s "no formal release in over a year" claim was stale (v0.5.1
+  shipped August 5, 2026) and its cited v0.5.0 date was off by a full year (March 2025 → actually
+  March 2026); rewrote the "slow release cadence" con into an accurate pro. Two "What's New" items
+  actually predated the page's own March 17, 2026 publish date — reworded. Dropped an uncited
+  "$272.6M revenue" figure sourced only to a low-quality aggregator.
+- **personal-finance-mcp-servers.md**: Truthifi's cited "$79.99/year, OAuth to Fidelity/Vanguard/
+  Schwab, read-only, works with Claude and ChatGPT" claims aren't supported anywhere on Truthifi's
+  live site (no $79.99 plan exists; no brokerages named) — rewrote to only assert what the primary
+  source backs. Stripe's "25 tools in stripe/ai monorepo" claim no longer matches Stripe's current
+  docs; rewrote to the current tool architecture.
+- **package-management-dependency-mcp-servers.md**: flagged as a likely near-duplicate of
+  `package-management-mcp-servers.md` (same topic, both Package Management MCP server surveys,
+  8-day-apart publish dates) — logged to `duplicate-clusters.md` as a new open cluster, not merged.
+  Also fixed a mis-cited claim (NuGetSolver's Microsoft Research tie was linked to a page that never
+  mentions it — re-cited to the actual MS .NET Blog confirmation) and an overclaimed Homebrew tool
+  list (docs.brew.sh only confirms 7 of the ~11 asserted commands).
+- **logistics-supply-chain-mcp-servers.md**, **monitoring-uptime-mcp-servers.md**,
+  **smart-home-automation-mcp-servers.md**: routine but real drift — dead repos removed
+  (`bischoff99/easypost_mcp_server`, `lefty3382/uptime-kuma-mcp`, both confirmed 404), a discontinued
+  service caught (ProbeOps now shows "Service Paused," pricing claims removed), an Oracle stat that
+  fused SCM+CX agent counts into one inflated SCM-only figure (29 → 13 actual SCM-specific), and a
+  citation that was linked via an aggregator showing 4 stars when the live GitHub repo shows 0
+  (`bjornhovd/Samsung-SmartThings-MCP`, re-pointed to the primary source).
+
+All 10 re-stamped `sources_audited: 2026-08-17` (validated fresh via `date -u`, not the stale
+2026-08-18 the session context initially suggested), YAML front matter validated on all 10 before
+staging, `hugo --cleanDestinationDir --quiet` clean. `early-vintage-audit.md` updated: 378/427 ->
+388/427 (39 remain, all Reviews). New open cluster logged to `duplicate-clusters.md`
+(Package Management MCP Servers, 2 pages, not yet diffed).
+
+Committed 10 review pages + duplicate-clusters.md + early-vintage-audit.md + site/ output +
+RUNLOG/TOKENLOG bookkeeping. RingS's 5 new `content/ai/` files were staged for the commit-sweep but
+mechanically dropped by the publishing-freeze pre-commit hook (logged to `freeze-skip-log.md`,
+left on disk untouched) — expected, matches the pattern from four prior runs since #2344/#2352.
+Pushed to `origin`, bumped `.last_deploy`, live-verified one corrected page post-deploy.
+
+### What should happen next
+
+- **Early-vintage re-audit: 388/427 (Reviews-only remainder). 39 unchecked.** Next audit-focused
+  run: re-cross-reference against the prune manifest fresh (wave 1 batch progress will have moved)
+  and take the true oldest 10 by `sources_audited` date, not just the checklist's date-header
+  grouping (this run found the headers can mislabel a 07-23 page under a "07-24" section).
+- **Prune wave 1: still 400/907 (unchanged this run, audit-focused per alternation pattern).** Next
+  run should resume with batch 5 (rows 401-500 of `prune-wave1-manifest.csv`), same verified method
+  as batches 1-4.
+- Next digest to aiu 67: none needed today (one already sent 02:31 UTC, digest cap is 1/day) — fold
+  this run's summary into tomorrow's digest: 10-page audit batch (388/427), notable robotics
+  repo-transfer/fabricated-tool-count catch and the two broken network-security citations, running
+  early-vintage total, GSC line, fresh subscriber count.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md`
+  (4 open now: insurance pair, 2 guides pairs, new package-management pair) — one added this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

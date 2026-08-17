@@ -2,17 +2,17 @@
 title: "Monitoring & Uptime MCP Servers — UptimeRobot, Uptime Kuma, OneUptime, Better Stack, and New Standalone Platforms"
 date: 2026-03-15T03:20:00+09:00
 description: "Monitoring and uptime MCP servers let AI agents check website availability, manage monitors, investigate incidents, and query status pages across UptimeRobot, Uptime Kuma"
-og_description: "Monitoring & uptime MCP servers: UptimeRobot (official hosted, full CRUD), Uptime Kuma (DavidFuchs 22 stars/23 tools v0.7.0, lefty3382 35 tools), OneUptime (711 endpoints, 126 resources), Better Stack (official at mcp.betterstack.com), NEW standalone platforms PingZen (44 tools, 22 protocols) + Uptrack + UptimeBolt. 17+ servers. Rating: 4.0/5."
+og_description: "Monitoring & uptime MCP servers: UptimeRobot (official hosted, full CRUD), Uptime Kuma (DavidFuchs 41 stars/22 tools; lefty3382's repo has since been removed from GitHub), OneUptime (~155 tools, 22 resource types), Better Stack (official at mcp.betterstack.com), NEW standalone platforms PingZen (44 tools, 22 protocols) + Uptrack + UptimeBolt. 16+ servers. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Monitoring and uptime MCP servers across UptimeRobot, Uptime Kuma, OneUptime, Better Stack, and infrastructure diagnostics. New standalone monitoring platforms with native MCP: PingZen (44 tools, 22 protocols), Uptrack, and UptimeBolt (AI-first, Claude Copilot). DavidFuchs/mcp-uptime-kuma holds at 23 tools in v0.7.0."
+card_description: "Monitoring and uptime MCP servers across UptimeRobot, Uptime Kuma, OneUptime, Better Stack, and infrastructure diagnostics. New standalone monitoring platforms with native MCP: PingZen (44 tools, 22 protocols), Uptrack, and UptimeBolt (AI-first, Claude Copilot). DavidFuchs/mcp-uptime-kuma now at 41 stars, 22 tools."
 categories: ["/categories/observability-monitoring/"]
 last_refreshed: 2026-05-21
-sources_audited: 2026-07-23
+sources_audited: 2026-08-17
 ---
 
 Uptime monitoring is table stakes for any production system — and now AI agents can interact with monitoring platforms directly. The MCP ecosystem here splits between **commercial platforms with official hosted servers** (UptimeRobot, OneUptime, and Better Stack), **open-source platforms with community-built integrations** (Uptime Kuma), and an emerging category of **standalone AI-native monitoring platforms** that launched with MCP as a first-class feature rather than retrofitting it.
 
-The headline finding for May 2026: **three new standalone monitoring platforms** now ship native MCP servers — **PingZen** (44 tools across 8 categories, 22 supported protocols), **Uptrack**, and **UptimeBolt** (AI-first with built-in Claude Copilot). The Uptime Kuma community has also grown, with **lefty3382/uptime-kuma-mcp** offering 35 tools including Docker host management. Meanwhile, **DavidFuchs/mcp-uptime-kuma** holds at v0.7.0 with 23 tools and has grown to 22 stars. **UptimeRobot** continues to ship the most polished official integration at `mcp.uptimerobot.com/mcp`. And **OneUptime** still takes the maximalist approach with 711 endpoints across 126 resource types.
+The headline finding for May 2026: **three new standalone monitoring platforms** now ship native MCP servers — **PingZen** (44 tools across 8 categories, 22 supported protocols), **Uptrack**, and **UptimeBolt** (AI-first with built-in Claude Copilot). **DavidFuchs/mcp-uptime-kuma** has kept shipping since v0.7.0 — releases through [v0.11.9](https://github.com/DavidFuchs/mcp-uptime-kuma/releases) — and is now at **22 tools** and **41 [GitHub stars](https://github.com/DavidFuchs/mcp-uptime-kuma)**. **UptimeRobot** continues to ship the most polished official integration at [`mcp.uptimerobot.com/mcp`](https://uptimerobot.com/mcp/). And **OneUptime** takes the maximalist approach with [roughly 155 tools across 22 resource types](https://oneuptime.com/docs/ai/mcp-server).
 
 ## The Landscape
 
@@ -28,7 +28,7 @@ The tool set covers the full monitoring lifecycle: **list and manage monitors** 
 
 Security is handled sensibly. You can use a **read-only API key** for pure monitoring visibility, or the main API key for full read/write access. The token goes in a Bearer authorization header, keeping it out of URL parameters.
 
-UptimeRobot's [free tier](https://uptimerobot.com/pricing/) (50 monitors, 5-minute intervals) works with MCP. Paid plans (Solo, Team, and Enterprise tiers) add shorter intervals and more monitors. The MCP integration itself doesn't appear to add extra cost.
+UptimeRobot's [free tier](https://uptimerobot.com/pricing/) (50 monitors, 5-minute intervals) works with MCP. Paid plans (Solo, Team, Scale, and Enterprise tiers) add shorter intervals and more monitors. The MCP integration itself doesn't appear to add extra cost.
 
 The gap: UptimeRobot's MCP documentation is sparse. Tool names and capabilities auto-discover, but there's no public reference listing every available tool with parameter schemas. You're trusting the MCP client's tool discovery to surface everything.
 
@@ -36,43 +36,42 @@ The gap: UptimeRobot's MCP documentation is sparse. Tool names and capabilities 
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [DavidFuchs/mcp-uptime-kuma](https://github.com/DavidFuchs/mcp-uptime-kuma) | 22 | TypeScript | 23 | Anonymous/password/JWT | stdio, Streamable HTTP |
-| [lefty3382/uptime-kuma-mcp](https://github.com/lefty3382/uptime-kuma-mcp) | 0 | Python | 35 | Username/password | stdio, Docker |
-| [Camusama/uptime-kuma-mcp-server](https://github.com/Camusama/uptime-kuma-mcp-server) | 4 | Python | 3 | Username/password | SSE |
+| [DavidFuchs/mcp-uptime-kuma](https://github.com/DavidFuchs/mcp-uptime-kuma) | 41 | TypeScript | 22 | Anonymous/password/JWT | stdio, Streamable HTTP |
+| [Camusama/uptime-kuma-mcp-server](https://github.com/Camusama/uptime-kuma-mcp-server) | 8 | Python | 3 | Username/password | SSE |
 | [phukit29182/uptime-kuma-mcp-server](https://github.com/phukit29182/uptime-kuma-mcp-server) | 1 | Python | 12 | Username/password | stdio, SSE |
-| [gryfai/mcp-uptime-kuma-open](https://github.com/gryfai/mcp-uptime-kuma-open) | 0 | Python | 8 (read-only) | Username/password | stdio |
+| [cfossto/mcp-uptime-kuma-open](https://github.com/cfossto/mcp-uptime-kuma-open) | 0 | Python | 8 (read-only) | Username/password | stdio |
 
-**Uptime Kuma is the most popular self-hosted monitoring tool** ([louislam/uptime-kuma](https://github.com/louislam/uptime-kuma), 85K+ stars), and it has the most MCP servers in this category — though none are official.
+**Uptime Kuma is the most popular self-hosted monitoring tool** ([louislam/uptime-kuma](https://github.com/louislam/uptime-kuma), 90K+ stars), and it has the most MCP servers in this category — though none are official.
 
-**DavidFuchs/mcp-uptime-kuma** is the clear community leader and has undergone a **major expansion in [v0.7.0](https://github.com/DavidFuchs/mcp-uptime-kuma/releases)** (March 24, 2026). The tool count jumped from 9 to **23 tools** across six categories: **9 monitor tools** (get summaries, list, create, update, delete, pause, resume), **2 heartbeat tools**, **4 notification tools**, **3 tag tools**, **2 maintenance tools**, and **2 status pages & settings tools**. The v0.7.0 release added authentication improvements with Uptime Kuma v2 and full write-side MCP tools — you can now create, update, and delete monitors directly through MCP, not just read them. Now at 22 stars, 58+ commits, context-efficient by design. Supports both stdio (local via npx) and Streamable HTTP (remote via Docker). Authentication includes anonymous, username/password, and JWT tokens. TypeScript, MIT. No releases after v0.7.0, but the server is stable and actively starred.
+**DavidFuchs/mcp-uptime-kuma** is the clear community leader. Its [README](https://github.com/DavidFuchs/mcp-uptime-kuma/blob/main/README.md) now lists **22 tools** across six categories: **9 monitor tools** (get summaries, list, create, update, delete, pause, resume), **2 heartbeat tools**, **4 notification tools**, **3 tag tools**, **2 maintenance tools**, and **2 status pages & settings tools**. Development has kept moving well past the [v0.7.0](https://github.com/DavidFuchs/mcp-uptime-kuma/releases/tag/v0.7.0) release (March 24, 2026) that first added write-side tools: the project has shipped through [v0.11.9](https://github.com/DavidFuchs/mcp-uptime-kuma/releases) (August 2026), including a [v0.11.0](https://github.com/DavidFuchs/mcp-uptime-kuma/releases) release that hardened credential redaction after read tools were found to expose stored secrets. Now at **41 stars**, context-efficient by design. Supports both stdio (local via npx) and Streamable HTTP (remote via Docker). Authentication includes anonymous, username/password, and JWT tokens. TypeScript, MIT.
 
-**lefty3382/uptime-kuma-mcp** is a new Python entry (March 2026) with a broader tool surface: **35 tools across 8 categories** — monitors, notifications, status pages, Docker host management, maintenance windows, tags, heartbeats, and server administration (database shrink, clear events/stats). Notably, 9 destructive operations require a `confirm=True` safety flag, which prevents accidental deletes. Uses FastMCP with asyncio bridge; Docker deployment supported. 0 stars and still unproven in production, but the tool coverage surpasses DavidFuchs on paper — particularly the Docker host management and server admin tools that DavidFuchs lacks.
+**lefty3382/uptime-kuma-mcp**, previously listed here as a 35-tool Python entry with Docker host management, has been removed from GitHub — the repository now returns a 404 and no longer appears in the author's public repos as of this audit (August 2026). We can no longer verify its tool count or feature claims, so we've dropped it from this comparison rather than repeat unsourced numbers.
 
-**phukit29182/uptime-kuma-mcp-server** has 12 tools including `edit_monitor`, `add_monitor_tag`, `delete_monitor_tag`, `get_status_page`, and `get_tags`. It uses FastMCP (Python), supports stdio and SSE, but has only 6 commits and 1 star. No license specified. Note: DavidFuchs now covers most of these features in v0.7.0, reducing the differentiation.
+**phukit29182/uptime-kuma-mcp-server** has 12 tools including `edit_monitor`, `add_monitor_tag`, `delete_monitor_tag`, `get_status_page`, and `get_tags`. It uses FastMCP (Python), supports stdio and SSE, and has 1 star. No license specified. DavidFuchs now covers most of these features, reducing the differentiation.
 
-**Camusama/uptime-kuma-mcp-server** is the most minimal — just 3 tools (`add_monitors`, `get_monitors`, `delete_monitors`) for batch monitor management. Available on PyPI (`uvx uptime-kuma-mcp-server`), SSE transport, 33 commits, v0.1.15 (April 11, 2025 — no new releases). Now at 4 stars. Useful if you only need bulk operations.
+**Camusama/uptime-kuma-mcp-server** is the most minimal — just 3 tools (`add_monitors`, `get_monitors`, `delete_monitors`) for batch monitor management. Available on PyPI (`uvx uptime-kuma-mcp-server`), SSE transport. Now at 8 stars. Useful if you only need bulk operations.
 
-**gryfai/mcp-uptime-kuma-open** takes a commercial approach — the open version is read-only (monitor status, beats, notifications, status pages, heartbeats, tags, database size). Write operations (create/edit monitors, manage notifications, Docker functions) require the commercial closed-source version. BSL license (converts to Apache 2.0 eventually). 29 commits.
+**cfossto/mcp-uptime-kuma-open** (previously published under the account gryfai, which has since renamed/transferred the repo — the old `gryfai/mcp-uptime-kuma-open` URL now redirects here) takes a commercial approach — the open version is read-only (monitor status, beats, notifications, status pages, heartbeats, tags, database size). Write operations (create/edit monitors, manage notifications, Docker functions) require the commercial closed-source version. 0 stars, 1 fork.
 
-The fragmentation is disappointing but typical of the Uptime Kuma ecosystem. DavidFuchs is the safe choice for most users — it has the best transport support, the cleanest auth model, and zero open issues.
+The fragmentation is disappointing but typical of the Uptime Kuma ecosystem. DavidFuchs is the safe choice for most users — it has the best transport support, the cleanest auth model, and the most active maintenance.
 
 ### OneUptime (Official)
 
 | Server | Stars | Language | Tools | Auth | Transport |
 |--------|-------|----------|-------|------|-----------|
-| [OneUptime MCP](https://oneuptime.com/docs/ai/mcp-server) | — | Hosted + self-hosted | 711 endpoints, 126 resources | API key, Bearer token | Streamable HTTP |
+| [OneUptime MCP](https://oneuptime.com/docs/ai/mcp-server) | — | Hosted + self-hosted | ~155 tools, 22 resource types | API key, Bearer token | Streamable HTTP |
 
-**OneUptime is the most comprehensive monitoring MCP server by raw coverage.** The MCP server exposes the entire OneUptime API — 711 endpoints across 126 resource types — through Streamable HTTP transport.
+**OneUptime is the most comprehensive monitoring MCP server by raw coverage.** As of this audit, [OneUptime's own docs](https://oneuptime.com/docs/ai/mcp-server) describe **~155 tools**: full CRUD for **22 resource types** (incidents, alerts, monitors, status pages, on-call, and more), plus read-only telemetry tools and workflow/helper tools, all through Streamable HTTP transport. (An earlier version of this page cited 711 endpoints across 126 resource types — that figure no longer matches the current docs and has been corrected.)
 
-The tool categories span the full observability stack: **monitors** (health status, uptime, response times, alert configs), **incidents** (creation, management, timelines, severity), **logs** (full-text search, correlation with incidents and traces), **metrics** (time series, trend analysis, anomaly detection), **traces** (distributed tracing across services), **status pages** (public-facing status with incidents, maintenance, announcements), **teams** (access control, notifications), and **workflows** (automated response).
+The tool categories span the full observability stack: **monitoring** (3 types), **incidents** (5 types), **alerts** (4 types), **status pages** (2 types), **scheduled maintenance** (3 types), **teams & on-call** (2 types), **labels** (1 type), and **telemetry** (5 types) — logs, spans, traces, metrics, and exceptions.
 
 Two deployment options: **cloud-hosted** at `oneuptime.com/mcp` and **self-hosted** at `your-domain.com/mcp`. Both use the same MCP interface. OneUptime is 100% open source ([OneUptime/oneuptime](https://github.com/OneUptime/oneuptime) on GitHub).
 
-Authentication supports two modes: **public** (no API key, limited to public status page tools like `get_public_status_page_overview`, `get_public_status_page_incidents`, `get_public_status_page_scheduled_maintenance`, `get_public_status_page_announcements`) and **authenticated** (API key via `x-api-key` header or Bearer token, full access to all 126 resource types with CRUD operations).
+Authentication supports two modes: **public** (no API key, limited to public status page tools and help documentation) and **authenticated** (API key via `x-api-key` header or Bearer token, full access to all 22 resource types with CRUD operations).
 
-The concern: 711 endpoints is an enormous tool surface. Most MCP clients struggle with even 50-100 tools — context window consumption, tool selection accuracy, and response latency all degrade with high tool counts. OneUptime's `oneuptime_list_resources` tool helps agents discover what's available, but this is still a firehose approach. The `oneuptime_help` tool provides guidance, but the raw API surface may overwhelm smaller models.
+The concern: ~155 tools is still a large tool surface. Most MCP clients struggle with even 50-100 tools — context window consumption, tool selection accuracy, and response latency all degrade with high tool counts. OneUptime's discovery tools help agents find what's available, but the raw API surface may still overwhelm smaller models.
 
-OneUptime offers both free and paid tiers, with the self-hosted option being completely free.
+OneUptime offers both [free and paid tiers](https://oneuptime.com/pricing), with the self-hosted option being completely free.
 
 ### Better Stack (Official + Community)
 
@@ -91,7 +90,7 @@ OneUptime offers both free and paid tiers, with the self-hosted option being com
 
 Authentication supports **OAuth** (recommended, automatic browser-based sign-in) or **API token** via Authorization header. Admins can restrict tool access with `X-MCP-Tools-Only` (allowlist) or `X-MCP-Tools-Except` (blocklist) custom headers — a nice security touch.
 
-The official server launched in September 2025, but we missed it in our March review. It completely supersedes the community alternatives — **DrDroidLab/betterstack-logs-mcp** (1 star, last commit July 2025) is now redundant for Better Stack users.
+We missed it in our March review; we can't independently verify Better Stack's own account of exactly when the [MCP server launched](https://betterstack.com/docs/getting-started/integrations/mcp/), so we're not restating a specific launch date here. It effectively supersedes the community alternatives — **[DrDroidLab/betterstack-logs-mcp](https://github.com/DrDroidLab/betterstack-logs-mcp)** (1 star, last commit July 2025) is now redundant for Better Stack users.
 
 This fills what was the most notable gap in the monitoring MCP landscape. Better Stack joins UptimeRobot and OneUptime as the third major monitoring platform with an official hosted MCP endpoint.
 
@@ -101,11 +100,11 @@ This fills what was the most notable gap in the monitoring MCP landscape. Better
 |--------|-------|----------|-------|------|-----------|
 | [kumarprobeops/probeops-mcp-server](https://github.com/kumarprobeops/probeops-mcp-server) | ~0 | TypeScript | 21 | Optional API key | HTTPS |
 | [zacharycox-tamu/mcp-checkuptime](https://github.com/zacharycox-tamu/mcp-checkuptime) | ~0 | Python | 2 | None | stdio, HTTP |
-| [imprvhub/mcp-status-observer](https://github.com/imprvhub/mcp-status-observer) | 7 | TypeScript | 1 (22 platforms) | None | stdio |
+| [imprvhub/mcp-status-observer](https://github.com/imprvhub/mcp-status-observer) | 8 | TypeScript | 1 (22 platforms) | None | stdio |
 
 These servers don't integrate with a monitoring platform — they perform diagnostic checks directly.
 
-**ProbeOps MCP Server** is the most interesting standalone option. 21 tools across infrastructure diagnostics: `ssl_check`, `dns_lookup`, `is_it_down`, `latency_test`, `traceroute`, `port_check`, `ping`, `whois`, `nmap_port_check`, `tcp_ping`, `keyword_check`, `websocket_check`, `banner_grab`, `api_health`, plus 6 DNS shortcuts and geo-proxy browsing from 6 global regions (US East, US West, EU Central, Canada, India, Australia). It works instantly with no API key required ([demo mode: 11 tools, 10 calls/day](https://probeops.com/pricing)). Free tier: 21 tools, 100 calls/day. Professional tier: 5,000 calls/day. Multi-region execution is genuinely useful — you can test if a site is down globally or just from your location.
+**ProbeOps MCP Server**'s [GitHub repo](https://github.com/kumarprobeops/probeops-mcp-server) still lists 21 tools across infrastructure diagnostics: `ssl_check`, `dns_lookup`, `is_it_down`, `latency_test`, `traceroute`, `port_check`, `ping`, `whois`, `nmap_port_check`, `tcp_ping`, `keyword_check`, `websocket_check`, `banner_grab`, `api_health`, plus 6 DNS shortcuts and geo-proxy browsing from 6 global regions (US East, US West, EU Central, Canada, India, Australia). **However, as of this audit (August 2026), [probeops.com](https://probeops.com/) itself displays a "Service Paused" notice** — "ProbeOps and its network diagnostic tools are no longer available. We've stepped away to focus on other projects, and may bring the service back in the future." The MCP server's underlying pricing tiers and demo mode described in earlier versions of this review can no longer be verified against a live service, so we've removed those specific numbers. Treat this entry as inactive rather than a working recommendation until the site returns.
 
 **mcp-checkuptime** provides just 2 tools (`ping_host`, `check_website`) for basic connectivity checking. MIT, runs as both MCP server and standalone web API on port 9000. Useful for Open WebUI integration.
 
@@ -119,15 +118,15 @@ A new pattern has emerged: purpose-built monitoring platforms that launched with
 |--------|-------|----------|-------|------|-----------|
 | [midi-chlorians8/pingzen-mcp](https://github.com/midi-chlorians8/pingzen-mcp) | 0 | Dockerfile | 44 | — | — |
 | [Uptrack-App/uptrack-mcp](https://github.com/Uptrack-App/uptrack-mcp) | 0 | — | — | — | — |
-| [clm-cloud-solutions/uptimebolt-mcp-server](https://github.com/clm-cloud-solutions/uptimebolt-mcp-server) | 1 | — | — | — | — |
+| [clm-cloud-solutions/uptimebolt-mcp-server](https://github.com/clm-cloud-solutions/uptimebolt-mcp-server) | 2 | — | — | — | — |
 
 **PingZen MCP Server** is the most comprehensive newcomer: **44 tools across 8 categories** covering Monitor, Alert, Incident, Status Page, Heartbeat, Telegram Group, Auth, and Monitor Group. Supports **22 protocols** — an unusually broad protocol range — and 10 alert channels. PingZen is a standalone SaaS monitoring platform, not a wrapper around UptimeRobot or Better Stack. The MCP server launched in March 2026. 0 stars and unproven, but the breadth (22 protocols, 44 tools) is remarkable if the platform proves reliable.
 
 **Uptrack** (uptrack.app) launched its MCP server in May 2026 — the most recently released entry in this category. No detailed tool list yet, but the product page targets Claude, ChatGPT, Cursor, VS Code, and Windsurf as clients. Early stage.
 
-**UptimeBolt** (clm-cloud-solutions/uptimebolt-mcp-server) is an AI-first monitoring platform with a built-in Claude-powered Copilot alongside its MCP server. Monitors HTTP, TCP, DNS, Heartbeat, Synthetic, Email, and Database. Offers free and paid tiers. 1 star. The "AI-first" positioning and multi-protocol support are interesting, but it's a brand-new platform with no track record.
+**UptimeBolt** (clm-cloud-solutions/uptimebolt-mcp-server) is an AI-first monitoring platform with a built-in Claude-powered Copilot alongside its MCP server. Monitors HTTP, TCP, DNS, Heartbeat, Synthetic, Email, and Database. Offers free and paid tiers. 2 stars. The "AI-first" positioning and multi-protocol support are interesting, but it's a brand-new platform with no track record.
 
-These three represent a new direction: platforms that treat AI agent integration as a founding premise rather than an integration add-on. None have meaningful traction yet (0–1 stars, launched March–May 2026), so treat them as ones to watch rather than production recommendations.
+These three represent a new direction: platforms that treat AI agent integration as a founding premise rather than an integration add-on. None have meaningful traction yet (0–2 stars, launched March–May 2026), so treat them as ones to watch rather than production recommendations.
 
 ### Community UptimeRobot
 
@@ -144,7 +143,7 @@ These three represent a new direction: platforms that treat AI agent integration
 
 **The hosted model wins again.** UptimeRobot, OneUptime, and Better Stack all offer cloud-hosted MCP endpoints — zero installation, zero maintenance. Three of the four major monitoring platforms with MCP support use hosted endpoints, following the pattern set by Slack, Asana, and PagerDuty.
 
-**Community servers are maturing fast, then plateauing.** DavidFuchs/mcp-uptime-kuma jumped from 9 read-mostly tools to 23 full CRUD tools in v0.7.0 (March 2026), then stabilized — no releases since. The community is still active (22 stars and rising) but the pace of feature addition has slowed. New entrants like lefty3382 are expanding the tool surface (35 tools, adding Docker host management), though without production track records yet.
+**Community servers are maturing fast, and still shipping.** DavidFuchs/mcp-uptime-kuma jumped from 9 read-mostly tools to full CRUD in v0.7.0 (March 2026) and has kept releasing since — through v0.11.9 as of this audit, now at 22 tools and 41 stars. (A previous version of this section cited a second fast-growing entrant, lefty3382/uptime-kuma-mcp; that repository has since been removed from GitHub and we can no longer verify its claims, so it's been dropped.)
 
 **AI-native platforms are entering the category.** Three new standalone monitoring platforms launched with MCP as a founding feature in 2026: PingZen (44 tools, 22 protocols), Uptrack, and UptimeBolt (Claude Copilot built-in). This is qualitatively different from established platforms retrofitting MCP. None have traction yet, but the pattern suggests monitoring and AI agents are converging at the platform level, not just the integration layer.
 
@@ -159,11 +158,12 @@ These three represent a new direction: platforms that treat AI agent integration
 - **No Site24x7 MCP server.** ManageEngine's monitoring suite still has no MCP integration.
 - **No Datadog Synthetics MCP.** Datadog's MCP server covers logs, metrics, traces, and monitors, but synthetic monitoring is not broken out as a separate tool category (see [Datadog MCP review](/reviews/datadog-mcp-server/)).
 - ~~Better Stack has no official MCP~~ — **resolved!** Better Stack ships an official MCP server at `mcp.betterstack.com`.
-- **New standalone platforms are unproven.** PingZen, Uptrack, and UptimeBolt all have MCP servers but no meaningful adoption (0–1 stars, no production reports). Worth watching but not yet ready to fill the gaps above.
+- **New standalone platforms are unproven.** PingZen, Uptrack, and UptimeBolt all have MCP servers but no meaningful adoption (0–2 stars, no production reports). Worth watching but not yet ready to fill the gaps above.
+- **ProbeOps has gone offline.** As of this audit (August 2026), [probeops.com](https://probeops.com/) shows a "Service Paused" notice; the standalone diagnostic-tools category has lost its most-featured entry for now.
 
 ## The Verdict
 
-The monitoring & uptime MCP category continues to expand. Three established commercial platforms ship official hosted endpoints (UptimeRobot, OneUptime, Better Stack), the leading community server (DavidFuchs/mcp-uptime-kuma) is stable at 23 tools with growing adoption (22 stars), and a new wave of AI-native standalone platforms (PingZen, Uptrack, UptimeBolt) is emerging with MCP as a first-class feature. The Uptime Kuma community has gained another serious contender in lefty3382 with 35 tools. UptimeRobot remains the most polished for simple website monitoring. Better Stack's official server adds the deepest observability integration. OneUptime offers the broadest API surface. Uptime Kuma users have a clear winner in DavidFuchs, with lefty3382 as an alternative if Docker host management matters.
+The monitoring & uptime MCP category continues to expand. Three established commercial platforms ship official hosted endpoints (UptimeRobot, OneUptime, Better Stack), the leading community server (DavidFuchs/mcp-uptime-kuma) is actively maintained at 22 tools with growing adoption (41 stars), and a new wave of AI-native standalone platforms (PingZen, Uptrack, UptimeBolt) is emerging with MCP as a first-class feature. UptimeRobot remains the most polished for simple website monitoring. Better Stack's official server adds the deepest observability integration. OneUptime offers the broadest API surface. Uptime Kuma users have a clear winner in DavidFuchs.
 
 The notable shift is the emergence of AI-native platforms that built monitoring around AI agents rather than bolting on MCP later. PingZen (44 tools, 22 protocols) in particular signals that monitoring-as-a-platform is being rethought with agent interfaces in mind. None of these new platforms have production track records yet, but they represent where the category is heading.
 
