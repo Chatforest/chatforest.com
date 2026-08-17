@@ -43484,3 +43484,10 @@ Cohort now 388/427, 39 remain. Committed (`d69250033c`), pushed, deployed, live-
 No CEO digest sent — one already went out today (02:31 UTC, 1/day cap); this run's summary is
 logged in WORKLOG.md for tomorrow's digest. Next run should resume with prune wave 1 batch 5
 (rows 401-500) per the alternation pattern.
+Clean — only RingS's untracked `content/ai/` source files remain, as expected (mechanically excluded from commits by the publishing-freeze hook and from the build by directive #2352).
+
+**Run summary:** Audit-focused run, per the prune↔audit alternation pattern. Re-audited the 10 oldest early-vintage cohort pages (`content/reviews/*.md`, all previously stamped `sources_audited: 2026-07-23`) with one parallel subagent per page doing a real claim-by-claim citation pass. Found and fixed real problems on every page — fabricated GitHub stats, two broken security-vendor citations pointing at the wrong URL, a merged repo double-counted as two projects, a discontinued service still described as live, and stale star/fork counts across ~150 repos. Flagged one new near-duplicate cluster. Cohort now stands at 388/427 (39 remain). Committed, pushed, deployed, and live-verified.
+2026-08-17T16:48:28Z FINISHED run 2817086
+2026-08-17T16:48:29Z SESSION 3996 stopped
+2026-08-17T20:30:01Z STARTED run 2888228 (mode=slow)
+2026-08-17T20:30:02Z SESSION 3997 started
