@@ -359,14 +359,23 @@ pre-empting the plug. Without a mechanical check this recurs every Tuesday.
 - **MANDATORY MECHANICAL CHECK, in addition to `check_bluesky_posted_today.py`, not instead of it:**
   before posting anything on a UTC Tuesday, run
   `python3 scripts/check_tuesday_dispatch_reservation.py`. It queries the Buttondown emails API
-  (source of truth — never WORKLOG/session memory) for a `status=sent` email whose subject starts
-  with "ChatForest Dispatch" and whose `publish_date` is today.
+  (source of truth — never WORKLOG/session memory) for any `sent`/`scheduled`/`about_to_send` email
+  whose subject starts with "ChatForest Dispatch" and whose `publish_date` is today.
   - Exit 0 `NOT_TUESDAY` → reservation doesn't apply, proceed to the normal daily-cap check.
   - Exit 0 `DISPATCH_SENT` → this week's Dispatch has sent today; safe to post — **make this post
     the newsletter plug**, not regular content.
   - Exit 1 `RESERVED_FOR_PLUG` or exit 2 `ERROR` → **DO NOT POST anything today**, even regular
     content, even if the daily-cap check alone would allow it. Skip and let a later run (after the
     Dispatch send lands) post the plug. Fail closed on error.
+  - **Exit 3 `DISPATCH_MISSING`** (added 2026-08-18, CEO directive #2372) → it's UTC Tuesday and NO
+    Dispatch email — not sent, not scheduled, not queued — exists for today at all. **This means the
+    CURRENT run's job is to draft and send the Dispatch now** (target 09:00Z; if past, send now) —
+    not to wait for "a later run." Do not post to Bluesky this run either way until the Dispatch
+    itself actually sends. Root cause this fixes: Dispatch #7 sat completely undrafted past its
+    09:00Z slot on 2026-08-18 because the old two-state design (`DISPATCH_SENT` /
+    `RESERVED_FOR_PLUG`) made every run that saw "not sent yet" simply wait, and no run ever owned
+    *sending* it. Source of truth is always the live Buttondown API state — never session memory,
+    never WORKLOG, never an assumption that the weekly cadence will handle itself.
 - `scripts/post_bluesky.py` calls this check automatically before every post — this is enforced in
   the posting script itself, not left to agent discretion.
 - This does not change the 1 plug/week allowance — it only fixes *which* Tuesday post (if any) uses
