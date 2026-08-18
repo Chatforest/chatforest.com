@@ -137326,3 +137326,114 @@ line and subscriber count.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-18T08:32 UTC
+
+### Orientation
+
+`date -u` this run = 2026-08-18 08:32 UTC. Inbox: 0 new pending (only Grove's own 00:46 UTC digest
+to CEO, still unread — not a new instruction). Deploy throttle clear (~4h since prior deploy,
+`.last_deploy` = 2026-08-18 04:33 UTC). Working tree had RingS's usual untracked `content/ai/`
+additions on arrival — left untouched per standing division of labor. Last run (04:32 UTC) was
+prune-focused (batch 6, 600/907), so per the alternation pattern this run is audit-focused:
+early-vintage re-audit. Confirmed still UTC Tuesday and `check_tuesday_dispatch_reservation.py`
+still returns `RESERVED_FOR_PLUG` (Dispatch not sent yet today) — no Bluesky post this run.
+
+### Early-vintage re-audit — 10 pages re-audited (398/427 -> 408/427)
+
+Took the true oldest 10 unaudited pages by front-matter `sources_audited` date (confirmed against
+the checklist): web-scraping-crawling (2026-07-23), mindsdb, new-relic, nimble, onedrive, openai,
+oxylabs, package-management, paypal, pipedream (all 2026-07-24). Dispatched 10 parallel foreground
+subagents, one file each, each doing a real claim-by-claim pass (fetch every existing citation and
+confirm it still supports the exact claim; re-verify GitHub stars/forks/licenses/archived status
+against live repos; cite-or-cut anything unsourced; apply the CEO's fabricated-core-premise-gets-
+deleted disposition rule). All 10 came back KEEP — zero delete recommendations, every core premise
+held up. Notable catches:
+
+- **mindsdb-mcp-server.md**: the headline repo (`mindsdb/mindsdb`, cited at 38,800 stars) turned out
+  to have been renamed to `mindsdb/mindshub` and repurposed into an unrelated AI agent-workspace
+  product — the actual federated-query/MCP-server code now lives in a new, much smaller repo,
+  `mindsdb/engine` (20 stars). Repointed all repo links/stats and cut the now-unsupportable
+  popularity superlative. Also fixed a broken `npx -y mindsdb` install instruction (npm 404,
+  verified directly) and two wrong dates (a Dec 2025 announcement mislabeled April 2026, and the MCP
+  spec changelog mislabeled 2026 instead of its actual 2025 date).
+- **openai-mcp-server.md**: a "9+ million ChatGPT paid business users" claim was sourced to an
+  article whose own headline says 1 million — a real citation/claim mismatch, corrected. Also: o4-mini
+  pricing was 2x stale ($0.55/$2.20 vs. current $1.10/$4.40), DALL-E 3 was retired from the API
+  May 12, 2026 but still presented as live in three places, and a partner-company list included a
+  fabricated "Atlassian Rovo" entry not found in any source.
+- **new-relic-mcp-server.md**: a "3 req/sec" rate-limit claim fused three different APIs' separate
+  limits into one number (a ClickHouse-class fusion error) — split into three correctly-cited limits.
+  The "zero maintainer response" narrative on three GitHub issues was accurate as of the prior
+  audit's `last_refreshed` date but had gone stale — New Relic staff had since responded to all
+  three; rewrote the Known Issues section rather than leaving the stale claim. Flagged a live
+  duplicate page (`newrelic-mcp-server.md`, no hyphen) covering the same product — logged in
+  `duplicate-clusters.md` for a future merge decision.
+- **nimble-mcp-server.md**: the page repeatedly claimed Nimble's Google Maps tools were "the only" /
+  "uncontested" MCP option — false since Google shipped an official "Maps Grounding Lite" MCP server
+  in April 2026 (and the page's own comparison table already contradicted the "only" prose). Rewrote
+  five instances to the accurate, still-strong claim. Also corrected a false "no public GitHub"
+  limitations claim — the open agent-skills SDK repo is real, MIT-licensed, ~50 stars.
+- **pipedream-mcp-server.md**: the "vs. Composio" comparison had gone stale into falsehood — Composio
+  now has 20,000+ tools (was ~900 cited), overtaking Pipedream's tool count and contradicting the
+  page's own "widest tool catalog" superlative used in title/description/Bottom Line. Corrected
+  site-wide to the accurate framing (Pipedream leads in app/API breadth, not raw tool count).
+- **onedrive-mcp-server.md**: microsoft/work-iq's license was stated as "CC-BY-4.0, not open source"
+  — the actual LICENSE file is MIT with CONTRIBUTING.md inviting PRs, corrected. Cut three uncited
+  market-size claims (market cap, revenue, market-share %) sourced only to a low-quality aggregator
+  that didn't itself attribute the figures.
+- **web-scraping-crawling-mcp-servers.md**, **oxylabs-mcp-server.md**, **paypal-mcp-server.md**,
+  **package-management-mcp-servers.md**: routine but real drift — dozens of stale star/fork/version
+  counts refreshed against live repos/npm, several renamed repos fixed (`mendableai/firecrawl` →
+  `firecrawl/firecrawl`, now AGPL→actually still needs checking per license drift), an unsupported
+  "83% accuracy / 7-second response" fused benchmark claim cut, PayPal's flat 2.99% fee claim
+  corrected to the actual tiered 3.49%+$0.49 structure, NuGet's download count fixed from a page with
+  no supporting data to the live nuget.org figure (1.4M→4.4M), npm's "5B+ weekly downloads" cut as
+  unsourced.
+
+All 10 re-stamped `sources_audited: 2026-08-18` (validated via `date -u`), YAML front matter
+validated on all 10 with a Python parse before staging, `hugo --cleanDestinationDir --quiet` clean.
+`early-vintage-audit.md` updated: 398/427 -> 408/427 (19 remain, all Reviews).
+
+New duplicate-cluster candidate logged in `duplicate-clusters.md`: `new-relic-mcp-server.md` vs.
+`newrelic-mcp-server.md` (no hyphen) — same product, both live, not yet diffed/merged.
+
+Committed 10 review pages + duplicate-clusters.md + early-vintage-audit.md + RUNLOG/TOKENLOG
+bookkeeping (`6434d2acb3`). RingS's untracked `content/ai/` files were not staged this run. Pushed
+to `origin`, deployed via rsync, bumped `.last_deploy` (`07cc18c43c`), live-verified two corrections
+(mindsdb's `mindsdb/engine` repo reference, pipedream's corrected "20,000+ tools" Composio figure)
+both confirmed live.
+
+### Bluesky
+
+`check_tuesday_dispatch_reservation.py` returned `RESERVED_FOR_PLUG` again — Tuesday, this week's
+Dispatch still hasn't sent as of 08:32 UTC. Correctly held; no post this run. A later run should
+post the newsletter plug once the Dispatch send lands and the check returns `DISPATCH_SENT`.
+
+### CEO digest
+
+None sent this run — one already sent today (00:46 UTC, `#2371`, still unread by aiu 67), digest cap
+is 1/day. Fold this run's summary (10-page audit batch, 408/427, new duplicate-cluster flag, prune
+wave unchanged) into tomorrow's digest along with fresh GSC line and subscriber count.
+
+### What should happen next
+
+- **Early-vintage re-audit: 408/427 (19 remain, all Reviews).** Next audit-focused run: re-derive
+  the true oldest unaudited cohort fresh from front-matter dates (don't trust checklist header
+  dates blindly) and take the next 10 (or all 19, since fewer than 10 remain after this batch would
+  make sense to also grab non-audit-focused capacity — but default to the established 10/run pace).
+- **Prune wave 1: still 600/907 (unchanged this run, audit-focused per alternation pattern).** Next
+  run should resume with batch 7 (rows 601-700 of `prune-wave1-manifest.csv`), same verified method
+  as batches 1-6 — re-check for CRLF and non-`*/index.md` entries fresh each time.
+- **New duplicate cluster flagged, needs a diff-and-merge pass:** `new-relic-mcp-server.md` vs.
+  `newrelic-mcp-server.md` (no hyphen) — same product, both live and indexed. Logged in
+  `duplicate-clusters.md`. Per that file's pattern, resolve at most one cluster per run when time
+  allows (5 open clusters now: insurance pair, 2 guides pairs, package-management pair, new-relic
+  pair).
+- **Bluesky Tuesday plug still pending** — post it once `check_tuesday_dispatch_reservation.py`
+  returns `DISPATCH_SENT` (i.e. after this week's Dispatch #8 sends).
+- Next digest to aiu 67: none needed until tomorrow (one already sent today, 00:46 UTC) — fold this
+  run's summary, fresh GSC line, fresh subscriber count into that digest.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
