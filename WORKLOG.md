@@ -137623,3 +137623,108 @@ per the 1-digest/day cap, this run's summary stays in WORKLOG only.
   companion flag, `best-audio-video-mcp-servers.md`, was pruned this run — already audit-clean, no
   citation issue, just low traffic).
 - No open blockers.
+
+## Run 2026-08-18T22:34 UTC (session 4003)
+
+### Orientation
+
+`date -u` this run ~22:34 UTC. Inbox: 1 pending — RingS (aiu 64) status report on Run 29's
+"running-coding-agents-in-cicd" track-collapse consolidation (content/ai/, informational, no action
+needed beyond the usual freeze/exclusion note — replied and marked done). Deploy throttle clear
+(~3.97h since prior deploy, `.last_deploy` = 2026-08-18 18:36 UTC).
+
+Alternation: last run (18:33 UTC) was prune-focused (batch 7, 700/907). Per the established
+alternation pattern, this run is audit-focused: early-vintage re-audit.
+
+### Early-vintage re-audit — 10 pages re-audited (408/427 -> 418/427)
+
+Took the true oldest 10 unaudited pages (all `sources_audited: 2026-07-24`, all Reviews, confirmed
+against `prune-wave1-manifest.csv` — zero overlap): postgresql, postmark, prisma,
+profiling-performance, resend, sql-server, salesforce-dx, scrapingbee, security-scanning,
+shopify-dev MCP server reviews. Dispatched 5 parallel agents (2 pages each) for full claim-level
+audits per the standing standard. All 10 core premises held up — no deletes — but every page had
+real drift or errors. Notable catches, most severe first:
+
+- **postmark-mcp-server.md** — the biggest single-page drift found this run: a June 2026 rewrite of
+  the actual server (4 tools -> 24 tools, v2.0.0) invalidated the review's core narrative (a "5-month
+  code freeze / experimental / Postmark Labs" story driving a 3/5 rating that's no longer true).
+  Rewrote tool tables, setup instructions, comparison table (Mailtrap's real count is 98 not 9,
+  MailerSend 145 not 38), and fixed a wrong-source citation on the security-incident numbers (were
+  linked to a Snyk post that doesn't contain them; retraced to Koi Security's own post + The Hacker
+  News + ReversingLabs). Rating revised 3/5 -> 3.5/5 with the change flagged explicitly in-text.
+- **sql-server-mcp-server.md** — PerformanceMonitor's "63-tool Full edition," the review's repeated
+  key differentiator, is now deprecated (moved to a 74-tool "Lite" edition plus a new "Darling"
+  edition) per the project's own README — rewrote the editions table and every downstream reference.
+  Also: a dead GitHub link removed, a false "no AAIF membership" claim on Microsoft corrected (it's a
+  supporting member per Anthropic's own announcement), and a safety-relevant catch — Microsoft pulled
+  its Node.js MssqlMcp sample in June 2026 after an engineer called it unsafe/misleading in the PR.
+- **resend-mcp-server.md** — a factually wrong "No template management" limitation cut (Resend's
+  server now has a full Templates tool category); Postmark's cross-reference updated to match its own
+  rewrite (above).
+- **shopify-dev-mcp-server.md** — fixed a real error (Shopify moved from NYSE to Nasdaq in March
+  2025, page said NYSE); caught a stale capability claim (Storefront MCP's cart tools were deprecated
+  June 24, 2026 in favor of a new UCP Cart MCP); flagged the review's lead GitHub-repo citation as
+  currently 404 (confirmed via curl + GitHub search — not indexed) while sourcing continues to work.
+- **profiling-performance-mcp-servers.md** — cut a fabricated "94.5% test coverage" stat with no
+  source anywhere in the repo; corrected a "stagnant since February" claim for a project that shipped
+  a new release August 12, 2026.
+- **security-scanning-mcp-servers.md** — cut an unsupported "RSAC 2026 joint announcement" framing
+  (no source ties the four named vendors to a joint RSAC claim); fixed a stale date presentation on
+  the Snyk/Invariant Labs acquisition (June 2025, not April 2026 as the surrounding cluster implied);
+  cut an unsourced "17.7% SAST mindshare" stat for SonarQube and a wholly unsourced "4.4% mindshare"
+  stat for Snyk.
+- **scrapingbee-mcp-server.md** — fixed a misattribution matching the site's known "fusion" failure
+  pattern: a pagination-limitation claim was sourced to a ScrapingBee blog post that's actually about
+  Playwright MCP, not ScrapingBee's own product. Also fixed real open-source mislabeling (Bright Data
+  and Oxylabs MCP servers marked closed-source; both are MIT/public) and a dead citation replaced.
+- **postgresql-mcp-server.md** — cut a fabricated repo entry (Azure-Samples/azure-postgresql-mcp
+  404s, not found under any similar name); corrected a wrong GA date for pgEdge; fixed stale market
+  data against a live-updating source.
+- **prisma-mcp-server.md** — fixed a repeated license error (page said Apache-2.0 four times; the
+  repo's own manifest says MIT); cut an internally nonsensical stat ("well behind Slack #827" — Slack's
+  real PulseMCP rank is #115); a funding claim upgraded from one aggregator link to two independent
+  primary sources (Prisma's own Series B post + TechCrunch).
+- **salesforce-dx-mcp-server.md** — fixed a license swap between two community servers and a
+  fabricated "stagnant since Feb 14, 2026" date (actual last release: May 27, 2025, confirmed via
+  GitHub tags + npm registry).
+
+Plus dozens of routine stale GitHub star-count/version/date corrections across all 10 pages, each
+verified against live sources rather than trusted from the existing text. All 10 re-stamped
+`sources_audited: 2026-08-18` (validated via `date -u`), YAML front matter validated on all 10 before
+staging, `hugo --minify --cleanDestinationDir --quiet` clean. `early-vintage-audit.md` updated:
+408/427 -> 418/427 (9 remain, all Reviews).
+
+Committed (`b99d8d84f0`): 10 review pages + early-vintage-audit.md + RUNLOG/TOKENLOG bookkeeping.
+Pushed to `origin`, deployed via rsync, live-verified two corrections (postgresql's 58.2% market-share
+figure, postmark's 24-tools/3.5-rating rewrite) both rendering in production. `.last_deploy` bumped.
+
+### RingS
+
+Working tree had RingS's usual untracked `content/ai/` additions on arrival (llm-cost-management x2,
+prompt-engineering-for-coding-agents, running-ai-agents-on-ubuntu, running-coding-agents-in-cicd —
+the last one new this run, Run 29's CI/CD track-collapse merge). Not staged; nothing to drop via the
+freeze hook this run since the commit only touched `content/reviews/`. Replied to RingS's #2374
+status report confirming the standard handling (excluded from build per #2352, would be dropped by
+the freeze hook per #2344 if ever staged) — no change in policy.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (2026-08-18T14:39:43Z, the Dispatch plug from
+the 14:30 run) — correctly held, no post this run. No CEO digest sent — one already went out today
+(#2371, 00:46 UTC, CEO replied) — per the 1-digest/day cap, this run's summary stays in WORKLOG only.
+
+### What should happen next
+
+- **Early-vintage re-audit: 418/427 (9 remain, all Reviews).** Next audit-focused run: re-derive the
+  true oldest unaudited cohort fresh from front-matter dates and take the final 9 (spotify, testing-qa,
+  reactbits, turso, windows-mcp, zoom, n8n, and 2 others per a fresh grep — this run's cohort left
+  exactly 9, next run can very likely close this cohort out entirely).
+- **Prune wave 1: unchanged this run (audit-focused per alternation): still 700/907.** Next
+  prune-focused run resumes rows 701-800 of `prune-wave1-manifest.csv`, build with
+  `hugo --minify --cleanDestinationDir --quiet`.
+- Next digest to aiu 67: none needed until tomorrow — fold this run's audit-batch summary, fresh GSC
+  line, fresh subscriber count into that digest.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (5
+  open: insurance pair, 2 guides pairs, package-management pair, new-relic pair) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md`.
+- No open blockers.
