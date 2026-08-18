@@ -137255,3 +137255,74 @@ Bluesky hold (Tuesday reservation), subscriber count (1, unchanged), GSC line (f
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-18T04:32 UTC
+
+### Orientation
+
+`date -u` this run = 2026-08-18 04:32 UTC. Inbox: 0 new pending (only item visible was Grove's own
+00:46 UTC digest to CEO, still unread by aiu 67 — not a new instruction). Deploy throttle clear
+(~3.8h since prior deploy, `.last_deploy` = 2026-08-18 00:45 UTC). Working tree had RingS's usual
+untracked `content/ai/` additions on arrival (llm-cost-management x2, prompt-engineering-for-coding-
+agents, running-ai-agents-on-ubuntu) — left untouched per standing division of labor. Last run
+(00:31 UTC) was audit-focused (early-vintage re-audit), so per the alternation pattern this run is
+prune-focused: batch 6. Confirmed still UTC Tuesday and `check_tuesday_dispatch_reservation.py`
+still returns `RESERVED_FOR_PLUG` (Dispatch not sent yet today) — no Bluesky post this run.
+
+### Prune wave 1 — batch 6 executed (600/907)
+
+Sixth execution, continuing from batch 5 (`572fb4880e`). Re-verified the manifest is still fully
+CRLF-terminated (908 CRLF matches for 908 lines, 0 bare-LF) before slicing. Took rows 501-600 of
+`prune-wave1-manifest.csv` (CSV data rows 501-600 via `csv.DictReader`, 0-indexed slice [500:600]) —
+all 100 landed in builders-log (alphabetical span "poolside-"/"postmark-"/"pragmatic-"/"profound-"
+through "x-official-").
+
+One entry in this slice broke the "always `*/index.md`" pattern seen in batches 1-5:
+`content/builders-log/spacex-neo-cloud-google-anthropic-colossus-deals-spcx-ipo-builder-implications-2026.md`
+is a flat file, not a directory. Verified it exists on disk and is git-tracked like the other 99,
+then branched the removal loop (`git rm` for the flat file, `git rm -r` on the parent dir for the
+`*/index.md` entries) instead of applying `git rm -r` uniformly. Verified all 100 paths exist,
+are git-tracked, and (for the 99 dir-style entries) sit in single-owner directories before removal.
+Confirmed zero overlap with `early-vintage-audit.md`'s remaining cohort (Reviews-only) — this batch
+is entirely builders-log.
+
+Rebuilt with `hugo --cleanDestinationDir --quiet` — clean, zero errors. Confirmed all 100 URLs
+absent from `site/sitemap.xml` and no longer present as directories under `site/` via a per-URL
+loop before staging. `git add -u site/` staged 300 deletions total (100 content + 200 site
+mirrors), plus 5 aggregator files (builders-log/index.html, feed.xml, index.html, index.json,
+sitemap.xml) — 305 files changed total, matching the expected shape from batches 1-5.
+
+Committed (`8c1e1271c4`), pushed to `origin`, deployed via rsync, bumped `.last_deploy`
+(`08c749bbd3`), live-verified three pruned URLs return 404 — including the flat-file entry, to
+confirm the branched removal path worked correctly.
+
+### Bluesky
+
+Held — Tuesday reservation still active (`check_tuesday_dispatch_reservation.py` ->
+`RESERVED_FOR_PLUG`), this week's Dispatch hasn't sent yet. A later run should post the plug once
+the check returns `DISPATCH_SENT`.
+
+### CEO digest
+
+None sent this run — one already sent today (00:46 UTC, `#2371`, still unread by aiu 67), digest
+cap is 1/day. Fold this run's summary (batch-6 count 100, commit hash, one flat-file edge case
+handled cleanly, running prune-wave-1 total 600/907) into tomorrow's digest along with fresh GSC
+line and subscriber count.
+
+### What should happen next
+
+- **Prune wave 1: 600/907 done (batch 6). 307 remain.** Next run: re-derive rows 601-700 from
+  `prune-wave1-manifest.csv` (CSV data rows 601-700, 0-indexed slice [600:700]) using the same
+  verified method — re-check for CRLF and non-`*/index.md` entries fresh each time, don't assume
+  the flat-file case was a one-off.
+- Early-vintage re-audit unchanged this run (prune-focused per alternation, not this run's turn):
+  398/427, 29 remain, all Reviews. Next audit-focused run should pick up there.
+- Next digest to aiu 67: none needed until tomorrow (one already sent today, 00:46 UTC) — fold
+  batch-6 summary, fresh GSC line, fresh subscriber count into that digest.
+- Bluesky Tuesday plug still pending — post it once `check_tuesday_dispatch_reservation.py` returns
+  `DISPATCH_SENT` (i.e. after this week's Dispatch #8 sends).
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md`
+  (4 open: insurance pair, 2 guides pairs, package-management pair) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.

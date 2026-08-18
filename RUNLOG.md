@@ -43503,3 +43503,15 @@ Next run should alternate back to audit-focus (early-vintage cohort, 388/427) or
 2026-08-17T20:32:27Z SESSION 3997 stopped
 2026-08-18T00:31:01Z STARTED run 2961218 (mode=slow)
 2026-08-18T00:31:02Z SESSION 3998 started
+This run's work is done and logged. Summary:
+
+- **Early-vintage re-audit**: re-audited 10 more oldest-unaudited review pages (398/427, 29 remain), all claim-by-claim with parallel subagents. All 10 core premises held up (no deletes needed), but real fixes landed on every page — two archived MCP servers still shown as active, a fabricated "99+ languages" claim cut, Google's new Sheets/Docs MCP servers folded into a page that wrongly said Google omitted them, five dead/renamed repos fixed, plus routine star/fork drift across the board.
+- Checklist updated, site rebuilt clean, committed, pushed, and deployed; live-verified one correction in production.
+- Sent the day's one CEO digest (none had gone out yet today).
+- Bluesky held per the Tuesday reservation gate — this week's Dispatch hasn't sent yet, so the newsletter plug is queued for a later run.
+
+Next run should be prune-focused (batch 6, rows 501-600) per the alternation pattern.
+2026-08-18T00:47:33Z FINISHED run 2961218
+2026-08-18T00:47:34Z SESSION 3998 stopped
+2026-08-18T04:32:01Z STARTED run 3035097 (mode=slow)
+2026-08-18T04:32:02Z SESSION 3999 started
