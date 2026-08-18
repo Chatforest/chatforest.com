@@ -7,7 +7,7 @@ Sports and fitness analytics MCP servers connect AI agents to live scores, race 
 
 This review covers **sports data, fitness analytics, and workout management** — live scores, F1 racing, sports betting, Strava/Garmin integration, fantasy sports, and exercise tracking. For mental health and wellness tracking, see our [Mental Health & Wellness review](/reviews/mental-health-wellness-mcp-servers/). For wearable device data beyond fitness, see our [Wearables & Quantified Self review](/reviews/fitness-wearables-mcp-servers/) if available.
 
-The headline findings: **Sportradar launched an official MCP server** with 20+ sport profiles covering tennis, cricket, golf, rugby, and more. **Formula 1 has the deepest coverage of any single sport** with 6+ independent implementations. **Strava leads the fitness space** — r-huijts/strava-mcp surged to 368 stars with 25 tools. **Open Wearables (1.5K stars) unifies 6+ wearable ecosystems** with a built-in MCP server. **Garmin Connect MCP has 120 stars** with 61 tools. **Fantasy sports — previously absent — now has real coverage** via Flaim (ESPN+Yahoo+Sleeper). **Esports is improving** with OP.GG's official LoL MCP. **A trojanized Oura MCP server** deploying malware was discovered in February 2026 — verify your sources.
+The headline findings: **Sportradar launched an official MCP server** with 20+ sport profiles covering tennis, cricket, golf, rugby, and more. **Formula 1 has the deepest coverage of any single sport** with 6+ independent implementations. **Strava leads the fitness space** — r-huijts/strava-mcp surged to 471 stars with 25 tools. **Open Wearables (2.3K stars) unifies 6+ wearable ecosystems** with a built-in MCP server. **Garmin Connect MCP has 168 stars** with 61 tools. **Fantasy sports — previously absent — now has real coverage** via Flaim (ESPN+Yahoo+Sleeper). **Esports is improving** with OP.GG's official LoL MCP. **A trojanized Oura MCP server** deploying malware was discovered in February 2026 — verify your sources.
 
 ---
 
@@ -19,7 +19,7 @@ The headline findings: **Sportradar launched an official MCP server** with 20+ s
 |--------|-------|----------|---------|-------|
 | [Sportradar MCP](https://developer.sportradar.com/getting-started/docs/mcp-server) | — | — | Commercial | 20+ profiles |
 
-**Sportradar — one of the world's largest sports data providers — [launched an official MCP server on February 11, 2026](https://developer.sportradar.com/sportradar-updates/changelog/new-mcp-server-for-ai-assisted-development):**
+**Sportradar — a publicly traded (NASDAQ: SRAD) sports data provider with [~€1.29 billion in 2025 revenue and 2,100+ clients/partners worldwide](https://www.sportcal.com/financial/sportradar-hits-record-revenue-in-2025-financial-results/) — [launched an official MCP server on February 11, 2026](https://developer.sportradar.com/sportradar-updates/changelog/new-mcp-server-for-ai-assisted-development):**
 
 - **20+ sport-specific profiles** — football, soccer, basketball, tennis, cricket, golf, rugby, hockey, MMA, racing, volleyball, darts, snooker, squash, table tennis, handball, futsal, field hockey, and more
 - **Structured API access** — endpoints, parameters, schemas, authentication details, and code snippets
@@ -27,21 +27,6 @@ The headline findings: **Sportradar launched an official MCP server** with 20+ s
 - **Developer Portal integration** — connects directly to Sportradar's comprehensive API documentation
 
 This is a significant development for the sports MCP ecosystem. Sportradar's coverage of individual sports like tennis, golf, cricket, and rugby partially closes what was the biggest gap in this category. Note: this is primarily a developer documentation MCP server for building Sportradar API integrations, not a direct data access server — you still need a Sportradar API key for actual sports data.
-
-### michaelfromorg/mcp-sports — ESPN-Based Real-Time Sports
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [mcp-sports](https://github.com/michaelfromorg/mcp-sports) | — | TypeScript | — | Multiple |
-
-**Real-time sports data powered by ESPN:**
-
-- **Multi-league coverage** — NFL, NBA, MLB, NHL, NCAA Football, NCAA Basketball, Premier League
-- **Live scores and standings** — current game states, league tables, team records
-- **Schedules and team info** — upcoming games, rosters, team details
-- **Fantasy and betting context** — data useful for fantasy analysis and betting decisions
-
-A solid general-purpose sports data server for major North American leagues plus Premier League soccer.
 
 ### SportDB.dev — Free Sports API + MCP Server
 
@@ -62,11 +47,11 @@ Useful as a free alternative to paid sports data APIs.
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ESPN MCP Server](https://apify.com/mrbridge/espn-mcp-server) | — | — | — | 12 |
+| [ESPN MCP Server](https://apify.com/mrbridge/espn-mcp-server) | — | — | — | 13 |
 
 **Multiple Apify actors exposing ESPN data as MCP servers:**
 
-- **12 specialized tools** — scores, standings, team info, rosters, schedules, game analysis, betting odds, athlete profiles, rankings, news, live scoreboards
+- **13 specialized tools** — scoreboard, standings, teams, roster, schedule, news, game summary, game odds, athletes, rankings, search, live scoreboard, play-by-play
 - **No ESPN API key required** — scrapes publicly available data
 - **Sport-specific variants** — separate actors for NBA stats, general ESPN scraping
 - **AI-optimized formatting** — structured results designed for LLM consumption
@@ -77,7 +62,7 @@ Commercial Apify platform, but provides comprehensive ESPN coverage through scra
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [sports-mcp-server](https://github.com/cloudbet/sports-mcp-server) | 10 | TypeScript | — | 1 |
+| [sports-mcp-server](https://github.com/cloudbet/sports-mcp-server) | 14 | Go | — | 1 |
 
 **Cloudbet's official MCP server for live sports and betting data:**
 
@@ -98,7 +83,7 @@ F1 has remarkably strong MCP representation — more independent server implemen
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [f1-mcp-server](https://github.com/rakeshgangwar/f1-mcp-server) | 7 | Python | — | 7 |
+| [f1-mcp-server](https://github.com/rakeshgangwar/f1-mcp-server) | 11 | Python | — | 7 |
 
 **Formula One racing data via the FastF1 Python library:**
 
@@ -168,13 +153,13 @@ The abundance of F1 servers likely reflects both the excellent open APIs (FastF1
 - **Futures betting** — long-term market tracking
 - **PostgreSQL backend** — persistent bet history and analytics
 
-The most comprehensive sports betting MCP server available. Requires an Odds API key and Node.js 20+ for the dashboard.
+The most comprehensive sports betting MCP server available. Requires an Odds API key, PostgreSQL, and Node.js 22+ for the dashboard.
 
 ### Wagyu Sports / The Odds API MCP *(NEW)*
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [wagyu-sports](https://playbooks.com/mcp/hrgarber-wagyu-sports) | — | — | — | Multiple |
+| [wagyu-sports](https://github.com/hrgarber/wagyu_mcp_hackathon) | 2 | Python | — | Multiple |
 
 **Structured access to The Odds API for sports betting data:**
 
@@ -182,6 +167,8 @@ The most comprehensive sports betting MCP server available. Requires an Odds API
 - **Odds comparison** — compare lines across bookmakers
 - **API quota tracking** — monitor usage in both test and live modes
 - **Multi-bookmaker coverage** — aggregated odds from major sportsbooks
+
+Originally an MCP hackathon submission (released February 2025); a small, low-star project.
 
 ### Apify Sportsbook Odds Scraper
 
@@ -203,7 +190,7 @@ The most comprehensive sports betting MCP server available. Requires an Odds API
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [strava-mcp](https://github.com/r-huijts/strava-mcp) | 368 *(was 238)* | TypeScript | — | 25 |
+| [strava-mcp](https://github.com/r-huijts/strava-mcp) | 471 *(was 238 in March, 368 in July)* | TypeScript | MIT | 25 |
 
 **The most popular Strava MCP server with 25 tools for the full API:**
 
@@ -215,7 +202,7 @@ The most comprehensive sports betting MCP server available. Requires an Odds API
 - **Full Strava API v3** — comprehensive coverage of the Strava ecosystem
 - **npm package** — `@r-huijts/strava-mcp-server` for easy installation
 
-At 368 stars (+55% since March), this is one of the fastest-growing sports MCP servers. Essential for runners, cyclists, and triathletes who use Strava.
+At 471 stars (+98% since March), this remains one of the fastest-growing sports MCP servers. Essential for runners, cyclists, and triathletes who use Strava.
 
 ### MariyaFilippova/mcp-strava — Kotlin/Java Strava MCP *(NEW)*
 
@@ -267,7 +254,7 @@ A sophisticated server for serious endurance athletes who use multiple platforms
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [garmin-connect-mcp](https://github.com/Nicolasvegam/garmin-connect-mcp) | 120 | TypeScript | — | 61 |
+| [garmin-connect-mcp](https://github.com/Nicolasvegam/garmin-connect-mcp) | 168 | TypeScript | — | 61 |
 
 **Remarkably comprehensive access to Garmin Connect data:**
 
@@ -278,31 +265,13 @@ A sophisticated server for serious endurance athletes who use multiple platforms
 - **Training metrics** — training status, load, recovery, VO2 max
 - **Multi-platform support** — Claude Code, Claude Desktop, Cursor, and Windsurf
 
-At 120 stars, this server exposes essentially your entire Garmin Connect dashboard to AI analysis.
-
-### Async-IO/pierre_mcp_server — 150+ Wearable Aggregator
-
-| Server | Stars | Language | License | Tools |
-|--------|-------|----------|---------|-------|
-| [pierre_mcp_server](https://github.com/Async-IO/pierre_mcp_server) | — | Python | — | Multiple |
-
-**Fitness intelligence platform connecting 150+ wearables:**
-
-- **Multi-platform** — Strava, Garmin, Fitbit, WHOOP, COROS, and 150+ wearables via Terra
-- **Training load management** — monitor and optimize training intensity
-- **Race predictions** — estimate finish times based on training data
-- **Sleep and recovery scoring** — aggregate recovery metrics
-- **Nutrition planning** — integrate nutrition with training
-- **Pattern detection** — AI-powered identification of training patterns
-- **Protocol support** — MCP, A2A, OAuth 2.0, and REST APIs
-
-The broadest wearable integration available. Uses Terra as an aggregation layer to connect to a vast array of devices.
+At 168 stars, this server exposes essentially your entire Garmin Connect dashboard to AI analysis.
 
 ### the-momentum/open-wearables — Unified Wearable Health Platform *(NEW)*
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [open-wearables](https://github.com/the-momentum/open-wearables) | 1,500 | Python/TypeScript | MIT | Multiple |
+| [open-wearables](https://github.com/the-momentum/open-wearables) | 2,356 | Python/TypeScript | MIT | Multiple |
 
 **The largest open-source wearable health data unification platform, with built-in MCP server:**
 
@@ -312,9 +281,9 @@ The broadest wearable integration available. Uses Terra as an aggregation layer 
 - **Health Insights & Automations** — natural language conditions for health-triggered actions
 - **Mobile Sync SDKs** — iOS, Android, Flutter, and React Native
 - **Developer portal** — user and API key management
-- **v0.5.0** (April 29, 2026) — latest release, Product Hunt launch
+- **v0.5.0** — Product Hunt launch release; the project has kept shipping rapidly since, reaching [v0.7.0 by August 12, 2026](https://github.com/the-momentum/open-wearables/releases)
 
-At 1,500 stars and 237 forks, Open Wearables is the fastest-growing project in the fitness MCP space. The self-hosted model with MIT license makes it attractive for developers who want wearable data unification without third-party dependencies. Oura Ring, Fitbit, and Google Fit integrations are on the roadmap.
+At 2,356 stars and 441 forks, Open Wearables is the fastest-growing project in the fitness MCP space. The self-hosted model with MIT license makes it attractive for developers who want wearable data unification without third-party dependencies. Oura Ring, Fitbit, and Google Fit integrations are on the roadmap.
 
 ### ai-endurance/mcp — AI Endurance Training
 
@@ -349,16 +318,16 @@ A remote MCP server focused on the coaching/planning side of endurance sports ra
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [tomekkorbak/oura-mcp-server](https://github.com/tomekkorbak/oura-mcp-server) | 37 | — | — | Multiple |
+| [tomekkorbak/oura-mcp-server](https://github.com/tomekkorbak/oura-mcp-server) | 38 | Python | MIT | Multiple |
 | [daveremy/oura-mcp](https://github.com/daveremy/oura-mcp) | — | — | — | Multiple |
 | [mitchhankins01/oura-ring-mcp](https://github.com/mitchhankins01/oura-ring-mcp) | — | — | — | Multiple |
 
 **Oura Ring has gone from 1 to 6+ MCP server implementations since March:**
 
-- **tomekkorbak/oura-mcp-server** (37 stars) — the original, sleep/readiness/activity data
+- **tomekkorbak/oura-mcp-server** (38 stars) — the original, sleep/readiness/activity data
 - **daveremy/oura-mcp** — standalone CLI + MCP server + Claude Code skill, covers sleep, readiness, activity, heart rate, stress, SpO2, workouts, and sessions via Oura API v2
 - **mitchhankins01/oura-ring-mcp** — human-readable insights about sleep, readiness, and activity with smart analysis tools
-- **rajvirtual/oura-mcp-server**, **elizabethtrykin/oura-mcp**, **hemantkamalakar/oura-mcp-server**, **meimakes/oura-mcp-server** — additional implementations
+- **rajvirtual/oura-mcp-server**, **elizabethtrykin/oura-mcp**, **hemantkamalakar/oura-mcp-server**, **[madebydia/oura-mcp-server](https://github.com/madebydia/oura-mcp-server)** (formerly meimakes) — additional implementations
 
 **⚠ Security warning:** In February 2026, [threat actors created a trojanized Oura MCP server](https://thehackernews.com/2026/02/smartloader-attack-uses-trojanized-oura.html) ([SmartLoader attack](https://securityaffairs.com/188135/ai/smartloader-hackers-clone-oura-mcp-project-to-spread-stealc-malware.html)) that deployed the StealC infostealer. The attackers built fake GitHub forks and contributor profiles to manufacture credibility. **Always verify you are installing from a legitimate, well-known repository** — check stars, commit history, and contributor profiles before trusting any health data MCP server.
 
@@ -410,14 +379,14 @@ Fantasy sports management was entirely absent in the March review. That gap has 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [flaim](https://github.com/jdguggs10/flaim) | 5 | — | — | 9 |
+| [flaim](https://github.com/jdguggs10/flaim) | 12 | — | MIT | 10 |
 
-**The first comprehensive fantasy sports MCP platform, connecting three major league providers to AI:**
+**A comprehensive fantasy sports MCP platform, connecting three major league providers to AI:**
 
 - **ESPN** — Football, Baseball, Basketball, Hockey (via Chrome extension or manual cookies)
 - **Yahoo** — Football, Baseball, Basketball, Hockey (OAuth 2.0)
 - **Sleeper** — Football, Basketball (username authentication)
-- **9 MCP tools** — query your actual team, matchup, standings, and waiver wire
+- **10 MCP tools** — query your actual team, matchup, standings, and waiver wire
 - **Read-only** — no trades, drops, or roster changes — advisory only
 - **Multi-AI support** — works with ChatGPT, Claude, and Gemini CLI
 - **v1.0.1** (March 12, 2026) — first stable release
@@ -498,7 +467,7 @@ The gap landscape has shifted significantly since March. Several former gaps are
 
 ## Bottom Line
 
-The sports and fitness analytics MCP category earns **4.5 out of 5**, upgraded from 4/5 in March. This category has matured rapidly in 47 days. **Sportradar's official MCP server** brings professional-grade sports data infrastructure to the ecosystem, covering 20+ sports including tennis, golf, cricket, and rugby. **Open Wearables at 1,500 stars** is the standout new arrival — a self-hosted platform unifying 6+ wearable ecosystems with a built-in MCP server, representing the kind of ambitious infrastructure project that signals category maturation. **Strava's 55% star growth** (238→368) shows sustained community enthusiasm. **Fantasy sports going from zero to multiple implementations** (Flaim covering ESPN+Yahoo+Sleeper across 4 sports) closes what was one of the most conspicuous gaps. **Oura Ring's explosion from 1 to 6+ servers** demonstrates the wearable MCP ecosystem's vitality, though the trojanized Oura MCP server incident is a sobering reminder that security verification matters in the health data space. The remaining gaps — dedicated individual sport data servers, Olympic sports, sports video analysis — are real but narrowing. For sports fans and fitness enthusiasts, this is now one of the strongest MCP categories available.
+The sports and fitness analytics MCP category earns **4.5 out of 5**, upgraded from 4/5 in March. This category matured rapidly through spring 2026 and has continued growing since. **Sportradar's official MCP server** brings professional-grade sports data infrastructure to the ecosystem, covering 20+ sports including tennis, golf, cricket, and rugby. **Open Wearables, now at 2,356 stars**, is the standout new arrival — a self-hosted platform unifying 6+ wearable ecosystems with a built-in MCP server, representing the kind of ambitious infrastructure project that signals category maturation. **Strava's continued star growth** (238 in March → 471 as of this audit) shows sustained community enthusiasm. **Fantasy sports going from zero to multiple implementations** (Flaim covering ESPN+Yahoo+Sleeper across 4 sports) closes what was one of the most conspicuous gaps. **Oura Ring's explosion from 1 to 6+ servers** demonstrates the wearable MCP ecosystem's vitality, though the trojanized Oura MCP server incident is a sobering reminder that security verification matters in the health data space. The remaining gaps — dedicated individual sport data servers, Olympic sports, sports video analysis — are real but narrowing. For sports fans and fitness enthusiasts, this is now one of the strongest MCP categories available.
 
-*This review was refreshed on 2026-05-02 (first refresh since 2026-03-16) using Claude Opus 4.6 (Anthropic).*
+*This review was refreshed on 2026-05-02 (first refresh since 2026-03-16) using Claude Opus 4.6 (Anthropic). Citations and stats re-verified 2026-08-18.*
 

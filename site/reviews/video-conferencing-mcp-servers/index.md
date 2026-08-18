@@ -56,7 +56,7 @@ The biggest development since our March review: major platforms are shipping off
 | Auth | Microsoft 365 Copilot license |
 | Scope | `McpServers.Teams.All` |
 
-Microsoft shipped Work IQ Teams as part of Agent 365 — enterprise-grade MCP servers that expose Microsoft 365 workloads through the Agent 365 tooling gateway.
+Microsoft shipped [Work IQ Teams as part of Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview) — enterprise-grade MCP servers that expose Microsoft 365 workloads through the Agent 365 tooling gateway. The [Teams-specific tool reference](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-teams-work-iq) confirms the server ID (`mcp_TeamsServer`), the `McpServers.Teams.All` scope, and 25 distinct tools (12 chat + 13 channel/team operations).
 
 ### What Works Well
 
@@ -70,7 +70,7 @@ Microsoft shipped Work IQ Teams as part of Agent 365 — enterprise-grade MCP se
 
 **Preview status.** Not yet GA. Subject to change.
 
-**Requires Microsoft 365 Copilot license.** This is an enterprise offering — not accessible to individual developers or small teams without Copilot licensing.
+**Requires Microsoft 365 Copilot license.** [Microsoft's own docs confirm](https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview) "You must have a Microsoft 365 Copilot license to use Work IQ MCP servers" — not accessible to individual developers or small teams without Copilot licensing.
 
 **Still messaging-focused.** Like community Teams servers, Work IQ Teams covers chats, channels, and members — not meeting recordings, transcriptions, or video features directly. Calendar/scheduling is via the separate Work IQ Calendar server.
 
@@ -82,11 +82,11 @@ These servers bridge multiple video conferencing platforms, providing unified ac
 
 | Detail | Info |
 |--------|------|
-| [Vexa-ai/vexa](https://github.com/Vexa-ai/vexa) | ~1,900 stars (+6%) |
-| License | Open source (self-hostable) |
+| [Vexa-ai/vexa](https://github.com/Vexa-ai/vexa) | ~2,700 stars |
+| License | Apache-2.0 (open source, self-hostable) |
 | Language | Python |
 | Platforms | Google Meet, Microsoft Teams, Zoom |
-| Latest | v0.10.4 (April 26, 2026) |
+| Latest | [v0.12.22](https://github.com/Vexa-ai/vexa/releases) (August 12, 2026) |
 | Install | `make all` (self-hosted) or hosted SaaS |
 
 The strongest open-source option for meeting transcription with MCP support. Vexa is a full meeting transcription API — auto-join bots, real-time WebSocket transcripts, and an MCP server microservice that exposes the entire API to any MCP-capable agent.
@@ -101,7 +101,7 @@ The strongest open-source option for meeting transcription with MCP support. Vex
 
 **Self-hostable with Kubernetes support.** Runs locally with `make all` on CPU or GPU, plus Kubernetes/Helm support for production deployment. Modular design lets you deploy only what you need — transcription, speaking bots, MCP tools, or agent runtimes.
 
-**Approaching 2,000 stars.** 1,900+ stars and actively maintained with regular releases. The strongest community momentum in open-source meeting MCP.
+**Approaching 3,000 stars.** ~2,700 stars (per the live [GitHub repository](https://github.com/Vexa-ai/vexa)) and actively maintained with regular releases. The strongest community momentum in open-source meeting MCP.
 
 ### What Doesn't Work Well
 
@@ -113,7 +113,7 @@ The strongest open-source option for meeting transcription with MCP support. Vex
 
 | Detail | Info |
 |--------|------|
-| [tldv-public/tldv-mcp-server](https://github.com/tldv-public/tldv-mcp-server) | ~10 stars (+43%) |
+| [tldv-public/tldv-mcp-server](https://github.com/tldv-public/tldv-mcp-server) | ~13 stars |
 | License | Not specified |
 | Language | Not specified |
 | Platforms | Google Meet, Zoom, Microsoft Teams |
@@ -131,7 +131,7 @@ The official MCP server from tl;dv, one of the most popular meeting recording an
 
 ### What Doesn't Work Well
 
-**Low GitHub adoption.** ~10 stars despite tl;dv's substantial user base suggests the MCP integration is still not widely discovered.
+**Low GitHub adoption.** ~13 stars despite tl;dv's substantial user base suggests the MCP integration is still not widely discovered.
 
 **Requires tl;dv account.** This is a wrapper around a commercial SaaS. You need a tl;dv account (free tier available, premium for full features), and meeting data lives on their servers.
 
@@ -147,7 +147,7 @@ The official MCP server from tl;dv, one of the most popular meeting recording an
 | Auth | OAuth (granular permissions) |
 | Status | GA |
 
-Otter.ai — one of the most widely used meeting transcription platforms — launched its official MCP server, enabling AI assistants to search meeting transcripts, analyze patterns across meetings, and surface insights without leaving the AI workflow.
+[Otter.ai — one of the most widely used meeting transcription platforms — launched its official MCP server](https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp), enabling AI assistants to search meeting transcripts, analyze patterns across meetings, and surface insights without leaving the AI workflow.
 
 ### What Works Well
 
@@ -159,11 +159,11 @@ Otter.ai — one of the most widely used meeting transcription platforms — lau
 
 ### What Doesn't Work Well
 
-**No public API key.** Otter currently doesn't provide a public API key for self-service setup. You need to contact Otter Support Team for MCP configuration, which adds friction.
+**No public API key.** [Otter currently doesn't provide a public API key for self-service setup](https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server). You need to contact Otter Support Team for MCP configuration, which adds friction.
 
 **Requires Otter account.** This is a wrapper around Otter's commercial service. Meeting data lives on their servers.
 
-**No open-source option.** The community alternative (DarrenZal/otter-mcp, 2 stars, MIT) provides basic transcript search but uses unofficial APIs.
+**No open-source option.** The community alternative ([DarrenZal/otter-mcp](https://github.com/DarrenZal/otter-mcp), ~5 stars, MIT) provides basic transcript search but uses unofficial APIs.
 
 ### Fireflies.ai MCP Server (NEW)
 
@@ -175,7 +175,7 @@ Otter.ai — one of the most widely used meeting transcription platforms — lau
 | Auth | OAuth or API key |
 | Status | Beta (V2 coming) |
 
-Fireflies.ai launched its MCP server in beta, providing direct access to meeting transcripts, metadata, speaker information, and summary data from its meeting intelligence platform.
+[Fireflies.ai launched its MCP server in beta](https://fireflies.ai/blog/fireflies-mcp-server/), providing direct access to meeting transcripts, metadata, speaker information, and summary data from its meeting intelligence platform.
 
 ### What Works Well
 
@@ -185,15 +185,13 @@ Fireflies.ai launched its MCP server in beta, providing direct access to meeting
 
 ### What Doesn't Work Well
 
-**V1 being deprecated.** The current Firefly MCP integration will be deprecated on April 30, 2026. V2 is coming, but the transition creates uncertainty for early adopters.
-
-**Beta status.** Not yet production-ready. Feature set may change.
+**Beta status.** Not yet production-ready. [Fireflies' own docs](https://docs.fireflies.ai/getting-started/mcp-configuration) confirm the server currently supports Claude, the OpenAI/ChatGPT connector, Cursor, and Devin, but feature set may still change.
 
 ### Meeting BaaS
 
 | Detail | Info |
 |--------|------|
-| [Meeting-BaaS/meeting-mcp](https://github.com/Meeting-BaaS/meeting-mcp) | ~27 stars |
+| [Meeting-BaaS/meeting-mcp](https://github.com/Meeting-BaaS/meeting-mcp) | ~30 stars |
 | License | Open source |
 | Language | TypeScript |
 | Platforms | Google Meet, Zoom, Microsoft Teams |
@@ -213,7 +211,7 @@ Meeting BaaS (Bot-as-a-Service) provides meeting bot infrastructure as a platfor
 
 ### What Doesn't Work Well
 
-**Low adoption.** ~27 stars. The speaking bots capability is impressive but apparently not yet widely adopted.
+**Low adoption.** ~30 stars. The speaking bots capability is impressive but apparently not yet widely adopted.
 
 **Requires Meeting BaaS infrastructure.** Like Vexa, this is a platform — not a standalone MCP server you point at your existing Zoom account.
 
@@ -223,9 +221,9 @@ Meeting BaaS (Bot-as-a-Service) provides meeting bot infrastructure as a platfor
 
 | Detail | Info |
 |--------|------|
-| [joinly-ai/joinly](https://github.com/joinly-ai/joinly) | ~494 stars (+20%) |
-| License | Not specified |
-| Language | Not specified |
+| [joinly-ai/joinly](https://github.com/joinly-ai/joinly) | ~561 stars |
+| License | MIT |
+| Language | Python |
 | Platforms | Zoom, Microsoft Teams, Google Meet |
 | Commits | 820+ |
 
@@ -233,7 +231,7 @@ Joinly is connector middleware that enables AI agents to join and actively parti
 
 ### What Works Well
 
-**Highest adoption for real-time participation.** 494 stars (up 20% from 413 in March) makes this the most popular MCP server specifically designed for agents to participate in meetings. 820+ commits shows sustained development velocity.
+**Highest adoption for real-time participation.** ~561 stars makes this the most popular MCP server specifically designed for agents to participate in meetings. 820+ commits shows sustained development velocity.
 
 **Flexible STT/TTS providers.** Supports multiple providers: Whisper and Deepgram for speech-to-text, Kokoro and ElevenLabs and Deepgram for text-to-speech. Multiple LLM backends: OpenAI, Anthropic, and local Ollama.
 
@@ -241,11 +239,9 @@ Joinly is connector middleware that enables AI agents to join and actively parti
 
 **Real-time transcript as a resource.** The MCP server exposes the live meeting transcript as a resource (`transcript://live`), enabling agents to follow along and respond contextually.
 
-**Active community.** Featured on Hacker News (Show HN), suggesting genuine developer interest in the concept. Recent updates include direct list_tools and session access, split system prompt/custom instructions, and message history limits to reduce token usage.
+**Active community.** [Featured on Hacker News (Show HN)](https://news.ycombinator.com/item?id=44253477), suggesting genuine developer interest in the concept. Recent updates include direct list_tools and session access, split system prompt/custom instructions, and message history limits to reduce token usage.
 
 ### What Doesn't Work Well
-
-**No license specified.** Like tl;dv, the repository lacks a license file.
 
 **Nascent technology.** AI agents actively participating in meetings is ambitious — real-world reliability in production meetings is unproven at scale.
 
@@ -257,7 +253,7 @@ Joinly is connector middleware that enables AI agents to join and actively parti
 
 | Detail | Info |
 |--------|------|
-| [InditexTech/mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | ~369 stars (+5%) |
+| [InditexTech/mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) | ~392 stars |
 | License | Apache-2.0 |
 | Language | Python (97%) |
 | Tools | 5+ (messaging focused) |
@@ -268,7 +264,7 @@ The most popular community Teams MCP server, built by [Inditex](https://www.indi
 
 ### What Works Well
 
-**Strong adoption for enterprise.** 369 stars — the highest of any community platform-specific meeting/communication MCP server. Being built by a Fortune 500 company (Inditex) adds credibility. 145 commits, 9 releases, SonarCloud quality tracking.
+**Strong adoption for enterprise.** ~392 stars — the highest of any community platform-specific meeting/communication MCP server. Being built by a Fortune 500 company (Inditex) adds credibility. 175+ commits, SonarCloud quality tracking.
 
 **Docker-first deployment.** Pre-built Docker image on GHCR for easy enterprise deployment.
 
@@ -286,8 +282,8 @@ The most popular community Teams MCP server, built by [Inditex](https://www.indi
 
 | Detail | Info |
 |--------|------|
-| [floriscornel/teams-mcp](https://github.com/floriscornel/teams-mcp) | ~91 stars (+36%) |
-| License | Not specified |
+| [floriscornel/teams-mcp](https://github.com/floriscornel/teams-mcp) | ~126 stars |
+| License | MIT |
 | Language | TypeScript |
 | Tools | 25+ (15 read, 10 write) |
 | Auth | OAuth 2.0 with auto-refresh |
@@ -304,7 +300,7 @@ A more comprehensive Teams integration with 25+ tools covering messaging, search
 
 ### What Doesn't Work Well
 
-**Growing but still trailing InditexTech.** ~91 stars (up 36%) vs. 369 for the simpler alternative. The broader tool coverage is gaining traction but hasn't overtaken InditexTech's simpler approach.
+**Growing but still trailing InditexTech.** ~126 stars vs. ~392 for the simpler alternative. The broader tool coverage is gaining traction but hasn't overtaken InditexTech's simpler approach.
 
 **No meeting-specific features.** Like InditexTech's server, this is fundamentally a messaging and collaboration server — no video/audio/transcription capabilities.
 
@@ -314,13 +310,13 @@ With Zoom's official MCP connector now available (see above), community servers 
 
 | Server | Stars | Language | Focus |
 |--------|-------|----------|-------|
-| [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) | ~26 (+44%) | Python | Full Zoom API (users, meetings, recordings) |
-| [Prathamesh0901/zoom-mcp-server](https://github.com/Prathamesh0901/zoom-mcp-server) | ~7 | Not specified | CRUD meetings via Claude/Cursor |
+| [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp) | ~28 | Python | Full Zoom API (users, meetings, recordings) |
+| [Prathamesh0901/zoom-mcp-server](https://github.com/Prathamesh0901/zoom-mcp-server) | ~8 | Not specified | CRUD meetings via Claude/Cursor |
 | [forayconsulting/zoom_transcript_mcp](https://github.com/forayconsulting/zoom_transcript_mcp) | Low | Not specified | Zoom Cloud Recording transcripts |
 | [peakmojo/mcp-server-zoom-noauth](https://github.com/peakmojo/mcp-server-zoom-noauth) | Low | Not specified | Recordings/transcripts without user auth |
 | [JavaProgrammerLB/zoom-mcp-server](https://github.com/JavaProgrammerLB/zoom-mcp-server) | Low | Not specified | Meeting scheduling |
 
-The best community option is **echelon-ai-labs/zoom-mcp** at 26 stars (up from 18) — Server-to-Server OAuth 2.0, user profiles, meeting details, recordings, and account settings. Python 3.11+ and Zoom admin privileges required.
+The best community option is **echelon-ai-labs/zoom-mcp** at ~28 stars — Server-to-Server OAuth 2.0, user profiles, meeting details, recordings, and account settings. Python 3.11+ and Zoom admin privileges required.
 
 **The gap has closed:** Zoom's official MCP connector (April 9, 2026) provides meeting intelligence through Claude Cowork and Claude Code. Community servers remain valuable for developers needing self-hosted or platform-agnostic MCP access.
 
@@ -328,29 +324,29 @@ The best community option is **echelon-ai-labs/zoom-mcp** at 26 stars (up from 1
 
 | Detail | Info |
 |--------|------|
-| [INSIDE-HAIR/google-meet-mcp-server](https://github.com/INSIDE-HAIR/google-meet-mcp-server) | Low stars |
-| License | Not specified |
+| [INSIDE-HAIR/mcp-google-calendar-and-meet](https://github.com/INSIDE-HAIR/mcp-google-calendar-and-meet) (renamed from `google-meet-mcp-server`) | ~2 stars |
+| License | ISC |
 | Language | TypeScript |
-| Tools | 23 |
+| Tools | 21 (6 Calendar + 15 Meet) |
 | Auth | Google OAuth 2.0 |
 
-An enterprise-grade Google Meet management server using Google Calendar API v3 and Google Meet API v2. Docker containerization, Smithery deployment support, and 23 validated tools.
+An enterprise-grade Google Meet management server using Google Calendar API v3 and Google Meet API v2. Docker containerization, Smithery deployment support, and 21 validated tools.
 
-**The gap here is the same as Zoom: Google hasn't shipped an official Meet MCP server.** Google launched managed MCP servers for many of its tools in December 2025, but Google Meet wasn't among them. The community server above is ambitious (23 tools, strong testing) but has low adoption.
+**The gap here is the same as Zoom: Google hasn't shipped an official Meet MCP server.** [Google launched managed MCP servers for Maps, BigQuery, Compute Engine, and Kubernetes Engine on December 10, 2025](https://techcrunch.com/2025/12/10/google-is-going-all-in-on-mcp-servers-agent-ready-by-design/), but Google Meet wasn't among them. The community server above is ambitious (21 tools, strong testing) but has low adoption.
 
 ### Cisco Webex Messaging MCP
 
 | Detail | Info |
 |--------|------|
 | [WebexSamples/webex-messaging-mcp-server](https://github.com/WebexSamples/webex-messaging-mcp-server) | ~4 stars |
-| License | Not specified |
+| License | MIT |
 | Language | TypeScript/JavaScript |
 | Tools | 52 |
 | Transport | STDIO and HTTP |
 
 The most feature-complete server in this review by raw tool count. 52 tools covering messages, rooms, teams, people, webhooks, and enterprise features (ECM folders, room tabs, attachments). Moved from the `webex` org to `WebexSamples`, suggesting it's positioned as sample code rather than an official product.
 
-**Webex federated agentic platform (NEW).** Webex is building a federated platform where every Webex product can participate independently with shared governance, consistency, and interoperability of deployed MCP servers. MCP Server Developer Onboarding is the first beta feature (March 2026). Webex Contact Center now supports MCP fulfillment actions — autonomous AI agents can connect directly to remote MCP servers.
+**Webex federated agentic platform (NEW).** Webex is building a [federated platform where every Webex product can participate independently](https://developer.webex.com/blog/webex-for-developers-newsletter-march-2026) with shared governance, consistency, and interoperability of deployed MCP servers — [MCP Server Developer Onboarding is the first beta feature (March 2026)](https://developer.webex.com/blog/webex-for-developers-newsletter-march-2026). [Webex Contact Center now supports MCP fulfillment actions](https://help.webex.com/article/nv7abhz) — autonomous AI agents can connect directly to remote MCP servers.
 
 ### What Works Well
 
@@ -374,15 +370,15 @@ The most feature-complete server in this review by raw tool count. 52 tools cove
 
 | Detail | Info |
 |--------|------|
-| [Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) | ~11,400 stars (+63%) |
+| [Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) | ~29,300 stars |
 | License | MIT |
 | Language | Rust + Next.js |
-| Latest | v0.3.0 (March 3, 2026) |
+| Latest | [v0.4.0](https://github.com/Zackriya-Solutions/meetily/releases) (June 5, 2026) |
 | Platforms | macOS, Windows, Linux |
 
-Not an MCP server, but the most popular open-source meeting assistant by a massive margin. **11,400 stars** (up 63% from 7,000 in March) — privacy-first with 100% local processing, 4x faster Parakeet/Whisper transcription, speaker diarization, and multiple AI provider support (Ollama, Claude, Groq, OpenRouter). Works with every meeting platform by capturing device audio directly. Now also offers a "PRO" version alongside the free community edition.
+Not an MCP server, but the most popular open-source meeting assistant by a massive margin. **~29,300 stars** as of this audit (per the live [GitHub repository](https://github.com/Zackriya-Solutions/meetily), up from 11,400 at last refresh) — privacy-first with 100% local processing, 4x faster Parakeet/Whisper transcription, speaker diarization, and multiple AI provider support (Ollama, Claude, Groq, OpenRouter). Works with every meeting platform by capturing device audio directly. Now also offers a "PRO" version alongside the free community edition.
 
-**Why it matters for MCP:** Meetily's explosive growth (63% in 40 days) and architecture (local transcription + flexible AI backends) make it the most likely candidate for a meeting MCP server integration. With 11,400 stars of community momentum and privacy-first positioning, a Meetily MCP wrapper would instantly become the most popular open-source meeting intelligence MCP server. The project still doesn't have MCP integration — this remains the biggest opportunity in the category.
+**Why it matters for MCP:** Meetily's explosive growth and architecture (local transcription + flexible AI backends) make it the most likely candidate for a meeting MCP server integration. With ~29,300 stars of community momentum and privacy-first positioning, a Meetily MCP wrapper would instantly become the most popular open-source meeting intelligence MCP server. The project still doesn't have MCP integration — this remains the biggest opportunity in the category.
 
 ## What's Missing
 
@@ -390,11 +386,11 @@ Not an MCP server, but the most popular open-source meeting assistant by a massi
 
 **~~No official Microsoft Teams meeting MCP server.~~** ✅ **PARTIALLY CLOSED.** Microsoft Work IQ Teams provides official 25+ tool messaging/channel management. Meeting-specific features (recordings, transcriptions) are still via Work IQ Calendar for scheduling only.
 
-**No official Google Meet MCP server.** Google launched a Workspace MCP Server in preview covering Calendar, Drive, Gmail, and Chat — but **Google Meet was not included**. Despite [110 million+ monthly "Take Notes For Me" users](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026), there's no dedicated Meet MCP server. The community server (23 tools) fills the gap partially. This is now the biggest remaining platform gap.
+**No official Google Meet MCP server.** Google launched a Workspace MCP Server in preview covering Calendar, Drive, Gmail, and Chat — but **Google Meet was not included**. Despite [110 million+ monthly "Take Notes For Me" users](https://workspace.google.com/blog/product-announcements/10-more-announcements-workspace-at-next-2026), there's no dedicated Meet MCP server. The community server (21 tools) fills the gap partially. This is now the biggest remaining platform gap.
 
 **No meeting summarization server.** Transcription is covered (Vexa, tl;dv, Otter.ai, Fireflies.ai), and some platforms provide AI-generated summaries, but no standalone MCP server specializes in generating structured meeting summaries, action items, or decision logs from arbitrary transcript input.
 
-**No Meetily MCP wrapper.** The most popular open-source meeting assistant (11,400 stars, 63% growth in 40 days) still doesn't have MCP integration. This is the biggest open-source opportunity in the category.
+**No Meetily MCP wrapper.** The most popular open-source meeting assistant (~29,300 stars as of this audit) still doesn't have MCP integration. This is the biggest open-source opportunity in the category.
 
 **No calendar-to-meeting bridge.** Connecting a calendar MCP server to a meeting MCP server (auto-join upcoming meetings, transcribe, and update your notes) requires manual orchestration. Microsoft's Work IQ suite (Calendar + Teams) comes closest but doesn't fully bridge the gap.
 
@@ -402,19 +398,19 @@ Not an MCP server, but the most popular open-source meeting assistant by a massi
 
 **"I use Zoom and want meeting intelligence in Claude"** → **Zoom Official MCP Connector** (April 2026). First-party, managed, secure. The default choice for Zoom users on Claude.
 
-**"I want AI agents to participate in my meetings"** → [Joinly](https://github.com/joinly-ai/joinly). Most adopted real-time participation framework (494 stars). Composable with other MCP servers. Multiple STT/TTS providers.
+**"I want AI agents to participate in my meetings"** → [Joinly](https://github.com/joinly-ai/joinly). Most adopted real-time participation framework (~561 stars). Composable with other MCP servers. Multiple STT/TTS providers.
 
-**"I need meeting transcripts accessible to AI agents"** → [Vexa](https://github.com/Vexa-ai/vexa) (open source, self-hostable, 1,900 stars, v0.10.4) or [tl;dv MCP](https://github.com/tldv-public/tldv-mcp-server) (commercial SaaS, multi-platform). For cross-meeting analysis: [Otter.ai MCP](https://otter.ai/) or [Fireflies.ai MCP](https://fireflies.ai/) (commercial, hosted).
+**"I need meeting transcripts accessible to AI agents"** → [Vexa](https://github.com/Vexa-ai/vexa) (open source, self-hostable, ~2,700 stars, v0.12) or [tl;dv MCP](https://github.com/tldv-public/tldv-mcp-server) (commercial SaaS, multi-platform). For cross-meeting analysis: [Otter.ai MCP](https://otter.ai/) or [Fireflies.ai MCP](https://fireflies.ai/) (commercial, hosted).
 
 **"I want speaking bots in meetings"** → [Meeting BaaS](https://github.com/Meeting-BaaS/meeting-mcp) + [speaking-bots-mcp](https://github.com/Meeting-Baas/speaking-bots-mcp). Only option for AI bots that talk in calls.
 
-**"I need a Zoom integration outside Claude"** → [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp). Best community option (26 stars). Use the official Zoom connector if you're on Claude.
+**"I need a Zoom integration outside Claude"** → [echelon-ai-labs/zoom-mcp](https://github.com/echelon-ai-labs/zoom-mcp). Best community option (~28 stars). Use the official Zoom connector if you're on Claude.
 
-**"I need a Teams integration"** → **Microsoft Work IQ Teams** (official, 25+ tools, Copilot license required) or [InditexTech/mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) (369 stars, Docker-ready, no Copilot needed) or [floriscornel/teams-mcp](https://github.com/floriscornel/teams-mcp) (91 stars, 25+ tools, npm package).
+**"I need a Teams integration"** → **Microsoft Work IQ Teams** (official, [25+ tools](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-teams-work-iq), Copilot license required) or [InditexTech/mcp-teams-server](https://github.com/InditexTech/mcp-teams-server) (~392 stars, Docker-ready, no Copilot needed) or [floriscornel/teams-mcp](https://github.com/floriscornel/teams-mcp) (~126 stars, 25+ tools, npm package).
 
 **"I need a Webex integration"** → [WebexSamples/webex-messaging-mcp-server](https://github.com/WebexSamples/webex-messaging-mcp-server). 52 tools, messaging only. Watch for Webex's federated agentic platform for meeting-specific MCP.
 
-**"I want private, local meeting transcription"** → Watch [Meetily](https://github.com/Zackriya-Solutions/meetily) (11,400 stars) for MCP integration, or self-host [Vexa](https://github.com/Vexa-ai/vexa).
+**"I want private, local meeting transcription"** → Watch [Meetily](https://github.com/Zackriya-Solutions/meetily) (~29,300 stars) for MCP integration, or self-host [Vexa](https://github.com/Vexa-ai/vexa).
 
 ## Rating: 4.0 / 5 (↑ from 3.5)
 
@@ -424,7 +420,7 @@ The video conferencing MCP ecosystem has matured dramatically in 40 days. The ca
 
 **The remaining gap:** Google Meet still has no official MCP server — surprising given 110 million+ monthly "Take Notes For Me" users and Google's Workspace MCP Server preview covering Calendar, Chat, and Drive. Google Meet is now the last major holdout among the top three platforms.
 
-Vexa remains the strongest open-source option (1,900 stars, self-hostable, 100 languages, v0.10 architecture refactor). Joinly's real-time participation concept is the most ambitious. Meetily's 11,400-star community is the biggest untapped MCP opportunity.
+Vexa remains the strongest open-source option (~2,700 stars, self-hostable, 100 languages, built on the v0.10 architecture refactor). Joinly's real-time participation concept is the most ambitious. Meetily's ~29,300-star community is the biggest untapped MCP opportunity.
 
 The upgrade from 3.5 to 4.0 reflects a fundamental shift: meeting MCP has moved from "community fills the gaps" to "platforms ship official integrations." Two of three major platforms now have first-party MCP support. The developer experience has improved substantially — most use cases can now be solved with official, maintained integrations rather than community workarounds.
 

@@ -68,7 +68,7 @@
       <div class="article-body">
         <p>Spreadsheet and office suite MCP servers let AI assistants create Word documents, read and write Excel files, manage Google Sheets, edit Google Docs, and automate entire Google Workspace workflows. Instead of manually formatting documents and copying data between spreadsheets, you can have AI agents handle the full office productivity stack through the Model Context Protocol. Part of our <strong><a href="/categories/business-productivity/">Business &amp; Productivity MCP category</a></strong>.</p>
 <p>This review covers the <strong>spreadsheet and office suite</strong> ecosystem — Google Sheets, Excel, Microsoft Word, Google Docs, Google Workspace, LibreOffice, and generic spreadsheet tools. For presentation-specific servers, see our <a href="/reviews/presentation-slides-mcp-servers/">Presentation &amp; Slides review</a>. For email servers, see our <a href="/reviews/outlook-mcp-servers/">Outlook review</a> and <a href="/reviews/gmail-mcp-servers/">Gmail review</a>.</p>
-<p>The headline findings: <strong>haris-musa/excel-mcp-server exploded to 3,800 stars</strong> — now the most-starred dedicated spreadsheet MCP server. <strong>taylorwilsdon/google_workspace_mcp grew to 2,300 stars</strong> with v1.20.1 adding PKCE auth, Sheets row ops, and PDF extraction. <strong>GongRzhe/Office-Word-MCP-Server was ARCHIVED</strong> on March 3, 2026 (1,900 stars, now read-only). <strong>NEW: Softeria/ms-365-mcp-server (668 stars)</strong> provides 200+ tools via Microsoft Graph API. <strong>sbroenne/mcp-server-excel nearly doubled</strong> to 147 stars with v1.8.55 and near-daily releases. Google launched official remote MCP servers but <strong>omits Sheets and Docs</strong>. Microsoft MCP is now <strong>GA in Copilot Studio</strong>.</p>
+<p>The headline findings: <strong>haris-musa/excel-mcp-server exploded to 3,800 stars</strong> — now the most-starred dedicated spreadsheet MCP server. <strong>taylorwilsdon/google_workspace_mcp grew to 2,300 stars</strong> with v1.20.1 adding PKCE auth, Sheets row ops, and PDF extraction. <strong>GongRzhe/Office-Word-MCP-Server was ARCHIVED</strong> on March 3, 2026 (1,900 stars, now read-only). <strong>NEW: Softeria/ms-365-mcp-server (668 stars)</strong> provides 200+ tools via Microsoft Graph API. <strong>sbroenne/mcp-server-excel nearly doubled</strong> to 147 stars with v1.8.55 and near-daily releases. Google launched official Developer Preview MCP servers for Gmail/Drive/Calendar/Chat/People, then later added minimal Sheets and Docs servers too. Microsoft MCP is now <strong>GA in Copilot Studio</strong>.</p>
 <h2 id="google-workspace-comprehensive">Google Workspace (Comprehensive)</h2>
 <h3 id="taylorwilsdongoogle_workspace_mcp-most-popular">taylorwilsdon/google_workspace_mcp (Most Popular)</h3>
 <table>
@@ -91,7 +91,7 @@
 </tr>
 </tbody>
 </table>
-<p>The <strong>most comprehensive office productivity MCP server</strong> — covers 12+ Google services in a single installation. <strong>Grew 1,800→2,300 stars (+28%)</strong> with v1.20.1 (April 28, 2026):</p>
+<p>The <strong>most comprehensive office productivity MCP server</strong> — covers 12+ Google services in a single installation. <strong>Grew 1,800→2,300 stars (+28%)</strong> with <a href="https://github.com/taylorwilsdon/google_workspace_mcp/releases/tag/v1.20.1">v1.20.1</a> (April 28, 2026):</p>
 <ul>
 <li><strong>Gmail</strong> — complete email management with end-to-end coverage</li>
 <li><strong>Google Drive</strong> — file operations with Office format support, <strong>PDF extraction</strong> (new)</li>
@@ -107,7 +107,7 @@
 <li><strong>Google Apps Script</strong> — cross-application workflow automation</li>
 </ul>
 <p>Features <strong>OAuth 2.0/2.1 with PKCE authentication</strong> (new), multi-user support, domain-wide delegation, CLI mode for scripting, and tool filtering to reduce context usage. If you use Google Workspace, this is the one server to install.</p>
-<p><strong>Note:</strong> Google launched official remote MCP servers for Gmail (10 tools), Drive (7 tools), Calendar (8 tools), Chat (2 tools), and People (3 tools) — but <strong>Sheets and Docs are not yet covered by official servers</strong>. Community servers remain the only option for Sheets/Docs MCP access.</p>
+<p><strong>Note:</strong> Google has launched <a href="https://developers.google.com/workspace/guides/configure-mcp-servers">official Developer Preview MCP servers</a> for Gmail (10 tools), Drive (8 tools), Calendar (9 tools), Chat (4 tools), and People (3 tools) — see <a href="https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone">Google Cloud&rsquo;s announcement</a> (April 29, 2026). <strong>Update since this review&rsquo;s last refresh:</strong> Google has since added official Developer Preview servers for <a href="https://developers.google.com/workspace/sheets/api/guides/configure-mcp-server">Sheets</a> (6 tools) and <a href="https://developers.google.com/workspace/docs/api/guides/configure-mcp-server">Docs</a> (2 tools) too (docs updated 2026-07-27) — but both are far thinner than taylorwilsdon&rsquo;s or xing5&rsquo;s community servers, which remain the better choice for real Sheets/Docs work.</p>
 <h3 id="other-google-workspace-servers">Other Google Workspace Servers</h3>
 <table>
 <thead>
@@ -356,7 +356,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Nearly doubled from 76→147 stars (+93%)</strong> with aggressive release cadence — v1.8.55 (April 29, 2026) with near-daily releases in April 2026. Controls a <strong>live Excel application through COM API</strong> — Windows-only but with 230+ operations:</p>
+<p><strong>Nearly doubled from 76→147 stars (+93%)</strong> with aggressive release cadence — <a href="https://github.com/sbroenne/mcp-server-excel/releases/tag/v1.8.55">v1.8.55</a> (April 29, 2026), part of a <a href="https://github.com/sbroenne/mcp-server-excel/releases">near-daily release cadence in April 2026</a>. Controls a <strong>live Excel application through COM API</strong> — Windows-only but with 230+ operations:</p>
 <ul>
 <li><strong>Power Query</strong> — M code management, load destinations</li>
 <li><strong>DAX measures</strong> — Data Model with auto-formatted code</li>
@@ -423,7 +423,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>⚠️ ARCHIVED on March 3, 2026</strong> — now read-only with no further development. Was the second most-starred office MCP server. The code still works but will receive no updates or bug fixes. Rich Word document manipulation via python-docx:</p>
+<p><strong>⚠️ <a href="https://github.com/GongRzhe/Office-Word-MCP-Server">ARCHIVED on March 3, 2026</a></strong> — now read-only with no further development. Was the second most-starred office MCP server. The code still works but will receive no updates or bug fixes. Rich Word document manipulation via python-docx:</p>
 <ul>
 <li><strong>Document lifecycle</strong> — create, read, extract properties</li>
 <li><strong>Content insertion</strong> — headings, paragraphs, tables, images, page breaks</li>
@@ -645,11 +645,11 @@
 <li><strong>Microsoft Fabric MCP Server</strong> — AI-assisted development for Fabric workloads</li>
 <li><strong>Azure DevOps, AKS, Dataverse, Dev Box, Foundry</strong> servers (expanded)</li>
 </ul>
-<p><strong>MCP is now GA in Copilot Studio</strong> — agents can integrate MCP servers directly. Agent 365 MCP servers launched (Frontier program) for Copilot Search, SharePoint/OneDrive, Outlook Mail, and Outlook Calendar. MCP Apps in Copilot Chat (April 2026) render interactive UI (expense forms, dashboards) inside Copilot. Azure MCP Server is built into Visual Studio 2026.</p>
+<p><strong>MCP is <a href="https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/model-context-protocol-mcp-is-now-generally-available-in-microsoft-copilot-studio/">now GA in Copilot Studio</a></strong> — agents can integrate MCP servers directly. <a href="https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview">Agent 365 MCP servers</a> (preview, <a href="https://learn.microsoft.com/en-us/microsoft-agent-365/frontier">Frontier program</a>) cover Copilot Search, SharePoint/OneDrive, Outlook Mail, and Outlook Calendar. <a href="https://devblogs.microsoft.com/microsoft365dev/mcp-apps-now-available-in-copilot-chat/">MCP Apps in Copilot Chat</a> (announced April 7, 2026) render interactive UI (expense forms, dashboards) inside Copilot. <a href="https://devblogs.microsoft.com/visualstudio/azure-mcp-server-now-built-in-with-visual-studio-2026-a-new-era-for-agentic-workflows/">Azure MCP Server is built into Visual Studio 2026</a>.</p>
 <h2 id="whats-missing">What&rsquo;s missing</h2>
 <ul>
 <li><strong>Actively maintained Word MCP server</strong> — Office-Word-MCP-Server was archived; no clear successor for dedicated Word document creation</li>
-<li><strong>Google official Sheets/Docs MCP</strong> — Google launched official MCP servers for Gmail, Drive, Calendar, Chat, and People, but pointedly omits Sheets and Docs</li>
+<li><strong>Deeper Google Sheets/Docs MCP tooling</strong> — Google&rsquo;s <a href="https://developers.google.com/workspace/guides/configure-mcp-servers">official Developer Preview servers</a> for <a href="https://developers.google.com/workspace/sheets/api/guides/configure-mcp-server">Sheets</a> (6 tools) and <a href="https://developers.google.com/workspace/docs/api/guides/configure-mcp-server">Docs</a> (2 tools) now exist but are far thinner than community servers like taylorwilsdon&rsquo;s or xing5&rsquo;s</li>
 <li><strong>Real-time collaborative editing</strong> — no server supports live co-authoring (Google Docs style)</li>
 <li><strong>Apple Numbers</strong> — no MCP server for Apple&rsquo;s spreadsheet app</li>
 <li><strong>WPS Office standalone</strong> — only supported via OfficeMCP&rsquo;s COM on Windows</li>
@@ -657,7 +657,7 @@
 <li><strong>Notion-to-Office bridge</strong> — no format conversion between Notion and Office formats</li>
 </ul>
 <h2 id="the-bottom-line">The bottom line</h2>
-<p><strong>Rating: 4/5</strong> — The spreadsheet and office suite MCP ecosystem remains strong with significant movement since our last review. <strong>Excel had the biggest story</strong> — haris-musa/excel-mcp-server exploded to 3,800 stars, becoming the most-starred dedicated spreadsheet MCP server, while sbroenne&rsquo;s COM-based server nearly doubled with aggressive daily releases. <strong>Google Workspace grew to 2,300 stars</strong> with meaningful feature additions. The <strong>M365 ecosystem expanded</strong> with Softeria&rsquo;s 668-star community server (200+ tools via Graph API) and Microsoft making MCP GA in Copilot Studio. The <strong>Office-Word-MCP-Server archiving</strong> (1,900 stars, read-only) creates a gap in actively maintained Word document creation. Google&rsquo;s decision to launch official MCP servers while omitting Sheets and Docs is notable — community servers remain essential. Rating holds at 4/5: the Excel surge and M365 expansion are positives, offset by the Word gap and Google&rsquo;s official omission of Sheets/Docs.</p>
+<p><strong>Rating: 4/5</strong> — The spreadsheet and office suite MCP ecosystem remains strong with significant movement since our last review. <strong>Excel had the biggest story</strong> — haris-musa/excel-mcp-server exploded to 3,800 stars, becoming the most-starred dedicated spreadsheet MCP server, while sbroenne&rsquo;s COM-based server nearly doubled with aggressive daily releases. <strong>Google Workspace grew to 2,300 stars</strong> with meaningful feature additions. The <strong>M365 ecosystem expanded</strong> with Softeria&rsquo;s 668-star community server (200+ tools via Graph API) and Microsoft making MCP GA in Copilot Studio. The <strong>Office-Word-MCP-Server archiving</strong> (1,900 stars, read-only) creates a gap in actively maintained Word document creation. Google&rsquo;s official MCP servers remain Developer Preview only, and even after adding Sheets and Docs coverage (2-6 tools each, mid-2026) they&rsquo;re far thinner than the community alternatives — community servers remain essential. Rating holds at 4/5: the Excel surge and M365 expansion are positives, offset by the Word gap and Google&rsquo;s still-minimal official Sheets/Docs tooling.</p>
 <p><em>Last refreshed 2026-05-01 using Claude Opus 4.6 (Anthropic). First published 2026-03-16.</em></p>
 
       </div>

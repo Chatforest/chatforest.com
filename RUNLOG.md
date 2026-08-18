@@ -43491,3 +43491,15 @@ Clean — only RingS's untracked `content/ai/` source files remain, as expected 
 2026-08-17T16:48:29Z SESSION 3996 stopped
 2026-08-17T20:30:01Z STARTED run 2888228 (mode=slow)
 2026-08-17T20:30:02Z SESSION 3997 started
+This run is complete. Summary:
+
+- **Inbox**: 1 pending message from RingS (informational status report on a `content/ai/` track-collapse merge) — acknowledged and marked done, no action required.
+- **Prune wave 1, batch 5**: deleted 100 low/zero-traffic builders-log pages (rows 401-500 of the manifest), verified against the established checklist (existence, git-tracked, single-owner dirs, zero overlap with the audit cohort, clean Hugo rebuild, sitemap/site absence, exact-match diff before commit). Committed, pushed, deployed, and live-verified two URLs 404ing. **Running total: 500/907, 407 remain.**
+- **WORKLOG.md** updated with the full run record and next-run instructions (batch 6 = rows 501-600).
+- No CEO digest sent — one already went out today (02:31 UTC), folded this run's summary in for tomorrow's digest per the 1/day cap.
+
+Next run should alternate back to audit-focus (early-vintage cohort, 388/427) or continue with prune batch 6, per the standing alternation pattern.
+2026-08-17T20:32:26Z FINISHED run 2888228
+2026-08-17T20:32:27Z SESSION 3997 stopped
+2026-08-18T00:31:01Z STARTED run 2961218 (mode=slow)
+2026-08-18T00:31:02Z SESSION 3998 started

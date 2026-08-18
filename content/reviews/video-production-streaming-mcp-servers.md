@@ -2,11 +2,11 @@
 title: "Video Production & Streaming MCP Servers — OBS, YouTube, HeyGen, Runway, Twitch, Mux, Remotion, Short-Video-Maker, and More"
 date: 2026-03-15T18:00:00+09:00
 description: "Video production and streaming MCP servers are enabling AI agents to control live broadcasts, manage YouTube channels, generate AI videos, host and deliver content, create"
-og_description: "Video production & streaming MCP servers: Runway Official MCP (Gen-4.5, native audio, multi-shot — NEW), HeyGen (Avatar V, 4K upscaling, HyperFrames, Video Agent 100+ styles — MAJOR UPGRADE), short-video-maker (799+ stars, TikTok/Reels/Shorts — NEW), agentic-obs (69 tools, Claude Skills — NEW OBS LEADER), Mux Remote MCP (hosted mcp.mux.com, OAuth — NEW), Vimeo AI API (9 new endpoints, subtitle translation, dubbing — NEW), AITuber (1,300+ voices, 27+ styles — NEW), Video Caption MCP (99+ languages, fills caption translation gap — NEW), OBS (48 stars), YouTube (502 stars, 40+), Krea (20+ models), Kling AI (v2-master), Remotion (official + Skills), Plainly (AE templates), Dacast (livestream), Bitmovin (30+ devices), Twitch (chat + Helix). Google Workspace MCP launched at Cloud Next 2026 but still no YouTube-specific MCP. Rating: 4.5/5."
+og_description: "Video production & streaming MCP servers: Runway Official MCP (Gen-4.5, native audio, multi-shot — NEW), HeyGen (Avatar V, 4K upscaling, HyperFrames, Video Agent 100+ styles — MAJOR UPGRADE), short-video-maker (1,300+ stars, TikTok/Reels/Shorts — NEW), agentic-obs (81 tools, Claude Skills — NEW OBS LEADER), Mux Remote MCP (hosted mcp.mux.com, OAuth — NEW), Vimeo AI API (9 new endpoints, subtitle translation, dubbing — NEW), AITuber (1,300+ voices, 27+ styles — NEW), Video Caption MCP (multilingual translation, fills caption translation gap — NEW), OBS (118 stars), YouTube (563 stars, 40+), Krea (20+ models), Kling AI (v2-master), Remotion (official + Skills), Plainly (AE templates), Dacast (livestream), Bitmovin (30+ devices), Twitch (chat + Helix). Google Workspace MCP launched at Cloud Next 2026 but still no YouTube-specific MCP. Rating: 4.5/5."
 content_type: "Review"
-card_description: "Video production and streaming MCP servers across live broadcasting, YouTube channel management, AI video generation, video hosting, programmatic video creation, short-form content automation, and subtitle generation. REFRESH (April 27, 43 days since initial review): The biggest story is Runway launching an official MCP server (runwayml/runway-api-mcp-server, 16 stars) with Gen-4.5 support including native audio generation, multi-shot sequencing, and character-consistent long-form video up to one minute. HeyGen shipped massive upgrades — Avatar V (most advanced avatar model, 15-second recording to studio-quality video), Video Agent with 100+ curated visual styles, 4K upscaling via Topaz Starlight Precise 2.5, HyperFrames (open-source HTML-to-MP4 for agents), and Claude Code Skills integration. Mux launched a hosted Remote MCP at mcp.mux.com with OAuth authentication — no local install needed, one-click setup. Vimeo shipped 9 new AI API endpoints (transcription, subtitle translation, audio dubbing) available to Enterprise users. Short-form video creation exploded — gyoridavid/short-video-maker (799+ stars) automates TikTok/Reels/Shorts creation with text-to-speech, captions, background videos, and music, while AITuber MCP provides 1,300+ AI voices and 27+ visual styles for full video pipeline automation. OBS control quadrupled — ironystock/agentic-obs (69 tools in 8 groups with Claude Skills, TUI dashboard, screenshot monitoring) and sbroenne/mcp-server-obs (.NET 10, VS Code extension) join royshil/obs-mcp. The caption translation gap is partially filled — Video Caption MCP on Apify generates and translates captions in 99+ languages using Whisper + Qwen. Google launched Workspace MCP servers at Cloud Next 2026 (Gmail, Drive, Calendar, Chat) but still no YouTube-specific MCP server. ZubeidHendricks/youtube-mcp-server grew 490→502 stars. Rating upgraded 4.0→4.5/5 — Runway official MCP, Mux remote hosting, HeyGen's comprehensive agent integration, and short-form video automation represent major maturation of the category."
+card_description: "Video production and streaming MCP servers across live broadcasting, YouTube channel management, AI video generation, video hosting, programmatic video creation, short-form content automation, and subtitle generation. REFRESH (April 27, 43 days since initial review): The biggest story is Runway launching an official MCP server (runwayml/runway-api-mcp-server, 22 stars) with Gen-4.5 support including native audio generation, multi-shot sequencing, and character-consistent long-form video up to one minute. HeyGen shipped massive upgrades — Avatar V (most advanced avatar model, 15-second recording to studio-quality video), Video Agent with 100+ curated visual styles, 4K upscaling via Topaz Starlight Precise 2.5, HyperFrames (open-source HTML-to-MP4 for agents), and Claude Code Skills integration. Mux launched a hosted Remote MCP at mcp.mux.com with OAuth authentication — no local install needed, one-click setup. Vimeo shipped 9 new AI API endpoints (transcription, subtitle translation, audio dubbing) available to Enterprise users. Short-form video creation exploded — gyoridavid/short-video-maker (1,300+ stars) automates TikTok/Reels/Shorts creation with text-to-speech, captions, background videos, and music, while AITuber MCP provides 1,300+ AI voices and 27+ visual styles for full video pipeline automation. OBS control quadrupled — ironystock/agentic-obs (81 tools in 9 groups with Claude Skills, TUI dashboard, screenshot monitoring) and sbroenne/mcp-server-obs (.NET 10, VS Code extension) join royshil/obs-mcp. The caption translation gap is partially filled — Video Caption MCP on Apify generates and translates captions across multiple languages using Whisper + Qwen. Google launched Workspace MCP servers at Cloud Next 2026 (Gmail, Drive, Calendar, Chat) but still no YouTube-specific MCP server. ZubeidHendricks/youtube-mcp-server grew 490→563 stars. Rating upgraded 4.0→4.5/5 — Runway official MCP, Mux remote hosting, HeyGen's comprehensive agent integration, and short-form video automation represent major maturation of the category."
 last_refreshed: 2026-04-27
-sources_audited: 2026-07-23
+sources_audited: 2026-08-18
 ---
 
 Video production and streaming MCP servers are enabling AI agents to control live broadcasts, manage YouTube channels, generate AI-powered videos, host and deliver content at scale, create programmatic video from code, automate short-form content creation, and add subtitles — all through natural language. Instead of switching between OBS, YouTube Studio, and a video editor, an AI agent can handle the entire production pipeline: "Switch to the interview scene in OBS, start recording, generate a highlights reel with subtitles when we're done, and upload it to YouTube with optimized metadata."
@@ -15,7 +15,7 @@ This review covers the **production and distribution pipeline** — live streami
 
 The landscape spans eight areas: **live streaming** (OBS Studio control with 4+ implementations, Dacast, Bitmovin), **YouTube management** (40+ servers for upload, analytics, Shorts, channel management), **AI video generation** (Runway official, HeyGen with Avatar V, Kling, Krea multi-model, InVideo, AITuber), **video hosting & CDN** (Mux with remote MCP, Vimeo with AI API, Cloudflare Stream), **programmatic video** (Remotion with Skills, Plainly, chuk-motion, HeyGen HyperFrames), **short-form video** (short-video-maker, bilalnaseer/free-video-maker), **subtitles & captions** (Whisper-based transcription, multilingual caption translation), and **Twitch & other platforms** (chat integration, Helix API).
 
-The headline findings: **Runway launched an official MCP server** with Gen-4.5 support — native audio, multi-shot sequencing, and one-minute character-consistent video. **HeyGen shipped massive upgrades** — Avatar V, 100+ video styles, 4K upscaling, HyperFrames for HTML-to-video, and Claude Code Skills. **Mux went remote** with hosted MCP at mcp.mux.com — OAuth, no local install. **Short-form video exploded** — short-video-maker hit 799+ stars automating TikTok/Reels/Shorts. **OBS control quadrupled** from 1 to 4+ implementations led by agentic-obs with 69 tools. **Caption translation arrived** — Video Caption MCP covers 99+ languages. **Google still hasn't shipped a YouTube MCP** despite launching Workspace MCP servers at Cloud Next 2026.
+The headline findings: **Runway launched an official MCP server** with Gen-4.5 support — [native audio, multi-shot sequencing](https://runway.com/research/introducing-runway-gwm-1), and one-minute character-consistent video. **HeyGen shipped massive upgrades** — [Avatar V](https://www.heygen.com/blog/announcing-avatar-v), 100+ video styles, 4K upscaling, HyperFrames for HTML-to-video, and Claude Code Skills. **Mux went remote** with [hosted MCP at mcp.mux.com](https://www.mux.com/blog/remote-mcp) — OAuth, no local install. **Short-form video exploded** — short-video-maker hit [1,300+ stars](https://github.com/gyoridavid/short-video-maker) automating TikTok/Reels/Shorts. **OBS control quadrupled** from 1 to 4+ implementations led by agentic-obs with [81 tools](https://github.com/ironystock/agentic-obs). **Caption translation arrived** — Video Caption MCP adds [multilingual caption translation](https://apify.com/ntriqpro/video-caption-mcp). **Google still hasn't shipped a YouTube MCP** despite [launching Workspace MCP servers at Cloud Next 2026](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone).
 
 ## Live Streaming
 
@@ -25,11 +25,11 @@ OBS control has expanded from a single implementation to **four complementary se
 
 #### ironystock/agentic-obs (Most Comprehensive)
 
-| Server | Language | License | Tools |
-|--------|----------|---------|-------|
-| [ironystock/agentic-obs](https://github.com/ironystock/agentic-obs) | Go | — | 69 |
+| Server | Stars | Language | License | Tools |
+|--------|-------|----------|---------|-------|
+| [ironystock/agentic-obs](https://github.com/ironystock/agentic-obs) | 25 | Go | MIT | 81 |
 
-The **most feature-rich OBS MCP server** with **69 tools in 8 groups**: Scene Management, Scene Presets, Recording Control, Streaming Control, Source Management, Audio Control, Screenshot Sources, and more. Key differentiators:
+The **most feature-rich OBS MCP server** with **81 tools across 9 groups (plus 4 meta tools)**: Scene Management, Scene Presets, Recording Control, Streaming Control, Source Management, Audio Control, Screenshot Sources, and more. Key differentiators:
 
 - **Claude Skills** — shareable skill packages that teach AI assistants how to orchestrate OBS tools effectively using progressive disclosure for token efficiency
 - **Screenshot Monitoring** — periodic image capture for AI visual monitoring of broadcasts
@@ -44,15 +44,15 @@ Built in Go with OBS WebSocket client, HTTP server for screenshots, and backgrou
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [royshil/obs-mcp](https://github.com/royshil/obs-mcp) | 48 | TypeScript | MIT | 15+ |
+| [royshil/obs-mcp](https://github.com/royshil/obs-mcp) | 118 | JavaScript/TypeScript | GPL-2.0 | 15+ |
 
 The **original MCP server for OBS Studio**, providing AI control over live broadcasts via the OBS WebSocket protocol. Tools cover scene management, source & item control, streaming & recording, and general operations. Built by Roy Shilkrot (obs-localvocal, obs-backgroundremoval). Compatible with OBS 31+ with WebSocket 5.x.
 
 #### sbroenne/mcp-server-obs (.NET 10)
 
-| Server | Language | License | Notes |
-|--------|----------|---------|-------|
-| [sbroenne/mcp-server-obs](https://github.com/sbroenne/mcp-server-obs) | .NET 10 | — | VS Code extension |
+| Server | Stars | Language | License | Notes |
+|--------|-------|----------|---------|-------|
+| [sbroenne/mcp-server-obs](https://github.com/sbroenne/mcp-server-obs) | 11 | .NET 10 | MIT | VS Code extension |
 
 A **.NET 10 MCP server** for OBS Studio with a companion **VS Code extension**. Features streaming control, scene management, source management, audio control (mute/volume), window capture, media capabilities (screenshots, virtual camera). Can be used standalone with any MCP client or via the included VS Code extension. In active development.
 
@@ -79,9 +79,9 @@ Designed for broadcasters who want to reduce manual complexity — "create a new
 
 | Server | Type | Notes |
 |--------|------|-------|
-| [Bitmovin Stream Lab MCP](https://www.newscaststudio.com/2026/01/06/ces-2026-bitmovins-stream-lab-mcp-server-enables-llm-based-video-testing/) | Official | Video playback testing |
+| [Bitmovin Stream Lab MCP](https://bitmovin.com/press-room/bitmovin-com-stream-lab-mcp-server-launch/) | Official | Video playback testing |
 
-Launched at CES 2026, Bitmovin's Stream Lab MCP Server enables **LLM-based video playback testing** using natural language. The key differentiator: it tests on **30+ physical devices** including Samsung, LG, and Vizio smart TVs, web browsers, and gaming consoles — not just emulators.
+Launched at [CES 2026](https://www.newscaststudio.com/2026/01/06/ces-2026-bitmovins-stream-lab-mcp-server-enables-llm-based-video-testing/), Bitmovin's Stream Lab MCP Server enables **LLM-based video playback testing** using natural language. The key differentiator: it tests on **30+ physical devices** including Samsung, LG, and Vizio smart TVs, web browsers, and gaming consoles — not just emulators.
 
 This is a QA/testing tool rather than a production tool — AI agents can initiate and manage video playback tests, verify stream quality across device types, and report issues, all through natural language. A niche but valuable use case for video platform teams.
 
@@ -93,9 +93,9 @@ YouTube has **40+ MCP servers** in community directories — more than any other
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [ZubeidHendricks/youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) | 502 | TypeScript | — | 10+ |
+| [ZubeidHendricks/youtube-mcp-server](https://github.com/ZubeidHendricks/youtube-mcp-server) | 563 | TypeScript | MIT | 10+ |
 
-The **most-starred YouTube MCP server**, enabling video management, Shorts creation, and advanced analytics through the YouTube Data API. At 502 stars (up from 490), it remains the largest community YouTube MCP implementation.
+The **most-starred YouTube MCP server**, enabling video management, Shorts creation, and advanced analytics through the YouTube Data API. At 563 stars (up from 490 at initial review), it remains the largest community YouTube MCP implementation.
 
 ### pauling-ai/youtube-mcp-server (Most Comprehensive)
 
@@ -115,15 +115,15 @@ Built with FastMCP. The only open-source server that provides YouTube Analytics 
 
 | Server | Stars | Language | Notes |
 |--------|-------|----------|-------|
-| [anaisbetts/mcp-youtube](https://github.com/anaisbetts/mcp-youtube) | 503 | JavaScript | MIT — transcript extraction (in Social Media review) |
-| [kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) | 494 | TypeScript | MIT — transcript with ad filtering |
+| [anaisbetts/mcp-youtube](https://github.com/anaisbetts/mcp-youtube) | 542 | JavaScript | MIT — transcript extraction (in Social Media review) |
+| [kimtaeyoon83/mcp-server-youtube-transcript](https://github.com/kimtaeyoon83/mcp-server-youtube-transcript) | 582 | TypeScript | MIT — transcript with ad filtering |
 | [brianshin22/youtube-translate-mcp](https://www.pulsemcp.com/servers/brianshin22-youtube-translate) | — | — | Transcripts + translations + summaries + subtitle generation |
 | [IA-Programming/Youtube-MCP](https://github.com/ia-programming/youtube-mcp) | — | — | Semantic search over video content via vector database — no API key needed |
 | [icraft2170/youtube-data-mcp-server](https://github.com/icraft2170/youtube-data-mcp-server) | — | — | YouTube Data API standardized interface |
 | [dogfrogfog/youtube-analytics-mcp](https://github.com/dogfrogfog/youtube-analytics-mcp) | — | — | Analytics with demographics |
 | [CDataSoftware/youtube-analytics-mcp-server-by-cdata](https://github.com/CDataSoftware/youtube-analytics-mcp-server-by-cdata) | — | — | Read-only analytics via CData JDBC |
 
-**Notable absence update:** Google launched official Workspace MCP servers at Cloud Next 2026 (April) covering Gmail (10 tools), Drive (7 tools), Calendar, and Chat — but **still no YouTube-specific MCP server**. The community [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) (2,200 stars, 12 Google services) provides the broadest unofficial Google coverage but doesn't include YouTube APIs.
+**Notable absence update:** Google launched official [Workspace MCP servers](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) at Cloud Next 2026 (April), covering [Gmail (10 tools), Drive (8 tools), Calendar (9 tools), and Chat (4 tools)](https://developers.google.com/workspace/guides/configure-mcp-servers) — but **still no YouTube-specific MCP server**. The community [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) (3,000 stars, 12 Google services) provides the broadest unofficial Google coverage but doesn't include YouTube APIs.
 
 ## AI Video Generation
 
@@ -133,14 +133,14 @@ The fastest-growing subcategory, now with an official Runway MCP server alongsid
 
 | Server | Stars | Language | License | Notes |
 |--------|-------|----------|---------|-------|
-| [runwayml/runway-api-mcp-server](https://github.com/runwayml/runway-api-mcp-server) | 16 | Node.js | — | Official Runway MCP |
+| [runwayml/runway-api-mcp-server](https://github.com/runwayml/runway-api-mcp-server) | 22 | Node.js | MIT | Official Runway MCP |
 
 **Runway's official MCP server** — the first major AI video generation platform to ship an official MCP server under its own GitHub organization. Connects Claude, Cursor, or any MCP-compatible assistant directly to Runway's generation capabilities:
 
-- **Gen-4.5** — text-to-video and image-to-video, 2-10 second clips, [top score (1247) on Artificial Analysis text-to-video benchmark](https://runwayml.com/research/introducing-runway-gen-4.5)
-- **Native Audio** — dialogue, ambient soundtracks, and synchronized audio generated directly within the model
+- **Gen-4.5** — text-to-video and image-to-video, 2-10 second clips, [top score (1,247 Elo) on the Artificial Analysis text-to-video benchmark](https://runway.com/research/introducing-runway-gen-4.5)
+- **Native Audio** — [dialogue, sound effects, and immersive background audio generated directly within the model](https://runway.com/research/introducing-runway-gwm-1)
 - **Multi-Shot Sequencing** — create coherent multi-shot sequences for longer narratives
-- **Character-Consistent Long-Form** — up to one-minute video with character consistency
+- **Character-Consistent Long-Form** — extended-duration video with character consistency
 - **Image Generation** — text-to-image via the same API
 - **Video Upscaling** — enhance resolution of generated content
 
@@ -150,18 +150,17 @@ Gen-4.5 demonstrates comprehensive understanding of physical properties — stat
 
 | Server | Type | Tools | Transport |
 |--------|------|-------|-----------|
-| [HeyGen MCP Server](https://docs.heygen.com/docs/heygen-mcp-server) | Official | 5+ | stdio + remote |
-| [HeyGen Remote MCP](https://docs.heygen.com/docs/heygen-remote-mcp-server) | Official | 5+ | Remote (OAuth) |
+| [HeyGen MCP Server](https://developers.heygen.com/mcp/overview) | Official | 50+ | Remote (OAuth) |
 | [HeyGen Skills](https://github.com/heygen-com/skills) | Official | — | Claude Code / Cursor / Codex |
 | [HeyGen HyperFrames](https://github.com/heygen-com/hyperframes) | Official | — | HTML-to-MP4 rendering |
 
 HeyGen shipped **four major upgrades** since the initial review:
 
-- **Avatar V** (March 2026) — most advanced AI avatar model. Studio-quality videos from a 15-second recording with lifelike motion, multi-angle stability, and long-form performance. Uses diffusion transformers and sparse attention in a five-stage training pipeline.
+- **[Avatar V](https://www.heygen.com/blog/announcing-avatar-v)** (April 2026) — most advanced AI avatar model. Studio-quality videos from a 15-second recording with lifelike motion, multi-angle stability, and long-form performance. Uses diffusion transformers and sparse attention in a five-stage training pipeline.
 - **Video Agent Styles** — 100+ curated visual styles controlling typography, font pairings, color systems, motion pacing, transitions, animation timing, and layout composition
 - **4K Upscaling** — powered by Topaz Starlight Precise 2.5. Two engines: Standard (faster, fewer credits) and Precise (sharper). Plus frame interpolation from 24fps to 120fps
 - **Brand System** — single-click brand application across Templates, AI Studio, and Video Agent
-- **HyperFrames** (April 17, 2026) — open-source tool converting HTML/CSS animations into MP4 video files using headless Puppeteer + FFmpeg. Deterministic output — same HTML always generates the same video
+- **[HyperFrames](https://github.com/heygen-com/hyperframes)** (April 17, 2026) — open-source tool converting HTML/CSS animations into MP4 video files using headless Chrome (Puppeteer) + FFmpeg. Deterministic output — same HTML always generates the same video
 - **Claude Code Skills** — official skills package for avatar creation and video production via the v3 Video Agent pipeline, with MCP auto-detection via OAuth
 
 HeyGen MCP is now available on **Claude, Manus, and OpenAI** — generating videos directly on these platforms. The integration depth (MCP + Skills + HyperFrames + Remote OAuth) makes HeyGen the most comprehensively AI-integrated video platform.
@@ -178,7 +177,7 @@ A **unified interface to 20+ AI generation models** through Krea.ai:
 - **Video models** — Runway Gen-4, Hailuo, Kling, Pika, Veo 3
 - **Capabilities** — text-to-image, text-to-video, image-to-video, custom styles
 
-Krea platform updates in 2026 include Realtime Edit (January — live image updates while typing/speaking) and a major interface redesign (March — drag-and-drop workflows, customizable workspace, voice mode).
+Krea platform updates in 2026 include [Realtime Edit](https://www.krea.ai/blog/realtime-edit) (January — live image updates while typing/speaking) and a major [interface redesign](https://www.krea.ai/blog/redesign) (March — drag-and-drop workflows, customizable workspace, voice mode).
 
 ### Kling AI MCP
 
@@ -186,13 +185,13 @@ Krea platform updates in 2026 include Realtime Edit (January — live image upda
 |--------|----------|-------|
 | [199-mcp/mcp-kling](https://github.com/199-mcp/mcp-kling) | — | First complete Kling MCP |
 
-The **first and most complete MCP server for Kling AI** — supports multiple models (v1, v1.5, v1.6, v2-master) with video generation, image creation, lip sync, effects, and virtual try-on. Kling has reached version 3.0 in 2026.
+The **first and most complete MCP server for Kling AI** — supports multiple models (v1, v1.5, v1.6, v2-master) with video generation, image creation, lip sync, effects, and virtual try-on. [Kling has reached version 3.0 in 2026](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be).
 
 ### AITuber MCP (NEW)
 
 | Server | Type | Notes |
 |--------|------|-------|
-| [aituberapp/aituber-mcp](https://github.com/aituberapp/aituber-mcp) | Commercial | Full video pipeline for social media |
+| [aituberapp/ai-video-mcp](https://github.com/aituberapp/ai-video-mcp) | Commercial | Full video pipeline for social media |
 
 **AITuber** is an AI video creation platform with an MCP server that automates the entire production process — script generation, voice synthesis, visual generation, and video rendering:
 
@@ -209,10 +208,10 @@ Works with Claude, Cursor, OpenClaw, or any MCP client. The breadth of voices an
 |--------|----------|-------|
 | [wheattoast11/mcp-video-gen](https://github.com/wheattoast11/mcp-video-gen) | — | Luma AI + RunwayML — video/audio/image generation |
 | [bobtista/luma-ai-mcp-server](https://github.com/bobtista/luma-ai-mcp-server) | — | Luma Dream Machine API — text/image-to-video, video enhancement |
-| [felores/kie-ai-mcp-server](https://github.com/felores/kie-ai-mcp-server) | — | Kie.ai — intent detection, cost optimization, Veo3/Runway Aleph/Suno V5/ElevenLabs/Midjourney |
-| [InVideo Remote MCP](https://invideo.io/ai/mcp/) | — | Official — Sora 2 + Veo 3.1 built in, Money Shot e-commerce feature, 50+ subtitle languages |
+| [felores/kie-cli-mcp](https://github.com/felores/kie-cli-mcp) | — | Kie.ai — cost optimization, Veo3/Runway Aleph/Suno V5/ElevenLabs/Midjourney |
+| [InVideo Remote MCP](https://invideo.io/ai/mcp/) | — | Official — Sora 2 + Veo 3.1 available, [Money Shot e-commerce feature](https://invideo.io/blog/product-photos-to-video-ads-money-shot/), [50+ subtitle languages](https://invideo.io/ai/mcp/) |
 
-InVideo's 2026 updates are significant — both **OpenAI Sora 2 and Google Veo 3.1** are now built directly into the InVideo pipeline, generating cinematic clips alongside stock footage. The new **Money Shot** feature converts a single product photo into Amazon A+ content, 360-degree videos, and A/B ad variant sets.
+InVideo's 2026 updates are significant — both **OpenAI Sora 2 and Google Veo 3.1** are now available as video models within the InVideo pipeline, generating cinematic clips alongside stock footage. The new **[Money Shot](https://invideo.io/blog/product-photos-to-video-ads-money-shot/)** feature converts a single product photo into a finished, on-brand commercial — preset styles keep the product and logo visually accurate rather than distorted by generation.
 
 ## Video Hosting & CDN
 
@@ -239,9 +238,9 @@ Available in Claude, ChatGPT, VS Code, and any MCP-compatible client. The local 
 |--------|------|-------|
 | [Vimeo MCP Server](https://developer.vimeo.com/api/mcp-server) | Official | Video platform API + AI |
 
-Vimeo's MCP server is now in **public beta** with significant AI API additions (April 24, 2026):
+Vimeo's MCP server is now in **public beta** with significant [AI API additions](https://help.vimeo.com/hc/en-us/articles/45762682270097-How-to-use-the-Vimeo-AI-API) (April 24, 2026):
 
-- **9 new AI API endpoints** under `/videos/{id}/ai/*` — available to Enterprise users
+- **9 new AI API endpoints** under `/videos/{id}/ai/*` — available to Enterprise users only
 - **AI Transcription** — trigger automated transcription
 - **Subtitle Translation** — translate captions to other languages
 - **Audio Dubbing** — AI-powered dubbing into additional languages
@@ -277,9 +276,9 @@ The **remotion-mcp-app** combines an MCP server with an interactive widget — t
 
 | Server | Language | Components | Themes |
 |--------|----------|------------|--------|
-| [chrishayuk/chuk-mcp-remotion](https://github.com/chrishayuk/chuk-mcp-remotion) | — | 51 | 7 |
+| [IBM/chuk-motion](https://github.com/IBM/chuk-motion) | — | 51 | 7 |
 
-A design-system-first approach to Remotion video generation — **51 video components** and **7 built-in themes** optimized for multiple platforms. Enables AI to create professional animated videos without building components from scratch. Think of it as a component library for AI-generated video.
+A design-system-first approach to Remotion video generation — **51 video components** and **7 built-in themes** optimized for multiple platforms. Enables AI to create professional animated videos without building components from scratch. Think of it as a component library for AI-generated video. (Originally published as chrishayuk/chuk-mcp-remotion; the repository has since been transferred to the IBM GitHub organization.)
 
 ### Plainly Videos MCP (Official)
 
@@ -297,7 +296,7 @@ A new category of MCP servers focused specifically on automating short-form vide
 
 | Server | Stars | Language | License | Notes |
 |--------|-------|----------|---------|-------|
-| [gyoridavid/short-video-maker](https://github.com/gyoridavid/short-video-maker) | 799+ | TypeScript | — | TikTok / Reels / Shorts |
+| [gyoridavid/short-video-maker](https://github.com/gyoridavid/short-video-maker) | 1,300+ | TypeScript | MIT | TikTok / Reels / Shorts |
 
 The **breakout hit** of the video MCP space — creating short videos for **TikTok, Instagram Reels, and YouTube Shorts** from simple text inputs:
 
@@ -326,12 +325,12 @@ MCP servers that combine FFmpeg with OpenAI Whisper for automated subtitle gener
 
 | Server | Type | Languages | Notes |
 |--------|------|-----------|-------|
-| [Video Caption MCP](https://apify.com/ntriqpro/video-caption-mcp) | Apify | 99+ | Whisper + Qwen — auto-detect + translate |
+| [Video Caption MCP](https://apify.com/ntriqpro/video-caption-mcp) | Apify | Multiple | Whisper + Qwen — auto-detect + translate |
 
 The **first multilingual caption MCP server**, partially filling the caption translation gap identified in the initial review:
 
 - **Auto-detection** — identifies source language automatically
-- **99+ target languages** — translate captions across languages for global accessibility
+- **Multi-language translation** — the tool's `translate_captions` documentation lists Spanish, French, German, Japanese, Korean, Chinese, Portuguese, and Russian as example target languages; it does not publish a total supported-language count
 - **Powered by Whisper (MIT) + Qwen (Apache 2.0)** — open-source stack
 - **SRT/VTT output** — standard subtitle formats
 
@@ -359,9 +358,9 @@ A **high-performance speech recognition MCP server** based on Faster Whisper (CT
 
 | Server | Language | Notes |
 |--------|----------|-------|
-| [JamesANZ/video-toolkit-mcp](https://github.com/JamesANZ/video-toolkit-mcp) | — | Download + transcribe + subtitle |
+| [JamesANZ/transcript-mcp](https://github.com/JamesANZ/transcript-mcp) | — | Download + transcribe + subtitle |
 
-The most end-to-end subtitle server — handles the full pipeline from fetching the video through transcription to subtitle file generation using OpenAI Whisper API or local Whisper.
+The most end-to-end subtitle server — handles the full pipeline from fetching the video through transcription to subtitle file generation using OpenAI Whisper API or local Whisper. (Published as JamesANZ/video-toolkit-mcp at initial review; the repository has since been renamed to JamesANZ/transcript-mcp.)
 
 ### Video Caption MCP (Groq)
 
@@ -392,7 +391,7 @@ Despite 70+ servers (up from 60+), some gaps remain:
 - **No Kick, Rumble, or alternative streaming platforms** — Twitch is the only gaming/live streaming platform with MCP servers, despite Kick [surpassing 500M hours watched in March 2026](https://streamscharts.com/news/kick-reaches-over-500-million-hours-watched-march-2026)
 - **No professional broadcast protocols** — no SRT (Secure Reliable Transport), RTMP management, NDI, or SDI workflow tools
 - **No video CDN analytics beyond Mux** — no Fastly, Akamai, or AWS CloudFront video analytics
-- ~~No caption translation~~ — **partially filled** by Video Caption MCP (99+ languages via Whisper + Qwen on Apify)
+- ~~No caption translation~~ — **partially filled** by Video Caption MCP (multi-language translation via Whisper + Qwen on Apify)
 - **No video SEO tools** — no thumbnail A/B testing, title optimization, or tag suggestion servers
 - **No podcast video platforms** — no Spotify Video, Riverside.fm, or Descript MCP servers
 - **No closed captioning standards** — no CEA-608/708, TTML, or WebVTT compliance checking
@@ -407,7 +406,7 @@ Video Production & Streaming MCP servers earn **4.5 out of 5** (up from 4.0). Th
 
 **HeyGen is the most comprehensively AI-integrated video platform.** With four integration paths (MCP server, Remote MCP with OAuth, Claude Code Skills, and HyperFrames for HTML-to-video), plus Avatar V, 100+ video styles, 4K upscaling, and brand system — HeyGen has built the deepest MCP integration in any video category.
 
-**Short-form video automation has arrived.** gyoridavid/short-video-maker (799+ stars) and AITuber MCP (1,300+ voices, 27+ styles) prove that AI agents can handle the entire short-form production pipeline from text prompt to publishable TikTok/Reels/Shorts — a workflow that previously required multiple tools and manual effort.
+**Short-form video automation has arrived.** gyoridavid/short-video-maker (1,300+ stars) and AITuber MCP (1,300+ voices, 27+ styles) prove that AI agents can handle the entire short-form production pipeline from text prompt to publishable TikTok/Reels/Shorts — a workflow that previously required multiple tools and manual effort.
 
 The remaining weaknesses are the conspicuous absence of YouTube from Google's MCP lineup (despite launching other Workspace MCP servers), the lack of Kick/Rumble streaming platform servers, and missing professional broadcast protocol management. But the trajectory is clear — video production is rapidly becoming an AI-first workflow.
 

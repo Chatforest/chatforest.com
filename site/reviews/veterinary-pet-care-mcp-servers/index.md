@@ -56,7 +56,7 @@ The server bridges a real gap: genetic evaluation data is complex, and having an
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [siegerts/tama96](https://github.com/siegerts/tama96) | 12 | Rust | MIT | 7 |
+| [siegerts/tama96](https://github.com/siegerts/tama96) | 21 | Rust | MIT | 7 |
 
 A **faithful Tamagotchi P1 recreation** that goes far beyond toy MCP demos — this is a real-time virtual pet simulator with desktop, terminal, and AI agent interfaces:
 
@@ -70,13 +70,13 @@ A **faithful Tamagotchi P1 recreation** that goes far beyond toy MCP demos — t
 
 Real-time lifecycle where 1 real day = 1 pet year. Full P1 evolution matrix with 8+ distinct adult character outcomes based on care quality. Three interfaces: Tauri+React desktop app, ratatui terminal TUI, and Node.js MCP sidecar for AI agents. Per-action permissions and rate limiting prevent AI agents from overfeeding or neglecting pets. MCP resources include `pet://status`, `pet://evolution-chart`, and `pet://permissions`.
 
-Built on a shared Rust core library (tama-core) for the game engine, with the MCP server as a sidecar process. v0.1.14 as of April 2026. [#7 on Product Hunt launch day with 139 upvotes](https://hunted.space/dashboard/tama96-desktop-terminal-ai-pet). Still a pet simulation rather than veterinary software, but by far the most polished MCP pet project in the ecosystem.
+Built on a shared Rust core library (tama-core) for the game engine, with the MCP server as a sidecar process. v0.1.14 as of April 2026. [#7 on Product Hunt launch day with 140 upvotes](https://hunted.space/dashboard/tama96-desktop-terminal-ai-pet). Still a pet simulation rather than veterinary software, but by far the most polished MCP pet project in the ecosystem.
 
 ### MCPet
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [shreyaskarnik/mcpet](https://github.com/shreyaskarnik/mcpet) | 10 | TypeScript | MIT | 6 |
+| [shreyaskarnik/mcpet](https://github.com/shreyaskarnik/mcpet) | 13 | TypeScript | MIT | 6 |
 
 A **Tamagotchi-style virtual pet** simulation for Claude Desktop:
 
@@ -135,7 +135,7 @@ Uses SQLite FTS5 for fast local full-text search. Japanese language support make
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 23 | Python | MIT | 10 |
+| [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 26 | Python | MIT | 10 |
 
 Real-time **Brazilian agricultural data** from 19 public APIs:
 
@@ -148,7 +148,7 @@ Relevant to livestock farming through commodity pricing and land use data, but n
 
 ### Time To Pet (via Zapier)
 
-Available through **Zapier's MCP infrastructure** with 5 triggers for pet-sitting business management:
+Available through [Zapier's MCP infrastructure](https://zapier.com/apps/time-to-pet/integrations) with 5 triggers for pet-sitting business management:
 
 - New client, new prospect, new staff, client updated, staff updated
 
@@ -182,14 +182,14 @@ The gaps in veterinary and pet care MCP servers are enormous — arguably the wi
 
 It's worth noting that the **veterinary software industry is investing heavily in AI** — just not through MCP. As of April 2026:
 
-- **Shepherd** — TranscribeAI (SOAP note transcription), DiagnoseAI (differential diagnosis), AI Patient Summaries
-- **Covetrus/Pulse** — AI suite for auto-generating SOAP notes
-- **Digitail** — Tails AI (SOAP notes, patient summaries, treatment assistance)
-- **ezyVet** — AI-Assisted Notes (voice recording to SOAP conversion), piloting stage
-- **Provet Cloud** — AI clinical summaries, auto-populated discharge instructions
-- **Vetspire** — AI Scribe (conversation transcription), AI summary feature
+- **Shepherd** — [TranscribeAI](https://www.shepherd.vet/aitools/transcribeai/) (SOAP note transcription), [DiagnoseAI](https://www.shepherd.vet/aitools/diagnoseai/) (differential diagnosis), [SummarizeAI](https://www.shepherd.vet/aitools/summarizeai/) (patient summaries)
+- **Covetrus/Pulse** — [AI suite for auto-generating SOAP notes](https://covetrus.com/covetrus-platform/workflow-and-productivity-tools/covetrus-pulse/)
+- **Digitail** — [Tails AI](https://www.digitail.com/tails-ai) (SOAP notes, patient summaries, treatment assistance)
+- **ezyVet** — [AI-Assisted Notes](https://www.ezyvet.com/ai-assisted-notes) (voice recording to SOAP conversion), currently in beta
+- **Provet Cloud** — [AI clinical summaries, auto-populated discharge instructions](https://www.provet.com/product/clinical-ai)
+- **Vetspire** — [AI Scribe (conversation transcription), AI summary feature](https://www.vetspire.ai/)
 - **PetDesk** — AI transcription for SOAP notes, [used by 12,000+ veterinary practices](https://petdesk.com/products/veterinary-ai-transcription-platform)
-- **DaySmart Vet** — Daisy Voice (AI scribe for SOAP dictation)
+- **DaySmart Vet** — [Daisy Voice](https://www.daysmart.com/vet/) (AI scribe for SOAP dictation)
 
 Every major vet platform is building AI transcription and clinical note automation. **None have published MCP servers.** The AI investment is locked inside proprietary platforms — useful for the vets using those specific systems, but inaccessible to third-party AI agents. This is the fundamental disconnect: the data and workflows exist, the AI capability exists, but the open integration layer (MCP) is absent.
 
@@ -207,11 +207,11 @@ If you're building in this space, the opportunity is wide open. A veterinary pra
 |------------|-------------|-------|-------|---------|
 | Pet adoption | [mattlgroff/petfinder-mcp-server](https://github.com/mattlgroff/petfinder-mcp-server) | 4 | 7 | **NEW** — First real pet adoption search via Petfinder API |
 | Livestock genetics | [epicpast/nsip-api-client](https://github.com/epicpast/nsip-api-client) | 1 | 15 | Only serious tool — sheep EBVs and mating plans |
-| Pet simulation | [siegerts/tama96](https://github.com/siegerts/tama96) | 12 | 7 | **NEW** — Polished Tamagotchi P1 with desktop/terminal/MCP |
+| Pet simulation | [siegerts/tama96](https://github.com/siegerts/tama96) | 21 | 7 | **NEW** — Polished Tamagotchi P1 with desktop/terminal/MCP |
 | Species data | [lundgrenalex/mcp-fishbase](https://github.com/lundgrenalex/mcp-fishbase) | 0 | 8 | **NEW** — FishBase with ecology, distribution, morphology |
 | Species data (JP) | [cozy-corner/fish-mcp-server](https://github.com/cozy-corner/fish-mcp-server) | 0 | 2 | 35,700+ fish species, Japanese support |
-| Agricultural data | [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 23 | 10 | Brazilian ag data, tangentially relevant |
-| Pet simulation | [shreyaskarnik/mcpet](https://github.com/shreyaskarnik/mcpet) | 10 | 6 | Tamagotchi-style, demo quality |
+| Agricultural data | [bruno-portfolio/agrobr-mcp](https://github.com/bruno-portfolio/agrobr-mcp) | 26 | 10 | Brazilian ag data, tangentially relevant |
+| Pet simulation | [shreyaskarnik/mcpet](https://github.com/shreyaskarnik/mcpet) | 13 | 6 | Tamagotchi-style, demo quality |
 | Pet business | Time To Pet (Zapier) | — | 5 triggers | Notification triggers only |
 
 *This review was refreshed on 2026-04-28 using Claude Opus 4.6 (Anthropic). First published 2026-03-15.*

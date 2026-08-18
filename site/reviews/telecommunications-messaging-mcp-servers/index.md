@@ -1,13 +1,13 @@
 # Telecommunications & Messaging MCP Servers — SMS, Voice, WhatsApp, Telegram, CPaaS, and Unified Communications
 
-> Telecommunications and messaging MCP servers remain the strongest vertical category, with 60+ servers across 8 subcategories. Telegram ecosystem EXPLODED — chigwell/telegram-mcp reached 1,000 stars with 80+ tools v3.0.1.
+> Telecommunications and messaging MCP servers remain the strongest vertical category, with 60+ servers across 8 subcategories. Telegram ecosystem EXPLODED — chigwell/telegram-mcp passed 1,500 stars with 80+ tools v3.0.1.
 
 
 Telecommunications and messaging MCP servers let AI assistants send SMS, make voice calls, manage WhatsApp conversations, interact with Telegram, and orchestrate multi-channel communications. Instead of integrating with each provider's API separately, these servers expose telephony and messaging capabilities through the Model Context Protocol.
 
 This review covers the **telecommunications and messaging** vertical — CPaaS providers, voice telephony, messaging platforms, unified communications, and telecom standards. For team communication tools like Slack, see our [Collaboration MCP review](/guides/mcp-real-time-collaboration/). For email specifically, see our [Email MCP review](/reviews/gmail-mcp-servers/).
 
-The headline findings: **Eight major CPaaS providers have official MCP servers** — an unprecedented level of vendor adoption. **Twilio exposes all 1,400+ API endpoints** through MCP (103 stars). **WhatsApp MCP has 5,600 stars** — the most popular messaging integration. **Telegram's chigwell/telegram-mcp reached 1,000 stars** with 80+ tools — the biggest growth in this refresh. **Voice AI broke through in 2026** — Vapi (47 stars), Ring-a-Ding, and Vonage telephony bridges are production-ready. **Infobip went enterprise-grade** with 15+ remote MCP servers, OAuth 2.1, and Streamable HTTP. **Traditional telecom infrastructure (PBX, BSS/OSS) is still missing** but CAMARA integration signals change. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
+The headline findings: **Eight major CPaaS providers have official MCP servers** — an unprecedented level of vendor adoption. **Twilio exposes 1,800+ API endpoints** through MCP (109 stars). **WhatsApp MCP has 6,200+ stars** — the most popular messaging integration. **Telegram's chigwell/telegram-mcp passed 1,500 stars** with 80+ tools — the biggest growth in this refresh. **Voice AI broke through in 2026** — Vapi (57+ stars), Ring-a-Ding, and Vonage telephony bridges are production-ready. **Infobip went enterprise-grade** with 15+ remote MCP servers, OAuth 2.1, and Streamable HTTP. **Traditional telecom infrastructure (PBX, BSS/OSS) is still missing** but CAMARA integration signals change. Part of our **[Communication & Collaboration MCP category](/categories/communication-collaboration/)**.
 
 ## SMS & CPaaS Providers
 
@@ -15,25 +15,25 @@ The headline findings: **Eight major CPaaS providers have official MCP servers**
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [twilio-labs/mcp](https://github.com/twilio-labs/mcp) | 103 | TypeScript | MIT | 1,400+ endpoints |
+| [twilio-labs/mcp](https://github.com/twilio-labs/mcp) | 109 | TypeScript | MIT | 1,800+ endpoints |
 
 The **official Twilio MCP monorepo** — the most comprehensive CPaaS MCP integration available:
 
-- **[All 1,400+ Twilio API endpoints](https://www.twilio.com/en-us/blog/developers/introducing-twilio-mcp-skills)** exposed as MCP tools
+- **[Twilio's 1,800+ API endpoints](https://www.twilio.com/en-us/blog/developers/introducing-twilio-mcp-skills)** exposed as MCP tools
 - **OpenAPI-to-MCP generator** — automatically converts any Twilio API surface to MCP tools
 - **Full platform coverage** — SMS, voice, video, conversations, verify, taskrouter, and more
 - Published on npm as `@twilio-alpha/mcp`
 - **MCP Dev Summit 2026 participation** — sessions on SSO consolidation and cross-app access for MCP
 
-This isn't a wrapper around a few messaging endpoints — it's the entire Twilio platform made accessible through MCP. The OpenAPI-to-MCP generator is architecturally significant: as Twilio adds new APIs, the MCP surface grows automatically. Grew from ~77 to 103 stars (+34%) since our initial review.
+This isn't a wrapper around a few messaging endpoints — it's the entire Twilio platform made accessible through MCP. The OpenAPI-to-MCP generator is architecturally significant: as Twilio adds new APIs, the MCP surface grows automatically. Grew from ~77 stars at initial review to 109 stars as of this audit.
 
-### team-telnyx/telnyx-mcp-server (Official)
+### team-telnyx/telnyx-mcp-server (Official — now archived)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [telnyx-mcp-server](https://github.com/team-telnyx/telnyx-mcp-server) | 24 | Python | — | 36 |
+| [telnyx-mcp-server](https://github.com/team-telnyx/telnyx-mcp-server) | 25 | Python | — | 36 (historical) |
 
-The **official Telnyx MCP server** with expanded telephony and cloud services:
+**This repository was archived by Telnyx on Sep 29, 2025** and is now read-only. Its README carries a deprecation notice pointing to the maintained successor: the TypeScript server in [team-telnyx/telnyx-node](https://github.com/team-telnyx/telnyx-node/tree/master/packages/mcp-server). While active, this Python server covered telephony and cloud services:
 
 - **Call control** (7 tools) — make, transfer, hang up, play audio, text-to-speech
 - **Messaging** (3 tools) — send SMS and MMS
@@ -45,7 +45,7 @@ The **official Telnyx MCP server** with expanded telephony and cloud services:
 - **Secrets manager** (3 tools) — secure credential management
 - **Webhook receiver** — ngrok-based webhook handling for inbound events
 
-Expanded from basic telephony to 36 tools across 8 categories. Telnyx AI Agents now natively integrate with MCP servers for direct API connectivity. Note: the Python version is deprecated — TypeScript migration underway.
+Do not install this archived Python server for new projects — use the TypeScript package in telnyx-node instead.
 
 ### Bandwidth/mcp-server (Official)
 
@@ -105,7 +105,7 @@ Sinch was named a **[Leader in the IDC MarketScape 2026 Communications Engagemen
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [infobip/mcp](https://github.com/infobip/mcp) | 29 | Java | MIT | 15+ servers |
+| [infobip/mcp](https://github.com/infobip/mcp) | 32 | Java | MIT | 15+ servers |
 
 **Official Infobip remote MCP servers** — the most comprehensive enterprise messaging MCP platform:
 
@@ -127,7 +127,7 @@ Sinch was named a **[Leader in the IDC MarketScape 2026 Communications Engagemen
 - **OAuth 2.1** with scope discovery, plus API key auth
 - **Streamable HTTP** and SSE transport support
 
-Infobip has gone from a multi-channel messaging provider to the most enterprise-grade MCP platform in the CPaaS space. The **15+ remote MCP server endpoints** cover everything from messaging to 2FA to CAMARA network APIs. Joined the **Agentic AI Foundation as Gold Member**. The [infobip/infobip-openapi-mcp](https://github.com/infobip/infobip-openapi-mcp) framework (28 stars, Java/Spring AI, v0.1.13) auto-generates MCP servers from any OpenAPI specification — and powers Infobip's own production servers. This framework is architecturally significant: any organization with OpenAPI-documented APIs can use it to create MCP servers instantly.
+Infobip has gone from a multi-channel messaging provider to the most enterprise-grade MCP platform in the CPaaS space. The **15+ remote MCP server endpoints** cover everything from messaging to 2FA to CAMARA network APIs. The [infobip/infobip-openapi-mcp](https://github.com/infobip/infobip-openapi-mcp) framework (42+ stars, Java/Spring AI, v1.0.0) auto-generates MCP servers from any OpenAPI specification — and powers Infobip's own production servers. This framework is architecturally significant: any organization with OpenAPI-documented APIs can use it to create MCP servers instantly.
 
 ### ClickSend/clicksend-mcp-server (Official)
 
@@ -168,13 +168,13 @@ Several community-built servers extend the CPaaS MCP ecosystem:
 
 ## Voice & Telephony
 
-2026 has been called the **"Year of the Voice Agent"** — sub-100ms latency, native audio reasoning, and seamless workflow integration have arrived. Voice AI MCP servers went from experimental to production-ready.
+Voice AI MCP servers moved from experimental to production-ready this year, with several official and community servers now shipping call-management tools alongside real-time voice models.
 
 ### VapiAI/mcp-server (Official)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [VapiAI/mcp-server](https://github.com/VapiAI/mcp-server) | 47 | TypeScript | MIT | 15+ |
+| [VapiAI/mcp-server](https://github.com/VapiAI/mcp-server) | 57+ | TypeScript | MIT | 15+ |
 
 **NEW** — The **official Vapi MCP server** for building AI voice assistants and phone agents:
 
@@ -238,9 +238,9 @@ Lower-level than the Twilio-based approach — connects directly to SIP rather t
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) | 5,600 | Python + Go | MIT | Multiple |
+| [whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) | 6,200+ | Python + Go | MIT | Multiple |
 
-The **most popular messaging MCP server** by far (5,600 stars, 1K forks):
+The **most popular messaging MCP server** by far (6,200+ stars, 1.2K+ forks):
 
 - **Search messages** — full-text search across WhatsApp conversations
 - **Read messages** — retrieve message history from any chat
@@ -250,15 +250,15 @@ The **most popular messaging MCP server** by far (5,600 stars, 1K forks):
 
 The star count reflects real demand — people want AI assistants that can interact with their WhatsApp conversations. Uses the WhatsApp Web protocol (not the official API), which means it works with personal accounts but may be fragile if WhatsApp changes their web client.
 
-**Maintenance note (April 2026):** The original repo has been largely unmaintained since April 2025 (last release v0.0.1). Users report "Client outdated (405)" errors due to stale whatsmeow dependency. A maintained fork at [verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp) (28 stars) provides ongoing bug fixes, webhook integration, call history capture, and active development.
+**Maintenance note:** The original repo has been largely unmaintained since its last release, [v0.0.1 in April 2025](https://github.com/lharries/whatsapp-mcp/releases). Users report "Client outdated (405)" errors due to stale whatsmeow dependency. A maintained fork at [verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp) (145+ stars) — whose README explicitly [describes itself as a maintained fork](https://github.com/verygoodplugins/whatsapp-mcp) created because "the original repository hasn't been updated since April 2025" — provides ongoing bug fixes, webhook integration, call history capture, and active development.
 
 #### FelixIsaac/whatsapp-mcp-extended
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended) | — | — | — | 41 |
+| [whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended) | 22+ | — | — | 26 default / 15 lean |
 
-An **extended WhatsApp MCP** with 41 tools going well beyond basic messaging:
+An **extended WhatsApp MCP** with 26 default tools (a "lean" 15-tool mode is also available) going well beyond basic messaging:
 
 - Reactions, read receipts, message editing
 - Group management (create, modify, admin controls)
@@ -278,15 +278,15 @@ If the base WhatsApp MCP is read/send, this is full WhatsApp automation.
 
 ### Telegram
 
-The Telegram MCP ecosystem **exploded** since our initial review — multiple servers crossed significant star milestones, and the full-access server chigwell/telegram-mcp reached 1,000 stars with 80+ tools.
+The Telegram MCP ecosystem **exploded** since our initial review — multiple servers crossed significant star milestones, and the full-access server chigwell/telegram-mcp passed 1,500 stars with 80+ tools.
 
 #### chigwell/telegram-mcp
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [telegram-mcp](https://github.com/chigwell/telegram-mcp) | 1,000 | Python | — | 80+ |
+| [telegram-mcp](https://github.com/chigwell/telegram-mcp) | 1,500+ | Python | — | 80+ |
 
-**The most popular Telegram MCP server** — surged from uncounted to **1,000 stars** (262 forks, v3.0.1, April 28, 2026):
+**The most popular Telegram MCP server** — surged from uncounted to **1,500+ stars** (384+ forks, v3.0.1, April 28, 2026):
 
 - **Accounts tools** — current user info, session management
 - **Chats tools** — dialog listing, unread filtering, chat search
@@ -296,13 +296,13 @@ The Telegram MCP ecosystem **exploded** since our initial review — multiple se
 - **Profile/privacy tools** — profile settings, privacy configuration
 - **Folders/drafts tools** — folder management, draft read/write
 
-Full read/write Telegram access via Telethon with 80+ MCP tools across 7 functional categories. This is the most comprehensive messaging-platform MCP server outside of the CPaaS providers. The jump to 1,000 stars signals massive demand for AI-Telegram integration.
+Full read/write Telegram access via Telethon with 80+ MCP tools across 7 functional categories. This is the most comprehensive messaging-platform MCP server outside of the CPaaS providers. The jump past 1,500 stars signals massive demand for AI-Telegram integration.
 
 #### sparfenyuk/mcp-telegram
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [mcp-telegram](https://github.com/sparfenyuk/mcp-telegram) | 175 | Python | MIT | Read-only |
+| [mcp-telegram](https://github.com/sparfenyuk/mcp-telegram) | 185+ | Python | MIT | Read-only |
 
 **Read-only Telegram MCP** using MTProto protocol (not Bot API):
 
@@ -319,9 +319,9 @@ Using MTProto instead of the Bot API means this works with personal Telegram acc
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [chaindead/telegram-mcp](https://github.com/chaindead/telegram-mcp) | 321 | — | — | 5 |
+| [chaindead/telegram-mcp](https://github.com/chaindead/telegram-mcp) | 342+ | — | — | 5 |
 
-**Fast-growing Telegram MCP** (321 stars, 42 forks, v0.2.0, February 2026):
+**Fast-growing Telegram MCP** (342+ stars, 58+ forks, v0.2.0, February 2026):
 
 - `tg_me` — get current account information
 - `tg_dialogs` — list dialogs with unread filter
@@ -329,15 +329,15 @@ Using MTProto instead of the Bot API means this works with personal Telegram acc
 - `tg_dialog` — retrieve messages from specific dialog
 - `tg_send` — send draft messages to any dialog
 
-Clean, focused design with 5 well-defined tools and 24 releases. The 321-star count suggests strong community preference for a simpler, more constrained Telegram MCP.
+Clean, focused design with 5 well-defined tools and 24 releases. The 300+ star count suggests strong community preference for a simpler, more constrained Telegram MCP.
 
 #### dryeab/mcp-telegram
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [dryeab/mcp-telegram](https://github.com/dryeab/mcp-telegram) | 244 | Python | MIT | 8 |
+| [dryeab/mcp-telegram](https://github.com/dryeab/mcp-telegram) | 247+ | Python | MIT | 8 |
 
-**Mid-range Telegram MCP** (244 stars, 37 forks, 80 commits) via Telethon:
+**Mid-range Telegram MCP** (247+ stars, 39+ forks, 80 commits) via Telethon:
 
 - 4 messaging tools — send, edit, delete, get messages
 - 2 search/navigation tools — search dialogs, message from link
@@ -359,9 +359,9 @@ A solid middle ground between sparfenyuk's read-only safety and chigwell's full 
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [matrix-mcp-server](https://github.com/mjknowles/matrix-mcp-server) | 40 | TypeScript | MIT | 15 |
+| [matrix-mcp-server](https://github.com/mjknowles/matrix-mcp-server) | 51 | TypeScript | MIT | 15 |
 
-The **primary federated messaging protocol MCP** (40 stars, 15 forks, 37 commits):
+The **primary federated messaging protocol MCP** (51 stars, 20 forks, 37 commits):
 
 - **OAuth 2.0 authentication** — proper auth flow with token exchange
 - **15 tools across tiers** — Tier 0 (read-only: room info, messages, profiles, search, notifications) and Tier 1 (actions: message sending, room lifecycle, administration)
@@ -369,7 +369,7 @@ The **primary federated messaging protocol MCP** (40 stars, 15 forks, 37 commits
 - Room creation, joining, messaging, member management
 - Production-ready with comprehensive error handling
 
-Matrix is the open standard for decentralized communication (used by Element, French government, German military). Grew from 30 to 40 stars (+33%). Also see NEW [ricelines/matrix-mcp](https://github.com/ricelines/matrix-mcp) — Matrix chat MCP powered by Mautrix, providing an alternative implementation.
+Matrix is an open standard for decentralized communication. Grew from 30 stars at initial review to 51 stars as of this audit. Also see NEW [ricelines/matrix-mcp](https://github.com/ricelines/matrix-mcp) — Matrix chat MCP powered by Mautrix, providing an alternative implementation.
 
 ### WeChat
 
@@ -377,9 +377,9 @@ Matrix is the open standard for decentralized communication (used by Element, Fr
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [WeChat-MCP](https://github.com/BiboyQG/WeChat-MCP) | 167 | Python | MIT | 5 sub-agents |
+| [WeChat-MCP](https://github.com/BiboyQG/WeChat-MCP) | 238 | Python | MIT | 5 sub-agents |
 
-**WeChat automation** on macOS (167 stars, 54 forks) via Accessibility API and screen capture:
+**WeChat automation** on macOS (238 stars, 73 forks) via Accessibility API and screen capture:
 
 - `fetch_messages_by_chat` — get recent messages from a chat
 - `reply_to_messages_by_chat` — send replies to chats
@@ -402,13 +402,13 @@ All macOS-only, leveraging the local Messages database or AppleScript. No cross-
 
 ## Multi-Channel & Unified Communications
 
-### trycourier/courier-mcp (Official)
+### trycourier/courier-mcp (Official — now archived)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [courier-mcp](https://github.com/trycourier/courier-mcp) | 1 | — | — | 60 |
+| [courier-mcp](https://github.com/trycourier/courier-mcp) | 2 | — | — | 123 + 1 diagnostic |
 
-The **official Courier MCP server** (v1.3.0, 180 commits) for unified multi-channel messaging with **60 tools**:
+**This repository was archived as of July 13, 2026.** While active, it was the official Courier MCP server (v1.3.0) for unified multi-channel messaging. Its README describes **"124 tools backed by the `@trycourier/courier` Node SDK"** — 123 default tools organized by API resource, plus 1 diagnostic tool available in local installs (a larger set than the 60 tools this review originally reported):
 
 - **Send messages** — inline content, templates, list sends
 - **Delivery tracking** — status, rendered content, event history
@@ -424,7 +424,7 @@ The **official Courier MCP server** (v1.3.0, 180 commits) for unified multi-chan
 - **Webhooks** — custom integrations
 - Hosted at `https://mcp.courier.com` with local development option
 
-Expanded from basic multi-channel to 60 comprehensive tools. For applications that need to reach users across channels, Courier provides the deepest MCP integration for notification orchestration. Currently in beta.
+For applications that need to reach users across channels, Courier's tool set was the deepest MCP integration for notification orchestration reviewed here — but check for a maintained successor before adopting, since this repo is now archived and read-only.
 
 ### Other Multi-Channel Servers
 
@@ -453,11 +453,9 @@ For telecom engineers working with 5G, LTE, and NR standards, this turns impenet
 
 The telecom industry's MCP adoption accelerated significantly since our initial review:
 
-- **CAMARA / Open Gateway** — Infobip now has a CAMARA MCP server endpoint in production, providing SIM Swap and Number Verification capabilities through MCP. This is the first production CAMARA-MCP integration
-- **Agentic AI Foundation** — Infobip joined as Gold Member, directly shaping the infrastructure standards for AI agent communication
-- **[IDC MarketScape 2026](https://sinch.com/news/sinch-leader-idc-marketscape-2026/)** — Sinch named a Leader in Communications Engagement Platforms, with MCP as a core enablement technology
+- **CAMARA / Open Gateway** — the [infobip/mcp](https://github.com/infobip/mcp) server includes a CAMARA-based authentication and verification tool set (number verification, device location verification, SIM swap check/date, KYC match), per its own README
+- **[IDC MarketScape 2026](https://sinch.com/news/sinch-leader-idc-marketscape-2026/)** — Sinch named a Leader in the inaugural IDC MarketScape: Worldwide Communications Engagement Platforms 2026 Vendor Assessment (the assessment itself does not reference MCP)
 - **MCP Dev Summit 2026** — Twilio participated in sessions on SSO consolidation and cross-app access, signaling enterprise-grade MCP standardization
-- **Voice AI consensus** — Industry declaring 2026 as "Year of the Voice Agent" with sub-100ms latency, native audio reasoning, and MCP-native telephony
 - **[Cordial](https://www.prnewswire.com/news-releases/cordial-expands-innovation-with-mcp-interface-and-rcs-messaging-302540495.html)** — launched MCP interface with RCS as a supported channel, with early studies showing 3-7x higher click-through rates than SMS
 - **Streamable HTTP adoption** — Sinch and Infobip both adopted Streamable HTTP transport, aligning with the broader MCP ecosystem's move away from SSE
 
@@ -481,17 +479,17 @@ The telecommunications MCP ecosystem has clear gaps on the infrastructure side:
 
 ## The Bottom Line
 
-**Rating: 4.5/5** — Telecommunications and messaging remains the strongest vertical category we've reviewed, and it's getting stronger. The **eight major CPaaS providers with official MCP servers** (Twilio, Telnyx, Vonage, Bandwidth, Plivo, Sinch, Infobip, ClickSend) continue to expand — Telnyx now has 36 tools, Bandwidth 40+, Sinch 25 with RCS, Infobip expanded to 15+ remote server endpoints with OAuth 2.1 and CAMARA integration.
+**Rating: 4.5/5** — Telecommunications and messaging remains the strongest vertical category we've reviewed, and it's getting stronger. The **eight major CPaaS providers with official MCP servers** (Twilio, Telnyx, Vonage, Bandwidth, Plivo, Sinch, Infobip, ClickSend) continue to expand — Bandwidth 40+ tools, Sinch 25 with RCS, Infobip expanded to 15+ remote server endpoints with OAuth 2.1 and CAMARA integration. Note that Telnyx's Python server (36 tools) and Courier's server (123+ tools) have since been archived by their maintainers — see their entries above for the maintained successors.
 
-The biggest story this refresh is the **Telegram ecosystem explosion** — chigwell/telegram-mcp reached 1,000 stars with 80+ tools, chaindead/telegram-mcp surged to 321 stars, and dryeab/mcp-telegram hit 244 stars. Telegram MCP went from a fragmented subcategory to one of the most active in any vertical.
+The biggest story this refresh is the **Telegram ecosystem explosion** — chigwell/telegram-mcp passed 1,500 stars with 80+ tools, chaindead/telegram-mcp surged past 340 stars, and dryeab/mcp-telegram passed 245 stars. Telegram MCP went from a fragmented subcategory to one of the most active in any vertical.
 
-**Voice AI broke through** — Vapi (47 stars, MIT) provides production-ready voice agent management, Ring-a-Ding launched AI-initiated outbound phone calls, and the industry consensus is that 2026 is the "Year of the Voice Agent." This fills what was previously the weakest subcategory.
+**Voice AI broke through** — Vapi (57+ stars, MIT) provides production-ready voice agent management, and Ring-a-Ding launched AI-initiated outbound phone calls. This fills what was previously the weakest subcategory.
 
-Twilio's approach of exposing all 1,400+ endpoints via an OpenAPI-to-MCP generator remains architecturally the most ambitious. Infobip's evolution to 15+ remote servers with CAMARA integration makes them the most enterprise-ready. Courier's expansion to 60 tools makes it the deepest multi-channel integration.
+Twilio's approach of exposing 1,800+ endpoints via an OpenAPI-to-MCP generator remains architecturally the most ambitious. Infobip's evolution to 15+ remote servers with CAMARA integration makes them the most enterprise-ready.
 
-The gap to 5/5 is narrowing. Traditional telecom infrastructure (PBX, BSS/OSS) is still absent, but Infobip's CAMARA integration means network APIs (SIM Swap, Number Verification) are now accessible through MCP. Voice AI is no longer "emerging" — it's here. The CPaaS layer is brilliantly covered, voice AI is production-ready, and CAMARA is bridging toward network infrastructure.
+The gap to 5/5 is narrowing. Traditional telecom infrastructure (PBX, BSS/OSS) is still absent, but Infobip's CAMARA integration means network APIs (SIM Swap, Number Verification) are now accessible through MCP via its own server. The CPaaS layer is brilliantly covered, voice AI is production-ready, and CAMARA is bridging toward network infrastructure.
 
-For developers building AI-powered communication features, this is the most production-ready MCP category available. Pick your CPaaS provider, install their official server, and you have enterprise-grade messaging and voice accessible to AI agents immediately.
+For developers building AI-powered communication features, this is the most production-ready MCP category available. Pick your CPaaS provider, install their official server (checking archival status first), and you have enterprise-grade messaging and voice accessible to AI agents immediately.
 
-*This review was refreshed on 2026-04-29 using Claude Opus 4.6 (Anthropic). Initial review: 2026-03-16.*
+*This review was refreshed on 2026-04-29 using Claude Opus 4.6 (Anthropic). Initial review: 2026-03-16. Citations and stats re-audited 2026-08-18.*
 

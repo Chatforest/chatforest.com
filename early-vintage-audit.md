@@ -450,16 +450,16 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Social Media & Marketing MCP Servers — Twitter/X, Bluesky, Instagram, LinkedIn, Meta Ads, Google Ads, SEO, and More](content/reviews/social-media-marketing-mcp-servers.md) — re-audited 2026-08-16
 - [x] 2026-07-23 — [Social Networking & Community MCP Servers — Twitter/X, Bluesky, LinkedIn, Reddit, Discord, Mastodon, YouTube, TikTok, and More](content/reviews/social-networking-community-mcp-servers.md) — re-audited 2026-08-16
 - [x] 2026-07-23 — [Speech Recognition & Transcription MCP Servers — Whisper, Deepgram, ElevenLabs, Groq, and More](content/reviews/speech-recognition-transcription-mcp-servers.md) — re-audited 2026-08-16
-- [ ] 2026-07-23 — [Sports & Athletics MCP Servers — Live Scores, Fantasy Leagues, Betting Odds, Fitness Tracking, and Motorsport Telemetry](content/reviews/sports-athletics-mcp-servers.md)
-- [ ] 2026-07-23 — [Sports & Fitness Analytics MCP Servers — Live Scores, F1 Telemetry, Betting Odds, Strava, Garmin, and Workout Tracking](content/reviews/sports-fitness-analytics-mcp-servers.md)
-- [ ] 2026-07-23 — [Sports & Fitness MCP Servers — Strava, Garmin, Fitbit, F1, NFL, MLB, Soccer, and More](content/reviews/sports-fitness-mcp-servers.md)
-- [ ] 2026-07-23 — [Spreadsheet & Office Suite MCP Servers — Google Sheets, Excel, Word, Google Docs, LibreOffice, Google Workspace, and More](content/reviews/spreadsheet-office-suite-mcp-servers.md)
+- [x] 2026-07-23 — [Sports & Athletics MCP Servers — Live Scores, Fantasy Leagues, Betting Odds, Fitness Tracking, and Motorsport Telemetry](content/reviews/sports-athletics-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-23 — [Sports & Fitness Analytics MCP Servers — Live Scores, F1 Telemetry, Betting Odds, Strava, Garmin, and Workout Tracking](content/reviews/sports-fitness-analytics-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-23 — [Sports & Fitness MCP Servers — Strava, Garmin, Fitbit, F1, NFL, MLB, Soccer, and More](content/reviews/sports-fitness-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-23 — [Spreadsheet & Office Suite MCP Servers — Google Sheets, Excel, Word, Google Docs, LibreOffice, Google Workspace, and More](content/reviews/spreadsheet-office-suite-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-23 — [Spreadsheet MCP Servers — Google Sheets, Excel, Airtable, Smartsheet, and More](content/reviews/spreadsheet-mcp-servers.md) — re-audited 2026-08-16
 - [x] 2026-07-23 — [Supply Chain & Logistics MCP Servers — SAP, Dynamics 365, Kinaxis, ShipStation, Karrio, Shippo, and More](content/reviews/supply-chain-logistics-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Sustainability & Climate MCP Servers — Carbon Emissions, Building Energy, Air Quality, Power Grid Intelligence, ESG Reporting, and More](content/reviews/sustainability-climate-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Tax & Payroll MCP Servers — IRS Calculations, Tax Filing, VAT Compliance, Payroll Management, and International Tax Law](content/reviews/tax-payroll-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Telecommunications & Communications MCP Servers — Twilio, Telnyx, Vonage, Sinch, Plivo, Cisco Meraki, NetBox, UniFi, and More](content/reviews/telecommunications-communications-mcp-servers.md) — re-audited 2026-08-17
-- [ ] 2026-07-23 — [Telecommunications & Messaging MCP Servers — SMS, Voice, WhatsApp, Telegram, CPaaS, and Unified Communications](content/reviews/telecommunications-messaging-mcp-servers.md)
+- [x] 2026-07-23 — [Telecommunications & Messaging MCP Servers — SMS, Voice, WhatsApp, Telegram, CPaaS, and Unified Communications](content/reviews/telecommunications-messaging-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-23 — [Terminal & CLI Tools MCP Servers — Shell Execution, tmux, SSH, and MCP Inspectors](content/reviews/terminal-cli-tools-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [The Ahrefs MCP Server — SEO Intelligence for Your AI Agent](content/reviews/ahrefs-mcp-server.md) — re-audited 2026-08-15
 - [x] 2026-07-23 — [The Google Colab MCP Server — GPU-Powered Notebooks for Your AI Agent](content/reviews/google-colab-mcp-server.md)
@@ -467,15 +467,15 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [The Semgrep MCP Server — Security Scanning for AI-Generated Code](content/reviews/semgrep-mcp-server.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Threat Intelligence MCP Servers — CVE MCP (506 Stars, 27 Tools, 21 APIs), Google GTI, CrowdStrike Falcon v0.9.0, Microsoft Sentinel OFFICIAL, Elastic SIEM, Zscaler 300+ Tools, Team Cymru Pure Signal, Command Zero Autonomous SOC](content/reviews/threat-intelligence-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Time-Series Database MCP Servers — Grafana, ClickHouse, Prometheus, InfluxDB, VictoriaMetrics, SigNoz, and More](content/reviews/time-series-database-mcp-servers.md) — re-audited 2026-08-17
-- [ ] 2026-07-23 — [Translation & Localization MCP Servers — DeepL, Crowdin, Phrase, Lokalise, Smartling, and More](content/reviews/translation-localization-mcp-servers.md)
+- [x] 2026-07-23 — [Translation & Localization MCP Servers — DeepL, Crowdin, Phrase, Lokalise, Smartling, and More](content/reviews/translation-localization-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-23 — [Transportation & Mobility MCP Servers — Public Transit, Flight Tracking, Ride-Hailing, Aviation Data, and Smart City Transport](content/reviews/transportation-mobility-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Travel & Tourism MCP Servers — Fli (2.1K Stars), Skiplagged Official, Airbnb, Amadeus GDS, Mapbox, Expedia, and More](content/reviews/travel-tourism-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Twilio MCP Server — All 2,000 Twilio APIs Available to Your AI Agent](content/reviews/twilio-mcp-server.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Vector Database & Embedding MCP Servers — Qdrant, Chroma, Milvus, Pinecone, Weaviate, Redis, LanceDB, pgvector, and More](content/reviews/vector-database-embedding-mcp-servers.md) — re-audited 2026-08-17
-- [ ] 2026-07-23 — [Veterinary & Pet Care MCP Servers — Animal Health, Livestock Genetics, Pet Management, and More](content/reviews/veterinary-pet-care-mcp-servers.md)
-- [ ] 2026-07-23 — [Video Conferencing & Meeting Intelligence MCP Servers — Zoom Official, Joinly, Vexa, Otter.ai, Fireflies, tl;dv, and More](content/reviews/video-conferencing-mcp-servers.md)
-- [ ] 2026-07-23 — [Video Production & Streaming MCP Servers — OBS, YouTube, HeyGen, Runway, Twitch, Mux, Remotion, Short-Video-Maker, and More](content/reviews/video-production-streaming-mcp-servers.md)
-- [ ] 2026-07-23 — [Weather & Climate MCP Servers — Open-Meteo, OpenWeatherMap, NOAA/NWS, AccuWeather, Aviation METAR/TAF, Climatiq, Stormglass, and More](content/reviews/weather-climate-mcp-servers.md)
+- [x] 2026-07-23 — [Veterinary & Pet Care MCP Servers — Animal Health, Livestock Genetics, Pet Management, and More](content/reviews/veterinary-pet-care-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-23 — [Video Conferencing & Meeting Intelligence MCP Servers — Zoom Official, Joinly, Vexa, Otter.ai, Fireflies, tl;dv, and More](content/reviews/video-conferencing-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-23 — [Video Production & Streaming MCP Servers — OBS, YouTube, HeyGen, Runway, Twitch, Mux, Remotion, Short-Video-Maker, and More](content/reviews/video-production-streaming-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-23 — [Weather & Climate MCP Servers — Open-Meteo, OpenWeatherMap, NOAA/NWS, AccuWeather, Aviation METAR/TAF, Climatiq, Stormglass, and More](content/reviews/weather-climate-mcp-servers.md) — re-audited 2026-08-18
 - [ ] 2026-07-23 — [Web Scraping & Crawling MCP Servers — Firecrawl, Crawl4AI, Bright Data, Apify, Jina Reader, and More](content/reviews/web-scraping-crawling-mcp-servers.md)
 - [x] 2026-07-23 — [Workflow Automation MCP Servers — n8n, Zapier, Make & More](content/reviews/workflow-automation-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Zapier MCP Server — 9,000+ Apps and 40,000+ Actions for AI Agents](content/reviews/zapier-mcp-server.md) — re-audited 2026-08-17

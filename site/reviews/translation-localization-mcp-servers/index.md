@@ -7,7 +7,7 @@ Translation and localization MCP servers are turning AI agents into multilingual
 
 The landscape spans five areas: **translation API wrappers** (DeepL leads with the most starred server), **enterprise TMS platforms** (Crowdin, Phrase, Lokalise, and Smartling with massive tool counts), **developer i18n tools** (framework-specific translation file management), **platform-specific localization** (Xcode, Android, Figma), and **local translation engines** (offline models for privacy-sensitive workflows).
 
-The headline findings: **DeepL's official server remains the most popular translation MCP server** at 102 stars with text, document, and glossary support. **Crowdin launched Crowdin Copilot** — an AI orchestration platform with Ask Agent and Task Agent that goes beyond translation into full localization management. **Phrase expanded from 65 to 96 tools** in v0.5.1 with broader Strings and TMS coverage. **Three new TMS entrants** — SimpleLocalize (official, 14 tools), IntlPull (commercial, 8 tools), and Smartling's official CLI MCP — joined the ecosystem. **Intlayer leads developer i18n tools** at 699 stars (+11%), while the new **dalisys/i18n-mcp** (10 stars, 16 tools) brings hardcoded string detection and multi-framework support. **Google Cloud Translation still has no dedicated MCP server** despite Google offering 30+ managed MCP servers for other services. **Most TMS servers are official vendor implementations** — a refreshing contrast with categories where fragmented community servers dominate.
+The headline findings: **DeepL's official server remains the most popular translation MCP server** at 111 stars with text, document, and glossary support. **Crowdin launched Crowdin Copilot** — an AI orchestration platform with Ask Agent and Task Agent that goes beyond translation into full localization management. **Phrase's MCP tooling kept expanding** through mid-2026, though the original local `phrase/phrase-mcp-server` package has since been deprecated in favor of a hosted remote server. **Three new TMS entrants** — SimpleLocalize (official, 14 tools), IntlPull (commercial, 8 tools), and Smartling's official CLI MCP — joined the ecosystem. **Intlayer leads developer i18n tools** at 795 stars, while the new **dalisys/i18n-mcp** (12 stars, 16 tools) brings hardcoded string detection and multi-framework support. **Google Cloud Translation still has no dedicated MCP server** despite Google offering 50+ managed MCP servers for other services. **Most TMS servers are official vendor implementations** — a refreshing contrast with categories where fragmented community servers dominate.
 
 **Category:** [Education & Learning](/categories/education-learning/)
 
@@ -17,7 +17,7 @@ The headline findings: **DeepL's official server remains the most popular transl
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [DeepLcom/deepl-mcp-server](https://github.com/DeepLcom/deepl-mcp-server) | 102 | JavaScript | MIT | 8+ |
+| [DeepLcom/deepl-mcp-server](https://github.com/DeepLcom/deepl-mcp-server) | 111 | JavaScript | MIT | 8+ |
 
 The official DeepL MCP server and the most starred translation server in the category. Provides text translation between 30+ languages, document translation (PDF, DOCX, PPTX, XLSX, HTML, TXT, and more), and text rephrasing with tone/style customization (business, academic, casual).
 
@@ -28,13 +28,13 @@ Key features beyond basic translation:
 - **Language detection** — automatic source language identification
 - **Document translation** — preserves formatting across file types
 
-DeepL's [free API tier allows 500,000 characters per month](https://www.deepl.com/en/docs-api) at no cost, making this accessible for experimentation. Integrates with Claude Desktop, Claude Code, and other MCP clients. 83 commits show active maintenance. Stars grew from 95 to 102 since March 2026.
+DeepL offers a [free API key](https://www.deepl.com/en/pro-api) for developers to experiment before committing to a paid plan (DeepL's pricing and plan structure for the API is subject to change — check the pricing page for current character limits and rates). Integrates with Claude Desktop, Claude Code, and other MCP clients. Stars have grown steadily, from 95 in March 2026 to 111 as of August 2026.
 
 ### translated/lara-mcp (Translation Memory Pioneer)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [translated/lara-mcp](https://github.com/translated/lara-mcp) | 80 | TypeScript | MIT | 11 |
+| [translated/lara-mcp](https://github.com/translated/lara-mcp) | 96 | TypeScript | MIT | 11 |
 
 Lara Translate's MCP server stands out with **full translation memory management** — a capability no other translation MCP server offers. While most servers treat translation as a stateless API call, Lara Translate lets agents build and maintain translation memories over time:
 
@@ -44,13 +44,13 @@ Lara Translate's MCP server stands out with **full translation memory management
 - **import_tmx / check_import_status** — bulk import from TMX files (industry-standard format)
 - **list_glossaries / get_glossary** — terminology management
 
-Lara Translate's models are trained on professional translation data, emphasizing performance on non-English language pairs where general-purpose MT often struggles. Supports both HTTP and STDIO protocols with Docker deployment. **April 2026 update:** Released v1.0.1 with OAuth 2.0 authentication support alongside access key auth, expanding deployment flexibility. 42 commits show continued development.
+Lara Translate's models are trained on professional translation data, emphasizing performance on non-English language pairs where general-purpose MT often struggles. Supports both HTTP and STDIO protocols with Docker deployment. The [repo's setup docs](https://github.com/translated/lara-mcp) confirm OAuth 2.0 is now the default authentication method (browser-based login, no API key needed in client config), with access-key auth available as an alternative. 48 commits show continued development as of August 2026.
 
 ### neosun100/translategemma (Local/Private Translation)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [neosun100/translategemma](https://github.com/neosun100/translategemma) | 2 | Python | — | 1+ |
+| [neosun100/translategemma](https://github.com/neosun100/translategemma) | 33 | Python | MIT | 1+ |
 
 The only fully local translation MCP server, powered by Google's TranslateGemma models. For organizations that can't send content to external APIs — healthcare, legal, government — this is the only MCP option:
 
@@ -86,24 +86,24 @@ Crowdin's official hosted MCP server is one of the most comprehensive MCP server
 
 The server connects via Crowdin's hosted infrastructure — no local installation required. Works with Claude Desktop, Cursor, and other MCP-compatible clients. Crowdin is also building an MCP marketplace in the Crowdin Store for third-party localization MCPs.
 
-[Crowdin](https://crowdin.com/page/about) (the platform) has 500,000+ users and supports 100+ file formats, making this the most battle-tested TMS behind any MCP server.
+[Crowdin](https://support.crowdin.com/company-description/) (the platform) has over 3 million registered users worldwide and supports a [wide range of file formats](https://crowdin.com/supported-formats/) for software, docs, and design content, making this the most battle-tested TMS behind any MCP server.
 
-**April 2026 update: Crowdin Copilot launched** — a major evolution from MCP server to AI orchestration platform. Crowdin Copilot goes beyond translation to manage your entire localization ecosystem with two built-in agents:
+**Crowdin Copilot launched** — a major evolution from MCP server to AI orchestration platform, announced on the [Crowdin blog](https://crowdin.com/blog/meet-crowdin-copilot). Crowdin Copilot goes beyond translation to manage your entire localization ecosystem with two built-in agents:
 
-- **Ask Agent** — read-only companion that queries project stats, reviews string statuses, explores translation memory, and generates reports without risk of unintended changes
-- **Task Agent** — full read+write access to Crowdin, can create tasks, trigger pre-translation, upload files, and manage workflows, with confirmation prompts before irreversible actions
+- **Ask Agent** — read-only companion for querying progress, file statuses, and project health without navigating dashboards manually
+- **Task Agent** — instructs the AI to perform operations across projects, executing them in real time, with confirmation prompts before irreversible actions
 
-Beyond the built-in agents, teams can create **Custom Agents** with tailored system prompts for specialized roles. Copilot integrates via MCP with external tools including GitHub, GitLab, Slack, Notion, Linear, PostHog, and Sentry. A standout feature is **ambiguity resolution** — the agent collects ambiguity flags during translation, identifies patterns, synthesizes the minimum set of questions to resolve maximum ambiguity, asks the localization manager, then returns to the pipeline with answers. Available in the Crowdin Store.
+Beyond the built-in agents, teams can create **Custom Agents** with tailored system prompts for specialized roles, choosing from "hundreds of Crowdin-specific actions." Copilot supports the Model Context Protocol to connect to external tools including GitHub, GitLab, Slack, Notion (development/collaboration), Linear (project management), and PostHog and Sentry (analytics/tracking). A standout feature is **ambiguity resolution** — when pre-translation flags ambiguous strings, Copilot analyzes the failures for common denominators and synthesizes them into a handful of core questions rather than surfacing hundreds of individual flags. Available in the Crowdin Store.
 
 ### phrase/phrase-mcp-server (Official, Dual-Product)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [phrase/phrase-mcp-server](https://github.com/phrase/phrase-mcp-server) | 3 | TypeScript | MIT | 96 |
+| [phrase/phrase-mcp-server](https://github.com/phrase/phrase-mcp-server) | 12 | TypeScript | MIT | 130+ |
 
-Phrase's official MCP server covers both of their products and has **expanded significantly from 65 to 96 tools** in [v0.5.1](https://github.com/phrase/phrase-mcp-server/releases/tag/phrase-mcp-server-v0.5.1) (April 24, 2026):
+**Update as of August 2026: this local repo now carries its own deprecation notice** — "Deprecated: use the remote Phrase MCP server instead. This local server is no longer maintained." Phrase has moved ongoing development to a [hosted remote server](https://developers.phrase.com/en/mcp-server). The README (still the best primary source for current tool counts, since Phrase's release notes don't itemize tool-count changes) now lists roughly 80+ Strings tools (`strings_*`), ~35 TMS tools (`tms_*`), ~12 Quality Evaluator tools (`bqe_*`), and 4 Connectors tools (`connectors_*`) — considerably more than the 96 tools recorded at this review's last data refresh, reflecting continued growth even as the local package heads toward retirement:
 
-**Phrase Strings (66 tools, up from 47):**
+**Phrase Strings:**
 - Project management — create, list, configure translation projects
 - Job operations — create, manage, and track translation jobs
 - Locale management — add, remove, and configure target languages
@@ -111,19 +111,19 @@ Phrase's official MCP server covers both of their products and has **expanded si
 - Key and translation CRUD operations
 - File upload and download
 
-**Phrase TMS (30 tools, up from 18):**
+**Phrase TMS:**
 - Project creation and management
 - Async file downloads for large translation sets
 - Job searching and filtering
 - Translation workflow operations
 
-Supports configurable product selection (enable Strings, TMS, or both), regional deployment (EU/US), and per-product API token authentication. 141 commits (up from 104) indicate active development. The 48% tool count increase represents one of the largest single-refresh expansions in any TMS MCP server.
+Supports configurable product selection (enable Strings, TMS, or both), regional deployment (EU/US), and per-product API token authentication. New teams should start with the [remote server](https://developers.phrase.com/en/mcp-server) directly rather than this deprecated local package.
 
 ### AbdallahAHO/lokalise-mcp (Most Automated)
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [AbdallahAHO/lokalise-mcp](https://github.com/AbdallahAHO/lokalise-mcp) | 4 | TypeScript | MIT | 59 |
+| [AbdallahAHO/lokalise-mcp](https://github.com/AbdallahAHO/lokalise-mcp) | 5 | TypeScript | MIT | 59 |
 
 An unofficial but impressively comprehensive Lokalise MCP server with **59 tools across 11 domains** and **17 pre-built automation templates**:
 
@@ -148,7 +148,7 @@ Smartling now has **two MCP server implementations**:
 
 **Community server** (Jacobolevy) covers 10 capability areas for enterprise localization: project management, file operations, job management, string operations, QA checks, locale management, glossary tools, context management, webhook configuration, and reporting. 141 commits. Two new tools added in 2026: "Get Available Accounts for Current User" and "List File Jobs."
 
-**Official CLI MCP** (smartling/smartling-cli-mcp) — NEW as of March 2026. A Docker-based wrapper around Smartling's official CLI tool with 3 tools (`smartling-cli`, `smartling-ls`, `smartling-cat`). Routes translation requests through the customer's preferred NMT engine or LLM, applying glossaries, translation memories, and style guides. Supports text and file translation. 38 commits. Listed in the Anthropic MCP Registry.
+**Official CLI MCP** (smartling/smartling-cli-mcp) — NEW as of March 2026. A Docker-based wrapper around Smartling's official CLI tool with 3 tools (`smartling-cli`, `smartling-ls`, `smartling-cat`). Routes translation requests through the customer's preferred NMT engine or LLM, applying glossaries, translation memories, and style guides. Supports text and file translation. 40 commits as of August 2026. Smartling's own [MCP server announcement](https://www.smartling.com/company-news/smartling-launches-mcp-server) confirms listing in the Anthropic MCP Registry.
 
 ### Nativ-Technologies/nativ-mcp (Brand-Aware Translation)
 
@@ -186,7 +186,7 @@ Installs via `npx @simplelocalize/simplelocalize-mcp` with API key configuration
 
 ### IntlPull MCP Server (NEW — Commercial TMS)
 
-IntlPull launched a commercial MCP server with **8 tools** for AI-powered translation management:
+[IntlPull](https://intlpull.com/docs/mcp) launched a commercial MCP server with **8 tools** for AI-powered translation management:
 
 - **translate_strings** — convert strings to target languages
 - **create_translation_key** — generate new translation keys
@@ -200,7 +200,7 @@ Key differentiators include **branch management** for feature development workfl
 
 ### Lokalise Official MCP Server (NEW — Closed Beta)
 
-Lokalise launched an **official MCP server in closed beta** on February 4, 2026 — separate from AbdallahAHO's community implementation. The official server allows connecting Lokalise to AI assistants like Claude or ChatGPT to trigger localization actions using natural language. Invitations are being extended to teams already experimenting with AI-powered development. This is the first time Lokalise has offered vendor-supported MCP access, complementing the existing community server's 59 tools and 17 automation templates.
+Lokalise's own [changelog](https://lokalise.com/changelog/) confirms it launched an **official MCP server in closed beta** on February 4, 2026 — separate from AbdallahAHO's community implementation. The official server allows connecting Lokalise to AI assistants like Claude or ChatGPT to trigger localization actions using natural language. Invitations are being extended to teams already experimenting with AI-powered development. As of the [June 2026 setup docs](https://docs.lokalise.com/en/articles/13547066-setting-up-and-using-the-lokalise-mcp-server), the feature remains labeled beta. This is the first time Lokalise has offered vendor-supported MCP access, complementing the existing community server's 59 tools and 17 automation templates.
 
 ## Developer i18n Tools
 
@@ -208,7 +208,7 @@ Lokalise launched an **official MCP server in closed beta** on February 4, 2026 
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [aymericzip/intlayer](https://github.com/aymericzip/intlayer) | 699 | TypeScript | Apache-2.0 | 5,714 |
+| [aymericzip/intlayer](https://github.com/aymericzip/intlayer) | 795 | TypeScript | Apache-2.0 | 6,898 |
 
 Intlayer is a comprehensive i18n framework for React, Next.js, Vue, and Svelte with a built-in MCP server for IDE automation. The MCP server is one component of a larger platform that includes:
 
@@ -220,7 +220,7 @@ Intlayer is a comprehensive i18n framework for React, Next.js, Vue, and Svelte w
 - **CDN delivery** via Cloudflare for instant translation updates without rebuilding
 - **Tree-shakable dictionaries** — only ship translations that are actually used
 
-At 699 stars (+11%) and 5,714 commits (+10%), this is by far the most mature project in the i18n MCP space, though the MCP server is a relatively recent addition to an established framework.
+At 795 stars and 6,898 commits as of August 2026 (up from 699 stars / 5,714 commits at this review's last data refresh), this is by far the most mature project in the i18n MCP space, though the MCP server is a relatively recent addition to an established framework.
 
 ### gtrias/i18next-mcp-server (Most Developer-Focused)
 
@@ -241,7 +241,7 @@ The `scan_code_for_missing_keys` tool is particularly valuable — it analyzes y
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [reinier-millo/i18n-mcp-server](https://github.com/reinier-millo/i18n-mcp-server) | 9 | TypeScript | AGPL-3.0 | 4 |
+| [reinier-millo/i18n-mcp-server](https://github.com/reinier-millo/i18n-mcp-server) | 8 | TypeScript | AGPL-3.0 | 4 |
 
 Takes a pragmatic approach to translating JSON language files: instead of sending entire files to a translation model at once (which can exceed context limits), it breaks translations into configurable chunks:
 
@@ -257,7 +257,7 @@ Tested with GPT-4.1 — the developer recommends generating one language at a ti
 
 | Server | Stars | Language | License | Commits |
 |--------|-------|----------|---------|---------|
-| [better-i18n/oss](https://github.com/better-i18n) | 8 | TypeScript | — | — |
+| [better-i18n/oss](https://github.com/better-i18n/oss) | 17 | TypeScript | — | — |
 
 Better i18n bundles its MCP server into a broader TypeScript SDK for Next.js, React, and Expo/React Native. Key differentiators:
 
@@ -272,7 +272,7 @@ The MCP server enables agents in Cursor, Claude Code, Windsurf, Zed, and Codex t
 
 | Server | Stars | Language | License | Tools |
 |--------|-------|----------|---------|-------|
-| [dalisys/i18n-mcp](https://github.com/dalisys/i18n-mcp) | 10 | TypeScript | — | 16 |
+| [dalisys/i18n-mcp](https://github.com/dalisys/i18n-mcp) | 12 | TypeScript | — | 16 |
 
 A comprehensive MCP server for managing i18n translation files across **multiple frameworks** (React, Vue, Svelte, Angular) with 16 tools across five categories:
 
@@ -289,7 +289,7 @@ Key differentiators:
 - **Flexible key naming** — supports nested, flat, camelCase, and kebab-case styles
 - **Unused translation cleanup** — identifies and removes dead translations
 
-Integrates with Claude Desktop, VS Code, and Zed. At 10 stars and 13 commits, this is the most feature-rich standalone i18n MCP server, addressing workflow gaps that framework-specific servers like i18next-mcp-server don't cover.
+Integrates with Claude Desktop, VS Code, and Zed. At 12 stars and 13 commits, this is the most feature-rich standalone i18n MCP server, addressing workflow gaps that framework-specific servers like i18next-mcp-server don't cover.
 
 ## Platform-Specific Localization
 
@@ -331,7 +331,7 @@ Bridges the gap between design and development localization — designers define
 
 The translation and localization MCP landscape has meaningful gaps:
 
-**No Google Cloud Translation MCP server.** Despite Google now offering [**30+ managed remote MCP servers**](https://cloud.google.com/docs/ai/model-context-protocol) for BigQuery, Cloud SQL, Spanner, Compute Engine, Cloud Run, and many more — there is still no dedicated Cloud Translation MCP server. Google published a blog post on building multilingual chatbots with Gemini, Gemma, and MCP, but this is an architecture pattern, not a standalone translation server. This remains the most surprising omission in the category.
+**No Google Cloud Translation MCP server.** Despite Google now offering [**50+ fully managed remote MCP servers**](https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone) for BigQuery, Cloud SQL, Spanner, Compute Engine, Cloud Run, and many more — there is still no dedicated Cloud Translation MCP server on that list. This remains the most surprising omission in the category.
 
 **No Transifex or Mozilla Pontoon MCP servers.** Two major open-source localization platforms have no MCP presence. Transifex serves large open-source projects, and Pontoon powers Mozilla's extensive localization ecosystem.
 
@@ -357,7 +357,7 @@ The translation and localization MCP ecosystem earns **4.0 out of 5** (up from 3
 
 **Best for brand consistency:** Nativ MCP — unique brand voice and style guide integration for on-brand translations.
 
-**Most improved:** Phrase MCP Server — 65→96 tools (+48%) in v0.5.1, now one of the most comprehensive TMS MCP servers.
+**Most improved:** Phrase MCP Server — tool count kept growing through mid-2026 to 130+ across Strings, TMS, Quality Evaluator, and Connectors, though the original local package is now deprecated in favor of Phrase's [hosted remote server](https://developers.phrase.com/en/mcp-server).
 
 The category's strength is vendor participation — most servers are official or semi-official, which means better maintenance and alignment with platform capabilities. The addition of SimpleLocalize, IntlPull, Smartling's official CLI server, and Lokalise's closed beta shows the TMS industry is now fully committed to MCP. The weakness remains adoption metrics: outside DeepL (102 stars) and Intlayer (699 stars), most servers have minimal GitHub stars. But the trend is clear — enterprise TMS platforms are investing heavily in MCP, and developer i18n tools are maturing rapidly.
 
