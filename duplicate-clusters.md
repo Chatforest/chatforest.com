@@ -39,6 +39,15 @@ same topic (npm/PyPI/Maven/NuGet package-management MCP servers), close publish 
 Not yet diffed against each other — needs a full side-by-side pass next, same process as the
 resolved clusters below.
 
+### New Relic MCP Server (2 pages, no hyphen vs hyphenated) — flagged 2026-08-18
+Flagged by the early-vintage re-audit agent auditing `new-relic-mcp-server.md` — noticed a second,
+distinct live file on the same product under a different slug (Google indexes both).
+- `content/reviews/new-relic-mcp-server.md` — audited 2026-08-18 (this run)
+- `content/reviews/newrelic-mcp-server.md` (no hyphen) — headline "35 Tools", not yet audited this cohort
+
+Not yet diffed against each other — needs a full side-by-side pass next, same process as the
+resolved clusters below.
+
 
 ## Resolved clusters
 

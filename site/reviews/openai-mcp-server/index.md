@@ -1,15 +1,15 @@
-# OpenAI MCP Servers — AI Agents for GPT-5.5, o3, DALL-E, and the OpenAI API Platform
+# OpenAI MCP Servers — AI Agents for GPT-5.5, o3, gpt-image-1, and the OpenAI API Platform
 
 > OpenAI adopted MCP as a client (ChatGPT, Agents SDK, Responses API) but has no official MCP server wrapping their API.
 
 
-**At a glance:** [lastmile-ai/openai-agents-mcp](https://github.com/lastmile-ai/openai-agents-mcp) (198 stars, MIT) + [pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai) (81 stars, MIT). OpenAI has 900+ million weekly ChatGPT users, an **$852 billion valuation**, and joined the MCP steering committee in March 2025 — but publishes **no official MCP server** wrapping their API. Their focus is on the client side: ChatGPT Apps, the Agents SDK (with new harness + sandbox), the Responses API, and Codex CLI all connect TO MCP servers. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
+**At a glance:** [lastmile-ai/openai-agents-mcp](https://github.com/lastmile-ai/openai-agents-mcp) (198 stars, MIT) + [pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai) (84 stars, MIT). OpenAI has 900+ million weekly ChatGPT users, an **$852 billion valuation**, and [joined the MCP steering committee in March 2025](https://x.com/OpenAIDevs/status/1925210342084469192) — but publishes **no official MCP server** wrapping their API. Their focus is on the client side: ChatGPT Apps, the Agents SDK (with new harness + sandbox), the Responses API, and Codex CLI all connect TO MCP servers. Part of our **[AI Providers MCP category](/categories/ai-providers/)**.
 
 OpenAI MCP servers let AI agents **query GPT-5.5/GPT-4.1/o3/o4-mini, generate images with gpt-image-1, search the web, and orchestrate multi-agent workflows** — all through natural language prompts in Claude, Cursor, or other MCP-compatible clients. This enables cross-model collaboration: a Claude agent calling GPT-5.5 for a second opinion, or using gpt-image-1 for image generation without leaving the MCP workflow.
 
-[OpenAI](https://openai.com/) was founded in December 2015 by **Sam Altman**, **Elon Musk**, **Ilya Sutskever**, **Greg Brockman**, and others as a nonprofit research lab. The company transitioned to a capped-profit structure in 2019 and is now a public benefit corporation. As of May 2026: [**~$25 billion annualized revenue**](https://finance.yahoo.com/news/openai-tops-25-billion-annualized-033836274.html), [**$852 billion valuation**](https://www.bloomberg.com/news/articles/2026-03-31/openai-valued-at-852-billion-after-completing-122-billion-round) (March 2026 round co-led by SoftBank, Amazon, and Nvidia, $122B raised), [**9+ million ChatGPT paid business users**](https://seekingalpha.com/news/4147317-openai-hits-1m-paid-users-of-chatgpt-for-business-report), [**900+ million weekly active ChatGPT users**](https://searchengineland.com/chatgpt-900-million-weekly-active-users-470492), and approximately [**7,000+ employees**](https://sqmagazine.co.uk/how-many-people-work-at-openai/) (target 8,000 by end of 2026). Key products include ChatGPT, **GPT-5.5/GPT-4.1**, o3/o4-mini reasoning models, **GPT-5.2-Codex** (agentic coding), gpt-image-1, Whisper, Sora 2, Codex (desktop + CLI + mobile preview), and the Agents SDK.
+[OpenAI](https://openai.com/) was [founded in December 2015](https://en.wikipedia.org/wiki/OpenAI) by **Sam Altman**, **Elon Musk**, **Ilya Sutskever**, **Greg Brockman**, and others as a nonprofit research lab. The company [transitioned to a capped-profit structure in 2019](https://en.wikipedia.org/wiki/OpenAI) and [completed its restructuring into a public benefit corporation on October 28, 2025](https://builtin.com/articles/openai-new-corporate-structure). Financials and usage, each as reported: [**~$25 billion annualized revenue as of late February 2026**](https://finance.yahoo.com/news/openai-tops-25-billion-annualized-033836274.html) (up 17% from $21.4B at year-end 2025), [**$852 billion valuation**](https://finance.yahoo.com/markets/stocks/articles/openai-closes-122bn-funding-round-093126735.html) (funding round co-led by SoftBank, Amazon, and Nvidia, $122B closed March 31, 2026), [**over 1 million business customers globally and 7+ million ChatGPT for Work seats**](https://techstartups.com/2025/11/05/openai-surpasses-1-million-business-customers-globally-cementing-its-lead-in-enterprise-ai-adoption/) (as of November 2025), [**900+ million weekly active ChatGPT users**](https://searchengineland.com/chatgpt-900-million-weekly-active-users-470492) (February 2026), and approximately [**4,500 employees, with a target of 8,000 by end of 2026**](https://fortune.com/2026/03/21/openai-double-headcount-this-year-sam-altman-anthropic-google/) (Financial Times reporting, March 2026). Key products include ChatGPT, **GPT-5.5/GPT-4.1**, o3/o4-mini reasoning models, [**GPT-5.2-Codex**](https://openai.com/index/introducing-gpt-5-2-codex/) (agentic coding), gpt-image-1, Whisper, Sora 2, Codex (desktop + CLI + mobile preview), and the Agents SDK.
 
-**Architecture note:** OpenAI's MCP strategy is fundamentally different from Google, Dropbox, or Microsoft: they are primarily an **MCP client**, not a server provider. The Responses API, Agents SDK (Python + TypeScript), ChatGPT Apps (formerly "connectors"), and Codex CLI/Desktop all connect TO external MCP servers. In April 2026, OpenAI launched **partner MCP Apps** — reviewed connectors from Stripe, Vercel, Monday.com, Amplitude, Hex, Semrush, Atlassian Rovo, and others — and **Workspace Agents** (April 22, 2026), a successor to custom GPTs for enterprise users powered by Codex with native Slack, Google Workspace, and Salesforce integrations. **Full MCP write/modify actions** are now in beta for Business, Enterprise, and Edu plans. Community MCP servers fill the reverse gap — exposing OpenAI's API so that other AI agents (Claude, Gemini, etc.) can call OpenAI models via MCP.
+**Architecture note:** OpenAI's MCP strategy is fundamentally different from Google, Dropbox, or Microsoft: they are primarily an **MCP client**, not a server provider. The Responses API, Agents SDK (Python + TypeScript), ChatGPT Apps (formerly "connectors"), and Codex CLI/Desktop all connect TO external MCP servers. In 2026, OpenAI launched **partner MCP Apps** — [reviewed connectors from Amplitude, Fireflies, Vercel, Monday.com, Stripe, Hex, Egnyte, Alpaca, BioRender, Semrush, and Jam.dev](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes) — and [**Workspace Agents** (April 22, 2026)](https://letsdatascience.com/news/openai-launches-workspace-agents-for-enterprise-workflows-e9ae04bd), a successor to custom GPTs for enterprise users powered by Codex, connecting to Slack, Google Drive, Microsoft apps, Salesforce, and Notion. **Full MCP write/modify actions** are now in beta for Business, Enterprise, and Edu plans. Community MCP servers fill the reverse gap — exposing OpenAI's API so that other AI agents (Claude, Gemini, etc.) can call OpenAI models via MCP.
 
 ## What It Does
 
@@ -29,7 +29,7 @@ Community OpenAI MCP servers expose these capability areas:
 
 | Capability | What It Does |
 |------------|-------------|
-| Generate images | Create images from text prompts via DALL-E 3 or gpt-image-1 |
+| Generate images | Create images from text prompts via gpt-image-1 (DALL-E 3's API endpoint was [shut down May 12, 2026](https://developers.openai.com/api/docs/deprecations)) |
 | List models | Browse available models and their capabilities |
 
 ### Web Search
@@ -51,7 +51,7 @@ Community OpenAI MCP servers expose these capability areas:
 
 **Most community servers focus on chat completions only.** These capabilities are available through OpenAI's API but not exposed by existing MCP servers:
 
-- **Text-to-speech (TTS)** — one community server exists (nakamurau1/openai-tts-mcp, listed on PulseMCP) but limited adoption
+- **Text-to-speech (TTS)** — one community server exists ([nakamurau1/tts-mcp](https://github.com/nakamurau1/tts-mcp), [listed on PulseMCP](https://www.pulsemcp.com/servers/nakamurau1-openai-tts)) but limited adoption
 - **Speech-to-text (Whisper)** — no MCP server provides transcription
 - **Embeddings** — no MCP server generates vector embeddings
 - **Fine-tuning management** — no MCP server manages model fine-tuning
@@ -68,7 +68,7 @@ OpenAI's primary MCP contribution is on the **client side** — making their pro
 - Connect to remote MCP servers over HTTPS
 - Supports read AND write actions (update Jira, trigger workflows, query databases)
 - **Requires ChatGPT Plus ($20/mo) or Pro subscription**
-- **Partner MCP Apps** launched 2026: reviewed connectors from Stripe, Vercel, Monday.com, Amplitude, Fireflies, Hex, Egnyte, Alpaca, BioRender, Semrush, and Jam.dev
+- [**Partner MCP Apps** launched 2026](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes): reviewed connectors from Stripe, Vercel, Monday.com, Amplitude, Fireflies, Hex, Egnyte, Alpaca, BioRender, Semrush, and Jam.dev
 - Admins can review, publish, and manage app access via RBAC in Workspace settings
 - Stripe's **Agentic Commerce Protocol** co-developed with OpenAI for in-chat checkout
 
@@ -90,7 +90,7 @@ OpenAI's primary MCP contribution is on the **client side** — making their pro
 - **Native sandbox execution** — agents run in controlled environments with built-in support for Blaxel, Cloudflare, Daytona, E2B, Modal, Runloop, and Vercel sandboxes
 - Security model assumes prompt injection and data exfiltration will happen — credentials separated from sandbox compute
 - Durable execution via snapshotting/rehydration — agents can resume from checkpoints after container failure
-- **Current version: v0.17.3 (May 19, 2026)** — active release cadence since April 15; TypeScript harness/sandbox support added; v0.15.3 fixed MCP tool input schema mutations; v0.16.1 added MCP policy validation; v0.16.0 switched default model to gpt-5.4-mini; v0.17.0 switched default to gpt-realtime-2; v0.17.1 included 40+ fixes across sandboxes, tracing, and realtime agents
+- [**Current version: v0.17.3 (May 19, 2026)**](https://github.com/openai/openai-agents-python/releases) — active release cadence since April 15; TypeScript harness/sandbox support added; v0.15.3 fixed MCP tool input schema mutations; v0.16.1 added MCP policy validation; v0.16.0 switched default model to gpt-5.4-mini; [v0.17.0 switched default to gpt-realtime-2](https://github.com/openai/openai-agents-python/releases/tag/v0.17.0); v0.17.1 included 40+ fixes across sandboxes, tracing, and realtime agents
 
 ### Codex CLI & Desktop
 
@@ -102,7 +102,7 @@ OpenAI's primary MCP contribution is on the **client side** — making their pro
 - 90+ plugins available in the Codex Desktop marketplace
 - **May 13, 2026:** Windows sandbox launched for Codex
 - **May 14, 2026:** Codex mobile preview — connect to Mac running Codex from the ChatGPT mobile app; access projects, files, credentials, and plugins from mobile
-- **v0.131.0 (May 18–19, 2026):** richer TUI controls, expanded plugin and remote workflows, new `codex doctor` diagnostics command, `openai-codex` Python package transition, concurrent turn routing and approval modes
+- [**v0.131.0 (May 18–19, 2026)**](https://github.com/openai/codex/releases/tag/rust-v0.131.0): richer TUI controls, expanded plugin and remote workflows, new `codex doctor` diagnostics command, `openai-codex` Python package transition, concurrent turn routing and approval modes
 
 ## Community Implementations
 
@@ -118,7 +118,7 @@ Extends the OpenAI Agents SDK with MCP **server** support — letting other AI a
 
 ### pierrebrunelle/mcp-server-openai — Cross-Model Queries
 
-- **GitHub:** [pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai) — 81 stars, 21 forks
+- **GitHub:** [pierrebrunelle/mcp-server-openai](https://github.com/pierrebrunelle/mcp-server-openai) — 84 stars, 22 forks
 - **Language:** Python
 - **License:** MIT
 
@@ -128,7 +128,7 @@ Purpose-built to let Claude (or other AI agents) query OpenAI models via MCP. Si
 
 ### arthurcolle/openai-mcp — Multi-Provider LLM
 
-- **GitHub:** [arthurcolle/openai-mcp](https://github.com/arthurcolle/openai-mcp) — 35 stars, 15 forks, 7 commits
+- **GitHub:** [arthurcolle/openai-mcp](https://github.com/arthurcolle/openai-mcp) — 35 stars, 16 forks, 7 commits
 - **Language:** Python
 - **License:** MIT
 
@@ -138,7 +138,7 @@ Multi-provider LLM access through MCP — not limited to OpenAI. Supports routin
 
 ### billster45/mcp-chatgpt-responses — Responses API
 
-- **GitHub:** [billster45/mcp-chatgpt-responses](https://github.com/billster45/mcp-chatgpt-responses) — 16 stars, 12 forks
+- **GitHub:** [billster45/mcp-chatgpt-responses](https://github.com/billster45/mcp-chatgpt-responses) — 18 stars, 13 forks
 - **Language:** Python
 - **License:** MIT
 
@@ -148,7 +148,7 @@ Uses OpenAI's Responses API for multi-turn conversations with web search capabil
 
 ### lroolle/openai-agents-mcp-server — Multi-Agent Orchestration
 
-- **GitHub:** [lroolle/openai-agents-mcp-server](https://github.com/lroolle/openai-agents-mcp-server) — 10 stars, 4 forks
+- **GitHub:** [lroolle/openai-agents-mcp-server](https://github.com/lroolle/openai-agents-mcp-server) — 10 stars, 5 forks
 - **Language:** Python
 - **License:** MIT
 
@@ -158,13 +158,13 @@ Exposes specialized OpenAI agents (Web Search, File Search, Computer Action, Orc
 
 ### akiojin/openai-mcp-server — Image Generation + Model Listing (Stale)
 
-- **GitHub:** [akiojin/openai-mcp-server](https://github.com/akiojin/openai-mcp-server) — 1 star, 0 forks, 109 commits, 8 releases
+- **GitHub:** [akiojin/openai-mcp-server](https://github.com/akiojin/openai-mcp-server) — 1 star, 0 forks, 109 commits, [8 tags](https://github.com/akiojin/openai-mcp-server/tags)
 - **Language:** JavaScript/TypeScript
 - **License:** MIT
 
 Supports chat completions, model listing, and **image generation** via gpt-image-1 — a capability most other servers lack.
 
-**Key limitation:** Last updated October 2025 — stale for over 7 months. Community adoption remains at 1 star. The `@fadeaway-ai/openai-mcp-server` npm package (v0.6.0) is a different, unrelated project focused on "deep research" with o3 web search and code interpreter — not a continuation of this repo. Not recommended without verification that the model names still resolve correctly.
+**Key limitation:** [Last commit to the main branch was August 24, 2025](https://github.com/akiojin/openai-mcp-server/commits/main) (v0.5.0) — stale for roughly a year, despite ongoing Dependabot dependency-bump branches that keep the repo's "last activity" signal looking more current than the actual codebase. Community adoption remains at 1 star. The `@fadeaway-ai/openai-mcp-server` npm package (v0.6.0) is a different, unrelated project focused on "deep research" with o3 web search and code interpreter — not a continuation of this repo. Not recommended without verification that the model names still resolve correctly.
 
 ## Authentication
 
@@ -187,24 +187,26 @@ All OpenAI MCP servers use **API key authentication** — straightforward but wi
 
 ## OpenAI API Pricing
 
+Per [OpenAI's published API pricing](https://developers.openai.com/api/docs/pricing):
+
 | Model | Input (per 1M tokens) | Cached Input | Output (per 1M tokens) | Context Window |
 |-------|----------------------|--------------|----------------------|----------------|
 | GPT-4.1 Nano | $0.10 | $0.025 | $0.40 | 1M |
 | GPT-4o-mini | $0.15 | $0.075 | $0.60 | 128K |
-| GPT-5.4 Nano | $0.20 | — | $1.25 | — |
+| GPT-5.4 Nano | $0.20 | $0.02 | $1.25 | — |
 | GPT-4.1 Mini | $0.40 | $0.10 | $1.60 | 1M |
-| GPT-5.4 Mini | $0.75 | — | $4.50 | — |
-| o4-mini | $0.55 | — | $2.20 | 200K |
+| GPT-5.4 Mini | $0.75 | $0.075 | $4.50 | — |
+| o4-mini | $1.10 | $0.275 | $4.40 | 200K |
 | GPT-4.1 | $2.00 | $0.50 | $8.00 | 1M |
 | o3 | $2.00 | $0.50 | $8.00 | 200K |
 | GPT-4o | $2.50 | $1.25 | $10.00 | 128K |
-| GPT-5.4 | $2.50 | — | $15.00 | — |
+| GPT-5.4 | $2.50 | $0.25 | $15.00 | — |
 | **GPT-5.5** | **$5.00** | **$0.50** | **$30.00** | **1M** |
 | o1 | $15.00 | $7.50 | $60.00 | 200K |
 
 | Other Services | Pricing |
 |----------------|---------|
-| DALL-E 3 | $0.04-$0.12 per image |
+| gpt-image-1 (image generation, [DALL-E 3 retired May 12, 2026](https://developers.openai.com/api/docs/deprecations)) | $0.011-$0.25 per image (low/medium/high quality) |
 | Whisper (speech-to-text) | $0.006/minute |
 | TTS | $15.00/1M characters |
 | text-embedding-3-small | $0.02/1M tokens |
@@ -217,7 +219,7 @@ All OpenAI MCP servers use **API key authentication** — straightforward but wi
 - ChatGPT Plus — $20/month (required for MCP client support in ChatGPT)
 - ChatGPT Pro — $200/month (unlimited access to all models)
 
-**Note:** Using OpenAI through MCP servers incurs standard API costs. There's no MCP-specific pricing — you pay the same per-token rates as direct API usage. Reasoning models (o1, o3) generate "reasoning tokens" billed as output but not visible in responses, which can cause unexpectedly high costs. **[GPT-5.5 is now the flagship model](https://fortune.com/2026/04/23/openai-releases-gpt-5-5/) ($5.00/$30.00 per 1M tokens, with 90% cached input discount at $0.50/1M)** — launched April 23, 2026 with a 1M-token context window and improved factual accuracy. [GPT-5.5 Instant became the default for all ChatGPT users (including free tier) on May 5, 2026](https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/). Community MCP servers referencing older model names may need their model parameters updated.
+**Note:** Using OpenAI through MCP servers incurs standard API costs. There's no MCP-specific pricing — you pay the same per-token rates as direct API usage. Reasoning models (o1, o3) generate "reasoning tokens" billed as output but not visible in responses, which can cause unexpectedly high costs. **[GPT-5.5 is now the flagship model](https://fortune.com/2026/04/23/openai-releases-gpt-5-5/)**, [launched April 23, 2026](https://fortune.com/2026/04/23/openai-releases-gpt-5-5/), with [$5.00/$30.00 per 1M tokens pricing, a 90% cached-input discount at $0.50/1M, and a 1M-token context window](https://developers.openai.com/api/docs/models/gpt-5.5). [GPT-5.5 Instant became the default ChatGPT model on May 5, 2026](https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/), with expanded memory features rolling out to free, business, and enterprise tiers in the following weeks. Community MCP servers referencing older model names may need their model parameters updated.
 
 ## Known Issues
 
@@ -229,7 +231,7 @@ All OpenAI MCP servers use **API key authentication** — straightforward but wi
 
 4. **Rate limiting** — OpenAI imposes separate limits for requests/minute and tokens/minute by API tier. Community MCP servers rarely implement rate limit handling — 429 errors pass through to the calling agent with no backoff logic.
 
-5. **Model deprecation churn** — OpenAI has shipped GPT-5.5 (April 23), GPT-5.5 Instant (May 5), and GPT-5.5-Cyber (May 7) in under a month. Community MCP servers referencing GPT-5.4 as the flagship are already outdated. The model parameter needs regular updating to avoid calling deprecated endpoints.
+5. **Model deprecation churn** — OpenAI has shipped GPT-5.5 (April 23), GPT-5.5 Instant (May 5), and [GPT-5.5-Cyber (May 7-8)](https://www.helpnetsecurity.com/2026/05/08/openai-gpt-5-5-cyber-model/) in under a month. Community MCP servers referencing GPT-5.4 as the flagship are already outdated. The model parameter needs regular updating to avoid calling deprecated endpoints.
 
 6. **Small community servers** — Outside lastmile-ai (198 stars), community implementations have modest adoption. Most have <20 stars and limited maintenance. The ecosystem is fragmented across many small projects.
 
@@ -241,15 +243,15 @@ All OpenAI MCP servers use **API key authentication** — straightforward but wi
 
 10. **Limited audio/video capabilities via MCP** — Despite OpenAI offering Whisper (speech-to-text), TTS (text-to-speech), and Sora 2 (video generation), only one community TTS MCP server exists (low adoption). Whisper, Sora, and embeddings remain inaccessible via MCP.
 
-11. **Supply chain security incident (May 2026)** — The ["Mini Shai-Hulud" supply chain attack against TanStack npm packages](https://www.kodemsecurity.com/resources/tanstack-openai-supply-chain-attack-mini-shai-hulud-iocs-and-first-hour-response-runbook) (May 11, 2026) compromised two OpenAI employee devices and exfiltrated some credential material from internal source code repositories. No user data or production systems were accessed. However, macOS code-signing certificates were compromised: **all macOS users must update ChatGPT Desktop, Codex App, Codex CLI, and Atlas before June 12, 2026**, or Apple's Gatekeeper will block the apps from running. This is an infrastructure incident, not an MCP-specific vulnerability, but it affects every developer using OpenAI's macOS tooling.
+11. **Supply chain security incident (May 2026)** — The ["Mini Shai-Hulud" supply chain attack against TanStack npm packages](https://www.kodemsecurity.com/resources/tanstack-openai-supply-chain-attack-mini-shai-hulud-iocs-and-first-hour-response-runbook) (May 11, 2026) [compromised two OpenAI employee devices](https://www.theregister.com/security/2026/05/15/openai-caught-in-tanstack-npm-supply-chain-chaos-after-employee-devices-compromised/5241019) and exfiltrated some credential material from internal source code repositories. No user data or production systems were accessed. However, macOS code-signing certificates were compromised: **all macOS users must update ChatGPT Desktop, Codex App, Codex CLI, and Atlas before June 12, 2026**, or Apple's Gatekeeper will block the apps from running. This is an infrastructure incident, not an MCP-specific vulnerability, but it affects every developer using OpenAI's macOS tooling.
 
 ## Bottom Line
 
 **Rating: 3.5 out of 5**
 
-OpenAI's MCP story is split in two. On the **client side**, it's now industry-leading: [Workspace Agents launched April 22, 2026](https://9to5mac.com/2026/04/22/openai-updates-chatgpt-with-codex-powered-workspace-agents-for-teams/) as a successor to custom GPTs for enterprise (with native Slack, Google Workspace, and Salesforce integrations); full MCP write/modify actions entered beta for Business/Enterprise/Edu; the Agents SDK hit v0.17.3 with TypeScript harness/sandbox support and active MCP-specific fixes; and Codex expanded to mobile preview (May 14) and Windows sandbox (May 13). GPT-5.5 launched April 23 as the new flagship at $5/$30 per 1M tokens with a 1M-token context window.
+OpenAI's MCP story is split in two. On the **client side**, it's now industry-leading: [Workspace Agents launched April 22, 2026](https://9to5mac.com/2026/04/22/openai-updates-chatgpt-with-codex-powered-workspace-agents-for-teams/) as a successor to custom GPTs for enterprise (connecting to Slack, Google Drive, Microsoft apps, Salesforce, and Notion); full MCP write/modify actions entered beta for Business/Enterprise/Edu; the Agents SDK hit v0.17.3 with TypeScript harness/sandbox support and active MCP-specific fixes; and Codex expanded to mobile preview (May 14) and Windows sandbox (May 13). GPT-5.5 launched April 23 as the new flagship at $5/$30 per 1M tokens with a 1M-token context window.
 
-On the **server side** — exposing OpenAI's own capabilities via MCP — the ecosystem remains community-driven and essentially flat. **lastmile-ai/openai-agents-mcp** (198 stars, 63 commits) is the strongest project but hasn't had a commit since March 2025. **pierrebrunelle/mcp-server-openai** (81 stars) is the most straightforward for cross-model queries. **akiojin/openai-mcp-server** has not been updated since October 2025 and is no longer recommended.
+On the **server side** — exposing OpenAI's own capabilities via MCP — the ecosystem remains community-driven and essentially flat. **lastmile-ai/openai-agents-mcp** (198 stars, 63 commits) is the strongest project but hasn't had a commit since March 2025. **pierrebrunelle/mcp-server-openai** (84 stars) is the most straightforward for cross-model queries. **akiojin/openai-mcp-server** has not had a commit since August 2025 and is no longer recommended.
 
 The 3.5/5 rating holds: strong client-side MCP investment continues to outpace the server side. Community servers haven't kept pace with OpenAI's rapid model releases (now on GPT-5.5, three releases since April 21 alone). The May 2026 TanStack supply chain incident adds a caution note for macOS users. The lack of an official server means no single implementation covers the full API surface — chat completions are served, while audio, video, embeddings, and fine-tuning remain largely inaccessible via MCP.
 

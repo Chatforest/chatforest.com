@@ -476,7 +476,7 @@ sweeps. Headline catches:
 - [x] 2026-07-23 — [Video Conferencing & Meeting Intelligence MCP Servers — Zoom Official, Joinly, Vexa, Otter.ai, Fireflies, tl;dv, and More](content/reviews/video-conferencing-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-23 — [Video Production & Streaming MCP Servers — OBS, YouTube, HeyGen, Runway, Twitch, Mux, Remotion, Short-Video-Maker, and More](content/reviews/video-production-streaming-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-23 — [Weather & Climate MCP Servers — Open-Meteo, OpenWeatherMap, NOAA/NWS, AccuWeather, Aviation METAR/TAF, Climatiq, Stormglass, and More](content/reviews/weather-climate-mcp-servers.md) — re-audited 2026-08-18
-- [ ] 2026-07-23 — [Web Scraping & Crawling MCP Servers — Firecrawl, Crawl4AI, Bright Data, Apify, Jina Reader, and More](content/reviews/web-scraping-crawling-mcp-servers.md)
+- [x] 2026-07-23 — [Web Scraping & Crawling MCP Servers — Firecrawl, Crawl4AI, Bright Data, Apify, Jina Reader, and More](content/reviews/web-scraping-crawling-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-23 — [Workflow Automation MCP Servers — n8n, Zapier, Make & More](content/reviews/workflow-automation-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-23 — [Zapier MCP Server — 9,000+ Apps and 40,000+ Actions for AI Agents](content/reviews/zapier-mcp-server.md) — re-audited 2026-08-17
 - [x] 2026-07-24 — [API Development MCP Servers — OpenAPI Converters, GraphQL, gRPC, and the Rise of Spec-to-Server Generation](content/reviews/api-development-mcp-servers.md) — re-audited 2026-08-15
@@ -506,18 +506,18 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [Logging & Tracing MCP Servers — Splunk v1.1.1 Doubles Adoption, SigNoz Surges, Logfire Archived](content/reviews/logging-tracing-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-24 — [Mailtrap MCP Server — Send Transactional Emails From Your AI Agent](content/reviews/mailtrap-mcp-server.md) — re-audited 2026-08-17
 - [x] 2026-07-24 — [Meta Llama MCP Servers — AI Agents for Llama 4, Ollama, and the Open-Weight LLM Ecosystem](content/reviews/meta-llama-mcp-server.md) — re-audited 2026-08-17
-- [ ] 2026-07-24 — [MindsDB MCP Server — Federated Queries Across 200+ Data Sources From a Single Interface](content/reviews/mindsdb-mcp-server.md)
+- [x] 2026-07-24 — [MindsDB MCP Server — Federated Queries Across 200+ Data Sources From a Single Interface](content/reviews/mindsdb-mcp-server.md) — re-audited 2026-08-18
 - [x] 2026-07-24 — [Mistral AI MCP Server — Europe's Open-Weight Champion Embraces the Model Context Protocol](content/reviews/mistral-mcp-server.md) — re-audited 2026-08-17
 - [x] 2026-07-24 — [Monitoring & Observability MCP Servers — From Grafana to Datadog, Vendor-Led Observability Meets MCP](content/reviews/monitoring-observability-mcp-servers.md) — re-audited 2026-08-17
 - [x] 2026-07-24 — [MySQL MCP Servers — The World's Most Popular Database Meets AI](content/reviews/mysql-mcp-server.md) — re-audited 2026-08-17
-- [ ] 2026-07-24 — [New Relic MCP Server — AI-Powered Observability with NRQL Queries, Alerts, Entity Discovery, and Log Analysis](content/reviews/new-relic-mcp-server.md)
-- [ ] 2026-07-24 — [Nimble MCP Server — Enterprise Web Intelligence With the Best Google Maps Tools](content/reviews/nimble-mcp-server.md)
-- [ ] 2026-07-24 — [OneDrive MCP Servers — AI Agents That Manage Your Microsoft 365 Files, Email, Calendar, and Teams](content/reviews/onedrive-mcp-server.md)
-- [ ] 2026-07-24 — [OpenAI MCP Servers — AI Agents for GPT-5.5, o3, DALL-E, and the OpenAI API Platform](content/reviews/openai-mcp-server.md)
-- [ ] 2026-07-24 — [Oxylabs MCP Server — Two Scraping Engines in One, With the Fastest Stress Test Times](content/reviews/oxylabs-mcp-server.md)
-- [ ] 2026-07-24 — [Package Management MCP Servers — NuGet, npm, PyPI, Maven, and the Quest for AI-Assisted Dependency Intelligence](content/reviews/package-management-mcp-servers.md)
-- [ ] 2026-07-24 — [PayPal MCP Server — AI-Powered Payment Processing with Invoicing, Orders, Subscriptions, and Agentic Commerce](content/reviews/paypal-mcp-server.md)
-- [ ] 2026-07-24 — [Pipedream MCP Server — 10,000+ Tools Across 3,000 APIs With Managed OAuth](content/reviews/pipedream-mcp-server.md)
+- [x] 2026-07-24 — [New Relic MCP Server — AI-Powered Observability with NRQL Queries, Alerts, Entity Discovery, and Log Analysis](content/reviews/new-relic-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Nimble MCP Server — Enterprise Web Intelligence With the Best Google Maps Tools](content/reviews/nimble-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [OneDrive MCP Servers — AI Agents That Manage Your Microsoft 365 Files, Email, Calendar, and Teams](content/reviews/onedrive-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [OpenAI MCP Servers — AI Agents for GPT-5.5, o3, DALL-E, and the OpenAI API Platform](content/reviews/openai-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Oxylabs MCP Server — Two Scraping Engines in One, With the Fastest Stress Test Times](content/reviews/oxylabs-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Package Management MCP Servers — NuGet, npm, PyPI, Maven, and the Quest for AI-Assisted Dependency Intelligence](content/reviews/package-management-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [PayPal MCP Server — AI-Powered Payment Processing with Invoicing, Orders, Subscriptions, and Agentic Commerce](content/reviews/paypal-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Pipedream MCP Server — 10,000+ Tools Across 3,000 APIs With Managed OAuth](content/reviews/pipedream-mcp-server.md) — re-audited 2026-08-18
 - [ ] 2026-07-24 — [PostgreSQL MCP Servers — The Database That Ate the World Gets an AI Interface](content/reviews/postgresql-mcp-server.md)
 - [ ] 2026-07-24 — [Postmark MCP Server — Send Transactional Emails From Your AI Agent](content/reviews/postmark-mcp-server.md)
 - [ ] 2026-07-24 — [Prisma MCP Server — Dual-Mode Database Management for AI Agents](content/reviews/prisma-mcp-server.md)

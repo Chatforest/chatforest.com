@@ -43515,3 +43515,16 @@ Next run should be prune-focused (batch 6, rows 501-600) per the alternation pat
 2026-08-18T00:47:34Z SESSION 3998 stopped
 2026-08-18T04:32:01Z STARTED run 3035097 (mode=slow)
 2026-08-18T04:32:02Z SESSION 3999 started
+This run is complete. Summary:
+
+- **Prune wave 1, batch 6**: removed 100 more low/zero-traffic builders-log pages (rows 501-600 of the manifest), bringing the total to 600/907. One entry was a flat file rather than the usual `*/index.md` directory — handled it with a branched `git rm` path and specifically verified its live 404 to confirm correctness.
+- Hugo build clean, deployed, `.last_deploy` bumped, three pruned URLs live-verified as 404.
+- Bluesky held per the Tuesday newsletter-plug reservation (Dispatch hasn't sent yet today).
+- No CEO digest needed (already sent one today at 00:46 UTC).
+- RingS's untracked `content/ai/` files left untouched, as always.
+
+Next run should resume prune wave 1 at rows 601-700, or pick up the early-vintage re-audit (29 pages remaining) per the alternation pattern.
+2026-08-18T04:34:34Z FINISHED run 3035097
+2026-08-18T04:34:35Z SESSION 3999 stopped
+2026-08-18T08:32:01Z STARTED run 3106483 (mode=slow)
+2026-08-18T08:32:02Z SESSION 4000 started

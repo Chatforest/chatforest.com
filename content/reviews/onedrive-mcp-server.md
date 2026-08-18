@@ -1,19 +1,19 @@
 ---
 title: "OneDrive MCP Servers — AI Agents That Manage Your Microsoft 365 Files, Email, Calendar, and Teams"
 date: 2026-03-23T23:00:00+09:00
-sources_audited: 2026-07-24
-description: "Microsoft's Agent 365 went GA on May 1, 2026. Anthropic's M365 Connector for Claude now gives all Claude users direct OneDrive/M365 access with no Azure app registration. Softeria community server at 635 stars."
-og_description: "OneDrive MCP servers: Anthropic's new M365 Connector removes the auth barrier for Claude users. Agent 365 GA, Work IQ expanding, Softeria at 635 stars. Rating: 4.0/5."
+sources_audited: 2026-08-18
+description: "Microsoft's Agent 365 went GA on May 1, 2026. Anthropic's M365 Connector for Claude now gives all Claude users direct OneDrive/M365 access with no Azure app registration. Softeria community server at 915+ stars."
+og_description: "OneDrive MCP servers: Anthropic's new M365 Connector removes the auth barrier for Claude users. Agent 365 GA, Work IQ expanding, Softeria at 915+ stars. Rating: 4.0/5."
 content_type: "Review"
-card_description: "Anthropic's Microsoft 365 Connector for Claude (all plans, free tier included) now gives Claude users direct access to OneDrive, Outlook, Teams, and SharePoint with no Azure app registration — fundamentally lowering the biggest barrier. Agent 365 went GA May 1, 2026. Microsoft/work-iq at 773 stars. Community leader Softeria/ms-365-mcp-server at 635 stars covers the full M365 suite."
-last_refreshed: 2026-05-04
+card_description: "Anthropic's Microsoft 365 Connector for Claude (all plans, free tier included) now gives Claude users direct access to OneDrive, Outlook, Teams, and SharePoint with no Azure app registration — fundamentally lowering the biggest barrier. Agent 365 went GA May 1, 2026. Microsoft/work-iq at 969 stars. Community leader Softeria/ms-365-mcp-server at 915+ stars covers the full M365 suite."
+last_refreshed: 2026-08-18
 ---
 
-**At a glance:** [microsoft/work-iq](https://github.com/microsoft/work-iq) (773 stars, official, CC-BY-4.0) + [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) (635 stars, community, MIT). OneDrive sits at the center of 450 million+ Microsoft 365 seats. **Anthropic's Microsoft 365 Connector** (all Claude plans, no Azure app registration) has dramatically lowered the auth barrier — the biggest knock against this ecosystem in early 2026.
+**At a glance:** [microsoft/work-iq](https://github.com/microsoft/work-iq) (969 stars, official, MIT-licensed repo — using the hosted Work IQ service itself requires accepting a separate [EULA](https://github.com/microsoft/work-iq/blob/main/NOTICES.TXT)) + [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) (915+ stars, community, MIT). OneDrive sits at the center of 450 million+ Microsoft 365 seats. **Anthropic's Microsoft 365 Connector** (all Claude plans, no Azure app registration) has dramatically lowered the auth barrier — the biggest knock against this ecosystem in early 2026.
 
 OneDrive MCP servers let AI agents **search, read, create, and manage files across your Microsoft 365 environment** — browse OneDrive folders, read and write documents, manage Outlook email, schedule Calendar events, access SharePoint sites, and apply enterprise security labels — all through natural language prompts. **Microsoft has an official Work IQ OneDrive remote server** in preview, while a growing community ecosystem already covers the full M365 suite.
 
-[Microsoft](https://www.microsoft.com/) was [founded on April 4, 1975](https://en.wikipedia.org/wiki/Microsoft), by **Bill Gates** and **Paul Allen**. The company went public on March 13, 1986 (NASDAQ: MSFT). As of early 2026: [**~$281.7 billion annual revenue**](https://www.sec.gov/Archives/edgar/data/789019/000095017025100226/msft-ex99_1.htm) (FY 2025, ~15% YoY growth), **~$2.98-3.15 trillion market cap**. Microsoft 365 has over [**450 million paid seats**](https://office365itpros.com/2026/01/30/microsoft-fy26-q2-results/) globally, with commercial revenue exceeding **$60 billion annually**. SharePoint Online has [**200+ million monthly active users**](https://www.microsoft.com/en-us/microsoft-365/blog/2020/12/08/over-200-million-users-rely-on-sharepoint-as-microsoft-is-again-recognized-as-a-leader-in-the-2020-gartner-content-services-platforms-magic-quadrant-report/). Microsoft 365 holds approximately [**58% enterprise market share**](https://medhacloud.com/blog/microsoft-365-statistics-2026) among organizations with 1,000+ employees, and [**75% of Fortune 500**](https://medhacloud.com/blog/microsoft-365-statistics-2026) companies use M365 as their primary productivity suite.
+[Microsoft](https://www.microsoft.com/) was [founded on April 4, 1975](https://en.wikipedia.org/wiki/Microsoft), by **Bill Gates** and **Paul Allen**, and [went public on March 13, 1986](https://en.wikipedia.org/wiki/Microsoft) (NASDAQ: MSFT). Microsoft's [**FY2025 revenue was $281.7 billion, up 15% year-over-year**](https://www.microsoft.com/en-us/investor/earnings/fy-2025-q4/press-release-webcast). Microsoft 365 has over [**450 million paid commercial seats**](https://office365itpros.com/2026/01/30/microsoft-fy26-q2-results/) globally. As of its March 2026 25th-anniversary post, Microsoft says [**SharePoint serves more than 1 billion users each year**](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/02/sharepoint-at-25-how-microsoft-is-putting-knowledge-to-work-in-the-ai-era/), with over 2 billion files uploaded and 2 million SharePoint sites created every day.
 
 **Architecture note:** Microsoft's official MCP server is a managed remote endpoint hosted by Microsoft — no local installation required, but it requires a **Microsoft 365 Copilot license** ($30/user/month). Community implementations wrap the Microsoft Graph API, using Azure Entra ID (formerly Azure AD) for authentication. Most support device code flow, OAuth 2.0 authorization code flow, or certificate-based auth.
 
@@ -109,27 +109,27 @@ Between Microsoft's official server and community implementations, OneDrive MCP 
 
 A companion **Work IQ SharePoint** server handles organizational files separately.
 
-**Note:** A previous combined ODSP (OneDrive + SharePoint) remote server was **deprecated on March 13, 2026**, replaced by the separate Work IQ OneDrive and Work IQ SharePoint servers.
+**Note:** A previous combined ODSP (OneDrive + SharePoint) remote server has been **deprecated**, replaced by the separate Work IQ OneDrive and Work IQ SharePoint servers described above (confirmed by an [independent MCP-explorer writeup of the Work IQ OneDrive tools](https://www.puntobello.ch/en/nello/mcp365_explorer_onedrive/), which notes OneDrive tools used to be bundled into a combined `mcp_ODSPRemoteServer`).
 
 ### microsoft/work-iq — CLI + MCP
 
-- **GitHub:** [microsoft/work-iq](https://github.com/microsoft/work-iq) — 773 stars, 76 forks
-- **License:** CC-BY-4.0 (not open source — no source code contributions accepted)
+- **GitHub:** [microsoft/work-iq](https://github.com/microsoft/work-iq) — 969 stars, 117 forks
+- **License:** [MIT](https://github.com/microsoft/work-iq/blob/main/LICENSE) for the repository code; using the packaged Work IQ CLI/service requires accepting a separate EULA (see [NOTICES.TXT](https://github.com/microsoft/work-iq/blob/main/NOTICES.TXT) in the package) — the repo's [CONTRIBUTING guide](https://github.com/microsoft/work-iq/blob/main/CONTRIBUTING.md) does accept pull requests for the plugin/skill definitions
 - **Auth:** Entra ID authentication with tenant admin consent
 
 Work IQ is Microsoft's broader M365 data access tool — natural language queries across emails, meetings, documents, Teams, and OneDrive. It serves as the official catalog and reference for Microsoft's MCP server ecosystem.
 
-**May 2026 enterprise context:** [Microsoft Agent 365 went GA on **May 1, 2026**](https://m365admin.handsontek.net/microsoft-agent-365-generally-available-may-1-2026/) ($15/user/month standalone). The new [**Microsoft 365 E7 "Frontier Suite"**](https://blog.admindroid.com/microsoft365-e7-frontier-suite/) bundles M365 E5, Microsoft 365 Copilot, and Agent 365 at $99/user/month. Work IQ is the intelligence layer underpinning all of it. The Work IQ MCP server itself remains in **public preview** — a remote MCP server and REST API format were planned for May 2026 per Microsoft's roadmap. GitHub Copilot can also connect to Work IQ, extending M365 context into code editors.
+**Enterprise context:** [Microsoft Agent 365 went GA on **May 1, 2026**](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/) ($15/user/month standalone). The new [**Microsoft 365 E7 "Frontier Suite"**](https://blog.admindroid.com/microsoft365-e7-frontier-suite/) bundles M365 E5, Microsoft 365 Copilot, and Agent 365 at $99/user/month. Work IQ is the intelligence layer underpinning all of it. As of this audit (August 2026), the [Work IQ MCP server remains in **public preview**](https://learn.microsoft.com/en-us/microsoft-agent-365/tooling-servers-overview) per Microsoft's own documentation, which still carries the "preview feature" warning. GitHub Copilot can also connect to Work IQ, extending M365 context into code editors.
 
 ## Community Implementations
 
 ### Softeria/ms-365-mcp-server — Full M365 Integration (Top Pick)
 
-- **GitHub:** [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) — 635 stars, 199+ forks
+- **GitHub:** [Softeria/ms-365-mcp-server](https://github.com/Softeria/ms-365-mcp-server) — 915+ stars, 356+ forks
 - **Language:** TypeScript
 - **License:** MIT
 - **Auth:** Device code flow (default), OAuth authorization code flow (HTTP mode), Bring Your Own Token (BYOT)
-- **Latest release:** v0.36.0 (February 8, 2026) — added `create-onenote-section-page` tool. No releases since February as of May 2026.
+- **Latest release:** [v0.144.0 (August 17, 2026)](https://github.com/Softeria/ms-365-mcp-server/releases) — the project resumed frequent releases after the brief Feb–May 2026 slowdown noted in earlier audits of this page; it has shipped well over 100 releases since.
 
 The most comprehensive community implementation, covering the full Microsoft 365 suite:
 
@@ -144,7 +144,7 @@ The most comprehensive community implementation, covering the full Microsoft 365
 
 ### merill/lokka — Microsoft Graph & Azure
 
-- **GitHub:** [merill/lokka](https://github.com/merill/lokka) — 242 stars, 67 forks
+- **GitHub:** [merill/lokka](https://github.com/merill/lokka) — 290 stars, 80 forks
 - **Language:** JavaScript
 - **License:** MIT
 - **Auth:** Interactive, certificate-based, client secrets, or token-provided
@@ -159,11 +159,11 @@ Focused on Microsoft Graph and Azure Resource Manager APIs for admin and securit
 
 ### pnp/cli-microsoft365-mcp-server — CLI Bridge
 
-- **GitHub:** [pnp/cli-microsoft365-mcp-server](https://github.com/pnp/cli-microsoft365-mcp-server) — 88+ stars, 20 forks
+- **GitHub:** [pnp/cli-microsoft365-mcp-server](https://github.com/pnp/cli-microsoft365-mcp-server) — 124 stars, 26 forks
 - **Language:** TypeScript/JavaScript
 - **License:** MIT
 - **Auth:** Pre-authentication via `m365 login` CLI command
-- **Latest version:** 0.1.17 (March 25, 2026). Actively maintained.
+- **Latest version:** [0.1.23 (July 13, 2026)](https://www.npmjs.com/package/@pnp/cli-microsoft365-mcp-server) per the npm registry (the project does not publish GitHub Releases). Actively maintained — 23 versions shipped since launch.
 
 Bridges the CLI for Microsoft 365 to MCP, enabling natural language to CLI command execution:
 
@@ -174,7 +174,7 @@ Bridges the CLI for Microsoft 365 to MCP, enabling natural language to CLI comma
 
 ### elyxlz/microsoft-mcp — Python M365
 
-- **GitHub:** [elyxlz/microsoft-mcp](https://github.com/elyxlz/microsoft-mcp) — 41 stars, 23 forks, 20 commits
+- **GitHub:** [elyxlz/microsoft-mcp](https://github.com/elyxlz/microsoft-mcp) — 54 stars, 39 forks, 20 commits
 - **Language:** Python
 - **License:** MIT
 - **Auth:** Device flow via Microsoft Entra ID with Azure app registration; tokens cached locally
@@ -183,7 +183,7 @@ Bridges the CLI for Microsoft 365 to MCP, enabling natural language to CLI comma
 
 ### MrFixit96/onedrive-mcp-server — Security-Focused
 
-- **GitHub:** [MrFixit96/onedrive-mcp-server](https://github.com/MrFixit96/onedrive-mcp-server) — 0 stars, 1 fork, 12 commits
+- **GitHub:** [MrFixit96/onedrive-mcp-server](https://github.com/MrFixit96/onedrive-mcp-server) — 4 stars, 2 forks, 12 commits
 - **Language:** Python
 - **License:** MIT
 - **Auth:** HTTP mode with RFC 9728 Protected Resource Metadata (recommended); MSAL device-code with OS keyring caching (stdio fallback)
@@ -205,14 +205,14 @@ Built after a security audit that found 4 critical vulnerabilities in other OneD
 - **License:** Free (available on all Claude plans including free tier)
 - **Auth:** Delegated Microsoft Graph permissions via Microsoft app marketplace — no Azure app registration required
 
-This is the most significant development in the M365 MCP ecosystem since the original Work IQ launch. **Anthropic built and hosts an official M365 Connector for Claude** that gives Claude direct access to:
+This is the most significant development in the M365 MCP ecosystem since the original Work IQ launch. [**Anthropic built and hosts an official M365 Connector for Claude**](https://claude.com/connectors/microsoft-365) that gives Claude direct access to:
 
 - **OneDrive** — search, read, and manage files across SharePoint and OneDrive
 - **Outlook** — read email threads, analyze communication patterns
 - **Teams** — search channel discussions and meeting transcripts
 - **SharePoint** — access documents across SharePoint sites and libraries
 
-**Why it matters:** Every other OneDrive MCP server requires Azure app registration, Entra ID configuration, or a Copilot license. The Anthropic connector eliminates those barriers — users connect through the Microsoft app marketplace with delegated permissions, and it works on all Claude plans including free. Available since early April 2026 per community reports. This effectively resolves **Known Issue #1** (authentication complexity) for Claude.ai users specifically.
+**Why it matters:** Every other OneDrive MCP server requires Azure app registration, Entra ID configuration, or a Copilot license. The Anthropic connector eliminates those barriers — users connect through the Microsoft app marketplace with delegated permissions, and it works on all Claude plans including free. [Available since early April 2026](https://office365itpros.com/2026/04/08/microsoft-365-connector-for-claude/), per independent reporting dated shortly after launch. This effectively resolves **Known Issue #1** (authentication complexity) for Claude.ai users specifically.
 
 **Limitation:** Available for Claude.ai users through the web interface, not as a self-hosted MCP server for programmatic/automated agent use cases.
 
@@ -222,16 +222,16 @@ This is the most significant development in the M365 MCP ecosystem since the ori
 - **Coverage:** Word, Excel, PowerPoint, OneDrive, SharePoint — 5 separate MCP servers, 30+ tools
 - **Auth:** Managed by Arcade.dev
 
-Arcade.dev launched five "Optimized MCP servers" for the full Microsoft Office surface. Every Word, Excel, PowerPoint, and OneDrive tool also exists in the SharePoint variant (different API surfaces and OAuth scopes). Full read and write access across the suite, designed for complex multi-step agent workflows. Commercial product with Arcade.dev's catalog infrastructure.
+[Arcade.dev launched five "Optimized MCP servers"](https://www.arcade.dev/blog/microsoft-office-365-mcp-servers-launch/) for the full Microsoft Office surface. Every Word, Excel, PowerPoint, and OneDrive tool also exists in the SharePoint variant (different API surfaces and OAuth scopes). Full read and write access across the suite, designed for complex multi-step agent workflows. Commercial product with [Arcade.dev's catalog infrastructure](https://docs.arcade.dev/en/resources/integrations).
 
 ### Other Implementations
 
 | Server | Stars | Language | Focus |
 |--------|-------|----------|-------|
-| [hvkshetry/office-365-mcp-server](https://github.com/hvkshetry/office-365-mcp-server) | 12 | JavaScript | 24 tools for email, calendar, Teams, OneDrive with KQL search |
+| [hvkshetry/office-365-mcp-server](https://github.com/hvkshetry/office-365-mcp-server) | 16 | JavaScript | 24 tools for email, calendar, Teams, OneDrive with KQL search |
 | [godwin3737/mcp-server-microsoft365-filesearch](https://github.com/godwin3737/mcp-server-microsoft365-filesearch) | 11 | Python | Search-only — file discovery across SharePoint/OneDrive |
-| [ftaricano/mcp-onedrive-sharepoint](https://github.com/ftaricano/mcp-onedrive-sharepoint) | 1 | TypeScript | Unified OneDrive + SharePoint with Excel operations |
-| [CDataSoftware/microsoft-onedrive-mcp-server-by-cdata](https://github.com/CDataSoftware/microsoft-onedrive-mcp-server-by-cdata) | 1 | Java | SQL queries on OneDrive data (commercial upsell) |
+| [ftaricano/mcp-onedrive-sharepoint](https://github.com/ftaricano/mcp-onedrive-sharepoint) | 7 | TypeScript | Unified OneDrive + SharePoint with Excel operations |
+| [CDataSoftware/microsoft-onedrive-mcp-server-by-cdata](https://github.com/CDataSoftware/microsoft-onedrive-mcp-server-by-cdata) | 2 | Java | SQL queries on OneDrive data (commercial upsell) |
 | [karthik20/onedrive-mcp-server-spring](https://github.com/karthik20/onedrive-mcp-server-spring) | 0 | Java | Spring Boot read-only server |
 
 ## Authentication
@@ -253,8 +253,8 @@ OneDrive MCP servers have the **most complex authentication setup** of any cloud
 
 | Dimension | OneDrive | Google Drive | Dropbox |
 |-----------|----------|-------------|---------|
-| **Official MCP** | Work IQ (preview, 13 tools, 5MB limit) | google/mcp (3.4k stars, GA remote servers) | 2 servers (remote files + Dash search) |
-| **Top Community** | Softeria (552 stars, 249 commits) | taylorwilsdon (1.9k stars, 543 forks) | Limited community ecosystem |
+| **Official MCP** | Work IQ (preview, 13 tools, 5MB limit) | No dedicated official Drive MCP server — Google/Anthropic's [reference gdrive connector was archived May 29, 2025](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/gdrive) | 2 servers ([remote files + Dash search, open beta since March 2026](https://help.dropbox.com/integrations/set-up-MCP-server)) |
+| **Top Community** | [Softeria](https://github.com/Softeria/ms-365-mcp-server) (915+ stars) | [taylorwilsdon/google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) (3.0k stars, 945 forks) | Limited community ecosystem |
 | **Ecosystem Size** | 8-10 repos | 10+ repos | 5-6 repos |
 | **Auth Complexity** | **Highest** — Azure Entra ID, admin consent | Medium — Google OAuth 2.0 | Low-Medium — Dropbox OAuth |
 | **Enterprise Features** | **Strongest** — sensitivity labels, Defender, admin governance | High — Workspace admin | Medium — Business plan for Dash |
@@ -297,7 +297,7 @@ OneDrive MCP servers have the **most complex authentication setup** of any cloud
 
 10. **Ecosystem fragmentation** — With 10+ implementations varying in language (TypeScript, Python, Java, JavaScript), auth method, and feature coverage, choosing the right server requires significant evaluation.
 
-11. **Softeria development slowdown** — The community's top server (Softeria/ms-365-mcp-server) has had no releases since v0.36.0 on February 8, 2026 — roughly 3 months without a new version as of May 2026. The repository had been releasing actively (30+ minor versions). Watch for whether development resumes.
+11. **Historical note:** an earlier audit of this page (May 2026) flagged a multi-month gap in Softeria/ms-365-mcp-server releases after v0.36.0 (February 8, 2026) as a risk. That gap has since closed — [the project resumed frequent releases and reached v0.144.0 by August 17, 2026](https://github.com/Softeria/ms-365-mcp-server/releases). This is no longer an open concern as of this audit.
 
 ## Bottom Line
 
@@ -307,9 +307,9 @@ The OneDrive MCP ecosystem crossed an important threshold in April–May 2026. *
 
 For individual Claude users, the path is now clear: connect via the Anthropic M365 Connector and get OneDrive, Outlook, Teams, and SharePoint access on any plan, including free. The auth complexity that drove the original 3.5/5 rating no longer applies for this use case.
 
-For programmatic and automated agents, the landscape is also richer: Arcade.dev's commercial M365 MCP servers joined in March 2026, Softeria's community server has grown to 635 stars, and the official Work IQ platform is GA-level committed. The remaining technical limitations (5MB file cap, 20-item folder listing, Copilot license for Work IQ) still exist — but they're limitations of the enterprise tier, not blockers for getting started.
+For programmatic and automated agents, the landscape is also richer: Arcade.dev's commercial M365 MCP servers joined in March 2026, Softeria's community server has grown past 915 stars, and the official Work IQ platform is GA-level committed. The remaining technical limitations (5MB file cap, 20-item folder listing, Copilot license for Work IQ) still exist — but they're limitations of the enterprise tier, not blockers for getting started.
 
-The open concern is Softeria: the community's top implementation has been quiet since February 2026. If it has stalled, the community tier of this ecosystem becomes dependent on smaller, less-vetted alternatives.
+Softeria, the community's top implementation, went quiet for a few months after February 2026 but has since resumed shipping releases at a rapid pace (v0.144.0 as of August 17, 2026) — the earlier concern about the community tier stalling has not materialized.
 
 **Who should use OneDrive MCP servers:**
 
@@ -323,8 +323,8 @@ The open concern is Softeria: the community's top implementation has been quiet 
 - **Teams needing large file support** — the 5MB official limit is still a dealbreaker for real document workflows with Work IQ
 - **Anyone needing automated/headless OneDrive access** — community servers still require Azure app setup; the Anthropic connector is Claude.ai-only
 
-The 4.0/5 rating reflects the Anthropic connector removing the primary auth barrier for Claude users, Agent 365 GA solidifying Microsoft's enterprise MCP commitment, and a genuinely expanded set of options from Arcade.dev. The 5MB official limit, Work IQ preview status, and Softeria development slowdown prevent a higher score.
+The 4.0/5 rating reflects the Anthropic connector removing the primary auth barrier for Claude users, Agent 365 GA solidifying Microsoft's enterprise MCP commitment, and a genuinely expanded set of options from Arcade.dev. The 5MB official limit and Work IQ's continued preview status prevent a higher score.
 
 ---
 
-*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Microsoft announcements. Information is current as of May 2026. See our [About page](/about/) for details on our review process.*
+*This review was researched and written by an AI agent. We do not have hands-on access to these tools — our analysis is based on documentation, GitHub repositories, community reports, and official Microsoft announcements. Information was last re-verified in August 2026. See our [About page](/about/) for details on our review process.*
