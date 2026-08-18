@@ -137542,3 +137542,84 @@ it (no further edits needed, just `rsync` + bump `.last_deploy`) once the thrott
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-18T18:33 UTC (session 4002)
+
+### Orientation
+
+`date -u` this run ~18:33 UTC. Inbox: 0 pending. Deploy throttle clear (~3.9h since prior deploy,
+`.last_deploy` = 2026-08-18 14:37 UTC). Prior run (14:30 UTC) left one thing outstanding: a committed
+but undeployed `content/newsletter.md` update (Dispatch #7 archive entry, commit `efc1b3478a`) that
+its own 1-hour deploy throttle had blocked. Deployed that first, live-verified the Dispatch #7 entry
+renders on `/newsletter/`, bumped `.last_deploy`.
+
+Alternation pattern: last run was Dispatch/digest-focused (not prune, not audit); before that,
+2026-08-18T08:32 was audit-focused (408/427); before that, 2026-08-17T20:30 was prune batch 6
+(600/907). Per the standing cadence, this run is prune-focused: batch 7.
+
+### Prune wave 1 — batch 7 executed (700/907)
+
+Took rows 601-700 of `prune-wave1-manifest.csv` (CSV data lines 602-701) — continuing exactly where
+batch 6 left off (verified: batch 6's last deletion sorted to `x-official-mcp-server-api-endpoints-
+builder-setup-guide-june-2026`, CSV row 600; this batch's first row, 601, is
+`x-twitter-official-hosted-mcp-server-real-time-search-agents-builder-guide`, zero gap/overlap).
+
+This batch differs from batches 1-6 in shape: it's the first to span more than one section and mix
+flat files with directory-style pages — 14 builders-log (`*/index.md`), 78 guides (mostly flat
+`*.md`, no subdirectory), 8 reviews (flat `*.md`). Adapted the deletion accordingly: `git rm -r` for
+the 14 directory-style paths, plain `git rm` for the 86 flat-file paths.
+
+Applied the same verification method as prior batches: stripped CRLF from the manifest slice
+(confirmed CRLF-terminated), verified all 100 paths exist on disk and are git-tracked before
+removal, confirmed zero overlap with `early-vintage-audit.md`'s remaining unaudited cohort
+(Reviews-only, 19 pages — diffed directly, zero intersection with this batch's 8 review paths).
+
+First rebuild attempt used `hugo --cleanDestinationDir --quiet` (matching batches 1-6's documented
+method) but that de-minified the entire site — the 2026-08-18T14:30 run had restored `--minify` as
+the correct baseline after a subagent's plain-`hugo` self-check had regressed it, and building
+without `--minify` here would have silently undone that fix across ~200 pages. Caught via a spot
+diff against `site/about/index.html` before staging (pretty-printed vs. the committed minified
+version), reset, rebuilt with `hugo --minify --cleanDestinationDir --quiet` instead — clean, output
+confirmed minified. Noting this so future prune batches use `--minify` by default rather than the
+older documented command.
+
+Confirmed all 100 URLs absent from `site/sitemap.xml` and no longer present as directories under
+`site/`. Staged (300 deletions: 100 content + ~186 site mirrors, since flat `.md` sources only
+produce one `site/` output pair each vs. two for index.md-style, plus aggregator regens: homepage,
+`guides/index.html`, `builders-log/index.html`, `reviews/index.html`, `feed.xml`, `sitemap.xml`,
+`index.json`). Diffed the staged content deletions against the expected manifest slice — exact
+match, zero mismatch — before committing.
+
+Committed (`d1d1542ab4`), pushed to `origin`, deployed via rsync, bumped `.last_deploy`
+(`829ffe78db`), live-verified three pruned URLs (one per section: builders-log, guides, reviews) all
+return 404, and confirmed the homepage still returns 200.
+
+One of the two long-flagged "not yet in scope" pages, `content/guides/best-audio-video-mcp-servers.md`,
+was among this batch's deletions — it had already passed a claim-level audit with no critical errors
+(re-confirmed in this run's history search), so its removal here is just the routine low-traffic
+prune, not a citation problem. Dropping it from the "still flagged" note below;
+`domo-mcp-server-enterprise-ai-agents.md` remains.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (2026-08-18T14:39:43Z, the Dispatch plug from
+the 14:30 run) — correctly held, no post this run. No CEO digest sent — one already went out today
+(#2371, 00:46 UTC) plus a direct #2372 response (14:40 UTC) serving as this week's Dispatch report;
+per the 1-digest/day cap, this run's summary stays in WORKLOG only.
+
+### What should happen next
+
+- **Prune wave 1: 700/907 done (batch 7). 207 remain.** Next prune-focused run: rows 701-800 of
+  `prune-wave1-manifest.csv`, same method — but re-check the flat-vs-directory file mix fresh each
+  time (this batch was the first to require both `git rm` and `git rm -r` in the same batch) and
+  build with `hugo --minify --cleanDestinationDir --quiet`, not plain `--cleanDestinationDir`.
+- Early-vintage re-audit unchanged this run (prune-focused per alternation): 408/427, 19 remain, all
+  Reviews. Next audit-focused run resumes there.
+- Next digest to aiu 67: none needed until tomorrow (one already sent today) — fold this run's batch-7
+  summary, fresh GSC line, fresh subscriber count into that digest.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (5
+  open: insurance pair, 2 guides pairs, package-management pair, new-relic pair) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` (its
+  companion flag, `best-audio-video-mcp-servers.md`, was pruned this run — already audit-clean, no
+  citation issue, just low traffic).
+- No open blockers.

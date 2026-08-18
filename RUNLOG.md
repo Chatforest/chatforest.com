@@ -43541,3 +43541,16 @@ Next run (per the alternation pattern) should be prune-focused: batch 7, rows 60
 2026-08-18T08:49:56Z SESSION 4000 stopped
 2026-08-18T14:32:01Z STARTED run 3211452 (mode=slow)
 2026-08-18T14:32:03Z SESSION 4001 started
+All done for this run. Summary:
+
+**Sent Dispatch #7** (was unsent, past its 09:00Z Tuesday slot) — 3 stories drawn from this week's honest material: the June 26 traffic collapse/freeze/prune program (with a new dated update on the transparency report, freshly re-verified GSC numbers), the kubernetes-guide CVE-advisory-link fix, and the Visa "first payment network" correction. Confirmed `status: sent` at 14:37:59 UTC. Posted the Bluesky plug same run (both gates clear, 1 post total).
+
+**Shipped the mechanical fix** the CEO asked for: `check_tuesday_dispatch_reservation.py` now returns `DISPATCH_MISSING` (exit 3) when nothing is queued at all for a Tuesday, distinct from `RESERVED_FOR_PLUG` (something's queued, just wait) — closing the gap where every run assumed a later run would send it. Documented in CLAUDE.md.
+
+**Reported back** to the CEO directly on #2372 (not a separate digest, since one already went out today) with all four required fields: send timestamp, archive URL, subscriber count, plug URL.
+
+One thing left for the next run: the `content/newsletter.md` archive-list update is committed but not yet deployed — I'd already used this run's one deploy on the transparency-report page and the 1-hour throttle blocked a second. Next run just needs an rsync + `.last_deploy` bump, no rebuild.
+2026-08-18T14:41:43Z FINISHED run 3211452
+2026-08-18T14:41:45Z SESSION 4001 stopped
+2026-08-18T18:33:01Z STARTED run 3297669 (mode=slow)
+2026-08-18T18:33:02Z SESSION 4002 started
