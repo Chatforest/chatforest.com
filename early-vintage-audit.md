@@ -518,16 +518,16 @@ sweeps. Headline catches:
 - [x] 2026-07-24 — [Package Management MCP Servers — NuGet, npm, PyPI, Maven, and the Quest for AI-Assisted Dependency Intelligence](content/reviews/package-management-mcp-servers.md) — re-audited 2026-08-18
 - [x] 2026-07-24 — [PayPal MCP Server — AI-Powered Payment Processing with Invoicing, Orders, Subscriptions, and Agentic Commerce](content/reviews/paypal-mcp-server.md) — re-audited 2026-08-18
 - [x] 2026-07-24 — [Pipedream MCP Server — 10,000+ Tools Across 3,000 APIs With Managed OAuth](content/reviews/pipedream-mcp-server.md) — re-audited 2026-08-18
-- [ ] 2026-07-24 — [PostgreSQL MCP Servers — The Database That Ate the World Gets an AI Interface](content/reviews/postgresql-mcp-server.md)
-- [ ] 2026-07-24 — [Postmark MCP Server — Send Transactional Emails From Your AI Agent](content/reviews/postmark-mcp-server.md)
-- [ ] 2026-07-24 — [Prisma MCP Server — Dual-Mode Database Management for AI Agents](content/reviews/prisma-mcp-server.md)
-- [ ] 2026-07-24 — [Profiling & Performance MCP Servers — k6 Official MCP, JMeter, Gatling, hotpath-rs Rust, JProfiler, CodSpeed, Grafana Pyroscope](content/reviews/profiling-performance-mcp-servers.md)
-- [ ] 2026-07-24 — [Resend MCP Server — The Developer-First Email API With Full AI Agent Access](content/reviews/resend-mcp-server.md)
-- [ ] 2026-07-24 — [SQL Server MCP Servers — Enterprise Database Gets AI-Powered Performance Monitoring](content/reviews/sql-server-mcp-server.md)
-- [ ] 2026-07-24 — [Salesforce DX MCP Server — AI-Powered Salesforce Development with 60+ Tools for LWC, Metadata, DevOps, and SOQL](content/reviews/salesforce-dx-mcp-server.md)
-- [ ] 2026-07-24 — [ScrapingBee MCP Server — Give Your AI Agent Eyes on the Live Web](content/reviews/scrapingbee-mcp-server.md)
-- [ ] 2026-07-24 — [Security Scanning MCP Servers — Enterprise Vendors Pile In as Agentic Security Goes Mainstream](content/reviews/security-scanning-mcp-servers.md)
-- [ ] 2026-07-24 — [Shopify Dev MCP Server — AI-Powered Shopify Development with Docs, Schema, and Code Validation](content/reviews/shopify-dev-mcp-server.md)
+- [x] 2026-07-24 — [PostgreSQL MCP Servers — The Database That Ate the World Gets an AI Interface](content/reviews/postgresql-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Postmark MCP Server — Send Transactional Emails From Your AI Agent](content/reviews/postmark-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Prisma MCP Server — Dual-Mode Database Management for AI Agents](content/reviews/prisma-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Profiling & Performance MCP Servers — k6 Official MCP, JMeter, Gatling, hotpath-rs Rust, JProfiler, CodSpeed, Grafana Pyroscope](content/reviews/profiling-performance-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Resend MCP Server — The Developer-First Email API With Full AI Agent Access](content/reviews/resend-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [SQL Server MCP Servers — Enterprise Database Gets AI-Powered Performance Monitoring](content/reviews/sql-server-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Salesforce DX MCP Server — AI-Powered Salesforce Development with 60+ Tools for LWC, Metadata, DevOps, and SOQL](content/reviews/salesforce-dx-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [ScrapingBee MCP Server — Give Your AI Agent Eyes on the Live Web](content/reviews/scrapingbee-mcp-server.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Security Scanning MCP Servers — Enterprise Vendors Pile In as Agentic Security Goes Mainstream](content/reviews/security-scanning-mcp-servers.md) — re-audited 2026-08-18
+- [x] 2026-07-24 — [Shopify Dev MCP Server — AI-Powered Shopify Development with Docs, Schema, and Code Validation](content/reviews/shopify-dev-mcp-server.md) — re-audited 2026-08-18
 - [ ] 2026-07-24 — [Snowflake MCP Server — AI-Powered Data Platform Access with Cortex AI, SQL Orchestration, and Semantic Views](content/reviews/snowflake-mcp-server.md)
 - [ ] 2026-07-24 — [Spotify MCP Server Review — Playback, Playlists & More](content/reviews/spotify-mcp-server.md)
 - [ ] 2026-07-24 — [Square MCP Server — AI-Powered Commerce with Payments, Orders, Inventory, Loyalty, and Full API Access](content/reviews/square-mcp-server.md)

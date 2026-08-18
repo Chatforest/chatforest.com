@@ -4,36 +4,34 @@ date: 2026-03-23T22:00:00+09:00
 description: "Prisma's official MCP server comes in two modes: a local CLI server for migrations, schema management, and Prisma Studio, and a remote server for managing Prisma Postgres infrastructure."
 og_description: "Prisma MCP: 17 tools across local and remote modes — migrations, SQL queries, schema introspection, database provisioning, backups. Official first-party. Rating: 4/5."
 content_type: "Review"
-card_description: "Official first-party dual-mode MCP server from Prisma. Local mode (7 tools) handles migrations, schema management, and Prisma Studio. Remote mode (10 tools) manages Prisma Postgres infrastructure — provisioning, backups, SQL queries, schema introspection. Built into Prisma CLI since v6.6.0, TypeScript, Apache 2.0 license."
+card_description: "Official first-party dual-mode MCP server from Prisma. Local mode (7 tools) handles migrations, schema management, and Prisma Studio. Remote mode (10 tools) manages Prisma Postgres infrastructure — provisioning, backups, SQL queries, schema introspection. Built into Prisma CLI since v6.6.0, MIT license."
 last_refreshed: 2026-05-01
-sources_audited: 2026-07-24
+sources_audited: 2026-08-18
 ---
 
 Part of our **[Databases MCP category](/categories/databases/)**.
 
-**At a glance:** [GitHub](https://github.com/prisma/mcp) — 41 stars, TypeScript, Apache 2.0 license, 28 commits. Local: 7 tools, stdio transport, CLI-integrated. Remote: 10 tools, HTTP transport, OAuth auth. Official first-party from [Prisma](https://www.prisma.io/). PulseMCP: ~225K all-time visitors, ~5.5K weekly, #209 globally.
+**At a glance:** [GitHub](https://github.com/prisma/mcp) — 47 stars, MIT license (per the repo's own [server manifest](https://github.com/prisma/mcp/blob/main/server.json); no LICENSE file is present in the repo), 28 commits. Local: 7 tools, stdio transport, CLI-integrated. Remote: 10 tools, HTTP transport, OAuth auth. Official first-party from [Prisma](https://www.prisma.io/). [PulseMCP](https://www.pulsemcp.com/servers/prisma-postgres): ~207K all-time visitors, ~3.6K weekly, #238 globally (these adoption figures move week to week; checked August 2026).
 
-The Prisma MCP server is the **official first-party MCP integration** for [Prisma](https://www.prisma.io/), the most downloaded ORM for Node.js and TypeScript with [~13 million weekly npm downloads](https://www.npmjs.com/package/prisma). Unlike most MCP servers that ship as a single package, Prisma takes a **dual-mode approach**: a local server for development workflows and a remote server for cloud infrastructure management.
+The Prisma MCP server is the **official first-party MCP integration** for [Prisma](https://www.prisma.io/), the most downloaded ORM for Node.js and TypeScript with [~13.9 million weekly npm downloads](https://www.npmjs.com/package/prisma) (narrowly ahead of Drizzle ORM's ~13.6 million weekly downloads). Unlike most MCP servers that ship as a single package, Prisma takes a **dual-mode approach**: a local server for development workflows and a remote server for cloud infrastructure management.
 
-[Prisma](https://www.prisma.io/) was [founded in 2016 in Berlin](https://nordic9.com/news/prisma-raises-4-5m-seed-round-led-by-kleiner-perkins-news7607101265/) by [Søren Bramer Schmidt](https://github.com/sorenbs) and [Johannes Schickling](https://github.com/schickling). The company has [raised $56.5M](https://tracxn.com/d/companies/prisma/__B3He-4OR9yGfYYdaKBgY9_NpeSOJibbXONowfLwA3Yw) from investors including Kleiner Perkins and Amplify Partners. [As of 2024: ~130 employees, ~$9.2M revenue](https://getlatka.com/companies/prisma1). Prisma ORM supports PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB, and CockroachDB. In November 2025, Prisma released [v7.0.0](https://www.prisma.io/blog/announcing-prisma-orm-7-0-0) — a major rewrite that removed the Rust engine, delivering 90% smaller bundles and 3x faster queries. Alongside the ORM, Prisma now offers **Prisma Postgres**, a managed database service that the remote MCP server is built to manage.
+[Prisma](https://www.prisma.io/) was [founded in 2016 in Berlin](https://tech.eu/brief/prisma-series-a/) by [Søren Bramer Schmidt](https://github.com/sorenbs) and [Johannes Schickling](https://github.com/schickling). The company has raised $56.5M across three rounds: a $4.5M seed (2018, led by Kleiner Perkins), a [$12M Series A](https://tech.eu/brief/prisma-series-a/) (2020, led by Amplify Partners), and a [$40M Series B](https://www.prisma.io/blog/series-b-announcement-v8t12ksi6x) ([May 2022](https://techcrunch.com/2022/05/03/prisma-raises-40m-for-its/), led by Altimeter Capital with Amplify Partners and Kleiner Perkins returning). [As of 2024: ~130 employees, ~$9.2M estimated revenue](https://getlatka.com/companies/prisma1) — note this figure comes from a single third-party estimation site (Latka), not a Prisma-published number, so treat it as an approximation. Prisma ORM supports PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB, and CockroachDB. In November 2025, Prisma released [v7.0.0](https://www.prisma.io/blog/announcing-prisma-orm-7-0-0) — a major rewrite that removed the Rust engine, delivering 90% smaller bundles and 3x faster queries. Alongside the ORM, Prisma now offers **Prisma Postgres**, a managed database service that the remote MCP server is built to manage.
 
 ## What's New (May 2026 Updates)
 
 Since our initial review in March, Prisma has shipped three ORM releases and announced a major rewrite — though the MCP server itself has seen minimal changes.
 
-**Prisma Next announced — becoming Prisma 8 (March 20).** Prisma unveiled its next-generation ORM rewrite with a brand new query API, streaming query results, a type-safe SQL query builder, an extensions system for new behaviors and data types, TypeScript schema files (alternative to `.prisma` format), middleware, validations, and query linting. The roadmap targets **Early Access in May 2026** and **Postgres GA in June–July 2026**. The team is already collaborating with MongoDB and ParadeDB on extension proofs of concept. Initial database support targets Postgres plus one additional SQL database (SQLite is the top candidate). Prisma 7 and Prisma Next will run in parallel with a compatibility layer for gradual migration. How the MCP server will integrate with Prisma Next's new query API is not yet addressed — this is a significant open question for developers planning around the MCP tooling.
+**Prisma Next announced — becoming Prisma 8 (March 20).** In its [Prisma 8 roadmap post](https://www.prisma.io/blog/prisma-next-roadmap), Prisma laid out its next-generation ORM rewrite: a brand new query API, streaming query results, a type-safe SQL query builder, an extensions system for new behaviors and data types, TypeScript schema files (alternative to `.prisma` format), middleware, validations, and query linting. The roadmap targets **Early Access in May 2026** and **Postgres GA in June–July 2026**. The team says it is already collaborating with MongoDB and ParadeDB on extension proofs of concept. Initial database support targets Postgres plus one additional SQL database (SQLite is the top candidate, per the same post). Prisma 7 and Prisma Next will run in parallel with a compatibility layer for gradual migration. How the MCP server will integrate with Prisma Next's new query API is not yet addressed — this is a significant open question for developers planning around the MCP tooling.
 
-**Prisma ORM v7.8.0 (April 22).** Latest stable release. Prisma has maintained its roughly biweekly release cadence through eight 7.8.0-dev prereleases before the stable cut.
+**Prisma ORM v7.8.0 ([April 22](https://www.prisma.io/changelog/2026-04-22)).** Latest stable release at the time of the May 2026 refresh. Prisma has maintained its roughly biweekly release cadence through twelve `7.8.0-dev` prereleases (per the [npm version history](https://www.npmjs.com/package/prisma?activeTab=versions)) before the stable cut.
 
-**Prisma ORM v7.7.0 — `prisma bootstrap` command (April 7).** A new interactive command that sequences the full Prisma Postgres setup into a single flow: init/scaffold (10 starter templates), browser-based auth + link, dependency installation, migration, generation, and seeding. Each step requires confirmation, re-running skips completed steps, and a non-interactive mode (`--api-key` + `--database`) supports CI pipelines. This doesn't add MCP tools directly, but simplifies the onboarding path for developers who will then use the MCP server.
+**Prisma ORM v7.7.0 — `prisma bootstrap` command ([April 7](https://www.prisma.io/changelog/2026-04-07)).** A new interactive command that sequences the full Prisma Postgres setup into a single flow: init/scaffold (10 starter templates), browser-based auth + link, dependency installation, migration, generation, and seeding. Each step requires confirmation, re-running skips completed steps, and a non-interactive mode (`--api-key` + `--database`) supports CI pipelines. This doesn't add MCP tools directly, but simplifies the onboarding path for developers who will then use the MCP server.
 
-**Prisma ORM v7.6.0 — `prisma postgres link` and Studio dark mode (March 27).** The `link` command connects an existing project to a Prisma Postgres database, and Studio got its long-requested dark mode.
+**Prisma ORM v7.6.0 — `prisma postgres link` and Studio dark mode ([March 27](https://www.prisma.io/changelog/2026-03-27)).** The `link` command connects an existing project to a Prisma Postgres database, and Studio got its long-requested dark mode.
 
-**VS Code Copilot agent mode integration.** The Prisma VS Code extension now fully supports VS Code's agent mode (powered by GitHub Copilot), enabling Copilot to run Prisma CLI commands and assist with database workflows directly. Since extensions auto-update, this is available to all Prisma VS Code users without manual action.
+**MCP server largely unchanged.** The prisma/mcp repository remains at 28 commits and has grown modestly to 47 GitHub stars since the original review. Tool count holds at 17 (7 local + 10 remote). The [connection closure delay issue](https://github.com/prisma/prisma/issues/28039) (#28039 — 10–12 second hang) remains open as of this re-check. No new tools have been added since the initial launch.
 
-**MCP server largely unchanged.** The prisma/mcp repository remains at 28 commits and 41 stars (up from 39). Tool count holds at 17 (7 local + 10 remote). The connection closure delay issue (#28039 — 10–12 second hang) remains open. No new tools have been added since the initial launch.
-
-**PulseMCP adoption metrics.** ~225K all-time visitors, ~5.5K weekly, ranked #209 globally. This positions Prisma MCP solidly in the mid-tier of MCP server adoption — well behind leaders like Slack (#827→higher traffic) and community database servers, but ahead of most first-party integrations from smaller vendors.
+**PulseMCP adoption metrics.** Per [PulseMCP's Prisma Postgres server page](https://www.pulsemcp.com/servers/prisma-postgres), checked August 2026: ~207K all-time visitors, ~3.6K this week, ranked #238 globally. These estimates fluctuate week to week and are lower than the ~225K/~5.5K/#209 figures in the original review — normal churn in PulseMCP's ranking algorithm rather than a real decline. For comparison, [Slack's MCP server](https://www.pulsemcp.com/servers/slack) shows ~624K all-time visitors and ranks #115, illustrating that Prisma MCP remains well behind the highest-traffic official integrations, though ahead of most first-party integrations from smaller vendors.
 
 ## What It Does
 
@@ -114,7 +112,7 @@ Or with direct URL support (newer clients):
 
 ### Supported AI Clients
 
-One-click installation is available for VS Code and Cursor. Manual configuration works with Windsurf, Warp, Claude Desktop, Claude Code, ChatGPT, and OpenAI Agents SDK.
+Per [Prisma's own MCP server docs](https://www.prisma.io/docs/ai/tools/mcp-server), one-click installation is available for VS Code and Cursor. Manual configuration works with Windsurf, Warp, Claude Desktop, Claude Code, ChatGPT, Gemini CLI, and Codex. (An earlier version of this review also listed "OpenAI Agents SDK" as a supported client; Prisma's current docs do not list it, so that claim has been removed.)
 
 ### Authentication
 
@@ -123,41 +121,41 @@ One-click installation is available for VS Code and Cursor. Manual configuration
 
 ## Safety Features
 
-Prisma includes **AI safety guardrails** that detect when AI coding agents attempt destructive operations. When tools like Claude Code, Cursor, or Gemini CLI try to run data-destroying commands (like `migrate-reset`), Prisma blocks execution and requires explicit user consent via the `PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION` environment variable. This is a notable design choice — most MCP servers leave safety entirely to the AI client.
+Prisma includes **AI safety guardrails** that detect when AI coding agents attempt destructive operations, [shipped in Prisma ORM 6.15.0](https://www.prisma.io/blog/orm-6-15-0-ai-safety-guardrails-for-destructive-commands-and-more). When tools like Claude Code, Cursor, or Gemini CLI try to run data-destroying commands (`migrate reset --force`, `db push --force-reset`, `db push --accept-data-loss`), Prisma blocks execution and requires explicit user consent via the `PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION` environment variable, per [Prisma's own documentation](https://www.prisma.io/docs/ai/tools/mcp-server). This is a notable design choice — most MCP servers leave safety entirely to the AI client.
 
 ## Development History
 
 | Date | Event |
 |------|-------|
-| April 8, 2025 | Local MCP server launched in Prisma ORM v6.6.0 (early access) |
-| June 18, 2025 | Remote MCP server launched with ORM v6.10.0 |
+| [April 8, 2025](https://www.npmjs.com/package/prisma?activeTab=versions) | Local MCP server launched in Prisma ORM v6.6.0 (early access) |
+| [June 17, 2025](https://www.prisma.io/changelog/2025-06-17) | Remote MCP server launched with ORM v6.10.0 |
 | November 19, 2025 | Prisma 7.0.0 released (Rust-free rewrite, MCP server continues) |
 | March 20, 2026 | Prisma Next announced — next-gen ORM becoming Prisma 8 |
 | March 27, 2026 | v7.6.0 — `prisma postgres link`, Studio dark mode |
 | April 7, 2026 | v7.7.0 — `prisma bootstrap` interactive setup command |
 | April 22, 2026 | v7.8.0 — latest stable ORM release |
-| Ongoing | 28 commits in prisma/mcp repository, 41 GitHub stars |
+| Ongoing | 28 commits in prisma/mcp repository, 47 GitHub stars (checked August 2026) |
 
-The MCP server was initially launched as `--early-access` and has since been integrated as a standard Prisma CLI command. The repository at [prisma/mcp](https://github.com/prisma/mcp) is relatively small (28 commits) because the local server logic lives primarily within the main [prisma/prisma](https://github.com/prisma/prisma) monorepo (45,500+ stars).
+The MCP server was initially launched as `--early-access` and has since been integrated as a standard Prisma CLI command. The repository at [prisma/mcp](https://github.com/prisma/mcp) is relatively small (28 commits) because the local server logic lives primarily within the main [prisma/prisma](https://github.com/prisma/prisma) monorepo (47,500+ stars as of August 2026), which is Apache 2.0 licensed — distinct from the standalone `prisma/mcp` repo's own MIT designation noted above.
 
 ## Pricing Impact
 
-The MCP server itself is free. However, the **remote server only works with Prisma Postgres**, a managed database service:
+The MCP server itself is free. However, the **remote server only works with Prisma Postgres**, a managed database service. Current tiers, per [Prisma's pricing page](https://www.prisma.io/pricing):
 
 | Plan | Price | Operations/mo | Storage | Databases |
 |------|-------|---------------|---------|-----------|
-| **Free** | $0 | 100,000 | 500 MB | 5 |
-| **Starter** | $10/mo | 1,000,000 | 10 GB | 10 |
-| **Pro** | $49/mo | 10,000,000 | 50 GB | 100 |
+| **Free** | $0 | 100,000 | 500 MB | 50 |
+| **Starter** | $10/mo | 1,000,000 | 10 GB | 1,000 |
+| **Pro** | $49/mo | 10,000,000 | 50 GB | 1,000 |
 | **Business** | $129/mo | 50,000,000 | 100 GB | 1,000 |
 
-An "operation" is any CRUD action against the database, counted uniformly regardless of complexity. Overages: $0.008–$0.001 per 1,000 operations depending on tier, $1–$2/GB for storage.
+An "operation" is each interaction with your database (Prisma counts ORM queries rather than individual SQL statements). Overages: $0.008/1,000 ops (Starter), $0.002/1,000 (Pro), $0.001/1,000 (Business); storage overage runs $2.00/GB (Starter) down to $1.00/GB (Business).
 
 The **local server works with any database** Prisma supports (PostgreSQL, MySQL, SQLite, MongoDB, etc.) — no Prisma Postgres subscription required. This is the mode most developers will use.
 
 ## Comparison with Alternatives
 
-| Feature | Prisma MCP | Supabase MCP | Drizzle MCP (community) | Neon MCP |
+| Feature | [Prisma MCP](https://github.com/prisma/mcp) | [Supabase MCP](https://github.com/supabase-community/supabase-mcp) | [Drizzle MCP (community)](https://github.com/defrex/drizzle-mcp) | [Neon MCP](https://github.com/neondatabase/mcp-server-neon) |
 |---------|-----------|-------------|------------------------|---------|
 | **Official** | Yes (first-party) | Yes (first-party) | No (community) | Yes (first-party) |
 | **Tools** | 17 (7 local + 10 remote) | 20+ | ~5 | ~10 |
@@ -166,8 +164,8 @@ The **local server works with any database** Prisma supports (PostgreSQL, MySQL,
 | **Migration support** | Yes (full Prisma Migrate) | Yes (via SQL) | Yes (drizzle-kit) | Limited |
 | **Visual editor** | Prisma Studio | Supabase Dashboard | Drizzle Studio | Neon Console |
 | **Safety guardrails** | Built-in (env var consent) | None documented | None | None |
-| **Free tier** | Unlimited (local) / 100K ops (remote) | 500 MB, 50K MAUs | N/A (self-hosted) | 0.5 GiB storage |
-| **License** | Apache 2.0 | Apache 2.0 | MIT | Apache 2.0 |
+| **Free tier** | Unlimited (local) / 100K ops (remote) | [500 MB, 50K MAUs](https://supabase.com/pricing) | N/A (self-hosted) | 0.5 GiB storage |
+| **License** | MIT (prisma/mcp repo) | Apache 2.0 | MIT | Apache 2.0 |
 
 **Prisma MCP vs Supabase MCP:** These serve different audiences. Prisma MCP is for developers using Prisma ORM in their codebase — it helps with migrations, schema management, and the development workflow. Supabase MCP is for managing a Supabase project — tables, auth, storage, edge functions. If you use Prisma with a Supabase database, you could use both.
 
@@ -177,12 +175,12 @@ The **local server works with any database** Prisma supports (PostgreSQL, MySQL,
 
 1. **Connection closure delay** — The local MCP server [takes 10–12 seconds to close connections](https://github.com/prisma/prisma/issues/28039) after responding, causing blocking in some MCP clients
 2. **Remote server locked to Prisma Postgres** — The 10 remote tools only work with Prisma's managed database; no support for self-hosted PostgreSQL or other databases
-3. **Small standalone repository** — prisma/mcp has only 41 stars and 28 commits; most development happens in the main monorepo, making it harder to track MCP-specific changes
+3. **Small standalone repository** — prisma/mcp has only 47 stars and 28 commits; most development happens in the main monorepo, making it harder to track MCP-specific changes
 4. **No query execution in local mode** — The local server handles migrations and studio, but doesn't expose raw SQL execution; that's only available in remote mode
 5. **Early access origins** — Originally launched as `--early-access`, and some documentation still references this flag
 6. **No schema editing tools** — The local server can check migration status and run migrations, but can't directly modify Prisma schema files
 7. **Remote requires mcp-remote proxy** — Clients without native HTTP MCP support need the `mcp-remote` npm package as a stdio-to-HTTP bridge
-8. **Limited community adoption** — 41 GitHub stars for the MCP repo suggests low independent adoption compared to Prisma ORM's 45,500+ stars, though PulseMCP shows 225K all-time visitors indicating broader awareness
+8. **Limited community adoption** — 47 GitHub stars for the MCP repo suggests low independent adoption compared to Prisma ORM's 47,500+ stars, though [PulseMCP](https://www.pulsemcp.com/servers/prisma-postgres) shows ~207K all-time visitors indicating broader awareness
 9. **Prisma Next uncertainty** — With Prisma 8 (Prisma Next) targeting Early Access in May 2026 and Postgres GA in June–July 2026, the MCP server's future query API integration is an open question; developers investing in MCP tooling should watch for compatibility announcements
 
 ## The Bottom Line

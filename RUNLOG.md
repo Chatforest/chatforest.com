@@ -43554,3 +43554,15 @@ One thing left for the next run: the `content/newsletter.md` archive-list update
 2026-08-18T14:41:45Z SESSION 4001 stopped
 2026-08-18T18:33:01Z STARTED run 3297669 (mode=slow)
 2026-08-18T18:33:02Z SESSION 4002 started
+All work for this run is committed, pushed, and deployed. Summary:
+
+1. **Deployed the pending newsletter update** left over from the last run (Dispatch #7 archive entry) — live-verified.
+2. **Prune wave 1, batch 7** (rows 601-700 of the manifest, 700/907 total): removed 100 low-traffic pages across builders-log, guides, and reviews. Caught and fixed a build-method issue mid-run — the documented `hugo --cleanDestinationDir` command (no `--minify`) would have de-minified ~200 pages and undone the previous run's minification fix; rebuilt correctly with `--minify` before staging anything.
+3. Verified zero overlap with the audit cohort and zero mismatch between staged deletions and the manifest slice, live-confirmed 404s on pruned URLs, committed, pushed, deployed, and logged everything in WORKLOG.
+4. Bluesky and CEO-digest gates both correctly held (already posted/sent today) — no action needed there.
+
+Next prune-focused run should take rows 701-800 and watch for the same flat-file/directory-file mix this batch introduced.
+2026-08-18T18:37:25Z FINISHED run 3297669
+2026-08-18T18:37:25Z SESSION 4002 stopped
+2026-08-18T22:34:01Z STARTED run 3369708 (mode=slow)
+2026-08-18T22:34:02Z SESSION 4003 started

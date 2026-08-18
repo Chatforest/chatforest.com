@@ -6,16 +6,16 @@ og_description: "Shopify Dev MCP: 8 tools for docs search, GraphQL introspection
 content_type: "Review"
 card_description: "Official first-party MCP server from Shopify for developers building on the Shopify platform. 8 tools cover documentation search, GraphQL schema introspection, and code validation for Admin API, Functions, Liquid, and Polaris. Runs locally via npx, no authentication required. Shopify also offers Storefront and Customer Accounts MCP servers for AI-powered commerce experiences."
 last_refreshed: 2026-05-04
-sources_audited: 2026-07-24
+sources_audited: 2026-08-18
 ---
 
-**At a glance:** [GitHub](https://github.com/Shopify/dev-mcp) — 500+ stars, TypeScript, 7 tools, stdio transport. [npm](https://www.npmjs.com/package/@shopify/dev-mcp) — @shopify/dev-mcp v1.13.0, ~410K all-time downloads (~90K/month). Official first-party from [Shopify](https://www.shopify.com/). No authentication required.
+**At a glance:** TypeScript, 7 tools, stdio transport, per [Shopify's official Dev MCP docs](https://shopify.dev/docs/apps/build/devmcp). *(Note: the `github.com/Shopify/dev-mcp` repository that previously hosted the public source and star count is no longer publicly accessible as of this audit — it now returns a 404. Star-count claims below reflect the last figure this review could source before that change and should be treated as unverified until the repo is public again.)* [npm](https://www.npmjs.com/package/@shopify/dev-mcp) — @shopify/dev-mcp v1.14.4 (current), ~410K all-time downloads by early May 2026 (~90-100K/month, per [npm download stats](https://www.npmjs.com/package/@shopify/dev-mcp)). Official first-party from [Shopify](https://www.shopify.com/). No authentication required.
 
 > **May 2026 update:** Storefront MCP has migrated to the Universal Commerce Protocol (UCP). The old endpoint (`/api/mcp`) and tools are deprecated — **migration required by June 15, 2026.** See updated Storefront MCP section below.
 
 The Shopify Dev MCP server is the **official first-party MCP integration** for developers building on the [Shopify](https://www.shopify.com/) platform. It gives AI assistants deep knowledge of Shopify's APIs, documentation, and development patterns — enabling them to search docs, explore GraphQL schemas, validate code, and provide accurate guidance based on current APIs and best practices.
 
-[Shopify](https://www.shopify.com/) was [founded in 2006 by Tobias Lütke, Daniel Weinand, and Scott Lake](https://en.wikipedia.org/wiki/Shopify). The company powers e-commerce for millions of merchants worldwide. As of 2025: [~7,600 employees, $11.56B annual revenue (up 30% YoY), ~$157B market cap](https://investors.shopify.com/financial-information/annual-reports). Shopify is publicly traded on NYSE (SHOP) and TSX. The Dev MCP server launched as part of Shopify's **Winter '26 Edition**, which positions AI as central to the Shopify developer experience — "AI-native, developer-ready" is the edition's tagline.
+[Shopify](https://www.shopify.com/) was [founded in 2006 by Tobias Lütke, Daniel Weinand, and Scott Lake](https://en.wikipedia.org/wiki/Shopify). The company powers e-commerce for millions of merchants worldwide. As of fiscal year 2025: [~7,600 employees, $11.6B annual revenue (up ~30% YoY)](https://www.shopify.com/news/shopify-q4-2025-financial-results). Shopify's market cap has been volatile in 2026 (roughly $157B in the spring, over $200B by August 2026 per [companiesmarketcap.com](https://companiesmarketcap.com/shopify/marketcap/)) — treat any single market-cap figure as a snapshot, not a stable fact. Shopify is publicly traded on the [Nasdaq (SHOP)](https://www.sec.gov/Archives/edgar/data/1594805/000159480525000018/shop-nasdaqlistingpr.htm) and TSX — it voluntarily moved its US listing from the NYSE to Nasdaq effective March 31, 2025. The Dev MCP server launched as part of Shopify's [**Winter '26 Edition**](https://www.shopify.com/news/winter-26-edition-dev), which positions AI as central to the Shopify developer experience — "AI-native, developer-ready" is the edition's own tagline.
 
 Beyond the Dev MCP server, Shopify also offers **Storefront MCP** and **Customer Accounts MCP** servers for building AI-powered shopping experiences. This review covers all three.
 
@@ -46,7 +46,9 @@ The Dev MCP server connects your AI coding assistant to Shopify's full developme
 
 ### Storefront MCP Server (6 tools — AI Shopping)
 
-> **Breaking change (April 22, 2026):** Shopify migrated the Storefront MCP to the Universal Commerce Protocol (UCP). The old endpoint and `search_shop_catalog` / `search_shop_policies_and_faqs` tools are **deprecated June 15, 2026**. Use the new UCP endpoint and tools.
+> **Breaking change (April 22, 2026):** [Shopify migrated the Storefront MCP to the Universal Commerce Protocol (UCP)](https://shopify.engineering/UCP). The old endpoint and `search_shop_catalog` / `search_shop_policies_and_faqs` tools are **deprecated June 15, 2026**. Use the new UCP endpoint and tools.
+>
+> **Update (June 24, 2026 — postdates this review's last refresh):** [Shopify's own changelog reports](https://shopify.dev/changelog) that the `get_cart` / `update_cart` tools listed as "Retained" below have since also been deprecated in favor of a separate UCP Cart MCP, with legacy support through August 31, 2026. Treat the table below as accurate for the April 22 UCP cutover only — verify current tool names against Shopify's own docs before building against them.
 
 **New UCP endpoint:** `https://{shop}.myshopify.com/api/ucp/mcp`
 *(Old endpoint `https://{shop}.myshopify.com/api/mcp` — deprecated June 15, 2026)*
@@ -56,8 +58,8 @@ The Dev MCP server connects your AI coding assistant to Shopify's full developme
 | `search_catalog` | New (UCP) | Searches store catalog with filters, pagination, buyer context |
 | `lookup_catalog` | New (UCP) | Batch lookup products or variants by identifier |
 | `get_product` | New (UCP) | Full product details with variant selection and availability signals |
-| `get_cart` | Retained | Retrieves current cart contents including checkout URL |
-| `update_cart` | Retained | Adds, removes, or updates cart items; creates new carts |
+| `get_cart` | Retained as of April 22, 2026; [deprecated June 24, 2026](https://shopify.dev/changelog) | Retrieves current cart contents including checkout URL |
+| `update_cart` | Retained as of April 22, 2026; [deprecated June 24, 2026](https://shopify.dev/changelog) | Adds, removes, or updates cart items; creates new carts |
 | `get_order_status` | New | Order status lookup for post-purchase AI agents |
 
 `search_shop_catalog` and `search_shop_policies_and_faqs` (deprecated June 15, 2026) were the original tools and are no longer recommended.
@@ -72,7 +74,7 @@ The Customer Accounts MCP server handles authenticated customer operations:
 - Return management
 - Account information access
 
-**Endpoint:** `https://{shop}/customer/api/mcp` — requires **OAuth 2.0 with PKCE** authentication. Stores must have custom domains configured and Level 2 protected customer data (PII) access approved. Tools are discovered dynamically via the `tools/list` command.
+**Endpoint:** `https://{shop}/customer/api/mcp` — [requires OAuth 2.0 with PKCE authentication](https://shopify.dev/docs/apps/build/storefront-mcp/servers/customer-account). Stores must have custom domains configured and Level 2 protected customer data (PII) access approved. Tools are discovered dynamically via the `tools/list` command.
 
 ## Setup & Configuration
 
@@ -133,12 +135,13 @@ Storefront MCP: Any MCP client that supports HTTP/SSE transport.
 | March 31, 2025 | @shopify/dev-mcp first published on npm |
 | Winter '26 Edition | Storefront MCP and Customer Accounts MCP launched |
 | March 22, 2026 | v1.7.0 released |
-| April 9, 2026 | Shopify AI Toolkit launched (GitHub: Shopify/Shopify-AI-Toolkit, 280+ stars) |
-| April 22, 2026 | Storefront MCP migrates to Universal Commerce Protocol (UCP) — new endpoint, new tools, old endpoint deprecated June 15 |
+| April 9, 2026 | [Shopify AI Toolkit launched](https://github.com/Shopify/Shopify-AI-Toolkit) (280+ stars at the time; 500+ as of this audit) |
+| April 22, 2026 | [Storefront MCP migrates to Universal Commerce Protocol (UCP)](https://shopify.engineering/UCP) — new endpoint, new tools, old endpoint deprecated June 15 |
 | April 30, 2026 | v1.13.0 released (~90K monthly downloads, ~410K all-time) |
-| May 2026 | 500+ GitHub stars, `introspect_admin_schema` replaces `introspect_graphql_schema` |
+| May 2026 | 500+ GitHub stars *(unverified as of this audit — see note above)*, `introspect_admin_schema` replaces `introspect_graphql_schema` |
+| June 24, 2026 | [Storefront MCP's `get_cart` / `update_cart` tools deprecated](https://shopify.dev/changelog) in favor of UCP Cart MCP, legacy support through August 31, 2026 — postdates this review's last refresh; see Storefront MCP section below |
 
-The Dev MCP server reached v1.13.0 in six weeks — the rate of development has accelerated significantly. The most impactful change is the Storefront MCP UCP migration, which expanded the shopping assistant API and added order tracking. Shopify's AI Toolkit bundles the Dev MCP server with auto-updating configurations for Claude Code, Cursor, Gemini CLI, VS Code, and Codex CLI — making setup even more accessible.
+The Dev MCP server reached v1.13.0 in six weeks — the rate of development has accelerated significantly. The most impactful change is the Storefront MCP UCP migration, which expanded the shopping assistant API and added order tracking. [Shopify's AI Toolkit](https://github.com/Shopify/Shopify-AI-Toolkit) bundles the Dev MCP server with auto-updating configurations for Claude Code, Cursor, Gemini CLI, VS Code, and Codex CLI — making setup even more accessible.
 
 ## Pricing Impact
 
@@ -146,12 +149,12 @@ The **Dev MCP server is completely free** with no usage limits — it searches d
 
 The **Storefront MCP server is free** to call against any Shopify store's public endpoint, but building apps that use it requires a [Shopify app](https://shopify.dev/) registration.
 
-For merchants considering the Storefront MCP for AI shopping assistants, **Shopify platform pricing** applies:
+For merchants considering the Storefront MCP for AI shopping assistants, [**Shopify platform pricing**](https://www.shopify.com/pricing) applies:
 
 | Plan | Price | Features |
 |------|-------|----------|
 | **Basic** | $39/mo | Online store, basic reports |
-| **Shopify** | $105/mo | Professional reports, 5 staff accounts |
+| **Grow** *(renamed from "Shopify" in 2026)* | $105/mo | Professional reports, 5 staff accounts |
 | **Advanced** | $399/mo | Custom reports, 15 staff accounts |
 | **Plus** | From $2,300/mo | Enterprise features, dedicated support |
 
@@ -172,9 +175,9 @@ Storefront API calls follow Shopify's standard [API rate limits](https://shopify
 | **Order tracking via MCP** | Yes (get_order_status) | No | No | No |
 | **Platform** | Shopify (hosted) | WordPress (self-hosted) | BigCommerce (hosted) | Adobe Commerce |
 
-**Shopify Dev MCP vs WooCommerce MCP:** These serve completely different purposes. Shopify Dev MCP helps developers *build* on the platform — searching docs, exploring schemas, validating code. WooCommerce's MCP (developer preview) provides store *operations* — managing products, orders, customers via REST API. WooCommerce has no equivalent to Shopify's code validation or schema introspection.
+**Shopify Dev MCP vs WooCommerce MCP:** These serve completely different purposes. Shopify Dev MCP helps developers *build* on the platform — searching docs, exploring schemas, validating code. [WooCommerce's MCP (developer preview)](https://developer.woocommerce.com/docs/features/mcp/) provides store *operations* — managing products, orders, customers via REST API. WooCommerce has no equivalent to Shopify's code validation or schema introspection.
 
-**Shopify Storefront MCP vs BigCommerce Storefront MCP:** BigCommerce's Storefront MCP is still in beta. Shopify's UCP-based Storefront MCP is live with catalog search, cart management, and order tracking — BigCommerce is playing catch-up in the AI commerce space.
+**Shopify Storefront MCP vs BigCommerce Storefront MCP:** [BigCommerce's Storefront MCP is still in beta](https://www.bigcommerce.com/blog/model-context-protocol/). Shopify's UCP-based Storefront MCP is live with catalog search, cart management, and order tracking — BigCommerce is playing catch-up in the AI commerce space.
 
 **Unique advantage:** Shopify is the only e-commerce platform offering a **three-server MCP architecture** — one for developers (building), one for shoppers (browsing/buying), and one for customers (order management). The UCP migration strengthened the shopping assistant capabilities with better product lookup and order status tools.
 
@@ -194,7 +197,7 @@ Storefront API calls follow Shopify's standard [API rate limits](https://shopify
 
 **Rating: 4 out of 5**
 
-The Shopify Dev MCP server earns its rating through **official first-party backing from the largest e-commerce platform** ([$11.56B revenue](https://investors.shopify.com/financial-information/annual-reports), millions of merchants), a **unique three-server architecture** that cleanly separates developer, shopper, and customer use cases, and **code validation capabilities** that no competing e-commerce MCP server offers. The UCP migration strengthened the Storefront MCP significantly — better catalog search, product lookup, and order status tools mean it's now genuinely useful for building post-purchase AI agents, not just pre-purchase shopping assistants.
+The Shopify Dev MCP server earns its rating through **official first-party backing from one of the largest e-commerce platforms** ([$11.6B in 2025 revenue](https://www.shopify.com/news/shopify-q4-2025-financial-results), millions of merchants, and [the largest platform by GMV/revenue market share among high-value merchants](https://www.gravitykit.com/ecommerce-platform-market-share-2026/) — though WooCommerce leads on raw store count and web presence), a **unique three-server architecture** that cleanly separates developer, shopper, and customer use cases, and **code validation capabilities** that no competing e-commerce MCP server offers. The UCP migration strengthened the Storefront MCP significantly — better catalog search, product lookup, and order status tools mean it's now genuinely useful for building post-purchase AI agents, not just pre-purchase shopping assistants.
 
 The dev-mcp package's pace of development is impressive: v1.7.0 to v1.13.0 in six weeks, ~90K monthly npm downloads, and the Shopify AI Toolkit packaging for zero-config setup. These are the signs of a platform that has committed to MCP long-term.
 

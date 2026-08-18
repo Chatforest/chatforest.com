@@ -5,7 +5,7 @@
 
 **At a glance:** PostgreSQL has the **richest MCP server ecosystem of any database**. Two new major entries join the leader board: [bytebase/dbhub](https://github.com/bytebase/dbhub) (2,687 stars, zero-dependency, token-efficient, multi-database) and [timescale/pg-aiguide](https://github.com/timescale/pg-aiguide) (1,712 stars, the first PostgreSQL AI skills server from a major database vendor). The established leaders — [Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp) (2,686 stars, MIT) from CrystalDBA, [Supabase MCP](https://github.com/supabase-community/supabase-mcp) (2,665 stars, v0.8.0 with RLS advisory injection), and [Neon MCP](https://github.com/neondatabase/mcp-server-neon) (594 stars, heavy OAuth security hardening) — continue to evolve. [Google's MCP Toolbox](https://github.com/googleapis/genai-toolbox) (14,937 stars) hit v1.0.0 GA on April 10 and followed with v1.1.0 adding vector assist tools for Cloud SQL Postgres. Part of our **[Databases MCP category](/categories/databases/)**.
 
-PostgreSQL is the **world's most popular open-source relational database** — and it's not close. Originally developed at UC Berkeley in 1986 as the POSTGRES project, PostgreSQL now commands an **18.3% share of the relational database market** with over 39,000 verified enterprise users. The latest release is **PostgreSQL 18** (September 2025, currently at 18.2), which introduced async I/O for up to 3× storage read performance, virtual generated columns, `uuidv7()`, OAuth authentication, and temporal constraints. PostgreSQL's extensibility — with extensions like pgvector for AI embeddings, PostGIS for geospatial data, and pg_stat_statements for query analytics — makes it the default database for modern applications.
+PostgreSQL is the **world's most popular open-source relational database** — used by [58.2% of professional developers, more than any other database, per the 2025 Stack Overflow Developer Survey](https://survey.stackoverflow.co/2025/technology/). Originally developed at [UC Berkeley in 1986 as the POSTGRES project](https://www.postgresql.org/about/), PostgreSQL is tracked by [6sense at a 19.6% share of the relational database market with 130,000+ companies using it](https://6sense.com/tech/relational-databases/postgresql-market-share) (6sense's figures update continuously, so exact numbers drift). The latest release is [PostgreSQL 18](https://www.postgresql.org/docs/18/release-18.html) (released September 25, 2025, currently at 18.2), which introduced an async I/O subsystem — [delivering roughly 2-3x faster reads in high-latency storage environments like cloud network-attached storage](https://pganalyze.com/blog/postgres-18-async-io) — along with virtual generated columns, `uuidv7()`, OAuth authentication, and temporal constraints. PostgreSQL's extensibility — with extensions like pgvector for AI embeddings, PostGIS for geospatial data, and pg_stat_statements for query analytics — makes it the default database for modern applications.
 
 **Architecture note:** Unlike the AI provider reviews in our series, PostgreSQL doesn't have a single "official" MCP server from one company. Instead, the ecosystem is **distributed across multiple maintainers** — CrystalDBA, Bytebase, Supabase, Neon, Timescale, pgEdge, AWS, Azure, Google, and independent developers — each serving different use cases. This distributed model means more choice but also more fragmentation.
 
@@ -23,7 +23,7 @@ PostgreSQL is the **world's most popular open-source relational database** — a
 | Transport | stdio |
 | Created | March 2025, actively maintained (updated May 4, 2026) |
 
-**Zero-dependency, token-efficient** multi-database MCP server supporting PostgreSQL, MySQL, SQL Server, MariaDB, and SQLite. Bytebase — the company behind the widely-used database schema change management tool — built dbhub as a lean alternative to heavier database MCP servers. The emphasis on token efficiency matters: bloated tool descriptions waste context window space, especially for LLMs with smaller context limits.
+**Zero-dependency, token-efficient** multi-database MCP server supporting PostgreSQL, MySQL, SQL Server, MariaDB, and SQLite. [Bytebase — which describes itself as "a unified platform for governing how teams and AI agents access and change any database"](https://www.bytebase.com/) — built dbhub as a lean alternative to heavier database MCP servers; dbhub is also referenced as [an official example in Anthropic's Claude Code docs](https://github.com/bytebase/dbhub) for PostgreSQL connectivity. The emphasis on token efficiency matters: bloated tool descriptions waste context window space, especially for LLMs with smaller context limits.
 
 **Why it matters:** At 2,687 stars (matching crystaldba's 2,686), dbhub has achieved in a year what took Postgres MCP Pro longer — and it covers multiple databases from a single install. For teams working across PostgreSQL and MySQL, this is more practical than running separate MCP servers. Bytebase's background in database tooling gives dbhub credibility that most community MCP servers lack.
 
@@ -37,7 +37,7 @@ The **most capable general-purpose PostgreSQL MCP server**, focused on database 
 | Language | Python |
 | Install | `pipx install postgres-mcp` or `docker pull crystaldba/postgres-mcp` |
 | Transport | stdio + SSE |
-| Latest release | v0.3.0 (May 2025 — **no new release in 12 months**) |
+| Latest release | [v0.3.0](https://github.com/crystaldba/postgres-mcp/releases) (May 16, 2025 — **no new release in over a year**) |
 | Created by | [CrystalDBA](https://www.crystaldba.ai/) |
 
 **8 MCP tools:**
@@ -71,7 +71,7 @@ The **most capable general-purpose PostgreSQL MCP server**, focused on database 
 
 **The first dedicated PostgreSQL AI skills server from a major database vendor.** Timescale — best known for TimescaleDB, the PostgreSQL extension for time-series data — built pg-aiguide to help AI coding tools generate better PostgreSQL code. Rather than focusing on query execution or performance analysis, pg-aiguide provides **documentation search, best-practice skills, and PostgreSQL-specific knowledge** that makes LLMs significantly better at writing PostgreSQL code.
 
-**v0.5.0 (April 28, 2026) highlights:**
+**[v0.5.0 (April 28, 2026) highlights](https://github.com/timescale/pg-aiguide/releases/tag/v0.5.0):**
 - PostGIS versioning support
 - `npx` skills with a Postgres router — run multiple PostgreSQL skills via a single MCP server
 - **Hybrid documentation search using Reciprocal Rank Fusion (RRF)** — combines vector and keyword search for significantly better retrieval quality
@@ -92,7 +92,7 @@ A **full platform management server** for Supabase (which runs PostgreSQL under 
 
 **8 feature groups** covering account management, database operations, edge functions, storage, branching, debugging, development, and documentation search. Supports read-only mode and project scoping for security. This is a **Supabase platform server** — it manages more than just PostgreSQL (edge functions, storage, auth) but includes full SQL execution and migration support.
 
-**v0.8.0 (April 30, 2026) — significant update:**
+**[v0.8.0 (April 30, 2026) — significant update](https://github.com/supabase-community/supabase-mcp/releases):**
 - **RLS advisory injection into table listings** — Row-Level Security policies are now surfaced in table listings, helping AI agents understand access controls before attempting data operations
 - Improved platform schema validation
 - Updated server instructions
@@ -112,15 +112,15 @@ A **full platform management server** for Supabase (which runs PostgreSQL under 
 
 **30+ tools** across project management, branch operations, SQL execution, database migrations, query optimization, authentication, and documentation search. Unique "prepare/complete" pattern for migrations — test on temporary branches before production. Supports OAuth and API key authentication.
 
-**April/May 2026 — extensive OAuth security hardening:**
-- OAuth race condition on token refresh fixed
+**[April/May 2026 — extensive OAuth security hardening](https://github.com/neondatabase/mcp-server-neon/blob/main/CHANGELOG.md):**
+- OAuth race condition on token refresh fixed (cross-instance token reuse and retry-storm paths closed)
 - Removed grant embedding in OAuth state
-- OpenAI verification token + tool annotations added
+- OpenAI Apps Challenge verification token + tool annotations added
 - OAuth Keyv store reinit on connection errors
-- **SSE sessions now bound to caller identity** (security fix — previously sessions could be reused across identities)
+- **SSE sessions now bound to caller identity** (security fix — previously any caller who knew a live session ID could inject responses into another user's SSE stream)
 - OAuth refresh path hardened against missing fields
 - Added "Add to Kiro" install badge (new IDE integration)
-- Supply chain hardening for GitHub Actions
+- [Supply chain hardening for GitHub Actions](https://github.com/neondatabase/mcp-server-neon) (SHA-pinned Actions)
 - Migrated from Bun to pnpm
 
 The flurry of OAuth fixes reflects the broader MCP ecosystem's push toward secure hosted MCP servers in 2026. Neon's remote-hosted transport means these fixes matter more than for stdio-only servers. **Note:** Intended for local development and IDE integrations only; not recommended for production environments.
@@ -140,9 +140,9 @@ The **highest-starred database MCP server** (though it covers multiple databases
 
 Supports PostgreSQL, Cloud SQL for PostgreSQL, AlloyDB, MySQL, SQL Server, Spanner, and Bigtable. Configuration-driven via YAML. Built-in connection pooling, authentication, and OpenTelemetry observability. Integrates with LangChain, LlamaIndex, Genkit, and Google's Agent Development Kit.
 
-**v1.0.0 GA (April 10, 2026):** After months of rapid pre-release iteration, Google's MCP Toolbox hit general availability — the first major multi-database MCP server to reach a stable, supported release milestone.
+**[v1.0.0 GA (April 10, 2026)](https://github.com/googleapis/mcp-toolbox/releases):** After months of rapid pre-release iteration, Google's MCP Toolbox hit general availability — the first major multi-database MCP server to reach a stable, supported release milestone. (Note: this repo has since been renamed from `googleapis/genai-toolbox` to `googleapis/mcp-toolbox`; the old URL still redirects.)
 
-**v1.1.0 (April 13, 2026 — three days after GA):**
+**[v1.1.0 (April 13, 2026 — three days after GA)](https://github.com/googleapis/mcp-toolbox/releases):**
 - **Vector assist tools for Cloud SQL Postgres** — AI-native vector search tooling for PostgreSQL running on Google Cloud SQL
 - Fixed Looker configuration YAML (→ flat format)
 - Documentation: renamed dataplex → knowledge-catalog
@@ -179,9 +179,8 @@ Supports connecting to multiple Aurora/RDS PostgreSQL endpoints. Part of the lar
 |--------|-------|----------|---------|-------|
 | [HenkDz/postgresql-mcp-server](https://github.com/HenkDz/postgresql-mcp-server) | 180 | TypeScript | AGPLv3 | 14 consolidated tools, schema/query/monitoring, updated Apr 27 |
 | [call518/MCP-PostgreSQL-Ops](https://github.com/call518/MCP-PostgreSQL-Ops) | 150 | Python | MIT | 30+ ops/monitoring tools, PG 12–18, maintenance-only since April |
-| [Azure-Samples/azure-postgresql-mcp](https://github.com/Azure-Samples/azure-postgresql-mcp) | 33 | Python | MIT | Azure Database for PostgreSQL, Entra auth, preview |
-| [pgEdge/pgedge-postgres-mcp](https://github.com/pgEdge/pgedge-postgres-mcp) | 91 | Go | PostgreSQL License | NLP CLI + Web UI, hybrid search (BM25+MMR+vector), custom YAML tools, GA April 2026 |
-| [neverinfamous/postgres-mcp](https://github.com/neverinfamous/postgres-mcp) | 5 | TypeScript | MIT | 232 capabilities, Code Mode (90% token savings), OAuth 2.1 |
+| [pgEdge/pgedge-postgres-mcp](https://github.com/pgEdge/pgedge-postgres-mcp) | 91 | Go | PostgreSQL License | NLP CLI + Web UI, hybrid search (BM25+MMR+vector), custom YAML tools, [GA March 27, 2026](https://github.com/pgEdge/pgedge-postgres-mcp/releases) |
+| [neverinfamous/postgres-mcp](https://github.com/neverinfamous/postgres-mcp) | 12 | TypeScript | MIT | [278 capabilities via Code Mode (up to 90% token savings), OAuth 2.1](https://github.com/neverinfamous/postgres-mcp) |
 
 ### Anthropic's Archived Reference Server
 
@@ -194,13 +193,13 @@ Anthropic included a PostgreSQL server in the original [modelcontextprotocol/ser
 | Origin | [UC Berkeley POSTGRES project (1986)](https://www.postgresql.org/about/), nearly 40 years of development |
 | Latest version | PostgreSQL 18.2 (February 2026) |
 | License | PostgreSQL License (permissive, similar to MIT/BSD) |
-| Market share | 18.3% of relational databases ([6sense](https://6sense.com/tech/relational-databases/postgresql-market-share)) |
-| Enterprise users | [39,000+ verified companies](https://6sense.com/tech/relational-databases/postgresql-market-share) |
+| Market share | 19.6% of relational databases, ranked #2 ([6sense](https://6sense.com/tech/relational-databases/postgresql-market-share) — figure updates continuously; also [58.2% usage share among professional developers](https://survey.stackoverflow.co/2025/technology/), #1, per the 2025 Stack Overflow survey) |
+| Enterprise users | [130,000+ companies](https://6sense.com/tech/relational-databases/postgresql-market-share) |
 | Top countries | US (44%), Brazil (12%), India (9%) |
 | Key extensions | pgvector (AI embeddings), PostGIS (geospatial), pg_stat_statements (query analytics), HypoPG (hypothetical indexes), pg_cron (scheduling) |
 | Governance | PostgreSQL Global Development Group (community-driven, no single company) |
 
-PostgreSQL 18 highlights: async I/O subsystem (up to 3× storage read improvement), virtual generated columns, `uuidv7()` for timestamp-ordered UUIDs, OAuth authentication, skip scan for multicolumn B-tree indexes, temporal PRIMARY KEY/UNIQUE/FOREIGN KEY constraints.
+[PostgreSQL 18 highlights](https://www.postgresql.org/docs/18/release-18.html): async I/O subsystem ([roughly 2-3x faster reads on high-latency storage](https://pganalyze.com/blog/postgres-18-async-io)), virtual generated columns, `uuidv7()` for timestamp-ordered UUIDs, OAuth authentication, skip scan for multicolumn B-tree indexes, temporal PRIMARY KEY/UNIQUE/FOREIGN KEY constraints.
 
 ## Ecosystem Comparison
 
