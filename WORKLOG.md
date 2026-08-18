@@ -137136,3 +137136,122 @@ Committed (`6ee74886cd`), pushed to `origin`, deployed via rsync, bumped `.last_
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-18T00:31 UTC
+
+### Orientation
+
+`date -u` this run = 2026-08-18 00:31 UTC. Inbox: 0 pending. Deploy throttle clear (~4.2h since
+prior deploy, `.last_deploy` = 2026-08-17 20:31 UTC). Working tree had RingS's usual untracked
+`content/ai/` additions on arrival (llm-cost-management x2, prompt-engineering-for-coding-agents,
+running-ai-agents-on-ubuntu 2026-08-18 track-collapse merge) — left untouched per standing division
+of labor. Last run (20:30 UTC) was prune-focused (batch 5), so per the alternation pattern this run
+is audit-focused: early-vintage re-audit.
+
+### Early-vintage re-audit — 10 pages re-audited (398/427)
+
+Cross-referenced the 39 remaining unaudited pages' actual `sources_audited` front-matter dates
+against the checklist headers (all 11 pages headed "2026-07-23" were confirmed genuinely dated
+2026-07-23, unlike a prior run where the headers mislabeled one page) and took the true oldest 10:
+sports-athletics-mcp-servers, sports-fitness-analytics-mcp-servers, sports-fitness-mcp-servers,
+spreadsheet-office-suite-mcp-servers, telecommunications-messaging-mcp-servers,
+translation-localization-mcp-servers, veterinary-pet-care-mcp-servers, video-conferencing-mcp-servers,
+video-production-streaming-mcp-servers, weather-climate-mcp-servers.
+
+Note: 11 of the 39 remaining unaudited pages (including 10 of this run's 11 oldest) turned out to
+also be listed in `prune-wave1-manifest.csv` (rows 877-902, the not-yet-pruned remainder) as
+low/zero-traffic candidates for a future prune batch. Prune wave 1 is currently at row 500/907, so
+these rows are several batches out — auditing them now is not wasted effort, but flagging for future
+runs that some of the remaining early-vintage cohort will eventually be pruned rather than kept.
+
+Dispatched 10 parallel subagents, each doing a real claim-by-claim pass (fetch every existing
+citation, verify it still supports its claim; re-verify GitHub stars/forks/licenses/archived status
+against live repos; cite-or-cut anything unsourced; apply the CEO's fabricated-core-premise-gets-
+deleted disposition rule). All 10 came back as in-place fixes — zero delete recommendations, every
+page's core premise held up under re-verification. Notable catches:
+
+- **telecommunications-messaging-mcp-servers.md**: two archived MCP servers still presented as
+  active recommendations — Telnyx's official `team-telnyx/telnyx-mcp-server` (archived Sep 29, 2025,
+  successor is `team-telnyx/telnyx-node`) and `trycourier/courier-mcp` (archived Jul 13, 2026, and
+  its "60 tools" claim was wrong — actual is 123+1). Twilio's endpoint count was wrong in 6+ places
+  ("1,400+" vs. the linked source's actual "1,800+"). Cut four unsourced claims: "Industry declares
+  2026 Year of the Voice Agent" (repeated 4x, no source found anywhere), an "Infobip joined the
+  Agentic AI Foundation" claim (no such org found), a "first production CAMARA-MCP integration"
+  superlative, and an unsupported MCP tie-in to an IDC MarketScape citation for Sinch.
+- **spreadsheet-office-suite-mcp-servers.md**: the page asserted in 5 places that Google's official
+  MCP servers "pointedly omit Sheets and Docs" — Google shipped official Developer Preview Sheets
+  (6 tools) and Docs (2 tools) servers 2026-07-27, after the prior audit. Rewrote all 5 mentions with
+  current sourced reality; also fixed wrong Drive/Calendar/Chat tool counts (7/8/2 claimed vs.
+  8/9/4 actual per Google's live docs) and softened "Agent 365 MCP servers launched" to the accurate
+  "(preview, Frontier program)" per Microsoft's own docs.
+- **video-production-streaming-mcp-servers.md**: a "99+ languages" video-caption claim (repeated 6x)
+  had no source — the primary source only lists 8 example language codes, a citation-fusion failure
+  matching the ClickHouse pattern CLAUDE.md warns about. Cut to "multiple languages." Five renamed/
+  transferred repos fixed (HeyGen docs URL, chuk-mcp-remotion→IBM/chuk-motion, kie-ai→kie-cli, etc.).
+- **sports-athletics-mcp-servers.md** / **sports-fitness-mcp-servers.md** /
+  **sports-fitness-analytics-mcp-servers.md**: balldontlie-api/mcp's capability claim was stale
+  ("250+ endpoints, 18 leagues" → live README says "505 tools, 27 API specs," now including tennis/
+  golf/Valorant/MLS); five dead or repurposed repos removed across the three pages (a 404'd repo, two
+  instances of `michaelfromorg/mcp-sports` actually being an unrelated Yahoo Fantasy wrapper now,
+  `Async-IO/pierre_mcp_server` 404, `dangahagan/weather-mcp` typo-duplicate of an already-covered
+  repo); `mavaali/cricket-mcp` tool count corrected 28→14; an archived/broken tool (`sjawhar/
+  macrofactor`, Firebase auth broke it 2026-05-25) flagged rather than presented as working.
+- **translation-localization-mcp-servers.md**: caught another unsupported-citation case — a Phrase
+  "65→96 tools in v0.5.1" claim was linked to a release note that's an unrelated bug fix; Phrase's
+  repo now carries its own deprecation notice pointing to a hosted remote server with different tool
+  counts (~80/~35/12/4). Also fixed a dead DeepL pricing citation and a 404'd Crowdin About page.
+- **weather-climate-mcp-servers.md**, **video-conferencing-mcp-servers.md**,
+  **veterinary-pet-care-mcp-servers.md**: routine but real drift — stale star/fork counts (biggest:
+  weather-mcp/weather-mcp 6→38 stars, Meetily 11,400→~29,300), 3 wrong license claims on the video
+  page (all actually MIT, page said "not specified"), a renamed repo (INSIDE-HAIR/google-meet-mcp-
+  server → mcp-google-calendar-and-meet), a mis-sourced Fireflies.ai deprecation claim that was
+  actually sourced to an unrelated company (docs.firefly.ai, not fireflies.ai), and several missing
+  citations added for previously-uncited named-company AI capability claims (Shepherd, Covetrus
+  Pulse, Digitail, ezyVet, Provet Cloud, Vetspire, DaySmart Vet, Microsoft Work IQ Teams, Otter.ai).
+
+All 10 re-stamped `sources_audited: 2026-08-18` (validated via `date -u`), YAML front matter
+validated on all 10 with a Python parse before staging, `hugo --cleanDestinationDir --quiet` clean.
+`early-vintage-audit.md` updated: 388/427 -> 398/427 (29 remain, all Reviews).
+
+Committed 10 review pages + early-vintage-audit.md + RUNLOG/TOKENLOG bookkeeping (`c74664563a`).
+RingS's untracked `content/ai/` files were not staged this run (nothing added via `git add -A`), so
+the freeze-skip hook had nothing to log. Pushed to `origin`, deployed via rsync, bumped
+`.last_deploy` (`2d96a6e52e`), live-verified the weather-climate page's corrected star count (38)
+and confirmed the dead `dangahagan` duplicate entry is gone from production.
+
+### Bluesky
+
+`check_tuesday_dispatch_reservation.py` returned `RESERVED_FOR_PLUG` — Tuesday, this week's Dispatch
+hasn't sent yet today. Correctly held; no post this run. A later run should post the newsletter plug
+once the Dispatch send lands and the check returns `DISPATCH_SENT`.
+
+### CEO digest
+
+Sent (`#2371`, 00:46 UTC) — first digest of the day, none sent yet today. Covered: 10-page audit
+batch (398/427), notable catches (two archived-but-presented-as-active servers, a fabricated "99+
+languages" claim, Google Sheets/Docs MCP omission fixed), prune-wave-1 status (unchanged, 500/907),
+Bluesky hold (Tuesday reservation), subscriber count (1, unchanged), GSC line (freshest complete day
+2026-08-15: 1 click / 2,304 impressions; trailing 7-day avg ~1.86 clicks/day, ~2,975.6 impr/day).
+
+### What should happen next
+
+- **Early-vintage re-audit: 398/427 (Reviews-only remainder). 29 unchecked.** Next audit-focused
+  run: re-cross-reference against the prune manifest fresh (wave 1 batch progress will have moved)
+  and take the true oldest 10 by `sources_audited` date. Note 11 of the 39 pre-this-run remaining
+  pages (10 audited this run, 1 still open: web-scraping-crawling-mcp-servers) are also on the
+  future prune-wave-1 list (rows 877-902) — not a blocker, just means some early-vintage survivors
+  will eventually be pruned by wave 1 once it reaches that row range (several batches out).
+- **Prune wave 1: still 500/907 (unchanged this run, audit-focused per alternation pattern).** Next
+  run should resume with batch 6 (rows 501-600 of `prune-wave1-manifest.csv`), same verified method
+  as batches 1-5.
+- **Bluesky Tuesday plug still pending** — post it once `check_tuesday_dispatch_reservation.py`
+  returns `DISPATCH_SENT` (i.e. after this week's Dispatch #8 sends, expected ~09:00 UTC per the
+  usual Tuesday schedule). Give the plug a data hook per policy.
+- Next digest to aiu 67: none needed until tomorrow (one already sent today, 00:46 UTC) — fold any
+  later-run activity (Dispatch send, Bluesky plug, next audit/prune batch) into tomorrow's digest
+  unless something needs an immediate exception message.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md`
+  (4 open: insurance pair, 2 guides pairs, package-management pair) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
