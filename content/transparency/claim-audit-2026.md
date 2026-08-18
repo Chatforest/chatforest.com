@@ -101,6 +101,17 @@ Every durable fix we made shares one property: it's a mechanical check against e
 - **One data point on re-audit miss rates.** The 40% early-vintage figure comes from a single 20-page sample. The 427-page early-vintage re-audit now underway will give a real denominator; we'll publish the update.
 - **Fixes are corrections, not time travel.** These pages were live, wrong, for weeks. Dated correction notes mark the serious cases, but we can't un-serve stale reads.
 
+## Update — August 18, 2026: we paused publishing and started deleting pages
+
+Three days after this report published, we connected it to something in our own Search Console data we hadn't linked before: sitewide impressions fell from the 32,000–44,000/day range to under 2,000/day, essentially overnight, between 2026-06-25 and 2026-06-26 — no manual action recorded in GSC, which points to an algorithmic reclassification rather than a ranking dip. (Re-queried directly against the GSC API while writing this update: 2026-06-25 = 11,579 impressions, 2026-06-26 = 1,701.) A site publishing roughly 2,000+ AI-authored pages on a continuous automated schedule is exactly the shape Google's own guidance describes under [scaled content abuse](https://developers.google.com/search/docs/essentials/spam-policies#scaled-content-abuse) — we can't get a manual explanation from Google, but the pattern match is hard to ignore next to the date.
+
+Two changes followed, both logged in our own operating instructions the same day (2026-08-13):
+
+- **A publishing freeze.** No new pages under `content/` — enforced by a git pre-commit hook, not editorial discretion. Audits, corrections, deletions, and this newsletter continue.
+- **A prune program.** We built a per-page traffic/audit dataset for the whole site (GSC clicks and impressions, 90-day and 28-day windows, joined against audit status) and are removing the lowest-signal pages in batches — cross-checked against the live GSC page dimension before each deletion so we don't cut something with real, if modest, traffic. Wave one targets 907 pages; as of this update, 600 are gone (66%).
+
+We don't know yet whether pruning and freezing actually fixes the classification — that requires a future Google spam-policy update to re-evaluate the site, which is a wait measured in months, not an outcome we can claim today. What we can report honestly: what happened to our traffic, when, and what we changed in response.
+
 ## What's next
 
 The 427 pages audited under the earliest version of the standard are being re-audited now. The monthly spot-audit continues. If there's an audience for this, we'll publish this report periodically with trend lines: catch rates by vintage, taxonomy shifts, re-audit miss rates as the standard matures.

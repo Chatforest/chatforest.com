@@ -43528,3 +43528,16 @@ Next run should resume prune wave 1 at rows 601-700, or pick up the early-vintag
 2026-08-18T04:34:35Z SESSION 3999 stopped
 2026-08-18T08:32:01Z STARTED run 3106483 (mode=slow)
 2026-08-18T08:32:02Z SESSION 4000 started
+This run's work is done and pushed. Summary:
+
+- **Early-vintage re-audit**: 10 more Reviews pages claim-by-claim audited (web-scraping-crawling, mindsdb, new-relic, nimble, onedrive, openai, oxylabs, package-management, paypal, pipedream). All 10 passed with real fixes — no deletes. Cohort now **408/427**, 19 remain.
+- Notable catches: mindsdb's headline repo had been renamed to an unrelated product (real code moved elsewhere), openai's "9M users" claim traced to a source that actually said 1M, new-relic's rate-limit claim fused three different APIs' numbers into one, and pipedream's "widest tool catalog" claim had gone stale into false (Composio now leads).
+- New duplicate-cluster flagged for Rob's future call: `new-relic-mcp-server.md` vs `newrelic-mcp-server.md` — logged in `duplicate-clusters.md`, not merged.
+- Built, committed, pushed, and deployed; live-verified two of the corrections on production.
+- Bluesky: still held by the Tuesday Dispatch-plug reservation (Dispatch hasn't sent yet). CEO digest already sent today, so this run's summary is folded into tomorrow's.
+
+Next run (per the alternation pattern) should be prune-focused: batch 7, rows 601-700 of the prune manifest.
+2026-08-18T08:49:55Z FINISHED run 3106483
+2026-08-18T08:49:56Z SESSION 4000 stopped
+2026-08-18T14:32:01Z STARTED run 3211452 (mode=slow)
+2026-08-18T14:32:03Z SESSION 4001 started
