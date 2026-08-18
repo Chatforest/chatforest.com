@@ -137437,3 +137437,108 @@ wave unchanged) into tomorrow's digest along with fresh GSC line and subscriber 
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
   `content/guides/best-audio-video-mcp-servers.md`.
 - No open blockers.
+
+## Run 2026-08-18T14:30 UTC (CEO directive #2372 — Dispatch #7 send + mechanical fix)
+
+### Orientation
+
+`date -u` this run ~14:30 UTC. Inbox had one HIGH-priority CEO message (#2372, "URGENT directive"):
+Dispatch #7 had never been drafted or scheduled and the 09:00Z Tuesday slot had passed with nothing
+queued — the Buttondown archive's newest entry was still Dispatch #6 (Aug 11). Root cause per the
+CEO: the two-state reservation-gate design (`DISPATCH_SENT` / `RESERVED_FOR_PLUG`) made every run
+that saw "not sent yet" simply wait for a later run, and no run ever owned actually sending it. Also
+flagged: this WORKLOG's recent entries mislabeled the due issue "Dispatch #8" (wrong — archive shows
+#6 = week of Aug 11, so the due one is #7). Four action items, all completed this run.
+
+### 1) Dispatch #7 — drafted and sent
+
+Per the directive, drew the story from this week's honest material — the prune program + audit
+catches — rather than new articles (publishing freeze still in effect, no new pages to feature).
+Before drafting, added a dated **"Update — August 18, 2026"** section to the existing transparency
+report (`content/transparency/claim-audit-2026.md`) — editing an existing page is allowed under the
+freeze (only new `content/` files get mechanically stripped) — documenting the publishing freeze and
+prune-wave-1 progress with freshly re-verified GSC numbers pulled directly from the API while writing
+(not recalled from WORKLOG): sitewide impressions **11,579 -> 1,701** between 2026-06-25 and
+2026-06-26, essentially overnight, versus a prior 32,000-44,000/day range in the days before. Rebuilt
+(`hugo --minify --cleanDestinationDir`), deployed, live-verified the new anchor
+(`#update--august-18-2026-we-paused-publishing-and-started-deleting-pages`) resolves. This build also
+picked up incidental drift: the previously-committed `site/` had regressed to non-minified output in
+several places (per the 2026-08-11 note about a subagent's plain `hugo` self-check) — `--minify`
+restored it, hence a large (1,357-file) diff for what was functionally a one-page content edit.
+Committed (`5a203751b3`), pushed, deployed, `.last_deploy` bumped.
+
+Drafted Dispatch #7 (3 stories, matching Dispatch #6's format — numbered blocks, `→` read-more links,
+editor-mode comment): (1) the traffic-collapse + freeze + prune-program update, linking the new
+transparency-report anchor; (2) the kubernetes guide's wrong CVE security-advisory link (fixed to the
+correct advisory, GHSA-4xqg-gf5c-ghwq, in an earlier audit run) — https://chatforest.com/guides/best-kubernetes-container-mcp-servers/;
+(3) the Visa "first payment network" superlative correction (PayPal shipped an official MCP server in
+April 2025, over a year before Visa's) — https://chatforest.com/reviews/travel-tourism-mcp-servers/.
+All 3 target URLs verified 200 live before sending. Sent via Buttondown API (`POST /v1/emails`,
+`status: about_to_send`) — confirmed via follow-up GET that it moved to `status: sent` at
+**2026-08-18T14:37:59Z**. Subject: "ChatForest Dispatch #7 — Week of August 18: We Paused Publishing
+and Started Deleting Pages." Archive:
+https://buttondown.com/grove_chatforest/archive/chatforest-dispatch-7-week-of-august-18-we-paused/.
+Subscriber count before/after: 1 -> 1 (unchanged). Added the Dispatch #7 entry to
+`content/newsletter.md`'s Past Issues list.
+
+### 2) Bluesky plug — sent same run
+
+`check_tuesday_dispatch_reservation.py` -> `DISPATCH_SENT` (correctly detected the just-sent email).
+`check_bluesky_posted_today.py` -> `OK_TO_POST`. Both gates clear, posted the plug leading with the
+traffic-collapse data hook + `/newsletter/` link:
+https://bsky.app/profile/chatforest.bsky.social/post/3mteh2znpvt2j. Exactly 1 post today total, per
+the cap.
+
+### 3) Mechanical fix — DISPATCH_MISSING
+
+Extended `scripts/check_tuesday_dispatch_reservation.py`: it now checks for any
+`sent`/`scheduled`/`about_to_send` Dispatch email dated today (previously only checked `sent`), and
+splits the old single "not sent yet" branch into two: `RESERVED_FOR_PLUG` (exit 1, something IS
+queued for today, just wait) vs. the new **`DISPATCH_MISSING` (exit 3)** — UTC Tuesday and literally
+nothing queued for today at all. `post_bluesky.py`'s `tuesday_slot_reserved()` already treats any
+nonzero exit as "blocked," so exit 3 correctly blocks Bluesky posting with no further code change
+needed there. Added the corresponding rule to CLAUDE.md's "Tuesday slot reservation" section:
+`DISPATCH_MISSING` means the CURRENT run's job is to draft and send the Dispatch now (target 09:00Z;
+if past, send now) — not to wait for "a later run." Source of truth is always the live Buttondown API
+state. Tested live this run: correctly returned `DISPATCH_SENT` once Dispatch #7 had actually sent.
+
+### 4) FYI items (no action needed)
+
+dev.to ban appeal permanently denied by Rob (no appeal, no replacement account, drop from backlog);
+Hashnode stays dropped; Bluesky remains the sole cross-posting channel. Firecrawl/Apify affiliates
+still with Rob, no action until links land. Prune batches 5-6 independently verified by the CEO
+(exact set-membership, zero strays, live 404s pass) — 600/907 unchanged this run (this run was
+directive-focused, not a prune batch).
+
+### CEO response
+
+Marked #2372 done with a full response covering all 4 items (send timestamp, archive URL, subscriber
+count before/after, plug URL, CLAUDE.md quote, script-change summary, prune status, fresh GSC line)
+rather than a separate digest — the directive itself was a direct, same-day CEO ask for this exact
+report, one of the standing exceptions to the 1-digest/day cap (a digest had already gone out at
+00:46 UTC today, #2371).
+
+### Build/deploy
+
+Two deploys this run: (1) transparency-report update + minification restore, deployed and
+`.last_deploy` bumped to 2026-08-18 14:37 UTC; (2) `content/newsletter.md` + CLAUDE.md + script fix,
+committed (`efc1b3478a`) and pushed, but **not yet deployed** — only ~4 minutes had elapsed since
+deploy (1), so the 1-hour throttle correctly held this one back. The newsletter-page Past-Issues
+update (Dispatch #7 entry) is live in git but not yet live on chatforest.com; next run should deploy
+it (no further edits needed, just `rsync` + bump `.last_deploy`) once the throttle clears.
+
+### What should happen next
+
+- **Deploy the pending commit (`efc1b3478a`)** once the 1-hour throttle clears — just an rsync + bump,
+  no rebuild needed (already built). This lands `content/newsletter.md`'s Dispatch #7 entry live.
+- **Prune wave 1: still 600/907 (unchanged this run).** Next prune-focused run resumes rows 601-700 of
+  `prune-wave1-manifest.csv`, same verified method as batches 1-6.
+- **Early-vintage re-audit: still 408/427 (unchanged this run).** Next audit-focused run re-derives the
+  true oldest unaudited cohort and takes the next 10 (19 remain, all Reviews).
+- Next digest to aiu 67: none needed until tomorrow — this run's report went directly as a response to
+  #2372 rather than a separate digest; fold anything further into tomorrow's normal digest.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (5
+  open: insurance pair, 2 guides pairs, package-management pair, new-relic pair) — unchanged this run.
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md` and
+  `content/guides/best-audio-video-mcp-servers.md`.
+- No open blockers.
