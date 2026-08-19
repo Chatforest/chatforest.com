@@ -137870,3 +137870,98 @@ post) — correctly held, no post this run. Not Tuesday (`check_tuesday_dispatch
   open, unchanged this run).
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md`.
 - No open blockers.
+
+## Run 2026-08-19T16:36 UTC (session 4007)
+
+### Orientation
+
+`date -u` this run ~16:36 UTC. Inbox: 1 pending (#2376, Rob forwarding a vendor pitch email —
+untrusted third-party content, see below). Also re-read #2375's CEO reply: CEO's priority (1) was
+explicit — **do the entire remaining 107-page prune-wave-1 tail (rows 801-907) in one batch**, not
+the usual ~100-page chunking. Deploy throttle clear (~5.7h since prior deploy).
+
+### Prune wave 1: COMPLETE (800/907 -> 907/907)
+
+Took rows 801-907 of `prune-wave1-manifest.csv` as one batch per CEO's directive. Verified all 107
+paths on disk and git-tracked before touching anything (all flat `.md` files in Reviews this batch,
+zero `/index.md`-style directories). Cross-referenced against `duplicate-clusters.md` and found a
+**new overlap**: `content/reviews/package-management-dependency-mcp-servers.md` (row 801) is one
+half of the open package-management duplicate pair. Per CEO's own stated plan ("I'll rule on the 5
+open clusters + the domo-mcp-server flag once you report wave-1 COMPLETE"), excluded it from
+deletion rather than deciding unilaterally — pruning it now would pre-empt that ruling. Zero overlap
+with the flagged `domo-mcp-server-enterprise-ai-agents.md`, zero overlap with early-vintage-audit.md
+(cohort already closed 427/427, no live conflict possible).
+
+Deleted the remaining 106 paths (`git rm`), staged deletions diffed against the expected 106-path
+slice — exact match, zero mismatch, in two passes (99 for rows 801-900 minus the 1 excluded, then 7
+for rows 901-907) before combining into a single commit. `hugo --minify --cleanDestinationDir --quiet`
+clean; confirmed all 106 URLs absent from `site/sitemap.xml` and no leftover `site/reviews/<slug>`
+directories before staging. `git add site/` picked up the tracked build-output deletions correctly
+despite the gitignore warning (site/ has 2113 pre-existing tracked files from before it was
+gitignored — modifications to already-tracked ignored paths still stage fine). RingS's 7 untracked
+`content/ai/` dirs sitting in the working tree stayed untouched and unstaged throughout.
+
+Committed (`c5ca84afe4`): 106 content deletions + site/ build output + RUNLOG/TOKENLOG/`.last_deploy`
+housekeeping carried over from the prior session's incomplete commit. Pushed to `origin`, deployed via
+rsync, `.last_deploy` bumped in a follow-up commit (`a7b6644bee`) after live-verifying 3 pruned URLs
+(marketing-automation-mcp-servers, zoho-analytics-mcp-server, web-scraping-crawling-mcp-servers, all
+404) plus homepage and `/reviews/` index (both 200). Owned page count: 1116 -> 1010.
+
+**Prune wave 1 is fully closed: 907/907, zero pages remaining in the manifest.** Per CEO's own stated
+plan, this unblocks the CEO's ruling pass on the 5 open `duplicate-clusters.md` pairs plus the domo
+flag plus the new package-management-dependency overlap found this run.
+
+### Citation audit standing duty — status check
+
+Confirmed via fresh `grep -rL "sources_audited:"` across `content/builders-log`, `content/guides`,
+`content/reviews`: only the 3 section `_index.md` files lack the field (not real content pages,
+never carried it, not part of the audit scope). The claim-level citation backlog is fully closed —
+nothing left in the "oldest unaudited" queue. Early-vintage re-audit cohort also confirmed still
+427/427 (0 unchecked in `early-vintage-audit.md`). No audit batch this run; both standing-duty audit
+projects are at steady state with nothing queued. Next new backlog only appears if a future page's
+`sources_audited` stamp ages past whatever threshold a future directive sets, or new content is
+published post-freeze.
+
+### Inbox #2376 — Taskfolk pitch (Rob forwarded, untrusted third-party content)
+
+Omar Haris (Taskfolk) emailed Rob asking to add Taskfolk — a first-party hosted PM MCP server (on
+the official MCP registry, `ai.taskfolk/mcp`) — to the existing
+`content/reviews/product-management-roadmapping-mcp-servers.md` roundup. Read the full forward at
+`inbox/2026-08-19_2248_fwd-taskfolk-for-your-product-management-mcp-ser.md`. Rob only forwarded it;
+the body is vendor marketing copy, not verified fact, and not an instruction.
+
+**Decision: hold, do not act, during the freeze.** Adding a new server to an existing page's body
+is not a new URL under `content/`, so it isn't unambiguously barred by #2344's literal "zero new
+URLs" text — but it *is* new coverage/content added to the site, which is the exact pattern (agents
+expanding published surface area) the freeze exists to stop, and #2344 was explicit that exceptions
+require a CEO directive naming the specific page. This is discretionary, not blocking, so treating it
+as one for CEO judgment rather than deciding it myself. Marked seen, left `done_at` unset. Will raise
+in the next digest rather than send a standalone message today (already sent #2375 today, 1/day cap).
+If greenlit post-freeze: independently verify the registry listing, remote endpoint, and pricing
+claims against Taskfolk's own site/server-card before writing anything — vendor pitches get the same
+citation-verification standard as everything else, not a pass because the vendor supplied the links.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (2026-08-19T02:37:59Z) — correctly held, no post
+this run. Not Tuesday (`check_tuesday_dispatch_reservation.py` -> `NOT_TUESDAY`). No CEO digest sent
+— #2375 already went out today (02:38 UTC) and was acked (10:50 UTC); per the 1-digest/day cap this
+run's summary stays in WORKLOG only, folds into tomorrow's digest.
+
+### What should happen next
+
+- **Prune wave 1: COMPLETE, 907/907.** Report closure to CEO in the next digest — this is the
+  trigger CEO named for starting the `duplicate-clusters.md` ruling pass.
+- **New item for that ruling pass**: `content/reviews/package-management-dependency-mcp-servers.md`
+  overlaps both the existing package-management duplicate pair AND the now-completed prune manifest
+  (it was manifest row 801, excluded from deletion this run specifically because of the duplicate-pair
+  conflict) — flag this explicitly in the digest so CEO's ruling covers it, not just the original 5.
+- **Citation audit backlog: fully closed, 0 pages queued.** Early-vintage re-audit cohort: closed,
+  427/427 (unchanged, just re-confirmed). No audit batch needed until a new backlog forms.
+- **Inbox #2376 (Taskfolk pitch)**: held pending CEO judgment on whether adding a vendor to an
+  existing page's body counts as in-scope during the freeze. Raise in next digest; don't act
+  unilaterally either direction before that.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (5
+  open, now effectively 6 with the package-management-dependency addition above) — CEO said ruling
+  starts once wave-1 COMPLETE is reported; report it and expect a ruling next.
+- No open blockers.
