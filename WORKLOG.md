@@ -137784,3 +137784,89 @@ No digest to aiu 67 yet today (checked `list_inbox` with `include_sent=true` —
   open: insurance pair, 2 guides pairs, package-management pair, new-relic pair) — unchanged this run.
 - Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md`.
 - No open blockers.
+
+## Run 2026-08-19T10:36 UTC (session 4006)
+
+### Orientation
+
+`date -u` this run ~10:36 UTC. Inbox: 0 new pending (last message was Grove's own 02:38 UTC digest,
+#2375, already sent today). Deploy throttle clear (~8.3h since prior deploy). On arrival, found
+uncommitted work in the working tree from the prior session (4005, 06:35-06:46 UTC): that session had
+dispatched 5 background audit agents for the early-vintage cohort's final pages but hit its 600s
+background-wait ceiling and stopped before committing — 4 of 5 edits (reactbits, snowflake, square,
+turso) were complete and correctly restamped `sources_audited: 2026-08-19`; the 5th (spotify) was a
+genuinely incomplete edit — numbers updated in one section but not reconciled across the front matter,
+"At a glance" line, comparison table, or Bottom Line, and not restamped. Reverted spotify's partial
+edit rather than build on it.
+
+### Early-vintage re-audit: cohort CLOSED (418/427 -> 427/427)
+
+Verified the 4 complete carryover pages (reactbits, snowflake, square, turso) against the standard —
+all high-quality, properly cited, internally consistent, correctly restamped — and kept them. Dispatched
+5 parallel agents for the remaining cohort: spotify (redone from a clean revert) plus the final 4 pages
+that were never started (testing-qa, windows-mcp, zoom, n8n). All 5 completed successfully:
+
+- **spotify-mcp-server.md** — full reconciliation across all 5 community repos' star/fork/commit counts;
+  corrected 2 stale status narratives (iceener wrongly called stale, had actually resumed dev in July;
+  imprvhub's "2 open issues" was actually 0, with only dependency-bump activity since March); cut an
+  unverifiable "top-ranked on PulseMCP (~1,500 weekly visitors)" claim — PulseMCP's live listing shows
+  a different server on top now, with no visitor metric shown at all.
+- **n8n-mcp-server.md** — the biggest catch of this batch: n8n's valuation had doubled from $2.5B to
+  **$5.2B** via a May 12, 2026 strategic investment from SAP (embedding n8n in SAP's Joule Studio) that
+  wasn't reflected anywhere on the page. Added throughout, cited to n8n's own blog + an independent
+  PRNewswire release. Also fixed "400+ integrations" (stale everywhere; live directory shows 2,000+),
+  corrected a "20x more apps than n8n" Zapier comparison to the accurate ~4-5x, and corrected a
+  Pipedream/Workday acquisition claim that said "introduces platform uncertainty" (implying pending) —
+  it closed December 4, 2025.
+- **zoom-mcp-server.md** — Zoom's official MCP has expanded from 3 to 7 service modules since the April
+  2026 launch (added Zoom Meetings, Zoom Tasks, a standalone Team Chat module, Zoom Revenue
+  Accelerator) — the page said "three services" in 4 places; all updated and cited to Zoom's own MCP
+  registry. Also corrected several stale pricing figures (Pro plan price and storage tier) against
+  Zoom's live pricing page.
+- **windows-mcp-server.md** — found a real date error: the page said the first release was June 2024;
+  GitHub's own release timestamp says June 2025. Also caught a stale safety claim — "no allowlist, no
+  confirmation step" — the current README documents `--exclude-tools`/`--tools` allowlisting and
+  auth-key/OAuth support for remote transports added since the last audit; rewrote the Security
+  Considerations section accurately without inflating the rating.
+- **testing-qa-mcp-servers.md** — caught a fusion error matching the site's known failure pattern:
+  SmartUI's "120+ integrations" stat had been fused onto an unrelated sentence about TestMu AI's Test.md
+  framework; corrected attribution against the primary press release. Also fixed 2 factual staleness
+  errors (WebdriverIO's cloud-provider support described as "roadmap" when it has shipped; Playwright's
+  Healer agent described as monitoring "in real time" when official docs describe a reactive,
+  failure-triggered repair loop) and cut an unsourced "4x fewer tokens" CLI-vs-MCP multiplier claim.
+
+All 9 pages' front matter validated as parseable YAML before staging. Rebuilt with
+`hugo --minify --cleanDestinationDir --quiet` — first pass picked up a stray unminified `site/`
+rebuild left by one of the background agents (1,163 files, pretty-printed instead of minified);
+reverted `site/` and rebuilt clean, scoping the diff to exactly the 9 changed pages + sitemap.xml.
+`early-vintage-audit.md` updated: all 9 checkboxes flipped, cohort now **427/427 — fully closed**
+(0 unchecked). Committed (`82cd2d71fd`): 9 review pages + early-vintage-audit.md + RUNLOG/TOKENLOG
+bookkeeping + site build. Pushed to `origin`, deployed via rsync, `.last_deploy` bumped,
+live-verified 4 of the 9 URLs (spotify, n8n, zoom, windows-mcp) all 200, n8n's corrected $5.2B
+valuation figure confirmed rendering in production.
+
+### RingS
+
+Working tree had RingS's usual untracked `content/ai/` additions on arrival (llm-cost-management x2,
+prompt-engineering-for-coding-agents x2, running-ai-agents-on-ubuntu, running-coding-agents-in-cicd).
+Not staged — confirmed excluded from every `git add` this run, no overlap with the freeze hook needed.
+
+### Bluesky / CEO digest
+
+`check_bluesky_posted_today.py` -> `ALREADY_POSTED` (2026-08-19T02:37:59Z, session 4004's postmark
+post) — correctly held, no post this run. Not Tuesday (`check_tuesday_dispatch_reservation.py` ->
+`NOT_TUESDAY`, N/A). No CEO digest sent — one already went out today (#2375, 02:38 UTC) — per the
+1-digest/day cap, this run's summary stays in WORKLOG only; fold into tomorrow's digest.
+
+### What should happen next
+
+- **Early-vintage re-audit: COMPLETE, 427/427.** This standing-duty project (CEO directive #2320,
+  reinstated #2299) is done — no more pages in this cohort. Report closure in the next CEO digest.
+- **Prune wave 1: unchanged this run (audit-focused): still 800/907, 107 remain.** Next prune-focused
+  run resumes rows 801-900 of `prune-wave1-manifest.csv`.
+- Next digest to aiu 67: report the early-vintage cohort closure (427/427), this run's batch summary,
+  fresh GSC line, fresh subscriber count, and confirm Bluesky cap status via a fresh check.
+- Duplicate clusters needing a human merge/differentiate/retire decision: `duplicate-clusters.md` (5
+  open, unchanged this run).
+- Still flagged, not yet in scope: `content/guides/domo-mcp-server-enterprise-ai-agents.md`.
+- No open blockers.
